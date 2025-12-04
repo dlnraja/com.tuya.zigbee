@@ -1,17 +1,10 @@
 {
   "class": "socket",
   "capabilities": [
-    "onoff.button2",
-    "onoff.button3",
-    "onoff.button4",
-    "button.2",
-    "button.3",
-    "button.4",
     "onoff",
-    "onoff.1",
-    "onoff.2",
-    "onoff.3",
-    "alarm_battery",
+    "onoff.gang2",
+    "onoff.gang3",
+    "onoff.gang4",
     "measure_power"
   ],
   "zigbee": {
@@ -410,44 +403,22 @@
         "fr": "Gang 1"
       }
     },
-    "onoff.button2": {
+    "onoff.gang2": {
       "title": {
         "en": "Gang 2",
         "fr": "Gang 2"
       }
     },
-    "onoff.button3": {
+    "onoff.gang3": {
       "title": {
         "en": "Gang 3",
         "fr": "Gang 3"
       }
     },
-    "onoff.button4": {
+    "onoff.gang4": {
       "title": {
         "en": "Gang 4",
         "fr": "Gang 4"
-      }
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie"
-      },
-      "preventInsights": false
-    },
-    "onoff.1": {
-      "title": {
-        "en": "Switch 2"
-      }
-    },
-    "onoff.2": {
-      "title": {
-        "en": "Switch 3"
-      }
-    },
-    "onoff.3": {
-      "title": {
-        "en": "Switch 4"
       }
     }
   },

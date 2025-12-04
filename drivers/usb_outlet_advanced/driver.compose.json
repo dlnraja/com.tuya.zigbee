@@ -12,10 +12,7 @@
     "measure_power",
     "meter_power",
     "measure_voltage",
-    "measure_current",
-    "measure_battery",
-    "onoff.1",
-    "onoff.2"
+    "measure_current"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -40,16 +37,6 @@
       "title": {
         "en": "USB 2",
         "fr": "USB 2"
-      }
-    },
-    "onoff.1": {
-      "title": {
-        "en": "Outlet 2"
-      }
-    },
-    "onoff.2": {
-      "title": {
-        "en": "OTHER"
       }
     }
   },

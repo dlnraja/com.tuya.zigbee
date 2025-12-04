@@ -5,12 +5,10 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff.1",
-    "onoff.2",
+    "onoff",
+    "onoff.outlet2",
     "measure_power",
-    "meter_power",
-    "measure_battery",
-    "onoff"
+    "meter_power"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -52,12 +50,14 @@
   "capabilitiesOptions": {
     "onoff": {
       "title": {
-        "en": "Outlet 1"
+        "en": "Outlet 1",
+        "fr": "Prise 1"
       }
     },
-    "onoff.1": {
+    "onoff.outlet2": {
       "title": {
-        "en": "Outlet 2"
+        "en": "Outlet 2",
+        "fr": "Prise 2"
       }
     }
   }
