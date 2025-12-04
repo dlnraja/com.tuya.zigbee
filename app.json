@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.81",
+  "version": "5.3.82",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.81: MEGA FIX - Removed devices arrays from 25 drivers",
-    "fr": "V5.3.81: MEGA FIX - Supprimé tableaux devices de 25 drivers"
+    "en": "V5.3.82: COMPLETE FIX - All drivers + onTuyaStatus handler",
+    "fr": "V5.3.82: FIX COMPLET - Tous drivers + handler onTuyaStatus"
   },
   "category": "appliances",
   "permissions": [],
@@ -11560,21 +11560,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "devices": [
-          {
-            "manufacturerName": "IKEA of Sweden",
-            "modelId": "TRADFRI bulb E27 W opal 1000lm"
-          },
-          {
-            "manufacturerName": "Philips",
-            "modelId": "LWB010"
-          },
-          {
-            "manufacturerName": "sengled",
-            "modelId": "E11-G13"
-          }
-        ]
+        }
       },
       "settings": [
         {
@@ -19858,29 +19844,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "devices": [
-          {
-            "manufacturerName": "HEIMAN",
-            "modelId": "HS2DB"
-          },
-          {
-            "manufacturerName": "HEIMAN",
-            "modelId": "HS2DB-E"
-          },
-          {
-            "manufacturerName": "HEIMAN",
-            "modelId": "HS2DB-E-3.0"
-          },
-          {
-            "manufacturerName": "HEIMAN",
-            "modelId": "DoorBell-N"
-          },
-          {
-            "manufacturerName": "HEIMAN",
-            "modelId": "DoorBell-EM"
-          }
-        ]
+        }
       },
       "settings": [
         {
@@ -22325,21 +22289,7 @@
             "nl": "Houd de aan/uit-knop 5 seconden ingedrukt totdat de LED snel knippert",
             "de": "Halten Sie die Ein-/Aus-Taste 5 Sekunden lang gedrückt, bis die LED schnell blinkt"
           }
-        },
-        "devices": [
-          {
-            "manufacturerName": "IKEA of Sweden",
-            "modelId": "STARKVIND Air purifier"
-          },
-          {
-            "manufacturerName": "IKEA of Sweden",
-            "modelId": "E2006"
-          },
-          {
-            "manufacturerName": "IKEA of Sweden",
-            "modelId": "E2007"
-          }
-        ]
+        }
       },
       "metadata": {
         "app": {
@@ -22640,21 +22590,7 @@
               768
             ]
           }
-        },
-        "devices": [
-          {
-            "manufacturerName": "eWeLink",
-            "modelId": "ZB-CCT"
-          },
-          {
-            "manufacturerName": "eWeLink",
-            "modelId": "ZBCCT"
-          },
-          {
-            "manufacturerName": "_TZB210_ngnt8kni",
-            "modelId": "TS0501B"
-          }
-        ]
+        }
       },
       "images": {
         "small": "drivers/led_controller_cct/assets/images/small.png",
@@ -22720,24 +22656,6 @@
             ]
           }
         },
-        "devices": [
-          {
-            "manufacturerName": "_TZB210_ngnt8kni",
-            "modelId": "TS0501B"
-          },
-          {
-            "manufacturerName": "_TZ3000_9hpxg80k",
-            "modelId": "TS0501B"
-          },
-          {
-            "manufacturerName": "_TZ3000_riwp3k79",
-            "modelId": "TS0501B"
-          },
-          {
-            "manufacturerName": "_TZ3210_p9ao60da",
-            "modelId": "TS0501B"
-          }
-        ],
         "subDevices": []
       },
       "images": {
@@ -22796,17 +22714,7 @@
               768
             ]
           }
-        },
-        "devices": [
-          {
-            "manufacturerName": "eWeLink",
-            "modelId": "ZB-RGBCW"
-          },
-          {
-            "manufacturerName": "eWeLink",
-            "modelId": "ZBRGBCW"
-          }
-        ]
+        }
       },
       "images": {
         "small": "drivers/led_controller_rgb/assets/images/small.png",
@@ -23651,24 +23559,6 @@
           "TS0504B",
           "TS0505A",
           "TS0505B"
-        ],
-        "devices": [
-          {
-            "manufacturerName": "Paulmann",
-            "modelId": "500.45"
-          },
-          {
-            "manufacturerName": "Paulmann",
-            "modelId": "50049"
-          },
-          {
-            "manufacturerName": "Paulmann",
-            "modelId": "50064"
-          },
-          {
-            "manufacturerName": "Paulmann",
-            "modelId": "371000001"
-          }
         ]
       },
       "settings": [
@@ -26756,29 +26646,7 @@
               1280
             ]
           }
-        },
-        "devices": [
-          {
-            "manufacturerName": "SONOFF",
-            "modelId": "SNZB-06P"
-          },
-          {
-            "manufacturerName": "eWeLink",
-            "modelId": "SNZB-06P"
-          },
-          {
-            "manufacturerName": "eWeLink",
-            "modelId": "SNZB-06"
-          },
-          {
-            "manufacturerName": "_TZE200_ikvncluo",
-            "modelId": "TS0601"
-          },
-          {
-            "manufacturerName": "_TZE204_qasjmygd",
-            "modelId": "TS0601"
-          }
-        ]
+        }
       },
       "settings": [
         {
@@ -31705,16 +31573,6 @@
           "_TZ3210_fhx7lk3d",
           "_TZ3210_j4pdtz9v",
           "_TZE200_dq8bu0pt"
-        ],
-        "devices": [
-          {
-            "manufacturerName": "eWeLink",
-            "modelId": "ZB-SW04"
-          },
-          {
-            "manufacturerName": "eWeLink",
-            "modelId": "ZBSW04"
-          }
         ]
       },
       "images": {
@@ -35144,24 +35002,6 @@
           "TS0601",
           "Valve",
           "Water-Valve"
-        ],
-        "devices": [
-          {
-            "manufacturerName": "SONOFF",
-            "modelId": "SWV"
-          },
-          {
-            "manufacturerName": "SONOFF",
-            "modelId": "SWV-NH"
-          },
-          {
-            "manufacturerName": "SONOFF",
-            "modelId": "SWV-BSP"
-          },
-          {
-            "manufacturerName": "eWeLink",
-            "modelId": "SWV"
-          }
         ]
       },
       "settings": [
