@@ -1,4 +1,8 @@
 {
+  "5.3.94": {
+    "en": "🐛 v5.3.94 - Critical Bug Fixes\n\n**FIX #1:** Double division bug - Temperature showing 0.22 instead of 22.3°C, Humidity showing 0.5 instead of 50%\n\n**FIX #2:** SOS Emergency Button error - 'Invalid Capability: alarm_generic' - replaced with alarm_tamper\n\n**Affected devices:** All climate sensors, motion sensors with temp/humidity, SOS buttons",
+    "fr": "🐛 v5.3.94 - Corrections Bugs Critiques\n\nFIX: Bug double division température/humidité. FIX: Erreur alarm_generic bouton SOS."
+  },
   "5.3.93": {
     "en": "🔥 v5.3.93 - TRUE HYBRID MODE\n\n**MAJOR CHANGE:** All sensors now listen to ALL protocols simultaneously:\n• Tuya DP (0xEF00)\n• ZCL Standard clusters\n• IAS Zone (contact, motion, smoke, water)\n• Raw frames\n\n**Why?** Some devices send data via MULTIPLE protocols. Now we catch EVERYTHING!\n\n**Smart tracking:** After 4 hours, logs show which protocols actually sent data.\n\n**Result:** Maximum compatibility with ANY device format.",
     "fr": "🔥 v5.3.93 - MODE HYBRIDE RÉEL\n\nTous les capteurs écoutent TOUS les protocoles simultanément. Compatibilité maximale!"

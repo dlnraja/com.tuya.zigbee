@@ -180,10 +180,10 @@ class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
   _triggerButtonPress() {
     this._triggerSOSPressed();
 
-    if (this.hasCapability('alarm_generic')) {
-      this.setCapabilityValue('alarm_generic', true).catch(this.error);
+    if (this.hasCapability('alarm_tamper')) {
+      this.setCapabilityValue('alarm_tamper', true).catch(this.error);
       setTimeout(() => {
-        this.setCapabilityValue('alarm_generic', false).catch(this.error);
+        this.setCapabilityValue('alarm_tamper', false).catch(this.error);
       }, 5000);
     }
   }
@@ -260,12 +260,12 @@ class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
         this._triggerSOSPressed();
 
         // Update capability
-        if (this.hasCapability('alarm_generic')) {
-          this.setCapabilityValue('alarm_generic', true).catch(this.error);
+        if (this.hasCapability('alarm_tamper')) {
+          this.setCapabilityValue('alarm_tamper', true).catch(this.error);
 
           // Auto-reset after 5 seconds
           setTimeout(() => {
-            this.setCapabilityValue('alarm_generic', false).catch(this.error);
+            this.setCapabilityValue('alarm_tamper', false).catch(this.error);
           }, 5000);
         }
       };

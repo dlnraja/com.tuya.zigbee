@@ -5,9 +5,25 @@
   },
   "class": "sensor",
   "capabilities": [
-    "alarm_generic",
+    "alarm_tamper",
     "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "alarm_tamper": {
+      "title": {
+        "en": "SOS Alert",
+        "fr": "Alerte SOS"
+      },
+      "insightsTitleTrue": {
+        "en": "SOS pressed",
+        "fr": "SOS appuyé"
+      },
+      "insightsTitleFalse": {
+        "en": "SOS reset",
+        "fr": "SOS réinitialisé"
+      }
+    }
+  },
   "energy": {
     "batteries": [
       "CR2032",
@@ -389,6 +405,5 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ],
-  "capabilitiesOptions": {}
+  ]
 }
