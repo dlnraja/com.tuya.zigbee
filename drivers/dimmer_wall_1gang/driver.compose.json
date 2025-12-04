@@ -110,33 +110,7 @@
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    },
-    "devices": [
-      {
-        "manufacturerName": "eWeLink",
-        "modelId": "ZB-DIM"
-      },
-      {
-        "manufacturerName": "eWeLink",
-        "modelId": "ZBDIM"
-      },
-      {
-        "manufacturerName": "_TZ3000_kdi2o9m6",
-        "modelId": "TS110E"
-      },
-      {
-        "manufacturerName": "_TZ3210_ngqk6jia",
-        "modelId": "TS110E"
-      },
-      {
-        "manufacturerName": "_TZE200_dfxkcots",
-        "modelId": "TS0601"
-      },
-      {
-        "manufacturerName": "_TZ3000_7ysdnebc",
-        "modelId": "TS0052"
-      }
-    ]
+    }
   },
   "settings": [
     {
