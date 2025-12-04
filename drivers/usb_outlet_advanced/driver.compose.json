@@ -9,6 +9,8 @@
     "onoff.socket2",
     "onoff.usb1",
     "onoff.usb2",
+    "onoff.led",
+    "button",
     "measure_power",
     "meter_power",
     "measure_voltage",
@@ -37,6 +39,18 @@
       "title": {
         "en": "USB 2",
         "fr": "USB 2"
+      }
+    },
+    "onoff.led": {
+      "title": {
+        "en": "LED Indicator",
+        "fr": "Indicateur LED"
+      }
+    },
+    "button": {
+      "title": {
+        "en": "Button",
+        "fr": "Bouton"
       }
     }
   },

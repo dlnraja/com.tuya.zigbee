@@ -1,4 +1,8 @@
 {
+  "5.3.96": {
+    "en": "🚀 v5.3.96 - MEGA FIX (All Issues)\n\n**TIME SYNC:**\n• Now sends time sync EVERY time device wakes up (receives data)\n• Climate monitors will finally get correct date/time!\n\n**BUTTON DETECTION:**\n• Detects button presses on ALL devices (DP 101-110, 120-121)\n• Works for climate monitors, USB devices, sensors\n\n**LED STATE:**\n• Tracks LED on/off state (DP 13, 101)\n• USB device LED status now visible\n\n**PRESENCE/MOTION:**\n• Fixed alarm_motion not triggering (DP 1)\n• Radar sensors now properly detect presence\n\n**BATTERY:**\n• Multiple DP support (4, 14, 15, 100, 101)\n• Better battery detection for all devices\n\n**ILLUMINANCE:**\n• Fixed lux reading (DP 12, 103)\n• Radar sensors show proper light levels",
+    "fr": "🚀 v5.3.96 - MEGA FIX\n\nSync heure automatique au réveil. Détection boutons/LED/présence/batterie améliorée."
+  },
   "5.3.95": {
     "en": "🔧 v5.3.95 - FIX Switch Capability Mismatch\n\n**FIX:** 'Missing Capability Listener: onoff.gang2' error\n\n**Cause:** HybridSwitchBase used 'onoff.2' but driver.compose.json defined 'onoff.gang2'\n\n**Fixed:** All switch capability names now match between device.js and driver.compose.json\n\n**For users:** Re-pair your multi-gang switches after updating.",
     "fr": "🔧 v5.3.95 - FIX Erreur Capabilities Switch\n\nCorrection erreur 'Missing Capability Listener'. Ré-appairez vos switches multi-gang."
