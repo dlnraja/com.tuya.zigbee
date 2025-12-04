@@ -4,7 +4,7 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
- * LED Controller Dimmable (Single Channel) - v5.3.70
+ * LED Controller Dimmable (Single Channel) - v5.3.75
  *
  * For single-channel 24V/12V LED dimmers like:
  * - TS0501B / _TZB210_ngnt8kni (WoodUpp)
@@ -12,10 +12,12 @@ const { CLUSTER } = require('zigbee-clusters');
  *
  * Fixes Issue #83: xSondreBx - WoodUpp LED Driver
  *
- * CRITICAL FIX v5.3.70:
- * - Direct ZCL cluster access (bypass HybridLightBase)
- * - Use raw Zigbee commands for levelControl
- * - Multiple command strategies for compatibility
+ * v5.3.75 CHANGES:
+ * - Added 7 dimming strategies (some Tuya devices need specific approaches)
+ * - Added non-zero transition time (some devices need this!)
+ * - Added moveWithOnOff, step, move commands
+ * - Added ultra-verbose logging for diagnostics
+ * - Added cluster method inspection
  */
 class LEDControllerDimmableDevice extends ZigBeeDevice {
 
@@ -28,11 +30,11 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
 
     this.log('');
     this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║    LED CONTROLLER DIMMABLE (Single Channel) - v5.3.70       ║');
+    this.log('║    LED CONTROLLER DIMMABLE (Single Channel) - v5.3.75       ║');
     this.log('║    Fixes Issue #83: WoodUpp 24V LED Driver                  ║');
     this.log('╠══════════════════════════════════════════════════════════════╣');
-    this.log('║ ✅ Direct ZCL commands for maximum compatibility            ║');
-    this.log('║ ✅ Multiple dimming strategies                              ║');
+    this.log('║ ✅ 7 dimming strategies for maximum compatibility           ║');
+    this.log('║ ✅ Ultra-verbose logging for diagnostics                    ║');
     this.log('╚══════════════════════════════════════════════════════════════╝');
 
     // Ensure capabilities exist
@@ -44,9 +46,21 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
     this._onOffCluster = endpoint?.clusters?.onOff;
     this._levelCluster = endpoint?.clusters?.levelControl;
 
-    // Log cluster availability
+    // Log cluster availability with detailed info
     this.log(`[LED] onOff cluster: ${this._onOffCluster ? '✅' : '❌'}`);
     this.log(`[LED] levelControl cluster: ${this._levelCluster ? '✅' : '❌'}`);
+
+    // Log available methods on levelControl cluster
+    if (this._levelCluster) {
+      const methods = Object.keys(this._levelCluster).filter(k => typeof this._levelCluster[k] === 'function');
+      this.log(`[LED] levelControl methods: ${methods.join(', ')}`);
+    }
+
+    // Log device info
+    const settings = this.getSettings() || {};
+    const store = this.getStore() || {};
+    this.log(`[LED] Model: ${settings.zb_modelId || store.modelId || 'unknown'}`);
+    this.log(`[LED] Manufacturer: ${settings.zb_manufacturerName || store.manufacturerName || 'unknown'}`);
 
     // Setup attribute listeners
     this._setupAttributeListeners();
@@ -102,91 +116,88 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
       }
     });
 
-    // Dim capability
+    // Dim capability - v5.3.75: 7 STRATEGIES for maximum compatibility
     this.registerCapabilityListener('dim', async (value, opts) => {
-      this.log(`[LED] Setting dim: ${Math.round(value * 100)}%`);
+      this.log('');
+      this.log('┌─────────────────────────────────────────────────────────────┐');
+      this.log(`│ 💡 DIM COMMAND: ${Math.round(value * 100)}%`);
+      this.log('└─────────────────────────────────────────────────────────────┘');
 
       if (!this._levelCluster) {
-        this.error('[LED] No levelControl cluster!');
+        this.error('[LED] ❌ No levelControl cluster!');
         throw new Error('No levelControl cluster available');
       }
 
       const level = Math.max(1, Math.min(254, Math.round(value * 254)));
-      const duration = opts?.duration || 0;
-      const transitionTime = Math.round(duration / 100); // Convert ms to 1/10s
+      this.log(`[LED] Target level: ${level} (0-254 scale)`);
 
-      this.log(`[LED] Target level: ${level}, transitionTime: ${transitionTime}`);
+      // IMPORTANT: Some Tuya devices REQUIRE non-zero transition time!
+      const strategies = [
+        // Strategy 1: moveToLevelWithOnOff (transition=0)
+        { name: 'moveToLevelWithOnOff (transition=0)', fn: () => this._levelCluster.moveToLevelWithOnOff?.({ level, transitionTime: 0 }) },
 
-      // Try multiple strategies for maximum compatibility
-      try {
-        // Strategy 1: moveToLevelWithOnOff (recommended for most devices)
-        await this._tryMoveToLevelWithOnOff(level, transitionTime);
-        this.log(`[LED] ✅ dim command sent via moveToLevelWithOnOff`);
-        return;
-      } catch (err1) {
-        this.log(`[LED] moveToLevelWithOnOff failed: ${err1.message}`);
-      }
+        // Strategy 2: moveToLevelWithOnOff (transition=10 = 1 second) - SOME TUYA DEVICES NEED THIS
+        { name: 'moveToLevelWithOnOff (transition=10)', fn: () => this._levelCluster.moveToLevelWithOnOff?.({ level, transitionTime: 10 }) },
 
-      try {
-        // Strategy 2: moveToLevel (without onOff)
-        await this._tryMoveToLevel(level, transitionTime);
-        this.log(`[LED] ✅ dim command sent via moveToLevel`);
-        return;
-      } catch (err2) {
-        this.log(`[LED] moveToLevel failed: ${err2.message}`);
-      }
+        // Strategy 3: moveToLevel (without onOff)
+        { name: 'moveToLevel (transition=0)', fn: () => this._levelCluster.moveToLevel?.({ level, transitionTime: 0 }) },
 
-      try {
-        // Strategy 3: Write currentLevel attribute directly
-        await this._tryWriteLevel(level);
-        this.log(`[LED] ✅ dim command sent via writeAttributes`);
-        return;
-      } catch (err3) {
-        this.log(`[LED] writeAttributes failed: ${err3.message}`);
-      }
+        // Strategy 4: moveToLevel with transition
+        { name: 'moveToLevel (transition=10)', fn: () => this._levelCluster.moveToLevel?.({ level, transitionTime: 10 }) },
 
-      // If all strategies fail, try turning on first then dimming
-      try {
-        this.log(`[LED] Final attempt: setOn() + moveToLevel()`);
-        if (value > 0 && this._onOffCluster) {
-          await this._onOffCluster.setOn();
-          await new Promise(r => setTimeout(r, 100)); // Small delay
+        // Strategy 5: step command (for devices that prefer step-by-step)
+        {
+          name: 'stepWithOnOff', fn: async () => {
+            const currentLevel = await this._levelCluster.readAttributes?.(['currentLevel']).then(r => r.currentLevel || 127).catch(() => 127);
+            const diff = level - currentLevel;
+            if (diff !== 0) {
+              const mode = diff > 0 ? 0 : 1; // 0=up, 1=down
+              const stepSize = Math.abs(diff);
+              await this._levelCluster.stepWithOnOff?.({ mode, stepSize, transitionTime: 10 });
+            }
+          }
+        },
+
+        // Strategy 6: Write currentLevel attribute directly
+        { name: 'writeAttributes(currentLevel)', fn: () => this._levelCluster.writeAttributes?.({ currentLevel: level }) },
+
+        // Strategy 7: setOn + delay + moveToLevel
+        {
+          name: 'setOn + moveToLevel', fn: async () => {
+            if (value > 0 && this._onOffCluster) {
+              await this._onOffCluster.setOn();
+              await new Promise(r => setTimeout(r, 200));
+            }
+            await this._levelCluster.moveToLevel?.({ level, transitionTime: 10 });
+          }
         }
-        await this._levelCluster.moveToLevel({ level, transitionTime });
-        this.log(`[LED] ✅ dim command sent via setOn + moveToLevel`);
-      } catch (err4) {
-        this.error(`[LED] All dimming strategies failed: ${err4.message}`);
-        throw err4;
+      ];
+
+      let successStrategy = null;
+
+      for (const strategy of strategies) {
+        try {
+          this.log(`[LED] 🔄 Trying: ${strategy.name}...`);
+          const result = strategy.fn();
+          if (result && typeof result.then === 'function') {
+            await result;
+          }
+          this.log(`[LED] ✅ SUCCESS via ${strategy.name}`);
+          successStrategy = strategy.name;
+          break;
+        } catch (err) {
+          this.log(`[LED] ❌ ${strategy.name} failed: ${err.message}`);
+        }
       }
-    });
-  }
 
-  async _tryMoveToLevelWithOnOff(level, transitionTime) {
-    if (typeof this._levelCluster.moveToLevelWithOnOff !== 'function') {
-      throw new Error('moveToLevelWithOnOff not available');
-    }
-    await this._levelCluster.moveToLevelWithOnOff({
-      level,
-      transitionTime
-    });
-  }
+      if (!successStrategy) {
+        this.error('[LED] ❌ ALL 7 dimming strategies failed!');
+        this.error('[LED] This device may not support standard levelControl commands.');
+        this.error('[LED] Consider using a Tuya-specific approach or contact support.');
+        throw new Error('All dimming strategies failed');
+      }
 
-  async _tryMoveToLevel(level, transitionTime) {
-    if (typeof this._levelCluster.moveToLevel !== 'function') {
-      throw new Error('moveToLevel not available');
-    }
-    await this._levelCluster.moveToLevel({
-      level,
-      transitionTime
-    });
-  }
-
-  async _tryWriteLevel(level) {
-    if (typeof this._levelCluster.writeAttributes !== 'function') {
-      throw new Error('writeAttributes not available');
-    }
-    await this._levelCluster.writeAttributes({
-      currentLevel: level
+      this.log('');
     });
   }
 
