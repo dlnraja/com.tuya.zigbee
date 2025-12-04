@@ -110,6 +110,13 @@ class ClimateSensorDevice extends AutoAdaptiveDevice {
   }
 
   async onNodeInit({ zclNode }) {
+    // v5.3.63: CRITICAL - Prevent double initialization (fixes MaxListenersExceeded)
+    if (this._climateSensorInited) {
+      this.log('[INIT] ⚠️ Already initialized, skipping duplicate onNodeInit');
+      return;
+    }
+    this._climateSensorInited = true;
+
     // v5.3.62: CRITICAL - Detect and handle phantom sub-devices
     const deviceData = this.getData();
     if (deviceData.subDeviceId !== undefined) {
@@ -176,6 +183,9 @@ class ClimateSensorDevice extends AutoAdaptiveDevice {
     // Log available clusters BEFORE init
     this._logAvailableClusters(zclNode, 'BEFORE super.onNodeInit');
 
+    // v5.3.63: Bump maxListeners on clusters to prevent MaxListenersExceeded warning
+    this._bumpClusterMaxListeners(zclNode);
+
     // Initialize base - ZCL operations will be blocked by our overrides
     this.log('[INIT] Calling super.onNodeInit()...');
     await super.onNodeInit({ zclNode }).catch(err => {
@@ -241,6 +251,61 @@ class ClimateSensorDevice extends AutoAdaptiveDevice {
       this.log(`[CLUSTERS] Error listing clusters:`, err.message);
     }
     this.log(`[CLUSTERS] ═══════════════════════════════════════════════════════`);
+  }
+
+  /**
+   * v5.3.63: Increase maxListeners on ZCL clusters to prevent MaxListenersExceeded warnings
+   * This is needed when there are many devices or when listeners are added from multiple sources
+   */
+  _bumpClusterMaxListeners(zclNode) {
+    try {
+      const MAX_LISTENERS = 50;
+      const endpoint = zclNode?.endpoints?.[1];
+
+      if (!endpoint) {
+        this.log('[LISTENERS] No endpoint 1 found');
+        return;
+      }
+
+      const clusters = endpoint.clusters || {};
+      const clustersToBump = [
+        'temperatureMeasurement',
+        'msTemperatureMeasurement',
+        'relativeHumidity',
+        'msRelativeHumidity',
+        'powerConfiguration',
+        'genPowerCfg',
+        'basic',
+        'genBasic',
+        'tuya',
+        'manuSpecificTuya'
+      ];
+
+      let bumpedCount = 0;
+      for (const clusterName of clustersToBump) {
+        const cluster = clusters[clusterName];
+        if (cluster && typeof cluster.setMaxListeners === 'function') {
+          cluster.setMaxListeners(MAX_LISTENERS);
+          bumpedCount++;
+        }
+      }
+
+      // Also bump endpoint itself
+      if (typeof endpoint.setMaxListeners === 'function') {
+        endpoint.setMaxListeners(MAX_LISTENERS);
+      }
+
+      // And the zclNode
+      if (typeof zclNode.setMaxListeners === 'function') {
+        zclNode.setMaxListeners(MAX_LISTENERS);
+      }
+
+      if (bumpedCount > 0) {
+        this.log(`[LISTENERS] Bumped maxListeners(${MAX_LISTENERS}) on ${bumpedCount} clusters`);
+      }
+    } catch (err) {
+      this.log('[LISTENERS] Error bumping maxListeners:', err.message);
+    }
   }
 
   /**
