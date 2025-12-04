@@ -173,48 +173,124 @@ class RadarMotionSensorMmwaveDevice extends BaseHybridDevice {
       return;
     }
 
-    // Find Tuya cluster
+    // Log available clusters for debugging
+    const clusterNames = Object.keys(endpoint.clusters || {});
+    this.log(`[RADAR] 📋 Available clusters: ${clusterNames.join(', ')}`);
+
+    // Find Tuya cluster - try ALL possible names
     const tuyaCluster = endpoint.clusters?.tuya
       || endpoint.clusters?.manuSpecificTuya
-      || endpoint.clusters?.[61184];
+      || endpoint.clusters?.tuyaSpecific
+      || endpoint.clusters?.[61184]
+      || endpoint.clusters?.['61184']
+      || endpoint.clusters?.[0xEF00];
 
-    if (!tuyaCluster) {
-      this.log('[RADAR] ⚠️ No Tuya cluster found');
-      return;
-    }
+    // v5.3.54: CRITICAL FIX - Setup BOTH listeners (TuyaEF00Manager AND direct)
+    // Don't return early - the manager might not emit events for all devices!
 
-    this.log('[RADAR] ✅ Tuya cluster found, configuring DP listener...');
-
-    // Listen for DP reports via TuyaEF00Manager (if integrated)
+    // Method 1: TuyaEF00Manager (if available and initialized)
     if (this.tuyaEF00Manager) {
+      const managerInitialized = this.tuyaEF00Manager._isInitialized ||
+        this.tuyaEF00Manager.tuyaCluster;
+      this.log(`[RADAR] TuyaEF00Manager exists, initialized: ${!!managerInitialized}`);
+
       this.tuyaEF00Manager.on('dpReport', ({ dpId, value }) => {
+        this.log(`[RADAR] 📥 TuyaEF00Manager dpReport: DP${dpId} = ${value}`);
         this._handleRadarDP(dpId, value);
       });
-      this.log('[RADAR] ✅ Using TuyaEF00Manager');
-      return;
+      this.log('[RADAR] ✅ TuyaEF00Manager listener attached');
     }
 
-    // Fallback: Direct cluster listener
-    if (typeof tuyaCluster.on === 'function') {
-      tuyaCluster.on('dataReport', (data) => {
-        this.log('[RADAR] 📥 Raw dataReport:', JSON.stringify(data));
+    // Method 2: Direct cluster listener (ALWAYS setup as fallback!)
+    if (tuyaCluster) {
+      this.log('[RADAR] ✅ Tuya cluster found, configuring direct listeners...');
+
+      // Listen for dataReport events
+      if (typeof tuyaCluster.on === 'function') {
+        tuyaCluster.on('dataReport', (data) => {
+          this.log('[RADAR] 📥 Direct dataReport:', JSON.stringify(data));
+          if (data && data.dp !== undefined) {
+            this._handleRadarDP(data.dp, data.value);
+          }
+        });
+
+        // Also listen for 'data' and 'report' events
+        ['data', 'report', 'response'].forEach(eventName => {
+          tuyaCluster.on(eventName, (data) => {
+            this.log(`[RADAR] 📥 Direct ${eventName}:`, JSON.stringify(data));
+            if (data && data.dp !== undefined) {
+              this._handleRadarDP(data.dp, data.value);
+            }
+          });
+        });
+
+        this.log('[RADAR] ✅ Direct cluster listeners attached');
+      }
+
+      // Property-based listener
+      tuyaCluster.onDataReport = (data) => {
+        this.log('[RADAR] 📥 onDataReport property:', JSON.stringify(data));
         if (data && data.dp !== undefined) {
           this._handleRadarDP(data.dp, data.value);
         }
-      });
+      };
+    } else {
+      this.log('[RADAR] ⚠️ No Tuya cluster found - motion may only work via IAS Zone');
     }
 
-    // Property-based listener
-    tuyaCluster.onDataReport = (data) => {
-      if (data && data.dp !== undefined) {
-        this._handleRadarDP(data.dp, data.value);
+    // Method 3: Raw endpoint frame listener (last resort)
+    try {
+      if (typeof endpoint.on === 'function') {
+        endpoint.on('frame', (frame) => {
+          if (frame && (frame.cluster === 0xEF00 || frame.cluster === 61184)) {
+            this.log('[RADAR] 📥 Raw frame from EF00:', frame.data?.toString?.('hex'));
+            // Parse Tuya frame manually if needed
+            this._parseTuyaRawFrame(frame.data);
+          }
+        });
+        this.log('[RADAR] ✅ Raw frame listener attached');
       }
-    };
+    } catch (err) {
+      this.log('[RADAR] ⚠️ Raw frame listener failed:', err.message);
+    }
 
-    this.log('[RADAR] ✅ Tuya DP listener configured');
+    this.log('[RADAR] ✅ Tuya DP listeners configured (multi-path)');
 
     // Request initial data
     this._requestRadarDPs();
+  }
+
+  /**
+   * v5.3.54: Parse raw Tuya frame data
+   */
+  _parseTuyaRawFrame(data) {
+    if (!data || data.length < 7) return;
+
+    try {
+      // Tuya frame format: seqNum(2) + dpId(1) + dpType(1) + dataLen(2) + data(N)
+      const dpId = data[2];
+      const dpType = data[3];
+      const dataLen = (data[4] << 8) | data[5];
+
+      let value;
+      if (dpType === 1 && dataLen === 1) {
+        // Boolean
+        value = data[6] === 1;
+      } else if (dpType === 2 && dataLen === 4) {
+        // Value (32-bit)
+        value = (data[6] << 24) | (data[7] << 16) | (data[8] << 8) | data[9];
+      } else if (dpType === 4 && dataLen === 1) {
+        // Enum
+        value = data[6];
+      }
+
+      if (dpId !== undefined && value !== undefined) {
+        this.log(`[RADAR] 📥 Parsed raw frame: DP${dpId} = ${value}`);
+        this._handleRadarDP(dpId, value);
+      }
+    } catch (err) {
+      this.log('[RADAR] ⚠️ Raw frame parse error:', err.message);
+    }
   }
 
   /**
