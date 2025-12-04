@@ -1,4 +1,8 @@
 {
+  "5.3.68": {
+    "en": "🔧 v5.3.68 - FIX PHANTOM DEVICES + NOTIFICATION SPAM\n\n**User Report:**\n30+ phantom climate sensors created from 1 physical device.\n'Device migration recommended: undefined → soil_sensor' notifications spamming.\n\n**Fixes:**\n- Disabled migration notification spam\n- Clear migration queue on app startup\n- Phantom devices now show clearer error message\n- Reduced log spam for phantom devices\n\n**For users with phantom devices:**\n1. Go to Homey App → Devices\n2. Delete ALL devices with ⚠️ warning triangle\n3. Keep only the working device\n4. Re-pair if needed",
+    "fr": "🔧 v5.3.68 - FIX APPAREILS FANTÔMES + SPAM NOTIFICATIONS\n\nCorrection du spam de notifications 'migration recommended'.\nSupprimez manuellement les appareils avec ⚠️ triangle d'avertissement."
+  },
   "5.3.67": {
     "en": "📝 v5.3.67 - Simplified changelog messages\n\nRemoved confusing 'device migration required' messages.\nNo action needed - everything is automatic.",
     "fr": "📝 v5.3.67 - Messages simplifiés\n\nSuppression des messages confus de migration.\nAucune action requise - tout est automatique."
