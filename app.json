@@ -12491,10 +12491,6 @@
             "modelId": "TS0502B"
           },
           {
-            "manufacturerName": "_TZ3000_f3saf1j1",
-            "modelId": "TS0501B"
-          },
-          {
             "manufacturerName": "_TZ3210_leyz4rju",
             "modelId": "TS0504B"
           },
@@ -24145,11 +24141,9 @@
           "_TZ3210_p9ao60da",
           "_TZ3210_r0xgkft5",
           "_TZ3210_zrvxvydd",
-          "_TZB210_endmggws",
-          "_TZB210_ngnt8kni"
+          "_TZB210_endmggws"
         ],
         "productId": [
-          "TS0501B",
           "TS0502"
         ],
         "endpoints": {
@@ -24204,6 +24198,73 @@
           "setOnDim": true
         }
       }
+    },
+    {
+      "name": {
+        "en": "LED Controller Dimmable",
+        "fr": "Contrôleur LED Dimmable",
+        "de": "LED Controller Dimmbar",
+        "nl": "LED Controller Dimbaar"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "min": 0.01,
+          "step": 0.01
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZB210_ngnt8kni",
+          "_TZ3000_9hpxg80k",
+          "_TZ3000_riwp3k79",
+          "_TZ3210_p9ao60da"
+        ],
+        "productId": [
+          "TS0501B"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        },
+        "devices": [
+          {
+            "manufacturerName": "_TZB210_ngnt8kni",
+            "modelId": "TS0501B"
+          },
+          {
+            "manufacturerName": "_TZ3000_9hpxg80k",
+            "modelId": "TS0501B"
+          },
+          {
+            "manufacturerName": "_TZ3000_riwp3k79",
+            "modelId": "TS0501B"
+          },
+          {
+            "manufacturerName": "_TZ3210_p9ao60da",
+            "modelId": "TS0501B"
+          }
+        ]
+      },
+      "images": {
+        "small": "/drivers/led_controller_dimmable/assets/images/small.png",
+        "large": "/drivers/led_controller_dimmable/assets/images/large.png",
+        "xlarge": "/drivers/led_controller_dimmable/assets/images/xlarge.png"
+      },
+      "id": "led_controller_dimmable"
     },
     {
       "name": {
