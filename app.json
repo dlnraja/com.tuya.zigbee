@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.86",
+  "version": "5.3.87",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.86: FIX TypeError onMapDeviceClass - Climate sensors now initialize",
-    "fr": "V5.3.86: FIX TypeError onMapDeviceClass - Capteurs climatiques fonctionnels"
+    "en": "V5.3.87: STABLE - Climate sensors working, phantom fix complete",
+    "fr": "V5.3.87: STABLE - Capteurs climatiques fonctionnels, fix phantom complet"
   },
   "category": "appliances",
   "permissions": [],
