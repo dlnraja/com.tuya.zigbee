@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
@@ -16,7 +16,7 @@ const { CLUSTER } = require('zigbee-clusters');
  * - 1794 (seMetering): Energy consumption (kWh)
  * - 2820 (haElectricalMeasurement): Power, Voltage, Current
  */
-class PlugSmartDevice extends BaseHybridDevice {
+class PlugSmartDevice extends AutoAdaptiveDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('[PLUG] Smart Plug initializing...');

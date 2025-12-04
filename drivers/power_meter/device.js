@@ -1,8 +1,8 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
-class PowerMeterDevice extends BaseHybridDevice {
+class PowerMeterDevice extends AutoAdaptiveDevice {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
     this.log('Power Meter initialized');

@@ -1,13 +1,13 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
 /**
  * DoorControllerDevice - Unified Hybrid Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */
-class DoorControllerDevice extends BaseHybridDevice {
+class DoorControllerDevice extends AutoAdaptiveDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('DoorControllerDevice initializing...');

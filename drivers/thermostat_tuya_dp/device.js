@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
 /**
  * Tuya TS0601 Thermostat / TRV Driver
@@ -12,7 +12,7 @@ const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
  *
  * Based on Zigbee2MQTT tuya.ts and Jeedom configurations
  */
-class ThermostatTS0601Device extends BaseHybridDevice {
+class ThermostatTS0601Device extends AutoAdaptiveDevice {
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
