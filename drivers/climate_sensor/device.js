@@ -31,14 +31,10 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * DP mappings for Tuya EF00 climate sensors
-   * Comprehensive list covering multiple manufacturer variants
-   *
-   * Sources: Z2M, ZHA, Tuya IoT documentation
-   */
-  /**
    * v5.3.97: UPDATED FROM ZIGBEE2MQTT - Complete DP mappings
    * Source: https://github.com/Koenkk/zigbee2mqtt/issues/26078
+   *
+   * Covers: _TZE284_vvmbj46n, _TZE200_*, _TZE204_* climate sensors
    */
   get dpMappings() {
     return {
