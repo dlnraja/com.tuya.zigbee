@@ -1,52 +1,30 @@
 'use strict';
 
-// MIGRATED TO HYBRID SYSTEM v2.0
-const HybridDriverSystem = require('../../lib/HybridDriverSystem');
-const BatteryManagerV4 = require('../../lib/BatteryManagerV4');
+const { HybridPlugBase } = require('../../lib/devices');
 
 /**
- * plug_energy_monitor - Hybrid-Enhanced Driver
- *
- * MIGRATION: Original driver enhanced with Hybrid System
- * - Auto-adaptive capabilities
- * - Energy-aware management
- * - Smart detection
+ * Energy Monitor Plug Device - v5.3.64 SIMPLIFIED
  */
+class EnergyMonitorPlugDevice extends HybridPlugBase {
 
-// Create hybrid base
-const HybridDevice = HybridDriverSystem.createHybridDevice();
-
-'use strict';
-
-const SwitchDevice = require('../../lib/devices/SwitchDevice');
-
-/**
- * PlugEnergyMonitorDevice - Unified Hybrid Driver
- * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
- * Dynamically manages capabilities based on power source
- */
-class PlugEnergyMonitorDevice extends HybridDevice {
-
-  async onNodeInit({ zclNode }) {
-    // Hybrid system initialization
-    await super.onNodeInit({ zclNode });
-
-    // Original initialization below:
-    this.log('PlugEnergyMonitorDevice initializing...');
-    
-    // Initialize base (auto power detection + dynamic capabilities)
-    await super.onNodeInit({ zclNode }).catch(err => this.error(err));
-    
-    this.log('PlugEnergyMonitorDevice initialized - Power source:', this.powerSource || 'unknown');
+  get plugCapabilities() {
+    return ['onoff', 'measure_power', 'meter_power', 'measure_voltage', 'measure_current'];
   }
 
-  async onDeleted() {
-    this.log('PlugEnergyMonitorDevice deleted');
-    await super.onDeleted().catch(err => this.error(err));
+  get dpMappings() {
+    return {
+      1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+      17: { capability: 'measure_current', divisor: 1000 },  // mA → A
+      18: { capability: 'measure_power', divisor: 10 },      // W * 10
+      19: { capability: 'measure_voltage', divisor: 10 },    // V * 10
+      20: { capability: 'meter_power', divisor: 100 }        // kWh * 100
+    };
+  }
+
+  async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+    this.log('[ENERGY] ✅ Energy monitor plug ready');
   }
 }
 
-module.exports = PlugEnergyMonitorDevice;
-
-
-module.exports = PlugEnergyMonitorDevice;
+module.exports = EnergyMonitorPlugDevice;
