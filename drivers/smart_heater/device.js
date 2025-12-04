@@ -1,8 +1,8 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
-class SmartHeaterDevice extends BaseHybridDevice {
+class SmartHeaterDevice extends AutoAdaptiveDevice {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
     this.log('Smart Heater initialized');

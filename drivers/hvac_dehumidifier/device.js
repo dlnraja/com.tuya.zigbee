@@ -1,9 +1,9 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 const { CLUSTER } = require('zigbee-clusters');
 
-class DehumidifierDevice extends BaseHybridDevice {
+class DehumidifierDevice extends AutoAdaptiveDevice {
 
   async onNodeInit({ zclNode }) {
     // Initialize hybrid base (power detection)

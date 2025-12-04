@@ -1,12 +1,12 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 const { CLUSTER } = require('zigbee-clusters');
 const IASZoneEnroller = require('../../lib/IASZoneEnroller');
 const batteryConverter = require('../../lib/tuya-engine/converters/battery');
 const FallbackSystem = require('../../lib/helpers/FallbackSystem');
 
-class SmartCurtainMotorDevice extends BaseHybridDevice {
+class SmartCurtainMotorDevice extends AutoAdaptiveDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('');

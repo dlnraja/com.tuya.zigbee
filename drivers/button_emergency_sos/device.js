@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
 /**
  * SOS Emergency Button Device - Enhanced
@@ -13,7 +13,7 @@ const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
  * - DP 1: button_press
  * - DP 101: battery_percentage
  */
-class SosEmergencyButtonDevice extends BaseHybridDevice {
+class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
 
   // Force battery powered
   get mainsPowered() { return false; }
