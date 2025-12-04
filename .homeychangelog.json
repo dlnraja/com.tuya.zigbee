@@ -1,4 +1,8 @@
 {
+  "5.3.98": {
+    "en": "🕐 v5.3.98 - FIX Timezone Issue\n\n**Based on Z2M Discussion #26036:**\nUser reported 'hour is not good - shows sun time not Paris UTC'\n\n**FIX:**\n• Time sync now sends BOTH formats:\n  - DP 0x24: Local time (year, month, day, hour, minute, second, weekday)\n  - DP 0x1C: UTC timestamp + timezone offset in minutes\n• Logs show timezone offset (e.g., UTC+1 for Paris)\n• Climate monitors should now display correct local time\n\n**For _TZE284_vvmbj46n users:**\n1. Update to v5.3.98\n2. Re-pair the climate monitor\n3. Wait for device to wake up and receive time sync\n4. Check the display - should show correct Paris time",
+    "fr": "🕐 v5.3.98 - FIX Problème Fuseau Horaire\n\nBasé sur Z2M Discussion #26036. Time sync envoie maintenant l'offset UTC. Les capteurs climatiques afficheront l'heure locale correcte."
+  },
   "5.3.97": {
     "en": "📚 v5.3.97 - Z2M Research Integration\n\n**CLIMATE SENSOR (_TZE284_vvmbj46n):**\n• Updated ALL DPs from Zigbee2MQTT documentation\n• DP 1: Temperature (÷10)\n• DP 2: Humidity\n• DP 4: Battery\n• DP 9-20: Settings (alarms, sensitivity, intervals)\n• DP 101-102: Button press detection\n\n**RADAR PRESENCE SENSOR (_TZE200_rhgsbacq):**\n• DP 1: Presence/Motion\n• DP 2-3: Humidity/Temperature\n• DP 4,15: Battery\n• DP 9-12: Radar settings (sensitivity, range, illuminance)\n• DP 101-106: Advanced settings\n\n**Source:** Zigbee2MQTT converters & GitHub issues",
     "fr": "📚 v5.3.97 - Intégration Recherche Z2M\n\nMise à jour TOUS les DPs depuis la documentation Zigbee2MQTT."
