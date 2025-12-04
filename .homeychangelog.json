@@ -1,4 +1,8 @@
 {
+  "5.3.91": {
+    "en": "✅ v5.3.91 - FIX ALL MULTI-GANG DRIVERS\n\n**Drivers fixed:**\n• switch_2gang: removed onoff.1 duplicate\n• switch_3gang: removed onoff.1/2 duplicates\n• switch_4gang: removed onoff.1/2/3 + button duplicates\n• switch_wall_5gang: fixed capabilities\n• switch_wall_6gang: removed 6 duplicates\n• switch_wall_7gang: removed 6 duplicates\n• switch_wall_8gang: removed 7 duplicates\n• switch_plug_2: fixed naming\n• thermostat_4ch: consistent channel naming\n• usb_outlet_advanced: removed duplicates\n• dimmer_dual_channel: already fixed\n\n**All drivers now use consistent naming:** onoff.gang2, onoff.gang3, etc.",
+    "fr": "✅ v5.3.91 - FIX TOUS DRIVERS MULTI-GANG\n\n11 drivers corrigés. Plus de doublons dans l'interface."
+  },
   "5.3.90": {
     "en": "✅ v5.3.90 - FIX 2-CHANNEL DIMMER (Complete)\n\n**Forum Report:** TS1101 shows \"On | Channel 2 | On\" (duplicates)\n\n**Root cause:** Capability names mismatch + missing titles\n\n**Fixed:**\n• Renamed capabilities: onoff.channel2, dim.channel2\n• Added proper titles: \"Channel 1\", \"Channel 2\"\n• Removed unnecessary measure_battery\n• Added Danish translations (da)\n\n**Now shows:** Channel 1 | Brightness 1 | Channel 2 | Brightness 2\n\n**For users:** Re-pair your TS1101 dimmer.",
     "fr": "✅ v5.3.90 - FIX DIMMER 2 CANAUX (Complet)\n\nCorrection des doublons \"On | Channel 2 | On\".\nRé-appairez votre dimmer TS1101."

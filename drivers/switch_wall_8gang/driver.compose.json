@@ -5,97 +5,62 @@
   },
   "class": "socket",
   "capabilities": [
+    "onoff",
     "onoff.gang2",
     "onoff.gang3",
     "onoff.gang4",
     "onoff.gang5",
     "onoff.gang6",
     "onoff.gang7",
-    "onoff.gang8",
-    "onoff",
-    "onoff.1",
-    "onoff.2",
-    "onoff.3",
-    "onoff.4",
-    "onoff.5",
-    "onoff.6",
-    "onoff.7",
-    "measure_battery"
+    "onoff.gang8"
   ],
   "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Gang 1",
+        "fr": "Gang 1"
+      }
+    },
     "onoff.gang2": {
       "title": {
-        "en": "Gang 2"
+        "en": "Gang 2",
+        "fr": "Gang 2"
       }
     },
     "onoff.gang3": {
       "title": {
-        "en": "Gang 3"
+        "en": "Gang 3",
+        "fr": "Gang 3"
       }
     },
     "onoff.gang4": {
       "title": {
-        "en": "Gang 4"
+        "en": "Gang 4",
+        "fr": "Gang 4"
       }
     },
     "onoff.gang5": {
       "title": {
-        "en": "Gang 5"
+        "en": "Gang 5",
+        "fr": "Gang 5"
       }
     },
     "onoff.gang6": {
       "title": {
-        "en": "Gang 6"
+        "en": "Gang 6",
+        "fr": "Gang 6"
       }
     },
     "onoff.gang7": {
       "title": {
-        "en": "Gang 7"
+        "en": "Gang 7",
+        "fr": "Gang 7"
       }
     },
     "onoff.gang8": {
       "title": {
-        "en": "Gang 8"
-      }
-    },
-    "onoff.1": {
-      "title": {
-        "en": "Switch 2"
-      }
-    },
-    "onoff.2": {
-      "title": {
-        "en": "Switch 3"
-      }
-    },
-    "onoff.3": {
-      "title": {
-        "en": "Switch 4"
-      }
-    },
-    "onoff.4": {
-      "title": {
-        "en": "Switch 5"
-      }
-    },
-    "onoff.5": {
-      "title": {
-        "en": "Switch 6"
-      }
-    },
-    "onoff.6": {
-      "title": {
-        "en": "Switch 7"
-      }
-    },
-    "onoff.7": {
-      "title": {
-        "en": "Switch 8"
-      }
-    },
-    "onoff": {
-      "title": {
-        "en": "Switch 1"
+        "en": "Gang 8",
+        "fr": "Gang 8"
       }
     }
   },
