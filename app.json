@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.92",
+  "version": "5.3.93",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.92: Improved Tuya cluster detection for hybrid devices",
-    "fr": "V5.3.92: Amélioration détection cluster Tuya pour devices hybrides"
+    "en": "V5.3.93: TRUE HYBRID - All protocols active simultaneously",
+    "fr": "V5.3.93: VRAI HYBRIDE - Tous les protocoles actifs simultanément"
   },
   "category": "appliances",
   "permissions": [],
