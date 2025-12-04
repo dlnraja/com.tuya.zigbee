@@ -16,6 +16,8 @@
       "CR2450"
     ]
   },
+  "$comment": "CRITICAL: Sensors do NOT have sub-devices - this prevents phantom device creation",
+  "subDevices": [],
   "zigbee": {
     "manufacturerName": [
       "ClimaxTechnology",
@@ -1179,5 +1181,3 @@
     "zigbee"
   ]
 }
-
-
