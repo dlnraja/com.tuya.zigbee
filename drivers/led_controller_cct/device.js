@@ -38,18 +38,30 @@ class LedControllerCctDevice extends AutoAdaptiveDevice {
       this.log('[LIGHT-SDK] Registering coupled onoff+dim listener (500ms debounce)');
 
       this.registerMultipleCapabilityListener(['onoff', 'dim'], async (values, opts) => {
-        const { onoff, dim } = values;
+        // v5.3.62: Get current values for any not in the change
+        const currentOnOff = this.getCapabilityValue('onoff');
+        const currentDim = this.getCapabilityValue('dim');
 
-        this.log(`[LIGHT-SDK] Capability change: onoff=${onoff}, dim=${dim}`);
+        // Use provided values or current values
+        const onoff = values.onoff !== undefined ? values.onoff : currentOnOff;
+        const dim = values.dim !== undefined ? values.dim : currentDim;
 
+        this.log(`[LIGHT-SDK] Capability change: onoff=${onoff} (was ${currentOnOff}), dim=${dim} (was ${currentDim})`);
+        this.log(`[LIGHT-SDK] Values received:`, JSON.stringify(values));
+
+        // v5.3.62: If only dim changed and it's > 0, assume user wants light ON
+        if (values.dim !== undefined && values.onoff === undefined && dim > 0) {
+          this.log('[LIGHT-SDK] Dim slider moved → ensure light is ON');
+          await this._setLightState(true, dim);
+        }
         // SDK Rule: onoff capability is leading in conflicts
-        if (dim > 0 && onoff === false) {
+        else if (dim > 0 && onoff === false) {
           // User wants off, but dim > 0 → turn off
           this.log('[LIGHT-SDK] Conflict: dim > 0 but onoff=false → turning OFF');
           await this._setLightState(false, 0);
         } else if (dim <= 0 && onoff === true) {
           // User wants on, but dim = 0 → turn on (restore last dim)
-          this.log('[LIGHT-SDK] Conflict: dim=0 but onoff=true → turning ON');
+          this.log('[LIGHT-SDK] Conflict: dim=0 but onoff=true → turning ON with last dim');
           const lastDim = this.getStoreValue('last_dim') || 1;
           await this._setLightState(true, lastDim);
         } else {
@@ -59,7 +71,7 @@ class LedControllerCctDevice extends AutoAdaptiveDevice {
 
         // Store last non-zero dim for restore
         if (dim > 0) {
-          await this.setStoreValue('last_dim', dim).catch(() => {});
+          await this.setStoreValue('last_dim', dim).catch(() => { });
         }
       }, 500); // 500ms debounce as per SDK
 
@@ -86,12 +98,12 @@ class LedControllerCctDevice extends AutoAdaptiveDevice {
 
   /**
    * Set light on/off and dim state
-   * Override in subclass for specific protocol handling
+   * v5.3.62: FIXED - Use moveToLevelWithOnOff for proper dimming
    */
   async _setLightState(onoff, dim) {
     this.log(`[LIGHT] Setting state: onoff=${onoff}, dim=${dim}`);
 
-    // Update capabilities
+    // Update capabilities first
     if (this.hasCapability('onoff')) {
       await this.setCapabilityValue('onoff', onoff).catch(this.error);
     }
@@ -102,26 +114,54 @@ class LedControllerCctDevice extends AutoAdaptiveDevice {
     // Send to device via ZCL
     try {
       const endpoint = this.zclNode?.endpoints?.[1];
-      if (endpoint) {
-        // OnOff cluster
-        const onOffCluster = endpoint.clusters?.onOff;
+      if (!endpoint) {
+        this.error('[LIGHT] No endpoint found!');
+        return;
+      }
+
+      const levelCluster = endpoint.clusters?.levelControl;
+      const onOffCluster = endpoint.clusters?.onOff;
+
+      // v5.3.62: Use moveToLevelWithOnOff for combined control (better for Tuya)
+      if (levelCluster && typeof levelCluster.moveToLevelWithOnOff === 'function') {
+        if (onoff && dim > 0) {
+          // Turn ON with specific level
+          const level = Math.round(Math.max(1, dim * 254)); // Min level 1 to avoid off
+          this.log(`[LIGHT] 💡 moveToLevelWithOnOff: level=${level} (dim=${dim})`);
+          await levelCluster.moveToLevelWithOnOff({
+            level,
+            transitionTime: 5 // 0.5 seconds
+          }).catch(err => this.error('[LIGHT] moveToLevelWithOnOff error:', err.message));
+        } else if (!onoff) {
+          // Turn OFF
+          this.log('[LIGHT] 💡 Turning OFF via moveToLevelWithOnOff(0)');
+          await levelCluster.moveToLevelWithOnOff({
+            level: 0,
+            transitionTime: 5
+          }).catch(err => this.error('[LIGHT] OFF error:', err.message));
+        }
+      }
+      // Fallback to separate commands
+      else {
+        this.log('[LIGHT] ⚠️ Fallback to separate onOff + level commands');
+
         if (onOffCluster) {
           if (onoff) {
-            await onOffCluster.setOn().catch(() => {});
+            await onOffCluster.setOn().catch(() => { });
           } else {
-            await onOffCluster.setOff().catch(() => {});
+            await onOffCluster.setOff().catch(() => { });
+            return; // Don't send level if turning off
           }
         }
 
-        // Level cluster for dim
-        if (dim !== undefined && dim > 0) {
-          const levelCluster = endpoint.clusters?.levelControl;
-          if (levelCluster) {
-            const level = Math.round(dim * 254);
-            await levelCluster.moveToLevel({ level, transitionTime: 5 }).catch(() => {});
-          }
+        if (levelCluster && dim !== undefined && dim > 0) {
+          const level = Math.round(dim * 254);
+          this.log(`[LIGHT] 💡 moveToLevel: level=${level}`);
+          await levelCluster.moveToLevel({ level, transitionTime: 5 }).catch(() => { });
         }
       }
+
+      this.log('[LIGHT] ✅ Commands sent successfully');
     } catch (err) {
       this.error('[LIGHT] ZCL command failed:', err.message);
     }
@@ -150,13 +190,13 @@ class LedControllerCctDevice extends AutoAdaptiveDevice {
         if (values.light_hue !== undefined || values.light_saturation !== undefined) {
           const hue = Math.round((values.light_hue ?? this.getCapabilityValue('light_hue') ?? 0) * 254);
           const saturation = Math.round((values.light_saturation ?? this.getCapabilityValue('light_saturation') ?? 1) * 254);
-          await colorCluster.moveToHueAndSaturation({ hue, saturation, transitionTime: 5 }).catch(() => {});
+          await colorCluster.moveToHueAndSaturation({ hue, saturation, transitionTime: 5 }).catch(() => { });
         }
 
         if (values.light_temperature !== undefined) {
           // Convert 0-1 to mireds (153-500 typical range)
           const mireds = Math.round(153 + (1 - values.light_temperature) * (500 - 153));
-          await colorCluster.moveToColorTemperature({ colorTemperature: mireds, transitionTime: 5 }).catch(() => {});
+          await colorCluster.moveToColorTemperature({ colorTemperature: mireds, transitionTime: 5 }).catch(() => { });
         }
       }
     } catch (err) {
