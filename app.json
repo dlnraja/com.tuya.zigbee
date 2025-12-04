@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.3.57",
+  "version": "5.3.58",
   "lastPublishDatetime": "2025-11-28T11:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.57: FIX CLIMATE/SOIL SENSORS - Removed duplicate fingerprints (_TZE284_vvmbj46n, _TZE284_oitavov2).",
-    "fr": "V5.3.57: FIX CAPTEURS CLIMAT/SOL - Fingerprints dupliqués supprimés (_TZE284_vvmbj46n, _TZE284_oitavov2)."
+    "en": "V5.3.58: AUTO-ADAPTIVE SYSTEM - Dynamic capability discovery + automatic flow card creation.",
+    "fr": "V5.3.58: SYSTEME AUTO-ADAPTATIF - Découverte dynamique des capabilities + création auto des flow cards."
   },
   "category": "appliances",
   "permissions": [],
