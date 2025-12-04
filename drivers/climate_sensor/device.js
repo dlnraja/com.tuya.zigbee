@@ -104,9 +104,23 @@ class ClimateSensorDevice extends AutoAdaptiveDevice {
   async onNodeInit({ zclNode }) {
     this.log('');
     this.log('╔═══════════════════════════════════════════════════════════════════╗');
-    this.log('║           CLIMATE SENSOR v5.2.91 - ULTRA DEBUG MODE              ║');
+    this.log('║           CLIMATE SENSOR v5.3.61 - AUTO-ADAPTIVE                 ║');
     this.log('╚═══════════════════════════════════════════════════════════════════╝');
     this.log('');
+
+    // v5.3.61: CRITICAL - Add missing capabilities BEFORE super.onNodeInit()
+    // This fixes "Invalid Capability: measure_temperature" for existing devices
+    const requiredCaps = ['measure_temperature', 'measure_humidity', 'measure_battery'];
+    for (const cap of requiredCaps) {
+      if (!this.hasCapability(cap)) {
+        try {
+          await this.addCapability(cap);
+          this.log(`[MIGRATE] ➕ Added missing capability: ${cap}`);
+        } catch (err) {
+          this.log(`[MIGRATE] ⚠️ Could not add ${cap}: ${err.message}`);
+        }
+      }
+    }
 
     // v5.2.91: Detect protocol BEFORE any other operation
     const protocolInfo = this._detectProtocolSafe();
