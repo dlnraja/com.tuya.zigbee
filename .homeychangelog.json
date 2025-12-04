@@ -1,7 +1,11 @@
 {
+  "5.3.89": {
+    "en": "✅ v5.3.89 - FIX 2-CHANNEL DIMMER\n\n**Forum Report:** TS1101 / _TZ3000_7ysdnebc only shows 1 channel\n\n**Fixed:**\n• Complete rewrite of dimmer_dual_channel driver\n• Channel 1: endpoint 1 (onoff, dim)\n• Channel 2: endpoint 2 (onoff.1, dim.1)\n• Added endpoint 2 bindings in driver config\n\n**For users:**\nRe-pair your TS1101 dimmer after updating.",
+    "fr": "✅ v5.3.89 - FIX DIMMER 2 CANAUX\n\nCorrection du dimmer TS1101 qui n'affichait qu'un seul canal.\nRé-appairez après mise à jour."
+  },
   "5.3.88": {
-    "en": "✅ v5.3.88 - STABLE\n\nSame as v5.3.87 - republish for Homey App Store.",
-    "fr": "✅ v5.3.88 - STABLE\n\nIdentique à v5.3.87 - republication."
+    "en": "✅ v5.3.88 - STABLE\n\nSame as v5.3.87.",
+    "fr": "✅ v5.3.88 - STABLE\n\nIdentique à v5.3.87."
   },
   "5.3.87": {
     "en": "✅ v5.3.87 - STABLE RELEASE\n\n**Status:** ✅ STABLE - Recommended version\n\n**What works:**\n• Climate sensors initialize correctly\n• No more phantom devices on new pairing\n• Battery/temperature/humidity data received\n• All 80+ drivers functional\n\n**For users:**\n1. Update to v5.3.87\n2. Delete existing phantom devices (❌ PHANTOM)\n3. Re-pair sensors if needed\n4. Wait 15-60 min for battery sensors to report\n\n**Changelog cleaned:** Old versions now indicate if bugs were fixed later.",
