@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.3.56: FIX SDK3 COMPATIBILITY - dataRequest fallbacks + Tuya DP reliability improvements.",
-    "fr": "V5.3.56: FIX COMPATIBILITÉ SDK3 - Fallbacks dataRequest + améliorations fiabilité Tuya DP."
+    "en": "V5.3.56: FIX SDK3 + FLOW CARDS - dataRequest fallbacks, safe flow triggering for curtain motors.",
+    "fr": "V5.3.56: FIX SDK3 + FLOW CARDS - Fallbacks dataRequest, déclenchement flow sécurisé pour moteurs rideaux."
   },
   "category": "appliances",
   "permissions": [],

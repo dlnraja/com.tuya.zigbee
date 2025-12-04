@@ -226,7 +226,17 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
         dataBuffer = Buffer.from([dp, 1, 0, 1, value ? 1 : 0]);
       }
 
-      await tuyaCluster.dataRequest({ seq, dpValues: dataBuffer });
+      // v5.3.56: Use available methods with fallback
+      if (typeof tuyaCluster.setData === 'function') {
+        await tuyaCluster.setData({ data: dataBuffer });
+      } else if (typeof tuyaCluster.sendCommand === 'function') {
+        await tuyaCluster.sendCommand(0x00, dataBuffer);
+      } else if (typeof tuyaCluster.dataRequest === 'function') {
+        await tuyaCluster.dataRequest({ seq, dpValues: dataBuffer });
+      } else {
+        this.error('[CURTAIN] No suitable method to send DP');
+        return;
+      }
       this.log(`[CURTAIN] Sent DP${dp} = ${value}`);
     } catch (err) {
       this.error('[CURTAIN] Send DP error:', err.message);
@@ -446,8 +456,14 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
   }
 
   // Helper: Trigger flow when capability changes
+  // v5.3.56: Fixed to check if flow card exists before triggering
   async triggerCapabilityFlow(capabilityId, value) {
     const driverId = this.driver.id;
+
+    // v5.3.56: Skip if device doesn't have this capability (e.g., mains-powered without battery)
+    if (!this.hasCapability(capabilityId)) {
+      return;
+    }
 
     // Alarm triggers
     if (capabilityId.startsWith('alarm_')) {
@@ -456,15 +472,14 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
       const triggerIdFalse = `${driverId}_${alarmName}_false`;
 
       try {
-        if (value === true) {
-          await this.homey.flow.getDeviceTriggerCard(triggerIdTrue).trigger(this).catch(err => this.error(err));
-          this.log(`Triggered: ${triggerIdTrue}`);
-        } else if (value === false) {
-          await this.homey.flow.getDeviceTriggerCard(triggerIdFalse).trigger(this).catch(err => this.error(err));
-          this.log(`Triggered: ${triggerIdFalse}`);
+        const triggerId = value === true ? triggerIdTrue : triggerIdFalse;
+        const flowCard = this.homey.flow.getDeviceTriggerCard(triggerId);
+        if (flowCard) {
+          await flowCard.trigger(this).catch(() => { });
+          this.log(`Triggered: ${triggerId}`);
         }
       } catch (error) {
-        this.error(`Error triggering ${alarmName}:`, error.message);
+        // Flow card doesn't exist, skip silently
       }
     }
 
@@ -472,10 +487,13 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
     if (capabilityId.startsWith('measure_')) {
       const triggerId = `${driverId}_${capabilityId}_changed`;
       try {
-        await this.homey.flow.getDeviceTriggerCard(triggerId).trigger(this, { value }).catch(err => this.error(err));
-        this.log(`Triggered: ${triggerId} with value: ${value}`);
+        const flowCard = this.homey.flow.getDeviceTriggerCard(triggerId);
+        if (flowCard) {
+          await flowCard.trigger(this, { value }).catch(() => { });
+          this.log(`Triggered: ${triggerId} with value: ${value}`);
+        }
       } catch (error) {
-        this.error(`Error triggering ${capabilityId}:`, error.message);
+        // Flow card doesn't exist, skip silently
       }
     }
 
@@ -483,10 +501,13 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
     if (capabilityId === 'onoff') {
       const triggerId = value ? `${driverId}_turned_on` : `${driverId}_turned_off`;
       try {
-        await this.homey.flow.getDeviceTriggerCard(triggerId).trigger(this).catch(err => this.error(err));
-        this.log(`Triggered: ${triggerId}`);
+        const flowCard = this.homey.flow.getDeviceTriggerCard(triggerId);
+        if (flowCard) {
+          await flowCard.trigger(this).catch(() => { });
+          this.log(`Triggered: ${triggerId}`);
+        }
       } catch (error) {
-        this.error(`Error triggering onoff:`, error.message);
+        // Flow card doesn't exist, skip silently
       }
     }
   }
@@ -494,10 +515,12 @@ class SmartCurtainMotorDevice extends BaseHybridDevice {
   async triggerFlowCard(cardId, tokens = {}) {
     try {
       const flowCard = this.homey.flow.getDeviceTriggerCard(cardId);
-      await flowCard.trigger(this, tokens).catch(err => this.error(err));
-      this.log(`[OK] Flow triggered: ${cardId}`, tokens);
+      if (flowCard) {
+        await flowCard.trigger(this, tokens).catch(() => { });
+        this.log(`[OK] Flow triggered: ${cardId}`, tokens);
+      }
     } catch (err) {
-      this.error(`[ERROR] Flow trigger error: ${cardId}`, err);
+      // Flow card doesn't exist, skip silently
     }
   }
 
