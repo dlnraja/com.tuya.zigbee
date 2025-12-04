@@ -102,9 +102,30 @@ class ClimateSensorDevice extends AutoAdaptiveDevice {
   }
 
   async onNodeInit({ zclNode }) {
+    // v5.3.62: CRITICAL - Detect and handle phantom sub-devices
+    const deviceData = this.getData();
+    if (deviceData.subDeviceId !== undefined) {
+      this.error('╔══════════════════════════════════════════════════════════════════╗');
+      this.error('║ ⚠️  PHANTOM SUB-DEVICE DETECTED - THIS SHOULD NOT EXIST!         ║');
+      this.error('╠══════════════════════════════════════════════════════════════════╣');
+      this.error(`║ subDeviceId: ${deviceData.subDeviceId}`);
+      this.error('║ Climate sensors do NOT have sub-devices!');
+      this.error('║ Please DELETE this device from Homey.');
+      this.error('╚══════════════════════════════════════════════════════════════════╝');
+
+      // Mark as unavailable with clear message
+      await this.setUnavailable(
+        `⚠️ Appareil fantôme (subDevice ${deviceData.subDeviceId}). ` +
+        `Supprimez ce device et gardez uniquement le device principal.`
+      ).catch(() => { });
+
+      // Don't initialize - this device shouldn't exist
+      return;
+    }
+
     this.log('');
     this.log('╔═══════════════════════════════════════════════════════════════════╗');
-    this.log('║           CLIMATE SENSOR v5.3.61 - AUTO-ADAPTIVE                 ║');
+    this.log('║           CLIMATE SENSOR v5.3.62 - AUTO-ADAPTIVE                 ║');
     this.log('╚═══════════════════════════════════════════════════════════════════╝');
     this.log('');
 
