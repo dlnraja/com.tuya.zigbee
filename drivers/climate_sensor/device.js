@@ -3,8 +3,16 @@
 const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 const DeviceFingerprintDB = require('../../lib/tuya/DeviceFingerprintDB');
 
+// v5.3.62: Import adaptive data parser for universal data handling
+let AdaptiveDataParser;
+try {
+  AdaptiveDataParser = require('../../lib/utils/AdaptiveDataParser');
+} catch (e) {
+  // Will use fallback parsing
+}
+
 /**
- * Climate Sensor Device - v5.3.58 AUTO-ADAPTIVE VERSION
+ * Climate Sensor Device - v5.3.62 AUTO-ADAPTIVE VERSION
  *
  * NOW USES AutoAdaptiveDevice for guaranteed data reception!
  *
@@ -728,16 +736,28 @@ class ClimateSensorDevice extends AutoAdaptiveDevice {
   }
 
   /**
-   * v5.2.91: Set temperature capability with detailed logging
+   * v5.3.62: Set temperature capability with AdaptiveDataParser
    */
   _setTemperature(value) {
-    // Temperature is sent as value × 10 (e.g., 234 = 23.4°C)
-    let temp = value;
-    if (Math.abs(value) > 100) {
-      temp = value / 10;
+    let temp;
+
+    // Use AdaptiveDataParser if available
+    if (AdaptiveDataParser) {
+      temp = AdaptiveDataParser.toTemperature(value);
+      this.log(`[SET-TEMP] 🌡️ AdaptiveParser: raw=${JSON.stringify(value)} → ${temp}°C`);
+    } else {
+      // Fallback: Temperature is sent as value × 10 (e.g., 234 = 23.4°C)
+      temp = value;
+      if (typeof value === 'number' && Math.abs(value) > 100) {
+        temp = value / 10;
+      }
+      this.log(`[SET-TEMP] 🌡️ Fallback: raw=${value} → ${temp}°C`);
     }
 
-    this.log(`[SET-TEMP] 🌡️ Raw value: ${value} → Converted: ${temp}°C`);
+    if (temp === null || temp === undefined || isNaN(temp)) {
+      this.log(`[SET-TEMP] ⚠️ Invalid temperature value: ${value}`);
+      return;
+    }
 
     if (this.hasCapability('measure_temperature')) {
       this.setCapabilityValue('measure_temperature', temp)
@@ -749,12 +769,25 @@ class ClimateSensorDevice extends AutoAdaptiveDevice {
   }
 
   /**
-   * v5.2.91: Set humidity capability with detailed logging
+   * v5.3.62: Set humidity capability with AdaptiveDataParser
    */
   _setHumidity(value) {
-    const humidity = Math.min(100, Math.max(0, value));
+    let humidity;
 
-    this.log(`[SET-HUM] 💧 Raw value: ${value} → Clamped: ${humidity}%`);
+    // Use AdaptiveDataParser if available
+    if (AdaptiveDataParser) {
+      humidity = AdaptiveDataParser.toHumidity(value);
+      this.log(`[SET-HUM] 💧 AdaptiveParser: raw=${JSON.stringify(value)} → ${humidity}%`);
+    } else {
+      // Fallback
+      humidity = typeof value === 'number' ? Math.min(100, Math.max(0, value)) : 0;
+      this.log(`[SET-HUM] 💧 Fallback: raw=${value} → ${humidity}%`);
+    }
+
+    if (humidity === null || humidity === undefined || isNaN(humidity)) {
+      this.log(`[SET-HUM] ⚠️ Invalid humidity value: ${value}`);
+      return;
+    }
 
     if (this.hasCapability('measure_humidity')) {
       this.setCapabilityValue('measure_humidity', humidity)
@@ -766,12 +799,25 @@ class ClimateSensorDevice extends AutoAdaptiveDevice {
   }
 
   /**
-   * v5.2.91: Set battery capability with detailed logging
+   * v5.3.62: Set battery capability with AdaptiveDataParser
    */
   _setBattery(value) {
-    const battery = Math.min(100, Math.max(0, value));
+    let battery;
 
-    this.log(`[SET-BATT] 🔋 Raw value: ${value} → Clamped: ${battery}%`);
+    // Use AdaptiveDataParser if available
+    if (AdaptiveDataParser) {
+      battery = AdaptiveDataParser.toBattery(value);
+      this.log(`[SET-BATT] 🔋 AdaptiveParser: raw=${JSON.stringify(value)} → ${battery}%`);
+    } else {
+      // Fallback
+      battery = typeof value === 'number' ? Math.min(100, Math.max(0, value)) : 0;
+      this.log(`[SET-BATT] 🔋 Fallback: raw=${value} → ${battery}%`);
+    }
+
+    if (battery === null || battery === undefined || isNaN(battery)) {
+      this.log(`[SET-BATT] ⚠️ Invalid battery value: ${value}`);
+      return;
+    }
 
     // Store in store for persistence
     this.setStoreValue('last_battery_percent', battery).catch(() => { });
