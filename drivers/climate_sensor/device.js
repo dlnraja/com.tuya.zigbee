@@ -42,24 +42,22 @@ class ClimateSensorDevice extends HybridSensorBase {
       // TEMPERATURE (most common DPs) - From Z2M _TZE284_vvmbj46n
       // ═══════════════════════════════════════════════════════════════════
       1: { capability: 'measure_temperature', divisor: 10 },    // Standard: value/10 = °C
+      5: { capability: 'measure_temperature', divisor: 10 },    // v5.4.7: _TZE284_vvmbj46n uses DP5
       18: { capability: 'measure_temperature', divisor: 10 },   // Alternative temp DP
 
       // ═══════════════════════════════════════════════════════════════════
-      // HUMIDITY (DP 2) - Standard for TH05Z climate sensors
+      // HUMIDITY - Standard (DP2) + _TZE284_vvmbj46n (DP3)
       // ═══════════════════════════════════════════════════════════════════
       2: { capability: 'measure_humidity', divisor: 1 },        // Standard: direct %
+      3: { capability: 'measure_humidity', divisor: 1 },        // v5.4.7: _TZE284_vvmbj46n uses DP3
 
       // ═══════════════════════════════════════════════════════════════════
-      // v5.4.01: REMOVED soil sensor DPs from climate sensor
-      // Soil sensors should use the soil_sensor driver, not climate_sensor
-      // This prevents confusion between TH05Z (DP 1,2,4) and Soil (DP 3,5,15)
-      // ═══════════════════════════════════════════════════════════════════
-
-      // ═══════════════════════════════════════════════════════════════════
-      // BATTERY (DP 4) - v5.3.99: ZHA quirk shows x*2 multiplier!
-      // Device reports HALF the actual battery percentage
+      // BATTERY - Standard (DP4) + _TZE284_vvmbj46n (DP15)
+      // v5.3.99: ZHA quirk shows DP4 has x*2 multiplier (device reports half)
+      // v5.4.7: DP15 (_TZE284_vvmbj46n) uses direct percentage
       // ═══════════════════════════════════════════════════════════════════
       4: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(v * 2, 100) },
+      15: { capability: 'measure_battery', divisor: 1 },        // v5.4.7: _TZE284_vvmbj46n direct %
 
       // ═══════════════════════════════════════════════════════════════════
       // v5.3.97: _TZE284_vvmbj46n SPECIFIC DPs (from Z2M)
@@ -69,8 +67,10 @@ class ClimateSensorDevice extends HybridSensorBase {
       11: { capability: null, setting: 'min_temp_alarm', divisor: 10 },
       12: { capability: null, setting: 'max_humidity_alarm' },
       13: { capability: null, setting: 'min_humidity_alarm' },
-      14: { capability: 'alarm_generic', transform: (v) => v === 0 || v === 1 }, // Temp alarm state
-      15: { capability: 'alarm_generic.humidity', transform: (v) => v === 0 || v === 1 }, // Humidity alarm
+      // v5.4.7: REMOVED alarm_generic - NOT a valid Homey capability
+      // DP 14 & 15 are alarm states but Homey doesn't have alarm_generic
+      14: { capability: null }, // Temp alarm state (no valid capability)
+      15: { capability: null }, // Humidity alarm (no valid capability)
       17: { capability: null, setting: 'temp_report_interval' },  // Minutes
       19: { capability: null, setting: 'temp_sensitivity', divisor: 10 },
       20: { capability: null, setting: 'humidity_sensitivity' },
@@ -105,9 +105,92 @@ class ClimateSensorDevice extends HybridSensorBase {
     this.log(`[CLIMATE] Manufacturer: ${mfr}`);
     this.log('[CLIMATE] ════════════════════════════════════════════════════');
 
+    // v5.4.7: Initialize time sync for _TZE284_vvmbj46n
+    if (mfr && mfr.includes('_TZE284_')) {
+      this.log('[CLIMATE] 🕒 _TZE284 device detected - initializing time sync...');
+      await this._setupTimeSync().catch(err => {
+        this.error('[CLIMATE] Time sync setup failed (non-critical):', err.message);
+      });
+    }
+
     // For debugging: log when we receive ANY DP
     this.log('[CLIMATE] 👀 Watching for temperature/humidity data...');
     this.log('[CLIMATE] ℹ️ Battery-powered sensors may take minutes to hours to report');
+  }
+
+  /**
+   * v5.4.7: Setup time synchronization for _TZE284_vvmbj46n climate monitor
+   * Syncs device clock with Homey using Zigbee Time cluster (0x000A)
+   */
+  async _setupTimeSync() {
+    try {
+      const endpoint = this.zclNode?.endpoints?.[1];
+      if (!endpoint) {
+        this.log('[CLIMATE] ⚠️ No endpoint 1 available for time sync');
+        return;
+      }
+
+      // Check if time cluster is available
+      const timeCluster = endpoint.clusters?.time || endpoint.clusters?.[0x000A];
+      if (!timeCluster) {
+        this.log('[CLIMATE] ℹ️ Time cluster not available on this device');
+        return;
+      }
+
+      // Sync time now
+      await this._syncDeviceTime(timeCluster);
+
+      // Schedule daily time sync
+      this._timeSyncInterval = setInterval(() => {
+        this._syncDeviceTime(timeCluster).catch(err => {
+          this.error('[CLIMATE] Daily time sync failed:', err.message);
+        });
+      }, 24 * 60 * 60 * 1000); // 24 hours
+
+      this.log('[CLIMATE] ✅ Time sync enabled (daily updates)');
+    } catch (err) {
+      this.error('[CLIMATE] Time sync setup error:', err.message);
+    }
+  }
+
+  /**
+   * v5.4.7: Sync device time with Homey
+   * Zigbee time = seconds since 2000-01-01 00:00:00 UTC
+   */
+  async _syncDeviceTime(timeCluster) {
+    try {
+      const now = new Date();
+      const epochStart = new Date(Date.UTC(2000, 0, 1, 0, 0, 0));
+      const secondsSince2000 = Math.floor((now.getTime() - epochStart.getTime()) / 1000);
+
+      // Get timezone offset in seconds (for localTime attribute)
+      const timezoneOffsetSeconds = -now.getTimezoneOffset() * 60;
+
+      this.log('[CLIMATE] 🕒 Syncing device time...');
+      this.log(`[CLIMATE]    UTC time: ${secondsSince2000}s since 2000`);
+      this.log(`[CLIMATE]    Timezone: ${timezoneOffsetSeconds / 3600}h offset`);
+
+      await timeCluster.writeAttributes({
+        time: secondsSince2000,
+        localTime: secondsSince2000 + timezoneOffsetSeconds,
+        timeZone: timezoneOffsetSeconds,
+      });
+
+      this.log('[CLIMATE] ✅ Device time synchronized');
+    } catch (err) {
+      // Non-critical error - device might be sleeping
+      this.log('[CLIMATE] ⚠️ Time sync failed (device may be sleeping):', err.message);
+    }
+  }
+
+  async onDeleted() {
+    // v5.4.7: Clear time sync interval
+    if (this._timeSyncInterval) {
+      clearInterval(this._timeSyncInterval);
+      this._timeSyncInterval = null;
+    }
+
+    await super.onDeleted();
   }
 
   /**

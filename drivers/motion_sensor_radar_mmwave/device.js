@@ -66,6 +66,23 @@ class MotionSensorRadarDevice extends HybridSensorBase {
     this.log('[MMWAVE] ✅ mmWave radar presence sensor ready');
     this.log('[MMWAVE] Capabilities:', this.getCapabilities().join(', '));
   }
+
+  /**
+   * v5.4.7: Enhanced logging for luminance updates (cosmetic fix)
+   * Clarifies when luminance DPs are received vs capability value set
+   */
+  onTuyaStatus(status) {
+    // Call parent handler first
+    super.onTuyaStatus(status);
+
+    // v5.4.7: Add clarifying log when luminance is updated
+    if (status && (status.dp === 12 || status.dp === 103)) {
+      const currentLux = this.getCapabilityValue('measure_luminance');
+      if (currentLux !== null) {
+        this.log(`[MMWAVE] 💡 Luminance updated: ${currentLux} lux (from DP${status.dp})`);
+      }
+    }
+  }
 }
 
 module.exports = MotionSensorRadarDevice;
