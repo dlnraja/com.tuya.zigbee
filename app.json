@@ -29128,7 +29128,7 @@
       "class": "socket",
       "capabilities": [
         "onoff",
-        "alarm_battery",
+        "measure_battery",
         "measure_power",
         "meter_power",
         "measure_voltage",
