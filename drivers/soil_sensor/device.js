@@ -26,7 +26,7 @@ class SoilSensorDevice extends HybridSensorBase {
 
   /** Capabilities for soil sensors */
   get sensorCapabilities() {
-    return ['measure_temperature', 'measure_humidity', 'measure_soil_moisture', 'measure_battery'];
+    return ['measure_temperature', 'measure_humidity', 'measure_battery'];
   }
 
   /**
@@ -45,9 +45,9 @@ class SoilSensorDevice extends HybridSensorBase {
       // Humidity (DP 5 for soil sensors, NOT DP 2!)
       5: { capability: 'measure_humidity', divisor: 1 },
 
-      // Soil moisture (DP 105)
+      // Soil moisture (DP 105) - maps to measure_humidity with custom title
       105: {
-        capability: 'measure_soil_moisture',
+        capability: 'measure_humidity',
         divisor: 1,
         transform: (v) => {
           if (v > 100) return Math.round(v / 10);
@@ -70,7 +70,7 @@ class SoilSensorDevice extends HybridSensorBase {
       // Fallback DPs
       1: { capability: 'measure_temperature', divisor: 10 },
       2: { capability: 'measure_humidity', divisor: 1 },
-      101: { capability: 'measure_soil_moisture', divisor: 1, transform: (v) => v > 100 ? v / 10 : v },
+      101: { capability: 'measure_humidity', divisor: 1, transform: (v) => v > 100 ? v / 10 : v },
     };
   }
 
@@ -97,11 +97,9 @@ class SoilSensorDevice extends HybridSensorBase {
 
     setTimeout(() => {
       const temp = this.getCapabilityValue('measure_temperature');
-      const hum = this.getCapabilityValue('measure_humidity');
-      const soil = this.getCapabilityValue('measure_soil_moisture');
+      const soil = this.getCapabilityValue('measure_humidity'); // Soil moisture uses measure_humidity
       const bat = this.getCapabilityValue('measure_battery');
       this.log('[SOIL] Temperature:', temp !== null ? temp + 'C' : 'waiting...');
-      this.log('[SOIL] Humidity:', hum !== null ? hum + '%' : 'waiting...');
       this.log('[SOIL] Soil Moisture:', soil !== null ? soil + '%' : 'waiting...');
       this.log('[SOIL] Battery:', bat !== null ? bat + '%' : 'waiting...');
     }, 100);
