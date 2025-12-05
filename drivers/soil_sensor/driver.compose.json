@@ -7,14 +7,16 @@
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
-    "measure_soil_moisture",
     "measure_battery"
   ],
   "capabilitiesOptions": {
-    "measure_soil_moisture": {
+    "measure_humidity": {
       "title": {
-        "en": "Soil moisture",
-        "fr": "Humidité du sol"
+        "en": "Soil Moisture",
+        "fr": "Humidité du Sol"
+      },
+      "units": {
+        "en": "%"
       }
     }
   },

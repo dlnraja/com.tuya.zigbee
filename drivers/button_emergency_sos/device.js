@@ -180,6 +180,7 @@ class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
   _triggerButtonPress() {
     this._triggerSOSPressed();
 
+    // v5.4.5: Use alarm_tamper (fixed from invalid alarm_generic)
     if (this.hasCapability('alarm_tamper')) {
       this.setCapabilityValue('alarm_tamper', true).catch(this.error);
       setTimeout(() => {

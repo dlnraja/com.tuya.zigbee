@@ -1,0 +1,694 @@
+{
+  "metadata": {
+    "source": "com.tuya.zigbee driver files",
+    "extraction_date": "2025-12-05",
+    "total_dps_found": 31
+  },
+  "datapoint_mappings": {
+    "DP1": {
+      "plug_smart": [
+        "switch (on/off)"
+      ],
+      "soil_sensor": [
+        "temp"
+      ],
+      "led_controller_dimmable": [
+        "On/Off"
+      ],
+      "curtain_motor": [
+        "control (enum: open=0"
+      ],
+      "button_emergency_sos": [
+        "button_press"
+      ],
+      "motion_sensor_radar_mmwave": [
+        "Presence (boolean) → alarm_motion",
+        "presence (boolean)",
+        "presence (boolean) -> alarm_motion"
+      ],
+      "rain_sensor": [
+        "Rain/Water detected (boolean)",
+        "Rain/Water detected (boolean) → alarm_water",
+        "async () => {"
+      ],
+      "lib": [
+        "OnOff / Alarm (most devices)",
+        "Presence (radar)",
+        "endpoint1",
+        "gang 1",
+        "gang1"
+      ]
+    },
+    "DP2": {
+      "hvac_dehumidifier": [
+        "Tuya datapoint for target humidity"
+      ],
+      "presence_sensor_radar": [
+        "Temperature for 3-in-1 PIR",
+        "sensitivity",
+        "temp"
+      ],
+      "soil_sensor": [
+        "humidity"
+      ],
+      "led_controller_dimmable": [
+        "Brightness (0-1000)"
+      ],
+      "curtain_motor": [
+        "position (0-100%)"
+      ],
+      "motion_sensor_radar_mmwave": [
+        "HUMIDITY (3-in-1 PIR) or SENSITIVITY (radar)",
+        "humidity",
+        "radar_sensitivity (0-9) [ZY-M100]"
+      ],
+      "thermostat_tuya_dp": [
+        "system_mode (auto=0"
+      ],
+      "lib": [
+        "Position / Dim",
+        "endpoint2",
+        "gang 2)",
+        "gang2"
+      ]
+    },
+    "DP3": {
+      "presence_sensor_radar": [
+        "Humidity for 3-in-1 PIR",
+        "humidity",
+        "min_range"
+      ],
+      "soil_sensor": [
+        "Soil Moisture (%)",
+        "temp"
+      ],
+      "curtain_motor": [
+        "position (alternative"
+      ],
+      "motion_sensor_radar_mmwave": [
+        "TEMPERATURE (3-in-1 PIR) or MIN RANGE (radar)",
+        "minimum_range (m * 100) [ZY-M100]",
+        "temperature instead of radar config"
+      ],
+      "thermostat_tuya_dp": [
+        "running_state (heat=0"
+      ],
+      "lib": [
+        "Position inverted (some curtains)",
+        "gang3"
+      ]
+    },
+    "DP4": {
+      "presence_sensor_radar": [
+        "Battery for 3-in-1 PIR/ZG-204ZM",
+        "battery",
+        "max_range"
+      ],
+      "soil_sensor": [
+        "battery"
+      ],
+      "motion_sensor_radar_mmwave": [
+        "maximum_range (m * 100) [ZY-M100]"
+      ],
+      "thermostat_tuya_dp": [
+        "current_heating_setpoint (divideBy10)"
+      ],
+      "rain_sensor": [
+        "Battery (%)"
+      ],
+      "hvac_air_conditioner": [
+        "Tuya datapoint for mode"
+      ]
+    },
+    "DP5": {
+      "soil_sensor": [
+        "Temperature (value / 10)",
+        "humidity"
+      ],
+      "curtain_motor": [
+        "direction setting"
+      ],
+      "thermostat_tuya_dp": [
+        "local_temperature (divideBy10)"
+      ],
+      "hvac_air_conditioner": [
+        "Tuya datapoint for fan speed"
+      ],
+      "lib": [
+        "Alarm motor (curtains)"
+      ]
+    },
+    "DP7": {
+      "curtain_motor": [
+        "work_state (enum: opening=0"
+      ],
+      "thermostat_tuya_dp": [
+        "child_lock (lock=1"
+      ],
+      "lib": [
+        "gang1 timer"
+      ]
+    },
+    "DP8": {
+      "lib": [
+        "gang2 timer"
+      ]
+    },
+    "DP9": {
+      "plug_smart": [
+        "countdown"
+      ],
+      "soil_sensor": [
+        "Temperature unit"
+      ],
+      "motion_sensor_radar_mmwave": [
+        "Sensitivity",
+        "sensitivity (0-9)",
+        "sensitivity (0-9) [ZG-204ZM]"
+      ]
+    },
+    "DP13": {
+      "thermostat_tuya_dp": [
+        "battery (0-100)"
+      ]
+    },
+    "DP14": {
+      "soil_sensor": [
+        "Battery state (enum)"
+      ],
+      "lib": [
+        "Power-on behavior (main) - Enum (0=Off",
+        "Set main power-on behavior (all gangs)"
+      ]
+    },
+    "DP15": {
+      "soil_sensor": [
+        "Battery (%)",
+        "battery"
+      ],
+      "motion_sensor_radar_mmwave": [
+        "Battery (%)",
+        "battery (%)"
+      ],
+      "rain_sensor": [
+        "Battery (%) - alternative",
+        "Battery level (%)"
+      ],
+      "lib": [
+        "LED indicator behavior - Enum (0=Off",
+        "Set LED indicator behavior"
+      ]
+    },
+    "DP16": {
+      "lib": [
+        "Backlight control - Boolean",
+        "Set backlight on/off"
+      ]
+    },
+    "DP17": {
+      "plug_smart": [
+        "current (A * 1000)"
+      ]
+    },
+    "DP18": {
+      "plug_smart": [
+        "power (W * 10)"
+      ],
+      "lib": [
+        "Temperature (some devices) - scale /10"
+      ]
+    },
+    "DP19": {
+      "plug_smart": [
+        "voltage (V * 10)"
+      ],
+      "lib": [
+        "Humidity (some devices) - scale /10 or direct",
+        "Inching/Pulse mode (per gang) - Raw (3×n bytes)",
+        "Set inching/pulse mode (all gangs)"
+      ]
+    },
+    "DP20": {
+      "plug_smart": [
+        "energy (kWh * 100)"
+      ]
+    },
+    "DP35": {
+      "thermostat_tuya_dp": [
+        "error/battery_low"
+      ]
+    },
+    "DP36": {
+      "thermostat_tuya_dp": [
+        "frost_protection"
+      ]
+    },
+    "DP39": {
+      "thermostat_tuya_dp": [
+        "scale_protection"
+      ]
+    },
+    "DP47": {
+      "thermostat_tuya_dp": [
+        "local_temperature_calibration"
+      ]
+    },
+    "DP101": {
+      "button_emergency_sos": [
+        "battery_percentage"
+      ],
+      "motion_sensor_radar_mmwave": [
+        "Illuminance (lux)",
+        "illuminance (lux) -> measure_luminance",
+        "illuminance (lux) / detection_delay (s * 10)"
+      ],
+      "thermostat_tuya_dp": [
+        "window_detection (on/off)"
+      ],
+      "rain_sensor": [
+        "Sensitivity",
+        "Sensitivity level (optional)"
+      ],
+      "lib": [
+        "Temperature OR Battery (device-dependent)"
+      ]
+    },
+    "DP102": {
+      "motion_sensor_radar_mmwave": [
+        "detection_delay (s * 10) / fading_time (s * 10)"
+      ],
+      "lib": [
+        "Humidity - scale /10 or direct",
+        "Illuminance (lux for radar sensors)"
+      ]
+    },
+    "DP103": {
+      "curtain_motor": [
+        "position (some models)"
+      ],
+      "motion_sensor_radar_mmwave": [
+        "fading_time (s * 10) / target_distance (cm)"
+      ],
+      "lib": [
+        "Sensitivity (config)",
+        "Soil moisture (same as humidity)"
+      ]
+    },
+    "DP104": {
+      "motion_sensor_radar_mmwave": [
+        "target_distance (cm) / illuminance (lux)"
+      ],
+      "thermostat_tuya_dp": [
+        "valve_position (0-100)"
+      ],
+      "lib": [
+        "Distance (radar)",
+        "Illuminance"
+      ]
+    },
+    "DP105": {
+      "soil_sensor": [
+        "soil_moisture"
+      ],
+      "motion_sensor_radar_mmwave": [
+        "illuminance (lux) [some models]"
+      ],
+      "lib": [
+        "Presence state (enum)"
+      ]
+    },
+    "DP106": {
+      "motion_sensor_radar_mmwave": [
+        "illuminance threshold"
+      ],
+      "lib": [
+        "Fading time (config)"
+      ]
+    },
+    "DP107": {
+      "motion_sensor_radar_mmwave": [
+        "presence_state (enum)"
+      ]
+    },
+    "DP108": {
+      "motion_sensor_radar_mmwave": [
+        "motion_state (enum)"
+      ]
+    },
+    "DP209": {
+      "lib": [
+        "Weekly schedules - Raw (2+10×n bytes) [FUTURE]"
+      ]
+    },
+    "DP210": {
+      "lib": [
+        "Random timing - Raw (2+6×n bytes) [FUTURE]"
+      ]
+    },
+    "DP247": {
+      "lib": [
+        "${voltage}V`)",
+        "Voltage (mV) - USB/mains devices"
+      ]
+    }
+  },
+  "datapoint_summary": {
+    "DP1": {
+      "driver_count": 8,
+      "drivers": [
+        "plug_smart",
+        "soil_sensor",
+        "led_controller_dimmable",
+        "curtain_motor",
+        "button_emergency_sos",
+        "motion_sensor_radar_mmwave",
+        "rain_sensor",
+        "lib"
+      ],
+      "sample_descriptions": [
+        "switch (on/off)"
+      ]
+    },
+    "DP2": {
+      "driver_count": 8,
+      "drivers": [
+        "hvac_dehumidifier",
+        "presence_sensor_radar",
+        "soil_sensor",
+        "led_controller_dimmable",
+        "curtain_motor",
+        "motion_sensor_radar_mmwave",
+        "thermostat_tuya_dp",
+        "lib"
+      ],
+      "sample_descriptions": [
+        "Tuya datapoint for target humidity"
+      ]
+    },
+    "DP3": {
+      "driver_count": 6,
+      "drivers": [
+        "presence_sensor_radar",
+        "soil_sensor",
+        "curtain_motor",
+        "motion_sensor_radar_mmwave",
+        "thermostat_tuya_dp",
+        "lib"
+      ],
+      "sample_descriptions": [
+        "Humidity for 3-in-1 PIR",
+        "humidity",
+        "min_range"
+      ]
+    },
+    "DP4": {
+      "driver_count": 6,
+      "drivers": [
+        "presence_sensor_radar",
+        "soil_sensor",
+        "motion_sensor_radar_mmwave",
+        "thermostat_tuya_dp",
+        "rain_sensor",
+        "hvac_air_conditioner"
+      ],
+      "sample_descriptions": [
+        "Battery for 3-in-1 PIR/ZG-204ZM",
+        "battery",
+        "max_range"
+      ]
+    },
+    "DP5": {
+      "driver_count": 5,
+      "drivers": [
+        "soil_sensor",
+        "curtain_motor",
+        "thermostat_tuya_dp",
+        "hvac_air_conditioner",
+        "lib"
+      ],
+      "sample_descriptions": [
+        "Temperature (value / 10)",
+        "humidity"
+      ]
+    },
+    "DP7": {
+      "driver_count": 3,
+      "drivers": [
+        "curtain_motor",
+        "thermostat_tuya_dp",
+        "lib"
+      ],
+      "sample_descriptions": [
+        "work_state (enum: opening=0"
+      ]
+    },
+    "DP8": {
+      "driver_count": 1,
+      "drivers": [
+        "lib"
+      ],
+      "sample_descriptions": [
+        "gang2 timer"
+      ]
+    },
+    "DP9": {
+      "driver_count": 3,
+      "drivers": [
+        "plug_smart",
+        "soil_sensor",
+        "motion_sensor_radar_mmwave"
+      ],
+      "sample_descriptions": [
+        "countdown"
+      ]
+    },
+    "DP13": {
+      "driver_count": 1,
+      "drivers": [
+        "thermostat_tuya_dp"
+      ],
+      "sample_descriptions": [
+        "battery (0-100)"
+      ]
+    },
+    "DP14": {
+      "driver_count": 2,
+      "drivers": [
+        "soil_sensor",
+        "lib"
+      ],
+      "sample_descriptions": [
+        "Battery state (enum)"
+      ]
+    },
+    "DP15": {
+      "driver_count": 4,
+      "drivers": [
+        "soil_sensor",
+        "motion_sensor_radar_mmwave",
+        "rain_sensor",
+        "lib"
+      ],
+      "sample_descriptions": [
+        "Battery (%)",
+        "battery"
+      ]
+    },
+    "DP16": {
+      "driver_count": 1,
+      "drivers": [
+        "lib"
+      ],
+      "sample_descriptions": [
+        "Backlight control - Boolean",
+        "Set backlight on/off"
+      ]
+    },
+    "DP17": {
+      "driver_count": 1,
+      "drivers": [
+        "plug_smart"
+      ],
+      "sample_descriptions": [
+        "current (A * 1000)"
+      ]
+    },
+    "DP18": {
+      "driver_count": 2,
+      "drivers": [
+        "plug_smart",
+        "lib"
+      ],
+      "sample_descriptions": [
+        "power (W * 10)"
+      ]
+    },
+    "DP19": {
+      "driver_count": 2,
+      "drivers": [
+        "plug_smart",
+        "lib"
+      ],
+      "sample_descriptions": [
+        "voltage (V * 10)"
+      ]
+    },
+    "DP20": {
+      "driver_count": 1,
+      "drivers": [
+        "plug_smart"
+      ],
+      "sample_descriptions": [
+        "energy (kWh * 100)"
+      ]
+    },
+    "DP35": {
+      "driver_count": 1,
+      "drivers": [
+        "thermostat_tuya_dp"
+      ],
+      "sample_descriptions": [
+        "error/battery_low"
+      ]
+    },
+    "DP36": {
+      "driver_count": 1,
+      "drivers": [
+        "thermostat_tuya_dp"
+      ],
+      "sample_descriptions": [
+        "frost_protection"
+      ]
+    },
+    "DP39": {
+      "driver_count": 1,
+      "drivers": [
+        "thermostat_tuya_dp"
+      ],
+      "sample_descriptions": [
+        "scale_protection"
+      ]
+    },
+    "DP47": {
+      "driver_count": 1,
+      "drivers": [
+        "thermostat_tuya_dp"
+      ],
+      "sample_descriptions": [
+        "local_temperature_calibration"
+      ]
+    },
+    "DP101": {
+      "driver_count": 5,
+      "drivers": [
+        "button_emergency_sos",
+        "motion_sensor_radar_mmwave",
+        "thermostat_tuya_dp",
+        "rain_sensor",
+        "lib"
+      ],
+      "sample_descriptions": [
+        "battery_percentage"
+      ]
+    },
+    "DP102": {
+      "driver_count": 2,
+      "drivers": [
+        "motion_sensor_radar_mmwave",
+        "lib"
+      ],
+      "sample_descriptions": [
+        "detection_delay (s * 10) / fading_time (s * 10)"
+      ]
+    },
+    "DP103": {
+      "driver_count": 3,
+      "drivers": [
+        "curtain_motor",
+        "motion_sensor_radar_mmwave",
+        "lib"
+      ],
+      "sample_descriptions": [
+        "position (some models)"
+      ]
+    },
+    "DP104": {
+      "driver_count": 3,
+      "drivers": [
+        "motion_sensor_radar_mmwave",
+        "thermostat_tuya_dp",
+        "lib"
+      ],
+      "sample_descriptions": [
+        "target_distance (cm) / illuminance (lux)"
+      ]
+    },
+    "DP105": {
+      "driver_count": 3,
+      "drivers": [
+        "soil_sensor",
+        "motion_sensor_radar_mmwave",
+        "lib"
+      ],
+      "sample_descriptions": [
+        "soil_moisture"
+      ]
+    },
+    "DP106": {
+      "driver_count": 2,
+      "drivers": [
+        "motion_sensor_radar_mmwave",
+        "lib"
+      ],
+      "sample_descriptions": [
+        "illuminance threshold"
+      ]
+    },
+    "DP107": {
+      "driver_count": 1,
+      "drivers": [
+        "motion_sensor_radar_mmwave"
+      ],
+      "sample_descriptions": [
+        "presence_state (enum)"
+      ]
+    },
+    "DP108": {
+      "driver_count": 1,
+      "drivers": [
+        "motion_sensor_radar_mmwave"
+      ],
+      "sample_descriptions": [
+        "motion_state (enum)"
+      ]
+    },
+    "DP209": {
+      "driver_count": 1,
+      "drivers": [
+        "lib"
+      ],
+      "sample_descriptions": [
+        "Weekly schedules - Raw (2+10×n bytes) [FUTURE]"
+      ]
+    },
+    "DP210": {
+      "driver_count": 1,
+      "drivers": [
+        "lib"
+      ],
+      "sample_descriptions": [
+        "Random timing - Raw (2+6×n bytes) [FUTURE]"
+      ]
+    },
+    "DP247": {
+      "driver_count": 1,
+      "drivers": [
+        "lib"
+      ],
+      "sample_descriptions": [
+        "${voltage}V`)",
+        "Voltage (mV) - USB/mains devices"
+      ]
+    }
+  }
+}
