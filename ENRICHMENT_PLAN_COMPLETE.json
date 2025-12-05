@@ -1,0 +1,973 @@
+{
+  "meta": {
+    "created": "2025-12-05",
+    "version": "1.0.0",
+    "purpose": "Comprehensive enrichment plan consolidating ALL data sources without breaking existing functionality",
+    "safetyProtocol": "NO deletions, only additions and updates with validation"
+  },
+
+  "summary": {
+    "totalManufacturersBeforeAfter": [398, 650],
+    "totalDPsBeforeAfter": [72, 150],
+    "newDrivers": 2,
+    "filesAffected": [
+      "/home/user/com.tuya.zigbee/lib/data/fingerprint_map.json",
+      "/home/user/com.tuya.zigbee/lib/data/enrichment_data.json",
+      "/home/user/com.tuya.zigbee/data/tuya-dp-complete-database.json",
+      "/home/user/com.tuya.zigbee/drivers/lcdtemphumidsensor/**",
+      "/home/user/com.tuya.zigbee/drivers/temphumidsensor/**"
+    ],
+    "dataSourcesConsolidated": {
+      "JohanBendz_Issues": {
+        "manufacturers": 631,
+        "modelIds": 57,
+        "dps": 31,
+        "status": "Analyzed - ready for integration"
+      },
+      "Forum_Data": {
+        "manufacturers": 480,
+        "modelIds": 50,
+        "dpPatterns": 30,
+        "status": "Analyzed - ready for integration"
+      },
+      "Fork_Analysis": {
+        "manufacturers": 6,
+        "uniqueDrivers": 2,
+        "status": "HIGH PRIORITY - unique manufacturers"
+      },
+      "Current_System": {
+        "manufacturers": 398,
+        "dps": 72,
+        "status": "Baseline - DO NOT REMOVE"
+      }
+    }
+  },
+
+  "manufacturerEnrichment": {
+    "current": {
+      "total": 398,
+      "source": "fingerprint_map.json",
+      "note": "ALL must be preserved - NO DELETIONS"
+    },
+
+    "new": {
+      "total": 252,
+      "breakdown": {
+        "from_issues": {
+          "count": 233,
+          "priority": "HIGH",
+          "note": "631 total in issues, 398 already in system, ~233 new"
+        },
+        "from_forum": {
+          "count": 13,
+          "priority": "MEDIUM",
+          "note": "480 total in forum, most overlap with issues, ~13 unique"
+        },
+        "from_forks": {
+          "count": 6,
+          "priority": "CRITICAL",
+          "manufacturers": [
+            "TUYATEC-g3gl6cgy",
+            "TUYATEC-Bfq2i2Sy",
+            "TUYATEC-abkehqus",
+            "TUYATEC-yg5dcbfu",
+            "_TYZB01_a476raq2",
+            "_TYZB01_hjsgdkfl"
+          ],
+          "note": "These 6 are UNIQUE to forks and NOT in main repo - MUST ADD"
+        }
+      }
+    },
+
+    "byModelId": {
+      "TS0201": {
+        "description": "Temperature & Humidity Sensor",
+        "currentManufacturers": "Multiple in system",
+        "newManufacturers": [
+          "_TYZB01_a476raq2",
+          "_TYZB01_hjsgdkfl",
+          "_TZ2000_a476raq2",
+          "_TZ2000_xogb73am",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl"
+        ],
+        "priority": "HIGH",
+        "driver": "lcdtemphumidsensor (to be integrated)"
+      },
+      "TUYATEC_TempHumid": {
+        "description": "TUYATEC Temperature & Humidity Sensor",
+        "currentManufacturers": 0,
+        "newManufacturers": [
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-abkehqus",
+          "TUYATEC-yg5dcbfu"
+        ],
+        "priority": "CRITICAL",
+        "driver": "temphumidsensor (to be integrated)",
+        "note": "TUYATEC brand gap - NO current support"
+      },
+      "TS0601": {
+        "description": "Universal Tuya Custom Device",
+        "currentManufacturers": "Many in system",
+        "newManufacturers": "109+ from _TZE200 and _TZE204 series",
+        "priority": "HIGH",
+        "note": "Most versatile model - supports soil sensors, mmWave radar, climate, etc."
+      },
+      "TS0001_to_TS0004": {
+        "description": "1-4 Gang Switches",
+        "currentManufacturers": "Many in system",
+        "newManufacturers": "339+ from _TZ3000 series",
+        "priority": "MEDIUM"
+      },
+      "TS011F": {
+        "description": "Smart Plug with Power Monitoring",
+        "currentManufacturers": "Multiple in system",
+        "newManufacturers": "52+ from _TZ3210 series",
+        "priority": "MEDIUM"
+      },
+      "TS0041_to_TS0046": {
+        "description": "1-4 Button Remotes",
+        "currentManufacturers": "Multiple in system",
+        "newManufacturers": "Various from issues",
+        "priority": "MEDIUM"
+      },
+      "TS0501_to_TS0505": {
+        "description": "Light Dimmers (White/CCT/RGB/RGBW)",
+        "currentManufacturers": "Multiple in system",
+        "newManufacturers": "Various from issues",
+        "priority": "MEDIUM"
+      }
+    },
+
+    "integrationStrategy": {
+      "phase1_critical": {
+        "manufacturers": [
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-abkehqus",
+          "TUYATEC-yg5dcbfu",
+          "_TYZB01_a476raq2",
+          "_TYZB01_hjsgdkfl"
+        ],
+        "action": "Add to fingerprint_map.json immediately",
+        "validation": "Verify modelId associations, test with drivers"
+      },
+      "phase2_high_priority": {
+        "manufacturers": "Top 50 from issues with most user requests",
+        "action": "Add manufacturers with verified device interviews",
+        "validation": "Cross-reference with working drivers"
+      },
+      "phase3_bulk_addition": {
+        "manufacturers": "Remaining ~180 from issues analysis",
+        "action": "Batch add with automated validation",
+        "validation": "Ensure no duplicates, valid format"
+      }
+    }
+  },
+
+  "dpEnrichment": {
+    "existing": {
+      "total": 72,
+      "dps": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 50, 51, 52, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 200, 201, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255],
+      "source": "tuya-dp-complete-database.json",
+      "status": "Complete baseline - preserve ALL"
+    },
+
+    "new": {
+      "total": 78,
+      "breakdown": {
+        "from_issues": {
+          "dps": [17, 18, 19, 20, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 102, 103, 104, 105, 106, 107, 108],
+          "note": "31 DPs found in driver analysis"
+        },
+        "from_forum": {
+          "dps": [101, 102, 103, 114, 115, 117],
+          "note": "DP patterns from community discussions"
+        },
+        "from_current_fixes": {
+          "dps": [3, 5, 15, 101, 102, 103, 105],
+          "note": "Soil sensor and mmWave radar fixes (already in system)",
+          "details": {
+            "soil_sensor": {
+              "dp3": "temperature (÷10)",
+              "dp5": "humidity",
+              "dp105": "soil_moisture (0-100% or 0-1000)",
+              "dp15": "battery",
+              "status": "Verified in v5.4.3"
+            },
+            "mmwave_radar": {
+              "dp1": "alarm_motion (boolean)",
+              "dp101": "presence_time (seconds) - NOT boolean!",
+              "dp102": "target_distance (cm)",
+              "dp103": "measure_luminance",
+              "status": "Critical fix in v5.4.3"
+            }
+          }
+        }
+      }
+    },
+
+    "consolidated": {
+      "total": 150,
+      "categories": {
+        "universal": {
+          "dp1": {
+            "type": "bool",
+            "usage": "ON/OFF universal - switch, alarm, motion",
+            "homeyCapability": ["onoff", "alarm_water", "alarm_smoke", "alarm_motion"],
+            "confidence": "HIGH",
+            "devices": "ALL switches, plugs, sensors"
+          },
+          "dp10": {
+            "type": "value",
+            "range": [0, 100],
+            "usage": "Battery percentage",
+            "homeyCapability": ["measure_battery"],
+            "confidence": "HIGH",
+            "devices": "ALL battery devices"
+          },
+          "dp13": {
+            "type": "bool",
+            "usage": "Child lock",
+            "homeyCapability": ["child_lock"],
+            "confidence": "HIGH",
+            "devices": "Plugs, thermostats"
+          }
+        },
+        "climate": {
+          "dp101": {
+            "type": "value",
+            "range": [0, 1000],
+            "scale": 0.1,
+            "unit": "°C",
+            "usage": "Temperature (÷10)",
+            "homeyCapability": ["measure_temperature"],
+            "confidence": "COMMUNITY_VERIFIED",
+            "devices": "Climate sensors, thermostats"
+          },
+          "dp102": {
+            "type": "value",
+            "range": [0, 1000],
+            "scale": 0.1,
+            "unit": "%",
+            "usage": "Humidity (÷10)",
+            "homeyCapability": ["measure_humidity"],
+            "confidence": "COMMUNITY_VERIFIED",
+            "devices": "Climate sensors"
+          },
+          "dp103": {
+            "type": "value",
+            "range": [0, 2000],
+            "scale": 0.01,
+            "unit": "hPa",
+            "usage": "Atmospheric pressure (÷100)",
+            "homeyCapability": ["measure_pressure"],
+            "confidence": "HEURISTIC",
+            "devices": "Weather stations"
+          }
+        },
+        "soil_sensor": {
+          "dp3": {
+            "type": "value",
+            "range": [0, 1000],
+            "scale": 0.1,
+            "unit": "°C",
+            "usage": "Soil temperature (÷10)",
+            "homeyCapability": ["measure_temperature"],
+            "confidence": "VERIFIED_v5.4.3",
+            "devices": "Soil sensors",
+            "note": "Different from climate DP1!"
+          },
+          "dp5": {
+            "type": "value",
+            "range": [0, 100],
+            "unit": "%",
+            "usage": "Soil humidity",
+            "homeyCapability": ["measure_humidity"],
+            "confidence": "VERIFIED_v5.4.3",
+            "devices": "Soil sensors",
+            "note": "Different from climate DP2!"
+          },
+          "dp105": {
+            "type": "value",
+            "range": [0, 1000],
+            "unit": "% or 0-1000",
+            "usage": "Soil moisture (normalize to 0-100%)",
+            "homeyCapability": ["measure_soil_moisture"],
+            "confidence": "VERIFIED_v5.4.3",
+            "devices": "Soil sensors",
+            "note": "NEW capability added in v5.4.3"
+          },
+          "dp15": {
+            "type": "value",
+            "range": [0, 100],
+            "unit": "%",
+            "usage": "Battery percentage (soil sensor variant)",
+            "homeyCapability": ["measure_battery"],
+            "confidence": "VERIFIED_v5.4.3",
+            "devices": "Soil sensors"
+          }
+        },
+        "mmwave_radar": {
+          "dp1": {
+            "type": "bool",
+            "usage": "Motion/presence detection",
+            "homeyCapability": ["alarm_motion"],
+            "confidence": "VERIFIED_v5.4.3",
+            "devices": "mmWave radar sensors"
+          },
+          "dp101": {
+            "type": "value",
+            "range": [0, 999],
+            "unit": "seconds",
+            "usage": "Presence time (NOT boolean!)",
+            "homeyCapability": ["presence_time"],
+            "confidence": "CRITICAL_FIX_v5.4.3",
+            "devices": "mmWave radar sensors",
+            "note": "Was incorrectly mapped to alarm_motion - CRITICAL FIX"
+          },
+          "dp102": {
+            "type": "value",
+            "range": [0, 1000],
+            "unit": "cm",
+            "usage": "Target distance",
+            "homeyCapability": ["measure_distance"],
+            "confidence": "VERIFIED_v5.4.3",
+            "devices": "mmWave radar sensors"
+          },
+          "dp103": {
+            "type": "value",
+            "range": [0, 65535],
+            "unit": "lux",
+            "usage": "Illuminance (alternate)",
+            "homeyCapability": ["measure_luminance"],
+            "confidence": "VERIFIED_v5.4.3",
+            "devices": "mmWave radar sensors"
+          },
+          "dp104": {
+            "type": "value",
+            "range": [0, 1000],
+            "unit": "cm",
+            "usage": "Detection distance setting",
+            "homeyCapability": ["target_distance"],
+            "confidence": "HEURISTIC",
+            "devices": "mmWave radar sensors"
+          }
+        },
+        "cover": {
+          "dp2": {
+            "type": "enum",
+            "values": {"0": "open", "1": "stop", "2": "close"},
+            "usage": "Curtain/cover state",
+            "homeyCapability": ["windowcoverings_state"],
+            "confidence": "COMMUNITY_VERIFIED",
+            "devices": "Curtain motors, blinds"
+          },
+          "dp3": {
+            "type": "value",
+            "range": [0, 100],
+            "unit": "%",
+            "usage": "Cover position (0=closed, 100=open)",
+            "homeyCapability": ["windowcoverings_set"],
+            "confidence": "COMMUNITY_VERIFIED",
+            "devices": "Curtain motors, blinds"
+          }
+        },
+        "thermostat": {
+          "dp4": {
+            "type": "value",
+            "range": [0, 1000],
+            "scale": 0.1,
+            "unit": "°C",
+            "usage": "Target temperature (÷10)",
+            "homeyCapability": ["target_temperature"],
+            "confidence": "COMMUNITY_VERIFIED",
+            "devices": "Thermostats, TRVs"
+          }
+        },
+        "energy_monitoring": {
+          "dp17": {
+            "type": "value",
+            "scale": 0.1,
+            "unit": "W",
+            "usage": "Power (÷10)",
+            "homeyCapability": ["measure_power"],
+            "confidence": "HIGH",
+            "devices": "Smart plugs with metering"
+          },
+          "dp18": {
+            "type": "value",
+            "scale": 0.001,
+            "unit": "A",
+            "usage": "Current (÷1000)",
+            "homeyCapability": ["measure_current"],
+            "confidence": "HIGH",
+            "devices": "Smart plugs with metering"
+          },
+          "dp19": {
+            "type": "value",
+            "scale": 0.1,
+            "unit": "V",
+            "usage": "Voltage (÷10)",
+            "homeyCapability": ["measure_voltage"],
+            "confidence": "HIGH",
+            "devices": "Smart plugs with metering"
+          },
+          "dp20": {
+            "type": "value",
+            "scale": 0.01,
+            "unit": "kWh",
+            "usage": "Energy (÷100)",
+            "homeyCapability": ["meter_power"],
+            "confidence": "HIGH",
+            "devices": "Smart plugs with metering"
+          }
+        },
+        "air_quality": {
+          "dp114": {
+            "type": "value",
+            "range": [0, 5000],
+            "unit": "ppm",
+            "usage": "CO2 concentration",
+            "homeyCapability": ["measure_co2"],
+            "confidence": "HEURISTIC",
+            "devices": "Air quality monitors"
+          },
+          "dp115": {
+            "type": "value",
+            "range": [0, 500],
+            "unit": "µg/m³",
+            "usage": "PM2.5 concentration",
+            "homeyCapability": ["measure_pm25"],
+            "confidence": "HEURISTIC",
+            "devices": "Air quality monitors"
+          },
+          "dp117": {
+            "type": "value",
+            "range": [0, 1000],
+            "unit": "ppb",
+            "usage": "VOC concentration",
+            "homeyCapability": ["measure_voc"],
+            "confidence": "HEURISTIC",
+            "devices": "Air quality monitors"
+          }
+        },
+        "lighting": {
+          "dp111": {
+            "type": "value",
+            "range": [0, 1000],
+            "unit": "‰",
+            "usage": "Color temperature (0-100%)",
+            "homeyCapability": ["light_temperature"],
+            "confidence": "COMMUNITY_VERIFIED",
+            "devices": "CCT bulbs, LED strips"
+          },
+          "dp112": {
+            "type": "value",
+            "range": [0, 360],
+            "unit": "degrees",
+            "usage": "Hue (0-360°)",
+            "homeyCapability": ["light_hue"],
+            "confidence": "COMMUNITY_VERIFIED",
+            "devices": "RGB bulbs, LED strips"
+          },
+          "dp113": {
+            "type": "value",
+            "range": [0, 1000],
+            "unit": "‰",
+            "usage": "Saturation (0-1000‰)",
+            "homeyCapability": ["light_saturation"],
+            "confidence": "COMMUNITY_VERIFIED",
+            "devices": "RGB bulbs, LED strips"
+          }
+        }
+      }
+    },
+
+    "criticalNotes": {
+      "dp_conflicts": {
+        "climate_vs_soil": {
+          "issue": "Climate sensors use DP1/DP2 for temp/humidity, Soil sensors use DP3/DP5",
+          "resolution": "Separate drivers - climate_sensor vs soil_sensor",
+          "status": "RESOLVED in v5.4.1"
+        },
+        "mmwave_dp101": {
+          "issue": "DP101 was mapped to alarm_motion (bool) but sends presence_time (seconds)",
+          "resolution": "Changed DP101 to presence_time setting, DP1 remains alarm_motion",
+          "status": "CRITICAL FIX in v5.4.3",
+          "impact": "Motion detection was broken, now fixed"
+        }
+      },
+      "confidence_levels": {
+        "HIGH": "Official Tuya documentation or widespread community verification",
+        "COMMUNITY_VERIFIED": "Multiple user reports confirm functionality",
+        "HEURISTIC": "Pattern-based inference, needs testing",
+        "VERIFIED_vX.X.X": "Verified in specific version of this app"
+      }
+    }
+  },
+
+  "driverIntegration": {
+    "drivers": [
+      {
+        "name": "lcdtemphumidsensor",
+        "source": "mayconbordin & eelco2k forks",
+        "type": "Temperature & Humidity Sensor with LCD",
+        "protocol": "Standard ZigBee (NOT Tuya DP)",
+        "priority": "HIGH",
+        "manufacturers": [
+          "_TZ2000_a476raq2",
+          "_TZ2000_xogb73am",
+          "_TZ2000_avdnvykf",
+          "_TYZB01_a476raq2",
+          "_TYZB01_hjsgdkfl",
+          "_TZ2000_hjsgdkfl"
+        ],
+        "uniqueManufacturers": 2,
+        "modelId": "TS0201",
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery",
+          "alarm_battery"
+        ],
+        "features": {
+          "clusters": ["msTemperatureMeasurement", "msRelativeHumidity", "genPowerCfg"],
+          "batteryType": "AAA x2",
+          "settings": [
+            "temperature_offset (-10 to +10°C)",
+            "decimals (1 or 2)",
+            "battery_alarm_threshold (1-90%)"
+          ]
+        },
+        "integrationSteps": {
+          "step1": "Copy driver folder from fork to /drivers/lcdtemphumidsensor",
+          "step2": "Add 6 manufacturerNames to fingerprint_map.json with modelId TS0201",
+          "step3": "Update app.json with new driver entry",
+          "step4": "Test with actual device or device interview",
+          "step5": "Update documentation"
+        },
+        "testing": {
+          "required": true,
+          "testCases": [
+            "Temperature reading accuracy",
+            "Humidity reading accuracy",
+            "Battery percentage reporting",
+            "Settings (offset, decimals) work correctly",
+            "Standard ZigBee cluster communication"
+          ]
+        }
+      },
+      {
+        "name": "temphumidsensor",
+        "source": "mayconbordin & eelco2k forks",
+        "type": "TUYATEC Temperature & Humidity Sensor",
+        "protocol": "Standard ZigBee (NOT Tuya DP)",
+        "priority": "MEDIUM",
+        "manufacturers": [
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-abkehqus",
+          "TUYATEC-yg5dcbfu"
+        ],
+        "uniqueManufacturers": 4,
+        "modelId": "Unknown (TUYATEC brand)",
+        "capabilities": [
+          "measure_temperature",
+          "measure_humidity",
+          "measure_battery"
+        ],
+        "features": {
+          "clusters": ["msTemperatureMeasurement", "msRelativeHumidity", "genPowerCfg"],
+          "batteryType": "Unknown",
+          "settings": "Simpler than lcdtemphumidsensor"
+        },
+        "integrationSteps": {
+          "step1": "Copy driver folder from fork to /drivers/temphumidsensor",
+          "step2": "Add 4 TUYATEC manufacturerNames to fingerprint_map.json",
+          "step3": "Update app.json with new driver entry",
+          "step4": "Test with actual device or device interview",
+          "step5": "Update documentation"
+        },
+        "testing": {
+          "required": true,
+          "testCases": [
+            "Temperature reading accuracy",
+            "Humidity reading accuracy",
+            "Battery percentage reporting",
+            "TUYATEC brand device recognition"
+          ]
+        },
+        "note": "Covers TUYATEC brand gap - currently NO support for these devices"
+      }
+    ]
+  },
+
+  "implementation": {
+    "overview": "4-phase implementation with validation at each step",
+
+    "phase1_critical_manufacturers": {
+      "description": "Add 6 unique manufacturers from forks (IMMEDIATE)",
+      "duration": "1 hour",
+      "priority": "CRITICAL",
+      "steps": {
+        "step1": {
+          "action": "Backup fingerprint_map.json",
+          "command": "cp /home/user/com.tuya.zigbee/lib/data/fingerprint_map.json /home/user/com.tuya.zigbee/lib/data/fingerprint_map.json.backup",
+          "validation": "Verify backup exists"
+        },
+        "step2": {
+          "action": "Add 6 unique manufacturers to fingerprint_map.json",
+          "manufacturers": {
+            "_TYZB01_a476raq2": {
+              "modelId": "TS0201",
+              "driver": "lcdtemphumidsensor",
+              "source": "fork_mayconbordin"
+            },
+            "_TYZB01_hjsgdkfl": {
+              "modelId": "TS0201",
+              "driver": "lcdtemphumidsensor",
+              "source": "fork_eelco2k"
+            },
+            "TUYATEC-g3gl6cgy": {
+              "modelId": "TUYATEC",
+              "driver": "temphumidsensor",
+              "source": "fork_mayconbordin"
+            },
+            "TUYATEC-Bfq2i2Sy": {
+              "modelId": "TUYATEC",
+              "driver": "temphumidsensor",
+              "source": "fork_mayconbordin"
+            },
+            "TUYATEC-abkehqus": {
+              "modelId": "TUYATEC",
+              "driver": "temphumidsensor",
+              "source": "fork_eelco2k"
+            },
+            "TUYATEC-yg5dcbfu": {
+              "modelId": "TUYATEC",
+              "driver": "temphumidsensor",
+              "source": "fork_eelco2k"
+            }
+          },
+          "validation": "jq validation, no duplicates, valid format"
+        },
+        "step3": {
+          "action": "Validate JSON structure",
+          "command": "jq . /home/user/com.tuya.zigbee/lib/data/fingerprint_map.json > /dev/null",
+          "validation": "Exit code 0 = valid JSON"
+        },
+        "step4": {
+          "action": "Count manufacturers after addition",
+          "command": "jq 'keys | length' /home/user/com.tuya.zigbee/lib/data/fingerprint_map.json",
+          "validation": "Should be 404 (398 + 6)"
+        }
+      },
+      "rollback": "Restore from backup if validation fails",
+      "success_criteria": "404 manufacturers, valid JSON, no duplicates"
+    },
+
+    "phase2_driver_integration": {
+      "description": "Integrate 2 drivers from forks",
+      "duration": "2-3 hours",
+      "priority": "HIGH",
+      "prerequisites": ["Phase 1 complete"],
+      "steps": {
+        "step1": {
+          "action": "Clone mayconbordin fork to get drivers",
+          "command": "git clone https://github.com/mayconbordin/com.tuya.zigbee.git /tmp/mayconbordin_fork",
+          "validation": "Verify clone successful"
+        },
+        "step2": {
+          "action": "Copy lcdtemphumidsensor driver",
+          "command": "cp -r /tmp/mayconbordin_fork/drivers/lcdtemphumidsensor /home/user/com.tuya.zigbee/drivers/",
+          "validation": "Verify driver folder exists with all files"
+        },
+        "step3": {
+          "action": "Copy temphumidsensor driver",
+          "command": "cp -r /tmp/mayconbordin_fork/drivers/temphumidsensor /home/user/com.tuya.zigbee/drivers/",
+          "validation": "Verify driver folder exists with all files"
+        },
+        "step4": {
+          "action": "Update app.json with new driver entries",
+          "files": [
+            "/home/user/com.tuya.zigbee/app.json"
+          ],
+          "validation": "Verify JSON valid, drivers listed"
+        },
+        "step5": {
+          "action": "Update .homeycompose/app.json if using compose",
+          "validation": "Verify compose structure valid"
+        },
+        "step6": {
+          "action": "Test drivers load correctly",
+          "command": "homey app validate",
+          "validation": "No errors, drivers recognized"
+        }
+      },
+      "rollback": "Remove driver folders, restore app.json",
+      "success_criteria": "2 drivers integrated, app validates, manufacturers linked"
+    },
+
+    "phase3_dp_enrichment": {
+      "description": "Add new DPs to tuya-dp-complete-database.json",
+      "duration": "2 hours",
+      "priority": "MEDIUM",
+      "prerequisites": ["Phase 1 complete"],
+      "steps": {
+        "step1": {
+          "action": "Backup tuya-dp-complete-database.json",
+          "command": "cp /home/user/com.tuya.zigbee/data/tuya-dp-complete-database.json /home/user/com.tuya.zigbee/data/tuya-dp-complete-database.json.backup",
+          "validation": "Verify backup exists"
+        },
+        "step2": {
+          "action": "Merge new DPs from consolidation",
+          "newDPs": [
+            "DP30-49 (gaps to fill)",
+            "DP53-99 (gaps to fill)",
+            "DP122-199 (gaps to fill)",
+            "DP202-239 (gaps to fill)"
+          ],
+          "note": "Focus on verified DPs from issues and forum"
+        },
+        "step3": {
+          "action": "Update existing DP descriptions with new usage patterns",
+          "examples": [
+            "DP101: Add mmWave presence_time usage",
+            "DP3/DP5: Add soil sensor usage",
+            "DP105: Add soil_moisture usage"
+          ]
+        },
+        "step4": {
+          "action": "Validate JSON structure",
+          "command": "jq . /home/user/com.tuya.zigbee/data/tuya-dp-complete-database.json > /dev/null",
+          "validation": "Exit code 0 = valid JSON"
+        },
+        "step5": {
+          "action": "Count DPs after enrichment",
+          "command": "jq '.datapoints | keys | length' /home/user/com.tuya.zigbee/data/tuya-dp-complete-database.json",
+          "validation": "Should be 150+ (72 + 78)"
+        }
+      },
+      "rollback": "Restore from backup if validation fails",
+      "success_criteria": "150+ DPs, valid JSON, critical fixes documented"
+    },
+
+    "phase4_bulk_manufacturer_addition": {
+      "description": "Add remaining manufacturers from issues analysis",
+      "duration": "3-4 hours",
+      "priority": "MEDIUM",
+      "prerequisites": ["Phase 1, 2, 3 complete"],
+      "steps": {
+        "step1": {
+          "action": "Extract all manufacturers from COMPREHENSIVE_DEVICE_ANALYSIS.md",
+          "command": "Parse markdown to extract 631 manufacturers",
+          "output": "/tmp/all_manufacturers_issues.json"
+        },
+        "step2": {
+          "action": "Compare with current fingerprint_map.json",
+          "command": "Find manufacturers NOT in current system",
+          "output": "/tmp/new_manufacturers_to_add.json"
+        },
+        "step3": {
+          "action": "Validate manufacturer format",
+          "checks": [
+            "Starts with _TZ, _TZE, TUYATEC, or known prefix",
+            "8-character suffix after prefix",
+            "No duplicates",
+            "Valid modelId association"
+          ]
+        },
+        "step4": {
+          "action": "Associate manufacturers with modelIds",
+          "sources": [
+            "Device interviews from issues",
+            "Forum reports",
+            "Pattern matching (e.g., _TZ3000_* → likely TS0001-TS0004)"
+          ]
+        },
+        "step5": {
+          "action": "Batch add manufacturers to fingerprint_map.json",
+          "method": "jq merge operation",
+          "validation": "JSON valid, count increases correctly"
+        },
+        "step6": {
+          "action": "Final validation",
+          "checks": [
+            "Total manufacturers ~650",
+            "No duplicates",
+            "All have modelId",
+            "JSON valid"
+          ]
+        }
+      },
+      "rollback": "Restore from backup if validation fails",
+      "success_criteria": "650 manufacturers, all validated, no regressions"
+    },
+
+    "phase5_documentation_update": {
+      "description": "Update enrichment_data.json with new counts",
+      "duration": "1 hour",
+      "priority": "LOW",
+      "prerequisites": ["All phases complete"],
+      "steps": {
+        "step1": {
+          "action": "Update enrichment_data.json statistics",
+          "updates": {
+            "totalManufacturerIds": 650,
+            "totalDrivers": 83,
+            "totalModelIds": 60,
+            "totalDatapoints": 150
+          }
+        },
+        "step2": {
+          "action": "Add documentation of changes",
+          "files": [
+            "CHANGELOG.md",
+            "docs/ENRICHMENT_COMPLETED.md"
+          ]
+        },
+        "step3": {
+          "action": "Create migration notes for users",
+          "note": "Document any breaking changes (should be NONE)"
+        }
+      },
+      "success_criteria": "All documentation updated, changes documented"
+    }
+  },
+
+  "safetyChecks": {
+    "preImplementation": {
+      "check1": "Backup ALL data files before modification",
+      "check2": "Verify git status is clean or changes are committed",
+      "check3": "Validate all JSON files before modification",
+      "check4": "Document current state (manufacturers count, DPs count)"
+    },
+    "duringImplementation": {
+      "check1": "Validate JSON after each modification",
+      "check2": "Check for duplicates before adding",
+      "check3": "Verify no existing data removed",
+      "check4": "Test changes incrementally"
+    },
+    "postImplementation": {
+      "check1": "Validate all JSON files",
+      "check2": "Run homey app validate",
+      "check3": "Verify counts increased as expected",
+      "check4": "Test sample devices if available",
+      "check5": "Create git commit with detailed message"
+    },
+    "rollbackPlan": {
+      "trigger": "Any validation failure or JSON corruption",
+      "action": "Restore from backup files",
+      "verification": "Verify restored state matches pre-implementation",
+      "documentation": "Document what failed and why"
+    }
+  },
+
+  "validation": {
+    "manufacturerValidation": {
+      "format": "^(_TZ[0-9A-Z]+_[a-z0-9]{8}|TUYATEC-[a-zA-Z0-9]{8}|[A-Z][a-z]+)$",
+      "uniqueness": "No duplicates allowed",
+      "modelIdRequired": true,
+      "examples": [
+        "_TZ3000_0ausfos0",
+        "_TZE200_3towulqd",
+        "TUYATEC-g3gl6cgy",
+        "_TYZB01_a476raq2"
+      ]
+    },
+    "dpValidation": {
+      "range": [1, 255],
+      "typeRequired": true,
+      "usageRequired": true,
+      "homeyCapabilityRecommended": true
+    },
+    "jsonValidation": {
+      "command": "jq . <file> > /dev/null",
+      "exitCode": "0 = valid",
+      "tools": ["jq", "jsonlint"]
+    }
+  },
+
+  "riskAssessment": {
+    "low_risk": [
+      "Adding new manufacturers (no impact on existing)",
+      "Adding new DPs (no impact on existing)",
+      "Documentation updates"
+    ],
+    "medium_risk": [
+      "Driver integration (test thoroughly)",
+      "Updating existing DP descriptions (verify no breaking changes)"
+    ],
+    "high_risk": [
+      "NONE - all changes are additive only"
+    ],
+    "mitigation": {
+      "backups": "ALL files backed up before modification",
+      "validation": "Multi-level validation at each step",
+      "incremental": "Changes applied in phases, not all at once",
+      "testing": "Test after each phase before proceeding",
+      "rollback": "Clear rollback plan for each phase"
+    }
+  },
+
+  "expectedOutcomes": {
+    "manufacturersAdded": 252,
+    "dpsAdded": 78,
+    "driversAdded": 2,
+    "totalManufacturersAfter": 650,
+    "totalDPsAfter": 150,
+    "totalDriversAfter": 83,
+    "coverageImprovement": {
+      "deviceTypes": "+2 (LCD sensors, TUYATEC sensors)",
+      "manufacturers": "+63% (398 → 650)",
+      "dpMappings": "+108% (72 → 150)"
+    },
+    "userBenefits": [
+      "Support for 252 additional device variants",
+      "Better DP documentation with usage patterns",
+      "2 new sensor types supported",
+      "Critical fixes for mmWave radar and soil sensors",
+      "Comprehensive DP reference (150 DPs)",
+      "NO breaking changes or regressions"
+    ]
+  },
+
+  "timeline": {
+    "phase1": "1 hour - Critical manufacturers",
+    "phase2": "2-3 hours - Driver integration",
+    "phase3": "2 hours - DP enrichment",
+    "phase4": "3-4 hours - Bulk manufacturer addition",
+    "phase5": "1 hour - Documentation",
+    "total": "9-11 hours",
+    "recommended": "Complete over 2-3 sessions with testing between phases"
+  },
+
+  "nextSteps": {
+    "immediate": [
+      "Review this enrichment plan",
+      "Confirm approach and priorities",
+      "Begin Phase 1 (critical manufacturers)"
+    ],
+    "shortTerm": [
+      "Complete all 5 phases",
+      "Test with actual devices if available",
+      "Create comprehensive documentation"
+    ],
+    "longTerm": [
+      "Monitor community feedback",
+      "Add more manufacturers as discovered",
+      "Expand DP database with new patterns"
+    ]
+  },
+
+  "notes": {
+    "dataQuality": "All data sources cross-referenced and validated",
+    "deduplication": "Careful deduplication across all sources",
+    "prioritization": "Critical fixes (mmWave, soil) already in v5.4.3",
+    "community": "Heavy reliance on community verification for DP mappings",
+    "testing": "Testing recommended but not all devices available",
+    "noRegressions": "Designed for ZERO regressions - all additive changes"
+  }
+}

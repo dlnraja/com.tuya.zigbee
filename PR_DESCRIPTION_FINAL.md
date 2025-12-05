@@ -111,6 +111,31 @@ This PR addresses **three critical issues** reported by the Homey community and 
 
 ---
 
+### 4. Issue #83: WoodUpp LED Driver - ✅ Already Fixed
+
+**Status**: Confirmed resolved in v5.3.77 (pre-existing fix)
+
+**Device**: _TZB210_ngnt8kni / TS0501B (WoodUpp 24V LED Driver)
+
+**Original Problem**:
+- Device paired as "Smart Bulb Dimmer" instead of "LED Controller"
+- ON/OFF and dimming controls didn't work
+- ColorControl cluster (0x0300) advertised but non-functional
+
+**Solution Verification**:
+- ✅ Dedicated `led_controller_dimmable` driver exists
+- ✅ _TZB210_ngnt8kni explicitly supported in driver.compose.json:21
+- ✅ TS0501B model explicitly supported in driver.compose.json:27
+- ✅ Device.js v5.3.77 includes "Fixes Issue #83" comment (line 24)
+- ✅ Full Tuya DataPoint support with 10 dimming strategies
+- ✅ ColorControl cluster properly excluded from bindings
+
+**Documentation**: See `ISSUE_83_STATUS.md` for complete analysis
+
+**Action**: This PR confirms the fix and closes Issue #83
+
+---
+
 ## 🧪 Testing
 
 ### Test Environment
@@ -223,7 +248,7 @@ This PR addresses **three critical issues** reported by the Homey community and 
 
 ## 🔗 Related
 
-**Supersedes**: #84 (draft PR with same goals)  
+
 **Forum thread**: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/
 
 ---
