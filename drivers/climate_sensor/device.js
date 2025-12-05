@@ -3,7 +3,7 @@
 const { HybridSensorBase } = require('../../lib/devices');
 
 /**
- * Climate Sensor Device - v5.3.85 PHANTOM FIX
+ * Climate Sensor Device - v5.4.8 CRITICAL DP FIX
  *
  * Uses HybridSensorBase for:
  * - Anti-double init
@@ -15,10 +15,14 @@ const { HybridSensorBase } = require('../../lib/devices');
  * Supports: Temperature, Humidity, Battery
  *
  * KNOWN MODELS:
- * - TS0601 / _TZE200_* : Standard Tuya climate sensors
- * - TS0601 / _TZE204_* : Newer Tuya climate sensors
- * - TS0601 / _TZE284_* : v2.84 protocol climate sensors (e.g. _TZE284_vvmbj46n)
+ * - TS0601 / _TZE200_* : Standard Tuya climate sensors (DP1/2/4)
+ * - TS0601 / _TZE204_* : Newer Tuya climate sensors (DP1/2/4)
+ * - TS0601 / _TZE284_vvmbj46n : TH05Z LCD climate monitor (DP1/2/4 + config DP9-20)
+ * - TS0601 / _TZE200_vvmbj46n : ONENUO TH05Z (same as above)
  * - TS0201 / _TZ3000_* : ZCL-based sensors (handled via ZCL mode)
+ *
+ * ⚠️  IMPORTANT: DP3/5/15 are for SOIL SENSORS, NOT climate sensors!
+ * Climate sensors use: DP1=temp, DP2=humidity, DP4=battery (x2 multiplier)
  */
 class ClimateSensorDevice extends HybridSensorBase {
 
@@ -31,49 +35,50 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.3.97: UPDATED FROM ZIGBEE2MQTT - Complete DP mappings
-   * Source: https://github.com/Koenkk/zigbee2mqtt/issues/26078
+   * v5.4.8: CORRECTED DP MAPPINGS - Fixed soil sensor vs climate sensor confusion
+   * Sources:
+   * - https://github.com/Koenkk/zigbee2mqtt/issues/26078 (_TZE284_vvmbj46n TH05Z)
+   * - https://raw.githubusercontent.com/kkossev/Hubitat/main/Drivers/Tuya Temperature Humidity Illuminance LCD Display with a Clock/Tuya_Temperature_Humidity_Illuminance_LCD_Display_with_a_Clock.groovy
    *
-   * Covers: _TZE284_vvmbj46n, _TZE200_*, _TZE204_* climate sensors
+   * CRITICAL: DP3, DP5, DP15 are for SOIL SENSORS, NOT climate sensors!
+   * _TZE284_vvmbj46n (TH05Z LCD) uses: DP1=temp, DP2=humidity, DP4=battery
    */
   get dpMappings() {
     return {
       // ═══════════════════════════════════════════════════════════════════
-      // TEMPERATURE (most common DPs) - From Z2M _TZE284_vvmbj46n
+      // TEMPERATURE - Standard DP1 (all climate sensors) + alternative DP18
       // ═══════════════════════════════════════════════════════════════════
       1: { capability: 'measure_temperature', divisor: 10 },    // Standard: value/10 = °C
-      5: { capability: 'measure_temperature', divisor: 10 },    // v5.4.7: _TZE284_vvmbj46n uses DP5
-      18: { capability: 'measure_temperature', divisor: 10 },   // Alternative temp DP
+      18: { capability: 'measure_temperature', divisor: 10 },   // Alternative temp DP (some models)
 
       // ═══════════════════════════════════════════════════════════════════
-      // HUMIDITY - Standard (DP2) + _TZE284_vvmbj46n (DP3)
+      // HUMIDITY - Standard DP2 (all climate sensors)
       // ═══════════════════════════════════════════════════════════════════
       2: { capability: 'measure_humidity', divisor: 1 },        // Standard: direct %
-      3: { capability: 'measure_humidity', divisor: 1 },        // v5.4.7: _TZE284_vvmbj46n uses DP3
 
       // ═══════════════════════════════════════════════════════════════════
-      // BATTERY - Standard (DP4) + _TZE284_vvmbj46n (DP15)
+      // BATTERY - Standard DP4 (most climate sensors with x2 multiplier)
       // v5.3.99: ZHA quirk shows DP4 has x*2 multiplier (device reports half)
-      // v5.4.7: DP15 (_TZE284_vvmbj46n) uses direct percentage
       // ═══════════════════════════════════════════════════════════════════
       4: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(v * 2, 100) },
-      15: { capability: 'measure_battery', divisor: 1 },        // v5.4.7: _TZE284_vvmbj46n direct %
 
       // ═══════════════════════════════════════════════════════════════════
-      // v5.3.97: _TZE284_vvmbj46n SPECIFIC DPs (from Z2M)
+      // v5.4.8: _TZE284_vvmbj46n TH05Z LCD CONFIGURATION DPs
+      // These DPs are for device configuration/settings - not capabilities
+      // Source: https://github.com/Koenkk/zigbee2mqtt/issues/26078
       // ═══════════════════════════════════════════════════════════════════
-      9: { capability: null, setting: 'temperature_unit' },     // 0=C, 1=F
-      10: { capability: null, setting: 'max_temp_alarm', divisor: 10 },
-      11: { capability: null, setting: 'min_temp_alarm', divisor: 10 },
-      12: { capability: null, setting: 'max_humidity_alarm' },
-      13: { capability: null, setting: 'min_humidity_alarm' },
-      // v5.4.7: REMOVED alarm_generic - NOT a valid Homey capability
-      // DP 14 & 15 are alarm states but Homey doesn't have alarm_generic
-      14: { capability: null }, // Temp alarm state (no valid capability)
-      15: { capability: null }, // Humidity alarm (no valid capability)
-      17: { capability: null, setting: 'temp_report_interval' },  // Minutes
-      19: { capability: null, setting: 'temp_sensitivity', divisor: 10 },
-      20: { capability: null, setting: 'humidity_sensitivity' },
+      9: { capability: null, setting: 'temperature_unit' },     // 0=Celsius, 1=Fahrenheit
+      10: { capability: null, setting: 'max_temp_alarm', divisor: 10 },  // Max temp threshold (°C/10)
+      11: { capability: null, setting: 'min_temp_alarm', divisor: 10 },  // Min temp threshold (°C/10)
+      12: { capability: null, setting: 'max_humidity_alarm' },  // Max humidity threshold (%)
+      13: { capability: null, setting: 'min_humidity_alarm' },  // Min humidity threshold (%)
+      // v5.4.8: DP14/DP15 are alarm STATUS (enum: cancel/lower/upper), NOT alarm_generic
+      14: { capability: null }, // Temp alarm status (no valid Homey capability)
+      15: { capability: null }, // Humidity alarm status (no valid Homey capability - NOT battery!)
+      17: { capability: null, setting: 'temp_report_interval' },  // Minutes (1-120)
+      18: { capability: null, setting: 'humidity_report_interval' }, // Minutes (1-120) - was missing in early Z2M
+      19: { capability: null, setting: 'temp_sensitivity', divisor: 10 },  // °C sensitivity (0.3-1.0)
+      20: { capability: null, setting: 'humidity_sensitivity' }, // % sensitivity (3-10)
 
       // ═══════════════════════════════════════════════════════════════════
       // BUTTON PRESS (common for devices with buttons)
@@ -82,11 +87,11 @@ class ClimateSensorDevice extends HybridSensorBase {
       102: { capability: 'button', transform: () => true },     // Alternative button
 
       // ═══════════════════════════════════════════════════════════════════
-      // ADDITIONAL DPs (fallbacks)
+      // ADDITIONAL DPs (fallbacks for other climate sensor variants)
       // ═══════════════════════════════════════════════════════════════════
       6: { capability: 'measure_temperature', divisor: 10 },    // Some _TZE204 models
       7: { capability: 'measure_humidity', divisor: 1 },        // Some _TZE204 models
-      103: { capability: 'measure_humidity', divisor: 1 },      // _TZE284 humidity (some)
+      103: { capability: 'measure_humidity', divisor: 1 },      // Some alternative models
     };
   }
 
