@@ -1,16 +1,16 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.4.5",
-  "lastPublishDatetime": "2025-12-05T18:00:00Z",
+  "version": "5.4.6",
+  "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.4.5: CLEANUP - Removed 67 obsolete .old.js files, fixed capability listeners, validated all JSON",
-    "fr": "V5.4.5: NETTOYAGE - Suppression 67 fichiers .old.js obsolètes, correction capability listeners, validation JSON"
+    "en": "V5.4.6: MAJOR STABILITY - Pairing rollback, ghost device cleanup, memory leak fixes, force wake-up, capability validation",
+    "fr": "V5.4.6: STABILITÉ MAJEURE - Rollback pairing, nettoyage appareils fantômes, correction fuites mémoire, réveil forcé, validation capabilities"
   },
   "category": "appliances",
   "permissions": [],
