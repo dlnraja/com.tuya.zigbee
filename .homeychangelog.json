@@ -1831,5 +1831,9 @@
   },
   "5.3.84": {
     "en": "fix duplicate device"
+  },
+  "5.4.6": {
+    "en": "MAJOR STABILITY RELEASE - Pairing rollback mechanism (fixes ghost devices), 60-second pairing timeout, capability validation before device creation, memory leak fixes (onDeleted cleanup), force device wake-up (fixes NO DATA RECEIVED), Tuya DP only fallback mode. Fixed Invalid Capability errors (alarm_generic, measure_soil_moisture). New drivers: lcdtemphumidsensor, temphumidsensor. Cleanup: Removed 67 obsolete .old.js files (98,616 lines deleted).",
+    "fr": "VERSION STABILITÉ MAJEURE - Mécanisme de rollback pairing (corrige appareils fantômes), timeout pairing 60s, validation capabilities avant création appareil, correction fuites mémoire (nettoyage onDeleted), réveil forcé appareil (corrige AUCUNE DONNÉE REÇUE), mode fallback Tuya DP seul. Corrigé erreurs Invalid Capability (alarm_generic, measure_soil_moisture). Nouveaux drivers: lcdtemphumidsensor, temphumidsensor. Nettoyage: Supprimé 67 fichiers .old.js obsolètes (98,616 lignes supprimées)."
   }
 }
