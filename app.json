@@ -36541,6 +36541,22 @@
       "max": 100,
       "step": 1,
       "uiComponent": "slider"
+    },
+    "measure_soil_moisture": {
+      "type": "number",
+      "title": {
+        "en": "Soil moisture",
+        "fr": "Humidité du sol"
+      },
+      "units": {
+        "en": "%",
+        "fr": "%"
+      },
+      "getable": true,
+      "setable": false,
+      "min": 0,
+      "max": 100,
+      "chartType": "line"
     }
   }
 }

@@ -447,5 +447,28 @@
         "unit": "µS/cm"
       }
     }
+  },
+  "soil_sensor": {
+    "description": "Soil moisture sensors (DP-based)",
+    "dpMap": {
+      "105": {
+        "name": "soil_moisture",
+        "type": "VALUE",
+        "capability": "measure_soil_moisture",
+        "readonly": true,
+        "unit": "%",
+        "conditionalScale": {
+          "threshold": 100,
+          "divisor": 10
+        }
+      },
+      "4": {
+        "name": "battery",
+        "type": "VALUE",
+        "capability": "measure_battery",
+        "readonly": true,
+        "scale": 1
+      }
+    }
   }
 }
