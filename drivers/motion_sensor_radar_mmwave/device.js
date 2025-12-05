@@ -49,8 +49,10 @@ class MotionSensorRadarDevice extends HybridSensorBase {
 
       // ═══════════════════════════════════════════════════════════════════
       // ADVANCED RADAR SETTINGS
+      // v5.4.3: DP101 FIX - presence_time is TIME in seconds, NOT boolean!
+      // Forum: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/290
       // ═══════════════════════════════════════════════════════════════════
-      101: { capability: 'alarm_motion', transform: (v) => v === 1 || v === true }, // Alt presence
+      101: { capability: null, setting: 'presence_time' },         // Presence time (seconds)
       102: { capability: null, setting: 'target_distance' },       // Distance to target (cm)
       103: { capability: 'measure_luminance', divisor: 1 },        // Alt illuminance
       104: { capability: null, setting: 'fading_time' },           // Fading time (s)
