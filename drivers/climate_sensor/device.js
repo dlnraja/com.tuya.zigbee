@@ -1,6 +1,7 @@
 'use strict';
 
 const { HybridSensorBase } = require('../../lib/devices');
+const ZclDataMapper = require('../../lib/zigbee/zcl-data-mapper');
 
 /**
  * Climate Sensor Device - v5.3.85 PHANTOM FIX
@@ -41,13 +42,13 @@ class ClimateSensorDevice extends HybridSensorBase {
       // ═══════════════════════════════════════════════════════════════════
       // TEMPERATURE (most common DPs) - From Z2M _TZE284_vvmbj46n
       // ═══════════════════════════════════════════════════════════════════
-      1: { capability: 'measure_temperature', divisor: 10 },    // Standard: value/10 = °C
-      18: { capability: 'measure_temperature', divisor: 10 },   // Alternative temp DP
+      1: { capability: 'measure_temperature' },    // Standard: value/10 = °C
+      18: { capability: 'measure_temperature' },   // Alternative temp DP
 
       // ═══════════════════════════════════════════════════════════════════
       // HUMIDITY (DP 2) - Standard for TH05Z climate sensors
       // ═══════════════════════════════════════════════════════════════════
-      2: { capability: 'measure_humidity', divisor: 1 },        // Standard: direct %
+      2: { capability: 'measure_humidity' },        // Standard: direct %
 
       // ═══════════════════════════════════════════════════════════════════
       // v5.4.01: REMOVED soil sensor DPs from climate sensor
@@ -84,9 +85,9 @@ class ClimateSensorDevice extends HybridSensorBase {
       // ═══════════════════════════════════════════════════════════════════
       // ADDITIONAL DPs (fallbacks)
       // ═══════════════════════════════════════════════════════════════════
-      6: { capability: 'measure_temperature', divisor: 10 },    // Some _TZE204 models
-      7: { capability: 'measure_humidity', divisor: 1 },        // Some _TZE204 models
-      103: { capability: 'measure_humidity', divisor: 1 },      // _TZE284 humidity (some)
+      6: { capability: 'measure_temperature' },    // Some _TZE204 models
+      7: { capability: 'measure_humidity' },        // Some _TZE204 models
+      103: { capability: 'measure_humidity' },      // _TZE284 humidity (some)
     };
   }
 
@@ -133,6 +134,22 @@ class ClimateSensorDevice extends HybridSensorBase {
       this.log(`[CLIMATE] ║ 🔋 Battery:     ${bat !== null ? bat + '%' : 'waiting...'}`);
       this.log('[CLIMATE] ╚════════════════════════════════════════════════════════╝');
     }, 100);
+  }
+
+  _handleZCLData(cluster, attr, value) {
+    if (cluster === 'temperatureMeasurement' || cluster === 'msTemperatureMeasurement') {
+      const temperature = ZclDataMapper.mapTemperatureFromZcl(value);
+      if (temperature !== null) {
+        this.setCapabilityValue('measure_temperature', temperature);
+      }
+    }
+
+    if (cluster === 'relativeHumidity' || cluster === 'msRelativeHumidity') {
+      const humidity = ZclDataMapper.mapHumidityFromZcl(value);
+      if (humidity !== null) {
+        this.setCapabilityValue('measure_humidity', humidity);
+      }
+    }
   }
 }
 

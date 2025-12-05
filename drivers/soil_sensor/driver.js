@@ -2,11 +2,6 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class SoilSensorDriver extends ZigBeeDriver {
-
-  async onInit() {
-    this.log('SoilSensorDriver initialized');
-  }
-}
-
-module.exports = SoilSensorDriver;
+module.exports = class SoilSensorDriver extends ZigBeeDriver {
+  // no overrides needed
+};
