@@ -2,10 +2,45 @@
 const { HybridPlugBase } = require('../../lib/devices');
 
 /**
- * USB Outlet Advanced Device - v5.4.2 COMPLETE
+ * USB Outlet Advanced Device - v5.4.7 COMPLETE + DOCUMENTED
  *
  * Supports: TS011F, TS0115, TS0601 USB outlets with power monitoring
  * Features: Multiple sockets, USB ports, LED control, button detection, power measurement
+ *
+ * ═══════════════════════════════════════════════════════════════════════════
+ * KNOWN ISSUES & MODEL VARIATIONS (v5.4.7 Documentation)
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * 1. POWER MEASUREMENT DIVISORS:
+ *    - Most models: Power /10, Current /1000, Voltage /10, Energy /100
+ *    - Some models may use different divisors (e.g., Power /100 or direct values)
+ *    - If power readings seem incorrect (10x or 100x off), check device firmware
+ *    - Alternative DPs: 104 (power), 105 (current), 106 (voltage)
+ *
+ * 2. LED INDICATOR CONTROL:
+ *    - Primary DP: 13 (most common)
+ *    - Alternative DP: 101 (some models)
+ *    - Capability: 'onoff.led'
+ *    - Note: Some devices may not support LED control via DP
+ *
+ * 3. BUTTON PRESS DETECTION:
+ *    - DPs: 102, 103, 121 (model-dependent)
+ *    - Capability: 'button' (triggers flow card when pressed)
+ *    - Note: Not all models have physical buttons or report button events
+ *    - Button events are transient (value always returns to false)
+ *
+ * 4. SOCKET/USB CONTROL:
+ *    - Socket 1: DP 1 or DP 7
+ *    - Socket 2: DP 2
+ *    - USB 1: DP 9
+ *    - USB 2: DP 10
+ *    - Note: Not all models have all sockets/USB ports
+ *
+ * 5. ENERGY CONFIGURATION:
+ *    - The device shows "batteries: OTHER" but is actually AC-powered
+ *    - This is due to auto-detection fallback and does not affect functionality
+ *
+ * ═══════════════════════════════════════════════════════════════════════════
  */
 class USBOutletAdvancedDevice extends HybridPlugBase {
 
