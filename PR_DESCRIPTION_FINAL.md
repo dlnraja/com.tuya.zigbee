@@ -12,8 +12,6 @@ This PR addresses **three critical issues** reported by the Homey community and 
 2. **Soil Sensor support missing** - _TZE284_oitavov2 crashes on install
 3. **New capability** - measure_soil_moisture for soil sensors
 
-**Additionally:** ✅ Confirms **Issue #83** (WoodUpp LED Driver) is already resolved in v5.3.77
-
 **Forum discussion**: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/
 
 ---
@@ -250,8 +248,7 @@ This PR addresses **three critical issues** reported by the Homey community and 
 
 ## 🔗 Related
 
-**Supersedes**: #84 (draft PR with same goals)
-**Closes**: #83 (WoodUpp LED Driver - already fixed in v5.3.77, confirmed in this PR)
+
 **Forum thread**: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/
 
 ---
