@@ -64,7 +64,8 @@ class SoilSensorDevice extends HybridSensorBase {
       11: { capability: null, setting: 'min_temp_alarm', divisor: 10 },
       12: { capability: null, setting: 'max_humidity_alarm' },
       13: { capability: null, setting: 'min_humidity_alarm' },
-      14: { capability: 'alarm_generic', transform: (v) => v === 0 || v === 1 },
+      // v5.4.7: REMOVED alarm_generic - NOT a valid Homey capability
+      14: { capability: null }, // Alarm state (no valid capability)
       17: { capability: null, setting: 'report_interval' },
 
       // Fallback DPs
