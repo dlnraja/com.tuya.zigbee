@@ -13279,6 +13279,22 @@
         "alarm_tamper",
         "measure_battery"
       ],
+      "capabilitiesOptions": {
+        "alarm_tamper": {
+          "title": {
+            "en": "SOS Alert",
+            "fr": "Alerte SOS"
+          },
+          "insightsTitleTrue": {
+            "en": "SOS pressed",
+            "fr": "SOS appuyé"
+          },
+          "insightsTitleFalse": {
+            "en": "SOS reset",
+            "fr": "SOS réinitialisé"
+          }
+        }
+      },
       "energy": {
         "batteries": [
           "CR2032",
@@ -13660,8 +13676,7 @@
           "id": "add_devices",
           "template": "add_devices"
         }
-      ],
-      "capabilitiesOptions": {}
+      ]
     },
     {
       "name": {
@@ -16965,8 +16980,17 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "measure_battery"
+        "measure_battery",
+        "button"
       ],
+      "capabilitiesOptions": {
+        "button": {
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          }
+        }
+      },
       "energy": {
         "batteries": [
           "AAA",
@@ -18941,15 +18965,15 @@
     },
     {
       "name": {
-        "en": "2-Channel Dimmer Module"
+        "en": "2-Channel Dimmer Module",
+        "da": "2-kanals dæmpermodul"
       },
       "class": "light",
       "capabilities": [
-        "dim",
         "onoff",
-        "measure_battery",
-        "onoff.1",
-        "dim.1"
+        "dim",
+        "onoff.channel2",
+        "dim.channel2"
       ],
       "platforms": [
         "local"
@@ -18989,26 +19013,46 @@
               6,
               8
             ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
           }
         }
       },
       "capabilitiesOptions": {
         "onoff": {
-          "setOnDim": true
+          "title": {
+            "en": "Channel 1",
+            "da": "Kanal 1"
+          }
         },
         "dim": {
           "title": {
-            "en": "Brightness 1"
+            "en": "Brightness 1",
+            "da": "Lysstyrke 1"
           }
         },
-        "onoff.1": {
+        "onoff.channel2": {
           "title": {
-            "en": "Channel 2"
+            "en": "Channel 2",
+            "da": "Kanal 2"
           }
         },
-        "dim.1": {
+        "dim.channel2": {
           "title": {
-            "en": "Brightness 2"
+            "en": "Brightness 2",
+            "da": "Lysstyrke 2"
           }
         }
       },
@@ -19016,11 +19060,6 @@
         "large": "drivers/dimmer_dual_channel/assets/images/large.png",
         "xlarge": "drivers/dimmer_dual_channel/assets/images/xlarge.png",
         "small": "drivers/dimmer_dual_channel/assets/images/small.png"
-      },
-      "energy": {
-        "batteries": [
-          "OTHER"
-        ]
       },
       "id": "dimmer_dual_channel"
     },
@@ -22546,6 +22585,59 @@
           "template": "add_devices"
         }
       ]
+    },
+    {
+      "name": {
+        "en": "LCD Temperature & Humidity Sensor",
+        "fr": "Capteur de Température et Humidité LCD"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TYZB01_a476raq2",
+          "_TYZB01_hjsgdkfl",
+          "_TZ2000_a476raq2",
+          "_TZ2000_xogb73am",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl"
+        ],
+        "productId": [
+          "TS0201"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1026,
+              1029
+            ],
+            "bindings": [
+              1,
+              1026,
+              1029
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/lcdtemphumidsensor/assets/images/small.png",
+        "large": "drivers/lcdtemphumidsensor/assets/images/large.png",
+        "xlarge": "drivers/lcdtemphumidsensor/assets/images/xlarge.png"
+      },
+      "id": "lcdtemphumidsensor"
     },
     {
       "name": {
@@ -28965,8 +29057,8 @@
     },
     {
       "name": {
-        "en": "Soil Sensor",
-        "fr": "Capteur de Sol"
+        "en": "Soil Moisture Sensor",
+        "fr": "Capteur d'Humidité du Sol"
       },
       "class": "sensor",
       "capabilities": [
@@ -28974,620 +29066,46 @@
         "measure_humidity",
         "measure_battery"
       ],
+      "capabilitiesOptions": {
+        "measure_humidity": {
+          "title": {
+            "en": "Soil Moisture",
+            "fr": "Humidité du Sol"
+          },
+          "units": {
+            "en": "%"
+          }
+        }
+      },
       "energy": {
         "batteries": [
           "AAA",
-          "CR2032"
+          "CR2032",
+          "CR2450"
         ]
       },
+      "subDevices": [],
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_0s1izerx",
-          "_TZ3000_1o6x1bl0",
-          "_TZ3000_1twfmkcc",
-          "_TZ3000_f2bw0b6k",
-          "_TZ3000_fie1dpkm",
-          "_TZ3000_fllyghyj",
-          "_TZ3000_gntwytxo",
-          "_TZ3000_isw9u95y",
-          "_TZ3000_lqmvrwa2",
-          "_TZ3000_mxzo5rhf",
-          "_TZ3000_rdhukkmi",
-          "_TZ3000_saiqcn0y",
-          "_TZ3000_v1w2k9dd",
-          "_TZ3000_xyz",
-          "_TZ3000_zl1kmjqx",
-          "_TZ3210_alxkwn0h",
-          "_TZ3210_fgwhjm9j",
-          "_TZE200_2aaelwxk",
-          "_TZE200_2ekuz3dz",
-          "_TZE200_2se8efxh",
-          "_TZE200_3p5ydos3",
-          "_TZE200_4mh6tyyo",
-          "_TZE200_68nvbio9",
-          "_TZE200_6kijc7nd",
-          "_TZE200_8viydiwr",
-          "_TZE200_9cqcpkgb",
-          "_TZE200_9yapgbuv",
-          "_TZE200_a0gvbdgv",
-          "_TZE200_a4bpgplm",
-          "_TZE200_a7sghmms",
-          "_TZE200_ga1maeof",
-          "_TZE200_hhrtiq0x",
-          "_TZE200_ip2akl4w",
-          "_TZE200_myd45weu",
-          "_TZE200_n5fxyyjw",
-          "_TZE200_n8dljorx",
-          "_TZE204_myd45weu",
-          "_TZE284_2se8efxh",
-          "_TZE284_33bwcga2",
-          "_TZE284_3urschql",
-          "_TZE284_aao3yzhs",
-          "_TZE284_ap9owrsa",
-          "_TZE284_awepdiwi",
-          "_TZE284_g2e6cpnw",
-          "_TZE284_myd45weu",
-          "_TZE284_nhgdf6qr",
-          "_TZE284_nt4pquef",
           "_TZE284_oitavov2",
-          "_TZE284_sgabhwa6",
-          "_TZE284_wckqztdq",
-          "_TZE200_01fvxamo",
-          "_TZE200_0hg58wyk",
-          "_TZE200_0j5jma9b",
-          "_TZE200_0u3bj3rc",
-          "_TZE200_1agwnems",
-          "_TZE200_1drr8tab",
-          "_TZE200_1ibpyhdc",
-          "_TZE200_2atgpdho",
-          "_TZE200_2hf7x9n3",
-          "_TZE200_2imwyigp",
-          "_TZE200_2m38mh6k",
-          "_TZE200_2pddnnrk",
-          "_TZE200_2vfxweng",
-          "_TZE200_3ejwxpmu",
-          "_TZE200_3t91nb6k",
-          "_TZE200_3towulqd",
-          "_TZE200_3xfjp0ag",
-          "_TZE200_44af8vyi",
-          "_TZE200_4eeyebrt",
-          "_TZE200_579lguh2",
-          "_TZE200_5d3vhjro",
-          "_TZE200_6wi2mope",
-          "_TZE200_78ioiaml",
-          "_TZE200_7bztmfm1",
-          "_TZE200_7deq70b8",
-          "_TZE200_7fqkphoq",
-          "_TZE200_7sjncirf",
-          "_TZE200_86nbew0j",
-          "_TZE200_8eazvzo6",
-          "_TZE200_8ply8mjj",
-          "_TZE200_8thwkzxl",
-          "_TZE200_8whxpsiw",
-          "_TZE200_8ygsuhe1",
-          "_TZE200_9i9dt8is",
-          "_TZE200_9p5xmj5r",
-          "_TZE200_9sfg7gm0",
-          "_TZE200_a8sdabtg",
-          "_TZE200_a8z0g46u",
-          "_TZE200_afycb3cg",
-          "_TZE200_ahpcyzth",
-          "_TZE200_aqnazj70",
-          "_TZE200_atpwqgml",
-          "_TZE200_auin8mzr",
-          "_TZE200_ax8a8ahx",
-          "_TZE200_ba69l9ol",
-          "_TZE200_bcusnqt8",
-          "_TZE200_bfmfhxra",
-          "_TZE200_bh3n6gk8",
-          "_TZE200_bjawzodf",
-          "_TZE200_blfcpsxz",
-          "_TZE200_bq5c8xfe",
-          "_TZE200_bynnczcb",
-          "_TZE200_byzdayie",
-          "_TZE200_c2fmom5z",
-          "_TZE200_cduqh1l0",
-          "_TZE200_cirvgep4",
-          "_TZE200_ckud7u2l",
-          "_TZE200_clm4gdw4",
-          "_TZE200_cpmgn2cf",
-          "_TZE200_cqtamhh5",
-          "_TZE200_ctq0k47x",
-          "_TZE200_cwnjrr72",
-          "_TZE200_d7lpruvi",
-          "_TZE200_d9mzkhoq",
-          "_TZE200_df04ghrb",
-          "_TZE200_dfxkcots",
-          "_TZE200_dhke3p9w",
-          "_TZE200_di3tfv5b",
-          "_TZE200_dikb3dp6",
-          "_TZE200_dikkika5",
-          "_TZE200_dnz6yvl2",
-          "_TZE200_do5qy8zo",
-          "_TZE200_dq1mfjug",
-          "_TZE200_drs6j6m5",
-          "_TZE200_dv8abrrz",
-          "_TZE200_dwcarsat",
-          "_TZE200_e2bedvo9",
-          "_TZE200_e3oitdyu",
-          "_TZE200_eaac7dkw",
-          "_TZE200_ebwgzdqq",
-          "_TZE200_edl8pz1k",
-          "_TZE200_eevqq1uv",
-          "_TZE200_ehhrv2e3",
-          "_TZE200_emxxanvi",
-          "_TZE200_eo6xhfbo",
-          "_TZE200_ewxhg6o9",
-          "_TZE200_fjjbhx9d",
-          "_TZE200_fodv6bkr",
-          "_TZE200_fsb6zw01",
-          "_TZE200_fsow0qsk",
-          "_TZE200_fwoorn8y",
-          "_TZE200_g5xqosu7",
-          "_TZE200_g9a3awaj",
-          "_TZE200_gbagoilo",
-          "_TZE200_ggev5fsl",
-          "_TZE200_gjldowol",
-          "_TZE200_gkfbdvyx",
-          "_TZE200_gnw1rril",
-          "_TZE200_go3tvswy",
-          "_TZE200_gomuk3dc",
-          "_TZE200_grgol3xp",
-          "_TZE200_gubdgai2",
-          "_TZE200_gwkapsoq",
-          "_TZE200_h2rctifa",
-          "_TZE200_ha0vwoew",
-          "_TZE200_hdih4foa",
-          "_TZE200_hggxgsjj",
-          "_TZE200_hkdl5fmv",
-          "_TZE200_hmqzfqml",
-          "_TZE200_holel4dk",
-          "_TZE200_hue3yfsn",
-          "_TZE200_husqqvux",
-          "_TZE200_iba1ckek",
-          "_TZE200_ijey4q29",
-          "_TZE200_ikvncluo",
-          "_TZE200_io0zdqh1",
-          "_TZE200_iq4ygaai",
-          "_TZE200_iuk8kupi",
-          "_TZE200_iwn0gpzz",
-          "_TZE200_j7sgd8po",
-          "_TZE200_jfw0a4aa",
-          "_TZE200_ji1gn7rw",
-          "_TZE200_jkbljri7",
-          "_TZE200_js3mgbjb",
-          "_TZE200_jsaqgakf",
-          "_TZE200_jthf7vb6",
-          "_TZE200_jva8ink8",
-          "_TZE200_jwsjbxjs",
-          "_TZE200_jxyhl4eq",
-          "_TZE200_k6jhsr0q",
-          "_TZE200_ka8l86iu",
-          "_TZE200_kb5noeto",
-          "_TZE200_kccdzaeo",
-          "_TZE200_kds0pmmv",
-          "_TZE200_kf2hbko4",
-          "_TZE200_khx7nnka",
-          "_TZE200_khzbklyh",
-          "_TZE200_kijxnb8q",
-          "_TZE200_kltffuzl",
-          "_TZE200_kvpwq8z7",
-          "_TZE200_kyfqmmyl",
-          "_TZE200_kzm5w4iz",
-          "_TZE200_lawxy9e2",
-          "_TZE200_leaqthqq",
-          "_TZE200_lhqtjwax",
-          "_TZE200_libht6ua",
-          "_TZE200_lllliz3p",
-          "_TZE200_llvwkkde",
-          "_TZE200_lnbfnyxd",
-          "_TZE200_lpwgshtl",
-          "_TZE200_lsanae15",
-          "_TZE200_lu01t0zl",
-          "_TZE200_lyetpprm",
-          "_TZE200_m9skfctm",
-          "_TZE200_mby4kbtq",
-          "_TZE200_mexisfik",
-          "_TZE200_mfamvsdb",
-          "_TZE200_mgxy2d9f",
-          "_TZE200_mja3fuja",
-          "_TZE200_mp902om5",
-          "_TZE200_mudxchsu",
-          "_TZE200_mwvfvw8g",
-          "_TZE200_mx6u6l4y",
-          "_TZE200_na5qlzow",
-          "_TZE200_nh9m9emk",
-          "_TZE200_nkjintbl",
-          "_TZE200_nklqjk62",
-          "_TZE200_nojsjtj2",
-          "_TZE200_npj9bug3",
-          "_TZE200_nslr42tt",
-          "_TZE200_ntcy3xu1",
-          "_TZE200_nus5kk3n",
-          "_TZE200_nvodulvi",
-          "_TZE200_nvups4nh",
-          "_TZE200_ny94onlb",
-          "_TZE200_oc7xqqbs",
-          "_TZE200_ogkdpgy2",
-          "_TZE200_oisqyl4o",
-          "_TZE200_ojtqawav",
-          "_TZE200_ojzhk75b",
-          "_TZE200_oyti2ums",
-          "_TZE200_p0gzbqct",
-          "_TZE200_p2qzzazi",
-          "_TZE200_p9zbdqgs",
-          "_TZE200_pay2byax",
-          "_TZE200_pbo8cj0z",
-          "_TZE200_pl31aqf5",
-          "_TZE200_ppuj1vem",
-          "_TZE200_pvvbommb",
-          "_TZE200_qanl25yu",
-          "_TZE200_qhlxve78",
-          "_TZE200_qjp4ynvi",
-          "_TZE200_qoy0ekbd",
-          "_TZE200_qq9mpfhw",
-          "_TZE200_qxyh4r7g",
-          "_TZE200_qyflbnbj",
-          "_TZE200_qyss8gjy",
-          "_TZE200_qzaing2g",
-          "_TZE200_r32ctezx",
-          "_TZE200_raz9qavg",
-          "_TZE200_rbbx5mfq",
-          "_TZE200_rccxox8p",
-          "_TZE200_rhblgy0z",
-          "_TZE200_rks0sgb7",
-          "_TZE200_rtrmfadk",
-          "_TZE200_ryfmq5rl",
-          "_TZE200_s1xgth2u",
-          "_TZE200_s7rsrtbg",
-          "_TZE200_sbyx0lm6",
-          "_TZE200_sgpeacqp",
-          "_TZE200_snfdqllf",
-          "_TZE200_sur6q7ko",
-          "_TZE200_swaamsoy",
-          "_TZE200_t3xd7l44",
-          "_TZE200_t5p1vj8r",
-          "_TZE200_tbgecldg",
-          "_TZE200_tmszbtzq",
-          "_TZE200_toeldckg",
-          "_TZE200_ttcovulf",
-          "_TZE200_tyffvoij",
-          "_TZE200_u319yc66",
-          "_TZE200_u6x1zyv2",
-          "_TZE200_uebojraa",
-          "_TZE200_ugekduaj",
-          "_TZE200_uli8wasj",
-          "_TZE200_upagmta9",
-          "_TZE200_utkemkbs",
-          "_TZE200_ux5v4dbd",
-          "_TZE200_v1jqz5cy",
-          "_TZE200_v6ossqfy",
-          "_TZE200_v9hkz2yn",
-          "_TZE200_vdiuwbkq",
-          "_TZE200_ves1ycwx",
-          "_TZE200_vhy3iakz",
-          "_TZE200_viy9ihs7",
-          "_TZE200_vizxbhco",
-          "_TZE200_vm1gyrso",
-          "_TZE200_vmcgja59",
-          "_TZE200_vrcfo4i0",
-          "_TZE200_vrfecyku",
-          "_TZE200_vs0skpuc",
-          "_TZE200_vucankjx",
-          "_TZE200_vuqzj1ej",
-          "_TZE200_vuwtqx0t",
-          "_TZE200_vvmbj46n",
-          "_TZE200_vzekyi4c",
-          "_TZE200_vzqtvljm",
-          "_TZE200_w4cryh2i",
-          "_TZE200_w6n8jeuu",
-          "_TZE200_wbhaespm",
-          "_TZE200_wem3gxyx",
-          "_TZE200_wfxuhoea",
-          "_TZE200_whkgqxse",
-          "_TZE200_whpb9yts",
-          "_TZE200_wktrysab",
-          "_TZE200_wqashyqo",
-          "_TZE200_wrmhp6b3",
-          "_TZE200_wukb7rhc",
-          "_TZE200_wunufsil",
-          "_TZE200_wvovwe9h",
-          "_TZE200_wzk0x7fq",
-          "_TZE200_x8fp01wi",
-          "_TZE200_xby0s3ta",
-          "_TZE200_xlnzk169",
-          "_TZE200_xpq2rzhq",
-          "_TZE200_xpvamyfz",
-          "_TZE200_y8jijhba",
-          "_TZE200_ya4ft0w4",
-          "_TZE200_yflzeeqj",
-          "_TZE200_yh7aoahi",
-          "_TZE200_yi4jtqq1",
-          "_TZE200_yjjdcqsq",
-          "_TZE200_yjryxpot",
-          "_TZE200_ykglasuj",
-          "_TZE200_yojqa8xn",
-          "_TZE200_ypprdwsl",
-          "_TZE200_ysm4dsb1",
-          "_TZE200_ytibqbra",
-          "_TZE200_yvx5lh6k",
-          "_TZE200_ywdxldoj",
-          "_TZE200_ywe90lt0",
-          "_TZE200_zbfmvj13",
-          "_TZE200_zl1kmjqx",
-          "_TZE200_znbl8dj5",
-          "_TZE200_znlqjmih",
-          "_TZE200_znzs7yaw",
-          "_TZE200_ztc6ggyl",
-          "_TZE200_zvo63cmo",
-          "_TZE200_zyrdrmno",
-          "_TZE204_1wnh8bqp",
-          "_TZE204_2imwyigp",
-          "_TZE204_2rvvqjoa",
-          "_TZE204_3ejwxpmu",
-          "_TZE204_3regm3h6",
-          "_TZE204_3t91nb6k",
-          "_TZE204_432zhuwe",
-          "_TZE204_4bjixefp",
-          "_TZE204_6a4vxfnv",
-          "_TZE204_6kijc7nd",
-          "_TZE204_6wi2mope",
-          "_TZE204_78ioiaml",
-          "_TZE204_7bztmfm1",
-          "_TZE204_7gclukjs",
-          "_TZE204_7ytnacie",
-          "_TZE204_81yrt3lo",
-          "_TZE204_9qhuzgo0",
-          "_TZE204_9yapgbuv",
-          "_TZE204_a8z0g46u",
-          "_TZE204_aagrxlbd",
-          "_TZE204_aai5grix",
-          "_TZE204_ac0fhfiq",
-          "_TZE204_adlblwab",
-          "_TZE204_atdqo4nj",
-          "_TZE204_atpwqgml",
-          "_TZE204_bmdsp6bs",
-          "_TZE204_c2fmom5z",
-          "_TZE204_chbyv06x",
-          "_TZE204_cirvgep4",
-          "_TZE204_cjbofhxw",
-          "_TZE204_cvub6xbb",
-          "_TZE204_d6i25bwg",
-          "_TZE204_d7lpruvi",
-          "_TZE204_dapwryy7",
-          "_TZE204_dcnsggvz",
-          "_TZE204_debczeci",
-          "_TZE204_dhotiauw",
-          "_TZE204_dikb3dp6",
-          "_TZE204_dqolcpcp",
-          "_TZE204_drs6j6m5",
-          "_TZE204_dsagrkvg",
-          "_TZE204_dvosyycn",
-          "_TZE204_dwcarsat",
-          "_TZE204_dzuqwsyg",
-          "_TZE204_e9ajs4ft",
-          "_TZE204_eaulras5",
-          "_TZE204_edl8pz1k",
-          "_TZE204_eekpf0ft",
-          "_TZE204_ejh6owwz",
-          "_TZE204_ex3rcdha",
-          "_TZE204_fhvdgeuh",
-          "_TZE204_fncxk3ob",
-          "_TZE204_g2ki0ejr",
-          "_TZE204_g4au0afs",
-          "_TZE204_g5xqosu7",
-          "_TZE204_gbagoilo",
-          "_TZE204_gkfbdvyx",
-          "_TZE204_gomuk3dc",
-          "_TZE204_hcxvyxa5",
-          "_TZE204_hiith90n",
-          "_TZE204_iadro9bf",
-          "_TZE204_iaeejhvf",
-          "_TZE204_ijxvkhd0",
-          "_TZE204_ilzkxrav",
-          "_TZE204_iuk8kupi",
-          "_TZE204_iwn0gpzz",
-          "_TZE204_jcwbwckh",
-          "_TZE204_jygvp6fk",
-          "_TZE204_k7mfgaen",
-          "_TZE204_khx7nnka",
-          "_TZE204_kobbcyum",
-          "_TZE204_ksz749x8",
-          "_TZE204_kvpwq8z7",
-          "_TZE204_kyhbrfyl",
-          "_TZE204_l6llgoxq",
-          "_TZE204_l8xiyymq",
-          "_TZE204_laokfqwu",
-          "_TZE204_lawxy9e2",
-          "_TZE204_loejka0i",
-          "_TZE204_lsanae15",
-          "_TZE204_ltwbm23f",
-          "_TZE204_lzriup1j",
-          "_TZE204_m64smti7",
-          "_TZE204_mby4kbtq",
-          "_TZE204_mhxn2jso",
-          "_TZE204_mpbki2zm",
-          "_TZE204_mrffaamu",
-          "_TZE204_mtoaryre",
-          "_TZE204_mul9abs3",
-          "_TZE204_muvkrjr5",
-          "_TZE204_mvtclclq",
-          "_TZE204_mwomyz5n",
-          "_TZE204_n9ctkb6j",
-          "_TZE204_nbkshs6k",
-          "_TZE204_ncti2pro",
-          "_TZE204_no6qtgtl",
-          "_TZE204_ntcy3xu1",
-          "_TZE204_ny94onlb",
-          "_TZE204_ogkdpgy2",
-          "_TZE204_ogx8u5z6",
-          "_TZE204_oh8y8pv8",
-          "_TZE204_oqtpvx51",
-          "_TZE204_pcdmj88b",
-          "_TZE204_ptaqh9tk",
-          "_TZE204_q12rv9gj",
-          "_TZE204_q22avxbv",
-          "_TZE204_q9xty0ad",
-          "_TZE204_qasjif9e",
-          "_TZE204_qhlxve78",
-          "_TZE204_qyflbnbj",
-          "_TZE204_r32ctezx",
-          "_TZE204_rbbx5mfq",
-          "_TZE204_rhblgy0z",
-          "_TZE204_rkbxtclc",
-          "_TZE204_sbyx0lm6",
-          "_TZE204_sooucan5",
-          "_TZE204_sxm7l9xa",
-          "_TZE204_tagezcph",
-          "_TZE204_tbgecldg",
-          "_TZE204_tdhnhhiy",
-          "_TZE204_tzreobvu",
-          "_TZE204_ugekduaj",
-          "_TZE204_unsxl4ir",
-          "_TZE204_uo8qcagc",
-          "_TZE204_upagmta9",
-          "_TZE204_utkemkbs",
-          "_TZE204_uxllnywp",
-          "_TZE204_v6iczj35",
-          "_TZE204_v9hkz2yn",
-          "_TZE204_ves1ycwx",
-          "_TZE204_vevc4c6g",
-          "_TZE204_vjpaih9f",
-          "_TZE204_vmcgja59",
-          "_TZE204_w1wwxoja",
-          "_TZE204_wbhaespm",
-          "_TZE204_wfxuhoea",
-          "_TZE204_wktrysab",
-          "_TZE204_wvovwe9h",
-          "_TZE204_x8fp01wi",
-          "_TZE204_xalsoe3m",
-          "_TZE204_xnbkhhdr",
-          "_TZE204_xpq2rzhq",
-          "_TZE204_xsm7l9xa",
-          "_TZE204_xu4a5rhj",
-          "_TZE204_ya4ft0w4",
-          "_TZE204_yjjdcqsq",
-          "_TZE204_yojqa8xn",
-          "_TZE204_yvx5lh6k",
-          "_TZE204_zjhoqbrd",
-          "_TZE204_zougpkpy",
-          "_TZE204_zqq3cipq",
-          "_TZE204_ztc6ggyl",
-          "_TZe21c_dohbhb5k",
-          "_TZE284_0ints6wl",
-          "_TZE284_1lvln0x6",
-          "_TZE284_1wnh8bqp",
-          "_TZE284_2gi1hy8s",
-          "_TZE284_432zhuwe",
-          "_TZE284_4cqhd2ha",
-          "_TZE284_4hdbt6rn",
-          "_TZE284_5ys44kzo",
-          "_TZE284_65gzcss7",
-          "_TZE284_6kijc7nd",
-          "_TZE284_6teua268",
-          "_TZE284_6ycgarab",
-          "_TZE284_78ioiaml",
-          "_TZE284_7zazvlyn",
-          "_TZE284_81yrt3lo",
-          "_TZE284_8zizsafo",
-          "_TZE284_9ern5sfh",
-          "_TZE284_9xstqowh",
-          "_TZE284_a14rjslz",
-          "_TZE284_aaeaifez",
-          "_TZE284_aai5grix",
-          "_TZE284_ac0fhfiq",
-          "_TZE284_agcxaw3f",
-          "_TZE284_ai4rqhky",
-          "_TZE284_ajlu4cud",
-          "_TZE284_atuj3i0w",
-          "_TZE284_chbyv06x",
-          "_TZE284_cjbofhxw",
-          "_TZE284_cvub6xbb",
-          "_TZE284_cwyqwqbf",
-          "_TZE284_d7lpruvi",
-          "_TZE284_debczeci",
-          "_TZE284_dhke3p9w",
-          "_TZE284_dikb3dp6",
-          "_TZE284_dqolcpcp",
-          "_TZE284_dvosyycn",
-          "_TZE284_e2bedvo9",
-          "_TZE284_eaet5qt5",
-          "_TZE284_eekpf0ft",
-          "_TZE284_fhvpaltk",
-          "_TZE284_fncxk3ob",
-          "_TZE284_fzo2pocs",
-          "_TZE284_gomuk3dc",
-          "_TZE284_gyzlwu5q",
-          "_TZE284_hdyjyqjm",
-          "_TZE284_hecsejsb",
-          "_TZE284_iadro9bf",
-          "_TZE284_idn2htgu",
-          "_TZE284_iwn0gpzz",
-          "_TZE284_iwyqtclw",
-          "_TZE284_k7p2q5d9",
-          "_TZE284_khah2lkr",
-          "_TZE284_kobbcyum",
-          "_TZE284_kyyu8rbj",
-          "_TZE284_l8xiyymq",
-          "_TZE284_libht6ua",
-          "_TZE284_loejka0i",
-          "_TZE284_m1cvyneb",
-          "_TZE284_madl8ejv",
-          "_TZE284_mrffaamu",
-          "_TZE284_ny94onlb",
-          "_TZE284_o9ofysmo",
-          "_TZE284_ogx8u5z6",
-          "_TZE284_p3dbf6qs",
-          "_TZE284_pcdmj88b",
-          "_TZE284_pglpvdar",
-          "_TZE284_qhlxve78",
-          "_TZE284_qyflbnbj",
-          "_TZE284_r3szw0xr",
-          "_TZE284_rccxox8p",
-          "_TZE284_s5vuaadg",
-          "_TZE284_tbgecldg",
-          "_TZE284_tgeqdjgk",
-          "_TZE284_tuhfx7tf",
-          "_TZE284_tzreobvu",
-          "_TZE284_upagmta9",
-          "_TZE284_utkemkbs",
-          "_TZE284_v9hkz2yn",
-          "_TZE284_ves1ycwx",
-          "_TZE284_vjpaih9f",
-          "_TZE284_vmcgja59",
-          "_TZE284_vuwtqx0t",
-          "_TZE284_wbhaespm",
-          "_TZE284_xc3vwx5a",
-          "_TZE284_xnbkhhdr",
-          "_TZE284_xpvamyfz",
-          "_TZE284_yjjdcqsq",
-          "_TZE284_ymldrmzx",
-          "_TZE284_yzr43ayq",
-          "_TZE284_z5jz7wpo",
-          "_TZE284_zeldawjv",
-          "_TZE284_zjhoqbrd",
-          "_TZE284_zm8zpwas",
-          "_TZE284_znlqjmih",
-          "_TZE284_zpvusbtv",
-          "_TZE284_zqq3cipq"
+          "_TZE200_myd45weu",
+          "_TZE204_myd45weu",
+          "_TZE284_myd45weu"
         ],
         "productId": [
-          "C3007",
-          "SZWS",
-          "Soil-Sensor",
-          "TS0601",
-          "ZG-303Z"
+          "TS0601"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              61184,
-              1032,
+              1,
               1026,
-              1
+              1029
             ],
             "bindings": [
+              1026,
+              1029,
               1
             ]
           }
@@ -30901,24 +30419,14 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1"
+            "en": "Gang 1",
+            "fr": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2"
-          }
-        },
-        "measure_battery": {
-          "title": {
-            "en": "Battery",
-            "fr": "Batterie"
-          },
-          "preventInsights": false
-        },
-        "onoff.1": {
-          "title": {
-            "en": "Switch 2"
+            "en": "Gang 2",
+            "fr": "Gang 2"
           }
         }
       },
@@ -30972,12 +30480,9 @@
     {
       "class": "socket",
       "capabilities": [
+        "onoff",
         "onoff.gang2",
         "onoff.gang3",
-        "onoff",
-        "onoff.1",
-        "onoff.2",
-        "alarm_battery",
         "measure_power",
         "meter_power"
       ],
@@ -31330,34 +30835,20 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Gang 1"
+            "en": "Gang 1",
+            "fr": "Gang 1"
           }
         },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2"
+            "en": "Gang 2",
+            "fr": "Gang 2"
           }
         },
         "onoff.gang3": {
           "title": {
-            "en": "Gang 3"
-          }
-        },
-        "measure_battery": {
-          "title": {
-            "en": "Battery",
-            "fr": "Batterie"
-          },
-          "preventInsights": false
-        },
-        "onoff.1": {
-          "title": {
-            "en": "Switch 2"
-          }
-        },
-        "onoff.2": {
-          "title": {
-            "en": "Switch 3"
+            "en": "Gang 3",
+            "fr": "Gang 3"
           }
         }
       },
@@ -31411,17 +30902,10 @@
     {
       "class": "socket",
       "capabilities": [
-        "onoff.button2",
-        "onoff.button3",
-        "onoff.button4",
-        "button.2",
-        "button.3",
-        "button.4",
         "onoff",
-        "onoff.1",
-        "onoff.2",
-        "onoff.3",
-        "alarm_battery",
+        "onoff.gang2",
+        "onoff.gang3",
+        "onoff.gang4",
         "measure_power"
       ],
       "zigbee": {
@@ -31820,44 +31304,22 @@
             "fr": "Gang 1"
           }
         },
-        "onoff.button2": {
+        "onoff.gang2": {
           "title": {
             "en": "Gang 2",
             "fr": "Gang 2"
           }
         },
-        "onoff.button3": {
+        "onoff.gang3": {
           "title": {
             "en": "Gang 3",
             "fr": "Gang 3"
           }
         },
-        "onoff.button4": {
+        "onoff.gang4": {
           "title": {
             "en": "Gang 4",
             "fr": "Gang 4"
-          }
-        },
-        "measure_battery": {
-          "title": {
-            "en": "Battery",
-            "fr": "Batterie"
-          },
-          "preventInsights": false
-        },
-        "onoff.1": {
-          "title": {
-            "en": "Switch 2"
-          }
-        },
-        "onoff.2": {
-          "title": {
-            "en": "Switch 3"
-          }
-        },
-        "onoff.3": {
-          "title": {
-            "en": "Switch 4"
           }
         }
       },
@@ -31966,12 +31428,10 @@
       },
       "class": "socket",
       "capabilities": [
-        "onoff.1",
-        "onoff.2",
+        "onoff",
+        "onoff.outlet2",
         "measure_power",
-        "meter_power",
-        "measure_battery",
-        "onoff"
+        "meter_power"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -32013,12 +31473,14 @@
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Outlet 1"
+            "en": "Outlet 1",
+            "fr": "Prise 1"
           }
         },
-        "onoff.1": {
+        "onoff.outlet2": {
           "title": {
-            "en": "Outlet 2"
+            "en": "Outlet 2",
+            "fr": "Prise 2"
           }
         }
       }
@@ -32031,11 +31493,10 @@
       "class": "socket",
       "capabilities": [
         "onoff",
-        "onoff.1",
-        "onoff.2",
-        "onoff.3",
-        "onoff.4",
-        "measure_battery"
+        "onoff.gang2",
+        "onoff.gang3",
+        "onoff.gang4",
+        "onoff.gang5"
       ],
       "energy": {
         "approximation": {
@@ -32416,29 +31877,34 @@
         }
       ],
       "capabilitiesOptions": {
-        "onoff.1": {
-          "title": {
-            "en": "Switch 2"
-          }
-        },
-        "onoff.2": {
-          "title": {
-            "en": "Switch 3"
-          }
-        },
-        "onoff.3": {
-          "title": {
-            "en": "Switch 4"
-          }
-        },
-        "onoff.4": {
-          "title": {
-            "en": "Switch 5"
-          }
-        },
         "onoff": {
           "title": {
-            "en": "Switch 1"
+            "en": "Gang 1",
+            "fr": "Gang 1"
+          }
+        },
+        "onoff.gang2": {
+          "title": {
+            "en": "Gang 2",
+            "fr": "Gang 2"
+          }
+        },
+        "onoff.gang3": {
+          "title": {
+            "en": "Gang 3",
+            "fr": "Gang 3"
+          }
+        },
+        "onoff.gang4": {
+          "title": {
+            "en": "Gang 4",
+            "fr": "Gang 4"
+          }
+        },
+        "onoff.gang5": {
+          "title": {
+            "en": "Gang 5",
+            "fr": "Gang 5"
           }
         }
       }
@@ -32457,49 +31923,48 @@
       },
       "class": "socket",
       "capabilities": [
-        "onoff.switch_2",
-        "onoff.switch_3",
-        "onoff.switch_4",
-        "onoff.switch_5",
-        "onoff.switch_6",
         "onoff",
-        "onoff.1",
-        "onoff.2",
-        "onoff.3",
-        "onoff.4",
-        "onoff.5",
-        "measure_battery"
+        "onoff.gang2",
+        "onoff.gang3",
+        "onoff.gang4",
+        "onoff.gang5",
+        "onoff.gang6"
       ],
       "capabilitiesOptions": {
         "onoff": {
           "title": {
-            "en": "Switch 1",
-            "fr": "Interrupteur 1"
+            "en": "Gang 1",
+            "fr": "Gang 1"
           }
         },
-        "onoff.1": {
+        "onoff.gang2": {
           "title": {
-            "en": "Switch 2"
+            "en": "Gang 2",
+            "fr": "Gang 2"
           }
         },
-        "onoff.2": {
+        "onoff.gang3": {
           "title": {
-            "en": "Switch 3"
+            "en": "Gang 3",
+            "fr": "Gang 3"
           }
         },
-        "onoff.3": {
+        "onoff.gang4": {
           "title": {
-            "en": "Switch 4"
+            "en": "Gang 4",
+            "fr": "Gang 4"
           }
         },
-        "onoff.4": {
+        "onoff.gang5": {
           "title": {
-            "en": "Switch 5"
+            "en": "Gang 5",
+            "fr": "Gang 5"
           }
         },
-        "onoff.5": {
+        "onoff.gang6": {
           "title": {
-            "en": "Switch 6"
+            "en": "Gang 6",
+            "fr": "Gang 6"
           }
         }
       },
@@ -32896,85 +32361,55 @@
       },
       "class": "socket",
       "capabilities": [
+        "onoff",
         "onoff.gang2",
         "onoff.gang3",
         "onoff.gang4",
         "onoff.gang5",
         "onoff.gang6",
-        "onoff.gang7",
-        "onoff",
-        "onoff.1",
-        "onoff.2",
-        "onoff.3",
-        "onoff.4",
-        "onoff.5",
-        "onoff.6",
-        "measure_battery"
+        "onoff.gang7"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Gang 1",
+            "fr": "Gang 1"
+          }
+        },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2"
+            "en": "Gang 2",
+            "fr": "Gang 2"
           }
         },
         "onoff.gang3": {
           "title": {
-            "en": "Gang 3"
+            "en": "Gang 3",
+            "fr": "Gang 3"
           }
         },
         "onoff.gang4": {
           "title": {
-            "en": "Gang 4"
+            "en": "Gang 4",
+            "fr": "Gang 4"
           }
         },
         "onoff.gang5": {
           "title": {
-            "en": "Gang 5"
+            "en": "Gang 5",
+            "fr": "Gang 5"
           }
         },
         "onoff.gang6": {
           "title": {
-            "en": "Gang 6"
+            "en": "Gang 6",
+            "fr": "Gang 6"
           }
         },
         "onoff.gang7": {
           "title": {
-            "en": "Gang 7"
-          }
-        },
-        "onoff.1": {
-          "title": {
-            "en": "Switch 2"
-          }
-        },
-        "onoff.2": {
-          "title": {
-            "en": "Switch 3"
-          }
-        },
-        "onoff.3": {
-          "title": {
-            "en": "Switch 4"
-          }
-        },
-        "onoff.4": {
-          "title": {
-            "en": "Switch 5"
-          }
-        },
-        "onoff.5": {
-          "title": {
-            "en": "Switch 6"
-          }
-        },
-        "onoff.6": {
-          "title": {
-            "en": "Switch 7"
-          }
-        },
-        "onoff": {
-          "title": {
-            "en": "Switch 1"
+            "en": "Gang 7",
+            "fr": "Gang 7"
           }
         }
       },
@@ -33104,97 +32539,62 @@
       },
       "class": "socket",
       "capabilities": [
+        "onoff",
         "onoff.gang2",
         "onoff.gang3",
         "onoff.gang4",
         "onoff.gang5",
         "onoff.gang6",
         "onoff.gang7",
-        "onoff.gang8",
-        "onoff",
-        "onoff.1",
-        "onoff.2",
-        "onoff.3",
-        "onoff.4",
-        "onoff.5",
-        "onoff.6",
-        "onoff.7",
-        "measure_battery"
+        "onoff.gang8"
       ],
       "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Gang 1",
+            "fr": "Gang 1"
+          }
+        },
         "onoff.gang2": {
           "title": {
-            "en": "Gang 2"
+            "en": "Gang 2",
+            "fr": "Gang 2"
           }
         },
         "onoff.gang3": {
           "title": {
-            "en": "Gang 3"
+            "en": "Gang 3",
+            "fr": "Gang 3"
           }
         },
         "onoff.gang4": {
           "title": {
-            "en": "Gang 4"
+            "en": "Gang 4",
+            "fr": "Gang 4"
           }
         },
         "onoff.gang5": {
           "title": {
-            "en": "Gang 5"
+            "en": "Gang 5",
+            "fr": "Gang 5"
           }
         },
         "onoff.gang6": {
           "title": {
-            "en": "Gang 6"
+            "en": "Gang 6",
+            "fr": "Gang 6"
           }
         },
         "onoff.gang7": {
           "title": {
-            "en": "Gang 7"
+            "en": "Gang 7",
+            "fr": "Gang 7"
           }
         },
         "onoff.gang8": {
           "title": {
-            "en": "Gang 8"
-          }
-        },
-        "onoff.1": {
-          "title": {
-            "en": "Switch 2"
-          }
-        },
-        "onoff.2": {
-          "title": {
-            "en": "Switch 3"
-          }
-        },
-        "onoff.3": {
-          "title": {
-            "en": "Switch 4"
-          }
-        },
-        "onoff.4": {
-          "title": {
-            "en": "Switch 5"
-          }
-        },
-        "onoff.5": {
-          "title": {
-            "en": "Switch 6"
-          }
-        },
-        "onoff.6": {
-          "title": {
-            "en": "Switch 7"
-          }
-        },
-        "onoff.7": {
-          "title": {
-            "en": "Switch 8"
-          }
-        },
-        "onoff": {
-          "title": {
-            "en": "Switch 1"
+            "en": "Gang 8",
+            "fr": "Gang 8"
           }
         }
       },
@@ -33668,27 +33068,74 @@
     },
     {
       "name": {
+        "en": "TUYATEC Temperature & Humidity Sensor",
+        "fr": "Capteur de Température et Humidité TUYATEC"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-abkehqus",
+          "TUYATEC-yg5dcbfu"
+        ],
+        "productId": [
+          "TUYATEC_TempHumid"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1026,
+              1029
+            ],
+            "bindings": [
+              1,
+              1026,
+              1029
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/temphumidsensor/assets/images/small.png",
+        "large": "drivers/temphumidsensor/assets/images/large.png",
+        "xlarge": "drivers/temphumidsensor/assets/images/xlarge.png"
+      },
+      "id": "temphumidsensor"
+    },
+    {
+      "name": {
         "en": "Thermostat 4-Channel",
         "fr": "Thermostat 4 Canaux"
       },
       "class": "thermostat",
       "capabilities": [
-        "target_temperature.1",
-        "target_temperature.2",
-        "target_temperature.3",
-        "target_temperature.4",
-        "measure_temperature.1",
-        "measure_temperature.2",
-        "measure_temperature.3",
-        "measure_temperature.4",
-        "thermostat_mode",
-        "measure_battery",
         "onoff",
-        "onoff.1",
-        "onoff.2",
-        "onoff.3",
+        "onoff.ch2",
+        "onoff.ch3",
+        "onoff.ch4",
         "target_temperature",
-        "measure_temperature"
+        "target_temperature.ch2",
+        "target_temperature.ch3",
+        "target_temperature.ch4",
+        "measure_temperature",
+        "measure_temperature.ch2",
+        "measure_temperature.ch3",
+        "measure_temperature.ch4",
+        "thermostat_mode"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -33968,13 +33415,12 @@
         "onoff.socket2",
         "onoff.usb1",
         "onoff.usb2",
+        "onoff.led",
+        "button",
         "measure_power",
         "meter_power",
         "measure_voltage",
-        "measure_current",
-        "measure_battery",
-        "onoff.1",
-        "onoff.2"
+        "measure_current"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -34001,14 +33447,16 @@
             "fr": "USB 2"
           }
         },
-        "onoff.1": {
+        "onoff.led": {
           "title": {
-            "en": "Outlet 2"
+            "en": "LED Indicator",
+            "fr": "Indicateur LED"
           }
         },
-        "onoff.2": {
+        "button": {
           "title": {
-            "en": "OTHER"
+            "en": "Button",
+            "fr": "Bouton"
           }
         }
       },
@@ -36379,76 +35827,6 @@
         "zigbee"
       ],
       "id": "zigbee_universal"
-    },
-    {
-      "id": "lcdtemphumidsensor",
-      "name": {
-        "en": "LCD Temperature & Humidity Sensor"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery"
-      ],
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "zigbee"
-      ],
-      "images": {
-        "small": "/drivers/lcdtemphumidsensor/assets/images/small.png",
-        "large": "/drivers/lcdtemphumidsensor/assets/images/large.png",
-        "xlarge": "/drivers/lcdtemphumidsensor/assets/images/xlarge.png"
-      },
-      "zigbee": {
-        "manufacturerName": [
-          "_TYZB01_a476raq2",
-          "_TYZB01_hjsgdkfl",
-          "_TZ2000_a476raq2",
-          "_TZ2000_xogb73am",
-          "_TZ2000_avdnvykf",
-          "_TZ2000_hjsgdkfl"
-        ],
-        "productId": [
-          "TS0201"
-        ]
-      }
-    },
-    {
-      "id": "temphumidsensor",
-      "name": {
-        "en": "TUYATEC Temperature & Humidity Sensor"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery"
-      ],
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "zigbee"
-      ],
-      "images": {
-        "small": "/drivers/temphumidsensor/assets/images/small.png",
-        "large": "/drivers/temphumidsensor/assets/images/large.png",
-        "xlarge": "/drivers/temphumidsensor/assets/images/xlarge.png"
-      },
-      "zigbee": {
-        "manufacturerName": [
-          "TUYATEC-g3gl6cgy",
-          "TUYATEC-Bfq2i2Sy",
-          "TUYATEC-abkehqus",
-          "TUYATEC-yg5dcbfu"
-        ],
-        "productId": [
-          "TUYATEC_TempHumid"
-        ]
-      }
     }
   ],
   "capabilities": {
@@ -36559,25 +35937,6 @@
       "getable": true,
       "setable": true,
       "uiComponent": "picker"
-    },
-    "measure_soil_moisture": {
-      "type": "number",
-      "title": {
-        "en": "Soil Moisture",
-        "fr": "Humidité du Sol"
-      },
-      "units": {
-        "en": "%",
-        "fr": "%"
-      },
-      "getable": true,
-      "setable": false,
-      "insights": true,
-      "chartType": "spline",
-      "decimals": 0,
-      "uiComponent": "sensor",
-      "min": 0,
-      "max": 100
     },
     "measure_voc": {
       "type": "number",
