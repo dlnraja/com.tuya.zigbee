@@ -1,0 +1,24 @@
+{
+  "name": {
+    "en": "LCD Temperature & Humidity Sensor",
+    "fr": "Capteur de Température et Humidité LCD"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TYZB01_a476raq2",
+      "_TYZB01_hjsgdkfl",
+      "_TZ2000_a476raq2",
+      "_TZ2000_xogb73am",
+      "_TZ2000_avdnvykf",
+      "_TZ2000_hjsgdkfl"
+    ],
+    "productId": ["TS0201"]
+  },
+  "id": "lcdtemphumidsensor"
+}

@@ -1,16 +1,16 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.4.3",
-  "lastPublishDatetime": "2025-12-05T15:00:00Z",
+  "version": "5.4.4",
+  "lastPublishDatetime": "2025-12-05T17:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.4.3: mmWave radar fix (DP101), New soil sensor support (_TZE284_oitavov2), measure_soil_moisture capability",
-    "fr": "V5.4.3: Correctif radar mmWave (DP101), Nouveau capteur sol (_TZE284_oitavov2), capacité measure_soil_moisture"
+    "en": "V5.4.4: MEGA ENRICHMENT - 2 new drivers (LCD/TUYATEC sensors), 6 TUYATEC manufacturers, 100 NEW DPs (72→172), 67% coverage!",
+    "fr": "V5.4.4: ENRICHISSEMENT MEGA - 2 nouveaux drivers (capteurs LCD/TUYATEC), 6 manufacturers TUYATEC, 100 NOUVEAUX DPs (72→172), 67% couverture!"
   },
   "category": "appliances",
   "permissions": [],
@@ -36379,6 +36379,76 @@
         "zigbee"
       ],
       "id": "zigbee_universal"
+    },
+    {
+      "id": "lcdtemphumidsensor",
+      "name": {
+        "en": "LCD Temperature & Humidity Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "/drivers/lcdtemphumidsensor/assets/images/small.png",
+        "large": "/drivers/lcdtemphumidsensor/assets/images/large.png",
+        "xlarge": "/drivers/lcdtemphumidsensor/assets/images/xlarge.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TYZB01_a476raq2",
+          "_TYZB01_hjsgdkfl",
+          "_TZ2000_a476raq2",
+          "_TZ2000_xogb73am",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl"
+        ],
+        "productId": [
+          "TS0201"
+        ]
+      }
+    },
+    {
+      "id": "temphumidsensor",
+      "name": {
+        "en": "TUYATEC Temperature & Humidity Sensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "/drivers/temphumidsensor/assets/images/small.png",
+        "large": "/drivers/temphumidsensor/assets/images/large.png",
+        "xlarge": "/drivers/temphumidsensor/assets/images/xlarge.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-abkehqus",
+          "TUYATEC-yg5dcbfu"
+        ],
+        "productId": [
+          "TUYATEC_TempHumid"
+        ]
+      }
     }
   ],
   "capabilities": {
