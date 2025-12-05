@@ -133,3 +133,16 @@ desktop.ini
 # docs/community/QUICK_IMPROVEMENTS.md
 # docs/project-status/FINAL_ANALYSIS_PUBLICATION.md
 # docs/workflow/QUICK_WORKFLOW.md
+# Backups
+*.backup
+*.bak
+*.old
+
+# Temporary scripts
+create_final_report.py
+extract_device_info.py
+extract_dp_mappings.py
+
+# Claude Code session files
+.claude/
+nul
