@@ -142,3 +142,7 @@ desktop.ini
 create_final_report.py
 extract_device_info.py
 extract_dp_mappings.py
+
+# Claude Code session files
+.claude/
+nul
