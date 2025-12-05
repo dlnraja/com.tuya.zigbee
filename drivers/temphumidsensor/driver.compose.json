@@ -1,0 +1,22 @@
+{
+  "name": {
+    "en": "TUYATEC Temperature & Humidity Sensor",
+    "fr": "Capteur de Température et Humidité TUYATEC"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "TUYATEC-g3gl6cgy",
+      "TUYATEC-Bfq2i2Sy",
+      "TUYATEC-abkehqus",
+      "TUYATEC-yg5dcbfu"
+    ],
+    "productId": ["TUYATEC_TempHumid"]
+  },
+  "id": "temphumidsensor"
+}
