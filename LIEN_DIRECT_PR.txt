@@ -1,0 +1,43 @@
+═══════════════════════════════════════════════════════════
+🚀 CRÉATION PR v5.4.3 - LIEN DIRECT SMARTPHONE
+═══════════════════════════════════════════════════════════
+
+📱 COPIE CE LIEN et ouvre-le dans Chrome sur ton Android :
+
+https://github.com/dlnraja/com.tuya.zigbee/compare/master...claude/mmwave-climate-sensor-fixes-014ZhNyRSqrt7fYWXPTYrLDr?quick_pull=1
+
+═══════════════════════════════════════════════════════════
+
+✅ ENSUITE (sur GitHub) :
+
+1. Clique "Create pull request"
+2. Titre (déjà pré-rempli) :
+   v5.4.3: Fix critical issues - mmWave radar, soil sensor, 
+   measure_soil_moisture (supersedes #84)
+
+3. Description : Copie le fichier PR_DESCRIPTION_FINAL.md
+4. Clique "Create pull request" !
+
+═══════════════════════════════════════════════════════════
+
+📊 CE QUI VA ÊTRE CRÉÉ :
+
+✅ Fix mmWave radar DP101 mapping
+✅ Support soil sensor _TZE284_oitavov2  
+✅ Capability measure_soil_moisture
+✅ Supersède PR #84 (draft)
+
+Fichiers : 8 modifiés
+Lignes : +234 (50% plus concis que PR #84!)
+
+═══════════════════════════════════════════════════════════
+
+📞 APRÈS CRÉATION :
+
+1. Note le numéro de PR (ex: #85)
+2. Va sur https://github.com/dlnraja/com.tuya.zigbee/pull/84
+3. Poste le fichier COMMENT_FOR_PR84.md (en remplaçant [NUMBER])
+4. Ferme la PR #84
+5. Partage sur le forum Homey !
+
+═══════════════════════════════════════════════════════════

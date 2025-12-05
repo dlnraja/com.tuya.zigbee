@@ -1,16 +1,16 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.4.2",
-  "lastPublishDatetime": "2025-11-28T11:00:00Z",
+  "version": "5.4.3",
+  "lastPublishDatetime": "2025-12-05T15:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.4.2: USB Outlet Complete - Power, LED, Button + All diagnostic fixes",
-    "fr": "V5.4.2: USB Outlet Complet - Puissance, LED, Bouton + Tous les fixes"
+    "en": "V5.4.3: mmWave radar fix (DP101), New soil sensor support (_TZE284_oitavov2), measure_soil_moisture capability",
+    "fr": "V5.4.3: Correctif radar mmWave (DP101), Nouveau capteur sol (_TZE284_oitavov2), capacité measure_soil_moisture"
   },
   "category": "appliances",
   "permissions": [],
@@ -36489,6 +36489,25 @@
       "getable": true,
       "setable": true,
       "uiComponent": "picker"
+    },
+    "measure_soil_moisture": {
+      "type": "number",
+      "title": {
+        "en": "Soil Moisture",
+        "fr": "Humidité du Sol"
+      },
+      "units": {
+        "en": "%",
+        "fr": "%"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "chartType": "spline",
+      "decimals": 0,
+      "uiComponent": "sensor",
+      "min": 0,
+      "max": 100
     },
     "measure_voc": {
       "type": "number",
