@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.11",
+  "version": "5.5.12",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.11: ZERO COLLISIONS - 3735 mfrs, 401 pids, exhaustive enrichment, all rules applied",
-    "fr": "V5.5.11: ZÉRO COLLISIONS - 3735 mfrs, 401 pids, enrichissement exhaustif, toutes règles appliquées"
+    "en": "V5.5.12: MASTER RULES APPLIED - 3743 mfrs, 272 pids, 0 collisions, all 9.x rules enforced",
+    "fr": "V5.5.12: RÈGLES MASTER APPLIQUÉES - 3743 mfrs, 272 pids, 0 collisions, toutes règles 9.x appliquées"
   },
   "category": "appliances",
   "permissions": [],
@@ -11795,11 +11795,11 @@
           }
         },
         "productId": [
-          "TS0505A",
-          "TS0505B",
           "TS0503A",
           "TS0503B",
-          "TS0504B"
+          "TS0504B",
+          "TS0505A",
+          "TS0505B"
         ]
       },
       "settings": [
@@ -12453,8 +12453,8 @@
       "zigbee": {
         "manufacturerName": [],
         "productId": [
-          "TS0502B",
-          "TS0502A"
+          "TS0502A",
+          "TS0502B"
         ],
         "endpoints": {
           "1": {
@@ -13463,12 +13463,12 @@
         ],
         "productId": [
           "LQ-01",
-          "TS004F",
-          "TS0601",
           "TS0041",
           "TS0042",
           "TS0043",
-          "TS0044"
+          "TS0044",
+          "TS004F",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -18436,28 +18436,28 @@
           "zbeacon"
         ],
         "productId": [
-          "TS0203",
-          "RH3001",
-          "TY0203",
-          "DoorWindow-Sensor-ZB3.0",
-          "MCT-340 E",
+          "DC-15ZBS",
           "DS01",
+          "DS02",
+          "DoorWindow-Sensor-ZB3.0",
           "HG06336",
-          "lumi.sensor_magnet",
-          "lumi.sensor_magnet.aq2",
-          "MCCGQ11LM",
+          "IH-K009",
+          "IH012-RT01",
           "MCCGQ01LM",
+          "MCCGQ11LM",
+          "MCT-340 E",
+          "RH3001",
           "SHDW-1",
           "SHDW-2",
-          "ZP-DW-03",
-          "DS02",
-          "IH-K009",
-          "ZG-102ZL",
-          "ZG-102ZM",
+          "TS0203",
           "TS0210",
           "TS0601",
-          "DC-15ZBS",
-          "IH012-RT01"
+          "TY0203",
+          "ZG-102ZL",
+          "ZG-102ZM",
+          "ZP-DW-03",
+          "lumi.sensor_magnet",
+          "lumi.sensor_magnet.aq2"
         ],
         "endpoints": {
           "1": {
@@ -18898,15 +18898,15 @@
           "u1rkty3"
         ],
         "productId": [
-          "TS0601",
-          "TS130F",
-          "TS130F-_TZ3210",
-          "S4SW-002P16EU-COVER",
-          "SC400ZB-EU",
           "AM25",
           "M515EGB",
+          "S4SW-002P16EU-COVER",
+          "SC400ZB-EU",
           "SCM-5ZBS",
-          "TS0302"
+          "TS0302",
+          "TS0601",
+          "TS130F",
+          "TS130F-_TZ3210"
         ],
         "endpoints": {
           "1": {
@@ -19503,11 +19503,11 @@
           "TRADFRI remote control",
           "TS0101",
           "TS0111",
+          "TS0501A",
+          "TS0501B",
           "TS0601",
           "TS110E",
-          "TS110F",
-          "TS0501A",
-          "TS0501B"
+          "TS110F"
         ],
         "endpoints": {
           "1": {
@@ -20512,8 +20512,8 @@
       "zigbee": {
         "manufacturerName": [],
         "productId": [
-          "TS0601",
           "AIRQ01",
+          "TS0601",
           "VOC01"
         ],
         "endpoints": {
@@ -21748,9 +21748,9 @@
           "_TZE204_zuhszj9s"
         ],
         "productId": [
-          "TS0601",
+          "AC-Controller",
           "IR-AC",
-          "AC-Controller"
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -22120,8 +22120,8 @@
           "_TZE204_oisqyl4o"
         ],
         "productId": [
-          "TS0601",
-          "Dehumidifier"
+          "Dehumidifier",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -25273,10 +25273,10 @@
           "EM-Mini",
           "EMD-1ZBS",
           "PJ-1203A",
-          "TS0601",
           "TS011F",
           "TS0121",
-          "TS0201"
+          "TS0201",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -25718,12 +25718,12 @@
           "SP-EUC01",
           "SP-EUR01",
           "SP-EUZ01",
+          "TS0001",
           "TS0115",
           "TS011F",
           "TS0121",
           "TS0601",
-          "ZP-SP-01",
-          "TS0001"
+          "ZP-SP-01"
         ],
         "endpoints": {
           "1": {
@@ -26472,19 +26472,19 @@
           "_TZE284_hvaxb2tc"
         ],
         "productId": [
-          "TS0601",
-          "TRV602-Zigbee",
-          "eTRV0100",
-          "SPZB0001",
-          "TRV001",
+          "HY369RT",
+          "ME167",
           "SEA801-Zigbee",
           "SEA802",
-          "eT093WRO-1",
-          "HY369RT",
+          "SPZB0001",
           "TRV",
+          "TRV001",
+          "TRV602-Zigbee",
+          "TS0601",
           "TV01",
           "TV02",
-          "ME167"
+          "eT093WRO-1",
+          "eTRV0100"
         ],
         "endpoints": {
           "1": {
@@ -26819,8 +26819,8 @@
         ],
         "productId": [
           "RH3001",
-          "TS0601",
-          "TS0207"
+          "TS0207",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -29533,9 +29533,9 @@
           "S4SW-002P16EU-COVER",
           "SM-SW302-2CH",
           "TS0002",
+          "TS0003",
           "TS0012",
-          "TS0601",
-          "TS0003"
+          "TS0601"
         ],
         "learnmode": {
           "image": "/drivers/switch_2gang/assets/learnmode.svg",
@@ -29947,10 +29947,10 @@
       "zigbee": {
         "productId": [
           "TS0003",
+          "TS0004",
           "TS0013",
           "TS004F",
-          "TS0601",
-          "TS0004"
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -31639,8 +31639,8 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_7gang001",
-          "_TYZB01_7gang001"
+          "_TYZB01_7gang001",
+          "_TZ3000_7gang001"
         ],
         "productId": [
           "TS0007",
@@ -31813,8 +31813,8 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_8gang001",
-          "_TYZB01_8gang001"
+          "_TYZB01_8gang001",
+          "_TZ3000_8gang001"
         ],
         "productId": [
           "TS0008",
@@ -32445,8 +32445,8 @@
         "productId": [
           "TS0115",
           "TS011E",
-          "TS0601",
-          "TS011F"
+          "TS011F",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
