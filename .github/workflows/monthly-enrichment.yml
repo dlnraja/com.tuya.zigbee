@@ -59,7 +59,12 @@ jobs:
           FLAGS="$FLAGS --limit=${{ github.event.inputs.limit || '50' }}"
 
           echo "Running enricher with flags: $FLAGS"
-          node automation/enrichment/INTELLIGENT_ENRICHER_v2.js $FLAGS | tee enrichment.log
+
+          # Step 1: Extract DP mappings from drivers
+          node automation/enrichment/AUTO_POPULATE_LOCAL_DB.js
+
+          # Step 2: Run intelligent enricher v4
+          node automation/enrichment/INTELLIGENT_ENRICHER_v4.js $FLAGS | tee enrichment.log
 
           # Extract stats for summary
           PROCESSED=$(grep -oP 'Processed: \K\d+' enrichment.log || echo "0")
