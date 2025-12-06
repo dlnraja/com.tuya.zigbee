@@ -6,93 +6,30 @@
   "manufacturers": {
     "_TZ3000_0s1izerx": {
       "firstSeen": "2025-12-06T03:40:33.823Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:40:33.825Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:40:35.000Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:40:36.237Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:40:37.250Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:40:38.260Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:40:39.273Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:40:39.275Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:40:39.275Z",
+      "lastProcessed": "2025-12-06T04:18:13.426Z",
+      "enriched": true
     },
     "_TZ3000_1o6x1bl0": {
       "firstSeen": "2025-12-06T03:40:40.670Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:40:40.670Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:40:41.978Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:40:43.073Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:40:44.090Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:40:45.135Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:40:46.155Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:40:46.158Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:40:46.158Z",
+      "lastProcessed": "2025-12-06T04:19:31.094Z",
+      "enriched": true
     },
     "_TZ3000_akqdg6g7": {
       "firstSeen": "2025-12-06T03:40:47.744Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:40:47.744Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:40:48.950Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:40:50.047Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:40:51.057Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:40:52.066Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:40:53.074Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:40:53.076Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:40:53.076Z",
+      "lastProcessed": "2025-12-06T04:36:39.793Z",
+      "enriched": true
     },
     "_TZ3000_bgsigers": {
       "firstSeen": "2025-12-06T03:40:54.407Z",
@@ -996,753 +933,214 @@
     },
     "_TZ1800_ejwkn2h2": {
       "firstSeen": "2025-12-06T03:45:09.891Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:45:09.891Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:45:11.099Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:45:12.182Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:45:13.199Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:45:14.206Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:45:15.220Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:45:15.223Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:45:15.223Z",
+      "lastProcessed": "2025-12-06T04:16:04.047Z",
+      "enriched": true
     },
     "_TZ1800_fcdjzz3s": {
       "firstSeen": "2025-12-06T03:45:19.397Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:45:19.397Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:45:23.503Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:45:24.583Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:45:25.586Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:45:26.602Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:45:27.612Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:45:27.613Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:45:27.613Z",
+      "lastProcessed": "2025-12-06T04:16:08.330Z",
+      "enriched": true
     },
     "_TZ2000_a476raq2": {
       "firstSeen": "2025-12-06T03:45:31.813Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:45:31.813Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:45:35.922Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:45:37.064Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:45:38.079Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:45:39.093Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:45:40.116Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:45:40.118Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:45:40.118Z",
+      "lastProcessed": "2025-12-06T04:16:51.531Z",
+      "enriched": true
     },
     "_TZ2000_avdnvykf": {
       "firstSeen": "2025-12-06T03:45:42.477Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:45:42.477Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:45:43.703Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:45:44.799Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:45:45.808Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:45:46.833Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:45:47.843Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:45:47.848Z"
+      "sources": [],
+      "lastFullScan": "2025-12-06T03:45:47.848Z",
+      "lastProcessed": "2025-12-06T04:16:55.912Z",
+      "enriched": false
     },
     "_TZ2000_hjsgdkfl": {
       "firstSeen": "2025-12-06T03:45:49.184Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:45:49.184Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:45:50.369Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:45:51.460Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:45:52.471Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:45:53.481Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:45:54.495Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:45:54.497Z"
+      "sources": [],
+      "lastFullScan": "2025-12-06T03:45:54.497Z",
+      "lastProcessed": "2025-12-06T04:17:00.146Z",
+      "enriched": false
     },
     "_TZ3000_01gpyda5": {
       "firstSeen": "2025-12-06T03:45:55.780Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:45:55.780Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:45:56.974Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:45:58.054Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:45:59.066Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:46:00.075Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:46:01.089Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:46:01.091Z"
+      "sources": [],
+      "lastFullScan": "2025-12-06T03:46:01.091Z",
+      "lastProcessed": "2025-12-06T04:17:12.839Z",
+      "enriched": false
     },
     "_TZ3000_0dumfk2z": {
       "firstSeen": "2025-12-06T03:46:02.425Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:46:02.425Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:46:03.664Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:46:04.735Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:46:05.744Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:46:06.754Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:46:07.767Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:46:07.769Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:46:07.769Z",
+      "lastProcessed": "2025-12-06T04:17:21.366Z",
+      "enriched": true
     },
     "_TZ3000_0ghwhypc": {
       "firstSeen": "2025-12-06T03:46:09.045Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:46:09.045Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:46:10.260Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:46:11.359Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:46:12.365Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:46:13.375Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:46:14.393Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:46:14.396Z"
+      "sources": [],
+      "lastFullScan": "2025-12-06T03:46:14.396Z",
+      "lastProcessed": "2025-12-06T04:17:29.863Z",
+      "enriched": false
     },
     "_TZ3000_0ht8dnxj": {
       "firstSeen": "2025-12-06T03:46:18.591Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:46:18.591Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:46:22.705Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:46:23.832Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:46:24.840Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:46:25.857Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:46:26.865Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:46:26.866Z"
+      "sources": [],
+      "lastFullScan": "2025-12-06T03:46:26.866Z",
+      "lastProcessed": "2025-12-06T04:18:09.162Z",
+      "enriched": false
     },
     "_TZ3000_18ejxno0": {
       "firstSeen": "2025-12-06T03:46:31.079Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:46:31.079Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:46:35.349Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:46:36.450Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:46:37.452Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:46:38.469Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:46:39.485Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:46:39.489Z"
+      "sources": [
+        "local_db"
+      ],
+      "lastFullScan": "2025-12-06T03:46:39.489Z",
+      "lastProcessed": "2025-12-06T04:18:35.075Z",
+      "enriched": true
     },
     "_TZ3000_3u4hripk": {
       "firstSeen": "2025-12-06T03:46:41.892Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:46:41.892Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:46:43.095Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:46:44.223Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:46:45.235Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:46:46.257Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:46:47.278Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:46:47.281Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:46:47.281Z",
+      "lastProcessed": "2025-12-06T04:22:10.481Z",
+      "enriched": true
     },
     "_TZ3000_49qchf10": {
       "firstSeen": "2025-12-06T03:46:48.647Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:46:48.647Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:46:49.839Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:46:50.932Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:46:51.940Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:46:52.964Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:46:53.974Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:46:53.978Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:46:53.978Z",
+      "lastProcessed": "2025-12-06T04:23:19.433Z",
+      "enriched": true
     },
     "_TZ3000_4rbqgcuv": {
       "firstSeen": "2025-12-06T03:46:55.326Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:46:55.326Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:46:56.535Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:46:57.626Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:46:58.641Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:46:59.655Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:47:00.671Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:47:00.672Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:47:00.672Z",
+      "lastProcessed": "2025-12-06T04:24:19.951Z",
+      "enriched": true
     },
     "_TZ3000_4uf3d0ax": {
       "firstSeen": "2025-12-06T03:47:02.044Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:47:02.044Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:47:03.245Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:47:04.329Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:47:05.341Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:47:06.353Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:47:07.367Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:47:07.368Z"
+      "sources": [],
+      "lastFullScan": "2025-12-06T03:47:07.368Z",
+      "lastProcessed": "2025-12-06T04:24:24.157Z",
+      "enriched": false
     },
     "_TZ3000_4upl1fcj": {
       "firstSeen": "2025-12-06T03:47:08.770Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:47:08.770Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:47:09.979Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:47:11.056Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:47:12.065Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:47:13.074Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:47:14.091Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:47:14.097Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:47:14.097Z",
+      "lastProcessed": "2025-12-06T04:24:32.716Z",
+      "enriched": true
     },
     "_TZ3000_5bpeda8u": {
       "firstSeen": "2025-12-06T03:47:18.354Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:47:18.354Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:47:22.484Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:47:23.540Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:47:24.553Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:47:25.568Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:47:26.586Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:47:26.593Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:47:26.593Z",
+      "lastProcessed": "2025-12-06T04:25:49.817Z",
+      "enriched": true
     },
     "_TZ3000_5e235jpa": {
       "firstSeen": "2025-12-06T03:47:30.863Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:47:30.863Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:47:34.983Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:47:36.047Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:47:37.066Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:47:38.072Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:47:39.084Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:47:39.085Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:47:39.085Z",
+      "lastProcessed": "2025-12-06T04:26:02.689Z",
+      "enriched": true
     },
     "_TZ3000_5ftkaulg": {
       "firstSeen": "2025-12-06T03:47:43.519Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:47:43.519Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:47:44.760Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:47:46.014Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:47:47.031Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:47:48.046Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:47:49.157Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:47:49.180Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:47:49.180Z",
+      "lastProcessed": "2025-12-06T04:26:58.606Z",
+      "enriched": true
     },
     "_TZ3000_5tqxpine": {
       "firstSeen": "2025-12-06T03:47:50.622Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:47:50.622Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:47:51.853Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:47:52.927Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:47:53.937Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:47:54.952Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:47:55.966Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:47:55.968Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:47:55.968Z",
+      "lastProcessed": "2025-12-06T04:28:07.656Z",
+      "enriched": true
     },
     "_TZ3000_6axxqqi2": {
       "firstSeen": "2025-12-06T03:47:57.380Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:47:57.380Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:47:58.593Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:47:59.671Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:48:00.684Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:48:01.690Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:48:02.702Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:48:02.704Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:48:02.704Z",
+      "lastProcessed": "2025-12-06T04:28:29.083Z",
+      "enriched": true
     },
     "_TZ3000_7dcddnye": {
       "firstSeen": "2025-12-06T03:48:04.108Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:48:04.108Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:48:05.319Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:48:06.406Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:48:07.422Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:48:08.438Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:48:09.453Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:48:09.454Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:48:09.454Z",
+      "lastProcessed": "2025-12-06T04:30:25.477Z",
+      "enriched": true
     },
     "_TZ3000_7jx5ypra": {
       "firstSeen": "2025-12-06T03:48:10.809Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:48:10.809Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:48:12.028Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:48:13.104Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:48:14.111Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:48:15.122Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:48:16.139Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:48:16.141Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:48:16.141Z",
+      "lastProcessed": "2025-12-06T04:30:46.697Z",
+      "enriched": true
     },
     "_TZ3000_8gs8h2e4": {
       "firstSeen": "2025-12-06T03:48:20.375Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:48:20.375Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:48:24.528Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:48:25.691Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:48:26.710Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:48:27.725Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:48:28.737Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:48:28.740Z"
+      "sources": [],
+      "lastFullScan": "2025-12-06T03:48:28.740Z",
+      "lastProcessed": "2025-12-06T04:31:59.615Z",
+      "enriched": false
     },
     "_TZ3000_8rppvwda": {
       "firstSeen": "2025-12-06T03:48:32.943Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:48:32.943Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:48:37.074Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:48:38.160Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:48:39.171Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:48:40.183Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:48:41.200Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:48:41.205Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:48:41.205Z",
+      "lastProcessed": "2025-12-06T04:32:55.722Z",
+      "enriched": true
     },
     "_TZ3000_a4xycprs": {
       "firstSeen": "2025-12-06T03:48:43.599Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:48:43.599Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:48:44.766Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:48:45.827Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:48:46.833Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:48:47.847Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:48:48.895Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:48:48.897Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:48:48.897Z",
+      "lastProcessed": "2025-12-06T04:34:34.649Z",
+      "enriched": true
     },
     "_TZ3000_bczr4e10": {
       "firstSeen": "2025-12-06T03:48:50.278Z",
@@ -2976,33 +2374,975 @@
     },
     "_TZ3000_8uaoilu9": {
       "firstSeen": "2025-12-06T03:54:44.441Z",
-      "sources": {
-        "github_johanbendz": {
-          "lastProcessed": "2025-12-06T03:54:44.441Z",
-          "found": true
-        },
-        "github_dlnraja": {
-          "lastProcessed": "2025-12-06T03:54:45.661Z",
-          "found": true
-        },
-        "zigbee2mqtt": {
-          "lastProcessed": "2025-12-06T03:54:46.770Z",
-          "found": true
-        },
-        "blakadder": {
-          "lastProcessed": "2025-12-06T03:54:47.783Z",
-          "found": true
-        },
-        "tuya_developer": {
-          "lastProcessed": "2025-12-06T03:54:48.793Z",
-          "found": false
-        },
-        "google_search": {
-          "lastProcessed": "2025-12-06T03:54:49.813Z",
-          "found": true
-        }
-      },
-      "lastFullScan": "2025-12-06T03:54:49.816Z"
+      "sources": [
+        "github_johanbendz"
+      ],
+      "lastFullScan": "2025-12-06T03:54:49.816Z",
+      "lastProcessed": "2025-12-06T04:33:00.043Z",
+      "enriched": true
+    },
+    "ClimaxTechnology": {
+      "lastProcessed": "2025-12-06T04:14:41.157Z",
+      "enriched": false,
+      "sources": []
+    },
+    "MatSee Plus": {
+      "lastProcessed": "2025-12-06T04:14:45.511Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "SONOFF": {
+      "lastProcessed": "2025-12-06T04:14:49.898Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "TUYATEC-Bfq2i2Sy": {
+      "lastProcessed": "2025-12-06T04:14:54.137Z",
+      "enriched": false,
+      "sources": []
+    },
+    "TUYATEC-abkehqus": {
+      "lastProcessed": "2025-12-06T04:14:58.393Z",
+      "enriched": false,
+      "sources": []
+    },
+    "TUYATEC-g3gl6cgy": {
+      "lastProcessed": "2025-12-06T04:15:02.628Z",
+      "enriched": false,
+      "sources": []
+    },
+    "TUYATEC-yg5dcbfu": {
+      "lastProcessed": "2025-12-06T04:15:06.872Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TYST11_7hfcudw5": {
+      "lastProcessed": "2025-12-06T04:15:11.074Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TYST11_i5j6ifxj": {
+      "lastProcessed": "2025-12-06T04:15:15.302Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TYST11_qq9mpfhw": {
+      "lastProcessed": "2025-12-06T04:15:19.621Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TYZB01_a476raq2": {
+      "lastProcessed": "2025-12-06T04:15:38.144Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TYZB01_bnggsfsf": {
+      "lastProcessed": "2025-12-06T04:15:42.623Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TYZB01_hjsgdkfl": {
+      "lastProcessed": "2025-12-06T04:15:46.871Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TYZB01_o63ssaah": {
+      "lastProcessed": "2025-12-06T04:15:51.264Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TYZB01_sqmd19i1": {
+      "lastProcessed": "2025-12-06T04:15:55.470Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ1800_akzvkzqq": {
+      "lastProcessed": "2025-12-06T04:15:59.694Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ1800_ho6i0zk9": {
+      "lastProcessed": "2025-12-06T04:16:12.536Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ1800_ladpngdx": {
+      "lastProcessed": "2025-12-06T04:16:16.819Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ2000_xogb73am": {
+      "lastProcessed": "2025-12-06T04:17:04.364Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_00mk2xzy": {
+      "lastProcessed": "2025-12-06T04:17:08.629Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_0ausfos0": {
+      "lastProcessed": "2025-12-06T04:17:17.114Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_0fkmfxwg": {
+      "lastProcessed": "2025-12-06T04:17:25.581Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_0hkmcrza": {
+      "lastProcessed": "2025-12-06T04:18:04.763Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_0s9gukzt": {
+      "lastProcessed": "2025-12-06T04:18:17.660Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_0zfrhq4i": {
+      "lastProcessed": "2025-12-06T04:18:22.036Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_0zrccfgx": {
+      "lastProcessed": "2025-12-06T04:18:26.198Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_11pg3ima": {
+      "lastProcessed": "2025-12-06T04:18:30.394Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_12sxjap4": {
+      "lastProcessed": "2025-12-06T04:18:34.803Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_1adss9de": {
+      "lastProcessed": "2025-12-06T04:18:39.029Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_1bwpjvlz": {
+      "lastProcessed": "2025-12-06T04:18:43.408Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_1dd0d5yi": {
+      "lastProcessed": "2025-12-06T04:19:18.219Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_1h2x4akh": {
+      "lastProcessed": "2025-12-06T04:19:22.635Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_1hwjutgo": {
+      "lastProcessed": "2025-12-06T04:19:26.875Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_1obmmd8k": {
+      "lastProcessed": "2025-12-06T04:19:35.367Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_1obwwnmq": {
+      "lastProcessed": "2025-12-06T04:19:39.756Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_1twfmkcc": {
+      "lastProcessed": "2025-12-06T04:19:43.951Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_266azbg3": {
+      "lastProcessed": "2025-12-06T04:19:48.200Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_26fmupbb": {
+      "lastProcessed": "2025-12-06T04:19:48.203Z",
+      "enriched": true,
+      "sources": [
+        "local_db"
+      ]
+    },
+    "_TZ3000_26gjlugm": {
+      "lastProcessed": "2025-12-06T04:19:52.614Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_2ac": {
+      "lastProcessed": "2025-12-06T04:19:56.813Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_2dlwlvex": {
+      "lastProcessed": "2025-12-06T04:20:31.505Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_2iiimqs9": {
+      "lastProcessed": "2025-12-06T04:20:35.881Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_2izubafb": {
+      "lastProcessed": "2025-12-06T04:20:40.068Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_2jxgpoqh": {
+      "lastProcessed": "2025-12-06T04:20:44.280Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_2mbfxlzr": {
+      "lastProcessed": "2025-12-06T04:20:48.474Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_2mccw9py": {
+      "lastProcessed": "2025-12-06T04:20:52.830Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_2putqrmw": {
+      "lastProcessed": "2025-12-06T04:20:57.263Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_2uollq9d": {
+      "lastProcessed": "2025-12-06T04:21:01.501Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_2wcynpml": {
+      "lastProcessed": "2025-12-06T04:21:05.737Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_2xlvlnez": {
+      "lastProcessed": "2025-12-06T04:21:10.027Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_2xlvlnvp": {
+      "lastProcessed": "2025-12-06T04:21:44.654Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_303avxxt": {
+      "lastProcessed": "2025-12-06T04:21:49.018Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_3a9beq8a": {
+      "lastProcessed": "2025-12-06T04:21:53.282Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_3dfewsk1": {
+      "lastProcessed": "2025-12-06T04:21:57.591Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_3ias4w4o": {
+      "lastProcessed": "2025-12-06T04:22:01.902Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_3ooaz3ng": {
+      "lastProcessed": "2025-12-06T04:22:06.191Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_3uimvkn6": {
+      "lastProcessed": "2025-12-06T04:22:14.845Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_3wkqni6o": {
+      "lastProcessed": "2025-12-06T04:22:19.092Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_3zofvcaa": {
+      "lastProcessed": "2025-12-06T04:22:23.327Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_402jjyro": {
+      "lastProcessed": "2025-12-06T04:22:57.863Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_402vrq2i": {
+      "lastProcessed": "2025-12-06T04:23:02.320Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_41ki5xyq": {
+      "lastProcessed": "2025-12-06T04:23:06.595Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_42ha4rsc": {
+      "lastProcessed": "2025-12-06T04:23:10.839Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_46t1rvdu": {
+      "lastProcessed": "2025-12-06T04:23:15.144Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_4fjiwweb": {
+      "lastProcessed": "2025-12-06T04:23:23.828Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_4fsgukof": {
+      "lastProcessed": "2025-12-06T04:23:28.048Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_4js6g1cw": {
+      "lastProcessed": "2025-12-06T04:23:32.247Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_4js9lo5d": {
+      "lastProcessed": "2025-12-06T04:23:36.537Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_4o16jdca": {
+      "lastProcessed": "2025-12-06T04:24:11.187Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_4qaowtdo": {
+      "lastProcessed": "2025-12-06T04:24:15.689Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_4ugnzsli": {
+      "lastProcessed": "2025-12-06T04:24:28.431Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_4uuaja4a": {
+      "lastProcessed": "2025-12-06T04:24:36.938Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_4uvovz4r": {
+      "lastProcessed": "2025-12-06T04:24:41.241Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_4ux0ondb": {
+      "lastProcessed": "2025-12-06T04:24:45.555Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_4whigl8i": {
+      "lastProcessed": "2025-12-06T04:24:49.783Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_4xfqlgqo": {
+      "lastProcessed": "2025-12-06T04:25:24.332Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_4zf0crgo": {
+      "lastProcessed": "2025-12-06T04:25:28.680Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_54hjn4vs": {
+      "lastProcessed": "2025-12-06T04:25:32.883Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_56bdyj21": {
+      "lastProcessed": "2025-12-06T04:25:37.078Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_5af5r192": {
+      "lastProcessed": "2025-12-06T04:25:41.292Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_5ajpkyq6": {
+      "lastProcessed": "2025-12-06T04:25:45.498Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_5bsf8vaj": {
+      "lastProcessed": "2025-12-06T04:25:54.073Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_5ct6e7ye": {
+      "lastProcessed": "2025-12-06T04:25:58.383Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_5e2f3n2h": {
+      "lastProcessed": "2025-12-06T04:26:37.309Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_5e5ptb24": {
+      "lastProcessed": "2025-12-06T04:26:41.666Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_5f43h46b": {
+      "lastProcessed": "2025-12-06T04:26:45.902Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_5f43h46r": {
+      "lastProcessed": "2025-12-06T04:26:50.111Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_5fkufhn1": {
+      "lastProcessed": "2025-12-06T04:26:54.315Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_5gey1ohx": {
+      "lastProcessed": "2025-12-06T04:27:02.858Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_5iixzdo7": {
+      "lastProcessed": "2025-12-06T04:27:07.058Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_5ity3zyu": {
+      "lastProcessed": "2025-12-06T04:27:11.286Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_5k5vh43t": {
+      "lastProcessed": "2025-12-06T04:27:15.604Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_5ksufhqi": {
+      "lastProcessed": "2025-12-06T04:27:50.191Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_5kxl9esg": {
+      "lastProcessed": "2025-12-06T04:27:54.588Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_5ng23zjs": {
+      "lastProcessed": "2025-12-06T04:27:58.853Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_5nrcorgu": {
+      "lastProcessed": "2025-12-06T04:28:03.288Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_5ucujjts": {
+      "lastProcessed": "2025-12-06T04:28:11.920Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_5vujyute": {
+      "lastProcessed": "2025-12-06T04:28:16.171Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_65ajyxua": {
+      "lastProcessed": "2025-12-06T04:28:20.515Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_66fekqhh": {
+      "lastProcessed": "2025-12-06T04:28:24.764Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_6eyydfyg": {
+      "lastProcessed": "2025-12-06T04:29:03.716Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_6jeesvrt": {
+      "lastProcessed": "2025-12-06T04:29:08.108Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_6km7djcm": {
+      "lastProcessed": "2025-12-06T04:29:12.317Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_6l1pjfqe": {
+      "lastProcessed": "2025-12-06T04:29:16.710Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_6oabgtzv": {
+      "lastProcessed": "2025-12-06T04:29:20.991Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_6s5dc9lx": {
+      "lastProcessed": "2025-12-06T04:29:25.227Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_6uzkisv2": {
+      "lastProcessed": "2025-12-06T04:29:29.456Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_6ygjfyll": {
+      "lastProcessed": "2025-12-06T04:29:33.716Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_6zvw8ham": {
+      "lastProcessed": "2025-12-06T04:29:38.029Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_74hsp7qy": {
+      "lastProcessed": "2025-12-06T04:29:42.262Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_785olaiq": {
+      "lastProcessed": "2025-12-06T04:30:16.819Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_7d8yme6f": {
+      "lastProcessed": "2025-12-06T04:30:21.184Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_7ed9cqgi": {
+      "lastProcessed": "2025-12-06T04:30:29.676Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_7hcgjxpc": {
+      "lastProcessed": "2025-12-06T04:30:33.948Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_7issjl2q": {
+      "lastProcessed": "2025-12-06T04:30:38.161Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_7jsk6lxz": {
+      "lastProcessed": "2025-12-06T04:30:42.383Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_7kscdesh": {
+      "lastProcessed": "2025-12-06T04:30:50.926Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_7tbsruql": {
+      "lastProcessed": "2025-12-06T04:30:55.159Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_7vcdo2vn": {
+      "lastProcessed": "2025-12-06T04:31:29.731Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_7y90pany": {
+      "lastProcessed": "2025-12-06T04:31:34.105Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_7ysdnebc": {
+      "lastProcessed": "2025-12-06T04:31:34.108Z",
+      "enriched": true,
+      "sources": [
+        "local_db"
+      ]
+    },
+    "_TZ3000_85czd6fy": {
+      "lastProcessed": "2025-12-06T04:31:38.344Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_88iqnhvd": {
+      "lastProcessed": "2025-12-06T04:31:42.660Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_8a833yls": {
+      "lastProcessed": "2025-12-06T04:31:46.861Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_8bxrzyxz": {
+      "lastProcessed": "2025-12-06T04:31:51.083Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_8fdayfch": {
+      "lastProcessed": "2025-12-06T04:31:55.372Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_8h7wgocw": {
+      "lastProcessed": "2025-12-06T04:32:03.819Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_8kzqqzu4": {
+      "lastProcessed": "2025-12-06T04:32:08.099Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_8n7lqbm0": {
+      "lastProcessed": "2025-12-06T04:32:42.725Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_8nkb7mof": {
+      "lastProcessed": "2025-12-06T04:32:47.085Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_8nyaanzb": {
+      "lastProcessed": "2025-12-06T04:32:51.276Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_8uxxzz4b": {
+      "lastProcessed": "2025-12-06T04:33:04.422Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_8ybe88nf": {
+      "lastProcessed": "2025-12-06T04:33:08.680Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_8yhypbo7": {
+      "lastProcessed": "2025-12-06T04:33:12.950Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_92chsky7": {
+      "lastProcessed": "2025-12-06T04:33:17.234Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_92qd4sqa": {
+      "lastProcessed": "2025-12-06T04:33:21.501Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_996rpfy6": {
+      "lastProcessed": "2025-12-06T04:33:56.055Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_9cpuaca6": {
+      "lastProcessed": "2025-12-06T04:34:00.484Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_9djocypn": {
+      "lastProcessed": "2025-12-06T04:34:04.758Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_9eeavbk5": {
+      "lastProcessed": "2025-12-06T04:34:09.093Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_9evm3otq": {
+      "lastProcessed": "2025-12-06T04:34:13.358Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_9hpxg80k": {
+      "lastProcessed": "2025-12-06T04:34:17.615Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_9kbbfeho": {
+      "lastProcessed": "2025-12-06T04:34:21.824Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_9r5jaajv": {
+      "lastProcessed": "2025-12-06T04:34:26.064Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_a33rw7ou": {
+      "lastProcessed": "2025-12-06T04:34:30.356Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_a7ouggvs": {
+      "lastProcessed": "2025-12-06T04:35:09.324Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_aa5t61rh": {
+      "lastProcessed": "2025-12-06T04:35:13.675Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_aaifmpuq": {
+      "lastProcessed": "2025-12-06T04:35:17.911Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_ab7hfuil": {
+      "lastProcessed": "2025-12-06T04:35:22.127Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_abaplimj": {
+      "lastProcessed": "2025-12-06T04:35:26.347Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_abc123": {
+      "lastProcessed": "2025-12-06T04:35:30.590Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_abci1hiu": {
+      "lastProcessed": "2025-12-06T04:35:34.865Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_abjodzas": {
+      "lastProcessed": "2025-12-06T04:35:39.253Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_abrsvsou": {
+      "lastProcessed": "2025-12-06T04:35:43.585Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_adkvzooy": {
+      "lastProcessed": "2025-12-06T04:35:43.590Z",
+      "enriched": true,
+      "sources": [
+        "local_db"
+      ]
+    },
+    "_TZ3000_aezbqpcu": {
+      "lastProcessed": "2025-12-06T04:35:47.868Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_afgzktgb": {
+      "lastProcessed": "2025-12-06T04:36:22.438Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_aigddb2b": {
+      "lastProcessed": "2025-12-06T04:36:26.801Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_ajkq2isy": {
+      "lastProcessed": "2025-12-06T04:36:31.192Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_aknpkt02": {
+      "lastProcessed": "2025-12-06T04:36:35.409Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_ali1q8p0": {
+      "lastProcessed": "2025-12-06T04:36:44.030Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_amal63is": {
+      "lastProcessed": "2025-12-06T04:36:48.289Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_amdymr71": {
+      "lastProcessed": "2025-12-06T04:36:52.584Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_amdymr7l": {
+      "lastProcessed": "2025-12-06T04:36:56.928Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_amis43tj": {
+      "lastProcessed": "2025-12-06T04:37:01.134Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_an5rjiwd": {
+      "lastProcessed": "2025-12-06T04:37:35.783Z",
+      "enriched": true,
+      "sources": [
+        "github_johanbendz"
+      ]
+    },
+    "_TZ3000_aracgljk": {
+      "lastProcessed": "2025-12-06T04:37:40.167Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_arfwfgoa": {
+      "lastProcessed": "2025-12-06T04:37:44.436Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_arfwfgre": {
+      "lastProcessed": "2025-12-06T04:37:48.672Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_ark8nv4y": {
+      "lastProcessed": "2025-12-06T04:37:52.885Z",
+      "enriched": false,
+      "sources": []
+    },
+    "_TZ3000_arw23zcs": {
+      "lastProcessed": "2025-12-06T04:37:57.115Z",
+      "enriched": false,
+      "sources": []
     }
   },
   "sources": {
