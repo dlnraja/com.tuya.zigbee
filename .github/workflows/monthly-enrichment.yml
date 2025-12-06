@@ -59,7 +59,7 @@ jobs:
           FLAGS="$FLAGS --limit=${{ github.event.inputs.limit || '50' }}"
 
           echo "Running enricher with flags: $FLAGS"
-          node automation/enrichment/INTELLIGENT_ENRICHER.js $FLAGS | tee enrichment.log
+          node automation/enrichment/INTELLIGENT_ENRICHER_v2.js $FLAGS | tee enrichment.log
 
           # Extract stats for summary
           PROCESSED=$(grep -oP 'Processed: \K\d+' enrichment.log || echo "0")
