@@ -1,4 +1,8 @@
 {
+  "5.5.25": {
+    "en": "SOIL SENSOR + SLEEPY DEVICE FIX: 1) Fixed _TZE284_oitavov2 soil sensor DP mappings - DP3=moisture, DP5=temperature (was inverted). 2) Added Tuya dataQuery wake command for battery sensors - forces report on next wake. 3) Periodic dataQuery every 30 min for sleepy devices. 4) Auto-detect temperature scale (÷10 or ÷100). Sources: ZHA quirks, Z2M, Tuya Developer docs.",
+    "fr": "FIX CAPTEUR SOL + APPAREILS DORMANTS: 1) Mappings DP corrigés pour _TZE284_oitavov2 - DP3=humidité sol, DP5=température (était inversé). 2) Commande dataQuery ajoutée pour réveiller capteurs batterie. 3) dataQuery périodique toutes les 30 min. 4) Auto-détection échelle température (÷10 ou ÷100). Sources: ZHA quirks, Z2M, docs Tuya Developer."
+  },
   "5.5.24": {
     "en": "2-GANG SWITCH FIX: 1) Fixed 'Missing Capability Listener: onoff.1' error by removing duplicate capability from driver.compose.json. 2) Added legacy onoff.X support in HybridSwitchBase for devices with existing onoff.1/onoff.2 capabilities.",
     "fr": "FIX SWITCH 2-GANG: 1) Erreur 'Missing Capability Listener: onoff.1' corrigée en supprimant la capability dupliquée. 2) Support legacy onoff.X ajouté dans HybridSwitchBase pour les appareils existants."

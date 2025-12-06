@@ -30,48 +30,67 @@ class SoilSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.4.3: NEW - Complete DP mappings for Soil Sensors
-   * Based on forum reports and Z2M data for _TZE284_oitavov2
+   * v5.5.25: CORRECTED DP mappings for Soil Sensors (_TZE284_oitavov2)
    *
-   * Soil sensors use DIFFERENT DPs than climate sensors:
-   * - Climate: DP1=temp, DP2=humidity, DP4=battery
-   * - Soil:    DP3=temp, DP5=humidity, DP105=soil_moisture, DP15=battery
+   * Source: ZHA quirk + Z2M + Community research
+   * https://switt.kongdachalert.com/zha-code-for-tuya-moisture-sensor-stick-2/
+   * https://community.home-assistant.io/t/ts0601-by-tze284-oitavov2-soil/899999
+   *
+   * CRITICAL FIX: _TZE284_oitavov2 (QT-07S) uses:
+   * - DP2: temperature_unit (0=C, 1=F)
+   * - DP3: soil_moisture % (NOT temperature!)
+   * - DP5: temperature ÷10 (or ÷100 for some devices)
+   * - DP14: battery_state enum (0=low, 1=medium, 2=high)
+   * - DP15: battery_percent %
    */
   get dpMappings() {
     return {
-      // Temperature (DP 3 for soil sensors, NOT DP 1!)
-      3: { capability: 'measure_temperature', divisor: 10 },
+      // ═══════════════════════════════════════════════════════════════════
+      // SOIL MOISTURE - DP3 (main sensor value)
+      // ═══════════════════════════════════════════════════════════════════
+      3: { capability: 'measure_humidity', divisor: 1 },
 
-      // Humidity (DP 5 for soil sensors, NOT DP 2!)
-      5: { capability: 'measure_humidity', divisor: 1 },
-
-      // Soil moisture (DP 105) - maps to measure_humidity with custom title
-      105: {
-        capability: 'measure_humidity',
-        divisor: 1,
+      // ═══════════════════════════════════════════════════════════════════
+      // TEMPERATURE - DP5 (soil temperature)
+      // Some devices report ×10, others ×100 - auto-detect
+      // ═══════════════════════════════════════════════════════════════════
+      5: {
+        capability: 'measure_temperature',
         transform: (v) => {
-          if (v > 100) return Math.round(v / 10);
+          // Auto-detect scale: if value > 1000, it's ÷100, else ÷10
+          if (v > 1000) return v / 100;
+          if (v > 100) return v / 10;
+          return v / 10; // Default ÷10
+        }
+      },
+
+      // ═══════════════════════════════════════════════════════════════════
+      // BATTERY - DP15 (percentage) + DP14 (state enum)
+      // ═══════════════════════════════════════════════════════════════════
+      15: { capability: 'measure_battery', divisor: 1 },
+      14: {
+        capability: 'measure_battery',
+        transform: (v) => {
+          // battery_state enum: 0=low(10%), 1=medium(50%), 2=high(100%)
+          if (v === 0) return 10;
+          if (v === 1) return 50;
+          if (v === 2) return 100;
           return v;
         }
       },
 
-      // Battery (DP 15 or 4)
-      15: { capability: 'measure_battery', divisor: 1 },
-      4: { capability: 'measure_battery', divisor: 1 },
+      // ═══════════════════════════════════════════════════════════════════
+      // SETTINGS - temperature unit
+      // ═══════════════════════════════════════════════════════════════════
+      2: { capability: null, setting: 'temperature_unit' }, // 0=C, 1=F
 
-      // Additional settings
-      10: { capability: null, setting: 'max_temp_alarm', divisor: 10 },
-      11: { capability: null, setting: 'min_temp_alarm', divisor: 10 },
-      12: { capability: null, setting: 'max_humidity_alarm' },
-      13: { capability: null, setting: 'min_humidity_alarm' },
-      // v5.4.7: REMOVED alarm_generic - NOT a valid Homey capability
-      14: { capability: null }, // Alarm state (no valid capability)
-      17: { capability: null, setting: 'report_interval' },
-
-      // Fallback DPs
-      1: { capability: 'measure_temperature', divisor: 10 },
-      2: { capability: 'measure_humidity', divisor: 1 },
-      101: { capability: 'measure_humidity', divisor: 1, transform: (v) => v > 100 ? v / 10 : v },
+      // ═══════════════════════════════════════════════════════════════════
+      // FALLBACK DPs for other soil sensor variants
+      // ═══════════════════════════════════════════════════════════════════
+      1: { capability: 'measure_temperature', divisor: 10 },  // Some variants
+      4: { capability: 'measure_battery', divisor: 1 },       // Alternative battery DP
+      101: { capability: 'measure_humidity', divisor: 1 },    // Alternative moisture
+      105: { capability: 'measure_humidity', divisor: 1, transform: (v) => v > 100 ? v / 10 : v },
     };
   }
 

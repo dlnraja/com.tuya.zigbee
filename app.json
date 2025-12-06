@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.24",
+  "version": "5.5.25",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.24: Fix 2-gang switch Missing Capability Listener error",
-    "fr": "V5.5.24: Fix erreur Missing Capability Listener switch 2-gang"
+    "en": "V5.5.25: Fix soil sensor DP mappings + add dataQuery wake for sleepy devices",
+    "fr": "V5.5.25: Fix mappings DP capteur sol + réveil dataQuery pour appareils batterie"
   },
   "category": "appliances",
   "permissions": [],
@@ -11433,9 +11433,7 @@
           "E11-N14",
           "E12-N14",
           "E1C-NB6",
-          "E1C-NB7",
-          "TS0501A",
-          "TS0501B"
+          "E1C-NB7"
         ],
         "endpoints": {
           "1": {
@@ -29556,13 +29554,11 @@
     {
       "class": "socket",
       "capabilities": [
+        "onoff",
         "onoff.gang2",
         "measure_power",
         "measure_voltage",
         "measure_current",
-        "onoff",
-        "onoff.1",
-        "alarm_battery",
         "meter_power"
       ],
       "zigbee": {
