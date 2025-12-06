@@ -1,0 +1,106 @@
+name: Monthly Enrichment
+
+on:
+  schedule:
+    # Run on the 1st of every month at 3:00 AM UTC
+    - cron: '0 3 1 * *'
+  workflow_dispatch:
+    inputs:
+      full_scan:
+        description: 'Force full scan (annual rescan)'
+        required: false
+        default: 'false'
+        type: boolean
+      limit:
+        description: 'Limit number of manufacturers to process'
+        required: false
+        default: '50'
+        type: string
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Intelligent Enricher
+        id: enricher
+        run: |
+          FLAGS=""
+          if [ "${{ github.event.inputs.full_scan }}" == "true" ]; then
+            FLAGS="$FLAGS --full"
+          fi
+          FLAGS="$FLAGS --limit=${{ github.event.inputs.limit || '50' }}"
+
+          echo "Running enricher with flags: $FLAGS"
+          node automation/enrichment/INTELLIGENT_ENRICHER.js $FLAGS | tee enrichment.log
+
+          # Extract stats for summary
+          PROCESSED=$(grep -oP 'Processed: \K\d+' enrichment.log || echo "0")
+          ENRICHED=$(grep -oP 'Enriched: \K\d+' enrichment.log || echo "0")
+
+          echo "processed=$PROCESSED" >> $GITHUB_OUTPUT
+          echo "enriched=$ENRICHED" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and validate
+        if: steps.enricher.outputs.enriched != '0'
+        run: |
+          npx homey app build
+          npx homey app validate --level publish
+
+      - name: Commit changes
+        if: steps.enricher.outputs.enriched != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add -A
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            COMMIT_MSG="chore: Monthly enrichment - $(date +%Y-%m)
+
+            Processed: ${{ steps.enricher.outputs.processed }} manufacturers
+            Enriched: ${{ steps.enricher.outputs.enriched }} with new data
+
+            [skip ci]"
+
+            git commit -m "$COMMIT_MSG"
+            git push
+          fi
+
+      - name: Create summary
+        run: |
+          echo "## 📊 Monthly Enrichment Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Manufacturers Processed | ${{ steps.enricher.outputs.processed }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Manufacturers Enriched | ${{ steps.enricher.outputs.enriched }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Run Date | $(date -u +%Y-%m-%d) |" >> $GITHUB_STEP_SUMMARY
+          echo "| Mode | ${{ github.event.inputs.full_scan == 'true' && 'Full Scan' || 'Incremental' }} |" >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload enrichment log
+        uses: actions/upload-artifact@v4
+        with:
+          name: enrichment-log-${{ github.run_id }}
+          path: enrichment.log
+          retention-days: 30
