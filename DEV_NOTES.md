@@ -404,13 +404,123 @@ If a device does not fit ANY existing folder:
 
 ---
 
-# 13. Règles de Placement (FR)
+# 13. NON-REGRESSION & COVERAGE PROTECTION (VITAL)
 
-## 13.1. Règle du Couple Sacré
+**"Le mieux est l'ennemi du bien"** - This section prevents losing device coverage during updates.
+
+## 13.1. The Real Risk
+
+### ❌ DANGER SCENARIO
+```json
+// BEFORE: Works "by chance" for many variants
+"manufacturerName": ["_TZ3000_abcde"],
+// No productId → Homey accepts ALL modelIds for this manufacturer
+
+// AFTER: Too restrictive!
+"manufacturerName": ["_TZ3000_abcde"],
+"productId": ["TS011F"]
+// RISK: If user has _TZ3000_abcde with modelId TS0001, it STOPS WORKING!
+```
+
+## 13.2. The Solution: Expansion, NOT Restriction
+
+When adding productId to a driver that previously had none:
+> **The list MUST be EXHAUSTIVE based on Z2M/community data.**
+
+### ❌ BAD (Too Risky)
+```json
+"manufacturerName": ["_TZ3000_abcde"],
+"productId": ["TS011F"]
+// RISK: Missing variants will break!
+```
+
+### ✅ GOOD (Safe Coverage)
+```json
+"manufacturerName": ["_TZ3000_abcde"],
+"productId": ["TS011F", "TS0001", "TS0003"]
+// SAFE: All known variations covered
+```
+
+## 13.3. Non-Regression Rules
+
+### Rule 1: Do NOT Delete Existing Manufacturers
+Unless a manufacturer is clearly in the WRONG functional folder (e.g., Smoke Detector in Light driver):
+**NEVER remove a manufacturerName that already exists.**
+
+### Rule 2: The "Unknown Variant" Safety Net
+If you find a manufacturerName in existing code but CANNOT confirm its productId in Z2M/GitHub:
+
+**Option A (Preferred):** Keep it in the list, add comment:
+```json
+"manufacturerName": [
+  "_TZ3000_abcde",
+  "_TZ3000_unknown"  // TODO: Verify productId - keeping for backward compatibility
+]
+```
+
+**Option B (Legacy Mode):** If strict productId filtering risks breaking unknown versions:
+- Keep productId array broad/inclusive for that manufacturer
+- Or create a separate "legacy" entry
+
+### Rule 3: Exhaustive ProductId When Adding
+If you ADD a productId array to a driver that had NONE:
+```json
+// BEFORE (no productId)
+"manufacturerName": ["_TZ3000_abcde"]
+
+// AFTER (MUST list ALL known variants)
+"manufacturerName": ["_TZ3000_abcde"],
+"productId": ["TS011F", "TS0001", "TS0121"]  // ALL variants from Z2M
+```
+
+### Rule 4: Conflict Check Before Save
+Before saving ANY change, verify:
+- `manufacturerName + productId` combinations are UNIQUE across entire `/drivers/` directory
+- No duplicate pairs in different drivers
+
+## 13.4. Common AI Mistakes to REJECT
+
+### ❌ REJECT: Single productId without exhaustive list
+```json
+"productId": ["TS0601"]  // WRONG: Missing other variants
+```
+
+### ❌ REJECT: Mixing productId and manufacturerName
+```json
+"productId": ["TS0601", "_TZE200_aaaaa"]  // WRONG: _TZE is manufacturerName!
+```
+
+### ❌ REJECT: Removing existing manufacturerName
+```json
+// BEFORE: Had 10 manufacturers
+// AFTER: Only 3 manufacturers
+// WRONG: Lost 7 manufacturers = 7 potential broken devices!
+```
+
+### ✅ ACCEPT: Expansion only
+```json
+// BEFORE: 10 manufacturers, no productId
+// AFTER: 12 manufacturers (added 2), productId with ALL variants
+// CORRECT: Only additions, exhaustive productId
+```
+
+## 13.5. Validation Checklist Before Any Change
+
+- [ ] No manufacturerName removed (unless clearly wrong category)
+- [ ] If productId added, list is EXHAUSTIVE from Z2M
+- [ ] No duplicate `(mfr, pid)` pairs across drivers
+- [ ] Category matches device function
+- [ ] Existing working devices will NOT break
+
+---
+
+# 14. Règles de Placement (FR)
+
+## 14.1. Règle du Couple Sacré
 - JAMAIS ajouter un productId sans vérifier le manufacturerName associé
 - C'est la COMBINAISON qui compte
 
-## 13.2. Expansion Maximale des ManufacturerNames
+## 14.2. Expansion Maximale des ManufacturerNames
 - Collecter TOUS les variants connus pour une famille d'appareils
 - Les ajouter au MÊME driver SI ET SEULEMENT SI:
   - Les clusters correspondent
@@ -418,14 +528,14 @@ If a device does not fit ANY existing folder:
   - Z2M/ZHA confirment le même comportement
   - Aucun conflit avec un autre driver
 
-## 13.3. Expansion Minimale des ProductIds
+## 14.3. Expansion Minimale des ProductIds
 - Ajouter UNIQUEMENT quand:
   - La paire `manufacturerName+productId` est unique
   - La catégorie correspond
   - Aucun conflit
   - Comportement identique vérifié
 
-## 13.4. Ordre de Priorité
+## 14.4. Ordre de Priorité
 ```
 1. CATÉGORIE (clusters + DPs) → Quel type d'appareil?
 2. DOSSIER (driver folder) → Où le placer?
@@ -433,7 +543,7 @@ If a device does not fit ANY existing folder:
 4. PRODUCTID (validation) → Seulement si sûr à 100%
 ```
 
-## 13.5. Règle Finale
+## 14.5. Règle Finale
 - Appareil = Bonne catégorie D'ABORD
 - ManufacturerName = MAXIMAL (tous les variants)
 - ProductId = MINIMAL mais PRÉCIS
