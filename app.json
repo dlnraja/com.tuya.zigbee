@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.9",
+  "version": "5.5.10",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.9: COLLISION FIX - 687 HIGH severity collisions resolved, 2483 duplicates removed, 0 conflicts",
-    "fr": "V5.5.9: FIX COLLISIONS - 687 collisions HIGH résolues, 2483 duplicats supprimés, 0 conflits"
+    "en": "V5.5.10: ALL ZIGBEE - 3743 mfrs from Z2M (Tuya+Moes+Zemismart+Lonsonho+BlitzWolf+Neo+Immax)",
+    "fr": "V5.5.10: TOUT ZIGBEE - 3743 mfrs de Z2M (Tuya+Moes+Zemismart+Lonsonho+BlitzWolf+Neo+Immax)"
   },
   "category": "appliances",
   "permissions": [],
@@ -11729,6 +11729,26 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "CK-BL702-AL-01(7009_Z102LG03-1)",
+          "CK-BL702-AL-01(7009_Z102LG04-1)",
+          "CK-BL702-AL-01(7009_Z102LG04-2)",
+          "IM-Z3.0-DIM",
+          "IM-Z3.0-RGBCCT",
+          "IM-Z3.0-RGBW",
+          "NUET56-DL27LX1.1",
+          "RH3001",
+          "TS0049",
+          "TS0224",
+          "TS0501A",
+          "TS0501B",
+          "TS0502A",
+          "TS0502B",
+          "TS0503A",
+          "TS0503B",
+          "TS0504A",
+          "TS0505",
+          "TS0505A",
+          "TS0505B",
           "_TZ3000_7dcddnye",
           "_TZ3000_kdpxju99",
           "_TZ3000_odygigth",
@@ -11745,7 +11765,8 @@
           "_TZ3210_rcggc0ys",
           "_TZ3210_sln7ah6r",
           "_TZ3210_wxa85bwk",
-          "_TZ3210_z1vlyufu"
+          "_TZ3210_z1vlyufu",
+          "gq8b1uv"
         ],
         "endpoints": {
           "1": {
@@ -13853,6 +13874,10 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "005f0c3b",
+          "TELINK",
+          "TS0201",
+          "ZG-101ZL",
           "_TYZB02_keyjqthh",
           "_TZ3000_46t1rvdu",
           "_TZ3000_abrsvsou",
@@ -16457,7 +16482,64 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
+          "0yu2xgi",
+          "1blo2bj",
+          "4in1-Sensor-ZB3.0",
+          "5j6ifxj",
+          "5j6ifxj\\u0000",
+          "5p1vj8r",
+          "6dfgetq",
+          "Bulb-RGB+CCT-ZB3.0",
           "ClimaxTechnology",
+          "ColorTemperature",
+          "DoorWindow-Sensor-ZB3.0",
+          "E27-filament-Dim-ZB3.0",
+          "FNB54-WTS08ML1.0",
+          "HY0080",
+          "IM-Z3.0-CCT",
+          "Keyfob-ZB3.0",
+          "Motion-Sensor-ZB3.0",
+          "Plug-230V-ZB3.0",
+          "RH3040",
+          "RH3052",
+          "SM0202",
+          "SM0212",
+          "SNTZ003",
+          "Seastar Intelligence",
+          "TS0026",
+          "TS0115",
+          "TS011F",
+          "TS0121",
+          "TS0202",
+          "TS0203",
+          "TS0204",
+          "TS0205",
+          "TS0210",
+          "TS0504B",
+          "TS0901",
+          "TS130F",
+          "TY0201",
+          "ZBT-CCTfilament-D0000",
+          "ZG-102Z",
+          "ZG-102ZL",
+          "ZG-102ZM",
+          "ZG-103Z",
+          "ZG-106Z",
+          "ZG-204Z",
+          "ZG-204ZH",
+          "ZG-204ZK",
+          "ZG-204ZL",
+          "ZG-204ZM",
+          "ZG-204ZQ",
+          "ZG-204ZV",
+          "ZG-205ZL",
+          "ZG-222Z",
+          "ZG-223Z",
+          "ZG-225Z",
+          "ZG-227Z",
+          "ZG-227ZL",
+          "ZG-303Z",
+          "ZGAF-205L",
           "_TZ1800_ladpngdx",
           "_TZ2000_a476raq2",
           "_TZ2000_xogb73am",
@@ -18130,7 +18212,8 @@
           "_tze608_c75zqghm",
           "_tze608_fmemczv1",
           "_tze608_lapuuoke",
-          "_tze608_xkr8gep3"
+          "_tze608_xkr8gep3",
+          "q9mpfhw"
         ],
         "productId": [
           "BLU-HT-ZB",
@@ -18261,7 +18344,9 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
+          "5rta89nj",
           "Immax",
+          "TS0301",
           "TUYATEC-0l6xaqmi",
           "TUYATEC-7qunn4gq",
           "TUYATEC-Bfq2i2Sy",
@@ -18706,6 +18791,7 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "TS0105",
           "_TZ3000_1dd0d5yi",
           "_TZ3000_42ha4rsc",
           "_TZ3000_4uuaja4a",
@@ -18801,7 +18887,13 @@
           "_TZb210_wxazcmsh",
           "_TZb210_wy1pyu1q",
           "_TZb210_yatkpuha",
-          "_tze200_zah67ekd"
+          "_tze200_zah67ekd",
+          "aabybja",
+          "mcdj3aq",
+          "mcdj3aq\\u0000",
+          "owvfni3",
+          "owvfni3\\u0000",
+          "u1rkty3"
         ],
         "productId": [
           "TS0601",
@@ -24276,6 +24368,7 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
+          "TS0207",
           "TUYATEC-53o41joc",
           "TUYATEC-b5g40alm",
           "TUYATEC-bd5faf9p",
@@ -24285,6 +24378,9 @@
           "TUYATEC-lha8pbwd",
           "TUYATEC-zn9wyqtr",
           "TUYATEC-zw6hxafz",
+          "ZG-204ZE",
+          "ZG-302ZL",
+          "ZG-302ZM",
           "_TYST11_7hfcudw5",
           "_TYST11_i5j6ifxj",
           "_TYZB01_dl7cejts",
@@ -25490,6 +25586,8 @@
       "zigbee": {
         "manufacturerName": [
           "SONOFF",
+          "TS0111",
+          "TS0218",
           "_TYZB01_hlla45kx",
           "_TZ1800_akzvkzqq",
           "_TZ1800_ho6i0zk9",
@@ -25597,6 +25695,7 @@
           "_tz3290_lypnqvlem5eq1ree",
           "_tz3290_xjpbcxn92aaxvmlz",
           "_tz3290_yac64inudpovoaba",
+          "eWeLi\\u0001\\u0000\\u0010",
           "eWeLink"
         ],
         "productId": [
@@ -28206,6 +28305,37 @@
           }
         },
         "manufacturerName": [
+          "E220-KR4N0Z0-HA",
+          "HY0017",
+          "JZ-ZB-004",
+          "LXN56-SS27LX1.1",
+          "LXT56-LS27LX1.6",
+          "NAS-WV03B",
+          "Plug_01",
+          "SM0001",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0006",
+          "TS0012",
+          "TS0013",
+          "TS0014",
+          "TS0041",
+          "TS0041A",
+          "TS0042",
+          "TS0043",
+          "TS0044",
+          "TS0046",
+          "TS0052",
+          "TS0112",
+          "TS0302",
+          "TS030F",
+          "ZB-RGBCW",
+          "ZG-101Z",
+          "ZG-302Z1",
+          "ZG-302Z2",
+          "ZG-302Z3",
+          "ZG-305Z",
           "_TYZB01_aneiicmq",
           "_TYZB01_ncutbjdi",
           "_TYZB01_phjeraqq",
@@ -29081,7 +29211,10 @@
           "_tz3000_zv6x8bt2",
           "_tz3000_zw7wr5uo",
           "_tz3000_zwaadvus",
-          "_tze204_srmahpw"
+          "_tze204_srmahpw",
+          "kjintbl",
+          "losfena",
+          "qnazj70"
         ]
       },
       "images": {
@@ -32198,6 +32331,7 @@
       ],
       "zigbee": {
         "manufacturerName": [
+          "TS0011",
           "_TZE200_0dvm9mva",
           "_TZE200_cwbvmsar",
           "_TZE200_kds0pqet",
@@ -33557,6 +33691,12 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "TS0001",
+          "TS020C",
+          "TS0216",
+          "TS0219",
+          "ZG-101ZD",
+          "ZG-301Z",
           "_TUYATEC-1uxx9cci",
           "_TUYATEC-HaoiuWzy",
           "_TUYATEC-b5g40alm",
@@ -33629,7 +33769,10 @@
           "_TZb210_rwy5hexp",
           "_TZb210_zmppwawa",
           "_tz3000_bjawzodf",
-          "_tz3000_xr3htd96"
+          "_tz3000_xr3htd96",
+          "kud7u2l",
+          "lrfgpny",
+          "q76rtoa9"
         ],
         "productId": [
           "TS0601"
