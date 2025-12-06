@@ -1,4 +1,8 @@
 {
+  "5.5.12": {
+    "en": "MASTER RULES APPLIED - Created MASTER_APPLY_ALL_RULES.js that enforces all fingerprinting rules in one pass: collision resolution, exhaustive productId enrichment, manufacturerName expansion, category placement validation. 18 drivers optimized. Final: 3743 unique manufacturers, 272 productIds, 0 collisions.",
+    "fr": "RÈGLES MASTER APPLIQUÉES - Créé MASTER_APPLY_ALL_RULES.js qui applique toutes les règles fingerprinting en une passe: résolution collisions, enrichissement exhaustif productId, expansion manufacturerName, validation placement. 18 drivers optimisés. Final: 3743 fabricants uniques, 272 productIds, 0 collisions."
+  },
   "5.5.11": {
     "en": "ZERO COLLISIONS - Full audit of 20 last pushes. Resolved 8 collisions between generic_tuya/zigbee_universal. Exhaustive productId enrichment from Z2M (+5 pids). Applied all fingerprinting rules: Category placement, 3-pillar validation, non-regression protection. HIGH=0, MEDIUM=0.",
     "fr": "ZÉRO COLLISIONS - Audit complet des 20 derniers push. Résolu 8 collisions entre generic_tuya/zigbee_universal. Enrichissement exhaustif productId depuis Z2M (+5 pids). Toutes règles fingerprinting appliquées: Placement catégorie, validation 3 piliers, protection non-régression. HIGH=0, MEDIUM=0."
