@@ -10,20 +10,69 @@
     "measure_battery"
   ],
   "energy": {
-    "batteries": ["CR2032", "AAA"]
+    "batteries": [
+      "CR2032",
+      "AAA"
+    ]
   },
   "zigbee": {
     "manufacturerName": [
-      "TUYATEC-g3gl6cgy",
+      "TUYATEC-1g3tawnp",
+      "TUYATEC-1uxx9cci",
       "TUYATEC-Bfq2i2Sy",
+      "TUYATEC-HaoiuWzy",
       "TUYATEC-abkehqus",
-      "TUYATEC-yg5dcbfu"
+      "TUYATEC-g3gl6cgy",
+      "TUYATEC-gqhxixyk",
+      "TUYATEC-ojmxeikg",
+      "TUYATEC-ojmxeikq",
+      "TUYATEC-prhs1rsd",
+      "TUYATEC-qun7vq14",
+      "TUYATEC-riuj5xzs",
+      "TUYATEC-v3uxbuxy",
+      "TUYATEC-vmgh3fxd",
+      "TUYATEC-yg5dcbfu",
+      "_TZ3000_0s1izerx",
+      "_TZ3000_6uzkisv2",
+      "_TZ3000_8ybe88nf",
+      "_TZ3000_bguser20",
+      "_TZ3000_dowj6gyi",
+      "_TZ3000_f2bw0b6k",
+      "_TZ3000_fie1dpkm",
+      "_TZ3000_fllyghyj",
+      "_TZ3000_i8jfiezr",
+      "_TZ3000_saiqcn0y",
+      "_TZ3000_utwgoauk",
+      "_TZ3000_xr3htd96",
+      "_TZ3000_zl1kmjqx",
+      "_TZE200_9yapgbuv",
+      "_TZE200_a8sdabtg",
+      "_TZE200_cirvgep4",
+      "_TZE200_utkemkbs",
+      "_TZE200_vvmbj46n",
+      "_TZE200_yjjdcqsq",
+      "_TZE204_9yapgbuv",
+      "_TZE204_cirvgep4",
+      "_TZE204_upagmta9",
+      "_TZE204_utkemkbs",
+      "_TZE204_yjjdcqsq"
     ],
-    "productId": ["TUYATEC_TempHumid"],
+    "productId": [
+      "TUYATEC_TempHumid"
+    ],
     "endpoints": {
       "1": {
-        "clusters": [0, 1, 1026, 1029],
-        "bindings": [1, 1026, 1029]
+        "clusters": [
+          0,
+          1,
+          1026,
+          1029
+        ],
+        "bindings": [
+          1,
+          1026,
+          1029
+        ]
       }
     }
   },
