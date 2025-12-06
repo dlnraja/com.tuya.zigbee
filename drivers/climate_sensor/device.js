@@ -1,9 +1,10 @@
 'use strict';
 
 const { HybridSensorBase } = require('../../lib/devices');
+const { TuyaGatewayEmulator, WakeStrategies } = require('../../lib/tuya/TuyaGatewayEmulator');
 
 /**
- * Climate Sensor Device - v5.5.26 ENHANCED
+ * Climate Sensor Device - v5.5.29 GATEWAY EMULATION
  *
  * Sources:
  * - Z2M: Temperature & humidity sensor with clock (TH05Z)
@@ -30,6 +31,8 @@ const { HybridSensorBase } = require('../../lib/devices');
  * Climate sensors use: DP1=temp, DP2=humidity, DP4=battery (x2 multiplier)
  *
  * v5.5.26: Enhanced time sync (every 6h) for clock devices
+ * v5.5.29: Gateway emulation for time broadcast + advanced wake strategies
+ *          Homey now acts as Tuya Gateway - pushes time proactively!
  */
 class ClimateSensorDevice extends HybridSensorBase {
 
@@ -117,17 +120,94 @@ class ClimateSensorDevice extends HybridSensorBase {
     this.log(`[CLIMATE] Manufacturer: ${mfr}`);
     this.log('[CLIMATE] ════════════════════════════════════════════════════');
 
-    // v5.4.7: Initialize time sync for _TZE284_vvmbj46n
-    if (mfr && mfr.includes('_TZE284_')) {
-      this.log('[CLIMATE] 🕒 _TZE284 device detected - initializing time sync...');
+    // v5.5.29: Initialize Gateway Emulator for devices with LCD clocks
+    // This makes Homey act as a Tuya Gateway - pushing time proactively
+    const hasLCD = mfr && (
+      mfr.includes('_TZE284_') ||
+      mfr.includes('_TZE200_vvmbj46n') ||
+      modelId.includes('TH05')
+    );
+
+    if (hasLCD) {
+      this.log('[CLIMATE] 🖥️ LCD device detected - initializing Gateway Emulation...');
+      await this._setupGatewayEmulation();
+    } else {
+      // Fallback to simple time sync for non-LCD devices
       await this._setupTimeSync().catch(err => {
-        this.error('[CLIMATE] Time sync setup failed (non-critical):', err.message);
+        this.log('[CLIMATE] Time sync setup skipped:', err.message);
       });
     }
 
-    // For debugging: log when we receive ANY DP
+    // v5.5.29: Setup advanced wake strategies to get data from sleepy devices
+    await this._setupWakeStrategies();
+
     this.log('[CLIMATE] 👀 Watching for temperature/humidity data...');
     this.log('[CLIMATE] ℹ️ Battery-powered sensors may take minutes to hours to report');
+  }
+
+  /**
+   * v5.5.29: Setup Tuya Gateway Emulation
+   * Makes Homey act as a real Tuya gateway for time broadcast
+   */
+  async _setupGatewayEmulation() {
+    try {
+      this.log('[CLIMATE] 🌐 Starting Gateway Emulation...');
+
+      // Create gateway emulator instance
+      this._gatewayEmulator = new TuyaGatewayEmulator(this, {
+        broadcastInterval: 6 * 60 * 60 * 1000, // 6 hours
+        autoStart: true,
+        verbose: true,
+      });
+
+      // Initialize - this will:
+      // 1. Setup time request handler (responds to device time requests)
+      // 2. Push time immediately
+      // 3. Start periodic time broadcast
+      await this._gatewayEmulator.initialize();
+
+      this.log('[CLIMATE] ✅ Gateway Emulation active - Homey is now a Tuya Gateway!');
+    } catch (err) {
+      this.error('[CLIMATE] Gateway emulation failed:', err.message);
+      // Fallback to simple time sync
+      await this._setupTimeSync().catch(() => { });
+    }
+  }
+
+  /**
+   * v5.5.29: Setup advanced wake strategies
+   * Multiple methods to get data from sleepy devices
+   */
+  async _setupWakeStrategies() {
+    try {
+      this.log('[CLIMATE] ⏰ Setting up wake strategies...');
+
+      // Strategy 1: Query all DPs when ANY data is received (device is awake)
+      const dpIds = [1, 2, 4, 18]; // temp, hum, battery, alt temp
+      await WakeStrategies.onAnyDataReceived(this, dpIds, async (dps) => {
+        // When we receive any data, the device is awake - query everything!
+        if (this.safeTuyaDataQuery) {
+          await this.safeTuyaDataQuery(dps, {
+            logPrefix: '[CLIMATE-WAKE]',
+            delayBetweenQueries: 100
+          });
+        }
+        // Also push time while device is awake
+        if (this._gatewayEmulator) {
+          await this._gatewayEmulator.pushTime().catch(() => { });
+        }
+      });
+
+      // Strategy 2: Configure ZCL attribute reporting
+      await WakeStrategies.configureReporting(this).catch(() => { });
+
+      // Strategy 3: Refresh bindings
+      await WakeStrategies.refreshBindings(this).catch(() => { });
+
+      this.log('[CLIMATE] ✅ Wake strategies configured');
+    } catch (err) {
+      this.log('[CLIMATE] Wake strategies setup error:', err.message);
+    }
   }
 
   /**
@@ -216,17 +296,28 @@ class ClimateSensorDevice extends HybridSensorBase {
       delayBetweenQueries: 150,
     });
 
-    // Also sync time while device is awake
-    const endpoint = this.zclNode?.endpoints?.[1];
-    const timeCluster = endpoint?.clusters?.time || endpoint?.clusters?.[0x000A];
-    if (timeCluster) {
-      await this._syncDeviceTime(timeCluster).catch(() => { });
+    // v5.5.29: Push time via gateway emulator while device is awake
+    if (this._gatewayEmulator) {
+      await this._gatewayEmulator.pushTime().catch(() => { });
+    } else {
+      // Fallback to ZCL time sync
+      const endpoint = this.zclNode?.endpoints?.[1];
+      const timeCluster = endpoint?.clusters?.time || endpoint?.clusters?.[0x000A];
+      if (timeCluster) {
+        await this._syncDeviceTime(timeCluster).catch(() => { });
+      }
     }
 
     return true;
   }
 
   async onDeleted() {
+    // v5.5.29: Clean up gateway emulator
+    if (this._gatewayEmulator) {
+      this._gatewayEmulator.destroy();
+      this._gatewayEmulator = null;
+    }
+
     // v5.4.7: Clear time sync interval
     if (this._timeSyncInterval) {
       clearInterval(this._timeSyncInterval);
