@@ -1,4 +1,8 @@
 {
+  "5.5.33": {
+    "en": "TRUE HYBRID PROTOCOL: 1) New lib/zigbee/ZigbeeDataQuery.js - ZCL equivalent of TuyaDataQuery. 2) HybridDataQuery queries BOTH Tuya DP AND ZCL simultaneously. 3) markAwake() called when ANY data received - triggers queries during wake window. 4) configureAllReporting() sets up ZCL attribute reporting for auto-updates. 5) Capability status log after 30 min shows what's still missing. 6) Sources: zigbee2mqtt, ZHA (Home Assistant), Hubitat drivers.",
+    "fr": "VRAI PROTOCOLE HYBRIDE: 1) Nouveau lib/zigbee/ZigbeeDataQuery.js - équivalent ZCL de TuyaDataQuery. 2) HybridDataQuery interroge Tuya DP ET ZCL simultanément. 3) markAwake() appelé à chaque donnée reçue - déclenche queries pendant fenêtre éveil. 4) configureAllReporting() configure le reporting ZCL auto. 5) Log status capabilities après 30 min montre ce qui manque. 6) Sources: zigbee2mqtt, ZHA (Home Assistant), Hubitat."
+  },
   "5.5.32": {
     "en": "UNIVERSAL DATA RECOVERY: 1) DataRecoveryManager now added to BaseHybridDevice - ALL 54 drivers benefit! 2) Covers: bulbs, plugs, switches, curtains, thermostats, HVAC, LED strips, etc. 3) _initDataRecoveryManager() in background init. 4) Proper cleanup in onDeleted(). 5) Skip duplicate init if child class already did it. 6) ManufacturerName/ProductId rules documented in memory.",
     "fr": "RÉCUPÉRATION DONNÉES UNIVERSELLE: 1) DataRecoveryManager maintenant dans BaseHybridDevice - 54 drivers en bénéficient! 2) Couvre: ampoules, prises, interrupteurs, rideaux, thermostats, HVAC, LED strips, etc. 3) _initDataRecoveryManager() dans init background. 4) Cleanup propre dans onDeleted(). 5) Skip init dupliquée si classe enfant l'a fait. 6) Règles ManufacturerName/ProductId documentées."
