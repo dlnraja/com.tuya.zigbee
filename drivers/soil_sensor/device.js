@@ -4,7 +4,7 @@ const { HybridSensorBase } = require('../../lib/devices');
 const { WakeStrategies } = require('../../lib/tuya/TuyaGatewayEmulator');
 
 /**
- * Soil Sensor Device - v5.5.29 WAKE STRATEGIES
+ * Soil Sensor Device - v5.5.35 ENHANCED WAKE + AGGRESSIVE RECOVERY
  *
  * Uses HybridSensorBase for:
  * - Anti-double init
@@ -95,6 +95,10 @@ class SoilSensorDevice extends HybridSensorBase {
     };
   }
 
+  // v5.5.35: Skip ZCL battery polling - use Tuya DP only
+  get usesTuyaDPBattery() { return true; }
+  get skipZclBatteryPolling() { return true; }
+
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
 
@@ -107,15 +111,45 @@ class SoilSensorDevice extends HybridSensorBase {
     this.log('[SOIL] Model:', modelId);
     this.log('[SOIL] Manufacturer:', mfr);
     this.log('[SOIL] ========================================================');
-    this.log('[SOIL] Watching for temperature/humidity/soil_moisture data...');
+    this.log('[SOIL] ⚠️ BATTERY DEVICE - Data comes when device wakes up naturally');
+    this.log('[SOIL] ℹ️ First data may take 10-60 minutes after pairing');
 
-    // v5.5.19: Battery devices need periodic DP requests
-    // Request DPs immediately and then every 30 minutes
-    await this._requestSoilDPs();
-    this._startPeriodicDPRequest();
+    // v5.5.35: Schedule aggressive DP request for after device likely wakes
+    // Soil sensors typically report every 10-30 minutes
+    this._scheduleAggressiveDPRequest();
 
     // v5.5.29: Setup advanced wake strategies
     await this._setupWakeStrategies();
+  }
+
+  /**
+   * v5.5.35: Schedule aggressive DP requests at typical wake intervals
+   * Battery sensors wake up periodically - we try to catch them
+   */
+  _scheduleAggressiveDPRequest() {
+    // Try multiple times at different intervals
+    const intervals = [
+      30 * 1000,      // 30 seconds after init
+      2 * 60 * 1000,  // 2 minutes
+      5 * 60 * 1000,  // 5 minutes
+      10 * 60 * 1000, // 10 minutes
+      20 * 60 * 1000, // 20 minutes
+      30 * 60 * 1000, // 30 minutes
+    ];
+
+    intervals.forEach((delay, index) => {
+      const timer = this.homey.setTimeout(() => {
+        this.log(`[SOIL] ⏰ Aggressive DP request attempt ${index + 1}/${intervals.length}`);
+        this._requestSoilDPs();
+      }, delay);
+      this._aggressiveTimers = this._aggressiveTimers || [];
+      this._aggressiveTimers.push(timer);
+    });
+
+    this.log('[SOIL] 📅 Scheduled aggressive DP requests at: 30s, 2m, 5m, 10m, 20m, 30m');
+
+    // Also start regular periodic request
+    this._startPeriodicDPRequest();
   }
 
   /**
@@ -215,11 +249,16 @@ class SoilSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.19: Clean up on device destroy
+   * v5.5.35: Clean up on device destroy
    */
   onDeleted() {
     if (this._dpRequestInterval) {
       clearInterval(this._dpRequestInterval);
+    }
+    // v5.5.35: Clear aggressive timers
+    if (this._aggressiveTimers) {
+      this._aggressiveTimers.forEach(t => this.homey.clearTimeout(t));
+      this._aggressiveTimers = null;
     }
     if (super.onDeleted) super.onDeleted();
   }
