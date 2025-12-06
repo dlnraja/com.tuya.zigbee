@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.26",
+  "version": "5.5.27",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.26: Enhanced device support - mmWave offline check, 2-gang power measurement, SOS battery refresh, climate time sync",
-    "fr": "V5.5.26: Support amélioré - check offline mmWave, mesure puissance 2-gang, refresh batterie SOS, sync horloge climat"
+    "en": "V5.5.27: TuyaDataQuery module + Flow Card refresh action for sleepy devices",
+    "fr": "V5.5.27: Module TuyaDataQuery + action Flow pour rafraîchir appareils batterie"
   },
   "category": "appliances",
   "permissions": [],
@@ -8478,6 +8478,28 @@
           "en": "Check if there are firmware updates available for all devices",
           "fr": "Vérifier si des mises à jour sont disponibles pour tous les appareils"
         }
+      },
+      {
+        "id": "refresh_device",
+        "title": {
+          "en": "Refresh device data",
+          "fr": "Rafraîchir les données"
+        },
+        "titleFormatted": {
+          "en": "Refresh [[device]] data",
+          "fr": "Rafraîchir les données de [[device]]"
+        },
+        "hint": {
+          "en": "Request fresh data from the device. For sleepy/battery devices, this will only work if the device recently woke up.",
+          "fr": "Demander des données fraîches à l'appareil. Pour les appareils sur batterie, cela ne fonctionne que si l'appareil s'est récemment réveillé."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor|soil_sensor|motion_sensor_radar_mmwave|temphumidsensor|water_leak_sensor|smoke_detector_advanced"
+          }
+        ]
       },
       {
         "id": "bulb_dimmable_smart_bulb_dimmer_turn_on",

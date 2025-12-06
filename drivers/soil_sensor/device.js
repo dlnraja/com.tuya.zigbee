@@ -159,6 +159,26 @@ class SoilSensorDevice extends HybridSensorBase {
   }
 
   /**
+   * v5.5.27: Refresh all DPs - called by Flow Card or manual refresh
+   * Uses safeTuyaDataQuery for sleepy device handling
+   */
+  async refreshAll() {
+    this.log('[SOIL-REFRESH] Refreshing all DPs...');
+
+    // DPs based on corrected mappings
+    const DPS_MOISTURE = [3, 101, 105];  // Soil moisture
+    const DPS_TEMP = [1, 5];             // Temperature
+    const DPS_BATTERY = [4, 14, 15];     // Battery
+
+    const allDPs = [...DPS_MOISTURE, ...DPS_TEMP, ...DPS_BATTERY];
+
+    return this.safeTuyaDataQuery(allDPs, {
+      logPrefix: '[SOIL-REFRESH]',
+      delayBetweenQueries: 150,
+    });
+  }
+
+  /**
    * v5.5.19: Clean up on device destroy
    */
   onDeleted() {
