@@ -3,7 +3,7 @@
     "en": "Smart Valve 1-Way",
     "fr": "Vanne Connectée 1 Voie"
   },
-  "class": "other",
+  "class": "thermostat",
   "capabilities": [
     "onoff",
     "valve_position",

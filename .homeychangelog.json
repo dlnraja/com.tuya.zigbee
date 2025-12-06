@@ -1,4 +1,8 @@
 {
+  "5.5.16": {
+    "en": "WORLDWIDE ENRICHMENT - Scanned 357 Z2M brand files + ZHA database. Added 88 new manufacturers and 13 new productIds. Fixed 3 missing driver icons (lcdtemphumidsensor, led_controller_dimmable, temphumidsensor). Fixed 3 driver classes. Audited all 83 drivers for category compliance. Sources: tuya (1364), lumi (314), moes (76), ikea (37), etc. Final: 3930 manufacturers, 318 productIds, 0 collisions.",
+    "fr": "ENRICHISSEMENT MONDIAL - Scanné 357 fichiers marques Z2M + base ZHA. Ajouté 88 nouveaux fabricants et 13 nouveaux productIds. Corrigé 3 icônes manquantes. Corrigé 3 classes drivers. Audité 83 drivers pour conformité catégorie. Sources: tuya (1364), lumi (314), moes (76), ikea (37), etc. Final: 3930 fabricants, 318 productIds, 0 collisions."
+  },
   "5.5.15": {
     "en": "GLOBAL MANUFACTURER SEARCH - Scanned 228 Z2M brand files worldwide (tuya, moes, zemismart, lidl, lonsonho, neo, saswell, nous, avatto, mercator, immax, woox, heiman, ewelink, sonoff, etc.). Added 99 new manufacturers and 29 new productIds. Top sources: tuya (1371), moes (77), zemismart (39), lidl (31). Final: 3842 unique manufacturers, 305 productIds, 0 collisions.",
     "fr": "RECHERCHE GLOBALE FABRICANTS - Scanné 228 fichiers marques Z2M mondiaux (tuya, moes, zemismart, lidl, lonsonho, neo, saswell, nous, avatto, mercator, immax, woox, heiman, ewelink, sonoff, etc.). Ajouté 99 nouveaux fabricants et 29 nouveaux productIds. Top sources: tuya (1371), moes (77), zemismart (39), lidl (31). Final: 3842 fabricants uniques, 305 productIds, 0 collisions."
