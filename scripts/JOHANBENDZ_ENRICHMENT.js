@@ -84,7 +84,7 @@ const JOHANBENDZ_ISSUES = {
   '_TZ321C_fkzihax8': { driver: 'presence_sensor_radar', productId: 'TS0225', type: 'radar' },
 };
 
-// Additional manufacturers from forum and other sources
+// Additional manufacturers from forum and PRs
 const ADDITIONAL_MANUFACTURERS = {
   // Forum reports
   '_TZ3000_0dumfk2z': { driver: 'button_emergency_sos', productId: 'TS0215A', type: 'sos' },
@@ -92,6 +92,22 @@ const ADDITIONAL_MANUFACTURERS = {
   '_TZE284_vvmbj46n': { driver: 'climate_sensor', productId: 'TS0601', type: 'climate' },
   '_TZE284_oitavov2': { driver: 'soil_sensor', productId: 'TS0601', type: 'soil' },
   '_TZ3000_h1ipgkwn': { driver: 'switch_2gang', productId: 'TS0002', type: 'switch' },
+
+  // PR #1237 - Smoke + Temp + Humidity
+  '_TZE284_gyzlwu5q': { driver: 'smoke_detector_advanced', productId: 'TS0601', type: 'smoke_climate' },
+
+  // PR #1253 - Luminance door sensor + Smart button
+  '_TZE200_pay2byax': { driver: 'contact_sensor', productId: 'TS0601', type: 'door_lux' },
+  '_TZ3000_mrpevh8p': { driver: 'button_wireless_1', productId: 'TS0041', type: 'button' },
+
+  // PR #1303/1292 - PIR/Radar with illuminance
+  '_TZE200_y8jijhba': { driver: 'motion_sensor_radar_mmwave', productId: 'TS0601', type: 'radar_lux' },
+
+  // PR #1218 - New manufacturer
+  '_TZE204_dapwryy7': { driver: 'presence_sensor_radar', productId: 'TS0601', type: 'radar' },
+
+  // PR #1219 - New manufacturer
+  '_TZ3000_gjrubzje': { driver: 'plug_smart', productId: 'TS011F', type: 'plug' },
 };
 
 function enrichDriver(driverName, manufacturers) {
