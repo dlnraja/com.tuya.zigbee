@@ -1,4 +1,8 @@
 {
+  "5.5.29": {
+    "en": "GATEWAY EMULATION: 1) New TuyaGatewayEmulator.js - Homey now acts as a real Tuya Gateway! 2) Automatic time broadcast to LCD devices (_TZE284_vvmbj46n TH05Z). 3) Time request handler - responds when device asks for time. 4) WakeStrategies module with 6 methods: onDeviceAnnounce, onAnyDataReceived, refreshBindings, configureReporting, readAttributes, dpQueryBurst. 5) All sensors (Climate, Radar, Soil) now use wake strategies for better data retrieval. 6) Climate sensor pushes time proactively every 6h.",
+    "fr": "ÉMULATION GATEWAY: 1) Nouveau TuyaGatewayEmulator.js - Homey agit comme vraie Gateway Tuya! 2) Broadcast heure auto vers appareils LCD (_TZE284_vvmbj46n TH05Z). 3) Handler requêtes heure - répond quand appareil demande l'heure. 4) Module WakeStrategies avec 6 méthodes. 5) Tous les capteurs utilisent wake strategies pour mieux récupérer les données. 6) Capteur climat pousse l'heure proactivement toutes les 6h."
+  },
   "5.5.28": {
     "en": "CALIBRATION + TIME SYNC: 1) New TuyaTimeSync.js module - ZCL + Tuya EF00 time sync for clock devices. 2) Calibration settings added to Radar, Climate, Soil sensors (temperature_calibration, humidity_calibration, moisture_calibration). 3) _applyCalibration() in HybridSensorBase automatically applies offsets. 4) syncTime() method available in all sensor classes. Sources: Z2M calibration, ZHA quirks.",
     "fr": "CALIBRATION + SYNC HEURE: 1) Nouveau module TuyaTimeSync.js - sync heure ZCL + Tuya EF00 pour appareils avec horloge. 2) Réglages calibration ajoutés aux capteurs Radar, Climat, Sol (décalage temp, humidité). 3) _applyCalibration() dans HybridSensorBase applique automatiquement les décalages. 4) Méthode syncTime() disponible dans toutes les classes capteurs."
