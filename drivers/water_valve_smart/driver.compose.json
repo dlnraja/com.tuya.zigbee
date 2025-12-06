@@ -3,7 +3,7 @@
     "en": "Water Valve Smart",
     "fr": "Water Valve Smart"
   },
-  "class": "other",
+  "class": "thermostat",
   "capabilities": [
     "alarm_motion",
     "measure_temperature",
