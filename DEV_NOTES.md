@@ -1,331 +1,460 @@
-# Developer Notes - ULTRA-STRICT ZIGBEE FINGERPRINTING RULESET
+# Universal Tuya Zigbee - Developer Notes
 
-## 9. UNIVERSAL STRICT ZIGBEE FINGERPRINTING RULES
-**(Mandatory for ALL AI actions: generation, enrichment, refactor, merging)**
+## Table of Contents
 
-This section defines the definitive rules for safely handling fingerprinting inside `com.dlnraja.tuya.zigbee`.
-
-**These rules are ABSOLUTE and NON-NEGOTIABLE.**
+1. [Overview](#1-overview)
+2. [Project Structure](#2-project-structure)
+3. [Automation Scripts](#3-automation-scripts)
+4. [Driver Priority System](#4-driver-priority-system)
+5. [Zigbee Fingerprinting Rules](#5-zigbee-fingerprinting-rules)
+6. [TS0601 Trap](#6-ts0601-trap)
+7. [3-Pillar Validation](#7-3-pillar-validation)
+8. [Category Placement](#8-category-placement)
+9. [Expansion Rules](#9-expansion-rules)
+10. [Non-Regression Protection](#10-non-regression-protection)
+11. [Validation Checklist](#11-validation-checklist)
+12. [Version Française](#12-version-française)
 
 ---
 
-## 9.1. True Homey Matching Logic (Authoritative)
+# 1. Overview
 
-Homey selects the correct driver using:
-- `zigbee.manufacturerName`
-- AND `zigbee.productId` (zigbee modelId, e.g. "TS0601")
-- AND (if available) profileId + deviceId
+**Universal Tuya Zigbee** is a Homey SDK3 app that supports 3743+ Tuya-compatible Zigbee devices.
 
-Therefore:
+### Key Stats
+- **Manufacturers**: 3,743 unique
+- **ProductIds**: 272 unique
+- **Drivers**: 83
+- **Collisions**: 0
+
+### Supported Brands
+- Tuya (all _TZ*, _TY*, _TS* prefixes)
+- Moes, Zemismart, Lonsonho, BlitzWolf, Neo, Immax
+- Any Tuya OEM / white-label brand
+
+---
+
+# 2. Project Structure
+
+```
+com.dlnraja.tuya.zigbee/
+├── drivers/                    # 83 device drivers
+│   ├── switch_1gang/          # Switches
+│   ├── plug_smart/            # Plugs
+│   ├── bulb_rgb/              # Lights
+│   ├── climate_sensor/        # Sensors
+│   ├── motion_sensor/         # Motion
+│   ├── thermostat_tuya_dp/    # Thermostats
+│   ├── curtain_motor/         # Covers
+│   ├── smoke_detector_*/      # Alarms
+│   ├── generic_tuya/          # Generic (priority 10)
+│   └── zigbee_universal/      # Catch-all (priority 5)
+├── automation/                 # Automation scripts
+│   ├── MASTER_APPLY_ALL_RULES.js
+│   ├── DETECT_COLLISIONS.js
+│   ├── RESOLVE_COLLISIONS.js
+│   ├── EXHAUSTIVE_ENRICHMENT.js
+│   ├── SAFE_AUDIT.js
+│   └── FETCH_ALL_ZIGBEE.js
+├── lib/                        # Shared libraries
+├── assets/                     # App images
+├── locales/                    # Translations
+└── DEV_NOTES.md               # This file
+```
+
+---
+
+# 3. Automation Scripts
+
+| Script | Purpose | Safe |
+|--------|---------|------|
+| `MASTER_APPLY_ALL_RULES.js` | Apply ALL rules in one pass | ✅ |
+| `DETECT_COLLISIONS.js` | Find HIGH/MEDIUM collisions | ✅ |
+| `RESOLVE_COLLISIONS.js` | Resolve by priority system | ⚠️ |
+| `EXHAUSTIVE_ENRICHMENT.js` | Add all productIds from Z2M | ⚠️ |
+| `SAFE_AUDIT.js` | Read-only analysis | ✅ |
+| `FETCH_ALL_ZIGBEE.js` | Fetch all Z2M manufacturers | ⚠️ |
+
+### Usage
+
+```bash
+# Apply all rules (recommended)
+node automation/MASTER_APPLY_ALL_RULES.js
+
+# Audit only (no changes)
+node automation/SAFE_AUDIT.js smoke_detector_advanced
+
+# Check for collisions
+node automation/DETECT_COLLISIONS.js
+
+# Validate for publish
+npx homey app validate --level publish
+```
+
+---
+
+# 4. Driver Priority System
+
+Higher priority = more specific driver. Manufacturers are assigned to highest priority driver only.
+
+```
+PRIORITY 100 (Most Specific):
+  climate_sensor, motion_sensor, contact_sensor, water_leak_sensor,
+  smoke_detector_advanced, presence_sensor_radar, vibration_sensor, soil_sensor
+
+PRIORITY 90:
+  thermostat_tuya_dp, radiator_valve, curtain_motor, plug_energy_monitor
+
+PRIORITY 80:
+  switch_1gang, switch_2gang, switch_3gang, switch_4gang,
+  plug_smart, dimmer_wall_1gang, button_wireless_1, bulb_rgb
+
+PRIORITY 70:
+  temphumidsensor, air_quality_co2, weather_station_outdoor
+
+PRIORITY 10:
+  generic_tuya
+
+PRIORITY 5 (Catch-all):
+  zigbee_universal
+```
+
+**Rule**: One manufacturer = ONE driver (the highest priority)
+
+---
+
+# 5. Zigbee Fingerprinting Rules
+
+## 5.1. Homey Matching Logic
+
+Homey selects a driver using:
+- `zigbee.manufacturerName` (e.g., `"_TZE284_vvmbj46n"`)
+- AND `zigbee.productId` (e.g., `"TS0601"`)
+- AND (optional) profileId + deviceId
 
 > **NEVER rely on manufacturerName alone.**
-> **ALWAYS rely on the pair `(manufacturerName + productId)`.**
+> **ALWAYS use the pair (manufacturerName + productId).**
+
+## 5.2. The Sacred Couple Rule
+
+```json
+// ❌ WRONG - manufacturerName alone
+"manufacturerName": ["_TZ3000_abcde"]
+
+// ✅ CORRECT - coupled with productId
+"manufacturerName": ["_TZ3000_abcde"],
+"productId": ["TS011F", "TS0001"]
+```
+
+## 5.3. Source Priority
+
+1. **Homey Developer Tools** (PRIMARY) - Real device logs
+2. **Community data** (SECONDARY) - Forum posts, crash reports
+3. **Z2M / ZHA** (TERTIARY) - Hints only, never sole source
+
+> **If Homey and Z2M disagree → Homey wins.**
 
 ---
 
-## 9.2. Tuya Generic IDs (TS0601 / TS0001 / TS0002 / TS011F)
+# 6. TS0601 Trap
 
-Tuya reuses these IDs for DOZENS of unrelated devices.
+## The Problem
 
-Therefore:
+TS0601 is a **GENERIC** productId used for COMPLETELY DIFFERENT devices:
+- Thermostatic valves (TRV)
+- mmWave presence sensors
+- Alarm sirens
+- Curtain controllers
+- Soil sensors
+- And 20+ more types!
 
-> **TS0601 MUST NEVER be added alone.**
-> **TS0601 MUST be paired with manufacturerName AND validated.**
+## Catastrophe Scenario
 
-AI MUST confirm device type, clusters and DP behaviour.
+```json
+// ❌ CATASTROPHE - Adding TS0601 alone to motion sensor
+// drivers/motion_sensor/driver.compose.json
+{
+  "zigbee": {
+    "manufacturerName": ["_TZE200_xxx"],
+    "productId": ["TS0601"]  // ALL TS0601 devices will pair as motion!
+  }
+}
+```
 
----
+**Result**: Thermostats, sirens, TRVs all try to pair as motion sensors = **CHAOS**
 
-## 9.3. Smart Category Placement (Correct Driver Folder Selection)
+## Safe Structure
 
-AI MUST determine the REAL device category FIRST, then assign fingerprints to the correct driver folder accordingly.
+```json
+// ✅ SAFE - TS0601 coupled with specific manufacturers
+// drivers/thermostat_tuya_dp/driver.compose.json
+{
+  "zigbee": {
+    "manufacturerName": ["_TZE200_hue3yfsn", "_TZE200_b6wax7g0"],
+    "productId": ["TS0601"]
+    // Only these specific manufacturers will match
+  }
+}
 
-### Folder Mapping
+// drivers/presence_sensor_radar/driver.compose.json
+{
+  "zigbee": {
+    "manufacturerName": ["_TZE204_sxm7l9xa"],
+    "productId": ["TS0601"]
+    // Different manufacturer = different driver
+  }
+}
+```
 
-| Category | Folder Pattern | Clusters |
-|----------|----------------|----------|
-| **Switches / Relays** | `/drivers/switch_xxx/` | `onOff`, `levelControl` |
-| **Plugs / Energy** | `/drivers/plug_xxx/` | `onOff`, `metering`, `electricalMeasurement` |
-| **Lights / Dimmers** | `/drivers/bulb_xxx/`, `/drivers/dimmer_xxx/` | `levelControl`, `colorControl`, `onOff` |
-| **Motion / mmWave** | `/drivers/motion_sensor/`, `/drivers/presence_sensor_xxx/` | `occupancySensing`, Tuya DP |
-| **Environmental Sensors** | `/drivers/climate_sensor/` | `temperatureMeasurement`, `relativeHumidity` |
-| **Soil / Misc Sensors** | `/drivers/soil_sensor/` | Tuya DP only |
-| **Thermostats / TRV** | `/drivers/thermostat_xxx/`, `/drivers/radiator_valve/` | Tuya DP (mode, setpoint, temp) |
-| **Alarms / SOS / Smoke** | `/drivers/siren/`, `/drivers/smoke_detector_xxx/` | `iasZone`, `iasWD` |
-| **Covers** | `/drivers/curtain_xxx/`, `/drivers/shutter_xxx/` | `windowCovering` |
-| **Buttons** | `/drivers/button_xxx/`, `/drivers/scene_switch_xxx/` | `genScenes`, Tuya DP |
+## Generic ProductIds List
 
-**A device MUST NEVER be placed in a mismatched category.**
-
----
-
-## 9.4. 3-Pillar Validation System (Mandatory Before Any Edit)
-
-### **Pillar 1 – Data Source Validation**
-AI MUST confirm `manufacturerName + productId` using:
-1. **Homey Zigbee nodes table** (PRIMARY)
-2. **Z2M converters** (SECONDARY)
-3. **ZHA fingerprints** (TERTIARY)
-
-### **Pillar 2 – Cluster & DP Compatibility**
-AI MUST check that:
-- SWITCH driver → has `onOff` / `levelControl`
-- SENSOR driver → has measurement clusters or DP sensors
-- PLUG driver → has `metering` / `electricalMeasurement`
-- THERMOSTAT → has TRV / DP setpoints
-- ALARM → has IAS clusters
-
-**If behaviour/DPs mismatch → DO NOT assign.**
-
-### **Pillar 3 – Anti-Collision Check**
-Before modifying ANY driver:
-- AI MUST scan all existing drivers
-- AI MUST ensure `(manufacturerName + productId)` is UNIQUE
-- **If a conflict exists → STOP and request manual resolution**
+These require extra caution:
+- `TS0601` - Tuya DP protocol (most dangerous)
+- `TS0001`, `TS0002`, `TS0003`, `TS0004` - Basic switches
+- `TS0011`, `TS0012`, `TS0013`, `TS0014` - Wall switches
+- `TS011F` - Smart plugs (relatively safe)
 
 ---
 
-## 9.5. Maximum ManufacturerName Expansion (Coverage Maximisation)
+# 7. 3-Pillar Validation
 
-Tuya produces the SAME device under MANY variant manufacturerNames.
+Before ANY fingerprint change, validate against all 3 pillars:
 
-Therefore:
+## Pillar 1: Data Source Validation
 
-> **AI MUST expand the manufacturerName list as much as possible**
-> **BUT ONLY if the device family is truly identical.**
+Confirm `manufacturerName + productId` using:
+1. Homey Zigbee nodes table (PRIMARY)
+2. Z2M converters (SECONDARY)
+3. ZHA fingerprints (TERTIARY)
+
+## Pillar 2: Cluster & DP Compatibility
+
+| Driver Type | Expected Clusters |
+|-------------|-------------------|
+| Switch | `onOff`, `levelControl` |
+| Plug | `onOff`, `metering`, `electricalMeasurement` |
+| Light | `levelControl`, `colorControl`, `onOff` |
+| Sensor | `temperatureMeasurement`, `relativeHumidity` |
+| Motion | `occupancySensing` |
+| Thermostat | Tuya DP (0xEF00) |
+| Alarm | `iasZone`, `iasWd` |
+| Cover | `windowCovering` |
+
+**If clusters don't match → DO NOT assign**
+
+## Pillar 3: Anti-Collision Check
+
+Before saving:
+- Scan ALL drivers
+- Ensure `(manufacturerName + productId)` is UNIQUE
+- If conflict exists → STOP and resolve
+
+---
+
+# 8. Category Placement
+
+## Category → Folder Mapping
+
+| Category | Clusters | Folder Pattern |
+|----------|----------|----------------|
+| **Switches** | `onOff`, `levelControl` | `/drivers/switch_*/` |
+| **Plugs** | `onOff`, `metering` | `/drivers/plug_*/` |
+| **Lights** | `colorControl`, `levelControl` | `/drivers/bulb_*`, `/drivers/dimmer_*` |
+| **Sensors** | `temperatureMeasurement` | `/drivers/climate_sensor/` |
+| **Motion** | `occupancySensing` | `/drivers/motion_sensor/`, `/drivers/presence_*` |
+| **Soil** | Tuya DP | `/drivers/soil_sensor/` |
+| **Thermostats** | Tuya DP | `/drivers/thermostat_*`, `/drivers/radiator_*` |
+| **Alarms** | `iasZone`, `iasWd` | `/drivers/siren/`, `/drivers/smoke_*` |
+| **Covers** | `windowCovering` | `/drivers/curtain_*`, `/drivers/shutter_*` |
+| **Buttons** | `genScenes` | `/drivers/button_*`, `/drivers/scene_*` |
+
+## Assignment Rules
+
+1. Determine device CATEGORY from clusters & DPs
+2. Select correct DRIVER FOLDER
+3. Verify category matches driver purpose
+4. **If mismatch → DO NOT assign**
+
+---
+
+# 9. Expansion Rules
+
+## 9.1. ManufacturerName Expansion (MAXIMAL)
+
+> **Expand as much as possible, but only for same device family.**
 
 ### AI MUST:
-- Gather ALL manufacturerName variants from Z2M for this device family
-- Add them to the SAME driver if clusters & DP profile match
-- **Preserve ALL existing manufacturerName entries (NON-REGRESSION)**
-- Comment unverified ones instead of deleting them
+- Gather ALL manufacturerName variants from Z2M
+- Add to SAME driver IF clusters & DPs match
+- **PRESERVE all existing entries** (non-regression)
 
 ### AI MUST NOT:
-- Mix unrelated families
-- Assign wrong variants
-- **Remove existing working manufacturers**
+- Mix unrelated device families
+- Remove existing manufacturers
+- Merge different device types
 
----
-
-## 9.6. ProductId Expansion Rules (Precision Without Restriction)
-
-### AI MUST:
-- Add productId values ONLY if verified by Pillars 1+2+3
-- Expand productId list to include ALL known variants for this device
-- **Ensure the list is EXHAUSTIVE when productId filtering is activated**
-- Validate against Z2M's full set of zigbeeModel variants
-- Preserve working behaviour (NON-REGRESSION)
-
-### ❌ Forbidden:
+### Example
 ```json
-"productId": ["TS0601"]
-```
-→ **NEVER allowed alone.**
-
-### ✅ Safe:
-```json
-"productId": ["TS0601", "TS0601_b", "TS0601_c"]
-```
-
-### Mandatory Rule:
-> **If AI adds productId filtering in a driver that previously had NONE,**
-> **it MUST add ALL known productIds for the manufacturerNames involved.**
-> **Never restrict compatibility.**
-
----
-
-## 9.7. Automatic Driver Folder Creation (When Needed)
-
-If no existing driver fits the category:
-
-**AI MUST:**
-1. Create a new folder `/drivers/<category_name>/`
-2. Generate:
-   - `driver.compose.json`
-   - `device.js`
-   - `capabilities` folder (if needed)
-3. Add TODO markers for incomplete DPs
-
----
-
-## 9.8. Non-Regression Safety Layer (CRITICAL)
-
-> **The AI MUST NEVER reduce compatibility.**
-> **Zero regression is an absolute rule.**
-
-### AI MUST:
-- **NEVER delete manufacturerName** unless proven invalid
-- **NEVER delete a productId** without a valid technical reason
-- **KEEP all legacy manufacturerName entries** when in doubt
-- **ADD comments** instead of removing uncertain items
-
-### Example:
-```json
+// TRV Thermostat - collect ALL variants
 "manufacturerName": [
-  "_TZE200_verified",
-  "_TZE200_abcxyz"  // Valid? Check Z2M – keep for compatibility
+  "_TZE200_b6wax7g0",
+  "_TZE200_2atgpdho",
+  "_TZE200_fhn3negr",
+  "_TZE200_husqqvux",
+  "_TZE204_aoclfnxz"
+  // Add ALL known TRV variants
 ]
 ```
 
-### If manufacturerName exists but its productId is unknown:
-- Keep manufacturerName
-- Add comment: `// ProductId unknown – keep for backward compatibility`
+## 9.2. ProductId Expansion (EXHAUSTIVE)
 
-### ALWAYS preserve drivers that users have confirmed functional.
+> **When adding productId, list MUST be EXHAUSTIVE.**
 
-### If strict filtering risks breaking coverage:
-**AI MUST:**
-- Use "broad mode" for this manufacturerName
-- Keep all productId variants for this manufacturer
-- Avoid narrowing the list
-
----
-
-## 9.9. Final Priority Order
-
-**AI MUST follow in this EXACT sequence:**
-
-```
-1️⃣ Identify device CATEGORY (clusters + DPs)
-2️⃣ Select correct DRIVER FOLDER
-3️⃣ Expand MANUFACTURERNAME intelligently (MAX coverage)
-4️⃣ Expand PRODUCTID EXHAUSTIVELY but SAFELY
-5️⃣ Check COLLISIONS across all drivers
-6️⃣ Apply only SAFE changes
-7️⃣ NEVER break existing support
+### ❌ Forbidden
+```json
+"productId": ["TS0601"]  // Single entry = risky
 ```
 
----
+### ✅ Required
+```json
+"productId": ["TS0601", "TS0601_v2", "TS0601_climate"]
+// ALL known variants for this device family
+```
 
-## 9.10. Golden Principle
-
-> **Fingerprinting MUST maximise compatibility, NEVER reduce it.**
-> **Wrong fingerprinting is worse than missing fingerprinting.**
-> **No regression. No collision. No misclassification.**
-
----
-
-## 9.11. Validation Checklist (Before ANY Change)
-
-- [ ] No manufacturerName removed (unless clearly wrong category)
-- [ ] If productId added, list is EXHAUSTIVE from Z2M
-- [ ] No duplicate `(mfr, pid)` pairs across drivers
-- [ ] Category matches device function
-- [ ] Existing working devices will NOT break
-- [ ] 3-Pillar validation passed
+### Mandatory Rule
+If adding productId to a driver that had NONE:
+> **MUST add ALL known productIds for all manufacturerNames involved.**
 
 ---
 
-## 9.12. Common AI Mistakes to REJECT
+# 10. Non-Regression Protection
+
+> **"Le mieux est l'ennemi du bien"**
+> **NEVER reduce compatibility.**
+
+## 10.1. The Real Risk
+
+```json
+// BEFORE: Works "by chance" for many variants
+"manufacturerName": ["_TZ3000_abcde"]
+// No productId → Homey accepts ALL modelIds
+
+// AFTER: Too restrictive!
+"productId": ["TS011F"]
+// RISK: If user has TS0001, it STOPS WORKING!
+```
+
+## 10.2. Non-Regression Rules
+
+### Rule 1: NEVER Delete Existing ManufacturerNames
+Unless clearly in wrong category, NEVER remove.
+
+### Rule 2: Unknown Variant Safety Net
+If manufacturerName exists but productId unknown:
+```json
+"manufacturerName": [
+  "_TZ3000_verified",
+  "_TZ3000_unknown"  // TODO: Verify - keep for compatibility
+]
+```
+
+### Rule 3: Exhaustive ProductId
+When adding productId to driver that had none:
+- List MUST include ALL known variants
+- Use Z2M database as reference
+
+### Rule 4: Conflict Check
+Before saving ANY change:
+- Verify unique pairs across ALL drivers
+- No duplicates allowed
+
+## 10.3. AI Mistakes to REJECT
 
 | Mistake | Example | Why Wrong |
 |---------|---------|-----------|
-| Single productId | `["TS0601"]` | Missing other variants |
-| Mixing types | `["TS0601", "_TZE200_xxx"]` | `_TZE` is manufacturerName! |
-| Removing mfr | 10 mfr → 3 mfr | Lost 7 = broken devices |
-| Wrong category | Smoke detector in Light driver | Catastrophic collision |
-| No exhaustive check | Adding without Z2M full scan | Missing variants |
+| Single productId | `["TS0601"]` | Missing variants |
+| Mixing types | `["TS0601", "_TZE200_xxx"]` | _TZE is manufacturerName! |
+| Removing mfr | 10 → 3 manufacturers | Lost devices |
+| Wrong category | Smoke in Light driver | Collision |
 
 ---
 
-# 10. VERSION FRANÇAISE (FR)
+# 11. Validation Checklist
 
-## 10.1. Logique de Matching Homey
+Before ANY change, verify:
 
-Homey sélectionne un driver via:
-- `zigbee.manufacturerName` (ex: `"_TZE284_vvmbj46n"`)
-- ET `zigbee.productId` (= modelId, ex: `"TS0601"`)
-- Plus profileId/deviceId si disponibles
+- [ ] No manufacturerName removed (unless wrong category)
+- [ ] If productId added, list is EXHAUSTIVE
+- [ ] No duplicate `(mfr, pid)` pairs across drivers
+- [ ] Category matches device function
+- [ ] 3-Pillar validation passed
+- [ ] Existing working devices will NOT break
+- [ ] `npx homey app validate --level publish` passes
 
-> **JAMAIS se fier au manufacturerName seul.**
-> **TOUJOURS utiliser la paire (manufacturerName + productId).**
+---
 
-## 10.2. Piège TS0601
+# 12. Version Française
 
-TS0601 est un ID GÉNÉRIQUE utilisé pour des appareils TOTALEMENT DIFFÉRENTS:
-- Vannes thermostatiques (TRV)
-- Capteurs de présence mmWave
-- Sirènes d'alarme
-- Contrôleurs de rideaux
-- Capteurs de sol
+## Règles de Fingerprinting
 
-> **TS0601 NE DOIT JAMAIS être ajouté seul.**
+### Logique de Matching Homey
+- `manufacturerName` + `productId` = Paire obligatoire
+- JAMAIS se fier au manufacturerName seul
 
-## 10.3. Expansion Maximale des ManufacturerNames
+### Piège TS0601
+- TS0601 = ID GÉNÉRIQUE pour 20+ types d'appareils
+- TOUJOURS coupler avec manufacturerName spécifique
 
-- Collecter TOUS les variants connus pour une famille d'appareils
-- Les ajouter au MÊME driver SI ET SEULEMENT SI:
-  - Les clusters correspondent
-  - Les DPs correspondent
-  - Z2M/ZHA confirment le même comportement
-  - Aucun conflit avec un autre driver
+### Règles d'Expansion
+- **ManufacturerName = MAXIMAL** (tous les variants)
+- **ProductId = EXHAUSTIF** (toutes les variantes connues)
 
-## 10.4. Règles de Non-Régression (CRITIQUE)
+### Protection Non-Régression
+- JAMAIS supprimer de manufacturerName existant
+- JAMAIS réduire la compatibilité
+- En cas de doute → GARDER
 
-> **L'IA NE DOIT JAMAIS réduire la compatibilité.**
-> **Zéro régression est une règle absolue.**
-
-- **JAMAIS supprimer un manufacturerName** existant
-- **JAMAIS supprimer un productId** sans raison technique valide
-- **GARDER** les entrées legacy en cas de doute
-- **AJOUTER des commentaires** au lieu de supprimer
-
-## 10.5. ProductId EXHAUSTIF
-
-Si on ajoute productId à un driver qui n'en avait pas:
-> **La liste DOIT être EXHAUSTIVE basée sur Z2M.**
-
-```json
-// ❌ INTERDIT
-"productId": ["TS0601"]
-
-// ✅ CORRECT
-"productId": ["TS0601", "TS0601_b", "TS0601_c"]
+### Ordre de Priorité
+```
+1️⃣ CATÉGORIE → Quel type d'appareil?
+2️⃣ DOSSIER → Où le placer?
+3️⃣ MANUFACTURERNAME → Expansion maximale
+4️⃣ PRODUCTID → Exhaustif mais sûr
+5️⃣ VALIDATION → Pas de collision
 ```
 
-## 10.6. Ordre de Priorité
-
-```
-1️⃣ CATÉGORIE (clusters + DPs) → Quel type d'appareil?
-2️⃣ DOSSIER (driver folder) → Où le placer?
-3️⃣ MANUFACTURERNAME (expansion) → Tous les variants (MAXIMAL)
-4️⃣ PRODUCTID (validation) → Exhaustif mais sûr (PRÉCIS)
-5️⃣ VÉRIFICATION COLLISIONS → Pas de doublon
-6️⃣ APPLIQUER → Seulement si 100% sûr
-```
-
-## 10.7. Principe d'Or
-
+### Principe d'Or
 > **Le fingerprinting DOIT maximiser la compatibilité, JAMAIS la réduire.**
 > **Un mauvais fingerprinting est pire qu'un fingerprinting manquant.**
-> **Zéro régression. Zéro collision. Zéro mauvaise classification.**
 
 ---
 
-# 11. Scripts de Validation
-
-| Script | Usage |
-|--------|-------|
-| `automation/DETECT_COLLISIONS.js` | Détecte les collisions HIGH/MEDIUM |
-| `automation/RESOLVE_COLLISIONS.js` | Résout par système de priorité |
-| `automation/FETCH_ALL_ZIGBEE.js` | Enrichit depuis Z2M |
-| `automation/SAFE_AUDIT.js` | Audit sécurisé (lecture seule) |
-
-## Système de Priorité des Drivers
+# Quick Reference Card
 
 ```
-PRIORITY 100: climate_sensor, motion_sensor, contact_sensor, water_leak_sensor,
-              smoke_detector_advanced, presence_sensor_radar, vibration_sensor
-
-PRIORITY 90:  thermostat_tuya_dp, radiator_valve, curtain_motor, plug_energy_monitor
-
-PRIORITY 80:  switch_1gang, plug_smart, dimmer_wall_1gang, button_wireless_1, bulb_rgb
-
-PRIORITY 70:  temphumidsensor, air_quality_co2, weather_station_outdoor
-
-PRIORITY 10:  generic_tuya
-
-PRIORITY 5:   zigbee_universal (catch-all)
+┌─────────────────────────────────────────────────────────────┐
+│              FINGERPRINTING QUICK REFERENCE                  │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  ✅ DO:                                                      │
+│     • Always use (manufacturerName + productId) pair         │
+│     • Expand manufacturerName MAXIMALLY                      │
+│     • Expand productId EXHAUSTIVELY                          │
+│     • Check 3 pillars before any change                      │
+│     • Run DETECT_COLLISIONS.js after changes                 │
+│                                                              │
+│  ❌ DON'T:                                                   │
+│     • Add TS0601 alone                                       │
+│     • Remove existing manufacturerNames                      │
+│     • Mix manufacturerName in productId array                │
+│     • Add single productId without checking variants         │
+│     • Place device in wrong category                         │
+│                                                              │
+│  🔧 COMMANDS:                                                │
+│     node automation/MASTER_APPLY_ALL_RULES.js               │
+│     node automation/SAFE_AUDIT.js [driver_name]             │
+│     node automation/DETECT_COLLISIONS.js                    │
+│     npx homey app validate --level publish                  │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
 ```
-
-**Un manufacturerName doit être dans UN SEUL driver (le plus prioritaire).**
