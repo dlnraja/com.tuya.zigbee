@@ -4,7 +4,7 @@ const { HybridSensorBase } = require('../../lib/devices');
 const { TuyaGatewayEmulator, WakeStrategies } = require('../../lib/tuya/TuyaGatewayEmulator');
 
 /**
- * Climate Sensor Device - v5.5.29 GATEWAY EMULATION
+ * Climate Sensor Device - v5.5.35 AGGRESSIVE RECOVERY + GATEWAY EMULATION
  *
  * Sources:
  * - Z2M: Temperature & humidity sensor with clock (TH05Z)
@@ -38,6 +38,10 @@ class ClimateSensorDevice extends HybridSensorBase {
 
   /** Battery powered */
   get mainsPowered() { return false; }
+
+  // v5.5.35: Skip ZCL battery polling - use Tuya DP 4 only
+  get usesTuyaDPBattery() { return true; }
+  get skipZclBatteryPolling() { return true; }
 
   /** Capabilities for climate sensors */
   get sensorCapabilities() {
@@ -141,8 +145,52 @@ class ClimateSensorDevice extends HybridSensorBase {
     // v5.5.29: Setup advanced wake strategies to get data from sleepy devices
     await this._setupWakeStrategies();
 
+    // v5.5.35: Schedule aggressive DP requests for sleepy devices
+    this._scheduleAggressiveDPRequest();
+
     this.log('[CLIMATE] 👀 Watching for temperature/humidity data...');
-    this.log('[CLIMATE] ℹ️ Battery-powered sensors may take minutes to hours to report');
+    this.log('[CLIMATE] ⚠️ BATTERY DEVICE - First data may take 10-60 minutes after pairing');
+  }
+
+  /**
+   * v5.5.35: Schedule aggressive DP requests at typical wake intervals
+   * Climate sensors wake up every 10-30 minutes typically
+   */
+  _scheduleAggressiveDPRequest() {
+    const intervals = [
+      30 * 1000,      // 30 seconds
+      2 * 60 * 1000,  // 2 minutes
+      5 * 60 * 1000,  // 5 minutes
+      10 * 60 * 1000, // 10 minutes
+      20 * 60 * 1000, // 20 minutes
+      30 * 60 * 1000, // 30 minutes
+    ];
+
+    const dpIds = [1, 2, 4, 18]; // temp, humidity, battery, alt temp
+
+    intervals.forEach((delay, index) => {
+      const timer = this.homey.setTimeout(async () => {
+        this.log(`[CLIMATE] ⏰ Aggressive DP request attempt ${index + 1}/${intervals.length}`);
+
+        // Try Tuya DP query
+        if (this.safeTuyaDataQuery) {
+          await this.safeTuyaDataQuery(dpIds, {
+            logPrefix: '[CLIMATE-WAKE]',
+            delayBetweenQueries: 100
+          }).catch(() => { });
+        }
+
+        // Also push time if gateway emulator is active
+        if (this._gatewayEmulator) {
+          await this._gatewayEmulator.pushTime().catch(() => { });
+        }
+      }, delay);
+
+      this._aggressiveTimers = this._aggressiveTimers || [];
+      this._aggressiveTimers.push(timer);
+    });
+
+    this.log('[CLIMATE] 📅 Scheduled aggressive DP requests at: 30s, 2m, 5m, 10m, 20m, 30m');
   }
 
   /**
@@ -312,6 +360,12 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   async onDeleted() {
+    // v5.5.35: Clean up aggressive timers
+    if (this._aggressiveTimers) {
+      this._aggressiveTimers.forEach(t => this.homey.clearTimeout(t));
+      this._aggressiveTimers = null;
+    }
+
     // v5.5.29: Clean up gateway emulator
     if (this._gatewayEmulator) {
       this._gatewayEmulator.destroy();

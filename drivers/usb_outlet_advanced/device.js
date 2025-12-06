@@ -2,7 +2,7 @@
 const { HybridPlugBase } = require('../../lib/devices');
 
 /**
- * USB Outlet Advanced Device - v5.4.7 COMPLETE + DOCUMENTED
+ * USB Outlet Advanced Device - v5.5.35 ENHANCED DP COVERAGE
  *
  * Supports: TS011F, TS0115, TS0601 USB outlets with power monitoring
  * Features: Multiple sockets, USB ports, LED control, button detection, power measurement
@@ -62,10 +62,15 @@ class USBOutletAdvancedDevice extends HybridPlugBase {
       7: { capability: 'onoff', transform: (v) => v === 1 || v === true }, // Alt DP for some models
 
       // ═══════════════════════════════════════════════════════════════════
-      // USB PORTS CONTROL
+      // USB PORTS CONTROL - Multiple possible DPs depending on model
       // ═══════════════════════════════════════════════════════════════════
       9: { capability: 'onoff.usb1', transform: (v) => v === 1 || v === true },
       10: { capability: 'onoff.usb2', transform: (v) => v === 1 || v === true },
+      // v5.5.35: Additional USB DPs found in some models
+      3: { capability: 'onoff.usb1', transform: (v) => v === 1 || v === true }, // Alt USB1 DP
+      4: { capability: 'onoff.usb2', transform: (v) => v === 1 || v === true }, // Alt USB2 DP
+      11: { capability: 'onoff.usb1', transform: (v) => v === 1 || v === true }, // Alt USB1 DP
+      12: { capability: 'onoff.usb2', transform: (v) => v === 1 || v === true }, // Alt USB2 DP
 
       // ═══════════════════════════════════════════════════════════════════
       // LED INDICATOR CONTROL
@@ -104,7 +109,28 @@ class USBOutletAdvancedDevice extends HybridPlugBase {
     // v5.5.19: Register flow trigger for button press
     this._registerButtonFlowTrigger();
 
+    // v5.5.35: Request initial state of all switches/USBs
+    this._requestInitialStates();
+
     this.log('[USB-ADV] ✅ Ready - Full power monitoring enabled');
+  }
+
+  /**
+   * v5.5.35: Request initial states of all DPs
+   */
+  async _requestInitialStates() {
+    // Wait a bit for device to be fully ready
+    this.homey.setTimeout(async () => {
+      if (this.safeTuyaDataQuery) {
+        // All relevant control DPs
+        const controlDPs = [1, 2, 3, 4, 7, 9, 10, 11, 12, 13, 101];
+        this.log('[USB-ADV] 📤 Requesting initial states...');
+        await this.safeTuyaDataQuery(controlDPs, {
+          logPrefix: '[USB-INIT]',
+          delayBetweenQueries: 50
+        }).catch(() => { });
+      }
+    }, 2000);
   }
 
   /**
@@ -150,19 +176,25 @@ class USBOutletAdvancedDevice extends HybridPlugBase {
       });
     }
 
-    // USB 1 control
+    // USB 1 control - try multiple DPs
     if (this.hasCapability('onoff.usb1')) {
       this.registerCapabilityListener('onoff.usb1', async (value) => {
         this.log('[USB-ADV] USB 1 →', value);
-        await this._sendDP(9, value);
+        // v5.5.35: Try common USB1 DPs
+        await this._sendDP(9, value);   // Primary
+        await this._sendDP(3, value);   // Alt
+        await this._sendDP(11, value);  // Alt
       });
     }
 
-    // USB 2 control
+    // USB 2 control - try multiple DPs
     if (this.hasCapability('onoff.usb2')) {
       this.registerCapabilityListener('onoff.usb2', async (value) => {
         this.log('[USB-ADV] USB 2 →', value);
-        await this._sendDP(10, value);
+        // v5.5.35: Try common USB2 DPs
+        await this._sendDP(10, value);  // Primary
+        await this._sendDP(4, value);   // Alt
+        await this._sendDP(12, value);  // Alt
       });
     }
   }
