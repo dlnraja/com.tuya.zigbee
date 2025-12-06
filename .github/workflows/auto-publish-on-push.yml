@@ -56,6 +56,61 @@ jobs:
         with:
           level: publish
 
+      - name: 🔒 Fingerprinting Rules Check
+        run: |
+          echo "📋 Checking fingerprinting rules..."
+
+          # Check for collisions (same manufacturer in multiple drivers)
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const driversDir = 'drivers';
+          const mfrMap = new Map();
+
+          fs.readdirSync(driversDir, { withFileTypes: true })
+            .filter(d => d.isDirectory())
+            .forEach(d => {
+              const configPath = path.join(driversDir, d.name, 'driver.compose.json');
+              if (!fs.existsSync(configPath)) return;
+              try {
+                const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+                (config.zigbee?.manufacturerName || []).forEach(mfr => {
+                  if (!mfrMap.has(mfr)) mfrMap.set(mfr, []);
+                  mfrMap.get(mfr).push(d.name);
+                });
+              } catch {}
+            });
+
+          const collisions = [...mfrMap.entries()].filter(([,v]) => v.length > 1);
+          if (collisions.length > 0) {
+            console.log('⚠️ WARNING: ' + collisions.length + ' manufacturers in multiple drivers');
+            collisions.slice(0, 5).forEach(([mfr, drivers]) => {
+              console.log('  ' + mfr + ' → ' + drivers.join(', '));
+            });
+          } else {
+            console.log('✅ No collisions detected');
+          }
+
+          // Count stats
+          let totalMfrs = new Set();
+          let totalPids = new Set();
+          fs.readdirSync(driversDir, { withFileTypes: true })
+            .filter(d => d.isDirectory())
+            .forEach(d => {
+              const configPath = path.join(driversDir, d.name, 'driver.compose.json');
+              if (!fs.existsSync(configPath)) return;
+              try {
+                const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+                (config.zigbee?.manufacturerName || []).forEach(m => totalMfrs.add(m));
+                (config.zigbee?.productId || []).forEach(p => totalPids.add(p));
+              } catch {}
+            });
+
+          console.log('📊 Stats: ' + totalMfrs.size + ' manufacturers, ' + totalPids.size + ' productIds');
+          "
+
+          echo "✅ Fingerprinting rules check complete"
+
       - name: 🔑 Check HOMEY_PAT
         id: check_pat
         run: |
