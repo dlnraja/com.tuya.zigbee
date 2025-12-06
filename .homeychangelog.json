@@ -1,4 +1,8 @@
 {
+  "5.5.20": {
+    "en": "SOIL SENSOR + USB OUTLET FIX: 1) Soil sensor: Added periodic DP requests (30 min) for battery-powered devices that don't report automatically. 2) USB outlet: Removed invalid 'button' capability, replaced with proper flow trigger 'usb_outlet_button_pressed'. 3) Better logging for Tuya DP values.",
+    "fr": "FIX SOIL SENSOR + USB OUTLET: 1) Capteur sol: Ajout requêtes DP périodiques (30 min) pour appareils batterie. 2) Prise USB: Capability 'button' invalide supprimée, remplacée par flow trigger 'usb_outlet_button_pressed'. 3) Meilleur logging des valeurs Tuya DP."
+  },
   "5.5.19": {
     "en": "SOS BUTTON FIX: 1) button_emergency_sos added to protected drivers list - prevents SmartAdapt from removing alarm_contact. 2) Fixed 'Cannot read properties of undefined (reading success)' error. 3) SmartDriverAdaptation now returns valid result in all cases.",
     "fr": "FIX BOUTON SOS: 1) button_emergency_sos ajouté aux drivers protégés - empêche SmartAdapt de supprimer alarm_contact. 2) Erreur 'Cannot read properties of undefined' corrigée. 3) SmartDriverAdaptation retourne maintenant un résultat valide dans tous les cas."

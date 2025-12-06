@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.19",
+  "version": "5.5.20",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.19: SOS button fix + SmartAdapt protection + undefined result fix",
-    "fr": "V5.5.19: Bouton SOS corrigé + protection SmartAdapt + fix result undefined"
+    "en": "V5.5.20: Soil sensor periodic DP request + USB outlet button flow trigger",
+    "fr": "V5.5.20: Soil sensor requête DP périodique + USB outlet flow trigger bouton"
   },
   "category": "appliances",
   "permissions": [],
@@ -443,6 +443,28 @@
             },
             "type": "string",
             "example": "Living Room Sensor"
+          }
+        ]
+      },
+      {
+        "id": "usb_outlet_button_pressed",
+        "title": {
+          "en": "Button pressed",
+          "fr": "Bouton appuyé"
+        },
+        "titleFormatted": {
+          "en": "The button on [[device]] was pressed",
+          "fr": "Le bouton sur [[device]] a été appuyé"
+        },
+        "hint": {
+          "en": "Triggered when the physical button on the USB outlet is pressed",
+          "fr": "Déclenché quand le bouton physique de la prise USB est appuyé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=usb_outlet_advanced"
           }
         ]
       },
@@ -32399,7 +32421,6 @@
         "onoff.usb1",
         "onoff.usb2",
         "onoff.led",
-        "button",
         "measure_power",
         "meter_power",
         "measure_voltage",
@@ -32434,12 +32455,6 @@
           "title": {
             "en": "LED Indicator",
             "fr": "Indicateur LED"
-          }
-        },
-        "button": {
-          "title": {
-            "en": "Button",
-            "fr": "Bouton"
           }
         }
       },
