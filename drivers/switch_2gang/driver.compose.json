@@ -1,13 +1,11 @@
 {
   "class": "socket",
   "capabilities": [
+    "onoff",
     "onoff.gang2",
     "measure_power",
     "measure_voltage",
     "measure_current",
-    "onoff",
-    "onoff.1",
-    "alarm_battery",
     "meter_power"
   ],
   "zigbee": {
