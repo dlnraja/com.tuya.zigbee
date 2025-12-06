@@ -1,4 +1,8 @@
 {
+  "5.5.27": {
+    "en": "TUYA DATA QUERY MODULE: 1) New lib/tuya/TuyaDataQuery.js - standardized DP query helper. 2) tuyaDataQuery() for any device, safeTuyaDataQuery() for sleepy devices with wake window detection. 3) Added refreshAll() to Radar, Soil, Climate drivers. 4) New Flow Card action 'Refresh device data' for manual sensor refresh. 5) updateRadioActivity() tracks device wake state for smart query timing.",
+    "fr": "MODULE TUYA DATA QUERY: 1) Nouveau lib/tuya/TuyaDataQuery.js - helper standardisé pour requêtes DP. 2) tuyaDataQuery() pour tous appareils, safeTuyaDataQuery() pour appareils batterie avec détection fenêtre réveil. 3) Ajout refreshAll() aux drivers Radar, Soil, Climate. 4) Nouvelle action Flow 'Rafraîchir données' pour refresh manuel. 5) updateRadioActivity() suit l'état de réveil pour timing intelligent."
+  },
   "5.5.26": {
     "en": "ENHANCED DEVICE SUPPORT: 1) mmWave Radar: Added 60-min offline check (Hubitat recommendation), initial dataQuery at inclusion, event time tracking. 2) 2-Gang Switch: Power measurement via electricalMeasurement + metering clusters with attribute reporting. 3) SOS Button: Battery refresh on wake - reads battery when device wakes for button press. 4) Climate Sensor: Time sync improved to every 6h (was 24h). 5) All sleepy devices now use smart wake strategies.",
     "fr": "SUPPORT AMÉLIORÉ: 1) Radar mmWave: Check offline 60 min (Hubitat), dataQuery initial, suivi événements. 2) Switch 2-Gang: Mesure puissance via clusters electricalMeasurement + metering. 3) Bouton SOS: Refresh batterie au réveil. 4) Capteur Climat: Sync horloge toutes les 6h (était 24h). 5) Stratégies réveil intelligentes pour appareils batterie."

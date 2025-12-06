@@ -170,6 +170,28 @@ class MotionSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
+   * v5.5.27: Refresh all DPs - called by Flow Card or manual refresh
+   * Queries presence, environment, and config DPs
+   */
+  async refreshAll() {
+    this.log('[RADAR-REFRESH] Refreshing all DPs...');
+
+    // DPs to query based on dpMappings + Z2M research
+    const DPS_PRESENCE = [1];                    // Presence (DP1)
+    const DPS_ENV = [2, 3, 12, 103];             // Humidity, temp, lux
+    const DPS_BATTERY = [4, 15];                 // Battery
+    const DPS_CONFIG = [9, 10, 11, 101, 102, 104, 105]; // Sensitivity, range, distance, time
+
+    const allDPs = [...DPS_PRESENCE, ...DPS_ENV, ...DPS_BATTERY, ...DPS_CONFIG];
+
+    // Use safeTuyaDataQuery for sleepy devices
+    return this.safeTuyaDataQuery(allDPs, {
+      logPrefix: '[RADAR-REFRESH]',
+      delayBetweenQueries: 150,
+    });
+  }
+
+  /**
    * v5.5.26: Cleanup on device deletion
    */
   async onDeleted() {
