@@ -1,5 +1,43 @@
 # Changelog
 
+## [5.5.2] - 2025-12-06
+
+### COMPLETE ENRICHMENT - JohanBendz Issues #1290-#1320
+
+#### JohanBendz GitHub Issues Processed
+All open device requests from JohanBendz/com.tuya.zigbee repository have been processed:
+
+| Issue | Device | Manufacturer | Model | Driver |
+|-------|--------|--------------|-------|--------|
+| #1320 | Smart Light Sensor | `_TZ3000_hy6ncvmw` | TS0222 | motion_sensor |
+| #1318 | Climate Sensor | `_TZ3000_bgsigers` | TS0201 | climate_sensor |
+| #1314 | Radar Sensor | `_TZE204_iaeejhvf` | TS0601 | presence_sensor_radar |
+| #1313 | Curtain Module | `_TZ3210_dwytrmda` | TS130F | curtain_motor |
+| #1312 | Power Socket | `_TZ3210_cehuw1lw` | TS011F | plug_energy_monitor |
+| #1311 | 2CH Dimmer | `_TZ3000_7ysdnebc` | TS1101 | dimmer_dual_channel |
+| #1310 | Thermostat | `_TZE200_9xfjixap` | TS0601 | thermostat_tuya_dp |
+| #1307 | USB-C Socket | `_TZE200_dcrrztpa` | TS0601 | usb_outlet_advanced |
+| #1301 | Curtain Motor | `_TZE200_nv6nxo0c` | TS0601 | curtain_motor |
+| #1300 | Power Socket 20A | `_TZ3210_fgwhjm9j` | TS011F | plug_energy_monitor |
+| #1297 | 4 Gang Switch | `_TZE200_dq8bu0pt` | TS0601 | switch_4gang |
+| #1296 | Smart Socket | `_TZ3000_uwaort14` | TS011F | plug_smart |
+| #1295 | Double USB Socket | `_TZ3000_dd8wwzcy` | TS011F | usb_outlet_advanced |
+| #1293 | Curtain Motor | `_TZE200_ol5jlkkr` | TS0601 | curtain_motor |
+| #1291 | Climate Sensor | `_TZE200_rxq4iti9` | TS0601 | climate_sensor |
+| #1290 | Smart Plug | `_TZ3210_alxkwn0h` | TS0201 | plug_energy_monitor |
+
+#### Drivers Enriched
+- **motion_sensor**: +1 manufacturer (_TZ3000_hy6ncvmw), +1 model (TS0222)
+- **plug_energy_monitor**: +2 manufacturers (_TZ3210_cehuw1lw, _TZ3210_alxkwn0h)
+- **usb_outlet_advanced**: +1 manufacturer (_TZ3000_dd8wwzcy)
+
+#### New Scripts
+- `scripts/JOHANBENDZ_ENRICHMENT.js` - JohanBendz issues enrichment automation
+
+#### Validation
+- Build: SUCCESS (83 drivers)
+- Validation: PASSED (level: publish)
+
 ## [5.5.1] - 2025-12-06
 
 ### CRITICAL FIXES - Motion Sensors + Battery Device Pairing
