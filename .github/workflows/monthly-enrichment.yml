@@ -49,29 +49,34 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run Intelligent Enricher
+      - name: Run MASTER Enrichment (Rule 9.x Compliant)
         id: enricher
         run: |
-          FLAGS=""
-          if [ "${{ github.event.inputs.full_scan }}" == "true" ]; then
-            FLAGS="$FLAGS --full"
+          echo "🚀 Running MASTER enrichment with all fingerprinting rules..."
+
+          # Step 1: Apply all fingerprinting rules
+          if [ -f "automation/MASTER_APPLY_ALL_RULES.js" ]; then
+            node automation/MASTER_APPLY_ALL_RULES.js | tee enrichment.log
           fi
-          FLAGS="$FLAGS --limit=${{ github.event.inputs.limit || '50' }}"
 
-          echo "Running enricher with flags: $FLAGS"
+          # Step 2: Run MEGA enrichment from Z2M
+          if [ -f "automation/MEGA_ENRICHMENT_50.js" ]; then
+            node automation/MEGA_ENRICHMENT_50.js | tee -a enrichment.log
+          fi
 
-          # Step 1: Extract DP mappings from drivers
-          node automation/enrichment/AUTO_POPULATE_LOCAL_DB.js
+          # Step 3: Detect any remaining collisions
+          if [ -f "automation/DETECT_COLLISIONS.js" ]; then
+            node automation/DETECT_COLLISIONS.js | tee -a enrichment.log
+          fi
 
-          # Step 2: Run intelligent enricher v4
-          node automation/enrichment/INTELLIGENT_ENRICHER_v4.js $FLAGS | tee enrichment.log
+          # Extract stats
+          MFRS=$(grep -oP 'unique manufacturers: \K\d+' enrichment.log | tail -1 || echo "0")
+          PIDS=$(grep -oP 'unique productIds: \K\d+' enrichment.log | tail -1 || echo "0")
+          COLLISIONS=$(grep -oP 'Remaining collisions: \K\d+' enrichment.log | tail -1 || echo "0")
 
-          # Extract stats for summary
-          PROCESSED=$(grep -oP 'Processed: \K\d+' enrichment.log || echo "0")
-          ENRICHED=$(grep -oP 'Enriched: \K\d+' enrichment.log || echo "0")
-
-          echo "processed=$PROCESSED" >> $GITHUB_OUTPUT
-          echo "enriched=$ENRICHED" >> $GITHUB_OUTPUT
+          echo "processed=$MFRS" >> $GITHUB_OUTPUT
+          echo "enriched=$PIDS" >> $GITHUB_OUTPUT
+          echo "collisions=$COLLISIONS" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -105,14 +110,20 @@ jobs:
 
       - name: Create summary
         run: |
-          echo "## 📊 Monthly Enrichment Results" >> $GITHUB_STEP_SUMMARY
+          echo "## 📊 Monthly Enrichment Results (Rule 9.x Compliant)" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Manufacturers Processed | ${{ steps.enricher.outputs.processed }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Manufacturers Enriched | ${{ steps.enricher.outputs.enriched }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Unique Manufacturers | ${{ steps.enricher.outputs.processed }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Unique ProductIds | ${{ steps.enricher.outputs.enriched }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Remaining Collisions | ${{ steps.enricher.outputs.collisions }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Run Date | $(date -u +%Y-%m-%d) |" >> $GITHUB_STEP_SUMMARY
-          echo "| Mode | ${{ github.event.inputs.full_scan == 'true' && 'Full Scan' || 'Incremental' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Rules Applied" >> $GITHUB_STEP_SUMMARY
+          echo "- 9.5 ManufacturerName Expansion (MAXIMAL)" >> $GITHUB_STEP_SUMMARY
+          echo "- 9.6 ProductId Expansion (EXHAUSTIVE)" >> $GITHUB_STEP_SUMMARY
+          echo "- 9.8 Non-Regression Protection" >> $GITHUB_STEP_SUMMARY
+          echo "- 9.10 Golden Principle" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload enrichment log
         uses: actions/upload-artifact@v4
