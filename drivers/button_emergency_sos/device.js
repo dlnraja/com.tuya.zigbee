@@ -3,26 +3,35 @@
 const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
 /**
- * SOS Emergency Button Device - v5.5.26 ENHANCED
+ * SOS Emergency Button Device - v5.5.34 FIXED
  *
  * Supported: TS0215A _TZ3000_0dumfk2z
  *
  * Sources:
  * - Z2M: Tuya TS0215A_sos
- * - Clusters: iasZone (zoneType=remoteControl), powerConfiguration, basic
+ * - Clusters: iasZone (zoneType=remoteControl)
  *
- * Protocol: IAS Zone for button press + Tuya DP or genPowerCfg for battery
+ * Protocol: IAS Zone for button press + Tuya DP 101 for battery
  *
- * DP Mapping (from settings tuya_dp_configuration):
+ * DP Mapping:
  * - DP 1: button_press
  * - DP 101: battery_percentage
  *
- * v5.5.26: Added battery refresh on wake (when device wakes for button press)
+ * v5.5.34: CRITICAL FIX
+ * - NO polling on powerConfiguration (sleepy device = timeout errors)
+ * - Battery ONLY via Tuya DP 101
+ * - No Energy registration (battery device)
+ * - Skip all ZCL battery reads
  */
 class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
 
   // Force battery powered (sleepy end device)
   get mainsPowered() { return false; }
+
+  // v5.5.34: CRITICAL - Tell parent class to NOT use ZCL battery polling
+  get usesTuyaDPBattery() { return true; }
+  get skipZclBatteryPolling() { return true; }
+  get skipEnergyRegistration() { return true; }
 
   async onNodeInit({ zclNode }) {
     this.log('═══════════════════════════════════════════════════');
@@ -198,40 +207,17 @@ class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
   }
 
   /**
-   * v5.5.26: Refresh battery reading while device is awake
+   * v5.5.34: Refresh battery via Tuya DP ONLY (no ZCL polling)
    * Called after button press when device is guaranteed to be awake
    */
   async _refreshBatteryOnWake() {
-    this.log('[SOS-BUTTON] 🔋 Refreshing battery (device is awake)...');
+    this.log('[SOS-BUTTON] 🔋 Refreshing battery via Tuya DP (device is awake)...');
 
     try {
-      const endpoint = this.zclNode?.endpoints?.[1];
-      const powerCluster = endpoint?.clusters?.genPowerCfg || endpoint?.clusters?.powerConfiguration;
-
-      if (powerCluster && typeof powerCluster.readAttributes === 'function') {
-        // Read battery attributes while device is awake
-        const attrs = await powerCluster.readAttributes([
-          'batteryPercentageRemaining',
-          'batteryVoltage'
-        ]).catch(() => ({}));
-
-        if (attrs.batteryPercentageRemaining != null) {
-          const battery = Math.round(attrs.batteryPercentageRemaining / 2);
-          this.log(`[SOS-BUTTON] 🔋 Battery: ${battery}%`);
-          if (this.hasCapability('measure_battery')) {
-            await this.setCapabilityValue('measure_battery', battery).catch(() => { });
-          }
-        }
-
-        if (attrs.batteryVoltage != null) {
-          const voltage = attrs.batteryVoltage / 10;
-          this.log(`[SOS-BUTTON] 🔋 Voltage: ${voltage}V`);
-        }
-      }
-
-      // Also try Tuya DP for battery
+      // v5.5.34: ONLY use Tuya DP for battery - NO ZCL polling on sleepy device
       if (this.tuyaEF00Manager && typeof this.tuyaEF00Manager.getData === 'function') {
         await this.tuyaEF00Manager.getData(101).catch(() => { }); // Battery DP
+        this.log('[SOS-BUTTON] 📤 Requested DP 101 (battery)');
       }
     } catch (err) {
       this.log('[SOS-BUTTON] Battery refresh failed:', err.message);
@@ -327,28 +313,18 @@ class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
         this._triggerSOSPressed();
       };
 
-      // Battery reporting with MASTER BLOCK logging
+      // v5.5.34: Listen for ZCL battery reports IF they arrive (passive only, no polling)
       if (endpoint?.clusters?.genPowerCfg) {
         endpoint.clusters.genPowerCfg.on('attr.batteryPercentageRemaining', async (value) => {
           const battery = Math.round(value / 2);
-          // v5.5.6: MASTER BLOCK format logging
           this.log(`[ZCL-DATA] SOS_button.battery_zcl raw=${value} converted=${battery}%`);
-
           if (this.hasCapability('measure_battery')) {
             await this.setCapabilityValue('measure_battery', battery).catch(this.error);
           }
         });
-
-        // Also listen for batteryVoltage
-        endpoint.clusters.genPowerCfg.on('attr.batteryVoltage', async (value) => {
-          const voltage = value / 10;
-          this.log(`[ZCL-DATA] SOS_button.voltage raw=${value} converted=${voltage}V`);
-        });
-
-        // Configure battery reporting
-        await this.configureAttributeReporting([
-          { endpointId: 1, cluster: 1, attributeName: 'batteryPercentageRemaining', minInterval: 3600, maxInterval: 43200, minChange: 2 }
-        ]).catch(err => this.log('Battery reporting config (non-critical):', err.message));
+        // v5.5.34: NO configureReporting - sleepy device won't respond
+        // v5.5.34: NO readAttributes polling - causes timeout errors
+        this.log('[SOS-BUTTON] ℹ️ ZCL battery listener passive (no polling)');
       }
 
       this.log('[OK] SOS Button IAS Zone configured - READY');
