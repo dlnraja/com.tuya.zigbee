@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "created": "2025-12-06",
+  "lastFullScan": null,
+  "lastMonthlyScan": "2025-12-06T03:00:00.000Z",
+  "manufacturers": {},
+  "sources": {
+    "github_johanbendz": {
+      "lastAccess": "2025-12-06",
+      "totalRequests": 0,
+      "rateLimitHits": 0
+    },
+    "github_dlnraja": {
+      "lastAccess": "2025-12-06",
+      "totalRequests": 0,
+      "rateLimitHits": 0
+    },
+    "zigbee2mqtt": {
+      "lastAccess": "2025-12-06",
+      "totalRequests": 0
+    },
+    "blakadder": {
+      "lastAccess": null,
+      "totalRequests": 0
+    },
+    "google_search": {
+      "lastAccess": null,
+      "totalRequests": 0,
+      "note": "Requires API key for full functionality"
+    }
+  },
+  "stats": {
+    "totalEnrichments": 0,
+    "successfulEnrichments": 0,
+    "failedEnrichments": 0
+  }
+}
