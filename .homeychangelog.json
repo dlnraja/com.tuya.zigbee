@@ -1,4 +1,8 @@
 {
+  "5.5.6": {
+    "en": "RESTORED MANUFACTURERS - Recovered 738 manufacturers from v5.3.13 that were lost during cleanup. Total: 3598 unique manufacturers across 83 drivers. 0 duplicates within files (duplicates across drivers are valid for multi-type devices).",
+    "fr": "FABRICANTS RESTAURÉS - Récupéré 738 fabricants de v5.3.13 perdus lors du nettoyage. Total: 3598 fabricants uniques sur 83 drivers. 0 doublons par fichier (doublons entre drivers valides pour appareils multi-types)."
+  },
   "5.5.5": {
     "en": "SDK3 COMPLIANCE & CLEANUP - Fixed 3 invalid device classes (curtain→windowcoverings, blinds→windowcoverings). Removed 1433 duplicate manufacturer entries across 66 drivers. 2855 unique manufacturers properly distributed. 0 validation issues.",
     "fr": "CONFORMITÉ SDK3 & NETTOYAGE - Corrigé 3 classes invalides (curtain→windowcoverings, blinds→windowcoverings). Supprimé 1433 entrées fabricants dupliquées sur 66 drivers. 2855 fabricants uniques correctement distribués. 0 erreurs validation."
