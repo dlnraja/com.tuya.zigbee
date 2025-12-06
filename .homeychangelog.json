@@ -1,4 +1,8 @@
 {
+  "5.5.22": {
+    "en": "SMOKE DETECTOR FIX: Added missing DP mappings for temperature (DP2) and humidity (DP3) on smoke detectors like _TZE284_n4ttsck2. Also includes all v5.5.21 fixes for phantom device errors and battery polling.",
+    "fr": "FIX DÉTECTEUR FUMÉE: Ajout des mappings DP manquants pour température (DP2) et humidité (DP3) sur les détecteurs fumée comme _TZE284_n4ttsck2. Inclut aussi les corrections v5.5.21 pour erreurs phantom et polling batterie."
+  },
   "5.5.21": {
     "en": "PHANTOM DEVICE + BATTERY POLLING FIX: 1) DynamicEnergyManager: Fixed 'Device Not Found' errors - manager now detects deleted devices and stops save intervals. 2) Button battery polling disabled - buttons sleep and don't respond to polling, now using report-only mode. 3) Added _destroyed flag to prevent operations on deleted devices.",
     "fr": "FIX PHANTOM DEVICE + POLLING BATTERIE: 1) DynamicEnergyManager: Erreurs 'Device Not Found' corrigées - détection des appareils supprimés. 2) Polling batterie désactivé pour boutons dormants - mode report-only. 3) Flag _destroyed ajouté pour éviter opérations sur appareils supprimés."
