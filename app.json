@@ -28783,7 +28783,10 @@
       "class": "sensor",
       "capabilities": [
         "alarm_smoke",
-        "measure_battery"
+        "measure_battery",
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_tamper"
       ],
       "energy": {
         "batteries": [
@@ -33365,7 +33368,9 @@
         "target_temperature",
         "measure_temperature",
         "thermostat_mode",
-        "measure_battery"
+        "measure_battery",
+        "onoff",
+        "measure_humidity"
       ],
       "platforms": [
         "local"
