@@ -1,0 +1,168 @@
+{
+  "_meta": {
+    "batch_id": 7,
+    "date": "2025-12-06",
+    "manufacturers_count": 7,
+    "sources_searched": [
+      "Zigbee2MQTT",
+      "ZHA (zigpy)",
+      "JohanBendz/com.tuya.zigbee",
+      "Homey Community Forum",
+      "openHAB Community",
+      "SmartThings Community",
+      "Home Assistant Community"
+    ],
+    "priority_manufacturers": true
+  },
+  "manufacturers": {
+    "_TZ3000_fvh3pjaz": {
+      "models": ["TS0012"],
+      "type": "switch",
+      "device_name": "Tuya 2 Gang Wall Switch",
+      "capabilities": ["onoff.1", "onoff.2"],
+      "clusters": {
+        "input": [0, 3, 4, 5, 6],
+        "output": []
+      },
+      "endpoints": 2,
+      "power_source": "mains",
+      "platform_support": ["openHAB", "Zigbee2MQTT", "ZHA"],
+      "sources": [
+        "https://community.openhab.org/t/tuya-2-gang-switch-tz3000-fvh3pjaz-ts0012/113202",
+        "https://github.com/JohanBendz/com.tuya.zigbee"
+      ]
+    },
+    "_TZ3000_xabckq1v": {
+      "models": ["TS004F"],
+      "type": "remote",
+      "device_name": "MOES 4 Gang Wall Remote (4-button scene controller)",
+      "capabilities": ["button.1", "button.2", "button.3", "button.4"],
+      "button_actions": [
+        "1_single", "1_double", "1_hold",
+        "2_single", "2_double", "2_hold",
+        "3_single", "3_double", "3_hold",
+        "4_single", "4_double", "4_hold"
+      ],
+      "clusters": {
+        "input": [0, 1, 3, 6],
+        "output": [3, 4, 6, 25]
+      },
+      "power_source": "battery",
+      "platform_support": ["Zigbee2MQTT", "ZHA", "SmartThings (Edge driver)"],
+      "known_issues": "Device quirk needed for proper button event handling",
+      "sources": [
+        "https://github.com/Koenkk/zigbee2mqtt/issues/29045",
+        "https://github.com/zigpy/zha-device-handlers/issues/914",
+        "https://github.com/zigpy/zha-device-handlers/issues/917",
+        "https://github.com/zigpy/zha-device-handlers/blob/dev/zhaquirks/tuya/ts004f.py",
+        "https://community.smartthings.com/t/st-edge-zigbee-driver-for-moes-4-button-scene-switch-ts004f-plus-some-smart-knob-models/237808/19"
+      ]
+    },
+    "_TZ3000_cqlnswn0": {
+      "models": ["TS0201", "TS0041", "TS0042", "TS0043", "TS0044", "TS0203", "TS0202"],
+      "type": "multiple",
+      "device_name": "Multiple Tuya devices (sensors, buttons, switches)",
+      "notes": "This manufacturer ID appears across multiple device types - needs device-specific fingerprinting",
+      "power_source": "varies",
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee"
+      ]
+    },
+    "_TZ3000_dfgbtub0": {
+      "models": ["TS0042"],
+      "type": "remote",
+      "device_name": "Tuya 2 Gang Wall Remote (2-button scene controller)",
+      "capabilities": ["button.1", "button.2"],
+      "button_actions": [
+        "1_single", "1_double", "1_hold",
+        "2_single", "2_double", "2_hold"
+      ],
+      "clusters": {
+        "input": [0, 1, 3, 6],
+        "output": [3, 4, 6, 25]
+      },
+      "power_source": "battery",
+      "sources": [
+        "https://community.openhab.org/t/adding-support-for-tuya-zs3l-tz3000-ts0043-ts0042-ts0041-to-zigbee-bindings/108895"
+      ]
+    },
+    "_TZ3000_itb0omhv": {
+      "models": ["TS0041"],
+      "type": "button",
+      "device_name": "Tuya one button remote",
+      "capabilities": ["button"],
+      "button_actions": ["single", "double", "long_press"],
+      "known_issues": [
+        "No events received when pressing the switch button",
+        "Device drops off network after some hours",
+        "Events not firing properly in ZHA"
+      ],
+      "power_source": "battery",
+      "sources": [
+        "https://github.com/zigpy/zha-device-handlers/issues/2804",
+        "https://github.com/JohanBendz/com.tuya.zigbee"
+      ]
+    },
+    "_TZE200_4mh6tyyo": {
+      "models": ["TS0601"],
+      "type": "dimmer",
+      "device_name": "ION Industries ID200W-ZIGB / 1 Gang Dimmer Module",
+      "capabilities": ["onoff", "dim"],
+      "dp_protocol": true,
+      "clusters": {
+        "input": [0, 4, 5, 61184],
+        "output": [10, 25],
+        "descriptions": {
+          "61184": "Tuya cluster (0xEF00) for DP protocol"
+        }
+      },
+      "power_source": "mains",
+      "platform_support": ["Homey Tuya Zigbee App", "Zigbee2MQTT", "ZHA"],
+      "sources": [
+        "https://community.homey.app/t/app-pro-tuya-zigbee-app/26439",
+        "https://community.homey.app/t/app-pro-tuya-zigbee-app-device-request-archive/89271?page=12"
+      ]
+    },
+    "_TZE200_68nvbio9": {
+      "models": ["TS0601"],
+      "type": "curtain_motor",
+      "device_name": "Zemismart Zigbee Curtain Shade Motor",
+      "capabilities": ["windowcoverings_state"],
+      "actions": ["open", "stop", "close"],
+      "dp_protocol": true,
+      "clusters": {
+        "input": [0, 4, 5, 61184],
+        "output": [10, 25],
+        "descriptions": {
+          "61184": "Tuya cluster (0xEF00) for DP protocol"
+        }
+      },
+      "power_source": "mains",
+      "platform_support": ["ZHA", "Homey Tuya Zigbee App", "Zigbee2MQTT"],
+      "sources": [
+        "https://github.com/zigpy/zha-device-handlers/issues/2100",
+        "https://community.homey.app/t/app-pro-tuya-zigbee-app-device-request-archive/89271?page=10"
+      ]
+    },
+    "_TZE200_a4bpgplm": {
+      "models": ["TS0601"],
+      "type": "thermostat",
+      "device_name": "Tuya TRV (Thermostat Radiator Valve)",
+      "capabilities": ["target_temperature", "measure_temperature", "thermostat_mode"],
+      "dp_protocol": true,
+      "clusters": {
+        "input": [0, 4, 5, 61184],
+        "output": [10, 25],
+        "descriptions": {
+          "61184": "Tuya cluster (0xEF00) for DP protocol"
+        }
+      },
+      "power_source": "battery",
+      "platform_support": ["ZHA", "Homey Tuya Zigbee App", "Zigbee2MQTT"],
+      "sources": [
+        "https://github.com/zigpy/zha-device-handlers/issues/1159",
+        "https://community.homey.app/t/app-pro-tuya-zigbee-app/26439"
+      ]
+    }
+  }
+}
