@@ -2957,7 +2957,7 @@
   },
   "_TZE200_e3oitdyu": {
     "driver": "ceiling_fan",
-    "type": "unknown",
+    "type": "dimmer",
     "dps": [
       1,
       3,
@@ -2968,7 +2968,7 @@
   },
   "_TZE200_eevqq1uv": {
     "driver": "ceiling_fan",
-    "type": "unknown",
+    "type": "dimmer",
     "dps": [
       1,
       3,
@@ -2979,7 +2979,7 @@
   },
   "_TZE204_lawxy9e2": {
     "driver": "ceiling_fan",
-    "type": "unknown",
+    "type": "dimmer",
     "dps": [
       1,
       3,
@@ -27985,7 +27985,7 @@
   },
   "_TZ3000_nbm3pjii": {
     "driver": "co_sensor",
-    "type": "unknown",
+    "type": "smoke_detector",
     "dps": [
       1,
       2,
@@ -29674,28 +29674,40 @@
   },
   "_TZ3000_ycdqsmpd": {
     "driver": "door_controller",
-    "type": "contact_sensor",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE204_nklqjk62": {
     "driver": "door_controller",
-    "type": "contact_sensor",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE204_nslr42tt": {
     "driver": "energy_meter_3phase",
-    "type": "unknown",
+    "type": "socket",
     "dps": [],
     "extracted": false,
     "fromBaseClass": false
   },
   "_TZ3000_mwd3c2at": {
     "driver": "gas_detector",
-    "type": "unknown",
+    "type": "smoke_detector",
     "dps": [
       1
     ],
@@ -29704,7 +29716,7 @@
   },
   "_TZE200_9xfjixap": {
     "driver": "gas_detector",
-    "type": "unknown",
+    "type": "smoke_detector",
     "dps": [
       1
     ],
@@ -29713,7 +29725,7 @@
   },
   "_TZE200_m6kdujme": {
     "driver": "gas_detector",
-    "type": "unknown",
+    "type": "smoke_detector",
     "dps": [
       1
     ],
@@ -29722,7 +29734,7 @@
   },
   "_TZE204_dq1mfjug": {
     "driver": "gas_detector",
-    "type": "unknown",
+    "type": "smoke_detector",
     "dps": [
       1
     ],
@@ -29731,7 +29743,7 @@
   },
   "_TZE284_aao6qtcs": {
     "driver": "gas_detector",
-    "type": "unknown",
+    "type": "smoke_detector",
     "dps": [
       1
     ],
@@ -29740,7 +29752,7 @@
   },
   "_TZE200_wzqkpstm": {
     "driver": "gas_sensor",
-    "type": "unknown",
+    "type": "smoke_detector",
     "dps": [
       1,
       2,
@@ -29751,28 +29763,55 @@
   },
   "_TZ3000_2xlvlnez": {
     "driver": "gateway_zigbee_bridge",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_o1jzcxou": {
     "driver": "gateway_zigbee_bridge",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE200_f91miyhj": {
     "driver": "gateway_zigbee_bridge",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_0s9gukzt": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -29791,7 +29830,7 @@
   },
   "_TZ3000_1hwjutgo": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -29810,7 +29849,7 @@
   },
   "_TZ3000_266azbg3": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -29829,7 +29868,7 @@
   },
   "_TZ3000_2putqrmw": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -29848,7 +29887,7 @@
   },
   "_TZ3000_2uollq9d": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -29867,7 +29906,7 @@
   },
   "_TZ3000_303avxxt": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -29886,7 +29925,7 @@
   },
   "_TZ3000_3ias4w4o": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -29905,7 +29944,7 @@
   },
   "_TZ3000_3zofvcaa": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -29924,7 +29963,7 @@
   },
   "_TZ3000_402vrq2i": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -29943,7 +29982,7 @@
   },
   "_TZ3000_4o16jdca": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -29962,7 +30001,7 @@
   },
   "_TZ3000_4ux0ondb": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -29981,7 +30020,7 @@
   },
   "_TZ3000_4zf0crgo": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30000,7 +30039,7 @@
   },
   "_TZ3000_5fkufhn1": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30019,7 +30058,7 @@
   },
   "_TZ3000_5gey1ohx": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30038,7 +30077,7 @@
   },
   "_TZ3000_5kxl9esg": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30057,7 +30096,7 @@
   },
   "_TZ3000_65ajyxua": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30076,7 +30115,7 @@
   },
   "_TZ3000_6s5dc9lx": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30095,7 +30134,7 @@
   },
   "_TZ3000_7kscdesh": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30114,7 +30153,7 @@
   },
   "_TZ3000_7y90pany": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30133,7 +30172,7 @@
   },
   "_TZ3000_8a833yls": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30152,7 +30191,7 @@
   },
   "_TZ3000_8uxxzz4b": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30171,7 +30210,7 @@
   },
   "_TZ3000_92qd4sqa": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30190,7 +30229,7 @@
   },
   "_TZ3000_9kbbfeho": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30209,7 +30248,7 @@
   },
   "_TZ3000_abaplimj": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30228,7 +30267,7 @@
   },
   "_TZ3000_abjodzas": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30247,7 +30286,7 @@
   },
   "_TZ3000_afgzktgb": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30266,7 +30305,7 @@
   },
   "_TZ3000_awvmkayh": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30285,7 +30324,7 @@
   },
   "_TZ3000_b28wrpvx": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30304,7 +30343,7 @@
   },
   "_TZ3000_bep7ccew": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30323,7 +30362,7 @@
   },
   "_TZ3000_bfn1w0mm": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30342,7 +30381,7 @@
   },
   "_TZ3000_biakwrag": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30361,7 +30400,7 @@
   },
   "_TZ3000_bvij6kod": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30380,7 +30419,7 @@
   },
   "_TZ3000_cayepv1a": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30399,7 +30438,7 @@
   },
   "_TZ3000_ceplrhnu": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30418,7 +30457,7 @@
   },
   "_TZ3000_cicwjqth": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30437,7 +30476,7 @@
   },
   "_TZ3000_dlug3kbc": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30456,7 +30495,7 @@
   },
   "_TZ3000_dyzkbcip": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30475,7 +30514,7 @@
   },
   "_TZ3000_eei0ubpy": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30494,7 +30533,7 @@
   },
   "_TZ3000_estfrmup": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30513,7 +30552,7 @@
   },
   "_TZ3000_etufnltx": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30532,7 +30571,7 @@
   },
   "_TZ3000_ezqbvrqz": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30551,7 +30590,7 @@
   },
   "_TZ3000_fawk5xjv": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30570,7 +30609,7 @@
   },
   "_TZ3000_fisb3ajo": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30589,7 +30628,7 @@
   },
   "_TZ3000_g92baclx": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30608,7 +30647,7 @@
   },
   "_TZ3000_g9chy2ib": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30627,7 +30666,7 @@
   },
   "_TZ3000_g9g2xnch": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30646,7 +30685,7 @@
   },
   "_TZ3000_gazjngjl": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30665,7 +30704,7 @@
   },
   "_TZ3000_gbshwgag": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30684,7 +30723,7 @@
   },
   "_TZ3000_gdyjfvgm": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30703,7 +30742,7 @@
   },
   "_TZ3000_gek6snaj": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30722,7 +30761,7 @@
   },
   "_TZ3000_gjnozsaz": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30741,7 +30780,7 @@
   },
   "_TZ3000_gjrubzje": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30760,7 +30799,7 @@
   },
   "_TZ3000_h1ipgkwn": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30779,7 +30818,7 @@
   },
   "_TZ3000_hdc8bbha": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30798,7 +30837,7 @@
   },
   "_TZ3000_helyqdvs": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30817,7 +30856,7 @@
   },
   "_TZ3000_hexqj6ls": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30836,7 +30875,7 @@
   },
   "_TZ3000_hktqahrq": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30855,7 +30894,7 @@
   },
   "_TZ3000_huvxrx4i": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30874,7 +30913,7 @@
   },
   "_TZ3000_hyfvrar3": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30893,7 +30932,7 @@
   },
   "_TZ3000_hzlsaltw": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30912,7 +30951,7 @@
   },
   "_TZ3000_i9w5mehz": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30931,7 +30970,7 @@
   },
   "_TZ3000_ibefeicf": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30950,7 +30989,7 @@
   },
   "_TZ3000_ikuxinvo": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30969,7 +31008,7 @@
   },
   "_TZ3000_in5s3wn1": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -30988,7 +31027,7 @@
   },
   "_TZ3000_j6adk9id": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31007,7 +31046,7 @@
   },
   "_TZ3000_jsfzkftc": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31026,7 +31065,7 @@
   },
   "_TZ3000_ju82pu2b": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31045,7 +31084,7 @@
   },
   "_TZ3000_juq7i1fr": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31064,7 +31103,7 @@
   },
   "_TZ3000_k4ej3ww2": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31083,7 +31122,7 @@
   },
   "_TZ3000_k6fvknrr": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31102,7 +31141,7 @@
   },
   "_TZ3000_kkerjand": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31121,7 +31160,7 @@
   },
   "_TZ3000_kky16aay": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31140,7 +31179,7 @@
   },
   "_TZ3000_kstbkt6a": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31159,7 +31198,7 @@
   },
   "_TZ3000_kvwrdf47": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31178,7 +31217,7 @@
   },
   "_TZ3000_ky0fq4ho": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31197,7 +31236,7 @@
   },
   "_TZ3000_kyb656no": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31216,7 +31255,7 @@
   },
   "_TZ3000_kz1anoi8": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31235,7 +31274,7 @@
   },
   "_TZ3000_l6rsaipj": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31254,7 +31293,7 @@
   },
   "_TZ3000_l8fsgo6p": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31273,7 +31312,7 @@
   },
   "_TZ3000_lepzuhto": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31292,7 +31331,7 @@
   },
   "_TZ3000_lltemgsf": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31311,7 +31350,7 @@
   },
   "_TZ3000_lnggrqqi": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31330,7 +31369,7 @@
   },
   "_TZ3000_lvhy15ix": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31349,7 +31388,7 @@
   },
   "_TZ3000_lzdjjfss": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31368,7 +31407,7 @@
   },
   "_TZ3000_m3pafcnk": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31387,7 +31426,7 @@
   },
   "_TZ3000_m4ah6bcz": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31406,7 +31445,7 @@
   },
   "_TZ3000_m8f3z8ju": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31425,7 +31464,7 @@
   },
   "_TZ3000_ma3mhpx2": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31444,7 +31483,7 @@
   },
   "_TZ3000_mg4dy6z6": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31463,7 +31502,7 @@
   },
   "_TZ3000_mkhkxx1p": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31482,7 +31521,7 @@
   },
   "_TZ3000_mmkbptmx": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31501,7 +31540,7 @@
   },
   "_TZ3000_mqiev3jk": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31520,7 +31559,7 @@
   },
   "_TZ3000_mugyhz0q": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31539,7 +31578,7 @@
   },
   "_TZ3000_mvn6jl7x": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31558,7 +31597,7 @@
   },
   "_TZ3000_n0lphcok": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31577,7 +31616,7 @@
   },
   "_TZ3000_ncb6mkx8": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31596,7 +31635,7 @@
   },
   "_TZ3000_nnwehhst": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31615,7 +31654,7 @@
   },
   "_TZ3000_noru9tix": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31634,7 +31673,7 @@
   },
   "_TZ3000_npgipl5d": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31653,7 +31692,7 @@
   },
   "_TZ3000_nzkqcvvs": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31672,7 +31711,7 @@
   },
   "_TZ3000_ocjlo4ea": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31691,7 +31730,7 @@
   },
   "_TZ3000_odzoiovu": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31710,7 +31749,7 @@
   },
   "_TZ3000_oiymh3qu": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31729,7 +31768,7 @@
   },
   "_TZ3000_ok0ggpk7": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31748,7 +31787,7 @@
   },
   "_TZ3000_okaz9tjs": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31767,7 +31806,7 @@
   },
   "_TZ3000_pgq7ormg": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31786,7 +31825,7 @@
   },
   "_TZ3000_pjb1ua0m": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31805,7 +31844,7 @@
   },
   "_TZ3000_prits6g4": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31824,7 +31863,7 @@
   },
   "_TZ3000_pvlvoxvt": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31843,7 +31882,7 @@
   },
   "_TZ3000_q8r0bbvy": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31862,7 +31901,7 @@
   },
   "_TZ3000_qhyadm57": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31881,7 +31920,7 @@
   },
   "_TZ3000_qiutut5y": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31900,7 +31939,7 @@
   },
   "_TZ3000_qlmnxmac": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31919,7 +31958,7 @@
   },
   "_TZ3000_qmi1cfuq": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31938,7 +31977,7 @@
   },
   "_TZ3000_qnejhcsu": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31957,7 +31996,7 @@
   },
   "_TZ3000_qorepo2x": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31976,7 +32015,7 @@
   },
   "_TZ3000_quqaeew6": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -31995,7 +32034,7 @@
   },
   "_TZ3000_qvmiyxuk": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32014,7 +32053,7 @@
   },
   "_TZ3000_qystbcjg": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32033,7 +32072,7 @@
   },
   "_TZ3000_raviyuvk": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32052,7 +32091,7 @@
   },
   "_TZ3000_rsylfthg": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32071,7 +32110,7 @@
   },
   "_TZ3000_rtcrrvia": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32090,7 +32129,7 @@
   },
   "_TZ3000_rul9yxcc": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32109,7 +32148,7 @@
   },
   "_TZ3000_s678wazd": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32128,7 +32167,7 @@
   },
   "_TZ3000_sosdczdl": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32147,7 +32186,7 @@
   },
   "_TZ3000_ss98ec5d": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32166,7 +32205,7 @@
   },
   "_TZ3000_t6jriawg": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32185,7 +32224,7 @@
   },
   "_TZ3000_t9qqxn70": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32204,7 +32243,7 @@
   },
   "_TZ3000_tqlv4ug4": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32223,7 +32262,7 @@
   },
   "_TZ3000_tvuarksa": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32242,7 +32281,7 @@
   },
   "_TZ3000_txpirhfq": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32261,7 +32300,7 @@
   },
   "_TZ3000_tygpxwqa": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32280,7 +32319,7 @@
   },
   "_TZ3000_uaa34g7v": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32299,7 +32338,7 @@
   },
   "_TZ3000_ugi8ky6u": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32318,7 +32357,7 @@
   },
   "_TZ3000_uim07oem": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32337,7 +32376,7 @@
   },
   "_TZ3000_upgcbody": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32356,7 +32395,7 @@
   },
   "_TZ3000_v1pdxuqq": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32375,7 +32414,7 @@
   },
   "_TZ3000_v4l4b0lp": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32394,7 +32433,7 @@
   },
   "_TZ3000_veu2v775": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32413,7 +32452,7 @@
   },
   "_TZ3000_vsasbzkf": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32432,7 +32471,7 @@
   },
   "_TZ3000_wbloefbf": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32451,7 +32490,7 @@
   },
   "_TZ3000_wijoqjk1": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32470,7 +32509,7 @@
   },
   "_TZ3000_wn65ixz9": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32489,7 +32528,7 @@
   },
   "_TZ3000_wr6g6olr": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32508,7 +32547,7 @@
   },
   "_TZ3000_wsspgtcd": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32527,7 +32566,7 @@
   },
   "_TZ3000_wxtp7c5y": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32546,7 +32585,7 @@
   },
   "_TZ3000_xfs39dbf": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32565,7 +32604,7 @@
   },
   "_TZ3000_xkap8wtb": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32584,7 +32623,7 @@
   },
   "_TZ3000_y4ona9me": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32603,7 +32642,7 @@
   },
   "_TZ3000_ysiog9xi": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32622,7 +32661,7 @@
   },
   "_TZ3000_yujkchbz": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32641,7 +32680,7 @@
   },
   "_TZ3000_zjchz7pd": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32660,7 +32699,7 @@
   },
   "_TZ3000_zmy4lslw": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32679,7 +32718,7 @@
   },
   "_TZ3000_zrm3oxsh": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32698,7 +32737,7 @@
   },
   "_TZ3000_zv6x8bt2": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32717,7 +32756,7 @@
   },
   "_TZ3000_zw7wr5uo": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32736,7 +32775,7 @@
   },
   "_TZ3000_zwaadvus": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32755,7 +32794,7 @@
   },
   "_TZ3002_1s0vfmtv": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32774,7 +32813,7 @@
   },
   "_TZ3002_6ahhkwyh": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32793,7 +32832,7 @@
   },
   "_TZ3002_9vcekkp1": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32812,7 +32851,7 @@
   },
   "_TZ3002_aewsvjcu": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32831,7 +32870,7 @@
   },
   "_TZ3002_gdwja9a7": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32850,7 +32889,7 @@
   },
   "_TZ3002_iedhxgyi": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32869,7 +32908,7 @@
   },
   "_TZ3002_kq3kqwjt": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32888,7 +32927,7 @@
   },
   "_TZ3002_m3pafcnk": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32907,7 +32946,7 @@
   },
   "_TZ3002_phu8ygaw": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32926,7 +32965,7 @@
   },
   "_TZ3002_pzao9ls1": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32945,7 +32984,7 @@
   },
   "_TZ3002_rbnycsav": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32964,7 +33003,7 @@
   },
   "_TZ3002_sal078g8": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -32983,7 +33022,7 @@
   },
   "_TZ3002_sfh0jtz0": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33002,7 +33041,7 @@
   },
   "_TZ3002_umdkr64x": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33021,7 +33060,7 @@
   },
   "_TZ3002_ymv5vytn": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33040,7 +33079,7 @@
   },
   "_TZ3040_6ygjfyll": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33059,7 +33098,7 @@
   },
   "_TZ3040_fwxuzcf4": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33078,7 +33117,7 @@
   },
   "_TZ3210_09hzmirw": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33097,7 +33136,7 @@
   },
   "_TZ3210_3ulg9kpo": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33116,7 +33155,7 @@
   },
   "_TZ3210_4ubylghk": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33135,7 +33174,7 @@
   },
   "_TZ3210_5ct6e7ye": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33154,7 +33193,7 @@
   },
   "_TZ3210_7vgttna6": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33173,7 +33212,7 @@
   },
   "_TZ3210_a04acm9s": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33192,7 +33231,7 @@
   },
   "_TZ3210_c0s1xloa": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33211,7 +33250,7 @@
   },
   "_TZ3210_cwamkvua": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33230,7 +33269,7 @@
   },
   "_TZ3210_ddigca5n": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33249,7 +33288,7 @@
   },
   "_TZ3210_dn5higyl": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33268,7 +33307,7 @@
   },
   "_TZ3210_dse8ogfy": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33287,7 +33326,7 @@
   },
   "_TZ3210_dwzfzfjc": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33306,7 +33345,7 @@
   },
   "_TZ3210_fhx7lk3d": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33325,7 +33364,7 @@
   },
   "_TZ3210_guijtl8k": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33344,7 +33383,7 @@
   },
   "_TZ3210_hicxa0rh": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33363,7 +33402,7 @@
   },
   "_TZ3210_iystcadi": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33382,7 +33421,7 @@
   },
   "_TZ3210_j4pdtz9v": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33401,7 +33440,7 @@
   },
   "_TZ3210_jjqdqxfq": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33420,7 +33459,7 @@
   },
   "_TZ3210_jlf1nepw": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33439,7 +33478,7 @@
   },
   "_TZ3210_k1msuvg6": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33458,7 +33497,7 @@
   },
   "_TZ3210_p68kms0l": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33477,7 +33516,7 @@
   },
   "_TZ3210_rwmitwj4": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33496,7 +33535,7 @@
   },
   "_TZ3210_tfxwxklq": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33515,7 +33554,7 @@
   },
   "_TZ3210_tgvtvdoc": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33534,7 +33573,7 @@
   },
   "_TZ3210_up3pngle": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33553,7 +33592,7 @@
   },
   "_TZ3210_vfwhhldz": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33572,7 +33611,7 @@
   },
   "_TZ3210_x13bu7za": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33591,7 +33630,7 @@
   },
   "_TZ3210_ysfo0wla": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33610,7 +33649,7 @@
   },
   "_TZ3218_hdc8bbha": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33629,7 +33668,7 @@
   },
   "_TZ321c_4slreunp": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33648,7 +33687,7 @@
   },
   "_TZ321c_fkzihax8": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33667,7 +33706,7 @@
   },
   "_TZ3290_ixd9mvv4": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33686,7 +33725,7 @@
   },
   "_TZ3290_jxvzqatwgsaqzx1u": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33705,7 +33744,7 @@
   },
   "_TZ3290_lypnqvlem5eq1ree": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33724,7 +33763,7 @@
   },
   "_TZ3290_yac64inudpovoaba": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33743,7 +33782,7 @@
   },
   "_TZb000_42ha4rsc": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33762,7 +33801,7 @@
   },
   "_TZb210_6eed09b9": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33781,7 +33820,7 @@
   },
   "_TZb210_g01ie5wu": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33800,7 +33839,7 @@
   },
   "_TZb210_lnnkh3f9": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33819,7 +33858,7 @@
   },
   "_TZb210_rwy5hexp": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33838,7 +33877,7 @@
   },
   "_TZb210_zmppwawa": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33857,7 +33896,7 @@
   },
   "_TZE200_0zaf1cr8": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33876,7 +33915,7 @@
   },
   "_TZE200_clrdrnya": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33895,7 +33934,7 @@
   },
   "_TZE204_clrdrnya": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33914,7 +33953,7 @@
   },
   "_TZE204_dtzziy1e": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33933,7 +33972,7 @@
   },
   "_TZE204_e5m9c5hl": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33952,7 +33991,7 @@
   },
   "_TZE204_fwondbzy": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33971,7 +34010,7 @@
   },
   "_TZE204_lbbg34rj": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -33990,7 +34029,7 @@
   },
   "_TZE204_pfayrzcw": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -34009,7 +34048,7 @@
   },
   "_TZE204_ztqnh5cg": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -34028,7 +34067,7 @@
   },
   "_TZE284_0zaf1cr8": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -34047,7 +34086,7 @@
   },
   "_TZE284_fwondbzy": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -34066,7 +34105,7 @@
   },
   "_TZE284_iilebqoo": {
     "driver": "generic_tuya",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       2,
@@ -34106,52 +34145,122 @@
   },
   "_TZE204_eaac7dkw": {
     "driver": "hvac_dehumidifier",
-    "type": "unknown",
-    "dps": [],
+    "type": "thermostat",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      16,
+      24,
+      27,
+      28,
+      101
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE200_44xpctxy": {
     "driver": "hvac_dehumidifier",
-    "type": "unknown",
-    "dps": [],
+    "type": "thermostat",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      16,
+      24,
+      27,
+      28,
+      101
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE204_44xpctxy": {
     "driver": "hvac_dehumidifier",
-    "type": "unknown",
-    "dps": [],
+    "type": "thermostat",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      16,
+      24,
+      27,
+      28,
+      101
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE200_bgjfxh3o": {
     "driver": "hvac_dehumidifier",
-    "type": "unknown",
-    "dps": [],
+    "type": "thermostat",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      16,
+      24,
+      27,
+      28,
+      101
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE204_bgjfxh3o": {
     "driver": "hvac_dehumidifier",
-    "type": "unknown",
-    "dps": [],
+    "type": "thermostat",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      16,
+      24,
+      27,
+      28,
+      101
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE200_c88teujp": {
     "driver": "hvac_dehumidifier",
-    "type": "unknown",
-    "dps": [],
+    "type": "thermostat",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      16,
+      24,
+      27,
+      28,
+      101
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE204_oisqyl4o": {
     "driver": "hvac_dehumidifier",
-    "type": "unknown",
-    "dps": [],
+    "type": "thermostat",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      16,
+      24,
+      27,
+      28,
+      101
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TYZB01_a476raq2": {
     "driver": "lcdtemphumidsensor",
@@ -34179,273 +34288,501 @@
   },
   "_TZ3000_gb5gaeca": {
     "driver": "led_controller_cct",
-    "type": "led",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_riwp3k79": {
     "driver": "led_controller_cct",
-    "type": "led",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_v1srfw9x": {
     "driver": "led_controller_cct",
-    "type": "led",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3210_c2iwpxf1": {
     "driver": "led_controller_cct",
-    "type": "led",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3210_r0xgkft5": {
     "driver": "led_controller_cct",
-    "type": "led",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3210_zrvxvydd": {
     "driver": "led_controller_cct",
-    "type": "led",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZB210_endmggws": {
     "driver": "led_controller_cct",
-    "type": "led",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZB210_ngnt8kni": {
     "driver": "led_controller_cct",
-    "type": "led",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_gznh2xla": {
     "driver": "led_controller_rgb",
-    "type": "led",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZB210_lmqquxus": {
     "driver": "led_controller_rgb",
-    "type": "led",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZb210_endmggws": {
     "driver": "led_controller_rgb",
-    "type": "led",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_5bsf8vaj": {
     "driver": "led_strip",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_dl4pxp1r": {
     "driver": "led_strip",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_i8l0nqdu": {
     "driver": "led_strip",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_qqjaziws": {
     "driver": "led_strip",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ukuvyhaa": {
     "driver": "led_strip",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_utagpnzs": {
     "driver": "led_strip",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_w58g68s3": {
     "driver": "led_strip",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZB210_3zfp8mki": {
     "driver": "led_strip",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZB210_gj0ccsar": {
     "driver": "led_strip",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3210_aavhaadb": {
     "driver": "led_strip",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3210_quinzf3w": {
     "driver": "led_strip",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_12sxjap4": {
     "driver": "led_strip_rgbw",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_8n7lqbm0": {
     "driver": "led_strip_rgbw",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_bzzgvet0": {
     "driver": "led_strip_rgbw",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_cygcaxvv": {
     "driver": "led_strip_rgbw",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_e98krvvk": {
     "driver": "led_strip_rgbw",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_fdxihpp7": {
     "driver": "led_strip_rgbw",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_hlijwsai": {
     "driver": "led_strip_rgbw",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_keabpigv": {
     "driver": "led_strip_rgbw",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_kycczpw8": {
     "driver": "led_strip_rgbw",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3210_0zabbfa": {
     "driver": "led_strip_rgbw",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3210_0zabbfax": {
     "driver": "led_strip_rgbw",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3210_95txyzbx": {
     "driver": "led_strip_rgbw",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3210_a5fxguxr": {
     "driver": "led_strip_rgbw",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3210_sroezl0s": {
     "driver": "led_strip_rgbw",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3210_trm3l2aw": {
     "driver": "led_strip_rgbw",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3210_eejm8dcr": {
     "driver": "led_strip_rgbw",
     "type": "led",
-    "dps": [],
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      6
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE200_ar0slwnd": {
     "driver": "lock_smart",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       3
@@ -34455,7 +34792,7 @@
   },
   "_TZE200_bmzphld8": {
     "driver": "lock_smart",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       3
@@ -34465,7 +34802,7 @@
   },
   "_TZE200_g2kiyjvf": {
     "driver": "lock_smart",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       3
@@ -34475,7 +34812,7 @@
   },
   "_TZE200_ne4s6z47": {
     "driver": "lock_smart",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       3
@@ -34485,7 +34822,7 @@
   },
   "_TZE204_rrbcyh1f": {
     "driver": "lock_smart",
-    "type": "unknown",
+    "type": "switch",
     "dps": [
       1,
       3
@@ -34495,101 +34832,227 @@
   },
   "_TZ3000_1obwwnmq": {
     "driver": "module_mini_switch",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_majwnphg": {
     "driver": "module_mini_switch",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ovyaisip": {
     "driver": "module_mini_switch",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_p26flek3": {
     "driver": "module_mini_switch",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_pk8tgtdb": {
     "driver": "module_mini_switch",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_prd023wy": {
     "driver": "module_mini_switch",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_tgddllx4": {
     "driver": "module_mini_switch",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_vmpbygs5": {
     "driver": "module_mini_switch",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_w0qqde0g": {
     "driver": "module_mini_switch",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_w0ypwa1f": {
     "driver": "module_mini_switch",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_x3ewpzyr": {
     "driver": "module_mini_switch",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_y4che4dc": {
     "driver": "module_mini_switch",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ysdv91bk": {
     "driver": "module_mini_switch",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_zw7yf6yk": {
     "driver": "module_mini_switch",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TYST11_7hfcudw5": {
     "driver": "motion_sensor",
@@ -36050,7 +36513,7 @@
   },
   "_TZ3000_byfdwktr": {
     "driver": "power_meter",
-    "type": "unknown",
+    "type": "socket",
     "dps": [
       17,
       18,
@@ -36763,7 +37226,7 @@
   },
   "_TZ3000_k1msavlx": {
     "driver": "rain_sensor",
-    "type": "unknown",
+    "type": "climate_sensor",
     "dps": [
       1,
       4,
@@ -36774,7 +37237,7 @@
   },
   "_TZ3000_qdmnmddg": {
     "driver": "rain_sensor",
-    "type": "unknown",
+    "type": "climate_sensor",
     "dps": [
       1,
       4,
@@ -36785,94 +37248,181 @@
   },
   "_TZ3000_gbm10jnj": {
     "driver": "scene_switch_3",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_jckxip3g": {
     "driver": "scene_switch_4",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_u3oupgdy": {
     "driver": "scene_switch_6",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_aezbqpcu": {
     "driver": "shutter_roller_controller",
-    "type": "unknown",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ejwkn2h2": {
     "driver": "shutter_roller_controller",
-    "type": "unknown",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_empogkya": {
     "driver": "shutter_roller_controller",
-    "type": "unknown",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_eqsair32": {
     "driver": "shutter_roller_controller",
-    "type": "unknown",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_f09j9qjb": {
     "driver": "shutter_roller_controller",
-    "type": "unknown",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_hbic3ka3": {
     "driver": "shutter_roller_controller",
-    "type": "unknown",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_imaccztn": {
     "driver": "shutter_roller_controller",
-    "type": "unknown",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_lmcp6b0a": {
     "driver": "shutter_roller_controller",
-    "type": "unknown",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_lrgccsxm": {
     "driver": "shutter_roller_controller",
-    "type": "unknown",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE200_nkoabg8w": {
     "driver": "shutter_roller_controller",
-    "type": "unknown",
-    "dps": [],
+    "type": "cover",
+    "dps": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ab7hfuil": {
     "driver": "siren",
@@ -37177,2131 +37727,4867 @@
   },
   "_TZ3000_1adss9de": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_2iiimqs9": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_4js9lo5d": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_4xfqlgqo": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_54hjn4vs": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_5ajpkyq6": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_5ksufhqi": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_5ng23zjs": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_5ucujjts": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_66fekqhh": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_6km7djcm": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_6l1pjfqe": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_785olaiq": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_8fdayfch": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_8nyaanzb": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_aa5t61rh": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_aknpkt02": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_aracgljk": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_avky2mvc": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_bmqxalil": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_cdamjqm9": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_cpozgbrx": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ctftgjwb": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_cvis4qmw": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_dlhhrhs8": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_drc9tuqb": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_e8cquwdk": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_fbjdkph9": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_fccpjz5z": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_fukaa7nc": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_g8n1n7lg": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_gexniqbq": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_gzvniqjb": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_hafsqare": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ho0cjoi2": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_hojntt34": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_in5qxhtt": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_irrmjcgi": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_irwuzilv": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_iy2c3n6p": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_iymfxdis": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_jcqs2mrv": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ke7pzj5d": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_knoj8lpk": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_kpatq5pq": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_liygxtcq": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ljhbw1c9": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_lmlsduws": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_lsunm46z": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_lubfc1t5": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ly9apzky": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_mdj7kra9": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_mgusv51k": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_mhhxxjrs": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_mtnpt6ws": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_mufwv0ry": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_mw1pqqqt": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_myaaknbq": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_nivavasg": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_npzfdcof": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_nuenzetq": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ogpla3lh": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ouwfc1qj": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_pf7swkqp": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_pmvbt5hh": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_pv4puuxi": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_qaa59zqd": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_qaabwu5c": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_qlai3277": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_qq9ahj6z": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_qxcnwv26": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_rgpqqmbj": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_rhkfbfcv": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_rmjr4ufz": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_rqbjepe8": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ruldv5dt": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ruxexjfz": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_sgb0xhwn": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_sznawwyw": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_tas0zemd": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_tqlv4ez4": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_txpitre5": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_udl7uyd2": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_uilitwsy": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_uwkja6z1": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_w1tcofu8": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_wnzoyohq": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_wzmuk9ai": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_x8mbwtsz": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ypgri8yz": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ywubfuvt": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_zbfya6h0": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_zmlunnhy": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_zxrfobzw": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3002_jn2x20tg": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3002_zjuvw9zf": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3210_2dfy6tol": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3210_8n4dn1ne": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3210_jowhpxop": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3210_urjf5u18": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE200_0nauxa0p": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE200_9cxuhakf": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE200_wnp4d4va": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE204_f5efvtbv": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE204_gxbdnfrh": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE204_iik0pquw": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE204_lbhh5o6z": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE204_lmgrbuwf": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE204_mexisfik": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE204_ojtqawav": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE204_wskr3up8": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE284_f5efvtbv": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE284_lbhh5o6z": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE284_tdhnhhiy": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE200_abatw3kj": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE200_hewlydpz": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE204_nvxorhcj": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_0ausfos0": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_1obmmd8k": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_26gjlugm": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_2ac": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_2jxgpoqh": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_2mccw9py": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_3a9beq8a": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_3wkqni6o": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_41ki5xyq": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_4whigl8i": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_56bdyj21": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_5af5r192": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_5ct6e7ye": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_5e5ptb24": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_5ity3zyu": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_5nrcorgu": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_5vujyute": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_6eyydfyg": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_6oabgtzv": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_7issjl2q": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_7jsk6lxz": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_88iqnhvd": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_8ybe88nf": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_9djocypn": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_9evm3otq": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_abc123": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ajkq2isy": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_amal63is": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_amdymr71": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_amis43tj": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ark8nv4y": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_arw23zcs": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_b1q8kwmh": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_b7bxojrg": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_bb6xaihh": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_bhcpnvud": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_bkfe0bab": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_bmhwnl7s": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_bppxj3sf": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_bzczr4e1": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_bzxloft": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_c7nc9w3c": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_cet6ch1r": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_cipibmnp": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_cmcjbqup": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_criiahcg": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ctbafvhm": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_d16y6col": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_dbpmpco1": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_dph3rpss": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_dvqt7qrw": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_eg7awg6a": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_egq7y6pr": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_egvb1p2g": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ena8vgqb": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_esynmmox": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_etx8inrk": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ew31dmgx": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_eyzb8yg3": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_f8tmviy0": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_famkxci2": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_fjt5218m": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_fvhunhxb": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_g": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ghi789": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_gidy6sjs": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_gszjt2xx": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_h1c2eamp": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_h1jnz6l8": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_h3noz0a5": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_h8ngtlxy": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_hdlpifbk": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_hkkkuk7k": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_hlwm8e96": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_i3rjdrwu": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_i8jfiezr": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_i9oy2rdq": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_iaxvag8w": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_iedbgyxt": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_iszegwpd": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_it1hm1cr": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_iv6ph5tr": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_j1xl73iw": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_j9568h44": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_kaflzta4": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_kmsbwdol": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_kxlmv9ag": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_l6iqph4f": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_lbtpiody": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_lfa05ajd": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_llfaquvp": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_lrfvzq1e": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_lxw3zcdk": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_m0vaazab": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_m9af2l6g": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_misw04hq": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_mlswgkc3": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_mq4wujmp": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_npg02xft": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_nrfkrgf4": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_nsa76jai": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_nta0gb8h": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_o4cjetlm": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_oaq83gqc": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_oex7egmt": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_oikiyf3b": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_os0wy3vh": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_oznonj5q": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_pkeqinnt": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_pnzfdr9y": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_q6a3tepg": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_qewo8dlz": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_qsp2pwtf": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_r0pmi2p3": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_r80pzsb9": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_rdfh8cfs": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_rk2yzt0u": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_s6ma1nh4": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_shopg9ss": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_sj7jbgks": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_sjpl9eg3": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_skueekg3": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_svoqrno4": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_t3s9qmmg": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_t3vvhrmh": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_t8hzpgnd": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_thhxrept": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ts004f": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ufttklsz": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_v4mevirn": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_v7fkcekx": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_v7gnj3ad": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_v7sopte0": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_vjhcenzo": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_vvlivusi": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_w05exif3": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_w3c7ouru": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_wbfgbpxq": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_wlquqiiz": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_wmlc9p9z": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_wpueorev": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_wqcbzbae": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_wzauvbcs": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_xdo0hj1k": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_xeumnff9": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_xiuox57i": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_xwuveizv": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_yervjnlj": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_ygvf9xzp": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_yhagrqmd": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_yirp2pgd": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_yl3zuyaw": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_yw5tvzsk": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_zgtbi4oy": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_zgyzgdua": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_zigisuyh": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_zirycpws": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3002_vaq2bfcu": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3002_ymcctknk": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZE204_srmahpw": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_f1bapcit": {
     "driver": "switch_1gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_4js6g1cw": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_7vcdo2vn": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_atp3bews": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_atp7xmd9": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_bseed": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_jcfje0kb": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_kgxej1dv": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_l9brjwau": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_mklgayek": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_mrqea2uu": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_npzfykbs": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_pgcclddi": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_pmz6mjyu": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_qcgw8qfa": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_qn8qvk9y": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_rmiew70n": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_tribakzk": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_wkr3jqmr": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_xk5udnd6": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_yw8z2axp": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_zmy1waw6": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_vjhcxjqb": {
     "driver": "switch_2gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_excgg5kb": {
     "driver": "switch_3gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_vjhcxjeb": {
     "driver": "switch_3gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_cahkwezx": {
     "driver": "switch_3gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "_TZ3000_pdvkkcuc": {
     "driver": "switch_4gang",
-    "type": "unknown",
-    "dps": [],
+    "type": "switch",
+    "dps": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
     "extracted": false,
-    "fromBaseClass": false
+    "fromBaseClass": true
   },
   "TUYATEC-g3gl6cgy": {
     "driver": "temphumidsensor",

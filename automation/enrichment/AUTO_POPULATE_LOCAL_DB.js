@@ -34,6 +34,12 @@ const BASE_CLASS_DPS = {
 
   // ThermostatDevice
   thermostat: [1, 2, 3, 4, 16, 24, 27, 28, 101], // various thermostat DPs
+
+  // SwitchDevice (1-8 gang)
+  switch: [1, 2, 3, 4, 5, 6, 7, 8], // onoff per gang
+
+  // LED Controllers
+  led: [1, 2, 3, 5, 6], // onoff, dim/mode, color_temp, hue, saturation
 };
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -114,25 +120,54 @@ function extractManufacturers(configPath) {
 function guessDriverType(driverName, capabilities = []) {
   const name = driverName.toLowerCase();
 
+  // Motion sensors
   if (name.includes('motion') || name.includes('pir')) return 'motion_sensor';
   if (name.includes('radar') || name.includes('mmwave')) return 'motion_sensor_radar';
+
+  // Climate/Environment
   if (name.includes('climate') || name.includes('temphumid')) return 'climate_sensor';
   if (name.includes('soil')) return 'soil_sensor';
-  if (name.includes('thermostat')) return 'thermostat';
+  if (name.includes('air') || name.includes('co2') || name.includes('voc')) return 'air_quality';
+  if (name.includes('rain')) return 'climate_sensor';
+
+  // HVAC
+  if (name.includes('thermostat') || name.includes('hvac')) return 'thermostat';
+  if (name.includes('dehumidifier') || name.includes('humidifier')) return 'thermostat';
+  if (name.includes('fan') || name.includes('ceiling')) return 'dimmer'; // uses dim for speed
+
+  // Covers
   if (name.includes('curtain') || name.includes('cover') || name.includes('blind')) return 'cover';
+  if (name.includes('shutter') || name.includes('roller')) return 'cover';
+
+  // Lighting
   if (name.includes('dimmer')) return 'dimmer';
   if (name.includes('led') || name.includes('light') || name.includes('bulb')) return 'led';
-  if (name.includes('switch') && name.includes('wall')) return 'switch';
+
+  // Switches (most common)
+  if (name.includes('switch')) return 'switch';
+  if (name.includes('module') && name.includes('mini')) return 'switch';
+  if (name.includes('generic')) return 'switch'; // generic_tuya often are switches
+
+  // Sockets/Power
   if (name.includes('socket') || name.includes('plug') || name.includes('outlet')) return 'socket';
+  if (name.includes('energy') || name.includes('meter')) return 'socket';
+
+  // Sensors
   if (name.includes('contact') || name.includes('door')) return 'contact_sensor';
   if (name.includes('water') || name.includes('leak')) return 'water_leak';
   if (name.includes('smoke')) return 'smoke_detector';
-  if (name.includes('button') || name.includes('remote')) return 'button';
-  if (name.includes('valve')) return 'valve';
+  if (name.includes('gas') || name.includes('co_sensor')) return 'smoke_detector';
+  if (name.includes('vibration')) return 'vibration';
+
+  // Controls
+  if (name.includes('button') || name.includes('remote') || name.includes('scene')) return 'button';
+  if (name.includes('valve') || name.includes('irrigation')) return 'valve';
+  if (name.includes('lock')) return 'switch'; // simplified
+
+  // Other
   if (name.includes('siren') || name.includes('alarm')) return 'siren';
   if (name.includes('garage')) return 'garage_door';
-  if (name.includes('vibration')) return 'vibration';
-  if (name.includes('air') || name.includes('co2') || name.includes('voc')) return 'air_quality';
+  if (name.includes('gateway') || name.includes('bridge')) return 'switch'; // simplified
 
   return 'unknown';
 }
