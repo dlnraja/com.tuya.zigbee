@@ -1,4 +1,8 @@
 {
+  "5.5.30": {
+    "en": "AUTO-RETRY MISSING DATA: 1) Automatic data retry 4 minutes after pairing if capabilities are still null. 2) _checkMissingCapabilities() detects which sensors haven't reported. 3) _forceDataRetry() uses: DP query + ZCL attribute read + binding refresh. 4) Second retry after 6 minutes with DP burst. 5) Works for all HybridSensorBase devices (climate, radar, soil, etc.).",
+    "fr": "AUTO-RETRY DONNÉES MANQUANTES: 1) Retry automatique 4 min après appairage si capabilities toujours null. 2) _checkMissingCapabilities() détecte quels capteurs n'ont pas reporté. 3) _forceDataRetry() utilise: query DP + lecture ZCL + refresh bindings. 4) Second retry après 6 min avec burst DP. 5) Fonctionne pour tous les HybridSensorBase."
+  },
   "5.5.29": {
     "en": "GATEWAY EMULATION: 1) New TuyaGatewayEmulator.js - Homey now acts as a real Tuya Gateway! 2) Automatic time broadcast to LCD devices (_TZE284_vvmbj46n TH05Z). 3) Time request handler - responds when device asks for time. 4) WakeStrategies module with 6 methods: onDeviceAnnounce, onAnyDataReceived, refreshBindings, configureReporting, readAttributes, dpQueryBurst. 5) All sensors (Climate, Radar, Soil) now use wake strategies for better data retrieval. 6) Climate sensor pushes time proactively every 6h.",
     "fr": "ÉMULATION GATEWAY: 1) Nouveau TuyaGatewayEmulator.js - Homey agit comme vraie Gateway Tuya! 2) Broadcast heure auto vers appareils LCD (_TZE284_vvmbj46n TH05Z). 3) Handler requêtes heure - répond quand appareil demande l'heure. 4) Module WakeStrategies avec 6 méthodes. 5) Tous les capteurs utilisent wake strategies pour mieux récupérer les données. 6) Capteur climat pousse l'heure proactivement toutes les 6h."
