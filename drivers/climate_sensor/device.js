@@ -3,7 +3,12 @@
 const { HybridSensorBase } = require('../../lib/devices');
 
 /**
- * Climate Sensor Device - v5.4.8 CRITICAL DP FIX
+ * Climate Sensor Device - v5.5.26 ENHANCED
+ *
+ * Sources:
+ * - Z2M: Temperature & humidity sensor with clock (TH05Z)
+ * - ZHA: Quirk for _TZE284_vvmbj46n with time sync
+ * - Homey Community: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test
  *
  * Uses HybridSensorBase for:
  * - Anti-double init
@@ -12,7 +17,7 @@ const { HybridSensorBase } = require('../../lib/devices');
  * - Phantom sub-device rejection
  * - Automatic ZCL/Tuya DP handling via onTuyaStatus()
  *
- * Supports: Temperature, Humidity, Battery
+ * Supports: Temperature, Humidity, Battery, Time Sync
  *
  * KNOWN MODELS:
  * - TS0601 / _TZE200_* : Standard Tuya climate sensors (DP1/2/4)
@@ -23,6 +28,8 @@ const { HybridSensorBase } = require('../../lib/devices');
  *
  * ⚠️  IMPORTANT: DP3/5/15 are for SOIL SENSORS, NOT climate sensors!
  * Climate sensors use: DP1=temp, DP2=humidity, DP4=battery (x2 multiplier)
+ *
+ * v5.5.26: Enhanced time sync (every 6h) for clock devices
  */
 class ClimateSensorDevice extends HybridSensorBase {
 
@@ -145,14 +152,15 @@ class ClimateSensorDevice extends HybridSensorBase {
       // Sync time now
       await this._syncDeviceTime(timeCluster);
 
-      // Schedule daily time sync
+      // v5.5.26: Schedule time sync every 6 hours (improved from 24h)
+      // More frequent sync ensures clock stays accurate on LCD devices
       this._timeSyncInterval = setInterval(() => {
         this._syncDeviceTime(timeCluster).catch(err => {
-          this.error('[CLIMATE] Daily time sync failed:', err.message);
+          this.error('[CLIMATE] Time sync failed:', err.message);
         });
-      }, 24 * 60 * 60 * 1000); // 24 hours
+      }, 6 * 60 * 60 * 1000); // 6 hours
 
-      this.log('[CLIMATE] ✅ Time sync enabled (daily updates)');
+      this.log('[CLIMATE] ✅ Time sync enabled (every 6 hours)');
     } catch (err) {
       this.error('[CLIMATE] Time sync setup error:', err.message);
     }
