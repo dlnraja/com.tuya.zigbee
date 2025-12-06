@@ -8,7 +8,9 @@
     "target_temperature",
     "measure_temperature",
     "thermostat_mode",
-    "measure_battery"
+    "measure_battery",
+    "onoff",
+    "measure_humidity"
   ],
   "platforms": [
     "local"
