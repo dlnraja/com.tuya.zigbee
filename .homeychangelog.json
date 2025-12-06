@@ -1,4 +1,8 @@
 {
+  "5.5.24": {
+    "en": "2-GANG SWITCH FIX: 1) Fixed 'Missing Capability Listener: onoff.1' error by removing duplicate capability from driver.compose.json. 2) Added legacy onoff.X support in HybridSwitchBase for devices with existing onoff.1/onoff.2 capabilities.",
+    "fr": "FIX SWITCH 2-GANG: 1) Erreur 'Missing Capability Listener: onoff.1' corrigée en supprimant la capability dupliquée. 2) Support legacy onoff.X ajouté dans HybridSwitchBase pour les appareils existants."
+  },
   "5.5.23": {
     "en": "LED CONTROLLER + CURTAIN FIX: 1) Fixed fingerprint collision - TS0501B removed from bulb_dimmable (now correctly uses led_controller_cct). 2) Improved curtain motor DP mappings with extended value parsing for _TZE200_uj3f4wr5 and similar devices. 3) Added battery DP (13) support for solar curtains.",
     "fr": "FIX CONTRÔLEUR LED + RIDEAU: 1) Collision fingerprint corrigée - TS0501B retiré de bulb_dimmable (utilise maintenant led_controller_cct). 2) Mappings DP moteur rideau améliorés avec parsing étendu pour _TZE200_uj3f4wr5. 3) Support DP batterie (13) pour rideaux solaires."
