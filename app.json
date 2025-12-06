@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.23",
+  "version": "5.5.24",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.23: LED controller fix + curtain motor improvements",
-    "fr": "V5.5.23: Fix contrôleur LED + amélioration moteur rideau"
+    "en": "V5.5.24: Fix 2-gang switch Missing Capability Listener error",
+    "fr": "V5.5.24: Fix erreur Missing Capability Listener switch 2-gang"
   },
   "category": "appliances",
   "permissions": [],
