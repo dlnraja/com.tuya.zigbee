@@ -1,9 +1,10 @@
 'use strict';
 
 const { HybridSensorBase } = require('../../lib/devices');
+const { WakeStrategies } = require('../../lib/tuya/TuyaGatewayEmulator');
 
 /**
- * Soil Sensor Device - v5.4.3 NEW
+ * Soil Sensor Device - v5.5.29 WAKE STRATEGIES
  *
  * Uses HybridSensorBase for:
  * - Anti-double init
@@ -112,6 +113,41 @@ class SoilSensorDevice extends HybridSensorBase {
     // Request DPs immediately and then every 30 minutes
     await this._requestSoilDPs();
     this._startPeriodicDPRequest();
+
+    // v5.5.29: Setup advanced wake strategies
+    await this._setupWakeStrategies();
+  }
+
+  /**
+   * v5.5.29: Setup advanced wake strategies for sleepy soil sensors
+   */
+  async _setupWakeStrategies() {
+    try {
+      this.log('[SOIL] ⏰ Setting up wake strategies...');
+
+      // All DPs for soil sensor
+      const allDPs = [1, 3, 4, 5, 14, 15, 101, 105];
+
+      // Strategy 1: Query all DPs when ANY data is received
+      await WakeStrategies.onAnyDataReceived(this, allDPs, async (dps) => {
+        if (this.safeTuyaDataQuery) {
+          await this.safeTuyaDataQuery(dps, {
+            logPrefix: '[SOIL-WAKE]',
+            delayBetweenQueries: 100
+          });
+        }
+      });
+
+      // Strategy 2: Configure ZCL attribute reporting
+      await WakeStrategies.configureReporting(this).catch(() => { });
+
+      // Strategy 3: Refresh bindings to ensure reports come to us
+      await WakeStrategies.refreshBindings(this).catch(() => { });
+
+      this.log('[SOIL] ✅ Wake strategies configured');
+    } catch (err) {
+      this.log('[SOIL] Wake strategies error:', err.message);
+    }
   }
 
   /**
