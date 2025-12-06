@@ -1,4 +1,8 @@
 {
+  "5.5.13": {
+    "en": "MEGA ENRICHMENT - Scanned 50 last commits + 9 Z2M databases (tuya, moes, zemismart, lonsonho, blitzwolf, neo, immax, ewelink, other). Added 6 productIds. 3743 unique manufacturers, 276 productIds, 0 collisions. All fingerprinting rules applied.",
+    "fr": "MEGA ENRICHISSEMENT - Scanné 50 derniers commits + 9 bases Z2M (tuya, moes, zemismart, lonsonho, blitzwolf, neo, immax, ewelink, other). Ajouté 6 productIds. 3743 fabricants uniques, 276 productIds, 0 collisions. Toutes règles fingerprinting appliquées."
+  },
   "5.5.12": {
     "en": "MASTER RULES APPLIED - Created MASTER_APPLY_ALL_RULES.js that enforces all fingerprinting rules in one pass: collision resolution, exhaustive productId enrichment, manufacturerName expansion, category placement validation. 18 drivers optimized. Final: 3743 unique manufacturers, 272 productIds, 0 collisions.",
     "fr": "RÈGLES MASTER APPLIQUÉES - Créé MASTER_APPLY_ALL_RULES.js qui applique toutes les règles fingerprinting en une passe: résolution collisions, enrichissement exhaustif productId, expansion manufacturerName, validation placement. 18 drivers optimisés. Final: 3743 fabricants uniques, 272 productIds, 0 collisions."
