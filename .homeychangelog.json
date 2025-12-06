@@ -1,4 +1,8 @@
 {
+  "5.5.37": {
+    "en": "FIXED DP LOGGING: 1) Soil sensor: Fixed duplicate case statements, correct DP3=moisture, DP5=temperature, DP14=battery_state, DP15=battery_percent. 2) Climate sensor: Removed incorrect soil sensor references, correct DP1=temp÷10, DP2=humidity, DP4=battery×2. 3) Improved diagnostic logs to track data flow from device to capabilities.",
+    "fr": "CORRECTION LOGGING DP: 1) Soil sensor: Correction case dupliqués, DP3=humidité_sol, DP5=température, DP14=état_batterie, DP15=pourcentage_batterie. 2) Climate sensor: Supprimé références incorrectes soil, DP1=temp÷10, DP2=humidité, DP4=batterie×2. 3) Logs diagnostiques améliorés."
+  },
   "5.5.36": {
     "en": "FIXED DP LOGGING: 1) Soil sensor: Fixed duplicate case statements, correct DP3=moisture, DP5=temperature, DP14=battery_state, DP15=battery_percent. 2) Climate sensor: Removed incorrect soil sensor references, correct DP1=temp÷10, DP2=humidity, DP4=battery×2. 3) Both sensors now use homey.setTimeout for async capability logging. 4) Improved diagnostic logs to track data flow from device to capabilities.",
     "fr": "CORRECTION LOGGING DP: 1) Soil sensor: Correction case dupliqués, DP3=humidité_sol, DP5=température, DP14=état_batterie, DP15=pourcentage_batterie. 2) Climate sensor: Supprimé références incorrectes soil, DP1=temp÷10, DP2=humidité, DP4=batterie×2. 3) Les deux capteurs utilisent homey.setTimeout pour logging async. 4) Logs diagnostiques améliorés."
