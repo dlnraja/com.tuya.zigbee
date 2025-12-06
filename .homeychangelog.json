@@ -1,4 +1,8 @@
 {
+  "5.5.19": {
+    "en": "SOS BUTTON FIX: 1) button_emergency_sos added to protected drivers list - prevents SmartAdapt from removing alarm_contact. 2) Fixed 'Cannot read properties of undefined (reading success)' error. 3) SmartDriverAdaptation now returns valid result in all cases.",
+    "fr": "FIX BOUTON SOS: 1) button_emergency_sos ajouté aux drivers protégés - empêche SmartAdapt de supprimer alarm_contact. 2) Erreur 'Cannot read properties of undefined' corrigée. 3) SmartDriverAdaptation retourne maintenant un résultat valide dans tous les cas."
+  },
   "5.5.18": {
     "en": "RADAR PRESENCE INTELLIGENT: 1) New capabilities: measure_distance (cm) + measure_presence_time (s). 2) Intelligent detection: DP1 (presence), DP101 (presence_time > 0), DP102 (distance). 3) Universal IAS Zone parser - handles Buffer, object, number formats. 4) 5 detection sources combined: Tuya DP, IAS Zone, occupancySensing cluster.",
     "fr": "PRÉSENCE RADAR INTELLIGENTE: 1) Nouvelles capabilities: measure_distance (cm) + measure_presence_time (s). 2) Détection intelligente: DP1 (présence), DP101 (temps > 0), DP102 (distance). 3) Parser IAS Zone universel - gère Buffer, objet, nombre. 4) 5 sources de détection combinées: Tuya DP, IAS Zone, cluster occupancySensing."
