@@ -1,10 +1,10 @@
 {
-  "generated": "2025-12-06T05:10:53.501Z",
+  "generated": "2025-12-06T06:00:38.580Z",
   "stats": {
     "processed": 2144,
     "enriched": 2144,
-    "withDPs": 1750,
-    "withCapabilities": 1505
+    "withDPs": 2131,
+    "withCapabilities": 2131
   },
   "summary": {
     "air_quality": {
@@ -12,40 +12,48 @@
       "withMappings": 99
     },
     "led": {
-      "count": 78,
-      "withMappings": 40
+      "count": 67,
+      "withMappings": 67
     },
     "button": {
       "count": 108,
       "withMappings": 108
     },
-    "unknown": {
-      "count": 588,
-      "withMappings": 0
+    "dimmer": {
+      "count": 43,
+      "withMappings": 43
     },
     "climate_sensor": {
-      "count": 841,
-      "withMappings": 841
+      "count": 843,
+      "withMappings": 843
     },
     "contact_sensor": {
-      "count": 75,
+      "count": 73,
       "withMappings": 73
     },
-    "cover": {
-      "count": 79,
-      "withMappings": 79
+    "smoke_detector": {
+      "count": 18,
+      "withMappings": 18
     },
-    "dimmer": {
-      "count": 40,
-      "withMappings": 40
+    "cover": {
+      "count": 102,
+      "withMappings": 102
+    },
+    "socket": {
+      "count": 91,
+      "withMappings": 90
+    },
+    "switch": {
+      "count": 556,
+      "withMappings": 556
+    },
+    "thermostat": {
+      "count": 12,
+      "withMappings": 12
     },
     "motion_sensor": {
       "count": 32,
       "withMappings": 32
-    },
-    "socket": {
-      "count": 89,
-      "withMappings": 89
     },
     "motion_sensor_radar": {
       "count": 30,
@@ -59,17 +67,13 @@
       "count": 14,
       "withMappings": 14
     },
-    "smoke_detector": {
-      "count": 11,
-      "withMappings": 11
+    "unknown": {
+      "count": 1,
+      "withMappings": 0
     },
     "soil_sensor": {
       "count": 2,
       "withMappings": 2
-    },
-    "thermostat": {
-      "count": 5,
-      "withMappings": 5
     },
     "water_leak": {
       "count": 33,
