@@ -3,7 +3,7 @@
     "en": "Smart Valve 4-Way",
     "fr": "Vanne Connectée 4 Voies"
   },
-  "class": "other",
+  "class": "thermostat",
   "capabilities": [
     "valve_position.1",
     "valve_position.2",
