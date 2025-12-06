@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.33",
+  "version": "5.5.34",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.33: TRUE HYBRID - ZigbeeDataQuery + HybridDataQuery queries BOTH protocols",
-    "fr": "V5.5.33: VRAI HYBRIDE - ZigbeeDataQuery + HybridDataQuery interroge les DEUX protocoles"
+    "en": "V5.5.34: CRITICAL FIX - No ZCL battery polling on Tuya DP sleepy devices (TS0215A SOS button)",
+    "fr": "V5.5.34: FIX CRITIQUE - Pas de polling batterie ZCL sur devices Tuya DP sleepy (bouton SOS TS0215A)"
   },
   "category": "appliances",
   "permissions": [],
@@ -13132,10 +13132,7 @@
         "batteries": [
           "CR2032",
           "CR2450"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
