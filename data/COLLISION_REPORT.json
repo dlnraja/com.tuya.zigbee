@@ -1,17 +1,473 @@
 {
-  "generated": "2025-12-06T08:29:44.170Z",
+  "generated": "2025-12-06T08:37:25.876Z",
   "summary": {
     "totalDrivers": 83,
     "highSeverityCollisions": 0,
     "mediumSeverityCollisions": 8,
-    "exactDuplicates": 1682,
+    "exactDuplicates": 1740,
     "driversWithoutProductId": 3,
     "mismatchedProductIds": 269
   },
   "highSeverityCollisions": [],
   "exactDuplicates": [
     {
+      "mfr": "0yu2xgi",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "1blo2bj",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "4in1-Sensor-ZB3.0",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "5j6ifxj",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "5j6ifxj\\u0000",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "5p1vj8r",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "6dfgetq",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "Bulb-RGB+CCT-ZB3.0",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
       "mfr": "ClimaxTechnology",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ColorTemperature",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "DoorWindow-Sensor-ZB3.0",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "E27-filament-Dim-ZB3.0",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "FNB54-WTS08ML1.0",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "HY0080",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "IM-Z3.0-CCT",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "Keyfob-ZB3.0",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "Motion-Sensor-ZB3.0",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "Plug-230V-ZB3.0",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "RH3040",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "RH3052",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "SM0202",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "SM0212",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "SNTZ003",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "Seastar Intelligence",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "TS0026",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "TS0115",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "TS011F",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "TS0121",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "TS0202",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "TS0203",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "TS0204",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "TS0205",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "TS0210",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "TS0504B",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "TS0901",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "TS130F",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "TY0201",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZBT-CCTfilament-D0000",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-102Z",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-102ZL",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-102ZM",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-103Z",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-106Z",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-204Z",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-204ZH",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-204ZK",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-204ZL",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-204ZM",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-204ZQ",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-204ZV",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-205ZL",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-222Z",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-223Z",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-225Z",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-227Z",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-227ZL",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZG-303Z",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "ZGAF-205L",
       "pid": "TH01",
       "drivers": [
         "climate_sensor",
@@ -13396,6 +13852,14 @@
     },
     {
       "mfr": "_tze608_xkr8gep3",
+      "pid": "TH01",
+      "drivers": [
+        "climate_sensor",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "q9mpfhw",
       "pid": "TH01",
       "drivers": [
         "climate_sensor",
