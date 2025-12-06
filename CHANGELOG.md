@@ -1,5 +1,65 @@
 # Changelog
 
+## [5.5.1] - 2025-12-06
+
+### CRITICAL FIXES - Motion Sensors + Battery Device Pairing
+
+#### Motion Sensors Not Working (IAS Zone Fix)
+- Fixed IAS Zone cluster mapping to use correct capability based on device type
+- Motion sensors now correctly use `alarm_motion` instead of `alarm_contact`
+- Dynamic detection: contact sensors use `alarm_contact`, water sensors use `alarm_water`, etc.
+- **Fixes:** Forum report from @Cam - motion sensors stopped reporting motion
+
+#### Battery Device Pairing Timeout Fix
+- Increased pairing timeout from 60s to 120s for battery devices
+- Battery devices are often sleeping and don't respond immediately
+- Timeout is now a warning, not an error - devices sync when they wake up
+- Non-critical errors no longer cause device rollback
+
+#### Files Changed
+- `lib/UniversalDataHandler.js` - Fixed IAS Zone capability mapping
+- `lib/dynamic/AutoAdaptiveDevice.js` - Fixed pairing timeout handling
+
+## [5.5.0] - 2025-12-06
+
+### MEGA ENRICHMENT - 26 Drivers + Issue #83 Fix
+
+#### Issue #83 - WoodUpp LED Driver
+- Moved `_TZB210_ngnt8kni` (WoodUpp 24V LED Driver) to `led_controller_cct`
+- Added `TS0501B` to supported product IDs for CCT
+- Device now pairs as "LED Controller CCT" instead of "Smart Bulb Dimmer"
+
+#### Drivers Enriched (26 total)
+| Driver | New Manufacturers | New Models |
+|--------|-------------------|------------|
+| air_quality_co2 | +2 | - |
+| bulb_rgb | - | +1 |
+| button_wireless | +5 | +4 |
+| contact_sensor | - | +1 |
+| curtain_motor | +4 | +1 |
+| dimmer_wall_1gang | +3 | +2 |
+| doorbell | +4 | - |
+| gas_sensor | +3 | - |
+| led_strip | +1 | +2 |
+| lock_smart | +4 | - |
+| motion_sensor | +2 | +1 |
+| plug_energy_monitor | +3 | +2 |
+| plug_smart | +1 | +1 |
+| radiator_valve | +2 | - |
+| scene_switch_4 | +6 | +1 |
+| soil_sensor | +4 | - |
+| switch_1gang | +4 | - |
+| switch_2gang | +2 | +1 |
+| switch_3gang | +7 | +1 |
+| switch_4gang | +3 | - |
+| thermostat_tuya_dp | +2 | - |
+| usb_outlet_advanced | +4 | +1 |
+| water_leak_sensor | +2 | - |
+
+#### New Scripts
+- `scripts/MEGA_ENRICHMENT.js` - Complete enrichment script with Z2M/ZHA data
+- `scripts/analyze-manufacturers.js` - Manufacturer analysis script
+
 ## [5.2.33] - 2025-11-29
 
 ### Massive Database Enrichment + Auto-Update System
