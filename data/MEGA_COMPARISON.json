@@ -1,0 +1,62 @@
+{
+  "generated": "2025-12-06T08:17:02.199Z",
+  "reposAnalyzed": 5,
+  "totalManufacturersFound": 3600,
+  "totalProductIdsFound": 277,
+  "currentManufacturers": 3598,
+  "currentProductIds": 270,
+  "missingManufacturers": 2,
+  "missingProductIds": [
+    "RH3052",
+    "TS0052",
+    "TY0201",
+    "SM0201",
+    "TSO121",
+    "TS0049",
+    "JZ-ZB-004"
+  ],
+  "topMissingMfrs": [
+    {
+      "mfr": "_TZE20X_xxxxxxxx",
+      "repos": [
+        "baschte/de.baschte.tuya.zigbee",
+        "tomkusz/com.tuya.zigbee"
+      ],
+      "count": 2
+    },
+    {
+      "mfr": "_TZ3210_w0qqde0g",
+      "repos": [
+        "baschte/de.baschte.tuya.zigbee"
+      ],
+      "count": 1
+    }
+  ],
+  "repoStats": [
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "manufacturers": 3598,
+      "productIds": 270
+    },
+    {
+      "repo": "baschte/de.baschte.tuya.zigbee",
+      "manufacturers": 611,
+      "productIds": 55
+    },
+    {
+      "repo": "tomkusz/com.tuya.zigbee",
+      "manufacturers": 609,
+      "productIds": 55
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "manufacturers": 10,
+      "productIds": 2
+    },
+    {
+      "repo": "michelhelsdingen/com.tuya.zigbee",
+      "manufacturers": 6,
+      "productIds": 1
+    }
+  ]
+}
