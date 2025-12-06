@@ -45,7 +45,7 @@ const { HybridPlugBase } = require('../../lib/devices');
 class USBOutletAdvancedDevice extends HybridPlugBase {
 
   get plugCapabilities() {
-    return ['onoff', 'onoff.socket2', 'onoff.usb1', 'onoff.usb2', 'onoff.led', 'button'];
+    return ['onoff', 'onoff.socket2', 'onoff.usb1', 'onoff.usb2', 'onoff.led'];
   }
 
   /**
@@ -87,11 +87,11 @@ class USBOutletAdvancedDevice extends HybridPlugBase {
       106: { capability: 'measure_voltage', divisor: 10 },   // Alt voltage DP
 
       // ═══════════════════════════════════════════════════════════════════
-      // BUTTON PRESS DETECTION
+      // BUTTON PRESS DETECTION - v5.5.19: Uses flow trigger instead of capability
       // ═══════════════════════════════════════════════════════════════════
-      102: { capability: 'button', transform: () => true },
-      103: { capability: 'button', transform: () => true }, // Some models
-      121: { capability: 'button', transform: () => true }, // Alt DP
+      102: { capability: null, flowTrigger: 'button_pressed' },
+      103: { capability: null, flowTrigger: 'button_pressed' },
+      121: { capability: null, flowTrigger: 'button_pressed' },
     };
   }
 
@@ -101,7 +101,36 @@ class USBOutletAdvancedDevice extends HybridPlugBase {
     // Register capability listeners for control
     await this._registerCapabilityListeners();
 
+    // v5.5.19: Register flow trigger for button press
+    this._registerButtonFlowTrigger();
+
     this.log('[USB-ADV] ✅ Ready - Full power monitoring enabled');
+  }
+
+  /**
+   * v5.5.19: Register flow trigger for button press events
+   */
+  _registerButtonFlowTrigger() {
+    try {
+      this._buttonTrigger = this.homey.flow.getDeviceTriggerCard('usb_outlet_button_pressed');
+      this.log('[USB-ADV] Button flow trigger registered');
+    } catch (err) {
+      this.log('[USB-ADV] Button flow trigger not available:', err.message);
+    }
+  }
+
+  /**
+   * v5.5.19: Trigger button pressed flow
+   */
+  async _triggerButtonPressed() {
+    if (this._buttonTrigger) {
+      try {
+        await this._buttonTrigger.trigger(this);
+        this.log('[USB-ADV] Button pressed flow triggered');
+      } catch (err) {
+        this.error('[USB-ADV] Failed to trigger button flow:', err.message);
+      }
+    }
   }
 
   async _registerCapabilityListeners() {
@@ -197,6 +226,8 @@ class USBOutletAdvancedDevice extends HybridPlugBase {
       case 103:
       case 121: // Button press
         this.log(`[ZCL-DATA] USB_outlet.button raw=${rawValue} event=press`);
+        // v5.5.19: Trigger flow instead of setting capability
+        this._triggerButtonPressed();
         break;
       default:
         this.log(`[ZCL-DATA] USB_outlet.unknown_dp dp=${dp} raw=${rawValue}`);

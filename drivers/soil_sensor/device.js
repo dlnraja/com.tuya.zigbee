@@ -88,6 +88,65 @@ class SoilSensorDevice extends HybridSensorBase {
     this.log('[SOIL] Manufacturer:', mfr);
     this.log('[SOIL] ========================================================');
     this.log('[SOIL] Watching for temperature/humidity/soil_moisture data...');
+
+    // v5.5.19: Battery devices need periodic DP requests
+    // Request DPs immediately and then every 30 minutes
+    await this._requestSoilDPs();
+    this._startPeriodicDPRequest();
+  }
+
+  /**
+   * v5.5.19: Request soil-specific DPs
+   */
+  async _requestSoilDPs() {
+    if (!this.tuyaEF00Manager) {
+      this.log('[SOIL] ⚠️ No Tuya manager - waiting for device to wake up');
+      return;
+    }
+
+    try {
+      // Request all soil sensor DPs: 1,2,3,4,5,15,101,105
+      const dps = [1, 2, 3, 4, 5, 15, 101, 105];
+      this.log(`[SOIL] Requesting DPs: ${dps.join(', ')}`);
+
+      if (typeof this.tuyaEF00Manager.requestDPs === 'function') {
+        await this.tuyaEF00Manager.requestDPs(dps);
+        this.log('[SOIL] DP request sent');
+      } else if (typeof this.tuyaEF00Manager.sendCommand === 'function') {
+        // Alternative: send a generic query command
+        await this.tuyaEF00Manager.sendCommand({ command: 0x00 });
+      }
+    } catch (err) {
+      this.log('[SOIL] ⚠️ DP request failed (device may be sleeping):', err.message);
+    }
+  }
+
+  /**
+   * v5.5.19: Start periodic DP requests for battery devices
+   */
+  _startPeriodicDPRequest() {
+    // Clear existing interval if any
+    if (this._dpRequestInterval) {
+      clearInterval(this._dpRequestInterval);
+    }
+
+    // Request DPs every 30 minutes (battery devices wake up periodically)
+    const intervalMs = 30 * 60 * 1000; // 30 minutes
+    this._dpRequestInterval = setInterval(() => {
+      this._requestSoilDPs();
+    }, intervalMs);
+
+    this.log('[SOIL] Periodic DP request started (every 30 min)');
+  }
+
+  /**
+   * v5.5.19: Clean up on device destroy
+   */
+  onDeleted() {
+    if (this._dpRequestInterval) {
+      clearInterval(this._dpRequestInterval);
+    }
+    if (super.onDeleted) super.onDeleted();
   }
 
   /**
