@@ -1,5 +1,76 @@
 # Changelog
 
+## [5.5.7] - 2025-12-06
+
+### MASSIVE ENRICHMENT v2 - Complete Analysis
+
+#### Sources Analyzed
+- **JohanBendz GitHub**: 200+ issues, 100+ PRs
+- **dlnraja GitHub**: All issues
+- **Zigbee2MQTT**: tuya.ts device converters
+- **Tuya Developer**: Official DP documentation
+- **Blakadder**: Zigbee device database
+- **Forum Reports**: DutchDuke, Cam, Michel_Helsdingen
+
+#### Drivers Enriched (12 total)
+| Driver | New Mfrs | New Products | Source |
+|--------|----------|--------------|--------|
+| climate_sensor | +1 | - | Z2M |
+| motion_sensor_radar_mmwave | +1 | - | Issues |
+| presence_sensor_radar | +2 | - | Issues |
+| button_emergency_sos | +1 | - | Blakadder |
+| plug_energy_monitor | +2 | - | Issues |
+| usb_outlet_advanced | +1 | - | Issues |
+| curtain_motor | +1 | - | Issues |
+| thermostat_tuya_dp | +1 | - | Issues |
+| button_wireless_1 | +3 | - | PRs |
+| dimmer_dual_channel | +1 | +1 | Issues |
+| switch_4gang | +2 | - | Z2M |
+| switch_2gang | +1 | - | Forum |
+
+#### New Infrastructure
+- `scripts/MASSIVE_ENRICHMENT_v2.js` - Complete DP database for 18 device types
+- `data/johanbendz_issues_full.json` - 200 issues cached
+- `data/johanbendz_prs_full.json` - 100 PRs cached
+
+---
+
+## [5.5.6] - 2025-12-06
+
+### SOS BUTTON CRITICAL FIX
+
+#### Bug Fixed
+- **IAS Zone handler** was using `alarm_tamper` while `driver.compose.json` used `alarm_contact`
+- Now consistently uses `alarm_contact` across ALL handlers
+
+#### MASTER BLOCK Logging Added
+```
+[ZCL-DATA] SOS_button.zone_status raw={payload}
+[ZCL-DATA] SOS_button.button_press raw=1 converted=PRESSED
+[ZCL-DATA] SOS_button.battery raw=X converted=X%
+```
+
+---
+
+## [5.5.5] - 2025-12-06
+
+### MASTER BLOCK COMPLIANCE
+
+#### Enhanced Logging
+All drivers now use MASTER BLOCK format:
+```
+[ZCL-DATA] device.capability raw=X converted=Y
+```
+
+#### Drivers Updated
+- motion_sensor_radar_mmwave
+- climate_sensor
+- soil_sensor
+- usb_outlet_advanced
+- button_emergency_sos
+
+---
+
 ## [5.5.2] - 2025-12-06
 
 ### COMPLETE ENRICHMENT - JohanBendz Issues #1290-#1320
