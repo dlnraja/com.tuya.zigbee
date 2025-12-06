@@ -9,18 +9,19 @@ const path = require('path');
 
 const DRIVERS_DIR = path.join(__dirname, '..', 'drivers');
 
-// Issues JohanBendz extraites (Issues #1290-#1320)
+// Issues JohanBendz extraites (Issues #1269-#1322)
 const JOHANBENDZ_ISSUES = {
+  // #1322 - mmWave Motion Sensor
+  '_TZE204_gkfbdvyx': { driver: 'motion_sensor_radar_mmwave', productId: 'TS0601', type: 'radar' },
+
+  // #1321 - PIR Sensor
+  '_TZE200_ghynnvos': { driver: 'motion_sensor', productId: 'TS0601', type: 'motion' },
+
   // #1320 - Smart Light Sensor
   '_TZ3000_hy6ncvmw': { driver: 'motion_sensor', productId: 'TS0222', type: 'light_sensor' },
 
   // #1318 - Temperature & Humidity
   '_TZ3000_bgsigers': { driver: 'climate_sensor', productId: 'TS0201', type: 'climate' },
-
-  // #1317 - Energy Monitor (already supported)
-
-  // #1316 - Curtain Switch
-  // SC400ZB-EU - LoraTap (need more info)
 
   // #1314 - Radar Sensor
   '_TZE204_iaeejhvf': { driver: 'presence_sensor_radar', productId: 'TS0601', type: 'radar' },
@@ -40,20 +41,11 @@ const JOHANBENDZ_ISSUES = {
   // #1307 - Wall Socket USB-C
   '_TZE200_dcrrztpa': { driver: 'usb_outlet_advanced', productId: 'TS0601', type: 'usb_outlet' },
 
-  // #1305 - mmWave Radar with Lux/Temp/Humidity
-  // TS0601 - Need more specific mfr name
-
-  // #1302 - RGB LED Controller
-  // WZ-SPI - LIANGLE (need mfr name)
-
   // #1301 - Curtain Motor MOES
   '_TZE200_nv6nxo0c': { driver: 'curtain_motor', productId: 'TS0601', type: 'curtain' },
 
   // #1300 - Power Socket 20A
   '_TZ3210_fgwhjm9j': { driver: 'plug_energy_monitor', productId: 'TS011F', type: 'plug' },
-
-  // #1299 - Temperature Humidity Zbeacon
-  // TS0201 - Zbeacon (need mfr name)
 
   // #1297 - 4 Gang Wall Switch
   '_TZE200_dq8bu0pt': { driver: 'switch_4gang', productId: 'TS0601', type: 'switch' },
@@ -64,9 +56,6 @@ const JOHANBENDZ_ISSUES = {
   // #1295 - Double Wall Socket USB
   '_TZ3000_dd8wwzcy': { driver: 'usb_outlet_advanced', productId: 'TS011F', type: 'usb_outlet' },
 
-  // #1294 - CO Sensor MOES
-  // TS0601 - MOES CO (need mfr name)
-
   // #1293 - Curtain Motor
   '_TZE200_ol5jlkkr': { driver: 'curtain_motor', productId: 'TS0601', type: 'curtain' },
 
@@ -75,6 +64,24 @@ const JOHANBENDZ_ISSUES = {
 
   // #1290 - Smart Plug metering
   '_TZ3210_alxkwn0h': { driver: 'plug_energy_monitor', productId: 'TS0201', type: 'plug' },
+
+  // #1288 - Solar Rain Sensor
+  '_TZ3210_tgvtvdoc': { driver: 'rain_sensor', productId: 'TS0207', type: 'rain' },
+
+  // #1286 - Roller Shutter
+  '_TZE284_uqfph8ah': { driver: 'curtain_motor', productId: 'TS0601', type: 'shutter' },
+
+  // #1280 - Soil Sensor
+  '_TZE284_myd45weu': { driver: 'soil_sensor', productId: 'TS0601', type: 'soil' },
+
+  // #1279 - Smoke detector
+  '_TZE284_n4ttsck2': { driver: 'smoke_detector_advanced', productId: 'TS0601', type: 'smoke' },
+
+  // #1272 - Rain/Light Sensor
+  '_TZE200_u6x1zyv2': { driver: 'rain_sensor', productId: 'TS0601', type: 'rain_light' },
+
+  // #1270 - Radar 5.8G
+  '_TZ321C_fkzihax8': { driver: 'presence_sensor_radar', productId: 'TS0225', type: 'radar' },
 };
 
 // Additional manufacturers from forum and other sources
