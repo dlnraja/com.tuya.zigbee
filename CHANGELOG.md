@@ -1,5 +1,39 @@
 # Changelog
 
+## [5.5.0] - 2025-12-06
+
+### 🚀 INTELLIGENT ENRICHMENT SYSTEM - MAJOR RELEASE
+
+#### Key Features
+- **99.4% DP Mapping Coverage** - 2131/2144 manufacturers mapped
+- **Self-Learning System** - Auto-extracts DPs from all 83 drivers
+- **Zero API Calls** - Uses local database for instant lookups
+- **GitHub Actions Integration** - Monthly automated enrichment
+
+#### New Scripts
+| Script | Purpose |
+|--------|---------|
+| `AUTO_POPULATE_LOCAL_DB.js` | Extracts DP mappings from drivers |
+| `INTELLIGENT_ENRICHER_v4.js` | Maps DPs to Homey capabilities |
+
+#### Coverage by Device Type
+- climate_sensor: 843 (100%)
+- switch: 556 (100%)
+- button: 108 (100%)
+- air_quality: 102 (97%)
+- cover: 102 (100%)
+- socket: 91 (99%)
+- contact_sensor: 73 (100%)
+- led: 67 (100%)
+- dimmer: 43 (100%)
+- And 8 more types at 100%
+
+#### Performance
+- v1: ~5 min for 100 manufacturers (rate limited)
+- v4: <3 sec for 2144 manufacturers (self-learning)
+
+---
+
 ## [5.5.7] - 2025-12-06
 
 ### MASSIVE ENRICHMENT v2 - Complete Analysis
