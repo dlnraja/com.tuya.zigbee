@@ -1,5 +1,5 @@
 // AUTO-GENERATED DP MAPPINGS
-// Generated: 2025-12-06T05:10:46.391Z
+// Generated: 2025-12-06T06:00:35.960Z
 
   // AIR_QUALITY
   '_TZ3000_0s1izerx': { type: 'air_quality', dps: [2, 18, 19] },
@@ -62,6 +62,9 @@
   '_TZE200_5sbebbzs': { type: 'cover', dps: [1, 2, 3, 5, 7] },
 
   // DIMMER
+  '_TZE200_e3oitdyu': { type: 'dimmer', dps: [1, 3, 9] },
+  '_TZE200_eevqq1uv': { type: 'dimmer', dps: [1, 3, 9] },
+  '_TZE204_lawxy9e2': { type: 'dimmer', dps: [1, 3, 9] },
   '_TZ3000_7ysdnebc': { type: 'dimmer', dps: [1, 2, 3, 4, 14] },
   '_TZ3210_hquixjeg': { type: 'dimmer', dps: [1, 2, 3, 4, 14] },
   '_TZ3210_mt5xjoy6': { type: 'dimmer', dps: [1, 2, 3, 4, 14] },
@@ -69,9 +72,6 @@
   '_TZb210_rkgngb5o': { type: 'dimmer', dps: [1, 2, 3, 4, 14] },
   '_TZE200_0hb4rdnp': { type: 'dimmer', dps: [1, 2, 3, 4, 14] },
   '_TZE200_a0syesf5': { type: 'dimmer', dps: [1, 2, 3, 4, 14] },
-  '_TZE200_gne0e6mk': { type: 'dimmer', dps: [1, 2, 3, 4, 14] },
-  '_TZE200_la2c2uo9': { type: 'dimmer', dps: [1, 2, 3, 4, 14] },
-  '_TZE200_ykgar0ow': { type: 'dimmer', dps: [1, 2, 3, 4, 14] },
 
   // LED
   '_TZ3000_8uaoilu9': { type: 'led', dps: [1, 2] },
@@ -122,18 +122,19 @@
   '_TZE200_t1blo2bj': { type: 'siren', dps: [13, 15] },
 
   // SMOKE_DETECTOR
+  '_TZ3000_nbm3pjii': { type: 'smoke_detector', dps: [1, 2, 4, 15] },
+  '_TZ3000_mwd3c2at': { type: 'smoke_detector', dps: [1] },
+  '_TZE200_9xfjixap': { type: 'smoke_detector', dps: [1] },
+  '_TZE200_m6kdujme': { type: 'smoke_detector', dps: [1] },
+  '_TZE204_dq1mfjug': { type: 'smoke_detector', dps: [1] },
+  '_TZE284_aao6qtcs': { type: 'smoke_detector', dps: [1] },
+  '_TZE200_wzqkpstm': { type: 'smoke_detector', dps: [1, 2, 4] },
   '_TZ3000_0fkmfxwg': { type: 'smoke_detector', dps: [1, 15] },
   '_TZ3000_lugaswf8': { type: 'smoke_detector', dps: [1, 15] },
   '_TZ3000_qtcwwgth': { type: 'smoke_detector', dps: [1, 15] },
-  '_TZ3000_ysvspchy': { type: 'smoke_detector', dps: [1, 15] },
-  '_TZE200_aycxwiau': { type: 'smoke_detector', dps: [1, 15] },
-  '_TZE200_m8iikwas': { type: 'smoke_detector', dps: [1, 15] },
-  '_TZE200_ux8dlkev': { type: 'smoke_detector', dps: [1, 15] },
-  '_TZE200_vafd6gkz': { type: 'smoke_detector', dps: [1, 15] },
-  '_TZE204_chbyv06': { type: 'smoke_detector', dps: [1, 15] },
-  '_TZE204_vafd6gkz': { type: 'smoke_detector', dps: [1, 15] },
 
   // SOCKET
+  '_TZE204_nslr42tt': { type: 'socket', dps: [] },
   'MatSee Plus': { type: 'socket', dps: [1, 17, 18, 19, 20] },
   '_TZ3000_0zfrhq4i': { type: 'socket', dps: [1, 17, 18, 19, 20] },
   '_TZ3000_1h2x4akh': { type: 'socket', dps: [1, 17, 18, 19, 20] },
@@ -143,30 +144,37 @@
   '_TZ3000_dpo1ysak': { type: 'socket', dps: [1, 17, 18, 19, 20] },
   '_TZ3000_ew3ldmgx': { type: 'socket', dps: [1, 17, 18, 19, 20] },
   '_TZ3000_fqoynhku': { type: 'socket', dps: [1, 17, 18, 19, 20] },
-  '_TZ3000_gnjozsaz': { type: 'socket', dps: [1, 17, 18, 19, 20] },
 
   // SOIL_SENSOR
   '_TZE284_oitavov2': { type: 'soil_sensor', dps: [1, 2, 3, 4, 5, 10, 11, 12, 13, 14, 15, 17, 101, 105] },
   '_TZE200_9cv5tcgq': { type: 'soil_sensor', dps: [1, 2, 3, 4, 5, 10, 11, 12, 13, 14, 15, 17, 101, 105] },
 
+  // SWITCH
+  '_TZ3000_2xlvlnez': { type: 'switch', dps: [1, 2, 3, 4, 5, 6, 7, 8] },
+  '_TZ3000_o1jzcxou': { type: 'switch', dps: [1, 2, 3, 4, 5, 6, 7, 8] },
+  '_TZE200_f91miyhj': { type: 'switch', dps: [1, 2, 3, 4, 5, 6, 7, 8] },
+  '_TZ3000_0s9gukzt': { type: 'switch', dps: [1, 2, 3, 4, 5, 10, 14, 15, 101, 105, 247] },
+  '_TZ3000_1hwjutgo': { type: 'switch', dps: [1, 2, 3, 4, 5, 10, 14, 15, 101, 105, 247] },
+  '_TZ3000_266azbg3': { type: 'switch', dps: [1, 2, 3, 4, 5, 10, 14, 15, 101, 105, 247] },
+  '_TZ3000_2putqrmw': { type: 'switch', dps: [1, 2, 3, 4, 5, 10, 14, 15, 101, 105, 247] },
+  '_TZ3000_2uollq9d': { type: 'switch', dps: [1, 2, 3, 4, 5, 10, 14, 15, 101, 105, 247] },
+  '_TZ3000_303avxxt': { type: 'switch', dps: [1, 2, 3, 4, 5, 10, 14, 15, 101, 105, 247] },
+  '_TZ3000_3ias4w4o': { type: 'switch', dps: [1, 2, 3, 4, 5, 10, 14, 15, 101, 105, 247] },
+
   // THERMOSTAT
+  '_TZE204_eaac7dkw': { type: 'thermostat', dps: [1, 2, 3, 4, 16, 24, 27, 28, 101] },
+  '_TZE200_44xpctxy': { type: 'thermostat', dps: [1, 2, 3, 4, 16, 24, 27, 28, 101] },
+  '_TZE204_44xpctxy': { type: 'thermostat', dps: [1, 2, 3, 4, 16, 24, 27, 28, 101] },
+  '_TZE200_bgjfxh3o': { type: 'thermostat', dps: [1, 2, 3, 4, 16, 24, 27, 28, 101] },
+  '_TZE204_bgjfxh3o': { type: 'thermostat', dps: [1, 2, 3, 4, 16, 24, 27, 28, 101] },
+  '_TZE200_c88teujp': { type: 'thermostat', dps: [1, 2, 3, 4, 16, 24, 27, 28, 101] },
+  '_TZE204_oisqyl4o': { type: 'thermostat', dps: [1, 2, 3, 4, 16, 24, 27, 28, 101] },
   '_TZE200_zion52ef': { type: 'thermostat', dps: [1, 2, 3, 4, 16, 24, 27, 28, 101] },
   '_TZE200_0dvm9mva': { type: 'thermostat', dps: [1, 2, 3, 4, 16, 24, 27, 28, 101] },
   '_TZE200_cwbvmsar': { type: 'thermostat', dps: [1, 2, 3, 4, 16, 24, 27, 28, 101] },
-  '_TZE200_kds0pqet': { type: 'thermostat', dps: [1, 2, 3, 4, 16, 24, 27, 28, 101] },
-  '_TZE200_wlosfena': { type: 'thermostat', dps: [1, 2, 3, 4, 16, 24, 27, 28, 101] },
 
   // UNKNOWN
-  '_TZE200_e3oitdyu': { type: 'unknown', dps: [1, 3, 9] },
-  '_TZE200_eevqq1uv': { type: 'unknown', dps: [1, 3, 9] },
-  '_TZE204_lawxy9e2': { type: 'unknown', dps: [1, 3, 9] },
-  '_TZ3000_nbm3pjii': { type: 'unknown', dps: [1, 2, 4, 15] },
-  '_TZE204_nslr42tt': { type: 'unknown', dps: [] },
-  '_TZ3000_mwd3c2at': { type: 'unknown', dps: [1] },
-  '_TZE200_9xfjixap': { type: 'unknown', dps: [1] },
-  '_TZE200_m6kdujme': { type: 'unknown', dps: [1] },
-  '_TZE204_dq1mfjug': { type: 'unknown', dps: [1] },
-  '_TZE284_aao6qtcs': { type: 'unknown', dps: [1] },
+  '_TZE204_hkdl5fmv': { type: 'unknown', dps: [] },
 
   // VALVE
   '_TZE200_5toc8efa': { type: 'valve', dps: [1, 2, 5, 7, 11] },
