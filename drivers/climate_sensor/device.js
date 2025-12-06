@@ -382,8 +382,13 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.5: Enhanced logging per MASTER BLOCK specs
+   * v5.5.36: FIXED - Enhanced logging per MASTER BLOCK specs
    * Shows raw + converted values for each DP
+   *
+   * CRITICAL DP MAPPING for _TZE284_vvmbj46n (TH05Z):
+   * - DP1: temperature ÷10
+   * - DP2: humidity %
+   * - DP4: battery × 2 (device reports half)
    */
   onTuyaStatus(status) {
     if (!status) {
@@ -394,38 +399,50 @@ class ClimateSensorDevice extends HybridSensorBase {
     const dp = status.dp;
     const rawValue = status.data || status.value;
 
-    // v5.5.5: Log raw + converted per MASTER BLOCK format
+    // v5.5.36: FIXED - Correct DP logging for climate sensors
     switch (dp) {
-      case 1: // Temperature (standard)
-      case 5: // Temperature (TZE284 soil variant)
-      case 18: // Temperature (alt)
-        this.log(`[ZCL-DATA] TS0601_climate.temperature raw=${rawValue} converted=${rawValue / 10}`);
+      case 1: // Temperature (standard) ÷10
+        this.log(`[CLIMATE-DP] DP1 temperature raw=${rawValue} converted=${rawValue / 10}°C`);
+        break;
+      case 18: // Temperature (alt) ÷10
+      case 6: // Temperature (some _TZE204 models)
+        this.log(`[CLIMATE-DP] DP${dp} temperature_alt raw=${rawValue} converted=${rawValue / 10}°C`);
         break;
       case 2: // Humidity (standard)
-      case 3: // Humidity (TZE284 soil variant)
-        this.log(`[ZCL-DATA] TS0601_climate.humidity raw=${rawValue} converted=${rawValue}`);
+        this.log(`[CLIMATE-DP] DP2 humidity raw=${rawValue} converted=${rawValue}%`);
         break;
-      case 4: // Battery (standard with x2 multiplier)
-        this.log(`[ZCL-DATA] TS0601_climate.battery raw=${rawValue} converted=${Math.min(rawValue * 2, 100)}`);
+      case 7: // Humidity (some _TZE204 models)
+      case 103: // Humidity (alt)
+        this.log(`[CLIMATE-DP] DP${dp} humidity_alt raw=${rawValue} converted=${rawValue}%`);
         break;
-      case 15: // Battery (TZE284 variant - no multiplier)
-        this.log(`[ZCL-DATA] TS0601_climate.battery raw=${rawValue} converted=${rawValue}`);
+      case 4: // Battery (standard with ×2 multiplier)
+        const batConverted = Math.min(rawValue * 2, 100);
+        this.log(`[CLIMATE-DP] DP4 battery raw=${rawValue} converted=${batConverted}% (×2 multiplier)`);
+        break;
+      case 9: // Temperature unit setting
+        this.log(`[CLIMATE-DP] DP9 temp_unit raw=${rawValue} (0=C, 1=F)`);
+        break;
+      case 101:
+      case 102: // Button press
+        this.log(`[CLIMATE-DP] DP${dp} button_press raw=${rawValue}`);
         break;
       default:
         if (dp !== undefined) {
-          this.log(`[ZCL-DATA] TS0601_climate.unknown_dp dp=${dp} raw=${rawValue}`);
+          this.log(`[CLIMATE-DP] DP${dp} UNKNOWN raw=${rawValue}`);
         }
     }
 
-    // Call parent handler
+    // Call parent handler to set capabilities
     super.onTuyaStatus(status);
 
-    // Log final capability values
-    setTimeout(() => {
+    // Log final capability values after processing
+    this.homey.setTimeout(() => {
       const temp = this.getCapabilityValue('measure_temperature');
       const hum = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
-      this.log(`[ZCL-DATA] TS0601_climate CAPABILITIES temp=${temp}°C humidity=${hum}% battery=${bat}%`);
+      if (temp !== null || hum !== null || bat !== null) {
+        this.log(`[CLIMATE] ✅ CAPABILITIES: temp=${temp}°C humidity=${hum}% battery=${bat}%`);
+      }
     }, 100);
   }
 }

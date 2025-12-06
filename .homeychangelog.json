@@ -1,4 +1,8 @@
 {
+  "5.5.36": {
+    "en": "FIXED DP LOGGING: 1) Soil sensor: Fixed duplicate case statements, correct DP3=moisture, DP5=temperature, DP14=battery_state, DP15=battery_percent. 2) Climate sensor: Removed incorrect soil sensor references, correct DP1=temp÷10, DP2=humidity, DP4=battery×2. 3) Both sensors now use homey.setTimeout for async capability logging. 4) Improved diagnostic logs to track data flow from device to capabilities.",
+    "fr": "CORRECTION LOGGING DP: 1) Soil sensor: Correction case dupliqués, DP3=humidité_sol, DP5=température, DP14=état_batterie, DP15=pourcentage_batterie. 2) Climate sensor: Supprimé références incorrectes soil, DP1=temp÷10, DP2=humidité, DP4=batterie×2. 3) Les deux capteurs utilisent homey.setTimeout pour logging async. 4) Logs diagnostiques améliorés."
+  },
   "5.5.35": {
     "en": "AGGRESSIVE RECOVERY for sleepy sensors: 1) Soil sensor & Climate monitor now schedule DP requests at 30s, 2m, 5m, 10m, 20m, 30m after pairing. 2) Both skip ZCL battery polling (usesTuyaDPBattery flag). 3) Clear warning that battery devices take 10-60 min for first data. 4) USB outlet: Added more DP mappings (3,4,11,12), tries multiple DPs when toggling USB ports, requests initial states. 5) USB outlet: Better handling for various TS011F/TS0601 models.",
     "fr": "RÉCUPÉRATION AGGRESSIVE pour capteurs batterie: 1) Soil sensor & Climate monitor programment requêtes DP à 30s, 2m, 5m, 10m, 20m, 30m après appairage. 2) Skip polling batterie ZCL (flag usesTuyaDPBattery). 3) Avertissement clair que devices batterie prennent 10-60 min pour premières données. 4) USB outlet: Plus de mappings DP (3,4,11,12), essaie plusieurs DPs pour ports USB, requête états initiaux. 5) USB outlet: Meilleure gestion TS011F/TS0601."

@@ -264,8 +264,14 @@ class SoilSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.5: Enhanced logging per MASTER BLOCK specs
+   * v5.5.36: FIXED - Enhanced logging per MASTER BLOCK specs
    * Shows raw + converted values for each DP
+   *
+   * CRITICAL DP MAPPING for _TZE284_oitavov2:
+   * - DP3: soil_moisture % (main sensor)
+   * - DP5: temperature ÷10
+   * - DP14: battery_state enum (0=low, 1=medium, 2=high)
+   * - DP15: battery_percent %
    */
   onTuyaStatus(status) {
     if (!status) {
@@ -276,38 +282,53 @@ class SoilSensorDevice extends HybridSensorBase {
     const dp = status.dp;
     const rawValue = status.data || status.value;
 
-    // v5.5.5: Log raw + converted per MASTER BLOCK format
+    // v5.5.36: FIXED - Correct DP logging
     switch (dp) {
-      case 3: // Temperature (soil sensors use DP3)
-      case 5: // Temperature alternate
-        this.log(`[ZCL-DATA] TS0601_oitavov2.temperature raw=${rawValue} converted=${rawValue / 10}`);
+      case 3: // Soil moisture % (main sensor)
+        this.log(`[SOIL-DP] DP3 soil_moisture raw=${rawValue} converted=${rawValue}%`);
         break;
-      case 5: // Soil moisture (DP5)
-        this.log(`[ZCL-DATA] TS0601_oitavov2.soil_moisture raw=${rawValue} converted=${rawValue}`);
+      case 5: // Temperature ÷10
+        const tempConverted = rawValue > 1000 ? rawValue / 100 : rawValue / 10;
+        this.log(`[SOIL-DP] DP5 temperature raw=${rawValue} converted=${tempConverted}°C`);
         break;
-      case 105: // Soil moisture alternate
-        const moisture = rawValue > 100 ? Math.round(rawValue / 10) : rawValue;
-        this.log(`[ZCL-DATA] TS0601_oitavov2.soil_moisture raw=${rawValue} converted=${moisture}`);
+      case 1: // Alternative temperature
+        this.log(`[SOIL-DP] DP1 temperature_alt raw=${rawValue} converted=${rawValue / 10}°C`);
         break;
-      case 15: // Battery
-      case 4:
-        this.log(`[ZCL-DATA] TS0601_oitavov2.battery raw=${rawValue} converted=${rawValue}`);
+      case 2: // Temperature unit setting
+        this.log(`[SOIL-DP] DP2 temp_unit raw=${rawValue} (0=C, 1=F)`);
+        break;
+      case 14: // Battery state enum
+        const batState = rawValue === 0 ? 'low(10%)' : rawValue === 1 ? 'medium(50%)' : 'high(100%)';
+        this.log(`[SOIL-DP] DP14 battery_state raw=${rawValue} converted=${batState}`);
+        break;
+      case 15: // Battery percent
+        this.log(`[SOIL-DP] DP15 battery_percent raw=${rawValue} converted=${rawValue}%`);
+        break;
+      case 4: // Alt battery
+        this.log(`[SOIL-DP] DP4 battery_alt raw=${rawValue} converted=${rawValue}%`);
+        break;
+      case 101: // Alt soil moisture
+      case 105:
+        const moistureConverted = rawValue > 100 ? Math.round(rawValue / 10) : rawValue;
+        this.log(`[SOIL-DP] DP${dp} moisture_alt raw=${rawValue} converted=${moistureConverted}%`);
         break;
       default:
         if (dp !== undefined) {
-          this.log(`[ZCL-DATA] TS0601_oitavov2.unknown_dp dp=${dp} raw=${rawValue}`);
+          this.log(`[SOIL-DP] DP${dp} UNKNOWN raw=${rawValue}`);
         }
     }
 
-    // Call parent handler
+    // Call parent handler to set capabilities
     super.onTuyaStatus(status);
 
-    // Log final capability values
-    setTimeout(() => {
+    // Log final capability values after processing
+    this.homey.setTimeout(() => {
       const temp = this.getCapabilityValue('measure_temperature');
       const soil = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
-      this.log(`[ZCL-DATA] TS0601_oitavov2 CAPABILITIES temp=${temp}°C soil=${soil}% battery=${bat}%`);
+      if (temp !== null || soil !== null || bat !== null) {
+        this.log(`[SOIL] ✅ CAPABILITIES: temp=${temp}°C soil=${soil}% battery=${bat}%`);
+      }
     }, 100);
   }
 }
