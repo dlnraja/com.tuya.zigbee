@@ -1,4 +1,28 @@
 {
+  "5.5.4": {
+    "en": "ULTIMATE DATABASE - Complete metadata extraction: 6774 manufacturers, 139 DPs, 295 clusters, 186 capabilities, 599 flows. All GitHub PRs (191) and Issues (1086) processed. Z2M database integrated.",
+    "fr": "BASE ULTIME - Extraction métadonnées complète: 6774 fabricants, 139 DPs, 295 clusters, 186 capabilities, 599 flows. Tous les PRs (191) et Issues (1086) GitHub traités. Base Z2M intégrée."
+  },
+  "5.5.3": {
+    "en": "COMPLETE EXTRACTION - All GitHub PRs (191) and Issues (1086) processed. Z2M tuya.ts database (1360 manufacturers). Email diagnostics parsed. 6774 total manufacturers.",
+    "fr": "EXTRACTION COMPLÈTE - Tous les PRs (191) et Issues (1086) GitHub traités. Base Z2M tuya.ts (1360 fabricants). Diagnostics email analysés. 6774 fabricants au total."
+  },
+  "5.5.2": {
+    "en": "ULTIMATE EXTRACTION - 6730 manufacturers (+4512). Processed 2037 MD files, all JSON data, git history (531 changes). GitHub Issues (1086) parsed. +203% manufacturer coverage increase.",
+    "fr": "EXTRACTION ULTIME - 6730 fabricants (+4512). 2037 fichiers MD traités, toutes données JSON, historique git (531 changements). Issues GitHub (1086) analysés. +203% augmentation couverture."
+  },
+  "5.5.1": {
+    "en": "COMPLETE JOHANBENDZ SYNC - 231 manufacturers added from JohanBendz repo comparison. 100% coverage of original repository. 52 drivers enriched.",
+    "fr": "SYNC JOHANBENDZ COMPLET - 231 fabricants ajoutés de la comparaison repo JohanBendz. 100% couverture du dépôt original. 52 drivers enrichis."
+  },
+  "5.5.0": {
+    "en": "INTELLIGENT ENRICHMENT SYSTEM - 99.4% DP mapping coverage (2131/2144 manufacturers). Self-learning system auto-extracts DPs from 83 drivers. GitHub Actions monthly enrichment workflow.",
+    "fr": "SYSTÈME ENRICHISSEMENT INTELLIGENT - 99.4% couverture mappings DP (2131/2144 fabricants). Système auto-apprenant extrait DPs de 83 drivers. Workflow GitHub Actions enrichissement mensuel."
+  },
+  "5.4.7": {
+    "en": "CRITICAL FIXES - alarm_generic removed, alarm_battery conflicts fixed, TS0601 support improved. Validated at publish level.",
+    "fr": "CORRECTIONS CRITIQUES - alarm_generic supprimé, conflits alarm_battery corrigés, support TS0601 amélioré."
+  },
   "5.4.2": {
     "en": "🔌 v5.4.2 - USB Outlet Complete + Diagnostic Review\n\n**USB OUTLET FIXES (based on v5.3.93 diagnostic):**\n\n| Feature | DPs | Status |\n|---------|-----|--------|\n| Socket 1 | DP 1, 7 | ✅ |\n| Socket 2 | DP 2 | ✅ NEW |\n| USB 1 | DP 9 | ✅ |\n| USB 2 | DP 10 | ✅ |\n| LED Control | DP 13, 101 | ✅ NEW |\n| Button | DP 102, 103, 121 | ✅ NEW |\n| Power (W) | DP 16, 104 | ✅ NEW |\n| Current (A) | DP 17, 105 | ✅ NEW |\n| Voltage (V) | DP 18, 106 | ✅ NEW |\n| Energy (kWh) | DP 19 | ✅ NEW |\n\n**All issues from diagnostic v5.3.93 now fixed in v5.4.2:**\n• ✅ alarm_generic → alarm_tamper (v5.3.94)\n• ✅ Climate sensor DPs (v5.3.97)\n• ✅ Time sync with timezone (v5.3.98)\n• ✅ Battery ×2 fix (v5.3.99)\n• ✅ Soil sensor DPs (v5.4.1)\n• ✅ USB power/LED/button (v5.4.2)",
     "fr": "🔌 v5.4.2 - USB Outlet Complet\n\nTous les DPs ajoutés: puissance, courant, tension, énergie, LED, bouton."
