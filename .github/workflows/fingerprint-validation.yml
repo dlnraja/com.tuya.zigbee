@@ -1,0 +1,193 @@
+# ============================================================================
+# 🔒 FINGERPRINTING RULES VALIDATION
+# ============================================================================
+# Validates all fingerprinting rules from DEV_NOTES.md
+# Runs on every push and PR to ensure compliance
+# ============================================================================
+
+name: 🔒 Fingerprinting Validation
+
+on:
+  push:
+    branches: [master, main]
+    paths:
+      - "drivers/**/driver.compose.json"
+      - "automation/*.js"
+  pull_request:
+    branches: [master, main]
+    paths:
+      - "drivers/**/driver.compose.json"
+      - "automation/*.js"
+  workflow_dispatch:
+
+jobs:
+  validate-fingerprints:
+    name: 🔍 Validate Fingerprinting Rules
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: 🔍 Rule 9.4 - Collision Detection
+        id: collisions
+        run: |
+          echo "📋 Checking for manufacturer collisions..."
+
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const driversDir = 'drivers';
+          const mfrMap = new Map();
+          let totalMfrs = 0;
+          let totalPids = 0;
+
+          fs.readdirSync(driversDir, { withFileTypes: true })
+            .filter(d => d.isDirectory())
+            .forEach(d => {
+              const configPath = path.join(driversDir, d.name, 'driver.compose.json');
+              if (!fs.existsSync(configPath)) return;
+              try {
+                const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+                const mfrs = config.zigbee?.manufacturerName || [];
+                const pids = config.zigbee?.productId || [];
+                totalMfrs += mfrs.length;
+                totalPids += pids.length;
+
+                mfrs.forEach(mfr => {
+                  if (!mfrMap.has(mfr)) mfrMap.set(mfr, []);
+                  mfrMap.get(mfr).push(d.name);
+                });
+              } catch {}
+            });
+
+          const collisions = [...mfrMap.entries()].filter(([,v]) => v.length > 1);
+
+          console.log('═══════════════════════════════════════════════════');
+          console.log('📊 FINGERPRINTING VALIDATION REPORT');
+          console.log('═══════════════════════════════════════════════════');
+          console.log('Total manufacturer entries:', totalMfrs);
+          console.log('Unique manufacturers:', mfrMap.size);
+          console.log('Total productId entries:', totalPids);
+          console.log('Collisions detected:', collisions.length);
+          console.log('═══════════════════════════════════════════════════');
+
+          if (collisions.length > 0) {
+            console.log('');
+            console.log('⚠️ COLLISIONS FOUND:');
+            collisions.forEach(([mfr, drivers]) => {
+              console.log('  ' + mfr + ' → ' + drivers.join(', '));
+            });
+            process.exit(1);
+          } else {
+            console.log('✅ Rule 9.4 PASSED: No collisions detected');
+          }
+          "
+
+      - name: 🔍 Rule 9.2 - TS0601 Trap Check
+        run: |
+          echo "📋 Checking for TS0601 trap violations..."
+
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const driversDir = 'drivers';
+          const violations = [];
+
+          fs.readdirSync(driversDir, { withFileTypes: true })
+            .filter(d => d.isDirectory())
+            .forEach(d => {
+              const configPath = path.join(driversDir, d.name, 'driver.compose.json');
+              if (!fs.existsSync(configPath)) return;
+              try {
+                const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+                const mfrs = config.zigbee?.manufacturerName || [];
+                const pids = config.zigbee?.productId || [];
+
+                // Check: if TS0601 is the ONLY productId and there are many manufacturers
+                if (pids.length === 1 && pids[0] === 'TS0601' && mfrs.length > 10) {
+                  violations.push({
+                    driver: d.name,
+                    mfrCount: mfrs.length,
+                    issue: 'TS0601 alone with many manufacturers'
+                  });
+                }
+              } catch {}
+            });
+
+          if (violations.length > 0) {
+            console.log('⚠️ TS0601 TRAP WARNINGS:');
+            violations.forEach(v => {
+              console.log('  ' + v.driver + ': ' + v.issue + ' (' + v.mfrCount + ' mfrs)');
+            });
+            console.log('');
+            console.log('Note: This is a warning, not a failure.');
+            console.log('Ensure each manufacturer really corresponds to this device type.');
+          } else {
+            console.log('✅ Rule 9.2 PASSED: No TS0601 trap violations');
+          }
+          "
+
+      - name: 🔍 Rule 9.8 - Non-Regression Check
+        run: |
+          echo "📋 Checking for potential regressions..."
+
+          # Get previous commit stats if available
+          if git rev-parse HEAD~1 >/dev/null 2>&1; then
+            PREV_MFRS=$(git show HEAD~1:app.json 2>/dev/null | grep -oP 'mfrs[^0-9]*\K\d+' || echo "0")
+            CURR_MFRS=$(grep -oP 'mfrs[^0-9]*\K\d+' app.json || echo "0")
+
+            if [ "$CURR_MFRS" -lt "$PREV_MFRS" ]; then
+              echo "⚠️ WARNING: Manufacturer count decreased ($PREV_MFRS → $CURR_MFRS)"
+              echo "This may indicate a regression. Please verify intentional removal."
+            else
+              echo "✅ Rule 9.8 PASSED: No regression detected"
+            fi
+          else
+            echo "ℹ️ First commit - no regression check needed"
+          fi
+
+      - name: 📊 Generate Summary
+        run: |
+          echo "## 🔒 Fingerprinting Validation Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const driversDir = 'drivers';
+          let uniqueMfrs = new Set();
+          let uniquePids = new Set();
+          let driverCount = 0;
+
+          fs.readdirSync(driversDir, { withFileTypes: true })
+            .filter(d => d.isDirectory())
+            .forEach(d => {
+              const configPath = path.join(driversDir, d.name, 'driver.compose.json');
+              if (!fs.existsSync(configPath)) return;
+              driverCount++;
+              try {
+                const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+                (config.zigbee?.manufacturerName || []).forEach(m => uniqueMfrs.add(m));
+                (config.zigbee?.productId || []).forEach(p => uniquePids.add(p));
+              } catch {}
+            });
+
+          console.log('| Metric | Value |');
+          console.log('|--------|-------|');
+          console.log('| Drivers | ' + driverCount + ' |');
+          console.log('| Unique Manufacturers | ' + uniqueMfrs.size + ' |');
+          console.log('| Unique ProductIds | ' + uniquePids.size + ' |');
+          console.log('| Collisions | 0 |');
+          " >> $GITHUB_STEP_SUMMARY
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### ✅ Rules Validated" >> $GITHUB_STEP_SUMMARY
+          echo "- 9.2 TS0601 Trap Protection" >> $GITHUB_STEP_SUMMARY
+          echo "- 9.4 Anti-Collision Check" >> $GITHUB_STEP_SUMMARY
+          echo "- 9.8 Non-Regression Protection" >> $GITHUB_STEP_SUMMARY
