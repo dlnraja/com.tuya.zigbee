@@ -196,6 +196,36 @@ class ClimateSensorDevice extends HybridSensorBase {
     }
   }
 
+  /**
+   * v5.5.27: Refresh all DPs + time sync - called by Flow Card or manual refresh
+   */
+  async refreshAll() {
+    this.log('[CLIMATE-REFRESH] Refreshing all DPs + time sync...');
+
+    // DPs based on DP mappings for climate sensors
+    const DPS_TEMP = [1, 18];            // Temperature
+    const DPS_HUM = [2];                 // Humidity
+    const DPS_BATTERY = [4, 15];         // Battery
+    const DPS_CONFIG = [9, 17, 19, 20];  // Config settings
+
+    const allDPs = [...DPS_TEMP, ...DPS_HUM, ...DPS_BATTERY];
+
+    // Query DPs
+    await this.safeTuyaDataQuery(allDPs, {
+      logPrefix: '[CLIMATE-REFRESH]',
+      delayBetweenQueries: 150,
+    });
+
+    // Also sync time while device is awake
+    const endpoint = this.zclNode?.endpoints?.[1];
+    const timeCluster = endpoint?.clusters?.time || endpoint?.clusters?.[0x000A];
+    if (timeCluster) {
+      await this._syncDeviceTime(timeCluster).catch(() => { });
+    }
+
+    return true;
+  }
+
   async onDeleted() {
     // v5.4.7: Clear time sync interval
     if (this._timeSyncInterval) {
