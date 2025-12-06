@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.1",
+  "version": "5.5.2",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.1: COMPLETE SYNC - 2218 manufacturers, 100% JohanBendz coverage, 99.4% DP mappings",
-    "fr": "V5.5.1: SYNC COMPLET - 2218 fabricants, 100% couverture JohanBendz, 99.4% mappings DP"
+    "en": "V5.5.2: ULTIMATE - 6730 manufacturers, 1086 GitHub issues processed, all sources merged",
+    "fr": "V5.5.2: ULTIME - 6730 fabricants, 1086 issues GitHub traités, toutes sources fusionnées"
   },
   "category": "appliances",
   "permissions": [],
