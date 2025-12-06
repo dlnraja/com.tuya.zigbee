@@ -39,7 +39,11 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_xabckq1v",
+      "_TZ3400_keyjqthh",
+      "_TZ3000_dfgbtub0"
+    ],
     "productId": [],
     "endpoints": {
       "1": {
