@@ -1,9 +1,10 @@
 'use strict';
 
 const { HybridSensorBase } = require('../../lib/devices');
+const { WakeStrategies } = require('../../lib/tuya/TuyaGatewayEmulator');
 
 /**
- * Motion Sensor Radar mmWave Device - v5.5.26 ENHANCED
+ * Motion Sensor Radar mmWave Device - v5.5.29 WAKE STRATEGIES
  *
  * Sources:
  * - Z2M: TS0601_HOBEIAN_RADAR (ZG-204ZV)
@@ -114,6 +115,40 @@ class MotionSensorRadarDevice extends HybridSensorBase {
 
     // v5.5.26: Initial data query at inclusion
     this._sendInitialDataQuery();
+
+    // v5.5.29: Setup advanced wake strategies for better data retrieval
+    this._setupWakeStrategies();
+  }
+
+  /**
+   * v5.5.29: Setup advanced wake strategies
+   */
+  async _setupWakeStrategies() {
+    try {
+      this.log('[MMWAVE] ⏰ Setting up wake strategies...');
+
+      // Strategy 1: Query all DPs when ANY data is received (device is awake)
+      const allDPs = [1, 2, 3, 4, 9, 10, 11, 12, 15, 101, 102, 103, 104, 105];
+      await WakeStrategies.onAnyDataReceived(this, allDPs, async (dps) => {
+        // When we receive any data, query everything while awake
+        if (this.safeTuyaDataQuery) {
+          await this.safeTuyaDataQuery(dps, {
+            logPrefix: '[MMWAVE-WAKE]',
+            delayBetweenQueries: 50
+          });
+        }
+      });
+
+      // Strategy 2: Configure ZCL attribute reporting
+      await WakeStrategies.configureReporting(this).catch(() => { });
+
+      // Strategy 3: Direct attribute reads (works better for router devices)
+      await WakeStrategies.readAttributes(this).catch(() => { });
+
+      this.log('[MMWAVE] ✅ Wake strategies configured');
+    } catch (err) {
+      this.log('[MMWAVE] Wake strategies error:', err.message);
+    }
   }
 
   /**
