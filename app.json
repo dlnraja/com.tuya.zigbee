@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.6",
+  "version": "5.5.7",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.6: RESTORED - 3598 unique manufacturers from all versions, 0 duplicates per file",
-    "fr": "V5.5.6: RESTAURÉ - 3598 fabricants uniques de toutes versions, 0 doublons par fichier"
+    "en": "V5.5.7: FINGERPRINT ENHANCED - 3598 manufacturers + 397 productIds for better device matching",
+    "fr": "V5.5.7: FINGERPRINT AMÉLIORÉ - 3598 fabricants + 397 productIds pour meilleur matching"
   },
   "category": "appliances",
   "permissions": [],
@@ -11467,7 +11467,8 @@
           "E12-N14",
           "E1C-NB6",
           "E1C-NB7",
-          "TS0501A"
+          "TS0501A",
+          "TS0501B"
         ],
         "endpoints": {
           "1": {
@@ -12164,6 +12165,8 @@
           "TRADFRI bulb E27 CWS opal 600lm",
           "TS0502A",
           "TS0502B",
+          "TS0503A",
+          "TS0503B",
           "TS0504B",
           "TS0505A",
           "TS0505B",
@@ -13994,7 +13997,8 @@
           "Smart-Knob",
           "TS0041",
           "TS004F",
-          "TS0215A"
+          "TS0215A",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -14343,7 +14347,9 @@
           "_TZ3400_keyjhapk"
         ],
         "productId": [
-          "TS0042"
+          "TS0042",
+          "TS004F",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -14704,7 +14710,8 @@
         ],
         "productId": [
           "TS0043",
-          "TS004F"
+          "TS004F",
+          "TS0601"
         ],
         "learnmode": {
           "image": "/drivers/button_wireless_3/assets/learnmode.svg",
@@ -15112,7 +15119,8 @@
         ],
         "productId": [
           "TS0044",
-          "TS004F"
+          "TS004F",
+          "TS0601"
         ],
         "learnmode": {
           "image": "/drivers/button_wireless_4/assets/learnmode.svg",
@@ -19430,6 +19438,7 @@
           "_TZb210_rkgngb5o"
         ],
         "productId": [
+          "TS0601",
           "TS1101",
           "TS110E"
         ],
@@ -20821,6 +20830,7 @@
           "CO-Detector",
           "CO2-Sensor",
           "Gas-Detector",
+          "TS0204",
           "TS0601"
         ]
       },
@@ -23096,7 +23106,9 @@
         ],
         "productId": [
           "TS0501B",
-          "TS0502"
+          "TS0502",
+          "TS0502A",
+          "TS0502B"
         ],
         "endpoints": {
           "1": {
@@ -23219,6 +23231,8 @@
         ],
         "productId": [
           "TS0503",
+          "TS0503A",
+          "TS0503B",
           "TS0504"
         ],
         "endpoints": {
@@ -23311,12 +23325,13 @@
           "_tz3210_quinzf3w"
         ],
         "productId": [
+          "TS0503A",
           "TS0503B",
+          "TS0504A",
           "TS0504B",
           "TS0505A",
           "TS0505B",
-          "TS0503A",
-          "TS0504A"
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -23666,7 +23681,10 @@
           }
         },
         "productId": [
-          "TS0505B"
+          "TS0503A",
+          "TS0503B",
+          "TS0505B",
+          "TS0601"
         ]
       },
       "settings": [
@@ -24005,11 +24023,13 @@
           }
         },
         "productId": [
+          "TS0503A",
           "TS0503B",
           "TS0504A",
           "TS0504B",
           "TS0505A",
-          "TS0505B"
+          "TS0505B",
+          "TS0601"
         ]
       },
       "settings": [
@@ -25561,6 +25581,7 @@
           }
         },
         "productId": [
+          "TS0202",
           "TS0225",
           "TS0601"
         ]
@@ -34235,7 +34256,8 @@
         ],
         "productId": [
           "TS0209",
-          "TS0210"
+          "TS0210",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
