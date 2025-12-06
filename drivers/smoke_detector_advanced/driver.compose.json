@@ -24,6 +24,8 @@
   "zigbee": {
     "manufacturerName": [
       "ClimaxTechnology",
+      "_TYZB01_dsjszp0x",
+      "_TYZB01_wqcac7lo",
       "_TZ3000_0fkmfxwg",
       "_TZ3000_0s1izerx",
       "_TZ3000_1o6x1bl0",
@@ -54,7 +56,9 @@
       "_TZ3000_ww6drja5",
       "_TZ3000_xr3htd96",
       "_TZ3000_ysvspchy",
+      "_TZ3210_09hzmirw",
       "_TZ3210_up3pngle",
+      "_TZE200_0zaf1cr8",
       "_TZE200_5d3vhjro",
       "_TZE200_aycxwiau",
       "_TZE200_dq1mfjug",
@@ -73,14 +77,12 @@
       "_TZE204_ntcy3xu1",
       "_TZE204_vafd6gkz",
       "_TZE204_yojqa8xn",
+      "_TZE284_0zaf1cr8",
       "_TZE284_fhvpaltk",
       "_TZE284_gyzlwu5q",
       "_TZE284_n4ttsck2",
       "_TZE284_nhgdf6qr",
-      "_TZE284_rccxox8p",
-      "_TZ3210_09hzmirw",
-      "_TZE200_0zaf1cr8",
-      "_TZE284_0zaf1cr8"
+      "_TZE284_rccxox8p"
     ],
     "endpoints": {
       "1": {
