@@ -276,6 +276,170 @@ If a driver already has a working list:
 
 ---
 
+# 12. Smart Category Placement & Driver Folder Auto-Selection
+
+When adding or updating fingerprints, the AI MUST place each device inside the correct driver folder according to its REAL functional category.
+
+**A device MUST NEVER be placed in the wrong type of driver.**
+This prevents catastrophic collisions (TS0601, TS0002, TS011F, etc.).
+
+## 12.1. Allowed Categories & Folder Mapping
+
+| Category | Description | Clusters | Folder Pattern |
+|----------|-------------|----------|----------------|
+| **Switches/Relays** | ON/OFF, multi-gang, relays | `onOff`, `levelControl` | `/drivers/switch_xxx/` |
+| **Plugs/Energy** | Smart plugs, USB, energy | `onOff`, `metering`, `electricalMeasurement` | `/drivers/plug_xxx/` |
+| **Lights/Dimmers** | Bulbs, RGB, WW/CW, dimmers | `levelControl`, `colorControl`, `onOff` | `/drivers/bulb_xxx/`, `/drivers/dimmer_xxx/` |
+| **Sensors (Env)** | Temp, humidity, lux, VOC | `temperatureMeasurement`, `relativeHumidity` | `/drivers/climate_sensor/` |
+| **Motion/Presence** | PIR, mmWave, radar | `occupancySensing`, Tuya DP | `/drivers/motion_sensor/`, `/drivers/presence_sensor_xxx/` |
+| **Soil/Agriculture** | Soil moisture, temp | Tuya DP only | `/drivers/soil_sensor/` |
+| **Thermostats/TRV** | Radiator valves, HVAC | DPs: mode, setpoint, temp | `/drivers/thermostat_xxx/`, `/drivers/radiator_valve/` |
+| **Alarms/Sirens** | Sirens, SOS, smoke | `iasZone`, `iasWD` | `/drivers/siren/`, `/drivers/smoke_detector_xxx/` |
+| **Covers** | Curtains, blinds, shutters | `windowCovering` | `/drivers/curtain_xxx/`, `/drivers/shutter_xxx/` |
+| **Buttons** | Scene switches, remotes | `genScenes`, Tuya DP | `/drivers/button_xxx/`, `/drivers/scene_switch_xxx/` |
+
+---
+
+## 12.2. Smart Driver Assignment Rules
+
+Before assigning a device to a folder, AI MUST verify:
+
+1. **Does the cluster layout match the folder category?**
+2. **Do the DPs match the behaviour expected for that category?**
+3. **Does Zigbee2MQTT classify this device in the same category?**
+4. **Do Homey logs confirm the device behaviour?**
+
+**If ANY check fails:**
+→ DO NOT assign the device to this driver
+→ Mark it "needs manual categorisation"
+
+---
+
+## 12.3. Safe Rule: Maximum ManufacturerName Expansion
+
+> **ManufacturerName lists MUST be expanded as much as possible,
+> to include ALL known Tuya manufacturer variants,
+> but WITHOUT causing collisions with existing drivers.**
+
+### Why?
+Tuya produces the **same device** with many variations of `_TZE200_xxxxxx` or `_TZ3000_xxxxxx`.
+
+### AI MUST:
+- Collect ALL manufacturerName variants for a given device category
+- Example for a TRV: `_TZE200_b6wax7g0`, `_TZE200_2atgpdho`, `_TZE200_fhn3negr`, etc.
+- Add them into the SAME driver IF and ONLY IF:
+  - Clusters match
+  - DPs match
+  - Z2M/ZHA confirm same behaviour
+  - No existing driver already handles the pair
+
+### AI MUST NOT:
+- Add manufacturerName from a different category
+- Merge unrelated devices
+- Add a manufacturerName that conflicts with another driver's fingerprint
+
+---
+
+## 12.4. ProductId Expansion Rules (Advanced)
+
+### The AI MUST:
+- Add ALL confirmed `productId` values for a device family
+- BUT ONLY IF:
+  - `manufacturerName+productId` pair is unique
+  - Category matches
+  - No conflict with another driver
+  - Device behaviour is identical
+
+### ❌ BAD (Forbidden)
+```json
+"productId": ["TS0601"]
+```
+Forbidden because TS0601 covers 20+ unrelated devices.
+
+### ✅ GOOD (Allowed)
+```json
+"manufacturerName": ["_TZE200_fhn3negr", "_TZE200_b6wax7g0"],
+"productId": ["TS0601"]
+```
+Allowed only if ALL manufacturerNames correspond to the same device family (e.g., TRV thermostats).
+
+---
+
+## 12.5. Automatic Driver Folder Creation (If Missing)
+
+If a device does not fit ANY existing folder:
+
+**AI MUST:**
+1. Create a new driver folder with correct naming: `/drivers/<category_device_name>/`
+2. Add the multi-language naming block
+3. Create:
+   - `driver.compose.json`
+   - `device.js`
+   - `capabilities` folder if needed
+4. Add a TODO note if DPs are incomplete
+
+---
+
+## 12.6. Priority Order: Category → Manufacturer → ProductId
+
+**Always follow this exact order:**
+
+1️⃣ Determine device **category** from clusters & DPs
+2️⃣ Locate the **driver folder** that matches this category
+3️⃣ Expand **manufacturerName** list to include ALL variants for this device family
+4️⃣ Add **productId** ONLY when fully validated
+5️⃣ Check **uniqueness** across all drivers
+6️⃣ Apply changes only if **100% safe**
+
+**If NOT 100% sure → DO NOTHING and mark as ambiguous.**
+
+---
+
+## 12.7. Final Golden Rule
+
+> **A device MUST be placed in the correct category FIRST.**
+> **Fingerprints MUST then be enriched safely using:**
+> - **manufacturerName MAXIMALLY** (all variants)
+> - **productId MINIMALLY but PRECISELY** (only when safe)
+
+---
+
+# 13. Règles de Placement (FR)
+
+## 13.1. Règle du Couple Sacré
+- JAMAIS ajouter un productId sans vérifier le manufacturerName associé
+- C'est la COMBINAISON qui compte
+
+## 13.2. Expansion Maximale des ManufacturerNames
+- Collecter TOUS les variants connus pour une famille d'appareils
+- Les ajouter au MÊME driver SI ET SEULEMENT SI:
+  - Les clusters correspondent
+  - Les DPs correspondent
+  - Z2M/ZHA confirment le même comportement
+  - Aucun conflit avec un autre driver
+
+## 13.3. Expansion Minimale des ProductIds
+- Ajouter UNIQUEMENT quand:
+  - La paire `manufacturerName+productId` est unique
+  - La catégorie correspond
+  - Aucun conflit
+  - Comportement identique vérifié
+
+## 13.4. Ordre de Priorité
+```
+1. CATÉGORIE (clusters + DPs) → Quel type d'appareil?
+2. DOSSIER (driver folder) → Où le placer?
+3. MANUFACTURERNAME (expansion) → Tous les variants
+4. PRODUCTID (validation) → Seulement si sûr à 100%
+```
+
+## 13.5. Règle Finale
+- Appareil = Bonne catégorie D'ABORD
+- ManufacturerName = MAXIMAL (tous les variants)
+- ProductId = MINIMAL mais PRÉCIS
+
+---
+
 ## Scripts de Validation
 
 | Script | Usage |
