@@ -1,12 +1,12 @@
 {
-  "generated": "2025-12-06T08:57:58.344Z",
+  "generated": "2025-12-06T09:21:35.223Z",
   "summary": {
     "totalDrivers": 83,
     "highSeverityCollisions": 0,
     "mediumSeverityCollisions": 0,
     "exactDuplicates": 0,
     "driversWithoutProductId": 3,
-    "mismatchedProductIds": 272
+    "mismatchedProductIds": 278
   },
   "highSeverityCollisions": [],
   "exactDuplicates": [],
@@ -793,6 +793,21 @@
     {
       "driver": "climate_sensor",
       "type": "sensor",
+      "pid": "07073L",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "climate_sensor",
+      "type": "sensor",
       "pid": "BLU-HT-ZB",
       "expected": [
         "TS0201",
@@ -1093,52 +1108,7 @@
     {
       "driver": "contact_sensor",
       "type": "sensor",
-      "pid": "RH3001",
-      "expected": [
-        "TS0201",
-        "TS0202",
-        "TS0203",
-        "TS0204",
-        "TS0205",
-        "TS0207",
-        "TS0210",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "contact_sensor",
-      "type": "sensor",
-      "pid": "TY0203",
-      "expected": [
-        "TS0201",
-        "TS0202",
-        "TS0203",
-        "TS0204",
-        "TS0205",
-        "TS0207",
-        "TS0210",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "contact_sensor",
-      "type": "sensor",
-      "pid": "DoorWindow-Sensor-ZB3.0",
-      "expected": [
-        "TS0201",
-        "TS0202",
-        "TS0203",
-        "TS0204",
-        "TS0205",
-        "TS0207",
-        "TS0210",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "contact_sensor",
-      "type": "sensor",
-      "pid": "MCT-340 E",
+      "pid": "DC-15ZBS",
       "expected": [
         "TS0201",
         "TS0202",
@@ -1168,6 +1138,36 @@
     {
       "driver": "contact_sensor",
       "type": "sensor",
+      "pid": "DS02",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "contact_sensor",
+      "type": "sensor",
+      "pid": "DoorWindow-Sensor-ZB3.0",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "contact_sensor",
+      "type": "sensor",
       "pid": "HG06336",
       "expected": [
         "TS0201",
@@ -1183,7 +1183,7 @@
     {
       "driver": "contact_sensor",
       "type": "sensor",
-      "pid": "lumi.sensor_magnet",
+      "pid": "IH-K009",
       "expected": [
         "TS0201",
         "TS0202",
@@ -1198,7 +1198,22 @@
     {
       "driver": "contact_sensor",
       "type": "sensor",
-      "pid": "lumi.sensor_magnet.aq2",
+      "pid": "IH012-RT01",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "contact_sensor",
+      "type": "sensor",
+      "pid": "MCCGQ01LM",
       "expected": [
         "TS0201",
         "TS0202",
@@ -1228,7 +1243,22 @@
     {
       "driver": "contact_sensor",
       "type": "sensor",
-      "pid": "MCCGQ01LM",
+      "pid": "MCT-340 E",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "contact_sensor",
+      "type": "sensor",
+      "pid": "RH3001",
       "expected": [
         "TS0201",
         "TS0202",
@@ -1273,37 +1303,7 @@
     {
       "driver": "contact_sensor",
       "type": "sensor",
-      "pid": "ZP-DW-03",
-      "expected": [
-        "TS0201",
-        "TS0202",
-        "TS0203",
-        "TS0204",
-        "TS0205",
-        "TS0207",
-        "TS0210",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "contact_sensor",
-      "type": "sensor",
-      "pid": "DS02",
-      "expected": [
-        "TS0201",
-        "TS0202",
-        "TS0203",
-        "TS0204",
-        "TS0205",
-        "TS0207",
-        "TS0210",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "contact_sensor",
-      "type": "sensor",
-      "pid": "IH-K009",
+      "pid": "TY0203",
       "expected": [
         "TS0201",
         "TS0202",
@@ -1348,7 +1348,7 @@
     {
       "driver": "contact_sensor",
       "type": "sensor",
-      "pid": "DC-15ZBS",
+      "pid": "ZP-DW-03",
       "expected": [
         "TS0201",
         "TS0202",
@@ -1363,7 +1363,22 @@
     {
       "driver": "contact_sensor",
       "type": "sensor",
-      "pid": "IH012-RT01",
+      "pid": "lumi.sensor_magnet",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "contact_sensor",
+      "type": "sensor",
+      "pid": "lumi.sensor_magnet.aq2",
       "expected": [
         "TS0201",
         "TS0202",
@@ -1393,7 +1408,7 @@
     {
       "driver": "curtain_motor",
       "type": "cover",
-      "pid": "TS130F",
+      "pid": "AM25",
       "expected": [
         "TS0601"
       ]
@@ -1401,7 +1416,7 @@
     {
       "driver": "curtain_motor",
       "type": "cover",
-      "pid": "TS130F-_TZ3210",
+      "pid": "M515EGB",
       "expected": [
         "TS0601"
       ]
@@ -1425,22 +1440,6 @@
     {
       "driver": "curtain_motor",
       "type": "cover",
-      "pid": "AM25",
-      "expected": [
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "curtain_motor",
-      "type": "cover",
-      "pid": "M515EGB",
-      "expected": [
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "curtain_motor",
-      "type": "cover",
       "pid": "SCM-5ZBS",
       "expected": [
         "TS0601"
@@ -1450,6 +1449,22 @@
       "driver": "curtain_motor",
       "type": "cover",
       "pid": "TS0302",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "curtain_motor",
+      "type": "cover",
+      "pid": "TS130F",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "curtain_motor",
+      "type": "cover",
+      "pid": "TS130F-_TZ3210",
       "expected": [
         "TS0601"
       ]
@@ -1677,7 +1692,7 @@
     {
       "driver": "hvac_air_conditioner",
       "type": "climate",
-      "pid": "IR-AC",
+      "pid": "AC-Controller",
       "expected": [
         "TS0601"
       ]
@@ -1685,7 +1700,7 @@
     {
       "driver": "hvac_air_conditioner",
       "type": "climate",
-      "pid": "AC-Controller",
+      "pid": "IR-AC",
       "expected": [
         "TS0601"
       ]
@@ -1732,6 +1747,36 @@
       "driver": "led_controller_rgb",
       "type": "light",
       "pid": "TS0504",
+      "expected": [
+        "TS0501A",
+        "TS0501B",
+        "TS0502A",
+        "TS0502B",
+        "TS0503A",
+        "TS0503B",
+        "TS0504A",
+        "TS0504B"
+      ]
+    },
+    {
+      "driver": "led_controller_rgb",
+      "type": "light",
+      "pid": "ZB-CL01",
+      "expected": [
+        "TS0501A",
+        "TS0501B",
+        "TS0502A",
+        "TS0502B",
+        "TS0503A",
+        "TS0503B",
+        "TS0504A",
+        "TS0504B"
+      ]
+    },
+    {
+      "driver": "led_controller_rgb",
+      "type": "light",
+      "pid": "ZB-CL02",
       "expected": [
         "TS0501A",
         "TS0501B",
@@ -2366,6 +2411,16 @@
     {
       "driver": "plug_smart",
       "type": "plug",
+      "pid": "CK-TLSR8656-SS5-01(7019)",
+      "expected": [
+        "TS0121",
+        "TS011F",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "plug_smart",
+      "type": "plug",
       "pid": "HG06337",
       "expected": [
         "TS0121",
@@ -2476,6 +2531,16 @@
     {
       "driver": "plug_smart",
       "type": "plug",
+      "pid": "TS0001",
+      "expected": [
+        "TS0121",
+        "TS011F",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "plug_smart",
+      "type": "plug",
       "pid": "TS0115",
       "expected": [
         "TS0121",
@@ -2486,7 +2551,7 @@
     {
       "driver": "plug_smart",
       "type": "plug",
-      "pid": "ZP-SP-01",
+      "pid": "Z102LG03-1",
       "expected": [
         "TS0121",
         "TS011F",
@@ -2496,7 +2561,17 @@
     {
       "driver": "plug_smart",
       "type": "plug",
-      "pid": "TS0001",
+      "pid": "ZB-CL01",
+      "expected": [
+        "TS0121",
+        "TS011F",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "plug_smart",
+      "type": "plug",
+      "pid": "ZP-SP-01",
       "expected": [
         "TS0121",
         "TS011F",
@@ -2731,7 +2806,7 @@
     {
       "driver": "radiator_valve",
       "type": "climate",
-      "pid": "TRV602-Zigbee",
+      "pid": "HY369RT",
       "expected": [
         "TS0601"
       ]
@@ -2739,23 +2814,7 @@
     {
       "driver": "radiator_valve",
       "type": "climate",
-      "pid": "eTRV0100",
-      "expected": [
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "radiator_valve",
-      "type": "climate",
-      "pid": "SPZB0001",
-      "expected": [
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "radiator_valve",
-      "type": "climate",
-      "pid": "TRV001",
+      "pid": "ME167",
       "expected": [
         "TS0601"
       ]
@@ -2779,15 +2838,7 @@
     {
       "driver": "radiator_valve",
       "type": "climate",
-      "pid": "eT093WRO-1",
-      "expected": [
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "radiator_valve",
-      "type": "climate",
-      "pid": "HY369RT",
+      "pid": "SPZB0001",
       "expected": [
         "TS0601"
       ]
@@ -2796,6 +2847,22 @@
       "driver": "radiator_valve",
       "type": "climate",
       "pid": "TRV",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "radiator_valve",
+      "type": "climate",
+      "pid": "TRV001",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "radiator_valve",
+      "type": "climate",
+      "pid": "TRV602-Zigbee",
       "expected": [
         "TS0601"
       ]
@@ -2819,7 +2886,15 @@
     {
       "driver": "radiator_valve",
       "type": "climate",
-      "pid": "ME167",
+      "pid": "eT093WRO-1",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "radiator_valve",
+      "type": "climate",
+      "pid": "eTRV0100",
       "expected": [
         "TS0601"
       ]
