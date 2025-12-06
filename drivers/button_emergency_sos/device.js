@@ -127,24 +127,22 @@ class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
   }
 
   /**
-   * Handle incoming Tuya DP
+   * v5.5.6: Handle incoming Tuya DP with MASTER BLOCK logging
    */
   _handleSOSDP(dpId, value) {
     const mapping = this.dpConfig[String(dpId)];
-    this.log(`[SOS-BUTTON] 📊 DP${dpId} = ${value} (mapping: ${mapping || 'unknown'})`);
 
-    if (mapping === 'button_press') {
-      this.log('[SOS-BUTTON] 🆘 BUTTON PRESSED via DP!');
+    // v5.5.6: MASTER BLOCK format logging
+    this.log(`[ZCL-DATA] SOS_button.dp${dpId} raw=${value} mapping=${mapping || 'default'}`);
+
+    if (mapping === 'button_press' || dpId === 1) {
+      this.log('[ZCL-DATA] SOS_button.button_press raw=1 converted=PRESSED');
       this._triggerButtonPress();
-    } else if (mapping === 'battery_percentage') {
+    } else if (mapping === 'battery_percentage' || dpId === 101 || dpId === 15 || dpId === 4) {
+      this.log(`[ZCL-DATA] SOS_button.battery raw=${value} converted=${value}%`);
       this._setBattery(value);
     } else {
-      // Try default mappings
-      if (dpId === 1) {
-        this._triggerButtonPress();
-      } else if (dpId === 101 || dpId === 15 || dpId === 4) {
-        this._setBattery(value);
-      }
+      this.log(`[ZCL-DATA] SOS_button.unknown_dp dp=${dpId} raw=${value}`);
     }
   }
 
@@ -255,18 +253,19 @@ class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
 
       // Setup Zone Status Change listener (SDK3 property assignment)
       endpoint.clusters.iasZone.onZoneStatusChangeNotification = (payload) => {
-        this.log('[ALARM] SOS BUTTON PRESSED!', payload);
+        this.log('[ZCL-DATA] SOS_button.zone_status raw=', JSON.stringify(payload));
+        this.log('[ALARM] 🆘 SOS BUTTON PRESSED via IAS Zone!');
 
-        // Trigger flow card - v5.2.61: Use correct flow card ID
+        // Trigger flow card
         this._triggerSOSPressed();
 
-        // Update capability
-        if (this.hasCapability('alarm_tamper')) {
-          this.setCapabilityValue('alarm_tamper', true).catch(this.error);
+        // v5.5.6: Use alarm_contact (per MASTER BLOCK - zone activity compatible)
+        if (this.hasCapability('alarm_contact')) {
+          this.setCapabilityValue('alarm_contact', true).catch(this.error);
 
           // Auto-reset after 5 seconds
           setTimeout(() => {
-            this.setCapabilityValue('alarm_tamper', false).catch(this.error);
+            this.setCapabilityValue('alarm_contact', false).catch(this.error);
           }, 5000);
         }
       };
@@ -277,23 +276,22 @@ class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
         this._triggerSOSPressed();
       };
 
-      // Battery reporting
+      // Battery reporting with MASTER BLOCK logging
       if (endpoint?.clusters?.genPowerCfg) {
         endpoint.clusters.genPowerCfg.on('attr.batteryPercentageRemaining', async (value) => {
-          const battery = value / 2;
-          this.log('[BATTERY] Battery:', battery, '%');
+          const battery = Math.round(value / 2);
+          // v5.5.6: MASTER BLOCK format logging
+          this.log(`[ZCL-DATA] SOS_button.battery_zcl raw=${value} converted=${battery}%`);
+
           if (this.hasCapability('measure_battery')) {
-            await (async () => {
-              this.log(`📝 [DIAG] setCapabilityValue: ${'measure_battery'} = ${battery}`);
-              try {
-                await this.setCapabilityValue('measure_battery', battery);
-                this.log(`✅ [DIAG] setCapabilityValue SUCCESS: ${'measure_battery'}`);
-              } catch (err) {
-                this.error(`❌ [DIAG] setCapabilityValue FAILED: ${'measure_battery'}`, err.message);
-                throw err;
-              }
-            })().catch(this.error);
+            await this.setCapabilityValue('measure_battery', battery).catch(this.error);
           }
+        });
+
+        // Also listen for batteryVoltage
+        endpoint.clusters.genPowerCfg.on('attr.batteryVoltage', async (value) => {
+          const voltage = value / 10;
+          this.log(`[ZCL-DATA] SOS_button.voltage raw=${value} converted=${voltage}V`);
         });
 
         // Configure battery reporting
