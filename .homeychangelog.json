@@ -1,4 +1,8 @@
 {
+  "5.5.28": {
+    "en": "CALIBRATION + TIME SYNC: 1) New TuyaTimeSync.js module - ZCL + Tuya EF00 time sync for clock devices. 2) Calibration settings added to Radar, Climate, Soil sensors (temperature_calibration, humidity_calibration, moisture_calibration). 3) _applyCalibration() in HybridSensorBase automatically applies offsets. 4) syncTime() method available in all sensor classes. Sources: Z2M calibration, ZHA quirks.",
+    "fr": "CALIBRATION + SYNC HEURE: 1) Nouveau module TuyaTimeSync.js - sync heure ZCL + Tuya EF00 pour appareils avec horloge. 2) Réglages calibration ajoutés aux capteurs Radar, Climat, Sol (décalage temp, humidité). 3) _applyCalibration() dans HybridSensorBase applique automatiquement les décalages. 4) Méthode syncTime() disponible dans toutes les classes capteurs."
+  },
   "5.5.27": {
     "en": "TUYA DATA QUERY MODULE: 1) New lib/tuya/TuyaDataQuery.js - standardized DP query helper. 2) tuyaDataQuery() for any device, safeTuyaDataQuery() for sleepy devices with wake window detection. 3) Added refreshAll() to Radar, Soil, Climate drivers. 4) New Flow Card action 'Refresh device data' for manual sensor refresh. 5) updateRadioActivity() tracks device wake state for smart query timing.",
     "fr": "MODULE TUYA DATA QUERY: 1) Nouveau lib/tuya/TuyaDataQuery.js - helper standardisé pour requêtes DP. 2) tuyaDataQuery() pour tous appareils, safeTuyaDataQuery() pour appareils batterie avec détection fenêtre réveil. 3) Ajout refreshAll() aux drivers Radar, Soil, Climate. 4) Nouvelle action Flow 'Rafraîchir données' pour refresh manuel. 5) updateRadioActivity() suit l'état de réveil pour timing intelligent."
