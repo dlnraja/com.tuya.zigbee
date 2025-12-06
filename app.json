@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.10",
+  "version": "5.5.11",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.10: ALL ZIGBEE - 3743 mfrs from Z2M (Tuya+Moes+Zemismart+Lonsonho+BlitzWolf+Neo+Immax)",
-    "fr": "V5.5.10: TOUT ZIGBEE - 3743 mfrs de Z2M (Tuya+Moes+Zemismart+Lonsonho+BlitzWolf+Neo+Immax)"
+    "en": "V5.5.11: ZERO COLLISIONS - 3735 mfrs, 401 pids, exhaustive enrichment, all rules applied",
+    "fr": "V5.5.11: ZÉRO COLLISIONS - 3735 mfrs, 401 pids, enrichissement exhaustif, toutes règles appliquées"
   },
   "category": "appliances",
   "permissions": [],
@@ -13914,6 +13914,7 @@
           "ERS-10TZBVK-AA",
           "Smart Knob",
           "Smart-Knob",
+          "TLSR82xx",
           "TS0041",
           "TS004F",
           "TS0215A",
@@ -18217,15 +18218,16 @@
         ],
         "productId": [
           "BLU-HT-ZB",
-          "TS0222",
+          "CK-BL702-MWS-01(7016)",
           "RS-23ZBS",
           "RSH-TH01",
           "SNZB-02",
           "SNZB-02D",
           "SNZB-02P",
           "TH01",
-          "TH01",
           "TS0201",
+          "TS0222",
+          "TS0225",
           "TS0601",
           "TT001ZAV20",
           "WSDCGQ01LM",
@@ -24440,6 +24442,7 @@
           "_TZE204_n8dljorx"
         ],
         "productId": [
+          "CK-BL702-MWS-01(7016)",
           "E1525",
           "E1745",
           "HG06335",
@@ -24458,18 +24461,18 @@
           "TRADFRI motion sensor",
           "TS0202",
           "TS0210",
+          "TS0222",
           "TS0601",
           "TY0202",
           "VST-862-ZBS",
+          "ZB-PCD",
           "ZG-204Z",
           "ZG-204ZL",
           "ZG-204ZM",
           "ZG-204ZV",
           "ZP-PIR-03",
           "lumi.sensor_motion",
-          "lumi.sensor_motion.aq2",
-          "ZB-PCD",
-          "TS0222"
+          "lumi.sensor_motion.aq2"
         ],
         "endpoints": {
           "1": {
@@ -28273,6 +28276,7 @@
           "SHSW-1",
           "Shelly1",
           "TS0001",
+          "TS0003",
           "TS000F",
           "TS0011",
           "TS0601",
@@ -33733,8 +33737,6 @@
           "_TZ3210_cm9mbpr1",
           "_TZ3210_w0qqde0g",
           "_TZ321C_4slreunp",
-          "_TZ321c_4slreunp",
-          "_TZ321c_fkzihax8",
           "_TZ3290_7v1k4vuf",
           "_TZ3290_gnl5a6a5",
           "_TZ3290_j37rooax",
@@ -33762,12 +33764,6 @@
           "_TZB210_zmppwawa",
           "_TZE20X_xxxxxxxx",
           "_TZE21C_dohbhb5k",
-          "_TZb000_42ha4rsc",
-          "_TZb210_6eed09b9",
-          "_TZb210_g01ie5wu",
-          "_TZb210_lnnkh3f9",
-          "_TZb210_rwy5hexp",
-          "_TZb210_zmppwawa",
           "_tz3000_bjawzodf",
           "_tz3000_xr3htd96",
           "kud7u2l",

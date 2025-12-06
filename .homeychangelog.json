@@ -1,4 +1,8 @@
 {
+  "5.5.11": {
+    "en": "ZERO COLLISIONS - Full audit of 20 last pushes. Resolved 8 collisions between generic_tuya/zigbee_universal. Exhaustive productId enrichment from Z2M (+5 pids). Applied all fingerprinting rules: Category placement, 3-pillar validation, non-regression protection. HIGH=0, MEDIUM=0.",
+    "fr": "ZÉRO COLLISIONS - Audit complet des 20 derniers push. Résolu 8 collisions entre generic_tuya/zigbee_universal. Enrichissement exhaustif productId depuis Z2M (+5 pids). Toutes règles fingerprinting appliquées: Placement catégorie, validation 3 piliers, protection non-régression. HIGH=0, MEDIUM=0."
+  },
   "5.5.10": {
     "en": "ALL ZIGBEE BRANDS - Added 143 manufacturers from Tuya-compatible brands via Z2M database: Moes (3), Zemismart (4), Lonsonho (5), BlitzWolf (2), Neo (5), Immax (16), and Tuya derivatives. Total: 3743 unique manufacturers. Supports standard and proprietary Zigbee implementations.",
     "fr": "TOUTES MARQUES ZIGBEE - Ajouté 143 fabricants de marques Tuya-compatibles via Z2M: Moes (3), Zemismart (4), Lonsonho (5), BlitzWolf (2), Neo (5), Immax (16), et dérivés Tuya. Total: 3743 fabricants uniques. Supporte Zigbee standard et propriétaire."
