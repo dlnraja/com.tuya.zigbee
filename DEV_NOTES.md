@@ -165,6 +165,117 @@ TS0601 est réutilisé pour des appareils totalement différents!
 
 ---
 
+---
+
+# 10. TS0601 Trap - The Tuya "Catch-All" Problem
+
+## 10.1. What is TS0601?
+
+TS0601 is a **generic modelId** used by Tuya for COMPLETELY DIFFERENT devices:
+- Thermostatic valves (TRV)
+- mmWave presence sensors
+- Alarm sirens
+- Curtain controllers
+- Soil sensors
+- And many more...
+
+## 10.2. Catastrophe Scenario (What to AVOID)
+
+If you blindly add:
+```json
+"productId": ["TS0601"]
+```
+...to a "Motion Sensor" driver, ALL thermostats, sirens, and TRVs with TS0601 will try to pair as motion sensors. **CHAOS.**
+
+## 10.3. Safe Structure Examples
+
+### Case A: Unique Device (Safe)
+```json
+// /drivers/tuya_plug_simple/driver.compose.json
+{
+  "zigbee": {
+    "manufacturerName": ["_TZ3000_okaz980k"],
+    "productId": ["TS011F"]  // TS011F = almost always a plug, safe
+  }
+}
+```
+
+### Case B: Complex Device (The Trap)
+**NEVER put TS0601 alone. ALWAYS couple with specific manufacturerName.**
+
+```json
+// /drivers/tuya_thermostat/driver.compose.json
+{
+  "zigbee": {
+    "manufacturerName": ["_TZE200_hue3yfsn", "_TZE200_b6wax7g0"],
+    "productId": ["TS0601"]
+    // Homey matches: IF manu = hue3yfsn AND prod = TS0601 -> Thermostat
+  }
+}
+```
+
+```json
+// /drivers/tuya_mmwave_sensor/driver.compose.json
+{
+  "zigbee": {
+    "manufacturerName": ["_TZE204_sxm7l9xa"],
+    "productId": ["TS0601"]
+    // Homey matches: IF manu = sxm7l9xa AND prod = TS0601 -> Presence Sensor
+  }
+}
+```
+
+## 10.4. The 3-Pillar Verification Method
+
+### Pillar 1: Source of Truth (Z2M)
+- Z2M's `tuya.ts` is the bible
+- If Z2M says `_TZE200_aaaa` + `TS0601` = Thermostat → 99.9% true
+
+### Pillar 2: Cluster Verification
+Before adding ID to a "Light" driver, verify:
+- Does device support `onOff` cluster (0x0006)?
+- Does it support `levelControl` (0x0008)?
+- If only `basic` + `tuya_specific` → SUSPICIOUS
+
+### Pillar 3: Uniqueness (Anti-Collision)
+- Before writing, check if `(manufacturerName, productId)` already exists in another driver
+
+---
+
+# 11. Strict Guidelines for AI Fingerprinting
+
+## 11.1. Sacred Couple Rule
+**NEVER add a productId without verifying its associated manufacturerName.**
+It's the COMBINATION that matters.
+
+## 11.2. TS0601/TS0001 Danger
+If productId is generic (TS0601, TS0001, TS0002):
+- **FORBIDDEN** to add it alone
+- **MUST** verify in Z2M which device type corresponds to this specific manufacturerName
+
+## 11.3. Category Verification
+**DO NOT** add a fingerprint to a driver if device category (e.g., Plug) doesn't match driver category (e.g., Smoke Detector).
+
+## 11.4. Duplicate Detection
+Before modifying any driver.compose.json:
+- **SCAN ALL** other drivers
+- Ensure `(manufacturerName, productId)` pair doesn't exist elsewhere
+
+## 11.5. Existing Priority
+If a driver already has a working list:
+- **DO NOT DELETE** it
+- Only **ADD** new confirmed pairs
+
+## 11.6. Work Method (Required Process)
+
+1. Analyze target driver.compose.json
+2. Find orphan manufacturerNames (without productId)
+3. Find their real productId via Z2M database
+4. **IF AND ONLY IF** type matches → add productId
+5. **ALWAYS** run collision detection after changes
+
+---
+
 ## Scripts de Validation
 
 | Script | Usage |
@@ -172,6 +283,7 @@ TS0601 est réutilisé pour des appareils totalement différents!
 | `automation/DETECT_COLLISIONS.js` | Détecte les collisions HIGH/MEDIUM |
 | `automation/RESOLVE_COLLISIONS.js` | Résout par système de priorité |
 | `automation/FETCH_ALL_ZIGBEE.js` | Enrichit depuis Z2M |
+| `automation/SAFE_AUDIT.js` | Audit sécurisé (lecture seule) |
 
 ## Système de Priorité des Drivers
 
