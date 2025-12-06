@@ -147,6 +147,64 @@ class USBOutletAdvancedDevice extends HybridPlugBase {
       this.error('[USB-ADV] Failed to send DP', dp, err.message);
     }
   }
+
+  /**
+   * v5.5.5: Enhanced logging per MASTER BLOCK specs
+   * Shows raw + converted values for power measurements
+   */
+  onTuyaStatus(status) {
+    if (!status || status.dp === undefined) {
+      if (super.onTuyaStatus) super.onTuyaStatus(status);
+      return;
+    }
+
+    const dp = status.dp;
+    const rawValue = status.data || status.value;
+
+    // v5.5.5: Log raw + converted per MASTER BLOCK format
+    switch (dp) {
+      case 1:
+      case 7: // Socket on/off
+        this.log(`[ZCL-DATA] USB_outlet.socket raw=${rawValue} converted=${rawValue === 1 || rawValue === true}`);
+        break;
+      case 2: // Socket 2
+        this.log(`[ZCL-DATA] USB_outlet.socket2 raw=${rawValue} converted=${rawValue === 1 || rawValue === true}`);
+        break;
+      case 9:
+      case 10: // USB ports
+        this.log(`[ZCL-DATA] USB_outlet.usb raw=${rawValue} converted=${rawValue === 1 || rawValue === true}`);
+        break;
+      case 13:
+      case 101: // LED indicator
+        this.log(`[ZCL-DATA] USB_outlet.led raw=${rawValue} converted=${rawValue === 1 || rawValue === true}`);
+        break;
+      case 16:
+      case 104: // Power (W)
+        this.log(`[ZCL-DATA] USB_outlet.power raw=${rawValue} converted=${rawValue / 10}W`);
+        break;
+      case 17:
+      case 105: // Current (A)
+        this.log(`[ZCL-DATA] USB_outlet.current raw=${rawValue} converted=${rawValue / 1000}A`);
+        break;
+      case 18:
+      case 106: // Voltage (V)
+        this.log(`[ZCL-DATA] USB_outlet.voltage raw=${rawValue} converted=${rawValue / 10}V`);
+        break;
+      case 19: // Energy (kWh)
+        this.log(`[ZCL-DATA] USB_outlet.energy raw=${rawValue} converted=${rawValue / 100}kWh`);
+        break;
+      case 102:
+      case 103:
+      case 121: // Button press
+        this.log(`[ZCL-DATA] USB_outlet.button raw=${rawValue} event=press`);
+        break;
+      default:
+        this.log(`[ZCL-DATA] USB_outlet.unknown_dp dp=${dp} raw=${rawValue}`);
+    }
+
+    // Call parent handler
+    if (super.onTuyaStatus) super.onTuyaStatus(status);
+  }
 }
 
 module.exports = USBOutletAdvancedDevice;

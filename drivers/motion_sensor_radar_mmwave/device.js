@@ -68,20 +68,42 @@ class MotionSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.4.7: Enhanced logging for luminance updates (cosmetic fix)
-   * Clarifies when luminance DPs are received vs capability value set
+   * v5.5.5: Enhanced logging per MASTER BLOCK specs
+   * Shows both raw DP value and converted capability value
    */
   onTuyaStatus(status) {
-    // Call parent handler first
-    super.onTuyaStatus(status);
-
-    // v5.4.7: Add clarifying log when luminance is updated
-    if (status && (status.dp === 12 || status.dp === 103)) {
-      const currentLux = this.getCapabilityValue('measure_luminance');
-      if (currentLux !== null) {
-        this.log(`[MMWAVE] 💡 Luminance updated: ${currentLux} lux (from DP${status.dp})`);
-      }
+    if (!status || status.dp === undefined) {
+      super.onTuyaStatus(status);
+      return;
     }
+
+    const rawValue = status.data || status.value;
+
+    // v5.5.5: Log raw + converted values per MASTER BLOCK specs
+    switch (status.dp) {
+      case 1: // Presence/motion
+        this.log(`[ZCL-DATA] mmwave.motion raw=${rawValue} converted=${rawValue === 1 || rawValue === true}`);
+        break;
+      case 2: // Humidity
+        this.log(`[ZCL-DATA] mmwave.humidity raw=${rawValue} converted=${rawValue}`);
+        break;
+      case 3: // Temperature
+        this.log(`[ZCL-DATA] mmwave.temperature raw=${rawValue} converted=${rawValue / 10}`);
+        break;
+      case 12:
+      case 103: // Illuminance
+        this.log(`[ZCL-DATA] mmwave.luminance raw=${rawValue} converted=${rawValue} lux`);
+        break;
+      case 4:
+      case 15: // Battery
+        this.log(`[ZCL-DATA] mmwave.battery raw=${rawValue} converted=${rawValue}%`);
+        break;
+      default:
+        this.log(`[ZCL-DATA] mmwave.unknown_dp dp=${status.dp} raw=${rawValue}`);
+    }
+
+    // Call parent handler
+    super.onTuyaStatus(status);
   }
 }
 

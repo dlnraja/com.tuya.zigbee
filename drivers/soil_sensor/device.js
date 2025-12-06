@@ -90,19 +90,51 @@ class SoilSensorDevice extends HybridSensorBase {
     this.log('[SOIL] Watching for temperature/humidity/soil_moisture data...');
   }
 
+  /**
+   * v5.5.5: Enhanced logging per MASTER BLOCK specs
+   * Shows raw + converted values for each DP
+   */
   onTuyaStatus(status) {
-    this.log('[SOIL] TUYA DATA RECEIVED!');
-    this.log('[SOIL] Raw status:', JSON.stringify(status));
+    if (!status) {
+      super.onTuyaStatus(status);
+      return;
+    }
 
+    const dp = status.dp;
+    const rawValue = status.data || status.value;
+
+    // v5.5.5: Log raw + converted per MASTER BLOCK format
+    switch (dp) {
+      case 3: // Temperature (soil sensors use DP3)
+      case 5: // Temperature alternate
+        this.log(`[ZCL-DATA] TS0601_oitavov2.temperature raw=${rawValue} converted=${rawValue / 10}`);
+        break;
+      case 5: // Soil moisture (DP5)
+        this.log(`[ZCL-DATA] TS0601_oitavov2.soil_moisture raw=${rawValue} converted=${rawValue}`);
+        break;
+      case 105: // Soil moisture alternate
+        const moisture = rawValue > 100 ? Math.round(rawValue / 10) : rawValue;
+        this.log(`[ZCL-DATA] TS0601_oitavov2.soil_moisture raw=${rawValue} converted=${moisture}`);
+        break;
+      case 15: // Battery
+      case 4:
+        this.log(`[ZCL-DATA] TS0601_oitavov2.battery raw=${rawValue} converted=${rawValue}`);
+        break;
+      default:
+        if (dp !== undefined) {
+          this.log(`[ZCL-DATA] TS0601_oitavov2.unknown_dp dp=${dp} raw=${rawValue}`);
+        }
+    }
+
+    // Call parent handler
     super.onTuyaStatus(status);
 
+    // Log final capability values
     setTimeout(() => {
       const temp = this.getCapabilityValue('measure_temperature');
-      const soil = this.getCapabilityValue('measure_humidity'); // Soil moisture uses measure_humidity
+      const soil = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
-      this.log('[SOIL] Temperature:', temp !== null ? temp + 'C' : 'waiting...');
-      this.log('[SOIL] Soil Moisture:', soil !== null ? soil + '%' : 'waiting...');
-      this.log('[SOIL] Battery:', bat !== null ? bat + '%' : 'waiting...');
+      this.log(`[ZCL-DATA] TS0601_oitavov2 CAPABILITIES temp=${temp}°C soil=${soil}% battery=${bat}%`);
     }, 100);
   }
 }

@@ -199,27 +199,50 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.3.82: Override onTuyaStatus for additional climate-specific logging
+   * v5.5.5: Enhanced logging per MASTER BLOCK specs
+   * Shows raw + converted values for each DP
    */
   onTuyaStatus(status) {
-    this.log('[CLIMATE] ╔════════════════════════════════════════════════════════╗');
-    this.log('[CLIMATE] ║ 📥 TUYA DATA RECEIVED!                                 ║');
-    this.log('[CLIMATE] ╚════════════════════════════════════════════════════════╝');
-    this.log('[CLIMATE] Raw status:', JSON.stringify(status));
+    if (!status) {
+      super.onTuyaStatus(status);
+      return;
+    }
 
-    // Call parent handler (now properly defined in HybridSensorBase!)
+    const dp = status.dp;
+    const rawValue = status.data || status.value;
+
+    // v5.5.5: Log raw + converted per MASTER BLOCK format
+    switch (dp) {
+      case 1: // Temperature (standard)
+      case 5: // Temperature (TZE284 soil variant)
+      case 18: // Temperature (alt)
+        this.log(`[ZCL-DATA] TS0601_climate.temperature raw=${rawValue} converted=${rawValue / 10}`);
+        break;
+      case 2: // Humidity (standard)
+      case 3: // Humidity (TZE284 soil variant)
+        this.log(`[ZCL-DATA] TS0601_climate.humidity raw=${rawValue} converted=${rawValue}`);
+        break;
+      case 4: // Battery (standard with x2 multiplier)
+        this.log(`[ZCL-DATA] TS0601_climate.battery raw=${rawValue} converted=${Math.min(rawValue * 2, 100)}`);
+        break;
+      case 15: // Battery (TZE284 variant - no multiplier)
+        this.log(`[ZCL-DATA] TS0601_climate.battery raw=${rawValue} converted=${rawValue}`);
+        break;
+      default:
+        if (dp !== undefined) {
+          this.log(`[ZCL-DATA] TS0601_climate.unknown_dp dp=${dp} raw=${rawValue}`);
+        }
+    }
+
+    // Call parent handler
     super.onTuyaStatus(status);
 
-    // Log current capability values after processing
+    // Log final capability values
     setTimeout(() => {
       const temp = this.getCapabilityValue('measure_temperature');
       const hum = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
-      this.log('[CLIMATE] ╔════════════════════════════════════════════════════════╗');
-      this.log(`[CLIMATE] ║ 📊 Temperature: ${temp !== null ? temp + '°C' : 'waiting...'}`);
-      this.log(`[CLIMATE] ║ 💧 Humidity:    ${hum !== null ? hum + '%' : 'waiting...'}`);
-      this.log(`[CLIMATE] ║ 🔋 Battery:     ${bat !== null ? bat + '%' : 'waiting...'}`);
-      this.log('[CLIMATE] ╚════════════════════════════════════════════════════════╝');
+      this.log(`[ZCL-DATA] TS0601_climate CAPABILITIES temp=${temp}°C humidity=${hum}% battery=${bat}%`);
     }, 100);
   }
 }

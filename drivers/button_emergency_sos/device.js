@@ -180,11 +180,11 @@ class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
   _triggerButtonPress() {
     this._triggerSOSPressed();
 
-    // v5.4.5: Use alarm_tamper (fixed from invalid alarm_generic)
-    if (this.hasCapability('alarm_tamper')) {
-      this.setCapabilityValue('alarm_tamper', true).catch(this.error);
+    // v5.5.5: Use alarm_contact (per MASTER BLOCK specs for zone activity)
+    if (this.hasCapability('alarm_contact')) {
+      this.setCapabilityValue('alarm_contact', true).catch(this.error);
       setTimeout(() => {
-        this.setCapabilityValue('alarm_tamper', false).catch(this.error);
+        this.setCapabilityValue('alarm_contact', false).catch(this.error);
       }, 5000);
     }
   }
