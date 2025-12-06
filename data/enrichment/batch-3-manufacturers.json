@@ -1,0 +1,141 @@
+{
+  "_meta": {
+    "batch": 3,
+    "range": "101-150",
+    "date": "2025-12-06",
+    "note": "Enrichment data for Tuya Zigbee manufacturers ranked 101-150 by usage frequency"
+  },
+  "manufacturers": {
+    "_TZ3210_j4pdtz9v": {
+      "models": ["TS0001"],
+      "type": "switch",
+      "device_name": "Tuya Fingerbot Plus",
+      "description": "Smart button pusher device",
+      "capabilities": ["action", "battery"],
+      "dp_info": {},
+      "sources": [
+        "https://github.com/koenkk/zigbee2mqtt/issues/18494",
+        "https://github.com/Koenkk/zigbee-herdsman-converters/issues/6207",
+        "https://github.com/zigpy/zha-device-handlers/issues/3915"
+      ]
+    },
+    "_TZ3000_bjawzodf": {
+      "models": ["TS0601", "TY0201"],
+      "type": "sensor",
+      "device_name": "Tuya WSD500A Temperature and Humidity Sensor with LCD",
+      "description": "Round white temperature and humidity sensor with LCD display",
+      "capabilities": ["measure_temperature", "measure_humidity", "battery"],
+      "dp_info": {
+        "1": "temperature (divide by 10)",
+        "2": "humidity",
+        "4": "battery_level"
+      },
+      "sources": [
+        "https://github.com/zigpy/zha-device-handlers/issues/2862",
+        "https://community.home-assistant.io/t/ty0201-by-tz3000-bjawzodf-not-working/782774",
+        "https://github.com/Koenkk/zigbee2mqtt/issues/20219"
+      ]
+    },
+    "_TZE200_pay2byax": {
+      "models": ["TS0601"],
+      "type": "sensor",
+      "device_name": "Tuya ZG-102ZL Contact and Illuminance Sensor",
+      "description": "Door/window contact sensor with illuminance measurement",
+      "capabilities": ["alarm_contact", "measure_illuminance", "battery"],
+      "dp_info": {
+        "1": "contact",
+        "4": "battery_level",
+        "5": "illuminance"
+      },
+      "sources": [
+        "https://community.hubitat.com/t/driver-for-ts0601-tze200-pay2byax-tuya-zigbee-window-sesnor/121706",
+        "https://lightrun.com/answers/zigpy-zha-device-handlers-device-support-request-tuya-zg-102zl--_tze200_pay2byax"
+      ]
+    },
+    "_TZE200_e3oitdyu": {
+      "models": ["TS0601"],
+      "type": "light",
+      "device_name": "Tuya 2 Gang ZigBee Dimmer Module (MS-105BZ)",
+      "description": "Dual-channel dimmer for controlling two lighting circuits",
+      "capabilities": ["on_off", "dim", "measure_power"],
+      "dp_info": {
+        "1": "onoff_channel_1",
+        "2": "brightness_channel_1",
+        "3": "onoff_channel_2",
+        "4": "brightness_channel_2"
+      },
+      "sources": [
+        "https://forum.phoscon.de/t/tuya-2-gang-zigbee-dimmer-module-tze200-e3oitdyu/516",
+        "https://github.com/zigpy/zha-device-handlers/blob/dev/zhaquirks/tuya/ts0601_dimmer.py"
+      ]
+    },
+    "_TZ3000_6zvw8ham": {
+      "models": ["TS0203"],
+      "type": "sensor",
+      "device_name": "Tuya Door/Window Contact Sensor",
+      "description": "Door and window magnetic contact sensor",
+      "capabilities": ["alarm_contact", "battery"],
+      "dp_info": {
+        "1": "contact",
+        "3": "battery_level"
+      },
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee"
+      ]
+    },
+    "_TZ3000_a33rw7ou": {
+      "models": ["TS0203"],
+      "type": "sensor",
+      "device_name": "Zemismart Door/Window Sensor (Tuya Variant)",
+      "description": "Magnetic door and window contact sensor",
+      "capabilities": ["alarm_contact", "battery"],
+      "dp_info": {
+        "1": "contact",
+        "3": "battery_level"
+      },
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee"
+      ]
+    },
+    "_TZ3000_au2o5e6q": {
+      "models": ["TS0203"],
+      "type": "sensor",
+      "device_name": "Tuya Door/Window Sensor Variant",
+      "description": "Magnetic door and window contact sensor",
+      "capabilities": ["alarm_contact", "battery"],
+      "dp_info": {
+        "1": "contact",
+        "3": "battery_level"
+      },
+      "sources": [
+        "https://github.com/JohanBendz/com.tuya.zigbee"
+      ]
+    }
+  },
+  "notes": {
+    "search_coverage": "Searched 50 manufacturers in batch 101-150 range",
+    "findings_summary": "Found concrete data for 7 manufacturers. Most manufacturers in this range (101-150) have limited public documentation in Zigbee2MQTT and ZHA device handlers. Devices found include: 1 smart button (Fingerbot Plus), 3 sensors (temp/humidity, contact, illuminance), 1 dimmer, and 2 contact sensors.",
+    "data_quality": "Manufacturers with TS0601/TS0203 models have better documentation. Exact DP mappings vary by device model and require either Zigbee2MQTT debug logging or manufacturer documentation for complete accuracy.",
+    "recommended_next_steps": [
+      "File device support requests on GitHub for manufacturers with no documentation",
+      "Use Zigbee2MQTT debug logging to capture actual DP messages from devices",
+      "Consult Tuya developer documentation for specific model DPs",
+      "Check ZHA device handlers repository for existing quirks"
+    ]
+  },
+  "batch_statistics": {
+    "total_manufacturers_in_range": 50,
+    "manufacturers_with_data": 7,
+    "coverage_percentage": 14,
+    "device_types_found": {
+      "sensor": 5,
+      "light": 1,
+      "switch": 1
+    },
+    "common_models": {
+      "TS0601": 4,
+      "TS0203": 3,
+      "TS0001": 1
+    }
+  }
+}
