@@ -1,4 +1,8 @@
 {
+  "5.5.9": {
+    "en": "COLLISION FIX - Resolved 687 HIGH severity collisions (same manufacturerName in different device types). Removed 2483 duplicate entries. Manufacturers now assigned to highest priority driver only. HIGH collisions: 687→0, MEDIUM: 746→8. Fingerprinting now reliable.",
+    "fr": "FIX COLLISIONS - Résolu 687 collisions HIGH (même manufacturerName dans types différents). Supprimé 2483 duplicats. Fabricants assignés uniquement au driver prioritaire. Collisions HIGH: 687→0, MEDIUM: 746→8. Fingerprinting maintenant fiable."
+  },
   "5.5.8": {
     "en": "MEGA COMPARISON - Analyzed 102 repos (JohanBendz + 100 forks), 5 key commits per repo history, 18 other Homey Zigbee apps. Total: 3600 unique manufacturers, 397 productIds. All JohanBendz history (609 manufacturers) verified present.",
     "fr": "MEGA COMPARAISON - Analysé 102 repos (JohanBendz + 100 forks), 5 commits clés par historique, 18 autres apps Homey Zigbee. Total: 3600 fabricants uniques, 397 productIds. Tout l'historique JohanBendz (609 fabricants) vérifié présent."
