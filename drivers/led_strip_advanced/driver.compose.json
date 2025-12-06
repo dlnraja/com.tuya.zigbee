@@ -22,11 +22,7 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_odygigth",
-      "_TZ3210_r0xgkft5",
-      "_TZb210_endmggws"
-    ],
+    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [
