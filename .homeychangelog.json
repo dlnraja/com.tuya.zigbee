@@ -1,4 +1,8 @@
 {
+  "5.5.5": {
+    "en": "SDK3 COMPLIANCE & CLEANUP - Fixed 3 invalid device classes (curtain→windowcoverings, blinds→windowcoverings). Removed 1433 duplicate manufacturer entries across 66 drivers. 2855 unique manufacturers properly distributed. 0 validation issues.",
+    "fr": "CONFORMITÉ SDK3 & NETTOYAGE - Corrigé 3 classes invalides (curtain→windowcoverings, blinds→windowcoverings). Supprimé 1433 entrées fabricants dupliquées sur 66 drivers. 2855 fabricants uniques correctement distribués. 0 erreurs validation."
+  },
   "5.5.4": {
     "en": "ULTIMATE DATABASE - Complete metadata extraction: 6774 manufacturers, 139 DPs, 295 clusters, 186 capabilities, 599 flows. All GitHub PRs (191) and Issues (1086) processed. Z2M database integrated.",
     "fr": "BASE ULTIME - Extraction métadonnées complète: 6774 fabricants, 139 DPs, 295 clusters, 186 capabilities, 599 flows. Tous les PRs (191) et Issues (1086) GitHub traités. Base Z2M intégrée."
