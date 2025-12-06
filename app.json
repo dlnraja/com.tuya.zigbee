@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.20",
+  "version": "5.5.21",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.20: Soil sensor periodic DP request + USB outlet button flow trigger",
-    "fr": "V5.5.20: Soil sensor requête DP périodique + USB outlet flow trigger bouton"
+    "en": "V5.5.21: Fix phantom device energy errors + disable battery polling for sleeping buttons",
+    "fr": "V5.5.21: Fix erreurs energy phantom + désactiver polling batterie boutons dormants"
   },
   "category": "appliances",
   "permissions": [],

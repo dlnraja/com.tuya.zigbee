@@ -1,4 +1,8 @@
 {
+  "5.5.21": {
+    "en": "PHANTOM DEVICE + BATTERY POLLING FIX: 1) DynamicEnergyManager: Fixed 'Device Not Found' errors - manager now detects deleted devices and stops save intervals. 2) Button battery polling disabled - buttons sleep and don't respond to polling, now using report-only mode. 3) Added _destroyed flag to prevent operations on deleted devices.",
+    "fr": "FIX PHANTOM DEVICE + POLLING BATTERIE: 1) DynamicEnergyManager: Erreurs 'Device Not Found' corrigées - détection des appareils supprimés. 2) Polling batterie désactivé pour boutons dormants - mode report-only. 3) Flag _destroyed ajouté pour éviter opérations sur appareils supprimés."
+  },
   "5.5.20": {
     "en": "SOIL SENSOR + USB OUTLET FIX: 1) Soil sensor: Added periodic DP requests (30 min) for battery-powered devices that don't report automatically. 2) USB outlet: Removed invalid 'button' capability, replaced with proper flow trigger 'usb_outlet_button_pressed'. 3) Better logging for Tuya DP values.",
     "fr": "FIX SOIL SENSOR + USB OUTLET: 1) Capteur sol: Ajout requêtes DP périodiques (30 min) pour appareils batterie. 2) Prise USB: Capability 'button' invalide supprimée, remplacée par flow trigger 'usb_outlet_button_pressed'. 3) Meilleur logging des valeurs Tuya DP."
