@@ -1,21 +1,32 @@
 name: Monthly Enrichment
 
+# ⚠️ THIS RUNS ON GITHUB ACTIONS ONLY - NOT ON HOMEY BOX
+# Automatically enriches drivers with new manufacturer data from:
+# - GitHub Issues/PRs (JohanBendz, dlnraja)
+# - Zigbee2MQTT device database
+# - Blakadder device database
+# - Google Search (with API key)
+
 on:
   schedule:
     # Run on the 1st of every month at 3:00 AM UTC
-    - cron: '0 3 1 * *'
+    - cron: "0 3 1 * *"
   workflow_dispatch:
     inputs:
       full_scan:
-        description: 'Force full scan (annual rescan)'
+        description: "Force full scan (annual rescan)"
         required: false
-        default: 'false'
+        default: false
         type: boolean
       limit:
-        description: 'Limit number of manufacturers to process'
+        description: "Limit number of manufacturers to process"
         required: false
-        default: '50'
+        default: "50"
         type: string
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
   enrich:
@@ -32,8 +43,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
+          node-version: "18"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
