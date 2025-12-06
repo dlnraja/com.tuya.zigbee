@@ -3,15 +3,25 @@
 const { HybridSensorBase } = require('../../lib/devices');
 
 /**
- * Motion Sensor Radar mmWave Device - v5.3.97 UPDATED FROM Z2M
- * Source: https://www.zigbee2mqtt.io/devices/TS0601_smart_human_presence_sensor_1.html
+ * Motion Sensor Radar mmWave Device - v5.5.26 ENHANCED
  *
- * _TZE200_rhgsbacq and similar radar presence sensors
+ * Sources:
+ * - Z2M: TS0601_HOBEIAN_RADAR (ZG-204ZV)
+ * - Hubitat: TS0601_HOBEIAN_RADAR profile
+ * - Phoscon: TS0601 presence + light sensor
+ *
+ * Features: presence, temperature, humidity, illuminance, battery
+ * Settings: sensitivity, min/max range, fading_time, detection_delay, illuminance_interval
+ *
+ * Models: _TZE200_rhgsbacq, _TZE200_2aaelwxk, _TZE200_3towulqd, etc.
  */
 class MotionSensorRadarDevice extends HybridSensorBase {
 
   // Some radar sensors are battery powered, some are mains
   get mainsPowered() { return false; }
+
+  // v5.5.26: Offline check timeout (60 min for mmWave - Hubitat recommendation)
+  static OFFLINE_CHECK_MS = 60 * 60 * 1000;
 
   get sensorCapabilities() {
     return [
@@ -78,6 +88,10 @@ class MotionSensorRadarDevice extends HybridSensorBase {
       104: { capability: null, setting: 'fading_time' },           // Fading time (s)
       105: { capability: null, setting: 'detection_delay' },       // Detection delay (s)
       106: { capability: null, setting: 'self_test' },             // Self test result
+
+      // v5.5.26: Additional settings from Z2M HOBEIAN_RADAR profile
+      107: { capability: null, setting: 'indicator' },             // LED indicator on/off
+      108: { capability: null, setting: 'illuminance_interval' },  // Lux report interval (min)
     };
   }
 
@@ -93,6 +107,77 @@ class MotionSensorRadarDevice extends HybridSensorBase {
 
     // v5.5.17: Add IAS Zone listener for motion detection
     await this._setupIASMotionListener(zclNode);
+
+    // v5.5.26: Setup offline check (60 min for mmWave sensors - Hubitat recommendation)
+    this._lastEventTime = Date.now();
+    this._setupOfflineCheck();
+
+    // v5.5.26: Initial data query at inclusion
+    this._sendInitialDataQuery();
+  }
+
+  /**
+   * v5.5.26: Setup offline check timer
+   * Mark device unavailable if no event received in 60 minutes
+   * Source: Hubitat TS0601_HOBEIAN_RADAR profile
+   */
+  _setupOfflineCheck() {
+    // Clear existing timer
+    if (this._offlineCheckTimer) {
+      clearInterval(this._offlineCheckTimer);
+    }
+
+    // Check every 10 minutes
+    this._offlineCheckTimer = setInterval(() => {
+      const elapsed = Date.now() - this._lastEventTime;
+      const threshold = MotionSensorRadarDevice.OFFLINE_CHECK_MS;
+
+      if (elapsed > threshold) {
+        this.log(`[MMWAVE] ⚠️ No event in ${Math.round(elapsed / 60000)} min - marking unavailable`);
+        this.setUnavailable('Pas de signal depuis 60+ minutes').catch(() => { });
+      } else {
+        // Make sure it's available if we received data recently
+        this.setAvailable().catch(() => { });
+      }
+    }, 10 * 60 * 1000); // Every 10 minutes
+
+    this.log('[MMWAVE] ⏰ Offline check started (threshold: 60 min)');
+  }
+
+  /**
+   * v5.5.26: Send initial data query at inclusion
+   * Request all DPs while device is awake after pairing
+   */
+  async _sendInitialDataQuery() {
+    try {
+      // Small delay to let device settle after pairing
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      this.log('[MMWAVE] 📤 Sending initial dataQuery...');
+      await this._sendTuyaDataQuery?.().catch(() => { });
+    } catch (err) {
+      this.log('[MMWAVE] Initial dataQuery failed:', err.message);
+    }
+  }
+
+  /**
+   * v5.5.26: Track last event time for offline detection
+   */
+  _updateLastEventTime() {
+    this._lastEventTime = Date.now();
+    // Ensure device is marked as available when we receive data
+    this.setAvailable().catch(() => { });
+  }
+
+  /**
+   * v5.5.26: Cleanup on device deletion
+   */
+  async onDeleted() {
+    if (this._offlineCheckTimer) {
+      clearInterval(this._offlineCheckTimer);
+      this._offlineCheckTimer = null;
+    }
+    await super.onDeleted?.();
   }
 
   /**
@@ -178,7 +263,7 @@ class MotionSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.5: Enhanced logging per MASTER BLOCK specs
+   * v5.5.26: Enhanced Tuya status handler with offline tracking
    * Shows both raw DP value and converted capability value
    */
   onTuyaStatus(status) {
@@ -186,6 +271,9 @@ class MotionSensorRadarDevice extends HybridSensorBase {
       super.onTuyaStatus(status);
       return;
     }
+
+    // v5.5.26: Update last event time for offline detection
+    this._updateLastEventTime();
 
     const rawValue = status.data || status.value;
 

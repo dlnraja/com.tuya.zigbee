@@ -1,4 +1,8 @@
 {
+  "5.5.26": {
+    "en": "ENHANCED DEVICE SUPPORT: 1) mmWave Radar: Added 60-min offline check (Hubitat recommendation), initial dataQuery at inclusion, event time tracking. 2) 2-Gang Switch: Power measurement via electricalMeasurement + metering clusters with attribute reporting. 3) SOS Button: Battery refresh on wake - reads battery when device wakes for button press. 4) Climate Sensor: Time sync improved to every 6h (was 24h). 5) All sleepy devices now use smart wake strategies.",
+    "fr": "SUPPORT AMÉLIORÉ: 1) Radar mmWave: Check offline 60 min (Hubitat), dataQuery initial, suivi événements. 2) Switch 2-Gang: Mesure puissance via clusters electricalMeasurement + metering. 3) Bouton SOS: Refresh batterie au réveil. 4) Capteur Climat: Sync horloge toutes les 6h (était 24h). 5) Stratégies réveil intelligentes pour appareils batterie."
+  },
   "5.5.25": {
     "en": "SOIL SENSOR + SLEEPY DEVICE FIX: 1) Fixed _TZE284_oitavov2 soil sensor DP mappings - DP3=moisture, DP5=temperature (was inverted). 2) Added Tuya dataQuery wake command for battery sensors - forces report on next wake. 3) Periodic dataQuery every 30 min for sleepy devices. 4) Auto-detect temperature scale (÷10 or ÷100). Sources: ZHA quirks, Z2M, Tuya Developer docs.",
     "fr": "FIX CAPTEUR SOL + APPAREILS DORMANTS: 1) Mappings DP corrigés pour _TZE284_oitavov2 - DP3=humidité sol, DP5=température (était inversé). 2) Commande dataQuery ajoutée pour réveiller capteurs batterie. 3) dataQuery périodique toutes les 30 min. 4) Auto-détection échelle température (÷10 ou ÷100). Sources: ZHA quirks, Z2M, docs Tuya Developer."

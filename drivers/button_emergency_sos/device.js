@@ -3,19 +3,25 @@
 const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
 /**
- * SOS Emergency Button Device - Enhanced
+ * SOS Emergency Button Device - v5.5.26 ENHANCED
  *
  * Supported: TS0215A _TZ3000_0dumfk2z
+ *
+ * Sources:
+ * - Z2M: Tuya TS0215A_sos
+ * - Clusters: iasZone (zoneType=remoteControl), powerConfiguration, basic
  *
  * Protocol: IAS Zone for button press + Tuya DP or genPowerCfg for battery
  *
  * DP Mapping (from settings tuya_dp_configuration):
  * - DP 1: button_press
  * - DP 101: battery_percentage
+ *
+ * v5.5.26: Added battery refresh on wake (when device wakes for button press)
  */
 class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
 
-  // Force battery powered
+  // Force battery powered (sleepy end device)
   get mainsPowered() { return false; }
 
   async onNodeInit({ zclNode }) {
@@ -184,6 +190,51 @@ class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
       setTimeout(() => {
         this.setCapabilityValue('alarm_contact', false).catch(this.error);
       }, 5000);
+    }
+
+    // v5.5.26: Refresh battery while device is awake (best practice for sleepy devices)
+    // Device just woke up to send button press, perfect time to read battery
+    this._refreshBatteryOnWake();
+  }
+
+  /**
+   * v5.5.26: Refresh battery reading while device is awake
+   * Called after button press when device is guaranteed to be awake
+   */
+  async _refreshBatteryOnWake() {
+    this.log('[SOS-BUTTON] 🔋 Refreshing battery (device is awake)...');
+
+    try {
+      const endpoint = this.zclNode?.endpoints?.[1];
+      const powerCluster = endpoint?.clusters?.genPowerCfg || endpoint?.clusters?.powerConfiguration;
+
+      if (powerCluster && typeof powerCluster.readAttributes === 'function') {
+        // Read battery attributes while device is awake
+        const attrs = await powerCluster.readAttributes([
+          'batteryPercentageRemaining',
+          'batteryVoltage'
+        ]).catch(() => ({}));
+
+        if (attrs.batteryPercentageRemaining != null) {
+          const battery = Math.round(attrs.batteryPercentageRemaining / 2);
+          this.log(`[SOS-BUTTON] 🔋 Battery: ${battery}%`);
+          if (this.hasCapability('measure_battery')) {
+            await this.setCapabilityValue('measure_battery', battery).catch(() => { });
+          }
+        }
+
+        if (attrs.batteryVoltage != null) {
+          const voltage = attrs.batteryVoltage / 10;
+          this.log(`[SOS-BUTTON] 🔋 Voltage: ${voltage}V`);
+        }
+      }
+
+      // Also try Tuya DP for battery
+      if (this.tuyaEF00Manager && typeof this.tuyaEF00Manager.getData === 'function') {
+        await this.tuyaEF00Manager.getData(101).catch(() => { }); // Battery DP
+      }
+    } catch (err) {
+      this.log('[SOS-BUTTON] Battery refresh failed:', err.message);
     }
   }
 
