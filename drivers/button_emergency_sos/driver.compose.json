@@ -28,10 +28,7 @@
     "batteries": [
       "CR2032",
       "CR2450"
-    ],
-    "approximation": {
-      "usageConstant": 0.5
-    }
+    ]
   },
   "zigbee": {
     "manufacturerName": [
