@@ -1803,6 +1803,49 @@
       }
     }
   },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "🌡️ Calibration (v5.5.28)",
+        "fr": "🌡️ Calibration (v5.5.28)"
+      },
+      "children": [
+        {
+          "id": "temperature_calibration",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)",
+            "fr": "Décalage Température (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1,
+          "hint": {
+            "en": "Add or subtract from temperature reading. Use positive value if sensor reads too low.",
+            "fr": "Ajouter ou soustraire de la température lue. Valeur positive si capteur lit trop bas."
+          }
+        },
+        {
+          "id": "humidity_calibration",
+          "type": "number",
+          "label": {
+            "en": "Humidity Offset (%)",
+            "fr": "Décalage Humidité (%)"
+          },
+          "value": 0,
+          "min": -20,
+          "max": 20,
+          "step": 1,
+          "hint": {
+            "en": "Add or subtract from humidity reading. Use positive value if sensor reads too low.",
+            "fr": "Ajouter ou soustraire de l'humidité lue. Valeur positive si capteur lit trop bas."
+          }
+        }
+      ]
+    }
+  ],
   "images": {
     "small": "drivers/climate_sensor/assets/images/small.png",
     "large": "drivers/climate_sensor/assets/images/large.png",

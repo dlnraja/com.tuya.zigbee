@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.27",
+  "version": "5.5.28",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.27: TuyaDataQuery module + Flow Card refresh action for sleepy devices",
-    "fr": "V5.5.27: Module TuyaDataQuery + action Flow pour rafraîchir appareils batterie"
+    "en": "V5.5.28: TuyaTimeSync module + Calibration settings for temperature/humidity sensors",
+    "fr": "V5.5.28: Module TuyaTimeSync + Réglages calibration pour capteurs temp/humidité"
   },
   "category": "appliances",
   "permissions": [],
@@ -18301,6 +18301,49 @@
           }
         }
       },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "🌡️ Calibration (v5.5.28)",
+            "fr": "🌡️ Calibration (v5.5.28)"
+          },
+          "children": [
+            {
+              "id": "temperature_calibration",
+              "type": "number",
+              "label": {
+                "en": "Temperature Offset (°C)",
+                "fr": "Décalage Température (°C)"
+              },
+              "value": 0,
+              "min": -10,
+              "max": 10,
+              "step": 0.1,
+              "hint": {
+                "en": "Add or subtract from temperature reading. Use positive value if sensor reads too low.",
+                "fr": "Ajouter ou soustraire de la température lue. Valeur positive si capteur lit trop bas."
+              }
+            },
+            {
+              "id": "humidity_calibration",
+              "type": "number",
+              "label": {
+                "en": "Humidity Offset (%)",
+                "fr": "Décalage Humidité (%)"
+              },
+              "value": 0,
+              "min": -20,
+              "max": 20,
+              "step": 1,
+              "hint": {
+                "en": "Add or subtract from humidity reading. Use positive value if sensor reads too low.",
+                "fr": "Ajouter ou soustraire de l'humidité lue. Valeur positive si capteur lit trop bas."
+              }
+            }
+          ]
+        }
+      ],
       "images": {
         "small": "drivers/climate_sensor/assets/images/small.png",
         "large": "drivers/climate_sensor/assets/images/large.png",
@@ -24983,6 +25026,47 @@
           ]
         },
         {
+          "type": "group",
+          "label": {
+            "en": "🌡️ Calibration (v5.5.28)",
+            "fr": "🌡️ Calibration (v5.5.28)"
+          },
+          "children": [
+            {
+              "id": "temperature_calibration",
+              "type": "number",
+              "label": {
+                "en": "Temperature Offset (°C)",
+                "fr": "Décalage Température (°C)"
+              },
+              "value": 0,
+              "min": -10,
+              "max": 10,
+              "step": 0.1,
+              "hint": {
+                "en": "Add or subtract from temperature reading. Use positive value if sensor reads too low, negative if too high.",
+                "fr": "Ajouter ou soustraire de la température lue. Valeur positive si capteur lit trop bas, négative si trop haut."
+              }
+            },
+            {
+              "id": "humidity_calibration",
+              "type": "number",
+              "label": {
+                "en": "Humidity Offset (%)",
+                "fr": "Décalage Humidité (%)"
+              },
+              "value": 0,
+              "min": -20,
+              "max": 20,
+              "step": 1,
+              "hint": {
+                "en": "Add or subtract from humidity reading. Use positive value if sensor reads too low, negative if too high.",
+                "fr": "Ajouter ou soustraire de l'humidité lue. Valeur positive si capteur lit trop bas, négative si trop haut."
+              }
+            }
+          ]
+        },
+        {
           "id": "power_source",
           "type": "dropdown",
           "label": {
@@ -28298,6 +28382,49 @@
           }
         }
       },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "🌡️ Calibration (v5.5.28)",
+            "fr": "🌡️ Calibration (v5.5.28)"
+          },
+          "children": [
+            {
+              "id": "temperature_calibration",
+              "type": "number",
+              "label": {
+                "en": "Temperature Offset (°C)",
+                "fr": "Décalage Température (°C)"
+              },
+              "value": 0,
+              "min": -10,
+              "max": 10,
+              "step": 0.1,
+              "hint": {
+                "en": "Add or subtract from soil temperature reading.",
+                "fr": "Ajouter ou soustraire de la température du sol."
+              }
+            },
+            {
+              "id": "moisture_calibration",
+              "type": "number",
+              "label": {
+                "en": "Soil Moisture Offset (%)",
+                "fr": "Décalage Humidité Sol (%)"
+              },
+              "value": 0,
+              "min": -20,
+              "max": 20,
+              "step": 1,
+              "hint": {
+                "en": "Add or subtract from soil moisture reading. Positive if sensor reads too low.",
+                "fr": "Ajouter ou soustraire de l'humidité du sol. Positif si capteur lit trop bas."
+              }
+            }
+          ]
+        }
+      ],
       "images": {
         "small": "drivers/soil_sensor/assets/images/small.png",
         "large": "drivers/soil_sensor/assets/images/large.png",
