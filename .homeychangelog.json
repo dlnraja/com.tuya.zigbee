@@ -1,4 +1,8 @@
 {
+  "5.5.8": {
+    "en": "MEGA COMPARISON - Analyzed 102 repos (JohanBendz + 100 forks), 5 key commits per repo history, 18 other Homey Zigbee apps. Total: 3600 unique manufacturers, 397 productIds. All JohanBendz history (609 manufacturers) verified present.",
+    "fr": "MEGA COMPARAISON - Analysé 102 repos (JohanBendz + 100 forks), 5 commits clés par historique, 18 autres apps Homey Zigbee. Total: 3600 fabricants uniques, 397 productIds. Tout l'historique JohanBendz (609 fabricants) vérifié présent."
+  },
   "5.5.7": {
     "en": "FINGERPRINT ENHANCED - Homey uses manufacturerName + productId for device matching. Added 397 productIds (TS0601, TS0001-TS0004, TS0201-TS0210, etc.) to improve pairing accuracy. Same manufacturerName can now be distinguished by different productIds.",
     "fr": "FINGERPRINT AMÉLIORÉ - Homey utilise manufacturerName + productId pour le matching. Ajouté 397 productIds (TS0601, TS0001-TS0004, TS0201-TS0210, etc.) pour améliorer la précision du pairing. Même manufacturerName peut maintenant être distingué par différents productIds."

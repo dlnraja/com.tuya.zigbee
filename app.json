@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.7",
+  "version": "5.5.8",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.7: FINGERPRINT ENHANCED - 3598 manufacturers + 397 productIds for better device matching",
-    "fr": "V5.5.7: FINGERPRINT AMÉLIORÉ - 3598 fabricants + 397 productIds pour meilleur matching"
+    "en": "V5.5.8: MEGA COMPARISON - 3600 mfrs from 102 repos, 609 JohanBendz commits, all forks analyzed",
+    "fr": "V5.5.8: MEGA COMPARAISON - 3600 mfrs de 102 repos, 609 commits JohanBendz, tous forks analysés"
   },
   "category": "appliances",
   "permissions": [],
@@ -36031,6 +36031,7 @@
           "_TZ3210_umi6vbsz",
           "_TZ3210_up3pngle",
           "_TZ3210_vfwhhldz",
+          "_TZ3210_w0qqde0g",
           "_TZ3210_wdexaypg",
           "_TZ3210_x13bu7za",
           "_TZ3210_xbpt8ewc",
@@ -36113,6 +36114,7 @@
           "_TZE204_ycke4deo",
           "_TZE204_ztqnh5cg",
           "_TZE204_zuq5xxib",
+          "_TZE20X_xxxxxxxx",
           "_TZE21C_dohbhb5k",
           "_TZE284_0zaf1cr8",
           "_TZE284_4qznlkbu",
