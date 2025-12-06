@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.16",
+  "version": "5.5.17",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.16: WORLDWIDE ENRICHMENT - 3930 mfrs, 318 pids, scanned 357 Z2M brands + ZHA + icons fixed",
-    "fr": "V5.5.16: ENRICHISSEMENT MONDIAL - 3930 mfrs, 318 pids, scanné 357 marques Z2M + ZHA + icônes corrigées"
+    "en": "V5.5.17: BUG FIXES - SOS button, mmWave radar, HOBEIAN motion, IAS Zone improved",
+    "fr": "V5.5.17: CORRECTIONS - Bouton SOS, radar mmWave, HOBEIAN mouvement, IAS Zone amélioré"
   },
   "category": "appliances",
   "permissions": [],
@@ -11084,7 +11084,6 @@
         "manufacturerName": [
           "_TZ2000_avdnvykf",
           "_TZ2000_hjsgdkfl",
-          "_TZ3000_0dumfk2z",
           "_TZ3000_0ht8dnxj",
           "_TZ3000_8gs8h2e4",
           "_TZ3000_ssp0maqm",
@@ -13098,6 +13097,7 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "_TZ3000_0dumfk2z",
           "_TZ3000_el5kt5im",
           "_TZ3000_eo3dttwe",
           "_TZ3000_fsiepnrh",
@@ -24378,6 +24378,7 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
+          "HOBEIAN",
           "TS0207",
           "TUYATEC-53o41joc",
           "TUYATEC-b5g40alm",
@@ -24776,6 +24777,8 @@
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
+        "measure_distance",
+        "measure_presence_time",
         "measure_temperature",
         "measure_humidity",
         "measure_luminance",
@@ -34154,6 +34157,50 @@
       "getable": true,
       "setable": true,
       "uiComponent": "picker"
+    },
+    "measure_distance": {
+      "type": "number",
+      "title": {
+        "en": "Distance",
+        "fr": "Distance"
+      },
+      "units": {
+        "en": "cm",
+        "fr": "cm"
+      },
+      "insights": true,
+      "desc": {
+        "en": "The distance to the detected target in centimeters",
+        "fr": "La distance vers la cible détectée en centimètres"
+      },
+      "chartType": "spline",
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/distance.svg"
+    },
+    "measure_presence_time": {
+      "type": "number",
+      "title": {
+        "en": "Presence Time",
+        "fr": "Temps de Présence"
+      },
+      "units": {
+        "en": "s",
+        "fr": "s"
+      },
+      "insights": true,
+      "desc": {
+        "en": "Time since presence was detected in seconds",
+        "fr": "Temps depuis la détection de présence en secondes"
+      },
+      "chartType": "spline",
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/timer.svg"
     },
     "measure_voc": {
       "type": "number",

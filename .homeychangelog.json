@@ -1,4 +1,8 @@
 {
+  "5.5.17": {
+    "en": "BUG FIXES from diagnostics + forum: 1) SOS Button (_TZ3000_0dumfk2z/TS0215A) - Added to button_emergency_sos. 2) mmWave Radar - Added occupancySensing + IAS Zone listeners. 3) DynamicFlowCardManager - Fixed 'Invalid Capability' error. 4) HOBEIAN ZG-204ZM motion sensor added. 5) IAS Zone motion detection enhanced for non-Tuya sensors. 6) Fixed '56 years ago' timestamp issue. 3931 manufacturers, 318 productIds, 0 collisions.",
+    "fr": "CORRECTIONS diagnostics + forum: 1) Bouton SOS (_TZ3000_0dumfk2z/TS0215A) ajouté. 2) Radar mmWave - listeners occupancySensing + IAS Zone. 3) DynamicFlowCardManager - erreur 'Invalid Capability' corrigée. 4) Capteur mouvement HOBEIAN ZG-204ZM ajouté. 5) Détection mouvement IAS Zone améliorée. 6) Problème timestamp '56 years ago' corrigé. 3931 fabricants, 318 productIds, 0 collisions."
+  },
   "5.5.16": {
     "en": "WORLDWIDE ENRICHMENT - Scanned 357 Z2M brand files + ZHA database. Added 88 new manufacturers and 13 new productIds. Fixed 3 missing driver icons (lcdtemphumidsensor, led_controller_dimmable, temphumidsensor). Fixed 3 driver classes. Audited all 83 drivers for category compliance. Sources: tuya (1364), lumi (314), moes (76), ikea (37), etc. Final: 3930 manufacturers, 318 productIds, 0 collisions.",
     "fr": "ENRICHISSEMENT MONDIAL - Scanné 357 fichiers marques Z2M + base ZHA. Ajouté 88 nouveaux fabricants et 13 nouveaux productIds. Corrigé 3 icônes manquantes. Corrigé 3 classes drivers. Audité 83 drivers pour conformité catégorie. Sources: tuya (1364), lumi (314), moes (76), ikea (37), etc. Final: 3930 fabricants, 318 productIds, 0 collisions."
