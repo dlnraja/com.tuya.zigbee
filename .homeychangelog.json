@@ -1,4 +1,8 @@
 {
+  "5.5.7": {
+    "en": "FINGERPRINT ENHANCED - Homey uses manufacturerName + productId for device matching. Added 397 productIds (TS0601, TS0001-TS0004, TS0201-TS0210, etc.) to improve pairing accuracy. Same manufacturerName can now be distinguished by different productIds.",
+    "fr": "FINGERPRINT AMÉLIORÉ - Homey utilise manufacturerName + productId pour le matching. Ajouté 397 productIds (TS0601, TS0001-TS0004, TS0201-TS0210, etc.) pour améliorer la précision du pairing. Même manufacturerName peut maintenant être distingué par différents productIds."
+  },
   "5.5.6": {
     "en": "RESTORED MANUFACTURERS - Recovered 738 manufacturers from v5.3.13 that were lost during cleanup. Total: 3598 unique manufacturers across 83 drivers. 0 duplicates within files (duplicates across drivers are valid for multi-type devices).",
     "fr": "FABRICANTS RESTAURÉS - Récupéré 738 fabricants de v5.3.13 perdus lors du nettoyage. Total: 3598 fabricants uniques sur 83 drivers. 0 doublons par fichier (doublons entre drivers valides pour appareils multi-types)."
