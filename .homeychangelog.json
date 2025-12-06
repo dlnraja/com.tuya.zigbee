@@ -1,4 +1,8 @@
 {
+  "5.5.14": {
+    "en": "ALL RULES APPLIED - Executed all fingerprinting scripts: MASTER_APPLY_ALL_RULES, MEGA_ENRICHMENT_50, DETECT_COLLISIONS, QUICK_VALIDATE. Fixed 3 drivers without productId (button_wireless_8, module_mini_switch, power_meter). Final: 3743 mfrs, 276 pids, 0 collisions. All Rule 9.x validated. CI/CD workflows updated.",
+    "fr": "TOUTES RÈGLES APPLIQUÉES - Exécuté tous les scripts fingerprinting: MASTER_APPLY_ALL_RULES, MEGA_ENRICHMENT_50, DETECT_COLLISIONS, QUICK_VALIDATE. Corrigé 3 drivers sans productId. Final: 3743 mfrs, 276 pids, 0 collisions. Toutes règles 9.x validées. Workflows CI/CD mis à jour."
+  },
   "5.5.13": {
     "en": "MEGA ENRICHMENT - Scanned 50 last commits + 9 Z2M databases (tuya, moes, zemismart, lonsonho, blitzwolf, neo, immax, ewelink, other). Added 6 productIds. 3743 unique manufacturers, 276 productIds, 0 collisions. All fingerprinting rules applied.",
     "fr": "MEGA ENRICHISSEMENT - Scanné 50 derniers commits + 9 bases Z2M (tuya, moes, zemismart, lonsonho, blitzwolf, neo, immax, ewelink, other). Ajouté 6 productIds. 3743 fabricants uniques, 276 productIds, 0 collisions. Toutes règles fingerprinting appliquées."
