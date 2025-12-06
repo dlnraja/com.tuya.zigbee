@@ -1,0 +1,846 @@
+{
+  "generated": "2025-12-06T07:29:34.222Z",
+  "stats": {
+    "manufacturers": 6774,
+    "dps": 139,
+    "clusters": 295,
+    "capabilities": 186,
+    "dpMappings": 1487,
+    "z2mExposes": 714,
+    "flowTriggers": 364,
+    "flowConditions": 83,
+    "flowActions": 152,
+    "deviceClasses": 13,
+    "drivers": 83
+  },
+  "topDPs": [
+    {
+      "dp": 1,
+      "usedBy": 6,
+      "z2mExposes": [
+        "occupancy",
+        "water_consumed",
+        "state_l1",
+        "temperature",
+        "contact",
+        "gas",
+        "state",
+        "state_right",
+        "presence",
+        "system_mode",
+        "preset",
+        "smoke",
+        "energy",
+        "action",
+        "tds",
+        "state_all",
+        "vibration",
+        "switch_1",
+        "preheat",
+        "valve_1",
+        "air_switch",
+        "state_usb_a"
+      ]
+    },
+    {
+      "dp": 2,
+      "usedBy": 5,
+      "z2mExposes": [
+        "state_l2",
+        "humidity",
+        "battery",
+        "illuminance",
+        "gas_value",
+        "brightness",
+        "brightness_l1",
+        "state_light",
+        "position",
+        "preset",
+        "current_heating_setpoint",
+        "smoke_concentration",
+        "produced_energy",
+        "mode",
+        "radar_sensitivity",
+        "action",
+        "sensitivity",
+        "large_motion_detection_sensitivity",
+        "static_detection_sensitivity",
+        "countdown",
+        "power_on_behavior",
+        "move_sensitivity",
+        "presence_sensitivity",
+        "energy_produced",
+        "temperature",
+        "co2",
+        "switch_2",
+        "liquid_depth",
+        "valve_2",
+        "motion_detection_sensitivity",
+        "state_usb_c"
+      ]
+    },
+    {
+      "dp": 3,
+      "usedBy": 3,
+      "z2mExposes": [
+        "state_l3",
+        "battery_state",
+        "soil_moisture",
+        "min_brightness",
+        "brightness",
+        "min_brightness_l1",
+        "state_left",
+        "position",
+        "local_temperature",
+        "running_state",
+        "working_status",
+        "garage_door_contact",
+        "action",
+        "minimum_range",
+        "battery",
+        "mov_minimum_distance",
+        "detection_distance_min",
+        "shield_range",
+        "min_distance",
+        "switch_3",
+        "closest_detection_distance",
+        "near_detection",
+        "work_state",
+        "state_plug_1"
+      ]
+    },
+    {
+      "dp": 4,
+      "usedBy": 3,
+      "z2mExposes": [
+        "battery",
+        "state_l4",
+        "light_type",
+        "light_type_l1",
+        "preset",
+        "current_heating_setpoint",
+        "boost_heating",
+        "tamper",
+        "action",
+        "maximum_range",
+        "large_motion_detection_distance",
+        "static_detection_distance",
+        "error_status",
+        "detection_distance_max",
+        "detection_range",
+        "max_distance",
+        "eco_mode",
+        "distance",
+        "largest_movement_detection_distance",
+        "far_detection",
+        "state_plug_2",
+        "system_mode"
+      ]
+    },
+    {
+      "dp": 15,
+      "usedBy": 3,
+      "z2mExposes": [
+        "battery",
+        "state_l3",
+        "min_temperature",
+        "window_open",
+        "max_temperature_limit",
+        "large_motion_detection_sensitivity",
+        "power_factor",
+        "countdown_l7",
+        "radar_sensitivity",
+        "leakage_current",
+        "leakage"
+      ]
+    },
+    {
+      "dp": 101,
+      "usedBy": 3,
+      "z2mExposes": [
+        "child_lock",
+        "action",
+        "illuminance",
+        "battery",
+        "comfort_temperature",
+        "boost_timeset_countdown",
+        "schedule_monday",
+        "pi_heating_demand",
+        "local_temperature_calibration",
+        "max_temperature_limit",
+        "boost_heating",
+        "test",
+        "humidity",
+        "energy",
+        "total_energy",
+        "switch_sensitivity",
+        "running_state",
+        "backlight",
+        "detection_delay",
+        "alarm_time",
+        "energy_a",
+        "state",
+        "rain_sensor_status",
+        "state_l1",
+        "state_l2",
+        "ac_frequency",
+        "current_a",
+        "find_switch",
+        "entry_filter_time",
+        "gate_enable_01",
+        "manual_mode",
+        "sensitivity",
+        "orp",
+        "indicator",
+        "schedule_sunday",
+        "target_distance",
+        "x",
+        "switch1",
+        "presence",
+        "occupancy",
+        "movement_timeout",
+        "entry_sensitivity",
+        "system_mode",
+        "boost_time",
+        "contact",
+        "illuminance_sampling",
+        "static_sensitivity",
+        "voltage",
+        "week_program",
+        "illuminance_trigger"
+      ]
+    },
+    {
+      "dp": 5,
+      "usedBy": 2,
+      "z2mExposes": [
+        "temperature",
+        "max_brightness",
+        "max_brightness_l1",
+        "state_l5",
+        "motor_direction",
+        "local_temperature",
+        "boost_time",
+        "status_indication",
+        "tamper",
+        "action",
+        "fan_mode",
+        "reverse_direction"
+      ]
+    },
+    {
+      "dp": 9,
+      "usedBy": 2,
+      "z2mExposes": [
+        "countdown_l3",
+        "temperature_unit",
+        "self_test_result",
+        "min_brightness_l2",
+        "sensitivity",
+        "position",
+        "max_temperature_limit",
+        "max_temperature",
+        "self_test",
+        "child_lock",
+        "target_distance",
+        "power",
+        "countdown_l1",
+        "distance",
+        "fault",
+        "closest_target_distance",
+        "target_distance_closest",
+        "countdown_plug_1"
+      ]
+    },
+    {
+      "dp": 18,
+      "usedBy": 2,
+      "z2mExposes": [
+        "humidity_periodic_report",
+        "light_type_l3",
+        "backlight",
+        "schedule_tuesday",
+        "min_temperature",
+        "carbon_monoxide",
+        "current",
+        "over_current_threshold",
+        "over_current_breaker",
+        "over_voltage_threshold",
+        "over_voltage_breaker",
+        "under_voltage_threshold",
+        "under_voltage_breaker",
+        "insufficient_balance_threshold",
+        "insufficient_balance_breaker",
+        "meter_id",
+        "mode_l1",
+        "temperature",
+        "open_window_active",
+        "max_temperature_f"
+      ]
+    },
+    {
+      "dp": 103,
+      "usedBy": 2,
+      "z2mExposes": [
+        "light_interval",
+        "alarm_siren",
+        "illuminance_maximum_today",
+        "max_temperature_alarm",
+        "upper_stroke_limit",
+        "tilt_mode",
+        "holiday_temperature",
+        "set_upper_limit",
+        "schedule_wednesday",
+        "schedule_tuesday",
+        "schedule_monday",
+        "humidity_calibration",
+        "power",
+        "temperature",
+        "floor_low_protection",
+        "factory_reset",
+        "illuminance",
+        "name_l1",
+        "static_detection_distance",
+        "motion_false_detection",
+        "battery_state",
+        "child_lock",
+        "current",
+        "current_a",
+        "power_a",
+        "voltage_a",
+        "voltage_l1",
+        "action",
+        "illuminance_treshold_min",
+        "cline",
+        "gate_enable_03",
+        "energy_b",
+        "deadzone_temperature",
+        "fading_time",
+        "temperature_sensor",
+        "none_delay_time",
+        "state_l3",
+        "z",
+        "switch3",
+        "trigger_hold",
+        "current_heating_setpoint",
+        "local_temperature_calibration_f",
+        "departure_delay",
+        "eco_temperature",
+        "brightness",
+        "temperature_sensibility",
+        "week_program_1",
+        "speed",
+        "soil_sampling",
+        "led_bright_l2",
+        "quiet",
+        "version",
+        "buzzer_mute",
+        "presence_delay"
+      ]
+    },
+    {
+      "dp": 105,
+      "usedBy": 2,
+      "z2mExposes": [
+        "transmission_power",
+        "rain_intensity",
+        "max_humidity_alarm",
+        "lower_stroke_limit",
+        "auto_temperature",
+        "motor_speed",
+        "eco_temperature",
+        "schedule_friday",
+        "schedule_thursday",
+        "schedule_wednesday",
+        "ac_frequency",
+        "window_open_detection_temp",
+        "dp105",
+        "tumble_switch",
+        "name_l3",
+        "presence",
+        "detection_delay",
+        "medium_motion_detection_sensitivity",
+        "valve_status_l2",
+        "voltage_b",
+        "power_a",
+        "power_l1",
+        "state",
+        "presence_timeout",
+        "light_switch",
+        "entry_sensitivity",
+        "gate_enable_05",
+        "current",
+        "max_temperature_limit",
+        "backlightvalue",
+        "schedule_saturday",
+        "schedule_tuesday",
+        "state_l5",
+        "battery",
+        "humidity_calibration",
+        "timer",
+        "move_sensitivity",
+        "deadzone_temperature_f",
+        "far_movement_sensitivity",
+        "block_time",
+        "frost_protection_temperature",
+        "charge_state",
+        "temperature_calibration",
+        "adjustment_mode",
+        "energy_yesterday",
+        "week_program_3",
+        "led_bright_l3",
+        "produced_energy"
+      ]
+    },
+    {
+      "dp": 7,
+      "usedBy": 1,
+      "z2mExposes": [
+        "countdown_l1",
+        "temperature",
+        "humidity",
+        "alarm_time",
+        "state_l2",
+        "countdown",
+        "position",
+        "child_lock",
+        "window",
+        "backlight_mode",
+        "state_l7",
+        "duration",
+        "battery",
+        "tilt",
+        "max_set",
+        "action",
+        "countdown_usb_a"
+      ]
+    },
+    {
+      "dp": 10,
+      "usedBy": 1,
+      "z2mExposes": [
+        "countdown_l4",
+        "battery",
+        "max_temperature_alarm",
+        "preheat",
+        "light_type_l2",
+        "delay_time",
+        "min_temperature_limit",
+        "frost_protection",
+        "min_temperature",
+        "frost",
+        "countdown_l2",
+        "countdown_plug_2"
+      ]
+    },
+    {
+      "dp": 12,
+      "usedBy": 1,
+      "z2mExposes": [
+        "illuminance",
+        "max_humidity_alarm",
+        "lifecycle",
+        "countdown_l2",
+        "motor_fault",
+        "child_lock",
+        "fading_time",
+        "countdown_l4",
+        "countdown_l6",
+        "detection_delay",
+        "departure_delay",
+        "clear_energy",
+        "min_temperature_f",
+        "light_mode"
+      ]
+    },
+    {
+      "dp": 13,
+      "usedBy": 1,
+      "z2mExposes": [
+        "state",
+        "min_humidity_alarm",
+        "alarm_switch",
+        "state_master",
+        "battery",
+        "large_motion_detection_distance",
+        "countdown_l1",
+        "countdown_l5",
+        "alarm",
+        "radar_range",
+        "detection_range",
+        "test1",
+        "countdown_1"
+      ]
+    },
+    {
+      "dp": 14,
+      "usedBy": 1,
+      "z2mExposes": [
+        "auto_clean",
+        "power_on_behavior",
+        "battery_state",
+        "window_detection",
+        "alarm_switch",
+        "battery_low",
+        "small_motion_detection_distance",
+        "countdown_l2",
+        "countdown_l6",
+        "charge_energy",
+        "countdown_2",
+        "relay_status",
+        "battery_value"
+      ]
+    },
+    {
+      "dp": 16,
+      "usedBy": 1,
+      "z2mExposes": [
+        "meter_id",
+        "backlight_switch",
+        "silence",
+        "state",
+        "alarm_state",
+        "backlight_mode",
+        "brightness_l3",
+        "current_heating_setpoint",
+        "open_window_temperature",
+        "max_temperature",
+        "local_temperature",
+        "min_temperature_limit",
+        "small_motion_detection_sensitivity",
+        "clear_energy",
+        "countdown_l8",
+        "presence_sensitivity",
+        "radar_sensitivity",
+        "backlight",
+        "schedule",
+        "border",
+        "switch_backlight"
+      ]
+    },
+    {
+      "dp": 17,
+      "usedBy": 1,
+      "z2mExposes": [
+        "temperature_periodic_report",
+        "min_brightness_l3",
+        "open_window_time",
+        "schedule_monday",
+        "alarm",
+        "self_test",
+        "alarm_switch",
+        "high_temperature_threshold",
+        "high_temperature_breaker",
+        "overload_breaker",
+        "overload_threshold",
+        "leakage_threshold",
+        "leakage_breaker",
+        "backlight_mode",
+        "action"
+      ]
+    },
+    {
+      "dp": 19,
+      "usedBy": 1,
+      "z2mExposes": [
+        "temperature_sensitivity",
+        "max_brightness_l3",
+        "state_l1",
+        "max_temperature",
+        "factory_reset",
+        "schedule_wednesday",
+        "local_temperature_calibration",
+        "power",
+        "upper_temp",
+        "mode_l2",
+        "detection_distance",
+        "dis_current",
+        "co",
+        "target_distance",
+        "humidity",
+        "installation_height"
+      ]
+    },
+    {
+      "dp": 102,
+      "usedBy": 1,
+      "z2mExposes": [
+        "backlight",
+        "vibration",
+        "light",
+        "illuminance_average_20min",
+        "eco_temperature",
+        "factory_reset",
+        "open_window_temperature",
+        "schedule_tuesday",
+        "position",
+        "schedule_monday",
+        "deadzone_temperature",
+        "boost_time",
+        "illuminance",
+        "produced_energy",
+        "temperature",
+        "floor_temp_protection",
+        "frost_protection",
+        "occupancy",
+        "fading_time",
+        "illuminance_interval",
+        "power_factor_a",
+        "rain_sensor_switch",
+        "state_l1",
+        "voltage",
+        "voltage_a",
+        "current_b",
+        "update_frequency",
+        "energy_flow",
+        "action",
+        "illuminance_treshold_max",
+        "presence_sensitivity",
+        "departure_delay",
+        "gate_enable_02",
+        "energy_produced_a",
+        "keep_time",
+        "free_chlorine",
+        "local_temperature",
+        "running_state",
+        "external_temperature_input",
+        "state_l2",
+        "y",
+        "switch2",
+        "sensitivity",
+        "soil_calibration",
+        "reclosing_allowed_times",
+        "local_temperature_calibration",
+        "idle_timeout",
+        "entry_distance",
+        "temperature_accuracy",
+        "state",
+        "motion_sensitivity",
+        "current",
+        "work_state",
+        "led_bright_l1",
+        "turbo",
+        "presence_time"
+      ]
+    }
+  ],
+  "topCapabilities": [
+    {
+      "capability": "measure_battery",
+      "count": 1367
+    },
+    {
+      "capability": "measure_temperature",
+      "count": 522
+    },
+    {
+      "capability": "alarm_motion",
+      "count": 364
+    },
+    {
+      "capability": "measure_humidity",
+      "count": 349
+    },
+    {
+      "capability": "measure_power",
+      "count": 240
+    },
+    {
+      "capability": "alarm_battery",
+      "count": 232
+    },
+    {
+      "capability": "measure_luminance",
+      "count": 208
+    },
+    {
+      "capability": "measure_voltage",
+      "count": 146
+    },
+    {
+      "capability": "meter_power",
+      "count": 145
+    },
+    {
+      "capability": "alarm_generic",
+      "count": 142
+    },
+    {
+      "capability": "alarm_contact",
+      "count": 134
+    },
+    {
+      "capability": "measure_current",
+      "count": 121
+    },
+    {
+      "capability": "light_hue",
+      "count": 87
+    },
+    {
+      "capability": "light_temperature",
+      "count": 81
+    },
+    {
+      "capability": "light_saturation",
+      "count": 77
+    },
+    {
+      "capability": "target_temperature",
+      "count": 64
+    },
+    {
+      "capability": "onoff",
+      "count": 55
+    },
+    {
+      "capability": "alarm_smoke",
+      "count": 52
+    },
+    {
+      "capability": "alarm_water",
+      "count": 40
+    },
+    {
+      "capability": "alarm_co",
+      "count": 39
+    },
+    {
+      "capability": "windowcoverings_set",
+      "count": 38
+    },
+    {
+      "capability": "light_mode",
+      "count": 33
+    },
+    {
+      "capability": "alarm_triggered",
+      "count": 29
+    },
+    {
+      "capability": "alarm_tamper",
+      "count": 28
+    },
+    {
+      "capability": "windowcoverings_state",
+      "count": 27
+    },
+    {
+      "capability": "dim",
+      "count": 26
+    },
+    {
+      "capability": "measure_co2",
+      "count": 22
+    },
+    {
+      "capability": "measure_pm25",
+      "count": 19
+    },
+    {
+      "capability": "alarm_temperature",
+      "count": 16
+    },
+    {
+      "capability": "measure_voc",
+      "count": 14
+    }
+  ],
+  "topClusters": [
+    {
+      "cluster": "EF00",
+      "count": 155
+    },
+    {
+      "cluster": "ON_OFF",
+      "count": 134
+    },
+    {
+      "cluster": "POWER_CONFIGURATION",
+      "count": 104
+    },
+    {
+      "cluster": "on",
+      "count": 104
+    },
+    {
+      "cluster": "readAttributes",
+      "count": 102
+    },
+    {
+      "cluster": "js",
+      "count": 60
+    },
+    {
+      "cluster": "endpoint",
+      "count": 59
+    },
+    {
+      "cluster": "0001",
+      "count": 51
+    },
+    {
+      "cluster": "TEMPERATURE_MEASUREMENT",
+      "count": 49
+    },
+    {
+      "cluster": "CLUSTER",
+      "count": 38
+    },
+    {
+      "cluster": "LEVEL_CONTROL",
+      "count": 29
+    },
+    {
+      "cluster": "IAS_ZONE",
+      "count": 27
+    },
+    {
+      "cluster": "0500",
+      "count": 25
+    },
+    {
+      "cluster": "0000",
+      "count": 22
+    },
+    {
+      "cluster": "0B04",
+      "count": 22
+    },
+    {
+      "cluster": "0402",
+      "count": 21
+    },
+    {
+      "cluster": "0405",
+      "count": 21
+    },
+    {
+      "cluster": "ILLUMINANCE_MEASUREMENT",
+      "count": 21
+    },
+    {
+      "cluster": "require",
+      "count": 21
+    },
+    {
+      "cluster": "0300",
+      "count": 19
+    }
+  ],
+  "deviceClasses": {
+    "sensor": 29,
+    "light": 13,
+    "button": 6,
+    "fan": 2,
+    "curtain": 1,
+    "windowcoverings": 1,
+    "doorbell": 1,
+    "lock": 2,
+    "other": 7,
+    "thermostat": 4,
+    "socket": 15,
+    "blinds": 1,
+    "heater": 1
+  }
+}
