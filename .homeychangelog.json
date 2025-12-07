@@ -1,4 +1,8 @@
 {
+  "5.5.45": {
+    "en": "TUYA EVENTS FIX: 1) TuyaSpecificCluster.COMMANDS restructured - incoming commands (response, reporting) now have 'args' to emit events. 2) Added mcuSyncTime command (0x24). 3) TuyaEF00Manager: Added DIRECT cluster listener using community pattern zclNode.endpoints[1].clusters.tuya.on('response'|'reporting'). 4) This is the CONFIRMED working pattern from Homey community forums.",
+    "fr": "FIX EVENEMENTS TUYA: 1) TuyaSpecificCluster.COMMANDS restructuré - commandes entrantes (response, reporting) ont 'args' pour émettre événements. 2) Ajout commande mcuSyncTime (0x24). 3) TuyaEF00Manager: Ajout listener DIRECT pattern communauté zclNode.endpoints[1].clusters.tuya.on('response'|'reporting'). 4) Pattern confirmé par forums communauté Homey."
+  },
   "5.5.44": {
     "en": "TUYA CLUSTER FIX: 1) TuyaSpecificCluster.NAME changed from 'tuyaSpecific' to 'tuya'. 2) Community pattern: zclNode.endpoints[1].clusters.tuya.on('response', ...). 3) Only ONE cluster registered for 0xEF00 (was 2 = conflict!). 4) TuyaEF00Manager now tries 'tuya' first for binding. 5) registerClusters.js simplified - only TuyaSpecificCluster.",
     "fr": "FIX CLUSTER TUYA: 1) TuyaSpecificCluster.NAME changé de 'tuyaSpecific' à 'tuya'. 2) Pattern communauté: zclNode.endpoints[1].clusters.tuya.on('response', ...). 3) UN SEUL cluster enregistré pour 0xEF00 (était 2 = conflit!). 4) TuyaEF00Manager essaie 'tuya' en premier pour binding. 5) registerClusters.js simplifié."
