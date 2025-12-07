@@ -1,4 +1,8 @@
 {
+  "5.5.81": {
+    "en": "ENHANCED LOW-LEVEL HANDLER: 1) Tries multiple methods to get ZigBeeNode: this.node, homey.zigbee.getNode(), this.getNode(), zclNode.node. 2) Logs node type and available methods. 3) Logs ALL incoming frames (not just 0xEF00) to debug what the device sends. 4) If you see '[TUYA-P0] 📦 FRAME' logs, the handler is working. 5) Analysis of v46-v52 showed naming inconsistencies - v5.5.80's alignment with Johan is correct.",
+    "fr": "HANDLER BAS NIVEAU AMÉLIORÉ: 1) Essaie plusieurs méthodes pour obtenir ZigBeeNode. 2) Log le type de nœud et les méthodes disponibles. 3) Log TOUTES les frames entrantes pour débugger. 4) Si vous voyez '[TUYA-P0] 📦 FRAME', le handler fonctionne. 5) L'alignement v5.5.80 avec Johan est correct."
+  },
   "5.5.80": {
     "en": "ALIGNED WITH JOHAN BENDZ WORKING IMPLEMENTATION: 1) TuyaSpecificCluster COMMANDS now exactly match Johan's structure: datapoint(0x00), reporting(0x01), response(0x02), reportingConfiguration(0x06). 2) Command args follow Tuya DP protocol: { status, transid, dp, datatype, length, data }. 3) Added onResponse(), onReporting(), onReportingConfiguration() methods that emit events. 4) BoundCluster methods updated to process Johan's payload format. 5) Added _parseDataValue() based on Johan's getDataValue(). 6) Combined with v5.5.79's low-level handleFrame for TZE284 devices that don't declare 0xEF00 cluster.",
     "fr": "ALIGNÉ AVEC L'IMPLÉMENTATION FONCTIONNELLE DE JOHAN BENDZ: 1) Les COMMANDS de TuyaSpecificCluster correspondent maintenant exactement à la structure de Johan. 2) Args suivent le protocole Tuya DP. 3) Ajout des méthodes onResponse/onReporting. 4) BoundCluster mis à jour. 5) Ajout _parseDataValue(). 6) Combiné avec handleFrame bas niveau de v5.5.79."
