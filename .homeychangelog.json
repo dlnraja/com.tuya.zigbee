@@ -1,4 +1,8 @@
 {
+  "5.5.56": {
+    "en": "FINGERPRINT FIX: Moved _TZ3000_h1ipgkwn from switch_2gang to usb_outlet_advanced. This device is a 2-socket + 2-USB outlet with Zigbee router functionality, NOT a simple 2-gang switch. Users with this device should delete and re-pair to get correct driver matching.",
+    "fr": "FIX FINGERPRINT: _TZ3000_h1ipgkwn déplacé de switch_2gang vers usb_outlet_advanced. Cet appareil est une prise 2-prises + 2-USB avec fonction routeur Zigbee. Supprimer et ré-appairer pour utiliser le bon driver."
+  },
   "5.5.55": {
     "en": "USB+2GANG MULTI-ENDPOINT SUPPORT: 1) usb_outlet_advanced: Added endpoints 2 and 3 to driver.compose.json for devices with multiple outlets. 2) ZCL listeners for EP2 (Socket 2) and EP3 (USB 1) - receives on/off state changes. 3) Hybrid control: capability listeners now send BOTH Tuya DP AND ZCL commands for maximum compatibility. 4) Works with devices that use standard ZCL onOff clusters instead of Tuya DP. Fixes devices incorrectly matched to switch_2gang.",
     "fr": "SUPPORT MULTI-ENDPOINT USB+2GANG: 1) usb_outlet_advanced: Endpoints 2 et 3 ajoutés. 2) Listeners ZCL pour EP2 (Prise 2) et EP3 (USB 1). 3) Contrôle hybride: commandes Tuya DP ET ZCL. 4) Compatible devices ZCL standard."
