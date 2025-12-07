@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.37",
+  "version": "5.5.38",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.37: Fixed DP logging for soil sensor & climate monitor",
-    "fr": "V5.5.37: Correction du logging DP pour capteur sol & moniteur climatique"
+    "en": "V5.5.38: SOS button timer cleanup + improved diagnostics",
+    "fr": "V5.5.38: Nettoyage timers SOS button + diagnostics améliorés"
   },
   "category": "appliances",
   "permissions": [],
