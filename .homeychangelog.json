@@ -1,4 +1,8 @@
 {
+  "5.5.74": {
+    "en": "BOUNDCLUSTER FIX: 1) Method names in TuyaInlineBoundCluster now match TuyaSpecificCluster.COMMANDS. 2) Added dataResponse handler (0x02). 3) Added setDataPoint handler (0x04). 4) mcuSyncTime now calls _respondToTimeSync. 5) This should finally allow receiving Tuya DP data from TS0601 devices.",
+    "fr": "FIX BOUNDCLUSTER: 1) Noms des méthodes correspondent maintenant aux COMMANDS de TuyaSpecificCluster. 2) Ajout handler dataResponse. 3) Ajout handler setDataPoint. 4) mcuSyncTime appelle maintenant _respondToTimeSync. 5) Devrait permettre de recevoir les données Tuya DP."
+  },
   "5.5.73": {
     "en": "TIME SYNC FIX: 1) Now uses UNIX epoch (1970) instead of Zigbee epoch (2000) for Tuya devices. 2) Added getTimezoneOffsetSeconds() helper for proper GMT+1/+2 handling. 3) Enhanced _pushViaRawCommand with sendFrame fallback. 4) LCD climate devices should now display correct time. 5) Detailed logging for time sync debugging.",
     "fr": "FIX TIME SYNC: 1) Utilise maintenant UNIX epoch (1970) au lieu de Zigbee epoch (2000). 2) Ajout helper getTimezoneOffsetSeconds() pour GMT+1/+2. 3) Fallback sendFrame amélioré. 4) Devices climat LCD devraient afficher l'heure correcte."
