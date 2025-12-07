@@ -7,7 +7,9 @@
   "capabilities": [
     "alarm_motion",
     "measure_battery",
-    "measure_luminance"
+    "measure_luminance",
+    "measure_temperature",
+    "measure_humidity"
   ],
   "energy": {
     "batteries": [
@@ -145,6 +147,8 @@
           5,
           6,
           1024,
+          1026,
+          1029,
           1030,
           1280,
           61184
