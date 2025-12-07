@@ -6,7 +6,7 @@ const greenPower = require('../../lib/green_power');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║            USB HUB DUAL - v5.5.57 DEDICATED DRIVER                           ║
+ * ║         USB DONGLE DUAL REPEATER - v5.5.60 DEDICATED DRIVER                  ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  Device: _TZ3000_h1ipgkwn / TS0002                                           ║
@@ -28,12 +28,12 @@ const greenPower = require('../../lib/green_power');
  * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class USBHubDualDevice extends ZigBeeDevice {
+class USBDongleDualRepeaterDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('');
     this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║          USB HUB DUAL v5.5.57 - DEDICATED DRIVER             ║');
+    this.log('║     USB DONGLE DUAL REPEATER v5.5.60 - DEDICATED DRIVER      ║');
     this.log('║   _TZ3000_h1ipgkwn / TS0002 - Dual USB + Router              ║');
     this.log('╚══════════════════════════════════════════════════════════════╝');
 
@@ -60,7 +60,7 @@ class USBHubDualDevice extends ZigBeeDevice {
     // Read initial states
     await this._readInitialStates(zclNode);
 
-    this.log('[USB-HUB] ✅ Dual USB Switch & Router ready');
+    this.log('[USB-DONGLE] ✅ Dual USB Switch & Router ready');
   }
 
   /**
@@ -70,26 +70,26 @@ class USBHubDualDevice extends ZigBeeDevice {
     // ═══════════════════════════════════════════════════════════════════
     // TRIGGER CARDS
     // ═══════════════════════════════════════════════════════════════════
-    this._triggerUSB1On = this.homey.flow.getDeviceTriggerCard('usb_hub_dual_usb1_turned_on');
-    this._triggerUSB1Off = this.homey.flow.getDeviceTriggerCard('usb_hub_dual_usb1_turned_off');
-    this._triggerUSB2On = this.homey.flow.getDeviceTriggerCard('usb_hub_dual_usb2_turned_on');
-    this._triggerUSB2Off = this.homey.flow.getDeviceTriggerCard('usb_hub_dual_usb2_turned_off');
-    this._triggerPowerChanged = this.homey.flow.getDeviceTriggerCard('usb_hub_dual_power_changed');
+    this._triggerUSB1On = this.homey.flow.getDeviceTriggerCard('usb_dongle_dual_repeater_usb1_turned_on');
+    this._triggerUSB1Off = this.homey.flow.getDeviceTriggerCard('usb_dongle_dual_repeater_usb1_turned_off');
+    this._triggerUSB2On = this.homey.flow.getDeviceTriggerCard('usb_dongle_dual_repeater_usb2_turned_on');
+    this._triggerUSB2Off = this.homey.flow.getDeviceTriggerCard('usb_dongle_dual_repeater_usb2_turned_off');
+    this._triggerPowerChanged = this.homey.flow.getDeviceTriggerCard('usb_dongle_dual_repeater_power_changed');
 
     // ═══════════════════════════════════════════════════════════════════
     // CONDITION CARDS
     // ═══════════════════════════════════════════════════════════════════
-    const conditionUSB1On = this.homey.flow.getConditionCard('usb_hub_dual_usb1_is_on');
+    const conditionUSB1On = this.homey.flow.getConditionCard('usb_dongle_dual_repeater_usb1_is_on');
     conditionUSB1On.registerRunListener(async () => {
       return this.getCapabilityValue('onoff') === true;
     });
 
-    const conditionUSB2On = this.homey.flow.getConditionCard('usb_hub_dual_usb2_is_on');
+    const conditionUSB2On = this.homey.flow.getConditionCard('usb_dongle_dual_repeater_usb2_is_on');
     conditionUSB2On.registerRunListener(async () => {
       return this.getCapabilityValue('onoff.usb2') === true;
     });
 
-    const conditionPowerAbove = this.homey.flow.getConditionCard('usb_hub_dual_power_above');
+    const conditionPowerAbove = this.homey.flow.getConditionCard('usb_dongle_dual_repeater_power_above');
     conditionPowerAbove.registerRunListener(async (args) => {
       const power = this.getCapabilityValue('measure_power') || 0;
       return power > args.watts;
@@ -98,51 +98,51 @@ class USBHubDualDevice extends ZigBeeDevice {
     // ═══════════════════════════════════════════════════════════════════
     // ACTION CARDS
     // ═══════════════════════════════════════════════════════════════════
-    const actionUSB1On = this.homey.flow.getActionCard('usb_hub_dual_turn_on_usb1');
+    const actionUSB1On = this.homey.flow.getActionCard('usb_dongle_dual_repeater_turn_on_usb1');
     actionUSB1On.registerRunListener(async () => {
       await this.triggerCapabilityListener('onoff', true);
     });
 
-    const actionUSB1Off = this.homey.flow.getActionCard('usb_hub_dual_turn_off_usb1');
+    const actionUSB1Off = this.homey.flow.getActionCard('usb_dongle_dual_repeater_turn_off_usb1');
     actionUSB1Off.registerRunListener(async () => {
       await this.triggerCapabilityListener('onoff', false);
     });
 
-    const actionUSB1Toggle = this.homey.flow.getActionCard('usb_hub_dual_toggle_usb1');
+    const actionUSB1Toggle = this.homey.flow.getActionCard('usb_dongle_dual_repeater_toggle_usb1');
     actionUSB1Toggle.registerRunListener(async () => {
       const current = this.getCapabilityValue('onoff');
       await this.triggerCapabilityListener('onoff', !current);
     });
 
-    const actionUSB2On = this.homey.flow.getActionCard('usb_hub_dual_turn_on_usb2');
+    const actionUSB2On = this.homey.flow.getActionCard('usb_dongle_dual_repeater_turn_on_usb2');
     actionUSB2On.registerRunListener(async () => {
       await this.triggerCapabilityListener('onoff.usb2', true);
     });
 
-    const actionUSB2Off = this.homey.flow.getActionCard('usb_hub_dual_turn_off_usb2');
+    const actionUSB2Off = this.homey.flow.getActionCard('usb_dongle_dual_repeater_turn_off_usb2');
     actionUSB2Off.registerRunListener(async () => {
       await this.triggerCapabilityListener('onoff.usb2', false);
     });
 
-    const actionUSB2Toggle = this.homey.flow.getActionCard('usb_hub_dual_toggle_usb2');
+    const actionUSB2Toggle = this.homey.flow.getActionCard('usb_dongle_dual_repeater_toggle_usb2');
     actionUSB2Toggle.registerRunListener(async () => {
       const current = this.getCapabilityValue('onoff.usb2');
       await this.triggerCapabilityListener('onoff.usb2', !current);
     });
 
-    const actionAllOn = this.homey.flow.getActionCard('usb_hub_dual_turn_on_all');
+    const actionAllOn = this.homey.flow.getActionCard('usb_dongle_dual_repeater_turn_on_all');
     actionAllOn.registerRunListener(async () => {
       await this.triggerCapabilityListener('onoff', true);
       await this.triggerCapabilityListener('onoff.usb2', true);
     });
 
-    const actionAllOff = this.homey.flow.getActionCard('usb_hub_dual_turn_off_all');
+    const actionAllOff = this.homey.flow.getActionCard('usb_dongle_dual_repeater_turn_off_all');
     actionAllOff.registerRunListener(async () => {
       await this.triggerCapabilityListener('onoff', false);
       await this.triggerCapabilityListener('onoff.usb2', false);
     });
 
-    this.log('[USB-HUB] Flow cards registered');
+    this.log('[USB-DONGLE] Flow cards registered');
   }
 
   /**
@@ -154,11 +154,11 @@ class USBHubDualDevice extends ZigBeeDevice {
       const onOffCluster = ep1?.clusters?.onOff;
 
       if (onOffCluster) {
-        this.log('[USB-HUB] EP1 onOff cluster found');
+        this.log('[USB-DONGLE] EP1 onOff cluster found');
 
         // Listen for state changes
         onOffCluster.on('attr.onOff', (value) => {
-          this.log(`[USB-HUB] USB1 state: ${value}`);
+          this.log(`[USB-DONGLE] USB1 state: ${value}`);
           this.setCapabilityValue('onoff', value).catch(this.error);
           // Trigger flow cards
           if (value && this._triggerUSB1On) {
@@ -169,7 +169,7 @@ class USBHubDualDevice extends ZigBeeDevice {
         });
       }
     } catch (err) {
-      this.error('[USB-HUB] EP1 setup failed:', err.message);
+      this.error('[USB-DONGLE] EP1 setup failed:', err.message);
     }
   }
 
@@ -182,11 +182,11 @@ class USBHubDualDevice extends ZigBeeDevice {
       const onOffCluster = ep2?.clusters?.onOff;
 
       if (onOffCluster) {
-        this.log('[USB-HUB] EP2 onOff cluster found');
+        this.log('[USB-DONGLE] EP2 onOff cluster found');
 
         // Listen for state changes
         onOffCluster.on('attr.onOff', (value) => {
-          this.log(`[USB-HUB] USB2 state: ${value}`);
+          this.log(`[USB-DONGLE] USB2 state: ${value}`);
           if (this.hasCapability('onoff.usb2')) {
             this.setCapabilityValue('onoff.usb2', value).catch(this.error);
             // Trigger flow cards
@@ -199,7 +199,7 @@ class USBHubDualDevice extends ZigBeeDevice {
         });
       }
     } catch (err) {
-      this.error('[USB-HUB] EP2 setup failed:', err.message);
+      this.error('[USB-DONGLE] EP2 setup failed:', err.message);
     }
   }
 
@@ -213,13 +213,13 @@ class USBHubDualDevice extends ZigBeeDevice {
       // seMetering cluster (1794) - Energy measurement
       const meteringCluster = ep1?.clusters?.seMetering;
       if (meteringCluster) {
-        this.log('[USB-HUB] seMetering cluster found');
+        this.log('[USB-DONGLE] seMetering cluster found');
 
         // Current summation (energy in kWh)
         meteringCluster.on('attr.currentSummationDelivered', (value) => {
           // Value is in Wh, convert to kWh
           const kWh = value / 1000;
-          this.log(`[USB-HUB] Energy: ${kWh} kWh`);
+          this.log(`[USB-DONGLE] Energy: ${kWh} kWh`);
           if (this.hasCapability('meter_power')) {
             this.setCapabilityValue('meter_power', kWh).catch(this.error);
           }
@@ -227,7 +227,7 @@ class USBHubDualDevice extends ZigBeeDevice {
 
         // Instantaneous demand (power in W)
         meteringCluster.on('attr.instantaneousDemand', (value) => {
-          this.log(`[USB-HUB] Power (metering): ${value} W`);
+          this.log(`[USB-DONGLE] Power (metering): ${value} W`);
           if (this.hasCapability('measure_power')) {
             this.setCapabilityValue('measure_power', value).catch(this.error);
           }
@@ -237,13 +237,13 @@ class USBHubDualDevice extends ZigBeeDevice {
       // haElectricalMeasurement cluster (2820) - Voltage/Current/Power
       const electricalCluster = ep1?.clusters?.haElectricalMeasurement;
       if (electricalCluster) {
-        this.log('[USB-HUB] haElectricalMeasurement cluster found');
+        this.log('[USB-DONGLE] haElectricalMeasurement cluster found');
 
         // Active power (W)
         electricalCluster.on('attr.activePower', (value) => {
           // Value is in 0.1W, convert to W
           const power = value / 10;
-          this.log(`[USB-HUB] Power: ${power} W`);
+          this.log(`[USB-DONGLE] Power: ${power} W`);
           if (this.hasCapability('measure_power')) {
             this.setCapabilityValue('measure_power', power).catch(this.error);
             // Trigger power changed flow
@@ -257,7 +257,7 @@ class USBHubDualDevice extends ZigBeeDevice {
         electricalCluster.on('attr.rmsVoltage', (value) => {
           // Value is in 0.1V, convert to V
           const voltage = value / 10;
-          this.log(`[USB-HUB] Voltage: ${voltage} V`);
+          this.log(`[USB-DONGLE] Voltage: ${voltage} V`);
           if (this.hasCapability('measure_voltage')) {
             this.setCapabilityValue('measure_voltage', voltage).catch(this.error);
           }
@@ -267,14 +267,14 @@ class USBHubDualDevice extends ZigBeeDevice {
         electricalCluster.on('attr.rmsCurrent', (value) => {
           // Value is in mA, convert to A
           const current = value / 1000;
-          this.log(`[USB-HUB] Current: ${current} A`);
+          this.log(`[USB-DONGLE] Current: ${current} A`);
           if (this.hasCapability('measure_current')) {
             this.setCapabilityValue('measure_current', current).catch(this.error);
           }
         });
       }
     } catch (err) {
-      this.error('[USB-HUB] Power monitoring setup failed:', err.message);
+      this.error('[USB-DONGLE] Power monitoring setup failed:', err.message);
     }
   }
 
@@ -285,7 +285,7 @@ class USBHubDualDevice extends ZigBeeDevice {
     // USB Port 1 control
     if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (value) => {
-        this.log(`[USB-HUB] Setting USB1 to ${value}`);
+        this.log(`[USB-DONGLE] Setting USB1 to ${value}`);
         const ep1 = zclNode.endpoints?.[1];
         const onOffCluster = ep1?.clusters?.onOff;
         if (onOffCluster) {
@@ -297,7 +297,7 @@ class USBHubDualDevice extends ZigBeeDevice {
     // USB Port 2 control
     if (this.hasCapability('onoff.usb2')) {
       this.registerCapabilityListener('onoff.usb2', async (value) => {
-        this.log(`[USB-HUB] Setting USB2 to ${value}`);
+        this.log(`[USB-DONGLE] Setting USB2 to ${value}`);
         const ep2 = zclNode.endpoints?.[2];
         const onOffCluster = ep2?.clusters?.onOff;
         if (onOffCluster) {
@@ -319,7 +319,7 @@ class USBHubDualDevice extends ZigBeeDevice {
         if (ep1?.clusters?.onOff) {
           const state1 = await ep1.clusters.onOff.readAttributes(['onOff']).catch(() => ({}));
           if (state1?.onOff !== undefined) {
-            this.log(`[USB-HUB] Initial USB1: ${state1.onOff}`);
+            this.log(`[USB-DONGLE] Initial USB1: ${state1.onOff}`);
             await this.setCapabilityValue('onoff', state1.onOff).catch(() => { });
           }
         }
@@ -329,7 +329,7 @@ class USBHubDualDevice extends ZigBeeDevice {
         if (ep2?.clusters?.onOff) {
           const state2 = await ep2.clusters.onOff.readAttributes(['onOff']).catch(() => ({}));
           if (state2?.onOff !== undefined && this.hasCapability('onoff.usb2')) {
-            this.log(`[USB-HUB] Initial USB2: ${state2.onOff}`);
+            this.log(`[USB-DONGLE] Initial USB2: ${state2.onOff}`);
             await this.setCapabilityValue('onoff.usb2', state2.onOff).catch(() => { });
           }
         }
@@ -344,7 +344,7 @@ class USBHubDualDevice extends ZigBeeDevice {
 
           if (meteringData?.currentSummationDelivered !== undefined) {
             const kWh = meteringData.currentSummationDelivered / 1000;
-            this.log(`[USB-HUB] Initial Energy: ${kWh} kWh`);
+            this.log(`[USB-DONGLE] Initial Energy: ${kWh} kWh`);
             await this.setCapabilityValue('meter_power', kWh).catch(() => { });
           }
         }
@@ -357,24 +357,24 @@ class USBHubDualDevice extends ZigBeeDevice {
 
           if (elecData?.activePower !== undefined) {
             const power = elecData.activePower / 10;
-            this.log(`[USB-HUB] Initial Power: ${power} W`);
+            this.log(`[USB-DONGLE] Initial Power: ${power} W`);
             await this.setCapabilityValue('measure_power', power).catch(() => { });
           }
           if (elecData?.rmsVoltage !== undefined) {
             const voltage = elecData.rmsVoltage / 10;
-            this.log(`[USB-HUB] Initial Voltage: ${voltage} V`);
+            this.log(`[USB-DONGLE] Initial Voltage: ${voltage} V`);
             await this.setCapabilityValue('measure_voltage', voltage).catch(() => { });
           }
           if (elecData?.rmsCurrent !== undefined) {
             const current = elecData.rmsCurrent / 1000;
-            this.log(`[USB-HUB] Initial Current: ${current} A`);
+            this.log(`[USB-DONGLE] Initial Current: ${current} A`);
             await this.setCapabilityValue('measure_current', current).catch(() => { });
           }
         }
 
-        this.log('[USB-HUB] ✅ Initial states read');
+        this.log('[USB-DONGLE] ✅ Initial states read');
       } catch (err) {
-        this.error('[USB-HUB] Failed to read initial states:', err.message);
+        this.error('[USB-DONGLE] Failed to read initial states:', err.message);
       }
     }, 2000);
   }
@@ -388,7 +388,7 @@ class USBHubDualDevice extends ZigBeeDevice {
       const behaviorMap = { 'off': 0, 'on': 1, 'previous': 2 };
       const value = behaviorMap[behavior] ?? 2;
 
-      this.log(`[USB-HUB] Setting power-on behavior to ${behavior} (${value})`);
+      this.log(`[USB-DONGLE] Setting power-on behavior to ${behavior} (${value})`);
 
       try {
         const ep1 = this.zclNode?.endpoints?.[1];
@@ -398,13 +398,13 @@ class USBHubDualDevice extends ZigBeeDevice {
           await onOffCluster.writeAttributes({ moesStartUpOnOff: value }).catch(() => { });
         }
       } catch (err) {
-        this.error('[USB-HUB] Failed to set power-on behavior:', err.message);
+        this.error('[USB-DONGLE] Failed to set power-on behavior:', err.message);
       }
     }
   }
 
   async onDeleted() {
-    this.log('[USB-HUB] Device deleted');
+    this.log('[USB-DONGLE] Device deleted');
   }
 }
 

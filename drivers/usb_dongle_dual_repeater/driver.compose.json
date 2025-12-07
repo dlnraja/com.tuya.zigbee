@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "Dual USB Switch & Router",
-    "fr": "Switch USB Double & Routeur"
+    "en": "USB Dongle Dual Repeater",
+    "fr": "Dongle USB Double Répéteur"
   },
   "class": "socket",
   "capabilities": [
@@ -123,7 +123,7 @@
     }
   ],
   "images": {
-    "small": "/drivers/usb_hub_dual/assets/images/small.png",
-    "large": "/drivers/usb_hub_dual/assets/images/large.png"
+    "small": "/drivers/usb_dongle_dual_repeater/assets/images/small.png",
+    "large": "/drivers/usb_dongle_dual_repeater/assets/images/large.png"
   }
 }
