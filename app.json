@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.50",
+  "version": "5.5.51",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.50: Fix passive mode blocking, SOS multi-method IAS, climate sensor DP requests",
-    "fr": "V5.5.50: Correction mode passif, SOS multi-methode IAS, requetes DP climate sensor"
+    "en": "V5.5.51: Added SLS Smart Home + tuya-local device support (mmWave, vibration sensors)",
+    "fr": "V5.5.51: Support SLS Smart Home + devices tuya-local (mmWave, capteurs vibration)"
   },
   "category": "appliances",
   "permissions": [],
@@ -24885,18 +24885,36 @@
           "_TZ3218_t9ynfz4x",
           "_TZE200_ar0slwnd",
           "_TZE200_clrdrnya",
+          "_TZE200_lu01t0zl",
+          "_TZE200_mrf6vtua",
+          "_TZE200_pay2byax",
           "_TZE200_rhgsbacq",
           "_TZE200_sfiy5tfs",
+          "_TZE200_ztc6ggyl",
           "_TZE204_clrdrnya",
           "_TZE204_dtzziy1e",
           "_TZE204_e5m9c5hl",
           "_TZE204_fwondbzy",
+          "_TZE204_ijxvkhd0",
           "_TZE204_lbbg34rj",
           "_TZE204_pfayrzcw",
+          "_TZE204_qasjif9e",
+          "_TZE204_sbyx0lm6",
+          "_TZE204_sxm7l9xa",
+          "_TZE204_uxllnywp",
           "_TZE204_yensya2c",
           "_TZE204_ztqnh5cg",
           "_TZE284_4qznlkbu",
-          "_TZE284_fwondbzy"
+          "_TZE284_fwondbzy",
+          "_TZE284_0wfzacel",
+          "_TZE284_zy6wjm01",
+          "Loginovo",
+          "Haozee",
+          "Treatlife",
+          "Moes",
+          "Wenzhi",
+          "Zecamin",
+          "SLS"
         ],
         "endpoints": {
           "1": {
@@ -33047,7 +33065,25 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_bmfw11gs",
+          "_TZ3000_c0epqj4n",
+          "_TZ3000_d9mxcg6g",
+          "_TZ3000_ez2w5nzp",
+          "_TZ3000_fbjnwzko",
+          "_TZ3000_fkxmywjv",
+          "_TZ3000_lf56vpxj",
+          "_TZ3000_osu834un",
+          "_TZ3000_rcfwrslt",
+          "_TZ3000_wqwdoqib",
+          "_TZE200_bh3n6gk8",
+          "_TZE200_cscppkxz",
+          "_TZE200_gnpn9hxb",
+          "_TZE200_vq5u79u3",
+          "_TZE204_cscppkxz",
+          "_TZE284_cscppkxz",
+          "SLS"
+        ],
         "productId": [
           "TS0209",
           "TS0210",
