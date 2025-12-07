@@ -1,4 +1,8 @@
 {
+  "5.5.50": {
+    "en": "DEEP FIXES FROM DIAGNOSTICS: 1) TuyaEF00Manager: Passive mode no longer blocks mains-powered devices - DP requests now sent even when cluster not directly visible. 2) SOS Button: 4 different IAS Zone listening methods for maximum reliability (onZoneStatusChangeNotification, attr.zoneStatus, event listener, onZoneStatus). 3) Debounced alarm handler prevents duplicate triggers. 4) Climate sensor: DP requests now actually sent instead of being blocked by passive mode.",
+    "fr": "CORRECTIONS PROFONDES: 1) TuyaEF00Manager: Mode passif ne bloque plus les devices secteur. 2) Bouton SOS: 4 methodes IAS Zone pour fiabilite maximale. 3) Handler alarme debounce. 4) Climate sensor: requetes DP envoyees."
+  },
   "5.5.49": {
     "en": "DIAGNOSTICS FIXES: 1) SOS button: alarm_contact capability now migrated and initialized on boot (fixes 'missing after recovery'). 2) USB outlet: Added 25+ manufacturerNames for better device matching (fixes wrong driver assignment). 3) HybridPlugBase: Now uses MULTI-FALLBACK Tuya system (P1: BoundCluster, P2: Events, P3: RawFrames, P4: Manager). All plugs/outlets now have maximum robustness.",
     "fr": "CORRECTIONS DIAGNOSTICS: 1) Bouton SOS: capability alarm_contact migrée et initialisée au boot. 2) USB outlet: 25+ manufacturerNames ajoutés pour meilleur matching. 3) HybridPlugBase: utilise maintenant le système MULTI-FALLBACK Tuya. Robustesse maximale pour toutes les prises."
