@@ -18,7 +18,8 @@ const { WakeStrategies } = require('../../lib/tuya/TuyaGatewayEmulator');
  */
 class MotionSensorRadarDevice extends HybridSensorBase {
 
-  // Some radar sensors are battery powered, some are mains
+  // v5.5.69: These radar sensors are battery-powered (user confirmed)
+  // The real fix is to call _updateLastEventTime() in ZCL handlers
   get mainsPowered() { return false; }
 
   // v5.5.26: Offline check timeout (60 min for mmWave - Hubitat recommendation)
@@ -261,6 +262,7 @@ class MotionSensorRadarDevice extends HybridSensorBase {
         this.log('[MMWAVE] ✅ OccupancySensing cluster found - setting up listener');
 
         occCluster.on('attr.occupancy', (value) => {
+          this._updateLastEventTime(); // v5.5.69: Track activity
           const motion = value > 0;
           this.log(`[ZCL-DATA] mmwave.occupancy raw=${value} converted=${motion}`);
           if (this.hasCapability('alarm_motion')) {
@@ -299,6 +301,7 @@ class MotionSensorRadarDevice extends HybridSensorBase {
         this.log('[MMWAVE] ✅ IAS Zone cluster found - setting up motion listener');
 
         iasCluster.onZoneStatusChangeNotification = (payload) => {
+          this._updateLastEventTime(); // v5.5.69: Track activity
           // v5.5.17: Use universal parser from HybridSensorBase
           const parsed = this._parseIASZoneStatus(payload?.zoneStatus);
           const motion = parsed.alarm1 || parsed.alarm2;
@@ -312,6 +315,7 @@ class MotionSensorRadarDevice extends HybridSensorBase {
 
         // Trigger flow on zone status change
         iasCluster.on('attr.zoneStatus', (status) => {
+          this._updateLastEventTime(); // v5.5.69: Track activity
           const motion = (status & 0x01) !== 0 || (status & 0x02) !== 0;
           this.log(`[ZCL-DATA] mmwave.zone_status raw=${status} converted=${motion}`);
 
