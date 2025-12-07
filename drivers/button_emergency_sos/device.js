@@ -433,6 +433,18 @@ class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
       this._batteryRequestTimeout = null;
     }
 
+    // v5.5.54: Clear alarm reset timeout (from _handleSOSAlarm)
+    if (this._alarmResetTimeout) {
+      this.homey.clearTimeout(this._alarmResetTimeout);
+      this._alarmResetTimeout = null;
+    }
+
+    // v5.5.54: Clear any battery wake refresh timers
+    if (this._batteryWakeTimer) {
+      this.homey.clearTimeout(this._batteryWakeTimer);
+      this._batteryWakeTimer = null;
+    }
+
     this.log('[SOS-BUTTON] ✅ All timers cleared');
   }
 
