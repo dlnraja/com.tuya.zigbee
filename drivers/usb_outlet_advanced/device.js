@@ -112,7 +112,58 @@ class USBOutletAdvancedDevice extends HybridPlugBase {
     // v5.5.35: Request initial state of all switches/USBs
     this._requestInitialStates();
 
+    // v5.5.54: Setup ZCL listeners for endpoints 2 and 3 (non-Tuya devices)
+    await this._setupMultiEndpointZCL(zclNode);
+
     this.log('[USB-ADV] ✅ Ready - Full power monitoring enabled');
+  }
+
+  /**
+   * v5.5.54: Setup ZCL listeners for endpoints 2 and 3
+   * For devices that use standard ZCL onOff instead of Tuya DP
+   * Only sets up LISTENERS, not control (control is in _registerCapabilityListeners)
+   */
+  async _setupMultiEndpointZCL(zclNode) {
+    // Store reference for later use
+    this._zclNode = zclNode;
+
+    // Endpoint 2 - Socket 2 (listen only)
+    try {
+      const ep2 = zclNode.endpoints?.[2];
+      if (ep2?.clusters?.onOff) {
+        this.log('[USB-ADV] Endpoint 2 found - setting up ZCL listener');
+        this._ep2 = ep2;
+
+        // Listen for on/off changes from device
+        ep2.clusters.onOff.on('attr.onOff', (value) => {
+          this.log(`[USB-ADV] EP2 ZCL onOff=${value}`);
+          if (this.hasCapability('onoff.socket2')) {
+            this.setCapabilityValue('onoff.socket2', value).catch(this.error);
+          }
+        });
+      }
+    } catch (err) {
+      this.log('[USB-ADV] Endpoint 2 listener skipped:', err.message);
+    }
+
+    // Endpoint 3 - USB or Socket 3 (listen only)
+    try {
+      const ep3 = zclNode.endpoints?.[3];
+      if (ep3?.clusters?.onOff) {
+        this.log('[USB-ADV] Endpoint 3 found - setting up ZCL listener');
+        this._ep3 = ep3;
+
+        // Listen for on/off changes from device
+        ep3.clusters.onOff.on('attr.onOff', (value) => {
+          this.log(`[USB-ADV] EP3 ZCL onOff=${value}`);
+          if (this.hasCapability('onoff.usb1')) {
+            this.setCapabilityValue('onoff.usb1', value).catch(this.error);
+          }
+        });
+      }
+    } catch (err) {
+      this.log('[USB-ADV] Endpoint 3 listener skipped:', err.message);
+    }
   }
 
   /**
@@ -168,15 +219,22 @@ class USBOutletAdvancedDevice extends HybridPlugBase {
       });
     }
 
-    // Socket 2 control
+    // Socket 2 control - v5.5.54: Try both Tuya DP AND ZCL
     if (this.hasCapability('onoff.socket2')) {
       this.registerCapabilityListener('onoff.socket2', async (value) => {
         this.log('[USB-ADV] Socket 2 →', value);
         await this._sendDP(2, value);
+        // v5.5.54: Also try ZCL endpoint 2 for non-Tuya devices
+        if (this._ep2?.clusters?.onOff) {
+          try {
+            await this._ep2.clusters.onOff[value ? 'setOn' : 'setOff']();
+            this.log('[USB-ADV] Socket 2 ZCL command sent');
+          } catch (e) { /* Tuya DP probably worked */ }
+        }
       });
     }
 
-    // USB 1 control - try multiple DPs
+    // USB 1 control - v5.5.54: Try both Tuya DP AND ZCL
     if (this.hasCapability('onoff.usb1')) {
       this.registerCapabilityListener('onoff.usb1', async (value) => {
         this.log('[USB-ADV] USB 1 →', value);
@@ -184,6 +242,13 @@ class USBOutletAdvancedDevice extends HybridPlugBase {
         await this._sendDP(9, value);   // Primary
         await this._sendDP(3, value);   // Alt
         await this._sendDP(11, value);  // Alt
+        // v5.5.54: Also try ZCL endpoint 3 for non-Tuya devices
+        if (this._ep3?.clusters?.onOff) {
+          try {
+            await this._ep3.clusters.onOff[value ? 'setOn' : 'setOff']();
+            this.log('[USB-ADV] USB 1 ZCL command sent');
+          } catch (e) { /* Tuya DP probably worked */ }
+        }
       });
     }
 

@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.54",
+  "version": "5.5.55",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.54: HYBRID MODE FIX - forceActiveTuyaMode for sensors, proper timer cleanup",
-    "fr": "V5.5.54: FIX MODE HYBRIDE - forceActiveTuyaMode pour capteurs, nettoyage timers"
+    "en": "V5.5.55: USB+2gang multi-endpoint support (EP2+EP3), ZCL+DP hybrid control",
+    "fr": "V5.5.55: Support multi-endpoint USB+2gang (EP2+EP3), contrôle hybride ZCL+DP"
   },
   "category": "appliances",
   "permissions": [],
@@ -32792,6 +32792,22 @@
             ],
             "bindings": [
               1,
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "3": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
               6
             ]
           }
