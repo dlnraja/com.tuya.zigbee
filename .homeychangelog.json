@@ -1,4 +1,8 @@
 {
+  "5.5.78": {
+    "en": "ENHANCED RAW FRAME LISTENER: 1) Now intercepts frames at 3 levels: endpoint.on('frame'), zclNode.on('frame'), and handleFrame override. 2) Added verbose logging to see ALL incoming frames. 3) This should catch Tuya 0xEF00 frames even when the cluster is not visible in endpoint.clusters. 4) If you see '[TUYA-P3] Endpoint/ZclNode frame' logs, the system is working.",
+    "fr": "LISTENER FRAMES BRUTS AMÉLIORÉ: 1) Intercepte maintenant les frames à 3 niveaux. 2) Ajout logging verbeux pour voir TOUTES les frames entrantes. 3) Devrait capturer les frames Tuya 0xEF00 même quand le cluster n'est pas visible. 4) Si vous voyez les logs '[TUYA-P3]', le système fonctionne."
+  },
   "5.5.77": {
     "en": "RESTORED FROM v5.5.46 (WORKING VERSION): 1) TuyaSpecificCluster COMMANDS names are 'response' (0x01) and 'reporting' (0x02) - NOT 'dataReport'/'dataResponse'. 2) BoundCluster methods restored: response() and reporting(). 3) COMMANDS now have proper args: { seq: uint16, dpValues: buffer }. 4) cluster.on('response') and cluster.on('reporting') events should now work. 5) Soil sensor and climate sensor should finally receive Tuya DP data.",
     "fr": "RESTAURÉ DE v5.5.46 (VERSION QUI MARCHAIT): 1) Noms COMMANDS TuyaSpecificCluster sont 'response' (0x01) et 'reporting' (0x02). 2) Méthodes BoundCluster restaurées. 3) COMMANDS ont les bons args. 4) Les événements cluster.on() devraient maintenant fonctionner. 5) Soil sensor et climate sensor devraient enfin recevoir les données Tuya DP."
