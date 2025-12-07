@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.47",
+  "version": "5.5.48",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.47: BatteryCalculator with non-linear discharge curves by chemistry",
-    "fr": "V5.5.47: BatteryCalculator avec courbes de decharge non-lineaires par chimie"
+    "en": "V5.5.48: Multi-fallback Tuya system (BoundCluster + Events + RawFrames + Manager)",
+    "fr": "V5.5.48: Systeme multi-fallback Tuya (BoundCluster + Events + RawFrames + Manager)"
   },
   "category": "appliances",
   "permissions": [],
