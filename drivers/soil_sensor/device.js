@@ -2,10 +2,11 @@
 
 const TuyaHybridDevice = require('../../lib/devices/TuyaHybridDevice');
 const BatteryCalculator = require('../../lib/battery/BatteryCalculator');
+const { getAppVersionPrefixed } = require('../../lib/utils/AppVersion');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║            SOIL SENSOR - v5.5.48 TRUE HYBRID + MULTI-FALLBACK              ║
+ * ║            SOIL SENSOR - Dynamic version from app.json                     ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  Uses TuyaHybridDevice base class with proper:                               ║
@@ -146,9 +147,9 @@ class SoilSensorDevice extends TuyaHybridDevice {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
 
-    this.log('[SOIL] ════════════════════════════════════════════════════');
-    this.log('[SOIL] Soil Sensor v5.5.48 MULTI-FALLBACK');
-    this.log('[SOIL] ════════════════════════════════════════════════════');
+    this.log('[SOIL] ════════════════════════════════════════════════════════');
+    this.log(`[SOIL] Soil Sensor ${getAppVersionPrefixed()} MULTI-FALLBACK`);
+    this.log('[SOIL] ════════════════════════════════════════════════════════');
     this.log('[SOIL] ⚠️ BATTERY DEVICE - Data comes when device wakes up');
     this.log('[SOIL] ℹ️ First data may take 10-60 minutes after pairing');
   }
