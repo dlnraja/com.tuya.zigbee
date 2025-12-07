@@ -1,4 +1,8 @@
 {
+  "5.5.52": {
+    "en": "EXTENDED TUYA-LOCAL SUPPORT: Based on github.com/make-all/tuya-local/DEVICES.md. Added manufacturerNames to: 1) Radiator Valve: +15 (Moes TRV, Avatto). 2) Siren: +9 (Neo, Airam, Orion). 3) Curtain Motor: +7 brands (Zemismart, Moes, LoraTap, Benexmart, Dooya). 4) Water Leak Sensor: +4 (Nedis). 5) Contact Sensor: +3 (Nedis, Haozee). 6) Thermostat: +25 (Beca, Beok, Moes, Avatto). All with SLS Smart Home support.",
+    "fr": "SUPPORT TUYA-LOCAL ETENDU: Basé sur github.com/make-all/tuya-local/DEVICES.md. ManufacturerNames ajoutés: 1) Vanne radiateur: +15. 2) Sirène: +9. 3) Moteur volet: +7 marques. 4) Capteur fuite: +4. 5) Capteur contact: +3. 6) Thermostat: +25. Tous avec support SLS Smart Home."
+  },
   "5.5.51": {
     "en": "SLS SMART HOME + TUYA-LOCAL SUPPORT: 1) Added SLS (SaiLingSi) manufacturerNames to all relevant drivers. 2) Vibration sensor: +17 manufacturerNames from tuya-local. 3) mmWave presence sensor: +18 manufacturerNames (Loginovo, Haozee, Treatlife, Moes, Wenzhi, Zecamin, etc). 4) Based on https://github.com/make-all/tuya-local/blob/main/DEVICES.md device database.",
     "fr": "SUPPORT SLS SMART HOME + TUYA-LOCAL: 1) ManufacturerNames SLS ajoutés à tous les drivers. 2) Capteur vibration: +17 manufacturerNames. 3) Capteur présence mmWave: +18 manufacturerNames. 4) Basé sur la base de données tuya-local."
