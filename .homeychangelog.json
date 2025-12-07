@@ -1,4 +1,8 @@
 {
+  "5.5.79": {
+    "en": "CRITICAL FIX FOR TS0601 DEVICES: 1) Now uses LOW-LEVEL Zigbee API via this.homey.zigbee.getNode(this) as documented by Athom SDK. 2) Overrides node.handleFrame() to intercept ALL frames BEFORE routing - this is the ONLY way to receive 0xEF00 frames from devices that don't declare this cluster. 3) Added P0 (LowLevelNode) as highest priority handler. 4) If you see '[TUYA-P0] 📦 FRAME RECEIVED' or '[TUYA-P0] 🎉 TUYA 0xEF00 FRAME RECEIVED!' logs, the system is finally working!",
+    "fr": "FIX CRITIQUE POUR DEVICES TS0601: 1) Utilise maintenant l'API Zigbee BAS NIVEAU via this.homey.zigbee.getNode(this) comme documenté par Athom SDK. 2) Override node.handleFrame() pour intercepter TOUTES les frames AVANT routage. 3) Ajout P0 (LowLevelNode) comme handler prioritaire. 4) Si vous voyez les logs '[TUYA-P0]', le système fonctionne enfin!"
+  },
   "5.5.78": {
     "en": "ENHANCED RAW FRAME LISTENER: 1) Now intercepts frames at 3 levels: endpoint.on('frame'), zclNode.on('frame'), and handleFrame override. 2) Added verbose logging to see ALL incoming frames. 3) This should catch Tuya 0xEF00 frames even when the cluster is not visible in endpoint.clusters. 4) If you see '[TUYA-P3] Endpoint/ZclNode frame' logs, the system is working.",
     "fr": "LISTENER FRAMES BRUTS AMÉLIORÉ: 1) Intercepte maintenant les frames à 3 niveaux. 2) Ajout logging verbeux pour voir TOUTES les frames entrantes. 3) Devrait capturer les frames Tuya 0xEF00 même quand le cluster n'est pas visible. 4) Si vous voyez les logs '[TUYA-P3]', le système fonctionne."
