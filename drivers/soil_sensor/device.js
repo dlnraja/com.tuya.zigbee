@@ -31,6 +31,13 @@ class SoilSensorDevice extends TuyaHybridDevice {
   /** Battery powered */
   get mainsPowered() { return false; }
 
+  // v5.5.54: FORCE ACTIVE MODE - Do NOT block DP requests in passive mode
+  // Soil sensors need active queries even if cluster 0xEF00 not visible
+  get forceActiveTuyaMode() { return true; }
+
+  // v5.5.54: Enable TRUE HYBRID mode - listen to BOTH ZCL AND Tuya DP
+  get hybridModeEnabled() { return true; }
+
   /** Capabilities for soil sensors */
   get sensorCapabilities() {
     return ['measure_temperature', 'measure_humidity', 'measure_battery'];

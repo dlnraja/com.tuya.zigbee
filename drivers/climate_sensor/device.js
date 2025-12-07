@@ -43,6 +43,13 @@ class ClimateSensorDevice extends HybridSensorBase {
   get usesTuyaDPBattery() { return true; }
   get skipZclBatteryPolling() { return true; }
 
+  // v5.5.54: FORCE ACTIVE MODE - Do NOT block DP requests in passive mode
+  // Climate sensors need active queries even if cluster 0xEF00 not visible
+  get forceActiveTuyaMode() { return true; }
+
+  // v5.5.54: Enable TRUE HYBRID mode - listen to BOTH ZCL AND Tuya DP
+  get hybridModeEnabled() { return true; }
+
   /** Capabilities for climate sensors */
   get sensorCapabilities() {
     return ['measure_temperature', 'measure_humidity', 'measure_battery'];
@@ -444,6 +451,57 @@ class ClimateSensorDevice extends HybridSensorBase {
         this.log(`[CLIMATE] ✅ CAPABILITIES: temp=${temp}°C humidity=${hum}% battery=${bat}%`);
       }
     }, 100);
+  }
+
+  /**
+   * v5.5.54: Proper cleanup on uninit (app restart/device removal)
+   * Stops all timers to prevent "Missing Zigbee Node" errors
+   */
+  async onUninit() {
+    this.log('[CLIMATE] onUninit - cleaning up timers...');
+
+    // Clear aggressive DP request timers
+    if (this._aggressiveTimers && Array.isArray(this._aggressiveTimers)) {
+      this._aggressiveTimers.forEach(timer => {
+        this.homey.clearTimeout(timer);
+      });
+      this._aggressiveTimers = [];
+    }
+
+    // Clear gateway emulator
+    if (this._gatewayEmulator) {
+      try {
+        this._gatewayEmulator.stop();
+      } catch (e) { /* ignore */ }
+      this._gatewayEmulator = null;
+    }
+
+    // Clear optimization timer
+    if (this._optimizationTimer) {
+      this.homey.clearTimeout(this._optimizationTimer);
+      this._optimizationTimer = null;
+    }
+
+    // Clear capability status timer
+    if (this._capabilityStatusTimer) {
+      this.homey.clearTimeout(this._capabilityStatusTimer);
+      this._capabilityStatusTimer = null;
+    }
+
+    this.log('[CLIMATE] ✅ All timers cleared');
+
+    // Call parent onUninit if exists
+    if (super.onUninit) {
+      await super.onUninit();
+    }
+  }
+
+  async onDeleted() {
+    this.log('[CLIMATE] Device deleted - cleanup');
+    await this.onUninit();
+    if (super.onDeleted) {
+      await super.onDeleted().catch(err => this.error(err));
+    }
   }
 }
 
