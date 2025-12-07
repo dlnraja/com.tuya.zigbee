@@ -1,4 +1,8 @@
 {
+  "5.5.75": {
+    "en": "HOTFIX: Fixed ReferenceError 'getZigbeeTimeLocal is not defined' in TuyaGatewayEmulator.js. Function was renamed to getLocalTime but references were not updated.",
+    "fr": "HOTFIX: Corrigé ReferenceError 'getZigbeeTimeLocal is not defined'. La fonction a été renommée mais les références n'ont pas été mises à jour."
+  },
   "5.5.74": {
     "en": "BOUNDCLUSTER FIX: 1) Method names in TuyaInlineBoundCluster now match TuyaSpecificCluster.COMMANDS. 2) Added dataResponse handler (0x02). 3) Added setDataPoint handler (0x04). 4) mcuSyncTime now calls _respondToTimeSync. 5) This should finally allow receiving Tuya DP data from TS0601 devices.",
     "fr": "FIX BOUNDCLUSTER: 1) Noms des méthodes correspondent maintenant aux COMMANDS de TuyaSpecificCluster. 2) Ajout handler dataResponse. 3) Ajout handler setDataPoint. 4) mcuSyncTime appelle maintenant _respondToTimeSync. 5) Devrait permettre de recevoir les données Tuya DP."
