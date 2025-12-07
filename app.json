@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.59",
+  "version": "5.5.60",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.59: Add HOBEIAN ZG-301Z and _TZ3000_jrpdaujd TS0001 switches to switch_1gang driver",
-    "fr": "V5.5.59: Ajout des switches HOBEIAN ZG-301Z et _TZ3000_jrpdaujd TS0001 au driver switch_1gang"
+    "en": "V5.5.60: Rename usb_hub_dual to usb_dongle_dual_repeater for _TZ3000_h1ipgkwn device",
+    "fr": "V5.5.60: Renommage usb_hub_dual en usb_dongle_dual_repeater pour le device _TZ3000_h1ipgkwn"
   },
   "category": "appliances",
   "permissions": [],
@@ -32689,8 +32689,8 @@
     },
     {
       "name": {
-        "en": "Dual USB Switch & Router",
-        "fr": "Switch USB Double & Routeur"
+        "en": "USB Dongle Dual Repeater",
+        "fr": "Dongle USB Double Répéteur"
       },
       "class": "socket",
       "capabilities": [
@@ -32812,10 +32812,10 @@
         }
       ],
       "images": {
-        "small": "/drivers/usb_hub_dual/assets/images/small.png",
-        "large": "/drivers/usb_hub_dual/assets/images/large.png"
+        "small": "/drivers/usb_dongle_dual_repeater/assets/images/small.png",
+        "large": "/drivers/usb_dongle_dual_repeater/assets/images/large.png"
       },
-      "id": "usb_hub_dual"
+      "id": "usb_dongle_dual_repeater"
     },
     {
       "name": {
