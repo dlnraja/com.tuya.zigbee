@@ -1,4 +1,8 @@
 {
+  "5.5.38": {
+    "en": "SOS BUTTON FIX: 1) Added onUninit() for proper timer cleanup - prevents 'Missing Zigbee Node' errors after device removal. 2) Clears battery/energy polling intervals and IAS Zone retry timeouts. 3) Soil sensor & Climate monitor: Manufacturers already in TuyaDPDatabase (_TZE284_oitavov2, _TZE284_vvmbj46n). 4) USB outlet: LED indicator (onoff.led) may not work on all models - this is model-dependent.",
+    "fr": "FIX SOS BUTTON: 1) Ajout onUninit() pour nettoyage timers - évite erreurs 'Missing Zigbee Node' après suppression. 2) Arrête intervalles polling batterie/énergie et timeouts IAS Zone. 3) Soil sensor & Climate monitor: Manufacturers déjà dans TuyaDPDatabase. 4) USB outlet: Indicateur LED (onoff.led) peut ne pas fonctionner sur tous modèles."
+  },
   "5.5.37": {
     "en": "FIXED DP LOGGING: 1) Soil sensor: Fixed duplicate case statements, correct DP3=moisture, DP5=temperature, DP14=battery_state, DP15=battery_percent. 2) Climate sensor: Removed incorrect soil sensor references, correct DP1=temp÷10, DP2=humidity, DP4=battery×2. 3) Improved diagnostic logs to track data flow from device to capabilities.",
     "fr": "CORRECTION LOGGING DP: 1) Soil sensor: Correction case dupliqués, DP3=humidité_sol, DP5=température, DP14=état_batterie, DP15=pourcentage_batterie. 2) Climate sensor: Supprimé références incorrectes soil, DP1=temp÷10, DP2=humidité, DP4=batterie×2. 3) Logs diagnostiques améliorés."
