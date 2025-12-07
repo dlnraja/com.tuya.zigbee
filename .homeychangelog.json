@@ -1,4 +1,8 @@
 {
+  "5.5.51": {
+    "en": "SLS SMART HOME + TUYA-LOCAL SUPPORT: 1) Added SLS (SaiLingSi) manufacturerNames to all relevant drivers. 2) Vibration sensor: +17 manufacturerNames from tuya-local. 3) mmWave presence sensor: +18 manufacturerNames (Loginovo, Haozee, Treatlife, Moes, Wenzhi, Zecamin, etc). 4) Based on https://github.com/make-all/tuya-local/blob/main/DEVICES.md device database.",
+    "fr": "SUPPORT SLS SMART HOME + TUYA-LOCAL: 1) ManufacturerNames SLS ajoutés à tous les drivers. 2) Capteur vibration: +17 manufacturerNames. 3) Capteur présence mmWave: +18 manufacturerNames. 4) Basé sur la base de données tuya-local."
+  },
   "5.5.50": {
     "en": "DEEP FIXES FROM DIAGNOSTICS: 1) TuyaEF00Manager: Passive mode no longer blocks mains-powered devices - DP requests now sent even when cluster not directly visible. 2) SOS Button: 4 different IAS Zone listening methods for maximum reliability (onZoneStatusChangeNotification, attr.zoneStatus, event listener, onZoneStatus). 3) Debounced alarm handler prevents duplicate triggers. 4) Climate sensor: DP requests now actually sent instead of being blocked by passive mode.",
     "fr": "CORRECTIONS PROFONDES: 1) TuyaEF00Manager: Mode passif ne bloque plus les devices secteur. 2) Bouton SOS: 4 methodes IAS Zone pour fiabilite maximale. 3) Handler alarme debounce. 4) Climate sensor: requetes DP envoyees."
