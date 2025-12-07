@@ -5,7 +5,7 @@ const BatteryCalculator = require('../../lib/battery/BatteryCalculator');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║            SOIL SENSOR - v5.5.47 TRUE HYBRID + BATTERY CURVES               ║
+ * ║            SOIL SENSOR - v5.5.48 TRUE HYBRID + MULTI-FALLBACK              ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  Uses TuyaHybridDevice base class with proper:                               ║
@@ -140,14 +140,23 @@ class SoilSensorDevice extends TuyaHybridDevice {
     await super.onNodeInit({ zclNode });
 
     this.log('[SOIL] ════════════════════════════════════════════════════');
-    this.log('[SOIL] Soil Sensor v5.5.46 TRUE HYBRID');
+    this.log('[SOIL] Soil Sensor v5.5.48 MULTI-FALLBACK');
     this.log('[SOIL] ════════════════════════════════════════════════════');
     this.log('[SOIL] ⚠️ BATTERY DEVICE - Data comes when device wakes up');
     this.log('[SOIL] ℹ️ First data may take 10-60 minutes after pairing');
   }
 
   /**
-   * v5.5.46: Clean up
+   * Request DPs when device wakes up
+   * Called automatically by TuyaHybridDevice when data is received
+   */
+  async onWakeUp() {
+    this.log('[SOIL] Device woke up - requesting all DPs');
+    await this.requestAllDPs();
+  }
+
+  /**
+   * v5.5.48: Clean up
    */
   onDeleted() {
     super.onDeleted();
