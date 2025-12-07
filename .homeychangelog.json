@@ -1,4 +1,8 @@
 {
+  "5.5.48": {
+    "en": "MULTI-FALLBACK TUYA SYSTEM: Based on Athom SDK documentation. 4 priority levels: P1) BoundCluster.bind() - Official Athom pattern, P2) cluster.on('response'|'reporting') - Community pattern, P3) endpoint.on('frame') - Raw frame fallback, P4) TuyaEF00Manager - Legacy compatibility. All methods tried simultaneously, logs show which succeeded (✅/❌). Maximum robustness for Tuya DP reception.",
+    "fr": "SYSTEME MULTI-FALLBACK TUYA: Base sur documentation SDK Athom. 4 niveaux priorite: P1) BoundCluster.bind() - Pattern officiel Athom, P2) cluster.on('response'|'reporting') - Pattern communaute, P3) endpoint.on('frame') - Fallback frames bruts, P4) TuyaEF00Manager - Compatibilite legacy. Toutes methodes essayees, logs montrent succes (✅/❌). Robustesse maximale reception DP Tuya."
+  },
   "5.5.47": {
     "en": "BATTERY CALCULATOR ULTRA-PRECISE: 1) 4 calculation methods: DIRECT, MULT2/DIV2, VOLTAGE_CURVE, ENUM. 2) Non-linear discharge curves by chemistry: CR2032/CR2450 (plateau then rapid drop), CR123A (flat), Alkaline (progressive), Li-ion/LiPo (sigmoid 4.2-3.0V), LiFePO4 (very flat 3.2-3.3V), NiMH (plateau 1.2V). 3) Interpolation between curve points for accuracy. 4) batteryConfig getter in TuyaHybridDevice. 5) Automatic low battery detection with alarm_battery.",
     "fr": "BATTERY CALCULATOR ULTRA-PRECIS: 1) 4 methodes calcul: DIRECT, MULT2/DIV2, VOLTAGE_CURVE, ENUM. 2) Courbes decharge non-lineaires par chimie: CR2032/CR2450 (plateau puis chute), CR123A (plat), Alkaline (progressif), Li-ion/LiPo (sigmoide 4.2-3.0V), LiFePO4 (tres plat 3.2-3.3V), NiMH (plateau 1.2V). 3) Interpolation entre points courbe. 4) batteryConfig getter dans TuyaHybridDevice. 5) Detection auto batterie faible avec alarm_battery."
