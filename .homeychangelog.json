@@ -1,4 +1,8 @@
 {
+  "5.5.82": {
+    "en": "TZE284 FIX BASED ON COMPARISON: 1) After comparing all versions (v5.5.37-52, Johan, current), discovered that TZE284 devices declare ZCL standard clusters: temperatureMeasurement, relativeHumidity, powerConfiguration. 2) Added ZCL handlers for these clusters in soil_sensor and climate_sensor. 3) TZE284 devices might report data via ZCL instead of Tuya DP! 4) Created COMPARAISON_TUYA folder with all versions for reference. 5) Key difference: TZE200 declares 0xEF00, TZE284 does NOT.",
+    "fr": "FIX TZE284 BASÉ SUR COMPARAISON: 1) Après comparaison de toutes les versions, découvert que les TZE284 déclarent les clusters ZCL standards. 2) Ajout des handlers ZCL. 3) Les TZE284 pourraient reporter via ZCL au lieu de Tuya DP! 4) Dossier COMPARAISON_TUYA créé. 5) Différence clé: TZE200 déclare 0xEF00, TZE284 non."
+  },
   "5.5.81": {
     "en": "ENHANCED LOW-LEVEL HANDLER: 1) Tries multiple methods to get ZigBeeNode: this.node, homey.zigbee.getNode(), this.getNode(), zclNode.node. 2) Logs node type and available methods. 3) Logs ALL incoming frames (not just 0xEF00) to debug what the device sends. 4) If you see '[TUYA-P0] 📦 FRAME' logs, the handler is working. 5) Analysis of v46-v52 showed naming inconsistencies - v5.5.80's alignment with Johan is correct.",
     "fr": "HANDLER BAS NIVEAU AMÉLIORÉ: 1) Essaie plusieurs méthodes pour obtenir ZigBeeNode. 2) Log le type de nœud et les méthodes disponibles. 3) Log TOUTES les frames entrantes pour débugger. 4) Si vous voyez '[TUYA-P0] 📦 FRAME', le handler fonctionne. 5) L'alignement v5.5.80 avec Johan est correct."
