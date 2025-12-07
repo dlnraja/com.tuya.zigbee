@@ -108,38 +108,8 @@ class Switch2GangDevice extends HybridSwitchBase {
         });
       }
 
-      // Configure attribute reporting
-      try {
-        await this.configureAttributeReporting([
-          {
-            endpointId: 1,
-            cluster: CLUSTER.ELECTRICAL_MEASUREMENT,
-            attributeName: 'activePower',
-            minInterval: 10,
-            maxInterval: 300,
-            minChange: 1
-          },
-          {
-            endpointId: 1,
-            cluster: CLUSTER.ELECTRICAL_MEASUREMENT,
-            attributeName: 'rmsVoltage',
-            minInterval: 60,
-            maxInterval: 600,
-            minChange: 10
-          },
-          {
-            endpointId: 1,
-            cluster: CLUSTER.ELECTRICAL_MEASUREMENT,
-            attributeName: 'rmsCurrent',
-            minInterval: 10,
-            maxInterval: 300,
-            minChange: 10
-          }
-        ]).catch(() => { });
-        this.log('[SWITCH-2G] ✅ electricalMeasurement reporting configured');
-      } catch (e) {
-        this.log('[SWITCH-2G] electricalMeasurement reporting config failed:', e.message);
-      }
+      // v5.5.62: Configure attribute reporting with retry on Zigbee startup
+      this._configureElectricalReporting();
 
       // Initial read
       this._readElectricalAttributes(elecCluster);
@@ -167,25 +137,83 @@ class Switch2GangDevice extends HybridSwitchBase {
         });
       }
 
-      // Configure reporting for energy
-      try {
-        await this.configureAttributeReporting([
-          {
-            endpointId: 1,
-            cluster: CLUSTER.METERING,
-            attributeName: 'currentSummationDelivered',
-            minInterval: 60,
-            maxInterval: 3600,
-            minChange: 1
-          }
-        ]).catch(() => { });
-        this.log('[SWITCH-2G] ✅ metering reporting configured');
-      } catch (e) {
-        this.log('[SWITCH-2G] metering reporting config failed:', e.message);
-      }
+      // v5.5.62: Configure reporting for energy with retry on Zigbee startup
+      this._configureMeteringReporting();
 
       // Initial read
       this._readMeteringAttributes(meteringCluster);
+    }
+  }
+
+  /**
+   * v5.5.62: Configure electrical reporting with retry on Zigbee startup
+   */
+  async _configureElectricalReporting(retryCount = 0) {
+    try {
+      await this.configureAttributeReporting([
+        {
+          endpointId: 1,
+          cluster: CLUSTER.ELECTRICAL_MEASUREMENT,
+          attributeName: 'activePower',
+          minInterval: 10,
+          maxInterval: 300,
+          minChange: 1
+        },
+        {
+          endpointId: 1,
+          cluster: CLUSTER.ELECTRICAL_MEASUREMENT,
+          attributeName: 'rmsVoltage',
+          minInterval: 60,
+          maxInterval: 600,
+          minChange: 10
+        },
+        {
+          endpointId: 1,
+          cluster: CLUSTER.ELECTRICAL_MEASUREMENT,
+          attributeName: 'rmsCurrent',
+          minInterval: 10,
+          maxInterval: 300,
+          minChange: 10
+        }
+      ]);
+      this.log('[SWITCH-2G] ✅ electricalMeasurement reporting configured');
+    } catch (e) {
+      const msg = e?.message || String(e);
+      // Retry if Zigbee is starting up (max 3 retries)
+      if ((msg.includes('Zigbee') || msg.includes('démarrage') || msg.includes('starting')) && retryCount < 3) {
+        this.log(`[SWITCH-2G] ⏰ Zigbee starting, will retry electrical reporting in 60s (attempt ${retryCount + 1}/3)`);
+        this.homey.setTimeout(() => this._configureElectricalReporting(retryCount + 1), 60000);
+      } else {
+        this.log('[SWITCH-2G] electricalMeasurement reporting failed:', msg);
+      }
+    }
+  }
+
+  /**
+   * v5.5.62: Configure metering reporting with retry on Zigbee startup
+   */
+  async _configureMeteringReporting(retryCount = 0) {
+    try {
+      await this.configureAttributeReporting([
+        {
+          endpointId: 1,
+          cluster: CLUSTER.METERING,
+          attributeName: 'currentSummationDelivered',
+          minInterval: 60,
+          maxInterval: 3600,
+          minChange: 1
+        }
+      ]);
+      this.log('[SWITCH-2G] ✅ metering reporting configured');
+    } catch (e) {
+      const msg = e?.message || String(e);
+      // Retry if Zigbee is starting up (max 3 retries)
+      if ((msg.includes('Zigbee') || msg.includes('démarrage') || msg.includes('starting')) && retryCount < 3) {
+        this.log(`[SWITCH-2G] ⏰ Zigbee starting, will retry metering reporting in 60s (attempt ${retryCount + 1}/3)`);
+        this.homey.setTimeout(() => this._configureMeteringReporting(retryCount + 1), 60000);
+      } else {
+        this.log('[SWITCH-2G] metering reporting failed:', msg);
+      }
     }
   }
 
