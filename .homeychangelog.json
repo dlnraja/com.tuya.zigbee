@@ -1,4 +1,8 @@
 {
+  "5.5.39": {
+    "en": "CRITICAL FIX - TuyaBoundCluster: 1) Created lib/clusters/TuyaBoundCluster.js for receiving DP data from TS0601 devices. 2) Regular Cluster = Homey sends TO device, BoundCluster = Device sends TO Homey (dataReport!). 3) TuyaEF00Manager now binds TuyaBoundCluster to endpoint 1 for cluster 0xEF00. 4) Handles dataReport (0x02), dataResponse (0x01), and mcuSyncTime (0x24) commands. 5) Automatic time sync when device requests it. Sources: athombv/com.ikea.tradfri, zigbee2mqtt tuya.ts.",
+    "fr": "FIX CRITIQUE - TuyaBoundCluster: 1) Création lib/clusters/TuyaBoundCluster.js pour recevoir données DP des TS0601. 2) Cluster normal = Homey envoie VERS device, BoundCluster = Device envoie VERS Homey (dataReport!). 3) TuyaEF00Manager bind maintenant TuyaBoundCluster sur endpoint 1 pour cluster 0xEF00. 4) Gère dataReport (0x02), dataResponse (0x01), et mcuSyncTime (0x24). 5) Time sync auto quand device le demande."
+  },
   "5.5.38": {
     "en": "SOS BUTTON FIX: 1) Added onUninit() for proper timer cleanup - prevents 'Missing Zigbee Node' errors after device removal. 2) Clears battery/energy polling intervals and IAS Zone retry timeouts. 3) Soil sensor & Climate monitor: Manufacturers already in TuyaDPDatabase (_TZE284_oitavov2, _TZE284_vvmbj46n). 4) USB outlet: LED indicator (onoff.led) may not work on all models - this is model-dependent.",
     "fr": "FIX SOS BUTTON: 1) Ajout onUninit() pour nettoyage timers - évite erreurs 'Missing Zigbee Node' après suppression. 2) Arrête intervalles polling batterie/énergie et timeouts IAS Zone. 3) Soil sensor & Climate monitor: Manufacturers déjà dans TuyaDPDatabase. 4) USB outlet: Indicateur LED (onoff.led) peut ne pas fonctionner sur tous modèles."
