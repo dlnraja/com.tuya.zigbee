@@ -82,6 +82,43 @@ class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
   }
 
   /**
+   * v5.5.50: Centralized IAS alarm handler
+   * Debounced to prevent duplicate triggers from multiple listeners
+   */
+  _handleSOSAlarm(payload) {
+    // Debounce: Ignore if we triggered in the last 2 seconds
+    const now = Date.now();
+    if (this._lastSOSTrigger && (now - this._lastSOSTrigger) < 2000) {
+      this.log('[SOS] Debounced - already triggered recently');
+      return;
+    }
+    this._lastSOSTrigger = now;
+
+    this.log('[ZCL-DATA] SOS_button.zone_status raw=', JSON.stringify(payload));
+    this.log('[ALARM] 🆘 SOS BUTTON PRESSED!');
+
+    // Trigger flow card
+    this._triggerSOSPressed();
+
+    // Set alarm_contact capability
+    if (this.hasCapability('alarm_contact')) {
+      this.setCapabilityValue('alarm_contact', true).catch(this.error);
+
+      // Auto-reset after 5 seconds
+      if (this._alarmResetTimeout) {
+        clearTimeout(this._alarmResetTimeout);
+      }
+      this._alarmResetTimeout = setTimeout(() => {
+        this.setCapabilityValue('alarm_contact', false).catch(this.error);
+        this.log('[SOS] alarm_contact reset to false');
+      }, 5000);
+    }
+
+    // v5.5.50: Refresh battery while device is awake
+    this._refreshBatteryOnWake();
+  }
+
+  /**
    * Parse DP configuration from settings
    */
   _parseDPConfiguration() {
@@ -316,29 +353,32 @@ class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
         }
       }
 
-      // Setup Zone Status Change listener (SDK3 property assignment)
+      // v5.5.50: MULTI-METHOD IAS Zone listening for maximum reliability
+
+      // Method 1: SDK3 property assignment (official method)
       endpoint.clusters.iasZone.onZoneStatusChangeNotification = (payload) => {
-        this.log('[ZCL-DATA] SOS_button.zone_status raw=', JSON.stringify(payload));
-        this.log('[ALARM] 🆘 SOS BUTTON PRESSED via IAS Zone!');
-
-        // Trigger flow card
-        this._triggerSOSPressed();
-
-        // v5.5.6: Use alarm_contact (per MASTER BLOCK - zone activity compatible)
-        if (this.hasCapability('alarm_contact')) {
-          this.setCapabilityValue('alarm_contact', true).catch(this.error);
-
-          // Auto-reset after 5 seconds
-          setTimeout(() => {
-            this.setCapabilityValue('alarm_contact', false).catch(this.error);
-          }, 5000);
-        }
+        this.log('[IAS-M1] 🆘 onZoneStatusChangeNotification:', JSON.stringify(payload));
+        this._handleSOSAlarm(payload);
       };
 
-      // Also setup attribute listener (SDK3 property assignment)
+      // Method 2: Attribute change listener via .on()
+      if (typeof endpoint.clusters.iasZone.on === 'function') {
+        endpoint.clusters.iasZone.on('attr.zoneStatus', (zoneStatus) => {
+          this.log('[IAS-M2] 🆘 attr.zoneStatus:', zoneStatus);
+          this._handleSOSAlarm({ zoneStatus });
+        });
+
+        endpoint.clusters.iasZone.on('zoneStatusChangeNotification', (payload) => {
+          this.log('[IAS-M3] 🆘 zoneStatusChangeNotification event:', JSON.stringify(payload));
+          this._handleSOSAlarm(payload);
+        });
+        this.log('[SOS-BUTTON] ✅ Multi-method IAS listeners registered');
+      }
+
+      // Method 3: SDK3 onZoneStatus property
       endpoint.clusters.iasZone.onZoneStatus = (zoneStatus) => {
-        this.log('[ALARM] SOS Zone Status Changed:', zoneStatus);
-        this._triggerSOSPressed();
+        this.log('[IAS-M4] 🆘 onZoneStatus:', zoneStatus);
+        this._handleSOSAlarm({ zoneStatus });
       };
 
       // v5.5.34: Listen for ZCL battery reports IF they arrive (passive only, no polling)
