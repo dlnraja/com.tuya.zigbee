@@ -1,4 +1,8 @@
 {
+  "5.5.62": {
+    "en": "ZIGBEE STARTUP FIX: switch_2gang now retries configureAttributeReporting (electricalMeasurement + metering) when Zigbee stack is starting. Max 3 retries with 60s delay. Prevents 'Zigbee is starting up' errors on app restart.",
+    "fr": "CORRECTION DÉMARRAGE ZIGBEE: switch_2gang réessaie configureReporting si la stack Zigbee démarre. Max 3 tentatives avec délai 60s."
+  },
   "5.5.61": {
     "en": "SOS BUTTON CRITICAL FIX: Completely rewritten TS0215A _TZ3000_0dumfk2z driver. This device is NOT a Tuya DP device - it uses standard IAS Zone for button press detection. Removed ALL broken Tuya DP logic. Now uses: 1) Pure IAS Zone (zoneStatusChangeNotification) for button press. 2) ZCL powerConfiguration for battery (passive listener). 3) Simplified class hierarchy (extends ZigBeeDevice directly). 4) Auto battery read when device wakes up after button press.",
     "fr": "CORRECTION CRITIQUE SOS: Driver TS0215A réécrit. Ce device utilise IAS Zone standard, PAS Tuya DP. Suppression de toute la logique Tuya cassée."
