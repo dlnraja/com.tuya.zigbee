@@ -1,4 +1,8 @@
 {
+  "5.5.46": {
+    "en": "NEW TuyaHybridDevice BASE CLASS: 1) Proper architecture: cluster (ZCL reception), boundCluster (ZCL commands), tuyaCluster (Tuya DP reception), tuyaBoundCluster (Tuya DP commands). 2) Hybrid mode: both paths active, auto-decide after 15 min. 3) Direct listeners on zclNode.endpoints[1].clusters.tuya. 4) Raw frame parser fallback. 5) Soil sensor refactored to use new base class. 6) dpMappings + clusterHandlers getters for easy customization.",
+    "fr": "NOUVELLE CLASSE TuyaHybridDevice: 1) Architecture correcte: cluster (réception ZCL), boundCluster (commandes ZCL), tuyaCluster (réception DP Tuya), tuyaBoundCluster (commandes DP Tuya). 2) Mode hybride: les deux chemins actifs, décision auto après 15 min. 3) Listeners directs sur zclNode.endpoints[1].clusters.tuya. 4) Fallback parser raw frame. 5) Soil sensor refactorisé. 6) Getters dpMappings + clusterHandlers."
+  },
   "5.5.45": {
     "en": "TUYA EVENTS FIX: 1) TuyaSpecificCluster.COMMANDS restructured - incoming commands (response, reporting) now have 'args' to emit events. 2) Added mcuSyncTime command (0x24). 3) TuyaEF00Manager: Added DIRECT cluster listener using community pattern zclNode.endpoints[1].clusters.tuya.on('response'|'reporting'). 4) This is the CONFIRMED working pattern from Homey community forums.",
     "fr": "FIX EVENEMENTS TUYA: 1) TuyaSpecificCluster.COMMANDS restructuré - commandes entrantes (response, reporting) ont 'args' pour émettre événements. 2) Ajout commande mcuSyncTime (0x24). 3) TuyaEF00Manager: Ajout listener DIRECT pattern communauté zclNode.endpoints[1].clusters.tuya.on('response'|'reporting'). 4) Pattern confirmé par forums communauté Homey."
