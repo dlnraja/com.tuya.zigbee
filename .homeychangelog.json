@@ -1,4 +1,8 @@
 {
+  "5.5.43": {
+    "en": "SWITCH 2-GANG FIX: 1) Added _cleanupOrphanCapabilities() to remove 'Active' button and other invalid capabilities. 2) Valid caps: onoff, onoff.gang2, measure_power/voltage/current, meter_power. 3) Note: USB ports on these switches are typically HARDWIRED (not controllable) - this is a hardware limitation, not software. 4) _TZ3000_h1ipgkwn is correctly mapped to switch_2gang driver.",
+    "fr": "FIX SWITCH 2-GANG: 1) Ajout _cleanupOrphanCapabilities() pour supprimer bouton 'Active' et autres capabilities invalides. 2) Caps valides: onoff, onoff.gang2, measure_power/voltage/current, meter_power. 3) Note: Ports USB souvent CABLES EN PERMANENCE (non controlables) - limitation hardware. 4) _TZ3000_h1ipgkwn correctement mappé au driver switch_2gang."
+  },
   "5.5.42": {
     "en": "COMPLETE HYBRID SYSTEM: 1) BatteryProfileDatabase.js - Local battery profiles with chemistry, voltage curves, algorithms. 2) BatteryHybridManager.js - Auto-learning for battery source (Tuya DP vs ZCL) and calculation algorithm. 3) IMPLEMENTATION_RULES.md - Complete documentation of rules 9.20-9.25. 4) 100% LOCAL - No internet required (except OTA). 5) Auto-optimization after 15 min for both protocol AND battery. 6) Voltage curves for CR2032, Alkaline, Lithium batteries.",
     "fr": "SYSTEME HYBRIDE COMPLET: 1) BatteryProfileDatabase.js - Profils batteries locaux avec chimie, courbes tension, algorithmes. 2) BatteryHybridManager.js - Auto-apprentissage source batterie (Tuya DP vs ZCL) et algorithme calcul. 3) IMPLEMENTATION_RULES.md - Documentation complete regles 9.20-9.25. 4) 100% LOCAL - Pas d'internet (sauf OTA). 5) Auto-optimisation apres 15 min pour protocole ET batterie. 6) Courbes tension CR2032, Alkaline, Lithium."
