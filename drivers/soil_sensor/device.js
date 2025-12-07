@@ -1,26 +1,31 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices');
-const { WakeStrategies } = require('../../lib/tuya/TuyaGatewayEmulator');
+const TuyaHybridDevice = require('../../lib/devices/TuyaHybridDevice');
 
 /**
- * Soil Sensor Device - v5.5.35 ENHANCED WAKE + AGGRESSIVE RECOVERY
- *
- * Uses HybridSensorBase for:
- * - Anti-double init
- * - MaxListeners bump
- * - Protocol auto-detection
- * - Phantom sub-device rejection
- * - Automatic ZCL/Tuya DP handling via onTuyaStatus()
- *
- * Supports: Temperature, Humidity, Soil Moisture, Battery
- *
- * KNOWN MODELS:
- * - TS0601 / _TZE284_oitavov2 : Tuya soil moisture sensor
- *
- * Forum: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/
+ * ╔══════════════════════════════════════════════════════════════════════════════╗
+ * ║            SOIL SENSOR - v5.5.46 TRUE HYBRID                                 ║
+ * ╠══════════════════════════════════════════════════════════════════════════════╣
+ * ║                                                                              ║
+ * ║  Uses TuyaHybridDevice base class with proper:                               ║
+ * ║  - tuyaCluster handlers (Tuya DP reception via 0xEF00)                       ║
+ * ║  - cluster handlers (Zigbee standard reception)                              ║
+ * ║  - tuyaBoundCluster (Tuya DP commands to device)                             ║
+ * ║  - Hybrid mode auto-detection after 15 min                                   ║
+ * ║                                                                              ║
+ * ║  KNOWN MODELS:                                                               ║
+ * ║  - TS0601 / _TZE284_oitavov2 : QT-07S Soil moisture sensor                   ║
+ * ║  - TS0601 / _TZE284_aao3yzhs : Soil sensor variant                           ║
+ * ║                                                                              ║
+ * ║  DP MAPPINGS (from Z2M/ZHA):                                                 ║
+ * ║  - DP3: soil_moisture %                                                      ║
+ * ║  - DP5: temperature ÷10                                                      ║
+ * ║  - DP14: battery_state enum (0=low, 1=med, 2=high)                           ║
+ * ║  - DP15: battery_percent %                                                   ║
+ * ║                                                                              ║
+ * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class SoilSensorDevice extends HybridSensorBase {
+class SoilSensorDevice extends TuyaHybridDevice {
 
   /** Battery powered */
   get mainsPowered() { return false; }
@@ -95,241 +100,42 @@ class SoilSensorDevice extends HybridSensorBase {
     };
   }
 
-  // v5.5.35: Skip ZCL battery polling - use Tuya DP only
-  get usesTuyaDPBattery() { return true; }
-  get skipZclBatteryPolling() { return true; }
+  /**
+   * v5.5.46: ZCL cluster handlers (cluster equivalent)
+   * For Zigbee standard reports if device supports them
+   */
+  get clusterHandlers() {
+    return {
+      // Most soil sensors don't have standard ZCL clusters
+      // But some may report battery via powerConfiguration
+      powerConfiguration: {
+        attributeReport: (data) => {
+          if (data.batteryPercentageRemaining !== undefined) {
+            const battery = Math.round(data.batteryPercentageRemaining / 2);
+            this.log(`[ZCL] Battery: ${battery}%`);
+            this.setCapabilityValue('measure_battery', battery).catch(() => { });
+          }
+        }
+      }
+    };
+  }
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
 
-    const settings = this.getSettings() || {};
-    const modelId = settings.zb_modelId || 'unknown';
-    const mfr = settings.zb_manufacturerName || 'unknown';
-
-    this.log('[SOIL] ========================================================');
-    this.log('[SOIL] Soil sensor ready');
-    this.log('[SOIL] Model:', modelId);
-    this.log('[SOIL] Manufacturer:', mfr);
-    this.log('[SOIL] ========================================================');
-    this.log('[SOIL] ⚠️ BATTERY DEVICE - Data comes when device wakes up naturally');
+    this.log('[SOIL] ════════════════════════════════════════════════════');
+    this.log('[SOIL] Soil Sensor v5.5.46 TRUE HYBRID');
+    this.log('[SOIL] ════════════════════════════════════════════════════');
+    this.log('[SOIL] ⚠️ BATTERY DEVICE - Data comes when device wakes up');
     this.log('[SOIL] ℹ️ First data may take 10-60 minutes after pairing');
-
-    // v5.5.35: Schedule aggressive DP request for after device likely wakes
-    // Soil sensors typically report every 10-30 minutes
-    this._scheduleAggressiveDPRequest();
-
-    // v5.5.29: Setup advanced wake strategies
-    await this._setupWakeStrategies();
   }
 
   /**
-   * v5.5.35: Schedule aggressive DP requests at typical wake intervals
-   * Battery sensors wake up periodically - we try to catch them
-   */
-  _scheduleAggressiveDPRequest() {
-    // Try multiple times at different intervals
-    const intervals = [
-      30 * 1000,      // 30 seconds after init
-      2 * 60 * 1000,  // 2 minutes
-      5 * 60 * 1000,  // 5 minutes
-      10 * 60 * 1000, // 10 minutes
-      20 * 60 * 1000, // 20 minutes
-      30 * 60 * 1000, // 30 minutes
-    ];
-
-    intervals.forEach((delay, index) => {
-      const timer = this.homey.setTimeout(() => {
-        this.log(`[SOIL] ⏰ Aggressive DP request attempt ${index + 1}/${intervals.length}`);
-        this._requestSoilDPs();
-      }, delay);
-      this._aggressiveTimers = this._aggressiveTimers || [];
-      this._aggressiveTimers.push(timer);
-    });
-
-    this.log('[SOIL] 📅 Scheduled aggressive DP requests at: 30s, 2m, 5m, 10m, 20m, 30m');
-
-    // Also start regular periodic request
-    this._startPeriodicDPRequest();
-  }
-
-  /**
-   * v5.5.29: Setup advanced wake strategies for sleepy soil sensors
-   */
-  async _setupWakeStrategies() {
-    try {
-      this.log('[SOIL] ⏰ Setting up wake strategies...');
-
-      // All DPs for soil sensor
-      const allDPs = [1, 3, 4, 5, 14, 15, 101, 105];
-
-      // Strategy 1: Query all DPs when ANY data is received
-      await WakeStrategies.onAnyDataReceived(this, allDPs, async (dps) => {
-        if (this.safeTuyaDataQuery) {
-          await this.safeTuyaDataQuery(dps, {
-            logPrefix: '[SOIL-WAKE]',
-            delayBetweenQueries: 100
-          });
-        }
-      });
-
-      // Strategy 2: Configure ZCL attribute reporting
-      await WakeStrategies.configureReporting(this).catch(() => { });
-
-      // Strategy 3: Refresh bindings to ensure reports come to us
-      await WakeStrategies.refreshBindings(this).catch(() => { });
-
-      this.log('[SOIL] ✅ Wake strategies configured');
-    } catch (err) {
-      this.log('[SOIL] Wake strategies error:', err.message);
-    }
-  }
-
-  /**
-   * v5.5.19: Request soil-specific DPs
-   */
-  async _requestSoilDPs() {
-    if (!this.tuyaEF00Manager) {
-      this.log('[SOIL] ⚠️ No Tuya manager - waiting for device to wake up');
-      return;
-    }
-
-    try {
-      // Request all soil sensor DPs: 1,2,3,4,5,15,101,105
-      const dps = [1, 2, 3, 4, 5, 15, 101, 105];
-      this.log(`[SOIL] Requesting DPs: ${dps.join(', ')}`);
-
-      if (typeof this.tuyaEF00Manager.requestDPs === 'function') {
-        await this.tuyaEF00Manager.requestDPs(dps);
-        this.log('[SOIL] DP request sent');
-      } else if (typeof this.tuyaEF00Manager.sendCommand === 'function') {
-        // Alternative: send a generic query command
-        await this.tuyaEF00Manager.sendCommand({ command: 0x00 });
-      }
-    } catch (err) {
-      this.log('[SOIL] ⚠️ DP request failed (device may be sleeping):', err.message);
-    }
-  }
-
-  /**
-   * v5.5.19: Start periodic DP requests for battery devices
-   */
-  _startPeriodicDPRequest() {
-    // Clear existing interval if any
-    if (this._dpRequestInterval) {
-      clearInterval(this._dpRequestInterval);
-    }
-
-    // Request DPs every 30 minutes (battery devices wake up periodically)
-    const intervalMs = 30 * 60 * 1000; // 30 minutes
-    this._dpRequestInterval = setInterval(() => {
-      this._requestSoilDPs();
-    }, intervalMs);
-
-    this.log('[SOIL] Periodic DP request started (every 30 min)');
-  }
-
-  /**
-   * v5.5.27: Refresh all DPs - called by Flow Card or manual refresh
-   * Uses safeTuyaDataQuery for sleepy device handling
-   */
-  async refreshAll() {
-    this.log('[SOIL-REFRESH] Refreshing all DPs...');
-
-    // DPs based on corrected mappings
-    const DPS_MOISTURE = [3, 101, 105];  // Soil moisture
-    const DPS_TEMP = [1, 5];             // Temperature
-    const DPS_BATTERY = [4, 14, 15];     // Battery
-
-    const allDPs = [...DPS_MOISTURE, ...DPS_TEMP, ...DPS_BATTERY];
-
-    return this.safeTuyaDataQuery(allDPs, {
-      logPrefix: '[SOIL-REFRESH]',
-      delayBetweenQueries: 150,
-    });
-  }
-
-  /**
-   * v5.5.35: Clean up on device destroy
+   * v5.5.46: Clean up
    */
   onDeleted() {
-    if (this._dpRequestInterval) {
-      clearInterval(this._dpRequestInterval);
-    }
-    // v5.5.35: Clear aggressive timers
-    if (this._aggressiveTimers) {
-      this._aggressiveTimers.forEach(t => this.homey.clearTimeout(t));
-      this._aggressiveTimers = null;
-    }
-    if (super.onDeleted) super.onDeleted();
-  }
-
-  /**
-   * v5.5.36: FIXED - Enhanced logging per MASTER BLOCK specs
-   * Shows raw + converted values for each DP
-   *
-   * CRITICAL DP MAPPING for _TZE284_oitavov2:
-   * - DP3: soil_moisture % (main sensor)
-   * - DP5: temperature ÷10
-   * - DP14: battery_state enum (0=low, 1=medium, 2=high)
-   * - DP15: battery_percent %
-   */
-  onTuyaStatus(status) {
-    if (!status) {
-      super.onTuyaStatus(status);
-      return;
-    }
-
-    const dp = status.dp;
-    const rawValue = status.data || status.value;
-
-    // v5.5.36: FIXED - Correct DP logging
-    switch (dp) {
-      case 3: // Soil moisture % (main sensor)
-        this.log(`[SOIL-DP] DP3 soil_moisture raw=${rawValue} converted=${rawValue}%`);
-        break;
-      case 5: // Temperature ÷10
-        const tempConverted = rawValue > 1000 ? rawValue / 100 : rawValue / 10;
-        this.log(`[SOIL-DP] DP5 temperature raw=${rawValue} converted=${tempConverted}°C`);
-        break;
-      case 1: // Alternative temperature
-        this.log(`[SOIL-DP] DP1 temperature_alt raw=${rawValue} converted=${rawValue / 10}°C`);
-        break;
-      case 2: // Temperature unit setting
-        this.log(`[SOIL-DP] DP2 temp_unit raw=${rawValue} (0=C, 1=F)`);
-        break;
-      case 14: // Battery state enum
-        const batState = rawValue === 0 ? 'low(10%)' : rawValue === 1 ? 'medium(50%)' : 'high(100%)';
-        this.log(`[SOIL-DP] DP14 battery_state raw=${rawValue} converted=${batState}`);
-        break;
-      case 15: // Battery percent
-        this.log(`[SOIL-DP] DP15 battery_percent raw=${rawValue} converted=${rawValue}%`);
-        break;
-      case 4: // Alt battery
-        this.log(`[SOIL-DP] DP4 battery_alt raw=${rawValue} converted=${rawValue}%`);
-        break;
-      case 101: // Alt soil moisture
-      case 105:
-        const moistureConverted = rawValue > 100 ? Math.round(rawValue / 10) : rawValue;
-        this.log(`[SOIL-DP] DP${dp} moisture_alt raw=${rawValue} converted=${moistureConverted}%`);
-        break;
-      default:
-        if (dp !== undefined) {
-          this.log(`[SOIL-DP] DP${dp} UNKNOWN raw=${rawValue}`);
-        }
-    }
-
-    // Call parent handler to set capabilities
-    super.onTuyaStatus(status);
-
-    // Log final capability values after processing
-    this.homey.setTimeout(() => {
-      const temp = this.getCapabilityValue('measure_temperature');
-      const soil = this.getCapabilityValue('measure_humidity');
-      const bat = this.getCapabilityValue('measure_battery');
-      if (temp !== null || soil !== null || bat !== null) {
-        this.log(`[SOIL] ✅ CAPABILITIES: temp=${temp}°C soil=${soil}% battery=${bat}%`);
-      }
-    }, 100);
+    super.onDeleted();
+    this.log('[SOIL] Device deleted');
   }
 }
 
