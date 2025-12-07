@@ -1,4 +1,8 @@
 {
+  "5.5.68": {
+    "en": "CRITICAL FIX: 1) Sleepy device query bug fixed - was calculating 56 YEARS of idle time! 2) When lastActivity=0 (new device), now ALLOWS first query instead of skipping. 3) Climate sensors, soil sensors, and all battery devices should now receive data properly. 4) Root cause: Date.now() - 0 = Unix timestamp since 1970.",
+    "fr": "FIX CRITIQUE: 1) Bug requête devices batterie corrigé - calculait 56 ANS d'inactivité! 2) Permet maintenant la première requête pour nouveaux devices. 3) Capteurs climat, sol, etc. devraient recevoir les données. 4) Cause: Date.now() - 0 = timestamp Unix depuis 1970."
+  },
   "5.5.67": {
     "en": "TIME SYNC FIX: 1) Fixed Tuya mcuSyncTime payload format - was 10 bytes with requestId, now correct 8 bytes. 2) Uses Unix epoch (1970) for Tuya devices, not Zigbee epoch (2000). 3) Format: [UTC:4bytes][Local:4bytes] Big Endian. 4) Added timezone logging. Climate monitors with LCD should now display correct time.",
     "fr": "FIX TIME SYNC: 1) Format payload mcuSyncTime corrigé - 8 octets au lieu de 10. 2) Utilise epoch Unix (1970) pour Tuya. 3) Les moniteurs climat LCD devraient afficher l'heure correcte."
