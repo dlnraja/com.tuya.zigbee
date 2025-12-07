@@ -1,4 +1,8 @@
 {
+  "5.5.64": {
+    "en": "FORUM FIXES: 1) Added _TZ3000_u3nv1jwk to scene_switch_4 (TS0044 4-button remote). 2) Smart IAS Zone mapping - prioritizes alarm_motion for radars, alarm_contact for contact sensors (fixes unwanted alarm_contact on radar devices). 3) SOS button improved - added registerCapability for automatic flow triggers. Delete and re-pair devices for best results.",
+    "fr": "CORRECTIONS FORUM: 1) Ajout _TZ3000_u3nv1jwk au scene_switch_4. 2) Mapping IAS Zone intelligent - priorité alarm_motion pour radars. 3) SOS amélioré - registerCapability pour triggers automatiques."
+  },
   "5.5.63": {
     "en": "PROTOCOL AUTO-OPTIMIZER: New centralized module (lib/ProtocolAutoOptimizer.js) that handles exotic Chinese implementations. 1) Listens to ALL protocols (Tuya DP + ZCL) simultaneously. 2) After 15 minutes, identifies which protocol actually receives data. 3) Pauses unused methods to avoid errors/timeouts. 4) Saves decision for 7 days. Integrated into HybridSensorBase for all sensors (climate, soil, mmWave, motion, contact, etc.).",
     "fr": "AUTO-OPTIMISATION PROTOCOLES: Nouveau module centralisé qui gère les implémentations chinoises exotiques. Après 15min, pause les méthodes inutilisées."

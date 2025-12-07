@@ -40,7 +40,25 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       await this.setCapabilityValue('alarm_contact', false).catch(() => { });
     }
 
-    // Setup IAS Zone for button press
+    // v5.5.64: Register capability with CLUSTER.IAS_ZONE for automatic flow triggers
+    try {
+      this.registerCapability('alarm_contact', 'iasZone', {
+        report: 'zoneStatus',
+        reportParser: (zoneStatus) => {
+          this.log('[SOS] 🆘 registerCapability zoneStatus:', zoneStatus);
+          const alarm = (zoneStatus & 0x01) !== 0 || (zoneStatus & 0x02) !== 0;
+          if (alarm) {
+            this._handleAlarm({ zoneStatus });
+          }
+          return alarm;
+        }
+      });
+      this.log('[SOS] ✅ Registered alarm_contact with iasZone cluster');
+    } catch (e) {
+      this.log('[SOS] registerCapability skipped:', e.message);
+    }
+
+    // Setup IAS Zone for button press (additional listeners)
     await this._setupIasZone();
 
     // Setup battery via ZCL powerConfiguration (passive only)
