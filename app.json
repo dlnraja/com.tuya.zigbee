@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.51",
+  "version": "5.5.52",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.51: Added SLS Smart Home + tuya-local device support (mmWave, vibration sensors)",
-    "fr": "V5.5.51: Support SLS Smart Home + devices tuya-local (mmWave, capteurs vibration)"
+    "en": "V5.5.52: Extended tuya-local support (TRV, thermostats, sirens, curtains, sensors)",
+    "fr": "V5.5.52: Support tuya-local etendu (TRV, thermostats, sirenes, volets, capteurs)"
   },
   "category": "appliances",
   "permissions": [],
@@ -18518,7 +18518,10 @@
           "_TZE204_jktmrpoj",
           "_TZE284_nklqjk62",
           "_tze284_nklqjk62",
-          "zbeacon"
+          "zbeacon",
+          "Nedis",
+          "Haozee",
+          "SLS"
         ],
         "productId": [
           "DC-15ZBS",
@@ -18980,7 +18983,14 @@
           "mcdj3aq\\u0000",
           "owvfni3",
           "owvfni3\\u0000",
-          "u1rkty3"
+          "u1rkty3",
+          "Zemismart",
+          "Moes",
+          "Avatto",
+          "LoraTap",
+          "Benexmart",
+          "Dooya",
+          "SLS"
         ],
         "productId": [
           "AM25",
@@ -26613,20 +26623,35 @@
           "_TZE200_9xfjixap",
           "_TZE200_aoclfnxz",
           "_TZE200_azqp6ssj",
+          "_TZE200_b6wax7g0",
           "_TZE200_bvu2wnxz",
           "_TZE200_c88teujp",
+          "_TZE200_chyvmhay",
+          "_TZE200_cwnjrr72",
           "_TZE200_dzuqwsyg",
           "_TZE200_e9ba97vf",
           "_TZE200_fhn3negr",
+          "_TZE200_g9a3awaj",
+          "_TZE200_hue3yfsn",
+          "_TZE200_husqqvux",
           "_TZE200_hvaxb2tc",
+          "_TZE200_kds0pmmv",
           "_TZE200_kfvq6avy",
           "_TZE200_kly8gjlz",
+          "_TZE200_lnbfnyxd",
+          "_TZE200_mudxchsu",
           "_TZE200_trv602",
           "_TZE200_zuhszj9s",
+          "_TZE204_0dxrpqxl",
           "_TZE204_aoclfnxz",
           "_TZE204_ckud7u2l",
+          "_TZE204_g9a3awaj",
           "_TZE204_hvaxb2tc",
-          "_TZE284_hvaxb2tc"
+          "_TZE204_lnbfnyxd",
+          "_TZE284_hvaxb2tc",
+          "Moes",
+          "Avatto",
+          "SLS"
         ],
         "productId": [
           "HY369RT",
@@ -27590,16 +27615,25 @@
         "manufacturerName": [
           "_TYZB01_bnggsfsf",
           "_TZ3000_ab7hfuil",
+          "_TZ3000_aogb3s2t",
           "_TZ3000_d0yl2hsy",
           "_TZ3000_d0yu2xgi",
           "_TZ3000_fwuelqs5",
+          "_TZ3000_hdr3nfei",
+          "_TZ3000_kfpsbnoi",
+          "_TZ3000_rkkr4ooa",
           "_TZ3000_t13n5zo0",
           "_TZ3000_t6jsgizp",
+          "_TZ3000_xnh7cqte",
           "_TZE200_d0yu2xgi",
           "_TZE200_nlrfgpny",
           "_TZE200_t1blo2bj",
           "_TZE204_nlrfgpny",
-          "_TZE204_t1blo2bj"
+          "_TZE204_t1blo2bj",
+          "Neo",
+          "Airam",
+          "Orion",
+          "SLS"
         ],
         "productId": [
           "SA01",
@@ -32534,10 +32568,34 @@
         "manufacturerName": [
           "TS0011",
           "_TZE200_0dvm9mva",
+          "_TZE200_2atgpdho",
+          "_TZE200_aoclfnxz",
+          "_TZE200_b6wax7g0",
+          "_TZE200_bvu2wnxz",
+          "_TZE200_c88teujp",
           "_TZE200_cwbvmsar",
+          "_TZE200_dzuqwsyg",
+          "_TZE200_ckud7u2l",
+          "_TZE200_fhn3negr",
+          "_TZE200_g9a3awaj",
+          "_TZE200_hue3yfsn",
+          "_TZE200_husqqvux",
+          "_TZE200_kds0pmmv",
           "_TZE200_kds0pqet",
+          "_TZE200_lnbfnyxd",
+          "_TZE200_mudxchsu",
           "_TZE200_wlosfena",
-          "_tze600_ogyg1y6b"
+          "_TZE200_znbl8dj5",
+          "_TZE204_aoclfnxz",
+          "_TZE204_ckud7u2l",
+          "_TZE204_g9a3awaj",
+          "_TZE204_lnbfnyxd",
+          "_tze600_ogyg1y6b",
+          "Beca",
+          "Beok",
+          "Moes",
+          "Avatto",
+          "SLS"
         ],
         "productId": [
           "TS0601"
@@ -33187,7 +33245,11 @@
           "_TZ3000_t6jriawg",
           "_TZ3000_upgcbody",
           "_TZ3000_wuep9zng",
-          "_TZ3000_ww9i3e0y"
+          "_TZ3000_ww9i3e0y",
+          "_TZE200_qq9mpfhw",
+          "_TZE204_qq9mpfhw",
+          "Nedis",
+          "SLS"
         ],
         "productId": [
           "IH-K665",
