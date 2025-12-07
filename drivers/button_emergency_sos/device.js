@@ -334,14 +334,45 @@ class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
     }
   }
 
+  /**
+   * v5.5.38: Proper cleanup on uninit (app restart/device removal)
+   * Stops all timers to prevent "Missing Zigbee Node" errors
+   */
+  async onUninit() {
+    this.log('[SOS-BUTTON] onUninit - cleaning up timers...');
+
+    // Clear any battery polling interval
+    if (this._batteryPollInterval) {
+      this.homey.clearInterval(this._batteryPollInterval);
+      this._batteryPollInterval = null;
+    }
+
+    // Clear any energy polling interval
+    if (this._energyPollInterval) {
+      this.homey.clearInterval(this._energyPollInterval);
+      this._energyPollInterval = null;
+    }
+
+    // Clear IAS Zone retry timeout
+    if (this._iasRetryTimeout) {
+      this.homey.clearTimeout(this._iasRetryTimeout);
+      this._iasRetryTimeout = null;
+    }
+
+    // Clear battery request timeout
+    if (this._batteryRequestTimeout) {
+      this.homey.clearTimeout(this._batteryRequestTimeout);
+      this._batteryRequestTimeout = null;
+    }
+
+    this.log('[SOS-BUTTON] ✅ All timers cleared');
+  }
+
   async onDeleted() {
     this.log('SosEmergencyButtonDevice deleted');
 
-    // v5.1.0: Clear IAS Zone retry timeout
-    if (this._iasRetryTimeout) {
-      clearTimeout(this._iasRetryTimeout);
-      this._iasRetryTimeout = null;
-    }
+    // Call onUninit for cleanup
+    await this.onUninit();
 
     await super.onDeleted().catch(err => this.error(err));
   }
