@@ -35,8 +35,11 @@ class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('═══════════════════════════════════════════════════');
-    this.log('[SOS-BUTTON] Initializing...');
+    this.log('[SOS-BUTTON] v5.5.49 Initializing...');
     this.log('═══════════════════════════════════════════════════');
+
+    // v5.5.49: CRITICAL - Ensure alarm_contact capability exists BEFORE init
+    await this._ensureCapabilities();
 
     // Initialize base (auto power detection + dynamic capabilities)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
@@ -50,7 +53,32 @@ class SosEmergencyButtonDevice extends AutoAdaptiveDevice {
     // Setup Tuya DP listener for battery
     await this._setupTuyaDPListener();
 
+    // v5.5.49: Initialize alarm_contact to false if null
+    if (this.hasCapability('alarm_contact')) {
+      const currentValue = this.getCapabilityValue('alarm_contact');
+      if (currentValue === null || currentValue === undefined) {
+        await this.setCapabilityValue('alarm_contact', false).catch(() => { });
+        this.log('[SOS-BUTTON] ✅ alarm_contact initialized to false');
+      }
+    }
+
     this.log('[SOS-BUTTON] ✅ Initialized');
+  }
+
+  /**
+   * v5.5.49: Ensure required capabilities exist
+   */
+  async _ensureCapabilities() {
+    const requiredCaps = ['alarm_contact', 'measure_battery'];
+
+    for (const cap of requiredCaps) {
+      if (!this.hasCapability(cap)) {
+        this.log(`[SOS-BUTTON] Adding missing capability: ${cap}`);
+        await this.addCapability(cap).catch(err => {
+          this.error(`[SOS-BUTTON] Failed to add ${cap}:`, err.message);
+        });
+      }
+    }
   }
 
   /**
