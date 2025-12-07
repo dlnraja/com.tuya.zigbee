@@ -190,6 +190,19 @@ class ClimateSensorDevice extends HybridSensorBase {
     this.log(`[CLIMATE] Manufacturer: ${mfr}`);
     this.log('[CLIMATE] ════════════════════════════════════════════════════');
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // v5.5.86: CRITICAL - Send Tuya Magic Packet for _TZE284 devices
+    // Source: https://github.com/Koenkk/zigbee2mqtt/issues/26078
+    // This tells the device to start reporting data!
+    // ═══════════════════════════════════════════════════════════════════════
+    const isTZE284 = mfr && mfr.startsWith('_TZE284');
+    if (isTZE284) {
+      this.log('[CLIMATE] 🔮 TZE284 detected - sending Tuya Magic Packet...');
+      await this._sendTuyaMagicPacket(zclNode).catch(e => {
+        this.log('[CLIMATE] Magic packet failed:', e.message);
+      });
+    }
+
     // v5.5.29: Initialize Gateway Emulator for devices with LCD clocks
     // This makes Homey act as a Tuya Gateway - pushing time proactively
     const hasLCD = mfr && (
@@ -387,6 +400,141 @@ class ClimateSensorDevice extends HybridSensorBase {
     } catch (err) {
       // Non-critical error - device might be sleeping
       this.log('[CLIMATE] ⚠️ Time sync failed (device may be sleeping):', err.message);
+    }
+  }
+
+  /**
+   * v5.5.86: Send Tuya Magic Packet to configure TZE284 devices
+   * Source: https://github.com/Koenkk/zigbee2mqtt/issues/26078
+   *
+   * Z2M does: tuya.configureMagicPacket + dataQuery
+   * This tells the device to start reporting data!
+   */
+  async _sendTuyaMagicPacket(zclNode) {
+    const endpoint = zclNode?.endpoints?.[1];
+    if (!endpoint) {
+      this.log('[MAGIC-PACKET] ⚠️ No endpoint 1');
+      return;
+    }
+
+    const tuyaCluster = endpoint.clusters?.['tuya'] ||
+      endpoint.clusters?.[61184] ||
+      endpoint.clusters?.['manuSpecificTuya'];
+
+    if (!tuyaCluster) {
+      this.log('[MAGIC-PACKET] ⚠️ No Tuya cluster (0xEF00) found');
+      // Try to send via raw frame instead
+      await this._sendMagicPacketRaw(endpoint);
+      return;
+    }
+
+    try {
+      // Step 1: Send MCU Version Request (Magic Packet)
+      // This is what Z2M calls "configureMagicPacket"
+      this.log('[MAGIC-PACKET] 📤 Sending MCU Version Request...');
+
+      if (typeof tuyaCluster.mcuVersionRequest === 'function') {
+        await tuyaCluster.mcuVersionRequest({ seq: 0 });
+        this.log('[MAGIC-PACKET] ✅ MCU Version Request sent');
+      } else {
+        // Fallback: Send raw command
+        await this._sendMagicPacketRaw(endpoint);
+      }
+
+      // Step 2: Send Data Query to trigger device to report
+      this.log('[MAGIC-PACKET] 📤 Sending Data Query...');
+
+      if (typeof tuyaCluster.dataQuery === 'function') {
+        await tuyaCluster.dataQuery({});
+        this.log('[MAGIC-PACKET] ✅ Data Query sent');
+      } else if (typeof tuyaCluster.command === 'function') {
+        await tuyaCluster.command('dataQuery', {});
+        this.log('[MAGIC-PACKET] ✅ Data Query sent (via command)');
+      }
+
+      // Step 3: Also send time sync immediately (Paris GMT+1/+2)
+      this.log('[MAGIC-PACKET] 🕐 Sending time with Paris timezone...');
+      await this._sendTuyaTimeSync(endpoint);
+
+      this.log('[MAGIC-PACKET] ✅ Magic packet sequence complete!');
+    } catch (err) {
+      this.log('[MAGIC-PACKET] ⚠️ Error:', err.message);
+      // Try raw fallback
+      await this._sendMagicPacketRaw(endpoint).catch(() => { });
+    }
+  }
+
+  /**
+   * v5.5.86: Send magic packet via raw frame
+   */
+  async _sendMagicPacketRaw(endpoint) {
+    try {
+      this.log('[MAGIC-PACKET-RAW] 📤 Sending via raw frame...');
+
+      // MCU Version Request: Command 0x10, seq 0
+      const mcuVersionFrame = Buffer.from([0x00, 0x00, 0x10]);
+
+      // Data Query: Command 0x03
+      const dataQueryFrame = Buffer.from([0x00, 0x01, 0x03]);
+
+      // Try to send via node handleFrame or similar
+      const node = this.getZigBeeNode?.() || this.node;
+      if (node && typeof node.sendFrame === 'function') {
+        await node.sendFrame(1, 0xEF00, mcuVersionFrame);
+        await new Promise(r => setTimeout(r, 200));
+        await node.sendFrame(1, 0xEF00, dataQueryFrame);
+        this.log('[MAGIC-PACKET-RAW] ✅ Raw frames sent');
+      } else {
+        this.log('[MAGIC-PACKET-RAW] ⚠️ No sendFrame method available');
+      }
+    } catch (err) {
+      this.log('[MAGIC-PACKET-RAW] ⚠️ Error:', err.message);
+    }
+  }
+
+  /**
+   * v5.5.86: Send Tuya time sync with Paris timezone (GMT+1/+2)
+   * Format: Command 0x24 with UTC timestamp + timezone offset
+   */
+  async _sendTuyaTimeSync(endpoint) {
+    try {
+      const now = new Date();
+
+      // Paris timezone: CET (GMT+1) or CEST (GMT+2 in summer)
+      // JavaScript gives us the correct offset automatically
+      const parisOffset = -now.getTimezoneOffset() * 60; // In seconds
+
+      // Tuya time format: seconds since 1970 (Unix epoch)
+      const utcSeconds = Math.floor(now.getTime() / 1000);
+      const localSeconds = utcSeconds + parisOffset;
+
+      this.log(`[TIME-SYNC] 🕐 UTC: ${new Date(utcSeconds * 1000).toISOString()}`);
+      this.log(`[TIME-SYNC] 🕐 Local (Paris): ${new Date(localSeconds * 1000).toISOString()}`);
+      this.log(`[TIME-SYNC] 🕐 Offset: ${parisOffset / 3600}h`);
+
+      // Build time sync frame: Command 0x24
+      // Format: [seq:2][cmd:1][len:2][utc:4][local:4]
+      const frame = Buffer.alloc(13);
+      frame.writeUInt16BE(0x0000, 0);  // seq
+      frame.writeUInt8(0x24, 2);        // cmd = time sync
+      frame.writeUInt16BE(8, 3);        // len = 8 bytes
+      frame.writeUInt32BE(utcSeconds, 5);
+      frame.writeUInt32BE(localSeconds, 9);
+
+      const tuyaCluster = endpoint.clusters?.['tuya'] ||
+        endpoint.clusters?.[61184];
+
+      if (tuyaCluster && typeof tuyaCluster.timeSync === 'function') {
+        await tuyaCluster.timeSync({
+          utcTime: utcSeconds,
+          localTime: localSeconds
+        });
+        this.log('[TIME-SYNC] ✅ Time synced via cluster method');
+      } else {
+        this.log('[TIME-SYNC] ℹ️ No timeSync method - will use gateway emulator');
+      }
+    } catch (err) {
+      this.log('[TIME-SYNC] ⚠️ Error:', err.message);
     }
   }
 
