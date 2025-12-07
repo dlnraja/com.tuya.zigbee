@@ -1,4 +1,8 @@
 {
+  "5.5.72": {
+    "en": "ROOT CAUSE FIX: 1) TuyaSpecificCluster.js had a SPACE in filename - renamed. 2) registerClusters.js had WRONG PATH to cluster file. 3) The Tuya 0xEF00 cluster was NEVER registered with Homey! 4) This is why all TS0601 devices stopped working since the cluster wasn't available. 5) Climate sensor, soil sensor, and all Tuya DP devices should now work again.",
+    "fr": "FIX CAUSE RACINE: 1) TuyaSpecificCluster.js avait un ESPACE dans le nom - renommé. 2) registerClusters.js avait MAUVAIS CHEMIN. 3) Le cluster Tuya 0xEF00 n'était JAMAIS enregistré! 4) C'est pourquoi les devices TS0601 ne fonctionnaient plus. 5) Climate sensor, soil sensor devraient maintenant fonctionner."
+  },
   "5.5.71": {
     "en": "PROTOCOL OPTIMIZER FIX: 1) CRITICAL - ProtocolAutoOptimizer no longer disables Tuya or ZCL protocols. 2) Both protocols ALWAYS stay active for passive data reception. 3) Old decisions (pre-v5.5.71) are INVALIDATED - devices will relearn. 4) Decision expiry reduced from 7 days to 24 hours. 5) This restores Tuya functionality that was broken since v5.5.63.",
     "fr": "FIX OPTIMISEUR PROTOCOLE: 1) CRITIQUE - L'optimiseur ne désactive plus Tuya ou ZCL. 2) Les deux protocoles restent TOUJOURS actifs. 3) Anciennes décisions INVALIDÉES - réapprentissage. 4) Expiration réduite de 7j à 24h. 5) Restaure Tuya cassé depuis v5.5.63."
