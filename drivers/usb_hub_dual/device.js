@@ -2,6 +2,7 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
+const greenPower = require('../../lib/green_power');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -38,6 +39,9 @@ class USBHubDualDevice extends ZigBeeDevice {
 
     this.zclNode = zclNode;
 
+    // v5.5.57: Log Green Power endpoint analysis
+    greenPower.logEndpointAnalysis(zclNode, this.log.bind(this));
+
     // Setup USB Port 1 (Endpoint 1)
     await this._setupUSBPort1(zclNode);
 
@@ -50,10 +54,95 @@ class USBHubDualDevice extends ZigBeeDevice {
     // Register capability listeners
     await this._registerCapabilityListeners(zclNode);
 
+    // Register flow cards
+    await this._registerFlowCards();
+
     // Read initial states
     await this._readInitialStates(zclNode);
 
     this.log('[USB-HUB] ✅ Dual USB Switch & Router ready');
+  }
+
+  /**
+   * Register flow cards for triggers, conditions, and actions
+   */
+  async _registerFlowCards() {
+    // ═══════════════════════════════════════════════════════════════════
+    // TRIGGER CARDS
+    // ═══════════════════════════════════════════════════════════════════
+    this._triggerUSB1On = this.homey.flow.getDeviceTriggerCard('usb_hub_dual_usb1_turned_on');
+    this._triggerUSB1Off = this.homey.flow.getDeviceTriggerCard('usb_hub_dual_usb1_turned_off');
+    this._triggerUSB2On = this.homey.flow.getDeviceTriggerCard('usb_hub_dual_usb2_turned_on');
+    this._triggerUSB2Off = this.homey.flow.getDeviceTriggerCard('usb_hub_dual_usb2_turned_off');
+    this._triggerPowerChanged = this.homey.flow.getDeviceTriggerCard('usb_hub_dual_power_changed');
+
+    // ═══════════════════════════════════════════════════════════════════
+    // CONDITION CARDS
+    // ═══════════════════════════════════════════════════════════════════
+    const conditionUSB1On = this.homey.flow.getConditionCard('usb_hub_dual_usb1_is_on');
+    conditionUSB1On.registerRunListener(async () => {
+      return this.getCapabilityValue('onoff') === true;
+    });
+
+    const conditionUSB2On = this.homey.flow.getConditionCard('usb_hub_dual_usb2_is_on');
+    conditionUSB2On.registerRunListener(async () => {
+      return this.getCapabilityValue('onoff.usb2') === true;
+    });
+
+    const conditionPowerAbove = this.homey.flow.getConditionCard('usb_hub_dual_power_above');
+    conditionPowerAbove.registerRunListener(async (args) => {
+      const power = this.getCapabilityValue('measure_power') || 0;
+      return power > args.watts;
+    });
+
+    // ═══════════════════════════════════════════════════════════════════
+    // ACTION CARDS
+    // ═══════════════════════════════════════════════════════════════════
+    const actionUSB1On = this.homey.flow.getActionCard('usb_hub_dual_turn_on_usb1');
+    actionUSB1On.registerRunListener(async () => {
+      await this.triggerCapabilityListener('onoff', true);
+    });
+
+    const actionUSB1Off = this.homey.flow.getActionCard('usb_hub_dual_turn_off_usb1');
+    actionUSB1Off.registerRunListener(async () => {
+      await this.triggerCapabilityListener('onoff', false);
+    });
+
+    const actionUSB1Toggle = this.homey.flow.getActionCard('usb_hub_dual_toggle_usb1');
+    actionUSB1Toggle.registerRunListener(async () => {
+      const current = this.getCapabilityValue('onoff');
+      await this.triggerCapabilityListener('onoff', !current);
+    });
+
+    const actionUSB2On = this.homey.flow.getActionCard('usb_hub_dual_turn_on_usb2');
+    actionUSB2On.registerRunListener(async () => {
+      await this.triggerCapabilityListener('onoff.usb2', true);
+    });
+
+    const actionUSB2Off = this.homey.flow.getActionCard('usb_hub_dual_turn_off_usb2');
+    actionUSB2Off.registerRunListener(async () => {
+      await this.triggerCapabilityListener('onoff.usb2', false);
+    });
+
+    const actionUSB2Toggle = this.homey.flow.getActionCard('usb_hub_dual_toggle_usb2');
+    actionUSB2Toggle.registerRunListener(async () => {
+      const current = this.getCapabilityValue('onoff.usb2');
+      await this.triggerCapabilityListener('onoff.usb2', !current);
+    });
+
+    const actionAllOn = this.homey.flow.getActionCard('usb_hub_dual_turn_on_all');
+    actionAllOn.registerRunListener(async () => {
+      await this.triggerCapabilityListener('onoff', true);
+      await this.triggerCapabilityListener('onoff.usb2', true);
+    });
+
+    const actionAllOff = this.homey.flow.getActionCard('usb_hub_dual_turn_off_all');
+    actionAllOff.registerRunListener(async () => {
+      await this.triggerCapabilityListener('onoff', false);
+      await this.triggerCapabilityListener('onoff.usb2', false);
+    });
+
+    this.log('[USB-HUB] Flow cards registered');
   }
 
   /**
@@ -71,6 +160,12 @@ class USBHubDualDevice extends ZigBeeDevice {
         onOffCluster.on('attr.onOff', (value) => {
           this.log(`[USB-HUB] USB1 state: ${value}`);
           this.setCapabilityValue('onoff', value).catch(this.error);
+          // Trigger flow cards
+          if (value && this._triggerUSB1On) {
+            this._triggerUSB1On.trigger(this).catch(() => { });
+          } else if (!value && this._triggerUSB1Off) {
+            this._triggerUSB1Off.trigger(this).catch(() => { });
+          }
         });
       }
     } catch (err) {
@@ -94,6 +189,12 @@ class USBHubDualDevice extends ZigBeeDevice {
           this.log(`[USB-HUB] USB2 state: ${value}`);
           if (this.hasCapability('onoff.usb2')) {
             this.setCapabilityValue('onoff.usb2', value).catch(this.error);
+            // Trigger flow cards
+            if (value && this._triggerUSB2On) {
+              this._triggerUSB2On.trigger(this).catch(() => { });
+            } else if (!value && this._triggerUSB2Off) {
+              this._triggerUSB2Off.trigger(this).catch(() => { });
+            }
           }
         });
       }
@@ -145,6 +246,10 @@ class USBHubDualDevice extends ZigBeeDevice {
           this.log(`[USB-HUB] Power: ${power} W`);
           if (this.hasCapability('measure_power')) {
             this.setCapabilityValue('measure_power', power).catch(this.error);
+            // Trigger power changed flow
+            if (this._triggerPowerChanged) {
+              this._triggerPowerChanged.trigger(this, { power }).catch(() => { });
+            }
           }
         });
 
