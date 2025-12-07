@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.60",
+  "version": "5.5.61",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.60: Rename usb_hub_dual to usb_dongle_dual_repeater for _TZ3000_h1ipgkwn device",
-    "fr": "V5.5.60: Renommage usb_hub_dual en usb_dongle_dual_repeater pour le device _TZ3000_h1ipgkwn"
+    "en": "V5.5.61: SOS button FIXED - Pure IAS Zone (removed broken Tuya DP logic)",
+    "fr": "V5.5.61: Bouton SOS CORRIGÉ - IAS Zone pur (suppression logique Tuya DP cassée)"
   },
   "category": "appliances",
   "permissions": [],
