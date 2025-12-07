@@ -1,4 +1,9 @@
 {
+  "5.5.86": {
+    "en": "CLIMATE SENSOR FIX (_TZE284_vvmbj46n): 1) Added Tuya Magic Packet (MCU version request + dataQuery) to trigger data reporting. 2) Time sync with Paris timezone (GMT+1/+2). 3) Enhanced initialization sequence for TZE284 devices. Source: Z2M issue #26078.",
+    "fr": "FIX CAPTEUR CLIMAT (_TZE284_vvmbj46n): 1) Ajout Magic Packet Tuya (MCU version request + dataQuery) pour déclencher les données. 2) Sync heure avec fuseau Paris (GMT+1/+2). 3) Séquence d'init améliorée pour TZE284. Source: Z2M issue #26078."
+  },
+  
   "5.5.85": {
     "en": "UNIVERSAL COVERAGE READY: Version bump with all 54 drivers using shared UniversalTuyaParser module for maximum device compatibility.",
     "fr": "COUVERTURE UNIVERSELLE PRÊTE: Bump de version avec les 54 drivers utilisant le module UniversalTuyaParser partagé pour une compatibilité maximale."
@@ -2190,6 +2195,7 @@
     "fr": "VERSION STABILITÉ MAJEURE - Mécanisme de rollback pairing (corrige appareils fantômes), timeout pairing 60s, validation capabilities avant création appareil, correction fuites mémoire (nettoyage onDeleted), réveil forcé appareil (corrige AUCUNE DONNÉE REÇUE), mode fallback Tuya DP seul. Corrigé erreurs Invalid Capability (alarm_generic, measure_soil_moisture). Nouveaux drivers: lcdtemphumidsensor, temphumidsensor. Nettoyage: Supprimé 67 fichiers .old.js obsolètes (98,616 lignes supprimées)."
   }
 }
+
 
 
 
