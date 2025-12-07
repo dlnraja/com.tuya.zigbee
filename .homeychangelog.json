@@ -1,4 +1,8 @@
 {
+  "5.5.63": {
+    "en": "PROTOCOL AUTO-OPTIMIZER: New centralized module (lib/ProtocolAutoOptimizer.js) that handles exotic Chinese implementations. 1) Listens to ALL protocols (Tuya DP + ZCL) simultaneously. 2) After 15 minutes, identifies which protocol actually receives data. 3) Pauses unused methods to avoid errors/timeouts. 4) Saves decision for 7 days. Integrated into HybridSensorBase for all sensors (climate, soil, mmWave, motion, contact, etc.).",
+    "fr": "AUTO-OPTIMISATION PROTOCOLES: Nouveau module centralisé qui gère les implémentations chinoises exotiques. Après 15min, pause les méthodes inutilisées."
+  },
   "5.5.62": {
     "en": "ZIGBEE STARTUP FIX: switch_2gang now retries configureAttributeReporting (electricalMeasurement + metering) when Zigbee stack is starting. Max 3 retries with 60s delay. Prevents 'Zigbee is starting up' errors on app restart.",
     "fr": "CORRECTION DÉMARRAGE ZIGBEE: switch_2gang réessaie configureReporting si la stack Zigbee démarre. Max 3 tentatives avec délai 60s."
