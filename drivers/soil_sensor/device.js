@@ -125,18 +125,57 @@ class SoilSensorDevice extends TuyaHybridDevice {
   }
 
   /**
-   * v5.5.46: ZCL cluster handlers (cluster equivalent)
-   * For Zigbee standard reports if device supports them
+   * v5.5.82: ENHANCED ZCL cluster handlers
+   *
+   * CRITICAL FOR TZE284 DEVICES:
+   * TZE284 devices like _TZE284_oitavov2 declare ZCL standard clusters:
+   * - temperatureMeasurement
+   * - relativeHumidity
+   * - powerConfiguration
+   *
+   * These clusters MAY report data via ZCL even if Tuya DP doesn't work!
    */
   get clusterHandlers() {
     return {
-      // Most soil sensors don't have standard ZCL clusters
-      // But some may report battery via powerConfiguration
+      // ═══════════════════════════════════════════════════════════════════
+      // TEMPERATURE - ZCL standard cluster (0x0402)
+      // Value is in 0.01°C units, divide by 100
+      // ═══════════════════════════════════════════════════════════════════
+      temperatureMeasurement: {
+        attributeReport: (data) => {
+          if (data.measuredValue !== undefined) {
+            const temp = data.measuredValue / 100;
+            this.log(`[ZCL] 🌡️ Temperature: ${temp}°C`);
+            this._registerZigbeeHit?.();
+            this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+          }
+        }
+      },
+
+      // ═══════════════════════════════════════════════════════════════════
+      // HUMIDITY - ZCL standard cluster (0x0405)
+      // Value is in 0.01% units, divide by 100
+      // ═══════════════════════════════════════════════════════════════════
+      relativeHumidity: {
+        attributeReport: (data) => {
+          if (data.measuredValue !== undefined) {
+            const humidity = data.measuredValue / 100;
+            this.log(`[ZCL] 💧 Humidity/Moisture: ${humidity}%`);
+            this._registerZigbeeHit?.();
+            this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
+          }
+        }
+      },
+
+      // ═══════════════════════════════════════════════════════════════════
+      // BATTERY - ZCL standard cluster (0x0001)
+      // ═══════════════════════════════════════════════════════════════════
       powerConfiguration: {
         attributeReport: (data) => {
           if (data.batteryPercentageRemaining !== undefined) {
             const battery = Math.round(data.batteryPercentageRemaining / 2);
-            this.log(`[ZCL] Battery: ${battery}%`);
+            this.log(`[ZCL] 🔋 Battery: ${battery}%`);
+            this._registerZigbeeHit?.();
             this.setCapabilityValue('measure_battery', battery).catch(() => { });
           }
         }

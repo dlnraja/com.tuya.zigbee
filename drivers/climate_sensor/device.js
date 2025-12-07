@@ -116,6 +116,65 @@ class ClimateSensorDevice extends HybridSensorBase {
     };
   }
 
+  /**
+   * v5.5.82: ENHANCED ZCL cluster handlers
+   *
+   * CRITICAL FOR TZE284 DEVICES:
+   * TZE284 devices like _TZE284_vvmbj46n declare ZCL standard clusters:
+   * - temperatureMeasurement
+   * - relativeHumidity
+   * - powerConfiguration
+   *
+   * These clusters MAY report data via ZCL even if Tuya DP doesn't work!
+   */
+  get clusterHandlers() {
+    return {
+      // ═══════════════════════════════════════════════════════════════════
+      // TEMPERATURE - ZCL standard cluster (0x0402)
+      // Value is in 0.01°C units, divide by 100
+      // ═══════════════════════════════════════════════════════════════════
+      temperatureMeasurement: {
+        attributeReport: (data) => {
+          if (data.measuredValue !== undefined) {
+            const temp = data.measuredValue / 100;
+            this.log(`[ZCL] 🌡️ Temperature: ${temp}°C`);
+            this._registerZigbeeHit?.();
+            this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+          }
+        }
+      },
+
+      // ═══════════════════════════════════════════════════════════════════
+      // HUMIDITY - ZCL standard cluster (0x0405)
+      // Value is in 0.01% units, divide by 100
+      // ═══════════════════════════════════════════════════════════════════
+      relativeHumidity: {
+        attributeReport: (data) => {
+          if (data.measuredValue !== undefined) {
+            const humidity = data.measuredValue / 100;
+            this.log(`[ZCL] 💧 Humidity: ${humidity}%`);
+            this._registerZigbeeHit?.();
+            this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
+          }
+        }
+      },
+
+      // ═══════════════════════════════════════════════════════════════════
+      // BATTERY - ZCL standard cluster (0x0001)
+      // ═══════════════════════════════════════════════════════════════════
+      powerConfiguration: {
+        attributeReport: (data) => {
+          if (data.batteryPercentageRemaining !== undefined) {
+            const battery = Math.round(data.batteryPercentageRemaining / 2);
+            this.log(`[ZCL] 🔋 Battery: ${battery}%`);
+            this._registerZigbeeHit?.();
+            this.setCapabilityValue('measure_battery', battery).catch(() => { });
+          }
+        }
+      }
+    };
+  }
+
   async onNodeInit({ zclNode }) {
     // Call base class - handles everything!
     await super.onNodeInit({ zclNode });
