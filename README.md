@@ -1,16 +1,16 @@
-# 🌐 Universal Zigbee Device App for Homey
+# 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.3.68-blue)
+![Version](https://img.shields.io/badge/version-5.5.47-blue)
 ![Devices](https://img.shields.io/badge/devices-4217+-green)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-**The most comprehensive Universal Zigbee app for Homey with 4,217+ device IDs across 79 drivers.**
+**The most comprehensive Universal Tuya Zigbee app for Homey with 4,217+ device IDs across 83 drivers.**
 
 🏠 **100% Local Control** - No Cloud Required
-🔋 **Auto-Detection** - Power Source, Battery Type, Protocol
-⚡ **27 Device Categories** - From sensors to smart plugs
+🔋 **Smart Battery** - Non-linear discharge curves by chemistry
+⚡ **Hybrid Mode** - Auto-detect Tuya DP vs Standard ZCL
 🛠️ **SDK3** - Latest Homey Standards
 🌍 **Open Source** - Community-driven development
 
@@ -23,12 +23,12 @@
 | **Total Device IDs** | 4,217+ |
 | **Product IDs** | 349 |
 | **Manufacturer IDs** | 3,868 |
-| **Drivers** | 79 |
-| **SVG Icons** | 79 |
+| **Drivers** | 83 |
+| **SVG Icons** | 83 |
 | **Enrichment Scripts** | 50+ |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2025-12-04 |
+| **Last Updated** | 2025-12-07 |
 | **Data Sources** | 7 (auto-updated daily) |
 
 ### 📦 Top 15 Drivers by Device IDs
@@ -53,15 +53,38 @@
 
 ---
 
-## 🚀 Latest Updates - v5.3.68
+## 🚀 Latest Updates - v5.5.47
 
-### ✨ Recent Features
-- **v5.3.68** - FIX: Phantom devices + notification spam stopped
-- **v5.3.67** - Simplified changelog messages
-- **v5.3.66** - FIX: Curtain motor capability migration
-- **v5.3.65** - MASSIVE REFACTOR: 47+ drivers migrated to HybridBase classes
-- **v5.3.62** - FIX: Invalid capability errors resolved
-- **v5.3.61** - FIX: Memory leak + MaxListeners warnings
+### ✨ Recent Features (Dec 2025)
+
+| Version | Feature |
+|---------|---------|
+| **v5.5.47** | 🔋 BatteryCalculator with non-linear discharge curves |
+| **v5.5.46** | 🏗️ TuyaHybridDevice base class |
+| **v5.5.45** | 🔧 Tuya cluster events fix |
+| **v5.5.44** | 🏷️ Tuya cluster NAME='tuya' |
+| **v5.5.43** | 🔌 Switch 2-gang orphan capability cleanup |
+| **v5.5.42** | 📦 Complete hybrid system + IMPLEMENTATION_RULES.md |
+| **v5.5.41** | 🔄 KnownProtocolsDatabase + auto-optimization |
+
+### 🔋 Battery Calculator v5.5.47
+
+Non-linear discharge curves by chemistry:
+```
+CR2032:  3.00V=100% → 2.90V=85% → 2.70V=25% → 2.00V=0%
+Li-ion:  4.20V=100% → 3.70V=50% → 3.00V=0%
+LiFePO4: 3.60V=100% → 3.30V=70% (plateau!) → 2.50V=0%
+```
+
+### 🏗️ Architecture v5.5.46
+
+```
+TuyaHybridDevice (base class)
+├── get dpMappings()       → Tuya DP handlers
+├── get batteryConfig()    → Battery settings
+├── get clusterHandlers()  → ZCL standard handlers
+└── Hybrid mode (auto 15 min decision)
+```
 
 ### 📁 Data Sources
 - ✅ Zigbee2MQTT (tuya.ts + brand files)
@@ -75,8 +98,8 @@
 
 ### 🔧 Technical Highlights
 - **Dual Protocol Support** - Tuya DP (0xEF00) + Standard ZCL
-- **Auto-Detection** - Protocol, power source, battery type
-- **FP300-Like Features** - Advanced radar sensor controls
+- **Auto-Detection** - Protocol after 15 min observation
+- **Smart Battery** - 8 chemistries, 4 algorithms
 - **Energy Monitoring** - Full kWh, W, V, A support
 
 ## 📦 Installation
