@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.49",
+  "version": "5.5.50",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.49: Fixes for SOS button, USB outlet, multi-fallback in all device classes",
-    "fr": "V5.5.49: Corrections bouton SOS, USB outlet, multi-fallback dans toutes les classes"
+    "en": "V5.5.50: Fix passive mode blocking, SOS multi-method IAS, climate sensor DP requests",
+    "fr": "V5.5.50: Correction mode passif, SOS multi-methode IAS, requetes DP climate sensor"
   },
   "category": "appliances",
   "permissions": [],
