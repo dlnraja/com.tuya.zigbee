@@ -1,4 +1,8 @@
 {
+  "5.5.58": {
+    "en": "GREEN POWER MODULE: Centralized handling of Green Power (EP242) and utility endpoints across ALL drivers. 1) New lib/green_power.js module with isGreenPowerEndpoint(), isUtilityEndpoint(), getUsableEndpoints(), safeGetCluster() helpers. 2) Filters GP proxy device IDs (0x0061-0x0068) and GP profile ID (0xA1E0). 3) Integrated into UniversalDataHandler, HybridPlugBase, HybridSensorBase. 4) Prevents bind/configureReporting/readAttributes errors on EP242. 5) Adds endpoint analysis logging for diagnostics. Also includes usb_hub_dual flow cards for triggers, conditions, and actions.",
+    "fr": "MODULE GREEN POWER: Gestion centralisée des endpoints Green Power (EP242) et utilitaires. 1) Nouveau module lib/green_power.js avec helpers. 2) Filtre les device IDs GP proxy. 3) Intégré dans UDH, HybridPlugBase, HybridSensorBase. 4) Évite les erreurs sur EP242. 5) Logging d'analyse des endpoints."
+  },
   "5.5.57": {
     "en": "NEW DRIVER usb_hub_dual: Dedicated driver for _TZ3000_h1ipgkwn / TS0002 Dual USB Switch & Router. Features: 1) 2 USB ports individually controllable (USB Port 1 + USB Port 2). 2) Full power monitoring (measure_power, measure_voltage, measure_current, meter_power) via seMetering and haElectricalMeasurement clusters. 3) Power-on behavior setting (off/on/previous). 4) Zigbee router function (mesh repeater). Source: Z2M issue #23625, SLS device #369.",
     "fr": "NOUVEAU DRIVER usb_hub_dual: Driver dédié pour _TZ3000_h1ipgkwn / TS0002. Fonctionnalités: 1) 2 ports USB contrôlables individuellement. 2) Mesure de puissance complète (W, V, A, kWh). 3) Comportement au démarrage configurable. 4) Fonction routeur Zigbee (répéteur)."
