@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.65",
+  "version": "5.5.66",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.65: CRITICAL - Fixed USB Dongle export, radar alarm_contact removal, IAS Zone smart detection",
-    "fr": "V5.5.65: CRITIQUE - Fix USB Dongle export, suppression alarm_contact radars, IAS Zone intelligent"
+    "en": "V5.5.66: USB Dongle Dual Repeater completely rewritten - simplified and robust",
+    "fr": "V5.5.66: USB Dongle Dual Repeater réécrit complètement - simplifié et robuste"
   },
   "category": "appliances",
   "permissions": [],
