@@ -1,4 +1,8 @@
 {
+  "5.5.41": {
+    "en": "INTELLIGENT HYBRID PROTOCOL: 1) New KnownProtocolsDatabase.js with 50+ known manufacturers/productIds. 2) HybridProtocolManager now checks database first, uses hybrid if unknown. 3) Protocol stats tracking (tuya_bound, tuya_cluster, zcl_bound, zcl_attr, zcl_poll). 4) Auto-optimization after 15 minutes - disables protocols with 0 data received. 5) Reason for delay: Chinese manufacturers sometimes do 'exotic' implementations. 6) All drivers now support: TuyaBoundCluster + TuyaCluster + ZCL BoundCluster + ZCL attributes.",
+    "fr": "PROTOCOLE HYBRIDE INTELLIGENT: 1) Nouvelle KnownProtocolsDatabase.js avec 50+ manufacturers/productIds connus. 2) HybridProtocolManager consulte la base d'abord, utilise hybrid si inconnu. 3) Tracking stats par protocole. 4) Auto-optimisation après 15 min - désactive protocoles sans données. 5) Délai car constructeurs chinois parfois implémentations exotiques. 6) Tous drivers supportent: TuyaBoundCluster + TuyaCluster + ZCL BoundCluster + ZCL attributs."
+  },
   "5.5.40": {
     "en": "BINDING FIX: TuyaBoundCluster now uses correct cluster names ('tuyaSpecific', 'tuyaManufacturer') for endpoint.bind(). This matches the NAME property from our registered clusters. Soil sensor and climate monitor should now receive DP data properly.",
     "fr": "FIX BINDING: TuyaBoundCluster utilise maintenant les noms corrects ('tuyaSpecific', 'tuyaManufacturer') pour endpoint.bind(). Correspond à la propriété NAME de nos clusters enregistrés. Soil sensor et climate monitor devraient recevoir les données DP."
