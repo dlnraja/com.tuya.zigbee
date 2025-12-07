@@ -97,6 +97,12 @@ class MotionSensorRadarDevice extends HybridSensorBase {
   }
 
   async onNodeInit({ zclNode }) {
+    // v5.5.65: Remove alarm_contact if it was wrongly added (radar uses alarm_motion)
+    if (this.hasCapability('alarm_contact')) {
+      await this.removeCapability('alarm_contact').catch(() => { });
+      this.log('[MMWAVE] ⚠️ Removed incorrect alarm_contact capability');
+    }
+
     await super.onNodeInit({ zclNode });
 
     this.log('[MMWAVE] ✅ mmWave radar presence sensor ready');
