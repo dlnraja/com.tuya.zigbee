@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.52",
+  "version": "5.5.53",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.52: Extended tuya-local support (TRV, thermostats, sirens, curtains, sensors)",
-    "fr": "V5.5.52: Support tuya-local etendu (TRV, thermostats, sirenes, volets, capteurs)"
+    "en": "V5.5.53: SLS slsys.io 432 devices support (SONOFF, Moes, Lonsonho, BlitzWolf, etc)",
+    "fr": "V5.5.53: Support SLS slsys.io 432 devices (SONOFF, Moes, Lonsonho, BlitzWolf, etc)"
   },
   "category": "appliances",
   "permissions": [],
@@ -15037,12 +15037,20 @@
           "_tz3290_ixd9mvv4",
           "_tz3290_nkpxapoz",
           "_tz3290_uc8lwbi2",
-          "_tz3290_yyax9ajf"
+          "_tz3290_yyax9ajf",
+          "Moes",
+          "Zemismart",
+          "LoraTap",
+          "SLS"
         ],
         "productId": [
           "TS0044",
           "TS004F",
-          "TS0601"
+          "TS0601",
+          "ZM-RM02",
+          "SS600ZB",
+          "ZBWS03A",
+          "IH-K663"
         ],
         "learnmode": {
           "image": "/drivers/button_wireless_4/assets/learnmode.svg",
@@ -23435,7 +23443,19 @@
           "_TZ3210_95txyzbx",
           "_TZ3210_a5fxguxr",
           "_TZ3210_sroezl0s",
-          "_TZ3210_trm3l2aw"
+          "_TZ3210_trm3l2aw",
+          "Moes",
+          "Arlight",
+          "SLS"
+        ],
+        "productId": [
+          "TS0503A",
+          "TS0503B",
+          "TS0504A",
+          "TS0504B",
+          "TS0505A",
+          "TS0505B",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -23462,16 +23482,7 @@
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
           }
-        },
-        "productId": [
-          "TS0503A",
-          "TS0503B",
-          "TS0504A",
-          "TS0504B",
-          "TS0505A",
-          "TS0505B",
-          "TS0601"
-        ]
+        }
       },
       "settings": [
         {
@@ -24112,11 +24123,46 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_vmpbygs5"
+          "_TZ3000_vmpbygs5",
+          "_TZ3000_46t1rvdu",
+          "_TZ3000_ark8nv4y",
+          "_TZ3000_cymsnfvf",
+          "_TZ3000_dkgxjjn1",
+          "_TZ3000_fdxihpp7",
+          "_TZ3000_hswqnljz",
+          "_TZ3000_jd3u8dkz",
+          "_TZ3000_ji4araar",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_npzfdcof",
+          "_TZ3000_qsp2pwtf",
+          "_TZ3000_rmjr4ufz",
+          "_TZ3000_tqlv4uj4",
+          "_TZ3000_txpirhfq",
+          "_TZ3000_typdpbpg",
+          "_TZ3000_wkai4ga5",
+          "_TZ3000_xkap8wtb",
+          "_TZ3000_zmy4lslw",
+          "BlitzWolf",
+          "Moes",
+          "Lonsonho",
+          "LoraTap",
+          "SONOFF",
+          "SLS"
         ],
         "productId": [
           "TS0001",
-          "TS0011"
+          "TS0011",
+          "MS-104Z",
+          "MS-104BZ",
+          "QS-Zigbee-S05-LN",
+          "QS-Zigbee-S05-L",
+          "BW-SS7",
+          "ZBMINI",
+          "ZBMINI-L",
+          "ZBMINI-L2",
+          "ZBMINIR2",
+          "BASICZBR3",
+          "RR620ZB"
         ],
         "endpoints": {
           "1": {
@@ -24540,7 +24586,11 @@
           "_TZE200_s6hzw8g2",
           "_TZE200_xq4hgafz",
           "_TZE204_mchxve9o",
-          "_TZE204_n8dljorx"
+          "_TZE204_n8dljorx",
+          "SONOFF",
+          "Perenio",
+          "Fantem",
+          "SLS"
         ],
         "productId": [
           "CK-BL702-MWS-01(7016)",
@@ -24573,7 +24623,11 @@
           "ZG-204ZV",
           "ZP-PIR-03",
           "lumi.sensor_motion",
-          "lumi.sensor_motion.aq2"
+          "lumi.sensor_motion.aq2",
+          "PECMS01",
+          "ZB003-X",
+          "SBDV-00029",
+          "SNZB-03P"
         ],
         "endpoints": {
           "1": {
@@ -26658,15 +26712,20 @@
           "ME167",
           "SEA801-Zigbee",
           "SEA802",
+          "SEA-TRV",
           "SPZB0001",
           "TRV",
           "TRV001",
           "TRV602-Zigbee",
+          "TRV602Z",
+          "BRT-100",
+          "GS361A-H04",
           "TS0601",
           "TV01",
           "TV02",
           "eT093WRO-1",
-          "eTRV0100"
+          "eTRV0100",
+          "ZWT100"
         ],
         "endpoints": {
           "1": {
