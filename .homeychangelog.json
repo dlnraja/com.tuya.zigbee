@@ -1,4 +1,8 @@
 {
+  "5.5.59": {
+    "en": "NEW DEVICES: Added HOBEIAN ZG-301Z (1-gang switch with countdown, power-on behavior, switch type) and _TZ3000_jrpdaujd / TS0001 (1-gang switch) to switch_1gang driver. These devices use standard ZCL onOff cluster. Delete and re-pair to use the correct driver.",
+    "fr": "NOUVEAUX DEVICES: Ajout de HOBEIAN ZG-301Z et _TZ3000_jrpdaujd / TS0001 au driver switch_1gang. Supprimer et ré-appairer pour utiliser le bon driver."
+  },
   "5.5.58": {
     "en": "GREEN POWER MODULE: Centralized handling of Green Power (EP242) and utility endpoints across ALL drivers. 1) New lib/green_power.js module with isGreenPowerEndpoint(), isUtilityEndpoint(), getUsableEndpoints(), safeGetCluster() helpers. 2) Filters GP proxy device IDs (0x0061-0x0068) and GP profile ID (0xA1E0). 3) Integrated into UniversalDataHandler, HybridPlugBase, HybridSensorBase. 4) Prevents bind/configureReporting/readAttributes errors on EP242. 5) Adds endpoint analysis logging for diagnostics. Also includes usb_hub_dual flow cards for triggers, conditions, and actions.",
     "fr": "MODULE GREEN POWER: Gestion centralisée des endpoints Green Power (EP242) et utilitaires. 1) Nouveau module lib/green_power.js avec helpers. 2) Filtre les device IDs GP proxy. 3) Intégré dans UDH, HybridPlugBase, HybridSensorBase. 4) Évite les erreurs sur EP242. 5) Logging d'analyse des endpoints."

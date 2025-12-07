@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.58",
+  "version": "5.5.59",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.58: GREEN POWER module - Central handling of EP242 & utility endpoints across all drivers",
-    "fr": "V5.5.58: Module GREEN POWER - Gestion centralisée des endpoints 242 & utilitaires"
+    "en": "V5.5.59: Add HOBEIAN ZG-301Z and _TZ3000_jrpdaujd TS0001 switches to switch_1gang driver",
+    "fr": "V5.5.59: Ajout des switches HOBEIAN ZG-301Z et _TZ3000_jrpdaujd TS0001 au driver switch_1gang"
   },
   "category": "appliances",
   "permissions": [],
@@ -28575,6 +28575,7 @@
           "TS0601",
           "ZBMINI",
           "ZBMINIL2",
+          "ZG-301Z",
           "ZM-CSW002-D"
         ],
         "endpoints": {
@@ -28603,6 +28604,7 @@
         },
         "manufacturerName": [
           "E220-KR4N0Z0-HA",
+          "HOBEIAN",
           "HY0017",
           "JZ-ZB-004",
           "LXN56-SS27LX1.1",
@@ -28844,6 +28846,7 @@
           "_TZ3000_j9568h44",
           "_TZ3000_jcqs2mrv",
           "_TZ3000_ji4araar",
+          "_TZ3000_jrpdaujd",
           "_TZ3000_jl7qyupf",
           "_TZ3000_jsfzkftc",
           "_TZ3000_ju82pu2b",
