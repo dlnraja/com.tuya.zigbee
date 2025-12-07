@@ -1,4 +1,8 @@
 {
+  "5.5.60": {
+    "en": "RENAME: Driver usb_hub_dual renamed to usb_dongle_dual_repeater for _TZ3000_h1ipgkwn / TS0002 device. This better reflects the device function (USB dongle with Zigbee repeater). Delete and re-pair the device to use the new driver.",
+    "fr": "RENOMMAGE: Driver usb_hub_dual renommé en usb_dongle_dual_repeater. Supprimer et ré-appairer le device pour utiliser le nouveau driver."
+  },
   "5.5.59": {
     "en": "NEW DEVICES: Added HOBEIAN ZG-301Z (1-gang switch with countdown, power-on behavior, switch type) and _TZ3000_jrpdaujd / TS0001 (1-gang switch) to switch_1gang driver. These devices use standard ZCL onOff cluster. Delete and re-pair to use the correct driver.",
     "fr": "NOUVEAUX DEVICES: Ajout de HOBEIAN ZG-301Z et _TZ3000_jrpdaujd / TS0001 au driver switch_1gang. Supprimer et ré-appairer pour utiliser le bon driver."
