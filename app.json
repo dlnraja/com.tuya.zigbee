@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.62",
+  "version": "5.5.63",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.62: switch_2gang configureReporting retry on Zigbee startup + SOS button pure IAS Zone",
-    "fr": "V5.5.62: switch_2gang retry configureReporting au démarrage Zigbee + SOS IAS Zone pur"
+    "en": "V5.5.63: Protocol Auto-Optimizer - pauses unused Tuya/ZCL methods after 15min",
+    "fr": "V5.5.63: Auto-Optimisation des protocoles - pause les méthodes Tuya/ZCL inutilisées après 15min"
   },
   "category": "appliances",
   "permissions": [],
