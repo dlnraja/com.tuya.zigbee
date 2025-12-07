@@ -1,4 +1,37 @@
-# 📋 RÈGLES D'IMPLÉMENTATION - Universal Tuya Zigbee v5.5.42
+# 📋 RÈGLES D'IMPLÉMENTATION - Universal Tuya Zigbee v5.5.47
+
+> **Dernière mise à jour:** 2025-12-07
+> **Auteur:** Dylan Rajasekaram
+> **Version:** 5.5.47
+
+---
+
+## 📁 ARCHITECTURE DU PROJET
+
+```
+lib/
+├── devices/
+│   ├── TuyaHybridDevice.js      ← 🆕 Classe de base hybride (v5.5.46)
+│   ├── HybridSensorBase.js       ← Base pour capteurs
+│   └── HybridSwitchBase.js       ← Base pour switches
+├── battery/
+│   ├── BatteryCalculator.js      ← 🆕 Courbes non-linéaires (v5.5.47)
+│   ├── BatteryProfileDatabase.js ← Profils par device
+│   └── BatteryHybridManager.js   ← Auto-apprentissage
+├── tuya/
+│   ├── TuyaSpecificCluster.js    ← Cluster 0xEF00 NAME='tuya'
+│   ├── TuyaEF00Manager.js        ← Gestion DP complète
+│   └── TuyaDevicesDatabase.js    ← Base de données locale
+├── protocol/
+│   ├── KnownProtocolsDatabase.js ← Protocoles connus
+│   └── HybridProtocolManager.js  ← Auto-détection
+├── clusters/
+│   └── TuyaBoundCluster.js       ← BoundCluster pour réception
+└── zigbee/
+    └── registerClusters.js       ← Enregistrement cluster unique
+```
+
+---
 
 ## 🔧 9.20 - HYBRID ZIGBEE / TUYA CLUSTER HANDLING
 
@@ -106,17 +139,64 @@ if (knownInfo) {
 | `zcl_percent` | powerConfiguration | 3 |
 | `zcl_voltage` | Voltage → courbe | 4 |
 
-### 9.21.2. Algorithmes de calcul
+### 9.21.2. Algorithmes de calcul (BatteryCalculator v5.5.47)
 
-| Algo | Description |
-|------|-------------|
-| `direct` | Valeur = pourcentage direct |
-| `mult2` | Valeur × 2 = pourcentage |
-| `div2` | Valeur ÷ 2 = pourcentage |
-| `cr2032` | Courbe de décharge CR2032 |
-| `alkaline` | Courbe alkaline |
-| `lithium` | Courbe lithium (plate) |
-| `linear` | Interpolation linéaire min-max |
+| Algo | Const | Description |
+|------|-------|-------------|
+| `direct` | `ALGORITHM.DIRECT` | Valeur = pourcentage direct |
+| `mult2` | `ALGORITHM.MULT2` | Valeur × 2 = pourcentage |
+| `div2` | `ALGORITHM.DIV2` | Valeur ÷ 2 = pourcentage |
+| `v_linear` | `ALGORITHM.VOLTAGE_LINEAR` | Interpolation linéaire min-max |
+| `v_curve` | `ALGORITHM.VOLTAGE_CURVE` | Courbe non-linéaire par chimie |
+| `mv` | `ALGORITHM.MILLIVOLT` | mV → V → courbe |
+| `enum3` | `ALGORITHM.ENUM_3` | 0=10%, 1=50%, 2=100% |
+| `enum4` | `ALGORITHM.ENUM_4` | 0=5%, 1=20%, 2=60%, 3=100% |
+
+### 9.21.3. Courbes de décharge NON-LINÉAIRES (v5.5.47)
+
+```
+CR2032 (Li-MnO2) - Plateau puis chute:
+╔════════════════════════════════════════════╗
+║ V     │ %   │ Caractéristique              ║
+╟───────┼─────┼──────────────────────────────╢
+║ 3.00  │ 100 │ Neuf                         ║
+║ 2.90  │  85 │ Début plateau                ║
+║ 2.70  │  25 │ Fin plateau                  ║
+║ 2.50  │   8 │ Chute rapide                 ║
+║ 2.00  │   0 │ Mort                         ║
+╚════════════════════════════════════════════╝
+
+Li-ion/LiPo (Sigmoïde):
+╔════════════════════════════════════════════╗
+║ V     │ %   │ Caractéristique              ║
+╟───────┼─────┼──────────────────────────────╢
+║ 4.20  │ 100 │ Pleine charge                ║
+║ 3.70  │  50 │ Nominal                      ║
+║ 3.00  │   0 │ Cut-off                      ║
+╚════════════════════════════════════════════╝
+
+LiFePO4 (Très plat):
+╔════════════════════════════════════════════╗
+║ V     │ %   │ Caractéristique              ║
+╟───────┼─────┼──────────────────────────────╢
+║ 3.60  │ 100 │ Pleine charge                ║
+║ 3.30  │  70 │ Plateau (90% capacité!)      ║
+║ 3.20  │  30 │                              ║
+║ 2.50  │   0 │ Cut-off                      ║
+╚════════════════════════════════════════════╝
+```
+
+### 9.21.4. Chimies supportées
+
+| Chimie | Const | Voltage | Usage |
+|--------|-------|---------|-------|
+| CR2032 | `CHEMISTRY.CR2032` | 3.0V | Capteurs, boutons |
+| CR2450 | `CHEMISTRY.CR2450` | 3.0V | Capteurs haute capacité |
+| CR123A | `CHEMISTRY.CR123A` | 3.0V | Serrures, caméras |
+| Alkaline AAA | `CHEMISTRY.AAA_ALKALINE` | 2×1.5V | Télécommandes |
+| Li-ion | `CHEMISTRY.LIPO` | 4.2-3.0V | Rechargeables |
+| LiFePO4 | `CHEMISTRY.LIFEPO4` | 3.6-2.5V | Haute durée |
+| NiMH | `CHEMISTRY.NIMH` | 2×1.2V | Rechargeables AA/AAA |
 
 ### 9.21.3. Profils connus (BatteryProfileDatabase.js)
 
