@@ -1,4 +1,8 @@
 {
+  "5.5.77": {
+    "en": "RESTORED FROM v5.5.46 (WORKING VERSION): 1) TuyaSpecificCluster COMMANDS names are 'response' (0x01) and 'reporting' (0x02) - NOT 'dataReport'/'dataResponse'. 2) BoundCluster methods restored: response() and reporting(). 3) COMMANDS now have proper args: { seq: uint16, dpValues: buffer }. 4) cluster.on('response') and cluster.on('reporting') events should now work. 5) Soil sensor and climate sensor should finally receive Tuya DP data.",
+    "fr": "RESTAURÉ DE v5.5.46 (VERSION QUI MARCHAIT): 1) Noms COMMANDS TuyaSpecificCluster sont 'response' (0x01) et 'reporting' (0x02). 2) Méthodes BoundCluster restaurées. 3) COMMANDS ont les bons args. 4) Les événements cluster.on() devraient maintenant fonctionner. 5) Soil sensor et climate sensor devraient enfin recevoir les données Tuya DP."
+  },
   "5.5.76": {
     "en": "CRITICAL FIX: 1) TuyaSpecificCluster COMMANDS now use empty args {} to receive raw payload correctly. 2) Added mcuSyncTime, mcuVersionRequest/Response, mcuGatewaySenceData commands. 3) Enhanced BoundCluster with detailed payload logging. 4) All version banners now read dynamically from app.json. 5) This should finally fix Tuya DP data reception for TS0601 devices (soil sensor, climate sensor).",
     "fr": "FIX CRITIQUE: 1) TuyaSpecificCluster COMMANDS utilisent maintenant args vides pour recevoir le payload brut. 2) Ajout commandes mcuSyncTime etc. 3) BoundCluster amélioré avec logging détaillé. 4) Banners de version maintenant dynamiques depuis app.json. 5) Devrait enfin corriger la réception Tuya DP pour les devices TS0601."
