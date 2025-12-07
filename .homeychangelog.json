@@ -1,4 +1,8 @@
 {
+  "5.5.57": {
+    "en": "NEW DRIVER usb_hub_dual: Dedicated driver for _TZ3000_h1ipgkwn / TS0002 Dual USB Switch & Router. Features: 1) 2 USB ports individually controllable (USB Port 1 + USB Port 2). 2) Full power monitoring (measure_power, measure_voltage, measure_current, meter_power) via seMetering and haElectricalMeasurement clusters. 3) Power-on behavior setting (off/on/previous). 4) Zigbee router function (mesh repeater). Source: Z2M issue #23625, SLS device #369.",
+    "fr": "NOUVEAU DRIVER usb_hub_dual: Driver dédié pour _TZ3000_h1ipgkwn / TS0002. Fonctionnalités: 1) 2 ports USB contrôlables individuellement. 2) Mesure de puissance complète (W, V, A, kWh). 3) Comportement au démarrage configurable. 4) Fonction routeur Zigbee (répéteur)."
+  },
   "5.5.56": {
     "en": "FINGERPRINT FIX: Moved _TZ3000_h1ipgkwn from switch_2gang to usb_outlet_advanced. This device is a 2-socket + 2-USB outlet with Zigbee router functionality, NOT a simple 2-gang switch. Users with this device should delete and re-pair to get correct driver matching.",
     "fr": "FIX FINGERPRINT: _TZ3000_h1ipgkwn déplacé de switch_2gang vers usb_outlet_advanced. Cet appareil est une prise 2-prises + 2-USB avec fonction routeur Zigbee. Supprimer et ré-appairer pour utiliser le bon driver."
