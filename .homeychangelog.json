@@ -1,4 +1,8 @@
 {
+  "5.5.66": {
+    "en": "USB DONGLE FIX: Complete rewrite of usb_dongle_dual_repeater driver. 1) Fixed USBHubDualDevice export error. 2) Simplified code - only essential ZCL bindings. 3) onoff (EP1) + onoff.usb2 (EP2) + energy monitoring. 4) Auto-retry if Zigbee not ready.",
+    "fr": "FIX USB DONGLE: Réécriture complète du driver usb_dongle_dual_repeater. Code simplifié, bindings ZCL essentiels uniquement."
+  },
   "5.5.65": {
     "en": "CRITICAL FIXES: 1) Fixed USBDongleDualRepeaterDevice export error (was using old class name). 2) Radar mmWave: automatically removes alarm_contact capability (radars use alarm_motion only). 3) HybridSensorBase: IAS Zone now uses EXISTING capability instead of adding alarm_contact. 4) Smart detection prioritizes alarm_motion > alarm_contact > alarm_water > alarm_smoke.",
     "fr": "CORRECTIONS CRITIQUES: 1) Fix export USBDongleDualRepeaterDevice. 2) Radar mmWave: supprime alarm_contact automatiquement. 3) HybridSensorBase: IAS Zone utilise la capability existante. 4) Détection intelligente priorise alarm_motion."
