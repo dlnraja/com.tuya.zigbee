@@ -1,10 +1,11 @@
 'use strict';
 
 const TuyaHybridDevice = require('../../lib/devices/TuyaHybridDevice');
+const BatteryCalculator = require('../../lib/battery/BatteryCalculator');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║            SOIL SENSOR - v5.5.46 TRUE HYBRID                                 ║
+ * ║            SOIL SENSOR - v5.5.47 TRUE HYBRID + BATTERY CURVES               ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  Uses TuyaHybridDevice base class with proper:                               ║
@@ -33,6 +34,21 @@ class SoilSensorDevice extends TuyaHybridDevice {
   /** Capabilities for soil sensors */
   get sensorCapabilities() {
     return ['measure_temperature', 'measure_humidity', 'measure_battery'];
+  }
+
+  /**
+   * v5.5.47: Battery configuration for CR2032/CR2450
+   * Uses non-linear discharge curve for accurate percentage
+   */
+  get batteryConfig() {
+    return {
+      chemistry: BatteryCalculator.CHEMISTRY.CR2032,
+      algorithm: BatteryCalculator.ALGORITHM.DIRECT,  // DP15 = direct %
+      dpId: 15,           // DP15 = battery percentage
+      dpIdState: 14,      // DP14 = battery_state enum (0=low, 1=med, 2=high)
+      voltageMin: 2.0,
+      voltageMax: 3.0,
+    };
   }
 
   /**
