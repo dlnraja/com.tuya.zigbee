@@ -1,4 +1,8 @@
 {
+  "5.5.44": {
+    "en": "TUYA CLUSTER FIX: 1) TuyaSpecificCluster.NAME changed from 'tuyaSpecific' to 'tuya'. 2) Community pattern: zclNode.endpoints[1].clusters.tuya.on('response', ...). 3) Only ONE cluster registered for 0xEF00 (was 2 = conflict!). 4) TuyaEF00Manager now tries 'tuya' first for binding. 5) registerClusters.js simplified - only TuyaSpecificCluster.",
+    "fr": "FIX CLUSTER TUYA: 1) TuyaSpecificCluster.NAME changé de 'tuyaSpecific' à 'tuya'. 2) Pattern communauté: zclNode.endpoints[1].clusters.tuya.on('response', ...). 3) UN SEUL cluster enregistré pour 0xEF00 (était 2 = conflit!). 4) TuyaEF00Manager essaie 'tuya' en premier pour binding. 5) registerClusters.js simplifié."
+  },
   "5.5.43": {
     "en": "SWITCH 2-GANG FIX: 1) Added _cleanupOrphanCapabilities() to remove 'Active' button and other invalid capabilities. 2) Valid caps: onoff, onoff.gang2, measure_power/voltage/current, meter_power. 3) Note: USB ports on these switches are typically HARDWIRED (not controllable) - this is a hardware limitation, not software. 4) _TZ3000_h1ipgkwn is correctly mapped to switch_2gang driver.",
     "fr": "FIX SWITCH 2-GANG: 1) Ajout _cleanupOrphanCapabilities() pour supprimer bouton 'Active' et autres capabilities invalides. 2) Caps valides: onoff, onoff.gang2, measure_power/voltage/current, meter_power. 3) Note: Ports USB souvent CABLES EN PERMANENCE (non controlables) - limitation hardware. 4) _TZ3000_h1ipgkwn correctement mappé au driver switch_2gang."
