@@ -1,4 +1,8 @@
 {
+  "5.5.61": {
+    "en": "SOS BUTTON CRITICAL FIX: Completely rewritten TS0215A _TZ3000_0dumfk2z driver. This device is NOT a Tuya DP device - it uses standard IAS Zone for button press detection. Removed ALL broken Tuya DP logic. Now uses: 1) Pure IAS Zone (zoneStatusChangeNotification) for button press. 2) ZCL powerConfiguration for battery (passive listener). 3) Simplified class hierarchy (extends ZigBeeDevice directly). 4) Auto battery read when device wakes up after button press.",
+    "fr": "CORRECTION CRITIQUE SOS: Driver TS0215A réécrit. Ce device utilise IAS Zone standard, PAS Tuya DP. Suppression de toute la logique Tuya cassée."
+  },
   "5.5.60": {
     "en": "RENAME: Driver usb_hub_dual renamed to usb_dongle_dual_repeater for _TZ3000_h1ipgkwn / TS0002 device. This better reflects the device function (USB dongle with Zigbee repeater). Delete and re-pair the device to use the new driver.",
     "fr": "RENOMMAGE: Driver usb_hub_dual renommé en usb_dongle_dual_repeater. Supprimer et ré-appairer le device pour utiliser le nouveau driver."
