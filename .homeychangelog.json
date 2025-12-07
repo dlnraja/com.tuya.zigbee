@@ -1,4 +1,9 @@
 {
+  "5.5.85": {
+    "en": "UNIVERSAL COVERAGE READY: Version bump with all 54 drivers using shared UniversalTuyaParser module for maximum device compatibility.",
+    "fr": "COUVERTURE UNIVERSELLE PRÊTE: Bump de version avec les 54 drivers utilisant le module UniversalTuyaParser partagé pour une compatibilité maximale."
+  },
+  
   "5.5.84": {
     "en": "UNIVERSAL COVERAGE EVERYWHERE: 1) Created shared UniversalTuyaParser module with multi-format support. 2) ALL base classes now use it: TuyaHybridDevice, HybridSensorBase, HybridLightBase, HybridPlugBase. 3) Auto-discovery of unknown DPs with Z2M/ZHA patterns. 4) Universal ZCL listeners on ALL endpoints. 5) 15-min learning phase learns from both Tuya DP and Zigbee ZCL. 6) Supports exotic/custom/proprietary implementations.",
     "fr": "COUVERTURE UNIVERSELLE PARTOUT: 1) Module UniversalTuyaParser partagé avec support multi-format. 2) TOUTES les classes de base l'utilisent. 3) Auto-découverte des DPs inconnus via patterns Z2M/ZHA. 4) Listeners ZCL universels sur TOUS les endpoints. 5) Phase d'apprentissage 15 min. 6) Supporte les implémentations exotiques/custom/propriétaires."
@@ -2185,6 +2190,7 @@
     "fr": "VERSION STABILITÉ MAJEURE - Mécanisme de rollback pairing (corrige appareils fantômes), timeout pairing 60s, validation capabilities avant création appareil, correction fuites mémoire (nettoyage onDeleted), réveil forcé appareil (corrige AUCUNE DONNÉE REÇUE), mode fallback Tuya DP seul. Corrigé erreurs Invalid Capability (alarm_generic, measure_soil_moisture). Nouveaux drivers: lcdtemphumidsensor, temphumidsensor. Nettoyage: Supprimé 67 fichiers .old.js obsolètes (98,616 lignes supprimées)."
   }
 }
+
 
 
 
