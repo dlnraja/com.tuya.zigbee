@@ -22,10 +22,38 @@ class Switch2GangDevice extends HybridSwitchBase {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
 
+    // v5.5.43: Cleanup orphan capabilities (like "Active" button that does nothing)
+    await this._cleanupOrphanCapabilities();
+
     // v5.5.26: Setup power measurement for ZCL devices (router/mains)
     await this._setupPowerMeasurement(zclNode);
 
     this.log('[SWITCH-2G] ✅ Ready with power measurement');
+    this.log('[SWITCH-2G] ⚠️  Note: USB ports are typically hardwired (not controllable via gang switches)');
+  }
+
+  /**
+   * v5.5.43: Remove orphan capabilities that don't belong to this driver
+   * Common issue: "Active" button added by old versions that does nothing
+   */
+  async _cleanupOrphanCapabilities() {
+    // List of valid capabilities for 2-gang switch
+    const validCaps = [
+      'onoff', 'onoff.gang2',
+      'measure_power', 'measure_voltage', 'measure_current', 'meter_power'
+    ];
+
+    // Get all current capabilities
+    const currentCaps = this.getCapabilities();
+
+    for (const cap of currentCaps) {
+      if (!validCaps.includes(cap)) {
+        this.log(`[SWITCH-2G] ⚠️ Removing orphan capability: ${cap}`);
+        await this.removeCapability(cap).catch(e => {
+          this.log(`[SWITCH-2G] Failed to remove ${cap}: ${e.message}`);
+        });
+      }
+    }
   }
 
   /**
