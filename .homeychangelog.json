@@ -1,4 +1,8 @@
 {
+  "5.5.71": {
+    "en": "PROTOCOL OPTIMIZER FIX: 1) CRITICAL - ProtocolAutoOptimizer no longer disables Tuya or ZCL protocols. 2) Both protocols ALWAYS stay active for passive data reception. 3) Old decisions (pre-v5.5.71) are INVALIDATED - devices will relearn. 4) Decision expiry reduced from 7 days to 24 hours. 5) This restores Tuya functionality that was broken since v5.5.63.",
+    "fr": "FIX OPTIMISEUR PROTOCOLE: 1) CRITIQUE - L'optimiseur ne désactive plus Tuya ou ZCL. 2) Les deux protocoles restent TOUJOURS actifs. 3) Anciennes décisions INVALIDÉES - réapprentissage. 4) Expiration réduite de 7j à 24h. 5) Restaure Tuya cassé depuis v5.5.63."
+  },
   "5.5.70": {
     "en": "ADAPTIVE LEARNING: 1) NEW - 5-minute learning period after device init where ALL queries are allowed. 2) System observes device behavior (AC/DC/battery) during this period. 3) After learning, uses observed behavior to decide sleepy/always-on. 4) Works for ALL power types without manual configuration.",
     "fr": "APPRENTISSAGE ADAPTATIF: 1) NOUVEAU - Période d'apprentissage 5 min après init où TOUTES les requêtes sont permises. 2) Le système observe le comportement (AC/DC/batterie). 3) Après apprentissage, utilise le comportement observé. 4) Fonctionne pour TOUS types d'alimentation."
