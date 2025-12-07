@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.84",
+  "version": "5.5.85",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.84: INTELLIGENT UNIVERSAL COVERAGE - Multi-format Tuya parser (5 strategies), auto-discovery of unknown DPs, universal ZCL cluster handlers for ALL standard clusters. 15-min learning phase.",
-    "fr": "V5.5.84: COUVERTURE UNIVERSELLE INTELLIGENTE - Parser Tuya multi-format (5 stratégies), auto-découverte des DPs inconnus, handlers ZCL universels pour TOUS les clusters standards. Phase d'apprentissage 15 min."
+    "en": "V5.5.85: UNIVERSAL COVERAGE EVERYWHERE - All 54 drivers now use shared UniversalTuyaParser. Multi-format Tuya + auto-discovery DPs + universal ZCL for ALL clusters.",
+    "fr": "V5.5.85: COUVERTURE UNIVERSELLE PARTOUT - Les 54 drivers utilisent maintenant UniversalTuyaParser partagé. Tuya multi-format + auto-découverte DPs + ZCL universel."
   },
   "category": "appliances",
   "permissions": [],
