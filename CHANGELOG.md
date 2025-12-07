@@ -1,5 +1,100 @@
 # Changelog
 
+---
+
+## [5.5.47] - 2025-12-07
+
+### 🔋 BATTERY CALCULATOR ULTRA-PRECISE
+
+#### Key Changes
+- **Non-linear discharge curves** by battery chemistry
+- **4 calculation methods**: DIRECT, MULT2/DIV2, VOLTAGE_CURVE, ENUM
+- **8 chemistries supported**: CR2032, CR2450, CR123A, Alkaline, Li-ion, LiFePO4, NiMH
+- **Interpolation** between curve points for accuracy
+- **Auto low battery detection** with `alarm_battery`
+
+#### Battery Curves (Non-Linear)
+```
+CR2032: 3.00V=100% → 2.90V=85% → 2.70V=25% → 2.00V=0%
+Li-ion: 4.20V=100% → 3.70V=50% → 3.00V=0%
+LiFePO4: 3.60V=100% → 3.30V=70% (plateau!) → 2.50V=0%
+```
+
+---
+
+## [5.5.46] - 2025-12-07
+
+### 🏗️ TUYA HYBRID DEVICE BASE CLASS
+
+#### New Architecture
+```
+TuyaHybridDevice
+├── get dpMappings()       → Tuya DP reception
+├── get batteryConfig()    → Battery settings
+├── get clusterHandlers()  → ZCL standard handlers
+├── sendTuyaDP()          → Send commands to device
+└── Hybrid mode (auto 15 min)
+```
+
+#### Features
+- Direct listeners on `zclNode.endpoints[1].clusters.tuya`
+- Raw frame parser fallback
+- Auto-decision after 15 minutes
+- Soil sensor refactored to use new base
+
+---
+
+## [5.5.45] - 2025-12-07
+
+### 🔧 TUYA EVENTS FIX
+
+- TuyaSpecificCluster.COMMANDS restructured
+- Incoming commands (`response`, `reporting`) now have `args` to emit events
+- Added `mcuSyncTime` command (0x24)
+- Direct cluster listener pattern from community
+
+---
+
+## [5.5.44] - 2025-12-07
+
+### 🏷️ TUYA CLUSTER NAME FIX
+
+- TuyaSpecificCluster.NAME: `tuyaSpecific` → `tuya`
+- Only ONE cluster registered for 0xEF00 (was 2 = conflict!)
+- Community pattern: `zclNode.endpoints[1].clusters.tuya.on('response', ...)`
+
+---
+
+## [5.5.43] - 2025-12-07
+
+### 🔌 SWITCH 2-GANG FIX
+
+- `_cleanupOrphanCapabilities()` removes invalid capabilities
+- Note: USB ports on switches typically HARDWIRED (not controllable)
+
+---
+
+## [5.5.42] - 2025-12-06
+
+### 📦 COMPLETE HYBRID SYSTEM
+
+- BatteryProfileDatabase.js - Local battery profiles
+- BatteryHybridManager.js - Auto-learning
+- IMPLEMENTATION_RULES.md - Complete documentation
+- 100% LOCAL - No internet required
+
+---
+
+## [5.5.41] - 2025-12-06
+
+### 🔄 INTELLIGENT HYBRID PROTOCOL
+
+- KnownProtocolsDatabase.js with 50+ known manufacturers
+- HybridProtocolManager with database check first
+- Auto-optimization after 15 minutes
+
+---
+
 ## [5.5.0] - 2025-12-06
 
 ### 🚀 INTELLIGENT ENRICHMENT SYSTEM - MAJOR RELEASE
