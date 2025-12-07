@@ -1,4 +1,8 @@
 {
+  "5.5.67": {
+    "en": "TIME SYNC FIX: 1) Fixed Tuya mcuSyncTime payload format - was 10 bytes with requestId, now correct 8 bytes. 2) Uses Unix epoch (1970) for Tuya devices, not Zigbee epoch (2000). 3) Format: [UTC:4bytes][Local:4bytes] Big Endian. 4) Added timezone logging. Climate monitors with LCD should now display correct time.",
+    "fr": "FIX TIME SYNC: 1) Format payload mcuSyncTime corrigé - 8 octets au lieu de 10. 2) Utilise epoch Unix (1970) pour Tuya. 3) Les moniteurs climat LCD devraient afficher l'heure correcte."
+  },
   "5.5.66": {
     "en": "USB DONGLE FIX: Complete rewrite of usb_dongle_dual_repeater driver. 1) Fixed USBHubDualDevice export error. 2) Simplified code - only essential ZCL bindings. 3) onoff (EP1) + onoff.usb2 (EP2) + energy monitoring. 4) Auto-retry if Zigbee not ready.",
     "fr": "FIX USB DONGLE: Réécriture complète du driver usb_dongle_dual_repeater. Code simplifié, bindings ZCL essentiels uniquement."
