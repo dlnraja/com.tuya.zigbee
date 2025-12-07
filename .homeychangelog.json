@@ -1,4 +1,8 @@
 {
+  "5.5.49": {
+    "en": "DIAGNOSTICS FIXES: 1) SOS button: alarm_contact capability now migrated and initialized on boot (fixes 'missing after recovery'). 2) USB outlet: Added 25+ manufacturerNames for better device matching (fixes wrong driver assignment). 3) HybridPlugBase: Now uses MULTI-FALLBACK Tuya system (P1: BoundCluster, P2: Events, P3: RawFrames, P4: Manager). All plugs/outlets now have maximum robustness.",
+    "fr": "CORRECTIONS DIAGNOSTICS: 1) Bouton SOS: capability alarm_contact migrée et initialisée au boot. 2) USB outlet: 25+ manufacturerNames ajoutés pour meilleur matching. 3) HybridPlugBase: utilise maintenant le système MULTI-FALLBACK Tuya. Robustesse maximale pour toutes les prises."
+  },
   "5.5.48": {
     "en": "MULTI-FALLBACK TUYA SYSTEM: Based on Athom SDK documentation. 4 priority levels: P1) BoundCluster.bind() - Official Athom pattern, P2) cluster.on('response'|'reporting') - Community pattern, P3) endpoint.on('frame') - Raw frame fallback, P4) TuyaEF00Manager - Legacy compatibility. All methods tried simultaneously, logs show which succeeded (✅/❌). Maximum robustness for Tuya DP reception.",
     "fr": "SYSTEME MULTI-FALLBACK TUYA: Base sur documentation SDK Athom. 4 niveaux priorite: P1) BoundCluster.bind() - Pattern officiel Athom, P2) cluster.on('response'|'reporting') - Pattern communaute, P3) endpoint.on('frame') - Fallback frames bruts, P4) TuyaEF00Manager - Compatibilite legacy. Toutes methodes essayees, logs montrent succes (✅/❌). Robustesse maximale reception DP Tuya."
