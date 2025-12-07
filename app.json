@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.87",
+  "version": "5.5.88",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.87: MULTISENSOR 4-IN-1 SUPPORT - Motion sensor now includes temperature + humidity for Fantem ZB003-x and similar. Climate sensor fix with Tuya Magic Packet.",
-    "fr": "V5.5.87: SUPPORT MULTISENSOR 4-EN-1 - Le capteur mouvement inclut maintenant température + humidité pour Fantem ZB003-x et similaires. Fix capteur climat avec Magic Packet Tuya."
+    "en": "V5.5.88: UNIVERSAL TUYA COVERAGE - Enhanced UniversalTuyaParser with all official Tuya DP types, commands, ZCL clusters. Device-type specific mappings. Frame builders for time sync.",
+    "fr": "V5.5.88: COUVERTURE TUYA UNIVERSELLE - UniversalTuyaParser amélioré avec tous les types DP Tuya officiels, commandes, clusters ZCL. Mappings spécifiques par type d'appareil."
   },
   "category": "appliances",
   "permissions": [],

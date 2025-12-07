@@ -1,4 +1,9 @@
 {
+  "5.5.88": {
+    "en": "UNIVERSAL TUYA COVERAGE: 1) Enhanced UniversalTuyaParser with official Tuya DP types (RAW/BOOL/VALUE/STRING/ENUM/BITMAP) and commands (0x01-0x24). 2) Added 20+ ZCL clusters with cluster IDs. 3) Device-type specific DP mappings (climate/soil/motion/contact/plug/dimmer/curtain/thermostat/siren). 4) Frame builders for time sync and data query. Sources: Tuya Developer, Z2M, ZHA.",
+    "fr": "COUVERTURE TUYA UNIVERSELLE: 1) UniversalTuyaParser amélioré avec types DP Tuya officiels (RAW/BOOL/VALUE/STRING/ENUM/BITMAP) et commandes (0x01-0x24). 2) 20+ clusters ZCL avec IDs. 3) Mappings DP par type d'appareil. 4) Builders de frames pour sync temps. Sources: Tuya Developer, Z2M, ZHA."
+  },
+  
   "5.5.87": {
     "en": "MULTISENSOR 4-IN-1 SUPPORT: Motion sensor now includes temperature + humidity capabilities for Fantem ZB003-x, Immax 07502L and similar 4-in-1 sensors. Added ZCL handlers for clusters 0x0402 (temp) and 0x0405 (humidity). Source: community.homey.app/t/140352/589",
     "fr": "SUPPORT MULTISENSOR 4-EN-1: Le capteur mouvement inclut maintenant température + humidité pour Fantem ZB003-x, Immax 07502L et similaires. Ajout handlers ZCL pour clusters 0x0402 (temp) et 0x0405 (humidité). Source: community.homey.app/t/140352/589"
@@ -2200,6 +2205,7 @@
     "fr": "VERSION STABILITÉ MAJEURE - Mécanisme de rollback pairing (corrige appareils fantômes), timeout pairing 60s, validation capabilities avant création appareil, correction fuites mémoire (nettoyage onDeleted), réveil forcé appareil (corrige AUCUNE DONNÉE REÇUE), mode fallback Tuya DP seul. Corrigé erreurs Invalid Capability (alarm_generic, measure_soil_moisture). Nouveaux drivers: lcdtemphumidsensor, temphumidsensor. Nettoyage: Supprimé 67 fichiers .old.js obsolètes (98,616 lignes supprimées)."
   }
 }
+
 
 
 
