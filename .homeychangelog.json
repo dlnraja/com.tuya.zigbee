@@ -1,4 +1,16 @@
 {
+  "5.5.84": {
+    "en": "UNIVERSAL COVERAGE EVERYWHERE: 1) Created shared UniversalTuyaParser module with multi-format support. 2) ALL base classes now use it: TuyaHybridDevice, HybridSensorBase, HybridLightBase, HybridPlugBase. 3) Auto-discovery of unknown DPs with Z2M/ZHA patterns. 4) Universal ZCL listeners on ALL endpoints. 5) 15-min learning phase learns from both Tuya DP and Zigbee ZCL. 6) Supports exotic/custom/proprietary implementations.",
+    "fr": "COUVERTURE UNIVERSELLE PARTOUT: 1) Module UniversalTuyaParser partagé avec support multi-format. 2) TOUTES les classes de base l'utilisent. 3) Auto-découverte des DPs inconnus via patterns Z2M/ZHA. 4) Listeners ZCL universels sur TOUS les endpoints. 5) Phase d'apprentissage 15 min. 6) Supporte les implémentations exotiques/custom/propriétaires."
+  },
+  "5.5.83": {
+    "en": "CRITICAL FIX - FRAME PARSING: Tuya frames have 5-byte header but code was using offset=2. Fixed _parseTuyaRawFrame() to use correct offset=5.",
+    "fr": "FIX CRITIQUE - PARSING FRAMES: Les frames Tuya ont un header de 5 bytes mais le code utilisait offset=2. Corrigé pour utiliser offset=5."
+  },
+  "5.5.83": {
+    "en": "CRITICAL FIX - FRAME PARSING: 1) Discovered the root cause: Tuya frames have a 5-byte header but code was using offset=2. 2) Diagnostic logs showed frames WERE being received (0xEF00) but DP parsing was reading garbage. 3) Fixed _parseTuyaRawFrame() to use correct offset=5 for Tuya header (status, seq, cmd, status2, dpCount). 4) Now correctly parses: DP3=soil_moisture, DP5=temperature, DP15=battery. 5) Example: frame 197b0100060f02000400000064 now correctly gives DP15=100 (battery 100%).",
+    "fr": "FIX CRITIQUE - PARSING FRAMES: 1) Cause racine trouvée: les frames Tuya ont un header de 5 bytes mais le code utilisait offset=2. 2) Les logs de diagnostic montraient que les frames ÉTAIENT reçues mais le parsing DP lisait n'importe quoi. 3) Corrigé _parseTuyaRawFrame() pour utiliser offset=5. 4) Parse maintenant correctement DP3, DP5, DP15. 5) Exemple: frame 197b...0064 donne maintenant DP15=100."
+  },
   "5.5.82": {
     "en": "TZE284 FIX BASED ON COMPARISON: 1) After comparing all versions (v5.5.37-52, Johan, current), discovered that TZE284 devices declare ZCL standard clusters: temperatureMeasurement, relativeHumidity, powerConfiguration. 2) Added ZCL handlers for these clusters in soil_sensor and climate_sensor. 3) TZE284 devices might report data via ZCL instead of Tuya DP! 4) Created COMPARAISON_TUYA folder with all versions for reference. 5) Key difference: TZE200 declares 0xEF00, TZE284 does NOT.",
     "fr": "FIX TZE284 BASÉ SUR COMPARAISON: 1) Après comparaison de toutes les versions, découvert que les TZE284 déclarent les clusters ZCL standards. 2) Ajout des handlers ZCL. 3) Les TZE284 pourraient reporter via ZCL au lieu de Tuya DP! 4) Dossier COMPARAISON_TUYA créé. 5) Différence clé: TZE200 déclare 0xEF00, TZE284 non."
@@ -2173,3 +2185,6 @@
     "fr": "VERSION STABILITÉ MAJEURE - Mécanisme de rollback pairing (corrige appareils fantômes), timeout pairing 60s, validation capabilities avant création appareil, correction fuites mémoire (nettoyage onDeleted), réveil forcé appareil (corrige AUCUNE DONNÉE REÇUE), mode fallback Tuya DP seul. Corrigé erreurs Invalid Capability (alarm_generic, measure_soil_moisture). Nouveaux drivers: lcdtemphumidsensor, temphumidsensor. Nettoyage: Supprimé 67 fichiers .old.js obsolètes (98,616 lignes supprimées)."
   }
 }
+
+
+
