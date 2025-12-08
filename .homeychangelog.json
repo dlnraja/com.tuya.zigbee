@@ -1,4 +1,9 @@
 {
+  "5.5.90": {
+    "en": "TZE284 AGGRESSIVE FIX: 1) Magic Packet now sent at EVERY wake interval (10s, 30s, 2m, 5m, 10m, 20m, 30m) for _TZE284_vvmbj46n. 2) Soil sensor DP9 now ignored (was incorrectly auto-detected as temperature). 3) No re-pairing needed - just update and wait up to 10 seconds.",
+    "fr": "FIX TZE284 AGRESSIF: 1) Magic Packet envoyé à CHAQUE intervalle de réveil (10s, 30s, 2m...) pour _TZE284_vvmbj46n. 2) Soil sensor DP9 ignoré (était mal détecté comme température). 3) Pas de ré-appairage nécessaire - mettez à jour et attendez 10 secondes."
+  },
+  
   "5.5.89": {
     "en": "TZE284 MONITOR FIX: 1) Added dataQuery (0x03) and mcuVersionRequest (0x10) commands to TuyaSpecificCluster. 2) Fixed Magic Packet sequence for _TZE284_vvmbj46n climate sensors. 3) Added sendMagicPacket() method. Now properly triggers device to report temperature, humidity, battery. Source: Z2M issue #26078",
     "fr": "FIX MONITEUR TZE284: 1) Ajout commandes dataQuery (0x03) et mcuVersionRequest (0x10) au TuyaSpecificCluster. 2) Fix séquence Magic Packet pour capteurs _TZE284_vvmbj46n. 3) Méthode sendMagicPacket() ajoutée. Déclenche maintenant le reporting température, humidité, batterie."
@@ -2210,6 +2215,7 @@
     "fr": "VERSION STABILITÉ MAJEURE - Mécanisme de rollback pairing (corrige appareils fantômes), timeout pairing 60s, validation capabilities avant création appareil, correction fuites mémoire (nettoyage onDeleted), réveil forcé appareil (corrige AUCUNE DONNÉE REÇUE), mode fallback Tuya DP seul. Corrigé erreurs Invalid Capability (alarm_generic, measure_soil_moisture). Nouveaux drivers: lcdtemphumidsensor, temphumidsensor. Nettoyage: Supprimé 67 fichiers .old.js obsolètes (98,616 lignes supprimées)."
   }
 }
+
 
 
 
