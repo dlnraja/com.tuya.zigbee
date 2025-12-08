@@ -1,4 +1,8 @@
 {
+  "5.5.105": {
+    "en": "CONFLICT RESOLUTION (RULE 8 - No Fingerprint Collisions):\n• Removed generic brands (SLS, Moes, Avatto, etc.) - not valid manufacturerNames\n• Resolved 461 conflicts where same mfr+productId was in multiple drivers\n• Each manufacturerName+productId is now in exactly ONE driver\n• Priority-based resolution: more specific drivers keep the fingerprint\n• Total: 3,742 manufacturerNames, 478 productIds, 53,559 combinations",
+    "fr": "RÉSOLUTION CONFLITS (RÈGLE 8 - Aucune Collision Fingerprint):\n• Suppression marques génériques (SLS, Moes, Avatto, etc.)\n• Résolution de 461 conflits où même mfr+productId était dans plusieurs drivers\n• Chaque manufacturerName+productId est maintenant dans UN SEUL driver\n• Résolution par priorité: drivers plus spécifiques gardent le fingerprint\n• Total: 3,742 manufacturerNames, 478 productIds, 53,559 combinaisons"
+  },
   "5.5.104": {
     "en": "4-in-1 MULTISENSOR FIX (Peter's Fantem/Immax device):\n• Read temp/humidity WHEN device wakes up (after motion)\n• Configure attribute reporting for passive updates\n• Sleepy devices don't respond when sleeping - must read while awake!\n• Source: Home Assistant community research\n• Supports: Fantem ZB003-x, Immax 07502L, generic 4-in-1",
     "fr": "CORRECTIF MULTISENSOR 4-en-1 (device Fantem/Immax de Peter):\n• Lecture temp/humidité AU RÉVEIL (après mouvement)\n• Configuration reporting pour mises à jour passives\n• Devices sleepy ne répondent pas en veille - lire au réveil!\n• Source: recherche communauté Home Assistant\n• Supporte: Fantem ZB003-x, Immax 07502L, 4-en-1 générique"
