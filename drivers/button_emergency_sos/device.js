@@ -322,6 +322,49 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     }
   }
 
+  /**
+   * v5.5.109: Handle settings changes for maintenance actions
+   */
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    this.log('[SOS] Settings changed:', changedKeys);
+
+    // Maintenance: Force battery read
+    if (changedKeys.includes('refresh_battery') && newSettings.refresh_battery) {
+      this.log('[SOS] 🔋 Maintenance: Force battery read requested');
+
+      // Reset the toggle after a short delay
+      this.homey.setTimeout(async () => {
+        await this.setSettings({ refresh_battery: false }).catch(() => { });
+      }, 1000);
+
+      // Try to read battery
+      try {
+        await this._readBatteryNow();
+        this.log('[SOS] ✅ Battery read completed');
+      } catch (e) {
+        this.log('[SOS] ⚠️ Battery read failed (device may be sleeping):', e.message);
+      }
+    }
+
+    // Maintenance: Re-enroll IAS Zone
+    if (changedKeys.includes('re_enroll') && newSettings.re_enroll) {
+      this.log('[SOS] 📋 Maintenance: Re-enroll IAS Zone requested');
+
+      // Reset the toggle after a short delay
+      this.homey.setTimeout(async () => {
+        await this.setSettings({ re_enroll: false }).catch(() => { });
+      }, 1000);
+
+      // Try to enroll
+      try {
+        await this._tryEnrollmentNow();
+        this.log('[SOS] ✅ Enrollment attempt completed');
+      } catch (e) {
+        this.log('[SOS] ⚠️ Enrollment failed (device may be sleeping):', e.message);
+      }
+    }
+  }
+
   async onUninit() {
     if (this._resetTimeout) this.homey.clearTimeout(this._resetTimeout);
   }
