@@ -1,4 +1,8 @@
 {
+  "5.5.98": {
+    "en": "COMPLETE JOHAN BENDZ SYNC:\n• Added 7 smoke sensor IDs (_TZE200_ntcy3xu1, _TZE200_m9skfctm, etc.)\n• Added water leak sensor ID (_TZE200_jthf7vb6)\n• Created automation script: scripts/automation/sync-manufacturer-mappings.js\n• All drivers now aligned with Johan's Tuya Zigbee app\n• Run 'node scripts/automation/sync-manufacturer-mappings.js' to auto-sync future mappings",
+    "fr": "SYNC COMPLÈTE JOHAN BENDZ:\n• Ajout de 7 IDs capteur fumée (_TZE200_ntcy3xu1, _TZE200_m9skfctm, etc.)\n• Ajout ID capteur fuite eau (_TZE200_jthf7vb6)\n• Script automatisation créé: scripts/automation/sync-manufacturer-mappings.js\n• Tous les drivers alignés avec l'app Tuya Zigbee de Johan\n• Lancer 'node scripts/automation/sync-manufacturer-mappings.js' pour sync auto"
+  },
   "5.5.97": {
     "en": "MANUFACTURER MAPPING DATABASE:\n• Created centralized data/manufacturer_mapping.json with 150+ device IDs\n• Added 18 NEW radar sensor IDs from Johan Bendz README\n• Added 8 NEW soil sensor IDs (GiEX, QT-07S variants)\n• All IDs synchronized with Johan's Tuya Zigbee app\n\nSOURCES USED:\n• Forum topic 140352 (Dylan's diagnostics)\n• Forum topic 26439 (Johan Bendz community)\n• Johan's README supported devices list\n• Zigbee2MQTT database",
     "fr": "BASE DE DONNÉES MANUFACTURERIDS:\n• Création data/manufacturer_mapping.json centralisé avec 150+ IDs\n• Ajout de 18 NOUVEAUX IDs radar depuis README Johan Bendz\n• Ajout de 8 NOUVEAUX IDs capteur sol (GiEX, variantes QT-07S)\n• Tous les IDs synchronisés avec l'app Tuya Zigbee de Johan\n\nSOURCES UTILISÉES:\n• Forum topic 140352 (diagnostics Dylan)\n• Forum topic 26439 (communauté Johan Bendz)\n• Liste devices supportés README Johan\n• Base de données Zigbee2MQTT"
