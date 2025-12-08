@@ -1,5 +1,95 @@
 # Changelog
 
+All notable changes to the Universal Tuya Zigbee app.
+
+---
+
+## [5.5.107] - 2025-12-08
+
+### 🛡️ UNIVERSAL SANITY CHECKS + FORUM FIXES
+
+#### Forum User Fixes
+- **Peter** - Multisensor temp/humidity fluctuation fixed with value validation
+- **Jocke** - TS0044 `_TZ3000_u3nv1jwk` moved to `button_wireless_4` driver
+- **Cam** - TS0041 `_TZ3000_5bpeda8u` added to `button_wireless` driver
+- **Sharif** - MOES Roller Blind tilt/dim support added
+
+#### Universal Sanity Checks (ALL drivers benefit)
+- **HybridSensorBase** - Temperature (-40°C to 80°C), Humidity (0-100%), Luminance (0-100000 lux), Pressure (300-1100 hPa), CO2 (0-10000 ppm)
+- **HybridPlugBase** - Power (0-50000W), Voltage (50-300V), Current (0-100A), Energy (0-1000000 kWh)
+- **HybridLightBase** - Dim (0-1), Color temperature (0-1)
+- **HybridCoverBase** - Position (0-1), Tilt (0-1)
+- **HybridThermostatBase** - Target temperature (-40°C to 80°C), Humidity (0-100%)
+
+#### 3-Phase Time Sync
+- **Phase 1** - Immediate sync at init
+- **Phase 2** - 60 minutes after init (post-recognition)
+- **Phase 3** - Hourly continuous sync
+
+---
+
+## [5.5.106] - 2025-12-08
+
+### 🕐 HOURLY TIME SYNC
+- **UniversalTimeSync module** - Reliable hourly synchronization
+- **Homey NTP sync** - Uses Homey's native time (NTP synced)
+- **Multiple methods** - Tuya cluster, ZCL Time, TuyaEF00Manager
+- **LCD displays** - Accurate clock on TH05Z and similar devices
+- **Retry mechanism** - Auto-retry on failure
+
+---
+
+## [5.5.105] - 2025-12-08
+
+### 🔧 FINGERPRINT CONFLICT RESOLUTION
+- **461 conflicts resolved** - Each mfr+productId maps to ONE driver
+- **Generic brands removed** - SLS, Moes, Avatto (not valid manufacturerNames)
+- **Priority-based resolution** - More specific drivers keep fingerprints
+- **3,742 manufacturerNames** / **478 productIds** / **53,559 combinations**
+
+---
+
+## [5.5.104] - 2025-12-08
+
+### 📊 4-IN-1 MULTISENSOR FIX
+- **Read on wake** - Temperature/humidity read when motion triggers
+- **Attribute reporting** - Passive updates configured
+- **Sleepy device handling** - Must read while awake
+
+---
+
+## [5.5.103] - 2025-12-08
+
+### 🌐 GLOBAL IMPROVEMENTS
+- **Dynamic cluster detection** - Skip unavailable clusters
+- **Enhanced battery reading** - Voltage fallback strategy
+- **84 drivers** benefit automatically
+
+---
+
+## [5.5.102] - 2025-12-08
+
+### 🔋 DIAGNOSTIC FIXES
+- **Motion sensor** - Dynamic cluster detection
+- **SOS button** - Enhanced battery with voltage fallback
+- **50 drivers** - Learnmode.svg created
+
+---
+
+## [5.5.101] - 2025-12-07
+
+### 🖼️ COMPLETE IMAGE ASSETS
+- **Johan Bendz sync** - Real device images for all drivers
+- **84 drivers** with complete assets
+
+---
+
+## [5.5.100] - 2025-12-07
+
+### 📱 USB DONGLE IMPROVEMENTS
+- USB Dongle Dual Repeater images
+- Extended device database (300+ IDs)
+
 ---
 
 ## [5.5.47] - 2025-12-07

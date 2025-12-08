@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.105",
+  "version": "5.5.107",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -13499,6 +13499,7 @@
           "_TZ3000_fkvaniuu",
           "_TZ3000_lq01",
           "_TZ3000_wqxwpita",
+          "_TZ3000_5bpeda8u",
           "_TZ3400_key8kk7r",
           "_TZ3400_keyjhapk"
         ],
@@ -15032,6 +15033,7 @@
           "_TZ3000_uaa99arv",
           "_TZ3000_ufhtxr59",
           "_TZ3000_w4thianr",
+          "_TZ3000_u3nv1jwk",
           "_tz3040_fwxuzcf4",
           "_tz3040_msl6wxk9",
           "_tz3290_785fbxik",
@@ -19325,7 +19327,12 @@
         "measure_battery"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE200_icka1clh",
+          "_TZE200_zah67ekd",
+          "_TZE200_fctwhugx",
+          "_TZE200_zpzndjez"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -27245,8 +27252,7 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_jckxip3g",
-          "_TZ3000_u3nv1jwk"
+          "_TZ3000_jckxip3g"
         ],
         "productId": [
           "TS0044"

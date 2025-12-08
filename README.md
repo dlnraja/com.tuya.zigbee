@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.104-blue)
+![Version](https://img.shields.io/badge/version-5.5.107-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-84-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -53,12 +53,15 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.104
+## 🚀 Latest Updates - v5.5.107
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.107** | 🐛 Peter's fix: Motion sensor temp + SOS button IAS |
+| **v5.5.106** | 🕐 Hourly time sync for LCD devices (TH05Z, monitors) |
+| **v5.5.105** | 🔧 461 fingerprint conflicts resolved |
 | **v5.5.104** | 🌡️ 4-in-1 Multisensor fix - read temp/humidity on wake |
 | **v5.5.103** | 🔧 Global improvements - dynamic cluster detection |
 | **v5.5.102** | 🔋 Enhanced battery reading with voltage fallback |
