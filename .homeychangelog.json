@@ -1,4 +1,8 @@
 {
+  "5.5.100": {
+    "en": "USB DONGLE DUAL REPEATER IMAGES:\n• Added missing images for usb_dongle_dual_repeater driver\n• small.png, large.png, xlarge.png now present\n• icon.svg added for device widget\n• All 84 drivers now have complete image assets",
+    "fr": "IMAGES USB DONGLE DUAL REPEATER:\n• Ajout des images manquantes pour le driver usb_dongle_dual_repeater\n• small.png, large.png, xlarge.png maintenant présents\n• icon.svg ajouté pour le widget\n• Les 84 drivers ont maintenant des assets images complets"
+  },
   "5.5.99": {
     "en": "EXTENDED DEVICE DATABASE:\n• Added 6 NEW categories to manufacturer_mapping.json\n• Curtain Motors: 19 IDs (TS130F, TS0601 variants)\n• Dimmers: 12 IDs (TS110F, TS110E, TS0601)\n• RGB Lights: 15 IDs (Lidl, MOES, Lonsonho)\n• Remotes: 21 IDs (1-4 gang wall remotes)\n• Thermostats: 7 IDs (TRV radiator valves)\n• Total mapping now covers 300+ device IDs\n• All categories from Johan Bendz README integrated",
     "fr": "BASE DE DONNÉES ÉTENDUE:\n• Ajout de 6 NOUVELLES catégories au manufacturer_mapping.json\n• Moteurs Volets: 19 IDs (variantes TS130F, TS0601)\n• Variateurs: 12 IDs (TS110F, TS110E, TS0601)\n• Lumières RGB: 15 IDs (Lidl, MOES, Lonsonho)\n• Télécommandes: 21 IDs (murales 1-4 boutons)\n• Thermostats: 7 IDs (vannes TRV radiateur)\n• Mapping total couvre maintenant 300+ IDs\n• Toutes les catégories du README Johan Bendz intégrées"
