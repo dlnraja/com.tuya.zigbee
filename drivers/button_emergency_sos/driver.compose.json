@@ -71,6 +71,41 @@
   },
   "settings": [
     {
+      "type": "group",
+      "label": {
+        "en": "🔧 Maintenance",
+        "fr": "🔧 Maintenance"
+      },
+      "children": [
+        {
+          "id": "refresh_battery",
+          "type": "checkbox",
+          "label": {
+            "en": "Force Battery Read (toggle to trigger)",
+            "fr": "Forcer Lecture Batterie (basculer pour déclencher)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Toggle this setting to force a battery reading. The device must be awake (press SOS button first).",
+            "fr": "Basculer ce paramètre pour forcer une lecture de batterie. L'appareil doit être éveillé (appuyez d'abord sur le bouton SOS)."
+          }
+        },
+        {
+          "id": "re_enroll",
+          "type": "checkbox",
+          "label": {
+            "en": "Re-enroll IAS Zone (toggle to trigger)",
+            "fr": "Ré-inscrire IAS Zone (basculer pour déclencher)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Toggle this setting to re-enroll the device. Press SOS button first to wake device.",
+            "fr": "Basculer ce paramètre pour ré-inscrire l'appareil. Appuyez d'abord sur le bouton SOS pour réveiller l'appareil."
+          }
+        }
+      ]
+    },
+    {
       "id": "power_source",
       "type": "dropdown",
       "label": {
