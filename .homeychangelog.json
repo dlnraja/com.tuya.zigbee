@@ -1,4 +1,8 @@
 {
+  "5.5.103": {
+    "en": "GLOBAL IMPROVEMENTS (Peter's fix applied to ALL drivers):\n• HybridSensorBase: Dynamic cluster detection before initialization\n• ALL sensors: Skip capabilities if cluster not available (prevents timeouts)\n• ALL battery devices: Enhanced reading with voltage fallback\n• 84 drivers benefit from these improvements automatically\n• Better handling of sleepy devices",
+    "fr": "AMÉLIORATIONS GLOBALES (correctif Peter appliqué à TOUS les drivers):\n• HybridSensorBase: Détection dynamique clusters avant initialisation\n• TOUS les capteurs: Skip capabilities si cluster absent (évite timeouts)\n• TOUS les devices batterie: Lecture améliorée avec fallback voltage\n• 84 drivers bénéficient automatiquement\n• Meilleure gestion devices sleepy"
+  },
   "5.5.102": {
     "en": "DIAGNOSTIC REPORT FIXES:\n• Motion Sensor: Dynamic cluster detection - only reads temp/humidity if device supports them (prevents timeouts)\n• SOS Button: Enhanced battery reading with voltage fallback strategy\n• Learnmode.svg: Created for 50 drivers that reference them\n• All 84 drivers now have complete assets",
     "fr": "CORRECTIONS RAPPORT DIAGNOSTIC:\n• Capteur Mouvement: Détection dynamique clusters - lit temp/humidité seulement si supporté (évite timeouts)\n• Bouton SOS: Lecture batterie améliorée avec stratégie voltage\n• Learnmode.svg: Créé pour 50 drivers qui les référencent\n• 84 drivers ont des assets complets"
