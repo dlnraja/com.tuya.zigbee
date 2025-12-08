@@ -4,6 +4,17 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.109] - 2025-12-08
+
+### 🔧 SOS MAINTENANCE + BATTERY READ
+
+#### SOS Emergency Button
+- **NEW:** Maintenance settings to force battery read and re-enroll
+- **FIX:** Battery read on demand via settings toggle
+- **INFO:** Device must be awake (press SOS first) for maintenance actions
+
+---
+
 ## [5.5.108] - 2025-12-08
 
 ### 🧠 INTELLIGENT HYBRID PROTOCOL + SOS FIX
