@@ -4,7 +4,7 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║            SOS EMERGENCY BUTTON - v5.5.102 ENHANCED IAS ZONE                 ║
+ * ║            SOS EMERGENCY BUTTON - v5.5.107 ENHANCED IAS ZONE                 ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  Device: TS0215A _TZ3000_0dumfk2z                                            ║
@@ -26,8 +26,8 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
     this.log('');
     this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║         SOS EMERGENCY BUTTON v5.5.61 - PURE IAS ZONE         ║');
-    this.log('║   TS0215A _TZ3000_0dumfk2z - NO TUYA DP!                      ║');
+    this.log('║         SOS EMERGENCY BUTTON v5.5.107 - ENHANCED IAS          ║');
+    this.log('║   TS0215A _TZ3000_0dumfk2z - IMPROVED BINDING                 ║');
     this.log('╚══════════════════════════════════════════════════════════════╝');
 
     this.zclNode = zclNode;
@@ -103,14 +103,33 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       }
     };
 
+    // v5.5.107: Write CIE Address FIRST (required for some devices)
+    try {
+      const ieeeAddress = this.homey.zigbee?.ieeeAddress || '0x00124b0000000000';
+      this.log('[SOS] Writing CIE Address:', ieeeAddress);
+      await iasZone.writeAttributes({ iasCieAddr: ieeeAddress }).catch(() => { });
+    } catch (e) {
+      this.log('[SOS] CIE address write (normal if not supported):', e.message);
+    }
+
     // Proactive enrollment
     try {
       await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 10 });
       this.log('[SOS] ✅ Proactive enrollment sent');
     } catch (e) {
-      if (e.message?.includes('Zigbee')) {
-        this._iasRetryTimeout = this.homey.setTimeout(() => this._setupIasZone(), 30000);
-      }
+      this.log('[SOS] Enrollment response (device may be sleeping):', e.message);
+      // Retry later
+      this._iasRetryTimeout = this.homey.setTimeout(() => {
+        this._retryEnrollment();
+      }, 30000);
+    }
+
+    // v5.5.107: Bind the cluster to receive reports
+    try {
+      await iasZone.bind();
+      this.log('[SOS] ✅ IAS Zone bound');
+    } catch (e) {
+      this.log('[SOS] Binding (normal if already bound):', e.message);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -275,6 +294,27 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       }
     } catch (e) {
       // Silent - device might have gone back to sleep
+    }
+  }
+
+  /**
+   * v5.5.107: Retry enrollment when device wakes up
+   */
+  async _retryEnrollment() {
+    try {
+      const ep1 = this.zclNode?.endpoints?.[1];
+      const iasZone = ep1?.clusters?.iasZone;
+      if (!iasZone) return;
+
+      this.log('[SOS] 🔄 Retrying enrollment...');
+      await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 10 });
+      this.log('[SOS] ✅ Enrollment retry successful');
+    } catch (e) {
+      this.log('[SOS] Enrollment retry failed (device sleeping):', e.message);
+      // Schedule another retry
+      this._iasRetryTimeout = this.homey.setTimeout(() => {
+        this._retryEnrollment();
+      }, 60000);
     }
   }
 
