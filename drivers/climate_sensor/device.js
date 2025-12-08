@@ -179,6 +179,9 @@ class ClimateSensorDevice extends HybridSensorBase {
     // Call base class - handles everything!
     await super.onNodeInit({ zclNode });
 
+    // v5.5.92: CRITICAL - Store zclNode for later use in timers!
+    this._zclNode = zclNode;
+
     // Log sensor-specific info with model details
     const settings = this.getSettings() || {};
     const modelId = settings.zb_modelId || 'unknown';
@@ -258,25 +261,29 @@ class ClimateSensorDevice extends HybridSensorBase {
       const timer = this.homey.setTimeout(async () => {
         this.log(`[CLIMATE] ⏰ Aggressive request attempt ${index + 1}/${intervals.length}`);
 
-        // v5.5.91: Get manufacturer at runtime (settings may not be available at init)
-        const settings = this.getSettings() || {};
-        const mfr = settings.zb_manufacturerName ||
-          this._manufacturerName ||
-          this.getData()?.manufacturerName || '';
-        const isTZE284 = mfr.includes('_TZE284') || mfr.includes('TZE284');
+        // v5.5.92: Get zclNode from stored reference
+        const zclNode = this._zclNode || this.zclNode;
+        if (!zclNode) {
+          this.log('[CLIMATE] ⚠️ No zclNode available - skipping Magic Packet');
+        } else {
+          // v5.5.92: Get manufacturer/model from multiple sources
+          const settings = this.getSettings() || {};
+          const mfr = settings.zb_manufacturerName ||
+            this._manufacturerName ||
+            this.getData()?.manufacturerName || '';
+          const modelId = settings.zb_modelId ||
+            this._modelId ||
+            this.getData()?.modelId || '';
 
-        // v5.5.91: ALWAYS send Magic Packet for TZE284 devices!
-        if (isTZE284 && this.zclNode) {
-          this.log(`[CLIMATE] 🔮 Sending Magic Packet (manufacturer: ${mfr})...`);
-          await this._sendTuyaMagicPacket(this.zclNode).catch(e => {
-            this.log('[CLIMATE] Magic packet error:', e.message);
-          });
-        } else if (this.zclNode) {
-          // v5.5.91: Try anyway for TS0601 devices (they all need magic packet)
-          const modelId = settings.zb_modelId || this.getData()?.modelId || '';
-          if (modelId === 'TS0601') {
-            this.log(`[CLIMATE] 🔮 TS0601 detected - Sending Magic Packet anyway...`);
-            await this._sendTuyaMagicPacket(this.zclNode).catch(e => {
+          const isTZE284 = mfr.includes('_TZE284') || mfr.includes('TZE284');
+          const isTS0601 = modelId === 'TS0601' || modelId.includes('TS0601');
+
+          this.log(`[CLIMATE] 🔍 Device: mfr="${mfr}" model="${modelId}" TZE284=${isTZE284} TS0601=${isTS0601}`);
+
+          // v5.5.92: Send Magic Packet for ALL TS0601 or TZE284 devices
+          if (isTZE284 || isTS0601) {
+            this.log(`[CLIMATE] 🔮 Sending Magic Packet...`);
+            await this._sendTuyaMagicPacket(zclNode).catch(e => {
               this.log('[CLIMATE] Magic packet error:', e.message);
             });
           }
