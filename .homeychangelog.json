@@ -1,4 +1,8 @@
 {
+  "5.5.102": {
+    "en": "DIAGNOSTIC REPORT FIXES:\n• Motion Sensor: Dynamic cluster detection - only reads temp/humidity if device supports them (prevents timeouts)\n• SOS Button: Enhanced battery reading with voltage fallback strategy\n• Learnmode.svg: Created for 50 drivers that reference them\n• All 84 drivers now have complete assets",
+    "fr": "CORRECTIONS RAPPORT DIAGNOSTIC:\n• Capteur Mouvement: Détection dynamique clusters - lit temp/humidité seulement si supporté (évite timeouts)\n• Bouton SOS: Lecture batterie améliorée avec stratégie voltage\n• Learnmode.svg: Créé pour 50 drivers qui les référencent\n• 84 drivers ont des assets complets"
+  },
   "5.5.101": {
     "en": "ALL 84 DRIVERS - REAL DEVICE IMAGES:\n• Downloaded proper device photos from Johan Bendz repo\n• small.png (75x75), large.png (500x500), xlarge.png (1000x1000)\n• icon.svg vector icons for all device widgets\n• White backgrounds as required by Homey SDK3\n• Full App Store compliance achieved",
     "fr": "84 DRIVERS - VRAIES IMAGES DEVICES:\n• Téléchargement photos devices depuis repo Johan Bendz\n• small.png (75x75), large.png (500x500), xlarge.png (1000x1000)\n• Icônes SVG vectorielles pour tous les widgets\n• Fonds blancs conformes au SDK3 Homey\n• Conformité App Store complète"
