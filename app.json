@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.103",
+  "version": "5.5.104",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.103: GLOBAL FIX - Dynamic cluster detection + enhanced battery reading for ALL 84 drivers. Prevents timeouts on devices without temp/humidity clusters.",
-    "fr": "V5.5.103: CORRECTIF GLOBAL - Détection dynamique clusters + lecture batterie améliorée pour les 84 drivers. Évite timeouts sur devices sans clusters temp/humidité."
+    "en": "V5.5.104: 4-in-1 MULTISENSOR FIX - Read temp/humidity when device wakes up (motion). Configure reporting for sleepy devices.",
+    "fr": "V5.5.104: CORRECTIF MULTISENSOR 4-en-1 - Lecture temp/humidité au réveil (mouvement). Configuration reporting pour devices sleepy."
   },
   "category": "appliances",
   "permissions": [],
