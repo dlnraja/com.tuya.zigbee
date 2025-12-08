@@ -1,64 +1,56 @@
 {
+  "5.5.97": {
+    "en": "MANUFACTURER MAPPING DATABASE:\n• Created centralized data/manufacturer_mapping.json with 150+ device IDs\n• Added 18 NEW radar sensor IDs from Johan Bendz README\n• Added 8 NEW soil sensor IDs (GiEX, QT-07S variants)\n• All IDs synchronized with Johan's Tuya Zigbee app\n\nSOURCES USED:\n• Forum topic 140352 (Dylan's diagnostics)\n• Forum topic 26439 (Johan Bendz community)\n• Johan's README supported devices list\n• Zigbee2MQTT database",
+    "fr": "BASE DE DONNÉES MANUFACTURERIDS:\n• Création data/manufacturer_mapping.json centralisé avec 150+ IDs\n• Ajout de 18 NOUVEAUX IDs radar depuis README Johan Bendz\n• Ajout de 8 NOUVEAUX IDs capteur sol (GiEX, variantes QT-07S)\n• Tous les IDs synchronisés avec l'app Tuya Zigbee de Johan\n\nSOURCES UTILISÉES:\n• Forum topic 140352 (diagnostics Dylan)\n• Forum topic 26439 (communauté Johan Bendz)\n• Liste devices supportés README Johan\n• Base de données Zigbee2MQTT"
+  },
   "5.5.96": {
     "en": "COMPLETE DEVICE SUPPORT: All your devices are fully supported with icons, flows and correct capabilities:\n• Climate Monitor (_TZE284_vvmbj46n): LCD clock sync fixed, temperature/humidity/battery working\n• Soil Sensor (_TZE284_oitavov2): Soil moisture, temperature, battery with calibration settings\n• Radar mmWave (_TZE200_rhgsbacq): Presence detection, distance, temperature, luminance, battery\n• SOS Button (_TZ3000_0dumfk2z): Press detection with flow triggers, battery monitoring\n• USB Repeater (_TZ3000_h1ipgkwn): Dual USB ports with power monitoring\n• All switches (HOBEIAN, _TZ3000_jrpdaujd): On/off control working",
     "fr": "SUPPORT COMPLET: Tous vos appareils sont enti\u00e8rement support\u00e9s avec ic\u00f4nes, flows et capacit\u00e9s correctes:\n\u2022 Moniteur Climat (_TZE284_vvmbj46n): Horloge LCD sync, temp/humidit\u00e9/batterie fonctionnels\n\u2022 Capteur Sol (_TZE284_oitavov2): Humidit\u00e9 sol, temp\u00e9rature, batterie avec calibration\n\u2022 Radar mmWave (_TZE200_rhgsbacq): D\u00e9tection pr\u00e9sence, distance, temp, luminosit\u00e9, batterie\n\u2022 Bouton SOS (_TZ3000_0dumfk2z): D\u00e9tection appui avec flows, surveillance batterie\n\u2022 R\u00e9p\u00e9teur USB (_TZ3000_h1ipgkwn): Double ports USB avec mesure puissance\n\u2022 Tous les switchs (HOBEIAN, _TZ3000_jrpdaujd): Contr\u00f4le on/off fonctionnel"
   },
-  
   "5.5.95": {
     "en": "LCD CLOCK SYNC FIX: 1) Added timeSync() method to TuyaSpecificCluster for TH05Z LCD displays. 2) Auto-responds to device time requests. 3) Enhanced logging shows UTC + local time + timezone. 4) Fixes _TZE284_vvmbj46n (TH05Z) clock not updating. NOTE: After update, wait for device to wake up (usually 15-30 min) for clock to sync.",
     "fr": "FIX HORLOGE LCD: 1) Ajout m\u00e9thode timeSync() au cluster Tuya pour \u00e9crans LCD TH05Z. 2) R\u00e9pond auto aux demandes de temps. 3) Logs am\u00e9lior\u00e9s (UTC + heure locale + fuseau). 4) Corrige horloge _TZE284_vvmbj46n (TH05Z). NOTE: Apr\u00e8s MAJ, attendre r\u00e9veil device (15-30 min) pour sync horloge."
   },
-  
   "5.5.94": {
     "en": "Z2M UNIVERSAL FIX: Magic Packet implementation moved to TuyaHybridDevice base class! Now ALL 31+ Tuya drivers automatically: 1) Read basic cluster FIRST to get manufacturer/model. 2) Send Z2M Magic Packet (mcuVersionRequest + dataQuery). 3) Store zclNode for timer callbacks. This fixes climate_sensor, soil_sensor, air_quality, motion_sensor, and ALL other Tuya TS0601 devices!",
     "fr": "FIX Z2M UNIVERSEL: Magic Packet dans classe de base TuyaHybridDevice! Maintenant TOUS les 31+ drivers Tuya automatiquement: 1) Lisent basic cluster EN PREMIER. 2) Envoient Z2M Magic Packet. 3) Stockent zclNode pour timers. Corrige climate_sensor, soil_sensor, air_quality, motion_sensor et TOUS les TS0601!"
   },
-  
   "5.5.93": {
     "en": "Z2M IMPLEMENTATION FIX: 1) Read basic cluster FIRST at init to get manufacturerName (like Z2M configureMagicPacket). 2) ALWAYS send Magic Packet for ALL climate sensors - don't check TZE284/TS0601. 3) Simplified timer code. Based on exact Zigbee2MQTT tuya.ts implementation from issue #26078.",
     "fr": "FIX IMPLEMENTATION Z2M: 1) Lecture basic cluster EN PREMIER à l'init pour obtenir manufacturerName (comme Z2M). 2) Magic Packet TOUJOURS envoyé pour TOUS les capteurs climat. 3) Code timers simplifié. Basé sur implémentation exacte Z2M tuya.ts issue #26078."
   },
-  
   "5.5.92": {
     "en": "CRITICAL FIX: 1) Stored zclNode at init (this._zclNode) so timers can access it. 2) Magic Packet now ACTUALLY SENT - logs will show '[CLIMATE] 🔮 Sending Magic Packet...'. 3) Improved device detection logs: '[CLIMATE] 🔍 Device: mfr=... model=...'. NOTE: To remove the extra button, you must DELETE and RE-ADD the climate sensor device.",
     "fr": "FIX CRITIQUE: 1) zclNode stocké à l'init (this._zclNode) pour accès timers. 2) Magic Packet maintenant VRAIMENT envoyé. 3) Logs améliorés. NOTE: Pour supprimer le bouton, il faut SUPPRIMER et RÉAJOUTER le capteur climat."
   },
-  
   "5.5.91": {
     "en": "CLIMATE SENSOR FIX: 1) Removed extra button from climate sensor UI. 2) Fixed TZE284 detection - now checks at runtime instead of init. 3) Magic Packet sent for ALL TS0601 devices (not just TZE284). 4) Stored manufacturer name for timer callbacks.",
     "fr": "FIX CAPTEUR CLIMAT: 1) Bouton en trop supprimé de l'interface. 2) Détection TZE284 corrigée - vérifie maintenant au runtime. 3) Magic Packet envoyé pour TOUS les TS0601. 4) Nom fabricant stocké pour les callbacks."
   },
-  
   "5.5.90": {
     "en": "TZE284 AGGRESSIVE FIX: 1) Magic Packet now sent at EVERY wake interval (10s, 30s, 2m, 5m, 10m, 20m, 30m) for _TZE284_vvmbj46n. 2) Soil sensor DP9 now ignored (was incorrectly auto-detected as temperature). 3) No re-pairing needed - just update and wait up to 10 seconds.",
     "fr": "FIX TZE284 AGRESSIF: 1) Magic Packet envoyé à CHAQUE intervalle de réveil (10s, 30s, 2m...) pour _TZE284_vvmbj46n. 2) Soil sensor DP9 ignoré (était mal détecté comme température). 3) Pas de ré-appairage nécessaire - mettez à jour et attendez 10 secondes."
   },
-  
   "5.5.89": {
     "en": "TZE284 MONITOR FIX: 1) Added dataQuery (0x03) and mcuVersionRequest (0x10) commands to TuyaSpecificCluster. 2) Fixed Magic Packet sequence for _TZE284_vvmbj46n climate sensors. 3) Added sendMagicPacket() method. Now properly triggers device to report temperature, humidity, battery. Source: Z2M issue #26078",
     "fr": "FIX MONITEUR TZE284: 1) Ajout commandes dataQuery (0x03) et mcuVersionRequest (0x10) au TuyaSpecificCluster. 2) Fix séquence Magic Packet pour capteurs _TZE284_vvmbj46n. 3) Méthode sendMagicPacket() ajoutée. Déclenche maintenant le reporting température, humidité, batterie."
   },
-  
   "5.5.88": {
     "en": "UNIVERSAL TUYA COVERAGE: 1) Enhanced UniversalTuyaParser with official Tuya DP types (RAW/BOOL/VALUE/STRING/ENUM/BITMAP) and commands (0x01-0x24). 2) Added 20+ ZCL clusters with cluster IDs. 3) Device-type specific DP mappings (climate/soil/motion/contact/plug/dimmer/curtain/thermostat/siren). 4) Frame builders for time sync and data query. Sources: Tuya Developer, Z2M, ZHA.",
     "fr": "COUVERTURE TUYA UNIVERSELLE: 1) UniversalTuyaParser amélioré avec types DP Tuya officiels (RAW/BOOL/VALUE/STRING/ENUM/BITMAP) et commandes (0x01-0x24). 2) 20+ clusters ZCL avec IDs. 3) Mappings DP par type d'appareil. 4) Builders de frames pour sync temps. Sources: Tuya Developer, Z2M, ZHA."
   },
-  
   "5.5.87": {
     "en": "MULTISENSOR 4-IN-1 SUPPORT: Motion sensor now includes temperature + humidity capabilities for Fantem ZB003-x, Immax 07502L and similar 4-in-1 sensors. Added ZCL handlers for clusters 0x0402 (temp) and 0x0405 (humidity). Source: community.homey.app/t/140352/589",
     "fr": "SUPPORT MULTISENSOR 4-EN-1: Le capteur mouvement inclut maintenant température + humidité pour Fantem ZB003-x, Immax 07502L et similaires. Ajout handlers ZCL pour clusters 0x0402 (temp) et 0x0405 (humidité). Source: community.homey.app/t/140352/589"
   },
-  
   "5.5.86": {
     "en": "CLIMATE SENSOR FIX (_TZE284_vvmbj46n): 1) Added Tuya Magic Packet (MCU version request + dataQuery) to trigger data reporting. 2) Time sync with Paris timezone (GMT+1/+2). 3) Enhanced initialization sequence for TZE284 devices. Source: Z2M issue #26078.",
     "fr": "FIX CAPTEUR CLIMAT (_TZE284_vvmbj46n): 1) Ajout Magic Packet Tuya (MCU version request + dataQuery) pour déclencher les données. 2) Sync heure avec fuseau Paris (GMT+1/+2). 3) Séquence d'init améliorée pour TZE284. Source: Z2M issue #26078."
   },
-  
   "5.5.85": {
     "en": "UNIVERSAL COVERAGE READY: Version bump with all 54 drivers using shared UniversalTuyaParser module for maximum device compatibility.",
     "fr": "COUVERTURE UNIVERSELLE PRÊTE: Bump de version avec les 54 drivers utilisant le module UniversalTuyaParser partagé pour une compatibilité maximale."
   },
-  
   "5.5.84": {
     "en": "UNIVERSAL COVERAGE EVERYWHERE: 1) Created shared UniversalTuyaParser module with multi-format support. 2) ALL base classes now use it: TuyaHybridDevice, HybridSensorBase, HybridLightBase, HybridPlugBase. 3) Auto-discovery of unknown DPs with Z2M/ZHA patterns. 4) Universal ZCL listeners on ALL endpoints. 5) 15-min learning phase learns from both Tuya DP and Zigbee ZCL. 6) Supports exotic/custom/proprietary implementations.",
     "fr": "COUVERTURE UNIVERSELLE PARTOUT: 1) Module UniversalTuyaParser partagé avec support multi-format. 2) TOUTES les classes de base l'utilisent. 3) Auto-découverte des DPs inconnus via patterns Z2M/ZHA. 4) Listeners ZCL universels sur TOUS les endpoints. 5) Phase d'apprentissage 15 min. 6) Supporte les implémentations exotiques/custom/propriétaires."
@@ -2245,18 +2237,3 @@
     "fr": "VERSION STABILITÉ MAJEURE - Mécanisme de rollback pairing (corrige appareils fantômes), timeout pairing 60s, validation capabilities avant création appareil, correction fuites mémoire (nettoyage onDeleted), réveil forcé appareil (corrige AUCUNE DONNÉE REÇUE), mode fallback Tuya DP seul. Corrigé erreurs Invalid Capability (alarm_generic, measure_soil_moisture). Nouveaux drivers: lcdtemphumidsensor, temphumidsensor. Nettoyage: Supprimé 67 fichiers .old.js obsolètes (98,616 lignes supprimées)."
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
