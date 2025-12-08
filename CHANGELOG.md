@@ -4,6 +4,22 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.108] - 2025-12-08
+
+### 🔧 SOS BUTTON + CLIMATE SENSOR FIXES
+
+#### SOS Button
+- **Fixed:** Enrollment now happens when device wakes up (not on timeout)
+- **Improved:** No more "Enrollment retry failed (device sleeping)" spam
+- **Smart:** Automatically attempts enrollment when button is pressed
+
+#### Climate Sensor
+- **Fixed:** Detect Tuya cluster before attempting time sync
+- **Improved:** ZCL standard devices (TS0201) no longer spam Magic Packet errors
+- **Info:** Clear message when device doesn't support Tuya time sync
+
+---
+
 ## [5.5.107] - 2025-12-08
 
 ### 🛡️ UNIVERSAL SANITY CHECKS + FORUM FIXES

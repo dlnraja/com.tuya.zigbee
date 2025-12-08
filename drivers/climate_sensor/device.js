@@ -233,7 +233,18 @@ class ClimateSensorDevice extends HybridSensorBase {
       this.log('[CLIMATE] Magic packet failed:', e.message);
     });
 
-    // v5.5.29: Initialize Gateway Emulator for devices with LCD clocks
+    // v5.5.107: Check if device has Tuya cluster (0xEF00)
+    const ep1 = zclNode?.endpoints?.[1];
+    const hasTuyaCluster = !!(
+      ep1?.clusters?.tuya ||
+      ep1?.clusters?.tuyaSpecific ||
+      ep1?.clusters?.[0xEF00] ||
+      ep1?.clusters?.['61184']
+    );
+    this._hasTuyaCluster = hasTuyaCluster;
+    this.log(`[CLIMATE] Tuya cluster (0xEF00): ${hasTuyaCluster ? '✅ YES' : '❌ NO (ZCL standard device)'}`);
+
+    // v5.5.29: Initialize Gateway Emulator for devices with LCD clocks AND Tuya cluster
     // This makes Homey act as a Tuya Gateway - pushing time proactively
     const hasLCD = mfr && (
       mfr.includes('_TZE284_') ||
@@ -241,14 +252,18 @@ class ClimateSensorDevice extends HybridSensorBase {
       modelId.includes('TH05')
     );
 
-    if (hasLCD) {
-      this.log('[CLIMATE] 🖥️ LCD device detected - initializing Gateway Emulation...');
+    if (hasLCD && hasTuyaCluster) {
+      this.log('[CLIMATE] 🖥️ LCD device with Tuya cluster - initializing Time Sync...');
       await this._setupGatewayEmulation();
-    } else {
-      // Fallback to simple time sync for non-LCD devices
+    } else if (hasTuyaCluster) {
+      // Has Tuya but no LCD - simple time sync
       await this._setupTimeSync().catch(err => {
         this.log('[CLIMATE] Time sync setup skipped:', err.message);
       });
+    } else {
+      // v5.5.107: ZCL standard device - no Tuya time sync possible
+      this.log('[CLIMATE] ℹ️ ZCL standard device - Tuya time sync not supported');
+      this.log('[CLIMATE] ℹ️ This device reports via ZCL clusters (temperatureMeasurement, relativeHumidity)');
     }
 
     // v5.5.29: Setup advanced wake strategies to get data from sleepy devices
@@ -291,24 +306,28 @@ class ClimateSensorDevice extends HybridSensorBase {
           return;
         }
 
-        // v5.5.93: ALWAYS send Magic Packet - ALL climate sensors are TS0601!
-        // Don't waste time checking manufacturer - just send it!
-        this.log(`[CLIMATE] 🔮 Sending Magic Packet...`);
-        await this._sendTuyaMagicPacket(zclNode).catch(e => {
-          this.log('[CLIMATE] Magic packet error:', e.message);
-        });
+        // v5.5.107: Only send Magic Packet if device has Tuya cluster
+        if (this._hasTuyaCluster) {
+          this.log(`[CLIMATE] 🔮 Sending Magic Packet...`);
+          await this._sendTuyaMagicPacket(zclNode).catch(e => {
+            this.log('[CLIMATE] Magic packet error:', e.message);
+          });
 
-        // Try Tuya DP query
-        if (this.safeTuyaDataQuery) {
-          await this.safeTuyaDataQuery(dpIds, {
-            logPrefix: '[CLIMATE-WAKE]',
-            delayBetweenQueries: 100
-          }).catch(() => { });
-        }
+          // Try Tuya DP query
+          if (this.safeTuyaDataQuery) {
+            await this.safeTuyaDataQuery(dpIds, {
+              logPrefix: '[CLIMATE-WAKE]',
+              delayBetweenQueries: 100
+            }).catch(() => { });
+          }
 
-        // Also push time if gateway emulator is active
-        if (this._gatewayEmulator) {
-          await this._gatewayEmulator.pushTime().catch(() => { });
+          // Also push time if gateway emulator is active
+          if (this._gatewayEmulator) {
+            await this._gatewayEmulator.pushTime().catch(() => { });
+          }
+        } else {
+          // v5.5.107: ZCL device - just wait for attribute reports
+          this.log('[CLIMATE] ℹ️ ZCL device - waiting for attribute reports');
         }
       }, delay);
 
@@ -316,8 +335,7 @@ class ClimateSensorDevice extends HybridSensorBase {
       this._aggressiveTimers.push(timer);
     });
 
-    this.log('[CLIMATE] 📅 Scheduled aggressive requests at: 10s, 30s, 2m, 5m, 10m, 20m, 30m');
-    this.log('[CLIMATE] 🔮 Magic Packet will be sent at EVERY interval');
+    this.log('[CLIMATE] 📅 Scheduled data requests at: 10s, 30s, 2m, 5m, 10m, 20m, 30m');
   }
 
   /**

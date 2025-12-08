@@ -112,16 +112,17 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       this.log('[SOS] CIE address write (normal if not supported):', e.message);
     }
 
-    // Proactive enrollment
+    // v5.5.107: Track enrollment status
+    this._enrollmentPending = true;
+
+    // Proactive enrollment (will likely fail if device is sleeping)
     try {
       await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 10 });
       this.log('[SOS] ✅ Proactive enrollment sent');
+      this._enrollmentPending = false;
     } catch (e) {
-      this.log('[SOS] Enrollment response (device may be sleeping):', e.message);
-      // Retry later
-      this._iasRetryTimeout = this.homey.setTimeout(() => {
-        this._retryEnrollment();
-      }, 30000);
+      this.log('[SOS] Enrollment pending - will retry when device wakes up');
+      // v5.5.107: NO automatic retry - will retry in _handleAlarm when device wakes
     }
 
     // v5.5.107: Bind the cluster to receive reports
@@ -180,6 +181,11 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     this.log('[SOS] 🆘 SOS BUTTON PRESSED!');
     this.log('[SOS] ════════════════════════════════════════');
 
+    // v5.5.107: Device is AWAKE NOW - try enrollment if pending
+    if (this._enrollmentPending) {
+      this._tryEnrollmentNow();
+    }
+
     // Set capability
     this.setCapabilityValue('alarm_contact', true).catch(() => { });
 
@@ -195,6 +201,25 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
     // Try to read battery while device is awake
     this._readBatteryNow();
+  }
+
+  /**
+   * v5.5.107: Try enrollment when device is awake (just sent a notification)
+   */
+  async _tryEnrollmentNow() {
+    try {
+      const ep1 = this.zclNode?.endpoints?.[1];
+      const iasZone = ep1?.clusters?.iasZone;
+      if (!iasZone) return;
+
+      this.log('[SOS] 🔄 Device awake - attempting enrollment...');
+      await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 10 });
+      this.log('[SOS] ✅ Enrollment successful (device was awake)');
+      this._enrollmentPending = false;
+    } catch (e) {
+      this.log('[SOS] Enrollment attempt failed:', e.message);
+      // Keep _enrollmentPending = true for next wake
+    }
   }
 
   /**
@@ -297,30 +322,8 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     }
   }
 
-  /**
-   * v5.5.107: Retry enrollment when device wakes up
-   */
-  async _retryEnrollment() {
-    try {
-      const ep1 = this.zclNode?.endpoints?.[1];
-      const iasZone = ep1?.clusters?.iasZone;
-      if (!iasZone) return;
-
-      this.log('[SOS] 🔄 Retrying enrollment...');
-      await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 10 });
-      this.log('[SOS] ✅ Enrollment retry successful');
-    } catch (e) {
-      this.log('[SOS] Enrollment retry failed (device sleeping):', e.message);
-      // Schedule another retry
-      this._iasRetryTimeout = this.homey.setTimeout(() => {
-        this._retryEnrollment();
-      }, 60000);
-    }
-  }
-
   async onUninit() {
     if (this._resetTimeout) this.homey.clearTimeout(this._resetTimeout);
-    if (this._iasRetryTimeout) this.homey.clearTimeout(this._iasRetryTimeout);
   }
 
   async onDeleted() {
