@@ -98,6 +98,10 @@ class SoilSensorDevice extends TuyaHybridDevice {
       // BATTERY - DP15 (percentage) + DP14 (state enum)
       // ═══════════════════════════════════════════════════════════════════
       15: { capability: 'measure_battery', divisor: 1 },
+
+      // ═══════════════════════════════════════════════════════════════════
+      // BATTERY STATE - DP14 (enum: 0=low, 1=medium, 2=high)
+      // ═══════════════════════════════════════════════════════════════════
       14: {
         capability: 'measure_battery',
         transform: (v) => {
@@ -110,9 +114,10 @@ class SoilSensorDevice extends TuyaHybridDevice {
       },
 
       // ═══════════════════════════════════════════════════════════════════
-      // SETTINGS - temperature unit
+      // v5.5.90: IGNORED DPs - prevent auto-discovery from misinterpreting
       // ═══════════════════════════════════════════════════════════════════
-      2: { capability: null, setting: 'temperature_unit' }, // 0=C, 1=F
+      2: { capability: null },   // temperature_unit (0=C, 1=F) - NOT a capability
+      9: { capability: null },   // temperature_alarm OR sensitivity - NOT temperature!
 
       // ═══════════════════════════════════════════════════════════════════
       // FALLBACK DPs for other soil sensor variants
