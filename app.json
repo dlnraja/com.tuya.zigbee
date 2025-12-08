@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.92",
+  "version": "5.5.93",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.92: CRITICAL FIX - Stored zclNode for timer callbacks. Magic Packet now ACTUALLY sent. Logs show device detection.",
-    "fr": "V5.5.92: FIX CRITIQUE - zclNode stocké pour callbacks. Magic Packet maintenant VRAIMENT envoyé. Logs montrent détection."
+    "en": "V5.5.93: Z2M FIX - Read basic cluster first. ALWAYS send Magic Packet for ALL climate sensors.",
+    "fr": "V5.5.93: FIX Z2M - Lecture basic cluster d'abord. Magic Packet TOUJOURS envoyé pour TOUS les capteurs climat."
   },
   "category": "appliances",
   "permissions": [],
