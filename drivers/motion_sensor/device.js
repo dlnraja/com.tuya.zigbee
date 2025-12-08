@@ -15,11 +15,19 @@ class MotionSensorDevice extends HybridSensorBase {
   get mainsPowered() { return false; }
 
   /**
-   * v5.5.86: FULL 4-IN-1 SUPPORT
-   * Added measure_temperature + measure_humidity for multisensors
+   * v5.5.102: DYNAMIC CAPABILITY DETECTION
+   * Only include temp/humidity if device has those clusters
+   * Prevents timeouts on devices without these clusters
    */
   get sensorCapabilities() {
-    return ['alarm_motion', 'measure_battery', 'measure_luminance', 'measure_temperature', 'measure_humidity'];
+    // Base capabilities all motion sensors have
+    const caps = ['alarm_motion', 'measure_battery', 'measure_luminance'];
+
+    // v5.5.102: Only add temp/humidity if we detected those clusters
+    if (this._hasTemperatureCluster) caps.push('measure_temperature');
+    if (this._hasHumidityCluster) caps.push('measure_humidity');
+
+    return caps;
   }
 
   /**
@@ -132,6 +140,9 @@ class MotionSensorDevice extends HybridSensorBase {
   }
 
   async onNodeInit({ zclNode }) {
+    // v5.5.102: Detect available clusters BEFORE super.onNodeInit
+    this._detectAvailableClusters(zclNode);
+
     await super.onNodeInit({ zclNode });
 
     // v5.5.18: Explicit IAS Zone setup for HOBEIAN and other non-Tuya motion sensors
@@ -139,6 +150,24 @@ class MotionSensorDevice extends HybridSensorBase {
 
     this.log('[MOTION] ✅ Motion sensor ready');
     this.log('[MOTION] Manufacturer:', this.getSetting('zb_manufacturer_name') || 'unknown');
+    this.log(`[MOTION] Clusters: temp=${this._hasTemperatureCluster}, hum=${this._hasHumidityCluster}`);
+  }
+
+  /**
+   * v5.5.102: Detect which clusters are available on this device
+   * This prevents trying to read non-existent clusters (causes timeouts)
+   */
+  _detectAvailableClusters(zclNode) {
+    const ep1 = zclNode?.endpoints?.[1];
+
+    // Check for temperature cluster (0x0402)
+    this._hasTemperatureCluster = !!(ep1?.clusters?.temperatureMeasurement || ep1?.clusters?.msTemperatureMeasurement);
+
+    // Check for humidity cluster (0x0405)
+    this._hasHumidityCluster = !!(ep1?.clusters?.relativeHumidity || ep1?.clusters?.relativeHumidityMeasurement || ep1?.clusters?.msRelativeHumidity);
+
+    this.log(`[MOTION-CLUSTERS] Temperature cluster: ${this._hasTemperatureCluster}`);
+    this.log(`[MOTION-CLUSTERS] Humidity cluster: ${this._hasHumidityCluster}`);
   }
 
   /**
