@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.100",
+  "version": "5.5.101",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.100: USB Dongle Dual Repeater images fixed. Full icon and widget support for all 84 drivers.",
-    "fr": "V5.5.100: Images USB Dongle Dual Repeater corrigées. Support icônes et widgets complet pour les 84 drivers."
+    "en": "V5.5.101: ALL 84 DRIVERS now have real device images from Johan Bendz. Full Homey SDK3 compliance.",
+    "fr": "V5.5.101: Les 84 DRIVERS ont maintenant de vraies images depuis Johan Bendz. Conformité Homey SDK3 complète."
   },
   "category": "appliances",
   "permissions": [],
