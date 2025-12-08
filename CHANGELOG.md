@@ -4,6 +4,17 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.110] - 2025-12-08
+
+### 🕐 _TZE284_vvmbj46n TIME SYNC FIX
+
+#### Climate Sensor Time Sync
+- **FIX:** Use robust `_sendTuyaTimeSync` for _TZE284_vvmbj46n LCD devices
+- **FIX:** Direct Tuya cluster time sync at init, 15min, and hourly
+- **IMPROVED:** Fallback chain: _sendTuyaTimeSync → UniversalTimeSync → GatewayEmulator
+
+---
+
 ## [5.5.109] - 2025-12-08
 
 ### 🔧 SOS MAINTENANCE + BATTERY READ
