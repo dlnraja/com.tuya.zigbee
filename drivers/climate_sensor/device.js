@@ -190,6 +190,10 @@ class ClimateSensorDevice extends HybridSensorBase {
     this.log(`[CLIMATE] Manufacturer: ${mfr}`);
     this.log('[CLIMATE] ════════════════════════════════════════════════════');
 
+    // v5.5.91: Store manufacturer for later use (settings may not be available in timers)
+    this._manufacturerName = mfr;
+    this._modelId = modelId;
+
     // ═══════════════════════════════════════════════════════════════════════
     // v5.5.86: CRITICAL - Send Tuya Magic Packet for _TZE284 devices
     // Source: https://github.com/Koenkk/zigbee2mqtt/issues/26078
@@ -249,20 +253,33 @@ class ClimateSensorDevice extends HybridSensorBase {
     ];
 
     const dpIds = [1, 2, 4, 18]; // temp, humidity, battery, alt temp
-    const settings = this.getSettings() || {};
-    const mfr = settings.zb_manufacturerName || '';
-    const isTZE284 = mfr.startsWith('_TZE284');
 
     intervals.forEach((delay, index) => {
       const timer = this.homey.setTimeout(async () => {
         this.log(`[CLIMATE] ⏰ Aggressive request attempt ${index + 1}/${intervals.length}`);
 
-        // v5.5.90: ALWAYS send Magic Packet for TZE284 devices!
+        // v5.5.91: Get manufacturer at runtime (settings may not be available at init)
+        const settings = this.getSettings() || {};
+        const mfr = settings.zb_manufacturerName ||
+          this._manufacturerName ||
+          this.getData()?.manufacturerName || '';
+        const isTZE284 = mfr.includes('_TZE284') || mfr.includes('TZE284');
+
+        // v5.5.91: ALWAYS send Magic Packet for TZE284 devices!
         if (isTZE284 && this.zclNode) {
-          this.log('[CLIMATE] 🔮 Sending Magic Packet (TZE284)...');
+          this.log(`[CLIMATE] 🔮 Sending Magic Packet (manufacturer: ${mfr})...`);
           await this._sendTuyaMagicPacket(this.zclNode).catch(e => {
             this.log('[CLIMATE] Magic packet error:', e.message);
           });
+        } else if (this.zclNode) {
+          // v5.5.91: Try anyway for TS0601 devices (they all need magic packet)
+          const modelId = settings.zb_modelId || this.getData()?.modelId || '';
+          if (modelId === 'TS0601') {
+            this.log(`[CLIMATE] 🔮 TS0601 detected - Sending Magic Packet anyway...`);
+            await this._sendTuyaMagicPacket(this.zclNode).catch(e => {
+              this.log('[CLIMATE] Magic packet error:', e.message);
+            });
+          }
         }
 
         // Try Tuya DP query
@@ -284,9 +301,7 @@ class ClimateSensorDevice extends HybridSensorBase {
     });
 
     this.log('[CLIMATE] 📅 Scheduled aggressive requests at: 10s, 30s, 2m, 5m, 10m, 20m, 30m');
-    if (isTZE284) {
-      this.log('[CLIMATE] 🔮 TZE284 detected - Magic Packet will be sent at each interval');
-    }
+    this.log('[CLIMATE] 🔮 Magic Packet will be sent at each interval for TS0601/TZE284 devices');
   }
 
   /**
