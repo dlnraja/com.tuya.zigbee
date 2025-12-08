@@ -182,10 +182,34 @@ class ClimateSensorDevice extends HybridSensorBase {
     // v5.5.92: CRITICAL - Store zclNode for later use in timers!
     this._zclNode = zclNode;
 
-    // Log sensor-specific info with model details
-    const settings = this.getSettings() || {};
-    const modelId = settings.zb_modelId || 'unknown';
-    const mfr = settings.zb_manufacturerName || 'unknown';
+    // ═══════════════════════════════════════════════════════════════════════
+    // v5.5.93: CRITICAL FIX - Read basic cluster FIRST to get manufacturerName
+    // Source: Zigbee2MQTT tuya.ts configureMagicPacket implementation
+    // Settings may be empty at init, so we read from device directly!
+    // ═══════════════════════════════════════════════════════════════════════
+    let mfr = 'unknown';
+    let modelId = 'unknown';
+
+    try {
+      const endpoint = zclNode?.endpoints?.[1];
+      const basicCluster = endpoint?.clusters?.basic;
+      if (basicCluster && typeof basicCluster.readAttributes === 'function') {
+        this.log('[CLIMATE] 📖 Reading basic cluster to get device info...');
+        const attrs = await basicCluster.readAttributes(['manufacturerName', 'modelId', 'powerSource']).catch(() => ({}));
+        mfr = attrs.manufacturerName || 'unknown';
+        modelId = attrs.modelId || 'unknown';
+        this.log(`[CLIMATE] 📖 Device info: mfr="${mfr}" model="${modelId}"`);
+      }
+    } catch (e) {
+      this.log('[CLIMATE] Basic cluster read failed:', e.message);
+    }
+
+    // Fallback to settings if basic read failed
+    if (mfr === 'unknown') {
+      const settings = this.getSettings() || {};
+      mfr = settings.zb_manufacturerName || 'unknown';
+      modelId = settings.zb_modelId || 'unknown';
+    }
 
     this.log('[CLIMATE] ════════════════════════════════════════════════════');
     this.log(`[CLIMATE] ✅ Climate sensor ready`);
@@ -198,17 +222,15 @@ class ClimateSensorDevice extends HybridSensorBase {
     this._modelId = modelId;
 
     // ═══════════════════════════════════════════════════════════════════════
-    // v5.5.86: CRITICAL - Send Tuya Magic Packet for _TZE284 devices
+    // v5.5.93: CRITICAL - ALWAYS send Tuya Magic Packet for ALL climate sensors!
     // Source: https://github.com/Koenkk/zigbee2mqtt/issues/26078
-    // This tells the device to start reporting data!
+    // ALL climate sensors are TS0601/Tuya - they ALL need this!
+    // Don't wait for TZE284 detection - just send it!
     // ═══════════════════════════════════════════════════════════════════════
-    const isTZE284 = mfr && mfr.startsWith('_TZE284');
-    if (isTZE284) {
-      this.log('[CLIMATE] 🔮 TZE284 detected - sending Tuya Magic Packet...');
-      await this._sendTuyaMagicPacket(zclNode).catch(e => {
-        this.log('[CLIMATE] Magic packet failed:', e.message);
-      });
-    }
+    this.log('[CLIMATE] 🔮 Sending Tuya Magic Packet (Z2M configureMagicPacket + dataQuery)...');
+    await this._sendTuyaMagicPacket(zclNode).catch(e => {
+      this.log('[CLIMATE] Magic packet failed:', e.message);
+    });
 
     // v5.5.29: Initialize Gateway Emulator for devices with LCD clocks
     // This makes Homey act as a Tuya Gateway - pushing time proactively
@@ -261,33 +283,19 @@ class ClimateSensorDevice extends HybridSensorBase {
       const timer = this.homey.setTimeout(async () => {
         this.log(`[CLIMATE] ⏰ Aggressive request attempt ${index + 1}/${intervals.length}`);
 
-        // v5.5.92: Get zclNode from stored reference
+        // v5.5.93: Get zclNode from stored reference
         const zclNode = this._zclNode || this.zclNode;
         if (!zclNode) {
-          this.log('[CLIMATE] ⚠️ No zclNode available - skipping Magic Packet');
-        } else {
-          // v5.5.92: Get manufacturer/model from multiple sources
-          const settings = this.getSettings() || {};
-          const mfr = settings.zb_manufacturerName ||
-            this._manufacturerName ||
-            this.getData()?.manufacturerName || '';
-          const modelId = settings.zb_modelId ||
-            this._modelId ||
-            this.getData()?.modelId || '';
-
-          const isTZE284 = mfr.includes('_TZE284') || mfr.includes('TZE284');
-          const isTS0601 = modelId === 'TS0601' || modelId.includes('TS0601');
-
-          this.log(`[CLIMATE] 🔍 Device: mfr="${mfr}" model="${modelId}" TZE284=${isTZE284} TS0601=${isTS0601}`);
-
-          // v5.5.92: Send Magic Packet for ALL TS0601 or TZE284 devices
-          if (isTZE284 || isTS0601) {
-            this.log(`[CLIMATE] 🔮 Sending Magic Packet...`);
-            await this._sendTuyaMagicPacket(zclNode).catch(e => {
-              this.log('[CLIMATE] Magic packet error:', e.message);
-            });
-          }
+          this.log('[CLIMATE] ⚠️ No zclNode available - skipping');
+          return;
         }
+
+        // v5.5.93: ALWAYS send Magic Packet - ALL climate sensors are TS0601!
+        // Don't waste time checking manufacturer - just send it!
+        this.log(`[CLIMATE] 🔮 Sending Magic Packet...`);
+        await this._sendTuyaMagicPacket(zclNode).catch(e => {
+          this.log('[CLIMATE] Magic packet error:', e.message);
+        });
 
         // Try Tuya DP query
         if (this.safeTuyaDataQuery) {
@@ -308,7 +316,7 @@ class ClimateSensorDevice extends HybridSensorBase {
     });
 
     this.log('[CLIMATE] 📅 Scheduled aggressive requests at: 10s, 30s, 2m, 5m, 10m, 20m, 30m');
-    this.log('[CLIMATE] 🔮 Magic Packet will be sent at each interval for TS0601/TZE284 devices');
+    this.log('[CLIMATE] 🔮 Magic Packet will be sent at EVERY interval');
   }
 
   /**
