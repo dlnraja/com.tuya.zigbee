@@ -1,4 +1,9 @@
 {
+  "5.5.89": {
+    "en": "TZE284 MONITOR FIX: 1) Added dataQuery (0x03) and mcuVersionRequest (0x10) commands to TuyaSpecificCluster. 2) Fixed Magic Packet sequence for _TZE284_vvmbj46n climate sensors. 3) Added sendMagicPacket() method. Now properly triggers device to report temperature, humidity, battery. Source: Z2M issue #26078",
+    "fr": "FIX MONITEUR TZE284: 1) Ajout commandes dataQuery (0x03) et mcuVersionRequest (0x10) au TuyaSpecificCluster. 2) Fix séquence Magic Packet pour capteurs _TZE284_vvmbj46n. 3) Méthode sendMagicPacket() ajoutée. Déclenche maintenant le reporting température, humidité, batterie."
+  },
+  
   "5.5.88": {
     "en": "UNIVERSAL TUYA COVERAGE: 1) Enhanced UniversalTuyaParser with official Tuya DP types (RAW/BOOL/VALUE/STRING/ENUM/BITMAP) and commands (0x01-0x24). 2) Added 20+ ZCL clusters with cluster IDs. 3) Device-type specific DP mappings (climate/soil/motion/contact/plug/dimmer/curtain/thermostat/siren). 4) Frame builders for time sync and data query. Sources: Tuya Developer, Z2M, ZHA.",
     "fr": "COUVERTURE TUYA UNIVERSELLE: 1) UniversalTuyaParser amélioré avec types DP Tuya officiels (RAW/BOOL/VALUE/STRING/ENUM/BITMAP) et commandes (0x01-0x24). 2) 20+ clusters ZCL avec IDs. 3) Mappings DP par type d'appareil. 4) Builders de frames pour sync temps. Sources: Tuya Developer, Z2M, ZHA."
@@ -2205,6 +2210,7 @@
     "fr": "VERSION STABILITÉ MAJEURE - Mécanisme de rollback pairing (corrige appareils fantômes), timeout pairing 60s, validation capabilities avant création appareil, correction fuites mémoire (nettoyage onDeleted), réveil forcé appareil (corrige AUCUNE DONNÉE REÇUE), mode fallback Tuya DP seul. Corrigé erreurs Invalid Capability (alarm_generic, measure_soil_moisture). Nouveaux drivers: lcdtemphumidsensor, temphumidsensor. Nettoyage: Supprimé 67 fichiers .old.js obsolètes (98,616 lignes supprimées)."
   }
 }
+
 
 
 

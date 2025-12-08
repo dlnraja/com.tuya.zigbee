@@ -404,7 +404,7 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.86: Send Tuya Magic Packet to configure TZE284 devices
+   * v5.5.89: Send Tuya Magic Packet to configure TZE284 devices
    * Source: https://github.com/Koenkk/zigbee2mqtt/issues/26078
    *
    * Z2M does: tuya.configureMagicPacket + dataQuery
@@ -417,39 +417,45 @@ class ClimateSensorDevice extends HybridSensorBase {
       return;
     }
 
+    // v5.5.89: Try multiple cluster name variations
     const tuyaCluster = endpoint.clusters?.['tuya'] ||
       endpoint.clusters?.[61184] ||
-      endpoint.clusters?.['manuSpecificTuya'];
+      endpoint.clusters?.['manuSpecificTuya'] ||
+      endpoint.clusters?.[0xEF00];
+
+    this.log('[MAGIC-PACKET] 🔍 Available clusters:', Object.keys(endpoint.clusters || {}));
 
     if (!tuyaCluster) {
-      this.log('[MAGIC-PACKET] ⚠️ No Tuya cluster (0xEF00) found');
-      // Try to send via raw frame instead
-      await this._sendMagicPacketRaw(endpoint);
+      this.log('[MAGIC-PACKET] ⚠️ No Tuya cluster (0xEF00) found - trying raw');
+      await this._sendMagicPacketRaw(zclNode);
       return;
     }
 
     try {
-      // Step 1: Send MCU Version Request (Magic Packet)
-      // This is what Z2M calls "configureMagicPacket"
-      this.log('[MAGIC-PACKET] 📤 Sending MCU Version Request...');
-
-      if (typeof tuyaCluster.mcuVersionRequest === 'function') {
-        await tuyaCluster.mcuVersionRequest({ seq: 0 });
-        this.log('[MAGIC-PACKET] ✅ MCU Version Request sent');
+      // v5.5.89: Use the new sendMagicPacket method if available
+      if (typeof tuyaCluster.sendMagicPacket === 'function') {
+        this.log('[MAGIC-PACKET] 📤 Using cluster sendMagicPacket()...');
+        await tuyaCluster.sendMagicPacket();
+        this.log('[MAGIC-PACKET] ✅ Magic packet sent via cluster method');
       } else {
-        // Fallback: Send raw command
-        await this._sendMagicPacketRaw(endpoint);
-      }
+        // Fallback: Send commands individually
+        this.log('[MAGIC-PACKET] 📤 Sending MCU Version Request (0x10)...');
+        if (typeof tuyaCluster.mcuVersionRequest === 'function') {
+          await tuyaCluster.mcuVersionRequest({});
+          this.log('[MAGIC-PACKET] ✅ MCU Version Request sent');
+        } else {
+          this.log('[MAGIC-PACKET] ⚠️ mcuVersionRequest not available');
+        }
 
-      // Step 2: Send Data Query to trigger device to report
-      this.log('[MAGIC-PACKET] 📤 Sending Data Query...');
+        await new Promise(r => setTimeout(r, 200));
 
-      if (typeof tuyaCluster.dataQuery === 'function') {
-        await tuyaCluster.dataQuery({});
-        this.log('[MAGIC-PACKET] ✅ Data Query sent');
-      } else if (typeof tuyaCluster.command === 'function') {
-        await tuyaCluster.command('dataQuery', {});
-        this.log('[MAGIC-PACKET] ✅ Data Query sent (via command)');
+        this.log('[MAGIC-PACKET] 📤 Sending Data Query (0x03)...');
+        if (typeof tuyaCluster.dataQuery === 'function') {
+          await tuyaCluster.dataQuery({});
+          this.log('[MAGIC-PACKET] ✅ Data Query sent');
+        } else {
+          this.log('[MAGIC-PACKET] ⚠️ dataQuery not available');
+        }
       }
 
       // Step 3: Also send time sync immediately (Paris GMT+1/+2)
@@ -460,32 +466,47 @@ class ClimateSensorDevice extends HybridSensorBase {
     } catch (err) {
       this.log('[MAGIC-PACKET] ⚠️ Error:', err.message);
       // Try raw fallback
-      await this._sendMagicPacketRaw(endpoint).catch(() => { });
+      await this._sendMagicPacketRaw(zclNode).catch(() => { });
     }
   }
 
   /**
-   * v5.5.86: Send magic packet via raw frame
+   * v5.5.89: Send magic packet via raw ZCL frame
+   * This is a fallback when cluster methods aren't available
    */
-  async _sendMagicPacketRaw(endpoint) {
+  async _sendMagicPacketRaw(zclNode) {
     try {
-      this.log('[MAGIC-PACKET-RAW] 📤 Sending via raw frame...');
+      this.log('[MAGIC-PACKET-RAW] 📤 Sending via raw ZCL command...');
 
-      // MCU Version Request: Command 0x10, seq 0
-      const mcuVersionFrame = Buffer.from([0x00, 0x00, 0x10]);
+      const endpoint = zclNode?.endpoints?.[1];
+      if (!endpoint) {
+        this.log('[MAGIC-PACKET-RAW] ⚠️ No endpoint 1');
+        return;
+      }
 
-      // Data Query: Command 0x03
-      const dataQueryFrame = Buffer.from([0x00, 0x01, 0x03]);
+      // Try to get the raw cluster and send commands
+      const cluster = endpoint.clusters?.tuya || endpoint.clusters?.[61184];
 
-      // Try to send via node handleFrame or similar
-      const node = this.getZigBeeNode?.() || this.node;
-      if (node && typeof node.sendFrame === 'function') {
-        await node.sendFrame(1, 0xEF00, mcuVersionFrame);
+      if (cluster) {
+        // Send MCU Version Request (Command 0x10)
+        try {
+          await cluster.command('mcuVersionRequest', {});
+          this.log('[MAGIC-PACKET-RAW] ✅ MCU Version Request sent');
+        } catch (e) {
+          this.log('[MAGIC-PACKET-RAW] MCU Version via command failed:', e.message);
+        }
+
         await new Promise(r => setTimeout(r, 200));
-        await node.sendFrame(1, 0xEF00, dataQueryFrame);
-        this.log('[MAGIC-PACKET-RAW] ✅ Raw frames sent');
+
+        // Send Data Query (Command 0x03)
+        try {
+          await cluster.command('dataQuery', {});
+          this.log('[MAGIC-PACKET-RAW] ✅ Data Query sent');
+        } catch (e) {
+          this.log('[MAGIC-PACKET-RAW] Data Query via command failed:', e.message);
+        }
       } else {
-        this.log('[MAGIC-PACKET-RAW] ⚠️ No sendFrame method available');
+        this.log('[MAGIC-PACKET-RAW] ⚠️ No Tuya cluster available');
       }
     } catch (err) {
       this.log('[MAGIC-PACKET-RAW] ⚠️ Error:', err.message);
