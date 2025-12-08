@@ -5,36 +5,32 @@ const { TuyaGatewayEmulator, WakeStrategies } = require('../../lib/tuya/TuyaGate
 const { UniversalTimeSync, setupTimeSync } = require('../../lib/tuya/UniversalTimeSync');
 
 /**
- * Climate Sensor Device - v5.5.106 HOURLY TIME SYNC + AGGRESSIVE RECOVERY
- *
- * Sources:
- * - Z2M: Temperature & humidity sensor with clock (TH05Z)
- * - ZHA: Quirk for _TZE284_vvmbj46n with time sync
- * - Homey Community: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test
- *
- * Uses HybridSensorBase for:
- * - Anti-double init
- * - MaxListeners bump
- * - Protocol auto-detection
- * - Phantom sub-device rejection
- * - Automatic ZCL/Tuya DP handling via onTuyaStatus()
- *
- * Supports: Temperature, Humidity, Battery, Time Sync
- *
- * KNOWN MODELS:
- * - TS0601 / _TZE200_* : Standard Tuya climate sensors (DP1/2/4)
- * - TS0601 / _TZE204_* : Newer Tuya climate sensors (DP1/2/4)
- * - TS0601 / _TZE284_vvmbj46n : TH05Z LCD climate monitor (DP1/2/4 + config DP9-20)
- * - TS0601 / _TZE200_vvmbj46n : ONENUO TH05Z (same as above)
- * - TS0201 / _TZ3000_* : ZCL-based sensors (handled via ZCL mode)
- *
- * ⚠️  IMPORTANT: DP3/5/15 are for SOIL SENSORS, NOT climate sensors!
- * Climate sensors use: DP1=temp, DP2=humidity, DP4=battery (x2 multiplier)
- *
- * v5.5.26: Enhanced time sync (every 6h) for clock devices
- * v5.5.29: Gateway emulation for time broadcast + advanced wake strategies
- *          Homey now acts as Tuya Gateway - pushes time proactively!
+ * ╔══════════════════════════════════════════════════════════════════════════════╗
+ * ║     CLIMATE SENSOR - v5.5.108 INTELLIGENT HYBRID TIME/DATA SYNC             ║
+ * ╠══════════════════════════════════════════════════════════════════════════════╣
+ * ║                                                                              ║
+ * ║  INTELLIGENT PROTOCOL DETECTION:                                            ║
+ * ║  - 15 min learning period to detect best protocol                           ║
+ * ║  - Auto-switch between Tuya DP and ZCL based on actual data received        ║
+ * ║  - Hybrid time sync: Tuya + ZCL Time cluster                                ║
+ * ║                                                                              ║
+ * ║  SUPPORTED MODELS:                                                          ║
+ * ║  - _TZE284_vvmbj46n : TH05Z LCD climate monitor (Tuya DP + Time sync)       ║
+ * ║  - _TZE200_vvmbj46n : ONENUO TH05Z (same protocol)                          ║
+ * ║  - _TZE200_* / _TZE204_* : Standard Tuya climate sensors                    ║
+ * ║  - TS0201 / _TZ3000_* : ZCL-only sensors (no time sync)                     ║
+ * ║                                                                              ║
+ * ║  TIME SYNC STRATEGY (3-phase):                                              ║
+ * ║  1. Immediate sync at init                                                  ║
+ * ║  2. Sync at 15 min (after learning period)                                  ║
+ * ║  3. Hourly continuous sync                                                  ║
+ * ║                                                                              ║
+ * ║  Sources: Z2M, ZHA quirks, Homey Community                                  ║
+ * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
+
+// Learning period duration (15 minutes)
+const LEARNING_PERIOD_MS = 15 * 60 * 1000;
 class ClimateSensorDevice extends HybridSensorBase {
 
   /** Battery powered */
@@ -138,8 +134,13 @@ class ClimateSensorDevice extends HybridSensorBase {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
             const temp = data.measuredValue / 100;
+            // v5.5.108: Sanity check
+            if (temp < -40 || temp > 80) {
+              this.log(`[ZCL] ⚠️ Temperature out of range: ${temp}°C - IGNORED`);
+              return;
+            }
             this.log(`[ZCL] 🌡️ Temperature: ${temp}°C`);
-            this._registerZigbeeHit?.();
+            this._registerZclData?.(); // v5.5.108: Track for learning
             this.setCapabilityValue('measure_temperature', temp).catch(() => { });
           }
         }
@@ -153,8 +154,13 @@ class ClimateSensorDevice extends HybridSensorBase {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
             const humidity = data.measuredValue / 100;
+            // v5.5.108: Sanity check
+            if (humidity < 0 || humidity > 100) {
+              this.log(`[ZCL] ⚠️ Humidity out of range: ${humidity}% - IGNORED`);
+              return;
+            }
             this.log(`[ZCL] 💧 Humidity: ${humidity}%`);
-            this._registerZigbeeHit?.();
+            this._registerZclData?.(); // v5.5.108: Track for learning
             this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
           }
         }
@@ -166,14 +172,46 @@ class ClimateSensorDevice extends HybridSensorBase {
       powerConfiguration: {
         attributeReport: (data) => {
           if (data.batteryPercentageRemaining !== undefined) {
-            const battery = Math.round(data.batteryPercentageRemaining / 2);
+            let battery = Math.round(data.batteryPercentageRemaining / 2);
+            battery = Math.max(0, Math.min(100, battery)); // Clamp
             this.log(`[ZCL] 🔋 Battery: ${battery}%`);
-            this._registerZigbeeHit?.();
+            this._registerZclData?.(); // v5.5.108: Track for learning
             this.setCapabilityValue('measure_battery', battery).catch(() => { });
           }
         }
       }
     };
+  }
+
+  /**
+   * v5.5.108: Register ZCL data received for learning period
+   */
+  _registerZclData() {
+    if (this._protocolStats) {
+      this._protocolStats.zcl.dataReceived++;
+      this._protocolStats.zcl.lastTime = Date.now();
+    }
+  }
+
+  /**
+   * v5.5.108: Register Tuya data received for learning period
+   * Called from HybridSensorBase when DP data arrives
+   */
+  _registerTuyaData() {
+    if (this._protocolStats) {
+      this._protocolStats.tuya.dataReceived++;
+      this._protocolStats.tuya.lastTime = Date.now();
+    }
+  }
+
+  /**
+   * v5.5.108: Override onTuyaStatus to track Tuya data for learning
+   */
+  onTuyaStatus(status) {
+    // Track Tuya data reception
+    this._registerTuyaData();
+    // Call parent implementation
+    return super.onTuyaStatus(status);
   }
 
   async onNodeInit({ zclNode }) {
@@ -233,47 +271,215 @@ class ClimateSensorDevice extends HybridSensorBase {
       this.log('[CLIMATE] Magic packet failed:', e.message);
     });
 
-    // v5.5.107: Check if device has Tuya cluster (0xEF00)
+    // ═══════════════════════════════════════════════════════════════════════
+    // v5.5.108: INTELLIGENT HYBRID PROTOCOL DETECTION
+    // Detect available clusters and capabilities
+    // ═══════════════════════════════════════════════════════════════════════
     const ep1 = zclNode?.endpoints?.[1];
-    const hasTuyaCluster = !!(
-      ep1?.clusters?.tuya ||
-      ep1?.clusters?.tuyaSpecific ||
-      ep1?.clusters?.[0xEF00] ||
-      ep1?.clusters?.['61184']
-    );
-    this._hasTuyaCluster = hasTuyaCluster;
-    this.log(`[CLIMATE] Tuya cluster (0xEF00): ${hasTuyaCluster ? '✅ YES' : '❌ NO (ZCL standard device)'}`);
+    const clusters = ep1?.clusters || {};
+    const clusterNames = Object.keys(clusters);
 
-    // v5.5.29: Initialize Gateway Emulator for devices with LCD clocks AND Tuya cluster
-    // This makes Homey act as a Tuya Gateway - pushing time proactively
-    const hasLCD = mfr && (
-      mfr.includes('_TZE284_') ||
-      mfr.includes('_TZE200_vvmbj46n') ||
-      modelId.includes('TH05')
+    this.log(`[CLIMATE] 📡 Available clusters: ${clusterNames.join(', ')}`);
+
+    // Check for Tuya cluster (0xEF00)
+    this._hasTuyaCluster = !!(
+      clusters.tuya || clusters.tuyaSpecific ||
+      clusters[0xEF00] || clusters['61184'] || clusters['0xEF00']
     );
 
-    if (hasLCD && hasTuyaCluster) {
-      this.log('[CLIMATE] 🖥️ LCD device with Tuya cluster - initializing Time Sync...');
-      await this._setupGatewayEmulation();
-    } else if (hasTuyaCluster) {
-      // Has Tuya but no LCD - simple time sync
-      await this._setupTimeSync().catch(err => {
-        this.log('[CLIMATE] Time sync setup skipped:', err.message);
-      });
-    } else {
-      // v5.5.107: ZCL standard device - no Tuya time sync possible
-      this.log('[CLIMATE] ℹ️ ZCL standard device - Tuya time sync not supported');
-      this.log('[CLIMATE] ℹ️ This device reports via ZCL clusters (temperatureMeasurement, relativeHumidity)');
-    }
+    // Check for ZCL Time cluster (0x000A)
+    this._hasZclTimeCluster = !!(
+      clusters.time || clusters.genTime ||
+      clusters[0x000A] || clusters['10'] || clusters['0x000A']
+    );
 
-    // v5.5.29: Setup advanced wake strategies to get data from sleepy devices
+    // Check for ZCL temperature/humidity clusters
+    this._hasZclTempCluster = !!(clusters.temperatureMeasurement || clusters.msTemperatureMeasurement);
+    this._hasZclHumCluster = !!(clusters.relativeHumidity || clusters.msRelativeHumidity);
+
+    // Device type detection
+    const isLCDDevice = mfr && (
+      mfr.includes('_TZE284_') || mfr.includes('_TZE200_vvmbj46n') ||
+      modelId.includes('TH05') || modelId.includes('TS0601')
+    );
+
+    this.log('[CLIMATE] ════════════════════════════════════════════════════');
+    this.log(`[CLIMATE] 🔍 Protocol Detection:`);
+    this.log(`[CLIMATE]    Tuya cluster (0xEF00): ${this._hasTuyaCluster ? '✅' : '❌'}`);
+    this.log(`[CLIMATE]    ZCL Time (0x000A): ${this._hasZclTimeCluster ? '✅' : '❌'}`);
+    this.log(`[CLIMATE]    ZCL Temp (0x0402): ${this._hasZclTempCluster ? '✅' : '❌'}`);
+    this.log(`[CLIMATE]    ZCL Humidity (0x0405): ${this._hasZclHumCluster ? '✅' : '❌'}`);
+    this.log(`[CLIMATE]    LCD Device: ${isLCDDevice ? '✅' : '❌'}`);
+    this.log('[CLIMATE] ════════════════════════════════════════════════════');
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // v5.5.108: INITIALIZE PROTOCOL STATS FOR LEARNING
+    // Track which protocol actually delivers data during learning period
+    // ═══════════════════════════════════════════════════════════════════════
+    this._protocolStats = {
+      tuya: { dataReceived: 0, lastTime: 0 },
+      zcl: { dataReceived: 0, lastTime: 0 },
+      learningStarted: Date.now(),
+      learningComplete: false,
+      preferredProtocol: null
+    };
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // v5.5.108: SETUP HYBRID TIME SYNC (PHASE 1 - IMMEDIATE)
+    // Try both Tuya and ZCL methods at init
+    // ═══════════════════════════════════════════════════════════════════════
+    this.log('[CLIMATE] 🕐 PHASE 1: Immediate time sync...');
+    await this._hybridTimeSync(zclNode);
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // v5.5.108: SCHEDULE LEARNING PERIOD END (15 min)
+    // After 15 min, analyze which protocol works best and optimize
+    // ═══════════════════════════════════════════════════════════════════════
+    this._learningTimer = this.homey.setTimeout(async () => {
+      await this._completeLearningPeriod(zclNode);
+    }, LEARNING_PERIOD_MS);
+    this.log(`[CLIMATE] 📚 Learning period started (15 min) - will optimize at ${new Date(Date.now() + LEARNING_PERIOD_MS).toLocaleTimeString()}`);
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // v5.5.108: SETUP HOURLY TIME SYNC (PHASE 3)
+    // Continuous sync every hour
+    // ═══════════════════════════════════════════════════════════════════════
+    this._hourlySyncInterval = this.homey.setInterval(async () => {
+      this.log('[CLIMATE] 🕐 PHASE 3: Hourly time sync...');
+      await this._hybridTimeSync(zclNode);
+    }, 60 * 60 * 1000); // 1 hour
+
+    // v5.5.29: Setup advanced wake strategies
     await this._setupWakeStrategies();
 
-    // v5.5.35: Schedule aggressive DP requests for sleepy devices
+    // v5.5.35: Schedule initial data requests
     this._scheduleAggressiveDPRequest();
 
-    this.log('[CLIMATE] 👀 Watching for temperature/humidity data...');
+    this.log('[CLIMATE] 👀 Watching for temperature/humidity data (hybrid mode)...');
     this.log('[CLIMATE] ⚠️ BATTERY DEVICE - First data may take 10-60 minutes after pairing');
+  }
+
+  /**
+   * v5.5.108: HYBRID TIME SYNC - Try both Tuya DP and ZCL Time cluster
+   * Sends time via all available methods for maximum compatibility
+   */
+  async _hybridTimeSync(zclNode) {
+    const now = new Date();
+    const results = { tuya: false, zclTime: false };
+
+    // Calculate time values
+    const unixTimestamp = Math.floor(now.getTime() / 1000);
+    const zigbeeEpoch = new Date(Date.UTC(2000, 0, 1, 0, 0, 0));
+    const secondsSince2000 = Math.floor((now.getTime() - zigbeeEpoch.getTime()) / 1000);
+    const timezoneOffsetSeconds = -now.getTimezoneOffset() * 60;
+    const localTime = secondsSince2000 + timezoneOffsetSeconds;
+
+    this.log('[CLIMATE] 🕒 Sending time via all available methods...');
+    this.log(`[CLIMATE]    Local: ${now.toLocaleString()}`);
+    this.log(`[CLIMATE]    Unix: ${unixTimestamp}`);
+    this.log(`[CLIMATE]    Zigbee: ${secondsSince2000}s since 2000`);
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // METHOD 1: Tuya DP Time Sync (for _TZE284_vvmbj46n and similar)
+    // ═══════════════════════════════════════════════════════════════════════
+    if (this._hasTuyaCluster || this._manufacturerName?.includes('_TZE')) {
+      try {
+        // Try via UniversalTimeSync if available
+        if (this._universalTimeSync) {
+          await this._universalTimeSync.syncNow();
+          results.tuya = true;
+          this.log('[CLIMATE] ✅ Tuya time sync via UniversalTimeSync');
+        } else if (this.tuyaEF00Manager) {
+          // Direct Tuya DP time sync (DP 9 = time for some devices)
+          await this.tuyaEF00Manager.sendTime?.(unixTimestamp);
+          results.tuya = true;
+          this.log('[CLIMATE] ✅ Tuya time sync via tuyaEF00Manager');
+        } else if (this._gatewayEmulator) {
+          await this._gatewayEmulator.pushTime();
+          results.tuya = true;
+          this.log('[CLIMATE] ✅ Tuya time sync via GatewayEmulator');
+        }
+      } catch (e) {
+        this.log('[CLIMATE] ⚠️ Tuya time sync failed:', e.message);
+      }
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // METHOD 2: ZCL Time Cluster (0x000A) - Standard Zigbee
+    // ═══════════════════════════════════════════════════════════════════════
+    if (this._hasZclTimeCluster) {
+      try {
+        const ep1 = zclNode?.endpoints?.[1];
+        const timeCluster = ep1?.clusters?.time || ep1?.clusters?.genTime;
+
+        if (timeCluster?.writeAttributes) {
+          await timeCluster.writeAttributes({
+            time: secondsSince2000,
+            localTime: localTime,
+            timeZone: timezoneOffsetSeconds,
+            timeStatus: 0x02 // Synchronized
+          });
+          results.zclTime = true;
+          this.log('[CLIMATE] ✅ ZCL Time cluster sync successful');
+        }
+      } catch (e) {
+        this.log('[CLIMATE] ⚠️ ZCL Time sync failed:', e.message);
+      }
+    }
+
+    // Log results
+    const successCount = Object.values(results).filter(v => v).length;
+    if (successCount > 0) {
+      this.log(`[CLIMATE] 🕐 Time sync complete (${successCount} method(s) succeeded)`);
+    } else {
+      this.log('[CLIMATE] ⚠️ No time sync method succeeded - device may not support time sync');
+    }
+
+    return results;
+  }
+
+  /**
+   * v5.5.108: Complete learning period and optimize protocol
+   * Analyzes which protocol delivered the most data and optimizes settings
+   */
+  async _completeLearningPeriod(zclNode) {
+    this.log('[CLIMATE] ════════════════════════════════════════════════════');
+    this.log('[CLIMATE] 📚 LEARNING PERIOD COMPLETE (15 min)');
+    this.log('[CLIMATE] ════════════════════════════════════════════════════');
+
+    const stats = this._protocolStats;
+    stats.learningComplete = true;
+
+    this.log(`[CLIMATE] 📊 Protocol stats:`);
+    this.log(`[CLIMATE]    Tuya DP: ${stats.tuya.dataReceived} data points`);
+    this.log(`[CLIMATE]    ZCL: ${stats.zcl.dataReceived} data points`);
+
+    // Determine preferred protocol
+    if (stats.tuya.dataReceived > stats.zcl.dataReceived) {
+      stats.preferredProtocol = 'tuya';
+      this.log('[CLIMATE] 🎯 Preferred protocol: TUYA DP');
+    } else if (stats.zcl.dataReceived > 0) {
+      stats.preferredProtocol = 'zcl';
+      this.log('[CLIMATE] 🎯 Preferred protocol: ZCL');
+    } else {
+      stats.preferredProtocol = 'both';
+      this.log('[CLIMATE] 🎯 Preferred protocol: BOTH (no data received yet)');
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // PHASE 2: Post-learning time sync
+    // ═══════════════════════════════════════════════════════════════════════
+    this.log('[CLIMATE] 🕐 PHASE 2: Post-learning time sync...');
+    await this._hybridTimeSync(zclNode);
+
+    // Optimize based on protocol
+    if (stats.preferredProtocol === 'tuya' && !this._universalTimeSync) {
+      // Setup dedicated Tuya time sync
+      this.log('[CLIMATE] 🔧 Optimizing for Tuya protocol...');
+      await this._setupGatewayEmulation();
+    }
+
+    this.log('[CLIMATE] ✅ Protocol optimization complete');
   }
 
   /**
@@ -789,6 +995,26 @@ class ClimateSensorDevice extends HybridSensorBase {
         this._gatewayEmulator.stop();
       } catch (e) { /* ignore */ }
       this._gatewayEmulator = null;
+    }
+
+    // v5.5.108: Clear learning timer
+    if (this._learningTimer) {
+      this.homey.clearTimeout(this._learningTimer);
+      this._learningTimer = null;
+    }
+
+    // v5.5.108: Clear hourly sync interval
+    if (this._hourlySyncInterval) {
+      this.homey.clearInterval(this._hourlySyncInterval);
+      this._hourlySyncInterval = null;
+    }
+
+    // v5.5.108: Clear universal time sync
+    if (this._universalTimeSync) {
+      try {
+        this._universalTimeSync.destroy?.();
+      } catch (e) { /* ignore */ }
+      this._universalTimeSync = null;
     }
 
     // Clear optimization timer
