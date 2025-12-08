@@ -1,4 +1,8 @@
 {
+  "5.5.99": {
+    "en": "EXTENDED DEVICE DATABASE:\n• Added 6 NEW categories to manufacturer_mapping.json\n• Curtain Motors: 19 IDs (TS130F, TS0601 variants)\n• Dimmers: 12 IDs (TS110F, TS110E, TS0601)\n• RGB Lights: 15 IDs (Lidl, MOES, Lonsonho)\n• Remotes: 21 IDs (1-4 gang wall remotes)\n• Thermostats: 7 IDs (TRV radiator valves)\n• Total mapping now covers 300+ device IDs\n• All categories from Johan Bendz README integrated",
+    "fr": "BASE DE DONNÉES ÉTENDUE:\n• Ajout de 6 NOUVELLES catégories au manufacturer_mapping.json\n• Moteurs Volets: 19 IDs (variantes TS130F, TS0601)\n• Variateurs: 12 IDs (TS110F, TS110E, TS0601)\n• Lumières RGB: 15 IDs (Lidl, MOES, Lonsonho)\n• Télécommandes: 21 IDs (murales 1-4 boutons)\n• Thermostats: 7 IDs (vannes TRV radiateur)\n• Mapping total couvre maintenant 300+ IDs\n• Toutes les catégories du README Johan Bendz intégrées"
+  },
   "5.5.98": {
     "en": "COMPLETE JOHAN BENDZ SYNC:\n• Added 7 smoke sensor IDs (_TZE200_ntcy3xu1, _TZE200_m9skfctm, etc.)\n• Added water leak sensor ID (_TZE200_jthf7vb6)\n• Created automation script: scripts/automation/sync-manufacturer-mappings.js\n• All drivers now aligned with Johan's Tuya Zigbee app\n• Run 'node scripts/automation/sync-manufacturer-mappings.js' to auto-sync future mappings",
     "fr": "SYNC COMPLÈTE JOHAN BENDZ:\n• Ajout de 7 IDs capteur fumée (_TZE200_ntcy3xu1, _TZE200_m9skfctm, etc.)\n• Ajout ID capteur fuite eau (_TZE200_jthf7vb6)\n• Script automatisation créé: scripts/automation/sync-manufacturer-mappings.js\n• Tous les drivers alignés avec l'app Tuya Zigbee de Johan\n• Lancer 'node scripts/automation/sync-manufacturer-mappings.js' pour sync auto"
