@@ -9,8 +9,10 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.104: 4-in-1 MULTISENSOR FIX - Read temp/humidity when device wakes up (motion). Configure reporting for sleepy devices.",
-    "fr": "V5.5.104: CORRECTIF MULTISENSOR 4-en-1 - Lecture temp/humidité au réveil (mouvement). Configuration reporting pour devices sleepy."
+    "en": "Control your Tuya Zigbee devices locally without cloud! Supports 4200+ devices: switches, sensors, lights, thermostats, and more. 100% local, hybrid Tuya DP + ZCL.",
+    "nl": "Bedien je Tuya Zigbee apparaten lokaal zonder cloud! Ondersteunt 4200+ apparaten: schakelaars, sensoren, lampen, thermostaten en meer.",
+    "de": "Steuern Sie Ihre Tuya Zigbee-Geräte lokal ohne Cloud! Unterstützt 4200+ Geräte: Schalter, Sensoren, Lampen, Thermostate und mehr.",
+    "fr": "Contrôlez vos appareils Tuya Zigbee localement sans cloud ! Supporte 4200+ appareils : interrupteurs, capteurs, lumières, thermostats et plus. 100% local."
   },
   "category": "appliances",
   "permissions": [],
