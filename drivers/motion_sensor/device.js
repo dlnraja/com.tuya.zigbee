@@ -3,8 +3,12 @@
 const { HybridSensorBase } = require('../../lib/devices');
 
 /**
- * Motion Sensor Device - v5.5.86 MULTISENSOR 4-IN-1 SUPPORT
- * Extends HybridSensorBase for automatic EF00/ZCL handling
+ * Motion Sensor Device - HybridSensorBase implementation
+ *
+ * v5.5.104: CRITICAL FIX for 4-in-1 Multisensors (Peter's bug)
+ * - Read temp/humidity WHEN device is awake (after motion detection)
+ * - Configure reporting for passive updates
+ * - These sleepy devices don't respond to queries when sleeping!
  *
  * v5.5.86: Added temperature + humidity for 4-in-1 multisensors
  * Supports: Fantem ZB003-x, Immax 07502L, Generic Tuya Multisensor
@@ -202,6 +206,11 @@ class MotionSensorDevice extends HybridSensorBase {
         if (motion && this.driver?.motionTrigger) {
           this.driver.motionTrigger.trigger(this, {}, {}).catch(this.error);
         }
+
+        // v5.5.104: Read temp/humidity NOW while device is awake (Peter's 4-in-1 fix)
+        if (motion) {
+          this._readTempHumidityWhileAwake(zclNode);
+        }
       };
 
       // Attribute listener for zone status
@@ -211,6 +220,11 @@ class MotionSensorDevice extends HybridSensorBase {
 
         if (this.hasCapability('alarm_motion')) {
           this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+        }
+
+        // v5.5.104: Also read temp/humidity on this event
+        if (motion) {
+          this._readTempHumidityWhileAwake(zclNode);
         }
       });
 
@@ -228,6 +242,106 @@ class MotionSensorDevice extends HybridSensorBase {
       this.log('[MOTION-IAS] ✅ Motion detection via IAS Zone configured');
     } catch (err) {
       this.log('[MOTION-IAS] Setup error:', err.message);
+    }
+  }
+
+  /**
+   * v5.5.104: Read temperature and humidity while device is awake
+   * This is crucial for 4-in-1 multisensors (Fantem ZB003-x, Immax 07502L)
+   * which only respond to ZCL reads when awake (after motion detection)
+   */
+  async _readTempHumidityWhileAwake(zclNode) {
+    // Debounce - don't spam reads
+    if (this._lastTempHumRead && Date.now() - this._lastTempHumRead < 5000) {
+      return;
+    }
+    this._lastTempHumRead = Date.now();
+
+    const ep1 = zclNode?.endpoints?.[1];
+    if (!ep1) return;
+
+    this.log('[MOTION-AWAKE] 🌡️ Device awake - reading temp/humidity NOW');
+
+    // Read temperature if cluster exists
+    const tempCluster = ep1.clusters?.temperatureMeasurement || ep1.clusters?.msTemperatureMeasurement;
+    if (tempCluster?.readAttributes) {
+      try {
+        const data = await tempCluster.readAttributes(['measuredValue']);
+        if (data?.measuredValue !== undefined && data.measuredValue !== -32768) {
+          const temp = data.measuredValue / 100;
+          this.log(`[MOTION-AWAKE] 🌡️ Temperature: ${temp}°C`);
+          if (this.hasCapability('measure_temperature')) {
+            await this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+          }
+        }
+      } catch (e) {
+        this.log('[MOTION-AWAKE] Temperature read failed:', e.message);
+      }
+    }
+
+    // Read humidity if cluster exists
+    const humCluster = ep1.clusters?.relativeHumidity || ep1.clusters?.relativeHumidityMeasurement || ep1.clusters?.msRelativeHumidity;
+    if (humCluster?.readAttributes) {
+      try {
+        const data = await humCluster.readAttributes(['measuredValue']);
+        if (data?.measuredValue !== undefined && data.measuredValue !== 65535) {
+          const hum = data.measuredValue / 100;
+          this.log(`[MOTION-AWAKE] 💧 Humidity: ${hum}%`);
+          if (this.hasCapability('measure_humidity')) {
+            await this.setCapabilityValue('measure_humidity', hum).catch(() => { });
+          }
+        }
+      } catch (e) {
+        this.log('[MOTION-AWAKE] Humidity read failed:', e.message);
+      }
+    }
+
+    // Also try to configure reporting for future passive updates
+    this._configureReportingOnce(ep1);
+  }
+
+  /**
+   * v5.5.104: Configure attribute reporting (once per session)
+   * This tells the device to send updates automatically
+   */
+  async _configureReportingOnce(endpoint) {
+    if (this._reportingConfigured) return;
+    this._reportingConfigured = true;
+
+    this.log('[MOTION-REPORTING] Configuring attribute reporting for temp/humidity...');
+
+    // Configure temperature reporting
+    const tempCluster = endpoint.clusters?.temperatureMeasurement;
+    if (tempCluster?.configureReporting) {
+      try {
+        await tempCluster.configureReporting({
+          measuredValue: {
+            minInterval: 60,      // Min 1 minute between reports
+            maxInterval: 3600,    // Max 1 hour
+            minChange: 50         // Report if change >= 0.5°C
+          }
+        });
+        this.log('[MOTION-REPORTING] ✅ Temperature reporting configured');
+      } catch (e) {
+        this.log('[MOTION-REPORTING] Temperature reporting failed (device may not support)');
+      }
+    }
+
+    // Configure humidity reporting
+    const humCluster = endpoint.clusters?.relativeHumidity || endpoint.clusters?.relativeHumidityMeasurement;
+    if (humCluster?.configureReporting) {
+      try {
+        await humCluster.configureReporting({
+          measuredValue: {
+            minInterval: 60,
+            maxInterval: 3600,
+            minChange: 100        // Report if change >= 1%
+          }
+        });
+        this.log('[MOTION-REPORTING] ✅ Humidity reporting configured');
+      } catch (e) {
+        this.log('[MOTION-REPORTING] Humidity reporting failed (device may not support)');
+      }
     }
   }
 }
