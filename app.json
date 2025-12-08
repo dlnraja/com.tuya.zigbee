@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.97",
+  "version": "5.5.98",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.97: Manufacturer Mapping Database - Added 150+ device IDs from Johan Bendz & community. Improved radar and soil sensor support.",
-    "fr": "V5.5.97: Base de données ManufacturerID - Ajout de 150+ IDs depuis Johan Bendz & communauté. Support radar et capteur sol amélioré."
+    "en": "V5.5.98: Complete sync with Johan Bendz app - Added smoke & water leak sensor IDs. Automation script for manufacturer mappings.",
+    "fr": "V5.5.98: Sync complète avec app Johan Bendz - IDs capteurs fumée & fuite d'eau. Script automatisation mappings."
   },
   "category": "appliances",
   "permissions": [],
