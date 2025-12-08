@@ -1,4 +1,9 @@
 {
+  "5.5.96": {
+    "en": "COMPLETE DEVICE SUPPORT: All your devices are fully supported with icons, flows and correct capabilities:\n• Climate Monitor (_TZE284_vvmbj46n): LCD clock sync fixed, temperature/humidity/battery working\n• Soil Sensor (_TZE284_oitavov2): Soil moisture, temperature, battery with calibration settings\n• Radar mmWave (_TZE200_rhgsbacq): Presence detection, distance, temperature, luminance, battery\n• SOS Button (_TZ3000_0dumfk2z): Press detection with flow triggers, battery monitoring\n• USB Repeater (_TZ3000_h1ipgkwn): Dual USB ports with power monitoring\n• All switches (HOBEIAN, _TZ3000_jrpdaujd): On/off control working",
+    "fr": "SUPPORT COMPLET: Tous vos appareils sont enti\u00e8rement support\u00e9s avec ic\u00f4nes, flows et capacit\u00e9s correctes:\n\u2022 Moniteur Climat (_TZE284_vvmbj46n): Horloge LCD sync, temp/humidit\u00e9/batterie fonctionnels\n\u2022 Capteur Sol (_TZE284_oitavov2): Humidit\u00e9 sol, temp\u00e9rature, batterie avec calibration\n\u2022 Radar mmWave (_TZE200_rhgsbacq): D\u00e9tection pr\u00e9sence, distance, temp, luminosit\u00e9, batterie\n\u2022 Bouton SOS (_TZ3000_0dumfk2z): D\u00e9tection appui avec flows, surveillance batterie\n\u2022 R\u00e9p\u00e9teur USB (_TZ3000_h1ipgkwn): Double ports USB avec mesure puissance\n\u2022 Tous les switchs (HOBEIAN, _TZ3000_jrpdaujd): Contr\u00f4le on/off fonctionnel"
+  },
+  
   "5.5.95": {
     "en": "LCD CLOCK SYNC FIX: 1) Added timeSync() method to TuyaSpecificCluster for TH05Z LCD displays. 2) Auto-responds to device time requests. 3) Enhanced logging shows UTC + local time + timezone. 4) Fixes _TZE284_vvmbj46n (TH05Z) clock not updating. NOTE: After update, wait for device to wake up (usually 15-30 min) for clock to sync.",
     "fr": "FIX HORLOGE LCD: 1) Ajout m\u00e9thode timeSync() au cluster Tuya pour \u00e9crans LCD TH05Z. 2) R\u00e9pond auto aux demandes de temps. 3) Logs am\u00e9lior\u00e9s (UTC + heure locale + fuseau). 4) Corrige horloge _TZE284_vvmbj46n (TH05Z). NOTE: Apr\u00e8s MAJ, attendre r\u00e9veil device (15-30 min) pour sync horloge."
@@ -2240,6 +2245,7 @@
     "fr": "VERSION STABILITÉ MAJEURE - Mécanisme de rollback pairing (corrige appareils fantômes), timeout pairing 60s, validation capabilities avant création appareil, correction fuites mémoire (nettoyage onDeleted), réveil forcé appareil (corrige AUCUNE DONNÉE REÇUE), mode fallback Tuya DP seul. Corrigé erreurs Invalid Capability (alarm_generic, measure_soil_moisture). Nouveaux drivers: lcdtemphumidsensor, temphumidsensor. Nettoyage: Supprimé 67 fichiers .old.js obsolètes (98,616 lignes supprimées)."
   }
 }
+
 
 
 
