@@ -1,18 +1,20 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.47-blue)
-![Devices](https://img.shields.io/badge/devices-4217+-green)
+![Version](https://img.shields.io/badge/version-5.5.104-blue)
+![Devices](https://img.shields.io/badge/devices-4200+-green)
+![Drivers](https://img.shields.io/badge/drivers-84-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-**The most comprehensive Universal Tuya Zigbee app for Homey with 4,217+ device IDs across 83 drivers.**
+**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 84 drivers.**
 
-🏠 **100% Local Control** - No Cloud Required
-🔋 **Smart Battery** - Non-linear discharge curves by chemistry
+🏠 **100% Local Control** - No Cloud, No Internet Required
+🔋 **Smart Battery** - Accurate readings with voltage fallback
 ⚡ **Hybrid Mode** - Auto-detect Tuya DP vs Standard ZCL
 🛠️ **SDK3** - Latest Homey Standards
 🌍 **Open Source** - Community-driven development
+📱 **84 Drivers** - Switches, sensors, lights, thermostats & more
 
 ---
 
@@ -20,16 +22,14 @@
 
 | Metric | Value |
 |--------|-------|
-| **Total Device IDs** | 4,217+ |
-| **Product IDs** | 349 |
-| **Manufacturer IDs** | 3,868 |
-| **Drivers** | 83 |
-| **SVG Icons** | 83 |
-| **Enrichment Scripts** | 50+ |
+| **Total Device IDs** | 4,200+ |
+| **Product IDs** | 350+ |
+| **Manufacturer IDs** | 3,800+ |
+| **Drivers** | 84 |
+| **SVG Icons** | 84 |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2025-12-07 |
-| **Data Sources** | 7 (auto-updated daily) |
+| **Last Updated** | 2025-12-08 |
 
 ### 📦 Top 15 Drivers by Device IDs
 
@@ -53,38 +53,39 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.47
+## 🚀 Latest Updates - v5.5.104
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
-| **v5.5.47** | 🔋 BatteryCalculator with non-linear discharge curves |
-| **v5.5.46** | 🏗️ TuyaHybridDevice base class |
-| **v5.5.45** | 🔧 Tuya cluster events fix |
-| **v5.5.44** | 🏷️ Tuya cluster NAME='tuya' |
-| **v5.5.43** | 🔌 Switch 2-gang orphan capability cleanup |
-| **v5.5.42** | 📦 Complete hybrid system + IMPLEMENTATION_RULES.md |
-| **v5.5.41** | 🔄 KnownProtocolsDatabase + auto-optimization |
+| **v5.5.104** | 🌡️ 4-in-1 Multisensor fix - read temp/humidity on wake |
+| **v5.5.103** | 🔧 Global improvements - dynamic cluster detection |
+| **v5.5.102** | 🔋 Enhanced battery reading with voltage fallback |
+| **v5.5.101** | 🖼️ Real device images for all 84 drivers |
+| **v5.5.100** | 📦 Complete asset compliance |
 
-### 🔋 Battery Calculator v5.5.47
+### 🌡️ Multisensor Fix v5.5.104
 
-Non-linear discharge curves by chemistry:
+For 4-in-1 sensors (Fantem ZB003-x, Immax 07502L):
+- Read temp/humidity **when device wakes up** (motion detected)
+- Configure attribute reporting for passive updates
+- Sleepy devices handled correctly
+
+### 🔋 Enhanced Battery v5.5.102
+
+Multiple fallback strategies:
 ```
-CR2032:  3.00V=100% → 2.90V=85% → 2.70V=25% → 2.00V=0%
-Li-ion:  4.20V=100% → 3.70V=50% → 3.00V=0%
-LiFePO4: 3.60V=100% → 3.30V=70% (plateau!) → 2.50V=0%
+Strategy 1: batteryPercentageRemaining (standard ZCL)
+Strategy 2: batteryVoltage with conversion (fallback)
+Strategy 3: Read all battery attributes
 ```
 
-### 🏗️ Architecture v5.5.46
+### 🔧 Dynamic Cluster Detection v5.5.103
 
-```
-TuyaHybridDevice (base class)
-├── get dpMappings()       → Tuya DP handlers
-├── get batteryConfig()    → Battery settings
-├── get clusterHandlers()  → ZCL standard handlers
-└── Hybrid mode (auto 15 min decision)
-```
+- Detects available clusters before initialization
+- Prevents timeouts on devices without temp/humidity
+- All 84 drivers benefit automatically
 
 ### 📁 Data Sources
 - ✅ Zigbee2MQTT (tuya.ts + brand files)
