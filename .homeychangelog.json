@@ -1,4 +1,9 @@
 {
+  "5.5.95": {
+    "en": "LCD CLOCK SYNC FIX: 1) Added timeSync() method to TuyaSpecificCluster for TH05Z LCD displays. 2) Auto-responds to device time requests. 3) Enhanced logging shows UTC + local time + timezone. 4) Fixes _TZE284_vvmbj46n (TH05Z) clock not updating. NOTE: After update, wait for device to wake up (usually 15-30 min) for clock to sync.",
+    "fr": "FIX HORLOGE LCD: 1) Ajout m\u00e9thode timeSync() au cluster Tuya pour \u00e9crans LCD TH05Z. 2) R\u00e9pond auto aux demandes de temps. 3) Logs am\u00e9lior\u00e9s (UTC + heure locale + fuseau). 4) Corrige horloge _TZE284_vvmbj46n (TH05Z). NOTE: Apr\u00e8s MAJ, attendre r\u00e9veil device (15-30 min) pour sync horloge."
+  },
+  
   "5.5.94": {
     "en": "Z2M UNIVERSAL FIX: Magic Packet implementation moved to TuyaHybridDevice base class! Now ALL 31+ Tuya drivers automatically: 1) Read basic cluster FIRST to get manufacturer/model. 2) Send Z2M Magic Packet (mcuVersionRequest + dataQuery). 3) Store zclNode for timer callbacks. This fixes climate_sensor, soil_sensor, air_quality, motion_sensor, and ALL other Tuya TS0601 devices!",
     "fr": "FIX Z2M UNIVERSEL: Magic Packet dans classe de base TuyaHybridDevice! Maintenant TOUS les 31+ drivers Tuya automatiquement: 1) Lisent basic cluster EN PREMIER. 2) Envoient Z2M Magic Packet. 3) Stockent zclNode pour timers. Corrige climate_sensor, soil_sensor, air_quality, motion_sensor et TOUS les TS0601!"
@@ -2235,6 +2240,7 @@
     "fr": "VERSION STABILITÉ MAJEURE - Mécanisme de rollback pairing (corrige appareils fantômes), timeout pairing 60s, validation capabilities avant création appareil, correction fuites mémoire (nettoyage onDeleted), réveil forcé appareil (corrige AUCUNE DONNÉE REÇUE), mode fallback Tuya DP seul. Corrigé erreurs Invalid Capability (alarm_generic, measure_soil_moisture). Nouveaux drivers: lcdtemphumidsensor, temphumidsensor. Nettoyage: Supprimé 67 fichiers .old.js obsolètes (98,616 lignes supprimées)."
   }
 }
+
 
 
 
