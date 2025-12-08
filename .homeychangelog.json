@@ -1,4 +1,8 @@
 {
+  "5.5.104": {
+    "en": "4-in-1 MULTISENSOR FIX (Peter's Fantem/Immax device):\n• Read temp/humidity WHEN device wakes up (after motion)\n• Configure attribute reporting for passive updates\n• Sleepy devices don't respond when sleeping - must read while awake!\n• Source: Home Assistant community research\n• Supports: Fantem ZB003-x, Immax 07502L, generic 4-in-1",
+    "fr": "CORRECTIF MULTISENSOR 4-en-1 (device Fantem/Immax de Peter):\n• Lecture temp/humidité AU RÉVEIL (après mouvement)\n• Configuration reporting pour mises à jour passives\n• Devices sleepy ne répondent pas en veille - lire au réveil!\n• Source: recherche communauté Home Assistant\n• Supporte: Fantem ZB003-x, Immax 07502L, 4-en-1 générique"
+  },
   "5.5.103": {
     "en": "GLOBAL IMPROVEMENTS (Peter's fix applied to ALL drivers):\n• HybridSensorBase: Dynamic cluster detection before initialization\n• ALL sensors: Skip capabilities if cluster not available (prevents timeouts)\n• ALL battery devices: Enhanced reading with voltage fallback\n• 84 drivers benefit from these improvements automatically\n• Better handling of sleepy devices",
     "fr": "AMÉLIORATIONS GLOBALES (correctif Peter appliqué à TOUS les drivers):\n• HybridSensorBase: Détection dynamique clusters avant initialisation\n• TOUS les capteurs: Skip capabilities si cluster absent (évite timeouts)\n• TOUS les devices batterie: Lecture améliorée avec fallback voltage\n• 84 drivers bénéficient automatiquement\n• Meilleure gestion devices sleepy"
