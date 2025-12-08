@@ -1,4 +1,9 @@
 {
+  "5.5.94": {
+    "en": "Z2M UNIVERSAL FIX: Magic Packet implementation moved to TuyaHybridDevice base class! Now ALL 31+ Tuya drivers automatically: 1) Read basic cluster FIRST to get manufacturer/model. 2) Send Z2M Magic Packet (mcuVersionRequest + dataQuery). 3) Store zclNode for timer callbacks. This fixes climate_sensor, soil_sensor, air_quality, motion_sensor, and ALL other Tuya TS0601 devices!",
+    "fr": "FIX Z2M UNIVERSEL: Magic Packet dans classe de base TuyaHybridDevice! Maintenant TOUS les 31+ drivers Tuya automatiquement: 1) Lisent basic cluster EN PREMIER. 2) Envoient Z2M Magic Packet. 3) Stockent zclNode pour timers. Corrige climate_sensor, soil_sensor, air_quality, motion_sensor et TOUS les TS0601!"
+  },
+  
   "5.5.93": {
     "en": "Z2M IMPLEMENTATION FIX: 1) Read basic cluster FIRST at init to get manufacturerName (like Z2M configureMagicPacket). 2) ALWAYS send Magic Packet for ALL climate sensors - don't check TZE284/TS0601. 3) Simplified timer code. Based on exact Zigbee2MQTT tuya.ts implementation from issue #26078.",
     "fr": "FIX IMPLEMENTATION Z2M: 1) Lecture basic cluster EN PREMIER à l'init pour obtenir manufacturerName (comme Z2M). 2) Magic Packet TOUJOURS envoyé pour TOUS les capteurs climat. 3) Code timers simplifié. Basé sur implémentation exacte Z2M tuya.ts issue #26078."
@@ -2230,6 +2235,7 @@
     "fr": "VERSION STABILITÉ MAJEURE - Mécanisme de rollback pairing (corrige appareils fantômes), timeout pairing 60s, validation capabilities avant création appareil, correction fuites mémoire (nettoyage onDeleted), réveil forcé appareil (corrige AUCUNE DONNÉE REÇUE), mode fallback Tuya DP seul. Corrigé erreurs Invalid Capability (alarm_generic, measure_soil_moisture). Nouveaux drivers: lcdtemphumidsensor, temphumidsensor. Nettoyage: Supprimé 67 fichiers .old.js obsolètes (98,616 lignes supprimées)."
   }
 }
+
 
 
 
