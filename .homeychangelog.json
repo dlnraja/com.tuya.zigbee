@@ -1,4 +1,9 @@
 {
+  "5.5.91": {
+    "en": "CLIMATE SENSOR FIX: 1) Removed extra button from climate sensor UI. 2) Fixed TZE284 detection - now checks at runtime instead of init. 3) Magic Packet sent for ALL TS0601 devices (not just TZE284). 4) Stored manufacturer name for timer callbacks.",
+    "fr": "FIX CAPTEUR CLIMAT: 1) Bouton en trop supprimé de l'interface. 2) Détection TZE284 corrigée - vérifie maintenant au runtime. 3) Magic Packet envoyé pour TOUS les TS0601. 4) Nom fabricant stocké pour les callbacks."
+  },
+  
   "5.5.90": {
     "en": "TZE284 AGGRESSIVE FIX: 1) Magic Packet now sent at EVERY wake interval (10s, 30s, 2m, 5m, 10m, 20m, 30m) for _TZE284_vvmbj46n. 2) Soil sensor DP9 now ignored (was incorrectly auto-detected as temperature). 3) No re-pairing needed - just update and wait up to 10 seconds.",
     "fr": "FIX TZE284 AGRESSIF: 1) Magic Packet envoyé à CHAQUE intervalle de réveil (10s, 30s, 2m...) pour _TZE284_vvmbj46n. 2) Soil sensor DP9 ignoré (était mal détecté comme température). 3) Pas de ré-appairage nécessaire - mettez à jour et attendez 10 secondes."
@@ -2215,6 +2220,7 @@
     "fr": "VERSION STABILITÉ MAJEURE - Mécanisme de rollback pairing (corrige appareils fantômes), timeout pairing 60s, validation capabilities avant création appareil, correction fuites mémoire (nettoyage onDeleted), réveil forcé appareil (corrige AUCUNE DONNÉE REÇUE), mode fallback Tuya DP seul. Corrigé erreurs Invalid Capability (alarm_generic, measure_soil_moisture). Nouveaux drivers: lcdtemphumidsensor, temphumidsensor. Nettoyage: Supprimé 67 fichiers .old.js obsolètes (98,616 lignes supprimées)."
   }
 }
+
 
 
 
