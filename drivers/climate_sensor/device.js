@@ -561,48 +561,57 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.86: Send Tuya time sync with Paris timezone (GMT+1/+2)
-   * Format: Command 0x24 with UTC timestamp + timezone offset
+   * v5.5.95: ENHANCED Tuya time sync for TZE284 LCD devices
+   * Uses TuyaSpecificCluster.timeSync() which sends command 0x24 (timeResponse)
+   *
+   * CRITICAL FOR: _TZE284_vvmbj46n (TH05Z) LCD clock display
+   *
+   * The device expects Unix timestamps:
+   * - utcTime: seconds since 1970-01-01 00:00:00 UTC
+   * - localTime: utcTime + timezone offset (for LCD display)
    */
   async _sendTuyaTimeSync(endpoint) {
     try {
       const now = new Date();
-
-      // Paris timezone: CET (GMT+1) or CEST (GMT+2 in summer)
-      // JavaScript gives us the correct offset automatically
-      const parisOffset = -now.getTimezoneOffset() * 60; // In seconds
-
-      // Tuya time format: seconds since 1970 (Unix epoch)
       const utcSeconds = Math.floor(now.getTime() / 1000);
-      const localSeconds = utcSeconds + parisOffset;
+      const timezoneOffset = -now.getTimezoneOffset() * 60; // In seconds
+      const localSeconds = utcSeconds + timezoneOffset;
 
-      this.log(`[TIME-SYNC] 🕐 UTC: ${new Date(utcSeconds * 1000).toISOString()}`);
-      this.log(`[TIME-SYNC] 🕐 Local (Paris): ${new Date(localSeconds * 1000).toISOString()}`);
-      this.log(`[TIME-SYNC] 🕐 Offset: ${parisOffset / 3600}h`);
-
-      // Build time sync frame: Command 0x24
-      // Format: [seq:2][cmd:1][len:2][utc:4][local:4]
-      const frame = Buffer.alloc(13);
-      frame.writeUInt16BE(0x0000, 0);  // seq
-      frame.writeUInt8(0x24, 2);        // cmd = time sync
-      frame.writeUInt16BE(8, 3);        // len = 8 bytes
-      frame.writeUInt32BE(utcSeconds, 5);
-      frame.writeUInt32BE(localSeconds, 9);
+      this.log('[TIME-SYNC] 🕐 ════════════════════════════════════════════');
+      this.log(`[TIME-SYNC] 🕐 UTC: ${now.toISOString()}`);
+      this.log(`[TIME-SYNC] 🕐 Local: ${new Date(localSeconds * 1000).toLocaleString()}`);
+      this.log(`[TIME-SYNC] 🕐 Timezone: GMT${timezoneOffset >= 0 ? '+' : ''}${timezoneOffset / 3600}`);
+      this.log(`[TIME-SYNC] 🕐 UTC seconds: ${utcSeconds}`);
+      this.log(`[TIME-SYNC] 🕐 Local seconds: ${localSeconds}`);
 
       const tuyaCluster = endpoint.clusters?.['tuya'] ||
-        endpoint.clusters?.[61184];
+        endpoint.clusters?.[61184] ||
+        endpoint.clusters?.['manuSpecificTuya'] ||
+        endpoint.clusters?.[0xEF00];
 
       if (tuyaCluster && typeof tuyaCluster.timeSync === 'function') {
-        await tuyaCluster.timeSync({
+        // v5.5.95: Use the new timeSync method
+        const result = await tuyaCluster.timeSync({
           utcTime: utcSeconds,
           localTime: localSeconds
         });
-        this.log('[TIME-SYNC] ✅ Time synced via cluster method');
+        this.log('[TIME-SYNC] ✅ Time synced via TuyaSpecificCluster.timeSync()');
+        this.log(`[TIME-SYNC] ✅ Sent: utc=${result.utcTime} local=${result.localTime}`);
+      } else if (tuyaCluster && typeof tuyaCluster.timeResponse === 'function') {
+        // Fallback: use timeResponse directly
+        await tuyaCluster.timeResponse({
+          utcTime: utcSeconds,
+          localTime: localSeconds
+        });
+        this.log('[TIME-SYNC] ✅ Time synced via timeResponse()');
       } else {
-        this.log('[TIME-SYNC] ℹ️ No timeSync method - will use gateway emulator');
+        this.log('[TIME-SYNC] ⚠️ No timeSync/timeResponse method available');
+        this.log('[TIME-SYNC] ℹ️ Available methods:', Object.keys(tuyaCluster || {}));
       }
+      this.log('[TIME-SYNC] 🕐 ════════════════════════════════════════════');
     } catch (err) {
       this.log('[TIME-SYNC] ⚠️ Error:', err.message);
+      // Don't throw - time sync failure is non-critical
     }
   }
 
