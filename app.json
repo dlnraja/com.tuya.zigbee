@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.88",
+  "version": "5.5.89",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.88: UNIVERSAL TUYA COVERAGE - Enhanced UniversalTuyaParser with all official Tuya DP types, commands, ZCL clusters. Device-type specific mappings. Frame builders for time sync.",
-    "fr": "V5.5.88: COUVERTURE TUYA UNIVERSELLE - UniversalTuyaParser amélioré avec tous les types DP Tuya officiels, commandes, clusters ZCL. Mappings spécifiques par type d'appareil."
+    "en": "V5.5.89: TZE284 FIX - Added dataQuery (0x03) and mcuVersionRequest (0x10) commands to TuyaSpecificCluster. Fixed Magic Packet for _TZE284_vvmbj46n climate sensors.",
+    "fr": "V5.5.89: FIX TZE284 - Ajout commandes dataQuery (0x03) et mcuVersionRequest (0x10) au TuyaSpecificCluster. Fix Magic Packet pour capteurs climat _TZE284_vvmbj46n."
   },
   "category": "appliances",
   "permissions": [],
