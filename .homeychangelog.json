@@ -1,4 +1,9 @@
 {
+  "5.5.93": {
+    "en": "Z2M IMPLEMENTATION FIX: 1) Read basic cluster FIRST at init to get manufacturerName (like Z2M configureMagicPacket). 2) ALWAYS send Magic Packet for ALL climate sensors - don't check TZE284/TS0601. 3) Simplified timer code. Based on exact Zigbee2MQTT tuya.ts implementation from issue #26078.",
+    "fr": "FIX IMPLEMENTATION Z2M: 1) Lecture basic cluster EN PREMIER à l'init pour obtenir manufacturerName (comme Z2M). 2) Magic Packet TOUJOURS envoyé pour TOUS les capteurs climat. 3) Code timers simplifié. Basé sur implémentation exacte Z2M tuya.ts issue #26078."
+  },
+  
   "5.5.92": {
     "en": "CRITICAL FIX: 1) Stored zclNode at init (this._zclNode) so timers can access it. 2) Magic Packet now ACTUALLY SENT - logs will show '[CLIMATE] 🔮 Sending Magic Packet...'. 3) Improved device detection logs: '[CLIMATE] 🔍 Device: mfr=... model=...'. NOTE: To remove the extra button, you must DELETE and RE-ADD the climate sensor device.",
     "fr": "FIX CRITIQUE: 1) zclNode stocké à l'init (this._zclNode) pour accès timers. 2) Magic Packet maintenant VRAIMENT envoyé. 3) Logs améliorés. NOTE: Pour supprimer le bouton, il faut SUPPRIMER et RÉAJOUTER le capteur climat."
@@ -2225,6 +2230,7 @@
     "fr": "VERSION STABILITÉ MAJEURE - Mécanisme de rollback pairing (corrige appareils fantômes), timeout pairing 60s, validation capabilities avant création appareil, correction fuites mémoire (nettoyage onDeleted), réveil forcé appareil (corrige AUCUNE DONNÉE REÇUE), mode fallback Tuya DP seul. Corrigé erreurs Invalid Capability (alarm_generic, measure_soil_moisture). Nouveaux drivers: lcdtemphumidsensor, temphumidsensor. Nettoyage: Supprimé 67 fichiers .old.js obsolètes (98,616 lignes supprimées)."
   }
 }
+
 
 
 
