@@ -5,6 +5,11 @@ const { HybridSensorBase } = require('../../lib/devices');
 /**
  * Motion Sensor Device - HybridSensorBase implementation
  *
+ * v5.5.107: TEMPERATURE FIX (Peter's diagnostic report)
+ * - Force add temp/humidity capabilities if clusters detected
+ * - Improved cluster detection with multiple name variants
+ * - Read temp/humidity on EVERY wake event, not just motion
+ *
  * v5.5.104: CRITICAL FIX for 4-in-1 Multisensors (Peter's bug)
  * - Read temp/humidity WHEN device is awake (after motion detection)
  * - Configure reporting for passive updates
@@ -19,19 +24,21 @@ class MotionSensorDevice extends HybridSensorBase {
   get mainsPowered() { return false; }
 
   /**
-   * v5.5.102: DYNAMIC CAPABILITY DETECTION
-   * Only include temp/humidity if device has those clusters
-   * Prevents timeouts on devices without these clusters
+   * v5.5.107: ALWAYS include temp/humidity for 4-in-1 multisensors
+   * These sensors send data via Tuya DP, not ZCL clusters!
+   * If a device doesn't have temp/humidity, the DPs just won't be received.
    */
   get sensorCapabilities() {
-    // Base capabilities all motion sensors have
-    const caps = ['alarm_motion', 'measure_battery', 'measure_luminance'];
-
-    // v5.5.102: Only add temp/humidity if we detected those clusters
-    if (this._hasTemperatureCluster) caps.push('measure_temperature');
-    if (this._hasHumidityCluster) caps.push('measure_humidity');
-
-    return caps;
+    // v5.5.107: Include ALL capabilities for 4-in-1 multisensors
+    // The dpMappings define temp/humidity DPs, so we MUST include these capabilities
+    // Otherwise Tuya DP data is silently ignored!
+    return [
+      'alarm_motion',
+      'measure_battery',
+      'measure_luminance',
+      'measure_temperature',  // v5.5.107: Always include for 4-in-1 sensors
+      'measure_humidity',     // v5.5.107: Always include for 4-in-1 sensors
+    ];
   }
 
   /**
@@ -63,19 +70,44 @@ class MotionSensorDevice extends HybridSensorBase {
       102: { capability: 'measure_luminance', divisor: 1 },  // Fantem lux
 
       // ═══════════════════════════════════════════════════════════════════
-      // v5.5.86: TEMPERATURE (for 4-in-1 multisensors)
+      // v5.5.107: TEMPERATURE (for 4-in-1 multisensors) - with validation
       // Fantem ZB003-x, Immax 07502L use these DPs
+      // NOTE: transform is applied AFTER divisor, so values are in °C
       // ═══════════════════════════════════════════════════════════════════
-      5: { capability: 'measure_temperature', divisor: 10 },   // Standard temp DP
-      18: { capability: 'measure_temperature', divisor: 10 },  // Alternative temp DP
-      103: { capability: 'measure_temperature', divisor: 10 }, // Fantem temp DP
+      5: {
+        capability: 'measure_temperature',
+        divisor: 10,
+        transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null
+      },
+      18: {
+        capability: 'measure_temperature',
+        divisor: 10,
+        transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null
+      },
+      103: {
+        capability: 'measure_temperature',
+        divisor: 10,
+        transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null
+      },
 
       // ═══════════════════════════════════════════════════════════════════
-      // v5.5.86: HUMIDITY (for 4-in-1 multisensors)
+      // v5.5.107: HUMIDITY (for 4-in-1 multisensors) - with validation
       // ═══════════════════════════════════════════════════════════════════
-      6: { capability: 'measure_humidity', divisor: 1 },       // Standard humidity DP
-      19: { capability: 'measure_humidity', divisor: 1 },      // Alternative humidity DP
-      104: { capability: 'measure_humidity', divisor: 1 },     // Fantem humidity DP
+      6: {
+        capability: 'measure_humidity',
+        divisor: 1,
+        transform: (v) => (v >= 0 && v <= 100) ? Math.round(v) : null
+      },
+      19: {
+        capability: 'measure_humidity',
+        divisor: 1,
+        transform: (v) => (v >= 0 && v <= 100) ? Math.round(v) : null
+      },
+      104: {
+        capability: 'measure_humidity',
+        divisor: 1,
+        transform: (v) => (v >= 0 && v <= 100) ? Math.round(v) : null
+      },
 
       // ═══════════════════════════════════════════════════════════════════
       // SETTINGS (not capabilities)
@@ -93,26 +125,38 @@ class MotionSensorDevice extends HybridSensorBase {
    */
   get clusterHandlers() {
     return {
-      // Temperature cluster (0x0402)
+      // Temperature cluster (0x0402) - v5.5.107: Add sanity check
       temperatureMeasurement: {
         attributeReport: (data) => {
-          if (data.measuredValue !== undefined) {
+          if (data.measuredValue !== undefined && data.measuredValue !== -32768) {
             const temp = Math.round((data.measuredValue / 100) * 10) / 10;
-            this.log(`[ZCL] 🌡️ Temperature: ${temp}°C`);
-            this._registerZigbeeHit?.();
-            this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+            // v5.5.107: Sanity check - ignore extreme values
+            if (temp >= -40 && temp <= 80) {
+              this.log(`[ZCL] 🌡️ Temperature: ${temp}°C (raw: ${data.measuredValue})`);
+              this._registerZigbeeHit?.();
+              this._lastTempSource = 'ZCL';
+              this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+            } else {
+              this.log(`[ZCL] ⚠️ Temperature out of range: ${temp}°C (raw: ${data.measuredValue})`);
+            }
           }
         }
       },
 
-      // Humidity cluster (0x0405)
+      // Humidity cluster (0x0405) - v5.5.107: Add sanity check
       relativeHumidity: {
         attributeReport: (data) => {
-          if (data.measuredValue !== undefined) {
+          if (data.measuredValue !== undefined && data.measuredValue !== 65535) {
             const hum = Math.round(data.measuredValue / 100);
-            this.log(`[ZCL] 💧 Humidity: ${hum}%`);
-            this._registerZigbeeHit?.();
-            this.setCapabilityValue('measure_humidity', hum).catch(() => { });
+            // v5.5.107: Sanity check - ignore extreme values
+            if (hum >= 0 && hum <= 100) {
+              this.log(`[ZCL] 💧 Humidity: ${hum}% (raw: ${data.measuredValue})`);
+              this._registerZigbeeHit?.();
+              this._lastHumSource = 'ZCL';
+              this.setCapabilityValue('measure_humidity', hum).catch(() => { });
+            } else {
+              this.log(`[ZCL] ⚠️ Humidity out of range: ${hum}% (raw: ${data.measuredValue})`);
+            }
           }
         }
       },
@@ -144,7 +188,7 @@ class MotionSensorDevice extends HybridSensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // v5.5.102: Detect available clusters BEFORE super.onNodeInit
+    // v5.5.107: Detect available clusters BEFORE super.onNodeInit
     this._detectAvailableClusters(zclNode);
 
     await super.onNodeInit({ zclNode });
@@ -158,20 +202,41 @@ class MotionSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.102: Detect which clusters are available on this device
-   * This prevents trying to read non-existent clusters (causes timeouts)
+   * v5.5.107: Cluster detection for ZCL active reading
+   * Note: Capabilities are ALWAYS included (see sensorCapabilities)
+   * because data often comes via Tuya DP, not ZCL!
    */
   _detectAvailableClusters(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
+    const clusters = ep1?.clusters || {};
+    const clusterNames = Object.keys(clusters);
 
-    // Check for temperature cluster (0x0402)
-    this._hasTemperatureCluster = !!(ep1?.clusters?.temperatureMeasurement || ep1?.clusters?.msTemperatureMeasurement);
+    this.log(`[MOTION-CLUSTERS] Available clusters: ${clusterNames.join(', ')}`);
 
-    // Check for humidity cluster (0x0405)
-    this._hasHumidityCluster = !!(ep1?.clusters?.relativeHumidity || ep1?.clusters?.relativeHumidityMeasurement || ep1?.clusters?.msRelativeHumidity);
+    // Check for temperature cluster (0x0402) - ALL possible names
+    this._hasTemperatureCluster = !!(
+      clusters.temperatureMeasurement ||
+      clusters.msTemperatureMeasurement ||
+      clusters.genTemperatureMeasurement ||
+      clusters[0x0402] ||
+      clusters['0x0402'] ||
+      clusters['1026']
+    );
 
-    this.log(`[MOTION-CLUSTERS] Temperature cluster: ${this._hasTemperatureCluster}`);
-    this.log(`[MOTION-CLUSTERS] Humidity cluster: ${this._hasHumidityCluster}`);
+    // Check for humidity cluster (0x0405) - ALL possible names
+    this._hasHumidityCluster = !!(
+      clusters.relativeHumidity ||
+      clusters.relativeHumidityMeasurement ||
+      clusters.msRelativeHumidity ||
+      clusters.genRelativeHumidity ||
+      clusters[0x0405] ||
+      clusters['0x0405'] ||
+      clusters['1029']
+    );
+
+    this.log(`[MOTION-CLUSTERS] Temperature ZCL: ${this._hasTemperatureCluster}`);
+    this.log(`[MOTION-CLUSTERS] Humidity ZCL: ${this._hasHumidityCluster}`);
+    this.log(`[MOTION-CLUSTERS] Note: Data also received via Tuya DP (always enabled)`);
   }
 
   /**
@@ -246,13 +311,13 @@ class MotionSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.104: Read temperature and humidity while device is awake
+   * v5.5.107: ENHANCED temp/humidity reading with ALL cluster name variants
    * This is crucial for 4-in-1 multisensors (Fantem ZB003-x, Immax 07502L)
    * which only respond to ZCL reads when awake (after motion detection)
    */
   async _readTempHumidityWhileAwake(zclNode) {
     // Debounce - don't spam reads
-    if (this._lastTempHumRead && Date.now() - this._lastTempHumRead < 5000) {
+    if (this._lastTempHumRead && Date.now() - this._lastTempHumRead < 3000) {
       return;
     }
     this._lastTempHumRead = Date.now();
@@ -260,40 +325,77 @@ class MotionSensorDevice extends HybridSensorBase {
     const ep1 = zclNode?.endpoints?.[1];
     if (!ep1) return;
 
+    const clusters = ep1.clusters || {};
     this.log('[MOTION-AWAKE] 🌡️ Device awake - reading temp/humidity NOW');
+    this.log(`[MOTION-AWAKE] Available clusters: ${Object.keys(clusters).join(', ')}`);
 
-    // Read temperature if cluster exists
-    const tempCluster = ep1.clusters?.temperatureMeasurement || ep1.clusters?.msTemperatureMeasurement;
+    // v5.5.107: Find temperature cluster with ALL possible names
+    const tempCluster =
+      clusters.temperatureMeasurement ||
+      clusters.msTemperatureMeasurement ||
+      clusters.genTemperatureMeasurement ||
+      clusters[0x0402] ||
+      clusters['0x0402'] ||
+      clusters['1026'];
+
     if (tempCluster?.readAttributes) {
       try {
-        const data = await tempCluster.readAttributes(['measuredValue']);
-        if (data?.measuredValue !== undefined && data.measuredValue !== -32768) {
-          const temp = data.measuredValue / 100;
-          this.log(`[MOTION-AWAKE] 🌡️ Temperature: ${temp}°C`);
-          if (this.hasCapability('measure_temperature')) {
-            await this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+        this.log('[MOTION-AWAKE] Reading temperature cluster...');
+        const data = await Promise.race([
+          tempCluster.readAttributes(['measuredValue']),
+          new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 3000))
+        ]);
+        if (data?.measuredValue !== undefined && data.measuredValue !== -32768 && data.measuredValue !== 0x8000) {
+          const temp = Math.round((data.measuredValue / 100) * 10) / 10;
+          this.log(`[MOTION-AWAKE] 🌡️ Temperature: ${temp}°C (raw: ${data.measuredValue})`);
+          // Auto-add capability if needed
+          if (!this.hasCapability('measure_temperature')) {
+            await this.addCapability('measure_temperature').catch(() => { });
           }
+          await this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+        } else {
+          this.log(`[MOTION-AWAKE] Temperature invalid: ${data?.measuredValue}`);
         }
       } catch (e) {
-        this.log('[MOTION-AWAKE] Temperature read failed:', e.message);
+        this.log('[MOTION-AWAKE] Temperature read failed (device may have gone to sleep):', e.message);
       }
+    } else {
+      this.log('[MOTION-AWAKE] No temperature cluster found');
     }
 
-    // Read humidity if cluster exists
-    const humCluster = ep1.clusters?.relativeHumidity || ep1.clusters?.relativeHumidityMeasurement || ep1.clusters?.msRelativeHumidity;
+    // v5.5.107: Find humidity cluster with ALL possible names
+    const humCluster =
+      clusters.relativeHumidity ||
+      clusters.relativeHumidityMeasurement ||
+      clusters.msRelativeHumidity ||
+      clusters.genRelativeHumidity ||
+      clusters[0x0405] ||
+      clusters['0x0405'] ||
+      clusters['1029'];
+
     if (humCluster?.readAttributes) {
       try {
-        const data = await humCluster.readAttributes(['measuredValue']);
-        if (data?.measuredValue !== undefined && data.measuredValue !== 65535) {
-          const hum = data.measuredValue / 100;
-          this.log(`[MOTION-AWAKE] 💧 Humidity: ${hum}%`);
-          if (this.hasCapability('measure_humidity')) {
-            await this.setCapabilityValue('measure_humidity', hum).catch(() => { });
+        this.log('[MOTION-AWAKE] Reading humidity cluster...');
+        const data = await Promise.race([
+          humCluster.readAttributes(['measuredValue']),
+          new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 3000))
+        ]);
+        if (data?.measuredValue !== undefined && data.measuredValue !== 65535 && data.measuredValue !== 0xFFFF) {
+          const hum = Math.round(data.measuredValue / 100);
+          this.log(`[MOTION-AWAKE] 💧 Humidity: ${hum}% (raw: ${data.measuredValue})`);
+          // Auto-add capability if needed
+          if (!this.hasCapability('measure_humidity')) {
+            await this.addCapability('measure_humidity').catch(() => { });
           }
+          await this.setCapabilityValue('measure_humidity', hum).catch(() => { });
+        } else {
+          this.log(`[MOTION-AWAKE] Humidity invalid: ${data?.measuredValue}`);
         }
       } catch (e) {
-        this.log('[MOTION-AWAKE] Humidity read failed:', e.message);
+        this.log('[MOTION-AWAKE] Humidity read failed (device may have gone to sleep):', e.message);
       }
+    } else {
+      this.log('[MOTION-AWAKE] No humidity cluster found');
     }
 
     // Also try to configure reporting for future passive updates

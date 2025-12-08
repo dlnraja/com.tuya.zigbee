@@ -2,9 +2,10 @@
 
 const { HybridSensorBase } = require('../../lib/devices');
 const { TuyaGatewayEmulator, WakeStrategies } = require('../../lib/tuya/TuyaGatewayEmulator');
+const { UniversalTimeSync, setupTimeSync } = require('../../lib/tuya/UniversalTimeSync');
 
 /**
- * Climate Sensor Device - v5.5.35 AGGRESSIVE RECOVERY + GATEWAY EMULATION
+ * Climate Sensor Device - v5.5.106 HOURLY TIME SYNC + AGGRESSIVE RECOVERY
  *
  * Sources:
  * - Z2M: Temperature & humidity sensor with clock (TH05Z)
@@ -320,29 +321,35 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.29: Setup Tuya Gateway Emulation
-   * Makes Homey act as a real Tuya gateway for time broadcast
+   * v5.5.106: Setup Universal Time Sync (HOURLY)
+   * Uses UniversalTimeSync for reliable hourly synchronization
    */
   async _setupGatewayEmulation() {
     try {
-      this.log('[CLIMATE] 🌐 Starting Gateway Emulation...');
+      this.log('[CLIMATE] 🕐 Setting up HOURLY Time Sync (v5.5.106)...');
 
-      // Create gateway emulator instance
+      // v5.5.106: Use UniversalTimeSync with 1 HOUR interval
+      this._universalTimeSync = new UniversalTimeSync(this, {
+        syncInterval: 60 * 60 * 1000, // 1 HOUR (was 6 hours)
+        useUnixEpoch: true,  // Most Tuya devices expect Unix epoch
+        verbose: true,
+        retryOnFail: true,
+        maxRetries: 3,
+      });
+
+      await this._universalTimeSync.initialize();
+
+      // Also keep gateway emulator for backward compatibility
       this._gatewayEmulator = new TuyaGatewayEmulator(this, {
-        broadcastInterval: 6 * 60 * 60 * 1000, // 6 hours
+        broadcastInterval: 60 * 60 * 1000, // 1 HOUR
         autoStart: true,
         verbose: true,
       });
-
-      // Initialize - this will:
-      // 1. Setup time request handler (responds to device time requests)
-      // 2. Push time immediately
-      // 3. Start periodic time broadcast
       await this._gatewayEmulator.initialize();
 
-      this.log('[CLIMATE] ✅ Gateway Emulation active - Homey is now a Tuya Gateway!');
+      this.log('[CLIMATE] ✅ HOURLY Time Sync active - syncing every hour!');
     } catch (err) {
-      this.error('[CLIMATE] Gateway emulation failed:', err.message);
+      this.error('[CLIMATE] Time sync setup failed:', err.message);
       // Fallback to simple time sync
       await this._setupTimeSync().catch(() => { });
     }
@@ -406,15 +413,15 @@ class ClimateSensorDevice extends HybridSensorBase {
       // Sync time now
       await this._syncDeviceTime(timeCluster);
 
-      // v5.5.26: Schedule time sync every 6 hours (improved from 24h)
-      // More frequent sync ensures clock stays accurate on LCD devices
+      // v5.5.106: Schedule time sync every 1 HOUR (was 6 hours)
+      // Hourly sync ensures LCD clock stays accurate
       this._timeSyncInterval = setInterval(() => {
         this._syncDeviceTime(timeCluster).catch(err => {
           this.error('[CLIMATE] Time sync failed:', err.message);
         });
-      }, 6 * 60 * 60 * 1000); // 6 hours
+      }, 60 * 60 * 1000); // 1 HOUR
 
-      this.log('[CLIMATE] ✅ Time sync enabled (every 6 hours)');
+      this.log('[CLIMATE] ✅ Time sync enabled (every HOUR)');
     } catch (err) {
       this.error('[CLIMATE] Time sync setup error:', err.message);
     }
@@ -655,6 +662,12 @@ class ClimateSensorDevice extends HybridSensorBase {
     if (this._aggressiveTimers) {
       this._aggressiveTimers.forEach(t => this.homey.clearTimeout(t));
       this._aggressiveTimers = null;
+    }
+
+    // v5.5.106: Clean up universal time sync
+    if (this._universalTimeSync) {
+      this._universalTimeSync.destroy();
+      this._universalTimeSync = null;
     }
 
     // v5.5.29: Clean up gateway emulator
