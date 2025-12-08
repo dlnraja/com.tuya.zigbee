@@ -381,26 +381,37 @@ class ClimateSensorDevice extends HybridSensorBase {
 
     // ═══════════════════════════════════════════════════════════════════════
     // METHOD 1: Tuya DP Time Sync (for _TZE284_vvmbj46n and similar)
+    // Uses the robust _sendTuyaTimeSync method
     // ═══════════════════════════════════════════════════════════════════════
     if (this._hasTuyaCluster || this._manufacturerName?.includes('_TZE')) {
       try {
-        // Try via UniversalTimeSync if available
-        if (this._universalTimeSync) {
-          await this._universalTimeSync.syncNow();
+        const ep1 = zclNode?.endpoints?.[1];
+        if (ep1) {
+          // v5.5.109: Use the existing robust _sendTuyaTimeSync method
+          await this._sendTuyaTimeSync(ep1);
           results.tuya = true;
-          this.log('[CLIMATE] ✅ Tuya time sync via UniversalTimeSync');
-        } else if (this.tuyaEF00Manager) {
-          // Direct Tuya DP time sync (DP 9 = time for some devices)
-          await this.tuyaEF00Manager.sendTime?.(unixTimestamp);
-          results.tuya = true;
-          this.log('[CLIMATE] ✅ Tuya time sync via tuyaEF00Manager');
-        } else if (this._gatewayEmulator) {
-          await this._gatewayEmulator.pushTime();
-          results.tuya = true;
-          this.log('[CLIMATE] ✅ Tuya time sync via GatewayEmulator');
         }
       } catch (e) {
-        this.log('[CLIMATE] ⚠️ Tuya time sync failed:', e.message);
+        this.log('[CLIMATE] ⚠️ Tuya time sync via _sendTuyaTimeSync failed:', e.message);
+
+        // Fallback to other methods
+        try {
+          if (this._universalTimeSync) {
+            await this._universalTimeSync.syncNow();
+            results.tuya = true;
+            this.log('[CLIMATE] ✅ Tuya time sync via UniversalTimeSync');
+          } else if (this.tuyaEF00Manager?.sendTimeSync) {
+            await this.tuyaEF00Manager.sendTimeSync();
+            results.tuya = true;
+            this.log('[CLIMATE] ✅ Tuya time sync via tuyaEF00Manager');
+          } else if (this._gatewayEmulator) {
+            await this._gatewayEmulator.pushTime();
+            results.tuya = true;
+            this.log('[CLIMATE] ✅ Tuya time sync via GatewayEmulator');
+          }
+        } catch (e2) {
+          this.log('[CLIMATE] ⚠️ All Tuya time sync methods failed');
+        }
       }
     }
 
