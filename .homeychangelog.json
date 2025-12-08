@@ -1,4 +1,8 @@
 {
+  "5.5.101": {
+    "en": "ALL 84 DRIVERS - REAL DEVICE IMAGES:\n• Downloaded proper device photos from Johan Bendz repo\n• small.png (75x75), large.png (500x500), xlarge.png (1000x1000)\n• icon.svg vector icons for all device widgets\n• White backgrounds as required by Homey SDK3\n• Full App Store compliance achieved",
+    "fr": "84 DRIVERS - VRAIES IMAGES DEVICES:\n• Téléchargement photos devices depuis repo Johan Bendz\n• small.png (75x75), large.png (500x500), xlarge.png (1000x1000)\n• Icônes SVG vectorielles pour tous les widgets\n• Fonds blancs conformes au SDK3 Homey\n• Conformité App Store complète"
+  },
   "5.5.100": {
     "en": "USB DONGLE DUAL REPEATER IMAGES:\n• Added missing images for usb_dongle_dual_repeater driver\n• small.png, large.png, xlarge.png now present\n• icon.svg added for device widget\n• All 84 drivers now have complete image assets",
     "fr": "IMAGES USB DONGLE DUAL REPEATER:\n• Ajout des images manquantes pour le driver usb_dongle_dual_repeater\n• small.png, large.png, xlarge.png maintenant présents\n• icon.svg ajouté pour le widget\n• Les 84 drivers ont maintenant des assets images complets"
