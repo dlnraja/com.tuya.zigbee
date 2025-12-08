@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.90",
+  "version": "5.5.91",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9,8 +9,8 @@
     "en": "Universal Tuya Zigbee"
   },
   "description": {
-    "en": "V5.5.90: TZE284 AGGRESSIVE FIX - Magic Packet sent at every wake interval (10s, 30s, 2m, 5m...). Soil sensor DP9 no longer misinterpreted as temperature.",
-    "fr": "V5.5.90: FIX TZE284 AGRESSIF - Magic Packet envoyé à chaque intervalle de réveil (10s, 30s, 2m, 5m...). Soil sensor DP9 plus mal interprété comme température."
+    "en": "V5.5.91: CLIMATE FIX - Removed extra button. Fixed TZE284/TS0601 detection. Magic Packet now sent for ALL TS0601 devices.",
+    "fr": "V5.5.91: FIX CLIMAT - Bouton en trop supprimé. Détection TZE284/TS0601 corrigée. Magic Packet envoyé pour TOUS les TS0601."
   },
   "category": "appliances",
   "permissions": [],
