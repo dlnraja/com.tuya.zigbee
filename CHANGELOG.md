@@ -6,17 +6,23 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ## [5.5.108] - 2025-12-08
 
-### 🔧 SOS BUTTON + CLIMATE SENSOR FIXES
+### 🧠 INTELLIGENT HYBRID PROTOCOL + SOS FIX
+
+#### Climate Sensor - Intelligent Hybrid System
+- **Protocol Detection:** Auto-detect Tuya DP vs ZCL clusters
+- **15 min Learning Period:** Track which protocol delivers data
+- **Hybrid Time Sync:** Try BOTH Tuya DP AND ZCL Time cluster
+- **3-Phase Time Sync:**
+  - Phase 1: Immediate sync at init
+  - Phase 2: Sync at 15 min (post-learning)
+  - Phase 3: Hourly continuous sync
+- **Sanity Checks:** Temperature (-40°C to 80°C), Humidity (0-100%)
+- **Supported:** _TZE284_vvmbj46n, TS0601, TS0201
 
 #### SOS Button
 - **Fixed:** Enrollment now happens when device wakes up (not on timeout)
 - **Improved:** No more "Enrollment retry failed (device sleeping)" spam
 - **Smart:** Automatically attempts enrollment when button is pressed
-
-#### Climate Sensor
-- **Fixed:** Detect Tuya cluster before attempting time sync
-- **Improved:** ZCL standard devices (TS0201) no longer spam Magic Packet errors
-- **Info:** Clear message when device doesn't support Tuya time sync
 
 ---
 
