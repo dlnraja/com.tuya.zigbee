@@ -4,7 +4,7 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║            SOS EMERGENCY BUTTON - v5.5.61 PURE IAS ZONE                      ║
+ * ║            SOS EMERGENCY BUTTON - v5.5.102 ENHANCED IAS ZONE                 ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  Device: TS0215A _TZ3000_0dumfk2z                                            ║
@@ -14,10 +14,10 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
  * ║  - iasZone: Button press detection (zoneStatusChangeNotification)            ║
  * ║  - powerConfiguration: Battery percentage (ZCL standard)                     ║
  * ║                                                                              ║
- * ║  v5.5.61: CRITICAL FIX                                                       ║
- * ║  - Removed ALL Tuya DP logic (this device has NO 0xEF00 cluster)             ║
- * ║  - Uses ONLY IAS Zone for button + powerConfiguration for battery            ║
- * ║  - Simplified class hierarchy (extends ZigBeeDevice directly)                ║
+ * ║  v5.5.102: BATTERY FIX                                                       ║
+ * ║  - Enhanced battery reading with multiple retry strategies                   ║
+ * ║  - Better error handling for sleepy devices                                  ║
+ * ║  - Added batteryVoltage fallback                                             ║
  * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
@@ -220,6 +220,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
   }
 
   /**
+   * v5.5.102: Enhanced battery reading with multiple strategies
    * Try to read battery when device is awake (after button press)
    */
   async _readBatteryNow() {
@@ -227,13 +228,50 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       const ep1 = this.zclNode?.endpoints?.[1];
       const powerCfg = ep1?.clusters?.powerConfiguration || ep1?.clusters?.genPowerCfg;
 
-      if (powerCfg?.readAttributes) {
-        const result = await powerCfg.readAttributes(['batteryPercentageRemaining']).catch(() => ({}));
-        if (result?.batteryPercentageRemaining !== undefined) {
+      if (!powerCfg?.readAttributes) {
+        this.log('[SOS] ⚠️ No powerConfiguration cluster available');
+        return;
+      }
+
+      // Strategy 1: Try batteryPercentageRemaining (standard)
+      try {
+        const result = await powerCfg.readAttributes(['batteryPercentageRemaining']);
+        if (result?.batteryPercentageRemaining !== undefined && result.batteryPercentageRemaining !== 255) {
           const percent = Math.round(result.batteryPercentageRemaining / 2);
-          this.log(`[SOS] 🔋 Battery read: ${percent}%`);
+          this.log(`[SOS] 🔋 Battery (percentage): ${percent}%`);
+          await this.setCapabilityValue('measure_battery', percent).catch(() => { });
+          return; // Success
+        }
+      } catch (e) {
+        this.log('[SOS] batteryPercentageRemaining failed, trying voltage...');
+      }
+
+      // Strategy 2: Try batteryVoltage (fallback)
+      try {
+        const result = await powerCfg.readAttributes(['batteryVoltage']);
+        if (result?.batteryVoltage !== undefined && result.batteryVoltage > 0) {
+          // CR2450: 3.0V = 100%, 2.0V = 0%
+          const voltage = result.batteryVoltage / 10;
+          const percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
+          this.log(`[SOS] 🔋 Battery (voltage): ${voltage}V → ${percent}%`);
+          await this.setCapabilityValue('measure_battery', percent).catch(() => { });
+          return; // Success
+        }
+      } catch (e) {
+        this.log('[SOS] batteryVoltage also failed');
+      }
+
+      // Strategy 3: Read all available attributes
+      try {
+        const allAttrs = await powerCfg.readAttributes(['batteryPercentageRemaining', 'batteryVoltage', 'batteryAlarmState']);
+        this.log('[SOS] 🔋 All battery attrs:', JSON.stringify(allAttrs));
+
+        if (allAttrs?.batteryPercentageRemaining !== undefined && allAttrs.batteryPercentageRemaining !== 255) {
+          const percent = Math.round(allAttrs.batteryPercentageRemaining / 2);
           await this.setCapabilityValue('measure_battery', percent).catch(() => { });
         }
+      } catch (e) {
+        // Silent - device went back to sleep
       }
     } catch (e) {
       // Silent - device might have gone back to sleep
