@@ -232,11 +232,14 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.35: Schedule aggressive DP requests at typical wake intervals
+   * v5.5.90: Schedule aggressive Magic Packet + DP requests at typical wake intervals
    * Climate sensors wake up every 10-30 minutes typically
+   *
+   * CRITICAL: TZE284 devices need Magic Packet BEFORE they will report data!
    */
   _scheduleAggressiveDPRequest() {
     const intervals = [
+      10 * 1000,      // 10 seconds - FIRST TRY IMMEDIATELY
       30 * 1000,      // 30 seconds
       2 * 60 * 1000,  // 2 minutes
       5 * 60 * 1000,  // 5 minutes
@@ -246,10 +249,21 @@ class ClimateSensorDevice extends HybridSensorBase {
     ];
 
     const dpIds = [1, 2, 4, 18]; // temp, humidity, battery, alt temp
+    const settings = this.getSettings() || {};
+    const mfr = settings.zb_manufacturerName || '';
+    const isTZE284 = mfr.startsWith('_TZE284');
 
     intervals.forEach((delay, index) => {
       const timer = this.homey.setTimeout(async () => {
-        this.log(`[CLIMATE] ⏰ Aggressive DP request attempt ${index + 1}/${intervals.length}`);
+        this.log(`[CLIMATE] ⏰ Aggressive request attempt ${index + 1}/${intervals.length}`);
+
+        // v5.5.90: ALWAYS send Magic Packet for TZE284 devices!
+        if (isTZE284 && this.zclNode) {
+          this.log('[CLIMATE] 🔮 Sending Magic Packet (TZE284)...');
+          await this._sendTuyaMagicPacket(this.zclNode).catch(e => {
+            this.log('[CLIMATE] Magic packet error:', e.message);
+          });
+        }
 
         // Try Tuya DP query
         if (this.safeTuyaDataQuery) {
@@ -269,7 +283,10 @@ class ClimateSensorDevice extends HybridSensorBase {
       this._aggressiveTimers.push(timer);
     });
 
-    this.log('[CLIMATE] 📅 Scheduled aggressive DP requests at: 30s, 2m, 5m, 10m, 20m, 30m');
+    this.log('[CLIMATE] 📅 Scheduled aggressive requests at: 10s, 30s, 2m, 5m, 10m, 20m, 30m');
+    if (isTZE284) {
+      this.log('[CLIMATE] 🔮 TZE284 detected - Magic Packet will be sent at each interval');
+    }
   }
 
   /**
