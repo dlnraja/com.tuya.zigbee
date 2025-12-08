@@ -32,15 +32,16 @@
       "_TZ3210_a5fxguxr",
       "_TZ3210_sroezl0s",
       "_TZ3210_trm3l2aw",
-      "Moes",
-      "Arlight",
-      "SLS"
+      "Arlight"
     ],
     "productId": [
+      "TS0503A",
+      "TS0503B",
+      "TS0504A",
+      "TS0504B",
+      "TS0505A",
       "TS0505B",
-      "ZLD-RCW",
-      "Zigbee-01-4CH",
-      "SMART-PWM-105-72-RGB-MIX-PD-SUF"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -67,16 +68,7 @@
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    },
-    "productId": [
-      "TS0503A",
-      "TS0503B",
-      "TS0504A",
-      "TS0504B",
-      "TS0505A",
-      "TS0505B",
-      "TS0601"
-    ]
+    }
   },
   "settings": [
     {
