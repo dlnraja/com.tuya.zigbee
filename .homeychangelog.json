@@ -1,4 +1,7 @@
 {
+  "5.5.130": {
+    "en": "🔋 SOS Button BATTERY FIX! Multiple listener methods + reporting config. FlowCards SDK3 compliant. alarm_battery removed (obsolete SDK3)."
+  },
   "5.5.127": {
     "en": "🔧 FIX: productId vs manufacturerName rules corrected. Moved misplaced TS**** IDs from manufacturerName to productId in thermostat, plug_smart, switch_1gang drivers."
   },
