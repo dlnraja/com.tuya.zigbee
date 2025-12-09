@@ -4,7 +4,7 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SOS EMERGENCY BUTTON - v5.5.122 UNIVERSAL (ZCL + Tuya DP)               ║
+ * ║      SOS EMERGENCY BUTTON - v5.5.136 UNIVERSAL (ZCL + Tuya DP)               ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  SUPPORTED PROTOCOLS:                                                        ║
@@ -31,7 +31,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
     this.log('');
     this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║     SOS EMERGENCY BUTTON v5.5.122 - UNIVERSAL                ║');
+    this.log('║     SOS EMERGENCY BUTTON v5.5.136 - UNIVERSAL                ║');
     this.log('║   Supports: IAS ACE + IAS Zone + Tuya DP + genOnOff          ║');
     this.log('╚══════════════════════════════════════════════════════════════╝');
 
@@ -510,64 +510,8 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       this.log('[SOS] alarm_contact reset');
     }, 5000);
 
-    // v5.5.132: Configure battery reporting while device is awake (only once)
-    this._configureBatteryReportingOnWake();
-
     // Try to read battery while device is awake
     this._readBatteryNow();
-  }
-
-  /**
-   * v5.5.132: Configure battery binding and reporting while device is awake
-   * This MUST be done when device is awake (after button press) to succeed
-   */
-  async _configureBatteryReportingOnWake() {
-    // Only try once per session
-    if (this._batteryConfigured) return;
-
-    try {
-      const ep1 = this.zclNode?.endpoints?.[1];
-      const powerCfg = ep1?.clusters?.powerConfiguration || ep1?.clusters?.genPowerCfg;
-
-      if (!powerCfg) {
-        this.log('[SOS] 🔋 No powerConfiguration cluster for wake config');
-        return;
-      }
-
-      this.log('[SOS] 🔋 Device AWAKE - Configuring battery reporting...');
-
-      // Step 1: Bind cluster (required for reporting to work)
-      try {
-        await Promise.race([
-          powerCfg.bind(),
-          new Promise((_, reject) => setTimeout(() => reject(new Error('Bind timeout')), 3000))
-        ]);
-        this.log('[SOS] 🔋 ✅ powerConfiguration bound successfully!');
-      } catch (e) {
-        this.log('[SOS] 🔋 Bind failed:', e.message);
-      }
-
-      // Step 2: Configure reporting
-      try {
-        await Promise.race([
-          powerCfg.configureReporting({
-            batteryPercentageRemaining: {
-              minInterval: 3600,
-              maxInterval: 21600, // 6 hours
-              minChange: 2
-            }
-          }),
-          new Promise((_, reject) => setTimeout(() => reject(new Error('Report config timeout')), 3000))
-        ]);
-        this.log('[SOS] 🔋 ✅ Battery reporting configured!');
-        this._batteryConfigured = true;
-      } catch (e) {
-        this.log('[SOS] 🔋 Report config failed:', e.message);
-      }
-
-    } catch (e) {
-      this.log('[SOS] 🔋 Wake config error:', e.message);
-    }
   }
 
   /**
@@ -626,7 +570,10 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
   /**
    * Setup battery via ZCL powerConfiguration
-   * v5.5.130: FIXED - More robust battery handling for sleepy devices
+   * v5.5.136: SIMPLIFIED - Back to working v5.5.64 approach
+   * NO registerCapability (causes expected_cluster_id_number error)
+   * NO bind/configureReporting (causes timeouts on sleepy devices)
+   * ONLY passive listeners that work!
    */
   async _setupBattery() {
     const ep1 = this.zclNode?.endpoints?.[1];
@@ -637,39 +584,20 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       return;
     }
 
-    this.log('[SOS] 🔋 Setting up battery listeners...');
+    this.log('[SOS] 🔋 Setting up battery listeners (passive only)...');
 
-    // v5.5.130: Register capability with powerConfiguration cluster
-    try {
-      this.registerCapability('measure_battery', 'powerConfiguration', {
-        get: 'batteryPercentageRemaining',
-        getOpts: { getOnStart: false }, // Don't read on start (device is sleeping)
-        report: 'batteryPercentageRemaining',
-        reportParser: (value) => {
-          if (value === undefined || value === null || value === 255) return null;
-          const percent = Math.round(value / 2);
-          this.log(`[SOS] 🔋 Battery (registerCapability): ${percent}%`);
-          this._updateActivity();
-          return percent;
-        }
-      });
-      this.log('[SOS] ✅ Battery capability registered with powerConfiguration');
-    } catch (e) {
-      this.log('[SOS] registerCapability battery skipped:', e.message);
-    }
-
-    // v5.5.130: Multiple listener methods for maximum compatibility
+    // v5.5.136: Simple passive listener - THIS IS WHAT WORKED IN v5.5.64!
     if (typeof powerCfg.on === 'function') {
-      // Method 1: Standard attribute listener
+      // batteryPercentageRemaining (ZCL standard: 0-200 = 0-100%)
       powerCfg.on('attr.batteryPercentageRemaining', (value) => {
         if (value === undefined || value === null || value === 255) return;
         const percent = Math.round(value / 2);
-        this.log(`[SOS] 🔋 Battery (attr listener): ${percent}%`);
+        this.log(`[SOS] 🔋 Battery: ${percent}%`);
         this.setCapabilityValue('measure_battery', percent).catch(() => { });
         this._updateActivity();
       });
 
-      // Method 2: batteryVoltage fallback
+      // batteryVoltage fallback (some devices only report voltage)
       powerCfg.on('attr.batteryVoltage', (value) => {
         if (value === undefined || value === null || value === 0) return;
         // CR2032/CR2450: 3.0V = 100%, 2.0V = 0%
@@ -680,148 +608,37 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
         this._updateActivity();
       });
 
-      // Method 3: Generic attribute change
-      powerCfg.on('attr', (attr, value) => {
-        this.log(`[SOS] 🔋 powerCfg attr: ${attr} =`, value);
-        if (attr === 'batteryPercentageRemaining' && value !== 255) {
-          const percent = Math.round(value / 2);
-          this.setCapabilityValue('measure_battery', percent).catch(() => { });
-        }
-      });
-
-      this.log('[SOS] ✅ Battery listeners registered (multiple methods)');
+      this.log('[SOS] ✅ Battery listeners registered (passive)');
     }
 
-    // v5.5.130: Try to configure reporting (will fail if device is sleeping, that's OK)
-    try {
-      await powerCfg.configureReporting({
-        batteryPercentageRemaining: {
-          minInterval: 3600,  // 1 hour minimum
-          maxInterval: 43200, // 12 hours maximum
-          minChange: 2        // Report on 1% change (value is 0-200)
-        }
-      }).catch(() => { });
-      this.log('[SOS] ✅ Battery reporting configured');
-    } catch (e) {
-      this.log('[SOS] Battery reporting config skipped (device sleeping)');
-    }
-
-    // v5.5.130: Bind cluster for reports
-    try {
-      await powerCfg.bind();
-      this.log('[SOS] ✅ powerConfiguration bound');
-    } catch (e) {
-      this.log('[SOS] powerConfiguration bind skipped:', e.message);
-    }
+    // NO polling, NO binding, NO configureReporting - device is sleepy and will timeout!
   }
 
   /**
-   * v5.5.130: Enhanced battery reading for sleepy devices
-   * - Only read when device is AWAKE (after button press)
-   * - Multiple strategies for maximum compatibility
-   * - Quick timeout to not block
+   * v5.5.136: Simplified battery reading (back to v5.5.64 style)
+   * Try to read battery when device is awake (after button press)
    */
   async _readBatteryNow() {
-    // Debounce - don't read too often (max once per 30 seconds)
-    const now = Date.now();
-    const lastRead = this._lastBatteryRead || 0;
-    if (now - lastRead < 30000) {
-      this.log('[SOS] 🔋 Battery read skipped (debounce)');
-      return;
-    }
-    this._lastBatteryRead = now;
-
-    const currentBattery = this.getCapabilityValue('measure_battery');
-    this.log(`[SOS] 🔋 Current battery: ${currentBattery ?? '?'}% - reading while awake...`);
-
     try {
       const ep1 = this.zclNode?.endpoints?.[1];
       const powerCfg = ep1?.clusters?.powerConfiguration || ep1?.clusters?.genPowerCfg;
 
-      if (!powerCfg?.readAttributes) {
-        this.log('[SOS] ℹ️ No powerConfiguration cluster');
-        return;
-      }
+      if (!powerCfg?.readAttributes) return;
 
-      // Quick timeout (device goes back to sleep fast)
-      const readWithTimeout = async (attrs) => {
-        return Promise.race([
-          powerCfg.readAttributes(attrs),
-          new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 1500))
-        ]);
-      };
+      // Quick read with timeout (device goes back to sleep fast)
+      const result = await Promise.race([
+        powerCfg.readAttributes(['batteryPercentageRemaining']),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 2000))
+      ]).catch(() => ({}));
 
-      // Strategy 1: batteryPercentageRemaining (standard ZCL)
-      try {
-        const result = await readWithTimeout(['batteryPercentageRemaining']);
-        this.log('[SOS] 🔋 Read result:', JSON.stringify(result));
-
-        if (result?.batteryPercentageRemaining !== undefined &&
-          result.batteryPercentageRemaining !== 255 &&
-          result.batteryPercentageRemaining !== null) {
-          const percent = Math.round(result.batteryPercentageRemaining / 2);
-          if (percent >= 0 && percent <= 100) {
-            this.log(`[SOS] 🔋 Battery UPDATED: ${currentBattery ?? '?'}% → ${percent}%`);
-            await this.setCapabilityValue('measure_battery', percent).catch(() => { });
-            return;
-          }
-        }
-      } catch (e) {
-        this.log('[SOS] 🔋 batteryPercentageRemaining failed:', e.message);
-      }
-
-      // Strategy 2: batteryVoltage (fallback for devices that don't report %)
-      try {
-        const result = await readWithTimeout(['batteryVoltage']);
-        if (result?.batteryVoltage !== undefined && result.batteryVoltage > 0) {
-          // CR2032/CR2450: 3.0V = 100%, 2.0V = 0%
-          const voltage = result.batteryVoltage / 10;
-          const percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
-          this.log(`[SOS] 🔋 Battery (voltage ${voltage}V): ${currentBattery ?? '?'}% → ${percent}%`);
-          await this.setCapabilityValue('measure_battery', percent).catch(() => { });
-          return;
-        }
-      } catch (e) {
-        this.log('[SOS] 🔋 batteryVoltage failed:', e.message);
-      }
-
-      // Strategy 3: Read ALL power attributes
-      try {
-        const allAttrs = await readWithTimeout([
-          'batteryPercentageRemaining',
-          'batteryVoltage',
-          'batteryAlarmState',
-          'batterySize',
-          'batteryQuantity'
-        ]);
-        this.log('[SOS] 🔋 All power attrs:', JSON.stringify(allAttrs));
-
-        // Try percentage first
-        if (allAttrs?.batteryPercentageRemaining !== undefined &&
-          allAttrs.batteryPercentageRemaining !== 255) {
-          const percent = Math.round(allAttrs.batteryPercentageRemaining / 2);
-          if (percent >= 0 && percent <= 100) {
-            await this.setCapabilityValue('measure_battery', percent).catch(() => { });
-            this.log(`[SOS] 🔋 Battery set to ${percent}%`);
-            return;
-          }
-        }
-
-        // Try voltage
-        if (allAttrs?.batteryVoltage > 0) {
-          const voltage = allAttrs.batteryVoltage / 10;
-          const percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
-          await this.setCapabilityValue('measure_battery', percent).catch(() => { });
-          this.log(`[SOS] 🔋 Battery (from voltage) set to ${percent}%`);
-          return;
-        }
-
-        this.log('[SOS] 🔋 No valid battery value found in attributes');
-      } catch (e) {
-        this.log('[SOS] 🔋 All strategies failed - device sleeping');
+      if (result?.batteryPercentageRemaining !== undefined &&
+        result.batteryPercentageRemaining !== 255) {
+        const percent = Math.round(result.batteryPercentageRemaining / 2);
+        this.log(`[SOS] 🔋 Battery read: ${percent}%`);
+        await this.setCapabilityValue('measure_battery', percent).catch(() => { });
       }
     } catch (e) {
-      this.log(`[SOS] 🔋 Battery read error:`, e.message);
+      // Silent - device might have gone back to sleep
     }
   }
 
