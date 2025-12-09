@@ -87,7 +87,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       'measure_battery': 100,  // Assume full until first report
       'measure_temperature': null,
       'measure_humidity': null,
-      'alarm_battery': false,
+      // SDK3: alarm_battery obsolète - utiliser measure_battery avec seuil
     };
 
     for (const [capability, defaultValue] of Object.entries(defaults)) {
@@ -168,7 +168,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       // Battery (CONFIDENCE: 0 - Official)
       4: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 0 },
       10: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
-      14: { capability: 'alarm_battery', parser: v => !!v, confidence: 0 },
+      14: { capability: null, internal: 'battery_low', parser: v => !!v, confidence: 0 }, // SDK3: alarm_battery obsolète
       15: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 0 },
       101: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
       105: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },

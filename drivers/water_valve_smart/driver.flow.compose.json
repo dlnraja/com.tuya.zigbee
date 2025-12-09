@@ -47,20 +47,6 @@
       }
     },
     {
-      "id": "water_valve_smart_alarm_battery_true",
-      "title": {
-        "en": "Battery low",
-        "fr": "Batterie faible"
-      }
-    },
-    {
-      "id": "water_valve_smart_alarm_battery_false",
-      "title": {
-        "en": "Battery OK",
-        "fr": "Batterie OK"
-      }
-    },
-    {
       "id": "water_valve_smart_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
@@ -80,3 +66,4 @@
     }
   ]
 }
+

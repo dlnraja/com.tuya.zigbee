@@ -15,20 +15,6 @@
       }
     },
     {
-      "id": "gas_sensor_ts0601_alarm_battery_true",
-      "title": {
-        "en": "Battery low",
-        "fr": "Batterie faible"
-      }
-    },
-    {
-      "id": "gas_sensor_ts0601_alarm_battery_false",
-      "title": {
-        "en": "Battery OK",
-        "fr": "Batterie OK"
-      }
-    },
-    {
       "id": "gas_sensor_ts0601_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
@@ -48,3 +34,4 @@
     }
   ]
 }
+
