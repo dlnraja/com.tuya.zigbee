@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.135",
+  "version": "5.5.136",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -13532,7 +13532,11 @@
           "_TZ3000_fkp5zyho",
           "_TZ3000_imkwgfwh",
           "_TZE200_kzm5w4iz",
-          "_TZE200_0ble7ow3"
+          "_TZE200_0ble7ow3",
+          "_TZ3000_tj4pwzzm",
+          "_TZ3000_ssp0maqm",
+          "_TZ3000_u2bbagu4",
+          "_TYZB01_trqoesc6"
         ],
         "productId": [
           "TS0215A",
