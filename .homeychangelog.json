@@ -1,4 +1,7 @@
 {
+  "5.5.118": {
+    "en": "Smart battery for sleepy devices: Keep previous value, debounce reads, timeout prevents hang. SOS button improved."
+  },
   "5.5.117": {
     "en": "Removed zigbee_universal driver (not usable in manual pairing)."
   },
