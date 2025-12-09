@@ -4,6 +4,18 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.118] - 2025-12-09
+
+### 🔋 SMART BATTERY FOR SLEEPY DEVICES
+
+- **IMPROVED:** SOS button battery reading with smart debounce (max 1 read/minute)
+- **IMPROVED:** Keep previous battery value when device is sleeping (no reset to 0% or unknown)
+- **IMPROVED:** 2-second timeout prevents hanging on sleepy devices
+- **IMPROVED:** Clear logging: "Battery UPDATED: 85% → 82%" or "KEEPING previous value: 85%"
+- **PATTERN:** Read battery only when device is AWAKE (button press, motion, etc.)
+
+---
+
 ## [5.5.117] - 2025-12-09
 
 ### 🧹 CLEANUP
