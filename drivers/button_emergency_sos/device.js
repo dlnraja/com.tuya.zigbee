@@ -507,8 +507,64 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       this.log('[SOS] alarm_contact reset');
     }, 5000);
 
+    // v5.5.132: Configure battery reporting while device is awake (only once)
+    this._configureBatteryReportingOnWake();
+
     // Try to read battery while device is awake
     this._readBatteryNow();
+  }
+
+  /**
+   * v5.5.132: Configure battery binding and reporting while device is awake
+   * This MUST be done when device is awake (after button press) to succeed
+   */
+  async _configureBatteryReportingOnWake() {
+    // Only try once per session
+    if (this._batteryConfigured) return;
+
+    try {
+      const ep1 = this.zclNode?.endpoints?.[1];
+      const powerCfg = ep1?.clusters?.powerConfiguration || ep1?.clusters?.genPowerCfg;
+
+      if (!powerCfg) {
+        this.log('[SOS] 🔋 No powerConfiguration cluster for wake config');
+        return;
+      }
+
+      this.log('[SOS] 🔋 Device AWAKE - Configuring battery reporting...');
+
+      // Step 1: Bind cluster (required for reporting to work)
+      try {
+        await Promise.race([
+          powerCfg.bind(),
+          new Promise((_, reject) => setTimeout(() => reject(new Error('Bind timeout')), 3000))
+        ]);
+        this.log('[SOS] 🔋 ✅ powerConfiguration bound successfully!');
+      } catch (e) {
+        this.log('[SOS] 🔋 Bind failed:', e.message);
+      }
+
+      // Step 2: Configure reporting
+      try {
+        await Promise.race([
+          powerCfg.configureReporting({
+            batteryPercentageRemaining: {
+              minInterval: 3600,
+              maxInterval: 21600, // 6 hours
+              minChange: 2
+            }
+          }),
+          new Promise((_, reject) => setTimeout(() => reject(new Error('Report config timeout')), 3000))
+        ]);
+        this.log('[SOS] 🔋 ✅ Battery reporting configured!');
+        this._batteryConfigured = true;
+      } catch (e) {
+        this.log('[SOS] 🔋 Report config failed:', e.message);
+      }
+
+    } catch (e) {
+      this.log('[SOS] 🔋 Wake config error:', e.message);
+    }
   }
 
   /**
