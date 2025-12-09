@@ -1,4 +1,7 @@
 {
+  "5.5.116": {
+    "en": "Bug fix: Moes 2-gang dimmer (_TZE200_e3oitdyu) now correctly uses dimmer_dual_channel driver. Issue #88."
+  },
   "5.5.115": {
     "en": "Flow cards registered for ALL button drivers (1-8 gang). FlowCardHelper utility. Battery auto-read on wake."
   },
