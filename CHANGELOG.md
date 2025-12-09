@@ -4,6 +4,31 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.127] - 2025-12-09
+
+### 🔧 FIX: productId vs manufacturerName Rules
+
+**Rule violations fixed:**
+- `manufacturerName` = Tuya manufacturer IDs (`_TZ3000_*`, `_TZE200_*`, etc.)
+- `productId` = Product model IDs (`TS0601`, `TS011F`, etc.)
+
+**Drivers corrected:**
+| Driver | Issue | Fix |
+|--------|-------|-----|
+| thermostat_tuya_dp | `TS0011` in manufacturerName | → moved to productId |
+| plug_smart | `TS0111`, `TS0218` in manufacturerName | → moved to productId |
+| switch_1gang | 20+ `TS****` IDs in manufacturerName | → moved to productId |
+
+**Correct format:**
+```json
+{
+  "manufacturerName": ["_TZE200_xxx", "_TZ3000_xxx"],
+  "productId": ["TS0601", "TS011F"]
+}
+```
+
+---
+
 ## [5.5.126] - 2025-12-09
 
 ### 🔍 MASSIVE DATABASE ENRICHMENT - All Drivers Analyzed
