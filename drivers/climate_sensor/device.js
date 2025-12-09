@@ -6,26 +6,32 @@ const { UniversalTimeSync, setupTimeSync } = require('../../lib/tuya/UniversalTi
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║     CLIMATE SENSOR - v5.5.108 INTELLIGENT HYBRID TIME/DATA SYNC             ║
+ * ║     CLIMATE SENSOR - v5.5.124 UNIVERSAL TIME SYNC FIX                       ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
- * ║  INTELLIGENT PROTOCOL DETECTION:                                            ║
- * ║  - 15 min learning period to detect best protocol                           ║
- * ║  - Auto-switch between Tuya DP and ZCL based on actual data received        ║
- * ║  - Hybrid time sync: Tuya + ZCL Time cluster                                ║
+ * ║  🔥 v5.5.124 FIX: LISTEN FOR TIME REQUESTS FROM DEVICE                      ║
+ * ║  The Time cluster (0x000A) is an OUTPUT cluster = device ASKS for time      ║
+ * ║  We must LISTEN for time requests and RESPOND with current time             ║
  * ║                                                                              ║
- * ║  SUPPORTED MODELS:                                                          ║
- * ║  - _TZE284_vvmbj46n : TH05Z LCD climate monitor (Tuya DP + Time sync)       ║
- * ║  - _TZE200_vvmbj46n : ONENUO TH05Z (same protocol)                          ║
- * ║  - _TZE200_* / _TZE204_* : Standard Tuya climate sensors                    ║
- * ║  - TS0201 / _TZ3000_* : ZCL-only sensors (no time sync)                     ║
+ * ║  SUPPORTED PROTOCOLS:                                                        ║
+ * ║  ┌─────────────┬──────────────────────────────────────────────────────┐      ║
+ * ║  │ Type        │ Protocol                                             │      ║
+ * ║  ├─────────────┼──────────────────────────────────────────────────────┤      ║
+ * ║  │ _TZE200_*   │ Tuya DP + cmd 0x24 (timeRequest → timeResponse)      │      ║
+ * ║  │ _TZE284_*   │ Tuya DP + cmd 0x24 + LCD clock                       │      ║
+ * ║  │ _TZ3000_*   │ ZCL standard (0x0402, 0x0405, 0x0001)                │      ║
+ * ║  │ TS0201      │ ZCL standard (temperature, humidity, battery)        │      ║
+ * ║  └─────────────┴──────────────────────────────────────────────────────┘      ║
  * ║                                                                              ║
- * ║  TIME SYNC STRATEGY (3-phase):                                              ║
- * ║  1. Immediate sync at init                                                  ║
- * ║  2. Sync at 15 min (after learning period)                                  ║
- * ║  3. Hourly continuous sync                                                  ║
+ * ║  TIME SYNC STRATEGY:                                                         ║
+ * ║  1. Setup listener for device time requests (0x24)                           ║
+ * ║  2. Respond IMMEDIATELY when device asks for time                            ║
+ * ║  3. Also push time proactively every hour                                    ║
  * ║                                                                              ║
- * ║  Sources: Z2M, ZHA quirks, Homey Community                                  ║
+ * ║  DYNAMIC DISCOVERY:                                                          ║
+ * ║  - Unknown DPs logged and tracked                                            ║
+ * ║  - Capabilities auto-added when data received                                ║
+ * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 
@@ -325,6 +331,12 @@ class ClimateSensorDevice extends HybridSensorBase {
     };
 
     // ═══════════════════════════════════════════════════════════════════════
+    // ═══════════════════════════════════════════════════════════════════════
+    // v5.5.124: CRITICAL FIX - Setup TIME REQUEST LISTENER
+    // The device ASKS for time via cmd 0x24 - we must RESPOND!
+    // ═══════════════════════════════════════════════════════════════════════
+    await this._setupTimeRequestListener(zclNode);
+
     // v5.5.108: SETUP HYBRID TIME SYNC (PHASE 1 - IMMEDIATE)
     // Try both Tuya and ZCL methods at init
     // ═══════════════════════════════════════════════════════════════════════
@@ -357,6 +369,87 @@ class ClimateSensorDevice extends HybridSensorBase {
 
     this.log('[CLIMATE] 👀 Watching for temperature/humidity data (hybrid mode)...');
     this.log('[CLIMATE] ⚠️ BATTERY DEVICE - First data may take 10-60 minutes after pairing');
+  }
+
+  /**
+   * v5.5.124: CRITICAL - Listen for TIME REQUESTS from device
+   * The Time cluster (0x000A) is an OUTPUT cluster on the device
+   * This means the device ASKS for time, we don't push it
+   *
+   * Tuya devices use cmd 0x24 (timeRequest) on cluster 0xEF00
+   */
+  async _setupTimeRequestListener(zclNode) {
+    const ep1 = zclNode?.endpoints?.[1];
+    if (!ep1) return;
+
+    this.log('[CLIMATE] 🕐 Setting up TIME REQUEST listener...');
+
+    // Find Tuya cluster
+    const tuyaCluster = ep1.clusters?.tuya ||
+      ep1.clusters?.manuSpecificTuya ||
+      ep1.clusters?.[61184] ||
+      ep1.clusters?.['0xEF00'];
+
+    if (tuyaCluster && typeof tuyaCluster.on === 'function') {
+      // Listen for ALL commands and filter for time requests
+      tuyaCluster.on('command', async (cmd, payload) => {
+        this.log(`[CLIMATE] 📥 Tuya command received: 0x${cmd.toString(16)} (${cmd})`);
+
+        // Time request commands: 0x24 (36), 0x28 (40)
+        if (cmd === 0x24 || cmd === 36 || cmd === 0x28 || cmd === 40) {
+          this.log('[CLIMATE] ⏰ DEVICE ASKED FOR TIME! Responding immediately...');
+          await this._respondToTimeRequest(ep1);
+        }
+      });
+
+      // Also listen for specific time request method if available
+      if (typeof tuyaCluster.onTimeRequest === 'undefined') {
+        tuyaCluster.onTimeRequest = async () => {
+          this.log('[CLIMATE] ⏰ onTimeRequest triggered! Responding...');
+          await this._respondToTimeRequest(ep1);
+        };
+      }
+
+      // Listen for 'response' events too
+      tuyaCluster.on('response', async (status, transId, cmd) => {
+        if (cmd === 0x24 || cmd === 0x28) {
+          this.log('[CLIMATE] ⏰ Time request via response event! Responding...');
+          await this._respondToTimeRequest(ep1);
+        }
+      });
+
+      this.log('[CLIMATE] ✅ Time request listener configured');
+    } else {
+      this.log('[CLIMATE] ⚠️ Tuya cluster not found or .on() not available');
+    }
+  }
+
+  /**
+   * v5.5.124: Respond to device time request
+   * Sends current time in Tuya format
+   */
+  async _respondToTimeRequest(endpoint) {
+    try {
+      const now = new Date();
+      const utcSeconds = Math.floor(now.getTime() / 1000);
+      const timezoneOffset = -now.getTimezoneOffset() * 60;
+      const localSeconds = utcSeconds + timezoneOffset;
+
+      this.log('[CLIMATE] 🕐 ════════════════════════════════════════════');
+      this.log(`[CLIMATE] 🕐 Responding to time request`);
+      this.log(`[CLIMATE] 🕐 Local: ${now.toLocaleString()}`);
+      this.log(`[CLIMATE] 🕐 UTC: ${utcSeconds}s`);
+      this.log(`[CLIMATE] 🕐 Local: ${localSeconds}s`);
+      this.log(`[CLIMATE] 🕐 TZ: GMT${timezoneOffset >= 0 ? '+' : ''}${timezoneOffset / 3600}`);
+
+      // Try all methods to send time response
+      await this._sendTuyaTimeSync(endpoint);
+
+      this.log('[CLIMATE] ✅ Time response sent!');
+      this.log('[CLIMATE] 🕐 ════════════════════════════════════════════');
+    } catch (e) {
+      this.log('[CLIMATE] ⚠️ Time response failed:', e.message);
+    }
   }
 
   /**
