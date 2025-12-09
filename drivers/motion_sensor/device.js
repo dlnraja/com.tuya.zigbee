@@ -106,12 +106,30 @@ class MotionSensorDevice extends HybridSensorBase {
       },
 
       // ═══════════════════════════════════════════════════════════════════
-      // SETTINGS (not capabilities)
+      // v5.5.130: SETTINGS from Zigbee2MQTT TS0601_motion_sensor
+      // https://www.zigbee2mqtt.io/devices/TS0601_motion_sensor.html
       // ═══════════════════════════════════════════════════════════════════
-      105: { capability: null }, // Sensitivity setting
-      106: { capability: null }, // Keep time setting
-      107: { capability: null }, // Calibration
-      108: { capability: null }, // Reporting interval
+      // O-Sensitivity (enum: sensitive, normal, cautious)
+      9: { capability: null, setting: 'o_sensitivity' },
+      // V-Sensitivity (enum: speed_priority, normal_priority, accuracy_priority)
+      10: { capability: null, setting: 'v_sensitivity' },
+      // LED status (ON/OFF)
+      13: { capability: null, setting: 'led_status' },
+      // Vacancy delay (0-1000 sec)
+      110: { capability: null, setting: 'vacancy_delay' },
+      // Light-on luminance prefer (0-10000)
+      111: { capability: null, setting: 'light_on_luminance_prefer' },
+      // Light-off luminance prefer (0-10000)
+      112: { capability: null, setting: 'light_off_luminance_prefer' },
+      // Mode (general_model, temporary_stay, basic_detection, sensor_test)
+      113: { capability: null, setting: 'mode' },
+      // Keep time / detection interval (seconds)
+      105: { capability: null, setting: 'keep_time' },
+      106: { capability: null, setting: 'detection_interval' },
+      107: { capability: null, setting: 'illuminance_calibration' },
+      108: { capability: null, setting: 'reporting_interval' },
+      // Tamper alarm
+      20: { capability: 'alarm_tamper', transform: (v) => v === 1 || v === true },
     };
   }
 

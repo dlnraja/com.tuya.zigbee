@@ -37,20 +37,6 @@
       ]
     },
     {
-      "id": "air_quality_comprehensive_comprehensive_air_monitor_alarm_battery_true",
-      "title": {
-        "en": "Battery low",
-        "fr": "Batterie faible"
-      }
-    },
-    {
-      "id": "air_quality_comprehensive_comprehensive_air_monitor_alarm_battery_false",
-      "title": {
-        "en": "Battery OK",
-        "fr": "Batterie OK"
-      }
-    },
-    {
       "id": "air_quality_comprehensive_comprehensive_air_monitor_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
@@ -70,3 +56,4 @@
     }
   ]
 }
+
