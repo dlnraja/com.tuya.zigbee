@@ -4,23 +4,25 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SOS EMERGENCY BUTTON - v5.5.121 IAS ACE FIX (commandEmergency)          ║
+ * ║      SOS EMERGENCY BUTTON - v5.5.122 UNIVERSAL (ZCL + Tuya DP)               ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
- * ║  Device: TS0215A _TZ3000_0dumfk2z                                            ║
+ * ║  SUPPORTED PROTOCOLS:                                                        ║
+ * ║  ┌─────────────┬──────────────┬────────────────────────────────┐             ║
+ * ║  │ Model       │ Protocol     │ Event                          │             ║
+ * ║  ├─────────────┼──────────────┼────────────────────────────────┤             ║
+ * ║  │ TS0215A     │ IAS ACE      │ commandEmergency (cluster 1281)│             ║
+ * ║  │ TS0218      │ IAS ACE      │ commandEmergency (cluster 1281)│             ║
+ * ║  │ TS0601      │ Tuya DP      │ DP1/DP14 = true (cluster EF00) │             ║
+ * ║  │ Any         │ IAS Zone     │ zoneStatusChange (cluster 1280)│             ║
+ * ║  │ Any         │ genOnOff     │ on/off/toggle (cluster 6)      │             ║
+ * ║  └─────────────┴──────────────┴────────────────────────────────┘             ║
  * ║                                                                              ║
- * ║  🔥 FIX v5.5.121: Le TS0215A utilise le cluster IAS ACE (1281)               ║
- * ║     et la commande "commandEmergency", PAS IAS Zone !                        ║
+ * ║  BATTERY:                                                                    ║
+ * ║  - ZCL: powerConfiguration cluster (1) - batteryPercentageRemaining          ║
+ * ║  - Tuya DP: DP4 or DP15 = battery percentage                                 ║
  * ║                                                                              ║
- * ║  Source: Zigbee2MQTT TS0215A_sos converter                                   ║
- * ║  - cluster: ssIasAce (1281)                                                  ║
- * ║  - message type: commandEmergency                                            ║
- * ║  - battery: powerConfiguration cluster (standard)                            ║
- * ║                                                                              ║
- * ║  Clusters:                                                                   ║
- * ║  - iasAce (1281): commandEmergency when button pressed                       ║
- * ║  - iasZone (1280): Fallback enrollment                                       ║
- * ║  - powerConfiguration (1): Battery percentage                                ║
+ * ║  Source: Tuya Developer Docs + Zigbee2MQTT converters                        ║
  * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
@@ -29,8 +31,8 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
     this.log('');
     this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║     SOS EMERGENCY BUTTON v5.5.121 - IAS ACE FIX              ║');
-    this.log('║   TS0215A - Uses commandEmergency on ssIasAce cluster        ║');
+    this.log('║     SOS EMERGENCY BUTTON v5.5.122 - UNIVERSAL                ║');
+    this.log('║   Supports: IAS ACE + IAS Zone + Tuya DP + genOnOff          ║');
     this.log('╚══════════════════════════════════════════════════════════════╝');
 
     this.zclNode = zclNode;
@@ -77,6 +79,9 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     // v5.5.112: Setup alternative clusters (some SOS use genOnOff or scenes)
     await this._setupAlternativeClusters();
 
+    // v5.5.122: Setup Tuya DP for TS0601 SOS buttons
+    await this._setupTuyaDP();
+
     // Setup battery via ZCL powerConfiguration (passive only)
     await this._setupBattery();
 
@@ -84,6 +89,95 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     this._setupHeartbeatMonitor();
 
     this.log('[SOS] ✅ Device ready - Press button to test');
+  }
+
+  /**
+   * v5.5.122: Setup Tuya DP for TS0601 SOS buttons
+   * Some SOS buttons use Tuya cluster (0xEF00) instead of IAS ACE
+   * DP mappings:
+   * - DP 1: Button press (bool) - most common
+   * - DP 14: SOS alarm (bool) - some variants
+   * - DP 4: Battery level (value 0-100)
+   * - DP 101: Battery (some variants)
+   */
+  async _setupTuyaDP() {
+    const ep1 = this.zclNode?.endpoints?.[1];
+    if (!ep1) return;
+
+    // Find Tuya cluster (different names in SDK)
+    const tuyaCluster = ep1.clusters?.tuya ||
+      ep1.clusters?.manuSpecificTuya ||
+      ep1.clusters?.['61184'] ||
+      ep1.clusters?.['0xEF00'];
+
+    if (!tuyaCluster) {
+      this.log('[SOS] Tuya cluster not found (normal for ZCL-only devices)');
+      return;
+    }
+
+    this.log('[SOS] ✅ Tuya cluster found! Setting up DP listeners...');
+
+    // Listen for Tuya datapoint reports
+    if (typeof tuyaCluster.on === 'function') {
+      // Method 1: datapoint event
+      tuyaCluster.on('datapoint', (dp, value, data) => {
+        this.log(`[SOS] 🔧 Tuya DP${dp} received:`, value, data);
+        this._handleTuyaDP(dp, value);
+      });
+
+      // Method 2: response event
+      tuyaCluster.on('response', (status, transId, dp, dataType, data) => {
+        this.log(`[SOS] 🔧 Tuya response DP${dp}:`, data);
+        this._handleTuyaDP(dp, data);
+      });
+
+      // Method 3: reporting event
+      tuyaCluster.on('reporting', (frame) => {
+        this.log('[SOS] 🔧 Tuya reporting:', JSON.stringify(frame));
+        if (frame?.data?.dp !== undefined) {
+          this._handleTuyaDP(frame.data.dp, frame.data.value);
+        }
+      });
+
+      this.log('[SOS] ✅ Tuya DP listeners registered');
+    }
+
+    // Also set onDataReport handler if available
+    if (typeof tuyaCluster.onDataReport === 'undefined') {
+      tuyaCluster.onDataReport = (data) => {
+        this.log('[SOS] 🔧 Tuya onDataReport:', JSON.stringify(data));
+        if (data?.dp !== undefined) {
+          this._handleTuyaDP(data.dp, data.value);
+        }
+      };
+    }
+  }
+
+  /**
+   * v5.5.122: Handle Tuya DP values
+   */
+  _handleTuyaDP(dp, value) {
+    this.log(`[SOS] Processing DP${dp}:`, value);
+
+    // SOS button press DPs
+    if (dp === 1 || dp === 14 || dp === 101) {
+      // Boolean true = button pressed
+      if (value === true || value === 1 || value === 'true') {
+        this.log('[SOS] 🆘🆘🆘 Tuya DP SOS detected!');
+        this._handleAlarm({ source: 'tuya-dp', dp, value });
+      }
+    }
+
+    // Battery DPs
+    if (dp === 4 || dp === 101 || dp === 15) {
+      const battery = typeof value === 'number' ? value : parseInt(value, 10);
+      if (battery >= 0 && battery <= 100) {
+        this.log(`[SOS] 🔋 Tuya DP battery: ${battery}%`);
+        if (this.hasCapability('measure_battery')) {
+          this.setCapabilityValue('measure_battery', battery).catch(() => { });
+        }
+      }
+    }
   }
 
   /**
