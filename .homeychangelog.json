@@ -1,4 +1,7 @@
 {
+  "5.5.117": {
+    "en": "Removed zigbee_universal driver (not usable in manual pairing)."
+  },
   "5.5.116": {
     "en": "Bug fix: Moes 2-gang dimmer (_TZE200_e3oitdyu) now correctly uses dimmer_dual_channel driver. Issue #88."
   },

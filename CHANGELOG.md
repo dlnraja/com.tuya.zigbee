@@ -4,6 +4,14 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.117] - 2025-12-09
+
+### 🧹 CLEANUP
+
+- **REMOVED:** `zigbee_universal` driver (not manually selectable in Homey pairing)
+
+---
+
 ## [5.5.116] - 2025-12-09
 
 ### 🐛 BUG FIX - WRONG DRIVER ASSIGNMENT (Issue #88)
