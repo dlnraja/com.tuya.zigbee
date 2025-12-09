@@ -1,4 +1,7 @@
 {
+  "5.5.136": {
+    "en": "🆘 SOS Button: Simplified battery handling (back to working v5.5.64 style) + added 4 new manufacturerNames (Woox R7052, TS0218 etc.) + fixed iasACE cluster name"
+  },
   "5.5.135": {
     "en": "🐛 FIX: Renamed alarm_motor to alarm_curtain_motor to avoid conflict with Homey v12.10+ standard capabilities."
   },
