@@ -4,6 +4,41 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.124] - 2025-12-09
+
+### 🕐 CLIMATE SENSOR TIME SYNC FIX - Listen for Time Requests
+
+**ROOT CAUSE:** The Time cluster (0x000A) is an **OUTPUT cluster** on the device!
+This means the device **ASKS for time**, it doesn't receive it passively.
+
+**FIX:** Added listener for time request commands (0x24, 0x28) from device:
+```
+Device wakes up → Sends cmd 0x24 (timeRequest) → We RESPOND with current time
+```
+
+**How it works now:**
+1. Setup listener for `command` events on Tuya cluster
+2. Detect time request commands (0x24, 0x28)
+3. Respond IMMEDIATELY with UTC + Local time
+4. Also push time proactively every hour (fallback)
+
+**Affected devices:**
+- `_TZE284_vvmbj46n` (TH05Z LCD clock)
+- `_TZE200_*` climate sensors
+- Any Tuya device with clock display
+
+**Example log when device asks for time:**
+```
+[CLIMATE] ⏰ DEVICE ASKED FOR TIME! Responding immediately...
+[CLIMATE] 🕐 Responding to time request
+[CLIMATE] 🕐 Local: 9/12/2025 06:30:00
+[CLIMATE] 🕐 UTC: 1733729400s
+[CLIMATE] 🕐 TZ: GMT+1
+[CLIMATE] ✅ Time response sent!
+```
+
+---
+
 ## [5.5.123] - 2025-12-09
 
 ### 🧠 PROTOCOL LEARNING - Auto-Detection After 15 Minutes
