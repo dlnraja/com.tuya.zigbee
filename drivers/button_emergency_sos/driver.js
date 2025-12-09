@@ -1,18 +1,24 @@
 'use strict';
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
+const { registerSOSFlowCards } = require('../../lib/FlowCardHelper');
 
+/**
+ * v5.5.114: SOS Emergency Button Driver with flow card registration
+ */
 class SosEmergencyButtonDriver extends ZigBeeDriver {
 
   async onInit() {
     this.log('SosEmergencyButtonDriver initializing...');
 
-    // v5.2.66: Use correct flow card ID from driver.flow.compose.json
+    // v5.5.114: Use helper for comprehensive flow card registration
+    registerSOSFlowCards(this);
+
+    // Keep reference for device.js
     try {
       this.sosButtonPressedTrigger = this.homey.flow.getDeviceTriggerCard('button_emergency_sos_pressed');
-      this.log('[FLOW] ✅ Registered: button_emergency_sos_pressed trigger');
     } catch (err) {
-      this.error('[FLOW] ❌ Failed to register flow card:', err.message);
+      // Silent - already registered by helper
     }
 
     this.log('SosEmergencyButtonDriver initialized');
