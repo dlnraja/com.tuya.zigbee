@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.130",
+  "version": "5.5.131",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -33252,18 +33252,6 @@
     }
   ],
   "capabilities": {
-    "alarm_gas": {
-      "type": "boolean",
-      "title": {
-        "en": "Gas Alarm",
-        "fr": "Alarme Gaz"
-      },
-      "getable": true,
-      "setable": false,
-      "insights": true,
-      "icon": "/assets/capabilities/gas.svg",
-      "uiComponent": "sensor"
-    },
     "alarm_motor": {
       "type": "boolean",
       "title": {
@@ -33274,113 +33262,6 @@
       "setable": false,
       "insights": true,
       "uiComponent": "sensor"
-    },
-    "alarm_vibration": {
-      "type": "boolean",
-      "title": {
-        "en": "Vibration Alarm",
-        "fr": "Alarme Vibration"
-      },
-      "getable": true,
-      "setable": false,
-      "insights": true,
-      "icon": "/assets/capabilities/vibration.svg",
-      "uiComponent": "sensor"
-    },
-    "fan_speed": {
-      "type": "enum",
-      "title": {
-        "en": "Fan Speed",
-        "fr": "Vitesse Ventilateur"
-      },
-      "values": [
-        {
-          "id": "auto",
-          "title": {
-            "en": "Auto",
-            "fr": "Auto"
-          }
-        },
-        {
-          "id": "low",
-          "title": {
-            "en": "Low",
-            "fr": "Bas"
-          }
-        },
-        {
-          "id": "medium",
-          "title": {
-            "en": "Medium",
-            "fr": "Moyen"
-          }
-        },
-        {
-          "id": "high",
-          "title": {
-            "en": "High",
-            "fr": "Haut"
-          }
-        }
-      ],
-      "getable": true,
-      "setable": true,
-      "uiComponent": "picker"
-    },
-    "lock_mode": {
-      "type": "enum",
-      "title": {
-        "en": "Lock Mode",
-        "fr": "Mode Verrou"
-      },
-      "values": [
-        {
-          "id": "normal",
-          "title": {
-            "en": "Normal",
-            "fr": "Normal"
-          }
-        },
-        {
-          "id": "privacy",
-          "title": {
-            "en": "Privacy",
-            "fr": "Privé"
-          }
-        },
-        {
-          "id": "passage",
-          "title": {
-            "en": "Passage",
-            "fr": "Passage"
-          }
-        }
-      ],
-      "getable": true,
-      "setable": true,
-      "uiComponent": "picker"
-    },
-    "measure_distance": {
-      "type": "number",
-      "title": {
-        "en": "Distance",
-        "fr": "Distance"
-      },
-      "units": {
-        "en": "cm",
-        "fr": "cm"
-      },
-      "insights": true,
-      "desc": {
-        "en": "The distance to the detected target in centimeters",
-        "fr": "La distance vers la cible détectée en centimètres"
-      },
-      "chartType": "spline",
-      "decimals": 0,
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "icon": "/assets/icons/distance.svg"
     },
     "measure_presence_time": {
       "type": "number",
@@ -33421,40 +33302,6 @@
       "uiComponent": "sensor",
       "min": 0,
       "max": 10000
-    },
-    "target_humidity": {
-      "type": "number",
-      "title": {
-        "en": "Target Humidity",
-        "fr": "Humidité Cible"
-      },
-      "units": {
-        "en": "%",
-        "fr": "%"
-      },
-      "getable": true,
-      "setable": true,
-      "min": 30,
-      "max": 80,
-      "step": 5,
-      "uiComponent": "slider"
-    },
-    "valve_position": {
-      "type": "number",
-      "title": {
-        "en": "Valve Position",
-        "fr": "Position Vanne"
-      },
-      "units": {
-        "en": "%",
-        "fr": "%"
-      },
-      "getable": true,
-      "setable": true,
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "uiComponent": "slider"
     }
   }
 }
