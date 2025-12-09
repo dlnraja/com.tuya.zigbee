@@ -375,10 +375,13 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
   }
 
   /**
-   * Handle alarm from IAS Zone
-   * v5.5.112: Enhanced with source tracking
+   * Handle alarm from IAS Zone/ACE
+   * v5.5.121: Enhanced with heartbeat update
    */
   _handleAlarm(payload) {
+    // v5.5.121: Update activity timestamp (heartbeat)
+    this._updateActivity();
+
     // Debounce
     const now = Date.now();
     if (this._lastTrigger && (now - this._lastTrigger) < 2000) {
@@ -389,6 +392,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
     this.log('[SOS] ════════════════════════════════════════');
     this.log('[SOS] 🆘 SOS BUTTON PRESSED!');
+    this.log('[SOS] Payload:', JSON.stringify(payload));
     this.log('[SOS] ════════════════════════════════════════');
 
     // v5.5.107: Device is AWAKE NOW - try enrollment if pending
@@ -623,7 +627,9 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
   }
 
   async onUninit() {
+    // Clean up timers
     if (this._resetTimeout) this.homey.clearTimeout(this._resetTimeout);
+    if (this._heartbeatInterval) this.homey.clearInterval(this._heartbeatInterval);
   }
 
   async onDeleted() {
