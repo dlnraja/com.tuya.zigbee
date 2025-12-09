@@ -1,14 +1,16 @@
 'use strict';
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
+const { registerButtonFlowCards } = require('../../lib/FlowCardHelper');
 
+/**
+ * v5.5.114: Button 1-Gang Driver with flow card registration
+ */
 class Button1GangDriver extends ZigBeeDriver {
 
   async onInit() {
     this.log('Button1GangDriver initialized');
-    
-    // Flow cards are automatically registered from driver.flow.compose.json in SDK3
-    // No manual registration needed
+    registerButtonFlowCards(this, 'button_wireless_1', 1);
   }
 }
 

@@ -4,6 +4,27 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.115] - 2025-12-09
+
+### 🔧 PROPAGATE IMPROVEMENTS TO ALL DRIVERS
+
+#### Flow Card Registration (ALL Buttons)
+- **NEW:** `FlowCardHelper.js` - Shared utility for flow card registration
+- **FIX:** `button_wireless` (1-gang) - Flow cards registered
+- **FIX:** `button_wireless_1` - Flow cards registered
+- **FIX:** `button_wireless_2` - Flow cards registered
+- **FIX:** `button_wireless_3` - Flow cards registered
+- **FIX:** `button_wireless_4` - Flow cards registered
+- **FIX:** `button_wireless_6` - Flow cards registered
+- **FIX:** `button_wireless_8` - Flow cards registered
+- **FIX:** `button_emergency_sos` - Using FlowCardHelper
+
+#### Battery Reading (Already in v5.5.111)
+- All sensors auto-read battery on wake via `HybridSensorBase.updateRadioActivity()`
+- All buttons auto-read battery after press via `ButtonDevice.triggerButtonPress()`
+
+---
+
 ## [5.5.114] - 2025-12-09
 
 ### 🔘 SMART BUTTON FLOW FIX (Cam's report #604)
