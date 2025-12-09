@@ -23,8 +23,6 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TS0111",
-      "TS0218",
       "_TYZB01_hlla45kx",
       "_TZ1800_akzvkzqq",
       "_TZ1800_ho6i0zk9",
@@ -77,6 +75,8 @@
       "eWeLink"
     ],
     "productId": [
+      "TS0111",
+      "TS0218",
       "A1Z",
       "A3Z",
       "A4Z",

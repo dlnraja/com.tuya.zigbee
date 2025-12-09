@@ -1,4 +1,7 @@
 {
+  "5.5.127": {
+    "en": "🔧 FIX: productId vs manufacturerName rules corrected. Moved misplaced TS**** IDs from manufacturerName to productId in thermostat, plug_smart, switch_1gang drivers."
+  },
   "5.5.126": {
     "en": "🔍 MASSIVE DATABASE ENRICHMENT: +68 new manufacturer IDs! air_quality_co2 (+16), thermostat (+17), gas_sensor (+14), air_quality (+11), SOS (+10). Sources: Zigbee2MQTT, Blakadder, ZHA, JohanBendz!"
   },
