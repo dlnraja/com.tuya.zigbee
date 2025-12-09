@@ -4,14 +4,7 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
-## [5.5.113] - 2025-12-09
-
-### 🆘 SOS BUTTON ENHANCED DETECTION (Peter's report #602)
-
-- **FIX:** Added alternative cluster listeners (genOnOff, scenes) for SOS buttons
-- **FIX:** Some SOS devices don't use IAS Zone - now detected via onOff commands
-- **FIX:** Added generic IAS Zone command listener for edge cases
-- **IMPROVED:** Enhanced logging to track which cluster triggers the alarm
+## [5.5.114] - 2025-12-09
 
 ### 🔘 SMART BUTTON FLOW FIX (Cam's report #604)
 
@@ -23,6 +16,17 @@ All notable changes to the Universal Tuya Zigbee app.
 - **FIX:** Remove incorrect temperature/humidity labels from simple PIR sensors
 - **FIX:** Dynamically add capabilities ONLY if ZCL clusters detected
 - **FIX:** Simple PIR sensors now show only motion, battery, luminance
+
+---
+
+## [5.5.113] - 2025-12-09
+
+### 🆘 SOS BUTTON ENHANCED DETECTION (Peter's report #602)
+
+- **FIX:** Added alternative cluster listeners (genOnOff, scenes) for SOS buttons
+- **FIX:** Some SOS devices don't use IAS Zone - now detected via onOff commands
+- **FIX:** Added generic IAS Zone command listener for edge cases
+- **IMPROVED:** Enhanced logging to track which cluster triggers the alarm
 
 ---
 
