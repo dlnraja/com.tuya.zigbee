@@ -1,4 +1,7 @@
 {
+  "5.5.131": {
+    "en": "🐛 CRASH FIX! Removed duplicate capability definitions (alarm_gas, alarm_vibration, fan_speed, lock_mode, measure_distance, target_humidity, valve_position) that conflicted with Homey SDK standards."
+  },
   "5.5.130": {
     "en": "🔋 SOS Button BATTERY FIX! Multiple listener methods + reporting config. FlowCards SDK3 compliant. alarm_battery removed (obsolete SDK3)."
   },
