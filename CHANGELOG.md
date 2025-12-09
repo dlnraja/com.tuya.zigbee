@@ -4,6 +4,16 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.116] - 2025-12-09
+
+### 🐛 BUG FIX - WRONG DRIVER ASSIGNMENT (Issue #88)
+
+- **FIX:** Moes 2-gang dimmer `_TZE200_e3oitdyu` was incorrectly assigned to `climate_sensor`
+- **FIX:** Moved fingerprint to correct driver `dimmer_dual_channel`
+- **ANALYZED:** 30+ PRs and Issues from JohanBendz/com.tuya.zigbee - most already supported!
+
+---
+
 ## [5.5.115] - 2025-12-09
 
 ### 🔧 PROPAGATE IMPROVEMENTS TO ALL DRIVERS
