@@ -38,11 +38,29 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE200_ywagc4rj",
+      "_TZE200_zl1kmjqx",
+      "_TZE200_7bztmfm1",
+      "_TZE200_81isopgh",
+      "_TZE200_9cxuhakf",
+      "_TZE200_a8sdabtg",
+      "_TZE200_azqp6ssj",
+      "_TZE200_b6wax7g0",
+      "_TZE200_c88teujp",
+      "_TZE200_ckud7u2l",
+      "_TZE200_cwbvmsar",
+      "_TZE200_m9skfctm",
+      "_TZE204_ywagc4rj",
+      "_TZE204_zl1kmjqx",
+      "_TZE204_a8sdabtg",
+      "_TZE284_sgabhwa6"
+    ],
     "productId": [
       "CO2M",
       "TS0601",
-      "ZG-204ZM"
+      "ZG-204ZM",
+      "TS0201"
     ],
     "endpoints": {
       "1": {

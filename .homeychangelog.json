@@ -1,4 +1,7 @@
 {
+  "5.5.126": {
+    "en": "🔍 MASSIVE DATABASE ENRICHMENT: +68 new manufacturer IDs! air_quality_co2 (+16), thermostat (+17), gas_sensor (+14), air_quality (+11), SOS (+10). Sources: Zigbee2MQTT, Blakadder, ZHA, JohanBendz!"
+  },
   "5.5.125": {
     "en": "📦 Database Enrichment: Added 10+ new SOS button manufacturer IDs from Zigbee2MQTT, Blakadder, ZHA. All drivers support Tuya DP + ZCL + 15-min learning!"
   },

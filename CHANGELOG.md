@@ -4,6 +4,37 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.126] - 2025-12-09
+
+### 🔍 MASSIVE DATABASE ENRICHMENT - All Drivers Analyzed
+
+**Drivers enriched from local databases (Zigbee2MQTT, Blakadder, ZHA, JohanBendz):**
+
+| Driver | Before | After | Change |
+|--------|--------|-------|--------|
+| air_quality_co2 | 0 | 16 | +16 IDs |
+| air_quality_comprehensive | 7 | 18 | +11 IDs |
+| thermostat_tuya_dp | 7 | 24 | +17 IDs |
+| gas_sensor | 1 | 15 | +14 IDs |
+| button_emergency_sos | 5 | 15 | +10 IDs |
+
+**Sources analyzed:**
+- `data/COMPLETE_DP_DATABASE.json`
+- `data/device-matrix.json`
+- `data/enrichment/z2m-tuya-parsed.json`
+- `data/COMPLETE_METADATA_DATABASE.json`
+
+**Drivers already well-enriched (no changes needed):**
+- contact_sensor (80+ IDs)
+- motion_sensor (90+ IDs)
+- plug_smart (50+ IDs)
+- radiator_valve (33 IDs)
+- smoke_detector_advanced (28 IDs)
+- water_leak_sensor (30+ IDs)
+- switch_1gang/2gang/3gang/4gang (50+ IDs each)
+
+---
+
 ## [5.5.125] - 2025-12-09
 
 ### 📦 DATABASE ENRICHMENT - More Manufacturer IDs
