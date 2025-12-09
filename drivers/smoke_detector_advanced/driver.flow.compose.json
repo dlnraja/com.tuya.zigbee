@@ -8,20 +8,6 @@
       }
     },
     {
-      "id": "smoke_detector_advanced_smart_smoke_detector_advanced_alarm_battery_true",
-      "title": {
-        "en": "Battery low",
-        "fr": "Batterie faible"
-      }
-    },
-    {
-      "id": "smoke_detector_advanced_smart_smoke_detector_advanced_alarm_battery_false",
-      "title": {
-        "en": "Battery OK",
-        "fr": "Batterie OK"
-      }
-    },
-    {
       "id": "smoke_detector_advanced_smart_smoke_detector_advanced_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
@@ -41,3 +27,4 @@
     }
   ]
 }
+
