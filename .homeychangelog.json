@@ -1,4 +1,7 @@
 {
+  "5.5.124": {
+    "en": "🕐 Climate Sensor TIME SYNC FIX: Now LISTENS for time requests from device and responds immediately. LCD clock should now sync!"
+  },
   "5.5.123": {
     "en": "🧠 Protocol Learning: After 15 minutes, shows discovered capabilities and which protocol (Tuya DP or ZCL) works best for each feature!"
   },
