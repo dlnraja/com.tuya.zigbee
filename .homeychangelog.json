@@ -1,4 +1,7 @@
 {
+  "5.5.120": {
+    "en": "SOS Button debug: Full traffic capture to diagnose missing button press events. Global listeners on ALL clusters."
+  },
   "5.5.119": {
     "en": "Dynamic capability addition! When DP/ZCL data arrives for missing capability, it's auto-added. All 6 base classes updated."
   },

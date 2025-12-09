@@ -26,11 +26,17 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
     this.log('');
     this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║         SOS EMERGENCY BUTTON v5.5.118 - SMART BATTERY          ║');
+    this.log('║         SOS EMERGENCY BUTTON v5.5.120 - FULL DEBUG           ║');
     this.log('║   TS0215A _TZ3000_0dumfk2z - IMPROVED BINDING                 ║');
     this.log('╚══════════════════════════════════════════════════════════════╝');
 
     this.zclNode = zclNode;
+
+    // v5.5.120: Debug - show ALL available endpoints and clusters
+    this._debugShowAllClusters();
+
+    // v5.5.120: Setup GLOBAL listener for ALL traffic
+    this._setupGlobalListeners();
 
     // Ensure capabilities
     await this._ensureCapabilities();
@@ -490,6 +496,89 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
   async onDeleted() {
     await this.onUninit();
+  }
+
+  /**
+   * v5.5.120: Debug - show ALL available endpoints and clusters
+   */
+  _debugShowAllClusters() {
+    this.log('[SOS-DEBUG] ═══════════════════════════════════════════════════');
+    this.log('[SOS-DEBUG] DEVICE CLUSTER MAP');
+    this.log('[SOS-DEBUG] ═══════════════════════════════════════════════════');
+
+    if (!this.zclNode?.endpoints) {
+      this.log('[SOS-DEBUG] ❌ No endpoints found!');
+      return;
+    }
+
+    for (const [epId, ep] of Object.entries(this.zclNode.endpoints)) {
+      this.log(`[SOS-DEBUG] Endpoint ${epId}:`);
+
+      if (!ep?.clusters) {
+        this.log(`[SOS-DEBUG]   (no clusters)`);
+        continue;
+      }
+
+      for (const [clusterName, cluster] of Object.entries(ep.clusters)) {
+        const hasOn = typeof cluster?.on === 'function';
+        const hasReadAttrs = typeof cluster?.readAttributes === 'function';
+        this.log(`[SOS-DEBUG]   - ${clusterName} (on: ${hasOn}, read: ${hasReadAttrs})`);
+      }
+    }
+    this.log('[SOS-DEBUG] ═══════════════════════════════════════════════════');
+  }
+
+  /**
+   * v5.5.120: Setup GLOBAL listeners to capture ALL traffic from device
+   */
+  _setupGlobalListeners() {
+    this.log('[SOS-DEBUG] Setting up GLOBAL listeners for ALL clusters...');
+
+    if (!this.zclNode?.endpoints) return;
+
+    for (const [epId, ep] of Object.entries(this.zclNode.endpoints)) {
+      if (!ep?.clusters) continue;
+
+      for (const [clusterName, cluster] of Object.entries(ep.clusters)) {
+        if (typeof cluster?.on !== 'function') continue;
+
+        // Listen for ALL events on this cluster
+        cluster.on('attr', (attrName, value) => {
+          this.log(`[SOS-GLOBAL] 📡 EP${epId}.${clusterName} ATTR: ${attrName} =`, value);
+          // Auto-trigger alarm for any activity
+          this._handleAlarm({ source: 'global-attr', cluster: clusterName, attr: attrName, value });
+        });
+
+        cluster.on('command', (cmd, payload) => {
+          this.log(`[SOS-GLOBAL] 📡 EP${epId}.${clusterName} CMD: ${cmd}`, JSON.stringify(payload));
+          this._handleAlarm({ source: 'global-cmd', cluster: clusterName, command: cmd, ...payload });
+        });
+
+        // Tuya cluster special handling
+        if (clusterName === 'tuya' || clusterName.includes('EF00') || clusterName.includes('61184')) {
+          this.log(`[SOS-DEBUG] 🔧 Tuya cluster found on EP${epId}!`);
+
+          cluster.on('response', (cmd, data, payload) => {
+            this.log(`[SOS-GLOBAL] 📡 Tuya response:`, cmd, data, payload);
+            this._handleAlarm({ source: 'tuya', command: cmd, data, payload });
+          });
+
+          cluster.on('reporting', (data) => {
+            this.log(`[SOS-GLOBAL] 📡 Tuya reporting:`, JSON.stringify(data));
+            this._handleAlarm({ source: 'tuya-report', ...data });
+          });
+
+          cluster.on('datapoint', (dp, value) => {
+            this.log(`[SOS-GLOBAL] 📡 Tuya DP${dp}:`, value);
+            this._handleAlarm({ source: 'tuya-dp', dp, value });
+          });
+        }
+
+        this.log(`[SOS-DEBUG] ✅ Global listeners on EP${epId}.${clusterName}`);
+      }
+    }
+
+    this.log('[SOS-DEBUG] Global listeners setup complete');
   }
 }
 
