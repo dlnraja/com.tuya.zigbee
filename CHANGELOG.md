@@ -4,6 +4,20 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.120] - 2025-12-09
+
+### 🔍 SOS BUTTON DEBUG - Full Traffic Capture
+
+- **DEBUG:** Show ALL endpoints and clusters at startup
+- **DEBUG:** Global listeners capture ALL ZCL traffic (attr + command)
+- **DEBUG:** Special Tuya cluster listeners (response, reporting, datapoint)
+- **DEBUG:** Auto-trigger alarm on ANY activity from device
+- **LOGGING:** Full cluster map with capabilities shown
+
+This version helps diagnose why SOS button may not trigger events.
+
+---
+
 ## [5.5.119] - 2025-12-09
 
 ### ✨ DYNAMIC CAPABILITY ADDITION - ALL BASE CLASSES
