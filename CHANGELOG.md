@@ -4,6 +4,27 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.111] - 2025-12-09
+
+### 🔘 BUTTON FLOW CARDS + BATTERY FIX
+
+#### Flow Triggers (Generic)
+- **NEW:** `button_pressed` - Generic flow trigger for all button devices
+- **NEW:** `button_double_press` - Generic double-press trigger
+- **NEW:** `button_long_press` - Generic long-press trigger
+- **NEW:** `sos_button_pressed` - Generic SOS button trigger
+
+#### Motion Sensor Battery
+- **FIX:** Read battery when device wakes up (after motion detection)
+- **FIX:** Battery reading with timeout protection for sleepy devices
+- **FIX:** Fallback to voltage-based estimation when percentage unavailable
+
+#### SOS Emergency Button
+- **FIX:** Trigger both driver-specific AND generic flow cards
+- **IMPROVED:** Enhanced logging for flow card triggers
+
+---
+
 ## [5.5.110] - 2025-12-08
 
 ### 🕐 _TZE284_vvmbj46n TIME SYNC FIX
