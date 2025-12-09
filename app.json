@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.110",
+  "version": "5.5.111",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -61,6 +61,99 @@
   },
   "flow": {
     "triggers": [
+      {
+        "id": "button_double_press",
+        "title": {
+          "en": "A button is double-pressed",
+          "fr": "Un bouton est double-cliqué",
+          "nl": "Een knop is dubbel ingedrukt",
+          "de": "Eine Taste wurde doppelt gedrückt"
+        },
+        "hint": {
+          "en": "This Flow will start when any button is double-pressed",
+          "fr": "Ce Flow démarrera quand un bouton est double-cliqué"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless|button_wireless_1|button_wireless_2|button_wireless_3|button_wireless_4|button_wireless_6|button_wireless_8|switch_wireless|scene_switch_1|scene_switch_2|scene_switch_3|scene_switch_4|scene_switch_6"
+          }
+        ]
+      },
+      {
+        "id": "button_long_press",
+        "title": {
+          "en": "A button is long-pressed",
+          "fr": "Un bouton est pressé longtemps",
+          "nl": "Een knop is lang ingedrukt",
+          "de": "Eine Taste wurde lange gedrückt"
+        },
+        "hint": {
+          "en": "This Flow will start when any button is long-pressed",
+          "fr": "Ce Flow démarrera quand un bouton est pressé longtemps"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless|button_wireless_1|button_wireless_2|button_wireless_3|button_wireless_4|button_wireless_6|button_wireless_8|switch_wireless|scene_switch_1|scene_switch_2|scene_switch_3|scene_switch_4|scene_switch_6"
+          }
+        ]
+      },
+      {
+        "id": "button_pressed",
+        "title": {
+          "en": "A button is pressed",
+          "fr": "Un bouton est appuyé",
+          "nl": "Een knop is ingedrukt",
+          "de": "Eine Taste wurde gedrückt"
+        },
+        "hint": {
+          "en": "This Flow will start when any button is pressed",
+          "fr": "Ce Flow démarrera quand un bouton est appuyé"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless|button_wireless_1|button_wireless_2|button_wireless_3|button_wireless_4|button_wireless_6|button_wireless_8|switch_wireless|scene_switch_1|scene_switch_2|scene_switch_3|scene_switch_4|scene_switch_6"
+          }
+        ]
+      },
       {
         "id": "device_offline",
         "title": {
@@ -368,6 +461,26 @@
               "en": "Installed version",
               "fr": "Version installée"
             }
+          }
+        ]
+      },
+      {
+        "id": "sos_button_pressed",
+        "title": {
+          "en": "SOS button is pressed",
+          "fr": "Bouton SOS appuyé",
+          "nl": "SOS-knop ingedrukt",
+          "de": "SOS-Taste gedrückt"
+        },
+        "hint": {
+          "en": "This Flow will start when the SOS emergency button is pressed",
+          "fr": "Ce Flow démarrera quand le bouton SOS d'urgence est appuyé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_emergency_sos"
           }
         ]
       },
@@ -13176,6 +13289,41 @@
         }
       },
       "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "🔧 Maintenance",
+            "fr": "🔧 Maintenance"
+          },
+          "children": [
+            {
+              "id": "refresh_battery",
+              "type": "checkbox",
+              "label": {
+                "en": "Force Battery Read (toggle to trigger)",
+                "fr": "Forcer Lecture Batterie (basculer pour déclencher)"
+              },
+              "value": false,
+              "hint": {
+                "en": "Toggle this setting to force a battery reading. The device must be awake (press SOS button first).",
+                "fr": "Basculer ce paramètre pour forcer une lecture de batterie. L'appareil doit être éveillé (appuyez d'abord sur le bouton SOS)."
+              }
+            },
+            {
+              "id": "re_enroll",
+              "type": "checkbox",
+              "label": {
+                "en": "Re-enroll IAS Zone (toggle to trigger)",
+                "fr": "Ré-inscrire IAS Zone (basculer pour déclencher)"
+              },
+              "value": false,
+              "hint": {
+                "en": "Toggle this setting to re-enroll the device. Press SOS button first to wake device.",
+                "fr": "Basculer ce paramètre pour ré-inscrire l'appareil. Appuyez d'abord sur le bouton SOS pour réveiller l'appareil."
+              }
+            }
+          ]
+        },
         {
           "id": "power_source",
           "type": "dropdown",

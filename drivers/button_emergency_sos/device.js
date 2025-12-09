@@ -223,19 +223,38 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
   }
 
   /**
-   * Trigger flow card
+   * v5.5.111: Trigger flow cards - both driver-specific AND generic
    */
   _triggerFlow() {
+    this.log('[SOS] 📢 Triggering flow cards...');
+
     // Driver-level trigger
     if (this.driver?.sosButtonPressedTrigger) {
       this.driver.sosButtonPressedTrigger.trigger(this, {}, {}).catch(() => { });
+      this.log('[SOS] ✅ Driver trigger fired');
     }
 
-    // Direct flow card
+    // Direct flow card - driver specific
     try {
       const card = this.homey.flow.getDeviceTriggerCard('button_emergency_sos_pressed');
-      if (card) card.trigger(this, {}, {}).catch(() => { });
-    } catch (e) { }
+      if (card) {
+        card.trigger(this, {}, {}).catch(() => { });
+        this.log('[SOS] ✅ button_emergency_sos_pressed triggered');
+      }
+    } catch (e) {
+      this.log('[SOS] ⚠️ button_emergency_sos_pressed failed:', e.message);
+    }
+
+    // v5.5.111: Also trigger generic sos_button_pressed
+    try {
+      const genericCard = this.homey.flow.getDeviceTriggerCard('sos_button_pressed');
+      if (genericCard) {
+        genericCard.trigger(this, {}, {}).catch(() => { });
+        this.log('[SOS] ✅ sos_button_pressed (generic) triggered');
+      }
+    } catch (e) {
+      this.log('[SOS] ⚠️ sos_button_pressed failed:', e.message);
+    }
   }
 
   /**
