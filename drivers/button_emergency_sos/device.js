@@ -234,8 +234,11 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     }
 
     // Try multiple cluster names (Homey SDK uses different names)
-    const iasAce = ep1.clusters?.iasAce ||
+    // v5.5.134: FIX - iasACE has uppercase C!
+    const iasAce = ep1.clusters?.iasACE ||
+      ep1.clusters?.iasAce ||
       ep1.clusters?.ssIasAce ||
+      ep1.clusters?.['iasACE'] ||
       ep1.clusters?.['iasAce'] ||
       ep1.clusters?.['ssIasAce'];
 
