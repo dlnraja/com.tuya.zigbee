@@ -61,10 +61,73 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     // Setup IAS Zone for button press (additional listeners)
     await this._setupIasZone();
 
+    // v5.5.112: Setup alternative clusters (some SOS use genOnOff or scenes)
+    await this._setupAlternativeClusters();
+
     // Setup battery via ZCL powerConfiguration (passive only)
     await this._setupBattery();
 
     this.log('[SOS] ✅ Device ready - Press button to test');
+  }
+
+  /**
+   * v5.5.112: Setup alternative clusters for SOS buttons that don't use IAS Zone
+   * Some devices use genOnOff, scenes, or even Tuya cluster
+   */
+  async _setupAlternativeClusters() {
+    const ep1 = this.zclNode?.endpoints?.[1];
+    if (!ep1) return;
+
+    // Method A: genOnOff cluster (some SOS buttons use this)
+    const onOffCluster = ep1.clusters?.onOff || ep1.clusters?.genOnOff;
+    if (onOffCluster) {
+      this.log('[SOS] 📡 Setting up genOnOff listener...');
+
+      if (typeof onOffCluster.on === 'function') {
+        onOffCluster.on('command', (cmd, payload) => {
+          this.log('[SOS] 🆘 genOnOff command:', cmd, payload);
+          this._handleAlarm({ source: 'onOff', command: cmd });
+        });
+      }
+
+      // Also listen for toggle/on/off commands
+      ['on', 'off', 'toggle'].forEach(cmd => {
+        const handler = onOffCluster[`on${cmd.charAt(0).toUpperCase() + cmd.slice(1)}`];
+        if (typeof handler === 'function') {
+          onOffCluster[`on${cmd.charAt(0).toUpperCase() + cmd.slice(1)}`] = () => {
+            this.log(`[SOS] 🆘 genOnOff.${cmd} received`);
+            this._handleAlarm({ source: 'onOff', command: cmd });
+          };
+        }
+      });
+
+      this.log('[SOS] ✅ genOnOff listeners configured');
+    }
+
+    // Method B: Scenes cluster (some Tuya buttons use scenes.recall)
+    const scenesCluster = ep1.clusters?.scenes || ep1.clusters?.genScenes;
+    if (scenesCluster) {
+      this.log('[SOS] 📡 Setting up scenes listener...');
+
+      if (typeof scenesCluster.on === 'function') {
+        scenesCluster.on('command', (cmd, payload) => {
+          this.log('[SOS] 🆘 Scenes command:', cmd, payload);
+          if (cmd === 'recall' || cmd === 'recallScene') {
+            this._handleAlarm({ source: 'scenes', sceneId: payload?.sceneId });
+          }
+        });
+      }
+
+      this.log('[SOS] ✅ Scenes listeners configured');
+    }
+
+    // Method C: Basic cluster attribute changes
+    const basicCluster = ep1.clusters?.basic || ep1.clusters?.genBasic;
+    if (basicCluster && typeof basicCluster.on === 'function') {
+      basicCluster.on('attr', (attr, value) => {
+        this.log('[SOS] Basic attr change:', attr, value);
+      });
+    }
   }
 
   async _ensureCapabilities() {
@@ -162,11 +225,20 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       this._handleAlarm({ zoneStatus: status });
     };
 
+    // v5.5.112: Listen for ANY command on IAS Zone cluster
+    if (typeof iasZone.on === 'function') {
+      iasZone.on('command', (cmd, payload) => {
+        this.log('[SOS] 🆘 IAS Zone command:', cmd, JSON.stringify(payload));
+        this._handleAlarm({ source: 'iasCommand', command: cmd, ...payload });
+      });
+    }
+
     this.log('[SOS] ✅ IAS Zone listeners registered');
   }
 
   /**
    * Handle alarm from IAS Zone
+   * v5.5.112: Enhanced with source tracking
    */
   _handleAlarm(payload) {
     // Debounce
