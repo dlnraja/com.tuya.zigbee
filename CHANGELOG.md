@@ -4,6 +4,29 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.122] - 2025-12-09
+
+### 🎯 SOS BUTTON UNIVERSAL - All Protocols Supported
+
+Now supports ALL SOS button variants:
+
+| Model | Protocol | Cluster | Event |
+|-------|----------|---------|-------|
+| **TS0215A** | IAS ACE | 1281 | `commandEmergency` |
+| **TS0218** | IAS ACE | 1281 | `commandEmergency` |
+| **TS0601** | Tuya DP | 61184 | DP1/DP14 = true |
+| **Any** | IAS Zone | 1280 | `zoneStatusChange` |
+| **Any** | genOnOff | 6 | on/off/toggle |
+
+**Tuya DP mappings added:**
+- DP 1: Button press (most common)
+- DP 14: SOS alarm (some variants)
+- DP 4/15: Battery percentage
+
+**Source:** Tuya Developer Docs + Zigbee2MQTT converters
+
+---
+
 ## [5.5.121] - 2025-12-09
 
 ### 🔥 SOS BUTTON FIX - IAS ACE Cluster (commandEmergency)
