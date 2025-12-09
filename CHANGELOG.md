@@ -29,6 +29,9 @@ All notable changes to the Universal Tuya Zigbee app.
 - **FIX:** Trigger both driver-specific AND generic flow cards
 - **IMPROVED:** Enhanced logging for flow card triggers
 
+#### New Device Support
+- **NEW:** BSEED 2-gang touch switch `_TZ3000_cauq1okq` (TS0002) → switch_2gang
+
 ---
 
 ## [5.5.110] - 2025-12-08
