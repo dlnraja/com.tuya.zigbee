@@ -14,10 +14,16 @@ All notable changes to the Universal Tuya Zigbee app.
 - **NEW:** `button_long_press` - Generic long-press trigger
 - **NEW:** `sos_button_pressed` - Generic SOS button trigger
 
-#### Motion Sensor Battery
-- **FIX:** Read battery when device wakes up (after motion detection)
-- **FIX:** Battery reading with timeout protection for sleepy devices
+#### Universal Battery Fix (ALL Sensors)
+- **FIX:** Automatic battery read when ANY sensor wakes up (HybridSensorBase)
+- **FIX:** Battery reading in `updateRadioActivity()` with 5-min debounce
+- **FIX:** Timeout protection (3s) for sleepy devices
 - **FIX:** Fallback to voltage-based estimation when percentage unavailable
+
+#### Button Battery Fix (ALL Buttons)
+- **FIX:** Read battery after button press (device is awake)
+- **FIX:** 1-minute debounce to avoid spamming
+- **FIX:** Works for wireless buttons, scene switches, SOS buttons
 
 #### SOS Emergency Button
 - **FIX:** Trigger both driver-specific AND generic flow cards
