@@ -4,6 +4,14 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.112] - 2025-12-09
+
+### 📱 NEW DEVICE SUPPORT
+
+- **NEW:** BSEED 2-gang touch switch `_TZ3000_cauq1okq` (TS0002) → switch_2gang
+
+---
+
 ## [5.5.111] - 2025-12-09
 
 ### 🔘 BUTTON FLOW CARDS + BATTERY FIX
@@ -28,9 +36,6 @@ All notable changes to the Universal Tuya Zigbee app.
 #### SOS Emergency Button
 - **FIX:** Trigger both driver-specific AND generic flow cards
 - **IMPROVED:** Enhanced logging for flow card triggers
-
-#### New Device Support
-- **NEW:** BSEED 2-gang touch switch `_TZ3000_cauq1okq` (TS0002) → switch_2gang
 
 ---
 
