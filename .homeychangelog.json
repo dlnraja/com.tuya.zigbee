@@ -1,4 +1,7 @@
 {
+  "5.5.114": {
+    "en": "Smart button flow fix. Motion sensor: Remove incorrect labels (temp/humidity only if detected). Cam's report #604."
+  },
   "5.5.113": {
     "en": "SOS button detection fix. Smart button flow fix. Motion sensor: Remove incorrect labels (temp/humidity only if detected)."
   },
