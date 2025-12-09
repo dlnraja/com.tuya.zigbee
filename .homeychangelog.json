@@ -1,4 +1,7 @@
 {
+  "5.5.125": {
+    "en": "📦 Database Enrichment: Added 10+ new SOS button manufacturer IDs from Zigbee2MQTT, Blakadder, ZHA. All drivers support Tuya DP + ZCL + 15-min learning!"
+  },
   "5.5.124": {
     "en": "🕐 Climate Sensor TIME SYNC FIX: Now LISTENS for time requests from device and responds immediately. LCD clock should now sync!"
   },

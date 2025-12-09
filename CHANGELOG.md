@@ -4,6 +4,30 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.125] - 2025-12-09
+
+### 📦 DATABASE ENRICHMENT - More Manufacturer IDs
+
+**SOS Button (button_emergency_sos):**
+- Added 10 new manufacturer IDs from COMPLETE_DP_DATABASE
+- Added TS0218, TS0601 product IDs
+- Total: 15 manufacturer IDs supported
+
+**Sources used:**
+- Zigbee2MQTT converters
+- Blakadder database
+- ZHA quirks
+- JohanBendz repository
+- Forum reports
+
+**All drivers now support:**
+- Tuya DP protocol (cluster 0xEF00)
+- ZCL standard clusters
+- 15-minute dynamic learning
+- Auto-capability discovery
+
+---
+
 ## [5.5.124] - 2025-12-09
 
 ### 🕐 CLIMATE SENSOR TIME SYNC FIX - Listen for Time Requests
