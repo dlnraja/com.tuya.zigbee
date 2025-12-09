@@ -400,6 +400,61 @@ class MotionSensorDevice extends HybridSensorBase {
 
     // Also try to configure reporting for future passive updates
     this._configureReportingOnce(ep1);
+
+    // v5.5.111: Also read battery while awake!
+    await this._readBatteryWhileAwake(zclNode);
+  }
+
+  /**
+   * v5.5.111: Read battery while device is awake (after motion detection)
+   * Sleepy devices don't respond to queries when sleeping!
+   */
+  async _readBatteryWhileAwake(zclNode) {
+    const ep1 = zclNode?.endpoints?.[1];
+    if (!ep1) return;
+
+    const clusters = ep1.clusters || {};
+
+    // Find power configuration cluster
+    const powerCluster =
+      clusters.powerConfiguration ||
+      clusters.genPowerCfg ||
+      clusters[0x0001] ||
+      clusters['0x0001'] ||
+      clusters['1'];
+
+    if (!powerCluster?.readAttributes) {
+      this.log('[MOTION-BATTERY] No powerConfiguration cluster');
+      return;
+    }
+
+    try {
+      this.log('[MOTION-BATTERY] 🔋 Reading battery while device is awake...');
+      const data = await Promise.race([
+        powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 3000))
+      ]);
+
+      if (data?.batteryPercentageRemaining !== undefined && data.batteryPercentageRemaining !== 255) {
+        const battery = Math.round(data.batteryPercentageRemaining / 2);
+        this.log(`[MOTION-BATTERY] 🔋 Battery: ${battery}% (raw: ${data.batteryPercentageRemaining})`);
+        if (this.hasCapability('measure_battery')) {
+          await this.setCapabilityValue('measure_battery', battery).catch(() => { });
+        }
+      } else if (data?.batteryVoltage !== undefined && data.batteryVoltage > 0) {
+        // Fallback: estimate from voltage (typical CR2450: 3.0V = 100%, 2.0V = 0%)
+        const voltage = data.batteryVoltage / 10;
+        const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
+        this.log(`[MOTION-BATTERY] 🔋 Battery from voltage: ${voltage}V → ${battery}%`);
+        if (this.hasCapability('measure_battery')) {
+          await this.setCapabilityValue('measure_battery', battery).catch(() => { });
+        }
+      } else {
+        this.log('[MOTION-BATTERY] Battery data invalid:', data);
+      }
+    } catch (e) {
+      this.log('[MOTION-BATTERY] Battery read failed (device may have gone to sleep):', e.message);
+    }
   }
 
   /**
