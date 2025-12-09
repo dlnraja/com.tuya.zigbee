@@ -1,4 +1,7 @@
 {
+  "5.5.134": {
+    "en": "🐛 SOS BUTTON FIX: Fixed iasACE cluster name (uppercase C). Button press should now trigger alarm_contact!"
+  },
   "5.5.133": {
     "en": "🐛 FIX: Renamed alarm_motor to alarm_motor_stall to avoid conflict with Homey v12.10+ standard capability."
   },
