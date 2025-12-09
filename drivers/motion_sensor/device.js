@@ -24,20 +24,16 @@ class MotionSensorDevice extends HybridSensorBase {
   get mainsPowered() { return false; }
 
   /**
-   * v5.5.107: ALWAYS include temp/humidity for 4-in-1 multisensors
-   * These sensors send data via Tuya DP, not ZCL clusters!
-   * If a device doesn't have temp/humidity, the DPs just won't be received.
+   * v5.5.113: Only include CORE capabilities by default
+   * Temperature and humidity are added dynamically if clusters are detected
+   * This fixes the "incorrect labels" issue (Cam's report #604)
    */
   get sensorCapabilities() {
-    // v5.5.107: Include ALL capabilities for 4-in-1 multisensors
-    // The dpMappings define temp/humidity DPs, so we MUST include these capabilities
-    // Otherwise Tuya DP data is silently ignored!
+    // Core capabilities only - temp/humidity added dynamically if detected
     return [
       'alarm_motion',
       'measure_battery',
       'measure_luminance',
-      'measure_temperature',  // v5.5.107: Always include for 4-in-1 sensors
-      'measure_humidity',     // v5.5.107: Always include for 4-in-1 sensors
     ];
   }
 
@@ -188,8 +184,9 @@ class MotionSensorDevice extends HybridSensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // v5.5.107: Detect available clusters BEFORE super.onNodeInit
-    this._detectAvailableClusters(zclNode);
+    // v5.5.113: Detect available clusters BEFORE super.onNodeInit
+    // This adds temp/humidity capabilities only if clusters exist
+    await this._detectAvailableClusters(zclNode);
 
     await super.onNodeInit({ zclNode });
 
@@ -202,11 +199,11 @@ class MotionSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.107: Cluster detection for ZCL active reading
-   * Note: Capabilities are ALWAYS included (see sensorCapabilities)
-   * because data often comes via Tuya DP, not ZCL!
+   * v5.5.113: Cluster detection AND dynamic capability addition
+   * Only add temp/humidity capabilities if device actually has these clusters
+   * Fixes "incorrect labels" issue (Cam's report #604)
    */
-  _detectAvailableClusters(zclNode) {
+  async _detectAvailableClusters(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
     const clusters = ep1?.clusters || {};
     const clusterNames = Object.keys(clusters);
@@ -234,9 +231,24 @@ class MotionSensorDevice extends HybridSensorBase {
       clusters['1029']
     );
 
+    // v5.5.113: DYNAMICALLY add capabilities ONLY if clusters detected
+    // This prevents "incorrect labels" for simple PIR motion sensors
+    if (this._hasTemperatureCluster) {
+      if (!this.hasCapability('measure_temperature')) {
+        await this.addCapability('measure_temperature').catch(() => { });
+        this.log('[MOTION-CLUSTERS] ✅ Added measure_temperature (cluster detected)');
+      }
+    }
+
+    if (this._hasHumidityCluster) {
+      if (!this.hasCapability('measure_humidity')) {
+        await this.addCapability('measure_humidity').catch(() => { });
+        this.log('[MOTION-CLUSTERS] ✅ Added measure_humidity (cluster detected)');
+      }
+    }
+
     this.log(`[MOTION-CLUSTERS] Temperature ZCL: ${this._hasTemperatureCluster}`);
     this.log(`[MOTION-CLUSTERS] Humidity ZCL: ${this._hasHumidityCluster}`);
-    this.log(`[MOTION-CLUSTERS] Note: Data also received via Tuya DP (always enabled)`);
   }
 
   /**

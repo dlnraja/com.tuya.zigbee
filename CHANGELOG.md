@@ -13,6 +13,17 @@ All notable changes to the Universal Tuya Zigbee app.
 - **FIX:** Added generic IAS Zone command listener for edge cases
 - **IMPROVED:** Enhanced logging to track which cluster triggers the alarm
 
+### 🔘 SMART BUTTON FLOW FIX (Cam's report #604)
+
+- **FIX:** Register flow cards in `button_wireless` driver to fix GUI test button error
+- **FIX:** Register both driver-specific and generic flow triggers
+
+### 📡 MOTION SENSOR LABELS FIX (Cam's report #604)
+
+- **FIX:** Remove incorrect temperature/humidity labels from simple PIR sensors
+- **FIX:** Dynamically add capabilities ONLY if ZCL clusters detected
+- **FIX:** Simple PIR sensors now show only motion, battery, luminance
+
 ---
 
 ## [5.5.112] - 2025-12-09
