@@ -4,6 +4,42 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.123] - 2025-12-09
+
+### 🧠 PROTOCOL LEARNING - Auto-Detection After 15 Minutes
+
+Enhanced `ProtocolAutoOptimizer` for ALL drivers:
+
+**How it works:**
+1. Device pairs → Both Tuya DP AND ZCL listeners active
+2. 15 minutes of learning → Tracks which protocol sends data
+3. Report generated → Shows discovered capabilities and best protocol
+4. Mode applied → Optimized for the device's actual protocol
+
+**New features:**
+- **Capability Discovery:** Tracks which capabilities are discovered from data
+- **Protocol per Capability:** Knows if temp comes from DP2 or ZCL cluster
+- **Learning Report:** Detailed 15-minute summary in logs
+- **Event `learning_complete`:** Emitted with all discovered features
+
+**Example log after 15 minutes:**
+```
+╔══════════════════════════════════════════════════════════════╗
+║      ⚡ PROTOCOL LEARNING COMPLETE - 15 MINUTE REPORT        ║
+╚══════════════════════════════════════════════════════════════╝
+
+📊 PROTOCOL STATISTICS:
+   Tuya DP hits: 24 (DPs: 1,2,4)
+   ZCL hits: 8 (clusters: temperatureMeasurement,relativeHumidity)
+
+🎯 DISCOVERED CAPABILITIES:
+   ✅ measure_temperature → tuya (12 hits) [tuya:2, zcl:temperatureMeasurement]
+   ✅ measure_humidity → tuya (8 hits) [tuya:1]
+   ✅ measure_battery → zcl (4 hits) [zcl:powerConfiguration]
+```
+
+---
+
 ## [5.5.122] - 2025-12-09
 
 ### 🎯 SOS BUTTON UNIVERSAL - All Protocols Supported
