@@ -4,6 +4,28 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.119] - 2025-12-09
+
+### ✨ DYNAMIC CAPABILITY ADDITION - ALL BASE CLASSES
+
+Propagated innovations to ALL base classes:
+
+#### Dynamic Capability Addition
+When DP/ZCL data is received for a capability the device doesn't have, it's now automatically added!
+- **HybridSensorBase** - temp, humidity, battery, luminance, pressure, CO2, PM2.5, VOC, alarms
+- **HybridPlugBase** - power, voltage, current, energy
+- **HybridCoverBase** - position, tilt, state
+- **HybridLightBase** - dim, color temp, hue, saturation
+- **HybridThermostatBase** - target temp, mode, humidity
+- **HybridSwitchBase** - onoff per gang, power monitoring
+
+#### Smart Battery (improved)
+- Clear logging: `Battery UPDATED: 85% → 82%` or `KEEPING: 85%`
+- 5-minute debounce on wake events
+- 2-second timeout prevents hanging
+
+---
+
 ## [5.5.118] - 2025-12-09
 
 ### 🔋 SMART BATTERY FOR SLEEPY DEVICES
