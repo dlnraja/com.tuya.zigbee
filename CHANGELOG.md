@@ -4,6 +4,17 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.113] - 2025-12-09
+
+### 🆘 SOS BUTTON ENHANCED DETECTION (Peter's report #602)
+
+- **FIX:** Added alternative cluster listeners (genOnOff, scenes) for SOS buttons
+- **FIX:** Some SOS devices don't use IAS Zone - now detected via onOff commands
+- **FIX:** Added generic IAS Zone command listener for edge cases
+- **IMPROVED:** Enhanced logging to track which cluster triggers the alarm
+
+---
+
 ## [5.5.112] - 2025-12-09
 
 ### 📱 NEW DEVICE SUPPORT
