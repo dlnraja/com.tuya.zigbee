@@ -1,4 +1,7 @@
 {
+  "5.5.119": {
+    "en": "Dynamic capability addition! When DP/ZCL data arrives for missing capability, it's auto-added. All 6 base classes updated."
+  },
   "5.5.118": {
     "en": "Smart battery for sleepy devices: Keep previous value, debounce reads, timeout prevents hang. SOS button improved."
   },
