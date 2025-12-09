@@ -4,20 +4,23 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║            SOS EMERGENCY BUTTON - v5.5.107 ENHANCED IAS ZONE                 ║
+ * ║      SOS EMERGENCY BUTTON - v5.5.121 IAS ACE FIX (commandEmergency)          ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  Device: TS0215A _TZ3000_0dumfk2z                                            ║
- * ║  Protocol: IAS Zone ONLY (NO Tuya DP - this is NOT a TS0601!)                ║
+ * ║                                                                              ║
+ * ║  🔥 FIX v5.5.121: Le TS0215A utilise le cluster IAS ACE (1281)               ║
+ * ║     et la commande "commandEmergency", PAS IAS Zone !                        ║
+ * ║                                                                              ║
+ * ║  Source: Zigbee2MQTT TS0215A_sos converter                                   ║
+ * ║  - cluster: ssIasAce (1281)                                                  ║
+ * ║  - message type: commandEmergency                                            ║
+ * ║  - battery: powerConfiguration cluster (standard)                            ║
  * ║                                                                              ║
  * ║  Clusters:                                                                   ║
- * ║  - iasZone: Button press detection (zoneStatusChangeNotification)            ║
- * ║  - powerConfiguration: Battery percentage (ZCL standard)                     ║
- * ║                                                                              ║
- * ║  v5.5.102: BATTERY FIX                                                       ║
- * ║  - Enhanced battery reading with multiple retry strategies                   ║
- * ║  - Better error handling for sleepy devices                                  ║
- * ║  - Added batteryVoltage fallback                                             ║
+ * ║  - iasAce (1281): commandEmergency when button pressed                       ║
+ * ║  - iasZone (1280): Fallback enrollment                                       ║
+ * ║  - powerConfiguration (1): Battery percentage                                ║
  * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
@@ -26,8 +29,8 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
     this.log('');
     this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║         SOS EMERGENCY BUTTON v5.5.120 - FULL DEBUG           ║');
-    this.log('║   TS0215A _TZ3000_0dumfk2z - IMPROVED BINDING                 ║');
+    this.log('║     SOS EMERGENCY BUTTON v5.5.121 - IAS ACE FIX              ║');
+    this.log('║   TS0215A - Uses commandEmergency on ssIasAce cluster        ║');
     this.log('╚══════════════════════════════════════════════════════════════╝');
 
     this.zclNode = zclNode;
@@ -40,6 +43,10 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
     // Ensure capabilities
     await this._ensureCapabilities();
+
+    // v5.5.121: Setup IAS ACE cluster - THIS IS THE MAIN FIX!
+    // The TS0215A sends commandEmergency on ssIasAce (cluster 1281), NOT iasZone!
+    await this._setupIasAce();
 
     // Initialize alarm_contact to false
     if (this.hasCapability('alarm_contact')) {
@@ -73,7 +80,132 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     // Setup battery via ZCL powerConfiguration (passive only)
     await this._setupBattery();
 
+    // v5.5.121: Setup heartbeat monitoring - detect "dead" device
+    this._setupHeartbeatMonitor();
+
     this.log('[SOS] ✅ Device ready - Press button to test');
+  }
+
+  /**
+   * v5.5.121: Monitor device heartbeat - warn if device seems dead
+   */
+  _setupHeartbeatMonitor() {
+    // Track last activity
+    this._lastActivity = Date.now();
+
+    // Check every hour if device is still alive
+    this._heartbeatInterval = this.homey.setInterval(() => {
+      const hoursSinceActivity = (Date.now() - this._lastActivity) / (1000 * 60 * 60);
+
+      if (hoursSinceActivity > 24) {
+        this.log('[SOS] ⚠️ WARNING: Device has not communicated for', Math.round(hoursSinceActivity), 'hours!');
+        this.log('[SOS] ⚠️ Device may need to be re-paired or battery is dead');
+
+        // Set unavailable after 48 hours of no communication
+        if (hoursSinceActivity > 48 && this.getAvailable()) {
+          this.setUnavailable('Device not responding - please re-pair or check battery')
+            .catch(() => { });
+        }
+      } else {
+        this.log('[SOS] ❤️ Heartbeat OK - last activity:', Math.round(hoursSinceActivity), 'hours ago');
+      }
+    }, 60 * 60 * 1000); // Every hour
+
+    this.log('[SOS] ✅ Heartbeat monitor started');
+  }
+
+  /**
+   * v5.5.121: Update last activity timestamp
+   */
+  _updateActivity() {
+    this._lastActivity = Date.now();
+
+    // If device was unavailable, make it available again
+    if (!this.getAvailable()) {
+      this.setAvailable().catch(() => { });
+      this.log('[SOS] ✅ Device is now available again');
+    }
+  }
+
+  /**
+   * v5.5.121: Setup IAS ACE cluster - THE MAIN FIX!
+   * The TS0215A sends commandEmergency on ssIasAce (cluster 1281), NOT iasZone!
+   * Source: Zigbee2MQTT TS0215A_sos converter
+   */
+  async _setupIasAce() {
+    const ep1 = this.zclNode?.endpoints?.[1];
+    if (!ep1) {
+      this.error('[SOS] ❌ No endpoint 1 found!');
+      return;
+    }
+
+    // Try multiple cluster names (Homey SDK uses different names)
+    const iasAce = ep1.clusters?.iasAce ||
+      ep1.clusters?.ssIasAce ||
+      ep1.clusters?.['iasAce'] ||
+      ep1.clusters?.['ssIasAce'];
+
+    if (iasAce) {
+      this.log('[SOS] ✅ IAS ACE cluster found! Setting up commandEmergency listener...');
+
+      // Method 1: onEmergency handler
+      if (typeof iasAce.onEmergency === 'undefined') {
+        iasAce.onEmergency = () => {
+          this.log('[SOS] 🆘🆘🆘 commandEmergency received via onEmergency!');
+          this._handleAlarm({ source: 'iasAce-onEmergency' });
+        };
+        this.log('[SOS] ✅ onEmergency handler registered');
+      }
+
+      // Method 2: Command event listener
+      if (typeof iasAce.on === 'function') {
+        iasAce.on('command', (cmd, payload) => {
+          this.log('[SOS] 🆘 IAS ACE command received:', cmd, JSON.stringify(payload));
+          if (cmd === 'emergency' || cmd === 'commandEmergency' || cmd === 'Emergency') {
+            this.log('[SOS] 🆘🆘🆘 EMERGENCY command detected!');
+            this._handleAlarm({ source: 'iasAce-command', command: cmd });
+          }
+        });
+        this.log('[SOS] ✅ IAS ACE command listener registered');
+      }
+
+      // Method 3: Specific emergency event
+      if (typeof iasAce.on === 'function') {
+        iasAce.on('emergency', (payload) => {
+          this.log('[SOS] 🆘🆘🆘 emergency event received!', payload);
+          this._handleAlarm({ source: 'iasAce-event' });
+        });
+      }
+
+      // Bind the cluster
+      try {
+        await iasAce.bind();
+        this.log('[SOS] ✅ IAS ACE cluster bound');
+      } catch (e) {
+        this.log('[SOS] IAS ACE bind (normal if already bound):', e.message);
+      }
+
+    } else {
+      this.log('[SOS] ⚠️ IAS ACE cluster NOT found on endpoint 1');
+      this.log('[SOS] ⚠️ Available clusters:', Object.keys(ep1.clusters || {}));
+    }
+
+    // Also try endpoint 2 (some devices use different endpoints)
+    const ep2 = this.zclNode?.endpoints?.[2];
+    if (ep2) {
+      const iasAce2 = ep2.clusters?.iasAce || ep2.clusters?.ssIasAce;
+      if (iasAce2) {
+        this.log('[SOS] ✅ IAS ACE cluster also found on endpoint 2!');
+        if (typeof iasAce2.on === 'function') {
+          iasAce2.on('command', (cmd, payload) => {
+            this.log('[SOS] 🆘 IAS ACE EP2 command:', cmd);
+            if (cmd === 'emergency' || cmd === 'commandEmergency') {
+              this._handleAlarm({ source: 'iasAce-ep2' });
+            }
+          });
+        }
+      }
+    }
   }
 
   /**
