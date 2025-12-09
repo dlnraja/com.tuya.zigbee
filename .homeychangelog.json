@@ -1,4 +1,7 @@
 {
+  "5.5.132": {
+    "en": "🔋 SOS Button battery FIX v2: Configure binding+reporting when device is AWAKE (button press). Battery should now appear after pressing button!"
+  },
   "5.5.131": {
     "en": "🐛 CRASH FIX! Removed duplicate capability definitions (alarm_gas, alarm_vibration, fan_speed, lock_mode, measure_distance, target_humidity, valve_position) that conflicted with Homey SDK standards."
   },
