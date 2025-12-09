@@ -1,4 +1,7 @@
 {
+  "5.5.121": {
+    "en": "🔥 SOS Button FIX! Uses IAS ACE cluster (commandEmergency) instead of IAS Zone. Re-pair device after update!"
+  },
   "5.5.120": {
     "en": "SOS Button debug: Full traffic capture to diagnose missing button press events. Global listeners on ALL clusters."
   },

@@ -4,6 +4,27 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.121] - 2025-12-09
+
+### 🔥 SOS BUTTON FIX - IAS ACE Cluster (commandEmergency)
+
+**ROOT CAUSE FOUND:** The TS0215A uses `ssIasAce` cluster (1281), NOT `iasZone` (1280)!
+
+- **FIX:** Added listener for `commandEmergency` on IAS ACE cluster
+- **Source:** Zigbee2MQTT TS0215A_sos converter analysis
+- **Cluster:** ssIasAce (1281) with `commandEmergency` event
+- **Bindings:** Added cluster 1281 to driver config
+- **Heartbeat:** Device availability monitoring (marks unavailable after 48h silence)
+
+**How it works now:**
+```
+Button pressed → commandEmergency on ssIasAce (1281) → alarm_contact = true
+```
+
+**User action required:** Re-pair the SOS button after updating to v5.5.121
+
+---
+
 ## [5.5.120] - 2025-12-09
 
 ### 🔍 SOS BUTTON DEBUG - Full Traffic Capture
