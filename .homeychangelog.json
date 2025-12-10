@@ -1,4 +1,7 @@
 {
+  "5.5.143": {
+    "en": "🔌 ZCL DEVICE PROFILES: Context-aware IAS Zone (0x0500) mapping. Same cluster now correctly mapped: motion for PIR, contact for door, water for leak, smoke for detector, gas, CO, vibration, SOS. 50+ manufacturerNames supported!"
+  },
   "5.5.142": {
     "en": "🧠 DEVICE PROFILES: Context-aware DP mapping by manufacturerName > driverType > universal fallback. Same DP now correctly mapped based on device type (e.g., DP1=motion for PIR, DP1=contact for door sensor, DP106=lux for ZG-204ZM but humidity for siren)."
   },
