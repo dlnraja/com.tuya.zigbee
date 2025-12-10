@@ -89,11 +89,15 @@ class MotionSensorRadarDevice extends HybridSensorBase {
       103: { capability: 'measure_luminance', divisor: 1 },        // Alt illuminance
       104: { capability: null, setting: 'fading_time' },           // Fading time (s)
       105: { capability: null, setting: 'detection_delay' },       // Detection delay (s)
-      106: { capability: null, setting: 'self_test' },             // Self test result
+
+      // v5.5.139: ZG-204ZM - DP106 = illuminance (NOT self_test!)
+      // Source: https://github.com/Koenkk/zigbee2mqtt/issues/21919
+      106: { capability: 'measure_luminance', divisor: 1 },        // ZG-204ZM illuminance (lux)
 
       // v5.5.26: Additional settings from Z2M HOBEIAN_RADAR profile
       107: { capability: null, setting: 'indicator' },             // LED indicator on/off
-      108: { capability: null, setting: 'illuminance_interval' },  // Lux report interval (min)
+      108: { capability: null, setting: 'small_detection_distance' }, // v5.5.139: ZG-204ZM
+      109: { capability: null, setting: 'small_detection_sensitivity' }, // v5.5.139: ZG-204ZM
     };
   }
 

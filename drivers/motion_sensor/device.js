@@ -107,7 +107,33 @@ class MotionSensorDevice extends HybridSensorBase {
       },
 
       // ═══════════════════════════════════════════════════════════════════
-      // v5.5.130: SETTINGS from Zigbee2MQTT TS0601_motion_sensor
+      // v5.5.139: ZG-204ZM RADAR SENSOR DPs (24GHz mmWave)
+      // Source: https://github.com/Koenkk/zigbee2mqtt/issues/21919
+      // ═══════════════════════════════════════════════════════════════════
+      // DP1 = presence (also mapped above as alarm_motion)
+      // DP2 = large_motion_detection_sensitivity (0-10)
+      // DP4 = large_motion_detection_distance (/100 = meters) - also battery above
+
+      // DP101 = motion_state (0=none, 1=large, 2=medium, 3=small)
+      // 101 already mapped to alarm_motion above
+
+      // DP102 = fading_time (presence keep time in seconds)
+      // 102 already mapped to measure_luminance above for Fantem
+
+      // DP104 = medium_motion_detection_distance (/100 = meters)
+      // 104 already mapped to measure_humidity for some sensors
+
+      // DP107 = LED indicator (on/off)
+      107: { capability: null, setting: 'led_indicator' },
+
+      // DP108 = small_detection_distance (/100 = meters)
+      108: { capability: null, setting: 'small_detection_distance' },
+
+      // DP109 = small_detection_sensitivity (0-10)
+      109: { capability: null, setting: 'small_detection_sensitivity' },
+
+      // ═══════════════════════════════════════════════════════════════════
+      // v5.5.130: SETTINGS from Zigbee2MQTT TS0601_motion_sensor (PIR)
       // https://www.zigbee2mqtt.io/devices/TS0601_motion_sensor.html
       // ═══════════════════════════════════════════════════════════════════
       // O-Sensitivity (enum: sensitive, normal, cautious)
@@ -124,11 +150,9 @@ class MotionSensorDevice extends HybridSensorBase {
       112: { capability: null, setting: 'light_off_luminance_prefer' },
       // Mode (general_model, temporary_stay, basic_detection, sensor_test)
       113: { capability: null, setting: 'mode' },
-      // Keep time / detection interval (seconds)
+      // Keep time (seconds)
       105: { capability: null, setting: 'keep_time' },
-      106: { capability: null, setting: 'detection_interval' },
-      107: { capability: null, setting: 'illuminance_calibration' },
-      108: { capability: null, setting: 'reporting_interval' },
+
       // Tamper alarm
       20: { capability: 'alarm_tamper', transform: (v) => v === 1 || v === true },
     };
