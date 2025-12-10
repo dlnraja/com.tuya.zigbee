@@ -64,6 +64,7 @@ class MotionSensorDevice extends HybridSensorBase {
       9: { capability: 'measure_luminance', divisor: 1 },
       12: { capability: 'measure_luminance', divisor: 1 },
       102: { capability: 'measure_luminance', divisor: 1 },  // Fantem lux
+      106: { capability: 'measure_luminance', divisor: 1 },  // ZG-204ZM radar (v5.5.138)
 
       // ═══════════════════════════════════════════════════════════════════
       // v5.5.107: TEMPERATURE (for 4-in-1 multisensors) - with validation
