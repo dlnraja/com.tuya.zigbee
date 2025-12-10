@@ -4,7 +4,7 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SOS EMERGENCY BUTTON - v5.5.136 UNIVERSAL (ZCL + Tuya DP)               ║
+ * ║      SOS EMERGENCY BUTTON - v5.5.137 UNIVERSAL (ZCL + Tuya DP)               ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  SUPPORTED PROTOCOLS:                                                        ║
@@ -31,7 +31,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
     this.log('');
     this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║     SOS EMERGENCY BUTTON v5.5.136 - UNIVERSAL                ║');
+    this.log('║     SOS EMERGENCY BUTTON v5.5.137 - UNIVERSAL                ║');
     this.log('║   Supports: IAS ACE + IAS Zone + Tuya DP + genOnOff          ║');
     this.log('╚══════════════════════════════════════════════════════════════╝');
 
@@ -510,8 +510,9 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       this.log('[SOS] alarm_contact reset');
     }, 5000);
 
-    // Try to read battery while device is awake
-    this._readBatteryNow();
+    // v5.5.137: Configure reporting AND read battery while device is awake
+    // This is crucial - the device will go back to sleep in ~2 seconds!
+    this._configureAndReadBattery();
   }
 
   /**
@@ -570,10 +571,9 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
   /**
    * Setup battery via ZCL powerConfiguration
-   * v5.5.136: SIMPLIFIED - Back to working v5.5.64 approach
-   * NO registerCapability (causes expected_cluster_id_number error)
-   * NO bind/configureReporting (causes timeouts on sleepy devices)
-   * ONLY passive listeners that work!
+   * v5.5.137: ENHANCED - Multiple listener methods for 4-hour heartbeat capture
+   * Tuya docs: Device reports battery every 4 hours via heartbeat
+   * NO registerCapability/bind/configureReporting (causes errors on sleepy devices)
    */
   async _setupBattery() {
     const ep1 = this.zclNode?.endpoints?.[1];
@@ -584,61 +584,127 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       return;
     }
 
-    this.log('[SOS] 🔋 Setting up battery listeners (passive only)...');
+    this.log('[SOS] 🔋 Setting up battery listeners (Tuya 4h heartbeat)...');
 
-    // v5.5.136: Simple passive listener - THIS IS WHAT WORKED IN v5.5.64!
+    // Helper to update battery
+    const updateBattery = (value, source) => {
+      if (value === undefined || value === null || value === 255 || value === 0xff) return false;
+      const percent = Math.round(value / 2);
+      if (percent < 0 || percent > 100) return false;
+      this.log(`[SOS] 🔋 Battery ${source}: ${percent}%`);
+      this.setCapabilityValue('measure_battery', percent).catch(() => { });
+      this._updateActivity();
+      return true;
+    };
+
+    // Helper to update from voltage
+    const updateBatteryFromVoltage = (value, source) => {
+      if (value === undefined || value === null || value === 0) return false;
+      const voltage = value / 10;
+      if (voltage < 1.5 || voltage > 4.5) return false;
+      const percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
+      this.log(`[SOS] 🔋 Battery ${source} (${voltage}V): ${percent}%`);
+      this.setCapabilityValue('measure_battery', percent).catch(() => { });
+      this._updateActivity();
+      return true;
+    };
+
+    // METHOD 1: Standard attr.* events (SDK default)
     if (typeof powerCfg.on === 'function') {
-      // batteryPercentageRemaining (ZCL standard: 0-200 = 0-100%)
-      powerCfg.on('attr.batteryPercentageRemaining', (value) => {
-        if (value === undefined || value === null || value === 255) return;
-        const percent = Math.round(value / 2);
-        this.log(`[SOS] 🔋 Battery: ${percent}%`);
-        this.setCapabilityValue('measure_battery', percent).catch(() => { });
-        this._updateActivity();
-      });
-
-      // batteryVoltage fallback (some devices only report voltage)
-      powerCfg.on('attr.batteryVoltage', (value) => {
-        if (value === undefined || value === null || value === 0) return;
-        // CR2032/CR2450: 3.0V = 100%, 2.0V = 0%
-        const voltage = value / 10;
-        const percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
-        this.log(`[SOS] 🔋 Battery (voltage ${voltage}V): ${percent}%`);
-        this.setCapabilityValue('measure_battery', percent).catch(() => { });
-        this._updateActivity();
-      });
-
-      this.log('[SOS] ✅ Battery listeners registered (passive)');
+      powerCfg.on('attr.batteryPercentageRemaining', (v) => updateBattery(v, 'attr.%'));
+      powerCfg.on('attr.batteryVoltage', (v) => updateBatteryFromVoltage(v, 'attr.V'));
+      this.log('[SOS] ✅ Method 1: attr.* listeners');
     }
 
-    // NO polling, NO binding, NO configureReporting - device is sleepy and will timeout!
+    // METHOD 2: Report event (for 4-hour heartbeat)
+    if (typeof powerCfg.on === 'function') {
+      powerCfg.on('report', (attrs) => {
+        this.log('[SOS] 🔋 powerCfg REPORT received:', JSON.stringify(attrs));
+        if (attrs?.batteryPercentageRemaining !== undefined) {
+          updateBattery(attrs.batteryPercentageRemaining, 'report.%');
+        }
+        if (attrs?.batteryVoltage !== undefined) {
+          updateBatteryFromVoltage(attrs.batteryVoltage, 'report.V');
+        }
+      });
+      this.log('[SOS] ✅ Method 2: report listener (heartbeat)');
+    }
+
+    // METHOD 3: attributeReport callback (Homey specific)
+    if (powerCfg.onAttributeReport === undefined) {
+      powerCfg.onAttributeReport = (attrs) => {
+        this.log('[SOS] 🔋 powerCfg attributeReport:', JSON.stringify(attrs));
+        if (attrs?.batteryPercentageRemaining !== undefined) {
+          updateBattery(attrs.batteryPercentageRemaining, 'attrReport.%');
+        }
+        if (attrs?.batteryVoltage !== undefined) {
+          updateBatteryFromVoltage(attrs.batteryVoltage, 'attrReport.V');
+        }
+      };
+      this.log('[SOS] ✅ Method 3: onAttributeReport callback');
+    }
+
+    // METHOD 4: Generic 'attr' event with attribute name
+    if (typeof powerCfg.on === 'function') {
+      powerCfg.on('attr', (name, value) => {
+        this.log(`[SOS] 🔋 powerCfg attr: ${name} = ${value}`);
+        if (name === 'batteryPercentageRemaining') updateBattery(value, 'attr.*');
+        if (name === 'batteryVoltage') updateBatteryFromVoltage(value, 'attr.*');
+      });
+      this.log('[SOS] ✅ Method 4: generic attr listener');
+    }
+
+    this.log('[SOS] ✅ All battery listeners ready (waiting for 4h heartbeat or button press)');
   }
 
   /**
-   * v5.5.136: Simplified battery reading (back to v5.5.64 style)
-   * Try to read battery when device is awake (after button press)
+   * v5.5.137: Enhanced battery reading when device is awake
+   * Try multiple attributes with quick timeout (device sleeps fast)
    */
   async _readBatteryNow() {
     try {
       const ep1 = this.zclNode?.endpoints?.[1];
       const powerCfg = ep1?.clusters?.powerConfiguration || ep1?.clusters?.genPowerCfg;
 
-      if (!powerCfg?.readAttributes) return;
+      if (!powerCfg?.readAttributes) {
+        this.log('[SOS] 🔋 No readAttributes on powerCfg');
+        return;
+      }
 
-      // Quick read with timeout (device goes back to sleep fast)
+      this.log('[SOS] 🔋 Reading battery while device is awake...');
+
+      // Quick read with short timeout (device goes back to sleep in ~2s)
       const result = await Promise.race([
-        powerCfg.readAttributes(['batteryPercentageRemaining']),
-        new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 2000))
-      ]).catch(() => ({}));
+        powerCfg.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 1500))
+      ]).catch((e) => {
+        this.log('[SOS] 🔋 Read timeout (device sleeping):', e.message);
+        return {};
+      });
 
+      this.log('[SOS] 🔋 Read result:', JSON.stringify(result));
+
+      // Try percentage first
       if (result?.batteryPercentageRemaining !== undefined &&
-        result.batteryPercentageRemaining !== 255) {
+        result.batteryPercentageRemaining !== 255 &&
+        result.batteryPercentageRemaining !== 0xff) {
         const percent = Math.round(result.batteryPercentageRemaining / 2);
-        this.log(`[SOS] 🔋 Battery read: ${percent}%`);
+        if (percent >= 0 && percent <= 100) {
+          this.log(`[SOS] 🔋 Battery: ${percent}%`);
+          await this.setCapabilityValue('measure_battery', percent).catch(() => { });
+          return;
+        }
+      }
+
+      // Fallback to voltage
+      if (result?.batteryVoltage !== undefined && result.batteryVoltage > 0) {
+        const voltage = result.batteryVoltage / 10;
+        const percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
+        this.log(`[SOS] 🔋 Battery from voltage (${voltage}V): ${percent}%`);
         await this.setCapabilityValue('measure_battery', percent).catch(() => { });
       }
     } catch (e) {
-      // Silent - device might have gone back to sleep
+      this.log('[SOS] 🔋 Battery read error:', e.message);
     }
   }
 
@@ -685,6 +751,76 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     }
   }
 
+  /**
+   * v5.5.137: Called when sleepy device wakes up (End Device Announce)
+   * THIS IS THE KEY MOMENT TO READ BATTERY!
+   * The device is temporarily online and can respond to requests.
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[SOS] 📡 ════════════════════════════════════════');
+    this.log('[SOS] 📡 END DEVICE ANNOUNCE - Device is AWAKE!');
+    this.log('[SOS] 📡 ════════════════════════════════════════');
+
+    // PERFECT moment to configure reporting and read battery!
+    await this._configureAndReadBattery();
+  }
+
+  /**
+   * v5.5.137: Configure reporting and read battery when device is awake
+   * Called from onEndDeviceAnnounce() and _handleAlarm()
+   */
+  async _configureAndReadBattery() {
+    // Only try once per wake cycle
+    const now = Date.now();
+    if (this._lastBatteryConfig && (now - this._lastBatteryConfig) < 5000) {
+      return;
+    }
+    this._lastBatteryConfig = now;
+
+    try {
+      const { CLUSTER } = require('zigbee-clusters');
+
+      // Step 1: Try to configure attribute reporting (only once after pairing)
+      if (!this._batteryReportingConfigured) {
+        try {
+          this.log('[SOS] 🔋 Configuring battery attribute reporting...');
+          await Promise.race([
+            this.configureAttributeReporting([
+              {
+                endpointId: 1,
+                cluster: CLUSTER.POWER_CONFIGURATION,
+                attributeName: 'batteryPercentageRemaining',
+                minInterval: 3600,   // 1 hour minimum
+                maxInterval: 14400,  // 4 hours maximum (Tuya default)
+                minChange: 2         // Report on 1% change (value is 0-200)
+              },
+              {
+                endpointId: 1,
+                cluster: CLUSTER.POWER_CONFIGURATION,
+                attributeName: 'batteryVoltage',
+                minInterval: 3600,
+                maxInterval: 14400,
+                minChange: 1
+              }
+            ]),
+            new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 3000))
+          ]);
+          this._batteryReportingConfigured = true;
+          this.log('[SOS] 🔋 ✅ Battery reporting configured!');
+        } catch (e) {
+          this.log('[SOS] 🔋 Configure reporting failed:', e.message);
+        }
+      }
+
+      // Step 2: Read battery NOW while device is awake
+      this.log('[SOS] 🔋 Reading battery while device is awake...');
+      await this._readBatteryNow();
+
+    } catch (e) {
+      this.log('[SOS] 🔋 Configure/Read error:', e.message);
+    }
+  }
+
   async onUninit() {
     // Clean up timers
     if (this._resetTimeout) this.homey.clearTimeout(this._resetTimeout);
@@ -726,7 +862,8 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
   }
 
   /**
-   * v5.5.120: Setup GLOBAL listeners to capture ALL traffic from device
+   * v5.5.137: Setup GLOBAL listeners to capture ALL traffic from device
+   * IMPORTANT: Also captures battery reports from 4-hour heartbeat!
    */
   _setupGlobalListeners() {
     this.log('[SOS-DEBUG] Setting up GLOBAL listeners for ALL clusters...');
@@ -742,8 +879,44 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
         // Listen for ALL events on this cluster
         cluster.on('attr', (attrName, value) => {
           this.log(`[SOS-GLOBAL] 📡 EP${epId}.${clusterName} ATTR: ${attrName} =`, value);
-          // Auto-trigger alarm for any activity
+
+          // v5.5.137: Handle battery attributes from ANY cluster
+          if (attrName === 'batteryPercentageRemaining' && value !== 255 && value !== null) {
+            const percent = Math.round(value / 2);
+            if (percent >= 0 && percent <= 100) {
+              this.log(`[SOS] 🔋 GLOBAL Battery: ${percent}%`);
+              this.setCapabilityValue('measure_battery', percent).catch(() => { });
+            }
+            return; // Don't trigger alarm for battery reports
+          }
+          if (attrName === 'batteryVoltage' && value > 0) {
+            const voltage = value / 10;
+            const percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
+            this.log(`[SOS] 🔋 GLOBAL Battery (${voltage}V): ${percent}%`);
+            this.setCapabilityValue('measure_battery', percent).catch(() => { });
+            return; // Don't trigger alarm for battery reports
+          }
+
+          // Trigger alarm for non-battery attributes (like zone status)
           this._handleAlarm({ source: 'global-attr', cluster: clusterName, attr: attrName, value });
+        });
+
+        // Listen for report events (4-hour heartbeat)
+        cluster.on('report', (attrs) => {
+          this.log(`[SOS-GLOBAL] 📡 EP${epId}.${clusterName} REPORT:`, JSON.stringify(attrs));
+          if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
+            const percent = Math.round(attrs.batteryPercentageRemaining / 2);
+            if (percent >= 0 && percent <= 100) {
+              this.log(`[SOS] 🔋 HEARTBEAT Battery: ${percent}%`);
+              this.setCapabilityValue('measure_battery', percent).catch(() => { });
+            }
+          }
+          if (attrs?.batteryVoltage !== undefined && attrs.batteryVoltage > 0) {
+            const voltage = attrs.batteryVoltage / 10;
+            const percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
+            this.log(`[SOS] 🔋 HEARTBEAT Battery (${voltage}V): ${percent}%`);
+            this.setCapabilityValue('measure_battery', percent).catch(() => { });
+          }
         });
 
         cluster.on('command', (cmd, payload) => {
@@ -762,11 +935,26 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
           cluster.on('reporting', (data) => {
             this.log(`[SOS-GLOBAL] 📡 Tuya reporting:`, JSON.stringify(data));
+            // Handle battery from Tuya DP4
+            if (data?.dp === 4 && typeof data?.value === 'number') {
+              const battery = data.value;
+              if (battery >= 0 && battery <= 100) {
+                this.log(`[SOS] 🔋 Tuya DP4 Battery: ${battery}%`);
+                this.setCapabilityValue('measure_battery', battery).catch(() => { });
+              }
+            }
             this._handleAlarm({ source: 'tuya-report', ...data });
           });
 
           cluster.on('datapoint', (dp, value) => {
             this.log(`[SOS-GLOBAL] 📡 Tuya DP${dp}:`, value);
+            // Handle battery from Tuya DP4/DP15/DP101
+            if ((dp === 4 || dp === 15 || dp === 101) && typeof value === 'number') {
+              if (value >= 0 && value <= 100) {
+                this.log(`[SOS] 🔋 Tuya DP${dp} Battery: ${value}%`);
+                this.setCapabilityValue('measure_battery', value).catch(() => { });
+              }
+            }
             this._handleAlarm({ source: 'tuya-dp', dp, value });
           });
         }
