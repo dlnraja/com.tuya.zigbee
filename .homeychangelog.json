@@ -1,4 +1,7 @@
 {
+  "5.5.142": {
+    "en": "🧠 DEVICE PROFILES: Context-aware DP mapping by manufacturerName > driverType > universal fallback. Same DP now correctly mapped based on device type (e.g., DP1=motion for PIR, DP1=contact for door sensor, DP106=lux for ZG-204ZM but humidity for siren)."
+  },
   "5.5.141": {
     "en": "📚 UNIVERSAL DP MAPPING v5.5.141: Complete DP database from Tuya Official Docs + Zigbee2MQTT + ZHA. Added docs/TUYA_DP_REFERENCE.md with ALL device types. UniversalTuyaParser updated with 40+ DPs."
   },
