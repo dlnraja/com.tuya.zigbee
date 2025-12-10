@@ -1,4 +1,7 @@
 {
+  "5.5.140": {
+    "en": "📡 ZG-204ZM COMPLETE DP MAPPING: DP1=presence, DP101=motion_state, DP102=fading_time, DP104-109=radar settings, DP106=illuminance. Added manufacturerNames _TZE200_kb5noeto, _TZE200_5b5noeto. RE-PAIR for correct driver!"
+  },
   "5.5.139": {
     "en": "🔋 BATTERY SPAM FIX (ZG-204ZM): Anti-spam filter rejects erratic battery reports (>30% jump in 60s). Added DP106 for ZG-204ZM illuminance. Motion sensor improved. Re-pair ZG-204ZM to use correct radar driver!"
   },
