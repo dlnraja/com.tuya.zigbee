@@ -1,4 +1,7 @@
 {
+  "5.5.139": {
+    "en": "🔋 BATTERY SPAM FIX (ZG-204ZM): Anti-spam filter rejects erratic battery reports (>30% jump in 60s). Added DP106 for ZG-204ZM illuminance. Motion sensor improved. Re-pair ZG-204ZM to use correct radar driver!"
+  },
   "5.5.138": {
     "en": "🆘 SOS Button BATTERY FIX v3: Based on Zigbee2MQTT implementation - explicit BIND + configureReporting on cluster + readAttributes. 3-step process when device wakes (onEndDeviceAnnounce/button press). RE-PAIR DEVICE REQUIRED!"
   },
