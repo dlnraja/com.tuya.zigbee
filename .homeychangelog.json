@@ -1,4 +1,7 @@
 {
+  "5.5.144": {
+    "en": "🚀 INTELLIGENT MAPPING IMPLEMENTED: HybridSensorBase now uses context-aware DP + IAS Zone mapping. Same DP/cluster auto-resolves to correct capability based on manufacturerName. Logs show [DP-CTX] and [IAS-CTX] for debugging."
+  },
   "5.5.143": {
     "en": "🔌 ZCL DEVICE PROFILES: Context-aware IAS Zone (0x0500) mapping. Same cluster now correctly mapped: motion for PIR, contact for door, water for leak, smoke for detector, gas, CO, vibration, SOS. 50+ manufacturerNames supported!"
   },
