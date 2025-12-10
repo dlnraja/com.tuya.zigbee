@@ -1,4 +1,7 @@
 {
+  "5.5.141": {
+    "en": "📚 UNIVERSAL DP MAPPING v5.5.141: Complete DP database from Tuya Official Docs + Zigbee2MQTT + ZHA. Added docs/TUYA_DP_REFERENCE.md with ALL device types. UniversalTuyaParser updated with 40+ DPs."
+  },
   "5.5.140": {
     "en": "📡 ZG-204ZM COMPLETE DP MAPPING: DP1=presence, DP101=motion_state, DP102=fading_time, DP104-109=radar settings, DP106=illuminance. Added manufacturerNames _TZE200_kb5noeto, _TZE200_5b5noeto. RE-PAIR for correct driver!"
   },
