@@ -1,4 +1,7 @@
 {
+  "5.5.138": {
+    "en": "🆘 SOS Button BATTERY FIX v3: Based on Zigbee2MQTT implementation - explicit BIND + configureReporting on cluster + readAttributes. 3-step process when device wakes (onEndDeviceAnnounce/button press). RE-PAIR DEVICE REQUIRED!"
+  },
   "5.5.137": {
     "en": "🆘 SOS Button: Added onEndDeviceAnnounce() to detect wake-up + configureAttributeReporting() to force Homey to request battery from device. Uses 4 listener methods + Tuya DP4/DP15/DP101 for battery."
   },
