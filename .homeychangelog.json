@@ -1,4 +1,7 @@
 {
+  "5.5.137": {
+    "en": "🆘 SOS Button: Added onEndDeviceAnnounce() to detect wake-up + configureAttributeReporting() to force Homey to request battery from device. Uses 4 listener methods + Tuya DP4/DP15/DP101 for battery."
+  },
   "5.5.136": {
     "en": "🆘 SOS Button: Simplified battery handling (back to working v5.5.64 style) + added 4 new manufacturerNames (Woox R7052, TS0218 etc.) + fixed iasACE cluster name"
   },
