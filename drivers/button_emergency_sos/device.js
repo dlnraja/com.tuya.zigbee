@@ -4,7 +4,7 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SOS EMERGENCY BUTTON - v5.5.137 UNIVERSAL (ZCL + Tuya DP)               ║
+ * ║      SOS EMERGENCY BUTTON - v5.5.138 UNIVERSAL (ZCL + Tuya DP)               ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  SUPPORTED PROTOCOLS:                                                        ║
@@ -31,7 +31,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
     this.log('');
     this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║     SOS EMERGENCY BUTTON v5.5.137 - UNIVERSAL                ║');
+    this.log('║     SOS EMERGENCY BUTTON v5.5.138 - UNIVERSAL                ║');
     this.log('║   Supports: IAS ACE + IAS Zone + Tuya DP + genOnOff          ║');
     this.log('╚══════════════════════════════════════════════════════════════╝');
 
@@ -571,7 +571,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
   /**
    * Setup battery via ZCL powerConfiguration
-   * v5.5.137: ENHANCED - Multiple listener methods for 4-hour heartbeat capture
+   * v5.5.138: ENHANCED - Multiple listener methods for 4-hour heartbeat capture
    * Tuya docs: Device reports battery every 4 hours via heartbeat
    * NO registerCapability/bind/configureReporting (causes errors on sleepy devices)
    */
@@ -658,7 +658,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
   }
 
   /**
-   * v5.5.137: Enhanced battery reading when device is awake
+   * v5.5.138: Enhanced battery reading when device is awake
    * Try multiple attributes with quick timeout (device sleeps fast)
    */
   async _readBatteryNow() {
@@ -752,7 +752,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
   }
 
   /**
-   * v5.5.137: Called when sleepy device wakes up (End Device Announce)
+   * v5.5.138: Called when sleepy device wakes up (End Device Announce)
    * THIS IS THE KEY MOMENT TO READ BATTERY!
    * The device is temporarily online and can respond to requests.
    */
@@ -766,59 +766,102 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
   }
 
   /**
-   * v5.5.137: Configure reporting and read battery when device is awake
-   * Called from onEndDeviceAnnounce() and _handleAlarm()
+   * v5.5.138: COMPREHENSIVE battery configuration when device is awake
+   * Based on Zigbee2MQTT TS0215A implementation:
+   * - Bind genPowerCfg cluster to coordinator
+   * - Configure attribute reporting
+   * - Read battery attributes
    */
   async _configureAndReadBattery() {
-    // Only try once per wake cycle
+    // Debounce - only try once per wake cycle
     const now = Date.now();
     if (this._lastBatteryConfig && (now - this._lastBatteryConfig) < 5000) {
       return;
     }
     this._lastBatteryConfig = now;
 
-    try {
-      const { CLUSTER } = require('zigbee-clusters');
+    this.log('[SOS] 🔋 ════════════════════════════════════════');
+    this.log('[SOS] 🔋 BATTERY CONFIGURATION - Device is AWAKE');
+    this.log('[SOS] 🔋 ════════════════════════════════════════');
 
-      // Step 1: Try to configure attribute reporting (only once after pairing)
-      if (!this._batteryReportingConfigured) {
-        try {
-          this.log('[SOS] 🔋 Configuring battery attribute reporting...');
+    const ep1 = this.zclNode?.endpoints?.[1];
+    const powerCfg = ep1?.clusters?.powerConfiguration || ep1?.clusters?.genPowerCfg;
+
+    if (!powerCfg) {
+      this.log('[SOS] 🔋 ❌ No powerConfiguration cluster available');
+      return;
+    }
+
+    // STEP 1: BIND - Critical for sleepy devices!
+    // Zigbee2MQTT does: await reporting.bind(endpoint, coordinatorEndpoint, ['genPowerCfg']);
+    if (!this._batteryBindComplete) {
+      try {
+        this.log('[SOS] 🔋 Step 1: Binding powerConfiguration cluster...');
+
+        // Try bind via the cluster's bind method (if available)
+        if (typeof powerCfg.bind === 'function') {
           await Promise.race([
-            this.configureAttributeReporting([
-              {
-                endpointId: 1,
-                cluster: CLUSTER.POWER_CONFIGURATION,
-                attributeName: 'batteryPercentageRemaining',
-                minInterval: 3600,   // 1 hour minimum
-                maxInterval: 14400,  // 4 hours maximum (Tuya default)
-                minChange: 2         // Report on 1% change (value is 0-200)
-              },
-              {
-                endpointId: 1,
-                cluster: CLUSTER.POWER_CONFIGURATION,
-                attributeName: 'batteryVoltage',
-                minInterval: 3600,
-                maxInterval: 14400,
-                minChange: 1
+            powerCfg.bind(),
+            new Promise((_, r) => setTimeout(() => r(new Error('Bind timeout')), 2000))
+          ]);
+          this._batteryBindComplete = true;
+          this.log('[SOS] 🔋 ✅ Bind successful!');
+        } else {
+          this.log('[SOS] 🔋 ℹ️ No bind() method, using driver.compose.json bindings');
+          this._batteryBindComplete = true; // Assume bindings from manifest work
+        }
+      } catch (e) {
+        this.log('[SOS] 🔋 ⚠️ Bind failed (normal for sleepy):', e.message);
+      }
+    }
+
+    // STEP 2: CONFIGURE REPORTING
+    if (!this._batteryReportingConfigured) {
+      try {
+        this.log('[SOS] 🔋 Step 2: Configuring attribute reporting...');
+
+        // Method A: Direct configureReporting on cluster
+        if (typeof powerCfg.configureReporting === 'function') {
+          await Promise.race([
+            powerCfg.configureReporting({
+              batteryPercentageRemaining: {
+                minInterval: 3600,   // 1 hour
+                maxInterval: 14400,  // 4 hours (Tuya default heartbeat)
+                minChange: 2         // 1% change (value 0-200)
               }
-            ]),
-            new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 3000))
+            }),
+            new Promise((_, r) => setTimeout(() => r(new Error('ConfigReport timeout')), 2000))
           ]);
           this._batteryReportingConfigured = true;
-          this.log('[SOS] 🔋 ✅ Battery reporting configured!');
-        } catch (e) {
-          this.log('[SOS] 🔋 Configure reporting failed:', e.message);
+          this.log('[SOS] 🔋 ✅ Reporting configured via cluster!');
         }
+        // Method B: Use homey-zigbeedriver configureAttributeReporting
+        else if (typeof this.configureAttributeReporting === 'function') {
+          const { CLUSTER } = require('zigbee-clusters');
+          await Promise.race([
+            this.configureAttributeReporting([{
+              endpointId: 1,
+              cluster: CLUSTER.POWER_CONFIGURATION,
+              attributeName: 'batteryPercentageRemaining',
+              minInterval: 3600,
+              maxInterval: 14400,
+              minChange: 2
+            }]),
+            new Promise((_, r) => setTimeout(() => r(new Error('ConfigReport timeout')), 2000))
+          ]);
+          this._batteryReportingConfigured = true;
+          this.log('[SOS] 🔋 ✅ Reporting configured via driver!');
+        }
+      } catch (e) {
+        this.log('[SOS] 🔋 ⚠️ Configure reporting failed:', e.message);
       }
-
-      // Step 2: Read battery NOW while device is awake
-      this.log('[SOS] 🔋 Reading battery while device is awake...');
-      await this._readBatteryNow();
-
-    } catch (e) {
-      this.log('[SOS] 🔋 Configure/Read error:', e.message);
     }
+
+    // STEP 3: READ BATTERY NOW (device is awake for ~2 seconds max!)
+    this.log('[SOS] 🔋 Step 3: Reading battery attributes...');
+    await this._readBatteryNow();
+
+    this.log('[SOS] 🔋 ════════════════════════════════════════');
   }
 
   async onUninit() {
@@ -862,7 +905,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
   }
 
   /**
-   * v5.5.137: Setup GLOBAL listeners to capture ALL traffic from device
+   * v5.5.138: Setup GLOBAL listeners to capture ALL traffic from device
    * IMPORTANT: Also captures battery reports from 4-hour heartbeat!
    */
   _setupGlobalListeners() {
