@@ -1,4 +1,7 @@
 {
+  "5.5.151": {
+    "en": "🔧 FINGERPRINTING CLEANUP: Fixed HOBEIAN ZG-303Z conflict (removed from motion_sensor). Removed radar IDs from soil_sensor. Cleaned air_quality_comprehensive (removed 8 conflicting switch/button/SOS IDs). Reduced fingerprint collisions."
+  },
   "5.5.150": {
     "en": "🌱 HOBEIAN ZG-303Z SOIL SENSOR: Added HOBEIAN manufacturerName + ZG-303Z productId to soil_sensor driver. Removed ZG-303Z from climate_sensor. Added Tuya cluster 61184. Fixes device detection from Homey Community report."
   },
