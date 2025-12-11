@@ -1,4 +1,7 @@
 {
+  "5.5.154": {
+    "en": "🌱 SOIL SENSOR CLUSTERS: Added clusters 4, 5, 60672 from _TZE284_oitavov2 device interview (GitHub #1245). Improved Tuya DP compatibility for soil moisture sensors."
+  },
   "5.5.153": {
     "en": "🔧 SMART FINGERPRINTING: Restored all manufacturerNames from history. Removed TS0601 from button_emergency_sos (SOS uses TS0215A). Removed TRV from thermostat_tuya_dp (TRV specific to radiator_valve). Rule: same mfr OK if productId different."
   },
