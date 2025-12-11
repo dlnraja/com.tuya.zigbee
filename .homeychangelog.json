@@ -1,4 +1,10 @@
 {
+  "5.5.146": {
+    "en": "🆘🔋 SOS BUTTON COMPLETE FIX: (1) IasAceBoundCluster to RECEIVE commandEmergency. (2) BATTERY FIX: Tuya DP4/DP15=battery, DP1/DP14=SOS, DP101 context-aware. Fixed CR2032 voltage formula (3.0V=100%, 2.0V=0%). Battery read on button press. RE-PAIR required!"
+  },
+  "5.5.145": {
+    "en": "🆘 SOS BUTTON FIX (TS0215A): Added IasAceCluster (0x0501/1281) for commandEmergency. Enhanced detection with onEmergency, onPanic, onFire handlers + raw command interception. _TZ3000_0dumfk2z now properly triggers alarm_contact. RE-PAIR button after update!"
+  },
   "5.5.144": {
     "en": "🚀 INTELLIGENT MAPPING IMPLEMENTED: HybridSensorBase now uses context-aware DP + IAS Zone mapping. Same DP/cluster auto-resolves to correct capability based on manufacturerName. Logs show [DP-CTX] and [IAS-CTX] for debugging."
   },
