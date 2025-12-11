@@ -1,4 +1,7 @@
 {
+  "5.5.147": {
+    "en": "🆘 SOS FLOW TRIGGER FIX: Added missing button_emergency_sos_pressed trigger. Flow cards now work correctly when SOS button is pressed!"
+  },
   "5.5.146": {
     "en": "🆘🔋 SOS BUTTON COMPLETE FIX: (1) IasAceBoundCluster to RECEIVE commandEmergency. (2) BATTERY FIX: Tuya DP4/DP15=battery, DP1/DP14=SOS, DP101 context-aware. Fixed CR2032 voltage formula (3.0V=100%, 2.0V=0%). Battery read on button press. RE-PAIR required!"
   },
