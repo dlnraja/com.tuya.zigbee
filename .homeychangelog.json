@@ -1,4 +1,7 @@
 {
+  "5.5.152": {
+    "en": "🔧 FINGERPRINTING MAJOR CLEANUP: Reduced conflicts from 69 to 32 (-53%). Removed 10 SOS button IDs from switch_1gang, 5 climate IDs from gas_sensor, 11 TRV IDs from thermostat_tuya_dp. Rule: same manufacturerName OK if productId different."
+  },
   "5.5.151": {
     "en": "🔧 FINGERPRINTING CLEANUP: Fixed HOBEIAN ZG-303Z conflict (removed from motion_sensor). Removed radar IDs from soil_sensor. Cleaned air_quality_comprehensive (removed 8 conflicting switch/button/SOS IDs). Reduced fingerprint collisions."
   },
