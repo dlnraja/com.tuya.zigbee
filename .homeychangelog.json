@@ -1,4 +1,7 @@
 {
+  "5.5.148": {
+    "en": "🆘 SOS FLOW TRIGGER FIX v2: Explicit flow card registration in driver.js with triggerSOS() method. Both button_emergency_sos_pressed and sos_button_pressed triggers now properly fire!"
+  },
   "5.5.147": {
     "en": "🆘 SOS FLOW TRIGGER FIX: Added missing button_emergency_sos_pressed trigger. Flow cards now work correctly when SOS button is pressed!"
   },
