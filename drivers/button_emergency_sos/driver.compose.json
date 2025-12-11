@@ -60,7 +60,12 @@
       "_TZ3000_tj4pwzzm",
       "_TZ3000_ssp0maqm",
       "_TZ3000_u2bbagu4",
-      "_TYZB01_trqoesc6"
+      "_TYZB01_trqoesc6",
+      "_TZ3000_is27vzco",
+      "_TZ3000_gnwgnwvq",
+      "_TZ3000_fywhzh9u",
+      "_TZ3000_rmhkdz0l",
+      "_TZ3000_n0h1dr7u"
     ],
     "productId": [
       "TS0215A",
@@ -360,7 +365,7 @@
         "en": "Tuya Datapoint Configuration",
         "fr": "Configuration Tuya Datapoint"
       },
-      "value": "{\n  \"1\": \"button_press\",\n  \"101\": \"battery_percentage\"\n}"
+      "value": "DP1/DP14: SOS (bool)\nDP4/DP15: Battery %\nDP101: Context (bool=SOS, num=battery)"
     },
     {
       "id": "dp_debug_mode",
