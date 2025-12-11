@@ -1,4 +1,7 @@
 {
+  "5.5.150": {
+    "en": "🌱 HOBEIAN ZG-303Z SOIL SENSOR: Added HOBEIAN manufacturerName + ZG-303Z productId to soil_sensor driver. Removed ZG-303Z from climate_sensor. Added Tuya cluster 61184. Fixes device detection from Homey Community report."
+  },
   "5.5.149": {
     "en": "🌱 SOIL SENSOR FIX: Added 13 new manufacturerNames for better soil sensor detection. Fixed fingerprinting conflicts with climate_sensor (both use TS0601). Soil sensors now correctly detected!"
   },
