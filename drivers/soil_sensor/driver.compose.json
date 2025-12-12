@@ -78,6 +78,168 @@
       }
     }
   },
+  "flow": {
+    "triggers": [
+      {
+        "id": "soil_moisture_changed",
+        "title": {
+          "en": "Soil moisture changed",
+          "fr": "Humidité du sol changée",
+          "nl": "Bodemvochtigheid gewijzigd",
+          "de": "Bodenfeuchtigkeit geändert"
+        },
+        "tokens": [
+          {
+            "name": "moisture",
+            "type": "number",
+            "title": {
+              "en": "Moisture (%)",
+              "fr": "Humidité (%)"
+            },
+            "example": 45
+          }
+        ]
+      },
+      {
+        "id": "soil_moisture_below",
+        "title": {
+          "en": "Soil moisture drops below",
+          "fr": "Humidité du sol tombe sous",
+          "nl": "Bodemvochtigheid daalt onder",
+          "de": "Bodenfeuchtigkeit fällt unter"
+        },
+        "titleFormatted": {
+          "en": "Soil moisture drops below [[threshold]] %",
+          "fr": "Humidité du sol tombe sous [[threshold]] %"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "placeholder": {
+              "en": "Threshold (%)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "soil_moisture_above",
+        "title": {
+          "en": "Soil moisture rises above",
+          "fr": "Humidité du sol dépasse",
+          "nl": "Bodemvochtigheid stijgt boven",
+          "de": "Bodenfeuchtigkeit steigt über"
+        },
+        "titleFormatted": {
+          "en": "Soil moisture rises above [[threshold]] %",
+          "fr": "Humidité du sol dépasse [[threshold]] %"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "placeholder": {
+              "en": "Threshold (%)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "soil_temperature_changed",
+        "title": {
+          "en": "Soil temperature changed",
+          "fr": "Température du sol changée",
+          "nl": "Bodemtemperatuur gewijzigd",
+          "de": "Bodentemperatur geändert"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)"
+            },
+            "example": 22
+          }
+        ]
+      },
+      {
+        "id": "soil_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "fr": "Batterie faible",
+          "nl": "Batterij is laag",
+          "de": "Batterie ist schwach"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)",
+              "fr": "Batterie (%)"
+            },
+            "example": 15
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "soil_moisture_is_below",
+        "title": {
+          "en": "Soil moisture is !{{below|above}} threshold",
+          "fr": "Humidité du sol est !{{sous|au-dessus}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "Soil moisture is !{{below|above}} [[threshold]] %",
+          "fr": "Humidité du sol est !{{sous|au-dessus de}} [[threshold]] %"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "placeholder": {
+              "en": "Threshold (%)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "soil_temperature_is_below",
+        "title": {
+          "en": "Soil temperature is !{{below|above}} threshold",
+          "fr": "Température du sol est !{{sous|au-dessus}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "Soil temperature is !{{below|above}} [[threshold]] °C",
+          "fr": "Température du sol est !{{sous|au-dessus de}} [[threshold]] °C"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": -20,
+            "max": 60,
+            "step": 1,
+            "placeholder": {
+              "en": "Threshold (°C)"
+            }
+          }
+        ]
+      }
+    ]
+  },
   "settings": [
     {
       "type": "group",
