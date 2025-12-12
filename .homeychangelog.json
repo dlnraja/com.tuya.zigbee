@@ -1,4 +1,7 @@
 {
+  "5.5.166": {
+    "en": "🧹 CLEANUP: Removed duplicate motion_detected flow triggers. Motion sensors now have cleaner flow card selection without duplicates."
+  },
   "5.5.165": {
     "en": "🐛 FIX SOS Button: Changed from alarm_contact to alarm_generic - removes confusing 'contactalarm' triggers. Now only shows 'SOS Alert' as expected."
   },
