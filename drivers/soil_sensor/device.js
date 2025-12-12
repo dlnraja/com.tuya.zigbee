@@ -196,6 +196,127 @@ class SoilSensorDevice extends TuyaHybridDevice {
     this.log('[SOIL] ════════════════════════════════════════════════════════');
     this.log('[SOIL] ⚠️ BATTERY DEVICE - Data comes when device wakes up');
     this.log('[SOIL] ℹ️ First data may take 10-60 minutes after pairing');
+
+    // Initialize flow triggers
+    this._initFlowTriggers();
+
+    // Track previous values for threshold triggers
+    this._previousMoisture = null;
+    this._previousTemperature = null;
+    this._previousBattery = null;
+  }
+
+  /**
+   * v5.5.154: Initialize flow triggers for soil sensor
+   */
+  _initFlowTriggers() {
+    // Register flow trigger cards
+    this._flowTriggerMoistureChanged = this.homey.flow.getDeviceTriggerCard('soil_moisture_changed');
+    this._flowTriggerMoistureBelow = this.homey.flow.getDeviceTriggerCard('soil_moisture_below');
+    this._flowTriggerMoistureAbove = this.homey.flow.getDeviceTriggerCard('soil_moisture_above');
+    this._flowTriggerTemperatureChanged = this.homey.flow.getDeviceTriggerCard('soil_temperature_changed');
+    this._flowTriggerBatteryLow = this.homey.flow.getDeviceTriggerCard('soil_battery_low');
+
+    // Register condition cards
+    this._conditionMoistureBelow = this.homey.flow.getConditionCard('soil_moisture_is_below');
+    this._conditionTemperatureBelow = this.homey.flow.getConditionCard('soil_temperature_is_below');
+
+    // Condition: soil moisture is below/above threshold
+    if (this._conditionMoistureBelow) {
+      this._conditionMoistureBelow.registerRunListener(async (args, state) => {
+        const moisture = this.getCapabilityValue('measure_humidity');
+        return moisture < args.threshold;
+      });
+    }
+
+    // Condition: soil temperature is below/above threshold
+    if (this._conditionTemperatureBelow) {
+      this._conditionTemperatureBelow.registerRunListener(async (args, state) => {
+        const temp = this.getCapabilityValue('measure_temperature');
+        return temp < args.threshold;
+      });
+    }
+
+    // Threshold trigger: moisture below
+    if (this._flowTriggerMoistureBelow) {
+      this._flowTriggerMoistureBelow.registerRunListener(async (args, state) => {
+        return state.moisture < args.threshold;
+      });
+    }
+
+    // Threshold trigger: moisture above
+    if (this._flowTriggerMoistureAbove) {
+      this._flowTriggerMoistureAbove.registerRunListener(async (args, state) => {
+        return state.moisture > args.threshold;
+      });
+    }
+
+    this.log('[SOIL] Flow triggers initialized');
+  }
+
+  /**
+   * v5.5.154: Override setCapabilityValue to trigger flows
+   */
+  async setCapabilityValue(capability, value) {
+    await super.setCapabilityValue(capability, value);
+
+    // Trigger flows based on capability changes
+    if (capability === 'measure_humidity') {
+      this._triggerMoistureFlows(value);
+    } else if (capability === 'measure_temperature') {
+      this._triggerTemperatureFlows(value);
+    } else if (capability === 'measure_battery') {
+      this._triggerBatteryFlows(value);
+    }
+  }
+
+  /**
+   * Trigger moisture-related flows
+   */
+  _triggerMoistureFlows(moisture) {
+    // Trigger: moisture changed
+    if (this._flowTriggerMoistureChanged) {
+      this._flowTriggerMoistureChanged.trigger(this, { moisture }).catch(this.error);
+    }
+
+    // Trigger: moisture below threshold (only when crossing)
+    if (this._previousMoisture !== null && this._flowTriggerMoistureBelow) {
+      this._flowTriggerMoistureBelow.trigger(this, { moisture }, { moisture }).catch(this.error);
+    }
+
+    // Trigger: moisture above threshold (only when crossing)
+    if (this._previousMoisture !== null && this._flowTriggerMoistureAbove) {
+      this._flowTriggerMoistureAbove.trigger(this, { moisture }, { moisture }).catch(this.error);
+    }
+
+    this._previousMoisture = moisture;
+  }
+
+  /**
+   * Trigger temperature-related flows
+   */
+  _triggerTemperatureFlows(temperature) {
+    // Trigger: temperature changed
+    if (this._flowTriggerTemperatureChanged) {
+      this._flowTriggerTemperatureChanged.trigger(this, { temperature }).catch(this.error);
+    }
+
+    this._previousTemperature = temperature;
+  }
+
+  /**
+   * Trigger battery-related flows
+   */
+  _triggerBatteryFlows(battery) {
+    // Trigger: battery low (below 20%)
+    if (battery <= 20 && (this._previousBattery === null || this._previousBattery > 20)) {
+      if (this._flowTriggerBatteryLow) {
+        this._flowTriggerBatteryLow.trigger(this, { battery }).catch(this.error);
+        this.log(`[SOIL] 🔋 Battery low alert triggered: ${battery}%`);
+      }
+    }
+
+    this._previousBattery = battery;
   }
 
   /**
