@@ -5,11 +5,11 @@
   },
   "class": "sensor",
   "capabilities": [
-    "alarm_contact",
+    "alarm_generic",
     "measure_battery"
   ],
   "capabilitiesOptions": {
-    "alarm_contact": {
+    "alarm_generic": {
       "title": {
         "en": "SOS Alert",
         "fr": "Alerte SOS"
