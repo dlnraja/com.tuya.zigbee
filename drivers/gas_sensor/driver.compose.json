@@ -286,6 +286,71 @@
       }
     }
   ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "gas_alarm_triggered",
+        "title": {
+          "en": "Gas alarm triggered",
+          "fr": "Alarme gaz déclenchée",
+          "nl": "Gasalarm geactiveerd",
+          "de": "Gasalarm ausgelöst"
+        }
+      },
+      {
+        "id": "gas_alarm_cleared",
+        "title": {
+          "en": "Gas alarm cleared",
+          "fr": "Alarme gaz terminée",
+          "nl": "Gasalarm gestopt",
+          "de": "Gasalarm beendet"
+        }
+      },
+      {
+        "id": "gas_level_changed",
+        "title": {
+          "en": "Gas level changed",
+          "fr": "Niveau de gaz changé"
+        },
+        "tokens": [
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Gas level (ppm)",
+              "fr": "Niveau de gaz (ppm)"
+            },
+            "example": 50
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "gas_alarm_is_active",
+        "title": {
+          "en": "Gas alarm !{{is|isn't}} active",
+          "fr": "Alarme gaz !{{est|n'est pas}} active"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "gas_test_alarm",
+        "title": {
+          "en": "Test gas alarm",
+          "fr": "Tester alarme gaz"
+        }
+      },
+      {
+        "id": "gas_silence_alarm",
+        "title": {
+          "en": "Silence gas alarm",
+          "fr": "Couper alarme gaz"
+        }
+      }
+    ]
+  },
   "images": {
     "small": "drivers/gas_sensor/assets/images/small.png",
     "large": "drivers/gas_sensor/assets/images/large.png",

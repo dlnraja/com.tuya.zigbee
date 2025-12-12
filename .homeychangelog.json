@@ -1,4 +1,7 @@
 {
+  "5.5.159": {
+    "en": "🎯 FLOW ENRICHMENT: Added flow triggers/conditions for 8 sensor drivers: climate_sensor (7 triggers, 2 conditions), motion_sensor (6 triggers, 2 conditions), presence_sensor_radar (6 triggers, 2 conditions), gas_sensor (3 triggers, 1 condition, 2 actions), smoke_detector_advanced (4 triggers, 1 condition, 2 actions), contact_sensor (3 triggers, 1 condition), water_leak_sensor (3 triggers, 1 condition). Temperature/humidity/illuminance thresholds, battery low alerts, alarm triggers."
+  },
   "5.5.158": {
     "en": "🌱 SOIL SENSOR: Added _TZE200_npj9bug3 from ZHA PR #4536 (HOBEIAN ZG-303Z variant). Soil moisture now correctly distinguished from humidity."
   },
