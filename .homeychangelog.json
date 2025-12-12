@@ -1,4 +1,7 @@
 {
+  "5.5.155": {
+    "en": "🐛 CRASH FIX: Fixed TypeError in HybridSensorBase.js (null.received). 🌱 SOIL SENSOR: Added flow triggers (moisture changed/below/above, temperature changed, battery low) + conditions. Added clusters 4, 5, 60672 for _TZE284_oitavov2 compatibility (GitHub #1245)."
+  },
   "5.5.154": {
     "en": "🌱 SOIL SENSOR CLUSTERS: Added clusters 4, 5, 60672 from _TZE284_oitavov2 device interview (GitHub #1245). Improved Tuya DP compatibility for soil moisture sensors."
   },
