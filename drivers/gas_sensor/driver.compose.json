@@ -26,23 +26,15 @@
       "_TZE200_wzqkpstm",
       "_TZ3000_mwd3c2at",
       "_TZ3000_tk3s5tyg",
-      "_TZE200_wfxuhoea",
       "_TZ3000_kqvb5akv",
       "_TZ3000_ww6drja5",
       "_TZ3000_ltt60asa",
-      "_TZ3000_akqdg6g7",
-      "_TZE200_ezqy5pvh",
-      "_TZE200_ux5v4tgb",
-      "_TZE200_yojqa8xn",
-      "_TZ3000_kmh5qpmb",
       "_TZE200_rccxox8p",
       "_TZE200_auin8mzr",
       "_TZE284_rccxox8p"
     ],
     "productId": [
-      "TS0601",
-      "TS0203",
-      "TS0111"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -67,10 +59,7 @@
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    },
-    "productId": [
-      "TS0601"
-    ]
+    }
   },
   "settings": [
     {
