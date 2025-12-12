@@ -1,4 +1,7 @@
 {
+  "5.5.167": {
+    "en": "🧹 MAJOR CLEANUP: Removed 10 duplicate flow cards from .homeycompose that were conflicting with driver-specific flows. Cleaner flow selection for contact sensors, water leak, smoke, gas, and tamper triggers."
+  },
   "5.5.166": {
     "en": "🧹 CLEANUP: Removed duplicate motion_detected flow triggers. Motion sensors now have cleaner flow card selection without duplicates."
   },
