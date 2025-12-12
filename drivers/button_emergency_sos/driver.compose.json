@@ -376,6 +376,59 @@
       }
     }
   ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "sos_button_pressed",
+        "title": {
+          "en": "SOS button pressed",
+          "fr": "Bouton SOS appuyé",
+          "nl": "SOS knop ingedrukt",
+          "de": "SOS-Taste gedrückt"
+        }
+      },
+      {
+        "id": "sos_button_released",
+        "title": {
+          "en": "SOS button released",
+          "fr": "Bouton SOS relâché"
+        }
+      },
+      {
+        "id": "sos_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "fr": "Batterie faible"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)"
+            },
+            "example": 15
+          }
+        ]
+      },
+      {
+        "id": "sos_tamper_alarm",
+        "title": {
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme sabotage déclenchée"
+        }
+      }
+    ],
+    "conditions": [
+      {
+        "id": "sos_is_active",
+        "title": {
+          "en": "SOS !{{is|isn't}} active",
+          "fr": "SOS !{{est|n'est pas}} actif"
+        }
+      }
+    ]
+  },
   "images": {
     "small": "drivers/button_emergency_sos/assets/images/small.png",
     "large": "drivers/button_emergency_sos/assets/images/large.png",
