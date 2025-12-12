@@ -306,6 +306,310 @@
       }
     }
   ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "siren_alarm_triggered",
+        "title": {
+          "en": "Siren alarm triggered",
+          "fr": "Alarme sirène déclenchée",
+          "nl": "Sirene alarm geactiveerd",
+          "de": "Sirenenalarm ausgelöst"
+        }
+      },
+      {
+        "id": "siren_alarm_stopped",
+        "title": {
+          "en": "Siren alarm stopped",
+          "fr": "Alarme sirène arrêtée",
+          "nl": "Sirene alarm gestopt",
+          "de": "Sirenenalarm gestoppt"
+        }
+      },
+      {
+        "id": "siren_tamper_alarm",
+        "title": {
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme sabotage déclenchée"
+        }
+      },
+      {
+        "id": "siren_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "fr": "Batterie faible"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)",
+              "fr": "Batterie (%)"
+            },
+            "example": 15
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "siren_is_active",
+        "title": {
+          "en": "Siren !{{is|isn't}} active",
+          "fr": "Sirène !{{est|n'est pas}} active"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "siren_set_melody",
+        "title": {
+          "en": "Set siren melody",
+          "fr": "Définir mélodie sirène"
+        },
+        "titleFormatted": {
+          "en": "Set melody to [[melody]]",
+          "fr": "Définir mélodie sur [[melody]]"
+        },
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "melody",
+            "title": {
+              "en": "Melody",
+              "fr": "Mélodie"
+            },
+            "values": [
+              {
+                "id": "1",
+                "title": {
+                  "en": "Melody 1 - Standard",
+                  "fr": "Mélodie 1 - Standard"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "Melody 2 - Alarm",
+                  "fr": "Mélodie 2 - Alarme"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "Melody 3 - Chime",
+                  "fr": "Mélodie 3 - Carillon"
+                }
+              },
+              {
+                "id": "4",
+                "title": {
+                  "en": "Melody 4 - Doorbell",
+                  "fr": "Mélodie 4 - Sonnette"
+                }
+              },
+              {
+                "id": "5",
+                "title": {
+                  "en": "Melody 5 - Alert",
+                  "fr": "Mélodie 5 - Alerte"
+                }
+              },
+              {
+                "id": "6",
+                "title": {
+                  "en": "Melody 6 - Warning",
+                  "fr": "Mélodie 6 - Avertissement"
+                }
+              },
+              {
+                "id": "7",
+                "title": {
+                  "en": "Melody 7 - Emergency",
+                  "fr": "Mélodie 7 - Urgence"
+                }
+              },
+              {
+                "id": "8",
+                "title": {
+                  "en": "Melody 8 - Siren",
+                  "fr": "Mélodie 8 - Sirène"
+                }
+              },
+              {
+                "id": "9",
+                "title": {
+                  "en": "Melody 9 - Police",
+                  "fr": "Mélodie 9 - Police"
+                }
+              },
+              {
+                "id": "10",
+                "title": {
+                  "en": "Melody 10 - Fire",
+                  "fr": "Mélodie 10 - Incendie"
+                }
+              },
+              {
+                "id": "11",
+                "title": {
+                  "en": "Melody 11 - Ambulance",
+                  "fr": "Mélodie 11 - Ambulance"
+                }
+              },
+              {
+                "id": "12",
+                "title": {
+                  "en": "Melody 12 - Beep",
+                  "fr": "Mélodie 12 - Bip"
+                }
+              },
+              {
+                "id": "13",
+                "title": {
+                  "en": "Melody 13 - Ding-Dong",
+                  "fr": "Mélodie 13 - Ding-Dong"
+                }
+              },
+              {
+                "id": "14",
+                "title": {
+                  "en": "Melody 14 - Soft",
+                  "fr": "Mélodie 14 - Doux"
+                }
+              },
+              {
+                "id": "15",
+                "title": {
+                  "en": "Melody 15 - Loud",
+                  "fr": "Mélodie 15 - Fort"
+                }
+              },
+              {
+                "id": "16",
+                "title": {
+                  "en": "Melody 16 - Custom",
+                  "fr": "Mélodie 16 - Personnalisé"
+                }
+              },
+              {
+                "id": "17",
+                "title": {
+                  "en": "Melody 17 - Ring",
+                  "fr": "Mélodie 17 - Sonnerie"
+                }
+              },
+              {
+                "id": "18",
+                "title": {
+                  "en": "Melody 18 - Tone",
+                  "fr": "Mélodie 18 - Tonalité"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "siren_set_volume",
+        "title": {
+          "en": "Set siren volume",
+          "fr": "Définir volume sirène"
+        },
+        "titleFormatted": {
+          "en": "Set volume to [[volume]]",
+          "fr": "Définir volume sur [[volume]]"
+        },
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "volume",
+            "title": {
+              "en": "Volume",
+              "fr": "Volume"
+            },
+            "values": [
+              {
+                "id": "low",
+                "title": {
+                  "en": "Low",
+                  "fr": "Bas"
+                }
+              },
+              {
+                "id": "medium",
+                "title": {
+                  "en": "Medium",
+                  "fr": "Moyen"
+                }
+              },
+              {
+                "id": "high",
+                "title": {
+                  "en": "High",
+                  "fr": "Fort"
+                }
+              },
+              {
+                "id": "mute",
+                "title": {
+                  "en": "Mute",
+                  "fr": "Muet"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "siren_set_duration",
+        "title": {
+          "en": "Set siren duration",
+          "fr": "Définir durée sirène"
+        },
+        "titleFormatted": {
+          "en": "Set duration to [[duration]] seconds",
+          "fr": "Définir durée sur [[duration]] secondes"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "duration",
+            "title": {
+              "en": "Duration (s)",
+              "fr": "Durée (s)"
+            },
+            "min": 1,
+            "max": 300,
+            "step": 1,
+            "label": "s"
+          }
+        ]
+      },
+      {
+        "id": "siren_trigger_alarm",
+        "title": {
+          "en": "Trigger siren alarm",
+          "fr": "Déclencher alarme sirène"
+        }
+      },
+      {
+        "id": "siren_stop_alarm",
+        "title": {
+          "en": "Stop siren alarm",
+          "fr": "Arrêter alarme sirène"
+        }
+      },
+      {
+        "id": "siren_test",
+        "title": {
+          "en": "Test siren",
+          "fr": "Tester sirène"
+        }
+      }
+    ]
+  },
   "images": {
     "small": "drivers/siren/assets/images/small.png",
     "large": "drivers/siren/assets/images/large.png",
