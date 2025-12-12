@@ -327,6 +327,55 @@
       }
     }
   ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "water_leak_detected",
+        "title": {
+          "en": "Water leak detected",
+          "fr": "Fuite d'eau détectée",
+          "nl": "Waterlek gedetecteerd",
+          "de": "Wasserleck erkannt"
+        }
+      },
+      {
+        "id": "water_leak_cleared",
+        "title": {
+          "en": "Water leak cleared",
+          "fr": "Fuite d'eau terminée",
+          "nl": "Waterlek gestopt",
+          "de": "Wasserleck beendet"
+        }
+      },
+      {
+        "id": "water_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "fr": "Batterie faible"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)",
+              "fr": "Batterie (%)"
+            },
+            "example": 15
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "water_leak_is_active",
+        "title": {
+          "en": "Water leak !{{is|isn't}} detected",
+          "fr": "Fuite d'eau !{{est|n'est pas}} détectée"
+        }
+      }
+    ]
+  },
   "images": {
     "small": "drivers/water_leak_sensor/assets/images/small.png",
     "large": "drivers/water_leak_sensor/assets/images/large.png",

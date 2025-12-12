@@ -381,6 +381,55 @@
       }
     }
   ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "contact_opened",
+        "title": {
+          "en": "Door/window opened",
+          "fr": "Porte/fenêtre ouverte",
+          "nl": "Deur/raam geopend",
+          "de": "Tür/Fenster geöffnet"
+        }
+      },
+      {
+        "id": "contact_closed",
+        "title": {
+          "en": "Door/window closed",
+          "fr": "Porte/fenêtre fermée",
+          "nl": "Deur/raam gesloten",
+          "de": "Tür/Fenster geschlossen"
+        }
+      },
+      {
+        "id": "contact_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "fr": "Batterie faible"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)",
+              "fr": "Batterie (%)"
+            },
+            "example": 15
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "contact_is_open",
+        "title": {
+          "en": "Door/window !{{is|isn't}} open",
+          "fr": "Porte/fenêtre !{{est|n'est pas}} ouverte"
+        }
+      }
+    ]
+  },
   "images": {
     "small": "drivers/contact_sensor/assets/images/small.png",
     "large": "drivers/contact_sensor/assets/images/large.png",
