@@ -1015,6 +1015,218 @@
       ]
     }
   ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "climate_temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée",
+          "nl": "Temperatuur gewijzigd",
+          "de": "Temperatur geändert"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)"
+            },
+            "example": 21.5
+          }
+        ]
+      },
+      {
+        "id": "climate_humidity_changed",
+        "title": {
+          "en": "Humidity changed",
+          "fr": "Humidité changée",
+          "nl": "Luchtvochtigheid gewijzigd",
+          "de": "Luftfeuchtigkeit geändert"
+        },
+        "tokens": [
+          {
+            "name": "humidity",
+            "type": "number",
+            "title": {
+              "en": "Humidity (%)",
+              "fr": "Humidité (%)"
+            },
+            "example": 55
+          }
+        ]
+      },
+      {
+        "id": "climate_temperature_above",
+        "title": {
+          "en": "Temperature rises above",
+          "fr": "Température dépasse",
+          "nl": "Temperatuur stijgt boven",
+          "de": "Temperatur steigt über"
+        },
+        "titleFormatted": {
+          "en": "Temperature rises above [[threshold]] °C",
+          "fr": "Température dépasse [[threshold]] °C"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": -20,
+            "max": 60,
+            "step": 0.5,
+            "placeholder": {
+              "en": "25"
+            }
+          }
+        ]
+      },
+      {
+        "id": "climate_temperature_below",
+        "title": {
+          "en": "Temperature drops below",
+          "fr": "Température tombe sous",
+          "nl": "Temperatuur daalt onder",
+          "de": "Temperatur fällt unter"
+        },
+        "titleFormatted": {
+          "en": "Temperature drops below [[threshold]] °C",
+          "fr": "Température tombe sous [[threshold]] °C"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": -20,
+            "max": 60,
+            "step": 0.5,
+            "placeholder": {
+              "en": "18"
+            }
+          }
+        ]
+      },
+      {
+        "id": "climate_humidity_above",
+        "title": {
+          "en": "Humidity rises above",
+          "fr": "Humidité dépasse",
+          "nl": "Luchtvochtigheid stijgt boven",
+          "de": "Luftfeuchtigkeit steigt über"
+        },
+        "titleFormatted": {
+          "en": "Humidity rises above [[threshold]] %",
+          "fr": "Humidité dépasse [[threshold]] %"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "placeholder": {
+              "en": "70"
+            }
+          }
+        ]
+      },
+      {
+        "id": "climate_humidity_below",
+        "title": {
+          "en": "Humidity drops below",
+          "fr": "Humidité tombe sous",
+          "nl": "Luchtvochtigheid daalt onder",
+          "de": "Luftfeuchtigkeit fällt unter"
+        },
+        "titleFormatted": {
+          "en": "Humidity drops below [[threshold]] %",
+          "fr": "Humidité tombe sous [[threshold]] %"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "placeholder": {
+              "en": "30"
+            }
+          }
+        ]
+      },
+      {
+        "id": "climate_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "fr": "Batterie faible",
+          "nl": "Batterij is laag",
+          "de": "Batterie ist schwach"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)",
+              "fr": "Batterie (%)"
+            },
+            "example": 15
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "climate_temperature_is",
+        "title": {
+          "en": "Temperature is !{{above|below}} threshold",
+          "fr": "Température est !{{au-dessus|en-dessous}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "Temperature is !{{above|below}} [[threshold]] °C",
+          "fr": "Température est !{{au-dessus|en-dessous de}} [[threshold]] °C"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": -20,
+            "max": 60,
+            "step": 0.5,
+            "placeholder": {
+              "en": "20"
+            }
+          }
+        ]
+      },
+      {
+        "id": "climate_humidity_is",
+        "title": {
+          "en": "Humidity is !{{above|below}} threshold",
+          "fr": "Humidité est !{{au-dessus|en-dessous}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "Humidity is !{{above|below}} [[threshold]] %",
+          "fr": "Humidité est !{{au-dessus|en-dessous de}} [[threshold]] %"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "placeholder": {
+              "en": "50"
+            }
+          }
+        ]
+      }
+    ]
+  },
   "images": {
     "small": "drivers/climate_sensor/assets/images/small.png",
     "large": "drivers/climate_sensor/assets/images/large.png",
