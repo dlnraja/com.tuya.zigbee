@@ -345,6 +345,124 @@
       }
     }
   ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "plug_power_changed",
+        "title": {
+          "en": "Power changed",
+          "fr": "Puissance changée"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)",
+              "fr": "Puissance (W)"
+            },
+            "example": 150
+          }
+        ]
+      },
+      {
+        "id": "plug_power_above",
+        "title": {
+          "en": "Power exceeds threshold",
+          "fr": "Puissance dépasse le seuil"
+        },
+        "titleFormatted": {
+          "en": "Power exceeds [[threshold]] W",
+          "fr": "Puissance dépasse [[threshold]] W"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 5000,
+            "step": 10,
+            "placeholder": {
+              "en": "1000"
+            }
+          }
+        ]
+      },
+      {
+        "id": "plug_standby_entered",
+        "title": {
+          "en": "Device entered standby",
+          "fr": "Appareil en veille"
+        }
+      },
+      {
+        "id": "plug_standby_exited",
+        "title": {
+          "en": "Device exited standby",
+          "fr": "Appareil sorti de veille"
+        }
+      },
+      {
+        "id": "plug_overload",
+        "title": {
+          "en": "Overload detected",
+          "fr": "Surcharge détectée"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)",
+              "fr": "Puissance (W)"
+            },
+            "example": 3500
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "plug_power_is",
+        "title": {
+          "en": "Power is !{{above|below}} threshold",
+          "fr": "Puissance est !{{au-dessus|en-dessous}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "Power is !{{above|below}} [[threshold]] W",
+          "fr": "Puissance est !{{au-dessus|en-dessous de}} [[threshold]] W"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 5000,
+            "step": 10,
+            "placeholder": {
+              "en": "100"
+            }
+          }
+        ]
+      },
+      {
+        "id": "plug_in_standby",
+        "title": {
+          "en": "Device !{{is|isn't}} in standby",
+          "fr": "Appareil !{{est|n'est pas}} en veille"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "plug_reset_meter",
+        "title": {
+          "en": "Reset energy meter",
+          "fr": "Réinitialiser compteur énergie"
+        }
+      }
+    ]
+  },
   "images": {
     "small": "drivers/plug_smart/assets/images/small.png",
     "large": "drivers/plug_smart/assets/images/large.png",

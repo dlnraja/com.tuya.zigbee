@@ -383,6 +383,88 @@
     }
   },
   "id": "button_wireless",
+  "flow": {
+    "triggers": [
+      {
+        "id": "button_pressed",
+        "title": {
+          "en": "Button pressed",
+          "fr": "Bouton appuyé",
+          "nl": "Knop ingedrukt",
+          "de": "Taste gedrückt"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ]
+      },
+      {
+        "id": "button_double_pressed",
+        "title": {
+          "en": "Button double pressed",
+          "fr": "Bouton double appui",
+          "nl": "Knop dubbel ingedrukt",
+          "de": "Taste doppelt gedrückt"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ]
+      },
+      {
+        "id": "button_long_pressed",
+        "title": {
+          "en": "Button long pressed",
+          "fr": "Bouton appui long",
+          "nl": "Knop lang ingedrukt",
+          "de": "Taste lang gedrückt"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ]
+      },
+      {
+        "id": "button_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "fr": "Batterie faible"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)",
+              "fr": "Batterie (%)"
+            },
+            "example": 15
+          }
+        ]
+      }
+    ]
+  },
   "pair": [
     {
       "id": "list_devices",
