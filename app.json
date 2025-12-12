@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.163",
+  "version": "5.5.164",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -555,22 +555,82 @@
         ]
       },
       {
-        "id": "sos_button_pressed",
+        "id": "soil_moisture_changed",
         "title": {
-          "en": "SOS button is pressed",
-          "fr": "Bouton SOS appuyé",
-          "nl": "SOS-knop ingedrukt",
-          "de": "SOS-Taste gedrückt"
+          "en": "Soil moisture changed",
+          "fr": "Humidité du sol changée",
+          "nl": "Bodemvochtigheid gewijzigd",
+          "de": "Bodenfeuchtigkeit geändert"
         },
         "hint": {
-          "en": "This Flow will start when the SOS emergency button is pressed",
-          "fr": "Ce Flow démarrera quand le bouton SOS d'urgence est appuyé"
+          "en": "Triggered when soil moisture level changes",
+          "fr": "Déclenché quand l'humidité du sol change"
         },
+        "tokens": [
+          {
+            "name": "moisture",
+            "type": "number",
+            "title": {
+              "en": "Moisture (%)",
+              "fr": "Humidité (%)"
+            },
+            "example": 45
+          }
+        ],
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=button_emergency_sos"
+            "filter": "driver_id=soil_sensor"
+          }
+        ]
+      },
+      {
+        "id": "soil_moisture_low",
+        "title": {
+          "en": "Soil moisture drops below threshold",
+          "fr": "Humidité du sol tombe sous le seuil",
+          "nl": "Bodemvochtigheid daalt onder drempel",
+          "de": "Bodenfeuchtigkeit fällt unter Schwelle"
+        },
+        "titleFormatted": {
+          "en": "Soil moisture drops below [[threshold]] %",
+          "fr": "Humidité du sol tombe sous [[threshold]] %"
+        },
+        "hint": {
+          "en": "Triggered when soil becomes too dry - perfect for irrigation automation",
+          "fr": "Déclenché quand le sol devient trop sec - parfait pour l'irrigation automatique"
+        },
+        "tokens": [
+          {
+            "name": "moisture",
+            "type": "number",
+            "title": {
+              "en": "Current moisture (%)",
+              "fr": "Humidité actuelle (%)"
+            },
+            "example": 25
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=soil_sensor"
+          },
+          {
+            "type": "number",
+            "name": "threshold",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "title": {
+              "en": "Threshold (%)",
+              "fr": "Seuil (%)"
+            },
+            "placeholder": {
+              "en": "30"
+            }
           }
         ]
       },
@@ -617,7 +677,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=climate_sensor|thermostat_tuya_dp|radiator_valve|temphumidsensor"
+            "filter": "driver_id=climate_sensor|thermostat_tuya_dp|radiator_valve|temphumidsensor|soil_sensor|air_quality_co2|air_quality_comprehensive|weather_station_outdoor|motion_sensor"
           }
         ]
       },
@@ -11364,21 +11424,10 @@
       "zigbee": {
         "manufacturerName": [
           "_TZE200_ywagc4rj",
-          "_TZE200_zl1kmjqx",
-          "_TZE200_7bztmfm1",
-          "_TZE200_81isopgh",
           "_TZE200_9cxuhakf",
-          "_TZE200_a8sdabtg",
-          "_TZE200_azqp6ssj",
-          "_TZE200_b6wax7g0",
-          "_TZE200_c88teujp",
-          "_TZE200_ckud7u2l",
-          "_TZE200_cwbvmsar",
-          "_TZE200_m9skfctm",
           "_TZE204_ywagc4rj",
           "_TZE204_zl1kmjqx",
-          "_TZE204_a8sdabtg",
-          "_TZE284_sgabhwa6"
+          "_TZE204_a8sdabtg"
         ],
         "productId": [
           "CO2M",
@@ -11441,6 +11490,99 @@
           ]
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "co2_level_changed",
+            "title": {
+              "en": "CO2 level changed",
+              "fr": "Niveau CO2 changé"
+            },
+            "tokens": [
+              {
+                "name": "co2",
+                "type": "number",
+                "title": {
+                  "en": "CO2 (ppm)"
+                },
+                "example": 800
+              }
+            ]
+          },
+          {
+            "id": "co2_level_above",
+            "title": {
+              "en": "CO2 rises above threshold",
+              "fr": "CO2 dépasse le seuil"
+            },
+            "titleFormatted": {
+              "en": "CO2 rises above [[threshold]] ppm"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 400,
+                "max": 5000,
+                "step": 100,
+                "placeholder": {
+                  "en": "1000"
+                }
+              }
+            ]
+          },
+          {
+            "id": "co2_level_below",
+            "title": {
+              "en": "CO2 drops below threshold",
+              "fr": "CO2 tombe sous le seuil"
+            },
+            "titleFormatted": {
+              "en": "CO2 drops below [[threshold]] ppm"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 400,
+                "max": 5000,
+                "step": 100,
+                "placeholder": {
+                  "en": "800"
+                }
+              }
+            ]
+          },
+          {
+            "id": "co2_alert_triggered",
+            "title": {
+              "en": "CO2 alert triggered",
+              "fr": "Alerte CO2 déclenchée"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "id": "co2_level_is",
+            "title": {
+              "en": "CO2 !{{above|below}} threshold",
+              "fr": "CO2 !{{au-dessus|en-dessous}} du seuil"
+            },
+            "titleFormatted": {
+              "en": "CO2 !{{above|below}} [[threshold]] ppm"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 400,
+                "max": 5000,
+                "step": 100
+              }
+            ]
+          }
+        ]
+      },
       "images": {
         "small": "drivers/air_quality_co2/assets/images/small.png",
         "large": "drivers/air_quality_co2/assets/images/large.png"
@@ -11489,20 +11631,8 @@
           "_TZ2000_hjsgdkfl",
           "_TZ3000_0ht8dnxj",
           "_TZ3000_8gs8h2e4",
-          "_TZ3000_ssp0maqm",
           "_TZE200_nnrfa68v",
-          "_TZE204_nnrfa68v",
-          "_TZ3000_01gpyda5",
-          "_TZ3000_0dumfk2z",
-          "_TZ3000_0ghwhypc",
-          "_TZ3000_0s1izerx",
-          "_TZ3000_kqvb5akv",
-          "_TZ3000_ww6drja5",
-          "_TZ3000_ltt60asa",
-          "_TZ3000_akqdg6g7",
-          "_TZE200_dwcarsat",
-          "_TZE200_8ygsuhe1",
-          "_TZE284_sgabhwa6"
+          "_TZE204_nnrfa68v"
         ],
         "productId": [
           "NOISE01",
@@ -13513,36 +13643,23 @@
           "_TZ3000_eo3dttwe",
           "_TZ3000_fsiepnrh",
           "_TZ3000_iystcadi",
-          "_TZ3000_4fsgukof",
-          "_TZ3000_wr2ucaj9",
-          "_TZ3000_zsh6uat3",
-          "_TZ3000_pkfazisv",
-          "_TZ3000_2izubafb",
-          "_TZ3000_ug1vtuzn",
-          "_TZ3000_p6ju8myv",
           "_TZ3000_8xz0pyqy",
           "_TZ3000_zpjuqnco",
-          "_TYZB01_sqmd19i1",
-          "_TZ3000_p3fph1go",
-          "_TZ3000_k4ej3ww2",
-          "_TZ3000_kdi2o9m6",
-          "_TZ3000_peszejy7",
           "_TZ3000_qjhwtnkf",
           "_TZ3000_graty6sj",
-          "_TZ3000_fkp5zyho",
           "_TZ3000_imkwgfwh",
-          "_TZE200_kzm5w4iz",
           "_TZE200_0ble7ow3",
-          "_TZ3000_tj4pwzzm",
           "_TZ3000_ssp0maqm",
-          "_TZ3000_u2bbagu4",
-          "_TYZB01_trqoesc6"
+          "_TYZB01_trqoesc6",
+          "_TZ3000_is27vzco",
+          "_TZ3000_gnwgnwvq",
+          "_TZ3000_fywhzh9u",
+          "_TZ3000_rmhkdz0l",
+          "_TZ3000_n0h1dr7u"
         ],
         "productId": [
           "TS0215A",
-          "TS0218",
-          "TS0601",
-          "default"
+          "TS0218"
         ],
         "endpoints": {
           "1": {
@@ -13836,7 +13953,7 @@
             "en": "Tuya Datapoint Configuration",
             "fr": "Configuration Tuya Datapoint"
           },
-          "value": "{\n  \"1\": \"button_press\",\n  \"101\": \"battery_percentage\"\n}"
+          "value": "DP1/DP14: SOS (bool)\nDP4/DP15: Battery %\nDP101: Context (bool=SOS, num=battery)"
         },
         {
           "id": "dp_debug_mode",
@@ -13865,6 +13982,59 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "sos_button_pressed",
+            "title": {
+              "en": "SOS button pressed",
+              "fr": "Bouton SOS appuyé",
+              "nl": "SOS knop ingedrukt",
+              "de": "SOS-Taste gedrückt"
+            }
+          },
+          {
+            "id": "sos_button_released",
+            "title": {
+              "en": "SOS button released",
+              "fr": "Bouton SOS relâché"
+            }
+          },
+          {
+            "id": "sos_battery_low",
+            "title": {
+              "en": "Battery is low",
+              "fr": "Batterie faible"
+            },
+            "tokens": [
+              {
+                "name": "battery",
+                "type": "number",
+                "title": {
+                  "en": "Battery (%)"
+                },
+                "example": 15
+              }
+            ]
+          },
+          {
+            "id": "sos_tamper_alarm",
+            "title": {
+              "en": "Tamper alarm triggered",
+              "fr": "Alarme sabotage déclenchée"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "id": "sos_is_active",
+            "title": {
+              "en": "SOS !{{is|isn't}} active",
+              "fr": "SOS !{{est|n'est pas}} actif"
+            }
+          }
+        ]
+      },
       "images": {
         "small": "drivers/button_emergency_sos/assets/images/small.png",
         "large": "drivers/button_emergency_sos/assets/images/large.png",
@@ -13929,7 +14099,6 @@
           "_TZ3000_fkvaniuu",
           "_TZ3000_lq01",
           "_TZ3000_wqxwpita",
-          "_TZ3000_5bpeda8u",
           "_TZ3400_key8kk7r",
           "_TZ3400_keyjhapk"
         ],
@@ -14283,6 +14452,88 @@
         }
       },
       "id": "button_wireless",
+      "flow": {
+        "triggers": [
+          {
+            "id": "button_pressed",
+            "title": {
+              "en": "Button pressed",
+              "fr": "Bouton appuyé",
+              "nl": "Knop ingedrukt",
+              "de": "Taste gedrückt"
+            },
+            "tokens": [
+              {
+                "name": "button",
+                "type": "string",
+                "title": {
+                  "en": "Button",
+                  "fr": "Bouton"
+                },
+                "example": "1"
+              }
+            ]
+          },
+          {
+            "id": "button_double_pressed",
+            "title": {
+              "en": "Button double pressed",
+              "fr": "Bouton double appui",
+              "nl": "Knop dubbel ingedrukt",
+              "de": "Taste doppelt gedrückt"
+            },
+            "tokens": [
+              {
+                "name": "button",
+                "type": "string",
+                "title": {
+                  "en": "Button",
+                  "fr": "Bouton"
+                },
+                "example": "1"
+              }
+            ]
+          },
+          {
+            "id": "button_long_pressed",
+            "title": {
+              "en": "Button long pressed",
+              "fr": "Bouton appui long",
+              "nl": "Knop lang ingedrukt",
+              "de": "Taste lang gedrückt"
+            },
+            "tokens": [
+              {
+                "name": "button",
+                "type": "string",
+                "title": {
+                  "en": "Button",
+                  "fr": "Bouton"
+                },
+                "example": "1"
+              }
+            ]
+          },
+          {
+            "id": "button_battery_low",
+            "title": {
+              "en": "Battery is low",
+              "fr": "Batterie faible"
+            },
+            "tokens": [
+              {
+                "name": "battery",
+                "type": "number",
+                "title": {
+                  "en": "Battery (%)",
+                  "fr": "Batterie (%)"
+                },
+                "example": 15
+              }
+            ]
+          }
+        ]
+      },
       "pair": [
         {
           "id": "list_devices",
@@ -14351,7 +14602,6 @@
           "TS0201",
           "ZG-101ZL",
           "_TYZB02_keyjqthh",
-          "_TZ3000_46t1rvdu",
           "_TZ3000_abrsvsou",
           "_TZ3000_an5rjiwd",
           "_TZ3000_arfwfgre",
@@ -15458,7 +15708,6 @@
           "_TZ3000_uaa99arv",
           "_TZ3000_ufhtxr59",
           "_TZ3000_w4thianr",
-          "_TZ3000_u3nv1jwk",
           "_tz3040_fwxuzcf4",
           "_tz3040_msl6wxk9",
           "_tz3290_785fbxik",
@@ -17004,7 +17253,6 @@
           "ZG-225Z",
           "ZG-227Z",
           "ZG-227ZL",
-          "ZG-303Z",
           "ZGAF-205L",
           "_TZ1800_ladpngdx",
           "_TZ2000_a476raq2",
@@ -17038,9 +17286,7 @@
           "_TZ3000_isw9u95y",
           "_TZ3000_itnrsufe",
           "_TZ3000_kmh5qpmb",
-          "_TZ3000_kqvb5akv",
           "_TZ3000_lqmvrwa2",
-          "_TZ3000_ltt60asa",
           "_TZ3000_mxzo5rhf",
           "_TZ3000_n2egfsli",
           "_TZ3000_okohwwap",
@@ -17054,7 +17300,6 @@
           "_TZ3000_unw0hpdv",
           "_TZ3000_utwgoauk",
           "_TZ3000_v1w2k9dd",
-          "_TZ3000_ww6drja5",
           "_TZ3000_xr3htd96",
           "_TZ3000_xyz",
           "_TZ3000_yd2e749y",
@@ -17092,7 +17337,6 @@
           "_TZE200_2atgpdho",
           "_TZE200_2cs6g9i7",
           "_TZE200_2dpplnsn",
-          "_TZE200_2ekuz3dz",
           "_TZE200_2hf7x9n3",
           "_TZE200_2imwyigp",
           "_TZE200_2m38mh6k",
@@ -17157,7 +17401,6 @@
           "_TZE200_anv5ujhv",
           "_TZE200_aqnazj70",
           "_TZE200_atpwqgml",
-          "_TZE200_auin8mzr",
           "_TZE200_ax8a8ahx",
           "_TZE200_b2u1drdv",
           "_TZE200_ba69l9ol",
@@ -17176,7 +17419,6 @@
           "_TZE200_cirvgep4",
           "_TZE200_ckud7u2l",
           "_TZE200_clm4gdw4",
-          "_TZE200_cpmgn2cf",
           "_TZE200_cq8lu23i",
           "_TZE200_cqtamhh5",
           "_TZE200_crq3r3la",
@@ -17216,12 +17458,10 @@
           "_TZE200_exfrnlow",
           "_TZE200_ezqy5pvh",
           "_TZE200_f1pvdgoh",
-          "_TZE200_fctwhugx",
           "_TZE200_feolm6rk",
           "_TZE200_fjjbhx9d",
           "_TZE200_fodv6bkr",
           "_TZE200_fphxkxue",
-          "_TZE200_fqytfymk",
           "_TZE200_fsb6zw01",
           "_TZE200_fsow0qsk",
           "_TZE200_fwoorn8y",
@@ -17255,7 +17495,6 @@
           "_TZE200_iba1ckek",
           "_TZE200_ijey4q29",
           "_TZE200_io0zdqh1",
-          "_TZE200_ip2akl4w",
           "_TZE200_iq4ygaai",
           "_TZE200_iuk8kupi",
           "_TZE200_ivdc0kwl",
@@ -17273,7 +17512,6 @@
           "_TZE200_jxyhl4eq",
           "_TZE200_k6jhsr0q",
           "_TZE200_ka8l86iu",
-          "_TZE200_kb5noeto",
           "_TZE200_kccdzaeo",
           "_TZE200_kf2hbko4",
           "_TZE200_khah2lkr",
@@ -17318,7 +17556,6 @@
           "_TZE200_nklqjk62",
           "_TZE200_nogaemzt",
           "_TZE200_nojsjtj2",
-          "_TZE200_npj9bug3",
           "_TZE200_nslr42tt",
           "_TZE200_nueqqe6k",
           "_TZE200_nus5kk3n",
@@ -17428,7 +17665,6 @@
           "_TZE200_vucankjx",
           "_TZE200_vuqzj1ej",
           "_TZE200_vuwtqx0t",
-          "_TZE200_vvmbj46n",
           "_TZE200_vzqtvljm",
           "_TZE200_w4cryh2i",
           "_TZE200_w6n8jeuu",
@@ -17481,7 +17717,6 @@
           "_TZE200_ytibqbra",
           "_TZE200_ytx9fudw",
           "_TZE200_yvx5lh6k",
-          "_TZE200_yw7cahqs",
           "_TZE200_ywdxldoj",
           "_TZE200_ywe90lt0",
           "_TZE200_z1tyspqw",
@@ -17615,7 +17850,6 @@
           "_TZE204_mpbki2zm",
           "_TZE204_mpg22jc1",
           "_TZE204_mrffaamu",
-          "_TZE204_mtoaryre",
           "_TZE204_mul9abs3",
           "_TZE204_muvkrjr5",
           "_TZE204_mvtclclq",
@@ -17747,7 +17981,6 @@
           "_TZE284_agcxaw3f",
           "_TZE284_ai4rqhky",
           "_TZE284_ajlu4cud",
-          "_TZE284_aoclfnxz",
           "_TZE284_ap9owrsa",
           "_TZE284_atuj3i0w",
           "_TZE284_awepdiwi",
@@ -17810,7 +18043,6 @@
           "_TZE284_qyflbnbj",
           "_TZE284_r3szw0xr",
           "_TZE284_rccgwzz8",
-          "_TZE284_rccxox8p",
           "_TZE284_rjxqso4a",
           "_TZE284_rqcuwlsa",
           "_TZE284_rv6iuyxb",
@@ -17960,6 +18192,218 @@
           ]
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "climate_temperature_changed",
+            "title": {
+              "en": "Temperature changed",
+              "fr": "Température changée",
+              "nl": "Temperatuur gewijzigd",
+              "de": "Temperatur geändert"
+            },
+            "tokens": [
+              {
+                "name": "temperature",
+                "type": "number",
+                "title": {
+                  "en": "Temperature (°C)",
+                  "fr": "Température (°C)"
+                },
+                "example": 21.5
+              }
+            ]
+          },
+          {
+            "id": "climate_humidity_changed",
+            "title": {
+              "en": "Humidity changed",
+              "fr": "Humidité changée",
+              "nl": "Luchtvochtigheid gewijzigd",
+              "de": "Luftfeuchtigkeit geändert"
+            },
+            "tokens": [
+              {
+                "name": "humidity",
+                "type": "number",
+                "title": {
+                  "en": "Humidity (%)",
+                  "fr": "Humidité (%)"
+                },
+                "example": 55
+              }
+            ]
+          },
+          {
+            "id": "climate_temperature_above",
+            "title": {
+              "en": "Temperature rises above",
+              "fr": "Température dépasse",
+              "nl": "Temperatuur stijgt boven",
+              "de": "Temperatur steigt über"
+            },
+            "titleFormatted": {
+              "en": "Temperature rises above [[threshold]] °C",
+              "fr": "Température dépasse [[threshold]] °C"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": -20,
+                "max": 60,
+                "step": 0.5,
+                "placeholder": {
+                  "en": "25"
+                }
+              }
+            ]
+          },
+          {
+            "id": "climate_temperature_below",
+            "title": {
+              "en": "Temperature drops below",
+              "fr": "Température tombe sous",
+              "nl": "Temperatuur daalt onder",
+              "de": "Temperatur fällt unter"
+            },
+            "titleFormatted": {
+              "en": "Temperature drops below [[threshold]] °C",
+              "fr": "Température tombe sous [[threshold]] °C"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": -20,
+                "max": 60,
+                "step": 0.5,
+                "placeholder": {
+                  "en": "18"
+                }
+              }
+            ]
+          },
+          {
+            "id": "climate_humidity_above",
+            "title": {
+              "en": "Humidity rises above",
+              "fr": "Humidité dépasse",
+              "nl": "Luchtvochtigheid stijgt boven",
+              "de": "Luftfeuchtigkeit steigt über"
+            },
+            "titleFormatted": {
+              "en": "Humidity rises above [[threshold]] %",
+              "fr": "Humidité dépasse [[threshold]] %"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "placeholder": {
+                  "en": "70"
+                }
+              }
+            ]
+          },
+          {
+            "id": "climate_humidity_below",
+            "title": {
+              "en": "Humidity drops below",
+              "fr": "Humidité tombe sous",
+              "nl": "Luchtvochtigheid daalt onder",
+              "de": "Luftfeuchtigkeit fällt unter"
+            },
+            "titleFormatted": {
+              "en": "Humidity drops below [[threshold]] %",
+              "fr": "Humidité tombe sous [[threshold]] %"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "placeholder": {
+                  "en": "30"
+                }
+              }
+            ]
+          },
+          {
+            "id": "climate_battery_low",
+            "title": {
+              "en": "Battery is low",
+              "fr": "Batterie faible",
+              "nl": "Batterij is laag",
+              "de": "Batterie ist schwach"
+            },
+            "tokens": [
+              {
+                "name": "battery",
+                "type": "number",
+                "title": {
+                  "en": "Battery (%)",
+                  "fr": "Batterie (%)"
+                },
+                "example": 15
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "id": "climate_temperature_is",
+            "title": {
+              "en": "Temperature is !{{above|below}} threshold",
+              "fr": "Température est !{{au-dessus|en-dessous}} du seuil"
+            },
+            "titleFormatted": {
+              "en": "Temperature is !{{above|below}} [[threshold]] °C",
+              "fr": "Température est !{{au-dessus|en-dessous de}} [[threshold]] °C"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": -20,
+                "max": 60,
+                "step": 0.5,
+                "placeholder": {
+                  "en": "20"
+                }
+              }
+            ]
+          },
+          {
+            "id": "climate_humidity_is",
+            "title": {
+              "en": "Humidity is !{{above|below}} threshold",
+              "fr": "Humidité est !{{au-dessus|en-dessous}} du seuil"
+            },
+            "titleFormatted": {
+              "en": "Humidity is !{{above|below}} [[threshold]] %",
+              "fr": "Humidité est !{{au-dessus|en-dessous de}} [[threshold]] %"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "placeholder": {
+                  "en": "50"
+                }
+              }
+            ]
+          }
+        ]
+      },
       "images": {
         "small": "drivers/climate_sensor/assets/images/small.png",
         "large": "drivers/climate_sensor/assets/images/large.png",
@@ -18410,6 +18854,55 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "contact_opened",
+            "title": {
+              "en": "Door/window opened",
+              "fr": "Porte/fenêtre ouverte",
+              "nl": "Deur/raam geopend",
+              "de": "Tür/Fenster geöffnet"
+            }
+          },
+          {
+            "id": "contact_closed",
+            "title": {
+              "en": "Door/window closed",
+              "fr": "Porte/fenêtre fermée",
+              "nl": "Deur/raam gesloten",
+              "de": "Tür/Fenster geschlossen"
+            }
+          },
+          {
+            "id": "contact_battery_low",
+            "title": {
+              "en": "Battery is low",
+              "fr": "Batterie faible"
+            },
+            "tokens": [
+              {
+                "name": "battery",
+                "type": "number",
+                "title": {
+                  "en": "Battery (%)",
+                  "fr": "Batterie (%)"
+                },
+                "example": 15
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "id": "contact_is_open",
+            "title": {
+              "en": "Door/window !{{is|isn't}} open",
+              "fr": "Porte/fenêtre !{{est|n'est pas}} ouverte"
+            }
+          }
+        ]
+      },
       "images": {
         "small": "drivers/contact_sensor/assets/images/small.png",
         "large": "drivers/contact_sensor/assets/images/large.png",
@@ -18875,6 +19368,115 @@
           "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote"
         }
       },
+      "flow": {
+        "triggers": [
+          {
+            "id": "cover_position_changed",
+            "title": {
+              "en": "Position changed",
+              "fr": "Position changée"
+            },
+            "tokens": [
+              {
+                "name": "position",
+                "type": "number",
+                "title": {
+                  "en": "Position (%)",
+                  "fr": "Position (%)"
+                },
+                "example": 50
+              }
+            ]
+          },
+          {
+            "id": "cover_opened",
+            "title": {
+              "en": "Cover fully opened",
+              "fr": "Volet complètement ouvert"
+            }
+          },
+          {
+            "id": "cover_closed",
+            "title": {
+              "en": "Cover fully closed",
+              "fr": "Volet complètement fermé"
+            }
+          },
+          {
+            "id": "cover_stopped",
+            "title": {
+              "en": "Cover stopped",
+              "fr": "Volet arrêté"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "id": "cover_position_is",
+            "title": {
+              "en": "Position is !{{above|below}} threshold",
+              "fr": "Position est !{{au-dessus|en-dessous}} du seuil"
+            },
+            "titleFormatted": {
+              "en": "Position is !{{above|below}} [[threshold]] %",
+              "fr": "Position est !{{au-dessus|en-dessous de}} [[threshold]] %"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 0,
+                "max": 100,
+                "step": 5,
+                "placeholder": {
+                  "en": "50"
+                }
+              }
+            ]
+          },
+          {
+            "id": "cover_is_open",
+            "title": {
+              "en": "Cover !{{is|isn't}} fully open",
+              "fr": "Volet !{{est|n'est pas}} complètement ouvert"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "id": "cover_set_position",
+            "title": {
+              "en": "Set cover position",
+              "fr": "Définir position volet"
+            },
+            "titleFormatted": {
+              "en": "Set position to [[position]] %",
+              "fr": "Définir position à [[position]] %"
+            },
+            "args": [
+              {
+                "type": "range",
+                "name": "position",
+                "title": {
+                  "en": "Position",
+                  "fr": "Position"
+                },
+                "min": 0,
+                "max": 100,
+                "step": 5,
+                "label": "%"
+              }
+            ]
+          },
+          {
+            "id": "cover_stop",
+            "title": {
+              "en": "Stop cover",
+              "fr": "Arrêter volet"
+            }
+          }
+        ]
+      },
       "metadata": {
         "app": {
           "id": "com.dlnraja.tuya.zigbee",
@@ -18921,10 +19523,7 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_icka1clh",
-          "_TZE200_zah67ekd",
-          "_TZE200_fctwhugx",
-          "_TZE200_zpzndjez"
+          "_TZE200_fctwhugx"
         ],
         "productId": [
           "TS0601"
@@ -19453,6 +20052,118 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "dimmer_turned_on",
+            "title": {
+              "en": "Dimmer turned on",
+              "fr": "Variateur allumé"
+            }
+          },
+          {
+            "id": "dimmer_turned_off",
+            "title": {
+              "en": "Dimmer turned off",
+              "fr": "Variateur éteint"
+            }
+          },
+          {
+            "id": "dimmer_level_changed",
+            "title": {
+              "en": "Brightness changed",
+              "fr": "Luminosité changée"
+            },
+            "tokens": [
+              {
+                "name": "level",
+                "type": "number",
+                "title": {
+                  "en": "Level (%)"
+                },
+                "example": 75
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "id": "dimmer_is_on",
+            "title": {
+              "en": "Dimmer !{{is|isn't}} on",
+              "fr": "Variateur !{{est|n'est pas}} allumé"
+            }
+          },
+          {
+            "id": "dimmer_level_is",
+            "title": {
+              "en": "Brightness !{{above|below}} threshold",
+              "fr": "Luminosité !{{au-dessus|en-dessous}} du seuil"
+            },
+            "titleFormatted": {
+              "en": "Brightness !{{above|below}} [[threshold]] %"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 0,
+                "max": 100,
+                "step": 5
+              }
+            ]
+          }
+        ],
+        "actions": [
+          {
+            "id": "dimmer_set_level",
+            "title": {
+              "en": "Set brightness",
+              "fr": "Définir luminosité"
+            },
+            "titleFormatted": {
+              "en": "Set brightness to [[level]] %"
+            },
+            "args": [
+              {
+                "type": "range",
+                "name": "level",
+                "min": 0,
+                "max": 100,
+                "step": 5,
+                "label": "%"
+              }
+            ]
+          },
+          {
+            "id": "dimmer_fade_to",
+            "title": {
+              "en": "Fade to level",
+              "fr": "Transition vers niveau"
+            },
+            "titleFormatted": {
+              "en": "Fade to [[level]] % in [[duration]] seconds"
+            },
+            "args": [
+              {
+                "type": "range",
+                "name": "level",
+                "min": 0,
+                "max": 100,
+                "step": 5,
+                "label": "%"
+              },
+              {
+                "type": "number",
+                "name": "duration",
+                "min": 1,
+                "max": 60,
+                "step": 1
+              }
+            ]
+          }
+        ]
+      },
       "images": {
         "small": "drivers/dimmer_wall_1gang/assets/images/small.png",
         "large": "drivers/dimmer_wall_1gang/assets/images/large.png",
@@ -20606,15 +21317,9 @@
           "_TZE200_wzqkpstm",
           "_TZ3000_mwd3c2at",
           "_TZ3000_tk3s5tyg",
-          "_TZE200_wfxuhoea",
           "_TZ3000_kqvb5akv",
           "_TZ3000_ww6drja5",
           "_TZ3000_ltt60asa",
-          "_TZ3000_akqdg6g7",
-          "_TZE200_ezqy5pvh",
-          "_TZE200_ux5v4tgb",
-          "_TZE200_yojqa8xn",
-          "_TZ3000_kmh5qpmb",
           "_TZE200_rccxox8p",
           "_TZE200_auin8mzr",
           "_TZE284_rccxox8p"
@@ -20872,6 +21577,71 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "gas_alarm_triggered",
+            "title": {
+              "en": "Gas alarm triggered",
+              "fr": "Alarme gaz déclenchée",
+              "nl": "Gasalarm geactiveerd",
+              "de": "Gasalarm ausgelöst"
+            }
+          },
+          {
+            "id": "gas_alarm_cleared",
+            "title": {
+              "en": "Gas alarm cleared",
+              "fr": "Alarme gaz terminée",
+              "nl": "Gasalarm gestopt",
+              "de": "Gasalarm beendet"
+            }
+          },
+          {
+            "id": "gas_level_changed",
+            "title": {
+              "en": "Gas level changed",
+              "fr": "Niveau de gaz changé"
+            },
+            "tokens": [
+              {
+                "name": "level",
+                "type": "number",
+                "title": {
+                  "en": "Gas level (ppm)",
+                  "fr": "Niveau de gaz (ppm)"
+                },
+                "example": 50
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "id": "gas_alarm_is_active",
+            "title": {
+              "en": "Gas alarm !{{is|isn't}} active",
+              "fr": "Alarme gaz !{{est|n'est pas}} active"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "id": "gas_test_alarm",
+            "title": {
+              "en": "Test gas alarm",
+              "fr": "Tester alarme gaz"
+            }
+          },
+          {
+            "id": "gas_silence_alarm",
+            "title": {
+              "en": "Silence gas alarm",
+              "fr": "Couper alarme gaz"
+            }
+          }
+        ]
+      },
       "images": {
         "small": "drivers/gas_sensor/assets/images/small.png",
         "large": "drivers/gas_sensor/assets/images/large.png",
@@ -23724,12 +24494,8 @@
           "_TZ3000_hswqnljz",
           "_TZ3000_jd3u8dkz",
           "_TZ3000_tqlv4uj4",
-          "_TZ3000_typdpbpg",
-          "_TZ3000_wkai4ga5",
-          "_TZ3000_xkap8wtb",
           "BlitzWolf",
-          "Lonsonho",
-          "SONOFF"
+          "Lonsonho"
         ],
         "productId": [
           "TS0001",
@@ -24100,7 +24866,6 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
-          "HOBEIAN",
           "TS0207",
           "TUYATEC-53o41joc",
           "TUYATEC-b5g40alm",
@@ -24169,7 +24934,8 @@
           "_TZE204_n8dljorx",
           "SONOFF",
           "Perenio",
-          "Fantem"
+          "Fantem",
+          "eWeLink"
         ],
         "productId": [
           "CK-BL702-MWS-01(7016)",
@@ -24206,7 +24972,8 @@
           "PECMS01",
           "ZB003-X",
           "SBDV-00029",
-          "SNZB-03P"
+          "SNZB-03P",
+          "CK-TLSR8656-SS5-01(7002)"
         ],
         "endpoints": {
           "1": {
@@ -24464,6 +25231,146 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "motion_detected",
+            "title": {
+              "en": "Motion detected",
+              "fr": "Mouvement détecté",
+              "nl": "Beweging gedetecteerd",
+              "de": "Bewegung erkannt"
+            }
+          },
+          {
+            "id": "motion_cleared",
+            "title": {
+              "en": "Motion cleared",
+              "fr": "Mouvement terminé",
+              "nl": "Beweging gestopt",
+              "de": "Bewegung beendet"
+            }
+          },
+          {
+            "id": "motion_illuminance_changed",
+            "title": {
+              "en": "Illuminance changed",
+              "fr": "Luminosité changée",
+              "nl": "Lichtsterkte gewijzigd",
+              "de": "Helligkeit geändert"
+            },
+            "tokens": [
+              {
+                "name": "lux",
+                "type": "number",
+                "title": {
+                  "en": "Lux",
+                  "fr": "Lux"
+                },
+                "example": 150
+              }
+            ]
+          },
+          {
+            "id": "motion_illuminance_above",
+            "title": {
+              "en": "Illuminance rises above",
+              "fr": "Luminosité dépasse"
+            },
+            "titleFormatted": {
+              "en": "Illuminance rises above [[threshold]] lux",
+              "fr": "Luminosité dépasse [[threshold]] lux"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 0,
+                "max": 10000,
+                "step": 10,
+                "placeholder": {
+                  "en": "200"
+                }
+              }
+            ]
+          },
+          {
+            "id": "motion_illuminance_below",
+            "title": {
+              "en": "Illuminance drops below",
+              "fr": "Luminosité tombe sous"
+            },
+            "titleFormatted": {
+              "en": "Illuminance drops below [[threshold]] lux",
+              "fr": "Luminosité tombe sous [[threshold]] lux"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 0,
+                "max": 10000,
+                "step": 10,
+                "placeholder": {
+                  "en": "50"
+                }
+              }
+            ]
+          },
+          {
+            "id": "motion_battery_low",
+            "title": {
+              "en": "Battery is low",
+              "fr": "Batterie faible",
+              "nl": "Batterij is laag",
+              "de": "Batterie ist schwach"
+            },
+            "tokens": [
+              {
+                "name": "battery",
+                "type": "number",
+                "title": {
+                  "en": "Battery (%)",
+                  "fr": "Batterie (%)"
+                },
+                "example": 15
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "id": "motion_is_detected",
+            "title": {
+              "en": "Motion !{{is|isn't}} detected",
+              "fr": "Mouvement !{{est|n'est pas}} détecté"
+            }
+          },
+          {
+            "id": "motion_illuminance_is",
+            "title": {
+              "en": "Illuminance is !{{above|below}} threshold",
+              "fr": "Luminosité est !{{au-dessus|en-dessous}} du seuil"
+            },
+            "titleFormatted": {
+              "en": "Illuminance is !{{above|below}} [[threshold]] lux",
+              "fr": "Luminosité est !{{au-dessus|en-dessous de}} [[threshold]] lux"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 0,
+                "max": 10000,
+                "step": 10,
+                "placeholder": {
+                  "en": "100"
+                }
+              }
+            ]
+          }
+        ]
+      },
       "images": {
         "small": "drivers/motion_sensor/assets/images/small.png",
         "large": "drivers/motion_sensor/assets/images/large.png",
@@ -25438,8 +26345,7 @@
           "_TZ3290_lypnqvlem5eq1ree",
           "_TZ3290_xjpbcxn92aaxvmlz",
           "_TZ3290_yac64inudpovoaba",
-          "eWeLi\\u0001\\u0000\\u0010",
-          "eWeLink"
+          "eWeLi\\u0001\\u0000\\u0010"
         ],
         "productId": [
           "TS0111",
@@ -25722,6 +26628,124 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "plug_power_changed",
+            "title": {
+              "en": "Power changed",
+              "fr": "Puissance changée"
+            },
+            "tokens": [
+              {
+                "name": "power",
+                "type": "number",
+                "title": {
+                  "en": "Power (W)",
+                  "fr": "Puissance (W)"
+                },
+                "example": 150
+              }
+            ]
+          },
+          {
+            "id": "plug_power_above",
+            "title": {
+              "en": "Power exceeds threshold",
+              "fr": "Puissance dépasse le seuil"
+            },
+            "titleFormatted": {
+              "en": "Power exceeds [[threshold]] W",
+              "fr": "Puissance dépasse [[threshold]] W"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 0,
+                "max": 5000,
+                "step": 10,
+                "placeholder": {
+                  "en": "1000"
+                }
+              }
+            ]
+          },
+          {
+            "id": "plug_standby_entered",
+            "title": {
+              "en": "Device entered standby",
+              "fr": "Appareil en veille"
+            }
+          },
+          {
+            "id": "plug_standby_exited",
+            "title": {
+              "en": "Device exited standby",
+              "fr": "Appareil sorti de veille"
+            }
+          },
+          {
+            "id": "plug_overload",
+            "title": {
+              "en": "Overload detected",
+              "fr": "Surcharge détectée"
+            },
+            "tokens": [
+              {
+                "name": "power",
+                "type": "number",
+                "title": {
+                  "en": "Power (W)",
+                  "fr": "Puissance (W)"
+                },
+                "example": 3500
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "id": "plug_power_is",
+            "title": {
+              "en": "Power is !{{above|below}} threshold",
+              "fr": "Puissance est !{{au-dessus|en-dessous}} du seuil"
+            },
+            "titleFormatted": {
+              "en": "Power is !{{above|below}} [[threshold]] W",
+              "fr": "Puissance est !{{au-dessus|en-dessous de}} [[threshold]] W"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 0,
+                "max": 5000,
+                "step": 10,
+                "placeholder": {
+                  "en": "100"
+                }
+              }
+            ]
+          },
+          {
+            "id": "plug_in_standby",
+            "title": {
+              "en": "Device !{{is|isn't}} in standby",
+              "fr": "Appareil !{{est|n'est pas}} en veille"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "id": "plug_reset_meter",
+            "title": {
+              "en": "Reset energy meter",
+              "fr": "Réinitialiser compteur énergie"
+            }
+          }
+        ]
+      },
       "images": {
         "small": "drivers/plug_smart/assets/images/small.png",
         "large": "drivers/plug_smart/assets/images/large.png",
@@ -25856,7 +26880,8 @@
           "_TZE204_wukb7rhc",
           "_TZE204_xpq2rber",
           "_TZE204_ybwa4x5a",
-          "_TZE284_n5q2t8na"
+          "_TZE284_n5q2t8na",
+          "_TZE204_mtoaryre"
         ],
         "productId": [
           "ATMS1602Z",
@@ -26151,6 +27176,110 @@
         "approximation": {
           "usageConstant": 0.5
         }
+      },
+      "flow": {
+        "triggers": [
+          {
+            "id": "presence_detected",
+            "title": {
+              "en": "Presence detected",
+              "fr": "Présence détectée",
+              "nl": "Aanwezigheid gedetecteerd",
+              "de": "Anwesenheit erkannt"
+            }
+          },
+          {
+            "id": "presence_cleared",
+            "title": {
+              "en": "Presence cleared",
+              "fr": "Présence terminée",
+              "nl": "Aanwezigheid gestopt",
+              "de": "Anwesenheit beendet"
+            }
+          },
+          {
+            "id": "presence_distance_changed",
+            "title": {
+              "en": "Detection distance changed",
+              "fr": "Distance de détection changée"
+            },
+            "tokens": [
+              {
+                "name": "distance",
+                "type": "number",
+                "title": {
+                  "en": "Distance (m)",
+                  "fr": "Distance (m)"
+                },
+                "example": 2.5
+              }
+            ]
+          },
+          {
+            "id": "presence_illuminance_changed",
+            "title": {
+              "en": "Illuminance changed",
+              "fr": "Luminosité changée"
+            },
+            "tokens": [
+              {
+                "name": "lux",
+                "type": "number",
+                "title": {
+                  "en": "Lux",
+                  "fr": "Lux"
+                },
+                "example": 150
+              }
+            ]
+          },
+          {
+            "id": "presence_someone_enters",
+            "title": {
+              "en": "Someone enters the zone",
+              "fr": "Quelqu'un entre dans la zone"
+            }
+          },
+          {
+            "id": "presence_zone_empty",
+            "title": {
+              "en": "Zone becomes empty",
+              "fr": "Zone devient vide"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "id": "presence_is_detected",
+            "title": {
+              "en": "Presence !{{is|isn't}} detected",
+              "fr": "Présence !{{est|n'est pas}} détectée"
+            }
+          },
+          {
+            "id": "presence_distance_is",
+            "title": {
+              "en": "Distance is !{{closer|farther}} than",
+              "fr": "Distance est !{{plus proche|plus loin}} que"
+            },
+            "titleFormatted": {
+              "en": "Distance is !{{closer|farther}} than [[threshold]] m",
+              "fr": "Distance est !{{plus proche|plus loin}} que [[threshold]] m"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 0,
+                "max": 10,
+                "step": 0.1,
+                "placeholder": {
+                  "en": "3"
+                }
+              }
+            ]
+          }
+        ]
       },
       "pair": [
         {
@@ -26501,6 +27630,167 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "valve_target_changed",
+            "title": {
+              "en": "Target temperature changed",
+              "fr": "Température cible changée"
+            },
+            "tokens": [
+              {
+                "name": "target",
+                "type": "number",
+                "title": {
+                  "en": "Target (°C)"
+                },
+                "example": 21
+              }
+            ]
+          },
+          {
+            "id": "valve_heating_started",
+            "title": {
+              "en": "Valve started heating",
+              "fr": "Vanne commence à chauffer"
+            }
+          },
+          {
+            "id": "valve_heating_stopped",
+            "title": {
+              "en": "Valve stopped heating",
+              "fr": "Vanne arrête de chauffer"
+            }
+          },
+          {
+            "id": "valve_battery_low",
+            "title": {
+              "en": "Battery is low",
+              "fr": "Batterie faible"
+            },
+            "tokens": [
+              {
+                "name": "battery",
+                "type": "number",
+                "title": {
+                  "en": "Battery (%)"
+                },
+                "example": 15
+              }
+            ]
+          },
+          {
+            "id": "valve_window_open",
+            "title": {
+              "en": "Window open detected",
+              "fr": "Fenêtre ouverte détectée"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "id": "valve_is_heating",
+            "title": {
+              "en": "Valve !{{is|isn't}} heating",
+              "fr": "Vanne !{{chauffe|ne chauffe pas}}"
+            }
+          },
+          {
+            "id": "valve_target_is",
+            "title": {
+              "en": "Target !{{above|below}} threshold",
+              "fr": "Cible !{{au-dessus|en-dessous}} du seuil"
+            },
+            "titleFormatted": {
+              "en": "Target !{{above|below}} [[threshold]] °C"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 5,
+                "max": 35,
+                "step": 0.5
+              }
+            ]
+          }
+        ],
+        "actions": [
+          {
+            "id": "valve_set_preset",
+            "title": {
+              "en": "Set valve preset",
+              "fr": "Définir preset vanne"
+            },
+            "titleFormatted": {
+              "en": "Set to [[preset]]"
+            },
+            "args": [
+              {
+                "type": "dropdown",
+                "name": "preset",
+                "values": [
+                  {
+                    "id": "comfort",
+                    "title": {
+                      "en": "Comfort"
+                    }
+                  },
+                  {
+                    "id": "eco",
+                    "title": {
+                      "en": "Eco"
+                    }
+                  },
+                  {
+                    "id": "away",
+                    "title": {
+                      "en": "Away"
+                    }
+                  },
+                  {
+                    "id": "boost",
+                    "title": {
+                      "en": "Boost"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "valve_set_child_lock",
+            "title": {
+              "en": "Set child lock",
+              "fr": "Définir verrouillage enfant"
+            },
+            "titleFormatted": {
+              "en": "Set child lock to [[enabled]]"
+            },
+            "args": [
+              {
+                "type": "dropdown",
+                "name": "enabled",
+                "values": [
+                  {
+                    "id": "on",
+                    "title": {
+                      "en": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "title": {
+                      "en": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       "images": {
         "small": "drivers/radiator_valve/assets/images/small.png",
         "large": "drivers/radiator_valve/assets/images/large.png",
@@ -27474,6 +28764,310 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "siren_alarm_triggered",
+            "title": {
+              "en": "Siren alarm triggered",
+              "fr": "Alarme sirène déclenchée",
+              "nl": "Sirene alarm geactiveerd",
+              "de": "Sirenenalarm ausgelöst"
+            }
+          },
+          {
+            "id": "siren_alarm_stopped",
+            "title": {
+              "en": "Siren alarm stopped",
+              "fr": "Alarme sirène arrêtée",
+              "nl": "Sirene alarm gestopt",
+              "de": "Sirenenalarm gestoppt"
+            }
+          },
+          {
+            "id": "siren_tamper_alarm",
+            "title": {
+              "en": "Tamper alarm triggered",
+              "fr": "Alarme sabotage déclenchée"
+            }
+          },
+          {
+            "id": "siren_battery_low",
+            "title": {
+              "en": "Battery is low",
+              "fr": "Batterie faible"
+            },
+            "tokens": [
+              {
+                "name": "battery",
+                "type": "number",
+                "title": {
+                  "en": "Battery (%)",
+                  "fr": "Batterie (%)"
+                },
+                "example": 15
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "id": "siren_is_active",
+            "title": {
+              "en": "Siren !{{is|isn't}} active",
+              "fr": "Sirène !{{est|n'est pas}} active"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "id": "siren_set_melody",
+            "title": {
+              "en": "Set siren melody",
+              "fr": "Définir mélodie sirène"
+            },
+            "titleFormatted": {
+              "en": "Set melody to [[melody]]",
+              "fr": "Définir mélodie sur [[melody]]"
+            },
+            "args": [
+              {
+                "type": "dropdown",
+                "name": "melody",
+                "title": {
+                  "en": "Melody",
+                  "fr": "Mélodie"
+                },
+                "values": [
+                  {
+                    "id": "1",
+                    "title": {
+                      "en": "Melody 1 - Standard",
+                      "fr": "Mélodie 1 - Standard"
+                    }
+                  },
+                  {
+                    "id": "2",
+                    "title": {
+                      "en": "Melody 2 - Alarm",
+                      "fr": "Mélodie 2 - Alarme"
+                    }
+                  },
+                  {
+                    "id": "3",
+                    "title": {
+                      "en": "Melody 3 - Chime",
+                      "fr": "Mélodie 3 - Carillon"
+                    }
+                  },
+                  {
+                    "id": "4",
+                    "title": {
+                      "en": "Melody 4 - Doorbell",
+                      "fr": "Mélodie 4 - Sonnette"
+                    }
+                  },
+                  {
+                    "id": "5",
+                    "title": {
+                      "en": "Melody 5 - Alert",
+                      "fr": "Mélodie 5 - Alerte"
+                    }
+                  },
+                  {
+                    "id": "6",
+                    "title": {
+                      "en": "Melody 6 - Warning",
+                      "fr": "Mélodie 6 - Avertissement"
+                    }
+                  },
+                  {
+                    "id": "7",
+                    "title": {
+                      "en": "Melody 7 - Emergency",
+                      "fr": "Mélodie 7 - Urgence"
+                    }
+                  },
+                  {
+                    "id": "8",
+                    "title": {
+                      "en": "Melody 8 - Siren",
+                      "fr": "Mélodie 8 - Sirène"
+                    }
+                  },
+                  {
+                    "id": "9",
+                    "title": {
+                      "en": "Melody 9 - Police",
+                      "fr": "Mélodie 9 - Police"
+                    }
+                  },
+                  {
+                    "id": "10",
+                    "title": {
+                      "en": "Melody 10 - Fire",
+                      "fr": "Mélodie 10 - Incendie"
+                    }
+                  },
+                  {
+                    "id": "11",
+                    "title": {
+                      "en": "Melody 11 - Ambulance",
+                      "fr": "Mélodie 11 - Ambulance"
+                    }
+                  },
+                  {
+                    "id": "12",
+                    "title": {
+                      "en": "Melody 12 - Beep",
+                      "fr": "Mélodie 12 - Bip"
+                    }
+                  },
+                  {
+                    "id": "13",
+                    "title": {
+                      "en": "Melody 13 - Ding-Dong",
+                      "fr": "Mélodie 13 - Ding-Dong"
+                    }
+                  },
+                  {
+                    "id": "14",
+                    "title": {
+                      "en": "Melody 14 - Soft",
+                      "fr": "Mélodie 14 - Doux"
+                    }
+                  },
+                  {
+                    "id": "15",
+                    "title": {
+                      "en": "Melody 15 - Loud",
+                      "fr": "Mélodie 15 - Fort"
+                    }
+                  },
+                  {
+                    "id": "16",
+                    "title": {
+                      "en": "Melody 16 - Custom",
+                      "fr": "Mélodie 16 - Personnalisé"
+                    }
+                  },
+                  {
+                    "id": "17",
+                    "title": {
+                      "en": "Melody 17 - Ring",
+                      "fr": "Mélodie 17 - Sonnerie"
+                    }
+                  },
+                  {
+                    "id": "18",
+                    "title": {
+                      "en": "Melody 18 - Tone",
+                      "fr": "Mélodie 18 - Tonalité"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "siren_set_volume",
+            "title": {
+              "en": "Set siren volume",
+              "fr": "Définir volume sirène"
+            },
+            "titleFormatted": {
+              "en": "Set volume to [[volume]]",
+              "fr": "Définir volume sur [[volume]]"
+            },
+            "args": [
+              {
+                "type": "dropdown",
+                "name": "volume",
+                "title": {
+                  "en": "Volume",
+                  "fr": "Volume"
+                },
+                "values": [
+                  {
+                    "id": "low",
+                    "title": {
+                      "en": "Low",
+                      "fr": "Bas"
+                    }
+                  },
+                  {
+                    "id": "medium",
+                    "title": {
+                      "en": "Medium",
+                      "fr": "Moyen"
+                    }
+                  },
+                  {
+                    "id": "high",
+                    "title": {
+                      "en": "High",
+                      "fr": "Fort"
+                    }
+                  },
+                  {
+                    "id": "mute",
+                    "title": {
+                      "en": "Mute",
+                      "fr": "Muet"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "siren_set_duration",
+            "title": {
+              "en": "Set siren duration",
+              "fr": "Définir durée sirène"
+            },
+            "titleFormatted": {
+              "en": "Set duration to [[duration]] seconds",
+              "fr": "Définir durée sur [[duration]] secondes"
+            },
+            "args": [
+              {
+                "type": "range",
+                "name": "duration",
+                "title": {
+                  "en": "Duration (s)",
+                  "fr": "Durée (s)"
+                },
+                "min": 1,
+                "max": 300,
+                "step": 1,
+                "label": "s"
+              }
+            ]
+          },
+          {
+            "id": "siren_trigger_alarm",
+            "title": {
+              "en": "Trigger siren alarm",
+              "fr": "Déclencher alarme sirène"
+            }
+          },
+          {
+            "id": "siren_stop_alarm",
+            "title": {
+              "en": "Stop siren alarm",
+              "fr": "Arrêter alarme sirène"
+            }
+          },
+          {
+            "id": "siren_test",
+            "title": {
+              "en": "Test siren",
+              "fr": "Tester sirène"
+            }
+          }
+        ]
+      },
       "images": {
         "small": "drivers/siren/assets/images/small.png",
         "large": "drivers/siren/assets/images/large.png",
@@ -27646,9 +29240,7 @@
           "_TZ3000_0fkmfxwg",
           "_TZ3000_hhiodade",
           "_TZ3000_lugaswf8",
-          "_TZ3000_mwd3c2at",
           "_TZ3000_qtcwwgth",
-          "_TZ3000_tk3s5tyg",
           "_TZ3000_ysvspchy",
           "_TZ3210_09hzmirw",
           "_TZ3210_up3pngle",
@@ -27659,7 +29251,6 @@
           "_TZE200_vafd6gkz",
           "_TZE200_ntcy3xu1",
           "_TZE200_m9skfctm",
-          "_TZE200_rccxox8p",
           "_TZE200_vzekyi4c",
           "_TZE200_t5p1vj8r",
           "_TZE200_uebojraa",
@@ -27927,6 +29518,78 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "smoke_alarm_triggered",
+            "title": {
+              "en": "Smoke alarm triggered",
+              "fr": "Alarme fumée déclenchée",
+              "nl": "Rookalarm geactiveerd",
+              "de": "Rauchalarm ausgelöst"
+            }
+          },
+          {
+            "id": "smoke_alarm_cleared",
+            "title": {
+              "en": "Smoke alarm cleared",
+              "fr": "Alarme fumée terminée",
+              "nl": "Rookalarm gestopt",
+              "de": "Rauchalarm beendet"
+            }
+          },
+          {
+            "id": "smoke_tamper_alarm",
+            "title": {
+              "en": "Tamper alarm triggered",
+              "fr": "Alarme sabotage déclenchée"
+            }
+          },
+          {
+            "id": "smoke_battery_low",
+            "title": {
+              "en": "Battery is low",
+              "fr": "Batterie faible"
+            },
+            "tokens": [
+              {
+                "name": "battery",
+                "type": "number",
+                "title": {
+                  "en": "Battery (%)",
+                  "fr": "Batterie (%)"
+                },
+                "example": 15
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "id": "smoke_alarm_is_active",
+            "title": {
+              "en": "Smoke alarm !{{is|isn't}} active",
+              "fr": "Alarme fumée !{{est|n'est pas}} active"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "id": "smoke_test_alarm",
+            "title": {
+              "en": "Test smoke alarm",
+              "fr": "Tester alarme fumée"
+            }
+          },
+          {
+            "id": "smoke_silence_alarm",
+            "title": {
+              "en": "Silence smoke alarm",
+              "fr": "Couper alarme fumée"
+            }
+          }
+        ]
+      },
       "images": {
         "small": "drivers/smoke_detector_advanced/assets/images/small.png",
         "large": "drivers/smoke_detector_advanced/assets/images/large.png",
@@ -27992,6 +29655,7 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
+          "HOBEIAN",
           "_TZE200_9cv5tcgq",
           "_TZE284_oitavov2",
           "_TZE200_myd45weu",
@@ -28001,18 +29665,35 @@
           "_TZE284_aao3yzhs",
           "_TZE284_sgabhwa6",
           "_TZE200_2se8efxh",
-          "_TZE284_g2e6cpnw"
+          "_TZE284_g2e6cpnw",
+          "_TZE200_ip2akl4w",
+          "_TZE200_a0gspfyz",
+          "_TZE204_a0gspfyz",
+          "_TZE200_vvmbj46n",
+          "_TZE284_4xsypney",
+          "_TZE200_4xsypney",
+          "_TZE204_4xsypney",
+          "_TZE284_fqytfymk",
+          "_TZE200_fqytfymk",
+          "_TZE204_fqytfymk",
+          "_TZE200_npj9bug3"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ZG-303Z"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
               1,
+              3,
+              4,
+              5,
               1026,
-              1029
+              1029,
+              60672,
+              61184
             ],
             "bindings": [
               1026,
@@ -28021,6 +29702,168 @@
             ]
           }
         }
+      },
+      "flow": {
+        "triggers": [
+          {
+            "id": "soil_moisture_changed",
+            "title": {
+              "en": "Soil moisture changed",
+              "fr": "Humidité du sol changée",
+              "nl": "Bodemvochtigheid gewijzigd",
+              "de": "Bodenfeuchtigkeit geändert"
+            },
+            "tokens": [
+              {
+                "name": "moisture",
+                "type": "number",
+                "title": {
+                  "en": "Moisture (%)",
+                  "fr": "Humidité (%)"
+                },
+                "example": 45
+              }
+            ]
+          },
+          {
+            "id": "soil_moisture_below",
+            "title": {
+              "en": "Soil moisture drops below",
+              "fr": "Humidité du sol tombe sous",
+              "nl": "Bodemvochtigheid daalt onder",
+              "de": "Bodenfeuchtigkeit fällt unter"
+            },
+            "titleFormatted": {
+              "en": "Soil moisture drops below [[threshold]] %",
+              "fr": "Humidité du sol tombe sous [[threshold]] %"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "placeholder": {
+                  "en": "Threshold (%)"
+                }
+              }
+            ]
+          },
+          {
+            "id": "soil_moisture_above",
+            "title": {
+              "en": "Soil moisture rises above",
+              "fr": "Humidité du sol dépasse",
+              "nl": "Bodemvochtigheid stijgt boven",
+              "de": "Bodenfeuchtigkeit steigt über"
+            },
+            "titleFormatted": {
+              "en": "Soil moisture rises above [[threshold]] %",
+              "fr": "Humidité du sol dépasse [[threshold]] %"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "placeholder": {
+                  "en": "Threshold (%)"
+                }
+              }
+            ]
+          },
+          {
+            "id": "soil_temperature_changed",
+            "title": {
+              "en": "Soil temperature changed",
+              "fr": "Température du sol changée",
+              "nl": "Bodemtemperatuur gewijzigd",
+              "de": "Bodentemperatur geändert"
+            },
+            "tokens": [
+              {
+                "name": "temperature",
+                "type": "number",
+                "title": {
+                  "en": "Temperature (°C)",
+                  "fr": "Température (°C)"
+                },
+                "example": 22
+              }
+            ]
+          },
+          {
+            "id": "soil_battery_low",
+            "title": {
+              "en": "Battery is low",
+              "fr": "Batterie faible",
+              "nl": "Batterij is laag",
+              "de": "Batterie ist schwach"
+            },
+            "tokens": [
+              {
+                "name": "battery",
+                "type": "number",
+                "title": {
+                  "en": "Battery (%)",
+                  "fr": "Batterie (%)"
+                },
+                "example": 15
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "id": "soil_moisture_is_below",
+            "title": {
+              "en": "Soil moisture is !{{below|above}} threshold",
+              "fr": "Humidité du sol est !{{sous|au-dessus}} du seuil"
+            },
+            "titleFormatted": {
+              "en": "Soil moisture is !{{below|above}} [[threshold]] %",
+              "fr": "Humidité du sol est !{{sous|au-dessus de}} [[threshold]] %"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "placeholder": {
+                  "en": "Threshold (%)"
+                }
+              }
+            ]
+          },
+          {
+            "id": "soil_temperature_is_below",
+            "title": {
+              "en": "Soil temperature is !{{below|above}} threshold",
+              "fr": "Température du sol est !{{sous|au-dessus}} du seuil"
+            },
+            "titleFormatted": {
+              "en": "Soil temperature is !{{below|above}} [[threshold]] °C",
+              "fr": "Température du sol est !{{sous|au-dessus de}} [[threshold]] °C"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": -20,
+                "max": 60,
+                "step": 1,
+                "placeholder": {
+                  "en": "Threshold (°C)"
+                }
+              }
+            ]
+          }
+        ]
       },
       "settings": [
         {
@@ -28899,6 +30742,50 @@
           "OTHER"
         ]
       },
+      "flow": {
+        "triggers": [
+          {
+            "id": "switch_turned_on",
+            "title": {
+              "en": "Switch turned on",
+              "fr": "Interrupteur allumé"
+            }
+          },
+          {
+            "id": "switch_turned_off",
+            "title": {
+              "en": "Switch turned off",
+              "fr": "Interrupteur éteint"
+            }
+          },
+          {
+            "id": "switch_power_changed",
+            "title": {
+              "en": "Power changed",
+              "fr": "Puissance changée"
+            },
+            "tokens": [
+              {
+                "name": "power",
+                "type": "number",
+                "title": {
+                  "en": "Power (W)"
+                },
+                "example": 100
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "id": "switch_is_on",
+            "title": {
+              "en": "Switch !{{is|isn't}} on",
+              "fr": "Interrupteur !{{est|n'est pas}} allumé"
+            }
+          }
+        ]
+      },
       "pair": [
         {
           "id": "list_devices",
@@ -29316,6 +31203,140 @@
           "OTHER"
         ]
       },
+      "flow": {
+        "triggers": [
+          {
+            "id": "switch2_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on",
+              "fr": "Canal 1 allumé"
+            }
+          },
+          {
+            "id": "switch2_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off",
+              "fr": "Canal 1 éteint"
+            }
+          },
+          {
+            "id": "switch2_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on",
+              "fr": "Canal 2 allumé"
+            }
+          },
+          {
+            "id": "switch2_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off",
+              "fr": "Canal 2 éteint"
+            }
+          },
+          {
+            "id": "switch2_power_changed",
+            "title": {
+              "en": "Power changed",
+              "fr": "Puissance changée"
+            },
+            "tokens": [
+              {
+                "name": "power",
+                "type": "number",
+                "title": {
+                  "en": "Power (W)"
+                },
+                "example": 100
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "id": "switch2_gang1_is_on",
+            "title": {
+              "en": "Gang 1 !{{is|isn't}} on",
+              "fr": "Canal 1 !{{est|n'est pas}} allumé"
+            }
+          },
+          {
+            "id": "switch2_gang2_is_on",
+            "title": {
+              "en": "Gang 2 !{{is|isn't}} on",
+              "fr": "Canal 2 !{{est|n'est pas}} allumé"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "id": "switch2_set_gang1",
+            "title": {
+              "en": "Set gang 1",
+              "fr": "Définir canal 1"
+            },
+            "titleFormatted": {
+              "en": "Set gang 1 to [[state]]"
+            },
+            "args": [
+              {
+                "type": "dropdown",
+                "name": "state",
+                "values": [
+                  {
+                    "id": "on",
+                    "title": {
+                      "en": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "title": {
+                      "en": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch2_set_gang2",
+            "title": {
+              "en": "Set gang 2",
+              "fr": "Définir canal 2"
+            },
+            "titleFormatted": {
+              "en": "Set gang 2 to [[state]]"
+            },
+            "args": [
+              {
+                "type": "dropdown",
+                "name": "state",
+                "values": [
+                  {
+                    "id": "on",
+                    "title": {
+                      "en": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "title": {
+                      "en": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch2_toggle_all",
+            "title": {
+              "en": "Toggle all gangs",
+              "fr": "Basculer tous les canaux"
+            }
+          }
+        ]
+      },
       "pair": [
         {
           "id": "list_devices",
@@ -29689,6 +31710,152 @@
         },
         "batteries": [
           "OTHER"
+        ]
+      },
+      "flow": {
+        "triggers": [
+          {
+            "id": "switch3_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on",
+              "fr": "Canal 1 allumé"
+            }
+          },
+          {
+            "id": "switch3_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off",
+              "fr": "Canal 1 éteint"
+            }
+          },
+          {
+            "id": "switch3_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on",
+              "fr": "Canal 2 allumé"
+            }
+          },
+          {
+            "id": "switch3_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off",
+              "fr": "Canal 2 éteint"
+            }
+          },
+          {
+            "id": "switch3_gang3_on",
+            "title": {
+              "en": "Gang 3 turned on",
+              "fr": "Canal 3 allumé"
+            }
+          },
+          {
+            "id": "switch3_gang3_off",
+            "title": {
+              "en": "Gang 3 turned off",
+              "fr": "Canal 3 éteint"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "id": "switch3_gang1_is_on",
+            "title": {
+              "en": "Gang 1 !{{is|isn't}} on",
+              "fr": "Canal 1 !{{est|n'est pas}} allumé"
+            }
+          },
+          {
+            "id": "switch3_gang2_is_on",
+            "title": {
+              "en": "Gang 2 !{{is|isn't}} on",
+              "fr": "Canal 2 !{{est|n'est pas}} allumé"
+            }
+          },
+          {
+            "id": "switch3_gang3_is_on",
+            "title": {
+              "en": "Gang 3 !{{is|isn't}} on",
+              "fr": "Canal 3 !{{est|n'est pas}} allumé"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "id": "switch3_set_gang",
+            "title": {
+              "en": "Set gang state",
+              "fr": "Définir état canal"
+            },
+            "titleFormatted": {
+              "en": "Set [[gang]] to [[state]]"
+            },
+            "args": [
+              {
+                "type": "dropdown",
+                "name": "gang",
+                "values": [
+                  {
+                    "id": "1",
+                    "title": {
+                      "en": "Gang 1"
+                    }
+                  },
+                  {
+                    "id": "2",
+                    "title": {
+                      "en": "Gang 2"
+                    }
+                  },
+                  {
+                    "id": "3",
+                    "title": {
+                      "en": "Gang 3"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "dropdown",
+                "name": "state",
+                "values": [
+                  {
+                    "id": "on",
+                    "title": {
+                      "en": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "title": {
+                      "en": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch3_toggle_all",
+            "title": {
+              "en": "Toggle all gangs",
+              "fr": "Basculer tous les canaux"
+            }
+          },
+          {
+            "id": "switch3_all_on",
+            "title": {
+              "en": "Turn all on",
+              "fr": "Tout allumer"
+            }
+          },
+          {
+            "id": "switch3_all_off",
+            "title": {
+              "en": "Turn all off",
+              "fr": "Tout éteindre"
+            }
+          }
         ]
       },
       "pair": [
@@ -31740,20 +33907,9 @@
           "_TZE200_cwbvmsar",
           "_TZE200_kds0pqet",
           "_TZE200_wlosfena",
-          "_TZE200_9xfjixap",
-          "_TZE200_aoclfnxz",
           "_TZE200_2ekuz3dz",
-          "_TZE200_g9a3awaj",
-          "_TZE200_bvu2wnxz",
-          "_TZE200_hue3yfsn",
-          "_TZE200_husqqvux",
-          "_TZE200_kfvq6avy",
           "_TZE200_cpmgn2cf",
           "_TZE200_yw7cahqs",
-          "_TZE200_c88teujp",
-          "_TZE200_azqp6ssj",
-          "_TZE204_aoclfnxz",
-          "_TZE204_g9a3awaj",
           "_TZE284_aoclfnxz",
           "Beca",
           "Beok",
@@ -31763,7 +33919,6 @@
         "productId": [
           "TS0601",
           "TS0011",
-          "TRV",
           "BAC-002-ALZB",
           "BHT-002-GCLZB"
         ],
@@ -31780,6 +33935,159 @@
             ]
           }
         }
+      },
+      "flow": {
+        "triggers": [
+          {
+            "id": "thermostat_target_changed",
+            "title": {
+              "en": "Target temperature changed",
+              "fr": "Température cible changée"
+            },
+            "tokens": [
+              {
+                "name": "target",
+                "type": "number",
+                "title": {
+                  "en": "Target (°C)",
+                  "fr": "Cible (°C)"
+                },
+                "example": 21
+              }
+            ]
+          },
+          {
+            "id": "thermostat_mode_changed",
+            "title": {
+              "en": "Mode changed",
+              "fr": "Mode changé"
+            },
+            "tokens": [
+              {
+                "name": "mode",
+                "type": "string",
+                "title": {
+                  "en": "Mode",
+                  "fr": "Mode"
+                },
+                "example": "heat"
+              }
+            ]
+          },
+          {
+            "id": "thermostat_heating_started",
+            "title": {
+              "en": "Heating started",
+              "fr": "Chauffage démarré"
+            }
+          },
+          {
+            "id": "thermostat_heating_stopped",
+            "title": {
+              "en": "Heating stopped",
+              "fr": "Chauffage arrêté"
+            }
+          }
+        ],
+        "conditions": [
+          {
+            "id": "thermostat_is_heating",
+            "title": {
+              "en": "Thermostat !{{is|isn't}} heating",
+              "fr": "Thermostat !{{chauffe|ne chauffe pas}}"
+            }
+          },
+          {
+            "id": "thermostat_target_is",
+            "title": {
+              "en": "Target temperature is !{{above|below}} threshold",
+              "fr": "Température cible est !{{au-dessus|en-dessous}} du seuil"
+            },
+            "titleFormatted": {
+              "en": "Target is !{{above|below}} [[threshold]] °C",
+              "fr": "Cible est !{{au-dessus|en-dessous de}} [[threshold]] °C"
+            },
+            "args": [
+              {
+                "name": "threshold",
+                "type": "number",
+                "min": 5,
+                "max": 35,
+                "step": 0.5,
+                "placeholder": {
+                  "en": "20"
+                }
+              }
+            ]
+          }
+        ],
+        "actions": [
+          {
+            "id": "thermostat_set_preset",
+            "title": {
+              "en": "Set thermostat preset",
+              "fr": "Définir preset thermostat"
+            },
+            "titleFormatted": {
+              "en": "Set to [[preset]] preset",
+              "fr": "Définir sur preset [[preset]]"
+            },
+            "args": [
+              {
+                "type": "dropdown",
+                "name": "preset",
+                "title": {
+                  "en": "Preset",
+                  "fr": "Preset"
+                },
+                "values": [
+                  {
+                    "id": "schedule",
+                    "title": {
+                      "en": "Schedule",
+                      "fr": "Programme"
+                    }
+                  },
+                  {
+                    "id": "manual",
+                    "title": {
+                      "en": "Manual",
+                      "fr": "Manuel"
+                    }
+                  },
+                  {
+                    "id": "comfort",
+                    "title": {
+                      "en": "Comfort",
+                      "fr": "Confort"
+                    }
+                  },
+                  {
+                    "id": "eco",
+                    "title": {
+                      "en": "Eco",
+                      "fr": "Éco"
+                    }
+                  },
+                  {
+                    "id": "away",
+                    "title": {
+                      "en": "Away",
+                      "fr": "Absent"
+                    }
+                  },
+                  {
+                    "id": "boost",
+                    "title": {
+                      "en": "Boost",
+                      "fr": "Boost"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       "images": {
         "large": "drivers/thermostat_tuya_dp/assets/images/large.png",
@@ -32805,6 +35113,55 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "water_leak_detected",
+            "title": {
+              "en": "Water leak detected",
+              "fr": "Fuite d'eau détectée",
+              "nl": "Waterlek gedetecteerd",
+              "de": "Wasserleck erkannt"
+            }
+          },
+          {
+            "id": "water_leak_cleared",
+            "title": {
+              "en": "Water leak cleared",
+              "fr": "Fuite d'eau terminée",
+              "nl": "Waterlek gestopt",
+              "de": "Wasserleck beendet"
+            }
+          },
+          {
+            "id": "water_battery_low",
+            "title": {
+              "en": "Battery is low",
+              "fr": "Batterie faible"
+            },
+            "tokens": [
+              {
+                "name": "battery",
+                "type": "number",
+                "title": {
+                  "en": "Battery (%)",
+                  "fr": "Batterie (%)"
+                },
+                "example": 15
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "id": "water_leak_is_active",
+            "title": {
+              "en": "Water leak !{{is|isn't}} detected",
+              "fr": "Fuite d'eau !{{est|n'est pas}} détectée"
+            }
+          }
+        ]
+      },
       "images": {
         "small": "drivers/water_leak_sensor/assets/images/small.png",
         "large": "drivers/water_leak_sensor/assets/images/large.png",
