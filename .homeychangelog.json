@@ -1,4 +1,7 @@
 {
+  "5.5.161": {
+    "en": "🎯 FLOW ENRICHMENT PART 3: siren (4 triggers, 1 condition, 6 actions - 18 melodies, volume, duration, trigger/stop/test), switch_1gang (3 triggers, 1 condition), radiator_valve (5 triggers, 2 conditions, 2 actions - preset, child lock, window detection), dimmer_wall_1gang (3 triggers, 2 conditions, 2 actions - fade transition)."
+  },
   "5.5.160": {
     "en": "🎯 FLOW ENRICHMENT PART 2: Added flows from .homeycompose to driver.compose.json files: button_wireless (4 triggers), plug_smart (5 triggers, 2 conditions, 1 action), thermostat_tuya_dp (4 triggers, 2 conditions, 1 action), curtain_motor (4 triggers, 2 conditions, 2 actions). Power monitoring, standby detection, preset control, cover position."
   },

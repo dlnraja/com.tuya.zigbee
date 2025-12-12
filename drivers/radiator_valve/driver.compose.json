@@ -327,6 +327,167 @@
       }
     }
   ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "valve_target_changed",
+        "title": {
+          "en": "Target temperature changed",
+          "fr": "Température cible changée"
+        },
+        "tokens": [
+          {
+            "name": "target",
+            "type": "number",
+            "title": {
+              "en": "Target (°C)"
+            },
+            "example": 21
+          }
+        ]
+      },
+      {
+        "id": "valve_heating_started",
+        "title": {
+          "en": "Valve started heating",
+          "fr": "Vanne commence à chauffer"
+        }
+      },
+      {
+        "id": "valve_heating_stopped",
+        "title": {
+          "en": "Valve stopped heating",
+          "fr": "Vanne arrête de chauffer"
+        }
+      },
+      {
+        "id": "valve_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "fr": "Batterie faible"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)"
+            },
+            "example": 15
+          }
+        ]
+      },
+      {
+        "id": "valve_window_open",
+        "title": {
+          "en": "Window open detected",
+          "fr": "Fenêtre ouverte détectée"
+        }
+      }
+    ],
+    "conditions": [
+      {
+        "id": "valve_is_heating",
+        "title": {
+          "en": "Valve !{{is|isn't}} heating",
+          "fr": "Vanne !{{chauffe|ne chauffe pas}}"
+        }
+      },
+      {
+        "id": "valve_target_is",
+        "title": {
+          "en": "Target !{{above|below}} threshold",
+          "fr": "Cible !{{au-dessus|en-dessous}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "Target !{{above|below}} [[threshold]] °C"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 5,
+            "max": 35,
+            "step": 0.5
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "valve_set_preset",
+        "title": {
+          "en": "Set valve preset",
+          "fr": "Définir preset vanne"
+        },
+        "titleFormatted": {
+          "en": "Set to [[preset]]"
+        },
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "preset",
+            "values": [
+              {
+                "id": "comfort",
+                "title": {
+                  "en": "Comfort"
+                }
+              },
+              {
+                "id": "eco",
+                "title": {
+                  "en": "Eco"
+                }
+              },
+              {
+                "id": "away",
+                "title": {
+                  "en": "Away"
+                }
+              },
+              {
+                "id": "boost",
+                "title": {
+                  "en": "Boost"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "valve_set_child_lock",
+        "title": {
+          "en": "Set child lock",
+          "fr": "Définir verrouillage enfant"
+        },
+        "titleFormatted": {
+          "en": "Set child lock to [[enabled]]"
+        },
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "enabled",
+            "values": [
+              {
+                "id": "on",
+                "title": {
+                  "en": "On"
+                }
+              },
+              {
+                "id": "off",
+                "title": {
+                  "en": "Off"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
   "images": {
     "small": "drivers/radiator_valve/assets/images/small.png",
     "large": "drivers/radiator_valve/assets/images/large.png",
