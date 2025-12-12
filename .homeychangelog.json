@@ -1,4 +1,7 @@
 {
+  "5.5.157": {
+    "en": "✨ NEW DEVICES: Added eWeLink PIR (CK-TLSR8656-SS5-01) to motion_sensor, _TZE204_mtoaryre to presence_sensor_radar. Closes GitHub issues #87, #89, #1245."
+  },
   "5.5.156": {
     "en": "🔧 FINGERPRINTING FINAL CLEANUP: Resolved ALL 56 conflicts (0 remaining). Removed misplaced IDs from button_emergency_sos (16), gas_sensor (6), climate_sensor (11), air_quality (16), thermostat_tuya_dp (11), motion_sensor (1 HOBEIAN). HOBEIAN ZG-303Z now correctly detected as soil_sensor."
   },
