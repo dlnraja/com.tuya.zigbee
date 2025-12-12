@@ -1,4 +1,7 @@
 {
+  "5.5.163": {
+    "en": "🧹 SMART CLEANUP: Energy capabilities (measure_power, measure_voltage, measure_current, meter_power) are now automatically removed after 15 minutes if no data is received. Keeps UI clean for devices without energy monitoring."
+  },
   "5.5.162": {
     "en": "🎯 FLOW ENRICHMENT PART 4: switch_2gang (5 triggers, 2 conditions, 3 actions per-gang), switch_3gang (6 triggers, 3 conditions, 4 actions), button_emergency_sos (4 triggers, 1 condition - SOS press/tamper/battery), air_quality_co2 (4 triggers, 1 condition - CO2 thresholds 400-5000ppm)."
   },
