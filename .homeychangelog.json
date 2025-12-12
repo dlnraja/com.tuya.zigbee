@@ -1,4 +1,7 @@
 {
+  "5.5.158": {
+    "en": "🌱 SOIL SENSOR: Added _TZE200_npj9bug3 from ZHA PR #4536 (HOBEIAN ZG-303Z variant). Soil moisture now correctly distinguished from humidity."
+  },
   "5.5.157": {
     "en": "✨ NEW DEVICES: Added eWeLink PIR (CK-TLSR8656-SS5-01) to motion_sensor, _TZE204_mtoaryre to presence_sensor_radar. Closes GitHub issues #87, #89, #1245."
   },
