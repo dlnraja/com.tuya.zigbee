@@ -63,14 +63,14 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     // The TS0215A sends commandEmergency on ssIasAce (cluster 1281), NOT iasZone!
     await this._setupIasAce();
 
-    // Initialize alarm_contact to false
-    if (this.hasCapability('alarm_contact')) {
-      await this.setCapabilityValue('alarm_contact', false).catch(() => { });
+    // Initialize alarm_generic to false
+    if (this.hasCapability('alarm_generic')) {
+      await this.setCapabilityValue('alarm_generic', false).catch(() => { });
     }
 
     // v5.5.64: Register capability with CLUSTER.IAS_ZONE for automatic flow triggers
     try {
-      this.registerCapability('alarm_contact', 'iasZone', {
+      this.registerCapability('alarm_generic', 'iasZone', {
         report: 'zoneStatus',
         reportParser: (zoneStatus) => {
           this.log('[SOS] 🆘 registerCapability zoneStatus:', zoneStatus);
@@ -81,7 +81,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
           return alarm;
         }
       });
-      this.log('[SOS] ✅ Registered alarm_contact with iasZone cluster');
+      this.log('[SOS] ✅ Registered alarm_generic with iasZone cluster');
     } catch (e) {
       this.log('[SOS] registerCapability skipped:', e.message);
     }
@@ -522,7 +522,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
   }
 
   async _ensureCapabilities() {
-    const caps = ['alarm_contact', 'measure_battery'];
+    const caps = ['alarm_generic', 'measure_battery'];
     for (const cap of caps) {
       if (!this.hasCapability(cap)) {
         await this.addCapability(cap).catch(() => { });
@@ -654,7 +654,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     }
 
     // Set capability
-    this.setCapabilityValue('alarm_contact', true).catch(() => { });
+    this.setCapabilityValue('alarm_generic', true).catch(() => { });
 
     // Trigger flow card
     this._triggerFlow();
@@ -662,8 +662,8 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     // Auto-reset after 5s
     if (this._resetTimeout) clearTimeout(this._resetTimeout);
     this._resetTimeout = this.homey.setTimeout(() => {
-      this.setCapabilityValue('alarm_contact', false).catch(() => { });
-      this.log('[SOS] alarm_contact reset');
+      this.setCapabilityValue('alarm_generic', false).catch(() => { });
+      this.log('[SOS] alarm_generic reset');
     }, 5000);
 
     // v5.5.137: Configure reporting AND read battery while device is awake

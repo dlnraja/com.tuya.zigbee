@@ -1,4 +1,7 @@
 {
+  "5.5.165": {
+    "en": "🐛 FIX SOS Button: Changed from alarm_contact to alarm_generic - removes confusing 'contactalarm' triggers. Now only shows 'SOS Alert' as expected."
+  },
   "5.5.164": {
     "en": "🐛 FIX: HOBEIAN ZG-303Z soil sensor now correctly recognized. Fixed duplicate flow cards causing build errors. SOS button triggers deduplicated."
   },
