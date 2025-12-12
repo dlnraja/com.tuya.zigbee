@@ -1,4 +1,7 @@
 {
+  "5.5.156": {
+    "en": "🔧 FINGERPRINTING FINAL CLEANUP: Resolved ALL 56 conflicts (0 remaining). Removed misplaced IDs from button_emergency_sos (16), gas_sensor (6), climate_sensor (11), air_quality (16), thermostat_tuya_dp (11), motion_sensor (1 HOBEIAN). HOBEIAN ZG-303Z now correctly detected as soil_sensor."
+  },
   "5.5.155": {
     "en": "🐛 CRASH FIX: Fixed TypeError in HybridSensorBase.js (null.received). 🌱 SOIL SENSOR: Added flow triggers (moisture changed/below/above, temperature changed, battery low) + conditions. Added clusters 4, 5, 60672 for _TZE284_oitavov2 compatibility (GitHub #1245)."
   },
