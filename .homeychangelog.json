@@ -1,4 +1,7 @@
 {
+  "5.5.164": {
+    "en": "🐛 FIX: HOBEIAN ZG-303Z soil sensor now correctly recognized. Fixed duplicate flow cards causing build errors. SOS button triggers deduplicated."
+  },
   "5.5.163": {
     "en": "🧹 SMART CLEANUP: Energy capabilities (measure_power, measure_voltage, measure_current, meter_power) are now automatically removed after 15 minutes if no data is received. Keeps UI clean for devices without energy monitoring."
   },
