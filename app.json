@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.166",
+  "version": "5.5.167",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -151,42 +151,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=button_wireless|button_wireless_1|button_wireless_2|button_wireless_3|button_wireless_4|button_wireless_6|button_wireless_8|switch_wireless|scene_switch_1|scene_switch_2|scene_switch_3|scene_switch_4|scene_switch_6"
-          }
-        ]
-      },
-      {
-        "id": "contact_closed",
-        "title": {
-          "en": "Contact closed",
-          "fr": "Contact fermé"
-        },
-        "hint": {
-          "en": "Triggered when door/window is closed",
-          "fr": "Déclenché quand la porte/fenêtre est fermée"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=contact_sensor|door_controller"
-          }
-        ]
-      },
-      {
-        "id": "contact_opened",
-        "title": {
-          "en": "Contact opened",
-          "fr": "Contact ouvert"
-        },
-        "hint": {
-          "en": "Triggered when door/window is opened",
-          "fr": "Déclenché quand la porte/fenêtre est ouverte"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=contact_sensor|door_controller"
           }
         ]
       },
@@ -400,24 +364,6 @@
         }
       },
       {
-        "id": "gas_detected",
-        "title": {
-          "en": "Gas detected",
-          "fr": "Gaz détecté"
-        },
-        "hint": {
-          "en": "Triggered when gas is detected",
-          "fr": "Déclenché quand du gaz est détecté"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=gas_sensor"
-          }
-        ]
-      },
-      {
         "id": "low_battery_warning",
         "title": {
           "en": "Low battery warning",
@@ -519,24 +465,6 @@
         ]
       },
       {
-        "id": "smoke_detected",
-        "title": {
-          "en": "Smoke detected",
-          "fr": "Fumée détectée"
-        },
-        "hint": {
-          "en": "Triggered when smoke is detected",
-          "fr": "Déclenché quand de la fumée est détectée"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=smoke_detector_advanced|smoke_detector"
-          }
-        ]
-      },
-      {
         "id": "soil_moisture_changed",
         "title": {
           "en": "Soil moisture changed",
@@ -613,24 +541,6 @@
             "placeholder": {
               "en": "30"
             }
-          }
-        ]
-      },
-      {
-        "id": "tamper_alarm",
-        "title": {
-          "en": "Tamper detected",
-          "fr": "Sabotage détecté"
-        },
-        "hint": {
-          "en": "Triggered when the device detects tampering",
-          "fr": "Déclenché quand l'appareil détecte un sabotage"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=smoke_detector_advanced|gas_sensor|contact_sensor|motion_sensor|water_leak_sensor"
           }
         ]
       },
@@ -759,24 +669,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=usb_outlet_advanced"
-          }
-        ]
-      },
-      {
-        "id": "water_leak_detected",
-        "title": {
-          "en": "Water leak detected",
-          "fr": "Fuite d'eau détectée"
-        },
-        "hint": {
-          "en": "Triggered when a water leak is detected",
-          "fr": "Déclenché quand une fuite d'eau est détectée"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_leak_sensor|water_valve_smart"
           }
         ]
       },
@@ -6841,24 +6733,6 @@
     ],
     "conditions": [
       {
-        "id": "contact_open",
-        "title": {
-          "en": "Contact !{{is|isn't}} open",
-          "fr": "Contact !{{est|n'est pas}} ouvert"
-        },
-        "hint": {
-          "en": "Check if door/window is open",
-          "fr": "Vérifier si la porte/fenêtre est ouverte"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=contact_sensor|door_controller"
-          }
-        ]
-      },
-      {
         "id": "device_is_online",
         "title": {
           "en": "Device is online",
@@ -6940,42 +6814,6 @@
         }
       },
       {
-        "id": "gas_alarm_active",
-        "title": {
-          "en": "Gas alarm !{{is|isn't}} active",
-          "fr": "Alarme gaz !{{est|n'est pas}} active"
-        },
-        "hint": {
-          "en": "Check if gas alarm is currently active",
-          "fr": "Vérifier si l'alarme gaz est active"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=gas_sensor|gas_detector"
-          }
-        ]
-      },
-      {
-        "id": "smoke_alarm_active",
-        "title": {
-          "en": "Smoke alarm !{{is|isn't}} active",
-          "fr": "Alarme fumée !{{est|n'est pas}} active"
-        },
-        "hint": {
-          "en": "Check if smoke alarm is currently active",
-          "fr": "Vérifier si l'alarme fumée est active"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=smoke_detector_advanced|smoke_detector"
-          }
-        ]
-      },
-      {
         "id": "thermostat_is_heating",
         "title": {
           "en": "Thermostat !{{is|isn't}} heating",
@@ -6990,24 +6828,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=thermostat_tuya_dp|thermostat_4ch|radiator_valve"
-          }
-        ]
-      },
-      {
-        "id": "water_alarm_active",
-        "title": {
-          "en": "Water leak !{{is|isn't}} detected",
-          "fr": "Fuite d'eau !{{est|n'est pas}} détectée"
-        },
-        "hint": {
-          "en": "Check if water leak is currently detected",
-          "fr": "Vérifier si une fuite d'eau est détectée"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_leak_sensor|water_valve_smart"
           }
         ]
       },
