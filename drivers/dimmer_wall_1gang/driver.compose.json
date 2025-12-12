@@ -398,6 +398,118 @@
       }
     }
   ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "dimmer_turned_on",
+        "title": {
+          "en": "Dimmer turned on",
+          "fr": "Variateur allumé"
+        }
+      },
+      {
+        "id": "dimmer_turned_off",
+        "title": {
+          "en": "Dimmer turned off",
+          "fr": "Variateur éteint"
+        }
+      },
+      {
+        "id": "dimmer_level_changed",
+        "title": {
+          "en": "Brightness changed",
+          "fr": "Luminosité changée"
+        },
+        "tokens": [
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Level (%)"
+            },
+            "example": 75
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "dimmer_is_on",
+        "title": {
+          "en": "Dimmer !{{is|isn't}} on",
+          "fr": "Variateur !{{est|n'est pas}} allumé"
+        }
+      },
+      {
+        "id": "dimmer_level_is",
+        "title": {
+          "en": "Brightness !{{above|below}} threshold",
+          "fr": "Luminosité !{{au-dessus|en-dessous}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "Brightness !{{above|below}} [[threshold]] %"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "dimmer_set_level",
+        "title": {
+          "en": "Set brightness",
+          "fr": "Définir luminosité"
+        },
+        "titleFormatted": {
+          "en": "Set brightness to [[level]] %"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "level",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "label": "%"
+          }
+        ]
+      },
+      {
+        "id": "dimmer_fade_to",
+        "title": {
+          "en": "Fade to level",
+          "fr": "Transition vers niveau"
+        },
+        "titleFormatted": {
+          "en": "Fade to [[level]] % in [[duration]] seconds"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "level",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "label": "%"
+          },
+          {
+            "type": "number",
+            "name": "duration",
+            "min": 1,
+            "max": 60,
+            "step": 1
+          }
+        ]
+      }
+    ]
+  },
   "images": {
     "small": "drivers/dimmer_wall_1gang/assets/images/small.png",
     "large": "drivers/dimmer_wall_1gang/assets/images/large.png",
