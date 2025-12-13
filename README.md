@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.168-blue)
+![Version](https://img.shields.io/badge/version-5.5.169-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-83-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.168
+## 🚀 Latest Updates - v5.5.169
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.169** | 🔧 FIX: Moved _TZE200_rxq4iti9 (EARU TRV06) from climate_sen... |
 | **v5.5.168** | 🧹 Motion Sensor: Removed duplicate motion_detected/motion_c... |
 | **v5.5.167** | 🧹 MAJOR CLEANUP: Removed 10 duplicate flow cards from .home... |
 | **v5.5.166** | 🧹 CLEANUP: Removed duplicate motion_detected flow triggers.... |
@@ -66,7 +67,6 @@
 | **v5.5.164** | 🐛 FIX: HOBEIAN ZG-303Z soil sensor now correctly recognized... |
 | **v5.5.163** | 🧹 SMART CLEANUP: Energy capabilities (measure_power, measur... |
 | **v5.5.162** | 🎯 FLOW ENRICHMENT PART 4: switch_2gang (5 triggers, 2 condi... |
-| **v5.5.161** | 🎯 FLOW ENRICHMENT PART 3: siren (4 triggers, 1 condition, 6... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
