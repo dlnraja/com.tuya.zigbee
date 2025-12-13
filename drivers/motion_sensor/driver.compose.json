@@ -392,24 +392,6 @@
   "flow": {
     "triggers": [
       {
-        "id": "motion_detected",
-        "title": {
-          "en": "Motion detected",
-          "fr": "Mouvement détecté",
-          "nl": "Beweging gedetecteerd",
-          "de": "Bewegung erkannt"
-        }
-      },
-      {
-        "id": "motion_cleared",
-        "title": {
-          "en": "Motion cleared",
-          "fr": "Mouvement terminé",
-          "nl": "Beweging gestopt",
-          "de": "Bewegung beendet"
-        }
-      },
-      {
         "id": "motion_illuminance_changed",
         "title": {
           "en": "Illuminance changed",
@@ -497,13 +479,6 @@
       }
     ],
     "conditions": [
-      {
-        "id": "motion_is_detected",
-        "title": {
-          "en": "Motion !{{is|isn't}} detected",
-          "fr": "Mouvement !{{est|n'est pas}} détecté"
-        }
-      },
       {
         "id": "motion_illuminance_is",
         "title": {

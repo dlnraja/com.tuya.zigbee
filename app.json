@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.167",
+  "version": "5.5.168",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -25018,24 +25018,6 @@
       "flow": {
         "triggers": [
           {
-            "id": "motion_detected",
-            "title": {
-              "en": "Motion detected",
-              "fr": "Mouvement détecté",
-              "nl": "Beweging gedetecteerd",
-              "de": "Bewegung erkannt"
-            }
-          },
-          {
-            "id": "motion_cleared",
-            "title": {
-              "en": "Motion cleared",
-              "fr": "Mouvement terminé",
-              "nl": "Beweging gestopt",
-              "de": "Bewegung beendet"
-            }
-          },
-          {
             "id": "motion_illuminance_changed",
             "title": {
               "en": "Illuminance changed",
@@ -25123,13 +25105,6 @@
           }
         ],
         "conditions": [
-          {
-            "id": "motion_is_detected",
-            "title": {
-              "en": "Motion !{{is|isn't}} detected",
-              "fr": "Mouvement !{{est|n'est pas}} détecté"
-            }
-          },
           {
             "id": "motion_illuminance_is",
             "title": {
