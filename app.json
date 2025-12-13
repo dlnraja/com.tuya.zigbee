@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.168",
+  "version": "5.5.169",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -17396,7 +17396,6 @@
           "_TZE200_rufdtfyv",
           "_TZE200_rv6iuyxb",
           "_TZE200_rxntag7i",
-          "_TZE200_rxq4iti9",
           "_TZE200_ryfmq5rl",
           "_TZE200_s1xgth2u",
           "_TZE200_s7rsrtbg",
@@ -27114,7 +27113,8 @@
           "_TZE204_g9a3awaj",
           "_TZE204_hvaxb2tc",
           "_TZE204_lnbfnyxd",
-          "_TZE284_hvaxb2tc"
+          "_TZE284_hvaxb2tc",
+          "_TZE200_rxq4iti9"
         ],
         "productId": [
           "HY369RT",
