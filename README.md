@@ -1,20 +1,20 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.107-blue)
+![Version](https://img.shields.io/badge/version-5.5.168-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
-![Drivers](https://img.shields.io/badge/drivers-84-brightgreen)
+![Drivers](https://img.shields.io/badge/drivers-83-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 84 drivers.**
+**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 83 drivers and 2225+ manufacturer IDs.**
 
 🏠 **100% Local Control** - No Cloud, No Internet Required
 🔋 **Smart Battery** - Accurate readings with voltage fallback
 ⚡ **Hybrid Mode** - Auto-detect Tuya DP vs Standard ZCL
 🛠️ **SDK3** - Latest Homey Standards
 🌍 **Open Source** - Community-driven development
-📱 **84 Drivers** - Switches, sensors, lights, thermostats & more
+📱 **83 Drivers** - Switches, sensors, lights, thermostats & more
 
 ---
 
@@ -25,11 +25,11 @@
 | **Total Device IDs** | 4,200+ |
 | **Product IDs** | 350+ |
 | **Manufacturer IDs** | 3,800+ |
-| **Drivers** | 84 |
-| **SVG Icons** | 84 |
+| **Drivers** | 83 |
+| **SVG Icons** | 83 |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2025-12-08 |
+| **Last Updated** | 2025-12-13 |
 
 ### 📦 Top 15 Drivers by Device IDs
 
@@ -53,42 +53,41 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.107
+## 🚀 Latest Updates - v5.5.168
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
-| **v5.5.107** | 🐛 Peter's fix: Motion sensor temp + SOS button IAS |
-| **v5.5.106** | 🕐 Hourly time sync for LCD devices (TH05Z, monitors) |
-| **v5.5.105** | 🔧 461 fingerprint conflicts resolved |
-| **v5.5.104** | 🌡️ 4-in-1 Multisensor fix - read temp/humidity on wake |
-| **v5.5.103** | 🔧 Global improvements - dynamic cluster detection |
-| **v5.5.102** | 🔋 Enhanced battery reading with voltage fallback |
-| **v5.5.101** | 🖼️ Real device images for all 84 drivers |
-| **v5.5.100** | 📦 Complete asset compliance |
+| **v5.5.168** | 🧹 Motion Sensor: Removed duplicate triggers (cleaner flows) |
+| **v5.5.167** | 🧹 MAJOR CLEANUP: Removed 10 duplicate flow cards |
+| **v5.5.165** | 🐛 SOS Button: Fixed confusing 'contactalarm' triggers |
+| **v5.5.164** | 🐛 HOBEIAN ZG-303Z soil sensor now correctly recognized |
+| **v5.5.163** | 🧹 Energy capabilities auto-removed after 15min if no data |
+| **v5.5.159-162** | 🎯 FLOW ENRICHMENT: 50+ triggers/conditions/actions |
+| **v5.5.138** | 🔋 SOS Button battery fix (bind + configure on wake) |
+| **v5.5.100** | ⚡ Protocol Optimizer: Auto-detect Tuya DP vs ZCL |
 
-### 🌡️ Multisensor Fix v5.5.104
+### 🎯 Flow Enrichment v5.5.159-162
 
-For 4-in-1 sensors (Fantem ZB003-x, Immax 07502L):
-- Read temp/humidity **when device wakes up** (motion detected)
-- Configure attribute reporting for passive updates
-- Sleepy devices handled correctly
+Comprehensive flow cards for all major drivers:
+- **Sensors:** climate, motion, presence, gas, smoke, contact, water leak
+- **Plugs:** power monitoring, standby detection, overload alerts
+- **Thermostats:** preset control, heating status, temperature thresholds
+- **Sirens:** melody selection (18 options), volume, duration control
+- **Switches:** per-gang triggers/actions for 1-3 gang variants
 
-### 🔋 Enhanced Battery v5.5.102
+### 🧹 Smart Cleanup v5.5.163-168
 
-Multiple fallback strategies:
-```
-Strategy 1: batteryPercentageRemaining (standard ZCL)
-Strategy 2: batteryVoltage with conversion (fallback)
-Strategy 3: Read all battery attributes
-```
+- **Energy capabilities** auto-removed after 15min if no data received
+- **Duplicate flow cards** removed (motion, contact, SOS, smoke, gas)
+- **Cleaner UI** - Homey's built-in capability triggers used where appropriate
 
-### 🔧 Dynamic Cluster Detection v5.5.103
+### ⚡ Protocol Optimizer v5.5.100+
 
-- Detects available clusters before initialization
-- Prevents timeouts on devices without temp/humidity
-- All 84 drivers benefit automatically
+- Auto-detects best protocol (Tuya DP vs Standard ZCL)
+- Observes device for 15 minutes before deciding
+- HybridPlugBase: Universal smart plug support
 
 ### 📁 Data Sources
 - ✅ Zigbee2MQTT (tuya.ts + brand files)
@@ -159,16 +158,12 @@ node scripts/deployment/SAFE_PUSH_AND_PUBLISH.js
 
 ```
 tuya_repair/
-├── drivers/           # 163 Zigbee device drivers
-├── lib/              # Shared libraries
-├── scripts/          # Automation & validation scripts
-│   ├── automation/   # Auto-update & organization
-│   ├── validation/   # Coherence checking & fixing
-│   └── deployment/   # Safe push & publish
-├── diagnostics/      # Issue tracking & reports
-├── flow/             # Flow cards (triggers, actions, conditions)
+├── drivers/           # 83 Zigbee device drivers
+├── lib/              # Shared libraries (HybridPlugBase, TuyaHybridDevice)
+├── .homeycompose/    # Homey compose files (capabilities, flow cards)
+├── docs/             # Documentation & Device Finder
 ├── locales/          # Translations (en, fr, de, nl)
-└── app.json          # App manifest
+└── app.json          # App manifest (auto-generated)
 ```
 
 ---
