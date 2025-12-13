@@ -1,4 +1,7 @@
 {
+  "5.5.169": {
+    "en": "🔧 FIX: Moved _TZE200_rxq4iti9 (EARU TRV06) from climate_sensor to radiator_valve driver. Thanks @artisare!"
+  },
   "5.5.168": {
     "en": "🧹 Motion Sensor: Removed duplicate motion_detected/motion_cleared triggers. Homey auto-generates these for alarm_motion capability. Cleaner flow selection."
   },
