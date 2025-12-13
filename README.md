@@ -7,7 +7,7 @@
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 83 drivers and 2225+ manufacturer IDs.**
+**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 83 drivers and 2437+ manufacturer IDs.**
 
 🏠 **100% Local Control** - No Cloud, No Internet Required
 🔋 **Smart Battery** - Accurate readings with voltage fallback
@@ -59,14 +59,14 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.5.168** | 🧹 Motion Sensor: Removed duplicate triggers (cleaner flows) |
-| **v5.5.167** | 🧹 MAJOR CLEANUP: Removed 10 duplicate flow cards |
-| **v5.5.165** | 🐛 SOS Button: Fixed confusing 'contactalarm' triggers |
-| **v5.5.164** | 🐛 HOBEIAN ZG-303Z soil sensor now correctly recognized |
-| **v5.5.163** | 🧹 Energy capabilities auto-removed after 15min if no data |
-| **v5.5.159-162** | 🎯 FLOW ENRICHMENT: 50+ triggers/conditions/actions |
-| **v5.5.138** | 🔋 SOS Button battery fix (bind + configure on wake) |
-| **v5.5.100** | ⚡ Protocol Optimizer: Auto-detect Tuya DP vs ZCL |
+| **v5.5.168** | 🧹 Motion Sensor: Removed duplicate motion_detected/motion_c... |
+| **v5.5.167** | 🧹 MAJOR CLEANUP: Removed 10 duplicate flow cards from .home... |
+| **v5.5.166** | 🧹 CLEANUP: Removed duplicate motion_detected flow triggers.... |
+| **v5.5.165** | 🐛 FIX SOS Button: Changed from alarm_contact to alarm_gener... |
+| **v5.5.164** | 🐛 FIX: HOBEIAN ZG-303Z soil sensor now correctly recognized... |
+| **v5.5.163** | 🧹 SMART CLEANUP: Energy capabilities (measure_power, measur... |
+| **v5.5.162** | 🎯 FLOW ENRICHMENT PART 4: switch_2gang (5 triggers, 2 condi... |
+| **v5.5.161** | 🎯 FLOW ENRICHMENT PART 3: siren (4 triggers, 1 condition, 6... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
