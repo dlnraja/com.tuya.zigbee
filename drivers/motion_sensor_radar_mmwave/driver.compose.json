@@ -6,6 +6,7 @@
   "class": "sensor",
   "capabilities": [
     "alarm_motion",
+    "alarm_human",
     "measure_distance",
     "measure_presence_time",
     "measure_temperature",
