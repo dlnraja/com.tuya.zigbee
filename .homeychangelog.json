@@ -1,4 +1,7 @@
 {
+  "5.5.170": {
+    "en": "🔧 FIX: Moved _TZ3000_5bpeda8u from motion_sensor to button_wireless_1 driver. It's a smart button, not a motion sensor."
+  },
   "5.5.169": {
     "en": "🔧 FIX: Moved _TZE200_rxq4iti9 (EARU TRV06) from climate_sensor to radiator_valve driver. Thanks @artisare!"
   },
