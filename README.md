@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.169-blue)
+![Version](https://img.shields.io/badge/version-5.5.170-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-83-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -29,7 +29,7 @@
 | **SVG Icons** | 83 |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2025-12-13 |
+| **Last Updated** | 2025-12-14 |
 
 ### 📦 Top 15 Drivers by Device IDs
 
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.169
+## 🚀 Latest Updates - v5.5.170
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.170** | 🔧 FIX: Moved _TZ3000_5bpeda8u from motion_sensor to button_... |
 | **v5.5.169** | 🔧 FIX: Moved _TZE200_rxq4iti9 (EARU TRV06) from climate_sen... |
 | **v5.5.168** | 🧹 Motion Sensor: Removed duplicate motion_detected/motion_c... |
 | **v5.5.167** | 🧹 MAJOR CLEANUP: Removed 10 duplicate flow cards from .home... |
@@ -66,7 +67,6 @@
 | **v5.5.165** | 🐛 FIX SOS Button: Changed from alarm_contact to alarm_gener... |
 | **v5.5.164** | 🐛 FIX: HOBEIAN ZG-303Z soil sensor now correctly recognized... |
 | **v5.5.163** | 🧹 SMART CLEANUP: Energy capabilities (measure_power, measur... |
-| **v5.5.162** | 🎯 FLOW ENRICHMENT PART 4: switch_2gang (5 triggers, 2 condi... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
