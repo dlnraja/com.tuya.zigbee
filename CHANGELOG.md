@@ -4,6 +4,38 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.171] - 2025-12-14
+
+### 🕐 CRITICAL FIX: Climate Sensor Time Sync
+
+**Problem:** LCD displays showed year 2055 instead of 2025
+**Root cause:** Using Unix epoch (1970) instead of Tuya epoch (2000)
+**Source:** https://github.com/Koenkk/zigbee2mqtt/issues/30054
+
+**Files fixed:**
+- `drivers/climate_sensor/device.js` - `_sendTuyaTimeSync()` now uses Tuya epoch
+- `lib/tuya/UniversalTimeSync.js` - Default changed to Tuya epoch (2000)
+
+### 📊 Z2M Enrichment (+168 manufacturer IDs)
+
+| Driver | Added | Total |
+|--------|-------|-------|
+| climate_sensor | +58 | 966 |
+| thermostat_tuya_dp | +40 | 52 |
+| switch_1gang | +36 | 502 |
+| plug_smart | +16 | 56 |
+| button_wireless_1 | +11 | 41 |
+| curtain_motor | +5 | 109 |
+| dimmer_wall_1gang | +2 | 112 |
+
+### 🔧 Flow Cards Fixes
+
+- Fixed `send_command_boolean` type (dropdown instead of boolean)
+- Added `[[device]]` to all `titleFormatted` strings
+- Fixed device filters (`driver_uri` format)
+
+---
+
 ## [5.5.127] - 2025-12-09
 
 ### 🔧 FIX: productId vs manufacturerName Rules
