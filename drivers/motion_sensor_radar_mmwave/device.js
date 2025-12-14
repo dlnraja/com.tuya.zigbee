@@ -28,6 +28,7 @@ class MotionSensorRadarDevice extends HybridSensorBase {
   get sensorCapabilities() {
     return [
       'alarm_motion',
+      'alarm_human',             // v5.5.170: Human presence detection
       'measure_distance',        // v5.5.17: Distance to target (cm)
       'measure_presence_time',   // v5.5.17: Presence duration (s)
       'measure_temperature',
@@ -43,9 +44,13 @@ class MotionSensorRadarDevice extends HybridSensorBase {
   get dpMappings() {
     return {
       // ═══════════════════════════════════════════════════════════════════
-      // PRESENCE / MOTION (DP 1)
+      // PRESENCE / MOTION (DP 1) - v5.5.170: Also sets alarm_human
       // ═══════════════════════════════════════════════════════════════════
-      1: { capability: 'alarm_motion', transform: (v) => v === 1 || v === true },
+      1: {
+        capability: 'alarm_motion',
+        transform: (v) => v === 1 || v === true,
+        alsoSets: { 'alarm_human': (v) => v === 1 || v === true }
+      },
 
       // ═══════════════════════════════════════════════════════════════════
       // ENVIRONMENTAL (some radars have temp/humidity)

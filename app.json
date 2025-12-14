@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.170",
+  "version": "5.5.171",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -461,6 +461,130 @@
               "en": "Installed version",
               "fr": "Version installée"
             }
+          }
+        ]
+      },
+      {
+        "id": "receive_status_boolean",
+        "title": {
+          "en": "Received status (boolean)",
+          "fr": "Statut reçu (booléen)"
+        },
+        "hint": {
+          "en": "Triggered when a Tuya Zigbee DP (type BOOL) is received",
+          "fr": "Déclenché quand un DP Tuya Zigbee (type BOOL) est reçu"
+        },
+        "tokens": [
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "example": 1
+          },
+          {
+            "name": "value",
+            "type": "boolean",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            },
+            "example": true
+          }
+        ]
+      },
+      {
+        "id": "receive_status_json",
+        "title": {
+          "en": "Received status (json/raw)",
+          "fr": "Statut reçu (json/brut)"
+        },
+        "hint": {
+          "en": "Triggered when a Tuya Zigbee DP (type RAW/BITMAP) is received. Value is JSON encoded.",
+          "fr": "Déclenché quand un DP Tuya Zigbee (type RAW/BITMAP) est reçu. La valeur est encodée en JSON."
+        },
+        "tokens": [
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "example": 1
+          },
+          {
+            "name": "value",
+            "type": "string",
+            "title": {
+              "en": "Value (JSON)",
+              "fr": "Valeur (JSON)"
+            },
+            "example": "{\"hex\":\"0A0B\"}"
+          }
+        ]
+      },
+      {
+        "id": "receive_status_number",
+        "title": {
+          "en": "Received status (number)",
+          "fr": "Statut reçu (nombre)"
+        },
+        "hint": {
+          "en": "Triggered when a Tuya Zigbee DP (type VALUE/ENUM) is received",
+          "fr": "Déclenché quand un DP Tuya Zigbee (type VALUE/ENUM) est reçu"
+        },
+        "tokens": [
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "example": 1
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            },
+            "example": 0
+          }
+        ]
+      },
+      {
+        "id": "receive_status_string",
+        "title": {
+          "en": "Received status (string)",
+          "fr": "Statut reçu (texte)"
+        },
+        "hint": {
+          "en": "Triggered when a Tuya Zigbee DP (type STRING) is received",
+          "fr": "Déclenché quand un DP Tuya Zigbee (type STRING) est reçu"
+        },
+        "tokens": [
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "example": 1
+          },
+          {
+            "name": "value",
+            "type": "string",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            },
+            "example": "hello"
           }
         ]
       },
@@ -8383,7 +8507,450 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=climate_sensor|soil_sensor|motion_sensor_radar_mmwave|temphumidsensor|water_leak_sensor|smoke_detector_advanced"
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "request_tuya_dp",
+        "title": {
+          "en": "Request Tuya DP",
+          "fr": "Demander DP Tuya"
+        },
+        "titleFormatted": {
+          "en": "Request DP [[dp_id]] from [[device]]",
+          "fr": "Demander DP [[dp_id]] de [[device]]"
+        },
+        "hint": {
+          "en": "Request a datapoint value from the device (works best when the device is awake).",
+          "fr": "Demande la valeur d'un datapoint à l'appareil (fonctionne mieux quand l'appareil est réveillé)."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "type": "number",
+            "name": "dp_id",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "min": 1,
+            "max": 255,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "send_command_boolean",
+        "title": {
+          "en": "Send command (boolean)",
+          "fr": "Envoyer commande (booléen)"
+        },
+        "titleFormatted": {
+          "en": "Send DP [[dp_id]] = [[value]] to [[device]]",
+          "fr": "Envoyer DP [[dp_id]] = [[value]] à [[device]]"
+        },
+        "hint": {
+          "en": "Local-only: send a Tuya Zigbee datapoint (DP) as boolean",
+          "fr": "Local uniquement : envoyer un datapoint Tuya Zigbee (DP) en booléen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "example": 1
+          },
+          {
+            "name": "value",
+            "type": "dropdown",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            },
+            "values": [
+              {
+                "id": "true",
+                "title": {
+                  "en": "On / True",
+                  "fr": "On / Vrai"
+                }
+              },
+              {
+                "id": "false",
+                "title": {
+                  "en": "Off / False",
+                  "fr": "Off / Faux"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "send_command_json",
+        "title": {
+          "en": "Send command (raw/json)",
+          "fr": "Envoyer commande (brut/json)"
+        },
+        "titleFormatted": {
+          "en": "Send raw DP [[dp_id]] = [[value]] to [[device]]",
+          "fr": "Envoyer DP brut [[dp_id]] = [[value]] à [[device]]"
+        },
+        "hint": {
+          "en": "Local-only: send a RAW Tuya Zigbee DP. Provide JSON: [1,2,3] or {\"hex\":\"0A0B\"} or {\"base64\":\"...\"}",
+          "fr": "Local uniquement : envoyer un DP Tuya Zigbee RAW. Fournir JSON : [1,2,3] ou {\"hex\":\"0A0B\"} ou {\"base64\":\"...\"}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "example": 1
+          },
+          {
+            "name": "value",
+            "type": "text",
+            "title": {
+              "en": "RAW JSON",
+              "fr": "JSON brut"
+            },
+            "example": "{\"hex\":\"0A0B\"}"
+          }
+        ]
+      },
+      {
+        "id": "send_command_number",
+        "title": {
+          "en": "Send command (number)",
+          "fr": "Envoyer commande (nombre)"
+        },
+        "titleFormatted": {
+          "en": "Send DP [[dp_id]] = [[value]] ([[dp_type]]) to [[device]]",
+          "fr": "Envoyer DP [[dp_id]] = [[value]] ([[dp_type]]) à [[device]]"
+        },
+        "hint": {
+          "en": "Local-only: send a Tuya Zigbee datapoint (DP) as VALUE/ENUM/BITMAP",
+          "fr": "Local uniquement : envoyer un datapoint Tuya Zigbee (DP) en VALUE/ENUM/BITMAP"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "example": 1
+          },
+          {
+            "name": "dp_type",
+            "type": "dropdown",
+            "title": {
+              "en": "DP type",
+              "fr": "Type DP"
+            },
+            "values": [
+              {
+                "id": "value",
+                "title": {
+                  "en": "VALUE (number)",
+                  "fr": "VALUE (nombre)"
+                }
+              },
+              {
+                "id": "enum",
+                "title": {
+                  "en": "ENUM",
+                  "fr": "ENUM"
+                }
+              },
+              {
+                "id": "bitmap",
+                "title": {
+                  "en": "BITMAP",
+                  "fr": "BITMAP"
+                }
+              }
+            ]
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            },
+            "example": 0
+          }
+        ]
+      },
+      {
+        "id": "send_command_string",
+        "title": {
+          "en": "Send command (string)",
+          "fr": "Envoyer commande (texte)"
+        },
+        "titleFormatted": {
+          "en": "Send DP [[dp_id]] = [[value]] to [[device]]",
+          "fr": "Envoyer DP [[dp_id]] = [[value]] à [[device]]"
+        },
+        "hint": {
+          "en": "Local-only: send a Tuya Zigbee datapoint (DP) as string",
+          "fr": "Local uniquement : envoyer un datapoint Tuya Zigbee (DP) en texte"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "example": 1
+          },
+          {
+            "name": "value",
+            "type": "text",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            },
+            "example": "hello"
+          }
+        ]
+      },
+      {
+        "id": "send_tuya_dp_boolean",
+        "title": {
+          "en": "Send Tuya DP (Boolean)",
+          "fr": "Envoyer DP Tuya (Booléen)"
+        },
+        "titleFormatted": {
+          "en": "Send DP [[dp_id]] = [[value]] to [[device]]",
+          "fr": "Envoyer DP [[dp_id]] = [[value]] à [[device]]"
+        },
+        "hint": {
+          "en": "Send a Tuya datapoint (DP) to a TS0601/EF00 Zigbee device.",
+          "fr": "Envoie un datapoint Tuya (DP) vers un appareil Zigbee TS0601/EF00."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "type": "number",
+            "name": "dp_id",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "min": 1,
+            "max": 255,
+            "step": 1
+          },
+          {
+            "type": "checkbox",
+            "name": "value",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            }
+          }
+        ]
+      },
+      {
+        "id": "send_tuya_dp_json",
+        "title": {
+          "en": "Send Tuya DP (JSON)",
+          "fr": "Envoyer DP Tuya (JSON)"
+        },
+        "titleFormatted": {
+          "en": "Send DP [[dp_id]] = [[value]] to [[device]]",
+          "fr": "Envoyer DP [[dp_id]] = [[value]] à [[device]]"
+        },
+        "hint": {
+          "en": "Send a RAW Tuya datapoint by providing JSON. Supported formats: {\"hex\":\"0102ff\"} or {\"base64\":\"...\"} or a JSON array of bytes (e.g. [1,2,255]).",
+          "fr": "Envoie un datapoint Tuya RAW via JSON. Formats supportés : {\"hex\":\"0102ff\"} ou {\"base64\":\"...\"} ou un tableau d'octets JSON (ex: [1,2,255])."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "type": "number",
+            "name": "dp_id",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "min": 1,
+            "max": 255,
+            "step": 1
+          },
+          {
+            "type": "text",
+            "name": "value",
+            "title": {
+              "en": "JSON",
+              "fr": "JSON"
+            },
+            "placeholder": {
+              "en": "{\"hex\":\"0102ff\"}",
+              "fr": "{\"hex\":\"0102ff\"}"
+            }
+          }
+        ]
+      },
+      {
+        "id": "send_tuya_dp_number",
+        "title": {
+          "en": "Send Tuya DP (Number)",
+          "fr": "Envoyer DP Tuya (Nombre)"
+        },
+        "titleFormatted": {
+          "en": "Send DP [[dp_id]] = [[value]] ([[dp_type]]) to [[device]]",
+          "fr": "Envoyer DP [[dp_id]] = [[value]] ([[dp_type]]) à [[device]]"
+        },
+        "hint": {
+          "en": "Send a numeric Tuya datapoint (DP). Most Tuya VALUE/ENUM datapoints are numbers.",
+          "fr": "Envoie un datapoint Tuya numérique (DP). La plupart des DP VALUE/ENUM sont des nombres."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "type": "number",
+            "name": "dp_id",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "min": 1,
+            "max": 255,
+            "step": 1
+          },
+          {
+            "type": "dropdown",
+            "name": "dp_type",
+            "title": {
+              "en": "DP Type",
+              "fr": "Type DP"
+            },
+            "values": [
+              {
+                "id": "value",
+                "title": {
+                  "en": "VALUE (int)",
+                  "fr": "VALUE (int)"
+                }
+              },
+              {
+                "id": "enum",
+                "title": {
+                  "en": "ENUM (byte)",
+                  "fr": "ENUM (octet)"
+                }
+              },
+              {
+                "id": "bitmap",
+                "title": {
+                  "en": "BITMAP (byte)",
+                  "fr": "BITMAP (octet)"
+                }
+              }
+            ]
+          },
+          {
+            "type": "number",
+            "name": "value",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            },
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "send_tuya_dp_string",
+        "title": {
+          "en": "Send Tuya DP (String)",
+          "fr": "Envoyer DP Tuya (Texte)"
+        },
+        "titleFormatted": {
+          "en": "Send DP [[dp_id]] = [[value]] to [[device]]",
+          "fr": "Envoyer DP [[dp_id]] = [[value]] à [[device]]"
+        },
+        "hint": {
+          "en": "Send a string Tuya datapoint (DP).",
+          "fr": "Envoie un datapoint Tuya de type texte (DP)."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "type": "number",
+            "name": "dp_id",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "min": 1,
+            "max": 255,
+            "step": 1
+          },
+          {
+            "type": "text",
+            "name": "value",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            },
+            "placeholder": {
+              "en": "text",
+              "fr": "texte"
+            }
           }
         ]
       },
@@ -8394,8 +8961,8 @@
           "fr": "Définir verrouillage enfant"
         },
         "titleFormatted": {
-          "en": "Set child lock to [[lock_state]]",
-          "fr": "Définir verrouillage enfant à [[lock_state]]"
+          "en": "Set child lock [[lock_state]] on [[device]]",
+          "fr": "Définir verrouillage enfant [[lock_state]] sur [[device]]"
         },
         "hint": {
           "en": "Enable or disable child lock on device",
@@ -8405,7 +8972,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=thermostat_tuya_dp|radiator_valve|plug_smart"
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           },
           {
             "type": "dropdown",
@@ -8440,8 +9007,8 @@
           "fr": "Définir position volet"
         },
         "titleFormatted": {
-          "en": "Set cover position to [[position]]%",
-          "fr": "Définir position volet à [[position]]%"
+          "en": "Set cover position [[position]]% on [[device]]",
+          "fr": "Définir position volet [[position]]% sur [[device]]"
         },
         "hint": {
           "en": "Set the curtain/blind position (0=closed, 100=open)",
@@ -8451,7 +9018,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=curtain_motor|curtain_motor_tilt"
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           },
           {
             "type": "range",
@@ -8475,8 +9042,8 @@
           "fr": "Définir durée sirène"
         },
         "titleFormatted": {
-          "en": "Set siren duration to [[duration]] seconds",
-          "fr": "Définir durée sirène à [[duration]] secondes"
+          "en": "Set siren duration [[duration]] on [[device]]",
+          "fr": "Définir siren duratisur [[duration]] on [[device]]"
         },
         "hint": {
           "en": "Set how long the siren will sound (60-3600 seconds)",
@@ -8486,7 +9053,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=siren"
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           },
           {
             "type": "number",
@@ -8508,8 +9075,8 @@
           "fr": "Définir la mélodie sirène"
         },
         "titleFormatted": {
-          "en": "Set siren melody to [[melody]]",
-          "fr": "Définir mélodie sirène sur [[melody]]"
+          "en": "Set siren melody [[melody]] on [[device]]",
+          "fr": "Définir siren melody [[melody]] sur [[device]]"
         },
         "hint": {
           "en": "Change the alarm melody/ringtone",
@@ -8519,7 +9086,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=siren"
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           },
           {
             "type": "dropdown",
@@ -8575,8 +9142,8 @@
           "fr": "Définir preset thermostat"
         },
         "titleFormatted": {
-          "en": "Set thermostat to [[preset]] preset",
-          "fr": "Définir thermostat sur preset [[preset]]"
+          "en": "Set thermostat preset [[preset]] on [[device]]",
+          "fr": "Définir thermostat preset [[preset]] sur [[device]]"
         },
         "hint": {
           "en": "Change the thermostat preset mode",
@@ -8586,7 +9153,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=thermostat_tuya_dp|thermostat_4ch|radiator_valve"
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           },
           {
             "type": "dropdown",
@@ -8660,7 +9227,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=smoke_detector_advanced|gas_sensor|siren"
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
         ]
       },
@@ -8682,7 +9249,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=smoke_detector_advanced|gas_sensor"
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
         ]
       },
@@ -13880,6 +14447,7 @@
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_arfwfgoa",
+          "_TZ3000_bczr4e10",
           "_TZ3000_fkvaniuu",
           "_TZ3000_lq01",
           "_TZ3000_wqxwpita",
@@ -14386,11 +14954,20 @@
           "TS0201",
           "ZG-101ZL",
           "_TYZB02_keyjqthh",
+          "_TZ3000_0DUMFK2Z",
+          "_TZ3000_5bpeda8u",
+          "_TZ3000_DZIAICT4",
+          "_TZ3000_EE8NRT2L",
+          "_TZ3000_J61X9RXN",
+          "_TZ3000_KFU8ZAPD",
+          "_TZ3000_MH9PX7CQ",
+          "_TZ3000_QGWCXXWS",
+          "_TZ3000_SSP0MAQM",
+          "_TZ3000_U3NV1JWK",
           "_TZ3000_abrsvsou",
           "_TZ3000_an5rjiwd",
           "_TZ3000_arfwfgre",
           "_TZ3000_axpdxqgu",
-          "_TZ3000_5bpeda8u",
           "_TZ3000_bsvqrux3",
           "_TZ3000_csflgqj2",
           "_TZ3000_czuyt8lz",
@@ -14410,6 +14987,8 @@
           "_TZ3000_uri7ongn",
           "_TZ3000_vp6clf9d",
           "_TZ3000_w8jwkczz",
+          "_TZ3290_8XZB2GHN",
+          "_TZ3290_UC8LWBI2",
           "_TZ3290_rlkmy85q4pzoxobl"
         ],
         "productId": [
@@ -15489,6 +16068,7 @@
         "manufacturerName": [
           "_TYZB01_qm6djpta",
           "_TZ3000_abci1hiu",
+          "_TZ3000_bgtzm4ny",
           "_TZ3000_pcqjmcud",
           "_TZ3000_uaa99arv",
           "_TZ3000_ufhtxr59",
@@ -17054,7 +17634,6 @@
           "_TZ3000_a33rw7ou",
           "_TZ3000_akqdg6g7",
           "_TZ3000_au2o5e6q",
-          "_TZ3000_bczr4e10",
           "_TZ3000_bgsigers",
           "_TZ3000_bguser20",
           "_TZ3000_bjawzodf",
@@ -17112,6 +17691,7 @@
           "_TZE200_0j5jma9b",
           "_TZE200_0u3bj3rc",
           "_TZE200_127x7wnl",
+          "_TZE200_1IBPYHDC",
           "_TZE200_1agwnems",
           "_TZE200_1drr8tab",
           "_TZE200_1fuxihti",
@@ -17119,6 +17699,9 @@
           "_TZE200_1n2zev06",
           "_TZE200_1ozguk6x",
           "_TZE200_1vxgqfba",
+          "_TZE200_2AAELWXK",
+          "_TZE200_2EKUZ3DZ",
+          "_TZE200_2SE8EFXH",
           "_TZE200_2atgpdho",
           "_TZE200_2cs6g9i7",
           "_TZE200_2dpplnsn",
@@ -17129,6 +17712,7 @@
           "_TZE200_2pddnnrk",
           "_TZE200_2vfxweng",
           "_TZE200_2wg5qrjy",
+          "_TZE200_3TOWULQD",
           "_TZE200_3ejwxpmu",
           "_TZE200_3i3exuay",
           "_TZE200_3p5ydos3",
@@ -17167,6 +17751,7 @@
           "_TZE200_8vxj8khv",
           "_TZE200_8whxpsiw",
           "_TZE200_8ygsuhe1",
+          "_TZE200_9CQCPKGB",
           "_TZE200_9dhenr94",
           "_TZE200_9i9dt8is",
           "_TZE200_9m4kmbfu",
@@ -17175,6 +17760,42 @@
           "_TZE200_9p5xmj5r",
           "_TZE200_9sfg7gm0",
           "_TZE200_9yapgbuv",
+          "_TZE200_AUIN8MZR",
+          "_TZE200_BH3N6GK8",
+          "_TZE200_CPMGN2CF",
+          "_TZE200_CWNJRR72",
+          "_TZE200_E3OITDYU",
+          "_TZE200_G9A3AWAJ",
+          "_TZE200_GA1MAEOF",
+          "_TZE200_HOLEL4DK",
+          "_TZE200_HUE3YFSN",
+          "_TZE200_HUSQQVUX",
+          "_TZE200_IKVNCLUO",
+          "_TZE200_IP2AKL4W",
+          "_TZE200_JVA8INK8",
+          "_TZE200_KB5NOETO",
+          "_TZE200_KDS0PMMV",
+          "_TZE200_LNBFNYXD",
+          "_TZE200_LU01T0ZL",
+          "_TZE200_LYETPPRM",
+          "_TZE200_M9SKFCTM",
+          "_TZE200_MUDXCHSU",
+          "_TZE200_MYD45WEU",
+          "_TZE200_NPJ9BUG3",
+          "_TZE200_NTCY3XU1",
+          "_TZE200_PAY2BYAX",
+          "_TZE200_RCCXOX8P",
+          "_TZE200_RHGSBACQ",
+          "_TZE200_SGPEACQP",
+          "_TZE200_T5P1VJ8R",
+          "_TZE200_TTCOVULF",
+          "_TZE200_UEBOJRAA",
+          "_TZE200_VVMBJ46N",
+          "_TZE200_VZEKYI4C",
+          "_TZE200_WUKB7RHC",
+          "_TZE200_XPQ2RZHQ",
+          "_TZE200_YH7AOAHI",
+          "_TZE200_ZTC6GGYL",
           "_TZE200_a0gvbdgv",
           "_TZE200_a1ovdobn",
           "_TZE200_a4bpgplm",
@@ -17540,6 +18161,7 @@
           "_TZE204_6kijc7nd",
           "_TZE204_6wi2mope",
           "_TZE204_78ioiaml",
+          "_TZE204_7GCLUKJS",
           "_TZE204_7bztmfm1",
           "_TZE204_7ytb3h8u",
           "_TZE204_7ytnacie",
@@ -17549,6 +18171,16 @@
           "_TZE204_9mjy74mp",
           "_TZE204_9qhuzgo0",
           "_TZE204_9yapgbuv",
+          "_TZE204_IJXVKHD0",
+          "_TZE204_MTOARYRE",
+          "_TZE204_MYD45WEU",
+          "_TZE204_NTCY3XU1",
+          "_TZE204_QASJIF9E",
+          "_TZE204_SBYX0LM6",
+          "_TZE204_SXM7L9XA",
+          "_TZE204_UXLLNYWP",
+          "_TZE204_XSM7L9XA",
+          "_TZE204_ZTC6GGYL",
           "_TZE204_a2jcoyuk",
           "_TZE204_a7sghmms",
           "_TZE204_a8z0g46u",
@@ -17755,6 +18387,11 @@
           "_TZE284_9ern5sfh",
           "_TZE284_9m4kmbfu",
           "_TZE284_9xstqowh",
+          "_TZE284_AAO3YZHS",
+          "_TZE284_G2E6CPNW",
+          "_TZE284_OITAVOV2",
+          "_TZE284_RCCXOX8P",
+          "_TZE284_SGABHWA6",
           "_TZE284_YYYYYYYY",
           "_TZE284_a14rjslz",
           "_TZE284_a1ovdobn",
@@ -18356,9 +18993,17 @@
           "_TZ3000_zgrffiwg",
           "_TZ3000_zutizvyk",
           "_TZ3000_zutizvykTS0203",
+          "_TZ3000_4ugnzsli",
+          "_TZ3000_gntwytxo",
+          "_TZ3000_n2egfsli",
           "_TZ3210_0jxeoadc",
           "_TZ3210_bfwvfyx1",
+          "_TZ3210_umi6vbsz",
+          "_TZ3210_zbabx9wh",
+          "_TZB210_zmppwawa",
           "_TZE204_jktmrpoj",
+          "_TZE204_nklqjk62",
+          "_TZE204_r0jdjrvi",
           "_TZE284_nklqjk62",
           "zbeacon"
         ],
@@ -18769,6 +19414,8 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "Benexmart",
+          "Dooya",
           "TS0105",
           "_TZ3000_1dd0d5yi",
           "_TZ3000_42ha4rsc",
@@ -18778,6 +19425,7 @@
           "_TZ3000_7hcgjxpc",
           "_TZ3000_8h7wgocw",
           "_TZ3000_8kzqqzu4",
+          "_TZ3000_E3VHYIRX",
           "_TZ3000_bs93npae",
           "_TZ3000_ctbafvhm",
           "_TZ3000_dbpmpco1",
@@ -18807,12 +19455,16 @@
           "_TZ3210_ol1uhvza",
           "_TZ3210_xbpt8ewc",
           "_TZ3210_xwqng7ol",
+          "_TZB000_42HA4RSC",
           "_TZE200_5nldle7w",
           "_TZE200_5sbebbzs",
           "_TZE200_5zbp6j0u",
+          "_TZE200_68NVBIO9",
           "_TZE200_68nvbi09",
           "_TZE200_9caxna4s",
           "_TZE200_9vpe3fl1",
+          "_TZE200_CF1SL3TJ",
+          "_TZE200_CPBO62RN",
           "_TZE200_axgvo9jh",
           "_TZE200_bqcqqjpb",
           "_TZE200_cowvfni3",
@@ -18870,9 +19522,7 @@
           "mcdj3aq\\u0000",
           "owvfni3",
           "owvfni3\\u0000",
-          "u1rkty3",
-          "Benexmart",
-          "Dooya"
+          "u1rkty3"
         ],
         "productId": [
           "AM25",
@@ -19482,7 +20132,9 @@
           "_TZ3210_wjz9epjd",
           "_TZ3210_zxbtub8r",
           "_TZB210_3owg3kkv",
+          "_TZB210_RKGNGB5O",
           "_TZE200_0hb4rdnp",
+          "_TZE200_4MH6TYYO",
           "_TZE200_a0syesf5",
           "_TZE200_gne0e6mk",
           "_TZE200_la2c2uo9",
@@ -24680,8 +25332,10 @@
           "_TZ3000_mcxw5ehu",
           "_TZ3000_mg4dy6z6",
           "_TZ3000_mmtwjmaq",
+          "_TZ3000_lf56vpxj",
           "_TZ3000_msl6wxk9",
           "_TZ3000_nss8amz9",
+          "_TZ3040_msl6wxk9",
           "_TZ3000_otvn3lne",
           "_TZ3000_pirddkfc",
           "_TZ3000_qomxlryd",
@@ -25169,6 +25823,7 @@
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
+        "alarm_human",
         "measure_distance",
         "measure_presence_time",
         "measure_temperature",
@@ -26068,13 +26723,25 @@
           "_TZ1800_akzvkzqq",
           "_TZ1800_ho6i0zk9",
           "_TZ3000_00mk2xzy",
+          "_TZ3000_266AZBG3",
+          "_TZ3000_2UOLLQ9D",
           "_TZ3000_2putqrmw",
           "_TZ3000_2xlvlnez",
           "_TZ3000_2xlvlnvp",
+          "_TZ3000_3IAS4W4O",
           "_TZ3000_3uimvkn6",
           "_TZ3000_4ux0ondb",
           "_TZ3000_5f43h46r",
           "_TZ3000_9hpxg80k",
+          "_TZ3000_B28WRPVX",
+          "_TZ3000_CICWJQTH",
+          "_TZ3000_GJNOZSAZ",
+          "_TZ3000_KSW8QTMT",
+          "_TZ3000_O1JZCXOU",
+          "_TZ3000_OKAZ9TJS",
+          "_TZ3000_SS98EC5D",
+          "_TZ3000_WW6DRJA5",
+          "_TZ3000_YUJKCHBZ",
           "_TZ3000_dd8wwzcy",
           "_TZ3000_dksbtrzs",
           "_TZ3000_g1pzicmq",
@@ -26096,7 +26763,11 @@
           "_TZ3000_y4ona9me",
           "_TZ3210_1ac",
           "_TZ3210_2ac",
+          "_TZ3210_5CT6E7YE",
           "_TZ3210_7jnk7l3k",
+          "_TZ3210_DDIGCA5N",
+          "_TZ3210_JLF1NEPW",
+          "_TZ3210_RWMITWJ4",
           "_TZ3210_pfbzs1an",
           "_TZ3218_hdc8bbha",
           "_TZ3290_jxvzqatwgsaqzx1u",
@@ -26597,6 +27268,7 @@
       "class": "sensor",
       "capabilities": [
         "alarm_motion",
+        "alarm_human",
         "measure_temperature",
         "measure_humidity",
         "measure_luminance",
@@ -27616,13 +28288,22 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "_TZ3000_0s9gukzt",
           "_TZ3000_abaplimj",
           "_TZ3000_abjodzas",
+          "_TZ3000_awvmkayh",
           "_TZ3000_k1msavlx",
+          "_TZ3000_k4ej3ww2",
+          "_TZ3000_kstbkt6a",
+          "_TZ3000_kyb656no",
+          "_TZ3000_mugyhz0q",
+          "_TZ3000_ocjlo4ea",
+          "_TZ3000_t6jriawg",
+          "_TZ3000_tvuarksa",
+          "_TZ3000_upgcbody",
           "_TZ3000_zrm3oxsh",
           "_TZ3210_tgvtvdoc",
-          "_TZE284_iilebqoo",
-          "_tz3000_awvmkayh"
+          "_TZE284_iilebqoo"
         ],
         "productId": [
           "RH3001",
@@ -29712,13 +30393,7 @@
           "TS0012",
           "TS0013",
           "TS0014",
-          "TS0041",
-          "TS0041A",
-          "TS0042",
-          "TS0043",
-          "TS0044",
           "TS0046",
-          "TS0052",
           "TS0112",
           "TS0302",
           "TS030F",
@@ -29796,6 +30471,7 @@
           "_TZ3000_4xfqlgqo",
           "_TZ3000_54hjn4vs",
           "_TZ3000_56bdyj21",
+          "_TZ3000_5BPEDA8U",
           "_TZ3000_5af5r192",
           "_TZ3000_5ajpkyq6",
           "_TZ3000_5ct6e7ye",
@@ -29837,7 +30513,11 @@
           "_TZ3000_9evm3otq",
           "_TZ3000_9kbbfeho",
           "_TZ3000_9r5jaajv",
+          "_TZ3000_BGTZM4NY",
           "_TZ3000_KJ0NWDZ6",
+          "_TZ3000_KTUOYVT5",
+          "_TZ3000_LQB7LCQ9",
+          "_TZ3000_LUGASWF8",
           "_TZ3000_VTSCRPMX",
           "_TZ3000_a4xycprs",
           "_TZ3000_aa5t61rh",
@@ -29856,7 +30536,6 @@
           "_TZ3000_b1q8kwmh",
           "_TZ3000_b7bxojrg",
           "_TZ3000_bb6xaihh",
-          "_TZ3000_bgtzm4ny",
           "_TZ3000_bhcpnvud",
           "_TZ3000_biakwrag",
           "_TZ3000_bkfe0bab",
@@ -29968,8 +30647,8 @@
           "_TZ3000_j9568h44",
           "_TZ3000_jcqs2mrv",
           "_TZ3000_ji4araar",
-          "_TZ3000_jrpdaujd",
           "_TZ3000_jl7qyupf",
+          "_TZ3000_jrpdaujd",
           "_TZ3000_jsfzkftc",
           "_TZ3000_ju82pu2b",
           "_TZ3000_juq7i1fr",
@@ -30204,11 +30883,42 @@
           "_TZ3000_zw7wr5uo",
           "_TZ3000_zw7yf6yk",
           "_TZ3000_zxrfobzw",
+          "_TZ3002_JN2X20TG",
+          "_TZ3002_ZJUVW9ZF",
+          "_TZ3210_2DFY6TOL",
+          "_TZ3210_8N4DN1NE",
+          "_TZ3210_JOWHPXOP",
+          "_TZ3210_URJF5U18",
           "_TZ3210_fhx7lk3d",
           "_TZ3210_j4pdtz9v",
+          "_TZE200_0NAUXA0P",
+          "_TZE200_9CXUHAKF",
+          "_TZE200_ABATW3KJ",
+          "_TZE200_HEWLYDPZ",
+          "_TZE200_TSXPL0D0",
+          "_TZE200_WNP4D4VA",
           "_TZE200_bkkmqmyo",
+          "_TZE204_1V1DXKCK",
+          "_TZE204_68UTEMIO",
+          "_TZE204_BXOO2SWD",
+          "_TZE204_F5EFVTBV",
+          "_TZE204_GXBDNFRH",
+          "_TZE204_HLX9TNZB",
+          "_TZE204_IIK0PQUW",
+          "_TZE204_LBHH5O6Z",
+          "_TZE204_LMGRBUWF",
+          "_TZE204_MEXISFIK",
+          "_TZE204_NVXORHCJ",
+          "_TZE204_OJTQAWAV",
+          "_TZE204_WSKR3UP8",
+          "_TZE204_ZENJ4LXV",
+          "_TZE204_ZNVWZXKQ",
           "_TZE204_bkkmqmyo",
           "_TZE204_srmahpw",
+          "_TZE284_F5EFVTBV",
+          "_TZE284_LBHH5O6Z",
+          "_TZE284_TDHNHHIY",
+          "_TZE284_ZNVWZXKQ",
           "_tz3000_266azbg3",
           "_tz3000_2uollq9d",
           "_tz3000_3ias4w4o",
@@ -33662,18 +34372,58 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_0dvm9mva",
-          "_TZE200_cwbvmsar",
-          "_TZE200_kds0pqet",
-          "_TZE200_wlosfena",
-          "_TZE200_2ekuz3dz",
-          "_TZE200_cpmgn2cf",
-          "_TZE200_yw7cahqs",
-          "_TZE284_aoclfnxz",
+          "AVATTO",
           "Beca",
           "Beok",
           "Moes",
-          "AVATTO"
+          "_TZE200_0dvm9mva",
+          "_TZE200_2ekuz3dz",
+          "_TZE200_4UTWOZ2",
+          "_TZE200_4UTWOZI2",
+          "_TZE200_6RDJ8DZM",
+          "_TZE200_7YORANX2",
+          "_TZE200_9MJY74MP",
+          "_TZE200_9XFJIXAP",
+          "_TZE200_BVRLMAJK",
+          "_TZE200_BVU2WNXZ",
+          "_TZE200_D3Z1UKQW",
+          "_TZE200_DZUQWSYG",
+          "_TZE200_E9BA97VF",
+          "_TZE200_HVAXB2TC",
+          "_TZE200_JKFBPH7L",
+          "_TZE200_LHZAPFG9",
+          "_TZE200_OW09XLXM",
+          "_TZE200_P3DBF6QS",
+          "_TZE200_PY4CM3HE",
+          "_TZE200_RK1WOJCE",
+          "_TZE200_RNDG81SF",
+          "_TZE200_RUFDTFYV",
+          "_TZE200_RV6IUYXB",
+          "_TZE200_RXNTAG7I",
+          "_TZE200_RXQ4ITI9",
+          "_TZE200_SUXYWABT",
+          "_TZE200_WSBFWODU",
+          "_TZE200_X9AXOFSE",
+          "_TZE200_YQGBRDYO",
+          "_TZE200_Z1TYSPQW",
+          "_TZE200_cpmgn2cf",
+          "_TZE200_cwbvmsar",
+          "_TZE200_kds0pqet",
+          "_TZE200_wlosfena",
+          "_TZE200_yw7cahqs",
+          "_TZE204_0HCJEW5P",
+          "_TZE204_9MJY74MP",
+          "_TZE204_CVCU2P6E",
+          "_TZE204_GOPS3SLB",
+          "_TZE204_O3X45P96",
+          "_TZE204_QYR2M29I",
+          "_TZE204_RTRMFADK",
+          "_TZE284_C6WV4XYO",
+          "_TZE284_GOPS3SLB",
+          "_TZE284_LTWBM23F",
+          "_TZE284_O3X45P96",
+          "_TZE284_RV6IUYXB",
+          "_TZE284_aoclfnxz"
         ],
         "productId": [
           "TS0601",
@@ -35384,6 +36134,28 @@
       "setable": false,
       "insights": true,
       "uiComponent": "sensor"
+    },
+    "alarm_human": {
+      "type": "boolean",
+      "title": {
+        "en": "Human presence",
+        "fr": "Présence humaine",
+        "nl": "Menselijke aanwezigheid",
+        "de": "Menschliche Anwesenheit"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/alarm_human.svg",
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Human detected",
+        "fr": "Humain détecté"
+      },
+      "insightsTitleFalse": {
+        "en": "No human",
+        "fr": "Aucun humain"
+      }
     },
     "measure_presence_time": {
       "type": "number",

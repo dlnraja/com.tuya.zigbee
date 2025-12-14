@@ -19,13 +19,17 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   get mainsPowered() { return true; }
 
   get sensorCapabilities() {
-    return ['alarm_motion', 'measure_luminance', 'measure_distance'];
+    return ['alarm_motion', 'alarm_human', 'measure_luminance', 'measure_distance'];
   }
 
   get dpMappings() {
     return {
-      // Presence detected - DP 1
-      1: { capability: 'alarm_motion', transform: (v) => v === 1 || v === true || v === 'presence' },
+      // Presence detected - DP 1 - v5.5.170: Also sets alarm_human
+      1: {
+        capability: 'alarm_motion',
+        transform: (v) => v === 1 || v === true || v === 'presence',
+        alsoSets: { 'alarm_human': (v) => v === 1 || v === true || v === 'presence' }
+      },
 
       // Sensitivity - DP 2 (0-10)
       2: { capability: null, internal: 'sensitivity', writable: true },
