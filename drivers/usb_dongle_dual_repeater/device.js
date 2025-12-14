@@ -77,7 +77,7 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
       return;
     }
 
-    const electrical = ep1.clusters.haElectricalMeasurement;
+    const electrical = ep1.clusters.electricalMeasurement || ep1.clusters.haElectricalMeasurement;
     const metering = ep1.clusters.seMetering;
 
     try {
@@ -108,6 +108,21 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
           rmsVoltage: { minInterval: 60, maxInterval: 600, minChange: 10 },
           rmsCurrent: { minInterval: 10, maxInterval: 300, minChange: 10 },
         }).catch(err => this.log('[USB_DONGLE] electrical reporting config failed:', err.message));
+
+        electrical.readAttributes(['activePower', 'rmsVoltage', 'rmsCurrent']).then(data => {
+          if (data?.activePower != null) {
+            const power = data.activePower / 10;
+            this.setCapabilityValue('measure_power', power).catch(this.error);
+          }
+          if (data?.rmsVoltage != null) {
+            const voltage = data.rmsVoltage / 10;
+            this.setCapabilityValue('measure_voltage', voltage).catch(this.error);
+          }
+          if (data?.rmsCurrent != null) {
+            const current = data.rmsCurrent / 1000;
+            this.setCapabilityValue('measure_current', current).catch(this.error);
+          }
+        }).catch(() => { });
       }
 
       if (metering) {
@@ -127,6 +142,13 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
             minChange: 1,
           },
         }).catch(err => this.log('[USB_DONGLE] metering reporting config failed:', err.message));
+
+        metering.readAttributes(['currentSummationDelivered']).then(data => {
+          if (data?.currentSummationDelivered != null) {
+            const kWh = data.currentSummationDelivered / 1000;
+            this.setCapabilityValue('meter_power', kWh).catch(this.error);
+          }
+        }).catch(() => { });
       }
 
       this.log('[USB_DONGLE] Energy reporting configured');

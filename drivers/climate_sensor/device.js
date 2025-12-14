@@ -656,10 +656,10 @@ class ClimateSensorDevice extends HybridSensorBase {
     try {
       this.log('[CLIMATE] 🕐 Setting up HOURLY Time Sync (v5.5.106)...');
 
-      // v5.5.106: Use UniversalTimeSync with 1 HOUR interval
+      // v5.5.171: Use UniversalTimeSync with 1 HOUR interval and TUYA EPOCH
       this._universalTimeSync = new UniversalTimeSync(this, {
         syncInterval: 60 * 60 * 1000, // 1 HOUR (was 6 hours)
-        useUnixEpoch: true,  // Most Tuya devices expect Unix epoch
+        useUnixEpoch: false,  // v5.5.171: FIXED - Use Tuya epoch (2000), NOT Unix!
         verbose: true,
         retryOnFail: true,
         maxRetries: 3,
@@ -896,28 +896,34 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.95: ENHANCED Tuya time sync for TZE284 LCD devices
+   * v5.5.171: FIXED Tuya time sync for TZE284 LCD devices
    * Uses TuyaSpecificCluster.timeSync() which sends command 0x24 (timeResponse)
+   *
+   * CRITICAL FIX: Tuya devices expect TUYA EPOCH (2000-01-01), NOT Unix epoch (1970)!
+   * Source: https://github.com/Koenkk/zigbee2mqtt/issues/30054
    *
    * CRITICAL FOR: _TZE284_vvmbj46n (TH05Z) LCD clock display
    *
-   * The device expects Unix timestamps:
-   * - utcTime: seconds since 1970-01-01 00:00:00 UTC
+   * The device expects Tuya timestamps:
+   * - utcTime: seconds since 2000-01-01 00:00:00 UTC (NOT 1970!)
    * - localTime: utcTime + timezone offset (for LCD display)
    */
   async _sendTuyaTimeSync(endpoint) {
     try {
       const now = new Date();
-      const utcSeconds = Math.floor(now.getTime() / 1000);
+
+      // v5.5.171: CRITICAL FIX - Use TUYA EPOCH (2000), not Unix epoch (1970)!
+      // Tuya epoch = 2000-01-01 00:00:00 UTC
+      const TUYA_EPOCH = new Date(Date.UTC(2000, 0, 1, 0, 0, 0)).getTime();
+      const utcSeconds = Math.floor((now.getTime() - TUYA_EPOCH) / 1000);
       const timezoneOffset = -now.getTimezoneOffset() * 60; // In seconds
       const localSeconds = utcSeconds + timezoneOffset;
 
       this.log('[TIME-SYNC] 🕐 ════════════════════════════════════════════');
-      this.log(`[TIME-SYNC] 🕐 UTC: ${now.toISOString()}`);
-      this.log(`[TIME-SYNC] 🕐 Local: ${new Date(localSeconds * 1000).toLocaleString()}`);
+      this.log(`[TIME-SYNC] 🕐 Current time: ${now.toLocaleString()}`);
       this.log(`[TIME-SYNC] 🕐 Timezone: GMT${timezoneOffset >= 0 ? '+' : ''}${timezoneOffset / 3600}`);
-      this.log(`[TIME-SYNC] 🕐 UTC seconds: ${utcSeconds}`);
-      this.log(`[TIME-SYNC] 🕐 Local seconds: ${localSeconds}`);
+      this.log(`[TIME-SYNC] 🕐 TUYA EPOCH (2000): utc=${utcSeconds}s local=${localSeconds}s`);
+      this.log(`[TIME-SYNC] 🕐 (For reference: Unix epoch would be ${Math.floor(now.getTime() / 1000)}s)`);
 
       const tuyaCluster = endpoint.clusters?.['tuya'] ||
         endpoint.clusters?.[61184] ||
