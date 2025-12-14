@@ -1,13 +1,13 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.170-blue)
+![Version](https://img.shields.io/badge/version-5.5.171-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-83-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 83 drivers and 2437+ manufacturer IDs.**
+**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 83 drivers and 2624+ manufacturer IDs.**
 
 🏠 **100% Local Control** - No Cloud, No Internet Required
 🔋 **Smart Battery** - Accurate readings with voltage fallback
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.170
+## 🚀 Latest Updates - v5.5.171
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.171** | 🕐 CRITICAL FIX: Climate sensor time sync now uses Tuya epoc... |
 | **v5.5.170** | 🔧 FIX: Moved _TZ3000_5bpeda8u from motion_sensor to button_... |
 | **v5.5.169** | 🔧 FIX: Moved _TZE200_rxq4iti9 (EARU TRV06) from climate_sen... |
 | **v5.5.168** | 🧹 Motion Sensor: Removed duplicate motion_detected/motion_c... |
@@ -66,7 +67,6 @@
 | **v5.5.166** | 🧹 CLEANUP: Removed duplicate motion_detected flow triggers.... |
 | **v5.5.165** | 🐛 FIX SOS Button: Changed from alarm_contact to alarm_gener... |
 | **v5.5.164** | 🐛 FIX: HOBEIAN ZG-303Z soil sensor now correctly recognized... |
-| **v5.5.163** | 🧹 SMART CLEANUP: Energy capabilities (measure_power, measur... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
