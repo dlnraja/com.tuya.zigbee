@@ -1,4 +1,7 @@
 {
+  "5.5.171": {
+    "en": "🕐 CRITICAL FIX: Climate sensor time sync now uses Tuya epoch (2000) instead of Unix epoch (1970). LCD displays now show correct date/time. +168 manufacturer IDs from Z2M. Flow cards fixes."
+  },
   "5.5.170": {
     "en": "🔧 FIX: Moved _TZ3000_5bpeda8u from motion_sensor to button_wireless_1 driver. It's a smart button, not a motion sensor."
   },
