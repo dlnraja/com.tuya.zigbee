@@ -10,7 +10,7 @@
     "es": "6-Botones Controlador Inalámbrico",
     "da": "6-Knapper Trådløs Controller"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "measure_battery"
   ],

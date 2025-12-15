@@ -1,4 +1,7 @@
 {
+  "5.5.172": {
+    "en": "🕐 TIME SYNC FIX #2: Fixed _respondToTimeRequest() to use Tuya epoch (2000). 🎮 BUTTON FIX: Wireless controllers now use class 'button' instead of 'sensor', removed alarm_generic capability. Devices: _TZ3000_bczr4e10, _TZ3000_bgtzm4ny now correctly detected as scene switches."
+  },
   "5.5.171": {
     "en": "🕐 CRITICAL FIX: Climate sensor time sync now uses Tuya epoch (2000) instead of Unix epoch (1970). LCD displays now show correct date/time. +168 manufacturer IDs from Z2M. Flow cards fixes."
   },

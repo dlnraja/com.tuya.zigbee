@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.171",
+  "version": "5.5.172",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -14430,9 +14430,8 @@
         "es": "Botón Inalámbrico (Universal)",
         "da": "Trådløs Knap (Universal)"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
-        "alarm_generic",
         "measure_battery"
       ],
       "capabilitiesOptions": {
@@ -15305,7 +15304,7 @@
         "es": "2-Botones Controlador Inalámbrico",
         "da": "2-Knapper Trådløs Controller"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "measure_battery"
       ],
@@ -15659,10 +15658,9 @@
         "es": "Controlador Inalámbrico 3 Botones",
         "da": "3-Knaps Trådløs Controller"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
-        "measure_battery",
-        "alarm_generic"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "measure_battery": {
@@ -16034,10 +16032,9 @@
         "es": "4-Botones Controlador Inalámbrico",
         "da": "4-Knapper Trådløs Controller"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
-        "measure_battery",
-        "alarm_generic"
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "measure_battery": {
@@ -16428,7 +16425,7 @@
         "es": "6-Botones Controlador Inalámbrico",
         "da": "6-Knapper Trådløs Controller"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "measure_battery"
       ],
@@ -16820,7 +16817,7 @@
         "es": "8-Botones Controlador Inalámbrico",
         "da": "8-Knapper Trådløs Controller"
       },
-      "class": "sensor",
+      "class": "button",
       "capabilities": [
         "measure_battery"
       ],
