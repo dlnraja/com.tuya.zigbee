@@ -1,4 +1,7 @@
 {
+  "5.5.179": {
+    "en": "🔥 HYBRID MODE: Climate box _TZE284_vvmbj46n now uses HybridSensorBase for BOTH Tuya DP AND ZCL cluster handling. Receives temp/humidity/battery via DP1/2/4 AND ZCL clusters 0x0402/0x0405/0x0001. Time sync via Tuya DP. User must RE-PAIR device!"
+  },
   "5.5.178": {
     "en": "🐛 FIX: Soil sensor Flow Card IDs corrected (soil_sensor_* prefix). Climate box now properly handles DP data. Fixes 'Invalid Flow Card ID: soil_moisture_below' error."
   },
