@@ -1,4 +1,7 @@
 {
+  "5.5.174": {
+    "en": "🔬 NEW: Dedicated driver for _TZE284_vvmbj46n climate box. ⚠️ Time sync NOT possible (firmware limitation - Time cluster is OUTPUT only). 100% Tuya DP handling, no phantom buttons, proper temp/humidity/battery via DP 1/2/4."
+  },
   "5.5.173": {
     "en": "🔘 BUTTON FIX: button_wireless now uses ButtonDevice base class for full single/double/long press support via Scenes cluster + Tuya 0xFD command. Devices like _TZ3000_bczr4e10, _TZ3000_bgtzm4ny now trigger all press types correctly."
   },
