@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.171-blue)
+![Version](https://img.shields.io/badge/version-5.5.172-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-83-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -29,7 +29,7 @@
 | **SVG Icons** | 83 |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2025-12-14 |
+| **Last Updated** | 2025-12-15 |
 
 ### 📦 Top 15 Drivers by Device IDs
 
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.171
+## 🚀 Latest Updates - v5.5.172
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.172** | 🕐 TIME SYNC FIX #2: Fixed _respondToTimeRequest() to use Tu... |
 | **v5.5.171** | 🕐 CRITICAL FIX: Climate sensor time sync now uses Tuya epoc... |
 | **v5.5.170** | 🔧 FIX: Moved _TZ3000_5bpeda8u from motion_sensor to button_... |
 | **v5.5.169** | 🔧 FIX: Moved _TZE200_rxq4iti9 (EARU TRV06) from climate_sen... |
@@ -66,7 +67,6 @@
 | **v5.5.167** | 🧹 MAJOR CLEANUP: Removed 10 duplicate flow cards from .home... |
 | **v5.5.166** | 🧹 CLEANUP: Removed duplicate motion_detected flow triggers.... |
 | **v5.5.165** | 🐛 FIX SOS Button: Changed from alarm_contact to alarm_gener... |
-| **v5.5.164** | 🐛 FIX: HOBEIAN ZG-303Z soil sensor now correctly recognized... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
