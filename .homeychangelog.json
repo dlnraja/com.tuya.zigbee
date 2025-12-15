@@ -1,4 +1,7 @@
 {
+  "5.5.176": {
+    "en": "🕐 TIME SYNC via Tuya DP: Climate box _TZE284_vvmbj46n now syncs time via Tuya DP cluster (0xEF00) since ZCL Time cluster is OUTPUT only. Syncs on init, on data reception, every 24h. Uses Tuya epoch (2000) + Paris timezone."
+  },
   "5.5.175": {
     "en": "🔧 MAPPING FIX: _TZ3000_bczr4e10 (TS0043) moved to button_wireless_3 (3 buttons). _TZ3000_BGTZM4NY removed from switch_1gang (it's a 4-button remote, not a switch!). Based on Zigbee interviews."
   },
