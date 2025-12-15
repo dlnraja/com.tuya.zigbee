@@ -10,10 +10,9 @@
     "es": "Controlador Inalámbrico 3 Botones",
     "da": "3-Knaps Trådløs Controller"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
-    "measure_battery",
-    "alarm_generic"
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "measure_battery": {

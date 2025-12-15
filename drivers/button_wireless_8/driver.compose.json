@@ -10,7 +10,7 @@
     "es": "8-Botones Controlador Inalámbrico",
     "da": "8-Knapper Trådløs Controller"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "measure_battery"
   ],
