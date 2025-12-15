@@ -211,43 +211,39 @@ class SoilSensorDevice extends TuyaHybridDevice {
    */
   _initFlowTriggers() {
     // Register flow trigger cards
-    this._flowTriggerMoistureChanged = this.homey.flow.getDeviceTriggerCard('soil_moisture_changed');
-    this._flowTriggerMoistureBelow = this.homey.flow.getDeviceTriggerCard('soil_moisture_below');
-    this._flowTriggerMoistureAbove = this.homey.flow.getDeviceTriggerCard('soil_moisture_above');
-    this._flowTriggerTemperatureChanged = this.homey.flow.getDeviceTriggerCard('soil_temperature_changed');
-    this._flowTriggerBatteryLow = this.homey.flow.getDeviceTriggerCard('soil_battery_low');
+    // v5.5.178: Fixed Flow Card IDs to match driver.flow.compose.json
+    this._flowTriggerMoistureChanged = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_moisture_changed');
+    this._flowTriggerSoilDry = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_dry');
+    this._flowTriggerSoilWet = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_wet');
+    this._flowTriggerTemperatureChanged = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_temperature_changed');
+    this._flowTriggerBatteryLow = this.homey.flow.getDeviceTriggerCard('soil_sensor_battery_low');
 
-    // Register condition cards
-    this._conditionMoistureBelow = this.homey.flow.getConditionCard('soil_moisture_is_below');
-    this._conditionTemperatureBelow = this.homey.flow.getConditionCard('soil_temperature_is_below');
+    // Register condition cards (correct IDs from driver.flow.compose.json)
+    this._conditionMoistureBelow = this.homey.flow.getConditionCard('soil_sensor_moisture_below');
+    this._conditionMoistureAbove = this.homey.flow.getConditionCard('soil_sensor_moisture_above');
+    this._conditionTemperatureAbove = this.homey.flow.getConditionCard('soil_sensor_temperature_above');
 
-    // Condition: soil moisture is below/above threshold
+    // Condition: soil moisture is below threshold
     if (this._conditionMoistureBelow) {
       this._conditionMoistureBelow.registerRunListener(async (args, state) => {
         const moisture = this.getCapabilityValue('measure_humidity');
-        return moisture < args.threshold;
+        return moisture < args.moisture;
       });
     }
 
-    // Condition: soil temperature is below/above threshold
-    if (this._conditionTemperatureBelow) {
-      this._conditionTemperatureBelow.registerRunListener(async (args, state) => {
+    // Condition: soil moisture is above threshold
+    if (this._conditionMoistureAbove) {
+      this._conditionMoistureAbove.registerRunListener(async (args, state) => {
+        const moisture = this.getCapabilityValue('measure_humidity');
+        return moisture > args.moisture;
+      });
+    }
+
+    // Condition: soil temperature is above threshold
+    if (this._conditionTemperatureAbove) {
+      this._conditionTemperatureAbove.registerRunListener(async (args, state) => {
         const temp = this.getCapabilityValue('measure_temperature');
-        return temp < args.threshold;
-      });
-    }
-
-    // Threshold trigger: moisture below
-    if (this._flowTriggerMoistureBelow) {
-      this._flowTriggerMoistureBelow.registerRunListener(async (args, state) => {
-        return state.moisture < args.threshold;
-      });
-    }
-
-    // Threshold trigger: moisture above
-    if (this._flowTriggerMoistureAbove) {
-      this._flowTriggerMoistureAbove.registerRunListener(async (args, state) => {
-        return state.moisture > args.threshold;
+        return temp > args.temp;
       });
     }
 
@@ -279,14 +275,18 @@ class SoilSensorDevice extends TuyaHybridDevice {
       this._flowTriggerMoistureChanged.trigger(this, { moisture }).catch(this.error);
     }
 
-    // Trigger: moisture below threshold (only when crossing)
-    if (this._previousMoisture !== null && this._flowTriggerMoistureBelow) {
-      this._flowTriggerMoistureBelow.trigger(this, { moisture }, { moisture }).catch(this.error);
+    // Trigger: soil dry (moisture below 30%)
+    if (this._previousMoisture !== null && moisture < 30 && this._previousMoisture >= 30) {
+      if (this._flowTriggerSoilDry) {
+        this._flowTriggerSoilDry.trigger(this, {}).catch(this.error);
+      }
     }
 
-    // Trigger: moisture above threshold (only when crossing)
-    if (this._previousMoisture !== null && this._flowTriggerMoistureAbove) {
-      this._flowTriggerMoistureAbove.trigger(this, { moisture }, { moisture }).catch(this.error);
+    // Trigger: soil wet (moisture above 70%)
+    if (this._previousMoisture !== null && moisture > 70 && this._previousMoisture <= 70) {
+      if (this._flowTriggerSoilWet) {
+        this._flowTriggerSoilWet.trigger(this, {}).catch(this.error);
+      }
     }
 
     this._previousMoisture = moisture;
