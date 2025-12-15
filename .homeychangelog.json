@@ -1,4 +1,7 @@
 {
+  "5.5.173": {
+    "en": "🔘 BUTTON FIX: button_wireless now uses ButtonDevice base class for full single/double/long press support via Scenes cluster + Tuya 0xFD command. Devices like _TZ3000_bczr4e10, _TZ3000_bgtzm4ny now trigger all press types correctly."
+  },
   "5.5.172": {
     "en": "🕐 TIME SYNC FIX #2: Fixed _respondToTimeRequest() to use Tuya epoch (2000). 🎮 BUTTON FIX: Wireless controllers now use class 'button' instead of 'sensor', removed alarm_generic capability. Devices: _TZ3000_bczr4e10, _TZ3000_bgtzm4ny now correctly detected as scene switches."
   },
