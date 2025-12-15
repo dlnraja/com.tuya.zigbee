@@ -10,9 +10,8 @@
     "es": "Botón Inalámbrico (Universal)",
     "da": "Trådløs Knap (Universal)"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
-    "alarm_generic",
     "measure_battery"
   ],
   "capabilitiesOptions": {
