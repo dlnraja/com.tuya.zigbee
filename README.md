@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.172-blue)
+![Version](https://img.shields.io/badge/version-5.5.173-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-83-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.172
+## 🚀 Latest Updates - v5.5.173
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.173** | 🔘 BUTTON FIX: button_wireless now uses ButtonDevice base cl... |
 | **v5.5.172** | 🕐 TIME SYNC FIX #2: Fixed _respondToTimeRequest() to use Tu... |
 | **v5.5.171** | 🕐 CRITICAL FIX: Climate sensor time sync now uses Tuya epoc... |
 | **v5.5.170** | 🔧 FIX: Moved _TZ3000_5bpeda8u from motion_sensor to button_... |
@@ -66,7 +67,6 @@
 | **v5.5.168** | 🧹 Motion Sensor: Removed duplicate motion_detected/motion_c... |
 | **v5.5.167** | 🧹 MAJOR CLEANUP: Removed 10 duplicate flow cards from .home... |
 | **v5.5.166** | 🧹 CLEANUP: Removed duplicate motion_detected flow triggers.... |
-| **v5.5.165** | 🐛 FIX SOS Button: Changed from alarm_contact to alarm_gener... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
