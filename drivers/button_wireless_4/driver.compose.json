@@ -10,10 +10,9 @@
     "es": "4-Botones Controlador Inalámbrico",
     "da": "4-Knapper Trådløs Controller"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
-    "measure_battery",
-    "alarm_generic"
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "measure_battery": {

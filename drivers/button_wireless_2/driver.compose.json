@@ -10,7 +10,7 @@
     "es": "2-Botones Controlador Inalámbrico",
     "da": "2-Knapper Trådløs Controller"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
     "measure_battery"
   ],

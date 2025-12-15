@@ -431,15 +431,19 @@ class ClimateSensorDevice extends HybridSensorBase {
   async _respondToTimeRequest(endpoint) {
     try {
       const now = new Date();
-      const utcSeconds = Math.floor(now.getTime() / 1000);
-      const timezoneOffset = -now.getTimezoneOffset() * 60;
+
+      // v5.5.172: CRITICAL FIX - Use TUYA EPOCH (2000), not Unix epoch (1970)!
+      // Tuya devices expect seconds since 2000-01-01 00:00:00 UTC
+      const TUYA_EPOCH = new Date(Date.UTC(2000, 0, 1, 0, 0, 0)).getTime();
+      const utcSeconds = Math.floor((now.getTime() - TUYA_EPOCH) / 1000);
+      const timezoneOffset = -now.getTimezoneOffset() * 60; // In seconds
       const localSeconds = utcSeconds + timezoneOffset;
 
       this.log('[CLIMATE] 🕐 ════════════════════════════════════════════');
-      this.log(`[CLIMATE] 🕐 Responding to time request`);
-      this.log(`[CLIMATE] 🕐 Local: ${now.toLocaleString()}`);
-      this.log(`[CLIMATE] 🕐 UTC: ${utcSeconds}s`);
-      this.log(`[CLIMATE] 🕐 Local: ${localSeconds}s`);
+      this.log(`[CLIMATE] 🕐 Responding to time request (TUYA EPOCH 2000)`);
+      this.log(`[CLIMATE] 🕐 Current: ${now.toLocaleString()}`);
+      this.log(`[CLIMATE] 🕐 UTC (Tuya): ${utcSeconds}s since 2000`);
+      this.log(`[CLIMATE] 🕐 Local (Tuya): ${localSeconds}s`);
       this.log(`[CLIMATE] 🕐 TZ: GMT${timezoneOffset >= 0 ? '+' : ''}${timezoneOffset / 3600}`);
 
       // Try all methods to send time response
