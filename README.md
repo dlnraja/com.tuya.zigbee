@@ -1,20 +1,20 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.173-blue)
+![Version](https://img.shields.io/badge/version-5.5.174-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
-![Drivers](https://img.shields.io/badge/drivers-83-brightgreen)
+![Drivers](https://img.shields.io/badge/drivers-84-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 83 drivers and 2624+ manufacturer IDs.**
+**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 84 drivers and 2624+ manufacturer IDs.**
 
 🏠 **100% Local Control** - No Cloud, No Internet Required
 🔋 **Smart Battery** - Accurate readings with voltage fallback
 ⚡ **Hybrid Mode** - Auto-detect Tuya DP vs Standard ZCL
 🛠️ **SDK3** - Latest Homey Standards
 🌍 **Open Source** - Community-driven development
-📱 **83 Drivers** - Switches, sensors, lights, thermostats & more
+📱 **84 Drivers** - Switches, sensors, lights, thermostats & more
 
 ---
 
@@ -25,8 +25,8 @@
 | **Total Device IDs** | 4,200+ |
 | **Product IDs** | 350+ |
 | **Manufacturer IDs** | 3,800+ |
-| **Drivers** | 83 |
-| **SVG Icons** | 83 |
+| **Drivers** | 84 |
+| **SVG Icons** | 84 |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
 | **Last Updated** | 2025-12-15 |
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.173
+## 🚀 Latest Updates - v5.5.174
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.174** | 🔬 NEW: Dedicated driver for _TZE284_vvmbj46n climate box. ⚠... |
 | **v5.5.173** | 🔘 BUTTON FIX: button_wireless now uses ButtonDevice base cl... |
 | **v5.5.172** | 🕐 TIME SYNC FIX #2: Fixed _respondToTimeRequest() to use Tu... |
 | **v5.5.171** | 🕐 CRITICAL FIX: Climate sensor time sync now uses Tuya epoc... |
@@ -66,7 +67,6 @@
 | **v5.5.169** | 🔧 FIX: Moved _TZE200_rxq4iti9 (EARU TRV06) from climate_sen... |
 | **v5.5.168** | 🧹 Motion Sensor: Removed duplicate motion_detected/motion_c... |
 | **v5.5.167** | 🧹 MAJOR CLEANUP: Removed 10 duplicate flow cards from .home... |
-| **v5.5.166** | 🧹 CLEANUP: Removed duplicate motion_detected flow triggers.... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
