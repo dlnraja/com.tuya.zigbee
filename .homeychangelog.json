@@ -1,4 +1,7 @@
 {
+  "5.5.178": {
+    "en": "🐛 FIX: Soil sensor Flow Card IDs corrected (soil_sensor_* prefix). Climate box now properly handles DP data. Fixes 'Invalid Flow Card ID: soil_moisture_below' error."
+  },
   "5.5.177": {
     "en": "📦 Z2M IDs SYNC: Added 20+ manufacturerNames from zigbee-herdsman-converters for TS0043 (3-button), TS0044/TS004F (4-button), and climate box LCD sensors. Better device recognition!"
   },
