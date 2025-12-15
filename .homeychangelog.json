@@ -1,4 +1,7 @@
 {
+  "5.5.175": {
+    "en": "🔧 MAPPING FIX: _TZ3000_bczr4e10 (TS0043) moved to button_wireless_3 (3 buttons). _TZ3000_BGTZM4NY removed from switch_1gang (it's a 4-button remote, not a switch!). Based on Zigbee interviews."
+  },
   "5.5.174": {
     "en": "🔬 NEW: Dedicated driver for _TZE284_vvmbj46n climate box. ⚠️ Time sync NOT possible (firmware limitation - Time cluster is OUTPUT only). 100% Tuya DP handling, no phantom buttons, proper temp/humidity/battery via DP 1/2/4."
   },
