@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.175-blue)
+![Version](https://img.shields.io/badge/version-5.5.176-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-84-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.175
+## 🚀 Latest Updates - v5.5.176
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.176** | 🕐 TIME SYNC via Tuya DP: Climate box _TZE284_vvmbj46n now s... |
 | **v5.5.175** | 🔧 MAPPING FIX: _TZ3000_bczr4e10 (TS0043) moved to button_wi... |
 | **v5.5.174** | 🔬 NEW: Dedicated driver for _TZE284_vvmbj46n climate box. ⚠... |
 | **v5.5.173** | 🔘 BUTTON FIX: button_wireless now uses ButtonDevice base cl... |
@@ -66,7 +67,6 @@
 | **v5.5.171** | 🕐 CRITICAL FIX: Climate sensor time sync now uses Tuya epoc... |
 | **v5.5.170** | 🔧 FIX: Moved _TZ3000_5bpeda8u from motion_sensor to button_... |
 | **v5.5.169** | 🔧 FIX: Moved _TZE200_rxq4iti9 (EARU TRV06) from climate_sen... |
-| **v5.5.168** | 🧹 Motion Sensor: Removed duplicate motion_detected/motion_c... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
