@@ -1,17 +1,16 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { CLUSTER } = require('zigbee-clusters');
 
 /**
- * v5.5.174: DEDICATED DRIVER FOR _TZE284_vvmbj46n
+ * v5.5.176: DEDICATED DRIVER FOR _TZE284_vvmbj46n
  *
  * CRITICAL TECHNICAL FACTS (from Zigbee interview):
  * - Tuya proprietary TS0601 device
  * - Battery powered end device (sleepy)
  * - Uses Tuya private clusters 0xEF00 / 0xED00
- * - Time cluster (0x000A) is OUTPUT ONLY - cannot receive time sync!
- * - Must be handled 100% via Tuya DP parsing
+ * - Time cluster (0x000A) is OUTPUT ONLY - cannot receive time sync via ZCL!
+ * - Time sync MUST be done via Tuya DP (cluster 0xEF00)
  * - NO button, NO switch, NO listener capabilities
  *
  * DP MAPPINGS (typical for Tuya climate boxes):
@@ -20,13 +19,22 @@ const { CLUSTER } = require('zigbee-clusters');
  * - DP 4 or 15: Battery percentage
  * - DP 9: Temperature unit (0=C, 1=F)
  * - DP 17-20: Config/thresholds
+ *
+ * TIME SYNC via Tuya DP (0xEF00):
+ * - Device sends mcuSyncTime (0x24) when it needs time
+ * - We respond with utcTime + localTime (Tuya epoch = 2000-01-01)
+ * - Also proactively sync on init, data reception, and every 24h
  */
+
+// Tuya epoch: 2000-01-01 00:00:00 UTC (NOT Unix 1970!)
+const TUYA_EPOCH = new Date(Date.UTC(2000, 0, 1, 0, 0, 0)).getTime();
+
 class ClimateBoxVvmbj46nDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('╔═══════════════════════════════════════════════════════════════════╗');
-    this.log('║  CLIMATE BOX _TZE284_vvmbj46n - DEDICATED DRIVER v5.5.174        ║');
-    this.log('║  100% Tuya DP - NO Zigbee Time Sync (firmware limitation)        ║');
+    this.log('║  CLIMATE BOX _TZE284_vvmbj46n - DEDICATED DRIVER v5.5.176        ║');
+    this.log('║  100% Tuya DP - Time Sync via Tuya DP (not ZCL Time cluster)     ║');
     this.log('╚═══════════════════════════════════════════════════════════════════╝');
 
     this._zclNode = zclNode;
@@ -38,16 +46,19 @@ class ClimateBoxVvmbj46nDevice extends ZigBeeDevice {
     }).catch(() => { });
 
     // ═══════════════════════════════════════════════════════════════════════
-    // CRITICAL: Do NOT attempt Time cluster sync - it's OUTPUT only!
+    // TIME SYNC: ZCL Time cluster is OUTPUT only, use Tuya DP instead!
     // ═══════════════════════════════════════════════════════════════════════
-    this.log('[INIT] ⚠️ Time cluster is OUTPUT only - sync NOT possible');
-    this.log('[INIT] ⚠️ Date/Time/GMT Paris cannot be set via Zigbee');
+    this.log('[INIT] ℹ️ ZCL Time cluster is OUTPUT only - using Tuya DP for time sync');
+    this.log('[INIT] 🕐 Will sync time via Tuya DP (Paris GMT+1/+2)');
 
     // Setup Tuya DP listener
     await this._setupTuyaDPListener(zclNode);
 
     // Initial DP query (device may be asleep)
     this._scheduleInitialQuery();
+
+    // Schedule periodic time sync (every 24h)
+    this._setupPeriodicTimeSync();
 
     this.log('[INIT] ✅ Climate Box ready - listening for Tuya DP reports');
   }
@@ -83,6 +94,8 @@ class ClimateBoxVvmbj46nDevice extends ZigBeeDevice {
       tuyaCluster.on('dataReport', (data) => {
         this.log('[TUYA-DP] 📥 dataReport received:', JSON.stringify(data));
         this._handleTuyaDP(data);
+        // Sync time when device is awake
+        this._sendTuyaTimeSync();
       });
 
       tuyaCluster.on('response', (status, transId, dp, dataType, data) => {
@@ -90,9 +103,22 @@ class ClimateBoxVvmbj46nDevice extends ZigBeeDevice {
         this._handleTuyaDP({ dp, dataType, data });
       });
 
+      // Listen for mcuSyncTime (0x24) - device requesting time
+      tuyaCluster.on('mcuSyncTime', () => {
+        this.log('[TUYA-DP] 🕐 Device requested time sync (mcuSyncTime)');
+        this._sendTuyaTimeSync();
+      });
+
       // Also listen for raw commands
       tuyaCluster.on('command', (commandName, payload) => {
         this.log(`[TUYA-DP] 📥 command: ${commandName}`, payload);
+
+        // Handle time sync request (command 0x24)
+        if (commandName === 'mcuSyncTime' || commandName === 'timeSyncRequest') {
+          this.log('[TUYA-DP] 🕐 Time sync requested via command');
+          this._sendTuyaTimeSync();
+        }
+
         if (payload?.dp !== undefined) {
           this._handleTuyaDP(payload);
         }
@@ -100,11 +126,103 @@ class ClimateBoxVvmbj46nDevice extends ZigBeeDevice {
     }
 
     // Listen for attribute reports
-    tuyaCluster.on('attr', (attrName, attrValue) => {
-      this.log(`[TUYA-DP] 📥 attr: ${attrName} =`, attrValue);
-    });
+    if (typeof tuyaCluster.on === 'function') {
+      tuyaCluster.on('attr', (attrName, attrValue) => {
+        this.log(`[TUYA-DP] 📥 attr: ${attrName} =`, attrValue);
+      });
+    }
 
     this.log('[TUYA-DP] ✅ Listeners configured');
+  }
+
+  /**
+   * v5.5.176: Send time sync via Tuya DP cluster
+   * Uses Tuya epoch (2000-01-01) NOT Unix epoch (1970)!
+   */
+  async _sendTuyaTimeSync() {
+    if (!this._tuyaCluster) {
+      this.log('[TIME-SYNC] ⚠️ No Tuya cluster available');
+      return;
+    }
+
+    try {
+      const now = new Date();
+
+      // Tuya uses epoch 2000-01-01 00:00:00 UTC
+      const utcSeconds = Math.floor((now.getTime() - TUYA_EPOCH) / 1000);
+
+      // Timezone offset in seconds (Paris = GMT+1 or GMT+2 with DST)
+      const timezoneOffset = -now.getTimezoneOffset() * 60;
+      const localSeconds = utcSeconds + timezoneOffset;
+
+      this.log('[TIME-SYNC] 🕐 ════════════════════════════════════════════');
+      this.log(`[TIME-SYNC] 🕐 Current time: ${now.toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}`);
+      this.log(`[TIME-SYNC] 🕐 Timezone: GMT${timezoneOffset >= 0 ? '+' : ''}${timezoneOffset / 3600}`);
+      this.log(`[TIME-SYNC] 🕐 TUYA EPOCH (2000): utc=${utcSeconds}s local=${localSeconds}s`);
+
+      // Method 1: Try timeSync method (if available)
+      if (typeof this._tuyaCluster.timeSync === 'function') {
+        await this._tuyaCluster.timeSync({
+          utcTime: utcSeconds,
+          localTime: localSeconds
+        });
+        this.log('[TIME-SYNC] ✅ Sent via timeSync()');
+      }
+      // Method 2: Try timeResponse method
+      else if (typeof this._tuyaCluster.timeResponse === 'function') {
+        await this._tuyaCluster.timeResponse({
+          utcTime: utcSeconds,
+          localTime: localSeconds
+        });
+        this.log('[TIME-SYNC] ✅ Sent via timeResponse()');
+      }
+      // Method 3: Try mcuSyncTimeResponse
+      else if (typeof this._tuyaCluster.mcuSyncTimeResponse === 'function') {
+        await this._tuyaCluster.mcuSyncTimeResponse({
+          utcTime: utcSeconds,
+          localTime: localSeconds
+        });
+        this.log('[TIME-SYNC] ✅ Sent via mcuSyncTimeResponse()');
+      }
+      // Method 4: Try raw datapoint write for time
+      else if (typeof this._tuyaCluster.datapoint === 'function') {
+        // DP 101 (0x65) and DP 102 (0x66) are common for time on some devices
+        await this._tuyaCluster.datapoint({
+          dp: 101,
+          dataType: 2, // value type
+          data: utcSeconds
+        });
+        this.log('[TIME-SYNC] ✅ Sent via datapoint(dp=101)');
+      }
+      else {
+        this.log('[TIME-SYNC] ⚠️ No time sync method available');
+        this.log('[TIME-SYNC] ℹ️ Available methods:', Object.keys(this._tuyaCluster).filter(k => typeof this._tuyaCluster[k] === 'function'));
+      }
+
+      this.log('[TIME-SYNC] 🕐 ════════════════════════════════════════════');
+      this._lastTimeSync = Date.now();
+    } catch (err) {
+      this.log('[TIME-SYNC] ⚠️ Error:', err.message);
+    }
+  }
+
+  /**
+   * Setup periodic time sync (every 24h)
+   */
+  _setupPeriodicTimeSync() {
+    // Sync every 24 hours
+    const SYNC_INTERVAL = 24 * 60 * 60 * 1000; // 24h in ms
+
+    this._timeSyncInterval = this.homey.setInterval(() => {
+      this.log('[TIME-SYNC] 🔄 Periodic time sync (24h)');
+      this._sendTuyaTimeSync();
+    }, SYNC_INTERVAL);
+
+    // Also sync after short delay on init (device may be awake)
+    this.homey.setTimeout(() => {
+      this.log('[TIME-SYNC] 🕐 Initial time sync attempt...');
+      this._sendTuyaTimeSync();
+    }, 10000); // 10 seconds after init
   }
 
   /**
@@ -291,6 +409,11 @@ class ClimateBoxVvmbj46nDevice extends ZigBeeDevice {
    */
   async onDeleted() {
     this.log('[DELETED] Climate Box device removed');
+
+    // Clear time sync interval
+    if (this._timeSyncInterval) {
+      this.homey.clearInterval(this._timeSyncInterval);
+    }
   }
 }
 
