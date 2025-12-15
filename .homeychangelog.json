@@ -1,4 +1,7 @@
 {
+  "5.5.177": {
+    "en": "📦 Z2M IDs SYNC: Added 20+ manufacturerNames from zigbee-herdsman-converters for TS0043 (3-button), TS0044/TS004F (4-button), and climate box LCD sensors. Better device recognition!"
+  },
   "5.5.176": {
     "en": "🕐 TIME SYNC via Tuya DP: Climate box _TZE284_vvmbj46n now syncs time via Tuya DP cluster (0xEF00) since ZCL Time cluster is OUTPUT only. Syncs on init, on data reception, every 24h. Uses Tuya epoch (2000) + Paris timezone."
   },
