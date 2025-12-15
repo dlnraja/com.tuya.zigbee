@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.177-blue)
+![Version](https://img.shields.io/badge/version-5.5.178-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-84-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.177
+## 🚀 Latest Updates - v5.5.178
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.178** | 🐛 FIX: Soil sensor Flow Card IDs corrected (soil_sensor_* p... |
 | **v5.5.177** | 📦 Z2M IDs SYNC: Added 20+ manufacturerNames from zigbee-her... |
 | **v5.5.176** | 🕐 TIME SYNC via Tuya DP: Climate box _TZE284_vvmbj46n now s... |
 | **v5.5.175** | 🔧 MAPPING FIX: _TZ3000_bczr4e10 (TS0043) moved to button_wi... |
@@ -66,7 +67,6 @@
 | **v5.5.173** | 🔘 BUTTON FIX: button_wireless now uses ButtonDevice base cl... |
 | **v5.5.172** | 🕐 TIME SYNC FIX #2: Fixed _respondToTimeRequest() to use Tu... |
 | **v5.5.171** | 🕐 CRITICAL FIX: Climate sensor time sync now uses Tuya epoc... |
-| **v5.5.170** | 🔧 FIX: Moved _TZ3000_5bpeda8u from motion_sensor to button_... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
