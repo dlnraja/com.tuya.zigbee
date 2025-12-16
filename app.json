@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.184",
+  "version": "5.5.185",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -17949,7 +17949,6 @@
           "_TZE200_BH3N6GK8",
           "_TZE200_CPMGN2CF",
           "_TZE200_CWNJRR72",
-          "_TZE200_E3OITDYU",
           "_TZE200_G9A3AWAJ",
           "_TZE200_GA1MAEOF",
           "_TZE200_HOLEL4DK",
@@ -23502,6 +23501,74 @@
           "template": "add_devices"
         }
       ]
+    },
+    {
+      "name": {
+        "en": "IR Blaster Remote",
+        "nl": "IR Afstandsbediening",
+        "de": "IR-Fernbedienung"
+      },
+      "class": "remote",
+      "capabilities": [
+        "button.learn_ir",
+        "ir_code_received",
+        "onoff"
+      ],
+      "capabilitiesOptions": {
+        "button.learn_ir": {
+          "title": {
+            "en": "Learn IR Code",
+            "nl": "Leer IR Code",
+            "de": "IR-Code lernen"
+          }
+        },
+        "onoff": {
+          "title": {
+            "en": "Power",
+            "nl": "Aan/Uit",
+            "de": "Ein/Aus"
+          }
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3290_7v1k4vufotpowp9z",
+          "_TZ3290_u9xac5rv",
+          "_TZ3290_gnlsafc7",
+          "_TZ3290_acv1iuslxi3shaaj",
+          "_TZ3290_j37rooaxrcdcqo5n",
+          "_TZ3290_ai4v11wr0mycyh7k"
+        ],
+        "productId": [
+          "TS1201"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/ir_blaster/assets/images/small.png",
+        "large": "drivers/ir_blaster/assets/images/large.png",
+        "xlarge": "drivers/ir_blaster/assets/images/xlarge.png"
+      },
+      "id": "ir_blaster"
     },
     {
       "name": {
@@ -36337,6 +36404,17 @@
         "en": "No human",
         "fr": "Aucun humain"
       }
+    },
+    "ir_code_received": {
+      "type": "string",
+      "title": {
+        "en": "Received IR Code",
+        "nl": "Ontvangen IR Code",
+        "de": "Empfangener IR-Code"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
     },
     "measure_presence_time": {
       "type": "number",
