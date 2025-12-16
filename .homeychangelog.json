@@ -1,4 +1,7 @@
 {
+  "5.5.197": {
+    "en": "🌱 SOIL SENSOR FIX: DIRECT capability setting for DP3 (humidity), DP5 (temp), DP14/15 (battery). Bypasses parent handler issues. Enhanced Buffer parsing for Z2M-style dpValues. Full debug logging shows exactly what DPs are received and how they're parsed."
+  },
   "5.5.196": {
     "en": "🚀 Z2M-STYLE IMPROVEMENTS: 1) Enhanced dpValues array handling (pre-parsed structure like zigbee2mqtt) 2) Added queryOnDeviceAnnounce - when sleepy devices wake up, immediately request ALL DPs 3) Better logging for Tuya data processing. CRITICAL for soil sensor humidity and climate sensor data reception!"
   },
