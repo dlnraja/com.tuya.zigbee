@@ -5,10 +5,10 @@ const { syncDeviceTimeTuya } = require('../../lib/tuya/TuyaTimeSync');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║     CLIMATE SENSOR - v5.5.183 REVERTED TO v5.5.165 STYLE                    ║
+ * ║     CLIMATE SENSOR - v5.5.188 FULL HYBRID (ALL PROTOCOLS)                  ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
- * ║  🔥 v5.5.183: REVERTED to HybridSensorBase (like v5.5.165)                  ║
+ * ║  🔥 v5.5.188: FULL HYBRID - ALL methods from v5.5.165 onwards               ║
  * ║  - TuyaTimeSyncMixin was causing temp/humidity to stop working              ║
  * ║  - Hourly time sync + responds to device time requests (cmd 0x24)           ║
  * ║  - HYBRID mode: Both Tuya DP and ZCL clusters                               ║
@@ -195,8 +195,8 @@ class ClimateSensorDevice extends HybridSensorBase {
   async onNodeInit({ zclNode }) {
     this.log('');
     this.log('╔══════════════════════════════════════════════════════════════════════════════╗');
-    this.log('║  CLIMATE SENSOR - v5.5.183 REVERTED TO v5.5.165 STYLE                       ║');
-    this.log('║  HybridSensorBase + inline time sync (hourly + on device request)           ║');
+    this.log('║  CLIMATE SENSOR - v5.5.188 FULL HYBRID (ALL PROTOCOLS)                      ║');
+    this.log('║  ZCL + Tuya DP + Battery bind/config + Time sync (v5.5.165 style)          ║');
     this.log('╚══════════════════════════════════════════════════════════════════════════════╝');
     this.log('');
 
@@ -265,6 +265,12 @@ class ClimateSensorDevice extends HybridSensorBase {
     await this._setupTimeSyncListener(zclNode);
 
     // ═══════════════════════════════════════════════════════════════════════
+    // v5.5.188: EXPLICIT ZCL CLUSTER SETUP (like v5.5.165)
+    // Bind + configure reporting for temperature, humidity, battery
+    // ═══════════════════════════════════════════════════════════════════════
+    await this._setupExplicitZCLClusters(zclNode);
+
+    // ═══════════════════════════════════════════════════════════════════════
     // Send Tuya Magic Packet to wake up device
     // ═══════════════════════════════════════════════════════════════════════
     if (this._hasTuyaCluster) {
@@ -279,7 +285,12 @@ class ClimateSensorDevice extends HybridSensorBase {
     // ═══════════════════════════════════════════════════════════════════════
     this._scheduleInitialDPRequests();
 
-    this.log('[CLIMATE] ✅ Climate sensor ready - HYBRID mode');
+    // ═══════════════════════════════════════════════════════════════════════
+    // v5.5.188: Read ZCL attributes immediately (battery, temp, humidity)
+    // ═══════════════════════════════════════════════════════════════════════
+    await this._readZCLAttributesNow(zclNode);
+
+    this.log('[CLIMATE] ✅ Climate sensor ready - FULL HYBRID mode');
     this.log('[CLIMATE] ⚠️ BATTERY DEVICE - First data may take 10-60 minutes after pairing');
     this.log('');
   }
@@ -356,6 +367,209 @@ class ClimateSensorDevice extends HybridSensorBase {
     } catch (err) {
       this.log('[CLIMATE] ⚠️ Time sync failed:', err.message);
     }
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // v5.5.188: EXPLICIT ZCL CLUSTER SETUP (like v5.5.165)
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  /**
+   * v5.5.188: Setup explicit ZCL clusters with bind + configure reporting
+   * This is CRITICAL for battery, temperature, and humidity on ZCL devices
+   */
+  async _setupExplicitZCLClusters(zclNode) {
+    const ep1 = zclNode?.endpoints?.[1];
+    if (!ep1) {
+      this.log('[ZCL-SETUP] ⚠️ No endpoint 1');
+      return;
+    }
+
+    this.log('[ZCL-SETUP] 🔧 Setting up explicit ZCL clusters...');
+
+    // ─────────────────────────────────────────────────────────────────────
+    // POWER CONFIGURATION (Battery) - Cluster 0x0001
+    // ─────────────────────────────────────────────────────────────────────
+    const powerCfg = ep1.clusters?.powerConfiguration;
+    if (powerCfg) {
+      this.log('[ZCL-SETUP] 🔋 PowerConfiguration cluster found');
+      try {
+        // Step 1: Bind cluster to coordinator
+        if (typeof powerCfg.bind === 'function') {
+          await powerCfg.bind().catch(() => { });
+          this.log('[ZCL-SETUP] ✅ PowerConfiguration bound');
+        }
+
+        // Step 2: Configure reporting for battery
+        if (typeof powerCfg.configureReporting === 'function') {
+          await powerCfg.configureReporting({
+            batteryPercentageRemaining: {
+              minInterval: 3600,    // 1 hour min
+              maxInterval: 21600,   // 6 hours max
+              minChange: 2          // Report on 1% change
+            }
+          }).catch(() => { });
+          this.log('[ZCL-SETUP] ✅ Battery reporting configured');
+        }
+
+        // Step 3: Setup attribute listener
+        if (typeof powerCfg.on === 'function') {
+          powerCfg.on('attr.batteryPercentageRemaining', (value) => {
+            const battery = Math.round(value / 2);
+            this.log(`[ZCL] 🔋 Battery: ${battery}%`);
+            this.setCapabilityValue('measure_battery', Math.max(0, Math.min(100, battery))).catch(() => { });
+          });
+          this.log('[ZCL-SETUP] ✅ Battery listener active');
+        }
+      } catch (e) {
+        this.log('[ZCL-SETUP] PowerConfiguration setup error:', e.message);
+      }
+    } else {
+      this.log('[ZCL-SETUP] ⚠️ No PowerConfiguration cluster');
+    }
+
+    // ─────────────────────────────────────────────────────────────────────
+    // TEMPERATURE MEASUREMENT - Cluster 0x0402
+    // ─────────────────────────────────────────────────────────────────────
+    const tempCluster = ep1.clusters?.temperatureMeasurement || ep1.clusters?.msTemperatureMeasurement;
+    if (tempCluster) {
+      this.log('[ZCL-SETUP] 🌡️ TemperatureMeasurement cluster found');
+      try {
+        if (typeof tempCluster.bind === 'function') {
+          await tempCluster.bind().catch(() => { });
+          this.log('[ZCL-SETUP] ✅ Temperature bound');
+        }
+
+        if (typeof tempCluster.configureReporting === 'function') {
+          await tempCluster.configureReporting({
+            measuredValue: {
+              minInterval: 60,      // 1 min
+              maxInterval: 3600,    // 1 hour
+              minChange: 10         // 0.1°C
+            }
+          }).catch(() => { });
+          this.log('[ZCL-SETUP] ✅ Temperature reporting configured');
+        }
+
+        if (typeof tempCluster.on === 'function') {
+          tempCluster.on('attr.measuredValue', (value) => {
+            const temp = value / 100;
+            if (temp >= -40 && temp <= 80) {
+              this.log(`[ZCL] 🌡️ Temperature: ${temp}°C`);
+              this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+            }
+          });
+          this.log('[ZCL-SETUP] ✅ Temperature listener active');
+        }
+      } catch (e) {
+        this.log('[ZCL-SETUP] Temperature setup error:', e.message);
+      }
+    } else {
+      this.log('[ZCL-SETUP] ⚠️ No TemperatureMeasurement cluster');
+    }
+
+    // ─────────────────────────────────────────────────────────────────────
+    // RELATIVE HUMIDITY - Cluster 0x0405
+    // ─────────────────────────────────────────────────────────────────────
+    const humCluster = ep1.clusters?.relativeHumidity || ep1.clusters?.msRelativeHumidity;
+    if (humCluster) {
+      this.log('[ZCL-SETUP] 💧 RelativeHumidity cluster found');
+      try {
+        if (typeof humCluster.bind === 'function') {
+          await humCluster.bind().catch(() => { });
+          this.log('[ZCL-SETUP] ✅ Humidity bound');
+        }
+
+        if (typeof humCluster.configureReporting === 'function') {
+          await humCluster.configureReporting({
+            measuredValue: {
+              minInterval: 60,
+              maxInterval: 3600,
+              minChange: 100        // 1%
+            }
+          }).catch(() => { });
+          this.log('[ZCL-SETUP] ✅ Humidity reporting configured');
+        }
+
+        if (typeof humCluster.on === 'function') {
+          humCluster.on('attr.measuredValue', (value) => {
+            const hum = value / 100;
+            if (hum >= 0 && hum <= 100) {
+              this.log(`[ZCL] 💧 Humidity: ${hum}%`);
+              this.setCapabilityValue('measure_humidity', hum).catch(() => { });
+            }
+          });
+          this.log('[ZCL-SETUP] ✅ Humidity listener active');
+        }
+      } catch (e) {
+        this.log('[ZCL-SETUP] Humidity setup error:', e.message);
+      }
+    } else {
+      this.log('[ZCL-SETUP] ⚠️ No RelativeHumidity cluster');
+    }
+
+    this.log('[ZCL-SETUP] ✅ Explicit ZCL setup complete');
+  }
+
+  /**
+   * v5.5.188: Read ZCL attributes immediately after init
+   * Try to get initial values for temp, humidity, battery
+   */
+  async _readZCLAttributesNow(zclNode) {
+    const ep1 = zclNode?.endpoints?.[1];
+    if (!ep1) return;
+
+    this.log('[ZCL-READ] 📖 Reading ZCL attributes...');
+
+    // Read battery
+    const powerCfg = ep1.clusters?.powerConfiguration;
+    if (powerCfg && typeof powerCfg.readAttributes === 'function') {
+      try {
+        const attrs = await powerCfg.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']).catch(() => ({}));
+        if (attrs.batteryPercentageRemaining !== undefined) {
+          const battery = Math.round(attrs.batteryPercentageRemaining / 2);
+          this.log(`[ZCL-READ] 🔋 Battery: ${battery}%`);
+          await this.setCapabilityValue('measure_battery', Math.max(0, Math.min(100, battery))).catch(() => { });
+        }
+      } catch (e) {
+        this.log('[ZCL-READ] Battery read failed:', e.message);
+      }
+    }
+
+    // Read temperature
+    const tempCluster = ep1.clusters?.temperatureMeasurement || ep1.clusters?.msTemperatureMeasurement;
+    if (tempCluster && typeof tempCluster.readAttributes === 'function') {
+      try {
+        const attrs = await tempCluster.readAttributes(['measuredValue']).catch(() => ({}));
+        if (attrs.measuredValue !== undefined) {
+          const temp = attrs.measuredValue / 100;
+          if (temp >= -40 && temp <= 80) {
+            this.log(`[ZCL-READ] 🌡️ Temperature: ${temp}°C`);
+            await this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+          }
+        }
+      } catch (e) {
+        this.log('[ZCL-READ] Temperature read failed:', e.message);
+      }
+    }
+
+    // Read humidity
+    const humCluster = ep1.clusters?.relativeHumidity || ep1.clusters?.msRelativeHumidity;
+    if (humCluster && typeof humCluster.readAttributes === 'function') {
+      try {
+        const attrs = await humCluster.readAttributes(['measuredValue']).catch(() => ({}));
+        if (attrs.measuredValue !== undefined) {
+          const hum = attrs.measuredValue / 100;
+          if (hum >= 0 && hum <= 100) {
+            this.log(`[ZCL-READ] 💧 Humidity: ${hum}%`);
+            await this.setCapabilityValue('measure_humidity', hum).catch(() => { });
+          }
+        }
+      } catch (e) {
+        this.log('[ZCL-READ] Humidity read failed:', e.message);
+      }
+    }
+
+    this.log('[ZCL-READ] ✅ ZCL attribute read complete');
   }
 
   // ═══════════════════════════════════════════════════════════════════════════

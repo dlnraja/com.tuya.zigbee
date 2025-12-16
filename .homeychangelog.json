@@ -1,4 +1,7 @@
 {
+  "5.5.188": {
+    "en": "🌡️ CLIMATE SENSOR ENHANCED: Full hybrid support - ZCL clusters (bind+configure reporting) + Tuya DP + explicit battery/temp/humidity listeners. All protocols from v5.5.165 restored. RE-PAIR recommended for best results."
+  },
   "5.5.187": {
     "en": "🌐 UNIVERSAL IMPROVEMENTS: Tuya epoch (2000) auto-detection now in HybridSensorBase - benefits ALL 21+ sensor drivers (climate, motion, contact, air quality, etc.). LCD devices automatically get correct time display!"
   },
