@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.191-blue)
+![Version](https://img.shields.io/badge/version-5.5.192-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-84-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.191
+## 🚀 Latest Updates - v5.5.192
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.192** | 🔧 TIME SYNC FIX: Fixed manufacturer name detection in TuyaT... |
 | **v5.5.191** | 🔍 CLIMATE DIAGNOSTICS: Enhanced logging - very visible 'DAT... |
 | **v5.5.190** | 🧠 INTELLIGENT CLIMATE: Auto-detect protocol (_TZE284=LCD, _... |
 | **v5.5.189** | 🔥 ULTIMATE CLIMATE SENSOR: Merged climate_sensor + climate_... |
@@ -66,7 +67,6 @@
 | **v5.5.187** | 🌐 UNIVERSAL IMPROVEMENTS: Tuya epoch (2000) auto-detection ... |
 | **v5.5.186** | 🔘 BUTTON FIX: Added onOff attribute listener for TS0044 but... |
 | **v5.5.185** | 🔧 FIX #88: _TZE200_e3oitdyu now correctly matches dimmer_du... |
-| **v5.5.184** | 🕐 TIME SYNC FIX: CRITICAL - LCD devices now use TUYA epoch ... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
