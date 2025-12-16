@@ -1,4 +1,7 @@
 {
+  "5.5.186": {
+    "en": "🔘 BUTTON FIX: Added onOff attribute listener for TS0044 buttons - more reliable button press detection. Button presses now properly trigger flows!"
+  },
   "5.5.185": {
     "en": "🔧 FIX #88: _TZE200_e3oitdyu now correctly matches dimmer_dual_channel (was wrongly matching climate_sensor). ✨ NEW #91: Added IR Blaster driver (TS1201/ZS06) for IR remote control devices."
   },
