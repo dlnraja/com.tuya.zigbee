@@ -1,16 +1,16 @@
 'use strict';
 
 const { HybridSensorBase } = require('../../lib/devices');
-const { TuyaTimeSyncMixin, syncDeviceTimeTuya } = require('../../lib/tuya/TuyaTimeSync');
+const { syncDeviceTimeTuya } = require('../../lib/tuya/TuyaTimeSync');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║     CLIMATE SENSOR - v5.5.180 SIMPLIFIED HYBRID + TIME SYNC                 ║
+ * ║     CLIMATE SENSOR - v5.5.183 REVERTED TO v5.5.165 STYLE                    ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
- * ║  🔥 v5.5.180: SIMPLIFIED using TuyaTimeSyncMixin + HybridSensorBase         ║
- * ║  - Automatic time sync every 6 hours + on wake                              ║
- * ║  - Listens for device time requests (cmd 0x24) and responds immediately     ║
+ * ║  🔥 v5.5.183: REVERTED to HybridSensorBase (like v5.5.165)                  ║
+ * ║  - TuyaTimeSyncMixin was causing temp/humidity to stop working              ║
+ * ║  - Hourly time sync + responds to device time requests (cmd 0x24)           ║
  * ║  - HYBRID mode: Both Tuya DP and ZCL clusters                               ║
  * ║                                                                              ║
  * ║  SUPPORTED PROTOCOLS:                                                        ║
@@ -31,7 +31,12 @@ const { TuyaTimeSyncMixin, syncDeviceTimeTuya } = require('../../lib/tuya/TuyaTi
  * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class ClimateSensorDevice extends TuyaTimeSyncMixin(HybridSensorBase) {
+/**
+ * v5.5.183: REVERTED to HybridSensorBase directly (like v5.5.165)
+ * TuyaTimeSyncMixin was causing issues with data reception
+ * Time sync is now handled manually with inline methods
+ */
+class ClimateSensorDevice extends HybridSensorBase {
 
   /** Battery powered */
   get mainsPowered() { return false; }
@@ -190,8 +195,8 @@ class ClimateSensorDevice extends TuyaTimeSyncMixin(HybridSensorBase) {
   async onNodeInit({ zclNode }) {
     this.log('');
     this.log('╔══════════════════════════════════════════════════════════════════════════════╗');
-    this.log('║  CLIMATE SENSOR - v5.5.180 SIMPLIFIED HYBRID + TIME SYNC                    ║');
-    this.log('║  TuyaTimeSyncMixin + HybridSensorBase - Auto time sync every 6h             ║');
+    this.log('║  CLIMATE SENSOR - v5.5.183 REVERTED TO v5.5.165 STYLE                       ║');
+    this.log('║  HybridSensorBase + inline time sync (hourly + on device request)           ║');
     this.log('╚══════════════════════════════════════════════════════════════════════════════╝');
     this.log('');
 
@@ -245,15 +250,16 @@ class ClimateSensorDevice extends TuyaTimeSyncMixin(HybridSensorBase) {
     this.log(`[CLIMATE] Tuya cluster: ${this._hasTuyaCluster ? '✅' : '❌'}`);
 
     // ═══════════════════════════════════════════════════════════════════════
-    // v5.5.180: TIME SYNC SETUP using TuyaTimeSyncMixin
-    // Automatic time sync every 6 hours + on wake
+    // v5.5.183: TIME SYNC SETUP (inline, like v5.5.165)
+    // Hourly time sync + on device wake
     // ═══════════════════════════════════════════════════════════════════════
-    this.log('[CLIMATE] 🕐 Setting up automatic time sync...');
+    this.log('[CLIMATE] 🕐 Setting up time sync (v5.5.165 style)...');
 
-    await this.setupTimeSync({
-      interval: 6 * 60 * 60 * 1000, // Every 6 hours
-      syncOnWake: true              // Sync when device reports data
-    });
+    // v5.5.165: Hourly time sync interval
+    this._hourlySyncInterval = this.homey.setInterval(async () => {
+      this.log('[CLIMATE] 🕐 Hourly time sync...');
+      await this._sendTimeSync().catch(e => this.log('[CLIMATE] Time sync failed:', e.message));
+    }, 60 * 60 * 1000); // 1 hour
 
     // Setup listener for mcuSyncTime requests from device
     await this._setupTimeSyncListener(zclNode);
@@ -323,19 +329,27 @@ class ClimateSensorDevice extends TuyaTimeSyncMixin(HybridSensorBase) {
    * Respond to device time request using TuyaTimeSync module
    */
   async _respondToTimeRequest() {
+    await this._sendTimeSync();
+  }
+
+  /**
+   * v5.5.183: Send time sync to device (like v5.5.165 _hybridTimeSync)
+   * Uses Tuya epoch (seconds since 2000-01-01) for LCD clock
+   */
+  async _sendTimeSync() {
     try {
       const now = new Date();
       const timezoneOffset = -now.getTimezoneOffset() * 60;
 
-      this.log('[CLIMATE] 🕐 Responding to time request...');
+      this.log('[CLIMATE] 🕐 Sending time sync...');
       this.log(`[CLIMATE] 🕐 Local: ${now.toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}`);
       this.log(`[CLIMATE] 🕐 TZ offset: GMT${timezoneOffset >= 0 ? '+' : ''}${timezoneOffset / 3600}`);
 
       await syncDeviceTimeTuya(this, { logPrefix: '[CLIMATE]' });
 
-      this.log('[CLIMATE] ✅ Time response sent!');
+      this.log('[CLIMATE] ✅ Time sync sent!');
     } catch (err) {
-      this.log('[CLIMATE] ⚠️ Time response failed:', err.message);
+      this.log('[CLIMATE] ⚠️ Time sync failed:', err.message);
     }
   }
 
@@ -371,7 +385,7 @@ class ClimateSensorDevice extends TuyaTimeSyncMixin(HybridSensorBase) {
         }
 
         // Trigger time sync on wake
-        this._onDeviceWake();
+        await this._sendTimeSync().catch(() => { });
       }, delay);
 
       this._aggressiveTimers.push(timer);
@@ -510,7 +524,7 @@ class ClimateSensorDevice extends TuyaTimeSyncMixin(HybridSensorBase) {
     }
 
     // Trigger time sync
-    await this.syncTime().catch(() => { });
+    await this._sendTimeSync().catch(() => { });
 
     return true;
   }
@@ -581,10 +595,16 @@ class ClimateSensorDevice extends TuyaTimeSyncMixin(HybridSensorBase) {
   }
 
   /**
-   * v5.5.180: Cleanup on uninit
+   * v5.5.183: Cleanup on uninit
    */
   async onUninit() {
     this.log('[CLIMATE] onUninit - cleaning up...');
+
+    // Clear hourly time sync interval
+    if (this._hourlySyncInterval) {
+      this.homey.clearInterval(this._hourlySyncInterval);
+      this._hourlySyncInterval = null;
+    }
 
     // Clear DP request timers
     if (this._aggressiveTimers) {
@@ -592,7 +612,6 @@ class ClimateSensorDevice extends TuyaTimeSyncMixin(HybridSensorBase) {
       this._aggressiveTimers = null;
     }
 
-    // TuyaTimeSyncMixin handles time sync cleanup via super.onDeleted()
     if (super.onUninit) {
       await super.onUninit();
     }
