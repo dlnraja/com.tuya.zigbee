@@ -1,4 +1,7 @@
 {
+  "5.5.183": {
+    "en": "🌡️ CLIMATE FIX: Reverted to v5.5.165 style - TuyaTimeSyncMixin was breaking temp/humidity. Now uses HybridSensorBase directly with inline hourly time sync. Temp/humidity + time sync both working! RE-PAIR required."
+  },
   "5.5.182": {
     "en": "🔘 BUTTON FIX: Added multiStateInput + Tuya DP cluster support for button press detection. 🎯 MOTION SENSOR: Removed static temp/humidity capabilities - now added dynamically only if device has those clusters. RE-PAIR required for motion sensors."
   },

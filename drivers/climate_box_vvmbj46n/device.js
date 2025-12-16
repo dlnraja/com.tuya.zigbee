@@ -1,18 +1,18 @@
 'use strict';
 
 const { HybridSensorBase } = require('../../lib/devices');
-const { TuyaTimeSyncMixin, syncDeviceTimeTuya } = require('../../lib/tuya/TuyaTimeSync');
+const { syncDeviceTimeTuya } = require('../../lib/tuya/TuyaTimeSync');
 
 /**
- * v5.5.180: DEDICATED DRIVER FOR _TZE284_vvmbj46n - FULL HYBRID + TIME SYNC
+ * v5.5.183: DEDICATED DRIVER FOR _TZE284_vvmbj46n - REVERTED TO v5.5.165 STYLE
  *
  * ╔══════════════════════════════════════════════════════════════════════════════╗
  * ║  CLIMATE BOX TH05Z LCD - _TZE284_vvmbj46n                                   ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Uses TuyaTimeSyncMixin + HybridSensorBase for COMPLETE functionality:      ║
+ * ║  v5.5.183: Reverted to HybridSensorBase (TuyaTimeSyncMixin broke data)      ║
  * ║  - Tuya DP (0xEF00) for proprietary data                                    ║
  * ║  - ZCL standard clusters for temp/humidity/battery                          ║
- * ║  - Automatic time sync every 6 hours + on wake                              ║
+ * ║  - Hourly time sync + responds to device requests                           ║
  * ║  - Paris timezone support (GMT+1/+2 DST)                                    ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  *
@@ -42,8 +42,8 @@ const { TuyaTimeSyncMixin, syncDeviceTimeTuya } = require('../../lib/tuya/TuyaTi
  * - Also proactively sync every 6 hours
  */
 
-// Use TuyaTimeSyncMixin to add automatic time sync functionality
-class ClimateBoxVvmbj46nDevice extends TuyaTimeSyncMixin(HybridSensorBase) {
+// v5.5.183: Reverted to HybridSensorBase directly (TuyaTimeSyncMixin broke temp/humidity)
+class ClimateBoxVvmbj46nDevice extends HybridSensorBase {
 
   // ═══════════════════════════════════════════════════════════════════════════
   // CONFIGURATION
@@ -150,7 +150,7 @@ class ClimateBoxVvmbj46nDevice extends TuyaTimeSyncMixin(HybridSensorBase) {
             if (finalTemp >= -40 && finalTemp <= 80) {
               this.log(`[ZCL] 🌡️ Temperature: ${finalTemp}°C (raw: ${data.measuredValue})`);
               this.setCapabilityValue('measure_temperature', finalTemp).catch(() => { });
-              this._onDeviceWake(); // Trigger time sync on data reception
+              this._sendTimeSync().catch(() => { }); // Trigger time sync on data reception
             }
           }
         }
@@ -193,8 +193,8 @@ class ClimateBoxVvmbj46nDevice extends TuyaTimeSyncMixin(HybridSensorBase) {
   async onNodeInit({ zclNode }) {
     this.log('');
     this.log('╔══════════════════════════════════════════════════════════════════════════════╗');
-    this.log('║  CLIMATE BOX _TZE284_vvmbj46n - FULL HYBRID DRIVER v5.5.180                 ║');
-    this.log('║  Tuya DP + ZCL HYBRID + Automatic Time Sync (6h interval)                   ║');
+    this.log('║  CLIMATE BOX _TZE284_vvmbj46n - v5.5.183 REVERTED TO v5.5.165 STYLE         ║');
+    this.log('║  HybridSensorBase + inline hourly time sync (like v5.5.165)                 ║');
     this.log('╚══════════════════════════════════════════════════════════════════════════════╝');
     this.log('');
 
@@ -212,14 +212,15 @@ class ClimateBoxVvmbj46nDevice extends TuyaTimeSyncMixin(HybridSensorBase) {
 
     // ═══════════════════════════════════════════════════════════════════════
     // TIME SYNC SETUP - Critical for LCD clock display
-    // Uses TuyaTimeSyncMixin for automatic periodic sync
+    // v5.5.183: Inline hourly sync (like v5.5.165)
     // ═══════════════════════════════════════════════════════════════════════
-    this.log('[TIME] Setting up automatic time sync...');
+    this.log('[TIME] Setting up hourly time sync (v5.5.165 style)...');
 
-    await this.setupTimeSync({
-      interval: 6 * 60 * 60 * 1000, // Every 6 hours
-      syncOnWake: true              // Sync when device reports data
-    });
+    // Hourly time sync interval
+    this._hourlySyncInterval = this.homey.setInterval(async () => {
+      this.log('[TIME] 🕐 Hourly time sync...');
+      await this._sendTimeSync().catch(e => this.log('[TIME] Sync failed:', e.message));
+    }, 60 * 60 * 1000); // 1 hour
 
     // Setup listener for mcuSyncTime requests from device
     await this._setupTimeSyncListener(zclNode);
@@ -313,8 +314,8 @@ class ClimateBoxVvmbj46nDevice extends TuyaTimeSyncMixin(HybridSensorBase) {
     // Log for debugging
     this.log(`[DP] 📥 DP${dpId} = ${value}`);
 
-    // Device is awake - trigger time sync if needed
-    this._onDeviceWake();
+    // Device is awake - trigger time sync
+    this._sendTimeSync().catch(() => { });
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -332,7 +333,7 @@ class ClimateBoxVvmbj46nDevice extends TuyaTimeSyncMixin(HybridSensorBase) {
     // Force time sync if user changed time-related settings
     if (changedKeys.some(k => k.includes('time'))) {
       this.log('[SETTINGS] Time setting changed - forcing sync');
-      await this.syncTime().catch(() => { });
+      await this._sendTimeSync().catch(() => { });
     }
   }
 
@@ -340,11 +341,30 @@ class ClimateBoxVvmbj46nDevice extends TuyaTimeSyncMixin(HybridSensorBase) {
   // CLEANUP
   // ═══════════════════════════════════════════════════════════════════════════
 
+  /**
+   * v5.5.183: Send time sync to device
+   */
+  async _sendTimeSync() {
+    try {
+      const now = new Date();
+      this.log('[TIME] 🕐 Sending time sync...');
+      this.log(`[TIME] 🕐 Local: ${now.toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}`);
+      await syncDeviceTimeTuya(this, { logPrefix: '[TIME]' });
+      this.log('[TIME] ✅ Time sync sent!');
+    } catch (err) {
+      this.log('[TIME] ⚠️ Time sync failed:', err.message);
+    }
+  }
+
   async onDeleted() {
     this.log('[DELETED] Climate Box device removed');
 
-    // TuyaTimeSyncMixin handles interval cleanup
-    // HybridSensorBase handles other cleanup
+    // Clear hourly time sync interval
+    if (this._hourlySyncInterval) {
+      this.homey.clearInterval(this._hourlySyncInterval);
+      this._hourlySyncInterval = null;
+    }
+
     if (super.onDeleted) {
       await super.onDeleted();
     }
