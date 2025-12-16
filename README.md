@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.185-blue)
+![Version](https://img.shields.io/badge/version-5.5.186-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-85-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.185
+## 🚀 Latest Updates - v5.5.186
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.186** | 🔘 BUTTON FIX: Added onOff attribute listener for TS0044 but... |
 | **v5.5.185** | 🔧 FIX #88: _TZE200_e3oitdyu now correctly matches dimmer_du... |
 | **v5.5.184** | 🕐 TIME SYNC FIX: CRITICAL - LCD devices now use TUYA epoch ... |
 | **v5.5.183** | 🌡️ CLIMATE FIX: Reverted to v5.5.165 style - TuyaTimeSyncMi... |
@@ -66,7 +67,6 @@
 | **v5.5.181** | 🐛 FIX CRASH: IASZoneManager waits for Zigbee stack ready be... |
 | **v5.5.180** | 🔥 FULL HYBRID + TIME SYNC: Climate sensors use TuyaTimeSync... |
 | **v5.5.179** | 🔥 HYBRID MODE: Climate box _TZE284_vvmbj46n now uses Hybrid... |
-| **v5.5.178** | 🐛 FIX: Soil sensor Flow Card IDs corrected (soil_sensor_* p... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
