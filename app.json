@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.188",
+  "version": "5.5.189",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -17561,173 +17561,6 @@
     },
     {
       "name": {
-        "en": "Climate Box LCD (_TZE284_vvmbj46n)",
-        "fr": "Boîtier Climat LCD (_TZE284_vvmbj46n)"
-      },
-      "class": "sensor",
-      "capabilities": [
-        "measure_temperature",
-        "measure_humidity",
-        "measure_battery"
-      ],
-      "energy": {
-        "batteries": [
-          "AAA",
-          "AAA"
-        ]
-      },
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "zigbee"
-      ],
-      "images": {
-        "small": "/drivers/climate_box_vvmbj46n/assets/images/small.png",
-        "large": "/drivers/climate_box_vvmbj46n/assets/images/large.png",
-        "xlarge": "/drivers/climate_box_vvmbj46n/assets/images/xlarge.png"
-      },
-      "zigbee": {
-        "manufacturerName": [
-          "_TZE284_vvmbj46n",
-          "_TZE200_vvmbj46n",
-          "_TZE204_vvmbj46n",
-          "_TZE284_aao6qtcs",
-          "_TZE200_aao6qtcs",
-          "_TZE284_znph9215",
-          "_TZE200_znph9215",
-          "_TZE284_qoy0ekbd",
-          "_TZE200_qoy0ekbd"
-        ],
-        "productId": [
-          "TS0601"
-        ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              4,
-              5,
-              61184
-            ],
-            "bindings": []
-          }
-        },
-        "learnmode": {
-          "instruction": {
-            "en": "Long press the reset button for 5 seconds until the display flashes.",
-            "fr": "Appuyez longuement sur le bouton reset pendant 5 secondes jusqu'à ce que l'écran clignote."
-          }
-        }
-      },
-      "pair": [
-        {
-          "id": "list_devices",
-          "template": "list_devices",
-          "navigation": {
-            "next": "add_devices"
-          },
-          "options": {
-            "singular": true
-          }
-        },
-        {
-          "id": "add_devices",
-          "template": "add_devices"
-        }
-      ],
-      "settings": [
-        {
-          "type": "group",
-          "label": {
-            "en": "Device Information",
-            "fr": "Informations appareil"
-          },
-          "children": [
-            {
-              "id": "device_manufacturer",
-              "type": "label",
-              "label": {
-                "en": "Manufacturer",
-                "fr": "Fabricant"
-              },
-              "value": "_TZE284_vvmbj46n"
-            },
-            {
-              "id": "device_model",
-              "type": "label",
-              "label": {
-                "en": "Model",
-                "fr": "Modèle"
-              },
-              "value": "TS0601"
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "label": {
-            "en": "Temperature Settings",
-            "fr": "Paramètres température"
-          },
-          "children": [
-            {
-              "id": "temperature_offset",
-              "type": "number",
-              "label": {
-                "en": "Temperature Offset (°C)",
-                "fr": "Décalage température (°C)"
-              },
-              "hint": {
-                "en": "Adjust temperature reading if sensor is inaccurate",
-                "fr": "Ajuster la lecture de température si le capteur est imprécis"
-              },
-              "value": 0,
-              "min": -5,
-              "max": 5,
-              "step": 0.1
-            },
-            {
-              "id": "humidity_offset",
-              "type": "number",
-              "label": {
-                "en": "Humidity Offset (%)",
-                "fr": "Décalage humidité (%)"
-              },
-              "hint": {
-                "en": "Adjust humidity reading if sensor is inaccurate",
-                "fr": "Ajuster la lecture d'humidité si le capteur est imprécis"
-              },
-              "value": 0,
-              "min": -10,
-              "max": 10,
-              "step": 1
-            }
-          ]
-        },
-        {
-          "type": "group",
-          "label": {
-            "en": "Important Notice",
-            "fr": "Note importante"
-          },
-          "children": [
-            {
-              "id": "time_sync_notice",
-              "type": "label",
-              "label": {
-                "en": "Time Sync",
-                "fr": "Sync heure"
-              },
-              "value": "⚠️ Time/date sync is NOT possible - firmware limitation (Time cluster is OUTPUT only)"
-            }
-          ]
-        }
-      ],
-      "id": "climate_box_vvmbj46n"
-    },
-    {
-      "name": {
         "en": "Climate Sensor",
         "fr": "Capteur Climatique"
       },
@@ -17981,6 +17814,7 @@
           "_TZE200_YH7AOAHI",
           "_TZE200_ZTC6GGYL",
           "_TZE200_a0gvbdgv",
+          "_TZE200_aao6qtcs",
           "_TZE200_a1ovdobn",
           "_TZE200_a4bpgplm",
           "_TZE200_a8sdabtg",
@@ -18316,6 +18150,7 @@
           "_TZE200_zlwr0raf",
           "_TZE200_znbl8dj5",
           "_TZE200_znlqjmih",
+          "_TZE200_znph9215",
           "_TZE200_znzs7yaw",
           "_TZE200_zo0cfekv",
           "_TZE200_zppcgbdj",
@@ -18580,6 +18415,7 @@
           "_TZE284_a14rjslz",
           "_TZE284_a1ovdobn",
           "_TZE284_aaeaifez",
+          "_TZE284_aao6qtcs",
           "_TZE284_aagrxlbd",
           "_TZE284_aai5grix",
           "_TZE284_ac0fhfiq",
@@ -18645,6 +18481,7 @@
           "_TZE284_pcdmj88b",
           "_TZE284_pglpvdar",
           "_TZE284_qhlxve78",
+          "_TZE284_qoy0ekbd",
           "_TZE284_qyflbnbj",
           "_TZE284_r3szw0xr",
           "_TZE284_rccgwzz8",
@@ -18666,6 +18503,7 @@
           "_TZE284_vizxbhco",
           "_TZE284_vjpaih9f",
           "_TZE284_vmcgja59",
+          "_TZE284_vvmbj46n",
           "_TZE284_vuwtqx0t",
           "_TZE284_wbhaespm",
           "_TZE284_wckqztdq",
@@ -18685,6 +18523,7 @@
           "_TZE284_zjhoqbrd",
           "_TZE284_zm8zpwas",
           "_TZE284_znlqjmih",
+          "_TZE284_znph9215",
           "_TZE284_zpvusbtv",
           "_TZE284_zqq3cipq",
           "_TZE600_wxq8dpha",
