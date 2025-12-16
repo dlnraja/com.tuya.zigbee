@@ -1,4 +1,7 @@
 {
+  "5.5.189": {
+    "en": "🔥 ULTIMATE CLIMATE SENSOR: Merged climate_sensor + climate_box_vvmbj46n into ONE driver! Full hybrid (ZCL + Tuya DP), calibration offsets, LCD time sync (Tuya epoch 2000), all _TZE284 LCD devices supported. Intelligent wake detection + aggressive DP requests. RE-PAIR recommended!"
+  },
   "5.5.188": {
     "en": "🌡️ CLIMATE SENSOR ENHANCED: Full hybrid support - ZCL clusters (bind+configure reporting) + Tuya DP + explicit battery/temp/humidity listeners. All protocols from v5.5.165 restored. RE-PAIR recommended for best results."
   },
