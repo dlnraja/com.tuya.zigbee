@@ -486,7 +486,7 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.190: INTELLIGENT time sync based on manufacturer detection
+   * v5.5.192: INTELLIGENT time sync based on manufacturer detection
    * - _TZE284_* LCD devices: Use Tuya epoch (2000) for correct LCD display
    * - _TZE200_* devices: Use Tuya epoch (most have LCD)
    * - _TZ3000_* ZCL devices: No time sync needed (ZCL standard)
@@ -495,6 +495,7 @@ class ClimateSensorDevice extends HybridSensorBase {
   async _sendTimeSync() {
     try {
       const protocol = this.deviceProtocol;
+      const mfr = this._manufacturerName || '';
 
       // ZCL standard devices don't need Tuya time sync
       if (protocol === 'ZCL_STANDARD') {
@@ -507,18 +508,23 @@ class ClimateSensorDevice extends HybridSensorBase {
       const useTuyaEpoch = this.needsTuyaEpoch;
 
       this.log(`[CLIMATE] 🕐 Sending time sync (${useTuyaEpoch ? 'TUYA EPOCH 2000' : 'UNIX EPOCH'})...`);
+      this.log(`[CLIMATE] 🕐 Manufacturer: ${mfr || 'unknown'}`);
       this.log(`[CLIMATE] 🕐 Local: ${now.toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}`);
       this.log(`[CLIMATE] 🕐 TZ offset: GMT${timezoneOffset >= 0 ? '+' : ''}${timezoneOffset / 3600}`);
 
-      // v5.5.190: Intelligent epoch selection based on manufacturer
-      await syncDeviceTimeTuya(this, {
+      // v5.5.192: Check result and log appropriately
+      const result = await syncDeviceTimeTuya(this, {
         logPrefix: '[CLIMATE]',
         useTuyaEpoch: useTuyaEpoch
       });
 
-      this.log('[CLIMATE] ✅ Time sync sent!');
+      if (result) {
+        this.log('[CLIMATE] ✅ Time sync sent successfully!');
+      } else {
+        this.log('[CLIMATE] ⚠️ Time sync could not be delivered (device may be sleeping)');
+      }
     } catch (err) {
-      this.log('[CLIMATE] ⚠️ Time sync failed:', err.message);
+      this.log('[CLIMATE] ❌ Time sync failed:', err.message);
     }
   }
 

@@ -1,4 +1,7 @@
 {
+  "5.5.192": {
+    "en": "🔧 TIME SYNC FIX: Fixed manufacturer name detection in TuyaTimeSync (was empty). Now checks device._manufacturerName + correct setting key. _TZE284_vvmbj46n LCD devices now get correct Tuya epoch (2000). Fixed contradictory log messages."
+  },
   "5.5.191": {
     "en": "🔍 CLIMATE DIAGNOSTICS: Enhanced logging - very visible 'DATA RECEIVED' message when sleepy device wakes up. Better battery device warnings. DP3 battery_state enum support (low/med/high). DP5 illuminance logging. Helps diagnose sleepy sensor issues."
   },
