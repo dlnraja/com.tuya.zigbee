@@ -1,4 +1,7 @@
 {
+  "5.5.180": {
+    "en": "🔥 FULL HYBRID + TIME SYNC: Climate box _TZE284_vvmbj46n uses TuyaTimeSyncMixin + HybridSensorBase. Automatic time sync every 6h + on wake. Proper DP parsing (DP1=temp÷10, DP2=humidity, DP4=battery×2). ZCL fallback. LCD clock now shows correct time! RE-PAIR required."
+  },
   "5.5.179": {
     "en": "🔥 HYBRID MODE: Climate box _TZE284_vvmbj46n now uses HybridSensorBase for BOTH Tuya DP AND ZCL cluster handling. Receives temp/humidity/battery via DP1/2/4 AND ZCL clusters 0x0402/0x0405/0x0001. Time sync via Tuya DP. User must RE-PAIR device!"
   },
