@@ -5,45 +5,53 @@ const { syncDeviceTimeTuya } = require('../../lib/tuya/TuyaTimeSync');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║     CLIMATE SENSOR - v5.5.188 FULL HYBRID (ALL PROTOCOLS)                  ║
+ * ║     CLIMATE SENSOR ULTIMATE - v5.5.189 MERGED (climate_sensor + climate_box) ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
- * ║  🔥 v5.5.188: FULL HYBRID - ALL methods from v5.5.165 onwards               ║
- * ║  - TuyaTimeSyncMixin was causing temp/humidity to stop working              ║
- * ║  - Hourly time sync + responds to device time requests (cmd 0x24)           ║
- * ║  - HYBRID mode: Both Tuya DP and ZCL clusters                               ║
+ * ║  🔥 v5.5.189: ULTIMATE MERGED DRIVER - All features from both drivers       ║
+ * ║  - Merged climate_sensor + climate_box_vvmbj46n into ONE driver             ║
+ * ║  - Full Tuya DP support (DP1-20, DP101-103)                                 ║
+ * ║  - Full ZCL support (0x0402, 0x0405, 0x0001) with bind/config               ║
+ * ║  - Intelligent time sync (Tuya epoch 2000 for LCD, Unix for others)         ║
+ * ║  - Calibration offsets for temp/humidity                                    ║
+ * ║  - Wake detection + aggressive DP requests                                  ║
+ * ║  - Battery via both ZCL and Tuya DP (×2 multiplier)                         ║
  * ║                                                                              ║
  * ║  SUPPORTED PROTOCOLS:                                                        ║
  * ║  ┌─────────────┬──────────────────────────────────────────────────────┐      ║
  * ║  │ Type        │ Protocol                                             │      ║
  * ║  ├─────────────┼──────────────────────────────────────────────────────┤      ║
  * ║  │ _TZE200_*   │ Tuya DP + cmd 0x24 (timeRequest → timeResponse)      │      ║
- * ║  │ _TZE284_*   │ Tuya DP + cmd 0x24 + LCD clock                       │      ║
+ * ║  │ _TZE204_*   │ Tuya DP + cmd 0x24 (similar to TZE200)               │      ║
+ * ║  │ _TZE284_*   │ Tuya DP + cmd 0x24 + LCD clock (Tuya epoch 2000)     │      ║
  * ║  │ _TZ3000_*   │ ZCL standard (0x0402, 0x0405, 0x0001)                │      ║
  * ║  │ TS0201      │ ZCL standard (temperature, humidity, battery)        │      ║
+ * ║  │ TS0601      │ Tuya proprietary (EF00 cluster)                      │      ║
  * ║  └─────────────┴──────────────────────────────────────────────────────┘      ║
  * ║                                                                              ║
- * ║  DP MAPPINGS (verified from Z2M):                                            ║
+ * ║  DP MAPPINGS (verified from Z2M TH05Z, WSD500A, RSH-TH01):                   ║
  * ║  - DP1: Temperature (÷10 = °C)                                               ║
  * ║  - DP2: Humidity (direct %)                                                  ║
  * ║  - DP4: Battery (×2, capped at 100%)                                         ║
- * ║  - DP9-20: Config settings (unit, alarms, intervals, sensitivity)            ║
+ * ║  - DP6: Temperature alt (some _TZE204 models, ÷10)                           ║
+ * ║  - DP7: Humidity alt (some _TZE204 models)                                   ║
+ * ║  - DP9: Temperature unit (0=C, 1=F)                                          ║
+ * ║  - DP10-13: Alarm thresholds (max/min temp/humidity)                         ║
+ * ║  - DP14-15: Alarm status (NOT battery!)                                      ║
+ * ║  - DP17-20: Reporting config (intervals, sensitivity)                        ║
+ * ║  - DP18: Alt temperature on some firmware                                    ║
+ * ║  - DP101-103: Button press / illuminance on some models                      ║
  * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
- */
-/**
- * v5.5.183: REVERTED to HybridSensorBase directly (like v5.5.165)
- * TuyaTimeSyncMixin was causing issues with data reception
- * Time sync is now handled manually with inline methods
  */
 class ClimateSensorDevice extends HybridSensorBase {
 
   /** Battery powered */
   get mainsPowered() { return false; }
 
-  // v5.5.35: Skip ZCL battery polling - use Tuya DP 4 only
+  // v5.5.189: Try BOTH ZCL and Tuya DP for battery (maximize compatibility)
   get usesTuyaDPBattery() { return true; }
-  get skipZclBatteryPolling() { return true; }
+  get skipZclBatteryPolling() { return false; } // Try both!
 
   // v5.5.54: FORCE ACTIVE MODE - Do NOT block DP requests in passive mode
   // Climate sensors need active queries even if cluster 0xEF00 not visible
@@ -55,6 +63,58 @@ class ClimateSensorDevice extends HybridSensorBase {
   /** Capabilities for climate sensors */
   get sensorCapabilities() {
     return ['measure_temperature', 'measure_humidity', 'measure_battery'];
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // v5.5.189: CALIBRATION OFFSETS (merged from climate_box_vvmbj46n)
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  /**
+   * Get temperature offset from settings (for calibration)
+   * @returns {number} Temperature offset in °C
+   */
+  get temperatureOffset() {
+    const settings = this.getSettings() || {};
+    // Support both naming conventions (temperature_calibration from driver.compose.json)
+    return parseFloat(settings.temperature_calibration) || parseFloat(settings.temperature_offset) || 0;
+  }
+
+  /**
+   * Get humidity offset from settings (for calibration)
+   * @returns {number} Humidity offset in %
+   */
+  get humidityOffset() {
+    const settings = this.getSettings() || {};
+    // Support both naming conventions (humidity_calibration from driver.compose.json)
+    return parseFloat(settings.humidity_calibration) || parseFloat(settings.humidity_offset) || 0;
+  }
+
+  /**
+   * Apply calibration offset to temperature
+   * @param {number} temp Raw temperature value
+   * @returns {number} Calibrated temperature
+   */
+  _applyTempOffset(temp) {
+    const offset = this.temperatureOffset;
+    const calibrated = temp + offset;
+    if (offset !== 0) {
+      this.log(`[CALIBRATION] Temp: ${temp}°C + offset ${offset}°C = ${calibrated}°C`);
+    }
+    return calibrated;
+  }
+
+  /**
+   * Apply calibration offset to humidity
+   * @param {number} hum Raw humidity value
+   * @returns {number} Calibrated humidity (clamped 0-100)
+   */
+  _applyHumOffset(hum) {
+    const offset = this.humidityOffset;
+    const calibrated = Math.max(0, Math.min(100, hum + offset));
+    if (offset !== 0) {
+      this.log(`[CALIBRATION] Humidity: ${hum}% + offset ${offset}% = ${calibrated}%`);
+    }
+    return calibrated;
   }
 
   /**
@@ -138,12 +198,14 @@ class ClimateSensorDevice extends HybridSensorBase {
       temperatureMeasurement: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
-            const temp = data.measuredValue / 100;
+            const rawTemp = data.measuredValue / 100;
             // v5.5.108: Sanity check
-            if (temp < -40 || temp > 80) {
-              this.log(`[ZCL] ⚠️ Temperature out of range: ${temp}°C - IGNORED`);
+            if (rawTemp < -40 || rawTemp > 80) {
+              this.log(`[ZCL] ⚠️ Temperature out of range: ${rawTemp}°C - IGNORED`);
               return;
             }
+            // v5.5.189: Apply calibration offset
+            const temp = this._applyTempOffset(rawTemp);
             this.log(`[ZCL] 🌡️ Temperature: ${temp}°C`);
             this._registerZclData?.(); // v5.5.108: Track for learning
             this.setCapabilityValue('measure_temperature', temp).catch(() => { });
@@ -158,12 +220,14 @@ class ClimateSensorDevice extends HybridSensorBase {
       relativeHumidity: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
-            const humidity = data.measuredValue / 100;
+            const rawHum = data.measuredValue / 100;
             // v5.5.108: Sanity check
-            if (humidity < 0 || humidity > 100) {
-              this.log(`[ZCL] ⚠️ Humidity out of range: ${humidity}% - IGNORED`);
+            if (rawHum < 0 || rawHum > 100) {
+              this.log(`[ZCL] ⚠️ Humidity out of range: ${rawHum}% - IGNORED`);
               return;
             }
+            // v5.5.189: Apply calibration offset
+            const humidity = this._applyHumOffset(rawHum);
             this.log(`[ZCL] 💧 Humidity: ${humidity}%`);
             this._registerZclData?.(); // v5.5.108: Track for learning
             this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
@@ -195,8 +259,8 @@ class ClimateSensorDevice extends HybridSensorBase {
   async onNodeInit({ zclNode }) {
     this.log('');
     this.log('╔══════════════════════════════════════════════════════════════════════════════╗');
-    this.log('║  CLIMATE SENSOR - v5.5.188 FULL HYBRID (ALL PROTOCOLS)                      ║');
-    this.log('║  ZCL + Tuya DP + Battery bind/config + Time sync (v5.5.165 style)          ║');
+    this.log('║  CLIMATE SENSOR ULTIMATE - v5.5.189 MERGED (ALL PROTOCOLS + CALIBRATION)   ║');
+    this.log('║  ZCL + Tuya DP + Battery + Time sync + Temp/Humidity offsets               ║');
     this.log('╚══════════════════════════════════════════════════════════════════════════════╝');
     this.log('');
 
@@ -290,7 +354,7 @@ class ClimateSensorDevice extends HybridSensorBase {
     // ═══════════════════════════════════════════════════════════════════════
     await this._readZCLAttributesNow(zclNode);
 
-    this.log('[CLIMATE] ✅ Climate sensor ready - FULL HYBRID mode');
+    this.log('[CLIMATE] ✅ Climate sensor ready - ULTIMATE MERGED v5.5.189');
     this.log('[CLIMATE] ⚠️ BATTERY DEVICE - First data may take 10-60 minutes after pairing');
     this.log('');
   }
@@ -749,7 +813,35 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.36: Enhanced logging for DP data
+   * v5.5.189: Override _handleDP to trigger time sync on data reception
+   * Merged from climate_box_vvmbj46n - LCD devices need time sync when they wake
+   */
+  async _handleDP(dp, value, dataType) {
+    // Device is awake! Trigger time sync for LCD displays
+    if (this._manufacturerName?.includes('_TZE284')) {
+      this._sendTimeSync().catch(() => { });
+    }
+
+    // Apply calibration offsets before passing to parent
+    let processedValue = value;
+
+    if (dp === 1 || dp === 6 || dp === 18) {
+      // Temperature DPs - apply offset after division
+      const rawTemp = value / 10;
+      processedValue = this._applyTempOffset(rawTemp) * 10; // Scale back for parent processing
+    } else if (dp === 2 || dp === 7 || dp === 103) {
+      // Humidity DPs - apply offset
+      processedValue = this._applyHumOffset(value);
+    }
+
+    // Call parent handler
+    if (super._handleDP) {
+      return super._handleDP(dp, processedValue, dataType);
+    }
+  }
+
+  /**
+   * v5.5.189: Enhanced logging for DP data with calibration support
    * Shows raw + converted values for each DP
    *
    * CRITICAL DP MAPPING for _TZE284_vvmbj46n (TH05Z):
@@ -766,21 +858,25 @@ class ClimateSensorDevice extends HybridSensorBase {
     const dp = status.dp;
     const rawValue = status.data || status.value;
 
-    // v5.5.36: FIXED - Correct DP logging for climate sensors
+    // v5.5.189: Log with calibration info
     switch (dp) {
       case 1: // Temperature (standard) ÷10
-        this.log(`[CLIMATE-DP] DP1 temperature raw=${rawValue} converted=${rawValue / 10}°C`);
+        const temp1 = this._applyTempOffset(rawValue / 10);
+        this.log(`[CLIMATE-DP] DP1 temperature raw=${rawValue} calibrated=${temp1}°C`);
         break;
       case 18: // Temperature (alt) ÷10
       case 6: // Temperature (some _TZE204 models)
-        this.log(`[CLIMATE-DP] DP${dp} temperature_alt raw=${rawValue} converted=${rawValue / 10}°C`);
+        const tempAlt = this._applyTempOffset(rawValue / 10);
+        this.log(`[CLIMATE-DP] DP${dp} temperature_alt raw=${rawValue} calibrated=${tempAlt}°C`);
         break;
       case 2: // Humidity (standard)
-        this.log(`[CLIMATE-DP] DP2 humidity raw=${rawValue} converted=${rawValue}%`);
+        const hum2 = this._applyHumOffset(rawValue);
+        this.log(`[CLIMATE-DP] DP2 humidity raw=${rawValue} calibrated=${hum2}%`);
         break;
       case 7: // Humidity (some _TZE204 models)
       case 103: // Humidity (alt)
-        this.log(`[CLIMATE-DP] DP${dp} humidity_alt raw=${rawValue} converted=${rawValue}%`);
+        const humAlt = this._applyHumOffset(rawValue);
+        this.log(`[CLIMATE-DP] DP${dp} humidity_alt raw=${rawValue} calibrated=${humAlt}%`);
         break;
       case 4: // Battery (standard with ×2 multiplier)
         const batConverted = Math.min(rawValue * 2, 100);
