@@ -1,4 +1,7 @@
 {
+  "5.5.194": {
+    "en": "🔧 CRITICAL FIX: Added LOW-LEVEL handleFrame override to HybridSensorBase! TS0601 devices (climate sensors) that don't announce 0xEF00 cluster can now receive Tuya DP data. This was the ROOT CAUSE of 'no data' on climate sensors. Frame interception at node level - the ONLY reliable method for TS0601!"
+  },
   "5.5.193": {
     "en": "🔧 SOIL SENSOR FIX: forceActiveTuyaMode now respected! Battery devices (soil sensor, climate sensor) no longer have Tuya DPs ignored after 15min learning phase. This fixes 'no data' issues on sleepy devices that use Tuya DP protocol."
   },
