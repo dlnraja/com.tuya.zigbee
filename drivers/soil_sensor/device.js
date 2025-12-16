@@ -196,6 +196,9 @@ class SoilSensorDevice extends TuyaHybridDevice {
     this.log('[SOIL] ════════════════════════════════════════════════════════');
     this.log('[SOIL] ⚠️ BATTERY DEVICE - Data comes when device wakes up');
     this.log('[SOIL] ℹ️ First data may take 10-60 minutes after pairing');
+    this.log('[SOIL] 📋 DP Mappings: DP3=humidity, DP5=temp, DP14=battery_state, DP15=battery%');
+    this.log('[SOIL] 🔧 forceActiveTuyaMode:', this.forceActiveTuyaMode);
+    this.log('[SOIL] 🔧 hybridModeEnabled:', this.hybridModeEnabled);
 
     // Initialize flow triggers
     this._initFlowTriggers();
@@ -204,6 +207,31 @@ class SoilSensorDevice extends TuyaHybridDevice {
     this._previousMoisture = null;
     this._previousTemperature = null;
     this._previousBattery = null;
+  }
+
+  /**
+   * v5.5.195: Override _handleDP to add specific logging for soil sensor
+   * This helps diagnose why humidity data might not be appearing
+   */
+  _handleDP(dpId, value) {
+    // Log ALL DPs for soil sensor debugging
+    this.log(`[SOIL] 📥 DP${dpId} received! Value: ${value} (type: ${typeof value})`);
+
+    // Special logging for critical DPs
+    if (dpId === 3) {
+      this.log('[SOIL] 🌱 ════════════════════════════════════════════════════');
+      this.log(`[SOIL] 🌱 HUMIDITY/MOISTURE DP3 = ${value}%`);
+      this.log('[SOIL] 🌱 ════════════════════════════════════════════════════');
+    } else if (dpId === 5) {
+      this.log(`[SOIL] 🌡️ TEMPERATURE DP5 = ${value} (raw)`);
+    } else if (dpId === 14) {
+      this.log(`[SOIL] 🔋 BATTERY STATE DP14 = ${value} (enum: 0=low, 1=med, 2=high)`);
+    } else if (dpId === 15) {
+      this.log(`[SOIL] 🔋 BATTERY % DP15 = ${value}%`);
+    }
+
+    // Call parent handler
+    super._handleDP(dpId, value);
   }
 
   /**
