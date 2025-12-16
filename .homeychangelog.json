@@ -1,4 +1,7 @@
 {
+  "5.5.187": {
+    "en": "🌐 UNIVERSAL IMPROVEMENTS: Tuya epoch (2000) auto-detection now in HybridSensorBase - benefits ALL 21+ sensor drivers (climate, motion, contact, air quality, etc.). LCD devices automatically get correct time display!"
+  },
   "5.5.186": {
     "en": "🔘 BUTTON FIX: Added onOff attribute listener for TS0044 buttons - more reliable button press detection. Button presses now properly trigger flows!"
   },
