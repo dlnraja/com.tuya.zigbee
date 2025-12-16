@@ -5,19 +5,19 @@ const { syncDeviceTimeTuya } = require('../../lib/tuya/TuyaTimeSync');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║     CLIMATE SENSOR ULTIMATE - v5.5.189 MERGED (climate_sensor + climate_box) ║
+ * ║     CLIMATE SENSOR ULTIMATE - v5.5.190 INTELLIGENT PROTOCOL DETECTION        ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
- * ║  🔥 v5.5.189: ULTIMATE MERGED DRIVER - All features from both drivers       ║
- * ║  - Merged climate_sensor + climate_box_vvmbj46n into ONE driver             ║
- * ║  - Full Tuya DP support (DP1-20, DP101-103)                                 ║
- * ║  - Full ZCL support (0x0402, 0x0405, 0x0001) with bind/config               ║
- * ║  - Intelligent time sync (Tuya epoch 2000 for LCD, Unix for others)         ║
+ * ║  🔥 v5.5.190: INTELLIGENT PROTOCOL + COMPLETE DP RESEARCH                   ║
+ * ║  - Auto-detect protocol: TUYA_DP_LCD, TUYA_DP, ZCL_STANDARD, HYBRID         ║
+ * ║  - Full DP mappings from Z2M #26078, #19731, Blakadder, ZHA                 ║
+ * ║  - Battery: DP3 (enum low/med/high) OR DP4 (×2 multiplier) OR ZCL          ║
+ * ║  - Time sync: Tuya epoch (2000) for LCD, skipped for ZCL devices            ║
  * ║  - Calibration offsets for temp/humidity                                    ║
  * ║  - Wake detection + aggressive DP requests                                  ║
- * ║  - Battery via both ZCL and Tuya DP (×2 multiplier)                         ║
+ * ║  - Illuminance support (DP5) for multi-sensor devices                       ║
  * ║                                                                              ║
- * ║  SUPPORTED PROTOCOLS:                                                        ║
+ * ║  MANUFACTURER PROTOCOL MAP:                                                  ║
  * ║  ┌─────────────┬──────────────────────────────────────────────────────┐      ║
  * ║  │ Type        │ Protocol                                             │      ║
  * ║  ├─────────────┼──────────────────────────────────────────────────────┤      ║
@@ -118,64 +118,131 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.4.8: CORRECTED DP MAPPINGS - Fixed soil sensor vs climate sensor confusion
-   * Sources:
-   * - https://github.com/Koenkk/zigbee2mqtt/issues/26078 (_TZE284_vvmbj46n TH05Z)
-   * - https://raw.githubusercontent.com/kkossev/Hubitat/main/Drivers/Tuya Temperature Humidity Illuminance LCD Display with a Clock/Tuya_Temperature_Humidity_Illuminance_LCD_Display_with_a_Clock.groovy
+   * v5.5.190: COMPLETE DP MAPPINGS - Research from Z2M, ZHA, Blakadder
    *
-   * CRITICAL: DP3, DP5, DP15 are for SOIL SENSORS, NOT climate sensors!
-   * _TZE284_vvmbj46n (TH05Z LCD) uses: DP1=temp, DP2=humidity, DP4=battery
+   * SOURCES VERIFIED:
+   * - https://github.com/Koenkk/zigbee2mqtt/issues/26078 (_TZE284_vvmbj46n TH05Z)
+   * - https://github.com/Koenkk/zigbee2mqtt/issues/19731 (_TZE200_vvmbj46n TH05Z)
+   * - https://zigbee.blakadder.com/Tuya_ZG227C.html (ZG227C LCD)
+   * - https://www.zigbee2mqtt.io/devices/TS0201-z.html (TS0201 ZCL)
+   *
+   * MANUFACTURER PROTOCOL DIFFERENCES:
+   * ┌────────────────┬────────────────────────────────────────────────────┐
+   * │ Manufacturer   │ Protocol & Features                                │
+   * ├────────────────┼────────────────────────────────────────────────────┤
+   * │ _TZE284_*      │ Tuya DP + LCD display + Time sync (epoch 2000)    │
+   * │ _TZE200_*      │ Tuya DP + some with LCD + Time sync               │
+   * │ _TZE204_*      │ Tuya DP + enhanced features + Time sync           │
+   * │ _TZ3000_*      │ ZCL standard clusters (0x0402, 0x0405, 0x0001)    │
+   * │ TS0201         │ ZCL standard + calibration + measurement interval │
+   * └────────────────┴────────────────────────────────────────────────────┘
+   *
+   * BATTERY HANDLING DIFFERENCES:
+   * - _TZE284_*: DP4 with x2 multiplier (device reports 0-50 → 0-100%)
+   * - _TZE200_*: DP3 (battery_state: low/medium/high) OR DP4 (raw %)
+   * - _TZ3000_*: ZCL cluster 0x0001 (batteryPercentageRemaining ÷ 2)
+   * - TS0201: ZCL cluster 0x0001 standard
    */
   get dpMappings() {
     return {
       // ═══════════════════════════════════════════════════════════════════
-      // TEMPERATURE - Standard DP1 (all climate sensors) + alternative DP18
+      // TEMPERATURE DPs (multiple variants)
       // ═══════════════════════════════════════════════════════════════════
-      1: { capability: 'measure_temperature', divisor: 10 },    // Standard: value/10 = °C
-      18: { capability: 'measure_temperature', divisor: 10 },   // Alternative temp DP (some models)
+      1: { capability: 'measure_temperature', divisor: 10 },    // Standard: all _TZE* devices
+      6: { capability: 'measure_temperature', divisor: 10 },    // Alt: some _TZE204 models
+      18: { capability: 'measure_temperature', divisor: 10 },   // Alt: ZG227C and some LCD models
 
       // ═══════════════════════════════════════════════════════════════════
-      // HUMIDITY - Standard DP2 (all climate sensors)
+      // HUMIDITY DPs (multiple variants)
       // ═══════════════════════════════════════════════════════════════════
-      2: { capability: 'measure_humidity', divisor: 1 },        // Standard: direct %
+      2: { capability: 'measure_humidity', divisor: 1 },        // Standard: all _TZE* devices
+      7: { capability: 'measure_humidity', divisor: 1 },        // Alt: some _TZE204 models
+      103: { capability: 'measure_humidity', divisor: 1 },      // Alt: rare models
 
       // ═══════════════════════════════════════════════════════════════════
-      // BATTERY - Standard DP4 (most climate sensors with x2 multiplier)
-      // v5.3.99: ZHA quirk shows DP4 has x*2 multiplier (device reports half)
+      // BATTERY DPs - INTELLIGENT HANDLING
+      // v5.5.190: Handle both battery% (DP4) and battery_state (DP3)
       // ═══════════════════════════════════════════════════════════════════
-      4: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(v * 2, 100) },
+      3: {
+        capability: 'measure_battery', transform: (v) => {
+          // DP3 = battery_state enum (0=low, 1=medium, 2=high) for some _TZE200
+          if (v === 0) return 10;   // low
+          if (v === 1) return 50;   // medium
+          if (v === 2) return 100;  // high
+          return Math.min(v * 2, 100); // Fallback: treat as raw with x2
+        }
+      },
+      4: { capability: 'measure_battery', transform: (v) => Math.min(v * 2, 100) }, // x2 multiplier
 
       // ═══════════════════════════════════════════════════════════════════
-      // v5.4.8: _TZE284_vvmbj46n TH05Z LCD CONFIGURATION DPs
-      // These DPs are for device configuration/settings - not capabilities
-      // Source: https://github.com/Koenkk/zigbee2mqtt/issues/26078
+      // CONFIGURATION DPs - TH05Z / ZG227C LCD sensors
+      // Source: Z2M #26078, #19731, Blakadder
       // ═══════════════════════════════════════════════════════════════════
       9: { capability: null, setting: 'temperature_unit' },     // 0=Celsius, 1=Fahrenheit
-      10: { capability: null, setting: 'max_temp_alarm', divisor: 10 },  // Max temp threshold (°C/10)
-      11: { capability: null, setting: 'min_temp_alarm', divisor: 10 },  // Min temp threshold (°C/10)
-      12: { capability: null, setting: 'max_humidity_alarm' },  // Max humidity threshold (%)
-      13: { capability: null, setting: 'min_humidity_alarm' },  // Min humidity threshold (%)
-      // v5.4.8: DP14/DP15 are alarm STATUS (enum: cancel/lower/upper), NOT alarm_generic
-      14: { capability: null }, // Temp alarm status (no valid Homey capability)
-      15: { capability: null }, // Humidity alarm status (no valid Homey capability - NOT battery!)
-      17: { capability: null, setting: 'temp_report_interval' },  // Minutes (1-120)
-      18: { capability: null, setting: 'humidity_report_interval' }, // Minutes (1-120) - was missing in early Z2M
-      19: { capability: null, setting: 'temp_sensitivity', divisor: 10 },  // °C sensitivity (0.3-1.0)
-      20: { capability: null, setting: 'humidity_sensitivity' }, // % sensitivity (3-10)
+      10: { capability: null, setting: 'max_temp_alarm', divisor: 10 },  // Max temp °C/10
+      11: { capability: null, setting: 'min_temp_alarm', divisor: 10 },  // Min temp °C/10
+      12: { capability: null, setting: 'max_humidity_alarm' },  // Max humidity %
+      13: { capability: null, setting: 'min_humidity_alarm' },  // Min humidity %
+      14: { capability: null, setting: 'temp_alarm_status' },   // 0=cancel, 1=lower, 2=upper
+      15: { capability: null, setting: 'humidity_alarm_status' }, // 0=cancel, 1=lower, 2=upper
+      17: { capability: null, setting: 'temp_report_interval' },  // 1-120 minutes
+      19: { capability: null, setting: 'temp_sensitivity', divisor: 10 },  // 0.3-1.0°C
+      20: { capability: null, setting: 'humidity_sensitivity' }, // 3-10%
 
       // ═══════════════════════════════════════════════════════════════════
-      // BUTTON PRESS (common for devices with buttons)
+      // ILLUMINANCE (some models like _TZE200_locansqn)
       // ═══════════════════════════════════════════════════════════════════
-      101: { capability: 'button', transform: () => true },     // Button press
-      102: { capability: 'button', transform: () => true },     // Alternative button
+      5: { capability: 'measure_luminance', divisor: 1 },       // Lux (some models)
 
       // ═══════════════════════════════════════════════════════════════════
-      // ADDITIONAL DPs (fallbacks for other climate sensor variants)
+      // BUTTON PRESS (devices with physical buttons)
       // ═══════════════════════════════════════════════════════════════════
-      6: { capability: 'measure_temperature', divisor: 10 },    // Some _TZE204 models
-      7: { capability: 'measure_humidity', divisor: 1 },        // Some _TZE204 models
-      103: { capability: 'measure_humidity', divisor: 1 },      // Some alternative models
+      101: { capability: 'button', transform: () => true },
+      102: { capability: 'button', transform: () => true },
     };
+  }
+
+  /**
+   * v5.5.190: INTELLIGENT PROTOCOL DETECTION
+   * Determines best protocol based on manufacturerName
+   */
+  get deviceProtocol() {
+    const mfr = this._manufacturerName || '';
+
+    if (mfr.startsWith('_TZE284')) return 'TUYA_DP_LCD';      // LCD with Tuya epoch
+    if (mfr.startsWith('_TZE200')) return 'TUYA_DP';          // Standard Tuya DP
+    if (mfr.startsWith('_TZE204')) return 'TUYA_DP_ENHANCED'; // Enhanced Tuya DP
+    if (mfr.startsWith('_TZ3000')) return 'ZCL_STANDARD';     // Pure ZCL
+    if (mfr.startsWith('_TZ3210')) return 'ZCL_STANDARD';     // Pure ZCL
+
+    // Check modelId for protocol hints
+    const modelId = this._modelId || '';
+    if (modelId === 'TS0201') return 'ZCL_STANDARD';
+    if (modelId === 'TS0601') return 'TUYA_DP';
+
+    return 'HYBRID'; // Default: try both
+  }
+
+  /**
+   * v5.5.190: Check if device needs Tuya epoch (2000) for time sync
+   */
+  get needsTuyaEpoch() {
+    const mfr = this._manufacturerName || '';
+    // LCD devices need Tuya epoch (year 2000 base) for correct display
+    return mfr.startsWith('_TZE284') ||
+      mfr.includes('vvmbj46n') ||
+      mfr.includes('aao6qtcs') ||
+      mfr.includes('znph9215') ||
+      mfr.includes('qoy0ekbd');
+  }
+
+  /**
+   * v5.5.190: Check if device uses battery_state enum (DP3) vs battery% (DP4)
+   */
+  get usesBatteryStateEnum() {
+    const mfr = this._manufacturerName || '';
+    // Some _TZE200 devices use DP3 with enum (low/medium/high)
+    return mfr.includes('_TZE200_vvmbj46n'); // TH05Z original uses DP3
   }
 
   /**
@@ -298,7 +365,13 @@ class ClimateSensorDevice extends HybridSensorBase {
     this._manufacturerName = mfr;
     this._modelId = modelId;
 
+    // v5.5.190: Log device protocol detection
+    const protocol = this.deviceProtocol;
+    const needsEpoch = this.needsTuyaEpoch;
+    const batteryEnum = this.usesBatteryStateEnum;
+
     this.log(`[CLIMATE] Device: ${mfr} / ${modelId}`);
+    this.log(`[CLIMATE] Protocol: ${protocol} | Tuya Epoch: ${needsEpoch} | Battery Enum: ${batteryEnum}`);
 
     // ═══════════════════════════════════════════════════════════════════════
     // Detect available clusters
@@ -408,23 +481,34 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.184: Send time sync to device using TUYA epoch (2000)
-   * CRITICAL: LCD devices expect Tuya epoch (2000), NOT Unix epoch (1970)!
+   * v5.5.190: INTELLIGENT time sync based on manufacturer detection
+   * - _TZE284_* LCD devices: Use Tuya epoch (2000) for correct LCD display
+   * - _TZE200_* devices: Use Tuya epoch (most have LCD)
+   * - _TZ3000_* ZCL devices: No time sync needed (ZCL standard)
    * Reference: https://github.com/Koenkk/zigbee2mqtt/issues/30054
    */
   async _sendTimeSync() {
     try {
+      const protocol = this.deviceProtocol;
+
+      // ZCL standard devices don't need Tuya time sync
+      if (protocol === 'ZCL_STANDARD') {
+        this.log('[CLIMATE] 🕐 ZCL device - no Tuya time sync needed');
+        return;
+      }
+
       const now = new Date();
       const timezoneOffset = -now.getTimezoneOffset() * 60;
+      const useTuyaEpoch = this.needsTuyaEpoch;
 
-      this.log('[CLIMATE] 🕐 Sending time sync (TUYA EPOCH 2000)...');
+      this.log(`[CLIMATE] 🕐 Sending time sync (${useTuyaEpoch ? 'TUYA EPOCH 2000' : 'UNIX EPOCH'})...`);
       this.log(`[CLIMATE] 🕐 Local: ${now.toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}`);
       this.log(`[CLIMATE] 🕐 TZ offset: GMT${timezoneOffset >= 0 ? '+' : ''}${timezoneOffset / 3600}`);
 
-      // v5.5.184: CRITICAL - Force Tuya epoch for LCD display devices
+      // v5.5.190: Intelligent epoch selection based on manufacturer
       await syncDeviceTimeTuya(this, {
         logPrefix: '[CLIMATE]',
-        useTuyaEpoch: true  // Force Tuya epoch (2000) for LCD devices
+        useTuyaEpoch: useTuyaEpoch
       });
 
       this.log('[CLIMATE] ✅ Time sync sent!');

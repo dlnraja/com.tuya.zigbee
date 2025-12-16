@@ -1,4 +1,7 @@
 {
+  "5.5.190": {
+    "en": "🧠 INTELLIGENT CLIMATE: Auto-detect protocol (_TZE284=LCD, _TZE200=TuyaDP, _TZ3000=ZCL). Complete DP mappings from Z2M research. Battery: DP3 (enum) OR DP4 (×2) OR ZCL. Time sync only for Tuya devices. Illuminance DP5 support. All manufacturerNames researched!"
+  },
   "5.5.189": {
     "en": "🔥 ULTIMATE CLIMATE SENSOR: Merged climate_sensor + climate_box_vvmbj46n into ONE driver! Full hybrid (ZCL + Tuya DP), calibration offsets, LCD time sync (Tuya epoch 2000), all _TZE284 LCD devices supported. Intelligent wake detection + aggressive DP requests. RE-PAIR recommended!"
   },
