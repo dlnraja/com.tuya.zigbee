@@ -210,27 +210,104 @@ class SoilSensorDevice extends TuyaHybridDevice {
   }
 
   /**
-   * v5.5.195: Override _handleDP to add specific logging for soil sensor
-   * This helps diagnose why humidity data might not be appearing
+   * v5.5.197: ENHANCED _handleDP with DIRECT capability setting
+   *
+   * Diagnose and FIX why humidity (DP3) is not appearing:
+   * 1. Log ALL received DPs with full details
+   * 2. DIRECTLY set capabilities for critical DPs (bypass parent issues)
+   * 3. Handle Buffer values from Z2M-style dpValues
    */
   _handleDP(dpId, value) {
-    // Log ALL DPs for soil sensor debugging
-    this.log(`[SOIL] 📥 DP${dpId} received! Value: ${value} (type: ${typeof value})`);
+    // Convert dpId to number if string
+    const dp = Number(dpId);
 
-    // Special logging for critical DPs
-    if (dpId === 3) {
-      this.log('[SOIL] 🌱 ════════════════════════════════════════════════════');
-      this.log(`[SOIL] 🌱 HUMIDITY/MOISTURE DP3 = ${value}%`);
-      this.log('[SOIL] 🌱 ════════════════════════════════════════════════════');
-    } else if (dpId === 5) {
-      this.log(`[SOIL] 🌡️ TEMPERATURE DP5 = ${value} (raw)`);
-    } else if (dpId === 14) {
-      this.log(`[SOIL] 🔋 BATTERY STATE DP14 = ${value} (enum: 0=low, 1=med, 2=high)`);
-    } else if (dpId === 15) {
-      this.log(`[SOIL] 🔋 BATTERY % DP15 = ${value}%`);
+    // Log ALL DPs for soil sensor debugging
+    this.log('[SOIL] ════════════════════════════════════════════════════════');
+    this.log(`[SOIL] 📥 DP${dp} received!`);
+    this.log(`[SOIL]    Raw value: ${value}`);
+    this.log(`[SOIL]    Type: ${typeof value}`);
+    this.log(`[SOIL]    Is Buffer: ${Buffer.isBuffer(value)}`);
+
+    // Parse Buffer values (Z2M-style dpValues have data as Buffer)
+    let parsedValue = value;
+    if (Buffer.isBuffer(value)) {
+      if (value.length === 4) {
+        parsedValue = value.readUInt32BE(0);
+      } else if (value.length === 2) {
+        parsedValue = value.readUInt16BE(0);
+      } else if (value.length === 1) {
+        parsedValue = value.readUInt8(0);
+      }
+      this.log(`[SOIL]    Parsed from Buffer: ${parsedValue}`);
     }
 
-    // Call parent handler
+    // ═══════════════════════════════════════════════════════════════════════
+    // DIRECT CAPABILITY SETTING for critical DPs
+    // This bypasses any potential issues in parent handler
+    // ═══════════════════════════════════════════════════════════════════════
+
+    if (dp === 3) {
+      // DP3 = SOIL MOISTURE (measure_humidity)
+      this.log('[SOIL] 🌱 ════════════════════════════════════════════════════');
+      this.log(`[SOIL] 🌱 SOIL MOISTURE DP3 = ${parsedValue}%`);
+      this.log('[SOIL] 🌱 ════════════════════════════════════════════════════');
+
+      // DIRECT SET - bypass parent handler potential issues
+      if (this.hasCapability('measure_humidity')) {
+        this.setCapabilityValue('measure_humidity', parsedValue)
+          .then(() => this.log(`[SOIL] ✅ measure_humidity SET to ${parsedValue}%`))
+          .catch(err => this.log(`[SOIL] ❌ measure_humidity FAILED: ${err.message}`));
+      } else {
+        this.log('[SOIL] ⚠️ measure_humidity capability NOT found!');
+      }
+      return; // Don't call parent - we handled it directly
+    }
+
+    if (dp === 5) {
+      // DP5 = TEMPERATURE (divide by 10)
+      let temp = parsedValue;
+      if (temp > 1000) temp = temp / 100;
+      else if (temp > 100) temp = temp / 10;
+      else temp = temp / 10;
+
+      this.log(`[SOIL] 🌡️ TEMPERATURE DP5 = ${parsedValue} → ${temp}°C`);
+
+      if (this.hasCapability('measure_temperature')) {
+        this.setCapabilityValue('measure_temperature', temp)
+          .then(() => this.log(`[SOIL] ✅ measure_temperature SET to ${temp}°C`))
+          .catch(err => this.log(`[SOIL] ❌ measure_temperature FAILED: ${err.message}`));
+      }
+      return;
+    }
+
+    if (dp === 14) {
+      // DP14 = BATTERY STATE (enum: 0=low, 1=med, 2=high)
+      const batteryMap = { 0: 10, 1: 50, 2: 100 };
+      const battery = batteryMap[parsedValue] ?? parsedValue;
+      this.log(`[SOIL] 🔋 BATTERY STATE DP14 = ${parsedValue} → ${battery}%`);
+
+      if (this.hasCapability('measure_battery')) {
+        this.setCapabilityValue('measure_battery', battery)
+          .then(() => this.log(`[SOIL] ✅ measure_battery SET to ${battery}%`))
+          .catch(err => this.log(`[SOIL] ❌ measure_battery FAILED: ${err.message}`));
+      }
+      return;
+    }
+
+    if (dp === 15) {
+      // DP15 = BATTERY PERCENTAGE (direct)
+      this.log(`[SOIL] 🔋 BATTERY % DP15 = ${parsedValue}%`);
+
+      if (this.hasCapability('measure_battery')) {
+        this.setCapabilityValue('measure_battery', parsedValue)
+          .then(() => this.log(`[SOIL] ✅ measure_battery SET to ${parsedValue}%`))
+          .catch(err => this.log(`[SOIL] ❌ measure_battery FAILED: ${err.message}`));
+      }
+      return;
+    }
+
+    // For other DPs, call parent handler
+    this.log(`[SOIL] ℹ️ DP${dp} not handled locally, calling parent`);
     super._handleDP(dpId, value);
   }
 
