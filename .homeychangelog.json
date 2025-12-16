@@ -1,4 +1,7 @@
 {
+  "5.5.191": {
+    "en": "🔍 CLIMATE DIAGNOSTICS: Enhanced logging - very visible 'DATA RECEIVED' message when sleepy device wakes up. Better battery device warnings. DP3 battery_state enum support (low/med/high). DP5 illuminance logging. Helps diagnose sleepy sensor issues."
+  },
   "5.5.190": {
     "en": "🧠 INTELLIGENT CLIMATE: Auto-detect protocol (_TZE284=LCD, _TZE200=TuyaDP, _TZ3000=ZCL). Complete DP mappings from Z2M research. Battery: DP3 (enum) OR DP4 (×2) OR ZCL. Time sync only for Tuya devices. Illuminance DP5 support. All manufacturerNames researched!"
   },
