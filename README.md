@@ -1,20 +1,20 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.184-blue)
+![Version](https://img.shields.io/badge/version-5.5.185-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
-![Drivers](https://img.shields.io/badge/drivers-84-brightgreen)
+![Drivers](https://img.shields.io/badge/drivers-85-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 84 drivers and 2652+ manufacturer IDs.**
+**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 85 drivers and 2657+ manufacturer IDs.**
 
 🏠 **100% Local Control** - No Cloud, No Internet Required
 🔋 **Smart Battery** - Accurate readings with voltage fallback
 ⚡ **Hybrid Mode** - Auto-detect Tuya DP vs Standard ZCL
 🛠️ **SDK3** - Latest Homey Standards
 🌍 **Open Source** - Community-driven development
-📱 **84 Drivers** - Switches, sensors, lights, thermostats & more
+📱 **85 Drivers** - Switches, sensors, lights, thermostats & more
 
 ---
 
@@ -25,8 +25,8 @@
 | **Total Device IDs** | 4,200+ |
 | **Product IDs** | 350+ |
 | **Manufacturer IDs** | 3,800+ |
-| **Drivers** | 84 |
-| **SVG Icons** | 84 |
+| **Drivers** | 85 |
+| **SVG Icons** | 85 |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
 | **Last Updated** | 2025-12-16 |
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.184
+## 🚀 Latest Updates - v5.5.185
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.185** | 🔧 FIX #88: _TZE200_e3oitdyu now correctly matches dimmer_du... |
 | **v5.5.184** | 🕐 TIME SYNC FIX: CRITICAL - LCD devices now use TUYA epoch ... |
 | **v5.5.183** | 🌡️ CLIMATE FIX: Reverted to v5.5.165 style - TuyaTimeSyncMi... |
 | **v5.5.182** | 🔘 BUTTON FIX: Added multiStateInput + Tuya DP cluster suppo... |
@@ -66,7 +67,6 @@
 | **v5.5.180** | 🔥 FULL HYBRID + TIME SYNC: Climate sensors use TuyaTimeSync... |
 | **v5.5.179** | 🔥 HYBRID MODE: Climate box _TZE284_vvmbj46n now uses Hybrid... |
 | **v5.5.178** | 🐛 FIX: Soil sensor Flow Card IDs corrected (soil_sensor_* p... |
-| **v5.5.177** | 📦 Z2M IDs SYNC: Added 20+ manufacturerNames from zigbee-her... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
