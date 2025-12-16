@@ -1,4 +1,7 @@
 {
+  "5.5.196": {
+    "en": "🚀 Z2M-STYLE IMPROVEMENTS: 1) Enhanced dpValues array handling (pre-parsed structure like zigbee2mqtt) 2) Added queryOnDeviceAnnounce - when sleepy devices wake up, immediately request ALL DPs 3) Better logging for Tuya data processing. CRITICAL for soil sensor humidity and climate sensor data reception!"
+  },
   "5.5.195": {
     "en": "🕐 TIME SYNC FIX: Reversed payload format to [Local][UTC] - Tuya LCD devices expect local time first! 🌱 SOIL SENSOR: Enhanced debugging to diagnose humidity reception issues. Both fixes address 'wrong time on LCD' and 'no humidity value' reports."
   },
