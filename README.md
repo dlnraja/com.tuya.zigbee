@@ -1,20 +1,20 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.188-blue)
+![Version](https://img.shields.io/badge/version-5.5.189-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
-![Drivers](https://img.shields.io/badge/drivers-85-brightgreen)
+![Drivers](https://img.shields.io/badge/drivers-84-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 85 drivers and 2657+ manufacturer IDs.**
+**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 84 drivers and 2654+ manufacturer IDs.**
 
 🏠 **100% Local Control** - No Cloud, No Internet Required
 🔋 **Smart Battery** - Accurate readings with voltage fallback
 ⚡ **Hybrid Mode** - Auto-detect Tuya DP vs Standard ZCL
 🛠️ **SDK3** - Latest Homey Standards
 🌍 **Open Source** - Community-driven development
-📱 **85 Drivers** - Switches, sensors, lights, thermostats & more
+📱 **84 Drivers** - Switches, sensors, lights, thermostats & more
 
 ---
 
@@ -25,8 +25,8 @@
 | **Total Device IDs** | 4,200+ |
 | **Product IDs** | 350+ |
 | **Manufacturer IDs** | 3,800+ |
-| **Drivers** | 85 |
-| **SVG Icons** | 85 |
+| **Drivers** | 84 |
+| **SVG Icons** | 84 |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
 | **Last Updated** | 2025-12-16 |
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.188
+## 🚀 Latest Updates - v5.5.189
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.189** | 🔥 ULTIMATE CLIMATE SENSOR: Merged climate_sensor + climate_... |
 | **v5.5.188** | 🌡️ CLIMATE SENSOR ENHANCED: Full hybrid support - ZCL clust... |
 | **v5.5.187** | 🌐 UNIVERSAL IMPROVEMENTS: Tuya epoch (2000) auto-detection ... |
 | **v5.5.186** | 🔘 BUTTON FIX: Added onOff attribute listener for TS0044 but... |
@@ -66,7 +67,6 @@
 | **v5.5.184** | 🕐 TIME SYNC FIX: CRITICAL - LCD devices now use TUYA epoch ... |
 | **v5.5.183** | 🌡️ CLIMATE FIX: Reverted to v5.5.165 style - TuyaTimeSyncMi... |
 | **v5.5.182** | 🔘 BUTTON FIX: Added multiStateInput + Tuya DP cluster suppo... |
-| **v5.5.181** | 🐛 FIX CRASH: IASZoneManager waits for Zigbee stack ready be... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
