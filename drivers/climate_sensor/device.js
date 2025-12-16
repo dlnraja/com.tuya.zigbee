@@ -427,8 +427,13 @@ class ClimateSensorDevice extends HybridSensorBase {
     // ═══════════════════════════════════════════════════════════════════════
     await this._readZCLAttributesNow(zclNode);
 
-    this.log('[CLIMATE] ✅ Climate sensor ready - ULTIMATE MERGED v5.5.189');
-    this.log('[CLIMATE] ⚠️ BATTERY DEVICE - First data may take 10-60 minutes after pairing');
+    this.log('[CLIMATE] ✅ Climate sensor ready - INTELLIGENT v5.5.190');
+    this.log('[CLIMATE] ════════════════════════════════════════════════════════════');
+    this.log('[CLIMATE] ⚠️ BATTERY DEVICE - This is a sleepy sensor!');
+    this.log('[CLIMATE] ⚠️ First data may take 10-60 minutes after pairing');
+    this.log('[CLIMATE] ⚠️ Device only wakes up periodically to save battery');
+    this.log('[CLIMATE] ⚠️ All DP/ZCL requests sent - waiting for device to wake up');
+    this.log('[CLIMATE] ════════════════════════════════════════════════════════════');
     this.log('');
   }
 
@@ -942,29 +947,46 @@ class ClimateSensorDevice extends HybridSensorBase {
     const dp = status.dp;
     const rawValue = status.data || status.value;
 
-    // v5.5.189: Log with calibration info
+    // v5.5.191: Very visible log when device sends data - helps diagnose sleepy device issues
+    this.log('');
+    this.log('[CLIMATE] ════════════════════════════════════════════════════════════');
+    this.log(`[CLIMATE] 🎉 DATA RECEIVED! Device is AWAKE! DP${dp}=${rawValue}`);
+    this.log('[CLIMATE] ════════════════════════════════════════════════════════════');
+
+    // v5.5.190: Log with calibration info
     switch (dp) {
       case 1: // Temperature (standard) ÷10
         const temp1 = this._applyTempOffset(rawValue / 10);
-        this.log(`[CLIMATE-DP] DP1 temperature raw=${rawValue} calibrated=${temp1}°C`);
+        this.log(`[CLIMATE-DP] DP1 temperature raw=${rawValue} → ${temp1}°C`);
         break;
       case 18: // Temperature (alt) ÷10
       case 6: // Temperature (some _TZE204 models)
         const tempAlt = this._applyTempOffset(rawValue / 10);
-        this.log(`[CLIMATE-DP] DP${dp} temperature_alt raw=${rawValue} calibrated=${tempAlt}°C`);
+        this.log(`[CLIMATE-DP] DP${dp} temperature_alt raw=${rawValue} → ${tempAlt}°C`);
         break;
       case 2: // Humidity (standard)
         const hum2 = this._applyHumOffset(rawValue);
-        this.log(`[CLIMATE-DP] DP2 humidity raw=${rawValue} calibrated=${hum2}%`);
+        this.log(`[CLIMATE-DP] DP2 humidity raw=${rawValue} → ${hum2}%`);
         break;
       case 7: // Humidity (some _TZE204 models)
       case 103: // Humidity (alt)
         const humAlt = this._applyHumOffset(rawValue);
-        this.log(`[CLIMATE-DP] DP${dp} humidity_alt raw=${rawValue} calibrated=${humAlt}%`);
+        this.log(`[CLIMATE-DP] DP${dp} humidity_alt raw=${rawValue} → ${humAlt}%`);
+        break;
+      case 3: // Battery state enum (some _TZE200 devices)
+        let bat3 = rawValue;
+        if (rawValue === 0) bat3 = 10;      // low
+        else if (rawValue === 1) bat3 = 50; // medium
+        else if (rawValue === 2) bat3 = 100; // high
+        else bat3 = Math.min(rawValue * 2, 100);
+        this.log(`[CLIMATE-DP] DP3 battery_state raw=${rawValue} → ${bat3}% (enum: 0=low, 1=med, 2=high)`);
         break;
       case 4: // Battery (standard with ×2 multiplier)
         const batConverted = Math.min(rawValue * 2, 100);
-        this.log(`[CLIMATE-DP] DP4 battery raw=${rawValue} converted=${batConverted}% (×2 multiplier)`);
+        this.log(`[CLIMATE-DP] DP4 battery raw=${rawValue} → ${batConverted}% (×2 multiplier)`);
+        break;
+      case 5: // Illuminance (some models)
+        this.log(`[CLIMATE-DP] DP5 illuminance raw=${rawValue} lux`);
         break;
       case 9: // Temperature unit setting
         this.log(`[CLIMATE-DP] DP9 temp_unit raw=${rawValue} (0=C, 1=F)`);
@@ -975,7 +997,7 @@ class ClimateSensorDevice extends HybridSensorBase {
         break;
       default:
         if (dp !== undefined) {
-          this.log(`[CLIMATE-DP] DP${dp} UNKNOWN raw=${rawValue}`);
+          this.log(`[CLIMATE-DP] DP${dp} OTHER raw=${rawValue}`);
         }
     }
 
