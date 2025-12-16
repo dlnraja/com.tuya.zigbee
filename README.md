@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.195-blue)
+![Version](https://img.shields.io/badge/version-5.5.196-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-84-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.195
+## 🚀 Latest Updates - v5.5.196
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.196** | 🚀 Z2M-STYLE IMPROVEMENTS: 1) Enhanced dpValues array handli... |
 | **v5.5.195** | 🕐 TIME SYNC FIX: Reversed payload format to [Local][UTC] - ... |
 | **v5.5.194** | 🔧 CRITICAL FIX: Added LOW-LEVEL handleFrame override to Hyb... |
 | **v5.5.193** | 🔧 SOIL SENSOR FIX: forceActiveTuyaMode now respected! Batte... |
@@ -66,7 +67,6 @@
 | **v5.5.191** | 🔍 CLIMATE DIAGNOSTICS: Enhanced logging - very visible 'DAT... |
 | **v5.5.190** | 🧠 INTELLIGENT CLIMATE: Auto-detect protocol (_TZE284=LCD, _... |
 | **v5.5.189** | 🔥 ULTIMATE CLIMATE SENSOR: Merged climate_sensor + climate_... |
-| **v5.5.188** | 🌡️ CLIMATE SENSOR ENHANCED: Full hybrid support - ZCL clust... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
