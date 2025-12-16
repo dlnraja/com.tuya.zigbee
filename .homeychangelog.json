@@ -1,4 +1,7 @@
 {
+  "5.5.193": {
+    "en": "🔧 SOIL SENSOR FIX: forceActiveTuyaMode now respected! Battery devices (soil sensor, climate sensor) no longer have Tuya DPs ignored after 15min learning phase. This fixes 'no data' issues on sleepy devices that use Tuya DP protocol."
+  },
   "5.5.192": {
     "en": "🔧 TIME SYNC FIX: Fixed manufacturer name detection in TuyaTimeSync (was empty). Now checks device._manufacturerName + correct setting key. _TZE284_vvmbj46n LCD devices now get correct Tuya epoch (2000). Fixed contradictory log messages."
   },
