@@ -1,4 +1,7 @@
 {
+  "5.5.198": {
+    "en": "🚀 Z2M-INSPIRED IMPROVEMENTS: 1) Better voltage handling (mV/deciV auto-detection like Zigbee2MQTT) 2) Device availability tracking (auto-mark available when data received) 3) Safe capability setter with error handling 4) Stability improvements. Inspired by Zigbee2MQTT Homey app community feedback!"
+  },
   "5.5.197": {
     "en": "🌱 SOIL SENSOR FIX: DIRECT capability setting for DP3 (humidity), DP5 (temp), DP14/15 (battery). Bypasses parent handler issues. Enhanced Buffer parsing for Z2M-style dpValues. Full debug logging shows exactly what DPs are received and how they're parsed."
   },
