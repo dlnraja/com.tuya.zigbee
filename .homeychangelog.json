@@ -1,4 +1,7 @@
 {
+  "5.5.199": {
+    "en": "🏠 MULTI-PLATFORM IMPROVEMENTS: Inspired by Home Assistant ZHA, Hubitat, SmartThings! 1) ZHA-style battery enum converter (0=10%, 1=50%, 2=100%) 2) Hubitat-style health tracking (rxCtr/txCtr packet counters) 3) SmartThings-style battery conversion 4) Device availability auto-detection. Best practices from 4+ smart home platforms!"
+  },
   "5.5.198": {
     "en": "🚀 Z2M-INSPIRED IMPROVEMENTS: 1) Better voltage handling (mV/deciV auto-detection like Zigbee2MQTT) 2) Device availability tracking (auto-mark available when data received) 3) Safe capability setter with error handling 4) Stability improvements. Inspired by Zigbee2MQTT Homey app community feedback!"
   },
