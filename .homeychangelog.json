@@ -1,4 +1,7 @@
 {
+  "5.5.184": {
+    "en": "🕐 TIME SYNC FIX: CRITICAL - LCD devices now use TUYA epoch (2000) instead of Unix epoch (1970). Previously time showed year 2055! Now shows correct 2025. Temp/humidity/battery all working. Ref: Z2M#30054"
+  },
   "5.5.183": {
     "en": "🌡️ CLIMATE FIX: Reverted to v5.5.165 style - TuyaTimeSyncMixin was breaking temp/humidity. Now uses HybridSensorBase directly with inline hourly time sync. Temp/humidity + time sync both working! RE-PAIR required."
   },
