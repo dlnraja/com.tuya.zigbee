@@ -333,19 +333,24 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.183: Send time sync to device (like v5.5.165 _hybridTimeSync)
-   * Uses Tuya epoch (seconds since 2000-01-01) for LCD clock
+   * v5.5.184: Send time sync to device using TUYA epoch (2000)
+   * CRITICAL: LCD devices expect Tuya epoch (2000), NOT Unix epoch (1970)!
+   * Reference: https://github.com/Koenkk/zigbee2mqtt/issues/30054
    */
   async _sendTimeSync() {
     try {
       const now = new Date();
       const timezoneOffset = -now.getTimezoneOffset() * 60;
 
-      this.log('[CLIMATE] 🕐 Sending time sync...');
+      this.log('[CLIMATE] 🕐 Sending time sync (TUYA EPOCH 2000)...');
       this.log(`[CLIMATE] 🕐 Local: ${now.toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}`);
       this.log(`[CLIMATE] 🕐 TZ offset: GMT${timezoneOffset >= 0 ? '+' : ''}${timezoneOffset / 3600}`);
 
-      await syncDeviceTimeTuya(this, { logPrefix: '[CLIMATE]' });
+      // v5.5.184: CRITICAL - Force Tuya epoch for LCD display devices
+      await syncDeviceTimeTuya(this, {
+        logPrefix: '[CLIMATE]',
+        useTuyaEpoch: true  // Force Tuya epoch (2000) for LCD devices
+      });
 
       this.log('[CLIMATE] ✅ Time sync sent!');
     } catch (err) {

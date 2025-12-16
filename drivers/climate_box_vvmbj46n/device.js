@@ -38,7 +38,9 @@ const { syncDeviceTimeTuya } = require('../../lib/tuya/TuyaTimeSync');
  *
  * TIME SYNC PROTOCOL:
  * - Device sends mcuSyncTime (cmd 0x24) when it needs time
- * - We respond with [UTC:4bytes][Local:4bytes] in Unix epoch (seconds since 1970)
+ * - v5.5.184: CRITICAL - Use TUYA epoch (2000) NOT Unix epoch (1970)!
+ * - LCD devices interpret timestamps as seconds since 2000-01-01
+ * - We respond with [UTC:4bytes][Local:4bytes] in Tuya epoch
  * - Also proactively sync every 6 hours
  */
 
@@ -342,14 +344,20 @@ class ClimateBoxVvmbj46nDevice extends HybridSensorBase {
   // ═══════════════════════════════════════════════════════════════════════════
 
   /**
-   * v5.5.183: Send time sync to device
+   * v5.5.184: Send time sync to device using TUYA epoch (2000)
+   * CRITICAL: LCD devices expect Tuya epoch, NOT Unix epoch!
+   * Reference: https://github.com/Koenkk/zigbee2mqtt/issues/30054
    */
   async _sendTimeSync() {
     try {
       const now = new Date();
-      this.log('[TIME] 🕐 Sending time sync...');
+      this.log('[TIME] 🕐 Sending time sync (TUYA EPOCH 2000)...');
       this.log(`[TIME] 🕐 Local: ${now.toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}`);
-      await syncDeviceTimeTuya(this, { logPrefix: '[TIME]' });
+      // v5.5.184: CRITICAL - Force Tuya epoch for LCD display
+      await syncDeviceTimeTuya(this, {
+        logPrefix: '[TIME]',
+        useTuyaEpoch: true  // Force Tuya epoch (2000) for LCD devices
+      });
       this.log('[TIME] ✅ Time sync sent!');
     } catch (err) {
       this.log('[TIME] ⚠️ Time sync failed:', err.message);
