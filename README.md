@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.182-blue)
+![Version](https://img.shields.io/badge/version-5.5.183-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-84-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.182
+## 🚀 Latest Updates - v5.5.183
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.183** | 🌡️ CLIMATE FIX: Reverted to v5.5.165 style - TuyaTimeSyncMi... |
 | **v5.5.182** | 🔘 BUTTON FIX: Added multiStateInput + Tuya DP cluster suppo... |
 | **v5.5.181** | 🐛 FIX CRASH: IASZoneManager waits for Zigbee stack ready be... |
 | **v5.5.180** | 🔥 FULL HYBRID + TIME SYNC: Climate sensors use TuyaTimeSync... |
@@ -66,7 +67,6 @@
 | **v5.5.178** | 🐛 FIX: Soil sensor Flow Card IDs corrected (soil_sensor_* p... |
 | **v5.5.177** | 📦 Z2M IDs SYNC: Added 20+ manufacturerNames from zigbee-her... |
 | **v5.5.176** | 🕐 TIME SYNC via Tuya DP: Climate box _TZE284_vvmbj46n now s... |
-| **v5.5.175** | 🔧 MAPPING FIX: _TZ3000_bczr4e10 (TS0043) moved to button_wi... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
