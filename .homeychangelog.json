@@ -1,4 +1,7 @@
 {
+  "5.5.200": {
+    "en": "🚨 CRITICAL HOTFIX: Fixed app crash 'Cannot set properties of undefined'. Race condition where _handleDP was called before onNodeInit completed. Now initializes _sensorValues and _protocolStats on-demand. Affects climate sensors receiving data before full initialization."
+  },
   "5.5.199": {
     "en": "🏠 MULTI-PLATFORM IMPROVEMENTS: Inspired by Home Assistant ZHA, Hubitat, SmartThings! 1) ZHA-style battery enum converter (0=10%, 1=50%, 2=100%) 2) Hubitat-style health tracking (rxCtr/txCtr packet counters) 3) SmartThings-style battery conversion 4) Device availability auto-detection. Best practices from 4+ smart home platforms!"
   },
