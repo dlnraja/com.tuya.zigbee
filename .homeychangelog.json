@@ -1,6 +1,9 @@
 {
+  "5.5.182": {
+    "en": "🔘 BUTTON FIX: Added multiStateInput + Tuya DP cluster support for button press detection. 🎯 MOTION SENSOR: Removed static temp/humidity capabilities - now added dynamically only if device has those clusters. RE-PAIR required for motion sensors."
+  },
   "5.5.181": {
-    "en": "🐛 FIX CRASH: IASZoneManager now waits for Zigbee stack ready before IAS enrollment. Prevents 'Zigbee is starting up' crash on Homey restart. Exponential backoff retry for robust enrollment."
+    "en": "🐛 FIX CRASH: IASZoneManager waits for Zigbee stack ready before IAS enrollment. Prevents crash on Homey restart."
   },
   "5.5.180": {
     "en": "🔥 FULL HYBRID + TIME SYNC: Climate sensors use TuyaTimeSyncMixin + HybridSensorBase. Auto time sync every 6h + on wake. Proper DP parsing. LCD clock shows correct time! RE-PAIR required."
