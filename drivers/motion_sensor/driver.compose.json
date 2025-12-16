@@ -7,10 +7,9 @@
   "capabilities": [
     "alarm_motion",
     "measure_battery",
-    "measure_luminance",
-    "measure_temperature",
-    "measure_humidity"
+    "measure_luminance"
   ],
+  "$comment_capabilities": "v5.5.181: measure_temperature and measure_humidity are added DYNAMICALLY by device.js only if ZCL clusters 0x0402/0x0405 are detected. This prevents showing unused capabilities on simple PIR sensors.",
   "energy": {
     "batteries": [
       "CR2450",
