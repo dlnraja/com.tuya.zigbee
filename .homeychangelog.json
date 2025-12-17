@@ -1,4 +1,7 @@
 {
+  "5.5.201": {
+    "en": "🛠️ FLOW CARD CRASH FIX: Fixed 'Device not found' and 'invalid_flow_card_id' crashes in TuyaEF00Manager. Added comprehensive error handling when triggering flow cards for removed devices or invalid flow IDs. Prevents app crashes when devices receive data after being deleted from Homey."
+  },
   "5.5.200": {
     "en": "🚨 CRITICAL HOTFIX: Fixed app crash 'Cannot set properties of undefined'. Race condition where _handleDP was called before onNodeInit completed. Now initializes _sensorValues and _protocolStats on-demand. Affects climate sensors receiving data before full initialization."
   },
