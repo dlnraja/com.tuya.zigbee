@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.200-blue)
+![Version](https://img.shields.io/badge/version-5.5.201-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-84-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -29,7 +29,7 @@
 | **SVG Icons** | 84 |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2025-12-16 |
+| **Last Updated** | 2025-12-17 |
 
 ### 📦 Top 15 Drivers by Device IDs
 
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.200
+## 🚀 Latest Updates - v5.5.201
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.201** | 🛠️ FLOW CARD CRASH FIX: Fixed 'Device not found' and 'inval... |
 | **v5.5.200** | 🚨 CRITICAL HOTFIX: Fixed app crash 'Cannot set properties o... |
 | **v5.5.199** | 🏠 MULTI-PLATFORM IMPROVEMENTS: Inspired by Home Assistant Z... |
 | **v5.5.198** | 🚀 Z2M-INSPIRED IMPROVEMENTS: 1) Better voltage handling (mV... |
@@ -66,7 +67,6 @@
 | **v5.5.196** | 🚀 Z2M-STYLE IMPROVEMENTS: 1) Enhanced dpValues array handli... |
 | **v5.5.195** | 🕐 TIME SYNC FIX: Reversed payload format to [Local][UTC] - ... |
 | **v5.5.194** | 🔧 CRITICAL FIX: Added LOW-LEVEL handleFrame override to Hyb... |
-| **v5.5.193** | 🔧 SOIL SENSOR FIX: forceActiveTuyaMode now respected! Batte... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
