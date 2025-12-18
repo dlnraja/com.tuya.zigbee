@@ -1,5 +1,5 @@
 'use strict';
-const { HybridPlugBase } = require('../../lib/devices');
+const { HybridPlugBase } = require('../../lib/devices/HybridPlugBase');
 
 class WaterValveSmartDevice extends HybridPlugBase {
   get plugCapabilities() { return ['onoff', 'measure_battery']; }

@@ -1,6 +1,6 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices');
+const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * CO Sensor Device - v5.3.64 SIMPLIFIED

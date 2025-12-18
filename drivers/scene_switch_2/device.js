@@ -1,5 +1,5 @@
 'use strict';
-const { HybridSwitchBase } = require('../../lib/devices');
+const { HybridSwitchBase } = require('../../lib/devices/HybridSwitchBase');
 
 class SceneSwitch2Device extends HybridSwitchBase {
   get gangCount() { return 2; }
