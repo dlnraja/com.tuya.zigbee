@@ -1,4 +1,12 @@
 {
+  "5.5.208": {
+    "en": "🔥 BREAKTHROUGH: ZCL Time Cluster Implementation for TS0601 RTC Devices! Revolutionary discovery: _TZE284_vvmbj46n devices use ZCL Time Cluster 0x000A with Zigbee Epoch 2000 (NOT Tuya EF00!). New ZigbeeTimeSync module with automatic RTC detection via outCluster analysis, proper bind + writeAttributes, 24h throttling, retry logic, and debug mode. LCD displays now sync with correct Zigbee standard method. Includes TuyaRtcDetector for reliable RTC identification and comprehensive logging patterns for validation.",
+    "fr": "🔥 PERCÉE: Implémentation ZCL Time Cluster pour Dispositifs TS0601 RTC! Découverte révolutionnaire: les dispositifs _TZE284_vvmbj46n utilisent ZCL Time Cluster 0x000A avec Zigbee Epoch 2000 (PAS Tuya EF00!). Nouveau module ZigbeeTimeSync avec détection RTC automatique via analyse outCluster, bind + writeAttributes approprié, throttling 24h, logique retry, et mode debug. Les écrans LCD se synchronisent maintenant avec la méthode standard Zigbee correcte. Inclut TuyaRtcDetector pour identification RTC fiable et patterns de logging complets pour validation."
+  },
+  "5.5.207": {
+    "en": "🔥 BREAKTHROUGH: FORCED Time Sync for Passive LCD Climate Sensors - Implements unconditional time push for _TZE284_vvmbj46n devices that NEVER request time. Added isLCDClimateDevice() detection, _sendForcedTimeSync() method, onEndDeviceAnnounce hook, and enhanced TuyaEF00Manager with forceSync/useExtendedPayload/sendTimeValidDP parameters. LCD displays will now show correct time immediately!",
+    "fr": "🔥 PERCÉE: Sync Temporelle FORCÉE pour Capteurs LCD Passifs - Implémente push inconditionnel pour devices _TZE284_vvmbj46n qui ne demandent JAMAIS l'heure. Ajout détection isLCDClimateDevice(), méthode _sendForcedTimeSync(), hook onEndDeviceAnnounce, et TuyaEF00Manager amélioré avec paramètres forceSync/useExtendedPayload/sendTimeValidDP. Les écrans LCD afficheront maintenant l'heure correcte immédiatement!"
+  },
   "5.5.206": {
     "en": "📺 LCD CLIMATE TIME SYNC: Complete overhaul for LCD climate sensors (_TZE284_vvmbj46n). Added multi-endpoint discovery, immediate response timing (setImmediate), double sync, extended 12-byte payloads, and time_valid DPs. Fixes stubborn LCD displays that ignore time sync."
   },
