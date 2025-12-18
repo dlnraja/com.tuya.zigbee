@@ -429,9 +429,9 @@ class ClimateSensorDevice extends HybridSensorBase {
     // ═══════════════════════════════════════════════════════════════════════
 
     // DIAGNOSTIC FORCÉ pour _TZE284_vvmbj46n
-    const mfr = this._manufacturerName || '';
-    const modelId = this._modelId || '';
-    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Device: ${mfr} / ${modelId}`);
+    const diagnosticMfr = this._manufacturerName || '';
+    const diagnosticModelId = this._modelId || '';
+    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Device: ${diagnosticMfr} / ${diagnosticModelId}`);
     this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Protocol: ${this.getProtocol()}`);
     this.log(`[CLIMATE] 🔍 DIAGNOSTIC - isLCDClimateDevice: ${this.isLCDClimateDevice()}`);
     this.log(`[CLIMATE] 🔍 DIAGNOSTIC - needsTuyaEpoch: ${this.needsTuyaEpoch}`);
