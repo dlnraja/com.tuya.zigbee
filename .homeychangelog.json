@@ -1,4 +1,7 @@
 {
+  "5.5.204": {
+    "en": "🚨 CRITICAL DEVICE SAFETY FIXES: Fixed 4 additional code paths missing device validity checks in TuyaEF00Manager - bound listeners, DP events, and dataReport loops. These were causing persistent 'Device not found' crashes even after v5.5.202 fixes. All device lifecycle crash points now secured."
+  },
   "5.5.203": {
     "en": "🛠️ CURTAIN MOTOR RELIABILITY: Enhanced communication reliability for curtain/blind motors. Added retry logic, multiple fallback methods, and diagnostic checks to resolve non-responsive curtain issues. Improved Tuya DP communication with better error handling and logging."
   },
