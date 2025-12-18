@@ -1,5 +1,5 @@
 'use strict';
-const { HybridLightBase } = require('../../lib/devices');
+const { HybridLightBase } = require('../../lib/devices/HybridLightBase');
 
 class LEDStripAdvancedDevice extends HybridLightBase {
   get lightCapabilities() { return ['onoff', 'dim', 'light_hue', 'light_saturation', 'light_temperature']; }

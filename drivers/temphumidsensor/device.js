@@ -1,6 +1,6 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices');
+const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * TUYATEC Temperature & Humidity Sensor Device - v5.4.3

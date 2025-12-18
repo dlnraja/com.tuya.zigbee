@@ -1,6 +1,6 @@
 'use strict';
 
-const { HybridPlugBase } = require('../../lib/devices');
+const { HybridPlugBase } = require('../../lib/devices/HybridPlugBase');
 
 /**
  * Energy Monitor Plug Device - v5.3.64 SIMPLIFIED

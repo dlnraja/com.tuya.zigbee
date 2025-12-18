@@ -1,5 +1,5 @@
 'use strict';
-const { HybridSwitchBase } = require('../../lib/devices');
+const { HybridSwitchBase } = require('../../lib/devices/HybridSwitchBase');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**

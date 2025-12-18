@@ -1,5 +1,5 @@
 'use strict';
-const { HybridLightBase } = require('../../lib/devices');
+const { HybridLightBase } = require('../../lib/devices/HybridLightBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
