@@ -1,4 +1,7 @@
 {
+  "5.5.202": {
+    "en": "🔧 COMPREHENSIVE CRASH FIXES: Fixed multiple critical crashes - 'Device not found' flow card errors, 'discoveredCaps.keys is not a function' in light protocols, and device serialization errors. Enhanced all cluster event handlers with device validity checks. Made handleDatapoint async for proper flow card handling."
+  },
   "5.5.201": {
     "en": "🛠️ FLOW CARD CRASH FIX: Fixed 'Device not found' and 'invalid_flow_card_id' crashes in TuyaEF00Manager. Added comprehensive error handling when triggering flow cards for removed devices or invalid flow IDs. Prevents app crashes when devices receive data after being deleted from Homey."
   },
