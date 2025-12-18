@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.212",
+  "version": "5.5.213",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -18630,6 +18630,28 @@
               "hint": {
                 "en": "Add or subtract from humidity reading. Use positive value if sensor reads too low.",
                 "fr": "Ajouter ou soustraire de l'humidité lue. Valeur positive si capteur lit trop bas."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "🧪 Debug (Expert)",
+            "fr": "🧪 Debug (Expert)"
+          },
+          "children": [
+            {
+              "id": "zigbee_time_debug",
+              "type": "checkbox",
+              "label": {
+                "en": "ZCL Time Cluster Debug Mode",
+                "fr": "Mode Debug ZCL Time Cluster"
+              },
+              "value": false,
+              "hint": {
+                "en": "⚠️ EXPERT ONLY: Test all ZCL Time sync methods on device startup. May drain battery if used frequently.",
+                "fr": "⚠️ EXPERT UNIQUEMENT: Teste toutes les méthodes sync ZCL Time au démarrage. Peut vider la batterie si utilisé fréquemment."
               }
             }
           ]
