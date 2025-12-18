@@ -1,4 +1,8 @@
 {
+  "5.5.212": {
+    "en": "⚡ FINAL HOTFIX: Additional JavaScript syntax error fixed! Removed duplicate variable declarations for 'model' and 'manufacturer' in TuyaEF00Manager.js:89-90. This was causing driver initialization failures even after v5.5.211. All JavaScript syntax errors should now be resolved and devices should work normally.",
+    "fr": "⚡ HOTFIX FINAL: Erreur syntaxe JavaScript additionnelle corrigée! Supprimé déclarations variables dupliquées pour 'model' et 'manufacturer' dans TuyaEF00Manager.js:89-90. Ceci causait échecs initialisation drivers même après v5.5.211. Toutes erreurs syntaxe JavaScript devraient maintenant être résolues et devices fonctionner normalement."
+  },
   "5.5.211": {
     "en": "⚡ CRITICAL HOTFIX: JavaScript syntax errors fixed! Corrected 'await in non-async function' in TuyaEF00Manager.js:611 and duplicate variable 'mfr' in climate_sensor/device.js:432. These JavaScript syntax errors were preventing ALL drivers from initializing, causing complete app failure. All devices should now work normally again.",
     "fr": "⚡ HOTFIX CRITIQUE: Erreurs syntaxe JavaScript corrigées! Corrigé 'await dans fonction non-async' dans TuyaEF00Manager.js:611 et variable dupliquée 'mfr' dans climate_sensor/device.js:432. Ces erreurs JavaScript empêchaient initialisation de TOUS drivers, causant panne totale app. Tous devices devraient maintenant fonctionner normalement."
