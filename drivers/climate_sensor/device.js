@@ -1,6 +1,12 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices');
+const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const TuyaTimeManager = require('../../lib/TuyaTimeManager');
+const TuyaDeviceClassifier = require('../../lib/TuyaDeviceClassifier');
+const TuyaEpochDetector = require('../../lib/TuyaEpochDetector');
+const TuyaTimeDebugProbe = require('../../lib/TuyaTimeDebugProbe');
+const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
+const TuyaRtcDetector = require('../../lib/TuyaRtcDetector');
 const { syncDeviceTimeTuya } = require('../../lib/tuya/TuyaTimeSync');
 
 /**
@@ -237,6 +243,37 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   /**
+   * v5.5.207: Check if this is a LCD climate device that needs FORCED time sync
+   * These devices are PASSIVE and will never display time unless we push sync
+   */
+  isLCDClimateDevice() {
+    const mfr = this._manufacturerName || '';
+    const modelId = this._modelId || '';
+
+    // _TZE284_ series are LCD climate sensors with RTC displays
+    if (mfr.startsWith('_TZE284_')) return true;
+
+    // Known LCD climate sensor manufacturer IDs
+    const lcdManufacturers = [
+      '_TZE284_vvmbj46n',  // TH05Z LCD climate sensor (MAIN TARGET)
+      '_TZE284_aao6qtcs',  // Similar LCD model
+      '_TZE284_znph9215',  // Another LCD variant
+      '_TZE284_qoy0ekbd',  // LCD climate sensor
+      '_TZE200_vvmbj46n',  // Some TZE200 also have LCD
+    ];
+
+    // Check if manufacturer matches known LCD devices
+    for (const lcdMfr of lcdManufacturers) {
+      if (mfr.includes(lcdMfr)) return true;
+    }
+
+    // TS0601 with LCD indicators (some have LCD displays)
+    if (modelId === 'TS0601' && mfr.startsWith('_TZE284_')) return true;
+
+    return false;
+  }
+
+  /**
    * v5.5.190: Check if device uses battery_state enum (DP3) vs battery% (DP4)
    */
   get usesBatteryStateEnum() {
@@ -387,19 +424,60 @@ class ClimateSensorDevice extends HybridSensorBase {
     this.log(`[CLIMATE] Tuya cluster: ${this._hasTuyaCluster ? '✅' : '❌'}`);
 
     // ═══════════════════════════════════════════════════════════════════════
-    // v5.5.183: TIME SYNC SETUP (inline, like v5.5.165)
-    // Hourly time sync + on device wake
+    // v5.5.208: ZCL TIME CLUSTER SYNC - CORRECT METHOD FOR TS0601 RTC DEVICES
+    // Using ZCL Time Cluster 0x000A with Zigbee Epoch 2000 (NOT EF00!)
     // ═══════════════════════════════════════════════════════════════════════
-    this.log('[CLIMATE] 🕐 Setting up time sync (v5.5.165 style)...');
 
-    // v5.5.165: Hourly time sync interval
-    this._hourlySyncInterval = this.homey.setInterval(async () => {
-      this.log('[CLIMATE] 🕐 Hourly time sync...');
-      await this._sendTimeSync().catch(e => this.log('[CLIMATE] Time sync failed:', e.message));
-    }, 60 * 60 * 1000); // 1 hour
+    // Détection RTC via outCluster 0x000A (méthode fiable)
+    const rtcDetection = TuyaRtcDetector.hasRtc(this, { useHeuristics: true });
+    this.log(`[CLIMATE] 🔍 RTC Detection: ${JSON.stringify(rtcDetection)}`);
 
-    // Setup listener for mcuSyncTime requests from device
-    await this._setupTimeSyncListener(zclNode);
+    if (rtcDetection.hasRtc) {
+      this.log('[CLIMATE] 🔥 RTC DEVICE DETECTED - Setting up ZCL Time Cluster sync');
+
+      // ─────────────────────────────────────────────────────────────────────
+      // ZCL TIME SYNC: Production-ready avec bind + writeAttributes + throttle
+      // ─────────────────────────────────────────────────────────────────────
+      this.zigbeeTimeSync = new ZigbeeTimeSync(this, {
+        throttleMs: 24 * 60 * 60 * 1000, // 24h throttle (battery safe)
+        maxRetries: 3,
+        retryDelayMs: 2000
+      });
+
+      // One-shot sync immediate
+      const syncResult = await this.zigbeeTimeSync.sync({ force: true });
+      if (syncResult.success) {
+        this.log('[CLIMATE] ✅ Initial ZCL Time sync successful - LCD should show correct time!');
+      } else {
+        this.log(`[CLIMATE] ⚠️ Initial sync failed: ${syncResult.reason}`);
+      }
+
+      // Daily sync (ultra battery-safe)
+      this._dailyZclSyncInterval = this.homey.setInterval(async () => {
+        this.log('[CLIMATE] 🕐 Daily ZCL Time sync...');
+        const result = await this.zigbeeTimeSync.sync();
+        this.log(`[CLIMATE] Daily sync result: ${result.success ? 'success' : result.reason}`);
+      }, 24 * 60 * 60 * 1000);
+
+      // ─────────────────────────────────────────────────────────────────────
+      // DEBUG MODE: Test toutes les méthodes ZCL (si activé)
+      // ─────────────────────────────────────────────────────────────────────
+      if (this.getSettings().zigbee_time_debug === true) {
+        this.log('[CLIMATE] 🧪 ZCL DEBUG MODE: Testing all Time cluster methods...');
+        const debugResults = await this.zigbeeTimeSync.debugSync();
+        this.log('[CLIMATE] 🧪 Debug complete:', JSON.stringify(debugResults, null, 2));
+      }
+
+      this.log('[CLIMATE] 🎯 ZCL Time Cluster sync setup complete (method: bind + writeAttributes)');
+    }
+
+    // Legacy time sync for non-RTC devices (keep existing behavior)
+    if (!TuyaDeviceClassifier.hasRtcScreen(this)) {
+      this._hourlySyncInterval = this.homey.setInterval(async () => {
+        this.log('[CLIMATE] 🕐 Hourly time sync (non-RTC device)...');
+        await this._sendTimeSync().catch(e => this.log('[CLIMATE] Time sync failed:', e.message));
+      }, 60 * 60 * 1000); // 1 hour
+    }
 
     // ═══════════════════════════════════════════════════════════════════════
     // v5.5.188: EXPLICIT ZCL CLUSTER SETUP (like v5.5.165)
@@ -427,12 +505,15 @@ class ClimateSensorDevice extends HybridSensorBase {
     // ═══════════════════════════════════════════════════════════════════════
     await this._readZCLAttributesNow(zclNode);
 
-    this.log('[CLIMATE] ✅ Climate sensor ready - INTELLIGENT v5.5.190');
+    this.log('[CLIMATE] ✅ Climate sensor ready - INTELLIGENT v5.5.207 + FORCED LCD SYNC');
     this.log('[CLIMATE] ════════════════════════════════════════════════════════════');
     this.log('[CLIMATE] ⚠️ BATTERY DEVICE - This is a sleepy sensor!');
     this.log('[CLIMATE] ⚠️ First data may take 10-60 minutes after pairing');
     this.log('[CLIMATE] ⚠️ Device only wakes up periodically to save battery');
     this.log('[CLIMATE] ⚠️ All DP/ZCL requests sent - waiting for device to wake up');
+    if (this.isLCDClimateDevice()) {
+      this.log('[CLIMATE] 🔥 LCD DEVICE - FORCED time sync enabled for display');
+    }
     this.log('[CLIMATE] ════════════════════════════════════════════════════════════');
     this.log('');
   }
@@ -441,48 +522,56 @@ class ClimateSensorDevice extends HybridSensorBase {
   // TIME SYNC LISTENER - Respond to device time requests
   // ═══════════════════════════════════════════════════════════════════════════
 
-  async _setupTimeSyncListener(zclNode) {
-    try {
-      const ep1 = zclNode?.endpoints?.[1];
-      if (!ep1) return;
-
-      const tuyaCluster = ep1.clusters?.tuya ||
-        ep1.clusters?.manuSpecificTuya ||
-        ep1.clusters?.[61184] ||
-        ep1.clusters?.[0xEF00];
-
-      if (!tuyaCluster) {
-        this.log('[CLIMATE] ⚠️ Tuya cluster not found for time sync listener');
-        return;
-      }
-
-      if (typeof tuyaCluster.on === 'function') {
-        // Listen for mcuSyncTime requests (command 0x24)
-        tuyaCluster.on('mcuSyncTime', async () => {
-          this.log('[CLIMATE] 🕐 Device requested time sync (mcuSyncTime)');
-          await this._respondToTimeRequest();
-        });
-
-        // Also listen for command events
-        tuyaCluster.on('command', async (cmdName, payload) => {
-          if (cmdName === 'mcuSyncTime' || cmdName === 'timeSyncRequest' || cmdName === '0x24') {
-            this.log(`[CLIMATE] 🕐 Time sync request via command: ${cmdName}`);
-            await this._respondToTimeRequest();
-          }
-        });
-
-        this.log('[CLIMATE] ✅ Time sync listener active');
-      }
-    } catch (err) {
-      this.log('[CLIMATE] ⚠️ Time sync listener setup failed:', err.message);
-    }
-  }
 
   /**
-   * Respond to device time request using TuyaTimeSync module
+   * v5.5.207: FORCED time sync for LCD climate devices that are PASSIVE
+   * These devices NEVER request time and ONLY display time if we PUSH it unconditionally
+   * Uses enhanced TuyaEF00Manager with multi-endpoint + double sync + extended payload
    */
-  async _respondToTimeRequest() {
-    await this._sendTimeSync();
+  async _sendForcedTimeSync() {
+    if (!this.isLCDClimateDevice()) {
+      this.log('[CLIMATE] 🕐 Not a LCD device - using regular time sync');
+      return await this._sendTimeSync();
+    }
+
+    try {
+      const mfr = this._manufacturerName || '';
+      const now = new Date();
+      const timezoneOffset = -now.getTimezoneOffset() * 60;
+
+      this.log('[CLIMATE] 🔥 FORCING time sync for LCD climate device');
+      this.log(`[CLIMATE] 🔥 Target: ${mfr || 'unknown'} (passive LCD sensor)`);
+      this.log(`[CLIMATE] 🔥 Local: ${now.toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}`);
+      this.log(`[CLIMATE] 🔥 TZ offset: GMT${timezoneOffset >= 0 ? '+' : ''}${timezoneOffset / 3600}`);
+
+      // Use TuyaEF00Manager's enhanced sendTimeSync with forced parameters
+      const tuyaManager = this._getTuyaManager();
+      if (!tuyaManager || typeof tuyaManager.sendTimeSync !== 'function') {
+        this.log('[CLIMATE] ❌ TuyaEF00Manager not available for forced sync');
+        return false;
+      }
+
+      // v5.5.207: FORCED sync with immediate response + double sync + extended payload
+      const result = await tuyaManager.sendTimeSync({
+        useTuyaEpoch: true,        // LCD devices need Tuya epoch (2000)
+        forceSync: true,           // BYPASS all conditions - FORCE sync
+        useExtendedPayload: true,  // 12-byte payload for LCD climate sensors
+        sendTimeValidDP: true,     // Send DP 0x65/0x66/0x6A to enable LCD display
+        logPrefix: '[CLIMATE-FORCED]'
+      });
+
+      if (result) {
+        this.log('[CLIMATE] 🔥 ✅ FORCED time sync delivered successfully!');
+        this.log('[CLIMATE] 🔥 ⏰ LCD display should now show correct time');
+        return true;
+      } else {
+        this.log('[CLIMATE] 🔥 ⚠️ FORCED sync failed - device may be sleeping deeply');
+        return false;
+      }
+    } catch (err) {
+      this.log('[CLIMATE] 🔥 ❌ FORCED time sync failed:', err.message);
+      return false;
+    }
   }
 
   /**
@@ -526,6 +615,25 @@ class ClimateSensorDevice extends HybridSensorBase {
     } catch (err) {
       this.log('[CLIMATE] ❌ Time sync failed:', err.message);
     }
+  }
+
+  /**
+   * v5.5.208: Clean up intervals on destroy - including new ZCL Time intervals
+   */
+  async onDestroy() {
+    if (this._dailySyncInterval) {
+      this.homey.clearInterval(this._dailySyncInterval);
+      this._dailySyncInterval = null;
+    }
+    if (this._hourlySyncInterval) {
+      this.homey.clearInterval(this._hourlySyncInterval);
+      this._hourlySyncInterval = null;
+    }
+    if (this._dailyZclSyncInterval) {
+      this.homey.clearInterval(this._dailyZclSyncInterval);
+      this._dailyZclSyncInterval = null;
+    }
+    return super.onDestroy();
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -905,6 +1013,41 @@ class ClimateSensorDevice extends HybridSensorBase {
     await this._sendTimeSync().catch(() => { });
 
     return true;
+  }
+
+  /**
+   * v5.5.208: onEndDeviceAnnounce - ZCL Time Cluster wake-up sync
+   * Uses ZigbeeTimeSync with throttle protection (ultra battery-safe)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[CLIMATE] 🔔 Device announced (wake from sleep)');
+
+    // RTC devices: use ZCL Time Cluster sync on wake-up
+    const rtcDetection = TuyaRtcDetector.hasRtc(this);
+    if (rtcDetection.hasRtc && this.zigbeeTimeSync) {
+      this.log('[CLIMATE] 🕐 RTC device wake - triggering ZCL Time sync...');
+
+      // ZigbeeTimeSync has built-in 24h throttle - won't spam battery
+      const result = await this.zigbeeTimeSync.sync();
+      if (result.success) {
+        this.log('[CLIMATE] ✅ Wake-up ZCL Time sync successful');
+      } else if (result.reason !== 'throttled') {
+        this.log(`[CLIMATE] ⚠️ Wake-up sync failed: ${result.reason}`);
+      }
+    }
+
+    // Legacy time sync for non-RTC devices
+    else if (this.timeManager && TuyaDeviceClassifier.hasRtcScreen(this)) {
+      await this.timeManager.sync({
+        useEpoch2000: this.needsTuyaEpoch,
+        retries: 1
+      });
+    }
+
+    // Call parent handler if it exists
+    if (super.onEndDeviceAnnounce) {
+      await super.onEndDeviceAnnounce();
+    }
   }
 
   /**

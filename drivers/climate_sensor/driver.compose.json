@@ -1073,6 +1073,28 @@
           }
         }
       ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "🧪 Debug (Expert)",
+        "fr": "🧪 Debug (Expert)"
+      },
+      "children": [
+        {
+          "id": "zigbee_time_debug",
+          "type": "checkbox",
+          "label": {
+            "en": "ZCL Time Cluster Debug Mode",
+            "fr": "Mode Debug ZCL Time Cluster"
+          },
+          "value": false,
+          "hint": {
+            "en": "⚠️ EXPERT ONLY: Test all ZCL Time sync methods on device startup. May drain battery if used frequently.",
+            "fr": "⚠️ EXPERT UNIQUEMENT: Teste toutes les méthodes sync ZCL Time au démarrage. Peut vider la batterie si utilisé fréquemment."
+          }
+        }
+      ]
     }
   ],
   "flow": {
