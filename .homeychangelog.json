@@ -1,4 +1,7 @@
 {
+  "5.5.203": {
+    "en": "🛠️ CURTAIN MOTOR RELIABILITY: Enhanced communication reliability for curtain/blind motors. Added retry logic, multiple fallback methods, and diagnostic checks to resolve non-responsive curtain issues. Improved Tuya DP communication with better error handling and logging."
+  },
   "5.5.202": {
     "en": "🔧 COMPREHENSIVE CRASH FIXES: Fixed multiple critical crashes - 'Device not found' flow card errors, 'discoveredCaps.keys is not a function' in light protocols, and device serialization errors. Enhanced all cluster event handlers with device validity checks. Made handleDatapoint async for proper flow card handling."
   },
