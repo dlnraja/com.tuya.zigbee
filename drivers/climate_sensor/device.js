@@ -428,6 +428,14 @@ class ClimateSensorDevice extends HybridSensorBase {
     // Using ZCL Time Cluster 0x000A with Zigbee Epoch 2000 (NOT EF00!)
     // ═══════════════════════════════════════════════════════════════════════
 
+    // DIAGNOSTIC FORCÉ pour _TZE284_vvmbj46n
+    const mfr = this._manufacturerName || '';
+    const modelId = this._modelId || '';
+    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Device: ${mfr} / ${modelId}`);
+    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Protocol: ${this.getProtocol()}`);
+    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - isLCDClimateDevice: ${this.isLCDClimateDevice()}`);
+    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - needsTuyaEpoch: ${this.needsTuyaEpoch}`);
+
     // Détection RTC via outCluster 0x000A (méthode fiable)
     const rtcDetection = TuyaRtcDetector.hasRtc(this, { useHeuristics: true });
     this.log(`[CLIMATE] 🔍 RTC Detection: ${JSON.stringify(rtcDetection)}`);
@@ -485,6 +493,12 @@ class ClimateSensorDevice extends HybridSensorBase {
     // ═══════════════════════════════════════════════════════════════════════
     await this._setupExplicitZCLClusters(zclNode);
 
+    // DIAGNOSTIC FORCÉ - Vérifier état clusters et données
+    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Available clusters: ${JSON.stringify(Object.keys(clusters || {}))}`);
+    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Available capabilities: ${JSON.stringify(this.getCapabilities())}`);
+    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Current values: temp=${this.getCapabilityValue('measure_temperature')}, hum=${this.getCapabilityValue('measure_humidity')}, bat=${this.getCapabilityValue('measure_battery')}`);
+    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - _hasTuyaCluster: ${this._hasTuyaCluster}`);
+
     // ═══════════════════════════════════════════════════════════════════════
     // Send Tuya Magic Packet to wake up device
     // ═══════════════════════════════════════════════════════════════════════
@@ -493,6 +507,8 @@ class ClimateSensorDevice extends HybridSensorBase {
       await this._sendTuyaMagicPacket(zclNode).catch(e => {
         this.log('[CLIMATE] Magic packet failed:', e.message);
       });
+    } else {
+      this.log('[CLIMATE] ❌ NO TUYA CLUSTER - Device might not be pairing correctly');
     }
 
     // ═══════════════════════════════════════════════════════════════════════
