@@ -1,4 +1,8 @@
 {
+  "5.5.214": {
+    "en": "🚨 URGENT HOTFIX: Fixed critical bugs introduced in v5.5.213! Resolved 'Class extends value undefined' error (HybridSensorBase export), fixed 'getDriverId is not a function' error. These JavaScript crashes were preventing ALL device initialization. Based on user reports: 'Plus rien ne marche', 'Aucune data qui remonte' - this version should restore device functionality.",
+    "fr": "🚨 HOTFIX URGENT: Corrigé bugs critiques introduits v5.5.213! Résolu erreur 'Class extends value undefined' (export HybridSensorBase), corrigé erreur 'getDriverId is not a function'. Ces crashs JavaScript empêchaient initialisation TOUS devices. Basé sur rapports utilisateurs: 'Plus rien ne marche', 'Aucune data qui remonte' - cette version devrait restaurer fonctionnalité devices."
+  },
   "5.5.213": {
     "en": "🎯 PERFECT VERSION: All critical issues resolved! Fixed JavaScript syntax errors preventing ALL device initialization (await/async, duplicate variables), resolved app crash from capability duplication (alarm_curtain_motor), corrected TuyaEF00Manager initialization failures. Includes massive diagnostic logging for troubleshooting. This version passed complete validation and should restore full device functionality.",
     "fr": "🎯 VERSION PARFAITE: Tous problèmes critiques résolus! Corrigé erreurs syntaxe JavaScript empêchant initialisation TOUS devices (await/async, variables dupliquées), résolu crash app duplication capability (alarm_curtain_motor), corrigé échecs initialisation TuyaEF00Manager. Inclut logs diagnostic massifs pour dépannage. Cette version a passé validation complète et devrait restaurer fonctionnalité complète devices."
