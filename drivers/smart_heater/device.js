@@ -1,5 +1,5 @@
 'use strict';
-const { HybridThermostatBase } = require('../../lib/devices');
+const { HybridThermostatBase } = require('../../lib/devices/HybridThermostatBase');
 
 class SmartHeaterDevice extends HybridThermostatBase {
   get mainsPowered() { return true; }

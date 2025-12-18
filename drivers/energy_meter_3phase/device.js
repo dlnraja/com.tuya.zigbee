@@ -1,5 +1,5 @@
 'use strict';
-const { HybridPlugBase } = require('../../lib/devices');
+const { HybridPlugBase } = require('../../lib/devices/HybridPlugBase');
 
 class EnergyMeter3PhaseDevice extends HybridPlugBase {
   get plugCapabilities() { return ['measure_power', 'meter_power', 'measure_voltage', 'measure_current']; }
