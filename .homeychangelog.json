@@ -1,4 +1,8 @@
 {
+  "5.5.211": {
+    "en": "⚡ CRITICAL HOTFIX: JavaScript syntax errors fixed! Corrected 'await in non-async function' in TuyaEF00Manager.js:611 and duplicate variable 'mfr' in climate_sensor/device.js:432. These JavaScript syntax errors were preventing ALL drivers from initializing, causing complete app failure. All devices should now work normally again.",
+    "fr": "⚡ HOTFIX CRITIQUE: Erreurs syntaxe JavaScript corrigées! Corrigé 'await dans fonction non-async' dans TuyaEF00Manager.js:611 et variable dupliquée 'mfr' dans climate_sensor/device.js:432. Ces erreurs JavaScript empêchaient initialisation de TOUS drivers, causant panne totale app. Tous devices devraient maintenant fonctionner normalement."
+  },
   "5.5.210": {
     "en": "🚨 EMERGENCY DIAGNOSTIC: Massive logging added everywhere for critical troubleshooting. ALL devices reporting null data - added forced diagnostic logs in HybridSensorBase, TuyaEF00Manager, UniversalDataHandler. Logs show device initialization, cluster detection, protocol analysis, data flow, endpoints, capabilities, and communication status. Essential for identifying why entire app stopped working.",
     "fr": "🚨 DIAGNOSTIC URGENCE: Logs massifs ajoutés partout pour dépannage critique. TOUS devices remontent données null - ajout logs diagnostic forcés dans HybridSensorBase, TuyaEF00Manager, UniversalDataHandler. Logs montrent initialisation device, détection clusters, analyse protocole, flux données, endpoints, capabilities, et statut communication. Essentiel pour identifier pourquoi app entière ne fonctionne plus."
