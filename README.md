@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.205-blue)
+![Version](https://img.shields.io/badge/version-5.5.208-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-84-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -53,20 +53,20 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.205
+## 🚀 Latest Updates - v5.5.208
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.208** | 🔥 BREAKTHROUGH: ZCL Time Cluster Implementation for TS0601 ... |
+| **v5.5.207** | 🔥 BREAKTHROUGH: FORCED Time Sync for Passive LCD Climate Se... |
+| **v5.5.206** | 📺 LCD CLIMATE TIME SYNC: Complete overhaul for LCD climate ... |
 | **v5.5.205** | 🔥 CRITICAL CONST FIX: Fixed 'Assignment to constant variabl... |
 | **v5.5.204** | 🚨 CRITICAL DEVICE SAFETY FIXES: Fixed 4 additional code pat... |
 | **v5.5.203** | 🛠️ CURTAIN MOTOR RELIABILITY: Enhanced communication reliab... |
 | **v5.5.202** | 🔧 COMPREHENSIVE CRASH FIXES: Fixed multiple critical crashe... |
 | **v5.5.201** | 🛠️ FLOW CARD CRASH FIX: Fixed 'Device not found' and 'inval... |
-| **v5.5.200** | 🚨 CRITICAL HOTFIX: Fixed app crash 'Cannot set properties o... |
-| **v5.5.199** | 🏠 MULTI-PLATFORM IMPROVEMENTS: Inspired by Home Assistant Z... |
-| **v5.5.198** | 🚀 Z2M-INSPIRED IMPROVEMENTS: 1) Better voltage handling (mV... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
