@@ -1,4 +1,7 @@
 {
+  "5.5.206": {
+    "en": "📺 LCD CLIMATE TIME SYNC: Complete overhaul for LCD climate sensors (_TZE284_vvmbj46n). Added multi-endpoint discovery, immediate response timing (setImmediate), double sync, extended 12-byte payloads, and time_valid DPs. Fixes stubborn LCD displays that ignore time sync."
+  },
   "5.5.205": {
     "en": "🔥 CRITICAL CONST FIX: Fixed 'Assignment to constant variable' crashes in TuyaEF00Manager.handleDatapoint. Changed const value to let value to allow sensor conversion reassignments (temperature, humidity, battery, illuminance). Resolves massive crash wave affecting v5.5.203-204."
   },
