@@ -368,3 +368,4 @@ If you find it useful and want to support continued development:
 **Made with ❤️ by Dylan Rajasekaram & the Zigbee community**
 
 *Last updated: 2025-12-04*
+# ZCL Time Cluster v5.5.208
