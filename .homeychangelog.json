@@ -1,4 +1,8 @@
 {
+  "5.5.210": {
+    "en": "🚨 EMERGENCY DIAGNOSTIC: Massive logging added everywhere for critical troubleshooting. ALL devices reporting null data - added forced diagnostic logs in HybridSensorBase, TuyaEF00Manager, UniversalDataHandler. Logs show device initialization, cluster detection, protocol analysis, data flow, endpoints, capabilities, and communication status. Essential for identifying why entire app stopped working.",
+    "fr": "🚨 DIAGNOSTIC URGENCE: Logs massifs ajoutés partout pour dépannage critique. TOUS devices remontent données null - ajout logs diagnostic forcés dans HybridSensorBase, TuyaEF00Manager, UniversalDataHandler. Logs montrent initialisation device, détection clusters, analyse protocole, flux données, endpoints, capabilities, et statut communication. Essentiel pour identifier pourquoi app entière ne fonctionne plus."
+  },
   "5.5.209": {
     "en": "🔧 DIAGNOSTIC: Added forced diagnostic logs for _TZE284_vvmbj46n devices not reporting data. Enhanced troubleshooting for devices showing null temperature, humidity, and battery values. Logs now show cluster availability, capabilities, current values, and communication status without requiring debug mode activation.",
     "fr": "🔧 DIAGNOSTIC: Ajout logs diagnostic forcés pour devices _TZE284_vvmbj46n ne remontant pas de données. Dépannage amélioré pour devices affichant valeurs null température, humidité, batterie. Les logs montrent maintenant disponibilité clusters, capabilities, valeurs actuelles, et statut communication sans activation mode debug."
