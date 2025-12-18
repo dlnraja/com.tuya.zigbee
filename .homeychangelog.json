@@ -1,4 +1,7 @@
 {
+  "5.5.205": {
+    "en": "🔥 CRITICAL CONST FIX: Fixed 'Assignment to constant variable' crashes in TuyaEF00Manager.handleDatapoint. Changed const value to let value to allow sensor conversion reassignments (temperature, humidity, battery, illuminance). Resolves massive crash wave affecting v5.5.203-204."
+  },
   "5.5.204": {
     "en": "🚨 CRITICAL DEVICE SAFETY FIXES: Fixed 4 additional code paths missing device validity checks in TuyaEF00Manager - bound listeners, DP events, and dataReport loops. These were causing persistent 'Device not found' crashes even after v5.5.202 fixes. All device lifecycle crash points now secured."
   },
