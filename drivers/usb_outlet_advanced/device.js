@@ -1,5 +1,5 @@
 'use strict';
-const { HybridPlugBase } = require('../../lib/devices');
+const { HybridPlugBase } = require('../../lib/devices/HybridPlugBase');
 
 /**
  * USB Outlet Advanced Device - v5.5.35 ENHANCED DP COVERAGE

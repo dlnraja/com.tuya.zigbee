@@ -1,5 +1,5 @@
 'use strict';
-const { HybridSensorBase } = require('../../lib/devices');
+const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 class AirQualityComprehensiveDevice extends HybridSensorBase {
   get mainsPowered() { return true; }

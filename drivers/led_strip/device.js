@@ -1,6 +1,6 @@
 'use strict';
 
-const { HybridLightBase } = require('../../lib/devices');
+const { HybridLightBase } = require('../../lib/devices/HybridLightBase');
 
 /**
  * LED Strip Device - v5.3.64 SIMPLIFIED
