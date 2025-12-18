@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.203-blue)
+![Version](https://img.shields.io/badge/version-5.5.204-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-84-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.203
+## 🚀 Latest Updates - v5.5.204
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.204** | 🚨 CRITICAL DEVICE SAFETY FIXES: Fixed 4 additional code pat... |
 | **v5.5.203** | 🛠️ CURTAIN MOTOR RELIABILITY: Enhanced communication reliab... |
 | **v5.5.202** | 🔧 COMPREHENSIVE CRASH FIXES: Fixed multiple critical crashe... |
 | **v5.5.201** | 🛠️ FLOW CARD CRASH FIX: Fixed 'Device not found' and 'inval... |
@@ -66,7 +67,6 @@
 | **v5.5.199** | 🏠 MULTI-PLATFORM IMPROVEMENTS: Inspired by Home Assistant Z... |
 | **v5.5.198** | 🚀 Z2M-INSPIRED IMPROVEMENTS: 1) Better voltage handling (mV... |
 | **v5.5.197** | 🌱 SOIL SENSOR FIX: DIRECT capability setting for DP3 (humid... |
-| **v5.5.196** | 🚀 Z2M-STYLE IMPROVEMENTS: 1) Enhanced dpValues array handli... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
