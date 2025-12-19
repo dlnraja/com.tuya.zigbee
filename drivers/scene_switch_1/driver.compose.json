@@ -9,8 +9,12 @@
     "measure_battery"
   ],
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZ3000_6zvw8ham"
+    ],
+    "productId": [
+      "TS0203"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
