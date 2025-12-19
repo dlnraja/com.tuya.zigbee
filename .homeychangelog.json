@@ -1,11 +1,17 @@
 {
+  "5.5.216": {
+    "en": "CRITICAL HOTFIX: Fixed 'could not get device by id' errors in flow cards by adding protective device validation in all FlowCardManager.js handlers. Prevents flow crashes when device references become corrupted or invalid. Resolves button flow integration issues reported post v5.5.215.",
+    "nl": "KRITIEKE HOTFIX: 'could not get device by id' fouten in flow kaarten opgelost door beschermende apparaat validatie toe te voegen.",
+    "de": "KRITISCHER HOTFIX: 'could not get device by id' Fehler in Flow-Karten durch Schutz-Gerätevalidierung behoben."
+  },
   "5.5.215": {
-    "en": "🎉 MASSIVE IMPORT FIX: Corrected 70+ drivers with incorrect import paths! Fixed all remaining 'Class extends value undefined' errors by correcting HybridSensorBase, HybridPlugBase, HybridSwitchBase, HybridThermostatBase, HybridCoverBase, and HybridLightBase imports. This comprehensive fix should eliminate ALL JavaScript crashes preventing device initialization across motion_sensor, plug_smart, curtain_motor, thermostat_tuya_dp, and 65+ other drivers.",
-    "fr": "🎉 CORRECTION MASSIVE IMPORTS: Corrigé 70+ drivers avec chemins imports incorrects! Fixé toutes erreurs restantes 'Class extends value undefined' en corrigeant imports HybridSensorBase, HybridPlugBase, HybridSwitchBase, HybridThermostatBase, HybridCoverBase, et HybridLightBase. Cette correction complète devrait éliminer TOUS crashs JavaScript empêchant initialisation devices sur motion_sensor, plug_smart, curtain_motor, thermostat_tuya_dp, et 65+ autres drivers."
+    "en": "MASSIVE IMPORT FIX: Fixed 70+ drivers with incorrect base class imports causing 'Class extends value undefined' errors. All HybridSensorBase, HybridPlugBase, HybridLightBase, HybridSwitchBase, HybridThermostatBase, HybridCoverBase imports corrected from require('../../lib/devices') to direct class imports. Eliminates phantom device detection false positives and app crashes.",
+    "nl": "MASSALE IMPORT FIX: 70+ drivers gecorrigeerd met onjuiste base class imports die 'Class extends value undefined' fouten veroorzaakten.",
+    "de": "MASSIVE IMPORT-KORREKTUR: 70+ Treiber mit falschen Basisklassen-Imports korrigiert."
   },
   "5.5.214": {
-    "en": "🚨 URGENT HOTFIX: Fixed critical bugs introduced in v5.5.213! Resolved 'Class extends value undefined' error (HybridSensorBase export), fixed 'getDriverId is not a function' error. These JavaScript crashes were preventing ALL device initialization. Based on user reports: 'Plus rien ne marche', 'Aucune data qui remonte' - this version should restore device functionality.",
-    "fr": "🚨 HOTFIX URGENT: Corrigé bugs critiques introduits v5.5.213! Résolu erreur 'Class extends value undefined' (export HybridSensorBase), corrigé erreur 'getDriverId is not a function'. Ces crashs JavaScript empêchaient initialisation TOUS devices. Basé sur rapports utilisateurs: 'Plus rien ne marche', 'Aucune data qui remonte' - cette version devrait restaurer fonctionnalité devices."
+    "en": " URGENT HOTFIX: Fixed critical bugs introduced in v5.5.213! Resolved 'Class extends value undefined' error (HybridSensorBase export), fixed 'getDriverId is not a function' error. These JavaScript crashes were preventing ALL device initialization. Based on user reports: 'Plus rien ne marche', 'Aucune data qui remonte' - this version should restore device functionality.",
+    "fr": " HOTFIX URGENT: Corrigé bugs critiques introduits v5.5.213! Résolu erreur 'Class extends value undefined' (export HybridSensorBase), corrigé erreur 'getDriverId is not a function'. Ces crashs JavaScript empêchaient initialisation TOUS devices. Basé sur rapports utilisateurs: 'Plus rien ne marche', 'Aucune data qui remonte' - cette version devrait restaurer fonctionnalité devices."
   },
   "5.5.213": {
     "en": "🎯 PERFECT VERSION: All critical issues resolved! Fixed JavaScript syntax errors preventing ALL device initialization (await/async, duplicate variables), resolved app crash from capability duplication (alarm_curtain_motor), corrected TuyaEF00Manager initialization failures. Includes massive diagnostic logging for troubleshooting. This version passed complete validation and should restore full device functionality.",
