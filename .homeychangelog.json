@@ -1,4 +1,9 @@
 {
+  "5.5.217": {
+    "en": "COMMUNITY DEVICES ADDED: Fixed gas sensor _TZE204_chbyv06 misclassification (Forum #638). Added MOES Scene Switch 4gang _TZ3000_zgyzgdua, Bseed Wall Socket _TZ3210_4ux0ondb, E14 LED Color Bulb _TZ3210_s8lvbbu, WenzhiIoT mmWave Motion Sensor _TZE204_gkfbdvyx, Tuya PIR _TZE200_ghynnvos. All GitHub Issues #1327/#1326/#1325/#1322/#1321 resolved. IR Remote ZS06 confirmed supported.",
+    "nl": "COMMUNITY APPARATEN TOEGEVOEGD: Gas sensor _TZE204_chbyv06 classificatie gecorrigeerd. MOES Scene Switch, Bseed Wall Socket, LED Color Bulb, mmWave Motion Sensor toegevoegd.",
+    "de": "COMMUNITY GERÄTE HINZUGEFÜGT: Gas-Sensor _TZE204_chbyv06 Klassifizierung korrigiert. MOES Scene Switch, Bseed Wandsteckdose, LED Farbbirne hinzugefügt."
+  },
   "5.5.216": {
     "en": "CRITICAL HOTFIX: Fixed 'could not get device by id' errors in flow cards by adding protective device validation in all FlowCardManager.js handlers. Prevents flow crashes when device references become corrupted or invalid. Resolves button flow integration issues reported post v5.5.215.",
     "nl": "KRITIEKE HOTFIX: 'could not get device by id' fouten in flow kaarten opgelost door beschermende apparaat validatie toe te voegen.",
