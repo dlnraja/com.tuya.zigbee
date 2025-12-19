@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.208-blue)
+![Version](https://img.shields.io/badge/version-5.5.215-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-84-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -53,20 +53,20 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.208
+## 🚀 Latest Updates - v5.5.215
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.215** | 🎉 MASSIVE IMPORT FIX: Corrected 70+ drivers with incorrect ... |
+| **v5.5.214** | 🚨 URGENT HOTFIX: Fixed critical bugs introduced in v5.5.213... |
+| **v5.5.213** | 🎯 PERFECT VERSION: All critical issues resolved! Fixed Java... |
+| **v5.5.212** | ⚡ FINAL HOTFIX: Additional JavaScript syntax error fixed! Re... |
+| **v5.5.211** | ⚡ CRITICAL HOTFIX: JavaScript syntax errors fixed! Corrected... |
+| **v5.5.210** | 🚨 EMERGENCY DIAGNOSTIC: Massive logging added everywhere fo... |
+| **v5.5.209** | 🔧 DIAGNOSTIC: Added forced diagnostic logs for _TZE284_vvmb... |
 | **v5.5.208** | 🔥 BREAKTHROUGH: ZCL Time Cluster Implementation for TS0601 ... |
-| **v5.5.207** | 🔥 BREAKTHROUGH: FORCED Time Sync for Passive LCD Climate Se... |
-| **v5.5.206** | 📺 LCD CLIMATE TIME SYNC: Complete overhaul for LCD climate ... |
-| **v5.5.205** | 🔥 CRITICAL CONST FIX: Fixed 'Assignment to constant variabl... |
-| **v5.5.204** | 🚨 CRITICAL DEVICE SAFETY FIXES: Fixed 4 additional code pat... |
-| **v5.5.203** | 🛠️ CURTAIN MOTOR RELIABILITY: Enhanced communication reliab... |
-| **v5.5.202** | 🔧 COMPREHENSIVE CRASH FIXES: Fixed multiple critical crashe... |
-| **v5.5.201** | 🛠️ FLOW CARD CRASH FIX: Fixed 'Device not found' and 'inval... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
