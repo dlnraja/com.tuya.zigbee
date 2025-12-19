@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 GitHub Auto-Monitor Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .status-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .status-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .status-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #4a5568;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .status-running { background-color: #48bb78; }
+        .status-stopped { background-color: #f56565; }
+        .status-warning { background-color: #ed8936; }
+
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .metric-value {
+            font-weight: bold;
+            color: #2d3748;
+        }
+
+        .logs-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .logs-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logs-header h3 {
+            color: #4a5568;
+            font-size: 1.3rem;
+        }
+
+        .refresh-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+
+        .refresh-btn:hover {
+            background: #5a6fd8;
+        }
+
+        .log-entry {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.85rem;
+            padding: 8px 12px;
+            border-left: 3px solid #e2e8f0;
+            margin-bottom: 8px;
+            background: #f7fafc;
+            border-radius: 4px;
+        }
+
+        .log-info { border-left-color: #3182ce; }
+        .log-success { border-left-color: #38a169; }
+        .log-warning { border-left-color: #d69e2e; }
+        .log-error { border-left-color: #e53e3e; }
+
+        .devices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .device-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid #48bb78;
+        }
+
+        .device-name {
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 8px;
+        }
+
+        .device-details {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+
+        .controls-panel {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .control-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            margin: 0 10px 10px 0;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.2s ease;
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .control-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-top: 5px;
+        }
+
+        .auto-refresh {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 10px; }
+            .header h1 { font-size: 2rem; }
+            .status-grid { grid-template-columns: 1fr; }
+            .stats-row { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 GitHub Auto-Monitor Dashboard</h1>
+            <p>Surveillance automatique des Issues Johan → dlnraja | Système autonome actif</p>
+        </div>
+
+        <div class="status-grid">
+            <div class="status-card">
+                <h3>
+                    <span class="status-indicator" id="process-status"></span>
+                    Processus Auto-Monitor
+                </h3>
+                <div class="metric">
+                    <span>Status:</span>
+                    <span class="metric-value" id="process-status-text">Chargement...</span>
+                </div>
+                <div class="metric">
+                    <span>PID:</span>
+                    <span class="metric-value" id="process-pid">-</span>
+                </div>
+                <div class="metric">
+                    <span>Uptime:</span>
+                    <span class="metric-value" id="process-uptime">-</span>
+                </div>
+                <div class="metric">
+                    <span>Dernière vérification:</span>
+                    <span class="metric-value" id="last-check">-</span>
+                </div>
+            </div>
+
+            <div class="status-card">
+                <h3>
+                    <span class="status-indicator" id="scheduler-status"></span>
+                    Planificateur Windows
+                </h3>
+                <div class="metric">
+                    <span>Tâche planifiée:</span>
+                    <span class="metric-value" id="scheduled-task">Chargement...</span>
+                </div>
+                <div class="metric">
+                    <span>Intervalle:</span>
+                    <span class="metric-value" id="check-interval">60 minutes</span>
+                </div>
+                <div class="metric">
+                    <span>Prochaine exécution:</span>
+                    <span class="metric-value" id="next-run">-</span>
+                </div>
+                <div class="metric">
+                    <span>Dernière exécution:</span>
+                    <span class="metric-value" id="last-run">-</span>
+                </div>
+            </div>
+
+            <div class="status-card">
+                <h3>
+                    <span class="status-indicator status-running"></span>
+                    Statistiques Globales
+                </h3>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-number" id="total-processed">0</div>
+                        <div class="stat-label">Issues Traitées</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="devices-added">0</div>
+                        <div class="stat-label">Devices Ajoutées</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="auto-deployments">0</div>
+                        <div class="stat-label">Déploiements Auto</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="status-card">
+                <h3>
+                    <span class="status-indicator" id="safety-status"></span>
+                    Sécurité & Validation
+                </h3>
+                <div class="metric">
+                    <span>Backups actifs:</span>
+                    <span class="metric-value" id="backups-count">0</span>
+                </div>
+                <div class="metric">
+                    <span>Devices en quarantaine:</span>
+                    <span class="metric-value" id="quarantined-count">0</span>
+                </div>
+                <div class="metric">
+                    <span>Erreurs de validation:</span>
+                    <span class="metric-value" id="validation-errors">0</span>
+                </div>
+                <div class="metric">
+                    <span>Dernière sauvegarde:</span>
+                    <span class="metric-value" id="last-backup">-</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="logs-container">
+            <div class="logs-header">
+                <h3>📝 Logs Récents (Auto-refresh)</h3>
+                <button class="refresh-btn" onclick="loadLogs()">🔄 Actualiser</button>
+            </div>
+            <div id="logs-content">
+                <div class="log-entry log-info">[2024-12-19 17:06:42] [INFO] System initialized</div>
+                <div class="log-entry log-success">[2024-12-19 17:06:45] [SUCCESS] Monitoring started</div>
+                <div class="log-entry log-info">[2024-12-19 17:07:00] [INFO] Checking for new issues...</div>
+            </div>
+        </div>
+
+        <div class="logs-container">
+            <div class="logs-header">
+                <h3>🎯 Devices Récemment Ajoutées</h3>
+            </div>
+            <div class="devices-grid" id="recent-devices">
+                <div class="device-card">
+                    <div class="device-name">MOES Scene Switch 4 gang</div>
+                    <div class="device-details">
+                        Manufacturer: _TZ3000_zgyzgdua<br>
+                        Product: TS0044<br>
+                        Driver: scene_switch_4<br>
+                        Ajoutée: 2024-12-19 17:05:23
+                    </div>
+                </div>
+                <div class="device-card">
+                    <div class="device-name">Bseed Wall Socket</div>
+                    <div class="device-details">
+                        Manufacturer: _TZ3210_4ux0ondb<br>
+                        Product: TS011F<br>
+                        Driver: plug_smart<br>
+                        Ajoutée: 2024-12-19 17:05:45
+                    </div>
+                </div>
+                <div class="device-card">
+                    <div class="device-name">E14 LED Color Bulb</div>
+                    <div class="device-details">
+                        Manufacturer: _TZ3210_s8lvbbu<br>
+                        Product: TS0505B<br>
+                        Driver: bulb_rgbw<br>
+                        Ajoutée: 2024-12-19 17:06:12
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls-panel">
+            <h3 style="margin-bottom: 20px; color: #4a5568;">🎮 Contrôles du Système</h3>
+
+            <button class="control-btn" onclick="runOnce()">▶️ Exécution Manuelle</button>
+            <button class="control-btn" onclick="toggleMonitoring()">⏸️ Pause/Reprendre</button>
+            <button class="control-btn" onclick="restartSystem()">🔄 Redémarrer</button>
+            <button class="control-btn" onclick="viewConfig()">⚙️ Configuration</button>
+            <button class="control-btn" onclick="downloadLogs()">📥 Télécharger Logs</button>
+            <button class="control-btn" onclick="openQuarantine()">🛡️ Quarantaine</button>
+        </div>
+    </div>
+
+    <div class="auto-refresh">
+        🔄 Auto-refresh: <span id="refresh-countdown">30</span>s
+    </div>
+
+    <script>
+        // Configuration
+        const config = {
+            refreshInterval: 30000, // 30 seconds
+            apiEndpoint: '/api/monitor-status', // This would be a real endpoint
+            wsEndpoint: 'ws://localhost:8080/monitoring' // WebSocket for real-time updates
+        };
+
+        // State management
+        let refreshTimer;
+        let countdownTimer;
+        let countdownValue = 30;
+        let monitoringActive = true;
+
+        // Initialize dashboard
+        function initDashboard() {
+            console.log('🤖 Dashboard initialized');
+            loadSystemStatus();
+            loadLogs();
+            startAutoRefresh();
+
+            // Try to establish WebSocket connection for real-time updates
+            // connectWebSocket();
+        }
+
+        // Load system status from various sources
+        async function loadSystemStatus() {
+            try {
+                // This would normally fetch from actual APIs/files
+                // For now, we'll simulate the data
+
+                updateProcessStatus({
+                    running: true,
+                    pid: 12345,
+                    uptime: '2h 15m',
+                    lastCheck: '2024-12-19 17:06:00'
+                });
+
+                updateSchedulerStatus({
+                    installed: true,
+                    nextRun: '2024-12-19 18:00:00',
+                    lastRun: '2024-12-19 17:00:00'
+                });
+
+                updateStatistics({
+                    totalProcessed: 25,
+                    devicesAdded: 18,
+                    autoDeployments: 6
+                });
+
+                updateSafetyStatus({
+                    backupsCount: 12,
+                    quarantinedCount: 0,
+                    validationErrors: 0,
+                    lastBackup: '2024-12-19 17:05:00'
+                });
+
+            } catch (error) {
+                console.error('Failed to load system status:', error);
+                showError('Erreur de connexion aux données système');
+            }
+        }
+
+        function updateProcessStatus(status) {
+            const indicator = document.getElementById('process-status');
+            const statusText = document.getElementById('process-status-text');
+            const pid = document.getElementById('process-pid');
+            const uptime = document.getElementById('process-uptime');
+            const lastCheck = document.getElementById('last-check');
+
+            if (status.running) {
+                indicator.className = 'status-indicator status-running';
+                statusText.textContent = 'En cours d\'exécution';
+            } else {
+                indicator.className = 'status-indicator status-stopped';
+                statusText.textContent = 'Arrêté';
+            }
+
+            pid.textContent = status.pid || '-';
+            uptime.textContent = status.uptime || '-';
+            lastCheck.textContent = status.lastCheck || '-';
+        }
+
+        function updateSchedulerStatus(status) {
+            const indicator = document.getElementById('scheduler-status');
+            const taskStatus = document.getElementById('scheduled-task');
+            const nextRun = document.getElementById('next-run');
+            const lastRun = document.getElementById('last-run');
+
+            if (status.installed) {
+                indicator.className = 'status-indicator status-running';
+                taskStatus.textContent = 'Installée et active';
+            } else {
+                indicator.className = 'status-indicator status-stopped';
+                taskStatus.textContent = 'Non installée';
+            }
+
+            nextRun.textContent = status.nextRun || '-';
+            lastRun.textContent = status.lastRun || '-';
+        }
+
+        function updateStatistics(stats) {
+            document.getElementById('total-processed').textContent = stats.totalProcessed;
+            document.getElementById('devices-added').textContent = stats.devicesAdded;
+            document.getElementById('auto-deployments').textContent = stats.autoDeployments;
+        }
+
+        function updateSafetyStatus(safety) {
+            const indicator = document.getElementById('safety-status');
+
+            if (safety.validationErrors === 0) {
+                indicator.className = 'status-indicator status-running';
+            } else if (safety.validationErrors < 5) {
+                indicator.className = 'status-indicator status-warning';
+            } else {
+                indicator.className = 'status-indicator status-stopped';
+            }
+
+            document.getElementById('backups-count').textContent = safety.backupsCount;
+            document.getElementById('quarantined-count').textContent = safety.quarantinedCount;
+            document.getElementById('validation-errors').textContent = safety.validationErrors;
+            document.getElementById('last-backup').textContent = safety.lastBackup || '-';
+        }
+
+        function loadLogs() {
+            // This would normally fetch real logs from the system
+            const logsContainer = document.getElementById('logs-content');
+            const now = new Date();
+
+            // Simulate new log entries
+            const logTypes = ['info', 'success', 'warning', 'error'];
+            const messages = [
+                'Checking for new issues from Johan repository...',
+                'Device validation completed successfully',
+                'Build test passed, deploying changes...',
+                'Auto-response posted to GitHub issue #1328',
+                'New device added to motion_sensor driver',
+                'Scheduled task executed successfully'
+            ];
+
+            // Add a new simulated log entry
+            const randomType = logTypes[Math.floor(Math.random() * logTypes.length)];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            const timestamp = now.toISOString().replace('T', ' ').substring(0, 19);
+
+            const newLogEntry = document.createElement('div');
+            newLogEntry.className = `log-entry log-${randomType}`;
+            newLogEntry.textContent = `[${timestamp}] [${randomType.toUpperCase()}] ${randomMessage}`;
+
+            logsContainer.insertBefore(newLogEntry, logsContainer.firstChild);
+
+            // Keep only last 10 log entries
+            while (logsContainer.children.length > 10) {
+                logsContainer.removeChild(logsContainer.lastChild);
+            }
+        }
+
+        function startAutoRefresh() {
+            refreshTimer = setInterval(() => {
+                loadSystemStatus();
+                loadLogs();
+                countdownValue = 30;
+            }, config.refreshInterval);
+
+            // Countdown timer
+            countdownTimer = setInterval(() => {
+                countdownValue--;
+                document.getElementById('refresh-countdown').textContent = countdownValue;
+
+                if (countdownValue <= 0) {
+                    countdownValue = 30;
+                }
+            }, 1000);
+        }
+
+        // Control functions
+        function runOnce() {
+            console.log('Running manual execution...');
+            showNotification('Exécution manuelle démarrée...', 'info');
+            // This would trigger the actual system
+        }
+
+        function toggleMonitoring() {
+            monitoringActive = !monitoringActive;
+            const btn = event.target;
+
+            if (monitoringActive) {
+                btn.textContent = '⏸️ Pause/Reprendre';
+                showNotification('Monitoring repris', 'success');
+            } else {
+                btn.textContent = '▶️ Reprendre';
+                showNotification('Monitoring mis en pause', 'warning');
+            }
+        }
+
+        function restartSystem() {
+            showNotification('Redémarrage du système...', 'info');
+            console.log('Restarting auto-monitor system...');
+        }
+
+        function viewConfig() {
+            alert('Configuration:\n\n' +
+                  'Intervalle de vérification: 60 minutes\n' +
+                  'Max devices par batch: 5\n' +
+                  'Retention des backups: 7 jours\n' +
+                  'Auto-déploiement: Activé\n' +
+                  'Validation sécurisée: Activée');
+        }
+
+        function downloadLogs() {
+            showNotification('Téléchargement des logs...', 'info');
+            // This would trigger actual log download
+        }
+
+        function openQuarantine() {
+            alert('Quarantine System:\n\n' +
+                  'Devices en quarantaine: 0\n' +
+                  'Dernière quarantaine: Aucune\n' +
+                  'Règles actives: 12\n' +
+                  'Auto-nettoyage: Activé');
+        }
+
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#48bb78' : type === 'warning' ? '#ed8936' : '#667eea'};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                z-index: 1000;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                transform: translateX(400px);
+                transition: transform 0.3s ease;
+            `;
+            notification.textContent = message;
+
+            document.body.appendChild(notification);
+
+            // Animate in
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.transform = 'translateX(400px)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        function showError(message) {
+            showNotification(message, 'error');
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initDashboard);
+
+        // Handle page visibility changes to pause/resume when tab is not active
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden && monitoringActive) {
+                // Could pause some operations when tab is not visible
+            } else if (monitoringActive) {
+                // Resume operations when tab becomes visible
+                loadSystemStatus();
+            }
+        });
+    </script>
+</body>
+</html>

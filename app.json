@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.217",
+  "version": "5.5.218",
   "lastPublishDatetime": "2025-12-05T20:00:00Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -17692,6 +17692,7 @@
           "_TZ3210_alxkwn0h",
           "_TZ3210_fgwhjm9j",
           "_TZ3210_ncw88jfq",
+          "_TZ3210_s8lvbbuc",
           "_TZ3210_s9lumfhn",
           "_TZ3210_y5ztga9r",
           "_TZ3218_7fiyo3kv",
@@ -17815,11 +17816,11 @@
           "_TZE200_YH7AOAHI",
           "_TZE200_ZTC6GGYL",
           "_TZE200_a0gvbdgv",
-          "_TZE200_aao6qtcs",
           "_TZE200_a1ovdobn",
           "_TZE200_a4bpgplm",
           "_TZE200_a8sdabtg",
           "_TZE200_a8z0g46u",
+          "_TZE200_aao6qtcs",
           "_TZE200_afycb3cg",
           "_TZE200_ahpcyzth",
           "_TZE200_aj0oxo1i",
@@ -18415,9 +18416,9 @@
           "_TZE284_a14rjslz",
           "_TZE284_a1ovdobn",
           "_TZE284_aaeaifez",
-          "_TZE284_aao6qtcs",
           "_TZE284_aagrxlbd",
           "_TZE284_aai5grix",
+          "_TZE284_aao6qtcs",
           "_TZE284_ac0fhfiq",
           "_TZE284_agcxaw3f",
           "_TZE284_ai4rqhky",
@@ -18503,8 +18504,8 @@
           "_TZE284_vizxbhco",
           "_TZE284_vjpaih9f",
           "_TZE284_vmcgja59",
-          "_TZE284_vvmbj46n",
           "_TZE284_vuwtqx0t",
+          "_TZE284_vvmbj46n",
           "_TZE284_wbhaespm",
           "_TZE284_wckqztdq",
           "_TZE284_wdfurkoa",
@@ -18564,6 +18565,7 @@
           "TS0201",
           "TS0222",
           "TS0225",
+          "TS0505B",
           "TS0601",
           "TT001ZAV20",
           "WSDCGQ01LM",
@@ -25413,6 +25415,9 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
+          "Fantem",
+          "Perenio",
+          "SONOFF",
           "TS0207",
           "TUYATEC-53o41joc",
           "TUYATEC-b5g40alm",
@@ -25439,15 +25444,13 @@
           "_TZ3000_c8ozah8n",
           "_TZ3000_h4wnrtck",
           "_TZ3000_jmrgyl7o",
+          "_TZ3000_lf56vpxj",
           "_TZ3000_lltemgsf",
           "_TZ3000_mcxw5ehu",
           "_TZ3000_mg4dy6z6",
           "_TZ3000_mmtwjmaq",
-          "_TZ3000_lf56vpxj",
           "_TZ3000_msl6wxk9",
-          "_TZE200_ghynnvos",
           "_TZ3000_nss8amz9",
-          "_TZ3040_msl6wxk9",
           "_TZ3000_otvn3lne",
           "_TZ3000_pirddkfc",
           "_TZ3000_qomxlryd",
@@ -25457,6 +25460,7 @@
           "_TZ3000_ykwcwxmz",
           "_TZ3040_6ygjfyll",
           "_TZ3040_bb6xaihh",
+          "_TZ3040_msl6wxk9",
           "_TZ3040_wqmtjsyk",
           "_TZ3210_cwamkvua",
           "_TZ3210_jijr1sss",
@@ -25474,16 +25478,15 @@
           "_TZE200_cpbo62rn",
           "_TZE200_dcrrztpa",
           "_TZE200_ghynnvos",
+          "_TZE200_ghynnvos",
           "_TZE200_mchxve9o",
           "_TZE200_me6wtiqs",
           "_TZE200_nhk3bpxq",
           "_TZE200_s6hzw8g2",
           "_TZE200_xq4hgafz",
+          "_TZE204_gkfbdvyx",
           "_TZE204_mchxve9o",
           "_TZE204_n8dljorx",
-          "SONOFF",
-          "Perenio",
-          "Fantem",
           "eWeLink"
         ],
         "productId": [
@@ -28457,8 +28460,12 @@
         "measure_battery"
       ],
       "zigbee": {
-        "manufacturerName": [],
-        "productId": [],
+        "manufacturerName": [
+          "_TZ3000_6zvw8ham"
+        ],
+        "productId": [
+          "TS0203"
+        ],
         "endpoints": {
           "1": {
             "clusters": [
