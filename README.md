@@ -1,13 +1,13 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.216-blue)
+![Version](https://img.shields.io/badge/version-5.5.217-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-84-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 84 drivers and 2654+ manufacturer IDs.**
+**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 84 drivers and 2658+ manufacturer IDs.**
 
 🏠 **100% Local Control** - No Cloud, No Internet Required
 🔋 **Smart Battery** - Accurate readings with voltage fallback
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.216
+## 🚀 Latest Updates - v5.5.217
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.217** | COMMUNITY DEVICES ADDED: Fixed gas sensor _TZE204_chbyv06 mi... |
 | **v5.5.216** | CRITICAL HOTFIX: Fixed 'could not get device by id' errors i... |
 | **v5.5.215** | MASSIVE IMPORT FIX: Fixed 70+ drivers with incorrect base cl... |
 | **v5.5.214** |  URGENT HOTFIX: Fixed critical bugs introduced in v5.5.213! ... |
@@ -66,7 +67,6 @@
 | **v5.5.212** | ⚡ FINAL HOTFIX: Additional JavaScript syntax error fixed! Re... |
 | **v5.5.211** | ⚡ CRITICAL HOTFIX: JavaScript syntax errors fixed! Corrected... |
 | **v5.5.210** | 🚨 EMERGENCY DIAGNOSTIC: Massive logging added everywhere fo... |
-| **v5.5.209** | 🔧 DIAGNOSTIC: Added forced diagnostic logs for _TZE284_vvmb... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
