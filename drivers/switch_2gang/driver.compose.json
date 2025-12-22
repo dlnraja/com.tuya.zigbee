@@ -122,6 +122,71 @@
   },
   "settings": [
     {
+      "type": "group",
+      "label": {
+        "en": "Device Type Configuration",
+        "fr": "Configuration Type d'Appareil"
+      },
+      "children": [
+        {
+          "id": "device_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Connected Device Type",
+            "fr": "Type d'Appareil Connecté"
+          },
+          "hint": {
+            "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+            "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+          },
+          "value": "light",
+          "values": [
+            {
+              "id": "light",
+              "label": {
+                "en": "💡 Éclairage",
+                "fr": "💡 Éclairage"
+              }
+            },
+            {
+              "id": "radiator",
+              "label": {
+                "en": "🔥 Radiateur électrique",
+                "fr": "🔥 Radiateur électrique"
+              }
+            },
+            {
+              "id": "fan",
+              "label": {
+                "en": "🌀 Ventilation",
+                "fr": "🌀 Ventilation"
+              }
+            },
+            {
+              "id": "other",
+              "label": {
+                "en": "⚙️ Autre appareil",
+                "fr": "⚙️ Autre appareil"
+              }
+            }
+          ]
+        },
+        {
+          "id": "invert_logic_manual",
+          "type": "checkbox",
+          "label": {
+            "en": "Manual Logic Inversion",
+            "fr": "Inversion Logique Manuelle"
+          },
+          "hint": {
+            "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+            "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+          },
+          "value": false
+        }
+      ]
+    },
+    {
       "id": "power_source",
       "type": "dropdown",
       "label": {
