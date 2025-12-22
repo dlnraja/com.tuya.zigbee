@@ -1,6 +1,6 @@
 # 🔧 RAPPORT VALIDATION GITHUB WORKFLOWS
 
-**Généré**: 2025-12-22T08:37:41.592Z
+**Généré**: 2025-12-22T12:09:29.628Z
 **Fichiers analysés**: 12
 
 ## 📊 RÉSUMÉ GLOBAL
@@ -10,9 +10,9 @@
 - **Références Invalides**: 0
 - **Jobs Dupliqués**: 0
 - **Problèmes Sécurité**: 2
-- **Problèmes Performance**: 2
+- **Problèmes Performance**: 1
 
-**TOTAL PROBLÈMES**: 4
+**TOTAL PROBLÈMES**: 3
 
 ## ✅ auto-monitor-devices.yml
 
@@ -58,9 +58,6 @@ Aucun problème détecté.
 
 ### Problèmes Sécurité
 - Broad write permissions - consider limiting scope
-
-### Problèmes Performance
-- Very frequent schedule detected
 
 ## ✅ monthly-enrichment.yml
 

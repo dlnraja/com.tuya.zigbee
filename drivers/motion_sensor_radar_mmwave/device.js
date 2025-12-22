@@ -355,39 +355,39 @@ class MotionSensorRadarDevice extends HybridSensorBase {
 
     // v5.5.5: Log raw + converted values per MASTER BLOCK specs
     switch (status.dp) {
-      case 1: // Presence/motion (boolean 0/1)
-        this.log(`[ZCL-DATA] mmwave.presence_dp1 raw=${rawValue} → alarm_motion=${rawValue === 1 || rawValue === true}`);
-        break;
-      case 101: // Presence time (seconds)
-        this.log(`[ZCL-DATA] mmwave.presence_time raw=${rawValue}s → measure_presence_time=${rawValue}, alarm_motion=${rawValue > 0}`);
-        // v5.5.17: Intelligent presence - if presence_time > 0, someone IS present
-        if (rawValue > 0 && this.hasCapability('alarm_motion')) {
-          this.setCapabilityValue('alarm_motion', true).catch(this.error);
-        }
-        break;
-      case 102: // Distance to target (cm)
-        this.log(`[ZCL-DATA] mmwave.distance raw=${rawValue}cm → measure_distance=${rawValue}`);
-        // v5.5.17: If distance reported, someone is detected
-        if (rawValue > 0 && this.hasCapability('alarm_motion')) {
-          this.setCapabilityValue('alarm_motion', true).catch(this.error);
-        }
-        break;
-      case 2: // Humidity
-        this.log(`[ZCL-DATA] mmwave.humidity raw=${rawValue} converted=${rawValue}`);
-        break;
-      case 3: // Temperature
-        this.log(`[ZCL-DATA] mmwave.temperature raw=${rawValue} converted=${rawValue / 10}`);
-        break;
-      case 12:
-      case 103: // Illuminance
-        this.log(`[ZCL-DATA] mmwave.luminance raw=${rawValue} converted=${rawValue} lux`);
-        break;
-      case 4:
-      case 15: // Battery
-        this.log(`[ZCL-DATA] mmwave.battery raw=${rawValue} converted=${rawValue}%`);
-        break;
-      default:
-        this.log(`[ZCL-DATA] mmwave.unknown_dp dp=${status.dp} raw=${rawValue}`);
+    case 1: // Presence/motion (boolean 0/1)
+      this.log(`[ZCL-DATA] mmwave.presence_dp1 raw=${rawValue} → alarm_motion=${rawValue === 1 || rawValue === true}`);
+      break;
+    case 101: // Presence time (seconds)
+      this.log(`[ZCL-DATA] mmwave.presence_time raw=${rawValue}s → measure_presence_time=${rawValue}, alarm_motion=${rawValue > 0}`);
+      // v5.5.17: Intelligent presence - if presence_time > 0, someone IS present
+      if (rawValue > 0 && this.hasCapability('alarm_motion')) {
+        this.setCapabilityValue('alarm_motion', true).catch(this.error);
+      }
+      break;
+    case 102: // Distance to target (cm)
+      this.log(`[ZCL-DATA] mmwave.distance raw=${rawValue}cm → measure_distance=${rawValue}`);
+      // v5.5.17: If distance reported, someone is detected
+      if (rawValue > 0 && this.hasCapability('alarm_motion')) {
+        this.setCapabilityValue('alarm_motion', true).catch(this.error);
+      }
+      break;
+    case 2: // Humidity
+      this.log(`[ZCL-DATA] mmwave.humidity raw=${rawValue} converted=${rawValue}`);
+      break;
+    case 3: // Temperature
+      this.log(`[ZCL-DATA] mmwave.temperature raw=${rawValue} converted=${rawValue / 10}`);
+      break;
+    case 12:
+    case 103: // Illuminance
+      this.log(`[ZCL-DATA] mmwave.luminance raw=${rawValue} converted=${rawValue} lux`);
+      break;
+    case 4:
+    case 15: // Battery
+      this.log(`[ZCL-DATA] mmwave.battery raw=${rawValue} converted=${rawValue}%`);
+      break;
+    default:
+      this.log(`[ZCL-DATA] mmwave.unknown_dp dp=${status.dp} raw=${rawValue}`);
     }
 
     // Call parent handler
