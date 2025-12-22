@@ -1,3 +1,50 @@
+# 🛡️ HOMEY BUILD SECURITY - EXCLUSIONS GitHub ACTIONS
+# Ces fichiers/dossiers sont EXCLUS de l'app Homey pour sécurité
+# Généré automatiquement par HomeyBuildSeparator
+# Ne pas modifier manuellement cette section
+
+.github/
+.github/**
+scripts/automation/
+scripts/validation/
+scripts/security/
+scripts/mega-automation/
+scripts/setup/
+project-data/
+test-reports/
+backup/
+*-REPORT.md
+*-REPORT.json
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+security-config.json
+.env.local
+.env.*.local
+GITHUB-*.md
+YML-*.md
+AUTO-*.md
+ZERO-*.md
+*-SETUP*.md
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+node_modules/.cache/
+.cache/
+dist/
+build/
+*.test.js
+*.spec.js
+__tests__/
+coverage/
+package-lock.json
+yarn.lock
+.npmrc
+.yarnrc
+# === FIN EXCLUSIONS SÉCURITÉ ===
+
 # Build & Development Directories
 .homeybuild/
 .homeycompose/

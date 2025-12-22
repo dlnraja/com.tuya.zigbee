@@ -1,0 +1,23 @@
+{
+  "trusted_domains": [
+    "github.com",
+    "api.github.com",
+    "actions/checkout",
+    "actions/setup-node",
+    "actions/upload-artifact"
+  ],
+  "trusted_actions": [
+    "actions/checkout@v4",
+    "actions/setup-node@v4",
+    "actions/upload-artifact@v4"
+  ],
+  "security_policies": {
+    "max_permissions": [
+      "contents: write",
+      "actions: read"
+    ],
+    "require_input_validation": true,
+    "block_secret_exposure": true,
+    "require_https": true
+  }
+}

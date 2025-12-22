@@ -78,7 +78,7 @@ jobs:
       - name: 📦 Determine Version Type
         id: type
         run: |
-          case "${{ inputs.action }}" in
+          case "" in
             version-patch) echo "type=patch" >> $GITHUB_OUTPUT ;;
             version-minor) echo "type=minor" >> $GITHUB_OUTPUT ;;
             version-major) echo "type=major" >> $GITHUB_OUTPUT ;;
@@ -88,13 +88,13 @@ jobs:
         id: update
         with:
           version: ${{ steps.type.outputs.type }}
-          changelog: ${{ inputs.changelog }}
+          changelog: 
       - name: 📝 Commit & Push
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "🔖 v${{ steps.update.outputs.version }}: ${{ inputs.changelog }}"
+          git commit -m "🔖 v${{ steps.update.outputs.version }}: "
           git tag "v${{ steps.update.outputs.version }}"
           git push origin HEAD --tags
         env:
@@ -104,7 +104,7 @@ jobs:
           echo "## 📦 Version Updated" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**New Version:** v${{ steps.update.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Changelog:** ${{ inputs.changelog }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Changelog:** " >> $GITHUB_STEP_SUMMARY
     timeout-minutes: 30
     strategy:
       fail-fast: true
