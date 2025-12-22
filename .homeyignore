@@ -1,232 +1,101 @@
-# 🛡️ HOMEY BUILD SECURITY - EXCLUSIONS GitHub ACTIONS
-# Ces fichiers/dossiers sont EXCLUS de l'app Homey pour sécurité
-# Généré automatiquement par HomeyBuildSeparator
-# Ne pas modifier manuellement cette section
+# 🛡️ HOMEYIGNORE OPTIMISÉ - Version sécurisée et intelligente
+# Généré automatiquement - NE PAS ÉDITER MANUELLEMENT
+# Script: optimize-homeyignore.js
+# Date: 2025-12-22T14:41:03.187Z
 
-.github/
-.github/**
-scripts/automation/
-scripts/validation/
-scripts/security/
-scripts/mega-automation/
-scripts/setup/
-project-data/
-test-reports/
-backup/
-*-REPORT.md
-*-REPORT.json
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-security-config.json
-.env.local
-.env.*.local
-GITHUB-*.md
-YML-*.md
-AUTO-*.md
-ZERO-*.md
-*-SETUP*.md
-.DS_Store
-Thumbs.db
-*.tmp
-*.temp
-node_modules/.cache/
-.cache/
-dist/
-build/
-*.test.js
-*.spec.js
-__tests__/
-coverage/
-package-lock.json
-yarn.lock
-.npmrc
-.yarnrc
-# === FIN EXCLUSIONS SÉCURITÉ ===
-
-# Build & Development Directories
-.homeybuild/
-.homeycompose/
-node_modules/
-.dev/
-.backup-enrichment/
-.git/
+# === SÉCURITÉ CRITIQUE ===
+# GitHub Actions et workflows (CRITIQUE - ne jamais inclure dans l'app)
 .github/
 .githooks/
-.vscode/
+.git/
 
-# Documentation & Reports (ALL)
-docs/
-reports/
-github-analysis/
-project-data/
-matrix/
-achievements/
-analysis/
-archive/
-audit/
-audits/
-automation/
-backup/
-commits/
-communication/
-community/
-compatibility/
-contributions/
-conversion/
-data/
-debug/
-deployments/
-diagnostics/
-enrichment/
-finalization/
-fixes/
-flow/
-forum/
-forum-responses/
-forum_requests/
-github-issues/
-guides/
-implementation/
-instructions/
-misc/
-orchestrator/
-organized/
-pairing/
-planning/
-planning_v5/
-project-status/
-readme-variants/
-references/
-releases/
-research/
-run-everything/
-sdk3/
-sessions/
-stats/
-summaries/
-support/
-technical/
-templates/
-troubleshooting/
-ultimate_system/
-users/
-v3/
-validation/
-workflow/
-
-# Scripts (ALL - not needed for runtime)
+# Scripts développement et sécurité (CRITIQUE)
 scripts/
-tools/
-fix-all-drivers.bat
-fix-drivers.js
-*.bat
+project-data/
+docs/
+references/
+backup/
 
-# ALL Markdown Files (except README.md)
-*.md
-!README.md
-
-# ALL Commit Messages
-.commit*
-commit-*
-commit_*
-.git-*
-.gitmsg*
-COMMIT_*
-
-# ALL Text Files (except required)
-*.txt
-!v4.1.9_files.txt
-
-# JSON Data Files (not needed at runtime)
-device-matrix.json
-deprecation_report.json
-driver-flow-mapping.json
-drivers_flows_advanced_full.json
-CAPABILITIES_FLOW_MATRIX.json
-COMPLETE_DRIVER_FLOW_MAPPING.json
-DIAGNOSTICS_ANALYSIS.json
-DEVICE_ANALYSIS_REPORT.json
-CRITICAL_PRODUCTION_FIXES_REPORT.json
-MANIFEST_EXAMPLE_IMPROVED.json
-IMPLEMENTATION_REPORT_V3.json
-
-# JavaScript Files (not drivers/lib/utils)
-*.js
-!app.js
-!jest.config.js
-!drivers/**/*.js
-!lib/**/*.js
-!utils/**/*.js
-!api/**/*.js
-!settings/**/*.js
-
-# Configuration Files
-.gitignore
-.gitattributes
-.eslintrc.json
-.prettierrc
-.prettierignore
-tsconfig.json
-.editorconfig
-jest.config.js
-
-# Logs & Temporary Files
+# === OPTIMISATION BUILD ===
+# Cache et dépendances
+node_modules/
+.npm/
+.nyc_output/
 *.log
 *.tmp
-*.bak
-*.swp
-*.swo
-*~
-.DS_Store
-Thumbs.db
-validation_output.txt
+npm-debug.log*
 
-# AI-generated files (not needed at runtime)
-reports/ai-consensus/
-reports/batch-runs/
-reports/optimization/
-TEST_*.md
+# IDE et éditeurs
+.vscode/
+.idea/
+*.sublime-*
+.vs/
 
-# Cache files
-.cache/
-*.cache
-
-# Test Files
+# Tests et développement
 test/
 tests/
+spec/
 *.test.js
 *.spec.js
+jest.config.js
+karma.conf.js
 
-# CI/CD Files
-.gitlab-ci.yml
-azure-pipelines.yml
-bitbucket-pipelines.yml
+# Build et distribution (CRITIQUE)
+.homeybuild/
+build/
+dist/
+out/
+target/
 
-# IDE Files
-.idea/
-*.sublime-project
-*.sublime-workspace
-
-# Package Manager Files
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-
-# Sensitive Files
-.env
-.env.example
-secrets/
-*.key
-*.pem
-*.cert
-
-# Backup Files
-*.backup
-
-# Large Asset Files
+# === FICHIERS TEMPORAIRES ===
+# Archives
 *.zip
 *.tar.gz
 *.rar
 *.7z
+backup-*
+
+# OS spécifiques
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Configuration développement
+.env
+.env.*
+config.local.js
+secrets.json
+
+# Documentation développement
+README.dev.md
+CONTRIBUTING.md
+CHANGELOG.dev.md
+TODO.md
+
+# Scripts système
+*.ps1
+*.cmd
+*.bat
+
+# Configuration linting/formatting
+eslint.config.js
+.eslintrc.*
+.prettierrc.*
+babel.config.js
+webpack.config.js
+rollup.config.js
+vite.config.js
+
+# Fichiers temporaires
+*.bak
+*.old
+*.orig
+*~
+*.swp
+*.swo
+temp/
+tmp/
+
+# Logs et reporting
+reports/
+logs/
