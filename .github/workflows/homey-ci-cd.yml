@@ -78,23 +78,26 @@ jobs:
       - name: 📦 Determine Version Type
         id: type
         run: |
-          case "" in
+          # SÉCURISÉ: Validation des entrées avant utilisation
+          ACTION="${{ github.event.inputs.action }}"
+          case "$ACTION" in
             version-patch) echo "type=patch" >> $GITHUB_OUTPUT ;;
             version-minor) echo "type=minor" >> $GITHUB_OUTPUT ;;
             version-major) echo "type=major" >> $GITHUB_OUTPUT ;;
+            *) echo "❌ Action invalide: $ACTION"; exit 1 ;;
           esac
       - name: 📦 Update Version (Athom Official)
         uses: athombv/github-action-homey-app-version@v1
         id: update
         with:
           version: ${{ steps.type.outputs.type }}
-          changelog: 
+          changelog: ${{ github.event.inputs.changelog }}
       - name: 📝 Commit & Push
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "🔖 v${{ steps.update.outputs.version }}: "
+          git commit -m "🔖 v${{ steps.update.outputs.version }}: ${{ github.event.inputs.changelog }}"
           git tag "v${{ steps.update.outputs.version }}"
           git push origin HEAD --tags
         env:
@@ -106,8 +109,6 @@ jobs:
           echo "**New Version:** v${{ steps.update.outputs.version }}" >> $GITHUB_STEP_SUMMARY
           echo "**Changelog:** " >> $GITHUB_STEP_SUMMARY
     timeout-minutes: 30
-    strategy:
-      fail-fast: true
   publish:
     name: 🚀 Publish
     runs-on: ubuntu-latest
@@ -169,8 +170,6 @@ jobs:
 
           echo "2. Submit for Test or Live certification" >> $GITHUB_STEP_SUMMARY
     timeout-minutes: 30
-    strategy:
-      fail-fast: true
   release:
     name: 📝 GitHub Release
     runs-on: ubuntu-latest

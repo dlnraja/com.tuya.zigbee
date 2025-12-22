@@ -1,0 +1,156 @@
+{
+  "timestamp": "2025-12-22T14:41:29.325Z",
+  "optimization_summary": {
+    "filesScanned": 40530,
+    "filesExcluded": 791,
+    "filesIncluded": 35612,
+    "exclusionRate": 2,
+    "topExcludedDirs": [
+      [
+        "node_modules",
+        465
+      ],
+      [
+        "scripts",
+        149
+      ],
+      [
+        "data",
+        45
+      ],
+      [
+        ".homeybuild",
+        36
+      ],
+      [
+        ".dev",
+        18
+      ],
+      [
+        "docs",
+        17
+      ],
+      [
+        ".",
+        11
+      ],
+      [
+        "drivers",
+        9
+      ],
+      [
+        ".git",
+        8
+      ],
+      [
+        "misc",
+        8
+      ]
+    ],
+    "criticalInclusions": [
+      ".github\\pages-build\\app.json",
+      ".github\\pages-build\\package.json",
+      ".homeybuild\\app.json",
+      ".homeybuild\\node_modules\\@athombv\\data-types\\package.json",
+      ".homeybuild\\node_modules\\@octokit\\auth-token\\package.json",
+      ".homeybuild\\node_modules\\@octokit\\core\\package.json",
+      ".homeybuild\\node_modules\\@octokit\\endpoint\\package.json",
+      ".homeybuild\\node_modules\\@octokit\\graphql\\package.json",
+      ".homeybuild\\node_modules\\@octokit\\openapi-types\\package.json",
+      ".homeybuild\\node_modules\\@octokit\\plugin-paginate-rest\\package.json",
+      ".homeybuild\\node_modules\\@octokit\\plugin-rest-endpoint-methods\\package.json",
+      ".homeybuild\\node_modules\\@octokit\\request\\package.json",
+      ".homeybuild\\node_modules\\@octokit\\request-error\\package.json",
+      ".homeybuild\\node_modules\\@octokit\\rest\\package.json",
+      ".homeybuild\\node_modules\\@octokit\\types\\package.json",
+      ".homeybuild\\node_modules\\@types\\tinycolor2\\package.json",
+      ".homeybuild\\node_modules\\almost-equal\\package.json",
+      ".homeybuild\\node_modules\\before-after-hook\\package.json",
+      ".homeybuild\\node_modules\\color-space\\package.json",
+      ".homeybuild\\node_modules\\debug\\package.json"
+    ]
+  },
+  "exclusion_patterns": [
+    ".github/**",
+    ".githooks/**",
+    ".git/**",
+    "scripts/**",
+    "project-data/**",
+    "docs/**",
+    "references/**",
+    "backup/**",
+    "temp/**",
+    "tmp/**",
+    "node_modules/**",
+    "*.log",
+    "*.tmp",
+    "npm-debug.log*",
+    ".npm/**",
+    ".nyc_output/**",
+    ".vscode/**",
+    ".idea/**",
+    "*.sublime-*",
+    ".vs/**",
+    "test/**",
+    "tests/**",
+    "spec/**",
+    "*.test.js",
+    "*.spec.js",
+    "jest.config.js",
+    "karma.conf.js",
+    "build/**",
+    "dist/**",
+    "out/**",
+    "target/**",
+    "*.zip",
+    "*.tar.gz",
+    "*.rar",
+    "*.7z",
+    "backup-*",
+    ".DS_Store",
+    "Thumbs.db",
+    "desktop.ini",
+    ".env",
+    ".env.*",
+    "config.local.js",
+    "secrets.json",
+    "README.dev.md",
+    "CONTRIBUTING.md",
+    "CHANGELOG.dev.md",
+    "TODO.md",
+    "*.bak",
+    "*.old",
+    "*.orig",
+    "*~",
+    "*.swp",
+    "*.swo",
+    "scripts/security/**",
+    "scripts/validation/**",
+    "scripts/community/**",
+    "scripts/automation/**",
+    "scripts/diagnostic/**",
+    "scripts/fixes/**",
+    "scripts/organized/**",
+    "*.ps1",
+    "*.cmd",
+    "*.bat",
+    "eslint.config.js",
+    ".eslintrc.*",
+    ".prettierrc.*",
+    "babel.config.js",
+    "webpack.config.js",
+    "rollup.config.js",
+    "vite.config.js",
+    "project-data/*.json",
+    "project-data/*.md",
+    "reports/**",
+    "logs/**"
+  ],
+  "recommendations": [
+    "❌ Attention: Taux d'exclusion faible (<60%), review nécessaire",
+    "❌ Build lourd: Plus de 1000 fichiers, optimisation critique",
+    "🔍 Vérifier que drivers/ et lib/ sont bien inclus",
+    "🛡️ Confirmer que scripts/ et .github/ sont exclus",
+    "📱 Tester l'app après optimisation"
+  ]
+}
