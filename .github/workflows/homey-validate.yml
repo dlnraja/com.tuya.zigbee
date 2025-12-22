@@ -1,35 +1,31 @@
-# ============================================================================
-# 🔍 HOMEY APP VALIDATE - Official Athom Action
-# ============================================================================
-# Source: https://github.com/athombv/github-action-homey-app-validate
-# Docs: https://apps.developer.homey.app/app-store/publishing
-# ============================================================================
-
 name: 🔍 Validate Homey App
-
-on:
+"on":
   push:
-    branches: [master, main, develop]
+    branches:
+      - master
+      - main
+      - develop
     paths:
-      - "app.json"
-      - ".homeycompose/**"
-      - "drivers/**"
-      - "lib/**"
+      - app.json
+      - .homeycompose/**
+      - drivers/**
+      - lib/**
       - "*.js"
   pull_request:
-    branches: [master, main]
+    branches:
+      - master
+      - main
   workflow_dispatch:
     inputs:
       level:
-        description: "Validation level"
+        description: Validation level
         required: true
         type: choice
         options:
           - debug
           - publish
           - verified
-        default: "publish"
-
+        default: publish
 jobs:
   validate:
     name: 🔍 Validate App
@@ -37,7 +33,6 @@ jobs:
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@v4
-
       - name: 📦 Get App Info
         id: app-info
         run: |
@@ -46,12 +41,10 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "name=$NAME" >> $GITHUB_OUTPUT
           echo "📦 App: $NAME v$VERSION"
-
       - name: 🔍 Validate (Official Athom Action)
         uses: athombv/github-action-homey-app-validate@v1
         with:
           level: ${{ inputs.level || 'publish' }}
-
       - name: ✅ Summary
         if: success()
         run: |
@@ -60,14 +53,23 @@ jobs:
           echo "**App:** ${{ steps.app-info.outputs.name }}" >> $GITHUB_STEP_SUMMARY
           echo "**Version:** v${{ steps.app-info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
           echo "**Level:** ${{ inputs.level || 'publish' }}" >> $GITHUB_STEP_SUMMARY
-
       - name: ❌ Failed Summary
         if: failure()
-        run: |
+        run: >
           echo "## ❌ Validation Failed" >> $GITHUB_STEP_SUMMARY
+
           echo "" >> $GITHUB_STEP_SUMMARY
+
           echo "Check the logs above for details." >> $GITHUB_STEP_SUMMARY
+
           echo "" >> $GITHUB_STEP_SUMMARY
+
           echo "### Common fixes:" >> $GITHUB_STEP_SUMMARY
+
           echo "- Run \`homey app validate --level publish\` locally" >> $GITHUB_STEP_SUMMARY
-          echo "- Check [SDK3 Documentation](https://apps.developer.homey.app)" >> $GITHUB_STEP_SUMMARY
+
+          echo "- Check [SDK3 Documentation](https://apps.developer.homey.app)" >>
+          $GITHUB_STEP_SUMMARY
+    timeout-minutes: 15
+    strategy:
+      fail-fast: true

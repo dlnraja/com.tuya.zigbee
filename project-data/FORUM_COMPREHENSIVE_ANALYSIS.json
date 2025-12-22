@@ -1,0 +1,93 @@
+{
+  "timestamp": "2025-12-22T06:17:46.517Z",
+  "forum_analysis": {
+    "total_messages_analyzed": 7,
+    "patterns_identified": {
+      "device_requests": [],
+      "classification_issues": [
+        {
+          "id": "#640",
+          "user": "Vitalii",
+          "content": "_TZE204_chbyv06 gas sensor issue - moved from climate_sensor to gas_detector",
+          "type": "device_reclassification",
+          "manufacturerId": "_TZE204_chbyv06",
+          "deviceType": "gas_detector",
+          "action": "moved_from_climate",
+          "status": "completed"
+        },
+        {
+          "id": "#642",
+          "user": "ManuelKugler",
+          "content": "TS0041 not recognized as switch, installed as virtual device",
+          "type": "wrong_classification",
+          "productId": "TS0041",
+          "deviceType": "switch_1gang",
+          "action": "add_to_switch_driver",
+          "status": "completed"
+        },
+        {
+          "id": "#638",
+          "user": "Community",
+          "content": "Gas sensor _TZE204_chbyv06 detected as climate instead of gas",
+          "type": "misclassification",
+          "manufacturerId": "_TZE204_chbyv06",
+          "deviceType": "gas_detector",
+          "action": "driver_correction",
+          "status": "completed"
+        }
+      ],
+      "missing_manufacturers": [
+        {
+          "id": "pattern_missing_manufacturer",
+          "user": "Various",
+          "content": "Device not detected - manufacturer _TZ3000_XXXXXXX",
+          "type": "missing_manufacturer",
+          "pattern": "_TZ3000_*",
+          "deviceType": "unknown",
+          "action": "identify_and_add"
+        }
+      ],
+      "battery_issues": [
+        {
+          "id": "pattern_battery_issue",
+          "user": "Various",
+          "content": "Battery not reporting on sleepy devices",
+          "type": "battery_reporting",
+          "deviceType": "sensors",
+          "action": "fix_battery_bindings"
+        }
+      ],
+      "manufacturer_duplications": [
+        {
+          "id": "pattern_duplicate_manufacturer",
+          "user": "Various",
+          "content": "Same manufacturerId in multiple drivers causing conflicts",
+          "type": "manufacturer_duplication",
+          "pattern": "_TZ3000_*",
+          "action": "enforce_uniqueness_rules"
+        }
+      ]
+    },
+    "resolved_issues": 3
+  },
+  "manufacturer_analysis": {
+    "total_manufacturers": 2616,
+    "duplications_found": 0,
+    "violations": []
+  },
+  "recommendations": [
+    {
+      "type": "forum_monitoring",
+      "priority": "medium",
+      "description": "Monitoring automatique des nouveaux messages forum",
+      "action": "Intégrer analyse forum dans workflows YML réguliers"
+    },
+    {
+      "type": "battery_fixes",
+      "priority": "medium",
+      "description": "Problèmes récurrents de battery reporting sur capteurs",
+      "action": "Standardiser bindings et configure reporting pour sleepy devices"
+    }
+  ],
+  "fixes_applied": []
+}

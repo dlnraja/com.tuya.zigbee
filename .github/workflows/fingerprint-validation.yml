@@ -1,39 +1,32 @@
-# ============================================================================
-# 🔒 FINGERPRINTING RULES VALIDATION
-# ============================================================================
-# Validates all fingerprinting rules from DEV_NOTES.md
-# Runs on every push and PR to ensure compliance
-# ============================================================================
-
 name: 🔒 Fingerprinting Validation
-
-on:
+"on":
   push:
-    branches: [master, main]
+    branches:
+      - master
+      - main
     paths:
-      - "drivers/**/driver.compose.json"
-      - "automation/*.js"
+      - drivers/**/driver.compose.json
+      - automation/*.js
   pull_request:
-    branches: [master, main]
+    branches:
+      - master
+      - main
     paths:
-      - "drivers/**/driver.compose.json"
-      - "automation/*.js"
-  workflow_dispatch:
-
+      - drivers/**/driver.compose.json
+      - automation/*.js
+  workflow_dispatch: null
 jobs:
   validate-fingerprints:
     name: 🔍 Validate Fingerprinting Rules
     runs-on: ubuntu-latest
-
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@v4
-
       - name: 📦 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-
+          cache: npm
       - name: 🔍 Rule 9.4 - Collision Detection
         id: collisions
         run: |
@@ -88,7 +81,6 @@ jobs:
             console.log('✅ Rule 9.4 PASSED: No collisions detected');
           }
           "
-
       - name: 🔍 Rule 9.2 - TS0601 Trap Check
         run: |
           echo "📋 Checking for TS0601 trap violations..."
@@ -132,7 +124,6 @@ jobs:
             console.log('✅ Rule 9.2 PASSED: No TS0601 trap violations');
           }
           "
-
       - name: 🔍 Rule 9.8 - Non-Regression Check
         run: |
           echo "📋 Checking for potential regressions..."
@@ -151,7 +142,6 @@ jobs:
           else
             echo "ℹ️ First commit - no regression check needed"
           fi
-
       - name: 📊 Generate Summary
         run: |
           echo "## 🔒 Fingerprinting Validation Results" >> $GITHUB_STEP_SUMMARY
@@ -191,3 +181,6 @@ jobs:
           echo "- 9.2 TS0601 Trap Protection" >> $GITHUB_STEP_SUMMARY
           echo "- 9.4 Anti-Collision Check" >> $GITHUB_STEP_SUMMARY
           echo "- 9.8 Non-Regression Protection" >> $GITHUB_STEP_SUMMARY
+    timeout-minutes: 10
+    strategy:
+      fail-fast: true
