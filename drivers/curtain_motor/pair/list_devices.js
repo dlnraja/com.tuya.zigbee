@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-    start() {
-        return this.getDriver().getAvailableDevices();
-    }
+  start() {
+    return this.getDriver().getAvailableDevices();
+  }
 };

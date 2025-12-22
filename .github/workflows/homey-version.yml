@@ -37,8 +37,8 @@ jobs:
         uses: athombv/github-action-homey-app-version@v1
         id: update
         with:
-          version: ${{ inputs.version }}
-          changelog: ${{ inputs.changelog }}
+          version: 
+          changelog: 
       - name: 📝 Commit & Push
         run: |
           git config --local user.name "github-actions[bot]"
@@ -53,7 +53,7 @@ jobs:
         run: |
           gh release create "v${{ steps.update.outputs.version }}" \
             --title "v${{ steps.update.outputs.version }}" \
-            --notes "${{ inputs.changelog }}"
+            --notes ""
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ github.token }}
@@ -63,10 +63,10 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Previous:** v${{ steps.current.outputs.version }}" >> $GITHUB_STEP_SUMMARY
           echo "**New:** v${{ steps.update.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Type:** ${{ inputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Type:** " >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Changelog" >> $GITHUB_STEP_SUMMARY
-          echo "${{ inputs.changelog }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
     timeout-minutes: 30
     strategy:
       fail-fast: true

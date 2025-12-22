@@ -4,10 +4,10 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class TuyaZigbeeDriver extends ZigBeeDriver {
 
-    onInit() {
-        this.log('Tuya Zigbee Driver has been initialized');
-        super.onInit();
-    }
+  onInit() {
+    this.log('Tuya Zigbee Driver has been initialized');
+    super.onInit();
+  }
 
 }
 

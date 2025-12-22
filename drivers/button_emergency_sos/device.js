@@ -1041,7 +1041,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       this.log(`[SOS-DEBUG] Endpoint ${epId}:`);
 
       if (!ep?.clusters) {
-        this.log(`[SOS-DEBUG]   (no clusters)`);
+        this.log('[SOS-DEBUG]   (no clusters)');
         continue;
       }
 
@@ -1124,12 +1124,12 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
           this.log(`[SOS-DEBUG] 🔧 Tuya cluster found on EP${epId}!`);
 
           cluster.on('response', (cmd, data, payload) => {
-            this.log(`[SOS-GLOBAL] 📡 Tuya response:`, cmd, data, payload);
+            this.log('[SOS-GLOBAL] 📡 Tuya response:', cmd, data, payload);
             this._handleAlarm({ source: 'tuya', command: cmd, data, payload });
           });
 
           cluster.on('reporting', (data) => {
-            this.log(`[SOS-GLOBAL] 📡 Tuya reporting:`, JSON.stringify(data));
+            this.log('[SOS-GLOBAL] 📡 Tuya reporting:', JSON.stringify(data));
             // Handle battery from Tuya DP4
             if (data?.dp === 4 && typeof data?.value === 'number') {
               const battery = data.value;
