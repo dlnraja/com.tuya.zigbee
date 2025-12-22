@@ -167,7 +167,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
         } else {
           await this._onOffCluster.setOff();
         }
-        this.log(`[LED] ✅ onoff command sent`);
+        this.log('[LED] ✅ onoff command sent');
       } catch (err) {
         this.error(`[LED] onoff error: ${err.message}`);
         throw err;
