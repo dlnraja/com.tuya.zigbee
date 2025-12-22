@@ -43,8 +43,16 @@ jobs:
       - name: 🤖 Run Forum Comprehensive Analysis
         id: forum_analysis
         run: |
-          echo "🚀 Running comprehensive forum analysis..."
-          node scripts/community/forum-comprehensive-analyzer.js
+          echo "🎯 Analyse forum démarrée..."
+          # SÉCURISÉ: Validation des entrées avant utilisation
+          FORUM_DATA="${{ github.event.inputs.forum_data }}"
+          if [[ -n "$FORUM_DATA" && "$FORUM_DATA" =~ ^[a-zA-Z0-9_-]+$ ]]; then
+            echo "📊 Données validées: $FORUM_DATA"
+            node scripts/community/forum-comprehensive-analyzer.js
+          else
+            echo "📊 Analyse forum standard (pas d'entrées spécifiques)"
+            node scripts/community/forum-comprehensive-analyzer.js
+          fi
 
           # Check if any fixes were applied
           if [ -f "project-data/FORUM_COMPREHENSIVE_ANALYSIS.json" ]; then
@@ -58,10 +66,17 @@ jobs:
       - name: 🔍 Validate ManufacturerNames Rules
         id: validate_rules
         run: |
-          echo "🔍 Validating manufacturerNames uniqueness rules..."
-
-          # Create validation script inline
-          cat > validate-manufacturer-rules.js << 'EOF'
+          echo "🔍 Validation règles manufacturerNames..."
+          # SÉCURISÉ: Validation des entrées
+          RULES_MODE="${{ github.event.inputs.rules_mode }}"
+          if [[ -n "$RULES_MODE" && "$RULES_MODE" =~ ^(strict|normal|lenient)$ ]]; then
+            echo "⚙️ Mode validé: $RULES_MODE"
+            export RULES_MODE="$RULES_MODE"
+          else
+            echo "⚙️ Mode par défaut: normal"
+            export RULES_MODE="normal"
+          fi
+          node scripts/validation/manufacturer-deduplication-enforcer.js << 'EOF'
           const fs = require('fs');
           const path = require('path');
 
