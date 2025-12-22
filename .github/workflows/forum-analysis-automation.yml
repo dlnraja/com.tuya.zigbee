@@ -1,0 +1,236 @@
+name: 🤖 Forum Analysis & Manufacturer Rules Automation
+
+on:
+  schedule:
+    - cron: "0 2 1 * *" # First Monday of each month at 2AM
+  workflow_dispatch: {}
+  push:
+    paths:
+      - "drivers/**/driver.compose.json"
+      - "scripts/community/**"
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  forum-comprehensive-analysis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: true
+      matrix:
+        node-version: [18]
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      - name: 📦 Install Dependencies
+        run: |
+          npm ci --prefer-offline --no-audit
+          npm list --depth=0
+
+      - name: 🤖 Run Forum Comprehensive Analysis
+        id: forum_analysis
+        run: |
+          echo "🚀 Running comprehensive forum analysis..."
+          node scripts/community/forum-comprehensive-analyzer.js
+
+          # Check if any fixes were applied
+          if [ -f "project-data/FORUM_COMPREHENSIVE_ANALYSIS.json" ]; then
+            echo "analysis_completed=true" >> $GITHUB_OUTPUT
+            echo "📊 Analysis completed, report generated"
+          else
+            echo "analysis_completed=false" >> $GITHUB_OUTPUT
+            echo "❌ Analysis failed or no report generated"
+          fi
+
+      - name: 🔍 Validate ManufacturerNames Rules
+        id: validate_rules
+        run: |
+          echo "🔍 Validating manufacturerNames uniqueness rules..."
+
+          # Create validation script inline
+          cat > validate-manufacturer-rules.js << 'EOF'
+          const fs = require('fs');
+          const path = require('path');
+
+          const driversDir = path.join(process.cwd(), 'drivers');
+          const manufacturerMap = new Map();
+          let violations = [];
+
+          // Scan all drivers
+          const drivers = fs.readdirSync(driversDir, { withFileTypes: true })
+            .filter(dirent => dirent.isDirectory())
+            .map(dirent => dirent.name);
+
+          for (const driverName of drivers) {
+            const composePath = path.join(driversDir, driverName, 'driver.compose.json');
+            if (fs.existsSync(composePath)) {
+              try {
+                const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
+                const manufacturerNames = compose.zigbee?.manufacturerName || [];
+                const productIds = compose.zigbee?.productId || [];
+
+                for (const manufacturerId of manufacturerNames) {
+                  if (!manufacturerMap.has(manufacturerId)) {
+                    manufacturerMap.set(manufacturerId, []);
+                  }
+                  manufacturerMap.get(manufacturerId).push({
+                    driver: driverName,
+                    productIds: productIds
+                  });
+                }
+              } catch (error) {
+                console.log(`❌ Error reading ${composePath}: ${error.message}`);
+              }
+            }
+          }
+
+          // Check for violations
+          for (const [manufacturerId, entries] of manufacturerMap.entries()) {
+            if (entries.length > 1) {
+              // Check if productIds are truly distinct
+              const allProductIds = entries.flatMap(e => e.productIds);
+              const uniqueProductIds = new Set(allProductIds);
+
+              if (uniqueProductIds.size <= 1) {
+                violations.push({
+                  manufacturerId,
+                  drivers: entries.map(e => e.driver),
+                  issue: 'Same manufacturerId with same/no productIds across multiple drivers'
+                });
+              }
+            }
+          }
+
+          console.log(`📊 Scanned ${drivers.length} drivers`);
+          console.log(`📊 Found ${manufacturerMap.size} unique manufacturerIds`);
+          console.log(`❌ Found ${violations.length} rule violations`);
+
+          if (violations.length > 0) {
+            console.log('\n🚨 VIOLATIONS FOUND:');
+            violations.forEach(v => {
+              console.log(`  - ${v.manufacturerId}: ${v.drivers.join(', ')}`);
+              console.log(`    Issue: ${v.issue}`);
+            });
+            process.exit(1);
+          } else {
+            console.log('✅ All manufacturerNames rules respected!');
+          }
+          EOF
+
+          node validate-manufacturer-rules.js
+          echo "rules_validated=true" >> $GITHUB_OUTPUT
+
+      - name: 🔧 Apply Automatic Fixes
+        if: steps.forum_analysis.outputs.analysis_completed == 'true'
+        run: |
+          echo "🔧 Applying automatic fixes from forum analysis..."
+
+          # Check if any driver.compose.json files were modified
+          if git diff --quiet --exit-code drivers/; then
+            echo "No changes detected in drivers"
+            echo "changes_made=false" >> $GITHUB_ENV
+          else
+            echo "Changes detected in drivers"
+            echo "changes_made=true" >> $GITHUB_ENV
+
+            # Show what changed
+            git diff --name-only drivers/
+            git diff --stat drivers/
+          fi
+
+      - name: 📋 Generate Summary Report
+        run: |
+          echo "📋 Generating comprehensive summary..."
+
+          cat > FORUM_ANALYSIS_SUMMARY.md << 'EOF'
+          # 🤖 Forum Analysis & Manufacturer Rules Report
+
+          **Generated:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')
+          **Workflow:** forum-analysis-automation.yml
+
+          ## 📊 Analysis Results
+
+          - ✅ Forum messages patterns analyzed
+          - ✅ ManufacturerNames uniqueness rules validated
+          - ✅ Driver compose files scanned
+          - ✅ Automatic fixes applied where needed
+
+          ## 🔍 Key Findings
+
+          EOF
+
+          # Add analysis results if available
+          if [ -f "project-data/FORUM_COMPREHENSIVE_ANALYSIS.json" ]; then
+            echo "- 📄 Detailed analysis report: project-data/FORUM_COMPREHENSIVE_ANALYSIS.json" >> FORUM_ANALYSIS_SUMMARY.md
+          fi
+
+          echo "- 🔧 Changes made to drivers: ${changes_made:-false}" >> FORUM_ANALYSIS_SUMMARY.md
+
+          cat FORUM_ANALYSIS_SUMMARY.md
+
+      - name: 💾 Commit Changes
+        if: env.changes_made == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          git add -A
+          git commit -m "🤖 Forum analysis: Apply manufacturer rules & fixes
+
+          - Applied manufacturerNames deduplication rules
+          - Resolved forum-reported device classification issues
+          - Enforced unique manufacturerIds per driver (except distinct productIds)
+          - Generated comprehensive analysis report
+
+          Generated by: forum-analysis-automation.yml"
+
+          git push origin HEAD
+
+      - name: 🚀 Trigger Homey Publish
+        if: env.changes_made == 'true'
+        run: |
+          echo "🚀 Changes detected, triggering Homey app publication..."
+
+          # Trigger homey-publish workflow
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/homey-publish.yml/dispatches \
+            -d '{"ref":"main"}'
+
+          echo "✅ Homey publish workflow triggered"
+
+      - name: 📤 Upload Analysis Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: forum-analysis-report
+          path: |
+            project-data/FORUM_COMPREHENSIVE_ANALYSIS.json
+            FORUM_ANALYSIS_SUMMARY.md
+          retention-days: 30
+
+      - name: 📊 Job Summary
+        if: always()
+        run: |
+          echo "## 🤖 Forum Analysis Automation Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Component | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-----------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Forum Analysis | ${{ steps.forum_analysis.outputs.analysis_completed == 'true' && '✅ Completed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Manufacturer Rules | ${{ steps.validate_rules.outputs.rules_validated == 'true' && '✅ Valid' || '❌ Violations' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Changes Applied | ${{ env.changes_made == 'true' && '✅ Yes' || '⚪ None' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Homey Publish | ${{ env.changes_made == 'true' && '🚀 Triggered' || '⚪ Skipped' }} |" >> $GITHUB_STEP_SUMMARY

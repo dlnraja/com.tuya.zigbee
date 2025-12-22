@@ -1,47 +1,36 @@
-# ============================================================================
-# 📚 AUTO-UPDATE DOCS - Updates README and Device Finder
-# ============================================================================
-# Triggered after version changes or manually
-# Updates version badges, stats, and changelog in documentation
-# ============================================================================
-
 name: 📚 Auto-Update Docs
-
-on:
+"on":
   workflow_run:
-    workflows: ["🚀 Auto-Publish on Push"]
+    workflows:
+      - 🚀 Auto-Publish on Push
     types:
       - completed
   workflow_dispatch:
     inputs:
       force:
-        description: 'Force update even if no changes'
+        description: Force update even if no changes
         required: false
-        default: 'false'
-
+        default: "false"
 permissions:
-  contents: write
-
+  contents: read
+  actions: read
 env:
   NODE_VERSION: "20"
-
 jobs:
   update-docs:
     name: 📚 Update Documentation
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
-
+    if: always()
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: 📦 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-
+          cache: npm
       - name: 📊 Get App Info
         id: info
         run: |
@@ -50,12 +39,10 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "drivers=$DRIVERS" >> $GITHUB_OUTPUT
           echo "📦 Version: $VERSION | Drivers: $DRIVERS"
-
       - name: 📚 Update Documentation
         run: |
           echo "🔄 Running AUTO_UPDATE_ALL_DOCS.js..."
           node scripts/automation/AUTO_UPDATE_ALL_DOCS.js
-
       - name: 📝 Check for Changes
         id: changes
         run: |
@@ -67,25 +54,29 @@ jobs:
             echo "✅ Documentation changes detected"
             git diff --stat README.md docs/device-finder.html
           fi
-
       - name: 🚀 Commit & Push
         if: steps.changes.outputs.has_changes == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md docs/device-finder.html
-          git commit -m "📚 Auto-update docs to v${{ steps.info.outputs.version }}"
+          git commit -m "📚 Auto-update docs"
           git push
-
       - name: ✅ Summary
         run: |
           echo "## 📚 Documentation Update" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Version:** v${{ steps.info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Drivers:** ${{ steps.info.outputs.drivers }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** v"automated"" >> $GITHUB_STEP_SUMMARY
+          echo "**Drivers:** "automated"" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          if [ "${{ steps.changes.outputs.has_changes }}" == "true" ]; then
+          if [ ""automated"" == "true" ]; then
             echo "✅ **Documentation updated and pushed!**" >> $GITHUB_STEP_SUMMARY
           else
             echo "ℹ️ **No changes needed**" >> $GITHUB_STEP_SUMMARY
           fi
+    timeout-minutes: 20
+    strategy:
+      fail-fast: true
+      matrix:
+        node-version:
+          - 18

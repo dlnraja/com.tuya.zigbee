@@ -1,0 +1,3989 @@
+{
+  "metadata": {
+    "generatedAt": "2025-12-21T20:03:25.451Z",
+    "duration": "Multi-source monitoring",
+    "sources": [
+      "zha",
+      "blakadder",
+      "community",
+      "github",
+      "research"
+    ],
+    "totalRequests": 21
+  },
+  "summary": {
+    "totalSources": 5,
+    "totalManufacturerIds": 648,
+    "totalDevices": 476,
+    "newDiscoveries": 2
+  },
+  "discoveries": [
+    {
+      "source": "zha",
+      "newIds": [
+        "_TZ3000_g5xawfcq"
+      ],
+      "count": 1
+    },
+    {
+      "source": "blakadder",
+      "newIds": [
+        "_TZ3000_ztrfrcsu",
+        "_TZ3000_v1srfw9x",
+        "_TZ3000_gb5gaeca",
+        "_TZ3000_g1glzzfk",
+        "_TZ3000_iivsrikg",
+        "_TZ3000_j0gtlepx",
+        "_TZ3000_excgg5kb",
+        "_TZ3000_xkap8wtb",
+        "_TZ3000_idrffznf",
+        "_TZ3000_9vo5icau",
+        "_TZ3000_jyupj3fw",
+        "_TZ3000_o1jzcxou",
+        "_TZ3000_wptayaqr",
+        "_TZ3000_adkvzooy",
+        "_TZ3000_hafsqare",
+        "_TZ3000_e98krvvk",
+        "_TZ3000_tk3s5tyg",
+        "_TZ3000_g5xawfcq",
+        "_TZ3000_3ooaz3ng",
+        "_TZ3000_amdymr7l",
+        "_TZ3000_mraovvmm",
+        "_TZ3000_u5u4cakc",
+        "_TZ3000_czuyt8lz",
+        "_TZ3000_yl3zuyaw",
+        "_TZ3000_rul9yxcc",
+        "_TZ3000_mlswgkc3",
+        "_TZ3000_mxzo5rhf",
+        "_TZ3000_lepzuhto",
+        "_TZ3000_bezfthwc",
+        "_TZ3000_kjfzuycl",
+        "_TZ3000_4fjiwweb",
+        "_TZ3000_uri7ongn",
+        "_TZ3000_ixla93vd",
+        "_TZ3000_qja6nq5z",
+        "_TZ3000_csflgqj2",
+        "_TZ3000_vp6clf9d",
+        "_TZ3000_wkai4ga5",
+        "_TZ3000_rrjr1q0u",
+        "_TZ3000_dfgbtub0",
+        "_TZ3000_4upl1fcj",
+        "_TZ3000_pzui3skt",
+        "_TZ3000_v4l4b0lp",
+        "_TZ3000_xabckq1v",
+        "_TZ3000_majwnphg",
+        "_TZ3000_6axxqqi2",
+        "_TZ3000_zw7yf6yk",
+        "_TZ3000_prits6g4",
+        "_TZ3000_jak16dll",
+        "_TZ3000_twqctvna",
+        "_TZ3000_7dndcnnb",
+        "_TZ3000_0yxeawjt",
+        "_TZ3000_ps3dmato",
+        "_TZ3000_c7nc9w3c",
+        "_TZ3000_air9m6af",
+        "_TZ3000_9djocypn",
+        "_TZ3000_bppxj3sf",
+        "_TZ3000_z6fgd73r",
+        "_TZ3000_peszejy7",
+        "_TZ3000_owgcnkrh",
+        "_TZ3000_a7ouggvs",
+        "_TZ3000_8uaoilu9",
+        "_TZ3000_rylaozuc",
+        "_TZ3000_5fkufhn1",
+        "_TZ3000_9cpuaca6",
+        "_TZ3000_gek6snaj",
+        "_TZ3000_kohbva1f",
+        "_TZ3000_riwp3k79",
+        "_TZ3000_kdpxju99",
+        "_TZ3000_odygigth",
+        "_TZ3000_dbou1ap4",
+        "_TZ3000_00mk2xzy",
+        "_TZ3000_plyvnuf5",
+        "_TZ3000_upjrsxh1",
+        "_TZ3000_wamqdr3f",
+        "_TZ3000_kdi2o9m6",
+        "_TZ3000_1obwwnmq",
+        "_TZ3000_vzopcetz",
+        "_TZ3000_7dcddnye",
+        "_TZ3000_nosnx7im",
+        "_TZ3000_nbnmw9nc",
+        "_TZ3000_j2w1dw29",
+        "_TZ3000_el5kt5im",
+        "_TZ3000_oborybow",
+        "_TZ3000_pnzfdr9y",
+        "_TZ3000_br3laukf",
+        "_TZ3000_utagpnzs",
+        "_TZ3000_5bsf8vaj",
+        "_TZ3000_h1jnz6l8",
+        "_TZ3000_quqaeew6",
+        "_TZ3000_th6zqqy6",
+        "_TZ3000_qd7hej8u",
+        "_TZ3000_rco1yzb1",
+        "_TZ3000_j1v25l17",
+        "_TZ3000_ynmowqk2",
+        "_TZ3000_vd43bbfq",
+        "_TZ3000_fccpjz5z",
+        "_TZ3000_92chsky7",
+        "_TZ3000_ktuoyvt5",
+        "_TZ3000_pmvbt5hh",
+        "_TZ3000_okaz9tjs",
+        "_TZ3000_dksbtrzs",
+        "_TZ3000_egq7y6pr",
+        "_TZ3000_gidy6sjs",
+        "_TZ3000_svoqrno4",
+        "_TZ3000_9hpxg80k",
+        "_TZ3000_oiymh3qu",
+        "_TZ3000_7ed9cqgi",
+        "_TZ3000_8kzqqzu4",
+        "_TZ3000_e3vhyirx",
+        "_TZ3000_bi6lpsew",
+        "_TZ3000_famkxci2",
+        "_TZ3000_t8hzpgnd",
+        "_TZ3000_ee8nrt2l",
+        "_TZ3000_ufhtxr59",
+        "_TZ3000_yw5tvzsk",
+        "_TZ3000_b7bxojrg",
+        "_TZ3000_aim0ztek",
+        "_TZ3000_jmrgyl7o",
+        "_TZ3000_dd8wwzcy",
+        "_TZ3000_kyb656no",
+        "_TZ3000_hodifxa9",
+        "_TZ3000_x2fqbdun",
+        "_TZ3000_589kq4ul",
+        "_TZ3000_82ptnsd4",
+        "_TZ3000_wbrlnkm9",
+        "_TZ3000_1mtktxdk",
+        "_TZ3000_bujv0r9b",
+        "_TZ3000_zw7wr5uo",
+        "_TZ3000_tza2vjxx",
+        "_TZ3000_cmaky9gq",
+        "_TZ3000_l8fsgo6p",
+        "_TZ3000_4zf0crgo",
+        "_TZ3000_khtlvdfc",
+        "_TZ3000_fxjdcikv",
+        "_TZ3000_pmz6mjyu",
+        "_TZ3000_zmy1waw6",
+        "_TZ3000_bkfe0bab",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_ss98ec5d",
+        "_TZ3000_7hcgjxpc",
+        "_TZ3000_cymsnfvf",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_qewo8dlz",
+        "_TZ3000_abci1hiu",
+        "_TZ3000_mh9px7cq",
+        "_TZ3000_ywagc4rj",
+        "_TZ3000_itnrsufe",
+        "_TZ3000_8yhypbo7",
+        "_TZ3000_bmfw9ykl",
+        "_TZ3000_gbm10jnj",
+        "_TZ3000_sj7jbgks",
+        "_TZ3000_ja5osu5g",
+        "_TZ3000_fsiepnrh",
+        "_TZ3000_fie1dpkm",
+        "_TZ3000_nss8amz9",
+        "_TZ3000_wqcbzbae",
+        "_TZ3000_hdtmulpn",
+        "_TZ3000_kmh5qpmb",
+        "_TZ3000_qaaysllp",
+        "_TZ3000_w0qqde0g",
+        "_TZ3000_gjnozsaz",
+        "_TZ3000_zloso4jk",
+        "_TZ3000_fgwhjm9j",
+        "_TZ3000_rdfh8cfs",
+        "_TZ3000_ww9i3e0y",
+        "_TZ3000_ksw8qtmt",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_h4wnrtck",
+        "_TZ3000_v7chgqso",
+        "_TZ3000_lbtpiody",
+        "_TZ3000_jwv3cwak",
+        "_TZ3000_h8ngtlxy",
+        "_TZ3000_tqlv4ug4",
+        "_TZ3000_01gpyda5",
+        "_TZ3000_qnejhcsu",
+        "_TZ3000_x3ewpzyr",
+        "_TZ3000_mwd3c2at",
+        "_TZ3000_waho4jtj",
+        "_TZ3000_lltemgsf",
+        "_TZ3000_typdpbpg",
+        "_TZ3000_qzjcsmar",
+        "_TZ3000_wxtp7c5y",
+        "_TZ3000_qeuvnohg",
+        "_TZ3000_cayepv1a",
+        "_TZ3000_jvzvulen",
+        "_TZ3000_ygvf9xzp",
+        "_TZ3000_8bxrzyxz",
+        "_TZ3000_mantufyr",
+        "_TZ3000_fab7r7mc",
+        "_TZ3000_dowj6gyi",
+        "_TZ3000_8ybe88nf",
+        "_TZ3000_fa9mlvja",
+        "_TZ3000_o4mkahkc",
+        "_TZ3000_psqjayrd",
+        "_TZ3000_d16y6col",
+        "_TZ3000_tygpxwqa",
+        "_TZ3000_jcfje0kb",
+        "_TZ3000_zirycpws",
+        "_TZ3000_xfs39dbf",
+        "_TZ3000_7ysdnebc",
+        "_TZ3000_mkhkxx1p",
+        "_TZ3000_qmi1cfuq",
+        "_TZ3000_txpirhfq",
+        "_TZ3000_ji4araar",
+        "_TZ3000_jl7qyupf",
+        "_TZ3000_nPGIPl5D",
+        "_TZ3000_bvrlqyj7",
+        "_TZ3000_zmy4lslw",
+        "_TZ3000_ypgri8yz",
+        "_TZ3000_vsasbzkf",
+        "_TZ3000_odzoiovu",
+        "_TZ3000_ltt60asa",
+        "_TZ3000_u3nv1jwk",
+        "_TZ3000_v7sopte0",
+        "_TZ3000_3a9beq8a",
+        "_TZ3000_jr2atpww",
+        "_TZ3000_r0pmi2p3",
+        "_TZ3000_q68478x7",
+        "_TZ3000_cphmq0q7",
+        "_TZ3000_ew3ldmgx",
+        "_TZ3000_dpo1ysak",
+        "_TZ3000_hdopuwv6",
+        "_TZ3000_bfn1w0mm",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_gznh2xla",
+        "_TZ3000_gvn91tmx",
+        "_TZ3000_n2egfsli",
+        "_TZ3000_oxslv1c9",
+        "_TZ3000_7tbsruql",
+        "_TZ3000_7d8yme6f",
+        "_TZ3000_rgchmad8",
+        "_TZ3000_bzxlofth",
+        "_TZ3000_au1rjicn",
+        "_TZ3000_4ugnzsli",
+        "_TZ3000_decxrtwa",
+        "_TZ3000_m0vaazab",
+        "_TZ3000_ufttklsz",
+        "_TZ3000_5k5vh43t",
+        "_TZ3000_gszjt2xx",
+        "_TZ3000_4fsgukof",
+        "_TZ3000_wr2ucaj9",
+        "_TZ3000_zsh6uat3",
+        "_TZ3000_pkfazisv",
+        "_TZ3000_2izubafb",
+        "_TZ3000_ug1vtuzn",
+        "_TZ3000_4whigl8i",
+        "_TZ3000_obacbukl",
+        "_TZ3000_i8l0nqdu",
+        "_TZ3000_nzbm4ad4",
+        "_TZ3000_ukuvyhaa",
+        "_TZ3000_l13erpv4",
+        "_TZ3000_fvhunhxb",
+        "_TZ3000_hktqahrq",
+        "_TZ3000_m9af2l6g",
+        "_TZ3000_ebar6ljy",
+        "_TZ3000_upgcbody",
+        "_TZ3000_fllyghyj",
+        "_TZ3000_yd2e749y",
+        "_TZ3000_bguser20",
+        "_TZ3000_xr3htd96",
+        "_TZ3000_nfnmi125",
+        "_TZ3000_w3c7ouru",
+        "_TZ3000_5f43h46b",
+        "_TZ3000_402jjyro",
+        "_TZ3000_1hwjutgo",
+        "_TZ3000_lnggrqqi",
+        "_TZ3000_mcxw5ehu",
+        "_TZ3000_6ygjfyll",
+        "_TZ3000_msl6wxk9",
+        "_TZ3000_otvn3lne",
+        "_TZ3000_85czd6fy",
+        "_TZ3000_lfa05ajd",
+        "_TZ3000_rk2yzt0u",
+        "_TZ3000_o4cjetlm",
+        "_TZ3000_h3noz0a5",
+        "_TZ3000_wrhhi5h2",
+        "_TZ3000_amqudjr0",
+        "_TZ3000_ssp0maqm",
+        "_TZ3000_xkwalgne",
+        "_TZ3000_p6ju8myv",
+        "_TZ3000_0zrccfgx",
+        "_TZ3000_keabpigv",
+        "_TZ3000_o005nuxx",
+        "_TZ3000_cfnprab5",
+        "_TZ3000_pcqjmcud",
+        "_TZ3000_rbl8c85w",
+        "_TZ3000_zigisuyh",
+        "_TZ3000_rdtixbnu",
+        "_TZ3000_3zofvcaa",
+        "_TZ3000_92qd4sqa",
+        "_TZ3000_hyfvrar3",
+        "_TZ3000_a33rw7ou",
+        "_TZ3000_mg4dy6z6",
+        "_TZ3000_ltiqubue",
+        "_TZ3000_dph3rpss",
+        "_TZ3000_ubrvwoxv",
+        "_TZE200_zuz7f94z",
+        "_TZE200_8daqwrsj",
+        "_TZE200_qtbrwrfv",
+        "_TZE200_bvu2wnxz",
+        "_TZE200_hvaxb2tc",
+        "_TZE200_yenbr4om",
+        "_TZE200_3p5ydos3",
+        "_TZE200_u9bfwha0",
+        "_TZE200_aoclfnxz",
+        "_TZE200_b6wax7g0",
+        "_TZE200_2ekuz3dz",
+        "_TZE200_2cs6g9i7",
+        "_TZE200_eaac7dkw",
+        "_TZE200_lsanae15",
+        "_TZE200_wv90ladg",
+        "_TZE200_2dpplnsn",
+        "_TZE200_0hg58wyk",
+        "_TZE200_0nauxa0p",
+        "_TZE200_dfxkcots",
+        "_TZE200_9i9dt8is",
+        "_TZE200_p0gzbqct",
+        "_TZE200_w4cryh2i",
+        "_TZE200_dmfguuli",
+        "_TZE200_pvvbommb",
+        "_TZE200_wt9agwf3",
+        "_TZE200_sh1btabb",
+        "_TZE200_a7sghmms",
+        "_TZE200_dzuqwsyg",
+        "_TZE200_yw7cahqs",
+        "_TZE200_h4cgnbzg",
+        "_TZE200_a4bpgplm",
+        "_TZE200_z1tyspqw",
+        "_TZE200_zuhszj9s",
+        "_TZE200_exfrnlow",
+        "_TZE200_9p5xmj5r",
+        "_TZE200_byzdayie",
+        "_TZE200_ewxhg6o9",
+        "_TZE200_bkkmqmyo",
+        "_TZE200_hkdl5fmv",
+        "_TZE200_9sfg7gm0",
+        "_TZE200_ywdxldoj",
+        "_TZE200_fhn3negr",
+        "_TZE200_8whxpsiw",
+        "_TZE200_ckud7u2l",
+        "_TZE200_vrjkcam9",
+        "_TZE200_n9clpsht",
+        "_TZE200_wlosfena",
+        "_TZE200_4eeyebrt",
+        "_TZE200_lgstepha",
+        "_TZE200_kagkgk0i",
+        "_TZE200_i0b1dbqu",
+        "_TZE200_sur6q7ko",
+        "_TZE200_ebwgzdqq",
+        "_TZE200_sbordckq",
+        "_TZE200_r32ctezx",
+        "_TZE200_579lguh2",
+        "_TZE200_s8gkrkxk",
+        "_TZE200_htnnfasr",
+        "_TZE200_chyvmhay",
+        "_TZE200_kyfqmmyl",
+        "_TZE200_7tdtqgwv",
+        "_TZE200_wunufsil",
+        "_TZE200_wfxuhoea",
+        "_TZE200_vucankjx",
+        "_TZE200_gbagoilo",
+        "_TZE200_nh9m9emk",
+        "_TZE200_go3tvswy",
+        "_TZE200_mexisfik",
+        "_TZE200_1agwnems",
+        "_TZE200_ojzhk75b",
+        "_TZE200_swaamsoy",
+        "_TZE200_9cxuhakf",
+        "_TZE200_a0syesf5",
+        "_TZE200_zah67ekd",
+        "_TZE200_rddyvrci",
+        "_TZE200_ztvwu4nk",
+        "_TZE200_e3oitdyu",
+        "_TZE200_la2c2uo9",
+        "_TZE200_zion52ef",
+        "_TZE200_ip2akl4w",
+        "_TZE200_fjjbhx9d",
+        "_TZE200_vm1gyrso",
+        "_TZE200_tviaymwx",
+        "_TZE200_rjxqso4a",
+        "_TZE200_ikvncluo",
+        "_TZE200_wukb7rhc",
+        "_TZE200_holel4dk",
+        "_TZE200_e9ba97vf",
+        "_TZE200_7yoranx2",
+        "_TZE200_lllliz3p",
+        "_TZE200_kds0pmmv",
+        "_TZE200_amp6tsvy",
+        "_TZE200_g1ib5ldv",
+        "_TZE200_tz32mtza",
+        "_TZE200_nhyj64w2",
+        "_TZE200_1ozguk6x",
+        "_TZE200_hhrtiq0x",
+        "_TZE200_d0yu2xgi",
+        "_TZE200_t1blo2bj",
+        "_TZE200_nlrfgpny",
+        "_TZE200_7hfcudw5",
+        "_TZE200_qq9mpfhw",
+        "_TZE200_nkjintbl",
+        "_TZE200_nnrfa68v",
+        "_TZE200_nslr42tt",
+        "_TZE200_c88teujp",
+        "_TZE200_azqp6ssj",
+        "_TZE200_zr9c0day",
+        "_TZE200_0dvm9mva",
+        "_TZE200_fsb6zw01",
+        "_TZE200_akjefhj5",
+        "_TZE200_81isopgh",
+        "_TZE200_kfvq6avy",
+        "_TZE200_2wg5qrjy",
+        "_TZE200_9m4kmbfu",
+        "_TZE200_9gvruqf5",
+        "_TZE200_3yp57tby",
+        "_TZE200_oisqyl4o",
+        "_TZE200_t5p1vj8r",
+        "_TZE200_uebojraa",
+        "_TZE200_jwsjbxjs",
+        "_TZE200_czk78ptr",
+        "_TZE200_owwdxjbx",
+        "_TZE200_husqqvux",
+        "_TZE200_lnbfnyxd",
+        "_TZE200_ppuj1vem",
+        "_TZE200_c2fmom5z",
+        "_TZE200_ogkdpgy2",
+        "_TZE200_dwcarsat",
+        "_TZE200_zpzndjez",
+        "_TZE200_68nvbio9",
+        "_TZE200_r0jdjrvi",
+        "_TZE200_dq1mfjug",
+        "_TZE200_znzs7yaw",
+        "_TZE200_cwnjrr72",
+        "_TZE200_2atgpdho",
+        "_TZE200_whkgqxse",
+        "_TZE200_9qayzqa8",
+        "_TZE200_auin8mzr",
+        "_TZE200_nueqqe6k",
+        "_TZE200_vrfecyku",
+        "_TZE200_lu01t0zl",
+        "_TZE200_nklqjk62",
+        "_TZE200_0u3bj3rc",
+        "_TZE200_v6ossqfy",
+        "_TZE200_mx6u6l4y",
+        "_TZE200_bq5c8xfe",
+        "_TZE200_vzekyi4c",
+        "_TZE200_8ygsuhe1",
+        "_TZE200_yvx5lh6k",
+        "_TZE200_ryfmq5rl",
+        "_TZE200_ggev5fsl",
+        "_TZE200_5d3vhjro",
+        "_TZE200_gubdgai2",
+        "_TZE200_hsgrhjpf",
+        "_TZE200_atpwqgml",
+        "_TZE200_aqnazj70",
+        "_TZE200_hue3yfsn",
+        "_TZE200_jthf7vb6",
+        "_TZE200_wktrysab",
+        "_TZE200_yi4jtqq1",
+        "_TZE200_khx7nnka",
+        "_TZE200_ntcy3xu1",
+        "_TZE200_jva8ink8",
+        "_TZE200_n8dljorx",
+        "_TZE200_pay2byax",
+        "_TZE200_3towulqd",
+        "_TZE200_1ibpyhdc",
+        "_TZE200_bh3n6gk8",
+        "_TZE200_2aaelwxk",
+        "_TZE200_hl0ss9oa",
+        "_TZE200_qoy0ekbd",
+        "_TZE200_znbl8dj5",
+        "_TZE200_a8sdabtg",
+        "_TZE200_bjawzodf",
+        "_TZE200_zl1kmjqx",
+        "_TZE200_yojqa8xn",
+        "_TZE200_yjjdcqsq",
+        "_TZE200_9yapgbuv",
+        "_TZE200_utkemkbs",
+        "_TZE200_kzm5w4iz",
+        "_TZE200_ztc6ggyl",
+        "_TZE200_7deq70b8",
+        "_TZE200_2hf7x9n3",
+        "_TZE200_m9skfctm",
+        "_TZE200_ps5v5jor",
+        "_TZE200_aycxwiau",
+        "_TZE200_myd45weu",
+        "_TZE200_ga1maeof",
+        "_TZE200_bqcqqjpb",
+        "_TZE200_fdtjuw7u",
+        "_TZE200_gaj531w3",
+        "_TZE200_iossyxra",
+        "_TZE200_xaabybja",
+        "_TZE200_rmymn92d",
+        "_TZE200_5sbebbzs",
+        "_TZE200_xuzcvlku",
+        "_TZE200_bcusnqt8",
+        "_TZE200_ves1ycwx",
+        "_TZE200_v9hkz2yn",
+        "_TZE200_1n2kyphz",
+        "_TZE200_9mahtqtg",
+        "_TZE200_r731zlxk",
+        "_TZE200_zqtiam4u",
+        "_TZE200_7eue9vhc",
+        "_TZE200_bv1jcqqu",
+        "_TZE200_fzo2pocs",
+        "_TZE200_cowvfni3",
+        "_TZE200_3i3exuay",
+        "_TZE200_pw7mji0l",
+        "_TZE200_cf1sl3tj",
+        "_TZE200_nw1r9hp6",
+        "_TZE200_kly8gjlz",
+        "_TZE200_mudxchsu",
+        "_TZE200_jeaxp72v",
+        "_TZE200_zivfvd7h",
+        "_TZE200_dv8abrrz",
+        "_TZE200_9xejegcy",
+        "_TZE204_5toc8efa",
+        "_TZE204_vawy74yh",
+        "_TZE204_t1blo2bj",
+        "_TZE204_nlrfgpny",
+        "_TZE204_c2fmom5z",
+        "_TZE204_ogkdpgy2",
+        "_TZE204_dtzziy1e",
+        "_TZE204_sbyx0lm6",
+        "_TZE204_nklqjk62",
+        "_TZE204_vmcgja59",
+        "_TZE204_ntcy3xu1",
+        "_TZE204_sooucan5",
+        "_TZE204_yjjdcqsq",
+        "_TZE204_ijxvkhd0",
+        "_TZE204_ztc6ggyl",
+        "_TZE204_sxm7l9xa",
+        "_TZE204_ves1ycwx",
+        "_TYZB01_ujfk3xd9",
+        "_TYZB01_hjsgdkfl",
+        "_TYZB01_aneiicmq",
+        "_TYZB01_4qw4rl1u",
+        "_TYZB01_mtunwanm",
+        "_TYZB01_hlla45kx",
+        "_TYZB01_wpmo3ja3",
+        "_TYZB01_8scntis1",
+        "_TYZB01_7qf81wty",
+        "_TYZB01_b6eaxdlh",
+        "_TYZB01_fi5yftwv",
+        "_TYZB01_ijihzffk",
+        "_TYZB01_7yidyqxd",
+        "_TYZB01_xiuox57i",
+        "_TYZB01_hww2py6b",
+        "_TYZB01_bngwdjsr",
+        "_TYZB01_v8gtiaed",
+        "_TYZB01_qezuin6k",
+        "_TYZB01_zsl6z0pw",
+        "_TYZB01_ncutbjdi",
+        "_TYZB01_bagt1e4o",
+        "_TYZB01_qjqgmqxr",
+        "_TYZB01_iuepbmpv",
+        "_TYZB01_qeqvmvti",
+        "_TYZB01_kvwjujy9",
+        "_TYZB01_ftdkanlj",
+        "_TYZB01_vwqnz1sn",
+        "_TYZB01_qm6djpta",
+        "_TYZB01_8wt0zp49",
+        "_TYZB01_dr6sduka",
+        "_TYZB01_qiplt4jq",
+        "_TYZB01_dvakyzhd",
+        "_TYZB01_ef5xlc9q",
+        "_TYZB01_zwvaj5wy",
+        "_TYZB01_tv3wxhcz",
+        "_TYZB01_jytabjkb",
+        "_TYZB01_3zv6oleo",
+        "_TYZB01_j9xxahcl",
+        "_TYZB01_ymcdbl3u",
+        "_TYZB01_dl7cejts",
+        "_TYZB01_xph99wvr",
+        "_TYZB01_ncdapbwy",
+        "_TYZB01_4mdqxxnn",
+        "_TYZB01_4tlksk8a",
+        "_TYZB01_2b8f6cio",
+        "_TYZB01_71kfvvma",
+        "_TYZB01_cbiezpds",
+        "_TYZB01_zqvwka4k",
+        "_TYZB01_z2umiwvq",
+        "_TZ3210_remypqqm",
+        "_TZ3210_psgq7ysz",
+        "_TZ3210_fhx7lk3d",
+        "_TZ3210_yluvwhjc",
+        "_TZ3210_rxqls8v0",
+        "_TZ3210_zmy9hjay",
+        "_TZ3210_wuhzzfqg",
+        "_TZ3210_lfbz816s",
+        "_TZ3210_ebbfkvoy",
+        "_TZ3210_sln7ah6r",
+        "_TZ3210_ijczzg9h",
+        "_TZ3210_jijr1sss",
+        "_TZ3210_pwauw3g2",
+        "_TZ3210_grnwgegn",
+        "_TZ3210_pudg9sge",
+        "_TZ3210_c2iwpxf1",
+        "_TZ3210_r0xgkft5",
+        "_TZ3210_zbabx9wh",
+        "_TZ3210_umi6vbsz",
+        "_TZ3210_ngqk6jia",
+        "_TZ3210_tfxwxklq",
+        "_TZ3210_q7oryllx",
+        "_TZ3210_raqjcxo5",
+        "_TZ3210_7jnk7l3k",
+        "_TZ3210_pfbzs1an",
+        "_TZ3210_lzqq3u4r",
+        "_TZ3210_4whigl8i",
+        "_TZ3210_frm6149r",
+        "_TZ3210_dxroobu3",
+        "_TZ3210_dbilpfqk",
+        "_TZ3210_778drfdt",
+        "_TZ3210_ttkgurpb",
+        "_TZ3210_jicmoite",
+        "_TZ3210_mny0zvkm",
+        "_TZ3210_rcggc0ys",
+        "_TZ3210_mntza0sw",
+        "_TZ3210_r0vzq1oj",
+        "_TZ3210_cieijuw1",
+        "_TZ3210_mcm6m1ma",
+        "_TZ3210_dse8ogfy",
+        "_TZ3210_j4pdtz9v",
+        "_TZ3210_xwqng7ol",
+        "_TZ3210_g0qr1fqo",
+        "_TZ3210_cwamkvua",
+        "_TZ3210_3mpwqzuu",
+        "_TZ3210_wdexaypg",
+        "_TZ3210_9q49basr",
+        "_TZ3210_i680rtja",
+        "_TZ3210_nehayyhx",
+        "_TZ3210_wuheofsg",
+        "_TZ3210_e5t9bfdv",
+        "_TZ3210_19qb27da",
+        "_TZ3210_4zinq6io",
+        "_TZ3210_93gnbdgz",
+        "_TZ3210_a5fxguxr",
+        "_TZ3210_trm3l2aw",
+        "_TZ3210_bfvybixd",
+        "_TZ3210_sroezl0s",
+        "_TZ3210_1elppmba",
+        "_TZ3210_5snkkrxw",
+        "_TZ3210_bicjqpg4",
+        "_TZ3210_0rn9qhnu",
+        "_TZ3210_odlghna1",
+        "_TZ3210_klv2wul0",
+        "_TZ3210_eymunffl",
+        "_TZ3210_wp1k8xws",
+        "_TZ3210_e020aaaj"
+      ],
+      "count": 647
+    }
+  ],
+  "recommendations": [
+    "🔧 Mettre à jour la base de données avec les nouveaux manufacturer IDs",
+    "📝 Créer des drivers pour les nouveaux devices trouvés",
+    "🧪 Tester la compatibilité des nouveaux manufacturer IDs",
+    "🔍 Examiner les repos GitHub populaires pour inspiration"
+  ],
+  "detailedData": {
+    "zha": {
+      "manufacturerIds": [
+        "_TZ3000_g5xawfcq"
+      ],
+      "devices": [
+        {
+          "type": "model",
+          "value": "data-analytics-event=",
+          "context": "models\" data-analytics-event=\""
+        },
+        {
+          "type": "model",
+          "value": "class=",
+          "context": "models&quot;,&quot;tag&quot;:&quot;link&quot;,&quot;context&quot;:&quot;platform&quot;,&quot;location&quot;:&quot;navbar&quot;,&quot;label&quot;:&quot;github_models_link_platform_navbar&quot;}\" class=\""
+        },
+        {
+          "type": "model",
+          "value": "viewBox=",
+          "context": "model NavLink-module__icon--h0sw7\" viewBox=\""
+        },
+        {
+          "type": "model",
+          "value": "NavLink-module__subtitle--qC15H",
+          "context": "Models</span><span class=\"NavLink-module__subtitle--qC15H\""
+        },
+        {
+          "type": "model",
+          "value": "auto\\",
+          "context": "models_info\\u003c/code\\u003e\\u003c/li\\u003e\\n\\u003cli\\u003e\\u003ccode\\u003eendpoints\\u003c/code\\u003e\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003cp dir=\\\"auto\\\""
+        },
+        {
+          "type": "model",
+          "value": "highlight highlight-source-python notranslate position-relative overflow-auto\\",
+          "context": "Models info tells the application which devices should use this particular quirk. Endpoints are the simple descriptors that we spoke about earlier exactly as they are on the device. \\u003ccode\\u003eendpoints\\u003c/code\\u003e is a dict where the key is the id of the endpoint and the value is an object with the following properties: \\u003ccode\\u003eprofile_id\\u003c/code\\u003e, \\u003ccode\\u003edevice_type\\u003c/code\\u003e, \\u003ccode\\u003einput_clusters\\u003c/code\\u003e and \\u003ccode\\u003eoutput_clusters\\u003c/code\\u003e. Creating the signature element is generally just a job of transcribing what the device gives us. Here is an example:\\u003c/p\\u003e\\n\\u003cdiv class=\\\"highlight highlight-source-python notranslate position-relative overflow-auto\\\""
+        },
+        {
+          "type": "model",
+          "value": "\\u003e\\u003cpre\\u003e\\u003cspan class=\\",
+          "context": "MODELS_INFO: [(LUMI, \\u0026quot;lumi.plug.maus01\\u0026quot;)],\\n    ENDPOINTS: {\\n        # \\u0026lt;SimpleDescriptor endpoint=1 profile=260 device_type=81\\n        # device_version=1\\n        # input_clusters=[0, 4, 3, 6, 16, 5, 10, 1, 2, 2820]\\n        # output_clusters=[25, 10]\\u0026gt;\\n        1: {\\n            PROFILE_ID: zha.PROFILE_ID,\\n            DEVICE_TYPE: zha.DeviceType.SMART_PLUG,\\n            INPUT_CLUSTERS: [\\n                Basic.cluster_id,\\n                PowerConfiguration.cluster_id,\\n                DeviceTemperature.cluster_id,\\n                Groups.cluster_id,\\n                Identify.cluster_id,\\n                OnOff.cluster_id,\\n                Scenes.cluster_id,\\n                BinaryOutput.cluster_id,\\n                Time.cluster_id,\\n                ElectricalMeasurement.cluster_id,\\n            ],\\n            OUTPUT_CLUSTERS: [Ota.cluster_id, Time.cluster_id],\\n        },\\n    },\\n}\\\"\\u003e\\u003cpre\\u003e\\u003cspan class=\\\""
+        },
+        {
+          "type": "model",
+          "value": "pl-c1\\",
+          "context": "MODELS_INFO\\u003c/span\\u003e: [(\\u003cspan class=\\\"pl-c1\\\""
+        },
+        {
+          "type": "model",
+          "value": "auto\\",
+          "context": "models_info\\u003c/code\\u003e is generally omitted and there is an extra element \\u003ccode\\u003eskip_configuration\\u003c/code\\u003e that instructs the application to skip configuration if necessary. Some manufacturers have not implemented the specifications correctly and the devices come pre-configured and therefore the configuration calls fail (non Zigbee 3.0 Xiaomi devices for instance). Usually, you should not add \\u003ccode\\u003eskip_configuration\\u003c/code\\u003e.\\u003c/p\\u003e\\n\\u003cp dir=\\\"auto\\\""
+        },
+        {
+          "type": "model",
+          "value": "\\u003e\\u003cpre\\u003e\\u003cspan class=\\",
+          "context": "MODELS_INFO: [(LUMI, \\u0026quot;lumi.plug.maus01\\u0026quot;)],\\n        ENDPOINTS: {\\n            # \\u0026lt;SimpleDescriptor endpoint=1 profile=260 device_type=81\\n            # device_version=1\\n            # input_clusters=[0, 4, 3, 6, 16, 5, 10, 1, 2, 2820]\\n            # output_clusters=[25, 10]\\u0026gt;\\n            1: {\\n                PROFILE_ID: zha.PROFILE_ID,\\n                DEVICE_TYPE: zha.DeviceType.SMART_PLUG,\\n                INPUT_CLUSTERS: [\\n                    Basic.cluster_id,\\n                    PowerConfiguration.cluster_id,\\n                    DeviceTemperature.cluster_id,\\n                    Groups.cluster_id,\\n                    Identify.cluster_id,\\n                    OnOff.cluster_id,\\n                    Scenes.cluster_id,\\n                    BinaryOutput.cluster_id,\\n                    Time.cluster_id,\\n                    ElectricalMeasurement.cluster_id,\\n                ],\\n                OUTPUT_CLUSTERS: [Ota.cluster_id, Time.cluster_id],\\n            },\\n            # \\u0026lt;SimpleDescriptor endpoint=2 profile=260 device_type=9\\n            # device_version=1\\n            # input_clusters=[12]\\n            # output_clusters=[12, 4]\\u0026gt;\\n            2: {\\n                PROFILE_ID: zha.PROFILE_ID,\\n                DEVICE_TYPE: zha.DeviceType.MAIN_POWER_OUTLET,\\n                INPUT_CLUSTERS: [AnalogInput.cluster_id],\\n                OUTPUT_CLUSTERS: [AnalogInput.cluster_id, Groups.cluster_id],\\n            },\\n            # \\u0026lt;SimpleDescriptor endpoint=3 profile=260 device_type=83\\n            # device_version=1\\n            # input_clusters=[12]\\n            # output_clusters=[12]\\u0026gt;\\n            3: {\\n                PROFILE_ID: zha.PROFILE_ID,\\n                DEVICE_TYPE: zha.DeviceType.METER_INTERFACE,\\n                INPUT_CLUSTERS: [AnalogInput.cluster_id],\\n                OUTPUT_CLUSTERS: [AnalogInput.cluster_id],\\n            },\\n            # \\u0026lt;SimpleDescriptor endpoint=100 profile=260 device_type=263\\n            # device_version=2\\n            # input_clusters=[15]\\n            # output_clusters=[15, 4]\\u0026gt;\\n            100: {\\n                PROFILE_ID: zha.PROFILE_ID,\\n                DEVICE_TYPE: zha.DeviceType.OCCUPANCY_SENSOR,\\n                INPUT_CLUSTERS: [BinaryInput.cluster_id],\\n                OUTPUT_CLUSTERS: [BinaryInput.cluster_id, Groups.cluster_id],\\n            },\\n        },\\n    }\\n    replacement = {\\n        SKIP_CONFIGURATION: True,\\n        ENDPOINTS: {\\n            1: {\\n                PROFILE_ID: zha.PROFILE_ID,\\n                DEVICE_TYPE: zha.DeviceType.SMART_PLUG,\\n                INPUT_CLUSTERS: [\\n                    BasicCluster,\\n                    PowerConfiguration.cluster_id,\\n                    DeviceTemperature.cluster_id,\\n                    Groups.cluster_id,\\n                    Identify.cluster_id,\\n                    OnOff.cluster_id,\\n                    Scenes.cluster_id,\\n                    BinaryOutput.cluster_id,\\n                    Time.cluster_id,\\n                    ElectricalMeasurementCluster,\\n                ],\\n                OUTPUT_CLUSTERS: [Ota.cluster_id, Time.cluster_id],\\n            },\\n            2: {\\n                PROFILE_ID: zha.PROFILE_ID,\\n                DEVICE_TYPE: zha.DeviceType.MAIN_POWER_OUTLET,\\n                INPUT_CLUSTERS: [AnalogInputCluster],\\n                OUTPUT_CLUSTERS: [AnalogInput.cluster_id, Groups.cluster_id],\\n            },\\n            3: {\\n                PROFILE_ID: zha.PROFILE_ID,\\n                DEVICE_TYPE: zha.DeviceType.METER_INTERFACE,\\n                INPUT_CLUSTERS: [AnalogInput.cluster_id],\\n                OUTPUT_CLUSTERS: [AnalogInput.cluster_id],\\n            },\\n            100: {\\n                PROFILE_ID: zha.PROFILE_ID,\\n                DEVICE_TYPE: zha.DeviceType.OCCUPANCY_SENSOR,\\n                INPUT_CLUSTERS: [BinaryInput.cluster_id],\\n                OUTPUT_CLUSTERS: [BinaryInput.cluster_id, Groups.cluster_id],\\n            },\\n        },\\n    }\\\"\\u003e\\u003cpre\\u003e\\u003cspan class=\\\""
+        },
+        {
+          "type": "model",
+          "value": "pl-c1\\",
+          "context": "MODELS_INFO\\u003c/span\\u003e: [(\\u003cspan class=\\\"pl-c1\\\""
+        },
+        {
+          "type": "model",
+          "value": "highlight highlight-source-python notranslate position-relative overflow-auto\\",
+          "context": "models_info\\u003c/code\\u003e from it. Then we replace the cluster ids that we want to override with the names of our \\u003ccode\\u003eCustomCluster\\u003c/code\\u003e implementations that we have created. The result looks like this:\\u003c/p\\u003e\\n\\u003cdiv class=\\\"highlight highlight-source-python notranslate position-relative overflow-auto\\\""
+        },
+        {
+          "type": "model",
+          "value": "\\u003e\\u003cpre\\u003e\\u003cspan class=\\",
+          "context": "model\\u0026quot;: \\u0026quot;TS0121\\u0026quot;,\\n        \\u0026quot;class\\u0026quot;: \\u0026quot;zhaquirks.tuya.ts0121_plug.Plug\\u0026quot;\\n    }\\n    assert_signature_matches_quirk(zhaquirks.tuya.ts0121_plug.Plug, signature)\\\"\\u003e\\u003cpre\\u003e\\u003cspan class=\\\""
+        },
+        {
+          "type": "model",
+          "value": "\\u003c/span\\u003e: \\u003cspan class=\\",
+          "context": "model\\\"\\u003c/span\\u003e: \\u003cspan class=\\\""
+        },
+        {
+          "type": "model",
+          "value": "pl-c1",
+          "context": "MODELS_INFO</span>: [(<span class=\"pl-c1\""
+        },
+        {
+          "type": "model",
+          "value": "pl-c1",
+          "context": "MODELS_INFO</span>: [(<span class=\"pl-c1\""
+        },
+        {
+          "type": "model",
+          "value": "</span>: <span class=",
+          "context": "model\"</span>: <span class=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "href=",
+          "context": "description+xml\" href=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "class=",
+          "context": "description\" class=\""
+        },
+        {
+          "type": "description",
+          "value": ">Use saved searches to filter your results more quickly</h2>\n    </div>\n    <div class=",
+          "context": "description\">Use saved searches to filter your results more quickly</h2>\n    </div>\n    <div class=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "s functionality. It contains a profile id, the device type, and collections of clusters. The profile id tells the application what set of Zigbee rules to use. The most common profile will be 260 (0x0104) for the Home Automation profile. The device type tells the application what logical type of device this is ex: on off light, color light, etc. The clusters explain to the application what types of functionality exist on the endpoint. Here is an example:\\n\\u003ccode\\u003e\\u0026lt;SimpleDescriptor endpoint=1 profile=260 device_type=1026 device_version=0 input_clusters=[0, 1, 3, 32, 1026, 1280, 2821] output_clusters=[25]\\u0026gt;\\u003c/code\\u003e\\u003c/p\\u003e\\n\\u003cdiv class=\\",
+          "context": "description of a Zigbee device endpoint and is responsible for explaining the endpoint's functionality. It contains a profile id, the device type, and collections of clusters. The profile id tells the application what set of Zigbee rules to use. The most common profile will be 260 (0x0104) for the Home Automation profile. The device type tells the application what logical type of device this is ex: on off light, color light, etc. The clusters explain to the application what types of functionality exist on the endpoint. Here is an example:\\n\\u003ccode\\u003e\\u0026lt;SimpleDescriptor endpoint=1 profile=260 device_type=1026 device_version=0 input_clusters=[0, 1, 3, 32, 1026, 1280, 2821] output_clusters=[25]\\u0026gt;\\u003c/code\\u003e\\u003c/p\\u003e\\n\\u003cdiv class=\\\""
+        },
+        {
+          "type": "description",
+          "value": "s functionality. It contains a profile id, the device type, and collections of clusters. The profile id tells the application what set of Zigbee rules to use. The most common profile will be 260 (0x0104) for the Home Automation profile. The device type tells the application what logical type of device this is ex: on off light, color light, etc. The clusters explain to the application what types of functionality exist on the endpoint. Here is an example:\n<code>&lt;SimpleDescriptor endpoint=1 profile=260 device_type=1026 device_version=0 input_clusters=[0, 1, 3, 32, 1026, 1280, 2821] output_clusters=[25]&gt;</code></p>\n<div class=",
+          "context": "description of a Zigbee device endpoint and is responsible for explaining the endpoint's functionality. It contains a profile id, the device type, and collections of clusters. The profile id tells the application what set of Zigbee rules to use. The most common profile will be 260 (0x0104) for the Home Automation profile. The device type tells the application what logical type of device this is ex: on off light, color light, etc. The clusters explain to the application what types of functionality exist on the endpoint. Here is an example:\n<code>&lt;SimpleDescriptor endpoint=1 profile=260 device_type=1026 device_version=0 input_clusters=[0, 1, 3, 32, 1026, 1280, 2821] output_clusters=[25]&gt;</code></p>\n<div class=\""
+        },
+        {
+          "type": "model",
+          "value": "data-analytics-event=",
+          "context": "models\" data-analytics-event=\""
+        },
+        {
+          "type": "model",
+          "value": "class=",
+          "context": "models&quot;,&quot;tag&quot;:&quot;link&quot;,&quot;context&quot;:&quot;platform&quot;,&quot;location&quot;:&quot;navbar&quot;,&quot;label&quot;:&quot;github_models_link_platform_navbar&quot;}\" class=\""
+        },
+        {
+          "type": "model",
+          "value": "viewBox=",
+          "context": "model NavLink-module__icon--h0sw7\" viewBox=\""
+        },
+        {
+          "type": "model",
+          "value": "NavLink-module__subtitle--qC15H",
+          "context": "Models</span><span class=\"NavLink-module__subtitle--qC15H\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "href=",
+          "context": "description+xml\" href=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "class=",
+          "context": "description\" class=\""
+        },
+        {
+          "type": "description",
+          "value": ">Use saved searches to filter your results more quickly</h2>\n    </div>\n    <div class=",
+          "context": "description\">Use saved searches to filter your results more quickly</h2>\n    </div>\n    <div class=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "model",
+          "value": "data-analytics-event=",
+          "context": "models\" data-analytics-event=\""
+        },
+        {
+          "type": "model",
+          "value": "class=",
+          "context": "models&quot;,&quot;tag&quot;:&quot;link&quot;,&quot;context&quot;:&quot;platform&quot;,&quot;location&quot;:&quot;navbar&quot;,&quot;label&quot;:&quot;github_models_link_platform_navbar&quot;}\" class=\""
+        },
+        {
+          "type": "model",
+          "value": "viewBox=",
+          "context": "model NavLink-module__icon--h0sw7\" viewBox=\""
+        },
+        {
+          "type": "model",
+          "value": "NavLink-module__subtitle--qC15H",
+          "context": "Models</span><span class=\"NavLink-module__subtitle--qC15H\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "href=",
+          "context": "description+xml\" href=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "class=",
+          "context": "description\" class=\""
+        },
+        {
+          "type": "description",
+          "value": ">Use saved searches to filter your results more quickly</h2>\n    </div>\n    <div class=",
+          "context": "description\">Use saved searches to filter your results more quickly</h2>\n    </div>\n    <div class=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        }
+      ],
+      "quirks": []
+    },
+    "blakadder": {
+      "devices": [
+        {
+          "type": "model",
+          "value": ":84845506,",
+          "context": "model\":84845506,\""
+        },
+        {
+          "type": "model",
+          "value": ":5007,",
+          "context": "model\":5007,\""
+        },
+        {
+          "type": "model",
+          "value": ":5008,",
+          "context": "model\":5008,\""
+        },
+        {
+          "type": "model",
+          "value": ":5012,",
+          "context": "model\":5012,\""
+        },
+        {
+          "type": "model",
+          "value": ":81809,",
+          "context": "model\":81809,\""
+        },
+        {
+          "type": "model",
+          "value": ":81810,",
+          "context": "model\":81810,\""
+        },
+        {
+          "type": "model",
+          "value": ":81813,",
+          "context": "model\":81813,\""
+        },
+        {
+          "type": "model",
+          "value": ":81822,",
+          "context": "model\":81822,\""
+        },
+        {
+          "type": "model",
+          "value": ":81823,",
+          "context": "model\":81823,\""
+        },
+        {
+          "type": "model",
+          "value": ":81825,",
+          "context": "model\":81825,\""
+        },
+        {
+          "type": "model",
+          "value": ":81848,",
+          "context": "model\":81848,\""
+        },
+        {
+          "type": "model",
+          "value": ":81849,",
+          "context": "model\":81849,\""
+        },
+        {
+          "type": "model",
+          "value": ":81855,",
+          "context": "model\":81855,\""
+        },
+        {
+          "type": "model",
+          "value": ":81856,",
+          "context": "model\":81856,\""
+        },
+        {
+          "type": "model",
+          "value": ":81863,",
+          "context": "model\":81863,\""
+        },
+        {
+          "type": "model",
+          "value": ":4713406,",
+          "context": "model\":4713406,\""
+        },
+        {
+          "type": "model",
+          "value": ":4713407,",
+          "context": "model\":4713407,\""
+        },
+        {
+          "type": "model",
+          "value": ":33943,",
+          "context": "model\":33943,\""
+        },
+        {
+          "type": "model",
+          "value": ":33944,",
+          "context": "model\":33944,\""
+        },
+        {
+          "type": "model",
+          "value": ":33946,",
+          "context": "model\":33946,\""
+        },
+        {
+          "type": "model",
+          "value": ":33948,",
+          "context": "model\":33948,\""
+        },
+        {
+          "type": "model",
+          "value": ":33951,",
+          "context": "model\":33951,\""
+        },
+        {
+          "type": "model",
+          "value": ":33957,",
+          "context": "model\":33957,\""
+        },
+        {
+          "type": "model",
+          "value": ":70049,",
+          "context": "model\":70049,\""
+        },
+        {
+          "type": "model",
+          "value": ":421782,",
+          "context": "model\":421782,\""
+        },
+        {
+          "type": "model",
+          "value": ":421786,",
+          "context": "model\":421786,\""
+        },
+        {
+          "type": "model",
+          "value": ":421792,",
+          "context": "model\":421792,\""
+        },
+        {
+          "type": "model",
+          "value": ":3450,",
+          "context": "model\":3450,\""
+        },
+        {
+          "type": "model",
+          "value": ":53170161,",
+          "context": "model\":53170161,\""
+        },
+        {
+          "type": "model",
+          "value": ":12227,",
+          "context": "model\":12227,\""
+        },
+        {
+          "type": "model",
+          "value": ":12247,",
+          "context": "model\":12247,\""
+        },
+        {
+          "type": "model",
+          "value": ":12242,",
+          "context": "model\":12242,\""
+        },
+        {
+          "type": "model",
+          "value": ":12252,",
+          "context": "model\":12252,\""
+        },
+        {
+          "type": "model",
+          "value": ":12253,",
+          "context": "model\":12253,\""
+        },
+        {
+          "type": "model",
+          "value": ":12254,",
+          "context": "model\":12254,\""
+        },
+        {
+          "type": "model",
+          "value": ":900024,",
+          "context": "model\":900024,\""
+        },
+        {
+          "type": "model",
+          "value": ":900053,",
+          "context": "model\":900053,\""
+        },
+        {
+          "type": "model",
+          "value": ":900061,",
+          "context": "model\":900061,\""
+        },
+        {
+          "type": "model",
+          "value": ":900091,",
+          "context": "model\":900091,\""
+        },
+        {
+          "type": "model",
+          "value": ":900316,",
+          "context": "model\":900316,\""
+        },
+        {
+          "type": "model",
+          "value": ":900317,",
+          "context": "model\":900317,\""
+        },
+        {
+          "type": "model",
+          "value": ":99106,",
+          "context": "model\":99106,\""
+        },
+        {
+          "type": "model",
+          "value": ":4523410,",
+          "context": "model\":4523410,\""
+        },
+        {
+          "type": "model",
+          "value": ":4523420,",
+          "context": "model\":4523420,\""
+        },
+        {
+          "type": "model",
+          "value": ":4523430,",
+          "context": "model\":4523430,\""
+        },
+        {
+          "type": "model",
+          "value": ":43076,",
+          "context": "model\":43076,\""
+        },
+        {
+          "type": "model",
+          "value": ":43080,",
+          "context": "model\":43080,\""
+        },
+        {
+          "type": "model",
+          "value": ":43082,",
+          "context": "model\":43082,\""
+        },
+        {
+          "type": "model",
+          "value": ":43084,",
+          "context": "model\":43084,\""
+        },
+        {
+          "type": "model",
+          "value": ":43090,",
+          "context": "model\":43090,\""
+        },
+        {
+          "type": "model",
+          "value": ":43094,",
+          "context": "model\":43094,\""
+        },
+        {
+          "type": "model",
+          "value": ":43100,",
+          "context": "model\":43100,\""
+        },
+        {
+          "type": "model",
+          "value": ":43102,",
+          "context": "model\":43102,\""
+        },
+        {
+          "type": "model",
+          "value": ":43113,",
+          "context": "model\":43113,\""
+        },
+        {
+          "type": "model",
+          "value": ":[],",
+          "context": "model\":[],\""
+        },
+        {
+          "type": "model",
+          "value": ":74384,",
+          "context": "model\":74384,\""
+        },
+        {
+          "type": "model",
+          "value": ":74692,",
+          "context": "model\":74692,\""
+        },
+        {
+          "type": "model",
+          "value": ":54668161,",
+          "context": "model\":54668161,\""
+        },
+        {
+          "type": "model",
+          "value": ":99432,",
+          "context": "model\":99432,\""
+        },
+        {
+          "type": "model",
+          "value": ":10011722,",
+          "context": "model\":10011722,\""
+        },
+        {
+          "type": "model",
+          "value": ":10011723,",
+          "context": "model\":10011723,\""
+        },
+        {
+          "type": "model",
+          "value": ":10011724,",
+          "context": "model\":10011724,\""
+        },
+        {
+          "type": "model",
+          "value": ":10011725,",
+          "context": "model\":10011725,\""
+        },
+        {
+          "type": "model",
+          "value": ":10297665,",
+          "context": "model\":10297665,\""
+        },
+        {
+          "type": "model",
+          "value": ":10297666,",
+          "context": "model\":10297666,\""
+        },
+        {
+          "type": "model",
+          "value": ":10297667,",
+          "context": "model\":10297667,\""
+        },
+        {
+          "type": "model",
+          "value": ":10454471,",
+          "context": "model\":10454471,\""
+        },
+        {
+          "type": "model",
+          "value": ":9888010100045,",
+          "context": "model\":9888010100045,\""
+        },
+        {
+          "type": "model",
+          "value": ":57004000,",
+          "context": "model\":57004000,\""
+        },
+        {
+          "type": "model",
+          "value": ":57008000,",
+          "context": "model\":57008000,\""
+        },
+        {
+          "type": "model",
+          "value": ":910,",
+          "context": "model\":910,\""
+        },
+        {
+          "type": "model",
+          "value": ":9106,",
+          "context": "model\":9106,\""
+        },
+        {
+          "type": "model",
+          "value": ":9134,",
+          "context": "model\":9134,\""
+        },
+        {
+          "type": "model",
+          "value": ":3012732,",
+          "context": "model\":3012732,\""
+        },
+        {
+          "type": "model",
+          "value": ":7061288,",
+          "context": "model\":7061288,\""
+        },
+        {
+          "type": "model",
+          "value": ":322054,",
+          "context": "model\":322054,\""
+        },
+        {
+          "type": "model",
+          "value": ":8850600,",
+          "context": "model\":8850600,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075014190,",
+          "context": "model\":4058075014190,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075168572,",
+          "context": "model\":4058075168572,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075173989,",
+          "context": "model\":4058075173989,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075181472,",
+          "context": "model\":4058075181472,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075208339,",
+          "context": "model\":4058075208339,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075208353,",
+          "context": "model\":4058075208353,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075208360,",
+          "context": "model\":4058075208360,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075208377,",
+          "context": "model\":4058075208377,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075208384,",
+          "context": "model\":4058075208384,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075208391,",
+          "context": "model\":4058075208391,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075208414,",
+          "context": "model\":4058075208414,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075208421,",
+          "context": "model\":4058075208421,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075208438,",
+          "context": "model\":4058075208438,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075208445,",
+          "context": "model\":4058075208445,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075209084,",
+          "context": "model\":4058075209084,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075209985,",
+          "context": "model\":4058075209985,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075208421,",
+          "context": "model\":4058075208421,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075728981,",
+          "context": "model\":4058075728981,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075729001,",
+          "context": "model\":4058075729001,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075729025,",
+          "context": "model\":4058075729025,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075729063,",
+          "context": "model\":4058075729063,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075729100,",
+          "context": "model\":4058075729100,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075729124,",
+          "context": "model\":4058075729124,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075729148,",
+          "context": "model\":4058075729148,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075729186,",
+          "context": "model\":4058075729186,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075729209,",
+          "context": "model\":4058075729209,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075729223,",
+          "context": "model\":4058075729223,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075729247,",
+          "context": "model\":4058075729247,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075729261,",
+          "context": "model\":4058075729261,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075729285,",
+          "context": "model\":4058075729285,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075729308,",
+          "context": "model\":4058075729308,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075729322,",
+          "context": "model\":4058075729322,\""
+        },
+        {
+          "type": "model",
+          "value": ":74746,",
+          "context": "model\":74746,\""
+        },
+        {
+          "type": "model",
+          "value": ":600391,",
+          "context": "model\":600391,\""
+        },
+        {
+          "type": "model",
+          "value": ":83424577,",
+          "context": "model\":83424577,\""
+        },
+        {
+          "type": "model",
+          "value": ":100335194,",
+          "context": "model\":100335194,\""
+        },
+        {
+          "type": "model",
+          "value": ":[],",
+          "context": "model\":[],\""
+        },
+        {
+          "type": "model",
+          "value": ":12031,",
+          "context": "model\":12031,\""
+        },
+        {
+          "type": "model",
+          "value": ":12050,",
+          "context": "model\":12050,\""
+        },
+        {
+          "type": "model",
+          "value": ":12126,",
+          "context": "model\":12126,\""
+        },
+        {
+          "type": "model",
+          "value": ":12127,",
+          "context": "model\":12127,\""
+        },
+        {
+          "type": "model",
+          "value": ":12128,",
+          "context": "model\":12128,\""
+        },
+        {
+          "type": "model",
+          "value": ":1477777,",
+          "context": "model\":1477777,\""
+        },
+        {
+          "type": "model",
+          "value": ":404000,",
+          "context": "model\":404000,\""
+        },
+        {
+          "type": "model",
+          "value": ":404001,",
+          "context": "model\":404001,\""
+        },
+        {
+          "type": "model",
+          "value": ":404004,",
+          "context": "model\":404004,\""
+        },
+        {
+          "type": "model",
+          "value": ":404005,",
+          "context": "model\":404005,\""
+        },
+        {
+          "type": "model",
+          "value": ":404006,",
+          "context": "model\":404006,\""
+        },
+        {
+          "type": "model",
+          "value": ":404008,",
+          "context": "model\":404008,\""
+        },
+        {
+          "type": "model",
+          "value": ":404011,",
+          "context": "model\":404011,\""
+        },
+        {
+          "type": "model",
+          "value": ":404017,",
+          "context": "model\":404017,\""
+        },
+        {
+          "type": "model",
+          "value": ":404019,",
+          "context": "model\":404019,\""
+        },
+        {
+          "type": "model",
+          "value": ":404021,",
+          "context": "model\":404021,\""
+        },
+        {
+          "type": "model",
+          "value": ":404022,",
+          "context": "model\":404022,\""
+        },
+        {
+          "type": "model",
+          "value": ":404023,",
+          "context": "model\":404023,\""
+        },
+        {
+          "type": "model",
+          "value": ":404024,",
+          "context": "model\":404024,\""
+        },
+        {
+          "type": "model",
+          "value": ":404027,",
+          "context": "model\":404027,\""
+        },
+        {
+          "type": "model",
+          "value": ":404028,",
+          "context": "model\":404028,\""
+        },
+        {
+          "type": "model",
+          "value": ":404031,",
+          "context": "model\":404031,\""
+        },
+        {
+          "type": "model",
+          "value": ":404036,",
+          "context": "model\":404036,\""
+        },
+        {
+          "type": "model",
+          "value": ":404037,",
+          "context": "model\":404037,\""
+        },
+        {
+          "type": "model",
+          "value": ":404049,",
+          "context": "model\":404049,\""
+        },
+        {
+          "type": "model",
+          "value": ":404062,",
+          "context": "model\":404062,\""
+        },
+        {
+          "type": "model",
+          "value": ":404065,",
+          "context": "model\":404065,\""
+        },
+        {
+          "type": "model",
+          "value": ":44435,",
+          "context": "model\":44435,\""
+        },
+        {
+          "type": "model",
+          "value": ":1402755,",
+          "context": "model\":1402755,\""
+        },
+        {
+          "type": "model",
+          "value": ":3308431,",
+          "context": "model\":3308431,\""
+        },
+        {
+          "type": "model",
+          "value": ":3802961,",
+          "context": "model\":3802961,\""
+        },
+        {
+          "type": "model",
+          "value": ":3802962,",
+          "context": "model\":3802962,\""
+        },
+        {
+          "type": "model",
+          "value": ":3802963,",
+          "context": "model\":3802963,\""
+        },
+        {
+          "type": "model",
+          "value": ":3802964,",
+          "context": "model\":3802964,\""
+        },
+        {
+          "type": "model",
+          "value": ":3802966,",
+          "context": "model\":3802966,\""
+        },
+        {
+          "type": "model",
+          "value": ":3802967,",
+          "context": "model\":3802967,\""
+        },
+        {
+          "type": "model",
+          "value": ":4512700,",
+          "context": "model\":4512700,\""
+        },
+        {
+          "type": "model",
+          "value": ":4512701,",
+          "context": "model\":4512701,\""
+        },
+        {
+          "type": "model",
+          "value": ":4512702,",
+          "context": "model\":4512702,\""
+        },
+        {
+          "type": "model",
+          "value": ":4512703,",
+          "context": "model\":4512703,\""
+        },
+        {
+          "type": "model",
+          "value": ":4512704,",
+          "context": "model\":4512704,\""
+        },
+        {
+          "type": "model",
+          "value": ":4512705,",
+          "context": "model\":4512705,\""
+        },
+        {
+          "type": "model",
+          "value": ":4512706,",
+          "context": "model\":4512706,\""
+        },
+        {
+          "type": "model",
+          "value": ":4512708,",
+          "context": "model\":4512708,\""
+        },
+        {
+          "type": "model",
+          "value": ":4512719,",
+          "context": "model\":4512719,\""
+        },
+        {
+          "type": "model",
+          "value": ":4512721,",
+          "context": "model\":4512721,\""
+        },
+        {
+          "type": "model",
+          "value": ":4512723,",
+          "context": "model\":4512723,\""
+        },
+        {
+          "type": "model",
+          "value": ":4512726,",
+          "context": "model\":4512726,\""
+        },
+        {
+          "type": "model",
+          "value": ":4512728,",
+          "context": "model\":4512728,\""
+        },
+        {
+          "type": "model",
+          "value": ":4512729,",
+          "context": "model\":4512729,\""
+        },
+        {
+          "type": "model",
+          "value": ":4512737,",
+          "context": "model\":4512737,\""
+        },
+        {
+          "type": "model",
+          "value": ":4512738,",
+          "context": "model\":4512738,\""
+        },
+        {
+          "type": "model",
+          "value": ":5401392,",
+          "context": "model\":5401392,\""
+        },
+        {
+          "type": "model",
+          "value": ":5401393,",
+          "context": "model\":5401393,\""
+        },
+        {
+          "type": "model",
+          "value": ":5401394,",
+          "context": "model\":5401394,\""
+        },
+        {
+          "type": "model",
+          "value": ":5401395,",
+          "context": "model\":5401395,\""
+        },
+        {
+          "type": "model",
+          "value": ":5401396,",
+          "context": "model\":5401396,\""
+        },
+        {
+          "type": "model",
+          "value": ":5401397,",
+          "context": "model\":5401397,\""
+        },
+        {
+          "type": "model",
+          "value": ":5401398,",
+          "context": "model\":5401398,\""
+        },
+        {
+          "type": "model",
+          "value": ":5401399,",
+          "context": "model\":5401399,\""
+        },
+        {
+          "type": "model",
+          "value": ":89665,",
+          "context": "model\":89665,\""
+        },
+        {
+          "type": "model",
+          "value": ":91004,",
+          "context": "model\":91004,\""
+        },
+        {
+          "type": "model",
+          "value": ":98423051,",
+          "context": "model\":98423051,\""
+        },
+        {
+          "type": "model",
+          "value": ":98425031,",
+          "context": "model\":98425031,\""
+        },
+        {
+          "type": "model",
+          "value": ":31930,",
+          "context": "model\":31930,\""
+        },
+        {
+          "type": "model",
+          "value": ":4052899926110,",
+          "context": "model\":4052899926110,\""
+        },
+        {
+          "type": "model",
+          "value": ":4052899926127,",
+          "context": "model\":4052899926127,\""
+        },
+        {
+          "type": "model",
+          "value": ":4052899926158,",
+          "context": "model\":4052899926158,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075036185,",
+          "context": "model\":4058075036185,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075047853,",
+          "context": "model\":4058075047853,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075148338,",
+          "context": "model\":4058075148338,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075816459,",
+          "context": "model\":4058075816459,\""
+        },
+        {
+          "type": "model",
+          "value": ":4058075816534,",
+          "context": "model\":4058075816534,\""
+        },
+        {
+          "type": "model",
+          "value": ":4062172044776,",
+          "context": "model\":4062172044776,\""
+        },
+        {
+          "type": "model",
+          "value": ":73699,",
+          "context": "model\":73699,\""
+        },
+        {
+          "type": "model",
+          "value": ":73741,",
+          "context": "model\":73741,\""
+        },
+        {
+          "type": "model",
+          "value": ":180.12,",
+          "context": "model\":180.12,\""
+        },
+        {
+          "type": "model",
+          "value": ":371000001,",
+          "context": "model\":371000001,\""
+        },
+        {
+          "type": "model",
+          "value": ":371000002,",
+          "context": "model\":371000002,\""
+        },
+        {
+          "type": "model",
+          "value": ":500.43,",
+          "context": "model\":500.43,\""
+        },
+        {
+          "type": "model",
+          "value": ":500.44,",
+          "context": "model\":500.44,\""
+        },
+        {
+          "type": "model",
+          "value": ":500.45,",
+          "context": "model\":500.45,\""
+        },
+        {
+          "type": "model",
+          "value": ":500.47,",
+          "context": "model\":500.47,\""
+        },
+        {
+          "type": "model",
+          "value": ":500.48,",
+          "context": "model\":500.48,\""
+        },
+        {
+          "type": "model",
+          "value": ":500.49,",
+          "context": "model\":500.49,\""
+        },
+        {
+          "type": "model",
+          "value": ":500.63,",
+          "context": "model\":500.63,\""
+        },
+        {
+          "type": "model",
+          "value": ":500.64,",
+          "context": "model\":500.64,\""
+        },
+        {
+          "type": "model",
+          "value": ":500.67,",
+          "context": "model\":500.67,\""
+        },
+        {
+          "type": "model",
+          "value": ":501.24,",
+          "context": "model\":501.24,\""
+        },
+        {
+          "type": "model",
+          "value": ":501.31,",
+          "context": "model\":501.31,\""
+        },
+        {
+          "type": "model",
+          "value": ":501.34,",
+          "context": "model\":501.34,\""
+        },
+        {
+          "type": "model",
+          "value": ":50396,",
+          "context": "model\":50396,\""
+        },
+        {
+          "type": "model",
+          "value": ":798.15,",
+          "context": "model\":798.15,\""
+        },
+        {
+          "type": "model",
+          "value": ":929.6,",
+          "context": "model\":929.6,\""
+        },
+        {
+          "type": "model",
+          "value": ":929.63,",
+          "context": "model\":929.63,\""
+        },
+        {
+          "type": "model",
+          "value": ":939.99,",
+          "context": "model\":939.99,\""
+        },
+        {
+          "type": "model",
+          "value": ":8718699703424,",
+          "context": "model\":8718699703424,\""
+        },
+        {
+          "type": "model",
+          "value": ":871951433908,",
+          "context": "model\":871951433908,\""
+        },
+        {
+          "type": "model",
+          "value": ":8719514339125,",
+          "context": "model\":8719514339125,\""
+        },
+        {
+          "type": "model",
+          "value": ":915005986901,",
+          "context": "model\":915005986901,\""
+        },
+        {
+          "type": "model",
+          "value": ":915005987101,",
+          "context": "model\":915005987101,\""
+        },
+        {
+          "type": "model",
+          "value": ":915005987601,",
+          "context": "model\":915005987601,\""
+        },
+        {
+          "type": "model",
+          "value": ":915005988001,",
+          "context": "model\":915005988001,\""
+        },
+        {
+          "type": "model",
+          "value": ":915005988201,",
+          "context": "model\":915005988201,\""
+        },
+        {
+          "type": "model",
+          "value": ":915005996401,",
+          "context": "model\":915005996401,\""
+        },
+        {
+          "type": "model",
+          "value": ":915005997301,",
+          "context": "model\":915005997301,\""
+        },
+        {
+          "type": "model",
+          "value": ":[],",
+          "context": "model\":[],\""
+        },
+        {
+          "type": "model",
+          "value": ":915005997501,",
+          "context": "model\":915005997501,\""
+        },
+        {
+          "type": "model",
+          "value": ":915005997701,",
+          "context": "model\":915005997701,\""
+        },
+        {
+          "type": "model",
+          "value": ":915005997901,",
+          "context": "model\":915005997901,\""
+        },
+        {
+          "type": "model",
+          "value": ":915005998001,",
+          "context": "model\":915005998001,\""
+        },
+        {
+          "type": "model",
+          "value": ":915005998101,",
+          "context": "model\":915005998101,\""
+        },
+        {
+          "type": "model",
+          "value": ":9290012576,",
+          "context": "model\":9290012576,\""
+        },
+        {
+          "type": "model",
+          "value": ":929002375901,",
+          "context": "model\":929002375901,\""
+        },
+        {
+          "type": "model",
+          "value": ":929002376001,",
+          "context": "model\":929002376001,\""
+        },
+        {
+          "type": "model",
+          "value": ":929002376101,",
+          "context": "model\":929002376101,\""
+        },
+        {
+          "type": "model",
+          "value": ":929002376201,",
+          "context": "model\":929002376201,\""
+        },
+        {
+          "type": "model",
+          "value": ":929002376301,",
+          "context": "model\":929002376301,\""
+        },
+        {
+          "type": "model",
+          "value": ":929002376401,",
+          "context": "model\":929002376401,\""
+        },
+        {
+          "type": "model",
+          "value": ":929002376501,",
+          "context": "model\":929002376501,\""
+        },
+        {
+          "type": "model",
+          "value": ":929002376701,",
+          "context": "model\":929002376701,\""
+        },
+        {
+          "type": "model",
+          "value": ":929002376801,",
+          "context": "model\":929002376801,\""
+        },
+        {
+          "type": "model",
+          "value": ":929002401201,",
+          "context": "model\":929002401201,\""
+        },
+        {
+          "type": "model",
+          "value": ":929002459201,",
+          "context": "model\":929002459201,\""
+        },
+        {
+          "type": "model",
+          "value": ":929002966401,",
+          "context": "model\":929002966401,\""
+        },
+        {
+          "type": "model",
+          "value": ":929002966501,",
+          "context": "model\":929002966501,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003045401,",
+          "context": "model\":929003045401,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003045801,",
+          "context": "model\":929003045801,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003045901,",
+          "context": "model\":929003045901,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003047301,",
+          "context": "model\":929003047301,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003047501,",
+          "context": "model\":929003047501,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003052601,",
+          "context": "model\":929003052601,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003052901,",
+          "context": "model\":929003052901,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003053001,",
+          "context": "model\":929003053001,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003053501,",
+          "context": "model\":929003053501,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003053601,",
+          "context": "model\":929003053601,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003054301,",
+          "context": "model\":929003054301,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003054601,",
+          "context": "model\":929003054601,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003056901,",
+          "context": "model\":929003056901,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003089301,",
+          "context": "model\":929003089301,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003099101,",
+          "context": "model\":929003099101,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003115701,",
+          "context": "model\":929003115701,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003115901,",
+          "context": "model\":929003115901,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003498601,",
+          "context": "model\":929003498601,\""
+        },
+        {
+          "type": "model",
+          "value": ":929003526301,",
+          "context": "model\":929003526301,\""
+        },
+        {
+          "type": "model",
+          "value": ":9290011998,",
+          "context": "model\":9290011998,\""
+        },
+        {
+          "type": "model",
+          "value": ":9290011998,",
+          "context": "model\":9290011998,\""
+        },
+        {
+          "type": "model",
+          "value": ":701721,",
+          "context": "model\":701721,\""
+        },
+        {
+          "type": "model",
+          "value": ":5412748727388,",
+          "context": "model\":5412748727388,\""
+        },
+        {
+          "type": "model",
+          "value": ":5412748727401,",
+          "context": "model\":5412748727401,\""
+        },
+        {
+          "type": "model",
+          "value": ":5412748727432,",
+          "context": "model\":5412748727432,\""
+        },
+        {
+          "type": "model",
+          "value": ":100119,",
+          "context": "model\":100119,\""
+        },
+        {
+          "type": "model",
+          "value": ":[],",
+          "context": "model\":[],\""
+        },
+        {
+          "type": "model",
+          "value": ":484719,",
+          "context": "model\":484719,\""
+        },
+        {
+          "type": "model",
+          "value": ":70499,",
+          "context": "model\":70499,\""
+        },
+        {
+          "type": "model",
+          "value": ":71150,",
+          "context": "model\":71150,\""
+        },
+        {
+          "type": "model",
+          "value": ":71831,",
+          "context": "model\":71831,\""
+        },
+        {
+          "type": "model",
+          "value": ":72567,",
+          "context": "model\":72567,\""
+        },
+        {
+          "type": "model",
+          "value": ":72569,",
+          "context": "model\":72569,\""
+        },
+        {
+          "type": "model",
+          "value": ":73693,",
+          "context": "model\":73693,\""
+        },
+        {
+          "type": "model",
+          "value": ":73739,",
+          "context": "model\":73739,\""
+        },
+        {
+          "type": "model",
+          "value": ":73740,",
+          "context": "model\":73740,\""
+        },
+        {
+          "type": "model",
+          "value": ":73741,",
+          "context": "model\":73741,\""
+        },
+        {
+          "type": "model",
+          "value": ":73742,",
+          "context": "model\":73742,\""
+        },
+        {
+          "type": "model",
+          "value": ":73743,",
+          "context": "model\":73743,\""
+        },
+        {
+          "type": "model",
+          "value": ":73773,",
+          "context": "model\":73773,\""
+        },
+        {
+          "type": "model",
+          "value": ":73807,",
+          "context": "model\":73807,\""
+        },
+        {
+          "type": "model",
+          "value": ":73889,",
+          "context": "model\":73889,\""
+        },
+        {
+          "type": "model",
+          "value": ":74282,",
+          "context": "model\":74282,\""
+        },
+        {
+          "type": "model",
+          "value": ":74283,",
+          "context": "model\":74283,\""
+        },
+        {
+          "type": "model",
+          "value": ":74388,",
+          "context": "model\":74388,\""
+        },
+        {
+          "type": "model",
+          "value": ":74580,",
+          "context": "model\":74580,\""
+        },
+        {
+          "type": "model",
+          "value": ":74696,",
+          "context": "model\":74696,\""
+        },
+        {
+          "type": "model",
+          "value": ":75541,",
+          "context": "model\":75541,\""
+        },
+        {
+          "type": "model",
+          "value": ":151570,",
+          "context": "model\":151570,\""
+        },
+        {
+          "type": "model",
+          "value": ":30946,",
+          "context": "model\":30946,\""
+        },
+        {
+          "type": "model",
+          "value": ":8718801528273,",
+          "context": "model\":8718801528273,\""
+        },
+        {
+          "type": "model",
+          "value": ":50208693,",
+          "context": "model\":50208693,\""
+        },
+        {
+          "type": "model",
+          "value": ":50208695,",
+          "context": "model\":50208695,\""
+        },
+        {
+          "type": "model",
+          "value": ":90084,",
+          "context": "model\":90084,\""
+        },
+        {
+          "type": "model",
+          "value": ":90085,",
+          "context": "model\":90085,\""
+        },
+        {
+          "type": "model",
+          "value": ":90810,",
+          "context": "model\":90810,\""
+        },
+        {
+          "type": "model",
+          "value": ":120102,",
+          "context": "model\":120102,\""
+        },
+        {
+          "type": "model",
+          "value": ":120112,",
+          "context": "model\":120112,\""
+        },
+        {
+          "type": "model",
+          "value": ":49344,",
+          "context": "model\":49344,\""
+        },
+        {
+          "type": "model",
+          "value": ":511.012,",
+          "context": "model\":511.012,\""
+        },
+        {
+          "type": "model",
+          "value": ":511.201,",
+          "context": "model\":511.201,\""
+        },
+        {
+          "type": "model",
+          "value": ":511.202,",
+          "context": "model\":511.202,\""
+        },
+        {
+          "type": "model",
+          "value": ":511.344,",
+          "context": "model\":511.344,\""
+        },
+        {
+          "type": "model",
+          "value": ":511.524,",
+          "context": "model\":511.524,\""
+        },
+        {
+          "type": "model",
+          "value": ":511.541,",
+          "context": "model\":511.541,\""
+        },
+        {
+          "type": "model",
+          "value": ":511.557,",
+          "context": "model\":511.557,\""
+        },
+        {
+          "type": "model",
+          "value": ":5112.8,",
+          "context": "model\":5112.8,\""
+        },
+        {
+          "type": "model",
+          "value": ":5120.11,",
+          "context": "model\":5120.11,\""
+        },
+        {
+          "type": "model",
+          "value": ":5120.111,",
+          "context": "model\":5120.111,\""
+        },
+        {
+          "type": "model",
+          "value": ":5120.12,",
+          "context": "model\":5120.12,\""
+        },
+        {
+          "type": "model",
+          "value": ":5120.121,",
+          "context": "model\":5120.121,\""
+        },
+        {
+          "type": "model",
+          "value": ":5128.1,",
+          "context": "model\":5128.1,\""
+        },
+        {
+          "type": "vendor",
+          "value": "aria-label=",
+          "context": "vendors.html\" aria-label=\""
+        },
+        {
+          "type": "vendor",
+          "value": "class=",
+          "context": "vendors.html, (File)\" class=\""
+        },
+        {
+          "type": "vendor",
+          "value": "data-discover=",
+          "context": "vendors.html\" data-discover=\""
+        },
+        {
+          "type": "vendor",
+          "value": "react-directory-row-name-cell-large-screen",
+          "context": "vendors.html</a></div></div></div></div></td><td class=\"react-directory-row-name-cell-large-screen\""
+        },
+        {
+          "type": "vendor",
+          "value": "aria-label=",
+          "context": "vendors.html\" aria-label=\""
+        },
+        {
+          "type": "vendor",
+          "value": "class=",
+          "context": "vendors.html, (File)\" class=\""
+        },
+        {
+          "type": "vendor",
+          "value": "data-discover=",
+          "context": "vendors.html\" data-discover=\""
+        },
+        {
+          "type": "vendor",
+          "value": "react-directory-row-commit-cell",
+          "context": "vendors.html</a></div></div></div></div></td><td class=\"react-directory-row-commit-cell\""
+        },
+        {
+          "type": "model",
+          "value": "data-analytics-event=",
+          "context": "models\" data-analytics-event=\""
+        },
+        {
+          "type": "model",
+          "value": "class=",
+          "context": "models&quot;,&quot;tag&quot;:&quot;link&quot;,&quot;context&quot;:&quot;platform&quot;,&quot;location&quot;:&quot;navbar&quot;,&quot;label&quot;:&quot;github_models_link_platform_navbar&quot;}\" class=\""
+        },
+        {
+          "type": "model",
+          "value": "viewBox=",
+          "context": "model NavLink-module__icon--h0sw7\" viewBox=\""
+        },
+        {
+          "type": "model",
+          "value": "NavLink-module__subtitle--qC15H",
+          "context": "Models</span><span class=\"NavLink-module__subtitle--qC15H\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "href=",
+          "context": "description+xml\" href=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "class=",
+          "context": "description\" class=\""
+        },
+        {
+          "type": "description",
+          "value": ">Use saved searches to filter your results more quickly</h2>\n    </div>\n    <div class=",
+          "context": "description\">Use saved searches to filter your results more quickly</h2>\n    </div>\n    <div class=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "vendor",
+          "value": "/>\n</div>\n -->\n\t<div class=",
+          "context": "vendor, name or model\" />\n</div>\n -->\n\t<div class=\""
+        },
+        {
+          "type": "vendor",
+          "value": ">Manufacturer Sorted</a>\n        <div style=",
+          "context": "vendors.html\">Manufacturer Sorted</a>\n        <div style=\""
+        },
+        {
+          "type": "model",
+          "value": "/>\n</div>\n -->\n\t<div class=",
+          "context": "model\" />\n</div>\n -->\n\t<div class=\""
+        },
+        {
+          "type": "model",
+          "value": ">ZBMicro</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">ZBMicro</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">ZBM5-3C-80/86</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">ZBM5-3C-80/86</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">ZBM5-3C-120</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">ZBM5-3C-120</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">ZBM5-2C-80/86</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">ZBM5-2C-80/86</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">ZBM5-2C-120</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">ZBM5-2C-120</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">ZBM5-1C-80/86</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">ZBM5-1C-80/86</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">ZBM5-1C-120</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">ZBM5-1C-120</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">SWV</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">SWV</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">SNZB-05P</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">SNZB-05P</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">SNZB-04P</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">SNZB-04P</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">SNZB-02WD</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">SNZB-02WD</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">SNZB-02LD</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">SNZB-02LD</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">STPH-4-1-00</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">STPH-4-1-00</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">TRV-4-1-00</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">TRV-4-1-00</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">SLZB-07p7</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">SLZB-07p7</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">SLZB-07p10</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">SLZB-07p10</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">SLZB-07MG24</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">SLZB-07MG24</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">SLZB-07</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">SLZB-07</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">SLZB-06p7</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">SLZB-06p7</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">SLZB-06p10</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">SLZB-06p10</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">SLZB-06noPOE</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">SLZB-06noPOE</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">SLZB-06M</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">SLZB-06M</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">SLZB-06</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">SLZB-06</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">ZBMINIR2</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">ZBMINIR2</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">BTH-RM230Z</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">BTH-RM230Z</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">90810</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">90810</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">ZME_mPCIe_ZW_ZB</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">ZME_mPCIe_ZW_ZB</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">ZME_ZSTATION_ZW_ZB</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">ZME_ZSTATION_ZW_ZB</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">ZMEEWB7-ZW-ZB</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">ZMEEWB7-ZW-ZB</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "model",
+          "value": ">F20T60A</td>\n</tr>\n\n<tr>\n  <td class=",
+          "context": "model\">F20T60A</td>\n</tr>\n\n<tr>\n  <td class=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        }
+      ],
+      "manufacturerIds": [
+        "_TZ3000_ztrfrcsu",
+        "_TZ3000_v1srfw9x",
+        "_TZ3000_gb5gaeca",
+        "_TZ3000_g1glzzfk",
+        "_TZ3000_iivsrikg",
+        "_TZ3000_j0gtlepx",
+        "_TZ3000_excgg5kb",
+        "_TZ3000_xkap8wtb",
+        "_TZ3000_idrffznf",
+        "_TZ3000_9vo5icau",
+        "_TZ3000_jyupj3fw",
+        "_TZ3000_o1jzcxou",
+        "_TZ3000_wptayaqr",
+        "_TZ3000_adkvzooy",
+        "_TZ3000_hafsqare",
+        "_TZ3000_e98krvvk",
+        "_TZ3000_tk3s5tyg",
+        "_TZ3000_g5xawfcq",
+        "_TZ3000_3ooaz3ng",
+        "_TZ3000_amdymr7l",
+        "_TZ3000_mraovvmm",
+        "_TZ3000_u5u4cakc",
+        "_TZ3000_czuyt8lz",
+        "_TZ3000_yl3zuyaw",
+        "_TZ3000_rul9yxcc",
+        "_TZ3000_mlswgkc3",
+        "_TZ3000_mxzo5rhf",
+        "_TZ3000_lepzuhto",
+        "_TZ3000_bezfthwc",
+        "_TZ3000_kjfzuycl",
+        "_TZ3000_4fjiwweb",
+        "_TZ3000_uri7ongn",
+        "_TZ3000_ixla93vd",
+        "_TZ3000_qja6nq5z",
+        "_TZ3000_csflgqj2",
+        "_TZ3000_vp6clf9d",
+        "_TZ3000_wkai4ga5",
+        "_TZ3000_rrjr1q0u",
+        "_TZ3000_dfgbtub0",
+        "_TZ3000_4upl1fcj",
+        "_TZ3000_pzui3skt",
+        "_TZ3000_v4l4b0lp",
+        "_TZ3000_xabckq1v",
+        "_TZ3000_majwnphg",
+        "_TZ3000_6axxqqi2",
+        "_TZ3000_zw7yf6yk",
+        "_TZ3000_prits6g4",
+        "_TZ3000_jak16dll",
+        "_TZ3000_twqctvna",
+        "_TZ3000_7dndcnnb",
+        "_TZ3000_0yxeawjt",
+        "_TZ3000_ps3dmato",
+        "_TZ3000_c7nc9w3c",
+        "_TZ3000_air9m6af",
+        "_TZ3000_9djocypn",
+        "_TZ3000_bppxj3sf",
+        "_TZ3000_z6fgd73r",
+        "_TZ3000_peszejy7",
+        "_TZ3000_owgcnkrh",
+        "_TZ3000_a7ouggvs",
+        "_TZ3000_8uaoilu9",
+        "_TZ3000_rylaozuc",
+        "_TZ3000_5fkufhn1",
+        "_TZ3000_9cpuaca6",
+        "_TZ3000_gek6snaj",
+        "_TZ3000_kohbva1f",
+        "_TZ3000_riwp3k79",
+        "_TZ3000_kdpxju99",
+        "_TZ3000_odygigth",
+        "_TZ3000_dbou1ap4",
+        "_TZ3000_00mk2xzy",
+        "_TZ3000_plyvnuf5",
+        "_TZ3000_upjrsxh1",
+        "_TZ3000_wamqdr3f",
+        "_TZ3000_kdi2o9m6",
+        "_TZ3000_1obwwnmq",
+        "_TZ3000_vzopcetz",
+        "_TZ3000_7dcddnye",
+        "_TZ3000_nosnx7im",
+        "_TZ3000_nbnmw9nc",
+        "_TZ3000_j2w1dw29",
+        "_TZ3000_el5kt5im",
+        "_TZ3000_oborybow",
+        "_TZ3000_pnzfdr9y",
+        "_TZ3000_br3laukf",
+        "_TZ3000_utagpnzs",
+        "_TZ3000_5bsf8vaj",
+        "_TZ3000_h1jnz6l8",
+        "_TZ3000_quqaeew6",
+        "_TZ3000_th6zqqy6",
+        "_TZ3000_qd7hej8u",
+        "_TZ3000_rco1yzb1",
+        "_TZ3000_j1v25l17",
+        "_TZ3000_ynmowqk2",
+        "_TZ3000_vd43bbfq",
+        "_TZ3000_fccpjz5z",
+        "_TZ3000_92chsky7",
+        "_TZ3000_ktuoyvt5",
+        "_TZ3000_pmvbt5hh",
+        "_TZ3000_okaz9tjs",
+        "_TZ3000_dksbtrzs",
+        "_TZ3000_egq7y6pr",
+        "_TZ3000_gidy6sjs",
+        "_TZ3000_svoqrno4",
+        "_TZ3000_9hpxg80k",
+        "_TZ3000_oiymh3qu",
+        "_TZ3000_7ed9cqgi",
+        "_TZ3000_8kzqqzu4",
+        "_TZ3000_e3vhyirx",
+        "_TZ3000_bi6lpsew",
+        "_TZ3000_famkxci2",
+        "_TZ3000_t8hzpgnd",
+        "_TZ3000_ee8nrt2l",
+        "_TZ3000_ufhtxr59",
+        "_TZ3000_yw5tvzsk",
+        "_TZ3000_b7bxojrg",
+        "_TZ3000_aim0ztek",
+        "_TZ3000_jmrgyl7o",
+        "_TZ3000_dd8wwzcy",
+        "_TZ3000_kyb656no",
+        "_TZ3000_hodifxa9",
+        "_TZ3000_x2fqbdun",
+        "_TZ3000_589kq4ul",
+        "_TZ3000_82ptnsd4",
+        "_TZ3000_wbrlnkm9",
+        "_TZ3000_1mtktxdk",
+        "_TZ3000_bujv0r9b",
+        "_TZ3000_zw7wr5uo",
+        "_TZ3000_tza2vjxx",
+        "_TZ3000_cmaky9gq",
+        "_TZ3000_l8fsgo6p",
+        "_TZ3000_4zf0crgo",
+        "_TZ3000_khtlvdfc",
+        "_TZ3000_fxjdcikv",
+        "_TZ3000_pmz6mjyu",
+        "_TZ3000_zmy1waw6",
+        "_TZ3000_bkfe0bab",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_ss98ec5d",
+        "_TZ3000_7hcgjxpc",
+        "_TZ3000_cymsnfvf",
+        "_TZ3000_18ejxno0",
+        "_TZ3000_qewo8dlz",
+        "_TZ3000_abci1hiu",
+        "_TZ3000_mh9px7cq",
+        "_TZ3000_ywagc4rj",
+        "_TZ3000_itnrsufe",
+        "_TZ3000_8yhypbo7",
+        "_TZ3000_bmfw9ykl",
+        "_TZ3000_gbm10jnj",
+        "_TZ3000_sj7jbgks",
+        "_TZ3000_ja5osu5g",
+        "_TZ3000_fsiepnrh",
+        "_TZ3000_fie1dpkm",
+        "_TZ3000_nss8amz9",
+        "_TZ3000_wqcbzbae",
+        "_TZ3000_hdtmulpn",
+        "_TZ3000_kmh5qpmb",
+        "_TZ3000_qaaysllp",
+        "_TZ3000_w0qqde0g",
+        "_TZ3000_gjnozsaz",
+        "_TZ3000_zloso4jk",
+        "_TZ3000_fgwhjm9j",
+        "_TZ3000_rdfh8cfs",
+        "_TZ3000_ww9i3e0y",
+        "_TZ3000_ksw8qtmt",
+        "_TZ3000_2putqrmw",
+        "_TZ3000_h4wnrtck",
+        "_TZ3000_v7chgqso",
+        "_TZ3000_lbtpiody",
+        "_TZ3000_jwv3cwak",
+        "_TZ3000_h8ngtlxy",
+        "_TZ3000_tqlv4ug4",
+        "_TZ3000_01gpyda5",
+        "_TZ3000_qnejhcsu",
+        "_TZ3000_x3ewpzyr",
+        "_TZ3000_mwd3c2at",
+        "_TZ3000_waho4jtj",
+        "_TZ3000_lltemgsf",
+        "_TZ3000_typdpbpg",
+        "_TZ3000_qzjcsmar",
+        "_TZ3000_wxtp7c5y",
+        "_TZ3000_qeuvnohg",
+        "_TZ3000_cayepv1a",
+        "_TZ3000_jvzvulen",
+        "_TZ3000_ygvf9xzp",
+        "_TZ3000_8bxrzyxz",
+        "_TZ3000_mantufyr",
+        "_TZ3000_fab7r7mc",
+        "_TZ3000_dowj6gyi",
+        "_TZ3000_8ybe88nf",
+        "_TZ3000_fa9mlvja",
+        "_TZ3000_o4mkahkc",
+        "_TZ3000_psqjayrd",
+        "_TZ3000_d16y6col",
+        "_TZ3000_tygpxwqa",
+        "_TZ3000_jcfje0kb",
+        "_TZ3000_zirycpws",
+        "_TZ3000_xfs39dbf",
+        "_TZ3000_7ysdnebc",
+        "_TZ3000_mkhkxx1p",
+        "_TZ3000_qmi1cfuq",
+        "_TZ3000_txpirhfq",
+        "_TZ3000_ji4araar",
+        "_TZ3000_jl7qyupf",
+        "_TZ3000_nPGIPl5D",
+        "_TZ3000_bvrlqyj7",
+        "_TZ3000_zmy4lslw",
+        "_TZ3000_ypgri8yz",
+        "_TZ3000_vsasbzkf",
+        "_TZ3000_odzoiovu",
+        "_TZ3000_ltt60asa",
+        "_TZ3000_u3nv1jwk",
+        "_TZ3000_v7sopte0",
+        "_TZ3000_3a9beq8a",
+        "_TZ3000_jr2atpww",
+        "_TZ3000_r0pmi2p3",
+        "_TZ3000_q68478x7",
+        "_TZ3000_cphmq0q7",
+        "_TZ3000_ew3ldmgx",
+        "_TZ3000_dpo1ysak",
+        "_TZ3000_hdopuwv6",
+        "_TZ3000_bfn1w0mm",
+        "_TZ3000_0zfrhq4i",
+        "_TZ3000_gznh2xla",
+        "_TZ3000_gvn91tmx",
+        "_TZ3000_n2egfsli",
+        "_TZ3000_oxslv1c9",
+        "_TZ3000_7tbsruql",
+        "_TZ3000_7d8yme6f",
+        "_TZ3000_rgchmad8",
+        "_TZ3000_bzxlofth",
+        "_TZ3000_au1rjicn",
+        "_TZ3000_4ugnzsli",
+        "_TZ3000_decxrtwa",
+        "_TZ3000_m0vaazab",
+        "_TZ3000_ufttklsz",
+        "_TZ3000_5k5vh43t",
+        "_TZ3000_gszjt2xx",
+        "_TZ3000_4fsgukof",
+        "_TZ3000_wr2ucaj9",
+        "_TZ3000_zsh6uat3",
+        "_TZ3000_pkfazisv",
+        "_TZ3000_2izubafb",
+        "_TZ3000_ug1vtuzn",
+        "_TZ3000_4whigl8i",
+        "_TZ3000_obacbukl",
+        "_TZ3000_i8l0nqdu",
+        "_TZ3000_nzbm4ad4",
+        "_TZ3000_ukuvyhaa",
+        "_TZ3000_l13erpv4",
+        "_TZ3000_fvhunhxb",
+        "_TZ3000_hktqahrq",
+        "_TZ3000_m9af2l6g",
+        "_TZ3000_ebar6ljy",
+        "_TZ3000_upgcbody",
+        "_TZ3000_fllyghyj",
+        "_TZ3000_yd2e749y",
+        "_TZ3000_bguser20",
+        "_TZ3000_xr3htd96",
+        "_TZ3000_nfnmi125",
+        "_TZ3000_w3c7ouru",
+        "_TZ3000_5f43h46b",
+        "_TZ3000_402jjyro",
+        "_TZ3000_1hwjutgo",
+        "_TZ3000_lnggrqqi",
+        "_TZ3000_mcxw5ehu",
+        "_TZ3000_6ygjfyll",
+        "_TZ3000_msl6wxk9",
+        "_TZ3000_otvn3lne",
+        "_TZ3000_85czd6fy",
+        "_TZ3000_lfa05ajd",
+        "_TZ3000_rk2yzt0u",
+        "_TZ3000_o4cjetlm",
+        "_TZ3000_h3noz0a5",
+        "_TZ3000_wrhhi5h2",
+        "_TZ3000_amqudjr0",
+        "_TZ3000_ssp0maqm",
+        "_TZ3000_xkwalgne",
+        "_TZ3000_p6ju8myv",
+        "_TZ3000_0zrccfgx",
+        "_TZ3000_keabpigv",
+        "_TZ3000_o005nuxx",
+        "_TZ3000_cfnprab5",
+        "_TZ3000_pcqjmcud",
+        "_TZ3000_rbl8c85w",
+        "_TZ3000_zigisuyh",
+        "_TZ3000_rdtixbnu",
+        "_TZ3000_3zofvcaa",
+        "_TZ3000_92qd4sqa",
+        "_TZ3000_hyfvrar3",
+        "_TZ3000_a33rw7ou",
+        "_TZ3000_mg4dy6z6",
+        "_TZ3000_ltiqubue",
+        "_TZ3000_dph3rpss",
+        "_TZ3000_ubrvwoxv",
+        "_TZE200_zuz7f94z",
+        "_TZE200_8daqwrsj",
+        "_TZE200_qtbrwrfv",
+        "_TZE200_bvu2wnxz",
+        "_TZE200_hvaxb2tc",
+        "_TZE200_yenbr4om",
+        "_TZE200_3p5ydos3",
+        "_TZE200_u9bfwha0",
+        "_TZE200_aoclfnxz",
+        "_TZE200_b6wax7g0",
+        "_TZE200_2ekuz3dz",
+        "_TZE200_2cs6g9i7",
+        "_TZE200_eaac7dkw",
+        "_TZE200_lsanae15",
+        "_TZE200_wv90ladg",
+        "_TZE200_2dpplnsn",
+        "_TZE200_0hg58wyk",
+        "_TZE200_0nauxa0p",
+        "_TZE200_dfxkcots",
+        "_TZE200_9i9dt8is",
+        "_TZE200_p0gzbqct",
+        "_TZE200_w4cryh2i",
+        "_TZE200_dmfguuli",
+        "_TZE200_pvvbommb",
+        "_TZE200_wt9agwf3",
+        "_TZE200_sh1btabb",
+        "_TZE200_a7sghmms",
+        "_TZE200_dzuqwsyg",
+        "_TZE200_yw7cahqs",
+        "_TZE200_h4cgnbzg",
+        "_TZE200_a4bpgplm",
+        "_TZE200_z1tyspqw",
+        "_TZE200_zuhszj9s",
+        "_TZE200_exfrnlow",
+        "_TZE200_9p5xmj5r",
+        "_TZE200_byzdayie",
+        "_TZE200_ewxhg6o9",
+        "_TZE200_bkkmqmyo",
+        "_TZE200_hkdl5fmv",
+        "_TZE200_9sfg7gm0",
+        "_TZE200_ywdxldoj",
+        "_TZE200_fhn3negr",
+        "_TZE200_8whxpsiw",
+        "_TZE200_ckud7u2l",
+        "_TZE200_vrjkcam9",
+        "_TZE200_n9clpsht",
+        "_TZE200_wlosfena",
+        "_TZE200_4eeyebrt",
+        "_TZE200_lgstepha",
+        "_TZE200_kagkgk0i",
+        "_TZE200_i0b1dbqu",
+        "_TZE200_sur6q7ko",
+        "_TZE200_ebwgzdqq",
+        "_TZE200_sbordckq",
+        "_TZE200_r32ctezx",
+        "_TZE200_579lguh2",
+        "_TZE200_s8gkrkxk",
+        "_TZE200_htnnfasr",
+        "_TZE200_chyvmhay",
+        "_TZE200_kyfqmmyl",
+        "_TZE200_7tdtqgwv",
+        "_TZE200_wunufsil",
+        "_TZE200_wfxuhoea",
+        "_TZE200_vucankjx",
+        "_TZE200_gbagoilo",
+        "_TZE200_nh9m9emk",
+        "_TZE200_go3tvswy",
+        "_TZE200_mexisfik",
+        "_TZE200_1agwnems",
+        "_TZE200_ojzhk75b",
+        "_TZE200_swaamsoy",
+        "_TZE200_9cxuhakf",
+        "_TZE200_a0syesf5",
+        "_TZE200_zah67ekd",
+        "_TZE200_rddyvrci",
+        "_TZE200_ztvwu4nk",
+        "_TZE200_e3oitdyu",
+        "_TZE200_la2c2uo9",
+        "_TZE200_zion52ef",
+        "_TZE200_ip2akl4w",
+        "_TZE200_fjjbhx9d",
+        "_TZE200_vm1gyrso",
+        "_TZE200_tviaymwx",
+        "_TZE200_rjxqso4a",
+        "_TZE200_ikvncluo",
+        "_TZE200_wukb7rhc",
+        "_TZE200_holel4dk",
+        "_TZE200_e9ba97vf",
+        "_TZE200_7yoranx2",
+        "_TZE200_lllliz3p",
+        "_TZE200_kds0pmmv",
+        "_TZE200_amp6tsvy",
+        "_TZE200_g1ib5ldv",
+        "_TZE200_tz32mtza",
+        "_TZE200_nhyj64w2",
+        "_TZE200_1ozguk6x",
+        "_TZE200_hhrtiq0x",
+        "_TZE200_d0yu2xgi",
+        "_TZE200_t1blo2bj",
+        "_TZE200_nlrfgpny",
+        "_TZE200_7hfcudw5",
+        "_TZE200_qq9mpfhw",
+        "_TZE200_nkjintbl",
+        "_TZE200_nnrfa68v",
+        "_TZE200_nslr42tt",
+        "_TZE200_c88teujp",
+        "_TZE200_azqp6ssj",
+        "_TZE200_zr9c0day",
+        "_TZE200_0dvm9mva",
+        "_TZE200_fsb6zw01",
+        "_TZE200_akjefhj5",
+        "_TZE200_81isopgh",
+        "_TZE200_kfvq6avy",
+        "_TZE200_2wg5qrjy",
+        "_TZE200_9m4kmbfu",
+        "_TZE200_9gvruqf5",
+        "_TZE200_3yp57tby",
+        "_TZE200_oisqyl4o",
+        "_TZE200_t5p1vj8r",
+        "_TZE200_uebojraa",
+        "_TZE200_jwsjbxjs",
+        "_TZE200_czk78ptr",
+        "_TZE200_owwdxjbx",
+        "_TZE200_husqqvux",
+        "_TZE200_lnbfnyxd",
+        "_TZE200_ppuj1vem",
+        "_TZE200_c2fmom5z",
+        "_TZE200_ogkdpgy2",
+        "_TZE200_dwcarsat",
+        "_TZE200_zpzndjez",
+        "_TZE200_68nvbio9",
+        "_TZE200_r0jdjrvi",
+        "_TZE200_dq1mfjug",
+        "_TZE200_znzs7yaw",
+        "_TZE200_cwnjrr72",
+        "_TZE200_2atgpdho",
+        "_TZE200_whkgqxse",
+        "_TZE200_9qayzqa8",
+        "_TZE200_auin8mzr",
+        "_TZE200_nueqqe6k",
+        "_TZE200_vrfecyku",
+        "_TZE200_lu01t0zl",
+        "_TZE200_nklqjk62",
+        "_TZE200_0u3bj3rc",
+        "_TZE200_v6ossqfy",
+        "_TZE200_mx6u6l4y",
+        "_TZE200_bq5c8xfe",
+        "_TZE200_vzekyi4c",
+        "_TZE200_8ygsuhe1",
+        "_TZE200_yvx5lh6k",
+        "_TZE200_ryfmq5rl",
+        "_TZE200_ggev5fsl",
+        "_TZE200_5d3vhjro",
+        "_TZE200_gubdgai2",
+        "_TZE200_hsgrhjpf",
+        "_TZE200_atpwqgml",
+        "_TZE200_aqnazj70",
+        "_TZE200_hue3yfsn",
+        "_TZE200_jthf7vb6",
+        "_TZE200_wktrysab",
+        "_TZE200_yi4jtqq1",
+        "_TZE200_khx7nnka",
+        "_TZE200_ntcy3xu1",
+        "_TZE200_jva8ink8",
+        "_TZE200_n8dljorx",
+        "_TZE200_pay2byax",
+        "_TZE200_3towulqd",
+        "_TZE200_1ibpyhdc",
+        "_TZE200_bh3n6gk8",
+        "_TZE200_2aaelwxk",
+        "_TZE200_hl0ss9oa",
+        "_TZE200_qoy0ekbd",
+        "_TZE200_znbl8dj5",
+        "_TZE200_a8sdabtg",
+        "_TZE200_bjawzodf",
+        "_TZE200_zl1kmjqx",
+        "_TZE200_yojqa8xn",
+        "_TZE200_yjjdcqsq",
+        "_TZE200_9yapgbuv",
+        "_TZE200_utkemkbs",
+        "_TZE200_kzm5w4iz",
+        "_TZE200_ztc6ggyl",
+        "_TZE200_7deq70b8",
+        "_TZE200_2hf7x9n3",
+        "_TZE200_m9skfctm",
+        "_TZE200_ps5v5jor",
+        "_TZE200_aycxwiau",
+        "_TZE200_myd45weu",
+        "_TZE200_ga1maeof",
+        "_TZE200_bqcqqjpb",
+        "_TZE200_fdtjuw7u",
+        "_TZE200_gaj531w3",
+        "_TZE200_iossyxra",
+        "_TZE200_xaabybja",
+        "_TZE200_rmymn92d",
+        "_TZE200_5sbebbzs",
+        "_TZE200_xuzcvlku",
+        "_TZE200_bcusnqt8",
+        "_TZE200_ves1ycwx",
+        "_TZE200_v9hkz2yn",
+        "_TZE200_1n2kyphz",
+        "_TZE200_9mahtqtg",
+        "_TZE200_r731zlxk",
+        "_TZE200_zqtiam4u",
+        "_TZE200_7eue9vhc",
+        "_TZE200_bv1jcqqu",
+        "_TZE200_fzo2pocs",
+        "_TZE200_cowvfni3",
+        "_TZE200_3i3exuay",
+        "_TZE200_pw7mji0l",
+        "_TZE200_cf1sl3tj",
+        "_TZE200_nw1r9hp6",
+        "_TZE200_kly8gjlz",
+        "_TZE200_mudxchsu",
+        "_TZE200_jeaxp72v",
+        "_TZE200_zivfvd7h",
+        "_TZE200_dv8abrrz",
+        "_TZE200_9xejegcy",
+        "_TZE204_5toc8efa",
+        "_TZE204_vawy74yh",
+        "_TZE204_t1blo2bj",
+        "_TZE204_nlrfgpny",
+        "_TZE204_c2fmom5z",
+        "_TZE204_ogkdpgy2",
+        "_TZE204_dtzziy1e",
+        "_TZE204_sbyx0lm6",
+        "_TZE204_nklqjk62",
+        "_TZE204_vmcgja59",
+        "_TZE204_ntcy3xu1",
+        "_TZE204_sooucan5",
+        "_TZE204_yjjdcqsq",
+        "_TZE204_ijxvkhd0",
+        "_TZE204_ztc6ggyl",
+        "_TZE204_sxm7l9xa",
+        "_TZE204_ves1ycwx",
+        "_TYZB01_ujfk3xd9",
+        "_TYZB01_hjsgdkfl",
+        "_TYZB01_aneiicmq",
+        "_TYZB01_4qw4rl1u",
+        "_TYZB01_mtunwanm",
+        "_TYZB01_hlla45kx",
+        "_TYZB01_wpmo3ja3",
+        "_TYZB01_8scntis1",
+        "_TYZB01_7qf81wty",
+        "_TYZB01_b6eaxdlh",
+        "_TYZB01_fi5yftwv",
+        "_TYZB01_ijihzffk",
+        "_TYZB01_7yidyqxd",
+        "_TYZB01_xiuox57i",
+        "_TYZB01_hww2py6b",
+        "_TYZB01_bngwdjsr",
+        "_TYZB01_v8gtiaed",
+        "_TYZB01_qezuin6k",
+        "_TYZB01_zsl6z0pw",
+        "_TYZB01_ncutbjdi",
+        "_TYZB01_bagt1e4o",
+        "_TYZB01_qjqgmqxr",
+        "_TYZB01_iuepbmpv",
+        "_TYZB01_qeqvmvti",
+        "_TYZB01_kvwjujy9",
+        "_TYZB01_ftdkanlj",
+        "_TYZB01_vwqnz1sn",
+        "_TYZB01_qm6djpta",
+        "_TYZB01_8wt0zp49",
+        "_TYZB01_dr6sduka",
+        "_TYZB01_qiplt4jq",
+        "_TYZB01_dvakyzhd",
+        "_TYZB01_ef5xlc9q",
+        "_TYZB01_zwvaj5wy",
+        "_TYZB01_tv3wxhcz",
+        "_TYZB01_jytabjkb",
+        "_TYZB01_3zv6oleo",
+        "_TYZB01_j9xxahcl",
+        "_TYZB01_ymcdbl3u",
+        "_TYZB01_dl7cejts",
+        "_TYZB01_xph99wvr",
+        "_TYZB01_ncdapbwy",
+        "_TYZB01_4mdqxxnn",
+        "_TYZB01_4tlksk8a",
+        "_TYZB01_2b8f6cio",
+        "_TYZB01_71kfvvma",
+        "_TYZB01_cbiezpds",
+        "_TYZB01_zqvwka4k",
+        "_TYZB01_z2umiwvq",
+        "_TZ3210_remypqqm",
+        "_TZ3210_psgq7ysz",
+        "_TZ3210_fhx7lk3d",
+        "_TZ3210_yluvwhjc",
+        "_TZ3210_rxqls8v0",
+        "_TZ3210_zmy9hjay",
+        "_TZ3210_wuhzzfqg",
+        "_TZ3210_lfbz816s",
+        "_TZ3210_ebbfkvoy",
+        "_TZ3210_sln7ah6r",
+        "_TZ3210_ijczzg9h",
+        "_TZ3210_jijr1sss",
+        "_TZ3210_pwauw3g2",
+        "_TZ3210_grnwgegn",
+        "_TZ3210_pudg9sge",
+        "_TZ3210_c2iwpxf1",
+        "_TZ3210_r0xgkft5",
+        "_TZ3210_zbabx9wh",
+        "_TZ3210_umi6vbsz",
+        "_TZ3210_ngqk6jia",
+        "_TZ3210_tfxwxklq",
+        "_TZ3210_q7oryllx",
+        "_TZ3210_raqjcxo5",
+        "_TZ3210_7jnk7l3k",
+        "_TZ3210_pfbzs1an",
+        "_TZ3210_lzqq3u4r",
+        "_TZ3210_4whigl8i",
+        "_TZ3210_frm6149r",
+        "_TZ3210_dxroobu3",
+        "_TZ3210_dbilpfqk",
+        "_TZ3210_778drfdt",
+        "_TZ3210_ttkgurpb",
+        "_TZ3210_jicmoite",
+        "_TZ3210_mny0zvkm",
+        "_TZ3210_rcggc0ys",
+        "_TZ3210_mntza0sw",
+        "_TZ3210_r0vzq1oj",
+        "_TZ3210_cieijuw1",
+        "_TZ3210_mcm6m1ma",
+        "_TZ3210_dse8ogfy",
+        "_TZ3210_j4pdtz9v",
+        "_TZ3210_xwqng7ol",
+        "_TZ3210_g0qr1fqo",
+        "_TZ3210_cwamkvua",
+        "_TZ3210_3mpwqzuu",
+        "_TZ3210_wdexaypg",
+        "_TZ3210_9q49basr",
+        "_TZ3210_i680rtja",
+        "_TZ3210_nehayyhx",
+        "_TZ3210_wuheofsg",
+        "_TZ3210_e5t9bfdv",
+        "_TZ3210_19qb27da",
+        "_TZ3210_4zinq6io",
+        "_TZ3210_93gnbdgz",
+        "_TZ3210_a5fxguxr",
+        "_TZ3210_trm3l2aw",
+        "_TZ3210_bfvybixd",
+        "_TZ3210_sroezl0s",
+        "_TZ3210_1elppmba",
+        "_TZ3210_5snkkrxw",
+        "_TZ3210_bicjqpg4",
+        "_TZ3210_0rn9qhnu",
+        "_TZ3210_odlghna1",
+        "_TZ3210_klv2wul0",
+        "_TZ3210_eymunffl",
+        "_TZ3210_wp1k8xws",
+        "_TZ3210_e020aaaj"
+      ]
+    },
+    "github": {
+      "repositories": [
+        {
+          "name": "com.tuya.zigbee",
+          "url": "https://github.com/JohanBendz/com.tuya.zigbee",
+          "description": null,
+          "stars": 84
+        },
+        {
+          "name": "tuyaZigbee",
+          "url": "https://github.com/doctor64/tuyaZigbee",
+          "description": "Replacement firmwares for TuYa zigbee devices",
+          "stars": 223
+        },
+        {
+          "name": "tuya-zigbee-switch",
+          "url": "https://github.com/romasku/tuya-zigbee-switch",
+          "description": "Feature-rich custom firmware for Telink/Silabs Zigbee switches, modules, sockets",
+          "stars": 314
+        },
+        {
+          "name": "tuya_thermostat_zrd",
+          "url": "https://github.com/slacky1965/tuya_thermostat_zrd",
+          "description": "Tuya Thermostat for Floor Heating Zigbee with custom firmware TLSR8258",
+          "stars": 143
+        },
+        {
+          "name": "tuya_zigbee_sdk",
+          "url": "https://github.com/TuyaInc/tuya_zigbee_sdk",
+          "description": null,
+          "stars": 22
+        },
+        {
+          "name": "Domoticz-Zigbee",
+          "url": "https://github.com/zigbeefordomoticz/Domoticz-Zigbee",
+          "description": "Zigbee plugin for Domoticz. Allow to connect various zigbee controllers like Zigate but also Texas Instrument CC2531, CC13x2, CC26x2 ; Silicon-Labs; deConz based chipset to be connected to Domoticz",
+          "stars": 112
+        },
+        {
+          "name": "Domoticz-deCONZ",
+          "url": "https://github.com/Smanar/Domoticz-deCONZ",
+          "description": "deCONZ plugin for Domoticz (Zigbee application)",
+          "stars": 39
+        },
+        {
+          "name": "tuya_zigbee_gw_ext_sdk",
+          "url": "https://github.com/TuyaInc/tuya_zigbee_gw_ext_sdk",
+          "description": "Tuya ZigBee Gateway Extension SDK is used to develop gateway products.",
+          "stars": 7
+        },
+        {
+          "name": "Tuya-v2-Supported-Devices",
+          "url": "https://github.com/MarkWattTech/Tuya-v2-Supported-Devices",
+          "description": "A collection of all of the known working Tuya v2 Devices",
+          "stars": 37
+        },
+        {
+          "name": "com.lidl",
+          "url": "https://github.com/JohanBendz/com.lidl",
+          "description": "This is a Lidl Brand version of the Tuya Zigbee app",
+          "stars": 9
+        },
+        {
+          "name": "tuya-zigbee-mcu-sdk-arduino-library",
+          "url": "https://github.com/tuya/tuya-zigbee-mcu-sdk-arduino-library",
+          "description": "Tuya Zigbee MCU SDK Arduino Library enables interfacing your Arduino with Tuya's network module, helping you build an IoT-enabled project.",
+          "stars": 15
+        },
+        {
+          "name": "tuya-iotos-embedded-zigbee-gw-extend-sdk",
+          "url": "https://github.com/tuya/tuya-iotos-embedded-zigbee-gw-extend-sdk",
+          "description": "Tuya Embedded Zigbee Gateway Extend Software Development Kit",
+          "stars": 7
+        },
+        {
+          "name": "ts0201_tz3000_zed",
+          "url": "https://github.com/slacky1965/ts0201_tz3000_zed",
+          "description": "Tuya Temperature and Relative Humidity sensor with custom firmware",
+          "stars": 31
+        },
+        {
+          "name": "tuya-zigbee-sdk",
+          "url": "https://github.com/tuya-Leon/tuya-zigbee-sdk",
+          "description": "this is a project of Tuya zigbee sdk",
+          "stars": 4
+        },
+        {
+          "name": "better_thermostat",
+          "url": "https://github.com/KartoffelToby/better_thermostat",
+          "description": "This custom component for Home Assistant will add crucial features to your climate-controlling TRV (Thermostatic Radiator Valves) to save you the work of creating automations to make it smart. It combines a room-temperature sensor, window/door sensors, weather forecasts, or an ambient temperature probe to decide when it should call for heat and automatically calibrate your TRVs to fix the imprecise measurements taken in the radiator's vicinity.",
+          "stars": 1218
+        },
+        {
+          "name": "HA_Blueprint-MOES-Scene-Button",
+          "url": "https://github.com/multivrac/HA_Blueprint-MOES-Scene-Button",
+          "description": "MOES TUYA Zigbee scene Button - Blueprint for Home Assistant",
+          "stars": 4
+        },
+        {
+          "name": "hubitat-tuya-zigbee-ir",
+          "url": "https://github.com/luckygerbils/hubitat-tuya-zigbee-ir",
+          "description": "Hubitat Driver for Tuya Zigbee IR Remote Controls",
+          "stars": 3
+        },
+        {
+          "name": "tuya-iotos-embeded-demo-zigbee-sdk-development-course",
+          "url": "https://github.com/tuya/tuya-iotos-embeded-demo-zigbee-sdk-development-course",
+          "description": "This repo provides sample for TuyaOS Zigbee SDK Development.",
+          "stars": 1
+        },
+        {
+          "name": "homeassistant",
+          "url": "https://github.com/ntalekt/homeassistant",
+          "description": "Example Home Assistant Configs",
+          "stars": 252
+        },
+        {
+          "name": "ts0202_pir_custom_firmware",
+          "url": "https://github.com/xaviergr/ts0202_pir_custom_firmware",
+          "description": "Custom firmware for the Tuya TS0202 ZigBee PIR motion sensor devices",
+          "stars": 3
+        },
+        {
+          "name": "zigbee",
+          "url": "https://github.com/blakadder/zigbee",
+          "description": "Database of Zigbee devices compatible with third party gateways: ZHA, deCONZ, Zigbee2MQTT, Tasmota, Zigbee4Domoticz, ioBroker, ",
+          "stars": 240
+        },
+        {
+          "name": "zigbee-herdsman-converters",
+          "url": "https://github.com/Koenkk/zigbee-herdsman-converters",
+          "description": "Collection of device converters to be used with zigbee-herdsman",
+          "stars": 1124
+        },
+        {
+          "name": "deconz-rest-plugin",
+          "url": "https://github.com/dresden-elektronik/deconz-rest-plugin",
+          "description": "deCONZ REST-API plugin to control ZigBee devices",
+          "stars": 1926
+        },
+        {
+          "name": "ZigbeeTLc",
+          "url": "https://github.com/pvvx/ZigbeeTLc",
+          "description": "Custom firmware for Zigbee 3.0 IoT devices on the TLSR825x chip",
+          "stars": 660
+        },
+        {
+          "name": "hass-xiaomi-miot",
+          "url": "https://github.com/al-one/hass-xiaomi-miot",
+          "description": "Automatic integrate all Xiaomi devices to HomeAssistant via miot-spec, support Wi-Fi, BLE, ZigBee devices. 小米米家智能家居设备接入Hass集成",
+          "stars": 5635
+        },
+        {
+          "name": "bellows",
+          "url": "https://github.com/zigpy/bellows",
+          "description": "A Python 3 project to implement EZSP for EmberZNet devices",
+          "stars": 213
+        },
+        {
+          "name": "tuyaZigbee",
+          "url": "https://github.com/doctor64/tuyaZigbee",
+          "description": "Replacement firmwares for TuYa zigbee devices",
+          "stars": 223
+        },
+        {
+          "name": "zha-device-handlers",
+          "url": "https://github.com/zigpy/zha-device-handlers",
+          "description": "ZHA device handlers bridge the functionality gap created when manufacturers deviate from the ZCL specification, handling deviations and exceptions by parsing custom messages to and from Zigbee devices.",
+          "stars": 1012
+        },
+        {
+          "name": "com.xiaomi-miio",
+          "url": "https://github.com/shaarkys/com.xiaomi-miio",
+          "description": "Homey app to control Mi Home devices that implement the miIO protocol and Xiaomi gateway child devices",
+          "stars": 470
+        },
+        {
+          "name": "homebridge-z2m",
+          "url": "https://github.com/itavero/homebridge-z2m",
+          "description": "Expose your Zigbee devices to HomeKit with ease, by integrating 🐝 Zigbee2MQTT with 🏠 Homebridge.",
+          "stars": 366
+        },
+        {
+          "name": "xbee-api",
+          "url": "https://github.com/jankolkmeier/xbee-api",
+          "description": "Node.js and Chrome communicate with XBee/ZigBee devices in API mode",
+          "stars": 105
+        },
+        {
+          "name": "node-red-contrib-zigbee",
+          "url": "https://github.com/hobbyquaker/node-red-contrib-zigbee",
+          "description": "Node-RED Nodes for ZigBee Devices 🐝",
+          "stars": 85
+        },
+        {
+          "name": "SmartthingsKingOfFansZigbee",
+          "url": "https://github.com/rafaelborja/SmartthingsKingOfFansZigbee",
+          "description": "Smartthings device handler for Home Depot Home Decorators Zigbee Fan (and fan controller) produced by King of Fans. This device handler is based on  https://github.com/dcoffing/KOF-CeilingFan, refectored to work with new Smartthing app and to provide simpler user experience.",
+          "stars": 27
+        },
+        {
+          "name": "node-red-contrib-zigbee2mqtt-devices",
+          "url": "https://github.com/Dirnei/node-red-contrib-zigbee2mqtt-devices",
+          "description": "Node-red nodes for controlling and managing zigbee devices managed by zigbee2mqtt",
+          "stars": 35
+        },
+        {
+          "name": "homebridge-ewelink",
+          "url": "https://github.com/homebridge-plugins/homebridge-ewelink",
+          "description": "Homebridge plugin to integrate eWeLink devices into HomeKit.",
+          "stars": 409
+        },
+        {
+          "name": "mihome",
+          "url": "https://github.com/jon1012/mihome",
+          "description": "Python bindngs for the Xiaomi Mi Home zigbee hub and associated devices",
+          "stars": 138
+        },
+        {
+          "name": "com.gruijter.zigbee2mqtt",
+          "url": "https://github.com/gruijter/com.gruijter.zigbee2mqtt",
+          "description": "Connect Zigbee devices to Homey via Zigbee2MQTT",
+          "stars": 9
+        },
+        {
+          "name": "com.xiaomi-mi-zigbee",
+          "url": "https://github.com/chaosfish/com.xiaomi-mi-zigbee",
+          "description": "Homey app and drivers for Xiaomi Mi Zigbee devices",
+          "stars": 0
+        },
+        {
+          "name": "homebrew_zigbee_devices",
+          "url": "https://github.com/bikerglen/homebrew_zigbee_devices",
+          "description": null,
+          "stars": 42
+        },
+        {
+          "name": "Android-Home-Hub",
+          "url": "https://github.com/tunjid/Android-Home-Hub",
+          "description": "Android Home Automation Hub with support for ZigBee And 433 MHz RF devices",
+          "stars": 29
+        }
+      ],
+      "code": [],
+      "manufacturerIds": []
+    },
+    "community": {
+      "posts": [],
+      "manufacturerIds": [],
+      "devices": [
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "href=",
+          "context": "description+xml\" href=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "href=",
+          "context": "description+xml\" href=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "vendor",
+          "value": "relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline",
+          "context": "vendor, you must follow an additional set of rules found on our wiki: <a rpl class=\"relative pointer-events-auto a cursor-pointer\n  \n  \n  \n  \n  underline\n  \""
+        },
+        {
+          "type": "description",
+          "value": "A place to share and discuss all things related to home automation.",
+          "context": "description=\"A place to share and discuss all things related to home automation.\""
+        }
+      ]
+    },
+    "research": {
+      "documents": [],
+      "manufacturerIds": [],
+      "devices": [
+        {
+          "type": "model",
+          "value": "data-analytics-event=",
+          "context": "models\" data-analytics-event=\""
+        },
+        {
+          "type": "model",
+          "value": "class=",
+          "context": "models&quot;,&quot;tag&quot;:&quot;link&quot;,&quot;context&quot;:&quot;platform&quot;,&quot;location&quot;:&quot;navbar&quot;,&quot;label&quot;:&quot;github_models_link_platform_navbar&quot;}\" class=\""
+        },
+        {
+          "type": "model",
+          "value": "viewBox=",
+          "context": "model NavLink-module__icon--h0sw7\" viewBox=\""
+        },
+        {
+          "type": "model",
+          "value": "NavLink-module__subtitle--qC15H",
+          "context": "Models</span><span class=\"NavLink-module__subtitle--qC15H\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "href=",
+          "context": "description+xml\" href=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "class=",
+          "context": "description\" class=\""
+        },
+        {
+          "type": "description",
+          "value": ">Use saved searches to filter your results more quickly</h2>\n    </div>\n    <div class=",
+          "context": "description\">Use saved searches to filter your results more quickly</h2>\n    </div>\n    <div class=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "model",
+          "value": "data-analytics-event=",
+          "context": "models\" data-analytics-event=\""
+        },
+        {
+          "type": "model",
+          "value": "class=",
+          "context": "models&quot;,&quot;tag&quot;:&quot;link&quot;,&quot;context&quot;:&quot;platform&quot;,&quot;location&quot;:&quot;navbar&quot;,&quot;label&quot;:&quot;github_models_link_platform_navbar&quot;}\" class=\""
+        },
+        {
+          "type": "model",
+          "value": "viewBox=",
+          "context": "model NavLink-module__icon--h0sw7\" viewBox=\""
+        },
+        {
+          "type": "model",
+          "value": "NavLink-module__subtitle--qC15H",
+          "context": "Models</span><span class=\"NavLink-module__subtitle--qC15H\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "href=",
+          "context": "description+xml\" href=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "class=",
+          "context": "description\" class=\""
+        },
+        {
+          "type": "description",
+          "value": ">Use saved searches to filter your results more quickly</h2>\n    </div>\n    <div class=",
+          "context": "description\">Use saved searches to filter your results more quickly</h2>\n    </div>\n    <div class=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "model",
+          "value": "data-analytics-event=",
+          "context": "models\" data-analytics-event=\""
+        },
+        {
+          "type": "model",
+          "value": "class=",
+          "context": "models&quot;,&quot;tag&quot;:&quot;link&quot;,&quot;context&quot;:&quot;platform&quot;,&quot;location&quot;:&quot;navbar&quot;,&quot;label&quot;:&quot;github_models_link_platform_navbar&quot;}\" class=\""
+        },
+        {
+          "type": "model",
+          "value": "viewBox=",
+          "context": "model NavLink-module__icon--h0sw7\" viewBox=\""
+        },
+        {
+          "type": "model",
+          "value": "NavLink-module__subtitle--qC15H",
+          "context": "Models</span><span class=\"NavLink-module__subtitle--qC15H\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "href=",
+          "context": "description+xml\" href=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "content=",
+          "context": "description\" content=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "class=",
+          "context": "description\" class=\""
+        },
+        {
+          "type": "description",
+          "value": ">Use saved searches to filter your results more quickly</h2>\n    </div>\n    <div class=",
+          "context": "description\">Use saved searches to filter your results more quickly</h2>\n    </div>\n    <div class=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        },
+        {
+          "type": "description",
+          "value": "data-view-component=",
+          "context": "description\" data-view-component=\""
+        }
+      ]
+    }
+  }
+}
