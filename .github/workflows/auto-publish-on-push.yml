@@ -1,32 +1,19 @@
-# ============================================================================
-# 🚀 AUTO-PUBLISH ON PUSH - No Questions Asked!
-# ============================================================================
-# Publishes automatically when pushing to master branch
-# No interactive prompts - fully automated
-#
-# SETUP REQUIRED:
-# 1. Get token: https://tools.developer.homey.app/me
-# 2. Add secret: Settings → Secrets → HOMEY_PAT
-# ============================================================================
-
 name: 🚀 Auto-Publish on Push
-
-on:
+"on":
   push:
     branches:
       - master
       - main
     paths-ignore:
       - "**.md"
-      - ".github/workflows/*.disabled"
-      - "docs/**"
-
+      - .github/workflows/*.disabled
+      - docs/**
 permissions:
-  contents: write
-
+  contents: read
+  actions: read
+  packages: read
 env:
   NODE_VERSION: "20"
-
 jobs:
   publish:
     name: 🚀 Validate & Publish
@@ -34,12 +21,11 @@ jobs:
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@v4
-
       - name: 📦 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-
+          cache: npm
       - name: 📦 Get App Info
         id: info
         run: |
@@ -50,22 +36,27 @@ jobs:
           echo "name=$NAME" >> $GITHUB_OUTPUT
           echo "id=$ID" >> $GITHUB_OUTPUT
           echo "📦 $NAME v$VERSION ($ID)"
-
       - name: 🔍 Validate (Athom Official)
         uses: athombv/github-action-homey-app-validate@v1
         with:
           level: publish
-
       - name: 🔒 Fingerprinting Rules Check
-        run: |
+        run: >
           echo "📋 Checking fingerprinting rules..."
 
+
           # Check for collisions (same manufacturer in multiple drivers)
+
           node -e "
+
           const fs = require('fs');
+
           const path = require('path');
+
           const driversDir = 'drivers';
+
           const mfrMap = new Map();
+
 
           fs.readdirSync(driversDir, { withFileTypes: true })
             .filter(d => d.isDirectory())
@@ -82,6 +73,7 @@ jobs:
             });
 
           const collisions = [...mfrMap.entries()].filter(([,v]) => v.length > 1);
+
           if (collisions.length > 0) {
             console.log('⚠️ WARNING: ' + collisions.length + ' manufacturers in multiple drivers');
             collisions.slice(0, 5).forEach(([mfr, drivers]) => {
@@ -91,9 +83,13 @@ jobs:
             console.log('✅ No collisions detected');
           }
 
+
           // Count stats
+
           let totalMfrs = new Set();
+
           let totalPids = new Set();
+
           fs.readdirSync(driversDir, { withFileTypes: true })
             .filter(d => d.isDirectory())
             .forEach(d => {
@@ -106,11 +102,13 @@ jobs:
               } catch {}
             });
 
-          console.log('📊 Stats: ' + totalMfrs.size + ' manufacturers, ' + totalPids.size + ' productIds');
+          console.log('📊 Stats: ' + totalMfrs.size + ' manufacturers, ' + totalPids.size + '
+          productIds');
+
           "
 
-          echo "✅ Fingerprinting rules check complete"
 
+          echo "✅ Fingerprinting rules check complete"
       - name: 🔑 Check HOMEY_PAT
         id: check_pat
         run: |
@@ -121,18 +119,19 @@ jobs:
             echo "has_pat=true" >> $GITHUB_OUTPUT
             echo "✅ HOMEY_PAT configured"
           fi
-
       - name: 🚀 Publish (Athom Official)
         if: steps.check_pat.outputs.has_pat == 'true'
         uses: athombv/github-action-homey-app-publish@v1
         id: publish
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
-
       - name: ✅ Summary
-        run: |
-          echo "## 🎉 ${{ steps.info.outputs.name }} v${{ steps.info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+        run: >
+          echo "## 🎉 ${{ steps.info.outputs.name }} v${{ steps.info.outputs.version }}" >>
+          $GITHUB_STEP_SUMMARY
+
           echo "" >> $GITHUB_STEP_SUMMARY
+
           if [ "${{ steps.check_pat.outputs.has_pat }}" == "true" ]; then
             echo "✅ **Published to Homey App Store!**" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
@@ -145,3 +144,6 @@ jobs:
             echo "2. Copy your **Personal Access Token**" >> $GITHUB_STEP_SUMMARY
             echo "3. Add as GitHub Secret: **HOMEY_PAT**" >> $GITHUB_STEP_SUMMARY
           fi
+    timeout-minutes: 15
+    strategy:
+      fail-fast: true

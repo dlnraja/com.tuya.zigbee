@@ -1,50 +1,38 @@
-# ============================================================================
-# 🚀 HOMEY APP PUBLISH - Official Athom Action
-# ============================================================================
-# Source: https://github.com/athombv/github-action-homey-app-publish
-# Docs: https://apps.developer.homey.app/app-store/publishing
-#
-# AUTHENTICATION:
-# 1. Go to: https://tools.developer.homey.app/me
-# 2. Copy your Personal Access Token
-# 3. Add as GitHub Secret: HOMEY_PAT
-#    Settings → Secrets → Actions → New repository secret
-# ============================================================================
-
 name: 🚀 Publish to Homey
-
-on:
+"on":
   workflow_dispatch:
     inputs:
       skip_validation:
-        description: "Skip validation step"
+        description: Skip validation step
         required: false
         type: boolean
         default: false
   push:
     tags:
-      - "v*.*.*"
-
+      - v*.*.*
 jobs:
-  # Step 1: Validate
   validate:
     name: 🔍 Validate
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'workflow_dispatch' && !inputs.skip_validation || github.event_name == 'push' }}
+    if: always()
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@v4
-
       - name: 🔍 Validate (Official Athom Action)
         uses: athombv/github-action-homey-app-validate@v1
         with:
           level: publish
-
-  # Step 2: Publish
+    timeout-minutes: 20
+    strategy:
+      fail-fast: true
+      matrix:
+        node-version:
+          - 18
   publish:
     name: 🚀 Publish
     runs-on: ubuntu-latest
-    needs: [validate]
+    needs:
+      - validate
     if: |
       always() &&
       (needs.validate.result == 'success' || needs.validate.result == 'skipped')
@@ -53,7 +41,6 @@ jobs:
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@v4
-
       - name: 📦 Get App Info
         id: app-info
         run: |
@@ -64,7 +51,6 @@ jobs:
           echo "name=$NAME" >> $GITHUB_OUTPUT
           echo "id=$ID" >> $GITHUB_OUTPUT
           echo "📦 Publishing: $NAME v$VERSION ($ID)"
-
       - name: 🔑 Check Authentication
         run: |
           if [ -z "${{ secrets.HOMEY_PAT }}" ]; then
@@ -80,47 +66,62 @@ jobs:
             exit 1
           fi
           echo "✅ HOMEY_PAT configured"
-
       - name: 🚀 Publish (Official Athom Action)
         uses: athombv/github-action-homey-app-publish@v1
         id: publish
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
-
       - name: ✅ Success Summary
         if: success()
-        run: |
+        run: >
           echo "## 🎉 Published Successfully!" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**App:** ${{ steps.app-info.outputs.name }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Version:** v${{ steps.app-info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-          echo "**ID:** ${{ steps.app-info.outputs.id }}" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### 🔗 Links" >> $GITHUB_STEP_SUMMARY
-          echo "- [Manage Release](${{ steps.publish.outputs.url }})" >> $GITHUB_STEP_SUMMARY
-          echo "- [Homey App Store](https://homey.app/a/${{ steps.app-info.outputs.id }})" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### 📋 Next Steps" >> $GITHUB_STEP_SUMMARY
-          echo "1. Click **Manage Release** to review" >> $GITHUB_STEP_SUMMARY
-          echo "2. Submit for **Test** or **Live** certification" >> $GITHUB_STEP_SUMMARY
-          echo "3. Wait for Athom approval" >> $GITHUB_STEP_SUMMARY
 
-  # Step 3: GitHub Release
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          echo "**App:** ${{ steps.app-info.outputs.name }}" >> $GITHUB_STEP_SUMMARY
+
+          echo "**Version:** v${{ steps.app-info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+
+          echo "**ID:** ${{ steps.app-info.outputs.id }}" >> $GITHUB_STEP_SUMMARY
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          echo "### 🔗 Links" >> $GITHUB_STEP_SUMMARY
+
+          echo "- [Manage Release](${{ steps.publish.outputs.url }})" >> $GITHUB_STEP_SUMMARY
+
+          echo "- [Homey App Store](https://homey.app/a/${{ steps.app-info.outputs.id }})" >>
+          $GITHUB_STEP_SUMMARY
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          echo "### 📋 Next Steps" >> $GITHUB_STEP_SUMMARY
+
+          echo "1. Click **Manage Release** to review" >> $GITHUB_STEP_SUMMARY
+
+          echo "2. Submit for **Test** or **Live** certification" >> $GITHUB_STEP_SUMMARY
+
+          echo "3. Wait for Athom approval" >> $GITHUB_STEP_SUMMARY
+    timeout-minutes: 20
+    strategy:
+      fail-fast: true
+      matrix:
+        node-version:
+          - 18
   release:
     name: 📝 GitHub Release
     runs-on: ubuntu-latest
-    needs: [publish]
+    needs:
+      - publish
     if: success()
     permissions:
       contents: write
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@v4
-
       - name: 📦 Get Version
         id: version
         run: echo "version=$(node -p "require('./app.json').version")" >> $GITHUB_OUTPUT
-
       - name: 📝 Create Release
         uses: softprops/action-gh-release@v2
         with:
@@ -136,3 +137,9 @@ jobs:
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: true
+      matrix:
+        node-version:
+          - 18

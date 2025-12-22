@@ -1,47 +1,40 @@
 name: Validate App
-
-# ⚠️ THIS RUNS ON GITHUB ACTIONS ONLY - NOT ON HOMEY BOX
-# Validates the Homey app on every push and PR
-
-on:
+"on":
   push:
-    branches: [master, main, develop]
+    branches:
+      - master
+      - main
+      - develop
     paths:
-      - "drivers/**"
-      - "lib/**"
-      - "app.js"
-      - "app.json"
-      - ".homeycompose/**"
+      - drivers/**
+      - lib/**
+      - app.js
+      - app.json
+      - .homeycompose/**
   pull_request:
-    branches: [master, main]
-
+    branches:
+      - master
+      - main
 jobs:
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-          cache: "npm"
-
+          cache: npm
       - name: Install dependencies
         run: npm ci
-
       - name: Build app
         run: npx homey app build
-
       - name: Validate (publish level)
         run: npx homey app validate --level publish
-
       - name: Run project validator
         run: node automation/PROJECT_VALIDATOR.js
-
       - name: Create validation summary
         if: always()
         run: |
@@ -52,3 +45,5 @@ jobs:
           echo "| Build | ✅ Passed |" >> $GITHUB_STEP_SUMMARY
           echo "| Homey Validate | ✅ Passed (publish level) |" >> $GITHUB_STEP_SUMMARY
           echo "| Project Validator | ✅ Passed |" >> $GITHUB_STEP_SUMMARY
+    strategy:
+      fail-fast: true
