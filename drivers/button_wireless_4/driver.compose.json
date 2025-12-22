@@ -12,6 +12,10 @@
   },
   "class": "button",
   "capabilities": [
+    "button.1",
+    "button.2",
+    "button.3",
+    "button.4",
     "measure_battery"
   ],
   "capabilitiesOptions": {
