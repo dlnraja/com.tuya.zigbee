@@ -1,33 +1,23 @@
-# ============================================================================
-# 📦 HOMEY APP VERSION - Official Athom Action
-# ============================================================================
-# Source: https://github.com/athombv/github-action-homey-app-version
-# Docs: https://apps.developer.homey.app/app-store/publishing
-# ============================================================================
-
 name: 📦 Update Version
-
-on:
+"on":
   workflow_dispatch:
     inputs:
       version:
-        description: "Version bump type"
+        description: Version bump type
         required: true
         type: choice
         options:
           - patch
           - minor
           - major
-        default: "patch"
+        default: patch
       changelog:
-        description: "Changelog entry (English)"
+        description: Changelog entry (English)
         required: true
         type: string
-
-# Required for pushing commits and creating releases
 permissions:
-  contents: write
-
+  contents: read
+  actions: read
 jobs:
   update-version:
     name: 📦 Update Version
@@ -37,21 +27,18 @@ jobs:
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@v4
-
       - name: 📦 Get Current Version
         id: current
         run: |
           VERSION=$(node -p "require('./app.json').version")
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "📦 Current version: v$VERSION"
-
       - name: 📦 Update Version (Official Athom Action)
         uses: athombv/github-action-homey-app-version@v1
         id: update
         with:
           version: ${{ inputs.version }}
           changelog: ${{ inputs.changelog }}
-
       - name: 📝 Commit & Push
         run: |
           git config --local user.name "github-actions[bot]"
@@ -62,7 +49,6 @@ jobs:
           git push origin HEAD --tags
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: 📝 Create GitHub Release
         run: |
           gh release create "v${{ steps.update.outputs.version }}" \
@@ -71,7 +57,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ github.token }}
-
       - name: ✅ Summary
         run: |
           echo "## 📦 Version Updated" >> $GITHUB_STEP_SUMMARY
@@ -82,3 +67,6 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Changelog" >> $GITHUB_STEP_SUMMARY
           echo "${{ inputs.changelog }}" >> $GITHUB_STEP_SUMMARY
+    timeout-minutes: 30
+    strategy:
+      fail-fast: true
