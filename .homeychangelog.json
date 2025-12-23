@@ -1,4 +1,10 @@
 {
+  "5.5.219": {
+    "en": "🔥 DEVICE TYPE SELECTION: Added 24 device types for relay switches! Now you can specify what's connected: Radiator (with pilot wire inversion), Water heater, Boiler, Heat pump, AC, Fan/VMC, Shutter, Gate, Pump, Irrigation, Pool, Appliances, and more. Fixed GitHub issues #91-94 (device IDs, README links). Fixed fingerprinting collision.",
+    "fr": "🔥 SÉLECTION TYPE APPAREIL: 24 types d'appareils pour relais! Spécifiez ce qui est connecté: Radiateur (inversion fil pilote), Chauffe-eau, Chaudière, Clim, VMC, Volet, Portail, Pompe, Arrosage, Piscine, Électroménager, etc. Issues GitHub #91-94 corrigées.",
+    "nl": "🔥 APPARAATTYPE SELECTIE: 24 apparaattypes voor relais! Specificeer wat is aangesloten: Radiator, Boiler, Airco, Ventilatie, Rolluik, Poort, Pomp, Irrigatie, Zwembad, Apparaten, etc.",
+    "de": "🔥 GERÄTETYP AUSWAHL: 24 Gerätetypen für Relais! Geben Sie an, was angeschlossen ist: Heizkörper, Warmwasser, Klima, Lüftung, Rolladen, Tor, Pumpe, Bewässerung, Pool, Geräte, etc."
+  },
   "5.5.218": {
     "en": "AUTO-ADDED DEVICES: Community devices from Johan repository - _TZ3210_4ux0ondb/null, _TZ3210_s8lvbbuc/TS0505B, _TZ3000_6zvw8ham/TS0203, _TZE204_gkfbdvyx/TS0601. Automated integration via GitHub monitoring system. All devices validated and categorized automatically.",
     "nl": "AUTO-TOEGEVOEGDE APPARATEN: Community apparaten van Johan repository - _TZ3210_4ux0ondb/null, _TZ3210_s8lvbbuc/TS0505B, _TZ3000_6zvw8ham/TS0203, _TZE204_gkfbdvyx/TS0601. Geautomatiseerde integratie.",
