@@ -1,15 +1,5814 @@
 {
-  "generated": "2025-12-23T10:39:13.407Z",
+  "generated": "2025-12-23T10:56:45.597Z",
   "summary": {
     "totalDrivers": 85,
-    "highSeverityCollisions": 0,
-    "mediumSeverityCollisions": 0,
-    "exactDuplicates": 0,
+    "highSeverityCollisions": 86,
+    "mediumSeverityCollisions": 1,
+    "exactDuplicates": 87,
     "driversWithoutProductId": 0,
-    "mismatchedProductIds": 336
+    "mismatchedProductIds": 332
   },
-  "highSeverityCollisions": [],
-  "exactDuplicates": [],
+  "highSeverityCollisions": [
+    {
+      "mfr": "_TZ3000_dfgbtub0",
+      "drivers": [
+        {
+          "driver": "button_wireless_2",
+          "productIds": [
+            "TS0042",
+            "TS004F",
+            "TS0601"
+          ],
+          "type": "button"
+        },
+        {
+          "driver": "switch_1gang",
+          "productIds": [
+            "1",
+            "1PM",
+            "BASICZBR3",
+            "Mini1",
+            "Mini1PM",
+            "S4SW-001P16EU",
+            "S4SW-001X16EU",
+            "S4SW-001X8EU",
+            "SHSW-1",
+            "Shelly1",
+            "TS0001",
+            "TS0002",
+            "TS0003",
+            "TS0004",
+            "TS0006",
+            "TS000F",
+            "TS0011",
+            "TS0012",
+            "TS0013",
+            "TS0014",
+            "TS0041",
+            "TS0046",
+            "TS0112",
+            "TS0302",
+            "TS030F",
+            "TS0601",
+            "ZBMINI",
+            "ZBMINIL2",
+            "ZG-101Z",
+            "ZG-301Z",
+            "ZG-302Z1",
+            "ZG-302Z2",
+            "ZG-302Z3",
+            "ZG-305Z",
+            "ZM-CSW002-D"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "button",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3040_fwxuzcf4",
+      "drivers": [
+        {
+          "driver": "button_wireless_4",
+          "productIds": [
+            "TS0044",
+            "TS004F",
+            "TS0601",
+            "ZM-RM02",
+            "SS600ZB",
+            "ZBWS03A",
+            "IH-K663"
+          ],
+          "type": "button"
+        },
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        }
+      ],
+      "types": [
+        "button",
+        "sensor"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3040_msl6wxk9",
+      "drivers": [
+        {
+          "driver": "button_wireless_4",
+          "productIds": [
+            "TS0044",
+            "TS004F",
+            "TS0601",
+            "ZM-RM02",
+            "SS600ZB",
+            "ZBWS03A",
+            "IH-K663"
+          ],
+          "type": "button"
+        },
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        }
+      ],
+      "types": [
+        "button",
+        "sensor"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3290_785fbxik",
+      "drivers": [
+        {
+          "driver": "button_wireless_4",
+          "productIds": [
+            "TS0044",
+            "TS004F",
+            "TS0601",
+            "ZM-RM02",
+            "SS600ZB",
+            "ZBWS03A",
+            "IH-K663"
+          ],
+          "type": "button"
+        },
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        }
+      ],
+      "types": [
+        "button",
+        "sensor"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3290_8xzb2ghn",
+      "drivers": [
+        {
+          "driver": "button_wireless_4",
+          "productIds": [
+            "TS0044",
+            "TS004F",
+            "TS0601",
+            "ZM-RM02",
+            "SS600ZB",
+            "ZBWS03A",
+            "IH-K663"
+          ],
+          "type": "button"
+        },
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        }
+      ],
+      "types": [
+        "button",
+        "sensor"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3290_ixd9mvv4",
+      "drivers": [
+        {
+          "driver": "button_wireless_4",
+          "productIds": [
+            "TS0044",
+            "TS004F",
+            "TS0601",
+            "ZM-RM02",
+            "SS600ZB",
+            "ZBWS03A",
+            "IH-K663"
+          ],
+          "type": "button"
+        },
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        }
+      ],
+      "types": [
+        "button",
+        "sensor"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3290_nkpxapoz",
+      "drivers": [
+        {
+          "driver": "button_wireless_4",
+          "productIds": [
+            "TS0044",
+            "TS004F",
+            "TS0601",
+            "ZM-RM02",
+            "SS600ZB",
+            "ZBWS03A",
+            "IH-K663"
+          ],
+          "type": "button"
+        },
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        }
+      ],
+      "types": [
+        "button",
+        "sensor"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3290_uc8lwbi2",
+      "drivers": [
+        {
+          "driver": "button_wireless_4",
+          "productIds": [
+            "TS0044",
+            "TS004F",
+            "TS0601",
+            "ZM-RM02",
+            "SS600ZB",
+            "ZBWS03A",
+            "IH-K663"
+          ],
+          "type": "button"
+        },
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        }
+      ],
+      "types": [
+        "button",
+        "sensor"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3290_yyax9ajf",
+      "drivers": [
+        {
+          "driver": "button_wireless_4",
+          "productIds": [
+            "TS0044",
+            "TS004F",
+            "TS0601",
+            "ZM-RM02",
+            "SS600ZB",
+            "ZBWS03A",
+            "IH-K663"
+          ],
+          "type": "button"
+        },
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        }
+      ],
+      "types": [
+        "button",
+        "sensor"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_TZ3000_wkai4ga5",
+      "drivers": [
+        {
+          "driver": "button_wireless_4",
+          "productIds": [
+            "TS0044",
+            "TS004F",
+            "TS0601",
+            "ZM-RM02",
+            "SS600ZB",
+            "ZBWS03A",
+            "IH-K663"
+          ],
+          "type": "button"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "button",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3000_266azbg3",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_1gang",
+          "productIds": [
+            "1",
+            "1PM",
+            "BASICZBR3",
+            "Mini1",
+            "Mini1PM",
+            "S4SW-001P16EU",
+            "S4SW-001X16EU",
+            "S4SW-001X8EU",
+            "SHSW-1",
+            "Shelly1",
+            "TS0001",
+            "TS0002",
+            "TS0003",
+            "TS0004",
+            "TS0006",
+            "TS000F",
+            "TS0011",
+            "TS0012",
+            "TS0013",
+            "TS0014",
+            "TS0041",
+            "TS0046",
+            "TS0112",
+            "TS0302",
+            "TS030F",
+            "TS0601",
+            "ZBMINI",
+            "ZBMINIL2",
+            "ZG-101Z",
+            "ZG-301Z",
+            "ZG-302Z1",
+            "ZG-302Z2",
+            "ZG-302Z3",
+            "ZG-305Z",
+            "ZM-CSW002-D"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3000_2uollq9d",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_1gang",
+          "productIds": [
+            "1",
+            "1PM",
+            "BASICZBR3",
+            "Mini1",
+            "Mini1PM",
+            "S4SW-001P16EU",
+            "S4SW-001X16EU",
+            "S4SW-001X8EU",
+            "SHSW-1",
+            "Shelly1",
+            "TS0001",
+            "TS0002",
+            "TS0003",
+            "TS0004",
+            "TS0006",
+            "TS000F",
+            "TS0011",
+            "TS0012",
+            "TS0013",
+            "TS0014",
+            "TS0041",
+            "TS0046",
+            "TS0112",
+            "TS0302",
+            "TS030F",
+            "TS0601",
+            "ZBMINI",
+            "ZBMINIL2",
+            "ZG-101Z",
+            "ZG-301Z",
+            "ZG-302Z1",
+            "ZG-302Z2",
+            "ZG-302Z3",
+            "ZG-305Z",
+            "ZM-CSW002-D"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3000_3ias4w4o",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_1gang",
+          "productIds": [
+            "1",
+            "1PM",
+            "BASICZBR3",
+            "Mini1",
+            "Mini1PM",
+            "S4SW-001P16EU",
+            "S4SW-001X16EU",
+            "S4SW-001X8EU",
+            "SHSW-1",
+            "Shelly1",
+            "TS0001",
+            "TS0002",
+            "TS0003",
+            "TS0004",
+            "TS0006",
+            "TS000F",
+            "TS0011",
+            "TS0012",
+            "TS0013",
+            "TS0014",
+            "TS0041",
+            "TS0046",
+            "TS0112",
+            "TS0302",
+            "TS030F",
+            "TS0601",
+            "ZBMINI",
+            "ZBMINIL2",
+            "ZG-101Z",
+            "ZG-301Z",
+            "ZG-302Z1",
+            "ZG-302Z2",
+            "ZG-302Z3",
+            "ZG-305Z",
+            "ZM-CSW002-D"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3000_cicwjqth",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_1gang",
+          "productIds": [
+            "1",
+            "1PM",
+            "BASICZBR3",
+            "Mini1",
+            "Mini1PM",
+            "S4SW-001P16EU",
+            "S4SW-001X16EU",
+            "S4SW-001X8EU",
+            "SHSW-1",
+            "Shelly1",
+            "TS0001",
+            "TS0002",
+            "TS0003",
+            "TS0004",
+            "TS0006",
+            "TS000F",
+            "TS0011",
+            "TS0012",
+            "TS0013",
+            "TS0014",
+            "TS0041",
+            "TS0046",
+            "TS0112",
+            "TS0302",
+            "TS030F",
+            "TS0601",
+            "ZBMINI",
+            "ZBMINIL2",
+            "ZG-101Z",
+            "ZG-301Z",
+            "ZG-302Z1",
+            "ZG-302Z2",
+            "ZG-302Z3",
+            "ZG-305Z",
+            "ZM-CSW002-D"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3000_gazjngjl",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_1gang",
+          "productIds": [
+            "1",
+            "1PM",
+            "BASICZBR3",
+            "Mini1",
+            "Mini1PM",
+            "S4SW-001P16EU",
+            "S4SW-001X16EU",
+            "S4SW-001X8EU",
+            "SHSW-1",
+            "Shelly1",
+            "TS0001",
+            "TS0002",
+            "TS0003",
+            "TS0004",
+            "TS0006",
+            "TS000F",
+            "TS0011",
+            "TS0012",
+            "TS0013",
+            "TS0014",
+            "TS0041",
+            "TS0046",
+            "TS0112",
+            "TS0302",
+            "TS030F",
+            "TS0601",
+            "ZBMINI",
+            "ZBMINIL2",
+            "ZG-101Z",
+            "ZG-301Z",
+            "ZG-302Z1",
+            "ZG-302Z2",
+            "ZG-302Z3",
+            "ZG-305Z",
+            "ZM-CSW002-D"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3000_j61x9rxn",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_1gang",
+          "productIds": [
+            "1",
+            "1PM",
+            "BASICZBR3",
+            "Mini1",
+            "Mini1PM",
+            "S4SW-001P16EU",
+            "S4SW-001X16EU",
+            "S4SW-001X8EU",
+            "SHSW-1",
+            "Shelly1",
+            "TS0001",
+            "TS0002",
+            "TS0003",
+            "TS0004",
+            "TS0006",
+            "TS000F",
+            "TS0011",
+            "TS0012",
+            "TS0013",
+            "TS0014",
+            "TS0041",
+            "TS0046",
+            "TS0112",
+            "TS0302",
+            "TS030F",
+            "TS0601",
+            "ZBMINI",
+            "ZBMINIL2",
+            "ZG-101Z",
+            "ZG-301Z",
+            "ZG-302Z1",
+            "ZG-302Z2",
+            "ZG-302Z3",
+            "ZG-305Z",
+            "ZM-CSW002-D"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3000_yujkchbz",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_1gang",
+          "productIds": [
+            "1",
+            "1PM",
+            "BASICZBR3",
+            "Mini1",
+            "Mini1PM",
+            "S4SW-001P16EU",
+            "S4SW-001X16EU",
+            "S4SW-001X8EU",
+            "SHSW-1",
+            "Shelly1",
+            "TS0001",
+            "TS0002",
+            "TS0003",
+            "TS0004",
+            "TS0006",
+            "TS000F",
+            "TS0011",
+            "TS0012",
+            "TS0013",
+            "TS0014",
+            "TS0041",
+            "TS0046",
+            "TS0112",
+            "TS0302",
+            "TS030F",
+            "TS0601",
+            "ZBMINI",
+            "ZBMINIL2",
+            "ZG-101Z",
+            "ZG-301Z",
+            "ZG-302Z1",
+            "ZG-302Z2",
+            "ZG-302Z3",
+            "ZG-305Z",
+            "ZM-CSW002-D"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_1s0vfmtv",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_6ahhkwyh",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_9vcekkp1",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_aewsvjcu",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_gdwja9a7",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_iedhxgyi",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_jn2x20tg",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_kq3kqwjt",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_m3pafcnk",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_phu8ygaw",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_pzao9ls1",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_rbnycsav",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_sal078g8",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_sfh0jtz0",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_umdkr64x",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_vaq2bfcu",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_ymv5vytn",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3002_zjuvw9zf",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "switch_2gang",
+          "productIds": [
+            "2PM",
+            "S4SW-002P16EU-COVER",
+            "SM-SW302-2CH",
+            "TS0002",
+            "TS0003",
+            "TS0012",
+            "TS0601"
+          ],
+          "type": "switch"
+        }
+      ],
+      "types": [
+        "sensor",
+        "switch"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_2dfy6tol",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_2uk4z8ce",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_3ulg9kpo",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_4ubylghk",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_4zinq6io",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_5ct6e7ye",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_5rta89nj",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_7vgttna6",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_8n4dn1ne",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_a04acm9s",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_c0s1xloa",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_c2iwpxf1",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_cieijuw1",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_ddigca5n",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_dn5higyl",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_dse8ogfy",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_dwzfzfjc",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_eejm8dcr",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_emqmwtym",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_f8dqbuze",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_guijtl8k",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_hicxa0rh",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_huzkzqyk",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_hxtfthp5",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_ifga63rg",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_invesber",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_iw0zkcu8",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_iystcadi",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_jd3z4yig",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_jjqdqxfq",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_jlf1nepw",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_jowhpxop",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_k1msuvg6",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_ljoasixl",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_mja6r5ix",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_odlghna1",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_p68kms0l",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_rcggc0ys",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_rwmitwj4",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_tfxwxklq",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_umi6vbsz",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_urjf5u18",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_vfwhhldz",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_wxa85bwk",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_x13bu7za",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_ysfo0wla",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_z1vlyufu",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_zana8d08",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_zbabx9wh",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_zdrhqmo0",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "mfr": "_tz3210_zrvxvydd",
+      "drivers": [
+        {
+          "driver": "climate_sensor",
+          "productIds": [
+            "07073L",
+            "BLU-HT-ZB",
+            "CK-BL702-MWS-01(7016)",
+            "RS-23ZBS",
+            "RSH-TH01",
+            "SNZB-02",
+            "SNZB-02D",
+            "SNZB-02P",
+            "TH01",
+            "TS0201",
+            "TS0222",
+            "TS0225",
+            "TS0505B",
+            "TS0601",
+            "TT001ZAV20",
+            "WSDCGQ01LM",
+            "WSDCGQ11LM",
+            "ZTH01",
+            "ZTH02",
+            "ZTH03Z",
+            "ZTH05Z",
+            "ZTH08",
+            "lumi.sensor_ht",
+            "lumi.weather"
+          ],
+          "type": "sensor"
+        },
+        {
+          "driver": "dimmer_wall_1gang",
+          "productIds": [
+            "Dimmer-Remote",
+            "E1524",
+            "E1812",
+            "RWL020",
+            "RWL021",
+            "RWL022",
+            "TRADFRI remote control",
+            "TS0101",
+            "TS0111",
+            "TS0501A",
+            "TS0501B",
+            "TS0601",
+            "TS110E",
+            "TS110F"
+          ],
+          "type": "dimmer"
+        }
+      ],
+      "types": [
+        "sensor",
+        "dimmer"
+      ],
+      "severity": "HIGH"
+    }
+  ],
+  "exactDuplicates": [
+    {
+      "mfr": "_TZ3000_dfgbtub0",
+      "pid": "TS0601",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3040_fwxuzcf4",
+      "pid": "TS0601",
+      "drivers": [
+        "button_wireless_4",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "_tz3040_msl6wxk9",
+      "pid": "TS0601",
+      "drivers": [
+        "button_wireless_4",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "_tz3290_785fbxik",
+      "pid": "TS0601",
+      "drivers": [
+        "button_wireless_4",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "_tz3290_8xzb2ghn",
+      "pid": "TS0601",
+      "drivers": [
+        "button_wireless_4",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "_tz3290_ixd9mvv4",
+      "pid": "TS0601",
+      "drivers": [
+        "button_wireless_4",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "_tz3290_nkpxapoz",
+      "pid": "TS0601",
+      "drivers": [
+        "button_wireless_4",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "_tz3290_uc8lwbi2",
+      "pid": "TS0601",
+      "drivers": [
+        "button_wireless_4",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "_tz3290_yyax9ajf",
+      "pid": "TS0601",
+      "drivers": [
+        "button_wireless_4",
+        "climate_sensor"
+      ]
+    },
+    {
+      "mfr": "_TZ3000_wkai4ga5",
+      "pid": "TS0601",
+      "drivers": [
+        "button_wireless_4",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3000_266azbg3",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3000_2uollq9d",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3000_3ias4w4o",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3000_cicwjqth",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3000_gazjngjl",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3000_j61x9rxn",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3000_yujkchbz",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_1s0vfmtv",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_6ahhkwyh",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_9vcekkp1",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_aewsvjcu",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_gdwja9a7",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_iedhxgyi",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_jn2x20tg",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_kq3kqwjt",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_m3pafcnk",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_phu8ygaw",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_pzao9ls1",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_rbnycsav",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_sal078g8",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_sfh0jtz0",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_umdkr64x",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_vaq2bfcu",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_ymv5vytn",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3002_zjuvw9zf",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_2gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_2dfy6tol",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_2uk4z8ce",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_3ulg9kpo",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_4ubylghk",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_4zinq6io",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_5ct6e7ye",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_5rta89nj",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_7vgttna6",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_8n4dn1ne",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_a04acm9s",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_c0s1xloa",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_c2iwpxf1",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_cieijuw1",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_ddigca5n",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_dn5higyl",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_dse8ogfy",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_dwzfzfjc",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_eejm8dcr",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_emqmwtym",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_f8dqbuze",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_guijtl8k",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_hicxa0rh",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_huzkzqyk",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_hxtfthp5",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_ifga63rg",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_invesber",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_iw0zkcu8",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_iystcadi",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_jd3z4yig",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_jjqdqxfq",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_jlf1nepw",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_jowhpxop",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_k1msuvg6",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_ljoasixl",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_mja6r5ix",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_odlghna1",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_p68kms0l",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_rcggc0ys",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_rwmitwj4",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_tfxwxklq",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_umi6vbsz",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_urjf5u18",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_vfwhhldz",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_wxa85bwk",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_x13bu7za",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_ysfo0wla",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_z1vlyufu",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_zana8d08",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_zbabx9wh",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_zdrhqmo0",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "_tz3210_zrvxvydd",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "mfr": "HOBEIAN",
+      "pid": "TS0601",
+      "drivers": [
+        "motion_sensor",
+        "soil_sensor"
+      ]
+    }
+  ],
   "driversWithoutProductId": [],
   "mismatchedProductIds": [
     {
@@ -60,6 +5859,21 @@
     {
       "driver": "air_quality_comprehensive",
       "type": "sensor",
+      "pid": "TS0501",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "air_quality_comprehensive",
+      "type": "sensor",
       "pid": "TS0005",
       "expected": [
         "TS0201",
@@ -76,21 +5890,6 @@
       "driver": "air_quality_comprehensive",
       "type": "sensor",
       "pid": "TS0006",
-      "expected": [
-        "TS0201",
-        "TS0202",
-        "TS0203",
-        "TS0204",
-        "TS0205",
-        "TS0207",
-        "TS0210",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "air_quality_comprehensive",
-      "type": "sensor",
-      "pid": "TS0501",
       "expected": [
         "TS0201",
         "TS0202",
@@ -794,7 +6593,7 @@
     {
       "driver": "button_wireless_4",
       "type": "button",
-      "pid": "IH-K663",
+      "pid": "ZM-RM02",
       "expected": [
         "TS0041",
         "TS0042",
@@ -833,7 +6632,7 @@
     {
       "driver": "button_wireless_4",
       "type": "button",
-      "pid": "ZM-RM02",
+      "pid": "IH-K663",
       "expected": [
         "TS0041",
         "TS0042",
@@ -1070,21 +6869,6 @@
       "driver": "climate_sensor",
       "type": "sensor",
       "pid": "WSDCGQ11LM",
-      "expected": [
-        "TS0201",
-        "TS0202",
-        "TS0203",
-        "TS0204",
-        "TS0205",
-        "TS0207",
-        "TS0210",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "climate_sensor",
-      "type": "sensor",
-      "pid": "ZS-304Z",
       "expected": [
         "TS0201",
         "TS0202",
@@ -1970,23 +7754,7 @@
     {
       "driver": "module_mini_switch",
       "type": "switch",
-      "pid": "BASICZBR3",
-      "expected": [
-        "TS0001",
-        "TS0002",
-        "TS0003",
-        "TS0004",
-        "TS0011",
-        "TS0012",
-        "TS0013",
-        "TS0014",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "module_mini_switch",
-      "type": "switch",
-      "pid": "BW-SS7",
+      "pid": "MS-104Z",
       "expected": [
         "TS0001",
         "TS0002",
@@ -2018,7 +7786,7 @@
     {
       "driver": "module_mini_switch",
       "type": "switch",
-      "pid": "MS-104Z",
+      "pid": "QS-Zigbee-S05-LN",
       "expected": [
         "TS0001",
         "TS0002",
@@ -2050,23 +7818,7 @@
     {
       "driver": "module_mini_switch",
       "type": "switch",
-      "pid": "QS-Zigbee-S05-LN",
-      "expected": [
-        "TS0001",
-        "TS0002",
-        "TS0003",
-        "TS0004",
-        "TS0011",
-        "TS0012",
-        "TS0013",
-        "TS0014",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "module_mini_switch",
-      "type": "switch",
-      "pid": "RR620ZB",
+      "pid": "BW-SS7",
       "expected": [
         "TS0001",
         "TS0002",
@@ -2144,39 +7896,41 @@
       ]
     },
     {
+      "driver": "module_mini_switch",
+      "type": "switch",
+      "pid": "BASICZBR3",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "module_mini_switch",
+      "type": "switch",
+      "pid": "RR620ZB",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
       "driver": "motion_sensor",
       "type": "sensor",
       "pid": "CK-BL702-MWS-01(7016)",
-      "expected": [
-        "TS0201",
-        "TS0202",
-        "TS0203",
-        "TS0204",
-        "TS0205",
-        "TS0207",
-        "TS0210",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "motion_sensor",
-      "type": "sensor",
-      "pid": "CK-TLSR8656-SS5-01(7002)",
-      "expected": [
-        "TS0201",
-        "TS0202",
-        "TS0203",
-        "TS0204",
-        "TS0205",
-        "TS0207",
-        "TS0210",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "motion_sensor",
-      "type": "sensor",
-      "pid": "CK-TLSR8656-SS5-01(7019)",
       "expected": [
         "TS0201",
         "TS0202",
@@ -2296,21 +8050,6 @@
     {
       "driver": "motion_sensor",
       "type": "sensor",
-      "pid": "PECMS01",
-      "expected": [
-        "TS0201",
-        "TS0202",
-        "TS0203",
-        "TS0204",
-        "TS0205",
-        "TS0207",
-        "TS0210",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "motion_sensor",
-      "type": "sensor",
       "pid": "RH3040",
       "expected": [
         "TS0201",
@@ -2342,21 +8081,6 @@
       "driver": "motion_sensor",
       "type": "sensor",
       "pid": "RTCGQ11LM",
-      "expected": [
-        "TS0201",
-        "TS0202",
-        "TS0203",
-        "TS0204",
-        "TS0205",
-        "TS0207",
-        "TS0210",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "motion_sensor",
-      "type": "sensor",
-      "pid": "SBDV-00029",
       "expected": [
         "TS0201",
         "TS0202",
@@ -2446,21 +8170,6 @@
     {
       "driver": "motion_sensor",
       "type": "sensor",
-      "pid": "SNZB-03P",
-      "expected": [
-        "TS0201",
-        "TS0202",
-        "TS0203",
-        "TS0204",
-        "TS0205",
-        "TS0207",
-        "TS0210",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "motion_sensor",
-      "type": "sensor",
       "pid": "TRADFRI motion sensor",
       "expected": [
         "TS0201",
@@ -2521,52 +8230,7 @@
     {
       "driver": "motion_sensor",
       "type": "sensor",
-      "pid": "Z102LG03-1",
-      "expected": [
-        "TS0201",
-        "TS0202",
-        "TS0203",
-        "TS0204",
-        "TS0205",
-        "TS0207",
-        "TS0210",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "motion_sensor",
-      "type": "sensor",
-      "pid": "ZB-CL01",
-      "expected": [
-        "TS0201",
-        "TS0202",
-        "TS0203",
-        "TS0204",
-        "TS0205",
-        "TS0207",
-        "TS0210",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "motion_sensor",
-      "type": "sensor",
       "pid": "ZB-PCD",
-      "expected": [
-        "TS0201",
-        "TS0202",
-        "TS0203",
-        "TS0204",
-        "TS0205",
-        "TS0207",
-        "TS0210",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "motion_sensor",
-      "type": "sensor",
-      "pid": "ZB003-X",
       "expected": [
         "TS0201",
         "TS0202",
@@ -2684,6 +8348,81 @@
       ]
     },
     {
+      "driver": "motion_sensor",
+      "type": "sensor",
+      "pid": "PECMS01",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "motion_sensor",
+      "type": "sensor",
+      "pid": "ZB003-X",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "motion_sensor",
+      "type": "sensor",
+      "pid": "SBDV-00029",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "motion_sensor",
+      "type": "sensor",
+      "pid": "SNZB-03P",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "motion_sensor",
+      "type": "sensor",
+      "pid": "CK-TLSR8656-SS5-01(7002)",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
       "driver": "motion_sensor_radar_mmwave",
       "type": "sensor",
       "pid": "TS0225",
@@ -2752,6 +8491,26 @@
       "driver": "plug_energy_monitor",
       "type": "plug",
       "pid": "TS0201",
+      "expected": [
+        "TS0121",
+        "TS011F",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "plug_smart",
+      "type": "plug",
+      "pid": "TS0111",
+      "expected": [
+        "TS0121",
+        "TS011F",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "plug_smart",
+      "type": "plug",
+      "pid": "TS0218",
       "expected": [
         "TS0121",
         "TS011F",
@@ -2941,27 +8700,7 @@
     {
       "driver": "plug_smart",
       "type": "plug",
-      "pid": "TS0111",
-      "expected": [
-        "TS0121",
-        "TS011F",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "plug_smart",
-      "type": "plug",
       "pid": "TS0115",
-      "expected": [
-        "TS0121",
-        "TS011F",
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "plug_smart",
-      "type": "plug",
-      "pid": "TS0218",
       "expected": [
         "TS0121",
         "TS011F",
@@ -3266,22 +9005,6 @@
     {
       "driver": "radiator_valve",
       "type": "climate",
-      "pid": "BRT-100",
-      "expected": [
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "radiator_valve",
-      "type": "climate",
-      "pid": "GS361A-H04",
-      "expected": [
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "radiator_valve",
-      "type": "climate",
       "pid": "HY369RT",
       "expected": [
         "TS0601"
@@ -3298,14 +9021,6 @@
     {
       "driver": "radiator_valve",
       "type": "climate",
-      "pid": "SEA-TRV",
-      "expected": [
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "radiator_valve",
-      "type": "climate",
       "pid": "SEA801-Zigbee",
       "expected": [
         "TS0601"
@@ -3315,6 +9030,14 @@
       "driver": "radiator_valve",
       "type": "climate",
       "pid": "SEA802",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "radiator_valve",
+      "type": "climate",
+      "pid": "SEA-TRV",
       "expected": [
         "TS0601"
       ]
@@ -3362,6 +9085,22 @@
     {
       "driver": "radiator_valve",
       "type": "climate",
+      "pid": "BRT-100",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "radiator_valve",
+      "type": "climate",
+      "pid": "GS361A-H04",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "radiator_valve",
+      "type": "climate",
       "pid": "TV01",
       "expected": [
         "TS0601"
@@ -3378,14 +9117,6 @@
     {
       "driver": "radiator_valve",
       "type": "climate",
-      "pid": "ZWT100",
-      "expected": [
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "radiator_valve",
-      "type": "climate",
       "pid": "eT093WRO-1",
       "expected": [
         "TS0601"
@@ -3395,6 +9126,14 @@
       "driver": "radiator_valve",
       "type": "climate",
       "pid": "eTRV0100",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "radiator_valve",
+      "type": "climate",
+      "pid": "ZWT100",
       "expected": [
         "TS0601"
       ]
@@ -4270,6 +10009,14 @@
     {
       "driver": "thermostat_tuya_dp",
       "type": "climate",
+      "pid": "TS0011",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "thermostat_tuya_dp",
+      "type": "climate",
       "pid": "BAC-002-ALZB",
       "expected": [
         "TS0601"
@@ -4279,14 +10026,6 @@
       "driver": "thermostat_tuya_dp",
       "type": "climate",
       "pid": "BHT-002-GCLZB",
-      "expected": [
-        "TS0601"
-      ]
-    },
-    {
-      "driver": "thermostat_tuya_dp",
-      "type": "climate",
-      "pid": "TS0011",
       "expected": [
         "TS0601"
       ]
