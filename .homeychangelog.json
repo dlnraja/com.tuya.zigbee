@@ -452,5 +452,11 @@
     "fr": "🔧 Fix: Radar mmWave DP106 plus détecté comme pression de bouton",
     "nl": "🔧 Fix: mmWave radar DP106 niet meer verkeerd gedetecteerd als knopdruk",
     "de": "🔧 Fix: mmWave Radar DP106 nicht mehr fälschlicherweise als Tastendruck erkannt"
+  },
+  "5.5.227": {
+    "en": "🔧 Fix: LCD climate sensor dual time sync (ZCL + Tuya EF00)",
+    "fr": "🔧 Fix: Double sync heure LCD capteur climatique (ZCL + Tuya EF00)",
+    "nl": "🔧 Fix: LCD klimaatsensor dubbele tijdsync (ZCL + Tuya EF00)",
+    "de": "🔧 Fix: LCD Klimasensor duale Zeitsynchronisierung (ZCL + Tuya EF00)"
   }
 }

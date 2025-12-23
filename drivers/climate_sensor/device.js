@@ -479,8 +479,35 @@ class ClimateSensorDevice extends HybridSensorBase {
       this.log('[CLIMATE] 🎯 ZCL Time Cluster sync setup complete (method: bind + writeAttributes)');
     }
 
+    // ═══════════════════════════════════════════════════════════════════════
+    // v5.5.227: DUAL TIME SYNC FOR LCD CLIMATE SENSORS
+    // Some LCD devices need Tuya EF00 time sync IN ADDITION to ZCL Time Cluster
+    // Send both methods for maximum compatibility
+    // ═══════════════════════════════════════════════════════════════════════
+    if (this.isLCDClimateDevice() && this._hasTuyaCluster) {
+      this.log('[CLIMATE] 🔥 LCD DEVICE - Sending DUAL time sync (ZCL + Tuya EF00)...');
+
+      // Send Tuya EF00 time sync immediately
+      setTimeout(async () => {
+        try {
+          await this._sendForcedTimeSync();
+          this.log('[CLIMATE] 🔥 ✅ Initial Tuya EF00 time sync sent for LCD');
+        } catch (e) {
+          this.log('[CLIMATE] 🔥 ⚠️ Initial Tuya EF00 sync failed:', e.message);
+        }
+      }, 3000); // Wait 3s for device to settle
+
+      // Schedule hourly Tuya EF00 sync for LCD devices (in addition to ZCL daily)
+      this._hourlyLcdSyncInterval = this.homey.setInterval(async () => {
+        this.log('[CLIMATE] 🔥 Hourly LCD Tuya EF00 time sync...');
+        await this._sendForcedTimeSync().catch(e =>
+          this.log('[CLIMATE] LCD sync failed:', e.message)
+        );
+      }, 60 * 60 * 1000); // 1 hour
+    }
+
     // Legacy time sync for non-RTC devices (keep existing behavior)
-    if (!TuyaDeviceClassifier.hasRtcScreen(this)) {
+    if (!TuyaDeviceClassifier.hasRtcScreen(this) && !this.isLCDClimateDevice()) {
       this._hourlySyncInterval = this.homey.setInterval(async () => {
         this.log('[CLIMATE] 🕐 Hourly time sync (non-RTC device)...');
         await this._sendTimeSync().catch(e => this.log('[CLIMATE] Time sync failed:', e.message));
@@ -634,7 +661,7 @@ class ClimateSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.208: Clean up intervals on destroy - including new ZCL Time intervals
+   * v5.5.227: Clean up intervals on destroy - including new ZCL Time + LCD intervals
    */
   async onDestroy() {
     if (this._dailySyncInterval) {
@@ -648,6 +675,11 @@ class ClimateSensorDevice extends HybridSensorBase {
     if (this._dailyZclSyncInterval) {
       this.homey.clearInterval(this._dailyZclSyncInterval);
       this._dailyZclSyncInterval = null;
+    }
+    // v5.5.227: Clean up LCD-specific sync interval
+    if (this._hourlyLcdSyncInterval) {
+      this.homey.clearInterval(this._hourlyLcdSyncInterval);
+      this._hourlyLcdSyncInterval = null;
     }
     return super.onDestroy();
   }
@@ -1120,50 +1152,50 @@ class ClimateSensorDevice extends HybridSensorBase {
 
     // v5.5.190: Log with calibration info
     switch (dp) {
-    case 1: // Temperature (standard) ÷10
-      const temp1 = this._applyTempOffset(rawValue / 10);
-      this.log(`[CLIMATE-DP] DP1 temperature raw=${rawValue} → ${temp1}°C`);
-      break;
-    case 18: // Temperature (alt) ÷10
-    case 6: // Temperature (some _TZE204 models)
-      const tempAlt = this._applyTempOffset(rawValue / 10);
-      this.log(`[CLIMATE-DP] DP${dp} temperature_alt raw=${rawValue} → ${tempAlt}°C`);
-      break;
-    case 2: // Humidity (standard)
-      const hum2 = this._applyHumOffset(rawValue);
-      this.log(`[CLIMATE-DP] DP2 humidity raw=${rawValue} → ${hum2}%`);
-      break;
-    case 7: // Humidity (some _TZE204 models)
-    case 103: // Humidity (alt)
-      const humAlt = this._applyHumOffset(rawValue);
-      this.log(`[CLIMATE-DP] DP${dp} humidity_alt raw=${rawValue} → ${humAlt}%`);
-      break;
-    case 3: // Battery state enum (some _TZE200 devices)
-      let bat3 = rawValue;
-      if (rawValue === 0) bat3 = 10;      // low
-      else if (rawValue === 1) bat3 = 50; // medium
-      else if (rawValue === 2) bat3 = 100; // high
-      else bat3 = Math.min(rawValue * 2, 100);
-      this.log(`[CLIMATE-DP] DP3 battery_state raw=${rawValue} → ${bat3}% (enum: 0=low, 1=med, 2=high)`);
-      break;
-    case 4: // Battery (standard with ×2 multiplier)
-      const batConverted = Math.min(rawValue * 2, 100);
-      this.log(`[CLIMATE-DP] DP4 battery raw=${rawValue} → ${batConverted}% (×2 multiplier)`);
-      break;
-    case 5: // Illuminance (some models)
-      this.log(`[CLIMATE-DP] DP5 illuminance raw=${rawValue} lux`);
-      break;
-    case 9: // Temperature unit setting
-      this.log(`[CLIMATE-DP] DP9 temp_unit raw=${rawValue} (0=C, 1=F)`);
-      break;
-    case 101:
-    case 102: // Button press
-      this.log(`[CLIMATE-DP] DP${dp} button_press raw=${rawValue}`);
-      break;
-    default:
-      if (dp !== undefined) {
-        this.log(`[CLIMATE-DP] DP${dp} OTHER raw=${rawValue}`);
-      }
+      case 1: // Temperature (standard) ÷10
+        const temp1 = this._applyTempOffset(rawValue / 10);
+        this.log(`[CLIMATE-DP] DP1 temperature raw=${rawValue} → ${temp1}°C`);
+        break;
+      case 18: // Temperature (alt) ÷10
+      case 6: // Temperature (some _TZE204 models)
+        const tempAlt = this._applyTempOffset(rawValue / 10);
+        this.log(`[CLIMATE-DP] DP${dp} temperature_alt raw=${rawValue} → ${tempAlt}°C`);
+        break;
+      case 2: // Humidity (standard)
+        const hum2 = this._applyHumOffset(rawValue);
+        this.log(`[CLIMATE-DP] DP2 humidity raw=${rawValue} → ${hum2}%`);
+        break;
+      case 7: // Humidity (some _TZE204 models)
+      case 103: // Humidity (alt)
+        const humAlt = this._applyHumOffset(rawValue);
+        this.log(`[CLIMATE-DP] DP${dp} humidity_alt raw=${rawValue} → ${humAlt}%`);
+        break;
+      case 3: // Battery state enum (some _TZE200 devices)
+        let bat3 = rawValue;
+        if (rawValue === 0) bat3 = 10;      // low
+        else if (rawValue === 1) bat3 = 50; // medium
+        else if (rawValue === 2) bat3 = 100; // high
+        else bat3 = Math.min(rawValue * 2, 100);
+        this.log(`[CLIMATE-DP] DP3 battery_state raw=${rawValue} → ${bat3}% (enum: 0=low, 1=med, 2=high)`);
+        break;
+      case 4: // Battery (standard with ×2 multiplier)
+        const batConverted = Math.min(rawValue * 2, 100);
+        this.log(`[CLIMATE-DP] DP4 battery raw=${rawValue} → ${batConverted}% (×2 multiplier)`);
+        break;
+      case 5: // Illuminance (some models)
+        this.log(`[CLIMATE-DP] DP5 illuminance raw=${rawValue} lux`);
+        break;
+      case 9: // Temperature unit setting
+        this.log(`[CLIMATE-DP] DP9 temp_unit raw=${rawValue} (0=C, 1=F)`);
+        break;
+      case 101:
+      case 102: // Button press
+        this.log(`[CLIMATE-DP] DP${dp} button_press raw=${rawValue}`);
+        break;
+      default:
+        if (dp !== undefined) {
+          this.log(`[CLIMATE-DP] DP${dp} OTHER raw=${rawValue}`);
+        }
     }
 
     // Call parent handler to set capabilities
