@@ -446,5 +446,11 @@
     "fr": "🔋 Fix: Lecture batterie restaurée pour boutons 4-gang (régression v5.5.21)",
     "nl": "🔋 Fix: Batterij uitlezen hersteld voor 4-gang knoppen",
     "de": "🔋 Fix: Batterieablesung für 4-Gang-Tasten wiederhergestellt"
+  },
+  "5.5.226": {
+    "en": "🔧 Fix: mmWave radar DP106 no longer incorrectly detected as button press",
+    "fr": "🔧 Fix: Radar mmWave DP106 plus détecté comme pression de bouton",
+    "nl": "🔧 Fix: mmWave radar DP106 niet meer verkeerd gedetecteerd als knopdruk",
+    "de": "🔧 Fix: mmWave Radar DP106 nicht mehr fälschlicherweise als Tastendruck erkannt"
   }
 }
