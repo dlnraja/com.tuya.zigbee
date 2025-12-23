@@ -1,32 +1,16 @@
 {
-  "generated": "2025-12-06T09:21:35.223Z",
+  "generated": "2025-12-23T10:23:17.826Z",
   "summary": {
-    "totalDrivers": 83,
+    "totalDrivers": 85,
     "highSeverityCollisions": 0,
     "mediumSeverityCollisions": 0,
     "exactDuplicates": 0,
-    "driversWithoutProductId": 3,
-    "mismatchedProductIds": 278
+    "driversWithoutProductId": 0,
+    "mismatchedProductIds": 336
   },
   "highSeverityCollisions": [],
   "exactDuplicates": [],
-  "driversWithoutProductId": [
-    {
-      "driver": "button_wireless_8",
-      "type": "button",
-      "mfrCount": 1
-    },
-    {
-      "driver": "module_mini_switch",
-      "type": "switch",
-      "mfrCount": 1
-    },
-    {
-      "driver": "power_meter",
-      "type": "other",
-      "mfrCount": 1
-    }
-  ],
+  "driversWithoutProductId": [],
   "mismatchedProductIds": [
     {
       "driver": "air_quality_co2",
@@ -62,6 +46,36 @@
       "driver": "air_quality_comprehensive",
       "type": "sensor",
       "pid": "NOISE01",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "air_quality_comprehensive",
+      "type": "sensor",
+      "pid": "TS0005",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "air_quality_comprehensive",
+      "type": "sensor",
+      "pid": "TS0006",
       "expected": [
         "TS0201",
         "TS0202",
@@ -689,7 +703,7 @@
     {
       "driver": "button_emergency_sos",
       "type": "button",
-      "pid": "default",
+      "pid": "TS0218",
       "expected": [
         "TS0041",
         "TS0042",
@@ -768,6 +782,58 @@
       "driver": "button_wireless_1",
       "type": "button",
       "pid": "TS0215A",
+      "expected": [
+        "TS0041",
+        "TS0042",
+        "TS0043",
+        "TS0044",
+        "TS004F",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "button_wireless_4",
+      "type": "button",
+      "pid": "IH-K663",
+      "expected": [
+        "TS0041",
+        "TS0042",
+        "TS0043",
+        "TS0044",
+        "TS004F",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "button_wireless_4",
+      "type": "button",
+      "pid": "SS600ZB",
+      "expected": [
+        "TS0041",
+        "TS0042",
+        "TS0043",
+        "TS0044",
+        "TS004F",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "button_wireless_4",
+      "type": "button",
+      "pid": "ZBWS03A",
+      "expected": [
+        "TS0041",
+        "TS0042",
+        "TS0043",
+        "TS0044",
+        "TS004F",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "button_wireless_4",
+      "type": "button",
+      "pid": "ZM-RM02",
       "expected": [
         "TS0041",
         "TS0042",
@@ -958,6 +1024,21 @@
     {
       "driver": "climate_sensor",
       "type": "sensor",
+      "pid": "TS0505B",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "climate_sensor",
+      "type": "sensor",
       "pid": "TT001ZAV20",
       "expected": [
         "TS0201",
@@ -989,6 +1070,21 @@
       "driver": "climate_sensor",
       "type": "sensor",
       "pid": "WSDCGQ11LM",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "climate_sensor",
+      "type": "sensor",
+      "pid": "ZS-304Z",
       "expected": [
         "TS0201",
         "TS0202",
@@ -1714,6 +1810,14 @@
       ]
     },
     {
+      "driver": "ir_blaster",
+      "type": "unknown",
+      "pid": "TS1201",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
       "driver": "led_controller_cct",
       "type": "light",
       "pid": "TS0502",
@@ -1864,9 +1968,215 @@
       ]
     },
     {
+      "driver": "module_mini_switch",
+      "type": "switch",
+      "pid": "BASICZBR3",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "module_mini_switch",
+      "type": "switch",
+      "pid": "BW-SS7",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "module_mini_switch",
+      "type": "switch",
+      "pid": "MS-104BZ",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "module_mini_switch",
+      "type": "switch",
+      "pid": "MS-104Z",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "module_mini_switch",
+      "type": "switch",
+      "pid": "QS-Zigbee-S05-L",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "module_mini_switch",
+      "type": "switch",
+      "pid": "QS-Zigbee-S05-LN",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "module_mini_switch",
+      "type": "switch",
+      "pid": "RR620ZB",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "module_mini_switch",
+      "type": "switch",
+      "pid": "ZBMINI",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "module_mini_switch",
+      "type": "switch",
+      "pid": "ZBMINI-L",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "module_mini_switch",
+      "type": "switch",
+      "pid": "ZBMINI-L2",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "module_mini_switch",
+      "type": "switch",
+      "pid": "ZBMINIR2",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
       "driver": "motion_sensor",
       "type": "sensor",
       "pid": "CK-BL702-MWS-01(7016)",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "motion_sensor",
+      "type": "sensor",
+      "pid": "CK-TLSR8656-SS5-01(7002)",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "motion_sensor",
+      "type": "sensor",
+      "pid": "CK-TLSR8656-SS5-01(7019)",
       "expected": [
         "TS0201",
         "TS0202",
@@ -1986,6 +2296,21 @@
     {
       "driver": "motion_sensor",
       "type": "sensor",
+      "pid": "PECMS01",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "motion_sensor",
+      "type": "sensor",
       "pid": "RH3040",
       "expected": [
         "TS0201",
@@ -2017,6 +2342,21 @@
       "driver": "motion_sensor",
       "type": "sensor",
       "pid": "RTCGQ11LM",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "motion_sensor",
+      "type": "sensor",
+      "pid": "SBDV-00029",
       "expected": [
         "TS0201",
         "TS0202",
@@ -2106,6 +2446,21 @@
     {
       "driver": "motion_sensor",
       "type": "sensor",
+      "pid": "SNZB-03P",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "motion_sensor",
+      "type": "sensor",
       "pid": "TRADFRI motion sensor",
       "expected": [
         "TS0201",
@@ -2166,7 +2521,52 @@
     {
       "driver": "motion_sensor",
       "type": "sensor",
+      "pid": "Z102LG03-1",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "motion_sensor",
+      "type": "sensor",
+      "pid": "ZB-CL01",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "motion_sensor",
+      "type": "sensor",
       "pid": "ZB-PCD",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "motion_sensor",
+      "type": "sensor",
+      "pid": "ZB003-X",
       "expected": [
         "TS0201",
         "TS0202",
@@ -2541,7 +2941,27 @@
     {
       "driver": "plug_smart",
       "type": "plug",
+      "pid": "TS0111",
+      "expected": [
+        "TS0121",
+        "TS011F",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "plug_smart",
+      "type": "plug",
       "pid": "TS0115",
+      "expected": [
+        "TS0121",
+        "TS011F",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "plug_smart",
+      "type": "plug",
+      "pid": "TS0218",
       "expected": [
         "TS0121",
         "TS011F",
@@ -2804,6 +3224,62 @@
       ]
     },
     {
+      "driver": "radiator_controller",
+      "type": "unknown",
+      "pid": "TS0001",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "radiator_controller",
+      "type": "unknown",
+      "pid": "TS0002",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "radiator_controller",
+      "type": "unknown",
+      "pid": "TS0011",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "radiator_controller",
+      "type": "unknown",
+      "pid": "TS0012",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "radiator_controller",
+      "type": "unknown",
+      "pid": "TS011F",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "radiator_valve",
+      "type": "climate",
+      "pid": "BRT-100",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "radiator_valve",
+      "type": "climate",
+      "pid": "GS361A-H04",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
       "driver": "radiator_valve",
       "type": "climate",
       "pid": "HY369RT",
@@ -2815,6 +3291,14 @@
       "driver": "radiator_valve",
       "type": "climate",
       "pid": "ME167",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "radiator_valve",
+      "type": "climate",
+      "pid": "SEA-TRV",
       "expected": [
         "TS0601"
       ]
@@ -2870,6 +3354,14 @@
     {
       "driver": "radiator_valve",
       "type": "climate",
+      "pid": "TRV602Z",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "radiator_valve",
+      "type": "climate",
       "pid": "TV01",
       "expected": [
         "TS0601"
@@ -2879,6 +3371,14 @@
       "driver": "radiator_valve",
       "type": "climate",
       "pid": "TV02",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "radiator_valve",
+      "type": "climate",
+      "pid": "ZWT100",
       "expected": [
         "TS0601"
       ]
@@ -2911,6 +3411,19 @@
         "TS0205",
         "TS0207",
         "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "scene_switch_1",
+      "type": "button",
+      "pid": "TS0203",
+      "expected": [
+        "TS0041",
+        "TS0042",
+        "TS0043",
+        "TS0044",
+        "TS004F",
         "TS0601"
       ]
     },
@@ -3009,6 +3522,21 @@
       "driver": "smoke_detector_advanced",
       "type": "sensor",
       "pid": "SD02",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "soil_sensor",
+      "type": "sensor",
+      "pid": "ZG-303Z",
       "expected": [
         "TS0201",
         "TS0202",
@@ -3183,7 +3711,103 @@
     {
       "driver": "switch_1gang",
       "type": "switch",
+      "pid": "TS0006",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "switch_1gang",
+      "type": "switch",
       "pid": "TS000F",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "switch_1gang",
+      "type": "switch",
+      "pid": "TS0041",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "switch_1gang",
+      "type": "switch",
+      "pid": "TS0046",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "switch_1gang",
+      "type": "switch",
+      "pid": "TS0112",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "switch_1gang",
+      "type": "switch",
+      "pid": "TS0302",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "switch_1gang",
+      "type": "switch",
+      "pid": "TS030F",
       "expected": [
         "TS0001",
         "TS0002",
@@ -3216,6 +3840,102 @@
       "driver": "switch_1gang",
       "type": "switch",
       "pid": "ZBMINIL2",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "switch_1gang",
+      "type": "switch",
+      "pid": "ZG-101Z",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "switch_1gang",
+      "type": "switch",
+      "pid": "ZG-301Z",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "switch_1gang",
+      "type": "switch",
+      "pid": "ZG-302Z1",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "switch_1gang",
+      "type": "switch",
+      "pid": "ZG-302Z2",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "switch_1gang",
+      "type": "switch",
+      "pid": "ZG-302Z3",
+      "expected": [
+        "TS0001",
+        "TS0002",
+        "TS0003",
+        "TS0004",
+        "TS0011",
+        "TS0012",
+        "TS0013",
+        "TS0014",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "switch_1gang",
+      "type": "switch",
+      "pid": "ZG-305Z",
       "expected": [
         "TS0001",
         "TS0002",
@@ -3544,6 +4264,38 @@
         "TS0205",
         "TS0207",
         "TS0210",
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "thermostat_tuya_dp",
+      "type": "climate",
+      "pid": "BAC-002-ALZB",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "thermostat_tuya_dp",
+      "type": "climate",
+      "pid": "BHT-002-GCLZB",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "thermostat_tuya_dp",
+      "type": "climate",
+      "pid": "TS0011",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "usb_dongle_dual_repeater",
+      "type": "unknown",
+      "pid": "TS0002",
+      "expected": [
         "TS0601"
       ]
     },
