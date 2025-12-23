@@ -1,4 +1,10 @@
 {
+  "5.5.221": {
+    "en": "📋 FORUM REQUESTS: Added HOBEIAN ZG-204ZV to motion_sensor, _TZ3000_wkai4ga5 (TS0044) to button_wireless_4, _TZ3000_dfgbtub0 (TS0042) to button_wireless_2. All community forum device requests now properly supported.",
+    "fr": "📋 DEMANDES FORUM: Ajout HOBEIAN ZG-204ZV au capteur mouvement, _TZ3000_wkai4ga5 (TS0044) aux boutons 4 gang, _TZ3000_dfgbtub0 (TS0042) aux boutons 2 gang. Toutes les demandes du forum correctement supportées.",
+    "nl": "📋 FORUM VERZOEKEN: HOBEIAN ZG-204ZV toegevoegd aan motion_sensor, _TZ3000_wkai4ga5 (TS0044) aan button_wireless_4, _TZ3000_dfgbtub0 (TS0042) aan button_wireless_2.",
+    "de": "📋 FORUM ANFRAGEN: HOBEIAN ZG-204ZV zu motion_sensor, _TZ3000_wkai4ga5 (TS0044) zu button_wireless_4, _TZ3000_dfgbtub0 (TS0042) zu button_wireless_2 hinzugefügt."
+  },
   "5.5.220": {
     "en": "🔒 FINGERPRINTING FIX: Removed 68 manufacturer ID collisions across 17 drivers. Each manufacturerName+productId couple now exists in only ONE driver. Fixes device detection conflicts between buttons/switches, climate/contact sensors, rain/water leak sensors. Follows strict Tuya fingerprinting rules.",
     "fr": "🔒 FIX FINGERPRINTING: Suppression de 68 collisions d'IDs fabricant sur 17 drivers. Chaque couple manufacturerName+productId existe maintenant dans UN SEUL driver. Corrige les conflits de détection entre boutons/interrupteurs, capteurs climat/contact, capteurs pluie/fuite.",
