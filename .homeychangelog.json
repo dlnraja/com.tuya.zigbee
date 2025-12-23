@@ -428,5 +428,11 @@
     "fr": "🚀 MEGA Enrichment: 3745 IDs fabricants (+1128 depuis v5.5.221). Corrections intelligentes basées sur retours forum/GitHub.",
     "nl": "🚀 MEGA Enrichment: 3745 fabrikant-IDs (+1128 vanaf v5.5.221). Intelligente toewijzingscorrecties.",
     "de": "🚀 MEGA Enrichment: 3745 Hersteller-IDs (+1128 von v5.5.221). Intelligente Zuweisungskorrekturen."
+  },
+  "5.5.223": {
+    "en": "🔧 Fix: TypeError in climate_sensor driver + New switch_temp_sensor driver for TYZGTH1CH-D1RF",
+    "fr": "🔧 Fix: TypeError dans climate_sensor + Nouveau driver switch_temp_sensor pour TYZGTH1CH-D1RF",
+    "nl": "🔧 Fix: TypeError in climate_sensor + Nieuwe switch_temp_sensor driver voor TYZGTH1CH-D1RF",
+    "de": "🔧 Fix: TypeError in climate_sensor + Neuer switch_temp_sensor Treiber für TYZGTH1CH-D1RF"
   }
 }
