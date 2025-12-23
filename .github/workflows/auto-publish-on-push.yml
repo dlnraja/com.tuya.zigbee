@@ -9,7 +9,7 @@ name: 🚀 Auto-Publish on Push
       - .github/workflows/*.disabled
       - docs/**
 permissions:
-  contents: read
+  contents: write
   actions: read
   packages: read
 env:
@@ -154,5 +154,3 @@ jobs:
             echo "3. Add as GitHub Secret: **HOMEY_PAT**" >> $GITHUB_STEP_SUMMARY
           fi
     timeout-minutes: 15
-    strategy:
-      fail-fast: true

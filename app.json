@@ -14451,7 +14451,8 @@
           "_TZ3000_lq01",
           "_TZ3000_wqxwpita",
           "_TZ3400_key8kk7r",
-          "_TZ3400_keyjhapk"
+          "_TZ3400_keyjhapk",
+          "_TZ3000_yj6k7vfo"
         ],
         "productId": [
           "LQ-01",
@@ -14988,7 +14989,8 @@
           "_TZ3000_w8jwkczz",
           "_TZ3290_8XZB2GHN",
           "_TZ3290_UC8LWBI2",
-          "_TZ3290_rlkmy85q4pzoxobl"
+          "_TZ3290_rlkmy85q4pzoxobl",
+          "_TZ3000_b4awzgct"
         ],
         "productId": [
           "ERS-10TZBVK-AA",
@@ -16041,6 +16043,10 @@
       },
       "class": "button",
       "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
         "measure_battery"
       ],
       "capabilitiesOptions": {
@@ -27849,6 +27855,550 @@
       ]
     },
     {
+      "class": "heater",
+      "capabilities": [
+        "onoff",
+        "target_temperature",
+        "measure_temperature",
+        "thermostat_mode"
+      ],
+      "zigbee": {
+        "productId": [
+          "TS0001",
+          "TS0002",
+          "TS0011",
+          "TS0012",
+          "TS011F",
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              8,
+              61184,
+              2820,
+              1794
+            ],
+            "bindings": [
+              1,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/radiator_controller/assets/learnmode.svg",
+          "instruction": {
+            "en": "Turn the switch on/off 3 times quickly",
+            "fr": "Allumer/éteindre l'interrupteur 3 fois rapidement"
+          }
+        },
+        "manufacturerName": [
+          "_TZ3000_4whigl8i",
+          "_TZ3000_lupfd8zu",
+          "_TZ3000_zmy4lslw",
+          "_TZ3000_egvb1p2g",
+          "_TZ3000_zgtbi4oy",
+          "_TZ3000_8ybe88nf",
+          "_TZ3000_4rbqgcuv",
+          "_TZ3000_drc9tuqb",
+          "_TZ3000_lbtpiody",
+          "_TZ3000_qgwcxxws",
+          "_TZ3000_rgpqqmbj",
+          "_TZ3000_veu2v775",
+          "_TZ3000_wqcbzbae",
+          "_TZ3000_xrqsdxq6",
+          "_TZ3000_zsh6uat3",
+          "_TZE200_bkkmqmyo",
+          "_TZE200_cowvfni3",
+          "_TZE200_locansqn",
+          "_TZE204_bkkmqmyo"
+        ]
+      },
+      "images": {
+        "small": "drivers/radiator_controller/assets/images/small.png",
+        "large": "drivers/radiator_controller/assets/images/large.png"
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Radiator Configuration",
+            "fr": "Configuration Radiateur"
+          },
+          "children": [
+            {
+              "id": "pilot_wire_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Pilot Wire Type",
+                "fr": "Type Fil Pilote"
+              },
+              "hint": {
+                "en": "Select the type of pilot wire system used by your electric radiator",
+                "fr": "Sélectionnez le type de système fil pilote de votre radiateur électrique"
+              },
+              "value": "standard_6_orders",
+              "values": [
+                {
+                  "id": "standard_6_orders",
+                  "label": {
+                    "en": "🔥 Standard 6 Orders (Confort/Eco/Hors-Gel/Arrêt/Confort-1/Confort-2)",
+                    "fr": "🔥 Standard 6 Ordres (Confort/Eco/Hors-Gel/Arrêt/Confort-1/Confort-2)"
+                  }
+                },
+                {
+                  "id": "standard_4_orders",
+                  "label": {
+                    "en": "⚡ Standard 4 Orders (Confort/Eco/Hors-Gel/Arrêt)",
+                    "fr": "⚡ Standard 4 Ordres (Confort/Eco/Hors-Gel/Arrêt)"
+                  }
+                },
+                {
+                  "id": "simple_on_off",
+                  "label": {
+                    "en": "🔌 Simple ON/OFF",
+                    "fr": "🔌 Simple MARCHE/ARRÊT"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "diode_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Diode Configuration",
+                "fr": "Configuration Diode"
+              },
+              "hint": {
+                "en": "Hardware diode setup for pilot wire control (1N4007 recommended)",
+                "fr": "Configuration matérielle diode pour contrôle fil pilote (1N4007 recommandée)"
+              },
+              "value": "single_1n4007",
+              "values": [
+                {
+                  "id": "single_1n4007",
+                  "label": {
+                    "en": "🔴 Single 1N4007 (Mono-directional)",
+                    "fr": "🔴 Simple 1N4007 (Mono-directionnel)"
+                  }
+                },
+                {
+                  "id": "dual_1n4007",
+                  "label": {
+                    "en": "🔴🔴 Dual 1N4007 (Bi-directional)",
+                    "fr": "🔴🔴 Double 1N4007 (Bi-directionnel)"
+                  }
+                },
+                {
+                  "id": "none",
+                  "label": {
+                    "en": "⚪ No Diode (Direct connection)",
+                    "fr": "⚪ Pas de Diode (Connexion directe)"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "heating_mode",
+              "type": "dropdown",
+              "label": {
+                "en": "Default Heating Mode",
+                "fr": "Mode Chauffage par Défaut"
+              },
+              "value": "confort",
+              "values": [
+                {
+                  "id": "confort",
+                  "label": {
+                    "en": "🏠 Confort (100%)",
+                    "fr": "🏠 Confort (100%)"
+                  }
+                },
+                {
+                  "id": "eco",
+                  "label": {
+                    "en": "🌱 Éco (-3°C/4°C)",
+                    "fr": "🌱 Éco (-3°C/4°C)"
+                  }
+                },
+                {
+                  "id": "confort_minus_1",
+                  "label": {
+                    "en": "🌡️ Confort -1°C",
+                    "fr": "🌡️ Confort -1°C"
+                  }
+                },
+                {
+                  "id": "confort_minus_2",
+                  "label": {
+                    "en": "❄️ Confort -2°C",
+                    "fr": "❄️ Confort -2°C"
+                  }
+                },
+                {
+                  "id": "anti_freeze",
+                  "label": {
+                    "en": "🧊 Hors-Gel (7°C)",
+                    "fr": "🧊 Hors-Gel (7°C)"
+                  }
+                },
+                {
+                  "id": "off",
+                  "label": {
+                    "en": "⛔ Arrêt",
+                    "fr": "⛔ Arrêt"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "enable_scheduling",
+              "type": "checkbox",
+              "label": {
+                "en": "Enable Smart Scheduling",
+                "fr": "Activer Programmation Intelligente"
+              },
+              "hint": {
+                "en": "Allow automatic mode switching based on time and presence",
+                "fr": "Permettre le changement automatique de mode selon l'heure et la présence"
+              },
+              "value": false
+            },
+            {
+              "id": "disable_power_monitoring",
+              "type": "checkbox",
+              "label": {
+                "en": "Disable Energy Monitoring",
+                "fr": "Désactiver Surveillance Énergétique"
+              },
+              "hint": {
+                "en": "Radiators with pilot wire don't provide accurate energy readings",
+                "fr": "Les radiateurs avec fil pilote ne fournissent pas de mesures énergétiques précises"
+              },
+              "value": true
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Advanced Settings",
+            "fr": "Paramètres Avancés"
+          },
+          "children": [
+            {
+              "id": "signal_duration_ms",
+              "type": "number",
+              "label": {
+                "en": "Signal Duration (ms)",
+                "fr": "Durée Signal (ms)"
+              },
+              "hint": {
+                "en": "Duration of pilot wire signal pulses (typically 500-2000ms)",
+                "fr": "Durée des impulsions signal fil pilote (typiquement 500-2000ms)"
+              },
+              "value": 1000,
+              "min": 100,
+              "max": 5000,
+              "step": 100
+            },
+            {
+              "id": "signal_interval_s",
+              "type": "number",
+              "label": {
+                "en": "Signal Interval (seconds)",
+                "fr": "Intervalle Signal (secondes)"
+              },
+              "hint": {
+                "en": "Time between pilot wire signals (typically 5-60 seconds)",
+                "fr": "Temps entre les signaux fil pilote (typiquement 5-60 secondes)"
+              },
+              "value": 30,
+              "min": 5,
+              "max": 300,
+              "step": 5
+            },
+            {
+              "id": "override_thermostat",
+              "type": "checkbox",
+              "label": {
+                "en": "Override Radiator Thermostat",
+                "fr": "Forcer Thermostat Radiateur"
+              },
+              "hint": {
+                "en": "Force radiator to ignore its internal thermostat (advanced users only)",
+                "fr": "Forcer le radiateur à ignorer son thermostat interne (utilisateurs avancés uniquement)"
+              },
+              "value": false
+            },
+            {
+              "id": "debug_logging",
+              "type": "checkbox",
+              "label": {
+                "en": "Enable Debug Logging",
+                "fr": "Activer Logs Debug"
+              },
+              "hint": {
+                "en": "Log detailed pilot wire signals for troubleshooting",
+                "fr": "Enregistrer les signaux fil pilote détaillés pour dépannage"
+              },
+              "value": false
+            }
+          ]
+        }
+      ],
+      "name": {
+        "en": "Electric Radiator Controller (Pilot Wire)",
+        "fr": "Contrôleur Radiateur Électrique (Fil Pilote)"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Radiator Power",
+            "fr": "Alimentation Radiateur"
+          },
+          "preventInsights": false
+        },
+        "target_temperature": {
+          "title": {
+            "en": "Target Temperature",
+            "fr": "Température Cible"
+          },
+          "min": 5,
+          "max": 30,
+          "step": 0.5,
+          "units": {
+            "en": "°C"
+          }
+        },
+        "thermostat_mode": {
+          "title": {
+            "en": "Heating Mode",
+            "fr": "Mode Chauffage"
+          },
+          "preventInsights": false
+        }
+      },
+      "id": "radiator_controller",
+      "learnmode": {
+        "image": "./assets/learnmode.svg",
+        "instruction": {
+          "en": "Press and hold the reset button for 5 seconds until the LED blinks rapidly",
+          "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+        }
+      },
+      "energy": {
+        "approximation": {
+          "usageConstant": 1500
+        }
+      },
+      "flow": {
+        "triggers": [
+          {
+            "id": "radiator_mode_changed",
+            "title": {
+              "en": "Heating mode changed",
+              "fr": "Mode chauffage changé"
+            },
+            "tokens": [
+              {
+                "name": "mode",
+                "type": "string",
+                "title": {
+                  "en": "Mode"
+                },
+                "example": "confort"
+              }
+            ]
+          },
+          {
+            "id": "pilot_signal_sent",
+            "title": {
+              "en": "Pilot wire signal sent",
+              "fr": "Signal fil pilote envoyé"
+            },
+            "tokens": [
+              {
+                "name": "signal_type",
+                "type": "string",
+                "title": {
+                  "en": "Signal Type"
+                },
+                "example": "confort"
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "id": "radiator_is_heating",
+            "title": {
+              "en": "Radiator !{{is|isn't}} heating",
+              "fr": "Radiateur !{{chauffe|ne chauffe pas}}"
+            }
+          },
+          {
+            "id": "heating_mode_is",
+            "title": {
+              "en": "Heating mode !{{is|isn't}} [[mode]]",
+              "fr": "Mode chauffage !{{est|n'est pas}} [[mode]]"
+            },
+            "args": [
+              {
+                "type": "dropdown",
+                "name": "mode",
+                "values": [
+                  {
+                    "id": "confort",
+                    "title": {
+                      "en": "Confort"
+                    }
+                  },
+                  {
+                    "id": "eco",
+                    "title": {
+                      "en": "Éco"
+                    }
+                  },
+                  {
+                    "id": "anti_freeze",
+                    "title": {
+                      "en": "Hors-Gel"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "title": {
+                      "en": "Arrêt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "actions": [
+          {
+            "id": "set_heating_mode",
+            "title": {
+              "en": "Set heating mode to [[mode]]",
+              "fr": "Régler mode chauffage sur [[mode]]"
+            },
+            "args": [
+              {
+                "type": "dropdown",
+                "name": "mode",
+                "values": [
+                  {
+                    "id": "confort",
+                    "title": {
+                      "en": "🏠 Confort"
+                    }
+                  },
+                  {
+                    "id": "eco",
+                    "title": {
+                      "en": "🌱 Éco"
+                    }
+                  },
+                  {
+                    "id": "confort_minus_1",
+                    "title": {
+                      "en": "🌡️ Confort -1°C"
+                    }
+                  },
+                  {
+                    "id": "confort_minus_2",
+                    "title": {
+                      "en": "❄️ Confort -2°C"
+                    }
+                  },
+                  {
+                    "id": "anti_freeze",
+                    "title": {
+                      "en": "🧊 Hors-Gel"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "title": {
+                      "en": "⛔ Arrêt"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "send_pilot_signal",
+            "title": {
+              "en": "Send pilot wire signal [[signal]]",
+              "fr": "Envoyer signal fil pilote [[signal]]"
+            },
+            "args": [
+              {
+                "type": "dropdown",
+                "name": "signal",
+                "values": [
+                  {
+                    "id": "confort",
+                    "title": {
+                      "en": "Confort (0V)"
+                    }
+                  },
+                  {
+                    "id": "eco",
+                    "title": {
+                      "en": "Éco (230V neg)"
+                    }
+                  },
+                  {
+                    "id": "anti_freeze",
+                    "title": {
+                      "en": "Hors-Gel (230V pos)"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "title": {
+                      "en": "Arrêt (230V alt)"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "radiator_setup"
+          }
+        },
+        {
+          "id": "radiator_setup",
+          "template": "template_radiator_setup"
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
       "name": {
         "en": "Radiator Valve",
         "fr": "Radiator Valve"
@@ -27903,7 +28453,8 @@
           "_TZE204_hvaxb2tc",
           "_TZE204_lnbfnyxd",
           "_TZE284_hvaxb2tc",
-          "_TZE200_rxq4iti9"
+          "_TZE200_rxq4iti9",
+          "_TZE204_qyr2m29i"
         ],
         "productId": [
           "HY369RT",
@@ -30514,6 +31065,7 @@
           "TS0012",
           "TS0013",
           "TS0014",
+          "TS0041",
           "TS0046",
           "TS0112",
           "TS0302",
@@ -31063,6 +31615,71 @@
       },
       "settings": [
         {
+          "type": "group",
+          "label": {
+            "en": "Device Type Configuration",
+            "fr": "Configuration Type d'Appareil"
+          },
+          "children": [
+            {
+              "id": "device_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Connected Device Type",
+                "fr": "Type d'Appareil Connecté"
+              },
+              "hint": {
+                "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+                "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+              },
+              "value": "light",
+              "values": [
+                {
+                  "id": "light",
+                  "label": {
+                    "en": "💡 Éclairage",
+                    "fr": "💡 Éclairage"
+                  }
+                },
+                {
+                  "id": "radiator",
+                  "label": {
+                    "en": "🔥 Radiateur électrique",
+                    "fr": "🔥 Radiateur électrique"
+                  }
+                },
+                {
+                  "id": "fan",
+                  "label": {
+                    "en": "🌀 Ventilation",
+                    "fr": "🌀 Ventilation"
+                  }
+                },
+                {
+                  "id": "other",
+                  "label": {
+                    "en": "⚙️ Autre appareil",
+                    "fr": "⚙️ Autre appareil"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "invert_logic_manual",
+              "type": "checkbox",
+              "label": {
+                "en": "Manual Logic Inversion",
+                "fr": "Inversion Logique Manuelle"
+              },
+              "hint": {
+                "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+                "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
           "id": "power_source",
           "type": "dropdown",
           "label": {
@@ -31518,6 +32135,71 @@
         "large": "drivers/switch_2gang/assets/images/large.png"
       },
       "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Type Configuration",
+            "fr": "Configuration Type d'Appareil"
+          },
+          "children": [
+            {
+              "id": "device_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Connected Device Type",
+                "fr": "Type d'Appareil Connecté"
+              },
+              "hint": {
+                "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+                "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+              },
+              "value": "light",
+              "values": [
+                {
+                  "id": "light",
+                  "label": {
+                    "en": "💡 Éclairage",
+                    "fr": "💡 Éclairage"
+                  }
+                },
+                {
+                  "id": "radiator",
+                  "label": {
+                    "en": "🔥 Radiateur électrique",
+                    "fr": "🔥 Radiateur électrique"
+                  }
+                },
+                {
+                  "id": "fan",
+                  "label": {
+                    "en": "🌀 Ventilation",
+                    "fr": "🌀 Ventilation"
+                  }
+                },
+                {
+                  "id": "other",
+                  "label": {
+                    "en": "⚙️ Autre appareil",
+                    "fr": "⚙️ Autre appareil"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "invert_logic_manual",
+              "type": "checkbox",
+              "label": {
+                "en": "Manual Logic Inversion",
+                "fr": "Inversion Logique Manuelle"
+              },
+              "hint": {
+                "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+                "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+              },
+              "value": false
+            }
+          ]
+        },
         {
           "id": "power_source",
           "type": "dropdown",
@@ -32021,6 +32703,71 @@
         "large": "drivers/switch_3gang/assets/images/large.png"
       },
       "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Type Configuration",
+            "fr": "Configuration Type d'Appareil"
+          },
+          "children": [
+            {
+              "id": "device_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Connected Device Type",
+                "fr": "Type d'Appareil Connecté"
+              },
+              "hint": {
+                "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+                "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+              },
+              "value": "light",
+              "values": [
+                {
+                  "id": "light",
+                  "label": {
+                    "en": "💡 Éclairage",
+                    "fr": "💡 Éclairage"
+                  }
+                },
+                {
+                  "id": "radiator",
+                  "label": {
+                    "en": "🔥 Radiateur électrique",
+                    "fr": "🔥 Radiateur électrique"
+                  }
+                },
+                {
+                  "id": "fan",
+                  "label": {
+                    "en": "🌀 Ventilation",
+                    "fr": "🌀 Ventilation"
+                  }
+                },
+                {
+                  "id": "other",
+                  "label": {
+                    "en": "⚙️ Autre appareil",
+                    "fr": "⚙️ Autre appareil"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "invert_logic_manual",
+              "type": "checkbox",
+              "label": {
+                "en": "Manual Logic Inversion",
+                "fr": "Inversion Logique Manuelle"
+              },
+              "hint": {
+                "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+                "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+              },
+              "value": false
+            }
+          ]
+        },
         {
           "id": "power_source",
           "type": "dropdown",
@@ -32554,6 +33301,71 @@
       },
       "settings": [
         {
+          "type": "group",
+          "label": {
+            "en": "Device Type Configuration",
+            "fr": "Configuration Type d'Appareil"
+          },
+          "children": [
+            {
+              "id": "device_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Connected Device Type",
+                "fr": "Type d'Appareil Connecté"
+              },
+              "hint": {
+                "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+                "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+              },
+              "value": "light",
+              "values": [
+                {
+                  "id": "light",
+                  "label": {
+                    "en": "💡 Éclairage",
+                    "fr": "💡 Éclairage"
+                  }
+                },
+                {
+                  "id": "radiator",
+                  "label": {
+                    "en": "🔥 Radiateur électrique",
+                    "fr": "🔥 Radiateur électrique"
+                  }
+                },
+                {
+                  "id": "fan",
+                  "label": {
+                    "en": "🌀 Ventilation",
+                    "fr": "🌀 Ventilation"
+                  }
+                },
+                {
+                  "id": "other",
+                  "label": {
+                    "en": "⚙️ Autre appareil",
+                    "fr": "⚙️ Autre appareil"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "invert_logic_manual",
+              "type": "checkbox",
+              "label": {
+                "en": "Manual Logic Inversion",
+                "fr": "Inversion Logique Manuelle"
+              },
+              "hint": {
+                "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+                "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
           "id": "power_source",
           "type": "dropdown",
           "label": {
@@ -32904,7 +33716,74 @@
         "batteries": [
           "OTHER"
         ]
-      }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Type Configuration",
+            "fr": "Configuration Type d'Appareil"
+          },
+          "children": [
+            {
+              "id": "device_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Connected Device Type",
+                "fr": "Type d'Appareil Connecté"
+              },
+              "hint": {
+                "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+                "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+              },
+              "value": "light",
+              "values": [
+                {
+                  "id": "light",
+                  "label": {
+                    "en": "💡 Éclairage",
+                    "fr": "💡 Éclairage"
+                  }
+                },
+                {
+                  "id": "radiator",
+                  "label": {
+                    "en": "🔥 Radiateur électrique",
+                    "fr": "🔥 Radiateur électrique"
+                  }
+                },
+                {
+                  "id": "fan",
+                  "label": {
+                    "en": "🌀 Ventilation",
+                    "fr": "🌀 Ventilation"
+                  }
+                },
+                {
+                  "id": "other",
+                  "label": {
+                    "en": "⚙️ Autre appareil",
+                    "fr": "⚙️ Autre appareil"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "invert_logic_manual",
+              "type": "checkbox",
+              "label": {
+                "en": "Manual Logic Inversion",
+                "fr": "Inversion Logique Manuelle"
+              },
+              "hint": {
+                "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+                "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+              },
+              "value": false
+            }
+          ]
+        }
+      ]
     },
     {
       "name": {
@@ -32965,7 +33844,74 @@
             "fr": "Prise 2"
           }
         }
-      }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Type Configuration",
+            "fr": "Configuration Type d'Appareil"
+          },
+          "children": [
+            {
+              "id": "device_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Connected Device Type",
+                "fr": "Type d'Appareil Connecté"
+              },
+              "hint": {
+                "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+                "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+              },
+              "value": "light",
+              "values": [
+                {
+                  "id": "light",
+                  "label": {
+                    "en": "💡 Éclairage",
+                    "fr": "💡 Éclairage"
+                  }
+                },
+                {
+                  "id": "radiator",
+                  "label": {
+                    "en": "🔥 Radiateur électrique",
+                    "fr": "🔥 Radiateur électrique"
+                  }
+                },
+                {
+                  "id": "fan",
+                  "label": {
+                    "en": "🌀 Ventilation",
+                    "fr": "🌀 Ventilation"
+                  }
+                },
+                {
+                  "id": "other",
+                  "label": {
+                    "en": "⚙️ Autre appareil",
+                    "fr": "⚙️ Autre appareil"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "invert_logic_manual",
+              "type": "checkbox",
+              "label": {
+                "en": "Manual Logic Inversion",
+                "fr": "Inversion Logique Manuelle"
+              },
+              "hint": {
+                "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+                "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+              },
+              "value": false
+            }
+          ]
+        }
+      ]
     },
     {
       "name": {
@@ -33050,6 +33996,71 @@
         }
       },
       "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Type Configuration",
+            "fr": "Configuration Type d'Appareil"
+          },
+          "children": [
+            {
+              "id": "device_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Connected Device Type",
+                "fr": "Type d'Appareil Connecté"
+              },
+              "hint": {
+                "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+                "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+              },
+              "value": "light",
+              "values": [
+                {
+                  "id": "light",
+                  "label": {
+                    "en": "💡 Éclairage",
+                    "fr": "💡 Éclairage"
+                  }
+                },
+                {
+                  "id": "radiator",
+                  "label": {
+                    "en": "🔥 Radiateur électrique",
+                    "fr": "🔥 Radiateur électrique"
+                  }
+                },
+                {
+                  "id": "fan",
+                  "label": {
+                    "en": "🌀 Ventilation",
+                    "fr": "🌀 Ventilation"
+                  }
+                },
+                {
+                  "id": "other",
+                  "label": {
+                    "en": "⚙️ Autre appareil",
+                    "fr": "⚙️ Autre appareil"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "invert_logic_manual",
+              "type": "checkbox",
+              "label": {
+                "en": "Manual Logic Inversion",
+                "fr": "Inversion Logique Manuelle"
+              },
+              "hint": {
+                "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+                "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+              },
+              "value": false
+            }
+          ]
+        },
         {
           "id": "power_source",
           "type": "dropdown",
@@ -33486,6 +34497,71 @@
       ],
       "settings": [
         {
+          "type": "group",
+          "label": {
+            "en": "Device Type Configuration",
+            "fr": "Configuration Type d'Appareil"
+          },
+          "children": [
+            {
+              "id": "device_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Connected Device Type",
+                "fr": "Type d'Appareil Connecté"
+              },
+              "hint": {
+                "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+                "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+              },
+              "value": "light",
+              "values": [
+                {
+                  "id": "light",
+                  "label": {
+                    "en": "💡 Éclairage",
+                    "fr": "💡 Éclairage"
+                  }
+                },
+                {
+                  "id": "radiator",
+                  "label": {
+                    "en": "🔥 Radiateur électrique",
+                    "fr": "🔥 Radiateur électrique"
+                  }
+                },
+                {
+                  "id": "fan",
+                  "label": {
+                    "en": "🌀 Ventilation",
+                    "fr": "🌀 Ventilation"
+                  }
+                },
+                {
+                  "id": "other",
+                  "label": {
+                    "en": "⚙️ Autre appareil",
+                    "fr": "⚙️ Autre appareil"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "invert_logic_manual",
+              "type": "checkbox",
+              "label": {
+                "en": "Manual Logic Inversion",
+                "fr": "Inversion Logique Manuelle"
+              },
+              "hint": {
+                "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+                "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
           "id": "power_source",
           "type": "dropdown",
           "label": {
@@ -33835,6 +34911,71 @@
       },
       "settings": [
         {
+          "type": "group",
+          "label": {
+            "en": "Device Type Configuration",
+            "fr": "Configuration Type d'Appareil"
+          },
+          "children": [
+            {
+              "id": "device_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Connected Device Type",
+                "fr": "Type d'Appareil Connecté"
+              },
+              "hint": {
+                "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+                "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+              },
+              "value": "light",
+              "values": [
+                {
+                  "id": "light",
+                  "label": {
+                    "en": "💡 Éclairage",
+                    "fr": "💡 Éclairage"
+                  }
+                },
+                {
+                  "id": "radiator",
+                  "label": {
+                    "en": "🔥 Radiateur électrique",
+                    "fr": "🔥 Radiateur électrique"
+                  }
+                },
+                {
+                  "id": "fan",
+                  "label": {
+                    "en": "🌀 Ventilation",
+                    "fr": "🌀 Ventilation"
+                  }
+                },
+                {
+                  "id": "other",
+                  "label": {
+                    "en": "⚙️ Autre appareil",
+                    "fr": "⚙️ Autre appareil"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "invert_logic_manual",
+              "type": "checkbox",
+              "label": {
+                "en": "Manual Logic Inversion",
+                "fr": "Inversion Logique Manuelle"
+              },
+              "hint": {
+                "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+                "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
           "id": "power_on_behavior",
           "type": "dropdown",
           "label": {
@@ -34010,7 +35151,73 @@
           }
         }
       },
-      "settings": [],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Type Configuration",
+            "fr": "Configuration Type d'Appareil"
+          },
+          "children": [
+            {
+              "id": "device_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Connected Device Type",
+                "fr": "Type d'Appareil Connecté"
+              },
+              "hint": {
+                "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+                "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+              },
+              "value": "light",
+              "values": [
+                {
+                  "id": "light",
+                  "label": {
+                    "en": "💡 Éclairage",
+                    "fr": "💡 Éclairage"
+                  }
+                },
+                {
+                  "id": "radiator",
+                  "label": {
+                    "en": "🔥 Radiateur électrique",
+                    "fr": "🔥 Radiateur électrique"
+                  }
+                },
+                {
+                  "id": "fan",
+                  "label": {
+                    "en": "🌀 Ventilation",
+                    "fr": "🌀 Ventilation"
+                  }
+                },
+                {
+                  "id": "other",
+                  "label": {
+                    "en": "⚙️ Autre appareil",
+                    "fr": "⚙️ Autre appareil"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "invert_logic_manual",
+              "type": "checkbox",
+              "label": {
+                "en": "Manual Logic Inversion",
+                "fr": "Inversion Logique Manuelle"
+              },
+              "hint": {
+                "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+                "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+              },
+              "value": false
+            }
+          ]
+        }
+      ],
       "images": {
         "small": "drivers/switch_wall_8gang/assets/images/small.png",
         "large": "drivers/switch_wall_8gang/assets/images/large.png"
@@ -34073,6 +35280,71 @@
         }
       },
       "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Type Configuration",
+            "fr": "Configuration Type d'Appareil"
+          },
+          "children": [
+            {
+              "id": "device_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Connected Device Type",
+                "fr": "Type d'Appareil Connecté"
+              },
+              "hint": {
+                "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+                "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+              },
+              "value": "light",
+              "values": [
+                {
+                  "id": "light",
+                  "label": {
+                    "en": "💡 Éclairage",
+                    "fr": "💡 Éclairage"
+                  }
+                },
+                {
+                  "id": "radiator",
+                  "label": {
+                    "en": "🔥 Radiateur électrique",
+                    "fr": "🔥 Radiateur électrique"
+                  }
+                },
+                {
+                  "id": "fan",
+                  "label": {
+                    "en": "🌀 Ventilation",
+                    "fr": "🌀 Ventilation"
+                  }
+                },
+                {
+                  "id": "other",
+                  "label": {
+                    "en": "⚙️ Autre appareil",
+                    "fr": "⚙️ Autre appareil"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "invert_logic_manual",
+              "type": "checkbox",
+              "label": {
+                "en": "Manual Logic Inversion",
+                "fr": "Inversion Logique Manuelle"
+              },
+              "hint": {
+                "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+                "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+              },
+              "value": false
+            }
+          ]
+        },
         {
           "id": "power_source",
           "type": "dropdown",
