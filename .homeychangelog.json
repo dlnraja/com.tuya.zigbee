@@ -434,5 +434,11 @@
     "fr": "🔧 Fix: TypeError dans climate_sensor + Nouveau driver switch_temp_sensor pour TYZGTH1CH-D1RF",
     "nl": "🔧 Fix: TypeError in climate_sensor + Nieuwe switch_temp_sensor driver voor TYZGTH1CH-D1RF",
     "de": "🔧 Fix: TypeError in climate_sensor + Neuer switch_temp_sensor Treiber für TYZGTH1CH-D1RF"
+  },
+  "5.5.224": {
+    "en": "🔧 Fix: Button capability listeners for 4-button controller - fixes missing battery info",
+    "fr": "🔧 Fix: Listeners pour contrôleur 4 boutons - corrige batterie manquante",
+    "nl": "🔧 Fix: Button capability listeners voor 4-button controller",
+    "de": "🔧 Fix: Button capability listeners für 4-Tasten Controller"
   }
 }
