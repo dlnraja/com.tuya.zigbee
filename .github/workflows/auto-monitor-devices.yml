@@ -4,7 +4,7 @@ name: 📊 SECURE MONITOR SYSTEM
     - cron: 0 8 1 */2 *
   workflow_dispatch: {}
 permissions:
-  contents: read
+  contents: write
   actions: read
 jobs:
   monitor:
