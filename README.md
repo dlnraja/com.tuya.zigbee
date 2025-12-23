@@ -107,11 +107,20 @@ Comprehensive flow cards for all major drivers:
 
 ## 📦 Installation
 
-### From Homey App Store
+### From Homey App Store (Recommended)
+**Direct Install Link:** [Install Universal Tuya Zigbee](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)
+
+Or manually:
 1. Open Homey app
 2. Go to "More" → "Apps"
 3. Search for "Universal Tuya Zigbee"
 4. Click "Install"
+
+### Quick Links
+- 📱 **Test Version:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/
+- 🔍 **Device Finder:** https://dlnraja.github.io/com.tuya.zigbee/device-finder.html
+- 🐛 **Report Bug:** https://github.com/dlnraja/com.tuya.zigbee/issues
+- 📊 **GitHub Actions:** https://github.com/dlnraja/com.tuya.zigbee/actions
 
 ### Manual Installation (Development)
 ```bash

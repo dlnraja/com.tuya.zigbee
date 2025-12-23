@@ -15,7 +15,7 @@ name: Monthly Enrichment
         default: "50"
         type: string
 permissions:
-  contents: read
+  contents: write
   actions: read
 jobs:
   enrich:

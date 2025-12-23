@@ -12,7 +12,7 @@ name: 📚 Auto-Update Docs
         required: false
         default: "false"
 permissions:
-  contents: read
+  contents: write
   actions: read
 env:
   NODE_VERSION: "20"
