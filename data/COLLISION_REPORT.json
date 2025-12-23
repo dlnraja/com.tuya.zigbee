@@ -1,5 +1,5 @@
 {
-  "generated": "2025-12-23T10:23:17.826Z",
+  "generated": "2025-12-23T10:39:13.407Z",
   "summary": {
     "totalDrivers": 85,
     "highSeverityCollisions": 0,
@@ -1202,6 +1202,21 @@
       ]
     },
     {
+      "driver": "co_sensor",
+      "type": "sensor",
+      "pid": "CO-8ZBS",
+      "expected": [
+        "TS0201",
+        "TS0202",
+        "TS0203",
+        "TS0204",
+        "TS0205",
+        "TS0207",
+        "TS0210",
+        "TS0601"
+      ]
+    },
+    {
       "driver": "contact_sensor",
       "type": "sensor",
       "pid": "DC-15ZBS",
@@ -1487,21 +1502,6 @@
       ]
     },
     {
-      "driver": "co_sensor",
-      "type": "sensor",
-      "pid": "CO-8ZBS",
-      "expected": [
-        "TS0201",
-        "TS0202",
-        "TS0203",
-        "TS0204",
-        "TS0205",
-        "TS0207",
-        "TS0210",
-        "TS0601"
-      ]
-    },
-    {
       "driver": "curtain_motor",
       "type": "cover",
       "pid": "AM25",
@@ -1687,14 +1687,6 @@
       ]
     },
     {
-      "driver": "doorbell",
-      "type": "other",
-      "pid": "TS0211",
-      "expected": [
-        "TS0601"
-      ]
-    },
-    {
       "driver": "door_controller",
       "type": "lock",
       "pid": "GD01",
@@ -1706,6 +1698,14 @@
       "driver": "door_controller",
       "type": "lock",
       "pid": "Garage-Door",
+      "expected": [
+        "TS0601"
+      ]
+    },
+    {
+      "driver": "doorbell",
+      "type": "other",
+      "pid": "TS0211",
       "expected": [
         "TS0601"
       ]
