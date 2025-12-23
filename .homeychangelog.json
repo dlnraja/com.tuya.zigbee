@@ -1,4 +1,10 @@
 {
+  "5.5.220": {
+    "en": "🔒 FINGERPRINTING FIX: Removed 68 manufacturer ID collisions across 17 drivers. Each manufacturerName+productId couple now exists in only ONE driver. Fixes device detection conflicts between buttons/switches, climate/contact sensors, rain/water leak sensors. Follows strict Tuya fingerprinting rules.",
+    "fr": "🔒 FIX FINGERPRINTING: Suppression de 68 collisions d'IDs fabricant sur 17 drivers. Chaque couple manufacturerName+productId existe maintenant dans UN SEUL driver. Corrige les conflits de détection entre boutons/interrupteurs, capteurs climat/contact, capteurs pluie/fuite.",
+    "nl": "🔒 FINGERPRINTING FIX: 68 fabrikant-ID botsingen verwijderd in 17 drivers. Elk manufacturerName+productId paar bestaat nu in slechts ÉÉN driver. Lost apparaatdetectie conflicten op.",
+    "de": "🔒 FINGERPRINTING FIX: 68 Hersteller-ID-Kollisionen in 17 Treibern entfernt. Jedes manufacturerName+productId-Paar existiert jetzt nur in EINEM Treiber. Behebt Geräteerkennungskonflikte."
+  },
   "5.5.219": {
     "en": "🔥 DEVICE TYPE SELECTION: Added 24 device types for relay switches! Now you can specify what's connected: Radiator (with pilot wire inversion), Water heater, Boiler, Heat pump, AC, Fan/VMC, Shutter, Gate, Pump, Irrigation, Pool, Appliances, and more. Fixed GitHub issues #91-94 (device IDs, README links). Fixed fingerprinting collision.",
     "fr": "🔥 SÉLECTION TYPE APPAREIL: 24 types d'appareils pour relais! Spécifiez ce qui est connecté: Radiateur (inversion fil pilote), Chauffe-eau, Chaudière, Clim, VMC, Volet, Portail, Pompe, Arrosage, Piscine, Électroménager, etc. Issues GitHub #91-94 corrigées.",
