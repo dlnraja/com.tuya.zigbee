@@ -1,0 +1,81 @@
+{
+  "name": {
+    "en": "Smart Switch with Temperature Sensor",
+    "nl": "Slimme Schakelaar met Temperatuursensor",
+    "de": "Smart Schalter mit Temperatursensor",
+    "fr": "Interrupteur Intelligent avec Capteur de Température"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur",
+        "de": "Temperatur",
+        "fr": "Température"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Humidity",
+        "nl": "Luchtvochtigheid",
+        "de": "Luftfeuchtigkeit",
+        "fr": "Humidité"
+      }
+    }
+  },
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 0.5,
+      "usageOff": 0
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3218_7fiyo3kv"
+    ],
+    "productId": [
+      "TS000F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          57346
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Toggle the switch 5 times quickly (within 5 seconds) until the LED flashes rapidly, then release.",
+        "nl": "Schakel 5 keer snel (binnen 5 seconden) totdat de LED snel knippert.",
+        "de": "Schalten Sie 5 mal schnell (innerhalb von 5 Sekunden) bis die LED schnell blinkt.",
+        "fr": "Basculez l'interrupteur 5 fois rapidement (en 5 secondes) jusqu'à ce que la LED clignote rapidement."
+      }
+    }
+  },
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  }
+}
