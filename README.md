@@ -59,6 +59,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.219** | 🔥 DEVICE TYPE SELECTION: Added 24 device types for relay sw... |
 | **v5.5.218** | AUTO-ADDED DEVICES: Community devices from Johan repository ... |
 | **v5.5.217** | COMMUNITY DEVICES ADDED: Fixed gas sensor _TZE204_chbyv06 mi... |
 | **v5.5.216** | CRITICAL HOTFIX: Fixed 'could not get device by id' errors i... |
@@ -66,7 +67,6 @@
 | **v5.5.214** |  URGENT HOTFIX: Fixed critical bugs introduced in v5.5.213! ... |
 | **v5.5.213** | 🎯 PERFECT VERSION: All critical issues resolved! Fixed Java... |
 | **v5.5.212** | ⚡ FINAL HOTFIX: Additional JavaScript syntax error fixed! Re... |
-| **v5.5.211** | ⚡ CRITICAL HOTFIX: JavaScript syntax errors fixed! Corrected... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
