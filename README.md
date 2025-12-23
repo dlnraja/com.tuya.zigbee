@@ -7,7 +7,7 @@
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 85 drivers and 2617+ manufacturer IDs.**
+**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 85 drivers and 3745+ manufacturer IDs.**
 
 🏠 **100% Local Control** - No Cloud, No Internet Required
 🔋 **Smart Battery** - Accurate readings with voltage fallback
