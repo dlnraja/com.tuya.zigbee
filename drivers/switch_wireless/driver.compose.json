@@ -82,17 +82,157 @@
               }
             },
             {
+              "id": "outdoor_light",
+              "label": {
+                "en": "🏡 Éclairage extérieur",
+                "fr": "🏡 Éclairage extérieur"
+              }
+            },
+            {
               "id": "radiator",
               "label": {
-                "en": "🔥 Radiateur électrique",
-                "fr": "🔥 Radiateur électrique"
+                "en": "🔥 Radiateur (fil pilote)",
+                "fr": "🔥 Radiateur (fil pilote)"
+              }
+            },
+            {
+              "id": "water_heater",
+              "label": {
+                "en": "🚿 Chauffe-eau / Cumulus",
+                "fr": "🚿 Chauffe-eau / Cumulus"
+              }
+            },
+            {
+              "id": "boiler",
+              "label": {
+                "en": "🏠 Chaudière",
+                "fr": "🏠 Chaudière"
+              }
+            },
+            {
+              "id": "underfloor_heating",
+              "label": {
+                "en": "🦶 Plancher chauffant",
+                "fr": "🦶 Plancher chauffant"
               }
             },
             {
               "id": "fan",
               "label": {
-                "en": "🌀 Ventilation",
-                "fr": "🌀 Ventilation"
+                "en": "🌀 Ventilateur / VMC",
+                "fr": "🌀 Ventilateur / VMC"
+              }
+            },
+            {
+              "id": "ac",
+              "label": {
+                "en": "❄️ Climatisation",
+                "fr": "❄️ Climatisation"
+              }
+            },
+            {
+              "id": "extractor",
+              "label": {
+                "en": "💨 Extracteur / Hotte",
+                "fr": "💨 Extracteur / Hotte"
+              }
+            },
+            {
+              "id": "shutter",
+              "label": {
+                "en": "🪟 Volet roulant / Store",
+                "fr": "🪟 Volet roulant / Store"
+              }
+            },
+            {
+              "id": "gate",
+              "label": {
+                "en": "🚗 Portail / Garage",
+                "fr": "🚗 Portail / Garage"
+              }
+            },
+            {
+              "id": "door_lock",
+              "label": {
+                "en": "🔐 Gâche / Serrure",
+                "fr": "🔐 Gâche / Serrure"
+              }
+            },
+            {
+              "id": "pump",
+              "label": {
+                "en": "💧 Pompe",
+                "fr": "💧 Pompe"
+              }
+            },
+            {
+              "id": "irrigation",
+              "label": {
+                "en": "🌱 Arrosage",
+                "fr": "🌱 Arrosage"
+              }
+            },
+            {
+              "id": "pool",
+              "label": {
+                "en": "🏊 Équipement piscine",
+                "fr": "🏊 Équipement piscine"
+              }
+            },
+            {
+              "id": "socket",
+              "label": {
+                "en": "🔌 Prise commandée",
+                "fr": "🔌 Prise commandée"
+              }
+            },
+            {
+              "id": "appliance",
+              "label": {
+                "en": "🧺 Électroménager",
+                "fr": "🧺 Électroménager"
+              }
+            },
+            {
+              "id": "coffee_machine",
+              "label": {
+                "en": "☕ Machine à café",
+                "fr": "☕ Machine à café"
+              }
+            },
+            {
+              "id": "alarm",
+              "label": {
+                "en": "🚨 Alarme / Sirène",
+                "fr": "🚨 Alarme / Sirène"
+              }
+            },
+            {
+              "id": "camera",
+              "label": {
+                "en": "📹 Caméra",
+                "fr": "📹 Caméra"
+              }
+            },
+            {
+              "id": "tv",
+              "label": {
+                "en": "📺 TV / Écran",
+                "fr": "📺 TV / Écran"
+              }
+            },
+            {
+              "id": "audio",
+              "label": {
+                "en": "🔊 Audio / Hifi",
+                "fr": "🔊 Audio / Hifi"
+              }
+            },
+            {
+              "id": "fountain",
+              "label": {
+                "en": "⛲ Fontaine",
+                "fr": "⛲ Fontaine"
               }
             },
             {
