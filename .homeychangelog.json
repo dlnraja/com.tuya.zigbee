@@ -440,5 +440,11 @@
     "fr": "🔧 Fix: Listeners pour contrôleur 4 boutons - corrige batterie manquante",
     "nl": "🔧 Fix: Button capability listeners voor 4-button controller",
     "de": "🔧 Fix: Button capability listeners für 4-Tasten Controller"
+  },
+  "5.5.225": {
+    "en": "🔋 Fix: Battery reading restored for 4-gang buttons (regression from v5.5.21)",
+    "fr": "🔋 Fix: Lecture batterie restaurée pour boutons 4-gang (régression v5.5.21)",
+    "nl": "🔋 Fix: Batterij uitlezen hersteld voor 4-gang knoppen",
+    "de": "🔋 Fix: Batterieablesung für 4-Gang-Tasten wiederhergestellt"
   }
 }
