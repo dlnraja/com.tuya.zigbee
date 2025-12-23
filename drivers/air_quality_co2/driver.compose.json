@@ -39,17 +39,17 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_ywagc4rj",
       "_TZE200_9cxuhakf",
+      "_TZE200_ywagc4rj",
+      "_TZE204_a8sdabtg",
       "_TZE204_ywagc4rj",
-      "_TZE204_zl1kmjqx",
-      "_TZE204_a8sdabtg"
+      "_TZE204_zl1kmjqx"
     ],
     "productId": [
       "CO2M",
+      "TS0201",
       "TS0601",
-      "ZG-204ZM",
-      "TS0201"
+      "ZG-204ZM"
     ],
     "endpoints": {
       "1": {

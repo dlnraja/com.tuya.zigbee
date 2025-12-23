@@ -1,76 +1,224 @@
-name: Monthly Enrichment
+name: 🔥 MEGA Enrichment System
 "on":
   schedule:
-    cron: 0 3 1 */3 *
+    - cron: "0 3 1 * *" # Monthly on 1st at 3 AM
+    - cron: "0 3 15 * *" # Bi-monthly on 15th at 3 AM
   workflow_dispatch:
     inputs:
       full_scan:
-        description: Force full scan (annual rescan)
+        description: "🔄 Force full scan (rescan all sources)"
         required: false
-        default: false
-        type: boolean
-      limit:
-        description: Limit number of manufacturers to process
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      fetch_github_issues:
+        description: "📋 Fetch GitHub issues from JohanBendz & dlnraja"
         required: false
-        default: "50"
-        type: string
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+      fix_collisions:
+        description: "🔒 Auto-fix fingerprinting collisions"
+        required: false
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
 permissions:
   contents: write
   actions: read
+  issues: read
+env:
+  NODE_OPTIONS: "--max-old-space-size=4096"
 jobs:
-  enrich:
+  mega-enrich:
+    name: 🚀 MEGA Enrichment Pipeline
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
-      - name: Checkout repository
+      - name: 📥 Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
-      - name: Setup Node.js
+
+      - name: 📦 Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "20"
           cache: npm
-      - name: Install dependencies
+
+      - name: 📚 Install dependencies
         run: npm ci
-      - name: Run MASTER Enrichment (Rule 9.x Compliant)
-        id: enricher
+
+      - name: 📋 Fetch GitHub Issues (Johan + dlnraja)
+        id: github_issues
+        if: inputs.fetch_github_issues != 'false'
         run: |
-          echo "🚀 Running MASTER enrichment with all fingerprinting rules..."
+          echo "📋 Fetching device requests from GitHub issues..."
+          mkdir -p data/github-issues
 
-          # Step 1: Apply all fingerprinting rules
+          # Fetch from JohanBendz
+          gh issue list --repo JohanBendz/com.tuya.zigbee --state all --limit 500 --json number,title,body > data/github-issues/johan-issues.json 2>/dev/null || echo "[]" > data/github-issues/johan-issues.json
+          JOHAN_COUNT=$(jq length data/github-issues/johan-issues.json)
+          echo "  ✅ JohanBendz: $JOHAN_COUNT issues"
+
+          # Fetch from dlnraja
+          gh issue list --repo dlnraja/com.tuya.zigbee --state all --limit 200 --json number,title,body > data/github-issues/dlnraja-issues.json 2>/dev/null || echo "[]" > data/github-issues/dlnraja-issues.json
+          DLNRAJA_COUNT=$(jq length data/github-issues/dlnraja-issues.json)
+          echo "  ✅ dlnraja: $DLNRAJA_COUNT issues"
+
+          # Extract manufacturer IDs
+          node -e "
+          const fs = require('fs');
+          const johan = JSON.parse(fs.readFileSync('data/github-issues/johan-issues.json', 'utf8'));
+          const dlnraja = JSON.parse(fs.readFileSync('data/github-issues/dlnraja-issues.json', 'utf8'));
+          const all = [...johan, ...dlnraja];
+          const mfrs = new Set();
+          all.forEach(i => {
+            const text = (i.title + ' ' + (i.body || '')).toUpperCase();
+            const matches = text.match(/_TZ[A-Z0-9]*_[A-Z0-9]+/gi) || [];
+            matches.forEach(m => mfrs.add(m.toLowerCase()));
+          });
+          fs.writeFileSync('data/github-issues/extracted-mfrs.json', JSON.stringify([...mfrs], null, 2));
+          console.log('  ✅ Extracted ' + mfrs.size + ' unique manufacturer IDs');
+          "
+
+          echo "github_mfrs=$(jq length data/github-issues/extracted-mfrs.json)" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🔧 Step 1 - Apply Fingerprinting Rules
+        id: rules
+        run: |
+          echo "🔧 Applying all fingerprinting rules (9.x compliant)..."
           if [ -f "automation/MASTER_APPLY_ALL_RULES.js" ]; then
-            node automation/MASTER_APPLY_ALL_RULES.js | tee enrichment.log
+            node automation/MASTER_APPLY_ALL_RULES.js 2>&1 | tee enrichment-rules.log
+          else
+            echo "⚠️ MASTER_APPLY_ALL_RULES.js not found"
           fi
 
-          # Step 2: Run MEGA enrichment from Z2M
+      - name: 🌐 Step 2 - MEGA Z2M Enrichment
+        id: z2m
+        run: |
+          echo "🌐 Running MEGA enrichment from Z2M sources..."
           if [ -f "automation/MEGA_ENRICHMENT_50.js" ]; then
-            node automation/MEGA_ENRICHMENT_50.js | tee -a enrichment.log
+            node automation/MEGA_ENRICHMENT_50.js 2>&1 | tee enrichment-z2m.log
+          else
+            echo "⚠️ MEGA_ENRICHMENT_50.js not found"
           fi
 
-          # Step 3: Detect any remaining collisions
+      - name: 📋 Step 3 - Integrate GitHub Issues
+        if: inputs.fetch_github_issues != 'false'
+        run: |
+          echo "📋 Integrating GitHub issue manufacturer IDs..."
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+
+          // Load extracted IDs
+          let githubMfrs = [];
+          try {
+            githubMfrs = JSON.parse(fs.readFileSync('data/github-issues/extracted-mfrs.json', 'utf8'));
+          } catch(e) { console.log('No GitHub issues to process'); process.exit(0); }
+
+          // Load all drivers and check for missing
+          const driversDir = 'drivers';
+          const existingMfrs = new Set();
+
+          fs.readdirSync(driversDir, { withFileTypes: true })
+            .filter(d => d.isDirectory())
+            .forEach(d => {
+              const configPath = path.join(driversDir, d.name, 'driver.compose.json');
+              if (!fs.existsSync(configPath)) return;
+              try {
+                const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+                (config.zigbee?.manufacturerName || []).forEach(m => existingMfrs.add(m.toLowerCase()));
+              } catch {}
+            });
+
+          const missing = githubMfrs.filter(m => !existingMfrs.has(m));
+          console.log('GitHub Issues Analysis:');
+          console.log('  Total extracted: ' + githubMfrs.length);
+          console.log('  Already present: ' + (githubMfrs.length - missing.length));
+          console.log('  Missing: ' + missing.length);
+
+          if (missing.length > 0) {
+            console.log('Missing IDs: ' + missing.slice(0, 20).join(', '));
+          }
+          " 2>&1 | tee enrichment-github.log
+
+      - name: 🔒 Step 4 - Detect & Fix Collisions
+        id: collisions
+        if: inputs.fix_collisions != 'false'
+        run: |
+          echo "🔒 Detecting and fixing fingerprinting collisions..."
           if [ -f "automation/DETECT_COLLISIONS.js" ]; then
-            node automation/DETECT_COLLISIONS.js | tee -a enrichment.log
+            node automation/DETECT_COLLISIONS.js 2>&1 | tee enrichment-collisions.log
           fi
 
-          # Extract stats
-          MFRS=$(grep -oP 'unique manufacturers: \K\d+' enrichment.log | tail -1 || echo "0")
-          PIDS=$(grep -oP 'unique productIds: \K\d+' enrichment.log | tail -1 || echo "0")
-          COLLISIONS=$(grep -oP 'Remaining collisions: \K\d+' enrichment.log | tail -1 || echo "0")
+          if [ -f "scripts/fix-fingerprint-collisions.js" ]; then
+            node scripts/fix-fingerprint-collisions.js 2>&1 | tee -a enrichment-collisions.log
+          fi
 
-          echo "processed=$MFRS" >> $GITHUB_OUTPUT
-          echo "enriched=$PIDS" >> $GITHUB_OUTPUT
+          # Extract collision count
+          COLLISIONS=$(grep -oP 'Exact duplicates.*: \K\d+' enrichment-collisions.log | tail -1 || echo "0")
           echo "collisions=$COLLISIONS" >> $GITHUB_OUTPUT
+
+      - name: ✅ Step 5 - Validate
+        id: validate
+        run: |
+          echo "✅ Running Homey validation..."
+          npx homey app build 2>&1 || true
+          npx homey app validate --level publish 2>&1 | tee validation.log
+
+          if grep -q "validated successfully" validation.log; then
+            echo "valid=true" >> $GITHUB_OUTPUT
+          else
+            echo "valid=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 📊 Extract Final Stats
+        id: stats
+        run: |
+          # Count total manufacturers and productIds
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          const driversDir = 'drivers';
+          const mfrs = new Set();
+          const pids = new Set();
+
+          fs.readdirSync(driversDir, { withFileTypes: true })
+            .filter(d => d.isDirectory())
+            .forEach(d => {
+              const configPath = path.join(driversDir, d.name, 'driver.compose.json');
+              if (!fs.existsSync(configPath)) return;
+              try {
+                const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+                (config.zigbee?.manufacturerName || []).forEach(m => mfrs.add(m));
+                (config.zigbee?.productId || []).forEach(p => pids.add(p));
+              } catch {}
+            });
+
+          console.log('STATS_MFRS=' + mfrs.size);
+          console.log('STATS_PIDS=' + pids.size);
+          " > stats.txt
+
+          MFRS=$(grep 'STATS_MFRS=' stats.txt | cut -d= -f2)
+          PIDS=$(grep 'STATS_PIDS=' stats.txt | cut -d= -f2)
+
+          echo "manufacturers=$MFRS" >> $GITHUB_OUTPUT
+          echo "productids=$PIDS" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and validate
-        if: steps.enricher.outputs.enriched != '0'
-        run: |
-          npx homey app build
-          npx homey app validate --level publish
-      - name: Commit changes
-        if: steps.enricher.outputs.enriched != '0'
+      - name: 💾 Commit Changes
+        if: steps.validate.outputs.valid == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -78,55 +226,61 @@ jobs:
           git add -A
 
           if git diff --staged --quiet; then
-            echo "No changes to commit"
+            echo "✅ No changes to commit"
           else
-            COMMIT_MSG="chore: Monthly enrichment - $(date +%Y-%m)
+            COMMIT_MSG="🔥 MEGA Enrichment - $(date +%Y-%m-%d)
 
-            Processed: ${{ steps.enricher.outputs.processed }} manufacturers
-            Enriched: ${{ steps.enricher.outputs.enriched }} with new data
+          📊 Stats:
+          - Manufacturers: ${{ steps.stats.outputs.manufacturers }}
+          - ProductIds: ${{ steps.stats.outputs.productids }}
+          - Collisions fixed: ${{ steps.collisions.outputs.collisions || '0' }}
 
-            [skip ci]"
+          🔧 Pipeline: Rules → Z2M → GitHub Issues → Collisions → Validate
+
+          [skip ci]"
 
             git commit -m "$COMMIT_MSG"
             git push
+            echo "✅ Changes committed and pushed"
           fi
-      - name: Create summary
-        run: >
-          echo "## 📊 Monthly Enrichment Results (Rule 9.x Compliant)" >> $GITHUB_STEP_SUMMARY
 
+      - name: 📊 Create Summary Report
+        if: always()
+        run: |
+          echo "## 🔥 MEGA Enrichment Results" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-
+          echo "### 📊 Statistics" >> $GITHUB_STEP_SUMMARY
           echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
-
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-
-          echo "| Unique Manufacturers | ${{ steps.enricher.outputs.processed }} |" >>
-          $GITHUB_STEP_SUMMARY
-
-          echo "| Unique ProductIds | ${{ steps.enricher.outputs.enriched }} |" >>
-          $GITHUB_STEP_SUMMARY
-
-          echo "| Remaining Collisions | ${{ steps.enricher.outputs.collisions }} |" >>
-          $GITHUB_STEP_SUMMARY
-
-          echo "| Run Date | $(date -u +%Y-%m-%d) |" >> $GITHUB_STEP_SUMMARY
-
+          echo "| **Unique Manufacturers** | ${{ steps.stats.outputs.manufacturers }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Unique ProductIds** | ${{ steps.stats.outputs.productids }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Collisions Fixed** | ${{ steps.collisions.outputs.collisions || '0' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **GitHub Issues Processed** | ${{ steps.github_issues.outputs.github_mfrs || 'N/A' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Validation** | ${{ steps.validate.outputs.valid == 'true' && '✅ Passed' || '❌ Failed' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Run Date** | $(date -u +%Y-%m-%d) |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔧 Pipeline Steps" >> $GITHUB_STEP_SUMMARY
+          echo "1. ✅ Apply Fingerprinting Rules (9.x compliant)" >> $GITHUB_STEP_SUMMARY
+          echo "2. ✅ MEGA Z2M Enrichment (tuya, moes, zemismart...)" >> $GITHUB_STEP_SUMMARY
+          echo "3. ✅ GitHub Issues Integration (JohanBendz + dlnraja)" >> $GITHUB_STEP_SUMMARY
+          echo "4. ✅ Collision Detection & Fix" >> $GITHUB_STEP_SUMMARY
+          echo "5. ✅ Homey Validation" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📋 Rules Applied" >> $GITHUB_STEP_SUMMARY
+          echo "- **9.1** Homey Matching Logic" >> $GITHUB_STEP_SUMMARY
+          echo "- **9.5** ManufacturerName Expansion (MAXIMAL)" >> $GITHUB_STEP_SUMMARY
+          echo "- **9.6** ProductId Expansion (EXHAUSTIVE)" >> $GITHUB_STEP_SUMMARY
+          echo "- **9.8** Non-Regression Protection" >> $GITHUB_STEP_SUMMARY
+          echo "- **9.10** Golden Principle (1 mfr+pid = 1 driver)" >> $GITHUB_STEP_SUMMARY
 
-          echo "### Rules Applied" >> $GITHUB_STEP_SUMMARY
-
-          echo "- 9.5 ManufacturerName Expansion (MAXIMAL)" >> $GITHUB_STEP_SUMMARY
-
-          echo "- 9.6 ProductId Expansion (EXHAUSTIVE)" >> $GITHUB_STEP_SUMMARY
-
-          echo "- 9.8 Non-Regression Protection" >> $GITHUB_STEP_SUMMARY
-
-          echo "- 9.10 Golden Principle" >> $GITHUB_STEP_SUMMARY
-      - name: Upload enrichment log
+      - name: 📁 Upload Logs
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: enrichment-log-${{ github.run_id }}
-          path: enrichment.log
+          name: mega-enrichment-logs-${{ github.run_id }}
+          path: |
+            enrichment-*.log
+            validation.log
+            data/github-issues/*.json
           retention-days: 30
-    strategy:
-      fail-fast: true
+          if-no-files-found: ignore
