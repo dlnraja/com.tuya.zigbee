@@ -4,6 +4,50 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.219] - 2025-12-23
+
+### 🔥 Feature: Extended Device Type Selection for Switches
+
+Added 24 device types for relay switches (1-8 gang) to better identify connected devices:
+
+**Heating & Climate:**
+- 🔥 Radiateur (fil pilote) - with logic inversion
+- 🚿 Chauffe-eau / Cumulus
+- 🏠 Chaudière
+- 🦶 Plancher chauffant
+- ❄️ Climatisation
+- 🌀 Ventilateur / VMC
+- 💨 Extracteur / Hotte
+
+**Motorization:**
+- 🪟 Volet roulant / Store
+- 🚗 Portail / Garage
+- 🔐 Gâche / Serrure
+
+**Water & Garden:**
+- 💧 Pompe
+- 🌱 Arrosage
+- 🏊 Équipement piscine
+- ⛲ Fontaine
+
+**Appliances & AV:**
+- 🔌 Prise commandée
+- 🧺 Électroménager
+- ☕ Machine à café
+- 📺 TV / Écran
+- 🔊 Audio / Hifi
+
+**Security:**
+- 🚨 Alarme / Sirène
+- 📹 Caméra
+
+### 🐛 Bug Fixes
+- Fixed GitHub issues #91-94 (device IDs, README links)
+- Fixed fingerprinting collision for `_TZE204_qyr2m29i`
+- Fixed HOMEY_PAT check in auto-publish workflow
+
+---
+
 ## [5.5.171] - 2025-12-14
 
 ### 🕐 CRITICAL FIX: Climate Sensor Time Sync
