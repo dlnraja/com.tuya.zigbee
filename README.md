@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.219-blue)
+![Version](https://img.shields.io/badge/version-5.5.220-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-85-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.219
+## 🚀 Latest Updates - v5.5.220
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.220** | 🔒 FINGERPRINTING FIX: Removed 68 manufacturer ID collisions... |
 | **v5.5.219** | 🔥 DEVICE TYPE SELECTION: Added 24 device types for relay sw... |
 | **v5.5.218** | AUTO-ADDED DEVICES: Community devices from Johan repository ... |
 | **v5.5.217** | COMMUNITY DEVICES ADDED: Fixed gas sensor _TZE204_chbyv06 mi... |
@@ -66,7 +67,6 @@
 | **v5.5.215** | MASSIVE IMPORT FIX: Fixed 70+ drivers with incorrect base cl... |
 | **v5.5.214** |  URGENT HOTFIX: Fixed critical bugs introduced in v5.5.213! ... |
 | **v5.5.213** | 🎯 PERFECT VERSION: All critical issues resolved! Fixed Java... |
-| **v5.5.212** | ⚡ FINAL HOTFIX: Additional JavaScript syntax error fixed! Re... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
