@@ -1,20 +1,20 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.217-blue)
+![Version](https://img.shields.io/badge/version-5.5.218-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
-![Drivers](https://img.shields.io/badge/drivers-84-brightgreen)
+![Drivers](https://img.shields.io/badge/drivers-85-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 84 drivers and 2658+ manufacturer IDs.**
+**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 85 drivers and 2683+ manufacturer IDs.**
 
 🏠 **100% Local Control** - No Cloud, No Internet Required
 🔋 **Smart Battery** - Accurate readings with voltage fallback
 ⚡ **Hybrid Mode** - Auto-detect Tuya DP vs Standard ZCL
 🛠️ **SDK3** - Latest Homey Standards
 🌍 **Open Source** - Community-driven development
-📱 **84 Drivers** - Switches, sensors, lights, thermostats & more
+📱 **85 Drivers** - Switches, sensors, lights, thermostats & more
 
 ---
 
@@ -25,11 +25,11 @@
 | **Total Device IDs** | 4,200+ |
 | **Product IDs** | 350+ |
 | **Manufacturer IDs** | 3,800+ |
-| **Drivers** | 84 |
-| **SVG Icons** | 84 |
+| **Drivers** | 85 |
+| **SVG Icons** | 85 |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2025-12-19 |
+| **Last Updated** | 2025-12-23 |
 
 ### 📦 Top 15 Drivers by Device IDs
 
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.217
+## 🚀 Latest Updates - v5.5.218
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.218** | AUTO-ADDED DEVICES: Community devices from Johan repository ... |
 | **v5.5.217** | COMMUNITY DEVICES ADDED: Fixed gas sensor _TZE204_chbyv06 mi... |
 | **v5.5.216** | CRITICAL HOTFIX: Fixed 'could not get device by id' errors i... |
 | **v5.5.215** | MASSIVE IMPORT FIX: Fixed 70+ drivers with incorrect base cl... |
@@ -66,7 +67,6 @@
 | **v5.5.213** | 🎯 PERFECT VERSION: All critical issues resolved! Fixed Java... |
 | **v5.5.212** | ⚡ FINAL HOTFIX: Additional JavaScript syntax error fixed! Re... |
 | **v5.5.211** | ⚡ CRITICAL HOTFIX: JavaScript syntax errors fixed! Corrected... |
-| **v5.5.210** | 🚨 EMERGENCY DIAGNOSTIC: Massive logging added everywhere fo... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
