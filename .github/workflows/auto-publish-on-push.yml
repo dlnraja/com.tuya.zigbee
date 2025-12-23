@@ -112,22 +112,13 @@ jobs:
       - name: 🔑 Check HOMEY_PAT
         id: check_pat
         run: |
-          # SÉCURISÉ: Variables d'environnement protégées
-          echo "HOMEY_TOKEN=${{ secrets.HOMEY_TOKEN }}" >> $GITHUB_ENV
-          echo "Publishing to homey.app..."
-          # SÉCURISÉ: Validation des entrées avant utilisation
-          COMMIT_MSG="${{ github.event.head_commit.message }}"
-          if [[ -n "$COMMIT_MSG" ]]; then
-            curl -X POST \
-              -H "Authorization: Bearer ${{ secrets.HOMEY_TOKEN }}" \
-              -H "Content-Type: application/json" \
-              -d "{\"version\": \"${COMMIT_MSG}\"}" \
-              "https://tools.developer.homey.app/api/app/publish"
+          if [ -n "${{ secrets.HOMEY_PAT }}" ]; then
+            echo "has_pat=true" >> $GITHUB_OUTPUT
+            echo "✅ HOMEY_PAT is configured"
           else
-            echo "❌ Message de commit manquant - publication annulée"
-            exit 1
-          fi >> $GITHUB_OUTPUT
-          echo "✅ HOMEY_PAT configured"
+            echo "has_pat=false" >> $GITHUB_OUTPUT
+            echo "⚠️ HOMEY_PAT not configured - will skip publish"
+          fi
       - name: 🚀 Publish (Athom Official)
         if: steps.check_pat.outputs.has_pat == 'true'
         uses: athombv/github-action-homey-app-publish@v1
