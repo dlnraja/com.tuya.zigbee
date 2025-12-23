@@ -93,82 +93,90 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 🔧 Step 1 - Apply Fingerprinting Rules
-        id: rules
+      - name: 📊 Step 0 - Baseline Count (CRITICAL)
+        id: baseline
         run: |
-          echo "🔧 Applying all fingerprinting rules (9.x compliant)..."
-          if [ -f "automation/MASTER_APPLY_ALL_RULES.js" ]; then
-            node automation/MASTER_APPLY_ALL_RULES.js 2>&1 | tee enrichment-rules.log
-          else
-            echo "⚠️ MASTER_APPLY_ALL_RULES.js not found"
-          fi
-
-      - name: 🌐 Step 2 - MEGA Z2M Enrichment
-        id: z2m
-        run: |
-          echo "🌐 Running MEGA enrichment from Z2M sources..."
-          if [ -f "automation/MEGA_ENRICHMENT_50.js" ]; then
-            node automation/MEGA_ENRICHMENT_50.js 2>&1 | tee enrichment-z2m.log
-          else
-            echo "⚠️ MEGA_ENRICHMENT_50.js not found"
-          fi
-
-      - name: 📋 Step 3 - Integrate GitHub Issues
-        if: inputs.fetch_github_issues != 'false'
-        run: |
-          echo "📋 Integrating GitHub issue manufacturer IDs..."
+          echo "📊 Recording baseline manufacturer count..."
           node -e "
           const fs = require('fs');
           const path = require('path');
-
-          // Load extracted IDs
-          let githubMfrs = [];
-          try {
-            githubMfrs = JSON.parse(fs.readFileSync('data/github-issues/extracted-mfrs.json', 'utf8'));
-          } catch(e) { console.log('No GitHub issues to process'); process.exit(0); }
-
-          // Load all drivers and check for missing
-          const driversDir = 'drivers';
-          const existingMfrs = new Set();
-
-          fs.readdirSync(driversDir, { withFileTypes: true })
+          let total = 0;
+          fs.readdirSync('drivers', { withFileTypes: true })
             .filter(d => d.isDirectory())
             .forEach(d => {
-              const configPath = path.join(driversDir, d.name, 'driver.compose.json');
-              if (!fs.existsSync(configPath)) return;
+              const p = path.join('drivers', d.name, 'driver.compose.json');
+              if (!fs.existsSync(p)) return;
               try {
-                const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-                (config.zigbee?.manufacturerName || []).forEach(m => existingMfrs.add(m.toLowerCase()));
+                const c = JSON.parse(fs.readFileSync(p, 'utf8'));
+                total += (c.zigbee?.manufacturerName || []).length;
               } catch {}
             });
+          console.log('BASELINE=' + total);
+          " > baseline.txt
+          BASELINE=$(grep 'BASELINE=' baseline.txt | cut -d= -f2)
+          echo "baseline=$BASELINE" >> $GITHUB_OUTPUT
+          echo "🔒 Baseline: $BASELINE manufacturer entries"
 
-          const missing = githubMfrs.filter(m => !existingMfrs.has(m));
-          console.log('GitHub Issues Analysis:');
-          console.log('  Total extracted: ' + githubMfrs.length);
-          console.log('  Already present: ' + (githubMfrs.length - missing.length));
-          console.log('  Missing: ' + missing.length);
-
-          if (missing.length > 0) {
-            console.log('Missing IDs: ' + missing.slice(0, 20).join(', '));
-          }
-          " 2>&1 | tee enrichment-github.log
-
-      - name: 🔒 Step 4 - Detect & Fix Collisions
-        id: collisions
-        if: inputs.fix_collisions != 'false'
+      - name: 🛡️ Step 1 - SAFE Additive Enrichment
+        id: enrichment
         run: |
-          echo "🔒 Detecting and fixing fingerprinting collisions..."
+          echo "🛡️ Running SAFE additive enrichment (NEVER removes, ONLY adds)..."
+          if [ -f "automation/SAFE_ADDITIVE_ENRICHMENT.js" ]; then
+            node automation/SAFE_ADDITIVE_ENRICHMENT.js 2>&1 | tee enrichment-safe.log
+          else
+            echo "⚠️ SAFE_ADDITIVE_ENRICHMENT.js not found, skipping enrichment"
+          fi
+
+      - name: 🔒 Step 2 - Detect Collisions (Read-Only)
+        id: collisions
+        run: |
+          echo "🔒 Detecting fingerprinting collisions (read-only analysis)..."
           if [ -f "automation/DETECT_COLLISIONS.js" ]; then
             node automation/DETECT_COLLISIONS.js 2>&1 | tee enrichment-collisions.log
           fi
-
-          if [ -f "scripts/fix-fingerprint-collisions.js" ]; then
-            node scripts/fix-fingerprint-collisions.js 2>&1 | tee -a enrichment-collisions.log
-          fi
-
-          # Extract collision count
-          COLLISIONS=$(grep -oP 'Exact duplicates.*: \K\d+' enrichment-collisions.log | tail -1 || echo "0")
+          COLLISIONS=$(grep -oP 'Exact duplicates.*: \K\d+' enrichment-collisions.log 2>/dev/null | tail -1 || echo "0")
           echo "collisions=$COLLISIONS" >> $GITHUB_OUTPUT
+
+      - name: 🚨 Step 3 - NON-REGRESSION CHECK (CRITICAL)
+        id: regression_check
+        run: |
+          echo "🚨 Verifying no coverage regression..."
+          BASELINE=${{ steps.baseline.outputs.baseline }}
+
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+          let total = 0;
+          fs.readdirSync('drivers', { withFileTypes: true })
+            .filter(d => d.isDirectory())
+            .forEach(d => {
+              const p = path.join('drivers', d.name, 'driver.compose.json');
+              if (!fs.existsSync(p)) return;
+              try {
+                const c = JSON.parse(fs.readFileSync(p, 'utf8'));
+                total += (c.zigbee?.manufacturerName || []).length;
+              } catch {}
+            });
+          console.log('CURRENT=' + total);
+          " > current.txt
+
+          CURRENT=$(grep 'CURRENT=' current.txt | cut -d= -f2)
+          echo "current=$CURRENT" >> $GITHUB_OUTPUT
+
+          echo "  Baseline: $BASELINE"
+          echo "  Current: $CURRENT"
+
+          if [ "$CURRENT" -lt "$BASELINE" ]; then
+            echo "❌ CRITICAL: Coverage DECREASED from $BASELINE to $CURRENT!"
+            echo "   Lost: $((BASELINE - CURRENT)) entries"
+            echo "   ABORTING WORKFLOW - Restoring original state"
+            git checkout HEAD -- drivers/
+            echo "regression=true" >> $GITHUB_OUTPUT
+            exit 1
+          else
+            echo "✅ Coverage maintained or improved: $BASELINE → $CURRENT (+$((CURRENT - BASELINE)))"
+            echo "regression=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: ✅ Step 5 - Validate
         id: validate
