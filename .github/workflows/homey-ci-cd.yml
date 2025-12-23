@@ -19,7 +19,7 @@ name: 🎯 Homey CI/CD
         type: string
         default: Bug fixes and improvements
 permissions:
-  contents: read
+  contents: write
   actions: read
 env:
   NODE_VERSION: "20"
@@ -58,8 +58,6 @@ jobs:
           echo "| Version | v${{ steps.info.outputs.version }} |" >> $GITHUB_STEP_SUMMARY
           echo "| ID | \`${{ steps.info.outputs.id }}\` |" >> $GITHUB_STEP_SUMMARY
     timeout-minutes: 30
-    strategy:
-      fail-fast: true
   version:
     name: 📦 Update Version
     runs-on: ubuntu-latest
@@ -195,5 +193,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     timeout-minutes: 30
-    strategy:
-      fail-fast: true

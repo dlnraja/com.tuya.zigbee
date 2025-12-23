@@ -16,7 +16,7 @@ name: 📦 Update Version
         required: true
         type: string
 permissions:
-  contents: read
+  contents: write
   actions: read
 jobs:
   update-version:
@@ -37,8 +37,8 @@ jobs:
         uses: athombv/github-action-homey-app-version@v1
         id: update
         with:
-          version: 
-          changelog: 
+          version:
+          changelog:
       - name: 📝 Commit & Push
         run: |
           git config --local user.name "github-actions[bot]"

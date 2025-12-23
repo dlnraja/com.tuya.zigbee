@@ -78,7 +78,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     }
 
     // Désactiver energy monitoring si configuré
-    const energyDisabled = this.getSetting('energy_monitoring_disabled');
+    const energyDisabled = this.getSetting('disable_power_monitoring');
     if (energyDisabled && this.hasCapability('measure_power')) {
       await this.removeCapability('measure_power').catch(() => { });
     }
@@ -344,8 +344,8 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     }
 
     // Gestion energy monitoring
-    if (changedKeys.includes('energy_monitoring_disabled')) {
-      if (newSettings.energy_monitoring_disabled) {
+    if (changedKeys.includes('disable_power_monitoring')) {
+      if (newSettings.disable_power_monitoring) {
         if (this.hasCapability('measure_power')) {
           await this.removeCapability('measure_power');
         }

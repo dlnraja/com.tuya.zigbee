@@ -213,7 +213,7 @@
           "value": false
         },
         {
-          "id": "energy_monitoring_disabled",
+          "id": "disable_power_monitoring",
           "type": "checkbox",
           "label": {
             "en": "Disable Energy Monitoring",
