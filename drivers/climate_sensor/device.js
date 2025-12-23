@@ -432,9 +432,9 @@ class ClimateSensorDevice extends HybridSensorBase {
     const diagnosticMfr = this._manufacturerName || '';
     const diagnosticModelId = this._modelId || '';
     this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Device: ${diagnosticMfr} / ${diagnosticModelId}`);
-    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Protocol: ${this.getProtocol()}`);
-    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - isLCDClimateDevice: ${this.isLCDClimateDevice()}`);
-    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - needsTuyaEpoch: ${this.needsTuyaEpoch}`);
+    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Protocol: ${typeof this.getProtocol === 'function' ? this.getProtocol() : 'N/A'}`);
+    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - isLCDClimateDevice: ${typeof this.isLCDClimateDevice === 'function' ? this.isLCDClimateDevice() : 'N/A'}`);
+    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - needsTuyaEpoch: ${this.needsTuyaEpoch || 'N/A'}`);
 
     // Détection RTC via outCluster 0x000A (méthode fiable)
     const rtcDetection = TuyaRtcDetector.hasRtc(this, { useHeuristics: true });
