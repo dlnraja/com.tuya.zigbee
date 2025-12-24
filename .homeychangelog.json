@@ -1,4 +1,10 @@
 {
+  "5.5.231": {
+    "en": "📋 GitHub Issues Processing: Added HMJ-SC021 smart button support (_TZ3000_ixla93vd/TS004F). Closed issue #91 (ZS06 IR Blaster already implemented in v5.5.229). Verified all closed device requests are supported.",
+    "fr": "📋 Traitement Issues GitHub: Ajout support bouton HMJ-SC021 (_TZ3000_ixla93vd/TS004F). Fermé issue #91 (ZS06 IR Blaster déjà implémenté v5.5.229). Vérifié que toutes les demandes fermées sont supportées.",
+    "nl": "📋 GitHub Issues Verwerking: HMJ-SC021 smart button ondersteuning toegevoegd (_TZ3000_ixla93vd/TS004F). Issue #91 gesloten (ZS06 IR Blaster al geïmplementeerd in v5.5.229).",
+    "de": "📋 GitHub Issues Bearbeitung: HMJ-SC021 Smart Button Unterstützung hinzugefügt (_TZ3000_ixla93vd/TS004F). Issue #91 geschlossen (ZS06 IR Blaster bereits in v5.5.229 implementiert)."
+  },
   "5.5.229": {
     "en": "🔧 Forum Bug Fixes: Fixed TZ3210_s8lvbbuc/TS0505B incorrectly detected as climate sensor (now RGB bulb). Enhanced ZS06 IR Blaster with learning mode improvements and flow cards (ir_code_learned trigger, send_ir_code/start_ir_learning/stop_ir_learning actions).",
     "fr": "🔧 Corrections bugs forum: Correction TZ3210_s8lvbbuc/TS0505B détecté incorrectement comme capteur climat (maintenant ampoule RGB). Amélioration ZS06 IR Blaster avec mode apprentissage et cartes de flux.",
