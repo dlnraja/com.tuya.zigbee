@@ -126,6 +126,135 @@
   },
   "settings": [
     {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power On Behavior",
+        "nl": "Gedrag bij inschakelen",
+        "de": "Einschaltverhalten",
+        "fr": "Comportement à l'allumage"
+      },
+      "value": "previous",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Turn Off",
+            "nl": "Uitschakelen",
+            "de": "Ausschalten",
+            "fr": "Éteindre"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "Turn On",
+            "nl": "Inschakelen",
+            "de": "Einschalten",
+            "fr": "Allumer"
+          }
+        },
+        {
+          "id": "previous",
+          "label": {
+            "en": "Restore Previous State",
+            "nl": "Vorige status herstellen",
+            "de": "Vorherigen Zustand wiederherstellen",
+            "fr": "Restaurer l'état précédent"
+          }
+        }
+      ],
+      "hint": {
+        "en": "What the light should do after power is restored",
+        "nl": "Wat de lamp moet doen na stroomherstel",
+        "de": "Was die Lampe nach Stromwiederherstellung tun soll",
+        "fr": "Ce que la lampe doit faire après rétablissement du courant"
+      }
+    },
+    {
+      "id": "do_not_disturb",
+      "type": "checkbox",
+      "label": {
+        "en": "Do Not Disturb",
+        "nl": "Niet storen",
+        "de": "Nicht stören",
+        "fr": "Ne pas déranger"
+      },
+      "value": false,
+      "hint": {
+        "en": "Keep light off after power loss (prevents unwanted turn on)",
+        "nl": "Lamp uit houden na stroomuitval (voorkomt ongewenst inschakelen)",
+        "de": "Licht nach Stromausfall aus lassen (verhindert ungewolltes Einschalten)",
+        "fr": "Garder la lumière éteinte après coupure (empêche l'allumage non souhaité)"
+      }
+    },
+    {
+      "id": "transition_time",
+      "type": "number",
+      "label": {
+        "en": "Transition Time (seconds)",
+        "nl": "Overgangstijd (seconden)",
+        "de": "Übergangszeit (Sekunden)",
+        "fr": "Temps de transition (secondes)"
+      },
+      "value": 0.4,
+      "min": 0,
+      "max": 10,
+      "step": 0.1,
+      "hint": {
+        "en": "Time for brightness/color transitions (0 = instant)",
+        "nl": "Tijd voor helderheid/kleur overgangen (0 = direct)",
+        "de": "Zeit für Helligkeits-/Farbübergänge (0 = sofort)",
+        "fr": "Temps pour les transitions de luminosité/couleur (0 = instantané)"
+      }
+    },
+    {
+      "id": "color_temp_range",
+      "type": "dropdown",
+      "label": {
+        "en": "Color Temperature Range",
+        "nl": "Kleurtemperatuur bereik",
+        "de": "Farbtemperaturbereich",
+        "fr": "Plage de température de couleur"
+      },
+      "value": "standard",
+      "values": [
+        {
+          "id": "standard",
+          "label": {
+            "en": "Standard (2700K-6500K)",
+            "nl": "Standaard (2700K-6500K)",
+            "de": "Standard (2700K-6500K)",
+            "fr": "Standard (2700K-6500K)"
+          }
+        },
+        {
+          "id": "extended",
+          "label": {
+            "en": "Extended (2000K-6500K)",
+            "nl": "Uitgebreid (2000K-6500K)",
+            "de": "Erweitert (2000K-6500K)",
+            "fr": "Étendu (2000K-6500K)"
+          }
+        },
+        {
+          "id": "wide",
+          "label": {
+            "en": "Wide (1800K-6500K)",
+            "nl": "Breed (1800K-6500K)",
+            "de": "Breit (1800K-6500K)",
+            "fr": "Large (1800K-6500K)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Adjust color temperature range based on your bulb capabilities",
+        "nl": "Pas kleurtemperatuurbereik aan op basis van lampcapaciteiten",
+        "de": "Farbtemperaturbereich basierend auf Lampenfähigkeiten anpassen",
+        "fr": "Ajuster la plage de température de couleur selon les capacités de l'ampoule"
+      }
+    },
+    {
       "id": "power_source",
       "type": "dropdown",
       "label": {
