@@ -1,4 +1,10 @@
 {
+  "5.5.229": {
+    "en": "🔧 Forum Bug Fixes: Fixed TZ3210_s8lvbbuc/TS0505B incorrectly detected as climate sensor (now RGB bulb). Enhanced ZS06 IR Blaster with learning mode improvements and flow cards (ir_code_learned trigger, send_ir_code/start_ir_learning/stop_ir_learning actions).",
+    "fr": "🔧 Corrections bugs forum: Correction TZ3210_s8lvbbuc/TS0505B détecté incorrectement comme capteur climat (maintenant ampoule RGB). Amélioration ZS06 IR Blaster avec mode apprentissage et cartes de flux.",
+    "nl": "🔧 Forum Bug Fixes: TZ3210_s8lvbbuc/TS0505B verkeerd gedetecteerd als klimaatsensor opgelost (nu RGB lamp). ZS06 IR Blaster verbeterd met leermodus en flow kaarten.",
+    "de": "🔧 Forum Fehlerbehebungen: TZ3210_s8lvbbuc/TS0505B falsch als Klimasensor erkannt behoben (jetzt RGB-Lampe). ZS06 IR Blaster mit Lernmodus und Flow-Karten verbessert."
+  },
   "5.5.221": {
     "en": "📋 FORUM REQUESTS: Added HOBEIAN ZG-204ZV to motion_sensor, _TZ3000_wkai4ga5 (TS0044) to button_wireless_4, _TZ3000_dfgbtub0 (TS0042) to button_wireless_2. All community forum device requests now properly supported.",
     "fr": "📋 DEMANDES FORUM: Ajout HOBEIAN ZG-204ZV au capteur mouvement, _TZ3000_wkai4ga5 (TS0044) aux boutons 4 gang, _TZ3000_dfgbtub0 (TS0042) aux boutons 2 gang. Toutes les demandes du forum correctement supportées.",
