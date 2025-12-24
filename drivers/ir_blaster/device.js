@@ -100,8 +100,8 @@ class IrBlasterDevice extends ZigBeeDevice {
   /**
    * Enable IR learning mode
    */
-  async _enableLearnMode() {
-    this.log('Enabling IR learn mode...');
+  async _enableLearnMode(duration = 30) {
+    this.log(`Enabling IR learn mode for ${duration} seconds...`);
 
     const zclNode = this._zclNode;
     if (!zclNode?.endpoints?.[1]) {
@@ -109,22 +109,60 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
 
     try {
-      // Toggle on the onOff cluster to enable learning
+      // Toggle on the onOff cluster to enable learning - keep it ON during learning
       await zclNode.endpoints[1].clusters.onOff.setOn();
+      this.setCapabilityValue('onoff', true).catch(() => { });
       this.log('Learn mode enabled - point remote at device and press button');
 
-      // Auto-disable after 30 seconds
-      this.homey.setTimeout(async () => {
+      // Clear any existing timeout
+      if (this._learnTimeout) {
+        this.homey.clearTimeout(this._learnTimeout);
+      }
+
+      // Auto-disable after specified duration
+      this._learnTimeout = this.homey.setTimeout(async () => {
         try {
-          await zclNode.endpoints[1].clusters.onOff.setOff();
-          this.log('Learn mode auto-disabled after timeout');
+          await this._disableLearnMode();
+          this.log(`Learn mode auto-disabled after ${duration}s timeout`);
         } catch (e) {
-          // Ignore
+          this.log('Learn mode timeout error:', e.message);
         }
-      }, 30000);
+      }, duration * 1000);
+
+      // Trigger flow card
+      this.driver.learningStartedTrigger?.trigger(this, {}, {}).catch(() => { });
 
     } catch (err) {
       this.error('Failed to enable learn mode:', err);
+      throw err;
+    }
+  }
+
+  /**
+   * Disable IR learning mode
+   */
+  async _disableLearnMode() {
+    this.log('Disabling IR learn mode...');
+
+    const zclNode = this._zclNode;
+    if (!zclNode?.endpoints?.[1]) {
+      return;
+    }
+
+    try {
+      // Clear timeout
+      if (this._learnTimeout) {
+        this.homey.clearTimeout(this._learnTimeout);
+        this._learnTimeout = null;
+      }
+
+      // Turn off learning mode
+      await zclNode.endpoints[1].clusters.onOff.setOff();
+      this.setCapabilityValue('onoff', false).catch(() => { });
+      this.log('Learn mode disabled');
+
+    } catch (err) {
+      this.error('Failed to disable learn mode:', err);
       throw err;
     }
   }
