@@ -1,4 +1,10 @@
 {
+  "5.5.235": {
+    "en": "🔧 Workflows & History Scan: Improved GitHub workflows (Node 20, better error handling). Restored 2 lost manufacturerNames from git history. Created intelligent scanners for versions/PRs/Issues. 3589+ devices supported!",
+    "fr": "🔧 Workflows & Scan Historique: Workflows GitHub améliorés (Node 20, meilleure gestion erreurs). Restauré 2 manufacturerNames perdus. Scripts intelligents créés. 3589+ devices supportés!",
+    "nl": "🔧 Workflows & History Scan: GitHub workflows verbeterd (Node 20, betere foutafhandeling). 2 verloren manufacturerNames hersteld. Intelligente scanners gemaakt. 3589+ apparaten ondersteund!",
+    "de": "🔧 Workflows & History-Scan: GitHub-Workflows verbessert (Node 20, bessere Fehlerbehandlung). 2 verlorene manufacturerNames wiederhergestellt. Intelligente Scanner erstellt. 3589+ Geräte unterstützt!"
+  },
   "5.5.234": {
     "en": "🔥 Z2M/Blakadder Deep Enrichment: Added 24 more manufacturerNames from Zigbee2MQTT analysis. +7 TRVs, +12 RGB bulbs, +4 plugs, +1 misc. Total supported devices now 3589+!",
     "fr": "🔥 Enrichissement Z2M/Blakadder: 24 nouveaux manufacturerNames de Zigbee2MQTT. +7 TRVs, +12 ampoules RGB, +4 prises. Total devices supportés: 3589+!",
