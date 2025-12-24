@@ -59,6 +59,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.229** | 🔧 Forum Bug Fixes: Fixed TZ3210_s8lvbbuc/TS0505B incorrectl... |
 | **v5.5.221** | 📋 FORUM REQUESTS: Added HOBEIAN ZG-204ZV to motion_sensor, ... |
 | **v5.5.220** | 🔒 FINGERPRINTING FIX: Removed 68 manufacturer ID collisions... |
 | **v5.5.219** | 🔥 DEVICE TYPE SELECTION: Added 24 device types for relay sw... |
@@ -66,7 +67,6 @@
 | **v5.5.217** | COMMUNITY DEVICES ADDED: Fixed gas sensor _TZE204_chbyv06 mi... |
 | **v5.5.216** | CRITICAL HOTFIX: Fixed 'could not get device by id' errors i... |
 | **v5.5.215** | MASSIVE IMPORT FIX: Fixed 70+ drivers with incorrect base cl... |
-| **v5.5.214** |  URGENT HOTFIX: Fixed critical bugs introduced in v5.5.213! ... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
