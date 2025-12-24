@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.237",
+  "version": "5.5.238",
   "lastPublishDatetime": "2025-12-23T09:45:57.795Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -9039,6 +9039,50 @@
         ]
       },
       {
+        "id": "set_color_temp_kelvin",
+        "title": {
+          "en": "Set color temperature (Kelvin)",
+          "nl": "Kleurtemperatuur instellen (Kelvin)",
+          "de": "Farbtemperatur einstellen (Kelvin)",
+          "fr": "Définir température de couleur (Kelvin)"
+        },
+        "titleFormatted": {
+          "en": "Set [[device]] to [[kelvin]]K",
+          "nl": "Zet [[device]] op [[kelvin]]K",
+          "de": "Setze [[device]] auf [[kelvin]]K",
+          "fr": "Définir [[device]] sur [[kelvin]]K"
+        },
+        "hint": {
+          "en": "Set exact color temperature in Kelvin (2000K-6500K)",
+          "nl": "Stel exacte kleurtemperatuur in Kelvin in (2000K-6500K)",
+          "de": "Exakte Farbtemperatur in Kelvin einstellen (2000K-6500K)",
+          "fr": "Définir la température de couleur exacte en Kelvin (2000K-6500K)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee&capabilities=light_temperature"
+          },
+          {
+            "type": "number",
+            "name": "kelvin",
+            "title": {
+              "en": "Temperature (K)",
+              "nl": "Temperatuur (K)",
+              "de": "Temperatur (K)",
+              "fr": "Température (K)"
+            },
+            "min": 2000,
+            "max": 6500,
+            "step": 100
+          }
+        ],
+        "platforms": [
+          "local"
+        ]
+      },
+      {
         "id": "set_cover_position",
         "title": {
           "en": "Set cover position",
@@ -9071,6 +9115,139 @@
             "label": "%",
             "labelMultiplier": 1
           }
+        ]
+      },
+      {
+        "id": "set_light_effect",
+        "title": {
+          "en": "Set light effect",
+          "nl": "Lichteffect instellen",
+          "de": "Lichteffekt einstellen",
+          "fr": "Définir effet lumineux"
+        },
+        "titleFormatted": {
+          "en": "Set [[device]] to effect [[effect]]",
+          "nl": "Zet [[device]] op effect [[effect]]",
+          "de": "Setze [[device]] auf Effekt [[effect]]",
+          "fr": "Définir [[device]] sur effet [[effect]]"
+        },
+        "hint": {
+          "en": "Set a predefined light effect on RGB bulbs (TS0505B, etc.)",
+          "nl": "Stel een voorgedefinieerd lichteffect in op RGB lampen",
+          "de": "Einen vordefinierten Lichteffekt auf RGB-Lampen einstellen",
+          "fr": "Définir un effet lumineux prédéfini sur les ampoules RGB"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee&capabilities=light_hue"
+          },
+          {
+            "type": "dropdown",
+            "name": "effect",
+            "title": {
+              "en": "Effect",
+              "nl": "Effect",
+              "de": "Effekt",
+              "fr": "Effet"
+            },
+            "values": [
+              {
+                "id": "steady",
+                "label": {
+                  "en": "Steady",
+                  "nl": "Constant",
+                  "de": "Konstant",
+                  "fr": "Constant"
+                }
+              },
+              {
+                "id": "breath",
+                "label": {
+                  "en": "Breathing",
+                  "nl": "Ademhaling",
+                  "de": "Atmend",
+                  "fr": "Respiration"
+                }
+              },
+              {
+                "id": "color_loop",
+                "label": {
+                  "en": "Color Loop",
+                  "nl": "Kleurloop",
+                  "de": "Farbschleife",
+                  "fr": "Boucle de couleurs"
+                }
+              },
+              {
+                "id": "blink",
+                "label": {
+                  "en": "Blink",
+                  "nl": "Knipperen",
+                  "de": "Blinken",
+                  "fr": "Clignotement"
+                }
+              },
+              {
+                "id": "candle",
+                "label": {
+                  "en": "Candle",
+                  "nl": "Kaars",
+                  "de": "Kerze",
+                  "fr": "Bougie"
+                }
+              },
+              {
+                "id": "fireplace",
+                "label": {
+                  "en": "Fireplace",
+                  "nl": "Open haard",
+                  "de": "Kamin",
+                  "fr": "Cheminée"
+                }
+              },
+              {
+                "id": "colorful",
+                "label": {
+                  "en": "Colorful",
+                  "nl": "Kleurrijk",
+                  "de": "Bunt",
+                  "fr": "Coloré"
+                }
+              },
+              {
+                "id": "rainbow",
+                "label": {
+                  "en": "Rainbow",
+                  "nl": "Regenboog",
+                  "de": "Regenbogen",
+                  "fr": "Arc-en-ciel"
+                }
+              },
+              {
+                "id": "aurora",
+                "label": {
+                  "en": "Aurora",
+                  "nl": "Aurora",
+                  "de": "Aurora",
+                  "fr": "Aurore"
+                }
+              },
+              {
+                "id": "party",
+                "label": {
+                  "en": "Party",
+                  "nl": "Feest",
+                  "de": "Party",
+                  "fr": "Fête"
+                }
+              }
+            ]
+          }
+        ],
+        "platforms": [
+          "local"
         ]
       },
       {
@@ -12855,6 +13032,135 @@
         ]
       },
       "settings": [
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power On Behavior",
+            "nl": "Gedrag bij inschakelen",
+            "de": "Einschaltverhalten",
+            "fr": "Comportement à l'allumage"
+          },
+          "value": "previous",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Turn Off",
+                "nl": "Uitschakelen",
+                "de": "Ausschalten",
+                "fr": "Éteindre"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Turn On",
+                "nl": "Inschakelen",
+                "de": "Einschalten",
+                "fr": "Allumer"
+              }
+            },
+            {
+              "id": "previous",
+              "label": {
+                "en": "Restore Previous State",
+                "nl": "Vorige status herstellen",
+                "de": "Vorherigen Zustand wiederherstellen",
+                "fr": "Restaurer l'état précédent"
+              }
+            }
+          ],
+          "hint": {
+            "en": "What the light should do after power is restored",
+            "nl": "Wat de lamp moet doen na stroomherstel",
+            "de": "Was die Lampe nach Stromwiederherstellung tun soll",
+            "fr": "Ce que la lampe doit faire après rétablissement du courant"
+          }
+        },
+        {
+          "id": "do_not_disturb",
+          "type": "checkbox",
+          "label": {
+            "en": "Do Not Disturb",
+            "nl": "Niet storen",
+            "de": "Nicht stören",
+            "fr": "Ne pas déranger"
+          },
+          "value": false,
+          "hint": {
+            "en": "Keep light off after power loss (prevents unwanted turn on)",
+            "nl": "Lamp uit houden na stroomuitval (voorkomt ongewenst inschakelen)",
+            "de": "Licht nach Stromausfall aus lassen (verhindert ungewolltes Einschalten)",
+            "fr": "Garder la lumière éteinte après coupure (empêche l'allumage non souhaité)"
+          }
+        },
+        {
+          "id": "transition_time",
+          "type": "number",
+          "label": {
+            "en": "Transition Time (seconds)",
+            "nl": "Overgangstijd (seconden)",
+            "de": "Übergangszeit (Sekunden)",
+            "fr": "Temps de transition (secondes)"
+          },
+          "value": 0.4,
+          "min": 0,
+          "max": 10,
+          "step": 0.1,
+          "hint": {
+            "en": "Time for brightness/color transitions (0 = instant)",
+            "nl": "Tijd voor helderheid/kleur overgangen (0 = direct)",
+            "de": "Zeit für Helligkeits-/Farbübergänge (0 = sofort)",
+            "fr": "Temps pour les transitions de luminosité/couleur (0 = instantané)"
+          }
+        },
+        {
+          "id": "color_temp_range",
+          "type": "dropdown",
+          "label": {
+            "en": "Color Temperature Range",
+            "nl": "Kleurtemperatuur bereik",
+            "de": "Farbtemperaturbereich",
+            "fr": "Plage de température de couleur"
+          },
+          "value": "standard",
+          "values": [
+            {
+              "id": "standard",
+              "label": {
+                "en": "Standard (2700K-6500K)",
+                "nl": "Standaard (2700K-6500K)",
+                "de": "Standard (2700K-6500K)",
+                "fr": "Standard (2700K-6500K)"
+              }
+            },
+            {
+              "id": "extended",
+              "label": {
+                "en": "Extended (2000K-6500K)",
+                "nl": "Uitgebreid (2000K-6500K)",
+                "de": "Erweitert (2000K-6500K)",
+                "fr": "Étendu (2000K-6500K)"
+              }
+            },
+            {
+              "id": "wide",
+              "label": {
+                "en": "Wide (1800K-6500K)",
+                "nl": "Breed (1800K-6500K)",
+                "de": "Breit (1800K-6500K)",
+                "fr": "Large (1800K-6500K)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Adjust color temperature range based on your bulb capabilities",
+            "nl": "Pas kleurtemperatuurbereik aan op basis van lampcapaciteiten",
+            "de": "Farbtemperaturbereich basierend auf Lampenfähigkeiten anpassen",
+            "fr": "Ajuster la plage de température de couleur selon les capacités de l'ampoule"
+          }
+        },
         {
           "id": "power_source",
           "type": "dropdown",
