@@ -1,4 +1,10 @@
 {
+  "5.5.236": {
+    "en": "🐛 Forum Fix #672: Fixed TS0505B RGB bulb incorrectly pairing as climate_sensor. Device TZ3210_s8lvbbuc now correctly pairs as RGB bulb. IR Blaster flow cards already available.",
+    "fr": "🐛 Correction Forum #672: TS0505B RGB bulb s'appairait incorrectement comme climate_sensor. Device TZ3210_s8lvbbuc s'appaire maintenant correctement comme ampoule RGB.",
+    "nl": "🐛 Forum Fix #672: TS0505B RGB lamp werd onjuist gekoppeld als climate_sensor. Device TZ3210_s8lvbbuc koppelt nu correct als RGB lamp.",
+    "de": "🐛 Forum-Fix #672: TS0505B RGB-Lampe wurde fälschlicherweise als climate_sensor gekoppelt. Device TZ3210_s8lvbbuc koppelt jetzt korrekt als RGB-Lampe."
+  },
   "5.5.235": {
     "en": "🔧 Workflows & History Scan: Improved GitHub workflows (Node 20, better error handling). Restored 2 lost manufacturerNames from git history. Created intelligent scanners for versions/PRs/Issues. 3589+ devices supported!",
     "fr": "🔧 Workflows & Scan Historique: Workflows GitHub améliorés (Node 20, meilleure gestion erreurs). Restauré 2 manufacturerNames perdus. Scripts intelligents créés. 3589+ devices supportés!",
