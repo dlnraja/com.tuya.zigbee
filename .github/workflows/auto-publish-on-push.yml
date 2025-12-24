@@ -8,6 +8,9 @@ name: 🚀 Auto-Publish on Push
       - "**.md"
       - .github/workflows/*.disabled
       - docs/**
+    paths:
+      - "!CHANGELOG.md"
+  workflow_dispatch:
 permissions:
   contents: write
   actions: read
