@@ -4,17 +4,13 @@ name: 🚀 Auto-Publish on Push
     branches:
       - master
       - main
-    paths-ignore:
-      - .github/workflows/*.disabled
-      - docs/**
-      - "README.md"
-      - "*.md"
     paths:
       - "CHANGELOG.md"
       - "app.json"
       - "drivers/**"
       - "lib/**"
       - "assets/**"
+      - ".homeycompose/**"
   workflow_dispatch:
 permissions:
   contents: write
