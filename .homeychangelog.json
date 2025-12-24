@@ -1,4 +1,10 @@
 {
+  "5.5.232": {
+    "en": "🚀 MASSIVE Z2M ENRICHMENT: Added 100 new manufacturerNames from Zigbee2MQTT database! +43 switches, +22 radiator valves, +10 plugs, +10 gas sensors, +8 climate sensors, +3 RGB bulbs, +2 buttons, +1 motion sensor, +1 curtain motor. Device compatibility significantly expanded!",
+    "fr": "🚀 ENRICHISSEMENT Z2M MASSIF: Ajout de 100 nouveaux manufacturerNames depuis Zigbee2MQTT! +43 interrupteurs, +22 vannes radiateur, +10 prises, +10 capteurs gaz, +8 capteurs climat, +3 ampoules RGB, +2 boutons, +1 capteur mouvement, +1 moteur rideau.",
+    "nl": "🚀 MASSIEVE Z2M VERRIJKING: 100 nieuwe manufacturerNames toegevoegd van Zigbee2MQTT! +43 schakelaars, +22 radiatorkleppen, +10 stekkers, +10 gassensoren, +8 klimaatsensoren, +3 RGB lampen, +2 knoppen, +1 bewegingssensor, +1 gordijnmotor.",
+    "de": "🚀 MASSIVE Z2M ANREICHERUNG: 100 neue manufacturerNames von Zigbee2MQTT hinzugefügt! +43 Schalter, +22 Heizkörperventile, +10 Stecker, +10 Gassensoren, +8 Klimasensoren, +3 RGB-Lampen, +2 Tasten, +1 Bewegungssensor, +1 Vorhangmotor."
+  },
   "5.5.231": {
     "en": "📋 GitHub Issues Processing: Added HMJ-SC021 smart button support (_TZ3000_ixla93vd/TS004F). Closed issue #91 (ZS06 IR Blaster already implemented in v5.5.229). Verified all closed device requests are supported.",
     "fr": "📋 Traitement Issues GitHub: Ajout support bouton HMJ-SC021 (_TZ3000_ixla93vd/TS004F). Fermé issue #91 (ZS06 IR Blaster déjà implémenté v5.5.229). Vérifié que toutes les demandes fermées sont supportées.",
