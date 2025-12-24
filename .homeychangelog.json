@@ -1,4 +1,10 @@
 {
+  "5.5.234": {
+    "en": "🔥 Z2M/Blakadder Deep Enrichment: Added 24 more manufacturerNames from Zigbee2MQTT analysis. +7 TRVs, +12 RGB bulbs, +4 plugs, +1 misc. Total supported devices now 3589+!",
+    "fr": "🔥 Enrichissement Z2M/Blakadder: 24 nouveaux manufacturerNames de Zigbee2MQTT. +7 TRVs, +12 ampoules RGB, +4 prises. Total devices supportés: 3589+!",
+    "nl": "🔥 Z2M/Blakadder Verrijking: 24 nieuwe manufacturerNames van Zigbee2MQTT. +7 TRVs, +12 RGB lampen, +4 stekkers. Totaal ondersteunde apparaten: 3589+!",
+    "de": "🔥 Z2M/Blakadder Anreicherung: 24 neue manufacturerNames von Zigbee2MQTT. +7 TRVs, +12 RGB-Lampen, +4 Stecker. Unterstützte Geräte: 3589+!"
+  },
   "5.5.233": {
     "en": "🔧 Build Fix + User Suggestions: Fixed build processing issue. Added _TZ3000_vp6clf9d TS0044 4-button scene switch per user request. Bseed switches already supported.",
     "fr": "🔧 Correction Build + Suggestions: Correction problème processing build. Ajout _TZ3000_vp6clf9d TS0044 switch 4 boutons. Switches Bseed déjà supportés.",
