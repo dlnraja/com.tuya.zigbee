@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.235-blue)
+![Version](https://img.shields.io/badge/version-5.5.236-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-86-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.235
+## 🚀 Latest Updates - v5.5.236
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.236** | 🐛 Forum Fix #672: Fixed TS0505B RGB bulb incorrectly pairin... |
 | **v5.5.235** | 🔧 Workflows & History Scan: Improved GitHub workflows (Node... |
 | **v5.5.234** | 🔥 Z2M/Blakadder Deep Enrichment: Added 24 more manufacturer... |
 | **v5.5.233** | 🔧 Build Fix + User Suggestions: Fixed build processing issu... |
@@ -66,7 +67,6 @@
 | **v5.5.231** | 📋 GitHub Issues Processing: Added HMJ-SC021 smart button su... |
 | **v5.5.229** | 🔧 Forum Bug Fixes: Fixed TZ3210_s8lvbbuc/TS0505B incorrectl... |
 | **v5.5.221** | 📋 FORUM REQUESTS: Added HOBEIAN ZG-204ZV to motion_sensor, ... |
-| **v5.5.220** | 🔒 FINGERPRINTING FIX: Removed 68 manufacturer ID collisions... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
