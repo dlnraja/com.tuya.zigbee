@@ -11,6 +11,7 @@ name: 🚀 Auto-Publish on Push
       - "lib/**"
       - "assets/**"
       - ".homeycompose/**"
+      - ".homeycompose/app.json"
   workflow_dispatch:
 permissions:
   contents: write
