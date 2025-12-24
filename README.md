@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.232-blue)
+![Version](https://img.shields.io/badge/version-5.5.233-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-86-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.232
+## 🚀 Latest Updates - v5.5.233
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.233** | 🔧 Build Fix + User Suggestions: Fixed build processing issu... |
 | **v5.5.232** | 🚀 MASSIVE Z2M ENRICHMENT: Added 100 new manufacturerNames f... |
 | **v5.5.231** | 📋 GitHub Issues Processing: Added HMJ-SC021 smart button su... |
 | **v5.5.229** | 🔧 Forum Bug Fixes: Fixed TZ3210_s8lvbbuc/TS0505B incorrectl... |
@@ -66,7 +67,6 @@
 | **v5.5.220** | 🔒 FINGERPRINTING FIX: Removed 68 manufacturer ID collisions... |
 | **v5.5.219** | 🔥 DEVICE TYPE SELECTION: Added 24 device types for relay sw... |
 | **v5.5.218** | AUTO-ADDED DEVICES: Community devices from Johan repository ... |
-| **v5.5.217** | COMMUNITY DEVICES ADDED: Fixed gas sensor _TZE204_chbyv06 mi... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
