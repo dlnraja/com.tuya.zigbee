@@ -1,13 +1,13 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.233-blue)
+![Version](https://img.shields.io/badge/version-5.5.234-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-86-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 86 drivers and 3849+ manufacturer IDs.**
+**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 86 drivers and 3873+ manufacturer IDs.**
 
 🏠 **100% Local Control** - No Cloud, No Internet Required
 🔋 **Smart Battery** - Accurate readings with voltage fallback
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.233
+## 🚀 Latest Updates - v5.5.234
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.234** | 🔥 Z2M/Blakadder Deep Enrichment: Added 24 more manufacturer... |
 | **v5.5.233** | 🔧 Build Fix + User Suggestions: Fixed build processing issu... |
 | **v5.5.232** | 🚀 MASSIVE Z2M ENRICHMENT: Added 100 new manufacturerNames f... |
 | **v5.5.231** | 📋 GitHub Issues Processing: Added HMJ-SC021 smart button su... |
@@ -66,7 +67,6 @@
 | **v5.5.221** | 📋 FORUM REQUESTS: Added HOBEIAN ZG-204ZV to motion_sensor, ... |
 | **v5.5.220** | 🔒 FINGERPRINTING FIX: Removed 68 manufacturer ID collisions... |
 | **v5.5.219** | 🔥 DEVICE TYPE SELECTION: Added 24 device types for relay sw... |
-| **v5.5.218** | AUTO-ADDED DEVICES: Community devices from Johan repository ... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
