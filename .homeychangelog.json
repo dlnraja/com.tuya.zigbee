@@ -1,4 +1,10 @@
 {
+  "5.5.233": {
+    "en": "🔧 Build Fix + User Suggestions: Fixed build processing issue. Added _TZ3000_vp6clf9d TS0044 4-button scene switch per user request. Bseed switches already supported.",
+    "fr": "🔧 Correction Build + Suggestions: Correction problème processing build. Ajout _TZ3000_vp6clf9d TS0044 switch 4 boutons. Switches Bseed déjà supportés.",
+    "nl": "🔧 Build Fix + Gebruikersverzoeken: Build processing probleem opgelost. _TZ3000_vp6clf9d TS0044 4-knops schakelaar toegevoegd. Bseed schakelaars al ondersteund.",
+    "de": "🔧 Build-Fix + Benutzeranfragen: Build-Verarbeitungsproblem behoben. _TZ3000_vp6clf9d TS0044 4-Tasten-Schalter hinzugefügt. Bseed-Schalter bereits unterstützt."
+  },
   "5.5.232": {
     "en": "🚀 MASSIVE Z2M ENRICHMENT: Added 100 new manufacturerNames from Zigbee2MQTT database! +43 switches, +22 radiator valves, +10 plugs, +10 gas sensors, +8 climate sensors, +3 RGB bulbs, +2 buttons, +1 motion sensor, +1 curtain motor. Device compatibility significantly expanded!",
     "fr": "🚀 ENRICHISSEMENT Z2M MASSIF: Ajout de 100 nouveaux manufacturerNames depuis Zigbee2MQTT! +43 interrupteurs, +22 vannes radiateur, +10 prises, +10 capteurs gaz, +8 capteurs climat, +3 ampoules RGB, +2 boutons, +1 capteur mouvement, +1 moteur rideau.",
