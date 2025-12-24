@@ -1,4 +1,10 @@
 {
+  "5.5.237": {
+    "en": "💡 TS0505B Enrichment: Added 10 more manufacturerNames for RGB+CCT bulbs (MiBoxer FUT039Z/FUT066Z/FUT068ZR/FUT103ZR/FUT106ZR/FUTC11ZR, Lidl, eWeLink, Skydance). 3599+ devices now supported!",
+    "fr": "💡 Enrichissement TS0505B: 10 nouveaux manufacturerNames pour ampoules RGB+CCT (MiBoxer, Lidl, eWeLink, Skydance). 3599+ devices supportés!",
+    "nl": "💡 TS0505B Verrijking: 10 nieuwe manufacturerNames voor RGB+CCT lampen (MiBoxer, Lidl, eWeLink, Skydance). 3599+ apparaten ondersteund!",
+    "de": "💡 TS0505B Anreicherung: 10 neue manufacturerNames für RGB+CCT Lampen (MiBoxer, Lidl, eWeLink, Skydance). 3599+ Geräte unterstützt!"
+  },
   "5.5.236": {
     "en": "🐛 Forum Fix #672: Fixed TS0505B RGB bulb incorrectly pairing as climate_sensor. Device TZ3210_s8lvbbuc now correctly pairs as RGB bulb. IR Blaster flow cards already available.",
     "fr": "🐛 Correction Forum #672: TS0505B RGB bulb s'appairait incorrectement comme climate_sensor. Device TZ3210_s8lvbbuc s'appaire maintenant correctement comme ampoule RGB.",
