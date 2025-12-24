@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.228",
+  "version": "5.5.229",
   "lastPublishDatetime": "2025-12-23T09:45:57.795Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -4590,6 +4590,44 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=hvac_dehumidifier"
+          }
+        ]
+      },
+      {
+        "id": "ir_code_learned",
+        "title": {
+          "en": "IR Code Learned",
+          "fr": "Code IR Appris",
+          "nl": "IR Code Geleerd",
+          "de": "IR-Code gelernt"
+        },
+        "tokens": [
+          {
+            "name": "ir_code",
+            "type": "string",
+            "title": {
+              "en": "IR Code",
+              "fr": "Code IR",
+              "nl": "IR Code",
+              "de": "IR-Code"
+            }
+          },
+          {
+            "name": "code_name",
+            "type": "string",
+            "title": {
+              "en": "Code Name",
+              "fr": "Nom du Code",
+              "nl": "Code Naam",
+              "de": "Code-Name"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
           }
         ]
       },
@@ -10089,6 +10127,98 @@
         ]
       },
       {
+        "id": "send_ir_code",
+        "title": {
+          "en": "Send IR Code",
+          "fr": "Envoyer Code IR",
+          "nl": "IR Code Versturen",
+          "de": "IR-Code senden"
+        },
+        "titleFormatted": {
+          "en": "Send IR code [[ir_code]]",
+          "fr": "Envoyer le code IR [[ir_code]]",
+          "nl": "IR code [[ir_code]] versturen",
+          "de": "IR-Code [[ir_code]] senden"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "ir_code",
+            "type": "text",
+            "placeholder": {
+              "en": "Base64 IR Code",
+              "fr": "Code IR Base64",
+              "nl": "Base64 IR Code",
+              "de": "Base64 IR-Code"
+            },
+            "title": {
+              "en": "IR Code",
+              "fr": "Code IR",
+              "nl": "IR Code",
+              "de": "IR-Code"
+            }
+          }
+        ]
+      },
+      {
+        "id": "start_ir_learning",
+        "title": {
+          "en": "Start IR Learning Mode",
+          "fr": "Démarrer Mode Apprentissage IR",
+          "nl": "IR Leermodus Starten",
+          "de": "IR-Lernmodus starten"
+        },
+        "titleFormatted": {
+          "en": "Start IR learning mode for [[duration]] seconds",
+          "fr": "Démarrer le mode apprentissage IR pendant [[duration]] secondes",
+          "nl": "IR leermodus starten voor [[duration]] seconden",
+          "de": "IR-Lernmodus für [[duration]] Sekunden starten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "duration",
+            "type": "number",
+            "min": 5,
+            "max": 60,
+            "step": 5,
+            "placeholder": {
+              "en": "30"
+            },
+            "title": {
+              "en": "Duration (seconds)",
+              "fr": "Durée (secondes)",
+              "nl": "Duur (seconden)",
+              "de": "Dauer (Sekunden)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "stop_ir_learning",
+        "title": {
+          "en": "Stop IR Learning Mode",
+          "fr": "Arrêter Mode Apprentissage IR",
+          "nl": "IR Leermodus Stoppen",
+          "de": "IR-Lernmodus stoppen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          }
+        ]
+      },
+      {
         "id": "led_strip_led_strip_turn_on",
         "title": {
           "en": "Turn on",
@@ -12657,6 +12787,7 @@
           "_TZ3210_mja6r5ix",
           "_TZ3210_r5afgmkl",
           "_TZ3210_rcggc0ys",
+          "_TZ3210_s8lvbbuc",
           "_TZ3210_sln7ah6r",
           "_TZ3210_wxa85bwk",
           "_TZ3210_z1vlyufu",
@@ -18317,7 +18448,6 @@
           "_tz3210_rcggc0ys",
           "_tz3210_rwmitwj4",
           "_tz3210_s8lvbbu",
-          "_TZ3210_s8lvbbuc",
           "_TZ3210_s9lumfhn",
           "_tz3210_sln7ah6r",
           "_tz3210_sw9uxoea",
