@@ -46,9 +46,10 @@ class MotionSensorDevice extends HybridSensorBase {
     return {
       // ═══════════════════════════════════════════════════════════════════
       // MOTION / OCCUPANCY
+      // v5.5.228: Fixed DP101 - it's presence_time in seconds, not boolean motion
       // ═══════════════════════════════════════════════════════════════════
       1: { capability: 'alarm_motion', transform: (v) => v === 1 || v === true },
-      101: { capability: 'alarm_motion', transform: (v) => v === 1 || v === true },  // Alternative PIR DP
+      101: { capability: null, setting: 'presence_time' },  // Presence time (seconds) - NOT motion boolean!
 
       // ═══════════════════════════════════════════════════════════════════
       // BATTERY
@@ -227,6 +228,12 @@ class MotionSensorDevice extends HybridSensorBase {
   }
 
   async onNodeInit({ zclNode }) {
+    // v5.5.228: Remove alarm_contact if wrongly added (motion sensors use alarm_motion only)
+    if (this.hasCapability('alarm_contact')) {
+      await this.removeCapability('alarm_contact').catch(() => { });
+      this.log('[MOTION] ⚠️ Removed incorrect alarm_contact capability');
+    }
+
     // v5.5.113: Detect available clusters BEFORE super.onNodeInit
     // This adds temp/humidity capabilities only if clusters exist
     await this._detectAvailableClusters(zclNode);
