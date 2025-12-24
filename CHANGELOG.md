@@ -4,6 +4,31 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.229] - 2025-12-24
+
+### 🔧 Forum Bug Fixes
+
+**Issue #669 - TS0505B Bulb Detection Fix:**
+- Fixed TZ3210_s8lvbbuc/TS0505B incorrectly detected as climate sensor
+- Moved manufacturer ID from climate_sensor to bulb_rgb driver
+- TS0505B devices now pair correctly as RGB bulbs with full lighting control
+
+**Issue #670 - ZS06 IR Learning Enhancement:**
+- Fixed ZS06 IR learning functionality (button staying ON during learning)
+- Added configurable learning duration (5-60 seconds)
+- Implemented auto-disable to prevent device staying in learn mode
+- Added flow cards for complete automation:
+  - Trigger: `ir_code_learned` - Fires when IR code successfully captured
+  - Actions: `send_ir_code`, `start_ir_learning`, `stop_ir_learning`
+- Enhanced device state management and error handling
+
+### 📦 Technical Improvements
+- Enhanced IR blaster driver with proper timeout handling
+- Improved flow card integration for automation
+- Better device state synchronization
+
+---
+
 ## [5.5.219] - 2025-12-23
 
 ### 🔥 Feature: Extended Device Type Selection for Switches
