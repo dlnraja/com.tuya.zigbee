@@ -5,11 +5,16 @@ name: 🚀 Auto-Publish on Push
       - master
       - main
     paths-ignore:
-      - "**.md"
       - .github/workflows/*.disabled
       - docs/**
+      - "README.md"
+      - "*.md"
     paths:
-      - "!CHANGELOG.md"
+      - "CHANGELOG.md"
+      - "app.json"
+      - "drivers/**"
+      - "lib/**"
+      - "assets/**"
   workflow_dispatch:
 permissions:
   contents: write
