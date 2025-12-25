@@ -1,4 +1,10 @@
 {
+  "5.5.240": {
+    "en": "🔧 SDK3 Compliance: Fixed Homey Compose manifest warning. All validation warnings resolved. 100% SDK3 compliant.",
+    "fr": "🔧 Conformité SDK3: Corrigé warning manifest Homey Compose. Tous les warnings résolus. 100% conforme SDK3.",
+    "nl": "🔧 SDK3 Compliance: Homey Compose manifest warning opgelost. Alle validatie warnings opgelost. 100% SDK3 conform.",
+    "de": "🔧 SDK3 Konformität: Homey Compose Manifest-Warnung behoben. Alle Validierungswarnungen behoben. 100% SDK3 konform."
+  },
   "5.5.239": {
     "en": "🚀 Universal Enrichment: +13 new flow cards (motion, contact, humidity, smoke, water leak triggers + conditions), UniversalHybridEnricher for 15-min intelligent learning. All 86 drivers now support hybrid Tuya+ZCL mode with auto-protocol detection.",
     "fr": "🚀 Enrichissement Universel: +13 nouvelles flow cards, UniversalHybridEnricher pour apprentissage intelligent 15min. 86 drivers supportent mode hybride Tuya+ZCL avec détection auto du protocole.",
