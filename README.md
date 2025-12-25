@@ -1,13 +1,13 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.245-blue)
+![Version](https://img.shields.io/badge/version-5.5.246-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-86-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 86 drivers and 3916+ manufacturer IDs.**
+**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 86 drivers and 3917+ manufacturer IDs.**
 
 🏠 **100% Local Control** - No Cloud, No Internet Required
 🔋 **Smart Battery** - Accurate readings with voltage fallback
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.245
+## 🚀 Latest Updates - v5.5.246
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.246** | 🔧 Forum & Issues Audit: Analyzed 93 dlnraja + 1329 Johan Be... |
 | **v5.5.245** | 🔧 Cross-validation Complete: Analyzed Z2M (1372 IDs), ZHA (... |
 | **v5.5.244** | 🔧 Z2M Enrichment: +30 manufacturerNames from Zigbee2MQTT (3... |
 | **v5.5.243** | 🔧 IR Blaster Fix: Improved learning mode with proper 0xE004... |
@@ -66,7 +67,6 @@
 | **v5.5.241** | 🔧 Forum Fixes: Fixed _TZE284_iadro9bf & _TZE204_gkfbdvyx mi... |
 | **v5.5.240** | 🔧 SDK3 Compliance: Fixed Homey Compose manifest warning. Al... |
 | **v5.5.239** | 🚀 Universal Enrichment: +13 new flow cards (motion, contact... |
-| **v5.5.238** | 💡 TS0505B Full Features: Light effects (breath, color_loop,... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
