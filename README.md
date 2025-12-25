@@ -59,6 +59,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.241** | 🔧 Forum Fixes: Fixed _TZE284_iadro9bf & _TZE204_gkfbdvyx mi... |
 | **v5.5.240** | 🔧 SDK3 Compliance: Fixed Homey Compose manifest warning. Al... |
 | **v5.5.239** | 🚀 Universal Enrichment: +13 new flow cards (motion, contact... |
 | **v5.5.238** | 💡 TS0505B Full Features: Light effects (breath, color_loop,... |
@@ -66,7 +67,6 @@
 | **v5.5.236** | 🐛 Forum Fix #672: Fixed TS0505B RGB bulb incorrectly pairin... |
 | **v5.5.235** | 🔧 Workflows & History Scan: Improved GitHub workflows (Node... |
 | **v5.5.234** | 🔥 Z2M/Blakadder Deep Enrichment: Added 24 more manufacturer... |
-| **v5.5.233** | 🔧 Build Fix + User Suggestions: Fixed build processing issu... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
