@@ -4,7 +4,7 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.128 COMPLETE DP ENRICHMENT         ║
+ * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.250 BATTERY DEVICE FIX             ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  TUYA DP MAPPINGS: 1=presence, 2=sensitivity, 3=near distance, 4=far dist   ║
  * ║  5=detection delay, 6=fading time, 9=illuminance, 101=target distance       ║
@@ -12,14 +12,43 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
  * ║  105=breathe detection, 106=small move detection                            ║
  * ║  ZCL: 0x0400 Illuminance, 0x0406 Occupancy                                  ║
  * ║  Models: _TZE200_*, _TZE204_*, ZY-M100, TS0601 mmWave                       ║
+ * ║                                                                              ║
+ * ║  v5.5.250: Fix for battery-powered sensors like ZG-204ZM that become        ║
+ * ║  unavailable. These are EndDevices that sleep to save battery.              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
+
+// Battery-powered presence sensors (EndDevices that sleep)
+const BATTERY_POWERED_SENSORS = [
+  '_TZE200_2aaelwxk',  // ZG-204ZM battery presence sensor
+  '_TZE200_kb5noeto',  // ZG-204ZM variant
+  '_TZE204_2aaelwxk',  // ZG-204ZM variant
+];
+
 class PresenceSensorRadarDevice extends HybridSensorBase {
 
-  get mainsPowered() { return true; }
+  /**
+   * v5.5.250: Dynamic power source detection
+   * Most radar sensors are mains-powered, but some like ZG-204ZM are battery
+   */
+  get mainsPowered() {
+    const mfr = this.getData()?.manufacturerName || '';
+    if (BATTERY_POWERED_SENSORS.includes(mfr)) {
+      return false; // Battery-powered EndDevice
+    }
+    return true; // Default: mains-powered radar
+  }
 
+  /**
+   * v5.5.250: Dynamic capabilities based on power source
+   * Battery sensors need measure_battery capability
+   */
   get sensorCapabilities() {
-    return ['alarm_motion', 'alarm_human', 'measure_luminance', 'measure_distance'];
+    const base = ['alarm_motion', 'alarm_human', 'measure_luminance', 'measure_distance'];
+    if (!this.mainsPowered) {
+      base.push('measure_battery');
+    }
+    return base;
   }
 
   get dpMappings() {
@@ -76,14 +105,30 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       107: { capability: 'measure_luminance', divisor: 1, unit: 'lux' },
 
       // Presence state alt - DP 112 (some ZY-M100)
-      112: { capability: 'alarm_motion', transform: (v) => v === 1 || v === true }
+      112: { capability: 'alarm_motion', transform: (v) => v === 1 || v === true },
+
+      // v5.5.250: Battery for ZG-204ZM and similar battery sensors
+      4: { capability: 'measure_battery', divisor: 1 },  // DP4 = battery %
+      15: { capability: 'measure_battery', divisor: 1 }  // DP15 = battery % alt
     };
   }
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
 
-    this.log('[RADAR] v5.5.128 - DPs: 1-6,9,101-107,112 | ZCL: 400,406,EF00');
+    const mfr = this.getData()?.manufacturerName || '';
+    const isBattery = BATTERY_POWERED_SENSORS.includes(mfr);
+
+    this.log(`[RADAR] v5.5.250 - ${isBattery ? 'BATTERY' : 'MAINS'} powered`);
+    this.log('[RADAR] DPs: 1-6,9,101-107,112 | ZCL: 400,406,EF00');
+
+    // v5.5.250: Add battery capability for battery sensors
+    if (isBattery && !this.hasCapability('measure_battery')) {
+      try {
+        await this.addCapability('measure_battery');
+        this.log('[RADAR] ✅ Added measure_battery for battery sensor');
+      } catch (e) { /* ignore */ }
+    }
 
     // Setup ZCL clusters
     await this._setupZclClusters(zclNode);
