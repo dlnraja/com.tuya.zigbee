@@ -1,4 +1,10 @@
 {
+  "5.5.243": {
+    "en": "🔧 IR Blaster Fix: Improved learning mode with proper 0xE004 cluster protocol ({\"study\":0/1}). Added _sendRawClusterCommand for ZS06/UFO-R11. Better error handling and fallback to OnOff.",
+    "fr": "🔧 IR Blaster Fix: Mode apprentissage amélioré avec protocole cluster 0xE004 ({\"study\":0/1}). Ajout _sendRawClusterCommand pour ZS06/UFO-R11. Meilleure gestion erreurs.",
+    "nl": "🔧 IR Blaster Fix: Verbeterde leermodus met juiste 0xE004 cluster protocol. _sendRawClusterCommand toegevoegd voor ZS06/UFO-R11.",
+    "de": "🔧 IR Blaster Fix: Verbesserter Lernmodus mit korrektem 0xE004-Cluster-Protokoll. _sendRawClusterCommand für ZS06/UFO-R11 hinzugefügt."
+  },
   "5.5.242": {
     "en": "🔧 IR Blaster Enhancement: Added clusters 0xED00/0xE004 for full IR protocol support. Improved sendIRCode with Z2M-compatible JSON format. Protocol documentation added.",
     "fr": "🔧 IR Blaster Amélioré: Clusters 0xED00/0xE004 pour support protocole IR complet. sendIRCode amélioré format JSON compatible Z2M. Documentation protocole ajoutée.",
