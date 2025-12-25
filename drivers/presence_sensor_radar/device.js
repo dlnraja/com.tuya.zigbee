@@ -114,21 +114,40 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
     const mfr = this.getData()?.manufacturerName || '';
     const isBattery = BATTERY_POWERED_SENSORS.includes(mfr);
 
-    this.log(`[RADAR] v5.5.250 - ${isBattery ? 'BATTERY' : 'MAINS'} powered`);
+    this.log(`[RADAR] v5.5.252 - ${isBattery ? 'BATTERY (sleepy EndDevice)' : 'MAINS'} powered`);
     this.log('[RADAR] DPs: 1-6,9,101-107,112 | ZCL: 400,406,EF00');
 
-    // v5.5.250: Add battery capability for battery sensors
-    if (isBattery && !this.hasCapability('measure_battery')) {
-      try {
-        await this.addCapability('measure_battery');
-        this.log('[RADAR] ✅ Added measure_battery for battery sensor');
-      } catch (e) { /* ignore */ }
+    // v5.5.252: For battery sensors, use minimal init to avoid timeouts
+    // Battery EndDevices sleep immediately after pairing, so we can't do heavy init
+    if (isBattery) {
+      this.log('[RADAR] ⚡ Using MINIMAL init for battery sensor (avoid timeouts)');
+
+      // Only do essential setup - NO blocking operations
+      this.zclNode = zclNode;
+
+      // Add battery capability
+      if (!this.hasCapability('measure_battery')) {
+        try {
+          await this.addCapability('measure_battery');
+          this.log('[RADAR] ✅ Added measure_battery');
+        } catch (e) { /* ignore */ }
+      }
+
+      // Setup passive listeners only (no queries)
+      this._setupPassiveListeners(zclNode);
+
+      // Mark as available - don't wait for data
+      await this.setAvailable().catch(() => { });
+
+      this.log('[RADAR] ✅ Battery sensor ready (passive mode)');
+      return; // Skip heavy HybridSensorBase init
     }
+
+    // For mains-powered sensors, do full init
+    await super.onNodeInit({ zclNode });
 
     // Setup ZCL clusters
     await this._setupZclClusters(zclNode);
@@ -142,6 +161,77 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     }
 
     this.log('[RADAR] ✅ Radar presence sensor ready');
+  }
+
+  /**
+   * v5.5.252: Setup passive listeners for battery sensors
+   * These only listen for incoming data, no outgoing queries
+   */
+  _setupPassiveListeners(zclNode) {
+    const ep1 = zclNode?.endpoints?.[1];
+    if (!ep1) return;
+
+    // Listen for Tuya DP reports (cluster 0xEF00)
+    try {
+      const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
+      if (tuyaCluster?.on) {
+        tuyaCluster.on('response', (data) => {
+          this.log('[RADAR-BATTERY] Tuya response received');
+          this._handleTuyaResponse(data);
+        });
+        tuyaCluster.on('reporting', (data) => {
+          this.log('[RADAR-BATTERY] Tuya reporting received');
+          this._handleTuyaResponse(data);
+        });
+        tuyaCluster.on('datapoint', (data) => {
+          this.log('[RADAR-BATTERY] Tuya datapoint received');
+          this._handleTuyaResponse(data);
+        });
+        this.log('[RADAR] ✅ Passive Tuya listener configured');
+      }
+    } catch (e) { /* ignore */ }
+
+    // Listen for occupancy reports
+    try {
+      const occCluster = ep1.clusters?.msOccupancySensing;
+      if (occCluster?.on) {
+        occCluster.on('attr.occupancy', (v) => {
+          const occupied = (v & 0x01) !== 0;
+          this.log(`[RADAR-BATTERY] Occupancy: ${occupied}`);
+          this.setCapabilityValue('alarm_motion', occupied).catch(() => { });
+        });
+        this.log('[RADAR] ✅ Passive occupancy listener configured');
+      }
+    } catch (e) { /* ignore */ }
+  }
+
+  /**
+   * v5.5.252: Handle Tuya response for battery sensors
+   */
+  _handleTuyaResponse(data) {
+    if (!data) return;
+
+    // Mark device as available when we receive data
+    this.setAvailable().catch(() => { });
+
+    // Process DPs
+    const dpMappings = this.dpMappings;
+    const dpId = data.dp || data.dpId || data.datapoint;
+    const value = data.value ?? data.data;
+
+    if (dpId && dpMappings[dpId]) {
+      const mapping = dpMappings[dpId];
+      if (mapping.capability) {
+        let finalValue = value;
+        if (mapping.transform) {
+          finalValue = mapping.transform(value);
+        } else if (mapping.divisor) {
+          finalValue = value / mapping.divisor;
+        }
+        this.log(`[RADAR-BATTERY] DP${dpId} → ${mapping.capability} = ${finalValue}`);
+        this.setCapabilityValue(mapping.capability, finalValue).catch(() => { });
+      }
+    }
   }
 
   async _setupZclClusters(zclNode) {
