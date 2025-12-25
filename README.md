@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.239-blue)
+![Version](https://img.shields.io/badge/version-5.5.240-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-86-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.239
+## 🚀 Latest Updates - v5.5.240
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.240** | 🔧 SDK3 Compliance: Fixed Homey Compose manifest warning. Al... |
 | **v5.5.239** | 🚀 Universal Enrichment: +13 new flow cards (motion, contact... |
 | **v5.5.238** | 💡 TS0505B Full Features: Light effects (breath, color_loop,... |
 | **v5.5.237** | 💡 TS0505B Enrichment: Added 10 more manufacturerNames for R... |
@@ -66,7 +67,6 @@
 | **v5.5.235** | 🔧 Workflows & History Scan: Improved GitHub workflows (Node... |
 | **v5.5.234** | 🔥 Z2M/Blakadder Deep Enrichment: Added 24 more manufacturer... |
 | **v5.5.233** | 🔧 Build Fix + User Suggestions: Fixed build processing issu... |
-| **v5.5.232** | 🚀 MASSIVE Z2M ENRICHMENT: Added 100 new manufacturerNames f... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
