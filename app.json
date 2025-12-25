@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead. Last publish: 2025-11-24",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.238",
+  "version": "5.5.239",
   "lastPublishDatetime": "2025-12-23T09:45:57.795Z",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -152,6 +152,47 @@
             "name": "device",
             "filter": "driver_id=button_wireless|button_wireless_1|button_wireless_2|button_wireless_3|button_wireless_4|button_wireless_6|button_wireless_8|switch_wireless|scene_switch_1|scene_switch_2|scene_switch_3|scene_switch_4|scene_switch_6"
           }
+        ]
+      },
+      {
+        "id": "contact_changed",
+        "title": {
+          "en": "Contact changed",
+          "nl": "Contact gewijzigd",
+          "de": "Kontakt geändert",
+          "fr": "Contact changé"
+        },
+        "titleFormatted": {
+          "en": "Contact changed on [[device]]",
+          "nl": "Contact gewijzigd op [[device]]",
+          "de": "Kontakt geändert auf [[device]]",
+          "fr": "Contact changé sur [[device]]"
+        },
+        "hint": {
+          "en": "Triggered when a door/window sensor state changes",
+          "nl": "Geactiveerd wanneer een deur/raam sensor status wijzigt",
+          "de": "Wird ausgelöst, wenn sich ein Tür-/Fenstersensorstatus ändert",
+          "fr": "Déclenché lorsque l'état d'un capteur de porte/fenêtre change"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee&capabilities=alarm_contact"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "state",
+            "type": "boolean",
+            "title": {
+              "en": "Is open"
+            },
+            "example": true
+          }
+        ],
+        "platforms": [
+          "local"
         ]
       },
       {
@@ -364,6 +405,41 @@
         }
       },
       {
+        "id": "humidity_changed",
+        "title": {
+          "en": "Humidity changed",
+          "nl": "Luchtvochtigheid gewijzigd",
+          "de": "Luftfeuchtigkeit geändert",
+          "fr": "Humidité changée"
+        },
+        "titleFormatted": {
+          "en": "Humidity changed on [[device]]",
+          "nl": "Luchtvochtigheid gewijzigd op [[device]]",
+          "de": "Luftfeuchtigkeit geändert auf [[device]]",
+          "fr": "Humidité changée sur [[device]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee&capabilities=measure_humidity"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "humidity",
+            "type": "number",
+            "title": {
+              "en": "Humidity (%)"
+            },
+            "example": 65
+          }
+        ],
+        "platforms": [
+          "local"
+        ]
+      },
+      {
         "id": "low_battery_warning",
         "title": {
           "en": "Low battery warning",
@@ -392,6 +468,47 @@
               "fr": "Niveau batterie"
             }
           }
+        ]
+      },
+      {
+        "id": "motion_detected",
+        "title": {
+          "en": "Motion detected",
+          "nl": "Beweging gedetecteerd",
+          "de": "Bewegung erkannt",
+          "fr": "Mouvement détecté"
+        },
+        "titleFormatted": {
+          "en": "Motion detected on [[device]]",
+          "nl": "Beweging gedetecteerd op [[device]]",
+          "de": "Bewegung erkannt auf [[device]]",
+          "fr": "Mouvement détecté sur [[device]]"
+        },
+        "hint": {
+          "en": "Triggered when motion is detected by PIR or radar sensors",
+          "nl": "Geactiveerd wanneer beweging wordt gedetecteerd",
+          "de": "Wird ausgelöst, wenn Bewegung erkannt wird",
+          "fr": "Déclenché lorsqu'un mouvement est détecté"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee&capabilities=alarm_motion"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "luminance",
+            "type": "number",
+            "title": {
+              "en": "Luminance (lux)"
+            },
+            "example": 150
+          }
+        ],
+        "platforms": [
+          "local"
         ]
       },
       {
@@ -586,6 +703,31 @@
             },
             "example": "hello"
           }
+        ]
+      },
+      {
+        "id": "smoke_detected",
+        "title": {
+          "en": "Smoke detected",
+          "nl": "Rook gedetecteerd",
+          "de": "Rauch erkannt",
+          "fr": "Fumée détectée"
+        },
+        "titleFormatted": {
+          "en": "Smoke detected on [[device]]",
+          "nl": "Rook gedetecteerd op [[device]]",
+          "de": "Rauch erkannt auf [[device]]",
+          "fr": "Fumée détectée sur [[device]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee&capabilities=alarm_smoke"
+          }
+        ],
+        "platforms": [
+          "local"
         ]
       },
       {
@@ -794,6 +936,31 @@
             "name": "device",
             "filter": "driver_id=usb_outlet_advanced"
           }
+        ]
+      },
+      {
+        "id": "water_leak_detected",
+        "title": {
+          "en": "Water leak detected",
+          "nl": "Waterlek gedetecteerd",
+          "de": "Wasserleck erkannt",
+          "fr": "Fuite d'eau détectée"
+        },
+        "titleFormatted": {
+          "en": "Water leak detected on [[device]]",
+          "nl": "Waterlek gedetecteerd op [[device]]",
+          "de": "Wasserleck erkannt auf [[device]]",
+          "fr": "Fuite d'eau détectée sur [[device]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee&capabilities=alarm_water"
+          }
+        ],
+        "platforms": [
+          "local"
         ]
       },
       {
@@ -6976,6 +7143,124 @@
         }
       },
       {
+        "id": "humidity_above",
+        "title": {
+          "en": "Humidity !{{is|isn't}} above",
+          "nl": "Luchtvochtigheid !{{is|is niet}} boven",
+          "de": "Luftfeuchtigkeit !{{ist|ist nicht}} über",
+          "fr": "Humidité !{{est|n'est pas}} au-dessus de"
+        },
+        "titleFormatted": {
+          "en": "[[device]] humidity !{{is|isn't}} above [[humidity]]%",
+          "nl": "[[device]] luchtvochtigheid !{{is|is niet}} boven [[humidity]]%",
+          "de": "[[device]] Luftfeuchtigkeit !{{ist|ist nicht}} über [[humidity]]%",
+          "fr": "[[device]] humidité !{{est|n'est pas}} au-dessus de [[humidity]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee&capabilities=measure_humidity"
+          },
+          {
+            "type": "number",
+            "name": "humidity",
+            "title": {
+              "en": "Humidity (%)"
+            },
+            "min": 0,
+            "max": 100
+          }
+        ],
+        "platforms": [
+          "local"
+        ]
+      },
+      {
+        "id": "is_contact_open",
+        "title": {
+          "en": "Contact !{{is|isn't}} open",
+          "nl": "Contact !{{is|is niet}} open",
+          "de": "Kontakt !{{ist|ist nicht}} offen",
+          "fr": "Contact !{{est|n'est pas}} ouvert"
+        },
+        "titleFormatted": {
+          "en": "[[device]] contact !{{is|isn't}} open",
+          "nl": "[[device]] contact !{{is|is niet}} open",
+          "de": "[[device]] Kontakt !{{ist|ist nicht}} offen",
+          "fr": "[[device]] contact !{{est|n'est pas}} ouvert"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee&capabilities=alarm_contact"
+          }
+        ],
+        "platforms": [
+          "local"
+        ]
+      },
+      {
+        "id": "is_motion_detected",
+        "title": {
+          "en": "Motion !{{is|isn't}} detected",
+          "nl": "Beweging !{{is|is niet}} gedetecteerd",
+          "de": "Bewegung !{{ist|ist nicht}} erkannt",
+          "fr": "Mouvement !{{est|n'est pas}} détecté"
+        },
+        "titleFormatted": {
+          "en": "[[device]] motion !{{is|isn't}} detected",
+          "nl": "[[device]] beweging !{{is|is niet}} gedetecteerd",
+          "de": "[[device]] Bewegung !{{ist|ist nicht}} erkannt",
+          "fr": "[[device]] mouvement !{{est|n'est pas}} détecté"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee&capabilities=alarm_motion"
+          }
+        ],
+        "platforms": [
+          "local"
+        ]
+      },
+      {
+        "id": "temperature_above",
+        "title": {
+          "en": "Temperature !{{is|isn't}} above",
+          "nl": "Temperatuur !{{is|is niet}} boven",
+          "de": "Temperatur !{{ist|ist nicht}} über",
+          "fr": "Température !{{est|n'est pas}} au-dessus de"
+        },
+        "titleFormatted": {
+          "en": "[[device]] temperature !{{is|isn't}} above [[temperature]]°C",
+          "nl": "[[device]] temperatuur !{{is|is niet}} boven [[temperature]]°C",
+          "de": "[[device]] Temperatur !{{ist|ist nicht}} über [[temperature]]°C",
+          "fr": "[[device]] température !{{est|n'est pas}} au-dessus de [[temperature]]°C"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee&capabilities=measure_temperature"
+          },
+          {
+            "type": "number",
+            "name": "temperature",
+            "title": {
+              "en": "Temperature (°C)"
+            },
+            "min": -40,
+            "max": 80
+          }
+        ],
+        "platforms": [
+          "local"
+        ]
+      },
+      {
         "id": "thermostat_is_heating",
         "title": {
           "en": "Thermostat !{{is|isn't}} heating",
@@ -8993,6 +9278,41 @@
         ]
       },
       {
+        "id": "set_brightness_percent",
+        "title": {
+          "en": "Set brightness (%)",
+          "nl": "Helderheid instellen (%)",
+          "de": "Helligkeit einstellen (%)",
+          "fr": "Définir luminosité (%)"
+        },
+        "titleFormatted": {
+          "en": "Set [[device]] brightness to [[brightness]]%",
+          "nl": "Zet [[device]] helderheid op [[brightness]]%",
+          "de": "Setze [[device]] Helligkeit auf [[brightness]]%",
+          "fr": "Définir [[device]] luminosité sur [[brightness]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee&capabilities=dim"
+          },
+          {
+            "type": "number",
+            "name": "brightness",
+            "title": {
+              "en": "Brightness (%)"
+            },
+            "min": 0,
+            "max": 100,
+            "step": 1
+          }
+        ],
+        "platforms": [
+          "local"
+        ]
+      },
+      {
         "id": "set_child_lock",
         "title": {
           "en": "Set child lock",
@@ -9115,6 +9435,76 @@
             "label": "%",
             "labelMultiplier": 1
           }
+        ]
+      },
+      {
+        "id": "set_fan_speed",
+        "title": {
+          "en": "Set fan speed",
+          "nl": "Ventilatorsnelheid instellen",
+          "de": "Lüftergeschwindigkeit einstellen",
+          "fr": "Définir vitesse ventilateur"
+        },
+        "titleFormatted": {
+          "en": "Set [[device]] fan speed to [[speed]]",
+          "nl": "Zet [[device]] ventilatorsnelheid op [[speed]]",
+          "de": "Setze [[device]] Lüftergeschwindigkeit auf [[speed]]",
+          "fr": "Définir [[device]] vitesse ventilateur sur [[speed]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee&capabilities=fan_speed"
+          },
+          {
+            "type": "dropdown",
+            "name": "speed",
+            "title": {
+              "en": "Speed"
+            },
+            "values": [
+              {
+                "id": "low",
+                "label": {
+                  "en": "Low",
+                  "nl": "Laag",
+                  "de": "Niedrig",
+                  "fr": "Bas"
+                }
+              },
+              {
+                "id": "medium",
+                "label": {
+                  "en": "Medium",
+                  "nl": "Gemiddeld",
+                  "de": "Mittel",
+                  "fr": "Moyen"
+                }
+              },
+              {
+                "id": "high",
+                "label": {
+                  "en": "High",
+                  "nl": "Hoog",
+                  "de": "Hoch",
+                  "fr": "Haut"
+                }
+              },
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto",
+                  "de": "Auto",
+                  "fr": "Auto"
+                }
+              }
+            ]
+          }
+        ],
+        "platforms": [
+          "local"
         ]
       },
       {
@@ -9425,6 +9815,41 @@
         ]
       },
       {
+        "id": "set_valve_position",
+        "title": {
+          "en": "Set valve position",
+          "nl": "Klepstand instellen",
+          "de": "Ventilposition einstellen",
+          "fr": "Définir position valve"
+        },
+        "titleFormatted": {
+          "en": "Set [[device]] valve to [[position]]%",
+          "nl": "Zet [[device]] klep op [[position]]%",
+          "de": "Setze [[device]] Ventil auf [[position]]%",
+          "fr": "Définir [[device]] valve sur [[position]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee&capabilities=valve_position"
+          },
+          {
+            "type": "number",
+            "name": "position",
+            "title": {
+              "en": "Position (%)"
+            },
+            "min": 0,
+            "max": 100,
+            "step": 1
+          }
+        ],
+        "platforms": [
+          "local"
+        ]
+      },
+      {
         "id": "silence_alarm",
         "title": {
           "en": "Silence alarm",
@@ -9444,6 +9869,31 @@
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
+        ]
+      },
+      {
+        "id": "toggle_onoff",
+        "title": {
+          "en": "Toggle on/off",
+          "nl": "Schakel om",
+          "de": "Ein/Aus umschalten",
+          "fr": "Basculer on/off"
+        },
+        "titleFormatted": {
+          "en": "Toggle [[device]]",
+          "nl": "Schakel [[device]] om",
+          "de": "[[device]] umschalten",
+          "fr": "Basculer [[device]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee&capabilities=onoff"
+          }
+        ],
+        "platforms": [
+          "local"
         ]
       },
       {

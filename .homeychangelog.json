@@ -1,4 +1,10 @@
 {
+  "5.5.239": {
+    "en": "🚀 Universal Enrichment: +13 new flow cards (motion, contact, humidity, smoke, water leak triggers + conditions), UniversalHybridEnricher for 15-min intelligent learning. All 86 drivers now support hybrid Tuya+ZCL mode with auto-protocol detection.",
+    "fr": "🚀 Enrichissement Universel: +13 nouvelles flow cards, UniversalHybridEnricher pour apprentissage intelligent 15min. 86 drivers supportent mode hybride Tuya+ZCL avec détection auto du protocole.",
+    "nl": "🚀 Universele Verrijking: +13 nieuwe flow cards, UniversalHybridEnricher voor 15min intelligent leren. 86 drivers ondersteunen hybride Tuya+ZCL met auto-protocoldetectie.",
+    "de": "🚀 Universelle Anreicherung: +13 neue Flow-Karten, UniversalHybridEnricher für 15min intelligentes Lernen. 86 Treiber unterstützen hybriden Tuya+ZCL-Modus mit Auto-Protokollerkennung."
+  },
   "5.5.238": {
     "en": "💡 TS0505B Full Features: Light effects (breath, color_loop, candle, fireplace, rainbow, party...), color temp in Kelvin, power_on_behavior, do_not_disturb, transition_time settings. New flow cards: Set Light Effect, Set Color Temperature (K).",
     "fr": "💡 TS0505B Fonctionnalités complètes: Effets lumineux (respiration, boucle couleur, bougie, cheminée, arc-en-ciel, fête...), temp couleur en Kelvin, comportement allumage, ne pas déranger. Nouvelles flow cards.",
