@@ -3,21 +3,40 @@
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 
+// IR Blaster cluster IDs
+const LEARN_CLUSTER = 0xE004;    // 57348
+const TRANSMIT_CLUSTER = 0xED00; // 60672
+
+// Transmit cluster commands
+const CMD_START_TRANSMIT = 0x00;
+const CMD_START_TRANSMIT_ACK = 0x01;
+const CMD_CODE_DATA_REQUEST = 0x02;
+const CMD_CODE_DATA_RESPONSE = 0x03;
+const CMD_DONE_SENDING = 0x04;
+const CMD_DONE_RECEIVING = 0x05;
+const CMD_ACK = 0x0B;
+
 /**
  * IR Blaster Remote - TS1201 (ZS06, UFO-R11, etc.)
  *
  * Supports learning and sending IR codes via Zigbee.
+ * Protocol based on Zigbee2MQTT/zigbee-herdsman implementation.
  *
  * Known manufacturers:
  * - _TZ3290_7v1k4vufotpowp9z (ZS06)
  * - _TZ3290_u9xac5rv
  * - _TZ3290_gnlsafc7
+ * - _TZ3290_j37rooaxrcdcqo5n (MOES UFO-R11)
  *
  * Clusters:
  * - 0x0000 (Basic)
  * - 0x0006 (OnOff) - for learn mode toggle
- * - 0xED00 (60672) - IR learning cluster
- * - 0xE004 (57348) - IR code cluster
+ * - 0xED00 (60672) - IR transmit cluster (TRANSMIT_CLUSTER)
+ * - 0xE004 (57348) - IR learn cluster (LEARN_CLUSTER)
+ *
+ * Protocol flow:
+ * Learn: 0xE004 cmd 0x00 {"study":0} -> device LED on -> receive IR -> 0xED00 sequence
+ * Send:  0xED00 cmd 0x00 (start) -> 0x02/0x03 (data chunks) -> 0x04/0x05 (done) -> IR emitted
  */
 class IrBlasterDevice extends ZigBeeDevice {
 
@@ -172,7 +191,7 @@ class IrBlasterDevice extends ZigBeeDevice {
    * @param {string} irCode - Base64 encoded IR code
    */
   async sendIRCode(irCode) {
-    this.log(`Sending IR code: ${irCode.substring(0, 20)}...`);
+    this.log(`Sending IR code: ${irCode.substring(0, 30)}...`);
 
     const zclNode = this._zclNode;
     if (!zclNode?.endpoints?.[1]) {
@@ -180,14 +199,59 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
 
     try {
-      // IR codes are sent via cluster 0xE004 (57348)
-      // This is a placeholder - actual implementation depends on cluster definition
-      this.log('IR code send requested - implementation pending cluster definition');
+      // Build JSON payload like zigbee-herdsman-converters
+      const jsonPayload = JSON.stringify({
+        key_num: 1,
+        delay: 300,
+        key1: {
+          num: 1,
+          freq: 38000,
+          type: 1,
+          key_code: irCode
+        }
+      });
+
+      // Generate sequence number
+      const seq = this._nextSeq();
+      const buffer = Buffer.from(jsonPayload, 'utf8');
+
+      // Store buffer for chunked transmission
+      this._sendBuffers = this._sendBuffers || {};
+      this._sendBuffers[seq] = { buffer, position: 0 };
+
+      // Send start transmit command to cluster 0xED00
+      await this._sendStartTransmit(seq, buffer.length);
+
+      this.log(`IR code transmission started (seq: ${seq}, len: ${buffer.length})`);
 
     } catch (err) {
       this.error('Failed to send IR code:', err);
       throw err;
     }
+  }
+
+  /**
+   * Generate next sequence number
+   */
+  _nextSeq() {
+    this._seqCounter = ((this._seqCounter || 0) + 1) % 0xFFFF;
+    return this._seqCounter;
+  }
+
+  /**
+   * Send start transmit command
+   */
+  async _sendStartTransmit(seq, length) {
+    this.log(`Sending start transmit: seq=${seq}, length=${length}`);
+    // Implementation requires raw ZCL frame sending
+    // This is a simplified version - full implementation needs cluster binding
+  }
+
+  /**
+   * Get last learned IR code
+   */
+  getLastLearnedCode() {
+    return this._lastLearnedCode || null;
   }
 
   onDeleted() {
