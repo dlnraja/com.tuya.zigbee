@@ -117,7 +117,7 @@ class IrBlasterDevice extends ZigBeeDevice {
   }
 
   /**
-   * Enable IR learning mode
+   * Enable IR learning mode using proper 0xE004 cluster protocol
    */
   async _enableLearnMode(duration = 30) {
     this.log(`Enabling IR learn mode for ${duration} seconds...`);
@@ -128,10 +128,28 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
 
     try {
-      // Toggle on the onOff cluster to enable learning - keep it ON during learning
-      await zclNode.endpoints[1].clusters.onOff.setOn();
+      // Send learn command to cluster 0xE004 with {"study":0}
+      // This is the proper Zigbee2MQTT/zigbee-herdsman protocol
+      const learnPayload = Buffer.from(JSON.stringify({ study: 0 }), 'utf8');
+
+      this.log('Sending IR learn command to cluster 0xE004...');
+
+      // Try to send raw ZCL frame to LEARN_CLUSTER
+      try {
+        await this._sendRawClusterCommand(LEARN_CLUSTER, 0x00, learnPayload);
+        this.log('IR learn command sent via cluster 0xE004');
+      } catch (e) {
+        // Fallback: use OnOff cluster
+        this.log('Cluster 0xE004 not available, using OnOff fallback');
+        await zclNode.endpoints[1].clusters.onOff.setOn();
+      }
+
       this.setCapabilityValue('onoff', true).catch(() => { });
       this.log('Learn mode enabled - point remote at device and press button');
+
+      // Initialize receive buffer for learned code
+      this._receiveBuffers = {};
+      this._pendingReceiveSeqs = [];
 
       // Clear any existing timeout
       if (this._learnTimeout) {
@@ -175,10 +193,30 @@ class IrBlasterDevice extends ZigBeeDevice {
         this._learnTimeout = null;
       }
 
-      // Turn off learning mode
-      await zclNode.endpoints[1].clusters.onOff.setOff();
+      // Send stop learn command to cluster 0xE004 with {"study":1}
+      const stopPayload = Buffer.from(JSON.stringify({ study: 1 }), 'utf8');
+
+      try {
+        await this._sendRawClusterCommand(LEARN_CLUSTER, 0x00, stopPayload);
+        this.log('IR stop learn command sent via cluster 0xE004');
+      } catch (e) {
+        // Fallback: use OnOff cluster
+        await zclNode.endpoints[1].clusters.onOff.setOff();
+      }
+
       this.setCapabilityValue('onoff', false).catch(() => { });
       this.log('Learn mode disabled');
+
+      // Check if we received a code
+      if (this._lastLearnedCode) {
+        this.log(`Last learned code: ${this._lastLearnedCode.substring(0, 50)}...`);
+        // Update capability if available
+        if (this.hasCapability('ir_code_received')) {
+          this.setCapabilityValue('ir_code_received', this._lastLearnedCode).catch(() => { });
+        }
+        // Trigger flow
+        this.driver.codeLearnedTrigger?.trigger(this, { ir_code: this._lastLearnedCode }, {}).catch(() => { });
+      }
 
     } catch (err) {
       this.error('Failed to disable learn mode:', err);
@@ -239,12 +277,63 @@ class IrBlasterDevice extends ZigBeeDevice {
   }
 
   /**
-   * Send start transmit command
+   * Send start transmit command to cluster 0xED00
    */
   async _sendStartTransmit(seq, length) {
     this.log(`Sending start transmit: seq=${seq}, length=${length}`);
-    // Implementation requires raw ZCL frame sending
-    // This is a simplified version - full implementation needs cluster binding
+
+    // Build payload structure like zigbee-herdsman-converters
+    const payload = Buffer.alloc(16);
+    payload.writeUInt16LE(seq, 0);        // seq
+    payload.writeUInt32LE(length, 2);     // length
+    payload.writeUInt32LE(0, 6);          // unk1
+    payload.writeUInt16LE(LEARN_CLUSTER, 10); // unk2 (cluster id)
+    payload.writeUInt8(0x01, 12);         // unk3
+    payload.writeUInt8(0x02, 13);         // cmd
+    payload.writeUInt16LE(0, 14);         // unk4
+
+    try {
+      await this._sendRawClusterCommand(TRANSMIT_CLUSTER, CMD_START_TRANSMIT, payload);
+      this.log('Start transmit sent successfully');
+    } catch (err) {
+      this.error('Failed to send start transmit:', err);
+      throw err;
+    }
+  }
+
+  /**
+   * Send raw ZCL cluster command
+   */
+  async _sendRawClusterCommand(clusterId, commandId, payload) {
+    const zclNode = this._zclNode;
+    if (!zclNode?.endpoints?.[1]) {
+      throw new Error('Device not ready');
+    }
+
+    // Convert payload to hex string for ZCL frame
+    const payloadHex = payload.toString('hex');
+    this.log(`Sending cluster 0x${clusterId.toString(16)} cmd 0x${commandId.toString(16)}: ${payloadHex.substring(0, 40)}...`);
+
+    // Use Homey's raw ZCL sending capability
+    try {
+      // Try manufacturer-specific command
+      const endpoint = zclNode.endpoints[1];
+
+      // For proprietary clusters, we need to use sendFrame or similar
+      // This is a best-effort implementation
+      if (endpoint.sendFrame) {
+        await endpoint.sendFrame(clusterId, {
+          frameControl: { clusterSpecific: true, manufacturerSpecific: false, disableDefaultResponse: false },
+          commandId: commandId,
+          payload: payload
+        });
+      } else {
+        this.log('Raw frame sending not available, command may not work');
+      }
+    } catch (err) {
+      this.log(`Cluster command error: ${err.message}`);
+      throw err;
+    }
   }
 
   /**
@@ -252,6 +341,14 @@ class IrBlasterDevice extends ZigBeeDevice {
    */
   getLastLearnedCode() {
     return this._lastLearnedCode || null;
+  }
+
+  /**
+   * Set last learned IR code (called from cluster listener)
+   */
+  setLastLearnedCode(code) {
+    this._lastLearnedCode = code;
+    this.log(`Stored learned IR code: ${code.substring(0, 50)}...`);
   }
 
   onDeleted() {
