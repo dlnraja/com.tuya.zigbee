@@ -590,5 +590,11 @@
     "fr": "Correctif Stabilite ZG-204ZM: Capteurs presence batterie detectes comme EndDevices dormants.",
     "nl": "ZG-204ZM Stabiliteit Fix: Batterij aanwezigheidssensoren correct gedetecteerd als slapende EndDevices.",
     "de": "ZG-204ZM Stabilitaets-Fix: Batteriebetriebene Prasenzsensoren als schlafende EndDevices erkannt."
+  },
+  "5.5.252": {
+    "en": "ZG-204ZM Fix v2: Minimal init for battery sensors to avoid pairing timeout. Device stays available after pairing.",
+    "fr": "ZG-204ZM Fix v2: Init minimal pour capteurs batterie. Appareil reste disponible apres appairage.",
+    "nl": "ZG-204ZM Fix v2: Minimale init voor batterijsensoren. Apparaat blijft beschikbaar na koppelen.",
+    "de": "ZG-204ZM Fix v2: Minimale Init fuer Batteriesensoren. Geraet bleibt nach Pairing verfuegbar."
   }
 }
