@@ -584,5 +584,11 @@
     "fr": "🔧 Correctif Rapport Utilisateur: Ajout support capteur présence ZG-204ZM (_TZE200_2aaelwxk). Total: 3988 IDs.",
     "nl": "🔧 Gebruikersrapport Fix: ZG-204ZM aanwezigheidssensor ondersteuning toegevoegd. Totaal: 3988 IDs.",
     "de": "🔧 Benutzerbericht Fix: ZG-204ZM Präsenzsensor Unterstützung hinzugefügt. Gesamt: 3988 IDs."
+  },
+  "5.5.251": {
+    "en": "ZG-204ZM Stability Fix: Battery-powered presence sensors now properly detected as sleepy EndDevices. Fixes unavailable after seconds issue.",
+    "fr": "Correctif Stabilite ZG-204ZM: Capteurs presence batterie detectes comme EndDevices dormants.",
+    "nl": "ZG-204ZM Stabiliteit Fix: Batterij aanwezigheidssensoren correct gedetecteerd als slapende EndDevices.",
+    "de": "ZG-204ZM Stabilitaets-Fix: Batteriebetriebene Prasenzsensoren als schlafende EndDevices erkannt."
   }
 }
