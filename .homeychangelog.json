@@ -1,4 +1,10 @@
 {
+  "5.5.241": {
+    "en": "🔧 Forum Fixes: Fixed _TZE284_iadro9bf & _TZE204_gkfbdvyx misclassified as climate/motion (now radar). Added HOBEIAN ZG-227Z support. Device classification improvements from community feedback.",
+    "fr": "🔧 Corrections Forum: Corrigé _TZE284_iadro9bf & _TZE204_gkfbdvyx mal classés climat/motion (maintenant radar). Ajout support HOBEIAN ZG-227Z. Améliorations classification depuis retours communauté.",
+    "nl": "🔧 Forum Fixes: _TZE284_iadro9bf & _TZE204_gkfbdvyx verkeerd geclassificeerd als klimaat/motion (nu radar). HOBEIAN ZG-227Z ondersteuning toegevoegd.",
+    "de": "🔧 Forum-Korrekturen: _TZE284_iadro9bf & _TZE204_gkfbdvyx falsch klassifiziert als Klima/Bewegung (jetzt Radar). HOBEIAN ZG-227Z Unterstützung hinzugefügt."
+  },
   "5.5.240": {
     "en": "🔧 SDK3 Compliance: Fixed Homey Compose manifest warning. All validation warnings resolved. 100% SDK3 compliant.",
     "fr": "🔧 Conformité SDK3: Corrigé warning manifest Homey Compose. Tous les warnings résolus. 100% conforme SDK3.",
