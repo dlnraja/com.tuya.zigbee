@@ -1,4 +1,10 @@
 {
+  "5.5.242": {
+    "en": "🔧 IR Blaster Enhancement: Added clusters 0xED00/0xE004 for full IR protocol support. Improved sendIRCode with Z2M-compatible JSON format. Protocol documentation added.",
+    "fr": "🔧 IR Blaster Amélioré: Clusters 0xED00/0xE004 pour support protocole IR complet. sendIRCode amélioré format JSON compatible Z2M. Documentation protocole ajoutée.",
+    "nl": "🔧 IR Blaster Verbeterd: Clusters 0xED00/0xE004 voor volledige IR protocol ondersteuning. sendIRCode verbeterd met Z2M-compatibel JSON formaat.",
+    "de": "🔧 IR Blaster Verbessert: Cluster 0xED00/0xE004 für volle IR-Protokollunterstützung. sendIRCode mit Z2M-kompatiblem JSON-Format verbessert."
+  },
   "5.5.241": {
     "en": "🔧 Forum Fixes: Fixed _TZE284_iadro9bf & _TZE204_gkfbdvyx misclassified as climate/motion (now radar). Added HOBEIAN ZG-227Z support. Device classification improvements from community feedback.",
     "fr": "🔧 Corrections Forum: Corrigé _TZE284_iadro9bf & _TZE204_gkfbdvyx mal classés climat/motion (maintenant radar). Ajout support HOBEIAN ZG-227Z. Améliorations classification depuis retours communauté.",
