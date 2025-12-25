@@ -1,4 +1,10 @@
 {
+  "5.5.244": {
+    "en": "🔧 Z2M Enrichment: +30 manufacturerNames from Zigbee2MQTT (3915 total). Added MiBoxer LED controllers, Moes RGB downlights, Nous outdoor plugs, AVATTO switches. Cross-validated with Z2M database.",
+    "fr": "🔧 Enrichissement Z2M: +30 manufacturerNames depuis Zigbee2MQTT (3915 total). Ajouté contrôleurs LED MiBoxer, downlights RGB Moes, prises outdoor Nous, switches AVATTO.",
+    "nl": "🔧 Z2M Verrijking: +30 manufacturerNames van Zigbee2MQTT (3915 totaal). MiBoxer LED controllers, Moes RGB downlights, Nous outdoor pluggen toegevoegd.",
+    "de": "🔧 Z2M Anreicherung: +30 manufacturerNames von Zigbee2MQTT (3915 gesamt). MiBoxer LED-Controller, Moes RGB-Downlights, Nous Outdoor-Steckdosen hinzugefügt."
+  },
   "5.5.243": {
     "en": "🔧 IR Blaster Fix: Improved learning mode with proper 0xE004 cluster protocol ({\"study\":0/1}). Added _sendRawClusterCommand for ZS06/UFO-R11. Better error handling and fallback to OnOff.",
     "fr": "🔧 IR Blaster Fix: Mode apprentissage amélioré avec protocole cluster 0xE004 ({\"study\":0/1}). Ajout _sendRawClusterCommand pour ZS06/UFO-R11. Meilleure gestion erreurs.",
