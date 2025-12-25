@@ -1,13 +1,13 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.246-blue)
+![Version](https://img.shields.io/badge/version-5.5.247-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-86-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 86 drivers and 3917+ manufacturer IDs.**
+**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 86 drivers and 3961+ manufacturer IDs.**
 
 🏠 **100% Local Control** - No Cloud, No Internet Required
 🔋 **Smart Battery** - Accurate readings with voltage fallback
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.246
+## 🚀 Latest Updates - v5.5.247
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.247** | 🔄 Legacy Recovery: Analyzed 3 historical versions (v5.3.84,... |
 | **v5.5.246** | 🔧 Forum & Issues Audit: Analyzed 93 dlnraja + 1329 Johan Be... |
 | **v5.5.245** | 🔧 Cross-validation Complete: Analyzed Z2M (1372 IDs), ZHA (... |
 | **v5.5.244** | 🔧 Z2M Enrichment: +30 manufacturerNames from Zigbee2MQTT (3... |
@@ -66,7 +67,6 @@
 | **v5.5.242** | 🔧 IR Blaster Enhancement: Added clusters 0xED00/0xE004 for ... |
 | **v5.5.241** | 🔧 Forum Fixes: Fixed _TZE284_iadro9bf & _TZE204_gkfbdvyx mi... |
 | **v5.5.240** | 🔧 SDK3 Compliance: Fixed Homey Compose manifest warning. Al... |
-| **v5.5.239** | 🚀 Universal Enrichment: +13 new flow cards (motion, contact... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
