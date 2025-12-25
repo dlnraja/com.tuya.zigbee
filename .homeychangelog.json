@@ -566,5 +566,11 @@
     "fr": "🔧 Fix: Double sync heure LCD capteur climatique (ZCL + Tuya EF00)",
     "nl": "🔧 Fix: LCD klimaatsensor dubbele tijdsync (ZCL + Tuya EF00)",
     "de": "🔧 Fix: LCD Klimasensor duale Zeitsynchronisierung (ZCL + Tuya EF00)"
+  },
+  "5.5.248": {
+    "en": "🌐 Internet Search Enrichment: +24 new manufacturerNames from Z2M issues, ZHA handlers, Hubitat, Blakadder. Added: thermostats, energy meters, radar sensors, LED controllers, curtain motors. Total: 3985 IDs.",
+    "fr": "🌐 Enrichissement Internet: +24 nouveaux manufacturerNames depuis Z2M, ZHA, Hubitat, Blakadder. Ajouté: thermostats, compteurs énergie, capteurs radar, LED, moteurs rideaux. Total: 3985 IDs.",
+    "nl": "🌐 Internet Verrijking: +24 nieuwe manufacturerNames van Z2M, ZHA, Hubitat, Blakadder. Toegevoegd: thermostaten, energiemeters, radarsensoren, LED, gordijnmotoren. Totaal: 3985 IDs.",
+    "de": "🌐 Internet-Anreicherung: +24 neue manufacturerNames von Z2M, ZHA, Hubitat, Blakadder. Hinzugefügt: Thermostate, Energiezähler, Radarsensoren, LED, Vorhangmotoren. Gesamt: 3985 IDs."
   }
 }
