@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.238-blue)
+![Version](https://img.shields.io/badge/version-5.5.239-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-86-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -29,7 +29,7 @@
 | **SVG Icons** | 86 |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2025-12-24 |
+| **Last Updated** | 2025-12-25 |
 
 ### 📦 Top 15 Drivers by Device IDs
 
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.238
+## 🚀 Latest Updates - v5.5.239
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.239** | 🚀 Universal Enrichment: +13 new flow cards (motion, contact... |
 | **v5.5.238** | 💡 TS0505B Full Features: Light effects (breath, color_loop,... |
 | **v5.5.237** | 💡 TS0505B Enrichment: Added 10 more manufacturerNames for R... |
 | **v5.5.236** | 🐛 Forum Fix #672: Fixed TS0505B RGB bulb incorrectly pairin... |
@@ -66,7 +67,6 @@
 | **v5.5.234** | 🔥 Z2M/Blakadder Deep Enrichment: Added 24 more manufacturer... |
 | **v5.5.233** | 🔧 Build Fix + User Suggestions: Fixed build processing issu... |
 | **v5.5.232** | 🚀 MASSIVE Z2M ENRICHMENT: Added 100 new manufacturerNames f... |
-| **v5.5.231** | 📋 GitHub Issues Processing: Added HMJ-SC021 smart button su... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
