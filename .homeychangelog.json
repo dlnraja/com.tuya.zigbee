@@ -1,4 +1,10 @@
 {
+  "5.5.247": {
+    "en": "🔄 Legacy Recovery: Analyzed 3 historical versions (v5.3.84, v5.2.99, v34.0.1). Recovered +44 validated manufacturerNames from legacy drivers. Total: 3961 IDs.",
+    "fr": "🔄 Récupération Legacy: Analysé 3 versions historiques. Récupéré +44 manufacturerNames validés. Total: 3961 IDs.",
+    "nl": "🔄 Legacy Herstel: 3 historische versies geanalyseerd. +44 gevalideerde manufacturerNames hersteld. Totaal: 3961 IDs.",
+    "de": "🔄 Legacy-Wiederherstellung: 3 historische Versionen analysiert. +44 validierte manufacturerNames wiederhergestellt. Gesamt: 3961 IDs."
+  },
   "5.5.246": {
     "en": "🔧 Forum & Issues Audit: Analyzed 93 dlnraja + 1329 Johan Bendz issues. Added MOES curtain module _TZ3210_zana8d08 (TS130F). All forum requests verified - 3917 total manufacturerNames.",
     "fr": "🔧 Audit Forum & Issues: Analysé 93 dlnraja + 1329 Johan Bendz issues. Ajouté module rideau MOES _TZ3210_zana8d08 (TS130F). 3917 manufacturerNames total.",

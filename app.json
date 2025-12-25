@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.246",
+  "version": "5.5.247",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -13451,7 +13451,14 @@
           "_TZ3210_c2iwpxf1",
           "_TZ3210_ddigca5n",
           "_TZ3210_rwmitwj4",
-          "_TZ3210_jlf1nepw"
+          "_TZ3210_jlf1nepw",
+          "_TZ3210_eejm8dcr",
+          "_TZB210_quinzf3w",
+          "_TZB210_aavhaadb",
+          "_TZ3290_gnl5a6a5",
+          "_TZ3210_invesber",
+          "_TZ3210_k1pe6ibm",
+          "_TZ3210_5vbjzw54"
         ],
         "endpoints": {
           "1": {
@@ -15910,7 +15917,8 @@
           "TS0201",
           "ZG-101ZL",
           "_TZ3000_nxdziqzc",
-          "_TZ3210_3ulg9kpo"
+          "_TZ3210_3ulg9kpo",
+          "_TZ3000_ke_x0oo3"
         ],
         "productId": [
           "ERS-10TZBVK-AA",
@@ -20375,7 +20383,9 @@
           "_TZE21C_dohbhb5k",
           "_TZE284_ajuasrmx",
           "_TZ3000_yupc0pb7",
-          "_TZB000_42ha4rsc"
+          "_TZB000_42ha4rsc",
+          "_TZ3000_idrxiajl",
+          "_TZE284_hhrtiq0x"
         ],
         "productId": [
           "07073L",
@@ -20873,7 +20883,8 @@
           "_TZB210_zmppwawa",
           "_TZE204_jktmrpoj",
           "_TZE284_nklqjk62",
-          "zbeacon"
+          "zbeacon",
+          "_TZ3210_zmppwawa"
         ],
         "productId": [
           "DC-15ZBS",
@@ -21392,7 +21403,8 @@
           "owvfni3\\u0000",
           "u1rkty3",
           "_TZE200_mlglxwp3",
-          "_TZ3210_zana8d08"
+          "_TZ3210_zana8d08",
+          "_TZE284_1fuxihti"
         ],
         "productId": [
           "AM25",
@@ -22088,7 +22100,8 @@
           "_tz3210_zkhmztqn",
           "_tz3210_zmppwawa",
           "_tz3210_zmy9hjay",
-          "_tz3210_zrvxvydd"
+          "_tz3210_zrvxvydd",
+          "_TZB210_wjz9epjd"
         ],
         "productId": [
           "Dimmer-Remote",
@@ -23638,7 +23651,13 @@
           "_TZE200_vexa5o82",
           "_TZE210_m6lwazh9",
           "_TZE284_clm4gdw4",
-          "_TZE284_nj7sfid2"
+          "_TZE284_nj7sfid2",
+          "_TZE204_ux5v4tgb",
+          "_TZE204_ezqy5pvh",
+          "_TZE284_ezqy5pvh",
+          "_TZE204_ggev5fsl",
+          "_TZE284_rjgdhqqi",
+          "_TZE284_ggev5fsl"
         ],
         "productId": [
           "TS0601"
@@ -26563,7 +26582,11 @@
           "_TZ3000_266azbg3",
           "_TZ3000_3ias4w4o",
           "_TZ3000_cicwjqth",
-          "_TZ3000_r9e2w7dn"
+          "_TZ3000_r9e2w7dn",
+          "_TZ3000_eaj2e3tm",
+          "_TZ3000_femsaiy7",
+          "_TZ3000_gdkes7es",
+          "_TZE284_mgstdyz3"
         ],
         "productId": [
           "TS0601"
@@ -27331,7 +27354,11 @@
           "ZG-204ZE",
           "ZG-302ZL",
           "ZG-302ZM",
-          "_TYZB01_vwqnz1sn"
+          "_TYZB01_vwqnz1sn",
+          "_TZ3000_3towulqd",
+          "_TZE284_mrf6vtua",
+          "_TZE200_bh4n9cluk",
+          "_TZE284_0zse7xqg"
         ],
         "productId": [
           "CK-BL702-MWS-01(7016)",
@@ -28357,7 +28384,15 @@
           "_TZ3000_zwaadvus",
           "_TZ3210_cehuw1lw",
           "_TZE200_f91miyhj",
-          "_TZ3210_5ct6e7ye"
+          "_TZ3210_5ct6e7ye",
+          "_TZE200_2usb_socket",
+          "_TZE204_2usb_socket",
+          "_TZE284_ahwvlkpy",
+          "_TZE284_dapwryy7",
+          "_TZE284_dcnsggvz",
+          "_TZE284_bjzrowv2",
+          "_TZE284_5cuocqty",
+          "_TZ3000_u1rkajsr"
         ],
         "productId": [
           "ATMS1601Z",
@@ -29510,7 +29545,12 @@
           "_TZE204_xpq2rber",
           "_TZE204_ybwa4x5a",
           "_TZE284_iadro9bf",
-          "_TZE284_n5q2t8na"
+          "_TZE284_n5q2t8na",
+          "_TZE284_ztc6ggyl",
+          "_TZE284_ijxvkhd0",
+          "_TZE284_qasjif9e",
+          "_TZE284_sxm7l9xa",
+          "_TZE284_xsm7l9xa"
         ],
         "productId": [
           "ATMS1602Z",
@@ -30541,7 +30581,8 @@
           "_TZE200_ubgdwsnr",
           "_TZE284_8se38w3c",
           "_TZE284_gaj531w3",
-          "_TZE204_ojtqawav"
+          "_TZE204_ojtqawav",
+          "_TZ3000_8ykqfsyq"
         ],
         "productId": [
           "HY369RT",
@@ -33717,7 +33758,10 @@
           "_TZE204_wskr3up8",
           "_TZE284_f5efvtbv",
           "_TZE284_lbhh5o6z",
-          "_TZE284_tdhnhhiy"
+          "_TZE284_tdhnhhiy",
+          "_TZE284_hlx9tnzb",
+          "_TZE284_n9ctkb6j",
+          "_TZE284_9qhuzgo0"
         ]
       },
       "images": {
