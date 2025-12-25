@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.241-blue)
+![Version](https://img.shields.io/badge/version-5.5.242-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-86-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -53,12 +53,13 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.241
+## 🚀 Latest Updates - v5.5.242
 
 ### ✨ Recent Features (Dec 2025)
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.242** | 🔧 IR Blaster Enhancement: Added clusters 0xED00/0xE004 for ... |
 | **v5.5.241** | 🔧 Forum Fixes: Fixed _TZE284_iadro9bf & _TZE204_gkfbdvyx mi... |
 | **v5.5.240** | 🔧 SDK3 Compliance: Fixed Homey Compose manifest warning. Al... |
 | **v5.5.239** | 🚀 Universal Enrichment: +13 new flow cards (motion, contact... |
@@ -66,7 +67,6 @@
 | **v5.5.237** | 💡 TS0505B Enrichment: Added 10 more manufacturerNames for R... |
 | **v5.5.236** | 🐛 Forum Fix #672: Fixed TS0505B RGB bulb incorrectly pairin... |
 | **v5.5.235** | 🔧 Workflows & History Scan: Improved GitHub workflows (Node... |
-| **v5.5.234** | 🔥 Z2M/Blakadder Deep Enrichment: Added 24 more manufacturer... |
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
