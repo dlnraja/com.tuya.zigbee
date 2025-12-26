@@ -52,22 +52,35 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   }
 
   get dpMappings() {
-    return {
-      // Presence detected - DP 1 - v5.5.170: Also sets alarm_human
+    const mfr = this.getData()?.manufacturerName || '';
+    const isBattery = BATTERY_POWERED_SENSORS.includes(mfr);
+
+    // v5.5.253: Dynamic DP mappings based on device type
+    const baseMappings = {
+      // DP 1: Presence state (0=none, 1=motion, 2=stationary for most sensors)
+      // v5.5.253: Handle both boolean and enum values
       1: {
         capability: 'alarm_motion',
-        transform: (v) => v === 1 || v === true || v === 'presence',
-        alsoSets: { 'alarm_human': (v) => v === 1 || v === true || v === 'presence' }
+        transform: (v) => v === 1 || v === 2 || v === true || v === 'presence' || v === 'motion' || v === 'stationary',
+        alsoSets: { 'alarm_human': (v) => v === 1 || v === 2 || v === true || v === 'presence' || v === 'motion' || v === 'stationary' }
       },
 
       // Sensitivity - DP 2 (0-10)
       2: { capability: null, internal: 'sensitivity', writable: true },
 
-      // Near detection distance - DP 3 (cm)
-      3: { capability: null, internal: 'near_distance', writable: true },
+      // Near detection distance - DP 3 (cm, divideBy100 for meters)
+      3: {
+        capability: 'measure_distance',
+        transform: (v) => v / 100,
+        internal: 'near_distance',
+        writable: true
+      },
 
-      // Far detection distance - DP 4 (cm)
-      4: { capability: null, internal: 'far_distance', writable: true },
+      // Far detection distance - DP 4 (cm) - ONLY for mains-powered sensors
+      // Battery sensors use DP4 for battery percentage
+      4: isBattery
+        ? { capability: 'measure_battery', divisor: 1 }
+        : { capability: null, internal: 'far_distance', writable: true },
 
       // Detection delay - DP 5 (seconds)
       5: { capability: null, internal: 'detection_delay', writable: true },
@@ -75,25 +88,28 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       // Fading time - DP 6 (seconds after no motion)
       6: { capability: null, internal: 'fading_time', writable: true },
 
-      // Illuminance - DP 9 (lux)
-      9: { capability: 'measure_luminance', divisor: 1, unit: 'lux' },
-
-      // Target distance - DP 101 (cm)
-      101: {
+      // Target distance - DP 9 (cm, divideBy100 for meters)
+      // v5.5.253: Some sensors use DP9 for distance, not illuminance
+      9: {
         capability: 'measure_distance',
-        divisor: 100, // cm to m
-        unit: 'm',
-        transform: (v) => Math.round(v) / 100
+        transform: (v) => v / 100,
+        unit: 'm'
       },
 
-      // Illuminance threshold - DP 102 (lux)
-      102: { capability: null, internal: 'illuminance_threshold', writable: true },
+      // v5.5.253: Battery for battery sensors (DP 15)
+      15: { capability: 'measure_battery', divisor: 1 },
 
-      // Motion sensitivity - DP 103
-      103: { capability: null, internal: 'motion_sensitivity', writable: true },
+      // Static sensitivity - DP 101
+      101: { capability: null, internal: 'static_sensitivity', writable: true },
 
-      // Static sensitivity - DP 104
-      104: { capability: null, internal: 'static_sensitivity', writable: true },
+      // Motion sensitivity - DP 102
+      102: { capability: null, internal: 'motion_sensitivity', writable: true },
+
+      // Motion sensitivity alt - DP 103
+      103: { capability: null, internal: 'motion_sensitivity_alt', writable: true },
+
+      // Static sensitivity alt - DP 104
+      104: { capability: null, internal: 'static_sensitivity_alt', writable: true },
 
       // Breathe detection - DP 105
       105: { capability: null, internal: 'breathe_detection', writable: true },
@@ -101,23 +117,21 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       // Small move detection - DP 106
       106: { capability: null, internal: 'small_move_detection', writable: true },
 
-      // Illuminance alt - DP 104 (some models)
+      // Illuminance - DP 107 (some models)
       107: { capability: 'measure_luminance', divisor: 1, unit: 'lux' },
 
       // Presence state alt - DP 112 (some ZY-M100)
-      112: { capability: 'alarm_motion', transform: (v) => v === 1 || v === true },
-
-      // v5.5.250: Battery for ZG-204ZM and similar battery sensors
-      4: { capability: 'measure_battery', divisor: 1 },  // DP4 = battery %
-      15: { capability: 'measure_battery', divisor: 1 }  // DP15 = battery % alt
+      112: { capability: 'alarm_motion', transform: (v) => v === 1 || v === 2 || v === true }
     };
+
+    return baseMappings;
   }
 
   async onNodeInit({ zclNode }) {
     const mfr = this.getData()?.manufacturerName || '';
     const isBattery = BATTERY_POWERED_SENSORS.includes(mfr);
 
-    this.log(`[RADAR] v5.5.252 - ${isBattery ? 'BATTERY (sleepy EndDevice)' : 'MAINS'} powered`);
+    this.log(`[RADAR] v5.5.253 - ${isBattery ? 'BATTERY (sleepy EndDevice)' : 'MAINS'} powered`);
     this.log('[RADAR] DPs: 1-6,9,101-107,112 | ZCL: 400,406,EF00');
 
     // v5.5.252: For battery sensors, use minimal init to avoid timeouts
