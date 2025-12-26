@@ -4,13 +4,14 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.257 FIXED DP MAPPINGS              ║
+ * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.258 ENRICHED (Ronny #696)          ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  v5.5.257: FIXED _TZE284_iadro9bf DP mappings (Ronny #696)                  ║
- * ║  - ZY-M100-S_2 uses DP104-112, NOT DP1-9 like older models                  ║
- * ║  - DP104=illuminance, DP105=motion_state, DP109=distance, DP112=occupancy  ║
- * ║  - Correct log10 conversion for illuminance (ZHA quirk reference)          ║
- * ║  - Supports ZY-M100, ZG-204ZM, MTD285-ZB, and many more variants           ║
+ * ║  v5.5.258: ENRICHED with diagnostics from SmartHomeScene review             ║
+ * ║  - ZY-M100 specs: Illuminance 0-2000 LUX, NO temperature sensor!            ║
+ * ║  - TZE284 series uses DP104-112 (NOT DP1-9 like older models)               ║
+ * ║  - Sanity checks for lux values (clamp to 0-2000 range)                     ║
+ * ║  - Distance sanity check (0-10m range)                                      ║
+ * ║  - Clear diagnostic logging for troubleshooting                             ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 
@@ -199,6 +200,44 @@ function transformPresence(value, type) {
   }
 }
 
+// Sanity check and transform illuminance value
+// ZY-M100 spec: 0-2000 LUX max
+function transformLux(value, type) {
+  let lux = value;
+
+  // Some sensors report raw value that needs no conversion
+  if (type === 'lux_direct') {
+    lux = value;
+  }
+  // Some sensors report value * 10
+  else if (type === 'lux_div10') {
+    lux = value / 10;
+  }
+
+  // Sanity check: ZY-M100 max is 2000 lux
+  // If value > 10000, it's probably raw sensor data needing conversion
+  if (lux > 10000) {
+    // Likely raw ADC value, apply rough conversion
+    lux = Math.min(2000, Math.round(lux / 100));
+  } else if (lux > 2000) {
+    // Clamp to max spec value
+    lux = 2000;
+  }
+
+  return Math.max(0, Math.round(lux));
+}
+
+// Sanity check distance value (0-10m range)
+function transformDistance(value, divisor = 100) {
+  let distance = value / divisor;
+
+  // Sanity check: most radar sensors have 0-10m range
+  if (distance < 0) distance = 0;
+  if (distance > 10) distance = 10;
+
+  return Math.round(distance * 100) / 100; // 2 decimal places
+}
+
 class PresenceSensorRadarDevice extends HybridSensorBase {
 
   /**
@@ -264,6 +303,18 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           transform: (v) => transformPresence(v, dpConfig.type),
           alsoSets: { 'alarm_human': (v) => transformPresence(v, dpConfig.type) }
         };
+      } else if (dpConfig.cap === 'measure_luminance') {
+        // Illuminance DP - use sanity-checked transform
+        mappings[dp] = {
+          capability: dpConfig.cap,
+          transform: (v) => transformLux(v, dpConfig.type || 'lux_direct'),
+        };
+      } else if (dpConfig.cap === 'measure_distance') {
+        // Distance DP - use sanity-checked transform
+        mappings[dp] = {
+          capability: dpConfig.cap,
+          transform: (v) => transformDistance(v, dpConfig.divisor || 100),
+        };
       } else if (dpConfig.cap) {
         // Other capability DP
         mappings[dp] = {
@@ -295,11 +346,13 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     const config = this._getSensorConfig();
 
     this.log(`[RADAR] ═══════════════════════════════════════════════════════`);
-    this.log(`[RADAR] v5.5.257 FIXED DP MAPPINGS (Ronny #696)`);
+    this.log(`[RADAR] v5.5.258 ENRICHED (Ronny #696 + SmartHomeScene specs)`);
     this.log(`[RADAR] ManufacturerName: ${mfr}`);
     this.log(`[RADAR] Config: ${config.configName || 'ZY_M100_STANDARD (default)'}`);
     this.log(`[RADAR] Power: ${config.battery ? 'BATTERY (EndDevice)' : 'MAINS (Router)'}`);
     this.log(`[RADAR] DPs: ${Object.keys(config.dpMap || {}).join(', ') || 'ZCL only'}`);
+    this.log(`[RADAR] ⚠️ NOTE: ZY-M100 has NO temperature sensor (radar + lux only)`);
+    this.log(`[RADAR] ⚠️ NOTE: Illuminance range: 0-2000 lux (per spec)`);
     this.log(`[RADAR] ═══════════════════════════════════════════════════════`);
 
     // Battery sensors: minimal init to avoid timeouts
