@@ -6,6 +6,20 @@
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
+[![Version](https://img.shields.io/badge/version-5.5.258-blue)](https://homey.app/a/com.tuya.zigbee/)
+[![Devices](https://img.shields.io/badge/devices-4200+-green)](https://homey.app/a/com.tuya.zigbee/)
+[![Drivers](https://img.shields.io/badge/drivers-86-brightgreen)](https://homey.app/a/com.tuya.zigbee/)
+[![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.tuya.zigbee/)
+[![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
+[![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.tuya.zigbee/)
+
+## 📥 Installation
+
+| Method | Link |
+|--------|------|
+| **🏪 Homey App Store** | **[Install from Homey App Store](https://homey.app/a/com.tuya.zigbee/)** |
+| **🧪 Test Version** | [Install Test Version](https://homey.app/a/com.tuya.zigbee/test/) |
+| **📦 GitHub Releases** | [View Releases](https://github.com/dlnraja/com.tuya.zigbee/releases) |
 
 **Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 86 drivers and 3990+ manufacturer IDs.**
 

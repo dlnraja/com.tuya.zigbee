@@ -632,5 +632,9 @@
     "fr": "ENRICHI ZY-M100: Limites lux (0-2000), distance (0-10m), TZE284 DP104-112. NOTE: Pas de capteur température!",
     "nl": "VERRIJKT ZY-M100: Lux limieten (0-2000), afstand (0-10m), TZE284 DP104-112",
     "de": "ERWEITERT ZY-M100: Lux Grenzen (0-2000), Distanz (0-10m), TZE284 DP104-112"
+  },
+  "5.5.259": {
+    "en": "ENRICHED: +11 TZE284 temp/humid/soil IDs from Z2M #26162 + ZHA quirks. README direct links added. Issue #94 closed.",
+    "fr": "ENRICHI: +11 IDs TZE284 temp/humid/sol de Z2M #26162 + ZHA. Liens directs README. Issue #94 fermée."
   }
 }
