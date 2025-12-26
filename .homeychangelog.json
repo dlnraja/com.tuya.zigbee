@@ -620,5 +620,11 @@
     "fr": "Ajout bouton MOES TS0044 4 scenes _TZ3000_zgyzgdua (rapport Cyril #693)",
     "nl": "MOES TS0044 4-scene knop _TZ3000_zgyzgdua toegevoegd",
     "de": "MOES TS0044 4-Szenen-Taste _TZ3000_zgyzgdua hinzugefuegt"
+  },
+  "5.5.257": {
+    "en": "FIXED _TZE284_iadro9bf ZY-M100-S_2 DP mappings (Ronny #696): DP104=lux, DP105=presence, DP109=distance, DP112=occupancy. Correct DP104-112 range for TZE284 series.",
+    "fr": "CORRIGE _TZE284_iadro9bf ZY-M100-S_2 mappings DP (Ronny #696): DP104=lux, DP105=presence, DP109=distance, DP112=occupancy",
+    "nl": "FIXED _TZE284_iadro9bf ZY-M100-S_2 DP mappings: DP104=lux, DP105=presence, DP109=distance",
+    "de": "FIXED _TZE284_iadro9bf ZY-M100-S_2 DP Mappings: DP104=Lux, DP105=Anwesenheit, DP109=Distanz"
   }
 }
