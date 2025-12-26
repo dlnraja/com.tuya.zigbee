@@ -608,5 +608,11 @@
     "fr": "Mappings DP Intelligents: Detection auto du type capteur par manufacturerName. 7 profils de config (ZY-M100, ZG-204ZM, TZE284, PIR, etc).",
     "nl": "Intelligente DP Mappings: Automatische sensortype detectie per manufacturerName. 7 configuratieprofielen ondersteund.",
     "de": "Intelligente DP Mappings: Automatische Sensortypeerkennung pro manufacturerName. 7 Konfigurationsprofile unterstuetzt."
+  },
+  "5.5.255": {
+    "en": "Intelligent Device Config System: Central config database for all device types. Energy monitor with 6 profiles (ZCL/Tuya/Silvercrest/BlitzWolf/3Phase). Presence radar with 7 profiles. Auto-detect protocol and divisors per manufacturerName.",
+    "fr": "Systeme Config Intelligent: Base de donnees centrale pour tous types appareils. Energy monitor 6 profils. Presence radar 7 profils. Detection auto protocole et diviseurs.",
+    "nl": "Intelligent Config Systeem: Centrale database voor alle apparaattypes. Energy monitor 6 profielen. Presence radar 7 profielen.",
+    "de": "Intelligentes Config System: Zentrale Datenbank fuer alle Geraetetypen. Energy Monitor 6 Profile. Presence Radar 7 Profile."
   }
 }
