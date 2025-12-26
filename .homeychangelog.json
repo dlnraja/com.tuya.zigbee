@@ -602,5 +602,11 @@
     "fr": "Correctif capteurs radar: Mappings DP corriges pour _TZE200_gkfbdvyx, _TZE204_gkfbdvyx, _TZE284_iadro9bf. Conflit DP4 corrige.",
     "nl": "Radar sensoren fix: DP mappings gerepareerd voor _TZE200_gkfbdvyx, _TZE204_gkfbdvyx, _TZE284_iadro9bf.",
     "de": "Radar Sensoren Fix: DP Mappings fuer _TZE200_gkfbdvyx, _TZE204_gkfbdvyx, _TZE284_iadro9bf repariert."
+  },
+  "5.5.254": {
+    "en": "Intelligent DP Mappings: Auto-detects sensor type per manufacturerName. Supports 7 sensor config profiles (ZY-M100, ZG-204ZM, TZE284, PIR, etc). Dynamic capabilities and presence transform.",
+    "fr": "Mappings DP Intelligents: Detection auto du type capteur par manufacturerName. 7 profils de config (ZY-M100, ZG-204ZM, TZE284, PIR, etc).",
+    "nl": "Intelligente DP Mappings: Automatische sensortype detectie per manufacturerName. 7 configuratieprofielen ondersteund.",
+    "de": "Intelligente DP Mappings: Automatische Sensortypeerkennung pro manufacturerName. 7 Konfigurationsprofile unterstuetzt."
   }
 }
