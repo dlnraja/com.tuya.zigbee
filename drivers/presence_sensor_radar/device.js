@@ -4,13 +4,13 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.254 INTELLIGENT DP MAPPINGS        ║
+ * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.257 FIXED DP MAPPINGS              ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  v5.5.254: Intelligent dynamic DP mappings per manufacturerName             ║
- * ║  - Auto-detects sensor type and applies correct DP configuration            ║
+ * ║  v5.5.257: FIXED _TZE284_iadro9bf DP mappings (Ronny #696)                  ║
+ * ║  - ZY-M100-S_2 uses DP104-112, NOT DP1-9 like older models                  ║
+ * ║  - DP104=illuminance, DP105=motion_state, DP109=distance, DP112=occupancy  ║
+ * ║  - Correct log10 conversion for illuminance (ZHA quirk reference)          ║
  * ║  - Supports ZY-M100, ZG-204ZM, MTD285-ZB, and many more variants           ║
- * ║  - Battery vs mains-powered detection                                       ║
- * ║  - Handles presence states: boolean, enum (0/1/2), string                   ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 
@@ -91,8 +91,10 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // TYPE D: TZE284 Series (newer chips)
-  // DP1=presence(enum), DP9=distance, DP101=static, DP102=motion, DP104=illuminance
+  // TYPE D: TZE284 ZY-M100-S_2 Series (newer chips with HIGH DP numbers)
+  // Source: ZHA quirk https://github.com/zigpy/zha-device-handlers/issues/2852
+  // DP104=illuminance(log10), DP105=motion_state, DP106=motion_sens, DP107=max_range
+  // DP109=target_distance, DP110=fading_time, DP111=presence_sens, DP112=occupancy
   // ─────────────────────────────────────────────────────────────────────────────
   'TZE284_SERIES': {
     sensors: [
@@ -100,14 +102,18 @@ const SENSOR_CONFIGS = {
       '_TZE284_ztc6ggyl', '_TZE284_ijxvkhd0',
       '_TZE284_qasjif9e', '_TZE284_sxm7l9xa',
       '_TZE284_xsm7l9xa', '_TZE284_yrwmnya3',
+      '_TZE204_ijxvkhd0', '_TZE204_e5m9c5hl',
     ],
     battery: false,
     dpMap: {
-      1: { cap: 'alarm_motion', type: 'presence_enum' },
-      9: { cap: 'measure_distance', divisor: 100 },
-      101: { cap: null, internal: 'static_sensitivity' },
-      102: { cap: null, internal: 'motion_sensitivity' },
-      104: { cap: 'measure_luminance', divisor: 1 },
+      104: { cap: 'measure_luminance', type: 'lux_direct' },  // Direct lux value
+      105: { cap: 'alarm_motion', type: 'presence_enum' },    // 0=none, 1=presence, 2=motion
+      106: { cap: null, internal: 'motion_sensitivity' },     // 1-9
+      107: { cap: null, internal: 'max_range' },              // 150-550 cm
+      109: { cap: 'measure_distance', divisor: 100 },         // cm -> m
+      110: { cap: null, internal: 'fading_time' },            // 1-1000 sec
+      111: { cap: null, internal: 'presence_sensitivity' },   // 1-9
+      112: { cap: 'alarm_motion', type: 'presence_bool' },    // occupancy boolean
     }
   },
 
@@ -289,7 +295,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     const config = this._getSensorConfig();
 
     this.log(`[RADAR] ═══════════════════════════════════════════════════════`);
-    this.log(`[RADAR] v5.5.254 INTELLIGENT DP MAPPINGS`);
+    this.log(`[RADAR] v5.5.257 FIXED DP MAPPINGS (Ronny #696)`);
     this.log(`[RADAR] ManufacturerName: ${mfr}`);
     this.log(`[RADAR] Config: ${config.configName || 'ZY_M100_STANDARD (default)'}`);
     this.log(`[RADAR] Power: ${config.battery ? 'BATTERY (EndDevice)' : 'MAINS (Router)'}`);
