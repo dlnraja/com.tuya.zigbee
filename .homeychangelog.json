@@ -596,5 +596,11 @@
     "fr": "ZG-204ZM Fix v2: Init minimal pour capteurs batterie. Appareil reste disponible apres appairage.",
     "nl": "ZG-204ZM Fix v2: Minimale init voor batterijsensoren. Apparaat blijft beschikbaar na koppelen.",
     "de": "ZG-204ZM Fix v2: Minimale Init fuer Batteriesensoren. Geraet bleibt nach Pairing verfuegbar."
+  },
+  "5.5.253": {
+    "en": "Radar sensors fix: Fixed DP mappings for _TZE200_gkfbdvyx, _TZE204_gkfbdvyx, _TZE284_iadro9bf. Fixed DP4 conflict. Improved presence detection (0=none, 1=motion, 2=stationary).",
+    "fr": "Correctif capteurs radar: Mappings DP corriges pour _TZE200_gkfbdvyx, _TZE204_gkfbdvyx, _TZE284_iadro9bf. Conflit DP4 corrige.",
+    "nl": "Radar sensoren fix: DP mappings gerepareerd voor _TZE200_gkfbdvyx, _TZE204_gkfbdvyx, _TZE284_iadro9bf.",
+    "de": "Radar Sensoren Fix: DP Mappings fuer _TZE200_gkfbdvyx, _TZE204_gkfbdvyx, _TZE284_iadro9bf repariert."
   }
 }
