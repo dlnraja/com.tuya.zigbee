@@ -1,13 +1,13 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.255-blue)
+![Version](https://img.shields.io/badge/version-5.5.256-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-86-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
 ![License](https://img.shields.io/badge/license-GPL--3.0-red)
 ![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
 
-**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 86 drivers and 3989+ manufacturer IDs.**
+**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 86 drivers and 3990+ manufacturer IDs.**
 
 🏠 **100% Local Control** - No Cloud, No Internet Required
 🔋 **Smart Battery** - Accurate readings with voltage fallback
@@ -53,7 +53,7 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.255
+## 🚀 Latest Updates - v5.5.256
 
 ### ✨ Recent Features (Dec 2025)
 
