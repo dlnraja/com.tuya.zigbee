@@ -626,5 +626,11 @@
     "fr": "CORRIGE _TZE284_iadro9bf ZY-M100-S_2 mappings DP (Ronny #696): DP104=lux, DP105=presence, DP109=distance, DP112=occupancy",
     "nl": "FIXED _TZE284_iadro9bf ZY-M100-S_2 DP mappings: DP104=lux, DP105=presence, DP109=distance",
     "de": "FIXED _TZE284_iadro9bf ZY-M100-S_2 DP Mappings: DP104=Lux, DP105=Anwesenheit, DP109=Distanz"
+  },
+  "5.5.258": {
+    "en": "ENRICHED ZY-M100 presence sensors: Sanity checks for lux (0-2000 max), distance (0-10m), TZE284 DP104-112 mappings. NOTE: These sensors have NO temperature sensor!",
+    "fr": "ENRICHI ZY-M100: Limites lux (0-2000), distance (0-10m), TZE284 DP104-112. NOTE: Pas de capteur température!",
+    "nl": "VERRIJKT ZY-M100: Lux limieten (0-2000), afstand (0-10m), TZE284 DP104-112",
+    "de": "ERWEITERT ZY-M100: Lux Grenzen (0-2000), Distanz (0-10m), TZE284 DP104-112"
   }
 }
