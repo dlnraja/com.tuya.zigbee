@@ -640,5 +640,9 @@
   "5.5.260": {
     "en": "FIX #699 Cyril: 4-button controller physical buttons not working + battery not updating. Added 4 endpoints for TS0044.",
     "fr": "FIX #699 Cyril: Boutons physiques 4-boutons non fonctionnels + batterie. Ajouté 4 endpoints pour TS0044."
+  },
+  "5.5.261": {
+    "en": "FIX Moes scene button: Detect ANY onOff change as button press (not just true). Debounce rapid events.",
+    "fr": "FIX Moes scene button: Detecter TOUT changement onOff comme pression bouton. Anti-rebond."
   }
 }
