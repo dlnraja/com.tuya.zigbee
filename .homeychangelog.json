@@ -1,4 +1,10 @@
 {
+  "5.5.275": {
+    "en": "🧠 FIX: mmWave radar model-specific capabilities - SIMPLE models (_TZE200_rhgsbacq, etc.) now only show alarm_motion + luminance + battery instead of NULL capabilities for distance/presence_time. Reduces unnecessary DP queries and log spam. Based on dlnraja diagnostic #251.",
+    "fr": "🧠 FIX: Radar mmWave - Configurations spécifiques par modèle. Les modèles SIMPLES n'affichent plus de capabilities NULL. Basé sur diagnostic dlnraja #251.",
+    "nl": "🧠 FIX: mmWave radar model-specifieke capabilities - SIMPLE modellen tonen nu alleen alarm_motion + luminance + battery. Gebaseerd op dlnraja diagnostic #251.",
+    "de": "🧠 FIX: mmWave Radar modellspezifische Capabilities - SIMPLE Modelle zeigen jetzt nur alarm_motion + luminance + battery. Basierend auf dlnraja Diagnostic #251."
+  },
   "5.5.274": {
     "en": "📦 NEW DEVICES from GitHub Issues: #91 ZS06 IR Remote (_TZE200_ikvncluo), #92 HMJ-SC021 Scene Controller 4-gang (_TZE204_zqtiam9d). #93 Moes TRV already supported in radiator_valve driver.",
     "fr": "📦 NOUVEAUX APPAREILS des Issues GitHub: #91 Télécommande IR ZS06, #92 Contrôleur Scène HMJ-SC021 4 boutons. #93 Moes TRV déjà supporté.",
