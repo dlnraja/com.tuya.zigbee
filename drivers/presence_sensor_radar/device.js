@@ -50,6 +50,7 @@ const SENSOR_CONFIGS = {
       3: { cap: null, internal: 'near_distance' },             // cm
       4: { cap: null, internal: 'far_distance' },              // cm
       9: { cap: 'measure_distance', divisor: 100 },            // cm -> m
+      12: { cap: 'measure_luminance', type: 'lux_direct' },    // v5.5.273: Some variants use DP12 for illuminance
       101: { cap: null, internal: 'static_sensitivity' },
       102: { cap: null, internal: 'motion_sensitivity' },
     }
@@ -544,8 +545,11 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         }
       }
     } else if (dpId) {
-      // v5.5.268: Log unmapped DPs for future driver improvements
-      this.log(`[RADAR] ⚠️ UNMAPPED DP${dpId} = ${value} - Please report this to developer!`);
+      // v5.5.273: Only log UNMAPPED if not already handled by base class
+      // Check if this DP was already processed (capability value changed recently)
+      if (!this._recentlyHandledDPs?.has(dpId)) {
+        this.log(`[RADAR] ℹ️ DP${dpId} = ${value} (not in local config, may be handled by base class)`);
+      }
     }
   }
 
