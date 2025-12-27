@@ -445,6 +445,10 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     await super.onNodeInit({ zclNode });
     await this._setupZclClusters(zclNode);
 
+    // v5.5.270: CRITICAL FIX - Setup Tuya DP listeners for mains-powered sensors too!
+    // This was missing and caused presence not to work on TZE284 devices
+    await this._setupTuyaDPListeners(zclNode);
+
     // Ensure required capabilities
     for (const cap of ['measure_distance', 'measure_luminance']) {
       if (!this.hasCapability(cap)) {
@@ -572,6 +576,78 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         this.log('[RADAR] ✅ Occupancy cluster configured');
       }
     } catch (e) { /* ignore */ }
+  }
+
+  /**
+   * v5.5.270: CRITICAL FIX for Ronny's TZE284 sensor
+   * Setup Tuya DP listeners for mains-powered radar sensors
+   * This was MISSING and caused presence to never update!
+   */
+  async _setupTuyaDPListeners(zclNode) {
+    const ep1 = zclNode?.endpoints?.[1];
+    if (!ep1) return;
+
+    this.log('[RADAR] 🔧 Setting up Tuya DP listeners for mains-powered sensor...');
+
+    // Try multiple cluster access methods
+    const tuyaCluster = ep1.clusters?.tuya ||
+      ep1.clusters?.['tuya'] ||
+      ep1.clusters?.[61184] ||
+      ep1.clusters?.['61184'] ||
+      ep1.clusters?.manuSpecificTuya;
+
+    if (tuyaCluster) {
+      this.log('[RADAR] ✅ Found Tuya cluster');
+
+      // Listen for all possible event types
+      const events = ['response', 'reporting', 'datapoint', 'report', 'data', 'set'];
+      for (const event of events) {
+        try {
+          if (typeof tuyaCluster.on === 'function') {
+            tuyaCluster.on(event, (data) => {
+              this.log(`[RADAR] 📡 Tuya ${event} event received`);
+              this._handleTuyaResponse(data);
+            });
+            this.log(`[RADAR] ✅ Listening for Tuya '${event}' events`);
+          }
+        } catch (e) { /* ignore */ }
+      }
+
+      // Also try to register for attribute reports
+      try {
+        if (tuyaCluster.onReport) {
+          tuyaCluster.onReport((report) => {
+            this.log('[RADAR] 📡 Tuya onReport received');
+            this._handleTuyaResponse(report);
+          });
+        }
+      } catch (e) { /* ignore */ }
+    } else {
+      this.log('[RADAR] ⚠️ Tuya cluster not found - trying alternative methods');
+
+      // Try binding to EF00 cluster directly
+      try {
+        const { Cluster } = require('zigbee-clusters');
+        const TuyaCluster = Cluster.getCluster(61184);
+        if (TuyaCluster && ep1.bind) {
+          this.log('[RADAR] 🔧 Attempting direct EF00 cluster bind');
+        }
+      } catch (e) { /* ignore */ }
+    }
+
+    // Also try the node-level listeners
+    try {
+      if (zclNode.on) {
+        zclNode.on('command', (cmd) => {
+          if (cmd.cluster === 61184 || cmd.cluster === 'tuya') {
+            this.log('[RADAR] 📡 Node command received from Tuya cluster');
+            this._handleTuyaResponse(cmd.data || cmd);
+          }
+        });
+      }
+    } catch (e) { /* ignore */ }
+
+    this.log('[RADAR] ✅ Tuya DP listeners configured for mains-powered sensor');
   }
 
   /**
