@@ -648,5 +648,9 @@
   "5.5.262": {
     "en": "FIX button_wireless: Added scenes/onOff clusters to all endpoints for proper button detection",
     "fr": "FIX button_wireless: Ajout clusters scenes/onOff a tous les endpoints"
+  },
+  "5.5.263": {
+    "en": "FIX #709: Filter periodic onOff reports vs real button presses - no more false positives every 10mn",
+    "fr": "FIX #709: Filtre rapports onOff periodiques vs vrais appuis - plus de faux positifs"
   }
 }
