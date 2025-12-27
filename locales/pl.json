@@ -1,0 +1,167 @@
+{
+  "capabilities": {
+    "measure_battery": {
+      "title": "Bateria",
+      "units": "%"
+    },
+    "alarm_generic": {
+      "title": "Alarm"
+    },
+    "alarm_motion": {
+      "title": "Ruch"
+    },
+    "alarm_contact": {
+      "title": "Kontakt"
+    },
+    "alarm_water": {
+      "title": "Wyciek wody"
+    },
+    "alarm_smoke": {
+      "title": "Dym"
+    },
+    "alarm_co": {
+      "title": "CO"
+    },
+    "alarm_co2": {
+      "title": "CO₂"
+    },
+    "alarm_tamper": {
+      "title": "Sabotaż"
+    },
+    "alarm_vibration": {
+      "title": "Wibracje"
+    },
+    "onoff": {
+      "title": "Zasilanie"
+    },
+    "dim": {
+      "title": "Jasność",
+      "units": "%"
+    },
+    "light_hue": {
+      "title": "Odcień"
+    },
+    "light_saturation": {
+      "title": "Nasycenie"
+    },
+    "light_temperature": {
+      "title": "Temperatura barwowa"
+    },
+    "light_mode": {
+      "title": "Tryb światła"
+    },
+    "measure_temperature": {
+      "title": "Temperatura",
+      "units": "°C"
+    },
+    "measure_humidity": {
+      "title": "Wilgotność",
+      "units": "%"
+    },
+    "measure_pressure": {
+      "title": "Ciśnienie",
+      "units": "mbar"
+    },
+    "measure_co2": {
+      "title": "CO₂",
+      "units": "ppm"
+    },
+    "measure_pm25": {
+      "title": "PM2.5",
+      "units": "µg/m³"
+    },
+    "measure_voc": {
+      "title": "LZO",
+      "units": "ppb"
+    },
+    "measure_luminance": {
+      "title": "Jasność",
+      "units": "lux"
+    },
+    "measure_power": {
+      "title": "Moc",
+      "units": "W"
+    },
+    "measure_voltage": {
+      "title": "Napięcie",
+      "units": "V"
+    },
+    "measure_current": {
+      "title": "Prąd",
+      "units": "A"
+    },
+    "meter_power": {
+      "title": "Energia",
+      "units": "kWh"
+    },
+    "target_temperature": {
+      "title": "Temperatura docelowa",
+      "units": "°C"
+    },
+    "windowcoverings_state": {
+      "title": "Rolety",
+      "values": {
+        "up": "W górę",
+        "idle": "Stop",
+        "down": "W dół"
+      }
+    },
+    "windowcoverings_set": {
+      "title": "Pozycja",
+      "units": "%"
+    },
+    "button": {
+      "title": "Przycisk"
+    }
+  },
+  "settings": {
+    "power_source": {
+      "label": "Źródło zasilania",
+      "hint": "Wybierz źródło zasilania ręcznie lub użyj automatycznego wykrywania"
+    },
+    "battery_type": {
+      "label": "Typ baterii",
+      "hint": "Wybierz typ baterii ręcznie lub użyj automatycznego wykrywania na podstawie napięcia"
+    },
+    "battery_low_threshold": {
+      "label": "Próg niskiego poziomu baterii (%)",
+      "hint": "Wyzwól ostrzeżenie o niskim poziomie baterii poniżej tego procentu"
+    },
+    "battery_critical_threshold": {
+      "label": "Próg krytycznego poziomu baterii (%)",
+      "hint": "Wyzwól ostrzeżenie o krytycznym poziomie baterii poniżej tego procentu"
+    },
+    "enable_battery_notifications": {
+      "label": "Włącz powiadomienia o baterii",
+      "hint": "Wysyłaj powiadomienia flow dla zdarzeń baterii"
+    },
+    "battery_report_interval": {
+      "label": "Interwał raportu baterii (godziny)",
+      "hint": "Jak często żądać aktualizacji stanu baterii"
+    },
+    "optimization_mode": {
+      "label": "Tryb optymalizacji energii",
+      "hint": "Równowaga między responsywnością a czasem pracy baterii"
+    },
+    "show_voltage": {
+      "label": "Pokaż napięcie baterii",
+      "hint": "Wyświetl surowe napięcie baterii w ustawieniach urządzenia"
+    },
+    "enable_power_estimation": {
+      "label": "Włącz szacowanie mocy",
+      "hint": "Szacuj zużycie, gdy rzeczywisty pomiar nie jest dostępny (tylko urządzenia AC/DC)"
+    }
+  },
+  "tabs": {
+    "general": "Ogólne",
+    "advanced": "Zaawansowane",
+    "about": "O aplikacji"
+  },
+  "common": {
+    "save": "Zapisz",
+    "cancel": "Anuluj",
+    "ok": "OK",
+    "delete": "Usuń",
+    "edit": "Edytuj"
+  }
+}
