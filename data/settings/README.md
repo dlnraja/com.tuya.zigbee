@@ -1,3 +1,0 @@
-# Settings
-
-Configuration et communication.
