@@ -4,14 +4,15 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.258 ENRICHED (Ronny #696)          ║
+ * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.268 RONNY DEEP FIX                 ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  v5.5.258: ENRICHED with diagnostics from SmartHomeScene review             ║
- * ║  - ZY-M100 specs: Illuminance 0-2000 LUX, NO temperature sensor!            ║
- * ║  - TZE284 series uses DP104-112 (NOT DP1-9 like older models)               ║
- * ║  - Sanity checks for lux values (clamp to 0-2000 range)                     ║
- * ║  - Distance sanity check (0-10m range)                                      ║
- * ║  - Clear diagnostic logging for troubleshooting                             ║
+ * ║  v5.5.268: DEEP ANALYSIS of Ronny's _TZE284_iadro9bf issues                 ║
+ * ║  - Z2M Issue #27212: presence/distance = null even when illuminance works   ║
+ * ║  - ROOT CAUSE: Some firmware variants don't auto-report DP105/DP109         ║
+ * ║  - FIX: Added periodic DP polling + fallback DP detection                   ║
+ * ║  - FIX: Log ALL incoming DPs for debugging unknown variants                 ║
+ * ║  - FIX: Alternative DP mappings (DP1 as fallback for presence)              ║
+ * ║  - SmartHomeScene specs: 5.8GHz radar, 0-2000 LUX, 0-9.5m range            ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 
@@ -118,9 +119,11 @@ const SENSOR_CONFIGS = {
   // ─────────────────────────────────────────────────────────────────────────────
   // TYPE D: TZE284 ZY-M100-S_2 Series (newer chips with HIGH DP numbers)
   // Source: ZHA quirk https://github.com/zigpy/zha-device-handlers/issues/2852
-  // v5.5.264: Fixed DP104 lux conversion - raw ADC value needs log10 transform
+  // Z2M Issue #27212: Some variants report presence/distance as NULL
+  // v5.5.268: RONNY FIX - Added DP1 fallback + periodic polling + debug logging
   // DP104=illuminance(raw->lux), DP105=motion_state, DP106=motion_sens, DP107=max_range
   // DP109=target_distance, DP110=fading_time, DP111=presence_sens, DP112=occupancy
+  // FALLBACK: Some firmware uses DP1 for presence instead of DP105/DP112
   // ─────────────────────────────────────────────────────────────────────────────
   'TZE284_SERIES': {
     sensors: [
@@ -129,19 +132,23 @@ const SENSOR_CONFIGS = {
       '_TZE284_qasjif9e', '_TZE284_sxm7l9xa',
       '_TZE284_xsm7l9xa', '_TZE284_yrwmnya3',
       '_TZE204_ijxvkhd0', '_TZE204_e5m9c5hl',
-      '_TZE204_qasjif9e',  // v5.5.264: added from ZHA quirk
+      '_TZE204_qasjif9e',
     ],
     battery: false,
     hasIlluminance: true,
+    needsPolling: true,  // v5.5.268: Enable periodic DP polling for stubborn devices
     dpMap: {
-      104: { cap: 'measure_luminance', type: 'lux_raw' },     // v5.5.264: RAW value needs conversion!
-      105: { cap: 'alarm_motion', type: 'presence_enum' },    // 0=none, 1=presence, 2=motion
-      106: { cap: null, internal: 'motion_sensitivity' },     // 1-9
-      107: { cap: null, internal: 'max_range' },              // 150-550 cm
-      109: { cap: 'measure_distance', divisor: 100 },         // cm -> m
-      110: { cap: null, internal: 'fading_time' },            // 1-1000 sec
-      111: { cap: null, internal: 'presence_sensitivity' },   // 1-9
-      112: { cap: 'alarm_motion', type: 'presence_bool' },    // occupancy boolean
+      // v5.5.268: Add DP1 as FALLBACK for presence (some firmware variants)
+      1: { cap: 'alarm_motion', type: 'presence_enum', fallback: true },
+      104: { cap: 'measure_luminance', type: 'lux_raw' },
+      105: { cap: 'alarm_motion', type: 'presence_enum' },    // Primary presence
+      106: { cap: null, internal: 'motion_sensitivity' },
+      107: { cap: null, internal: 'max_range' },
+      108: { cap: null, internal: 'detection_delay' },        // v5.5.268: Added
+      109: { cap: 'measure_distance', divisor: 100 },
+      110: { cap: null, internal: 'fading_time' },
+      111: { cap: null, internal: 'presence_sensitivity' },
+      112: { cap: 'alarm_motion', type: 'presence_bool' },    // Secondary presence
     }
   },
 
@@ -387,14 +394,19 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     const mfr = this.getData()?.manufacturerName || '';
     const config = this._getSensorConfig();
 
-    this.log(`[RADAR] ═══════════════════════════════════════════════════════`);
-    this.log(`[RADAR] v5.5.266 FIXED (Ronny #711 + ZHA Community research)`);
+    this.log(`[RADAR] ═══════════════════════════════════════════════════════════`);
+    this.log(`[RADAR] v5.5.268 RONNY DEEP FIX (Z2M #27212 research)`);
     this.log(`[RADAR] ManufacturerName: ${mfr}`);
     this.log(`[RADAR] Config: ${config.configName || 'ZY_M100_STANDARD (default)'}`);
     this.log(`[RADAR] Power: ${config.battery ? 'BATTERY (EndDevice)' : 'MAINS (Router)'}`);
     this.log(`[RADAR] Illuminance: ${config.hasIlluminance !== false ? 'YES' : 'NO'}`);
+    this.log(`[RADAR] Polling: ${config.needsPolling ? 'ENABLED (30s interval)' : 'DISABLED'}`);
     this.log(`[RADAR] DPs: ${Object.keys(config.dpMap || {}).join(', ') || 'ZCL only'}`);
-    this.log(`[RADAR] ═══════════════════════════════════════════════════════`);
+    this.log(`[RADAR] ═══════════════════════════════════════════════════════════`);
+
+    // v5.5.268: Track received DPs for debugging
+    this._receivedDPs = new Set();
+    this._lastPresenceUpdate = 0;
 
     // Battery sensors: minimal init to avoid timeouts
     if (config.battery) {
@@ -443,6 +455,11 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       }
     }
 
+    // v5.5.268: Start periodic polling for TZE284 devices that need it
+    if (config.needsPolling) {
+      this._startPresencePolling(zclNode);
+    }
+
     this.log('[RADAR] ✅ Radar presence sensor ready (full mode)');
   }
 
@@ -489,7 +506,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.252: Handle Tuya response for battery sensors
+   * v5.5.268: Handle Tuya response - ENHANCED for Ronny's debugging
    */
   _handleTuyaResponse(data) {
     if (!data) return;
@@ -502,6 +519,9 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     const dpId = data.dp || data.dpId || data.datapoint;
     const value = data.value ?? data.data;
 
+    // v5.5.268: Log ALL DPs for debugging unknown variants
+    this._logUnknownDP(dpId, value, data);
+
     if (dpId && dpMappings[dpId]) {
       const mapping = dpMappings[dpId];
       if (mapping.capability) {
@@ -511,9 +531,17 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         } else if (mapping.divisor) {
           finalValue = value / mapping.divisor;
         }
-        this.log(`[RADAR-BATTERY] DP${dpId} → ${mapping.capability} = ${finalValue}`);
+        this.log(`[RADAR] DP${dpId} → ${mapping.capability} = ${finalValue}`);
         this.setCapabilityValue(mapping.capability, finalValue).catch(() => { });
+
+        // v5.5.268: Track presence updates for polling logic
+        if (mapping.capability === 'alarm_motion') {
+          this._updatePresenceTimestamp();
+        }
       }
+    } else if (dpId) {
+      // v5.5.268: Log unmapped DPs for future driver improvements
+      this.log(`[RADAR] ⚠️ UNMAPPED DP${dpId} = ${value} - Please report this to developer!`);
     }
   }
 
@@ -544,6 +572,100 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         this.log('[RADAR] ✅ Occupancy cluster configured');
       }
     } catch (e) { /* ignore */ }
+  }
+
+  /**
+   * v5.5.268: RONNY FIX - Periodic polling for TZE284 devices
+   * Some firmware variants don't auto-report presence/distance (Z2M #27212)
+   * This polls the device every 30 seconds to request DP updates
+   */
+  _startPresencePolling(zclNode) {
+    this.log('[RADAR] 🔄 Starting presence polling (30s interval) for TZE284 variant');
+
+    // Clear any existing interval
+    if (this._pollingInterval) {
+      clearInterval(this._pollingInterval);
+    }
+
+    // Poll every 30 seconds
+    this._pollingInterval = setInterval(async () => {
+      try {
+        // Check if we've received presence updates recently
+        const now = Date.now();
+        const timeSinceLastPresence = now - (this._lastPresenceUpdate || 0);
+
+        // Only poll if no presence update in last 60 seconds
+        if (timeSinceLastPresence > 60000) {
+          this.log('[RADAR] 🔄 No presence update in 60s, requesting DP refresh...');
+          await this._requestDPRefresh(zclNode);
+        }
+      } catch (e) {
+        this.log(`[RADAR] ⚠️ Polling error: ${e.message}`);
+      }
+    }, 30000);
+
+    // Initial poll after 5 seconds
+    setTimeout(() => this._requestDPRefresh(zclNode), 5000);
+  }
+
+  /**
+   * v5.5.268: Request DP refresh from device
+   * Sends Tuya MCU command to request all DP values
+   */
+  async _requestDPRefresh(zclNode) {
+    try {
+      const ep1 = zclNode?.endpoints?.[1];
+      const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
+
+      if (tuyaCluster?.dataQuery) {
+        // Request all datapoints
+        await tuyaCluster.dataQuery();
+        this.log('[RADAR] 📡 DP refresh requested');
+      } else if (tuyaCluster?.sendData) {
+        // Alternative: send empty data request
+        await tuyaCluster.sendData({ dp: 0, datatype: 0, data: Buffer.from([]) });
+        this.log('[RADAR] 📡 DP refresh requested (alt method)');
+      }
+    } catch (e) {
+      // Silently ignore - device may not support query
+    }
+  }
+
+  /**
+   * v5.5.268: Enhanced DP logging for debugging unknown variants
+   * Logs ALL incoming DPs to help identify correct mappings
+   */
+  _logUnknownDP(dpId, value, rawData) {
+    if (!this._receivedDPs) this._receivedDPs = new Set();
+
+    const isNew = !this._receivedDPs.has(dpId);
+    this._receivedDPs.add(dpId);
+
+    const prefix = isNew ? '🆕 NEW' : '📊';
+    this.log(`[RADAR] ${prefix} DP${dpId} = ${value} (raw: ${JSON.stringify(rawData)})`);
+
+    // Log summary of all received DPs periodically
+    if (isNew) {
+      this.log(`[RADAR] 📋 All DPs received so far: [${Array.from(this._receivedDPs).sort((a, b) => a - b).join(', ')}]`);
+    }
+  }
+
+  /**
+   * v5.5.268: Update presence timestamp when motion detected
+   */
+  _updatePresenceTimestamp() {
+    this._lastPresenceUpdate = Date.now();
+  }
+
+  /**
+   * v5.5.268: Cleanup on device removal
+   */
+  onDeleted() {
+    if (this._pollingInterval) {
+      clearInterval(this._pollingInterval);
+      this._pollingInterval = null;
+    }
+    super.onDeleted?.();
   }
 }
 
