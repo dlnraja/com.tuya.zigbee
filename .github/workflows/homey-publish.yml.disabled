@@ -1,173 +1,145 @@
-name: Homey App Store - Official Publish
-
-on:
-  push:
-    tags:
-      - 'v*.*.*'
+name: 🚀 Publish to Homey
+"on":
   workflow_dispatch:
     inputs:
-      version:
-        description: 'Version to publish (e.g., 4.9.261)'
-        required: true
-
-permissions:
-  contents: write
-  pull-requests: read
-
+      skip_validation:
+        description: Skip validation step
+        required: false
+        type: boolean
+        default: false
+  push:
+    tags:
+      - v*.*.*
 jobs:
-  prepare-release:
+  validate:
+    name: 🔍 Validate
     runs-on: ubuntu-latest
-    
+    if: always()
     steps:
-      - name: Checkout repository
+      - name: 📥 Checkout
         uses: actions/checkout@v4
+      - name: 🔍 Validate (Official Athom Action)
+        uses: athombv/github-action-homey-app-validate@v1
         with:
-          fetch-depth: 0
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-      
-      - name: Install dependencies
-        run: npm install
-      
-      - name: Get version
-        id: version
+          level: publish
+    timeout-minutes: 20
+    strategy:
+      fail-fast: true
+      matrix:
+        node-version:
+          - 18
+  publish:
+    name: 🚀 Publish
+    runs-on: ubuntu-latest
+    needs:
+      - validate
+    if: |
+      always() &&
+      (needs.validate.result == 'success' || needs.validate.result == 'skipped')
+    outputs:
+      url: ${{ steps.publish.outputs.url }}
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+      - name: 📦 Get App Info
+        id: app-info
         run: |
-          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            VERSION="${{ github.event.inputs.version }}"
-          else
-            VERSION="${GITHUB_REF#refs/tags/v}"
-          fi
+          VERSION=$(node -p "require('./app.json').version")
+          NAME=$(node -p "require('./app.json').name.en")
+          ID=$(node -p "require('./app.json').id")
           echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "📦 Version: $VERSION"
-      
-      - name: Validate app structure
+          echo "name=$NAME" >> $GITHUB_OUTPUT
+          echo "id=$ID" >> $GITHUB_OUTPUT
+          echo "📦 Publishing: $NAME v$VERSION ($ID)"
+      - name: 🔑 Check Authentication
         run: |
-          echo "🔍 Running Homey App Store validation..."
-          node scripts/validation/validate-app-structure.js
-          node scripts/validation/validate-all-drivers.js
-          echo "✅ App structure valid for Homey App Store"
-      
-      - name: Generate changelog for release
-        run: |
-          echo "📝 Generating release notes..."
-          node scripts/automation/auto-changelog.js
-      
-      - name: Create release notes
-        id: release_notes
-        run: |
-          VERSION="${{ steps.version.outputs.version }}"
-          
-          # Extract changelog for this version
-          if [ -f CHANGELOG.md ]; then
-            NOTES=$(sed -n "/## \[$VERSION\]/,/## \[/p" CHANGELOG.md | sed '$d')
-          else
-            NOTES="Release v$VERSION"
+          if [ -z "${{ secrets.HOMEY_PAT }}" ]; then
+            echo "::error::HOMEY_PAT secret not configured!"
+            echo ""
+            echo "## ❌ Authentication Required" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### How to fix:" >> $GITHUB_STEP_SUMMARY
+            echo "1. Go to [Homey Developer Tools](https://tools.developer.homey.app/me)" >> $GITHUB_STEP_SUMMARY
+            echo "2. Copy your **Personal Access Token**" >> $GITHUB_STEP_SUMMARY
+            echo "3. Go to [Repository Secrets](https://github.com/${{ github.repository }}/settings/secrets/actions)" >> $GITHUB_STEP_SUMMARY
+            echo "4. Add new secret: **HOMEY_PAT** = your token" >> $GITHUB_STEP_SUMMARY
+            exit 1
           fi
-          
-          # Save to file for GitHub release
-          echo "$NOTES" > release_notes.md
-          echo "📄 Release notes generated"
-      
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+          echo "✅ HOMEY_PAT configured"
+      - name: 🚀 Publish (Official Athom Action)
+        uses: athombv/github-action-homey-app-publish@v1
+        id: publish
         with:
-          body_path: release_notes.md
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+      - name: ✅ Success Summary
+        if: success()
+        run: >
+          echo "## 🎉 Published Successfully!" >> $GITHUB_STEP_SUMMARY
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          echo "**App:** ${{ steps.app-info.outputs.name }}" >> $GITHUB_STEP_SUMMARY
+
+          echo "**Version:** v${{ steps.app-info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+
+          echo "**ID:** ${{ steps.app-info.outputs.id }}" >> $GITHUB_STEP_SUMMARY
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          echo "### 🔗 Links" >> $GITHUB_STEP_SUMMARY
+
+          echo "- [Manage Release](${{ steps.publish.outputs.url }})" >> $GITHUB_STEP_SUMMARY
+
+          echo "- [Homey App Store](https://homey.app/a/${{ steps.app-info.outputs.id }})" >>
+          $GITHUB_STEP_SUMMARY
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          echo "### 📋 Next Steps" >> $GITHUB_STEP_SUMMARY
+
+          echo "1. Click **Manage Release** to review" >> $GITHUB_STEP_SUMMARY
+
+          echo "2. Submit for **Test** or **Live** certification" >> $GITHUB_STEP_SUMMARY
+
+          echo "3. Wait for Athom approval" >> $GITHUB_STEP_SUMMARY
+    timeout-minutes: 20
+    strategy:
+      fail-fast: true
+      matrix:
+        node-version:
+          - 18
+  release:
+    name: 📝 GitHub Release
+    runs-on: ubuntu-latest
+    needs:
+      - publish
+    if: success()
+    permissions:
+      contents: write
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+      - name: 📦 Get Version
+        id: version
+        run: echo "version=$(node -p "require('./app.json').version")" >> $GITHUB_OUTPUT
+      - name: 📝 Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: v${{ steps.version.outputs.version }}
+          body: |
+            ## 🎉 Release v${{ steps.version.outputs.version }}
+
+            Published to Homey App Store using official Athom GitHub Action.
+
+            **Manage:** ${{ needs.publish.outputs.url }}
           draft: false
           prerelease: false
-          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Notify Homey App Store
-        run: |
-          VERSION="${{ steps.version.outputs.version }}"
-          
-          echo "🚀 HOMEY APP STORE PUBLICATION"
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo ""
-          echo "✅ Git tag created: v$VERSION"
-          echo "✅ GitHub Release published"
-          echo ""
-          echo "📋 NEXT STEPS:"
-          echo ""
-          echo "Homey App Store will automatically detect the new tag and:"
-          echo "  1. Clone the repository"
-          echo "  2. Build the app"
-          echo "  3. Run validation tests"
-          echo "  4. Publish to App Store (if all tests pass)"
-          echo ""
-          echo "📊 Monitor build status:"
-          echo "  https://tools.developer.homey.app/apps/app/com.tuya.zigbee"
-          echo ""
-          echo "🎯 Test version (for private testing):"
-          echo "  https://homey.app/a/com.tuya.zigbee/test/"
-          echo ""
-          echo "📱 Public App Store page:"
-          echo "  https://homey.app/a/com.tuya.zigbee/"
-          echo ""
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo ""
-          echo "⏳ Build typically takes 5-10 minutes"
-          echo "📧 You will receive an email when build completes"
-          echo ""
-      
-      - name: Update metrics
-        run: |
-          echo "📊 Updating release metrics..."
-          node scripts/monitoring/count-devices.js
-          node scripts/monitoring/generate-metrics-report.js
-          
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git add reports/metrics/ || true
-          git commit -m "chore: Update metrics for v${{ steps.version.outputs.version }}" || true
-          git push origin HEAD:master || true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Comment on related PRs
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const version = '${{ steps.version.outputs.version }}';
-            
-            // Find recent merged PRs
-            const { data: pulls } = await github.rest.pulls.list({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: 'closed',
-              per_page: 10
-            });
-            
-            const recentMerged = pulls.filter(pr => pr.merged_at);
-            
-            for (const pr of recentMerged) {
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: pr.number,
-                body: `## 🎉 Released in v${version}!
-                
-                Your contribution is now live in the Homey App Store!
-                
-                ### 📱 Update Instructions
-                
-                Users can update via:
-                - Homey app → Settings → Apps → Tuya Zigbee → Update
-                - Automatic updates (if enabled)
-                
-                ### 🙏 Thank You!
-                
-                Your contribution helps thousands of users. 
-                
-                ---
-                
-                Released: ${new Date().toLocaleString()}`
-              }).catch(() => {
-                // Ignore errors (PR might have comments disabled)
-              });
-            }
+    timeout-minutes: 20
+    strategy:
+      fail-fast: true
+      matrix:
+        node-version:
+          - 18
