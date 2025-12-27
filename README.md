@@ -1,6 +1,6 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.265-blue)
+![Version](https://img.shields.io/badge/version-5.5.266-blue)
 ![Devices](https://img.shields.io/badge/devices-4200+-green)
 ![Drivers](https://img.shields.io/badge/drivers-86-brightgreen)
 ![SDK](https://img.shields.io/badge/SDK-3-orange)
@@ -67,7 +67,7 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.265
+## 🚀 Latest Updates - v5.5.266
 
 ### ✨ Recent Features (Dec 2025)
 
