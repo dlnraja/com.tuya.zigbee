@@ -644,5 +644,9 @@
   "5.5.261": {
     "en": "FIX Moes scene button: Detect ANY onOff change as button press (not just true). Debounce rapid events.",
     "fr": "FIX Moes scene button: Detecter TOUT changement onOff comme pression bouton. Anti-rebond."
+  },
+  "5.5.262": {
+    "en": "FIX button_wireless: Added scenes/onOff clusters to all endpoints for proper button detection",
+    "fr": "FIX button_wireless: Ajout clusters scenes/onOff a tous les endpoints"
   }
 }
