@@ -1,13 +1,156 @@
 {
+  "capabilities": {
+    "measure_battery": {
+      "title": "Batterie",
+      "units": "%"
+    },
+    "alarm_generic": {
+      "title": "Alarm"
+    },
+    "alarm_motion": {
+      "title": "Bewegung"
+    },
+    "alarm_contact": {
+      "title": "Kontakt"
+    },
+    "alarm_water": {
+      "title": "Wasserleck"
+    },
+    "alarm_smoke": {
+      "title": "Rauch"
+    },
+    "alarm_co": {
+      "title": "CO"
+    },
+    "alarm_co2": {
+      "title": "CO₂"
+    },
+    "alarm_tamper": {
+      "title": "Manipulation"
+    },
+    "alarm_vibration": {
+      "title": "Vibration"
+    },
+    "onoff": {
+      "title": "Strom"
+    },
+    "dim": {
+      "title": "Helligkeit",
+      "units": "%"
+    },
+    "light_hue": {
+      "title": "Farbton"
+    },
+    "light_saturation": {
+      "title": "Sättigung"
+    },
+    "light_temperature": {
+      "title": "Farbtemperatur"
+    },
+    "light_mode": {
+      "title": "Lichtmodus"
+    },
+    "measure_temperature": {
+      "title": "Temperatur",
+      "units": "°C"
+    },
+    "measure_humidity": {
+      "title": "Luftfeuchtigkeit",
+      "units": "%"
+    },
+    "measure_pressure": {
+      "title": "Luftdruck",
+      "units": "mbar"
+    },
+    "measure_co2": {
+      "title": "CO₂",
+      "units": "ppm"
+    },
+    "measure_pm25": {
+      "title": "PM2.5",
+      "units": "µg/m³"
+    },
+    "measure_voc": {
+      "title": "VOC",
+      "units": "ppb"
+    },
+    "measure_luminance": {
+      "title": "Helligkeit",
+      "units": "lux"
+    },
+    "measure_power": {
+      "title": "Leistung",
+      "units": "W"
+    },
+    "measure_voltage": {
+      "title": "Spannung",
+      "units": "V"
+    },
+    "measure_current": {
+      "title": "Stromstärke",
+      "units": "A"
+    },
+    "meter_power": {
+      "title": "Energie",
+      "units": "kWh"
+    },
+    "target_temperature": {
+      "title": "Zieltemperatur",
+      "units": "°C"
+    },
+    "windowcoverings_state": {
+      "title": "Rollläden",
+      "values": {
+        "up": "Auf",
+        "idle": "Stop",
+        "down": "Ab"
+      }
+    },
+    "windowcoverings_set": {
+      "title": "Position",
+      "units": "%"
+    },
+    "button": {
+      "title": "Taste"
+    }
+  },
   "settings": {
-    "title": "Einstellungen",
-    "debug_logging": "Debug-Protokollierung aktivieren",
-    "debug_logging_hint": "Detaillierte Protokollierung für Fehlerbehebung",
-    "community_updates": "Community-Updates aktivieren",
-    "community_updates_hint": "Benachrichtigungen über neue Geräteunterstützung erhalten",
-    "reporting_interval": "Berichtsintervall (Sekunden)",
-    "temperature_offset": "Temperatur-Offset (°C)",
-    "humidity_offset": "Luftfeuchtigkeit-Offset (%)"
+    "power_source": {
+      "label": "Stromquelle",
+      "hint": "Stromquelle manuell auswählen oder automatische Erkennung verwenden"
+    },
+    "battery_type": {
+      "label": "Batterietyp",
+      "hint": "Batterietyp manuell auswählen oder automatische Erkennung basierend auf Spannung verwenden"
+    },
+    "battery_low_threshold": {
+      "label": "Schwellwert niedrige Batterie (%)",
+      "hint": "Warnung bei niedriger Batterie unter diesem Prozentsatz auslösen"
+    },
+    "battery_critical_threshold": {
+      "label": "Schwellwert kritische Batterie (%)",
+      "hint": "Warnung bei kritischer Batterie unter diesem Prozentsatz auslösen"
+    },
+    "enable_battery_notifications": {
+      "label": "Batteriebenachrichtigungen aktivieren",
+      "hint": "Flow-Benachrichtigungen für Batterieereignisse senden"
+    },
+    "battery_report_interval": {
+      "label": "Batteriebericht-Intervall (Stunden)",
+      "hint": "Wie oft Batteriestatus-Updates angefordert werden sollen"
+    },
+    "optimization_mode": {
+      "label": "Energieoptimierungsmodus",
+      "hint": "Balance zwischen Reaktionsfähigkeit und Batterielebensdauer"
+    },
+    "show_voltage": {
+      "label": "Batteriespannung anzeigen",
+      "hint": "Rohe Batteriespannung in den Geräteeinstellungen anzeigen"
+    },
+    "enable_power_estimation": {
+      "label": "Leistungsschätzung aktivieren",
+      "hint": "Stromverbrauch schätzen, wenn keine echte Messung verfügbar ist (nur AC/DC-Geräte)"
+    }
   },
   "tabs": {
     "general": "Allgemein",
