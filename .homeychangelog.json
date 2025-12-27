@@ -1,4 +1,22 @@
 {
+  "5.5.269": {
+    "en": "🔧 Fix TS0210 Vibration Sensor: Removed _TZ3000_bmfw9ykl and _TZ3000_lzdjjfss from wrong drivers (contact_sensor, plug_smart, switch_1gang, climate_sensor). Added +5 vibration sensor IDs from Blakadder/Z2M. Device now shows correct icon. RE-PAIR required!",
+    "fr": "🔧 Fix Capteur Vibration TS0210: Supprimé _TZ3000_bmfw9ykl et _TZ3000_lzdjjfss des mauvais drivers. Ajouté +5 IDs capteurs vibration. L'appareil affiche maintenant la bonne icône. RE-APPAIRAGE requis!",
+    "nl": "🔧 Fix TS0210 Trillingssensor: _TZ3000_bmfw9ykl en _TZ3000_lzdjjfss verwijderd uit verkeerde drivers. +5 trillingssensor IDs toegevoegd. Apparaat toont nu correct icoon. OPNIEUW KOPPELEN vereist!",
+    "de": "🔧 Fix TS0210 Vibrationssensor: _TZ3000_bmfw9ykl und _TZ3000_lzdjjfss aus falschen Treibern entfernt. +5 Vibrationssensor-IDs hinzugefügt. Gerät zeigt jetzt korrektes Symbol. NEU KOPPELN erforderlich!"
+  },
+  "5.5.268": {
+    "en": "🔬 Radar Sensor Deep Fix: TZE284_iadro9bf presence/distance null issue (Z2M #27212). Added periodic polling (30s), DP1 fallback for presence, enhanced debug logging for all incoming DPs. Helps diagnose firmware variants.",
+    "fr": "🔬 Fix Radar Profond: Problème TZE284_iadro9bf presence/distance null (Z2M #27212). Ajout polling périodique (30s), fallback DP1 pour présence, logs debug améliorés pour tous les DPs entrants.",
+    "nl": "🔬 Radar Sensor Deep Fix: TZE284_iadro9bf presence/distance null probleem (Z2M #27212). Periodieke polling (30s), DP1 fallback voor aanwezigheid, verbeterde debug logging toegevoegd.",
+    "de": "🔬 Radar Sensor Deep Fix: TZE284_iadro9bf presence/distance null Problem (Z2M #27212). Periodisches Polling (30s), DP1 Fallback für Präsenz, verbesserte Debug-Logs hinzugefügt."
+  },
+  "5.5.267": {
+    "en": "🔧 Eftychis Devices (#712): Removed misidentified devices from climate_sensor (_tz3210_up3pngle smoke detector, _tz3000_5tqxpine 4-button switch, _TZE200_3TOWULQD PIR motion sensor). Proper device classification.",
+    "fr": "🔧 Appareils Eftychis (#712): Supprimé appareils mal identifiés de climate_sensor. Classification correcte des appareils.",
+    "nl": "🔧 Eftychis Apparaten (#712): Verkeerd geïdentificeerde apparaten verwijderd uit climate_sensor. Juiste apparaatclassificatie.",
+    "de": "🔧 Eftychis Geräte (#712): Falsch identifizierte Geräte aus climate_sensor entfernt. Korrekte Geräteklassifizierung."
+  },
   "5.5.247": {
     "en": "🔄 Legacy Recovery: Analyzed 3 historical versions (v5.3.84, v5.2.99, v34.0.1). Recovered +44 validated manufacturerNames from legacy drivers. Total: 3961 IDs.",
     "fr": "🔄 Récupération Legacy: Analysé 3 versions historiques. Récupéré +44 manufacturerNames validés. Total: 3961 IDs.",
