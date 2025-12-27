@@ -1,4 +1,10 @@
 {
+  "5.5.272": {
+    "en": "🔧 FIX: 'getData not available' spam - Added 5 fallback methods for Tuya DP queries (getData, dataQuery, command, writeRaw, mcuVersionRequest). Reduced log spam - message now appears only once per device. Improves compatibility with devices that don't support standard getData.",
+    "fr": "🔧 FIX: Spam 'getData not available' - Ajouté 5 méthodes alternatives pour requêtes Tuya DP. Réduit le spam de logs - message affiché une seule fois par appareil. Améliore la compatibilité avec les appareils ne supportant pas getData standard.",
+    "nl": "🔧 FIX: 'getData not available' spam - 5 fallback methoden toegevoegd voor Tuya DP queries. Verminderde log spam - bericht verschijnt nu slechts één keer per apparaat. Verbeterde compatibiliteit met apparaten die standaard getData niet ondersteunen.",
+    "de": "🔧 FIX: 'getData not available' Spam - 5 Fallback-Methoden für Tuya DP-Abfragen hinzugefügt. Reduzierter Log-Spam - Nachricht erscheint nur einmal pro Gerät. Verbesserte Kompatibilität mit Geräten ohne Standard-getData."
+  },
   "5.5.271": {
     "en": "🐛 FIX: Button detection broken - Autonomous adaptation was incorrectly converting button_wireless to switch_1gang. Fixed device type detection order (check IAS Zone BEFORE onOff). Added safeguard to never convert button drivers to switches. User report: 'Kein Tastendruck erkannt'.",
     "fr": "🐛 FIX: Détection boutons cassée - L'adaptation autonome convertissait incorrectement button_wireless en switch_1gang. Corrigé l'ordre de détection (vérifier IAS Zone AVANT onOff). Ajouté protection pour ne jamais convertir les drivers button en switch.",
