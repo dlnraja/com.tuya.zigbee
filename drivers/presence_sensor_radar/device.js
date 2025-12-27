@@ -55,21 +55,22 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // TYPE B: ZY-M100 Wall Mount (gkfbdvyx variants)
-  // DP1=presence(enum), DP3=near(÷100), DP4=far(÷100), DP9=distance(÷100), DP101=static, DP102=motion
+  // TYPE B: 24GHz Human Presence Sensor (gkfbdvyx variants)
+  // Source: ZHA quirk #4072 - NO ILLUMINANCE SENSOR!
+  // DP1=occupancy(bool), DP101=attendance_duration, DP102=absence_duration
+  // v5.5.264: Fixed - this sensor does NOT have illuminance!
   // ─────────────────────────────────────────────────────────────────────────────
   'ZY_M100_WALL': {
     sensors: [
       '_TZE200_gkfbdvyx', '_TZE204_gkfbdvyx',
+      '_TZE200_0u3bj3rc', '_TZE200_mx6u6l4y', '_TZE200_v6ossqfy',
     ],
     battery: false,
+    hasIlluminance: false,  // v5.5.264: NO LUX SENSOR!
     dpMap: {
-      1: { cap: 'alarm_motion', type: 'presence_enum' },
-      3: { cap: null, internal: 'near_distance', divisor: 100 },
-      4: { cap: null, internal: 'far_distance', divisor: 100 },
-      9: { cap: 'measure_distance', divisor: 100 },
-      101: { cap: null, internal: 'static_sensitivity' },
-      102: { cap: null, internal: 'motion_sensitivity' },
+      1: { cap: 'alarm_motion', type: 'presence_bool' },  // occupancy boolean
+      101: { cap: null, internal: 'attendance_duration' },  // time present
+      102: { cap: null, internal: 'absence_duration' },     // time absent
     }
   },
 
@@ -94,7 +95,8 @@ const SENSOR_CONFIGS = {
   // ─────────────────────────────────────────────────────────────────────────────
   // TYPE D: TZE284 ZY-M100-S_2 Series (newer chips with HIGH DP numbers)
   // Source: ZHA quirk https://github.com/zigpy/zha-device-handlers/issues/2852
-  // DP104=illuminance(log10), DP105=motion_state, DP106=motion_sens, DP107=max_range
+  // v5.5.264: Fixed DP104 lux conversion - raw ADC value needs log10 transform
+  // DP104=illuminance(raw->lux), DP105=motion_state, DP106=motion_sens, DP107=max_range
   // DP109=target_distance, DP110=fading_time, DP111=presence_sens, DP112=occupancy
   // ─────────────────────────────────────────────────────────────────────────────
   'TZE284_SERIES': {
@@ -104,10 +106,12 @@ const SENSOR_CONFIGS = {
       '_TZE284_qasjif9e', '_TZE284_sxm7l9xa',
       '_TZE284_xsm7l9xa', '_TZE284_yrwmnya3',
       '_TZE204_ijxvkhd0', '_TZE204_e5m9c5hl',
+      '_TZE204_qasjif9e',  // v5.5.264: added from ZHA quirk
     ],
     battery: false,
+    hasIlluminance: true,
     dpMap: {
-      104: { cap: 'measure_luminance', type: 'lux_direct' },  // Direct lux value
+      104: { cap: 'measure_luminance', type: 'lux_raw' },     // v5.5.264: RAW value needs conversion!
       105: { cap: 'alarm_motion', type: 'presence_enum' },    // 0=none, 1=presence, 2=motion
       106: { cap: null, internal: 'motion_sensitivity' },     // 1-9
       107: { cap: null, internal: 'max_range' },              // 150-550 cm
@@ -200,13 +204,28 @@ function transformPresence(value, type) {
   }
 }
 
-// Sanity check and transform illuminance value
+// v5.5.264: Sanity check and transform illuminance value
 // ZY-M100 spec: 0-2000 LUX max
+// TZE284 sensors report RAW ADC values that need log10 conversion
 function transformLux(value, type) {
   let lux = value;
 
+  // v5.5.264: TZE284 sensors report RAW ADC values
+  // Formula from ZHA: lux = 10^(raw/10000) or simpler: raw/10 for display
+  if (type === 'lux_raw') {
+    // Raw ADC value - apply logarithmic conversion
+    // Based on Z2M issue #18950: raw values are NOT in lux
+    if (value > 0) {
+      // Method 1: Log10 conversion (ZHA formula)
+      // lux = Math.pow(10, value / 10000);
+      // Method 2: Simple division (more practical for Tuya sensors)
+      lux = Math.round(value / 10);
+    } else {
+      lux = 0;
+    }
+  }
   // Some sensors report raw value that needs no conversion
-  if (type === 'lux_direct') {
+  else if (type === 'lux_direct') {
     lux = value;
   }
   // Some sensors report value * 10
