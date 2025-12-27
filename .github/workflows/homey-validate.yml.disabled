@@ -1,84 +1,75 @@
-name: Homey App Validation
-
-on:
+name: 🔍 Validate Homey App
+"on":
+  push:
+    branches:
+      - master
+      - main
+      - develop
+    paths:
+      - app.json
+      - .homeycompose/**
+      - drivers/**
+      - lib/**
+      - "*.js"
   pull_request:
     branches:
       - master
-  push:
-    branches-ignore:
-      - master
+      - main
   workflow_dispatch:
-
+    inputs:
+      level:
+        description: Validation level
+        required: true
+        type: choice
+        options:
+          - debug
+          - publish
+          - verified
+        default: publish
 jobs:
   validate:
-    name: Validate Homey App
+    name: 🔍 Validate App
     runs-on: ubuntu-latest
-    
-    strategy:
-      matrix:
-        validation-level: [debug, publish]
-    
     steps:
-      - name: Checkout Repository
+      - name: 📥 Checkout
         uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: 📦 Get App Info
+        id: app-info
+        run: |
+          VERSION=$(node -p "require('./app.json').version")
+          NAME=$(node -p "require('./app.json').name.en")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "name=$NAME" >> $GITHUB_OUTPUT
+          echo "📦 App: $NAME v$VERSION"
+      - name: 🔍 Validate (Official Athom Action)
+        uses: athombv/github-action-homey-app-validate@v1
         with:
-          node-version: '18'
-      
-      - name: Install Dependencies
+          level: ${{ inputs.level || 'publish' }}
+      - name: ✅ Summary
+        if: success()
         run: |
-          npm install --save-dev homey canvas
-          npm install --ignore-scripts
-      
-      - name: Clean Build Cache
-        run: |
-          rm -rf .homeybuild .homeycompose
-          echo "✅ Cache cleaned"
-      
-      # ✅ OFFICIAL HOMEY VALIDATION ACTION
-      - name: Validate (${{ matrix.validation-level }})
-        uses: athombv/github-action-homey-app-validate@master
-        with:
-          level: ${{ matrix.validation-level }}
-      
-      - name: Summary
-        if: always()
-        run: |
-          echo "## Validation Results (${{ matrix.validation-level }})" >> $GITHUB_STEP_SUMMARY
-          if [ "${{ job.status }}" = "success" ]; then
-            echo "✅ **PASSED** - App is ready for ${{ matrix.validation-level }}" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "❌ **FAILED** - Check errors above" >> $GITHUB_STEP_SUMMARY
-          fi
+          echo "## ✅ Validation Passed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**App:** ${{ steps.app-info.outputs.name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** v${{ steps.app-info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Level:** ${{ inputs.level || 'publish' }}" >> $GITHUB_STEP_SUMMARY
+      - name: ❌ Failed Summary
+        if: failure()
+        run: >
+          echo "## ❌ Validation Failed" >> $GITHUB_STEP_SUMMARY
 
-  syntax-check:
-    name: JSON Syntax Check
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      
-      - name: Validate JSON Files
-        run: |
-          echo "Checking JSON syntax..."
-          for file in $(find . -name "*.json" -not -path "./node_modules/*" -not -path "./.homeybuild/*"); do
-            echo "Validating: $file"
-            jq empty "$file" || { echo "❌ Invalid JSON: $file"; exit 1; }
-          done
-          echo "✅ All JSON files valid"
-      
-      - name: Check Driver Structure
-        run: |
-          echo "Checking driver structure..."
-          DRIVERS_COUNT=$(find drivers -maxdepth 1 -mindepth 1 -type d | wc -l)
-          echo "Found $DRIVERS_COUNT drivers"
-          
-          if [ $DRIVERS_COUNT -eq 0 ]; then
-            echo "❌ No drivers found"
-            exit 1
-          fi
-          
-          echo "✅ Driver structure looks good"
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          echo "Check the logs above for details." >> $GITHUB_STEP_SUMMARY
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          echo "### Common fixes:" >> $GITHUB_STEP_SUMMARY
+
+          echo "- Run \`homey app validate --level publish\` locally" >> $GITHUB_STEP_SUMMARY
+
+          echo "- Check [SDK3 Documentation](https://apps.developer.homey.app)" >>
+          $GITHUB_STEP_SUMMARY
+    timeout-minutes: 15
+    strategy:
+      fail-fast: true

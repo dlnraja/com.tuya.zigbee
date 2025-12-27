@@ -37,8 +37,8 @@ jobs:
         uses: athombv/github-action-homey-app-version@v1
         id: update
         with:
-          version:
-          changelog:
+          version: ${{ inputs.version }}
+          changelog: ${{ inputs.changelog }}
       - name: 📝 Commit & Push
         run: |
           git config --local user.name "github-actions[bot]"
@@ -67,6 +67,4 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Changelog" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-    timeout-minutes: 30
-    strategy:
-      fail-fast: true
+    timeout-minutes: 15
