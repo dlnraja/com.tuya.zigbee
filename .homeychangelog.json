@@ -1,4 +1,10 @@
 {
+  "5.5.270": {
+    "en": "🚨 CRITICAL FIX for TZE284 Radar (Ronny #719): Added missing Tuya DP listeners for mains-powered sensors! Presence was never updating because Tuya cluster events weren't being captured. Now listens for all DP events + polling. RE-PAIR recommended!",
+    "fr": "🚨 FIX CRITIQUE Radar TZE284 (Ronny #719): Ajouté listeners Tuya DP manquants pour capteurs secteur! La présence ne se mettait jamais à jour. Écoute maintenant tous les événements DP + polling. RE-APPAIRAGE recommandé!",
+    "nl": "🚨 KRITIEKE FIX TZE284 Radar (Ronny #719): Ontbrekende Tuya DP listeners toegevoegd voor netvoeding sensoren! Aanwezigheid werd nooit bijgewerkt. Luistert nu naar alle DP events + polling. OPNIEUW KOPPELEN aanbevolen!",
+    "de": "🚨 KRITISCHER FIX TZE284 Radar (Ronny #719): Fehlende Tuya DP Listener für netzbetriebene Sensoren hinzugefügt! Präsenz wurde nie aktualisiert. Lauscht jetzt auf alle DP Events + Polling. NEU KOPPELN empfohlen!"
+  },
   "5.5.269": {
     "en": "🔧 Fix TS0210 Vibration Sensor: Removed _TZ3000_bmfw9ykl and _TZ3000_lzdjjfss from wrong drivers (contact_sensor, plug_smart, switch_1gang, climate_sensor). Added +5 vibration sensor IDs from Blakadder/Z2M. Device now shows correct icon. RE-PAIR required!",
     "fr": "🔧 Fix Capteur Vibration TS0210: Supprimé _TZ3000_bmfw9ykl et _TZ3000_lzdjjfss des mauvais drivers. Ajouté +5 IDs capteurs vibration. L'appareil affiche maintenant la bonne icône. RE-APPAIRAGE requis!",
