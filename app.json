@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.273",
+  "version": "5.5.274",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -25348,10 +25348,13 @@
           "_TZ3290_gnlsafc7",
           "_TZ3290_j37rooaxrcdcqo5n",
           "_tz3290_rlkmy85q4pzoxobl",
-          "_TZ3290_u9xac5rv"
+          "_TZ3290_u9xac5rv",
+          "_TZE200_ikvncluo",
+          "_TZE204_ikvncluo"
         ],
         "productId": [
-          "TS1201"
+          "TS1201",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -31381,10 +31384,13 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_jckxip3g"
+          "_TZ3000_jckxip3g",
+          "_TZE204_zqtiam9d",
+          "_TZE200_zqtiam9d"
         ],
         "productId": [
-          "TS0044"
+          "TS0044",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
