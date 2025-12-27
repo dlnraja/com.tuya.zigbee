@@ -1,4 +1,10 @@
 {
+  "5.5.273": {
+    "en": "🔧 FIX: Radar sensor improvements - Added DP12 illuminance mapping for variants that use it. Reduced confusing 'UNMAPPED DP' log warnings (now shows info message instead). Based on Ronny's diagnostic report #723.",
+    "fr": "🔧 FIX: Améliorations capteur radar - Ajouté mapping DP12 illuminance pour variantes qui l'utilisent. Réduit les avertissements 'UNMAPPED DP' confus. Basé sur diagnostic Ronny #723.",
+    "nl": "🔧 FIX: Radar sensor verbeteringen - DP12 illuminantie mapping toegevoegd voor varianten die het gebruiken. Verminderde verwarrende 'UNMAPPED DP' log waarschuwingen. Gebaseerd op Ronny's diagnostic #723.",
+    "de": "🔧 FIX: Radar-Sensor Verbesserungen - DP12 Beleuchtungsmapping für Varianten hinzugefügt. Reduzierte verwirrende 'UNMAPPED DP' Log-Warnungen. Basierend auf Ronnys Diagnostic #723."
+  },
   "5.5.272": {
     "en": "🔧 FIX: 'getData not available' spam - Added 5 fallback methods for Tuya DP queries (getData, dataQuery, command, writeRaw, mcuVersionRequest). Reduced log spam - message now appears only once per device. Improves compatibility with devices that don't support standard getData.",
     "fr": "🔧 FIX: Spam 'getData not available' - Ajouté 5 méthodes alternatives pour requêtes Tuya DP. Réduit le spam de logs - message affiché une seule fois par appareil. Améliore la compatibilité avec les appareils ne supportant pas getData standard.",
