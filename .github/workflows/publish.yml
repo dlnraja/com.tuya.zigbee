@@ -1,4 +1,4 @@
-name: Homey App Publish
+name: 🚀 Homey App Publish
 
 on:
   push:
@@ -6,25 +6,39 @@ on:
       - master
       - main
     paths:
-      - ".homeycompose/app.json"
+      - ".homeycompose/**"
       - "drivers/**"
       - "lib/**"
       - "app.js"
+      - "app.json"
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Force publish even if validation warnings"
+        required: false
+        type: boolean
+        default: false
+
+env:
+  NODE_VERSION: "20"
 
 jobs:
-  publish:
-    name: Publish to Homey App Store
+  validate:
+    name: 🔍 Validate
     runs-on: ubuntu-latest
-
+    timeout-minutes: 15
+    outputs:
+      version: ${{ steps.info.outputs.version }}
+      name: ${{ steps.info.outputs.name }}
+      id: ${{ steps.info.outputs.id }}
     steps:
-      - name: 📥 Checkout code
+      - name: 📥 Checkout
         uses: actions/checkout@v4
 
       - name: 📦 Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: ${{ env.NODE_VERSION }}
           cache: npm
 
       - name: 📦 Install dependencies
@@ -33,16 +47,60 @@ jobs:
       - name: 🔨 Build app
         run: npx homey app build
 
-      - name: 🔍 Validate
-        run: npx homey app validate --level publish
+      - name: 📦 Get App Info
+        id: info
+        run: |
+          VERSION=$(node -p "require('./app.json').version")
+          NAME=$(node -p "require('./app.json').name.en")
+          ID=$(node -p "require('./app.json').id")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "name=$NAME" >> $GITHUB_OUTPUT
+          echo "id=$ID" >> $GITHUB_OUTPUT
+          echo "📦 $NAME v$VERSION ($ID)"
 
-      - name: 🚀 Publish to Homey App Store
-        uses: athombv/github-action-homey-app-publish@master
+      - name: 🔍 Validate (Athom Official)
+        uses: athombv/github-action-homey-app-validate@v1
+        with:
+          level: publish
+
+  publish:
+    name: 🚀 Publish
+    runs-on: ubuntu-latest
+    needs: validate
+    timeout-minutes: 15
+    if: needs.validate.result == 'success'
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 🔑 Check HOMEY_PAT
+        run: |
+          if [ -z "${{ secrets.HOMEY_PAT }}" ]; then
+            echo "::error::HOMEY_PAT not configured!"
+            echo "## ❌ Authentication Required" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### Setup:" >> $GITHUB_STEP_SUMMARY
+            echo "1. Go to [tools.developer.homey.app/me](https://tools.developer.homey.app/me)" >> $GITHUB_STEP_SUMMARY
+            echo "2. Copy your **Personal Access Token**" >> $GITHUB_STEP_SUMMARY
+            echo "3. Add as GitHub Secret: **HOMEY_PAT**" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+          echo "✅ HOMEY_PAT configured"
+
+      - name: 🚀 Publish (Athom Official)
+        uses: athombv/github-action-homey-app-publish@v1
         id: publish
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
-      - name: 📝 Summary
+      - name: ✅ Summary
         run: |
-          echo "✅ App published successfully!" >> $GITHUB_STEP_SUMMARY
-          echo "🔗 Manage your app at ${{ steps.publish.outputs.url }}" >> $GITHUB_STEP_SUMMARY
+          echo "## 🎉 ${{ needs.validate.outputs.name }} v${{ needs.validate.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **Published to Homey App Store!**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 [Manage Build](${{ steps.publish.outputs.url }})" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Next Steps:" >> $GITHUB_STEP_SUMMARY
+          echo "1. Review the uploaded version" >> $GITHUB_STEP_SUMMARY
+          echo "2. Submit for Test or Live certification" >> $GITHUB_STEP_SUMMARY
