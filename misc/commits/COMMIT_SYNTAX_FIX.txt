@@ -1,9 +1,0 @@
-fix(syntax): Remove await outside async + fix commented code blocks
-
-ERRORS FIXED:
-1. button_emergency_sos - await in non-async callback
-2. presence_sensor_radar - await in non-async callback
-3. climate_monitor_temp_humidity - syntax error partial comment
-4. climate_sensor_soil - syntax error partial comment
-
-RESULT: All SyntaxError fixed drivers will load
