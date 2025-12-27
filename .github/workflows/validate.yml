@@ -1,57 +1,70 @@
-name: Validate App
-"on":
-  push:
-    branches:
-      - master
-      - main
-      - develop
-    paths:
-      - drivers/**
-      - lib/**
-      - app.js
-      - app.json
-      - .homeycompose/**
+name: 🔍 Validate Homey App
+
+on:
   pull_request:
     branches:
       - master
       - main
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      level:
+        description: "Validation level"
+        required: false
+        type: choice
+        options:
+          - debug
+          - publish
+          - verified
+        default: publish
+
+env:
+  NODE_VERSION: "20"
+
 jobs:
   validate:
+    name: 🔍 Validate
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: 📥 Checkout repository
+      - name: 📥 Checkout
         uses: actions/checkout@v4
+
       - name: 📦 Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: ${{ env.NODE_VERSION }}
           cache: npm
+
       - name: 📦 Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
+
       - name: 🔨 Build app
         run: npx homey app build
-      - name: 🔍 Validate (publish level)
-        run: npx homey app validate --level publish
-      - name: 📊 Run project validator
+
+      - name: 📦 Get App Info
+        id: info
         run: |
-          if [ -f "automation/PROJECT_VALIDATOR.js" ]; then
-            node automation/PROJECT_VALIDATOR.js || true
-          else
-            echo "⚠️ PROJECT_VALIDATOR.js not found, skipping"
-          fi
-      - name: 📋 Create validation summary
-        if: always()
+          VERSION=$(node -p "require('./app.json').version")
+          NAME=$(node -p "require('./app.json').name.en")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "name=$NAME" >> $GITHUB_OUTPUT
+          echo "📦 $NAME v$VERSION"
+
+      - name: 🔍 Validate (Athom Official)
+        uses: athombv/github-action-homey-app-validate@v1
+        with:
+          level: ${{ inputs.level || 'publish' }}
+
+      - name: ✅ Summary
+        if: success()
         run: |
-          echo "## ✅ Validation Results" >> $GITHUB_STEP_SUMMARY
+          echo "## ✅ ${{ steps.info.outputs.name }} v${{ steps.info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Check | Status |" >> $GITHUB_STEP_SUMMARY
-          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Build | ✅ Passed |" >> $GITHUB_STEP_SUMMARY
-          echo "| Homey Validate | ✅ Passed (publish level) |" >> $GITHUB_STEP_SUMMARY
-          echo "| Project Validator | ✅ Passed |" >> $GITHUB_STEP_SUMMARY
-    strategy:
-      fail-fast: true
-      matrix:
-        node-version: [20]
+          echo "Validation passed at **${{ inputs.level || 'publish' }}** level." >> $GITHUB_STEP_SUMMARY
+
+      - name: ❌ Failed
+        if: failure()
+        run: |
+          echo "## ❌ Validation Failed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Run \`homey app validate --level publish\` locally for details." >> $GITHUB_STEP_SUMMARY
