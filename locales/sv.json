@@ -1,0 +1,167 @@
+{
+  "capabilities": {
+    "measure_battery": {
+      "title": "Batteri",
+      "units": "%"
+    },
+    "alarm_generic": {
+      "title": "Larm"
+    },
+    "alarm_motion": {
+      "title": "Rörelse"
+    },
+    "alarm_contact": {
+      "title": "Kontakt"
+    },
+    "alarm_water": {
+      "title": "Vattenläcka"
+    },
+    "alarm_smoke": {
+      "title": "Rök"
+    },
+    "alarm_co": {
+      "title": "CO"
+    },
+    "alarm_co2": {
+      "title": "CO₂"
+    },
+    "alarm_tamper": {
+      "title": "Manipulation"
+    },
+    "alarm_vibration": {
+      "title": "Vibration"
+    },
+    "onoff": {
+      "title": "Ström"
+    },
+    "dim": {
+      "title": "Ljusstyrka",
+      "units": "%"
+    },
+    "light_hue": {
+      "title": "Nyans"
+    },
+    "light_saturation": {
+      "title": "Mättnad"
+    },
+    "light_temperature": {
+      "title": "Färgtemperatur"
+    },
+    "light_mode": {
+      "title": "Ljusläge"
+    },
+    "measure_temperature": {
+      "title": "Temperatur",
+      "units": "°C"
+    },
+    "measure_humidity": {
+      "title": "Luftfuktighet",
+      "units": "%"
+    },
+    "measure_pressure": {
+      "title": "Lufttryck",
+      "units": "mbar"
+    },
+    "measure_co2": {
+      "title": "CO₂",
+      "units": "ppm"
+    },
+    "measure_pm25": {
+      "title": "PM2.5",
+      "units": "µg/m³"
+    },
+    "measure_voc": {
+      "title": "VOC",
+      "units": "ppb"
+    },
+    "measure_luminance": {
+      "title": "Ljusstyrka",
+      "units": "lux"
+    },
+    "measure_power": {
+      "title": "Effekt",
+      "units": "W"
+    },
+    "measure_voltage": {
+      "title": "Spänning",
+      "units": "V"
+    },
+    "measure_current": {
+      "title": "Ström",
+      "units": "A"
+    },
+    "meter_power": {
+      "title": "Energi",
+      "units": "kWh"
+    },
+    "target_temperature": {
+      "title": "Måltemperatur",
+      "units": "°C"
+    },
+    "windowcoverings_state": {
+      "title": "Persienner",
+      "values": {
+        "up": "Upp",
+        "idle": "Stopp",
+        "down": "Ner"
+      }
+    },
+    "windowcoverings_set": {
+      "title": "Position",
+      "units": "%"
+    },
+    "button": {
+      "title": "Knapp"
+    }
+  },
+  "settings": {
+    "power_source": {
+      "label": "Strömkälla",
+      "hint": "Välj strömkälla manuellt eller använd automatisk detektering"
+    },
+    "battery_type": {
+      "label": "Batterityp",
+      "hint": "Välj batterityp manuellt eller använd automatisk detektering baserad på spänning"
+    },
+    "battery_low_threshold": {
+      "label": "Tröskelvärde lågt batteri (%)",
+      "hint": "Utlös varning för lågt batteri under denna procent"
+    },
+    "battery_critical_threshold": {
+      "label": "Tröskelvärde kritiskt batteri (%)",
+      "hint": "Utlös varning för kritiskt batteri under denna procent"
+    },
+    "enable_battery_notifications": {
+      "label": "Aktivera batterimeddelanden",
+      "hint": "Skicka flow-meddelanden för batterihändelser"
+    },
+    "battery_report_interval": {
+      "label": "Batteriraportintervall (timmar)",
+      "hint": "Hur ofta batteristatusuppdateringar begärs"
+    },
+    "optimization_mode": {
+      "label": "Energioptimeringsläge",
+      "hint": "Balans mellan respons och batteritid"
+    },
+    "show_voltage": {
+      "label": "Visa batterispänning",
+      "hint": "Visa rå batterispänning i enhetsinställningar"
+    },
+    "enable_power_estimation": {
+      "label": "Aktivera effektuppskattning",
+      "hint": "Uppskatta förbrukning när verklig mätning inte är tillgänglig (endast AC/DC-enheter)"
+    }
+  },
+  "tabs": {
+    "general": "Allmänt",
+    "advanced": "Avancerat",
+    "about": "Om"
+  },
+  "common": {
+    "save": "Spara",
+    "cancel": "Avbryt",
+    "ok": "OK",
+    "delete": "Radera",
+    "edit": "Redigera"
+  }
+}

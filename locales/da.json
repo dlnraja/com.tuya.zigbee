@@ -1,0 +1,167 @@
+{
+  "capabilities": {
+    "measure_battery": {
+      "title": "Batteri",
+      "units": "%"
+    },
+    "alarm_generic": {
+      "title": "Alarm"
+    },
+    "alarm_motion": {
+      "title": "Bevægelse"
+    },
+    "alarm_contact": {
+      "title": "Kontakt"
+    },
+    "alarm_water": {
+      "title": "Vandlækage"
+    },
+    "alarm_smoke": {
+      "title": "Røg"
+    },
+    "alarm_co": {
+      "title": "CO"
+    },
+    "alarm_co2": {
+      "title": "CO₂"
+    },
+    "alarm_tamper": {
+      "title": "Sabotage"
+    },
+    "alarm_vibration": {
+      "title": "Vibration"
+    },
+    "onoff": {
+      "title": "Strøm"
+    },
+    "dim": {
+      "title": "Lysstyrke",
+      "units": "%"
+    },
+    "light_hue": {
+      "title": "Farvetone"
+    },
+    "light_saturation": {
+      "title": "Mætning"
+    },
+    "light_temperature": {
+      "title": "Farvetemperatur"
+    },
+    "light_mode": {
+      "title": "Lystilstand"
+    },
+    "measure_temperature": {
+      "title": "Temperatur",
+      "units": "°C"
+    },
+    "measure_humidity": {
+      "title": "Luftfugtighed",
+      "units": "%"
+    },
+    "measure_pressure": {
+      "title": "Lufttryk",
+      "units": "mbar"
+    },
+    "measure_co2": {
+      "title": "CO₂",
+      "units": "ppm"
+    },
+    "measure_pm25": {
+      "title": "PM2.5",
+      "units": "µg/m³"
+    },
+    "measure_voc": {
+      "title": "VOC",
+      "units": "ppb"
+    },
+    "measure_luminance": {
+      "title": "Lysstyrke",
+      "units": "lux"
+    },
+    "measure_power": {
+      "title": "Effekt",
+      "units": "W"
+    },
+    "measure_voltage": {
+      "title": "Spænding",
+      "units": "V"
+    },
+    "measure_current": {
+      "title": "Strøm",
+      "units": "A"
+    },
+    "meter_power": {
+      "title": "Energi",
+      "units": "kWh"
+    },
+    "target_temperature": {
+      "title": "Måltemperatur",
+      "units": "°C"
+    },
+    "windowcoverings_state": {
+      "title": "Persienner",
+      "values": {
+        "up": "Op",
+        "idle": "Stop",
+        "down": "Ned"
+      }
+    },
+    "windowcoverings_set": {
+      "title": "Position",
+      "units": "%"
+    },
+    "button": {
+      "title": "Knap"
+    }
+  },
+  "settings": {
+    "power_source": {
+      "label": "Strømkilde",
+      "hint": "Vælg strømkilde manuelt eller brug automatisk detektion"
+    },
+    "battery_type": {
+      "label": "Batteritype",
+      "hint": "Vælg batteritype manuelt eller brug automatisk detektion baseret på spænding"
+    },
+    "battery_low_threshold": {
+      "label": "Tærskel lavt batteri (%)",
+      "hint": "Udløs advarsel for lavt batteri under denne procent"
+    },
+    "battery_critical_threshold": {
+      "label": "Tærskel kritisk batteri (%)",
+      "hint": "Udløs advarsel for kritisk batteri under denne procent"
+    },
+    "enable_battery_notifications": {
+      "label": "Aktiver batterimeddelelser",
+      "hint": "Send flow-meddelelser for batterihændelser"
+    },
+    "battery_report_interval": {
+      "label": "Batterirapportinterval (timer)",
+      "hint": "Hvor ofte batteristatus opdateringer anmodes om"
+    },
+    "optimization_mode": {
+      "label": "Energioptimeringstilstand",
+      "hint": "Balance mellem respons og batteritid"
+    },
+    "show_voltage": {
+      "label": "Vis batterispænding",
+      "hint": "Vis rå batterispænding i enhedsindstillinger"
+    },
+    "enable_power_estimation": {
+      "label": "Aktiver effektestimering",
+      "hint": "Estimer forbrug når reel måling ikke er tilgængelig (kun AC/DC-enheder)"
+    }
+  },
+  "tabs": {
+    "general": "Generelt",
+    "advanced": "Avanceret",
+    "about": "Om"
+  },
+  "common": {
+    "save": "Gem",
+    "cancel": "Annuller",
+    "ok": "OK",
+    "delete": "Slet",
+    "edit": "Rediger"
+  }
+}
