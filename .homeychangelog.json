@@ -1,4 +1,10 @@
 {
+  "5.5.274": {
+    "en": "📦 NEW DEVICES from GitHub Issues: #91 ZS06 IR Remote (_TZE200_ikvncluo), #92 HMJ-SC021 Scene Controller 4-gang (_TZE204_zqtiam9d). #93 Moes TRV already supported in radiator_valve driver.",
+    "fr": "📦 NOUVEAUX APPAREILS des Issues GitHub: #91 Télécommande IR ZS06, #92 Contrôleur Scène HMJ-SC021 4 boutons. #93 Moes TRV déjà supporté.",
+    "nl": "📦 NIEUWE APPARATEN van GitHub Issues: #91 ZS06 IR Afstandsbediening, #92 HMJ-SC021 Scène Controller 4-gang. #93 Moes TRV al ondersteund.",
+    "de": "📦 NEUE GERÄTE aus GitHub Issues: #91 ZS06 IR-Fernbedienung, #92 HMJ-SC021 Szenen-Controller 4-fach. #93 Moes TRV bereits unterstützt."
+  },
   "5.5.273": {
     "en": "🔧 FIX: Radar sensor improvements - Added DP12 illuminance mapping for variants that use it. Reduced confusing 'UNMAPPED DP' log warnings (now shows info message instead). Based on Ronny's diagnostic report #723.",
     "fr": "🔧 FIX: Améliorations capteur radar - Ajouté mapping DP12 illuminance pour variantes qui l'utilisent. Réduit les avertissements 'UNMAPPED DP' confus. Basé sur diagnostic Ronny #723.",
