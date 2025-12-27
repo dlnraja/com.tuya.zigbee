@@ -1,0 +1,167 @@
+{
+  "capabilities": {
+    "measure_battery": {
+      "title": "Batería",
+      "units": "%"
+    },
+    "alarm_generic": {
+      "title": "Alarma"
+    },
+    "alarm_motion": {
+      "title": "Movimiento"
+    },
+    "alarm_contact": {
+      "title": "Contacto"
+    },
+    "alarm_water": {
+      "title": "Fuga de agua"
+    },
+    "alarm_smoke": {
+      "title": "Humo"
+    },
+    "alarm_co": {
+      "title": "CO"
+    },
+    "alarm_co2": {
+      "title": "CO₂"
+    },
+    "alarm_tamper": {
+      "title": "Sabotaje"
+    },
+    "alarm_vibration": {
+      "title": "Vibración"
+    },
+    "onoff": {
+      "title": "Energía"
+    },
+    "dim": {
+      "title": "Brillo",
+      "units": "%"
+    },
+    "light_hue": {
+      "title": "Tono"
+    },
+    "light_saturation": {
+      "title": "Saturación"
+    },
+    "light_temperature": {
+      "title": "Temperatura de color"
+    },
+    "light_mode": {
+      "title": "Modo de luz"
+    },
+    "measure_temperature": {
+      "title": "Temperatura",
+      "units": "°C"
+    },
+    "measure_humidity": {
+      "title": "Humedad",
+      "units": "%"
+    },
+    "measure_pressure": {
+      "title": "Presión",
+      "units": "mbar"
+    },
+    "measure_co2": {
+      "title": "CO₂",
+      "units": "ppm"
+    },
+    "measure_pm25": {
+      "title": "PM2.5",
+      "units": "µg/m³"
+    },
+    "measure_voc": {
+      "title": "COV",
+      "units": "ppb"
+    },
+    "measure_luminance": {
+      "title": "Luminancia",
+      "units": "lux"
+    },
+    "measure_power": {
+      "title": "Potencia",
+      "units": "W"
+    },
+    "measure_voltage": {
+      "title": "Voltaje",
+      "units": "V"
+    },
+    "measure_current": {
+      "title": "Corriente",
+      "units": "A"
+    },
+    "meter_power": {
+      "title": "Energía",
+      "units": "kWh"
+    },
+    "target_temperature": {
+      "title": "Temperatura objetivo",
+      "units": "°C"
+    },
+    "windowcoverings_state": {
+      "title": "Persianas",
+      "values": {
+        "up": "Arriba",
+        "idle": "Parado",
+        "down": "Abajo"
+      }
+    },
+    "windowcoverings_set": {
+      "title": "Posición",
+      "units": "%"
+    },
+    "button": {
+      "title": "Botón"
+    }
+  },
+  "settings": {
+    "power_source": {
+      "label": "Fuente de alimentación",
+      "hint": "Selecciona la fuente de alimentación manualmente o usa detección automática"
+    },
+    "battery_type": {
+      "label": "Tipo de batería",
+      "hint": "Selecciona el tipo de batería manualmente o usa detección automática basada en voltaje"
+    },
+    "battery_low_threshold": {
+      "label": "Umbral batería baja (%)",
+      "hint": "Activar aviso de batería baja por debajo de este porcentaje"
+    },
+    "battery_critical_threshold": {
+      "label": "Umbral batería crítica (%)",
+      "hint": "Activar aviso de batería crítica por debajo de este porcentaje"
+    },
+    "enable_battery_notifications": {
+      "label": "Habilitar notificaciones de batería",
+      "hint": "Enviar notificaciones de flow para eventos de batería"
+    },
+    "battery_report_interval": {
+      "label": "Intervalo de informe de batería (horas)",
+      "hint": "Frecuencia de solicitud de actualizaciones de estado de batería"
+    },
+    "optimization_mode": {
+      "label": "Modo de optimización de energía",
+      "hint": "Balance entre capacidad de respuesta y duración de batería"
+    },
+    "show_voltage": {
+      "label": "Mostrar voltaje de batería",
+      "hint": "Mostrar voltaje bruto de batería en configuración del dispositivo"
+    },
+    "enable_power_estimation": {
+      "label": "Habilitar estimación de potencia",
+      "hint": "Estimar consumo cuando la medición real no está disponible (solo dispositivos AC/DC)"
+    }
+  },
+  "tabs": {
+    "general": "General",
+    "advanced": "Avanzado",
+    "about": "Acerca de"
+  },
+  "common": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "ok": "OK",
+    "delete": "Eliminar",
+    "edit": "Editar"
+  }
+}
