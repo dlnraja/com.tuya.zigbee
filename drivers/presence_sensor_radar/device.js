@@ -55,22 +55,45 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // TYPE B: 24GHz Human Presence Sensor (gkfbdvyx variants)
-  // Source: ZHA quirk #4072 - NO ILLUMINANCE SENSOR!
-  // DP1=occupancy(bool), DP101=attendance_duration, DP102=absence_duration
-  // v5.5.264: Fixed - this sensor does NOT have illuminance!
+  // TYPE B: 24GHz Ceiling Radar (gkfbdvyx variants) - Loginovo M100 C3007
+  // Source: ZHA Community https://community.home-assistant.io/t/874026
+  // v5.5.266: FIXED - This sensor HAS illuminance on DP103!
+  // DP1=presence, DP2=move_sens, DP3=min_dist, DP4=max_dist, DP9=distance
+  // DP101=tracking, DP102=presence_sens, DP103=illuminance, DP104=motion_state, DP105=fading
   // ─────────────────────────────────────────────────────────────────────────────
-  'ZY_M100_WALL': {
+  'ZY_M100_CEILING_24G': {
     sensors: [
       '_TZE200_gkfbdvyx', '_TZE204_gkfbdvyx',
+    ],
+    battery: false,
+    hasIlluminance: true,  // v5.5.266: HAS LUX on DP103!
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_enum' },    // 0=none, 1=presence, 2=move
+      2: { cap: null, internal: 'motion_sensitivity' },      // 0-10
+      3: { cap: null, internal: 'detection_distance_min' },  // ×0.1 = meters
+      4: { cap: null, internal: 'detection_distance_max' },  // ×0.1 = meters
+      9: { cap: 'measure_distance', divisor: 10 },           // ×0.1 = meters
+      101: { cap: null, internal: 'distance_tracking' },     // switch
+      102: { cap: null, internal: 'presence_sensitivity' },  // 1-10
+      103: { cap: 'measure_luminance', type: 'lux_direct' }, // lux direct
+      104: { cap: 'alarm_motion', type: 'presence_enum' },   // motion state enum
+      105: { cap: null, internal: 'fading_time' },           // 1-1500 sec
+    }
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // TYPE B2: Simple presence sensors (no illuminance)
+  // ─────────────────────────────────────────────────────────────────────────────
+  'ZY_M100_SIMPLE': {
+    sensors: [
       '_TZE200_0u3bj3rc', '_TZE200_mx6u6l4y', '_TZE200_v6ossqfy',
     ],
     battery: false,
-    hasIlluminance: false,  // v5.5.264: NO LUX SENSOR!
+    hasIlluminance: false,
     dpMap: {
-      1: { cap: 'alarm_motion', type: 'presence_bool' },  // occupancy boolean
-      101: { cap: null, internal: 'attendance_duration' },  // time present
-      102: { cap: null, internal: 'absence_duration' },     // time absent
+      1: { cap: 'alarm_motion', type: 'presence_bool' },
+      101: { cap: null, internal: 'attendance_duration' },
+      102: { cap: null, internal: 'absence_duration' },
     }
   },
 
@@ -365,13 +388,12 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     const config = this._getSensorConfig();
 
     this.log(`[RADAR] ═══════════════════════════════════════════════════════`);
-    this.log(`[RADAR] v5.5.258 ENRICHED (Ronny #696 + SmartHomeScene specs)`);
+    this.log(`[RADAR] v5.5.266 FIXED (Ronny #711 + ZHA Community research)`);
     this.log(`[RADAR] ManufacturerName: ${mfr}`);
     this.log(`[RADAR] Config: ${config.configName || 'ZY_M100_STANDARD (default)'}`);
     this.log(`[RADAR] Power: ${config.battery ? 'BATTERY (EndDevice)' : 'MAINS (Router)'}`);
+    this.log(`[RADAR] Illuminance: ${config.hasIlluminance !== false ? 'YES' : 'NO'}`);
     this.log(`[RADAR] DPs: ${Object.keys(config.dpMap || {}).join(', ') || 'ZCL only'}`);
-    this.log(`[RADAR] ⚠️ NOTE: ZY-M100 has NO temperature sensor (radar + lux only)`);
-    this.log(`[RADAR] ⚠️ NOTE: Illuminance range: 0-2000 lux (per spec)`);
     this.log(`[RADAR] ═══════════════════════════════════════════════════════`);
 
     // Battery sensors: minimal init to avoid timeouts
