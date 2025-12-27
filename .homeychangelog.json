@@ -1,4 +1,10 @@
 {
+  "5.5.271": {
+    "en": "🐛 FIX: Button detection broken - Autonomous adaptation was incorrectly converting button_wireless to switch_1gang. Fixed device type detection order (check IAS Zone BEFORE onOff). Added safeguard to never convert button drivers to switches. User report: 'Kein Tastendruck erkannt'.",
+    "fr": "🐛 FIX: Détection boutons cassée - L'adaptation autonome convertissait incorrectement button_wireless en switch_1gang. Corrigé l'ordre de détection (vérifier IAS Zone AVANT onOff). Ajouté protection pour ne jamais convertir les drivers button en switch.",
+    "nl": "🐛 FIX: Knopdetectie defect - Autonome adaptatie converteerde button_wireless naar switch_1gang. Detectievolgorde gecorrigeerd (controleer IAS Zone VOOR onOff). Beveiliging toegevoegd om button drivers nooit naar switch te converteren.",
+    "de": "🐛 FIX: Tastenerkennung defekt - Autonome Anpassung konvertierte button_wireless zu switch_1gang. Erkennungsreihenfolge korrigiert (IAS Zone VOR onOff prüfen). Schutz hinzugefügt um Button-Treiber nie zu Switch zu konvertieren."
+  },
   "5.5.270": {
     "en": "🚨 CRITICAL FIX for TZE284 Radar (Ronny #719): Added missing Tuya DP listeners for mains-powered sensors! Presence was never updating because Tuya cluster events weren't being captured. Now listens for all DP events + polling. RE-PAIR recommended!",
     "fr": "🚨 FIX CRITIQUE Radar TZE284 (Ronny #719): Ajouté listeners Tuya DP manquants pour capteurs secteur! La présence ne se mettait jamais à jour. Écoute maintenant tous les événements DP + polling. RE-APPAIRAGE recommandé!",
