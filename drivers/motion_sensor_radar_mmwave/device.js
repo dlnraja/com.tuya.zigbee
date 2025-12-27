@@ -4,38 +4,82 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 const { WakeStrategies } = require('../../lib/tuya/TuyaGatewayEmulator');
 
 /**
- * Motion Sensor Radar mmWave Device - v5.5.29 WAKE STRATEGIES
+ * Motion Sensor Radar mmWave Device - v5.5.275 MODEL-SPECIFIC CONFIGS
  *
  * Sources:
  * - Z2M: TS0601_HOBEIAN_RADAR (ZG-204ZV)
  * - Hubitat: TS0601_HOBEIAN_RADAR profile
  * - Phoscon: TS0601 presence + light sensor
  *
- * Features: presence, temperature, humidity, illuminance, battery
- * Settings: sensitivity, min/max range, fading_time, detection_delay, illuminance_interval
- *
- * Models: _TZE200_rhgsbacq, _TZE200_2aaelwxk, _TZE200_3towulqd, etc.
+ * v5.5.275: Added model-specific configs to prevent NULL capabilities
+ * - SIMPLE models: Only basic presence (DP1) + illuminance (DP12)
+ * - ADVANCED models: Full capabilities (DP101/102 for distance/time)
  */
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// MODEL-SPECIFIC CONFIGURATIONS
+// v5.5.275: Fix for dlnraja's _TZE200_rhgsbacq showing NULL capabilities
+// ═══════════════════════════════════════════════════════════════════════════════
+const MODEL_CONFIGS = {
+  // SIMPLE radars - basic presence only (no distance/time)
+  SIMPLE: {
+    models: [
+      '_TZE200_rhgsbacq', '_TZE200_kb5noeto', '_TZE200_5b5noeto',
+      '_TZE200_bh3n6gk8', '_TZE200_1ibpyhdc', '_TZE200_ttcovulf',
+      '_TZE200_sgpeacqp', '_TZE200_holel4dk',
+    ],
+    capabilities: ['alarm_motion', 'measure_luminance', 'measure_battery'],
+    dps: [1, 4, 12, 15],  // Only query these DPs
+  },
+  // ADVANCED radars - full features
+  ADVANCED: {
+    models: [
+      '_TZE200_2aaelwxk', '_TZE200_3towulqd', '_TZE204_e5m9c5hl',
+      '_TZE204_ijxvkhd0', '_TZE204_qasjif9e', '_TZE204_sxm7l9xa',
+      '_TZE284_4qznlkbu', '_TZE284_fwondbzy',
+    ],
+    capabilities: ['alarm_motion', 'alarm_human', 'measure_distance', 'measure_presence_time', 'measure_luminance', 'measure_battery'],
+    dps: [1, 2, 3, 4, 9, 10, 11, 12, 15, 101, 102, 103, 104, 105],
+  },
+};
+
+function getModelConfig(manufacturerName) {
+  for (const [type, config] of Object.entries(MODEL_CONFIGS)) {
+    if (config.models.includes(manufacturerName)) {
+      return { type, ...config };
+    }
+  }
+  // Default to ADVANCED for unknown models
+  return { type: 'ADVANCED', ...MODEL_CONFIGS.ADVANCED };
+}
 class MotionSensorRadarDevice extends HybridSensorBase {
 
   // v5.5.69: These radar sensors are battery-powered (user confirmed)
-  // The real fix is to call _updateLastEventTime() in ZCL handlers
   get mainsPowered() { return false; }
 
   // v5.5.26: Offline check timeout (60 min for mmWave - Hubitat recommendation)
   static OFFLINE_CHECK_MS = 60 * 60 * 1000;
 
+  /**
+   * v5.5.275: Get model-specific configuration
+   */
+  _getModelConfig() {
+    if (!this._modelConfig) {
+      const mfr = this.getData()?.manufacturerName || '';
+      this._modelConfig = getModelConfig(mfr);
+      this.log(`[MMWAVE] 🧠 Model config: ${this._modelConfig.type} for ${mfr}`);
+    }
+    return this._modelConfig;
+  }
+
+  /**
+   * v5.5.275: Model-specific capabilities
+   * SIMPLE models only get basic presence + illuminance
+   * ADVANCED models get full distance/time features
+   */
   get sensorCapabilities() {
-    return [
-      'alarm_motion',
-      'alarm_human',             // v5.5.170: Human presence detection
-      'measure_distance',        // v5.5.17: Distance to target (cm)
-      'measure_presence_time',   // v5.5.17: Presence duration (s)
-      'measure_temperature',
-      'measure_humidity',
-      'measure_luminance',
-      'measure_battery'
-    ];
+    const config = this._getModelConfig();
+    return config.capabilities;
   }
 
   /**
@@ -137,14 +181,17 @@ class MotionSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.29: Setup advanced wake strategies
+   * v5.5.275: Setup advanced wake strategies with model-specific DPs
    */
   async _setupWakeStrategies() {
     try {
       this.log('[MMWAVE] ⏰ Setting up wake strategies...');
 
-      // Strategy 1: Query all DPs when ANY data is received (device is awake)
-      const allDPs = [1, 2, 3, 4, 9, 10, 11, 12, 15, 101, 102, 103, 104, 105];
+      // v5.5.275: Use model-specific DPs instead of querying all
+      const config = this._getModelConfig();
+      const allDPs = config.dps || [1, 4, 12, 15];
+      this.log(`[MMWAVE] 📋 DPs to query for ${config.type}: ${allDPs.join(', ')}`);
+
       await WakeStrategies.onAnyDataReceived(this, allDPs, async (dps) => {
         // When we receive any data, query everything while awake
         if (this.safeTuyaDataQuery) {
@@ -221,19 +268,15 @@ class MotionSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.27: Refresh all DPs - called by Flow Card or manual refresh
-   * Queries presence, environment, and config DPs
+   * v5.5.275: Refresh DPs - uses model-specific DP list
+   * SIMPLE models only query basic DPs, ADVANCED query all
    */
   async refreshAll() {
-    this.log('[RADAR-REFRESH] Refreshing all DPs...');
+    const config = this._getModelConfig();
+    this.log(`[RADAR-REFRESH] Refreshing ${config.type} model DPs: ${config.dps.join(', ')}`);
 
-    // DPs to query based on dpMappings + Z2M research
-    const DPS_PRESENCE = [1];                    // Presence (DP1)
-    const DPS_ENV = [2, 3, 12, 103];             // Humidity, temp, lux
-    const DPS_BATTERY = [4, 15];                 // Battery
-    const DPS_CONFIG = [9, 10, 11, 101, 102, 104, 105]; // Sensitivity, range, distance, time
-
-    const allDPs = [...DPS_PRESENCE, ...DPS_ENV, ...DPS_BATTERY, ...DPS_CONFIG];
+    // v5.5.275: Use model-specific DPs
+    const allDPs = config.dps;
 
     // Use safeTuyaDataQuery for sleepy devices
     return this.safeTuyaDataQuery(allDPs, {
@@ -355,39 +398,39 @@ class MotionSensorRadarDevice extends HybridSensorBase {
 
     // v5.5.5: Log raw + converted values per MASTER BLOCK specs
     switch (status.dp) {
-    case 1: // Presence/motion (boolean 0/1)
-      this.log(`[ZCL-DATA] mmwave.presence_dp1 raw=${rawValue} → alarm_motion=${rawValue === 1 || rawValue === true}`);
-      break;
-    case 101: // Presence time (seconds)
-      this.log(`[ZCL-DATA] mmwave.presence_time raw=${rawValue}s → measure_presence_time=${rawValue}, alarm_motion=${rawValue > 0}`);
-      // v5.5.17: Intelligent presence - if presence_time > 0, someone IS present
-      if (rawValue > 0 && this.hasCapability('alarm_motion')) {
-        this.setCapabilityValue('alarm_motion', true).catch(this.error);
-      }
-      break;
-    case 102: // Distance to target (cm)
-      this.log(`[ZCL-DATA] mmwave.distance raw=${rawValue}cm → measure_distance=${rawValue}`);
-      // v5.5.17: If distance reported, someone is detected
-      if (rawValue > 0 && this.hasCapability('alarm_motion')) {
-        this.setCapabilityValue('alarm_motion', true).catch(this.error);
-      }
-      break;
-    case 2: // Humidity
-      this.log(`[ZCL-DATA] mmwave.humidity raw=${rawValue} converted=${rawValue}`);
-      break;
-    case 3: // Temperature
-      this.log(`[ZCL-DATA] mmwave.temperature raw=${rawValue} converted=${rawValue / 10}`);
-      break;
-    case 12:
-    case 103: // Illuminance
-      this.log(`[ZCL-DATA] mmwave.luminance raw=${rawValue} converted=${rawValue} lux`);
-      break;
-    case 4:
-    case 15: // Battery
-      this.log(`[ZCL-DATA] mmwave.battery raw=${rawValue} converted=${rawValue}%`);
-      break;
-    default:
-      this.log(`[ZCL-DATA] mmwave.unknown_dp dp=${status.dp} raw=${rawValue}`);
+      case 1: // Presence/motion (boolean 0/1)
+        this.log(`[ZCL-DATA] mmwave.presence_dp1 raw=${rawValue} → alarm_motion=${rawValue === 1 || rawValue === true}`);
+        break;
+      case 101: // Presence time (seconds)
+        this.log(`[ZCL-DATA] mmwave.presence_time raw=${rawValue}s → measure_presence_time=${rawValue}, alarm_motion=${rawValue > 0}`);
+        // v5.5.17: Intelligent presence - if presence_time > 0, someone IS present
+        if (rawValue > 0 && this.hasCapability('alarm_motion')) {
+          this.setCapabilityValue('alarm_motion', true).catch(this.error);
+        }
+        break;
+      case 102: // Distance to target (cm)
+        this.log(`[ZCL-DATA] mmwave.distance raw=${rawValue}cm → measure_distance=${rawValue}`);
+        // v5.5.17: If distance reported, someone is detected
+        if (rawValue > 0 && this.hasCapability('alarm_motion')) {
+          this.setCapabilityValue('alarm_motion', true).catch(this.error);
+        }
+        break;
+      case 2: // Humidity
+        this.log(`[ZCL-DATA] mmwave.humidity raw=${rawValue} converted=${rawValue}`);
+        break;
+      case 3: // Temperature
+        this.log(`[ZCL-DATA] mmwave.temperature raw=${rawValue} converted=${rawValue / 10}`);
+        break;
+      case 12:
+      case 103: // Illuminance
+        this.log(`[ZCL-DATA] mmwave.luminance raw=${rawValue} converted=${rawValue} lux`);
+        break;
+      case 4:
+      case 15: // Battery
+        this.log(`[ZCL-DATA] mmwave.battery raw=${rawValue} converted=${rawValue}%`);
+        break;
+      default:
+        this.log(`[ZCL-DATA] mmwave.unknown_dp dp=${status.dp} raw=${rawValue}`);
     }
 
     // Call parent handler
