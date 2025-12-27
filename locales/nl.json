@@ -1,13 +1,156 @@
 {
+  "capabilities": {
+    "measure_battery": {
+      "title": "Batterij",
+      "units": "%"
+    },
+    "alarm_generic": {
+      "title": "Alarm"
+    },
+    "alarm_motion": {
+      "title": "Beweging"
+    },
+    "alarm_contact": {
+      "title": "Contact"
+    },
+    "alarm_water": {
+      "title": "Waterlek"
+    },
+    "alarm_smoke": {
+      "title": "Rook"
+    },
+    "alarm_co": {
+      "title": "CO"
+    },
+    "alarm_co2": {
+      "title": "CO₂"
+    },
+    "alarm_tamper": {
+      "title": "Sabotage"
+    },
+    "alarm_vibration": {
+      "title": "Trillingen"
+    },
+    "onoff": {
+      "title": "Stroom"
+    },
+    "dim": {
+      "title": "Helderheid",
+      "units": "%"
+    },
+    "light_hue": {
+      "title": "Tint"
+    },
+    "light_saturation": {
+      "title": "Verzadiging"
+    },
+    "light_temperature": {
+      "title": "Kleurtemperatuur"
+    },
+    "light_mode": {
+      "title": "Lichtmodus"
+    },
+    "measure_temperature": {
+      "title": "Temperatuur",
+      "units": "°C"
+    },
+    "measure_humidity": {
+      "title": "Luchtvochtigheid",
+      "units": "%"
+    },
+    "measure_pressure": {
+      "title": "Luchtdruk",
+      "units": "mbar"
+    },
+    "measure_co2": {
+      "title": "CO₂",
+      "units": "ppm"
+    },
+    "measure_pm25": {
+      "title": "PM2.5",
+      "units": "µg/m³"
+    },
+    "measure_voc": {
+      "title": "VOS",
+      "units": "ppb"
+    },
+    "measure_luminance": {
+      "title": "Helderheid",
+      "units": "lux"
+    },
+    "measure_power": {
+      "title": "Vermogen",
+      "units": "W"
+    },
+    "measure_voltage": {
+      "title": "Spanning",
+      "units": "V"
+    },
+    "measure_current": {
+      "title": "Stroom",
+      "units": "A"
+    },
+    "meter_power": {
+      "title": "Energie",
+      "units": "kWh"
+    },
+    "target_temperature": {
+      "title": "Doeltemperatuur",
+      "units": "°C"
+    },
+    "windowcoverings_state": {
+      "title": "Zonwering",
+      "values": {
+        "up": "Omhoog",
+        "idle": "Stop",
+        "down": "Omlaag"
+      }
+    },
+    "windowcoverings_set": {
+      "title": "Positie",
+      "units": "%"
+    },
+    "button": {
+      "title": "Knop"
+    }
+  },
   "settings": {
-    "title": "Instellingen",
-    "debug_logging": "Debug logging inschakelen",
-    "debug_logging_hint": "Gedetailleerde logging voor probleemoplossing",
-    "community_updates": "Community updates inschakelen",
-    "community_updates_hint": "Ontvang meldingen over nieuwe apparaatondersteuning",
-    "reporting_interval": "Rapportage-interval (seconden)",
-    "temperature_offset": "Temperatuur offset (°C)",
-    "humidity_offset": "Luchtvochtigheid offset (%)"
+    "power_source": {
+      "label": "Stroombron",
+      "hint": "Selecteer stroombron handmatig of gebruik automatische detectie"
+    },
+    "battery_type": {
+      "label": "Batterijtype",
+      "hint": "Selecteer batterijtype handmatig of gebruik automatische detectie op basis van spanning"
+    },
+    "battery_low_threshold": {
+      "label": "Drempel lage batterij (%)",
+      "hint": "Waarschuwing activeren wanneer batterij onder dit percentage komt"
+    },
+    "battery_critical_threshold": {
+      "label": "Drempel kritieke batterij (%)",
+      "hint": "Waarschuwing activeren wanneer batterij kritiek laag is"
+    },
+    "enable_battery_notifications": {
+      "label": "Batterijmeldingen inschakelen",
+      "hint": "Flow-meldingen verzenden voor batterij-gebeurtenissen"
+    },
+    "battery_report_interval": {
+      "label": "Batterijrapport-interval (uren)",
+      "hint": "Hoe vaak batterijstatus-updates worden aangevraagd"
+    },
+    "optimization_mode": {
+      "label": "Energie-optimalisatiemodus",
+      "hint": "Balans tussen responsiviteit en batterijduur"
+    },
+    "show_voltage": {
+      "label": "Batterijspanning tonen",
+      "hint": "Ruwe batterijspanning weergeven in apparaatinstellingen"
+    },
+    "enable_power_estimation": {
+      "label": "Vermogensschatting inschakelen",
+      "hint": "Stroomverbruik schatten wanneer echte meting niet beschikbaar is (alleen AC/DC-apparaten)"
+    }
   },
   "tabs": {
     "general": "Algemeen",
