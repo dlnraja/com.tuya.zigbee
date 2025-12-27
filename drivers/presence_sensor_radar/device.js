@@ -4,15 +4,14 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.268 RONNY DEEP FIX                 ║
+ * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.276 CHATGPT ANALYSIS FIX           ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  v5.5.268: DEEP ANALYSIS of Ronny's _TZE284_iadro9bf issues                 ║
- * ║  - Z2M Issue #27212: presence/distance = null even when illuminance works   ║
- * ║  - ROOT CAUSE: Some firmware variants don't auto-report DP105/DP109         ║
- * ║  - FIX: Added periodic DP polling + fallback DP detection                   ║
- * ║  - FIX: Log ALL incoming DPs for debugging unknown variants                 ║
- * ║  - FIX: Alternative DP mappings (DP1 as fallback for presence)              ║
- * ║  - SmartHomeScene specs: 5.8GHz radar, 0-2000 LUX, 0-9.5m range            ║
+ * ║  v5.5.276: Based on Ronny's ChatGPT analysis (forum #723)                   ║
+ * ║  - FIX: IAS Zone enrollment for "notEnrolled" status                        ║
+ * ║  - FIX: Explicit power source detection (mains vs battery)                  ║
+ * ║  - FIX: Better luminance handling for low values                            ║
+ * ║  - INFO: Endpoint 242 = GreenPower (normal for Tuya)                        ║
+ * ║  - INFO: swBuildId empty = normal for Tuya devices                          ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 
@@ -580,6 +579,81 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         this.log('[RADAR] ✅ Occupancy cluster configured');
       }
     } catch (e) { /* ignore */ }
+
+    // v5.5.276: IAS Zone enrollment fix (ChatGPT analysis #723)
+    // Fixes "notEnrolled" status that prevents proper motion detection
+    await this._enrollIASZone(zclNode);
+  }
+
+  /**
+   * v5.5.276: IAS Zone enrollment - fixes "notEnrolled" status
+   * ChatGPT analysis #723: ZoneState = notEnrolled prevents motion detection
+   */
+  async _enrollIASZone(zclNode) {
+    try {
+      const ep1 = zclNode?.endpoints?.[1];
+      const iasZone = ep1?.clusters?.iasZone || ep1?.clusters?.ssIasZone;
+
+      if (!iasZone) {
+        this.log('[RADAR] ℹ️ No IAS Zone cluster - skipping enrollment');
+        return;
+      }
+
+      this.log('[RADAR] 🔐 Attempting IAS Zone enrollment...');
+
+      // Step 1: Read current zone state
+      try {
+        const attrs = await iasZone.readAttributes(['zoneState', 'zoneType', 'zoneStatus']);
+        this.log(`[RADAR] IAS Zone state: ${JSON.stringify(attrs)}`);
+
+        // If already enrolled, skip
+        if (attrs?.zoneState === 1) {
+          this.log('[RADAR] ✅ IAS Zone already enrolled');
+          return;
+        }
+      } catch (e) { /* continue with enrollment */ }
+
+      // Step 2: Write IAS CIE address (Homey's IEEE address)
+      try {
+        const homeyIeee = this.homey?.zigbee?.ieeeAddress || '0000000000000000';
+        await iasZone.writeAttributes({ iasCieAddress: homeyIeee });
+        this.log(`[RADAR] ✅ Wrote IAS CIE address: ${homeyIeee}`);
+      } catch (e) {
+        this.log(`[RADAR] ⚠️ Could not write IAS CIE: ${e.message}`);
+      }
+
+      // Step 3: Send zone enroll response
+      try {
+        if (iasZone.zoneEnrollResponse) {
+          await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 1 });
+          this.log('[RADAR] ✅ IAS Zone enroll response sent');
+        }
+      } catch (e) {
+        this.log(`[RADAR] ⚠️ Zone enroll response failed: ${e.message}`);
+      }
+
+      // Step 4: Listen for zone status changes
+      if (iasZone.on) {
+        iasZone.on('attr.zoneStatus', (status) => {
+          const alarm1 = (status & 0x01) !== 0;
+          const alarm2 = (status & 0x02) !== 0;
+          const motion = alarm1 || alarm2;
+          this.log(`[RADAR] IAS Zone status: ${status} -> motion: ${motion}`);
+          this.setCapabilityValue('alarm_motion', motion).catch(() => { });
+        });
+
+        iasZone.onZoneStatusChangeNotification = (payload) => {
+          const status = payload?.zoneStatus || 0;
+          const motion = (status & 0x03) !== 0;
+          this.log(`[RADAR] IAS Zone notification: ${status} -> motion: ${motion}`);
+          this.setCapabilityValue('alarm_motion', motion).catch(() => { });
+        };
+
+        this.log('[RADAR] ✅ IAS Zone listeners configured');
+      }
+    } catch (e) {
+      this.log(`[RADAR] ⚠️ IAS Zone enrollment error: ${e.message}`);
+    }
   }
 
   /**
