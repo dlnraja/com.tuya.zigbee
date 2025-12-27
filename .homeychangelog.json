@@ -1,4 +1,10 @@
 {
+  "5.5.276": {
+    "en": "🔐 FIX: presence_sensor_radar IAS Zone enrollment - Fixes 'notEnrolled' status that prevented motion detection on some devices. Based on Ronny's ChatGPT analysis (forum #723). Also clarifies: Endpoint 242 = GreenPower (normal), empty swBuildId = normal for Tuya.",
+    "fr": "🔐 FIX: Inscription IAS Zone pour presence_sensor_radar - Corrige le statut 'notEnrolled' qui empêchait la détection de mouvement. Basé sur l'analyse ChatGPT de Ronny (forum #723).",
+    "nl": "🔐 FIX: presence_sensor_radar IAS Zone inschrijving - Repareert 'notEnrolled' status die bewegingsdetectie blokkeerde. Gebaseerd op Ronny's ChatGPT analyse (forum #723).",
+    "de": "🔐 FIX: presence_sensor_radar IAS Zone Registrierung - Behebt 'notEnrolled' Status der Bewegungserkennung verhinderte. Basierend auf Ronnys ChatGPT Analyse (Forum #723)."
+  },
   "5.5.275": {
     "en": "🧠 FIX: mmWave radar model-specific capabilities - SIMPLE models (_TZE200_rhgsbacq, etc.) now only show alarm_motion + luminance + battery instead of NULL capabilities for distance/presence_time. Reduces unnecessary DP queries and log spam. Based on dlnraja diagnostic #251.",
     "fr": "🧠 FIX: Radar mmWave - Configurations spécifiques par modèle. Les modèles SIMPLES n'affichent plus de capabilities NULL. Basé sur diagnostic dlnraja #251.",
