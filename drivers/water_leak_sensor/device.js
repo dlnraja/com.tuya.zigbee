@@ -55,38 +55,9 @@ class WaterLeakSensorDevice extends HybridSensorBase {
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
-    this.log('[WATER] v5.5.290 - DPs: 1,4,5,14,15,101 | ZCL: IAS,PWR,EF00');
+    this.log('[WATER] v5.5.292 - DPs: 1,4,5,14,15,101 | ZCL: IAS,PWR,EF00');
     this.log('[WATER] ✅ Water leak sensor ready');
-
-    // v5.5.290: Register listener to trigger custom flow cards
-    this._lastWaterAlarm = null;
-    this.registerCapabilityListener('alarm_water', async (value) => {
-      if (value && this._lastWaterAlarm !== true) {
-        await this._triggerWaterFlows(true);
-      } else if (!value && this._lastWaterAlarm === true) {
-        await this._triggerWaterFlows(false);
-      }
-      this._lastWaterAlarm = value;
-    });
-  }
-
-  /**
-   * v5.5.290: Trigger custom water leak flow cards
-   */
-  async _triggerWaterFlows(detected) {
-    try {
-      if (detected) {
-        await this.homey.flow.getDeviceTriggerCard('water_leak_detected')
-          .trigger(this, { water: true }).catch(() => { });
-        this.log('[WATER] 💧 Flow triggered: water_leak_detected');
-      } else {
-        await this.homey.flow.getDeviceTriggerCard('water_leak_cleared')
-          .trigger(this, { water: false }).catch(() => { });
-        this.log('[WATER] ✅ Flow triggered: water_leak_cleared');
-      }
-    } catch (err) {
-      this.log('[WATER] ⚠️ Flow trigger error:', err.message);
-    }
+    // v5.5.292: Flow triggers now handled by HybridSensorBase._triggerCustomFlowsIfNeeded()
   }
 }
 

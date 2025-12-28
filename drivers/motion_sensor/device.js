@@ -243,18 +243,8 @@ class MotionSensorDevice extends HybridSensorBase {
     // v5.5.18: Explicit IAS Zone setup for HOBEIAN and other non-Tuya motion sensors
     await this._setupMotionIASZone(zclNode);
 
-    // v5.5.290: Register listeners to trigger custom illuminance flow cards
-    this._lastLux = null;
-    this._luxThresholds = new Map(); // Track thresholds for above/below triggers
-
-    if (this.hasCapability('measure_luminance')) {
-      this.registerCapabilityListener('measure_luminance', async (value) => {
-        await this._triggerIlluminanceFlows(value);
-        this._lastLux = value;
-      });
-    }
-
-    this.log('[MOTION] v5.5.290 ✅ Motion sensor ready');
+    // v5.5.292: Flow triggers now handled by HybridSensorBase._triggerCustomFlowsIfNeeded()
+    this.log('[MOTION] v5.5.292 ✅ Motion sensor ready');
     this.log('[MOTION] Manufacturer:', this.getSetting('zb_manufacturer_name') || 'unknown');
     this.log(`[MOTION] Clusters: temp=${this._hasTemperatureCluster}, hum=${this._hasHumidityCluster}`);
   }
@@ -575,23 +565,6 @@ class MotionSensorDevice extends HybridSensorBase {
     }
   }
 
-  /**
-   * v5.5.290: Trigger custom illuminance flow cards
-   */
-  async _triggerIlluminanceFlows(lux) {
-    try {
-      // Trigger illuminance changed
-      await this.homey.flow.getDeviceTriggerCard('motion_illuminance_changed')
-        .trigger(this, { lux }).catch(() => { });
-
-      // Note: motion_illuminance_above and motion_illuminance_below require threshold args
-      // These are handled by Homey's flow system automatically when user sets threshold
-
-      this.log(`[MOTION] 💡 Flow triggered: motion_illuminance_changed (${lux} lux)`);
-    } catch (err) {
-      this.log('[MOTION] ⚠️ Illuminance flow trigger error:', err.message);
-    }
-  }
 }
 
 module.exports = MotionSensorDevice;
