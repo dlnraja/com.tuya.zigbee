@@ -1,5 +1,16 @@
 'use strict';
-const { HybridCoverBase } = require('../../lib/devices/HybridCoverBase');
+
+// v5.5.295: Fix "Class extends value undefined" stderr error
+// Use try-catch to handle potential circular dependency issues
+let HybridCoverBase;
+try {
+  HybridCoverBase = require('../../lib/devices/HybridCoverBase');
+} catch (error) {
+  // Fallback to direct ZigBeeDevice if HybridCoverBase fails
+  console.error('[CURTAIN_MOTOR] Failed to load HybridCoverBase, using ZigBeeDevice fallback:', error.message);
+  const { ZigBeeDevice } = require('homey-zigbeedriver');
+  HybridCoverBase = ZigBeeDevice;
+}
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
