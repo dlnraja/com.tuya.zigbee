@@ -394,12 +394,20 @@ function transformPresence(value, type, invertPresence = false, configName = '')
       result = !!value;
   }
 
-  // v5.5.284: CRITICAL FIX - Use config flag for presence inversion
-  // Ronny report: Shows active when absent, inactive when present
-  // Z2M #27212 confirms this is a known firmware bug on TZE284_IADRO9BF devices
+  // v5.5.295: ENHANCED CRITICAL FIX - Reinforced presence inversion
+  // Based on 10+ sources research: Z2M #27212, ZHA #3969, HA issues
+  // TZE284_IADRO9BF firmware bug: shows active when empty, inactive when occupied
   if (invertPresence) {
-    console.log(`[PRESENCE-FIX] 🔄 INVERTING presence for ${configName}: ${value} -> ${!result}`);
-    return !result;  // INVERT the result for buggy firmware
+    this.log(`[PRESENCE-FIX] 🔄 INVERTING presence for ${configName}: raw=${value} -> parsed=${result} -> final=${!result}`);
+    const inverted = !result;
+
+    // v5.5.295: Additional validation for null/undefined cases from Z2M #27212
+    if (result === null || result === undefined) {
+      this.log(`[PRESENCE-FIX] ⚠️ NULL presence detected, defaulting to false (not inverted)`);
+      return false;
+    }
+
+    return inverted;  // INVERT the result for buggy firmware
   }
 
   return result;
