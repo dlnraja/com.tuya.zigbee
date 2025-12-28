@@ -1,4 +1,10 @@
 {
+  "5.5.291": {
+    "en": "🔌 FIEK CRITICAL FIX: HybridLightBase now properly registers capabilities with Homey's flow system. This fixes 'Could not get device by id' errors and ensures built-in flow cards (Light turned on/off, Brightness changed) fire correctly for all RGB/White bulbs. DELETE and RE-PAIR your bulb after updating!",
+    "fr": "🔌 FIX CRITIQUE FIEK: HybridLightBase enregistre maintenant correctement les capabilities avec le système de flows Homey. Corrige les erreurs 'Could not get device by id' et assure que les flow cards natives fonctionnent. SUPPRIMER et RÉ-APPAIRER votre ampoule après mise à jour!",
+    "nl": "🔌 FIEK KRITIEKE FIX: HybridLightBase registreert nu correct capabilities met Homey's flow systeem. Dit fixt 'Could not get device by id' fouten en zorgt ervoor dat ingebouwde flow cards correct werken. VERWIJDER en KOPPEL OPNIEUW na update!",
+    "de": "🔌 FIEK KRITISCHER FIX: HybridLightBase registriert jetzt Capabilities korrekt mit Homeys Flow-System. Behebt 'Could not get device by id' Fehler und stellt sicher, dass eingebaute Flow-Karten korrekt funktionieren. LÖSCHEN und NEU KOPPELN nach Update!"
+  },
   "5.5.290": {
     "en": "🔔 FLOW TRIGGERS FIX: Connected 5 drivers with custom flows that were defined but never triggered: smoke_detector_advanced (smoke_alarm_triggered/cleared), gas_sensor (gas_alarm_triggered/cleared), water_leak_sensor (water_leak_detected/cleared), contact_sensor (contact_opened/closed/battery_low), motion_sensor (illuminance_changed). Flows now fire correctly!",
     "fr": "🔔 FIX DÉCLENCHEURS FLOW: Connecté 5 drivers avec flows custom définis mais jamais déclenchés: détecteur fumée, gaz, fuite eau, contact, mouvement. Les flows se déclenchent maintenant correctement!",
