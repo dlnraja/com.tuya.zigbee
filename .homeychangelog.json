@@ -1,4 +1,10 @@
 {
+  "5.5.292": {
+    "en": "🔧 FLOW TRIGGERS FIX v2: Moved flow trigger logic from individual device.js files to HybridSensorBase._triggerCustomFlowsIfNeeded(). This properly triggers custom flows when alarm capabilities change via setCapabilityValue() instead of registerCapabilityListener() which only fires on user actions. Affects: smoke, gas, water leak, contact sensors and motion illuminance.",
+    "fr": "🔧 FIX FLOW TRIGGERS v2: Logique déplacée vers HybridSensorBase. Déclenche correctement les flows custom quand les capabilities alarm changent. Affecte: détecteurs fumée, gaz, fuite eau, contact et luminosité mouvement.",
+    "nl": "🔧 FLOW TRIGGERS FIX v2: Flow trigger logica verplaatst naar HybridSensorBase. Triggert correct custom flows wanneer alarm capabilities veranderen. Betreft: rook, gas, waterlek, contact sensoren en beweging illuminantie.",
+    "de": "🔧 FLOW TRIGGERS FIX v2: Flow-Trigger-Logik nach HybridSensorBase verschoben. Triggert korrekt benutzerdefinierte Flows wenn Alarm-Capabilities sich ändern. Betrifft: Rauch, Gas, Wasserleck, Kontakt und Bewegungs-Illuminanz."
+  },
   "5.5.291": {
     "en": "🔌 FIEK CRITICAL FIX: HybridLightBase now properly registers capabilities with Homey's flow system. This fixes 'Could not get device by id' errors and ensures built-in flow cards (Light turned on/off, Brightness changed) fire correctly for all RGB/White bulbs. DELETE and RE-PAIR your bulb after updating!",
     "fr": "🔌 FIX CRITIQUE FIEK: HybridLightBase enregistre maintenant correctement les capabilities avec le système de flows Homey. Corrige les erreurs 'Could not get device by id' et assure que les flow cards natives fonctionnent. SUPPRIMER et RÉ-APPAIRER votre ampoule après mise à jour!",
