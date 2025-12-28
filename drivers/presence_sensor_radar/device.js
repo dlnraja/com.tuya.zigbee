@@ -4,14 +4,13 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.276 CHATGPT ANALYSIS FIX           ║
+ * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.277 RONNY CRITICAL FIX             ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  v5.5.276: Based on Ronny's ChatGPT analysis (forum #723)                   ║
- * ║  - FIX: IAS Zone enrollment for "notEnrolled" status                        ║
- * ║  - FIX: Explicit power source detection (mains vs battery)                  ║
- * ║  - FIX: Better luminance handling for low values                            ║
- * ║  - INFO: Endpoint 242 = GreenPower (normal for Tuya)                        ║
- * ║  - INFO: swBuildId empty = normal for Tuya devices                          ║
+ * ║  v5.5.277: Based on Ronny's diagnostic v5.5.276 "Still not working"         ║
+ * ║  - FIX: manufacturerName retrieval (was empty → config DEFAULT)             ║
+ * ║  - FIX: Buffer parsing in _handleTuyaResponse (was NaN)                     ║
+ * ║  - FIX: Multiple fallback methods to get manufacturerName                   ║
+ * ║  - v5.5.276: IAS Zone enrollment for "notEnrolled" status                   ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 
@@ -290,12 +289,48 @@ function transformDistance(value, divisor = 100) {
 class PresenceSensorRadarDevice extends HybridSensorBase {
 
   /**
-   * v5.5.254: Get sensor configuration based on manufacturerName
+   * v5.5.277: Get manufacturerName with multiple fallback methods
+   * Ronny fix: this.getData()?.manufacturerName was returning empty!
+   */
+  _getManufacturerName() {
+    if (this._cachedManufacturerName) return this._cachedManufacturerName;
+
+    // Method 1: getData() (Homey standard)
+    let mfr = this.getData()?.manufacturerName;
+
+    // Method 2: Settings (stored during pairing)
+    if (!mfr) mfr = this.getSetting('zb_manufacturer_name');
+
+    // Method 3: Store data
+    if (!mfr) mfr = this.getStoreValue('manufacturerName');
+
+    // Method 4: ZCL node basic cluster (if available)
+    if (!mfr && this.zclNode?.endpoints?.[1]?.clusters?.basic) {
+      try {
+        mfr = this.zclNode.endpoints[1].clusters.basic.manufacturerName;
+      } catch (e) { /* ignore */ }
+    }
+
+    // Method 5: Driver manifest match (from pairing)
+    if (!mfr) {
+      const manifest = this.driver?.manifest;
+      if (manifest?.zigbee?.manufacturerName?.[0]) {
+        mfr = manifest.zigbee.manufacturerName[0];
+      }
+    }
+
+    this._cachedManufacturerName = mfr || '';
+    return this._cachedManufacturerName;
+  }
+
+  /**
+   * v5.5.277: Get sensor configuration based on manufacturerName
    */
   _getSensorConfig() {
     if (!this._sensorConfig) {
-      const mfr = this.getData()?.manufacturerName || '';
+      const mfr = this._getManufacturerName();
       this._sensorConfig = getSensorConfig(mfr);
+      this.log(`[RADAR] 🔍 ManufacturerName resolved: "${mfr}" → config: ${this._sensorConfig.configName || 'DEFAULT'}`);
     }
     return this._sensorConfig;
   }
@@ -510,7 +545,52 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.268: Handle Tuya response - ENHANCED for Ronny's debugging
+   * v5.5.277: Parse Buffer data to integer value
+   * Ronny fix: data.data was Buffer [0,0,13,70] → need to parse to 3398
+   */
+  _parseBufferValue(data) {
+    // Already a number
+    if (typeof data === 'number') return data;
+    if (typeof data === 'boolean') return data ? 1 : 0;
+
+    // Buffer object: {type: "Buffer", data: [0,0,13,70]}
+    if (data && typeof data === 'object') {
+      let bytes = null;
+
+      // Format 1: {type: "Buffer", data: [...]}
+      if (data.type === 'Buffer' && Array.isArray(data.data)) {
+        bytes = data.data;
+      }
+      // Format 2: Node.js Buffer
+      else if (Buffer.isBuffer(data)) {
+        bytes = Array.from(data);
+      }
+      // Format 3: Array directly
+      else if (Array.isArray(data)) {
+        bytes = data;
+      }
+
+      if (bytes && bytes.length > 0) {
+        // Parse as big-endian unsigned integer
+        let value = 0;
+        for (let i = 0; i < bytes.length; i++) {
+          value = (value << 8) | (bytes[i] & 0xFF);
+        }
+        return value;
+      }
+    }
+
+    // String number
+    if (typeof data === 'string' && !isNaN(data)) {
+      return parseInt(data, 10);
+    }
+
+    return data;
+  }
+
+  /**
+   * v5.5.277: Handle Tuya response - FIXED Buffer parsing
+   * Ronny fix: value was NaN because Buffer wasn't parsed
    */
   _handleTuyaResponse(data) {
     if (!data) return;
@@ -521,7 +601,13 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     // Process DPs
     const dpMappings = this.dpMappings;
     const dpId = data.dp || data.dpId || data.datapoint;
-    const value = data.value ?? data.data;
+
+    // v5.5.277: Parse the value properly (could be Buffer, number, etc.)
+    let rawValue = data.value;
+    if (rawValue === undefined || rawValue === null) {
+      rawValue = data.data;
+    }
+    const value = this._parseBufferValue(rawValue);
 
     // v5.5.268: Log ALL DPs for debugging unknown variants
     this._logUnknownDP(dpId, value, data);
@@ -535,6 +621,13 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         } else if (mapping.divisor) {
           finalValue = value / mapping.divisor;
         }
+
+        // v5.5.277: Validate finalValue is not NaN
+        if (typeof finalValue === 'number' && isNaN(finalValue)) {
+          this.log(`[RADAR] ⚠️ DP${dpId} → ${mapping.capability} = NaN (skipping, raw: ${JSON.stringify(rawValue)})`);
+          return;
+        }
+
         this.log(`[RADAR] DP${dpId} → ${mapping.capability} = ${finalValue}`);
         this.setCapabilityValue(mapping.capability, finalValue).catch(() => { });
 
@@ -545,7 +638,6 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       }
     } else if (dpId) {
       // v5.5.273: Only log UNMAPPED if not already handled by base class
-      // Check if this DP was already processed (capability value changed recently)
       if (!this._recentlyHandledDPs?.has(dpId)) {
         this.log(`[RADAR] ℹ️ DP${dpId} = ${value} (not in local config, may be handled by base class)`);
       }
