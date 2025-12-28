@@ -1,4 +1,10 @@
 {
+  "5.5.284": {
+    "en": "🔧 RONNY FIX v2: Fixed empty manufacturerName issue preventing presence inversion. Now uses config.invertPresence flag. Added DP12 fallback for lux (some firmware uses DP12 instead of DP104). Presence inversion now works even when manufacturerName is empty!",
+    "fr": "🔧 RONNY FIX v2: Corrigé le problème manufacturerName vide empêchant l'inversion de présence. Utilise maintenant config.invertPresence. Ajouté DP12 fallback pour lux. L'inversion fonctionne même si manufacturerName est vide!",
+    "nl": "🔧 RONNY FIX v2: Opgelost lege manufacturerName probleem dat aanwezigheidsinversie blokkeerde. Gebruikt nu config.invertPresence flag. Toegevoegd DP12 fallback voor lux. Inversie werkt nu ook bij lege manufacturerName!",
+    "de": "🔧 RONNY FIX v2: Leerer manufacturerName Problem behoben, das Präsenz-Inversion verhinderte. Nutzt jetzt config.invertPresence Flag. DP12 Fallback für Lux hinzugefügt. Inversion funktioniert jetzt auch bei leerem manufacturerName!"
+  },
   "5.5.283": {
     "en": "🎯 RADAR SENSOR FORUM FIXES: Inverted presence logic for _TZE284_iadro9bf, lux clamping (0-2000 range), enhanced distance DP validation, improved diagnostics logging",
     "fr": "🎯 CORRECTIONS CAPTEURS RADAR FORUM : Logique présence inversée pour _TZE284_iadro9bf, limitation lux (0-2000), validation distance DP améliorée, diagnostics renforcés",

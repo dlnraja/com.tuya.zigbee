@@ -131,6 +131,7 @@ const SENSOR_CONFIGS = {
   // WARNING: fading_time may not work as expected (Z2M #30326 user report)
   // ─────────────────────────────────────────────────────────────────────────────
   'TZE284_IADRO9BF': {
+    configName: 'TZE284_IADRO9BF',
     sensors: [
       // v5.5.280: Ronny's device - confirmed LOW DP layout
       '_TZE284_iadro9bf',
@@ -147,6 +148,8 @@ const SENSOR_CONFIGS = {
     battery: false,
     hasIlluminance: true,
     needsPolling: true,
+    // v5.5.284: Flag for presence inversion fix (firmware bug)
+    invertPresence: true,
     dpMap: {
       // DP1: Presence - trueFalse1 format (PRIMARY!)
       1: { cap: 'alarm_motion', type: 'presence_bool' },
@@ -160,11 +163,13 @@ const SENSOR_CONFIGS = {
       6: { cap: null, internal: 'self_test' },
       // DP9: Target distance (÷100 = meters)
       9: { cap: 'measure_distance', divisor: 100 },
+      // v5.5.284: DP12 as FALLBACK for lux (some firmware uses DP12 instead of DP104)
+      12: { cap: 'measure_luminance', type: 'lux_direct' },
       // DP101: Detection delay (÷10 = seconds)
       101: { cap: null, internal: 'detection_delay', divisor: 10 },
       // DP102: Fading time (÷10 = seconds) - WARNING: may not work on some firmware
       102: { cap: null, internal: 'fading_time', divisor: 10 },
-      // DP104: Illuminance (raw lux)
+      // DP104: Illuminance (raw lux) - PRIMARY
       104: { cap: 'measure_luminance', type: 'lux_direct' },
     }
   },
@@ -342,8 +347,8 @@ function getSensorConfig(manufacturerName) {
 }
 
 // Transform presence value based on type
-// v5.5.283: RONNY FIX - Some TZE284 firmware has INVERTED presence logic!
-function transformPresence(value, type, manufacturerName = '') {
+// v5.5.284: RONNY FIX - Use config.invertPresence flag (manufacturerName can be empty!)
+function transformPresence(value, type, invertPresence = false, configName = '') {
   let result;
 
   switch (type) {
@@ -361,12 +366,12 @@ function transformPresence(value, type, manufacturerName = '') {
       result = !!value;
   }
 
-  // v5.5.283: CRITICAL FIX for _TZE284_iadro9bf INVERTED firmware bug
+  // v5.5.284: CRITICAL FIX - Use config flag for presence inversion
   // Ronny report: Shows active when absent, inactive when present
-  // Z2M #27212 confirms this is a known firmware bug on these devices
-  if (manufacturerName === '_TZE284_iadro9bf' || manufacturerName === '_TZE204_iadro9bf') {
-    console.log(`[PRESENCE-FIX] 🔄 INVERTING presence for ${manufacturerName}: ${value} -> ${!result}`);
-    return !result;  // INVERT the result for these buggy devices
+  // Z2M #27212 confirms this is a known firmware bug on TZE284_IADRO9BF devices
+  if (invertPresence) {
+    console.log(`[PRESENCE-FIX] 🔄 INVERTING presence for ${configName}: ${value} -> ${!result}`);
+    return !result;  // INVERT the result for buggy firmware
   }
 
   return result;
@@ -542,15 +547,19 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
     this.log(`[RADAR] 🧠 Using config: ${config.configName || 'DEFAULT'} for ${mfr}`);
 
+    // v5.5.284: Get invertPresence flag from config (not manufacturerName which can be empty)
+    const invertPresence = config.invertPresence || false;
+    const configName = config.configName || 'DEFAULT';
+
     for (const [dpId, dpConfig] of Object.entries(dpMap)) {
       const dp = parseInt(dpId);
 
       if (dpConfig.cap === 'alarm_motion' || dpConfig.cap === 'alarm_human') {
-        // Presence DP - use intelligent transform with manufacturerName
+        // v5.5.284: Use config.invertPresence flag for presence inversion
         mappings[dp] = {
           capability: 'alarm_motion',
-          transform: (v) => transformPresence(v, dpConfig.type, mfr),
-          alsoSets: { 'alarm_human': (v) => transformPresence(v, dpConfig.type, mfr) }
+          transform: (v) => transformPresence(v, dpConfig.type, invertPresence, configName),
+          alsoSets: { 'alarm_human': (v) => transformPresence(v, dpConfig.type, invertPresence, configName) }
         };
       } else if (dpConfig.cap === 'measure_luminance') {
         // Illuminance DP - use sanity-checked transform with manufacturerName
@@ -588,7 +597,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
     // Add fallback DPs that might not be in config
     if (!mappings[112]) {
-      mappings[112] = { capability: 'alarm_motion', transform: (v) => transformPresence(v, 'presence_enum', mfr) };
+      mappings[112] = { capability: 'alarm_motion', transform: (v) => transformPresence(v, 'presence_enum', invertPresence, configName) };
     }
 
     return mappings;
