@@ -62,8 +62,38 @@ class GasSensorDevice extends HybridSensorBase {
   async onNodeInit({ zclNode }) {
     // Parent handles: IAS Zone, battery, Tuya DP
     await super.onNodeInit({ zclNode });
-    this.log('[GAS] v5.5.129 - DPs: 1,2,3,4,9-11,13,14,16 | ZCL: IAS,PWR,EF00');
+    this.log('[GAS] v5.5.290 - DPs: 1,2,3,4,9-11,13,14,16 | ZCL: IAS,PWR,EF00');
     this.log('[GAS] ✅ Ready');
+
+    // v5.5.290: Register listener to trigger custom flow cards
+    this._lastGasAlarm = null;
+    this.registerCapabilityListener('alarm_gas', async (value) => {
+      if (value && this._lastGasAlarm !== true) {
+        await this._triggerGasFlows(true);
+      } else if (!value && this._lastGasAlarm === true) {
+        await this._triggerGasFlows(false);
+      }
+      this._lastGasAlarm = value;
+    });
+  }
+
+  /**
+   * v5.5.290: Trigger custom gas alarm flow cards
+   */
+  async _triggerGasFlows(detected) {
+    try {
+      if (detected) {
+        await this.homey.flow.getDeviceTriggerCard('gas_alarm_triggered')
+          .trigger(this, { gas: true }).catch(() => { });
+        this.log('[GAS] ⛽ Flow triggered: gas_alarm_triggered');
+      } else {
+        await this.homey.flow.getDeviceTriggerCard('gas_alarm_cleared')
+          .trigger(this, { gas: false }).catch(() => { });
+        this.log('[GAS] ✅ Flow triggered: gas_alarm_cleared');
+      }
+    } catch (err) {
+      this.log('[GAS] ⚠️ Flow trigger error:', err.message);
+    }
   }
 
   async silenceAlarm() {
