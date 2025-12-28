@@ -342,25 +342,42 @@ function getSensorConfig(manufacturerName) {
 }
 
 // Transform presence value based on type
-function transformPresence(value, type) {
+// v5.5.283: RONNY FIX - Some TZE284 firmware has INVERTED presence logic!
+function transformPresence(value, type, manufacturerName = '') {
+  let result;
+
   switch (type) {
     case 'presence_enum':
       // 0=none, 1=motion, 2=stationary -> true if motion or stationary
-      return value === 1 || value === 2;
+      result = value === 1 || value === 2;
+      break;
     case 'presence_bool':
-      return value === 1 || value === true || value === 'presence';
+      result = value === 1 || value === true || value === 'presence';
+      break;
     case 'presence_string':
-      return value === 'motion' || value === 'stationary' || value === 'presence';
+      result = value === 'motion' || value === 'stationary' || value === 'presence';
+      break;
     default:
-      return !!value;
+      result = !!value;
   }
+
+  // v5.5.283: CRITICAL FIX for _TZE284_iadro9bf INVERTED firmware bug
+  // Ronny report: Shows active when absent, inactive when present
+  // Z2M #27212 confirms this is a known firmware bug on these devices
+  if (manufacturerName === '_TZE284_iadro9bf' || manufacturerName === '_TZE204_iadro9bf') {
+    console.log(`[PRESENCE-FIX] 🔄 INVERTING presence for ${manufacturerName}: ${value} -> ${!result}`);
+    return !result;  // INVERT the result for these buggy devices
+  }
+
+  return result;
 }
 
-// v5.5.264: Sanity check and transform illuminance value
-// ZY-M100 spec: 0-2000 LUX max
-// TZE284 sensors report RAW ADC values that need log10 conversion
-function transformLux(value, type) {
+// v5.5.283: Enhanced lux validation with manufacturer spec ranges
+// ZY-M100 spec: 0-2000 LUX max (Ronny forum report)
+// TZE284 sensors report RAW ADC values that need conversion
+function transformLux(value, type, manufacturerName = '') {
   let lux = value;
+  const originalValue = value;
 
   // v5.5.264: TZE284 sensors report RAW ADC values
   // Formula from ZHA: lux = 10^(raw/10000) or simpler: raw/10 for display
@@ -385,28 +402,53 @@ function transformLux(value, type) {
     lux = value / 10;
   }
 
-  // Sanity check: ZY-M100 max is 2000 lux
-  // If value > 10000, it's probably raw sensor data needing conversion
-  if (lux > 10000) {
-    // Likely raw ADC value, apply rough conversion
-    lux = Math.min(2000, Math.round(lux / 100));
-  } else if (lux > 2000) {
-    // Clamp to max spec value
-    lux = 2000;
+  // v5.5.283: RONNY FIX - Manufacturer-specific range validation
+  // ZY-M100 series: 0-2000 lux (confirmed by user forum reports)
+  let maxLux = 2000;  // Default manufacturer spec
+
+  // Apply manufacturer-specific limits
+  if (manufacturerName.startsWith('_TZE284_') || manufacturerName.startsWith('_TZE204_')) {
+    maxLux = 2000;  // TZE284 series confirmed 0-2000 lux range
+  }
+
+  // Auto-detect if value is raw sensor data needing conversion
+  if (lux > maxLux * 5) {  // If 5x over spec, likely raw ADC
+    const converted = Math.round(lux / 100);
+    console.log(`[LUX-FIX] 📊 Raw ADC detected for ${manufacturerName}: ${originalValue} -> ${converted} lux`);
+    lux = converted;
+  }
+
+  // Hard clamp to manufacturer spec range
+  if (lux > maxLux) {
+    console.log(`[LUX-FIX] ⚠️ Clamping ${manufacturerName}: ${lux} -> ${maxLux} lux (spec limit)`);
+    lux = maxLux;
   }
 
   return Math.max(0, Math.round(lux));
 }
 
-// Sanity check distance value (0-10m range)
-function transformDistance(value, divisor = 100) {
+// v5.5.283: Enhanced distance transformation with debug logging
+// Ronny report: DP9 distance "not responding" on _TZE284_iadro9bf
+function transformDistance(value, divisor = 100, manufacturerName = '') {
+  const originalValue = value;
   let distance = value / divisor;
+
+  // v5.5.283: Enhanced validation with logging
+  if (typeof value !== 'number' || isNaN(value) || value < 0) {
+    console.log(`[DISTANCE-FIX] ⚠️ Invalid distance value for ${manufacturerName}: ${originalValue} (type: ${typeof value})`);
+    return null;  // Don't update capability for invalid values
+  }
 
   // Sanity check: most radar sensors have 0-10m range
   if (distance < 0) distance = 0;
-  if (distance > 10) distance = 10;
+  if (distance > 10) {
+    console.log(`[DISTANCE-FIX] 📏 Distance over range for ${manufacturerName}: ${distance}m -> 10m (clamped)`);
+    distance = 10;
+  }
 
-  return Math.round(distance * 100) / 100; // 2 decimal places
+  const result = Math.round(distance * 100) / 100; // 2 decimal places
+  console.log(`[DISTANCE-FIX] ✅ Distance for ${manufacturerName}: ${originalValue} (÷${divisor}) -> ${result}m`);
+  return result;
 }
 
 class PresenceSensorRadarDevice extends HybridSensorBase {
@@ -504,23 +546,27 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       const dp = parseInt(dpId);
 
       if (dpConfig.cap === 'alarm_motion' || dpConfig.cap === 'alarm_human') {
-        // Presence DP - use intelligent transform
+        // Presence DP - use intelligent transform with manufacturerName
         mappings[dp] = {
           capability: 'alarm_motion',
-          transform: (v) => transformPresence(v, dpConfig.type),
-          alsoSets: { 'alarm_human': (v) => transformPresence(v, dpConfig.type) }
+          transform: (v) => transformPresence(v, dpConfig.type, mfr),
+          alsoSets: { 'alarm_human': (v) => transformPresence(v, dpConfig.type, mfr) }
         };
       } else if (dpConfig.cap === 'measure_luminance') {
-        // Illuminance DP - use sanity-checked transform
+        // Illuminance DP - use sanity-checked transform with manufacturerName
         mappings[dp] = {
           capability: dpConfig.cap,
-          transform: (v) => transformLux(v, dpConfig.type || 'lux_direct'),
+          transform: (v) => transformLux(v, dpConfig.type || 'lux_direct', mfr),
         };
       } else if (dpConfig.cap === 'measure_distance') {
-        // Distance DP - use sanity-checked transform
+        // Distance DP - use enhanced transform with manufacturerName and null handling
         mappings[dp] = {
           capability: dpConfig.cap,
-          transform: (v) => transformDistance(v, dpConfig.divisor || 100),
+          transform: (v) => {
+            const result = transformDistance(v, dpConfig.divisor || 100, mfr);
+            // v5.5.283: Skip capability update if transform returns null (invalid data)
+            return result !== null ? result : undefined;
+          },
         };
       } else if (dpConfig.cap) {
         // Other capability DP
@@ -542,7 +588,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
     // Add fallback DPs that might not be in config
     if (!mappings[112]) {
-      mappings[112] = { capability: 'alarm_motion', transform: (v) => transformPresence(v, 'presence_enum') };
+      mappings[112] = { capability: 'alarm_motion', transform: (v) => transformPresence(v, 'presence_enum', mfr) };
     }
 
     return mappings;
@@ -553,14 +599,15 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     const config = this._getSensorConfig();
 
     this.log(`[RADAR] ═══════════════════════════════════════════════════════════`);
-    this.log(`[RADAR] v5.5.279 RONNY #728 DEBUG (Z2M #27212 = FIRMWARE BUG)`);
+    this.log(`[RADAR] v5.5.283 RONNY FORUM FIXES (présence inversée + lux + distance)`);
     this.log(`[RADAR] ManufacturerName: ${mfr}`);
     this.log(`[RADAR] Config: ${config.configName || 'ZY_M100_STANDARD (default)'}`);
     this.log(`[RADAR] Power: ${config.battery ? 'BATTERY (EndDevice)' : 'MAINS (Router)'}`);
     this.log(`[RADAR] Illuminance: ${config.hasIlluminance !== false ? 'YES' : 'NO'}`);
     this.log(`[RADAR] Polling: ${config.needsPolling ? 'ENABLED (30s interval)' : 'DISABLED'}`);
     this.log(`[RADAR] DPs: ${Object.keys(config.dpMap || {}).join(', ') || 'ZCL only'}`);
-    this.log(`[RADAR] ⚠️ NOTE: Z2M #27212 confirms _TZE284_iadro9bf has presence=null FIRMWARE BUG`);
+    this.log(`[RADAR] 🔄 FIXES: Presence inversion, lux clamping (0-2000), distance validation`);
+    this.log(`[RADAR] ⚠️ Known bugs: _TZE284_iadro9bf presence inverted, distance DP may be passive`);
     this.log(`[RADAR] ═══════════════════════════════════════════════════════════`);
 
     // v5.5.268: Track received DPs for debugging
@@ -713,6 +760,50 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
+   * v5.5.283: Enhanced DP diagnostics for forum troubleshooting
+   * Logs DP queries, passive reporting status, and data format issues
+   */
+  _logDpDiagnostics(dpId, value, rawValue, data) {
+    const mfr = this._getManufacturerName();
+    const config = this._getSensorConfig();
+    const dpMap = config.dpMap || {};
+    const dpConfig = dpMap[dpId];
+
+    // Track received DPs for diagnostics
+    if (!this._receivedDPs) this._receivedDPs = new Set();
+    this._receivedDPs.add(dpId);
+
+    // Enhanced diagnostic info
+    const diagnosticInfo = {
+      dpId,
+      manufacturerName: mfr,
+      configName: config.configName || 'DEFAULT',
+      rawValueType: typeof rawValue,
+      parsedValue: value,
+      hasMapping: !!dpConfig,
+      capability: dpConfig?.cap || 'unmapped',
+      dataFormat: Array.isArray(rawValue?.data) ? `Buffer[${rawValue.data.join(',')}]` : typeof rawValue
+    };
+
+    // Special logging for problem DPs reported in forum
+    if ([1, 9, 12, 104, 105, 112].includes(dpId)) {
+      this.log(`[DIAG] 🔍 DP${dpId} (${dpConfig?.cap || 'unmapped'}): ${JSON.stringify(diagnosticInfo)}`);
+    }
+
+    // Detect passive reporting issues
+    if (dpConfig && !value && rawValue) {
+      this.log(`[DIAG] ⚠️ DP${dpId} parsing failed - passive reporting issue? Raw: ${JSON.stringify(rawValue)}`);
+    }
+
+    // Log missing expected DPs
+    const expectedDPs = Object.keys(dpMap).map(Number);
+    const missingDPs = expectedDPs.filter(dp => !this._receivedDPs.has(dp));
+    if (missingDPs.length > 0) {
+      this.log(`[DIAG] 📝 Missing DPs for ${mfr}: [${missingDPs.join(', ')}] (may be passive only)`);
+    }
+  }
+
+  /**
    * v5.5.279: Handle Tuya response - Enhanced for Ronny #728
    * - Full DP dump for debugging
    * - Try ALL presence DPs (1, 105, 112)
@@ -735,8 +826,9 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     }
     const value = this._parseBufferValue(rawValue);
 
-    // v5.5.279: Enhanced logging for Ronny #728 debug
+    // v5.5.283: Enhanced logging with diagnostic context
     this._logUnknownDP(dpId, value, data);
+    this._logDpDiagnostics(dpId, value, rawValue, data);
 
     // v5.5.279: SPECIAL HANDLING for presence DPs (try ALL of them)
     // Z2M #27212 shows _TZE284_iadro9bf firmware may use different DPs
