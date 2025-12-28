@@ -1,4 +1,10 @@
 {
+  "5.5.286": {
+    "en": "🔧 RONNY FIX v3: Enhanced pattern matching for TZE284_iadro9bf variants (presence inversion). Added DP fallbacks for _TZE204_gkfbdvyx (lux DP12/103, distance DP9/109). Enabled polling for gkfbdvyx devices.",
+    "fr": "🔧 RONNY FIX v3: Matching de patterns amélioré pour TZE284_iadro9bf (inversion présence). Ajouté fallbacks DP pour _TZE204_gkfbdvyx (lux DP12/103, distance DP9/109). Polling activé.",
+    "nl": "🔧 RONNY FIX v3: Verbeterde patroonmatching voor TZE284_iadro9bf varianten (presence inversie). Toegevoegd DP fallbacks voor _TZE204_gkfbdvyx. Polling ingeschakeld.",
+    "de": "🔧 RONNY FIX v3: Verbesserte Mustererkennung für TZE284_iadro9bf Varianten (Präsenz-Inversion). DP Fallbacks für _TZE204_gkfbdvyx hinzugefügt. Polling aktiviert."
+  },
   "5.5.285": {
     "en": "🔗 FLOW TRIGGERS FIX: Fixed presence_sensor_radar custom flow cards (presence_detected, presence_cleared, presence_someone_enters, presence_zone_empty) that were defined but never triggered. Flows now fire correctly when presence changes!",
     "fr": "🔗 FIX DÉCLENCHEURS FLOW: Corrigé les flow cards personnalisées presence_sensor_radar (presence_detected, presence_cleared, etc.) qui étaient définies mais jamais déclenchées. Les flows se déclenchent maintenant correctement!",
