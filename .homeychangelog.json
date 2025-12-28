@@ -1,4 +1,10 @@
 {
+  "5.5.294": {
+    "en": "🚨 DIAGNOSTIC REPORTS FIXES v5.5.294: Critical DP12 NaN conflict resolved - presence_sensor_radar now completely ignores DPs processed by HybridSensorBase. Fixed button_wireless_1 alarm_contact recovery for hybrid SOS/emergency buttons. Enhanced ButtonDevice to detect hybrid button+contact devices. alarm_tamper capability auto-recovery enabled for smoke detectors.",
+    "fr": "🚨 CORRECTIONS RAPPORTS DIAGNOSTICS v5.5.294: Conflit DP12 NaN résolu - presence_sensor_radar ignore maintenant complètement les DPs traités par HybridSensorBase. Récupération alarm_contact corrigée pour boutons SOS/urgence. ButtonDevice amélioré pour détecter appareils hybrides bouton+contact.",
+    "nl": "🚨 DIAGNOSTISCHE RAPPORTEN FIXES v5.5.294: Kritiek DP12 NaN conflict opgelost - presence_sensor_radar negeert nu volledig DPs verwerkt door HybridSensorBase. alarm_contact herstel gefixt voor hybride SOS/noodknoppen. ButtonDevice verbeterd om hybride knop+contact apparaten te detecteren.",
+    "de": "🚨 DIAGNOSTISCHE BERICHTE FIXES v5.5.294: Kritischer DP12 NaN Konflikt gelöst - presence_sensor_radar ignoriert jetzt vollständig DPs verarbeitet von HybridSensorBase. alarm_contact Wiederherstellung für hybride SOS/Notfall-Tasten gefixt. ButtonDevice verbessert um hybride Knopf+Kontakt Geräte zu erkennen."
+  },
   "5.5.292": {
     "en": "🔧 FLOW TRIGGERS FIX v2: Moved flow trigger logic from individual device.js files to HybridSensorBase._triggerCustomFlowsIfNeeded(). This properly triggers custom flows when alarm capabilities change via setCapabilityValue() instead of registerCapabilityListener() which only fires on user actions. Affects: smoke, gas, water leak, contact sensors and motion illuminance.",
     "fr": "🔧 FIX FLOW TRIGGERS v2: Logique déplacée vers HybridSensorBase. Déclenche correctement les flows custom quand les capabilities alarm changent. Affecte: détecteurs fumée, gaz, fuite eau, contact et luminosité mouvement.",
