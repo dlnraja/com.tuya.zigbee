@@ -1,4 +1,16 @@
 {
+  "5.5.279": {
+    "en": "🔬 DEBUG presence_sensor_radar for Ronny #728: KNOWN ISSUE - Z2M #27212 confirms _TZE284_iadro9bf has presence=null FIRMWARE BUG (not driver issue). Added: Full DP dump logging, try ALL presence DPs (1, 105, 112), presence debounce 2s to fix 'flash 0.5s' issue. Please send new diagnostic after testing!",
+    "fr": "🔬 DEBUG presence_sensor_radar pour Ronny #728: PROBLÈME CONNU - Z2M #27212 confirme que _TZE284_iadro9bf a un BUG FIRMWARE presence=null. Ajouté: Logging DP complet, essai de TOUS les DPs présence, debounce 2s pour corriger le 'flash'.",
+    "nl": "🔬 DEBUG presence_sensor_radar voor Ronny #728: BEKEND PROBLEEM - Z2M #27212 bevestigt _TZE284_iadro9bf heeft presence=null FIRMWARE BUG. Toegevoegd: Volledige DP logging, probeer ALLE presence DPs, 2s debounce om 'flash' te fixen.",
+    "de": "🔬 DEBUG presence_sensor_radar für Ronny #728: BEKANNTES PROBLEM - Z2M #27212 bestätigt _TZE284_iadro9bf hat presence=null FIRMWARE BUG. Hinzugefügt: Vollständiges DP-Logging, alle Presence-DPs testen, 2s Debounce gegen 'Flash'."
+  },
+  "5.5.278": {
+    "en": "🔬 ENRICHED presence_sensor_radar DP mappings from Z2M/ZHA research: +15 new manufacturerNames (_TZE204_kyhbrfyl, _TZE204_ex3rcdha, _TZE204_ztqnh5cg, etc.). Fixed TZE284 series DP104-112 mappings based on ZHA quirk. Added intelligent DEFAULT fallback config for unknown sensors. Sources: Z2M #27212, #21730, #23705, ZHA #2852, #4044.",
+    "fr": "🔬 ENRICHI mappings DP presence_sensor_radar depuis recherche Z2M/ZHA: +15 nouveaux manufacturerNames. Corrigé mappings DP104-112 série TZE284. Config DEFAULT intelligente pour capteurs inconnus.",
+    "nl": "🔬 VERRIJKT presence_sensor_radar DP mappings van Z2M/ZHA onderzoek: +15 nieuwe manufacturerNames. TZE284 serie DP104-112 mappings gecorrigeerd. Intelligente DEFAULT fallback config voor onbekende sensoren.",
+    "de": "🔬 ANGEREICHERT presence_sensor_radar DP-Mappings aus Z2M/ZHA-Recherche: +15 neue manufacturerNames. TZE284-Serie DP104-112 Mappings korrigiert. Intelligente DEFAULT-Fallback-Konfiguration für unbekannte Sensoren."
+  },
   "5.5.277": {
     "en": "🔧 CRITICAL FIX presence_sensor_radar (Ronny v5.5.276 'Still not working'): Fixed manufacturerName retrieval (was empty → used DEFAULT config). Fixed Buffer parsing in _handleTuyaResponse (DP12 was NaN). Now uses 5 fallback methods to get manufacturerName. Lux and presence should now work correctly on TZE284 sensors!",
     "fr": "🔧 FIX CRITIQUE presence_sensor_radar (Ronny v5.5.276): Corrigé récupération manufacturerName (était vide → config DEFAULT). Corrigé parsing Buffer (DP12 était NaN). Lux et présence devraient maintenant fonctionner sur capteurs TZE284!",
