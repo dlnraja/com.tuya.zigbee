@@ -1,4 +1,10 @@
 {
+  "5.5.289": {
+    "en": "🔘 BUTTON FIX: Removed incorrect alarm_contact capability from button devices. Buttons should NOT have contact sensor capability - fixes DATA-RECOVERY spam trying to recover alarm_contact on wireless buttons.",
+    "fr": "🔘 BUTTON FIX: Retiré capability alarm_contact incorrecte des boutons. Les boutons ne doivent PAS avoir de capteur contact - corrige spam DATA-RECOVERY.",
+    "nl": "🔘 BUTTON FIX: Onjuiste alarm_contact capability verwijderd van knoppen. Knoppen mogen GEEN contact sensor hebben - fix DATA-RECOVERY spam.",
+    "de": "🔘 BUTTON FIX: Falsche alarm_contact Capability von Tasten entfernt. Tasten sollten KEINE Kontaktsensor-Fähigkeit haben - behebt DATA-RECOVERY Spam."
+  },
   "5.5.288": {
     "en": "🔍 FIEK FIX: Enhanced error handling for bulb_rgb (TS0505B) to help debug 'Could not get device by id' errors. Added detailed initialization logging. If you see this error, DELETE the device and RE-PAIR it.",
     "fr": "🔍 FIEK FIX: Amélioration gestion erreurs bulb_rgb (TS0505B) pour débugger 'Could not get device by id'. Logging détaillé ajouté. Si erreur, SUPPRIMER et RÉ-APPAIRER.",
