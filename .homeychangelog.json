@@ -1,4 +1,10 @@
 {
+  "5.5.277": {
+    "en": "🔧 CRITICAL FIX presence_sensor_radar (Ronny v5.5.276 'Still not working'): Fixed manufacturerName retrieval (was empty → used DEFAULT config). Fixed Buffer parsing in _handleTuyaResponse (DP12 was NaN). Now uses 5 fallback methods to get manufacturerName. Lux and presence should now work correctly on TZE284 sensors!",
+    "fr": "🔧 FIX CRITIQUE presence_sensor_radar (Ronny v5.5.276): Corrigé récupération manufacturerName (était vide → config DEFAULT). Corrigé parsing Buffer (DP12 était NaN). Lux et présence devraient maintenant fonctionner sur capteurs TZE284!",
+    "nl": "🔧 KRITIEKE FIX presence_sensor_radar (Ronny v5.5.276 'Still not working'): manufacturerName ophalen gerepareerd (was leeg → DEFAULT config). Buffer parsing gerepareerd (DP12 was NaN). Lux en aanwezigheid zouden nu correct moeten werken op TZE284 sensoren!",
+    "de": "🔧 KRITISCHER FIX presence_sensor_radar (Ronny v5.5.276): manufacturerName Abruf repariert (war leer → DEFAULT config). Buffer Parsing repariert (DP12 war NaN). Lux und Präsenz sollten jetzt auf TZE284 Sensoren funktionieren!"
+  },
   "5.5.276": {
     "en": "🔐 FIX: presence_sensor_radar IAS Zone enrollment - Fixes 'notEnrolled' status that prevented motion detection on some devices. Based on Ronny's ChatGPT analysis (forum #723). Also clarifies: Endpoint 242 = GreenPower (normal), empty swBuildId = normal for Tuya.",
     "fr": "🔐 FIX: Inscription IAS Zone pour presence_sensor_radar - Corrige le statut 'notEnrolled' qui empêchait la détection de mouvement. Basé sur l'analyse ChatGPT de Ronny (forum #723).",
