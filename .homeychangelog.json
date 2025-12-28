@@ -1,4 +1,10 @@
 {
+  "5.5.283": {
+    "en": "🎯 RADAR SENSOR FORUM FIXES: Inverted presence logic for _TZE284_iadro9bf, lux clamping (0-2000 range), enhanced distance DP validation, improved diagnostics logging",
+    "fr": "🎯 CORRECTIONS CAPTEURS RADAR FORUM : Logique présence inversée pour _TZE284_iadro9bf, limitation lux (0-2000), validation distance DP améliorée, diagnostics renforcés",
+    "nl": "🎯 RADAR SENSOR FORUM FIXES: Omgekeerde aanwezigheidslogica voor _TZE284_iadro9bf, lux begrenzing (0-2000), verbeterde afstand DP validatie, betere diagnostiek",
+    "de": "🎯 RADAR SENSOR FORUM FIXES: Invertierte Anwesenheitslogik für _TZE284_iadro9bf, Lux-Begrenzung (0-2000), verbesserte Distanz-DP-Validierung, erweiterte Diagnose"
+  },
   "5.5.282": {
     "en": "🔧 FIX presence_sensor_radar DP conflict: Removed _TZE284_qasjif9e from HIGH DP config (it uses LOW DPs like _TZE284_iadro9bf). DP mappings: DP1=presence(PRIMARY), DP9=distance, DP104=lux. DP105/109/112 NOT used on these devices.",
     "fr": "🔧 FIX conflit DP presence_sensor_radar: Retiré _TZE284_qasjif9e du config HIGH DP (utilise LOW DPs comme _TZE284_iadro9bf). Mappings: DP1=présence(PRIMARY), DP9=distance, DP104=lux.",
