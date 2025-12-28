@@ -69,8 +69,56 @@ class ContactSensorDevice extends HybridSensorBase {
   async onNodeInit({ zclNode }) {
     // Parent handles EVERYTHING: Tuya DP, ZCL, IAS Zone, battery
     await super.onNodeInit({ zclNode });
-    this.log('[CONTACT] v5.5.129 - DPs: 1,2,3,4,5,15,101 | ZCL: IAS,PWR,EF00');
+    this.log('[CONTACT] v5.5.290 - DPs: 1,2,3,4,5,15,101 | ZCL: IAS,PWR,EF00');
     this.log('[CONTACT] ✅ Contact sensor ready');
+
+    // v5.5.290: Register listener to trigger custom flow cards
+    this._lastContactState = null;
+    this._lastBatteryLevel = null;
+
+    this.registerCapabilityListener('alarm_contact', async (value) => {
+      if (value && this._lastContactState !== true) {
+        await this._triggerContactFlows('opened');
+      } else if (!value && this._lastContactState === true) {
+        await this._triggerContactFlows('closed');
+      }
+      this._lastContactState = value;
+    });
+
+    // Battery low trigger (below 20%)
+    this.registerCapabilityListener('measure_battery', async (value) => {
+      if (value <= 20 && (this._lastBatteryLevel === null || this._lastBatteryLevel > 20)) {
+        await this._triggerBatteryLowFlow(value);
+      }
+      this._lastBatteryLevel = value;
+    });
+  }
+
+  /**
+   * v5.5.290: Trigger custom contact flow cards
+   */
+  async _triggerContactFlows(state) {
+    try {
+      const cardId = state === 'opened' ? 'contact_opened' : 'contact_closed';
+      await this.homey.flow.getDeviceTriggerCard(cardId)
+        .trigger(this, {}).catch(() => { });
+      this.log(`[CONTACT] 🚪 Flow triggered: ${cardId}`);
+    } catch (err) {
+      this.log('[CONTACT] ⚠️ Flow trigger error:', err.message);
+    }
+  }
+
+  /**
+   * v5.5.290: Trigger battery low flow card
+   */
+  async _triggerBatteryLowFlow(level) {
+    try {
+      await this.homey.flow.getDeviceTriggerCard('contact_battery_low')
+        .trigger(this, { battery: level }).catch(() => { });
+      this.log(`[CONTACT] 🔋 Flow triggered: contact_battery_low (${level}%)`);
+    } catch (err) {
+      this.log('[CONTACT] ⚠️ Battery flow trigger error:', err.message);
+    }
   }
 }
 

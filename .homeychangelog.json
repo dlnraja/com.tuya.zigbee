@@ -1,4 +1,10 @@
 {
+  "5.5.290": {
+    "en": "🔔 FLOW TRIGGERS FIX: Connected 5 drivers with custom flows that were defined but never triggered: smoke_detector_advanced (smoke_alarm_triggered/cleared), gas_sensor (gas_alarm_triggered/cleared), water_leak_sensor (water_leak_detected/cleared), contact_sensor (contact_opened/closed/battery_low), motion_sensor (illuminance_changed). Flows now fire correctly!",
+    "fr": "🔔 FIX DÉCLENCHEURS FLOW: Connecté 5 drivers avec flows custom définis mais jamais déclenchés: détecteur fumée, gaz, fuite eau, contact, mouvement. Les flows se déclenchent maintenant correctement!",
+    "nl": "🔔 FLOW TRIGGERS FIX: 5 drivers met custom flows verbonden die gedefinieerd maar nooit getriggerd waren: rook, gas, waterlek, contact, beweging. Flows werken nu correct!",
+    "de": "🔔 FLOW TRIGGERS FIX: 5 Treiber mit benutzerdefinierten Flows verbunden, die definiert aber nie ausgelöst wurden: Rauch, Gas, Wasserleck, Kontakt, Bewegung. Flows funktionieren jetzt korrekt!"
+  },
   "5.5.289": {
     "en": "🔘 BUTTON FIX: Removed incorrect alarm_contact capability from button devices. Buttons should NOT have contact sensor capability - fixes DATA-RECOVERY spam trying to recover alarm_contact on wireless buttons.",
     "fr": "🔘 BUTTON FIX: Retiré capability alarm_contact incorrecte des boutons. Les boutons ne doivent PAS avoir de capteur contact - corrige spam DATA-RECOVERY.",
