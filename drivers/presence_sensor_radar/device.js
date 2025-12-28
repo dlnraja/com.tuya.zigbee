@@ -4,14 +4,14 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.279 RONNY #728 DEBUG              ║
+ * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.280 RONNY CRITICAL FIX            ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  v5.5.279: Enhanced debug for Ronny forum #728 "Still not working"        ║
- * ║  - KNOWN ISSUE: Z2M #27212 confirms presence=null is FIRMWARE BUG          ║
- * ║  - Added: Full DP dump logging to identify working DPs                     ║
- * ║  - Added: Try ALL presence DPs (1, 105, 112) simultaneously                ║
- * ║  - Added: Presence flash fix (debounce 2s)                                 ║
- * ║  - v5.5.278: Z2M/ZHA enriched DP mappings                                  ║
+ * ║  v5.5.280: CRITICAL FIX from HA Community external converter               ║
+ * ║  - _TZE284_iadro9bf uses LOW DPs (1-9, 101-104), NOT high DPs!             ║
+ * ║  - Source: community.home-assistant.io/t/862007 external converter         ║
+ * ║  - DP1=presence, DP9=distance, DP104=lux (NOT DP105/109/112!)              ║
+ * ║  - Created dedicated TZE284_IADRO9BF config with correct mappings          ║
+ * ║  - v5.5.279: Debounce fix + multi-DP presence                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 
@@ -117,52 +117,72 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // TYPE D: TZE284/TZE204 ZY-M100-S_2 Series (24GHz, HIGH DP numbers 104-112)
-  // Sources: ZHA #2852, #4044, Z2M #27212, #21730
-  // v5.5.278: ENRICHED from ZHA quirk + Z2M converters
-  // DP104=illuminance (log10 conversion), DP105=motion_state (enum 0/1/2)
-  // DP106=motion_sens (1-9), DP107=max_range (÷100=m), DP108=min_range (÷100=m)
-  // DP109=target_distance (÷100=m), DP110=fading_time (÷10=s), DP111=detection_delay (÷10=s)
-  // DP112=occupancy (bool)
+  // TYPE D: _TZE284_iadro9bf SPECIFIC (Ronny's device) - LOW DPs!
+  // v5.5.280 CRITICAL FIX: Source community.home-assistant.io/t/862007
+  // This device uses LOW DPs (1-9, 101-104), NOT high DPs (105-112)!
+  // DP1=presence (trueFalse1), DP2=sensitivity, DP3=min_range, DP4=max_range
+  // DP9=target_distance, DP101=detection_delay, DP102=fading_time, DP104=illuminance
   // ─────────────────────────────────────────────────────────────────────────────
-  'TZE284_SERIES': {
+  'TZE284_IADRO9BF': {
     sensors: [
-      // TZE284 variants (Ronny's device _TZE284_iadro9bf)
-      '_TZE284_iadro9bf', '_TZE284_n5q2t8na', '_TZE284_ztc6ggyl',
-      '_TZE284_ijxvkhd0', '_TZE284_qasjif9e', '_TZE284_sxm7l9xa',
-      '_TZE284_xsm7l9xa', '_TZE284_yrwmnya3',
-      // TZE204 variants with same DP layout (Z2M #21730, ZHA #2852)
-      '_TZE204_ijxvkhd0', '_TZE204_e5m9c5hl', '_TZE204_qasjif9e',
-      // v5.5.278: Added from Z2M issues
-      '_TZE204_kyhbrfyl',  // Z2M #19292
-      '_TZE204_ex3rcdha',  // Z2M #23705
-      '_TZE204_ztqnh5cg',  // Z2M #23373 (presence always true bug)
+      // v5.5.280: Ronny's device - confirmed LOW DP layout from HA external converter
+      '_TZE284_iadro9bf',
+      '_TZE204_iadro9bf',  // TZE204 variant of same device
+      // Other devices with same LOW DP layout (from HA community converter)
+      '_TZE204_qasjif9e',
+      '_TZE204_ztqnh5cg',
     ],
     battery: false,
     hasIlluminance: true,
-    needsPolling: true,  // Some firmware variants don't auto-report
+    needsPolling: true,
     dpMap: {
-      // DP1: Fallback presence for old firmware (some use DP1 instead of DP105/112)
-      1: { cap: 'alarm_motion', type: 'presence_enum', fallback: true },
-      // DP104: Illuminance - ZHA uses log10 conversion, Z2M uses raw
-      // Formula from ZHA: lux = 10^(raw/10000) or simpler: raw direct
+      // DP1: Presence - trueFalse1 format (PRIMARY!)
+      1: { cap: 'alarm_motion', type: 'presence_bool' },
+      // DP2: Radar sensitivity (0-9)
+      2: { cap: null, internal: 'radar_sensitivity' },
+      // DP3: Minimum range (÷100 = meters)
+      3: { cap: null, internal: 'min_range', divisor: 100 },
+      // DP4: Maximum range (÷100 = meters)
+      4: { cap: null, internal: 'max_range', divisor: 100 },
+      // DP9: Target distance (÷100 = meters)
+      9: { cap: 'measure_distance', divisor: 100 },
+      // DP101: Detection delay (÷10 = seconds)
+      101: { cap: null, internal: 'detection_delay', divisor: 10 },
+      // DP102: Fading time (÷10 = seconds)
+      102: { cap: null, internal: 'fading_time', divisor: 10 },
+      // DP104: Illuminance (raw lux)
       104: { cap: 'measure_luminance', type: 'lux_direct' },
-      // DP105: Motion state enum (0=none, 1=presence, 2=motion)
+    }
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // TYPE D2: Other TZE284/TZE204 ZY-M100-S_2 variants (HIGH DP numbers 104-112)
+  // These use different DP layout than _TZE284_iadro9bf
+  // ─────────────────────────────────────────────────────────────────────────────
+  'TZE284_SERIES_HIGH_DP': {
+    sensors: [
+      // TZE284 variants with HIGH DP layout
+      '_TZE284_n5q2t8na', '_TZE284_ztc6ggyl',
+      '_TZE284_ijxvkhd0', '_TZE284_qasjif9e', '_TZE284_sxm7l9xa',
+      '_TZE284_xsm7l9xa', '_TZE284_yrwmnya3',
+      // TZE204 variants with HIGH DP layout
+      '_TZE204_ijxvkhd0', '_TZE204_e5m9c5hl',
+      '_TZE204_kyhbrfyl', '_TZE204_ex3rcdha',
+    ],
+    battery: false,
+    hasIlluminance: true,
+    needsPolling: true,
+    dpMap: {
+      // Also try DP1 as fallback
+      1: { cap: 'alarm_motion', type: 'presence_enum', fallback: true },
+      104: { cap: 'measure_luminance', type: 'lux_direct' },
       105: { cap: 'alarm_motion', type: 'presence_enum' },
-      // DP106: Motion sensitivity (1-9, some firmware 0-9)
       106: { cap: null, internal: 'motion_sensitivity' },
-      // DP107: Maximum range in cm (÷100 = meters)
       107: { cap: null, internal: 'max_range', divisor: 100 },
-      // DP108: Minimum range in cm (÷100 = meters)
       108: { cap: null, internal: 'min_range', divisor: 100 },
-      // DP109: Target distance in cm (÷100 = meters)
       109: { cap: 'measure_distance', divisor: 100 },
-      // DP110: Fading time in deciseconds (÷10 = seconds)
       110: { cap: null, internal: 'fading_time', divisor: 10 },
-      // DP111: Detection delay in deciseconds (÷10 = seconds)
-      // Note: Z2M #21730 swaps 110/111 - some firmware uses 111 for presence_sensitivity
       111: { cap: null, internal: 'detection_delay', divisor: 10 },
-      // DP112: Occupancy boolean (true/false)
       112: { cap: 'alarm_motion', type: 'presence_bool' },
     }
   },
