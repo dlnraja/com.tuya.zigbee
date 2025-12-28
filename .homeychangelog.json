@@ -1,4 +1,10 @@
 {
+  "5.5.287": {
+    "en": "🧹 EFTYCHIS FIX: Removed _TZ3000_wkai4ga5 from wrong drivers (switch_2gang, climate_sensor). This device is a 4-button wireless remote (TS0044), now correctly paired only via button_wireless_4 driver. Re-pair required!",
+    "fr": "🧹 EFTYCHIS FIX: Retiré _TZ3000_wkai4ga5 des mauvais drivers. C'est une télécommande 4 boutons (TS0044), maintenant correctement dans button_wireless_4. Ré-appairage requis!",
+    "nl": "🧹 EFTYCHIS FIX: _TZ3000_wkai4ga5 verwijderd uit verkeerde drivers. Dit is een 4-knops afstandsbediening (TS0044), nu correct in button_wireless_4. Opnieuw koppelen vereist!",
+    "de": "🧹 EFTYCHIS FIX: _TZ3000_wkai4ga5 aus falschen Treibern entfernt. Dies ist eine 4-Tasten-Fernbedienung (TS0044), jetzt korrekt in button_wireless_4. Neues Pairing erforderlich!"
+  },
   "5.5.286": {
     "en": "🔧 RONNY FIX v3: Enhanced pattern matching for TZE284_iadro9bf variants (presence inversion). Added DP fallbacks for _TZE204_gkfbdvyx (lux DP12/103, distance DP9/109). Enabled polling for gkfbdvyx devices.",
     "fr": "🔧 RONNY FIX v3: Matching de patterns amélioré pour TZE284_iadro9bf (inversion présence). Ajouté fallbacks DP pour _TZE204_gkfbdvyx (lux DP12/103, distance DP9/109). Polling activé.",
