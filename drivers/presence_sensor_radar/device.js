@@ -62,23 +62,30 @@ const SENSOR_CONFIGS = {
   // DP1=presence, DP2=move_sens, DP3=min_dist, DP4=max_dist, DP9=distance
   // DP101=tracking, DP102=presence_sens, DP103=illuminance, DP104=motion_state, DP105=fading
   // ─────────────────────────────────────────────────────────────────────────────
+  // v5.5.286: RONNY FIX - Added multiple DP fallbacks for lux/distance
+  // Some firmware versions use different DPs for same data
+  // ─────────────────────────────────────────────────────────────────────────────
   'ZY_M100_CEILING_24G': {
     sensors: [
       '_TZE200_gkfbdvyx', '_TZE204_gkfbdvyx',
     ],
     battery: false,
-    hasIlluminance: true,  // v5.5.266: HAS LUX on DP103!
+    hasIlluminance: true,
+    needsPolling: true,  // v5.5.286: Enable polling to force DP reports
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_enum' },    // 0=none, 1=presence, 2=move
       2: { cap: null, internal: 'motion_sensitivity' },      // 0-10
       3: { cap: null, internal: 'detection_distance_min' },  // ×0.1 = meters
       4: { cap: null, internal: 'detection_distance_max' },  // ×0.1 = meters
-      9: { cap: 'measure_distance', divisor: 10 },           // ×0.1 = meters
+      9: { cap: 'measure_distance', divisor: 10 },           // ×0.1 = meters (PRIMARY)
       101: { cap: null, internal: 'distance_tracking' },     // switch
       102: { cap: null, internal: 'presence_sensitivity' },  // 1-10
-      103: { cap: 'measure_luminance', type: 'lux_direct' }, // lux direct
-      104: { cap: 'alarm_motion', type: 'presence_enum' },   // motion state enum
+      103: { cap: 'measure_luminance', type: 'lux_direct' }, // lux direct (PRIMARY)
+      104: { cap: 'alarm_motion', type: 'presence_enum' },   // motion state enum (fallback)
       105: { cap: null, internal: 'fading_time' },           // 1-1500 sec
+      // v5.5.286: FALLBACK DPs - some firmware uses these instead
+      12: { cap: 'measure_luminance', type: 'lux_direct' },  // lux fallback (iadro9bf style)
+      109: { cap: 'measure_distance', divisor: 100 },        // distance fallback (TZE284 style)
     }
   },
 
@@ -341,9 +348,29 @@ for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
 
 // Get sensor config by manufacturerName
 function getSensorConfig(manufacturerName) {
-  // v5.5.278: Use DEFAULT config instead of ZY_M100_STANDARD for unknown devices
-  // DEFAULT has combined DP mappings that work for most sensors
-  return MANUFACTURER_CONFIG_MAP[manufacturerName] || SENSOR_CONFIGS.DEFAULT;
+  // v5.5.286: RONNY FIX - Enhanced matching for TZE284/TZE204 series
+  // When exact match fails, try pattern matching for known problematic series
+
+  // Try exact match first
+  if (MANUFACTURER_CONFIG_MAP[manufacturerName]) {
+    return MANUFACTURER_CONFIG_MAP[manufacturerName];
+  }
+
+  // v5.5.286: Pattern matching for TZE284_iadro9bf variants
+  // Ronny report: manufacturerName can be empty or slightly different
+  if (manufacturerName) {
+    const mfrLower = manufacturerName.toLowerCase();
+
+    // Match TZE284/TZE204 iadro9bf variants (presence inversion needed)
+    if (mfrLower.includes('iadro9bf') || mfrLower.includes('qasjif9e') ||
+      mfrLower.includes('ztqnh5cg') || mfrLower.includes('sbyx0lm6')) {
+      console.log(`[RADAR] 🔍 Pattern match: ${manufacturerName} → TZE284_IADRO9BF config`);
+      return { ...SENSOR_CONFIGS.TZE284_IADRO9BF, configName: 'TZE284_IADRO9BF' };
+    }
+  }
+
+  // v5.5.278: Use DEFAULT config for unknown devices
+  return SENSOR_CONFIGS.DEFAULT;
 }
 
 // Transform presence value based on type
