@@ -1,4 +1,10 @@
 {
+  "5.5.288": {
+    "en": "🔍 FIEK FIX: Enhanced error handling for bulb_rgb (TS0505B) to help debug 'Could not get device by id' errors. Added detailed initialization logging. If you see this error, DELETE the device and RE-PAIR it.",
+    "fr": "🔍 FIEK FIX: Amélioration gestion erreurs bulb_rgb (TS0505B) pour débugger 'Could not get device by id'. Logging détaillé ajouté. Si erreur, SUPPRIMER et RÉ-APPAIRER.",
+    "nl": "🔍 FIEK FIX: Verbeterde foutafhandeling voor bulb_rgb (TS0505B) om 'Could not get device by id' te debuggen. Gedetailleerde logging toegevoegd. Bij fout: VERWIJDER en KOPPEL OPNIEUW.",
+    "de": "🔍 FIEK FIX: Verbesserte Fehlerbehandlung für bulb_rgb (TS0505B) zum Debuggen von 'Could not get device by id'. Detailliertes Logging hinzugefügt. Bei Fehler: LÖSCHEN und NEU KOPPELN."
+  },
   "5.5.287": {
     "en": "🧹 EFTYCHIS FIX: Removed _TZ3000_wkai4ga5 from wrong drivers (switch_2gang, climate_sensor). This device is a 4-button wireless remote (TS0044), now correctly paired only via button_wireless_4 driver. Re-pair required!",
     "fr": "🧹 EFTYCHIS FIX: Retiré _TZ3000_wkai4ga5 des mauvais drivers. C'est une télécommande 4 boutons (TS0044), maintenant correctement dans button_wireless_4. Ré-appairage requis!",

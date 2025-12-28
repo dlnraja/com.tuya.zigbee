@@ -80,18 +80,34 @@ class RGBBulbDevice extends HybridLightBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // Let parent initialize first (handles onoff, dim listeners)
-    await super.onNodeInit({ zclNode });
+    try {
+      // v5.5.288: Enhanced error handling for TS0505B "Could not get device by id" issue
+      this.log('[RGB] v5.5.288 - Starting initialization...');
+      this.log(`[RGB] Device ID: ${this.getData()?.id || 'unknown'}`);
+      this.log(`[RGB] ManufacturerName: ${this.getData()?.manufacturerName || 'unknown'}`);
 
-    this.log('[RGB] v5.5.129 - DPs: 1-7,21,24-26,101 | ZCL: 6,8,300,EF00');
+      // Let parent initialize first (handles onoff, dim listeners)
+      await super.onNodeInit({ zclNode });
 
-    // Add ZCL color listeners (parent doesn't handle hue/sat)
-    await this._setupColorCluster(zclNode);
+      this.log('[RGB] DPs: 1-7,21,24-26,101 | ZCL: 6,8,300,EF00');
 
-    // Add ONLY hue/saturation listeners (parent handles onoff, dim)
-    this._setupHueListeners();
+      // Add ZCL color listeners (parent doesn't handle hue/sat)
+      await this._setupColorCluster(zclNode);
 
-    this.log('[RGB] ✅ RGB bulb ready');
+      // Add ONLY hue/saturation listeners (parent handles onoff, dim)
+      this._setupHueListeners();
+
+      // v5.5.288: Verify device is properly initialized
+      if (!this.zclNode) {
+        this.error('[RGB] ⚠️ zclNode not set after parent init - device may not work properly');
+      }
+
+      this.log('[RGB] ✅ RGB bulb ready');
+    } catch (err) {
+      this.error(`[RGB] ❌ Initialization failed: ${err.message}`);
+      this.error('[RGB] ❌ Stack:', err.stack);
+      // Don't throw - let device be available but log the error
+    }
   }
 
   _parseHSV(raw) {
