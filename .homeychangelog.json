@@ -1,4 +1,10 @@
 {
+  "5.5.282": {
+    "en": "🔧 FIX presence_sensor_radar DP conflict: Removed _TZE284_qasjif9e from HIGH DP config (it uses LOW DPs like _TZE284_iadro9bf). DP mappings: DP1=presence(PRIMARY), DP9=distance, DP104=lux. DP105/109/112 NOT used on these devices.",
+    "fr": "🔧 FIX conflit DP presence_sensor_radar: Retiré _TZE284_qasjif9e du config HIGH DP (utilise LOW DPs comme _TZE284_iadro9bf). Mappings: DP1=présence(PRIMARY), DP9=distance, DP104=lux.",
+    "nl": "🔧 FIX presence_sensor_radar DP conflict: _TZE284_qasjif9e verwijderd uit HIGH DP config (gebruikt LOW DPs zoals _TZE284_iadro9bf). DP1=presence(PRIMARY), DP9=distance, DP104=lux.",
+    "de": "🔧 FIX presence_sensor_radar DP Konflikt: _TZE284_qasjif9e aus HIGH DP Config entfernt (nutzt LOW DPs wie _TZE284_iadro9bf). DP1=Präsenz(PRIMARY), DP9=Distanz, DP104=Lux."
+  },
   "5.5.281": {
     "en": "📊 ENRICHED presence_sensor_radar from ChatGPT analysis + Z2M/ZHA research: Added manufacturerNames (_TZE284_qasjif9e, _TZE284_ztqnh5cg, _TZE284_sbyx0lm6, etc.). Added duration_of_attendance/absence DPs, LED state control, self-test DP. Sources: Z2M #27212, #30326, #8939, HA t/862007, ZHA #3969, Reddit.",
     "fr": "📊 ENRICHI presence_sensor_radar depuis analyse ChatGPT + recherche Z2M/ZHA: Ajouté manufacturerNames, DPs duration_of_attendance/absence, contrôle LED, DP self-test. Sources: Z2M #27212, #30326, HA t/862007.",

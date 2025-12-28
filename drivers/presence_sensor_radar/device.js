@@ -170,14 +170,14 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // TYPE D2: Other TZE284/TZE204 ZY-M100-S_2 variants (HIGH DP numbers 104-112)
-  // These use different DP layout than _TZE284_iadro9bf
+  // TYPE D2: HIGH DP VARIANTS (105, 109, 112) - NOT for _TZE284_iadro9bf!
+  // v5.5.282: REMOVED _TZE284_qasjif9e (uses LOW DPs like iadro9bf)
   // ─────────────────────────────────────────────────────────────────────────────
   'TZE284_SERIES_HIGH_DP': {
     sensors: [
-      // TZE284 variants with HIGH DP layout
+      // TZE284 variants with HIGH DP layout (CONFIRMED)
       '_TZE284_n5q2t8na', '_TZE284_ztc6ggyl',
-      '_TZE284_ijxvkhd0', '_TZE284_qasjif9e', '_TZE284_sxm7l9xa',
+      '_TZE284_ijxvkhd0', '_TZE284_sxm7l9xa',
       '_TZE284_xsm7l9xa', '_TZE284_yrwmnya3',
       // TZE204 variants with HIGH DP layout
       '_TZE204_ijxvkhd0', '_TZE204_e5m9c5hl',
