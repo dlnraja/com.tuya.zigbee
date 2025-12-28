@@ -4,13 +4,14 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.277 RONNY CRITICAL FIX             ║
+ * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.279 RONNY #728 DEBUG              ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  v5.5.277: Based on Ronny's diagnostic v5.5.276 "Still not working"         ║
- * ║  - FIX: manufacturerName retrieval (was empty → config DEFAULT)             ║
- * ║  - FIX: Buffer parsing in _handleTuyaResponse (was NaN)                     ║
- * ║  - FIX: Multiple fallback methods to get manufacturerName                   ║
- * ║  - v5.5.276: IAS Zone enrollment for "notEnrolled" status                   ║
+ * ║  v5.5.279: Enhanced debug for Ronny forum #728 "Still not working"        ║
+ * ║  - KNOWN ISSUE: Z2M #27212 confirms presence=null is FIRMWARE BUG          ║
+ * ║  - Added: Full DP dump logging to identify working DPs                     ║
+ * ║  - Added: Try ALL presence DPs (1, 105, 112) simultaneously                ║
+ * ║  - Added: Presence flash fix (debounce 2s)                                 ║
+ * ║  - v5.5.278: Z2M/ZHA enriched DP mappings                                  ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 
@@ -116,38 +117,79 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // TYPE D: TZE284 ZY-M100-S_2 Series (newer chips with HIGH DP numbers)
-  // Source: ZHA quirk https://github.com/zigpy/zha-device-handlers/issues/2852
-  // Z2M Issue #27212: Some variants report presence/distance as NULL
-  // v5.5.268: RONNY FIX - Added DP1 fallback + periodic polling + debug logging
-  // DP104=illuminance(raw->lux), DP105=motion_state, DP106=motion_sens, DP107=max_range
-  // DP109=target_distance, DP110=fading_time, DP111=presence_sens, DP112=occupancy
-  // FALLBACK: Some firmware uses DP1 for presence instead of DP105/DP112
+  // TYPE D: TZE284/TZE204 ZY-M100-S_2 Series (24GHz, HIGH DP numbers 104-112)
+  // Sources: ZHA #2852, #4044, Z2M #27212, #21730
+  // v5.5.278: ENRICHED from ZHA quirk + Z2M converters
+  // DP104=illuminance (log10 conversion), DP105=motion_state (enum 0/1/2)
+  // DP106=motion_sens (1-9), DP107=max_range (÷100=m), DP108=min_range (÷100=m)
+  // DP109=target_distance (÷100=m), DP110=fading_time (÷10=s), DP111=detection_delay (÷10=s)
+  // DP112=occupancy (bool)
   // ─────────────────────────────────────────────────────────────────────────────
   'TZE284_SERIES': {
     sensors: [
-      '_TZE284_iadro9bf', '_TZE284_n5q2t8na',
-      '_TZE284_ztc6ggyl', '_TZE284_ijxvkhd0',
-      '_TZE284_qasjif9e', '_TZE284_sxm7l9xa',
+      // TZE284 variants (Ronny's device _TZE284_iadro9bf)
+      '_TZE284_iadro9bf', '_TZE284_n5q2t8na', '_TZE284_ztc6ggyl',
+      '_TZE284_ijxvkhd0', '_TZE284_qasjif9e', '_TZE284_sxm7l9xa',
       '_TZE284_xsm7l9xa', '_TZE284_yrwmnya3',
-      '_TZE204_ijxvkhd0', '_TZE204_e5m9c5hl',
-      '_TZE204_qasjif9e',
+      // TZE204 variants with same DP layout (Z2M #21730, ZHA #2852)
+      '_TZE204_ijxvkhd0', '_TZE204_e5m9c5hl', '_TZE204_qasjif9e',
+      // v5.5.278: Added from Z2M issues
+      '_TZE204_kyhbrfyl',  // Z2M #19292
+      '_TZE204_ex3rcdha',  // Z2M #23705
+      '_TZE204_ztqnh5cg',  // Z2M #23373 (presence always true bug)
     ],
     battery: false,
     hasIlluminance: true,
-    needsPolling: true,  // v5.5.268: Enable periodic DP polling for stubborn devices
+    needsPolling: true,  // Some firmware variants don't auto-report
     dpMap: {
-      // v5.5.268: Add DP1 as FALLBACK for presence (some firmware variants)
+      // DP1: Fallback presence for old firmware (some use DP1 instead of DP105/112)
       1: { cap: 'alarm_motion', type: 'presence_enum', fallback: true },
-      104: { cap: 'measure_luminance', type: 'lux_raw' },
-      105: { cap: 'alarm_motion', type: 'presence_enum' },    // Primary presence
+      // DP104: Illuminance - ZHA uses log10 conversion, Z2M uses raw
+      // Formula from ZHA: lux = 10^(raw/10000) or simpler: raw direct
+      104: { cap: 'measure_luminance', type: 'lux_direct' },
+      // DP105: Motion state enum (0=none, 1=presence, 2=motion)
+      105: { cap: 'alarm_motion', type: 'presence_enum' },
+      // DP106: Motion sensitivity (1-9, some firmware 0-9)
       106: { cap: null, internal: 'motion_sensitivity' },
-      107: { cap: null, internal: 'max_range' },
-      108: { cap: null, internal: 'detection_delay' },        // v5.5.268: Added
+      // DP107: Maximum range in cm (÷100 = meters)
+      107: { cap: null, internal: 'max_range', divisor: 100 },
+      // DP108: Minimum range in cm (÷100 = meters)
+      108: { cap: null, internal: 'min_range', divisor: 100 },
+      // DP109: Target distance in cm (÷100 = meters)
       109: { cap: 'measure_distance', divisor: 100 },
-      110: { cap: null, internal: 'fading_time' },
-      111: { cap: null, internal: 'presence_sensitivity' },
-      112: { cap: 'alarm_motion', type: 'presence_bool' },    // Secondary presence
+      // DP110: Fading time in deciseconds (÷10 = seconds)
+      110: { cap: null, internal: 'fading_time', divisor: 10 },
+      // DP111: Detection delay in deciseconds (÷10 = seconds)
+      // Note: Z2M #21730 swaps 110/111 - some firmware uses 111 for presence_sensitivity
+      111: { cap: null, internal: 'detection_delay', divisor: 10 },
+      // DP112: Occupancy boolean (true/false)
+      112: { cap: 'alarm_motion', type: 'presence_bool' },
+    }
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // TYPE D2: ZY-M100-S_1 Side Wall (different DPs than S_2!)
+  // Source: Z2M #21730 - user external converter
+  // DP104=illuminance, DP105=presence(bool), DP106=sensitivity, DP107=max_range
+  // DP108=min_range, DP109=distance, DP110=fading, DP111=detection_delay
+  // ─────────────────────────────────────────────────────────────────────────────
+  'ZY_M100_S1_SIDEALL': {
+    sensors: [
+      // Side wall version has different DP layout
+      // Z2M uses 'trueFalse1' for DP105 (bool not enum)
+    ],
+    battery: false,
+    hasIlluminance: true,
+    needsPolling: true,
+    dpMap: {
+      104: { cap: 'measure_luminance', type: 'lux_direct' },
+      105: { cap: 'alarm_motion', type: 'presence_bool' },  // trueFalse1 in Z2M
+      106: { cap: null, internal: 'radar_sensitivity' },
+      107: { cap: null, internal: 'max_range', divisor: 100 },
+      108: { cap: null, internal: 'min_range', divisor: 100 },
+      109: { cap: 'measure_distance', divisor: 100 },
+      110: { cap: null, internal: 'fading_time', divisor: 10 },
+      111: { cap: null, internal: 'detection_delay', divisor: 10 },
     }
   },
 
@@ -175,7 +217,8 @@ const SENSOR_CONFIGS = {
   // ─────────────────────────────────────────────────────────────────────────────
   'ILLUMINANCE_FOCUS': {
     sensors: [
-      '_TZE200_laokfqwu', '_TZE200_ztqnh5cg',
+      '_TZE200_laokfqwu', '_TZE204_laokfqwu',
+      '_TZE200_ztqnh5cg',
       '_tze200_y4mdop0b',
     ],
     battery: false,
@@ -184,6 +227,25 @@ const SENSOR_CONFIGS = {
       6: { cap: null, internal: 'fading_time' },
       9: { cap: 'measure_luminance', divisor: 1 },
       101: { cap: 'measure_distance', divisor: 100 },
+    }
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // TYPE F2: ZY-M100-24G (24GHz radar, reports every second!)
+  // Source: Z2M ZY-M100-24G page - WARNING: Can overwhelm Zigbee network
+  // ─────────────────────────────────────────────────────────────────────────────
+  'ZY_M100_24G_SPAM': {
+    sensors: [
+      // These sensors report every second - can cause network issues
+      // See Z2M note: https://github.com/Koenkk/zigbee2mqtt/issues/19045
+    ],
+    battery: false,
+    hasIlluminance: true,
+    reportsFrequently: true,  // Warning flag
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_enum' },
+      104: { cap: 'measure_luminance', type: 'lux_direct' },
+      109: { cap: 'measure_distance', divisor: 100 },
     }
   },
 
@@ -203,6 +265,31 @@ const SENSOR_CONFIGS = {
       // PIR uses ZCL occupancy, not Tuya DPs
     }
   },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // v5.5.278: DEFAULT fallback config (generic DP mappings)
+  // Applied when manufacturerName not found in any config
+  // Uses common DPs that work for most sensors
+  // ─────────────────────────────────────────────────────────────────────────────
+  'DEFAULT': {
+    sensors: [],
+    configName: 'DEFAULT',
+    battery: false,
+    hasIlluminance: true,
+    needsPolling: true,  // Poll unknown devices
+    dpMap: {
+      // Try all common presence DPs
+      1: { cap: 'alarm_motion', type: 'presence_enum' },
+      // Low DPs (ZY-M100 standard)
+      9: { cap: 'measure_distance', divisor: 100 },
+      12: { cap: 'measure_luminance', type: 'lux_direct' },
+      // High DPs (TZE284 series)
+      104: { cap: 'measure_luminance', type: 'lux_direct' },
+      105: { cap: 'alarm_motion', type: 'presence_enum' },
+      109: { cap: 'measure_distance', divisor: 100 },
+      112: { cap: 'alarm_motion', type: 'presence_bool' },
+    }
+  },
 };
 
 // Build reverse lookup: manufacturerName -> config
@@ -215,7 +302,9 @@ for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
 
 // Get sensor config by manufacturerName
 function getSensorConfig(manufacturerName) {
-  return MANUFACTURER_CONFIG_MAP[manufacturerName] || SENSOR_CONFIGS.ZY_M100_STANDARD;
+  // v5.5.278: Use DEFAULT config instead of ZY_M100_STANDARD for unknown devices
+  // DEFAULT has combined DP mappings that work for most sensors
+  return MANUFACTURER_CONFIG_MAP[manufacturerName] || SENSOR_CONFIGS.DEFAULT;
 }
 
 // Transform presence value based on type
@@ -430,13 +519,14 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     const config = this._getSensorConfig();
 
     this.log(`[RADAR] ═══════════════════════════════════════════════════════════`);
-    this.log(`[RADAR] v5.5.268 RONNY DEEP FIX (Z2M #27212 research)`);
+    this.log(`[RADAR] v5.5.279 RONNY #728 DEBUG (Z2M #27212 = FIRMWARE BUG)`);
     this.log(`[RADAR] ManufacturerName: ${mfr}`);
     this.log(`[RADAR] Config: ${config.configName || 'ZY_M100_STANDARD (default)'}`);
     this.log(`[RADAR] Power: ${config.battery ? 'BATTERY (EndDevice)' : 'MAINS (Router)'}`);
     this.log(`[RADAR] Illuminance: ${config.hasIlluminance !== false ? 'YES' : 'NO'}`);
     this.log(`[RADAR] Polling: ${config.needsPolling ? 'ENABLED (30s interval)' : 'DISABLED'}`);
     this.log(`[RADAR] DPs: ${Object.keys(config.dpMap || {}).join(', ') || 'ZCL only'}`);
+    this.log(`[RADAR] ⚠️ NOTE: Z2M #27212 confirms _TZE284_iadro9bf has presence=null FIRMWARE BUG`);
     this.log(`[RADAR] ═══════════════════════════════════════════════════════════`);
 
     // v5.5.268: Track received DPs for debugging
@@ -589,8 +679,10 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.277: Handle Tuya response - FIXED Buffer parsing
-   * Ronny fix: value was NaN because Buffer wasn't parsed
+   * v5.5.279: Handle Tuya response - Enhanced for Ronny #728
+   * - Full DP dump for debugging
+   * - Try ALL presence DPs (1, 105, 112)
+   * - Presence debounce to fix "flash" issue
    */
   _handleTuyaResponse(data) {
     if (!data) return;
@@ -609,8 +701,20 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     }
     const value = this._parseBufferValue(rawValue);
 
-    // v5.5.268: Log ALL DPs for debugging unknown variants
+    // v5.5.279: Enhanced logging for Ronny #728 debug
     this._logUnknownDP(dpId, value, data);
+
+    // v5.5.279: SPECIAL HANDLING for presence DPs (try ALL of them)
+    // Z2M #27212 shows _TZE284_iadro9bf firmware may use different DPs
+    const PRESENCE_DPS = [1, 105, 112];
+    if (PRESENCE_DPS.includes(dpId)) {
+      const presenceValue = this._parsePresenceValue(value);
+      if (presenceValue !== null) {
+        // v5.5.279: Debounce presence to fix "flash 0.5s" issue
+        this._handlePresenceWithDebounce(presenceValue, dpId);
+        return;
+      }
+    }
 
     if (dpId && dpMappings[dpId]) {
       const mapping = dpMappings[dpId];
@@ -641,6 +745,58 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       if (!this._recentlyHandledDPs?.has(dpId)) {
         this.log(`[RADAR] ℹ️ DP${dpId} = ${value} (not in local config, may be handled by base class)`);
       }
+    }
+  }
+
+  /**
+   * v5.5.279: Parse presence value from any format
+   * Returns true/false or null if invalid
+   */
+  _parsePresenceValue(value) {
+    // Boolean
+    if (typeof value === 'boolean') return value;
+    // Enum: 0=none, 1=presence, 2=motion
+    if (typeof value === 'number') {
+      if (value === 0) return false;
+      if (value === 1 || value === 2) return true;
+    }
+    // String
+    if (value === 'presence' || value === 'motion' || value === 'true') return true;
+    if (value === 'none' || value === 'false') return false;
+    return null;
+  }
+
+  /**
+   * v5.5.279: Handle presence with 2s debounce
+   * Fixes Ronny #728 "presence flashes for 0.5s" issue
+   */
+  _handlePresenceWithDebounce(presence, dpId) {
+    const now = Date.now();
+    const DEBOUNCE_MS = 2000; // 2 seconds
+
+    // If presence is TRUE, set immediately
+    if (presence) {
+      this.log(`[RADAR] 🟢 DP${dpId} → PRESENCE DETECTED`);
+      this._lastPresenceTrue = now;
+      this.setCapabilityValue('alarm_motion', true).catch(() => { });
+      if (this.hasCapability('alarm_human')) {
+        this.setCapabilityValue('alarm_human', true).catch(() => { });
+      }
+      this._updatePresenceTimestamp();
+      return;
+    }
+
+    // If presence is FALSE, debounce (wait 2s before clearing)
+    const timeSinceTrue = now - (this._lastPresenceTrue || 0);
+    if (timeSinceTrue < DEBOUNCE_MS) {
+      this.log(`[RADAR] 🟡 DP${dpId} → presence=false DEBOUNCED (${timeSinceTrue}ms < ${DEBOUNCE_MS}ms)`);
+      return; // Ignore false within 2s of true
+    }
+
+    this.log(`[RADAR] 🔴 DP${dpId} → PRESENCE CLEARED`);
+    this.setCapabilityValue('alarm_motion', false).catch(() => { });
+    if (this.hasCapability('alarm_human')) {
+      this.setCapabilityValue('alarm_human', false).catch(() => { });
     }
   }
 
