@@ -4,14 +4,14 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.280 RONNY CRITICAL FIX            ║
+ * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.281 ENRICHED FROM CHATGPT         ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  v5.5.280: CRITICAL FIX from HA Community external converter               ║
- * ║  - _TZE284_iadro9bf uses LOW DPs (1-9, 101-104), NOT high DPs!             ║
- * ║  - Source: community.home-assistant.io/t/862007 external converter         ║
- * ║  - DP1=presence, DP9=distance, DP104=lux (NOT DP105/109/112!)              ║
- * ║  - Created dedicated TZE284_IADRO9BF config with correct mappings          ║
- * ║  - v5.5.279: Debounce fix + multi-DP presence                              ║
+ * ║  v5.5.281: ENRICHED from ChatGPT analysis + multiple sources               ║
+ * ║  Sources: Z2M #27212, #30326, #8939, HA t/862007, ZHA #3969, Reddit        ║
+ * ║  - Added: duration_of_attendance/absence DPs for presence timing           ║
+ * ║  - Added: More manufacturerNames from Z2M/ZHA research                     ║
+ * ║  - Added: led_state DP support for sensors with LED control                ║
+ * ║  - v5.5.280: LOW DPs fix for _TZE284_iadro9bf (Ronny #728)                 ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 
@@ -83,18 +83,26 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // TYPE B2: Simple presence sensors (no illuminance)
+  // TYPE B2: SIMPLE PRESENCE with duration tracking (from ChatGPT Z2M analysis)
+  // These expose: presence, duration_of_attendance, duration_of_absence, led_state
+  // Source: Z2M converters + Reddit r/homeassistant
   // ─────────────────────────────────────────────────────────────────────────────
   'ZY_M100_SIMPLE': {
     sensors: [
       '_TZE200_0u3bj3rc', '_TZE200_mx6u6l4y', '_TZE200_v6ossqfy',
+      // v5.5.281: Added from Z2M research
+      '_TZE200_3towulqd', '_TZE204_3towulqd',
+      '_TZE200_1ibpyhdc', '_TZE204_1ibpyhdc',
     ],
     battery: false,
     hasIlluminance: false,
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
-      101: { cap: null, internal: 'attendance_duration' },
-      102: { cap: null, internal: 'absence_duration' },
+      // v5.5.281: Duration tracking from ChatGPT analysis
+      101: { cap: null, internal: 'duration_of_attendance' },  // seconds present
+      102: { cap: null, internal: 'duration_of_absence' },     // seconds absent
+      // v5.5.281: LED state control (some sensors have this)
+      103: { cap: null, internal: 'led_state' },               // 0=off, 1=on
     }
   },
 
@@ -117,20 +125,24 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // TYPE D: _TZE284_iadro9bf SPECIFIC (Ronny's device) - LOW DPs!
-  // v5.5.280 CRITICAL FIX: Source community.home-assistant.io/t/862007
-  // This device uses LOW DPs (1-9, 101-104), NOT high DPs (105-112)!
-  // DP1=presence (trueFalse1), DP2=sensitivity, DP3=min_range, DP4=max_range
-  // DP9=target_distance, DP101=detection_delay, DP102=fading_time, DP104=illuminance
+  // TYPE D: ZY-M100-S_2 LOW DP VARIANTS (Ronny #728 + Z2M #30326)
+  // CONFIRMED: These devices use LOW DPs (1-9, 101-104), NOT high DPs!
+  // Sources: HA t/862007, Z2M #27212, #30326, ZHA #3969, Reddit
+  // WARNING: fading_time may not work as expected (Z2M #30326 user report)
   // ─────────────────────────────────────────────────────────────────────────────
   'TZE284_IADRO9BF': {
     sensors: [
-      // v5.5.280: Ronny's device - confirmed LOW DP layout from HA external converter
+      // v5.5.280: Ronny's device - confirmed LOW DP layout
       '_TZE284_iadro9bf',
-      '_TZE204_iadro9bf',  // TZE204 variant of same device
-      // Other devices with same LOW DP layout (from HA community converter)
+      '_TZE204_iadro9bf',
+      // v5.5.281: Added from HA t/862007 external converter fingerprint
       '_TZE204_qasjif9e',
+      '_TZE284_qasjif9e',  // TZE284 variant
       '_TZE204_ztqnh5cg',
+      '_TZE284_ztqnh5cg',  // TZE284 variant
+      // v5.5.281: Added from Z2M discussions - same LOW DP layout
+      '_TZE204_sbyx0lm6',
+      '_TZE284_sbyx0lm6',
     ],
     battery: false,
     hasIlluminance: true,
@@ -144,11 +156,13 @@ const SENSOR_CONFIGS = {
       3: { cap: null, internal: 'min_range', divisor: 100 },
       // DP4: Maximum range (÷100 = meters)
       4: { cap: null, internal: 'max_range', divisor: 100 },
+      // DP6: Self-test result (enum: 0=testing, 1=success, 2=failure)
+      6: { cap: null, internal: 'self_test' },
       // DP9: Target distance (÷100 = meters)
       9: { cap: 'measure_distance', divisor: 100 },
       // DP101: Detection delay (÷10 = seconds)
       101: { cap: null, internal: 'detection_delay', divisor: 10 },
-      // DP102: Fading time (÷10 = seconds)
+      // DP102: Fading time (÷10 = seconds) - WARNING: may not work on some firmware
       102: { cap: null, internal: 'fading_time', divisor: 10 },
       // DP104: Illuminance (raw lux)
       104: { cap: 'measure_luminance', type: 'lux_direct' },

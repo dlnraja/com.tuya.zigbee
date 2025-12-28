@@ -1,4 +1,10 @@
 {
+  "5.5.281": {
+    "en": "📊 ENRICHED presence_sensor_radar from ChatGPT analysis + Z2M/ZHA research: Added manufacturerNames (_TZE284_qasjif9e, _TZE284_ztqnh5cg, _TZE284_sbyx0lm6, etc.). Added duration_of_attendance/absence DPs, LED state control, self-test DP. Sources: Z2M #27212, #30326, #8939, HA t/862007, ZHA #3969, Reddit.",
+    "fr": "📊 ENRICHI presence_sensor_radar depuis analyse ChatGPT + recherche Z2M/ZHA: Ajouté manufacturerNames, DPs duration_of_attendance/absence, contrôle LED, DP self-test. Sources: Z2M #27212, #30326, HA t/862007.",
+    "nl": "📊 VERRIJKT presence_sensor_radar met ChatGPT analyse + Z2M/ZHA onderzoek: Toegevoegd manufacturerNames, duration_of_attendance/absence DPs, LED status, self-test DP. Bronnen: Z2M #27212, #30326, HA t/862007.",
+    "de": "📊 ANGEREICHERT presence_sensor_radar aus ChatGPT Analyse + Z2M/ZHA Recherche: Hinzugefügt manufacturerNames, duration_of_attendance/absence DPs, LED-Steuerung, Self-Test DP. Quellen: Z2M #27212, #30326, HA t/862007."
+  },
   "5.5.280": {
     "en": "🔴 CRITICAL FIX _TZE284_iadro9bf (Ronny #728): Device uses LOW DPs (1-9, 101-104), NOT high DPs! Source: HA Community external converter. DP1=presence, DP9=distance, DP104=lux. This should fix presence AND luminance!",
     "fr": "🔴 FIX CRITIQUE _TZE284_iadro9bf (Ronny #728): Le device utilise LOW DPs (1-9, 101-104), PAS les high DPs! DP1=présence, DP9=distance, DP104=lux. Devrait corriger présence ET luminance!",
