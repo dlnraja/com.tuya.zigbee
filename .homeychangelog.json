@@ -1,4 +1,10 @@
 {
+  "5.5.285": {
+    "en": "🔗 FLOW TRIGGERS FIX: Fixed presence_sensor_radar custom flow cards (presence_detected, presence_cleared, presence_someone_enters, presence_zone_empty) that were defined but never triggered. Flows now fire correctly when presence changes!",
+    "fr": "🔗 FIX DÉCLENCHEURS FLOW: Corrigé les flow cards personnalisées presence_sensor_radar (presence_detected, presence_cleared, etc.) qui étaient définies mais jamais déclenchées. Les flows se déclenchent maintenant correctement!",
+    "nl": "🔗 FLOW TRIGGERS FIX: Opgelost presence_sensor_radar custom flow cards (presence_detected, presence_cleared, etc.) die gedefinieerd maar nooit getriggerd werden. Flows werken nu correct!",
+    "de": "🔗 FLOW TRIGGERS FIX: Behoben presence_sensor_radar custom Flow-Karten (presence_detected, presence_cleared, etc.) die definiert aber nie ausgelöst wurden. Flows funktionieren jetzt korrekt!"
+  },
   "5.5.284": {
     "en": "🔧 RONNY FIX v2: Fixed empty manufacturerName issue preventing presence inversion. Now uses config.invertPresence flag. Added DP12 fallback for lux (some firmware uses DP12 instead of DP104). Presence inversion now works even when manufacturerName is empty!",
     "fr": "🔧 RONNY FIX v2: Corrigé le problème manufacturerName vide empêchant l'inversion de présence. Utilise maintenant config.invertPresence. Ajouté DP12 fallback pour lux. L'inversion fonctionne même si manufacturerName est vide!",

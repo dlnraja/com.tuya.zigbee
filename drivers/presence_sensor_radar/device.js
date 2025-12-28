@@ -918,6 +918,9 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         this.setCapabilityValue('alarm_human', true).catch(() => { });
       }
       this._updatePresenceTimestamp();
+
+      // v5.5.285: Trigger custom flow cards
+      this._triggerPresenceFlows(true);
       return;
     }
 
@@ -932,6 +935,37 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     this.setCapabilityValue('alarm_motion', false).catch(() => { });
     if (this.hasCapability('alarm_human')) {
       this.setCapabilityValue('alarm_human', false).catch(() => { });
+    }
+
+    // v5.5.285: Trigger custom flow cards
+    this._triggerPresenceFlows(false);
+  }
+
+  /**
+   * v5.5.285: Trigger custom presence flow cards
+   * Fixes: Flow triggers defined in driver.compose.json but never triggered
+   */
+  async _triggerPresenceFlows(detected) {
+    try {
+      if (detected) {
+        // Trigger: presence_detected
+        await this.homey.flow.getDeviceTriggerCard('presence_detected')
+          .trigger(this).catch(() => { });
+        // Trigger: presence_someone_enters
+        await this.homey.flow.getDeviceTriggerCard('presence_someone_enters')
+          .trigger(this).catch(() => { });
+        this.log('[RADAR-FLOW] ✅ Triggered: presence_detected, presence_someone_enters');
+      } else {
+        // Trigger: presence_cleared
+        await this.homey.flow.getDeviceTriggerCard('presence_cleared')
+          .trigger(this).catch(() => { });
+        // Trigger: presence_zone_empty
+        await this.homey.flow.getDeviceTriggerCard('presence_zone_empty')
+          .trigger(this).catch(() => { });
+        this.log('[RADAR-FLOW] ✅ Triggered: presence_cleared, presence_zone_empty');
+      }
+    } catch (err) {
+      this.log('[RADAR-FLOW] ⚠️ Flow trigger error:', err.message);
     }
   }
 
