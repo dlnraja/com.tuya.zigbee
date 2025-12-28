@@ -1,4 +1,10 @@
 {
+  "5.5.280": {
+    "en": "🔴 CRITICAL FIX _TZE284_iadro9bf (Ronny #728): Device uses LOW DPs (1-9, 101-104), NOT high DPs! Source: HA Community external converter. DP1=presence, DP9=distance, DP104=lux. This should fix presence AND luminance!",
+    "fr": "🔴 FIX CRITIQUE _TZE284_iadro9bf (Ronny #728): Le device utilise LOW DPs (1-9, 101-104), PAS les high DPs! DP1=présence, DP9=distance, DP104=lux. Devrait corriger présence ET luminance!",
+    "nl": "🔴 KRITIEKE FIX _TZE284_iadro9bf (Ronny #728): Device gebruikt LOW DPs (1-9, 101-104), NIET high DPs! DP1=presence, DP9=distance, DP104=lux. Dit zou presence EN lux moeten fixen!",
+    "de": "🔴 KRITISCHER FIX _TZE284_iadro9bf (Ronny #728): Gerät verwendet LOW DPs (1-9, 101-104), NICHT high DPs! DP1=Präsenz, DP9=Distanz, DP104=Lux. Sollte Präsenz UND Lux fixen!"
+  },
   "5.5.279": {
     "en": "🔬 DEBUG presence_sensor_radar for Ronny #728: KNOWN ISSUE - Z2M #27212 confirms _TZE284_iadro9bf has presence=null FIRMWARE BUG (not driver issue). Added: Full DP dump logging, try ALL presence DPs (1, 105, 112), presence debounce 2s to fix 'flash 0.5s' issue. Please send new diagnostic after testing!",
     "fr": "🔬 DEBUG presence_sensor_radar pour Ronny #728: PROBLÈME CONNU - Z2M #27212 confirme que _TZE284_iadro9bf a un BUG FIRMWARE presence=null. Ajouté: Logging DP complet, essai de TOUS les DPs présence, debounce 2s pour corriger le 'flash'.",
