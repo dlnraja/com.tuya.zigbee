@@ -72,6 +72,7 @@ const SENSOR_CONFIGS = {
     battery: false,
     hasIlluminance: true,
     needsPolling: true,  // v5.5.286: Enable polling to force DP reports
+    invertPresence: true,  // v5.5.293: CRITICAL FIX - Presence logic inverted for these variants
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_enum' },    // 0=none, 1=presence, 2=move
       2: { cap: null, internal: 'motion_sensitivity' },      // 0-10
@@ -840,10 +841,10 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.279: Handle Tuya response - Enhanced for Ronny #728
-   * - Full DP dump for debugging
-   * - Try ALL presence DPs (1, 105, 112)
-   * - Presence debounce to fix "flash" issue
+   * v5.5.293: FIXED Tuya response handler - Eliminates DP12 NaN conflict
+   * - Coordinate with HybridSensorBase to avoid dual processing
+   * - Only handle special presence DPs locally (1, 105, 112)
+   * - Let HybridSensorBase handle standard sensor DPs (12, 103, 104, etc.)
    */
   _handleTuyaResponse(data) {
     if (!data) return;
@@ -851,9 +852,15 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     // Mark device as available when we receive data
     this.setAvailable().catch(() => { });
 
-    // Process DPs
-    const dpMappings = this.dpMappings;
     const dpId = data.dp || data.dpId || data.datapoint;
+
+    // v5.5.294: CRITICAL FIX - Completely ignore DPs that HybridSensorBase handles
+    // These DPs (12, 103, 104, etc.) must NOT be processed by the radar driver to prevent NaN conflicts
+    const HYBRIDSENSOR_DPS = [12, 103, 104, 2, 3, 4, 15]; // lux, temp, humidity, battery
+    if (HYBRIDSENSOR_DPS.includes(dpId)) {
+      // Don't log, don't process, don't touch - let HybridSensorBase handle completely
+      return;
+    }
 
     // v5.5.277: Parse the value properly (could be Buffer, number, etc.)
     let rawValue = data.value;
@@ -862,12 +869,11 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     }
     const value = this._parseBufferValue(rawValue);
 
-    // v5.5.283: Enhanced logging with diagnostic context
+    // Log diagnostics for non-conflicting DPs only
     this._logUnknownDP(dpId, value, data);
     this._logDpDiagnostics(dpId, value, rawValue, data);
 
-    // v5.5.279: SPECIAL HANDLING for presence DPs (try ALL of them)
-    // Z2M #27212 shows _TZE284_iadro9bf firmware may use different DPs
+    // v5.5.294: ONLY handle special presence DPs locally (these need debounce logic)
     const PRESENCE_DPS = [1, 105, 112];
     if (PRESENCE_DPS.includes(dpId)) {
       const presenceValue = this._parsePresenceValue(value);
@@ -878,36 +884,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       }
     }
 
-    if (dpId && dpMappings[dpId]) {
-      const mapping = dpMappings[dpId];
-      if (mapping.capability) {
-        let finalValue = value;
-        if (mapping.transform) {
-          finalValue = mapping.transform(value);
-        } else if (mapping.divisor) {
-          finalValue = value / mapping.divisor;
-        }
-
-        // v5.5.277: Validate finalValue is not NaN
-        if (typeof finalValue === 'number' && isNaN(finalValue)) {
-          this.log(`[RADAR] ⚠️ DP${dpId} → ${mapping.capability} = NaN (skipping, raw: ${JSON.stringify(rawValue)})`);
-          return;
-        }
-
-        this.log(`[RADAR] DP${dpId} → ${mapping.capability} = ${finalValue}`);
-        this.setCapabilityValue(mapping.capability, finalValue).catch(() => { });
-
-        // v5.5.268: Track presence updates for polling logic
-        if (mapping.capability === 'alarm_motion') {
-          this._updatePresenceTimestamp();
-        }
-      }
-    } else if (dpId) {
-      // v5.5.273: Only log UNMAPPED if not already handled by base class
-      if (!this._recentlyHandledDPs?.has(dpId)) {
-        this.log(`[RADAR] ℹ️ DP${dpId} = ${value} (not in local config, may be handled by base class)`);
-      }
-    }
+    // Log other unmapped DPs for diagnostic purposes only
+    this.log(`[RADAR] 📡 DP${dpId} = ${value} (unknown DP, please report to developer)`);
   }
 
   /**
@@ -929,16 +907,29 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.279: Handle presence with 2s debounce
-   * Fixes Ronny #728 "presence flashes for 0.5s" issue
+   * v5.5.293: FIXED presence debounce with inversion support
+   * - Applies invertPresence transform before debouncing
+   * - Fixes "presence flashes for 0.5s" issue with proper inversion
    */
-  _handlePresenceWithDebounce(presence, dpId) {
+  _handlePresenceWithDebounce(rawPresence, dpId) {
     const now = Date.now();
     const DEBOUNCE_MS = 2000; // 2 seconds
 
+    // v5.5.293: Apply inversion transform BEFORE debounce logic
+    const config = this._getSensorConfig();
+    const invertPresence = config.invertPresence || false;
+    const configName = config.configName || 'DEFAULT';
+
+    // Transform the raw presence value with inversion support
+    let presence = rawPresence;
+    if (invertPresence) {
+      presence = !rawPresence;
+      this.log(`[PRESENCE-FIX] 🔄 INVERTING presence for ${configName}: DP${dpId} ${rawPresence} -> ${presence}`);
+    }
+
     // If presence is TRUE, set immediately
     if (presence) {
-      this.log(`[RADAR] 🟢 DP${dpId} → PRESENCE DETECTED`);
+      this.log(`[RADAR] 🟢 DP${dpId} → PRESENCE DETECTED (processed: ${presence})`);
       this._lastPresenceTrue = now;
       this.setCapabilityValue('alarm_motion', true).catch(() => { });
       if (this.hasCapability('alarm_human')) {
@@ -958,7 +949,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       return; // Ignore false within 2s of true
     }
 
-    this.log(`[RADAR] 🔴 DP${dpId} → PRESENCE CLEARED`);
+    this.log(`[RADAR] 🔴 DP${dpId} → PRESENCE CLEARED (processed: ${presence})`);
     this.setCapabilityValue('alarm_motion', false).catch(() => { });
     if (this.hasCapability('alarm_human')) {
       this.setCapabilityValue('alarm_human', false).catch(() => { });
