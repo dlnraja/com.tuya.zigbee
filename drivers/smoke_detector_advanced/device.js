@@ -61,36 +61,7 @@ class SmokeDetectorAdvancedDevice extends HybridSensorBase {
     await super.onNodeInit({ zclNode });
     this.log('[SMOKE-ADV] ✅ Ready');
     this.log('[SMOKE-ADV] DP Mappings: smoke(1), temp(2), humidity(3), battery(4,15), tamper(14)');
-
-    // v5.5.290: Register listener to trigger custom flow cards
-    this._lastSmokeAlarm = null;
-    this.registerCapabilityListener('alarm_smoke', async (value) => {
-      if (value && this._lastSmokeAlarm !== true) {
-        await this._triggerSmokeFlows(true);
-      } else if (!value && this._lastSmokeAlarm === true) {
-        await this._triggerSmokeFlows(false);
-      }
-      this._lastSmokeAlarm = value;
-    });
-  }
-
-  /**
-   * v5.5.290: Trigger custom smoke alarm flow cards
-   */
-  async _triggerSmokeFlows(detected) {
-    try {
-      if (detected) {
-        await this.homey.flow.getDeviceTriggerCard('smoke_alarm_triggered')
-          .trigger(this, { smoke: true }).catch(() => { });
-        this.log('[SMOKE-ADV] 🔥 Flow triggered: smoke_alarm_triggered');
-      } else {
-        await this.homey.flow.getDeviceTriggerCard('smoke_alarm_cleared')
-          .trigger(this, { smoke: false }).catch(() => { });
-        this.log('[SMOKE-ADV] ✅ Flow triggered: smoke_alarm_cleared');
-      }
-    } catch (err) {
-      this.log('[SMOKE-ADV] ⚠️ Flow trigger error:', err.message);
-    }
+    // v5.5.292: Flow triggers now handled by HybridSensorBase._triggerCustomFlowsIfNeeded()
   }
 }
 module.exports = SmokeDetectorAdvancedDevice;
