@@ -1,4 +1,10 @@
 {
+  "5.5.307": {
+    "en": "🔧 PHYSICAL BUTTONS FIX: SDK3 cluster access compatibility. Added fallback patterns for scenes/onOff/groups/levelControl clusters (genScenes, genOnOff, cluster IDs). Fixes physical button presses not detected on TS0044/TS0043 devices.",
+    "nl": "🔧 PHYSICAL BUTTONS FIX: SDK3 cluster toegang compatibiliteit. Fysieke knoppen nu gedetecteerd op TS0044/TS0043.",
+    "de": "🔧 PHYSICAL BUTTONS FIX: SDK3 Cluster-Zugriff Kompatibilität. Physische Tasten nun auf TS0044/TS0043 erkannt.",
+    "fr": "🔧 PHYSICAL BUTTONS FIX: Compatibilité accès clusters SDK3. Boutons physiques maintenant détectés sur TS0044/TS0043."
+  },
   "5.5.306": {
     "en": "🔧 RONNY #760 FIXES: 1) Fixed _TZE204_gkfbdvyx presence always wrong (removed buggy invertPresence). 2) Fixed lux >2000 issue - now properly clamped to spec range. 3) Fixed transformPresence crash (this.log bug). 4) Fixed DP104 being filtered incorrectly for presence detection.",
     "nl": "🔧 RONNY #760 FIXES: 1) _TZE204_gkfbdvyx presence altijd verkeerd opgelost. 2) Lux >2000 probleem opgelost. 3) transformPresence crash opgelost. 4) DP104 filtering probleem opgelost.",
