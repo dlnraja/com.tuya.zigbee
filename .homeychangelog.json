@@ -1,4 +1,10 @@
 {
+  "5.5.298": {
+    "en": "🔧 STDERR FIX: Fixed ReferenceError 'getAppVersionPrefixed is not defined' in HybridCoverBase.js causing curtain_motor devices to fail initialization. Diagnostic report 22ccf17b-74fa-4924-87a8-59f34b96a3c1 analysis complete. This resolves curtain robot unresponsiveness reported by Eftychis in forum post #747.",
+    "nl": "🔧 STDERR FIX: ReferenceError 'getAppVersionPrefixed is not defined' opgelost in HybridCoverBase.js. Lost curtain_motor initialisatie problemen.",
+    "de": "🔧 STDERR FIX: ReferenceError 'getAppVersionPrefixed is not defined' in HybridCoverBase.js behoben. Löst curtain_motor Initialisierungsprobleme.",
+    "fr": "🔧 STDERR FIX: Corrigé ReferenceError 'getAppVersionPrefixed is not defined' dans HybridCoverBase.js. Résout problèmes initialisation curtain_motor."
+  },
   "5.5.297": {
     "en": "🚨 EMERGENCY FIX: Dual case manufacturerName compatibility - Added 3,570 lowercase versions across 61 drivers to restore device recognition. Fixes regression from v5.5.296 where devices reporting lowercase manufacturerNames (_tze204_) couldn't match uppercase driver entries (_TZE204_). Now supports both formats for maximum compatibility.",
     "nl": "🚨 NOODFIX: Dual case manufacturerName compatibiliteit - 3,570 lowercase versies toegevoegd voor apparaatherkenning. Lost regressie op van v5.5.296.",
