@@ -1,0 +1,112 @@
+{
+  "triggers": [
+    {
+      "id": "ir_code_learned",
+      "title": {
+        "en": "IR Code Learned",
+        "fr": "Code IR Appris",
+        "nl": "IR Code Geleerd",
+        "de": "IR-Code gelernt"
+      },
+      "tokens": [
+        {
+          "name": "ir_code",
+          "type": "string",
+          "title": {
+            "en": "IR Code",
+            "fr": "Code IR",
+            "nl": "IR Code",
+            "de": "IR-Code"
+          }
+        },
+        {
+          "name": "code_name",
+          "type": "string",
+          "title": {
+            "en": "Code Name",
+            "fr": "Nom du Code",
+            "nl": "Code Naam",
+            "de": "Code-Name"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "send_ir_code",
+      "title": {
+        "en": "Send IR Code",
+        "fr": "Envoyer Code IR",
+        "nl": "IR Code Versturen",
+        "de": "IR-Code senden"
+      },
+      "titleFormatted": {
+        "en": "Send IR code [[ir_code]]",
+        "fr": "Envoyer le code IR [[ir_code]]",
+        "nl": "IR code [[ir_code]] versturen",
+        "de": "IR-Code [[ir_code]] senden"
+      },
+      "args": [
+        {
+          "name": "ir_code",
+          "type": "text",
+          "placeholder": {
+            "en": "Base64 IR Code",
+            "fr": "Code IR Base64",
+            "nl": "Base64 IR Code",
+            "de": "Base64 IR-Code"
+          },
+          "title": {
+            "en": "IR Code",
+            "fr": "Code IR",
+            "nl": "IR Code",
+            "de": "IR-Code"
+          }
+        }
+      ]
+    },
+    {
+      "id": "start_ir_learning",
+      "title": {
+        "en": "Start IR Learning Mode",
+        "fr": "Démarrer Mode Apprentissage IR",
+        "nl": "IR Leermodus Starten",
+        "de": "IR-Lernmodus starten"
+      },
+      "titleFormatted": {
+        "en": "Start IR learning mode for [[duration]] seconds",
+        "fr": "Démarrer le mode apprentissage IR pendant [[duration]] secondes",
+        "nl": "IR leermodus starten voor [[duration]] seconden",
+        "de": "IR-Lernmodus für [[duration]] Sekunden starten"
+      },
+      "args": [
+        {
+          "name": "duration",
+          "type": "number",
+          "min": 5,
+          "max": 60,
+          "step": 5,
+          "placeholder": {
+            "en": "30"
+          },
+          "title": {
+            "en": "Duration (seconds)",
+            "fr": "Durée (secondes)",
+            "nl": "Duur (seconden)",
+            "de": "Dauer (Sekunden)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "stop_ir_learning",
+      "title": {
+        "en": "Stop IR Learning Mode",
+        "fr": "Arrêter Mode Apprentissage IR",
+        "nl": "IR Leermodus Stoppen",
+        "de": "IR-Lernmodus stoppen"
+      }
+    }
+  ]
+}
