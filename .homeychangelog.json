@@ -1,4 +1,10 @@
 {
+  "5.5.303": {
+    "en": "🔧 FORUM ANALYSIS FIX: Removed _TZ3000_zgyzgdua from wrong drivers (climate_sensor, plug_smart, switch_1gang). This TS0044 4-button remote now correctly pairs only with button_wireless_4 driver. Based on analysis of 200 forum posts (#550-757).",
+    "nl": "🔧 FORUM ANALYSIS FIX: _TZ3000_zgyzgdua verwijderd uit verkeerde drivers. TS0044 4-knops afstandsbediening nu correct gekoppeld.",
+    "de": "🔧 FORUM ANALYSIS FIX: _TZ3000_zgyzgdua aus falschen Treibern entfernt. TS0044 4-Tasten-Fernbedienung jetzt korrekt gekoppelt.",
+    "fr": "🔧 FORUM ANALYSIS FIX: _TZ3000_zgyzgdua supprimé des mauvais drivers. Télécommande 4 boutons TS0044 maintenant correctement appairée."
+  },
   "5.5.302": {
     "en": "🔧 CLUSTER CONFIG FIX: Updated presence_sensor_radar endpoint clusters to match actual TS0601 Tuya devices. Added Tuya clusters (0xEF00, 0xED00), groups, scenes. Fixes interview coherence for _TZE284_iadro9bf and similar devices.",
     "nl": "🔧 CLUSTER CONFIG FIX: Endpoint clusters bijgewerkt voor presence_sensor_radar om overeen te komen met echte TS0601 Tuya apparaten.",
