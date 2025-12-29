@@ -1,4 +1,10 @@
 {
+  "5.5.306": {
+    "en": "🔧 RONNY #760 FIXES: 1) Fixed _TZE204_gkfbdvyx presence always wrong (removed buggy invertPresence). 2) Fixed lux >2000 issue - now properly clamped to spec range. 3) Fixed transformPresence crash (this.log bug). 4) Fixed DP104 being filtered incorrectly for presence detection.",
+    "nl": "🔧 RONNY #760 FIXES: 1) _TZE204_gkfbdvyx presence altijd verkeerd opgelost. 2) Lux >2000 probleem opgelost. 3) transformPresence crash opgelost. 4) DP104 filtering probleem opgelost.",
+    "de": "🔧 RONNY #760 FIXES: 1) _TZE204_gkfbdvyx Präsenz immer falsch behoben. 2) Lux >2000 Problem behoben. 3) transformPresence Absturz behoben. 4) DP104 Filterung Problem behoben.",
+    "fr": "🔧 RONNY #760 FIXES: 1) Présence _TZE204_gkfbdvyx toujours fausse corrigée. 2) Problème lux >2000 corrigé. 3) Crash transformPresence corrigé. 4) Filtrage DP104 corrigé."
+  },
   "5.5.305": {
     "en": "🔧 DIAGNOSTIC FIXES: 1) Fixed 'Device ID not available' error in curtain_motor - diagnostic check now uses soft warnings. 2) Fixed DP12 illuminance NaN issue - improved Buffer parsing for {type:Buffer,data:[]} format. 3) Added NaN rejection in capability sanity checks.",
     "nl": "🔧 DIAGNOSTIC FIXES: 1) 'Device ID not available' fout opgelost in curtain_motor. 2) DP12 lux NaN probleem opgelost. 3) NaN afwijzing toegevoegd.",
