@@ -1,4 +1,10 @@
 {
+  "5.5.304": {
+    "en": "🔧 PRESENCE=NULL WORKAROUND: Enhanced _TZE284_iadro9bf with 3 strategies to fix firmware bug: 1) Aggressive DP1 polling (10s), 2) Time sync like Tuya gateway, 3) Distance-based presence inference. Works around Z2M #27212 firmware issue.",
+    "nl": "🔧 PRESENCE=NULL WORKAROUND: Verbeterde _TZE284_iadro9bf met 3 strategieën voor firmware bug: agressieve polling, time sync, distance inferentie.",
+    "de": "🔧 PRESENCE=NULL WORKAROUND: Verbessertes _TZE284_iadro9bf mit 3 Strategien für Firmware-Bug: aggressives Polling, Zeitsynchronisation, Distanz-Inferenz.",
+    "fr": "🔧 PRESENCE=NULL WORKAROUND: _TZE284_iadro9bf amélioré avec 3 stratégies pour bug firmware: polling agressif, sync temps, inférence distance."
+  },
   "5.5.303": {
     "en": "🔧 FORUM ANALYSIS FIX: Removed _TZ3000_zgyzgdua from wrong drivers (climate_sensor, plug_smart, switch_1gang). This TS0044 4-button remote now correctly pairs only with button_wireless_4 driver. Based on analysis of 200 forum posts (#550-757).",
     "nl": "🔧 FORUM ANALYSIS FIX: _TZ3000_zgyzgdua verwijderd uit verkeerde drivers. TS0044 4-knops afstandsbediening nu correct gekoppeld.",
