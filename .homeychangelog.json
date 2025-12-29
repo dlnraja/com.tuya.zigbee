@@ -1,4 +1,10 @@
 {
+  "5.5.300": {
+    "en": "🔧 DRIVER CONFLICT FIX: Resolved _TZE204_gkfbdvyx incorrectly switching from motion sensor to climate sensor. Removed conflicting manufacturer ID from climate_sensor driver - device now stays as presence_sensor_radar as intended. Fixes Ronny_M's 4 motion sensors that became climate sensors after v5.5.299 update.",
+    "nl": "🔧 DRIVER CONFLICT FIX: _TZE204_gkfbdvyx niet meer van bewegingssensor naar klimaatsensor. Conflict opgelost in driver detectie.",
+    "de": "🔧 DRIVER CONFLICT FIX: _TZE204_gkfbdvyx wechselt nicht mehr von Bewegungssensor zu Klimasensor. Treiber-Konflikt behoben.",
+    "fr": "🔧 DRIVER CONFLICT FIX: _TZE204_gkfbdvyx ne passe plus de capteur mouvement à capteur climat. Conflit pilote résolu."
+  },
   "5.5.299": {
     "en": "🔋 SLEEPY DEVICE FIX: Smart ZCL communication for battery-powered motion sensors. Reduces timeouts (5s→2s), prioritizes Tuya DP over ZCL when device sleeping, adds wake state tracking. Fixes @fiek diagnostic d8b86ec9 ZCL attribute timeouts. Motion sensors now communicate more efficiently.",
     "nl": "🔋 SLEEPY DEVICE FIX: Slimme ZCL communicatie voor batterij-aangedreven bewegingssensoren. Vermindert timeouts, prioriteert Tuya DP boven ZCL.",
