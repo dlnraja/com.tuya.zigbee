@@ -1,0 +1,256 @@
+{
+  "triggers": [
+    {
+      "id": "thermostat_tuya_dp_target_temperature_changed",
+      "title": {
+        "en": "Target temperature changed",
+        "fr": "Température cible changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 21
+        }
+      ]
+    },
+    {
+      "id": "thermostat_tuya_dp_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ]
+    },
+    {
+      "id": "thermostat_tuya_dp_mode_changed",
+      "title": {
+        "en": "Mode changed",
+        "fr": "Mode changé"
+      },
+      "tokens": [
+        {
+          "name": "mode",
+          "type": "string",
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          },
+          "example": "heat"
+        }
+      ]
+    },
+    {
+      "id": "thermostat_tuya_dp_heating_started",
+      "title": {
+        "en": "Heating started",
+        "fr": "Chauffage démarré"
+      }
+    },
+    {
+      "id": "thermostat_tuya_dp_heating_stopped",
+      "title": {
+        "en": "Heating stopped",
+        "fr": "Chauffage arrêté"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "thermostat_tuya_dp_is_heating",
+      "title": {
+        "en": "Thermostat is !{{heating|not heating}}",
+        "fr": "Thermostat !{{chauffe|ne chauffe pas}}"
+      }
+    },
+    {
+      "id": "thermostat_tuya_dp_temperature_above_target",
+      "title": {
+        "en": "Temperature is above target",
+        "fr": "Température supérieure à la cible"
+      }
+    },
+    {
+      "id": "thermostat_tuya_dp_temperature_below_target",
+      "title": {
+        "en": "Temperature is below target",
+        "fr": "Température inférieure à la cible"
+      }
+    },
+    {
+      "id": "thermostat_tuya_dp_mode_is",
+      "title": {
+        "en": "Mode is",
+        "fr": "Mode est"
+      },
+      "titleFormatted": {
+        "en": "Mode is [[mode]]",
+        "fr": "Mode est [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Arrêt"
+              }
+            },
+            {
+              "id": "heat",
+              "label": {
+                "en": "Heat",
+                "fr": "Chauffage"
+              }
+            },
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto",
+                "fr": "Auto"
+              }
+            },
+            {
+              "id": "cool",
+              "label": {
+                "en": "Cool",
+                "fr": "Refroidissement"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "thermostat_tuya_dp_set_target_temperature",
+      "title": {
+        "en": "Set target temperature",
+        "fr": "Définir température cible"
+      },
+      "titleFormatted": {
+        "en": "Set target temperature to [[temperature]]°C",
+        "fr": "Définir température cible à [[temperature]]°C"
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "min": 5,
+          "max": 35,
+          "step": 0.5,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          }
+        }
+      ]
+    },
+    {
+      "id": "thermostat_tuya_dp_set_mode",
+      "title": {
+        "en": "Set mode",
+        "fr": "Définir mode"
+      },
+      "titleFormatted": {
+        "en": "Set mode to [[mode]]",
+        "fr": "Définir mode à [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Arrêt"
+              }
+            },
+            {
+              "id": "heat",
+              "label": {
+                "en": "Heat",
+                "fr": "Chauffage"
+              }
+            },
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto",
+                "fr": "Auto"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thermostat_tuya_dp_increase_temperature",
+      "title": {
+        "en": "Increase temperature",
+        "fr": "Augmenter température"
+      },
+      "titleFormatted": {
+        "en": "Increase temperature by [[degrees]]°C",
+        "fr": "Augmenter température de [[degrees]]°C"
+      },
+      "args": [
+        {
+          "name": "degrees",
+          "type": "number",
+          "min": 0.5,
+          "max": 5,
+          "step": 0.5,
+          "title": {
+            "en": "Degrees",
+            "fr": "Degrés"
+          }
+        }
+      ]
+    },
+    {
+      "id": "thermostat_tuya_dp_decrease_temperature",
+      "title": {
+        "en": "Decrease temperature",
+        "fr": "Diminuer température"
+      },
+      "titleFormatted": {
+        "en": "Decrease temperature by [[degrees]]°C",
+        "fr": "Diminuer température de [[degrees]]°C"
+      },
+      "args": [
+        {
+          "name": "degrees",
+          "type": "number",
+          "min": 0.5,
+          "max": 5,
+          "step": 0.5,
+          "title": {
+            "en": "Degrees",
+            "fr": "Degrés"
+          }
+        }
+      ]
+    }
+  ]
+}
