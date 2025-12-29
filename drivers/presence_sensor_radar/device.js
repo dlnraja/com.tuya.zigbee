@@ -12,6 +12,7 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
  * ║  - Added: More manufacturerNames from Z2M/ZHA research                     ║
  * ║  - Added: led_state DP support for sensors with LED control                ║
  * ║  - v5.5.280: LOW DPs fix for _TZE284_iadro9bf (Ronny #728)                 ║
+ * ║  - v5.5.301: DP102=LUX fix for _TZE284_iadro9bf (Ronny #752)              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 
@@ -175,8 +176,9 @@ const SENSOR_CONFIGS = {
       12: { cap: 'measure_luminance', type: 'lux_direct' },
       // DP101: Detection delay (÷10 = seconds)
       101: { cap: null, internal: 'detection_delay', divisor: 10 },
-      // DP102: Fading time (÷10 = seconds) - WARNING: may not work on some firmware
-      102: { cap: null, internal: 'fading_time', divisor: 10 },
+      // v5.5.301: DP102 is LUX on Ronny's device, NOT fading_time!
+      // Confirmed from diagnostic 5109c392: DP102 = 30 lux
+      102: { cap: 'measure_luminance', type: 'lux_direct' },
       // DP104: Illuminance (raw lux) - PRIMARY
       104: { cap: 'measure_luminance', type: 'lux_direct' },
     }
