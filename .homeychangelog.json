@@ -1,4 +1,10 @@
 {
+  "5.5.297": {
+    "en": "🚨 EMERGENCY FIX: Dual case manufacturerName compatibility - Added 3,570 lowercase versions across 61 drivers to restore device recognition. Fixes regression from v5.5.296 where devices reporting lowercase manufacturerNames (_tze204_) couldn't match uppercase driver entries (_TZE204_). Now supports both formats for maximum compatibility.",
+    "nl": "🚨 NOODFIX: Dual case manufacturerName compatibiliteit - 3,570 lowercase versies toegevoegd voor apparaatherkenning. Lost regressie op van v5.5.296.",
+    "de": "🚨 NOTFALL-FIX: Dual case manufacturerName Kompatibilität - 3,570 Kleinschreibung Versionen hinzugefügt für Geräteerkennung. Behebt Regression von v5.5.296.",
+    "fr": "🚨 FIX D'URGENCE: Compatibilité dual case manufacturerName - 3,570 versions lowercase ajoutées pour reconnaissance devices. Corrige régression v5.5.296."
+  },
   "5.5.296": {
     "en": "🚨 FORUM IMAGES MANUFACTURER FIX: MASSIVE case sensitivity corrections - Fixed 1,119 manufacturerNames from lowercase to uppercase (_tze204_→_TZE204_, _tz3000_→_TZ3000_, etc.) across 6 drivers. This resolves device recognition issues identified in Homey Community forum posts #740-744. All manufacturerNames now follow proper Tuya UPPERCASE standard. Affected: climate_sensor (822 fixes), plug_smart (214), dimmer_wall_1gang (68), switch_1gang (13), switch_3gang (1), presence_sensor_radar (1).",
     "nl": "🚨 FORUM IMAGES MANUFACTURER FIX: MASSALE case sensitivity correcties - 1,119 manufacturerNames gecorrigeerd van lowercase naar uppercase. Lost apparaat herkenningsproblemen op uit Homey Community forum. Alle manufacturerNames volgen nu juiste Tuya UPPERCASE standaard.",

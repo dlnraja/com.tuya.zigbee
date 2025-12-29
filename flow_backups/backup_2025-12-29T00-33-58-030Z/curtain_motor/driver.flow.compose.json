@@ -1,0 +1,127 @@
+{
+  "triggers": [
+    {
+      "id": "curtain_motor_windowcoverings_set_changed",
+      "title": {
+        "en": "Position changed",
+        "fr": "Position changée"
+      },
+      "tokens": [
+        {
+          "name": "position",
+          "type": "number",
+          "title": {
+            "en": "Position",
+            "fr": "Position"
+          },
+          "example": 0.5
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_dim_changed",
+      "title": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée"
+      },
+      "tokens": [
+        {
+          "name": "dim",
+          "type": "number",
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosité"
+          },
+          "example": 0.75
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_measure_battery_changed",
+      "title": {
+        "en": "Battery level changed",
+        "fr": "Niveau batterie changé"
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "Battery (%)",
+            "fr": "Batterie (%)"
+          },
+          "example": 75
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "curtain_motor_set_windowcoverings_set",
+      "title": {
+        "en": "Set position to...",
+        "fr": "Régler la position à..."
+      },
+      "args": [
+        {
+          "name": "position",
+          "type": "range",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "label": "%",
+          "labelMultiplier": 100,
+          "title": {
+            "en": "Position",
+            "fr": "Position"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set position to [[position]]%",
+        "fr": "Régler la position à [[position]]%"
+      }
+    },
+    {
+      "id": "curtain_motor_windowcoverings_open",
+      "title": {
+        "en": "Open",
+        "fr": "Ouvrir"
+      }
+    },
+    {
+      "id": "curtain_motor_windowcoverings_close",
+      "title": {
+        "en": "Close",
+        "fr": "Fermer"
+      }
+    },
+    {
+      "id": "curtain_motor_set_dim",
+      "title": {
+        "en": "Set brightness to...",
+        "fr": "Régler la luminosité à..."
+      },
+      "args": [
+        {
+          "name": "brightness",
+          "type": "range",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "label": "%",
+          "labelMultiplier": 100,
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosité"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set brightness to [[brightness]]%",
+        "fr": "Régler la luminosité à [[brightness]]%"
+      }
+    }
+  ]
+}
+

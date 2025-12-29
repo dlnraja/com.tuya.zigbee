@@ -1,0 +1,124 @@
+{
+  "triggers": [
+    {
+      "id": "soil_sensor_soil_moisture_changed",
+      "title": {
+        "en": "Soil moisture changed",
+        "fr": "Humidité sol changée"
+      },
+      "tokens": [
+        {
+          "name": "moisture",
+          "type": "number",
+          "title": {
+            "en": "Moisture (%)",
+            "fr": "Humidité (%)"
+          },
+          "example": 45
+        }
+      ]
+    },
+    {
+      "id": "soil_sensor_soil_temperature_changed",
+      "title": {
+        "en": "Soil temperature changed",
+        "fr": "Température sol changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 18
+        }
+      ]
+    },
+    {
+      "id": "soil_sensor_soil_dry",
+      "title": {
+        "en": "Soil is dry",
+        "fr": "Sol sec"
+      }
+    },
+    {
+      "id": "soil_sensor_soil_wet",
+      "title": {
+        "en": "Soil is wet",
+        "fr": "Sol humide"
+      }
+    },
+    {
+      "id": "soil_sensor_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "soil_sensor_moisture_above",
+      "title": {
+        "en": "Soil moisture is above",
+        "fr": "Humidité sol supérieure à"
+      },
+      "titleFormatted": {
+        "en": "Soil moisture is above [[moisture]]%",
+        "fr": "Humidité sol supérieure à [[moisture]]%"
+      },
+      "args": [
+        {
+          "name": "moisture",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "soil_sensor_moisture_below",
+      "title": {
+        "en": "Soil moisture is below",
+        "fr": "Humidité sol inférieure à"
+      },
+      "titleFormatted": {
+        "en": "Soil moisture is below [[moisture]]%",
+        "fr": "Humidité sol inférieure à [[moisture]]%"
+      },
+      "args": [
+        {
+          "name": "moisture",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "soil_sensor_temperature_above",
+      "title": {
+        "en": "Soil temperature is above",
+        "fr": "Température sol supérieure à"
+      },
+      "titleFormatted": {
+        "en": "Soil temperature is above [[temp]]°C",
+        "fr": "Température sol supérieure à [[temp]]°C"
+      },
+      "args": [
+        {
+          "name": "temp",
+          "type": "number",
+          "min": -20,
+          "max": 60,
+          "step": 1
+        }
+      ]
+    }
+  ],
+  "actions": []
+}

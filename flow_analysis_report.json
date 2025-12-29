@@ -1,0 +1,5373 @@
+{
+  "timestamp": "2025-12-29T00:05:47.973Z",
+  "summary": {
+    "totalFlows": 557,
+    "duplicateFlows": 128,
+    "inconsistentIds": 4,
+    "optimizationOpportunities": 26,
+    "recommendations": []
+  },
+  "patterns": {
+    "switches": [
+      [
+        "module_mini_switch",
+        {
+          "driverName": "module_mini_switch",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\module_mini_switch\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "module_mini_switch_onoff_true",
+              "title": "Turned on",
+              "tokens": [
+                {
+                  "name": "timestamp",
+                  "type": "string",
+                  "title": "Timestamp"
+                }
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "id": "module_mini_switch_is_on",
+              "title": "Is !{{on|off}}"
+            }
+          ],
+          "actions": [
+            {
+              "id": "module_mini_switch_turn_on",
+              "title": "Turn on"
+            },
+            {
+              "id": "module_mini_switch_turn_off",
+              "title": "Turn off"
+            },
+            {
+              "id": "module_mini_switch_toggle",
+              "title": "Toggle"
+            }
+          ]
+        }
+      ],
+      [
+        "switch_1gang",
+        {
+          "driverName": "switch_1gang",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_1gang\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "switch_1gang_smart_switch_1gang_hybrid_turned_on",
+              "title": {
+                "en": "Turned on",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "switch_1gang_smart_switch_1gang_hybrid_turned_off",
+              "title": {
+                "en": "Turned off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "switch_1gang_smart_switch_1gang_hybrid_dim_changed",
+              "title": {
+                "en": "Brightness changed",
+                "fr": "Luminosité changée"
+              },
+              "tokens": [
+                {
+                  "name": "dim",
+                  "type": "number",
+                  "title": {
+                    "en": "Brightness",
+                    "fr": "Luminosité"
+                  },
+                  "example": 0.75
+                }
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "id": "switch_1gang_smart_switch_1gang_hybrid_is_on",
+              "title": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              },
+              "titleFormatted": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "id": "switch_1gang_smart_switch_1gang_hybrid_turn_on",
+              "title": {
+                "en": "Turn on",
+                "fr": "Allumer"
+              }
+            },
+            {
+              "id": "switch_1gang_smart_switch_1gang_hybrid_turn_off",
+              "title": {
+                "en": "Turn off",
+                "fr": "Éteindre"
+              }
+            },
+            {
+              "id": "switch_1gang_smart_switch_1gang_hybrid_toggle",
+              "title": {
+                "en": "Toggle on or off",
+                "fr": "Basculer"
+              }
+            },
+            {
+              "id": "switch_1gang_smart_switch_1gang_hybrid_set_dim",
+              "title": {
+                "en": "Set brightness to...",
+                "fr": "Régler la luminosité à..."
+              },
+              "args": [
+                {
+                  "name": "brightness",
+                  "type": "range",
+                  "min": 0,
+                  "max": 1,
+                  "step": 0.01,
+                  "label": "%",
+                  "labelMultiplier": 100,
+                  "title": {
+                    "en": "Brightness",
+                    "fr": "Luminosité"
+                  }
+                }
+              ],
+              "titleFormatted": {
+                "en": "Set brightness to [[brightness]]%",
+                "fr": "Régler la luminosité à [[brightness]]%"
+              }
+            }
+          ]
+        }
+      ],
+      [
+        "switch_2gang",
+        {
+          "driverName": "switch_2gang",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_2gang\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "switch_2gang_turned_on",
+              "title": {
+                "en": "Turned on",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "switch_2gang_turned_off",
+              "title": {
+                "en": "Turned off",
+                "fr": "Éteint"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "id": "switch_2gang_is_on",
+              "title": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              },
+              "titleFormatted": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "id": "switch_2gang_turn_on",
+              "title": {
+                "en": "Turn on",
+                "fr": "Allumer"
+              }
+            },
+            {
+              "id": "switch_2gang_turn_off",
+              "title": {
+                "en": "Turn off",
+                "fr": "Éteindre"
+              }
+            },
+            {
+              "id": "switch_2gang_toggle",
+              "title": {
+                "en": "Toggle on or off",
+                "fr": "Basculer"
+              }
+            }
+          ]
+        }
+      ],
+      [
+        "switch_3gang",
+        {
+          "driverName": "switch_3gang",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_3gang\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "switch_3gang_smart_switch_3gang_hybrid_turned_on",
+              "title": {
+                "en": "Turned on",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "switch_3gang_smart_switch_3gang_hybrid_turned_off",
+              "title": {
+                "en": "Turned off",
+                "fr": "Éteint"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "id": "switch_3gang_smart_switch_3gang_hybrid_is_on",
+              "title": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              },
+              "titleFormatted": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "id": "switch_3gang_smart_switch_3gang_hybrid_turn_on",
+              "title": {
+                "en": "Turn on",
+                "fr": "Allumer"
+              }
+            },
+            {
+              "id": "switch_3gang_smart_switch_3gang_hybrid_turn_off",
+              "title": {
+                "en": "Turn off",
+                "fr": "Éteindre"
+              }
+            },
+            {
+              "id": "switch_3gang_smart_switch_3gang_hybrid_toggle",
+              "title": {
+                "en": "Toggle on or off",
+                "fr": "Basculer"
+              }
+            }
+          ]
+        }
+      ],
+      [
+        "switch_4gang",
+        {
+          "driverName": "switch_4gang",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_4gang\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "switch_4gang_smart_switch_4gang_hybrid_turned_on",
+              "title": {
+                "en": "Turned on",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "switch_4gang_smart_switch_4gang_hybrid_turned_off",
+              "title": {
+                "en": "Turned off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "switch_4gang_smart_switch_4gang_hybrid_dim_changed",
+              "title": {
+                "en": "Brightness changed",
+                "fr": "Luminosité changée"
+              },
+              "tokens": [
+                {
+                  "name": "dim",
+                  "type": "number",
+                  "title": {
+                    "en": "Brightness",
+                    "fr": "Luminosité"
+                  },
+                  "example": 0.75
+                }
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "id": "switch_4gang_smart_switch_4gang_hybrid_is_on",
+              "title": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              },
+              "titleFormatted": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "id": "switch_4gang_smart_switch_4gang_hybrid_turn_on",
+              "title": {
+                "en": "Turn on",
+                "fr": "Allumer"
+              }
+            },
+            {
+              "id": "switch_4gang_smart_switch_4gang_hybrid_turn_off",
+              "title": {
+                "en": "Turn off",
+                "fr": "Éteindre"
+              }
+            },
+            {
+              "id": "switch_4gang_smart_switch_4gang_hybrid_toggle",
+              "title": {
+                "en": "Toggle on or off",
+                "fr": "Basculer"
+              }
+            },
+            {
+              "id": "switch_4gang_smart_switch_4gang_hybrid_set_dim",
+              "title": {
+                "en": "Set brightness to...",
+                "fr": "Régler la luminosité à..."
+              },
+              "args": [
+                {
+                  "name": "brightness",
+                  "type": "range",
+                  "min": 0,
+                  "max": 1,
+                  "step": 0.01,
+                  "label": "%",
+                  "labelMultiplier": 100,
+                  "title": {
+                    "en": "Brightness",
+                    "fr": "Luminosité"
+                  }
+                }
+              ],
+              "titleFormatted": {
+                "en": "Set brightness to [[brightness]]%",
+                "fr": "Régler la luminosité à [[brightness]]%"
+              }
+            }
+          ]
+        }
+      ],
+      [
+        "switch_wall_5gang",
+        {
+          "driverName": "switch_wall_5gang",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_wall_5gang\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "switch_wall_5gang_wall_switch_5gang_turned_on",
+              "title": {
+                "en": "Turned on",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "switch_wall_5gang_wall_switch_5gang_turned_off",
+              "title": {
+                "en": "Turned off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "switch_wall_5gang_wall_switch_5gang_dim_changed",
+              "title": {
+                "en": "Brightness changed",
+                "fr": "Luminosité changée"
+              },
+              "tokens": [
+                {
+                  "name": "dim",
+                  "type": "number",
+                  "title": {
+                    "en": "Brightness",
+                    "fr": "Luminosité"
+                  },
+                  "example": 0.75
+                }
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "id": "switch_wall_5gang_wall_switch_5gang_is_on",
+              "title": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              },
+              "titleFormatted": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "id": "switch_wall_5gang_wall_switch_5gang_turn_on",
+              "title": {
+                "en": "Turn on",
+                "fr": "Allumer"
+              }
+            },
+            {
+              "id": "switch_wall_5gang_wall_switch_5gang_turn_off",
+              "title": {
+                "en": "Turn off",
+                "fr": "Éteindre"
+              }
+            },
+            {
+              "id": "switch_wall_5gang_wall_switch_5gang_toggle",
+              "title": {
+                "en": "Toggle on or off",
+                "fr": "Basculer"
+              }
+            },
+            {
+              "id": "switch_wall_5gang_wall_switch_5gang_set_dim",
+              "title": {
+                "en": "Set brightness to...",
+                "fr": "Régler la luminosité à..."
+              },
+              "args": [
+                {
+                  "name": "brightness",
+                  "type": "range",
+                  "min": 0,
+                  "max": 1,
+                  "step": 0.01,
+                  "label": "%",
+                  "labelMultiplier": 100,
+                  "title": {
+                    "en": "Brightness",
+                    "fr": "Luminosité"
+                  }
+                }
+              ],
+              "titleFormatted": {
+                "en": "Set brightness to [[brightness]]%",
+                "fr": "Régler la luminosité à [[brightness]]%"
+              }
+            }
+          ]
+        }
+      ],
+      [
+        "switch_wall_6gang",
+        {
+          "driverName": "switch_wall_6gang",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_wall_6gang\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "switch_wall_6gang_turned_on",
+              "title": {
+                "en": "Turned on",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "switch_wall_6gang_turned_off",
+              "title": {
+                "en": "Turned off",
+                "fr": "Éteint"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "id": "switch_wall_6gang_is_on",
+              "title": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              },
+              "titleFormatted": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "id": "switch_wall_6gang_turn_on",
+              "title": {
+                "en": "Turn on",
+                "fr": "Allumer"
+              }
+            },
+            {
+              "id": "switch_wall_6gang_turn_off",
+              "title": {
+                "en": "Turn off",
+                "fr": "Éteindre"
+              }
+            },
+            {
+              "id": "switch_wall_6gang_toggle",
+              "title": {
+                "en": "Toggle on or off",
+                "fr": "Basculer"
+              }
+            }
+          ]
+        }
+      ],
+      [
+        "switch_wall_7gang",
+        {
+          "driverName": "switch_wall_7gang",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_wall_7gang\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "switch_wall_7gang_gang1_turned_on",
+              "title": {
+                "en": "Gang 1 turned on",
+                "fr": "Gang 1 allumé"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang1_turned_off",
+              "title": {
+                "en": "Gang 1 turned off",
+                "fr": "Gang 1 éteint"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang2_turned_on",
+              "title": {
+                "en": "Gang 2 turned on",
+                "fr": "Gang 2 allumé"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang2_turned_off",
+              "title": {
+                "en": "Gang 2 turned off",
+                "fr": "Gang 2 éteint"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang3_turned_on",
+              "title": {
+                "en": "Gang 3 turned on",
+                "fr": "Gang 3 allumé"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang3_turned_off",
+              "title": {
+                "en": "Gang 3 turned off",
+                "fr": "Gang 3 éteint"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang4_turned_on",
+              "title": {
+                "en": "Gang 4 turned on",
+                "fr": "Gang 4 allumé"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang4_turned_off",
+              "title": {
+                "en": "Gang 4 turned off",
+                "fr": "Gang 4 éteint"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang5_turned_on",
+              "title": {
+                "en": "Gang 5 turned on",
+                "fr": "Gang 5 allumé"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang5_turned_off",
+              "title": {
+                "en": "Gang 5 turned off",
+                "fr": "Gang 5 éteint"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang6_turned_on",
+              "title": {
+                "en": "Gang 6 turned on",
+                "fr": "Gang 6 allumé"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang6_turned_off",
+              "title": {
+                "en": "Gang 6 turned off",
+                "fr": "Gang 6 éteint"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang7_turned_on",
+              "title": {
+                "en": "Gang 7 turned on",
+                "fr": "Gang 7 allumé"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang7_turned_off",
+              "title": {
+                "en": "Gang 7 turned off",
+                "fr": "Gang 7 éteint"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "id": "switch_wall_7gang_gang1_is_on",
+              "title": {
+                "en": "Gang 1 is !{{on|off}}",
+                "fr": "Gang 1 est !{{allumé|éteint}}"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang2_is_on",
+              "title": {
+                "en": "Gang 2 is !{{on|off}}",
+                "fr": "Gang 2 est !{{allumé|éteint}}"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang3_is_on",
+              "title": {
+                "en": "Gang 3 is !{{on|off}}",
+                "fr": "Gang 3 est !{{allumé|éteint}}"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang4_is_on",
+              "title": {
+                "en": "Gang 4 is !{{on|off}}",
+                "fr": "Gang 4 est !{{allumé|éteint}}"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang5_is_on",
+              "title": {
+                "en": "Gang 5 is !{{on|off}}",
+                "fr": "Gang 5 est !{{allumé|éteint}}"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang6_is_on",
+              "title": {
+                "en": "Gang 6 is !{{on|off}}",
+                "fr": "Gang 6 est !{{allumé|éteint}}"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_gang7_is_on",
+              "title": {
+                "en": "Gang 7 is !{{on|off}}",
+                "fr": "Gang 7 est !{{allumé|éteint}}"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_all_on",
+              "title": {
+                "en": "All gangs are on",
+                "fr": "Tous les gangs sont allumés"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_all_off",
+              "title": {
+                "en": "All gangs are off",
+                "fr": "Tous les gangs sont éteints"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "id": "switch_wall_7gang_turn_on_gang1",
+              "title": {
+                "en": "Turn on Gang 1",
+                "fr": "Allumer Gang 1"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_turn_off_gang1",
+              "title": {
+                "en": "Turn off Gang 1",
+                "fr": "Éteindre Gang 1"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_toggle_gang1",
+              "title": {
+                "en": "Toggle Gang 1",
+                "fr": "Basculer Gang 1"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_turn_on_gang2",
+              "title": {
+                "en": "Turn on Gang 2",
+                "fr": "Allumer Gang 2"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_turn_off_gang2",
+              "title": {
+                "en": "Turn off Gang 2",
+                "fr": "Éteindre Gang 2"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_toggle_gang2",
+              "title": {
+                "en": "Toggle Gang 2",
+                "fr": "Basculer Gang 2"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_turn_on_gang3",
+              "title": {
+                "en": "Turn on Gang 3",
+                "fr": "Allumer Gang 3"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_turn_off_gang3",
+              "title": {
+                "en": "Turn off Gang 3",
+                "fr": "Éteindre Gang 3"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_toggle_gang3",
+              "title": {
+                "en": "Toggle Gang 3",
+                "fr": "Basculer Gang 3"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_turn_on_gang4",
+              "title": {
+                "en": "Turn on Gang 4",
+                "fr": "Allumer Gang 4"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_turn_off_gang4",
+              "title": {
+                "en": "Turn off Gang 4",
+                "fr": "Éteindre Gang 4"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_toggle_gang4",
+              "title": {
+                "en": "Toggle Gang 4",
+                "fr": "Basculer Gang 4"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_turn_on_gang5",
+              "title": {
+                "en": "Turn on Gang 5",
+                "fr": "Allumer Gang 5"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_turn_off_gang5",
+              "title": {
+                "en": "Turn off Gang 5",
+                "fr": "Éteindre Gang 5"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_toggle_gang5",
+              "title": {
+                "en": "Toggle Gang 5",
+                "fr": "Basculer Gang 5"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_turn_on_gang6",
+              "title": {
+                "en": "Turn on Gang 6",
+                "fr": "Allumer Gang 6"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_turn_off_gang6",
+              "title": {
+                "en": "Turn off Gang 6",
+                "fr": "Éteindre Gang 6"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_toggle_gang6",
+              "title": {
+                "en": "Toggle Gang 6",
+                "fr": "Basculer Gang 6"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_turn_on_gang7",
+              "title": {
+                "en": "Turn on Gang 7",
+                "fr": "Allumer Gang 7"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_turn_off_gang7",
+              "title": {
+                "en": "Turn off Gang 7",
+                "fr": "Éteindre Gang 7"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_toggle_gang7",
+              "title": {
+                "en": "Toggle Gang 7",
+                "fr": "Basculer Gang 7"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_turn_on_all",
+              "title": {
+                "en": "Turn on all",
+                "fr": "Tout allumer"
+              }
+            },
+            {
+              "id": "switch_wall_7gang_turn_off_all",
+              "title": {
+                "en": "Turn off all",
+                "fr": "Tout éteindre"
+              }
+            }
+          ]
+        }
+      ],
+      [
+        "switch_wall_8gang",
+        {
+          "driverName": "switch_wall_8gang",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_wall_8gang\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "switch_wall_8gang_gang1_turned_on",
+              "title": {
+                "en": "Gang 1 turned on",
+                "fr": "Gang 1 allumé"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang1_turned_off",
+              "title": {
+                "en": "Gang 1 turned off",
+                "fr": "Gang 1 éteint"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang2_turned_on",
+              "title": {
+                "en": "Gang 2 turned on",
+                "fr": "Gang 2 allumé"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang2_turned_off",
+              "title": {
+                "en": "Gang 2 turned off",
+                "fr": "Gang 2 éteint"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang3_turned_on",
+              "title": {
+                "en": "Gang 3 turned on",
+                "fr": "Gang 3 allumé"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang3_turned_off",
+              "title": {
+                "en": "Gang 3 turned off",
+                "fr": "Gang 3 éteint"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang4_turned_on",
+              "title": {
+                "en": "Gang 4 turned on",
+                "fr": "Gang 4 allumé"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang4_turned_off",
+              "title": {
+                "en": "Gang 4 turned off",
+                "fr": "Gang 4 éteint"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang5_turned_on",
+              "title": {
+                "en": "Gang 5 turned on",
+                "fr": "Gang 5 allumé"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang5_turned_off",
+              "title": {
+                "en": "Gang 5 turned off",
+                "fr": "Gang 5 éteint"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang6_turned_on",
+              "title": {
+                "en": "Gang 6 turned on",
+                "fr": "Gang 6 allumé"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang6_turned_off",
+              "title": {
+                "en": "Gang 6 turned off",
+                "fr": "Gang 6 éteint"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang7_turned_on",
+              "title": {
+                "en": "Gang 7 turned on",
+                "fr": "Gang 7 allumé"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang7_turned_off",
+              "title": {
+                "en": "Gang 7 turned off",
+                "fr": "Gang 7 éteint"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang8_turned_on",
+              "title": {
+                "en": "Gang 8 turned on",
+                "fr": "Gang 8 allumé"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang8_turned_off",
+              "title": {
+                "en": "Gang 8 turned off",
+                "fr": "Gang 8 éteint"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "id": "switch_wall_8gang_gang1_is_on",
+              "title": {
+                "en": "Gang 1 is !{{on|off}}",
+                "fr": "Gang 1 !{{allumé|éteint}}"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang2_is_on",
+              "title": {
+                "en": "Gang 2 is !{{on|off}}",
+                "fr": "Gang 2 !{{allumé|éteint}}"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang3_is_on",
+              "title": {
+                "en": "Gang 3 is !{{on|off}}",
+                "fr": "Gang 3 !{{allumé|éteint}}"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang4_is_on",
+              "title": {
+                "en": "Gang 4 is !{{on|off}}",
+                "fr": "Gang 4 !{{allumé|éteint}}"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang5_is_on",
+              "title": {
+                "en": "Gang 5 is !{{on|off}}",
+                "fr": "Gang 5 !{{allumé|éteint}}"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang6_is_on",
+              "title": {
+                "en": "Gang 6 is !{{on|off}}",
+                "fr": "Gang 6 !{{allumé|éteint}}"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang7_is_on",
+              "title": {
+                "en": "Gang 7 is !{{on|off}}",
+                "fr": "Gang 7 !{{allumé|éteint}}"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_gang8_is_on",
+              "title": {
+                "en": "Gang 8 is !{{on|off}}",
+                "fr": "Gang 8 !{{allumé|éteint}}"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_all_on",
+              "title": {
+                "en": "All gangs are on",
+                "fr": "Tous allumés"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_all_off",
+              "title": {
+                "en": "All gangs are off",
+                "fr": "Tous éteints"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "id": "switch_wall_8gang_turn_on_gang1",
+              "title": {
+                "en": "Turn on Gang 1",
+                "fr": "Allumer Gang 1"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_turn_off_gang1",
+              "title": {
+                "en": "Turn off Gang 1",
+                "fr": "Éteindre Gang 1"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_turn_on_gang2",
+              "title": {
+                "en": "Turn on Gang 2",
+                "fr": "Allumer Gang 2"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_turn_off_gang2",
+              "title": {
+                "en": "Turn off Gang 2",
+                "fr": "Éteindre Gang 2"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_turn_on_gang3",
+              "title": {
+                "en": "Turn on Gang 3",
+                "fr": "Allumer Gang 3"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_turn_off_gang3",
+              "title": {
+                "en": "Turn off Gang 3",
+                "fr": "Éteindre Gang 3"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_turn_on_gang4",
+              "title": {
+                "en": "Turn on Gang 4",
+                "fr": "Allumer Gang 4"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_turn_off_gang4",
+              "title": {
+                "en": "Turn off Gang 4",
+                "fr": "Éteindre Gang 4"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_turn_on_gang5",
+              "title": {
+                "en": "Turn on Gang 5",
+                "fr": "Allumer Gang 5"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_turn_off_gang5",
+              "title": {
+                "en": "Turn off Gang 5",
+                "fr": "Éteindre Gang 5"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_turn_on_gang6",
+              "title": {
+                "en": "Turn on Gang 6",
+                "fr": "Allumer Gang 6"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_turn_off_gang6",
+              "title": {
+                "en": "Turn off Gang 6",
+                "fr": "Éteindre Gang 6"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_turn_on_gang7",
+              "title": {
+                "en": "Turn on Gang 7",
+                "fr": "Allumer Gang 7"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_turn_off_gang7",
+              "title": {
+                "en": "Turn off Gang 7",
+                "fr": "Éteindre Gang 7"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_turn_on_gang8",
+              "title": {
+                "en": "Turn on Gang 8",
+                "fr": "Allumer Gang 8"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_turn_off_gang8",
+              "title": {
+                "en": "Turn off Gang 8",
+                "fr": "Éteindre Gang 8"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_turn_on_all",
+              "title": {
+                "en": "Turn on all",
+                "fr": "Tout allumer"
+              }
+            },
+            {
+              "id": "switch_wall_8gang_turn_off_all",
+              "title": {
+                "en": "Turn off all",
+                "fr": "Tout éteindre"
+              }
+            }
+          ]
+        }
+      ],
+      [
+        "switch_wireless",
+        {
+          "driverName": "switch_wireless",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_wireless\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "switch_wireless_onoff_true",
+              "title": "Turned on",
+              "tokens": [
+                {
+                  "name": "timestamp",
+                  "type": "string",
+                  "title": "Timestamp"
+                }
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "id": "switch_wireless_is_on",
+              "title": "Is !{{on|off}}"
+            }
+          ],
+          "actions": [
+            {
+              "id": "switch_wireless_turn_on",
+              "title": "Turn on"
+            },
+            {
+              "id": "switch_wireless_turn_off",
+              "title": "Turn off"
+            },
+            {
+              "id": "switch_wireless_toggle",
+              "title": "Toggle"
+            }
+          ]
+        }
+      ]
+    ],
+    "buttons": [
+      [
+        "button_emergency_sos",
+        {
+          "driverName": "button_emergency_sos",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_emergency_sos\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "button_emergency_sos_pressed",
+              "title": {
+                "en": "SOS Button pressed",
+                "fr": "Bouton SOS appuyé",
+                "nl": "SOS-knop ingedrukt",
+                "de": "SOS-Taste gedrückt",
+                "it": "Pulsante SOS premuto",
+                "es": "Botón SOS presionado"
+              }
+            },
+            {
+              "id": "button_emergency_sos_measure_battery_changed",
+              "title": "Battery changed",
+              "tokens": [
+                {
+                  "name": "battery",
+                  "type": "number",
+                  "title": "Battery"
+                }
+              ]
+            }
+          ],
+          "conditions": [],
+          "actions": []
+        }
+      ],
+      [
+        "button_wireless",
+        {
+          "driverName": "button_wireless",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "button_wireless_button_pressed",
+              "title": {
+                "en": "Button pressed",
+                "fr": "Bouton appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_button_double_pressed",
+              "title": {
+                "en": "Button double pressed",
+                "fr": "Double appui bouton"
+              }
+            },
+            {
+              "id": "button_wireless_button_long_pressed",
+              "title": {
+                "en": "Button long pressed",
+                "fr": "Appui long bouton"
+              }
+            },
+            {
+              "id": "button_wireless_button_released",
+              "title": {
+                "en": "Button released",
+                "fr": "Bouton relâché"
+              }
+            },
+            {
+              "id": "button_wireless_battery_low",
+              "title": {
+                "en": "Battery low",
+                "fr": "Batterie faible"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "id": "button_wireless_battery_above",
+              "title": {
+                "en": "Battery level is above",
+                "fr": "Niveau batterie supérieur à"
+              },
+              "titleFormatted": {
+                "en": "Battery level is above [[level]]%",
+                "fr": "Niveau batterie supérieur à [[level]]%"
+              },
+              "args": [
+                {
+                  "name": "level",
+                  "type": "number",
+                  "min": 0,
+                  "max": 100,
+                  "step": 10
+                }
+              ]
+            }
+          ],
+          "actions": []
+        }
+      ],
+      [
+        "button_wireless_1",
+        {
+          "driverName": "button_wireless_1",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_1\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "button_wireless_1_button_1gang_button_pressed",
+              "title": {
+                "en": "Button pressed",
+                "fr": "Bouton appuyé"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] pressed",
+                "fr": "Bouton [[button]] appuyé"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_1_button_1gang_button_double_press",
+              "title": {
+                "en": "Button double-pressed",
+                "fr": "Bouton double-cliqué"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] double-pressed",
+                "fr": "Bouton [[button]] double-cliqué"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_1_button_1gang_button_long_press",
+              "title": {
+                "en": "Button long-pressed",
+                "fr": "Bouton pressé longtemps"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] long-pressed",
+                "fr": "Bouton [[button]] pressé longtemps"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_1_button_1gang_button_multi_press",
+              "title": {
+                "en": "Button multi-pressed",
+                "fr": "Bouton multi-cliqué"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] pressed [[count]] times",
+                "fr": "Bouton [[button]] appuyé [[count]] fois"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                },
+                {
+                  "name": "count",
+                  "type": "number",
+                  "title": {
+                    "en": "Press count",
+                    "fr": "Nombre de pressions"
+                  },
+                  "example": 3
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_1_button_1gang_button_1_pressed",
+              "title": {
+                "en": "Button 1 pressed",
+                "fr": "Bouton 1 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_1_button_1gang_button_1_double",
+              "title": {
+                "en": "Button 1 double-pressed",
+                "fr": "Bouton 1 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_1_button_1gang_button_1_long",
+              "title": {
+                "en": "Button 1 long-pressed",
+                "fr": "Bouton 1 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_1_button_1gang_measure_battery_changed",
+              "title": {
+                "en": "Battery level changed",
+                "fr": "Niveau batterie changé"
+              },
+              "tokens": [
+                {
+                  "name": "battery",
+                  "type": "number",
+                  "title": {
+                    "en": "Battery (%)",
+                    "fr": "Batterie (%)"
+                  },
+                  "example": 75
+                }
+              ]
+            }
+          ],
+          "conditions": [],
+          "actions": []
+        }
+      ],
+      [
+        "button_wireless_2",
+        {
+          "driverName": "button_wireless_2",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_2\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "button_wireless_2_button_2gang_button_pressed",
+              "title": {
+                "en": "Button pressed",
+                "fr": "Bouton appuyé"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] pressed",
+                "fr": "Bouton [[button]] appuyé"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_2_button_2gang_button_double_press",
+              "title": {
+                "en": "Button double-pressed",
+                "fr": "Bouton double-cliqué"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] double-pressed",
+                "fr": "Bouton [[button]] double-cliqué"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_2_button_2gang_button_long_press",
+              "title": {
+                "en": "Button long-pressed",
+                "fr": "Bouton pressé longtemps"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] long-pressed",
+                "fr": "Bouton [[button]] pressé longtemps"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_2_button_2gang_button_multi_press",
+              "title": {
+                "en": "Button multi-pressed",
+                "fr": "Bouton multi-cliqué"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] pressed [[count]] times",
+                "fr": "Bouton [[button]] appuyé [[count]] fois"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                },
+                {
+                  "name": "count",
+                  "type": "number",
+                  "title": {
+                    "en": "Press count",
+                    "fr": "Nombre de pressions"
+                  },
+                  "example": 3
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_2_button_2gang_button_1_pressed",
+              "title": {
+                "en": "Button 1 pressed",
+                "fr": "Bouton 1 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_2_button_2gang_button_1_double",
+              "title": {
+                "en": "Button 1 double-pressed",
+                "fr": "Bouton 1 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_2_button_2gang_button_1_long",
+              "title": {
+                "en": "Button 1 long-pressed",
+                "fr": "Bouton 1 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_2_button_2gang_button_2_pressed",
+              "title": {
+                "en": "Button 2 pressed",
+                "fr": "Bouton 2 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_2_button_2gang_button_2_double",
+              "title": {
+                "en": "Button 2 double-pressed",
+                "fr": "Bouton 2 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_2_button_2gang_button_2_long",
+              "title": {
+                "en": "Button 2 long-pressed",
+                "fr": "Bouton 2 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_2_button_2gang_measure_battery_changed",
+              "title": {
+                "en": "Battery level changed",
+                "fr": "Niveau batterie changé"
+              },
+              "tokens": [
+                {
+                  "name": "battery",
+                  "type": "number",
+                  "title": {
+                    "en": "Battery (%)",
+                    "fr": "Batterie (%)"
+                  },
+                  "example": 75
+                }
+              ]
+            }
+          ],
+          "conditions": [],
+          "actions": []
+        }
+      ],
+      [
+        "button_wireless_3",
+        {
+          "driverName": "button_wireless_3",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_3\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "button_wireless_3_button_3gang_button_pressed",
+              "title": {
+                "en": "Button pressed",
+                "fr": "Bouton appuyé",
+                "nl": "Knop ingedrukt",
+                "de": "Taste gedrückt",
+                "it": "Pulsante premuto",
+                "sv": "Knapp tryckt",
+                "no": "Knapp trykket",
+                "es": "Botón presionado",
+                "da": "Knap trykket"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] pressed",
+                "fr": "Bouton [[button]] appuyé",
+                "nl": "Knop [[button]] ingedrukt",
+                "de": "Taste [[button]] gedrückt",
+                "it": "Pulsante [[button]] premuto",
+                "sv": "Knapp [[button]] tryckt",
+                "no": "Knapp [[button]] trykket",
+                "es": "Botón [[button]] presionado",
+                "da": "Knap [[button]] trykket"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton",
+                    "nl": "Knop",
+                    "de": "Taste",
+                    "it": "Pulsante",
+                    "sv": "Knapp",
+                    "no": "Knapp",
+                    "es": "Botón",
+                    "da": "Knap"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_3_button_3gang_button_double_press",
+              "title": {
+                "en": "Button double-pressed",
+                "fr": "Bouton double-cliqué",
+                "nl": "Knop dubbel ingedrukt",
+                "de": "Taste doppelt gedrückt",
+                "it": "Pulsante premuto due volte",
+                "sv": "Knapp dubbeltryckt",
+                "no": "Knapp dobbeltrykket",
+                "es": "Botón presionado dos veces",
+                "da": "Knap dobbeltklikket"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] double-pressed",
+                "fr": "Bouton [[button]] double-cliqué",
+                "nl": "Knop [[button]] dubbel ingedrukt",
+                "de": "Taste [[button]] doppelt gedrückt",
+                "it": "Pulsante [[button]] premuto due volte",
+                "sv": "Knapp [[button]] dubbeltryckt",
+                "no": "Knapp [[button]] dobbeltrykket",
+                "es": "Botón [[button]] presionado dos veces",
+                "da": "Knap [[button]] dobbeltklikket"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton",
+                    "nl": "Knop",
+                    "de": "Taste",
+                    "it": "Pulsante",
+                    "sv": "Knapp",
+                    "no": "Knapp",
+                    "es": "Botón",
+                    "da": "Knap"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_3_button_3gang_button_long_press",
+              "title": {
+                "en": "Button long-pressed",
+                "fr": "Bouton pressé longtemps",
+                "nl": "Knop lang ingedrukt",
+                "de": "Taste lange gedrückt",
+                "it": "Pulsante premuto a lungo",
+                "sv": "Knapp långtryckt",
+                "no": "Knapp langttrykket",
+                "es": "Botón presionado largo",
+                "da": "Knap langt trykket"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] long-pressed",
+                "fr": "Bouton [[button]] pressé longtemps",
+                "nl": "Knop [[button]] lang ingedrukt",
+                "de": "Taste [[button]] lange gedrückt",
+                "it": "Pulsante [[button]] premuto a lungo",
+                "sv": "Knapp [[button]] långtryckt",
+                "no": "Knapp [[button]] langttrykket",
+                "es": "Botón [[button]] presionado largo",
+                "da": "Knap [[button]] langt trykket"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton",
+                    "nl": "Knop",
+                    "de": "Taste",
+                    "it": "Pulsante",
+                    "sv": "Knapp",
+                    "no": "Knapp",
+                    "es": "Botón",
+                    "da": "Knap"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_3_button_3gang_button_multi_press",
+              "title": {
+                "en": "Button multi-pressed",
+                "fr": "Bouton multi-cliqué",
+                "nl": "Knop meerdere keren ingedrukt",
+                "de": "Taste mehrfach gedrückt",
+                "it": "Pulsante premuto più volte",
+                "sv": "Knapp flertryck",
+                "no": "Knapp flertrykk",
+                "es": "Botón presionado múltiple",
+                "da": "Knap flertrykket"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] pressed [[count]] times",
+                "fr": "Bouton [[button]] appuyé [[count]] fois",
+                "nl": "Knop [[button]] [[count]] keer ingedrukt",
+                "de": "Taste [[button]] [[count]] mal gedrückt",
+                "it": "Pulsante [[button]] premuto [[count]] volte",
+                "sv": "Knapp [[button]] tryckt [[count]] gånger",
+                "no": "Knapp [[button]] trykket [[count]] ganger",
+                "es": "Botón [[button]] presionado [[count]] veces",
+                "da": "Knap [[button]] trykket [[count]] gange"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton",
+                    "nl": "Knop",
+                    "de": "Taste",
+                    "it": "Pulsante",
+                    "sv": "Knapp",
+                    "no": "Knapp",
+                    "es": "Botón",
+                    "da": "Knap"
+                  },
+                  "example": "1"
+                },
+                {
+                  "name": "count",
+                  "type": "number",
+                  "title": {
+                    "en": "Press count",
+                    "fr": "Nombre de pressions",
+                    "nl": "Aantal keer ingedrukt",
+                    "de": "Druckanzahl",
+                    "it": "Conteggio pressioni",
+                    "sv": "Antal tryck",
+                    "no": "Antall trykk",
+                    "es": "Recuento de presiones",
+                    "da": "Antal tryk"
+                  },
+                  "example": 3
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_3_button_3gang_button_1_pressed",
+              "title": {
+                "en": "Button 1 pressed",
+                "fr": "Bouton 1 appuyé",
+                "nl": "Knop 1 ingedrukt",
+                "de": "Taste 1 gedrückt",
+                "it": "Pulsante 1 premuto",
+                "sv": "Knapp 1 tryckt",
+                "no": "Knapp 1 trykket",
+                "es": "Botón 1 presionado",
+                "da": "Knap 1 trykket"
+              }
+            },
+            {
+              "id": "button_wireless_3_button_3gang_button_2_pressed",
+              "title": {
+                "en": "Button 2 pressed",
+                "fr": "Bouton 2 appuyé",
+                "nl": "Knop 2 ingedrukt",
+                "de": "Taste 2 gedrückt",
+                "it": "Pulsante 2 premuto",
+                "sv": "Knapp 2 tryckt",
+                "no": "Knapp 2 trykket",
+                "es": "Botón 2 presionado",
+                "da": "Knap 2 trykket"
+              }
+            },
+            {
+              "id": "button_wireless_3_button_3gang_button_3_pressed",
+              "title": {
+                "en": "Button 3 pressed",
+                "fr": "Bouton 3 appuyé",
+                "nl": "Knop 3 ingedrukt",
+                "de": "Taste 3 gedrückt",
+                "it": "Pulsante 3 premuto",
+                "sv": "Knapp 3 tryckt",
+                "no": "Knapp 3 trykket",
+                "es": "Botón 3 presionado",
+                "da": "Knap 3 trykket"
+              }
+            },
+            {
+              "id": "button_wireless_3_button_3gang_button_1_double",
+              "title": {
+                "en": "Button 1 double-pressed",
+                "fr": "Bouton 1 double-cliqué",
+                "nl": "Knop 1 dubbel ingedrukt",
+                "de": "Taste 1 doppelt gedrückt",
+                "it": "Pulsante 1 premuto due volte",
+                "sv": "Knapp 1 dubbeltryckt",
+                "no": "Knapp 1 dobbeltrykket",
+                "es": "Botón 1 presionado dos veces",
+                "da": "Knap 1 dobbeltklikket"
+              }
+            },
+            {
+              "id": "button_wireless_3_button_3gang_button_2_double",
+              "title": {
+                "en": "Button 2 double-pressed",
+                "fr": "Bouton 2 double-cliqué",
+                "nl": "Knop 2 dubbel ingedrukt",
+                "de": "Taste 2 doppelt gedrückt",
+                "it": "Pulsante 2 premuto due volte",
+                "sv": "Knapp 2 dubbeltryckt",
+                "no": "Knapp 2 dobbeltrykket",
+                "es": "Botón 2 presionado dos veces",
+                "da": "Knap 2 dobbeltklikket"
+              }
+            },
+            {
+              "id": "button_wireless_3_button_3gang_button_3_double",
+              "title": {
+                "en": "Button 3 double-pressed",
+                "fr": "Bouton 3 double-cliqué",
+                "nl": "Knop 3 dubbel ingedrukt",
+                "de": "Taste 3 doppelt gedrückt",
+                "it": "Pulsante 3 premuto due volte",
+                "sv": "Knapp 3 dubbeltryckt",
+                "no": "Knapp 3 dobbeltrykket",
+                "es": "Botón 3 presionado dos veces",
+                "da": "Knap 3 dobbeltklikket"
+              }
+            },
+            {
+              "id": "button_wireless_3_button_3gang_button_1_long",
+              "title": {
+                "en": "Button 1 long-pressed",
+                "fr": "Bouton 1 pressé longtemps",
+                "nl": "Knop 1 lang ingedrukt",
+                "de": "Taste 1 lange gedrückt",
+                "it": "Pulsante 1 premuto a lungo",
+                "sv": "Knapp 1 långtryckt",
+                "no": "Knapp 1 langttrykket",
+                "es": "Botón 1 presionado largo",
+                "da": "Knap 1 langt trykket"
+              }
+            },
+            {
+              "id": "button_wireless_3_button_3gang_button_2_long",
+              "title": {
+                "en": "Button 2 long-pressed",
+                "fr": "Bouton 2 pressé longtemps",
+                "nl": "Knop 2 lang ingedrukt",
+                "de": "Taste 2 lange gedrückt",
+                "it": "Pulsante 2 premuto a lungo",
+                "sv": "Knapp 2 långtryckt",
+                "no": "Knapp 2 langttrykket",
+                "es": "Botón 2 presionado largo",
+                "da": "Knap 2 langt trykket"
+              }
+            },
+            {
+              "id": "button_wireless_3_button_3gang_button_3_long",
+              "title": {
+                "en": "Button 3 long-pressed",
+                "fr": "Bouton 3 pressé longtemps",
+                "nl": "Knop 3 lang ingedrukt",
+                "de": "Taste 3 lange gedrückt",
+                "it": "Pulsante 3 premuto a lungo",
+                "sv": "Knapp 3 långtryckt",
+                "no": "Knapp 3 langttrykket",
+                "es": "Botón 3 presionado largo",
+                "da": "Knap 3 langt trykket"
+              }
+            },
+            {
+              "id": "button_wireless_3_button_3gang_measure_battery_changed",
+              "title": {
+                "en": "Battery level changed",
+                "fr": "Niveau batterie changé"
+              },
+              "tokens": [
+                {
+                  "name": "battery",
+                  "type": "number",
+                  "title": {
+                    "en": "Battery (%)",
+                    "fr": "Batterie (%)"
+                  },
+                  "example": 75
+                }
+              ]
+            }
+          ],
+          "conditions": [],
+          "actions": []
+        }
+      ],
+      [
+        "button_wireless_4",
+        {
+          "driverName": "button_wireless_4",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_4\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "button_wireless_4_button_4gang_button_pressed",
+              "title": {
+                "en": "Button pressed",
+                "fr": "Bouton appuyé"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] pressed",
+                "fr": "Bouton [[button]] appuyé"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_4_button_4gang_button_double_press",
+              "title": {
+                "en": "Button double-pressed",
+                "fr": "Bouton double-cliqué"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] double-pressed",
+                "fr": "Bouton [[button]] double-cliqué"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_4_button_4gang_button_long_press",
+              "title": {
+                "en": "Button long-pressed",
+                "fr": "Bouton pressé longtemps"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] long-pressed",
+                "fr": "Bouton [[button]] pressé longtemps"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_4_button_4gang_button_multi_press",
+              "title": {
+                "en": "Button multi-pressed",
+                "fr": "Bouton multi-cliqué"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] pressed [[count]] times",
+                "fr": "Bouton [[button]] appuyé [[count]] fois"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                },
+                {
+                  "name": "count",
+                  "type": "number",
+                  "title": {
+                    "en": "Press count",
+                    "fr": "Nombre de pressions"
+                  },
+                  "example": 3
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_4_button_4gang_button_1_pressed",
+              "title": {
+                "en": "Button 1 pressed",
+                "fr": "Bouton 1 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_4_button_4gang_button_1_double",
+              "title": {
+                "en": "Button 1 double-pressed",
+                "fr": "Bouton 1 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_4_button_4gang_button_1_long",
+              "title": {
+                "en": "Button 1 long-pressed",
+                "fr": "Bouton 1 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_4_button_4gang_button_2_pressed",
+              "title": {
+                "en": "Button 2 pressed",
+                "fr": "Bouton 2 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_4_button_4gang_button_2_double",
+              "title": {
+                "en": "Button 2 double-pressed",
+                "fr": "Bouton 2 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_4_button_4gang_button_2_long",
+              "title": {
+                "en": "Button 2 long-pressed",
+                "fr": "Bouton 2 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_4_button_4gang_button_3_pressed",
+              "title": {
+                "en": "Button 3 pressed",
+                "fr": "Bouton 3 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_4_button_4gang_button_3_double",
+              "title": {
+                "en": "Button 3 double-pressed",
+                "fr": "Bouton 3 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_4_button_4gang_button_3_long",
+              "title": {
+                "en": "Button 3 long-pressed",
+                "fr": "Bouton 3 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_4_button_4gang_button_4_pressed",
+              "title": {
+                "en": "Button 4 pressed",
+                "fr": "Bouton 4 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_4_button_4gang_button_4_double",
+              "title": {
+                "en": "Button 4 double-pressed",
+                "fr": "Bouton 4 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_4_button_4gang_button_4_long",
+              "title": {
+                "en": "Button 4 long-pressed",
+                "fr": "Bouton 4 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_4_button_4gang_measure_battery_changed",
+              "title": {
+                "en": "Battery level changed",
+                "fr": "Niveau batterie changé"
+              },
+              "tokens": [
+                {
+                  "name": "battery",
+                  "type": "number",
+                  "title": {
+                    "en": "Battery (%)",
+                    "fr": "Batterie (%)"
+                  },
+                  "example": 75
+                }
+              ]
+            }
+          ],
+          "conditions": [],
+          "actions": []
+        }
+      ],
+      [
+        "button_wireless_6",
+        {
+          "driverName": "button_wireless_6",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_6\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "button_wireless_6_button_6gang_button_pressed",
+              "title": {
+                "en": "Button pressed",
+                "fr": "Bouton appuyé"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] pressed",
+                "fr": "Bouton [[button]] appuyé"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_double_press",
+              "title": {
+                "en": "Button double-pressed",
+                "fr": "Bouton double-cliqué"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] double-pressed",
+                "fr": "Bouton [[button]] double-cliqué"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_long_press",
+              "title": {
+                "en": "Button long-pressed",
+                "fr": "Bouton pressé longtemps"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] long-pressed",
+                "fr": "Bouton [[button]] pressé longtemps"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_multi_press",
+              "title": {
+                "en": "Button multi-pressed",
+                "fr": "Bouton multi-cliqué"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] pressed [[count]] times",
+                "fr": "Bouton [[button]] appuyé [[count]] fois"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                },
+                {
+                  "name": "count",
+                  "type": "number",
+                  "title": {
+                    "en": "Press count",
+                    "fr": "Nombre de pressions"
+                  },
+                  "example": 3
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_1_pressed",
+              "title": {
+                "en": "Button 1 pressed",
+                "fr": "Bouton 1 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_1_double",
+              "title": {
+                "en": "Button 1 double-pressed",
+                "fr": "Bouton 1 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_1_long",
+              "title": {
+                "en": "Button 1 long-pressed",
+                "fr": "Bouton 1 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_2_pressed",
+              "title": {
+                "en": "Button 2 pressed",
+                "fr": "Bouton 2 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_2_double",
+              "title": {
+                "en": "Button 2 double-pressed",
+                "fr": "Bouton 2 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_2_long",
+              "title": {
+                "en": "Button 2 long-pressed",
+                "fr": "Bouton 2 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_3_pressed",
+              "title": {
+                "en": "Button 3 pressed",
+                "fr": "Bouton 3 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_3_double",
+              "title": {
+                "en": "Button 3 double-pressed",
+                "fr": "Bouton 3 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_3_long",
+              "title": {
+                "en": "Button 3 long-pressed",
+                "fr": "Bouton 3 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_4_pressed",
+              "title": {
+                "en": "Button 4 pressed",
+                "fr": "Bouton 4 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_4_double",
+              "title": {
+                "en": "Button 4 double-pressed",
+                "fr": "Bouton 4 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_4_long",
+              "title": {
+                "en": "Button 4 long-pressed",
+                "fr": "Bouton 4 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_5_pressed",
+              "title": {
+                "en": "Button 5 pressed",
+                "fr": "Bouton 5 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_5_double",
+              "title": {
+                "en": "Button 5 double-pressed",
+                "fr": "Bouton 5 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_5_long",
+              "title": {
+                "en": "Button 5 long-pressed",
+                "fr": "Bouton 5 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_6_pressed",
+              "title": {
+                "en": "Button 6 pressed",
+                "fr": "Bouton 6 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_6_double",
+              "title": {
+                "en": "Button 6 double-pressed",
+                "fr": "Bouton 6 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_button_6_long",
+              "title": {
+                "en": "Button 6 long-pressed",
+                "fr": "Bouton 6 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_6_button_6gang_measure_battery_changed",
+              "title": {
+                "en": "Battery level changed",
+                "fr": "Niveau batterie changé"
+              },
+              "tokens": [
+                {
+                  "name": "battery",
+                  "type": "number",
+                  "title": {
+                    "en": "Battery (%)",
+                    "fr": "Batterie (%)"
+                  },
+                  "example": 75
+                }
+              ]
+            }
+          ],
+          "conditions": [],
+          "actions": []
+        }
+      ],
+      [
+        "button_wireless_8",
+        {
+          "driverName": "button_wireless_8",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_8\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "button_wireless_8_button_8gang_button_pressed",
+              "title": {
+                "en": "Button pressed",
+                "fr": "Bouton appuyé"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] pressed",
+                "fr": "Bouton [[button]] appuyé"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_double_press",
+              "title": {
+                "en": "Button double-pressed",
+                "fr": "Bouton double-cliqué"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] double-pressed",
+                "fr": "Bouton [[button]] double-cliqué"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_long_press",
+              "title": {
+                "en": "Button long-pressed",
+                "fr": "Bouton pressé longtemps"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] long-pressed",
+                "fr": "Bouton [[button]] pressé longtemps"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_multi_press",
+              "title": {
+                "en": "Button multi-pressed",
+                "fr": "Bouton multi-cliqué"
+              },
+              "titleFormatted": {
+                "en": "Button [[button]] pressed [[count]] times",
+                "fr": "Bouton [[button]] appuyé [[count]] fois"
+              },
+              "tokens": [
+                {
+                  "name": "button",
+                  "type": "string",
+                  "title": {
+                    "en": "Button",
+                    "fr": "Bouton"
+                  },
+                  "example": "1"
+                },
+                {
+                  "name": "count",
+                  "type": "number",
+                  "title": {
+                    "en": "Press count",
+                    "fr": "Nombre de pressions"
+                  },
+                  "example": 3
+                }
+              ]
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_1_pressed",
+              "title": {
+                "en": "Button 1 pressed",
+                "fr": "Bouton 1 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_1_double",
+              "title": {
+                "en": "Button 1 double-pressed",
+                "fr": "Bouton 1 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_1_long",
+              "title": {
+                "en": "Button 1 long-pressed",
+                "fr": "Bouton 1 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_2_pressed",
+              "title": {
+                "en": "Button 2 pressed",
+                "fr": "Bouton 2 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_2_double",
+              "title": {
+                "en": "Button 2 double-pressed",
+                "fr": "Bouton 2 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_2_long",
+              "title": {
+                "en": "Button 2 long-pressed",
+                "fr": "Bouton 2 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_3_pressed",
+              "title": {
+                "en": "Button 3 pressed",
+                "fr": "Bouton 3 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_3_double",
+              "title": {
+                "en": "Button 3 double-pressed",
+                "fr": "Bouton 3 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_3_long",
+              "title": {
+                "en": "Button 3 long-pressed",
+                "fr": "Bouton 3 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_4_pressed",
+              "title": {
+                "en": "Button 4 pressed",
+                "fr": "Bouton 4 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_4_double",
+              "title": {
+                "en": "Button 4 double-pressed",
+                "fr": "Bouton 4 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_4_long",
+              "title": {
+                "en": "Button 4 long-pressed",
+                "fr": "Bouton 4 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_5_pressed",
+              "title": {
+                "en": "Button 5 pressed",
+                "fr": "Bouton 5 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_5_double",
+              "title": {
+                "en": "Button 5 double-pressed",
+                "fr": "Bouton 5 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_5_long",
+              "title": {
+                "en": "Button 5 long-pressed",
+                "fr": "Bouton 5 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_6_pressed",
+              "title": {
+                "en": "Button 6 pressed",
+                "fr": "Bouton 6 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_6_double",
+              "title": {
+                "en": "Button 6 double-pressed",
+                "fr": "Bouton 6 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_6_long",
+              "title": {
+                "en": "Button 6 long-pressed",
+                "fr": "Bouton 6 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_7_pressed",
+              "title": {
+                "en": "Button 7 pressed",
+                "fr": "Bouton 7 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_7_double",
+              "title": {
+                "en": "Button 7 double-pressed",
+                "fr": "Bouton 7 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_7_long",
+              "title": {
+                "en": "Button 7 long-pressed",
+                "fr": "Bouton 7 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_8_pressed",
+              "title": {
+                "en": "Button 8 pressed",
+                "fr": "Bouton 8 appuyé"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_8_double",
+              "title": {
+                "en": "Button 8 double-pressed",
+                "fr": "Bouton 8 double-cliqué"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_button_8_long",
+              "title": {
+                "en": "Button 8 long-pressed",
+                "fr": "Bouton 8 pressé longtemps"
+              }
+            },
+            {
+              "id": "button_wireless_8_button_8gang_measure_battery_changed",
+              "title": {
+                "en": "Battery level changed",
+                "fr": "Niveau batterie changé"
+              },
+              "tokens": [
+                {
+                  "name": "battery",
+                  "type": "number",
+                  "title": {
+                    "en": "Battery (%)",
+                    "fr": "Batterie (%)"
+                  },
+                  "example": 75
+                }
+              ]
+            }
+          ],
+          "conditions": [],
+          "actions": []
+        }
+      ]
+    ],
+    "sensors": [
+      [
+        "climate_sensor",
+        {
+          "driverName": "climate_sensor",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\climate_sensor\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "climate_sensor_temperature_changed",
+              "title": {
+                "en": "Temperature changed",
+                "fr": "Température changée"
+              },
+              "tokens": [
+                {
+                  "name": "temperature",
+                  "type": "number",
+                  "title": {
+                    "en": "Temperature (°C)",
+                    "fr": "Température (°C)"
+                  },
+                  "example": 22.5
+                }
+              ]
+            },
+            {
+              "id": "climate_sensor_humidity_changed",
+              "title": {
+                "en": "Humidity changed",
+                "fr": "Humidité changée"
+              },
+              "tokens": [
+                {
+                  "name": "humidity",
+                  "type": "number",
+                  "title": {
+                    "en": "Humidity (%)",
+                    "fr": "Humidité (%)"
+                  },
+                  "example": 55
+                }
+              ]
+            },
+            {
+              "id": "climate_sensor_battery_low",
+              "title": {
+                "en": "Battery low",
+                "fr": "Batterie faible"
+              }
+            },
+            {
+              "id": "climate_sensor_temperature_alarm_high",
+              "title": {
+                "en": "Temperature too high",
+                "fr": "Température trop haute"
+              }
+            },
+            {
+              "id": "climate_sensor_temperature_alarm_low",
+              "title": {
+                "en": "Temperature too low",
+                "fr": "Température trop basse"
+              }
+            },
+            {
+              "id": "climate_sensor_humidity_alarm_high",
+              "title": {
+                "en": "Humidity too high",
+                "fr": "Humidité trop haute"
+              }
+            },
+            {
+              "id": "climate_sensor_humidity_alarm_low",
+              "title": {
+                "en": "Humidity too low",
+                "fr": "Humidité trop basse"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "id": "climate_sensor_temperature_above",
+              "title": {
+                "en": "Temperature is above",
+                "fr": "Température supérieure à"
+              },
+              "titleFormatted": {
+                "en": "Temperature is above [[temp]]°C",
+                "fr": "Température supérieure à [[temp]]°C"
+              },
+              "args": [
+                {
+                  "name": "temp",
+                  "type": "number",
+                  "min": -40,
+                  "max": 80,
+                  "step": 0.5,
+                  "title": {
+                    "en": "Temperature",
+                    "fr": "Température"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "climate_sensor_temperature_below",
+              "title": {
+                "en": "Temperature is below",
+                "fr": "Température inférieure à"
+              },
+              "titleFormatted": {
+                "en": "Temperature is below [[temp]]°C",
+                "fr": "Température inférieure à [[temp]]°C"
+              },
+              "args": [
+                {
+                  "name": "temp",
+                  "type": "number",
+                  "min": -40,
+                  "max": 80,
+                  "step": 0.5,
+                  "title": {
+                    "en": "Temperature",
+                    "fr": "Température"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "climate_sensor_humidity_above",
+              "title": {
+                "en": "Humidity is above",
+                "fr": "Humidité supérieure à"
+              },
+              "titleFormatted": {
+                "en": "Humidity is above [[humidity]]%",
+                "fr": "Humidité supérieure à [[humidity]]%"
+              },
+              "args": [
+                {
+                  "name": "humidity",
+                  "type": "number",
+                  "min": 0,
+                  "max": 100,
+                  "step": 1,
+                  "title": {
+                    "en": "Humidity (%)",
+                    "fr": "Humidité (%)"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "climate_sensor_humidity_below",
+              "title": {
+                "en": "Humidity is below",
+                "fr": "Humidité inférieure à"
+              },
+              "titleFormatted": {
+                "en": "Humidity is below [[humidity]]%",
+                "fr": "Humidité inférieure à [[humidity]]%"
+              },
+              "args": [
+                {
+                  "name": "humidity",
+                  "type": "number",
+                  "min": 0,
+                  "max": 100,
+                  "step": 1,
+                  "title": {
+                    "en": "Humidity (%)",
+                    "fr": "Humidité (%)"
+                  }
+                }
+              ]
+            }
+          ],
+          "actions": []
+        }
+      ],
+      [
+        "contact_sensor",
+        {
+          "driverName": "contact_sensor",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\contact_sensor\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "contact_sensor_contact_sensor_alarm_contact_true",
+              "title": {
+                "en": "Contact alarm activated",
+                "fr": "Alarme de contact activée"
+              }
+            },
+            {
+              "id": "contact_sensor_contact_sensor_alarm_contact_false",
+              "title": {
+                "en": "Contact alarm deactivated",
+                "fr": "Alarme de contact désactivée"
+              }
+            },
+            {
+              "id": "contact_sensor_contact_sensor_measure_battery_changed",
+              "title": {
+                "en": "Battery level changed",
+                "fr": "Niveau batterie changé"
+              },
+              "tokens": [
+                {
+                  "name": "battery",
+                  "type": "number",
+                  "title": {
+                    "en": "Battery (%)",
+                    "fr": "Batterie (%)"
+                  },
+                  "example": 75
+                }
+              ]
+            }
+          ],
+          "conditions": [],
+          "actions": []
+        }
+      ],
+      [
+        "formaldehyde_sensor",
+        {
+          "driverName": "formaldehyde_sensor",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\formaldehyde_sensor\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "formaldehyde_sensor_formaldehyde_changed",
+              "title": {
+                "en": "Formaldehyde level changed",
+                "fr": "Niveau formaldéhyde changé"
+              },
+              "tokens": [
+                {
+                  "name": "formaldehyde",
+                  "type": "number",
+                  "title": {
+                    "en": "Formaldehyde (μg/m³)",
+                    "fr": "Formaldéhyde (μg/m³)"
+                  },
+                  "example": 25
+                }
+              ]
+            },
+            {
+              "id": "formaldehyde_sensor_voc_changed",
+              "title": {
+                "en": "VOC level changed",
+                "fr": "Niveau COV changé"
+              },
+              "tokens": [
+                {
+                  "name": "voc",
+                  "type": "number",
+                  "title": {
+                    "en": "VOC (ppb)",
+                    "fr": "COV (ppb)"
+                  },
+                  "example": 100
+                }
+              ]
+            },
+            {
+              "id": "formaldehyde_sensor_air_quality_alert",
+              "title": {
+                "en": "Air quality alert",
+                "fr": "Alerte qualité air"
+              }
+            },
+            {
+              "id": "formaldehyde_sensor_battery_low",
+              "title": {
+                "en": "Battery low",
+                "fr": "Batterie faible"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "id": "formaldehyde_sensor_formaldehyde_above",
+              "title": {
+                "en": "Formaldehyde is above",
+                "fr": "Formaldéhyde supérieur à"
+              },
+              "titleFormatted": {
+                "en": "Formaldehyde is above [[level]] μg/m³",
+                "fr": "Formaldéhyde supérieur à [[level]] μg/m³"
+              },
+              "args": [
+                {
+                  "name": "level",
+                  "type": "number",
+                  "min": 0,
+                  "max": 1000,
+                  "step": 10
+                }
+              ]
+            },
+            {
+              "id": "formaldehyde_sensor_air_quality_good",
+              "title": {
+                "en": "Air quality is !{{good|poor}}",
+                "fr": "Qualité air !{{bonne|mauvaise}}"
+              }
+            }
+          ],
+          "actions": []
+        }
+      ],
+      [
+        "gas_sensor",
+        {
+          "driverName": "gas_sensor",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\gas_sensor\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "gas_sensor_ts0601_alarm_co_true",
+              "title": {
+                "en": "Carbon monoxide detected",
+                "fr": "Monoxyde de carbone détecté"
+              }
+            },
+            {
+              "id": "gas_sensor_ts0601_alarm_co2_true",
+              "title": {
+                "en": "CO2 alarm triggered",
+                "fr": "Alarme CO2 déclenchée"
+              }
+            },
+            {
+              "id": "gas_sensor_ts0601_measure_battery_changed",
+              "title": {
+                "en": "Battery level changed",
+                "fr": "Niveau batterie changé"
+              },
+              "tokens": [
+                {
+                  "name": "battery",
+                  "type": "number",
+                  "title": {
+                    "en": "Battery (%)",
+                    "fr": "Batterie (%)"
+                  },
+                  "example": 75
+                }
+              ]
+            }
+          ],
+          "conditions": [],
+          "actions": []
+        }
+      ],
+      [
+        "motion_sensor",
+        {
+          "driverName": "motion_sensor",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "motion_sensor_motion_detected",
+              "title": {
+                "en": "Motion detected",
+                "fr": "Mouvement détecté"
+              }
+            },
+            {
+              "id": "motion_sensor_motion_cleared",
+              "title": {
+                "en": "Motion cleared",
+                "fr": "Mouvement terminé"
+              }
+            },
+            {
+              "id": "motion_sensor_battery_low",
+              "title": {
+                "en": "Battery low",
+                "fr": "Batterie faible"
+              }
+            },
+            {
+              "id": "motion_sensor_battery_changed",
+              "title": {
+                "en": "Battery level changed",
+                "fr": "Niveau batterie changé"
+              },
+              "tokens": [
+                {
+                  "name": "battery",
+                  "type": "number",
+                  "title": {
+                    "en": "Battery (%)",
+                    "fr": "Batterie (%)"
+                  },
+                  "example": 75
+                }
+              ]
+            },
+            {
+              "id": "motion_sensor_luminance_changed",
+              "title": {
+                "en": "Luminance changed",
+                "fr": "Luminosité changée"
+              },
+              "tokens": [
+                {
+                  "name": "lux",
+                  "type": "number",
+                  "title": {
+                    "en": "Luminance (lux)",
+                    "fr": "Luminosité (lux)"
+                  },
+                  "example": 500
+                }
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "id": "motion_sensor_motion_active",
+              "title": {
+                "en": "Motion !{{is|is not}} detected",
+                "fr": "Mouvement !{{est|n'est pas}} détecté"
+              }
+            }
+          ],
+          "actions": []
+        }
+      ],
+      [
+        "motion_sensor_radar_mmwave",
+        {
+          "driverName": "motion_sensor_radar_mmwave",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "motion_sensor_radar_mmwave_presence_detected",
+              "title": {
+                "en": "Presence detected",
+                "fr": "Présence détectée"
+              }
+            },
+            {
+              "id": "motion_sensor_radar_mmwave_presence_cleared",
+              "title": {
+                "en": "Presence cleared",
+                "fr": "Présence disparue"
+              }
+            },
+            {
+              "id": "motion_sensor_radar_mmwave_motion_detected",
+              "title": {
+                "en": "Motion detected",
+                "fr": "Mouvement détecté"
+              }
+            },
+            {
+              "id": "motion_sensor_radar_mmwave_no_motion",
+              "title": {
+                "en": "No motion",
+                "fr": "Aucun mouvement"
+              }
+            },
+            {
+              "id": "motion_sensor_radar_mmwave_illuminance_changed",
+              "title": {
+                "en": "Illuminance changed",
+                "fr": "Luminosité changée"
+              },
+              "tokens": [
+                {
+                  "name": "illuminance",
+                  "type": "number",
+                  "title": {
+                    "en": "Illuminance (lux)",
+                    "fr": "Luminosité (lux)"
+                  },
+                  "example": 150
+                }
+              ]
+            },
+            {
+              "id": "motion_sensor_radar_mmwave_temperature_changed",
+              "title": {
+                "en": "Temperature changed",
+                "fr": "Température changée"
+              },
+              "tokens": [
+                {
+                  "name": "temperature",
+                  "type": "number",
+                  "title": {
+                    "en": "Temperature (°C)",
+                    "fr": "Température (°C)"
+                  },
+                  "example": 22.5
+                }
+              ]
+            },
+            {
+              "id": "motion_sensor_radar_mmwave_humidity_changed",
+              "title": {
+                "en": "Humidity changed",
+                "fr": "Humidité changée"
+              },
+              "tokens": [
+                {
+                  "name": "humidity",
+                  "type": "number",
+                  "title": {
+                    "en": "Humidity (%)",
+                    "fr": "Humidité (%)"
+                  },
+                  "example": 55
+                }
+              ]
+            },
+            {
+              "id": "motion_sensor_radar_mmwave_target_distance_changed",
+              "title": {
+                "en": "Target distance changed",
+                "fr": "Distance cible changée"
+              },
+              "tokens": [
+                {
+                  "name": "distance",
+                  "type": "number",
+                  "title": {
+                    "en": "Distance (m)",
+                    "fr": "Distance (m)"
+                  },
+                  "example": 2.5
+                }
+              ]
+            },
+            {
+              "id": "motion_sensor_radar_mmwave_battery_low",
+              "title": {
+                "en": "Battery low",
+                "fr": "Batterie faible"
+              }
+            },
+            {
+              "id": "motion_sensor_radar_mmwave_battery_changed",
+              "title": {
+                "en": "Battery level changed",
+                "fr": "Niveau batterie changé"
+              },
+              "tokens": [
+                {
+                  "name": "battery",
+                  "type": "number",
+                  "title": {
+                    "en": "Battery (%)",
+                    "fr": "Batterie (%)"
+                  },
+                  "example": 75
+                }
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "id": "motion_sensor_radar_mmwave_is_presence_detected",
+              "title": {
+                "en": "Presence is !{{detected|not detected}}",
+                "fr": "Présence !{{détectée|non détectée}}"
+              }
+            },
+            {
+              "id": "motion_sensor_radar_mmwave_illuminance_above",
+              "title": {
+                "en": "Illuminance is above",
+                "fr": "Luminosité supérieure à"
+              },
+              "titleFormatted": {
+                "en": "Illuminance is above [[lux]] lux",
+                "fr": "Luminosité supérieure à [[lux]] lux"
+              },
+              "args": [
+                {
+                  "name": "lux",
+                  "type": "number",
+                  "min": 0,
+                  "max": 10000,
+                  "step": 1,
+                  "title": {
+                    "en": "Lux",
+                    "fr": "Lux"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "motion_sensor_radar_mmwave_illuminance_below",
+              "title": {
+                "en": "Illuminance is below",
+                "fr": "Luminosité inférieure à"
+              },
+              "titleFormatted": {
+                "en": "Illuminance is below [[lux]] lux",
+                "fr": "Luminosité inférieure à [[lux]] lux"
+              },
+              "args": [
+                {
+                  "name": "lux",
+                  "type": "number",
+                  "min": 0,
+                  "max": 10000,
+                  "step": 1,
+                  "title": {
+                    "en": "Lux",
+                    "fr": "Lux"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "motion_sensor_radar_mmwave_temperature_above",
+              "title": {
+                "en": "Temperature is above",
+                "fr": "Température supérieure à"
+              },
+              "titleFormatted": {
+                "en": "Temperature is above [[temp]]°C",
+                "fr": "Température supérieure à [[temp]]°C"
+              },
+              "args": [
+                {
+                  "name": "temp",
+                  "type": "number",
+                  "min": -20,
+                  "max": 50,
+                  "step": 0.5,
+                  "title": {
+                    "en": "Temperature",
+                    "fr": "Température"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "motion_sensor_radar_mmwave_target_distance_less_than",
+              "title": {
+                "en": "Target distance is less than",
+                "fr": "Distance cible inférieure à"
+              },
+              "titleFormatted": {
+                "en": "Target distance < [[distance]] m",
+                "fr": "Distance cible < [[distance]] m"
+              },
+              "args": [
+                {
+                  "name": "distance",
+                  "type": "number",
+                  "min": 0,
+                  "max": 10,
+                  "step": 0.1,
+                  "title": {
+                    "en": "Distance (m)",
+                    "fr": "Distance (m)"
+                  }
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "id": "motion_sensor_radar_mmwave_set_radar_sensitivity",
+              "title": {
+                "en": "Set radar sensitivity",
+                "fr": "Définir sensibilité radar"
+              },
+              "titleFormatted": {
+                "en": "Set radar sensitivity to [[sensitivity]]",
+                "fr": "Définir sensibilité radar à [[sensitivity]]"
+              },
+              "args": [
+                {
+                  "name": "sensitivity",
+                  "type": "number",
+                  "min": 0,
+                  "max": 9,
+                  "step": 1,
+                  "title": {
+                    "en": "Sensitivity (0-9)",
+                    "fr": "Sensibilité (0-9)"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "motion_sensor_radar_mmwave_set_detection_range",
+              "title": {
+                "en": "Set detection range",
+                "fr": "Définir plage de détection"
+              },
+              "titleFormatted": {
+                "en": "Set detection range [[min]]m - [[max]]m",
+                "fr": "Définir plage de détection [[min]]m - [[max]]m"
+              },
+              "args": [
+                {
+                  "name": "min",
+                  "type": "number",
+                  "min": 0,
+                  "max": 9.5,
+                  "step": 0.5,
+                  "title": {
+                    "en": "Min (m)",
+                    "fr": "Min (m)"
+                  }
+                },
+                {
+                  "name": "max",
+                  "type": "number",
+                  "min": 0,
+                  "max": 9.5,
+                  "step": 0.5,
+                  "title": {
+                    "en": "Max (m)",
+                    "fr": "Max (m)"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "motion_sensor_radar_mmwave_set_fading_time",
+              "title": {
+                "en": "Set fading time",
+                "fr": "Définir délai d'absence"
+              },
+              "titleFormatted": {
+                "en": "Set fading time to [[seconds]] seconds",
+                "fr": "Définir délai d'absence à [[seconds]] secondes"
+              },
+              "args": [
+                {
+                  "name": "seconds",
+                  "type": "number",
+                  "min": 0,
+                  "max": 1500,
+                  "step": 1,
+                  "title": {
+                    "en": "Seconds",
+                    "fr": "Secondes"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "motion_sensor_radar_mmwave_set_detection_delay",
+              "title": {
+                "en": "Set detection delay",
+                "fr": "Définir délai de détection"
+              },
+              "titleFormatted": {
+                "en": "Set detection delay to [[seconds]] seconds",
+                "fr": "Définir délai de détection à [[seconds]] secondes"
+              },
+              "args": [
+                {
+                  "name": "seconds",
+                  "type": "number",
+                  "min": 0,
+                  "max": 10,
+                  "step": 1,
+                  "title": {
+                    "en": "Seconds",
+                    "fr": "Secondes"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      [
+        "presence_sensor_radar",
+        {
+          "driverName": "presence_sensor_radar",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\presence_sensor_radar\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "presence_sensor_radar_alarm_motion_true",
+              "title": {
+                "en": "Motion detected",
+                "fr": "Mouvement détecté"
+              }
+            },
+            {
+              "id": "presence_sensor_radar_alarm_motion_false",
+              "title": {
+                "en": "No motion",
+                "fr": "Aucun mouvement"
+              }
+            },
+            {
+              "id": "presence_sensor_radar_measure_battery_changed",
+              "title": {
+                "en": "Battery level changed",
+                "fr": "Niveau batterie changé"
+              },
+              "tokens": [
+                {
+                  "name": "battery",
+                  "type": "number",
+                  "title": {
+                    "en": "Battery (%)",
+                    "fr": "Batterie (%)"
+                  },
+                  "example": 75
+                }
+              ]
+            }
+          ],
+          "conditions": [],
+          "actions": []
+        }
+      ],
+      [
+        "rain_sensor",
+        {
+          "driverName": "rain_sensor",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\rain_sensor\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "rain_sensor_rain_detected",
+              "title": {
+                "en": "Rain detected",
+                "fr": "Pluie détectée"
+              }
+            },
+            {
+              "id": "rain_sensor_rain_stopped",
+              "title": {
+                "en": "Rain stopped",
+                "fr": "Pluie arrêtée"
+              }
+            },
+            {
+              "id": "rain_sensor_rain_intensity_changed",
+              "title": {
+                "en": "Rain intensity changed",
+                "fr": "Intensité pluie changée"
+              },
+              "tokens": [
+                {
+                  "name": "intensity",
+                  "type": "number",
+                  "title": {
+                    "en": "Intensity",
+                    "fr": "Intensité"
+                  },
+                  "example": 50
+                }
+              ]
+            },
+            {
+              "id": "rain_sensor_battery_low",
+              "title": {
+                "en": "Battery low",
+                "fr": "Batterie faible"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "id": "rain_sensor_is_raining",
+              "title": {
+                "en": "It is !{{raining|not raining}}",
+                "fr": "Il !{{pleut|ne pleut pas}}"
+              }
+            },
+            {
+              "id": "rain_sensor_rain_intensity_above",
+              "title": {
+                "en": "Rain intensity is above",
+                "fr": "Intensité pluie supérieure à"
+              },
+              "titleFormatted": {
+                "en": "Rain intensity is above [[intensity]]",
+                "fr": "Intensité pluie supérieure à [[intensity]]"
+              },
+              "args": [
+                {
+                  "name": "intensity",
+                  "type": "number",
+                  "min": 0,
+                  "max": 100,
+                  "step": 10
+                }
+              ]
+            }
+          ],
+          "actions": []
+        }
+      ],
+      [
+        "soil_sensor",
+        {
+          "driverName": "soil_sensor",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\soil_sensor\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "soil_sensor_soil_moisture_changed",
+              "title": {
+                "en": "Soil moisture changed",
+                "fr": "Humidité sol changée"
+              },
+              "tokens": [
+                {
+                  "name": "moisture",
+                  "type": "number",
+                  "title": {
+                    "en": "Moisture (%)",
+                    "fr": "Humidité (%)"
+                  },
+                  "example": 45
+                }
+              ]
+            },
+            {
+              "id": "soil_sensor_soil_temperature_changed",
+              "title": {
+                "en": "Soil temperature changed",
+                "fr": "Température sol changée"
+              },
+              "tokens": [
+                {
+                  "name": "temperature",
+                  "type": "number",
+                  "title": {
+                    "en": "Temperature (°C)",
+                    "fr": "Température (°C)"
+                  },
+                  "example": 18
+                }
+              ]
+            },
+            {
+              "id": "soil_sensor_soil_dry",
+              "title": {
+                "en": "Soil is dry",
+                "fr": "Sol sec"
+              }
+            },
+            {
+              "id": "soil_sensor_soil_wet",
+              "title": {
+                "en": "Soil is wet",
+                "fr": "Sol humide"
+              }
+            },
+            {
+              "id": "soil_sensor_battery_low",
+              "title": {
+                "en": "Battery low",
+                "fr": "Batterie faible"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "id": "soil_sensor_moisture_above",
+              "title": {
+                "en": "Soil moisture is above",
+                "fr": "Humidité sol supérieure à"
+              },
+              "titleFormatted": {
+                "en": "Soil moisture is above [[moisture]]%",
+                "fr": "Humidité sol supérieure à [[moisture]]%"
+              },
+              "args": [
+                {
+                  "name": "moisture",
+                  "type": "number",
+                  "min": 0,
+                  "max": 100,
+                  "step": 1
+                }
+              ]
+            },
+            {
+              "id": "soil_sensor_moisture_below",
+              "title": {
+                "en": "Soil moisture is below",
+                "fr": "Humidité sol inférieure à"
+              },
+              "titleFormatted": {
+                "en": "Soil moisture is below [[moisture]]%",
+                "fr": "Humidité sol inférieure à [[moisture]]%"
+              },
+              "args": [
+                {
+                  "name": "moisture",
+                  "type": "number",
+                  "min": 0,
+                  "max": 100,
+                  "step": 1
+                }
+              ]
+            },
+            {
+              "id": "soil_sensor_temperature_above",
+              "title": {
+                "en": "Soil temperature is above",
+                "fr": "Température sol supérieure à"
+              },
+              "titleFormatted": {
+                "en": "Soil temperature is above [[temp]]°C",
+                "fr": "Température sol supérieure à [[temp]]°C"
+              },
+              "args": [
+                {
+                  "name": "temp",
+                  "type": "number",
+                  "min": -20,
+                  "max": 60,
+                  "step": 1
+                }
+              ]
+            }
+          ],
+          "actions": []
+        }
+      ],
+      [
+        "water_leak_sensor",
+        {
+          "driverName": "water_leak_sensor",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\water_leak_sensor\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "water_leak_sensor_alarm_motion_true",
+              "title": {
+                "en": "Motion detected",
+                "fr": "Mouvement détecté"
+              }
+            },
+            {
+              "id": "water_leak_sensor_alarm_motion_false",
+              "title": {
+                "en": "No motion",
+                "fr": "Aucun mouvement"
+              }
+            },
+            {
+              "id": "water_leak_sensor_measure_temperature_changed",
+              "title": {
+                "en": "Temperature changed",
+                "fr": "Température changée"
+              },
+              "tokens": [
+                {
+                  "name": "temperature",
+                  "type": "number",
+                  "title": {
+                    "en": "Temperature",
+                    "fr": "Température"
+                  },
+                  "example": 20.5
+                }
+              ]
+            },
+            {
+              "id": "water_leak_sensor_alarm_water_true",
+              "title": {
+                "en": "Water leak detected",
+                "fr": "Fuite d'eau détectée"
+              }
+            },
+            {
+              "id": "water_leak_sensor_alarm_water_false",
+              "title": {
+                "en": "No water leak",
+                "fr": "Aucune fuite d'eau"
+              }
+            },
+            {
+              "id": "water_leak_sensor_measure_battery_changed",
+              "title": {
+                "en": "Battery level changed",
+                "fr": "Niveau batterie changé"
+              },
+              "tokens": [
+                {
+                  "name": "battery",
+                  "type": "number",
+                  "title": {
+                    "en": "Battery (%)",
+                    "fr": "Batterie (%)"
+                  },
+                  "example": 75
+                }
+              ]
+            }
+          ],
+          "conditions": [],
+          "actions": []
+        }
+      ]
+    ],
+    "lights": [
+      [
+        "bulb_dimmable",
+        {
+          "driverName": "bulb_dimmable",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\bulb_dimmable\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "bulb_dimmable_smart_bulb_dimmer_turned_on",
+              "title": {
+                "en": "Turned on",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "bulb_dimmable_smart_bulb_dimmer_turned_off",
+              "title": {
+                "en": "Turned off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "bulb_dimmable_smart_bulb_dimmer_dim_changed",
+              "title": {
+                "en": "Brightness changed",
+                "fr": "Luminosité changée"
+              },
+              "tokens": [
+                {
+                  "name": "dim",
+                  "type": "number",
+                  "title": {
+                    "en": "Brightness",
+                    "fr": "Luminosité"
+                  },
+                  "example": 0.75
+                }
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "id": "bulb_dimmable_smart_bulb_dimmer_is_on",
+              "title": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              },
+              "titleFormatted": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "id": "bulb_dimmable_smart_bulb_dimmer_turn_on",
+              "title": {
+                "en": "Turn on",
+                "fr": "Allumer"
+              }
+            },
+            {
+              "id": "bulb_dimmable_smart_bulb_dimmer_turn_off",
+              "title": {
+                "en": "Turn off",
+                "fr": "Éteindre"
+              }
+            },
+            {
+              "id": "bulb_dimmable_smart_bulb_dimmer_toggle",
+              "title": {
+                "en": "Toggle on or off",
+                "fr": "Basculer"
+              }
+            },
+            {
+              "id": "bulb_dimmable_smart_bulb_dimmer_set_dim",
+              "title": {
+                "en": "Set brightness to...",
+                "fr": "Régler la luminosité à..."
+              },
+              "args": [
+                {
+                  "name": "brightness",
+                  "type": "range",
+                  "min": 0,
+                  "max": 1,
+                  "step": 0.01,
+                  "label": "%",
+                  "labelMultiplier": 100,
+                  "title": {
+                    "en": "Brightness",
+                    "fr": "Luminosité"
+                  }
+                }
+              ],
+              "titleFormatted": {
+                "en": "Set brightness to [[brightness]]%",
+                "fr": "Régler la luminosité à [[brightness]]%"
+              }
+            }
+          ]
+        }
+      ],
+      [
+        "bulb_rgb",
+        {
+          "driverName": "bulb_rgb",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\bulb_rgb\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "bulb_rgb_smart_bulb_rgb_turned_on",
+              "title": {
+                "en": "Turned on",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "bulb_rgb_smart_bulb_rgb_turned_off",
+              "title": {
+                "en": "Turned off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "bulb_rgb_smart_bulb_rgb_dim_changed",
+              "title": {
+                "en": "Brightness changed",
+                "fr": "Luminosité changée"
+              },
+              "tokens": [
+                {
+                  "name": "dim",
+                  "type": "number",
+                  "title": {
+                    "en": "Brightness",
+                    "fr": "Luminosité"
+                  },
+                  "example": 0.75
+                }
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "id": "bulb_rgb_smart_bulb_rgb_is_on",
+              "title": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              },
+              "titleFormatted": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "id": "bulb_rgb_smart_bulb_rgb_turn_on",
+              "title": {
+                "en": "Turn on",
+                "fr": "Allumer"
+              }
+            },
+            {
+              "id": "bulb_rgb_smart_bulb_rgb_turn_off",
+              "title": {
+                "en": "Turn off",
+                "fr": "Éteindre"
+              }
+            },
+            {
+              "id": "bulb_rgb_smart_bulb_rgb_toggle",
+              "title": {
+                "en": "Toggle on or off",
+                "fr": "Basculer"
+              }
+            },
+            {
+              "id": "bulb_rgb_smart_bulb_rgb_set_dim",
+              "title": {
+                "en": "Set brightness to...",
+                "fr": "Régler la luminosité à..."
+              },
+              "args": [
+                {
+                  "name": "brightness",
+                  "type": "range",
+                  "min": 0,
+                  "max": 1,
+                  "step": 0.01,
+                  "label": "%",
+                  "labelMultiplier": 100,
+                  "title": {
+                    "en": "Brightness",
+                    "fr": "Luminosité"
+                  }
+                }
+              ],
+              "titleFormatted": {
+                "en": "Set brightness to [[brightness]]%",
+                "fr": "Régler la luminosité à [[brightness]]%"
+              }
+            }
+          ]
+        }
+      ],
+      [
+        "bulb_rgbw",
+        {
+          "driverName": "bulb_rgbw",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\bulb_rgbw\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "bulb_rgbw_bulb_rgbw_turned_on",
+              "title": {
+                "en": "Turned on",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "bulb_rgbw_bulb_rgbw_turned_off",
+              "title": {
+                "en": "Turned off",
+                "fr": "Éteint"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "id": "bulb_rgbw_bulb_rgbw_is_on",
+              "title": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              },
+              "titleFormatted": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "id": "bulb_rgbw_bulb_rgbw_turn_on",
+              "title": {
+                "en": "Turn on",
+                "fr": "Allumer"
+              }
+            },
+            {
+              "id": "bulb_rgbw_bulb_rgbw_turn_off",
+              "title": {
+                "en": "Turn off",
+                "fr": "Éteindre"
+              }
+            },
+            {
+              "id": "bulb_rgbw_bulb_rgbw_toggle",
+              "title": {
+                "en": "Toggle on or off",
+                "fr": "Basculer"
+              }
+            }
+          ]
+        }
+      ],
+      [
+        "bulb_tunable_white",
+        {
+          "driverName": "bulb_tunable_white",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\bulb_tunable_white\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "bulb_tunable_white_bulb_tunable_turned_on",
+              "title": {
+                "en": "Turned on",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "bulb_tunable_white_bulb_tunable_turned_off",
+              "title": {
+                "en": "Turned off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "bulb_tunable_white_bulb_tunable_dim_changed",
+              "title": {
+                "en": "Brightness changed",
+                "fr": "Luminosité changée"
+              },
+              "tokens": [
+                {
+                  "name": "dim",
+                  "type": "number",
+                  "title": {
+                    "en": "Brightness",
+                    "fr": "Luminosité"
+                  },
+                  "example": 0.75
+                }
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "id": "bulb_tunable_white_bulb_tunable_is_on",
+              "title": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              },
+              "titleFormatted": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "id": "bulb_tunable_white_bulb_tunable_turn_on",
+              "title": {
+                "en": "Turn on",
+                "fr": "Allumer"
+              }
+            },
+            {
+              "id": "bulb_tunable_white_bulb_tunable_turn_off",
+              "title": {
+                "en": "Turn off",
+                "fr": "Éteindre"
+              }
+            },
+            {
+              "id": "bulb_tunable_white_bulb_tunable_toggle",
+              "title": {
+                "en": "Toggle on or off",
+                "fr": "Basculer"
+              }
+            },
+            {
+              "id": "bulb_tunable_white_bulb_tunable_set_dim",
+              "title": {
+                "en": "Set brightness to...",
+                "fr": "Régler la luminosité à..."
+              },
+              "args": [
+                {
+                  "name": "brightness",
+                  "type": "range",
+                  "min": 0,
+                  "max": 1,
+                  "step": 0.01,
+                  "label": "%",
+                  "labelMultiplier": 100,
+                  "title": {
+                    "en": "Brightness",
+                    "fr": "Luminosité"
+                  }
+                }
+              ],
+              "titleFormatted": {
+                "en": "Set brightness to [[brightness]]%",
+                "fr": "Régler la luminosité à [[brightness]]%"
+              }
+            }
+          ]
+        }
+      ],
+      [
+        "bulb_white",
+        {
+          "driverName": "bulb_white",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\bulb_white\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "bulb_white_smart_bulb_white_turned_on",
+              "title": {
+                "en": "Turned on",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "bulb_white_smart_bulb_white_turned_off",
+              "title": {
+                "en": "Turned off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "bulb_white_smart_bulb_white_dim_changed",
+              "title": {
+                "en": "Brightness changed",
+                "fr": "Luminosité changée"
+              },
+              "tokens": [
+                {
+                  "name": "dim",
+                  "type": "number",
+                  "title": {
+                    "en": "Brightness",
+                    "fr": "Luminosité"
+                  },
+                  "example": 0.75
+                }
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "id": "bulb_white_smart_bulb_white_is_on",
+              "title": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              },
+              "titleFormatted": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "id": "bulb_white_smart_bulb_white_turn_on",
+              "title": {
+                "en": "Turn on",
+                "fr": "Allumer"
+              }
+            },
+            {
+              "id": "bulb_white_smart_bulb_white_turn_off",
+              "title": {
+                "en": "Turn off",
+                "fr": "Éteindre"
+              }
+            },
+            {
+              "id": "bulb_white_smart_bulb_white_toggle",
+              "title": {
+                "en": "Toggle on or off",
+                "fr": "Basculer"
+              }
+            },
+            {
+              "id": "bulb_white_smart_bulb_white_set_dim",
+              "title": {
+                "en": "Set brightness to...",
+                "fr": "Régler la luminosité à..."
+              },
+              "args": [
+                {
+                  "name": "brightness",
+                  "type": "range",
+                  "min": 0,
+                  "max": 1,
+                  "step": 0.01,
+                  "label": "%",
+                  "labelMultiplier": 100,
+                  "title": {
+                    "en": "Brightness",
+                    "fr": "Luminosité"
+                  }
+                }
+              ],
+              "titleFormatted": {
+                "en": "Set brightness to [[brightness]]%",
+                "fr": "Régler la luminosité à [[brightness]]%"
+              }
+            }
+          ]
+        }
+      ],
+      [
+        "led_strip",
+        {
+          "driverName": "led_strip",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\led_strip\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "led_strip_led_strip_turned_on",
+              "title": {
+                "en": "Turned on",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "led_strip_led_strip_turned_off",
+              "title": {
+                "en": "Turned off",
+                "fr": "Éteint"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "id": "led_strip_led_strip_is_on",
+              "title": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              },
+              "titleFormatted": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "id": "led_strip_led_strip_turn_on",
+              "title": {
+                "en": "Turn on",
+                "fr": "Allumer"
+              }
+            },
+            {
+              "id": "led_strip_led_strip_turn_off",
+              "title": {
+                "en": "Turn off",
+                "fr": "Éteindre"
+              }
+            },
+            {
+              "id": "led_strip_led_strip_toggle",
+              "title": {
+                "en": "Toggle on or off",
+                "fr": "Basculer"
+              }
+            }
+          ]
+        }
+      ],
+      [
+        "led_strip_advanced",
+        {
+          "driverName": "led_strip_advanced",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\led_strip_advanced\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "led_strip_advanced_turned_on",
+              "title": {
+                "en": "Turned on",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "led_strip_advanced_turned_off",
+              "title": {
+                "en": "Turned off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "led_strip_advanced_dim_changed",
+              "title": {
+                "en": "Brightness changed",
+                "fr": "Luminosité changée"
+              },
+              "tokens": [
+                {
+                  "name": "dim",
+                  "type": "number",
+                  "title": {
+                    "en": "Brightness",
+                    "fr": "Luminosité"
+                  },
+                  "example": 0.75
+                }
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "id": "led_strip_advanced_is_on",
+              "title": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              },
+              "titleFormatted": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "id": "led_strip_advanced_turn_on",
+              "title": {
+                "en": "Turn on",
+                "fr": "Allumer"
+              }
+            },
+            {
+              "id": "led_strip_advanced_turn_off",
+              "title": {
+                "en": "Turn off",
+                "fr": "Éteindre"
+              }
+            },
+            {
+              "id": "led_strip_advanced_toggle",
+              "title": {
+                "en": "Toggle on or off",
+                "fr": "Basculer"
+              }
+            },
+            {
+              "id": "led_strip_advanced_set_dim",
+              "title": {
+                "en": "Set brightness to...",
+                "fr": "Régler la luminosité à..."
+              },
+              "args": [
+                {
+                  "name": "brightness",
+                  "type": "range",
+                  "min": 0,
+                  "max": 1,
+                  "step": 0.01,
+                  "label": "%",
+                  "labelMultiplier": 100,
+                  "title": {
+                    "en": "Brightness",
+                    "fr": "Luminosité"
+                  }
+                }
+              ],
+              "titleFormatted": {
+                "en": "Set brightness to [[brightness]]%",
+                "fr": "Régler la luminosité à [[brightness]]%"
+              }
+            }
+          ]
+        }
+      ],
+      [
+        "led_strip_rgbw",
+        {
+          "driverName": "led_strip_rgbw",
+          "filePath": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\led_strip_rgbw\\driver.flow.compose.json",
+          "triggers": [
+            {
+              "id": "led_strip_rgbw_led_strip_rgbw_turned_on",
+              "title": {
+                "en": "Turned on",
+                "fr": "Allumé"
+              }
+            },
+            {
+              "id": "led_strip_rgbw_led_strip_rgbw_turned_off",
+              "title": {
+                "en": "Turned off",
+                "fr": "Éteint"
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "id": "led_strip_rgbw_led_strip_rgbw_is_on",
+              "title": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              },
+              "titleFormatted": {
+                "en": "Is turned !{{on|off}}",
+                "fr": "Est !{{allumé|éteint}}"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "id": "led_strip_rgbw_led_strip_rgbw_turn_on",
+              "title": {
+                "en": "Turn on",
+                "fr": "Allumer"
+              }
+            },
+            {
+              "id": "led_strip_rgbw_led_strip_rgbw_turn_off",
+              "title": {
+                "en": "Turn off",
+                "fr": "Éteindre"
+              }
+            },
+            {
+              "id": "led_strip_rgbw_led_strip_rgbw_toggle",
+              "title": {
+                "en": "Toggle on or off",
+                "fr": "Basculer"
+              }
+            }
+          ]
+        }
+      ]
+    ]
+  },
+  "inconsistencies": [
+    {
+      "driver": "air_quality_comprehensive",
+      "flowId": "air_quality_comprehensive_comprehensive_air_monitor_measure_temperature_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "air_quality_comprehensive",
+      "flowId": "air_quality_comprehensive_comprehensive_air_monitor_measure_humidity_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "air_quality_comprehensive",
+      "flowId": "air_quality_comprehensive_comprehensive_air_monitor_measure_battery_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_dimmable",
+      "flowId": "bulb_dimmable_smart_bulb_dimmer_turned_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_dimmable",
+      "flowId": "bulb_dimmable_smart_bulb_dimmer_turned_off",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_dimmable",
+      "flowId": "bulb_dimmable_smart_bulb_dimmer_dim_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_dimmable",
+      "flowId": "bulb_dimmable_smart_bulb_dimmer_is_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_dimmable",
+      "flowId": "bulb_dimmable_smart_bulb_dimmer_turn_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_dimmable",
+      "flowId": "bulb_dimmable_smart_bulb_dimmer_turn_off",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_dimmable",
+      "flowId": "bulb_dimmable_smart_bulb_dimmer_toggle",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_dimmable",
+      "flowId": "bulb_dimmable_smart_bulb_dimmer_set_dim",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_rgb",
+      "flowId": "bulb_rgb_smart_bulb_rgb_turned_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_rgb",
+      "flowId": "bulb_rgb_smart_bulb_rgb_turned_off",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_rgb",
+      "flowId": "bulb_rgb_smart_bulb_rgb_dim_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_rgb",
+      "flowId": "bulb_rgb_smart_bulb_rgb_is_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_rgb",
+      "flowId": "bulb_rgb_smart_bulb_rgb_turn_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_rgb",
+      "flowId": "bulb_rgb_smart_bulb_rgb_turn_off",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_rgb",
+      "flowId": "bulb_rgb_smart_bulb_rgb_toggle",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_rgb",
+      "flowId": "bulb_rgb_smart_bulb_rgb_set_dim",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_white",
+      "flowId": "bulb_white_smart_bulb_white_turned_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_white",
+      "flowId": "bulb_white_smart_bulb_white_turned_off",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_white",
+      "flowId": "bulb_white_smart_bulb_white_dim_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_white",
+      "flowId": "bulb_white_smart_bulb_white_is_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_white",
+      "flowId": "bulb_white_smart_bulb_white_turn_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_white",
+      "flowId": "bulb_white_smart_bulb_white_turn_off",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_white",
+      "flowId": "bulb_white_smart_bulb_white_toggle",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "bulb_white",
+      "flowId": "bulb_white_smart_bulb_white_set_dim",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "button_wireless_1",
+      "flowId": "button_wireless_1_button_1gang_measure_battery_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "button_wireless_2",
+      "flowId": "button_wireless_2_button_2gang_measure_battery_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "button_wireless_3",
+      "flowId": "button_wireless_3_button_3gang_measure_battery_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "button_wireless_4",
+      "flowId": "button_wireless_4_button_4gang_measure_battery_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "button_wireless_6",
+      "flowId": "button_wireless_6_button_6gang_measure_battery_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "button_wireless_8",
+      "flowId": "button_wireless_8_button_8gang_measure_battery_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "contact_sensor",
+      "flowId": "contact_sensor_contact_sensor_measure_battery_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_air_conditioner",
+      "flowId": "hvac_air_conditioner_air_conditioner_hybrid_turned_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_air_conditioner",
+      "flowId": "hvac_air_conditioner_air_conditioner_hybrid_turned_off",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_air_conditioner",
+      "flowId": "hvac_air_conditioner_air_conditioner_hybrid_target_temperature_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_air_conditioner",
+      "flowId": "hvac_air_conditioner_air_conditioner_hybrid_measure_temperature_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_air_conditioner",
+      "flowId": "hvac_air_conditioner_air_conditioner_hybrid_is_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_air_conditioner",
+      "flowId": "hvac_air_conditioner_air_conditioner_hybrid_turn_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_air_conditioner",
+      "flowId": "hvac_air_conditioner_air_conditioner_hybrid_turn_off",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_air_conditioner",
+      "flowId": "hvac_air_conditioner_air_conditioner_hybrid_toggle",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_air_conditioner",
+      "flowId": "hvac_air_conditioner_air_conditioner_hybrid_set_target_temperature",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_dehumidifier",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_turned_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_dehumidifier",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_turned_off",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_dehumidifier",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_measure_humidity_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_dehumidifier",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_measure_temperature_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_dehumidifier",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_measure_power_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_dehumidifier",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_alarm_water_true",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_dehumidifier",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_alarm_water_false",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_dehumidifier",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_is_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_dehumidifier",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_turn_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_dehumidifier",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_turn_off",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "hvac_dehumidifier",
+      "flowId": "hvac_dehumidifier_dehumidifier_hybrid_toggle",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "ir_blaster",
+      "flowId": "ir_code_learned",
+      "issue": "ID_PREFIX_MISMATCH",
+      "expected": "Should start with ir_blaster",
+      "actual": "ir_code_learned"
+    },
+    {
+      "driver": "ir_blaster",
+      "flowId": "send_ir_code",
+      "issue": "ID_PREFIX_MISMATCH",
+      "expected": "Should start with ir_blaster",
+      "actual": "send_ir_code"
+    },
+    {
+      "driver": "ir_blaster",
+      "flowId": "start_ir_learning",
+      "issue": "ID_PREFIX_MISMATCH",
+      "expected": "Should start with ir_blaster",
+      "actual": "start_ir_learning"
+    },
+    {
+      "driver": "ir_blaster",
+      "flowId": "stop_ir_learning",
+      "issue": "ID_PREFIX_MISMATCH",
+      "expected": "Should start with ir_blaster",
+      "actual": "stop_ir_learning"
+    },
+    {
+      "driver": "lock_smart",
+      "flowId": "lock_smart_locked",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "lock_smart",
+      "flowId": "lock_smart_unlocked",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "lock_smart",
+      "flowId": "lock_smart_measure_battery_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "lock_smart",
+      "flowId": "lock_smart_is_locked",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "lock_smart",
+      "flowId": "lock_smart_lock",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "lock_smart",
+      "flowId": "lock_smart_unlock",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "motion_sensor_radar_mmwave",
+      "flowId": "motion_sensor_radar_mmwave_target_distance_less_than",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "plug_smart",
+      "flowId": "plug_smart_onoff_true",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "plug_smart",
+      "flowId": "plug_smart_is_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "plug_smart",
+      "flowId": "plug_smart_turn_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "plug_smart",
+      "flowId": "plug_smart_turn_off",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "plug_smart",
+      "flowId": "plug_smart_toggle",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "smoke_detector_advanced",
+      "flowId": "smoke_detector_advanced_smart_smoke_detector_advanced_alarm_smoke_true",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "smoke_detector_advanced",
+      "flowId": "smoke_detector_advanced_smart_smoke_detector_advanced_measure_battery_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_1gang",
+      "flowId": "switch_1gang_smart_switch_1gang_hybrid_turned_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_1gang",
+      "flowId": "switch_1gang_smart_switch_1gang_hybrid_turned_off",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_1gang",
+      "flowId": "switch_1gang_smart_switch_1gang_hybrid_dim_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_1gang",
+      "flowId": "switch_1gang_smart_switch_1gang_hybrid_is_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_1gang",
+      "flowId": "switch_1gang_smart_switch_1gang_hybrid_turn_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_1gang",
+      "flowId": "switch_1gang_smart_switch_1gang_hybrid_turn_off",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_1gang",
+      "flowId": "switch_1gang_smart_switch_1gang_hybrid_toggle",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_1gang",
+      "flowId": "switch_1gang_smart_switch_1gang_hybrid_set_dim",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_3gang",
+      "flowId": "switch_3gang_smart_switch_3gang_hybrid_turned_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_3gang",
+      "flowId": "switch_3gang_smart_switch_3gang_hybrid_turned_off",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_3gang",
+      "flowId": "switch_3gang_smart_switch_3gang_hybrid_is_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_3gang",
+      "flowId": "switch_3gang_smart_switch_3gang_hybrid_turn_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_3gang",
+      "flowId": "switch_3gang_smart_switch_3gang_hybrid_turn_off",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_3gang",
+      "flowId": "switch_3gang_smart_switch_3gang_hybrid_toggle",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_4gang",
+      "flowId": "switch_4gang_smart_switch_4gang_hybrid_turned_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_4gang",
+      "flowId": "switch_4gang_smart_switch_4gang_hybrid_turned_off",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_4gang",
+      "flowId": "switch_4gang_smart_switch_4gang_hybrid_dim_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_4gang",
+      "flowId": "switch_4gang_smart_switch_4gang_hybrid_is_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_4gang",
+      "flowId": "switch_4gang_smart_switch_4gang_hybrid_turn_on",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_4gang",
+      "flowId": "switch_4gang_smart_switch_4gang_hybrid_turn_off",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_4gang",
+      "flowId": "switch_4gang_smart_switch_4gang_hybrid_toggle",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "switch_4gang",
+      "flowId": "switch_4gang_smart_switch_4gang_hybrid_set_dim",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "water_valve_smart",
+      "flowId": "water_valve_smart_alarm_motion_true",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "water_valve_smart",
+      "flowId": "water_valve_smart_alarm_motion_false",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "water_valve_smart",
+      "flowId": "water_valve_smart_measure_temperature_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "water_valve_smart",
+      "flowId": "water_valve_smart_alarm_water_true",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "water_valve_smart",
+      "flowId": "water_valve_smart_alarm_water_false",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "water_valve_smart",
+      "flowId": "water_valve_smart_measure_battery_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    },
+    {
+      "driver": "weather_station_outdoor",
+      "flowId": "weather_station_outdoor_outdoor_temperature_changed",
+      "issue": "ID_TOO_VERBOSE",
+      "suggestion": "Simplify ID structure"
+    }
+  ],
+  "optimizations": [
+    {
+      "category": "switches",
+      "type": "DUPLICATE_TRIGGERS",
+      "flowType": "turned_on",
+      "count": 21,
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "switch_wall_5gang",
+        "switch_wall_6gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang"
+      ],
+      "recommendation": "Merge into unified flow with driver filter"
+    },
+    {
+      "category": "switches",
+      "type": "DUPLICATE_TRIGGERS",
+      "flowType": "turned_off",
+      "count": 21,
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "switch_wall_5gang",
+        "switch_wall_6gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang"
+      ],
+      "recommendation": "Merge into unified flow with driver filter"
+    },
+    {
+      "category": "switches",
+      "type": "DUPLICATE_TRIGGERS",
+      "flowType": "dim_changed",
+      "count": 3,
+      "drivers": [
+        "switch_1gang",
+        "switch_4gang",
+        "switch_wall_5gang"
+      ],
+      "recommendation": "Merge into unified flow with driver filter"
+    },
+    {
+      "category": "switches",
+      "type": "DUPLICATE_CONDITIONS",
+      "flowType": "is_on",
+      "count": 23,
+      "drivers": [
+        "module_mini_switch",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "switch_wall_5gang",
+        "switch_wall_6gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wireless"
+      ],
+      "recommendation": "Merge into unified flow with driver filter"
+    },
+    {
+      "category": "switches",
+      "type": "DUPLICATE_ACTIONS",
+      "flowType": "turn_on",
+      "count": 25,
+      "drivers": [
+        "module_mini_switch",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "switch_wall_5gang",
+        "switch_wall_6gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wireless"
+      ],
+      "recommendation": "Merge into unified flow with driver filter"
+    },
+    {
+      "category": "switches",
+      "type": "DUPLICATE_ACTIONS",
+      "flowType": "turn_off",
+      "count": 25,
+      "drivers": [
+        "module_mini_switch",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "switch_wall_5gang",
+        "switch_wall_6gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wall_8gang",
+        "switch_wireless"
+      ],
+      "recommendation": "Merge into unified flow with driver filter"
+    },
+    {
+      "category": "switches",
+      "type": "DUPLICATE_ACTIONS",
+      "flowType": "toggle",
+      "count": 15,
+      "drivers": [
+        "module_mini_switch",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "switch_wall_5gang",
+        "switch_wall_6gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wall_7gang",
+        "switch_wireless"
+      ],
+      "recommendation": "Merge into unified flow with driver filter"
+    },
+    {
+      "category": "switches",
+      "type": "DUPLICATE_ACTIONS",
+      "flowType": "set_dim",
+      "count": 3,
+      "drivers": [
+        "switch_1gang",
+        "switch_4gang",
+        "switch_wall_5gang"
+      ],
+      "recommendation": "Merge into unified flow with driver filter"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "triggers": [
+    {
+      "id": "plug_smart_onoff_true",
+      "title": "Turned on",
+      "tokens": [
+        {
+          "name": "timestamp",
+          "type": "string",
+          "title": "Timestamp"
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "plug_smart_is_on",
+      "title": "Is !{{on|off}}"
+    }
+  ],
+  "actions": [
+    {
+      "id": "plug_smart_turn_on",
+      "title": "Turn on"
+    },
+    {
+      "id": "plug_smart_turn_off",
+      "title": "Turn off"
+    },
+    {
+      "id": "plug_smart_toggle",
+      "title": "Toggle"
+    }
+  ]
+}
+

@@ -1,0 +1,29 @@
+{
+  "triggers": [
+    {
+      "id": "button_emergency_sos_pressed",
+      "title": {
+        "en": "SOS Button pressed",
+        "fr": "Bouton SOS appuyé",
+        "nl": "SOS-knop ingedrukt",
+        "de": "SOS-Taste gedrückt",
+        "it": "Pulsante SOS premuto",
+        "es": "Botón SOS presionado"
+      }
+    },
+    {
+      "id": "button_emergency_sos_measure_battery_changed",
+      "title": "Battery changed",
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": "Battery"
+        }
+      ]
+    }
+  ],
+  "conditions": [],
+  "actions": []
+}
+
