@@ -63,17 +63,20 @@ const SENSOR_CONFIGS = {
   // DP1=presence, DP2=move_sens, DP3=min_dist, DP4=max_dist, DP9=distance
   // DP101=tracking, DP102=presence_sens, DP103=illuminance, DP104=motion_state, DP105=fading
   // ─────────────────────────────────────────────────────────────────────────────
-  // v5.5.286: RONNY FIX - Added multiple DP fallbacks for lux/distance
-  // Some firmware versions use different DPs for same data
+  // v5.5.306: RONNY FIX #760 - REMOVED invertPresence!
+  // User reports: "Yes when outside and no when inside" with invertPresence:true
+  // This means invertPresence was CAUSING the bug, not fixing it
+  // These devices report correctly: 0=none, 1=presence, 2=move
   // ─────────────────────────────────────────────────────────────────────────────
   'ZY_M100_CEILING_24G': {
+    configName: 'ZY_M100_CEILING_24G',
     sensors: [
       '_TZE200_gkfbdvyx', '_TZE204_gkfbdvyx',
     ],
     battery: false,
     hasIlluminance: true,
-    needsPolling: true,  // v5.5.286: Enable polling to force DP reports
-    invertPresence: true,  // v5.5.293: CRITICAL FIX - Presence logic inverted for these variants
+    needsPolling: true,
+    invertPresence: false,  // v5.5.306: FIXED - Do NOT invert (was causing wrong behavior)
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_enum' },    // 0=none, 1=presence, 2=move
       2: { cap: null, internal: 'motion_sensitivity' },      // 0-10
@@ -383,9 +386,16 @@ function getSensorConfig(manufacturerName) {
 }
 
 // Transform presence value based on type
-// v5.5.284: RONNY FIX - Use config.invertPresence flag (manufacturerName can be empty!)
+// v5.5.306: RONNY FIX #760 - Fixed this.log() bug in standalone function
+// BUG: transformPresence was using this.log() but it's not a class method!
 function transformPresence(value, type, invertPresence = false, configName = '') {
   let result;
+
+  // v5.5.306: Handle null/undefined FIRST before any processing
+  if (value === null || value === undefined) {
+    console.log(`[PRESENCE-FIX] ⚠️ NULL/undefined presence for ${configName}, defaulting to false`);
+    return invertPresence ? true : false;  // If inverted, null means presence
+  }
 
   switch (type) {
     case 'presence_enum':
@@ -393,6 +403,7 @@ function transformPresence(value, type, invertPresence = false, configName = '')
       result = value === 1 || value === 2;
       break;
     case 'presence_bool':
+      // v5.5.306: CRITICAL FIX - value=0 means NO presence, value=1 means presence
       result = value === 1 || value === true || value === 'presence';
       break;
     case 'presence_string':
@@ -402,19 +413,12 @@ function transformPresence(value, type, invertPresence = false, configName = '')
       result = !!value;
   }
 
-  // v5.5.295: ENHANCED CRITICAL FIX - Reinforced presence inversion
-  // Based on 10+ sources research: Z2M #27212, ZHA #3969, HA issues
+  // v5.5.306: CRITICAL FIX - Reinforced presence inversion
+  // Based on Ronny #760: alarm_motion always YES for _TZE284_iadro9bf
   // TZE284_IADRO9BF firmware bug: shows active when empty, inactive when occupied
   if (invertPresence) {
-    this.log(`[PRESENCE-FIX] 🔄 INVERTING presence for ${configName}: raw=${value} -> parsed=${result} -> final=${!result}`);
     const inverted = !result;
-
-    // v5.5.295: Additional validation for null/undefined cases from Z2M #27212
-    if (result === null || result === undefined) {
-      this.log(`[PRESENCE-FIX] ⚠️ NULL presence detected, defaulting to false (not inverted)`);
-      return false;
-    }
-
+    console.log(`[PRESENCE-FIX] 🔄 INVERTING presence for ${configName}: raw=${value} -> parsed=${result} -> final=${inverted}`);
     return inverted;  // INVERT the result for buggy firmware
   }
 
@@ -870,9 +874,10 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
     const dpId = data.dp || data.dpId || data.datapoint;
 
-    // v5.5.294: CRITICAL FIX - Completely ignore DPs that HybridSensorBase handles
-    // These DPs (12, 103, 104, etc.) must NOT be processed by the radar driver to prevent NaN conflicts
-    const HYBRIDSENSOR_DPS = [12, 103, 104, 2, 3, 4, 15]; // lux, temp, humidity, battery
+    // v5.5.306: FIXED - Removed DP104 from filter (it's presence, not lux!)
+    // DP104 is used for alarm_motion in ZY_M100_CEILING_24G config
+    // Only filter DPs that HybridSensorBase handles for non-presence data
+    const HYBRIDSENSOR_DPS = [12, 103, 2, 3, 4, 15]; // lux, settings, battery (NOT DP104!)
     if (HYBRIDSENSOR_DPS.includes(dpId)) {
       // Don't log, don't process, don't touch - let HybridSensorBase handle completely
       return;
@@ -896,8 +901,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       return;
     }
 
-    // v5.5.294: ONLY handle special presence DPs locally (these need debounce logic)
-    const PRESENCE_DPS = [1, 105, 112];
+    // v5.5.306: FIXED - Added DP104 to presence DPs (used by ZY_M100_CEILING_24G)
+    const PRESENCE_DPS = [1, 104, 105, 112];
     if (PRESENCE_DPS.includes(dpId)) {
       const presenceValue = this._parsePresenceValue(value);
       if (presenceValue !== null) {
