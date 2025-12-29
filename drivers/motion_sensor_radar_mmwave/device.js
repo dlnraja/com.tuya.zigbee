@@ -173,11 +173,127 @@ class MotionSensorRadarDevice extends HybridSensorBase {
     this._lastEventTime = Date.now();
     this._setupOfflineCheck();
 
+    // v5.5.295: FORUM FIX - Continuous luminance updates
+    // Based on research from 10+ sources: Z2M, ZHA, HA Community, etc.
+    await this._setupContinuousLuminanceReporting(zclNode);
+
     // v5.5.26: Initial data query at inclusion
     this._sendInitialDataQuery();
 
     // v5.5.29: Setup advanced wake strategies for better data retrieval
     this._setupWakeStrategies();
+  }
+
+  /**
+   * v5.5.295: FORUM FIX - Setup continuous luminance reporting
+   * Based on research from 10+ sources: Zigbee2MQTT, ZHA, HA Community, etc.
+   *
+   * CRITICAL FINDINGS:
+   * - Illuminance cluster (0x0400) should report independently from motion
+   * - Configure reporting intervals: min=30s, max=300s, change=50lux
+   * - Motion sensors tie luminance to motion detection - this fixes it
+   */
+  async _setupContinuousLuminanceReporting(zclNode) {
+    if (!this.hasCapability('measure_luminance')) {
+      this.log('[LUMINANCE-FIX] ⚠️ No measure_luminance capability - skipping');
+      return;
+    }
+
+    this.log('[LUMINANCE-FIX] 🌞 Setting up continuous luminance reporting...');
+    this.log('[LUMINANCE-FIX] Research base: Z2M ZG-204ZL, Tuya docs, HA Community, ZHA, etc.');
+
+    try {
+      const endpoint = zclNode?.endpoints?.[1];
+      if (!endpoint) {
+        this.log('[LUMINANCE-FIX] ⚠️ No endpoint 1 found');
+        return;
+      }
+
+      // Try to find illuminance measurement cluster (0x0400)
+      const illuminanceCluster = endpoint.clusters?.illuminanceMeasurement
+        || endpoint.clusters?.msIlluminanceMeasurement
+        || endpoint.clusters?.[0x0400]
+        || endpoint.clusters?.['1024'];
+
+      if (illuminanceCluster) {
+        this.log('[LUMINANCE-FIX] ✅ Illuminance cluster found - configuring reporting');
+
+        try {
+          // Configure autonomous reporting (independent from motion)
+          await illuminanceCluster.configureReporting({
+            measuredValue: {
+              minInterval: 30,      // 30 seconds minimum
+              maxInterval: 300,     // 5 minutes maximum
+              minChange: 50         // 50 lux minimum change
+            }
+          });
+
+          this.log('[LUMINANCE-FIX] ✅ Illuminance reporting configured: 30s-300s, Δ50lux');
+
+          // Setup attribute listener for continuous updates
+          illuminanceCluster.on('attr.measuredValue', async (value) => {
+            if (value !== null && value !== undefined && value >= 0) {
+              this.log(`[LUMINANCE-FIX] 🌞 Continuous luminance update: ${value} lux`);
+              await this.setCapabilityValue('measure_luminance', value).catch(() => { });
+            }
+          });
+
+          // Try initial read
+          try {
+            const initialValue = await illuminanceCluster.readAttributes(['measuredValue']);
+            if (initialValue?.measuredValue !== undefined && initialValue.measuredValue >= 0) {
+              this.log(`[LUMINANCE-FIX] 📖 Initial luminance: ${initialValue.measuredValue} lux`);
+              await this.setCapabilityValue('measure_luminance', initialValue.measuredValue).catch(() => { });
+            }
+          } catch (e) {
+            this.log('[LUMINANCE-FIX] ⚠️ Initial read failed (normal for sleepy devices)');
+          }
+
+        } catch (configError) {
+          this.log('[LUMINANCE-FIX] ⚠️ Configure reporting failed:', configError.message);
+          this.log('[LUMINANCE-FIX] 💡 Device may not support ZCL reporting - will use Tuya DP');
+        }
+
+      } else {
+        this.log('[LUMINANCE-FIX] ⚠️ No illuminance cluster - using Tuya DP only');
+        this.log('[LUMINANCE-FIX] 📋 Available clusters:', Object.keys(endpoint.clusters || {}));
+      }
+
+      // Additional fix: Setup periodic Tuya DP12 queries for continuous updates
+      this._setupPeriodicLuminanceQuery();
+
+    } catch (error) {
+      this.log('[LUMINANCE-FIX] ❌ Setup error:', error.message);
+    }
+  }
+
+  /**
+   * v5.5.295: Setup periodic luminance query via Tuya DP
+   * Fallback for devices that don't support ZCL reporting
+   */
+  _setupPeriodicLuminanceQuery() {
+    // Clear existing timer
+    if (this._luminanceQueryTimer) {
+      clearInterval(this._luminanceQueryTimer);
+    }
+
+    // Query luminance DP every 2 minutes for continuous updates
+    this._luminanceQueryTimer = setInterval(async () => {
+      try {
+        if (this.safeTuyaDataQuery) {
+          // Query DP12 (main illuminance) and DP103 (alt illuminance)
+          await this.safeTuyaDataQuery([12, 103], {
+            logPrefix: '[LUMINANCE-PERIODIC]',
+            delayBetweenQueries: 100,
+            timeout: 3000
+          });
+        }
+      } catch (e) {
+        // Silent - device may be asleep
+      }
+    }, 2 * 60 * 1000); // Every 2 minutes
+
+    this.log('[LUMINANCE-FIX] ⏰ Periodic DP query started (every 2min)');
   }
 
   /**
@@ -287,12 +403,20 @@ class MotionSensorRadarDevice extends HybridSensorBase {
 
   /**
    * v5.5.26: Cleanup on device deletion
+   * v5.5.295: Added luminance timer cleanup
    */
   async onDeleted() {
     if (this._offlineCheckTimer) {
       clearInterval(this._offlineCheckTimer);
       this._offlineCheckTimer = null;
     }
+
+    // v5.5.295: Cleanup luminance query timer
+    if (this._luminanceQueryTimer) {
+      clearInterval(this._luminanceQueryTimer);
+      this._luminanceQueryTimer = null;
+    }
+
     await super.onDeleted?.();
   }
 
