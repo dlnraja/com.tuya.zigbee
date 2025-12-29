@@ -1,0 +1,62 @@
+{
+  "triggers": [
+    {
+      "id": "button_wireless_button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      }
+    },
+    {
+      "id": "button_wireless_button_double_pressed",
+      "title": {
+        "en": "Button double pressed",
+        "fr": "Double appui bouton"
+      }
+    },
+    {
+      "id": "button_wireless_button_long_pressed",
+      "title": {
+        "en": "Button long pressed",
+        "fr": "Appui long bouton"
+      }
+    },
+    {
+      "id": "button_wireless_button_released",
+      "title": {
+        "en": "Button released",
+        "fr": "Bouton relâché"
+      }
+    },
+    {
+      "id": "button_wireless_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "button_wireless_battery_above",
+      "title": {
+        "en": "Battery level is above",
+        "fr": "Niveau batterie supérieur à"
+      },
+      "titleFormatted": {
+        "en": "Battery level is above [[level]]%",
+        "fr": "Niveau batterie supérieur à [[level]]%"
+      },
+      "args": [
+        {
+          "name": "level",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 10
+        }
+      ]
+    }
+  ],
+  "actions": []
+}

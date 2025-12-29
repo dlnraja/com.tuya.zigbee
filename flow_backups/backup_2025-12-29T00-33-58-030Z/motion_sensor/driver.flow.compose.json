@@ -1,0 +1,71 @@
+{
+  "triggers": [
+    {
+      "id": "motion_sensor_motion_detected",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      }
+    },
+    {
+      "id": "motion_sensor_motion_cleared",
+      "title": {
+        "en": "Motion cleared",
+        "fr": "Mouvement terminé"
+      }
+    },
+    {
+      "id": "motion_sensor_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
+    },
+    {
+      "id": "motion_sensor_battery_changed",
+      "title": {
+        "en": "Battery level changed",
+        "fr": "Niveau batterie changé"
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "Battery (%)",
+            "fr": "Batterie (%)"
+          },
+          "example": 75
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_luminance_changed",
+      "title": {
+        "en": "Luminance changed",
+        "fr": "Luminosité changée"
+      },
+      "tokens": [
+        {
+          "name": "lux",
+          "type": "number",
+          "title": {
+            "en": "Luminance (lux)",
+            "fr": "Luminosité (lux)"
+          },
+          "example": 500
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "motion_sensor_motion_active",
+      "title": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté"
+      }
+    }
+  ]
+}
+
