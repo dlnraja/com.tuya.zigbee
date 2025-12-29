@@ -1,4 +1,10 @@
 {
+  "5.5.302": {
+    "en": "🔧 CLUSTER CONFIG FIX: Updated presence_sensor_radar endpoint clusters to match actual TS0601 Tuya devices. Added Tuya clusters (0xEF00, 0xED00), groups, scenes. Fixes interview coherence for _TZE284_iadro9bf and similar devices.",
+    "nl": "🔧 CLUSTER CONFIG FIX: Endpoint clusters bijgewerkt voor presence_sensor_radar om overeen te komen met echte TS0601 Tuya apparaten.",
+    "de": "🔧 CLUSTER CONFIG FIX: Endpoint-Cluster für presence_sensor_radar aktualisiert, um mit echten TS0601 Tuya-Geräten übereinzustimmen.",
+    "fr": "🔧 CLUSTER CONFIG FIX: Clusters endpoint mis à jour pour presence_sensor_radar pour correspondre aux vrais appareils TS0601 Tuya."
+  },
   "5.5.301": {
     "en": "🔧 PRESENCE SENSOR FIX: Corrected DP102 mapping for _TZE284_iadro9bf - now properly reads illuminance (lux) instead of fading_time. Fixes Ronny_M's forum post #752 about lux readings. Presence inversion for this sensor already active.",
     "nl": "🔧 PRESENCE SENSOR FIX: DP102 mapping gecorrigeerd voor _TZE284_iadro9bf - leest nu correct lux in plaats van fading_time.",
