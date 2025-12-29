@@ -138,6 +138,8 @@ const SENSOR_CONFIGS = {
   // CONFIRMED: These devices use LOW DPs (1-9, 101-104), NOT high DPs!
   // Sources: HA t/862007, Z2M #27212, #30326, ZHA #3969, Reddit
   // WARNING: fading_time may not work as expected (Z2M #30326 user report)
+  // v5.5.304: PRESENCE=NULL FIRMWARE BUG WORKAROUND (works with Tuya gateway)
+  // Strategies: 1) Aggressive DP1 polling 2) Distance-based inference 3) Time sync
   // ─────────────────────────────────────────────────────────────────────────────
   'TZE284_IADRO9BF': {
     configName: 'TZE284_IADRO9BF',
@@ -159,6 +161,10 @@ const SENSOR_CONFIGS = {
     needsPolling: true,
     // v5.5.284: Flag for presence inversion fix (firmware bug)
     invertPresence: true,
+    // v5.5.304: WORKAROUND FLAGS for presence=null firmware bug
+    useDistanceInference: true,    // Infer presence from distance > 0
+    useAggressivePolling: true,    // Poll DP1 every 10s instead of 30s
+    needsTimeSync: true,           // Send time sync like Tuya gateway
     dpMap: {
       // DP1: Presence - trueFalse1 format (PRIMARY!)
       1: { cap: 'alarm_motion', type: 'presence_bool' },
@@ -170,7 +176,7 @@ const SENSOR_CONFIGS = {
       4: { cap: null, internal: 'max_range', divisor: 100 },
       // DP6: Self-test result (enum: 0=testing, 1=success, 2=failure)
       6: { cap: null, internal: 'self_test' },
-      // DP9: Target distance (÷100 = meters)
+      // DP9: Target distance (÷100 = meters) - ALSO USED FOR PRESENCE INFERENCE!
       9: { cap: 'measure_distance', divisor: 100 },
       // v5.5.284: DP12 as FALLBACK for lux (some firmware uses DP12 instead of DP104)
       12: { cap: 'measure_luminance', type: 'lux_direct' },
@@ -851,10 +857,10 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.293: FIXED Tuya response handler - Eliminates DP12 NaN conflict
+   * v5.5.304: ENHANCED Tuya response handler with presence=null workaround
    * - Coordinate with HybridSensorBase to avoid dual processing
    * - Only handle special presence DPs locally (1, 105, 112)
-   * - Let HybridSensorBase handle standard sensor DPs (12, 103, 104, etc.)
+   * - v5.5.304: DISTANCE-BASED PRESENCE INFERENCE for firmware bug workaround
    */
   _handleTuyaResponse(data) {
     if (!data) return;
@@ -883,6 +889,13 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     this._logUnknownDP(dpId, value, data);
     this._logDpDiagnostics(dpId, value, rawValue, data);
 
+    // v5.5.304: DISTANCE-BASED PRESENCE INFERENCE (firmware bug workaround)
+    // If DP9 (distance) > 0, infer presence even if DP1 is null
+    if (dpId === 9) {
+      this._handleDistanceWithPresenceInference(value);
+      return;
+    }
+
     // v5.5.294: ONLY handle special presence DPs locally (these need debounce logic)
     const PRESENCE_DPS = [1, 105, 112];
     if (PRESENCE_DPS.includes(dpId)) {
@@ -896,6 +909,47 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
     // Log other unmapped DPs for diagnostic purposes only
     this.log(`[RADAR] 📡 DP${dpId} = ${value} (unknown DP, please report to developer)`);
+  }
+
+  /**
+   * v5.5.304: Handle distance DP with presence inference
+   * WORKAROUND for presence=null firmware bug:
+   * - If distance > 0 and < max_range: someone is present
+   * - If distance = 0: no one detected
+   * WHY THIS WORKS: Tuya gateway uses distance to infer presence when DP1 is broken
+   */
+  _handleDistanceWithPresenceInference(rawDistance) {
+    const config = this._getSensorConfig();
+    const useDistanceInference = config.useDistanceInference || false;
+
+    // Always update distance capability
+    const divisor = config.dpMap?.[9]?.divisor || 100;
+    const distanceMeters = rawDistance / divisor;
+    this.setCapabilityValue('measure_distance', distanceMeters).catch(() => { });
+    this.log(`[RADAR] 📏 Distance: ${distanceMeters}m (raw: ${rawDistance})`);
+
+    // v5.5.304: PRESENCE INFERENCE from distance
+    if (useDistanceInference) {
+      // Store max range for reference (from DP4 if available)
+      const maxRange = this._lastMaxRange || 6; // Default 6m if not set
+
+      // Infer presence: distance > 0 means someone is there
+      const inferredPresence = distanceMeters > 0 && distanceMeters < maxRange;
+
+      // Get current alarm_motion state
+      const currentPresence = this.getCapabilityValue('alarm_motion');
+
+      // Only update if presence is null OR if inferred presence is true (don't clear based on distance alone)
+      if (currentPresence === null || currentPresence === undefined || inferredPresence) {
+        if (inferredPresence !== currentPresence) {
+          this.log(`[RADAR] 🎯 DISTANCE INFERENCE: presence=${inferredPresence} (distance=${distanceMeters}m, max=${maxRange}m)`);
+          this._handlePresenceWithDebounce(inferredPresence, 9); // Use DP9 as source
+        }
+      }
+
+      // Update timestamp when we see distance data
+      this._updatePresenceTimestamp();
+    }
   }
 
   /**
@@ -1174,37 +1228,114 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.268: RONNY FIX - Periodic polling for TZE284 devices
-   * Some firmware variants don't auto-report presence/distance (Z2M #27212)
-   * This polls the device every 30 seconds to request DP updates
+   * v5.5.304: ENHANCED POLLING - Workaround for presence=null firmware bug
+   * Strategy: Aggressive polling + Time sync + Distance inference
+   * WHY: Tuya gateway polls aggressively and sends time sync - we do the same
    */
   _startPresencePolling(zclNode) {
-    this.log('[RADAR] 🔄 Starting presence polling (30s interval) for TZE284 variant');
+    const config = this._getSensorConfig();
+    const useAggressive = config.useAggressivePolling || false;
+    const needsTimeSync = config.needsTimeSync || false;
+    const pollInterval = useAggressive ? 10000 : 30000; // 10s or 30s
+
+    this.log(`[RADAR] 🔄 Starting presence polling (${pollInterval / 1000}s interval, aggressive=${useAggressive})`);
 
     // Clear any existing interval
     if (this._pollingInterval) {
       clearInterval(this._pollingInterval);
     }
 
-    // Poll every 30 seconds
+    // v5.5.304: Send initial time sync if needed (like Tuya gateway)
+    if (needsTimeSync) {
+      this._sendTimeSync(zclNode);
+    }
+
+    // Poll at configured interval
     this._pollingInterval = setInterval(async () => {
       try {
-        // Check if we've received presence updates recently
         const now = Date.now();
         const timeSinceLastPresence = now - (this._lastPresenceUpdate || 0);
 
-        // Only poll if no presence update in last 60 seconds
-        if (timeSinceLastPresence > 60000) {
-          this.log('[RADAR] 🔄 No presence update in 60s, requesting DP refresh...');
+        // v5.5.304: More aggressive check - poll if no update in 15s (was 60s)
+        const threshold = useAggressive ? 15000 : 60000;
+        if (timeSinceLastPresence > threshold) {
+          this.log(`[RADAR] 🔄 No presence update in ${threshold / 1000}s, requesting DP refresh...`);
           await this._requestDPRefresh(zclNode);
+
+          // v5.5.304: Also request specific DP1 (presence) directly
+          await this._requestSpecificDP(zclNode, 1);
         }
       } catch (e) {
         this.log(`[RADAR] ⚠️ Polling error: ${e.message}`);
       }
-    }, 30000);
+    }, pollInterval);
 
-    // Initial poll after 5 seconds
-    setTimeout(() => this._requestDPRefresh(zclNode), 5000);
+    // Initial poll after 2 seconds (faster than before)
+    setTimeout(() => {
+      this._requestDPRefresh(zclNode);
+      this._requestSpecificDP(zclNode, 1);
+    }, 2000);
+  }
+
+  /**
+   * v5.5.304: Send time sync to device (like Tuya gateway)
+   * Some devices won't report presence until they receive time sync
+   */
+  async _sendTimeSync(zclNode) {
+    try {
+      const ep1 = zclNode?.endpoints?.[1];
+      const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
+      if (!tuyaCluster) return;
+
+      // Zigbee epoch: 2000-01-01 00:00:00 UTC
+      const ZIGBEE_EPOCH = new Date(Date.UTC(2000, 0, 1, 0, 0, 0)).getTime();
+      const utcSeconds = Math.floor((Date.now() - ZIGBEE_EPOCH) / 1000);
+      const localSeconds = utcSeconds + (-new Date().getTimezoneOffset() * 60);
+
+      // Create time payload (8 bytes: UTC + Local)
+      const payload = Buffer.alloc(8);
+      payload.writeUInt32BE(utcSeconds, 0);
+      payload.writeUInt32BE(localSeconds, 4);
+
+      // Send time response command (0x64 = 100)
+      if (tuyaCluster.command) {
+        await tuyaCluster.command('mcuSyncTime', { payloadSize: 8, payload });
+        this.log('[RADAR] ⏰ Time sync sent to device');
+      }
+    } catch (e) {
+      this.log(`[RADAR] ⚠️ Time sync failed: ${e.message}`);
+    }
+  }
+
+  /**
+   * v5.5.304: Request specific DP value from device
+   * Tuya gateway requests DP1 specifically to get presence
+   */
+  async _requestSpecificDP(zclNode, dpId) {
+    try {
+      const ep1 = zclNode?.endpoints?.[1];
+      const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
+      if (!tuyaCluster) return;
+
+      // Method 1: dataRequest with specific DP
+      if (tuyaCluster.dataRequest) {
+        await tuyaCluster.dataRequest({ dp: dpId });
+        this.log(`[RADAR] 📱 Requested DP${dpId} specifically`);
+        return;
+      }
+
+      // Method 2: sendData with query format
+      if (tuyaCluster.sendData) {
+        await tuyaCluster.sendData({
+          dp: dpId,
+          datatype: 1, // Bool type for presence
+          data: Buffer.from([])
+        });
+        this.log(`[RADAR] 📱 Requested DP${dpId} via sendData`);
+      }
+    } catch (e) {
+      // Silently ignore - not all devices support this
+    }
   }
 
   /**
