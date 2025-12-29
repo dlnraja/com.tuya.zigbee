@@ -1,4 +1,10 @@
 {
+  "5.5.305": {
+    "en": "🔧 DIAGNOSTIC FIXES: 1) Fixed 'Device ID not available' error in curtain_motor - diagnostic check now uses soft warnings. 2) Fixed DP12 illuminance NaN issue - improved Buffer parsing for {type:Buffer,data:[]} format. 3) Added NaN rejection in capability sanity checks.",
+    "nl": "🔧 DIAGNOSTIC FIXES: 1) 'Device ID not available' fout opgelost in curtain_motor. 2) DP12 lux NaN probleem opgelost. 3) NaN afwijzing toegevoegd.",
+    "de": "🔧 DIAGNOSTIC FIXES: 1) 'Device ID not available' Fehler in curtain_motor behoben. 2) DP12 Lux NaN Problem behoben. 3) NaN Ablehnung hinzugefügt.",
+    "fr": "🔧 DIAGNOSTIC FIXES: 1) Erreur 'Device ID not available' corrigée dans curtain_motor. 2) Problème NaN DP12 lux corrigé. 3) Rejet NaN ajouté."
+  },
   "5.5.304": {
     "en": "🔧 PRESENCE=NULL WORKAROUND: Enhanced _TZE284_iadro9bf with 3 strategies to fix firmware bug: 1) Aggressive DP1 polling (10s), 2) Time sync like Tuya gateway, 3) Distance-based presence inference. Works around Z2M #27212 firmware issue.",
     "nl": "🔧 PRESENCE=NULL WORKAROUND: Verbeterde _TZE284_iadro9bf met 3 strategieën voor firmware bug: agressieve polling, time sync, distance inferentie.",
