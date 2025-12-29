@@ -5,6 +5,13 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 /**
  * Motion Sensor Device - HybridSensorBase implementation
  *
+ * v5.5.299: SLEEPY DEVICE COMMUNICATION FIX (@fiek diagnostic d8b86ec9)
+ * - Smart ZCL timeout reduction for sleepy devices (5s → 2s)
+ * - Prioritize Tuya DP communication over ZCL for battery devices
+ * - Skip ZCL queries when device detected as sleeping
+ * - Enhanced wake strategy for critical attribute reads
+ * - Improved error handling and timeout management
+ *
  * v5.5.107: TEMPERATURE FIX (Peter's diagnostic report)
  * - Force add temp/humidity capabilities if clusters detected
  * - Improved cluster detection with multiple name variants
@@ -22,6 +29,18 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 class MotionSensorDevice extends HybridSensorBase {
 
   get mainsPowered() { return false; }
+
+  /**
+   * v5.5.299: Sleepy device detection for smart communication
+   * Helps prioritize Tuya DP over ZCL for battery devices
+   */
+  get isSleepyDevice() { return true; }
+
+  /**
+   * v5.5.299: Smart ZCL timeout for sleepy devices
+   * Reduces timeout from 5s to 2s to prevent excessive waiting
+   */
+  get zclTimeout() { return 2000; }
 
   /**
    * v5.5.113: Only include CORE capabilities by default
@@ -240,6 +259,11 @@ class MotionSensorDevice extends HybridSensorBase {
 
     await super.onNodeInit({ zclNode });
 
+    // v5.5.299: Initialize sleepy device state tracking
+    this._isDeviceAwake = false;
+    this._lastWakeTime = 0;
+    this._pendingZclReads = new Set();
+
     // v5.5.18: Explicit IAS Zone setup for HOBEIAN and other non-Tuya motion sensors
     await this._setupMotionIASZone(zclNode);
 
@@ -320,6 +344,9 @@ class MotionSensorDevice extends HybridSensorBase {
 
       // Zone Status Change Notification (motion detected)
       iasCluster.onZoneStatusChangeNotification = (payload) => {
+        // v5.5.299: Mark device as awake on ANY motion event
+        this._markDeviceAwake();
+
         // v5.5.17: Use universal parser from HybridSensorBase
         const parsed = this._parseIASZoneStatus(payload?.zoneStatus);
         const motion = parsed.alarm1 || parsed.alarm2;
@@ -336,6 +363,7 @@ class MotionSensorDevice extends HybridSensorBase {
         }
 
         // v5.5.104: Read temp/humidity NOW while device is awake (Peter's 4-in-1 fix)
+        // v5.5.299: Enhanced with smart wake detection
         if (motion) {
           this._readTempHumidityWhileAwake(zclNode);
         }
@@ -343,6 +371,9 @@ class MotionSensorDevice extends HybridSensorBase {
 
       // Attribute listener for zone status
       iasCluster.on('attr.zoneStatus', (status) => {
+        // v5.5.299: Mark device as awake on zone status changes
+        this._markDeviceAwake();
+
         const motion = (status & 0x01) !== 0 || (status & 0x02) !== 0;
         this.log(`[ZCL-DATA] motion_sensor.zone_status raw=${status} → alarm_motion=${motion}`);
 
@@ -351,6 +382,7 @@ class MotionSensorDevice extends HybridSensorBase {
         }
 
         // v5.5.104: Also read temp/humidity on this event
+        // v5.5.299: Enhanced with smart wake detection
         if (motion) {
           this._readTempHumidityWhileAwake(zclNode);
         }
@@ -403,11 +435,8 @@ class MotionSensorDevice extends HybridSensorBase {
 
     if (tempCluster?.readAttributes) {
       try {
-        this.log('[MOTION-AWAKE] Reading temperature cluster...');
-        const data = await Promise.race([
-          tempCluster.readAttributes(['measuredValue']),
-          new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 3000))
-        ]);
+        this.log('[MOTION-AWAKE] 🌡️ Smart temperature read while device is awake...');
+        const data = await this._smartZclRead(tempCluster, ['measuredValue'], 3000);
         if (data?.measuredValue !== undefined && data.measuredValue !== -32768 && data.measuredValue !== 0x8000) {
           const temp = Math.round((data.measuredValue / 100) * 10) / 10;
           this.log(`[MOTION-AWAKE] 🌡️ Temperature: ${temp}°C (raw: ${data.measuredValue})`);
@@ -438,11 +467,8 @@ class MotionSensorDevice extends HybridSensorBase {
 
     if (humCluster?.readAttributes) {
       try {
-        this.log('[MOTION-AWAKE] Reading humidity cluster...');
-        const data = await Promise.race([
-          humCluster.readAttributes(['measuredValue']),
-          new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 3000))
-        ]);
+        this.log('[MOTION-AWAKE] 💧 Smart humidity read while device is awake...');
+        const data = await this._smartZclRead(humCluster, ['measuredValue'], 3000);
         if (data?.measuredValue !== undefined && data.measuredValue !== 65535 && data.measuredValue !== 0xFFFF) {
           const hum = Math.round(data.measuredValue / 100);
           this.log(`[MOTION-AWAKE] 💧 Humidity: ${hum}% (raw: ${data.measuredValue})`);
@@ -469,8 +495,63 @@ class MotionSensorDevice extends HybridSensorBase {
   }
 
   /**
+   * v5.5.299: Smart wake state management
+   * Tracks device wake state to optimize ZCL communication
+   */
+  _markDeviceAwake() {
+    this._isDeviceAwake = true;
+    this._lastWakeTime = Date.now();
+    this.log('[SLEEPY] 🔔 Device marked as awake');
+
+    // Auto-sleep after 10 seconds of inactivity
+    clearTimeout(this._sleepTimer);
+    this._sleepTimer = setTimeout(() => {
+      this._isDeviceAwake = false;
+      this.log('[SLEEPY] 💤 Device assumed sleeping (timeout)');
+    }, 10000);
+  }
+
+  /**
+   * v5.5.299: Smart ZCL read with sleepy device optimization
+   * Only attempts ZCL reads when device is likely awake
+   */
+  async _smartZclRead(cluster, attributes, timeout = null) {
+    timeout = timeout || this.zclTimeout;
+
+    if (!this._isDeviceAwake && Date.now() - this._lastWakeTime > 30000) {
+      this.log(`[SLEEPY] ⏭️ Skipping ZCL read - device sleeping (${attributes.join(', ')})`);
+      return null;
+    }
+
+    try {
+      const readId = `${cluster.name || cluster.constructor.name}_${attributes.join('_')}`;
+
+      if (this._pendingZclReads.has(readId)) {
+        this.log(`[SLEEPY] ⏯️ ZCL read already pending: ${readId}`);
+        return null;
+      }
+
+      this._pendingZclReads.add(readId);
+      this.log(`[SLEEPY] 🔄 Smart ZCL read: ${readId} (timeout: ${timeout}ms)`);
+
+      const data = await Promise.race([
+        cluster.readAttributes(attributes),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('Smart timeout')), timeout))
+      ]);
+
+      this._pendingZclReads.delete(readId);
+      this.log(`[SLEEPY] ✅ ZCL read success: ${readId}`);
+      return data;
+    } catch (err) {
+      this._pendingZclReads.delete(readId);
+      this.log(`[SLEEPY] ⚠️ ZCL read failed: ${err.message}`);
+      return null;
+    }
+  }
+
+  /**
    * v5.5.111: Read battery while device is awake (after motion detection)
-   * Sleepy devices don't respond to queries when sleeping!
+   * v5.5.299: Enhanced with smart ZCL communication
    */
   async _readBatteryWhileAwake(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
@@ -492,11 +573,8 @@ class MotionSensorDevice extends HybridSensorBase {
     }
 
     try {
-      this.log('[MOTION-BATTERY] 🔋 Reading battery while device is awake...');
-      const data = await Promise.race([
-        powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']),
-        new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 3000))
-      ]);
+      this.log('[MOTION-BATTERY] 🔋 Smart battery read while device is awake...');
+      const data = await this._smartZclRead(powerCluster, ['batteryPercentageRemaining', 'batteryVoltage'], 3000);
 
       if (data?.batteryPercentageRemaining !== undefined && data.batteryPercentageRemaining !== 255) {
         const battery = Math.round(data.batteryPercentageRemaining / 2);

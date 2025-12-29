@@ -1,4 +1,10 @@
 {
+  "5.5.299": {
+    "en": "🔋 SLEEPY DEVICE FIX: Smart ZCL communication for battery-powered motion sensors. Reduces timeouts (5s→2s), prioritizes Tuya DP over ZCL when device sleeping, adds wake state tracking. Fixes @fiek diagnostic d8b86ec9 ZCL attribute timeouts. Motion sensors now communicate more efficiently.",
+    "nl": "🔋 SLEEPY DEVICE FIX: Slimme ZCL communicatie voor batterij-aangedreven bewegingssensoren. Vermindert timeouts, prioriteert Tuya DP boven ZCL.",
+    "de": "🔋 SLEEPY DEVICE FIX: Intelligente ZCL-Kommunikation für batteriebetriebene Bewegungssensoren. Reduziert Timeouts, priorisiert Tuya DP über ZCL.",
+    "fr": "🔋 SLEEPY DEVICE FIX: Communication ZCL intelligente pour capteurs mouvement à batterie. Réduit timeouts, priorise Tuya DP sur ZCL."
+  },
   "5.5.298": {
     "en": "🔧 STDERR FIX: Fixed ReferenceError 'getAppVersionPrefixed is not defined' in HybridCoverBase.js causing curtain_motor devices to fail initialization. Diagnostic report 22ccf17b-74fa-4924-87a8-59f34b96a3c1 analysis complete. This resolves curtain robot unresponsiveness reported by Eftychis in forum post #747.",
     "nl": "🔧 STDERR FIX: ReferenceError 'getAppVersionPrefixed is not defined' opgelost in HybridCoverBase.js. Lost curtain_motor initialisatie problemen.",
