@@ -1,4 +1,10 @@
 {
+  "5.5.301": {
+    "en": "🔧 PRESENCE SENSOR FIX: Corrected DP102 mapping for _TZE284_iadro9bf - now properly reads illuminance (lux) instead of fading_time. Fixes Ronny_M's forum post #752 about lux readings. Presence inversion for this sensor already active.",
+    "nl": "🔧 PRESENCE SENSOR FIX: DP102 mapping gecorrigeerd voor _TZE284_iadro9bf - leest nu correct lux in plaats van fading_time.",
+    "de": "🔧 PRESENCE SENSOR FIX: DP102 Mapping für _TZE284_iadro9bf korrigiert - liest jetzt korrekt Lux statt fading_time.",
+    "fr": "🔧 PRESENCE SENSOR FIX: Mapping DP102 corrigé pour _TZE284_iadro9bf - lit maintenant correctement lux au lieu de fading_time."
+  },
   "5.5.300": {
     "en": "🔧 DRIVER CONFLICT FIX: Resolved _TZE204_gkfbdvyx incorrectly switching from motion sensor to climate sensor. Removed conflicting manufacturer ID from climate_sensor driver - device now stays as presence_sensor_radar as intended. Fixes Ronny_M's 4 motion sensors that became climate sensors after v5.5.299 update.",
     "nl": "🔧 DRIVER CONFLICT FIX: _TZE204_gkfbdvyx niet meer van bewegingssensor naar klimaatsensor. Conflict opgelost in driver detectie.",
