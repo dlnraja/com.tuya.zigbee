@@ -427,10 +427,52 @@ function transformPresence(value, type, invertPresence = false, configName = '')
   return result;
 }
 
+// v5.5.314: Presence debouncing for _TZE204_gkfbdvyx (Ronny #775)
+// Requires 2 consecutive same-state reports before changing presence
+function debouncePresence(presence, manufacturerName, deviceId) {
+  if (!deviceId || !manufacturerName.includes('gkfbdvyx')) {
+    return presence;  // No debouncing for other devices
+  }
+
+  const state = presenceDebounceState.get(deviceId) || { lastPresence: null, stableCount: 0 };
+
+  if (state.lastPresence === presence) {
+    state.stableCount++;
+  } else {
+    state.stableCount = 1;
+  }
+  state.lastPresence = presence;
+  presenceDebounceState.set(deviceId, state);
+
+  // Require 2 consecutive same-state reports to change presence
+  if (state.stableCount >= 2) {
+    console.log(`[PRESENCE-DEBOUNCE] ✅ ${manufacturerName}: presence=${presence} (stable x${state.stableCount})`);
+    return presence;
+  }
+
+  // Return previous stable value until we get consistent reports
+  const previousStable = presenceDebounceState.get(deviceId + '_stable')?.presence ?? presence;
+  console.log(`[PRESENCE-DEBOUNCE] 🔇 ${manufacturerName}: ignoring flicker ${previousStable} -> ${presence} (count=${state.stableCount})`);
+
+  if (state.stableCount >= 2) {
+    presenceDebounceState.set(deviceId + '_stable', { presence });
+  }
+
+  return previousStable;
+}
+
+// v5.5.314: Lux smoothing state (prevents 30-2000 fluctuations)
+// Ronny forum #775: _TZE284_iadro9bf lux showing 30 and 2000 every 15 sec
+const luxSmoothingState = new Map();  // deviceId -> { lastLux, timestamp }
+
+// v5.5.314: Presence debouncing state (prevents random on/off)
+// Ronny forum #775: _TZE204_gkfbdvyx sending presence randomly
+const presenceDebounceState = new Map();  // deviceId -> { lastPresence, timestamp, stableCount }
+
 // v5.5.283: Enhanced lux validation with manufacturer spec ranges
 // ZY-M100 spec: 0-2000 LUX max (Ronny forum report)
 // TZE284 sensors report RAW ADC values that need conversion
-function transformLux(value, type, manufacturerName = '') {
+function transformLux(value, type, manufacturerName = '', deviceId = null) {
   let lux = value;
   const originalValue = value;
 
@@ -479,7 +521,32 @@ function transformLux(value, type, manufacturerName = '') {
     lux = maxLux;
   }
 
-  return Math.max(0, Math.round(lux));
+  lux = Math.max(0, Math.round(lux));
+
+  // v5.5.314: LUX SMOOTHING - Prevent rapid 30↔2000 fluctuations (Ronny #775)
+  // Apply hysteresis: only update if change > 30% OR stable for 30+ seconds
+  if (deviceId && (manufacturerName.includes('iadro9bf') || manufacturerName.includes('gkfbdvyx'))) {
+    const state = luxSmoothingState.get(deviceId) || { lastLux: null, timestamp: 0 };
+    const now = Date.now();
+    const timeSinceLastUpdate = now - state.timestamp;
+
+    if (state.lastLux !== null) {
+      const change = Math.abs(lux - state.lastLux);
+      const changePercent = (change / Math.max(state.lastLux, 1)) * 100;
+
+      // Only update if: >30% change AND >5 seconds since last, OR >60 seconds regardless
+      if (changePercent < 30 && timeSinceLastUpdate < 60000) {
+        console.log(`[LUX-SMOOTH] 🔇 Suppressing ${manufacturerName}: ${state.lastLux} -> ${lux} (${changePercent.toFixed(0)}% change, ${(timeSinceLastUpdate / 1000).toFixed(0)}s ago)`);
+        return state.lastLux;  // Return previous stable value
+      }
+    }
+
+    // Update smoothing state
+    luxSmoothingState.set(deviceId, { lastLux: lux, timestamp: now });
+    console.log(`[LUX-SMOOTH] ✅ Accepted ${manufacturerName}: ${lux} lux`);
+  }
+
+  return lux;
 }
 
 // v5.5.283: Enhanced distance transformation with debug logging
@@ -606,16 +673,18 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
       if (dpConfig.cap === 'alarm_motion' || dpConfig.cap === 'alarm_human') {
         // v5.5.284: Use config.invertPresence flag for presence inversion
+        // v5.5.314: Add presence debouncing for gkfbdvyx
+        const deviceId = this.getData()?.id;
         mappings[dp] = {
           capability: 'alarm_motion',
-          transform: (v) => transformPresence(v, dpConfig.type, invertPresence, configName),
-          alsoSets: { 'alarm_human': (v) => transformPresence(v, dpConfig.type, invertPresence, configName) }
+          transform: (v) => debouncePresence(transformPresence(v, dpConfig.type, invertPresence, configName), mfr, deviceId),
+          alsoSets: { 'alarm_human': (v) => debouncePresence(transformPresence(v, dpConfig.type, invertPresence, configName), mfr, deviceId) }
         };
       } else if (dpConfig.cap === 'measure_luminance') {
-        // Illuminance DP - use sanity-checked transform with manufacturerName
+        // Illuminance DP - use sanity-checked transform with manufacturerName + deviceId for smoothing
         mappings[dp] = {
           capability: dpConfig.cap,
-          transform: (v) => transformLux(v, dpConfig.type || 'lux_direct', mfr),
+          transform: (v) => transformLux(v, dpConfig.type || 'lux_direct', mfr, this.getData()?.id),
         };
       } else if (dpConfig.cap === 'measure_distance') {
         // Distance DP - use enhanced transform with manufacturerName and null handling
@@ -886,7 +955,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     if (dpMap[dpId]?.cap === 'measure_luminance') {
       const luxValue = this._parseBufferValue(data.value || data.data);
       const mfr = this._getManufacturerName();
-      const finalLux = transformLux(luxValue, dpMap[dpId].type || 'lux_direct', mfr);
+      const deviceId = this.getData()?.id;
+      const finalLux = transformLux(luxValue, dpMap[dpId].type || 'lux_direct', mfr, deviceId);
       this.log(`[RADAR-LUX] ☀️ DP${dpId} → measure_luminance = ${finalLux} lux (local config)`);
       this.setCapabilityValue('measure_luminance', finalLux).catch(() => { });
       return;
