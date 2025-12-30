@@ -1,4 +1,10 @@
 {
+  "5.5.316": {
+    "en": "🔧 LUX REGRESSION FIX: Fixed v5.5.314 smoothing blocking legitimate lux changes. Fixed v5.5.283 auto-detect wrongly converting direct lux values. Now only suppresses extreme flip-flop (30↔2000). Research: Z2M #27212, SmartHomeScene ZY-M100 spec.",
+    "nl": "🔧 LUX REGRESSION FIX: Lux smoothing was te agressief, nu alleen extreme flip-flop onderdrukt.",
+    "de": "🔧 LUX REGRESSION FIX: Lux-Glättung war zu aggressiv, unterdrückt jetzt nur extreme Flip-Flop.",
+    "fr": "🔧 LUX REGRESSION FIX: Le lissage lux était trop agressif, ne supprime maintenant que les flip-flop extrêmes."
+  },
   "5.5.315": {
     "en": "🧠 INTELLIGENT PRESENCE: Added smart presence inference for _TZE284_iadro9bf when DP1 returns null. Calculates presence from distance, lux changes, and activity patterns. Firmware-specific handling (appVersion 74/78). Fixes 'presence always null after 15min' bug.",
     "nl": "🧠 INTELLIGENT PRESENCE: Slimme aanwezigheidsberekening voor _TZE284_iadro9bf wanneer DP1 null teruggeeft.",

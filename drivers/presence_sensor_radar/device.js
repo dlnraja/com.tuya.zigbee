@@ -744,81 +744,98 @@ const luxSmoothingState = new Map();  // deviceId -> { lastLux, timestamp }
 // Ronny forum #775: _TZE204_gkfbdvyx sending presence randomly
 const presenceDebounceState = new Map();  // deviceId -> { lastPresence, timestamp, stableCount }
 
-// v5.5.283: Enhanced lux validation with manufacturer spec ranges
-// ZY-M100 spec: 0-2000 LUX max (Ronny forum report)
-// TZE284 sensors report RAW ADC values that need conversion
+// v5.5.316: REGRESSION FIX - Restored proper lux handling
+// Research: Z2M #27212 shows _TZE284_iadro9bf reports direct lux (e.g., 282), NOT raw ADC
+// Research: SmartHomeScene confirms ZY-M100 spec is 0-2000 LUX
+// FIXED: v5.5.314 smoothing was too aggressive, v5.5.283 auto-detect was wrong
 function transformLux(value, type, manufacturerName = '', deviceId = null) {
   let lux = value;
   const originalValue = value;
 
-  // v5.5.264: TZE284 sensors report RAW ADC values
-  // Formula from ZHA: lux = 10^(raw/10000) or simpler: raw/10 for display
+  // v5.5.264: Handle different lux types
   if (type === 'lux_raw') {
-    // Raw ADC value - apply logarithmic conversion
-    // Based on Z2M issue #18950: raw values are NOT in lux
+    // Raw ADC value - apply conversion ONLY for sensors that actually need it
+    // Based on Z2M issue #18950: some sensors report raw ADC values
     if (value > 0) {
-      // Method 1: Log10 conversion (ZHA formula)
-      // lux = Math.pow(10, value / 10000);
-      // Method 2: Simple division (more practical for Tuya sensors)
       lux = Math.round(value / 10);
     } else {
       lux = 0;
     }
   }
-  // Some sensors report raw value that needs no conversion
   else if (type === 'lux_direct') {
+    // v5.5.316: Most Tuya sensors report direct lux - NO conversion needed
+    // Z2M #27212: _TZE284_iadro9bf reports "illuminance": 282 (direct lux)
     lux = value;
   }
-  // Some sensors report value * 10
   else if (type === 'lux_div10') {
     lux = value / 10;
   }
 
-  // v5.5.283: RONNY FIX - Manufacturer-specific range validation
-  // ZY-M100 series: 0-2000 lux (confirmed by user forum reports)
-  let maxLux = 2000;  // Default manufacturer spec
+  // v5.5.316: SMART MAX LUX - Different sensors have different ranges
+  // ZY-M100: 0-2000 lux (SmartHomeScene review)
+  // Some industrial sensors: up to 10000 lux
+  let maxLux = 10000;  // Default high limit - don't clamp unless really needed
 
-  // Apply manufacturer-specific limits
-  if (manufacturerName.startsWith('_TZE284_') || manufacturerName.startsWith('_TZE204_')) {
-    maxLux = 2000;  // TZE284 series confirmed 0-2000 lux range
+  // v5.5.316: Only apply strict 2000 limit for KNOWN ZY-M100 series sensors
+  const isZYM100Series = manufacturerName.includes('iadro9bf') ||
+    manufacturerName.includes('gkfbdvyx') ||
+    manufacturerName.includes('qasjif9e') ||
+    manufacturerName.includes('sxm7l9xa');
+  if (isZYM100Series) {
+    maxLux = 2000;  // ZY-M100 confirmed 0-2000 lux range
   }
 
-  // Auto-detect if value is raw sensor data needing conversion
-  if (lux > maxLux * 5) {  // If 5x over spec, likely raw ADC
+  // v5.5.316: FIXED - Only auto-detect raw ADC for values > 50000 (clearly wrong)
+  // Previous bug: ÷100 if > 10000 broke sensors reporting legitimate high lux
+  if (lux > 50000) {
     const converted = Math.round(lux / 100);
-    console.log(`[LUX-FIX] 📊 Raw ADC detected for ${manufacturerName}: ${originalValue} -> ${converted} lux`);
+    console.log(`[LUX-FIX] 📊 Extreme value detected for ${manufacturerName}: ${originalValue} -> ${converted} lux`);
     lux = converted;
   }
 
-  // Hard clamp to manufacturer spec range
+  // v5.5.316: Soft clamp with warning, not hard override
   if (lux > maxLux) {
-    console.log(`[LUX-FIX] ⚠️ Clamping ${manufacturerName}: ${lux} -> ${maxLux} lux (spec limit)`);
-    lux = maxLux;
+    console.log(`[LUX-FIX] ⚠️ Value ${lux} exceeds ${maxLux} for ${manufacturerName} (allowing, may be valid)`);
+    // Only clamp if REALLY extreme (> 3x max)
+    if (lux > maxLux * 3) {
+      lux = maxLux;
+    }
   }
 
   lux = Math.max(0, Math.round(lux));
 
-  // v5.5.314: LUX SMOOTHING - Prevent rapid 30↔2000 fluctuations (Ronny #775)
-  // Apply hysteresis: only update if change > 30% OR stable for 30+ seconds
-  if (deviceId && (manufacturerName.includes('iadro9bf') || manufacturerName.includes('gkfbdvyx'))) {
-    const state = luxSmoothingState.get(deviceId) || { lastLux: null, timestamp: 0 };
+  // v5.5.316: FIXED LUX SMOOTHING - Only suppress EXTREME fluctuations
+  // Previous bug: 30% threshold blocked legitimate changes
+  // NEW: Only suppress if jumping between extremes (< 100 ↔ > 1500)
+  if (deviceId && isZYM100Series) {
+    const state = luxSmoothingState.get(deviceId) || { lastLux: null, timestamp: 0, extremeCount: 0 };
     const now = Date.now();
     const timeSinceLastUpdate = now - state.timestamp;
 
     if (state.lastLux !== null) {
-      const change = Math.abs(lux - state.lastLux);
-      const changePercent = (change / Math.max(state.lastLux, 1)) * 100;
+      // v5.5.316: ONLY suppress extreme oscillations (low↔high flip-flop)
+      const isExtremeLow = lux < 100;
+      const isExtremeHigh = lux > 1500;
+      const wasExtremeLow = state.lastLux < 100;
+      const wasExtremeHigh = state.lastLux > 1500;
 
-      // Only update if: >30% change AND >5 seconds since last, OR >60 seconds regardless
-      if (changePercent < 30 && timeSinceLastUpdate < 60000) {
-        console.log(`[LUX-SMOOTH] 🔇 Suppressing ${manufacturerName}: ${state.lastLux} -> ${lux} (${changePercent.toFixed(0)}% change, ${(timeSinceLastUpdate / 1000).toFixed(0)}s ago)`);
-        return state.lastLux;  // Return previous stable value
+      // Detect flip-flop pattern: low→high→low or high→low→high within 30 seconds
+      const isFlipFlop = (isExtremeLow && wasExtremeHigh) || (isExtremeHigh && wasExtremeLow);
+
+      if (isFlipFlop && timeSinceLastUpdate < 30000) {
+        state.extremeCount++;
+        if (state.extremeCount >= 2) {
+          // Confirmed flip-flop pattern - suppress
+          console.log(`[LUX-SMOOTH] 🔇 Flip-flop detected ${manufacturerName}: ${state.lastLux} ↔ ${lux} (suppressing)`);
+          return state.lastLux;
+        }
+      } else {
+        state.extremeCount = 0;  // Reset counter for normal changes
       }
     }
 
     // Update smoothing state
-    luxSmoothingState.set(deviceId, { lastLux: lux, timestamp: now });
-    console.log(`[LUX-SMOOTH] ✅ Accepted ${manufacturerName}: ${lux} lux`);
+    luxSmoothingState.set(deviceId, { lastLux: lux, timestamp: now, extremeCount: state.extremeCount });
   }
 
   return lux;
