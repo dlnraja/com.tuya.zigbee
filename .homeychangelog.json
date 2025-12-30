@@ -1,4 +1,10 @@
 {
+  "5.5.309": {
+    "en": "🔧 CAM #766 FIX: Fixed _TZ3000_5bpeda8u smart button pairing with wrong capabilities (contact alarm). Removed from climate_sensor, plug_smart, switch_1gang drivers - now correctly pairs as button_wireless_1.",
+    "nl": "🔧 CAM #766 FIX: _TZ3000_5bpeda8u smart button pairde met verkeerde capabilities. Nu correct als button_wireless_1.",
+    "de": "🔧 CAM #766 FIX: _TZ3000_5bpeda8u Smart Button paarte mit falschen Capabilities. Jetzt korrekt als button_wireless_1.",
+    "fr": "🔧 CAM #766 FIX: _TZ3000_5bpeda8u bouton smart s'appairait avec mauvaises capabilities. Maintenant correct comme button_wireless_1."
+  },
   "5.5.308": {
     "en": "🔧 FORUM FIXES #760-764: 1) Fixed _TZE284_iadro9bf 'motion always YES' - removed buggy invertPresence. 2) Fixed distance inference not clearing presence. 3) Added lux polling for sensors that only report on motion. 4) Fixed DP103 mapping priority (local before universal).",
     "nl": "🔧 FORUM FIXES #760-764: 1) _TZE284_iadro9bf 'motion altijd YES' opgelost. 2) Distance inference nu ook clearing. 3) Lux polling toegevoegd. 4) DP103 mapping prioriteit opgelost.",
