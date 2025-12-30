@@ -1,4 +1,10 @@
 {
+  "5.5.310": {
+    "en": "🔧 DIAGNOSTIC FIXES: 1) Fixed DP103 mapped to temperature instead of lux for ZY_M100_CEILING_24G radar sensors - now handled locally. 2) Fixed button_wireless_1 binding failures for _TZ3000_5bpeda8u - removed IAS Zone from default bindings. 3) Dynamic IAS Zone binding for hybrid SOS buttons only.",
+    "nl": "🔧 DIAGNOSTIC FIXES: 1) DP103 naar lux ipv temperatuur voor ZY_M100_CEILING_24G. 2) Binding failures opgelost voor _TZ3000_5bpeda8u knop. 3) Dynamische IAS Zone binding voor hybride knoppen.",
+    "de": "🔧 DIAGNOSTIC FIXES: 1) DP103 auf Lux statt Temperatur für ZY_M100_CEILING_24G. 2) Binding-Fehler für _TZ3000_5bpeda8u behoben. 3) Dynamische IAS Zone Bindung für Hybrid-Tasten.",
+    "fr": "🔧 DIAGNOSTIC FIXES: 1) DP103 vers luminosité au lieu de température pour ZY_M100_CEILING_24G. 2) Erreurs de binding corrigées pour _TZ3000_5bpeda8u. 3) Binding IAS Zone dynamique pour boutons hybrides."
+  },
   "5.5.309": {
     "en": "🔧 CAM #766 FIX: Fixed _TZ3000_5bpeda8u smart button pairing with wrong capabilities (contact alarm). Removed from climate_sensor, plug_smart, switch_1gang drivers - now correctly pairs as button_wireless_1.",
     "nl": "🔧 CAM #766 FIX: _TZ3000_5bpeda8u smart button pairde met verkeerde capabilities. Nu correct als button_wireless_1.",
