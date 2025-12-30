@@ -4,17 +4,286 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.281 ENRICHED FROM CHATGPT         ║
+ * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.315 INTELLIGENT INFERENCE         ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  v5.5.281: ENRICHED from ChatGPT analysis + multiple sources               ║
+ * ║  v5.5.315: INTELLIGENT PRESENCE INFERENCE for presence=null firmware bug   ║
  * ║  Sources: Z2M #27212, #30326, #8939, HA t/862007, ZHA #3969, Reddit        ║
- * ║  - Added: duration_of_attendance/absence DPs for presence timing           ║
- * ║  - Added: More manufacturerNames from Z2M/ZHA research                     ║
- * ║  - Added: led_state DP support for sensors with LED control                ║
- * ║  - v5.5.280: LOW DPs fix for _TZE284_iadro9bf (Ronny #728)                 ║
+ * ║  - SMART INFERENCE: Uses distance, lux changes, ZCL clusters as fallback   ║
+ * ║  - FIRMWARE DETECTION: Handles appVersion 74 vs 78 differences             ║
+ * ║  - ACTIVITY TRACKING: Monitors multiple DPs to deduce presence state       ║
+ * ║  - v5.5.314: Lux smoothing + presence debouncing                           ║
  * ║  - v5.5.301: DP102=LUX fix for _TZE284_iadro9bf (Ronny #752)              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// v5.5.315: INTELLIGENT PRESENCE INFERENCE ENGINE
+// Calculates presence from multiple data sources when DP1 returns null
+// ═══════════════════════════════════════════════════════════════════════════════
+class IntelligentPresenceInference {
+  constructor(device) {
+    this.device = device;
+    this.state = {
+      // Distance tracking
+      lastDistance: null,
+      distanceHistory: [],      // Last 10 distance readings
+      distanceTimestamp: 0,
+
+      // Lux tracking (rapid changes indicate movement)
+      lastLux: null,
+      luxHistory: [],           // Last 10 lux readings
+      luxTimestamp: 0,
+      luxChangeRate: 0,         // Rate of lux change per second
+
+      // Presence tracking
+      lastPresenceDP: null,     // Last DP1 value (may be null)
+      inferredPresence: false,  // Calculated presence
+      presenceConfidence: 0,    // 0-100% confidence
+      lastInferenceTime: 0,
+
+      // Activity indicators
+      lastActivityTime: 0,      // Any DP activity
+      dpActivityCount: 0,       // DPs received in last 60s
+
+      // Firmware info
+      appVersion: null,
+      firmwareType: 'unknown',  // 'v74', 'v78', 'unknown'
+    };
+
+    // Inference parameters (tuned from research)
+    this.params = {
+      distanceThreshold: 0.1,       // Min distance change to indicate movement (m)
+      luxChangeThreshold: 50,       // Min lux change to indicate movement
+      luxChangeRateThreshold: 10,   // Lux/second rate indicating presence
+      activityTimeoutMs: 60000,     // 60s no activity = no presence
+      minConfidenceForPresence: 40, // Minimum confidence to report presence
+      historySize: 10,              // Number of readings to keep
+    };
+  }
+
+  // Update distance reading and calculate inference
+  updateDistance(distance) {
+    const now = Date.now();
+    const state = this.state;
+
+    // Track history
+    state.distanceHistory.push({ value: distance, time: now });
+    if (state.distanceHistory.length > this.params.historySize) {
+      state.distanceHistory.shift();
+    }
+
+    // Calculate distance change
+    const distanceChanged = state.lastDistance !== null &&
+      Math.abs(distance - state.lastDistance) > this.params.distanceThreshold;
+
+    state.lastDistance = distance;
+    state.distanceTimestamp = now;
+    state.lastActivityTime = now;
+    state.dpActivityCount++;
+
+    // Distance-based presence: >0 and <max_range = someone present
+    const maxRange = this.device._lastMaxRange || 6;
+    const distanceIndicatesPresence = distance > 0 && distance < maxRange;
+
+    this._recalculatePresence('distance', {
+      distance,
+      distanceChanged,
+      distanceIndicatesPresence
+    });
+
+    return this.state.inferredPresence;
+  }
+
+  // Update lux reading and detect movement from changes
+  updateLux(lux) {
+    const now = Date.now();
+    const state = this.state;
+
+    // Track history
+    state.luxHistory.push({ value: lux, time: now });
+    if (state.luxHistory.length > this.params.historySize) {
+      state.luxHistory.shift();
+    }
+
+    // Calculate lux change rate
+    if (state.lastLux !== null && state.luxTimestamp > 0) {
+      const timeDelta = (now - state.luxTimestamp) / 1000; // seconds
+      if (timeDelta > 0) {
+        state.luxChangeRate = Math.abs(lux - state.lastLux) / timeDelta;
+      }
+    }
+
+    const luxIndicatesMovement = state.luxChangeRate > this.params.luxChangeRateThreshold;
+
+    state.lastLux = lux;
+    state.luxTimestamp = now;
+    state.lastActivityTime = now;
+    state.dpActivityCount++;
+
+    this._recalculatePresence('lux', {
+      lux,
+      luxChangeRate: state.luxChangeRate,
+      luxIndicatesMovement
+    });
+
+    return this.state.inferredPresence;
+  }
+
+  // Update from DP1 presence (may be null)
+  updatePresenceDP(value) {
+    const now = Date.now();
+    this.state.lastPresenceDP = value;
+    this.state.lastActivityTime = now;
+    this.state.dpActivityCount++;
+
+    // If DP1 gives a valid value, use it with high confidence
+    if (value !== null && value !== undefined) {
+      const presence = value === 1 || value === 2 || value === true;
+      this.state.inferredPresence = presence;
+      this.state.presenceConfidence = 95; // High confidence from direct DP
+      this.state.lastInferenceTime = now;
+      this.device?.log?.(`[INFERENCE] ✅ DP1 presence=${presence} (confidence: 95%)`);
+      return presence;
+    }
+
+    // DP1 is null - rely on inference
+    this._recalculatePresence('dp1_null', {});
+    return this.state.inferredPresence;
+  }
+
+  // Update firmware info for firmware-specific handling
+  setFirmwareInfo(appVersion) {
+    this.state.appVersion = appVersion;
+    if (appVersion >= 78) {
+      this.state.firmwareType = 'v78';
+      // v78 firmware often has presence=null bug
+      this.params.minConfidenceForPresence = 35; // Lower threshold
+    } else if (appVersion >= 74) {
+      this.state.firmwareType = 'v74';
+      // v74 firmware usually works better
+      this.params.minConfidenceForPresence = 45;
+    }
+    this.device?.log?.(`[INFERENCE] 📱 Firmware: appVersion=${appVersion} type=${this.state.firmwareType}`);
+  }
+
+  // Get current inferred presence state
+  getPresence() {
+    // Check for activity timeout
+    const now = Date.now();
+    if (now - this.state.lastActivityTime > this.params.activityTimeoutMs) {
+      // No activity for 60s = assume no presence
+      if (this.state.inferredPresence) {
+        this.device?.log?.(`[INFERENCE] ⏰ Activity timeout - clearing presence`);
+        this.state.inferredPresence = false;
+        this.state.presenceConfidence = 80;
+      }
+    }
+    return this.state.inferredPresence;
+  }
+
+  // Get confidence level (0-100)
+  getConfidence() {
+    return this.state.presenceConfidence;
+  }
+
+  // Main inference calculation
+  _recalculatePresence(source, data) {
+    const now = Date.now();
+    const state = this.state;
+    let confidence = 0;
+    let presenceIndicators = 0;
+    let totalIndicators = 0;
+
+    // Indicator 1: Distance > 0 (strong indicator)
+    if (state.lastDistance !== null) {
+      totalIndicators += 30;
+      if (state.lastDistance > 0 && state.lastDistance < (this.device._lastMaxRange || 6)) {
+        presenceIndicators += 30;
+        confidence += 30;
+      }
+    }
+
+    // Indicator 2: Distance changed recently (movement detected)
+    if (state.distanceHistory.length >= 2) {
+      totalIndicators += 20;
+      const recentDistances = state.distanceHistory.slice(-3);
+      const hasMovement = recentDistances.some((d, i) =>
+        i > 0 && Math.abs(d.value - recentDistances[i - 1].value) > this.params.distanceThreshold
+      );
+      if (hasMovement) {
+        presenceIndicators += 20;
+        confidence += 20;
+      }
+    }
+
+    // Indicator 3: Lux change rate (rapid changes = movement)
+    if (state.luxChangeRate > 0) {
+      totalIndicators += 15;
+      if (state.luxChangeRate > this.params.luxChangeRateThreshold) {
+        presenceIndicators += 15;
+        confidence += 15;
+      }
+    }
+
+    // Indicator 4: Recent DP activity (device is reporting data)
+    const timeSinceActivity = now - state.lastActivityTime;
+    if (timeSinceActivity < 30000) { // Activity in last 30s
+      totalIndicators += 15;
+      presenceIndicators += 10; // Some activity is normal even without presence
+      confidence += 10;
+    }
+
+    // Indicator 5: DP1 value (if available and not null)
+    if (state.lastPresenceDP !== null && state.lastPresenceDP !== undefined) {
+      totalIndicators += 20;
+      if (state.lastPresenceDP === 1 || state.lastPresenceDP === 2 || state.lastPresenceDP === true) {
+        presenceIndicators += 20;
+        confidence += 20;
+      }
+    }
+
+    // Calculate final confidence
+    state.presenceConfidence = totalIndicators > 0
+      ? Math.round((presenceIndicators / totalIndicators) * 100)
+      : 0;
+
+    // Determine presence based on confidence threshold
+    const previousPresence = state.inferredPresence;
+    state.inferredPresence = state.presenceConfidence >= this.params.minConfidenceForPresence;
+    state.lastInferenceTime = now;
+
+    // Log inference result if changed
+    if (previousPresence !== state.inferredPresence) {
+      this.device?.log?.(`[INFERENCE] 🎯 ${source}: presence=${state.inferredPresence} ` +
+        `(confidence: ${state.presenceConfidence}%, indicators: ${presenceIndicators}/${totalIndicators})`);
+      this.device?.log?.(`[INFERENCE] 📊 State: distance=${state.lastDistance?.toFixed(2)}m, ` +
+        `luxRate=${state.luxChangeRate?.toFixed(1)}/s, DP1=${state.lastPresenceDP}`);
+    }
+
+    return state.inferredPresence;
+  }
+
+  // Reset state (e.g., on device restart)
+  reset() {
+    this.state = {
+      lastDistance: null,
+      distanceHistory: [],
+      distanceTimestamp: 0,
+      lastLux: null,
+      luxHistory: [],
+      luxTimestamp: 0,
+      luxChangeRate: 0,
+      lastPresenceDP: null,
+      inferredPresence: false,
+      presenceConfidence: 0,
+      lastInferenceTime: 0,
+      lastActivityTime: 0,
+      dpActivityCount: 0,
+      appVersion: this.state.appVersion,
+      firmwareType: this.state.firmwareType,
+    };
+  }
+}
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // INTELLIGENT SENSOR CONFIGURATION DATABASE
@@ -162,36 +431,42 @@ const SENSOR_CONFIGS = {
     battery: false,
     hasIlluminance: true,
     needsPolling: true,
-    // v5.5.308: REMOVED invertPresence! Was causing "motion always YES" bug
-    // When device sends DP1=0, inversion made it TRUE constantly
-    // Ronny #764: "Motion alarm is always YES, it updates to YES every 20 sec"
     invertPresence: false,
-    // v5.5.304: WORKAROUND FLAGS for presence=null firmware bug
-    useDistanceInference: true,    // Infer presence from distance > 0
-    useAggressivePolling: true,    // Poll DP1 every 10s instead of 30s
-    needsTimeSync: true,           // Send time sync like Tuya gateway
+    // v5.5.315: INTELLIGENT INFERENCE for presence=null firmware bug
+    // Research: Z2M #27212 reports presence always null on this sensor
+    // Solution: Calculate presence from distance, lux changes, and activity patterns
+    useIntelligentInference: true,  // NEW: Enable smart inference engine
+    useDistanceInference: true,     // Infer presence from distance > 0
+    useAggressivePolling: true,     // Poll DP1 every 10s instead of 30s
+    needsTimeSync: true,            // Send time sync like Tuya gateway
+    // v5.5.315: Firmware-specific handling
+    // appVersion 74: Usually works, presence DP functional
+    // appVersion 78: Often has presence=null bug, needs inference
+    firmwareQuirks: {
+      74: { presenceWorking: true, inferenceWeight: 0.3 },
+      78: { presenceWorking: false, inferenceWeight: 0.9 },
+    },
     dpMap: {
-      // DP1: Presence - trueFalse1 format (PRIMARY!)
-      1: { cap: 'alarm_motion', type: 'presence_bool' },
+      // DP1: Presence - MAY BE NULL on some firmware! Use inference as fallback
+      1: { cap: 'alarm_motion', type: 'presence_bool', useInference: true },
       // DP2: Radar sensitivity (0-9)
       2: { cap: null, internal: 'radar_sensitivity' },
       // DP3: Minimum range (÷100 = meters)
       3: { cap: null, internal: 'min_range', divisor: 100 },
-      // DP4: Maximum range (÷100 = meters)
-      4: { cap: null, internal: 'max_range', divisor: 100 },
+      // DP4: Maximum range (÷100 = meters) - USED FOR INFERENCE MAX RANGE
+      4: { cap: null, internal: 'max_range', divisor: 100, feedInference: true },
       // DP6: Self-test result (enum: 0=testing, 1=success, 2=failure)
       6: { cap: null, internal: 'self_test' },
-      // DP9: Target distance (÷100 = meters) - ALSO USED FOR PRESENCE INFERENCE!
-      9: { cap: 'measure_distance', divisor: 100 },
-      // v5.5.284: DP12 as FALLBACK for lux (some firmware uses DP12 instead of DP104)
-      12: { cap: 'measure_luminance', type: 'lux_direct' },
+      // DP9: Target distance - KEY FOR INFERENCE! distance>0 = presence
+      9: { cap: 'measure_distance', divisor: 100, feedInference: true },
+      // DP12: Lux fallback - FEEDS INFERENCE (lux changes = movement)
+      12: { cap: 'measure_luminance', type: 'lux_direct', feedInference: true },
       // DP101: Detection delay (÷10 = seconds)
       101: { cap: null, internal: 'detection_delay', divisor: 10 },
-      // v5.5.301: DP102 is LUX on Ronny's device, NOT fading_time!
-      // Confirmed from diagnostic 5109c392: DP102 = 30 lux
-      102: { cap: 'measure_luminance', type: 'lux_direct' },
-      // DP104: Illuminance (raw lux) - PRIMARY
-      104: { cap: 'measure_luminance', type: 'lux_direct' },
+      // DP102: LUX - FEEDS INFERENCE
+      102: { cap: 'measure_luminance', type: 'lux_direct', feedInference: true },
+      // DP104: Illuminance - FEEDS INFERENCE
+      104: { cap: 'measure_luminance', type: 'lux_direct', feedInference: true },
     }
   },
 
@@ -727,20 +1002,28 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     const config = this._getSensorConfig();
 
     this.log(`[RADAR] ═══════════════════════════════════════════════════════════`);
-    this.log(`[RADAR] v5.5.283 RONNY FORUM FIXES (présence inversée + lux + distance)`);
+    this.log(`[RADAR] v5.5.315 INTELLIGENT PRESENCE INFERENCE`);
     this.log(`[RADAR] ManufacturerName: ${mfr}`);
     this.log(`[RADAR] Config: ${config.configName || 'ZY_M100_STANDARD (default)'}`);
     this.log(`[RADAR] Power: ${config.battery ? 'BATTERY (EndDevice)' : 'MAINS (Router)'}`);
     this.log(`[RADAR] Illuminance: ${config.hasIlluminance !== false ? 'YES' : 'NO'}`);
     this.log(`[RADAR] Polling: ${config.needsPolling ? 'ENABLED (30s interval)' : 'DISABLED'}`);
     this.log(`[RADAR] DPs: ${Object.keys(config.dpMap || {}).join(', ') || 'ZCL only'}`);
-    this.log(`[RADAR] 🔄 FIXES: Presence inversion, lux clamping (0-2000), distance validation`);
-    this.log(`[RADAR] ⚠️ Known bugs: _TZE284_iadro9bf presence inverted, distance DP may be passive`);
+    this.log(`[RADAR] 🧠 Intelligent Inference: ${config.useIntelligentInference ? 'ENABLED' : 'DISABLED'}`);
     this.log(`[RADAR] ═══════════════════════════════════════════════════════════`);
 
     // v5.5.268: Track received DPs for debugging
     this._receivedDPs = new Set();
     this._lastPresenceUpdate = 0;
+
+    // v5.5.315: Initialize Intelligent Presence Inference Engine
+    if (config.useIntelligentInference) {
+      this._presenceInference = new IntelligentPresenceInference(this);
+      this.log(`[RADAR] 🧠 Inference engine initialized for presence=null workaround`);
+
+      // Try to get firmware version for firmware-specific handling
+      this._detectFirmwareVersion(zclNode);
+    }
 
     // Battery sensors: minimal init to avoid timeouts
     if (config.battery) {
@@ -959,6 +1242,11 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       const finalLux = transformLux(luxValue, dpMap[dpId].type || 'lux_direct', mfr, deviceId);
       this.log(`[RADAR-LUX] ☀️ DP${dpId} → measure_luminance = ${finalLux} lux (local config)`);
       this.setCapabilityValue('measure_luminance', finalLux).catch(() => { });
+
+      // v5.5.315: Feed lux to intelligent inference engine
+      if (dpMap[dpId].feedInference) {
+        this._feedLuxToInference(finalLux);
+      }
       return;
     }
 
@@ -991,6 +1279,21 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     const PRESENCE_DPS = [1, 104, 105, 112];
     if (PRESENCE_DPS.includes(dpId)) {
       const presenceValue = this._parsePresenceValue(value);
+
+      // v5.5.315: Feed presence DP to inference engine (even if null!)
+      if (this._presenceInference && dpId === 1) {
+        const inferredPresence = this._presenceInference.updatePresenceDP(value);
+
+        // If DP1 is null, use inference result instead
+        if (presenceValue === null) {
+          this.log(`[RADAR] 🧠 DP1=null - using inference: presence=${inferredPresence} (confidence: ${this._presenceInference.getConfidence()}%)`);
+          if (inferredPresence !== this.getCapabilityValue('alarm_motion')) {
+            this._handlePresenceWithDebounce(inferredPresence, 1);
+          }
+          return;
+        }
+      }
+
       if (presenceValue !== null) {
         // v5.5.279: Debounce presence to fix "flash 0.5s" issue
         this._handlePresenceWithDebounce(presenceValue, dpId);
@@ -1003,11 +1306,34 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.304: Handle distance DP with presence inference
-   * WORKAROUND for presence=null firmware bug:
-   * - If distance > 0 and < max_range: someone is present
-   * - If distance = 0: no one detected
-   * WHY THIS WORKS: Tuya gateway uses distance to infer presence when DP1 is broken
+   * v5.5.315: Detect firmware version for firmware-specific handling
+   * Different firmware versions have different bugs (appVersion 74 vs 78)
+   */
+  async _detectFirmwareVersion(zclNode) {
+    try {
+      const ep1 = zclNode?.endpoints?.[1];
+      const basicCluster = ep1?.clusters?.basic;
+
+      if (basicCluster?.readAttributes) {
+        const attrs = await basicCluster.readAttributes(['appVersion', 'stackVersion', 'hwVersion']).catch(() => ({}));
+        const appVersion = attrs?.appVersion;
+
+        if (appVersion && this._presenceInference) {
+          this._presenceInference.setFirmwareInfo(appVersion);
+          this.log(`[RADAR] 📱 Detected firmware: appVersion=${appVersion}`);
+
+          // Store for reference
+          this._firmwareAppVersion = appVersion;
+        }
+      }
+    } catch (e) {
+      this.log(`[RADAR] ⚠️ Could not detect firmware version: ${e.message}`);
+    }
+  }
+
+  /**
+   * v5.5.315: Handle distance DP with INTELLIGENT presence inference
+   * Uses IntelligentPresenceInference engine to calculate presence from multiple sources
    */
   _handleDistanceWithPresenceInference(rawDistance) {
     const config = this._getSensorConfig();
@@ -1019,26 +1345,50 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     this.setCapabilityValue('measure_distance', distanceMeters).catch(() => { });
     this.log(`[RADAR] 📏 Distance: ${distanceMeters}m (raw: ${rawDistance})`);
 
-    // v5.5.304: PRESENCE INFERENCE from distance
-    if (useDistanceInference) {
-      // Store max range for reference (from DP4 if available)
-      const maxRange = this._lastMaxRange || 6; // Default 6m if not set
-
-      // Infer presence: distance > 0 means someone is there
-      const inferredPresence = distanceMeters > 0 && distanceMeters < maxRange;
-
-      // Get current alarm_motion state
+    // v5.5.315: Feed distance to intelligent inference engine
+    if (this._presenceInference) {
+      const inferredPresence = this._presenceInference.updateDistance(distanceMeters);
+      const confidence = this._presenceInference.getConfidence();
       const currentPresence = this.getCapabilityValue('alarm_motion');
 
-      // v5.5.308: FIX - Allow distance inference to BOTH set and clear presence
-      // Previous bug: only set to TRUE, never cleared, causing "motion always YES"
+      // Update presence if inference differs from current state
+      if (inferredPresence !== currentPresence && confidence >= 40) {
+        this.log(`[RADAR] 🧠 INTELLIGENT INFERENCE: presence=${inferredPresence} (confidence: ${confidence}%)`);
+        this._handlePresenceWithDebounce(inferredPresence, 9);
+      }
+      this._updatePresenceTimestamp();
+      return;
+    }
+
+    // v5.5.304: Legacy PRESENCE INFERENCE from distance (fallback)
+    if (useDistanceInference) {
+      const maxRange = this._lastMaxRange || 6;
+      const inferredPresence = distanceMeters > 0 && distanceMeters < maxRange;
+      const currentPresence = this.getCapabilityValue('alarm_motion');
+
       if (inferredPresence !== currentPresence) {
         this.log(`[RADAR] 🎯 DISTANCE INFERENCE: presence=${inferredPresence} (distance=${distanceMeters}m, max=${maxRange}m)`);
-        this._handlePresenceWithDebounce(inferredPresence, 9); // Use DP9 as source
+        this._handlePresenceWithDebounce(inferredPresence, 9);
       }
-
-      // Update timestamp when we see distance data
       this._updatePresenceTimestamp();
+    }
+  }
+
+  /**
+   * v5.5.315: Feed lux value to intelligent inference engine
+   * Rapid lux changes indicate movement/presence
+   */
+  _feedLuxToInference(luxValue) {
+    if (this._presenceInference) {
+      const inferredPresence = this._presenceInference.updateLux(luxValue);
+      const confidence = this._presenceInference.getConfidence();
+      const currentPresence = this.getCapabilityValue('alarm_motion');
+
+      // Only update from lux if high confidence and state differs
+      if (inferredPresence !== currentPresence && confidence >= 50) {
+        this.log(`[RADAR] 🧠 LUX-BASED INFERENCE: presence=${inferredPresence} (confidence: ${confidence}%)`);
+        this._handlePresenceWithDebounce(inferredPresence, 104); // Use DP104 as source
+      }
     }
   }
 
@@ -1349,6 +1699,19 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       try {
         const now = Date.now();
         const timeSinceLastPresence = now - (this._lastPresenceUpdate || 0);
+
+        // v5.5.315: PERIODIC INFERENCE CHECK - update presence from inference engine
+        if (this._presenceInference) {
+          const inferredPresence = this._presenceInference.getPresence();
+          const confidence = this._presenceInference.getConfidence();
+          const currentPresence = this.getCapabilityValue('alarm_motion');
+
+          // Update if inference differs and confidence is reasonable
+          if (inferredPresence !== currentPresence && confidence >= 35) {
+            this.log(`[RADAR] 🧠 PERIODIC INFERENCE: presence=${inferredPresence} (confidence: ${confidence}%)`);
+            this._handlePresenceWithDebounce(inferredPresence, 0); // DP0 = inference source
+          }
+        }
 
         // v5.5.304: More aggressive check - poll if no update in 15s (was 60s)
         const threshold = useAggressive ? 15000 : 60000;
