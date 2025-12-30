@@ -1,4 +1,10 @@
 {
+  "5.5.312": {
+    "en": "🔧 SENSOR FIX: Fixed 'this.log is not a function' error in TuyaEF00Manager causing sensors to crash. Flow card triggers now use safe optional chaining.",
+    "nl": "🔧 SENSOR FIX: 'this.log is not a function' fout opgelost in TuyaEF00Manager.",
+    "de": "🔧 SENSOR FIX: 'this.log is not a function' Fehler in TuyaEF00Manager behoben.",
+    "fr": "🔧 SENSOR FIX: Erreur 'this.log is not a function' corrigée dans TuyaEF00Manager."
+  },
   "5.5.311": {
     "en": "🔧 IR BLASTER FIX: Fixed 'expected_frame_buffer' error for TS1201 IR remotes (ZS06, UFO-R11). Implemented proper ZosungIRControl cluster (0xE004) with IRLearn/IRSend commands. Learn mode and IR code sending now work correctly.",
     "nl": "🔧 IR BLASTER FIX: 'expected_frame_buffer' fout opgelost voor TS1201 IR remotes. ZosungIRControl cluster correct geïmplementeerd.",
