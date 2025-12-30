@@ -1,9 +1,9 @@
 {
   "5.5.308": {
-    "en": "🔧 DP MAPPING FIX: Fixed ZY_M100_CEILING_24G DP103 incorrectly mapped to temperature instead of illuminance. Local dpMappings now correctly take priority over universal context profiles.",
-    "nl": "🔧 DP MAPPING FIX: ZY_M100_CEILING_24G DP103 fout gemapped naar temperatuur ipv lux opgelost. Lokale dpMappings hebben nu correct prioriteit.",
-    "de": "🔧 DP MAPPING FIX: ZY_M100_CEILING_24G DP103 falsch als Temperatur statt Lux gemappt behoben. Lokale dpMappings haben jetzt korrekte Priorität.",
-    "fr": "🔧 DP MAPPING FIX: ZY_M100_CEILING_24G DP103 incorrectement mappé en température au lieu de lux corrigé. Les dpMappings locaux ont maintenant la priorité correcte."
+    "en": "🔧 FORUM FIXES #760-764: 1) Fixed _TZE284_iadro9bf 'motion always YES' - removed buggy invertPresence. 2) Fixed distance inference not clearing presence. 3) Added lux polling for sensors that only report on motion. 4) Fixed DP103 mapping priority (local before universal).",
+    "nl": "🔧 FORUM FIXES #760-764: 1) _TZE284_iadro9bf 'motion altijd YES' opgelost. 2) Distance inference nu ook clearing. 3) Lux polling toegevoegd. 4) DP103 mapping prioriteit opgelost.",
+    "de": "🔧 FORUM FIXES #760-764: 1) _TZE284_iadro9bf 'motion immer YES' behoben. 2) Distance inference clearing behoben. 3) Lux polling hinzugefügt. 4) DP103 Mapping Priorität behoben.",
+    "fr": "🔧 FORUM FIXES #760-764: 1) _TZE284_iadro9bf 'motion toujours YES' corrigé. 2) Distance inference clearing corrigé. 3) Polling lux ajouté. 4) Priorité mapping DP103 corrigée."
   },
   "5.5.307": {
     "en": "🔧 PHYSICAL BUTTONS FIX: SDK3 cluster access compatibility. Added fallback patterns for scenes/onOff/groups/levelControl clusters (genScenes, genOnOff, cluster IDs). Fixes physical button presses not detected on TS0044/TS0043 devices.",
