@@ -876,12 +876,26 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
     const dpId = data.dp || data.dpId || data.datapoint;
 
-    // v5.5.306: FIXED - Removed DP104 from filter (it's presence, not lux!)
-    // DP104 is used for alarm_motion in ZY_M100_CEILING_24G config
-    // Only filter DPs that HybridSensorBase handles for non-presence data
-    const HYBRIDSENSOR_DPS = [12, 103, 2, 3, 4, 15]; // lux, settings, battery (NOT DP104!)
+    // v5.5.310: FIXED - Handle DP12 and DP103 locally, NOT via HybridSensorBase!
+    // Problem: HybridSensorBase universal profile maps DP103 to temperature, not lux
+    // Solution: Handle lux DPs (12, 102, 103, 104) directly here using local dpMap config
+    const config = this._getSensorConfig();
+    const dpMap = config.dpMap || {};
+
+    // Check if this DP is a lux DP in our config - handle locally
+    if (dpMap[dpId]?.cap === 'measure_luminance') {
+      const luxValue = this._parseBufferValue(data.value || data.data);
+      const mfr = this._getManufacturerName();
+      const finalLux = transformLux(luxValue, dpMap[dpId].type || 'lux_direct', mfr);
+      this.log(`[RADAR-LUX] ☀️ DP${dpId} → measure_luminance = ${finalLux} lux (local config)`);
+      this.setCapabilityValue('measure_luminance', finalLux).catch(() => { });
+      return;
+    }
+
+    // Only filter DPs that HybridSensorBase handles (battery, settings - NOT lux!)
+    const HYBRIDSENSOR_DPS = [2, 3, 4, 15]; // settings, battery only
     if (HYBRIDSENSOR_DPS.includes(dpId)) {
-      // Don't log, don't process, don't touch - let HybridSensorBase handle completely
+      // Let HybridSensorBase handle these
       return;
     }
 
