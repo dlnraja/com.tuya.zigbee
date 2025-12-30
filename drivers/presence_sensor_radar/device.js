@@ -162,8 +162,10 @@ const SENSOR_CONFIGS = {
     battery: false,
     hasIlluminance: true,
     needsPolling: true,
-    // v5.5.284: Flag for presence inversion fix (firmware bug)
-    invertPresence: true,
+    // v5.5.308: REMOVED invertPresence! Was causing "motion always YES" bug
+    // When device sends DP1=0, inversion made it TRUE constantly
+    // Ronny #764: "Motion alarm is always YES, it updates to YES every 20 sec"
+    invertPresence: false,
     // v5.5.304: WORKAROUND FLAGS for presence=null firmware bug
     useDistanceInference: true,    // Infer presence from distance > 0
     useAggressivePolling: true,    // Poll DP1 every 10s instead of 30s
@@ -944,12 +946,11 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       // Get current alarm_motion state
       const currentPresence = this.getCapabilityValue('alarm_motion');
 
-      // Only update if presence is null OR if inferred presence is true (don't clear based on distance alone)
-      if (currentPresence === null || currentPresence === undefined || inferredPresence) {
-        if (inferredPresence !== currentPresence) {
-          this.log(`[RADAR] 🎯 DISTANCE INFERENCE: presence=${inferredPresence} (distance=${distanceMeters}m, max=${maxRange}m)`);
-          this._handlePresenceWithDebounce(inferredPresence, 9); // Use DP9 as source
-        }
+      // v5.5.308: FIX - Allow distance inference to BOTH set and clear presence
+      // Previous bug: only set to TRUE, never cleared, causing "motion always YES"
+      if (inferredPresence !== currentPresence) {
+        this.log(`[RADAR] 🎯 DISTANCE INFERENCE: presence=${inferredPresence} (distance=${distanceMeters}m, max=${maxRange}m)`);
+        this._handlePresenceWithDebounce(inferredPresence, 9); // Use DP9 as source
       }
 
       // Update timestamp when we see distance data
@@ -1234,7 +1235,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
   /**
    * v5.5.304: ENHANCED POLLING - Workaround for presence=null firmware bug
-   * Strategy: Aggressive polling + Time sync + Distance inference
+   * v5.5.308: Added LUX polling - fixes "lux only updates on motion" issue (Eftychis #761)
+   * Strategy: Aggressive polling + Time sync + Distance inference + Lux polling
    * WHY: Tuya gateway polls aggressively and sends time sync - we do the same
    */
   _startPresencePolling(zclNode) {
@@ -1243,7 +1245,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     const needsTimeSync = config.needsTimeSync || false;
     const pollInterval = useAggressive ? 10000 : 30000; // 10s or 30s
 
-    this.log(`[RADAR] 🔄 Starting presence polling (${pollInterval / 1000}s interval, aggressive=${useAggressive})`);
+    this.log(`[RADAR] 🔄 Starting presence+lux polling (${pollInterval / 1000}s interval, aggressive=${useAggressive})`);
 
     // Clear any existing interval
     if (this._pollingInterval) {
@@ -1254,6 +1256,9 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     if (needsTimeSync) {
       this._sendTimeSync(zclNode);
     }
+
+    // v5.5.308: LUX polling counter - poll lux every 3rd cycle (90s for normal, 30s for aggressive)
+    let luxPollCounter = 0;
 
     // Poll at configured interval
     this._pollingInterval = setInterval(async () => {
@@ -1269,6 +1274,23 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
           // v5.5.304: Also request specific DP1 (presence) directly
           await this._requestSpecificDP(zclNode, 1);
+        }
+
+        // v5.5.308: Poll lux DPs every 3rd cycle to fix "lux only updates on motion" issue
+        luxPollCounter++;
+        if (luxPollCounter >= 3) {
+          luxPollCounter = 0;
+          if (config.hasIlluminance !== false) {
+            this.log(`[RADAR] ☀️ Polling lux DPs...`);
+            // Try common lux DPs: 12, 102, 103, 104
+            const luxDPs = [12, 102, 103, 104];
+            for (const dp of luxDPs) {
+              if (config.dpMap?.[dp]?.cap === 'measure_luminance') {
+                await this._requestSpecificDP(zclNode, dp);
+                break; // Only poll first matching lux DP
+              }
+            }
+          }
         }
       } catch (e) {
         this.log(`[RADAR] ⚠️ Polling error: ${e.message}`);
