@@ -1,4 +1,10 @@
 {
+  "5.5.314": {
+    "en": "🔧 SENSOR FIX: Added lux smoothing for _TZE284_iadro9bf (prevents 30↔2000 fluctuations). Added presence debouncing for _TZE204_gkfbdvyx (prevents random on/off). Research from 40+ sources (Z2M, ZHA, Hubitat).",
+    "nl": "🔧 SENSOR FIX: Lux smoothing toegevoegd voor _TZE284_iadro9bf. Presence debouncing voor _TZE204_gkfbdvyx.",
+    "de": "🔧 SENSOR FIX: Lux-Glättung für _TZE284_iadro9bf. Anwesenheits-Entprellung für _TZE204_gkfbdvyx.",
+    "fr": "🔧 SENSOR FIX: Lissage lux pour _TZE284_iadro9bf. Anti-rebond présence pour _TZE204_gkfbdvyx."
+  },
   "5.5.313": {
     "en": "🔧 STABILITY FIX: Added _deleted flag check to prevent 'Device not found' errors when async callbacks try to update capabilities on deleted devices.",
     "nl": "🔧 STABILITY FIX: _deleted flag check toegevoegd om 'Device not found' fouten te voorkomen.",
