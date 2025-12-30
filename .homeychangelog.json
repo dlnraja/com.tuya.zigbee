@@ -1,4 +1,10 @@
 {
+  "5.5.315": {
+    "en": "🧠 INTELLIGENT PRESENCE: Added smart presence inference for _TZE284_iadro9bf when DP1 returns null. Calculates presence from distance, lux changes, and activity patterns. Firmware-specific handling (appVersion 74/78). Fixes 'presence always null after 15min' bug.",
+    "nl": "🧠 INTELLIGENT PRESENCE: Slimme aanwezigheidsberekening voor _TZE284_iadro9bf wanneer DP1 null teruggeeft.",
+    "de": "🧠 INTELLIGENT PRESENCE: Intelligente Anwesenheitsberechnung für _TZE284_iadro9bf wenn DP1 null zurückgibt.",
+    "fr": "🧠 INTELLIGENT PRESENCE: Calcul intelligent de présence pour _TZE284_iadro9bf quand DP1 retourne null."
+  },
   "5.5.314": {
     "en": "🔧 SENSOR FIX: Added lux smoothing for _TZE284_iadro9bf (prevents 30↔2000 fluctuations). Added presence debouncing for _TZE204_gkfbdvyx (prevents random on/off). Research from 40+ sources (Z2M, ZHA, Hubitat).",
     "nl": "🔧 SENSOR FIX: Lux smoothing toegevoegd voor _TZE284_iadro9bf. Presence debouncing voor _TZE204_gkfbdvyx.",
