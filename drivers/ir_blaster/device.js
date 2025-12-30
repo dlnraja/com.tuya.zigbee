@@ -1,13 +1,17 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { CLUSTER } = require('zigbee-clusters');
+const { CLUSTER, Cluster, ZCLDataTypes } = require('zigbee-clusters');
 
 // IR Blaster cluster IDs
-const LEARN_CLUSTER = 0xE004;    // 57348
-const TRANSMIT_CLUSTER = 0xED00; // 60672
+const ZOSUNG_IR_CONTROL_CLUSTER_ID = 0xE004;    // 57348 - ZosungIRControl
+const ZOSUNG_IR_TRANSMIT_CLUSTER_ID = 0xED00;  // 60672 - ZosungIRTransmit
 
-// Transmit cluster commands
+// ZosungIRControl commands (cluster 0xE004)
+const CMD_IR_LEARN = 0x00;       // Start/stop learn mode
+const CMD_IR_SEND = 0x02;        // Send IR code
+
+// ZosungIRTransmit commands (cluster 0xED00)
 const CMD_START_TRANSMIT = 0x00;
 const CMD_START_TRANSMIT_ACK = 0x01;
 const CMD_CODE_DATA_REQUEST = 0x02;
@@ -15,6 +19,44 @@ const CMD_CODE_DATA_RESPONSE = 0x03;
 const CMD_DONE_SENDING = 0x04;
 const CMD_DONE_RECEIVING = 0x05;
 const CMD_ACK = 0x0B;
+
+/**
+ * v5.5.311: Define ZosungIRControl cluster (0xE004)
+ * Based on Zigbee2MQTT/ZHA implementation
+ */
+class ZosungIRControlCluster extends Cluster {
+  static get ID() { return ZOSUNG_IR_CONTROL_CLUSTER_ID; }
+  static get NAME() { return 'zosungIRControl'; }
+
+  static get COMMANDS() {
+    return {
+      IRLearn: {
+        id: CMD_IR_LEARN,
+        args: {
+          onoff: ZCLDataTypes.bool
+        }
+      },
+      IRSend: {
+        id: CMD_IR_SEND,
+        args: {
+          code: ZCLDataTypes.string
+        }
+      }
+    };
+  }
+
+  static get ATTRIBUTES() {
+    return {
+      lastLearnedIRCode: {
+        id: 0x0000,
+        type: ZCLDataTypes.string
+      }
+    };
+  }
+}
+
+// Register the custom cluster
+Cluster.addCluster(ZosungIRControlCluster);
 
 /**
  * IR Blaster Remote - TS1201 (ZS06, UFO-R11, etc.)
@@ -117,7 +159,7 @@ class IrBlasterDevice extends ZigBeeDevice {
   }
 
   /**
-   * Enable IR learning mode using proper 0xE004 cluster protocol
+   * v5.5.311: Enable IR learning mode using ZosungIRControl cluster
    */
   async _enableLearnMode(duration = 30) {
     this.log(`Enabling IR learn mode for ${duration} seconds...`);
@@ -128,20 +170,23 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
 
     try {
-      // Send learn command to cluster 0xE004 with {"study":0}
-      // This is the proper Zigbee2MQTT/zigbee-herdsman protocol
-      const learnPayload = Buffer.from(JSON.stringify({ study: 0 }), 'utf8');
-
       this.log('Sending IR learn command to cluster 0xE004...');
 
-      // Try to send raw ZCL frame to LEARN_CLUSTER
-      try {
-        await this._sendRawClusterCommand(LEARN_CLUSTER, 0x00, learnPayload);
-        this.log('IR learn command sent via cluster 0xE004');
-      } catch (e) {
+      // v5.5.311: Use proper ZosungIRControl cluster command
+      const irControlCluster = zclNode.endpoints[1].clusters.zosungIRControl;
+      if (irControlCluster) {
+        try {
+          await irControlCluster.IRLearn({ onoff: true });
+          this.log('IR learn command sent via ZosungIRControl cluster');
+        } catch (clusterErr) {
+          this.log('ZosungIRControl.IRLearn failed:', clusterErr.message);
+          // Fallback to OnOff
+          await zclNode.endpoints[1].clusters.onOff?.setOn();
+        }
+      } else {
         // Fallback: use OnOff cluster
-        this.log('Cluster 0xE004 not available, using OnOff fallback');
-        await zclNode.endpoints[1].clusters.onOff.setOn();
+        this.log('ZosungIRControl cluster not available, using OnOff fallback');
+        await zclNode.endpoints[1].clusters.onOff?.setOn();
       }
 
       this.setCapabilityValue('onoff', true).catch(() => { });
@@ -176,7 +221,7 @@ class IrBlasterDevice extends ZigBeeDevice {
   }
 
   /**
-   * Disable IR learning mode
+   * v5.5.311: Disable IR learning mode
    */
   async _disableLearnMode() {
     this.log('Disabling IR learn mode...');
@@ -193,15 +238,19 @@ class IrBlasterDevice extends ZigBeeDevice {
         this._learnTimeout = null;
       }
 
-      // Send stop learn command to cluster 0xE004 with {"study":1}
-      const stopPayload = Buffer.from(JSON.stringify({ study: 1 }), 'utf8');
-
-      try {
-        await this._sendRawClusterCommand(LEARN_CLUSTER, 0x00, stopPayload);
-        this.log('IR stop learn command sent via cluster 0xE004');
-      } catch (e) {
+      // v5.5.311: Use proper ZosungIRControl cluster command
+      const irControlCluster = zclNode.endpoints[1].clusters.zosungIRControl;
+      if (irControlCluster) {
+        try {
+          await irControlCluster.IRLearn({ onoff: false });
+          this.log('IR stop learn command sent via ZosungIRControl cluster');
+        } catch (clusterErr) {
+          this.log('ZosungIRControl.IRLearn(false) failed:', clusterErr.message);
+          await zclNode.endpoints[1].clusters.onOff?.setOff();
+        }
+      } else {
         // Fallback: use OnOff cluster
-        await zclNode.endpoints[1].clusters.onOff.setOff();
+        await zclNode.endpoints[1].clusters.onOff?.setOff();
       }
 
       this.setCapabilityValue('onoff', false).catch(() => { });
@@ -225,7 +274,7 @@ class IrBlasterDevice extends ZigBeeDevice {
   }
 
   /**
-   * Send IR code
+   * v5.5.311: Send IR code using ZosungIRControl cluster
    * @param {string} irCode - Base64 encoded IR code
    */
   async sendIRCode(irCode) {
@@ -237,30 +286,32 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
 
     try {
-      // Build JSON payload like zigbee-herdsman-converters
-      const jsonPayload = JSON.stringify({
-        key_num: 1,
-        delay: 300,
-        key1: {
-          num: 1,
-          freq: 38000,
-          type: 1,
-          key_code: irCode
+      // v5.5.311: Use ZosungIRControl.IRSend command directly
+      const irControlCluster = zclNode.endpoints[1].clusters.zosungIRControl;
+      if (irControlCluster) {
+        try {
+          await irControlCluster.IRSend({ code: irCode });
+          this.log('IR code sent via ZosungIRControl.IRSend');
+          return;
+        } catch (clusterErr) {
+          this.log('ZosungIRControl.IRSend failed, trying Tuya fallback:', clusterErr.message);
         }
-      });
+      }
 
-      // Generate sequence number
-      const seq = this._nextSeq();
-      const buffer = Buffer.from(jsonPayload, 'utf8');
-
-      // Store buffer for chunked transmission
-      this._sendBuffers = this._sendBuffers || {};
-      this._sendBuffers[seq] = { buffer, position: 0 };
-
-      // Send start transmit command to cluster 0xED00
-      await this._sendStartTransmit(seq, buffer.length);
-
-      this.log(`IR code transmission started (seq: ${seq}, len: ${buffer.length})`);
+      // Fallback: Try Tuya EF00 cluster if available
+      const tuyaCluster = zclNode.endpoints[1].clusters.tuya;
+      if (tuyaCluster) {
+        this.log('Attempting IR send via Tuya cluster...');
+        // Tuya DP approach - some IR blasters use DP201 for IR codes
+        await tuyaCluster.datapoint({
+          dp: 201,
+          datatype: 3, // string
+          data: Buffer.from(irCode, 'base64')
+        });
+        this.log('IR code sent via Tuya datapoint');
+      } else {
+        throw new Error('No IR control cluster available');
+      }
 
     } catch (err) {
       this.error('Failed to send IR code:', err);
@@ -269,71 +320,28 @@ class IrBlasterDevice extends ZigBeeDevice {
   }
 
   /**
-   * Generate next sequence number
+   * v5.5.311: Read last learned IR code from device
    */
-  _nextSeq() {
-    this._seqCounter = ((this._seqCounter || 0) + 1) % 0xFFFF;
-    return this._seqCounter;
-  }
-
-  /**
-   * Send start transmit command to cluster 0xED00
-   */
-  async _sendStartTransmit(seq, length) {
-    this.log(`Sending start transmit: seq=${seq}, length=${length}`);
-
-    // Build payload structure like zigbee-herdsman-converters
-    const payload = Buffer.alloc(16);
-    payload.writeUInt16LE(seq, 0);        // seq
-    payload.writeUInt32LE(length, 2);     // length
-    payload.writeUInt32LE(0, 6);          // unk1
-    payload.writeUInt16LE(LEARN_CLUSTER, 10); // unk2 (cluster id)
-    payload.writeUInt8(0x01, 12);         // unk3
-    payload.writeUInt8(0x02, 13);         // cmd
-    payload.writeUInt16LE(0, 14);         // unk4
-
-    try {
-      await this._sendRawClusterCommand(TRANSMIT_CLUSTER, CMD_START_TRANSMIT, payload);
-      this.log('Start transmit sent successfully');
-    } catch (err) {
-      this.error('Failed to send start transmit:', err);
-      throw err;
-    }
-  }
-
-  /**
-   * Send raw ZCL cluster command
-   */
-  async _sendRawClusterCommand(clusterId, commandId, payload) {
+  async readLastLearnedCode() {
     const zclNode = this._zclNode;
     if (!zclNode?.endpoints?.[1]) {
-      throw new Error('Device not ready');
+      return null;
     }
 
-    // Convert payload to hex string for ZCL frame
-    const payloadHex = payload.toString('hex');
-    this.log(`Sending cluster 0x${clusterId.toString(16)} cmd 0x${commandId.toString(16)}: ${payloadHex.substring(0, 40)}...`);
-
-    // Use Homey's raw ZCL sending capability
     try {
-      // Try manufacturer-specific command
-      const endpoint = zclNode.endpoints[1];
-
-      // For proprietary clusters, we need to use sendFrame or similar
-      // This is a best-effort implementation
-      if (endpoint.sendFrame) {
-        await endpoint.sendFrame(clusterId, {
-          frameControl: { clusterSpecific: true, manufacturerSpecific: false, disableDefaultResponse: false },
-          commandId: commandId,
-          payload: payload
-        });
-      } else {
-        this.log('Raw frame sending not available, command may not work');
+      const irControlCluster = zclNode.endpoints[1].clusters.zosungIRControl;
+      if (irControlCluster) {
+        const result = await irControlCluster.readAttributes(['lastLearnedIRCode']);
+        if (result?.lastLearnedIRCode) {
+          this._lastLearnedCode = result.lastLearnedIRCode;
+          this.log(`Read learned IR code: ${this._lastLearnedCode.substring(0, 50)}...`);
+          return this._lastLearnedCode;
+        }
       }
     } catch (err) {
-      this.log(`Cluster command error: ${err.message}`);
-      throw err;
+      this.log('Failed to read learned IR code:', err.message);
     }
+    return null;
   }
 
   /**

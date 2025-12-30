@@ -1,4 +1,10 @@
 {
+  "5.5.311": {
+    "en": "🔧 IR BLASTER FIX: Fixed 'expected_frame_buffer' error for TS1201 IR remotes (ZS06, UFO-R11). Implemented proper ZosungIRControl cluster (0xE004) with IRLearn/IRSend commands. Learn mode and IR code sending now work correctly.",
+    "nl": "🔧 IR BLASTER FIX: 'expected_frame_buffer' fout opgelost voor TS1201 IR remotes. ZosungIRControl cluster correct geïmplementeerd.",
+    "de": "🔧 IR BLASTER FIX: 'expected_frame_buffer' Fehler für TS1201 IR-Fernbedienungen behoben. ZosungIRControl Cluster korrekt implementiert.",
+    "fr": "🔧 IR BLASTER FIX: Erreur 'expected_frame_buffer' corrigée pour télécommandes IR TS1201. Cluster ZosungIRControl correctement implémenté."
+  },
   "5.5.310": {
     "en": "🔧 DIAGNOSTIC FIXES: 1) Fixed DP103 mapped to temperature instead of lux for ZY_M100_CEILING_24G radar sensors - now handled locally. 2) Fixed button_wireless_1 binding failures for _TZ3000_5bpeda8u - removed IAS Zone from default bindings. 3) Dynamic IAS Zone binding for hybrid SOS buttons only.",
     "nl": "🔧 DIAGNOSTIC FIXES: 1) DP103 naar lux ipv temperatuur voor ZY_M100_CEILING_24G. 2) Binding failures opgelost voor _TZ3000_5bpeda8u knop. 3) Dynamische IAS Zone binding voor hybride knoppen.",
