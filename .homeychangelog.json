@@ -1,4 +1,10 @@
 {
+  "5.5.313": {
+    "en": "🔧 STABILITY FIX: Added _deleted flag check to prevent 'Device not found' errors when async callbacks try to update capabilities on deleted devices.",
+    "nl": "🔧 STABILITY FIX: _deleted flag check toegevoegd om 'Device not found' fouten te voorkomen.",
+    "de": "🔧 STABILITY FIX: _deleted Flag-Prüfung hinzugefügt um 'Device not found' Fehler zu vermeiden.",
+    "fr": "🔧 STABILITY FIX: Vérification du flag _deleted ajoutée pour éviter les erreurs 'Device not found'."
+  },
   "5.5.312": {
     "en": "🔧 SENSOR FIX: Fixed 'this.log is not a function' error in TuyaEF00Manager causing sensors to crash. Flow card triggers now use safe optional chaining.",
     "nl": "🔧 SENSOR FIX: 'this.log is not a function' fout opgelost in TuyaEF00Manager.",
