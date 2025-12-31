@@ -1,4 +1,10 @@
 {
+  "5.5.333": {
+    "en": "🔘 FORUM FIX: _TZ3000_wkai4ga5 & _TZ3000_5tqxpine button switches now working! Added multistateInput cluster support (cluster 18), improved scene listener detection, added onOff command handling. Battery display fixed for devices without powerConfiguration cluster. Per Eftychis_Georgilas diagnostic report.",
+    "nl": "🔘 FORUM FIX: _TZ3000_wkai4ga5 & _TZ3000_5tqxpine knoppen werken nu!",
+    "de": "🔘 FORUM FIX: _TZ3000_wkai4ga5 & _TZ3000_5tqxpine Tasten funktionieren jetzt!",
+    "fr": "🔘 FORUM FIX: Boutons _TZ3000_wkai4ga5 & _TZ3000_5tqxpine fonctionnent maintenant!"
+  },
   "5.5.332": {
     "en": "🔧 FIX: Resolved 'Run listener was already registered' warning for button flow cards. Generic triggers (button_pressed, button_double_press, button_long_press) are now registered only once across all button drivers. Per diagnostic report.",
     "nl": "🔧 FIX: Waarschuwing 'Run listener was already registered' opgelost voor knoppenflows.",
