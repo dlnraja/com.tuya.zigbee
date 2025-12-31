@@ -332,9 +332,19 @@ const SENSOR_CONFIGS = {
   // DP1=presence, DP2=move_sens, DP3=min_dist, DP4=max_dist, DP9=distance
   // DP101=tracking, DP102=presence_sens, DP103=illuminance, DP104=motion_state, DP105=fading
   // ─────────────────────────────────────────────────────────────────────────────
-  // v5.5.324: RONNY #782 FINAL FIX - More aggressive filtering for _TZE204_gkfbdvyx
-  // Issues: 1) False presence, 2) Lux not working, 3) Battery alarms, 4) Distance not working
-  // Solution: Stronger debouncing, multiple DP fallbacks, explicit mains-powered flag
+  // v5.5.325: RONNY #782 ULTIMATE FIX - Complete rewrite based on ZHA/Z2M research
+  // Sources: ZHA PR#4044, HA Community t/874026, Z2M converters, SmartHomeScene review
+  // CONFIRMED DP MAPPINGS from ZHA quirk:
+  // DP1: presence_state ENUM (0=none/false, 1=presence/true, 2=move/true) - NOT BOOLEAN!
+  // DP2: move_sensitivity (1-10)
+  // DP3: detection_distance_min (×0.01m = cm to m)
+  // DP4: detection_distance_max (×0.01m = cm to m)
+  // DP9: target_distance (×0.1m = dm to m)
+  // DP101: distance_tracking (switch)
+  // DP102: presence_sensitivity (1-10)
+  // DP103: illuminance (direct lux, 0-2000)
+  // DP104: motion_state (enum: none/presence/move)
+  // DP105: fading_time (5-15000 seconds)
   // ─────────────────────────────────────────────────────────────────────────────
   'ZY_M100_CEILING_24G': {
     configName: 'ZY_M100_CEILING_24G',
@@ -342,29 +352,38 @@ const SENSOR_CONFIGS = {
       '_TZE200_gkfbdvyx', '_TZE204_gkfbdvyx',
     ],
     battery: false,
-    mainsPowered: true,  // v5.5.324: Explicit mains-powered flag to prevent battery notifications
+    mainsPowered: true,
+    noBatteryCapability: true,  // v5.5.325: Force remove battery capability
     hasIlluminance: true,
-    needsPolling: true,
-    aggressiveDebounce: true,  // v5.5.324: Enable extra-aggressive presence filtering
-    invertPresence: true,  // v5.5.320: Enable inversion by default (Ronny #760 confirms needed)
+    needsPolling: false,  // v5.5.325: Disable polling - use DP reports only
+    ultraAggressiveDebounce: true,  // v5.5.325: Maximum filtering for false positives
+    invertPresence: false,  // v5.5.325: ZHA confirms NO inversion needed with correct enum handling
+    presenceEnumMapping: { 0: false, 1: true, 2: true },  // v5.5.325: Correct enum->boolean mapping
     dpMap: {
-      1: { cap: 'alarm_motion', type: 'presence_enum' },    // 0=none, 1=presence, 2=move
-      2: { cap: null, internal: 'motion_sensitivity' },      // 0-10
-      3: { cap: null, internal: 'detection_distance_min' },  // ×0.1 = meters
-      4: { cap: null, internal: 'detection_distance_max' },  // ×0.1 = meters
-      9: { cap: 'measure_distance', divisor: 10 },           // ×0.1 = meters (PRIMARY)
+      // v5.5.325: PRESENCE - DP1 is ENUM not boolean!
+      // 0=none (no presence), 1=presence (detected), 2=move (moving detected)
+      1: { cap: 'alarm_motion', type: 'presence_enum_gkfbdvyx', enumMap: { 0: false, 1: true, 2: true } },
+
+      // v5.5.325: SETTINGS DPs (internal, not exposed)
+      2: { cap: null, internal: 'move_sensitivity' },        // 1-10
+      3: { cap: null, internal: 'detection_distance_min', divisor: 100 },  // cm -> m
+      4: { cap: null, internal: 'detection_distance_max', divisor: 100 },  // cm -> m
+
+      // v5.5.325: DISTANCE - DP9 primary, ×0.1 = dm to meters
+      9: { cap: 'measure_distance', divisor: 10 },
+
+      // v5.5.325: MORE SETTINGS
       101: { cap: null, internal: 'distance_tracking' },     // switch
       102: { cap: null, internal: 'presence_sensitivity' },  // 1-10
-      103: { cap: 'measure_luminance', type: 'lux_direct' }, // lux direct (PRIMARY)
-      104: { cap: 'alarm_motion', type: 'presence_enum' },   // motion state enum (fallback)
-      105: { cap: null, internal: 'fading_time' },           // 1-1500 sec
-      // v5.5.324: EXTENDED FALLBACK DPs for lux and distance (Ronny #782)
-      6: { cap: 'measure_luminance', type: 'lux_direct' },   // lux fallback 1
-      12: { cap: 'measure_luminance', type: 'lux_direct' },  // lux fallback 2 (iadro9bf style)
-      106: { cap: 'measure_luminance', type: 'lux_direct' }, // lux fallback 3
-      107: { cap: 'measure_distance', divisor: 100 },        // distance fallback 1
-      109: { cap: 'measure_distance', divisor: 100 },        // distance fallback 2 (TZE284 style)
-      110: { cap: 'measure_distance', divisor: 10 },         // distance fallback 3
+
+      // v5.5.325: ILLUMINANCE - DP103 is DIRECT LUX (0-2000)
+      103: { cap: 'measure_luminance', type: 'lux_direct' },
+
+      // v5.5.325: MOTION STATE - DP104 is fallback presence enum
+      104: { cap: 'alarm_motion', type: 'presence_enum_gkfbdvyx', enumMap: { 0: false, 1: true, 2: true } },
+
+      // v5.5.325: FADING TIME
+      105: { cap: null, internal: 'fading_time' },           // 5-15000 sec
     }
   },
 
@@ -684,6 +703,24 @@ function transformPresence(value, type, invertPresence = false, configName = '')
       // 0=none, 1=motion, 2=stationary -> true if motion or stationary
       result = value === 1 || value === 2;
       break;
+    case 'presence_enum_gkfbdvyx':
+      // v5.5.325: RONNY #782 - Specific handler for _TZE204_gkfbdvyx
+      // ZHA confirmed: 0=none (false), 1=presence (true), 2=move (true)
+      // But value 2 (move) triggers spuriously from radar noise - treat with caution
+      if (value === 0) {
+        result = false;
+      } else if (value === 1) {
+        result = true;  // Confirmed presence
+      } else if (value === 2) {
+        // v5.5.325: "move" state is unreliable - log but still map to true
+        // The debouncing will filter out spurious reports
+        console.log(`[PRESENCE-FIX] 🚶 gkfbdvyx: move state (2) detected - may be radar noise`);
+        result = true;
+      } else {
+        console.log(`[PRESENCE-FIX] ⚠️ gkfbdvyx: unknown enum value ${value}`);
+        result = false;
+      }
+      break;
     case 'presence_bool':
       // v5.5.306: CRITICAL FIX - value=0 means NO presence, value=1 means presence
       result = value === 1 || value === true || value === 'presence';
@@ -735,16 +772,16 @@ function debouncePresence(presence, manufacturerName, deviceId) {
     state.onCount = 0;
   }
 
-  // v5.5.324: RONNY #782 - Even more aggressive hysteresis for gkfbdvyx
-  // Problem: "Goes on when no presence" - sensor is too sensitive
-  // Require 5 consecutive ON reports to activate (prevents false positives)
-  // Require only 2 consecutive OFF reports to deactivate (faster response when leaving)
-  const requiredOnCount = 5;  // v5.5.324: Increased from 3 to 5 (Ronny #782)
+  // v5.5.325: RONNY #782 ULTIMATE FIX - Maximum hysteresis for gkfbdvyx
+  // Problem: Sensor reports presence randomly even when empty room
+  // Root cause: Enum value 2 ("move") triggers spuriously from radar noise
+  // Solution: Require 7 consecutive ON + 15s gap to activate
+  const requiredOnCount = 7;  // v5.5.325: Increased to 7 (was 5)
   const requiredOffCount = 2;
 
-  // v5.5.324: Minimum time between state changes (10 seconds for ON, 3 seconds for OFF)
-  // Ronny #782: Even with debouncing, still getting false positives
-  const minStateChangeInterval = 10000;  // v5.5.324: Increased from 5s to 10s
+  // v5.5.325: Minimum time between state changes (15 seconds for ON)
+  // This prevents rapid false-positive cycles
+  const minStateChangeInterval = 15000;  // v5.5.325: Increased to 15s (was 10s)
   const timeSinceLastChange = now - state.lastChangeTime;
 
   let newStablePresence = state.stablePresence;
@@ -1158,13 +1195,19 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     // This was missing and caused presence not to work on TZE284 devices
     await this._setupTuyaDPListeners(zclNode);
 
-    // v5.5.320: Remove measure_battery for mains-powered sensors (Ronny #760: battery notification spam)
-    // These sensors report powerSource: "mains" but may have had battery capability added incorrectly
-    if (!config.battery && this.hasCapability('measure_battery')) {
+    // v5.5.325: RONNY #782 - Force remove battery for mains-powered sensors
+    // noBatteryCapability flag ensures battery is NEVER shown for these devices
+    if ((config.noBatteryCapability || config.mainsPowered || !config.battery) && this.hasCapability('measure_battery')) {
       try {
         await this.removeCapability('measure_battery');
-        this.log('[RADAR] 🔋 Removed measure_battery (mains-powered sensor)');
+        this.log('[RADAR] 🔋 Removed measure_battery (mains-powered, no battery spam)');
       } catch (e) { /* ignore */ }
+    }
+
+    // v5.5.325: Also disable battery monitoring completely for gkfbdvyx
+    if (config.noBatteryCapability) {
+      this._batteryMonitoringDisabled = true;
+      this.log('[RADAR] 🔋 Battery monitoring DISABLED for this device');
     }
 
     // Ensure required capabilities
