@@ -1,4 +1,10 @@
 {
+  "5.5.318": {
+    "en": "🐛 BUG FIXES: Fixed 'this.log is not a function' error in TuyaEF00Manager. Fixed button_wireless incorrectly checking alarm_contact capability. Added 'Invert Presence' setting for radar sensors with inverted firmware. Fixed NaN lux values in presence_sensor_radar.",
+    "nl": "🐛 BUG FIXES: Diverse bugfixes voor TuyaEF00Manager, button_wireless en presence_sensor_radar.",
+    "de": "🐛 BUG FIXES: Verschiedene Bugfixes für TuyaEF00Manager, button_wireless und presence_sensor_radar.",
+    "fr": "🐛 BUG FIXES: Corrections de bugs pour TuyaEF00Manager, button_wireless et presence_sensor_radar."
+  },
   "5.5.317": {
     "en": "🧠 INTELLIGENT INFERENCE: Multi-source data validation for sensors. Motion: infers from lux changes when PIR fails. Climate: validates temp/humidity correlation. Soil: predicts watering needs from trends. Air quality: cross-validates CO2/VOC. Battery: predicts remaining days.",
     "nl": "🧠 INTELLIGENT INFERENCE: Multi-bron datavalidatie voor sensoren met slimme deductie.",
