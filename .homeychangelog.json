@@ -1,4 +1,10 @@
 {
+  "5.5.327": {
+    "en": "🔧 DIAGNOSTIC FIXES: TuyaEF00Manager safe logging (prevents 'this.log is not a function' errors). All device.log/error calls now use safe _log/_error helpers with null checks.",
+    "nl": "🔧 DIAGNOSTIC FIXES: TuyaEF00Manager veilige logging (voorkomt 'this.log is not a function' fouten).",
+    "de": "🔧 DIAGNOSTIC FIXES: TuyaEF00Manager sichere Protokollierung (verhindert 'this.log is not a function' Fehler).",
+    "fr": "🔧 DIAGNOSTIC FIXES: TuyaEF00Manager logging sécurisé (évite les erreurs 'this.log is not a function')."
+  },
   "5.5.326": {
     "en": "🔬 RONNY #760 ULTIMATE FIX: _TZE284_iadro9bf complete rewrite. Distance-based presence inference for v78 firmware bug. Ultra-aggressive lux smoothing (2min lock) for 30-2000 oscillation. Force-remove battery capability. Disable polling.",
     "nl": "🔬 RONNY #760: _TZE284_iadro9bf herschreven. Distance-based presence, ultra lux smoothing, geen batterij.",
