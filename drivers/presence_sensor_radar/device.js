@@ -332,10 +332,10 @@ const SENSOR_CONFIGS = {
   // DP1=presence, DP2=move_sens, DP3=min_dist, DP4=max_dist, DP9=distance
   // DP101=tracking, DP102=presence_sens, DP103=illuminance, DP104=motion_state, DP105=fading
   // ─────────────────────────────────────────────────────────────────────────────
-  // v5.5.306: RONNY FIX #760 - REMOVED invertPresence!
-  // User reports: "Yes when outside and no when inside" with invertPresence:true
-  // This means invertPresence was CAUSING the bug, not fixing it
-  // These devices report correctly: 0=none, 1=presence, 2=move
+  // v5.5.320: RONNY #760 FINAL FIX - Enable user setting for invert_presence
+  // Ronny reports: "Presence is opposite, Yes when outside and no when inside"
+  // Different firmware versions behave differently - use user setting as override
+  // The app has an "Invert Presence" toggle in device settings for users to control
   // ─────────────────────────────────────────────────────────────────────────────
   'ZY_M100_CEILING_24G': {
     configName: 'ZY_M100_CEILING_24G',
@@ -345,7 +345,7 @@ const SENSOR_CONFIGS = {
     battery: false,
     hasIlluminance: true,
     needsPolling: true,
-    invertPresence: false,  // v5.5.306: FIXED - Do NOT invert (was causing wrong behavior)
+    invertPresence: true,  // v5.5.320: Enable inversion by default (Ronny #760 confirms needed)
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_enum' },    // 0=none, 1=presence, 2=move
       2: { cap: null, internal: 'motion_sensitivity' },      // 0-10
@@ -832,13 +832,14 @@ function transformLux(value, type, manufacturerName = '', deviceId = null) {
     lux = converted;
   }
 
-  // v5.5.316: Soft clamp with warning, not hard override
-  if (lux > maxLux) {
-    console.log(`[LUX-FIX] ⚠️ Value ${lux} exceeds ${maxLux} for ${manufacturerName} (allowing, may be valid)`);
-    // Only clamp if REALLY extreme (> 3x max)
-    if (lux > maxLux * 3) {
-      lux = maxLux;
-    }
+  // v5.5.320: HARD CLAMP for ZY-M100 series (Ronny #760: lux showing 2200 when max is 2000)
+  // These sensors are confirmed 0-2000 lux range - anything above is sensor noise
+  if (lux > maxLux && isZYM100Series) {
+    console.log(`[LUX-FIX] 🔒 Hard clamp for ZY-M100: ${lux} → ${maxLux} lux`);
+    lux = maxLux;
+  } else if (lux > maxLux) {
+    // For other sensors, still allow higher values but warn
+    console.log(`[LUX-FIX] ⚠️ Value ${lux} exceeds ${maxLux} for ${manufacturerName} (allowing)`);
   }
 
   lux = Math.max(0, Math.round(lux));
@@ -1149,6 +1150,15 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     // v5.5.270: CRITICAL FIX - Setup Tuya DP listeners for mains-powered sensors too!
     // This was missing and caused presence not to work on TZE284 devices
     await this._setupTuyaDPListeners(zclNode);
+
+    // v5.5.320: Remove measure_battery for mains-powered sensors (Ronny #760: battery notification spam)
+    // These sensors report powerSource: "mains" but may have had battery capability added incorrectly
+    if (!config.battery && this.hasCapability('measure_battery')) {
+      try {
+        await this.removeCapability('measure_battery');
+        this.log('[RADAR] 🔋 Removed measure_battery (mains-powered sensor)');
+      } catch (e) { /* ignore */ }
+    }
 
     // Ensure required capabilities
     for (const cap of ['measure_distance', 'measure_luminance']) {
