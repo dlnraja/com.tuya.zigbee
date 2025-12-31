@@ -1,4 +1,10 @@
 {
+  "5.5.334": {
+    "en": "🌱 HOBEIAN PR#6 FIX: Soil sensor settings now fully functional! Fixed Fahrenheit conversion (was inverted), implemented calibration offsets (temp/humidity/moisture -30 to +30), soil dryness threshold triggers alarm_water. Settings applied immediately on change. Per AreAArseth/com.hobeian PR#6.",
+    "nl": "🌱 HOBEIAN PR#6 FIX: Bodemvochtsensor instellingen werken nu volledig!",
+    "de": "🌱 HOBEIAN PR#6 FIX: Bodenfeuchtesensor-Einstellungen funktionieren jetzt vollständig!",
+    "fr": "🌱 HOBEIAN PR#6 FIX: Paramètres capteur sol maintenant fonctionnels!"
+  },
   "5.5.333": {
     "en": "🔘 FORUM FIX: _TZ3000_wkai4ga5 & _TZ3000_5tqxpine button switches now working! Added multistateInput cluster support (cluster 18), improved scene listener detection, added onOff command handling. Battery display fixed for devices without powerConfiguration cluster. Per Eftychis_Georgilas diagnostic report.",
     "nl": "🔘 FORUM FIX: _TZ3000_wkai4ga5 & _TZ3000_5tqxpine knoppen werken nu!",
