@@ -430,6 +430,30 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
+  // TYPE C2: ZG-204ZL PIR Only (no radar) - Battery powered
+  // v5.5.329: Added per forum request #788 (4x4_Pete)
+  // Source: https://github.com/Koenkk/zigbee2mqtt/issues/12364
+  // DP1=PIR state, DP4=battery, DP9=sensitivity, DP10=keep_time, DP12=illuminance
+  // NOTE: Device only has motion + illuminance - NO temperature/humidity!
+  // ─────────────────────────────────────────────────────────────────────────────
+  'ZG_204ZL_PIR': {
+    sensors: [
+      '_TZE200_3towulqd', '_TZE200_1ibpyhdc', '_TZE200_bh3n6gk8',
+    ],
+    battery: true,
+    hasIlluminance: true,
+    noTemperature: true,    // v5.5.329: Explicitly no temperature
+    noHumidity: true,       // v5.5.329: Explicitly no humidity
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_bool' },
+      4: { cap: 'measure_battery', divisor: 1 },
+      9: { cap: null, internal: 'sensitivity' },        // Low/Medium/High
+      10: { cap: null, internal: 'keep_time' },         // 10/30/60/120s
+      12: { cap: 'measure_luminance', type: 'lux_direct' },  // Max 1000 lux
+    }
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
   // TYPE D: ZY-M100-S_2 LOW DP VARIANTS (Ronny #760 + Z2M #27212, #30326)
   // v5.5.326: RONNY #760 ULTIMATE FIX - Complete rewrite based on Z2M/ZHA research
   // Sources: Z2M #27212, #30326, #8939, ZHA #3969, HA t/862007
@@ -1240,6 +1264,22 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     if (config.noBatteryCapability) {
       this._batteryMonitoringDisabled = true;
       this.log('[RADAR] 🔋 Battery monitoring DISABLED for this device');
+    }
+
+    // v5.5.329: Remove temperature capability for PIR-only sensors (forum #788)
+    if (config.noTemperature && this.hasCapability('measure_temperature')) {
+      try {
+        await this.removeCapability('measure_temperature');
+        this.log('[RADAR] 🌡️ Removed measure_temperature (not supported by this device)');
+      } catch (e) { /* ignore */ }
+    }
+
+    // v5.5.329: Remove humidity capability for PIR-only sensors (forum #788)
+    if (config.noHumidity && this.hasCapability('measure_humidity')) {
+      try {
+        await this.removeCapability('measure_humidity');
+        this.log('[RADAR] 💧 Removed measure_humidity (not supported by this device)');
+      } catch (e) { /* ignore */ }
     }
 
     // Ensure required capabilities
