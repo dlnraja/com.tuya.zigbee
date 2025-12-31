@@ -1,4 +1,10 @@
 {
+  "5.5.330": {
+    "en": "✨ HOBEIAN ZG-303Z INTEGRATION: Full soil sensor support from AreAArseth/com.hobeian. NEW: measure_soil_moisture capability, alarm_water for dryness alerts, air humidity (DP109), calibration settings (-30 to +30), soil dryness threshold. Supports _TZE200_wqashyqo + all existing soil sensors.",
+    "nl": "✨ HOBEIAN ZG-303Z: Volledige bodemvochtsensor met alarm_water, luchtvochtigheid, kalibratie.",
+    "de": "✨ HOBEIAN ZG-303Z: Vollständiger Bodenfeuchtesensor mit Wasseralarm, Luftfeuchtigkeit, Kalibrierung.",
+    "fr": "✨ HOBEIAN ZG-303Z: Capteur sol complet avec alarme eau, humidité air, calibration."
+  },
   "5.5.329": {
     "en": "🔧 FIX: ZG-204ZL PIR sensor (_TZE200_3towulqd) now shows only motion + illuminance (removed incorrect temp/humidity). Added ZG-303Z soil sensor support (_TZE200_wqashyqo). Per forum #788.",
     "nl": "🔧 FIX: ZG-204ZL PIR toont nu alleen beweging + lux. ZG-303Z bodemvochtsensor toegevoegd.",
