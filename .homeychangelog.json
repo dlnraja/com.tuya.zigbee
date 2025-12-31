@@ -1,4 +1,10 @@
 {
+  "5.5.321": {
+    "en": "🔧 EFTYCHIS #778 FIXES: Fixed scene switches (1-6 gang) physical buttons not working - added proper endpoint bindings. Added curtain motor calibration settings (open_time, close_time, reverse_direction). Re-pair devices after update for bindings to take effect.",
+    "nl": "🔧 EFTYCHIS #778 FIXES: Scene switches fysieke knoppen gerepareerd. Gordijnmotor kalibratie instellingen toegevoegd.",
+    "de": "🔧 EFTYCHIS #778 FIXES: Scene-Schalter physische Tasten repariert. Vorhangmotor-Kalibrierungseinstellungen hinzugefügt.",
+    "fr": "🔧 EFTYCHIS #778 FIXES: Boutons physiques des scene switches corrigés. Paramètres de calibration du moteur de rideau ajoutés."
+  },
   "5.5.320": {
     "en": "🔧 RONNY #760 FINAL FIXES: Hard clamp lux to 2000 for ZY-M100 sensors (was showing 2200). Fixed _TZE204_gkfbdvyx inverted presence. Fixed battery notification spam for mains-powered radar sensors.",
     "nl": "🔧 RONNY #760 FIXES: Lux limiet 2000, omgekeerde presence fix, geen batterij meldingen voor netvoeding sensoren.",

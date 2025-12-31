@@ -48,8 +48,70 @@ class CurtainMotorDevice extends HybridCoverBase {
   async onNodeInit({ zclNode }) {
     // Parent handles ALL: cover listeners, Tuya DP, ZCL
     await super.onNodeInit({ zclNode });
-    this.log('[CURTAIN] v5.5.129 - DPs: 1-10,12,13,101,102 | ZCL: 258,6,8,EF00');
+    this.log('[CURTAIN] v5.5.321 - DPs: 1-10,12,13,101,102 | ZCL: 258,6,8,EF00');
+
+    // v5.5.321: Apply calibration settings on init
+    await this._applyCalibrationSettings();
+
     this.log('[CURTAIN] ✅ Ready');
+  }
+
+  /**
+   * v5.5.321: Apply calibration settings via Tuya DP
+   * DP101 = open_time (seconds)
+   * DP102 = close_time (seconds)
+   * DP5 = reverse direction (0/1)
+   */
+  async _applyCalibrationSettings() {
+    try {
+      const openTime = this.getSetting('open_time') || 0;
+      const closeTime = this.getSetting('close_time') || 0;
+      const reverse = this.getSetting('reverse_direction') || false;
+
+      if (openTime > 0) {
+        this.log(`[CURTAIN] Setting open_time: ${openTime}s`);
+        await this._sendTuyaDP(101, openTime, 'value');
+      }
+      if (closeTime > 0) {
+        this.log(`[CURTAIN] Setting close_time: ${closeTime}s`);
+        await this._sendTuyaDP(102, closeTime, 'value');
+      }
+      if (reverse) {
+        this.log('[CURTAIN] Setting reverse direction');
+        await this._sendTuyaDP(5, 1, 'bool');
+      }
+    } catch (err) {
+      this.log('[CURTAIN] ⚠️ Could not apply calibration:', err.message);
+    }
+  }
+
+  /**
+   * v5.5.321: Handle settings changes
+   */
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    await super.onSettings?.({ oldSettings, newSettings, changedKeys });
+
+    if (changedKeys.includes('open_time') || changedKeys.includes('close_time') || changedKeys.includes('reverse_direction')) {
+      this.log('[CURTAIN] Calibration settings changed, applying...');
+      await this._applyCalibrationSettings();
+    }
+  }
+
+  /**
+   * v5.5.321: Send Tuya DP command
+   */
+  async _sendTuyaDP(dp, value, type = 'value') {
+    try {
+      const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya
+        || this.zclNode?.endpoints?.[1]?.clusters?.[61184];
+
+      if (tuyaCluster?.datapoint) {
+        await tuyaCluster.datapoint({ dp, value, datatype: type === 'bool' ? 1 : 2 });
+        this.log(`[CURTAIN] ✅ Sent DP${dp}=${value}`);
+      }
+    } catch (err) {
+      this.log(`[CURTAIN] ⚠️ DP${dp} send failed:`, err.message);
+    }
   }
 }
 

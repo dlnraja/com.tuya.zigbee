@@ -291,6 +291,51 @@
   },
   "settings": [
     {
+      "id": "open_time",
+      "type": "number",
+      "label": {
+        "en": "Open Time (seconds)",
+        "fr": "Temps d'ouverture (secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "hint": {
+        "en": "Time to fully open the cover (0 = auto calibration). Set this to calibrate the open position.",
+        "fr": "Temps pour ouvrir complètement le volet (0 = calibration auto). Définir pour calibrer la position ouverte."
+      }
+    },
+    {
+      "id": "close_time",
+      "type": "number",
+      "label": {
+        "en": "Close Time (seconds)",
+        "fr": "Temps de fermeture (secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "hint": {
+        "en": "Time to fully close the cover (0 = auto calibration). Set this to calibrate the close position.",
+        "fr": "Temps pour fermer complètement le volet (0 = calibration auto). Définir pour calibrer la position fermée."
+      }
+    },
+    {
+      "id": "reverse_direction",
+      "type": "checkbox",
+      "label": {
+        "en": "Reverse Direction",
+        "fr": "Inverser Direction"
+      },
+      "value": false,
+      "hint": {
+        "en": "Swap open/close direction if your curtain moves the wrong way",
+        "fr": "Inverser la direction si votre rideau se déplace dans le mauvais sens"
+      }
+    },
+    {
       "id": "power_source",
       "type": "dropdown",
       "label": {
