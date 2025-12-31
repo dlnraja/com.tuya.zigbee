@@ -1,11 +1,15 @@
 'use strict';
-const { HybridSwitchBase } = require('../../lib/devices/HybridSwitchBase');
 
-class SceneSwitch2Device extends HybridSwitchBase {
-  get gangCount() { return 2; }
+// v5.5.319: FIX - Scene switches are BUTTON devices, not on/off switches!
+const { ButtonDevice } = require('../../lib/devices/ButtonDevice');
+
+class SceneSwitch2Device extends ButtonDevice {
+  get buttonCount() { return 2; }
+
   async onNodeInit({ zclNode }) {
+    this.log('[SCENE-2] 🔘 Initializing 2-gang scene switch as BUTTON device...');
     await super.onNodeInit({ zclNode });
-    this.log('[SCENE-2] ✅ Ready');
+    this.log('[SCENE-2] ✅ Ready - physical buttons now detected');
   }
 }
 module.exports = SceneSwitch2Device;
