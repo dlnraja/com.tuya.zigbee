@@ -748,7 +748,14 @@ const presenceDebounceState = new Map();  // deviceId -> { lastPresence, timesta
 // Research: Z2M #27212 shows _TZE284_iadro9bf reports direct lux (e.g., 282), NOT raw ADC
 // Research: SmartHomeScene confirms ZY-M100 spec is 0-2000 LUX
 // FIXED: v5.5.314 smoothing was too aggressive, v5.5.283 auto-detect was wrong
+// v5.5.318: Added NaN/undefined protection
 function transformLux(value, type, manufacturerName = '', deviceId = null) {
+  // v5.5.318: NaN/undefined protection - return 0 for invalid values
+  if (value === null || value === undefined || typeof value !== 'number' || isNaN(value)) {
+    console.log(`[LUX-FIX] ⚠️ Invalid lux value (${value}) for ${manufacturerName}, returning 0`);
+    return 0;
+  }
+
   let lux = value;
   const originalValue = value;
 
@@ -956,9 +963,15 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
     this.log(`[RADAR] 🧠 Using config: ${config.configName || 'DEFAULT'} for ${mfr}`);
 
-    // v5.5.284: Get invertPresence flag from config (not manufacturerName which can be empty)
-    const invertPresence = config.invertPresence || false;
+    // v5.5.318: Get invertPresence from user setting OR config
+    // User setting takes precedence over config default
+    const settings = this.getSettings() || {};
+    const invertPresence = settings.invert_presence ?? config.invertPresence ?? false;
     const configName = config.configName || 'DEFAULT';
+
+    if (invertPresence) {
+      this.log(`[RADAR] 🔄 Presence inversion ENABLED (setting=${settings.invert_presence}, config=${config.invertPresence})`);
+    }
 
     for (const [dpId, dpConfig] of Object.entries(dpMap)) {
       const dp = parseInt(dpId);
@@ -1436,9 +1449,10 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     const now = Date.now();
     const DEBOUNCE_MS = 2000; // 2 seconds
 
-    // v5.5.293: Apply inversion transform BEFORE debounce logic
+    // v5.5.318: Apply inversion from user setting OR config
     const config = this._getSensorConfig();
-    const invertPresence = config.invertPresence || false;
+    const settings = this.getSettings() || {};
+    const invertPresence = settings.invert_presence ?? config.invertPresence ?? false;
     const configName = config.configName || 'DEFAULT';
 
     // Transform the raw presence value with inversion support

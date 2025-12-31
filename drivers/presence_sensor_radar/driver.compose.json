@@ -381,6 +381,19 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "invert_presence",
+      "type": "checkbox",
+      "label": {
+        "en": "Invert Presence Detection",
+        "fr": "Inverser Détection Présence"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable if presence shows active when room is empty and inactive when occupied (firmware bug workaround)",
+        "fr": "Activer si la présence indique actif quand la pièce est vide et inactif quand occupée (contournement bug firmware)"
+      }
     }
   ],
   "images": {
