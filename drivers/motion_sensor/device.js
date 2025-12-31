@@ -1,10 +1,12 @@
 'use strict';
 
 const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const { MotionLuxInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
 /**
  * Motion Sensor Device - HybridSensorBase implementation
  *
+ * v5.5.317: INTELLIGENT INFERENCE - Infer motion from lux changes when PIR fails
  * v5.5.299: SLEEPY DEVICE COMMUNICATION FIX (@fiek diagnostic d8b86ec9)
  * - Smart ZCL timeout reduction for sleepy devices (5s → 2s)
  * - Prioritize Tuya DP communication over ZCL for battery devices
@@ -228,6 +230,9 @@ class MotionSensorDevice extends HybridSensorBase {
             this.log(`[ZCL] 💡 Luminance: ${lux} lux`);
             this._registerZigbeeHit?.();
             this.setCapabilityValue('measure_luminance', lux).catch(() => { });
+
+            // v5.5.317: Feed lux to motion inference engine
+            this._handleLuxForMotionInference(lux);
           }
         }
       },
@@ -236,7 +241,9 @@ class MotionSensorDevice extends HybridSensorBase {
       powerConfiguration: {
         attributeReport: (data) => {
           if (data.batteryPercentageRemaining !== undefined) {
-            const battery = Math.round(data.batteryPercentageRemaining / 2);
+            let battery = Math.round(data.batteryPercentageRemaining / 2);
+            // v5.5.317: Validate battery with inference
+            battery = this._batteryInference?.validateBattery(battery) ?? battery;
             this.log(`[ZCL] 🔋 Battery: ${battery}%`);
             this._registerZigbeeHit?.();
             this.setCapabilityValue('measure_battery', battery).catch(() => { });
@@ -263,6 +270,16 @@ class MotionSensorDevice extends HybridSensorBase {
     this._isDeviceAwake = false;
     this._lastWakeTime = 0;
     this._pendingZclReads = new Set();
+
+    // v5.5.317: Initialize intelligent inference engines
+    this._motionLuxInference = new MotionLuxInference(this, {
+      luxChangeThreshold: 8,      // 8% change triggers motion inference
+      motionHoldTime: 60000,      // Hold motion for 60s
+      luxActivityWindow: 5000     // 5s window for activity detection
+    });
+    this._batteryInference = new BatteryInference(this);
+    this._useMotionInference = false; // Enable after detecting PIR issues
+    this._pirFailCount = 0;
 
     // v5.5.18: Explicit IAS Zone setup for HOBEIAN and other non-Tuya motion sensors
     await this._setupMotionIASZone(zclNode);
@@ -641,6 +658,75 @@ class MotionSensorDevice extends HybridSensorBase {
         this.log('[MOTION-REPORTING] Humidity reporting failed (device may not support)');
       }
     }
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // v5.5.317: INTELLIGENT LUX-BASED MOTION INFERENCE
+  // Infers motion from rapid lux changes when PIR sensor fails or is unreliable
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  /**
+   * Handle lux updates for motion inference
+   * When PIR is unreliable, use lux changes to infer motion
+   */
+  _handleLuxForMotionInference(lux) {
+    if (!this._motionLuxInference) return;
+
+    // Feed lux to inference engine
+    const inferredMotion = this._motionLuxInference.updateLux(lux);
+
+    // Only use inference if PIR has been unreliable
+    if (!this._useMotionInference) return;
+
+    if (inferredMotion !== null && inferredMotion !== this._lastInferredMotion) {
+      this._lastInferredMotion = inferredMotion;
+
+      const confidence = this._motionLuxInference.getConfidence();
+      this.log(`[MOTION-INFER] 🔦 Lux-inferred motion: ${inferredMotion} (confidence: ${confidence}%)`);
+
+      // Only update if confidence is high enough
+      if (confidence >= 50) {
+        this.setCapabilityValue('alarm_motion', inferredMotion).catch(() => { });
+
+        // Trigger flow if motion detected
+        if (inferredMotion && this.driver?.motionTrigger) {
+          this.driver.motionTrigger.trigger(this, { source: 'lux_inference' }, {}).catch(() => { });
+        }
+      }
+    }
+  }
+
+  /**
+   * Track PIR reliability and enable inference if needed
+   * Called when PIR reports contradictory or stuck values
+   */
+  _trackPirReliability(pirValue) {
+    // Calibrate inference with actual PIR value
+    this._motionLuxInference?.updateDirectMotion(pirValue);
+
+    // Track if PIR seems stuck (same value for too long with lux changes)
+    if (this._lastPirValue === pirValue) {
+      const luxHasActivity = this._motionLuxInference?.hasRecentActivity('lux', 60000);
+
+      if (luxHasActivity) {
+        this._pirFailCount++;
+
+        if (this._pirFailCount >= 5 && !this._useMotionInference) {
+          this._useMotionInference = true;
+          this.log('[MOTION-INFER] ⚠️ PIR appears stuck - enabling lux-based motion inference');
+        }
+      }
+    } else {
+      // PIR is working, reduce fail count
+      this._pirFailCount = Math.max(0, this._pirFailCount - 1);
+
+      if (this._pirFailCount === 0 && this._useMotionInference) {
+        this._useMotionInference = false;
+        this.log('[MOTION-INFER] ✅ PIR working again - disabling lux-based inference');
+      }
+    }
+
+    this._lastPirValue = pirValue;
   }
 
 }
