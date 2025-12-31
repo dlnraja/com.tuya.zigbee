@@ -5,18 +5,35 @@
   },
   "class": "sensor",
   "capabilities": [
+    "measure_soil_moisture",
     "measure_temperature",
     "measure_humidity",
-    "measure_battery"
+    "measure_battery",
+    "alarm_water"
   ],
   "capabilitiesOptions": {
-    "measure_humidity": {
+    "measure_soil_moisture": {
       "title": {
         "en": "Soil Moisture",
-        "fr": "Humidité du Sol"
-      },
-      "units": {
-        "en": "%"
+        "fr": "Humidité du Sol",
+        "nl": "Bodemvochtigheid",
+        "de": "Bodenfeuchtigkeit"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Air Humidity",
+        "fr": "Humidité de l'Air",
+        "nl": "Luchtvochtigheid",
+        "de": "Luftfeuchtigkeit"
+      }
+    },
+    "alarm_water": {
+      "title": {
+        "en": "Water Shortage",
+        "fr": "Manque d'Eau",
+        "nl": "Watertekort",
+        "de": "Wassermangel"
       }
     }
   },
@@ -281,8 +298,8 @@
     {
       "type": "group",
       "label": {
-        "en": "🌡️ Calibration (v5.5.28)",
-        "fr": "🌡️ Calibration (v5.5.28)"
+        "en": "🌡️ Calibration (v5.5.330 Hobeian)",
+        "fr": "🌡️ Calibration (v5.5.330 Hobeian)"
       },
       "children": [
         {
@@ -293,12 +310,28 @@
             "fr": "Décalage Température (°C)"
           },
           "value": 0,
-          "min": -10,
-          "max": 10,
+          "min": -30,
+          "max": 30,
           "step": 0.1,
           "hint": {
-            "en": "Add or subtract from soil temperature reading.",
-            "fr": "Ajouter ou soustraire de la température du sol."
+            "en": "Offset to adjust temperature readings (-30 to +30)",
+            "fr": "Décalage pour ajuster les lectures de température (-30 à +30)"
+          }
+        },
+        {
+          "id": "humidity_calibration",
+          "type": "number",
+          "label": {
+            "en": "Air Humidity Offset (%)",
+            "fr": "Décalage Humidité Air (%)"
+          },
+          "value": 0,
+          "min": -30,
+          "max": 30,
+          "step": 1,
+          "hint": {
+            "en": "Offset to adjust air humidity readings (-30 to +30)",
+            "fr": "Décalage pour ajuster les lectures d'humidité de l'air (-30 à +30)"
           }
         },
         {
@@ -309,12 +342,75 @@
             "fr": "Décalage Humidité Sol (%)"
           },
           "value": 0,
-          "min": -20,
-          "max": 20,
+          "min": -30,
+          "max": 30,
           "step": 1,
           "hint": {
-            "en": "Add or subtract from soil moisture reading. Positive if sensor reads too low.",
-            "fr": "Ajouter ou soustraire de l'humidité du sol. Positif si capteur lit trop bas."
+            "en": "Offset to adjust soil moisture readings (-30 to +30)",
+            "fr": "Décalage pour ajuster les lectures d'humidité du sol (-30 à +30)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "⚠️ Alerts (v5.5.330 Hobeian)",
+        "fr": "⚠️ Alertes (v5.5.330 Hobeian)"
+      },
+      "children": [
+        {
+          "id": "soil_warning_threshold",
+          "type": "number",
+          "label": {
+            "en": "Soil Dryness Threshold (%)",
+            "fr": "Seuil Sécheresse Sol (%)"
+          },
+          "value": 30,
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "hint": {
+            "en": "Moisture percentage below which water shortage alarm triggers (0-100%)",
+            "fr": "Pourcentage d'humidité en dessous duquel l'alarme manque d'eau se déclenche (0-100%)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "⚙️ Settings (v5.5.330 Hobeian)",
+        "fr": "⚙️ Paramètres (v5.5.330 Hobeian)"
+      },
+      "children": [
+        {
+          "id": "temperature_unit",
+          "type": "dropdown",
+          "label": {
+            "en": "Temperature Unit",
+            "fr": "Unité de Température"
+          },
+          "value": "celsius",
+          "values": [
+            {
+              "id": "celsius",
+              "label": {
+                "en": "Celsius (°C)",
+                "fr": "Celsius (°C)"
+              }
+            },
+            {
+              "id": "fahrenheit",
+              "label": {
+                "en": "Fahrenheit (°F)",
+                "fr": "Fahrenheit (°F)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Temperature unit for display",
+            "fr": "Unité de température pour l'affichage"
           }
         }
       ]

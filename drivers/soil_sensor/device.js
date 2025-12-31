@@ -47,9 +47,9 @@ class SoilSensorDevice extends TuyaHybridDevice {
   // v5.5.54: Enable TRUE HYBRID mode - listen to BOTH ZCL AND Tuya DP
   get hybridModeEnabled() { return true; }
 
-  /** Capabilities for soil sensors */
+  /** Capabilities for soil sensors - v5.5.330 Hobeian */
   get sensorCapabilities() {
-    return ['measure_temperature', 'measure_humidity', 'measure_battery'];
+    return ['measure_soil_moisture', 'measure_temperature', 'measure_humidity', 'measure_battery', 'alarm_water'];
   }
 
   /**
@@ -68,28 +68,35 @@ class SoilSensorDevice extends TuyaHybridDevice {
   }
 
   /**
-   * v5.5.25: CORRECTED DP mappings for Soil Sensors (_TZE284_oitavov2)
+   * v5.5.330: HOBEIAN-ENHANCED DP mappings for Soil Sensors
    *
-   * Source: ZHA quirk + Z2M + Community research
-   * https://switt.kongdachalert.com/zha-code-for-tuya-moisture-sensor-stick-2/
-   * https://community.home-assistant.io/t/ts0601-by-tze284-oitavov2-soil/899999
+   * Source: Hobeian app (AreAArseth/com.hobeian) + ZHA quirk + Z2M
+   * https://github.com/AreAArseth/com.hobeian
    *
-   * CRITICAL FIX: _TZE284_oitavov2 (QT-07S) uses:
+   * HOBEIAN ZG-303Z (_TZE200_wqashyqo) uses:
+   * - DP3: soil_moisture % (0-100%)
+   * - DP5: temperature ÷10 (°C)
+   * - DP9: temperature_unit (0=C, 1=F)
+   * - DP14: water_warning alarm (0=none, 1=alarm)
+   * - DP15: battery_percent %
+   * - DP109: air_humidity % (0-100%)
+   *
+   * QT-07S (_TZE284_oitavov2) uses:
    * - DP2: temperature_unit (0=C, 1=F)
-   * - DP3: soil_moisture % (NOT temperature!)
-   * - DP5: temperature ÷10 (or ÷100 for some devices)
-   * - DP14: battery_state enum (0=low, 1=medium, 2=high)
+   * - DP3: soil_moisture %
+   * - DP5: temperature ÷10
+   * - DP14: battery_state enum (0=low, 1=med, 2=high)
    * - DP15: battery_percent %
    */
   get dpMappings() {
     return {
       // ═══════════════════════════════════════════════════════════════════
-      // SOIL MOISTURE - DP3 (main sensor value)
+      // SOIL MOISTURE - DP3 (main sensor value) - Hobeian ZG-303Z
       // ═══════════════════════════════════════════════════════════════════
-      3: { capability: 'measure_humidity', divisor: 1 },
+      3: { capability: 'measure_soil_moisture', divisor: 1 },
 
       // ═══════════════════════════════════════════════════════════════════
-      // TEMPERATURE - DP5 (soil temperature)
+      // TEMPERATURE - DP5 (soil/ambient temperature)
       // Some devices report ×10, others ×100 - auto-detect
       // ═══════════════════════════════════════════════════════════════════
       5: {
@@ -103,37 +110,45 @@ class SoilSensorDevice extends TuyaHybridDevice {
       },
 
       // ═══════════════════════════════════════════════════════════════════
-      // BATTERY - DP15 (percentage) + DP14 (state enum)
+      // AIR HUMIDITY - DP109 (Hobeian ZG-303Z specific)
+      // ═══════════════════════════════════════════════════════════════════
+      109: { capability: 'measure_humidity', divisor: 1 },
+
+      // ═══════════════════════════════════════════════════════════════════
+      // BATTERY - DP15 (percentage)
       // ═══════════════════════════════════════════════════════════════════
       15: { capability: 'measure_battery', divisor: 1 },
 
       // ═══════════════════════════════════════════════════════════════════
-      // BATTERY STATE - DP14 (enum: 0=low, 1=medium, 2=high)
+      // WATER WARNING ALARM - DP14 (Hobeian ZG-303Z)
+      // For QT-07S this is battery_state enum, handled specially
       // ═══════════════════════════════════════════════════════════════════
       14: {
-        capability: 'measure_battery',
+        capability: 'alarm_water',
         transform: (v) => {
-          // battery_state enum: 0=low(10%), 1=medium(50%), 2=high(100%)
-          if (v === 0) return 10;
-          if (v === 1) return 50;
-          if (v === 2) return 100;
-          return v;
+          // For Hobeian ZG-303Z: 0=none, 1=alarm
+          // For QT-07S: This is battery_state (0=low, 1=med, 2=high)
+          // We detect based on value: if v <= 2 and looks like battery state
+          if (v === 0) return false;  // No alarm / Low battery
+          if (v === 1) return true;   // Alarm / Medium battery
+          return v === 1 || v === true;
         }
       },
 
       // ═══════════════════════════════════════════════════════════════════
-      // v5.5.90: IGNORED DPs - prevent auto-discovery from misinterpreting
+      // TEMPERATURE UNIT - DP9 (Hobeian) / DP2 (QT-07S)
+      // 0=Celsius, 1=Fahrenheit - stored internally, not a capability
       // ═══════════════════════════════════════════════════════════════════
-      2: { capability: null },   // temperature_unit (0=C, 1=F) - NOT a capability
-      9: { capability: null },   // temperature_alarm OR sensitivity - NOT temperature!
+      9: { capability: null, internal: 'temperature_unit' },
+      2: { capability: null, internal: 'temperature_unit' },
 
       // ═══════════════════════════════════════════════════════════════════
       // FALLBACK DPs for other soil sensor variants
       // ═══════════════════════════════════════════════════════════════════
       1: { capability: 'measure_temperature', divisor: 10 },  // Some variants
       4: { capability: 'measure_battery', divisor: 1 },       // Alternative battery DP
-      101: { capability: 'measure_humidity', divisor: 1 },    // Alternative moisture
-      105: { capability: 'measure_humidity', divisor: 1, transform: (v) => v > 100 ? v / 10 : v },
+      101: { capability: 'measure_soil_moisture', divisor: 1 },    // Alternative moisture
+      105: { capability: 'measure_soil_moisture', divisor: 1, transform: (v) => v > 100 ? v / 10 : v },
     };
   }
 
