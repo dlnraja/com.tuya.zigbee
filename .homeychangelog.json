@@ -1,4 +1,10 @@
 {
+  "5.5.331": {
+    "en": "🔧 SDK IMPROVEMENTS: Added ScenesBoundCluster for better button handling (inspired by IKEA Tradfri app). Scene recall commands now properly mapped to single/double/long press. Enhanced BoundCluster patterns from Athom reference implementations.",
+    "nl": "🔧 SDK VERBETERINGEN: ScenesBoundCluster toegevoegd voor betere knopafhandeling.",
+    "de": "🔧 SDK VERBESSERUNGEN: ScenesBoundCluster für bessere Tastenbehandlung hinzugefügt.",
+    "fr": "🔧 AMÉLIORATIONS SDK: ScenesBoundCluster ajouté pour meilleure gestion boutons."
+  },
   "5.5.330": {
     "en": "✨ HOBEIAN ZG-303Z INTEGRATION: Full soil sensor support from AreAArseth/com.hobeian. NEW: measure_soil_moisture capability, alarm_water for dryness alerts, air humidity (DP109), calibration settings (-30 to +30), soil dryness threshold. Supports _TZE200_wqashyqo + all existing soil sensors.",
     "nl": "✨ HOBEIAN ZG-303Z: Volledige bodemvochtsensor met alarm_water, luchtvochtigheid, kalibratie.",
