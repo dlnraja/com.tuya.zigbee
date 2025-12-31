@@ -1,4 +1,10 @@
 {
+  "5.5.332": {
+    "en": "🔧 FIX: Resolved 'Run listener was already registered' warning for button flow cards. Generic triggers (button_pressed, button_double_press, button_long_press) are now registered only once across all button drivers. Per diagnostic report.",
+    "nl": "🔧 FIX: Waarschuwing 'Run listener was already registered' opgelost voor knoppenflows.",
+    "de": "🔧 FIX: Warnung 'Run listener was already registered' für Tasten-Flow-Karten behoben.",
+    "fr": "🔧 FIX: Avertissement 'Run listener was already registered' corrigé pour les flows boutons."
+  },
   "5.5.331": {
     "en": "🔧 SDK IMPROVEMENTS: Added ScenesBoundCluster for better button handling (inspired by IKEA Tradfri app). Scene recall commands now properly mapped to single/double/long press. Enhanced BoundCluster patterns from Athom reference implementations.",
     "nl": "🔧 SDK VERBETERINGEN: ScenesBoundCluster toegevoegd voor betere knopafhandeling.",
