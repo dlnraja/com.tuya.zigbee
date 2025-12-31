@@ -1,4 +1,10 @@
 {
+  "5.5.320": {
+    "en": "🔧 RONNY #760 FINAL FIXES: Hard clamp lux to 2000 for ZY-M100 sensors (was showing 2200). Fixed _TZE204_gkfbdvyx inverted presence. Fixed battery notification spam for mains-powered radar sensors.",
+    "nl": "🔧 RONNY #760 FIXES: Lux limiet 2000, omgekeerde presence fix, geen batterij meldingen voor netvoeding sensoren.",
+    "de": "🔧 RONNY #760 FIXES: Lux-Limit 2000, invertierte Präsenz behoben, keine Batterie-Benachrichtigungen für Netzbetrieb.",
+    "fr": "🔧 RONNY #760 FIXES: Limite lux 2000, présence inversée corrigée, pas de notifications batterie pour capteurs secteur."
+  },
   "5.5.319": {
     "en": "🔬 FORUM DEEP ANALYSIS (15+ sources): Fixed scene switches (1-6 gang) physical buttons not responding (Eftychis). Fixed lux 30↔2000 oscillation with 60s lock (Ronny #775). Fixed _TZE204_gkfbdvyx random presence with hysteresis debounce (Ronny #765). Added _TZ3000_7ysdnebc to 2-channel dimmer (JDrewsen #570).",
     "nl": "🔬 FORUM DEEP ANALYSIS: Scene switches, lux oscillatie, random presence en 2-kanaal dimmer fixes.",
