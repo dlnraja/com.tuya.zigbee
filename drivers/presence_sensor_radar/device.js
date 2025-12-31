@@ -430,67 +430,61 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // TYPE D: ZY-M100-S_2 LOW DP VARIANTS (Ronny #728 + Z2M #30326)
-  // CONFIRMED: These devices use LOW DPs (1-9, 101-104), NOT high DPs!
-  // Sources: HA t/862007, Z2M #27212, #30326, ZHA #3969, Reddit
-  // WARNING: fading_time may not work as expected (Z2M #30326 user report)
-  // v5.5.304: PRESENCE=NULL FIRMWARE BUG WORKAROUND (works with Tuya gateway)
-  // Strategies: 1) Aggressive DP1 polling 2) Distance-based inference 3) Time sync
+  // TYPE D: ZY-M100-S_2 LOW DP VARIANTS (Ronny #760 + Z2M #27212, #30326)
+  // v5.5.326: RONNY #760 ULTIMATE FIX - Complete rewrite based on Z2M/ZHA research
+  // Sources: Z2M #27212, #30326, #8939, ZHA #3969, HA t/862007
+  // CRITICAL: appVersion 78 has presence=null bug - use distance-based inference
+  // CRITICAL: Lux oscillates 30-2000 rapidly - use ultra-aggressive smoothing
   // ─────────────────────────────────────────────────────────────────────────────
   'TZE284_IADRO9BF': {
     configName: 'TZE284_IADRO9BF',
     sensors: [
-      // v5.5.280: Ronny's device - confirmed LOW DP layout
       '_TZE284_iadro9bf',
       '_TZE204_iadro9bf',
-      // v5.5.281: Added from HA t/862007 external converter fingerprint
       '_TZE204_qasjif9e',
-      '_TZE284_qasjif9e',  // TZE284 variant
+      '_TZE284_qasjif9e',
       '_TZE204_ztqnh5cg',
-      '_TZE284_ztqnh5cg',  // TZE284 variant
-      // v5.5.281: Added from Z2M discussions - same LOW DP layout
+      '_TZE284_ztqnh5cg',
       '_TZE204_sbyx0lm6',
       '_TZE284_sbyx0lm6',
     ],
     battery: false,
+    mainsPowered: true,
+    noBatteryCapability: true,  // v5.5.326: Force remove battery
     hasIlluminance: true,
-    needsPolling: true,
+    needsPolling: false,  // v5.5.326: Disable polling - rely on inference only
     invertPresence: false,
-    // v5.5.315: INTELLIGENT INFERENCE for presence=null firmware bug
-    // Research: Z2M #27212 reports presence always null on this sensor
-    // Solution: Calculate presence from distance, lux changes, and activity patterns
-    useIntelligentInference: true,  // NEW: Enable smart inference engine
-    useDistanceInference: true,     // Infer presence from distance > 0
-    useAggressivePolling: true,     // Poll DP1 every 10s instead of 30s
-    needsTimeSync: true,            // Send time sync like Tuya gateway
-    // v5.5.315: Firmware-specific handling
-    // appVersion 74: Usually works, presence DP functional
-    // appVersion 78: Often has presence=null bug, needs inference
+    // v5.5.326: RONNY #760 - Enhanced intelligent inference
+    useIntelligentInference: true,
+    useDistanceInference: true,
+    useAggressivePolling: false,  // v5.5.326: Polling causes more issues
+    needsTimeSync: false,
+    // v5.5.326: Ultra-aggressive lux smoothing for 30-2000 oscillation
+    ultraAggressiveLuxSmoothing: true,
+    luxSmoothingWindowMs: 120000,  // 2 minutes smoothing window
+    luxOscillationLock: true,  // Lock lux value when oscillation detected
+    // v5.5.326: Ultra-aggressive presence debouncing
+    ultraAggressiveDebounce: true,
+    // v5.5.326: Firmware quirks - v78 has presence=null bug
     firmwareQuirks: {
-      74: { presenceWorking: true, inferenceWeight: 0.3 },
-      78: { presenceWorking: false, inferenceWeight: 0.9 },
+      74: { presenceWorking: true, inferenceWeight: 0.2 },
+      78: { presenceWorking: false, inferenceWeight: 1.0 },  // v5.5.326: Full inference for v78
     },
     dpMap: {
-      // DP1: Presence - MAY BE NULL on some firmware! Use inference as fallback
-      1: { cap: 'alarm_motion', type: 'presence_bool', useInference: true },
-      // DP2: Radar sensitivity (0-9)
+      // v5.5.326: DP1 presence is UNRELIABLE (often null on v78)
+      // Use distance-based inference instead
+      1: { cap: 'alarm_motion', type: 'presence_bool', useInference: true, unreliable: true },
       2: { cap: null, internal: 'radar_sensitivity' },
-      // DP3: Minimum range (÷100 = meters)
       3: { cap: null, internal: 'min_range', divisor: 100 },
-      // DP4: Maximum range (÷100 = meters) - USED FOR INFERENCE MAX RANGE
       4: { cap: null, internal: 'max_range', divisor: 100, feedInference: true },
-      // DP6: Self-test result (enum: 0=testing, 1=success, 2=failure)
       6: { cap: null, internal: 'self_test' },
-      // DP9: Target distance - KEY FOR INFERENCE! distance>0 = presence
-      9: { cap: 'measure_distance', divisor: 100, feedInference: true },
-      // DP12: Lux fallback - FEEDS INFERENCE (lux changes = movement)
-      12: { cap: 'measure_luminance', type: 'lux_direct', feedInference: true },
-      // DP101: Detection delay (÷10 = seconds)
+      // v5.5.326: DP9 is KEY for presence inference - distance > 0 = presence
+      9: { cap: 'measure_distance', divisor: 100, feedInference: true, primaryInference: true },
+      // v5.5.326: Lux DPs - all have oscillation issues, use ultra-smoothing
+      12: { cap: 'measure_luminance', type: 'lux_direct', ultraSmooth: true },
       101: { cap: null, internal: 'detection_delay', divisor: 10 },
-      // DP102: LUX - FEEDS INFERENCE
-      102: { cap: 'measure_luminance', type: 'lux_direct', feedInference: true },
-      // DP104: Illuminance - FEEDS INFERENCE
-      104: { cap: 'measure_luminance', type: 'lux_direct', feedInference: true },
+      102: { cap: 'measure_luminance', type: 'lux_direct', ultraSmooth: true },
+      104: { cap: 'measure_luminance', type: 'lux_direct', ultraSmooth: true },
     }
   },
 
@@ -923,15 +917,17 @@ function transformLux(value, type, manufacturerName = '', deviceId = null) {
         console.log(`[LUX-SMOOTH] ⚠️ Flip-flop #${state.extremeCount}: ${state.lastLux} ↔ ${lux}`);
 
         if (state.extremeCount >= 1) {
-          // v5.5.319: IMMEDIATELY lock to lower value (more realistic for indoor)
+          // v5.5.326: RONNY #760 - Ultra-aggressive lock for iadro9bf (2 minutes)
+          const isIadro9bf = manufacturerName.includes('iadro9bf');
+          const lockDuration = isIadro9bf ? 120000 : 60000;  // 2min for iadro9bf, 1min for others
           state.stableLux = Math.min(state.lastLux, lux);
-          state.lockedUntil = now + 60000;  // Lock for 60 seconds
-          console.log(`[LUX-SMOOTH] 🔒 Locking to ${state.stableLux} for 60s (flip-flop detected)`);
+          state.lockedUntil = now + lockDuration;
+          console.log(`[LUX-SMOOTH] 🔒 Locking to ${state.stableLux} for ${lockDuration / 1000}s (flip-flop, iadro9bf=${isIadro9bf})`);
           luxSmoothingState.set(deviceId, state);
           return state.stableLux;
         }
-      } else if (timeSinceLastUpdate > 60000) {
-        // Reset after 60 seconds of no flip-flop
+      } else if (timeSinceLastUpdate > 120000) {
+        // v5.5.326: Reset after 2 minutes of no flip-flop (was 60s)
         state.extremeCount = 0;
         state.stableLux = null;
         state.lockedUntil = 0;

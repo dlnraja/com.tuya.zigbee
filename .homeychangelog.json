@@ -1,4 +1,10 @@
 {
+  "5.5.326": {
+    "en": "🔬 RONNY #760 ULTIMATE FIX: _TZE284_iadro9bf complete rewrite. Distance-based presence inference for v78 firmware bug. Ultra-aggressive lux smoothing (2min lock) for 30-2000 oscillation. Force-remove battery capability. Disable polling.",
+    "nl": "🔬 RONNY #760: _TZE284_iadro9bf herschreven. Distance-based presence, ultra lux smoothing, geen batterij.",
+    "de": "🔬 RONNY #760: _TZE284_iadro9bf neu. Distance-based Presence, Ultra-Lux-Glättung, keine Batterie.",
+    "fr": "🔬 RONNY #760: _TZE284_iadro9bf réécrit. Présence basée distance, lissage lux ultra, pas de batterie."
+  },
   "5.5.325": {
     "en": "🔬 RONNY #782 ULTIMATE FIX: Complete _TZE204_gkfbdvyx rewrite based on ZHA/Z2M research. Correct DP1 enum handling (0=none,1=presence,2=move). Ultra-aggressive debounce (7 consecutive ON, 15s gap). Force-remove battery capability. DP103=lux, DP9=distance confirmed.",
     "nl": "🔬 RONNY #782 ULTIMATE: _TZE204_gkfbdvyx volledig herschreven. Correcte DP enum, ultra-debounce, geen batterij.",
