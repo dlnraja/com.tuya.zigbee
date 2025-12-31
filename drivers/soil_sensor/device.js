@@ -223,6 +223,16 @@ class SoilSensorDevice extends TuyaHybridDevice {
     this.log('[SOIL] 🔧 forceActiveTuyaMode:', this.forceActiveTuyaMode);
     this.log('[SOIL] 🔧 hybridModeEnabled:', this.hybridModeEnabled);
 
+    // v5.5.334: Load settings for calibration and thresholds (Hobeian PR#6)
+    this._temperatureCalibration = this.getSetting('temperature_calibration') || 0;
+    this._humidityCalibration = this.getSetting('humidity_calibration') || 0;
+    this._moistureCalibration = this.getSetting('moisture_calibration') || 0;
+    this._soilWarningThreshold = this.getSetting('soil_warning_threshold') || 30;
+    this._temperatureUnit = this.getSetting('temperature_unit') || 'celsius';
+
+    this.log(`[SOIL] 🔧 Calibration: temp=${this._temperatureCalibration}, hum=${this._humidityCalibration}, moist=${this._moistureCalibration}`);
+    this.log(`[SOIL] 🔧 Warning threshold: ${this._soilWarningThreshold}%, Unit: ${this._temperatureUnit}`);
+
     // v5.5.317: Initialize intelligent inference engines
     this._soilInference = new SoilMoistureInference(this, {
       maxMoistureJump: 25,    // Max 25% moisture change per reading
@@ -238,6 +248,72 @@ class SoilSensorDevice extends TuyaHybridDevice {
     this._previousMoisture = null;
     this._previousTemperature = null;
     this._previousBattery = null;
+  }
+
+  /**
+   * v5.5.334: Handle settings changes (Hobeian PR#6 fix)
+   * Implements temperature_unit, calibration offsets, and soil_warning threshold
+   */
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    this.log('[SOIL] ⚙️ Settings changed:', changedKeys);
+
+    for (const key of changedKeys) {
+      const newValue = newSettings[key];
+      this.log(`[SOIL] Setting ${key}: ${oldSettings[key]} → ${newValue}`);
+
+      switch (key) {
+        case 'temperature_calibration':
+          this._temperatureCalibration = newValue || 0;
+          break;
+        case 'humidity_calibration':
+          this._humidityCalibration = newValue || 0;
+          break;
+        case 'moisture_calibration':
+          this._moistureCalibration = newValue || 0;
+          break;
+        case 'soil_warning_threshold':
+          this._soilWarningThreshold = newValue || 30;
+          // Re-evaluate alarm_water based on current moisture
+          this._updateWaterAlarm();
+          break;
+        case 'temperature_unit':
+          this._temperatureUnit = newValue || 'celsius';
+          // Re-display temperature in new unit
+          const currentTemp = this.getCapabilityValue('measure_temperature');
+          if (currentTemp !== null) {
+            this.log(`[SOIL] Temperature unit changed, current: ${currentTemp}°C`);
+          }
+          break;
+      }
+    }
+  }
+
+  /**
+   * v5.5.334: Update water alarm based on current moisture and threshold (Hobeian PR#6)
+   */
+  _updateWaterAlarm() {
+    const moisture = this.getCapabilityValue('measure_soil_moisture');
+    if (moisture !== null && this.hasCapability('alarm_water')) {
+      const alarm = moisture < this._soilWarningThreshold;
+      this.setCapabilityValue('alarm_water', alarm).catch(() => { });
+      this.log(`[SOIL] 💧 Water alarm updated: moisture=${moisture}%, threshold=${this._soilWarningThreshold}%, alarm=${alarm}`);
+    }
+  }
+
+  /**
+   * v5.5.334: Convert Celsius to Fahrenheit (Hobeian PR#6 fix - was inverted!)
+   * Correct formula: F = C × 9/5 + 32
+   */
+  _celsiusToFahrenheit(celsius) {
+    return (celsius * 9 / 5) + 32;
+  }
+
+  /**
+   * v5.5.334: Convert Fahrenheit to Celsius
+   * Formula: C = (F - 32) × 5/9
+   */
+  _fahrenheitToCelsius(fahrenheit) {
+    return (fahrenheit - 32) * 5 / 9;
   }
 
   /**
@@ -278,15 +354,19 @@ class SoilSensorDevice extends TuyaHybridDevice {
     // ═══════════════════════════════════════════════════════════════════════
 
     if (dp === 3) {
-      // DP3 = SOIL MOISTURE (measure_humidity)
+      // DP3 = SOIL MOISTURE (measure_soil_moisture)
       this.log('[SOIL] 🌱 ════════════════════════════════════════════════════');
       this.log(`[SOIL] 🌱 SOIL MOISTURE DP3 = ${parsedValue}%`);
 
+      // v5.5.334: Apply calibration offset (Hobeian PR#6)
+      let calibratedMoisture = parsedValue + (this._moistureCalibration || 0);
+      calibratedMoisture = Math.max(0, Math.min(100, calibratedMoisture)); // Clamp 0-100
+
       // v5.5.317: Validate with inference engine
-      let validatedMoisture = parsedValue;
+      let validatedMoisture = calibratedMoisture;
       if (this._soilInference) {
         const currentTemp = this.getCapabilityValue('measure_temperature');
-        validatedMoisture = this._soilInference.validateMoisture(parsedValue, currentTemp);
+        validatedMoisture = this._soilInference.validateMoisture(calibratedMoisture, currentTemp);
 
         // Log watering prediction
         const wateringNeed = this._soilInference.predictWateringNeed();
@@ -295,15 +375,31 @@ class SoilSensorDevice extends TuyaHybridDevice {
         }
         this.log(`[SOIL] 📈 Trend: ${this._soilInference.getTrend()}`);
       }
+      this.log(`[SOIL] 🌱 Calibrated: ${parsedValue} + ${this._moistureCalibration || 0} = ${validatedMoisture}%`);
       this.log('[SOIL] 🌱 ════════════════════════════════════════════════════');
 
       // DIRECT SET - bypass parent handler potential issues
-      if (this.hasCapability('measure_humidity')) {
+      if (this.hasCapability('measure_soil_moisture')) {
+        this.setCapabilityValue('measure_soil_moisture', validatedMoisture)
+          .then(() => this.log(`[SOIL] ✅ measure_soil_moisture SET to ${validatedMoisture}%`))
+          .catch(err => this.log(`[SOIL] ❌ measure_soil_moisture FAILED: ${err.message}`));
+      } else if (this.hasCapability('measure_humidity')) {
+        // Fallback for devices without measure_soil_moisture
         this.setCapabilityValue('measure_humidity', validatedMoisture)
           .then(() => this.log(`[SOIL] ✅ measure_humidity SET to ${validatedMoisture}%`))
           .catch(err => this.log(`[SOIL] ❌ measure_humidity FAILED: ${err.message}`));
       } else {
-        this.log('[SOIL] ⚠️ measure_humidity capability NOT found!');
+        this.log('[SOIL] ⚠️ No moisture capability found!');
+      }
+
+      // v5.5.334: Update water alarm based on threshold (Hobeian PR#6)
+      if (this.hasCapability('alarm_water')) {
+        const threshold = this._soilWarningThreshold || 30;
+        const alarm = validatedMoisture < threshold;
+        this.setCapabilityValue('alarm_water', alarm).catch(() => { });
+        if (alarm) {
+          this.log(`[SOIL] ⚠️ WATER ALARM: Moisture ${validatedMoisture}% < threshold ${threshold}%`);
+        }
       }
       return; // Don't call parent - we handled it directly
     }
@@ -315,7 +411,10 @@ class SoilSensorDevice extends TuyaHybridDevice {
       else if (temp > 100) temp = temp / 10;
       else temp = temp / 10;
 
-      this.log(`[SOIL] 🌡️ TEMPERATURE DP5 = ${parsedValue} → ${temp}°C`);
+      // v5.5.334: Apply calibration offset (Hobeian PR#6)
+      temp = temp + (this._temperatureCalibration || 0);
+
+      this.log(`[SOIL] 🌡️ TEMPERATURE DP5 = ${parsedValue} → ${temp}°C (calibration: ${this._temperatureCalibration || 0})`);
 
       if (this.hasCapability('measure_temperature')) {
         this.setCapabilityValue('measure_temperature', temp)
