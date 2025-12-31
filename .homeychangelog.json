@@ -1,4 +1,10 @@
 {
+  "5.5.324": {
+    "en": "🔧 RONNY #782: _TZE204_gkfbdvyx fixes - More aggressive presence debouncing (5 consecutive ON, 10s gap). Extended DP fallbacks for lux and distance. Explicit mainsPowered flag to prevent battery alarms.",
+    "nl": "🔧 RONNY #782: _TZE204_gkfbdvyx fixes - Agressievere presence debouncing, meer DP fallbacks.",
+    "de": "🔧 RONNY #782: _TZE204_gkfbdvyx Fixes - Aggressiveres Presence-Debouncing, mehr DP-Fallbacks.",
+    "fr": "🔧 RONNY #782: _TZE204_gkfbdvyx fixes - Debouncing présence plus agressif, plus de fallbacks DP."
+  },
   "5.5.323": {
     "en": "🔧 EFTYCHIS #778-779: Scene switches endpoints fixed. Curtain robot: added luminance sensor, button detection, battery auto-detect, calibration settings (open_time, close_time, reverse). Re-pair devices after update.",
     "nl": "🔧 EFTYCHIS #778-779: Scene switches gerepareerd. Gordijnrobot: lux sensor, knopdetectie, batterij auto-detect, kalibratie.",

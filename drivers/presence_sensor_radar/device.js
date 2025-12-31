@@ -332,10 +332,9 @@ const SENSOR_CONFIGS = {
   // DP1=presence, DP2=move_sens, DP3=min_dist, DP4=max_dist, DP9=distance
   // DP101=tracking, DP102=presence_sens, DP103=illuminance, DP104=motion_state, DP105=fading
   // ─────────────────────────────────────────────────────────────────────────────
-  // v5.5.320: RONNY #760 FINAL FIX - Enable user setting for invert_presence
-  // Ronny reports: "Presence is opposite, Yes when outside and no when inside"
-  // Different firmware versions behave differently - use user setting as override
-  // The app has an "Invert Presence" toggle in device settings for users to control
+  // v5.5.324: RONNY #782 FINAL FIX - More aggressive filtering for _TZE204_gkfbdvyx
+  // Issues: 1) False presence, 2) Lux not working, 3) Battery alarms, 4) Distance not working
+  // Solution: Stronger debouncing, multiple DP fallbacks, explicit mains-powered flag
   // ─────────────────────────────────────────────────────────────────────────────
   'ZY_M100_CEILING_24G': {
     configName: 'ZY_M100_CEILING_24G',
@@ -343,8 +342,10 @@ const SENSOR_CONFIGS = {
       '_TZE200_gkfbdvyx', '_TZE204_gkfbdvyx',
     ],
     battery: false,
+    mainsPowered: true,  // v5.5.324: Explicit mains-powered flag to prevent battery notifications
     hasIlluminance: true,
     needsPolling: true,
+    aggressiveDebounce: true,  // v5.5.324: Enable extra-aggressive presence filtering
     invertPresence: true,  // v5.5.320: Enable inversion by default (Ronny #760 confirms needed)
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_enum' },    // 0=none, 1=presence, 2=move
@@ -357,9 +358,13 @@ const SENSOR_CONFIGS = {
       103: { cap: 'measure_luminance', type: 'lux_direct' }, // lux direct (PRIMARY)
       104: { cap: 'alarm_motion', type: 'presence_enum' },   // motion state enum (fallback)
       105: { cap: null, internal: 'fading_time' },           // 1-1500 sec
-      // v5.5.286: FALLBACK DPs - some firmware uses these instead
-      12: { cap: 'measure_luminance', type: 'lux_direct' },  // lux fallback (iadro9bf style)
-      109: { cap: 'measure_distance', divisor: 100 },        // distance fallback (TZE284 style)
+      // v5.5.324: EXTENDED FALLBACK DPs for lux and distance (Ronny #782)
+      6: { cap: 'measure_luminance', type: 'lux_direct' },   // lux fallback 1
+      12: { cap: 'measure_luminance', type: 'lux_direct' },  // lux fallback 2 (iadro9bf style)
+      106: { cap: 'measure_luminance', type: 'lux_direct' }, // lux fallback 3
+      107: { cap: 'measure_distance', divisor: 100 },        // distance fallback 1
+      109: { cap: 'measure_distance', divisor: 100 },        // distance fallback 2 (TZE284 style)
+      110: { cap: 'measure_distance', divisor: 10 },         // distance fallback 3
     }
   },
 
@@ -730,14 +735,16 @@ function debouncePresence(presence, manufacturerName, deviceId) {
     state.onCount = 0;
   }
 
-  // v5.5.319: HYSTERESIS - Harder to turn ON than OFF
-  // Require 3 consecutive ON reports to activate (prevents false positives)
+  // v5.5.324: RONNY #782 - Even more aggressive hysteresis for gkfbdvyx
+  // Problem: "Goes on when no presence" - sensor is too sensitive
+  // Require 5 consecutive ON reports to activate (prevents false positives)
   // Require only 2 consecutive OFF reports to deactivate (faster response when leaving)
-  const requiredOnCount = 3;
+  const requiredOnCount = 5;  // v5.5.324: Increased from 3 to 5 (Ronny #782)
   const requiredOffCount = 2;
 
-  // v5.5.319: Minimum time between state changes (5 seconds)
-  const minStateChangeInterval = 5000;
+  // v5.5.324: Minimum time between state changes (10 seconds for ON, 3 seconds for OFF)
+  // Ronny #782: Even with debouncing, still getting false positives
+  const minStateChangeInterval = 10000;  // v5.5.324: Increased from 5s to 10s
   const timeSinceLastChange = now - state.lastChangeTime;
 
   let newStablePresence = state.stablePresence;
