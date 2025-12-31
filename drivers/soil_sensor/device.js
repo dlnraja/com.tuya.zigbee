@@ -3,10 +3,18 @@
 const TuyaHybridDevice = require('../../lib/devices/TuyaHybridDevice');
 const BatteryCalculator = require('../../lib/battery/BatteryCalculator');
 const { getAppVersionPrefixed } = require('../../lib/utils/AppVersion');
+const { SoilMoistureInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║            SOIL SENSOR - Dynamic version from app.json                     ║
+ * ║            SOIL SENSOR - v5.5.317 INTELLIGENT INFERENCE                    ║
+ * ╠══════════════════════════════════════════════════════════════════════════════╣
+ * ║                                                                              ║
+ * ║  🧠 v5.5.317: INTELLIGENT INFERENCE ENGINE                                   ║
+ * ║  - Validates moisture readings with temperature correlation                 ║
+ * ║  - Predicts watering needs based on moisture trends                         ║
+ * ║  - Smooths erratic sensor readings                                          ║
+ * ║                                                                              ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  Uses TuyaHybridDevice base class with proper:                               ║
@@ -191,14 +199,22 @@ class SoilSensorDevice extends TuyaHybridDevice {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
 
-    this.log('[SOIL] ════════════════════════════════════════════════════════');
-    this.log(`[SOIL] Soil Sensor ${getAppVersionPrefixed()} MULTI-FALLBACK`);
-    this.log('[SOIL] ════════════════════════════════════════════════════════');
+    this.log('[SOIL] ════════════════════════════════════════════════════════════');
+    this.log(`[SOIL] Soil Sensor ${getAppVersionPrefixed()} INTELLIGENT INFERENCE`);
+    this.log('[SOIL] ════════════════════════════════════════════════════════════');
     this.log('[SOIL] ⚠️ BATTERY DEVICE - Data comes when device wakes up');
     this.log('[SOIL] ℹ️ First data may take 10-60 minutes after pairing');
     this.log('[SOIL] 📋 DP Mappings: DP3=humidity, DP5=temp, DP14=battery_state, DP15=battery%');
     this.log('[SOIL] 🔧 forceActiveTuyaMode:', this.forceActiveTuyaMode);
     this.log('[SOIL] 🔧 hybridModeEnabled:', this.hybridModeEnabled);
+
+    // v5.5.317: Initialize intelligent inference engines
+    this._soilInference = new SoilMoistureInference(this, {
+      maxMoistureJump: 25,    // Max 25% moisture change per reading
+      dryThreshold: 20,       // Alert when below 20%
+      wetThreshold: 80        // Alert when above 80%
+    });
+    this._batteryInference = new BatteryInference(this);
 
     // Initialize flow triggers
     this._initFlowTriggers();
@@ -250,12 +266,26 @@ class SoilSensorDevice extends TuyaHybridDevice {
       // DP3 = SOIL MOISTURE (measure_humidity)
       this.log('[SOIL] 🌱 ════════════════════════════════════════════════════');
       this.log(`[SOIL] 🌱 SOIL MOISTURE DP3 = ${parsedValue}%`);
+
+      // v5.5.317: Validate with inference engine
+      let validatedMoisture = parsedValue;
+      if (this._soilInference) {
+        const currentTemp = this.getCapabilityValue('measure_temperature');
+        validatedMoisture = this._soilInference.validateMoisture(parsedValue, currentTemp);
+
+        // Log watering prediction
+        const wateringNeed = this._soilInference.predictWateringNeed();
+        if (wateringNeed) {
+          this.log(`[SOIL] 💧 Watering: ${wateringNeed.message} (${wateringNeed.urgency})`);
+        }
+        this.log(`[SOIL] 📈 Trend: ${this._soilInference.getTrend()}`);
+      }
       this.log('[SOIL] 🌱 ════════════════════════════════════════════════════');
 
       // DIRECT SET - bypass parent handler potential issues
       if (this.hasCapability('measure_humidity')) {
-        this.setCapabilityValue('measure_humidity', parsedValue)
-          .then(() => this.log(`[SOIL] ✅ measure_humidity SET to ${parsedValue}%`))
+        this.setCapabilityValue('measure_humidity', validatedMoisture)
+          .then(() => this.log(`[SOIL] ✅ measure_humidity SET to ${validatedMoisture}%`))
           .catch(err => this.log(`[SOIL] ❌ measure_humidity FAILED: ${err.message}`));
       } else {
         this.log('[SOIL] ⚠️ measure_humidity capability NOT found!');

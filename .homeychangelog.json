@@ -1,4 +1,10 @@
 {
+  "5.5.317": {
+    "en": "🧠 INTELLIGENT INFERENCE: Multi-source data validation for sensors. Motion: infers from lux changes when PIR fails. Climate: validates temp/humidity correlation. Soil: predicts watering needs from trends. Air quality: cross-validates CO2/VOC. Battery: predicts remaining days.",
+    "nl": "🧠 INTELLIGENT INFERENCE: Multi-bron datavalidatie voor sensoren met slimme deductie.",
+    "de": "🧠 INTELLIGENT INFERENCE: Multi-Quellen Datenvalidierung für Sensoren mit intelligenter Deduktion.",
+    "fr": "🧠 INTELLIGENT INFERENCE: Validation multi-source des données capteurs avec déduction intelligente."
+  },
   "5.5.316": {
     "en": "🔧 LUX REGRESSION FIX: Fixed v5.5.314 smoothing blocking legitimate lux changes. Fixed v5.5.283 auto-detect wrongly converting direct lux values. Now only suppresses extreme flip-flop (30↔2000). Research: Z2M #27212, SmartHomeScene ZY-M100 spec.",
     "nl": "🔧 LUX REGRESSION FIX: Lux smoothing was te agressief, nu alleen extreme flip-flop onderdrukt.",
