@@ -1,4 +1,10 @@
 {
+  "5.5.325": {
+    "en": "🔬 RONNY #782 ULTIMATE FIX: Complete _TZE204_gkfbdvyx rewrite based on ZHA/Z2M research. Correct DP1 enum handling (0=none,1=presence,2=move). Ultra-aggressive debounce (7 consecutive ON, 15s gap). Force-remove battery capability. DP103=lux, DP9=distance confirmed.",
+    "nl": "🔬 RONNY #782 ULTIMATE: _TZE204_gkfbdvyx volledig herschreven. Correcte DP enum, ultra-debounce, geen batterij.",
+    "de": "🔬 RONNY #782 ULTIMATE: _TZE204_gkfbdvyx komplett neu. Korrekte DP-Enum, Ultra-Debounce, keine Batterie.",
+    "fr": "🔬 RONNY #782 ULTIMATE: _TZE204_gkfbdvyx réécriture complète. Enum DP correct, ultra-debounce, pas de batterie."
+  },
   "5.5.324": {
     "en": "🔧 RONNY #782: _TZE204_gkfbdvyx fixes - More aggressive presence debouncing (5 consecutive ON, 10s gap). Extended DP fallbacks for lux and distance. Explicit mainsPowered flag to prevent battery alarms.",
     "nl": "🔧 RONNY #782: _TZE204_gkfbdvyx fixes - Agressievere presence debouncing, meer DP fallbacks.",
