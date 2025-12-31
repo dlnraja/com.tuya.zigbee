@@ -1,4 +1,10 @@
 {
+  "5.5.328": {
+    "en": "✨ NEW DEVICE: ZG-204ZM PIR + 24GHz radar battery presence sensor. Supports _TZE200_2aaelwxk, _TZE200_kb5noeto, _TZE200_tyffvoij. Features: presence, motion state, illuminance, distance detection. Per forum request #786.",
+    "nl": "✨ NIEUW: ZG-204ZM PIR + 24GHz radar batterij aanwezigheidssensor. Ondersteunt illuminantie en afstandsdetectie.",
+    "de": "✨ NEU: ZG-204ZM PIR + 24GHz Radar-Batterie-Präsenzsensor. Unterstützt Beleuchtungsstärke und Entfernungserkennung.",
+    "fr": "✨ NOUVEAU: Capteur présence ZG-204ZM PIR + radar 24GHz batterie. Supporte luminosité et détection distance."
+  },
   "5.5.327": {
     "en": "🔧 DIAGNOSTIC FIXES: TuyaEF00Manager safe logging (prevents 'this.log is not a function' errors). All device.log/error calls now use safe _log/_error helpers with null checks.",
     "nl": "🔧 DIAGNOSTIC FIXES: TuyaEF00Manager veilige logging (voorkomt 'this.log is not a function' fouten).",
