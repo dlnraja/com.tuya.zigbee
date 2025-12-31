@@ -603,7 +603,38 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // TYPE G: TZ3000 PIR Sensors (standard PIR, not radar)
+  // TYPE G: ZG-204ZM PIR + 24GHz Radar Battery Sensor
+  // v5.5.328: Added per user request (4x4_Pete forum post #786)
+  // Source: https://www.zigbee2mqtt.io/devices/ZG-204ZM.html
+  // Source: https://github.com/Koenkk/zigbee2mqtt/issues/21919
+  // DP1=presence, DP2=large_sens, DP4=large_dist, DP101=motion_state(enum)
+  // DP102=fading_time, DP104=med_dist, DP105=med_sens, DP106=illuminance
+  // DP107=indicator, DP108=small_dist, DP109=small_sens
+  // WARNING: _TZE200_kb5noeto may get stuck in "presence detected" state
+  // ─────────────────────────────────────────────────────────────────────────────
+  'ZG_204ZM_RADAR': {
+    sensors: [
+      '_TZE200_2aaelwxk', '_TZE200_kb5noeto', '_TZE200_tyffvoij',
+    ],
+    battery: true,
+    hasIlluminance: true,
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_bool' },           // presence
+      2: { cap: null, internal: 'large_motion_sensitivity' },       // 0-10
+      4: { cap: 'measure_distance', divisor: 100 },                 // large motion distance cm -> m
+      101: { cap: 'alarm_motion', type: 'motion_state_enum' },      // 0=none, 1=large, 2=medium, 3=small
+      102: { cap: null, internal: 'fading_time' },                  // seconds
+      104: { cap: null, internal: 'medium_motion_distance' },       // cm
+      105: { cap: null, internal: 'medium_motion_sensitivity' },    // 0-10
+      106: { cap: 'measure_luminance', type: 'lux_direct' },        // illuminance
+      107: { cap: null, internal: 'indicator' },                    // LED on/off
+      108: { cap: null, internal: 'small_detection_distance' },     // cm
+      109: { cap: null, internal: 'small_detection_sensitivity' },  // 0-10
+    }
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // TYPE H: TZ3000 PIR Sensors (standard PIR, not radar)
   // Uses ZCL occupancy cluster primarily
   // ─────────────────────────────────────────────────────────────────────────────
   'TZ3000_PIR': {
@@ -718,6 +749,11 @@ function transformPresence(value, type, invertPresence = false, configName = '')
     case 'presence_bool':
       // v5.5.306: CRITICAL FIX - value=0 means NO presence, value=1 means presence
       result = value === 1 || value === true || value === 'presence';
+      break;
+    case 'motion_state_enum':
+      // v5.5.328: ZG-204ZM motion state enum
+      // 0=none (no presence), 1=large, 2=medium, 3=small (all indicate presence)
+      result = value === 1 || value === 2 || value === 3;
       break;
     case 'presence_string':
       result = value === 'motion' || value === 'stationary' || value === 'presence';
