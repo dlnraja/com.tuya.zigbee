@@ -8,10 +8,18 @@ const TuyaTimeDebugProbe = require('../../lib/TuyaTimeDebugProbe');
 const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
 const TuyaRtcDetector = require('../../lib/TuyaRtcDetector');
 const { syncDeviceTimeTuya } = require('../../lib/tuya/TuyaTimeSync');
+const { ClimateInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║     CLIMATE SENSOR ULTIMATE - v5.5.190 INTELLIGENT PROTOCOL DETECTION        ║
+ * ║     CLIMATE SENSOR ULTIMATE - v5.5.317 INTELLIGENT INFERENCE                 ║
+ * ╠══════════════════════════════════════════════════════════════════════════════╣
+ * ║                                                                              ║
+ * ║  🧠 v5.5.317: INTELLIGENT INFERENCE ENGINE                                   ║
+ * ║  - Validates temperature/humidity with cross-correlation                    ║
+ * ║  - Smooths erratic readings from unstable sensors                           ║
+ * ║  - Predicts battery life from discharge patterns                            ║
+ * ║                                                                              ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  🔥 v5.5.190: INTELLIGENT PROTOCOL + COMPLETE DP RESEARCH                   ║
@@ -302,15 +310,18 @@ class ClimateSensorDevice extends HybridSensorBase {
       temperatureMeasurement: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
-            const rawTemp = data.measuredValue / 100;
-            // v5.5.108: Sanity check
-            if (rawTemp < -40 || rawTemp > 80) {
-              this.log(`[ZCL] ⚠️ Temperature out of range: ${rawTemp}°C - IGNORED`);
-              return;
+            let rawTemp = data.measuredValue / 100;
+            // v5.5.317: Validate with inference engine (smooths erratic readings)
+            if (this._climateInference) {
+              rawTemp = this._climateInference.validateTemperature(rawTemp);
+              if (rawTemp === null) {
+                this.log(`[ZCL] ⚠️ Temperature rejected by inference engine`);
+                return;
+              }
             }
             // v5.5.189: Apply calibration offset
             const temp = this._applyTempOffset(rawTemp);
-            this.log(`[ZCL] 🌡️ Temperature: ${temp}°C`);
+            this.log(`[ZCL] 🌡️ Temperature: ${temp}°C (confidence: ${this._climateInference?.getConfidence() || 'N/A'}%)`);
             this._registerZclData?.(); // v5.5.108: Track for learning
             this.setCapabilityValue('measure_temperature', temp).catch(() => { });
           }
@@ -324,15 +335,22 @@ class ClimateSensorDevice extends HybridSensorBase {
       relativeHumidity: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
-            const rawHum = data.measuredValue / 100;
-            // v5.5.108: Sanity check
-            if (rawHum < 0 || rawHum > 100) {
-              this.log(`[ZCL] ⚠️ Humidity out of range: ${rawHum}% - IGNORED`);
-              return;
+            let rawHum = data.measuredValue / 100;
+            // v5.5.317: Validate with inference engine (smooths erratic readings)
+            if (this._climateInference) {
+              rawHum = this._climateInference.validateHumidity(rawHum);
+              if (rawHum === null) {
+                this.log(`[ZCL] ⚠️ Humidity rejected by inference engine`);
+                return;
+              }
+              // Check correlation between temp and humidity
+              if (!this._climateInference.checkCorrelation()) {
+                this.log(`[ZCL] ⚠️ Temp/Humidity correlation suspicious - sensor may be faulty`);
+              }
             }
             // v5.5.189: Apply calibration offset
             const humidity = this._applyHumOffset(rawHum);
-            this.log(`[ZCL] 💧 Humidity: ${humidity}%`);
+            this.log(`[ZCL] 💧 Humidity: ${humidity}% (confidence: ${this._climateInference?.getConfidence() || 'N/A'}%)`);
             this._registerZclData?.(); // v5.5.108: Track for learning
             this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
           }
@@ -363,13 +381,20 @@ class ClimateSensorDevice extends HybridSensorBase {
   async onNodeInit({ zclNode }) {
     this.log('');
     this.log('╔══════════════════════════════════════════════════════════════════════════════╗');
-    this.log('║  CLIMATE SENSOR ULTIMATE - v5.5.189 MERGED (ALL PROTOCOLS + CALIBRATION)   ║');
-    this.log('║  ZCL + Tuya DP + Battery + Time sync + Temp/Humidity offsets               ║');
+    this.log('║  CLIMATE SENSOR ULTIMATE - v5.5.317 INTELLIGENT INFERENCE                   ║');
+    this.log('║  ZCL + Tuya DP + Battery + Time sync + Validation + Cross-correlation      ║');
     this.log('╚══════════════════════════════════════════════════════════════════════════════╝');
     this.log('');
 
     // Store zclNode for time sync
     this._zclNode = zclNode;
+
+    // v5.5.317: Initialize intelligent inference engines
+    this._climateInference = new ClimateInference(this, {
+      maxTempJump: 5,       // Max 5°C change per reading
+      maxHumidityJump: 15,  // Max 15% humidity change per reading
+    });
+    this._batteryInference = new BatteryInference(this);
 
     // Call parent initialization (HybridSensorBase sets up ALL listeners)
     await super.onNodeInit({ zclNode });
