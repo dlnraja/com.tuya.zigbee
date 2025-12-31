@@ -1,4 +1,10 @@
 {
+  "5.5.319": {
+    "en": "🔬 FORUM DEEP ANALYSIS (15+ sources): Fixed scene switches (1-6 gang) physical buttons not responding (Eftychis). Fixed lux 30↔2000 oscillation with 60s lock (Ronny #775). Fixed _TZE204_gkfbdvyx random presence with hysteresis debounce (Ronny #765). Added _TZ3000_7ysdnebc to 2-channel dimmer (JDrewsen #570).",
+    "nl": "🔬 FORUM DEEP ANALYSIS: Scene switches, lux oscillatie, random presence en 2-kanaal dimmer fixes.",
+    "de": "🔬 FORUM DEEP ANALYSIS: Scene-Schalter, Lux-Oszillation, Random-Presence und 2-Kanal-Dimmer Fixes.",
+    "fr": "🔬 FORUM DEEP ANALYSIS: Corrections scene switches, oscillation lux, présence aléatoire et dimmer 2 canaux."
+  },
   "5.5.318": {
     "en": "🐛 BUG FIXES: Fixed 'this.log is not a function' error in TuyaEF00Manager. Fixed button_wireless incorrectly checking alarm_contact capability. Added 'Invert Presence' setting for radar sensors with inverted firmware. Fixed NaN lux values in presence_sensor_radar.",
     "nl": "🐛 BUG FIXES: Diverse bugfixes voor TuyaEF00Manager, button_wireless en presence_sensor_radar.",
