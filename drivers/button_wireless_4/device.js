@@ -53,11 +53,13 @@ class Button4GangDevice extends ButtonDevice {
   }
 
   /**
-   * v5.5.295: FORUM FIX - Enhanced physical button detection for TS004F
+   * v5.5.333: FORUM FIX - Enhanced physical button detection for TS004F
    * Based on research from 10+ sources: Zigbee2MQTT, ZHA, SmartThings, etc.
+   * Added support for _TZ3000_wkai4ga5 and _TZ3000_5tqxpine (Eftychis report)
    *
    * CRITICAL FINDINGS:
    * - TS004F physical buttons send scene.recall commands
+   * - Some devices use multistateInput cluster (cluster 18)
    * - Virtual buttons (app icons) use onOff commands
    * - Need BOTH listeners for complete functionality
    * - Scene commands: 0=single, 1=double, 2=long press
@@ -65,6 +67,9 @@ class Button4GangDevice extends ButtonDevice {
   async _setupEnhancedPhysicalButtonDetection(zclNode) {
     this.log('[BUTTON4-PHYSICAL] 🔧 Setting up enhanced physical button detection...');
     this.log('[BUTTON4-PHYSICAL] Research base: Z2M, ZHA, SmartThings, deCONZ patterns');
+
+    const manufacturerName = this.getData()?.manufacturerName || '';
+    this.log(`[BUTTON4-PHYSICAL] Manufacturer: ${manufacturerName}`);
 
     try {
       // Setup scene cluster listeners on all 4 endpoints for physical buttons
@@ -75,7 +80,8 @@ class Button4GangDevice extends ButtonDevice {
           continue;
         }
 
-        const scenesCluster = endpoint.clusters?.scenes;
+        // v5.5.333: Setup scenes cluster listener
+        const scenesCluster = endpoint.clusters?.scenes || endpoint.clusters?.genScenes || endpoint.clusters?.[5];
         if (scenesCluster) {
           this.log(`[BUTTON4-PHYSICAL] 📡 Setting up scene listener on EP${ep}...`);
 
@@ -108,18 +114,63 @@ class Button4GangDevice extends ButtonDevice {
 
           this.log(`[BUTTON4-PHYSICAL] ✅ Scene listener configured for EP${ep}`);
         } else {
-          this.log(`[BUTTON4-PHYSICAL] ⚠️ No scenes cluster on EP${ep} (virtual only)`);
+          this.log(`[BUTTON4-PHYSICAL] ⚠️ No scenes cluster on EP${ep}`);
+        }
+
+        // v5.5.333: Setup multistateInput cluster listener (for _TZ3000_wkai4ga5, _TZ3000_5tqxpine)
+        const multistateCluster = endpoint.clusters?.multistateInput || endpoint.clusters?.genMultistateInput || endpoint.clusters?.[18];
+        if (multistateCluster) {
+          this.log(`[BUTTON4-PHYSICAL] 📡 Setting up multistateInput listener on EP${ep}...`);
+
+          // Listen for presentValue attribute changes
+          if (typeof multistateCluster.on === 'function') {
+            multistateCluster.on('attr.presentValue', async (value) => {
+              this.log(`[BUTTON4-MULTISTATE] EP${ep} presentValue: ${value}`);
+
+              // Map multistate values to press types
+              // 0=single, 1=double, 2=long (common pattern)
+              const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
+              const pressType = pressTypeMap[value] || 'single';
+
+              this.log(`[BUTTON4-MULTISTATE] 🔘 Button ${ep} ${pressType.toUpperCase()} (multistate ${value})`);
+              await this.triggerButtonPress(ep, pressType);
+            });
+
+            this.log(`[BUTTON4-PHYSICAL] ✅ MultistateInput listener configured for EP${ep}`);
+          }
         }
 
         // Also ensure onOff cluster is available for virtual buttons (app icons)
-        const onOffCluster = endpoint.clusters?.onOff;
+        const onOffCluster = endpoint.clusters?.onOff || endpoint.clusters?.genOnOff || endpoint.clusters?.[6];
         if (onOffCluster) {
           this.log(`[BUTTON4-PHYSICAL] 📱 OnOff cluster available on EP${ep} (virtual buttons)`);
+
+          // v5.5.333: Also listen for onOff commands as button events
+          if (typeof onOffCluster.on === 'function') {
+            onOffCluster.on('command', async (commandName, commandPayload) => {
+              this.log(`[BUTTON4-ONOFF] EP${ep} command: ${commandName}`, commandPayload);
+
+              // Map onOff commands to press types
+              const commandMap = {
+                'on': 'single',
+                'setOn': 'single',
+                'off': 'double',
+                'setOff': 'double',
+                'toggle': 'long'
+              };
+
+              const pressType = commandMap[commandName];
+              if (pressType) {
+                this.log(`[BUTTON4-ONOFF] 🔘 Button ${ep} ${pressType.toUpperCase()} (${commandName})`);
+                await this.triggerButtonPress(ep, pressType);
+              }
+            });
+          }
         }
       }
 
       this.log('[BUTTON4-PHYSICAL] ✅ Enhanced physical button detection configured');
-      this.log('[BUTTON4-PHYSICAL] 🔄 Both physical (scene) and virtual (onOff) events supported');
+      this.log('[BUTTON4-PHYSICAL] 🔄 Scenes, MultistateInput, and OnOff listeners active');
 
     } catch (error) {
       this.log('[BUTTON4-PHYSICAL] ❌ Setup error:', error.message);
