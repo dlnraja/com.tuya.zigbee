@@ -702,38 +702,70 @@ function transformPresence(value, type, invertPresence = false, configName = '')
   return result;
 }
 
-// v5.5.314: Presence debouncing for _TZE204_gkfbdvyx (Ronny #775)
-// Requires 2 consecutive same-state reports before changing presence
+// v5.5.319: ENHANCED Presence debouncing for _TZE204_gkfbdvyx (Ronny #765)
+// Problem: "turns on random even when nobody is in the room"
+// Solution: Require 3 consecutive same-state reports AND minimum time gap
+// Also add hysteresis: harder to turn ON than to turn OFF
 function debouncePresence(presence, manufacturerName, deviceId) {
   if (!deviceId || !manufacturerName.includes('gkfbdvyx')) {
     return presence;  // No debouncing for other devices
   }
 
-  const state = presenceDebounceState.get(deviceId) || { lastPresence: null, stableCount: 0 };
+  const now = Date.now();
+  const state = presenceDebounceState.get(deviceId) || {
+    lastPresence: null,
+    stablePresence: false,  // Current stable output
+    stableCount: 0,
+    lastChangeTime: 0,
+    onCount: 0,  // Track consecutive ON reports
+    offCount: 0  // Track consecutive OFF reports
+  };
 
-  if (state.lastPresence === presence) {
-    state.stableCount++;
+  // Track consecutive ON/OFF reports separately
+  if (presence) {
+    state.onCount++;
+    state.offCount = 0;
   } else {
-    state.stableCount = 1;
+    state.offCount++;
+    state.onCount = 0;
   }
+
+  // v5.5.319: HYSTERESIS - Harder to turn ON than OFF
+  // Require 3 consecutive ON reports to activate (prevents false positives)
+  // Require only 2 consecutive OFF reports to deactivate (faster response when leaving)
+  const requiredOnCount = 3;
+  const requiredOffCount = 2;
+
+  // v5.5.319: Minimum time between state changes (5 seconds)
+  const minStateChangeInterval = 5000;
+  const timeSinceLastChange = now - state.lastChangeTime;
+
+  let newStablePresence = state.stablePresence;
+
+  if (presence && state.onCount >= requiredOnCount && timeSinceLastChange >= minStateChangeInterval) {
+    // Turn ON: requires 3 consecutive reports + 5s since last change
+    if (!state.stablePresence) {
+      console.log(`[PRESENCE-DEBOUNCE] ✅ ${manufacturerName}: ON confirmed (${state.onCount} consecutive, ${timeSinceLastChange}ms gap)`);
+      newStablePresence = true;
+      state.lastChangeTime = now;
+    }
+  } else if (!presence && state.offCount >= requiredOffCount) {
+    // Turn OFF: requires only 2 consecutive reports (faster response)
+    if (state.stablePresence) {
+      console.log(`[PRESENCE-DEBOUNCE] ✅ ${manufacturerName}: OFF confirmed (${state.offCount} consecutive)`);
+      newStablePresence = false;
+      state.lastChangeTime = now;
+    }
+  } else {
+    // Not enough consecutive reports - keep stable state
+    console.log(`[PRESENCE-DEBOUNCE] 🔇 ${manufacturerName}: ignoring (ON=${state.onCount}/${requiredOnCount}, OFF=${state.offCount}/${requiredOffCount})`);
+  }
+
+  state.stablePresence = newStablePresence;
   state.lastPresence = presence;
   presenceDebounceState.set(deviceId, state);
 
-  // Require 2 consecutive same-state reports to change presence
-  if (state.stableCount >= 2) {
-    console.log(`[PRESENCE-DEBOUNCE] ✅ ${manufacturerName}: presence=${presence} (stable x${state.stableCount})`);
-    return presence;
-  }
-
-  // Return previous stable value until we get consistent reports
-  const previousStable = presenceDebounceState.get(deviceId + '_stable')?.presence ?? presence;
-  console.log(`[PRESENCE-DEBOUNCE] 🔇 ${manufacturerName}: ignoring flicker ${previousStable} -> ${presence} (count=${state.stableCount})`);
-
-  if (state.stableCount >= 2) {
-    presenceDebounceState.set(deviceId + '_stable', { presence });
-  }
-
-  return previousStable;
+  return newStablePresence;
 }
 
 // v5.5.314: Lux smoothing state (prevents 30-2000 fluctuations)
@@ -811,38 +843,60 @@ function transformLux(value, type, manufacturerName = '', deviceId = null) {
 
   lux = Math.max(0, Math.round(lux));
 
-  // v5.5.316: FIXED LUX SMOOTHING - Only suppress EXTREME fluctuations
-  // Previous bug: 30% threshold blocked legitimate changes
-  // NEW: Only suppress if jumping between extremes (< 100 ↔ > 1500)
+  // v5.5.319: AGGRESSIVE LUX SMOOTHING for known problematic sensors
+  // Ronny #775: _TZE284_iadro9bf still oscillating 30↔2000 every 15 seconds
+  // Solution: Once flip-flop is detected, lock to stable value for 60 seconds
   if (deviceId && isZYM100Series) {
-    const state = luxSmoothingState.get(deviceId) || { lastLux: null, timestamp: 0, extremeCount: 0 };
+    const state = luxSmoothingState.get(deviceId) || {
+      lastLux: null,
+      stableLux: null,  // v5.5.319: Track stable value
+      timestamp: 0,
+      extremeCount: 0,
+      lockedUntil: 0    // v5.5.319: Lock period after flip-flop detection
+    };
     const now = Date.now();
     const timeSinceLastUpdate = now - state.timestamp;
 
+    // v5.5.319: If we're in locked mode, always return stable value
+    if (state.lockedUntil > now && state.stableLux !== null) {
+      console.log(`[LUX-SMOOTH] 🔒 Locked mode: returning stable ${state.stableLux} (ignoring ${lux})`);
+      return state.stableLux;
+    }
+
     if (state.lastLux !== null) {
-      // v5.5.316: ONLY suppress extreme oscillations (low↔high flip-flop)
+      // v5.5.319: Detect extreme oscillation (30↔2000 pattern from Ronny report)
       const isExtremeLow = lux < 100;
       const isExtremeHigh = lux > 1500;
       const wasExtremeLow = state.lastLux < 100;
       const wasExtremeHigh = state.lastLux > 1500;
 
-      // Detect flip-flop pattern: low→high→low or high→low→high within 30 seconds
+      // Detect flip-flop pattern
       const isFlipFlop = (isExtremeLow && wasExtremeHigh) || (isExtremeHigh && wasExtremeLow);
 
       if (isFlipFlop && timeSinceLastUpdate < 30000) {
         state.extremeCount++;
-        if (state.extremeCount >= 2) {
-          // Confirmed flip-flop pattern - suppress
-          console.log(`[LUX-SMOOTH] 🔇 Flip-flop detected ${manufacturerName}: ${state.lastLux} ↔ ${lux} (suppressing)`);
-          return state.lastLux;
+        console.log(`[LUX-SMOOTH] ⚠️ Flip-flop #${state.extremeCount}: ${state.lastLux} ↔ ${lux}`);
+
+        if (state.extremeCount >= 1) {
+          // v5.5.319: IMMEDIATELY lock to lower value (more realistic for indoor)
+          state.stableLux = Math.min(state.lastLux, lux);
+          state.lockedUntil = now + 60000;  // Lock for 60 seconds
+          console.log(`[LUX-SMOOTH] 🔒 Locking to ${state.stableLux} for 60s (flip-flop detected)`);
+          luxSmoothingState.set(deviceId, state);
+          return state.stableLux;
         }
-      } else {
-        state.extremeCount = 0;  // Reset counter for normal changes
+      } else if (timeSinceLastUpdate > 60000) {
+        // Reset after 60 seconds of no flip-flop
+        state.extremeCount = 0;
+        state.stableLux = null;
+        state.lockedUntil = 0;
       }
     }
 
     // Update smoothing state
-    luxSmoothingState.set(deviceId, { lastLux: lux, timestamp: now, extremeCount: state.extremeCount });
+    state.lastLux = lux;
+    state.timestamp = now;
+    luxSmoothingState.set(deviceId, state);
   }
 
   return lux;
