@@ -291,9 +291,22 @@ class MotionSensorDevice extends HybridSensorBase {
   }
 
   /**
+   * v5.5.335: Manufacturer IDs that DON'T have temp/humidity (PIR only + luminance)
+   * Per forum feedback from 4x4_Pete: _TZE200_3towulqd shows incorrect temp/humidity
+   * These devices should only show: motion, luminance, battery
+   */
+  static get PIR_ONLY_MANUFACTURERS() {
+    return [
+      '_TZE200_3towulqd',  // ZG-204ZM PIR only (4x4_Pete forum #810)
+      '_tze200_3towulqd',
+    ];
+  }
+
+  /**
    * v5.5.113: Cluster detection AND dynamic capability addition
    * Only add temp/humidity capabilities if device actually has these clusters
    * Fixes "incorrect labels" issue (Cam's report #604)
+   * v5.5.335: Skip temp/humidity for PIR-only devices (4x4_Pete forum feedback)
    */
   async _detectAvailableClusters(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
@@ -301,6 +314,28 @@ class MotionSensorDevice extends HybridSensorBase {
     const clusterNames = Object.keys(clusters);
 
     this.log(`[MOTION-CLUSTERS] Available clusters: ${clusterNames.join(', ')}`);
+
+    // v5.5.335: Check if this is a PIR-only device that doesn't have temp/humidity
+    const manufacturerName = this.getData()?.manufacturerName || this.getSetting('zb_manufacturer_name') || '';
+    const isPirOnly = MotionSensorDevice.PIR_ONLY_MANUFACTURERS.includes(manufacturerName);
+
+    if (isPirOnly) {
+      this.log(`[MOTION-CLUSTERS] ⚠️ PIR-only device detected: ${manufacturerName}`);
+      this.log('[MOTION-CLUSTERS] Skipping temp/humidity - device only has motion + luminance');
+      this._hasTemperatureCluster = false;
+      this._hasHumidityCluster = false;
+
+      // Remove any incorrectly added capabilities
+      if (this.hasCapability('measure_temperature')) {
+        await this.removeCapability('measure_temperature').catch(() => { });
+        this.log('[MOTION-CLUSTERS] ✅ Removed incorrect measure_temperature');
+      }
+      if (this.hasCapability('measure_humidity')) {
+        await this.removeCapability('measure_humidity').catch(() => { });
+        this.log('[MOTION-CLUSTERS] ✅ Removed incorrect measure_humidity');
+      }
+      return;
+    }
 
     // Check for temperature cluster (0x0402) - ALL possible names
     this._hasTemperatureCluster = !!(
