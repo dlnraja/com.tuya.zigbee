@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.334",
+  "version": "5.5.335",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -22730,6 +22730,7 @@
       "zigbee": {
         "manufacturerName": [
           "5rta89nj",
+          "HOBEIAN",
           "Immax",
           "TS0301",
           "TUYATEC-0l6xaqmi",
@@ -22907,6 +22908,7 @@
           "TS0210",
           "TS0601",
           "TY0203",
+          "ZG-102Z",
           "ZG-102ZL",
           "ZG-102ZM",
           "ZP-DW-03",
