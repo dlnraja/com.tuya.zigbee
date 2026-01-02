@@ -120,20 +120,12 @@ class SoilSensorDevice extends TuyaHybridDevice {
       15: { capability: 'measure_battery', divisor: 1 },
 
       // ═══════════════════════════════════════════════════════════════════
-      // WATER WARNING ALARM - DP14 (Hobeian ZG-303Z)
-      // For QT-07S this is battery_state enum, handled specially
+      // DP14: BATTERY STATE (standard Tuya soil sensors per Z2M)
+      // Z2M: [14, 'battery_state', tuya.valueConverter.batteryState]
+      // Enum: 0=low, 1=medium, 2=high → converted in _handleDP
+      // Note: Handled directly in _handleDP for proper battery conversion
       // ═══════════════════════════════════════════════════════════════════
-      14: {
-        capability: 'alarm_water',
-        transform: (v) => {
-          // For Hobeian ZG-303Z: 0=none, 1=alarm
-          // For QT-07S: This is battery_state (0=low, 1=med, 2=high)
-          // We detect based on value: if v <= 2 and looks like battery state
-          if (v === 0) return false;  // No alarm / Low battery
-          if (v === 1) return true;   // Alarm / Medium battery
-          return v === 1 || v === true;
-        }
-      },
+      14: { capability: 'measure_battery', transform: (v) => ({ 0: 10, 1: 50, 2: 100 }[v] ?? v) },
 
       // ═══════════════════════════════════════════════════════════════════
       // TEMPERATURE UNIT - DP9 (Hobeian) / DP2 (QT-07S)
@@ -475,7 +467,8 @@ class SoilSensorDevice extends TuyaHybridDevice {
     // Condition: soil moisture is below threshold
     if (this._conditionMoistureBelow) {
       this._conditionMoistureBelow.registerRunListener(async (args, state) => {
-        const moisture = this.getCapabilityValue('measure_humidity');
+        // v5.5.337: Use measure_soil_moisture first, fallback to measure_humidity
+        const moisture = this.getCapabilityValue('measure_soil_moisture') ?? this.getCapabilityValue('measure_humidity');
         return moisture < args.moisture;
       });
     }
@@ -483,7 +476,8 @@ class SoilSensorDevice extends TuyaHybridDevice {
     // Condition: soil moisture is above threshold
     if (this._conditionMoistureAbove) {
       this._conditionMoistureAbove.registerRunListener(async (args, state) => {
-        const moisture = this.getCapabilityValue('measure_humidity');
+        // v5.5.337: Use measure_soil_moisture first, fallback to measure_humidity
+        const moisture = this.getCapabilityValue('measure_soil_moisture') ?? this.getCapabilityValue('measure_humidity');
         return moisture > args.moisture;
       });
     }
@@ -506,7 +500,8 @@ class SoilSensorDevice extends TuyaHybridDevice {
     await super.setCapabilityValue(capability, value);
 
     // Trigger flows based on capability changes
-    if (capability === 'measure_humidity') {
+    // v5.5.337: Handle both measure_soil_moisture and measure_humidity
+    if (capability === 'measure_soil_moisture' || capability === 'measure_humidity') {
       this._triggerMoistureFlows(value);
     } else if (capability === 'measure_temperature') {
       this._triggerTemperatureFlows(value);
