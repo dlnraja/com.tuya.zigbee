@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.348",
+  "version": "5.5.349",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -17185,7 +17185,6 @@
         "manufacturerName": [
           "_TYZB01_qm6djpta",
           "_TZ3000_11pg3ima",
-          "_TZ3000_5tqxpine",
           "_TZ3000_a4xycprs",
           "_TZ3000_abci1hiu",
           "_TZ3000_b3mgfu0d",
@@ -17204,7 +17203,6 @@
           "_TZ3000_ufhtxr59",
           "_TZ3000_uri7oadn",
           "_TZ3000_w4thianr",
-          "_TZ3000_wkai4ga5",
           "_TZ3000_xabckq1v",
           "_TZ3000_ja5osu5g",
           "_tz3040_fwxuzcf4",
@@ -17220,7 +17218,6 @@
           "_TZ3000_zgyzgdua",
           "_tyzb01_qm6djpta",
           "_tz3000_11pg3ima",
-          "_tz3000_5tqxpine",
           "_tz3000_a4xycprs",
           "_tz3000_abci1hiu",
           "_tz3000_b3mgfu0d",
@@ -17242,7 +17239,6 @@
           "_tz3000_uri7oadn",
           "_tz3000_vp6clf9d",
           "_tz3000_w4thianr",
-          "_tz3000_wkai4ga5",
           "_tz3000_xabckq1v",
           "_tz3000_zgyzgdua"
         ],
@@ -29866,6 +29862,7 @@
             "bindings": [
               1,
               6,
+              1024,
               1280
             ]
           }
@@ -34306,9 +34303,45 @@
         "button.4",
         "measure_battery"
       ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Upper Left",
+            "fr": "Haut Gauche",
+            "nl": "Linksboven",
+            "de": "Oben Links"
+          }
+        },
+        "button.2": {
+          "title": {
+            "en": "Upper Right",
+            "fr": "Haut Droite",
+            "nl": "Rechtsboven",
+            "de": "Oben Rechts"
+          }
+        },
+        "button.3": {
+          "title": {
+            "en": "Lower Left",
+            "fr": "Bas Gauche",
+            "nl": "Linksonder",
+            "de": "Unten Links"
+          }
+        },
+        "button.4": {
+          "title": {
+            "en": "Lower Right",
+            "fr": "Bas Droite",
+            "nl": "Rechtsonder",
+            "de": "Unten Rechts"
+          }
+        }
+      },
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_jckxip3g",
+          "_TZ3000_wkai4ga5",
+          "_TZ3000_5tqxpine",
           "_TZE204_zqtiam9d",
           "_TZE200_zqtiam9d",
           "_tz3000_jckxip3g",

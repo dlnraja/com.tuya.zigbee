@@ -1,4 +1,10 @@
 {
+  "5.5.349": {
+    "en": "🔧 EFTYCHIS FIX: (1) _TZ3000_wkai4ga5 & _TZ3000_5tqxpine moved to scene_switch_4 driver with Johan-style button labels (Upper Left, Upper Right, etc.). (2) Motion sensor lux now reports independently - added illuminance cluster (1024) to bindings. RE-PAIR devices after update!",
+    "nl": "🔧 FIX: 4-gang scene switch + motion sensor lux onafhankelijk. Opnieuw koppelen na update!",
+    "de": "🔧 FIX: 4-gang Scene Switch + Motion Sensor Lux unabhängig. Nach Update neu koppeln!",
+    "fr": "🔧 FIX: 4-gang scene switch + lux capteur mouvement indépendant. Re-coupler après MAJ!"
+  },
   "5.5.348": {
     "en": "📡 NEW: eWeLink temperature/humidity sensor support (JohnnyBravo: CK-TLSR8656-SS5-01). Forum issues analyzed: button flow triggers confirmed working, RGB bulb fingerprints verified.",
     "nl": "📡 NIEUW: eWeLink temp/vocht sensor support. Forum issues geanalyseerd.",
