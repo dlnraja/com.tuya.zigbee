@@ -1,4 +1,10 @@
 {
+  "5.5.340": {
+    "en": "🔌 MULTI-SOURCE INTEGRATION: Added SONOFF devices from JohanBendz/tech.sonoff (SNZB-04/04P, SNZB-05P, SNZB-06P, ZBMicro, S26R2ZB, SA-003, 01MINIZB). Analyzed Philips Hue Zigbee PRs (memory leak fixes, battery status). Added IKEA patterns from ZHA handlers. Inspired by forum firmware update discussions.",
+    "nl": "🔌 MULTI-SOURCE INTEGRATION: SONOFF apparaten toegevoegd.",
+    "de": "🔌 MULTI-SOURCE INTEGRATION: SONOFF Geräte hinzugefügt.",
+    "fr": "🔌 MULTI-SOURCE INTEGRATION: Appareils SONOFF ajoutés."
+  },
   "5.5.339": {
     "en": "📱 HOBEIAN MOTION SENSORS: Added ZG-204ZV, ZG-204ZM, ZG-204ZH presence sensors per GitHub issue AreAArseth/com.hobeian#4. Added HOBEIAN manufacturer to presence_sensor_radar. Forum/diagnostic report analyzed: button_wireless_4 capabilities warning is non-critical (device works). PR#6/PR#7 from Hobeian already integrated.",
     "nl": "📱 HOBEIAN MOTION SENSORS: ZG-204ZV/ZM/ZH toegevoegd.",
