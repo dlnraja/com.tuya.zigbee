@@ -1,4 +1,10 @@
 {
+  "5.5.348": {
+    "en": "📡 NEW: eWeLink temperature/humidity sensor support (JohnnyBravo: CK-TLSR8656-SS5-01). Forum issues analyzed: button flow triggers confirmed working, RGB bulb fingerprints verified.",
+    "nl": "📡 NIEUW: eWeLink temp/vocht sensor support. Forum issues geanalyseerd.",
+    "de": "📡 NEU: eWeLink Temp/Feuchte Sensor Support. Forum Issues analysiert.",
+    "fr": "📡 NOUVEAU: Support capteur temp/humidité eWeLink. Issues forum analysés."
+  },
   "5.5.347": {
     "en": "🚨 CRITICAL FIX: SyntaxError 'dp already declared' in HybridSensorBase.js - was breaking motion_sensor and smoke_detector_advanced devices. Fixed duplicate const declaration from v5.5.344 deduplication code.",
     "nl": "🚨 KRITIEKE FIX: SyntaxError opgelost - motion_sensor en smoke_detector devices werkend.",
