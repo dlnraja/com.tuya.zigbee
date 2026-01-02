@@ -1,4 +1,10 @@
 {
+  "5.5.338": {
+    "en": "📋 JOHAN BENDZ ISSUES AUDIT: Verified device support from JohanBendz/com.tuya.zigbee issues. Already supported: _TZE204_gkfbdvyx (radar #1322), _TZE200_ghynnvos (PIR #1321), _TZ3000_hy6ncvmw/TS0222 (light sensor #1320), _TZ3000_zgyzgdua/TS0044 (4-button #1327), _TZ3210_s8lvbbuc/TS0505B (RGB bulb #1325). IntelligentDeviceLearner handles new variants automatically.",
+    "nl": "📋 JOHAN BENDZ ISSUES AUDIT: Apparaatondersteuning geverifieerd.",
+    "de": "📋 JOHAN BENDZ ISSUES AUDIT: Geräteunterstützung verifiziert.",
+    "fr": "📋 JOHAN BENDZ ISSUES AUDIT: Support appareils vérifié."
+  },
   "5.5.337": {
     "en": "🌱 SOIL SENSOR FIX: Verified DP mappings against Z2M source. DP14=battery_state (0=low/10%, 1=med/50%, 2=high/100%) per Z2M TS0601_soil. Fixed flow triggers to use measure_soil_moisture. DP3=moisture, DP5=temp÷10, DP9=unit, DP15=battery%.",
     "nl": "🌱 SOIL SENSOR FIX: DP mappings geverifieerd met Z2M bron.",
