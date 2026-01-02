@@ -1,4 +1,10 @@
 {
+  "5.5.352": {
+    "en": "🔧 CURTAIN FIX: Improved timeout handling for curtain motors. Timeouts no longer throw errors - device often still responds despite Zigbee timeout.",
+    "nl": "🔧 FIX: Verbeterde timeout afhandeling voor gordijnmotoren.",
+    "de": "🔧 FIX: Verbesserte Timeout-Behandlung für Vorhangmotoren.",
+    "fr": "🔧 FIX: Amélioration gestion timeout moteurs rideaux."
+  },
   "5.5.351": {
     "en": "🔧 EFTYCHIS FIX: scene_switch_4 import error fixed - device.js was using destructuring on non-destructured export. RE-PAIR devices after update!",
     "nl": "🔧 FIX: scene_switch_4 import fout opgelost. Opnieuw koppelen na update!",
