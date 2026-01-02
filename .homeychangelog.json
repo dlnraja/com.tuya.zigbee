@@ -1,4 +1,10 @@
 {
+  "5.5.345": {
+    "en": "🔧 FORUM FIXES: (1) _TZ3000_lqpt3mvr moved to vibration_sensor (Nicolas: TS0210 not contact). (2) _TZ3000_5bpeda8u fixed as button not switch (Cam). (3) Presence sensor radar lux smoothing confirmed working (Ronny_M).",
+    "nl": "🔧 FORUM FIXES: Vibratie sensor fix, knop fix, radar lux smoothing.",
+    "de": "🔧 FORUM FIXES: Vibrationssensor Fix, Knopf Fix, Radar Lux Glättung.",
+    "fr": "🔧 FORUM FIXES: Fix capteur vibration, fix bouton, lissage lux radar."
+  },
   "5.5.344": {
     "en": "🔧 COMPREHENSIVE FIX: (1) Contact sensor duplicate DP processing fixed - was triggering 6x per event (Lasse_K diagnostic). (2) DP context detection now device-aware - fixes DP1 wrongly converted to temperature. (3) 1-hour keep-alive detection blocks fake 'closed' state. (4) Fixed invert_contact bug (was passing raw value). (5) Extended _safeDeviceHandler to AdvancedFlowCardManager (Fiek). (6) Button battery polling on wake.",
     "nl": "🔧 UITGEBREIDE FIX: Contact sensor dubbele DP verwerking, context detectie, keep-alive filter, flow card foutpreventie.",
