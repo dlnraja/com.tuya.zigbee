@@ -1,4 +1,10 @@
 {
+  "5.5.339": {
+    "en": "📱 HOBEIAN MOTION SENSORS: Added ZG-204ZV, ZG-204ZM, ZG-204ZH presence sensors per GitHub issue AreAArseth/com.hobeian#4. Added HOBEIAN manufacturer to presence_sensor_radar. Forum/diagnostic report analyzed: button_wireless_4 capabilities warning is non-critical (device works). PR#6/PR#7 from Hobeian already integrated.",
+    "nl": "📱 HOBEIAN MOTION SENSORS: ZG-204ZV/ZM/ZH toegevoegd.",
+    "de": "📱 HOBEIAN MOTION SENSORS: ZG-204ZV/ZM/ZH hinzugefügt.",
+    "fr": "📱 HOBEIAN MOTION SENSORS: ZG-204ZV/ZM/ZH ajoutés."
+  },
   "5.5.338": {
     "en": "📋 JOHAN BENDZ ISSUES AUDIT: Verified device support from JohanBendz/com.tuya.zigbee issues. Already supported: _TZE204_gkfbdvyx (radar #1322), _TZE200_ghynnvos (PIR #1321), _TZ3000_hy6ncvmw/TS0222 (light sensor #1320), _TZ3000_zgyzgdua/TS0044 (4-button #1327), _TZ3210_s8lvbbuc/TS0505B (RGB bulb #1325). IntelligentDeviceLearner handles new variants automatically.",
     "nl": "📋 JOHAN BENDZ ISSUES AUDIT: Apparaatondersteuning geverifieerd.",
