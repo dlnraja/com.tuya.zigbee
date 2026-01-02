@@ -1,4 +1,10 @@
 {
+  "5.5.351": {
+    "en": "🔧 EFTYCHIS FIX: scene_switch_4 import error fixed - device.js was using destructuring on non-destructured export. RE-PAIR devices after update!",
+    "nl": "🔧 FIX: scene_switch_4 import fout opgelost. Opnieuw koppelen na update!",
+    "de": "🔧 FIX: scene_switch_4 Import-Fehler behoben. Nach Update neu koppeln!",
+    "fr": "🔧 FIX: Erreur d'import scene_switch_4 corrigée. Re-coupler après MAJ!"
+  },
   "5.5.350": {
     "en": "🔘 BUTTON FIX: _TZ3000_zgyzgdua and similar 4-gang buttons now work! Fixed onOff attribute detection that was blocking button presses. Previous logic ignored first report forever - now only ignores within 3 seconds of device init.",
     "nl": "🔘 BUTTON FIX: _TZ3000_zgyzgdua 4-gang knoppen werken nu! OnOff detectie gerepareerd.",
