@@ -1,4 +1,10 @@
 {
+  "5.5.344": {
+    "en": "🔧 COMPREHENSIVE FIX: (1) Contact sensor duplicate DP processing fixed - was triggering 6x per event (Lasse_K diagnostic). (2) DP context detection now device-aware - fixes DP1 wrongly converted to temperature. (3) 1-hour keep-alive detection blocks fake 'closed' state. (4) Fixed invert_contact bug (was passing raw value). (5) Extended _safeDeviceHandler to AdvancedFlowCardManager (Fiek). (6) Button battery polling on wake.",
+    "nl": "🔧 UITGEBREIDE FIX: Contact sensor dubbele DP verwerking, context detectie, keep-alive filter, flow card foutpreventie.",
+    "de": "🔧 UMFASSENDER FIX: Kontaktsensor doppelte DP Verarbeitung, Kontext Erkennung, Keep-alive Filter, Flow Card Fehlerprävention.",
+    "fr": "🔧 CORRECTIF COMPLET: Traitement DP double capteur contact, détection contexte, filtre keep-alive, prévention erreurs flow cards."
+  },
   "5.5.343": {
     "en": "🔧 FORUM FIXES: (1) Contact sensor debounce - fixes unstable active/inactive toggling (Lasse_K). (2) Button battery fallback - adds Tuya DP battery support for _TZ3000_5tqxpine (Eftychis). (3) Enhanced button detection for _TZ3000_wkai4ga5.",
     "nl": "🔧 FORUM FIXES: Contact sensor debounce, knop batterij verbeterd voor _TZ3000_5tqxpine.",
