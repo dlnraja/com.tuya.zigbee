@@ -1,4 +1,10 @@
 {
+  "5.5.347": {
+    "en": "🚨 CRITICAL FIX: SyntaxError 'dp already declared' in HybridSensorBase.js - was breaking motion_sensor and smoke_detector_advanced devices. Fixed duplicate const declaration from v5.5.344 deduplication code.",
+    "nl": "🚨 KRITIEKE FIX: SyntaxError opgelost - motion_sensor en smoke_detector devices werkend.",
+    "de": "🚨 KRITISCHER FIX: SyntaxError behoben - motion_sensor und smoke_detector Geräte funktionieren.",
+    "fr": "🚨 FIX CRITIQUE: SyntaxError corrigé - capteurs mouvement et fumée fonctionnent."
+  },
   "5.5.346": {
     "en": "🔧 DEEP FIX: (1) _TZE204_gkfbdvyx fingerprint corrected to presence_sensor_radar (Ronny_M: was wrongly detected as climate sensor). (2) _TZE284_iadro9bf fingerprint added. (3) Forum/GitHub issues cross-referenced and resolved.",
     "nl": "🔧 DIEPGAANDE FIX: Fingerprint correcties voor radar sensoren (Ronny_M).",
