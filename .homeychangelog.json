@@ -1,4 +1,10 @@
 {
+  "5.5.343": {
+    "en": "🔧 FORUM FIXES: (1) Contact sensor debounce - fixes unstable active/inactive toggling (Lasse_K). (2) Button battery fallback - adds Tuya DP battery support for _TZ3000_5tqxpine (Eftychis). (3) Enhanced button detection for _TZ3000_wkai4ga5.",
+    "nl": "🔧 FORUM FIXES: Contact sensor debounce, knop batterij verbeterd voor _TZ3000_5tqxpine.",
+    "de": "🔧 FORUM FIXES: Kontaktsensor Debounce, Tastenbatterie verbessert für _TZ3000_5tqxpine.",
+    "fr": "🔧 FORUM FIXES: Debounce capteur contact, batterie bouton améliorée pour _TZ3000_5tqxpine."
+  },
   "5.5.342": {
     "en": "🔧 CRITICAL FIX: 'cant get device by id' error prevention. All flow card handlers now wrapped with _safeDeviceHandler to gracefully handle deleted/re-paired devices. Flows referencing removed devices will no longer crash - they fail silently with logging instead.",
     "nl": "🔧 KRITIEKE FIX: 'cant get device by id' foutpreventie. Flows met verwijderde apparaten crashen niet meer.",
