@@ -1,4 +1,10 @@
 {
+  "5.5.346": {
+    "en": "🔧 DEEP FIX: (1) _TZE204_gkfbdvyx fingerprint corrected to presence_sensor_radar (Ronny_M: was wrongly detected as climate sensor). (2) _TZE284_iadro9bf fingerprint added. (3) Forum/GitHub issues cross-referenced and resolved.",
+    "nl": "🔧 DIEPGAANDE FIX: Fingerprint correcties voor radar sensoren (Ronny_M).",
+    "de": "🔧 TIEFE FIX: Fingerprint Korrekturen für Radar Sensoren (Ronny_M).",
+    "fr": "🔧 FIX PROFOND: Corrections fingerprint pour capteurs radar (Ronny_M)."
+  },
   "5.5.345": {
     "en": "🔧 FORUM FIXES: (1) _TZ3000_lqpt3mvr moved to vibration_sensor (Nicolas: TS0210 not contact). (2) _TZ3000_5bpeda8u fixed as button not switch (Cam). (3) Presence sensor radar lux smoothing confirmed working (Ronny_M).",
     "nl": "🔧 FORUM FIXES: Vibratie sensor fix, knop fix, radar lux smoothing.",
