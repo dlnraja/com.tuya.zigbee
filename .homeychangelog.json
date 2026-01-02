@@ -1,4 +1,16 @@
 {
+  "5.5.336": {
+    "en": "🧠 INTELLIGENT DEVICE LEARNER: Autonomous capability discovery! 15-minute active learning phase monitors all DP and ZCL reports, infers capabilities from value patterns, persists learned profiles to device storage. Passive mode after learning continues to refine. Handles exotic manufacturer implementations automatically.",
+    "nl": "🧠 INTELLIGENT DEVICE LEARNER: Autonome capaciteitsontdekking!",
+    "de": "🧠 INTELLIGENT DEVICE LEARNER: Autonome Fähigkeitserkennung!",
+    "fr": "🧠 INTELLIGENT DEVICE LEARNER: Découverte automatique des capacités!"
+  },
+  "5.5.335": {
+    "en": "🌱 HOBEIAN PR#6 FIX: Soil sensor settings now fully functional! Fixed Fahrenheit conversion (was inverted), implemented calibration offsets (temp/humidity/moisture -30 to +30), soil dryness threshold triggers alarm_water. Settings applied immediately on change. Per AreAArseth/com.hobeian PR#6.",
+    "nl": "🌱 HOBEIAN PR#6 FIX: Bodemvochtsensor instellingen werken nu volledig!",
+    "de": "🌱 HOBEIAN PR#6 FIX: Bodenfeuchtesensor-Einstellungen funktionieren jetzt vollständig!",
+    "fr": "🌱 HOBEIAN PR#6 FIX: Paramètres capteur sol maintenant fonctionnels!"
+  },
   "5.5.334": {
     "en": "🌱 HOBEIAN PR#6 FIX: Soil sensor settings now fully functional! Fixed Fahrenheit conversion (was inverted), implemented calibration offsets (temp/humidity/moisture -30 to +30), soil dryness threshold triggers alarm_water. Settings applied immediately on change. Per AreAArseth/com.hobeian PR#6.",
     "nl": "🌱 HOBEIAN PR#6 FIX: Bodemvochtsensor instellingen werken nu volledig!",
