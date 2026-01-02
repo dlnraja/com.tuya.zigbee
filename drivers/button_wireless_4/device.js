@@ -178,70 +178,130 @@ class Button4GangDevice extends ButtonDevice {
   }
 
   /**
-   * v5.5.343: ENHANCED battery reporting for sleepy devices
-   * TS0044 reports battery on EP1 powerConfiguration cluster
-   * v5.5.343: Added Tuya DP fallback for _TZ3000_5tqxpine (Eftychis report)
+   * v5.5.344: ENHANCED battery reporting for sleepy devices
+   * Research from deCONZ issue #7048 and Zigbee2MQTT:
+   * - TS0044 _TZ3000_wkai4ga5 reports battery 0% always
+   * - Solution: TuyaNoBindPowerConfigurationCluster pattern
+   * - Don't bind to powerConfiguration cluster
+   * - Poll battery attribute 0x0021 when device wakes (on button press)
    */
   async _setupBatteryReporting(zclNode) {
     try {
-      const powerCluster = zclNode?.endpoints?.[1]?.clusters?.powerConfiguration
+      this._powerCluster = zclNode?.endpoints?.[1]?.clusters?.powerConfiguration
         || zclNode?.endpoints?.[1]?.clusters?.genPowerCfg
         || zclNode?.endpoints?.[1]?.clusters?.[1];
 
-      if (powerCluster) {
+      if (this._powerCluster) {
         this.log('[BUTTON4-BATTERY] 🔋 Setting up battery reporting on EP1...');
 
         // Listen for battery attribute reports
-        if (typeof powerCluster.on === 'function') {
-          powerCluster.on('attr.batteryPercentageRemaining', async (value) => {
+        if (typeof this._powerCluster.on === 'function') {
+          this._powerCluster.on('attr.batteryPercentageRemaining', async (value) => {
             if (value !== undefined && value !== 255 && value !== 0) {
               const battery = Math.round(value / 2);
               this.log(`[BUTTON4-BATTERY] ✅ Battery report: ${battery}%`);
-              await this.setCapabilityValue('measure_battery', battery).catch(() => { });
-              await this.setStoreValue('last_battery_percentage', battery).catch(() => { });
+              await this._updateBattery(battery);
             }
           });
 
-          powerCluster.on('attr.batteryVoltage', async (value) => {
+          this._powerCluster.on('attr.batteryVoltage', async (value) => {
             if (value !== undefined && value > 0) {
               const voltage = value / 10;
               // CR2032/CR2450: 3.0V=100%, 2.0V=0%
               const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
               this.log(`[BUTTON4-BATTERY] ✅ Battery from voltage: ${voltage}V → ${battery}%`);
-              await this.setCapabilityValue('measure_battery', battery).catch(() => { });
+              await this._updateBattery(battery);
             }
           });
 
           this.log('[BUTTON4-BATTERY] ✅ Battery listeners registered');
         }
 
-        // v5.5.343: Try to read initial battery value
-        try {
-          const attrs = await powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']).catch(() => ({}));
-          if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
-            const battery = Math.round(attrs.batteryPercentageRemaining / 2);
-            this.log(`[BUTTON4-BATTERY] 📊 Initial battery: ${battery}%`);
-            await this.setCapabilityValue('measure_battery', battery).catch(() => { });
-          } else if (attrs?.batteryVoltage !== undefined && attrs.batteryVoltage > 0) {
-            const voltage = attrs.batteryVoltage / 10;
-            const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
-            this.log(`[BUTTON4-BATTERY] 📊 Initial battery from voltage: ${voltage}V → ${battery}%`);
-            await this.setCapabilityValue('measure_battery', battery).catch(() => { });
-          }
-        } catch (readErr) {
-          this.log('[BUTTON4-BATTERY] ⚠️ Could not read initial battery:', readErr.message);
-        }
+        // v5.5.344: Schedule battery read (device may be asleep, will retry on wake)
+        this._scheduleInitialBatteryRead();
       } else {
         this.log('[BUTTON4-BATTERY] ⚠️ No powerConfiguration cluster found on EP1');
       }
 
-      // v5.5.343: FORUM FIX - Also setup Tuya DP battery fallback for _TZ3000_5tqxpine
-      // Some devices report battery via Tuya cluster instead of powerConfiguration
+      // v5.5.344: FORUM FIX - Also setup Tuya DP battery fallback for _TZ3000_5tqxpine
       await this._setupTuyaDPBatteryFallback(zclNode);
 
     } catch (err) {
       this.log('[BUTTON4-BATTERY] ⚠️ Battery setup error:', err.message);
     }
+  }
+
+  /**
+   * v5.5.344: Update battery with validation and caching
+   */
+  async _updateBattery(battery) {
+    if (battery >= 0 && battery <= 100) {
+      await this.setCapabilityValue('measure_battery', battery).catch(() => { });
+      await this.setStoreValue('last_battery_percentage', battery).catch(() => { });
+      await this.setStoreValue('last_battery_time', Date.now()).catch(() => { });
+      this._lastBatteryRead = Date.now();
+    }
+  }
+
+  /**
+   * v5.5.344: Schedule initial battery read with retry
+   * Based on deCONZ research: device sleeps, need to read when awake
+   */
+  _scheduleInitialBatteryRead() {
+    // Try after short delay (device might still be awake from pairing)
+    this.homey.setTimeout(() => this._tryReadBattery(), 2000);
+    // Retry after 30 seconds
+    this.homey.setTimeout(() => this._tryReadBattery(), 30000);
+  }
+
+  /**
+   * v5.5.344: Try to read battery from powerConfiguration cluster
+   * Called on init and after each button press (when device is awake)
+   */
+  async _tryReadBattery() {
+    if (!this._powerCluster) return;
+
+    // Don't read too frequently (max once per 5 minutes)
+    if (this._lastBatteryRead && Date.now() - this._lastBatteryRead < 300000) {
+      return;
+    }
+
+    try {
+      this.log('[BUTTON4-BATTERY] 📡 Attempting to read battery...');
+      const attrs = await this._powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']);
+
+      if (attrs?.batteryPercentageRemaining !== undefined &&
+        attrs.batteryPercentageRemaining !== 255 &&
+        attrs.batteryPercentageRemaining !== 0) {
+        const battery = Math.round(attrs.batteryPercentageRemaining / 2);
+        this.log(`[BUTTON4-BATTERY] 📊 Battery read success: ${battery}%`);
+        await this._updateBattery(battery);
+      } else if (attrs?.batteryVoltage !== undefined && attrs.batteryVoltage > 0) {
+        const voltage = attrs.batteryVoltage / 10;
+        const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
+        this.log(`[BUTTON4-BATTERY] 📊 Battery from voltage: ${voltage}V → ${battery}%`);
+        await this._updateBattery(battery);
+      } else {
+        this.log('[BUTTON4-BATTERY] ⚠️ Battery read returned invalid value');
+      }
+    } catch (err) {
+      // Expected for sleeping devices - will retry on next button press
+      this.log('[BUTTON4-BATTERY] ⚠️ Battery read failed (device may be sleeping):', err.message);
+    }
+  }
+
+  /**
+   * v5.5.344: Override triggerButtonPress to read battery when device wakes
+   * Based on deCONZ research: sleepy devices only respond when awake (after button press)
+   */
+  async triggerButtonPress(buttonNumber, pressType) {
+    // Call parent implementation
+    if (super.triggerButtonPress) {
+      await super.triggerButtonPress(buttonNumber, pressType);
+    }
+
+    // Device is awake after button press - try to read battery
+    this.homey.setTimeout(() => this._tryReadBattery(), 500);
   }
 
   /**

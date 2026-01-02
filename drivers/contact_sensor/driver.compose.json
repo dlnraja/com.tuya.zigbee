@@ -459,6 +459,35 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "invert_contact",
+      "type": "checkbox",
+      "label": {
+        "en": "Invert Contact State",
+        "fr": "Inverser État Contact"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable if sensor reports OPEN when CLOSED and vice versa",
+        "fr": "Activer si le capteur signale OUVERT quand FERMÉ et vice versa"
+      }
+    },
+    {
+      "id": "debounce_time",
+      "type": "number",
+      "label": {
+        "en": "Debounce Time (seconds)",
+        "fr": "Temps Anti-Rebond (secondes)"
+      },
+      "value": 2,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "Time to wait before confirming state change (0=disabled). Increase for unstable sensors.",
+        "fr": "Temps d'attente avant de confirmer un changement d'état (0=désactivé). Augmenter pour capteurs instables."
+      }
     }
   ],
   "flow": {
