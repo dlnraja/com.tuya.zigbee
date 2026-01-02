@@ -1,4 +1,10 @@
 {
+  "5.5.350": {
+    "en": "🔘 BUTTON FIX: _TZ3000_zgyzgdua and similar 4-gang buttons now work! Fixed onOff attribute detection that was blocking button presses. Previous logic ignored first report forever - now only ignores within 3 seconds of device init.",
+    "nl": "🔘 BUTTON FIX: _TZ3000_zgyzgdua 4-gang knoppen werken nu! OnOff detectie gerepareerd.",
+    "de": "🔘 BUTTON FIX: _TZ3000_zgyzgdua 4-Gang Buttons funktionieren jetzt! OnOff Erkennung repariert.",
+    "fr": "🔘 BUTTON FIX: Boutons _TZ3000_zgyzgdua 4-gang fonctionnent! Détection onOff corrigée."
+  },
   "5.5.349": {
     "en": "🔧 EFTYCHIS FIX: (1) _TZ3000_wkai4ga5 & _TZ3000_5tqxpine moved to scene_switch_4 driver with Johan-style button labels (Upper Left, Upper Right, etc.). (2) Motion sensor lux now reports independently - added illuminance cluster (1024) to bindings. RE-PAIR devices after update!",
     "nl": "🔧 FIX: 4-gang scene switch + motion sensor lux onafhankelijk. Opnieuw koppelen na update!",
