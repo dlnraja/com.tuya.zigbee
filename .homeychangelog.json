@@ -1,4 +1,10 @@
 {
+  "5.5.342": {
+    "en": "🔧 CRITICAL FIX: 'cant get device by id' error prevention. All flow card handlers now wrapped with _safeDeviceHandler to gracefully handle deleted/re-paired devices. Flows referencing removed devices will no longer crash - they fail silently with logging instead.",
+    "nl": "🔧 KRITIEKE FIX: 'cant get device by id' foutpreventie. Flows met verwijderde apparaten crashen niet meer.",
+    "de": "🔧 KRITISCHER FIX: 'cant get device by id' Fehlerprävention. Flows mit gelöschten Geräten stürzen nicht mehr ab.",
+    "fr": "🔧 CORRECTIF CRITIQUE: Prévention erreur 'cant get device by id'. Les flows référençant des appareils supprimés ne plantent plus."
+  },
   "5.5.341": {
     "en": "🧹 MEMORY LEAK PREVENTION: Added onUninit() lifecycle methods to HybridSensorBase and HybridPlugBase (inspired by JohanBendz/com.philips.hue.zigbee PR#679). Cleans up timers, event listeners, and data handlers on device removal. Prevents memory leaks from orphaned resources.",
     "nl": "🧹 MEMORY LEAK PREVENTION: onUninit() lifecycle methods toegevoegd.",
