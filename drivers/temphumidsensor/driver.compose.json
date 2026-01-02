@@ -17,6 +17,7 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "eWeLink",
       "TUYATEC-1g3tawnp",
       "TUYATEC-1uxx9cci",
       "TUYATEC-HaoiuWzy",
@@ -31,7 +32,8 @@
       "TUYATEC-yg5dcbfu"
     ],
     "productId": [
-      "TUYATEC_TempHumid"
+      "TUYATEC_TempHumid",
+      "CK-TLSR8656-SS5-01(7014)"
     ],
     "endpoints": {
       "1": {
