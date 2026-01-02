@@ -1,4 +1,10 @@
 {
+  "5.5.341": {
+    "en": "🧹 MEMORY LEAK PREVENTION: Added onUninit() lifecycle methods to HybridSensorBase and HybridPlugBase (inspired by JohanBendz/com.philips.hue.zigbee PR#679). Cleans up timers, event listeners, and data handlers on device removal. Prevents memory leaks from orphaned resources.",
+    "nl": "🧹 MEMORY LEAK PREVENTION: onUninit() lifecycle methods toegevoegd.",
+    "de": "🧹 MEMORY LEAK PREVENTION: onUninit() Lifecycle-Methoden hinzugefügt.",
+    "fr": "🧹 MEMORY LEAK PREVENTION: Méthodes onUninit() ajoutées pour prévenir les fuites mémoire."
+  },
   "5.5.340": {
     "en": "🔌 MULTI-SOURCE INTEGRATION: Added SONOFF devices from JohanBendz/tech.sonoff (SNZB-04/04P, SNZB-05P, SNZB-06P, ZBMicro, S26R2ZB, SA-003, 01MINIZB). Analyzed Philips Hue Zigbee PRs (memory leak fixes, battery status). Added IKEA patterns from ZHA handlers. Inspired by forum firmware update discussions.",
     "nl": "🔌 MULTI-SOURCE INTEGRATION: SONOFF apparaten toegevoegd.",
