@@ -1,4 +1,10 @@
 {
+  "5.5.337": {
+    "en": "🌱 SOIL SENSOR FIX: Verified DP mappings against Z2M source. DP14=battery_state (0=low/10%, 1=med/50%, 2=high/100%) per Z2M TS0601_soil. Fixed flow triggers to use measure_soil_moisture. DP3=moisture, DP5=temp÷10, DP9=unit, DP15=battery%.",
+    "nl": "🌱 SOIL SENSOR FIX: DP mappings geverifieerd met Z2M bron.",
+    "de": "🌱 SOIL SENSOR FIX: DP-Zuordnungen mit Z2M-Quelle verifiziert.",
+    "fr": "🌱 SOIL SENSOR FIX: Mappings DP vérifiés avec source Z2M."
+  },
   "5.5.336": {
     "en": "🧠 INTELLIGENT DEVICE LEARNER: Autonomous capability discovery! 15-minute active learning phase monitors all DP and ZCL reports, infers capabilities from value patterns, persists learned profiles to device storage. Passive mode after learning continues to refine. Handles exotic manufacturer implementations automatically.",
     "nl": "🧠 INTELLIGENT DEVICE LEARNER: Autonome capaciteitsontdekking!",
