@@ -178,8 +178,9 @@ class Button4GangDevice extends ButtonDevice {
   }
 
   /**
-   * v5.5.260: Setup battery reporting for sleepy devices
+   * v5.5.343: ENHANCED battery reporting for sleepy devices
    * TS0044 reports battery on EP1 powerConfiguration cluster
+   * v5.5.343: Added Tuya DP fallback for _TZ3000_5tqxpine (Eftychis report)
    */
   async _setupBatteryReporting(zclNode) {
     try {
@@ -213,11 +214,83 @@ class Button4GangDevice extends ButtonDevice {
 
           this.log('[BUTTON4-BATTERY] ✅ Battery listeners registered');
         }
+
+        // v5.5.343: Try to read initial battery value
+        try {
+          const attrs = await powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']).catch(() => ({}));
+          if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
+            const battery = Math.round(attrs.batteryPercentageRemaining / 2);
+            this.log(`[BUTTON4-BATTERY] 📊 Initial battery: ${battery}%`);
+            await this.setCapabilityValue('measure_battery', battery).catch(() => { });
+          } else if (attrs?.batteryVoltage !== undefined && attrs.batteryVoltage > 0) {
+            const voltage = attrs.batteryVoltage / 10;
+            const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
+            this.log(`[BUTTON4-BATTERY] 📊 Initial battery from voltage: ${voltage}V → ${battery}%`);
+            await this.setCapabilityValue('measure_battery', battery).catch(() => { });
+          }
+        } catch (readErr) {
+          this.log('[BUTTON4-BATTERY] ⚠️ Could not read initial battery:', readErr.message);
+        }
       } else {
         this.log('[BUTTON4-BATTERY] ⚠️ No powerConfiguration cluster found on EP1');
       }
+
+      // v5.5.343: FORUM FIX - Also setup Tuya DP battery fallback for _TZ3000_5tqxpine
+      // Some devices report battery via Tuya cluster instead of powerConfiguration
+      await this._setupTuyaDPBatteryFallback(zclNode);
+
     } catch (err) {
       this.log('[BUTTON4-BATTERY] ⚠️ Battery setup error:', err.message);
+    }
+  }
+
+  /**
+   * v5.5.343: FORUM FIX - Tuya DP battery fallback for devices like _TZ3000_5tqxpine
+   * Eftychis_Georgilas reported: "_TZ3000_5tqxpine does not present battery level"
+   */
+  async _setupTuyaDPBatteryFallback(zclNode) {
+    try {
+      const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya
+        || zclNode?.endpoints?.[1]?.clusters?.manuSpecificTuya
+        || zclNode?.endpoints?.[1]?.clusters?.[61184]
+        || zclNode?.endpoints?.[1]?.clusters?.['61184'];
+
+      if (tuyaCluster && typeof tuyaCluster.on === 'function') {
+        this.log('[BUTTON4-BATTERY] 🔋 Setting up Tuya DP battery fallback...');
+
+        tuyaCluster.on('response', async (data) => {
+          // Battery is commonly on DP 2, 3, 4, or 10 for Tuya buttons
+          const batteryDPs = [2, 3, 4, 10, 15];
+          const dp = data?.dp ?? data?.dataPointId;
+          const value = data?.data ?? data?.value ?? data?.raw?.[0];
+
+          if (batteryDPs.includes(dp) && value !== undefined) {
+            let battery = null;
+
+            // Interpret value based on range
+            if (typeof value === 'number') {
+              if (value <= 100) {
+                battery = value; // Direct percentage
+              } else if (value <= 200) {
+                battery = Math.round(value / 2); // Doubled percentage
+              } else if (value <= 3200) {
+                // Voltage in mV (CR2032: 3000mV = 100%, 2000mV = 0%)
+                battery = Math.min(100, Math.max(0, Math.round((value - 2000) / 10)));
+              }
+            }
+
+            if (battery !== null && battery >= 0 && battery <= 100) {
+              this.log(`[BUTTON4-BATTERY-DP] ✅ Battery from DP${dp}: ${battery}%`);
+              await this.setCapabilityValue('measure_battery', battery).catch(() => { });
+              await this.setStoreValue('last_battery_percentage', battery).catch(() => { });
+            }
+          }
+        });
+
+        this.log('[BUTTON4-BATTERY] ✅ Tuya DP battery fallback registered');
+      }
+    } catch (err) {
+      this.log('[BUTTON4-BATTERY] ⚠️ Tuya DP battery fallback error:', err.message);
     }
   }
 
