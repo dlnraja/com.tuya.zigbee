@@ -8,13 +8,14 @@ on:
   workflow_dispatch:
     inputs:
       force_publish:
-        description: 'Force publish (skip version check)'
+        description: "Force publish (skip version check)"
         required: false
-        default: 'false'
+        default: false
         type: boolean
 
 jobs:
-  publish:
+  validate:
+    name: Validate Homey App
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -22,77 +23,70 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Install Homey CLI
-        run: npm install -g homey
-
       - name: Validate app
-        run: homey app validate --level publish
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          validation_level: publish
 
-      - name: Build app
-        run: homey app build
+  publish:
+    name: Publish Homey App
+    runs-on: ubuntu-latest
+    needs: validate
+    if: github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Login to Homey
-        env:
-          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
-        run: echo "$HOMEY_TOKEN" | homey login --token
-
-      - name: Check if already published
-        id: check_version
+      - name: Get current version
+        id: version
         run: |
           CURRENT_VERSION=$(node -p "require('./app.json').version")
           echo "current_version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
-
-          # Check if version already exists on app store
-          if homey app version list | grep -q "$CURRENT_VERSION" && [ "${{ github.event.inputs.force_publish }}" != "true" ]; then
-            echo "version_exists=true" >> $GITHUB_OUTPUT
-            echo "❌ Version $CURRENT_VERSION already published. Bump version or use force_publish."
-            exit 1
-          else
-            echo "version_exists=false" >> $GITHUB_OUTPUT
-            echo "✅ Version $CURRENT_VERSION ready to publish"
-          fi
+          echo " Current version: $CURRENT_VERSION"
 
       - name: Publish to Homey App Store
-        if: steps.check_version.outputs.version_exists == 'false'
-        run: |
-          homey app publish --changelog "$(node -p "require('./.homeychangelog.json')[0].en || 'Version ${{ steps.check_version.outputs.current_version }}'")"
+        uses: athombv/github-action-homey-app-publish@master
+        id: publish
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
 
-      - name: Verify publication
+      - name: Success notification
         run: |
-          sleep 30
-          VERSION="${{ steps.check_version.outputs.current_version }}"
-          if homey app version list | grep -q "$VERSION"; then
-            echo "✅ Version $VERSION successfully published to Homey App Store!"
-          else
-            echo "❌ Publication verification failed"
-            exit 1
-          fi
+          echo " Successfully published v${{ steps.version.outputs.current_version }} to Homey App Store!" >> $GITHUB_STEP_SUMMARY
+          echo " Manage your app at ${{ steps.publish.outputs.url }}" >> $GITHUB_STEP_SUMMARY
 
       - name: Create GitHub Release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ steps.check_version.outputs.current_version }}
-          release_name: Release v${{ steps.check_version.outputs.current_version }}
+          tag_name: v${{ steps.version.outputs.current_version }}
+          release_name: Release v${{ steps.version.outputs.current_version }}
           body: |
-            ## Changes in v${{ steps.check_version.outputs.current_version }}
+            ## Universal Tuya Zigbee v${{ steps.version.outputs.current_version }}
 
-            ${{ fromJson(file('./.homeychangelog.json'))[0].en }}
+            ### Changelog
+            ${{ fromJson(readFile('.homeychangelog.json'))[0].en || 'Version update' }}
 
-            ## Fixes Included
-            - ✅ SyntaxError 'dp already declared' (v5.5.347)
-            - ✅ Button _TZ3000_zgyzgdua first report ignored (v5.5.350)
-            - ✅ scene_switch_4 import destructuring error (v5.5.351)
-            - ✅ Curtain motor timeout graceful handling (v5.5.352)
+            ### Recent Fixes
+            - SyntaxError 'dp already declared' resolved (v5.5.347)
+            - Button _TZ3000_zgyzgdua first report timing fix (v5.5.350)
+            - scene_switch_4 import destructuring corrected (v5.5.351)
+            - Curtain motor timeout graceful handling (v5.5.352)
+            - GitHub Action automated publishing (v5.5.352+)
+
+            ### Download
+            Available on [Homey App Store](${{ steps.publish.outputs.url }})
           draft: false
           prerelease: false
+
+      - name: Notify deployment status
+        if: always()
+        run: |
+          if [ "${{ job.status }}" = "success" ]; then
+            echo " Deployment SUCCESS: v${{ steps.version.outputs.current_version }}" >> $GITHUB_STEP_SUMMARY
+          else
+            echo " Deployment FAILED: Check logs for details" >> $GITHUB_STEP_SUMMARY
+          fi
