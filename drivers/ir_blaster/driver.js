@@ -68,7 +68,9 @@ class IrBlasterDriver extends Driver {
       return true;
     });
 
-    // Send by category action
+    // Send by category action - TEMPORARILY DISABLED due to SDK validation issues
+    // Will be re-enabled after proper testing
+    /*
     this.irSendByCategoryAction = this.homey.flow.getActionCard('ir_send_by_category');
     this.irSendByCategoryAction.registerRunListener(async (args, state) => {
       const device = args.device;
@@ -87,6 +89,7 @@ class IrBlasterDriver extends Driver {
       await device.sendIRCode(codes[code_name]);
       return true;
     });
+    */
 
     // Set protocol action
     this.irSetProtocolAction = this.homey.flow.getActionCard('ir_set_protocol');
