@@ -357,6 +357,9 @@ const SENSOR_CONFIGS = {
     hasIlluminance: true,
     needsPolling: false,  // v5.5.325: Disable polling - use DP reports only
     ultraAggressiveDebounce: true,  // v5.5.325: Maximum filtering for false positives
+    // v5.5.357: RONNY FORUM FIX - Disable ALL battery reporting (causes spam)
+    disableBatteryReporting: true,  // Prevent battery low/ok spam every 30s
+    suppressBatteryCapability: true,  // Never report battery
     invertPresence: false,  // v5.5.325: ZHA confirms NO inversion needed with correct enum handling
     presenceEnumMapping: { 0: false, 1: true, 2: true },  // v5.5.325: Correct enum->boolean mapping
     dpMap: {
@@ -863,1231 +866,1327 @@ function debouncePresence(presence, manufacturerName, deviceId) {
   state.lastPresence = presence;
   presenceDebounceState.set(deviceId, state);
 
-  return newStablePresence;
-}
+  // v5.5.314: Presence debouncing state (prevents random on/off)
+  // Ronny forum #775: _TZE204_gkfbdvyx sending presence randomly
+  const presenceDebounceState = new Map();  // deviceId -> { lastPresence, timestamp, stableCount }
 
-// v5.5.314: Lux smoothing state (prevents 30-2000 fluctuations)
-// Ronny forum #775: _TZE284_iadro9bf lux showing 30 and 2000 every 15 sec
-const luxSmoothingState = new Map();  // deviceId -> { lastLux, timestamp }
+  // v5.5.316: REGRESSION FIX - Restored proper lux handling
+  // Research: Z2M #27212 shows _TZE284_iadro9bf reports direct lux (e.g., 282), NOT raw ADC
+  // v5.5.314: Ultra-aggressive lux smoothing for oscillating sensors
+  // Problem: _TZE284_iadro9bf flips between 30 and 2000 lux every few seconds
+  // Solution: 60s smoothing window + oscillation detection
+  // v5.5.357: RONNY FORUM FIX - Enhanced oscillation lock for 30↔2000 flip
+  function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
+    // v5.5.316: Direct lux reporting confirmed (no conversion needed)
+    let lux = typeof rawValue === 'number' ? rawValue : 0;
 
-// v5.5.314: Presence debouncing state (prevents random on/off)
-// Ronny forum #775: _TZE204_gkfbdvyx sending presence randomly
-const presenceDebounceState = new Map();  // deviceId -> { lastPresence, timestamp, stableCount }
-
-// v5.5.316: REGRESSION FIX - Restored proper lux handling
-// Research: Z2M #27212 shows _TZE284_iadro9bf reports direct lux (e.g., 282), NOT raw ADC
-// Research: SmartHomeScene confirms ZY-M100 spec is 0-2000 LUX
-// FIXED: v5.5.314 smoothing was too aggressive, v5.5.283 auto-detect was wrong
-// v5.5.318: Added NaN/undefined protection
-function transformLux(value, type, manufacturerName = '', deviceId = null) {
-  // v5.5.318: NaN/undefined protection - return 0 for invalid values
-  if (value === null || value === undefined || typeof value !== 'number' || isNaN(value)) {
-    console.log(`[LUX-FIX] ⚠️ Invalid lux value (${value}) for ${manufacturerName}, returning 0`);
-    return 0;
-  }
-
-  let lux = value;
-  const originalValue = value;
-
-  // v5.5.264: Handle different lux types
-  if (type === 'lux_raw') {
-    // Raw ADC value - apply conversion ONLY for sensors that actually need it
-    // Based on Z2M issue #18950: some sensors report raw ADC values
-    if (value > 0) {
-      lux = Math.round(value / 10);
-    } else {
-      lux = 0;
-    }
-  }
-  else if (type === 'lux_direct') {
-    // v5.5.316: Most Tuya sensors report direct lux - NO conversion needed
-    // Z2M #27212: _TZE284_iadro9bf reports "illuminance": 282 (direct lux)
-    lux = value;
-  }
-  else if (type === 'lux_div10') {
-    lux = value / 10;
-  }
-
-  // v5.5.316: SMART MAX LUX - Different sensors have different ranges
-  // ZY-M100: 0-2000 lux (SmartHomeScene review)
-  // Some industrial sensors: up to 10000 lux
-  let maxLux = 10000;  // Default high limit - don't clamp unless really needed
-
-  // v5.5.316: Only apply strict 2000 limit for KNOWN ZY-M100 series sensors
-  const isZYM100Series = manufacturerName.includes('iadro9bf') ||
-    manufacturerName.includes('gkfbdvyx') ||
-    manufacturerName.includes('qasjif9e') ||
-    manufacturerName.includes('sxm7l9xa');
-  if (isZYM100Series) {
-    maxLux = 2000;  // ZY-M100 confirmed 0-2000 lux range
-  }
-
-  // v5.5.316: FIXED - Only auto-detect raw ADC for values > 50000 (clearly wrong)
-  // Previous bug: ÷100 if > 10000 broke sensors reporting legitimate high lux
-  if (lux > 50000) {
-    const converted = Math.round(lux / 100);
-    console.log(`[LUX-FIX] 📊 Extreme value detected for ${manufacturerName}: ${originalValue} -> ${converted} lux`);
-    lux = converted;
-  }
-
-  // v5.5.320: HARD CLAMP for ZY-M100 series (Ronny #760: lux showing 2200 when max is 2000)
-  // These sensors are confirmed 0-2000 lux range - anything above is sensor noise
-  if (lux > maxLux && isZYM100Series) {
-    console.log(`[LUX-FIX] 🔒 Hard clamp for ZY-M100: ${lux} → ${maxLux} lux`);
-    lux = maxLux;
-  } else if (lux > maxLux) {
-    // For other sensors, still allow higher values but warn
-    console.log(`[LUX-FIX] ⚠️ Value ${lux} exceeds ${maxLux} for ${manufacturerName} (allowing)`);
-  }
-
-  lux = Math.max(0, Math.round(lux));
-
-  // v5.5.319: AGGRESSIVE LUX SMOOTHING for known problematic sensors
-  // Ronny #775: _TZE284_iadro9bf still oscillating 30↔2000 every 15 seconds
-  // Solution: Once flip-flop is detected, lock to stable value for 60 seconds
-  if (deviceId && isZYM100Series) {
-    const state = luxSmoothingState.get(deviceId) || {
-      lastLux: null,
-      stableLux: null,  // v5.5.319: Track stable value
-      timestamp: 0,
-      extremeCount: 0,
-      lockedUntil: 0    // v5.5.319: Lock period after flip-flop detection
-    };
-    const now = Date.now();
-    const timeSinceLastUpdate = now - state.timestamp;
-
-    // v5.5.319: If we're in locked mode, always return stable value
-    if (state.lockedUntil > now && state.stableLux !== null) {
-      console.log(`[LUX-SMOOTH] 🔒 Locked mode: returning stable ${state.stableLux} (ignoring ${lux})`);
-      return state.stableLux;
+    // v5.5.357: HARD CLAMP to 2000 max AND detect 30↔2000 oscillation
+    if (lux > 2000) {
+      console.log(`[LUX] 🔒 Clamped ${lux} -> 2000 (max spec limit)`);
+      lux = 2000;
     }
 
-    if (state.lastLux !== null) {
-      // v5.5.319: Detect extreme oscillation (30↔2000 pattern from Ronny report)
-      const isExtremeLow = lux < 100;
-      const isExtremeHigh = lux > 1500;
-      const wasExtremeLow = state.lastLux < 100;
-      const wasExtremeHigh = state.lastLux > 1500;
+    // v5.5.357: OSCILLATION DETECTION - Lock value when 30↔2000 flip detected
+    if (!luxOscillationState.has(deviceId)) {
+      luxOscillationState.set(deviceId, {
+        history: [],
+        locked: false,
+        lockedValue: null,
+        lockTime: 0
+      });
+    }
+    const oscState = luxOscillationState.get(deviceId);
 
-      // Detect flip-flop pattern
-      const isFlipFlop = (isExtremeLow && wasExtremeHigh) || (isExtremeHigh && wasExtremeLow);
+    // Track recent values
+    oscState.history.push({ value: lux, time: Date.now() });
+    if (oscState.history.length > 5) oscState.history.shift();
 
-      if (isFlipFlop && timeSinceLastUpdate < 30000) {
-        state.extremeCount++;
-        console.log(`[LUX-SMOOTH] ⚠️ Flip-flop #${state.extremeCount}: ${state.lastLux} ↔ ${lux}`);
+    // Detect oscillation pattern: 30→2000→30 within 30 seconds
+    if (oscState.history.length >= 3) {
+      const recent = oscState.history.slice(-3);
+      const hasLowValue = recent.some(r => r.value < 100);
+      const hasHighValue = recent.some(r => r.value > 1500);
+      const timeSpan = recent[recent.length - 1].time - recent[0].time;
 
-        if (state.extremeCount >= 1) {
-          // v5.5.326: RONNY #760 - Ultra-aggressive lock for iadro9bf (2 minutes)
-          const isIadro9bf = manufacturerName.includes('iadro9bf');
-          const lockDuration = isIadro9bf ? 120000 : 60000;  // 2min for iadro9bf, 1min for others
-          state.stableLux = Math.min(state.lastLux, lux);
-          state.lockedUntil = now + lockDuration;
-          console.log(`[LUX-SMOOTH] 🔒 Locking to ${state.stableLux} for ${lockDuration / 1000}s (flip-flop, iadro9bf=${isIadro9bf})`);
-          luxSmoothingState.set(deviceId, state);
-          return state.stableLux;
+      if (hasLowValue && hasHighValue && timeSpan < 30000) {
+        if (!oscState.locked) {
+          // First oscillation detected - lock to the LOWER stable value
+          const stableValue = recent.find(r => r.value < 100)?.value || 30;
+          oscState.locked = true;
+          oscState.lockedValue = stableValue;
+          oscState.lockTime = Date.now();
+          console.log(`[LUX] 🔒 OSCILLATION DETECTED: Locking to ${stableValue} lux (pattern: ${recent.map(r => r.value).join('→')})`);
         }
-      } else if (timeSinceLastUpdate > 120000) {
-        // v5.5.326: Reset after 2 minutes of no flip-flop (was 60s)
-        state.extremeCount = 0;
-        state.stableLux = null;
-        state.lockedUntil = 0;
       }
     }
 
-    // Update smoothing state
-    state.lastLux = lux;
-    state.timestamp = now;
-    luxSmoothingState.set(deviceId, state);
-  }
-
-  return lux;
-}
-
-// v5.5.283: Enhanced distance transformation with debug logging
-// Ronny report: DP9 distance "not responding" on _TZE284_iadro9bf
-function transformDistance(value, divisor = 100, manufacturerName = '') {
-  const originalValue = value;
-  let distance = value / divisor;
-
-  // v5.5.283: Enhanced validation with logging
-  if (typeof value !== 'number' || isNaN(value) || value < 0) {
-    console.log(`[DISTANCE-FIX] ⚠️ Invalid distance value for ${manufacturerName}: ${originalValue} (type: ${typeof value})`);
-    return null;  // Don't update capability for invalid values
-  }
-
-  // Sanity check: most radar sensors have 0-10m range
-  if (distance < 0) distance = 0;
-  if (distance > 10) {
-    console.log(`[DISTANCE-FIX] 📏 Distance over range for ${manufacturerName}: ${distance}m -> 10m (clamped)`);
-    distance = 10;
-  }
-
-  const result = Math.round(distance * 100) / 100; // 2 decimal places
-  console.log(`[DISTANCE-FIX] ✅ Distance for ${manufacturerName}: ${originalValue} (÷${divisor}) -> ${result}m`);
-  return result;
-}
-
-class PresenceSensorRadarDevice extends HybridSensorBase {
-
-  /**
-   * v5.5.277: Get manufacturerName with multiple fallback methods
-   * Ronny fix: this.getData()?.manufacturerName was returning empty!
-   */
-  _getManufacturerName() {
-    if (this._cachedManufacturerName) return this._cachedManufacturerName;
-
-    // Method 1: getData() (Homey standard)
-    let mfr = this.getData()?.manufacturerName;
-
-    // Method 2: Settings (stored during pairing)
-    if (!mfr) mfr = this.getSetting('zb_manufacturer_name');
-
-    // Method 3: Store data
-    if (!mfr) mfr = this.getStoreValue('manufacturerName');
-
-    // Method 4: ZCL node basic cluster (if available)
-    if (!mfr && this.zclNode?.endpoints?.[1]?.clusters?.basic) {
-      try {
-        mfr = this.zclNode.endpoints[1].clusters.basic.manufacturerName;
-      } catch (e) { /* ignore */ }
-    }
-
-    // Method 5: Driver manifest match (from pairing)
-    if (!mfr) {
-      const manifest = this.driver?.manifest;
-      if (manifest?.zigbee?.manufacturerName?.[0]) {
-        mfr = manifest.zigbee.manufacturerName[0];
+    // If locked, return locked value for next 2 minutes
+    if (oscState.locked) {
+      const lockDuration = Date.now() - oscState.lockTime;
+      if (lockDuration < 120000) { // 2 minutes lock
+        console.log(`[LUX] 🔒 LOCKED: Using ${oscState.lockedValue} instead of ${lux} (${Math.round(lockDuration / 1000)}s into lock)`);
+        lux = oscState.lockedValue;
+      } else {
+        // Lock expired
+        console.log(`[LUX] 🔓 LOCK EXPIRED after 2 minutes, returning to normal`);
+        oscState.locked = false;
+        oscState.lockedValue = null;
       }
     }
 
-    this._cachedManufacturerName = mfr || '';
-    return this._cachedManufacturerName;
-  }
-
-  /**
-   * v5.5.277: Get sensor configuration based on manufacturerName
-   */
-  _getSensorConfig() {
-    if (!this._sensorConfig) {
-      const mfr = this._getManufacturerName();
-      this._sensorConfig = getSensorConfig(mfr);
-      this.log(`[RADAR] 🔍 ManufacturerName resolved: "${mfr}" → config: ${this._sensorConfig.configName || 'DEFAULT'}`);
+    // v5.5.318: NaN/undefined protection - return 0 for invalid values
+    if (lux === null || lux === undefined || typeof lux !== 'number' || isNaN(lux)) {
+      console.log(`[LUX-FIX] ⚠️ Invalid lux value (${lux}) for ${manufacturerName}, returning 0`);
+      return 0;
     }
-    return this._sensorConfig;
-  }
 
-  /**
-   * v5.5.254: Dynamic power source detection from config
-   */
-  get mainsPowered() {
-    return !this._getSensorConfig().battery;
-  }
+    let originalValue = lux;
 
-  /**
-   * v5.5.254: Dynamic capabilities based on sensor config
-   */
-  get sensorCapabilities() {
-    const config = this._getSensorConfig();
-    const caps = ['alarm_motion', 'alarm_human'];
-
-    // Add capabilities based on what DPs are mapped
-    const dpMap = config.dpMap || {};
-    for (const dp of Object.values(dpMap)) {
-      if (dp.cap && !caps.includes(dp.cap)) {
-        caps.push(dp.cap);
+    // v5.5.264: Handle different lux types
+    if (type === 'lux_raw') {
+      // Raw ADC value - apply conversion ONLY for sensors that actually need it
+      // Based on Z2M issue #18950: some sensors report raw ADC values
+      if (value > 0) {
+        lux = Math.round(value / 10);
+      } else {
+        lux = 0;
       }
     }
-
-    // Ensure battery capability for battery sensors
-    if (config.battery && !caps.includes('measure_battery')) {
-      caps.push('measure_battery');
+    else if (type === 'lux_direct') {
+      // v5.5.316: Most Tuya sensors report direct lux - NO conversion needed
+      // Z2M #27212: _TZE284_iadro9bf reports "illuminance": 282 (direct lux)
+      lux = value;
+    }
+    else if (type === 'lux_div10') {
+      lux = value / 10;
     }
 
-    return caps;
-  }
+    // v5.5.316: SMART MAX LUX - Different sensors have different ranges
+    // ZY-M100: 0-2000 lux (SmartHomeScene review)
+    // Some industrial sensors: up to 10000 lux
+    let maxLux = 10000;  // Default high limit - don't clamp unless really needed
 
-  /**
-   * v5.5.254: INTELLIGENT DP MAPPINGS
-   * Builds dpMappings dynamically from sensor config database
-   */
-  get dpMappings() {
-    const config = this._getSensorConfig();
-    const mfr = this.getData()?.manufacturerName || '';
-    const dpMap = config.dpMap || {};
-    const mappings = {};
-
-    this.log(`[RADAR] 🧠 Using config: ${config.configName || 'DEFAULT'} for ${mfr}`);
-
-    // v5.5.318: Get invertPresence from user setting OR config
-    // User setting takes precedence over config default
-    const settings = this.getSettings() || {};
-    const invertPresence = settings.invert_presence ?? config.invertPresence ?? false;
-    const configName = config.configName || 'DEFAULT';
-
-    if (invertPresence) {
-      this.log(`[RADAR] 🔄 Presence inversion ENABLED (setting=${settings.invert_presence}, config=${config.invertPresence})`);
+    // v5.5.316: Only apply strict 2000 limit for KNOWN ZY-M100 series sensors
+    const isZYM100Series = manufacturerName.includes('iadro9bf') ||
+      manufacturerName.includes('gkfbdvyx') ||
+      manufacturerName.includes('qasjif9e') ||
+      manufacturerName.includes('sxm7l9xa');
+    if (isZYM100Series) {
+      maxLux = 2000;  // ZY-M100 confirmed 0-2000 lux range
     }
 
-    for (const [dpId, dpConfig] of Object.entries(dpMap)) {
-      const dp = parseInt(dpId);
+    // v5.5.316: FIXED - Only auto-detect raw ADC for values > 50000 (clearly wrong)
+    // Previous bug: ÷100 if > 10000 broke sensors reporting legitimate high lux
+    if (lux > 50000) {
+      const converted = Math.round(lux / 100);
+      console.log(`[LUX-FIX] 📊 Extreme value detected for ${manufacturerName}: ${originalValue} -> ${converted} lux`);
+      lux = converted;
+    }
 
-      if (dpConfig.cap === 'alarm_motion' || dpConfig.cap === 'alarm_human') {
-        // v5.5.284: Use config.invertPresence flag for presence inversion
-        // v5.5.314: Add presence debouncing for gkfbdvyx
-        const deviceId = this.getData()?.id;
-        mappings[dp] = {
-          capability: 'alarm_motion',
-          transform: (v) => debouncePresence(transformPresence(v, dpConfig.type, invertPresence, configName), mfr, deviceId),
-          alsoSets: { 'alarm_human': (v) => debouncePresence(transformPresence(v, dpConfig.type, invertPresence, configName), mfr, deviceId) }
-        };
-      } else if (dpConfig.cap === 'measure_luminance') {
-        // Illuminance DP - use sanity-checked transform with manufacturerName + deviceId for smoothing
-        mappings[dp] = {
-          capability: dpConfig.cap,
-          transform: (v) => transformLux(v, dpConfig.type || 'lux_direct', mfr, this.getData()?.id),
-        };
-      } else if (dpConfig.cap === 'measure_distance') {
-        // Distance DP - use enhanced transform with manufacturerName and null handling
-        mappings[dp] = {
-          capability: dpConfig.cap,
-          transform: (v) => {
-            const result = transformDistance(v, dpConfig.divisor || 100, mfr);
-            // v5.5.283: Skip capability update if transform returns null (invalid data)
-            return result !== null ? result : undefined;
-          },
-        };
-      } else if (dpConfig.cap) {
-        // Other capability DP
-        mappings[dp] = {
-          capability: dpConfig.cap,
-          divisor: dpConfig.divisor || 1,
-          transform: dpConfig.divisor ? (v) => v / dpConfig.divisor : undefined,
-        };
-      } else if (dpConfig.internal) {
-        // Internal setting DP
-        mappings[dp] = {
-          capability: null,
-          internal: dpConfig.internal,
-          writable: true,
-          divisor: dpConfig.divisor || 1,
-        };
+    // v5.5.320: HARD CLAMP for ZY-M100 series (Ronny #760: lux showing 2200 when max is 2000)
+    // These sensors are confirmed 0-2000 lux range - anything above is sensor noise
+    if (lux > maxLux && isZYM100Series) {
+      console.log(`[LUX-FIX] 🔒 Hard clamp for ZY-M100: ${lux} → ${maxLux} lux`);
+      lux = maxLux;
+    } else if (lux > maxLux) {
+      // For other sensors, still allow higher values but warn
+      console.log(`[LUX-FIX] ⚠️ Value ${lux} exceeds ${maxLux} for ${manufacturerName} (allowing)`);
+    }
+
+    lux = Math.max(0, Math.round(lux));
+
+    // v5.5.319: AGGRESSIVE LUX SMOOTHING for known problematic sensors
+    // Ronny #775: _TZE284_iadro9bf still oscillating 30↔2000 every 15 seconds
+    // Solution: Once flip-flop is detected, lock to stable value for 60 seconds
+    if (deviceId && isZYM100Series) {
+      const state = luxSmoothingState.get(deviceId) || {
+        lastLux: null,
+        stableLux: null,  // v5.5.319: Track stable value
+        timestamp: 0,
+        extremeCount: 0,
+        lockedUntil: 0    // v5.5.319: Lock period after flip-flop detection
+      };
+      const now = Date.now();
+      const timeSinceLastUpdate = now - state.timestamp;
+
+      // v5.5.319: If we're in locked mode, always return stable value
+      if (state.lockedUntil > now && state.stableLux !== null) {
+        console.log(`[LUX-SMOOTH] 🔒 Locked mode: returning stable ${state.stableLux} (ignoring ${lux})`);
+        return state.stableLux;
       }
+
+      if (state.lastLux !== null) {
+        // v5.5.319: Detect extreme oscillation (30↔2000 pattern from Ronny report)
+        const isExtremeLow = lux < 100;
+        const isExtremeHigh = lux > 1500;
+        const wasExtremeLow = state.lastLux < 100;
+        const wasExtremeHigh = state.lastLux > 1500;
+
+        // Detect flip-flop pattern
+        const isFlipFlop = (isExtremeLow && wasExtremeHigh) || (isExtremeHigh && wasExtremeLow);
+
+        if (isFlipFlop && timeSinceLastUpdate < 30000) {
+          state.extremeCount++;
+          console.log(`[LUX-SMOOTH] ⚠️ Flip-flop #${state.extremeCount}: ${state.lastLux} ↔ ${lux}`);
+
+          if (state.extremeCount >= 1) {
+            // v5.5.326: RONNY #760 - Ultra-aggressive lock for iadro9bf (2 minutes)
+            const isIadro9bf = manufacturerName.includes('iadro9bf');
+            const lockDuration = isIadro9bf ? 120000 : 60000;  // 2min for iadro9bf, 1min for others
+            state.stableLux = Math.min(state.lastLux, lux);
+            state.lockedUntil = now + lockDuration;
+            console.log(`[LUX-SMOOTH] 🔒 Locking to ${state.stableLux} for ${lockDuration / 1000}s (flip-flop, iadro9bf=${isIadro9bf})`);
+            luxSmoothingState.set(deviceId, state);
+            return state.stableLux;
+          }
+        } else if (timeSinceLastUpdate > 120000) {
+          // v5.5.326: Reset after 2 minutes of no flip-flop (was 60s)
+          state.extremeCount = 0;
+          state.stableLux = null;
+          state.lockedUntil = 0;
+        }
+      }
+
+      // Update smoothing state
+      state.lastLux = lux;
+      state.timestamp = now;
+      luxSmoothingState.set(deviceId, state);
     }
 
-    // Add fallback DPs that might not be in config
-    if (!mappings[112]) {
-      mappings[112] = { capability: 'alarm_motion', transform: (v) => transformPresence(v, 'presence_enum', invertPresence, configName) };
-    }
-
-    return mappings;
+    return lux;
   }
 
-  async onNodeInit({ zclNode }) {
-    const mfr = this.getData()?.manufacturerName || '';
-    const config = this._getSensorConfig();
+  // v5.5.283: Enhanced distance transformation with debug logging
+  // Ronny report: DP9 distance "not responding" on _TZE284_iadro9bf
+  function transformDistance(value, divisor = 100, manufacturerName = '') {
+    const originalValue = value;
+    let distance = value / divisor;
 
-    this.log(`[RADAR] ═══════════════════════════════════════════════════════════`);
-    this.log(`[RADAR] v5.5.315 INTELLIGENT PRESENCE INFERENCE`);
-    this.log(`[RADAR] ManufacturerName: ${mfr}`);
-    this.log(`[RADAR] Config: ${config.configName || 'ZY_M100_STANDARD (default)'}`);
-    this.log(`[RADAR] Power: ${config.battery ? 'BATTERY (EndDevice)' : 'MAINS (Router)'}`);
-    this.log(`[RADAR] Illuminance: ${config.hasIlluminance !== false ? 'YES' : 'NO'}`);
-    this.log(`[RADAR] Polling: ${config.needsPolling ? 'ENABLED (30s interval)' : 'DISABLED'}`);
-    this.log(`[RADAR] DPs: ${Object.keys(config.dpMap || {}).join(', ') || 'ZCL only'}`);
-    this.log(`[RADAR] 🧠 Intelligent Inference: ${config.useIntelligentInference ? 'ENABLED' : 'DISABLED'}`);
-    this.log(`[RADAR] ═══════════════════════════════════════════════════════════`);
-
-    // v5.5.268: Track received DPs for debugging
-    this._receivedDPs = new Set();
-    this._lastPresenceUpdate = 0;
-
-    // v5.5.315: Initialize Intelligent Presence Inference Engine
-    if (config.useIntelligentInference) {
-      this._presenceInference = new IntelligentPresenceInference(this);
-      this.log(`[RADAR] 🧠 Inference engine initialized for presence=null workaround`);
-
-      // Try to get firmware version for firmware-specific handling
-      this._detectFirmwareVersion(zclNode);
+    // v5.5.283: Enhanced validation with logging
+    if (typeof value !== 'number' || isNaN(value) || value < 0) {
+      console.log(`[DISTANCE-FIX] ⚠️ Invalid distance value for ${manufacturerName}: ${originalValue} (type: ${typeof value})`);
+      return null;  // Don't update capability for invalid values
     }
 
-    // Battery sensors: minimal init to avoid timeouts
-    if (config.battery) {
-      this.log('[RADAR] ⚡ BATTERY MODE: Using minimal init (passive listeners only)');
+    // Sanity check: most radar sensors have 0-10m range
+    if (distance < 0) distance = 0;
+    if (distance > 10) {
+      console.log(`[DISTANCE-FIX] 📏 Distance over range for ${manufacturerName}: ${distance}m -> 10m (clamped)`);
+      distance = 10;
+    }
 
-      this.zclNode = zclNode;
+    const result = Math.round(distance * 100) / 100; // 2 decimal places
+    console.log(`[DISTANCE-FIX] ✅ Distance for ${manufacturerName}: ${originalValue} (÷${divisor}) -> ${result}m`);
+    return result;
+  }
 
-      // Add battery capability
-      if (!this.hasCapability('measure_battery')) {
+  class PresenceSensorRadarDevice extends HybridSensorBase {
+
+    /**
+     * v5.5.277: Get manufacturerName with multiple fallback methods
+     * Ronny fix: this.getData()?.manufacturerName was returning empty!
+     */
+    _getManufacturerName() {
+      if (this._cachedManufacturerName) return this._cachedManufacturerName;
+
+      // Method 1: getData() (Homey standard)
+      let mfr = this.getData()?.manufacturerName;
+
+      // Method 2: Settings (stored during pairing)
+      if (!mfr) mfr = this.getSetting('zb_manufacturer_name');
+
+      // Method 3: Store data
+      if (!mfr) mfr = this.getStoreValue('manufacturerName');
+
+      // Method 4: ZCL node basic cluster (if available)
+      if (!mfr && this.zclNode?.endpoints?.[1]?.clusters?.basic) {
         try {
-          await this.addCapability('measure_battery');
-          this.log('[RADAR] ✅ Added measure_battery');
+          mfr = this.zclNode.endpoints[1].clusters.basic.manufacturerName;
         } catch (e) { /* ignore */ }
       }
 
-      // Setup passive listeners only (no queries)
-      this._setupPassiveListeners(zclNode);
+      // Method 5: Driver manifest match (from pairing)
+      if (!mfr) {
+        const manifest = this.driver?.manifest;
+        if (manifest?.zigbee?.manufacturerName?.[0]) {
+          mfr = manifest.zigbee.manufacturerName[0];
+        }
+      }
 
-      // Mark as available immediately
-      await this.setAvailable().catch(() => { });
-
-      this.log('[RADAR] ✅ Battery sensor ready (passive mode)');
-      return;
+      this._cachedManufacturerName = mfr || '';
+      return this._cachedManufacturerName;
     }
 
-    // PIR sensors: use ZCL primarily
-    if (config.useZcl) {
-      this.log('[RADAR] 📡 ZCL MODE: Using ZCL occupancy cluster');
+    /**
+     * v5.5.277: Get sensor configuration based on manufacturerName
+     */
+    _getSensorConfig() {
+      if (!this._sensorConfig) {
+        const mfr = this._getManufacturerName();
+        this._sensorConfig = getSensorConfig(mfr);
+        this.log(`[RADAR] 🔍 ManufacturerName resolved: "${mfr}" → config: ${this._sensorConfig.configName || 'DEFAULT'}`);
+      }
+      return this._sensorConfig;
+    }
+
+    /**
+     * v5.5.254: Dynamic power source detection from config
+     */
+    get mainsPowered() {
+      return !this._getSensorConfig().battery;
+    }
+
+    /**
+     * v5.5.254: Dynamic capabilities based on sensor config
+     */
+    get sensorCapabilities() {
+      const config = this._getSensorConfig();
+      const caps = ['alarm_motion', 'alarm_human'];
+
+      // Add capabilities based on what DPs are mapped
+      const dpMap = config.dpMap || {};
+      for (const dp of Object.values(dpMap)) {
+        if (dp.cap && !caps.includes(dp.cap)) {
+          caps.push(dp.cap);
+        }
+      }
+
+      // Ensure battery capability for battery sensors
+      if (config.battery && !caps.includes('measure_battery')) {
+        caps.push('measure_battery');
+      }
+
+      return caps;
+    }
+
+    /**
+     * v5.5.254: INTELLIGENT DP MAPPINGS
+     * Builds dpMappings dynamically from sensor config database
+     */
+    get dpMappings() {
+      const config = this._getSensorConfig();
+      const mfr = this.getData()?.manufacturerName || '';
+      const dpMap = config.dpMap || {};
+      const mappings = {};
+
+      this.log(`[RADAR] 🧠 Using config: ${config.configName || 'DEFAULT'} for ${mfr}`);
+
+      // v5.5.318: Get invertPresence from user setting OR config
+      // User setting takes precedence over config default
+      const settings = this.getSettings() || {};
+      const invertPresence = settings.invert_presence ?? config.invertPresence ?? false;
+      const configName = config.configName || 'DEFAULT';
+
+      if (invertPresence) {
+        this.log(`[RADAR] 🔄 Presence inversion ENABLED (setting=${settings.invert_presence}, config=${config.invertPresence})`);
+      }
+
+      for (const [dpId, dpConfig] of Object.entries(dpMap)) {
+        const dp = parseInt(dpId);
+
+        if (dpConfig.cap === 'alarm_motion' || dpConfig.cap === 'alarm_human') {
+          // v5.5.284: Use config.invertPresence flag for presence inversion
+          // v5.5.314: Add presence debouncing for gkfbdvyx
+          const deviceId = this.getData()?.id;
+          mappings[dp] = {
+            capability: 'alarm_motion',
+            transform: (v) => debouncePresence(transformPresence(v, dpConfig.type, invertPresence, configName), mfr, deviceId),
+            alsoSets: { 'alarm_human': (v) => debouncePresence(transformPresence(v, dpConfig.type, invertPresence, configName), mfr, deviceId) }
+          };
+        } else if (dpConfig.cap === 'measure_luminance') {
+          // Illuminance DP - use sanity-checked transform with manufacturerName + deviceId for smoothing
+          mappings[dp] = {
+            capability: dpConfig.cap,
+            transform: (v) => transformLux(v, dpConfig.type || 'lux_direct', mfr, this.getData()?.id),
+          };
+        } else if (dpConfig.cap === 'measure_distance') {
+          // Distance DP - use enhanced transform with manufacturerName and null handling
+          mappings[dp] = {
+            capability: dpConfig.cap,
+            transform: (v) => {
+              const result = transformDistance(v, dpConfig.divisor || 100, mfr);
+              // v5.5.283: Skip capability update if transform returns null (invalid data)
+              return result !== null ? result : undefined;
+            },
+          };
+        } else if (dpConfig.cap) {
+          // Other capability DP
+          mappings[dp] = {
+            capability: dpConfig.cap,
+            divisor: dpConfig.divisor || 1,
+            transform: dpConfig.divisor ? (v) => v / dpConfig.divisor : undefined,
+          };
+        } else if (dpConfig.internal) {
+          // Internal setting DP
+          mappings[dp] = {
+            capability: null,
+            internal: dpConfig.internal,
+            writable: true,
+            divisor: dpConfig.divisor || 1,
+          };
+        }
+      }
+
+      // Add fallback DPs that might not be in config
+      if (!mappings[112]) {
+        mappings[112] = { capability: 'alarm_motion', transform: (v) => transformPresence(v, 'presence_enum', invertPresence, configName) };
+      }
+
+      return mappings;
+    }
+
+    async onNodeInit({ zclNode }) {
+      const mfr = this.getData()?.manufacturerName || '';
+      const config = this._getSensorConfig();
+
+      this.log(`[RADAR] ═══════════════════════════════════════════════════════════`);
+      this.log(`[RADAR] v5.5.315 INTELLIGENT PRESENCE INFERENCE`);
+      this.log(`[RADAR] ManufacturerName: ${mfr}`);
+      this.log(`[RADAR] Config: ${config.configName || 'ZY_M100_STANDARD (default)'}`);
+      this.log(`[RADAR] Power: ${config.battery ? 'BATTERY (EndDevice)' : 'MAINS (Router)'}`);
+      this.log(`[RADAR] Illuminance: ${config.hasIlluminance !== false ? 'YES' : 'NO'}`);
+      this.log(`[RADAR] Polling: ${config.needsPolling ? 'ENABLED (30s interval)' : 'DISABLED'}`);
+      this.log(`[RADAR] DPs: ${Object.keys(config.dpMap || {}).join(', ') || 'ZCL only'}`);
+      this.log(`[RADAR] 🧠 Intelligent Inference: ${config.useIntelligentInference ? 'ENABLED' : 'DISABLED'}`);
+      this.log(`[RADAR] ═══════════════════════════════════════════════════════════`);
+
+      // v5.5.268: Track received DPs for debugging
+      this._receivedDPs = new Set();
+      this._lastPresenceUpdate = 0;
+
+      // v5.5.315: Initialize Intelligent Presence Inference Engine
+      if (config.useIntelligentInference) {
+        this._presenceInference = new IntelligentPresenceInference(this);
+        this.log(`[RADAR] 🧠 Inference engine initialized for presence=null workaround`);
+
+        // Try to get firmware version for firmware-specific handling
+        this._detectFirmwareVersion(zclNode);
+      }
+
+      // Battery sensors: minimal init to avoid timeouts
+      if (config.battery) {
+        this.log('[RADAR] ⚡ BATTERY MODE: Using minimal init (passive listeners only)');
+
+        this.zclNode = zclNode;
+
+        // Add battery capability
+        if (!this.hasCapability('measure_battery')) {
+          try {
+            await this.addCapability('measure_battery');
+            this.log('[RADAR] ✅ Added measure_battery');
+          } catch (e) { /* ignore */ }
+        }
+
+        // Setup passive listeners only (no queries)
+        this._setupPassiveListeners(zclNode);
+
+        // Mark as available immediately
+        await this.setAvailable().catch(() => { });
+
+        this.log('[RADAR] ✅ Battery sensor ready (passive mode)');
+        return;
+      }
+
+      // PIR sensors: use ZCL primarily
+      if (config.useZcl) {
+        this.log('[RADAR] 📡 ZCL MODE: Using ZCL occupancy cluster');
+        await super.onNodeInit({ zclNode });
+        await this._setupZclClusters(zclNode);
+        this.log('[RADAR] ✅ PIR sensor ready (ZCL mode)');
+        return;
+      }
+
+      // Mains-powered radar sensors: full init
       await super.onNodeInit({ zclNode });
       await this._setupZclClusters(zclNode);
-      this.log('[RADAR] ✅ PIR sensor ready (ZCL mode)');
-      return;
-    }
 
-    // Mains-powered radar sensors: full init
-    await super.onNodeInit({ zclNode });
-    await this._setupZclClusters(zclNode);
+      // v5.5.270: CRITICAL FIX - Setup Tuya DP listeners for mains-powered sensors too!
+      // This was missing and caused presence not to work on TZE284 devices
+      await this._setupTuyaDPListeners(zclNode);
 
-    // v5.5.270: CRITICAL FIX - Setup Tuya DP listeners for mains-powered sensors too!
-    // This was missing and caused presence not to work on TZE284 devices
-    await this._setupTuyaDPListeners(zclNode);
-
-    // v5.5.325: RONNY #782 - Force remove battery for mains-powered sensors
-    // noBatteryCapability flag ensures battery is NEVER shown for these devices
-    if ((config.noBatteryCapability || config.mainsPowered || !config.battery) && this.hasCapability('measure_battery')) {
-      try {
-        await this.removeCapability('measure_battery');
-        this.log('[RADAR] 🔋 Removed measure_battery (mains-powered, no battery spam)');
-      } catch (e) { /* ignore */ }
-    }
-
-    // v5.5.325: Also disable battery monitoring completely for gkfbdvyx
-    if (config.noBatteryCapability) {
-      this._batteryMonitoringDisabled = true;
-      this.log('[RADAR] 🔋 Battery monitoring DISABLED for this device');
-    }
-
-    // v5.5.329: Remove temperature capability for PIR-only sensors (forum #788)
-    if (config.noTemperature && this.hasCapability('measure_temperature')) {
-      try {
-        await this.removeCapability('measure_temperature');
-        this.log('[RADAR] 🌡️ Removed measure_temperature (not supported by this device)');
-      } catch (e) { /* ignore */ }
-    }
-
-    // v5.5.329: Remove humidity capability for PIR-only sensors (forum #788)
-    if (config.noHumidity && this.hasCapability('measure_humidity')) {
-      try {
-        await this.removeCapability('measure_humidity');
-        this.log('[RADAR] 💧 Removed measure_humidity (not supported by this device)');
-      } catch (e) { /* ignore */ }
-    }
-
-    // Ensure required capabilities
-    for (const cap of ['measure_distance', 'measure_luminance']) {
-      if (!this.hasCapability(cap)) {
+      // v5.5.325: RONNY #782 - Force remove battery for mains-powered sensors
+      // noBatteryCapability flag ensures battery is NEVER shown for these devices
+      if ((config.noBatteryCapability || config.mainsPowered || !config.battery) && this.hasCapability('measure_battery')) {
         try {
-          await this.addCapability(cap);
-          this.log(`[RADAR] ✅ Added ${cap} capability`);
+          await this.removeCapability('measure_battery');
+          this.log('[RADAR] 🔋 Removed measure_battery (mains-powered, no battery spam)');
         } catch (e) { /* ignore */ }
       }
-    }
 
-    // v5.5.268: Start periodic polling for TZE284 devices that need it
-    if (config.needsPolling) {
-      this._startPresencePolling(zclNode);
-    }
-
-    this.log('[RADAR] ✅ Radar presence sensor ready (full mode)');
-  }
-
-  /**
-   * v5.5.252: Setup passive listeners for battery sensors
-   * These only listen for incoming data, no outgoing queries
-   */
-  _setupPassiveListeners(zclNode) {
-    const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1) return;
-
-    // Listen for Tuya DP reports (cluster 0xEF00)
-    try {
-      const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
-      if (tuyaCluster?.on) {
-        tuyaCluster.on('response', (data) => {
-          this.log('[RADAR-BATTERY] Tuya response received');
-          this._handleTuyaResponse(data);
-        });
-        tuyaCluster.on('reporting', (data) => {
-          this.log('[RADAR-BATTERY] Tuya reporting received');
-          this._handleTuyaResponse(data);
-        });
-        tuyaCluster.on('datapoint', (data) => {
-          this.log('[RADAR-BATTERY] Tuya datapoint received');
-          this._handleTuyaResponse(data);
-        });
-        this.log('[RADAR] ✅ Passive Tuya listener configured');
-      }
-    } catch (e) { /* ignore */ }
-
-    // Listen for occupancy reports
-    try {
-      const occCluster = ep1.clusters?.msOccupancySensing;
-      if (occCluster?.on) {
-        occCluster.on('attr.occupancy', (v) => {
-          const occupied = (v & 0x01) !== 0;
-          this.log(`[RADAR-BATTERY] Occupancy: ${occupied}`);
-          this.setCapabilityValue('alarm_motion', occupied).catch(() => { });
-        });
-        this.log('[RADAR] ✅ Passive occupancy listener configured');
-      }
-    } catch (e) { /* ignore */ }
-  }
-
-  /**
-   * v5.5.277: Parse Buffer data to integer value
-   * Ronny fix: data.data was Buffer [0,0,13,70] → need to parse to 3398
-   */
-  _parseBufferValue(data) {
-    // Already a number
-    if (typeof data === 'number') return data;
-    if (typeof data === 'boolean') return data ? 1 : 0;
-
-    // Buffer object: {type: "Buffer", data: [0,0,13,70]}
-    if (data && typeof data === 'object') {
-      let bytes = null;
-
-      // Format 1: {type: "Buffer", data: [...]}
-      if (data.type === 'Buffer' && Array.isArray(data.data)) {
-        bytes = data.data;
-      }
-      // Format 2: Node.js Buffer
-      else if (Buffer.isBuffer(data)) {
-        bytes = Array.from(data);
-      }
-      // Format 3: Array directly
-      else if (Array.isArray(data)) {
-        bytes = data;
+      // v5.5.325: Also disable battery monitoring completely for gkfbdvyx
+      if (config.noBatteryCapability) {
+        this._batteryMonitoringDisabled = true;
+        this.log('[RADAR] 🔋 Battery monitoring DISABLED for this device');
       }
 
-      if (bytes && bytes.length > 0) {
-        // Parse as big-endian unsigned integer
-        let value = 0;
-        for (let i = 0; i < bytes.length; i++) {
-          value = (value << 8) | (bytes[i] & 0xFF);
+      // v5.5.329: Remove temperature capability for PIR-only sensors (forum #788)
+      if (config.noTemperature && this.hasCapability('measure_temperature')) {
+        try {
+          await this.removeCapability('measure_temperature');
+          this.log('[RADAR] 🌡️ Removed measure_temperature (not supported by this device)');
+        } catch (e) { /* ignore */ }
+      }
+
+      // v5.5.329: Remove humidity capability for PIR-only sensors (forum #788)
+      if (config.noHumidity && this.hasCapability('measure_humidity')) {
+        try {
+          await this.removeCapability('measure_humidity');
+          this.log('[RADAR] 💧 Removed measure_humidity (not supported by this device)');
+        } catch (e) { /* ignore */ }
+      }
+
+      // Ensure required capabilities
+      for (const cap of ['measure_distance', 'measure_luminance']) {
+        if (!this.hasCapability(cap)) {
+          try {
+            await this.addCapability(cap);
+            this.log(`[RADAR] ✅ Added ${cap} capability`);
+          } catch (e) { /* ignore */ }
         }
-        return value;
       }
-    }
 
-    // String number
-    if (typeof data === 'string' && !isNaN(data)) {
-      return parseInt(data, 10);
-    }
-
-    return data;
-  }
-
-  /**
-   * v5.5.283: Enhanced DP diagnostics for forum troubleshooting
-   * Logs DP queries, passive reporting status, and data format issues
-   */
-  _logDpDiagnostics(dpId, value, rawValue, data) {
-    const mfr = this._getManufacturerName();
-    const config = this._getSensorConfig();
-    const dpMap = config.dpMap || {};
-    const dpConfig = dpMap[dpId];
-
-    // Track received DPs for diagnostics
-    if (!this._receivedDPs) this._receivedDPs = new Set();
-    this._receivedDPs.add(dpId);
-
-    // Enhanced diagnostic info
-    const diagnosticInfo = {
-      dpId,
-      manufacturerName: mfr,
-      configName: config.configName || 'DEFAULT',
-      rawValueType: typeof rawValue,
-      parsedValue: value,
-      hasMapping: !!dpConfig,
-      capability: dpConfig?.cap || 'unmapped',
-      dataFormat: Array.isArray(rawValue?.data) ? `Buffer[${rawValue.data.join(',')}]` : typeof rawValue
-    };
-
-    // Special logging for problem DPs reported in forum
-    if ([1, 9, 12, 104, 105, 112].includes(dpId)) {
-      this.log(`[DIAG] 🔍 DP${dpId} (${dpConfig?.cap || 'unmapped'}): ${JSON.stringify(diagnosticInfo)}`);
-    }
-
-    // Detect passive reporting issues
-    if (dpConfig && !value && rawValue) {
-      this.log(`[DIAG] ⚠️ DP${dpId} parsing failed - passive reporting issue? Raw: ${JSON.stringify(rawValue)}`);
-    }
-
-    // Log missing expected DPs
-    const expectedDPs = Object.keys(dpMap).map(Number);
-    const missingDPs = expectedDPs.filter(dp => !this._receivedDPs.has(dp));
-    if (missingDPs.length > 0) {
-      this.log(`[DIAG] 📝 Missing DPs for ${mfr}: [${missingDPs.join(', ')}] (may be passive only)`);
-    }
-  }
-
-  /**
-   * v5.5.304: ENHANCED Tuya response handler with presence=null workaround
-   * - Coordinate with HybridSensorBase to avoid dual processing
-   * - Only handle special presence DPs locally (1, 105, 112)
-   * - v5.5.304: DISTANCE-BASED PRESENCE INFERENCE for firmware bug workaround
-   */
-  _handleTuyaResponse(data) {
-    if (!data) return;
-
-    // Mark device as available when we receive data
-    this.setAvailable().catch(() => { });
-
-    const dpId = data.dp || data.dpId || data.datapoint;
-
-    // v5.5.310: FIXED - Handle DP12 and DP103 locally, NOT via HybridSensorBase!
-    // Problem: HybridSensorBase universal profile maps DP103 to temperature, not lux
-    // Solution: Handle lux DPs (12, 102, 103, 104) directly here using local dpMap config
-    const config = this._getSensorConfig();
-    const dpMap = config.dpMap || {};
-
-    // Check if this DP is a lux DP in our config - handle locally
-    if (dpMap[dpId]?.cap === 'measure_luminance') {
-      const luxValue = this._parseBufferValue(data.value || data.data);
-      const mfr = this._getManufacturerName();
-      const deviceId = this.getData()?.id;
-      const finalLux = transformLux(luxValue, dpMap[dpId].type || 'lux_direct', mfr, deviceId);
-      this.log(`[RADAR-LUX] ☀️ DP${dpId} → measure_luminance = ${finalLux} lux (local config)`);
-      this.setCapabilityValue('measure_luminance', finalLux).catch(() => { });
-
-      // v5.5.315: Feed lux to intelligent inference engine
-      if (dpMap[dpId].feedInference) {
-        this._feedLuxToInference(finalLux);
+      // v5.5.268: Start periodic polling for TZE284 devices that need it
+      if (config.needsPolling) {
+        this._startPresencePolling(zclNode);
       }
-      return;
+
+      this.log('[RADAR] ✅ Radar presence sensor ready (full mode)');
     }
 
-    // Only filter DPs that HybridSensorBase handles (battery, settings - NOT lux!)
-    const HYBRIDSENSOR_DPS = [2, 3, 4, 15]; // settings, battery only
-    if (HYBRIDSENSOR_DPS.includes(dpId)) {
-      // Let HybridSensorBase handle these
-      return;
+    /**
+     * v5.5.252: Setup passive listeners for battery sensors
+     * These only listen for incoming data, no outgoing queries
+     */
+    _setupPassiveListeners(zclNode) {
+      const ep1 = zclNode?.endpoints?.[1];
+      if (!ep1) return;
+
+      // Listen for Tuya DP reports (cluster 0xEF00)
+      try {
+        const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
+        if (tuyaCluster?.on) {
+          tuyaCluster.on('response', (data) => {
+            this.log('[RADAR-BATTERY] Tuya response received');
+            this._handleTuyaResponse(data);
+          });
+          tuyaCluster.on('reporting', (data) => {
+            this.log('[RADAR-BATTERY] Tuya reporting received');
+            this._handleTuyaResponse(data);
+          });
+          tuyaCluster.on('datapoint', (data) => {
+            this.log('[RADAR-BATTERY] Tuya datapoint received');
+            this._handleTuyaResponse(data);
+          });
+          this.log('[RADAR] ✅ Passive Tuya listener configured');
+        }
+      } catch (e) { /* ignore */ }
+
+      // Listen for occupancy reports
+      try {
+        const occCluster = ep1.clusters?.msOccupancySensing;
+        if (occCluster?.on) {
+          occCluster.on('attr.occupancy', (v) => {
+            const occupied = (v & 0x01) !== 0;
+            this.log(`[RADAR-BATTERY] Occupancy: ${occupied}`);
+            this.setCapabilityValue('alarm_motion', occupied).catch(() => { });
+          });
+          this.log('[RADAR] ✅ Passive occupancy listener configured');
+        }
+      } catch (e) { /* ignore */ }
     }
 
-    // v5.5.277: Parse the value properly (could be Buffer, number, etc.)
-    let rawValue = data.value;
-    if (rawValue === undefined || rawValue === null) {
-      rawValue = data.data;
-    }
-    const value = this._parseBufferValue(rawValue);
+    /**
+     * v5.5.277: Parse Buffer data to integer value
+     * Ronny fix: data.data was Buffer [0,0,13,70] → need to parse to 3398
+     */
+    _parseBufferValue(data) {
+      // Already a number
+      if (typeof data === 'number') return data;
+      if (typeof data === 'boolean') return data ? 1 : 0;
 
-    // Log diagnostics for non-conflicting DPs only
-    this._logUnknownDP(dpId, value, data);
-    this._logDpDiagnostics(dpId, value, rawValue, data);
+      // Buffer object: {type: "Buffer", data: [0,0,13,70]}
+      if (data && typeof data === 'object') {
+        let bytes = null;
 
-    // v5.5.304: DISTANCE-BASED PRESENCE INFERENCE (firmware bug workaround)
-    // If DP9 (distance) > 0, infer presence even if DP1 is null
-    if (dpId === 9) {
-      this._handleDistanceWithPresenceInference(value);
-      return;
-    }
+        // Format 1: {type: "Buffer", data: [...]}
+        if (data.type === 'Buffer' && Array.isArray(data.data)) {
+          bytes = data.data;
+        }
+        // Format 2: Node.js Buffer
+        else if (Buffer.isBuffer(data)) {
+          bytes = Array.from(data);
+        }
+        // Format 3: Array directly
+        else if (Array.isArray(data)) {
+          bytes = data;
+        }
 
-    // v5.5.306: FIXED - Added DP104 to presence DPs (used by ZY_M100_CEILING_24G)
-    const PRESENCE_DPS = [1, 104, 105, 112];
-    if (PRESENCE_DPS.includes(dpId)) {
-      const presenceValue = this._parsePresenceValue(value);
-
-      // v5.5.315: Feed presence DP to inference engine (even if null!)
-      if (this._presenceInference && dpId === 1) {
-        const inferredPresence = this._presenceInference.updatePresenceDP(value);
-
-        // If DP1 is null, use inference result instead
-        if (presenceValue === null) {
-          this.log(`[RADAR] 🧠 DP1=null - using inference: presence=${inferredPresence} (confidence: ${this._presenceInference.getConfidence()}%)`);
-          if (inferredPresence !== this.getCapabilityValue('alarm_motion')) {
-            this._handlePresenceWithDebounce(inferredPresence, 1);
+        if (bytes && bytes.length > 0) {
+          // Parse as big-endian unsigned integer
+          let value = 0;
+          for (let i = 0; i < bytes.length; i++) {
+            value = (value << 8) | (bytes[i] & 0xFF);
           }
+          return value;
+        }
+      }
+
+      // String number
+      if (typeof data === 'string' && !isNaN(data)) {
+        return parseInt(data, 10);
+      }
+
+      return data;
+    }
+
+    /**
+     * v5.5.283: Enhanced DP diagnostics for forum troubleshooting
+     * Logs DP queries, passive reporting status, and data format issues
+     */
+    _logDpDiagnostics(dpId, value, rawValue, data) {
+      const mfr = this._getManufacturerName();
+      const config = this._getSensorConfig();
+      const dpMap = config.dpMap || {};
+      const dpConfig = dpMap[dpId];
+
+      // Track received DPs for diagnostics
+      if (!this._receivedDPs) this._receivedDPs = new Set();
+      this._receivedDPs.add(dpId);
+
+      // Enhanced diagnostic info
+      const diagnosticInfo = {
+        dpId,
+        manufacturerName: mfr,
+        configName: config.configName || 'DEFAULT',
+        rawValueType: typeof rawValue,
+        parsedValue: value,
+        hasMapping: !!dpConfig,
+        capability: dpConfig?.cap || 'unmapped',
+        dataFormat: Array.isArray(rawValue?.data) ? `Buffer[${rawValue.data.join(',')}]` : typeof rawValue
+      };
+
+      // Special logging for problem DPs reported in forum
+      if ([1, 9, 12, 104, 105, 112].includes(dpId)) {
+        this.log(`[DIAG] 🔍 DP${dpId} (${dpConfig?.cap || 'unmapped'}): ${JSON.stringify(diagnosticInfo)}`);
+      }
+
+      // Detect passive reporting issues
+      if (dpConfig && !value && rawValue) {
+        this.log(`[DIAG] ⚠️ DP${dpId} parsing failed - passive reporting issue? Raw: ${JSON.stringify(rawValue)}`);
+      }
+
+      // Log missing expected DPs
+      const expectedDPs = Object.keys(dpMap).map(Number);
+      const missingDPs = expectedDPs.filter(dp => !this._receivedDPs.has(dp));
+      if (missingDPs.length > 0) {
+        this.log(`[DIAG] 📝 Missing DPs for ${mfr}: [${missingDPs.join(', ')}] (may be passive only)`);
+      }
+    }
+
+    /**
+     * v5.5.304: ENHANCED Tuya response handler with presence=null workaround
+     * - Coordinate with HybridSensorBase to avoid dual processing
+     * - Only handle special presence DPs locally (1, 105, 112)
+     * - v5.5.304: DISTANCE-BASED PRESENCE INFERENCE for firmware bug workaround
+     */
+    _handleTuyaResponse(data) {
+      if (!data) return;
+
+      // Mark device as available when we receive data
+      this.setAvailable().catch(() => { });
+
+      const dpId = data.dp || data.dpId || data.datapoint;
+
+      // v5.5.310: FIXED - Handle DP12 and DP103 locally, NOT via HybridSensorBase!
+      // Problem: HybridSensorBase universal profile maps DP103 to temperature, not lux
+      // Solution: Handle lux DPs (12, 102, 103, 104) directly here using local dpMap config
+      const config = this._getSensorConfig();
+      const dpMap = config.dpMap || {};
+
+      // Check if this DP is a lux DP in our config - handle locally
+      if (dpMap[dpId]?.cap === 'measure_luminance') {
+        const luxValue = this._parseBufferValue(data.value || data.data);
+        const mfr = this._getManufacturerName();
+        const deviceId = this.getData()?.id;
+        const finalLux = transformLux(luxValue, dpMap[dpId].type || 'lux_direct', mfr, deviceId);
+        this.log(`[RADAR-LUX] ☀️ DP${dpId} → measure_luminance = ${finalLux} lux (local config)`);
+        this.setCapabilityValue('measure_luminance', finalLux).catch(() => { });
+
+        // v5.5.315: Feed lux to intelligent inference engine
+        if (dpMap[dpId].feedInference) {
+          this._feedLuxToInference(finalLux);
+        }
+        return;
+      }
+
+      // Only filter DPs that HybridSensorBase handles (battery, settings - NOT lux!)
+      const HYBRIDSENSOR_DPS = [2, 3, 4, 15]; // settings, battery only
+      if (HYBRIDSENSOR_DPS.includes(dpId)) {
+        // Let HybridSensorBase handle these
+        return;
+      }
+
+      // v5.5.277: Parse the value properly (could be Buffer, number, etc.)
+      let rawValue = data.value;
+      if (rawValue === undefined || rawValue === null) {
+        rawValue = data.data;
+      }
+      const value = this._parseBufferValue(rawValue);
+
+      // Log diagnostics for non-conflicting DPs only
+      this._logUnknownDP(dpId, value, data);
+      this._logDpDiagnostics(dpId, value, rawValue, data);
+
+      // v5.5.304: DISTANCE-BASED PRESENCE INFERENCE (firmware bug workaround)
+      // If DP9 (distance) > 0, infer presence even if DP1 is null
+      if (dpId === 9) {
+        this._handleDistanceWithPresenceInference(value);
+        return;
+      }
+
+      // v5.5.306: FIXED - Added DP104 to presence DPs (used by ZY_M100_CEILING_24G)
+      const PRESENCE_DPS = [1, 104, 105, 112];
+      if (PRESENCE_DPS.includes(dpId)) {
+        const presenceValue = this._parsePresenceValue(value);
+
+        // v5.5.315: Feed presence DP to inference engine (even if null!)
+        if (this._presenceInference && dpId === 1) {
+          const inferredPresence = this._presenceInference.updatePresenceDP(value);
+
+          // If DP1 is null, use inference result instead
+          if (presenceValue === null) {
+            this.log(`[RADAR] 🧠 DP1=null - using inference: presence=${inferredPresence} (confidence: ${this._presenceInference.getConfidence()}%)`);
+            if (inferredPresence !== this.getCapabilityValue('alarm_motion')) {
+              this._handlePresenceWithDebounce(inferredPresence, 1);
+            }
+            return;
+          }
+        }
+
+        if (presenceValue !== null) {
+          // v5.5.279: Debounce presence to fix "flash 0.5s" issue
+          this._handlePresenceWithDebounce(presenceValue, dpId);
           return;
         }
       }
 
-      if (presenceValue !== null) {
-        // v5.5.279: Debounce presence to fix "flash 0.5s" issue
-        this._handlePresenceWithDebounce(presenceValue, dpId);
+      // Log other unmapped DPs for diagnostic purposes only
+      this.log(`[RADAR] 📡 DP${dpId} = ${value} (unknown DP, please report to developer)`);
+    }
+
+    /**
+     * v5.5.315: Detect firmware version for firmware-specific handling
+     * Different firmware versions have different bugs (appVersion 74 vs 78)
+     */
+    async _detectFirmwareVersion(zclNode) {
+      try {
+        const ep1 = zclNode?.endpoints?.[1];
+        const basicCluster = ep1?.clusters?.basic;
+
+        if (basicCluster?.readAttributes) {
+          const attrs = await basicCluster.readAttributes(['appVersion', 'stackVersion', 'hwVersion']).catch(() => ({}));
+          const appVersion = attrs?.appVersion;
+
+          if (appVersion && this._presenceInference) {
+            this._presenceInference.setFirmwareInfo(appVersion);
+            this.log(`[RADAR] 📱 Detected firmware: appVersion=${appVersion}`);
+
+            // Store for reference
+            this._firmwareAppVersion = appVersion;
+          }
+        }
+      } catch (e) {
+        this.log(`[RADAR] ⚠️ Could not detect firmware version: ${e.message}`);
+      }
+    }
+
+    /**
+     * v5.5.315: Handle distance DP with INTELLIGENT presence inference
+     * Uses IntelligentPresenceInference engine to calculate presence from multiple sources
+     */
+    _handleDistanceWithPresenceInference(rawDistance) {
+      const config = this._getSensorConfig();
+      const useDistanceInference = config.useDistanceInference || false;
+
+      // Always update distance capability
+      const divisor = config.dpMap?.[9]?.divisor || 100;
+      const distanceMeters = rawDistance / divisor;
+      this.setCapabilityValue('measure_distance', distanceMeters).catch(() => { });
+      this.log(`[RADAR] 📏 Distance: ${distanceMeters}m (raw: ${rawDistance})`);
+
+      // v5.5.315: Feed distance to intelligent inference engine
+      if (this._presenceInference) {
+        const inferredPresence = this._presenceInference.updateDistance(distanceMeters);
+        const confidence = this._presenceInference.getConfidence();
+        const currentPresence = this.getCapabilityValue('alarm_motion');
+
+        // Update presence if inference differs from current state
+        if (inferredPresence !== currentPresence && confidence >= 40) {
+          this.log(`[RADAR] 🧠 INTELLIGENT INFERENCE: presence=${inferredPresence} (confidence: ${confidence}%)`);
+          this._handlePresenceWithDebounce(inferredPresence, 9);
+        }
+        this._updatePresenceTimestamp();
         return;
       }
+
+      // v5.5.304: Legacy PRESENCE INFERENCE from distance (fallback)
+      if (useDistanceInference) {
+        const maxRange = this._lastMaxRange || 6;
+        const inferredPresence = distanceMeters > 0 && distanceMeters < maxRange;
+        const currentPresence = this.getCapabilityValue('alarm_motion');
+
+        if (inferredPresence !== currentPresence) {
+          this.log(`[RADAR] 🎯 DISTANCE INFERENCE: presence=${inferredPresence} (distance=${distanceMeters}m, max=${maxRange}m)`);
+          this._handlePresenceWithDebounce(inferredPresence, 9);
+        }
+        this._updatePresenceTimestamp();
+      }
     }
 
-    // Log other unmapped DPs for diagnostic purposes only
-    this.log(`[RADAR] 📡 DP${dpId} = ${value} (unknown DP, please report to developer)`);
-  }
+    /**
+     * v5.5.315: Feed lux value to intelligent inference engine
+     * Rapid lux changes indicate movement/presence
+     */
+    _feedLuxToInference(luxValue) {
+      if (this._presenceInference) {
+        const inferredPresence = this._presenceInference.updateLux(luxValue);
+        const confidence = this._presenceInference.getConfidence();
+        const currentPresence = this.getCapabilityValue('alarm_motion');
 
-  /**
-   * v5.5.315: Detect firmware version for firmware-specific handling
-   * Different firmware versions have different bugs (appVersion 74 vs 78)
-   */
-  async _detectFirmwareVersion(zclNode) {
-    try {
-      const ep1 = zclNode?.endpoints?.[1];
-      const basicCluster = ep1?.clusters?.basic;
-
-      if (basicCluster?.readAttributes) {
-        const attrs = await basicCluster.readAttributes(['appVersion', 'stackVersion', 'hwVersion']).catch(() => ({}));
-        const appVersion = attrs?.appVersion;
-
-        if (appVersion && this._presenceInference) {
-          this._presenceInference.setFirmwareInfo(appVersion);
-          this.log(`[RADAR] 📱 Detected firmware: appVersion=${appVersion}`);
-
-          // Store for reference
-          this._firmwareAppVersion = appVersion;
+        // Only update from lux if high confidence and state differs
+        if (inferredPresence !== currentPresence && confidence >= 50) {
+          this.log(`[RADAR] 🧠 LUX-BASED INFERENCE: presence=${inferredPresence} (confidence: ${confidence}%)`);
+          this._handlePresenceWithDebounce(inferredPresence, 104); // Use DP104 as source
         }
       }
-    } catch (e) {
-      this.log(`[RADAR] ⚠️ Could not detect firmware version: ${e.message}`);
     }
-  }
 
-  /**
-   * v5.5.315: Handle distance DP with INTELLIGENT presence inference
-   * Uses IntelligentPresenceInference engine to calculate presence from multiple sources
-   */
-  _handleDistanceWithPresenceInference(rawDistance) {
-    const config = this._getSensorConfig();
-    const useDistanceInference = config.useDistanceInference || false;
-
-    // Always update distance capability
-    const divisor = config.dpMap?.[9]?.divisor || 100;
-    const distanceMeters = rawDistance / divisor;
-    this.setCapabilityValue('measure_distance', distanceMeters).catch(() => { });
-    this.log(`[RADAR] 📏 Distance: ${distanceMeters}m (raw: ${rawDistance})`);
-
-    // v5.5.315: Feed distance to intelligent inference engine
-    if (this._presenceInference) {
-      const inferredPresence = this._presenceInference.updateDistance(distanceMeters);
-      const confidence = this._presenceInference.getConfidence();
-      const currentPresence = this.getCapabilityValue('alarm_motion');
-
-      // Update presence if inference differs from current state
-      if (inferredPresence !== currentPresence && confidence >= 40) {
-        this.log(`[RADAR] 🧠 INTELLIGENT INFERENCE: presence=${inferredPresence} (confidence: ${confidence}%)`);
-        this._handlePresenceWithDebounce(inferredPresence, 9);
+    /**
+     * v5.5.279: Parse presence value from any format
+     * Returns true/false or null if invalid
+     */
+    _parsePresenceValue(value) {
+      // Boolean
+      if (typeof value === 'boolean') return value;
+      // Enum: 0=none, 1=presence, 2=motion
+      if (typeof value === 'number') {
+        if (value === 0) return false;
+        if (value === 1 || value === 2) return true;
       }
-      this._updatePresenceTimestamp();
-      return;
+      // String
+      if (value === 'presence' || value === 'motion' || value === 'true') return true;
+      if (value === 'none' || value === 'false') return false;
+      return null;
     }
 
-    // v5.5.304: Legacy PRESENCE INFERENCE from distance (fallback)
-    if (useDistanceInference) {
-      const maxRange = this._lastMaxRange || 6;
-      const inferredPresence = distanceMeters > 0 && distanceMeters < maxRange;
-      const currentPresence = this.getCapabilityValue('alarm_motion');
+    /**
+     * v5.5.357: RONNY FORUM FIX - Ultra throttle motion spam
+     * _TZE284_iadro9bf sends motion=YES every 20s even without presence
+     * Solution: Max 1 motion update per 60 seconds if no real change
+     */
+    _throttleMotionSpam(presence, dpId) {
+      const config = this._getSensorConfig();
+      const mfr = this.getData()?.manufacturerName || '';
 
-      if (inferredPresence !== currentPresence) {
-        this.log(`[RADAR] 🎯 DISTANCE INFERENCE: presence=${inferredPresence} (distance=${distanceMeters}m, max=${maxRange}m)`);
-        this._handlePresenceWithDebounce(inferredPresence, 9);
+      // Only apply to problematic sensors
+      if (!mfr.includes('iadro9bf')) {
+        return presence;
       }
-      this._updatePresenceTimestamp();
-    }
-  }
 
-  /**
-   * v5.5.315: Feed lux value to intelligent inference engine
-   * Rapid lux changes indicate movement/presence
-   */
-  _feedLuxToInference(luxValue) {
-    if (this._presenceInference) {
-      const inferredPresence = this._presenceInference.updateLux(luxValue);
-      const confidence = this._presenceInference.getConfidence();
-      const currentPresence = this.getCapabilityValue('alarm_motion');
+      const now = Date.now();
+      this._motionThrottle = this._motionThrottle || {
+        lastUpdate: 0,
+        lastValue: null,
+        spamCount: 0
+      };
 
-      // Only update from lux if high confidence and state differs
-      if (inferredPresence !== currentPresence && confidence >= 50) {
-        this.log(`[RADAR] 🧠 LUX-BASED INFERENCE: presence=${inferredPresence} (confidence: ${confidence}%)`);
-        this._handlePresenceWithDebounce(inferredPresence, 104); // Use DP104 as source
+      const timeSinceLastUpdate = now - this._motionThrottle.lastUpdate;
+      const THROTTLE_MS = 60000; // 60 seconds
+
+      // If same value and within throttle window, block it
+      if (presence === this._motionThrottle.lastValue && timeSinceLastUpdate < THROTTLE_MS) {
+        this._motionThrottle.spamCount++;
+        this.log(`[RADAR] 🚫 MOTION SPAM BLOCKED: same value within ${timeSinceLastUpdate}ms (spam count: ${this._motionThrottle.spamCount})`);
+        return null; // Block update
       }
-    }
-  }
 
-  /**
-   * v5.5.279: Parse presence value from any format
-   * Returns true/false or null if invalid
-   */
-  _parsePresenceValue(value) {
-    // Boolean
-    if (typeof value === 'boolean') return value;
-    // Enum: 0=none, 1=presence, 2=motion
-    if (typeof value === 'number') {
-      if (value === 0) return false;
-      if (value === 1 || value === 2) return true;
-    }
-    // String
-    if (value === 'presence' || value === 'motion' || value === 'true') return true;
-    if (value === 'none' || value === 'false') return false;
-    return null;
-  }
-
-  /**
-   * v5.5.293: FIXED presence debounce with inversion support
-   * - Applies invertPresence transform before debouncing
-   * - Fixes "presence flashes for 0.5s" issue with proper inversion
-   */
-  _handlePresenceWithDebounce(rawPresence, dpId) {
-    const now = Date.now();
-    const DEBOUNCE_MS = 2000; // 2 seconds
-
-    // v5.5.318: Apply inversion from user setting OR config
-    const config = this._getSensorConfig();
-    const settings = this.getSettings() || {};
-    const invertPresence = settings.invert_presence ?? config.invertPresence ?? false;
-    const configName = config.configName || 'DEFAULT';
-
-    // Transform the raw presence value with inversion support
-    let presence = rawPresence;
-    if (invertPresence) {
-      presence = !rawPresence;
-      this.log(`[PRESENCE-FIX] 🔄 INVERTING presence for ${configName}: DP${dpId} ${rawPresence} -> ${presence}`);
+      // Real change or throttle expired
+      this._motionThrottle.lastUpdate = now;
+      this._motionThrottle.lastValue = presence;
+      if (this._motionThrottle.spamCount > 0) {
+        this.log(`[RADAR] ✅ MOTION UPDATE ALLOWED after blocking ${this._motionThrottle.spamCount} spam updates`);
+        this._motionThrottle.spamCount = 0;
+      }
+      return presence;
     }
 
-    // If presence is TRUE, set immediately
-    if (presence) {
-      this.log(`[RADAR] 🟢 DP${dpId} → PRESENCE DETECTED (processed: ${presence})`);
-      this._lastPresenceTrue = now;
-      this.setCapabilityValue('alarm_motion', true).catch(() => { });
+    /**
+     * v5.5.293: FIXED presence debounce with inversion support
+     * - Applies invertPresence transform before debouncing
+     * - Fixes "presence flashes for 0.5s" issue with proper inversion
+     * v5.5.357: Added motion spam throttle
+     */
+    _handlePresenceWithDebounce(rawPresence, dpId) {
+      // v5.5.357: THROTTLE MOTION SPAM FIRST
+      const throttled = this._throttleMotionSpam(rawPresence, dpId);
+      if (throttled === null) return; // Blocked by throttle
+
+      const now = Date.now();
+      const DEBOUNCE_MS = 2000; // 2 seconds
+
+      // v5.5.318: Apply inversion from user setting OR config
+      const config = this._getSensorConfig();
+      const settings = this.getSettings() || {};
+      const invertPresence = settings.invert_presence ?? config.invertPresence ?? false;
+      const configName = config.configName || 'DEFAULT';
+
+      // Transform the raw presence value with inversion support
+      let presence = rawPresence;
+      if (invertPresence) {
+        presence = !rawPresence;
+        this.log(`[PRESENCE-FIX] 🔄 INVERTING presence for ${configName}: DP${dpId} ${rawPresence} -> ${presence}`);
+      }
+
+      // If presence is TRUE, set immediately
+      if (presence) {
+        this.log(`[RADAR] 🟢 DP${dpId} → PRESENCE DETECTED (processed: ${presence})`);
+        this._lastPresenceTrue = now;
+        this.setCapabilityValue('alarm_motion', true).catch(() => { });
+        if (this.hasCapability('alarm_human')) {
+          this.setCapabilityValue('alarm_human', true).catch(() => { });
+        }
+        this._updatePresenceTimestamp();
+
+        // v5.5.285: Trigger custom flow cards
+        this._triggerPresenceFlows(true);
+        return;
+      }
+
+      // If presence is FALSE, debounce (wait 2s before clearing)
+      const timeSinceTrue = now - (this._lastPresenceTrue || 0);
+      if (timeSinceTrue < DEBOUNCE_MS) {
+        this.log(`[RADAR] 🟡 DP${dpId} → presence=false DEBOUNCED (${timeSinceTrue}ms < ${DEBOUNCE_MS}ms)`);
+        return; // Ignore false within 2s of true
+      }
+
+      this.log(`[RADAR] 🔴 DP${dpId} → PRESENCE CLEARED (processed: ${presence})`);
+      this.setCapabilityValue('alarm_motion', false).catch(() => { });
       if (this.hasCapability('alarm_human')) {
-        this.setCapabilityValue('alarm_human', true).catch(() => { });
+        this.setCapabilityValue('alarm_human', false).catch(() => { });
       }
-      this._updatePresenceTimestamp();
 
       // v5.5.285: Trigger custom flow cards
-      this._triggerPresenceFlows(true);
-      return;
+      this._triggerPresenceFlows(false);
     }
 
-    // If presence is FALSE, debounce (wait 2s before clearing)
-    const timeSinceTrue = now - (this._lastPresenceTrue || 0);
-    if (timeSinceTrue < DEBOUNCE_MS) {
-      this.log(`[RADAR] 🟡 DP${dpId} → presence=false DEBOUNCED (${timeSinceTrue}ms < ${DEBOUNCE_MS}ms)`);
-      return; // Ignore false within 2s of true
-    }
-
-    this.log(`[RADAR] 🔴 DP${dpId} → PRESENCE CLEARED (processed: ${presence})`);
-    this.setCapabilityValue('alarm_motion', false).catch(() => { });
-    if (this.hasCapability('alarm_human')) {
-      this.setCapabilityValue('alarm_human', false).catch(() => { });
-    }
-
-    // v5.5.285: Trigger custom flow cards
-    this._triggerPresenceFlows(false);
-  }
-
-  /**
-   * v5.5.285: Trigger custom presence flow cards
-   * Fixes: Flow triggers defined in driver.compose.json but never triggered
-   */
-  async _triggerPresenceFlows(detected) {
-    try {
-      if (detected) {
-        // Trigger: presence_detected
-        await this.homey.flow.getDeviceTriggerCard('presence_detected')
-          .trigger(this).catch(() => { });
-        // Trigger: presence_someone_enters
-        await this.homey.flow.getDeviceTriggerCard('presence_someone_enters')
-          .trigger(this).catch(() => { });
-        this.log('[RADAR-FLOW] ✅ Triggered: presence_detected, presence_someone_enters');
-      } else {
-        // Trigger: presence_cleared
-        await this.homey.flow.getDeviceTriggerCard('presence_cleared')
-          .trigger(this).catch(() => { });
-        // Trigger: presence_zone_empty
-        await this.homey.flow.getDeviceTriggerCard('presence_zone_empty')
-          .trigger(this).catch(() => { });
-        this.log('[RADAR-FLOW] ✅ Triggered: presence_cleared, presence_zone_empty');
-      }
-    } catch (err) {
-      this.log('[RADAR-FLOW] ⚠️ Flow trigger error:', err.message);
-    }
-  }
-
-  async _setupZclClusters(zclNode) {
-    const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1) return;
-
-    // Illuminance cluster (0x0400)
-    try {
-      const illumCluster = ep1.clusters?.msIlluminanceMeasurement;
-      if (illumCluster?.on) {
-        illumCluster.on('attr.measuredValue', (v) => {
-          const lux = Math.pow(10, (v - 1) / 10000);
-          this.setCapabilityValue('measure_luminance', Math.round(lux)).catch(() => { });
-        });
-        this.log('[RADAR] ✅ Illuminance cluster configured');
-      }
-    } catch (e) { /* ignore */ }
-
-    // Occupancy cluster (0x0406)
-    try {
-      const occCluster = ep1.clusters?.msOccupancySensing;
-      if (occCluster?.on) {
-        occCluster.on('attr.occupancy', (v) => {
-          const occupied = (v & 0x01) !== 0;
-          this.setCapabilityValue('alarm_motion', occupied).catch(() => { });
-        });
-        this.log('[RADAR] ✅ Occupancy cluster configured');
-      }
-    } catch (e) { /* ignore */ }
-
-    // v5.5.276: IAS Zone enrollment fix (ChatGPT analysis #723)
-    // Fixes "notEnrolled" status that prevents proper motion detection
-    await this._enrollIASZone(zclNode);
-  }
-
-  /**
-   * v5.5.276: IAS Zone enrollment - fixes "notEnrolled" status
-   * ChatGPT analysis #723: ZoneState = notEnrolled prevents motion detection
-   */
-  async _enrollIASZone(zclNode) {
-    try {
-      const ep1 = zclNode?.endpoints?.[1];
-      const iasZone = ep1?.clusters?.iasZone || ep1?.clusters?.ssIasZone;
-
-      if (!iasZone) {
-        this.log('[RADAR] ℹ️ No IAS Zone cluster - skipping enrollment');
-        return;
-      }
-
-      this.log('[RADAR] 🔐 Attempting IAS Zone enrollment...');
-
-      // Step 1: Read current zone state
+    /**
+     * v5.5.285: Trigger custom presence flow cards
+     * Fixes: Flow triggers defined in driver.compose.json but never triggered
+     */
+    async _triggerPresenceFlows(detected) {
       try {
-        const attrs = await iasZone.readAttributes(['zoneState', 'zoneType', 'zoneStatus']);
-        this.log(`[RADAR] IAS Zone state: ${JSON.stringify(attrs)}`);
+        if (detected) {
+          // Trigger: presence_detected
+          await this.homey.flow.getDeviceTriggerCard('presence_detected')
+            .trigger(this).catch(() => { });
+          // Trigger: presence_someone_enters
+          await this.homey.flow.getDeviceTriggerCard('presence_someone_enters')
+            .trigger(this).catch(() => { });
+          this.log('[RADAR-FLOW] ✅ Triggered: presence_detected, presence_someone_enters');
+        } else {
+          // Trigger: presence_cleared
+          await this.homey.flow.getDeviceTriggerCard('presence_cleared')
+            .trigger(this).catch(() => { });
+          // Trigger: presence_zone_empty
+          await this.homey.flow.getDeviceTriggerCard('presence_zone_empty')
+            .trigger(this).catch(() => { });
+          this.log('[RADAR-FLOW] ✅ Triggered: presence_cleared, presence_zone_empty');
+        }
+      } catch (err) {
+        this.log('[RADAR-FLOW] ⚠️ Flow trigger error:', err.message);
+      }
+    }
 
-        // If already enrolled, skip
-        if (attrs?.zoneState === 1) {
-          this.log('[RADAR] ✅ IAS Zone already enrolled');
+    async _setupZclClusters(zclNode) {
+      const ep1 = zclNode?.endpoints?.[1];
+      if (!ep1) return;
+
+      // Illuminance cluster (0x0400)
+      try {
+        const illumCluster = ep1.clusters?.msIlluminanceMeasurement;
+        if (illumCluster?.on) {
+          illumCluster.on('attr.measuredValue', (v) => {
+            const lux = Math.pow(10, (v - 1) / 10000);
+            this.setCapabilityValue('measure_luminance', Math.round(lux)).catch(() => { });
+          });
+          this.log('[RADAR] ✅ Illuminance cluster configured');
+        }
+      } catch (e) { /* ignore */ }
+
+      // Occupancy cluster (0x0406)
+      try {
+        const occCluster = ep1.clusters?.msOccupancySensing;
+        if (occCluster?.on) {
+          occCluster.on('attr.occupancy', (v) => {
+            const occupied = (v & 0x01) !== 0;
+            this.setCapabilityValue('alarm_motion', occupied).catch(() => { });
+          });
+          this.log('[RADAR] ✅ Occupancy cluster configured');
+        }
+      } catch (e) { /* ignore */ }
+
+      // v5.5.276: IAS Zone enrollment fix (ChatGPT analysis #723)
+      // Fixes "notEnrolled" status that prevents proper motion detection
+      await this._enrollIASZone(zclNode);
+    }
+
+    /**
+     * v5.5.276: IAS Zone enrollment - fixes "notEnrolled" status
+     * ChatGPT analysis #723: ZoneState = notEnrolled prevents motion detection
+     */
+    async _enrollIASZone(zclNode) {
+      try {
+        const ep1 = zclNode?.endpoints?.[1];
+        const iasZone = ep1?.clusters?.iasZone || ep1?.clusters?.ssIasZone;
+
+        if (!iasZone) {
+          this.log('[RADAR] ℹ️ No IAS Zone cluster - skipping enrollment');
           return;
         }
-      } catch (e) { /* continue with enrollment */ }
 
-      // Step 2: Write IAS CIE address (Homey's IEEE address)
-      try {
-        const homeyIeee = this.homey?.zigbee?.ieeeAddress || '0000000000000000';
-        await iasZone.writeAttributes({ iasCieAddress: homeyIeee });
-        this.log(`[RADAR] ✅ Wrote IAS CIE address: ${homeyIeee}`);
-      } catch (e) {
-        this.log(`[RADAR] ⚠️ Could not write IAS CIE: ${e.message}`);
-      }
+        this.log('[RADAR] 🔐 Attempting IAS Zone enrollment...');
 
-      // Step 3: Send zone enroll response
-      try {
-        if (iasZone.zoneEnrollResponse) {
-          await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 1 });
-          this.log('[RADAR] ✅ IAS Zone enroll response sent');
+        // Step 1: Read current zone state
+        try {
+          const attrs = await iasZone.readAttributes(['zoneState', 'zoneType', 'zoneStatus']);
+          this.log(`[RADAR] IAS Zone state: ${JSON.stringify(attrs)}`);
+
+          // If already enrolled, skip
+          if (attrs?.zoneState === 1) {
+            this.log('[RADAR] ✅ IAS Zone already enrolled');
+            return;
+          }
+        } catch (e) { /* continue with enrollment */ }
+
+        // Step 2: Write IAS CIE address (Homey's IEEE address)
+        try {
+          const homeyIeee = this.homey?.zigbee?.ieeeAddress || '0000000000000000';
+          await iasZone.writeAttributes({ iasCieAddress: homeyIeee });
+          this.log(`[RADAR] ✅ Wrote IAS CIE address: ${homeyIeee}`);
+        } catch (e) {
+          this.log(`[RADAR] ⚠️ Could not write IAS CIE: ${e.message}`);
+        }
+
+        // Step 3: Send zone enroll response
+        try {
+          if (iasZone.zoneEnrollResponse) {
+            await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 1 });
+            this.log('[RADAR] ✅ IAS Zone enroll response sent');
+          }
+        } catch (e) {
+          this.log(`[RADAR] ⚠️ Zone enroll response failed: ${e.message}`);
+        }
+
+        // Step 4: Listen for zone status changes
+        if (iasZone.on) {
+          iasZone.on('attr.zoneStatus', (status) => {
+            const alarm1 = (status & 0x01) !== 0;
+            const alarm2 = (status & 0x02) !== 0;
+            const motion = alarm1 || alarm2;
+            this.log(`[RADAR] IAS Zone status: ${status} -> motion: ${motion}`);
+            this.setCapabilityValue('alarm_motion', motion).catch(() => { });
+          });
+
+          iasZone.onZoneStatusChangeNotification = (payload) => {
+            const status = payload?.zoneStatus || 0;
+            const motion = (status & 0x03) !== 0;
+            this.log(`[RADAR] IAS Zone notification: ${status} -> motion: ${motion}`);
+            this.setCapabilityValue('alarm_motion', motion).catch(() => { });
+          };
+
+          this.log('[RADAR] ✅ IAS Zone listeners configured');
         }
       } catch (e) {
-        this.log(`[RADAR] ⚠️ Zone enroll response failed: ${e.message}`);
+        this.log(`[RADAR] ⚠️ IAS Zone enrollment error: ${e.message}`);
       }
-
-      // Step 4: Listen for zone status changes
-      if (iasZone.on) {
-        iasZone.on('attr.zoneStatus', (status) => {
-          const alarm1 = (status & 0x01) !== 0;
-          const alarm2 = (status & 0x02) !== 0;
-          const motion = alarm1 || alarm2;
-          this.log(`[RADAR] IAS Zone status: ${status} -> motion: ${motion}`);
-          this.setCapabilityValue('alarm_motion', motion).catch(() => { });
-        });
-
-        iasZone.onZoneStatusChangeNotification = (payload) => {
-          const status = payload?.zoneStatus || 0;
-          const motion = (status & 0x03) !== 0;
-          this.log(`[RADAR] IAS Zone notification: ${status} -> motion: ${motion}`);
-          this.setCapabilityValue('alarm_motion', motion).catch(() => { });
-        };
-
-        this.log('[RADAR] ✅ IAS Zone listeners configured');
-      }
-    } catch (e) {
-      this.log(`[RADAR] ⚠️ IAS Zone enrollment error: ${e.message}`);
     }
-  }
 
-  /**
-   * v5.5.270: CRITICAL FIX for Ronny's TZE284 sensor
-   * Setup Tuya DP listeners for mains-powered radar sensors
-   * This was MISSING and caused presence to never update!
-   */
-  async _setupTuyaDPListeners(zclNode) {
-    const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1) return;
+    /**
+     * v5.5.270: CRITICAL FIX for Ronny's TZE284 sensor
+     * Setup Tuya DP listeners for mains-powered radar sensors
+     * This was MISSING and caused presence to never update!
+     */
+    async _setupTuyaDPListeners(zclNode) {
+      const ep1 = zclNode?.endpoints?.[1];
+      if (!ep1) return;
 
-    this.log('[RADAR] 🔧 Setting up Tuya DP listeners for mains-powered sensor...');
+      this.log('[RADAR] 🔧 Setting up Tuya DP listeners for mains-powered sensor...');
 
-    // Try multiple cluster access methods
-    const tuyaCluster = ep1.clusters?.tuya ||
-      ep1.clusters?.['tuya'] ||
-      ep1.clusters?.[61184] ||
-      ep1.clusters?.['61184'] ||
-      ep1.clusters?.manuSpecificTuya;
+      // Try multiple cluster access methods
+      const tuyaCluster = ep1.clusters?.tuya ||
+        ep1.clusters?.['tuya'] ||
+        ep1.clusters?.[61184] ||
+        ep1.clusters?.['61184'] ||
+        ep1.clusters?.manuSpecificTuya;
 
-    if (tuyaCluster) {
-      this.log('[RADAR] ✅ Found Tuya cluster');
+      if (tuyaCluster) {
+        this.log('[RADAR] ✅ Found Tuya cluster');
 
-      // Listen for all possible event types
-      const events = ['response', 'reporting', 'datapoint', 'report', 'data', 'set'];
-      for (const event of events) {
+        // Listen for all possible event types
+        const events = ['response', 'reporting', 'datapoint', 'report', 'data', 'set'];
+        for (const event of events) {
+          try {
+            if (typeof tuyaCluster.on === 'function') {
+              tuyaCluster.on(event, (data) => {
+                this.log(`[RADAR] 📡 Tuya ${event} event received`);
+                this._handleTuyaResponse(data);
+              });
+              this.log(`[RADAR] ✅ Listening for Tuya '${event}' events`);
+            }
+          } catch (e) { /* ignore */ }
+        }
+
+        // Also try to register for attribute reports
         try {
-          if (typeof tuyaCluster.on === 'function') {
-            tuyaCluster.on(event, (data) => {
-              this.log(`[RADAR] 📡 Tuya ${event} event received`);
-              this._handleTuyaResponse(data);
+          if (tuyaCluster.onReport) {
+            tuyaCluster.onReport((report) => {
+              this.log('[RADAR] 📡 Tuya onReport received');
+              this._handleTuyaResponse(report);
             });
-            this.log(`[RADAR] ✅ Listening for Tuya '${event}' events`);
+          }
+        } catch (e) { /* ignore */ }
+      } else {
+        this.log('[RADAR] ⚠️ Tuya cluster not found - trying alternative methods');
+
+        // Try binding to EF00 cluster directly
+        try {
+          const { Cluster } = require('zigbee-clusters');
+          const TuyaCluster = Cluster.getCluster(61184);
+          if (TuyaCluster && ep1.bind) {
+            this.log('[RADAR] 🔧 Attempting direct EF00 cluster bind');
           }
         } catch (e) { /* ignore */ }
       }
 
-      // Also try to register for attribute reports
+      // Also try the node-level listeners
       try {
-        if (tuyaCluster.onReport) {
-          tuyaCluster.onReport((report) => {
-            this.log('[RADAR] 📡 Tuya onReport received');
-            this._handleTuyaResponse(report);
+        if (zclNode.on) {
+          zclNode.on('command', (cmd) => {
+            if (cmd.cluster === 61184 || cmd.cluster === 'tuya') {
+              this.log('[RADAR] 📡 Node command received from Tuya cluster');
+              this._handleTuyaResponse(cmd.data || cmd);
+            }
           });
         }
       } catch (e) { /* ignore */ }
-    } else {
-      this.log('[RADAR] ⚠️ Tuya cluster not found - trying alternative methods');
 
-      // Try binding to EF00 cluster directly
-      try {
-        const { Cluster } = require('zigbee-clusters');
-        const TuyaCluster = Cluster.getCluster(61184);
-        if (TuyaCluster && ep1.bind) {
-          this.log('[RADAR] 🔧 Attempting direct EF00 cluster bind');
-        }
-      } catch (e) { /* ignore */ }
+      this.log('[RADAR] ✅ Tuya DP listeners configured for mains-powered sensor');
     }
 
-    // Also try the node-level listeners
-    try {
-      if (zclNode.on) {
-        zclNode.on('command', (cmd) => {
-          if (cmd.cluster === 61184 || cmd.cluster === 'tuya') {
-            this.log('[RADAR] 📡 Node command received from Tuya cluster');
-            this._handleTuyaResponse(cmd.data || cmd);
-          }
-        });
+    /**
+     * v5.5.304: ENHANCED POLLING - Workaround for presence=null firmware bug
+     * v5.5.308: Added LUX polling - fixes "lux only updates on motion" issue (Eftychis #761)
+     * Strategy: Aggressive polling + Time sync + Distance inference + Lux polling
+     * WHY: Tuya gateway polls aggressively and sends time sync - we do the same
+     */
+    _startPresencePolling(zclNode) {
+      const config = this._getSensorConfig();
+      const useAggressive = config.useAggressivePolling || false;
+      const needsTimeSync = config.needsTimeSync || false;
+      const pollInterval = useAggressive ? 10000 : 30000; // 10s or 30s
+
+      this.log(`[RADAR] 🔄 Starting presence+lux polling (${pollInterval / 1000}s interval, aggressive=${useAggressive})`);
+
+      // Clear any existing interval
+      if (this._pollingInterval) {
+        clearInterval(this._pollingInterval);
       }
-    } catch (e) { /* ignore */ }
 
-    this.log('[RADAR] ✅ Tuya DP listeners configured for mains-powered sensor');
-  }
+      // v5.5.304: Send initial time sync if needed (like Tuya gateway)
+      if (needsTimeSync) {
+        this._sendTimeSync(zclNode);
+      }
 
-  /**
-   * v5.5.304: ENHANCED POLLING - Workaround for presence=null firmware bug
-   * v5.5.308: Added LUX polling - fixes "lux only updates on motion" issue (Eftychis #761)
-   * Strategy: Aggressive polling + Time sync + Distance inference + Lux polling
-   * WHY: Tuya gateway polls aggressively and sends time sync - we do the same
-   */
-  _startPresencePolling(zclNode) {
-    const config = this._getSensorConfig();
-    const useAggressive = config.useAggressivePolling || false;
-    const needsTimeSync = config.needsTimeSync || false;
-    const pollInterval = useAggressive ? 10000 : 30000; // 10s or 30s
+      // v5.5.308: LUX polling counter - poll lux every 3rd cycle (90s for normal, 30s for aggressive)
+      let luxPollCounter = 0;
 
-    this.log(`[RADAR] 🔄 Starting presence+lux polling (${pollInterval / 1000}s interval, aggressive=${useAggressive})`);
+      // Poll at configured interval
+      this._pollingInterval = setInterval(async () => {
+        try {
+          const now = Date.now();
+          const timeSinceLastPresence = now - (this._lastPresenceUpdate || 0);
 
-    // Clear any existing interval
-    if (this._pollingInterval) {
-      clearInterval(this._pollingInterval);
-    }
+          // v5.5.315: PERIODIC INFERENCE CHECK - update presence from inference engine
+          if (this._presenceInference) {
+            const inferredPresence = this._presenceInference.getPresence();
+            const confidence = this._presenceInference.getConfidence();
+            const currentPresence = this.getCapabilityValue('alarm_motion');
 
-    // v5.5.304: Send initial time sync if needed (like Tuya gateway)
-    if (needsTimeSync) {
-      this._sendTimeSync(zclNode);
-    }
-
-    // v5.5.308: LUX polling counter - poll lux every 3rd cycle (90s for normal, 30s for aggressive)
-    let luxPollCounter = 0;
-
-    // Poll at configured interval
-    this._pollingInterval = setInterval(async () => {
-      try {
-        const now = Date.now();
-        const timeSinceLastPresence = now - (this._lastPresenceUpdate || 0);
-
-        // v5.5.315: PERIODIC INFERENCE CHECK - update presence from inference engine
-        if (this._presenceInference) {
-          const inferredPresence = this._presenceInference.getPresence();
-          const confidence = this._presenceInference.getConfidence();
-          const currentPresence = this.getCapabilityValue('alarm_motion');
-
-          // Update if inference differs and confidence is reasonable
-          if (inferredPresence !== currentPresence && confidence >= 35) {
-            this.log(`[RADAR] 🧠 PERIODIC INFERENCE: presence=${inferredPresence} (confidence: ${confidence}%)`);
-            this._handlePresenceWithDebounce(inferredPresence, 0); // DP0 = inference source
+            // Update if inference differs and confidence is reasonable
+            if (inferredPresence !== currentPresence && confidence >= 35) {
+              this.log(`[RADAR] 🧠 PERIODIC INFERENCE: presence=${inferredPresence} (confidence: ${confidence}%)`);
+              this._handlePresenceWithDebounce(inferredPresence, 0); // DP0 = inference source
+            }
           }
-        }
 
-        // v5.5.304: More aggressive check - poll if no update in 15s (was 60s)
-        const threshold = useAggressive ? 15000 : 60000;
-        if (timeSinceLastPresence > threshold) {
-          this.log(`[RADAR] 🔄 No presence update in ${threshold / 1000}s, requesting DP refresh...`);
-          await this._requestDPRefresh(zclNode);
+          // v5.5.304: More aggressive check - poll if no update in 15s (was 60s)
+          const threshold = useAggressive ? 15000 : 60000;
+          if (timeSinceLastPresence > threshold) {
+            this.log(`[RADAR] 🔄 No presence update in ${threshold / 1000}s, requesting DP refresh...`);
+            await this._requestDPRefresh(zclNode);
 
-          // v5.5.304: Also request specific DP1 (presence) directly
-          await this._requestSpecificDP(zclNode, 1);
-        }
+            // v5.5.304: Also request specific DP1 (presence) directly
+            await this._requestSpecificDP(zclNode, 1);
+          }
 
-        // v5.5.308: Poll lux DPs every 3rd cycle to fix "lux only updates on motion" issue
-        luxPollCounter++;
-        if (luxPollCounter >= 3) {
-          luxPollCounter = 0;
-          if (config.hasIlluminance !== false) {
-            this.log(`[RADAR] ☀️ Polling lux DPs...`);
-            // Try common lux DPs: 12, 102, 103, 104
-            const luxDPs = [12, 102, 103, 104];
-            for (const dp of luxDPs) {
-              if (config.dpMap?.[dp]?.cap === 'measure_luminance') {
-                await this._requestSpecificDP(zclNode, dp);
-                break; // Only poll first matching lux DP
+          // v5.5.308: Poll lux DPs every 3rd cycle to fix "lux only updates on motion" issue
+          luxPollCounter++;
+          if (luxPollCounter >= 3) {
+            luxPollCounter = 0;
+            if (config.hasIlluminance !== false) {
+              this.log(`[RADAR] ☀️ Polling lux DPs...`);
+              // Try common lux DPs: 12, 102, 103, 104
+              const luxDPs = [12, 102, 103, 104];
+              for (const dp of luxDPs) {
+                if (config.dpMap?.[dp]?.cap === 'measure_luminance') {
+                  await this._requestSpecificDP(zclNode, dp);
+                  break; // Only poll first matching lux DP
+                }
               }
             }
           }
+        } catch (e) {
+          this.log(`[RADAR] ⚠️ Polling error: ${e.message}`);
+        }
+      }, pollInterval);
+
+      // Initial poll after 2 seconds (faster than before)
+      setTimeout(() => {
+        this._requestDPRefresh(zclNode);
+        this._requestSpecificDP(zclNode, 1);
+      }, 2000);
+    }
+
+    /**
+     * v5.5.304: Send time sync to device (like Tuya gateway)
+     * Some devices won't report presence until they receive time sync
+     */
+    async _sendTimeSync(zclNode) {
+      try {
+        const ep1 = zclNode?.endpoints?.[1];
+        const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
+        if (!tuyaCluster) return;
+
+        // Zigbee epoch: 2000-01-01 00:00:00 UTC
+        const ZIGBEE_EPOCH = new Date(Date.UTC(2000, 0, 1, 0, 0, 0)).getTime();
+        const utcSeconds = Math.floor((Date.now() - ZIGBEE_EPOCH) / 1000);
+        const localSeconds = utcSeconds + (-new Date().getTimezoneOffset() * 60);
+
+        // Create time payload (8 bytes: UTC + Local)
+        const payload = Buffer.alloc(8);
+        payload.writeUInt32BE(utcSeconds, 0);
+        payload.writeUInt32BE(localSeconds, 4);
+
+        // Send time response command (0x64 = 100)
+        if (tuyaCluster.command) {
+          await tuyaCluster.command('mcuSyncTime', { payloadSize: 8, payload });
+          this.log('[RADAR] ⏰ Time sync sent to device');
         }
       } catch (e) {
-        this.log(`[RADAR] ⚠️ Polling error: ${e.message}`);
+        this.log(`[RADAR] ⚠️ Time sync failed: ${e.message}`);
       }
-    }, pollInterval);
+    }
 
-    // Initial poll after 2 seconds (faster than before)
-    setTimeout(() => {
-      this._requestDPRefresh(zclNode);
-      this._requestSpecificDP(zclNode, 1);
-    }, 2000);
-  }
+    /**
+     * v5.5.304: Request specific DP value from device
+     * Tuya gateway requests DP1 specifically to get presence
+     */
+    async _requestSpecificDP(zclNode, dpId) {
+      try {
+        const ep1 = zclNode?.endpoints?.[1];
+        const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
+        if (!tuyaCluster) return;
 
-  /**
-   * v5.5.304: Send time sync to device (like Tuya gateway)
-   * Some devices won't report presence until they receive time sync
-   */
-  async _sendTimeSync(zclNode) {
-    try {
-      const ep1 = zclNode?.endpoints?.[1];
-      const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
-      if (!tuyaCluster) return;
+        // Method 1: dataRequest with specific DP
+        if (tuyaCluster.dataRequest) {
+          await tuyaCluster.dataRequest({ dp: dpId });
+          this.log(`[RADAR] 📱 Requested DP${dpId} specifically`);
+          return;
+        }
 
-      // Zigbee epoch: 2000-01-01 00:00:00 UTC
-      const ZIGBEE_EPOCH = new Date(Date.UTC(2000, 0, 1, 0, 0, 0)).getTime();
-      const utcSeconds = Math.floor((Date.now() - ZIGBEE_EPOCH) / 1000);
-      const localSeconds = utcSeconds + (-new Date().getTimezoneOffset() * 60);
-
-      // Create time payload (8 bytes: UTC + Local)
-      const payload = Buffer.alloc(8);
-      payload.writeUInt32BE(utcSeconds, 0);
-      payload.writeUInt32BE(localSeconds, 4);
-
-      // Send time response command (0x64 = 100)
-      if (tuyaCluster.command) {
-        await tuyaCluster.command('mcuSyncTime', { payloadSize: 8, payload });
-        this.log('[RADAR] ⏰ Time sync sent to device');
+        // Method 2: sendData with query format
+        if (tuyaCluster.sendData) {
+          await tuyaCluster.sendData({
+            dp: dpId,
+            datatype: 1, // Bool type for presence
+            data: Buffer.from([])
+          });
+          this.log(`[RADAR] 📱 Requested DP${dpId} via sendData`);
+        }
+      } catch (e) {
+        // Silently ignore - not all devices support this
       }
-    } catch (e) {
-      this.log(`[RADAR] ⚠️ Time sync failed: ${e.message}`);
+    }
+
+    /**
+     * v5.5.268: Request DP refresh from device
+     * Sends Tuya MCU command to request all DP values
+     */
+    async _requestDPRefresh(zclNode) {
+      try {
+        const ep1 = zclNode?.endpoints?.[1];
+        const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
+
+        if (tuyaCluster?.dataQuery) {
+          // Request all datapoints
+          await tuyaCluster.dataQuery();
+          this.log('[RADAR] 📡 DP refresh requested');
+        } else if (tuyaCluster?.sendData) {
+          // Alternative: send empty data request
+          await tuyaCluster.sendData({ dp: 0, datatype: 0, data: Buffer.from([]) });
+          this.log('[RADAR] 📡 DP refresh requested (alt method)');
+        }
+      } catch (e) {
+        // Silently ignore - device may not support query
+      }
+    }
+
+    /**
+     * v5.5.268: Enhanced DP logging for debugging unknown variants
+     * Logs ALL incoming DPs to help identify correct mappings
+     */
+    _logUnknownDP(dpId, value, rawData) {
+      if (!this._receivedDPs) this._receivedDPs = new Set();
+
+      const isNew = !this._receivedDPs.has(dpId);
+      this._receivedDPs.add(dpId);
+
+      const prefix = isNew ? '🆕 NEW' : '📊';
+      this.log(`[RADAR] ${prefix} DP${dpId} = ${value} (raw: ${JSON.stringify(rawData)})`);
+
+      // Log summary of all received DPs periodically
+      if (isNew) {
+        this.log(`[RADAR] 📋 All DPs received so far: [${Array.from(this._receivedDPs).sort((a, b) => a - b).join(', ')}]`);
+      }
+    }
+
+    /**
+     * v5.5.268: Update presence timestamp when motion detected
+     */
+    _updatePresenceTimestamp() {
+      this._lastPresenceUpdate = Date.now();
+    }
+
+    /**
+     * v5.5.268: Cleanup on device removal
+     */
+    onDeleted() {
+      if (this._pollingInterval) {
+        clearInterval(this._pollingInterval);
+        this._pollingInterval = null;
+      }
+      super.onDeleted?.();
     }
   }
 
-  /**
-   * v5.5.304: Request specific DP value from device
-   * Tuya gateway requests DP1 specifically to get presence
-   */
-  async _requestSpecificDP(zclNode, dpId) {
-    try {
-      const ep1 = zclNode?.endpoints?.[1];
-      const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
-      if (!tuyaCluster) return;
-
-      // Method 1: dataRequest with specific DP
-      if (tuyaCluster.dataRequest) {
-        await tuyaCluster.dataRequest({ dp: dpId });
-        this.log(`[RADAR] 📱 Requested DP${dpId} specifically`);
-        return;
-      }
-
-      // Method 2: sendData with query format
-      if (tuyaCluster.sendData) {
-        await tuyaCluster.sendData({
-          dp: dpId,
-          datatype: 1, // Bool type for presence
-          data: Buffer.from([])
-        });
-        this.log(`[RADAR] 📱 Requested DP${dpId} via sendData`);
-      }
-    } catch (e) {
-      // Silently ignore - not all devices support this
-    }
-  }
-
-  /**
-   * v5.5.268: Request DP refresh from device
-   * Sends Tuya MCU command to request all DP values
-   */
-  async _requestDPRefresh(zclNode) {
-    try {
-      const ep1 = zclNode?.endpoints?.[1];
-      const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
-
-      if (tuyaCluster?.dataQuery) {
-        // Request all datapoints
-        await tuyaCluster.dataQuery();
-        this.log('[RADAR] 📡 DP refresh requested');
-      } else if (tuyaCluster?.sendData) {
-        // Alternative: send empty data request
-        await tuyaCluster.sendData({ dp: 0, datatype: 0, data: Buffer.from([]) });
-        this.log('[RADAR] 📡 DP refresh requested (alt method)');
-      }
-    } catch (e) {
-      // Silently ignore - device may not support query
-    }
-  }
-
-  /**
-   * v5.5.268: Enhanced DP logging for debugging unknown variants
-   * Logs ALL incoming DPs to help identify correct mappings
-   */
-  _logUnknownDP(dpId, value, rawData) {
-    if (!this._receivedDPs) this._receivedDPs = new Set();
-
-    const isNew = !this._receivedDPs.has(dpId);
-    this._receivedDPs.add(dpId);
-
-    const prefix = isNew ? '🆕 NEW' : '📊';
-    this.log(`[RADAR] ${prefix} DP${dpId} = ${value} (raw: ${JSON.stringify(rawData)})`);
-
-    // Log summary of all received DPs periodically
-    if (isNew) {
-      this.log(`[RADAR] 📋 All DPs received so far: [${Array.from(this._receivedDPs).sort((a, b) => a - b).join(', ')}]`);
-    }
-  }
-
-  /**
-   * v5.5.268: Update presence timestamp when motion detected
-   */
-  _updatePresenceTimestamp() {
-    this._lastPresenceUpdate = Date.now();
-  }
-
-  /**
-   * v5.5.268: Cleanup on device removal
-   */
-  onDeleted() {
-    if (this._pollingInterval) {
-      clearInterval(this._pollingInterval);
-      this._pollingInterval = null;
-    }
-    super.onDeleted?.();
-  }
-}
-
-module.exports = PresenceSensorRadarDevice;
+  module.exports = PresenceSensorRadarDevice;

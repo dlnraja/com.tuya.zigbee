@@ -396,22 +396,26 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
 
     try {
-      // Set learning state
       this._learningState = LEARNING_STATES.LEARNING;
       this._pendingLearnOptions = options;
-      this._pendingLearnName = codeName;
 
-      // v5.5.356: Try enhanced IR control first
+      // v5.5.357: FORUM FIX - Persist button state ON
+      if (this.hasCapability('button.learn_ir')) {
+        await this.setCapabilityValue('button.learn_ir', true).catch(() => { });
+      }
+
+      // v5.5.356: Enhanced protocol setup
       const irControlCluster = zclNode.endpoints[1].clusters.zosungIRControl;
       if (irControlCluster) {
         try {
           // Set protocol if specified
           if (protocol !== 'auto' && IR_PROTOCOLS[protocol.toUpperCase()]) {
-            await irControlCluster.IRProtocolSet({
-              protocol: IR_PROTOCOLS[protocol.toUpperCase()],
-              frequency: frequency
-            });
-            this.log(`IR protocol set to: ${protocol} @ ${frequency}Hz`);
+            await this._setIRProtocol(protocol);
+          }
+
+          // Set frequency if specified
+          if (frequency && frequency !== IR_FREQUENCIES.DEFAULT) {
+            await this._setCarrierFrequency(frequency);
           }
 
           // Start learning
@@ -419,19 +423,15 @@ class IrBlasterDevice extends ZigBeeDevice {
           this.log('Advanced IR learning started via ZosungIRControl');
         } catch (clusterErr) {
           this.log('ZosungIRControl failed, using fallback:', clusterErr.message);
-          await this._enableLearnMode(duration);
-          return;
+          await zclNode.endpoints[1].clusters.onOff?.setOn();
         }
       } else {
-        // Fallback to basic learning
-        await this._enableLearnMode(duration);
-        return;
+        // Fallback to OnOff
+        await zclNode.endpoints[1].clusters.onOff?.setOn();
+        this.log('IR learn started via OnOff fallback');
       }
 
-      this.setCapabilityValue('onoff', true).catch(() => { });
-      this._triggerLearningStateChanged(LEARNING_STATES.LEARNING);
-
-      // Initialize enhanced receive handling
+      // Initialize advanced receive listener
       this._initializeEnhancedReceive();
 
       // Set timeout
@@ -439,18 +439,20 @@ class IrBlasterDevice extends ZigBeeDevice {
         this.homey.clearTimeout(this._learnTimeout);
       }
 
+      // v5.5.357: FORUM FIX - Extend timeout to 60s (was 30s)
+      const extendedDuration = Math.max(duration, 60);
       this._learnTimeout = this.homey.setTimeout(async () => {
         try {
           await this._disableLearnMode();
           this._learningState = LEARNING_STATES.TIMEOUT;
           this._triggerLearningStateChanged(LEARNING_STATES.TIMEOUT);
-          this.log(`Advanced learn mode timeout after ${duration}s`);
+          this.log(`Advanced learn mode timeout after ${extendedDuration}s`);
         } catch (e) {
           this.log('Learn timeout error:', e.message);
         }
-      }, duration * 1000);
+      }, extendedDuration * 1000);
 
-      // Trigger enhanced flow card
+      // Trigger flow card
       this.driver.learningStartedTrigger?.trigger(this, {
         protocol: protocol,
         frequency: frequency,
@@ -542,6 +544,11 @@ class IrBlasterDevice extends ZigBeeDevice {
       if (this._learnTimeout) {
         this.homey.clearTimeout(this._learnTimeout);
         this._learnTimeout = null;
+      }
+
+      // v5.5.357: FORUM FIX - Reset button state OFF
+      if (this.hasCapability('button.learn_ir')) {
+        await this.setCapabilityValue('button.learn_ir', false).catch(() => { });
       }
 
       // v5.5.311: Use proper ZosungIRControl cluster command
