@@ -1,98 +1,41 @@
 {
   "triggers": [
     {
-      "id": "ir_code_learned",
+      "id": "ir_learning_started",
       "title": {
-        "en": "IR Code Learned",
-        "fr": "Code IR Appris",
-        "nl": "IR Code Geleerd",
-        "de": "IR-Code gelernt"
+        "en": "IR Learning Started",
+        "nl": "IR Leren Gestart",
+        "de": "IR-Lernen Gestartet"
+      },
+      "titleFormatted": {
+        "en": "IR learning started with [[protocol]] protocol at [[frequency]]Hz for [[duration]]s",
+        "nl": "IR leren gestart met [[protocol]] protocol op [[frequency]]Hz voor [[duration]]s",
+        "de": "IR-Lernen gestartet mit [[protocol]] Protokoll bei [[frequency]]Hz für [[duration]]s"
       },
       "tokens": [
         {
-          "name": "ir_code",
+          "name": "protocol",
           "type": "string",
           "title": {
-            "en": "IR Code",
-            "fr": "Code IR",
-            "nl": "IR Code",
-            "de": "IR-Code"
+            "en": "Protocol",
+            "nl": "Protocol",
+            "de": "Protokoll"
           }
         },
         {
-          "name": "code_name",
-          "type": "string",
+          "name": "frequency",
+          "type": "number",
           "title": {
-            "en": "Code Name",
-            "fr": "Nom du Code",
-            "nl": "Code Naam",
-            "de": "Code-Name"
+            "en": "Frequency (Hz)",
+            "nl": "Frequentie (Hz)",
+            "de": "Frequenz (Hz)"
           }
-        }
-      ]
-    }
-  ],
-  "actions": [
-    {
-      "id": "send_ir_code",
-      "title": {
-        "en": "Send IR Code",
-        "fr": "Envoyer Code IR",
-        "nl": "IR Code Versturen",
-        "de": "IR-Code senden"
-      },
-      "titleFormatted": {
-        "en": "Send IR code [[ir_code]]",
-        "fr": "Envoyer le code IR [[ir_code]]",
-        "nl": "IR code [[ir_code]] versturen",
-        "de": "IR-Code [[ir_code]] senden"
-      },
-      "args": [
-        {
-          "name": "ir_code",
-          "type": "text",
-          "placeholder": {
-            "en": "Base64 IR Code",
-            "fr": "Code IR Base64",
-            "nl": "Base64 IR Code",
-            "de": "Base64 IR-Code"
-          },
-          "title": {
-            "en": "IR Code",
-            "fr": "Code IR",
-            "nl": "IR Code",
-            "de": "IR-Code"
-          }
-        }
-      ]
-    },
-    {
-      "id": "start_ir_learning",
-      "title": {
-        "en": "Start IR Learning Mode",
-        "fr": "Démarrer Mode Apprentissage IR",
-        "nl": "IR Leermodus Starten",
-        "de": "IR-Lernmodus starten"
-      },
-      "titleFormatted": {
-        "en": "Start IR learning mode for [[duration]] seconds",
-        "fr": "Démarrer le mode apprentissage IR pendant [[duration]] secondes",
-        "nl": "IR leermodus starten voor [[duration]] seconden",
-        "de": "IR-Lernmodus für [[duration]] Sekunden starten"
-      },
-      "args": [
+        },
         {
           "name": "duration",
           "type": "number",
-          "min": 5,
-          "max": 60,
-          "step": 5,
-          "placeholder": {
-            "en": "30"
-          },
           "title": {
             "en": "Duration (seconds)",
-            "fr": "Durée (secondes)",
             "nl": "Duur (seconden)",
             "de": "Dauer (Sekunden)"
           }
@@ -100,13 +43,663 @@
       ]
     },
     {
-      "id": "stop_ir_learning",
+      "id": "ir_learning_state_changed",
       "title": {
-        "en": "Stop IR Learning Mode",
-        "fr": "Arrêter Mode Apprentissage IR",
-        "nl": "IR Leermodus Stoppen",
-        "de": "IR-Lernmodus stoppen"
+        "en": "IR Learning State Changed",
+        "nl": "IR Leer Status Gewijzigd",
+        "de": "IR-Lern Status Geändert"
+      },
+      "titleFormatted": {
+        "en": "IR learning state changed to [[state]]",
+        "nl": "IR leer status gewijzigd naar [[state]]",
+        "de": "IR-Lern Status geändert zu [[state]]"
+      },
+      "tokens": [
+        {
+          "name": "state",
+          "type": "string",
+          "title": {
+            "en": "Learning State",
+            "nl": "Leer Status",
+            "de": "Lern Status"
+          }
+        },
+        {
+          "name": "state_code",
+          "type": "number",
+          "title": {
+            "en": "State Code",
+            "nl": "Status Code",
+            "de": "Status Code"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ir_code_learned",
+      "title": {
+        "en": "IR Code Learned",
+        "nl": "IR Code Geleerd",
+        "de": "IR-Code Gelernt"
+      },
+      "titleFormatted": {
+        "en": "New IR code learned: [[ir_code]]",
+        "nl": "Nieuwe IR code geleerd: [[ir_code]]",
+        "de": "Neuer IR-Code gelernt: [[ir_code]]"
+      },
+      "tokens": [
+        {
+          "name": "ir_code",
+          "type": "string",
+          "title": {
+            "en": "IR Code",
+            "nl": "IR Code",
+            "de": "IR-Code"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ir_code_analyzed",
+      "title": {
+        "en": "IR Code Analyzed",
+        "nl": "IR Code Geanalyseerd",
+        "de": "IR-Code Analysiert"
+      },
+      "titleFormatted": {
+        "en": "IR code [[code_name]] analyzed: [[protocol]] protocol at [[frequency]]Hz ([[length]] bytes)",
+        "nl": "IR code [[code_name]] geanalyseerd: [[protocol]] protocol op [[frequency]]Hz ([[length]] bytes)",
+        "de": "IR-Code [[code_name]] analysiert: [[protocol]] Protokoll bei [[frequency]]Hz ([[length]] Bytes)"
+      },
+      "tokens": [
+        {
+          "name": "code_name",
+          "type": "string",
+          "title": {
+            "en": "Code Name",
+            "nl": "Code Naam",
+            "de": "Code Name"
+          }
+        },
+        {
+          "name": "protocol",
+          "type": "string",
+          "title": {
+            "en": "Detected Protocol",
+            "nl": "Gedetecteerd Protocol",
+            "de": "Erkanntes Protokoll"
+          }
+        },
+        {
+          "name": "frequency",
+          "type": "number",
+          "title": {
+            "en": "Carrier Frequency",
+            "nl": "Draaggolf Frequentie",
+            "de": "Trägerfrequenz"
+          }
+        },
+        {
+          "name": "length",
+          "type": "number",
+          "title": {
+            "en": "Code Length",
+            "nl": "Code Lengte",
+            "de": "Code Länge"
+          }
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "ir_learning_active",
+      "title": {
+        "en": "IR learning is active",
+        "nl": "IR leren is actief",
+        "de": "IR-Lernen ist aktiv"
       }
+    },
+    {
+      "id": "ir_code_exists",
+      "title": {
+        "en": "IR code exists",
+        "nl": "IR code bestaat",
+        "de": "IR-Code existiert"
+      },
+      "args": [
+        {
+          "name": "code_name",
+          "type": "text",
+          "title": {
+            "en": "Code Name",
+            "nl": "Code Naam",
+            "de": "Code Name"
+          },
+          "placeholder": {
+            "en": "power_on",
+            "nl": "power_on",
+            "de": "power_on"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ir_protocol_detected",
+      "title": {
+        "en": "IR protocol detected",
+        "nl": "IR protocol gedetecteerd",
+        "de": "IR-Protokoll erkannt"
+      },
+      "args": [
+        {
+          "name": "code_name",
+          "type": "text",
+          "title": {
+            "en": "Code Name",
+            "nl": "Code Naam",
+            "de": "Code Name"
+          }
+        },
+        {
+          "name": "protocol",
+          "type": "dropdown",
+          "title": {
+            "en": "Expected Protocol",
+            "nl": "Verwacht Protocol",
+            "de": "Erwartetes Protokoll"
+          },
+          "values": [
+            {
+              "id": "NEC",
+              "label": {
+                "en": "NEC",
+                "nl": "NEC",
+                "de": "NEC"
+              }
+            },
+            {
+              "id": "RC5",
+              "label": {
+                "en": "RC5",
+                "nl": "RC5",
+                "de": "RC5"
+              }
+            },
+            {
+              "id": "RC6",
+              "label": {
+                "en": "RC6",
+                "nl": "RC6",
+                "de": "RC6"
+              }
+            },
+            {
+              "id": "SONY",
+              "label": {
+                "en": "Sony",
+                "nl": "Sony",
+                "de": "Sony"
+              }
+            },
+            {
+              "id": "SAMSUNG",
+              "label": {
+                "en": "Samsung",
+                "nl": "Samsung",
+                "de": "Samsung"
+              }
+            },
+            {
+              "id": "PRONTOHEX",
+              "label": {
+                "en": "ProntoHex",
+                "nl": "ProntoHex",
+                "de": "ProntoHex"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "ir_learn_code",
+      "title": {
+        "en": "Learn IR Code",
+        "nl": "Leer IR Code",
+        "de": "IR-Code Lernen"
+      },
+      "titleFormatted": {
+        "en": "Learn IR code [[code_name]] with [[protocol]] protocol for [[duration]]s (category: [[category]])",
+        "nl": "Leer IR code [[code_name]] met [[protocol]] protocol voor [[duration]]s (categorie: [[category]])",
+        "de": "IR-Code [[code_name]] mit [[protocol]] Protokoll für [[duration]]s lernen (Kategorie: [[category]])"
+      },
+      "args": [
+        {
+          "name": "code_name",
+          "type": "text",
+          "title": {
+            "en": "Code Name",
+            "nl": "Code Naam",
+            "de": "Code Name"
+          },
+          "placeholder": {
+            "en": "power_on",
+            "nl": "power_on",
+            "de": "power_on"
+          }
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "title": {
+            "en": "Duration (seconds)",
+            "nl": "Duur (seconden)",
+            "de": "Dauer (Sekunden)"
+          },
+          "min": 5,
+          "max": 120,
+          "step": 5,
+          "placeholder": {
+            "en": "30",
+            "nl": "30",
+            "de": "30"
+          }
+        },
+        {
+          "name": "protocol",
+          "type": "dropdown",
+          "title": {
+            "en": "IR Protocol",
+            "nl": "IR Protocol",
+            "de": "IR-Protokoll"
+          },
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-detect",
+                "nl": "Auto-detectie",
+                "de": "Auto-Erkennung"
+              }
+            },
+            {
+              "id": "NEC",
+              "label": {
+                "en": "NEC",
+                "nl": "NEC",
+                "de": "NEC"
+              }
+            },
+            {
+              "id": "RC5",
+              "label": {
+                "en": "RC5",
+                "nl": "RC5",
+                "de": "RC5"
+              }
+            },
+            {
+              "id": "RC6",
+              "label": {
+                "en": "RC6",
+                "nl": "RC6",
+                "de": "RC6"
+              }
+            },
+            {
+              "id": "SONY",
+              "label": {
+                "en": "Sony",
+                "nl": "Sony",
+                "de": "Sony"
+              }
+            },
+            {
+              "id": "SAMSUNG",
+              "label": {
+                "en": "Samsung",
+                "nl": "Samsung",
+                "de": "Samsung"
+              }
+            },
+            {
+              "id": "PRONTOHEX",
+              "label": {
+                "en": "ProntoHex",
+                "nl": "ProntoHex",
+                "de": "ProntoHex"
+              }
+            }
+          ]
+        },
+        {
+          "name": "frequency",
+          "type": "number",
+          "title": {
+            "en": "Carrier Frequency (Hz)",
+            "nl": "Draaggolf Frequentie (Hz)",
+            "de": "Trägerfrequenz (Hz)"
+          },
+          "min": 30000,
+          "max": 45000,
+          "step": 1000,
+          "placeholder": {
+            "en": "38000",
+            "nl": "38000",
+            "de": "38000"
+          }
+        },
+        {
+          "name": "category",
+          "type": "text",
+          "title": {
+            "en": "Category",
+            "nl": "Categorie",
+            "de": "Kategorie"
+          },
+          "placeholder": {
+            "en": "TV Remote",
+            "nl": "TV Afstandsbediening",
+            "de": "TV-Fernbedienung"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ir_send_code",
+      "title": {
+        "en": "Send IR Code",
+        "nl": "Verstuur IR Code",
+        "de": "IR-Code Senden"
+      },
+      "titleFormatted": {
+        "en": "Send IR code [[ir_code]] with [[protocol]] protocol ([[repeat]]x repeats)",
+        "nl": "Verstuur IR code [[ir_code]] met [[protocol]] protocol ([[repeat]]x herhalingen)",
+        "de": "IR-Code [[ir_code]] mit [[protocol]] Protokoll senden ([[repeat]]x Wiederholungen)"
+      },
+      "args": [
+        {
+          "name": "ir_code",
+          "type": "text",
+          "title": {
+            "en": "IR Code or Name",
+            "nl": "IR Code of Naam",
+            "de": "IR-Code oder Name"
+          },
+          "placeholder": {
+            "en": "power_on or base64 code",
+            "nl": "power_on of base64 code",
+            "de": "power_on oder base64 Code"
+          }
+        },
+        {
+          "name": "protocol",
+          "type": "dropdown",
+          "title": {
+            "en": "Force Protocol (optional)",
+            "nl": "Forceer Protocol (optioneel)",
+            "de": "Protokoll Erzwingen (optional)"
+          },
+          "values": [
+            {
+              "id": "",
+              "label": {
+                "en": "Auto (recommended)",
+                "nl": "Auto (aanbevolen)",
+                "de": "Auto (empfohlen)"
+              }
+            },
+            {
+              "id": "NEC",
+              "label": {
+                "en": "NEC",
+                "nl": "NEC",
+                "de": "NEC"
+              }
+            },
+            {
+              "id": "RC5",
+              "label": {
+                "en": "RC5",
+                "nl": "RC5",
+                "de": "RC5"
+              }
+            },
+            {
+              "id": "RC6",
+              "label": {
+                "en": "RC6",
+                "nl": "RC6",
+                "de": "RC6"
+              }
+            },
+            {
+              "id": "SONY",
+              "label": {
+                "en": "Sony",
+                "nl": "Sony",
+                "de": "Sony"
+              }
+            },
+            {
+              "id": "SAMSUNG",
+              "label": {
+                "en": "Samsung",
+                "nl": "Samsung",
+                "de": "Samsung"
+              }
+            },
+            {
+              "id": "PRONTOHEX",
+              "label": {
+                "en": "ProntoHex",
+                "nl": "ProntoHex",
+                "de": "ProntoHex"
+              }
+            }
+          ]
+        },
+        {
+          "name": "frequency",
+          "type": "number",
+          "title": {
+            "en": "Frequency Override (Hz)",
+            "nl": "Frequentie Override (Hz)",
+            "de": "Frequenz Override (Hz)"
+          },
+          "min": 30000,
+          "max": 45000,
+          "step": 1000,
+          "placeholder": {
+            "en": "Leave empty for auto",
+            "nl": "Leeg laten voor auto",
+            "de": "Leer lassen für Auto"
+          }
+        },
+        {
+          "name": "repeat",
+          "type": "number",
+          "title": {
+            "en": "Repeat Count",
+            "nl": "Aantal Herhalingen",
+            "de": "Wiederholungsanzahl"
+          },
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "placeholder": {
+            "en": "1",
+            "nl": "1",
+            "de": "1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ir_send_by_category",
+      "title": {
+        "en": "Send IR Code by Category",
+        "nl": "Verstuur IR Code per Categorie",
+        "de": "IR-Code nach Kategorie Senden"
+      },
+      "titleFormatted": {
+        "en": "Send IR code [[code_name]] from category [[category]]",
+        "nl": "Verstuur IR code [[code_name]] uit categorie [[category]]",
+        "de": "IR-Code [[code_name]] aus Kategorie [[category]] senden"
+      },
+      "args": [
+        {
+          "name": "category",
+          "type": "text",
+          "title": {
+            "en": "Category",
+            "nl": "Categorie",
+            "de": "Kategorie"
+          },
+          "placeholder": {
+            "en": "TV Remote",
+            "nl": "TV Afstandsbediening",
+            "de": "TV-Fernbedienung"
+          }
+        },
+        {
+          "name": "code_name",
+          "type": "text",
+          "title": {
+            "en": "Code Name",
+            "nl": "Code Naam",
+            "de": "Code Name"
+          },
+          "placeholder": {
+            "en": "power_on",
+            "nl": "power_on",
+            "de": "power_on"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ir_set_protocol",
+      "title": {
+        "en": "Set IR Protocol",
+        "nl": "Stel IR Protocol In",
+        "de": "IR-Protokoll Einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set IR protocol to [[protocol]] at [[frequency]]Hz",
+        "nl": "Stel IR protocol in op [[protocol]] op [[frequency]]Hz",
+        "de": "IR-Protokoll auf [[protocol]] bei [[frequency]]Hz einstellen"
+      },
+      "args": [
+        {
+          "name": "protocol",
+          "type": "dropdown",
+          "title": {
+            "en": "IR Protocol",
+            "nl": "IR Protocol",
+            "de": "IR-Protokoll"
+          },
+          "values": [
+            {
+              "id": "NEC",
+              "label": {
+                "en": "NEC",
+                "nl": "NEC",
+                "de": "NEC"
+              }
+            },
+            {
+              "id": "RC5",
+              "label": {
+                "en": "RC5",
+                "nl": "RC5",
+                "de": "RC5"
+              }
+            },
+            {
+              "id": "RC6",
+              "label": {
+                "en": "RC6",
+                "nl": "RC6",
+                "de": "RC6"
+              }
+            },
+            {
+              "id": "SONY",
+              "label": {
+                "en": "Sony",
+                "nl": "Sony",
+                "de": "Sony"
+              }
+            },
+            {
+              "id": "SAMSUNG",
+              "label": {
+                "en": "Samsung",
+                "nl": "Samsung",
+                "de": "Samsung"
+              }
+            },
+            {
+              "id": "PRONTOHEX",
+              "label": {
+                "en": "ProntoHex",
+                "nl": "ProntoHex",
+                "de": "ProntoHex"
+              }
+            }
+          ]
+        },
+        {
+          "name": "frequency",
+          "type": "number",
+          "title": {
+            "en": "Carrier Frequency (Hz)",
+            "nl": "Draaggolf Frequentie (Hz)",
+            "de": "Trägerfrequenz (Hz)"
+          },
+          "min": 30000,
+          "max": 45000,
+          "step": 1000,
+          "placeholder": {
+            "en": "38000",
+            "nl": "38000",
+            "de": "38000"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ir_analyze_code",
+      "title": {
+        "en": "Analyze IR Code",
+        "nl": "Analyseer IR Code",
+        "de": "IR-Code Analysieren"
+      },
+      "titleFormatted": {
+        "en": "Analyze IR code [[ir_code]] for protocol detection",
+        "nl": "Analyseer IR code [[ir_code]] voor protocol detectie",
+        "de": "IR-Code [[ir_code]] für Protokoll-Erkennung analysieren"
+      },
+      "args": [
+        {
+          "name": "ir_code",
+          "type": "text",
+          "title": {
+            "en": "IR Code or Name",
+            "nl": "IR Code of Naam",
+            "de": "IR-Code oder Name"
+          },
+          "placeholder": {
+            "en": "power_on or base64 code",
+            "nl": "power_on of base64 code",
+            "de": "power_on oder base64 Code"
+          }
+        }
+      ]
     }
   ]
 }

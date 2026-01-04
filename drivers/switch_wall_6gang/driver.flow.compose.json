@@ -1,55 +1,278 @@
 {
   "triggers": [
     {
-      "id": "switch_wall_6gang_turned_on",
+      "id": "switch_wall_6gang_gang1_turned_on",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé"
+        "en": "Gang 1 turned on",
+        "fr": "Gang 1 allumé",
+        "nl": "Gang 1 aangezet",
+        "de": "Gang 1 eingeschaltet"
       }
     },
     {
-      "id": "switch_wall_6gang_turned_off",
+      "id": "switch_wall_6gang_gang1_turned_off",
       "title": {
-        "en": "Turned off",
-        "fr": "Éteint"
+        "en": "Gang 1 turned off",
+        "fr": "Gang 1 éteint",
+        "nl": "Gang 1 uitgezet",
+        "de": "Gang 1 ausgeschaltet"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_gang2_turned_on",
+      "title": {
+        "en": "Gang 2 turned on",
+        "fr": "Gang 2 allumé",
+        "nl": "Gang 2 aangezet",
+        "de": "Gang 2 eingeschaltet"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_gang2_turned_off",
+      "title": {
+        "en": "Gang 2 turned off",
+        "fr": "Gang 2 éteint",
+        "nl": "Gang 2 uitgezet",
+        "de": "Gang 2 ausgeschaltet"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_gang3_turned_on",
+      "title": {
+        "en": "Gang 3 turned on",
+        "fr": "Gang 3 allumé",
+        "nl": "Gang 3 aangezet",
+        "de": "Gang 3 eingeschaltet"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_gang3_turned_off",
+      "title": {
+        "en": "Gang 3 turned off",
+        "fr": "Gang 3 éteint",
+        "nl": "Gang 3 uitgezet",
+        "de": "Gang 3 ausgeschaltet"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_gang4_turned_on",
+      "title": {
+        "en": "Gang 4 turned on",
+        "fr": "Gang 4 allumé",
+        "nl": "Gang 4 aangezet",
+        "de": "Gang 4 eingeschaltet"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_gang4_turned_off",
+      "title": {
+        "en": "Gang 4 turned off",
+        "fr": "Gang 4 éteint",
+        "nl": "Gang 4 uitgezet",
+        "de": "Gang 4 ausgeschaltet"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_gang5_turned_on",
+      "title": {
+        "en": "Gang 5 turned on",
+        "fr": "Gang 5 allumé",
+        "nl": "Gang 5 aangezet",
+        "de": "Gang 5 eingeschaltet"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_gang5_turned_off",
+      "title": {
+        "en": "Gang 5 turned off",
+        "fr": "Gang 5 éteint",
+        "nl": "Gang 5 uitgezet",
+        "de": "Gang 5 ausgeschaltet"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_gang6_turned_on",
+      "title": {
+        "en": "Gang 6 turned on",
+        "fr": "Gang 6 allumé",
+        "nl": "Gang 6 aangezet",
+        "de": "Gang 6 eingeschaltet"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_gang6_turned_off",
+      "title": {
+        "en": "Gang 6 turned off",
+        "fr": "Gang 6 éteint",
+        "nl": "Gang 6 uitgezet",
+        "de": "Gang 6 ausgeschaltet"
       }
     }
   ],
   "conditions": [
     {
-      "id": "switch_wall_6gang_is_on",
+      "id": "switch_wall_6gang_gang1_is_on",
       "title": {
-        "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
-      },
-      "titleFormatted": {
-        "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "en": "Gang 1 is !{{on|off}}",
+        "fr": "Gang 1 est !{{allumé|éteint}}",
+        "nl": "Gang 1 is !{{aan|uit}}",
+        "de": "Gang 1 ist !{{ein|aus}}"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_gang2_is_on",
+      "title": {
+        "en": "Gang 2 is !{{on|off}}",
+        "fr": "Gang 2 est !{{allumé|éteint}}",
+        "nl": "Gang 2 is !{{aan|uit}}",
+        "de": "Gang 2 ist !{{ein|aus}}"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_gang3_is_on",
+      "title": {
+        "en": "Gang 3 is !{{on|off}}",
+        "fr": "Gang 3 est !{{allumé|éteint}}",
+        "nl": "Gang 3 is !{{aan|uit}}",
+        "de": "Gang 3 ist !{{ein|aus}}"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_gang4_is_on",
+      "title": {
+        "en": "Gang 4 is !{{on|off}}",
+        "fr": "Gang 4 est !{{allumé|éteint}}",
+        "nl": "Gang 4 is !{{aan|uit}}",
+        "de": "Gang 4 ist !{{ein|aus}}"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_gang5_is_on",
+      "title": {
+        "en": "Gang 5 is !{{on|off}}",
+        "fr": "Gang 5 est !{{allumé|éteint}}",
+        "nl": "Gang 5 is !{{aan|uit}}",
+        "de": "Gang 5 ist !{{ein|aus}}"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_gang6_is_on",
+      "title": {
+        "en": "Gang 6 is !{{on|off}}",
+        "fr": "Gang 6 est !{{allumé|éteint}}",
+        "nl": "Gang 6 is !{{aan|uit}}",
+        "de": "Gang 6 ist !{{ein|aus}}"
       }
     }
   ],
   "actions": [
     {
-      "id": "switch_wall_6gang_turn_on",
+      "id": "switch_wall_6gang_turn_on_gang1",
       "title": {
-        "en": "Turn on",
-        "fr": "Allumer"
+        "en": "Turn on gang 1",
+        "fr": "Allumer gang 1",
+        "nl": "Gang 1 aanzetten",
+        "de": "Gang 1 einschalten"
       }
     },
     {
-      "id": "switch_wall_6gang_turn_off",
+      "id": "switch_wall_6gang_turn_off_gang1",
       "title": {
-        "en": "Turn off",
-        "fr": "Éteindre"
+        "en": "Turn off gang 1",
+        "fr": "Éteindre gang 1",
+        "nl": "Gang 1 uitzetten",
+        "de": "Gang 1 ausschalten"
       }
     },
     {
-      "id": "switch_wall_6gang_toggle",
+      "id": "switch_wall_6gang_turn_on_gang2",
       "title": {
-        "en": "Toggle on or off",
-        "fr": "Basculer"
+        "en": "Turn on gang 2",
+        "fr": "Allumer gang 2",
+        "nl": "Gang 2 aanzetten",
+        "de": "Gang 2 einschalten"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_turn_off_gang2",
+      "title": {
+        "en": "Turn off gang 2",
+        "fr": "Éteindre gang 2",
+        "nl": "Gang 2 uitzetten",
+        "de": "Gang 2 ausschalten"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_turn_on_gang3",
+      "title": {
+        "en": "Turn on gang 3",
+        "fr": "Allumer gang 3",
+        "nl": "Gang 3 aanzetten",
+        "de": "Gang 3 einschalten"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_turn_off_gang3",
+      "title": {
+        "en": "Turn off gang 3",
+        "fr": "Éteindre gang 3",
+        "nl": "Gang 3 uitzetten",
+        "de": "Gang 3 ausschalten"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_turn_on_gang4",
+      "title": {
+        "en": "Turn on gang 4",
+        "fr": "Allumer gang 4",
+        "nl": "Gang 4 aanzetten",
+        "de": "Gang 4 einschalten"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_turn_off_gang4",
+      "title": {
+        "en": "Turn off gang 4",
+        "fr": "Éteindre gang 4",
+        "nl": "Gang 4 uitzetten",
+        "de": "Gang 4 ausschalten"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_turn_on_gang5",
+      "title": {
+        "en": "Turn on gang 5",
+        "fr": "Allumer gang 5",
+        "nl": "Gang 5 aanzetten",
+        "de": "Gang 5 einschalten"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_turn_off_gang5",
+      "title": {
+        "en": "Turn off gang 5",
+        "fr": "Éteindre gang 5",
+        "nl": "Gang 5 uitzetten",
+        "de": "Gang 5 ausschalten"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_turn_on_gang6",
+      "title": {
+        "en": "Turn on gang 6",
+        "fr": "Allumer gang 6",
+        "nl": "Gang 6 aanzetten",
+        "de": "Gang 6 einschalten"
+      }
+    },
+    {
+      "id": "switch_wall_6gang_turn_off_gang6",
+      "title": {
+        "en": "Turn off gang 6",
+        "fr": "Éteindre gang 6",
+        "nl": "Gang 6 uitzetten",
+        "de": "Gang 6 ausschalten"
       }
     }
   ]
 }
-

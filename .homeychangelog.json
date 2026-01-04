@@ -1,4 +1,20 @@
 {
+  "5.5.355": {
+    "en": "🎯 FORUM FIX - 4-Gang Flows & Smart Lux: FIXED 4-gang switches flow compatibility with complete trigger/condition/action cards (8 triggers, 4 conditions, 4 actions). NEW Smart Lux Reporting - motion sensors now report luminance independently every 5min + intelligent change detection (10% threshold). Proper driver-level flow cards for persistent GitHub storage. No more lux-only-on-motion limitation!",
+    "fr": "🎯 CORRECTION FORUM - Flows 4-Gang & Lux Intelligent: CORRIGÉ compatibilité flows interrupteurs 4 gangs avec cartes complètes trigger/condition/action (8 triggers, 4 conditions, 4 actions). NOUVEAU Reporting Lux Intelligent - capteurs mouvement rapportent luminance indépendamment toutes les 5min + détection changement intelligent (seuil 10%). Cartes flow niveau driver pour stockage GitHub persistant.",
+    "nl": "🎯 FORUM FIX - 4-Gang Flows & Slimme Lux: GEREPAREERD 4-gang schakelaars flow compatibiliteit met complete trigger/conditie/actie kaarten (8 triggers, 4 condities, 4 acties). NIEUW Slim Lux Rapportage - bewegingssensoren rapporteren lichtsterkte onafhankelijk elke 5min + intelligente veranderingsdetectie (10% drempel).",
+    "de": "🎯 FORUM FIX - 4-Gang Flows & Smart Lux: BEHOBEN 4-Gang Schalter Flow Kompatibilität mit vollständigen Trigger/Bedingung/Aktion Karten (8 Triggers, 4 Bedingungen, 4 Aktionen). NEU Smart Lux Berichterstattung - Bewegungssensoren berichten Helligkeit unabhängig alle 5min + intelligente Änderungserkennung (10% Schwelle)."
+  },
+  "5.5.354": {
+    "en": "🎛️ MAJOR UPDATE - IR Blaster & Zigbee Equivalents: Complete IR Blaster implementation (ZS05/ZS06) with learn/send flow cards, code storage, and enhanced protocol support. NEW: Water Tank Monitor (ME201WZ) with ultrasonic level sensing, Smart Heater Controller with thermostat functions, Air Quality 6-in-1 with PM10/formaldehyde support. All WiFi → Zigbee equivalent modules now supported!",
+    "fr": "🎛️ MISE À JOUR MAJEURE - IR Blaster & Équivalents Zigbee: Implémentation complète IR Blaster (ZS05/ZS06) avec cartes flux apprentissage/envoi, stockage codes, protocole amélioré. NOUVEAU: Moniteur Réservoir d'Eau (ME201WZ) avec détection ultrasonique, Contrôleur Radiateur Intelligent avec fonctions thermostat, Qualité Air 6-en-1 avec PM10/formaldéhyde.",
+    "nl": "🎛️ GROTE UPDATE - IR Blaster & Zigbee Equivalenten: Volledige IR Blaster implementatie (ZS05/ZS06) met leren/verzenden flow kaarten, code opslag, verbeterd protocol. NIEUW: Watertank Monitor (ME201WZ) met ultrasone niveaumeting, Slimme Verwarmingscontroller met thermostaat functies, Luchtkwaliteit 6-in-1 met PM10/formaldehyde.",
+    "de": "🎛️ GROßES UPDATE - IR Blaster & Zigbee Äquivalente: Vollständige IR Blaster Implementierung (ZS05/ZS06) mit Lernen/Senden Flow-Karten, Code-Speicherung, verbessertes Protokoll. NEU: Wassertank Monitor (ME201WZ) mit Ultraschall-Füllstandsmessung, Intelligente Heizungssteuerung mit Thermostat-Funktionen, Luftqualität 6-in-1 mit PM10/Formaldehyd."
+  },
+  "5.5.353": {
+    "en": "ZG-204ZM battery spam fix: throttle reports (5% change or 6h interval). Enhanced Homey SDK3 compliance: manufacturerName can coexist in multiple drivers if productId differ.",
+    "fr": "Fix ZG-204ZM spam batterie: limitation rapports (changement 5% ou intervalle 6h). Conformité Homey SDK3 améliorée: manufacturerName peut coexister dans plusieurs drivers si productId différents."
+  },
   "5.5.352": {
     "en": "🔧 CURTAIN FIX: Improved timeout handling for curtain motors. Timeouts no longer throw errors - device often still responds despite Zigbee timeout.",
     "nl": "🔧 FIX: Verbeterde timeout afhandeling voor gordijnmotoren.",
