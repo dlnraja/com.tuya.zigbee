@@ -281,6 +281,19 @@ class MotionSensorDevice extends HybridSensorBase {
     this._useMotionInference = false; // Enable after detecting PIR issues
     this._pirFailCount = 0;
 
+    // v5.5.355: SMART LUX REPORTING - Independent luminance updates
+    this._luxSmartReporting = {
+      lastLuxValue: null,
+      lastLuxTime: 0,
+      luxReportInterval: 5 * 60 * 1000, // 5 minutes base interval
+      luxChangeThreshold: 10, // 10% change threshold
+      forceReportInterval: 30 * 60 * 1000, // Force report every 30 minutes
+      enabled: this.getSetting('smart_lux_reporting') !== false
+    };
+
+    // Start smart lux reporting timer
+    this._startSmartLuxReporting();
+
     // v5.5.18: Explicit IAS Zone setup for HOBEIAN and other non-Tuya motion sensors
     await this._setupMotionIASZone(zclNode);
 
@@ -294,10 +307,11 @@ class MotionSensorDevice extends HybridSensorBase {
    * v5.5.335: Manufacturer IDs that DON'T have temp/humidity (PIR only + luminance)
    * Per forum feedback from 4x4_Pete: _TZE200_3towulqd shows incorrect temp/humidity
    * These devices should only show: motion, luminance, battery
+   * v5.5.353: Added battery report throttling for ZG-204ZM to prevent spam
    */
   static get PIR_ONLY_MANUFACTURERS() {
     return [
-      '_TZE200_3towulqd',  // ZG-204ZM PIR only (4x4_Pete forum #810)
+      '_TZE200_3towulqd',  // ZG-204ZM PIR only (4x4_Pete forum #830)
       '_tze200_3towulqd',
     ];
   }
@@ -762,6 +776,159 @@ class MotionSensorDevice extends HybridSensorBase {
     }
 
     this._lastPirValue = pirValue;
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // v5.5.355: SMART LUX REPORTING SYSTEM
+  // Independent luminance reporting not tied to motion events
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  /**
+   * Start smart lux reporting timer for frequent luminance updates
+   */
+  _startSmartLuxReporting() {
+    if (!this._luxSmartReporting?.enabled) return;
+
+    // Clear any existing timer
+    if (this._luxReportTimer) {
+      clearInterval(this._luxReportTimer);
+    }
+
+    this._luxReportTimer = setInterval(() => {
+      this._requestLuxUpdate();
+    }, this._luxSmartReporting.luxReportInterval);
+
+    this.log('[LUX-SMART] 🌟 Smart luminance reporting started (5min intervals)');
+  }
+
+  /**
+   * Request luminance update from device
+   */
+  async _requestLuxUpdate() {
+    if (!this._luxSmartReporting?.enabled) return;
+
+    try {
+      // Try Tuya DP first (more reliable for sleepy devices)
+      const luxDPs = [3, 9, 12, 102, 106];
+      let luxValue = null;
+
+      // Check if we have recent lux data from DPs
+      for (const dp of luxDPs) {
+        if (this._dpCache && this._dpCache[dp]) {
+          luxValue = this._dpCache[dp].value;
+          break;
+        }
+      }
+
+      // If no DP data, try ZCL (only if device appears awake)
+      if (luxValue === null && this._isDeviceAwake) {
+        try {
+          const illuminanceCluster = this.zclNode?.endpoints?.[1]?.clusters?.illuminanceMeasurement;
+          if (illuminanceCluster) {
+            const data = await illuminanceCluster.readAttributes(['measuredValue']);
+            if (data.measuredValue !== undefined) {
+              luxValue = Math.round(Math.pow(10, (data.measuredValue - 1) / 10000));
+            }
+          }
+        } catch (err) {
+          this.log('[LUX-SMART] ZCL read failed (device sleeping?):', err.message);
+        }
+      }
+
+      // Process lux value if obtained
+      if (luxValue !== null) {
+        this._processSmartLuxUpdate(luxValue);
+      }
+
+    } catch (err) {
+      this.log('[LUX-SMART] ⚠️ Error requesting lux update:', err.message);
+    }
+  }
+
+  /**
+   * Process smart lux update with intelligent reporting logic
+   */
+  _processSmartLuxUpdate(luxValue) {
+    const now = Date.now();
+    const config = this._luxSmartReporting;
+
+    // Validate lux value
+    if (luxValue < 0 || luxValue > 100000) {
+      this.log(`[LUX-SMART] ⚠️ Invalid lux value: ${luxValue}`);
+      return;
+    }
+
+    const lastLux = config.lastLuxValue;
+    const timeSinceLastReport = now - config.lastLuxTime;
+
+    let shouldReport = false;
+    let reason = '';
+
+    // First reading ever
+    if (lastLux === null) {
+      shouldReport = true;
+      reason = 'initial';
+    }
+    // Force report after long interval
+    else if (timeSinceLastReport >= config.forceReportInterval) {
+      shouldReport = true;
+      reason = 'force-interval';
+    }
+    // Significant change detected
+    else if (lastLux > 0) {
+      const changePercent = Math.abs((luxValue - lastLux) / lastLux) * 100;
+      if (changePercent >= config.luxChangeThreshold) {
+        shouldReport = true;
+        reason = `change-${changePercent.toFixed(1)}%`;
+      }
+    }
+    // Handle transition from/to zero
+    else if ((lastLux === 0 && luxValue > 0) || (lastLux > 0 && luxValue === 0)) {
+      shouldReport = true;
+      reason = 'zero-transition';
+    }
+
+    if (shouldReport) {
+      this.log(`[LUX-SMART] 💡 Smart lux update: ${luxValue} lux (${reason})`);
+      this.setCapabilityValue('measure_luminance', luxValue).catch(() => { });
+
+      config.lastLuxValue = luxValue;
+      config.lastLuxTime = now;
+
+      // Feed to motion inference as well
+      this._handleLuxForMotionInference(luxValue);
+
+      // Trigger lux-specific flow if available
+      if (this.driver?.luxChangedTrigger) {
+        this.driver.luxChangedTrigger.trigger(this, {
+          lux: luxValue,
+          source: 'smart_reporting'
+        }, {}).catch(() => { });
+      }
+    }
+  }
+
+  /**
+   * Enhanced lux handling - also feeds smart reporting system
+   */
+  _enhancedLuxUpdate(luxValue, source = 'unknown') {
+    // Update smart reporting cache
+    if (this._luxSmartReporting) {
+      this._processSmartLuxUpdate(luxValue);
+    }
+
+    // Original lux inference logic
+    this._handleLuxForMotionInference(luxValue);
+  }
+
+  /**
+   * Cleanup timers on device destroy
+   */
+  async onDeleted() {
+    if (this._luxReportTimer) {
+      clearInterval(this._luxReportTimer);
+    }
+    await super.onDeleted?.();
   }
 
 }

@@ -16,7 +16,11 @@ class MotionSensorDriver extends ZigBeeDriver {
         return motionActive === true;
       });
 
-    this.log('[FLOW] Condition cards registered');
+    // v5.5.355: Register smart lux trigger for independent luminance reporting
+    this.luxChangedTrigger = this.homey.flow.getDeviceTriggerCard('motion_sensor_lux_changed');
+    this.log('[FLOW] ✅ Smart lux trigger registered');
+
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

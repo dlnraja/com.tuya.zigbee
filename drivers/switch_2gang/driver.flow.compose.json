@@ -1,55 +1,98 @@
 {
   "triggers": [
     {
-      "id": "switch_2gang_turned_on",
+      "id": "switch_2gang_gang1_turned_on",
       "title": {
-        "en": "Turned on",
-        "fr": "Allumé"
+        "en": "Gang 1 turned on",
+        "fr": "Gang 1 allumé",
+        "nl": "Gang 1 aangezet",
+        "de": "Gang 1 eingeschaltet"
       }
     },
     {
-      "id": "switch_2gang_turned_off",
+      "id": "switch_2gang_gang1_turned_off",
       "title": {
-        "en": "Turned off",
-        "fr": "Éteint"
+        "en": "Gang 1 turned off",
+        "fr": "Gang 1 éteint",
+        "nl": "Gang 1 uitgezet",
+        "de": "Gang 1 ausgeschaltet"
+      }
+    },
+    {
+      "id": "switch_2gang_gang2_turned_on",
+      "title": {
+        "en": "Gang 2 turned on",
+        "fr": "Gang 2 allumé",
+        "nl": "Gang 2 aangezet",
+        "de": "Gang 2 eingeschaltet"
+      }
+    },
+    {
+      "id": "switch_2gang_gang2_turned_off",
+      "title": {
+        "en": "Gang 2 turned off",
+        "fr": "Gang 2 éteint",
+        "nl": "Gang 2 uitgezet",
+        "de": "Gang 2 ausgeschaltet"
       }
     }
   ],
   "conditions": [
     {
-      "id": "switch_2gang_is_on",
+      "id": "switch_2gang_gang1_is_on",
       "title": {
-        "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
-      },
-      "titleFormatted": {
-        "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "en": "Gang 1 is !{{on|off}}",
+        "fr": "Gang 1 est !{{allumé|éteint}}",
+        "nl": "Gang 1 is !{{aan|uit}}",
+        "de": "Gang 1 ist !{{ein|aus}}"
+      }
+    },
+    {
+      "id": "switch_2gang_gang2_is_on",
+      "title": {
+        "en": "Gang 2 is !{{on|off}}",
+        "fr": "Gang 2 est !{{allumé|éteint}}",
+        "nl": "Gang 2 is !{{aan|uit}}",
+        "de": "Gang 2 ist !{{ein|aus}}"
       }
     }
   ],
   "actions": [
     {
-      "id": "switch_2gang_turn_on",
+      "id": "switch_2gang_turn_on_gang1",
       "title": {
-        "en": "Turn on",
-        "fr": "Allumer"
+        "en": "Turn on gang 1",
+        "fr": "Allumer gang 1",
+        "nl": "Gang 1 aanzetten",
+        "de": "Gang 1 einschalten"
       }
     },
     {
-      "id": "switch_2gang_turn_off",
+      "id": "switch_2gang_turn_off_gang1",
       "title": {
-        "en": "Turn off",
-        "fr": "Éteindre"
+        "en": "Turn off gang 1",
+        "fr": "Éteindre gang 1",
+        "nl": "Gang 1 uitzetten",
+        "de": "Gang 1 ausschalten"
       }
     },
     {
-      "id": "switch_2gang_toggle",
+      "id": "switch_2gang_turn_on_gang2",
       "title": {
-        "en": "Toggle on or off",
-        "fr": "Basculer"
+        "en": "Turn on gang 2",
+        "fr": "Allumer gang 2",
+        "nl": "Gang 2 aanzetten",
+        "de": "Gang 2 einschalten"
+      }
+    },
+    {
+      "id": "switch_2gang_turn_off_gang2",
+      "title": {
+        "en": "Turn off gang 2",
+        "fr": "Éteindre gang 2",
+        "nl": "Gang 2 uitzetten",
+        "de": "Gang 2 ausschalten"
       }
     }
   ]
 }
-

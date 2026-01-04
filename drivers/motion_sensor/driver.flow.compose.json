@@ -40,20 +40,47 @@
       ]
     },
     {
-      "id": "motion_sensor_luminance_changed",
+      "id": "motion_sensor_lux_changed",
       "title": {
         "en": "Luminance changed",
-        "fr": "Luminosité changée"
+        "fr": "Luminance changée",
+        "nl": "Lichtsterkte veranderd",
+        "de": "Helligkeit geändert"
+      },
+      "titleFormatted": {
+        "en": "Luminance changed to [[lux]] lux",
+        "fr": "Luminance changée à [[lux]] lux",
+        "nl": "Lichtsterkte veranderd naar [[lux]] lux",
+        "de": "Helligkeit geändert zu [[lux]] lux"
+      },
+      "hint": {
+        "en": "This card triggers when the luminance sensor reports a new value, independent of motion detection",
+        "fr": "Cette carte se déclenche quand le capteur de luminance rapporte une nouvelle valeur, indépendamment de la détection de mouvement",
+        "nl": "Deze kaart wordt geactiveerd wanneer de lichtsensor een nieuwe waarde rapporteert, onafhankelijk van bewegingsdetectie",
+        "de": "Diese Karte wird ausgelöst, wenn der Helligkeitssensor einen neuen Wert meldet, unabhängig von der Bewegungserkennung"
       },
       "tokens": [
         {
           "name": "lux",
           "type": "number",
           "title": {
-            "en": "Luminance (lux)",
-            "fr": "Luminosité (lux)"
+            "en": "Luminance",
+            "fr": "Luminance",
+            "nl": "Lichtsterkte",
+            "de": "Helligkeit"
           },
-          "example": 500
+          "example": 150
+        },
+        {
+          "name": "source",
+          "type": "string",
+          "title": {
+            "en": "Source",
+            "fr": "Source",
+            "nl": "Bron",
+            "de": "Quelle"
+          },
+          "example": "smart_reporting"
         }
       ]
     }
@@ -68,4 +95,3 @@
     }
   ]
 }
-

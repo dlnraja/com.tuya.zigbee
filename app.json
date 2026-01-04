@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.352",
+  "version": "5.5.355",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -425,6 +425,57 @@
         ]
       },
       {
+        "id": "ir_code_learned",
+        "title": {
+          "en": "IR code learned",
+          "fr": "Code IR appris",
+          "nl": "IR code geleerd",
+          "de": "IR-Code gelernt"
+        },
+        "titleFormatted": {
+          "en": "IR code learned",
+          "fr": "Code IR appris",
+          "nl": "IR code geleerd",
+          "de": "IR-Code gelernt"
+        },
+        "tokens": [
+          {
+            "name": "ir_code",
+            "type": "string",
+            "title": {
+              "en": "IR Code",
+              "fr": "Code IR",
+              "nl": "IR Code",
+              "de": "IR-Code"
+            },
+            "example": "JgAcAB0dHB0cHRwdHB0dHRwdHR0cHRwdHR0cHRwdAA0FAAAAAAAAAAAAAAAA"
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=ir_blaster"
+          }
+        ]
+      },
+      {
+        "id": "ir_learning_started",
+        "title": {
+          "en": "IR learning started",
+          "fr": "Apprentissage IR démarré",
+          "nl": "IR leren gestart",
+          "de": "IR-Lernen gestartet"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=ir_blaster"
+          }
+        ]
+      },
+      {
         "id": "low_battery_warning",
         "title": {
           "en": "Low battery warning",
@@ -494,6 +545,58 @@
         ],
         "platforms": [
           "local"
+        ]
+      },
+      {
+        "id": "motion_sensor_lux_changed",
+        "title": {
+          "en": "Luminance changed",
+          "fr": "Luminance changée",
+          "nl": "Lichtsterkte veranderd",
+          "de": "Helligkeit geändert"
+        },
+        "titleFormatted": {
+          "en": "Luminance changed to [[lux]] lux",
+          "fr": "Luminance changée à [[lux]] lux",
+          "nl": "Lichtsterkte veranderd naar [[lux]] lux",
+          "de": "Helligkeit geändert zu [[lux]] lux"
+        },
+        "hint": {
+          "en": "This card triggers when the luminance sensor reports a new value, independent of motion detection",
+          "fr": "Cette carte se déclenche quand le capteur de luminance rapporte une nouvelle valeur, indépendamment de la détection de mouvement",
+          "nl": "Deze kaart wordt geactiveerd wanneer de lichtsensor een nieuwe waarde rapporteert, onafhankelijk van bewegingsdetectie",
+          "de": "Diese Karte wird ausgelöst, wenn der Helligkeitssensor einen neuen Wert meldet, unabhängig von der Bewegungserkennung"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=motion_sensor"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "lux",
+            "type": "number",
+            "title": {
+              "en": "Luminance",
+              "fr": "Luminance",
+              "nl": "Lichtsterkte",
+              "de": "Helligkeit"
+            },
+            "example": 150
+          },
+          {
+            "name": "source",
+            "type": "string",
+            "title": {
+              "en": "Source",
+              "fr": "Source",
+              "nl": "Bron",
+              "de": "Quelle"
+            },
+            "example": "smart_reporting"
+          }
         ]
       },
       {
@@ -796,6 +899,158 @@
         ]
       },
       {
+        "id": "switch_4gang_gang1_turned_off",
+        "title": {
+          "en": "Gang 1 turned off",
+          "fr": "Gang 1 éteint",
+          "nl": "Gang 1 uitgezet",
+          "de": "Gang 1 ausgeschaltet"
+        },
+        "titleFormatted": {
+          "en": "Gang 1 turned off",
+          "fr": "Gang 1 éteint",
+          "nl": "Gang 1 uitgezet",
+          "de": "Gang 1 ausgeschaltet"
+        },
+        "hint": {
+          "en": "This card triggers when gang 1 of the 4-gang switch is turned off",
+          "fr": "Cette carte se déclenche quand le gang 1 de l'interrupteur 4 gangs est éteint",
+          "nl": "Deze kaart wordt geactiveerd wanneer gang 1 van de 4-gang schakelaar wordt uitgezet",
+          "de": "Diese Karte wird ausgelöst, wenn Gang 1 des 4-Gang-Schalters ausgeschaltet wird"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_gang1_turned_on",
+        "title": {
+          "en": "Gang 1 turned on",
+          "fr": "Gang 1 allumé",
+          "nl": "Gang 1 aangezet",
+          "de": "Gang 1 eingeschaltet"
+        },
+        "titleFormatted": {
+          "en": "Gang 1 turned on",
+          "fr": "Gang 1 allumé",
+          "nl": "Gang 1 aangezet",
+          "de": "Gang 1 eingeschaltet"
+        },
+        "hint": {
+          "en": "This card triggers when gang 1 of the 4-gang switch is turned on",
+          "fr": "Cette carte se déclenche quand le gang 1 de l'interrupteur 4 gangs est allumé",
+          "nl": "Deze kaart wordt geactiveerd wanneer gang 1 van de 4-gang schakelaar wordt aangezet",
+          "de": "Diese Karte wird ausgelöst, wenn Gang 1 des 4-Gang-Schalters eingeschaltet wird"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_gang2_turned_off",
+        "title": {
+          "en": "Gang 2 turned off",
+          "fr": "Gang 2 éteint",
+          "nl": "Gang 2 uitgezet",
+          "de": "Gang 2 ausgeschaltet"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_gang2_turned_on",
+        "title": {
+          "en": "Gang 2 turned on",
+          "fr": "Gang 2 allumé",
+          "nl": "Gang 2 aangezet",
+          "de": "Gang 2 eingeschaltet"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_gang3_turned_off",
+        "title": {
+          "en": "Gang 3 turned off",
+          "fr": "Gang 3 éteint",
+          "nl": "Gang 3 uitgezet",
+          "de": "Gang 3 ausgeschaltet"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_gang3_turned_on",
+        "title": {
+          "en": "Gang 3 turned on",
+          "fr": "Gang 3 allumé",
+          "nl": "Gang 3 aangezet",
+          "de": "Gang 3 eingeschaltet"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_gang4_turned_off",
+        "title": {
+          "en": "Gang 4 turned off",
+          "fr": "Gang 4 éteint",
+          "nl": "Gang 4 uitgezet",
+          "de": "Gang 4 ausgeschaltet"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_gang4_turned_on",
+        "title": {
+          "en": "Gang 4 turned on",
+          "fr": "Gang 4 allumé",
+          "nl": "Gang 4 aangezet",
+          "de": "Gang 4 eingeschaltet"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
         "id": "temperature_changed",
         "title": {
           "en": "Temperature changed",
@@ -946,6 +1201,98 @@
         ],
         "platforms": [
           "local"
+        ]
+      },
+      {
+        "id": "water_level_changed",
+        "title": {
+          "en": "Water level changed",
+          "fr": "Niveau d'eau changé",
+          "nl": "Waterniveau gewijzigd",
+          "de": "Wasserstand geändert"
+        },
+        "titleFormatted": {
+          "en": "Water level changed to [[level]]m ([[percentage]]%)",
+          "fr": "Niveau d'eau changé à [[level]]m ([[percentage]]%)",
+          "nl": "Waterniveau gewijzigd naar [[level]]m ([[percentage]]%)",
+          "de": "Wasserstand geändert auf [[level]]m ([[percentage]]%)"
+        },
+        "tokens": [
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Water Level (m)",
+              "fr": "Niveau d'Eau (m)",
+              "nl": "Waterniveau (m)",
+              "de": "Wasserstand (m)"
+            },
+            "example": 1.25
+          },
+          {
+            "name": "percentage",
+            "type": "number",
+            "title": {
+              "en": "Fill Percentage (%)",
+              "fr": "Pourcentage de Remplissage (%)",
+              "nl": "Vulpercentage (%)",
+              "de": "Füllstand (%)"
+            },
+            "example": 75
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=water_tank_monitor"
+          }
+        ]
+      },
+      {
+        "id": "water_tank_low",
+        "title": {
+          "en": "Water tank level is low",
+          "fr": "Niveau réservoir d'eau faible",
+          "nl": "Watertank niveau is laag",
+          "de": "Wassertank Füllstand ist niedrig"
+        },
+        "titleFormatted": {
+          "en": "Water tank level is low ([[level]]m, [[percentage]]%)",
+          "fr": "Niveau réservoir d'eau faible ([[level]]m, [[percentage]]%)",
+          "nl": "Watertank niveau is laag ([[level]]m, [[percentage]]%)",
+          "de": "Wassertank Füllstand ist niedrig ([[level]]m, [[percentage]]%)"
+        },
+        "tokens": [
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Water Level (m)",
+              "fr": "Niveau d'Eau (m)",
+              "nl": "Waterniveau (m)",
+              "de": "Wasserstand (m)"
+            },
+            "example": 0.3
+          },
+          {
+            "name": "percentage",
+            "type": "number",
+            "title": {
+              "en": "Fill Percentage (%)",
+              "fr": "Pourcentage de Remplissage (%)",
+              "nl": "Vulpercentage (%)",
+              "de": "Füllstand (%)"
+            },
+            "example": 15
+          }
+        ],
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=water_tank_monitor"
+          }
         ]
       },
       {
@@ -4746,44 +5093,6 @@
         ]
       },
       {
-        "id": "ir_code_learned",
-        "title": {
-          "en": "IR Code Learned",
-          "fr": "Code IR Appris",
-          "nl": "IR Code Geleerd",
-          "de": "IR-Code gelernt"
-        },
-        "tokens": [
-          {
-            "name": "ir_code",
-            "type": "string",
-            "title": {
-              "en": "IR Code",
-              "fr": "Code IR",
-              "nl": "IR Code",
-              "de": "IR-Code"
-            }
-          },
-          {
-            "name": "code_name",
-            "type": "string",
-            "title": {
-              "en": "Code Name",
-              "fr": "Nom du Code",
-              "nl": "Code Naam",
-              "de": "Code-Name"
-            }
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ir_blaster"
-          }
-        ]
-      },
-      {
         "id": "led_strip_led_strip_turned_on",
         "title": {
           "en": "Turned on",
@@ -7212,6 +7521,76 @@
         ]
       },
       {
+        "id": "switch_4gang_gang1_is_on",
+        "title": {
+          "en": "Gang 1 is !{{on|off}}",
+          "fr": "Gang 1 est !{{allumé|éteint}}",
+          "nl": "Gang 1 is !{{aan|uit}}",
+          "de": "Gang 1 ist !{{ein|aus}}"
+        },
+        "titleFormatted": {
+          "en": "Gang 1 is !{{on|off}}",
+          "fr": "Gang 1 est !{{allumé|éteint}}",
+          "nl": "Gang 1 is !{{aan|uit}}",
+          "de": "Gang 1 ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_gang2_is_on",
+        "title": {
+          "en": "Gang 2 is !{{on|off}}",
+          "fr": "Gang 2 est !{{allumé|éteint}}",
+          "nl": "Gang 2 is !{{aan|uit}}",
+          "de": "Gang 2 ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_gang3_is_on",
+        "title": {
+          "en": "Gang 3 is !{{on|off}}",
+          "fr": "Gang 3 est !{{allumé|éteint}}",
+          "nl": "Gang 3 is !{{aan|uit}}",
+          "de": "Gang 3 ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_gang4_is_on",
+        "title": {
+          "en": "Gang 4 is !{{on|off}}",
+          "fr": "Gang 4 est !{{allumé|éteint}}",
+          "nl": "Gang 4 is !{{aan|uit}}",
+          "de": "Gang 4 ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
         "id": "temperature_above",
         "title": {
           "en": "Temperature !{{is|isn't}} above",
@@ -8785,6 +9164,98 @@
         }
       },
       {
+        "id": "ir_learn_code",
+        "title": {
+          "en": "Learn IR code",
+          "fr": "Apprendre code IR",
+          "nl": "Leer IR code",
+          "de": "IR-Code lernen"
+        },
+        "titleFormatted": {
+          "en": "Learn IR code with name [[code_name]] for [[duration]] seconds",
+          "fr": "Apprendre code IR avec nom [[code_name]] pendant [[duration]] secondes",
+          "nl": "Leer IR code met naam [[code_name]] gedurende [[duration]] seconden",
+          "de": "IR-Code mit Name [[code_name]] für [[duration]] Sekunden lernen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "code_name",
+            "type": "text",
+            "title": {
+              "en": "Code name",
+              "fr": "Nom du code",
+              "nl": "Code naam",
+              "de": "Code-Name"
+            },
+            "placeholder": {
+              "en": "TV_Power",
+              "fr": "TV_Alimentation",
+              "nl": "TV_Stroom",
+              "de": "TV_Ein"
+            }
+          },
+          {
+            "name": "duration",
+            "type": "number",
+            "title": {
+              "en": "Learn duration (seconds)",
+              "fr": "Durée apprentissage (secondes)",
+              "nl": "Leer duur (seconden)",
+              "de": "Lerndauer (Sekunden)"
+            },
+            "min": 5,
+            "max": 60,
+            "step": 1,
+            "placeholder": {
+              "en": "30"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ir_send_code",
+        "title": {
+          "en": "Send IR code",
+          "fr": "Envoyer code IR",
+          "nl": "Verstuur IR code",
+          "de": "IR-Code senden"
+        },
+        "titleFormatted": {
+          "en": "Send IR code [[ir_code]]",
+          "fr": "Envoyer code IR [[ir_code]]",
+          "nl": "Verstuur IR code [[ir_code]]",
+          "de": "IR-Code [[ir_code]] senden"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "ir_code",
+            "type": "text",
+            "title": {
+              "en": "IR Code (Base64 or name)",
+              "fr": "Code IR (Base64 ou nom)",
+              "nl": "IR Code (Base64 of naam)",
+              "de": "IR-Code (Base64 oder Name)"
+            },
+            "placeholder": {
+              "en": "TV_Power or JgAcAB0dHB0c...",
+              "fr": "TV_Alimentation ou JgAcAB0dHB0c...",
+              "nl": "TV_Stroom of JgAcAB0dHB0c...",
+              "de": "TV_Ein oder JgAcAB0dHB0c..."
+            }
+          }
+        ]
+      },
+      {
         "id": "ota_check_updates",
         "title": {
           "en": "Check for firmware updates",
@@ -9857,6 +10328,140 @@
         ]
       },
       {
+        "id": "switch_4gang_turn_off_gang1",
+        "title": {
+          "en": "Turn off gang 1",
+          "fr": "Éteindre gang 1",
+          "nl": "Gang 1 uitzetten",
+          "de": "Gang 1 ausschalten"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_turn_off_gang2",
+        "title": {
+          "en": "Turn off gang 2",
+          "fr": "Éteindre gang 2",
+          "nl": "Gang 2 uitzetten",
+          "de": "Gang 2 ausschalten"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_turn_off_gang3",
+        "title": {
+          "en": "Turn off gang 3",
+          "fr": "Éteindre gang 3",
+          "nl": "Gang 3 uitzetten",
+          "de": "Gang 3 ausschalten"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_turn_off_gang4",
+        "title": {
+          "en": "Turn off gang 4",
+          "fr": "Éteindre gang 4",
+          "nl": "Gang 4 uitzetten",
+          "de": "Gang 4 ausschalten"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_turn_on_gang1",
+        "title": {
+          "en": "Turn on gang 1",
+          "fr": "Allumer gang 1",
+          "nl": "Gang 1 aanzetten",
+          "de": "Gang 1 einschalten"
+        },
+        "titleFormatted": {
+          "en": "Turn on gang 1",
+          "fr": "Allumer gang 1",
+          "nl": "Gang 1 aanzetten",
+          "de": "Gang 1 einschalten"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_turn_on_gang2",
+        "title": {
+          "en": "Turn on gang 2",
+          "fr": "Allumer gang 2",
+          "nl": "Gang 2 aanzetten",
+          "de": "Gang 2 einschalten"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_turn_on_gang3",
+        "title": {
+          "en": "Turn on gang 3",
+          "fr": "Allumer gang 3",
+          "nl": "Gang 3 aanzetten",
+          "de": "Gang 3 einschalten"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_turn_on_gang4",
+        "title": {
+          "en": "Turn on gang 4",
+          "fr": "Allumer gang 4",
+          "nl": "Gang 4 aanzetten",
+          "de": "Gang 4 einschalten"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
         "id": "toggle_onoff",
         "title": {
           "en": "Toggle on/off",
@@ -10735,98 +11340,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=hvac_dehumidifier"
-          }
-        ]
-      },
-      {
-        "id": "send_ir_code",
-        "title": {
-          "en": "Send IR Code",
-          "fr": "Envoyer Code IR",
-          "nl": "IR Code Versturen",
-          "de": "IR-Code senden"
-        },
-        "titleFormatted": {
-          "en": "Send IR code [[ir_code]]",
-          "fr": "Envoyer le code IR [[ir_code]]",
-          "nl": "IR code [[ir_code]] versturen",
-          "de": "IR-Code [[ir_code]] senden"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ir_blaster"
-          },
-          {
-            "name": "ir_code",
-            "type": "text",
-            "placeholder": {
-              "en": "Base64 IR Code",
-              "fr": "Code IR Base64",
-              "nl": "Base64 IR Code",
-              "de": "Base64 IR-Code"
-            },
-            "title": {
-              "en": "IR Code",
-              "fr": "Code IR",
-              "nl": "IR Code",
-              "de": "IR-Code"
-            }
-          }
-        ]
-      },
-      {
-        "id": "start_ir_learning",
-        "title": {
-          "en": "Start IR Learning Mode",
-          "fr": "Démarrer Mode Apprentissage IR",
-          "nl": "IR Leermodus Starten",
-          "de": "IR-Lernmodus starten"
-        },
-        "titleFormatted": {
-          "en": "Start IR learning mode for [[duration]] seconds",
-          "fr": "Démarrer le mode apprentissage IR pendant [[duration]] secondes",
-          "nl": "IR leermodus starten voor [[duration]] seconden",
-          "de": "IR-Lernmodus für [[duration]] Sekunden starten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ir_blaster"
-          },
-          {
-            "name": "duration",
-            "type": "number",
-            "min": 5,
-            "max": 60,
-            "step": 5,
-            "placeholder": {
-              "en": "30"
-            },
-            "title": {
-              "en": "Duration (seconds)",
-              "fr": "Durée (secondes)",
-              "nl": "Duur (seconden)",
-              "de": "Dauer (Sekunden)"
-            }
-          }
-        ]
-      },
-      {
-        "id": "stop_ir_learning",
-        "title": {
-          "en": "Stop IR Learning Mode",
-          "fr": "Arrêter Mode Apprentissage IR",
-          "nl": "IR Leermodus Stoppen",
-          "de": "IR-Lernmodus stoppen"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ir_blaster"
           }
         ]
       },
@@ -12696,11 +13209,13 @@
       "capabilities": [
         "measure_co2",
         "measure_pm25",
+        "measure_pm10",
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
         "alarm_generic",
-        "measure_voc"
+        "measure_voc",
+        "measure_formaldehyde"
       ],
       "capabilitiesOptions": {
         "alarm_generic": {
@@ -27589,13 +28104,19 @@
           "_TZ3290_7v1k4vufotpowp9z",
           "_TZ3290_acv1iuslxi3shaaj",
           "_TZ3290_ai4v11wr0mycyh7k",
-          "_tz3290_gnl5a6a5xvql7c2a",
+          "_TZ3290_gnl5a6a5xvql7c2a",
           "_TZ3290_gnlsafc7",
           "_TZ3290_j37rooaxrcdcqo5n",
-          "_tz3290_rlkmy85q4pzoxobl",
+          "_TZ3290_ot6ewjvmejq5ekhl",
+          "_TZ3290_rlkmy85q4pzoxobl",
           "_TZ3290_u9xac5rv",
           "_TZE200_ikvncluo",
           "_TZE204_ikvncluo",
+          "_tz3290_7v1k4vufotpowp9z",
+          "_tz3290_gnl5a6a5xvql7c2a",
+          "_tz3290_ot6ewjvmejq5ekhl",
+          "_tz3290_rlkmy85q4pzoxobl",
+          "_tz3290_u9xac5rv",
           "_tze200_ikvncluo",
           "_tze204_ikvncluo"
         ],
@@ -35549,6 +36070,228 @@
           "OTHER"
         ]
       }
+    },
+    {
+      "name": {
+        "en": "Smart Heater Controller",
+        "fr": "Contrôleur Radiateur Intelligent",
+        "nl": "Slimme Verwarmingscontroller",
+        "de": "Intelligente Heizungssteuerung"
+      },
+      "class": "heater",
+      "capabilities": [
+        "onoff",
+        "target_temperature",
+        "measure_temperature",
+        "thermostat_mode",
+        "measure_power",
+        "meter_power",
+        "alarm_generic"
+      ],
+      "capabilitiesOptions": {
+        "target_temperature": {
+          "min": 5,
+          "max": 35,
+          "step": 0.5
+        },
+        "alarm_generic": {
+          "title": {
+            "en": "Overheat Protection",
+            "fr": "Protection Surchauffe",
+            "nl": "Oververhitting Bescherming",
+            "de": "Überhitzungsschutz"
+          }
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "drivers/smart_heater_controller/assets/images/small.png",
+        "large": "drivers/smart_heater_controller/assets/images/large.png",
+        "xlarge": "drivers/smart_heater_controller/assets/images/xlarge.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_aoclfnxz",
+          "_TZE200_b6wax7g0",
+          "_TZE200_c88teujp",
+          "_TZE200_dnz2zhqd",
+          "_TZE200_e9ba97vf",
+          "_TZE200_hue3yfsn",
+          "_TZE200_mp902om5",
+          "_TZE200_p3dbf6qs",
+          "_TZE200_rxntag7i",
+          "_TZE200_sus6clyh",
+          "_TZE200_ztvwu4nk",
+          "_TZE204_aoclfnxz",
+          "_TZE204_b6wax7g0",
+          "_TZE204_c88teujp",
+          "_tze200_aoclfnxz",
+          "_tze200_b6wax7g0",
+          "_tze200_c88teujp"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              61184
+            ],
+            "bindings": []
+          }
+        }
+      },
+      "energy": {
+        "approximation": {
+          "usageOn": 1500,
+          "usageOff": 5
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature Control",
+            "fr": "Contrôle Température",
+            "nl": "Temperatuur Controle",
+            "de": "Temperatur Kontrolle"
+          },
+          "children": [
+            {
+              "id": "temperature_calibration",
+              "type": "number",
+              "label": {
+                "en": "Temperature Calibration (°C)",
+                "fr": "Calibrage Température (°C)",
+                "nl": "Temperatuur Kalibratie (°C)",
+                "de": "Temperatur Kalibrierung (°C)"
+              },
+              "hint": {
+                "en": "Adjust temperature reading offset (-10°C to +10°C)",
+                "fr": "Ajuster le décalage de lecture température (-10°C à +10°C)",
+                "nl": "Pas temperatuuraflezing aan (-10°C tot +10°C)",
+                "de": "Temperaturablesung anpassen (-10°C bis +10°C)"
+              },
+              "value": 0,
+              "min": -10,
+              "max": 10,
+              "step": 0.1,
+              "units": "°C"
+            },
+            {
+              "id": "heating_hysteresis",
+              "type": "number",
+              "label": {
+                "en": "Heating Hysteresis (°C)",
+                "fr": "Hystérésis Chauffage (°C)",
+                "nl": "Verwarming Hysterese (°C)",
+                "de": "Heizung Hysterese (°C)"
+              },
+              "hint": {
+                "en": "Temperature difference to start/stop heating (0.5-5°C)",
+                "fr": "Différence température pour démarrer/arrêter chauffage (0.5-5°C)",
+                "nl": "Temperatuurverschil om verwarming te starten/stoppen (0.5-5°C)",
+                "de": "Temperaturdifferenz zum Starten/Stoppen der Heizung (0.5-5°C)"
+              },
+              "value": 1,
+              "min": 0.5,
+              "max": 5,
+              "step": 0.1,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Safety & Protection",
+            "fr": "Sécurité & Protection",
+            "nl": "Veiligheid & Bescherming",
+            "de": "Sicherheit & Schutz"
+          },
+          "children": [
+            {
+              "id": "overheat_protection",
+              "type": "number",
+              "label": {
+                "en": "Overheat Protection (°C)",
+                "fr": "Protection Surchauffe (°C)",
+                "nl": "Oververhitting Bescherming (°C)",
+                "de": "Überhitzungsschutz (°C)"
+              },
+              "hint": {
+                "en": "Maximum allowed temperature before safety shutdown",
+                "fr": "Température maximale autorisée avant arrêt sécurité",
+                "nl": "Maximaal toegestane temperatuur voor veiligheidsuitschakeling",
+                "de": "Maximal erlaubte Temperatur vor Sicherheitsabschaltung"
+              },
+              "value": 40,
+              "min": 30,
+              "max": 60,
+              "step": 1,
+              "units": "°C"
+            },
+            {
+              "id": "child_lock",
+              "type": "checkbox",
+              "label": {
+                "en": "Child Lock",
+                "fr": "Verrouillage Enfant",
+                "nl": "Kinderslot",
+                "de": "Kindersicherung"
+              },
+              "hint": {
+                "en": "Prevent manual control changes on device",
+                "fr": "Empêcher les modifications de contrôle manuel sur l'appareil",
+                "nl": "Voorkom handmatige besturingswijzigingen op apparaat",
+                "de": "Manuelle Steuerungsänderungen am Gerät verhindern"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power Management",
+            "fr": "Gestion Énergie",
+            "nl": "Energie Beheer",
+            "de": "Energie Management"
+          },
+          "children": [
+            {
+              "id": "power_limit",
+              "type": "number",
+              "label": {
+                "en": "Power Limit (W)",
+                "fr": "Limite Puissance (W)",
+                "nl": "Vermogen Limiet (W)",
+                "de": "Leistungsgrenze (W)"
+              },
+              "hint": {
+                "en": "Maximum power consumption allowed (500-3000W)",
+                "fr": "Consommation électrique maximale autorisée (500-3000W)",
+                "nl": "Maximaal toegestaan stroomverbruik (500-3000W)",
+                "de": "Maximal erlaubter Stromverbrauch (500-3000W)"
+              },
+              "value": 2000,
+              "min": 500,
+              "max": 3000,
+              "step": 50,
+              "units": "W"
+            }
+          ]
+        }
+      ],
+      "id": "smart_heater_controller"
     },
     {
       "name": {
@@ -44887,6 +45630,211 @@
     },
     {
       "name": {
+        "en": "Water Tank Level Monitor",
+        "fr": "Moniteur Niveau Réservoir d'Eau",
+        "nl": "Watertank Niveau Monitor",
+        "de": "Wassertank Füllstandsmonitor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_water_level",
+        "measure_water_percentage",
+        "alarm_water_low",
+        "measure_battery",
+        "measure_temperature"
+      ],
+      "capabilitiesOptions": {
+        "measure_water_level": {
+          "title": {
+            "en": "Water Level",
+            "fr": "Niveau d'Eau",
+            "nl": "Waterniveau",
+            "de": "Wasserstand"
+          },
+          "units": "m",
+          "decimals": 2
+        },
+        "measure_water_percentage": {
+          "title": {
+            "en": "Tank Fill Level",
+            "fr": "Niveau de Remplissage",
+            "nl": "Tank Vulniveau",
+            "de": "Tank Füllstand"
+          },
+          "units": "%"
+        },
+        "alarm_water_low": {
+          "title": {
+            "en": "Low Water Alert",
+            "fr": "Alerte Eau Faible",
+            "nl": "Laag Water Alarm",
+            "de": "Niedrig Wasser Alarm"
+          }
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "drivers/water_tank_monitor/assets/images/small.png",
+        "large": "drivers/water_tank_monitor/assets/images/large.png",
+        "xlarge": "drivers/water_tank_monitor/assets/images/xlarge.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_81isopgh",
+          "_TZE200_8ygqkfpo",
+          "_TZE200_do4ckv7k",
+          "_TZE200_fdtjuw7u",
+          "_TZE200_htnnfasr",
+          "_TZE200_ikvncluo",
+          "_TZE200_lvkk0hdg",
+          "_TZE200_ojzhk75b",
+          "_TZE200_rgfzq1fl",
+          "_TZE200_wcnjrsjf",
+          "_TZE204_htnnfasr",
+          "_TZE204_ikvncluo",
+          "_tze200_81isopgh",
+          "_tze200_htnnfasr",
+          "_tze200_ikvncluo"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              61184
+            ],
+            "bindings": []
+          }
+        }
+      },
+      "energy": {
+        "batteries": [
+          "AAA",
+          "AA",
+          "CR123A"
+        ]
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Tank Configuration",
+            "fr": "Configuration Réservoir",
+            "nl": "Tank Configuratie",
+            "de": "Tank Konfiguration"
+          },
+          "children": [
+            {
+              "id": "tank_height",
+              "type": "number",
+              "label": {
+                "en": "Tank Height (m)",
+                "fr": "Hauteur Réservoir (m)",
+                "nl": "Tank Hoogte (m)",
+                "de": "Tank Höhe (m)"
+              },
+              "hint": {
+                "en": "Total height of the tank in meters (0.1 - 4.0m)",
+                "fr": "Hauteur totale du réservoir en mètres (0.1 - 4.0m)",
+                "nl": "Totale hoogte van de tank in meters (0.1 - 4.0m)",
+                "de": "Gesamthöhe des Tanks in Metern (0.1 - 4.0m)"
+              },
+              "value": 2,
+              "min": 0.1,
+              "max": 4,
+              "step": 0.1,
+              "units": "m"
+            },
+            {
+              "id": "sensor_offset",
+              "type": "number",
+              "label": {
+                "en": "Sensor Offset (m)",
+                "fr": "Décalage Capteur (m)",
+                "nl": "Sensor Offset (m)",
+                "de": "Sensor Offset (m)"
+              },
+              "hint": {
+                "en": "Distance from sensor to tank bottom when full (calibration)",
+                "fr": "Distance du capteur au fond du réservoir quand plein (calibrage)",
+                "nl": "Afstand van sensor naar tankbodem wanneer vol (kalibratie)",
+                "de": "Abstand vom Sensor zum Tankboden wenn voll (Kalibrierung)"
+              },
+              "value": 0,
+              "min": 0,
+              "max": 1,
+              "step": 0.01,
+              "units": "m"
+            },
+            {
+              "id": "low_water_threshold",
+              "type": "number",
+              "label": {
+                "en": "Low Water Threshold (%)",
+                "fr": "Seuil Eau Faible (%)",
+                "nl": "Laag Water Drempel (%)",
+                "de": "Niedrig Wasser Schwelle (%)"
+              },
+              "hint": {
+                "en": "Alert when water level drops below this percentage",
+                "fr": "Alerte quand le niveau d'eau descend sous ce pourcentage",
+                "nl": "Waarschuwing wanneer waterniveau onder dit percentage komt",
+                "de": "Warnung wenn Wasserpegel unter diesen Prozentsatz fällt"
+              },
+              "value": 20,
+              "min": 5,
+              "max": 50,
+              "step": 1,
+              "units": "%"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Sensor Settings",
+            "fr": "Paramètres Capteur",
+            "nl": "Sensor Instellingen",
+            "de": "Sensor Einstellungen"
+          },
+          "children": [
+            {
+              "id": "update_interval",
+              "type": "number",
+              "label": {
+                "en": "Update Interval (minutes)",
+                "fr": "Intervalle Mise à Jour (minutes)",
+                "nl": "Update Interval (minuten)",
+                "de": "Update Intervall (Minuten)"
+              },
+              "hint": {
+                "en": "How often the sensor reports new values",
+                "fr": "Fréquence de rapport des nouvelles valeurs",
+                "nl": "Hoe vaak de sensor nieuwe waarden rapporteert",
+                "de": "Wie oft der Sensor neue Werte meldet"
+              },
+              "value": 10,
+              "min": 1,
+              "max": 60,
+              "step": 1,
+              "units": "min"
+            }
+          ]
+        }
+      ],
+      "id": "water_tank_monitor"
+    },
+    {
+      "name": {
         "en": "Water Valve Smart",
         "fr": "Water Valve Smart"
       },
@@ -45347,6 +46295,24 @@
         "fr": "Aucun humain"
       }
     },
+    "alarm_water_low": {
+      "type": "boolean",
+      "title": {
+        "en": "Low Water Level",
+        "fr": "Niveau d'Eau Faible",
+        "nl": "Laag Waterniveau",
+        "de": "Niedriger Wasserstand"
+      },
+      "desc": {
+        "en": "Alert when water tank level is below threshold",
+        "fr": "Alerte quand le niveau du réservoir est sous le seuil",
+        "nl": "Waarschuwing wanneer watertank niveau onder drempel is",
+        "de": "Warnung wenn Wassertank-Niveau unter Schwelle ist"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
     "ir_code_received": {
       "type": "string",
       "title": {
@@ -45354,6 +46320,22 @@
         "nl": "Ontvangen IR Code",
         "de": "Empfangener IR-Code"
       },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "measure_formaldehyde": {
+      "type": "number",
+      "title": {
+        "en": "Formaldehyde (HCHO)",
+        "fr": "Formaldéhyde (HCHO)",
+        "nl": "Formaldehyde (HCHO)",
+        "de": "Formaldehyd (HCHO)"
+      },
+      "units": "mg/m³",
+      "min": 0,
+      "max": 10,
+      "decimals": 3,
       "getable": true,
       "setable": false,
       "uiComponent": "sensor"
@@ -45423,6 +46405,38 @@
       "uiComponent": "sensor",
       "min": 0,
       "max": 10000
+    },
+    "measure_water_level": {
+      "type": "number",
+      "title": {
+        "en": "Water Level",
+        "fr": "Niveau d'Eau",
+        "nl": "Waterniveau",
+        "de": "Wasserstand"
+      },
+      "units": "m",
+      "min": 0,
+      "max": 4,
+      "decimals": 2,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "measure_water_percentage": {
+      "type": "number",
+      "title": {
+        "en": "Tank Fill Level",
+        "fr": "Niveau de Remplissage",
+        "nl": "Tank Vulniveau",
+        "de": "Tank Füllstand"
+      },
+      "units": "%",
+      "min": 0,
+      "max": 100,
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
     }
   }
 }
