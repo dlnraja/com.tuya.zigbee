@@ -539,49 +539,6 @@
       ]
     },
     {
-      "id": "ir_send_by_category",
-      "title": {
-        "en": "Send IR Code by Category",
-        "nl": "Verstuur IR Code per Categorie",
-        "de": "IR-Code nach Kategorie Senden"
-      },
-      "titleFormatted": {
-        "en": "Send IR code [[code_name]] from category [[category]]",
-        "nl": "Verstuur IR code [[code_name]] uit categorie [[category]]",
-        "de": "IR-Code [[code_name]] aus Kategorie [[category]] senden"
-      },
-      "args": [
-        {
-          "name": "category",
-          "type": "text",
-          "title": {
-            "en": "Category",
-            "nl": "Categorie",
-            "de": "Kategorie"
-          },
-          "placeholder": {
-            "en": "TV Remote",
-            "nl": "TV Afstandsbediening",
-            "de": "TV-Fernbedienung"
-          }
-        },
-        {
-          "name": "code_name",
-          "type": "text",
-          "title": {
-            "en": "Code Name",
-            "nl": "Code Naam",
-            "de": "Code Name"
-          },
-          "placeholder": {
-            "en": "power_on",
-            "nl": "power_on",
-            "de": "power_on"
-          }
-        }
-      ]
-    },
-    {
       "id": "ir_set_protocol",
       "title": {
         "en": "Set IR Protocol",
