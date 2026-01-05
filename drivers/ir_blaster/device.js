@@ -714,6 +714,10 @@ class IrBlasterDevice extends ZigBeeDevice {
       });
     }
 
+    // v5.5.359: Flow cards below temporarily disabled - not implemented in driver.js
+    // Will be re-enabled when fully implemented and tested
+
+    /*
     // Send by category action
     const sendCategoryAction = this.homey.flow.getActionCard('ir_send_by_category');
     if (sendCategoryAction) {
@@ -786,6 +790,7 @@ class IrBlasterDevice extends ZigBeeDevice {
         }
       });
     }
+    */
   }
 
   /**
