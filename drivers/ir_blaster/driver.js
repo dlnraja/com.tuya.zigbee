@@ -68,28 +68,27 @@ class IrBlasterDriver extends Driver {
       return true;
     });
 
-    // Send by category action - TEMPORARILY DISABLED due to SDK validation issues
-    // Will be re-enabled after proper testing
-    /*
+    // v5.5.360: Re-enabled send by category action
     this.irSendByCategoryAction = this.homey.flow.getActionCard('ir_send_by_category');
-    this.irSendByCategoryAction.registerRunListener(async (args, state) => {
-      const device = args.device;
-      if (!device || !device.getCodesByCategory) {
-        throw new Error('Device not ready or missing category method');
-      }
+    if (this.irSendByCategoryAction) {
+      this.irSendByCategoryAction.registerRunListener(async (args, state) => {
+        const device = args.device;
+        if (!device || !device.getCodesByCategory) {
+          throw new Error('Device not ready or missing category method');
+        }
 
-      const { category, code_name } = args;
-      this.log(`Sending IR code "${code_name}" from category "${category}"`);
+        const { category, code_name } = args;
+        this.log(`Sending IR code "${code_name}" from category "${category}"`);
 
-      const codes = device.getCodesByCategory(category);
-      if (!codes[code_name]) {
-        throw new Error(`Code "${code_name}" not found in category "${category}"`);
-      }
+        const codes = device.getCodesByCategory(category);
+        if (!codes[code_name]) {
+          throw new Error(`Code "${code_name}" not found in category "${category}"`);
+        }
 
-      await device.sendIRCode(codes[code_name]);
-      return true;
-    });
-    */
+        await device.sendIRCode(codes[code_name]);
+        return true;
+      });
+    }
 
     // Set protocol action - TEMPORARILY DISABLED due to SDK validation issues
     // Will be re-enabled after proper testing
