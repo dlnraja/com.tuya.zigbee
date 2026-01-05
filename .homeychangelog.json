@@ -1,4 +1,10 @@
 {
+  "5.5.367": {
+    "en": "🔧 FIX - IR Blaster & MOES 4-Button: (1) Added missing ir_learning_state_changed and ir_code_analyzed flow triggers to fix IR Blaster driver crash. (2) Added Tuya DP button detection for MOES ESW-0ZAA-EU physical buttons not responding.",
+    "fr": "🔧 CORRECTION - IR Blaster & Bouton MOES 4: (1) Ajout des triggers flow ir_learning_state_changed et ir_code_analyzed manquants. (2) Détection boutons Tuya DP pour MOES ESW-0ZAA-EU.",
+    "nl": "🔧 FIX - IR Blaster & MOES 4-Knop: (1) Ontbrekende ir_learning_state_changed en ir_code_analyzed flow triggers toegevoegd. (2) Tuya DP knop detectie voor MOES ESW-0ZAA-EU fysieke knoppen.",
+    "de": "🔧 FIX - IR Blaster & MOES 4-Tasten: (1) Fehlende ir_learning_state_changed und ir_code_analyzed Flow-Trigger hinzugefügt. (2) Tuya DP Tastenerkennung für MOES ESW-0ZAA-EU physische Tasten."
+  },
   "5.5.366": {
     "en": "🔧 FIX - Battery Spam & Temp/Humidity (4x4_Pete forum #851): (1) Global battery throttling - reports only on 5% change or every 5 minutes. (2) Expanded PIR_ONLY_MANUFACTURERS list to remove incorrect temp/humidity capabilities from ZG-204ZL/ZG-204ZM devices. Fixes battery report spam and unnecessary temp/humidity on PIR-only sensors.",
     "fr": "🔧 CORRECTION - Spam Batterie & Temp/Humidité (forum #851): (1) Throttling global batterie - rapports uniquement sur changement de 5% ou toutes les 5 minutes. (2) Liste PIR_ONLY_MANUFACTURERS étendue. Corrige le spam batterie et temp/humidité inutiles.",
