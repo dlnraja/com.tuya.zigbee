@@ -172,8 +172,86 @@ class Button4GangDevice extends ButtonDevice {
       this.log('[BUTTON4-PHYSICAL] ✅ Enhanced physical button detection configured');
       this.log('[BUTTON4-PHYSICAL] 🔄 Scenes, MultistateInput, and OnOff listeners active');
 
+      // v5.5.367: MOES ESW-0ZAA-EU FIX - Setup Tuya DP button detection
+      // Some MOES devices use Tuya cluster (0xEF00) for physical button presses
+      await this._setupTuyaDPButtonDetection(zclNode);
+
     } catch (error) {
       this.log('[BUTTON4-PHYSICAL] ❌ Setup error:', error.message);
+    }
+  }
+
+  /**
+   * v5.5.367: MOES ESW-0ZAA-EU FIX - Tuya DP button detection
+   * Some MOES 4-button devices send button presses via Tuya cluster (0xEF00)
+   * instead of standard ZCL scenes/onOff commands
+   *
+   * Common Tuya DP patterns for buttons:
+   * - DP 1-4: Button 1-4 press events
+   * - Values: 0=single, 1=double, 2=long
+   */
+  async _setupTuyaDPButtonDetection(zclNode) {
+    try {
+      const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya
+        || zclNode?.endpoints?.[1]?.clusters?.manuSpecificTuya
+        || zclNode?.endpoints?.[1]?.clusters?.[61184]
+        || zclNode?.endpoints?.[1]?.clusters?.['61184']
+        || zclNode?.endpoints?.[1]?.clusters?.['0xEF00'];
+
+      if (!tuyaCluster) {
+        this.log('[BUTTON4-TUYA-DP] ℹ️ No Tuya cluster found - using ZCL only');
+        return;
+      }
+
+      this.log('[BUTTON4-TUYA-DP] 🔧 Setting up Tuya DP button detection (MOES fix)...');
+
+      if (typeof tuyaCluster.on === 'function') {
+        // Listen for Tuya datapoint reports
+        tuyaCluster.on('response', async (data) => {
+          const dp = data?.dp ?? data?.dataPointId ?? data?.dpId;
+          const value = data?.data ?? data?.value ?? data?.raw?.[0] ?? 0;
+
+          this.log(`[BUTTON4-TUYA-DP] 📡 DP${dp} = ${value}`, data);
+
+          // DP 1-4 typically map to buttons 1-4
+          if (dp >= 1 && dp <= 4) {
+            const buttonNumber = dp;
+            const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
+            const pressType = pressTypeMap[value] || 'single';
+
+            this.log(`[BUTTON4-TUYA-DP] 🔘 Button ${buttonNumber} ${pressType.toUpperCase()} (DP${dp}=${value})`);
+            await this.triggerButtonPress(buttonNumber, pressType);
+          }
+
+          // Some devices use DP 101-104 for buttons
+          if (dp >= 101 && dp <= 104) {
+            const buttonNumber = dp - 100;
+            const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
+            const pressType = pressTypeMap[value] || 'single';
+
+            this.log(`[BUTTON4-TUYA-DP] 🔘 Button ${buttonNumber} ${pressType.toUpperCase()} (DP${dp}=${value})`);
+            await this.triggerButtonPress(buttonNumber, pressType);
+          }
+        });
+
+        // Also listen for 'report' and 'datapoint' events (different Tuya cluster implementations)
+        tuyaCluster.on('report', async (data) => {
+          this.log(`[BUTTON4-TUYA-DP] 📡 Report event:`, data);
+          // Process same as response
+          const dp = data?.dp ?? data?.dataPointId ?? data?.dpId;
+          const value = data?.data ?? data?.value ?? 0;
+          if (dp >= 1 && dp <= 4) {
+            const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
+            await this.triggerButtonPress(dp, pressTypeMap[value] || 'single');
+          }
+        });
+
+        this.log('[BUTTON4-TUYA-DP] ✅ Tuya DP button detection configured');
+      } else {
+        this.log('[BUTTON4-TUYA-DP] ⚠️ Tuya cluster does not support event listeners');
+      }
+    } catch (err) {
+      this.log('[BUTTON4-TUYA-DP] ⚠️ Setup error:', err.message);
     }
   }
 
