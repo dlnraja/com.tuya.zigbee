@@ -5,14 +5,6 @@ on:
     branches:
       - master
       - main
-    paths:
-      - ".homeycompose/**"
-      - ".homeychangelog.json"
-      - "drivers/**"
-      - "lib/**"
-      - "app.js"
-      - "app.json"
-      - "locales/**"
   workflow_dispatch:
     inputs:
       force:
