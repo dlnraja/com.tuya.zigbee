@@ -91,7 +91,9 @@ class IrBlasterDriver extends Driver {
     });
     */
 
-    // Set protocol action
+    // Set protocol action - TEMPORARILY DISABLED due to SDK validation issues
+    // Will be re-enabled after proper testing
+    /*
     this.irSetProtocolAction = this.homey.flow.getActionCard('ir_set_protocol');
     this.irSetProtocolAction.registerRunListener(async (args, state) => {
       const device = args.device;
@@ -109,8 +111,11 @@ class IrBlasterDriver extends Driver {
 
       return true;
     });
+    */
 
-    // Analyze code action
+    // Analyze code action - TEMPORARILY DISABLED due to SDK validation issues
+    // Will be re-enabled after proper testing
+    /*
     this.irAnalyzeCodeAction = this.homey.flow.getActionCard('ir_analyze_code');
     this.irAnalyzeCodeAction.registerRunListener(async (args, state) => {
       const device = args.device;
@@ -140,6 +145,7 @@ class IrBlasterDriver extends Driver {
 
       return true;
     });
+    */
 
     this.log('Enhanced actions registered');
   }
