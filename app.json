@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.367",
+  "version": "5.5.370",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -140,6 +140,46 @@
         ]
       },
       {
+        "id": "button_multi_press",
+        "title": {
+          "en": "A button is pressed multiple times",
+          "fr": "Un bouton est appuyé plusieurs fois",
+          "nl": "Een knop is meerdere keren ingedrukt",
+          "de": "Eine Taste wurde mehrfach gedrückt"
+        },
+        "hint": {
+          "en": "This Flow will start when any button is pressed multiple times (3+ clicks)",
+          "fr": "Ce Flow démarrera quand un bouton est appuyé plusieurs fois (3+ clics)"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          },
+          {
+            "name": "count",
+            "type": "number",
+            "title": {
+              "en": "Press count",
+              "fr": "Nombre d'appuis"
+            },
+            "example": 3
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless|button_wireless_1|button_wireless_2|button_wireless_3|button_wireless_4|button_wireless_6|button_wireless_8|switch_wireless|scene_switch_1|scene_switch_2|scene_switch_3|scene_switch_4|scene_switch_6"
+          }
+        ]
+      },
+      {
         "id": "contact_changed",
         "title": {
           "en": "Contact changed",
@@ -208,6 +248,436 @@
               "en": "Last seen",
               "fr": "Dernière activité"
             }
+          }
+        ]
+      },
+      {
+        "id": "button_released",
+        "title": {
+          "en": "A button is released",
+          "fr": "Un bouton est relâché"
+        },
+        "hint": {
+          "en": "Triggered when a button is released",
+          "fr": "Déclenché quand un bouton est relâché"
+        },
+        "tokens": [
+          {
+            "name": "duration",
+            "type": "number",
+            "title": {
+              "en": "Duration (s)",
+              "fr": "Durée (s)"
+            },
+            "example": 1.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless|button_wireless_1|button_wireless_2|button_wireless_3|button_wireless_4|button_wireless_6|button_wireless_8"
+          }
+        ]
+      },
+      {
+        "id": "button_released_after_long",
+        "title": {
+          "en": "Button released after long press",
+          "fr": "Bouton relâché après appui long"
+        },
+        "hint": {
+          "en": "Triggered when a button is released after a long press",
+          "fr": "Déclenché quand un bouton est relâché après un appui long"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless|button_wireless_1|button_wireless_2|button_wireless_3|button_wireless_4|button_wireless_6|button_wireless_8"
+          }
+        ]
+      },
+      {
+        "id": "button_pressed_times",
+        "title": {
+          "en": "Button pressed X times",
+          "fr": "Bouton appuyé X fois"
+        },
+        "titleFormatted": {
+          "en": "Button pressed [[times]] times",
+          "fr": "Bouton appuyé [[times]] fois"
+        },
+        "hint": {
+          "en": "Triggered when a button is pressed a specific number of times",
+          "fr": "Déclenché quand un bouton est appuyé un nombre spécifique de fois"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless|button_wireless_1|button_wireless_2|button_wireless_3|button_wireless_4|button_wireless_6|button_wireless_8"
+          },
+          {
+            "type": "number",
+            "name": "times",
+            "title": {
+              "en": "Times",
+              "fr": "Fois"
+            },
+            "min": 1,
+            "max": 10,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "motion_alarm_lux",
+        "title": {
+          "en": "Motion detected with lux condition",
+          "fr": "Mouvement détecté avec condition lux"
+        },
+        "titleFormatted": {
+          "en": "Motion detected between [[lux_min]] and [[lux_max]] lux",
+          "fr": "Mouvement détecté entre [[lux_min]] et [[lux_max]] lux"
+        },
+        "hint": {
+          "en": "Triggered when motion is detected within a lux range",
+          "fr": "Déclenché quand un mouvement est détecté dans une plage de lux"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=motion_sensor|presence_sensor_radar|presence_sensor_pir"
+          },
+          {
+            "type": "number",
+            "name": "lux_min",
+            "title": {
+              "en": "Min lux",
+              "fr": "Lux min"
+            },
+            "min": 0,
+            "max": 10000
+          },
+          {
+            "type": "number",
+            "name": "lux_max",
+            "title": {
+              "en": "Max lux",
+              "fr": "Lux max"
+            },
+            "min": 0,
+            "max": 10000
+          }
+        ]
+      },
+      {
+        "id": "no_motion_timeout",
+        "title": {
+          "en": "No motion for X minutes",
+          "fr": "Pas de mouvement depuis X minutes"
+        },
+        "titleFormatted": {
+          "en": "No motion for [[minutes]] minutes",
+          "fr": "Pas de mouvement depuis [[minutes]] minutes"
+        },
+        "hint": {
+          "en": "Triggered when no motion detected for specified minutes",
+          "fr": "Déclenché quand aucun mouvement depuis X minutes"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=motion_sensor|presence_sensor_radar|presence_sensor_pir"
+          },
+          {
+            "type": "number",
+            "name": "minutes",
+            "title": {
+              "en": "Minutes",
+              "fr": "Minutes"
+            },
+            "min": 1,
+            "max": 1440
+          }
+        ]
+      },
+      {
+        "id": "power_above_threshold",
+        "title": {
+          "en": "Power above threshold",
+          "fr": "Puissance au-dessus du seuil"
+        },
+        "titleFormatted": {
+          "en": "Power above [[watts]] W",
+          "fr": "Puissance au-dessus de [[watts]] W"
+        },
+        "hint": {
+          "en": "Triggered when power consumption exceeds threshold",
+          "fr": "Déclenché quand la consommation dépasse le seuil"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=plug_smart|plug_outlet|switch_1gang|switch_2gang|switch_3gang|switch_4gang"
+          },
+          {
+            "type": "number",
+            "name": "watts",
+            "title": {
+              "en": "Watts",
+              "fr": "Watts"
+            },
+            "min": 0,
+            "max": 10000
+          }
+        ]
+      },
+      {
+        "id": "power_below_threshold_duration",
+        "title": {
+          "en": "Power below threshold for duration",
+          "fr": "Puissance sous le seuil pendant durée"
+        },
+        "titleFormatted": {
+          "en": "Power below [[watts]] W for [[seconds]] s",
+          "fr": "Puissance sous [[watts]] W pendant [[seconds]] s"
+        },
+        "hint": {
+          "en": "Triggered when power stays below threshold for specified duration",
+          "fr": "Déclenché quand la puissance reste sous le seuil pendant la durée spécifiée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=plug_smart|plug_outlet|switch_1gang|switch_2gang|switch_3gang|switch_4gang"
+          },
+          {
+            "type": "number",
+            "name": "watts",
+            "title": {
+              "en": "Watts",
+              "fr": "Watts"
+            },
+            "min": 0,
+            "max": 10000
+          },
+          {
+            "type": "number",
+            "name": "seconds",
+            "title": {
+              "en": "Seconds",
+              "fr": "Secondes"
+            },
+            "min": 1,
+            "max": 3600
+          }
+        ]
+      },
+      {
+        "id": "energy_today_exceeded",
+        "title": {
+          "en": "Daily energy exceeded",
+          "fr": "Énergie journalière dépassée"
+        },
+        "titleFormatted": {
+          "en": "Daily energy exceeded [[kwh]] kWh",
+          "fr": "Énergie journalière dépassée [[kwh]] kWh"
+        },
+        "hint": {
+          "en": "Triggered when daily energy consumption exceeds threshold",
+          "fr": "Déclenché quand la consommation journalière dépasse le seuil"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=plug_smart|plug_outlet|switch_1gang|switch_2gang|switch_3gang|switch_4gang"
+          },
+          {
+            "type": "number",
+            "name": "kwh",
+            "title": {
+              "en": "kWh",
+              "fr": "kWh"
+            },
+            "min": 0,
+            "max": 1000
+          }
+        ]
+      },
+      {
+        "id": "power_changed_percentage",
+        "title": {
+          "en": "Power changed by percentage",
+          "fr": "Puissance changée de pourcentage"
+        },
+        "titleFormatted": {
+          "en": "Power changed by [[percent]]%",
+          "fr": "Puissance changée de [[percent]]%"
+        },
+        "hint": {
+          "en": "Triggered when power changes by specified percentage",
+          "fr": "Déclenché quand la puissance change du pourcentage spécifié"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=plug_smart|plug_outlet|switch_1gang|switch_2gang|switch_3gang|switch_4gang"
+          },
+          {
+            "type": "number",
+            "name": "percent",
+            "title": {
+              "en": "Percentage",
+              "fr": "Pourcentage"
+            },
+            "min": 1,
+            "max": 100
+          }
+        ]
+      },
+      {
+        "id": "temperature_crossed_threshold",
+        "title": {
+          "en": "Temperature crossed threshold",
+          "fr": "Température a franchi le seuil"
+        },
+        "titleFormatted": {
+          "en": "Temperature crossed [[threshold]]°C",
+          "fr": "Température a franchi [[threshold]]°C"
+        },
+        "hint": {
+          "en": "Triggered when temperature crosses specified threshold",
+          "fr": "Déclenché quand la température franchit le seuil spécifié"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor|thermostat_tuya_dp|radiator_valve"
+          },
+          {
+            "type": "number",
+            "name": "threshold",
+            "title": {
+              "en": "Threshold (°C)",
+              "fr": "Seuil (°C)"
+            },
+            "min": -40,
+            "max": 100
+          }
+        ]
+      },
+      {
+        "id": "humidity_changed_by",
+        "title": {
+          "en": "Humidity changed by percentage",
+          "fr": "Humidité changée de pourcentage"
+        },
+        "titleFormatted": {
+          "en": "Humidity changed by [[percent]]%",
+          "fr": "Humidité changée de [[percent]]%"
+        },
+        "hint": {
+          "en": "Triggered when humidity changes by specified percentage",
+          "fr": "Déclenché quand l'humidité change du pourcentage spécifié"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor|thermostat_tuya_dp"
+          },
+          {
+            "type": "number",
+            "name": "percent",
+            "title": {
+              "en": "Percentage",
+              "fr": "Pourcentage"
+            },
+            "min": 1,
+            "max": 100
+          }
+        ]
+      },
+      {
+        "id": "temperature_changed_rapidly",
+        "title": {
+          "en": "Temperature changed rapidly",
+          "fr": "Température changée rapidement"
+        },
+        "titleFormatted": {
+          "en": "Temperature changed by [[degrees]]°C in [[minutes]] min",
+          "fr": "Température changée de [[degrees]]°C en [[minutes]] min"
+        },
+        "hint": {
+          "en": "Triggered when temperature changes rapidly within specified time",
+          "fr": "Déclenché quand la température change rapidement dans le temps spécifié"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor|thermostat_tuya_dp|radiator_valve"
+          },
+          {
+            "type": "number",
+            "name": "degrees",
+            "title": {
+              "en": "Degrees (°C)",
+              "fr": "Degrés (°C)"
+            },
+            "min": 0.5,
+            "max": 20,
+            "step": 0.5
+          },
+          {
+            "type": "number",
+            "name": "minutes",
+            "title": {
+              "en": "Minutes",
+              "fr": "Minutes"
+            },
+            "min": 1,
+            "max": 60
+          }
+        ]
+      },
+      {
+        "id": "signal_strength_low",
+        "title": {
+          "en": "Signal strength low",
+          "fr": "Signal faible"
+        },
+        "titleFormatted": {
+          "en": "[[device]] signal below [[threshold]] dBm",
+          "fr": "Signal [[device]] sous [[threshold]] dBm"
+        },
+        "hint": {
+          "en": "Triggered when device signal strength is below threshold",
+          "fr": "Déclenché quand le signal de l'appareil est sous le seuil"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device"
+          },
+          {
+            "type": "number",
+            "name": "threshold",
+            "title": {
+              "en": "RSSI threshold",
+              "fr": "Seuil RSSI"
+            },
+            "min": -100,
+            "max": 0
           }
         ]
       },
@@ -7719,6 +8189,129 @@
         ]
       },
       {
+        "id": "ir_learning_active",
+        "title": {
+          "en": "IR learning !{{is|isn't}} active",
+          "fr": "Apprentissage IR !{{est|n'est pas}} actif",
+          "nl": "IR leren !{{is|is niet}} actief",
+          "de": "IR-Lernen !{{ist|ist nicht}} aktiv"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          }
+        ]
+      },
+      {
+        "id": "ir_code_exists",
+        "title": {
+          "en": "IR code !{{exists|doesn't exist}}",
+          "fr": "Code IR !{{existe|n'existe pas}}",
+          "nl": "IR code !{{bestaat|bestaat niet}}",
+          "de": "IR-Code !{{existiert|existiert nicht}}"
+        },
+        "titleFormatted": {
+          "en": "IR code [[code_name]] !{{exists|doesn't exist}}",
+          "fr": "Code IR [[code_name]] !{{existe|n'existe pas}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "code_name",
+            "type": "text",
+            "title": {
+              "en": "Code name",
+              "fr": "Nom du code",
+              "nl": "Code naam",
+              "de": "Code-Name"
+            },
+            "placeholder": {
+              "en": "power_on"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ir_protocol_detected",
+        "title": {
+          "en": "IR protocol !{{is|isn't}} detected",
+          "fr": "Protocole IR !{{est|n'est pas}} détecté",
+          "nl": "IR protocol !{{is|is niet}} gedetecteerd",
+          "de": "IR-Protokoll !{{ist|ist nicht}} erkannt"
+        },
+        "titleFormatted": {
+          "en": "IR code [[code_name]] protocol !{{is|isn't}} [[protocol]]",
+          "fr": "Code IR [[code_name]] protocole !{{est|n'est pas}} [[protocol]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "code_name",
+            "type": "text",
+            "title": {
+              "en": "Code name",
+              "fr": "Nom du code"
+            }
+          },
+          {
+            "name": "protocol",
+            "type": "dropdown",
+            "title": {
+              "en": "Protocol",
+              "fr": "Protocole"
+            },
+            "values": [
+              {
+                "id": "NEC",
+                "label": {
+                  "en": "NEC"
+                }
+              },
+              {
+                "id": "RC5",
+                "label": {
+                  "en": "RC5"
+                }
+              },
+              {
+                "id": "RC6",
+                "label": {
+                  "en": "RC6"
+                }
+              },
+              {
+                "id": "SONY",
+                "label": {
+                  "en": "Sony"
+                }
+              },
+              {
+                "id": "SAMSUNG",
+                "label": {
+                  "en": "Samsung"
+                }
+              },
+              {
+                "id": "PRONTOHEX",
+                "label": {
+                  "en": "ProntoHex"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "air_quality_co2_co2_above",
         "title": {
           "en": "CO2 level is above",
@@ -9199,6 +9792,299 @@
             "filter": "driver_id=weather_station_outdoor"
           }
         ]
+      },
+      {
+        "id": "motion_in_last_minutes",
+        "title": {
+          "en": "Motion detected in last X minutes",
+          "fr": "Mouvement détecté dans les X dernières minutes"
+        },
+        "titleFormatted": {
+          "en": "[[device]] motion detected in last [[minutes]] minutes",
+          "fr": "[[device]] mouvement détecté dans les [[minutes]] dernières minutes"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=alarm_motion"
+          },
+          {
+            "type": "number",
+            "name": "minutes",
+            "title": {
+              "en": "Minutes",
+              "fr": "Minutes"
+            },
+            "min": 1,
+            "max": 1440
+          }
+        ]
+      },
+      {
+        "id": "lux_threshold",
+        "title": {
+          "en": "Lux level !{{is above|is below}} threshold",
+          "fr": "Niveau lux !{{est au-dessus|est en-dessous}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "[[device]] lux level is [[comparison]] [[threshold]] lux",
+          "fr": "[[device]] niveau lux est [[comparison]] de [[threshold]] lux"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=measure_luminance"
+          },
+          {
+            "type": "number",
+            "name": "threshold",
+            "title": {
+              "en": "Threshold (lux)",
+              "fr": "Seuil (lux)"
+            },
+            "min": 0,
+            "max": 100000
+          },
+          {
+            "type": "dropdown",
+            "name": "comparison",
+            "title": {
+              "en": "Comparison",
+              "fr": "Comparaison"
+            },
+            "values": [
+              {
+                "id": "above",
+                "title": {
+                  "en": "Above",
+                  "fr": "Au-dessus"
+                }
+              },
+              {
+                "id": "below",
+                "title": {
+                  "en": "Below",
+                  "fr": "En-dessous"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "power_in_range",
+        "title": {
+          "en": "Power is in range",
+          "fr": "Puissance est dans la plage"
+        },
+        "titleFormatted": {
+          "en": "[[device]] power is between [[min]] and [[max]] W",
+          "fr": "[[device]] puissance entre [[min]] et [[max]] W"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=measure_power"
+          },
+          {
+            "type": "number",
+            "name": "min",
+            "title": {
+              "en": "Min (W)",
+              "fr": "Min (W)"
+            },
+            "min": 0,
+            "max": 10000
+          },
+          {
+            "type": "number",
+            "name": "max",
+            "title": {
+              "en": "Max (W)",
+              "fr": "Max (W)"
+            },
+            "min": 0,
+            "max": 10000
+          }
+        ]
+      },
+      {
+        "id": "energy_today_threshold",
+        "title": {
+          "en": "Today's energy !{{is above|is below}} threshold",
+          "fr": "Énergie du jour !{{est au-dessus|est en-dessous}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "[[device]] today's energy is [[comparison]] [[kwh]] kWh",
+          "fr": "[[device]] énergie du jour est [[comparison]] de [[kwh]] kWh"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=meter_power"
+          },
+          {
+            "type": "number",
+            "name": "kwh",
+            "title": {
+              "en": "kWh",
+              "fr": "kWh"
+            },
+            "min": 0,
+            "max": 1000,
+            "step": 0.1
+          },
+          {
+            "type": "dropdown",
+            "name": "comparison",
+            "title": {
+              "en": "Comparison",
+              "fr": "Comparaison"
+            },
+            "values": [
+              {
+                "id": "above",
+                "title": {
+                  "en": "Above",
+                  "fr": "Au-dessus"
+                }
+              },
+              {
+                "id": "below",
+                "title": {
+                  "en": "Below",
+                  "fr": "En-dessous"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "temperature_in_range",
+        "title": {
+          "en": "Temperature is in range",
+          "fr": "Température est dans la plage"
+        },
+        "titleFormatted": {
+          "en": "[[device]] temperature is between [[min]] and [[max]]°C",
+          "fr": "[[device]] température entre [[min]] et [[max]]°C"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=measure_temperature"
+          },
+          {
+            "type": "number",
+            "name": "min",
+            "title": {
+              "en": "Min (°C)",
+              "fr": "Min (°C)"
+            },
+            "min": -40,
+            "max": 100
+          },
+          {
+            "type": "number",
+            "name": "max",
+            "title": {
+              "en": "Max (°C)",
+              "fr": "Max (°C)"
+            },
+            "min": -40,
+            "max": 100
+          }
+        ]
+      },
+      {
+        "id": "humidity_threshold",
+        "title": {
+          "en": "Humidity !{{is above|is below}} threshold",
+          "fr": "Humidité !{{est au-dessus|est en-dessous}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "[[device]] humidity is [[comparison]] [[percent]]%",
+          "fr": "[[device]] humidité est [[comparison]] de [[percent]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=measure_humidity"
+          },
+          {
+            "type": "number",
+            "name": "percent",
+            "title": {
+              "en": "Percent (%)",
+              "fr": "Pourcentage (%)"
+            },
+            "min": 0,
+            "max": 100
+          },
+          {
+            "type": "dropdown",
+            "name": "comparison",
+            "title": {
+              "en": "Comparison",
+              "fr": "Comparaison"
+            },
+            "values": [
+              {
+                "id": "above",
+                "title": {
+                  "en": "Above",
+                  "fr": "Au-dessus"
+                }
+              },
+              {
+                "id": "below",
+                "title": {
+                  "en": "Below",
+                  "fr": "En-dessous"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "button_is_pressed",
+        "title": {
+          "en": "Button !{{is|isn't}} pressed",
+          "fr": "Bouton !{{est|n'est pas}} appuyé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless|button_wireless_1|button_wireless_2|button_wireless_3|button_wireless_4|button_wireless_6|button_wireless_8"
+          }
+        ]
+      },
+      {
+        "id": "device_is_reachable",
+        "title": {
+          "en": "Device !{{is|isn't}} reachable",
+          "fr": "Appareil !{{est|n'est pas}} joignable"
+        },
+        "titleFormatted": {
+          "en": "[[device]] !{{is|isn't}} reachable",
+          "fr": "[[device]] !{{est|n'est pas}} joignable"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
       }
     ],
     "actions": [
@@ -9332,6 +10218,64 @@
         ]
       },
       {
+        "id": "ir_send_by_category",
+        "title": {
+          "en": "Send IR code by category",
+          "fr": "Envoyer code IR par catégorie",
+          "nl": "Verstuur IR code per categorie",
+          "de": "IR-Code nach Kategorie senden"
+        },
+        "titleFormatted": {
+          "en": "Send IR code [[code_name]] from category [[category]]",
+          "fr": "Envoyer code IR [[code_name]] de catégorie [[category]]",
+          "nl": "Verstuur IR code [[code_name]] uit categorie [[category]]",
+          "de": "IR-Code [[code_name]] aus Kategorie [[category]] senden"
+        },
+        "hint": {
+          "en": "Send a stored IR code from a specific category",
+          "fr": "Envoyer un code IR stocké d'une catégorie spécifique"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "category",
+            "type": "text",
+            "title": {
+              "en": "Category",
+              "fr": "Catégorie",
+              "nl": "Categorie",
+              "de": "Kategorie"
+            },
+            "placeholder": {
+              "en": "TV Remote",
+              "fr": "Télécommande TV",
+              "nl": "TV Afstandsbediening",
+              "de": "TV-Fernbedienung"
+            }
+          },
+          {
+            "name": "code_name",
+            "type": "text",
+            "title": {
+              "en": "Code name",
+              "fr": "Nom du code",
+              "nl": "Code naam",
+              "de": "Code-Name"
+            },
+            "placeholder": {
+              "en": "power_on",
+              "fr": "power_on",
+              "nl": "power_on",
+              "de": "power_on"
+            }
+          }
+        ]
+      },
+      {
         "id": "ota_check_updates",
         "title": {
           "en": "Check for firmware updates",
@@ -9363,6 +10307,342 @@
             "type": "device",
             "name": "device",
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "enable_motion_sensor",
+        "title": {
+          "en": "Enable/disable motion sensor",
+          "fr": "Activer/désactiver capteur mouvement"
+        },
+        "titleFormatted": {
+          "en": "Set [[device]] motion sensor [[enabled]]",
+          "fr": "Définir [[device]] capteur mouvement [[enabled]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=alarm_motion"
+          },
+          {
+            "type": "dropdown",
+            "name": "enabled",
+            "title": {
+              "en": "State",
+              "fr": "État"
+            },
+            "values": [
+              {
+                "id": "true",
+                "title": {
+                  "en": "Enabled",
+                  "fr": "Activé"
+                }
+              },
+              {
+                "id": "false",
+                "title": {
+                  "en": "Disabled",
+                  "fr": "Désactivé"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_motion_sensitivity",
+        "title": {
+          "en": "Set motion sensitivity",
+          "fr": "Définir sensibilité mouvement"
+        },
+        "titleFormatted": {
+          "en": "Set [[device]] motion sensitivity to [[sensitivity]]",
+          "fr": "Définir [[device]] sensibilité mouvement à [[sensitivity]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=alarm_motion"
+          },
+          {
+            "type": "dropdown",
+            "name": "sensitivity",
+            "title": {
+              "en": "Sensitivity",
+              "fr": "Sensibilité"
+            },
+            "values": [
+              {
+                "id": "low",
+                "title": {
+                  "en": "Low",
+                  "fr": "Faible"
+                }
+              },
+              {
+                "id": "medium",
+                "title": {
+                  "en": "Medium",
+                  "fr": "Moyen"
+                }
+              },
+              {
+                "id": "high",
+                "title": {
+                  "en": "High",
+                  "fr": "Élevé"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_power_threshold",
+        "title": {
+          "en": "Set power threshold",
+          "fr": "Définir seuil puissance"
+        },
+        "titleFormatted": {
+          "en": "Set [[device]] power threshold to [[watts]] W",
+          "fr": "Définir [[device]] seuil puissance à [[watts]] W"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=measure_power"
+          },
+          {
+            "type": "number",
+            "name": "watts",
+            "title": {
+              "en": "Watts (W)",
+              "fr": "Watts (W)"
+            },
+            "min": 0,
+            "max": 10000
+          }
+        ]
+      },
+      {
+        "id": "calibrate_temperature",
+        "title": {
+          "en": "Calibrate temperature sensor",
+          "fr": "Calibrer capteur température"
+        },
+        "titleFormatted": {
+          "en": "Calibrate [[device]] temperature by [[offset]]°C",
+          "fr": "Calibrer [[device]] température de [[offset]]°C"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=measure_temperature"
+          },
+          {
+            "type": "number",
+            "name": "offset",
+            "title": {
+              "en": "Offset (°C)",
+              "fr": "Décalage (°C)"
+            },
+            "min": -10,
+            "max": 10,
+            "step": 0.1
+          }
+        ]
+      },
+      {
+        "id": "enable_button",
+        "title": {
+          "en": "Enable/disable button",
+          "fr": "Activer/désactiver bouton"
+        },
+        "titleFormatted": {
+          "en": "Set [[device]] button [[enabled]]",
+          "fr": "Définir [[device]] bouton [[enabled]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=alarm_battery"
+          },
+          {
+            "type": "dropdown",
+            "name": "enabled",
+            "title": {
+              "en": "State",
+              "fr": "État"
+            },
+            "values": [
+              {
+                "id": "true",
+                "title": {
+                  "en": "Enabled",
+                  "fr": "Activé"
+                }
+              },
+              {
+                "id": "false",
+                "title": {
+                  "en": "Disabled",
+                  "fr": "Désactivé"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_dim_with_transition",
+        "title": {
+          "en": "Set dim level with transition",
+          "fr": "Définir niveau dim avec transition"
+        },
+        "titleFormatted": {
+          "en": "Set [[device]] dim to [[level]]% over [[duration]]s",
+          "fr": "Définir [[device]] dim à [[level]]% en [[duration]]s"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=dim"
+          },
+          {
+            "type": "range",
+            "name": "level",
+            "title": {
+              "en": "Level (%)",
+              "fr": "Niveau (%)"
+            },
+            "min": 0,
+            "max": 100,
+            "step": 1
+          },
+          {
+            "type": "number",
+            "name": "duration",
+            "title": {
+              "en": "Duration (s)",
+              "fr": "Durée (s)"
+            },
+            "min": 0,
+            "max": 60,
+            "step": 0.5
+          }
+        ]
+      },
+      {
+        "id": "flash_light",
+        "title": {
+          "en": "Flash light",
+          "fr": "Faire clignoter"
+        },
+        "titleFormatted": {
+          "en": "Flash [[device]] [[times]] times over [[duration]]s",
+          "fr": "Clignoter [[device]] [[times]] fois en [[duration]]s"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=onoff"
+          },
+          {
+            "type": "number",
+            "name": "times",
+            "title": {
+              "en": "Times",
+              "fr": "Fois"
+            },
+            "min": 1,
+            "max": 20
+          },
+          {
+            "type": "number",
+            "name": "duration",
+            "title": {
+              "en": "Duration (s)",
+              "fr": "Durée (s)"
+            },
+            "min": 1,
+            "max": 60
+          }
+        ]
+      },
+      {
+        "id": "breathing_effect",
+        "title": {
+          "en": "Start breathing effect",
+          "fr": "Démarrer effet respiration"
+        },
+        "titleFormatted": {
+          "en": "Start [[device]] breathing for [[duration]]s",
+          "fr": "Démarrer [[device]] respiration pendant [[duration]]s"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=dim"
+          },
+          {
+            "type": "number",
+            "name": "duration",
+            "title": {
+              "en": "Duration (s)",
+              "fr": "Durée (s)"
+            },
+            "min": 1,
+            "max": 300
+          }
+        ]
+      },
+      {
+        "id": "ping_device",
+        "title": {
+          "en": "Ping device",
+          "fr": "Ping appareil"
+        },
+        "titleFormatted": {
+          "en": "Ping [[device]]",
+          "fr": "Ping [[device]]"
+        },
+        "hint": {
+          "en": "Send a ping to check if device is reachable",
+          "fr": "Envoyer un ping pour vérifier si l'appareil est joignable"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
+      },
+      {
+        "id": "reset_energy_meter",
+        "title": {
+          "en": "Reset energy meter",
+          "fr": "Réinitialiser compteur énergie"
+        },
+        "titleFormatted": {
+          "en": "Reset [[device]] energy meter",
+          "fr": "Réinitialiser [[device]] compteur énergie"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=meter_power"
           }
         ]
       },
