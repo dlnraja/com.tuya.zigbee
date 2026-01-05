@@ -1,4 +1,10 @@
 {
+  "5.5.365": {
+    "en": "🔧 FIX - Smoke Detector Pairing (GitHub #96): Added 14 new manufacturerNames for smoke detectors including _TZE204_kgaxpvxr, _TZE284_6ycgarab, _TZE200_rccxox8p, _TZE200_dq1mfjug. Fixes PG-S11Z and other smoke detectors that failed to pair.",
+    "fr": "🔧 CORRECTION - Appairage Détecteur de Fumée (GitHub #96): Ajout de 14 nouveaux manufacturerNames pour détecteurs de fumée. Corrige PG-S11Z et autres détecteurs qui ne s'appairaient pas.",
+    "nl": "🔧 FIX - Rookmelder Pairing (GitHub #96): 14 nieuwe manufacturerNames toegevoegd voor rookmelders. Fixt PG-S11Z en andere rookmelders die niet koppelden.",
+    "de": "🔧 FIX - Rauchmelder Pairing (GitHub #96): 14 neue manufacturerNames für Rauchmelder hinzugefügt. Behebt PG-S11Z und andere Rauchmelder die nicht gepairt werden konnten."
+  },
   "5.5.364": {
     "en": "🔧 FIX - Radar Sensor Wrong Driver: Removed duplicate productIds (ZG-204ZL, ZG-204ZM, ZG-204ZV) from motion_sensor driver. These radar sensors now correctly pair ONLY with presence_sensor_radar driver. Fixes 4x4_Pete forum #848 issue where radar sensors paired with wrong driver.",
     "fr": "🔧 CORRECTION - Mauvais Driver Radar: Supprimé les productIds dupliqués (ZG-204ZL, ZG-204ZM, ZG-204ZV) du driver motion_sensor. Ces capteurs radar s'apparient maintenant uniquement avec presence_sensor_radar.",
