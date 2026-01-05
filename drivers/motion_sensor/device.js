@@ -238,9 +238,21 @@ class MotionSensorDevice extends HybridSensorBase {
       },
 
       // Battery cluster (0x0001)
+      // v5.5.366: Added throttling to prevent battery spam (4x4_Pete forum #851)
       powerConfiguration: {
         attributeReport: (data) => {
           if (data.batteryPercentageRemaining !== undefined) {
+            // v5.5.366: Throttle battery reports to prevent spam
+            const now = Date.now();
+            const lastBatteryReport = this._lastBatteryReportTime || 0;
+            const throttleMs = MotionSensorDevice.BATTERY_THROTTLE_MS;
+
+            if (now - lastBatteryReport < throttleMs) {
+              // Suppress frequent battery reports
+              return;
+            }
+            this._lastBatteryReportTime = now;
+
             let battery = Math.round(data.batteryPercentageRemaining / 2);
             // v5.5.317: Validate battery with inference
             battery = this._batteryInference?.validateBattery(battery) ?? battery;
@@ -309,10 +321,32 @@ class MotionSensorDevice extends HybridSensorBase {
    * These devices should only show: motion, luminance, battery
    * v5.5.353: Added battery report throttling for ZG-204ZM to prevent spam
    */
+  /**
+   * v5.5.366: Battery report throttling interval (minimum ms between reports)
+   * Prevents "battery spam" on devices that report battery with every DP
+   */
+  static get BATTERY_THROTTLE_MS() {
+    return 300000;  // 5 minutes minimum between battery updates
+  }
+
   static get PIR_ONLY_MANUFACTURERS() {
     return [
-      '_TZE200_3towulqd',  // ZG-204ZM PIR only (4x4_Pete forum #830)
+      // v5.5.366: Expanded list per 4x4_Pete forum feedback #851
+      // These devices only have motion + luminance, NO temp/humidity
+      '_TZE200_3towulqd',  // ZG-204ZL PIR only
       '_tze200_3towulqd',
+      '_TZE204_3towulqd',
+      '_tze204_3towulqd',
+      '_TZE200_1ibpyhdc',  // ZG-204ZL variant
+      '_tze200_1ibpyhdc',
+      '_TZE200_bh3n6gk8',  // ZG-204ZL variant
+      '_tze200_bh3n6gk8',
+      '_TZE200_2aaelwxk',  // ZG-204ZM battery
+      '_tze200_2aaelwxk',
+      '_TZE204_2aaelwxk',
+      '_tze204_2aaelwxk',
+      '_TZE200_kb5noeto',  // ZG-204ZM variant
+      '_tze200_kb5noeto',
     ];
   }
 
@@ -642,13 +676,25 @@ class MotionSensorDevice extends HybridSensorBase {
       this.log('[MOTION-BATTERY] 🔋 Smart battery read while device is awake...');
       const data = await this._smartZclRead(powerCluster, ['batteryPercentageRemaining', 'batteryVoltage'], 3000);
 
+      // v5.5.366: Throttle battery reports to prevent spam
+      const now = Date.now();
+      const lastBatteryReport = this._lastBatteryReportTime || 0;
+      const throttleMs = MotionSensorDevice.BATTERY_THROTTLE_MS;
+
+      if (now - lastBatteryReport < throttleMs) {
+        this.log('[MOTION-BATTERY] ⏱️ Battery report throttled (spam prevention)');
+        return;
+      }
+
       if (data?.batteryPercentageRemaining !== undefined && data.batteryPercentageRemaining !== 255) {
+        this._lastBatteryReportTime = now;
         const battery = Math.round(data.batteryPercentageRemaining / 2);
         this.log(`[MOTION-BATTERY] 🔋 Battery: ${battery}% (raw: ${data.batteryPercentageRemaining})`);
         if (this.hasCapability('measure_battery')) {
           await this.setCapabilityValue('measure_battery', battery).catch(() => { });
         }
       } else if (data?.batteryVoltage !== undefined && data.batteryVoltage > 0) {
+        this._lastBatteryReportTime = now;
         // Fallback: estimate from voltage (typical CR2450: 3.0V = 100%, 2.0V = 0%)
         const voltage = data.batteryVoltage / 10;
         const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));

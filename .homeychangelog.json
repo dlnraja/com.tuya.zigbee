@@ -1,4 +1,10 @@
 {
+  "5.5.366": {
+    "en": "🔧 FIX - Battery Spam & Temp/Humidity (4x4_Pete forum #851): (1) Global battery throttling - reports only on 5% change or every 5 minutes. (2) Expanded PIR_ONLY_MANUFACTURERS list to remove incorrect temp/humidity capabilities from ZG-204ZL/ZG-204ZM devices. Fixes battery report spam and unnecessary temp/humidity on PIR-only sensors.",
+    "fr": "🔧 CORRECTION - Spam Batterie & Temp/Humidité (forum #851): (1) Throttling global batterie - rapports uniquement sur changement de 5% ou toutes les 5 minutes. (2) Liste PIR_ONLY_MANUFACTURERS étendue. Corrige le spam batterie et temp/humidité inutiles.",
+    "nl": "🔧 FIX - Batterij Spam & Temp/Vochtigheid (forum #851): (1) Globale batterij throttling - rapporten alleen bij 5% verandering of elke 5 minuten. (2) Uitgebreide PIR_ONLY_MANUFACTURERS lijst. Fixt batterij spam en onnodige temp/vochtigheid.",
+    "de": "🔧 FIX - Batterie Spam & Temp/Feuchtigkeit (Forum #851): (1) Globale Batterie-Drosselung - Berichte nur bei 5% Änderung oder alle 5 Minuten. (2) Erweiterte PIR_ONLY_MANUFACTURERS Liste. Behebt Batterie-Spam und unnötige Temp/Feuchtigkeit."
+  },
   "5.5.365": {
     "en": "🔧 FIX - Smoke Detector Pairing (GitHub #96): Added 14 new manufacturerNames for smoke detectors including _TZE204_kgaxpvxr, _TZE284_6ycgarab, _TZE200_rccxox8p, _TZE200_dq1mfjug. Fixes PG-S11Z and other smoke detectors that failed to pair.",
     "fr": "🔧 CORRECTION - Appairage Détecteur de Fumée (GitHub #96): Ajout de 14 nouveaux manufacturerNames pour détecteurs de fumée. Corrige PG-S11Z et autres détecteurs qui ne s'appairaient pas.",
