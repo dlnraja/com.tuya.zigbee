@@ -424,6 +424,8 @@ const SENSOR_CONFIGS = {
       '_TZE200_kb5noeto',
     ],
     battery: true,
+    noTemperature: true,    // v5.5.368: 4x4_Pete fix - device has NO temp sensor
+    noHumidity: true,       // v5.5.368: 4x4_Pete fix - device has NO humidity sensor
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       4: { cap: 'measure_battery', divisor: 1 },
@@ -645,6 +647,8 @@ const SENSOR_CONFIGS = {
     ],
     battery: true,
     hasIlluminance: true,
+    noTemperature: true,    // v5.5.368: 4x4_Pete fix - device has NO temp sensor
+    noHumidity: true,       // v5.5.368: 4x4_Pete fix - device has NO humidity sensor
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },           // presence
       2: { cap: null, internal: 'large_motion_sensitivity' },       // 0-10
