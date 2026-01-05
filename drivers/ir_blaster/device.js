@@ -587,7 +587,8 @@ class IrBlasterDevice extends ZigBeeDevice {
   }
 
   /**
-   * v5.5.311: Send IR code using ZosungIRControl cluster
+   * v5.5.361: Enhanced IR code sending with chunked transmission protocol
+   * Based on Zigbee2MQTT zosungIRTransmit implementation
    * @param {string} irCode - Base64 encoded IR code
    */
   async sendIRCode(irCode) {
@@ -599,6 +600,30 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
 
     try {
+      // v5.5.361: Build JSON wrapper as per Z2M implementation
+      const irMessage = JSON.stringify({
+        'key_num': 1,
+        'delay': 300,
+        'key1': {
+          'num': 1,
+          'freq': 38000,
+          'type': 1,
+          'key_code': irCode
+        }
+      });
+
+      // Try chunked transmission first (most reliable for large codes)
+      const irTransmitCluster = zclNode.endpoints[1].clusters.zosungIRTransmit;
+      if (irTransmitCluster && irCode.length > 100) {
+        try {
+          await this._sendChunkedIRCode(irMessage, irTransmitCluster);
+          this.log('IR code sent via chunked ZosungIRTransmit protocol');
+          return;
+        } catch (chunkErr) {
+          this.log('Chunked send failed, trying direct:', chunkErr.message);
+        }
+      }
+
       // v5.5.311: Use ZosungIRControl.IRSend command directly
       const irControlCluster = zclNode.endpoints[1].clusters.zosungIRControl;
       if (irControlCluster) {
@@ -630,6 +655,52 @@ class IrBlasterDevice extends ZigBeeDevice {
       this.error('Failed to send IR code:', err);
       throw err;
     }
+  }
+
+  /**
+   * v5.5.361: Send IR code using chunked transmission protocol
+   * Based on Zigbee2MQTT zosung_ir_code_to_send implementation
+   */
+  async _sendChunkedIRCode(irMessage, transmitCluster) {
+    // Generate sequence number
+    this._irSeq = ((this._irSeq || 0) + 1) % 0x10000;
+    const seq = this._irSeq;
+
+    // Store message for chunked transmission
+    this._pendingIRMessage = irMessage;
+    this._pendingIRSeq = seq;
+
+    this.log(`Starting chunked IR transmission: seq=${seq}, length=${irMessage.length}`);
+
+    // Send start command (Code00)
+    await transmitCluster.startTransmit({
+      sequenceNumber: seq,
+      totalLength: irMessage.length
+    });
+
+    // Wait for acknowledgment and data requests
+    // The device will request chunks via codeDataRequest events
+    return new Promise((resolve, reject) => {
+      const timeout = this.homey.setTimeout(() => {
+        delete this._pendingIRMessage;
+        delete this._pendingIRSeq;
+        reject(new Error('IR transmission timeout'));
+      }, 10000);
+
+      this._irTransmitResolve = () => {
+        this.homey.clearTimeout(timeout);
+        delete this._pendingIRMessage;
+        delete this._pendingIRSeq;
+        resolve();
+      };
+
+      this._irTransmitReject = (err) => {
+        this.homey.clearTimeout(timeout);
+        delete this._pendingIRMessage;
+        delete this._pendingIRSeq;
+        reject(err);
+      };
+    });
   }
 
   /**
@@ -714,83 +785,8 @@ class IrBlasterDevice extends ZigBeeDevice {
       });
     }
 
-    // v5.5.359: Flow cards below temporarily disabled - not implemented in driver.js
-    // Will be re-enabled when fully implemented and tested
-
-    /*
-    // Send by category action
-    const sendCategoryAction = this.homey.flow.getActionCard('ir_send_by_category');
-    if (sendCategoryAction) {
-      sendCategoryAction.registerRunListener(async (args) => {
-        const { category, code_name } = args;
-        this.log(`Flow: Sending IR code "${code_name}" from category "${category}"`);
-
-        try {
-          const codes = this.getCodesByCategory(category);
-          if (!codes[code_name]) {
-            throw new Error(`Code "${code_name}" not found in category "${category}"`);
-          }
-
-          await this.sendIRCode(codes[code_name]);
-          return true;
-        } catch (err) {
-          this.error('Category send action failed:', err);
-          throw new Error(`Failed to send code: ${err.message}`);
-        }
-      });
-    }
-
-    // Set protocol action
-    const protocolAction = this.homey.flow.getActionCard('ir_set_protocol');
-    if (protocolAction) {
-      protocolAction.registerRunListener(async (args) => {
-        const { protocol, frequency } = args;
-        this.log(`Flow: Setting IR protocol to "${protocol}" @ ${frequency}Hz`);
-
-        try {
-          await this._setIRProtocol(protocol);
-          if (frequency) {
-            await this._setCarrierFrequency(frequency);
-          }
-          return true;
-        } catch (err) {
-          this.error('Protocol set action failed:', err);
-          throw new Error(`Failed to set protocol: ${err.message}`);
-        }
-      });
-    }
-
-    // Analyze code action
-    const analyzeAction = this.homey.flow.getActionCard('ir_analyze_code');
-    if (analyzeAction) {
-      analyzeAction.registerRunListener(async (args) => {
-        const { ir_code } = args;
-        this.log(`Flow: Analyzing IR code "${ir_code}"`);
-
-        try {
-          let codeToAnalyze = ir_code;
-          if (this._learnedCodes[ir_code]) {
-            codeToAnalyze = this._learnedCodes[ir_code];
-          }
-
-          const analysis = this._analyzeIRProtocol(codeToAnalyze);
-          if (analysis) {
-            // Trigger analysis result flow
-            this.driver.codeAnalyzedTrigger?.trigger(this, {
-              code_name: ir_code,
-              protocol: analysis.protocol,
-              frequency: analysis.frequency,
-              length: analysis.length
-            }, {}).catch(() => { });
-          }
-          return true;
-        } catch (err) {
-          this.error('Analyze action failed:', err);
-          throw new Error(`Failed to analyze code: ${err.message}`);
-        }
-      });
-    }
-    */
+    // v5.5.361: Re-enabled flow cards - properly implemented in driver.js
+    this.log('IR Blaster flow cards ready (ir_send_by_category in driver.js)')
   }
 
   /**
@@ -888,7 +884,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
   }
 
-  // Setup transmit protocol for enhanced cluster
+  // v5.5.361: Setup transmit protocol for enhanced cluster with chunked support
   _setupTransmitProtocol(cluster) {
     cluster.on('startTransmitAck', (data) => {
       this.log('Transmit ACK received:', data);
@@ -900,6 +896,14 @@ class IrBlasterDevice extends ZigBeeDevice {
 
     cluster.on('doneSending', (data) => {
       this.log('IR transmission completed:', data);
+      this._handleTransmitComplete(data);
+    });
+
+    // v5.5.361: Handle additional events from Z2M protocol
+    cluster.on('doneReceiving', (data) => {
+      this.log('IR code receive completed:', data);
+      // Read the learned code after receiving
+      this.readLastLearnedCode().catch(this.error);
     });
   }
 
@@ -1097,24 +1101,47 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
   }
 
-  // Handle code data request
+  // v5.5.361: Handle code data request for chunked transmission
   async _handleCodeDataRequest(data) {
-    if (!this._currentTransmitCode) return;
+    if (!this._pendingIRMessage) return;
 
     const { sequenceNumber, position, maxLength } = data;
-    const codeBuffer = Buffer.from(this._currentTransmitCode, 'base64');
-    const chunk = codeBuffer.slice(position, position + maxLength);
+
+    // Verify sequence
+    if (sequenceNumber !== this._pendingIRSeq) {
+      this.error(`Unexpected sequence: expected ${this._pendingIRSeq}, got ${sequenceNumber}`);
+      return;
+    }
+
+    // Extract chunk from message
+    const chunk = this._pendingIRMessage.substring(position, position + (maxLength || 0x32));
+    const chunkBuffer = Buffer.from(chunk);
+
+    // Calculate CRC
+    const crc = Array.from(chunkBuffer.values()).reduce((a, b) => a + b, 0) % 0x100;
+
+    this.log(`Sending IR chunk: pos=${position}, len=${chunk.length}, crc=${crc}`);
 
     if (this._irTransmitCluster) {
       try {
         await this._irTransmitCluster.codeDataResponse({
           sequenceNumber,
           position,
-          data: chunk
+          data: chunkBuffer
         });
       } catch (err) {
         this.error('Failed to send code data response:', err);
+        this._irTransmitReject?.(err);
       }
+    }
+  }
+
+  // v5.5.361: Handle transmission complete
+  _handleTransmitComplete(data) {
+    const { sequenceNumber } = data;
+    if (sequenceNumber === this._pendingIRSeq) {
+      this.log('IR transmission completed successfully');
+      this._irTransmitResolve?.();
     }
   }
 
