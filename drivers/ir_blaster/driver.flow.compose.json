@@ -415,6 +415,10 @@
         "nl": "Verstuur IR Code",
         "de": "IR-Code Senden"
       },
+      "hint": {
+        "en": "Send a learned or raw IR code. Use the code name or paste a Base64 encoded IR code.",
+        "nl": "Verstuur een geleerde of raw IR code. Gebruik de codenaam of plak een Base64 gecodeerde IR code."
+      },
       "titleFormatted": {
         "en": "Send IR code [[ir_code]] with [[protocol]] protocol ([[repeat]]x repeats)",
         "nl": "Verstuur IR code [[ir_code]] met [[protocol]] protocol ([[repeat]]x herhalingen)",
@@ -534,6 +538,53 @@
             "en": "1",
             "nl": "1",
             "de": "1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ir_send_by_category",
+      "title": {
+        "en": "Send IR Code by Category",
+        "nl": "Verstuur IR Code per Categorie",
+        "de": "IR-Code nach Kategorie Senden"
+      },
+      "hint": {
+        "en": "Send a stored IR code from a specific category (e.g., TV Remote, AC).",
+        "nl": "Verstuur een opgeslagen IR code uit een specifieke categorie (bijv. TV Afstandsbediening, Airco)."
+      },
+      "titleFormatted": {
+        "en": "Send IR code [[code_name]] from category [[category]]",
+        "nl": "Verstuur IR code [[code_name]] uit categorie [[category]]",
+        "de": "IR-Code [[code_name]] aus Kategorie [[category]] senden"
+      },
+      "args": [
+        {
+          "name": "category",
+          "type": "text",
+          "title": {
+            "en": "Category",
+            "nl": "Categorie",
+            "de": "Kategorie"
+          },
+          "placeholder": {
+            "en": "TV Remote",
+            "nl": "TV Afstandsbediening",
+            "de": "TV-Fernbedienung"
+          }
+        },
+        {
+          "name": "code_name",
+          "type": "text",
+          "title": {
+            "en": "Code Name",
+            "nl": "Code Naam",
+            "de": "Code Name"
+          },
+          "placeholder": {
+            "en": "power_on",
+            "nl": "power_on",
+            "de": "power_on"
           }
         }
       ]
