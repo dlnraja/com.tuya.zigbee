@@ -1,4 +1,10 @@
 {
+  "5.5.362": {
+    "en": "🔥 CRITICAL FIX - IR Blaster Driver Crash: All flow card registrations (getActionCard, getTriggerCard, getConditionCard) now wrapped in individual try-catch blocks to prevent driver initialization failure. Fixes diagnostic reports #7cb5ca58 and #5dc85d82 where 'Invalid Flow Card ID: ir_send_by_category' and 'ir_set_protocol' errors caused complete IR Blaster driver failure. Driver now gracefully handles missing flow cards without crashing.",
+    "fr": "🔥 CORRECTION CRITIQUE - Crash Driver IR Blaster: Toutes les enregistrements de flow cards (getActionCard, getTriggerCard, getConditionCard) sont maintenant encapsulés dans des blocs try-catch individuels pour éviter l'échec d'initialisation du driver. Corrige les rapports de diagnostic #7cb5ca58 et #5dc85d82.",
+    "nl": "🔥 KRITIEKE FIX - IR Blaster Driver Crash: Alle flow card registraties nu gewrapped in individuele try-catch blokken om driver initialisatie falen te voorkomen. Fixt diagnose rapporten #7cb5ca58 en #5dc85d82.",
+    "de": "🔥 KRITISCHER FIX - IR Blaster Treiber Absturz: Alle Flow-Card-Registrierungen jetzt in einzelne try-catch-Blöcke gewrapped um Treiber-Initialisierungsfehler zu verhindern. Behebt Diagnoseberichte #7cb5ca58 und #5dc85d82."
+  },
   "5.5.361": {
     "en": "🎯 IR BLASTER COMPLETE: (1) Enhanced chunked transmission protocol based on Zigbee2MQTT zosungIRTransmit implementation. (2) JSON wrapper for IR codes with key_num, delay, freq, type, key_code. (3) Automatic CRC calculation for data integrity. (4) Sequence tracking for reliable transmission. (5) Transmission complete/receive events handling. (6) Fallback chain: chunked → direct → Tuya DP. GitHub #96 PG-S11Z smoke detector: FIXED in v5.5.360.",
     "fr": "🎯 IR BLASTER COMPLET: (1) Protocole transmission chunked amélioré basé sur implémentation Zigbee2MQTT zosungIRTransmit. (2) Wrapper JSON pour codes IR avec key_num, delay, freq, type, key_code. (3) Calcul CRC automatique. (4) Suivi séquence pour transmission fiable. (5) Gestion événements transmission/réception. (6) Chaîne fallback: chunked → direct → Tuya DP.",
