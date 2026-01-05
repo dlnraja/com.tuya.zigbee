@@ -1,4 +1,10 @@
 {
+  "5.5.364": {
+    "en": "🔧 FIX - Radar Sensor Wrong Driver: Removed duplicate productIds (ZG-204ZL, ZG-204ZM, ZG-204ZV) from motion_sensor driver. These radar sensors now correctly pair ONLY with presence_sensor_radar driver. Fixes 4x4_Pete forum #848 issue where radar sensors paired with wrong driver.",
+    "fr": "🔧 CORRECTION - Mauvais Driver Radar: Supprimé les productIds dupliqués (ZG-204ZL, ZG-204ZM, ZG-204ZV) du driver motion_sensor. Ces capteurs radar s'apparient maintenant uniquement avec presence_sensor_radar.",
+    "nl": "🔧 FIX - Radar Sensor Verkeerde Driver: Dubbele productIds (ZG-204ZL, ZG-204ZM, ZG-204ZV) verwijderd uit motion_sensor driver. Radar sensoren koppelen nu alleen met presence_sensor_radar.",
+    "de": "🔧 FIX - Radar Sensor Falscher Treiber: Doppelte productIds (ZG-204ZL, ZG-204ZM, ZG-204ZV) aus motion_sensor Treiber entfernt. Radarsensoren pairen jetzt nur mit presence_sensor_radar."
+  },
   "5.5.363": {
     "en": "🔥 CRITICAL FIX - Presence Sensor Radar Crash: Fixed SyntaxError 'Unexpected end of input' at device.js:2193 caused by missing closing brace in debouncePresence function. Also fixed presenceDebounceState variable scope. Diagnostic reports #51485cfc and #4388db0c.",
     "fr": "🔥 CORRECTION CRITIQUE - Crash Capteur Présence Radar: Corrigé SyntaxError 'Unexpected end of input' causé par accolade manquante dans fonction debouncePresence.",
