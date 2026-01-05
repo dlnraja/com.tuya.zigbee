@@ -555,12 +555,17 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         .registerRunListener(async (args, state) => true);
 
       // ACTION: Identify device
+      // v5.5.369: Safe wrapper to prevent "cannot get device by id" errors
       this.homey.flow.getActionCard('device_identify')
         .registerRunListener(async (args) => {
-          const device = args.device;
-          this.log(`[IDENTIFY] Identifying device: ${device.getName()}`);
-
           try {
+            if (!args?.device || typeof args.device.getName !== 'function') {
+              this.error('[IDENTIFY] Device not available (may have been deleted)');
+              return false;
+            }
+            const device = args.device;
+            this.log(`[IDENTIFY] Identifying device: ${device.getName()}`);
+
             // Try to identify via Zigbee Identify cluster
             const endpoint = device.zclNode?.endpoints?.[1];
             if (endpoint?.clusters?.identify) {
@@ -579,15 +584,24 @@ class UniversalTuyaZigbeeApp extends Homey.App {
             }
             return true;
           } catch (err) {
-            this.error(`[IDENTIFY] Failed to identify ${device.getName()}:`, err.message);
+            this.error(`[IDENTIFY] Error:`, err.message);
             return false;
           }
         });
 
       // CONDITION: Device is online
+      // v5.5.369: Safe wrapper to prevent "cannot get device by id" errors
       this.homey.flow.getConditionCard('device_is_online')
         .registerRunListener(async (args) => {
-          return args.device.getAvailable();
+          try {
+            if (!args?.device || typeof args.device.getAvailable !== 'function') {
+              return false;
+            }
+            return args.device.getAvailable();
+          } catch (err) {
+            this.error('[FLOW] device_is_online error:', err.message);
+            return false;
+          }
         });
 
       this.log('✅ Device Health Flow Cards registered (6 cards)');

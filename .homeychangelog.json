@@ -1,4 +1,22 @@
 {
+  "5.5.370": {
+    "en": "🔧 FIX - Missing Flow Cards: Added 11 missing flow card definitions to app.json that were causing 'cannot get device by id' errors. Includes: button_pressed_times, motion_alarm_lux, no_motion_timeout, power_above_threshold, power_below_threshold_duration, energy_today_exceeded, power_changed_percentage, temperature_crossed_threshold, humidity_changed_by, temperature_changed_rapidly, signal_strength_low.",
+    "fr": "🔧 CORRECTION - Flow Cards Manquants: Ajout de 11 définitions de flow cards manquantes dans app.json qui causaient des erreurs 'cannot get device by id'. Inclut: button_pressed_times, motion_alarm_lux, no_motion_timeout, etc.",
+    "nl": "🔧 FIX - Ontbrekende Flow Cards: 11 ontbrekende flow card definities toegevoegd aan app.json die 'cannot get device by id' fouten veroorzaakten.",
+    "de": "🔧 FIX - Fehlende Flow Cards: 11 fehlende Flow Card Definitionen zu app.json hinzugefügt, die 'cannot get device by id' Fehler verursachten."
+  },
+  "5.5.369": {
+    "en": "🔧 FIX - Forum Bug Reports: (1) ZG-204ZM battery spam - unified 5-minute throttling. (2) ZG-204ZM incorrect temp/humidity removed. (3) MOES 4-button - manufacturer IDs + scenes/multistateInput listeners fixed for double/long press. (4) 'Cannot get device by id' error - added safe wrappers to all flow card handlers.",
+    "fr": "🔧 CORRECTION - Rapports forum: (1) Spam batterie ZG-204ZM corrigé. (2) Temp/humidité incorrects supprimés. (3) MOES 4-boutons - détection double/long appui corrigée. (4) Erreur 'cannot get device' - wrappers de sécurité ajoutés.",
+    "nl": "🔧 FIX - Forum Bugs: (1) ZG-204ZM batterij spam gefixd. (2) Onjuiste temp/vochtigheid verwijderd. (3) MOES 4-knops - dubbel/lang druk detectie gefixd. (4) 'Cannot get device' fout - veilige wrappers toegevoegd.",
+    "de": "🔧 FIX - Forum-Fehler: (1) ZG-204ZM Batterie-Spam behoben. (2) Falsche Temp/Feuchtigkeit entfernt. (3) MOES 4-Tasten - Doppel/Lang-Druck behoben. (4) 'Cannot get device' Fehler - sichere Wrapper hinzugefügt."
+  },
+  "5.5.368": {
+    "en": "🔧 FIX - IR Blaster Flow Cards: Added missing ir_send_by_category action and ir_learning_active, ir_code_exists, ir_protocol_detected conditions to app.json. Fixes IR Blaster driver crash on flow card registration.",
+    "fr": "🔧 CORRECTION - Flow Cards IR Blaster: Ajout de l'action ir_send_by_category et des conditions manquantes. Corrige le crash du driver IR Blaster.",
+    "nl": "🔧 FIX - IR Blaster Flow Cards: Ontbrekende ir_send_by_category actie en condities toegevoegd. Fixt IR Blaster driver crash.",
+    "de": "🔧 FIX - IR Blaster Flow Cards: Fehlende ir_send_by_category Aktion und Bedingungen hinzugefügt. Behebt IR Blaster Treiber-Absturz."
+  },
   "5.5.367": {
     "en": "🔧 FIX - IR Blaster & Button Detection: (1) Added missing ir_learning_state_changed and ir_code_analyzed flow triggers to fix IR Blaster driver crash. (2) Fixed Tuya DP button detection - now ALWAYS enabled for all button devices, not just when ZCL clusters are missing. (3) Added Tuya DP detection for MOES ESW-0ZAA-EU 4-button. Fixes 'no detection' issues on wireless buttons.",
     "fr": "🔧 CORRECTION - IR Blaster & Détection Boutons: (1) Triggers flow manquants ajoutés. (2) Détection Tuya DP toujours activée pour tous les boutons. (3) Support MOES ESW-0ZAA-EU. Corrige les problèmes de non-détection.",

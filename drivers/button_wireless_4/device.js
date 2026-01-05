@@ -80,60 +80,90 @@ class Button4GangDevice extends ButtonDevice {
           continue;
         }
 
-        // v5.5.333: Setup scenes cluster listener
+        // v5.5.369: FIXED scenes cluster listener - use multiple event patterns
         const scenesCluster = endpoint.clusters?.scenes || endpoint.clusters?.genScenes || endpoint.clusters?.[5];
         if (scenesCluster) {
           this.log(`[BUTTON4-PHYSICAL] 📡 Setting up scene listener on EP${ep}...`);
 
-          // CRITICAL: Listen for scene recall commands (physical button presses)
-          scenesCluster.on('command', async (commandName, commandPayload) => {
-            if (commandName === 'recall') {
-              const sceneId = commandPayload?.sceneId ?? commandPayload?.scene ?? 0;
+          // Map scene ID to press type based on research
+          const pressTypeMap = {
+            0: 'single',    // Scene 0 = single press
+            1: 'double',    // Scene 1 = double press
+            2: 'long',      // Scene 2 = long/hold press
+            3: 'single',    // Some variants use 3 for single
+            4: 'double',    // Some variants use 4 for double
+            5: 'long'       // Some variants use 5 for long
+          };
 
-              // Map scene ID to press type based on research
-              const pressTypeMap = {
-                0: 'single',    // Scene 0 = single press
-                1: 'double',    // Scene 1 = double press
-                2: 'long',      // Scene 2 = long/hold press
-                3: 'single',    // Some variants use 3 for single
-                4: 'double',    // Some variants use 4 for double
-                5: 'long'       // Some variants use 5 for long
-              };
+          const handleSceneRecall = async (sceneId) => {
+            const pressType = pressTypeMap[sceneId] || 'single';
+            this.log(`[BUTTON4-SCENE] 🔘 Physical Button ${ep} ${pressType.toUpperCase()} (scene ${sceneId})`);
+            await this.triggerButtonPress(ep, pressType);
+          };
 
-              const pressType = pressTypeMap[sceneId] || 'single';
+          // v5.5.369: Pattern 1 - Direct 'recall' event (SonoffZclDevice pattern)
+          if (typeof scenesCluster.on === 'function') {
+            scenesCluster.on('recall', async (payload) => {
+              this.log(`[BUTTON4-SCENE] EP${ep} recall event:`, payload);
+              const sceneId = payload?.sceneId ?? payload?.sceneid ?? payload?.scene ?? 0;
+              await handleSceneRecall(sceneId);
+            });
 
-              this.log(`[BUTTON4-PHYSICAL] 🔘 Physical Button ${ep} ${pressType.toUpperCase()} (scene ${sceneId})`);
-              this.log(`[BUTTON4-PHYSICAL] ✅ Triggering flow for physical press`);
+            // v5.5.369: Pattern 2 - 'recallScene' event (alternative naming)
+            scenesCluster.on('recallScene', async (payload) => {
+              this.log(`[BUTTON4-SCENE] EP${ep} recallScene event:`, payload);
+              const sceneId = payload?.sceneId ?? payload?.sceneid ?? payload?.scene ?? 0;
+              await handleSceneRecall(sceneId);
+            });
 
-              // Trigger button flow
-              await this.triggerButtonPress(ep, pressType);
-            } else {
-              this.log(`[BUTTON4-PHYSICAL] 📡 Other scene command on EP${ep}: ${commandName}`, commandPayload);
-            }
-          });
+            // v5.5.369: Pattern 3 - Generic 'command' event (fallback)
+            scenesCluster.on('command', async (commandName, commandPayload) => {
+              this.log(`[BUTTON4-SCENE] EP${ep} command: ${commandName}`, commandPayload);
+              if (commandName === 'recall' || commandName === 'recallScene') {
+                const sceneId = commandPayload?.sceneId ?? commandPayload?.sceneid ?? commandPayload?.scene ?? 0;
+                await handleSceneRecall(sceneId);
+              }
+            });
+          }
 
           this.log(`[BUTTON4-PHYSICAL] ✅ Scene listener configured for EP${ep}`);
         } else {
           this.log(`[BUTTON4-PHYSICAL] ⚠️ No scenes cluster on EP${ep}`);
         }
 
-        // v5.5.333: Setup multistateInput cluster listener (for _TZ3000_wkai4ga5, _TZ3000_5tqxpine)
+        // v5.5.369: FIXED multistateInput cluster listener - use multiple event patterns
         const multistateCluster = endpoint.clusters?.multistateInput || endpoint.clusters?.genMultistateInput || endpoint.clusters?.[18];
         if (multistateCluster) {
           this.log(`[BUTTON4-PHYSICAL] 📡 Setting up multistateInput listener on EP${ep}...`);
 
-          // Listen for presentValue attribute changes
+          // Map multistate values to press types (0=single, 1=double, 2=long)
+          const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
+
+          const handleMultistate = async (value) => {
+            const pressType = pressTypeMap[value] || 'single';
+            this.log(`[BUTTON4-MULTISTATE] 🔘 Button ${ep} ${pressType.toUpperCase()} (multistate ${value})`);
+            await this.triggerButtonPress(ep, pressType);
+          };
+
           if (typeof multistateCluster.on === 'function') {
+            // v5.5.369: Pattern 1 - attr.presentValue (original)
             multistateCluster.on('attr.presentValue', async (value) => {
+              this.log(`[BUTTON4-MULTISTATE] EP${ep} attr.presentValue: ${value}`);
+              await handleMultistate(value);
+            });
+
+            // v5.5.369: Pattern 2 - presentValue (SDK3 style)
+            multistateCluster.on('presentValue', async (value) => {
               this.log(`[BUTTON4-MULTISTATE] EP${ep} presentValue: ${value}`);
+              await handleMultistate(value);
+            });
 
-              // Map multistate values to press types
-              // 0=single, 1=double, 2=long (common pattern)
-              const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
-              const pressType = pressTypeMap[value] || 'single';
-
-              this.log(`[BUTTON4-MULTISTATE] 🔘 Button ${ep} ${pressType.toUpperCase()} (multistate ${value})`);
-              await this.triggerButtonPress(ep, pressType);
+            // v5.5.369: Pattern 3 - report event with attributes
+            multistateCluster.on('report', async (attributes) => {
+              this.log(`[BUTTON4-MULTISTATE] EP${ep} report:`, attributes);
+              if (attributes?.presentValue !== undefined) {
+                await handleMultistate(attributes.presentValue);
+              }
             });
 
             this.log(`[BUTTON4-PHYSICAL] ✅ MultistateInput listener configured for EP${ep}`);
