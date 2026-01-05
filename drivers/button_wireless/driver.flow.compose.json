@@ -5,28 +5,72 @@
       "title": {
         "en": "Button pressed",
         "fr": "Bouton appuyé"
-      }
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
+      ]
     },
     {
       "id": "button_wireless_button_double_pressed",
       "title": {
         "en": "Button double pressed",
         "fr": "Double appui bouton"
-      }
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
+      ]
     },
     {
       "id": "button_wireless_button_long_pressed",
       "title": {
         "en": "Button long pressed",
         "fr": "Appui long bouton"
-      }
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
+      ]
     },
     {
       "id": "button_wireless_button_released",
       "title": {
         "en": "Button released",
         "fr": "Bouton relâché"
-      }
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
+      ]
     },
     {
       "id": "button_wireless_battery_low",
