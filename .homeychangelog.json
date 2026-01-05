@@ -1,4 +1,10 @@
 {
+  "5.5.363": {
+    "en": "🔥 CRITICAL FIX - Presence Sensor Radar Crash: Fixed SyntaxError 'Unexpected end of input' at device.js:2193 caused by missing closing brace in debouncePresence function. Also fixed presenceDebounceState variable scope. Diagnostic reports #51485cfc and #4388db0c.",
+    "fr": "🔥 CORRECTION CRITIQUE - Crash Capteur Présence Radar: Corrigé SyntaxError 'Unexpected end of input' causé par accolade manquante dans fonction debouncePresence.",
+    "nl": "🔥 KRITIEKE FIX - Presence Sensor Radar Crash: SyntaxError 'Unexpected end of input' opgelost door ontbrekende sluitende accolade in debouncePresence functie.",
+    "de": "🔥 KRITISCHER FIX - Präsenzsensor Radar Absturz: SyntaxError 'Unexpected end of input' behoben durch fehlende schließende Klammer in debouncePresence Funktion."
+  },
   "5.5.362": {
     "en": "🔥 CRITICAL FIX - IR Blaster Driver Crash: All flow card registrations (getActionCard, getTriggerCard, getConditionCard) now wrapped in individual try-catch blocks to prevent driver initialization failure. Fixes diagnostic reports #7cb5ca58 and #5dc85d82 where 'Invalid Flow Card ID: ir_send_by_category' and 'ir_set_protocol' errors caused complete IR Blaster driver failure. Driver now gracefully handles missing flow cards without crashing.",
     "fr": "🔥 CORRECTION CRITIQUE - Crash Driver IR Blaster: Toutes les enregistrements de flow cards (getActionCard, getTriggerCard, getConditionCard) sont maintenant encapsulés dans des blocs try-catch individuels pour éviter l'échec d'initialisation du driver. Corrige les rapports de diagnostic #7cb5ca58 et #5dc85d82.",
