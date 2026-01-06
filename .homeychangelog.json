@@ -1,4 +1,10 @@
 {
+  "5.5.373": {
+    "en": "🧠 NEW - Intelligent Device Adapter: Auto-learns device capabilities over 15min-1H. Removes unused capabilities (temp/humidity if no data). Adds detected capabilities. Hourly re-evaluation. Smart battery and power measurement management.",
+    "fr": "🧠 NOUVEAU - Adaptateur Intelligent: Apprend les capacités en 15min-1H. Supprime les capacités inutilisées. Ajoute les capacités détectées. Réévaluation horaire.",
+    "nl": "🧠 NIEUW - Intelligente Adapter: Leert apparaat mogelijkheden in 15min-1H. Verwijdert ongebruikte mogelijkheden. Voegt gedetecteerde mogelijkheden toe. Uurlijkse herevaluatie.",
+    "de": "🧠 NEU - Intelligenter Adapter: Lernt Gerätefähigkeiten in 15min-1H. Entfernt ungenutzte Fähigkeiten. Fügt erkannte Fähigkeiten hinzu. Stündliche Neubewertung."
+  },
   "5.5.372": {
     "en": "🔧 FIX - Radar Sensor False Capabilities: Removed measure_temperature and measure_humidity from presence_sensor_radar default capabilities. Most radar sensors don't have temp/humidity - fixes forum complaints about misleading capabilities.",
     "fr": "🔧 CORRECTION - Fausses capacités radar: Supprimé measure_temperature et measure_humidity des capteurs radar. La plupart n'ont pas ces capteurs.",
