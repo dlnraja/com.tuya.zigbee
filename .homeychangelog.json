@@ -1,4 +1,16 @@
 {
+  "5.5.372": {
+    "en": "🔧 FIX - Radar Sensor False Capabilities: Removed measure_temperature and measure_humidity from presence_sensor_radar default capabilities. Most radar sensors don't have temp/humidity - fixes forum complaints about misleading capabilities.",
+    "fr": "🔧 CORRECTION - Fausses capacités radar: Supprimé measure_temperature et measure_humidity des capteurs radar. La plupart n'ont pas ces capteurs.",
+    "nl": "🔧 FIX - Radar Sensor Valse Capabilities: measure_temperature en measure_humidity verwijderd van radar sensoren die deze niet hebben.",
+    "de": "🔧 FIX - Radar Sensor Falsche Fähigkeiten: measure_temperature und measure_humidity von Radarsensoren entfernt, die diese nicht haben."
+  },
+  "5.5.371": {
+    "en": "🔧 FIX - Button Device Issues: (1) Fixed groupsCluster.add is not a function error - SDK3 uses addGroup() method. (2) Enhanced button_wireless_1 detection with multiple cluster listeners (scenes, multistateInput, onOff, IAS Zone, Tuya DP). Fixes 'No Action detected' issue.",
+    "fr": "🔧 CORRECTION - Problèmes boutons: (1) Erreur groupsCluster.add corrigée. (2) Détection button_wireless_1 améliorée. Corrige 'Aucune action détectée'.",
+    "nl": "🔧 FIX - Knop Apparaat Problemen: (1) groupsCluster.add fout opgelost. (2) button_wireless_1 detectie verbeterd. Fixt 'Geen actie gedetecteerd'.",
+    "de": "🔧 FIX - Tasten Probleme: (1) groupsCluster.add Fehler behoben. (2) button_wireless_1 Erkennung verbessert. Behebt 'Keine Aktion erkannt'."
+  },
   "5.5.370": {
     "en": "🔧 FIX - Missing Flow Cards: Added 11 missing flow card definitions to app.json that were causing 'cannot get device by id' errors. Includes: button_pressed_times, motion_alarm_lux, no_motion_timeout, power_above_threshold, power_below_threshold_duration, energy_today_exceeded, power_changed_percentage, temperature_crossed_threshold, humidity_changed_by, temperature_changed_rapidly, signal_strength_low.",
     "fr": "🔧 CORRECTION - Flow Cards Manquants: Ajout de 11 définitions de flow cards manquantes dans app.json qui causaient des erreurs 'cannot get device by id'. Inclut: button_pressed_times, motion_alarm_lux, no_motion_timeout, etc.",
