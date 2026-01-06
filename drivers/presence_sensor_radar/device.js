@@ -313,6 +313,8 @@ const SENSOR_CONFIGS = {
       '_TZE204_lyetpprm', '_TZE204_no6qtgtl',
     ],
     battery: false,
+    noTemperature: true,    // v5.5.372: Forum fix - radar sensors have NO temp
+    noHumidity: true,       // v5.5.372: Forum fix - radar sensors have NO humidity
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_enum' },      // 0=none, 1=motion, 2=stationary
       2: { cap: null, internal: 'sensitivity' },
@@ -404,6 +406,8 @@ const SENSOR_CONFIGS = {
     ],
     battery: false,
     hasIlluminance: false,
+    noTemperature: true,    // v5.5.372: Forum fix - no temp sensor
+    noHumidity: true,       // v5.5.372: Forum fix - no humidity sensor
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       // v5.5.281: Duration tracking from ChatGPT analysis
@@ -534,6 +538,8 @@ const SENSOR_CONFIGS = {
     battery: false,
     hasIlluminance: true,
     needsPolling: true,
+    noTemperature: true,    // v5.5.372: Forum fix - no temp sensor
+    noHumidity: true,       // v5.5.372: Forum fix - no humidity sensor
     dpMap: {
       // Also try DP1 as fallback
       1: { cap: 'alarm_motion', type: 'presence_enum', fallback: true },
@@ -563,6 +569,8 @@ const SENSOR_CONFIGS = {
     battery: false,
     hasIlluminance: true,
     needsPolling: true,
+    noTemperature: true,    // v5.5.372: Forum fix - no temp sensor
+    noHumidity: true,       // v5.5.372: Forum fix - no humidity sensor
     dpMap: {
       104: { cap: 'measure_luminance', type: 'lux_direct' },
       105: { cap: 'alarm_motion', type: 'presence_bool' },  // trueFalse1 in Z2M
@@ -584,6 +592,8 @@ const SENSOR_CONFIGS = {
       '_TZE200_7gclukjs', '_TZE204_7gclukjs',
     ],
     battery: false,
+    noTemperature: true,    // v5.5.372: Forum fix - no temp sensor
+    noHumidity: true,       // v5.5.372: Forum fix - no humidity sensor
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_enum' },
       2: { cap: null, internal: 'sensitivity' },
@@ -604,6 +614,8 @@ const SENSOR_CONFIGS = {
       '_tze200_y4mdop0b',
     ],
     battery: false,
+    noTemperature: true,    // v5.5.372: Forum fix - no temp sensor
+    noHumidity: true,       // v5.5.372: Forum fix - no humidity sensor
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       6: { cap: null, internal: 'fading_time' },
@@ -624,6 +636,8 @@ const SENSOR_CONFIGS = {
     battery: false,
     hasIlluminance: true,
     reportsFrequently: true,  // Warning flag
+    noTemperature: true,    // v5.5.372: Forum fix - no temp sensor
+    noHumidity: true,       // v5.5.372: Forum fix - no humidity sensor
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_enum' },
       104: { cap: 'measure_luminance', type: 'lux_direct' },
@@ -676,6 +690,8 @@ const SENSOR_CONFIGS = {
     ],
     battery: true,
     useZcl: true,
+    noTemperature: true,    // v5.5.372: Forum fix - PIR sensors have NO temp
+    noHumidity: true,       // v5.5.372: Forum fix - PIR sensors have NO humidity
     dpMap: {
       // PIR uses ZCL occupancy, not Tuya DPs
     }
@@ -692,6 +708,8 @@ const SENSOR_CONFIGS = {
     battery: false,
     hasIlluminance: true,
     needsPolling: true,  // Poll unknown devices
+    noTemperature: true,    // v5.5.372: Forum fix - default to no temp (can be added back if detected)
+    noHumidity: true,       // v5.5.372: Forum fix - default to no humidity
     dpMap: {
       // Try all common presence DPs
       1: { cap: 'alarm_motion', type: 'presence_enum' },
