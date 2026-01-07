@@ -4,15 +4,18 @@ const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║     BUTTON 4 GANG - v5.5.260 FIXED FOR TS0044 / TS004F                       ║
+ * ║     BUTTON 4 GANG - v5.5.379 CRITICAL FIX FOR TS004F SCENE MODE             ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
- * ║  v5.5.260: FIX for Cyril #699 - Physical buttons not working                ║
- * ║  - TS0044 uses 4 ENDPOINTS (1-4), one per button                             ║
- * ║  - Each endpoint sends scenes.recall or onOff commands                       ║
- * ║  - Battery reported via powerConfiguration cluster on EP1                   ║
+ * ║  v5.5.379: CRITICAL FIX - TS004F Scene Mode Switching                        ║
+ * ║  - TS004F has TWO modes: Dimmer (default) and Scene                         ║
+ * ║  - Dimmer mode: Only single press works, uses levelControl cluster          ║
+ * ║  - Scene mode: Single/double/long work, uses scenes cluster                 ║
+ * ║  - Mode controlled by: Cluster 6 (onOff), Attribute 0x8004                  ║
+ * ║  - Value 0 = Dimmer mode, Value 1 = Scene mode                              ║
+ * ║  - Research: SmartThings, Z2M #7158, ZHA #1372                              ║
  * ║                                                                              ║
- * ║  STRUCTURE TS0044:                                                           ║
+ * ║  STRUCTURE TS0044/TS004F:                                                    ║
  * ║  EP1: Button 1 (scenes, onOff, powerCfg, groups)                             ║
  * ║  EP2: Button 2 (scenes, onOff, groups)                                       ║
  * ║  EP3: Button 3 (scenes, onOff, groups)                                       ║
@@ -26,9 +29,9 @@ class Button4GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('═══════════════════════════════════════════════════════════════');
-    this.log('[BUTTON4] 🔘 Button4GangDevice v5.5.295 initializing...');
-    this.log('[BUTTON4] FORUM FIX: Physical buttons TS004F not working');
-    this.log('[BUTTON4] Research: 10 sources analyzed - scene cluster priority');
+    this.log('[BUTTON4] 🔘 Button4GangDevice v5.5.379 initializing...');
+    this.log('[BUTTON4] CRITICAL FIX: TS004F Scene Mode Switching');
+    this.log('[BUTTON4] Research: SmartThings, Z2M #7158, ZHA #1372');
     this.log('═══════════════════════════════════════════════════════════════');
 
     // Set button count BEFORE calling super (ButtonDevice uses this)
@@ -41,6 +44,11 @@ class Button4GangDevice extends ButtonDevice {
     // Initialize base (power detection + button detection)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
+    // v5.5.379: CRITICAL - Switch TS004F to Scene Mode BEFORE setting up listeners
+    // TS004F defaults to Dimmer mode which only sends single press events
+    // Scene mode enables single/double/long press detection
+    await this._switchToSceneMode(zclNode);
+
     // v5.5.295: FORUM FIX - Enhanced physical button detection
     // Based on research from Zigbee2MQTT, ZHA, SmartThings patterns
     await this._setupEnhancedPhysicalButtonDetection(zclNode);
@@ -50,6 +58,139 @@ class Button4GangDevice extends ButtonDevice {
 
     this.log('[BUTTON4] ✅ Button4GangDevice initialized - 4 buttons ready');
     this.log('═══════════════════════════════════════════════════════════════');
+  }
+
+  /**
+   * v5.5.379: CRITICAL FIX - Switch TS004F from Dimmer mode to Scene mode
+   *
+   * RESEARCH SOURCES:
+   * - SmartThings Community: Cluster 6, attribute 0x8004 controls mode
+   * - Zigbee2MQTT Discussion #7158: TS004F mode switching
+   * - ZHA Device Handlers #1372: Scene mode vs Dimmer mode
+   *
+   * MODE VALUES:
+   * - 0 = Dimmer mode (DEFAULT) - Only single press, uses levelControl
+   * - 1 = Scene mode - Single/double/long press, uses scenes cluster
+   *
+   * CRITICAL: Device must be in Scene mode for proper button detection!
+   */
+  async _switchToSceneMode(zclNode) {
+    const productId = this.getData()?.productId || '';
+    const manufacturerName = this.getData()?.manufacturerName || '';
+
+    // Only TS004F needs mode switching (TS0044 doesn't have this issue)
+    const isTS004F = productId.includes('TS004F') || productId === 'TS004F';
+
+    this.log(`[BUTTON4-MODE] 🔍 Device: ${productId} / ${manufacturerName}`);
+    this.log(`[BUTTON4-MODE] 🔍 Is TS004F: ${isTS004F}`);
+
+    // Also apply to devices that might be mislabeled or unknown
+    // These manufacturers are known to use TS004F-style devices
+    const ts004fManufacturers = [
+      '_TZ3000_xabckq1v',
+      '_TZ3000_czuyt8lz',
+      '_TZ3000_pcqjmcud',
+      '_TZ3000_4fjiwweb',
+      '_TZ3000_uri7oadn',
+      '_TZ3000_ixla93vd',
+      '_TZ3000_qzjcsmar'
+    ];
+    const needsModeSwitching = isTS004F || ts004fManufacturers.includes(manufacturerName);
+
+    if (!needsModeSwitching) {
+      this.log('[BUTTON4-MODE] ℹ️ Device is TS0044-type, no mode switching needed');
+      return;
+    }
+
+    try {
+      // Get onOff cluster on endpoint 1
+      const onOffCluster = zclNode?.endpoints?.[1]?.clusters?.onOff
+        || zclNode?.endpoints?.[1]?.clusters?.genOnOff
+        || zclNode?.endpoints?.[1]?.clusters?.[6];
+
+      if (!onOffCluster) {
+        this.log('[BUTTON4-MODE] ⚠️ OnOff cluster not found on EP1');
+        return;
+      }
+
+      // v5.5.379: Attribute 0x8004 (32772 decimal) controls the operating mode
+      const MODE_ATTRIBUTE = 0x8004; // 32772 decimal
+      const SCENE_MODE = 1;
+      const DIMMER_MODE = 0;
+
+      // Try to read current mode
+      let currentMode = null;
+      try {
+        if (typeof onOffCluster.readAttributes === 'function') {
+          const attrs = await onOffCluster.readAttributes([MODE_ATTRIBUTE]);
+          currentMode = attrs?.[MODE_ATTRIBUTE] ?? attrs?.['32772'] ?? attrs?.['0x8004'];
+          this.log(`[BUTTON4-MODE] 📖 Current mode: ${currentMode} (${currentMode === SCENE_MODE ? 'Scene' : 'Dimmer'})`);
+        }
+      } catch (readErr) {
+        this.log(`[BUTTON4-MODE] ⚠️ Could not read mode attribute: ${readErr.message}`);
+        // Continue anyway - we'll try to write
+      }
+
+      // If already in scene mode, no need to switch
+      if (currentMode === SCENE_MODE) {
+        this.log('[BUTTON4-MODE] ✅ Already in Scene mode - buttons should work!');
+        return;
+      }
+
+      // Switch to Scene mode
+      this.log('[BUTTON4-MODE] 🔄 Switching to Scene mode...');
+
+      try {
+        if (typeof onOffCluster.writeAttributes === 'function') {
+          await onOffCluster.writeAttributes({ [MODE_ATTRIBUTE]: SCENE_MODE });
+          this.log('[BUTTON4-MODE] ✅ Successfully switched to Scene mode!');
+          this.log('[BUTTON4-MODE] 🎉 Single/double/long press should now work!');
+
+          // Store mode for reference
+          await this.setStoreValue('button_mode', 'scene').catch(() => { });
+        } else {
+          this.log('[BUTTON4-MODE] ⚠️ writeAttributes not available on onOff cluster');
+
+          // Try alternative: raw ZCL write
+          await this._tryRawModeSwitch(zclNode, SCENE_MODE);
+        }
+      } catch (writeErr) {
+        this.log(`[BUTTON4-MODE] ⚠️ Mode switch failed: ${writeErr.message}`);
+        this.log('[BUTTON4-MODE] 💡 User may need to re-pair device with Tuya gateway first');
+
+        // Try alternative method
+        await this._tryRawModeSwitch(zclNode, SCENE_MODE);
+      }
+
+    } catch (err) {
+      this.log(`[BUTTON4-MODE] ❌ Mode switching error: ${err.message}`);
+    }
+  }
+
+  /**
+   * v5.5.379: Alternative method to switch mode using raw ZCL command
+   */
+  async _tryRawModeSwitch(zclNode, targetMode) {
+    try {
+      this.log('[BUTTON4-MODE] 🔧 Trying raw ZCL write for mode switch...');
+
+      const endpoint = zclNode?.endpoints?.[1];
+      if (!endpoint) return;
+
+      // Try using the Zigbee cluster directly with manufacturer-specific write
+      const onOffCluster = endpoint.clusters?.onOff || endpoint.clusters?.[6];
+      if (onOffCluster && typeof onOffCluster.write === 'function') {
+        // Manufacturer-specific attribute write
+        await onOffCluster.write({
+          attributeId: 0x8004,
+          dataType: 0x30, // Enum8
+          value: targetMode
+        });
+        this.log('[BUTTON4-MODE] ✅ Raw mode switch successful!');
+      }
+    } catch (err) {
+      this.log(`[BUTTON4-MODE] ⚠️ Raw mode switch failed: ${err.message}`);
+    }
   }
 
   /**
