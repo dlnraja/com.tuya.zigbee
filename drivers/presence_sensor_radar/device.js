@@ -357,6 +357,8 @@ const SENSOR_CONFIGS = {
     mainsPowered: true,
     noBatteryCapability: true,  // v5.5.325: Force remove battery capability
     hasIlluminance: true,
+    noTemperature: true,    // v5.5.377: 24GHz ceiling radar has NO temp sensor (ZHA t/874026)
+    noHumidity: true,       // v5.5.377: 24GHz ceiling radar has NO humidity sensor
     needsPolling: false,  // v5.5.325: Disable polling - use DP reports only
     ultraAggressiveDebounce: true,  // v5.5.325: Maximum filtering for false positives
     // v5.5.357: RONNY FORUM FIX - Disable ALL battery reporting (causes spam)
@@ -485,6 +487,8 @@ const SENSOR_CONFIGS = {
     mainsPowered: true,
     noBatteryCapability: true,  // v5.5.326: Force remove battery
     hasIlluminance: true,
+    noTemperature: true,    // v5.5.377: mmWave radar has NO temp sensor (Z2M #27212, #30326)
+    noHumidity: true,       // v5.5.377: mmWave radar has NO humidity sensor
     needsPolling: false,  // v5.5.326: Disable polling - rely on inference only
     invertPresence: false,
     // v5.5.326: RONNY #760 - Enhanced intelligent inference
