@@ -1344,20 +1344,36 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       this.log('[RADAR] 🔋 Battery monitoring DISABLED for this device');
     }
 
-    // v5.5.329: Remove temperature capability for PIR-only sensors (forum #788)
-    if (config.noTemperature && this.hasCapability('measure_temperature')) {
-      try {
-        await this.removeCapability('measure_temperature');
-        this.log('[RADAR] 🌡️ Removed measure_temperature (not supported by this device)');
-      } catch (e) { /* ignore */ }
-    }
+    // v5.5.374: INTELLIGENT ADAPTIVE CAPABILITY MANAGEMENT
+    // Pass config flags to intelligent adapter - it will handle removal/addition based on real data
+    if (this.intelligentAdapter) {
+      this.intelligentAdapter.setStaticConfigFlags({
+        noTemperature: config.noTemperature || false,
+        noHumidity: config.noHumidity || false,
+        noBatteryCapability: config.noBatteryCapability || false,
+        noIlluminance: !config.hasIlluminance,
+      });
+      this.log('[RADAR] 🧠 Intelligent adapter configured with sensor flags');
 
-    // v5.5.329: Remove humidity capability for PIR-only sensors (forum #788)
-    if (config.noHumidity && this.hasCapability('measure_humidity')) {
-      try {
-        await this.removeCapability('measure_humidity');
-        this.log('[RADAR] 💧 Removed measure_humidity (not supported by this device)');
-      } catch (e) { /* ignore */ }
+      // Let intelligent adapter decide based on real data instead of immediate removal
+      // It will remove after learning phase if no data, or keep if data detected
+    } else {
+      // Fallback to static removal if intelligent adapter not available
+      // v5.5.329: Remove temperature capability for PIR-only sensors (forum #788)
+      if (config.noTemperature && this.hasCapability('measure_temperature')) {
+        try {
+          await this.removeCapability('measure_temperature');
+          this.log('[RADAR] 🌡️ Removed measure_temperature (not supported by this device)');
+        } catch (e) { /* ignore */ }
+      }
+
+      // v5.5.329: Remove humidity capability for PIR-only sensors (forum #788)
+      if (config.noHumidity && this.hasCapability('measure_humidity')) {
+        try {
+          await this.removeCapability('measure_humidity');
+          this.log('[RADAR] 💧 Removed measure_humidity (not supported by this device)');
+        } catch (e) { /* ignore */ }
+      }
     }
 
     // Ensure required capabilities

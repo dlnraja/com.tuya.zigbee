@@ -1,4 +1,10 @@
 {
+  "5.5.374": {
+    "en": "🧠 SMART - Enhanced Intelligent Adapter: Multi-source verification (ZCL+Tuya DP+stored data). Value validation (detects stuck/invalid values). Overrides static config flags when real data detected. Active probing for capability discovery. Works with SENSOR_CONFIGS noTemperature/noHumidity flags.",
+    "fr": "🧠 SMART - Adaptateur Intelligent amélioré: Vérification multi-sources. Validation des valeurs. Override les configs statiques si données réelles détectées. Sondage actif pour découverte de capacités.",
+    "nl": "🧠 SMART - Verbeterde Intelligente Adapter: Multi-bron verificatie. Waarde validatie. Overschrijft statische config als echte data gedetecteerd. Actieve probing voor capability ontdekking.",
+    "de": "🧠 SMART - Verbesserter Intelligenter Adapter: Multi-Quellen-Verifizierung. Wertvalidierung. Überschreibt statische Konfiguration bei erkannten echten Daten. Aktives Probing zur Fähigkeitserkennung."
+  },
   "5.5.373": {
     "en": "🧠 NEW - Intelligent Device Adapter: Auto-learns device capabilities over 15min-1H. Removes unused capabilities (temp/humidity if no data). Adds detected capabilities. Hourly re-evaluation. Smart battery and power measurement management.",
     "fr": "🧠 NOUVEAU - Adaptateur Intelligent: Apprend les capacités en 15min-1H. Supprime les capacités inutilisées. Ajoute les capacités détectées. Réévaluation horaire.",
