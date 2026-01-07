@@ -1,4 +1,10 @@
 {
+  "5.5.376": {
+    "en": "🔧 FIX - Button No Action Detected: Added IAS ACE cluster (1281) support for SOS/Emergency buttons (TS0215A). Handles commandEmergency, panic, arm, disarm events. Fixes 'No Action detected' for devices using IAS ACE instead of scenes/multistateInput.",
+    "fr": "🔧 CORRECTION - Bouton sans action: Support cluster IAS ACE (1281) pour boutons SOS/Urgence (TS0215A). Gère events commandEmergency, panic, arm, disarm. Corrige 'Aucune action détectée'.",
+    "nl": "🔧 FIX - Knop Geen Actie: IAS ACE cluster (1281) ondersteuning voor SOS/Nood knoppen (TS0215A). Handelt commandEmergency, panic, arm, disarm events af. Fixt 'Geen actie gedetecteerd'.",
+    "de": "🔧 FIX - Taste Keine Aktion: IAS ACE Cluster (1281) Unterstützung für SOS/Notfall-Tasten (TS0215A). Behandelt commandEmergency, panic, arm, disarm Events. Behebt 'Keine Aktion erkannt'."
+  },
   "5.5.375": {
     "en": "🔧 FIXES - Button capability definition added (fixes 'Invalid capabilities' error). LCD climate sensor aggressive time sync (5 attempts). Intelligent adapter multi-source verification complete.",
     "fr": "🔧 CORRECTIONS - Définition capability bouton ajoutée (corrige erreur 'Invalid capabilities'). Sync temps LCD agressive (5 tentatives). Adaptateur intelligent vérification multi-sources.",
