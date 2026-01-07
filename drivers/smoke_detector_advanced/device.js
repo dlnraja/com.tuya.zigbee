@@ -3,10 +3,12 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SMOKE DETECTOR ADVANCED - v5.5.130 ENRICHED (Zigbee2MQTT)              ║
+ * ║      SMOKE DETECTOR ADVANCED - v5.5.380 FORUM FIX                           ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
+ * ║  v5.5.380: Added cluster 0xED00 (60672) for TZE284 smoke detectors          ║
  * ║  Source: https://www.zigbee2mqtt.io/devices/TS0601_smoke_5.html             ║
  * ║  Features: smoke, tamper, battery, fault_alarm, silence, alarm              ║
+ * ║  Supported: _TZE284_rccxox8p, _TZE200_rccxox8p, _TZE204_rccxox8p, etc.      ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 class SmokeDetectorAdvancedDevice extends HybridSensorBase {
