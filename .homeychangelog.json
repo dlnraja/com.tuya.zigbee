@@ -1,4 +1,10 @@
 {
+  "5.5.379": {
+    "en": "🔘 CRITICAL FIX - MOES 4-Button (TS004F) Physical Buttons: TS004F has TWO modes - Dimmer (default) and Scene. Physical buttons only work in Scene mode! Now auto-switches to Scene mode on init. Mode controlled by Cluster 6, Attr 0x8004. Research: SmartThings, Z2M #7158, ZHA #1372.",
+    "fr": "🔘 FIX CRITIQUE - Boutons physiques MOES 4 (TS004F): TS004F a DEUX modes - Dimmer (défaut) et Scene. Les boutons physiques ne fonctionnent qu'en mode Scene! Bascule auto vers mode Scene à l'init. Recherche: SmartThings, Z2M #7158, ZHA #1372.",
+    "nl": "🔘 KRITIEKE FIX - MOES 4-Knop (TS004F) Fysieke Knoppen: TS004F heeft TWEE modes - Dimmer (standaard) en Scene. Fysieke knoppen werken alleen in Scene mode! Nu auto-switch naar Scene mode bij init. Onderzoek: SmartThings, Z2M #7158, ZHA #1372.",
+    "de": "🔘 KRITISCHER FIX - MOES 4-Tasten (TS004F) Physische Tasten: TS004F hat ZWEI Modi - Dimmer (Standard) und Scene. Physische Tasten funktionieren nur im Scene-Modus! Wechselt jetzt automatisch in den Scene-Modus. Forschung: SmartThings, Z2M #7158, ZHA #1372."
+  },
   "5.5.378": {
     "en": "🕐 CRITICAL FIX - LCD Time Sync: Fixed Tuya epoch bug (2000 vs 1970). LCD climate sensors were showing year 2055 instead of 2025! Fixed payload format [Local:4][UTC:4]. Research: Z2M #30054. Now uses TUYA_EPOCH_OFFSET=946684800s correctly.",
     "fr": "🕐 FIX CRITIQUE - Sync heure LCD: Correction bug epoch Tuya (2000 vs 1970). Les capteurs LCD affichaient 2055 au lieu de 2025! Format payload [Local:4][UTC:4] corrigé. Recherche: Z2M #30054.",
