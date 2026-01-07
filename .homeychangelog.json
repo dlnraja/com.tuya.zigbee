@@ -1,4 +1,10 @@
 {
+  "5.5.383": {
+    "en": "🕒 COMPLETE Time Sync: 12 formats covering ALL epochs (1970/2000), UTC/Local variants, DST detection. Formats: ZIGBEE_2000/LOCAL, UNIX_1970/LOCAL, TUYA_TIMESTAMP_8/UNIX, TUYA_STANDARD/UTC_STRING, TUYA_MCU, TUYA_EXTENDED_TZ, TUYA_FULL_TZ (with DST), TUYA_GATEWAY. Auto-fallback on failure. GMT+1 to GMT-12 support.",
+    "fr": "🕒 Sync heure COMPLÈTE: 12 formats pour TOUS les epochs (1970/2000), UTC/Local, détection DST. Support GMT+1 à GMT-12. Auto-fallback si échec.",
+    "nl": "🕒 COMPLETE tijdsync: 12 formaten voor ALLE epochs (1970/2000), UTC/Local varianten, DST detectie. GMT+1 tot GMT-12 ondersteuning. Auto-fallback bij fout.",
+    "de": "🕒 KOMPLETTE Zeitsync: 12 Formate für ALLE Epochen (1970/2000), UTC/Local Varianten, DST-Erkennung. GMT+1 bis GMT-12 Support. Auto-Fallback bei Fehler."
+  },
   "5.5.382": {
     "en": "🕒 ENHANCE - Comprehensive Time Sync: Added 6 time formats (ZIGBEE_2000, UNIX_1970, TUYA_STANDARD, TUYA_MCU, TUYA_EXTENDED_TZ, TUYA_TIMESTAMP_8). Auto-detects best format per device. Supports all Tuya/Zigbee LCD, thermostat, and MCU devices. GMT/DST aware.",
     "fr": "🕒 AMÉLIORATION - Sync heure complète: 6 formats (ZIGBEE_2000, UNIX_1970, TUYA_STANDARD, TUYA_MCU, TUYA_EXTENDED_TZ, TUYA_TIMESTAMP_8). Auto-détection par appareil. Support LCD, thermostat, MCU. GMT/DST inclus.",
