@@ -512,15 +512,20 @@ class ClimateSensorDevice extends HybridSensorBase {
     if (this.isLCDClimateDevice() && this._hasTuyaCluster) {
       this.log('[CLIMATE] 🔥 LCD DEVICE - Sending DUAL time sync (ZCL + Tuya EF00)...');
 
-      // Send Tuya EF00 time sync immediately
-      setTimeout(async () => {
-        try {
-          await this._sendForcedTimeSync();
-          this.log('[CLIMATE] 🔥 ✅ Initial Tuya EF00 time sync sent for LCD');
-        } catch (e) {
-          this.log('[CLIMATE] 🔥 ⚠️ Initial Tuya EF00 sync failed:', e.message);
-        }
-      }, 3000); // Wait 3s for device to settle
+      // v5.5.375: AGGRESSIVE LCD TIME SYNC - Send multiple times to ensure delivery
+      // LCD devices are passive and may miss the first sync attempts
+      const lcdSyncDelays = [3000, 10000, 30000, 60000, 120000]; // 3s, 10s, 30s, 1m, 2m
+      lcdSyncDelays.forEach((delay, index) => {
+        setTimeout(async () => {
+          try {
+            this.log(`[CLIMATE] 🔥 LCD time sync attempt ${index + 1}/${lcdSyncDelays.length}...`);
+            await this._sendForcedTimeSync();
+            this.log(`[CLIMATE] 🔥 ✅ LCD time sync attempt ${index + 1} sent`);
+          } catch (e) {
+            this.log(`[CLIMATE] 🔥 ⚠️ LCD sync attempt ${index + 1} failed:`, e.message);
+          }
+        }, delay);
+      });
 
       // Schedule hourly Tuya EF00 sync for LCD devices (in addition to ZCL daily)
       this._hourlyLcdSyncInterval = this.homey.setInterval(async () => {

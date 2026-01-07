@@ -1,4 +1,10 @@
 {
+  "5.5.375": {
+    "en": "🔧 FIXES - Button capability definition added (fixes 'Invalid capabilities' error). LCD climate sensor aggressive time sync (5 attempts). Intelligent adapter multi-source verification complete.",
+    "fr": "🔧 CORRECTIONS - Définition capability bouton ajoutée (corrige erreur 'Invalid capabilities'). Sync temps LCD agressive (5 tentatives). Adaptateur intelligent vérification multi-sources.",
+    "nl": "🔧 FIXES - Button capability definitie toegevoegd. LCD klimaat sensor agressieve tijd sync (5 pogingen). Intelligente adapter multi-bron verificatie compleet.",
+    "de": "🔧 FIXES - Button Capability Definition hinzugefügt. LCD Klimasensor aggressive Zeitsynchronisation (5 Versuche). Intelligenter Adapter Multi-Quellen-Verifizierung komplett."
+  },
   "5.5.374": {
     "en": "🧠 SMART - Enhanced Intelligent Adapter: Multi-source verification (ZCL+Tuya DP+stored data). Value validation (detects stuck/invalid values). Overrides static config flags when real data detected. Active probing for capability discovery. Works with SENSOR_CONFIGS noTemperature/noHumidity flags.",
     "fr": "🧠 SMART - Adaptateur Intelligent amélioré: Vérification multi-sources. Validation des valeurs. Override les configs statiques si données réelles détectées. Sondage actif pour découverte de capacités.",
