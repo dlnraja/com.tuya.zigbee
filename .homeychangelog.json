@@ -1,4 +1,10 @@
 {
+  "5.5.384": {
+    "en": "🕒 ULTIMATE Time Sync: 15 formats (BE/LE variants), milliseconds support, time request interception (cluster 0x000A & 0xEF00 cmd 0x24), auto-respond to device requests. Constants: TIME_FORMATS, TIME_SYNC_COMMANDS, TIMEZONE_OFFSETS exported.",
+    "fr": "🕒 Sync heure ULTIME: 15 formats (BE/LE), millisecondes, interception requêtes temps (cluster 0x000A & 0xEF00), réponse auto. Constants exportées.",
+    "nl": "🕒 ULTIEME tijdsync: 15 formaten (BE/LE), milliseconden, time request interceptie (cluster 0x000A & 0xEF00), auto-respond. Constants geëxporteerd.",
+    "de": "🕒 ULTIMATIVE Zeitsync: 15 Formate (BE/LE), Millisekunden, Zeitanfrage-Abfang (Cluster 0x000A & 0xEF00), Auto-Antwort. Konstanten exportiert."
+  },
   "5.5.383": {
     "en": "🕒 COMPLETE Time Sync: 12 formats covering ALL epochs (1970/2000), UTC/Local variants, DST detection. Formats: ZIGBEE_2000/LOCAL, UNIX_1970/LOCAL, TUYA_TIMESTAMP_8/UNIX, TUYA_STANDARD/UTC_STRING, TUYA_MCU, TUYA_EXTENDED_TZ, TUYA_FULL_TZ (with DST), TUYA_GATEWAY. Auto-fallback on failure. GMT+1 to GMT-12 support.",
     "fr": "🕒 Sync heure COMPLÈTE: 12 formats pour TOUS les epochs (1970/2000), UTC/Local, détection DST. Support GMT+1 à GMT-12. Auto-fallback si échec.",
