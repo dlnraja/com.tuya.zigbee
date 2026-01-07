@@ -1,17 +1,12 @@
 # 🌐 Universal Tuya Zigbee App for Homey
 
-![Version](https://img.shields.io/badge/version-5.5.269-blue)
-![Devices](https://img.shields.io/badge/devices-4200+-green)
-![Drivers](https://img.shields.io/badge/drivers-86-brightgreen)
-![SDK](https://img.shields.io/badge/SDK-3-orange)
-![License](https://img.shields.io/badge/license-GPL--3.0-red)
-![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)
-[![Version](https://img.shields.io/badge/version-5.5.258-blue)](https://homey.app/a/com.tuya.zigbee/)
-[![Devices](https://img.shields.io/badge/devices-4200+-green)](https://homey.app/a/com.tuya.zigbee/)
-[![Drivers](https://img.shields.io/badge/drivers-86-brightgreen)](https://homey.app/a/com.tuya.zigbee/)
-[![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.tuya.zigbee/)
+<!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
+[![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Devices](https://img.shields.io/badge/devices-4200+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Drivers](https://img.shields.io/badge/drivers-86-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
-[![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.tuya.zigbee/)
+[![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
 ## 📥 Installation
 
@@ -67,20 +62,24 @@
 
 ---
 
-## 🚀 Latest Updates - v5.5.269
+## 🚀 Latest Updates
 
-### ✨ Recent Features (Dec 2025)
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (Jan 2026)
 
 | Version | Feature |
 |---------|---------|
-| **v5.5.247** | 🔄 Legacy Recovery: Analyzed 3 historical versions (v5.3.84,... |
-| **v5.5.246** | 🔧 Forum & Issues Audit: Analyzed 93 dlnraja + 1329 Johan Be... |
-| **v5.5.245** | 🔧 Cross-validation Complete: Analyzed Z2M (1372 IDs), ZHA (... |
-| **v5.5.244** | 🔧 Z2M Enrichment: +30 manufacturerNames from Zigbee2MQTT (3... |
-| **v5.5.243** | 🔧 IR Blaster Fix: Improved learning mode with proper 0xE004... |
-| **v5.5.242** | 🔧 IR Blaster Enhancement: Added clusters 0xED00/0xE004 for ... |
-| **v5.5.241** | 🔧 Forum Fixes: Fixed _TZE284_iadro9bf & _TZE204_gkfbdvyx mi... |
-| **v5.5.240** | 🔧 SDK3 Compliance: Fixed Homey Compose manifest warning. Al... |
+| **v5.5.380** | 🔥 FIX - Smoke Detector _TZE284_rccxox8p: Added cluster 0xED00 (60672) used b... |
+| **v5.5.379** | 🔘 CRITICAL FIX - MOES 4-Button (TS004F) Physical Buttons: TS004F has TWO mod... |
+| **v5.5.378** | 🕐 CRITICAL FIX - LCD Time Sync: Fixed Tuya epoch bug (2000 vs 1970). LCD cli... |
+| **v5.5.377** | 🧠 SMART - Complete noTemperature/noHumidity flags for ALL radar sensor confi... |
+| **v5.5.376** | 🔧 FIX - Button No Action Detected: Added IAS ACE cluster (1281) support for ... |
+| **v5.5.375** | 🔧 FIXES - Button capability definition added (fixes 'Invalid capabilities' e... |
+| **v5.5.374** | 🧠 SMART - Enhanced Intelligent Adapter: Multi-source verification (ZCL+Tuya ... |
+| **v5.5.373** | 🧠 NEW - Intelligent Device Adapter: Auto-learns device capabilities over 15m... |
+| **v5.5.372** | 🔧 FIX - Radar Sensor False Capabilities: Removed measure_temperature and mea... |
+| **v5.5.371** | 🔧 FIX - Button Device Issues: (1) Fixed groupsCluster.add is not a function ... |
+<!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
 
