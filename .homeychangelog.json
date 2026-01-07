@@ -1,4 +1,16 @@
 {
+  "5.5.382": {
+    "en": "🕒 ENHANCE - Comprehensive Time Sync: Added 6 time formats (ZIGBEE_2000, UNIX_1970, TUYA_STANDARD, TUYA_MCU, TUYA_EXTENDED_TZ, TUYA_TIMESTAMP_8). Auto-detects best format per device. Supports all Tuya/Zigbee LCD, thermostat, and MCU devices. GMT/DST aware.",
+    "fr": "🕒 AMÉLIORATION - Sync heure complète: 6 formats (ZIGBEE_2000, UNIX_1970, TUYA_STANDARD, TUYA_MCU, TUYA_EXTENDED_TZ, TUYA_TIMESTAMP_8). Auto-détection par appareil. Support LCD, thermostat, MCU. GMT/DST inclus.",
+    "nl": "🕒 VERBETERING - Complete tijdsync: 6 formaten (ZIGBEE_2000, UNIX_1970, TUYA_STANDARD, TUYA_MCU, TUYA_EXTENDED_TZ, TUYA_TIMESTAMP_8). Auto-detectie per apparaat. LCD, thermostaat, MCU support. GMT/DST bewust.",
+    "de": "🕒 VERBESSERUNG - Umfassende Zeitsync: 6 Formate (ZIGBEE_2000, UNIX_1970, TUYA_STANDARD, TUYA_MCU, TUYA_EXTENDED_TZ, TUYA_TIMESTAMP_8). Auto-Erkennung pro Gerät. LCD, Thermostat, MCU Support. GMT/DST bewusst."
+  },
+  "5.5.381": {
+    "en": "🔥 FIX - Smoke Detector Pairing: Fixed cluster mismatch for _TZE284_rccxox8p. Device has clusters [0,4,5,60672,61184] but driver required [1,1280]. Removed non-existent clusters from driver config. Forum: Jolink interview data.",
+    "fr": "🔥 FIX - Appairage Détecteur Fumée: Correction mismatch clusters pour _TZE284_rccxox8p. Device a [0,4,5,60672,61184] mais driver demandait [1,1280]. Clusters inexistants supprimés.",
+    "nl": "🔥 FIX - Rookmelder Pairing: Cluster mismatch opgelost voor _TZE284_rccxox8p. Apparaat heeft [0,4,5,60672,61184] maar driver vereiste [1,1280]. Niet-bestaande clusters verwijderd.",
+    "de": "🔥 FIX - Rauchmelder Pairing: Cluster-Mismatch für _TZE284_rccxox8p behoben. Gerät hat [0,4,5,60672,61184] aber Treiber forderte [1,1280]. Nicht vorhandene Cluster entfernt."
+  },
   "5.5.380": {
     "en": "🔥 FIX - Smoke Detector _TZE284_rccxox8p: Added cluster 0xED00 (60672) used by newer TZE284 smoke detectors. Device was already supported but needed cluster update for proper pairing. Forum report: Jolink.",
     "fr": "🔥 FIX - Détecteur fumée _TZE284_rccxox8p: Ajout cluster 0xED00 (60672) utilisé par nouveaux détecteurs TZE284. Device supporté mais cluster manquant. Rapport forum: Jolink.",
