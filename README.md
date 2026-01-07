@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.383** | 🕒 COMPLETE Time Sync: 12 formats covering ALL epochs (1970/2000), UTC/Local ... |
 | **v5.5.382** | 🕒 ENHANCE - Comprehensive Time Sync: Added 6 time formats (ZIGBEE_2000, UNIX... |
 | **v5.5.381** | 🔥 FIX - Smoke Detector Pairing: Fixed cluster mismatch for _TZE284_rccxox8p.... |
 | **v5.5.380** | 🔥 FIX - Smoke Detector _TZE284_rccxox8p: Added cluster 0xED00 (60672) used b... |
@@ -78,7 +79,6 @@
 | **v5.5.376** | 🔧 FIX - Button No Action Detected: Added IAS ACE cluster (1281) support for ... |
 | **v5.5.375** | 🔧 FIXES - Button capability definition added (fixes 'Invalid capabilities' e... |
 | **v5.5.374** | 🧠 SMART - Enhanced Intelligent Adapter: Multi-source verification (ZCL+Tuya ... |
-| **v5.5.373** | 🧠 NEW - Intelligent Device Adapter: Auto-learns device capabilities over 15m... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
