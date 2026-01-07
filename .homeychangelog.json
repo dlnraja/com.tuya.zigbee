@@ -1,4 +1,10 @@
 {
+  "5.5.378": {
+    "en": "🕐 CRITICAL FIX - LCD Time Sync: Fixed Tuya epoch bug (2000 vs 1970). LCD climate sensors were showing year 2055 instead of 2025! Fixed payload format [Local:4][UTC:4]. Research: Z2M #30054. Now uses TUYA_EPOCH_OFFSET=946684800s correctly.",
+    "fr": "🕐 FIX CRITIQUE - Sync heure LCD: Correction bug epoch Tuya (2000 vs 1970). Les capteurs LCD affichaient 2055 au lieu de 2025! Format payload [Local:4][UTC:4] corrigé. Recherche: Z2M #30054.",
+    "nl": "🕐 KRITIEKE FIX - LCD Tijd Sync: Tuya epoch bug opgelost (2000 vs 1970). LCD sensoren toonden jaar 2055 in plaats van 2025! Payload format [Local:4][UTC:4] gecorrigeerd.",
+    "de": "🕐 KRITISCHER FIX - LCD Zeit-Sync: Tuya Epoch Bug behoben (2000 vs 1970). LCD Sensoren zeigten Jahr 2055 statt 2025! Payload Format [Local:4][UTC:4] korrigiert."
+  },
   "5.5.377": {
     "en": "🧠 SMART - Complete noTemperature/noHumidity flags for ALL radar sensor configs. Added to ZY_M100_CEILING_24G (gkfbdvyx) and TZE284_IADRO9BF (iadro9bf, qasjif9e, ztqnh5cg, sbyx0lm6). Research: Z2M #27212, #30326, ZHA t/874026 confirm these mmWave radars have NO temp/humidity sensors.",
     "fr": "🧠 SMART - Flags noTemperature/noHumidity complets pour TOUS les capteurs radar. Ajouté à ZY_M100_CEILING_24G et TZE284_IADRO9BF. Recherche Z2M/ZHA confirme: pas de capteurs temp/humidité sur ces radars mmWave.",
