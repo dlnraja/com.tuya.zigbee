@@ -4,16 +4,19 @@ const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║     BUTTON 1 GANG - v5.5.371 ENHANCED FOR TS0041 / TS0042                    ║
+ * ║     BUTTON 1 GANG - v5.5.376 ENHANCED FOR TS0041 / TS0042 / TS0215A         ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
- * ║  v5.5.371: FIX for "No Action detected" diagnostic report                   ║
- * ║  - Added enhanced physical button detection (like button_wireless_4)         ║
+ * ║  v5.5.376: FIX for "No Action detected" - Added IAS ACE support             ║
+ * ║  - IAS ACE cluster (1281) for SOS/Emergency buttons (TS0215A)               ║
+ * ║  - commandEmergency, panic, arm, disarm event handling                       ║
+ * ║                                                                              ║
+ * ║  v5.5.371: Enhanced physical button detection                                ║
  * ║  - Multiple event listener patterns for SDK3 compatibility                   ║
  * ║  - Tuya DP fallback for non-ZCL button events                               ║
  * ║                                                                              ║
  * ║  STRUCTURE TS0041:                                                           ║
- * ║  EP1: Button 1 (scenes, onOff, powerCfg, groups, iasZone)                   ║
+ * ║  EP1: Button 1 (scenes, onOff, powerCfg, groups, iasZone, iasAce)           ║
  * ║                                                                              ║
  * ║  ACTIONS: single, double, hold                                               ║
  * ║                                                                              ║
@@ -23,7 +26,7 @@ class Button1GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('═══════════════════════════════════════════════════════════════');
-    this.log('[BUTTON1] 🔘 Button1GangDevice v5.5.371 initializing...');
+    this.log('[BUTTON1] 🔘 Button1GangDevice v5.5.376 initializing...');
     this.log('[BUTTON1] FIX: Enhanced detection for "No Action detected" issue');
     this.log('═══════════════════════════════════════════════════════════════');
 
@@ -192,6 +195,43 @@ class Button1GangDevice extends ButtonDevice {
         });
 
         this.log('[BUTTON1-PHYSICAL] ✅ IAS Zone listeners configured');
+      }
+
+      // v5.5.376: IAS ACE CLUSTER - For SOS/Emergency buttons (TS0215A)
+      // These buttons use IAS ACE cluster (1281) with commandEmergency
+      const iasAceCluster = endpoint.clusters?.iasAce || endpoint.clusters?.ssIasAce || endpoint.clusters?.[1281];
+      if (iasAceCluster && typeof iasAceCluster.on === 'function') {
+        this.log('[BUTTON1-PHYSICAL] 📡 Setting up IAS ACE listeners (SOS button)...');
+
+        // Emergency command = SOS button press
+        iasAceCluster.on('emergency', async (payload) => {
+          this.log('[BUTTON1-IASACE] 🆘 EMERGENCY command received:', payload);
+          await this.triggerButtonPress(1, 'single');
+        });
+
+        iasAceCluster.on('commandEmergency', async (payload) => {
+          this.log('[BUTTON1-IASACE] 🆘 commandEmergency received:', payload);
+          await this.triggerButtonPress(1, 'single');
+        });
+
+        // Panic command = double press on some SOS buttons
+        iasAceCluster.on('panic', async (payload) => {
+          this.log('[BUTTON1-IASACE] 🆘 PANIC command received:', payload);
+          await this.triggerButtonPress(1, 'double');
+        });
+
+        // Arm/Disarm commands used by some remote buttons
+        iasAceCluster.on('arm', async (payload) => {
+          this.log('[BUTTON1-IASACE] 🔒 ARM command:', payload);
+          await this.triggerButtonPress(1, 'single');
+        });
+
+        iasAceCluster.on('disarm', async (payload) => {
+          this.log('[BUTTON1-IASACE] 🔓 DISARM command:', payload);
+          await this.triggerButtonPress(1, 'double');
+        });
+
+        this.log('[BUTTON1-PHYSICAL] ✅ IAS ACE listeners configured (SOS/Emergency support)');
       }
 
       // v5.5.371: TUYA DP CLUSTER - For Tuya-specific devices
