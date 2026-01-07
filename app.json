@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.374",
+  "version": "5.5.375",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -47618,6 +47618,19 @@
     }
   ],
   "capabilities": {
+    "button": {
+      "type": "boolean",
+      "title": {
+        "en": "Button",
+        "fr": "Bouton",
+        "nl": "Knop",
+        "de": "Taste"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "uiQuickAction": true
+    },
     "alarm_curtain_motor": {
       "type": "boolean",
       "title": {
