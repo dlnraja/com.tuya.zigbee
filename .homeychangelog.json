@@ -1,4 +1,10 @@
 {
+  "5.5.385": {
+    "en": "⚙️ User Settings: Time format & timezone selection in device settings. Climate sensor now has 'Time Sync' group with format dropdown (Auto/LCD/MCU/Zigbee) and timezone override (Auto/GMT+1/GMT+2/etc). Device uses user choice instead of auto-detect.",
+    "fr": "⚙️ Paramètres: Choix format heure & fuseau dans paramètres appareil. Capteur climat: groupe 'Sync Heure' avec dropdown format et fuseau horaire. L'appareil utilise le choix utilisateur.",
+    "nl": "⚙️ Instellingen: Tijdformaat & tijdzone keuze in apparaatinstellingen. Klimaatsensor: 'Tijdsync' groep met format dropdown en tijdzone override.",
+    "de": "⚙️ Einstellungen: Zeitformat & Zeitzone Auswahl in Geräteeinstellungen. Klimasensor: 'Zeitsync' Gruppe mit Format-Dropdown und Zeitzone-Override."
+  },
   "5.5.384": {
     "en": "🕒 ULTIMATE Time Sync: 15 formats (BE/LE variants), milliseconds support, time request interception (cluster 0x000A & 0xEF00 cmd 0x24), auto-respond to device requests. Constants: TIME_FORMATS, TIME_SYNC_COMMANDS, TIMEZONE_OFFSETS exported.",
     "fr": "🕒 Sync heure ULTIME: 15 formats (BE/LE), millisecondes, interception requêtes temps (cluster 0x000A & 0xEF00), réponse auto. Constants exportées.",
