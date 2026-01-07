@@ -1,4 +1,10 @@
 {
+  "5.5.387": {
+    "en": "🔥 FIX - Smoke Detector _TZE284_rccxox8p (Jolink): REMOVED duplicate manufacturerName from gas_sensor and climate_sensor drivers. Device was pairing with WRONG driver! Now pairs exclusively with smoke_detector_advanced. RE-PAIR device after update!",
+    "fr": "🔥 FIX - Détecteur fumée _TZE284_rccxox8p (Jolink): SUPPRIMÉ manufacturerName dupliqué des drivers gas_sensor et climate_sensor. L'appareil s'appairait au MAUVAIS driver! S'appaire maintenant exclusivement avec smoke_detector_advanced. RE-COUPLER après MAJ!",
+    "nl": "🔥 FIX - Rookmelder _TZE284_rccxox8p (Jolink): VERWIJDERD dubbele manufacturerName uit gas_sensor en climate_sensor drivers. Apparaat koppelde met VERKEERDE driver! Koppelt nu exclusief met smoke_detector_advanced. OPNIEUW KOPPELEN na update!",
+    "de": "🔥 FIX - Rauchmelder _TZE284_rccxox8p (Jolink): ENTFERNT doppelte manufacturerName aus gas_sensor und climate_sensor Treibern. Gerät paarte mit FALSCHEM Treiber! Paart jetzt exklusiv mit smoke_detector_advanced. NEU KOPPELN nach Update!"
+  },
   "5.5.386": {
     "en": "🔧 CLUSTER BINDING ENHANCEMENT: UniversalClusterBinder utility for unified Tuya DP (0xEF00) and Zigbee ZCL cluster handling. EnrichedDPMappings with comprehensive DP profiles from Z2M/ZHA research. Auto-detects protocol by manufacturer pattern (_TZE* vs _TZ3000_*). Automatic capability mapping for climate sensors, soil sensors, radar sensors, thermostats, covers, switches, plugs, and safety devices.",
     "fr": "🔧 AMÉLIORATION CLUSTER BINDING: Utilitaire UniversalClusterBinder pour gestion unifiée Tuya DP (0xEF00) et clusters ZCL Zigbee. EnrichedDPMappings avec profils DP complets (recherche Z2M/ZHA). Auto-détection protocole par pattern fabricant. Mapping automatique capabilities.",
