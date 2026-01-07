@@ -1,4 +1,10 @@
 {
+  "5.5.386": {
+    "en": "🔧 CLUSTER BINDING ENHANCEMENT: UniversalClusterBinder utility for unified Tuya DP (0xEF00) and Zigbee ZCL cluster handling. EnrichedDPMappings with comprehensive DP profiles from Z2M/ZHA research. Auto-detects protocol by manufacturer pattern (_TZE* vs _TZ3000_*). Automatic capability mapping for climate sensors, soil sensors, radar sensors, thermostats, covers, switches, plugs, and safety devices.",
+    "fr": "🔧 AMÉLIORATION CLUSTER BINDING: Utilitaire UniversalClusterBinder pour gestion unifiée Tuya DP (0xEF00) et clusters ZCL Zigbee. EnrichedDPMappings avec profils DP complets (recherche Z2M/ZHA). Auto-détection protocole par pattern fabricant. Mapping automatique capabilities.",
+    "nl": "🔧 CLUSTER BINDING VERBETERING: UniversalClusterBinder utility voor uniforme Tuya DP (0xEF00) en Zigbee ZCL cluster afhandeling. EnrichedDPMappings met uitgebreide DP profielen (Z2M/ZHA onderzoek). Auto-detectie protocol op fabrikant patroon. Automatische capability mapping.",
+    "de": "🔧 CLUSTER BINDING VERBESSERUNG: UniversalClusterBinder Utility für einheitliche Tuya DP (0xEF00) und Zigbee ZCL Cluster Handhabung. EnrichedDPMappings mit umfassenden DP-Profilen (Z2M/ZHA Forschung). Auto-Erkennung Protokoll per Hersteller-Muster. Automatische Capability-Zuordnung."
+  },
   "5.5.385": {
     "en": "⚙️ User Settings: Time format & timezone selection in device settings. Climate sensor now has 'Time Sync' group with format dropdown (Auto/LCD/MCU/Zigbee) and timezone override (Auto/GMT+1/GMT+2/etc). Device uses user choice instead of auto-detect.",
     "fr": "⚙️ Paramètres: Choix format heure & fuseau dans paramètres appareil. Capteur climat: groupe 'Sync Heure' avec dropdown format et fuseau horaire. L'appareil utilise le choix utilisateur.",
