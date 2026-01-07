@@ -1,4 +1,10 @@
 {
+  "5.5.388": {
+    "en": "⏰ COMPREHENSIVE TIME SYNC: New TuyaTimeSyncFormats.js utility with ALL time formats: ZIGBEE_2000 (4B epoch 2000), UNIX_1970 (4B epoch 1970), TUYA_STANDARD (7B local), TUYA_MCU (9B with header), TUYA_EXTENDED_TZ (9B with TZ), TUYA_FULL_TZ (10B with DST), TUYA_DUAL_2000 (8B [Local][UTC]), TUYA_GATEWAY (12B full). Auto-detect format by manufacturer. DST support. Timezone database (GMT±12).",
+    "fr": "⏰ SYNC HEURE COMPLET: Nouveau TuyaTimeSyncFormats.js avec TOUS les formats: ZIGBEE_2000, UNIX_1970, TUYA_STANDARD, TUYA_MCU, TUYA_EXTENDED_TZ, TUYA_FULL_TZ, TUYA_DUAL_2000, TUYA_GATEWAY. Auto-détection par fabricant. Support DST. Base de données fuseaux horaires.",
+    "nl": "⏰ COMPLETE TIJDSYNC: Nieuwe TuyaTimeSyncFormats.js met ALLE formaten. Auto-detectie per fabrikant. DST ondersteuning. Tijdzone database.",
+    "de": "⏰ UMFASSENDE ZEITSYNC: Neues TuyaTimeSyncFormats.js mit ALLEN Formaten. Auto-Erkennung per Hersteller. DST Unterstützung. Zeitzonendatenbank."
+  },
   "5.5.387": {
     "en": "🔥 FIX - Smoke Detector _TZE284_rccxox8p (Jolink): REMOVED duplicate manufacturerName from gas_sensor and climate_sensor drivers. Device was pairing with WRONG driver! Now pairs exclusively with smoke_detector_advanced. RE-PAIR device after update!",
     "fr": "🔥 FIX - Détecteur fumée _TZE284_rccxox8p (Jolink): SUPPRIMÉ manufacturerName dupliqué des drivers gas_sensor et climate_sensor. L'appareil s'appairait au MAUVAIS driver! S'appaire maintenant exclusivement avec smoke_detector_advanced. RE-COUPLER après MAJ!",
