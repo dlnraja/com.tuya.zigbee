@@ -69,6 +69,8 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.382** | 🕒 ENHANCE - Comprehensive Time Sync: Added 6 time formats (ZIGBEE_2000, UNIX... |
+| **v5.5.381** | 🔥 FIX - Smoke Detector Pairing: Fixed cluster mismatch for _TZE284_rccxox8p.... |
 | **v5.5.380** | 🔥 FIX - Smoke Detector _TZE284_rccxox8p: Added cluster 0xED00 (60672) used b... |
 | **v5.5.379** | 🔘 CRITICAL FIX - MOES 4-Button (TS004F) Physical Buttons: TS004F has TWO mod... |
 | **v5.5.378** | 🕐 CRITICAL FIX - LCD Time Sync: Fixed Tuya epoch bug (2000 vs 1970). LCD cli... |
@@ -77,8 +79,6 @@
 | **v5.5.375** | 🔧 FIXES - Button capability definition added (fixes 'Invalid capabilities' e... |
 | **v5.5.374** | 🧠 SMART - Enhanced Intelligent Adapter: Multi-source verification (ZCL+Tuya ... |
 | **v5.5.373** | 🧠 NEW - Intelligent Device Adapter: Auto-learns device capabilities over 15m... |
-| **v5.5.372** | 🔧 FIX - Radar Sensor False Capabilities: Removed measure_temperature and mea... |
-| **v5.5.371** | 🔧 FIX - Button Device Issues: (1) Fixed groupsCluster.add is not a function ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
