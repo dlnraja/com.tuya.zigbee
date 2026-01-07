@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.384** | 🕒 ULTIMATE Time Sync: 15 formats (BE/LE variants), milliseconds support, tim... |
 | **v5.5.383** | 🕒 COMPLETE Time Sync: 12 formats covering ALL epochs (1970/2000), UTC/Local ... |
 | **v5.5.382** | 🕒 ENHANCE - Comprehensive Time Sync: Added 6 time formats (ZIGBEE_2000, UNIX... |
 | **v5.5.381** | 🔥 FIX - Smoke Detector Pairing: Fixed cluster mismatch for _TZE284_rccxox8p.... |
@@ -78,7 +79,6 @@
 | **v5.5.377** | 🧠 SMART - Complete noTemperature/noHumidity flags for ALL radar sensor confi... |
 | **v5.5.376** | 🔧 FIX - Button No Action Detected: Added IAS ACE cluster (1281) support for ... |
 | **v5.5.375** | 🔧 FIXES - Button capability definition added (fixes 'Invalid capabilities' e... |
-| **v5.5.374** | 🧠 SMART - Enhanced Intelligent Adapter: Multi-source verification (ZCL+Tuya ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
