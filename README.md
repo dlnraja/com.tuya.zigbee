@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.387** | 🔥 FIX - Smoke Detector _TZE284_rccxox8p (Jolink): REMOVED duplicate manufact... |
 | **v5.5.386** | 🔧 CLUSTER BINDING ENHANCEMENT: UniversalClusterBinder utility for unified Tu... |
 | **v5.5.385** | ⚙️ User Settings: Time format & timezone selection in device settings. Climat... |
 | **v5.5.384** | 🕒 ULTIMATE Time Sync: 15 formats (BE/LE variants), milliseconds support, tim... |
@@ -78,7 +79,6 @@
 | **v5.5.380** | 🔥 FIX - Smoke Detector _TZE284_rccxox8p: Added cluster 0xED00 (60672) used b... |
 | **v5.5.379** | 🔘 CRITICAL FIX - MOES 4-Button (TS004F) Physical Buttons: TS004F has TWO mod... |
 | **v5.5.378** | 🕐 CRITICAL FIX - LCD Time Sync: Fixed Tuya epoch bug (2000 vs 1970). LCD cli... |
-| **v5.5.377** | 🧠 SMART - Complete noTemperature/noHumidity flags for ALL radar sensor confi... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
