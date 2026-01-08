@@ -651,34 +651,65 @@ const SENSOR_CONFIGS = {
 
   // ─────────────────────────────────────────────────────────────────────────────
   // TYPE G: ZG-204ZM PIR + 24GHz Radar Battery Sensor
-  // v5.5.328: Added per user request (4x4_Pete forum post #786)
+  // v5.5.395: ENHANCED per 4x4_Pete forum post + Z2M full spec
   // Source: https://www.zigbee2mqtt.io/devices/ZG-204ZM.html
   // Source: https://github.com/Koenkk/zigbee2mqtt/issues/21919
-  // DP1=presence, DP2=large_sens, DP4=large_dist, DP101=motion_state(enum)
-  // DP102=fading_time, DP104=med_dist, DP105=med_sens, DP106=illuminance
-  // DP107=indicator, DP108=small_dist, DP109=small_sens
+  // Features: PIR + 24GHz radar hybrid, battery powered, illuminance
+  //
+  // Z2M COMPLETE DP MAPPING:
+  // DP1=presence (bool), DP2=motion_sensitivity (0-10), DP4=static_detection_distance (m)
+  // DP101=motion_state (enum: 0=none,1=large,2=small,3=static)
+  // DP102=fading_time (0-28800s), DP103=static_detection_sensitivity (0-10)
+  // DP104=motion_detection_mode (enum: 0=only_pir, 1=pir_and_radar, 2=only_radar)
+  // DP106=illuminance (lux), DP107=indicator (bool on/off)
+  // DP108=small_detection_distance, DP109=small_detection_sensitivity
+  // DP15=battery (%)
+  //
   // WARNING: _TZE200_kb5noeto may get stuck in "presence detected" state
   // ─────────────────────────────────────────────────────────────────────────────
   'ZG_204ZM_RADAR': {
     sensors: [
       '_TZE200_2aaelwxk', '_TZE200_kb5noeto', '_TZE200_tyffvoij',
+      'HOBEIAN',  // v5.5.395: Added per 4x4_Pete forum interview
     ],
     battery: true,
     hasIlluminance: true,
     noTemperature: true,    // v5.5.368: 4x4_Pete fix - device has NO temp sensor
     noHumidity: true,       // v5.5.368: 4x4_Pete fix - device has NO humidity sensor
+    // v5.5.395: Settings that can be written to device
+    writableDPs: [2, 4, 102, 103, 104, 107],
     dpMap: {
-      1: { cap: 'alarm_motion', type: 'presence_bool' },           // presence
-      2: { cap: null, internal: 'large_motion_sensitivity' },       // 0-10
-      4: { cap: 'measure_distance', divisor: 100 },                 // large motion distance cm -> m
-      101: { cap: 'alarm_motion', type: 'motion_state_enum' },      // 0=none, 1=large, 2=medium, 3=small
-      102: { cap: null, internal: 'fading_time' },                  // seconds
-      104: { cap: null, internal: 'medium_motion_distance' },       // cm
-      105: { cap: null, internal: 'medium_motion_sensitivity' },    // 0-10
-      106: { cap: 'measure_luminance', type: 'lux_direct' },        // illuminance
-      107: { cap: null, internal: 'indicator' },                    // LED on/off
-      108: { cap: null, internal: 'small_detection_distance' },     // cm
-      109: { cap: null, internal: 'small_detection_sensitivity' },  // 0-10
+      // ═══════════════════════════════════════════════════════════════════
+      // PRESENCE DETECTION
+      // ═══════════════════════════════════════════════════════════════════
+      1: { cap: 'alarm_motion', type: 'presence_bool' },           // presence (binary)
+      101: { cap: 'alarm_motion', type: 'motion_state_enum' },     // motion_state: 0=none, 1=large, 2=small, 3=static
+
+      // ═══════════════════════════════════════════════════════════════════
+      // ILLUMINANCE
+      // ═══════════════════════════════════════════════════════════════════
+      106: { cap: 'measure_luminance', type: 'lux_direct' },       // illuminance (lux)
+
+      // ═══════════════════════════════════════════════════════════════════
+      // BATTERY
+      // ═══════════════════════════════════════════════════════════════════
+      4: { cap: 'measure_battery', divisor: 1 },                   // battery %
+      15: { cap: 'measure_battery', divisor: 1 },                  // battery % (alternate)
+
+      // ═══════════════════════════════════════════════════════════════════
+      // SETTINGS (internal, writable via settings)
+      // ═══════════════════════════════════════════════════════════════════
+      2: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },  // motion sensitivity
+      102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },              // presence keep time (s)
+      103: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 }, // static sensitivity
+      104: { cap: null, setting: 'motion_detection_mode' },                        // 0=pir, 1=pir+radar, 2=radar
+      107: { cap: null, setting: 'indicator' },                                    // LED on/off
+
+      // ═══════════════════════════════════════════════════════════════════
+      // DISTANCE SETTINGS (read-only for now)
+      // ═══════════════════════════════════════════════════════════════════
+      108: { cap: null, internal: 'small_detection_distance', divisor: 100 },      // m
+      109: { cap: null, internal: 'small_detection_sensitivity' },                 // 0-10
     }
   },
 
