@@ -135,6 +135,13 @@ class SoilSensorDevice extends TuyaHybridDevice {
       2: { capability: null, internal: 'temperature_unit' },
 
       // ═══════════════════════════════════════════════════════════════════
+      // v5.5.406: RESEARCH-BASED DPs from Z2M issue #23260, #27501
+      // _TZE284_sgabhwa6, _TZE284_oitavov2 variants
+      // ═══════════════════════════════════════════════════════════════════
+      102: { capability: 'measure_battery', transform: (v) => ({ 0: 10, 1: 50, 2: 100 }[v] ?? v) }, // battery_state enum
+      110: { capability: 'measure_battery', transform: (v) => v > 100 ? v / 10 : v }, // battery ÷10
+
+      // ═══════════════════════════════════════════════════════════════════
       // FALLBACK DPs for other soil sensor variants
       // ═══════════════════════════════════════════════════════════════════
       1: { capability: 'measure_temperature', divisor: 10 },  // Some variants
