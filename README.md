@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.396** | 🔘 FIX: Wireless buttons showing On/Off toggle instead of Push. Buttons now c... |
 | **v5.5.395** | 🎯 ENHANCED: HOBEIAN ZG-204ZM PIR+24GHz Radar - Complete Z2M support! Moved t... |
 | **v5.5.394** | 🆕 NEW DEVICE: HOBEIAN ZG-204ZM Motion Sensor with Illuminance. Features: PIR... |
 | **v5.5.393** | 🔄 ID DATABASE: Fixed timing issue where database showed 0 drivers during sta... |
@@ -78,7 +79,6 @@
 | **v5.5.389** | 🔧 UNIVERSAL DATA HANDLER: Multi-level parser for Tuya & Zigbee. Level 0: Pro... |
 | **v5.5.388** | ⏰ COMPREHENSIVE TIME SYNC: New TuyaTimeSyncFormats.js utility with ALL time f... |
 | **v5.5.387** | 🔥 FIX - Smoke Detector _TZE284_rccxox8p (Jolink): REMOVED duplicate manufact... |
-| **v5.5.386** | 🔧 CLUSTER BINDING ENHANCEMENT: UniversalClusterBinder utility for unified Tu... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
