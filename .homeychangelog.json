@@ -1,4 +1,10 @@
 {
+  "5.5.394": {
+    "en": "🆕 NEW DEVICE: HOBEIAN ZG-204ZM Motion Sensor with Illuminance. Features: PIR motion (IAS Zone), lux measurement, battery. Forum request from 4x4_Pete.",
+    "fr": "🆕 NOUVEL APPAREIL: HOBEIAN ZG-204ZM Capteur de mouvement avec luminosité. PIR + lux + batterie. Demande forum 4x4_Pete.",
+    "nl": "🆕 NIEUW APPARAAT: HOBEIAN ZG-204ZM Bewegingssensor met verlichtingsmeting. PIR + lux + batterij.",
+    "de": "🆕 NEUES GERÄT: HOBEIAN ZG-204ZM Bewegungssensor mit Beleuchtungsmessung. PIR + Lux + Batterie."
+  },
   "5.5.393": {
     "en": "🔄 ID DATABASE: Fixed timing issue where database showed 0 drivers during startup. Now automatically rebuilds after 10 seconds when drivers are fully loaded. Diagnostic improvement.",
     "fr": "🔄 ID DATABASE: Corrigé le problème de timing où la base affichait 0 drivers au démarrage. Reconstruction automatique après 10s.",
