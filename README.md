@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.389** | 🔧 UNIVERSAL DATA HANDLER: Multi-level parser for Tuya & Zigbee. Level 0: Pro... |
 | **v5.5.388** | ⏰ COMPREHENSIVE TIME SYNC: New TuyaTimeSyncFormats.js utility with ALL time f... |
 | **v5.5.387** | 🔥 FIX - Smoke Detector _TZE284_rccxox8p (Jolink): REMOVED duplicate manufact... |
 | **v5.5.386** | 🔧 CLUSTER BINDING ENHANCEMENT: UniversalClusterBinder utility for unified Tu... |
@@ -78,7 +79,6 @@
 | **v5.5.382** | 🕒 ENHANCE - Comprehensive Time Sync: Added 6 time formats (ZIGBEE_2000, UNIX... |
 | **v5.5.381** | 🔥 FIX - Smoke Detector Pairing: Fixed cluster mismatch for _TZE284_rccxox8p.... |
 | **v5.5.380** | 🔥 FIX - Smoke Detector _TZE284_rccxox8p: Added cluster 0xED00 (60672) used b... |
-| **v5.5.379** | 🔘 CRITICAL FIX - MOES 4-Button (TS004F) Physical Buttons: TS004F has TWO mod... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
