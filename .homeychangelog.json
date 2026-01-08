@@ -1,4 +1,10 @@
 {
+  "5.5.389": {
+    "en": "🔧 UNIVERSAL DATA HANDLER: Multi-level parser for Tuya & Zigbee. Level 0: Protocol (Tuya DP frames, ZCL frames). Level 1: Raw (Buffer/Uint8Array). Level 2: Hex (string). Level 3: Typed (uint8/int16/float). Level 4: Semantic (temp_div10, battery_div2, percent_invert). Unified API: toBuffer/toHex/parseTuyaFrame/parseZCLFrame/read/write/convert.",
+    "fr": "🔧 GESTIONNAIRE DONNÉES UNIVERSEL: Parser multi-niveau Tuya & Zigbee. Protocole, Raw, Hex, Typé, Sémantique. API unifiée.",
+    "nl": "🔧 UNIVERSELE DATA HANDLER: Multi-level parser Tuya & Zigbee. Protocol, Raw, Hex, Typed, Semantic. Unified API.",
+    "de": "🔧 UNIVERSELLER DATEN HANDLER: Multi-Level Parser für Tuya & Zigbee. Protokoll, Raw, Hex, Typed, Semantisch. Einheitliche API."
+  },
   "5.5.388": {
     "en": "⏰ COMPREHENSIVE TIME SYNC: New TuyaTimeSyncFormats.js utility with ALL time formats: ZIGBEE_2000 (4B epoch 2000), UNIX_1970 (4B epoch 1970), TUYA_STANDARD (7B local), TUYA_MCU (9B with header), TUYA_EXTENDED_TZ (9B with TZ), TUYA_FULL_TZ (10B with DST), TUYA_DUAL_2000 (8B [Local][UTC]), TUYA_GATEWAY (12B full). Auto-detect format by manufacturer. DST support. Timezone database (GMT±12).",
     "fr": "⏰ SYNC HEURE COMPLET: Nouveau TuyaTimeSyncFormats.js avec TOUS les formats: ZIGBEE_2000, UNIX_1970, TUYA_STANDARD, TUYA_MCU, TUYA_EXTENDED_TZ, TUYA_FULL_TZ, TUYA_DUAL_2000, TUYA_GATEWAY. Auto-détection par fabricant. Support DST. Base de données fuseaux horaires.",
