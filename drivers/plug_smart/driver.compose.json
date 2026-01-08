@@ -11,8 +11,8 @@
     "measure_current",
     "measure_voltage",
     "measure_battery",
-    "button.toggle",
-    "button.identify"
+    "button_toggle",
+    "button_identify"
   ],
   "energy": {
     "approximation": {

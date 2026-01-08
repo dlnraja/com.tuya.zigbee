@@ -6,11 +6,11 @@
     "onoff.gang3",
     "onoff.gang4",
     "measure_power",
-    "button.toggle_1",
-    "button.toggle_2",
-    "button.toggle_3",
-    "button.toggle_4",
-    "button.identify"
+    "button_toggle_1",
+    "button_toggle_2",
+    "button_toggle_3",
+    "button_toggle_4",
+    "button_identify"
   ],
   "zigbee": {
     "productId": [
