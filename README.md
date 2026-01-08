@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.398** | 🔗 CLUSTER BINDER: Integrated UniversalClusterBinder with modular data system... |
 | **v5.5.397** | 📦 MODULAR DATA SYSTEM: Complete refactor of data handling into separate modu... |
 | **v5.5.396** | 🔘 FIX: Wireless buttons showing On/Off toggle instead of Push. Buttons now c... |
 | **v5.5.395** | 🎯 ENHANCED: HOBEIAN ZG-204ZM PIR+24GHz Radar - Complete Z2M support! Moved t... |
@@ -78,7 +79,6 @@
 | **v5.5.391** | ⏰ ENHANCED TIME SYNC: Request detection (cluster 0x000A, 0xEF00 cmd 0x24). De... |
 | **v5.5.390** | 🔄 AUTO-DISCOVERY SYSTEM: Dynamic capability detection from device reports. A... |
 | **v5.5.389** | 🔧 UNIVERSAL DATA HANDLER: Multi-level parser for Tuya & Zigbee. Level 0: Pro... |
-| **v5.5.388** | ⏰ COMPREHENSIVE TIME SYNC: New TuyaTimeSyncFormats.js utility with ALL time f... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
