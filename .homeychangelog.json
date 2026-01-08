@@ -1,4 +1,10 @@
 {
+  "5.5.390": {
+    "en": "🔄 AUTO-DISCOVERY SYSTEM: Dynamic capability detection from device reports. Auto-adds capabilities when new DPs discovered. Scheduled updates (15min → hourly). DP→Capability mapping (climate, energy, safety, cover). Time sync integration. Stats tracking. Flow card generation events.",
+    "fr": "🔄 SYSTÈME AUTO-DÉCOUVERTE: Détection dynamique des capabilities. Ajout auto quand nouveaux DPs découverts. Mises à jour planifiées (15min → horaire). Mapping DP→Capability. Intégration time sync.",
+    "nl": "🔄 AUTO-DISCOVERY SYSTEEM: Dynamische capability detectie. Auto-toevoegen bij nieuwe DPs. Geplande updates (15min → uurlijks). DP→Capability mapping. Time sync integratie.",
+    "de": "🔄 AUTO-DISCOVERY SYSTEM: Dynamische Capability-Erkennung. Auto-Hinzufügen bei neuen DPs. Geplante Updates (15min → stündlich). DP→Capability Mapping. Time Sync Integration."
+  },
   "5.5.389": {
     "en": "🔧 UNIVERSAL DATA HANDLER: Multi-level parser for Tuya & Zigbee. Level 0: Protocol (Tuya DP frames, ZCL frames). Level 1: Raw (Buffer/Uint8Array). Level 2: Hex (string). Level 3: Typed (uint8/int16/float). Level 4: Semantic (temp_div10, battery_div2, percent_invert). Unified API: toBuffer/toHex/parseTuyaFrame/parseZCLFrame/read/write/convert.",
     "fr": "🔧 GESTIONNAIRE DONNÉES UNIVERSEL: Parser multi-niveau Tuya & Zigbee. Protocole, Raw, Hex, Typé, Sémantique. API unifiée.",
