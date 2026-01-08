@@ -1,4 +1,10 @@
 {
+  "5.5.393": {
+    "en": "🔄 ID DATABASE: Fixed timing issue where database showed 0 drivers during startup. Now automatically rebuilds after 10 seconds when drivers are fully loaded. Diagnostic improvement.",
+    "fr": "🔄 ID DATABASE: Corrigé le problème de timing où la base affichait 0 drivers au démarrage. Reconstruction automatique après 10s.",
+    "nl": "🔄 ID DATABASE: Timing probleem opgelost waarbij database 0 drivers toonde. Automatische herbouw na 10 seconden.",
+    "de": "🔄 ID DATABASE: Timing-Problem behoben. Automatischer Neuaufbau nach 10 Sekunden wenn Treiber geladen sind."
+  },
   "5.5.392": {
     "en": "🔥 CRITICAL FIX - Pairing Error: Fixed broken import path for UniversalDataHandler in HybridSensorBase.js. This was causing 'Something went wrong while adding device' error for ALL sensors including smoke detector _TZE284_rccxox8p (Jolink). RE-PAIR your devices after update!",
     "fr": "🔥 FIX CRITIQUE - Erreur appairage: Corrigé chemin import UniversalDataHandler dans HybridSensorBase.js. Causait erreur 'Quelque chose s'est mal passé' pour TOUS les capteurs. RE-COUPLER après MAJ!",
