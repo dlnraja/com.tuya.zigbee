@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.408",
+  "version": "5.5.409",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -10085,9 +10085,412 @@
             "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
           }
         ]
+      },
+      {
+        "id": "receive_dp_boolean",
+        "title": {
+          "en": "Tuya DP changed (Boolean)",
+          "fr": "DP Tuya changé (Booléen)",
+          "nl": "Tuya DP gewijzigd (Boolean)",
+          "de": "Tuya DP geändert (Boolean)"
+        },
+        "titleFormatted": {
+          "en": "DP [[dp_id]] changed to [[value]]",
+          "fr": "DP [[dp_id]] changé en [[value]]",
+          "nl": "DP [[dp_id]] gewijzigd naar [[value]]",
+          "de": "DP [[dp_id]] geändert zu [[value]]"
+        },
+        "hint": {
+          "en": "Advanced: Trigger when any Tuya DataPoint changes. Use this for features not yet supported by the app.",
+          "fr": "Avancé: Déclenché quand un DataPoint Tuya change. Utilisez pour les fonctionnalités non encore supportées."
+        },
+        "tokens": [
+          {
+            "name": "value",
+            "type": "boolean",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            },
+            "example": true
+          },
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "example": 1
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "min": 1,
+            "max": 255,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "receive_dp_number",
+        "title": {
+          "en": "Tuya DP changed (Number)",
+          "fr": "DP Tuya changé (Nombre)",
+          "nl": "Tuya DP gewijzigd (Nummer)",
+          "de": "Tuya DP geändert (Zahl)"
+        },
+        "titleFormatted": {
+          "en": "DP [[dp_id]] changed",
+          "fr": "DP [[dp_id]] changé",
+          "nl": "DP [[dp_id]] gewijzigd",
+          "de": "DP [[dp_id]] geändert"
+        },
+        "hint": {
+          "en": "Advanced: Trigger when a numeric Tuya DataPoint changes.",
+          "fr": "Avancé: Déclenché quand un DataPoint Tuya numérique change."
+        },
+        "tokens": [
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            },
+            "example": 25
+          },
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "example": 2
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "min": 1,
+            "max": 255,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "receive_dp_string",
+        "title": {
+          "en": "Tuya DP changed (String/Enum)",
+          "fr": "DP Tuya changé (Texte/Enum)",
+          "nl": "Tuya DP gewijzigd (Tekst/Enum)",
+          "de": "Tuya DP geändert (Text/Enum)"
+        },
+        "titleFormatted": {
+          "en": "DP [[dp_id]] changed",
+          "fr": "DP [[dp_id]] changé",
+          "nl": "DP [[dp_id]] gewijzigd",
+          "de": "DP [[dp_id]] geändert"
+        },
+        "hint": {
+          "en": "Advanced: Trigger when a string/enum Tuya DataPoint changes.",
+          "fr": "Avancé: Déclenché quand un DataPoint Tuya texte/enum change."
+        },
+        "tokens": [
+          {
+            "name": "value",
+            "type": "string",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            },
+            "example": "mode_1"
+          },
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "example": 4
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "min": 1,
+            "max": 255,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "receive_dp_any",
+        "title": {
+          "en": "Any Tuya DP changed",
+          "fr": "N'importe quel DP Tuya changé",
+          "nl": "Elke Tuya DP gewijzigd",
+          "de": "Beliebiger Tuya DP geändert"
+        },
+        "hint": {
+          "en": "Advanced: Trigger when ANY Tuya DataPoint changes. Useful for debugging or discovering device DPs.",
+          "fr": "Avancé: Déclenché quand N'IMPORTE QUEL DataPoint Tuya change. Utile pour debug."
+        },
+        "tokens": [
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "example": 1
+          },
+          {
+            "name": "value",
+            "type": "string",
+            "title": {
+              "en": "Value (as text)",
+              "fr": "Valeur (texte)"
+            },
+            "example": "true"
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "title": {
+              "en": "Data type",
+              "fr": "Type données"
+            },
+            "example": "boolean"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          }
+        ]
       }
     ],
     "actions": [
+      {
+        "id": "send_dp_boolean",
+        "title": {
+          "en": "Send Tuya DP (Boolean)",
+          "fr": "Envoyer DP Tuya (Booléen)",
+          "nl": "Stuur Tuya DP (Boolean)",
+          "de": "Tuya DP senden (Boolean)"
+        },
+        "titleFormatted": {
+          "en": "Set DP [[dp_id]] to [[value]]",
+          "fr": "Définir DP [[dp_id]] à [[value]]",
+          "nl": "Zet DP [[dp_id]] op [[value]]",
+          "de": "DP [[dp_id]] auf [[value]] setzen"
+        },
+        "hint": {
+          "en": "Advanced: Send a boolean value to any Tuya DataPoint. Use for features not yet supported.",
+          "fr": "Avancé: Envoyer une valeur booléenne à un DataPoint Tuya."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "min": 1,
+            "max": 255,
+            "step": 1
+          },
+          {
+            "name": "value",
+            "type": "checkbox",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            }
+          }
+        ]
+      },
+      {
+        "id": "send_dp_number",
+        "title": {
+          "en": "Send Tuya DP (Number)",
+          "fr": "Envoyer DP Tuya (Nombre)",
+          "nl": "Stuur Tuya DP (Nummer)",
+          "de": "Tuya DP senden (Zahl)"
+        },
+        "titleFormatted": {
+          "en": "Set DP [[dp_id]] to [[value]]",
+          "fr": "Définir DP [[dp_id]] à [[value]]",
+          "nl": "Zet DP [[dp_id]] op [[value]]",
+          "de": "DP [[dp_id]] auf [[value]] setzen"
+        },
+        "hint": {
+          "en": "Advanced: Send a numeric value to any Tuya DataPoint.",
+          "fr": "Avancé: Envoyer une valeur numérique à un DataPoint Tuya."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "min": 1,
+            "max": 255,
+            "step": 1
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            }
+          }
+        ]
+      },
+      {
+        "id": "send_dp_string",
+        "title": {
+          "en": "Send Tuya DP (String/Enum)",
+          "fr": "Envoyer DP Tuya (Texte/Enum)",
+          "nl": "Stuur Tuya DP (Tekst/Enum)",
+          "de": "Tuya DP senden (Text/Enum)"
+        },
+        "titleFormatted": {
+          "en": "Set DP [[dp_id]] to [[value]]",
+          "fr": "Définir DP [[dp_id]] à [[value]]",
+          "nl": "Zet DP [[dp_id]] op [[value]]",
+          "de": "DP [[dp_id]] auf [[value]] setzen"
+        },
+        "hint": {
+          "en": "Advanced: Send a string/enum value to any Tuya DataPoint.",
+          "fr": "Avancé: Envoyer une valeur texte/enum à un DataPoint Tuya."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "min": 1,
+            "max": 255,
+            "step": 1
+          },
+          {
+            "name": "value",
+            "type": "text",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            }
+          }
+        ]
+      },
+      {
+        "id": "send_dp_raw",
+        "title": {
+          "en": "Send Tuya DP (Raw bytes)",
+          "fr": "Envoyer DP Tuya (Octets bruts)",
+          "nl": "Stuur Tuya DP (Raw bytes)",
+          "de": "Tuya DP senden (Rohdaten)"
+        },
+        "titleFormatted": {
+          "en": "Set DP [[dp_id]] to raw [[value]]",
+          "fr": "Définir DP [[dp_id]] à brut [[value]]",
+          "nl": "Zet DP [[dp_id]] op raw [[value]]",
+          "de": "DP [[dp_id]] auf Roh [[value]] setzen"
+        },
+        "hint": {
+          "en": "Advanced: Send raw hex bytes to a Tuya DataPoint. Format: hex string like '0102FF'",
+          "fr": "Avancé: Envoyer des octets hex bruts. Format: chaîne hex comme '0102FF'"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "name": "dp_id",
+            "type": "number",
+            "title": {
+              "en": "DP ID",
+              "fr": "ID DP"
+            },
+            "min": 1,
+            "max": 255,
+            "step": 1
+          },
+          {
+            "name": "value",
+            "type": "text",
+            "title": {
+              "en": "Hex value",
+              "fr": "Valeur hex"
+            },
+            "placeholder": {
+              "en": "0102FF"
+            }
+          }
+        ]
+      },
       {
         "id": "device_identify",
         "title": {

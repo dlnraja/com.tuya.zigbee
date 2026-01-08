@@ -605,6 +605,173 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         });
 
       this.log('✅ Device Health Flow Cards registered (6 cards)');
+
+      // ═══════════════════════════════════════════════════════════════════
+      // v5.5.409: GENERIC TUYA DP FLOW CARDS (Inspired by com.tuya2)
+      // Allows users to trigger on ANY DP change and send commands to ANY DP
+      // ═══════════════════════════════════════════════════════════════════
+
+      // TRIGGER: Receive DP Boolean
+      this.homey.flow.getTriggerCard('receive_dp_boolean')
+        .registerRunListener(async (args, state) => {
+          return state.dp_id === args.dp_id;
+        });
+
+      // TRIGGER: Receive DP Number
+      this.homey.flow.getTriggerCard('receive_dp_number')
+        .registerRunListener(async (args, state) => {
+          return state.dp_id === args.dp_id;
+        });
+
+      // TRIGGER: Receive DP String
+      this.homey.flow.getTriggerCard('receive_dp_string')
+        .registerRunListener(async (args, state) => {
+          return state.dp_id === args.dp_id;
+        });
+
+      // TRIGGER: Receive ANY DP (for debugging)
+      this.homey.flow.getTriggerCard('receive_dp_any')
+        .registerRunListener(async (args, state) => true);
+
+      // ACTION: Send DP Boolean
+      this.homey.flow.getActionCard('send_dp_boolean')
+        .registerRunListener(async (args) => {
+          try {
+            const device = args.device;
+            const dpId = args.dp_id;
+            const value = args.value;
+            this.log(`[DP-ACTION] Sending Boolean DP${dpId}=${value} to ${device.getName()}`);
+
+            if (typeof device.sendTuyaDP === 'function') {
+              await device.sendTuyaDP(dpId, 'bool', value);
+            } else if (device.zclNode?.endpoints?.[1]?.clusters?.tuya) {
+              const { Cluster } = require('zigbee-clusters');
+              const TuyaCluster = Cluster.getCluster('tuya');
+              await device.zclNode.endpoints[1].clusters.tuya.datapoint({
+                status: 0,
+                transid: Math.floor(Math.random() * 255),
+                dp: dpId,
+                datatype: 1, // Boolean
+                length: 1,
+                data: [value ? 1 : 0]
+              });
+            }
+            return true;
+          } catch (err) {
+            this.error(`[DP-ACTION] Error sending boolean:`, err.message);
+            return false;
+          }
+        });
+
+      // ACTION: Send DP Number
+      this.homey.flow.getActionCard('send_dp_number')
+        .registerRunListener(async (args) => {
+          try {
+            const device = args.device;
+            const dpId = args.dp_id;
+            const value = Math.round(args.value);
+            this.log(`[DP-ACTION] Sending Number DP${dpId}=${value} to ${device.getName()}`);
+
+            if (typeof device.sendTuyaDP === 'function') {
+              await device.sendTuyaDP(dpId, 'value', value);
+            } else if (device.zclNode?.endpoints?.[1]?.clusters?.tuya) {
+              const data = Buffer.alloc(4);
+              data.writeUInt32BE(value, 0);
+              await device.zclNode.endpoints[1].clusters.tuya.datapoint({
+                status: 0,
+                transid: Math.floor(Math.random() * 255),
+                dp: dpId,
+                datatype: 2, // Value (uint32)
+                length: 4,
+                data: [...data]
+              });
+            }
+            return true;
+          } catch (err) {
+            this.error(`[DP-ACTION] Error sending number:`, err.message);
+            return false;
+          }
+        });
+
+      // ACTION: Send DP String/Enum
+      this.homey.flow.getActionCard('send_dp_string')
+        .registerRunListener(async (args) => {
+          try {
+            const device = args.device;
+            const dpId = args.dp_id;
+            const value = args.value;
+            this.log(`[DP-ACTION] Sending String DP${dpId}="${value}" to ${device.getName()}`);
+
+            // Try to parse as enum (number) first
+            const enumValue = parseInt(value, 10);
+            if (!isNaN(enumValue) && enumValue >= 0 && enumValue <= 255) {
+              // It's an enum value
+              if (typeof device.sendTuyaDP === 'function') {
+                await device.sendTuyaDP(dpId, 'enum', enumValue);
+              } else if (device.zclNode?.endpoints?.[1]?.clusters?.tuya) {
+                await device.zclNode.endpoints[1].clusters.tuya.datapoint({
+                  status: 0,
+                  transid: Math.floor(Math.random() * 255),
+                  dp: dpId,
+                  datatype: 4, // Enum
+                  length: 1,
+                  data: [enumValue]
+                });
+              }
+            } else {
+              // It's a string
+              if (typeof device.sendTuyaDP === 'function') {
+                await device.sendTuyaDP(dpId, 'string', value);
+              } else if (device.zclNode?.endpoints?.[1]?.clusters?.tuya) {
+                const strBuffer = Buffer.from(value, 'utf8');
+                await device.zclNode.endpoints[1].clusters.tuya.datapoint({
+                  status: 0,
+                  transid: Math.floor(Math.random() * 255),
+                  dp: dpId,
+                  datatype: 3, // String
+                  length: strBuffer.length,
+                  data: [...strBuffer]
+                });
+              }
+            }
+            return true;
+          } catch (err) {
+            this.error(`[DP-ACTION] Error sending string:`, err.message);
+            return false;
+          }
+        });
+
+      // ACTION: Send DP Raw (hex bytes)
+      this.homey.flow.getActionCard('send_dp_raw')
+        .registerRunListener(async (args) => {
+          try {
+            const device = args.device;
+            const dpId = args.dp_id;
+            const hexValue = args.value.replace(/\s/g, '');
+            const data = Buffer.from(hexValue, 'hex');
+            this.log(`[DP-ACTION] Sending Raw DP${dpId}=[${hexValue}] to ${device.getName()}`);
+
+            if (typeof device.sendTuyaDP === 'function') {
+              await device.sendTuyaDP(dpId, 'raw', data);
+            } else if (device.zclNode?.endpoints?.[1]?.clusters?.tuya) {
+              await device.zclNode.endpoints[1].clusters.tuya.datapoint({
+                status: 0,
+                transid: Math.floor(Math.random() * 255),
+                dp: dpId,
+                datatype: 0, // Raw
+                length: data.length,
+                data: [...data]
+              });
+            }
+            return true;
+          } catch (err) {
+            this.error(`[DP-ACTION] Error sending raw:`, err.message);
+            return false;
+          }
+        });
+
+      this.log('✅ Generic Tuya DP Flow Cards registered (8 cards)');
+
     } catch (err) {
       this.error('⚠️  Error registering OTA flow cards:', err.message);
     }
