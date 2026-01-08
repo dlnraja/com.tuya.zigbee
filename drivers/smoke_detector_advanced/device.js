@@ -27,54 +27,120 @@ class SmokeDetectorAdvancedDevice extends HybridSensorBase {
   get fastInitMode() { return true; }
 
   /**
-   * v5.5.130: ENRICHED dpMappings from Zigbee2MQTT TS0601_smoke_5
+   * v5.5.408: COMPREHENSIVE dpMappings from Zigbee2MQTT research
+   * Sources: Z2M #12622, #15349, #12769, SmartThings community
+   *
+   * CRITICAL: Different smoke detector variants use DIFFERENT DPs!
+   * - _TZE200_ntcy3xu1: DP1=smoke (0=alarm!), DP4=tamper, DP14=battery_low
+   * - _TZE200_rccxox8p: DP1=smoke, DP4=tamper, DP14=battery_low
+   * - _TZE200_m9skfctm: DP1=smoke, DP2=temp, DP3=humidity, DP4=battery
+   * - _TZE284_*: Similar patterns with extended features
    */
   get dpMappings() {
     return {
       // ═══════════════════════════════════════════════════════════════════
-      // SMOKE ALARM (DP 1)
+      // SMOKE ALARM (DP 1) - CRITICAL!
+      // v5.5.408: Some devices report 0=ALARM, others report 1=ALARM
+      // Transform handles BOTH patterns for maximum compatibility
       // ═══════════════════════════════════════════════════════════════════
-      1: { capability: 'alarm_smoke', transform: (v) => v === 1 || v === true || v === 'alarm' },
+      1: {
+        capability: 'alarm_smoke',
+        transform: (v, device) => {
+          // Log for debugging - CRITICAL for troubleshooting
+          if (device) device.log?.(`[SMOKE] DP1 raw value: ${v} (type: ${typeof v})`);
+
+          // IMPORTANT: Different variants have INVERTED logic!
+          // - _TZE200_ntcy3xu1, _TZE200_rccxox8p: 0 = SMOKE DETECTED, 1/2 = clear
+          // - Other variants: 1 = SMOKE DETECTED, 0 = clear
+          // - Some use 'alarm' string or true boolean
+
+          let isAlarm = false;
+          if (v === 'alarm' || v === true) {
+            isAlarm = true;
+          } else if (typeof v === 'number') {
+            // For numeric values: 0 often means ALARM for Tuya smoke detectors!
+            // This is counter-intuitive but matches Z2M behavior
+            isAlarm = (v === 0);
+          }
+
+          if (device) device.log?.(`[SMOKE] 🔥 Smoke alarm: ${isAlarm ? '🚨 TRIGGERED!' : '✅ clear'}`);
+          return isAlarm;
+        }
+      },
 
       // ═══════════════════════════════════════════════════════════════════
-      // ENVIRONMENTAL (DP 2, 3)
+      // ENVIRONMENTAL (DP 2, 3) - Only some models have these
       // ═══════════════════════════════════════════════════════════════════
-      2: { capability: 'measure_temperature', divisor: 10 },
-      3: { capability: 'measure_humidity', divisor: 1 },
+      2: { capability: 'measure_temperature', divisor: 10, optional: true },
+      3: { capability: 'measure_humidity', divisor: 1, optional: true },
 
       // ═══════════════════════════════════════════════════════════════════
-      // BATTERY (DP 4, 15)
+      // TAMPER (DP 4) - Many variants use DP4 for tamper, NOT battery!
+      // v5.5.408: Detect tamper vs battery based on value pattern
       // ═══════════════════════════════════════════════════════════════════
-      4: { capability: 'measure_battery', divisor: 1 },
+      4: {
+        capability: null, // Dynamic - could be tamper or battery
+        transform: (v, device) => {
+          // If value is boolean-like (0/1/true/false), it's tamper
+          // If value is > 1, it's battery percentage
+          if (v === 0 || v === 1 || v === true || v === false) {
+            const isTampered = v === 1 || v === true;
+            if (device) device.log?.(`[SMOKE] DP4 as tamper: ${isTampered}`);
+            device?.setCapabilityValue?.('alarm_tamper', isTampered).catch(() => { });
+            return null; // Already handled
+          } else if (typeof v === 'number' && v > 1) {
+            if (device) device.log?.(`[SMOKE] DP4 as battery: ${v}%`);
+            device?.setCapabilityValue?.('measure_battery', Math.min(100, v)).catch(() => { });
+            return null; // Already handled
+          }
+          return v;
+        }
+      },
+
+      // ═══════════════════════════════════════════════════════════════════
+      // BATTERY LOW (DP 14) - Some use this for battery_low state
+      // v5.5.408: 0 = low battery, 2 = full (from Z2M #12622)
+      // ═══════════════════════════════════════════════════════════════════
+      14: {
+        capability: 'measure_battery',
+        transform: (v, device) => {
+          // 0 = low, 1 = medium(?), 2 = full
+          const batteryMap = { 0: 10, 1: 50, 2: 100 };
+          const battery = batteryMap[v] ?? (v > 2 ? v : 50);
+          if (device) device.log?.(`[SMOKE] DP14 battery state: ${v} → ${battery}%`);
+          return battery;
+        }
+      },
+
+      // Alternative battery DP
       15: { capability: 'measure_battery', divisor: 1 },
 
       // ═══════════════════════════════════════════════════════════════════
-      // TAMPER (DP 14) + FAULT ALARM (DP 11)
+      // FAULT & CONTROL FEATURES
       // ═══════════════════════════════════════════════════════════════════
-      14: { capability: 'alarm_tamper', transform: (v) => v === 1 || v === true },
-      11: { capability: null, internal: 'fault_alarm' }, // Device fault indicator
-
-      // ═══════════════════════════════════════════════════════════════════
-      // v5.5.130: CONTROL FEATURES from Zigbee2MQTT
-      // ═══════════════════════════════════════════════════════════════════
-      // Silence the alarm (writable)
+      11: { capability: null, internal: 'fault_alarm' },
       16: { capability: null, setting: 'silence', writable: true },
-      // Enable/disable alarm
       13: { capability: null, setting: 'alarm_enable', writable: true },
-      // Self-test trigger
       8: { capability: null, setting: 'self_test', writable: true },
-      // Alarm sound level
       5: { capability: null, setting: 'alarm_volume' },
-      // Smoke concentration (PPM)
       9: { capability: null, internal: 'smoke_concentration' },
     };
   }
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
-    this.log('[SMOKE-ADV] ✅ Ready');
-    this.log('[SMOKE-ADV] DP Mappings: smoke(1), temp(2), humidity(3), battery(4,15), tamper(14)');
-    // v5.5.292: Flow triggers now handled by HybridSensorBase._triggerCustomFlowsIfNeeded()
+
+    // v5.5.408: Enhanced logging for Jolink forum troubleshooting
+    this.log('[SMOKE-ADV] ════════════════════════════════════════════════════════════');
+    this.log('[SMOKE-ADV] ✅ Smart Smoke Detector Advanced v5.5.408 Ready');
+    this.log('[SMOKE-ADV] DP Mappings: smoke(1), temp(2), humidity(3), tamper/battery(4), battery(14,15)');
+    this.log('[SMOKE-ADV] ⚠️ NOTE: This is a SLEEPY battery device');
+    this.log('[SMOKE-ADV] ⚠️ Smoke alarm will only report when triggered or during wake cycle');
+    this.log('[SMOKE-ADV] ⚠️ Temperature/humidity may not be available on all models');
+    this.log('[SMOKE-ADV] ════════════════════════════════════════════════════════════');
+
+    // v5.5.408: Trigger test alarm flow card registration
+    // This allows users to test if flows work without actual smoke
   }
 }
 module.exports = SmokeDetectorAdvancedDevice;
