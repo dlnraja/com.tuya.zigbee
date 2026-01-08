@@ -5,7 +5,12 @@
     "onoff.gang2",
     "onoff.gang3",
     "onoff.gang4",
-    "measure_power"
+    "measure_power",
+    "button.toggle_1",
+    "button.toggle_2",
+    "button.toggle_3",
+    "button.toggle_4",
+    "button.identify"
   ],
   "zigbee": {
     "productId": [

@@ -1,9 +1,10 @@
 'use strict';
 const { HybridSwitchBase } = require('../../lib/devices/HybridSwitchBase');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
- * 2-Gang Smart Switch - v5.5.26 ENHANCED
+ * 2-Gang Smart Switch - v5.5.412 + Virtual Buttons
  *
  * Sources: Z2M dual USB switch / TS0002
  * https://github.com/Koenkk/zigbee2mqtt/issues/...
@@ -16,7 +17,7 @@ const { CLUSTER } = require('zigbee-clusters');
  *
  * Models: _TZ3000_h1ipgkwn, _TZ3000_jl7w3l3q, etc.
  */
-class Switch2GangDevice extends HybridSwitchBase {
+class Switch2GangDevice extends VirtualButtonMixin(HybridSwitchBase) {
   get gangCount() { return 2; }
 
   async onNodeInit({ zclNode }) {
@@ -28,8 +29,10 @@ class Switch2GangDevice extends HybridSwitchBase {
     // v5.5.26: Setup power measurement for ZCL devices (router/mains)
     await this._setupPowerMeasurement(zclNode);
 
-    this.log('[SWITCH-2G] ✅ Ready with power measurement');
-    this.log('[SWITCH-2G] ⚠️  Note: USB ports are typically hardwired (not controllable via gang switches)');
+    // v5.5.412: Initialize virtual buttons for remote control
+    await this.initVirtualButtons();
+
+    this.log('[SWITCH-2G] ✅ Ready with power measurement + virtual buttons');
   }
 
   /**

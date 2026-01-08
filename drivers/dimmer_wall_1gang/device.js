@@ -1,17 +1,17 @@
 'use strict';
 const { HybridLightBase } = require('../../lib/devices/HybridLightBase');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      1-GANG DIMMER - v5.5.129 FIXED (extends HybridLightBase properly)      ║
+ * ║      1-GANG DIMMER - v5.5.412 + Virtual Buttons                             ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  HybridLightBase handles: onoff, dim listeners and ZCL setup                ║
- * ║  This class ONLY: dpMappings                                                ║
+ * ║  v5.5.412: Added virtual toggle/dim up/dim down buttons                     ║
  * ║  DPs: 1-5,7,9,14,101,102 | ZCL: 6,8,EF00                                   ║
- * ║  Models: TS0601, TS110F, _TZE200_*, _TZ3210_*                               ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class DimmerWall1GangDevice extends HybridLightBase {
+class DimmerWall1GangDevice extends VirtualButtonMixin(HybridLightBase) {
 
   get lightCapabilities() { return ['onoff', 'dim']; }
 
@@ -33,8 +33,9 @@ class DimmerWall1GangDevice extends HybridLightBase {
   async onNodeInit({ zclNode }) {
     // Parent handles ALL: onoff/dim listeners, ZCL setup
     await super.onNodeInit({ zclNode });
-    this.log('[DIMMER-1G] v5.5.129 - DPs: 1-5,7,9,14,101,102 | ZCL: 6,8,EF00');
-    this.log('[DIMMER-1G] ✅ Ready');
+    // v5.5.412: Initialize virtual buttons
+    await this.initVirtualButtons();
+    this.log('[DIMMER-1G] v5.5.412 ✅ Ready + virtual buttons');
   }
 }
 
