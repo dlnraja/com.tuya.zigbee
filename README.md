@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.393** | 🔄 ID DATABASE: Fixed timing issue where database showed 0 drivers during sta... |
 | **v5.5.392** | 🔥 CRITICAL FIX - Pairing Error: Fixed broken import path for UniversalDataHa... |
 | **v5.5.391** | ⏰ ENHANCED TIME SYNC: Request detection (cluster 0x000A, 0xEF00 cmd 0x24). De... |
 | **v5.5.390** | 🔄 AUTO-DISCOVERY SYSTEM: Dynamic capability detection from device reports. A... |
@@ -78,7 +79,6 @@
 | **v5.5.386** | 🔧 CLUSTER BINDING ENHANCEMENT: UniversalClusterBinder utility for unified Tu... |
 | **v5.5.385** | ⚙️ User Settings: Time format & timezone selection in device settings. Climat... |
 | **v5.5.384** | 🕒 ULTIMATE Time Sync: 15 formats (BE/LE variants), milliseconds support, tim... |
-| **v5.5.383** | 🕒 COMPLETE Time Sync: 12 formats covering ALL epochs (1970/2000), UTC/Local ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
