@@ -12,9 +12,36 @@
   },
   "class": "button",
   "capabilities": [
+    "button.1",
+    "button.2",
+    "button.3",
     "measure_battery"
   ],
   "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1",
+        "nl": "Knop 1",
+        "de": "Taste 1"
+      }
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2",
+        "nl": "Knop 2",
+        "de": "Taste 2"
+      }
+    },
+    "button.3": {
+      "title": {
+        "en": "Button 3",
+        "fr": "Bouton 3",
+        "nl": "Knop 3",
+        "de": "Taste 3"
+      }
+    },
     "measure_battery": {
       "title": {
         "en": "Battery",
