@@ -1,18 +1,19 @@
 'use strict';
 
 const { HybridPlugBase } = require('../../lib/devices/HybridPlugBase');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SMART PLUG - v5.5.129 FIXED (extends HybridPlugBase properly)          ║
+ * ║      SMART PLUG - v5.5.412 + Virtual Buttons                                ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  HybridPlugBase handles: onoff listener, Tuya DP, ZCL On/Off                ║
  * ║  This class ONLY: dpMappings + ZCL energy monitoring listeners              ║
  * ║  DPs: 1,7,9,17-21,101,102 | ZCL: 6,2820,1794,EF00                          ║
- * ║  Manufacturer IDs: _TZ3000_*, _TYZB01_*, TS011F, TS0121                     ║
+ * ║  v5.5.412: Added virtual toggle/identify buttons for remote control        ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class SmartPlugDevice extends HybridPlugBase {
+class SmartPlugDevice extends VirtualButtonMixin(HybridPlugBase) {
 
   get plugCapabilities() {
     return ['onoff', 'measure_power', 'meter_power', 'measure_voltage', 'measure_current'];
@@ -36,10 +37,13 @@ class SmartPlugDevice extends HybridPlugBase {
   async onNodeInit({ zclNode }) {
     // Parent handles onoff listener - DO NOT re-register
     await super.onNodeInit({ zclNode });
-    this.log('[PLUG] v5.5.129 - DPs: 1,7,9,17-21,101,102 | ZCL: 6,2820,1794,EF00');
+    this.log('[PLUG] v5.5.412 - DPs: 1,7,9,17-21,101,102 | ZCL: 6,2820,1794,EF00');
 
     // Setup ZCL energy monitoring (parent doesn't do this)
     await this._setupEnergyMonitoring(zclNode);
+
+    // v5.5.412: Initialize virtual buttons for remote control
+    await this.initVirtualButtons();
 
     this.log('[PLUG] ✅ Ready');
   }

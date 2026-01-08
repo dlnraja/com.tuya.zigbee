@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.411",
+  "version": "5.5.412",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -48209,6 +48209,111 @@
       "getable": true,
       "setable": false,
       "uiComponent": "sensor"
+    },
+    "button.toggle": {
+      "type": "boolean",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Schakelen",
+        "de": "Umschalten"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "uiQuickAction": true,
+      "icon": "/assets/capabilities/toggle.svg"
+    },
+    "button.toggle_1": {
+      "type": "boolean",
+      "title": {
+        "en": "Toggle 1",
+        "fr": "Basculer 1",
+        "nl": "Schakelen 1",
+        "de": "Umschalten 1"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "uiQuickAction": true
+    },
+    "button.toggle_2": {
+      "type": "boolean",
+      "title": {
+        "en": "Toggle 2",
+        "fr": "Basculer 2",
+        "nl": "Schakelen 2",
+        "de": "Umschalten 2"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "uiQuickAction": true
+    },
+    "button.toggle_3": {
+      "type": "boolean",
+      "title": {
+        "en": "Toggle 3",
+        "fr": "Basculer 3",
+        "nl": "Schakelen 3",
+        "de": "Umschalten 3"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "uiQuickAction": true
+    },
+    "button.toggle_4": {
+      "type": "boolean",
+      "title": {
+        "en": "Toggle 4",
+        "fr": "Basculer 4",
+        "nl": "Schakelen 4",
+        "de": "Umschalten 4"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "uiQuickAction": true
+    },
+    "button.dim_up": {
+      "type": "boolean",
+      "title": {
+        "en": "Dim Up",
+        "fr": "Augmenter",
+        "nl": "Dimmen Omhoog",
+        "de": "Heller"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "uiQuickAction": true
+    },
+    "button.dim_down": {
+      "type": "boolean",
+      "title": {
+        "en": "Dim Down",
+        "fr": "Diminuer",
+        "nl": "Dimmen Omlaag",
+        "de": "Dunkler"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "uiQuickAction": true
+    },
+    "button.identify": {
+      "type": "boolean",
+      "title": {
+        "en": "Identify",
+        "fr": "Identifier",
+        "nl": "Identificeren",
+        "de": "Identifizieren"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "uiQuickAction": false
     }
   }
 }
