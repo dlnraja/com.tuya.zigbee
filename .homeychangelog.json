@@ -1,4 +1,10 @@
 {
+  "5.5.399": {
+    "en": "🆕 FORUM DEVICES: Added _TZE200_ya4ft0w4 ceiling radar sensor, _TZ3000_kqvb5akv switch, MHCOZY 4-channel relay support. Enhanced EnrichedDPMappings with new radar profiles.",
+    "fr": "🆕 FORUM: Ajouté capteur radar plafond _TZE200_ya4ft0w4, interrupteur _TZ3000_kqvb5akv, relais MHCOZY 4 canaux.",
+    "nl": "🆕 FORUM: Toegevoegd _TZE200_ya4ft0w4 plafond radar, _TZ3000_kqvb5akv schakelaar, MHCOZY 4-kanaal relais.",
+    "de": "🆕 FORUM: Hinzugefügt _TZE200_ya4ft0w4 Deckenradar, _TZ3000_kqvb5akv Schalter, MHCOZY 4-Kanal Relais."
+  },
   "5.5.398": {
     "en": "🔗 CLUSTER BINDER: Integrated UniversalClusterBinder with modular data system. Uses TuyaProtocolParser for DP parsing/building. Added more model ID mappings (TS004F, TS0046, TS0215). Improved Tuya frame detection.",
     "fr": "🔗 CLUSTER BINDER: Intégration avec système data modulaire. Parsing DP via TuyaProtocolParser. Nouveaux modèles ajoutés.",
