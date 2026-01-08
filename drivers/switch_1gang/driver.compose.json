@@ -6,7 +6,9 @@
     "measure_power",
     "meter_power",
     "measure_voltage",
-    "measure_current"
+    "measure_current",
+    "button.toggle",
+    "button.identify"
   ],
   "zigbee": {
     "productId": [

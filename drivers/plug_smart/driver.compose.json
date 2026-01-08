@@ -10,7 +10,9 @@
     "meter_power",
     "measure_current",
     "measure_voltage",
-    "measure_battery"
+    "measure_battery",
+    "button.toggle",
+    "button.identify"
   ],
   "energy": {
     "approximation": {

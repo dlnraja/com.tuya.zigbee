@@ -1,23 +1,20 @@
 'use strict';
 const { HybridSwitchBase } = require('../../lib/devices/HybridSwitchBase');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      1-GANG SWITCH - v5.5.129 FIXED (extends HybridSwitchBase)              ║
+ * ║      1-GANG SWITCH - v5.5.412 + Virtual Buttons                             ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  Uses HybridSwitchBase which provides:                                       ║
  * ║  - dpMappings for DP 1-8 (gang switches) + DP 14-15 (settings)              ║
  * ║  - _setupTuyaDPMode() + _setupZCLMode()                                      ║
  * ║  - _registerCapabilityListeners() for all gangs                              ║
  * ║  - ProtocolAutoOptimizer for automatic detection                             ║
- * ║                                                                              ║
- * ║  Additional DPs for energy monitoring (some models):                         ║
- * ║  - DP 17: Current (mA), DP 18: Power (W), DP 19: Voltage (V)                ║
- * ║  - DP 20: Energy (kWh)                                                       ║
- * ║  Models: TS0001, TS0011, _TZ3000_*, _TYZB01_*                               ║
+ * ║  v5.5.412: Added virtual toggle/identify buttons for remote control        ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class Switch1GangDevice extends HybridSwitchBase {
+class Switch1GangDevice extends VirtualButtonMixin(HybridSwitchBase) {
 
   get gangCount() { return 1; }
 
@@ -41,7 +38,9 @@ class Switch1GangDevice extends HybridSwitchBase {
   async onNodeInit({ zclNode }) {
     // Let parent handle everything
     await super.onNodeInit({ zclNode });
-    this.log('[SWITCH-1G] v5.5.129 - 1-gang switch ready');
+    // v5.5.412: Initialize virtual buttons
+    await this.initVirtualButtons();
+    this.log('[SWITCH-1G] v5.5.412 - 1-gang switch ready');
   }
 }
 

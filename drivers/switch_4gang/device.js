@@ -1,7 +1,8 @@
 'use strict';
 const { HybridSwitchBase } = require('../../lib/devices/HybridSwitchBase');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
-class Switch4GangDevice extends HybridSwitchBase {
+class Switch4GangDevice extends VirtualButtonMixin(HybridSwitchBase) {
   get gangCount() { return 4; }
 
   async onNodeInit({ zclNode }) {
@@ -13,7 +14,10 @@ class Switch4GangDevice extends HybridSwitchBase {
     this.registerCapabilityListener('onoff.gang3', (value) => this._onCapabilityChanged('onoff.gang3', value, 3));
     this.registerCapabilityListener('onoff.gang4', (value) => this._onCapabilityChanged('onoff.gang4', value, 4));
 
-    this.log('[SWITCH-4G] ✅ Ready with flow card triggers');
+    // v5.5.412: Initialize virtual buttons for remote control
+    await this.initVirtualButtons();
+
+    this.log('[SWITCH-4G] v5.5.412 ✅ Ready + virtual buttons');
   }
 
   /**
