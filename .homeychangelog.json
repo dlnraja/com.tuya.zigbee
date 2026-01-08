@@ -1,4 +1,10 @@
 {
+  "5.5.397": {
+    "en": "📦 MODULAR DATA SYSTEM: Complete refactor of data handling into separate modules. New files: DataConverter, TuyaProtocolParser, ZCLProtocolParser, TypedDataReader, SemanticConverter, DPMappingEngine. Unified facade via UniversalDataHandler. Device type presets for quick mapping setup.",
+    "fr": "📦 SYSTÈME DATA MODULAIRE: Refactorisation complète du traitement des données en modules séparés. DataConverter, TuyaProtocolParser, ZCLProtocolParser, TypedDataReader, SemanticConverter, DPMappingEngine.",
+    "nl": "📦 MODULAIR DATA SYSTEEM: Complete refactoring van data verwerking naar aparte modules. DataConverter, TuyaProtocolParser, ZCLProtocolParser, TypedDataReader, SemanticConverter, DPMappingEngine.",
+    "de": "📦 MODULARES DATA SYSTEM: Vollständige Umstrukturierung der Datenverarbeitung in separate Module. DataConverter, TuyaProtocolParser, ZCLProtocolParser, TypedDataReader, SemanticConverter, DPMappingEngine."
+  },
   "5.5.396": {
     "en": "🔘 FIX: Wireless buttons showing On/Off toggle instead of Push. Buttons now correctly trigger flow events without adding onoff capability. Forum report Cyril #867.",
     "fr": "🔘 CORRECTION: Boutons sans fil affichant On/Off au lieu de Push. Les boutons déclenchent maintenant correctement les flows sans ajouter la capability onoff. Rapport forum Cyril #867.",
