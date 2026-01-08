@@ -405,6 +405,120 @@
         "en": "Enable if presence shows active when room is empty and inactive when occupied (firmware bug workaround)",
         "fr": "Activer si la présence indique actif quand la pièce est vide et inactif quand occupée (contournement bug firmware)"
       }
+    },
+    {
+      "id": "motion_detection_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Motion Detection Mode",
+        "fr": "Mode de Détection",
+        "nl": "Bewegingsdetectie Modus",
+        "de": "Bewegungserkennungsmodus"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "PIR Only",
+            "fr": "PIR Uniquement",
+            "nl": "Alleen PIR",
+            "de": "Nur PIR"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "PIR + Radar (Recommended)",
+            "fr": "PIR + Radar (Recommandé)",
+            "nl": "PIR + Radar (Aanbevolen)",
+            "de": "PIR + Radar (Empfohlen)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Radar Only",
+            "fr": "Radar Uniquement",
+            "nl": "Alleen Radar",
+            "de": "Nur Radar"
+          }
+        }
+      ],
+      "hint": {
+        "en": "ZG-204ZM: Select detection method (PIR for motion, Radar for presence)",
+        "fr": "ZG-204ZM: Sélectionner la méthode de détection (PIR pour mouvement, Radar pour présence)"
+      }
+    },
+    {
+      "id": "motion_detection_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Motion Sensitivity",
+        "fr": "Sensibilité Mouvement",
+        "nl": "Bewegingsgevoeligheid",
+        "de": "Bewegungsempfindlichkeit"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "ZG-204ZM: PIR/Radar motion sensitivity (0=lowest, 10=highest)",
+        "fr": "ZG-204ZM: Sensibilité PIR/Radar (0=minimum, 10=maximum)"
+      }
+    },
+    {
+      "id": "static_detection_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Static Detection Sensitivity",
+        "fr": "Sensibilité Détection Statique",
+        "nl": "Statische Detectie Gevoeligheid",
+        "de": "Statische Erkennungsempfindlichkeit"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "ZG-204ZM: Sensitivity for detecting stationary persons (0=lowest, 10=highest)",
+        "fr": "ZG-204ZM: Sensibilité pour détecter les personnes immobiles (0=minimum, 10=maximum)"
+      }
+    },
+    {
+      "id": "fading_time",
+      "type": "number",
+      "label": {
+        "en": "Presence Keep Time",
+        "fr": "Temps de Maintien Présence",
+        "nl": "Aanwezigheid Vasthoudtijd",
+        "de": "Anwesenheit Haltezeit"
+      },
+      "value": 90,
+      "min": 0,
+      "max": 28800,
+      "step": 10,
+      "units": "s",
+      "hint": {
+        "en": "ZG-204ZM: How long presence stays active after last detection (seconds)",
+        "fr": "ZG-204ZM: Durée de maintien de la présence après dernière détection (secondes)"
+      }
+    },
+    {
+      "id": "indicator",
+      "type": "checkbox",
+      "label": {
+        "en": "LED Indicator",
+        "fr": "Indicateur LED",
+        "nl": "LED Indicator",
+        "de": "LED-Anzeige"
+      },
+      "value": true,
+      "hint": {
+        "en": "ZG-204ZM: Enable/disable the LED indicator on the sensor",
+        "fr": "ZG-204ZM: Activer/désactiver l'indicateur LED sur le capteur"
+      }
     }
   ],
   "images": {
