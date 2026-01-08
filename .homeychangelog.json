@@ -1,4 +1,10 @@
 {
+  "5.5.395": {
+    "en": "🎯 ENHANCED: HOBEIAN ZG-204ZM PIR+24GHz Radar - Complete Z2M support! Moved to presence_sensor_radar driver. Added settings: Motion Detection Mode (PIR/Radar/Both), Motion Sensitivity, Static Sensitivity, Fading Time, LED Indicator. Full DP mapping from Zigbee2MQTT. Forum request 4x4_Pete.",
+    "fr": "🎯 AMÉLIORÉ: HOBEIAN ZG-204ZM PIR+Radar 24GHz - Support Z2M complet! Déplacé vers presence_sensor_radar. Nouveaux paramètres: Mode détection, Sensibilités, Temps maintien, LED.",
+    "nl": "🎯 VERBETERD: HOBEIAN ZG-204ZM PIR+24GHz Radar - Complete Z2M ondersteuning! Nieuwe instellingen: Detectiemodus, Gevoeligheden, Vasthoudtijd, LED.",
+    "de": "🎯 VERBESSERT: HOBEIAN ZG-204ZM PIR+24GHz Radar - Vollständige Z2M Unterstützung! Neue Einstellungen: Erkennungsmodus, Empfindlichkeiten, Haltezeit, LED."
+  },
   "5.5.394": {
     "en": "🆕 NEW DEVICE: HOBEIAN ZG-204ZM Motion Sensor with Illuminance. Features: PIR motion (IAS Zone), lux measurement, battery. Forum request from 4x4_Pete.",
     "fr": "🆕 NOUVEL APPAREIL: HOBEIAN ZG-204ZM Capteur de mouvement avec luminosité. PIR + lux + batterie. Demande forum 4x4_Pete.",
