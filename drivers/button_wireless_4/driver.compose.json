@@ -19,17 +19,44 @@
     "measure_battery"
   ],
   "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1",
+        "nl": "Knop 1",
+        "de": "Taste 1"
+      }
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2",
+        "nl": "Knop 2",
+        "de": "Taste 2"
+      }
+    },
+    "button.3": {
+      "title": {
+        "en": "Button 3",
+        "fr": "Bouton 3",
+        "nl": "Knop 3",
+        "de": "Taste 3"
+      }
+    },
+    "button.4": {
+      "title": {
+        "en": "Button 4",
+        "fr": "Bouton 4",
+        "nl": "Knop 4",
+        "de": "Taste 4"
+      }
+    },
     "measure_battery": {
       "title": {
         "en": "Battery",
-        "fr": "Contrôleur",
-        "nl": "Draadloze",
-        "de": "Drahtlos-Controller",
-        "it": "Controller",
-        "sv": "Trådlös",
-        "no": "Trådløs",
-        "es": "Controlador",
-        "da": "Trådløs"
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
       }
     }
   },
