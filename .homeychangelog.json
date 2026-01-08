@@ -1,4 +1,10 @@
 {
+  "5.5.396": {
+    "en": "🔘 FIX: Wireless buttons showing On/Off toggle instead of Push. Buttons now correctly trigger flow events without adding onoff capability. Forum report Cyril #867.",
+    "fr": "🔘 CORRECTION: Boutons sans fil affichant On/Off au lieu de Push. Les boutons déclenchent maintenant correctement les flows sans ajouter la capability onoff. Rapport forum Cyril #867.",
+    "nl": "🔘 FIX: Draadloze knoppen toonden Aan/Uit schakelaar i.p.v. Drukknop. Knoppen triggeren nu correct flow events. Forum rapport Cyril #867.",
+    "de": "🔘 FIX: Drahtlose Tasten zeigten Ein/Aus-Schalter statt Drücken. Tasten lösen jetzt korrekt Flow-Events aus. Forum-Bericht Cyril #867."
+  },
   "5.5.395": {
     "en": "🎯 ENHANCED: HOBEIAN ZG-204ZM PIR+24GHz Radar - Complete Z2M support! Moved to presence_sensor_radar driver. Added settings: Motion Detection Mode (PIR/Radar/Both), Motion Sensitivity, Static Sensitivity, Fading Time, LED Indicator. Full DP mapping from Zigbee2MQTT. Forum request 4x4_Pete.",
     "fr": "🎯 AMÉLIORÉ: HOBEIAN ZG-204ZM PIR+Radar 24GHz - Support Z2M complet! Déplacé vers presence_sensor_radar. Nouveaux paramètres: Mode détection, Sensibilités, Temps maintien, LED.",
