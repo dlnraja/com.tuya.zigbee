@@ -1,4 +1,10 @@
 {
+  "5.5.398": {
+    "en": "🔗 CLUSTER BINDER: Integrated UniversalClusterBinder with modular data system. Uses TuyaProtocolParser for DP parsing/building. Added more model ID mappings (TS004F, TS0046, TS0215). Improved Tuya frame detection.",
+    "fr": "🔗 CLUSTER BINDER: Intégration avec système data modulaire. Parsing DP via TuyaProtocolParser. Nouveaux modèles ajoutés.",
+    "nl": "🔗 CLUSTER BINDER: Geïntegreerd met modulair data systeem. DP parsing via TuyaProtocolParser. Meer model IDs toegevoegd.",
+    "de": "🔗 CLUSTER BINDER: Integration mit modularem Datensystem. DP-Parsing über TuyaProtocolParser. Weitere Model-IDs hinzugefügt."
+  },
   "5.5.397": {
     "en": "📦 MODULAR DATA SYSTEM: Complete refactor of data handling into separate modules. New files: DataConverter, TuyaProtocolParser, ZCLProtocolParser, TypedDataReader, SemanticConverter, DPMappingEngine. Unified facade via UniversalDataHandler. Device type presets for quick mapping setup.",
     "fr": "📦 SYSTÈME DATA MODULAIRE: Refactorisation complète du traitement des données en modules séparés. DataConverter, TuyaProtocolParser, ZCLProtocolParser, TypedDataReader, SemanticConverter, DPMappingEngine.",
