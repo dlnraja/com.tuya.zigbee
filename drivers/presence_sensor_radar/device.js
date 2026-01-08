@@ -2,6 +2,9 @@
 
 const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
+// v5.5.404: Module-level state for lux oscillation detection across device instances
+const luxOscillationState = new Map();
+
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
  * ║      RADAR/mmWAVE PRESENCE SENSOR - v5.5.315 INTELLIGENT INFERENCE         ║
