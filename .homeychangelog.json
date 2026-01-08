@@ -1,4 +1,10 @@
 {
+  "5.5.391": {
+    "en": "⏰ ENHANCED TIME SYNC: Request detection (cluster 0x000A, 0xEF00 cmd 0x24). Device intelligence levels (DUMB/SMART). DST transitions calculator. Payload parser. Example payloads table. Device settings schema (time_sync_format, time_sync_timezone). More manufacturer mappings.",
+    "fr": "⏰ SYNC HEURE AMÉLIORÉ: Détection requêtes (0x000A, 0xEF00). Niveaux intelligence appareil (DUMB/SMART). Calcul transitions DST. Parser payloads. Settings device (format, fuseau horaire).",
+    "nl": "⏰ VERBETERDE TIJDSYNC: Request detectie. Device intelligence levels. DST transities. Payload parser. Device settings schema.",
+    "de": "⏰ VERBESSERTE ZEITSYNC: Request-Erkennung. Geräte-Intelligenz-Ebenen. DST-Übergänge. Payload-Parser. Geräteeinstellungen."
+  },
   "5.5.390": {
     "en": "🔄 AUTO-DISCOVERY SYSTEM: Dynamic capability detection from device reports. Auto-adds capabilities when new DPs discovered. Scheduled updates (15min → hourly). DP→Capability mapping (climate, energy, safety, cover). Time sync integration. Stats tracking. Flow card generation events.",
     "fr": "🔄 SYSTÈME AUTO-DÉCOUVERTE: Détection dynamique des capabilities. Ajout auto quand nouveaux DPs découverts. Mises à jour planifiées (15min → horaire). Mapping DP→Capability. Intégration time sync.",
