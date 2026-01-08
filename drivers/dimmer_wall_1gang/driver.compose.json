@@ -9,10 +9,10 @@
     "onoff",
     "measure_battery",
     "measure_power",
-    "button.toggle",
-    "button.dim_up",
-    "button.dim_down",
-    "button.identify"
+    "button_toggle",
+    "button_dim_up",
+    "button_dim_down",
+    "button_identify"
   ],
   "energy": {
     "approximation": {
