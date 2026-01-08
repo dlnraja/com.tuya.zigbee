@@ -1,4 +1,10 @@
 {
+  "5.5.392": {
+    "en": "🔥 CRITICAL FIX - Pairing Error: Fixed broken import path for UniversalDataHandler in HybridSensorBase.js. This was causing 'Something went wrong while adding device' error for ALL sensors including smoke detector _TZE284_rccxox8p (Jolink). RE-PAIR your devices after update!",
+    "fr": "🔥 FIX CRITIQUE - Erreur appairage: Corrigé chemin import UniversalDataHandler dans HybridSensorBase.js. Causait erreur 'Quelque chose s'est mal passé' pour TOUS les capteurs. RE-COUPLER après MAJ!",
+    "nl": "🔥 KRITIEKE FIX - Koppelfout: Verkeerd importpad UniversalDataHandler in HybridSensorBase.js gerepareerd. Veroorzaakte fout bij ALLE sensoren. OPNIEUW KOPPELEN na update!",
+    "de": "🔥 KRITISCHER FIX - Pairing-Fehler: Falscher Importpfad für UniversalDataHandler in HybridSensorBase.js behoben. Verursachte Fehler bei ALLEN Sensoren. NEU KOPPELN nach Update!"
+  },
   "5.5.391": {
     "en": "⏰ ENHANCED TIME SYNC: Request detection (cluster 0x000A, 0xEF00 cmd 0x24). Device intelligence levels (DUMB/SMART). DST transitions calculator. Payload parser. Example payloads table. Device settings schema (time_sync_format, time_sync_timezone). More manufacturer mappings.",
     "fr": "⏰ SYNC HEURE AMÉLIORÉ: Détection requêtes (0x000A, 0xEF00). Niveaux intelligence appareil (DUMB/SMART). Calcul transitions DST. Parser payloads. Settings device (format, fuseau horaire).",
