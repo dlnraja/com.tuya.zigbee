@@ -1,4 +1,10 @@
 {
+  "5.5.423": {
+    "en": "🆕 BRANDS: Added 11 manufacturerNames for popular brands (Moes, Nedis, Lonsonho, Mercator Ikuü, Lidl, BlitzWolf, Zemismart). Now supporting 2606+ device variants across 89 drivers.",
+    "fr": "🆕 MARQUES: Ajouté 11 manufacturerNames pour marques populaires (Moes, Nedis, Lonsonho, Mercator Ikuü, Lidl, BlitzWolf, Zemismart). Supporte maintenant 2606+ variantes sur 89 drivers.",
+    "nl": "🆕 MERKEN: 11 manufacturerNames toegevoegd voor populaire merken (Moes, Nedis, Lonsonho, Mercator Ikuü, Lidl, BlitzWolf, Zemismart). Nu 2606+ apparaatvarianten ondersteund.",
+    "de": "🆕 MARKEN: 11 manufacturerNames für beliebte Marken hinzugefügt (Moes, Nedis, Lonsonho, Mercator Ikuü, Lidl, BlitzWolf, Zemismart). Jetzt 2606+ Gerätevarianten unterstützt."
+  },
   "5.5.422": {
     "en": "🔧 IMPROVEMENTS (Tuya Smart Life forum inspiration): Added power/energy measurement scale settings to Smart Plugs and Power Meters. Fix incorrect readings by adjusting scale (÷1000 to ×100). Added bidirectional meter option for solar installations.",
     "fr": "🔧 AMÉLIORATIONS (Inspiration forum Tuya Smart Life): Ajout paramètres d'échelle de mesure puissance/énergie aux prises et compteurs. Corrigez les lectures incorrectes en ajustant l'échelle. Option compteur bidirectionnel pour installations solaires.",
