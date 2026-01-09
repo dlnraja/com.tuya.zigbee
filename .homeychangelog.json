@@ -1,4 +1,10 @@
 {
+  "5.5.419": {
+    "en": "🔧 FORUM FIXES: (1) Added eWeLink CK-TLSR8656-SS5-01(7014) temp/humidity sensor support. (2) Fixed TS004F scene switch buttons (_TZ3000_wkai4ga5, _TZ3000_5tqxpine) - added to scene mode switching list. Forum report: Eftychis.",
+    "fr": "🔧 FORUM: (1) Ajout capteur temp/humidité eWeLink CK-TLSR8656-SS5-01(7014). (2) Corrigé boutons scène TS004F (_TZ3000_wkai4ga5, _TZ3000_5tqxpine) - ajoutés à la liste mode scène. Rapport: Eftychis.",
+    "nl": "🔧 FORUM: (1) eWeLink CK-TLSR8656-SS5-01(7014) temp/vochtigheid sensor toegevoegd. (2) TS004F scene switch knoppen gefixd (_TZ3000_wkai4ga5, _TZ3000_5tqxpine). Forum: Eftychis.",
+    "de": "🔧 FORUM: (1) eWeLink CK-TLSR8656-SS5-01(7014) Temp/Feuchte Sensor hinzugefügt. (2) TS004F Scene Switch Tasten korrigiert (_TZ3000_wkai4ga5, _TZ3000_5tqxpine). Forum: Eftychis."
+  },
   "5.5.418": {
     "en": "🔧 FIX: Flow card titleFormatted - Added [[device]] to all receive_dp_* triggers and send_dp_* actions. Fixes SDK validation error requiring device reference in flow card titles.",
     "fr": "🔧 CORRECTION: titleFormatted flow cards - Ajouté [[device]] à tous les triggers receive_dp_* et actions send_dp_*. Corrige erreur validation SDK.",
