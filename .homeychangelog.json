@@ -1,4 +1,10 @@
 {
+  "5.5.420": {
+    "en": "🎨 UI: Added SVG icons for 8 capabilities (button, alarm_curtain_motor, alarm_water_low, ir_code_received, measure_formaldehyde, measure_soil_moisture, measure_water_level, measure_water_percentage).",
+    "fr": "🎨 UI: Ajout icônes SVG pour 8 capabilities (button, alarm_curtain_motor, alarm_water_low, ir_code_received, measure_formaldehyde, measure_soil_moisture, measure_water_level, measure_water_percentage).",
+    "nl": "🎨 UI: SVG iconen toegevoegd voor 8 capabilities.",
+    "de": "🎨 UI: SVG Icons für 8 Capabilities hinzugefügt."
+  },
   "5.5.419": {
     "en": "🔧 FORUM FIXES: (1) Added eWeLink CK-TLSR8656-SS5-01(7014) temp/humidity sensor support. (2) Fixed TS004F scene switch buttons (_TZ3000_wkai4ga5, _TZ3000_5tqxpine) - added to scene mode switching list. Forum report: Eftychis.",
     "fr": "🔧 FORUM: (1) Ajout capteur temp/humidité eWeLink CK-TLSR8656-SS5-01(7014). (2) Corrigé boutons scène TS004F (_TZ3000_wkai4ga5, _TZ3000_5tqxpine) - ajoutés à la liste mode scène. Rapport: Eftychis.",
