@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.420** | 🎨 UI: Added SVG icons for 8 capabilities (button, alarm_curtain_motor, alarm... |
 | **v5.5.419** | 🔧 FORUM FIXES: (1) Added eWeLink CK-TLSR8656-SS5-01(7014) temp/humidity sens... |
 | **v5.5.418** | 🔧 FIX: Flow card titleFormatted - Added [[device]] to all receive_dp_* trigg... |
 | **v5.5.400** | 🆕 NEW DRIVER: 3-Gang Dimmer for MOES _TZE204_1v1dxkck TS0601. Full Tuya DP s... |
@@ -78,7 +79,6 @@
 | **v5.5.396** | 🔘 FIX: Wireless buttons showing On/Off toggle instead of Push. Buttons now c... |
 | **v5.5.395** | 🎯 ENHANCED: HOBEIAN ZG-204ZM PIR+24GHz Radar - Complete Z2M support! Moved t... |
 | **v5.5.394** | 🆕 NEW DEVICE: HOBEIAN ZG-204ZM Motion Sensor with Illuminance. Features: PIR... |
-| **v5.5.393** | 🔄 ID DATABASE: Fixed timing issue where database showed 0 drivers during sta... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
