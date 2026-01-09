@@ -1,4 +1,10 @@
 {
+  "5.5.422": {
+    "en": "🔧 IMPROVEMENTS (Tuya Smart Life forum inspiration): Added power/energy measurement scale settings to Smart Plugs and Power Meters. Fix incorrect readings by adjusting scale (÷1000 to ×100). Added bidirectional meter option for solar installations.",
+    "fr": "🔧 AMÉLIORATIONS (Inspiration forum Tuya Smart Life): Ajout paramètres d'échelle de mesure puissance/énergie aux prises et compteurs. Corrigez les lectures incorrectes en ajustant l'échelle. Option compteur bidirectionnel pour installations solaires.",
+    "nl": "🔧 VERBETERINGEN (Tuya Smart Life forum inspiratie): Vermogen/energie meetschaal instellingen toegevoegd aan slimme stekkers en energiemeters. Corrigeer onjuiste metingen door schaal aan te passen. Bidirectionele meter optie voor zonne-installaties.",
+    "de": "🔧 VERBESSERUNGEN (Tuya Smart Life Forum Inspiration): Leistungs-/Energiemessungs-Skalierungseinstellungen für Smart Plugs und Stromzähler hinzugefügt. Korrigieren Sie falsche Messwerte durch Anpassen der Skala. Bidirektionale Zähleroption für Solaranlagen."
+  },
   "5.5.421": {
     "en": "🔧 FORUM FIXES: Added PJ-1203A energy meter (_TZE204_81yrt3lo), HejHome Pika 6-gang switch (_TZE284_c8ipbljq). Resolved 841 manufacturerName conflicts (-60%). Contact sensor: use 'Invert Contact State' setting if alarm is reversed.",
     "fr": "🔧 FORUM: Ajouté compteur énergie PJ-1203A (_TZE204_81yrt3lo), interrupteur HejHome Pika 6-gang (_TZE284_c8ipbljq). Résolu 841 conflits manufacturerName (-60%). Capteur contact: utilisez 'Inverser état contact' si alarme inversée.",

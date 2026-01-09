@@ -34,6 +34,16 @@ class SmartPlugDevice extends VirtualButtonMixin(HybridPlugBase) {
     };
   }
 
+  // v5.5.422: Apply user-defined scale to power/energy readings
+  _applyScale(value, capability) {
+    const powerScale = parseFloat(this.getSetting('power_scale')) || 1;
+    const energyScale = parseFloat(this.getSetting('energy_scale')) || 1;
+
+    if (capability === 'measure_power') return value * powerScale;
+    if (capability === 'meter_power') return value * energyScale;
+    return value;
+  }
+
   async onNodeInit({ zclNode }) {
     // Parent handles onoff listener - DO NOT re-register
     await super.onNodeInit({ zclNode });
@@ -52,23 +62,29 @@ class SmartPlugDevice extends VirtualButtonMixin(HybridPlugBase) {
     const ep1 = zclNode?.endpoints?.[1];
     if (!ep1) return;
 
-    // Electrical Measurement cluster (0x0B04)
+    // Electrical Measurement cluster (0x0B04) - v5.5.422: Apply user scale
     try {
       const elec = ep1.clusters?.haElectricalMeasurement;
       if (elec?.on) {
-        elec.on('attr.activePower', (v) => this.setCapabilityValue('measure_power', v / 10).catch(() => { }));
+        elec.on('attr.activePower', (v) => {
+          const scaled = this._applyScale(v / 10, 'measure_power');
+          this.setCapabilityValue('measure_power', scaled).catch(() => { });
+        });
         elec.on('attr.rmsVoltage', (v) => this.setCapabilityValue('measure_voltage', v / 10).catch(() => { }));
         elec.on('attr.rmsCurrent', (v) => this.setCapabilityValue('measure_current', v / 1000).catch(() => { }));
-        this.log('[PLUG] ✅ ZCL Electrical Measurement configured');
+        this.log('[PLUG] ✅ ZCL Electrical Measurement configured (with scale support)');
       }
     } catch (e) { /* ignore */ }
 
-    // Metering cluster (0x0702)
+    // Metering cluster (0x0702) - v5.5.422: Apply user scale
     try {
       const meter = ep1.clusters?.seMetering;
       if (meter?.on) {
-        meter.on('attr.currentSummationDelivered', (v) => this.setCapabilityValue('meter_power', v / 1000).catch(() => { }));
-        this.log('[PLUG] ✅ ZCL Metering configured');
+        meter.on('attr.currentSummationDelivered', (v) => {
+          const scaled = this._applyScale(v / 1000, 'meter_power');
+          this.setCapabilityValue('meter_power', scaled).catch(() => { });
+        });
+        this.log('[PLUG] ✅ ZCL Metering configured (with scale support)');
       }
     } catch (e) { /* ignore */ }
   }
