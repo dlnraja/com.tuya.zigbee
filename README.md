@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.430** | 🔘 FORUM #879 FIX: Fixed button random triggers and 'stays true' issue. Added... |
 | **v5.5.429** | 🔄 MASSIVE RESTORATION: Added 2094 orphaned manufacturerNames back to drivers... |
 | **v5.5.428** | 📋 FORUM #880: Added BSEED 4-gang switch support (TS0726, _TZ3002_pzao9ls1). ... |
 | **v5.5.427** | 🔧 GitHub #77 FIX: Cleaned thermostat_tuya_dp driver (removed 47 uppercase du... |
@@ -78,7 +79,6 @@
 | **v5.5.423** | 🆕 BRANDS: Added 11 manufacturerNames for popular brands (Moes, Nedis, Lonson... |
 | **v5.5.422** | 🔧 IMPROVEMENTS (Tuya Smart Life forum inspiration): Added power/energy measu... |
 | **v5.5.421** | 🔧 FORUM FIXES: Added PJ-1203A energy meter (_TZE204_81yrt3lo), HejHome Pika ... |
-| **v5.5.420** | 🎨 UI: Added SVG icons for 8 capabilities (button, alarm_curtain_motor, alarm... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
