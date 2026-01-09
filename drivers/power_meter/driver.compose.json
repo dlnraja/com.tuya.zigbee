@@ -11,12 +11,166 @@
     "measure_current",
     "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "title": {
+        "en": "Power",
+        "fr": "Puissance"
+      },
+      "units": "W"
+    },
+    "meter_power": {
+      "title": {
+        "en": "Energy",
+        "fr": "Énergie"
+      },
+      "units": "kWh"
+    }
+  },
   "energy": {
     "batteries": [
       "AAA",
       "AAA"
     ]
   },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Measurement Scale",
+        "fr": "Échelle de Mesure"
+      },
+      "children": [
+        {
+          "id": "power_scale",
+          "type": "dropdown",
+          "label": {
+            "en": "Power Scale",
+            "fr": "Échelle Puissance"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0.001",
+              "label": {
+                "en": "÷1000 (mW → W)",
+                "fr": "÷1000 (mW → W)"
+              }
+            },
+            {
+              "id": "0.01",
+              "label": {
+                "en": "÷100",
+                "fr": "÷100"
+              }
+            },
+            {
+              "id": "0.1",
+              "label": {
+                "en": "÷10",
+                "fr": "÷10"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "×1 (Default)",
+                "fr": "×1 (Par défaut)"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "×10",
+                "fr": "×10"
+              }
+            },
+            {
+              "id": "100",
+              "label": {
+                "en": "×100",
+                "fr": "×100"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Adjust if power readings are incorrect",
+            "fr": "Ajuster si les mesures de puissance sont incorrectes"
+          }
+        },
+        {
+          "id": "energy_scale",
+          "type": "dropdown",
+          "label": {
+            "en": "Energy Scale",
+            "fr": "Échelle Énergie"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0.001",
+              "label": {
+                "en": "÷1000 (Wh → kWh)",
+                "fr": "÷1000 (Wh → kWh)"
+              }
+            },
+            {
+              "id": "0.01",
+              "label": {
+                "en": "÷100",
+                "fr": "÷100"
+              }
+            },
+            {
+              "id": "0.1",
+              "label": {
+                "en": "÷10",
+                "fr": "÷10"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "×1 (Default)",
+                "fr": "×1 (Par défaut)"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "×10",
+                "fr": "×10"
+              }
+            },
+            {
+              "id": "100",
+              "label": {
+                "en": "×100",
+                "fr": "×100"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Adjust if energy readings are incorrect",
+            "fr": "Ajuster si les mesures d'énergie sont incorrectes"
+          }
+        },
+        {
+          "id": "bidirectional",
+          "type": "checkbox",
+          "label": {
+            "en": "Bidirectional Meter (Solar)",
+            "fr": "Compteur Bidirectionnel (Solaire)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Enable for solar/grid meters that measure import and export",
+            "fr": "Activer pour compteurs solaires qui mesurent import et export"
+          }
+        }
+      ]
+    }
+  ],
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_byfdwktr",
