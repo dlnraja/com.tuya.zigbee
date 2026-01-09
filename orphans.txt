@@ -1,0 +1,12 @@
+--- a/drivers/thermostat_tuya_dp/driver.compose.json
+--- a/drivers/water_tank_monitor/driver.compose.json
+$comment_capabilities
+alarm_tamper
+button_toggle
+id
+large
+measure_presence_time
+measure_temperature
+small
+target_temperature
+xlarge
