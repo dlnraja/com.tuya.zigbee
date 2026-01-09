@@ -1,4 +1,10 @@
 {
+  "5.5.426": {
+    "en": "📋 FORUM REQUESTS: Added _TZ321C_fkzihaxe8 (TS0225 Wenzhi presence sensor from GitHub #97). Verified forum requests: eWeLink CK-TLSR8656, ZG-204ZM, 4-gang switches, HOBEIAN ZG-102Z, TS0505B - all already supported.",
+    "fr": "📋 DEMANDES FORUM: Ajouté _TZ321C_fkzihaxe8 (capteur présence TS0225 Wenzhi depuis GitHub #97). Demandes forum vérifiées: eWeLink, ZG-204ZM, switches 4-gang - tous déjà supportés.",
+    "nl": "📋 FORUM VERZOEKEN: _TZ321C_fkzihaxe8 toegevoegd (TS0225 Wenzhi aanwezigheidssensor van GitHub #97). Forum verzoeken geverifieerd: allemaal al ondersteund.",
+    "de": "📋 FORUM-ANFRAGEN: _TZ321C_fkzihaxe8 hinzugefügt (TS0225 Wenzhi Präsenzsensor von GitHub #97). Forum-Anfragen verifiziert: alle bereits unterstützt."
+  },
   "5.5.425": {
     "en": "🔍 COMPREHENSIVE VERIFICATION: Fixed _TZE284_nlrfgpny mapping (siren not climate_sensor). Added 7 new valve manufacturerNames (GiEX, MUCIAKiE). Verified all forum/GitHub requests implemented. Sources: Z2M, ZHA, Hubitat, Blakadder, Reddit.",
     "fr": "🔍 VÉRIFICATION COMPLÈTE: Corrigé mapping _TZE284_nlrfgpny (sirène pas climate_sensor). Ajouté 7 nouveaux manufacturerNames valves (GiEX, MUCIAKiE). Vérifié toutes demandes forum/GitHub implémentées.",
