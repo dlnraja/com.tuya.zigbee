@@ -1,4 +1,10 @@
 {
+  "5.5.432": {
+    "en": "🔍 DEEP 100-COMMIT SCAN: Found and restored 1 orphan manufacturerName (_TZ3000_nhhklsxw → switch_3gang). Scanned 2211 removed IDs, verified all others already restored. Forum posts processed.",
+    "fr": "🔍 SCAN PROFOND 100 COMMITS: Trouvé et restauré 1 manufacturerName orphelin (_TZ3000_nhhklsxw → switch_3gang). 2211 IDs vérifiés.",
+    "nl": "🔍 DIEPE 100-COMMIT SCAN: 1 verweesde manufacturerName gevonden en hersteld (_TZ3000_nhhklsxw → switch_3gang). 2211 verwijderde IDs geverifieerd.",
+    "de": "🔍 TIEFE 100-COMMIT-PRÜFUNG: 1 verwaiste manufacturerName gefunden und wiederhergestellt (_TZ3000_nhhklsxw → switch_3gang). 2211 entfernte IDs verifiziert."
+  },
   "5.5.431": {
     "en": "🔧 Z2M RESEARCH: Added firmware bug compensation for TS0201 humidity sensors (_TZ3210_ncw88jfq, _TZ3000_ywagc4rj, _TZ3000_isw9u95y). Verified 0 orphan manufacturerNames - all previously removed IDs restored.",
     "fr": "🔧 RECHERCHE Z2M: Ajouté compensation bug firmware capteurs humidité TS0201. Vérifié 0 manufacturerNames orphelins - tous IDs restaurés.",
