@@ -1,4 +1,10 @@
 {
+  "5.5.418": {
+    "en": "🔧 FIX: Flow card titleFormatted - Added [[device]] to all receive_dp_* triggers and send_dp_* actions. Fixes SDK validation error requiring device reference in flow card titles.",
+    "fr": "🔧 CORRECTION: titleFormatted flow cards - Ajouté [[device]] à tous les triggers receive_dp_* et actions send_dp_*. Corrige erreur validation SDK.",
+    "nl": "🔧 FIX: Flow card titleFormatted - [[device]] toegevoegd aan alle receive_dp_* triggers en send_dp_* acties. Fixt SDK validatie fout.",
+    "de": "🔧 FIX: Flow card titleFormatted - [[device]] zu allen receive_dp_* Triggern und send_dp_* Aktionen hinzugefügt. Behebt SDK Validierungsfehler."
+  },
   "5.5.400": {
     "en": "🆕 NEW DRIVER: 3-Gang Dimmer for MOES _TZE204_1v1dxkck TS0601. Full Tuya DP support for 3 independent dimmer channels (DP1/2, DP7/8, DP15/16).",
     "fr": "🆕 NOUVEAU: Variateur 3 canaux MOES _TZE204_1v1dxkck. Support complet Tuya DP pour 3 canaux indépendants.",
