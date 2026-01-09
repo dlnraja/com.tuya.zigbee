@@ -1,4 +1,10 @@
 {
+  "5.5.430": {
+    "en": "🔘 FORUM #879 FIX: Fixed button random triggers and 'stays true' issue. Added global debounce (300ms) and auto-reset for button capabilities. Affects _TZ3000_ja5osu5g and similar devices.",
+    "fr": "🔘 FORUM #879 FIX: Corrigé déclenchements aléatoires boutons et problème 'reste vrai'. Ajouté debounce global (300ms) et reset auto. Affecte _TZ3000_ja5osu5g et similaires.",
+    "nl": "🔘 FORUM #879 FIX: Willekeurige knoptriggers en 'blijft waar' probleem opgelost. Globale debounce (300ms) en auto-reset toegevoegd.",
+    "de": "🔘 FORUM #879 FIX: Zufällige Tastenauslöser und 'bleibt wahr' Problem behoben. Globale Entprellung (300ms) und Auto-Reset hinzugefügt."
+  },
   "5.5.429": {
     "en": "🔄 MASSIVE RESTORATION: Added 2094 orphaned manufacturerNames back to drivers (2050 to climate_sensor, 43 to switch_1gang, 1 to contact_sensor). Based on Z2M research and pattern analysis.",
     "fr": "🔄 RESTAURATION MASSIVE: Ajouté 2094 manufacturerNames orphelins aux drivers (2050 climate_sensor, 43 switch_1gang, 1 contact_sensor). Basé sur recherche Z2M.",
