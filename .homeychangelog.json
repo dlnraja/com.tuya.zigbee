@@ -1,4 +1,10 @@
 {
+  "5.5.421": {
+    "en": "🔧 FORUM FIXES: Added PJ-1203A energy meter (_TZE204_81yrt3lo), HejHome Pika 6-gang switch (_TZE284_c8ipbljq). Resolved 841 manufacturerName conflicts (-60%). Contact sensor: use 'Invert Contact State' setting if alarm is reversed.",
+    "fr": "🔧 FORUM: Ajouté compteur énergie PJ-1203A (_TZE204_81yrt3lo), interrupteur HejHome Pika 6-gang (_TZE284_c8ipbljq). Résolu 841 conflits manufacturerName (-60%). Capteur contact: utilisez 'Inverser état contact' si alarme inversée.",
+    "nl": "🔧 FORUM: PJ-1203A energiemeter (_TZE204_81yrt3lo), HejHome Pika 6-gang schakelaar (_TZE284_c8ipbljq) toegevoegd. 841 manufacturerName conflicten opgelost (-60%). Contact sensor: gebruik 'Inverteer contact status' indien alarm omgekeerd.",
+    "de": "🔧 FORUM: PJ-1203A Energiezähler (_TZE204_81yrt3lo), HejHome Pika 6-Gang Schalter (_TZE284_c8ipbljq) hinzugefügt. 841 manufacturerName Konflikte gelöst (-60%). Kontaktsensor: 'Kontaktstatus invertieren' verwenden wenn Alarm umgekehrt."
+  },
   "5.5.420": {
     "en": "🎨 UI: Added SVG icons for 8 capabilities (button, alarm_curtain_motor, alarm_water_low, ir_code_received, measure_formaldehyde, measure_soil_moisture, measure_water_level, measure_water_percentage).",
     "fr": "🎨 UI: Ajout icônes SVG pour 8 capabilities (button, alarm_curtain_motor, alarm_water_low, ir_code_received, measure_formaldehyde, measure_soil_moisture, measure_water_level, measure_water_percentage).",
