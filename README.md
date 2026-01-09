@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.425** | 🔍 COMPREHENSIVE VERIFICATION: Fixed _TZE284_nlrfgpny mapping (siren not clim... |
 | **v5.5.424** | 🔬 DEEP RESEARCH: Verified 11 manufacturerNames across 10+ sources (Z2M, ZHA,... |
 | **v5.5.423** | 🆕 BRANDS: Added 11 manufacturerNames for popular brands (Moes, Nedis, Lonson... |
 | **v5.5.422** | 🔧 IMPROVEMENTS (Tuya Smart Life forum inspiration): Added power/energy measu... |
@@ -78,7 +79,6 @@
 | **v5.5.418** | 🔧 FIX: Flow card titleFormatted - Added [[device]] to all receive_dp_* trigg... |
 | **v5.5.400** | 🆕 NEW DRIVER: 3-Gang Dimmer for MOES _TZE204_1v1dxkck TS0601. Full Tuya DP s... |
 | **v5.5.399** | 🆕 FORUM DEVICES: Added _TZE200_ya4ft0w4 ceiling radar sensor, _TZ3000_kqvb5a... |
-| **v5.5.398** | 🔗 CLUSTER BINDER: Integrated UniversalClusterBinder with modular data system... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
