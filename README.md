@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.433** | 📱 FORUM #884: Added 15+ new 2-gang touch dimmer fingerprints (Moes, Girier, ... |
 | **v5.5.432** | 🔍 DEEP 100-COMMIT SCAN: Found and restored 1 orphan manufacturerName (_TZ300... |
 | **v5.5.431** | 🔧 Z2M RESEARCH: Added firmware bug compensation for TS0201 humidity sensors ... |
 | **v5.5.430** | 🔘 FORUM #879 FIX: Fixed button random triggers and 'stays true' issue. Added... |
@@ -78,7 +79,6 @@
 | **v5.5.426** | 📋 FORUM REQUESTS: Added _TZ321C_fkzihaxe8 (TS0225 Wenzhi presence sensor fro... |
 | **v5.5.425** | 🔍 COMPREHENSIVE VERIFICATION: Fixed _TZE284_nlrfgpny mapping (siren not clim... |
 | **v5.5.424** | 🔬 DEEP RESEARCH: Verified 11 manufacturerNames across 10+ sources (Z2M, ZHA,... |
-| **v5.5.423** | 🆕 BRANDS: Added 11 manufacturerNames for popular brands (Moes, Nedis, Lonson... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
