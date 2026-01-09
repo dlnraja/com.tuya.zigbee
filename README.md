@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.418** | 🔧 FIX: Flow card titleFormatted - Added [[device]] to all receive_dp_* trigg... |
 | **v5.5.400** | 🆕 NEW DRIVER: 3-Gang Dimmer for MOES _TZE204_1v1dxkck TS0601. Full Tuya DP s... |
 | **v5.5.399** | 🆕 FORUM DEVICES: Added _TZE200_ya4ft0w4 ceiling radar sensor, _TZ3000_kqvb5a... |
 | **v5.5.398** | 🔗 CLUSTER BINDER: Integrated UniversalClusterBinder with modular data system... |
@@ -78,7 +79,6 @@
 | **v5.5.394** | 🆕 NEW DEVICE: HOBEIAN ZG-204ZM Motion Sensor with Illuminance. Features: PIR... |
 | **v5.5.393** | 🔄 ID DATABASE: Fixed timing issue where database showed 0 drivers during sta... |
 | **v5.5.392** | 🔥 CRITICAL FIX - Pairing Error: Fixed broken import path for UniversalDataHa... |
-| **v5.5.391** | ⏰ ENHANCED TIME SYNC: Request detection (cluster 0x000A, 0xEF00 cmd 0x24). De... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
