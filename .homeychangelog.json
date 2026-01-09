@@ -1,4 +1,10 @@
 {
+  "5.5.429": {
+    "en": "🔄 MASSIVE RESTORATION: Added 2094 orphaned manufacturerNames back to drivers (2050 to climate_sensor, 43 to switch_1gang, 1 to contact_sensor). Based on Z2M research and pattern analysis.",
+    "fr": "🔄 RESTAURATION MASSIVE: Ajouté 2094 manufacturerNames orphelins aux drivers (2050 climate_sensor, 43 switch_1gang, 1 contact_sensor). Basé sur recherche Z2M.",
+    "nl": "🔄 MASSALE HERSTEL: 2094 verweesde manufacturerNames toegevoegd aan drivers (2050 naar climate_sensor, 43 naar switch_1gang, 1 naar contact_sensor).",
+    "de": "🔄 MASSIVE WIEDERHERSTELLUNG: 2094 verwaiste manufacturerNames zu Treibern hinzugefügt (2050 zu climate_sensor, 43 zu switch_1gang, 1 zu contact_sensor)."
+  },
   "5.5.428": {
     "en": "📋 FORUM #880: Added BSEED 4-gang switch support (TS0726, _TZ3002_pzao9ls1). Note: Users with radar/button issues should re-pair their devices.",
     "fr": "📋 FORUM #880: Ajouté support switch BSEED 4-gang (TS0726, _TZ3002_pzao9ls1). Note: Utilisateurs avec problèmes radar/bouton doivent re-appairer.",
