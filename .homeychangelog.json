@@ -1,4 +1,10 @@
 {
+  "5.5.424": {
+    "en": "🔬 DEEP RESEARCH: Verified 11 manufacturerNames across 10+ sources (Z2M, ZHA, Blakadder, Hubitat). Fixed mapping errors: _TZ3000_jvzvulen moved to plug_energy_monitor (was incorrectly in switch). Added 4 TRV thermostats to radiator_valve driver.",
+    "fr": "🔬 RECHERCHE APPROFONDIE: Vérifié 11 manufacturerNames sur 10+ sources. Corrigé erreurs de mapping: _TZ3000_jvzvulen déplacé vers plug_energy_monitor. Ajouté 4 thermostats TRV au driver radiator_valve.",
+    "nl": "🔬 DIEPGAAND ONDERZOEK: 11 manufacturerNames geverifieerd over 10+ bronnen. Mapping fouten gecorrigeerd: _TZ3000_jvzvulen verplaatst naar plug_energy_monitor. 4 TRV thermostaten toegevoegd aan radiator_valve driver.",
+    "de": "🔬 TIEFENRECHERCHE: 11 manufacturerNames über 10+ Quellen verifiziert. Mapping-Fehler behoben: _TZ3000_jvzvulen zu plug_energy_monitor verschoben. 4 TRV-Thermostate zum radiator_valve Treiber hinzugefügt."
+  },
   "5.5.423": {
     "en": "🆕 BRANDS: Added 11 manufacturerNames for popular brands (Moes, Nedis, Lonsonho, Mercator Ikuü, Lidl, BlitzWolf, Zemismart). Now supporting 2606+ device variants across 89 drivers.",
     "fr": "🆕 MARQUES: Ajouté 11 manufacturerNames pour marques populaires (Moes, Nedis, Lonsonho, Mercator Ikuü, Lidl, BlitzWolf, Zemismart). Supporte maintenant 2606+ variantes sur 89 drivers.",
