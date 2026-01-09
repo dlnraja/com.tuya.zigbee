@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.419",
+  "version": "5.5.420",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "name": {
@@ -48038,7 +48038,8 @@
       "getable": true,
       "setable": true,
       "uiComponent": "button",
-      "uiQuickAction": true
+      "uiQuickAction": true,
+      "icon": "/assets/capabilities/button.svg"
     },
     "alarm_curtain_motor": {
       "type": "boolean",
@@ -48049,7 +48050,8 @@
       "getable": true,
       "setable": false,
       "insights": true,
-      "uiComponent": "sensor"
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/alarm_curtain_motor.svg"
     },
     "alarm_human": {
       "type": "boolean",
@@ -48089,7 +48091,8 @@
       },
       "getable": true,
       "setable": false,
-      "uiComponent": "sensor"
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/alarm_water_low.svg"
     },
     "ir_code_received": {
       "type": "string",
@@ -48100,7 +48103,8 @@
       },
       "getable": true,
       "setable": false,
-      "uiComponent": "sensor"
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/ir_code_received.svg"
     },
     "measure_formaldehyde": {
       "type": "number",
@@ -48116,7 +48120,8 @@
       "decimals": 3,
       "getable": true,
       "setable": false,
-      "uiComponent": "sensor"
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/measure_formaldehyde.svg"
     },
     "measure_presence_time": {
       "type": "number",
@@ -48164,7 +48169,8 @@
       "max": 100,
       "getable": true,
       "setable": false,
-      "uiComponent": "sensor"
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/measure_soil_moisture.svg"
     },
     "measure_voc": {
       "type": "number",
@@ -48198,7 +48204,8 @@
       "decimals": 2,
       "getable": true,
       "setable": false,
-      "uiComponent": "sensor"
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/measure_water_level.svg"
     },
     "measure_water_percentage": {
       "type": "number",
@@ -48214,7 +48221,8 @@
       "decimals": 0,
       "getable": true,
       "setable": false,
-      "uiComponent": "sensor"
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/measure_water_percentage.svg"
     },
     "button_toggle": {
       "type": "boolean",
