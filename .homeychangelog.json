@@ -1,4 +1,10 @@
 {
+  "5.5.428": {
+    "en": "📋 FORUM #880: Added BSEED 4-gang switch support (TS0726, _TZ3002_pzao9ls1). Note: Users with radar/button issues should re-pair their devices.",
+    "fr": "📋 FORUM #880: Ajouté support switch BSEED 4-gang (TS0726, _TZ3002_pzao9ls1). Note: Utilisateurs avec problèmes radar/bouton doivent re-appairer.",
+    "nl": "📋 FORUM #880: BSEED 4-gang schakelaar ondersteuning toegevoegd (TS0726, _TZ3002_pzao9ls1). Opmerking: Gebruikers met radar/knop problemen moeten opnieuw koppelen.",
+    "de": "📋 FORUM #880: BSEED 4-Gang Schalter Unterstützung hinzugefügt (TS0726, _TZ3002_pzao9ls1). Hinweis: Benutzer mit Radar/Tasten Problemen sollten neu koppeln."
+  },
   "5.5.427": {
     "en": "🔧 GitHub #77 FIX: Cleaned thermostat_tuya_dp driver (removed 47 uppercase duplicates). TRV devices like Avatto TRV06 (_TZE200_hvaxb2tc) should now pair correctly.",
     "fr": "🔧 GitHub #77 FIX: Nettoyé driver thermostat_tuya_dp (supprimé 47 doublons majuscules). Les TRV comme Avatto TRV06 devraient maintenant s'apparier correctement.",
