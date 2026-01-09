@@ -1,4 +1,10 @@
 {
+  "5.5.433": {
+    "en": "📱 FORUM #884: Added 15+ new 2-gang touch dimmer fingerprints (Moes, Girier, Lonsonho, Avatto). Research from Z2M, Hubitat, SmartHomeScene. Supports TS0601, TS110E, TS110F dimmers.",
+    "fr": "📱 FORUM #884: Ajouté 15+ empreintes de variateurs tactiles 2 voies (Moes, Girier, Lonsonho, Avatto). Recherche Z2M, Hubitat, SmartHomeScene.",
+    "nl": "📱 FORUM #884: 15+ nieuwe 2-gang touch dimmer fingerprints toegevoegd (Moes, Girier, Lonsonho, Avatto). Onderzoek van Z2M, Hubitat, SmartHomeScene.",
+    "de": "📱 FORUM #884: 15+ neue 2-Gang Touch-Dimmer Fingerprints hinzugefügt (Moes, Girier, Lonsonho, Avatto). Recherche aus Z2M, Hubitat, SmartHomeScene."
+  },
   "5.5.432": {
     "en": "🔍 DEEP 100-COMMIT SCAN: Found and restored 1 orphan manufacturerName (_TZ3000_nhhklsxw → switch_3gang). Scanned 2211 removed IDs, verified all others already restored. Forum posts processed.",
     "fr": "🔍 SCAN PROFOND 100 COMMITS: Trouvé et restauré 1 manufacturerName orphelin (_TZ3000_nhhklsxw → switch_3gang). 2211 IDs vérifiés.",
