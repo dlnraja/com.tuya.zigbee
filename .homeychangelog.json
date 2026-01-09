@@ -1,4 +1,10 @@
 {
+  "5.5.425": {
+    "en": "🔍 COMPREHENSIVE VERIFICATION: Fixed _TZE284_nlrfgpny mapping (siren not climate_sensor). Added 7 new valve manufacturerNames (GiEX, MUCIAKiE). Verified all forum/GitHub requests implemented. Sources: Z2M, ZHA, Hubitat, Blakadder, Reddit.",
+    "fr": "🔍 VÉRIFICATION COMPLÈTE: Corrigé mapping _TZE284_nlrfgpny (sirène pas climate_sensor). Ajouté 7 nouveaux manufacturerNames valves (GiEX, MUCIAKiE). Vérifié toutes demandes forum/GitHub implémentées.",
+    "nl": "🔍 UITGEBREIDE VERIFICATIE: _TZE284_nlrfgpny mapping gecorrigeerd (sirene niet climate_sensor). 7 nieuwe valve manufacturerNames toegevoegd (GiEX, MUCIAKiE). Alle forum/GitHub verzoeken geverifieerd.",
+    "de": "🔍 UMFASSENDE ÜBERPRÜFUNG: _TZE284_nlrfgpny Mapping korrigiert (Sirene nicht climate_sensor). 7 neue Ventil manufacturerNames hinzugefügt (GiEX, MUCIAKiE). Alle Forum/GitHub Anfragen verifiziert."
+  },
   "5.5.424": {
     "en": "🔬 DEEP RESEARCH: Verified 11 manufacturerNames across 10+ sources (Z2M, ZHA, Blakadder, Hubitat). Fixed mapping errors: _TZ3000_jvzvulen moved to plug_energy_monitor (was incorrectly in switch). Added 4 TRV thermostats to radiator_valve driver.",
     "fr": "🔬 RECHERCHE APPROFONDIE: Vérifié 11 manufacturerNames sur 10+ sources. Corrigé erreurs de mapping: _TZ3000_jvzvulen déplacé vers plug_energy_monitor. Ajouté 4 thermostats TRV au driver radiator_valve.",
