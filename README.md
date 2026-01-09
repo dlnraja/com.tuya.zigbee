@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.424** | 🔬 DEEP RESEARCH: Verified 11 manufacturerNames across 10+ sources (Z2M, ZHA,... |
 | **v5.5.423** | 🆕 BRANDS: Added 11 manufacturerNames for popular brands (Moes, Nedis, Lonson... |
 | **v5.5.422** | 🔧 IMPROVEMENTS (Tuya Smart Life forum inspiration): Added power/energy measu... |
 | **v5.5.421** | 🔧 FORUM FIXES: Added PJ-1203A energy meter (_TZE204_81yrt3lo), HejHome Pika ... |
@@ -78,7 +79,6 @@
 | **v5.5.400** | 🆕 NEW DRIVER: 3-Gang Dimmer for MOES _TZE204_1v1dxkck TS0601. Full Tuya DP s... |
 | **v5.5.399** | 🆕 FORUM DEVICES: Added _TZE200_ya4ft0w4 ceiling radar sensor, _TZ3000_kqvb5a... |
 | **v5.5.398** | 🔗 CLUSTER BINDER: Integrated UniversalClusterBinder with modular data system... |
-| **v5.5.397** | 📦 MODULAR DATA SYSTEM: Complete refactor of data handling into separate modu... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
