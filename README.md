@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.423** | 🆕 BRANDS: Added 11 manufacturerNames for popular brands (Moes, Nedis, Lonson... |
 | **v5.5.422** | 🔧 IMPROVEMENTS (Tuya Smart Life forum inspiration): Added power/energy measu... |
 | **v5.5.421** | 🔧 FORUM FIXES: Added PJ-1203A energy meter (_TZE204_81yrt3lo), HejHome Pika ... |
 | **v5.5.420** | 🎨 UI: Added SVG icons for 8 capabilities (button, alarm_curtain_motor, alarm... |
@@ -78,7 +79,6 @@
 | **v5.5.399** | 🆕 FORUM DEVICES: Added _TZE200_ya4ft0w4 ceiling radar sensor, _TZ3000_kqvb5a... |
 | **v5.5.398** | 🔗 CLUSTER BINDER: Integrated UniversalClusterBinder with modular data system... |
 | **v5.5.397** | 📦 MODULAR DATA SYSTEM: Complete refactor of data handling into separate modu... |
-| **v5.5.396** | 🔘 FIX: Wireless buttons showing On/Off toggle instead of Push. Buttons now c... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
