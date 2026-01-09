@@ -93,7 +93,9 @@ class Button4GangDevice extends ButtonDevice {
       '_TZ3000_4fjiwweb',
       '_TZ3000_uri7oadn',
       '_TZ3000_ixla93vd',
-      '_TZ3000_qzjcsmar'
+      '_TZ3000_qzjcsmar',
+      '_TZ3000_wkai4ga5',  // v5.5.419: Forum report Eftychis
+      '_TZ3000_5tqxpine'   // v5.5.419: Forum report Eftychis
     ];
     const needsModeSwitching = isTS004F || ts004fManufacturers.includes(manufacturerName);
 
