@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.428** | 📋 FORUM #880: Added BSEED 4-gang switch support (TS0726, _TZ3002_pzao9ls1). ... |
 | **v5.5.427** | 🔧 GitHub #77 FIX: Cleaned thermostat_tuya_dp driver (removed 47 uppercase du... |
 | **v5.5.426** | 📋 FORUM REQUESTS: Added _TZ321C_fkzihaxe8 (TS0225 Wenzhi presence sensor fro... |
 | **v5.5.425** | 🔍 COMPREHENSIVE VERIFICATION: Fixed _TZE284_nlrfgpny mapping (siren not clim... |
@@ -78,7 +79,6 @@
 | **v5.5.421** | 🔧 FORUM FIXES: Added PJ-1203A energy meter (_TZE204_81yrt3lo), HejHome Pika ... |
 | **v5.5.420** | 🎨 UI: Added SVG icons for 8 capabilities (button, alarm_curtain_motor, alarm... |
 | **v5.5.419** | 🔧 FORUM FIXES: (1) Added eWeLink CK-TLSR8656-SS5-01(7014) temp/humidity sens... |
-| **v5.5.418** | 🔧 FIX: Flow card titleFormatted - Added [[device]] to all receive_dp_* trigg... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
