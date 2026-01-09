@@ -1,4 +1,10 @@
 {
+  "5.5.431": {
+    "en": "🔧 Z2M RESEARCH: Added firmware bug compensation for TS0201 humidity sensors (_TZ3210_ncw88jfq, _TZ3000_ywagc4rj, _TZ3000_isw9u95y). Verified 0 orphan manufacturerNames - all previously removed IDs restored.",
+    "fr": "🔧 RECHERCHE Z2M: Ajouté compensation bug firmware capteurs humidité TS0201. Vérifié 0 manufacturerNames orphelins - tous IDs restaurés.",
+    "nl": "🔧 Z2M ONDERZOEK: Firmware bug compensatie toegevoegd voor TS0201 vochtigheidssensoren. Geverifieerd 0 verweesde manufacturerNames.",
+    "de": "🔧 Z2M FORSCHUNG: Firmware-Bug-Kompensation für TS0201 Feuchtigkeitssensoren hinzugefügt. 0 verwaiste manufacturerNames verifiziert."
+  },
   "5.5.430": {
     "en": "🔘 FORUM #879 FIX: Fixed button random triggers and 'stays true' issue. Added global debounce (300ms) and auto-reset for button capabilities. Affects _TZ3000_ja5osu5g and similar devices.",
     "fr": "🔘 FORUM #879 FIX: Corrigé déclenchements aléatoires boutons et problème 'reste vrai'. Ajouté debounce global (300ms) et reset auto. Affecte _TZ3000_ja5osu5g et similaires.",
