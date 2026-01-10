@@ -30,6 +30,29 @@ class ClimateSensorDriver extends ZigBeeDriver {
    * v5.3.79: AGGRESSIVE FIX - Prevent ANY sub-device creation
    */
   async onPairListDevices(devices) {
+    
+    // Register flow triggers
+    this._climate_temperature_changedTrigger = this.homey.flow.getDeviceTriggerCard('climate_temperature_changed');
+    this._climate_humidity_changedTrigger = this.homey.flow.getDeviceTriggerCard('climate_humidity_changed');
+    this._climate_temperature_aboveTrigger = this.homey.flow.getDeviceTriggerCard('climate_temperature_above');
+    this._climate_temperature_belowTrigger = this.homey.flow.getDeviceTriggerCard('climate_temperature_below');
+    this._climate_humidity_aboveTrigger = this.homey.flow.getDeviceTriggerCard('climate_humidity_above');
+    this._climate_humidity_belowTrigger = this.homey.flow.getDeviceTriggerCard('climate_humidity_below');
+    this._climate_battery_lowTrigger = this.homey.flow.getDeviceTriggerCard('climate_battery_low');
+    
+    // Register flow conditions
+    this._climate_temperature_isCondition = this.homey.flow.getDeviceConditionCard('climate_temperature_is');
+    this._climate_temperature_isCondition.registerRunListener(async (args) => {
+      const { device } = args;
+      return device.getCapabilityValue('measure_temperature') === true;
+    });
+    this._climate_humidity_isCondition = this.homey.flow.getDeviceConditionCard('climate_humidity_is');
+    this._climate_humidity_isCondition.registerRunListener(async (args) => {
+      const { device } = args;
+      return device.getCapabilityValue('measure_humidity') === true;
+    });
+    
+    this.log('climate_sensor: Flow cards registered');
     this.log('[PAIR] Raw devices from Zigbee:', devices?.length || 0);
 
     if (!devices || devices.length === 0) {

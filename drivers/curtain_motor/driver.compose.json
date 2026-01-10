@@ -520,6 +520,13 @@
           "en": "Cover stopped",
           "fr": "Volet arrêté"
         }
+      },
+      {
+        "id": "button_pressed",
+        "title": {
+          "en": "Button Pressed",
+          "fr": "Button Pressed"
+        }
       }
     ],
     "conditions": [
