@@ -1,0 +1,95 @@
+{
+  "name": {
+    "en": "Vibration Sensor",
+    "fr": "Capteur de Vibration"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_vibration",
+    "measure_battery",
+    "alarm_tamper"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450"
+    ]
+  },
+  "subDevices": [],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_bmfw11gs",
+      "_TZ3000_bmfw9ykl",
+      "_TZ3000_c0epqj4n",
+      "_TZ3000_d9mxcg6g",
+      "_TZ3000_ez2w5nzp",
+      "_TZ3000_fbjnwzko",
+      "_TZ3000_fkxmywjv",
+      "_TZ3000_lf56vpxj",
+      "_TZ3000_lqpt3mvr",
+      "_TZ3000_lzdjjfss",
+      "_TZ3000_osu834un",
+      "_TZ3000_rcfwrslt",
+      "_TZ3000_wqwdoqib",
+      "_TYZB01_3zv6oleo",
+      "_TYZB01_geigpsy4",
+      "_TYZB01_j9xxahcl",
+      "_TZE200_cscppkxz",
+      "_TZE200_gnpn9hxb",
+      "_TZE200_vq5u79u3",
+      "_TZE204_cscppkxz",
+      "_TZE284_cscppkxz",
+      "_tyzb01_3zv6oleo",
+      "_tyzb01_geigpsy4",
+      "_tyzb01_j9xxahcl",
+      "_tz3000_bmfw11gs",
+      "_tz3000_bmfw9ykl",
+      "_tz3000_c0epqj4n",
+      "_tz3000_d9mxcg6g",
+      "_tz3000_ez2w5nzp",
+      "_tz3000_fbjnwzko",
+      "_tz3000_fkxmywjv",
+      "_tz3000_lf56vpxj",
+      "_tz3000_lzdjjfss",
+      "_tz3000_osu834un",
+      "_tz3000_rcfwrslt",
+      "_tz3000_wqwdoqib",
+      "_tze200_cscppkxz",
+      "_tze200_gnpn9hxb",
+      "_tze200_vq5u79u3",
+      "_tze204_cscppkxz",
+      "_tze284_cscppkxz"
+    ],
+    "productId": [
+      "TS0209",
+      "TS0210",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          257,
+          1280
+        ],
+        "bindings": [
+          1280,
+          1
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/vibration_sensor/assets/images/small.png",
+    "large": "drivers/vibration_sensor/assets/images/large.png",
+    "xlarge": "drivers/vibration_sensor/assets/images/xlarge.png"
+  },
+  "id": "vibration_sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

@@ -1,0 +1,707 @@
+{
+  "name": {
+    "en": "Smart Plug with Energy Monitoring",
+    "fr": "Prise Connectée avec Mesure Énergie"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power",
+    "measure_current",
+    "measure_voltage",
+    "measure_battery",
+    "button_toggle",
+    "button_identify"
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 0,
+      "usageOff": 0
+    },
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TYZB01_hlla45kx",
+      "_TZ1800_AKZVKZQQ",
+      "_TZ1800_HO6I0ZK9",
+      "_TZ3000_00MK2XZY",
+      "_TZ3000_0HKMCRZA",
+      "_TZ3000_18EJXNO0",
+      "_TZ3000_1BWPJVLZ",
+      "_TZ3000_1O6X1BL0",
+      "_TZ3000_266AZBG3",
+      "_TZ3000_26GJLUGM",
+      "_TZ3000_2PUTQRMW",
+      "_TZ3000_2UOLLQ9D",
+      "_TYZB01_4mdqxxnn",
+      "_TYZB01_m6ec2pgj",
+      "_TYZB01_rifa0wlb",
+      "_TZ3000_2XLVLNEZ",
+      "_TZ3000_2XLVLNVP",
+      "_TZ3000_3IAS4W4O",
+      "_TZ3000_3U4HRIPK",
+      "_TZ3000_3UIMVKN6",
+      "_TZ3000_402VRQ2I",
+      "_TZ3000_4RBQGCUV",
+      "_TZ3000_4UX0ONDB",
+      "_TZ3000_5CT6E7YE",
+      "_TZ3000_5F43H46R",
+      "_TZ3000_5FTKAULG",
+      "_TZ3000_6L1PJFQE",
+      "_TZ3000_7JX5YPRA",
+      "_TZ3000_88IQNHVD",
+      "_TZ3000_8N7LQBM0",
+      "_TZ3000_8UXXZZ4B",
+      "_TZ3000_9HPXG80K",
+      "_TZ3000_AKQDG6G7",
+      "_TZ3000_AU2O5E6Q",
+      "_TZ3000_BGSIGERS",
+      "_TZ3000_BGUSER20",
+      "_TZ3000_BJAWZODF",
+      "_TZ3000_BZZGVET0",
+      "_TZ3000_C8ZFAD4A",
+      "_TZ3000_CET6CH1R",
+      "_TZ3000_CICWJQTH",
+      "_TZ3000_CQLNSWN0",
+      "_TZ3000_CYGCAXVV",
+      "_TZ3000_DD8WWZCY",
+      "_TZ3000_DKSBTRZS",
+      "_TZ3000_DVQT7QRW",
+      "_TZ3000_EQSAIR32",
+      "_TZ3000_F09J9QJB",
+      "_TZ3000_F2BW0B6K",
+      "_TZ3000_FDXIHPP7",
+      "_TZ3000_FIE1DPKM",
+      "_TZ3000_FLLYGHYJ",
+      "_TZ3000_FUKAA7NC",
+      "_TZ3000_G1PZICMQ",
+      "_TZ3000_HDC8BBHA",
+      "_TZ3000_HY6NCVMW",
+      "_TZ3000_IIACQPDZ",
+      "_TZ3000_IMACCZTN",
+      "_TZ3000_IRWUZILV",
+      "_TZ3000_ISZEGWPD",
+      "_TZ3000_ITB0OMHV",
+      "_TZ3000_J1V25L17",
+      "_TZ3000_JAK16DLL",
+      "_TZ3000_JL7QYUPF",
+      "_TZ3000_KMSBWDOL",
+      "_TZ3000_KVWRDF47",
+      "_TZ3000_LMCP6B0A",
+      "_TZ3000_LMLSDUWS",
+      "_TZ3000_LQB7LCQ9",
+      "_TZ3000_LY9APZKY",
+      "_TZ3000_M8F3Z8JU",
+      "_TZ3000_MRPEVH8P",
+      "_TZ3000_MTNPT6WS",
+      "_TZ3000_MVVW8WNX",
+      "_TZ3000_NKCOBIES",
+      "_TZ3000_NPG02XFT",
+      "_TZ3000_NSA76JAI",
+      "_TZ3000_O005NUXX",
+      "_TZ3000_OKOHWWAP",
+      "_TZ3000_OS0WY3VH",
+      "_TZ3000_OVYAISIP",
+      "_TZ3000_P26FLEK3",
+      "_TZ3000_PFC7I3KT",
+      "_TZ3000_PJCQJTEV",
+      "_TZ3000_PK8TGTDB",
+      "_TZ3000_PLYVNUF5",
+      "_TZ3000_PRITS6G4",
+      "_TZ3000_QAAYSLLP",
+      "_TZ3000_QCDQW8NF",
+      "_TZ3000_QXCNWV26",
+      "_TZ3000_RDHUKKMI",
+      "_TZ3000_RULDV5DT",
+      "_TZ3000_S6MA1NH4",
+      "_TZ3000_SKUEEKG3",
+      "_TZ3000_TQLV4UG4",
+      "_TZ3000_TSGQXDB4",
+      "_TZ3000_U3OUPGDY",
+      "_TZ3000_U5U4CAKC",
+      "_TZ3000_UNW0HPDV",
+      "_TZ3000_UPJRXMSR",
+      "_TZ3000_V1W2K9DD",
+      "_TZ3000_VJHCENZO",
+      "_TZ3000_VN88EZAR",
+      "_TZ3000_VSJ5O7DM",
+      "_TZ3000_W05EXIF3",
+      "_TZ3000_W0YPWA1F",
+      "_TZ3000_WAHO4JTJ",
+      "_TZ3000_WAMQDR3F",
+      "_TZ3000_WW6DRJA5TS011F",
+      "_TZ3000_WZMUK9AI",
+      "_TZ3000_X3EWPZYR",
+      "_TZ3000_XR3HTD96",
+      "_TZ3000_XYZ",
+      "_TZ3000_Y4ONA9ME",
+      "_TZ3000_YERVJNLJ",
+      "_TZ3000_YSDV91BK",
+      "_TZ3000_YUJKCHBZ",
+      "_TZ3000_YWAGC4RJ",
+      "_TZ3000_YWUBFUVT",
+      "_TZ3000_ZGTBI4OY",
+      "_TZ3000_ZL1KMJQX",
+      "_TZ3000_ZMY4LSLW",
+      "_TZ3000_ZXRFOBZW",
+      "_TZ3210_1AC",
+      "_TZ3210_2AC",
+      "_TZ3210_4UX0ONDB",
+      "_TZ3210_7JNK7L3K",
+      "_TZ3210_FGWHJM9J",
+      "_TZ3210_PFBZS1AN",
+      "_TZ3218_HDC8BBHA",
+      "_TZ3290_JXVZQATWGSAQZX1U",
+      "_TZ3290_LYPNQVLEM5EQ1REE",
+      "_TZ3290_XJPBCXN92AAXVMLZ",
+      "_TZ3290_YAC64INUDPOVOABA",
+      "eWeLi\\u0001\\u0000\\u0010",
+      "_TYZB01_7yidyqxd",
+      "_TYZB01_ijihzffk",
+      "_TYZB01_mtunwanm",
+      "_TZ3000_GAZJNGJL",
+      "_TZE200_ABATW3KJ",
+      "_TZE284_XNWXMJ8Z",
+      "_tyzb01_4mdqxxnn",
+      "_tyzb01_7yidyqxd",
+      "_tyzb01_hlla45kx",
+      "_tyzb01_ijihzffk",
+      "_tyzb01_m6ec2pgj",
+      "_tyzb01_mtunwanm",
+      "_tyzb01_rifa0wlb"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0111",
+      "TS0115",
+      "TS0121",
+      "TS0218",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820,
+          61184
+        ],
+        "bindings": [
+          1,
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/plug_smart/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "power_source",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "ac",
+          "label": {
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
+    },
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA",
+            "fr": "AAA"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA",
+            "fr": "AA"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A",
+            "fr": "CR123A"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "optimization_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+      }
+    },
+    {
+      "id": "enable_power_estimation",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Power Estimation",
+        "fr": "Activer Estimation Puissance"
+      },
+      "value": true,
+      "hint": {
+        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    },
+    {
+      "id": "power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Measurement Scale",
+        "fr": "Échelle Mesure Puissance"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.001",
+          "label": {
+            "en": "÷1000 (mW → W)",
+            "fr": "÷1000 (mW → W)"
+          }
+        },
+        {
+          "id": "0.01",
+          "label": {
+            "en": "÷100",
+            "fr": "÷100"
+          }
+        },
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (Par défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        },
+        {
+          "id": "100",
+          "label": {
+            "en": "×100",
+            "fr": "×100"
+          }
+        },
+        {
+          "id": "1000",
+          "label": {
+            "en": "×1000 (kW → W)",
+            "fr": "×1000 (kW → W)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Adjust if power readings are way off. Some devices report in different units.",
+        "fr": "Ajuster si les mesures de puissance sont incorrectes. Certains appareils utilisent des unités différentes."
+      }
+    },
+    {
+      "id": "energy_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Measurement Scale",
+        "fr": "Échelle Mesure Énergie"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.001",
+          "label": {
+            "en": "÷1000 (Wh → kWh)",
+            "fr": "÷1000 (Wh → kWh)"
+          }
+        },
+        {
+          "id": "0.01",
+          "label": {
+            "en": "÷100",
+            "fr": "÷100"
+          }
+        },
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (Par défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        },
+        {
+          "id": "100",
+          "label": {
+            "en": "×100",
+            "fr": "×100"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Adjust if energy readings are way off (e.g., Christmas bulb more expensive than whole house).",
+        "fr": "Ajuster si les mesures d'énergie sont incorrectes (ex: ampoule Noël plus chère que toute la maison)."
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "plug_power_changed",
+        "title": {
+          "en": "Power changed",
+          "fr": "Puissance changée"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)",
+              "fr": "Puissance (W)"
+            },
+            "example": 150
+          }
+        ]
+      },
+      {
+        "id": "plug_power_above",
+        "title": {
+          "en": "Power exceeds threshold",
+          "fr": "Puissance dépasse le seuil"
+        },
+        "titleFormatted": {
+          "en": "Power exceeds [[threshold]] W",
+          "fr": "Puissance dépasse [[threshold]] W"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 5000,
+            "step": 10,
+            "placeholder": {
+              "en": "1000"
+            }
+          }
+        ]
+      },
+      {
+        "id": "plug_standby_entered",
+        "title": {
+          "en": "Device entered standby",
+          "fr": "Appareil en veille"
+        }
+      },
+      {
+        "id": "plug_standby_exited",
+        "title": {
+          "en": "Device exited standby",
+          "fr": "Appareil sorti de veille"
+        }
+      },
+      {
+        "id": "plug_overload",
+        "title": {
+          "en": "Overload detected",
+          "fr": "Surcharge détectée"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)",
+              "fr": "Puissance (W)"
+            },
+            "example": 3500
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "plug_power_is",
+        "title": {
+          "en": "Power is !{{above|below}} threshold",
+          "fr": "Puissance est !{{au-dessus|en-dessous}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "Power is !{{above|below}} [[threshold]] W",
+          "fr": "Puissance est !{{au-dessus|en-dessous de}} [[threshold]] W"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 5000,
+            "step": 10,
+            "placeholder": {
+              "en": "100"
+            }
+          }
+        ]
+      },
+      {
+        "id": "plug_in_standby",
+        "title": {
+          "en": "Device !{{is|isn't}} in standby",
+          "fr": "Appareil !{{est|n'est pas}} en veille"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "plug_reset_meter",
+        "title": {
+          "en": "Reset energy meter",
+          "fr": "Réinitialiser compteur énergie"
+        }
+      }
+    ]
+  },
+  "images": {
+    "small": "drivers/plug_smart/assets/images/small.png",
+    "large": "drivers/plug_smart/assets/images/large.png",
+    "xlarge": "drivers/plug_smart/assets/images/xlarge.png"
+  },
+  "id": "plug_smart",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}
