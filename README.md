@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.436** | 🎮 FORUM #890: Added TS004F 4-button scene switch support. Added 8 new manufa... |
 | **v5.5.435** | 🧠 INTELLIGENT AUTO-DISCOVERY: Added smart DP auto-detection for unknown rada... |
 | **v5.5.434** | 🔥 FORUM FIXES: Jolink smoke detector PG-S11Z pairing fix (added IAS Zone clu... |
 | **v5.5.433** | 📱 FORUM #884: Added 15+ new 2-gang touch dimmer fingerprints (Moes, Girier, ... |
@@ -78,7 +79,6 @@
 | **v5.5.429** | 🔄 MASSIVE RESTORATION: Added 2094 orphaned manufacturerNames back to drivers... |
 | **v5.5.428** | 📋 FORUM #880: Added BSEED 4-gang switch support (TS0726, _TZ3002_pzao9ls1). ... |
 | **v5.5.427** | 🔧 GitHub #77 FIX: Cleaned thermostat_tuya_dp driver (removed 47 uppercase du... |
-| **v5.5.426** | 📋 FORUM REQUESTS: Added _TZ321C_fkzihaxe8 (TS0225 Wenzhi presence sensor fro... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
