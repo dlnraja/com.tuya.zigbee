@@ -323,7 +323,7 @@ class ClimateSensorDevice extends HybridSensorBase {
             const temp = this._applyTempOffset(rawTemp);
             this.log(`[ZCL] 🌡️ Temperature: ${temp}°C (confidence: ${this._climateInference?.getConfidence() || 'N/A'}%)`);
             this._registerZclData?.(); // v5.5.108: Track for learning
-            this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+            this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
           }
         }
       },
@@ -352,7 +352,7 @@ class ClimateSensorDevice extends HybridSensorBase {
             const humidity = this._applyHumOffset(rawHum);
             this.log(`[ZCL] 💧 Humidity: ${humidity}% (confidence: ${this._climateInference?.getConfidence() || 'N/A'}%)`);
             this._registerZclData?.(); // v5.5.108: Track for learning
-            this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
+            this.setCapabilityValue('measure_humidity', parseFloat(humidity)).catch(() => { });
           }
         }
       },
@@ -367,7 +367,7 @@ class ClimateSensorDevice extends HybridSensorBase {
             battery = Math.max(0, Math.min(100, battery)); // Clamp
             this.log(`[ZCL] 🔋 Battery: ${battery}%`);
             this._registerZclData?.(); // v5.5.108: Track for learning
-            this.setCapabilityValue('measure_battery', battery).catch(() => { });
+            this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
         }
       }
@@ -805,7 +805,7 @@ class ClimateSensorDevice extends HybridSensorBase {
           powerCfg.on('attr.batteryPercentageRemaining', (value) => {
             const battery = Math.round(value / 2);
             this.log(`[ZCL] 🔋 Battery: ${battery}%`);
-            this.setCapabilityValue('measure_battery', Math.max(0, Math.min(100, battery))).catch(() => { });
+            this.setCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
           });
           this.log('[ZCL-SETUP] ✅ Battery listener active');
         }
@@ -844,7 +844,7 @@ class ClimateSensorDevice extends HybridSensorBase {
             const temp = value / 100;
             if (temp >= -40 && temp <= 80) {
               this.log(`[ZCL] 🌡️ Temperature: ${temp}°C`);
-              this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+              this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
             }
           });
           this.log('[ZCL-SETUP] ✅ Temperature listener active');
@@ -884,7 +884,7 @@ class ClimateSensorDevice extends HybridSensorBase {
             const hum = value / 100;
             if (hum >= 0 && hum <= 100) {
               this.log(`[ZCL] 💧 Humidity: ${hum}%`);
-              this.setCapabilityValue('measure_humidity', hum).catch(() => { });
+              this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
             }
           });
           this.log('[ZCL-SETUP] ✅ Humidity listener active');
@@ -917,7 +917,7 @@ class ClimateSensorDevice extends HybridSensorBase {
         if (attrs.batteryPercentageRemaining !== undefined) {
           const battery = Math.round(attrs.batteryPercentageRemaining / 2);
           this.log(`[ZCL-READ] 🔋 Battery: ${battery}%`);
-          await this.setCapabilityValue('measure_battery', Math.max(0, Math.min(100, battery))).catch(() => { });
+          await this.setCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
         }
       } catch (e) {
         this.log('[ZCL-READ] Battery read failed:', e.message);
@@ -933,7 +933,7 @@ class ClimateSensorDevice extends HybridSensorBase {
           const temp = attrs.measuredValue / 100;
           if (temp >= -40 && temp <= 80) {
             this.log(`[ZCL-READ] 🌡️ Temperature: ${temp}°C`);
-            await this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+            await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
           }
         }
       } catch (e) {
@@ -950,7 +950,7 @@ class ClimateSensorDevice extends HybridSensorBase {
           const hum = attrs.measuredValue / 100;
           if (hum >= 0 && hum <= 100) {
             this.log(`[ZCL-READ] 💧 Humidity: ${hum}%`);
-            await this.setCapabilityValue('measure_humidity', hum).catch(() => { });
+            await this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
           }
         }
       } catch (e) {

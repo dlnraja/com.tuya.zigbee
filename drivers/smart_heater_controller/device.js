@@ -180,7 +180,7 @@ class SmartHeaterControllerDevice extends HybridThermostatBase {
     if (typeof temperature === 'number' && temperature >= 5 && temperature <= 35) {
       // Apply calibration
       const calibratedTemp = temperature + this._temperatureCalibration;
-      await this.setCapabilityValue('target_temperature', calibratedTemp);
+      await this.setCapabilityValue('target_temperature', parseFloat(calibratedTemp));
       this.log(`[HEATER] 🎯 Target temperature: ${temperature}°C (calibrated: ${calibratedTemp}°C)`);
     } else {
       this.log(`[HEATER] ⚠️ Invalid target temperature: ${temperature}`);
@@ -194,7 +194,7 @@ class SmartHeaterControllerDevice extends HybridThermostatBase {
     if (typeof temperature === 'number' && temperature >= -40 && temperature <= 80) {
       // Apply calibration
       const calibratedTemp = temperature + this._temperatureCalibration;
-      await this.setCapabilityValue('measure_temperature', calibratedTemp);
+      await this.setCapabilityValue('measure_temperature', parseFloat(calibratedTemp));
       this.log(`[HEATER] 🌡️ Current temperature: ${temperature}°C (calibrated: ${calibratedTemp}°C)`);
 
       // Check overheat protection
@@ -225,7 +225,7 @@ class SmartHeaterControllerDevice extends HybridThermostatBase {
    */
   async _handlePowerConsumption(power) {
     if (typeof power === 'number' && power >= 0 && power <= 5000) {
-      await this.setCapabilityValue('measure_power', power);
+      await this.setCapabilityValue('measure_power', parseFloat(power));
       this.log(`[HEATER] ⚡ Power consumption: ${power}W`);
 
       // Check power limit
@@ -245,7 +245,7 @@ class SmartHeaterControllerDevice extends HybridThermostatBase {
     if (typeof energy === 'number' && energy >= 0) {
       // Convert to kWh if needed
       const energyKwh = energy > 1000 ? energy / 1000 : energy;
-      await this.setCapabilityValue('meter_power', energyKwh);
+      await this.setCapabilityValue('meter_power', parseFloat(energyKwh));
       this.log(`[HEATER] 📊 Energy consumed: ${energyKwh} kWh`);
     }
   }

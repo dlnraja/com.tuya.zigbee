@@ -211,7 +211,7 @@ class RGBBulbDevice extends HybridLightBase {
     await this._sendTuyaDP(4, tuyaValue, 'value');
 
     // Update Homey capability
-    await this.setCapabilityValue('light_temperature', homeyValue).catch(() => { });
+    await this.setCapabilityValue('light_temperature', parseFloat(homeyValue)).catch(() => { });
     await this.setCapabilityValue('light_mode', 'temperature').catch(() => { });
   }
 

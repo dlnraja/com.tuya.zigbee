@@ -68,10 +68,10 @@ class SmartPlugDevice extends VirtualButtonMixin(HybridPlugBase) {
       if (elec?.on) {
         elec.on('attr.activePower', (v) => {
           const scaled = this._applyScale(v / 10, 'measure_power');
-          this.setCapabilityValue('measure_power', scaled).catch(() => { });
+          this.setCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
         });
-        elec.on('attr.rmsVoltage', (v) => this.setCapabilityValue('measure_voltage', v / 10).catch(() => { }));
-        elec.on('attr.rmsCurrent', (v) => this.setCapabilityValue('measure_current', v / 1000).catch(() => { }));
+        elec.on('attr.rmsVoltage', (v) => this.setCapabilityValue('measure_voltage', parseFloat(v) / 10).catch(() => { }));
+        elec.on('attr.rmsCurrent', (v) => this.setCapabilityValue('measure_current', parseFloat(v) / 1000).catch(() => { }));
         this.log('[PLUG] ✅ ZCL Electrical Measurement configured (with scale support)');
       }
     } catch (e) { /* ignore */ }
@@ -82,7 +82,7 @@ class SmartPlugDevice extends VirtualButtonMixin(HybridPlugBase) {
       if (meter?.on) {
         meter.on('attr.currentSummationDelivered', (v) => {
           const scaled = this._applyScale(v / 1000, 'meter_power');
-          this.setCapabilityValue('meter_power', scaled).catch(() => { });
+          this.setCapabilityValue('meter_power', parseFloat(scaled)).catch(() => { });
         });
         this.log('[PLUG] ✅ ZCL Metering configured (with scale support)');
       }

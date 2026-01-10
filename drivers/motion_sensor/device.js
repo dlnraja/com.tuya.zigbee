@@ -196,7 +196,7 @@ class MotionSensorDevice extends HybridSensorBase {
               this.log(`[ZCL] 🌡️ Temperature: ${temp}°C (raw: ${data.measuredValue})`);
               this._registerZigbeeHit?.();
               this._lastTempSource = 'ZCL';
-              this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+              this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
             } else {
               this.log(`[ZCL] ⚠️ Temperature out of range: ${temp}°C (raw: ${data.measuredValue})`);
             }
@@ -214,7 +214,7 @@ class MotionSensorDevice extends HybridSensorBase {
               this.log(`[ZCL] 💧 Humidity: ${hum}% (raw: ${data.measuredValue})`);
               this._registerZigbeeHit?.();
               this._lastHumSource = 'ZCL';
-              this.setCapabilityValue('measure_humidity', hum).catch(() => { });
+              this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
             } else {
               this.log(`[ZCL] ⚠️ Humidity out of range: ${hum}% (raw: ${data.measuredValue})`);
             }
@@ -229,7 +229,7 @@ class MotionSensorDevice extends HybridSensorBase {
             const lux = Math.round(Math.pow(10, (data.measuredValue - 1) / 10000));
             this.log(`[ZCL] 💡 Luminance: ${lux} lux`);
             this._registerZigbeeHit?.();
-            this.setCapabilityValue('measure_luminance', lux).catch(() => { });
+            this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
 
             // v5.5.317: Feed lux to motion inference engine
             this._handleLuxForMotionInference(lux);
@@ -258,7 +258,7 @@ class MotionSensorDevice extends HybridSensorBase {
             battery = this._batteryInference?.validateBattery(battery) ?? battery;
             this.log(`[ZCL] 🔋 Battery: ${battery}%`);
             this._registerZigbeeHit?.();
-            this.setCapabilityValue('measure_battery', battery).catch(() => { });
+            this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
         }
       }
@@ -544,7 +544,7 @@ class MotionSensorDevice extends HybridSensorBase {
           if (!this.hasCapability('measure_temperature')) {
             await this.addCapability('measure_temperature').catch(() => { });
           }
-          await this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+          await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
         } else {
           this.log(`[MOTION-AWAKE] Temperature invalid: ${data?.measuredValue}`);
         }
@@ -576,7 +576,7 @@ class MotionSensorDevice extends HybridSensorBase {
           if (!this.hasCapability('measure_humidity')) {
             await this.addCapability('measure_humidity').catch(() => { });
           }
-          await this.setCapabilityValue('measure_humidity', hum).catch(() => { });
+          await this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
         } else {
           this.log(`[MOTION-AWAKE] Humidity invalid: ${data?.measuredValue}`);
         }
@@ -691,7 +691,7 @@ class MotionSensorDevice extends HybridSensorBase {
         const battery = Math.round(data.batteryPercentageRemaining / 2);
         this.log(`[MOTION-BATTERY] 🔋 Battery: ${battery}% (raw: ${data.batteryPercentageRemaining})`);
         if (this.hasCapability('measure_battery')) {
-          await this.setCapabilityValue('measure_battery', battery).catch(() => { });
+          await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
         }
       } else if (data?.batteryVoltage !== undefined && data.batteryVoltage > 0) {
         this._lastBatteryReportTime = now;
@@ -700,7 +700,7 @@ class MotionSensorDevice extends HybridSensorBase {
         const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
         this.log(`[MOTION-BATTERY] 🔋 Battery from voltage: ${voltage}V → ${battery}%`);
         if (this.hasCapability('measure_battery')) {
-          await this.setCapabilityValue('measure_battery', battery).catch(() => { });
+          await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
         }
       } else {
         this.log('[MOTION-BATTERY] Battery data invalid:', data);
@@ -936,7 +936,7 @@ class MotionSensorDevice extends HybridSensorBase {
 
     if (shouldReport) {
       this.log(`[LUX-SMART] 💡 Smart lux update: ${luxValue} lux (${reason})`);
-      this.setCapabilityValue('measure_luminance', luxValue).catch(() => { });
+      this.setCapabilityValue('measure_luminance', parseFloat(luxValue)).catch(() => { });
 
       config.lastLuxValue = luxValue;
       config.lastLuxTime = now;

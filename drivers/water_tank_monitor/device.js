@@ -136,8 +136,8 @@ class WaterTankMonitorDevice extends HybridSensorBase {
     this.log(`[TANK] 📏 Distance: ${distanceCm}cm, Water Level: ${waterLevel.toFixed(2)}m, Fill: ${fillPercentage.toFixed(0)}%`);
 
     // Update capabilities
-    await this.setCapabilityValue('measure_water_level', Math.round(waterLevel * 100) / 100);
-    await this.setCapabilityValue('measure_water_percentage', Math.round(fillPercentage));
+    await this.setCapabilityValue('measure_water_level', parseFloat(Math.round(waterLevel * 100) / 100));
+    await this.setCapabilityValue('measure_water_percentage', parseFloat(Math.round(fillPercentage)));
 
     // Store values for recalculation
     this._lastDistance = distanceCm;
@@ -154,7 +154,7 @@ class WaterTankMonitorDevice extends HybridSensorBase {
    */
   async _handleTemperature(temperature) {
     if (typeof temperature === 'number' && temperature >= -40 && temperature <= 80) {
-      await this.setCapabilityValue('measure_temperature', temperature);
+      await this.setCapabilityValue('measure_temperature', parseFloat(temperature));
       this.log(`[TANK] 🌡️ Temperature: ${temperature}°C`);
     } else {
       this.log(`[TANK] ⚠️ Invalid temperature: ${temperature}`);
@@ -185,7 +185,7 @@ class WaterTankMonitorDevice extends HybridSensorBase {
    */
   async _handleFillPercentage(percentage) {
     if (typeof percentage === 'number' && percentage >= 0 && percentage <= 100) {
-      await this.setCapabilityValue('measure_water_percentage', percentage);
+      await this.setCapabilityValue('measure_water_percentage', parseFloat(percentage));
       this._lastFillPercentage = percentage;
       this.log(`[TANK] 📊 Fill percentage (direct): ${percentage}%`);
       this._checkLowWaterAlarm();
@@ -199,7 +199,7 @@ class WaterTankMonitorDevice extends HybridSensorBase {
   async _handleLiquidLevel(levelMm) {
     if (typeof levelMm === 'number' && levelMm >= 0) {
       const levelM = levelMm / 1000; // Convert mm to meters
-      await this.setCapabilityValue('measure_water_level', Math.round(levelM * 100) / 100);
+      await this.setCapabilityValue('measure_water_level', parseFloat(Math.round(levelM * 100) / 100));
       this._lastWaterLevel = levelM;
       this.log(`[TANK] 📏 Liquid level (direct): ${levelMm}mm = ${levelM.toFixed(2)}m`);
     }

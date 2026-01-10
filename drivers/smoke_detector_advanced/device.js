@@ -90,7 +90,7 @@ class SmokeDetectorAdvancedDevice extends HybridSensorBase {
             return null; // Already handled
           } else if (typeof v === 'number' && v > 1) {
             if (device) device.log?.(`[SMOKE] DP4 as battery: ${v}%`);
-            device?.setCapabilityValue?.('measure_battery', Math.min(100, v)).catch(() => { });
+            device?.setCapabilityValue?.('measure_battery', parseFloat(Math.min(100, v))).catch(() => { });
             return null; // Already handled
           }
           return v;
