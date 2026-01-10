@@ -397,6 +397,19 @@
         "en": "Time to wait before confirming state change (0=disabled). Increase for unstable sensors.",
         "fr": "Temps d'attente avant de confirmer un changement d'état (0=désactivé). Augmenter pour capteurs instables."
       }
+    },
+    {
+      "id": "reverse_alarm",
+      "type": "checkbox",
+      "label": {
+        "en": "Reverse alarm logic",
+        "nl": "Alarm logica omkeren"
+      },
+      "hint": {
+        "en": "Swap open/closed states if sensor reports inverted",
+        "nl": "Wissel open/gesloten om indien sensor omgekeerd rapporteert"
+      },
+      "value": false
     }
   ],
   "flow": {

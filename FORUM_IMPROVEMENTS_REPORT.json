@@ -1,0 +1,101 @@
+{
+  "stats": {
+    "energyScaling": {
+      "added": 2,
+      "skipped": 0
+    },
+    "climateOffset": {
+      "added": 2,
+      "skipped": 1
+    },
+    "contactReverse": {
+      "added": 1,
+      "skipped": 0
+    },
+    "curtainMaintenance": {
+      "added": 2,
+      "skipped": 0
+    },
+    "dimmerSpeed": {
+      "added": 1,
+      "skipped": 0
+    }
+  },
+  "details": {
+    "energyScaling": [
+      {
+        "driver": "plug_smart",
+        "added": true,
+        "settings": [
+          "voltage_scale",
+          "current_scale",
+          "power_scale"
+        ]
+      },
+      {
+        "driver": "usb_outlet_advanced",
+        "added": true,
+        "settings": [
+          "voltage_scale",
+          "current_scale",
+          "power_scale"
+        ]
+      }
+    ],
+    "climateOffset": [
+      {
+        "driver": "air_quality_co2",
+        "added": true,
+        "settings": [
+          "temperature_offset",
+          "humidity_offset"
+        ]
+      },
+      {
+        "driver": "climate_sensor",
+        "added": true,
+        "settings": [
+          "temperature_offset",
+          "humidity_offset"
+        ]
+      }
+    ],
+    "contactReverse": [
+      {
+        "driver": "contact_sensor",
+        "added": true,
+        "settings": [
+          "reverse_alarm"
+        ]
+      }
+    ],
+    "curtainMaintenance": [
+      {
+        "driver": "curtain_motor",
+        "added": true,
+        "actions": [
+          "curtain_calibrate",
+          "curtain_reset_position"
+        ]
+      },
+      {
+        "driver": "curtain_motor_tilt",
+        "added": true,
+        "actions": [
+          "curtain_calibrate",
+          "curtain_reset_position"
+        ]
+      }
+    ],
+    "dimmerSpeed": [
+      {
+        "driver": "dimmer_wall_1gang",
+        "added": true,
+        "settings": [
+          "dim_speed"
+        ]
+      }
+    ]
+  },
+  "timestamp": "2026-01-10T06:26:43.742Z"
+}

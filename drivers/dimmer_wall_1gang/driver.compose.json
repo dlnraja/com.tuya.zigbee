@@ -384,6 +384,49 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "dim_speed",
+      "type": "dropdown",
+      "label": {
+        "en": "Dimming speed",
+        "nl": "Dim snelheid"
+      },
+      "hint": {
+        "en": "Transition time when dimming",
+        "nl": "Overgangs tijd bij dimmen"
+      },
+      "value": "medium",
+      "values": [
+        {
+          "id": "instant",
+          "label": {
+            "en": "Instant",
+            "nl": "Direct"
+          }
+        },
+        {
+          "id": "fast",
+          "label": {
+            "en": "Fast (0.5s)",
+            "nl": "Snel (0.5s)"
+          }
+        },
+        {
+          "id": "medium",
+          "label": {
+            "en": "Medium (2s)",
+            "nl": "Gemiddeld (2s)"
+          }
+        },
+        {
+          "id": "slow",
+          "label": {
+            "en": "Slow (5s)",
+            "nl": "Langzaam (5s)"
+          }
+        }
+      ]
     }
   ],
   "flow": {
