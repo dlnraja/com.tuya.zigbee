@@ -630,21 +630,11 @@ class ClimateSensorDevice extends HybridSensorBase {
       this.log(`[CLIMATE] 🔥 Local: ${now.toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}`);
       this.log(`[CLIMATE] 🔥 Format: ${userTimeFormat}, TZ: ${userTimezone} (${timezoneMinutes} min)`);
 
-      // Use TuyaEF00Manager's enhanced sendTimeSync with forced parameters
-      const tuyaManager = this._getTuyaManager();
-      if (!tuyaManager || typeof tuyaManager.sendTimeSync !== 'function') {
-        this.log('[CLIMATE] ❌ TuyaEF00Manager not available for forced sync');
-        return false;
-      }
-
-      // v5.5.384: FORCED sync with user-configurable format and timezone
-      const result = await tuyaManager.sendTimeSync(this.zclNode, {
-        timeFormat: userTimeFormat,  // User-selected or auto
-        timezoneMinutes: timezoneMinutes,
-        forceSync: true,           // BYPASS all conditions - FORCE sync
-        useExtendedPayload: true,  // 12-byte payload for LCD climate sensors
-        sendTimeValidDP: true,     // Send DP 0x65/0x66/0x6A to enable LCD display
-        logPrefix: '[CLIMATE-FORCED]'
+      // v5.5.437: Use syncDeviceTimeTuya directly (fix _getTuyaManager not a function)
+      const result = await syncDeviceTimeTuya(this, {
+        logPrefix: '[CLIMATE-FORCED]',
+        useTuyaEpoch: true,  // LCD displays need Tuya epoch (2000)
+        timezoneMinutes: timezoneMinutes
       });
 
       if (result) {
@@ -701,33 +691,17 @@ class ClimateSensorDevice extends HybridSensorBase {
       this.log(`[CLIMATE] 🕐 Local: ${now.toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}`);
       this.log(`[CLIMATE] 🕐 TZ offset: GMT${timezoneMinutes >= 0 ? '+' : ''}${timezoneMinutes / 60}`);
 
-      // v5.5.384: Use TuyaEF00Manager if available with user settings
-      const tuyaManager = this._getTuyaManager();
-      if (tuyaManager && typeof tuyaManager.sendTimeSync === 'function') {
-        const result = await tuyaManager.sendTimeSync(this.zclNode, {
-          timeFormat: userTimeFormat,
-          timezoneMinutes: timezoneMinutes,
-          useTuyaEpoch: useTuyaEpoch,
-          logPrefix: '[CLIMATE]'
-        });
+      // v5.5.437: Use syncDeviceTimeTuya directly (fix _getTuyaManager not a function)
+      const result = await syncDeviceTimeTuya(this, {
+        logPrefix: '[CLIMATE]',
+        useTuyaEpoch: useTuyaEpoch,
+        timezoneMinutes: timezoneMinutes
+      });
 
-        if (result) {
-          this.log('[CLIMATE] ✅ Time sync sent successfully!');
-        } else {
-          this.log('[CLIMATE] ⚠️ Time sync could not be delivered (device may be sleeping)');
-        }
+      if (result) {
+        this.log('[CLIMATE] ✅ Time sync sent successfully!');
       } else {
-        // Fallback to legacy syncDeviceTimeTuya
-        const result = await syncDeviceTimeTuya(this, {
-          logPrefix: '[CLIMATE]',
-          useTuyaEpoch: useTuyaEpoch
-        });
-
-        if (result) {
-          this.log('[CLIMATE] ✅ Time sync sent successfully (legacy)!');
-        } else {
-          this.log('[CLIMATE] ⚠️ Time sync could not be delivered (device may be sleeping)');
-        }
+        this.log('[CLIMATE] ⚠️ Time sync could not be delivered (device may be sleeping)');
       }
     } catch (err) {
       this.log('[CLIMATE] ❌ Time sync failed:', err.message);

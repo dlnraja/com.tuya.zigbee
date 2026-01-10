@@ -1,4 +1,10 @@
 {
+  "5.5.437": {
+    "en": "🔧 DIAGNOSTIC FIX: Climate sensor LCD time sync fixed (_getTuyaManager error). Added Tuya cluster 61184 for TS0601. Flow card registration wrapped in try-catch to prevent crashes.",
+    "fr": "🔧 CORRECTION DIAGNOSTIC: Sync heure LCD capteur climatique corrigé. Cluster Tuya 61184 ajouté pour TS0601. Enregistrement flow cards protégé.",
+    "nl": "🔧 DIAGNOSTIC FIX: LCD klimaatsensor tijdsync gerepareerd. Tuya cluster 61184 toegevoegd voor TS0601. Flow card registratie beschermd.",
+    "de": "🔧 DIAGNOSE-FIX: LCD Klimasensor Zeitsync behoben. Tuya Cluster 61184 für TS0601 hinzugefügt. Flow Card Registrierung abgesichert."
+  },
   "5.5.436": {
     "en": "🎮 FORUM #890: Added TS004F 4-button scene switch support. Added 8 new manufacturerNames (_TZ3000_4fjiwweb, _TZ3000_abrsvsou, _TZ3000_ja5osu5g, etc). Sleepy device pairing: hold button during add.",
     "fr": "🎮 FORUM #890: Support interrupteur scène 4 boutons TS004F. 8 nouveaux manufacturerNames. Appairage: maintenir bouton pendant ajout.",
