@@ -679,15 +679,16 @@ class ClimateSensorDevice extends HybridSensorBase {
           // Calculate local time with timezone offset
           const localSeconds = utcSeconds + (timezoneMinutes * 60);
 
-          // Build raw Tuya mcuSyncTime frame: [seqHi][seqLo][0x24][payloadLen:2][Local:4][UTC:4]
+          // v5.5.446: Build raw Tuya mcuSyncTime frame: [seqHi][seqLo][0x24][payloadLen:2][UTC:4][Local:4]
+          // Z2M format: UTC FIRST, Local SECOND (see zigbee-herdsman-converters/src/lib/tuya.ts)
           const rawFrame = Buffer.alloc(13);
           rawFrame.writeUInt16BE(Date.now() % 65535, 0); // Sequence number
           rawFrame.writeUInt8(0x24, 2);                   // Command: mcuSyncTime
           rawFrame.writeUInt16BE(8, 3);                   // Payload length: 8 bytes
-          rawFrame.writeUInt32BE(localSeconds, 5);        // Local time FIRST (Tuya epoch)
-          rawFrame.writeUInt32BE(utcSeconds, 9);          // UTC time SECOND (Tuya epoch)
+          rawFrame.writeUInt32BE(utcSeconds, 5);          // UTC time FIRST (Z2M format)
+          rawFrame.writeUInt32BE(localSeconds, 9);        // Local time SECOND
 
-          this.log(`[CLIMATE] 🔧 Raw frame attempt: Local=${localSeconds}, UTC=${utcSeconds}`);
+          this.log(`[CLIMATE] 🔧 Raw frame attempt: UTC=${utcSeconds}, Local=${localSeconds}`);
           this.log(`[CLIMATE] 🔧 Frame hex: ${rawFrame.toString('hex')}`);
 
           // Try to send via endpoint
