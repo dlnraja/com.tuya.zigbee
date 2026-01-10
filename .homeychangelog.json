@@ -1,4 +1,10 @@
 {
+  "5.5.435": {
+    "en": "🧠 INTELLIGENT AUTO-DISCOVERY: Added smart DP auto-detection for unknown radar sensors. GitHub #97 fix: Added _TZ321C_fkzihaxe8 Wenzhi TS0225 support. System learns presence/distance/lux patterns automatically.",
+    "fr": "🧠 AUTO-DÉCOUVERTE INTELLIGENTE: Ajouté détection DP automatique pour capteurs radar inconnus. Fix GitHub #97: Support _TZ321C_fkzihaxe8 Wenzhi TS0225. Apprentissage automatique patterns présence/distance/lux.",
+    "nl": "🧠 INTELLIGENTE AUTO-DISCOVERY: Slimme DP auto-detectie voor onbekende radar sensoren toegevoegd. GitHub #97 fix: _TZ321C_fkzihaxe8 Wenzhi TS0225 ondersteuning. Systeem leert automatisch presence/distance/lux patronen.",
+    "de": "🧠 INTELLIGENTE AUTO-ERKENNUNG: Smarte DP-Auto-Erkennung für unbekannte Radar-Sensoren. GitHub #97 Fix: _TZ321C_fkzihaxe8 Wenzhi TS0225 Unterstützung. System lernt automatisch Präsenz/Distanz/Lux-Muster."
+  },
   "5.5.434": {
     "en": "🔥 FORUM FIXES: Jolink smoke detector PG-S11Z pairing fix (added IAS Zone cluster 1280 + bindings). Added _TZE200_5d3vhjro, _TZE200_m9skfctm smoke fingerprints. Rolp switch+temp & soil sensor verified.",
     "fr": "🔥 CORRECTIONS FORUM: Correction appairage détecteur fumée PG-S11Z (cluster IAS Zone 1280). Ajout empreintes fumée _TZE200_5d3vhjro, _TZE200_m9skfctm.",
