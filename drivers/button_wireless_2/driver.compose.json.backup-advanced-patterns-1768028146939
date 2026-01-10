@@ -1,70 +1,38 @@
 {
   "name": {
-    "en": "4-Buttons Wireless Controller",
-    "fr": "4-Boutons Contrôleur Sans Fil",
-    "nl": "4-Knoppen Draadloze Controller",
-    "de": "4-Tasten Drahtlos-Controller",
-    "it": "4-Pulsanti Controller Wireless",
-    "sv": "4-Knappar Trådlös Kontroller",
-    "no": "4-Knapper Trådløs Kontroller",
-    "es": "4-Botones Controlador Inalámbrico",
-    "da": "4-Knapper Trådløs Controller"
+    "en": "2-Buttons Wireless Controller",
+    "fr": "2-Boutons Contrôleur Sans Fil",
+    "nl": "2-Knoppen Draadloze Controller",
+    "de": "2-Tasten Drahtlos-Controller",
+    "it": "2-Pulsanti Controller Wireless",
+    "sv": "2-Knappar Trådlös Kontroller",
+    "no": "2-Knapper Trådløs Kontroller",
+    "es": "2-Botones Controlador Inalámbrico",
+    "da": "2-Knapper Trådløs Controller"
   },
   "class": "button",
   "capabilities": [
-    "button.1",
-    "button.2",
-    "button.3",
-    "button.4",
     "measure_battery"
   ],
   "capabilitiesOptions": {
-    "button.1": {
-      "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1",
-        "nl": "Knop 1",
-        "de": "Taste 1"
-      }
-    },
-    "button.2": {
-      "title": {
-        "en": "Button 2",
-        "fr": "Bouton 2",
-        "nl": "Knop 2",
-        "de": "Taste 2"
-      }
-    },
-    "button.3": {
-      "title": {
-        "en": "Button 3",
-        "fr": "Bouton 3",
-        "nl": "Knop 3",
-        "de": "Taste 3"
-      }
-    },
-    "button.4": {
-      "title": {
-        "en": "Button 4",
-        "fr": "Bouton 4",
-        "nl": "Knop 4",
-        "de": "Taste 4"
-      }
-    },
     "measure_battery": {
       "title": {
         "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
+        "fr": "Contrôleur",
+        "nl": "Draadloze",
+        "de": "Drahtlos-Controller",
+        "it": "Controller",
+        "sv": "Trådlös",
+        "no": "Trådløs",
+        "es": "Controlador",
+        "da": "Trådløs"
       }
     }
   },
   "energy": {
     "batteries": [
       "CR2032",
-      "CR2450",
-      "AAA"
+      "CR2450"
     ],
     "approximation": {
       "usageConstant": 0.5
@@ -72,43 +40,49 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TYZB01_qm6djpta",
-      "_TZ3000_11PG3IMA",
-      "_TZ3000_A4XYCPRS",
-      "_TZ3000_ABCI1HIU",
-      "_TZ3000_B3MGFU0D",
-      "_TZ3000_BGTZM4NY",
-      "_TZ3000_CZUYT8LZ",
-      "_TZ3000_DZIAICT4",
-      "_TZ3000_EE8NRT2L",
-      "_TZ3000_ET7AFZXZ",
-      "_TZ3000_J61X9RXN",
-      "_TZ3000_KFU8ZAPD",
-      "_TZ3000_MH9PX7CQ",
-      "_TZ3000_NUOMBROO",
-      "_TZ3000_PCQJMCUD",
-      "_TZ3000_U3NV1JWK",
-      "_TZ3000_UAA99ARV",
-      "_TZ3000_UFHTXR59",
-      "_TZ3000_W4THIANR",
-      "_TZ3000_XABCKQ1V",
-      "_TZ3040_FWXUZCF4",
-      "_TZ3290_785FBXIK",
-      "_TZ3290_IXD9MVV4",
-      "_TZ3290_NKPXAPOZ",
-      "_TZ3290_YYAX9AJF",
-      "_TZ3000_VP6CLF9D",
-      "_TZ3000_ZGYZGDUA",
-      "_tyzb01_qm6djpta",
-      "_TZ3000_WKAI4GA5",
-      "_TZ3000_5TQXPINE"
+      "_TYZB02_keyjhapk",
+      "_TZ3000_D0YPG4O2",
+      "_TZ3000_FQ1SXFRJ",
+      "_TZ3000_DFGBTUB0"
     ],
     "productId": [
-      "TS0044",
+      "TS0042",
       "TS0601"
     ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          1280,
+          0,
+          1,
+          3
+        ],
+        "bindings": [
+          6,
+          1,
+          1280
+        ]
+      },
+      "2": {
+        "clusters": [
+          0,
+          4,
+          5
+        ],
+        "bindings": [
+          6,
+          1
+        ]
+      }
+    },
     "learnmode": {
-      "image": "/drivers/button_wireless_4/assets/learnmode.svg",
+      "image": "/drivers/button_wireless_2/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
         "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
@@ -120,75 +94,11 @@
         "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
         "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
       }
-    },
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          1,
-          3,
-          4,
-          5,
-          6,
-          8,
-          18,
-          1280
-        ],
-        "bindings": [
-          1,
-          3,
-          5,
-          6,
-          8
-        ]
-      },
-      "2": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          18
-        ],
-        "bindings": [
-          5,
-          6
-        ]
-      },
-      "3": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          18
-        ],
-        "bindings": [
-          5,
-          6
-        ]
-      },
-      "4": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          18
-        ],
-        "bindings": [
-          5,
-          6
-        ]
-      }
     }
   },
   "images": {
-    "small": "drivers/button_wireless_4/assets/images/small.png",
-    "large": "drivers/button_wireless_4/assets/images/large.png"
+    "small": "drivers/button_wireless_2/assets/images/small.png",
+    "large": "drivers/button_wireless_2/assets/images/large.png"
   },
   "platforms": [
     "local"
@@ -419,44 +329,9 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
-    },
-    {
-      "id": "tuya_dp_configuration",
-      "type": "label",
-      "label": {
-        "en": "Tuya Datapoint Configuration",
-        "fr": "Configuration Tuya Datapoint"
-      },
-      "value": "{\n  \"1\": \"button_1_action\",\n  \"2\": \"button_2_action\",\n  \"3\": \"button_3_action\",\n  \"4\": \"button_4_action\",\n  \"101\": \"battery_percentage\"\n}"
-    },
-    {
-      "id": "dp_debug_mode",
-      "type": "checkbox",
-      "label": {
-        "en": "DP Debug Mode",
-        "fr": "Mode Debug DP"
-      },
-      "value": false,
-      "hint": {
-        "en": "Log all Tuya DP data for troubleshooting",
-        "fr": "Logger toutes les données Tuya DP pour diagnostic"
-      }
-    },
-    {
-      "id": "enable_time_sync",
-      "type": "checkbox",
-      "label": {
-        "en": "Enable Time Sync",
-        "fr": "Activer Synchro Heure"
-      },
-      "value": true,
-      "hint": {
-        "en": "Sync device time with Homey",
-        "fr": "Synchroniser l'heure du device avec Homey"
-      }
     }
   ],
-  "id": "button_wireless_4",
+  "id": "button_wireless_2",
   "pair": [
     {
       "id": "list_devices",
@@ -519,28 +394,6 @@
               "en": "Button number"
             },
             "example": 1
-          }
-        ]
-      },
-      {
-        "id": "battery_low",
-        "title": {
-          "en": "Battery low",
-          "nl": "Batterij bijna leeg",
-          "fr": "Batterie faible"
-        },
-        "hint": {
-          "en": "Triggered when battery level drops below threshold",
-          "nl": "Geactiveerd wanneer batterijniveau onder drempel zakt"
-        },
-        "tokens": [
-          {
-            "name": "level",
-            "type": "number",
-            "title": {
-              "en": "Battery level (%)"
-            },
-            "example": 15
           }
         ]
       }

@@ -1,99 +1,66 @@
 {
   "name": {
-    "en": "Water Leak Sensor",
-    "fr": "Water Leak Sensor"
+    "en": "Smart RGB/RGBW Bulb",
+    "fr": "Ampoule Connectée RGB/RGBW"
   },
-  "class": "sensor",
+  "class": "light",
   "capabilities": [
-    "alarm_water",
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature",
+    "light_mode",
     "measure_battery"
   ],
-  "capabilitiesOptions": {
-    "alarm_water": {
-      "title": {
-        "en": "Water Detected",
-        "fr": "Eau Détectée"
-      }
-    }
-  },
   "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA"
-    ],
     "approximation": {
       "usageConstant": 0.5
-    }
+    },
+    "batteries": [
+      "OTHER"
+    ]
   },
-  "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "TUYATEC-3tipnsrx",
-      "_TYST11_qq9mpfhw",
-      "_TYZB01_o63ssaah",
-      "_TYZB01_sqmd19i1",
-      "_TZ3000_0S9GUKZT",
-      "_TZ3000_2WCYNPML",
-      "_TZ3000_3DFEWSK1",
-      "_TZ3000_4QAOWTDO",
-      "_TZ3000_4UVOVZ4R",
-      "_TZ3000_5K5VH43T",
-      "_TZ3000_85CZD6FY",
-      "_TZ3000_BFOPM9GA",
-      "_TZ3000_BZT33CYU",
-      "_TZ3000_EIT7P838",
-      "_TZ3000_EIT8C5CS",
-      "_TZ3000_FVM13J8W",
-      "_TZ3000_FXJO6GFE",
-      "_TZ3000_FXVJHDYL",
-      "_TZ3000_JS34CUMA",
-      "_TZ3000_K4EJ3WW2",
-      "_TZ3000_KSTBKT6A",
-      "_TZ3000_KYB656NO",
-      "_TZ3000_MUGYHZ0Q",
-      "_TZ3000_NKKL7UZV",
-      "_TZ3000_NLSSZMZL",
-      "_TZ3000_O9F2ZQLN",
-      "_TZ3000_OCJLO4EA",
-      "_TZ3000_QDMNMDDG",
-      "_TZ3000_QHOZXS2B",
-      "_TZ3000_RURVXHCX",
-      "_TZ3000_SQ510A",
-      "_TZ3000_T6JRIAWG",
-      "_TZ3000_UPGCBODY",
-      "_TZ3000_WUEP9ZNG",
-      "_TZ3000_WW9I3E0Y",
-      "_TZE204_QQ9MPFHW",
-      "_tyzb01_o63ssaah",
-      "_tyzb01_sqmd19i1",
-      "_TZ3000_KYAKWBF8",
-      "EWELINK"
+      "_TZ3210_ALPROTO2",
+      "_TZ3210_DXRJKPI4",
+      "_TZ3210_GS9SHYQA",
+      "_TZ3210_MJAS4MDS",
+      "_TZ3210_PAGAJPOG",
+      "_TZ3210_RKGNGB5O",
+      "_TZ3210_RWY3HAGT",
+      "_TZ3210_S1X06GJA",
+      "_TZ3210_S8LVBBU",
+      "_TZ3210_WDEXAYPG",
+      "_TZ3210_WUHEIK5L",
+      "_TZ3210_ZFBLRUVV",
+      "_TZ3000_ZMY4LSLW"
     ],
     "productId": [
-      "TS0207",
-      "TS0601",
-      "q9mpfhw"
+      "generic"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          1026,
-          1280,
+          3,
+          4,
+          5,
+          6,
           61184,
-          1280,
-          1
+          8,
+          768
         ],
         "bindings": [
-          1,
-          1280
+          6,
+          8,
+          768
         ]
       }
     },
     "learnmode": {
-      "image": "/drivers/water_leak_sensor/assets/learnmode.svg",
+      "image": "/drivers/bulb_rgbw/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -325,83 +292,12 @@
       }
     }
   ],
-  "flow": {
-    "triggers": [
-      {
-        "id": "water_leak_detected",
-        "title": {
-          "en": "Water leak detected",
-          "fr": "Fuite d'eau détectée",
-          "nl": "Waterlek gedetecteerd",
-          "de": "Wasserleck erkannt"
-        }
-      },
-      {
-        "id": "water_leak_cleared",
-        "title": {
-          "en": "Water leak cleared",
-          "fr": "Fuite d'eau terminée",
-          "nl": "Waterlek gestopt",
-          "de": "Wasserleck beendet"
-        }
-      },
-      {
-        "id": "water_battery_low",
-        "title": {
-          "en": "Battery is low",
-          "fr": "Batterie faible"
-        },
-        "tokens": [
-          {
-            "name": "battery",
-            "type": "number",
-            "title": {
-              "en": "Battery (%)",
-              "fr": "Batterie (%)"
-            },
-            "example": 15
-          }
-        ]
-      },
-      {
-        "id": "battery_low",
-        "title": {
-          "en": "Battery low",
-          "nl": "Batterij bijna leeg",
-          "fr": "Batterie faible"
-        },
-        "hint": {
-          "en": "Triggered when battery level drops below threshold",
-          "nl": "Geactiveerd wanneer batterijniveau onder drempel zakt"
-        },
-        "tokens": [
-          {
-            "name": "level",
-            "type": "number",
-            "title": {
-              "en": "Battery level (%)"
-            },
-            "example": 15
-          }
-        ]
-      }
-    ],
-    "conditions": [
-      {
-        "id": "water_leak_is_active",
-        "title": {
-          "en": "Water leak !{{is|isn't}} detected",
-          "fr": "Fuite d'eau !{{est|n'est pas}} détectée"
-        }
-      }
-    ]
-  },
   "images": {
-    "small": "drivers/water_leak_sensor/assets/images/small.png",
-    "large": "drivers/water_leak_sensor/assets/images/large.png",
-    "xlarge": "drivers/water_leak_sensor/assets/images/xlarge.png"
+    "small": "drivers/bulb_rgbw/assets/images/small.png",
+    "large": "drivers/bulb_rgbw/assets/images/large.png",
+    "xlarge": "drivers/bulb_rgbw/assets/images/xlarge.png"
   },
-  "id": "water_leak_sensor",
+  "id": "bulb_rgbw",
   "platforms": [
     "local"
   ],
@@ -426,5 +322,41 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": true
+    }
+  },
+  "flow": {
+    "actions": [
+      {
+        "id": "set_forced_brightness",
+        "title": {
+          "en": "Set forced brightness",
+          "nl": "Forceer helderheid",
+          "fr": "Forcer luminosité"
+        },
+        "titleFormatted": {
+          "en": "Set [[device]] to [[brightness]]% brightness",
+          "nl": "Zet [[device]] op [[brightness]]% helderheid"
+        },
+        "hint": {
+          "en": "Force a specific brightness level, ignoring current state",
+          "nl": "Forceer een specifiek helderheidsniveau, negeer huidige status"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "brightness",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "label": "%",
+            "labelMultiplier": 1
+          }
+        ]
+      }
+    ]
+  }
 }

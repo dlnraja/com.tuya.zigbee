@@ -1,99 +1,160 @@
 {
   "name": {
-    "en": "Water Leak Sensor",
-    "fr": "Water Leak Sensor"
+    "en": "Dimmer 1gang",
+    "fr": "Dimmer 1gang"
   },
-  "class": "sensor",
+  "class": "light",
   "capabilities": [
-    "alarm_water",
-    "measure_battery"
+    "dim",
+    "onoff",
+    "measure_battery",
+    "measure_power",
+    "button_toggle",
+    "button_dim_up",
+    "button_dim_down",
+    "button_identify"
   ],
-  "capabilitiesOptions": {
-    "alarm_water": {
-      "title": {
-        "en": "Water Detected",
-        "fr": "Eau Détectée"
-      }
-    }
-  },
   "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA"
-    ],
     "approximation": {
       "usageConstant": 0.5
-    }
+    },
+    "batteries": [
+      "OTHER"
+    ]
   },
-  "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "TUYATEC-3tipnsrx",
-      "_TYST11_qq9mpfhw",
-      "_TYZB01_o63ssaah",
-      "_TYZB01_sqmd19i1",
-      "_TZ3000_0S9GUKZT",
-      "_TZ3000_2WCYNPML",
-      "_TZ3000_3DFEWSK1",
-      "_TZ3000_4QAOWTDO",
-      "_TZ3000_4UVOVZ4R",
-      "_TZ3000_5K5VH43T",
-      "_TZ3000_85CZD6FY",
-      "_TZ3000_BFOPM9GA",
-      "_TZ3000_BZT33CYU",
-      "_TZ3000_EIT7P838",
-      "_TZ3000_EIT8C5CS",
-      "_TZ3000_FVM13J8W",
-      "_TZ3000_FXJO6GFE",
-      "_TZ3000_FXVJHDYL",
-      "_TZ3000_JS34CUMA",
-      "_TZ3000_K4EJ3WW2",
-      "_TZ3000_KSTBKT6A",
-      "_TZ3000_KYB656NO",
-      "_TZ3000_MUGYHZ0Q",
-      "_TZ3000_NKKL7UZV",
-      "_TZ3000_NLSSZMZL",
-      "_TZ3000_O9F2ZQLN",
-      "_TZ3000_OCJLO4EA",
-      "_TZ3000_QDMNMDDG",
-      "_TZ3000_QHOZXS2B",
-      "_TZ3000_RURVXHCX",
-      "_TZ3000_SQ510A",
-      "_TZ3000_T6JRIAWG",
-      "_TZ3000_UPGCBODY",
-      "_TZ3000_WUEP9ZNG",
-      "_TZ3000_WW9I3E0Y",
-      "_TZE204_QQ9MPFHW",
-      "_tyzb01_o63ssaah",
-      "_tyzb01_sqmd19i1",
-      "_TZ3000_KYAKWBF8",
-      "EWELINK"
+      "_TYZB01_qezuin6k",
+      "_TZ3000_49QCHF10",
+      "_TZ3000_7ED9CQGI",
+      "_TZ3000_7YSDNEBC",
+      "_TZ3000_F3XKA28J",
+      "_TZ3000_FJGWFL3Z",
+      "_TZ3000_FVH3PJAZ",
+      "_TZ3000_KDI2O9M6",
+      "_TZ3000_KTUOYVT5",
+      "_TZ3000_OBORYBOW",
+      "_TZ3000_RRJR1Q0U",
+      "_TZ3000_SDKLHKRS",
+      "_TZ3000_SFC7ZTZE",
+      "_TZ3000_SVOSNZMU",
+      "_TZ3000_ZJTXNOFT",
+      "_TZ3210_3MPWQZUU",
+      "_TZ3210_HQUIXJEG",
+      "_TZ3210_MT5XJOY6",
+      "_TZ3210_NGQK6JIA",
+      "_TZ3210_WEAQKHAB",
+      "_TZ3210_WJZ9EPJD",
+      "_TZ3210_ZXBTUB8R",
+      "_TZB210_3OWG3KKV",
+      "_TZE200_0HB4RDNP",
+      "_TZE200_A0SYESF5",
+      "_TZE200_GNE0E6MK",
+      "_TZE200_LA2C2UO9",
+      "_TZE200_MVTCLCLQ",
+      "_TZE200_TSXPL0D0",
+      "_TZE200_YKGAR0OW",
+      "_TZE204_1V1DXKCK",
+      "_TZE204_5CUOCQTY",
+      "_TZE204_68UTEMIO",
+      "_TZE204_8FFFC3KB",
+      "_TZE204_BXOO2SWD",
+      "_TZE204_HLX9TNZB",
+      "_TZE204_LA2C2UO9",
+      "_TZE204_NQQYLYKC",
+      "_TZE204_ZENJ4LXV",
+      "_TZE204_ZNVWZXKQ",
+      "_TZE284_ZNVWZXKQ",
+      "_TZ3210_2DFY6TOL",
+      "_TZ3210_2UK4Z8CE",
+      "_TZ3210_3LBTUXGP",
+      "_TZ3210_4ZINQ6IO",
+      "_TZ3210_5CT6E7YE",
+      "_TZ3210_5RTA89NJ",
+      "_TZ3210_7VGTTNA6",
+      "_TZ3210_8N4DN1NE",
+      "_TZ3210_9Q49BASR",
+      "_TZ3210_A04ACM9S",
+      "_TZ3210_AGJX0PXT",
+      "_TZ3210_C0S1XLOA",
+      "_TZ3210_C2IWPXF1",
+      "_TZ3210_CIEIJUW1",
+      "_TZ3210_D062RV7J",
+      "_TZ3210_DDIGCA5N",
+      "_TZ3210_DN5HIGYL",
+      "_TZ3210_DSE8OGFY",
+      "_TZ3210_DWZFZFJC",
+      "_TZ3210_E5T9BFDV",
+      "_TZ3210_EEJM8DCR",
+      "_TZ3210_EJCTEPKU",
+      "_TZ3210_EMQMWTYM",
+      "_TZ3210_EYMUNFFL",
+      "_TZ3210_F8DQBUZE",
+      "_TZ3210_GUIJTL8K",
+      "_TZ3210_HICXA0RH",
+      "_TZ3210_HUZKZQYK",
+      "_TZ3210_HXTFTHP5",
+      "_TZ3210_I680RTJA",
+      "_TZ3210_IFGA63RG",
+      "_TZ3210_INVESBER",
+      "_TZ3210_IW0ZKCU8",
+      "_TZ3210_IYSTCADI",
+      "_TZ3210_JD3Z4YIG",
+      "_TZ3210_JJQDQXFQ",
+      "_TZ3210_JLF1NEPW",
+      "_TZ3210_JOWHPXOP",
+      "_TZ3210_K1MSUVG6",
+      "_TZ3210_K1PE6IBM",
+      "_TZ3210_LJOASIXL",
+      "_TZ3210_LZQQ3U4R",
+      "_TZ3210_MJA6R5IX",
+      "_TZ3210_ODLGHNA1",
+      "_TZ3210_P68KMS0L",
+      "_TZ3210_RCGGC0YS",
+      "_TZ3210_RKGNGB5O",
+      "_TZ3210_RWMITWJ4",
+      "_TZ3210_SYH4KUEF",
+      "_TZ3210_TFXWXKLQ",
+      "_TZ3210_TTKGURPB",
+      "_TZ3210_UOS3HL9X",
+      "_TZ3210_URJF5U18",
+      "_TZ3210_VFWHHLDZ",
+      "_TZ3210_WXA85BWK",
+      "_TZ3210_X13BU7ZA",
+      "_TZ3210_YSFO0WLA",
+      "_TZ3210_Z1VLYUFU",
+      "_TZ3210_ZDRHQMO0",
+      "_TZ3210_ZKHMZTQN",
+      "_TZ3210_ZMY9HJAY",
+      "_TZ3210_ZRVXVYDD",
+      "_TZB210_WJZ9EPJD",
+      "_tyzb01_qezuin6k"
     ],
     "productId": [
-      "TS0207",
-      "TS0601",
-      "q9mpfhw"
+      "TS0101",
+      "TS0111",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          1026,
-          1280,
+          4,
+          5,
+          6,
+          8,
           61184,
-          1280,
-          1
+          2820
         ],
         "bindings": [
           1,
-          1280
+          6,
+          8
         ]
       }
     },
     "learnmode": {
-      "image": "/drivers/water_leak_sensor/assets/learnmode.svg",
+      "image": "/drivers/dimmer_wall_1gang/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -323,85 +384,196 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "dim_speed",
+      "type": "dropdown",
+      "label": {
+        "en": "Dimming speed",
+        "nl": "Dim snelheid"
+      },
+      "hint": {
+        "en": "Transition time when dimming",
+        "nl": "Overgangs tijd bij dimmen"
+      },
+      "value": "medium",
+      "values": [
+        {
+          "id": "instant",
+          "label": {
+            "en": "Instant",
+            "nl": "Direct"
+          }
+        },
+        {
+          "id": "fast",
+          "label": {
+            "en": "Fast (0.5s)",
+            "nl": "Snel (0.5s)"
+          }
+        },
+        {
+          "id": "medium",
+          "label": {
+            "en": "Medium (2s)",
+            "nl": "Gemiddeld (2s)"
+          }
+        },
+        {
+          "id": "slow",
+          "label": {
+            "en": "Slow (5s)",
+            "nl": "Langzaam (5s)"
+          }
+        }
+      ]
     }
   ],
   "flow": {
     "triggers": [
       {
-        "id": "water_leak_detected",
+        "id": "dimmer_turned_on",
         "title": {
-          "en": "Water leak detected",
-          "fr": "Fuite d'eau détectée",
-          "nl": "Waterlek gedetecteerd",
-          "de": "Wasserleck erkannt"
+          "en": "Dimmer turned on",
+          "fr": "Variateur allumé"
         }
       },
       {
-        "id": "water_leak_cleared",
+        "id": "dimmer_turned_off",
         "title": {
-          "en": "Water leak cleared",
-          "fr": "Fuite d'eau terminée",
-          "nl": "Waterlek gestopt",
-          "de": "Wasserleck beendet"
+          "en": "Dimmer turned off",
+          "fr": "Variateur éteint"
         }
       },
       {
-        "id": "water_battery_low",
+        "id": "dimmer_level_changed",
         "title": {
-          "en": "Battery is low",
-          "fr": "Batterie faible"
-        },
-        "tokens": [
-          {
-            "name": "battery",
-            "type": "number",
-            "title": {
-              "en": "Battery (%)",
-              "fr": "Batterie (%)"
-            },
-            "example": 15
-          }
-        ]
-      },
-      {
-        "id": "battery_low",
-        "title": {
-          "en": "Battery low",
-          "nl": "Batterij bijna leeg",
-          "fr": "Batterie faible"
-        },
-        "hint": {
-          "en": "Triggered when battery level drops below threshold",
-          "nl": "Geactiveerd wanneer batterijniveau onder drempel zakt"
+          "en": "Brightness changed",
+          "fr": "Luminosité changée"
         },
         "tokens": [
           {
             "name": "level",
             "type": "number",
             "title": {
-              "en": "Battery level (%)"
+              "en": "Level (%)"
             },
-            "example": 15
+            "example": 75
           }
         ]
       }
     ],
     "conditions": [
       {
-        "id": "water_leak_is_active",
+        "id": "dimmer_is_on",
         "title": {
-          "en": "Water leak !{{is|isn't}} detected",
-          "fr": "Fuite d'eau !{{est|n'est pas}} détectée"
+          "en": "Dimmer !{{is|isn't}} on",
+          "fr": "Variateur !{{est|n'est pas}} allumé"
         }
+      },
+      {
+        "id": "dimmer_level_is",
+        "title": {
+          "en": "Brightness !{{above|below}} threshold",
+          "fr": "Luminosité !{{au-dessus|en-dessous}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "Brightness !{{above|below}} [[threshold]] %"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "dimmer_set_level",
+        "title": {
+          "en": "Set brightness",
+          "fr": "Définir luminosité"
+        },
+        "titleFormatted": {
+          "en": "Set brightness to [[level]] %"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "level",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "label": "%"
+          }
+        ]
+      },
+      {
+        "id": "dimmer_fade_to",
+        "title": {
+          "en": "Fade to level",
+          "fr": "Transition vers niveau"
+        },
+        "titleFormatted": {
+          "en": "Fade to [[level]] % in [[duration]] seconds"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "level",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "label": "%"
+          },
+          {
+            "type": "number",
+            "name": "duration",
+            "min": 1,
+            "max": 60,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "set_forced_brightness",
+        "title": {
+          "en": "Set forced brightness",
+          "nl": "Forceer helderheid",
+          "fr": "Forcer luminosité"
+        },
+        "titleFormatted": {
+          "en": "Set [[device]] to [[brightness]]% brightness",
+          "nl": "Zet [[device]] op [[brightness]]% helderheid"
+        },
+        "hint": {
+          "en": "Force a specific brightness level, ignoring current state",
+          "nl": "Forceer een specifiek helderheidsniveau, negeer huidige status"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "brightness",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "label": "%",
+            "labelMultiplier": 1
+          }
+        ]
       }
     ]
   },
   "images": {
-    "small": "drivers/water_leak_sensor/assets/images/small.png",
-    "large": "drivers/water_leak_sensor/assets/images/large.png",
-    "xlarge": "drivers/water_leak_sensor/assets/images/xlarge.png"
+    "small": "drivers/dimmer_wall_1gang/assets/images/small.png",
+    "large": "drivers/dimmer_wall_1gang/assets/images/large.png",
+    "xlarge": "drivers/dimmer_wall_1gang/assets/images/xlarge.png"
   },
-  "id": "water_leak_sensor",
+  "id": "dimmer_wall_1gang",
   "platforms": [
     "local"
   ],
@@ -426,5 +598,10 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": true
+    }
+  }
 }

@@ -1,26 +1,20 @@
 {
   "name": {
-    "en": "Water Leak Sensor",
-    "fr": "Water Leak Sensor"
+    "en": "Smart Smoke Detector Advanced",
+    "fr": "Smart Smoke Detector Advanced"
   },
   "class": "sensor",
   "capabilities": [
-    "alarm_water",
-    "measure_battery"
+    "alarm_smoke",
+    "measure_battery",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_tamper"
   ],
-  "capabilitiesOptions": {
-    "alarm_water": {
-      "title": {
-        "en": "Water Detected",
-        "fr": "Eau Détectée"
-      }
-    }
-  },
   "energy": {
     "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA"
+      "CR2",
+      "CR123A"
     ],
     "approximation": {
       "usageConstant": 0.5
@@ -29,62 +23,57 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "TUYATEC-3tipnsrx",
-      "_TYST11_qq9mpfhw",
-      "_TYZB01_o63ssaah",
-      "_TYZB01_sqmd19i1",
-      "_TZ3000_0S9GUKZT",
-      "_TZ3000_2WCYNPML",
-      "_TZ3000_3DFEWSK1",
-      "_TZ3000_4QAOWTDO",
-      "_TZ3000_4UVOVZ4R",
-      "_TZ3000_5K5VH43T",
-      "_TZ3000_85CZD6FY",
-      "_TZ3000_BFOPM9GA",
-      "_TZ3000_BZT33CYU",
-      "_TZ3000_EIT7P838",
-      "_TZ3000_EIT8C5CS",
-      "_TZ3000_FVM13J8W",
-      "_TZ3000_FXJO6GFE",
-      "_TZ3000_FXVJHDYL",
-      "_TZ3000_JS34CUMA",
-      "_TZ3000_K4EJ3WW2",
-      "_TZ3000_KSTBKT6A",
-      "_TZ3000_KYB656NO",
-      "_TZ3000_MUGYHZ0Q",
-      "_TZ3000_NKKL7UZV",
-      "_TZ3000_NLSSZMZL",
-      "_TZ3000_O9F2ZQLN",
-      "_TZ3000_OCJLO4EA",
-      "_TZ3000_QDMNMDDG",
-      "_TZ3000_QHOZXS2B",
-      "_TZ3000_RURVXHCX",
-      "_TZ3000_SQ510A",
-      "_TZ3000_T6JRIAWG",
-      "_TZ3000_UPGCBODY",
-      "_TZ3000_WUEP9ZNG",
-      "_TZ3000_WW9I3E0Y",
-      "_TZE204_QQ9MPFHW",
-      "_tyzb01_o63ssaah",
-      "_tyzb01_sqmd19i1",
-      "_TZ3000_KYAKWBF8",
-      "EWELINK"
-    ],
-    "productId": [
-      "TS0207",
-      "TS0601",
-      "q9mpfhw"
+      "_TYZB01_dsjszp0x",
+      "_TYZB01_wqcac7lo",
+      "_TZ3000_0FKMFXWG",
+      "_TZ3000_HHIODADE",
+      "_TZ3000_LUGASWF8",
+      "_TZ3000_QTCWWGTH",
+      "_TZ3000_YSVSPCHY",
+      "_TZ3210_09HZMIRW",
+      "_TZ3210_UP3PNGLE",
+      "_TZE200_0ZAF1CR8",
+      "_TZE200_AYCXWIAU",
+      "_TZE200_M8IIKWAS",
+      "_TZE200_M9SKFCTM",
+      "_TZE200_NTCY3XU1",
+      "_TZE200_T5P1VJ8R",
+      "_TZE200_UEBOJRAA",
+      "_TZE200_UX8DLKEV",
+      "_TZE200_VAFD6GKZ",
+      "_TZE200_VZEKYI4C",
+      "_TZE200_YH7AOAHI",
+      "_TZE204_NTCY3XU1",
+      "_TZE204_VAFD6GKZ",
+      "_TZE284_0ZAF1CR8",
+      "_TZE284_GYZLWU5Q",
+      "_TZE284_N4TTSCK2",
+      "_tyzb01_dsjszp0x",
+      "_tyzb01_wqcac7lo",
+      "_TZ3000_RCVVXJGE",
+      "_TZ3000_TKK7WWML",
+      "_TZ3000_XN3Y7XXY",
+      "_TZ3000_4FQSTSNH",
+      "_TZE204_LHX6WPRC",
+      "_TZE204_KGAXPVXR",
+      "_TZE284_6YCGARAB",
+      "_TZE200_RCCXOX8P",
+      "_TZE204_RCCXOX8P",
+      "_TZE284_RCCXOX8P",
+      "_TZE200_DQ1MFJUG",
+      "_TZE204_DQ1MFJUG"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
           1,
-          1026,
+          3,
+          4,
+          5,
           1280,
-          61184,
-          1280,
-          1
+          60672,
+          61184
         ],
         "bindings": [
           1,
@@ -93,12 +82,16 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/water_leak_sensor/assets/learnmode.svg",
+      "image": "/drivers/smoke_detector_advanced/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    }
+    },
+    "productId": [
+      "TS0205",
+      "TS0601"
+    ]
   },
   "settings": [
     {
@@ -328,25 +321,32 @@
   "flow": {
     "triggers": [
       {
-        "id": "water_leak_detected",
+        "id": "smoke_alarm_triggered",
         "title": {
-          "en": "Water leak detected",
-          "fr": "Fuite d'eau détectée",
-          "nl": "Waterlek gedetecteerd",
-          "de": "Wasserleck erkannt"
+          "en": "Smoke alarm triggered",
+          "fr": "Alarme fumée déclenchée",
+          "nl": "Rookalarm geactiveerd",
+          "de": "Rauchalarm ausgelöst"
         }
       },
       {
-        "id": "water_leak_cleared",
+        "id": "smoke_alarm_cleared",
         "title": {
-          "en": "Water leak cleared",
-          "fr": "Fuite d'eau terminée",
-          "nl": "Waterlek gestopt",
-          "de": "Wasserleck beendet"
+          "en": "Smoke alarm cleared",
+          "fr": "Alarme fumée terminée",
+          "nl": "Rookalarm gestopt",
+          "de": "Rauchalarm beendet"
         }
       },
       {
-        "id": "water_battery_low",
+        "id": "smoke_tamper_alarm",
+        "title": {
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme sabotage déclenchée"
+        }
+      },
+      {
+        "id": "smoke_battery_low",
         "title": {
           "en": "Battery is low",
           "fr": "Batterie faible"
@@ -362,46 +362,40 @@
             "example": 15
           }
         ]
-      },
-      {
-        "id": "battery_low",
-        "title": {
-          "en": "Battery low",
-          "nl": "Batterij bijna leeg",
-          "fr": "Batterie faible"
-        },
-        "hint": {
-          "en": "Triggered when battery level drops below threshold",
-          "nl": "Geactiveerd wanneer batterijniveau onder drempel zakt"
-        },
-        "tokens": [
-          {
-            "name": "level",
-            "type": "number",
-            "title": {
-              "en": "Battery level (%)"
-            },
-            "example": 15
-          }
-        ]
       }
     ],
     "conditions": [
       {
-        "id": "water_leak_is_active",
+        "id": "smoke_alarm_is_active",
         "title": {
-          "en": "Water leak !{{is|isn't}} detected",
-          "fr": "Fuite d'eau !{{est|n'est pas}} détectée"
+          "en": "Smoke alarm !{{is|isn't}} active",
+          "fr": "Alarme fumée !{{est|n'est pas}} active"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "smoke_test_alarm",
+        "title": {
+          "en": "Test smoke alarm",
+          "fr": "Tester alarme fumée"
+        }
+      },
+      {
+        "id": "smoke_silence_alarm",
+        "title": {
+          "en": "Silence smoke alarm",
+          "fr": "Couper alarme fumée"
         }
       }
     ]
   },
   "images": {
-    "small": "drivers/water_leak_sensor/assets/images/small.png",
-    "large": "drivers/water_leak_sensor/assets/images/large.png",
-    "xlarge": "drivers/water_leak_sensor/assets/images/xlarge.png"
+    "small": "drivers/smoke_detector_advanced/assets/images/small.png",
+    "large": "drivers/smoke_detector_advanced/assets/images/large.png",
+    "xlarge": "drivers/smoke_detector_advanced/assets/images/xlarge.png"
   },
-  "id": "water_leak_sensor",
+  "id": "smoke_detector_advanced",
   "platforms": [
     "local"
   ],
@@ -426,5 +420,6 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "capabilitiesOptions": {}
 }

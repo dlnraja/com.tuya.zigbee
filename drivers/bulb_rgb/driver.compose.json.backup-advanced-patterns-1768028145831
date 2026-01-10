@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "Smart Bulb White",
-    "fr": "Smart Bulb White"
+    "en": "Smart Bulb Rgb",
+    "fr": "Smart Bulb Rgb"
   },
   "class": "light",
   "capabilities": [
@@ -22,8 +22,105 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "CK-BL702-AL-01(7009_Z102LG03-1)",
+      "CK-BL702-AL-01(7009_Z102LG04-1)",
+      "CK-BL702-AL-01(7009_Z102LG04-2)",
+      "IM-Z3.0-DIM",
+      "IM-Z3.0-RGBCCT",
+      "IM-Z3.0-RGBW",
+      "NUET56-DL27LX1.1",
+      "RH3001",
+      "TS0049",
+      "TS0224",
+      "TS0501A",
+      "TS0501B",
+      "TS0502A",
+      "TS0502B",
+      "TS0503A",
+      "TS0503B",
+      "TS0504A",
+      "TS0505",
+      "TS0505A",
+      "TS0505B",
+      "_TZ3000_7DCDDNYE",
+      "_TZ3000_KDPXJU99",
+      "_TZ3000_ODYGIGTH",
+      "_TZ3000_GN91MCMZ",
+      "_TZ3000_QD7HEJ8U",
+      "_TZ3210_CIEIJUW1",
+      "_TZ3210_HXTFTHP5",
+      "_TZ3210_IFGA63RG",
+      "_TZ3210_IT1U8AHZ",
+      "_TZ3210_IW0ZKCU8",
+      "_TZ3210_JD3Z4YIG",
+      "_TZ3210_LJOASIXL",
+      "_TZ3210_MJA6R5IX",
+      "_TZ3210_R5AFGMKL",
+      "_TZ3210_RCGGC0YS",
+      "_TZ3210_S8LVBBUC",
+      "_TZ3210_SLN7AH6R",
+      "_TZ3210_WXA85BWK",
+      "_TZ3210_Z1VLYUFU",
+      "gq8b1uv",
+      "_TZ3210_IYSTCADI",
+      "_TZ3210_4UBYLGHK",
+      "_TZ3210_7VGTTNA6",
+      "_TZ3210_A04ACM9S",
+      "_TZ3210_CM9MBPR1",
+      "_TZ3210_DSE8OGFY",
+      "_TZ3210_EMQMWTYM",
+      "_TZ3210_GUIJTL8K",
+      "_TZ3210_K1MSUVG6",
+      "_TZ3210_VFWHHLDZ",
+      "_TZ3210_YSFO0WLA",
+      "_TZB210_G01IE5WU",
+      "_TZB210_RKGNGB5O",
+      "_TZB210_3ZFP8MKI",
+      "_TZB210_GJ0CCSAR",
+      "_TZ3000_QZJCSMAR",
+      "_TZ3000_6ZVW8HAM",
+      "_TZ3210_JICMOITE",
+      "_TZB210_RS0UFZWG",
+      "_TZ3210_ZRVXVYDD",
+      "_TZB210_ENDMGGWS",
+      "_TZB210_6EED09B9",
+      "_TZB210_RWY5HEXP",
+      "_TZB210_LNNKH3F9",
+      "_TZB210_ZMPPWAWA",
+      "_TZ3210_SW9UXOEA",
+      "_TZ3210_BFWVFYX1",
+      "_TZ3210_DN5HIGYL",
+      "_TZ3210_HICXA0RH",
+      "_TZ3210_C0S1XLOA",
+      "_TZ3210_X13BU7ZA",
+      "_TZ3210_JJQDQXFQ",
+      "_TZ3210_DWZFZFJC",
+      "_TZ3210_WBSGMOJQ",
+      "_TZ3210_B8JDOSXO",
+      "_TZB210_WY1PYU1Q",
+      "_TZB210_YATKPUHA",
+      "_TZB210_W9HCIX2R",
+      "_TZB210_417IKXAY",
+      "_TZB210_WXAZCMSH",
+      "_TZB210_UE01A0S2",
+      "_TZB210_AYX58FT5",
+      "_TZB210_EIWANBEB",
+      "_TZB210_0BKZABHT",
+      "_TZ3210_C2IWPXF1",
+      "_TZ3210_DDIGCA5N",
+      "_TZ3210_RWMITWJ4",
+      "_TZ3210_JLF1NEPW",
+      "_TZ3210_EEJM8DCR",
+      "_TZB210_QUINZF3W",
+      "_TZB210_AAVHAADB",
+      "_TZ3290_GNL5A6A5",
+      "_TZ3210_INVESBER",
+      "_TZ3210_K1PE6IBM",
+      "_TZ3210_5VBJZW54",
+      "_TZ3210_0ZABBFAX",
+      "_TZ3210_95TXYZBX"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -33,25 +130,155 @@
           6,
           8,
           768,
-          61184,
           61184
         ],
         "bindings": [
           1,
           6,
-          8
+          8,
+          768
         ]
       }
     },
     "learnmode": {
-      "image": "/drivers/bulb_white/assets/learnmode.svg",
+      "image": "/drivers/bulb_rgb/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    }
+    },
+    "productId": []
   },
   "settings": [
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power On Behavior",
+        "nl": "Gedrag bij inschakelen",
+        "de": "Einschaltverhalten",
+        "fr": "Comportement à l'allumage"
+      },
+      "value": "previous",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Turn Off",
+            "nl": "Uitschakelen",
+            "de": "Ausschalten",
+            "fr": "Éteindre"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "Turn On",
+            "nl": "Inschakelen",
+            "de": "Einschalten",
+            "fr": "Allumer"
+          }
+        },
+        {
+          "id": "previous",
+          "label": {
+            "en": "Restore Previous State",
+            "nl": "Vorige status herstellen",
+            "de": "Vorherigen Zustand wiederherstellen",
+            "fr": "Restaurer l'état précédent"
+          }
+        }
+      ],
+      "hint": {
+        "en": "What the light should do after power is restored",
+        "nl": "Wat de lamp moet doen na stroomherstel",
+        "de": "Was die Lampe nach Stromwiederherstellung tun soll",
+        "fr": "Ce que la lampe doit faire après rétablissement du courant"
+      }
+    },
+    {
+      "id": "do_not_disturb",
+      "type": "checkbox",
+      "label": {
+        "en": "Do Not Disturb",
+        "nl": "Niet storen",
+        "de": "Nicht stören",
+        "fr": "Ne pas déranger"
+      },
+      "value": false,
+      "hint": {
+        "en": "Keep light off after power loss (prevents unwanted turn on)",
+        "nl": "Lamp uit houden na stroomuitval (voorkomt ongewenst inschakelen)",
+        "de": "Licht nach Stromausfall aus lassen (verhindert ungewolltes Einschalten)",
+        "fr": "Garder la lumière éteinte après coupure (empêche l'allumage non souhaité)"
+      }
+    },
+    {
+      "id": "transition_time",
+      "type": "number",
+      "label": {
+        "en": "Transition Time (seconds)",
+        "nl": "Overgangstijd (seconden)",
+        "de": "Übergangszeit (Sekunden)",
+        "fr": "Temps de transition (secondes)"
+      },
+      "value": 0.4,
+      "min": 0,
+      "max": 10,
+      "step": 0.1,
+      "hint": {
+        "en": "Time for brightness/color transitions (0 = instant)",
+        "nl": "Tijd voor helderheid/kleur overgangen (0 = direct)",
+        "de": "Zeit für Helligkeits-/Farbübergänge (0 = sofort)",
+        "fr": "Temps pour les transitions de luminosité/couleur (0 = instantané)"
+      }
+    },
+    {
+      "id": "color_temp_range",
+      "type": "dropdown",
+      "label": {
+        "en": "Color Temperature Range",
+        "nl": "Kleurtemperatuur bereik",
+        "de": "Farbtemperaturbereich",
+        "fr": "Plage de température de couleur"
+      },
+      "value": "standard",
+      "values": [
+        {
+          "id": "standard",
+          "label": {
+            "en": "Standard (2700K-6500K)",
+            "nl": "Standaard (2700K-6500K)",
+            "de": "Standard (2700K-6500K)",
+            "fr": "Standard (2700K-6500K)"
+          }
+        },
+        {
+          "id": "extended",
+          "label": {
+            "en": "Extended (2000K-6500K)",
+            "nl": "Uitgebreid (2000K-6500K)",
+            "de": "Erweitert (2000K-6500K)",
+            "fr": "Étendu (2000K-6500K)"
+          }
+        },
+        {
+          "id": "wide",
+          "label": {
+            "en": "Wide (1800K-6500K)",
+            "nl": "Breed (1800K-6500K)",
+            "de": "Breit (1800K-6500K)",
+            "fr": "Large (1800K-6500K)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Adjust color temperature range based on your bulb capabilities",
+        "nl": "Pas kleurtemperatuurbereik aan op basis van lampcapaciteiten",
+        "de": "Farbtemperaturbereich basierend auf Lampenfähigkeiten anpassen",
+        "fr": "Ajuster la plage de température de couleur selon les capacités de l'ampoule"
+      }
+    },
     {
       "id": "power_source",
       "type": "dropdown",
@@ -277,11 +504,11 @@
     }
   ],
   "images": {
-    "small": "drivers/bulb_white/assets/images/small.png",
-    "large": "drivers/bulb_white/assets/images/large.png",
-    "xlarge": "drivers/bulb_white/assets/images/xlarge.png"
+    "small": "drivers/bulb_rgb/assets/images/small.png",
+    "large": "drivers/bulb_rgb/assets/images/large.png",
+    "xlarge": "drivers/bulb_rgb/assets/images/xlarge.png"
   },
-  "id": "bulb_white",
+  "id": "bulb_rgb",
   "platforms": [
     "local"
   ],
@@ -335,52 +562,6 @@
             "name": "brightness",
             "min": 1,
             "max": 100,
-            "step": 1,
-            "label": "%",
-            "labelMultiplier": 1
-          }
-        ]
-      },
-      {
-        "id": "dim_up",
-        "title": {
-          "en": "Dim up",
-          "nl": "Omhoog dimmen",
-          "fr": "Augmenter luminosité"
-        },
-        "titleFormatted": {
-          "en": "Dim [[device]] up by [[step]]%",
-          "nl": "Dim [[device]] omhoog met [[step]]%"
-        },
-        "args": [
-          {
-            "type": "range",
-            "name": "step",
-            "min": 1,
-            "max": 50,
-            "step": 1,
-            "label": "%",
-            "labelMultiplier": 1
-          }
-        ]
-      },
-      {
-        "id": "dim_down",
-        "title": {
-          "en": "Dim down",
-          "nl": "Omlaag dimmen",
-          "fr": "Diminuer luminosité"
-        },
-        "titleFormatted": {
-          "en": "Dim [[device]] down by [[step]]%",
-          "nl": "Dim [[device]] omlaag met [[step]]%"
-        },
-        "args": [
-          {
-            "type": "range",
-            "name": "step",
-            "min": 1,
-            "max": 50,
             "step": 1,
             "label": "%",
             "labelMultiplier": 1
