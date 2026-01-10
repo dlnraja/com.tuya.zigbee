@@ -1,4 +1,8 @@
 {
+  "5.5.445": {
+    "en": "🔧 HOTFIX: Fixed app crash (SyntaxError: Missing catch after try in app.js:786). App now starts correctly.",
+    "fr": "🔧 HOTFIX: Correction crash app (erreur syntaxe app.js:786). L'app démarre maintenant correctement."
+  },
   "5.5.444": {
     "en": "🕐 LCD TIME SYNC v3: Added raw ZCL frame bypass for devices paired before v5.5.437. Uses Tuya epoch (2000) with correct [Local][UTC] format. If still not working, RE-PAIR device.",
     "fr": "🕐 SYNC LCD v3: Ajout envoi raw frame ZCL pour devices pairés avant v5.5.437. Epoch Tuya (2000) + format [Local][UTC]. Si échec: RE-APPAIRER."
