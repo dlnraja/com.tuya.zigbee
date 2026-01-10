@@ -10,22 +10,89 @@
     "es": "8-Botones Controlador Inalámbrico",
     "da": "8-Knapper Trådløs Controller"
   },
-  "class": "button",
+  "class": "sensor",
   "capabilities": [
+    "button.1",
+    "button.2",
+    "button.3",
+    "button.4",
+    "button.5",
+    "button.6",
+    "button.7",
+    "button.8",
     "measure_battery"
   ],
   "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "getable": false,
+      "setable": true
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "getable": false,
+      "setable": true
+    },
+    "button.3": {
+      "title": {
+        "en": "Button 3",
+        "fr": "Bouton 3"
+      },
+      "getable": false,
+      "setable": true
+    },
+    "button.4": {
+      "title": {
+        "en": "Button 4",
+        "fr": "Bouton 4"
+      },
+      "getable": false,
+      "setable": true
+    },
+    "button.5": {
+      "title": {
+        "en": "Button 5",
+        "fr": "Bouton 5"
+      },
+      "getable": false,
+      "setable": true
+    },
+    "button.6": {
+      "title": {
+        "en": "Button 6",
+        "fr": "Bouton 6"
+      },
+      "getable": false,
+      "setable": true
+    },
+    "button.7": {
+      "title": {
+        "en": "Button 7",
+        "fr": "Bouton 7"
+      },
+      "getable": false,
+      "setable": true
+    },
+    "button.8": {
+      "title": {
+        "en": "Button 8",
+        "fr": "Bouton 8"
+      },
+      "getable": false,
+      "setable": true
+    },
     "measure_battery": {
       "title": {
         "en": "Battery",
-        "fr": "Contrôleur",
-        "nl": "Draadloze",
-        "de": "Drahtlos-Controller",
-        "it": "Controller",
-        "sv": "Trådlös",
-        "no": "Trådløs",
-        "es": "Controlador",
-        "da": "Trådløs"
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
       }
     }
   },
