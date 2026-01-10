@@ -1,4 +1,8 @@
 {
+  "5.5.444": {
+    "en": "🕐 LCD TIME SYNC v3: Added raw ZCL frame bypass for devices paired before v5.5.437. Uses Tuya epoch (2000) with correct [Local][UTC] format. If still not working, RE-PAIR device.",
+    "fr": "🕐 SYNC LCD v3: Ajout envoi raw frame ZCL pour devices pairés avant v5.5.437. Epoch Tuya (2000) + format [Local][UTC]. Si échec: RE-APPAIRER."
+  },
   "5.5.443": {
     "en": "➕ NEW DEVICE: BSEED Smart Wall Sockets with power monitoring (_TZ3210_2uollq9d, _TZ3000_4ux0ondb, TS011F). Added to plug_energy_monitor driver.",
     "fr": "➕ NOUVEAU: Prises murales BSEED avec monitoring de puissance. Ajoutées au driver plug_energy_monitor."
