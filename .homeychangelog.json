@@ -1,4 +1,10 @@
 {
+  "5.5.442": {
+    "en": "🕐 LCD TIME SYNC: Added ZCL Time cluster (0x000A) as fallback method. If Tuya cluster unavailable, tries Time cluster. RE-PAIR device required for best results.",
+    "fr": "🕐 SYNC LCD: Ajout cluster ZCL Time (0x000A) comme fallback. RE-APPAIRER le device recommandé.",
+    "nl": "🕐 LCD SYNC: ZCL Time cluster (0x000A) toegevoegd als fallback. RE-PAIREN aanbevolen.",
+    "de": "🕐 LCD SYNC: ZCL Time Cluster (0x000A) als Fallback hinzugefügt. RE-PAIRING empfohlen."
+  },
   "5.5.441": {
     "en": "🔧 BUTTONS FIX: Changed class from 'button' to 'sensor' + added button.X capabilities with getable:false for CLICKABLE virtual buttons. All button drivers (1/2/3/4/6/8) now show clickable buttons in device UI.",
     "fr": "🔧 FIX BOUTONS: Classe changée de 'button' à 'sensor' + capabilities button.X avec getable:false pour boutons virtuels CLIQUABLES.",
