@@ -1152,16 +1152,16 @@ function debouncePresence(presence, manufacturerName, deviceId) {
     state.onCount = 0;
   }
 
-  // v5.5.325: RONNY #782 ULTIMATE FIX - Maximum hysteresis for gkfbdvyx
-  // Problem: Sensor reports presence randomly even when empty room
-  // Root cause: Enum value 2 ("move") triggers spuriously from radar noise
-  // Solution: Require 7 consecutive ON + 15s gap to activate
-  const requiredOnCount = 7;  // v5.5.325: Increased to 7 (was 5)
+  // v5.5.438: BALANCED debouncing for gkfbdvyx (Ronny feedback: too slow)
+  // Problem: v5.5.325 was too aggressive (7 counts + 15s = very slow response)
+  // Solution: Reduce to 3 counts + 5s for faster response while still filtering noise
+  // User can adjust sensitivity in device settings if needed
+  const requiredOnCount = 3;   // v5.5.438: Reduced from 7 to 3 (faster response)
   const requiredOffCount = 2;
 
-  // v5.5.325: Minimum time between state changes (15 seconds for ON)
-  // This prevents rapid false-positive cycles
-  const minStateChangeInterval = 15000;  // v5.5.325: Increased to 15s (was 10s)
+  // v5.5.438: Reduced minimum time between state changes (5 seconds for ON)
+  // This allows faster detection while still preventing rapid false-positive cycles
+  const minStateChangeInterval = 5000;  // v5.5.438: Reduced from 15s to 5s
   const timeSinceLastChange = now - state.lastChangeTime;
 
   let newStablePresence = state.stablePresence;

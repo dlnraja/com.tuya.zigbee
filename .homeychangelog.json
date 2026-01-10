@@ -1,4 +1,10 @@
 {
+  "5.5.438": {
+    "en": "⚡ SPEED FIX: _TZE204_gkfbdvyx radar sensor now responds faster. Reduced debouncing from 7 counts + 15s to 3 counts + 5s. Better balance between speed and false-positive filtering.",
+    "fr": "⚡ CORRECTION VITESSE: Capteur radar _TZE204_gkfbdvyx plus rapide. Debouncing réduit de 7 rapports + 15s à 3 + 5s. Meilleur équilibre vitesse/filtrage.",
+    "nl": "⚡ SNELHEID FIX: _TZE204_gkfbdvyx radar sensor reageert nu sneller. Debouncing verminderd van 7 + 15s naar 3 + 5s.",
+    "de": "⚡ GESCHWINDIGKEIT-FIX: _TZE204_gkfbdvyx Radar-Sensor reagiert jetzt schneller. Debouncing von 7 + 15s auf 3 + 5s reduziert."
+  },
   "5.5.437": {
     "en": "🔧 DIAGNOSTIC FIX: Climate sensor LCD time sync fixed (_getTuyaManager error). Added Tuya cluster 61184 for TS0601. Flow card registration wrapped in try-catch to prevent crashes.",
     "fr": "🔧 CORRECTION DIAGNOSTIC: Sync heure LCD capteur climatique corrigé. Cluster Tuya 61184 ajouté pour TS0601. Enregistrement flow cards protégé.",
