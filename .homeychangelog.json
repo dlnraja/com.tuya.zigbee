@@ -1,4 +1,8 @@
 {
+  "5.5.448": {
+    "en": "⏰ DUAL TIME SYNC: Added ZCL Time cluster (0x000A) handler! Device interview shows outputClusters:[10] = device REQUESTS time. Now handles BOTH Tuya mcuSyncTime AND ZCL Time. RE-PAIR required!",
+    "fr": "⏰ DOUBLE TIME SYNC: Ajout handler ZCL Time cluster (0x000A)! Interview montre outputClusters:[10] = device DEMANDE l'heure. Gère TUYA mcuSyncTime ET ZCL Time. RE-APPAIRER requis!"
+  },
   "5.5.447": {
     "en": "⏰ TIME SYNC LISTENER: Added mcuSyncTime BoundCluster - device REQUESTS time, we now RESPOND! Critical fix for _TZE284_vvmbj46n LCD sensors. RE-PAIR required!",
     "fr": "⏰ LISTENER TIME SYNC: Ajout BoundCluster mcuSyncTime - on RÉPOND aux requêtes du device! Fix critique pour capteurs LCD _TZE284_vvmbj46n. RE-APPAIRER requis!"
