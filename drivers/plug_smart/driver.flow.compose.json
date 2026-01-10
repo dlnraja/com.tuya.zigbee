@@ -2,6 +2,7 @@
   "triggers": [
     {
       "id": "plug_smart_onoff_true",
+      "highlight": true,
       "title": "Turned on",
       "tokens": [
         {
@@ -33,4 +34,3 @@
     }
   ]
 }
-
