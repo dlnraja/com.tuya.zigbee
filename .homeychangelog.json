@@ -1,4 +1,8 @@
 {
+  "5.5.446": {
+    "en": "🕐 LCD TIME SYNC FIX: Fixed payload order [UTC][Local] per Z2M spec. Added cluster 61184 to bindings. RE-PAIR _TZE284_vvmbj46n devices for LCD time sync!",
+    "fr": "🕐 FIX SYNC LCD: Ordre payload corrigé [UTC][Local] selon Z2M. Cluster 61184 ajouté aux bindings. RE-APPAIRER _TZE284_vvmbj46n!"
+  },
   "5.5.445": {
     "en": "🔧 HOTFIX: Fixed app crash (SyntaxError: Missing catch after try in app.js:786). App now starts correctly.",
     "fr": "🔧 HOTFIX: Correction crash app (erreur syntaxe app.js:786). L'app démarre maintenant correctement."
