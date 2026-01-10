@@ -1,20 +1,26 @@
 {
   "name": {
-    "en": "Gas Sensor Ts0601",
-    "fr": "Gas Sensor Ts0601"
+    "en": "Presence Sensor (Radar)",
+    "fr": "Capteur de Présence (Radar)"
   },
   "class": "sensor",
   "capabilities": [
-    "alarm_co",
-    "alarm_co2",
-    "measure_battery",
-    "alarm_contact",
-    "alarm_gas"
+    "alarm_motion",
+    "alarm_human",
+    "measure_distance",
+    "measure_presence_time",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_luminance",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
+      "CR2032",
       "CR2450",
-      "AAA"
+      "AAA",
+      "AA",
+      "CR123A"
     ],
     "approximation": {
       "usageConstant": 0.5
@@ -23,39 +29,29 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_mwd3c2at",
-      "_TZ3000_tk3s5tyg",
-      "_TZ3000_ww6drja5",
-      "_TZ3002_sal078g8",
-      "_TZE200_auin8mzr",
-      "_TZE200_wzqkpstm",
-      "_TZ3002_sfh0jtz0",
-      "_TZE200_eqpaxqdv",
-      "_TZE200_vexa5o82",
-      "_TZE284_clm4gdw4",
-      "_TZE284_nj7sfid2",
-      "_TZE204_ux5v4tgb",
-      "_TZE204_ezqy5pvh",
-      "_TZE284_ezqy5pvh",
-      "_TZE204_ggev5fsl",
-      "_TZE284_rjgdhqqi",
-      "_TZE284_ggev5fsl"
-    ],
-    "productId": [
-      "TS0601"
+      "_TZ3218_awarhusb",
+      "_TZ3218_t9ynfz4x",
+      "_TZE200_ar0slwnd",
+      "_TZE200_clrdrnya",
+      "_TZE200_lu01t0zl",
+      "_TZE200_mrf6vtua",
+      "_TZE200_pay2byax",
+      "_TZE200_rhgsbacq"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          4,
-          5,
+          1,
+          1024,
+          1030,
+          1280,
           61184,
           61184,
           1280,
-          1
+          1,
+          1026,
+          1029
         ],
         "bindings": [
           1,
@@ -64,14 +60,149 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/gas_sensor/assets/learnmode.svg",
+      "image": "/drivers/motion_sensor_radar_mmwave/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    }
+    },
+    "productId": [
+      "TS0202",
+      "TS0225",
+      "TS0601"
+    ]
   },
   "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "🎯 Radar Detection (FP300-like)",
+        "fr": "🎯 Détection Radar (FP300-like)"
+      },
+      "children": [
+        {
+          "id": "radar_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Radar Sensitivity",
+            "fr": "Sensibilité Radar"
+          },
+          "value": 7,
+          "min": 0,
+          "max": 9,
+          "step": 1,
+          "hint": {
+            "en": "Detection sensitivity (0=lowest, 9=highest). Higher values detect smaller movements.",
+            "fr": "Sensibilité de détection (0=min, 9=max). Valeurs élevées détectent les petits mouvements."
+          }
+        },
+        {
+          "id": "minimum_range",
+          "type": "number",
+          "label": {
+            "en": "Minimum Range (m)",
+            "fr": "Distance Minimum (m)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 9.5,
+          "step": 0.5,
+          "hint": {
+            "en": "Minimum detection distance in meters. Objects closer will be ignored.",
+            "fr": "Distance minimale de détection en mètres. Objets plus proches seront ignorés."
+          }
+        },
+        {
+          "id": "maximum_range",
+          "type": "number",
+          "label": {
+            "en": "Maximum Range (m)",
+            "fr": "Distance Maximum (m)"
+          },
+          "value": 6,
+          "min": 0.5,
+          "max": 9.5,
+          "step": 0.5,
+          "hint": {
+            "en": "Maximum detection distance in meters (up to 9.5m for most sensors).",
+            "fr": "Distance maximale de détection en mètres (jusqu'à 9.5m pour la plupart)."
+          }
+        },
+        {
+          "id": "detection_delay",
+          "type": "number",
+          "label": {
+            "en": "Detection Delay (s)",
+            "fr": "Délai de Détection (s)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "hint": {
+            "en": "Delay before reporting presence (0=instant). Helps avoid false positives.",
+            "fr": "Délai avant de signaler une présence (0=instantané). Évite les faux positifs."
+          }
+        },
+        {
+          "id": "fading_time",
+          "type": "number",
+          "label": {
+            "en": "Absence Delay / Fading Time (s)",
+            "fr": "Délai d'Absence (s)"
+          },
+          "value": 60,
+          "min": 0.5,
+          "max": 1500,
+          "step": 5,
+          "hint": {
+            "en": "Time before clearing presence after no movement detected. Like FP300 absence delay.",
+            "fr": "Temps avant de signaler l'absence après aucun mouvement. Similaire au délai FP300."
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "🌡️ Calibration (v5.5.28)",
+        "fr": "🌡️ Calibration (v5.5.28)"
+      },
+      "children": [
+        {
+          "id": "temperature_calibration",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)",
+            "fr": "Décalage Température (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1,
+          "hint": {
+            "en": "Add or subtract from temperature reading. Use positive value if sensor reads too low, negative if too high.",
+            "fr": "Ajouter ou soustraire de la température lue. Valeur positive si capteur lit trop bas, négative si trop haut."
+          }
+        },
+        {
+          "id": "humidity_calibration",
+          "type": "number",
+          "label": {
+            "en": "Humidity Offset (%)",
+            "fr": "Décalage Humidité (%)"
+          },
+          "value": 0,
+          "min": -20,
+          "max": 20,
+          "step": 1,
+          "hint": {
+            "en": "Add or subtract from humidity reading. Use positive value if sensor reads too low, negative if too high.",
+            "fr": "Ajouter ou soustraire de l'humidité lue. Valeur positive si capteur lit trop bas, négative si trop haut."
+          }
+        }
+      ]
+    },
     {
       "id": "power_source",
       "type": "dropdown",
@@ -296,77 +427,12 @@
       }
     }
   ],
-  "flow": {
-    "triggers": [
-      {
-        "id": "gas_alarm_triggered",
-        "title": {
-          "en": "Gas alarm triggered",
-          "fr": "Alarme gaz déclenchée",
-          "nl": "Gasalarm geactiveerd",
-          "de": "Gasalarm ausgelöst"
-        }
-      },
-      {
-        "id": "gas_alarm_cleared",
-        "title": {
-          "en": "Gas alarm cleared",
-          "fr": "Alarme gaz terminée",
-          "nl": "Gasalarm gestopt",
-          "de": "Gasalarm beendet"
-        }
-      },
-      {
-        "id": "gas_level_changed",
-        "title": {
-          "en": "Gas level changed",
-          "fr": "Niveau de gaz changé"
-        },
-        "tokens": [
-          {
-            "name": "level",
-            "type": "number",
-            "title": {
-              "en": "Gas level (ppm)",
-              "fr": "Niveau de gaz (ppm)"
-            },
-            "example": 50
-          }
-        ]
-      }
-    ],
-    "conditions": [
-      {
-        "id": "gas_alarm_is_active",
-        "title": {
-          "en": "Gas alarm !{{is|isn't}} active",
-          "fr": "Alarme gaz !{{est|n'est pas}} active"
-        }
-      }
-    ],
-    "actions": [
-      {
-        "id": "gas_test_alarm",
-        "title": {
-          "en": "Test gas alarm",
-          "fr": "Tester alarme gaz"
-        }
-      },
-      {
-        "id": "gas_silence_alarm",
-        "title": {
-          "en": "Silence gas alarm",
-          "fr": "Couper alarme gaz"
-        }
-      }
-    ]
-  },
   "images": {
-    "small": "drivers/gas_sensor/assets/images/small.png",
-    "large": "drivers/gas_sensor/assets/images/large.png",
-    "xlarge": "drivers/gas_sensor/assets/images/xlarge.png"
+    "small": "drivers/motion_sensor_radar_mmwave/assets/images/small.png",
+    "large": "drivers/motion_sensor_radar_mmwave/assets/images/large.png",
+    "xlarge": "drivers/motion_sensor_radar_mmwave/assets/images/xlarge.png"
   },
-  "id": "gas_sensor",
+  "id": "motion_sensor_radar_mmwave",
   "platforms": [
     "local"
   ],
@@ -391,6 +457,5 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ],
-  "capabilitiesOptions": {}
+  ]
 }

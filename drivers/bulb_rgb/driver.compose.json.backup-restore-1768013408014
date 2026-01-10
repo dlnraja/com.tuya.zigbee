@@ -1,50 +1,41 @@
 {
   "name": {
-    "en": "Gas Sensor Ts0601",
-    "fr": "Gas Sensor Ts0601"
+    "en": "Smart Bulb Rgb",
+    "fr": "Smart Bulb Rgb"
   },
-  "class": "sensor",
+  "class": "light",
   "capabilities": [
-    "alarm_co",
-    "alarm_co2",
-    "measure_battery",
-    "alarm_contact",
-    "alarm_gas"
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature",
+    "light_mode",
+    "onoff",
+    "measure_battery"
   ],
   "energy": {
-    "batteries": [
-      "CR2450",
-      "AAA"
-    ],
     "approximation": {
       "usageConstant": 0.5
-    }
+    },
+    "batteries": [
+      "OTHER"
+    ]
   },
-  "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_mwd3c2at",
-      "_TZ3000_tk3s5tyg",
-      "_TZ3000_ww6drja5",
-      "_TZ3002_sal078g8",
-      "_TZE200_auin8mzr",
-      "_TZE200_wzqkpstm",
-      "_TZ3002_sfh0jtz0",
-      "_TZE200_eqpaxqdv",
-      "_TZE200_vexa5o82",
-      "_TZE284_clm4gdw4",
-      "_TZE284_nj7sfid2",
-      "_TZE204_ux5v4tgb",
-      "_TZE204_ezqy5pvh",
-      "_TZE284_ezqy5pvh",
-      "_TZE204_ggev5fsl",
-      "_TZE284_rjgdhqqi",
-      "_TZE284_ggev5fsl"
-    ],
-    "productId": [
-      "TS0601"
+      "TS0502A",
+      "TS0502B",
+      "TS0503A",
+      "TS0503B",
+      "TS0505",
+      "_TZ3000_7dcddnye",
+      "_TZ3000_gn91mcmz",
+      "_TZ3000_kdpxju99",
+      "_TZ3000_odygigth",
+      "_TZ3000_qd7hej8u",
+      "_TZ3210_cieijuw1",
+      "_TZ3210_hxtfthp5",
+      "_TZ3210_ifga63rg"
     ],
     "endpoints": {
       "1": {
@@ -52,26 +43,158 @@
           0,
           4,
           5,
-          61184,
-          61184,
-          1280,
-          1
+          6,
+          8,
+          768,
+          61184
         ],
         "bindings": [
           1,
-          1280
+          6,
+          8,
+          768
         ]
       }
     },
     "learnmode": {
-      "image": "/drivers/gas_sensor/assets/learnmode.svg",
+      "image": "/drivers/bulb_rgb/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    }
+    },
+    "productId": []
   },
   "settings": [
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power On Behavior",
+        "nl": "Gedrag bij inschakelen",
+        "de": "Einschaltverhalten",
+        "fr": "Comportement à l'allumage"
+      },
+      "value": "previous",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Turn Off",
+            "nl": "Uitschakelen",
+            "de": "Ausschalten",
+            "fr": "Éteindre"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "Turn On",
+            "nl": "Inschakelen",
+            "de": "Einschalten",
+            "fr": "Allumer"
+          }
+        },
+        {
+          "id": "previous",
+          "label": {
+            "en": "Restore Previous State",
+            "nl": "Vorige status herstellen",
+            "de": "Vorherigen Zustand wiederherstellen",
+            "fr": "Restaurer l'état précédent"
+          }
+        }
+      ],
+      "hint": {
+        "en": "What the light should do after power is restored",
+        "nl": "Wat de lamp moet doen na stroomherstel",
+        "de": "Was die Lampe nach Stromwiederherstellung tun soll",
+        "fr": "Ce que la lampe doit faire après rétablissement du courant"
+      }
+    },
+    {
+      "id": "do_not_disturb",
+      "type": "checkbox",
+      "label": {
+        "en": "Do Not Disturb",
+        "nl": "Niet storen",
+        "de": "Nicht stören",
+        "fr": "Ne pas déranger"
+      },
+      "value": false,
+      "hint": {
+        "en": "Keep light off after power loss (prevents unwanted turn on)",
+        "nl": "Lamp uit houden na stroomuitval (voorkomt ongewenst inschakelen)",
+        "de": "Licht nach Stromausfall aus lassen (verhindert ungewolltes Einschalten)",
+        "fr": "Garder la lumière éteinte après coupure (empêche l'allumage non souhaité)"
+      }
+    },
+    {
+      "id": "transition_time",
+      "type": "number",
+      "label": {
+        "en": "Transition Time (seconds)",
+        "nl": "Overgangstijd (seconden)",
+        "de": "Übergangszeit (Sekunden)",
+        "fr": "Temps de transition (secondes)"
+      },
+      "value": 0.4,
+      "min": 0,
+      "max": 10,
+      "step": 0.1,
+      "hint": {
+        "en": "Time for brightness/color transitions (0 = instant)",
+        "nl": "Tijd voor helderheid/kleur overgangen (0 = direct)",
+        "de": "Zeit für Helligkeits-/Farbübergänge (0 = sofort)",
+        "fr": "Temps pour les transitions de luminosité/couleur (0 = instantané)"
+      }
+    },
+    {
+      "id": "color_temp_range",
+      "type": "dropdown",
+      "label": {
+        "en": "Color Temperature Range",
+        "nl": "Kleurtemperatuur bereik",
+        "de": "Farbtemperaturbereich",
+        "fr": "Plage de température de couleur"
+      },
+      "value": "standard",
+      "values": [
+        {
+          "id": "standard",
+          "label": {
+            "en": "Standard (2700K-6500K)",
+            "nl": "Standaard (2700K-6500K)",
+            "de": "Standard (2700K-6500K)",
+            "fr": "Standard (2700K-6500K)"
+          }
+        },
+        {
+          "id": "extended",
+          "label": {
+            "en": "Extended (2000K-6500K)",
+            "nl": "Uitgebreid (2000K-6500K)",
+            "de": "Erweitert (2000K-6500K)",
+            "fr": "Étendu (2000K-6500K)"
+          }
+        },
+        {
+          "id": "wide",
+          "label": {
+            "en": "Wide (1800K-6500K)",
+            "nl": "Breed (1800K-6500K)",
+            "de": "Breit (1800K-6500K)",
+            "fr": "Large (1800K-6500K)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Adjust color temperature range based on your bulb capabilities",
+        "nl": "Pas kleurtemperatuurbereik aan op basis van lampcapaciteiten",
+        "de": "Farbtemperaturbereich basierend auf Lampenfähigkeiten anpassen",
+        "fr": "Ajuster la plage de température de couleur selon les capacités de l'ampoule"
+      }
+    },
     {
       "id": "power_source",
       "type": "dropdown",
@@ -296,77 +419,12 @@
       }
     }
   ],
-  "flow": {
-    "triggers": [
-      {
-        "id": "gas_alarm_triggered",
-        "title": {
-          "en": "Gas alarm triggered",
-          "fr": "Alarme gaz déclenchée",
-          "nl": "Gasalarm geactiveerd",
-          "de": "Gasalarm ausgelöst"
-        }
-      },
-      {
-        "id": "gas_alarm_cleared",
-        "title": {
-          "en": "Gas alarm cleared",
-          "fr": "Alarme gaz terminée",
-          "nl": "Gasalarm gestopt",
-          "de": "Gasalarm beendet"
-        }
-      },
-      {
-        "id": "gas_level_changed",
-        "title": {
-          "en": "Gas level changed",
-          "fr": "Niveau de gaz changé"
-        },
-        "tokens": [
-          {
-            "name": "level",
-            "type": "number",
-            "title": {
-              "en": "Gas level (ppm)",
-              "fr": "Niveau de gaz (ppm)"
-            },
-            "example": 50
-          }
-        ]
-      }
-    ],
-    "conditions": [
-      {
-        "id": "gas_alarm_is_active",
-        "title": {
-          "en": "Gas alarm !{{is|isn't}} active",
-          "fr": "Alarme gaz !{{est|n'est pas}} active"
-        }
-      }
-    ],
-    "actions": [
-      {
-        "id": "gas_test_alarm",
-        "title": {
-          "en": "Test gas alarm",
-          "fr": "Tester alarme gaz"
-        }
-      },
-      {
-        "id": "gas_silence_alarm",
-        "title": {
-          "en": "Silence gas alarm",
-          "fr": "Couper alarme gaz"
-        }
-      }
-    ]
-  },
   "images": {
-    "small": "drivers/gas_sensor/assets/images/small.png",
-    "large": "drivers/gas_sensor/assets/images/large.png",
-    "xlarge": "drivers/gas_sensor/assets/images/xlarge.png"
+    "small": "drivers/bulb_rgb/assets/images/small.png",
+    "large": "drivers/bulb_rgb/assets/images/large.png",
+    "xlarge": "drivers/bulb_rgb/assets/images/xlarge.png"
   },
-  "id": "gas_sensor",
+  "id": "bulb_rgb",
   "platforms": [
     "local"
   ],
@@ -392,5 +450,9 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {}
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": true
+    }
+  }
 }

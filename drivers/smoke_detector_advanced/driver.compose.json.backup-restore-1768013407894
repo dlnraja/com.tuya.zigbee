@@ -1,20 +1,20 @@
 {
   "name": {
-    "en": "Gas Sensor Ts0601",
-    "fr": "Gas Sensor Ts0601"
+    "en": "Smart Smoke Detector Advanced",
+    "fr": "Smart Smoke Detector Advanced"
   },
   "class": "sensor",
   "capabilities": [
-    "alarm_co",
-    "alarm_co2",
+    "alarm_smoke",
     "measure_battery",
-    "alarm_contact",
-    "alarm_gas"
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_tamper"
   ],
   "energy": {
     "batteries": [
-      "CR2450",
-      "AAA"
+      "CR2",
+      "CR123A"
     ],
     "approximation": {
       "usageConstant": 0.5
@@ -23,39 +23,28 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_mwd3c2at",
-      "_TZ3000_tk3s5tyg",
-      "_TZ3000_ww6drja5",
-      "_TZ3002_sal078g8",
-      "_TZE200_auin8mzr",
-      "_TZE200_wzqkpstm",
-      "_TZ3002_sfh0jtz0",
-      "_TZE200_eqpaxqdv",
-      "_TZE200_vexa5o82",
-      "_TZE284_clm4gdw4",
-      "_TZE284_nj7sfid2",
-      "_TZE204_ux5v4tgb",
-      "_TZE204_ezqy5pvh",
-      "_TZE284_ezqy5pvh",
-      "_TZE204_ggev5fsl",
-      "_TZE284_rjgdhqqi",
-      "_TZE284_ggev5fsl"
-    ],
-    "productId": [
-      "TS0601"
+      "_TYZB01_dsjszp0x",
+      "_TYZB01_wqcac7lo",
+      "_TZ3000_0fkmfxwg",
+      "_TZ3000_hhiodade",
+      "_TZ3000_lugaswf8",
+      "_TZ3000_qtcwwgth",
+      "_TZ3000_ysvspchy",
+      "_TZ3210_09hzmirw",
+      "_TZ3210_up3pngle",
+      "_TZE200_0zaf1cr8"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
+          1,
+          3,
           4,
           5,
-          61184,
-          61184,
           1280,
-          1
+          60672,
+          61184
         ],
         "bindings": [
           1,
@@ -64,12 +53,16 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/gas_sensor/assets/learnmode.svg",
+      "image": "/drivers/smoke_detector_advanced/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
-    }
+    },
+    "productId": [
+      "TS0205",
+      "TS0601"
+    ]
   },
   "settings": [
     {
@@ -299,74 +292,81 @@
   "flow": {
     "triggers": [
       {
-        "id": "gas_alarm_triggered",
+        "id": "smoke_alarm_triggered",
         "title": {
-          "en": "Gas alarm triggered",
-          "fr": "Alarme gaz déclenchée",
-          "nl": "Gasalarm geactiveerd",
-          "de": "Gasalarm ausgelöst"
+          "en": "Smoke alarm triggered",
+          "fr": "Alarme fumée déclenchée",
+          "nl": "Rookalarm geactiveerd",
+          "de": "Rauchalarm ausgelöst"
         }
       },
       {
-        "id": "gas_alarm_cleared",
+        "id": "smoke_alarm_cleared",
         "title": {
-          "en": "Gas alarm cleared",
-          "fr": "Alarme gaz terminée",
-          "nl": "Gasalarm gestopt",
-          "de": "Gasalarm beendet"
+          "en": "Smoke alarm cleared",
+          "fr": "Alarme fumée terminée",
+          "nl": "Rookalarm gestopt",
+          "de": "Rauchalarm beendet"
         }
       },
       {
-        "id": "gas_level_changed",
+        "id": "smoke_tamper_alarm",
         "title": {
-          "en": "Gas level changed",
-          "fr": "Niveau de gaz changé"
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme sabotage déclenchée"
+        }
+      },
+      {
+        "id": "smoke_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "fr": "Batterie faible"
         },
         "tokens": [
           {
-            "name": "level",
+            "name": "battery",
             "type": "number",
             "title": {
-              "en": "Gas level (ppm)",
-              "fr": "Niveau de gaz (ppm)"
+              "en": "Battery (%)",
+              "fr": "Batterie (%)"
             },
-            "example": 50
+            "example": 15
           }
         ]
       }
     ],
     "conditions": [
       {
-        "id": "gas_alarm_is_active",
+        "id": "smoke_alarm_is_active",
         "title": {
-          "en": "Gas alarm !{{is|isn't}} active",
-          "fr": "Alarme gaz !{{est|n'est pas}} active"
+          "en": "Smoke alarm !{{is|isn't}} active",
+          "fr": "Alarme fumée !{{est|n'est pas}} active"
         }
       }
     ],
     "actions": [
       {
-        "id": "gas_test_alarm",
+        "id": "smoke_test_alarm",
         "title": {
-          "en": "Test gas alarm",
-          "fr": "Tester alarme gaz"
+          "en": "Test smoke alarm",
+          "fr": "Tester alarme fumée"
         }
       },
       {
-        "id": "gas_silence_alarm",
+        "id": "smoke_silence_alarm",
         "title": {
-          "en": "Silence gas alarm",
-          "fr": "Couper alarme gaz"
+          "en": "Silence smoke alarm",
+          "fr": "Couper alarme fumée"
         }
       }
     ]
   },
   "images": {
-    "small": "drivers/gas_sensor/assets/images/small.png",
-    "large": "drivers/gas_sensor/assets/images/large.png",
-    "xlarge": "drivers/gas_sensor/assets/images/xlarge.png"
+    "small": "drivers/smoke_detector_advanced/assets/images/small.png",
+    "large": "drivers/smoke_detector_advanced/assets/images/large.png",
+    "xlarge": "drivers/smoke_detector_advanced/assets/images/xlarge.png"
   },
-  "id": "gas_sensor",
+  "id": "smoke_detector_advanced",
   "platforms": [
     "local"
   ],

@@ -1,70 +1,70 @@
 {
   "name": {
-    "en": "Gas Sensor Ts0601",
-    "fr": "Gas Sensor Ts0601"
+    "en": "Sos Emergency Button",
+    "fr": "Sos Emergency Button"
   },
   "class": "sensor",
   "capabilities": [
-    "alarm_co",
-    "alarm_co2",
-    "measure_battery",
-    "alarm_contact",
-    "alarm_gas"
+    "alarm_generic",
+    "measure_battery"
   ],
-  "energy": {
-    "batteries": [
-      "CR2450",
-      "AAA"
-    ],
-    "approximation": {
-      "usageConstant": 0.5
+  "capabilitiesOptions": {
+    "alarm_generic": {
+      "title": {
+        "en": "SOS Alert",
+        "fr": "Alerte SOS"
+      },
+      "insightsTitleTrue": {
+        "en": "SOS pressed",
+        "fr": "SOS appuyé"
+      },
+      "insightsTitleFalse": {
+        "en": "SOS reset",
+        "fr": "SOS réinitialisé"
+      }
     }
   },
-  "subDevices": [],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450"
+    ]
+  },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_mwd3c2at",
-      "_TZ3000_tk3s5tyg",
-      "_TZ3000_ww6drja5",
-      "_TZ3002_sal078g8",
-      "_TZE200_auin8mzr",
-      "_TZE200_wzqkpstm",
-      "_TZ3002_sfh0jtz0",
-      "_TZE200_eqpaxqdv",
-      "_TZE200_vexa5o82",
-      "_TZE284_clm4gdw4",
-      "_TZE284_nj7sfid2",
-      "_TZE204_ux5v4tgb",
-      "_TZE204_ezqy5pvh",
-      "_TZE284_ezqy5pvh",
-      "_TZE204_ggev5fsl",
-      "_TZE284_rjgdhqqi",
-      "_TZE284_ggev5fsl"
+      "_TYZB01_trqoesc6",
+      "_TZ3000_0dumfk2z",
+      "_TZ3000_8xz0pyqy",
+      "_TZ3000_el5kt5im",
+      "_TZ3000_eo3dttwe",
+      "_TZ3000_fsiepnrh",
+      "_TZ3000_iystcadi",
+      "_TZ3000_qjhwtnkf",
+      "_TZ3000_zpjuqnco"
     ],
     "productId": [
-      "TS0601"
+      "TS0218"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          4,
-          5,
-          61184,
-          61184,
+          1,
+          3,
+          6,
           1280,
-          1
+          1281,
+          61184
         ],
         "bindings": [
           1,
-          1280
+          1280,
+          1281
         ]
       }
     },
     "learnmode": {
-      "image": "/drivers/gas_sensor/assets/learnmode.svg",
+      "image": "/drivers/button_emergency_sos/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -72,6 +72,41 @@
     }
   },
   "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "🔧 Maintenance",
+        "fr": "🔧 Maintenance"
+      },
+      "children": [
+        {
+          "id": "refresh_battery",
+          "type": "checkbox",
+          "label": {
+            "en": "Force Battery Read (toggle to trigger)",
+            "fr": "Forcer Lecture Batterie (basculer pour déclencher)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Toggle this setting to force a battery reading. The device must be awake (press SOS button first).",
+            "fr": "Basculer ce paramètre pour forcer une lecture de batterie. L'appareil doit être éveillé (appuyez d'abord sur le bouton SOS)."
+          }
+        },
+        {
+          "id": "re_enroll",
+          "type": "checkbox",
+          "label": {
+            "en": "Re-enroll IAS Zone (toggle to trigger)",
+            "fr": "Ré-inscrire IAS Zone (basculer pour déclencher)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Toggle this setting to re-enroll the device. Press SOS button first to wake device.",
+            "fr": "Basculer ce paramètre pour ré-inscrire l'appareil. Appuyez d'abord sur le bouton SOS pour réveiller l'appareil."
+          }
+        }
+      ]
+    },
     {
       "id": "power_source",
       "type": "dropdown",
@@ -294,79 +329,102 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "tuya_dp_configuration",
+      "type": "label",
+      "label": {
+        "en": "Tuya Datapoint Configuration",
+        "fr": "Configuration Tuya Datapoint"
+      },
+      "value": "DP1/DP14: SOS (bool)\nDP4/DP15: Battery %\nDP101: Context (bool=SOS, num=battery)"
+    },
+    {
+      "id": "dp_debug_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "DP Debug Mode",
+        "fr": "Mode Debug DP"
+      },
+      "value": false,
+      "hint": {
+        "en": "Log all Tuya DP data for troubleshooting",
+        "fr": "Logger toutes les données Tuya DP pour diagnostic"
+      }
+    },
+    {
+      "id": "enable_time_sync",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Time Sync",
+        "fr": "Activer Synchro Heure"
+      },
+      "value": true,
+      "hint": {
+        "en": "Sync device time with Homey",
+        "fr": "Synchroniser l'heure du device avec Homey"
+      }
     }
   ],
   "flow": {
     "triggers": [
       {
-        "id": "gas_alarm_triggered",
+        "id": "sos_button_pressed",
         "title": {
-          "en": "Gas alarm triggered",
-          "fr": "Alarme gaz déclenchée",
-          "nl": "Gasalarm geactiveerd",
-          "de": "Gasalarm ausgelöst"
+          "en": "SOS button pressed",
+          "fr": "Bouton SOS appuyé",
+          "nl": "SOS knop ingedrukt",
+          "de": "SOS-Taste gedrückt"
         }
       },
       {
-        "id": "gas_alarm_cleared",
+        "id": "sos_button_released",
         "title": {
-          "en": "Gas alarm cleared",
-          "fr": "Alarme gaz terminée",
-          "nl": "Gasalarm gestopt",
-          "de": "Gasalarm beendet"
+          "en": "SOS button released",
+          "fr": "Bouton SOS relâché"
         }
       },
       {
-        "id": "gas_level_changed",
+        "id": "sos_battery_low",
         "title": {
-          "en": "Gas level changed",
-          "fr": "Niveau de gaz changé"
+          "en": "Battery is low",
+          "fr": "Batterie faible"
         },
         "tokens": [
           {
-            "name": "level",
+            "name": "battery",
             "type": "number",
             "title": {
-              "en": "Gas level (ppm)",
-              "fr": "Niveau de gaz (ppm)"
+              "en": "Battery (%)"
             },
-            "example": 50
+            "example": 15
           }
         ]
+      },
+      {
+        "id": "sos_tamper_alarm",
+        "title": {
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme sabotage déclenchée"
+        }
       }
     ],
     "conditions": [
       {
-        "id": "gas_alarm_is_active",
+        "id": "sos_is_active",
         "title": {
-          "en": "Gas alarm !{{is|isn't}} active",
-          "fr": "Alarme gaz !{{est|n'est pas}} active"
-        }
-      }
-    ],
-    "actions": [
-      {
-        "id": "gas_test_alarm",
-        "title": {
-          "en": "Test gas alarm",
-          "fr": "Tester alarme gaz"
-        }
-      },
-      {
-        "id": "gas_silence_alarm",
-        "title": {
-          "en": "Silence gas alarm",
-          "fr": "Couper alarme gaz"
+          "en": "SOS !{{is|isn't}} active",
+          "fr": "SOS !{{est|n'est pas}} actif"
         }
       }
     ]
   },
   "images": {
-    "small": "drivers/gas_sensor/assets/images/small.png",
-    "large": "drivers/gas_sensor/assets/images/large.png",
-    "xlarge": "drivers/gas_sensor/assets/images/xlarge.png"
+    "small": "drivers/button_emergency_sos/assets/images/small.png",
+    "large": "drivers/button_emergency_sos/assets/images/large.png",
+    "xlarge": "drivers/button_emergency_sos/assets/images/xlarge.png"
   },
-  "id": "gas_sensor",
+  "id": "button_emergency_sos",
   "platforms": [
     "local"
   ],
@@ -391,6 +449,5 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ],
-  "capabilitiesOptions": {}
+  ]
 }

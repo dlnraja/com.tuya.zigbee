@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-01-10T02:25:31.890Z",
+  "timestamp": "2026-01-10T02:50:36.508Z",
   "version": "5.5.434",
   "stats": {
     "totalDrivers": 89,
     "totalFiles": 648,
-    "criticalIssues": 28,
-    "warningIssues": 24,
+    "criticalIssues": 58,
+    "warningIssues": 37,
     "infoIssues": 80
   },
   "issues": {
@@ -295,9 +295,51 @@
     "manufacturerIds": [
       {
         "severity": "WARNING",
+        "file": "drivers\\climate_sensor\\driver.compose.json",
+        "count": 30,
+        "message": "Trop de manufacturer IDs (30) - possibles duplicates"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\contact_sensor\\driver.compose.json",
+        "count": 30,
+        "message": "Trop de manufacturer IDs (30) - possibles duplicates"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\curtain_motor\\driver.compose.json",
+        "count": 25,
+        "message": "Trop de manufacturer IDs (25) - possibles duplicates"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\motion_sensor\\driver.compose.json",
+        "count": 30,
+        "message": "Trop de manufacturer IDs (30) - possibles duplicates"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\motion_sensor_radar_mmwave\\driver.compose.json",
+        "count": 30,
+        "message": "Trop de manufacturer IDs (30) - possibles duplicates"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\plug_energy_monitor\\driver.compose.json",
+        "count": 25,
+        "message": "Trop de manufacturer IDs (25) - possibles duplicates"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\plug_smart\\driver.compose.json",
+        "count": 25,
+        "message": "Trop de manufacturer IDs (25) - possibles duplicates"
+      },
+      {
+        "severity": "WARNING",
         "file": "drivers\\presence_sensor_radar\\driver.compose.json",
-        "count": 110,
-        "message": "Trop de manufacturer IDs (110) - possibles duplicates"
+        "count": 30,
+        "message": "Trop de manufacturer IDs (30) - possibles duplicates"
       },
       {
         "severity": "WARNING",
@@ -307,9 +349,45 @@
       },
       {
         "severity": "WARNING",
+        "file": "drivers\\smoke_detector_advanced\\driver.compose.json",
+        "count": 25,
+        "message": "Trop de manufacturer IDs (25) - possibles duplicates"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\soil_sensor\\driver.compose.json",
+        "count": 29,
+        "message": "Trop de manufacturer IDs (29) - possibles duplicates"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\switch_1gang\\driver.compose.json",
+        "count": 30,
+        "message": "Trop de manufacturer IDs (30) - possibles duplicates"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\switch_2gang\\driver.compose.json",
+        "count": 30,
+        "message": "Trop de manufacturer IDs (30) - possibles duplicates"
+      },
+      {
+        "severity": "WARNING",
         "file": "drivers\\usb_outlet_advanced\\driver.compose.json",
         "count": 25,
         "message": "Trop de manufacturer IDs (25) - possibles duplicates"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\vibration_sensor\\driver.compose.json",
+        "count": 21,
+        "message": "Trop de manufacturer IDs (21) - possibles duplicates"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\water_leak_sensor\\driver.compose.json",
+        "count": 30,
+        "message": "Trop de manufacturer IDs (30) - possibles duplicates"
       },
       {
         "severity": "CRITICAL",
@@ -479,6 +557,106 @@
       },
       {
         "severity": "CRITICAL",
+        "manufacturerId": "_TZ3000_0ghwhypc",
+        "drivers": [
+          "drivers\\climate_sensor\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZ3000_0hkmcrza",
+        "drivers": [
+          "drivers\\climate_sensor\\driver.compose.json",
+          "drivers\\plug_smart\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TYZB01_4mdqxxnn",
+        "drivers": [
+          "drivers\\climate_sensor\\driver.compose.json",
+          "drivers\\plug_smart\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TYZB01_aneiicmq",
+        "drivers": [
+          "drivers\\climate_sensor\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TYZB01_hlla45kx",
+        "drivers": [
+          "drivers\\climate_sensor\\driver.compose.json",
+          "drivers\\plug_smart\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TYZB01_m6ec2pgj",
+        "drivers": [
+          "drivers\\climate_sensor\\driver.compose.json",
+          "drivers\\plug_smart\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TYZB01_ncutbjdi",
+        "drivers": [
+          "drivers\\climate_sensor\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TYZB01_rifa0wlb",
+        "drivers": [
+          "drivers\\climate_sensor\\driver.compose.json",
+          "drivers\\plug_smart\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TYZB01_u9kkqh5o",
+        "drivers": [
+          "drivers\\climate_sensor\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZ3000_0zrccfgx",
+        "drivers": [
+          "drivers\\climate_sensor\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
         "manufacturerId": "PRODUCT:TS0222",
         "drivers": [
           "drivers\\climate_sensor\\driver.compose.json",
@@ -531,10 +709,40 @@
       },
       {
         "severity": "CRITICAL",
+        "manufacturerId": "_TZ3000_7ysdnebc",
+        "drivers": [
+          "drivers\\dimmer_dual_channel\\driver.compose.json",
+          "drivers\\dimmer_wall_1gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZE200_ip2akl4w",
+        "drivers": [
+          "drivers\\dimmer_wall_1gang\\driver.compose.json",
+          "drivers\\soil_sensor\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
         "manufacturerId": "PRODUCT:TS0111",
         "drivers": [
           "drivers\\dimmer_wall_1gang\\driver.compose.json",
           "drivers\\plug_smart\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZE204_ikvncluo",
+        "drivers": [
+          "drivers\\ir_blaster\\driver.compose.json",
+          "drivers\\water_tank_monitor\\driver.compose.json"
         ],
         "count": 2,
         "message": "ID partagé par 2 drivers"
@@ -565,10 +773,40 @@
       },
       {
         "severity": "CRITICAL",
+        "manufacturerId": "_TZE200_3towulqd",
+        "drivers": [
+          "drivers\\motion_sensor\\driver.compose.json",
+          "drivers\\motion_sensor_radar_mmwave\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
         "manufacturerId": "PRODUCT:TS0202",
         "drivers": [
           "drivers\\motion_sensor\\driver.compose.json",
           "drivers\\motion_sensor_radar_mmwave\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZE200_holel4dk",
+        "drivers": [
+          "drivers\\motion_sensor_radar_mmwave\\driver.compose.json",
+          "drivers\\presence_sensor_radar\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZ3000_cayepv1a",
+        "drivers": [
+          "drivers\\plug_energy_monitor\\driver.compose.json",
+          "drivers\\switch_4gang\\driver.compose.json"
         ],
         "count": 2,
         "message": "ID partagé par 2 drivers"
@@ -583,6 +821,56 @@
         ],
         "count": 3,
         "message": "ID partagé par 3 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZ3000_18ejxno0",
+        "drivers": [
+          "drivers\\plug_smart\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZ3000_26gjlugm",
+        "drivers": [
+          "drivers\\plug_smart\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZ3000_2uollq9d",
+        "drivers": [
+          "drivers\\plug_smart\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZ3000_3u4hripk",
+        "drivers": [
+          "drivers\\plug_smart\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZ3000_402vrq2i",
+        "drivers": [
+          "drivers\\plug_smart\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -616,6 +904,56 @@
         ],
         "count": 3,
         "message": "ID partagé par 3 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZE200_aoclfnxz",
+        "drivers": [
+          "drivers\\radiator_valve\\driver.compose.json",
+          "drivers\\smart_heater_controller\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZE200_b6wax7g0",
+        "drivers": [
+          "drivers\\radiator_valve\\driver.compose.json",
+          "drivers\\smart_heater_controller\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZE200_c88teujp",
+        "drivers": [
+          "drivers\\radiator_valve\\driver.compose.json",
+          "drivers\\smart_heater_controller\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZE200_hue3yfsn",
+        "drivers": [
+          "drivers\\radiator_valve\\driver.compose.json",
+          "drivers\\smart_heater_controller\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZE204_aoclfnxz",
+        "drivers": [
+          "drivers\\radiator_valve\\driver.compose.json",
+          "drivers\\smart_heater_controller\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -665,6 +1003,46 @@
         "drivers": [
           "drivers\\switch_1gang\\driver.compose.json",
           "drivers\\switch_4gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZ3000_excgg5kb",
+        "drivers": [
+          "drivers\\switch_3gang\\driver.compose.json",
+          "drivers\\switch_4gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZE284_c8ipbljq",
+        "drivers": [
+          "drivers\\switch_3gang\\driver.compose.json",
+          "drivers\\switch_wall_6gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZE200_81isopgh",
+        "drivers": [
+          "drivers\\water_tank_monitor\\driver.compose.json",
+          "drivers\\water_valve_smart\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "_TZE200_htnnfasr",
+        "drivers": [
+          "drivers\\water_tank_monitor\\driver.compose.json",
+          "drivers\\water_valve_smart\\driver.compose.json"
         ],
         "count": 2,
         "message": "ID partagé par 2 drivers"

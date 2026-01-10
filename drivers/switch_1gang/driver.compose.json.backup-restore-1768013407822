@@ -2,24 +2,30 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.gang2",
-    "onoff.gang3",
-    "onoff.gang4",
+    "measure_battery",
     "measure_power",
-    "button_toggle_1",
-    "button_toggle_2",
-    "button_toggle_3",
-    "button_toggle_4",
+    "meter_power",
+    "measure_voltage",
+    "measure_current",
+    "button_toggle",
     "button_identify"
   ],
   "zigbee": {
     "productId": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
       "TS0004",
-      "TS0005",
       "TS0006",
+      "TS0011",
+      "TS0012",
+      "TS0013",
       "TS0014",
-      "TS0601",
-      "TS0726"
+      "TS0041",
+      "TS0046",
+      "TS0112",
+      "TS0302",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -30,70 +36,35 @@
           6,
           8,
           61184,
-          2820
+          2820,
+          1794
         ],
         "bindings": [
           1,
           6
         ]
-      },
-      "2": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5
-        ],
-        "bindings": [
-          6
-        ]
-      },
-      "3": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5
-        ],
-        "bindings": [
-          6
-        ]
-      },
-      "4": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5
-        ],
-        "bindings": [
-          6
-        ]
       }
     },
     "learnmode": {
-      "image": "/drivers/switch_4gang/assets/learnmode.svg",
+      "image": "/drivers/switch_1gang/assets/learnmode.svg",
       "instruction": {
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
     "manufacturerName": [
-      "_TYZB01_bagt1e4o",
-      "_TZ3000_4vobcwsc",
-      "_TZ3000_cayepv1a",
-      "_TZ3000_eyzpwhtc",
-      "_TZ3000_mrduubod",
-      "_TZ3000_pdvkkcuc",
-      "_TZ3000_uz6ibhib",
-      "_TZ3002_pzao9ls1",
-      "_TZE204_xibaabmu",
-      "_TZE284_xibaabmu",
-      "_TZ3000_excgg5kb"
+      "_TYZB01_4qw4rl1u\r",
+      "_TYZB01_5nr7ncpl\r",
+      "_TZ3000_0ausfos0",
+      "_TZ3000_0zrccfgx",
+      "_TZ3000_18EJXRZK",
+      "_TZ3000_1adss9de",
+      "_TZ3000_1hwjutgo",
+      "_TZ3000_1obmmd8k"
     ]
   },
   "images": {
-    "small": "drivers/switch_4gang/assets/images/small.png",
-    "large": "drivers/switch_4gang/assets/images/large.png"
+    "small": "drivers/switch_1gang/assets/images/small.png",
+    "large": "drivers/switch_1gang/assets/images/large.png"
   },
   "settings": [
     {
@@ -526,7 +497,7 @@
     }
   ],
   "name": {
-    "en": "4-Gang Smart Switch"
+    "en": "1-Gang Smart Switch"
   },
   "platforms": [
     "local"
@@ -535,32 +506,15 @@
     "zigbee"
   ],
   "capabilitiesOptions": {
-    "onoff": {
+    "measure_battery": {
       "title": {
-        "en": "Gang 1",
-        "fr": "Gang 1"
-      }
-    },
-    "onoff.gang2": {
-      "title": {
-        "en": "Gang 2",
-        "fr": "Gang 2"
-      }
-    },
-    "onoff.gang3": {
-      "title": {
-        "en": "Gang 3",
-        "fr": "Gang 3"
-      }
-    },
-    "onoff.gang4": {
-      "title": {
-        "en": "Gang 4",
-        "fr": "Gang 4"
-      }
+        "en": "Battery",
+        "fr": "Batterie"
+      },
+      "preventInsights": false
     }
   },
-  "id": "switch_4gang",
+  "id": "switch_1gang",
   "learnmode": {
     "image": "./assets/learnmode.svg",
     "instruction": {
@@ -585,6 +539,50 @@
     },
     "batteries": [
       "OTHER"
+    ]
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "switch_turned_on",
+        "title": {
+          "en": "Switch turned on",
+          "fr": "Interrupteur allumé"
+        }
+      },
+      {
+        "id": "switch_turned_off",
+        "title": {
+          "en": "Switch turned off",
+          "fr": "Interrupteur éteint"
+        }
+      },
+      {
+        "id": "switch_power_changed",
+        "title": {
+          "en": "Power changed",
+          "fr": "Puissance changée"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)"
+            },
+            "example": 100
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "switch_is_on",
+        "title": {
+          "en": "Switch !{{is|isn't}} on",
+          "fr": "Interrupteur !{{est|n'est pas}} allumé"
+        }
+      }
     ]
   },
   "pair": [
