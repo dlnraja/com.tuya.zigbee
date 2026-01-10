@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.452** | 🚀 DYNAMIC CAPABILITIES: All button drivers now auto-add missing capabilities... |
 | **v5.5.451** | 🔧 3-BUTTON FIX: Added _ensureCapabilities() - devices paired before fix had ... |
 | **v5.5.450** | 🔧 HOBEIAN ZG-101ZL FIX: Added HOBEIAN to button_wireless_1, removed from con... |
 | **v5.5.449** | 🔧 BUTTON FIX: Removed _TZ3000_bczr4e10 (TS0043) and _TZ3000_bgtzm4ny (TS0044... |
@@ -78,7 +79,6 @@
 | **v5.5.445** | 🔧 HOTFIX: Fixed app crash (SyntaxError: Missing catch after try in app.js:78... |
 | **v5.5.444** | 🕐 LCD TIME SYNC v3: Added raw ZCL frame bypass for devices paired before v5.... |
 | **v5.5.443** | ➕ NEW DEVICE: BSEED Smart Wall Sockets with power monitoring (_TZ3210_2uollq9... |
-| **v5.5.442** | 🕐 LCD TIME SYNC: Added ZCL Time cluster (0x000A) as fallback method. If Tuya... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
