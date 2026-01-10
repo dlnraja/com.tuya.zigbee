@@ -1,4 +1,9 @@
 {
+  "5.5.454": {
+    "en": "🔥 SMOKE DETECTOR FIX (Jolink): Fixed critical syntax error in driver.js - orphaned code after module.exports caused driver to fail loading. Warning icon should now be gone!",
+    "nl": "🔥 ROOKMELDER FIX (Jolink): Kritieke syntaxfout in driver.js opgelost - code na module.exports veroorzaakte laadprobleem. Waarschuwingsicoon zou nu weg moeten zijn!",
+    "fr": "🔥 FIX DETECTEUR FUMEE (Jolink): Corrigé erreur syntaxe critique dans driver.js - code orphelin après module.exports empêchait le chargement. L'icône d'avertissement devrait disparaître!"
+  },
   "5.5.453": {
     "en": "📚 SDK3 BEST PRACTICES: Created SDK3BestPractices utility, integrated into BaseHybridDevice, added Flow card highlights, IAS Zone proactive enrollment, battery best practices compliance. All 45 Flow cards improved!",
     "fr": "📚 BONNES PRATIQUES SDK3: Utilitaire SDK3BestPractices créé, intégré à BaseHybridDevice, highlights Flow cards, enrollment IAS Zone proactif, conformité batterie. 45 Flow cards améliorées!"
