@@ -10,3 +10,18 @@ class WaterLeakSensorDriver extends ZigBeeDriver {
 }
 
 module.exports = WaterLeakSensorDriver;
+
+    
+    // Register flow triggers
+    this._water_leak_detectedTrigger = this.homey.flow.getDeviceTriggerCard('water_leak_detected');
+    this._water_leak_driedTrigger = this.homey.flow.getDeviceTriggerCard('water_leak_dried');
+    this._water_battery_lowTrigger = this.homey.flow.getDeviceTriggerCard('water_battery_low');
+    
+    // Register flow conditions
+    this._water_leak_is_detectedCondition = this.homey.flow.getDeviceConditionCard('water_leak_is_detected');
+    this._water_leak_is_detectedCondition.registerRunListener(async (args) => {
+      const { device } = args;
+      return device.getCapabilityValue('alarm_water') === true;
+    });
+    
+    this.log('water_leak_sensor: Flow cards registered');

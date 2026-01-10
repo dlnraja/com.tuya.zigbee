@@ -10,3 +10,19 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
 }
 
 module.exports = SmartSmokeDetectorAdvancedDriver;
+
+    
+    // Register flow triggers
+    this._smoke_detectedTrigger = this.homey.flow.getDeviceTriggerCard('smoke_detected');
+    this._smoke_clearedTrigger = this.homey.flow.getDeviceTriggerCard('smoke_cleared');
+    this._smoke_test_triggeredTrigger = this.homey.flow.getDeviceTriggerCard('smoke_test_triggered');
+    this._smoke_battery_lowTrigger = this.homey.flow.getDeviceTriggerCard('smoke_battery_low');
+    
+    // Register flow conditions
+    this._smoke_is_detectedCondition = this.homey.flow.getDeviceConditionCard('smoke_is_detected');
+    this._smoke_is_detectedCondition.registerRunListener(async (args) => {
+      const { device } = args;
+      return device.getCapabilityValue('alarm_smoke') === true;
+    });
+    
+    this.log('smoke_detector_advanced: Flow cards registered');
