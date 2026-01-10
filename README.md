@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.448** | ⏰ DUAL TIME SYNC: Added ZCL Time cluster (0x000A) handler! Device interview s... |
 | **v5.5.447** | ⏰ TIME SYNC LISTENER: Added mcuSyncTime BoundCluster - device REQUESTS time, ... |
 | **v5.5.446** | 🕐 LCD TIME SYNC FIX: Fixed payload order [UTC][Local] per Z2M spec. Added cl... |
 | **v5.5.445** | 🔧 HOTFIX: Fixed app crash (SyntaxError: Missing catch after try in app.js:78... |
@@ -78,7 +79,6 @@
 | **v5.5.441** | 🔧 BUTTONS FIX: Changed class from 'button' to 'sensor' + added button.X capa... |
 | **v5.5.440** | 🔧 BUTTONS: Removed button.X capabilities - use FLOW CARDS for automation (si... |
 | **v5.5.439** | 🔧 LCD TIME SYNC: Improved error message when Tuya cluster unavailable - inst... |
-| **v5.5.438** | ⚡ SPEED FIX: _TZE204_gkfbdvyx radar sensor now responds faster. Reduced debou... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
