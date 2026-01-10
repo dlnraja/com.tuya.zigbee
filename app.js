@@ -609,413 +609,421 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       // ═══════════════════════════════════════════════════════════════════
       // v5.5.409: GENERIC TUYA DP FLOW CARDS (Inspired by com.tuya2)
       // Allows users to trigger on ANY DP change and send commands to ANY DP
+      // v5.5.437: Wrapped in try-catch to prevent app crash if cards not found
       // ═══════════════════════════════════════════════════════════════════
 
-      // TRIGGER: Receive DP Boolean
-      this.homey.flow.getTriggerCard('receive_dp_boolean')
-        .registerRunListener(async (args, state) => {
-          return state.dp_id === args.dp_id;
-        });
+      try {
+        // TRIGGER: Receive DP Boolean
+        this.homey.flow.getTriggerCard('receive_dp_boolean')
+          .registerRunListener(async (args, state) => {
+            return state.dp_id === args.dp_id;
+          });
 
-      // TRIGGER: Receive DP Number
-      this.homey.flow.getTriggerCard('receive_dp_number')
-        .registerRunListener(async (args, state) => {
-          return state.dp_id === args.dp_id;
-        });
+        // TRIGGER: Receive DP Number
+        this.homey.flow.getTriggerCard('receive_dp_number')
+          .registerRunListener(async (args, state) => {
+            return state.dp_id === args.dp_id;
+          });
 
-      // TRIGGER: Receive DP String
-      this.homey.flow.getTriggerCard('receive_dp_string')
-        .registerRunListener(async (args, state) => {
-          return state.dp_id === args.dp_id;
-        });
+        // TRIGGER: Receive DP String
+        this.homey.flow.getTriggerCard('receive_dp_string')
+          .registerRunListener(async (args, state) => {
+            return state.dp_id === args.dp_id;
+          });
 
-      // TRIGGER: Receive ANY DP (for debugging)
-      this.homey.flow.getTriggerCard('receive_dp_any')
-        .registerRunListener(async (args, state) => true);
+        // TRIGGER: Receive ANY DP (for debugging)
+        this.homey.flow.getTriggerCard('receive_dp_any')
+          .registerRunListener(async (args, state) => true);
 
-      // ACTION: Send DP Boolean
-      this.homey.flow.getActionCard('send_dp_boolean')
-        .registerRunListener(async (args) => {
-          try {
-            const device = args.device;
-            const dpId = args.dp_id;
-            const value = args.value;
-            this.log(`[DP-ACTION] Sending Boolean DP${dpId}=${value} to ${device.getName()}`);
+        this.log('✅ Tuya DP Trigger Flow Cards registered (4 cards)');
+      } catch (err) {
+        this.error('⚠️ Error registering DP trigger flow cards:', err.message);
+      }
 
-            if (typeof device.sendTuyaDP === 'function') {
-              await device.sendTuyaDP(dpId, 'bool', value);
-            } else if (device.zclNode?.endpoints?.[1]?.clusters?.tuya) {
-              const { Cluster } = require('zigbee-clusters');
-              const TuyaCluster = Cluster.getCluster('tuya');
-              await device.zclNode.endpoints[1].clusters.tuya.datapoint({
-                status: 0,
-                transid: Math.floor(Math.random() * 255),
-                dp: dpId,
-                datatype: 1, // Boolean
-                length: 1,
-                data: [value ? 1 : 0]
-              });
-            }
-            return true;
-          } catch (err) {
-            this.error(`[DP-ACTION] Error sending boolean:`, err.message);
-            return false;
-          }
-        });
+      // ACTION: Send DP Boolean (wrapped in try-catch v5.5.437)
+      try {
+        this.homey.flow.getActionCard('send_dp_boolean')
+          .registerRunListener(async (args) => {
+            try {
+              const device = args.device;
+              const dpId = args.dp_id;
+              const value = args.value;
+              this.log(`[DP-ACTION] Sending Boolean DP${dpId}=${value} to ${device.getName()}`);
 
-      // ACTION: Send DP Number
-      this.homey.flow.getActionCard('send_dp_number')
-        .registerRunListener(async (args) => {
-          try {
-            const device = args.device;
-            const dpId = args.dp_id;
-            const value = Math.round(args.value);
-            this.log(`[DP-ACTION] Sending Number DP${dpId}=${value} to ${device.getName()}`);
-
-            if (typeof device.sendTuyaDP === 'function') {
-              await device.sendTuyaDP(dpId, 'value', value);
-            } else if (device.zclNode?.endpoints?.[1]?.clusters?.tuya) {
-              const data = Buffer.alloc(4);
-              data.writeUInt32BE(value, 0);
-              await device.zclNode.endpoints[1].clusters.tuya.datapoint({
-                status: 0,
-                transid: Math.floor(Math.random() * 255),
-                dp: dpId,
-                datatype: 2, // Value (uint32)
-                length: 4,
-                data: [...data]
-              });
-            }
-            return true;
-          } catch (err) {
-            this.error(`[DP-ACTION] Error sending number:`, err.message);
-            return false;
-          }
-        });
-
-      // ACTION: Send DP String/Enum
-      this.homey.flow.getActionCard('send_dp_string')
-        .registerRunListener(async (args) => {
-          try {
-            const device = args.device;
-            const dpId = args.dp_id;
-            const value = args.value;
-            this.log(`[DP-ACTION] Sending String DP${dpId}="${value}" to ${device.getName()}`);
-
-            // Try to parse as enum (number) first
-            const enumValue = parseInt(value, 10);
-            if (!isNaN(enumValue) && enumValue >= 0 && enumValue <= 255) {
-              // It's an enum value
               if (typeof device.sendTuyaDP === 'function') {
-                await device.sendTuyaDP(dpId, 'enum', enumValue);
+                await device.sendTuyaDP(dpId, 'bool', value);
               } else if (device.zclNode?.endpoints?.[1]?.clusters?.tuya) {
+                const { Cluster } = require('zigbee-clusters');
+                const TuyaCluster = Cluster.getCluster('tuya');
                 await device.zclNode.endpoints[1].clusters.tuya.datapoint({
                   status: 0,
                   transid: Math.floor(Math.random() * 255),
                   dp: dpId,
-                  datatype: 4, // Enum
+                  datatype: 1, // Boolean
                   length: 1,
-                  data: [enumValue]
+                  data: [value ? 1 : 0]
                 });
               }
-            } else {
-              // It's a string
+              return true;
+            } catch (err) {
+              this.error(`[DP-ACTION] Error sending boolean:`, err.message);
+              return false;
+            }
+          });
+
+        // ACTION: Send DP Number
+        this.homey.flow.getActionCard('send_dp_number')
+          .registerRunListener(async (args) => {
+            try {
+              const device = args.device;
+              const dpId = args.dp_id;
+              const value = Math.round(args.value);
+              this.log(`[DP-ACTION] Sending Number DP${dpId}=${value} to ${device.getName()}`);
+
               if (typeof device.sendTuyaDP === 'function') {
-                await device.sendTuyaDP(dpId, 'string', value);
+                await device.sendTuyaDP(dpId, 'value', value);
               } else if (device.zclNode?.endpoints?.[1]?.clusters?.tuya) {
-                const strBuffer = Buffer.from(value, 'utf8');
+                const data = Buffer.alloc(4);
+                data.writeUInt32BE(value, 0);
                 await device.zclNode.endpoints[1].clusters.tuya.datapoint({
                   status: 0,
                   transid: Math.floor(Math.random() * 255),
                   dp: dpId,
-                  datatype: 3, // String
-                  length: strBuffer.length,
-                  data: [...strBuffer]
+                  datatype: 2, // Value (uint32)
+                  length: 4,
+                  data: [...data]
                 });
               }
+              return true;
+            } catch (err) {
+              this.error(`[DP-ACTION] Error sending number:`, err.message);
+              return false;
             }
-            return true;
-          } catch (err) {
-            this.error(`[DP-ACTION] Error sending string:`, err.message);
-            return false;
-          }
-        });
+          });
 
-      // ACTION: Send DP Raw (hex bytes)
-      this.homey.flow.getActionCard('send_dp_raw')
-        .registerRunListener(async (args) => {
-          try {
-            const device = args.device;
-            const dpId = args.dp_id;
-            const hexValue = args.value.replace(/\s/g, '');
-            const data = Buffer.from(hexValue, 'hex');
-            this.log(`[DP-ACTION] Sending Raw DP${dpId}=[${hexValue}] to ${device.getName()}`);
+        // ACTION: Send DP String/Enum
+        this.homey.flow.getActionCard('send_dp_string')
+          .registerRunListener(async (args) => {
+            try {
+              const device = args.device;
+              const dpId = args.dp_id;
+              const value = args.value;
+              this.log(`[DP-ACTION] Sending String DP${dpId}="${value}" to ${device.getName()}`);
 
-            if (typeof device.sendTuyaDP === 'function') {
-              await device.sendTuyaDP(dpId, 'raw', data);
-            } else if (device.zclNode?.endpoints?.[1]?.clusters?.tuya) {
-              await device.zclNode.endpoints[1].clusters.tuya.datapoint({
-                status: 0,
-                transid: Math.floor(Math.random() * 255),
-                dp: dpId,
-                datatype: 0, // Raw
-                length: data.length,
-                data: [...data]
-              });
+              // Try to parse as enum (number) first
+              const enumValue = parseInt(value, 10);
+              if (!isNaN(enumValue) && enumValue >= 0 && enumValue <= 255) {
+                // It's an enum value
+                if (typeof device.sendTuyaDP === 'function') {
+                  await device.sendTuyaDP(dpId, 'enum', enumValue);
+                } else if (device.zclNode?.endpoints?.[1]?.clusters?.tuya) {
+                  await device.zclNode.endpoints[1].clusters.tuya.datapoint({
+                    status: 0,
+                    transid: Math.floor(Math.random() * 255),
+                    dp: dpId,
+                    datatype: 4, // Enum
+                    length: 1,
+                    data: [enumValue]
+                  });
+                }
+              } else {
+                // It's a string
+                if (typeof device.sendTuyaDP === 'function') {
+                  await device.sendTuyaDP(dpId, 'string', value);
+                } else if (device.zclNode?.endpoints?.[1]?.clusters?.tuya) {
+                  const strBuffer = Buffer.from(value, 'utf8');
+                  await device.zclNode.endpoints[1].clusters.tuya.datapoint({
+                    status: 0,
+                    transid: Math.floor(Math.random() * 255),
+                    dp: dpId,
+                    datatype: 3, // String
+                    length: strBuffer.length,
+                    data: [...strBuffer]
+                  });
+                }
+              }
+              return true;
+            } catch (err) {
+              this.error(`[DP-ACTION] Error sending string:`, err.message);
+              return false;
             }
-            return true;
-          } catch (err) {
-            this.error(`[DP-ACTION] Error sending raw:`, err.message);
-            return false;
-          }
-        });
+          });
 
-      this.log('✅ Generic Tuya DP Flow Cards registered (8 cards)');
+        // ACTION: Send DP Raw (hex bytes)
+        this.homey.flow.getActionCard('send_dp_raw')
+          .registerRunListener(async (args) => {
+            try {
+              const device = args.device;
+              const dpId = args.dp_id;
+              const hexValue = args.value.replace(/\s/g, '');
+              const data = Buffer.from(hexValue, 'hex');
+              this.log(`[DP-ACTION] Sending Raw DP${dpId}=[${hexValue}] to ${device.getName()}`);
 
-    } catch (err) {
-      this.error('⚠️  Error registering OTA flow cards:', err.message);
+              if (typeof device.sendTuyaDP === 'function') {
+                await device.sendTuyaDP(dpId, 'raw', data);
+              } else if (device.zclNode?.endpoints?.[1]?.clusters?.tuya) {
+                await device.zclNode.endpoints[1].clusters.tuya.datapoint({
+                  status: 0,
+                  transid: Math.floor(Math.random() * 255),
+                  dp: dpId,
+                  datatype: 0, // Raw
+                  length: data.length,
+                  data: [...data]
+                });
+              }
+              return true;
+            } catch (err) {
+              this.error(`[DP-ACTION] Error sending raw:`, err.message);
+              return false;
+            }
+          });
+
+        this.log('✅ Generic Tuya DP Flow Cards registered (8 cards)');
+
+      } catch (err) {
+        this.error('⚠️ Error registering DP action flow cards:', err.message);
+      }
     }
-  }
 
   /**
    * Get OTA Update Manager (for external access)
    */
   getOTAManager() {
-    return this.otaManager;
-  }
-
-  /**
-   * Get Quirks Database (for external access)
-   */
-  getQuirksDatabase() {
-    return this.quirksDatabase;
-  }
-
-  /**
-   * Setup diagnostic logging to capture all logs for MCP/AI
-   */
-  _setupDiagnosticLogging() {
-    // Store original methods
-    const originalLog = this.log.bind(this);
-    const originalError = this.error.bind(this);
-
-    // Override log method
-    this.log = (...args) => {
-      const message = args.join(' ');
-
-      // Determine category and level
-      let category = 'APP';
-      let level = 'INFO';
-
-      if (message.includes('ZIGBEE')) category = 'ZIGBEE';
-      else if (message.includes('CLUSTER')) category = 'CLUSTER';
-      else if (message.includes('DEVICE')) category = 'DEVICE';
-      else if (message.includes('FLOW')) category = 'FLOW';
-      else if (message.includes('BATTERY')) category = 'BATTERY';
-
-      if (message.includes('⚠️') || message.includes('WARN')) level = 'WARN';
-
-      // Add to diagnostic API
-      if (this.diagnosticAPI) {
-        this.diagnosticAPI.addLog(level, category, message);
-      }
-
-      // Add to LogBuffer (for MCP access via ManagerSettings)
-      if (this.logBuffer) {
-        this.logBuffer.push(level, category, message).catch(() => {
-          // Ignore errors to prevent crash
-        });
-      }
-
-      // Call original
-      originalLog(...args);
-    };
-
-    // Override error method
-    this.error = (...args) => {
-      const message = args.join(' ');
-
-      // Determine category
-      let category = 'APP';
-      if (message.includes('ZIGBEE')) category = 'ZIGBEE';
-      else if (message.includes('CLUSTER')) category = 'CLUSTER';
-      else if (message.includes('DEVICE')) category = 'DEVICE';
-      else if (message.includes('FLOW')) category = 'FLOW';
-
-      // Add to diagnostic API
-      if (this.diagnosticAPI) {
-        this.diagnosticAPI.addLog('ERROR', category, message);
-      }
-
-      // Add to LogBuffer (for MCP access via ManagerSettings)
-      if (this.logBuffer) {
-        this.logBuffer.push('ERROR', category, message).catch(() => {
-          // Ignore errors to prevent crash
-        });
-      }
-
-      // Call original
-      originalError(...args);
-    };
-  }
-
-  /**
-   * Get diagnostic API report (accessible for MCP/AI)
-   * Can be called externally for real-time diagnostics
-   */
-  getDiagnosticReport() {
-    if (!this.diagnosticAPI) {
-      return { error: 'DiagnosticAPI not initialized' };
+      return this.otaManager;
     }
-    return this.diagnosticAPI.exportForAI();
-  }
+
+    /**
+     * Get Quirks Database (for external access)
+     */
+    getQuirksDatabase() {
+      return this.quirksDatabase;
+    }
+
+    /**
+     * Setup diagnostic logging to capture all logs for MCP/AI
+     */
+    _setupDiagnosticLogging() {
+      // Store original methods
+      const originalLog = this.log.bind(this);
+      const originalError = this.error.bind(this);
+
+      // Override log method
+      this.log = (...args) => {
+        const message = args.join(' ');
+
+        // Determine category and level
+        let category = 'APP';
+        let level = 'INFO';
+
+        if (message.includes('ZIGBEE')) category = 'ZIGBEE';
+        else if (message.includes('CLUSTER')) category = 'CLUSTER';
+        else if (message.includes('DEVICE')) category = 'DEVICE';
+        else if (message.includes('FLOW')) category = 'FLOW';
+        else if (message.includes('BATTERY')) category = 'BATTERY';
+
+        if (message.includes('⚠️') || message.includes('WARN')) level = 'WARN';
+
+        // Add to diagnostic API
+        if (this.diagnosticAPI) {
+          this.diagnosticAPI.addLog(level, category, message);
+        }
+
+        // Add to LogBuffer (for MCP access via ManagerSettings)
+        if (this.logBuffer) {
+          this.logBuffer.push(level, category, message).catch(() => {
+            // Ignore errors to prevent crash
+          });
+        }
+
+        // Call original
+        originalLog(...args);
+      };
+
+      // Override error method
+      this.error = (...args) => {
+        const message = args.join(' ');
+
+        // Determine category
+        let category = 'APP';
+        if (message.includes('ZIGBEE')) category = 'ZIGBEE';
+        else if (message.includes('CLUSTER')) category = 'CLUSTER';
+        else if (message.includes('DEVICE')) category = 'DEVICE';
+        else if (message.includes('FLOW')) category = 'FLOW';
+
+        // Add to diagnostic API
+        if (this.diagnosticAPI) {
+          this.diagnosticAPI.addLog('ERROR', category, message);
+        }
+
+        // Add to LogBuffer (for MCP access via ManagerSettings)
+        if (this.logBuffer) {
+          this.logBuffer.push('ERROR', category, message).catch(() => {
+            // Ignore errors to prevent crash
+          });
+        }
+
+        // Call original
+        originalError(...args);
+      };
+    }
+
+    /**
+     * Get diagnostic API report (accessible for MCP/AI)
+     * Can be called externally for real-time diagnostics
+     */
+    getDiagnosticReport() {
+      if (!this.diagnosticAPI) {
+        return { error: 'DiagnosticAPI not initialized' };
+      }
+      return this.diagnosticAPI.exportForAI();
+    }
 
   /**
    * Get LogBuffer logs (MCP-accessible via ManagerSettings)
    * @returns {Promise<Object>} MCP-formatted log export
    */
   async getMCPLogs() {
-    if (!this.logBuffer) {
-      return { error: 'LogBuffer not initialized' };
+      if (!this.logBuffer) {
+        return { error: 'LogBuffer not initialized' };
+      }
+      return await this.logBuffer.exportForMCP();
     }
-    return await this.logBuffer.exportForMCP();
-  }
 
-  /**
-   * Get Smart-Adapt suggestions (non-destructive)
-   * @returns {Object} MCP-formatted suggestions export
-   */
-  getMCPSuggestions() {
-    if (!this.suggestionEngine) {
-      return { error: 'SuggestionEngine not initialized' };
+    /**
+     * Get Smart-Adapt suggestions (non-destructive)
+     * @returns {Object} MCP-formatted suggestions export
+     */
+    getMCPSuggestions() {
+      if (!this.suggestionEngine) {
+        return { error: 'SuggestionEngine not initialized' };
+      }
+      return this.suggestionEngine.exportForMCP();
     }
-    return this.suggestionEngine.exportForMCP();
-  }
 
   /**
    * Get complete MCP diagnostic package
    * @returns {Promise<Object>} All diagnostic data for MCP/AI
    */
   async getCompleteMCPDiagnostics() {
-    return {
-      version: '1.0.0',
-      exported: new Date().toISOString(),
-      diagnosticAPI: this.getDiagnosticReport(),
-      logBuffer: await this.getMCPLogs(),
-      suggestions: this.getMCPSuggestions(),
-      mcp: {
-        protocol: 'homey-universal-tuya-zigbee',
-        readable: true,
-        settingsKey: 'debug_log_buffer'
-      }
-    };
-  }
+      return {
+        version: '1.0.0',
+        exported: new Date().toISOString(),
+        diagnosticAPI: this.getDiagnosticReport(),
+        logBuffer: await this.getMCPLogs(),
+        suggestions: this.getMCPSuggestions(),
+        mcp: {
+          protocol: 'homey-universal-tuya-zigbee',
+          readable: true,
+          settingsKey: 'debug_log_buffer'
+        }
+      };
+    }
 
   /**
    * Initialize Homey Insights
    */
   async initializeInsights() {
-    this.log('📊 Initializing Homey Insights...');
+      this.log('📊 Initializing Homey Insights...');
 
-    try {
-      // Battery health insight
-      await this.homey.insights.createLog('battery_health', {
-        title: { en: 'Battery Health', fr: 'Santé Batterie' },
-        type: 'number',
-        units: '%',
-        decimals: 0
-      }).catch(() => { }); // Already exists
+      try {
+        // Battery health insight
+        await this.homey.insights.createLog('battery_health', {
+          title: { en: 'Battery Health', fr: 'Santé Batterie' },
+          type: 'number',
+          units: '%',
+          decimals: 0
+        }).catch(() => { }); // Already exists
 
-      // Device uptime insight
-      await this.homey.insights.createLog('device_uptime', {
-        title: { en: 'Device Uptime', fr: 'Disponibilité' },
-        type: 'number',
-        units: '%',
-        decimals: 1
-      }).catch(() => { });
+        // Device uptime insight
+        await this.homey.insights.createLog('device_uptime', {
+          title: { en: 'Device Uptime', fr: 'Disponibilité' },
+          type: 'number',
+          units: '%',
+          decimals: 1
+        }).catch(() => { });
 
-      // Zigbee LQI insight
-      await this.homey.insights.createLog('zigbee_lqi', {
-        title: { en: 'Zigbee Link Quality', fr: 'Qualité Lien Zigbee' },
-        type: 'number',
-        units: '',
-        decimals: 0
-      }).catch(() => { });
+        // Zigbee LQI insight
+        await this.homey.insights.createLog('zigbee_lqi', {
+          title: { en: 'Zigbee Link Quality', fr: 'Qualité Lien Zigbee' },
+          type: 'number',
+          units: '',
+          decimals: 0
+        }).catch(() => { });
 
-      // Command success rate insight
-      await this.homey.insights.createLog('command_success_rate', {
-        title: { en: 'Command Success Rate', fr: 'Taux Succès Commandes' },
-        type: 'number',
-        units: '%',
-        decimals: 1
-      }).catch(() => { });
+        // Command success rate insight
+        await this.homey.insights.createLog('command_success_rate', {
+          title: { en: 'Command Success Rate', fr: 'Taux Succès Commandes' },
+          type: 'number',
+          units: '%',
+          decimals: 1
+        }).catch(() => { });
 
-      // OTA update tracking insight
-      await this.homey.insights.createLog('ota_updates', {
-        title: { en: 'OTA Updates Available', fr: 'Mises à jour OTA disponibles' },
-        type: 'number',
-        units: '',
-        decimals: 0
-      }).catch(() => { });
+        // OTA update tracking insight
+        await this.homey.insights.createLog('ota_updates', {
+          title: { en: 'OTA Updates Available', fr: 'Mises à jour OTA disponibles' },
+          type: 'number',
+          units: '',
+          decimals: 0
+        }).catch(() => { });
 
-      // Device offline count insight
-      await this.homey.insights.createLog('devices_offline', {
-        title: { en: 'Devices Offline', fr: 'Appareils hors ligne' },
-        type: 'number',
-        units: '',
-        decimals: 0
-      }).catch(() => { });
+        // Device offline count insight
+        await this.homey.insights.createLog('devices_offline', {
+          title: { en: 'Devices Offline', fr: 'Appareils hors ligne' },
+          type: 'number',
+          units: '',
+          decimals: 0
+        }).catch(() => { });
 
-      this.log('✅ Homey Insights initialized (6 logs)');
-    } catch (err) {
-      this.error('⚠️  Error initializing insights:', err.message);
-    }
-  }
-
-  /**
-   * AUDIT V2: Initialize Developer Settings
-   * Manages developer_debug_mode and experimental_smart_adapt flags
-   */
-  initializeSettings() {
-    // Get settings with defaults
-    this.developerDebugMode = this.homey.settings.get('developer_debug_mode') ?? false;
-    this.experimentalSmartAdapt = this.homey.settings.get('experimental_smart_adapt') ?? false;
-
-    // Listen for settings changes
-    this.homey.settings.on('set', (key) => {
-      if (key === 'developer_debug_mode') {
-        this.developerDebugMode = this.homey.settings.get('developer_debug_mode');
-        this.log(`🔍 [AUDIT V2] Developer Debug Mode: ${this.developerDebugMode ? 'ENABLED (verbose)' : 'DISABLED (minimal)'}`);
+        this.log('✅ Homey Insights initialized (6 logs)');
+      } catch (err) {
+        this.error('⚠️  Error initializing insights:', err.message);
       }
+    }
 
-      if (key === 'experimental_smart_adapt') {
-        this.experimentalSmartAdapt = this.homey.settings.get('experimental_smart_adapt');
-        this.log(`🤖 [AUDIT V2] Experimental Smart-Adapt: ${this.experimentalSmartAdapt ? 'ENABLED (modifies capabilities)' : 'DISABLED (read-only)'}`);
+    /**
+     * AUDIT V2: Initialize Developer Settings
+     * Manages developer_debug_mode and experimental_smart_adapt flags
+     */
+    initializeSettings() {
+      // Get settings with defaults
+      this.developerDebugMode = this.homey.settings.get('developer_debug_mode') ?? false;
+      this.experimentalSmartAdapt = this.homey.settings.get('experimental_smart_adapt') ?? false;
 
-        // Warn user if enabling experimental mode
-        if (this.experimentalSmartAdapt) {
-          this.log('⚠️  WARNING: Experimental Smart-Adapt will MODIFY device capabilities!');
-          this.log('⚠️  Only enable if you understand the risks.');
+      // Listen for settings changes
+      this.homey.settings.on('set', (key) => {
+        if (key === 'developer_debug_mode') {
+          this.developerDebugMode = this.homey.settings.get('developer_debug_mode');
+          this.log(`🔍 [AUDIT V2] Developer Debug Mode: ${this.developerDebugMode ? 'ENABLED (verbose)' : 'DISABLED (minimal)'}`);
         }
-      }
-    });
 
-    // Log initial state
-    this.log(`[AUDIT V2] Settings initialized:`);
-    this.log(`  - Developer Debug: ${this.developerDebugMode}`);
-    this.log(`  - Experimental Smart-Adapt: ${this.experimentalSmartAdapt}`);
-  }
+        if (key === 'experimental_smart_adapt') {
+          this.experimentalSmartAdapt = this.homey.settings.get('experimental_smart_adapt');
+          this.log(`🤖 [AUDIT V2] Experimental Smart-Adapt: ${this.experimentalSmartAdapt ? 'ENABLED (modifies capabilities)' : 'DISABLED (read-only)'}`);
 
-  /**
-   * Helper method for conditional logging (AUDIT V2)
-   * Only logs if developer_debug_mode is enabled
-   */
-  debugLog(...args) {
-    if (this.developerDebugMode) {
-      this.log('[DEBUG]', ...args);
+          // Warn user if enabling experimental mode
+          if (this.experimentalSmartAdapt) {
+            this.log('⚠️  WARNING: Experimental Smart-Adapt will MODIFY device capabilities!');
+            this.log('⚠️  Only enable if you understand the risks.');
+          }
+        }
+      });
+
+      // Log initial state
+      this.log(`[AUDIT V2] Settings initialized:`);
+      this.log(`  - Developer Debug: ${this.developerDebugMode}`);
+      this.log(`  - Experimental Smart-Adapt: ${this.experimentalSmartAdapt}`);
     }
-  }
 
-}
+    /**
+     * Helper method for conditional logging (AUDIT V2)
+     * Only logs if developer_debug_mode is enabled
+     */
+    debugLog(...args) {
+      if (this.developerDebugMode) {
+        this.log('[DEBUG]', ...args);
+      }
+    }
+
+  }
 
 module.exports = UniversalTuyaZigbeeApp;
