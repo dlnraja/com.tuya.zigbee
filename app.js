@@ -783,247 +783,251 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       } catch (err) {
         this.error('⚠️ Error registering DP action flow cards:', err.message);
       }
+
+    } catch (err) {
+      this.error('⚠️ Error registering OTA flow cards:', err.message);
     }
+  }
 
   /**
    * Get OTA Update Manager (for external access)
    */
   getOTAManager() {
-      return this.otaManager;
-    }
+    return this.otaManager;
+  }
 
-    /**
-     * Get Quirks Database (for external access)
-     */
-    getQuirksDatabase() {
-      return this.quirksDatabase;
-    }
+  /**
+   * Get Quirks Database (for external access)
+   */
+  getQuirksDatabase() {
+    return this.quirksDatabase;
+  }
 
-    /**
-     * Setup diagnostic logging to capture all logs for MCP/AI
-     */
-    _setupDiagnosticLogging() {
-      // Store original methods
-      const originalLog = this.log.bind(this);
-      const originalError = this.error.bind(this);
+  /**
+   * Setup diagnostic logging to capture all logs for MCP/AI
+   */
+  _setupDiagnosticLogging() {
+    // Store original methods
+    const originalLog = this.log.bind(this);
+    const originalError = this.error.bind(this);
 
-      // Override log method
-      this.log = (...args) => {
-        const message = args.join(' ');
+    // Override log method
+    this.log = (...args) => {
+      const message = args.join(' ');
 
-        // Determine category and level
-        let category = 'APP';
-        let level = 'INFO';
+      // Determine category and level
+      let category = 'APP';
+      let level = 'INFO';
 
-        if (message.includes('ZIGBEE')) category = 'ZIGBEE';
-        else if (message.includes('CLUSTER')) category = 'CLUSTER';
-        else if (message.includes('DEVICE')) category = 'DEVICE';
-        else if (message.includes('FLOW')) category = 'FLOW';
-        else if (message.includes('BATTERY')) category = 'BATTERY';
+      if (message.includes('ZIGBEE')) category = 'ZIGBEE';
+      else if (message.includes('CLUSTER')) category = 'CLUSTER';
+      else if (message.includes('DEVICE')) category = 'DEVICE';
+      else if (message.includes('FLOW')) category = 'FLOW';
+      else if (message.includes('BATTERY')) category = 'BATTERY';
 
-        if (message.includes('⚠️') || message.includes('WARN')) level = 'WARN';
+      if (message.includes('⚠️') || message.includes('WARN')) level = 'WARN';
 
-        // Add to diagnostic API
-        if (this.diagnosticAPI) {
-          this.diagnosticAPI.addLog(level, category, message);
-        }
-
-        // Add to LogBuffer (for MCP access via ManagerSettings)
-        if (this.logBuffer) {
-          this.logBuffer.push(level, category, message).catch(() => {
-            // Ignore errors to prevent crash
-          });
-        }
-
-        // Call original
-        originalLog(...args);
-      };
-
-      // Override error method
-      this.error = (...args) => {
-        const message = args.join(' ');
-
-        // Determine category
-        let category = 'APP';
-        if (message.includes('ZIGBEE')) category = 'ZIGBEE';
-        else if (message.includes('CLUSTER')) category = 'CLUSTER';
-        else if (message.includes('DEVICE')) category = 'DEVICE';
-        else if (message.includes('FLOW')) category = 'FLOW';
-
-        // Add to diagnostic API
-        if (this.diagnosticAPI) {
-          this.diagnosticAPI.addLog('ERROR', category, message);
-        }
-
-        // Add to LogBuffer (for MCP access via ManagerSettings)
-        if (this.logBuffer) {
-          this.logBuffer.push('ERROR', category, message).catch(() => {
-            // Ignore errors to prevent crash
-          });
-        }
-
-        // Call original
-        originalError(...args);
-      };
-    }
-
-    /**
-     * Get diagnostic API report (accessible for MCP/AI)
-     * Can be called externally for real-time diagnostics
-     */
-    getDiagnosticReport() {
-      if (!this.diagnosticAPI) {
-        return { error: 'DiagnosticAPI not initialized' };
+      // Add to diagnostic API
+      if (this.diagnosticAPI) {
+        this.diagnosticAPI.addLog(level, category, message);
       }
-      return this.diagnosticAPI.exportForAI();
+
+      // Add to LogBuffer (for MCP access via ManagerSettings)
+      if (this.logBuffer) {
+        this.logBuffer.push(level, category, message).catch(() => {
+          // Ignore errors to prevent crash
+        });
+      }
+
+      // Call original
+      originalLog(...args);
+    };
+
+    // Override error method
+    this.error = (...args) => {
+      const message = args.join(' ');
+
+      // Determine category
+      let category = 'APP';
+      if (message.includes('ZIGBEE')) category = 'ZIGBEE';
+      else if (message.includes('CLUSTER')) category = 'CLUSTER';
+      else if (message.includes('DEVICE')) category = 'DEVICE';
+      else if (message.includes('FLOW')) category = 'FLOW';
+
+      // Add to diagnostic API
+      if (this.diagnosticAPI) {
+        this.diagnosticAPI.addLog('ERROR', category, message);
+      }
+
+      // Add to LogBuffer (for MCP access via ManagerSettings)
+      if (this.logBuffer) {
+        this.logBuffer.push('ERROR', category, message).catch(() => {
+          // Ignore errors to prevent crash
+        });
+      }
+
+      // Call original
+      originalError(...args);
+    };
+  }
+
+  /**
+   * Get diagnostic API report (accessible for MCP/AI)
+   * Can be called externally for real-time diagnostics
+   */
+  getDiagnosticReport() {
+    if (!this.diagnosticAPI) {
+      return { error: 'DiagnosticAPI not initialized' };
     }
+    return this.diagnosticAPI.exportForAI();
+  }
 
   /**
    * Get LogBuffer logs (MCP-accessible via ManagerSettings)
    * @returns {Promise<Object>} MCP-formatted log export
    */
   async getMCPLogs() {
-      if (!this.logBuffer) {
-        return { error: 'LogBuffer not initialized' };
-      }
-      return await this.logBuffer.exportForMCP();
+    if (!this.logBuffer) {
+      return { error: 'LogBuffer not initialized' };
     }
+    return await this.logBuffer.exportForMCP();
+  }
 
-    /**
-     * Get Smart-Adapt suggestions (non-destructive)
-     * @returns {Object} MCP-formatted suggestions export
-     */
-    getMCPSuggestions() {
-      if (!this.suggestionEngine) {
-        return { error: 'SuggestionEngine not initialized' };
-      }
-      return this.suggestionEngine.exportForMCP();
+  /**
+   * Get Smart-Adapt suggestions (non-destructive)
+   * @returns {Object} MCP-formatted suggestions export
+   */
+  getMCPSuggestions() {
+    if (!this.suggestionEngine) {
+      return { error: 'SuggestionEngine not initialized' };
     }
+    return this.suggestionEngine.exportForMCP();
+  }
 
   /**
    * Get complete MCP diagnostic package
    * @returns {Promise<Object>} All diagnostic data for MCP/AI
    */
   async getCompleteMCPDiagnostics() {
-      return {
-        version: '1.0.0',
-        exported: new Date().toISOString(),
-        diagnosticAPI: this.getDiagnosticReport(),
-        logBuffer: await this.getMCPLogs(),
-        suggestions: this.getMCPSuggestions(),
-        mcp: {
-          protocol: 'homey-universal-tuya-zigbee',
-          readable: true,
-          settingsKey: 'debug_log_buffer'
-        }
-      };
-    }
+    return {
+      version: '1.0.0',
+      exported: new Date().toISOString(),
+      diagnosticAPI: this.getDiagnosticReport(),
+      logBuffer: await this.getMCPLogs(),
+      suggestions: this.getMCPSuggestions(),
+      mcp: {
+        protocol: 'homey-universal-tuya-zigbee',
+        readable: true,
+        settingsKey: 'debug_log_buffer'
+      }
+    };
+  }
 
   /**
    * Initialize Homey Insights
    */
   async initializeInsights() {
-      this.log('📊 Initializing Homey Insights...');
+    this.log('📊 Initializing Homey Insights...');
 
-      try {
-        // Battery health insight
-        await this.homey.insights.createLog('battery_health', {
-          title: { en: 'Battery Health', fr: 'Santé Batterie' },
-          type: 'number',
-          units: '%',
-          decimals: 0
-        }).catch(() => { }); // Already exists
+    try {
+      // Battery health insight
+      await this.homey.insights.createLog('battery_health', {
+        title: { en: 'Battery Health', fr: 'Santé Batterie' },
+        type: 'number',
+        units: '%',
+        decimals: 0
+      }).catch(() => { }); // Already exists
 
-        // Device uptime insight
-        await this.homey.insights.createLog('device_uptime', {
-          title: { en: 'Device Uptime', fr: 'Disponibilité' },
-          type: 'number',
-          units: '%',
-          decimals: 1
-        }).catch(() => { });
+      // Device uptime insight
+      await this.homey.insights.createLog('device_uptime', {
+        title: { en: 'Device Uptime', fr: 'Disponibilité' },
+        type: 'number',
+        units: '%',
+        decimals: 1
+      }).catch(() => { });
 
-        // Zigbee LQI insight
-        await this.homey.insights.createLog('zigbee_lqi', {
-          title: { en: 'Zigbee Link Quality', fr: 'Qualité Lien Zigbee' },
-          type: 'number',
-          units: '',
-          decimals: 0
-        }).catch(() => { });
+      // Zigbee LQI insight
+      await this.homey.insights.createLog('zigbee_lqi', {
+        title: { en: 'Zigbee Link Quality', fr: 'Qualité Lien Zigbee' },
+        type: 'number',
+        units: '',
+        decimals: 0
+      }).catch(() => { });
 
-        // Command success rate insight
-        await this.homey.insights.createLog('command_success_rate', {
-          title: { en: 'Command Success Rate', fr: 'Taux Succès Commandes' },
-          type: 'number',
-          units: '%',
-          decimals: 1
-        }).catch(() => { });
+      // Command success rate insight
+      await this.homey.insights.createLog('command_success_rate', {
+        title: { en: 'Command Success Rate', fr: 'Taux Succès Commandes' },
+        type: 'number',
+        units: '%',
+        decimals: 1
+      }).catch(() => { });
 
-        // OTA update tracking insight
-        await this.homey.insights.createLog('ota_updates', {
-          title: { en: 'OTA Updates Available', fr: 'Mises à jour OTA disponibles' },
-          type: 'number',
-          units: '',
-          decimals: 0
-        }).catch(() => { });
+      // OTA update tracking insight
+      await this.homey.insights.createLog('ota_updates', {
+        title: { en: 'OTA Updates Available', fr: 'Mises à jour OTA disponibles' },
+        type: 'number',
+        units: '',
+        decimals: 0
+      }).catch(() => { });
 
-        // Device offline count insight
-        await this.homey.insights.createLog('devices_offline', {
-          title: { en: 'Devices Offline', fr: 'Appareils hors ligne' },
-          type: 'number',
-          units: '',
-          decimals: 0
-        }).catch(() => { });
+      // Device offline count insight
+      await this.homey.insights.createLog('devices_offline', {
+        title: { en: 'Devices Offline', fr: 'Appareils hors ligne' },
+        type: 'number',
+        units: '',
+        decimals: 0
+      }).catch(() => { });
 
-        this.log('✅ Homey Insights initialized (6 logs)');
-      } catch (err) {
-        this.error('⚠️  Error initializing insights:', err.message);
-      }
+      this.log('✅ Homey Insights initialized (6 logs)');
+    } catch (err) {
+      this.error('⚠️  Error initializing insights:', err.message);
     }
-
-    /**
-     * AUDIT V2: Initialize Developer Settings
-     * Manages developer_debug_mode and experimental_smart_adapt flags
-     */
-    initializeSettings() {
-      // Get settings with defaults
-      this.developerDebugMode = this.homey.settings.get('developer_debug_mode') ?? false;
-      this.experimentalSmartAdapt = this.homey.settings.get('experimental_smart_adapt') ?? false;
-
-      // Listen for settings changes
-      this.homey.settings.on('set', (key) => {
-        if (key === 'developer_debug_mode') {
-          this.developerDebugMode = this.homey.settings.get('developer_debug_mode');
-          this.log(`🔍 [AUDIT V2] Developer Debug Mode: ${this.developerDebugMode ? 'ENABLED (verbose)' : 'DISABLED (minimal)'}`);
-        }
-
-        if (key === 'experimental_smart_adapt') {
-          this.experimentalSmartAdapt = this.homey.settings.get('experimental_smart_adapt');
-          this.log(`🤖 [AUDIT V2] Experimental Smart-Adapt: ${this.experimentalSmartAdapt ? 'ENABLED (modifies capabilities)' : 'DISABLED (read-only)'}`);
-
-          // Warn user if enabling experimental mode
-          if (this.experimentalSmartAdapt) {
-            this.log('⚠️  WARNING: Experimental Smart-Adapt will MODIFY device capabilities!');
-            this.log('⚠️  Only enable if you understand the risks.');
-          }
-        }
-      });
-
-      // Log initial state
-      this.log(`[AUDIT V2] Settings initialized:`);
-      this.log(`  - Developer Debug: ${this.developerDebugMode}`);
-      this.log(`  - Experimental Smart-Adapt: ${this.experimentalSmartAdapt}`);
-    }
-
-    /**
-     * Helper method for conditional logging (AUDIT V2)
-     * Only logs if developer_debug_mode is enabled
-     */
-    debugLog(...args) {
-      if (this.developerDebugMode) {
-        this.log('[DEBUG]', ...args);
-      }
-    }
-
   }
+
+  /**
+   * AUDIT V2: Initialize Developer Settings
+   * Manages developer_debug_mode and experimental_smart_adapt flags
+   */
+  initializeSettings() {
+    // Get settings with defaults
+    this.developerDebugMode = this.homey.settings.get('developer_debug_mode') ?? false;
+    this.experimentalSmartAdapt = this.homey.settings.get('experimental_smart_adapt') ?? false;
+
+    // Listen for settings changes
+    this.homey.settings.on('set', (key) => {
+      if (key === 'developer_debug_mode') {
+        this.developerDebugMode = this.homey.settings.get('developer_debug_mode');
+        this.log(`🔍 [AUDIT V2] Developer Debug Mode: ${this.developerDebugMode ? 'ENABLED (verbose)' : 'DISABLED (minimal)'}`);
+      }
+
+      if (key === 'experimental_smart_adapt') {
+        this.experimentalSmartAdapt = this.homey.settings.get('experimental_smart_adapt');
+        this.log(`🤖 [AUDIT V2] Experimental Smart-Adapt: ${this.experimentalSmartAdapt ? 'ENABLED (modifies capabilities)' : 'DISABLED (read-only)'}`);
+
+        // Warn user if enabling experimental mode
+        if (this.experimentalSmartAdapt) {
+          this.log('⚠️  WARNING: Experimental Smart-Adapt will MODIFY device capabilities!');
+          this.log('⚠️  Only enable if you understand the risks.');
+        }
+      }
+    });
+
+    // Log initial state
+    this.log(`[AUDIT V2] Settings initialized:`);
+    this.log(`  - Developer Debug: ${this.developerDebugMode}`);
+    this.log(`  - Experimental Smart-Adapt: ${this.experimentalSmartAdapt}`);
+  }
+
+  /**
+   * Helper method for conditional logging (AUDIT V2)
+   * Only logs if developer_debug_mode is enabled
+   */
+  debugLog(...args) {
+    if (this.developerDebugMode) {
+      this.log('[DEBUG]', ...args);
+    }
+  }
+
+}
 
 module.exports = UniversalTuyaZigbeeApp;
