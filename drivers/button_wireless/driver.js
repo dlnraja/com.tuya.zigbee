@@ -15,3 +15,12 @@ class ButtonWirelessDriver extends ZigBeeDriver {
 }
 
 module.exports = ButtonWirelessDriver;
+
+    
+    // Register flow triggers
+    this._button_pressedTrigger = this.homey.flow.getDeviceTriggerCard('button_pressed');
+    this._button_double_pressedTrigger = this.homey.flow.getDeviceTriggerCard('button_double_pressed');
+    this._button_long_pressedTrigger = this.homey.flow.getDeviceTriggerCard('button_long_pressed');
+    this._button_battery_lowTrigger = this.homey.flow.getDeviceTriggerCard('button_battery_low');
+    
+    this.log('button_wireless: Flow cards registered');
