@@ -630,19 +630,55 @@ class ClimateSensorDevice extends HybridSensorBase {
       this.log(`[CLIMATE] 🔥 Local: ${now.toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}`);
       this.log(`[CLIMATE] 🔥 Format: ${userTimeFormat}, TZ: ${userTimezone} (${timezoneMinutes} min)`);
 
-      // v5.5.437: Use syncDeviceTimeTuya directly (fix _getTuyaManager not a function)
-      const result = await syncDeviceTimeTuya(this, {
-        logPrefix: '[CLIMATE-FORCED]',
-        useTuyaEpoch: true,  // LCD displays need Tuya epoch (2000)
-        timezoneMinutes: timezoneMinutes
-      });
+      // v5.5.440: DUAL METHOD - Try BOTH EF00 command AND DP time sync
+      // Some LCD devices only respond to DP-based time, not EF00 command 0x24
+      let success = false;
 
-      if (result) {
-        this.log('[CLIMATE] 🔥 ✅ FORCED time sync delivered successfully!');
+      // METHOD 1: EF00 command 0x24 (standard Tuya time sync)
+      try {
+        const result = await syncDeviceTimeTuya(this, {
+          logPrefix: '[CLIMATE-FORCED-EF00]',
+          useTuyaEpoch: true,
+          timezoneMinutes: timezoneMinutes
+        });
+        if (result) {
+          this.log('[CLIMATE] 🔥 ✅ EF00 time sync sent');
+          success = true;
+        }
+      } catch (e) {
+        this.log('[CLIMATE] 🔥 ⚠️ EF00 method failed:', e.message);
+      }
+
+      // METHOD 2: DP-based time sync (DP 101/102/103) - CRITICAL for some LCD devices
+      // Format: UTC timestamp in seconds (Tuya epoch 2000)
+      try {
+        const TUYA_EPOCH = 946684800; // 2000-01-01 00:00:00 UTC
+        const utcSeconds = Math.floor(Date.now() / 1000) - TUYA_EPOCH;
+
+        this.log(`[CLIMATE] 🔥 Sending DP time sync: ${utcSeconds} (Tuya epoch)`);
+
+        // Try multiple DPs that LCD devices use for time
+        const timeDPs = [101, 102, 103, 9, 17];
+        for (const dp of timeDPs) {
+          try {
+            await this._sendTuyaDP(dp, utcSeconds, 'value');
+            this.log(`[CLIMATE] 🔥 ✅ DP${dp} time sync sent`);
+            success = true;
+            break; // Stop on first success
+          } catch (e) {
+            // Try next DP
+          }
+        }
+      } catch (e) {
+        this.log('[CLIMATE] 🔥 ⚠️ DP method failed:', e.message);
+      }
+
+      if (success) {
+        this.log('[CLIMATE] 🔥 ✅ FORCED time sync delivered!');
         this.log('[CLIMATE] 🔥 ⏰ LCD display should now show correct time');
         return true;
       } else {
-        this.log('[CLIMATE] 🔥 ⚠️ FORCED sync failed - device may be sleeping deeply');
+        this.log('[CLIMATE] 🔥 ⚠️ All sync methods failed - RE-PAIR device may be needed');
         return false;
       }
     } catch (err) {
@@ -705,6 +741,71 @@ class ClimateSensorDevice extends HybridSensorBase {
       }
     } catch (err) {
       this.log('[CLIMATE] ❌ Time sync failed:', err.message);
+    }
+  }
+
+  /**
+   * v5.5.440: Send Tuya DP command for LCD time sync
+   * Based on HybridCoverBase implementation
+   */
+  async _sendTuyaDP(dpId, value, dataType = 'value') {
+    try {
+      this.log(`[CLIMATE] Sending DP${dpId}=${value} (${dataType})`);
+
+      const ep = this.zclNode?.endpoints?.[1];
+      const tuyaCluster = ep?.clusters?.tuya ||
+        ep?.clusters?.manuSpecificTuya ||
+        ep?.clusters?.[61184] ||
+        ep?.clusters?.[0xEF00];
+
+      if (!tuyaCluster) {
+        throw new Error('Tuya cluster not available - device needs RE-PAIRING');
+      }
+
+      // Build DP payload
+      const dpData = this._buildTuyaDPPayload(dpId, value, dataType);
+
+      // Try multiple methods
+      if (typeof tuyaCluster.dataRequest === 'function') {
+        await tuyaCluster.dataRequest({ data: dpData });
+        return;
+      }
+      if (typeof tuyaCluster.setData === 'function') {
+        await tuyaCluster.setData({ data: dpData });
+        return;
+      }
+      if (typeof tuyaCluster.command === 'function') {
+        await tuyaCluster.command('dataRequest', { data: dpData });
+        return;
+      }
+
+      throw new Error('No available DP send method');
+    } catch (err) {
+      this.log(`[CLIMATE] DP${dpId} send failed:`, err.message);
+      throw err;
+    }
+  }
+
+  /**
+   * v5.5.440: Build Tuya DP payload buffer
+   */
+  _buildTuyaDPPayload(dpId, value, dataType) {
+    if (dataType === 'value') {
+      // 4-byte integer value
+      const buf = Buffer.alloc(8);
+      buf.writeUInt8(dpId, 0);
+      buf.writeUInt8(2, 1); // type: 2=value
+      buf.writeUInt16BE(4, 2); // length: 4 bytes
+      buf.writeInt32BE(value, 4);
+      return buf;
+    } else {
+      // 1-byte enum/bool
+      const buf = Buffer.alloc(5);
+      buf.writeUInt8(dpId, 0);
+      buf.writeUInt8(dataType === 'bool' ? 1 : 4, 1);
+      buf.writeUInt16BE(1, 2);
+      buf.writeUInt8(value, 4);
+      return buf;
     }
   }
 
