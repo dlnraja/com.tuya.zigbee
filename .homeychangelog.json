@@ -1,4 +1,8 @@
 {
+  "5.5.443": {
+    "en": "➕ NEW DEVICE: BSEED Smart Wall Sockets with power monitoring (_TZ3210_2uollq9d, _TZ3000_4ux0ondb, TS011F). Added to plug_energy_monitor driver.",
+    "fr": "➕ NOUVEAU: Prises murales BSEED avec monitoring de puissance. Ajoutées au driver plug_energy_monitor."
+  },
   "5.5.442": {
     "en": "🕐 LCD TIME SYNC: Added ZCL Time cluster (0x000A) as fallback method. If Tuya cluster unavailable, tries Time cluster. RE-PAIR device required for best results.",
     "fr": "🕐 SYNC LCD: Ajout cluster ZCL Time (0x000A) comme fallback. RE-APPAIRER le device recommandé.",
