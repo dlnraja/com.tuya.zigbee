@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.446** | 🕐 LCD TIME SYNC FIX: Fixed payload order [UTC][Local] per Z2M spec. Added cl... |
 | **v5.5.445** | 🔧 HOTFIX: Fixed app crash (SyntaxError: Missing catch after try in app.js:78... |
 | **v5.5.444** | 🕐 LCD TIME SYNC v3: Added raw ZCL frame bypass for devices paired before v5.... |
 | **v5.5.443** | ➕ NEW DEVICE: BSEED Smart Wall Sockets with power monitoring (_TZ3210_2uollq9... |
@@ -78,7 +79,6 @@
 | **v5.5.439** | 🔧 LCD TIME SYNC: Improved error message when Tuya cluster unavailable - inst... |
 | **v5.5.438** | ⚡ SPEED FIX: _TZE204_gkfbdvyx radar sensor now responds faster. Reduced debou... |
 | **v5.5.437** | 🔧 DIAGNOSTIC FIX: Climate sensor LCD time sync fixed (_getTuyaManager error)... |
-| **v5.5.436** | 🎮 FORUM #890: Added TS004F 4-button scene switch support. Added 8 new manufa... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
