@@ -1,77 +1,136 @@
 {
   "name": {
-    "en": "Gas Sensor Ts0601",
-    "fr": "Gas Sensor Ts0601"
+    "en": "Cover Controller",
+    "fr": "Contrôleur de Volet"
   },
-  "class": "sensor",
+  "class": "windowcoverings",
   "capabilities": [
-    "alarm_co",
-    "alarm_co2",
+    "windowcoverings_state",
+    "windowcoverings_set",
+    "windowcoverings_tilt_set",
     "measure_battery",
-    "alarm_contact",
-    "alarm_gas"
+    "measure_luminance",
+    "button",
+    "dim"
   ],
-  "energy": {
-    "batteries": [
-      "CR2450",
-      "AAA"
-    ],
-    "approximation": {
-      "usageConstant": 0.5
+  "capabilitiesOptions": {
+    "windowcoverings_set": {
+      "title": {
+        "en": "Position"
+      },
+      "units": {
+        "en": "%"
+      }
+    },
+    "windowcoverings_tilt_set": {
+      "title": {
+        "en": "Tilt"
+      },
+      "units": {
+        "en": "%"
+      }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      },
+      "preventInsights": false
     }
   },
-  "subDevices": [],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "drivers/curtain_motor/assets/images/small.png",
+    "large": "drivers/curtain_motor/assets/images/large.png"
+  },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_mwd3c2at",
-      "_TZ3000_tk3s5tyg",
-      "_TZ3000_ww6drja5",
-      "_TZ3002_sal078g8",
-      "_TZE200_auin8mzr",
-      "_TZE200_wzqkpstm",
-      "_TZ3002_sfh0jtz0",
-      "_TZE200_eqpaxqdv",
-      "_TZE200_vexa5o82",
-      "_TZE284_clm4gdw4",
-      "_TZE284_nj7sfid2",
-      "_TZE204_ux5v4tgb",
-      "_TZE204_ezqy5pvh",
-      "_TZE284_ezqy5pvh",
-      "_TZE204_ggev5fsl",
-      "_TZE284_rjgdhqqi",
-      "_TZE284_ggev5fsl"
+      "_TZ3000_1dd0d5yi",
+      "_TZ3000_42ha4rsc",
+      "_TZ3000_4uuaja4a",
+      "_TZ3000_5iixzdo7",
+      "_TZ3000_74hsp7qy",
+      "_TZ3000_7hcgjxpc",
+      "_TZ3000_8h7wgocw",
+      "_TZ3000_8kzqqzu4"
     ],
     "productId": [
+      "TS0302",
       "TS0601"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          4,
-          5,
+          1,
+          258,
           61184,
-          61184,
-          1280,
-          1
+          6,
+          8
         ],
         "bindings": [
           1,
-          1280
+          258
         ]
       }
     },
     "learnmode": {
-      "image": "/drivers/gas_sensor/assets/learnmode.svg",
+      "image": "/drivers/curtain_motor/assets/large.png",
       "instruction": {
-        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+        "en": "Follow the pairing instructions for your Smart Curtain Motor."
       }
     }
   },
   "settings": [
+    {
+      "id": "open_time",
+      "type": "number",
+      "label": {
+        "en": "Open Time (seconds)",
+        "fr": "Temps d'ouverture (secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "hint": {
+        "en": "Time to fully open the cover (0 = auto calibration). Set this to calibrate the open position.",
+        "fr": "Temps pour ouvrir complètement le volet (0 = calibration auto). Définir pour calibrer la position ouverte."
+      }
+    },
+    {
+      "id": "close_time",
+      "type": "number",
+      "label": {
+        "en": "Close Time (seconds)",
+        "fr": "Temps de fermeture (secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "hint": {
+        "en": "Time to fully close the cover (0 = auto calibration). Set this to calibrate the close position.",
+        "fr": "Temps pour fermer complètement le volet (0 = calibration auto). Définir pour calibrer la position fermée."
+      }
+    },
+    {
+      "id": "reverse_direction",
+      "type": "checkbox",
+      "label": {
+        "en": "Reverse Direction",
+        "fr": "Inverser Direction"
+      },
+      "value": false,
+      "hint": {
+        "en": "Swap open/close direction if your curtain moves the wrong way",
+        "fr": "Inverser la direction si votre rideau se déplace dans le mauvais sens"
+      }
+    },
     {
       "id": "power_source",
       "type": "dropdown",
@@ -134,36 +193,36 @@
         {
           "id": "CR2032",
           "label": {
-            "en": "CR2032",
+            "en": "CR2032 (3V Button Cell)",
             "fr": "CR2032 (Pile Bouton 3V)"
           }
         },
         {
           "id": "CR2450",
           "label": {
-            "en": "CR2450",
+            "en": "CR2450 (3V Button Cell)",
             "fr": "CR2450 (Pile Bouton 3V)"
           }
         },
         {
           "id": "AAA",
           "label": {
-            "en": "AAA",
-            "fr": "AAA"
+            "en": "AAA (1.5V)",
+            "fr": "AAA (1.5V)"
           }
         },
         {
           "id": "AA",
           "label": {
-            "en": "AA",
-            "fr": "AA"
+            "en": "AA (1.5V)",
+            "fr": "AA (1.5V)"
           }
         },
         {
           "id": "CR123A",
           "label": {
-            "en": "CR123A",
-            "fr": "CR123A"
+            "en": "CR123A (3V)",
+            "fr": "CR123A (3V)"
           }
         }
       ],
@@ -176,7 +235,7 @@
       "id": "battery_low_threshold",
       "type": "number",
       "label": {
-        "en": "Low Battery Threshold",
+        "en": "Low Battery Threshold (%)",
         "fr": "Seuil Batterie Faible (%)"
       },
       "value": 20,
@@ -192,7 +251,7 @@
       "id": "battery_critical_threshold",
       "type": "number",
       "label": {
-        "en": "Critical Battery Threshold",
+        "en": "Critical Battery Threshold (%)",
         "fr": "Seuil Batterie Critique (%)"
       },
       "value": 10,
@@ -221,7 +280,7 @@
       "id": "battery_report_interval",
       "type": "number",
       "label": {
-        "en": "Battery Report Interval",
+        "en": "Battery Report Interval (hours)",
         "fr": "Intervalle Rapport Batterie (heures)"
       },
       "value": 24,
@@ -296,83 +355,146 @@
       }
     }
   ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA",
+      "CR123A"
+    ],
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
+  "id": "curtain_motor",
+  "learnmode": {
+    "image": "./assets/learnmode.svg",
+    "instruction": {
+      "en": "Press and hold the reset button for 5 seconds until the LED blinks",
+      "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote"
+    }
+  },
   "flow": {
     "triggers": [
       {
-        "id": "gas_alarm_triggered",
+        "id": "cover_position_changed",
         "title": {
-          "en": "Gas alarm triggered",
-          "fr": "Alarme gaz déclenchée",
-          "nl": "Gasalarm geactiveerd",
-          "de": "Gasalarm ausgelöst"
-        }
-      },
-      {
-        "id": "gas_alarm_cleared",
-        "title": {
-          "en": "Gas alarm cleared",
-          "fr": "Alarme gaz terminée",
-          "nl": "Gasalarm gestopt",
-          "de": "Gasalarm beendet"
-        }
-      },
-      {
-        "id": "gas_level_changed",
-        "title": {
-          "en": "Gas level changed",
-          "fr": "Niveau de gaz changé"
+          "en": "Position changed",
+          "fr": "Position changée"
         },
         "tokens": [
           {
-            "name": "level",
+            "name": "position",
             "type": "number",
             "title": {
-              "en": "Gas level (ppm)",
-              "fr": "Niveau de gaz (ppm)"
+              "en": "Position (%)",
+              "fr": "Position (%)"
             },
             "example": 50
           }
         ]
+      },
+      {
+        "id": "cover_opened",
+        "title": {
+          "en": "Cover fully opened",
+          "fr": "Volet complètement ouvert"
+        }
+      },
+      {
+        "id": "cover_closed",
+        "title": {
+          "en": "Cover fully closed",
+          "fr": "Volet complètement fermé"
+        }
+      },
+      {
+        "id": "cover_stopped",
+        "title": {
+          "en": "Cover stopped",
+          "fr": "Volet arrêté"
+        }
       }
     ],
     "conditions": [
       {
-        "id": "gas_alarm_is_active",
+        "id": "cover_position_is",
         "title": {
-          "en": "Gas alarm !{{is|isn't}} active",
-          "fr": "Alarme gaz !{{est|n'est pas}} active"
+          "en": "Position is !{{above|below}} threshold",
+          "fr": "Position est !{{au-dessus|en-dessous}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "Position is !{{above|below}} [[threshold]] %",
+          "fr": "Position est !{{au-dessus|en-dessous de}} [[threshold]] %"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "placeholder": {
+              "en": "50"
+            }
+          }
+        ]
+      },
+      {
+        "id": "cover_is_open",
+        "title": {
+          "en": "Cover !{{is|isn't}} fully open",
+          "fr": "Volet !{{est|n'est pas}} complètement ouvert"
         }
       }
     ],
     "actions": [
       {
-        "id": "gas_test_alarm",
+        "id": "cover_set_position",
         "title": {
-          "en": "Test gas alarm",
-          "fr": "Tester alarme gaz"
-        }
+          "en": "Set cover position",
+          "fr": "Définir position volet"
+        },
+        "titleFormatted": {
+          "en": "Set position to [[position]] %",
+          "fr": "Définir position à [[position]] %"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "position",
+            "title": {
+              "en": "Position",
+              "fr": "Position"
+            },
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "label": "%"
+          }
+        ]
       },
       {
-        "id": "gas_silence_alarm",
+        "id": "cover_stop",
         "title": {
-          "en": "Silence gas alarm",
-          "fr": "Couper alarme gaz"
+          "en": "Stop cover",
+          "fr": "Arrêter volet"
         }
       }
     ]
   },
-  "images": {
-    "small": "drivers/gas_sensor/assets/images/small.png",
-    "large": "drivers/gas_sensor/assets/images/large.png",
-    "xlarge": "drivers/gas_sensor/assets/images/xlarge.png"
+  "metadata": {
+    "app": {
+      "id": "com.dlnraja.tuya.zigbee",
+      "name": "Universal Tuya Zigbee",
+      "version": "4.1.3",
+      "api": {
+        "min": 3,
+        "max": 3
+      }
+    }
   },
-  "id": "gas_sensor",
-  "platforms": [
-    "local"
-  ],
-  "connectivity": [
-    "zigbee"
-  ],
   "pair": [
     {
       "id": "list_devices",
@@ -391,6 +513,5 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ],
-  "capabilitiesOptions": {}
+  ]
 }

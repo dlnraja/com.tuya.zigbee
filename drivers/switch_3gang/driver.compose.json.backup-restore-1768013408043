@@ -4,22 +4,19 @@
     "onoff",
     "onoff.gang2",
     "onoff.gang3",
-    "onoff.gang4",
     "measure_power",
+    "meter_power",
     "button_toggle_1",
     "button_toggle_2",
     "button_toggle_3",
-    "button_toggle_4",
     "button_identify"
   ],
   "zigbee": {
     "productId": [
+      "TS0003",
       "TS0004",
-      "TS0005",
-      "TS0006",
-      "TS0014",
-      "TS0601",
-      "TS0726"
+      "TS0013",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -28,7 +25,6 @@
           4,
           5,
           6,
-          8,
           61184,
           2820
         ],
@@ -40,7 +36,6 @@
       "2": {
         "clusters": [
           0,
-          3,
           4,
           5
         ],
@@ -51,18 +46,6 @@
       "3": {
         "clusters": [
           0,
-          3,
-          4,
-          5
-        ],
-        "bindings": [
-          6
-        ]
-      },
-      "4": {
-        "clusters": [
-          0,
-          3,
           4,
           5
         ],
@@ -72,28 +55,26 @@
       }
     },
     "learnmode": {
-      "image": "/drivers/switch_4gang/assets/learnmode.svg",
+      "image": "/drivers/switch_3gang/assets/learnmode.svg",
       "instruction": {
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
     "manufacturerName": [
-      "_TYZB01_bagt1e4o",
-      "_TZ3000_4vobcwsc",
-      "_TZ3000_cayepv1a",
-      "_TZ3000_eyzpwhtc",
-      "_TZ3000_mrduubod",
-      "_TZ3000_pdvkkcuc",
-      "_TZ3000_uz6ibhib",
-      "_TZ3002_pzao9ls1",
-      "_TZE204_xibaabmu",
-      "_TZE284_xibaabmu",
-      "_TZ3000_excgg5kb"
+      "_TYZB01_b8cr31hp",
+      "_TYZB01_mqel1whf",
+      "_TYZB01_xiuox57i",
+      "_TZ3000_cahkwezx",
+      "_TZ3000_excgg5kb",
+      "_TZ3000_mw1pqqqt",
+      "_TZ3000_nhhklsxw",
+      "_TZ3000_vjhcxjeb",
+      "_TZE204_e1hutaaj"
     ]
   },
   "images": {
-    "small": "drivers/switch_4gang/assets/images/small.png",
-    "large": "drivers/switch_4gang/assets/images/large.png"
+    "small": "drivers/switch_3gang/assets/images/small.png",
+    "large": "drivers/switch_3gang/assets/images/large.png"
   },
   "settings": [
     {
@@ -526,7 +507,7 @@
     }
   ],
   "name": {
-    "en": "4-Gang Smart Switch"
+    "en": "3-Gang Smart Switch"
   },
   "platforms": [
     "local"
@@ -552,15 +533,9 @@
         "en": "Gang 3",
         "fr": "Gang 3"
       }
-    },
-    "onoff.gang4": {
-      "title": {
-        "en": "Gang 4",
-        "fr": "Gang 4"
-      }
     }
   },
-  "id": "switch_4gang",
+  "id": "switch_3gang",
   "learnmode": {
     "image": "./assets/learnmode.svg",
     "instruction": {
@@ -585,6 +560,152 @@
     },
     "batteries": [
       "OTHER"
+    ]
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "switch3_gang1_on",
+        "title": {
+          "en": "Gang 1 turned on",
+          "fr": "Canal 1 allumé"
+        }
+      },
+      {
+        "id": "switch3_gang1_off",
+        "title": {
+          "en": "Gang 1 turned off",
+          "fr": "Canal 1 éteint"
+        }
+      },
+      {
+        "id": "switch3_gang2_on",
+        "title": {
+          "en": "Gang 2 turned on",
+          "fr": "Canal 2 allumé"
+        }
+      },
+      {
+        "id": "switch3_gang2_off",
+        "title": {
+          "en": "Gang 2 turned off",
+          "fr": "Canal 2 éteint"
+        }
+      },
+      {
+        "id": "switch3_gang3_on",
+        "title": {
+          "en": "Gang 3 turned on",
+          "fr": "Canal 3 allumé"
+        }
+      },
+      {
+        "id": "switch3_gang3_off",
+        "title": {
+          "en": "Gang 3 turned off",
+          "fr": "Canal 3 éteint"
+        }
+      }
+    ],
+    "conditions": [
+      {
+        "id": "switch3_gang1_is_on",
+        "title": {
+          "en": "Gang 1 !{{is|isn't}} on",
+          "fr": "Canal 1 !{{est|n'est pas}} allumé"
+        }
+      },
+      {
+        "id": "switch3_gang2_is_on",
+        "title": {
+          "en": "Gang 2 !{{is|isn't}} on",
+          "fr": "Canal 2 !{{est|n'est pas}} allumé"
+        }
+      },
+      {
+        "id": "switch3_gang3_is_on",
+        "title": {
+          "en": "Gang 3 !{{is|isn't}} on",
+          "fr": "Canal 3 !{{est|n'est pas}} allumé"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "switch3_set_gang",
+        "title": {
+          "en": "Set gang state",
+          "fr": "Définir état canal"
+        },
+        "titleFormatted": {
+          "en": "Set [[gang]] to [[state]]"
+        },
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "gang",
+            "values": [
+              {
+                "id": "1",
+                "title": {
+                  "en": "Gang 1"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "Gang 2"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "Gang 3"
+                }
+              }
+            ]
+          },
+          {
+            "type": "dropdown",
+            "name": "state",
+            "values": [
+              {
+                "id": "on",
+                "title": {
+                  "en": "On"
+                }
+              },
+              {
+                "id": "off",
+                "title": {
+                  "en": "Off"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "switch3_toggle_all",
+        "title": {
+          "en": "Toggle all gangs",
+          "fr": "Basculer tous les canaux"
+        }
+      },
+      {
+        "id": "switch3_all_on",
+        "title": {
+          "en": "Turn all on",
+          "fr": "Tout allumer"
+        }
+      },
+      {
+        "id": "switch3_all_off",
+        "title": {
+          "en": "Turn all off",
+          "fr": "Tout éteindre"
+        }
+      }
     ]
   },
   "pair": [

@@ -1,49 +1,40 @@
 {
   "name": {
-    "en": "Gas Sensor Ts0601",
-    "fr": "Gas Sensor Ts0601"
+    "en": "Dimmer 1gang",
+    "fr": "Dimmer 1gang"
   },
-  "class": "sensor",
+  "class": "light",
   "capabilities": [
-    "alarm_co",
-    "alarm_co2",
+    "dim",
+    "onoff",
     "measure_battery",
-    "alarm_contact",
-    "alarm_gas"
+    "measure_power",
+    "button_toggle",
+    "button_dim_up",
+    "button_dim_down",
+    "button_identify"
   ],
   "energy": {
-    "batteries": [
-      "CR2450",
-      "AAA"
-    ],
     "approximation": {
       "usageConstant": 0.5
-    }
+    },
+    "batteries": [
+      "OTHER"
+    ]
   },
-  "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_mwd3c2at",
-      "_TZ3000_tk3s5tyg",
-      "_TZ3000_ww6drja5",
-      "_TZ3002_sal078g8",
-      "_TZE200_auin8mzr",
-      "_TZE200_wzqkpstm",
-      "_TZ3002_sfh0jtz0",
-      "_TZE200_eqpaxqdv",
-      "_TZE200_vexa5o82",
-      "_TZE284_clm4gdw4",
-      "_TZE284_nj7sfid2",
-      "_TZE204_ux5v4tgb",
-      "_TZE204_ezqy5pvh",
-      "_TZE284_ezqy5pvh",
-      "_TZE204_ggev5fsl",
-      "_TZE284_rjgdhqqi",
-      "_TZE284_ggev5fsl"
+      "_TZ3000_49qchf10",
+      "_TZ3000_7ed9cqgi",
+      "_TZ3000_f3xka28j",
+      "_TZ3000_fjgwfl3z",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_kdi2o9m6",
+      "_TZ3000_ktuoyvt5"
     ],
     "productId": [
+      "TS0101",
+      "TS0111",
       "TS0601"
     ],
     "endpoints": {
@@ -52,19 +43,20 @@
           0,
           4,
           5,
+          6,
+          8,
           61184,
-          61184,
-          1280,
-          1
+          2820
         ],
         "bindings": [
           1,
-          1280
+          6,
+          8
         ]
       }
     },
     "learnmode": {
-      "image": "/drivers/gas_sensor/assets/learnmode.svg",
+      "image": "/drivers/dimmer_wall_1gang/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -299,74 +291,121 @@
   "flow": {
     "triggers": [
       {
-        "id": "gas_alarm_triggered",
+        "id": "dimmer_turned_on",
         "title": {
-          "en": "Gas alarm triggered",
-          "fr": "Alarme gaz déclenchée",
-          "nl": "Gasalarm geactiveerd",
-          "de": "Gasalarm ausgelöst"
+          "en": "Dimmer turned on",
+          "fr": "Variateur allumé"
         }
       },
       {
-        "id": "gas_alarm_cleared",
+        "id": "dimmer_turned_off",
         "title": {
-          "en": "Gas alarm cleared",
-          "fr": "Alarme gaz terminée",
-          "nl": "Gasalarm gestopt",
-          "de": "Gasalarm beendet"
+          "en": "Dimmer turned off",
+          "fr": "Variateur éteint"
         }
       },
       {
-        "id": "gas_level_changed",
+        "id": "dimmer_level_changed",
         "title": {
-          "en": "Gas level changed",
-          "fr": "Niveau de gaz changé"
+          "en": "Brightness changed",
+          "fr": "Luminosité changée"
         },
         "tokens": [
           {
             "name": "level",
             "type": "number",
             "title": {
-              "en": "Gas level (ppm)",
-              "fr": "Niveau de gaz (ppm)"
+              "en": "Level (%)"
             },
-            "example": 50
+            "example": 75
           }
         ]
       }
     ],
     "conditions": [
       {
-        "id": "gas_alarm_is_active",
+        "id": "dimmer_is_on",
         "title": {
-          "en": "Gas alarm !{{is|isn't}} active",
-          "fr": "Alarme gaz !{{est|n'est pas}} active"
+          "en": "Dimmer !{{is|isn't}} on",
+          "fr": "Variateur !{{est|n'est pas}} allumé"
         }
+      },
+      {
+        "id": "dimmer_level_is",
+        "title": {
+          "en": "Brightness !{{above|below}} threshold",
+          "fr": "Luminosité !{{au-dessus|en-dessous}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "Brightness !{{above|below}} [[threshold]] %"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5
+          }
+        ]
       }
     ],
     "actions": [
       {
-        "id": "gas_test_alarm",
+        "id": "dimmer_set_level",
         "title": {
-          "en": "Test gas alarm",
-          "fr": "Tester alarme gaz"
-        }
+          "en": "Set brightness",
+          "fr": "Définir luminosité"
+        },
+        "titleFormatted": {
+          "en": "Set brightness to [[level]] %"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "level",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "label": "%"
+          }
+        ]
       },
       {
-        "id": "gas_silence_alarm",
+        "id": "dimmer_fade_to",
         "title": {
-          "en": "Silence gas alarm",
-          "fr": "Couper alarme gaz"
-        }
+          "en": "Fade to level",
+          "fr": "Transition vers niveau"
+        },
+        "titleFormatted": {
+          "en": "Fade to [[level]] % in [[duration]] seconds"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "level",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "label": "%"
+          },
+          {
+            "type": "number",
+            "name": "duration",
+            "min": 1,
+            "max": 60,
+            "step": 1
+          }
+        ]
       }
     ]
   },
   "images": {
-    "small": "drivers/gas_sensor/assets/images/small.png",
-    "large": "drivers/gas_sensor/assets/images/large.png",
-    "xlarge": "drivers/gas_sensor/assets/images/xlarge.png"
+    "small": "drivers/dimmer_wall_1gang/assets/images/small.png",
+    "large": "drivers/dimmer_wall_1gang/assets/images/large.png",
+    "xlarge": "drivers/dimmer_wall_1gang/assets/images/xlarge.png"
   },
-  "id": "gas_sensor",
+  "id": "dimmer_wall_1gang",
   "platforms": [
     "local"
   ],
@@ -392,5 +431,9 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {}
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": true
+    }
+  }
 }

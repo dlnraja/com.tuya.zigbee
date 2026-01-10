@@ -1,76 +1,104 @@
 {
   "name": {
-    "en": "Gas Sensor Ts0601",
-    "fr": "Gas Sensor Ts0601"
+    "en": "1-Buttons Wireless Controller",
+    "fr": "1-Boutons Contrôleur Sans Fil",
+    "nl": "1-Knoppen Draadloze Controller",
+    "de": "1-Tasten Drahtlos-Controller",
+    "it": "1-Pulsanti Controller Wireless",
+    "sv": "1-Knappar Trådlös Kontroller",
+    "no": "1-Knapper Trådløs Kontroller",
+    "es": "1-Botones Controlador Inalámbrico",
+    "da": "1-Knapper Trådløs Controller"
   },
-  "class": "sensor",
+  "class": "button",
   "capabilities": [
-    "alarm_co",
-    "alarm_co2",
-    "measure_battery",
-    "alarm_contact",
-    "alarm_gas"
+    "button",
+    "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Contrôleur",
+        "nl": "Draadloze",
+        "de": "Drahtlos-Controller",
+        "it": "Controller",
+        "sv": "Trådlös",
+        "no": "Trådløs",
+        "es": "Controlador",
+        "da": "Trådløs"
+      }
+    }
+  },
   "energy": {
     "batteries": [
-      "CR2450",
-      "AAA"
+      "CR2032",
+      "CR2450"
     ],
     "approximation": {
       "usageConstant": 0.5
     }
   },
-  "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_ltt60asa",
-      "_TZ3000_mwd3c2at",
-      "_TZ3000_tk3s5tyg",
-      "_TZ3000_ww6drja5",
-      "_TZ3002_sal078g8",
-      "_TZE200_auin8mzr",
-      "_TZE200_wzqkpstm",
-      "_TZ3002_sfh0jtz0",
-      "_TZE200_eqpaxqdv",
-      "_TZE200_vexa5o82",
-      "_TZE284_clm4gdw4",
-      "_TZE284_nj7sfid2",
-      "_TZE204_ux5v4tgb",
-      "_TZE204_ezqy5pvh",
-      "_TZE284_ezqy5pvh",
-      "_TZE204_ggev5fsl",
-      "_TZE284_rjgdhqqi",
-      "_TZE284_ggev5fsl"
+      "_TZ3000_0DUMFK2Z",
+      "_TZ3000_5bpeda8u",
+      "_TZ3000_abrsvsou",
+      "_TZ3000_an5rjiwd",
+      "_TZ3000_arfwfgre",
+      "_TZ3000_axpdxqgu",
+      "_TZ3000_b4awzgct",
+      "_TZ3000_bsvqrux3"
     ],
     "productId": [
+      "TS0041",
       "TS0601"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
+          1,
+          3,
           4,
           5,
-          61184,
-          61184,
+          6,
           1280,
-          1
+          0,
+          1,
+          3
         ],
         "bindings": [
-          1,
-          1280
+          6,
+          1
         ]
       }
     },
     "learnmode": {
-      "image": "/drivers/gas_sensor/assets/learnmode.svg",
+      "image": "/drivers/button_wireless_1/assets/learnmode.svg",
       "instruction": {
-        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+        "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
+        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
+        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
       }
     }
   },
+  "images": {
+    "small": "drivers/button_wireless_1/assets/images/small.png",
+    "large": "drivers/button_wireless_1/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "settings": [
     {
       "id": "power_source",
@@ -296,83 +324,7 @@
       }
     }
   ],
-  "flow": {
-    "triggers": [
-      {
-        "id": "gas_alarm_triggered",
-        "title": {
-          "en": "Gas alarm triggered",
-          "fr": "Alarme gaz déclenchée",
-          "nl": "Gasalarm geactiveerd",
-          "de": "Gasalarm ausgelöst"
-        }
-      },
-      {
-        "id": "gas_alarm_cleared",
-        "title": {
-          "en": "Gas alarm cleared",
-          "fr": "Alarme gaz terminée",
-          "nl": "Gasalarm gestopt",
-          "de": "Gasalarm beendet"
-        }
-      },
-      {
-        "id": "gas_level_changed",
-        "title": {
-          "en": "Gas level changed",
-          "fr": "Niveau de gaz changé"
-        },
-        "tokens": [
-          {
-            "name": "level",
-            "type": "number",
-            "title": {
-              "en": "Gas level (ppm)",
-              "fr": "Niveau de gaz (ppm)"
-            },
-            "example": 50
-          }
-        ]
-      }
-    ],
-    "conditions": [
-      {
-        "id": "gas_alarm_is_active",
-        "title": {
-          "en": "Gas alarm !{{is|isn't}} active",
-          "fr": "Alarme gaz !{{est|n'est pas}} active"
-        }
-      }
-    ],
-    "actions": [
-      {
-        "id": "gas_test_alarm",
-        "title": {
-          "en": "Test gas alarm",
-          "fr": "Tester alarme gaz"
-        }
-      },
-      {
-        "id": "gas_silence_alarm",
-        "title": {
-          "en": "Silence gas alarm",
-          "fr": "Couper alarme gaz"
-        }
-      }
-    ]
-  },
-  "images": {
-    "small": "drivers/gas_sensor/assets/images/small.png",
-    "large": "drivers/gas_sensor/assets/images/large.png",
-    "xlarge": "drivers/gas_sensor/assets/images/xlarge.png"
-  },
-  "id": "gas_sensor",
-  "platforms": [
-    "local"
-  ],
-  "connectivity": [
-    "zigbee"
-  ],
+  "id": "button_wireless_1",
   "pair": [
     {
       "id": "list_devices",
@@ -391,6 +343,5 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ],
-  "capabilitiesOptions": {}
+  ]
 }
