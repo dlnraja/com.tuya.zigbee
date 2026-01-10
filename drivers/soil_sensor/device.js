@@ -174,7 +174,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
             const temp = data.measuredValue / 100;
             this.log(`[ZCL] 🌡️ Temperature: ${temp}°C`);
             this._registerZigbeeHit?.();
-            this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+            this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
           }
         }
       },
@@ -189,7 +189,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
             const humidity = data.measuredValue / 100;
             this.log(`[ZCL] 💧 Humidity/Moisture: ${humidity}%`);
             this._registerZigbeeHit?.();
-            this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
+            this.setCapabilityValue('measure_humidity', parseFloat(humidity)).catch(() => { });
           }
         }
       },
@@ -203,7 +203,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
             const battery = Math.round(data.batteryPercentageRemaining / 2);
             this.log(`[ZCL] 🔋 Battery: ${battery}%`);
             this._registerZigbeeHit?.();
-            this.setCapabilityValue('measure_battery', battery).catch(() => { });
+            this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
         }
       }
@@ -379,12 +379,12 @@ class SoilSensorDevice extends TuyaHybridDevice {
 
       // DIRECT SET - bypass parent handler potential issues
       if (this.hasCapability('measure_soil_moisture')) {
-        this.setCapabilityValue('measure_soil_moisture', validatedMoisture)
+        this.setCapabilityValue('measure_soil_moisture', parseFloat(validatedMoisture))
           .then(() => this.log(`[SOIL] ✅ measure_soil_moisture SET to ${validatedMoisture}%`))
           .catch(err => this.log(`[SOIL] ❌ measure_soil_moisture FAILED: ${err.message}`));
       } else if (this.hasCapability('measure_humidity')) {
         // Fallback for devices without measure_soil_moisture
-        this.setCapabilityValue('measure_humidity', validatedMoisture)
+        this.setCapabilityValue('measure_humidity', parseFloat(validatedMoisture))
           .then(() => this.log(`[SOIL] ✅ measure_humidity SET to ${validatedMoisture}%`))
           .catch(err => this.log(`[SOIL] ❌ measure_humidity FAILED: ${err.message}`));
       } else {
@@ -416,7 +416,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
       this.log(`[SOIL] 🌡️ TEMPERATURE DP5 = ${parsedValue} → ${temp}°C (calibration: ${this._temperatureCalibration || 0})`);
 
       if (this.hasCapability('measure_temperature')) {
-        this.setCapabilityValue('measure_temperature', temp)
+        this.setCapabilityValue('measure_temperature', parseFloat(temp))
           .then(() => this.log(`[SOIL] ✅ measure_temperature SET to ${temp}°C`))
           .catch(err => this.log(`[SOIL] ❌ measure_temperature FAILED: ${err.message}`));
       }
@@ -430,7 +430,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
       this.log(`[SOIL] 🔋 BATTERY STATE DP14 = ${parsedValue} → ${battery}%`);
 
       if (this.hasCapability('measure_battery')) {
-        this.setCapabilityValue('measure_battery', battery)
+        this.setCapabilityValue('measure_battery', parseFloat(battery))
           .then(() => this.log(`[SOIL] ✅ measure_battery SET to ${battery}%`))
           .catch(err => this.log(`[SOIL] ❌ measure_battery FAILED: ${err.message}`));
       }
@@ -442,7 +442,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
       this.log(`[SOIL] 🔋 BATTERY % DP15 = ${parsedValue}%`);
 
       if (this.hasCapability('measure_battery')) {
-        this.setCapabilityValue('measure_battery', parsedValue)
+        this.setCapabilityValue('measure_battery', parseFloat(parsedValue))
           .then(() => this.log(`[SOIL] ✅ measure_battery SET to ${parsedValue}%`))
           .catch(err => this.log(`[SOIL] ❌ measure_battery FAILED: ${err.message}`));
       }

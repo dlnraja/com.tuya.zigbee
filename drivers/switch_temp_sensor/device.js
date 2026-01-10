@@ -265,7 +265,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
     this.log(`🌡️ Temperature: ${rounded}°C`);
 
     if (this.hasCapability('measure_temperature')) {
-      await this.setCapabilityValue('measure_temperature', rounded).catch(this.error);
+      await this.setCapabilityValue('measure_temperature', parseFloat(rounded)).catch(this.error);
     }
   }
 
@@ -285,7 +285,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
     this.log(`💧 Humidity: ${rounded}%`);
 
     if (this.hasCapability('measure_humidity')) {
-      await this.setCapabilityValue('measure_humidity', rounded).catch(this.error);
+      await this.setCapabilityValue('measure_humidity', parseFloat(rounded)).catch(this.error);
     }
   }
 
