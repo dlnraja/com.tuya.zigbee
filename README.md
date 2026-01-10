@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.449** | 🔧 BUTTON FIX: Removed _TZ3000_bczr4e10 (TS0043) and _TZ3000_bgtzm4ny (TS0044... |
 | **v5.5.448** | ⏰ DUAL TIME SYNC: Added ZCL Time cluster (0x000A) handler! Device interview s... |
 | **v5.5.447** | ⏰ TIME SYNC LISTENER: Added mcuSyncTime BoundCluster - device REQUESTS time, ... |
 | **v5.5.446** | 🕐 LCD TIME SYNC FIX: Fixed payload order [UTC][Local] per Z2M spec. Added cl... |
@@ -78,7 +79,6 @@
 | **v5.5.442** | 🕐 LCD TIME SYNC: Added ZCL Time cluster (0x000A) as fallback method. If Tuya... |
 | **v5.5.441** | 🔧 BUTTONS FIX: Changed class from 'button' to 'sensor' + added button.X capa... |
 | **v5.5.440** | 🔧 BUTTONS: Removed button.X capabilities - use FLOW CARDS for automation (si... |
-| **v5.5.439** | 🔧 LCD TIME SYNC: Improved error message when Tuya cluster unavailable - inst... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
