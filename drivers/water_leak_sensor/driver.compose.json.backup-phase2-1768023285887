@@ -1,119 +1,98 @@
 {
   "name": {
-    "en": "Radiator Valve",
-    "fr": "Radiator Valve"
+    "en": "Water Leak Sensor",
+    "fr": "Water Leak Sensor"
   },
-  "class": "thermostat",
+  "class": "sensor",
   "capabilities": [
-    "target_temperature",
-    "measure_temperature",
-    "thermostat_mode",
+    "alarm_water",
     "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "alarm_water": {
+      "title": {
+        "en": "Water Detected",
+        "fr": "Eau Détectée"
+      }
+    }
+  },
   "energy": {
     "batteries": [
-      "AA"
+      "CR2032",
+      "CR2450",
+      "AAA"
     ],
     "approximation": {
       "usageConstant": 0.5
     }
   },
+  "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_0HG58EPR",
-      "_TZE200_5TOC8EFA",
-      "_TZE200_7YORANX2",
-      "_TZE200_9GVRUQF5",
-      "_TZE200_9XFJIXAP",
-      "_TZE200_AOCLFNXZ",
-      "_TZE200_AZQP6SSJ",
-      "_TZE200_B6WAX7G0",
-      "_TZE200_BVU2WNXZ",
-      "_TZE200_C88TEUJP",
-      "_TZE200_CHYVMHAY",
-      "_TZE200_CWNJRR72",
-      "_TZE200_DZUQWSYG",
-      "_TZE200_E9BA97VF",
-      "_TZE200_FHN3NEGR",
-      "_TZE200_G9A3AWAJ",
-      "_TZE200_HUE3YFSN",
-      "_TZE200_HUSQQVUX",
-      "_TZE200_HVAXB2TC",
-      "_TZE200_KDS0PMMV",
-      "_TZE200_KFVQ6AVY",
-      "_TZE200_KLY8GJLZ",
-      "_TZE200_LNBFNYXD",
-      "_TZE200_MUDXCHSU",
-      "_TZE204_MUDXCHSU",
-      "_TZE200_TRV602",
-      "_TZE200_ZUHSZJ9S",
-      "_TZE204_0DXRPQXL",
-      "_TZE204_AOCLFNXZ",
-      "_TZE204_CKUD7U2L",
-      "_TZE204_G9A3AWAJ",
-      "_TZE204_HVAXB2TC",
-      "_TZE204_LNBFNYXD",
-      "_TZE284_HVAXB2TC",
-      "_TZE200_RXQ4ITI9",
-      "_TZE204_QYR2M29I",
-      "_TZE200_0HG58WYK",
-      "_TZE200_4UTWOZI2",
-      "_TZE200_6RDJ8DZM",
-      "_TZE200_D3Z1UKQW",
-      "_TZE200_FSOW0QSK",
-      "_TZE200_JKFBPH7L",
-      "_TZE200_LHZAPFG9",
-      "_TZE200_LLLLIZ3P",
-      "_TZE200_OW09XLXM",
-      "_TZE200_P3DBF6QS",
-      "_TZE200_PY4CM3HE",
-      "_TZE200_RV6IUYXB",
-      "_TZE200_RXNTAG7I",
-      "_TZE200_SUR6Q7KO",
-      "_TZE200_SUXYWABT",
-      "_TZE200_WSBFWODU",
-      "_TZE200_X9AXOFSE",
-      "_TZE204_O3X45P96",
-      "_TZE284_C6WV4XYO",
-      "_TZE284_O3X45P96",
-      "_TZE284_RV6IUYXB",
-      "_TZE200_RK1WOJCE",
-      "_TZE200_RNDG81SF",
-      "_TZE200_RUFDTFYV",
-      "_TZE200_UBGDWSNR",
-      "_TZE284_8SE38W3C",
-      "_TZE284_GAJ531W3",
-      "_TZE204_OJTQAWAV",
-      "_TZ3000_8YKQFSYQ",
-      "_TZE204_EEKPF0FT",
-      "_TZE204_XDTNPP1A",
-      "_TZE200_SGPEACQP"
+      "TUYATEC-3tipnsrx",
+      "_TYST11_qq9mpfhw",
+      "_TYZB01_o63ssaah",
+      "_TYZB01_sqmd19i1",
+      "_TZ3000_0S9GUKZT",
+      "_TZ3000_2WCYNPML",
+      "_TZ3000_3DFEWSK1",
+      "_TZ3000_4QAOWTDO",
+      "_TZ3000_4UVOVZ4R",
+      "_TZ3000_5K5VH43T",
+      "_TZ3000_85CZD6FY",
+      "_TZ3000_BFOPM9GA",
+      "_TZ3000_BZT33CYU",
+      "_TZ3000_EIT7P838",
+      "_TZ3000_EIT8C5CS",
+      "_TZ3000_FVM13J8W",
+      "_TZ3000_FXJO6GFE",
+      "_TZ3000_FXVJHDYL",
+      "_TZ3000_JS34CUMA",
+      "_TZ3000_K4EJ3WW2",
+      "_TZ3000_KSTBKT6A",
+      "_TZ3000_KYB656NO",
+      "_TZ3000_MUGYHZ0Q",
+      "_TZ3000_NKKL7UZV",
+      "_TZ3000_NLSSZMZL",
+      "_TZ3000_O9F2ZQLN",
+      "_TZ3000_OCJLO4EA",
+      "_TZ3000_QDMNMDDG",
+      "_TZ3000_QHOZXS2B",
+      "_TZ3000_RURVXHCX",
+      "_TZ3000_SQ510A",
+      "_TZ3000_T6JRIAWG",
+      "_TZ3000_UPGCBODY",
+      "_TZ3000_WUEP9ZNG",
+      "_TZ3000_WW9I3E0Y",
+      "_TZE204_QQ9MPFHW",
+      "_tyzb01_o63ssaah",
+      "_tyzb01_sqmd19i1",
+      "_TZ3000_KYAKWBF8"
     ],
     "productId": [
-      "TS0601"
+      "TS0207",
+      "TS0601",
+      "q9mpfhw"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
           1,
-          3,
-          4,
-          5,
-          6,
+          1026,
+          1280,
           61184,
-          61184,
-          1,
-          513
+          1280,
+          1
         ],
         "bindings": [
           1,
-          513
+          1280
         ]
       }
     },
     "learnmode": {
-      "image": "/drivers/radiator_valve/assets/learnmode.svg",
+      "image": "/drivers/water_leak_sensor/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -348,38 +327,25 @@
   "flow": {
     "triggers": [
       {
-        "id": "valve_target_changed",
+        "id": "water_leak_detected",
         "title": {
-          "en": "Target temperature changed",
-          "fr": "Température cible changée"
-        },
-        "tokens": [
-          {
-            "name": "target",
-            "type": "number",
-            "title": {
-              "en": "Target (°C)"
-            },
-            "example": 21
-          }
-        ]
-      },
-      {
-        "id": "valve_heating_started",
-        "title": {
-          "en": "Valve started heating",
-          "fr": "Vanne commence à chauffer"
+          "en": "Water leak detected",
+          "fr": "Fuite d'eau détectée",
+          "nl": "Waterlek gedetecteerd",
+          "de": "Wasserleck erkannt"
         }
       },
       {
-        "id": "valve_heating_stopped",
+        "id": "water_leak_cleared",
         "title": {
-          "en": "Valve stopped heating",
-          "fr": "Vanne arrête de chauffer"
+          "en": "Water leak cleared",
+          "fr": "Fuite d'eau terminée",
+          "nl": "Waterlek gestopt",
+          "de": "Wasserleck beendet"
         }
       },
       {
-        "id": "valve_battery_low",
+        "id": "water_battery_low",
         "title": {
           "en": "Battery is low",
           "fr": "Batterie faible"
@@ -389,129 +355,30 @@
             "name": "battery",
             "type": "number",
             "title": {
-              "en": "Battery (%)"
+              "en": "Battery (%)",
+              "fr": "Batterie (%)"
             },
             "example": 15
           }
         ]
-      },
-      {
-        "id": "valve_window_open",
-        "title": {
-          "en": "Window open detected",
-          "fr": "Fenêtre ouverte détectée"
-        }
       }
     ],
     "conditions": [
       {
-        "id": "valve_is_heating",
+        "id": "water_leak_is_active",
         "title": {
-          "en": "Valve !{{is|isn't}} heating",
-          "fr": "Vanne !{{chauffe|ne chauffe pas}}"
+          "en": "Water leak !{{is|isn't}} detected",
+          "fr": "Fuite d'eau !{{est|n'est pas}} détectée"
         }
-      },
-      {
-        "id": "valve_target_is",
-        "title": {
-          "en": "Target !{{above|below}} threshold",
-          "fr": "Cible !{{au-dessus|en-dessous}} du seuil"
-        },
-        "titleFormatted": {
-          "en": "Target !{{above|below}} [[threshold]] °C"
-        },
-        "args": [
-          {
-            "name": "threshold",
-            "type": "number",
-            "min": 5,
-            "max": 35,
-            "step": 0.5
-          }
-        ]
-      }
-    ],
-    "actions": [
-      {
-        "id": "valve_set_preset",
-        "title": {
-          "en": "Set valve preset",
-          "fr": "Définir preset vanne"
-        },
-        "titleFormatted": {
-          "en": "Set to [[preset]]"
-        },
-        "args": [
-          {
-            "type": "dropdown",
-            "name": "preset",
-            "values": [
-              {
-                "id": "comfort",
-                "title": {
-                  "en": "Comfort"
-                }
-              },
-              {
-                "id": "eco",
-                "title": {
-                  "en": "Eco"
-                }
-              },
-              {
-                "id": "away",
-                "title": {
-                  "en": "Away"
-                }
-              },
-              {
-                "id": "boost",
-                "title": {
-                  "en": "Boost"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "valve_set_child_lock",
-        "title": {
-          "en": "Set child lock",
-          "fr": "Définir verrouillage enfant"
-        },
-        "titleFormatted": {
-          "en": "Set child lock to [[enabled]]"
-        },
-        "args": [
-          {
-            "type": "dropdown",
-            "name": "enabled",
-            "values": [
-              {
-                "id": "on",
-                "title": {
-                  "en": "On"
-                }
-              },
-              {
-                "id": "off",
-                "title": {
-                  "en": "Off"
-                }
-              }
-            ]
-          }
-        ]
       }
     ]
   },
   "images": {
-    "small": "drivers/radiator_valve/assets/images/small.png",
-    "large": "drivers/radiator_valve/assets/images/large.png",
-    "xlarge": "drivers/radiator_valve/assets/images/xlarge.png"
+    "small": "drivers/water_leak_sensor/assets/images/small.png",
+    "large": "drivers/water_leak_sensor/assets/images/large.png",
+    "xlarge": "drivers/water_leak_sensor/assets/images/xlarge.png"
   },
-  "id": "radiator_valve",
+  "id": "water_leak_sensor",
   "platforms": [
     "local"
   ],
