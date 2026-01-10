@@ -503,6 +503,34 @@
             ]
           }
         ]
+      },
+      {
+        "id": "set_temperature_offset",
+        "title": {
+          "en": "Set temperature offset",
+          "nl": "Temperatuur offset instellen",
+          "fr": "Définir offset température",
+          "de": "Temperatur-Offset einstellen"
+        },
+        "titleFormatted": {
+          "en": "Set temperature offset to [[offset]]°C",
+          "nl": "Stel temperatuur offset in op [[offset]]°C",
+          "fr": "Définir offset température à [[offset]]°C"
+        },
+        "hint": {
+          "en": "Adjust the temperature reading by adding an offset value",
+          "nl": "Pas de temperatuurmeting aan door een offset toe te voegen"
+        },
+        "args": [
+          {
+            "name": "offset",
+            "type": "range",
+            "min": -5,
+            "max": 5,
+            "step": 0.5,
+            "label": "°C"
+          }
+        ]
       }
     ]
   },
