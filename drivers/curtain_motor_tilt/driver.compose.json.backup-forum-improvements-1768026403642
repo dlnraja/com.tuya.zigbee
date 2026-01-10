@@ -47,39 +47,5 @@
     "batteries": [
       "OTHER"
     ]
-  },
-  "flow": {
-    "actions": [
-      {
-        "id": "curtain_calibrate",
-        "title": {
-          "en": "Calibrate curtain motor",
-          "nl": "Kalibreer gordijnmotor"
-        },
-        "titleFormatted": {
-          "en": "Calibrate [[device]]",
-          "nl": "Kalibreer [[device]]"
-        },
-        "hint": {
-          "en": "Run full open/close cycle for position calibration",
-          "nl": "Voer volledige open/sluit cyclus uit voor positie kalibratie"
-        }
-      },
-      {
-        "id": "curtain_reset_position",
-        "title": {
-          "en": "Reset position to 0%",
-          "nl": "Reset positie naar 0%"
-        },
-        "titleFormatted": {
-          "en": "Reset [[device]] position",
-          "nl": "Reset [[device]] positie"
-        },
-        "hint": {
-          "en": "Reset current position to fully closed",
-          "nl": "Reset huidige positie naar volledig gesloten"
-        }
-      }
-    ]
   }
 }

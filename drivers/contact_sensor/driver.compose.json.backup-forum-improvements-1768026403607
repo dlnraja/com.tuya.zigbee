@@ -1,121 +1,144 @@
 {
   "name": {
-    "en": "Multi-Gang USB Socket",
-    "fr": "Prise Multi-Gang USB"
+    "en": "Contact Sensor",
+    "fr": "Capteur de Contact"
   },
-  "class": "socket",
+  "class": "sensor",
   "capabilities": [
-    "onoff",
-    "onoff.socket2",
-    "onoff.usb1",
-    "onoff.usb2",
-    "onoff.led",
-    "measure_power",
-    "meter_power",
-    "measure_voltage",
-    "measure_current"
+    "alarm_contact",
+    "measure_battery"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "title": {
-        "en": "Socket 1",
-        "fr": "Prise 1"
-      }
-    },
-    "onoff.socket2": {
-      "title": {
-        "en": "Socket 2",
-        "fr": "Prise 2"
-      }
-    },
-    "onoff.usb1": {
-      "title": {
-        "en": "USB 1",
-        "fr": "USB 1"
-      }
-    },
-    "onoff.usb2": {
-      "title": {
-        "en": "USB 2",
-        "fr": "USB 2"
-      }
-    },
-    "onoff.led": {
-      "title": {
-        "en": "LED Indicator",
-        "fr": "Indicateur LED"
-      }
-    }
-  },
   "energy": {
+    "batteries": [
+      "CR2032",
+      "CR1632",
+      "AAA"
+    ],
     "approximation": {
       "usageConstant": 0.5
-    },
-    "batteries": [
-      "OTHER"
-    ]
+    }
   },
+  "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "LELLKI",
-      "_TYZB01_vkwryfdr",
-      "_TZE200_BSEED2G",
-      "_TZE204_BSEED3G",
-      "_TZ3000_U5U4CAHO",
-      "_TZ3000_ATP3BEWS",
-      "_TZ3000_CEHUW1LW",
-      "_TZ3000_QYOLRMC9",
-      "_TZ3000_8KCQDNGY",
-      "_TZ3000_OKAZ9TJS",
-      "_TZ3000_KO6V90PG",
-      "_TZB210_2DP1BPQQ",
-      "_TZB210_HBEJZGPJ",
-      "_TZB210_WLBHVABF",
-      "UseeLink",
-      "_tyzb01_vkwryfdr",
-      "_TZ3000_J4GG6D1B"
+      "_TYZB01_xph99wvr",
+      "_tyzb01_xph99wvr",
+      "_TZ1800_EJWKN2H2",
+      "_TZ3000_2DLWLVEX",
+      "_TZ3000_2MBFXLZR",
+      "_TZ3000_402JJYRO",
+      "_TZ3000_4UGNZSLI",
+      "_TZ3000_6JEESVRT",
+      "_TZ3000_7D8YME6F",
+      "_TZ3000_7TBSRUQL",
+      "_TZ3000_8YHYPBO7",
+      "_TZ3000_996RPFY6",
+      "_TZ3000_9EEAVBK5",
+      "_TZ3000_AMDYMR7L",
+      "_TZ3000_AU1RJICN",
+      "_TZ3000_BMG14AX2",
+      "_TZ3000_BR3LAUKF",
+      "_TZ3000_BWLVYJWK",
+      "_TZ3000_BZXLOFT",
+      "_TZ3000_BZXLOFT2",
+      "_TZ3000_BZXLOFTH",
+      "_TZ3000_CEA5XUGQ",
+      "_TZ3000_CJFMU5HE",
+      "_TZ3000_CJRNGDR3",
+      "_TZ3000_DECXRTWA",
+      "_TZ3000_DO6TXRCW",
+      "_TZ3000_EAFAA66E",
+      "_TZ3000_EBAR6LJY",
+      "_TZ3000_FA9MLVJA",
+      "_TZ3000_GNTWYTXO",
+      "_TZ3000_HGU1DLAK",
+      "_TZ3000_J2W1DW29",
+      "_TZ3000_JQGE2FJX",
+      "_TZ3000_KEAYT8OL",
+      "_TZ3000_MSL2RXJN",
+      "_TZ3000_N2EGFSLI",
+      "_TZ3000_NBNMW9NC",
+      "_TZ3000_O4MKAHKC",
+      "_TZ3000_P8ALO7QA",
+      "_TZ3000_PZUI3SKT",
+      "_TZ3000_Q50ZHDSC",
+      "_TZ3000_QRLDBMFN",
+      "_TZ3000_RCUYHWE3",
+      "_TZ3000_RGCHMAD8",
+      "_TZ3000_RID8LZVO",
+      "_TZ3000_RYLAOZUC",
+      "_TZ3000_S8R1QOYQ",
+      "_TZ3000_TASPDDVQ",
+      "_TZ3000_TH6ZQQY6",
+      "_TZ3000_TIMX9IVQ",
+      "_TZ3000_UDYJYLT7",
+      "_TZ3000_UVTI8NKD",
+      "_TZ3000_V7CHGQSO",
+      "_TZ3000_WPTAYAQR",
+      "_TZ3000_WUT53HFM",
+      "_TZ3000_WYHUOCAL",
+      "_TZ3000_X8Q36XWF",
+      "_TZ3000_XPQ2NMKR",
+      "_TZ3000_YFEKCY3N",
+      "_TZ3000_YXQNFFAM",
+      "_TZ3000_ZGRFFIWG",
+      "_TZ3000_ZUTIZVYK",
+      "_TZ3000_ZUTIZVYKTS0203",
+      "_TZ3210_0JXEOADC",
+      "_TZ3210_BFWVFYX1",
+      "_TZ3210_UMI6VBSZ",
+      "_TZ3210_ZBABX9WH",
+      "_TZ3210_ZMPPWAWA",
+      "_TZB210_ZMPPWAWA",
+      "_TZE204_JKTMRPOJ",
+      "_TZE284_NKLQJK62",
+      "5rta89nj",
+      "HOBEIAN",
+      "Immax",
+      "TS0301",
+      "TUYATEC-0l6xaqmi",
+      "TUYATEC-7qunn4gq",
+      "TUYATEC-abkehqus",
+      "TUYATEC-Bfq2i2Sy",
+      "TUYATEC-crr8qb0p",
+      "TUYATEC-g3gl6cgy",
+      "TUYATEC-ip9ganvw",
+      "TUYATEC-kbqf60nt",
+      "TUYATEC-r9hgssol",
+      "TUYATEC-rkqiqvcs",
+      "TUYATEC-sb6t7ett",
+      "TUYATEC-trhrga6p",
+      "Visonic",
+      "zbeacon",
+      "_TZ3000_26FMUPBB",
+      "_TZ3000_OXSLV1C9"
     ],
     "productId": [
-      "TS0115",
-      "TS0121",
+      "TS0203",
+      "TS0210",
       "TS0601"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
+          1,
           3,
           4,
           5,
           6,
-          1794,
-          2820,
+          1280,
           61184
         ],
         "bindings": [
           1,
-          6
-        ]
-      },
-      "2": {
-        "clusters": [
-          6
-        ],
-        "bindings": [
-          6
-        ]
-      },
-      "3": {
-        "clusters": [
-          6
-        ],
-        "bindings": [
-          6
+          6,
+          1280
         ]
       }
     },
     "learnmode": {
-      "image": "/drivers/usb_outlet_advanced/assets/learnmode.svg",
+      "image": "/drivers/contact_sensor/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -347,143 +370,90 @@
       }
     },
     {
-      "type": "group",
+      "id": "invert_contact",
+      "type": "checkbox",
       "label": {
-        "en": "Energy Monitoring Calibration",
-        "nl": "Energie Meetwaarde Kalibratie"
+        "en": "Invert Contact State",
+        "fr": "Inverser État Contact"
       },
-      "children": [
-        {
-          "id": "voltage_scale",
-          "type": "dropdown",
-          "label": {
-            "en": "Voltage scaling",
-            "nl": "Voltage schaling"
-          },
-          "hint": {
-            "en": "Adjust if voltage readings are incorrect",
-            "nl": "Aanpassen indien voltage niet klopt"
-          },
-          "value": "0.1",
-          "values": [
-            {
-              "id": "0.01",
-              "label": {
-                "en": "÷100",
-                "nl": "÷100"
-              }
-            },
-            {
-              "id": "0.1",
-              "label": {
-                "en": "÷10 (default)",
-                "nl": "÷10 (standaard)"
-              }
-            },
-            {
-              "id": "1",
-              "label": {
-                "en": "×1 (no scaling)",
-                "nl": "×1 (geen schaling)"
-              }
-            },
-            {
-              "id": "10",
-              "label": {
-                "en": "×10",
-                "nl": "×10"
-              }
-            }
-          ]
-        },
-        {
-          "id": "current_scale",
-          "type": "dropdown",
-          "label": {
-            "en": "Current scaling",
-            "nl": "Stroom schaling"
-          },
-          "hint": {
-            "en": "Adjust if current readings are incorrect",
-            "nl": "Aanpassen indien stroom niet klopt"
-          },
-          "value": "0.001",
-          "values": [
-            {
-              "id": "0.001",
-              "label": {
-                "en": "÷1000 (mA→A)",
-                "nl": "÷1000 (mA→A)"
-              }
-            },
-            {
-              "id": "0.01",
-              "label": {
-                "en": "÷100",
-                "nl": "÷100"
-              }
-            },
-            {
-              "id": "0.1",
-              "label": {
-                "en": "÷10",
-                "nl": "÷10"
-              }
-            },
-            {
-              "id": "1",
-              "label": {
-                "en": "×1",
-                "nl": "×1"
-              }
-            }
-          ]
-        },
-        {
-          "id": "power_scale",
-          "type": "dropdown",
-          "label": {
-            "en": "Power scaling",
-            "nl": "Vermogen schaling"
-          },
-          "hint": {
-            "en": "Adjust if power readings are incorrect",
-            "nl": "Aanpassen indien vermogen niet klopt"
-          },
-          "value": "0.1",
-          "values": [
-            {
-              "id": "0.1",
-              "label": {
-                "en": "÷10 (default)",
-                "nl": "÷10 (standaard)"
-              }
-            },
-            {
-              "id": "1",
-              "label": {
-                "en": "×1",
-                "nl": "×1"
-              }
-            },
-            {
-              "id": "10",
-              "label": {
-                "en": "×10",
-                "nl": "×10"
-              }
-            }
-          ]
-        }
-      ]
+      "value": false,
+      "hint": {
+        "en": "Enable if sensor reports OPEN when CLOSED and vice versa",
+        "fr": "Activer si le capteur signale OUVERT quand FERMÉ et vice versa"
+      }
+    },
+    {
+      "id": "debounce_time",
+      "type": "number",
+      "label": {
+        "en": "Debounce Time (seconds)",
+        "fr": "Temps Anti-Rebond (secondes)"
+      },
+      "value": 2,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "Time to wait before confirming state change (0=disabled). Increase for unstable sensors.",
+        "fr": "Temps d'attente avant de confirmer un changement d'état (0=désactivé). Augmenter pour capteurs instables."
+      }
     }
   ],
-  "images": {
-    "small": "drivers/usb_outlet_advanced/assets/images/small.png",
-    "large": "drivers/usb_outlet_advanced/assets/images/large.png",
-    "xlarge": "drivers/usb_outlet_advanced/assets/images/xlarge.png"
+  "flow": {
+    "triggers": [
+      {
+        "id": "contact_opened",
+        "title": {
+          "en": "Door/window opened",
+          "fr": "Porte/fenêtre ouverte",
+          "nl": "Deur/raam geopend",
+          "de": "Tür/Fenster geöffnet"
+        }
+      },
+      {
+        "id": "contact_closed",
+        "title": {
+          "en": "Door/window closed",
+          "fr": "Porte/fenêtre fermée",
+          "nl": "Deur/raam gesloten",
+          "de": "Tür/Fenster geschlossen"
+        }
+      },
+      {
+        "id": "contact_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "fr": "Batterie faible"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)",
+              "fr": "Batterie (%)"
+            },
+            "example": 15
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "contact_is_open",
+        "title": {
+          "en": "Door/window !{{is|isn't}} open",
+          "fr": "Porte/fenêtre !{{est|n'est pas}} ouverte"
+        }
+      }
+    ]
   },
-  "id": "usb_outlet_advanced",
+  "images": {
+    "small": "drivers/contact_sensor/assets/images/small.png",
+    "large": "drivers/contact_sensor/assets/images/large.png",
+    "xlarge": "drivers/contact_sensor/assets/images/xlarge.png"
+  },
+  "id": "contact_sensor",
   "platforms": [
     "local"
   ],
@@ -508,16 +478,5 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ],
-  "flow": {
-    "triggers": [
-      {
-        "id": "usb_outlet_button_pressed",
-        "title": {
-          "en": "Usb Outlet Button Pressed",
-          "fr": "Usb Outlet Button Pressed"
-        }
-      }
-    ]
-  }
+  ]
 }
