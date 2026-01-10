@@ -79,45 +79,6 @@
           "en": "Reset current position to fully closed",
           "nl": "Reset huidige positie naar volledig gesloten"
         }
-      },
-      {
-        "id": "curtain_hold",
-        "title": {
-          "en": "Hold curtain position",
-          "nl": "Gordijn positie vasthouden",
-          "fr": "Maintenir position rideau"
-        },
-        "titleFormatted": {
-          "en": "Hold [[device]] at current position",
-          "nl": "Houd [[device]] op huidige positie"
-        },
-        "hint": {
-          "en": "Stop curtain movement and hold at current position",
-          "nl": "Stop gordijn beweging en houd huidige positie vast"
-        }
-      },
-      {
-        "id": "curtain_open_partial",
-        "title": {
-          "en": "Open curtain partially",
-          "nl": "Gordijn gedeeltelijk openen",
-          "fr": "Ouvrir rideau partiellement"
-        },
-        "titleFormatted": {
-          "en": "Open [[device]] to [[position]]%",
-          "nl": "Open [[device]] naar [[position]]%"
-        },
-        "args": [
-          {
-            "type": "range",
-            "name": "position",
-            "min": 0,
-            "max": 100,
-            "step": 1,
-            "label": "%",
-            "labelMultiplier": 1
-          }
-        ]
       }
     ]
   }

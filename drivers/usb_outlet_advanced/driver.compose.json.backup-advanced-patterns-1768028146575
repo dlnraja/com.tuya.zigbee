@@ -1,201 +1,127 @@
 {
   "name": {
-    "en": "4-Buttons Wireless Controller",
-    "fr": "4-Boutons Contrôleur Sans Fil",
-    "nl": "4-Knoppen Draadloze Controller",
-    "de": "4-Tasten Drahtlos-Controller",
-    "it": "4-Pulsanti Controller Wireless",
-    "sv": "4-Knappar Trådlös Kontroller",
-    "no": "4-Knapper Trådløs Kontroller",
-    "es": "4-Botones Controlador Inalámbrico",
-    "da": "4-Knapper Trådløs Controller"
+    "en": "Multi-Gang USB Socket",
+    "fr": "Prise Multi-Gang USB"
   },
-  "class": "button",
+  "class": "socket",
   "capabilities": [
-    "button.1",
-    "button.2",
-    "button.3",
-    "button.4",
-    "measure_battery"
+    "onoff",
+    "onoff.socket2",
+    "onoff.usb1",
+    "onoff.usb2",
+    "onoff.led",
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current"
   ],
   "capabilitiesOptions": {
-    "button.1": {
+    "onoff": {
       "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1",
-        "nl": "Knop 1",
-        "de": "Taste 1"
+        "en": "Socket 1",
+        "fr": "Prise 1"
       }
     },
-    "button.2": {
+    "onoff.socket2": {
       "title": {
-        "en": "Button 2",
-        "fr": "Bouton 2",
-        "nl": "Knop 2",
-        "de": "Taste 2"
+        "en": "Socket 2",
+        "fr": "Prise 2"
       }
     },
-    "button.3": {
+    "onoff.usb1": {
       "title": {
-        "en": "Button 3",
-        "fr": "Bouton 3",
-        "nl": "Knop 3",
-        "de": "Taste 3"
+        "en": "USB 1",
+        "fr": "USB 1"
       }
     },
-    "button.4": {
+    "onoff.usb2": {
       "title": {
-        "en": "Button 4",
-        "fr": "Bouton 4",
-        "nl": "Knop 4",
-        "de": "Taste 4"
+        "en": "USB 2",
+        "fr": "USB 2"
       }
     },
-    "measure_battery": {
+    "onoff.led": {
       "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
+        "en": "LED Indicator",
+        "fr": "Indicateur LED"
       }
     }
   },
   "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA"
-    ],
     "approximation": {
       "usageConstant": 0.5
-    }
+    },
+    "batteries": [
+      "OTHER"
+    ]
   },
   "zigbee": {
     "manufacturerName": [
-      "_TYZB01_qm6djpta",
-      "_TZ3000_11PG3IMA",
-      "_TZ3000_A4XYCPRS",
-      "_TZ3000_ABCI1HIU",
-      "_TZ3000_B3MGFU0D",
-      "_TZ3000_BGTZM4NY",
-      "_TZ3000_CZUYT8LZ",
-      "_TZ3000_DZIAICT4",
-      "_TZ3000_EE8NRT2L",
-      "_TZ3000_ET7AFZXZ",
-      "_TZ3000_J61X9RXN",
-      "_TZ3000_KFU8ZAPD",
-      "_TZ3000_MH9PX7CQ",
-      "_TZ3000_NUOMBROO",
-      "_TZ3000_PCQJMCUD",
-      "_TZ3000_U3NV1JWK",
-      "_TZ3000_UAA99ARV",
-      "_TZ3000_UFHTXR59",
-      "_TZ3000_W4THIANR",
-      "_TZ3000_XABCKQ1V",
-      "_TZ3040_FWXUZCF4",
-      "_TZ3290_785FBXIK",
-      "_TZ3290_IXD9MVV4",
-      "_TZ3290_NKPXAPOZ",
-      "_TZ3290_YYAX9AJF",
-      "_TZ3000_VP6CLF9D",
-      "_TZ3000_ZGYZGDUA",
-      "_tyzb01_qm6djpta",
-      "_TZ3000_WKAI4GA5",
-      "_TZ3000_5TQXPINE"
+      "LELLKI",
+      "_TYZB01_vkwryfdr",
+      "_TZE200_BSEED2G",
+      "_TZE204_BSEED3G",
+      "_TZ3000_U5U4CAHO",
+      "_TZ3000_ATP3BEWS",
+      "_TZ3000_CEHUW1LW",
+      "_TZ3000_QYOLRMC9",
+      "_TZ3000_8KCQDNGY",
+      "_TZ3000_OKAZ9TJS",
+      "_TZ3000_KO6V90PG",
+      "_TZB210_2DP1BPQQ",
+      "_TZB210_HBEJZGPJ",
+      "_TZB210_WLBHVABF",
+      "UseeLink",
+      "_tyzb01_vkwryfdr",
+      "_TZ3000_J4GG6D1B"
     ],
     "productId": [
-      "TS0044",
+      "TS0115",
+      "TS0121",
       "TS0601"
     ],
-    "learnmode": {
-      "image": "/drivers/button_wireless_4/assets/learnmode.svg",
-      "instruction": {
-        "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
-      }
-    },
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
           3,
           4,
           5,
           6,
-          8,
-          18,
-          1280
+          1794,
+          2820,
+          61184
         ],
         "bindings": [
           1,
-          3,
-          5,
-          6,
-          8
+          6
         ]
       },
       "2": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          18
+          6
         ],
         "bindings": [
-          5,
           6
         ]
       },
       "3": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          18
-        ],
-        "bindings": [
-          5,
           6
-        ]
-      },
-      "4": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          18
         ],
         "bindings": [
-          5,
           6
         ]
       }
+    },
+    "learnmode": {
+      "image": "/drivers/usb_outlet_advanced/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
     }
   },
-  "images": {
-    "small": "drivers/button_wireless_4/assets/images/small.png",
-    "large": "drivers/button_wireless_4/assets/images/large.png"
-  },
-  "platforms": [
-    "local"
-  ],
-  "connectivity": [
-    "zigbee"
-  ],
   "settings": [
     {
       "id": "power_source",
@@ -421,42 +347,149 @@
       }
     },
     {
-      "id": "tuya_dp_configuration",
-      "type": "label",
+      "type": "group",
       "label": {
-        "en": "Tuya Datapoint Configuration",
-        "fr": "Configuration Tuya Datapoint"
+        "en": "Energy Monitoring Calibration",
+        "nl": "Energie Meetwaarde Kalibratie"
       },
-      "value": "{\n  \"1\": \"button_1_action\",\n  \"2\": \"button_2_action\",\n  \"3\": \"button_3_action\",\n  \"4\": \"button_4_action\",\n  \"101\": \"battery_percentage\"\n}"
-    },
-    {
-      "id": "dp_debug_mode",
-      "type": "checkbox",
-      "label": {
-        "en": "DP Debug Mode",
-        "fr": "Mode Debug DP"
-      },
-      "value": false,
-      "hint": {
-        "en": "Log all Tuya DP data for troubleshooting",
-        "fr": "Logger toutes les données Tuya DP pour diagnostic"
-      }
-    },
-    {
-      "id": "enable_time_sync",
-      "type": "checkbox",
-      "label": {
-        "en": "Enable Time Sync",
-        "fr": "Activer Synchro Heure"
-      },
-      "value": true,
-      "hint": {
-        "en": "Sync device time with Homey",
-        "fr": "Synchroniser l'heure du device avec Homey"
-      }
+      "children": [
+        {
+          "id": "voltage_scale",
+          "type": "dropdown",
+          "label": {
+            "en": "Voltage scaling",
+            "nl": "Voltage schaling"
+          },
+          "hint": {
+            "en": "Adjust if voltage readings are incorrect",
+            "nl": "Aanpassen indien voltage niet klopt"
+          },
+          "value": "0.1",
+          "values": [
+            {
+              "id": "0.01",
+              "label": {
+                "en": "÷100",
+                "nl": "÷100"
+              }
+            },
+            {
+              "id": "0.1",
+              "label": {
+                "en": "÷10 (default)",
+                "nl": "÷10 (standaard)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "×1 (no scaling)",
+                "nl": "×1 (geen schaling)"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "×10",
+                "nl": "×10"
+              }
+            }
+          ]
+        },
+        {
+          "id": "current_scale",
+          "type": "dropdown",
+          "label": {
+            "en": "Current scaling",
+            "nl": "Stroom schaling"
+          },
+          "hint": {
+            "en": "Adjust if current readings are incorrect",
+            "nl": "Aanpassen indien stroom niet klopt"
+          },
+          "value": "0.001",
+          "values": [
+            {
+              "id": "0.001",
+              "label": {
+                "en": "÷1000 (mA→A)",
+                "nl": "÷1000 (mA→A)"
+              }
+            },
+            {
+              "id": "0.01",
+              "label": {
+                "en": "÷100",
+                "nl": "÷100"
+              }
+            },
+            {
+              "id": "0.1",
+              "label": {
+                "en": "÷10",
+                "nl": "÷10"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "×1",
+                "nl": "×1"
+              }
+            }
+          ]
+        },
+        {
+          "id": "power_scale",
+          "type": "dropdown",
+          "label": {
+            "en": "Power scaling",
+            "nl": "Vermogen schaling"
+          },
+          "hint": {
+            "en": "Adjust if power readings are incorrect",
+            "nl": "Aanpassen indien vermogen niet klopt"
+          },
+          "value": "0.1",
+          "values": [
+            {
+              "id": "0.1",
+              "label": {
+                "en": "÷10 (default)",
+                "nl": "÷10 (standaard)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "×1",
+                "nl": "×1"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "×10",
+                "nl": "×10"
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
-  "id": "button_wireless_4",
+  "images": {
+    "small": "drivers/usb_outlet_advanced/assets/images/small.png",
+    "large": "drivers/usb_outlet_advanced/assets/images/large.png",
+    "xlarge": "drivers/usb_outlet_advanced/assets/images/xlarge.png"
+  },
+  "id": "usb_outlet_advanced",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "pair": [
     {
       "id": "list_devices",
@@ -479,70 +512,11 @@
   "flow": {
     "triggers": [
       {
-        "id": "key_held",
+        "id": "usb_outlet_button_pressed",
         "title": {
-          "en": "Key held down",
-          "nl": "Toets ingedrukt gehouden",
-          "fr": "Touche maintenue"
-        },
-        "hint": {
-          "en": "Triggered when a button is held down (for continuous dimming)",
-          "nl": "Geactiveerd wanneer een knop ingedrukt wordt gehouden"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "number",
-            "title": {
-              "en": "Button number"
-            },
-            "example": 1
-          }
-        ]
-      },
-      {
-        "id": "key_released",
-        "title": {
-          "en": "Key released",
-          "nl": "Toets losgelaten",
-          "fr": "Touche relâchée"
-        },
-        "hint": {
-          "en": "Triggered when a held button is released",
-          "nl": "Geactiveerd wanneer een ingedrukte knop wordt losgelaten"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "number",
-            "title": {
-              "en": "Button number"
-            },
-            "example": 1
-          }
-        ]
-      },
-      {
-        "id": "battery_low",
-        "title": {
-          "en": "Battery low",
-          "nl": "Batterij bijna leeg",
-          "fr": "Batterie faible"
-        },
-        "hint": {
-          "en": "Triggered when battery level drops below threshold",
-          "nl": "Geactiveerd wanneer batterijniveau onder drempel zakt"
-        },
-        "tokens": [
-          {
-            "name": "level",
-            "type": "number",
-            "title": {
-              "en": "Battery level (%)"
-            },
-            "example": 15
-          }
-        ]
+          "en": "Usb Outlet Button Pressed",
+          "fr": "Usb Outlet Button Pressed"
+        }
       }
     ]
   }
