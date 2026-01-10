@@ -1,4 +1,8 @@
 {
+  "5.5.450": {
+    "en": "🔧 HOBEIAN ZG-101ZL FIX: Added HOBEIAN to button_wireless_1, removed from contact_sensor. Forum user Ronny_M: RE-PAIR your ZG-101ZL button to get proper button functionality!",
+    "fr": "🔧 FIX HOBEIAN ZG-101ZL: Ajouté HOBEIAN à button_wireless_1, retiré de contact_sensor. RE-APPAIRER votre bouton ZG-101ZL pour fonctionnalité correcte!"
+  },
   "5.5.449": {
     "en": "🔧 BUTTON FIX: Removed _TZ3000_bczr4e10 (TS0043) and _TZ3000_bgtzm4ny (TS0044) from climate_sensor driver - were causing buttons to show as toggles! RE-PAIR your TS0043/TS0044 to button_wireless_3/4 driver!",
     "fr": "🔧 FIX BOUTONS: Retiré _TZ3000_bczr4e10 (TS0043) et _TZ3000_bgtzm4ny (TS0044) du driver climate_sensor - causait l'affichage en toggle! RE-APPAIRER vos TS0043/TS0044 vers button_wireless_3/4!"
