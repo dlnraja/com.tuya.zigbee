@@ -1,0 +1,218 @@
+{
+  "name": {
+    "en": "Smart Heater Controller",
+    "fr": "Contrôleur Radiateur Intelligent",
+    "nl": "Slimme Verwarmingscontroller",
+    "de": "Intelligente Heizungssteuerung"
+  },
+  "class": "heater",
+  "capabilities": [
+    "onoff",
+    "target_temperature",
+    "measure_temperature",
+    "thermostat_mode",
+    "measure_power",
+    "meter_power",
+    "alarm_generic"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "min": 5,
+      "max": 35,
+      "step": 0.5
+    },
+    "alarm_generic": {
+      "title": {
+        "en": "Overheat Protection",
+        "fr": "Protection Surchauffe",
+        "nl": "Oververhitting Bescherming",
+        "de": "Überhitzungsschutz"
+      }
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "drivers/smart_heater_controller/assets/images/small.png",
+    "large": "drivers/smart_heater_controller/assets/images/large.png",
+    "xlarge": "drivers/smart_heater_controller/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_aoclfnxz",
+      "_TZE200_b6wax7g0",
+      "_TZE200_c88teujp",
+      "_TZE200_dnz2zhqd",
+      "_TZE200_hue3yfsn",
+      "_TZE200_mp902om5",
+      "_TZE200_sus6clyh",
+      "_TZE200_ztvwu4nk",
+      "_TZE204_aoclfnxz",
+      "_TZE204_b6wax7g0",
+      "_TZE204_c88teujp",
+      "_tze200_aoclfnxz",
+      "_tze200_b6wax7g0",
+      "_tze200_c88teujp"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          61184
+        ],
+        "bindings": []
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 1500,
+      "usageOff": 5
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Temperature Control",
+        "fr": "Contrôle Température",
+        "nl": "Temperatuur Controle",
+        "de": "Temperatur Kontrolle"
+      },
+      "children": [
+        {
+          "id": "temperature_calibration",
+          "type": "number",
+          "label": {
+            "en": "Temperature Calibration (°C)",
+            "fr": "Calibrage Température (°C)",
+            "nl": "Temperatuur Kalibratie (°C)",
+            "de": "Temperatur Kalibrierung (°C)"
+          },
+          "hint": {
+            "en": "Adjust temperature reading offset (-10°C to +10°C)",
+            "fr": "Ajuster le décalage de lecture température (-10°C à +10°C)",
+            "nl": "Pas temperatuuraflezing aan (-10°C tot +10°C)",
+            "de": "Temperaturablesung anpassen (-10°C bis +10°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1,
+          "units": "°C"
+        },
+        {
+          "id": "heating_hysteresis",
+          "type": "number",
+          "label": {
+            "en": "Heating Hysteresis (°C)",
+            "fr": "Hystérésis Chauffage (°C)",
+            "nl": "Verwarming Hysterese (°C)",
+            "de": "Heizung Hysterese (°C)"
+          },
+          "hint": {
+            "en": "Temperature difference to start/stop heating (0.5-5°C)",
+            "fr": "Différence température pour démarrer/arrêter chauffage (0.5-5°C)",
+            "nl": "Temperatuurverschil om verwarming te starten/stoppen (0.5-5°C)",
+            "de": "Temperaturdifferenz zum Starten/Stoppen der Heizung (0.5-5°C)"
+          },
+          "value": 1.0,
+          "min": 0.5,
+          "max": 5.0,
+          "step": 0.1,
+          "units": "°C"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Safety & Protection",
+        "fr": "Sécurité & Protection",
+        "nl": "Veiligheid & Bescherming",
+        "de": "Sicherheit & Schutz"
+      },
+      "children": [
+        {
+          "id": "overheat_protection",
+          "type": "number",
+          "label": {
+            "en": "Overheat Protection (°C)",
+            "fr": "Protection Surchauffe (°C)",
+            "nl": "Oververhitting Bescherming (°C)",
+            "de": "Überhitzungsschutz (°C)"
+          },
+          "hint": {
+            "en": "Maximum allowed temperature before safety shutdown",
+            "fr": "Température maximale autorisée avant arrêt sécurité",
+            "nl": "Maximaal toegestane temperatuur voor veiligheidsuitschakeling",
+            "de": "Maximal erlaubte Temperatur vor Sicherheitsabschaltung"
+          },
+          "value": 40,
+          "min": 30,
+          "max": 60,
+          "step": 1,
+          "units": "°C"
+        },
+        {
+          "id": "child_lock",
+          "type": "checkbox",
+          "label": {
+            "en": "Child Lock",
+            "fr": "Verrouillage Enfant",
+            "nl": "Kinderslot",
+            "de": "Kindersicherung"
+          },
+          "hint": {
+            "en": "Prevent manual control changes on device",
+            "fr": "Empêcher les modifications de contrôle manuel sur l'appareil",
+            "nl": "Voorkom handmatige besturingswijzigingen op apparaat",
+            "de": "Manuelle Steuerungsänderungen am Gerät verhindern"
+          },
+          "value": false
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Power Management",
+        "fr": "Gestion Énergie",
+        "nl": "Energie Beheer",
+        "de": "Energie Management"
+      },
+      "children": [
+        {
+          "id": "power_limit",
+          "type": "number",
+          "label": {
+            "en": "Power Limit (W)",
+            "fr": "Limite Puissance (W)",
+            "nl": "Vermogen Limiet (W)",
+            "de": "Leistungsgrenze (W)"
+          },
+          "hint": {
+            "en": "Maximum power consumption allowed (500-3000W)",
+            "fr": "Consommation électrique maximale autorisée (500-3000W)",
+            "nl": "Maximaal toegestaan stroomverbruik (500-3000W)",
+            "de": "Maximal erlaubter Stromverbrauch (500-3000W)"
+          },
+          "value": 2000,
+          "min": 500,
+          "max": 3000,
+          "step": 50,
+          "units": "W"
+        }
+      ]
+    }
+  ]
+}

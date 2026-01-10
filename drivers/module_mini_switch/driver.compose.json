@@ -28,46 +28,19 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_vmpbygs5",
       "_TZ3000_46t1rvdu",
       "_TZ3000_cymsnfvf",
       "_TZ3000_dkgxjjn1",
       "_TZ3000_hswqnljz",
       "_TZ3000_jd3u8dkz",
-      "_TZ3000_tqlv4uj4",
-      "BlitzWolf",
-      "Lonsonho",
-      "_TZ3000_xfxpoxe0",
       "_TZ3000_nwidmc4n",
-      "_tz3000_46t1rvdu",
-      "_tz3000_cymsnfvf",
-      "_tz3000_dkgxjjn1",
-      "_tz3000_hswqnljz",
-      "_tz3000_jd3u8dkz",
-      "_tz3000_nwidmc4n",
-      "_tz3000_tqlv4uj4",
-      "_tz3000_vmpbygs5",
-      "_tz3000_xfxpoxe0"
+      "_TZ3000_tqlv4uj4",
+      "_TZ3000_vmpbygs5",
+      "_TZ3000_xfxpoxe0"
     ],
     "productId": [
       "TS0001",
-      "TS0011",
-      "MS-104Z",
-      "MS-104BZ",
-      "QS-Zigbee-S05-LN",
-      "QS-Zigbee-S05-L",
-      "BW-SS7",
-      "ZBMINI",
-      "ZBMINI-L",
-      "ZBMINI-L2",
-      "ZBMINIR2",
-      "ZBMicro",
-      "BASICZBR3",
-      "Basic ZBR3",
-      "01MINIZB",
-      "SA-003",
-      "S26R2ZB",
-      "RR620ZB"
+      "TS0011"
     ],
     "endpoints": {
       "1": {

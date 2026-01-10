@@ -1,0 +1,97 @@
+{
+  "name": {
+    "en": "Zigbee Weather Station (Outdoor)",
+    "fr": "Station météo Zigbee (Extérieur)"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pressure",
+    "measure_luminance",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "measure_temperature": {
+      "title": {
+        "en": "Outdoor Temperature",
+        "fr": "Température extérieure"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "productId": [
+      "TH01",
+      "TS0601",
+      "WSD500A",
+      "ZG-223Z"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          1026,
+          1029,
+          1027,
+          1024
+        ],
+        "bindings": [
+          1026,
+          1029,
+          1
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "temperature_offset",
+      "type": "number",
+      "label": {
+        "en": "Temperature Offset",
+        "fr": "Décalage température"
+      },
+      "value": 0,
+      "min": -10,
+      "max": 10,
+      "units": "°C"
+    },
+    {
+      "id": "humidity_offset",
+      "type": "number",
+      "label": {
+        "en": "Humidity Offset",
+        "fr": "Décalage humidité"
+      },
+      "value": 0,
+      "min": -20,
+      "max": 20,
+      "units": "%"
+    },
+    {
+      "id": "report_interval",
+      "type": "number",
+      "label": {
+        "en": "Report Interval",
+        "fr": "Intervalle de rapport"
+      },
+      "value": 300,
+      "min": 60,
+      "max": 3600,
+      "units": "s"
+    }
+  ],
+  "images": {
+    "small": "drivers/weather_station_outdoor/assets/images/small.png",
+    "large": "drivers/weather_station_outdoor/assets/images/large.png"
+  }
+}

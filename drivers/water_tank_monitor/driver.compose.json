@@ -55,20 +55,15 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_81isopgh",
       "_TZE200_8ygqkfpo",
       "_TZE200_do4ckv7k",
       "_TZE200_fdtjuw7u",
-      "_TZE200_htnnfasr",
       "_TZE200_lvkk0hdg",
-      "_TZE204_lvkk0hdg",
       "_TZE200_ojzhk75b",
       "_TZE200_rgfzq1fl",
       "_TZE200_wcnjrsjf",
       "_TZE204_htnnfasr",
-      "_TZE204_ikvncluo",
-      "_tze200_81isopgh",
-      "_tze200_htnnfasr"
+      "_TZE204_lvkk0hdg"
     ],
     "productId": [
       "TS0601"
@@ -117,9 +112,9 @@
             "nl": "Totale hoogte van de tank in meters (0.1 - 4.0m)",
             "de": "Gesamthöhe des Tanks in Metern (0.1 - 4.0m)"
           },
-          "value": 2.0,
+          "value": 2,
           "min": 0.1,
-          "max": 4.0,
+          "max": 4,
           "step": 0.1,
           "units": "m"
         },
@@ -138,9 +133,9 @@
             "nl": "Afstand van sensor naar tankbodem wanneer vol (kalibratie)",
             "de": "Abstand vom Sensor zum Tankboden wenn voll (Kalibrierung)"
           },
-          "value": 0.0,
-          "min": 0.0,
-          "max": 1.0,
+          "value": 0,
+          "min": 0,
+          "max": 1,
           "step": 0.01,
           "units": "m"
         },
