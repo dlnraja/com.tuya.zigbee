@@ -314,6 +314,8 @@ const SENSOR_CONFIGS = {
       '_TZE204_auin8mzr', '_TZE204_iaeejhvf',
       '_TZE204_ikvncluo', '_TZE204_jva8ink8',
       '_TZE204_lyetpprm', '_TZE204_no6qtgtl',
+      // v5.5.363: GitHub Issue #97 - NoroddH Wenzhi TS0225 radar
+      '_TZ321C_fkzihaxe8', '_TZ3210_fkzihaxe8',
     ],
     battery: false,
     noTemperature: true,    // v5.5.372: Forum fix - radar sensors have NO temp
@@ -723,8 +725,10 @@ const SENSOR_CONFIGS = {
   'TZ3000_PIR': {
     sensors: [
       '_TZ3000_8bxrzyxz', '_TZ3000_aigddb2b',
-      '_TZ3000_ky0fq4ho', '_TZ3210_fkzihax8',
-      '_TZ321C_fkzihax8',
+      '_TZ3000_ky0fq4ho',
+      // Note: _TZ3210_fkzihax8 and _TZ321C_fkzihax8 (without 'e') are PIR
+      // _TZ321C_fkzihaxe8 (with 'e') is Wenzhi radar -> ZY_M100_STANDARD
+      '_TZ3210_fkzihax8', '_TZ321C_fkzihax8',
     ],
     battery: true,
     useZcl: true,
