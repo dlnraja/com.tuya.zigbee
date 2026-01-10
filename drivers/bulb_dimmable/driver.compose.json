@@ -24,19 +24,9 @@
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_9cpuaca6",
-      "_TZ3000_dbou1ap4",
-      "_tz3000_9cpuaca6",
-      "_tz3000_dbou1ap4"
+      "_TZ3000_dbou1ap4"
     ],
-    "productId": [
-      "E11-G13",
-      "E11-G23",
-      "E11-N13",
-      "E11-N14",
-      "E12-N14",
-      "E1C-NB6",
-      "E1C-NB7"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
