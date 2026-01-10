@@ -1,4 +1,9 @@
 {
+  "5.5.455": {
+    "en": "🚨 CRITICAL FIX: Fixed app crash (SyntaxError app.js:786). Added fastInitMode for sleepy buttons (Ronny_M). Multiple diagnostic reports addressed!",
+    "nl": "🚨 KRITIEKE FIX: App crash opgelost (SyntaxError app.js:786). fastInitMode toegevoegd voor sleepy buttons (Ronny_M). Meerdere diagnostische rapporten behandeld!",
+    "fr": "🚨 FIX CRITIQUE: Crash app corrigé (SyntaxError app.js:786). fastInitMode ajouté pour boutons sleepy (Ronny_M). Rapports diagnostics traités!"
+  },
   "5.5.454": {
     "en": "🔥 SMOKE DETECTOR FIX (Jolink): Fixed critical syntax error in driver.js - orphaned code after module.exports caused driver to fail loading. Warning icon should now be gone!",
     "nl": "🔥 ROOKMELDER FIX (Jolink): Kritieke syntaxfout in driver.js opgelost - code na module.exports veroorzaakte laadprobleem. Waarschuwingsicoon zou nu weg moeten zijn!",
