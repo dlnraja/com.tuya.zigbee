@@ -417,6 +417,13 @@
           "en": "Tamper alarm triggered",
           "fr": "Alarme sabotage déclenchée"
         }
+      },
+      {
+        "id": "button_emergency_sos_pressed",
+        "title": {
+          "en": "Button Emergency Sos Pressed",
+          "fr": "Button Emergency Sos Pressed"
+        }
       }
     ],
     "conditions": [

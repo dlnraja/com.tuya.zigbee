@@ -6,6 +6,18 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
 
   async onInit() {
     this.log('SmartSmokeDetectorAdvancedDriver initialized');
+    this._smoke_test_alarmAction = this.homey.flow.getDeviceActionCard('smoke_test_alarm');
+    this._smoke_silence_alarmAction = this.homey.flow.getDeviceActionCard('smoke_silence_alarm');
+    this._smoke_silence_alarmAction.registerRunListener(async (args) => {
+      const { device } = args;
+      // TODO: Implement action logic
+      return true;
+    });
+    this._smoke_test_alarmAction.registerRunListener(async (args) => {
+      const { device } = args;
+      // TODO: Implement action logic
+      return true;
+    });
   }
 }
 
@@ -17,10 +29,18 @@ module.exports = SmartSmokeDetectorAdvancedDriver;
     this._smoke_clearedTrigger = this.homey.flow.getDeviceTriggerCard('smoke_cleared');
     this._smoke_test_triggeredTrigger = this.homey.flow.getDeviceTriggerCard('smoke_test_triggered');
     this._smoke_battery_lowTrigger = this.homey.flow.getDeviceTriggerCard('smoke_battery_low');
+    this._smoke_alarm_triggeredTrigger = this.homey.flow.getDeviceTriggerCard('smoke_alarm_triggered');
+    this._smoke_alarm_clearedTrigger = this.homey.flow.getDeviceTriggerCard('smoke_alarm_cleared');
+    this._smoke_tamper_alarmTrigger = this.homey.flow.getDeviceTriggerCard('smoke_tamper_alarm');
     
     // Register flow conditions
     this._smoke_is_detectedCondition = this.homey.flow.getDeviceConditionCard('smoke_is_detected');
     this._smoke_is_detectedCondition.registerRunListener(async (args) => {
+      const { device } = args;
+      return device.getCapabilityValue('alarm_smoke') === true;
+    });
+    this._smoke_alarm_is_activeCondition = this.homey.flow.getDeviceConditionCard('smoke_alarm_is_active');
+    this._smoke_alarm_is_activeCondition.registerRunListener(async (args) => {
       const { device } = args;
       return device.getCapabilityValue('alarm_smoke') === true;
     });

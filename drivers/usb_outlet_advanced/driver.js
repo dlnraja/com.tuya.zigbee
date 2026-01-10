@@ -6,6 +6,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
 
   async onInit() {
     this.log('UsbOutletAdvancedDriver initialized');
+    this._usb_outlet_button_pressedTrigger = this.homey.flow.getDeviceTriggerCard('usb_outlet_button_pressed');
   }
 }
 

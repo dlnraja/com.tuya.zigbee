@@ -213,6 +213,41 @@
             "example": 15
           }
         ]
+      },
+      {
+        "id": "soil_sensor_soil_moisture_changed",
+        "title": {
+          "en": "Soil Sensor Soil Moisture Changed",
+          "fr": "Soil Sensor Soil Moisture Changed"
+        }
+      },
+      {
+        "id": "soil_sensor_soil_dry",
+        "title": {
+          "en": "Soil Sensor Soil Dry",
+          "fr": "Soil Sensor Soil Dry"
+        }
+      },
+      {
+        "id": "soil_sensor_soil_wet",
+        "title": {
+          "en": "Soil Sensor Soil Wet",
+          "fr": "Soil Sensor Soil Wet"
+        }
+      },
+      {
+        "id": "soil_sensor_soil_temperature_changed",
+        "title": {
+          "en": "Soil Sensor Soil Temperature Changed",
+          "fr": "Soil Sensor Soil Temperature Changed"
+        }
+      },
+      {
+        "id": "soil_sensor_battery_low",
+        "title": {
+          "en": "Soil Sensor Battery Low",
+          "fr": "Soil Sensor Battery Low"
+        }
       }
     ],
     "conditions": [
