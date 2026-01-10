@@ -10,22 +10,35 @@
     "es": "2-Botones Controlador Inalámbrico",
     "da": "2-Knapper Trådløs Controller"
   },
-  "class": "button",
+  "class": "sensor",
   "capabilities": [
+    "button.1",
+    "button.2",
     "measure_battery"
   ],
   "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "getable": false,
+      "setable": true
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "getable": false,
+      "setable": true
+    },
     "measure_battery": {
       "title": {
         "en": "Battery",
-        "fr": "Contrôleur",
-        "nl": "Draadloze",
-        "de": "Drahtlos-Controller",
-        "it": "Controller",
-        "sv": "Trådlös",
-        "no": "Trådløs",
-        "es": "Controlador",
-        "da": "Trådløs"
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
       }
     }
   },

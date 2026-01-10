@@ -1,4 +1,10 @@
 {
+  "5.5.441": {
+    "en": "🔧 BUTTONS FIX: Changed class from 'button' to 'sensor' + added button.X capabilities with getable:false for CLICKABLE virtual buttons. All button drivers (1/2/3/4/6/8) now show clickable buttons in device UI.",
+    "fr": "🔧 FIX BOUTONS: Classe changée de 'button' à 'sensor' + capabilities button.X avec getable:false pour boutons virtuels CLIQUABLES.",
+    "nl": "🔧 KNOPPEN FIX: Klasse gewijzigd + button.X capabilities met getable:false voor KLIKBARE virtuele knoppen.",
+    "de": "🔧 TASTEN FIX: Klasse geändert + button.X Capabilities mit getable:false für KLICKBARE virtuelle Tasten."
+  },
   "5.5.440": {
     "en": "🔧 BUTTONS: Removed button.X capabilities - use FLOW CARDS for automation (single/double/long press). LCD TIME SYNC: Added DP-based time sync (DP101-103) for devices that don't respond to EF00 command.",
     "fr": "🔧 BOUTONS: Capabilities button.X supprimées - utiliser FLOW CARDS. SYNC LCD: Ajout sync via DP Tuya (DP101-103) pour devices ne répondant pas à EF00.",

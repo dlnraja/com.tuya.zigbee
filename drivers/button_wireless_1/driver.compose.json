@@ -10,18 +10,27 @@
     "es": "1-Botones Controlador Inalámbrico",
     "da": "1-Knapper Trådløs Controller"
   },
-  "class": "button",
+  "class": "sensor",
   "capabilities": [
+    "button",
     "measure_battery"
   ],
   "capabilitiesOptions": {
+    "button": {
+      "title": {
+        "en": "Button",
+        "fr": "Bouton"
+      },
+      "getable": false,
+      "setable": true
+    },
     "measure_battery": {
       "title": {
         "en": "Battery",
-        "fr": "Contrôleur",
-        "nl": "Draadloze",
-        "de": "Drahtlos-Controller",
-        "it": "Controller",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie",
+        "it": "Batteria",
         "sv": "Trådlös",
         "no": "Trådløs",
         "es": "Controlador",
