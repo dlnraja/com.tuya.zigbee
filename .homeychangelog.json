@@ -1,4 +1,10 @@
 {
+  "5.5.436": {
+    "en": "🎮 FORUM #890: Added TS004F 4-button scene switch support. Added 8 new manufacturerNames (_TZ3000_4fjiwweb, _TZ3000_abrsvsou, _TZ3000_ja5osu5g, etc). Sleepy device pairing: hold button during add.",
+    "fr": "🎮 FORUM #890: Support interrupteur scène 4 boutons TS004F. 8 nouveaux manufacturerNames. Appairage: maintenir bouton pendant ajout.",
+    "nl": "🎮 FORUM #890: TS004F 4-knops scene switch ondersteuning. 8 nieuwe manufacturerNames. Sleepy device pairing: knop ingedrukt houden.",
+    "de": "🎮 FORUM #890: TS004F 4-Tasten Szenen-Schalter Unterstützung. 8 neue manufacturerNames. Sleepy Device Pairing: Taste gedrückt halten."
+  },
   "5.5.435": {
     "en": "🧠 INTELLIGENT AUTO-DISCOVERY: Added smart DP auto-detection for unknown radar sensors. GitHub #97 fix: Added _TZ321C_fkzihaxe8 Wenzhi TS0225 support. System learns presence/distance/lux patterns automatically.",
     "fr": "🧠 AUTO-DÉCOUVERTE INTELLIGENTE: Ajouté détection DP automatique pour capteurs radar inconnus. Fix GitHub #97: Support _TZ321C_fkzihaxe8 Wenzhi TS0225. Apprentissage automatique patterns présence/distance/lux.",
