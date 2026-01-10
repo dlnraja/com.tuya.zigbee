@@ -289,6 +289,265 @@ class IntelligentPresenceInference {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
+// v5.5.364: INTELLIGENT DP AUTO-DISCOVERY ENGINE
+// Automatically detects and learns DP mappings for unknown devices
+// Works when manufacturerName is not in any SENSOR_CONFIG
+// ═══════════════════════════════════════════════════════════════════════════════
+class IntelligentDPAutoDiscovery {
+  constructor(device) {
+    this.device = device;
+    this.discoveredDPs = new Map();  // dpId -> { type, samples, confidence, capability }
+    this.learningPhase = true;
+    this.learningStartTime = Date.now();
+    this.learningDurationMs = 60000;  // 60 seconds learning phase
+    this.minSamplesForConfidence = 3;
+  }
+
+  /**
+   * Analyze incoming DP and infer its type based on value patterns
+   */
+  analyzeDP(dpId, value) {
+    const now = Date.now();
+
+    // Get or create DP entry
+    if (!this.discoveredDPs.has(dpId)) {
+      this.discoveredDPs.set(dpId, {
+        samples: [],
+        inferredType: null,
+        inferredCapability: null,
+        confidence: 0,
+        lastValue: null,
+        lastUpdate: now
+      });
+    }
+
+    const dpInfo = this.discoveredDPs.get(dpId);
+    dpInfo.samples.push({ value, time: now });
+    dpInfo.lastValue = value;
+    dpInfo.lastUpdate = now;
+
+    // Keep only last 20 samples
+    if (dpInfo.samples.length > 20) {
+      dpInfo.samples.shift();
+    }
+
+    // Infer type from value patterns
+    this._inferDPType(dpId, dpInfo);
+
+    return dpInfo;
+  }
+
+  /**
+   * Infer DP type based on value patterns
+   */
+  _inferDPType(dpId, dpInfo) {
+    const samples = dpInfo.samples.map(s => s.value);
+    if (samples.length < 2) return;
+
+    const numericSamples = samples.filter(v => typeof v === 'number');
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // PATTERN 1: PRESENCE/MOTION (boolean-like: 0/1 or 0/1/2 enum)
+    // ─────────────────────────────────────────────────────────────────────────
+    const uniqueValues = [...new Set(numericSamples)];
+    const isPresencePattern =
+      uniqueValues.length <= 3 &&
+      uniqueValues.every(v => v >= 0 && v <= 2) &&
+      (dpId === 1 || dpId === 105 || dpId === 112 || dpId === 104);
+
+    if (isPresencePattern) {
+      dpInfo.inferredType = uniqueValues.length === 2 ? 'presence_bool' : 'presence_enum';
+      dpInfo.inferredCapability = 'alarm_motion';
+      dpInfo.confidence = 90;
+      this.device?.log?.(`[AUTO-DISCOVERY] 🎯 DP${dpId} → PRESENCE (${dpInfo.inferredType})`);
+      return;
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // PATTERN 2: DISTANCE (0-1000 cm range, varies gradually)
+    // ─────────────────────────────────────────────────────────────────────────
+    const avgValue = numericSamples.reduce((a, b) => a + b, 0) / numericSamples.length;
+    const maxValue = Math.max(...numericSamples);
+    const minValue = Math.min(...numericSamples);
+    const range = maxValue - minValue;
+
+    const isDistancePattern =
+      (dpId === 9 || dpId === 109 || dpId === 101) &&
+      avgValue >= 0 && avgValue <= 1000 &&
+      range < 500;  // Distance shouldn't jump wildly
+
+    if (isDistancePattern) {
+      // Detect divisor: if max > 100, probably cm (÷100), else dm (÷10) or m (÷1)
+      let divisor = 100;
+      if (maxValue <= 100) divisor = 10;
+      if (maxValue <= 10) divisor = 1;
+
+      dpInfo.inferredType = 'distance';
+      dpInfo.inferredCapability = 'measure_distance';
+      dpInfo.divisor = divisor;
+      dpInfo.confidence = 85;
+      this.device?.log?.(`[AUTO-DISCOVERY] 📏 DP${dpId} → DISTANCE (divisor: ${divisor})`);
+      return;
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // PATTERN 3: ILLUMINANCE/LUX (0-2000+ range, can fluctuate)
+    // ─────────────────────────────────────────────────────────────────────────
+    const isLuxPattern =
+      (dpId === 12 || dpId === 102 || dpId === 103 || dpId === 104) &&
+      avgValue >= 0 && avgValue <= 10000;
+
+    if (isLuxPattern && dpInfo.inferredCapability !== 'alarm_motion') {
+      dpInfo.inferredType = 'lux_direct';
+      dpInfo.inferredCapability = 'measure_luminance';
+      dpInfo.confidence = 80;
+      this.device?.log?.(`[AUTO-DISCOVERY] ☀️ DP${dpId} → ILLUMINANCE (lux)`);
+      return;
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // PATTERN 4: BATTERY (0-100 range, rarely changes)
+    // ─────────────────────────────────────────────────────────────────────────
+    const isBatteryPattern =
+      (dpId === 4 || dpId === 15) &&
+      avgValue >= 0 && avgValue <= 100 &&
+      range < 20;  // Battery doesn't jump much
+
+    if (isBatteryPattern) {
+      dpInfo.inferredType = 'battery';
+      dpInfo.inferredCapability = 'measure_battery';
+      dpInfo.confidence = 85;
+      this.device?.log?.(`[AUTO-DISCOVERY] 🔋 DP${dpId} → BATTERY`);
+      return;
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // PATTERN 5: SENSITIVITY SETTING (1-10 range, static)
+    // ─────────────────────────────────────────────────────────────────────────
+    const isSensitivityPattern =
+      (dpId === 2 || dpId === 101 || dpId === 102 || dpId === 106) &&
+      avgValue >= 0 && avgValue <= 10 &&
+      range <= 2;
+
+    if (isSensitivityPattern && !dpInfo.inferredCapability) {
+      dpInfo.inferredType = 'setting';
+      dpInfo.inferredCapability = null;  // Internal setting, no capability
+      dpInfo.confidence = 70;
+      this.device?.log?.(`[AUTO-DISCOVERY] ⚙️ DP${dpId} → SETTING (sensitivity)`);
+      return;
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // PATTERN 6: RANGE SETTING (0-1000 cm, static)
+    // ─────────────────────────────────────────────────────────────────────────
+    const isRangePattern =
+      (dpId === 3 || dpId === 4 || dpId === 107 || dpId === 108) &&
+      avgValue >= 0 && avgValue <= 1000 &&
+      range < 50;
+
+    if (isRangePattern && dpInfo.inferredCapability !== 'measure_battery') {
+      dpInfo.inferredType = 'range_setting';
+      dpInfo.inferredCapability = null;
+      dpInfo.confidence = 65;
+      this.device?.log?.(`[AUTO-DISCOVERY] 📐 DP${dpId} → RANGE SETTING`);
+      return;
+    }
+
+    // Unknown pattern - log for diagnostics
+    if (!dpInfo.inferredType) {
+      dpInfo.inferredType = 'unknown';
+      dpInfo.confidence = 0;
+      this.device?.log?.(`[AUTO-DISCOVERY] ❓ DP${dpId} → UNKNOWN (avg=${avgValue.toFixed(1)}, range=${range})`);
+    }
+  }
+
+  /**
+   * Get dynamic DP mapping based on discovered patterns
+   */
+  getDynamicDPMap() {
+    const dpMap = {};
+
+    for (const [dpId, info] of this.discoveredDPs) {
+      if (info.confidence >= 60 && info.inferredCapability) {
+        dpMap[dpId] = {
+          cap: info.inferredCapability,
+          type: info.inferredType,
+          divisor: info.divisor || 1,
+          autoDiscovered: true
+        };
+      }
+    }
+
+    return dpMap;
+  }
+
+  /**
+   * Check if learning phase is complete
+   */
+  isLearningComplete() {
+    const elapsed = Date.now() - this.learningStartTime;
+    const hasEnoughData = this.discoveredDPs.size >= 2;
+    return elapsed > this.learningDurationMs || hasEnoughData;
+  }
+
+  /**
+   * Get summary of discovered DPs
+   */
+  getSummary() {
+    const summary = [];
+    for (const [dpId, info] of this.discoveredDPs) {
+      summary.push({
+        dp: dpId,
+        type: info.inferredType,
+        capability: info.inferredCapability,
+        confidence: info.confidence,
+        samples: info.samples.length
+      });
+    }
+    return summary;
+  }
+
+  /**
+   * Apply discovered value to capability
+   */
+  applyDiscoveredValue(dpId, rawValue) {
+    const info = this.discoveredDPs.get(dpId);
+    if (!info || !info.inferredCapability || info.confidence < 60) {
+      return null;
+    }
+
+    let value = rawValue;
+
+    // Apply transforms based on type
+    switch (info.inferredType) {
+      case 'presence_bool':
+        value = rawValue === 1 || rawValue === true;
+        break;
+      case 'presence_enum':
+        value = rawValue === 1 || rawValue === 2;
+        break;
+      case 'distance':
+        value = rawValue / (info.divisor || 100);
+        value = Math.round(value * 100) / 100;
+        break;
+      case 'lux_direct':
+        value = Math.max(0, Math.min(10000, rawValue));
+        break;
+      case 'battery':
+        value = Math.max(0, Math.min(100, rawValue));
+        break;
+    }
+
+    return {
+      capability: info.inferredCapability,
+      value: value,
+      type: info.inferredType,
+      confidence: info.confidence
+    };
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
 // INTELLIGENT SENSOR CONFIGURATION DATABASE
 // Each entry defines the specific DP mappings for a manufacturerName
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -1186,14 +1445,46 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
   /**
    * v5.5.277: Get sensor configuration based on manufacturerName
+   * v5.5.364: Enhanced with auto-discovery for unknown devices
    */
   _getSensorConfig() {
     if (!this._sensorConfig) {
       const mfr = this._getManufacturerName();
       this._sensorConfig = getSensorConfig(mfr);
       this.log(`[RADAR] 🔍 ManufacturerName resolved: "${mfr}" → config: ${this._sensorConfig.configName || 'DEFAULT'}`);
+
+      // v5.5.364: Initialize auto-discovery for DEFAULT/unknown devices
+      if (this._sensorConfig.configName === 'DEFAULT') {
+        this._dpAutoDiscovery = new IntelligentDPAutoDiscovery(this);
+        this.log(`[RADAR] 🧠 AUTO-DISCOVERY MODE: Learning DP patterns for unknown device "${mfr}"`);
+      }
     }
     return this._sensorConfig;
+  }
+
+  /**
+   * v5.5.364: Get effective DP map (static config OR auto-discovered)
+   */
+  _getEffectiveDPMap() {
+    const config = this._getSensorConfig();
+
+    // If we have auto-discovery running and it has learned something, merge it
+    if (this._dpAutoDiscovery && this._dpAutoDiscovery.isLearningComplete()) {
+      const discoveredMap = this._dpAutoDiscovery.getDynamicDPMap();
+      const staticMap = config.dpMap || {};
+
+      // Merge: discovered DPs fill in gaps from static DEFAULT config
+      const mergedMap = { ...staticMap };
+      for (const [dpId, dpConfig] of Object.entries(discoveredMap)) {
+        if (!mergedMap[dpId] || mergedMap[dpId].autoDiscovered) {
+          mergedMap[dpId] = dpConfig;
+        }
+      }
+
+      return mergedMap;
+    }
+
+    return config.dpMap || {};
   }
 
   /**
@@ -1572,6 +1863,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
    * - Coordinate with HybridSensorBase to avoid dual processing
    * - Only handle special presence DPs locally (1, 105, 112)
    * - v5.5.304: DISTANCE-BASED PRESENCE INFERENCE for firmware bug workaround
+   * - v5.5.364: AUTO-DISCOVERY integration for unknown devices
    */
   _handleTuyaResponse(data) {
     if (!data) return;
@@ -1581,11 +1873,37 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
     const dpId = data.dp || data.dpId || data.datapoint;
 
+    // v5.5.364: AUTO-DISCOVERY - Feed all DPs to learning engine for unknown devices
+    if (this._dpAutoDiscovery) {
+      const rawVal = this._parseBufferValue(data.value || data.data);
+      this._dpAutoDiscovery.analyzeDP(dpId, rawVal);
+
+      // Try to apply auto-discovered mapping
+      const discovered = this._dpAutoDiscovery.applyDiscoveredValue(dpId, rawVal);
+      if (discovered && discovered.confidence >= 70) {
+        this.log(`[AUTO-DISCOVERY] ✨ DP${dpId} → ${discovered.capability} = ${discovered.value} (confidence: ${discovered.confidence}%)`);
+
+        // Apply to capability
+        if (this.hasCapability(discovered.capability)) {
+          this.setCapabilityValue(discovered.capability, discovered.value).catch(() => { });
+
+          // Trigger flows for presence
+          if (discovered.capability === 'alarm_motion') {
+            this._triggerPresenceFlows(discovered.value);
+            if (this.hasCapability('alarm_human')) {
+              this.setCapabilityValue('alarm_human', discovered.value).catch(() => { });
+            }
+          }
+          return;  // Handled by auto-discovery
+        }
+      }
+    }
+
     // v5.5.310: FIXED - Handle DP12 and DP103 locally, NOT via HybridSensorBase!
     // Problem: HybridSensorBase universal profile maps DP103 to temperature, not lux
     // Solution: Handle lux DPs (12, 102, 103, 104) directly here using local dpMap config
     const config = this._getSensorConfig();
-    const dpMap = config.dpMap || {};
+    const dpMap = this._getEffectiveDPMap();  // v5.5.364: Use effective map (static + discovered)
 
     // Check if this DP is a lux DP in our config - handle locally
     if (dpMap[dpId]?.cap === 'measure_luminance') {
