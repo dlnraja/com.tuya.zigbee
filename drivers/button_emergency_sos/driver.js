@@ -14,6 +14,11 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
     await this._registerFlowTriggers();
 
     this.log('SosEmergencyButtonDriver initialized');
+    this._sos_is_activeCondition = this.homey.flow.getDeviceConditionCard('sos_is_active');
+    this._sos_is_activeCondition.registerRunListener(async (args) => {
+      const { device } = args;
+      return device.getCapabilityValue('alarm_generic') === true;
+    });
   }
 
   /**
@@ -28,6 +33,11 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
     for (const triggerId of triggers) {
       try {
         const card = this.homey.flow.getDeviceTriggerCard(triggerId);
+    this._sos_button_pressedTrigger = this.homey.flow.getDeviceTriggerCard('sos_button_pressed');
+    this._sos_button_releasedTrigger = this.homey.flow.getDeviceTriggerCard('sos_button_released');
+    this._sos_battery_lowTrigger = this.homey.flow.getDeviceTriggerCard('sos_battery_low');
+    this._sos_tamper_alarmTrigger = this.homey.flow.getDeviceTriggerCard('sos_tamper_alarm');
+    this._button_emergency_sos_pressedTrigger = this.homey.flow.getDeviceTriggerCard('button_emergency_sos_pressed');
         if (card) {
           // Register run listener (always returns true for simple triggers)
           card.registerRunListener(async (args, state) => {

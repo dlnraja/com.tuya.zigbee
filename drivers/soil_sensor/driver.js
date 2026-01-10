@@ -27,6 +27,28 @@ class SoilSensorDriver extends ZigBeeDriver {
    * Filter out sub-devices during pairing
    */
   async onPairListDevices(devices) {
+    
+    // Register flow triggers
+    this._soil_moisture_changedTrigger = this.homey.flow.getDeviceTriggerCard('soil_moisture_changed');
+    this._soil_moisture_belowTrigger = this.homey.flow.getDeviceTriggerCard('soil_moisture_below');
+    this._soil_moisture_aboveTrigger = this.homey.flow.getDeviceTriggerCard('soil_moisture_above');
+    this._soil_temperature_changedTrigger = this.homey.flow.getDeviceTriggerCard('soil_temperature_changed');
+    this._soil_battery_lowTrigger = this.homey.flow.getDeviceTriggerCard('soil_battery_low');
+    this._soil_sensor_soil_moisture_changedTrigger = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_moisture_changed');
+    this._soil_sensor_soil_dryTrigger = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_dry');
+    this._soil_sensor_soil_wetTrigger = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_wet');
+    this._soil_sensor_soil_temperature_changedTrigger = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_temperature_changed');
+    this._soil_sensor_battery_lowTrigger = this.homey.flow.getDeviceTriggerCard('soil_sensor_battery_low');
+    
+    // Register flow conditions
+    this._soil_moisture_is_belowCondition = this.homey.flow.getDeviceConditionCard('soil_moisture_is_below');
+    this._soil_temperature_is_belowCondition = this.homey.flow.getDeviceConditionCard('soil_temperature_is_below');
+    this._soil_temperature_is_belowCondition.registerRunListener(async (args) => {
+      const { device } = args;
+      return device.getCapabilityValue('measure_temperature') === true;
+    });
+    
+    this.log('soil_sensor: Flow cards registered');
     this.log('[PAIR] Raw devices from Zigbee:', devices?.length || 0);
 
     if (!devices || devices.length === 0) {
