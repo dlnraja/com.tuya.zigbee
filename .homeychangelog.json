@@ -1,4 +1,8 @@
 {
+  "5.5.452": {
+    "en": "🚀 DYNAMIC CAPABILITIES: All button drivers now auto-add missing capabilities at runtime! Uses Homey SDK3 addCapability/removeCapability. No RE-PAIR needed - just restart app!",
+    "fr": "🚀 CAPABILITIES DYNAMIQUES: Tous les drivers boutons ajoutent auto les capabilities manquantes! Utilise SDK3 addCapability/removeCapability. Pas de RE-PAIR - redémarrer l'app!"
+  },
   "5.5.451": {
     "en": "🔧 3-BUTTON FIX: Added _ensureCapabilities() - devices paired before fix had NO capabilities! Now auto-adds button.1/2/3 + measure_battery on init. No RE-PAIR needed!",
     "fr": "🔧 FIX 3-BOUTONS: Ajout _ensureCapabilities() - devices pairés avant le fix n'avaient AUCUNE capability! Ajoute auto button.1/2/3 + measure_battery. Pas de RE-PAIR requis!"
