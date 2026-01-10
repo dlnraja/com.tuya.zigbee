@@ -1,0 +1,481 @@
+{
+  "name": {
+    "en": "Sos Emergency Button",
+    "fr": "Sos Emergency Button"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_generic",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "alarm_generic": {
+      "title": {
+        "en": "SOS Alert",
+        "fr": "Alerte SOS"
+      },
+      "insightsTitleTrue": {
+        "en": "SOS pressed",
+        "fr": "SOS appuyé"
+      },
+      "insightsTitleFalse": {
+        "en": "SOS reset",
+        "fr": "SOS réinitialisé"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_0dumfk2z",
+      "_TZ3000_el5kt5im",
+      "_TZ3000_eo3dttwe",
+      "_TZ3000_fsiepnrh",
+      "_TZ3000_iystcadi",
+      "_TZ3000_8xz0pyqy",
+      "_TZ3000_zpjuqnco",
+      "_TZ3000_qjhwtnkf",
+      "_TZ3000_graty6sj",
+      "_TZ3000_imkwgfwh",
+      "_TZE200_0ble7ow3",
+      "_TZ3000_ssp0maqm",
+      "_TYZB01_trqoesc6",
+      "_TZ3000_is27vzco",
+      "_TZ3000_gnwgnwvq",
+      "_TZ3000_fywhzh9u",
+      "_TZ3000_rmhkdz0l",
+      "_TZ3000_n0h1dr7u",
+      "_tyzb01_trqoesc6",
+      "_tz3000_0dumfk2z",
+      "_tz3000_8xz0pyqy",
+      "_tz3000_el5kt5im",
+      "_tz3000_eo3dttwe",
+      "_tz3000_fsiepnrh",
+      "_tz3000_fywhzh9u",
+      "_tz3000_gnwgnwvq",
+      "_tz3000_graty6sj",
+      "_tz3000_imkwgfwh",
+      "_tz3000_is27vzco",
+      "_tz3000_iystcadi",
+      "_tz3000_n0h1dr7u",
+      "_tz3000_qjhwtnkf",
+      "_tz3000_rmhkdz0l",
+      "_tz3000_ssp0maqm",
+      "_tz3000_zpjuqnco",
+      "_tze200_0ble7ow3"
+    ],
+    "productId": [
+      "TS0215A",
+      "TS0218"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          6,
+          1280,
+          1281,
+          61184
+        ],
+        "bindings": [
+          1,
+          1280,
+          1281
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/button_emergency_sos/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "🔧 Maintenance",
+        "fr": "🔧 Maintenance"
+      },
+      "children": [
+        {
+          "id": "refresh_battery",
+          "type": "checkbox",
+          "label": {
+            "en": "Force Battery Read (toggle to trigger)",
+            "fr": "Forcer Lecture Batterie (basculer pour déclencher)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Toggle this setting to force a battery reading. The device must be awake (press SOS button first).",
+            "fr": "Basculer ce paramètre pour forcer une lecture de batterie. L'appareil doit être éveillé (appuyez d'abord sur le bouton SOS)."
+          }
+        },
+        {
+          "id": "re_enroll",
+          "type": "checkbox",
+          "label": {
+            "en": "Re-enroll IAS Zone (toggle to trigger)",
+            "fr": "Ré-inscrire IAS Zone (basculer pour déclencher)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Toggle this setting to re-enroll the device. Press SOS button first to wake device.",
+            "fr": "Basculer ce paramètre pour ré-inscrire l'appareil. Appuyez d'abord sur le bouton SOS pour réveiller l'appareil."
+          }
+        }
+      ]
+    },
+    {
+      "id": "power_source",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "ac",
+          "label": {
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
+    },
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA",
+            "fr": "AAA"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA",
+            "fr": "AA"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A",
+            "fr": "CR123A"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "optimization_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+      }
+    },
+    {
+      "id": "enable_power_estimation",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Power Estimation",
+        "fr": "Activer Estimation Puissance"
+      },
+      "value": true,
+      "hint": {
+        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    },
+    {
+      "id": "tuya_dp_configuration",
+      "type": "label",
+      "label": {
+        "en": "Tuya Datapoint Configuration",
+        "fr": "Configuration Tuya Datapoint"
+      },
+      "value": "DP1/DP14: SOS (bool)\nDP4/DP15: Battery %\nDP101: Context (bool=SOS, num=battery)"
+    },
+    {
+      "id": "dp_debug_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "DP Debug Mode",
+        "fr": "Mode Debug DP"
+      },
+      "value": false,
+      "hint": {
+        "en": "Log all Tuya DP data for troubleshooting",
+        "fr": "Logger toutes les données Tuya DP pour diagnostic"
+      }
+    },
+    {
+      "id": "enable_time_sync",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Time Sync",
+        "fr": "Activer Synchro Heure"
+      },
+      "value": true,
+      "hint": {
+        "en": "Sync device time with Homey",
+        "fr": "Synchroniser l'heure du device avec Homey"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "sos_button_pressed",
+        "title": {
+          "en": "SOS button pressed",
+          "fr": "Bouton SOS appuyé",
+          "nl": "SOS knop ingedrukt",
+          "de": "SOS-Taste gedrückt"
+        }
+      },
+      {
+        "id": "sos_button_released",
+        "title": {
+          "en": "SOS button released",
+          "fr": "Bouton SOS relâché"
+        }
+      },
+      {
+        "id": "sos_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "fr": "Batterie faible"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)"
+            },
+            "example": 15
+          }
+        ]
+      },
+      {
+        "id": "sos_tamper_alarm",
+        "title": {
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme sabotage déclenchée"
+        }
+      }
+    ],
+    "conditions": [
+      {
+        "id": "sos_is_active",
+        "title": {
+          "en": "SOS !{{is|isn't}} active",
+          "fr": "SOS !{{est|n'est pas}} actif"
+        }
+      }
+    ]
+  },
+  "images": {
+    "small": "drivers/button_emergency_sos/assets/images/small.png",
+    "large": "drivers/button_emergency_sos/assets/images/large.png",
+    "xlarge": "drivers/button_emergency_sos/assets/images/xlarge.png"
+  },
+  "id": "button_emergency_sos",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

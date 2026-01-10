@@ -1,0 +1,3217 @@
+{
+  "timestamp": "2026-01-10T01:31:29.974Z",
+  "version": "5.5.434",
+  "stats": {
+    "totalDrivers": 89,
+    "totalFiles": 648,
+    "criticalIssues": 28,
+    "warningIssues": 253,
+    "infoIssues": 80
+  },
+  "issues": {
+    "flowCards": [
+      {
+        "severity": "INFO",
+        "file": "drivers\\bulb_rgb\\driver.js",
+        "cardId": "set_light_effect",
+        "message": "Flow card référencée: set_light_effect"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\bulb_rgb\\driver.js",
+        "cardId": "set_color_temp_kelvin",
+        "message": "Flow card référencée: set_color_temp_kelvin"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\ir_blaster\\device.js",
+        "cardId": "ir_learn_code",
+        "message": "Flow card référencée: ir_learn_code"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\ir_blaster\\device.js",
+        "cardId": "ir_send_code",
+        "message": "Flow card référencée: ir_send_code"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\ir_blaster\\driver.js",
+        "cardId": "ir_learn_code",
+        "message": "Flow card référencée: ir_learn_code"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\ir_blaster\\driver.js",
+        "cardId": "ir_send_code",
+        "message": "Flow card référencée: ir_send_code"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\ir_blaster\\driver.js",
+        "cardId": "ir_send_by_category",
+        "message": "Flow card référencée: ir_send_by_category"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\ir_blaster\\driver.js",
+        "cardId": "ir_learning_active",
+        "message": "Flow card référencée: ir_learning_active"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\ir_blaster\\driver.js",
+        "cardId": "ir_code_exists",
+        "message": "Flow card référencée: ir_code_exists"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\ir_blaster\\driver.js",
+        "cardId": "ir_protocol_detected",
+        "message": "Flow card référencée: ir_protocol_detected"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\motion_sensor\\driver.js",
+        "cardId": "motion_sensor_motion_active",
+        "message": "Flow card référencée: motion_sensor_motion_active"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\soil_sensor\\device.js",
+        "cardId": "soil_sensor_moisture_below",
+        "message": "Flow card référencée: soil_sensor_moisture_below"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\soil_sensor\\device.js",
+        "cardId": "soil_sensor_moisture_above",
+        "message": "Flow card référencée: soil_sensor_moisture_above"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\soil_sensor\\device.js",
+        "cardId": "soil_sensor_temperature_above",
+        "message": "Flow card référencée: soil_sensor_temperature_above"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_4gang\\driver.js",
+        "cardId": "switch_4gang_gang1_is_on",
+        "message": "Flow card référencée: switch_4gang_gang1_is_on"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_4gang\\driver.js",
+        "cardId": "switch_4gang_gang2_is_on",
+        "message": "Flow card référencée: switch_4gang_gang2_is_on"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_4gang\\driver.js",
+        "cardId": "switch_4gang_gang3_is_on",
+        "message": "Flow card référencée: switch_4gang_gang3_is_on"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_4gang\\driver.js",
+        "cardId": "switch_4gang_gang4_is_on",
+        "message": "Flow card référencée: switch_4gang_gang4_is_on"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_4gang\\driver.js",
+        "cardId": "switch_4gang_turn_on_gang1",
+        "message": "Flow card référencée: switch_4gang_turn_on_gang1"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_4gang\\driver.js",
+        "cardId": "switch_4gang_turn_off_gang1",
+        "message": "Flow card référencée: switch_4gang_turn_off_gang1"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_4gang\\driver.js",
+        "cardId": "switch_4gang_turn_on_gang2",
+        "message": "Flow card référencée: switch_4gang_turn_on_gang2"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_4gang\\driver.js",
+        "cardId": "switch_4gang_turn_off_gang2",
+        "message": "Flow card référencée: switch_4gang_turn_off_gang2"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_4gang\\driver.js",
+        "cardId": "switch_4gang_turn_on_gang3",
+        "message": "Flow card référencée: switch_4gang_turn_on_gang3"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_4gang\\driver.js",
+        "cardId": "switch_4gang_turn_off_gang3",
+        "message": "Flow card référencée: switch_4gang_turn_off_gang3"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_4gang\\driver.js",
+        "cardId": "switch_4gang_turn_on_gang4",
+        "message": "Flow card référencée: switch_4gang_turn_on_gang4"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_4gang\\driver.js",
+        "cardId": "switch_4gang_turn_off_gang4",
+        "message": "Flow card référencée: switch_4gang_turn_off_gang4"
+      },
+      {
+        "severity": "INFO",
+        "file": "lib\\flow\\FlowCardManager.js",
+        "cardId": "energy_power_above",
+        "message": "Flow card référencée: energy_power_above"
+      },
+      {
+        "severity": "INFO",
+        "file": "lib\\flow\\FlowCardManager.js",
+        "cardId": "energy_power_below",
+        "message": "Flow card référencée: energy_power_below"
+      },
+      {
+        "severity": "INFO",
+        "file": "lib\\flow\\FlowCardManager.js",
+        "cardId": "energy_in_standby",
+        "message": "Flow card référencée: energy_in_standby"
+      },
+      {
+        "severity": "INFO",
+        "file": "lib\\flow\\FlowCardManager.js",
+        "cardId": "energy_reset_meter",
+        "message": "Flow card référencée: energy_reset_meter"
+      },
+      {
+        "severity": "INFO",
+        "file": "lib\\flow\\FlowCardManager.js",
+        "cardId": "toggle_onoff",
+        "message": "Flow card référencée: toggle_onoff"
+      },
+      {
+        "severity": "INFO",
+        "file": "lib\\flow\\FlowCardManager.js",
+        "cardId": "set_brightness_percent",
+        "message": "Flow card référencée: set_brightness_percent"
+      },
+      {
+        "severity": "INFO",
+        "file": "lib\\flow\\FlowCardManager.js",
+        "cardId": "set_fan_speed",
+        "message": "Flow card référencée: set_fan_speed"
+      },
+      {
+        "severity": "INFO",
+        "file": "lib\\flow\\FlowCardManager.js",
+        "cardId": "set_valve_position",
+        "message": "Flow card référencée: set_valve_position"
+      },
+      {
+        "severity": "INFO",
+        "file": "lib\\flow\\FlowCardManager.js",
+        "cardId": "is_motion_detected",
+        "message": "Flow card référencée: is_motion_detected"
+      },
+      {
+        "severity": "INFO",
+        "file": "lib\\flow\\FlowCardManager.js",
+        "cardId": "is_contact_open",
+        "message": "Flow card référencée: is_contact_open"
+      },
+      {
+        "severity": "INFO",
+        "file": "lib\\flow\\FlowCardManager.js",
+        "cardId": "temperature_above",
+        "message": "Flow card référencée: temperature_above"
+      }
+    ],
+    "capabilities": [],
+    "setCapabilityValue": [
+      {
+        "severity": "WARNING",
+        "file": "drivers\\air_quality_co2\\device.js",
+        "line": 109,
+        "code": "temp.on('attr.measuredValue', (v) => this.setCapabilityValue('measure_temperature', v / 100).catch(() => { }));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\air_quality_co2\\device.js",
+        "line": 113,
+        "code": "hum.on('attr.measuredValue', (v) => this.setCapabilityValue('measure_humidity', v / 100).catch(() => { }));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_emergency_sos\\device.js",
+        "line": 185,
+        "code": "this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_emergency_sos\\device.js",
+        "line": 197,
+        "code": "this.setCapabilityValue('measure_battery', value).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_emergency_sos\\device.js",
+        "line": 742,
+        "code": "this.setCapabilityValue('measure_battery', percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_emergency_sos\\device.js",
+        "line": 756,
+        "code": "this.setCapabilityValue('measure_battery', percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_emergency_sos\\device.js",
+        "line": 843,
+        "code": "await this.setCapabilityValue('measure_battery', percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_emergency_sos\\device.js",
+        "line": 854,
+        "code": "await this.setCapabilityValue('measure_battery', percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_emergency_sos\\device.js",
+        "line": 1081,
+        "code": "this.setCapabilityValue('measure_battery', percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_emergency_sos\\device.js",
+        "line": 1090,
+        "code": "this.setCapabilityValue('measure_battery', percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_emergency_sos\\device.js",
+        "line": 1105,
+        "code": "this.setCapabilityValue('measure_battery', percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_emergency_sos\\device.js",
+        "line": 1113,
+        "code": "this.setCapabilityValue('measure_battery', percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_emergency_sos\\device.js",
+        "line": 1138,
+        "code": "this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_wireless_1\\device.js",
+        "line": 325,
+        "code": "await this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_wireless_1\\device.js",
+        "line": 334,
+        "code": "await this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_wireless_1\\device.js",
+        "line": 362,
+        "code": "await this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_wireless_4\\device.js",
+        "line": 490,
+        "code": "await this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_wireless_4\\device.js",
+        "line": 595,
+        "code": "await this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\climate_sensor\\device.js",
+        "line": 326,
+        "code": "this.setCapabilityValue('measure_temperature', temp).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\climate_sensor\\device.js",
+        "line": 355,
+        "code": "this.setCapabilityValue('measure_humidity', humidity).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\climate_sensor\\device.js",
+        "line": 370,
+        "code": "this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\climate_sensor\\device.js",
+        "line": 808,
+        "code": "this.setCapabilityValue('measure_battery', Math.max(0, Math.min(100, battery))).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\climate_sensor\\device.js",
+        "line": 847,
+        "code": "this.setCapabilityValue('measure_temperature', temp).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\climate_sensor\\device.js",
+        "line": 887,
+        "code": "this.setCapabilityValue('measure_humidity', hum).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\climate_sensor\\device.js",
+        "line": 920,
+        "code": "await this.setCapabilityValue('measure_battery', Math.max(0, Math.min(100, battery))).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\climate_sensor\\device.js",
+        "line": 936,
+        "code": "await this.setCapabilityValue('measure_temperature', temp).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\climate_sensor\\device.js",
+        "line": 953,
+        "code": "await this.setCapabilityValue('measure_humidity', hum).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\curtain_motor\\device.js",
+        "line": 128,
+        "code": "this.setCapabilityValue('measure_luminance', lux).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\curtain_motor\\device.js",
+        "line": 135,
+        "code": "this.setCapabilityValue('measure_battery', Math.min(100, Math.max(0, battery))).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\motion_sensor\\device.js",
+        "line": 199,
+        "code": "this.setCapabilityValue('measure_temperature', temp).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\motion_sensor\\device.js",
+        "line": 217,
+        "code": "this.setCapabilityValue('measure_humidity', hum).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\motion_sensor\\device.js",
+        "line": 232,
+        "code": "this.setCapabilityValue('measure_luminance', lux).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\motion_sensor\\device.js",
+        "line": 261,
+        "code": "this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\motion_sensor\\device.js",
+        "line": 547,
+        "code": "await this.setCapabilityValue('measure_temperature', temp).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\motion_sensor\\device.js",
+        "line": 579,
+        "code": "await this.setCapabilityValue('measure_humidity', hum).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\motion_sensor\\device.js",
+        "line": 694,
+        "code": "await this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\motion_sensor\\device.js",
+        "line": 703,
+        "code": "await this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\motion_sensor\\device.js",
+        "line": 939,
+        "code": "this.setCapabilityValue('measure_luminance', luxValue).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\motion_sensor_radar_mmwave\\device.js",
+        "line": 237,
+        "code": "await this.setCapabilityValue('measure_luminance', value).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\motion_sensor_radar_mmwave\\device.js",
+        "line": 246,
+        "code": "await this.setCapabilityValue('measure_luminance', initialValue.measuredValue).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\plug_energy_monitor\\device.js",
+        "line": 287,
+        "code": "this.setCapabilityValue('measure_power', Math.max(0, power)).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\plug_energy_monitor\\device.js",
+        "line": 296,
+        "code": "this.setCapabilityValue('measure_voltage', voltage).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\plug_energy_monitor\\device.js",
+        "line": 305,
+        "code": "this.setCapabilityValue('measure_current', current).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\plug_smart\\device.js",
+        "line": 71,
+        "code": "this.setCapabilityValue('measure_power', scaled).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\plug_smart\\device.js",
+        "line": 73,
+        "code": "elec.on('attr.rmsVoltage', (v) => this.setCapabilityValue('measure_voltage', v / 10).catch(() => { }));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\plug_smart\\device.js",
+        "line": 74,
+        "code": "elec.on('attr.rmsCurrent', (v) => this.setCapabilityValue('measure_current', v / 1000).catch(() => { }));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\presence_sensor_radar\\device.js",
+        "line": 1592,
+        "code": "this.setCapabilityValue('measure_luminance', finalLux).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\presence_sensor_radar\\device.js",
+        "line": 1693,
+        "code": "this.setCapabilityValue('measure_distance', distanceMeters).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\presence_sensor_radar\\device.js",
+        "line": 1899,
+        "code": "this.setCapabilityValue('measure_luminance', Math.round(lux)).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\radiator_valve\\device.js",
+        "line": 63,
+        "code": "thermo.on('attr.localTemperature', (v) => this.setCapabilityValue('measure_temperature', v / 100).catch(() => { }));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\smart_heater_controller\\device.js",
+        "line": 197,
+        "code": "await this.setCapabilityValue('measure_temperature', calibratedTemp);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\smart_heater_controller\\device.js",
+        "line": 228,
+        "code": "await this.setCapabilityValue('measure_power', power);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\smoke_detector_advanced\\device.js",
+        "line": 93,
+        "code": "device?.setCapabilityValue?.('measure_battery', Math.min(100, v)).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\soil_sensor\\device.js",
+        "line": 177,
+        "code": "this.setCapabilityValue('measure_temperature', temp).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\soil_sensor\\device.js",
+        "line": 192,
+        "code": "this.setCapabilityValue('measure_humidity', humidity).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\soil_sensor\\device.js",
+        "line": 206,
+        "code": "this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\soil_sensor\\device.js",
+        "line": 382,
+        "code": "this.setCapabilityValue('measure_soil_moisture', validatedMoisture)",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\soil_sensor\\device.js",
+        "line": 387,
+        "code": "this.setCapabilityValue('measure_humidity', validatedMoisture)",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\soil_sensor\\device.js",
+        "line": 419,
+        "code": "this.setCapabilityValue('measure_temperature', temp)",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\soil_sensor\\device.js",
+        "line": 433,
+        "code": "this.setCapabilityValue('measure_battery', battery)",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\soil_sensor\\device.js",
+        "line": 445,
+        "code": "this.setCapabilityValue('measure_battery', parsedValue)",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\switch_2gang\\device.js",
+        "line": 91,
+        "code": "this.setCapabilityValue('measure_power', watts).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\switch_2gang\\device.js",
+        "line": 100,
+        "code": "this.setCapabilityValue('measure_voltage', volts).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\switch_2gang\\device.js",
+        "line": 109,
+        "code": "this.setCapabilityValue('measure_current', amps).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\switch_2gang\\device.js",
+        "line": 233,
+        "code": "this.setCapabilityValue('measure_power', attrs.activePower / 10).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\switch_2gang\\device.js",
+        "line": 236,
+        "code": "this.setCapabilityValue('measure_voltage', attrs.rmsVoltage / 10).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\switch_2gang\\device.js",
+        "line": 239,
+        "code": "this.setCapabilityValue('measure_current', attrs.rmsCurrent / 1000).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\switch_temp_sensor\\device.js",
+        "line": 268,
+        "code": "await this.setCapabilityValue('measure_temperature', rounded).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\switch_temp_sensor\\device.js",
+        "line": 288,
+        "code": "await this.setCapabilityValue('measure_humidity', rounded).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\usb_dongle_dual_repeater\\device.js",
+        "line": 90,
+        "code": "this.setCapabilityValue('measure_power', power).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\usb_dongle_dual_repeater\\device.js",
+        "line": 96,
+        "code": "this.setCapabilityValue('measure_voltage', voltage).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\usb_dongle_dual_repeater\\device.js",
+        "line": 102,
+        "code": "this.setCapabilityValue('measure_current', current).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\usb_dongle_dual_repeater\\device.js",
+        "line": 115,
+        "code": "this.setCapabilityValue('measure_power', power).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\usb_dongle_dual_repeater\\device.js",
+        "line": 119,
+        "code": "this.setCapabilityValue('measure_voltage', voltage).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\usb_dongle_dual_repeater\\device.js",
+        "line": 123,
+        "code": "this.setCapabilityValue('measure_current', current).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\water_tank_monitor\\device.js",
+        "line": 139,
+        "code": "await this.setCapabilityValue('measure_water_level', Math.round(waterLevel * 100) / 100);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\water_tank_monitor\\device.js",
+        "line": 140,
+        "code": "await this.setCapabilityValue('measure_water_percentage', Math.round(fillPercentage));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\water_tank_monitor\\device.js",
+        "line": 157,
+        "code": "await this.setCapabilityValue('measure_temperature', temperature);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\water_tank_monitor\\device.js",
+        "line": 188,
+        "code": "await this.setCapabilityValue('measure_water_percentage', percentage);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\water_tank_monitor\\device.js",
+        "line": 202,
+        "code": "await this.setCapabilityValue('measure_water_level', Math.round(levelM * 100) / 100);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\battery\\BatteryManagerV2.js",
+        "line": 286,
+        "code": "await this.device.setCapabilityValue('measure_battery', battery);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\battery\\BatteryManagerV2.js",
+        "line": 293,
+        "code": "await this.device.setCapabilityValue('measure_battery', battery);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\battery\\BatteryManagerV3.js",
+        "line": 189,
+        "code": "this.device.setCapabilityValue('measure_battery', rounded).catch(this.device.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\battery\\BatteryMonitoringMixin.js",
+        "line": 244,
+        "code": "await this.setCapabilityValue('measure_battery', percentage);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\battery\\BatterySystem.js",
+        "line": 215,
+        "code": "await this.device.setCapabilityValue('measure_battery', percentage);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\battery\\UnifiedBatteryHandler.js",
+        "line": 277,
+        "code": "this.device.setCapabilityValue('measure_battery', percent).catch(err => {",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\battery\\UnifiedBatteryHandler.js",
+        "line": 297,
+        "code": "this.device.setCapabilityValue('measure_voltage', voltage).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\BatteryManagerV4.js",
+        "line": 223,
+        "code": "await this.device.setCapabilityValue('measure_battery', storedBattery.value).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\BatteryManagerV4.js",
+        "line": 535,
+        "code": "await this.device.setCapabilityValue('measure_battery', rounded).catch(err => {",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\BatteryManagerV5.js",
+        "line": 728,
+        "code": "await this.device.setCapabilityValue('measure_battery', smoothed).catch((err) => {",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 824,
+        "code": "await this.setCapabilityValue('measure_temperature', temp);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 843,
+        "code": "await this.setCapabilityValue('measure_humidity', humidity);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 1594,
+        "code": "await Promise.resolve(this.setCapabilityValue('measure_battery', batteryPercent)).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 1638,
+        "code": "await Promise.resolve(this.setCapabilityValue('measure_temperature', tempC)).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 1656,
+        "code": "await Promise.resolve(this.setCapabilityValue('measure_humidity', humPercent)).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 1674,
+        "code": "await Promise.resolve(this.setCapabilityValue('measure_luminance', lux)).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 1692,
+        "code": "await Promise.resolve(setCapabilityValue('measure_power', watts)).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 1710,
+        "code": "await Promise.resolve(setCapabilityValue('measure_voltage', volts)).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 1728,
+        "code": "await Promise.resolve(setCapabilityValue('measure_current', amps)).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 1873,
+        "code": "await this.setCapabilityValue('measure_temperature', temp).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 1897,
+        "code": "await this.setCapabilityValue('measure_temperature', temp);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 1949,
+        "code": "await this.setCapabilityValue('measure_humidity', humidity).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 1973,
+        "code": "await this.setCapabilityValue('measure_humidity', humidity);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2015,
+        "code": "await this.setCapabilityValue('measure_luminance', lux).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2039,
+        "code": "await this.setCapabilityValue('measure_luminance', lux);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2541,
+        "code": "await Promise.resolve(this.setCapabilityValue('measure_battery', battery)).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2550,
+        "code": "await Promise.resolve(this.setCapabilityValue('measure_battery', percent)).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2575,
+        "code": "await Promise.resolve(this.setCapabilityValue('measure_temperature', temp)).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2602,
+        "code": "await Promise.resolve(this.setCapabilityValue('measure_humidity', humidity)).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2620,
+        "code": "await Promise.resolve(this.setCapabilityValue('measure_luminance', lux)).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2743,
+        "code": "this.setCapabilityValue('measure_temperature', temp).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2753,
+        "code": "this.setCapabilityValue('measure_temperature', temp).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2784,
+        "code": "this.setCapabilityValue('measure_humidity', hum).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2794,
+        "code": "this.setCapabilityValue('measure_humidity', hum).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2828,
+        "code": "this.setCapabilityValue('measure_battery', battery).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2836,
+        "code": "this.setCapabilityValue('measure_battery', battery).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2846,
+        "code": "this.setCapabilityValue('measure_battery', battery).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2851,
+        "code": "this.setCapabilityValue('measure_battery', battery).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2882,
+        "code": "this.setCapabilityValue('measure_power', power).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2891,
+        "code": "this.setCapabilityValue('measure_voltage', voltage).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2900,
+        "code": "this.setCapabilityValue('measure_current', current).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 2939,
+        "code": "this.setCapabilityValue('measure_luminance', lux).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 3186,
+        "code": "await this.setCapabilityValue('measure_battery', battery).catch(() => { }); // Silent fail",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 3198,
+        "code": "await this.setCapabilityValue('measure_battery', 50).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 3305,
+        "code": "await this.setCapabilityValue('measure_battery', percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 3484,
+        "code": "await this.setCapabilityValue('measure_battery', finalPercent);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 3515,
+        "code": "await this.setCapabilityValue('measure_temperature', temperature);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 3550,
+        "code": "await this.setCapabilityValue('measure_humidity', humidity);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 3581,
+        "code": "await this.setCapabilityValue('measure_luminance', luminance);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseHybridDevice.js",
+        "line": 3665,
+        "code": "this.setCapabilityValue('measure_battery', percent).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseTuyaDPDevice.js",
+        "line": 65,
+        "code": "await this.setCapabilityValue('measure_battery', 100).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\BaseTuyaDPDevice.js",
+        "line": 342,
+        "code": "await this.setCapabilityValue('measure_battery', value).catch(e => this.error(e));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\ButtonDevice.js",
+        "line": 923,
+        "code": "await this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\ButtonDevice.js",
+        "line": 930,
+        "code": "await this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\ButtonDevice.js",
+        "line": 941,
+        "code": "await this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\ButtonDevice.js",
+        "line": 979,
+        "code": "await this.setCapabilityValue('measure_battery', storedBattery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\ButtonDevice.js",
+        "line": 1012,
+        "code": "await this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\HybridPlugBase.js",
+        "line": 518,
+        "code": "this.setCapabilityValue('measure_power', value).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\HybridPlugBase.js",
+        "line": 527,
+        "code": "this.setCapabilityValue('measure_power', watts).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\HybridPlugBase.js",
+        "line": 543,
+        "code": "this.setCapabilityValue('measure_voltage', volts).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\HybridPlugBase.js",
+        "line": 550,
+        "code": "this.setCapabilityValue('measure_current', amps).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\HybridSensorBase.js",
+        "line": 666,
+        "code": "this.setCapabilityValue('measure_battery', value).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\HybridSensorBase.js",
+        "line": 876,
+        "code": "await this.setCapabilityValue('measure_temperature', temp).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\HybridSensorBase.js",
+        "line": 889,
+        "code": "await this.setCapabilityValue('measure_humidity', hum).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\HybridSensorBase.js",
+        "line": 917,
+        "code": "await this.setCapabilityValue('measure_battery', percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\HybridSensorBase.js",
+        "line": 932,
+        "code": "await this.setCapabilityValue('measure_battery', percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\HybridSensorBase.js",
+        "line": 950,
+        "code": "await this.setCapabilityValue('measure_battery', percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\HybridSensorBase.js",
+        "line": 2362,
+        "code": "this.setCapabilityValue('measure_luminance', luxValue).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\HybridSensorBase.js",
+        "line": 2372,
+        "code": "this.setCapabilityValue('measure_distance', distance).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\HybridSensorBase.js",
+        "line": 3152,
+        "code": "await this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\HybridSensorBase.js",
+        "line": 3158,
+        "code": "await this.setCapabilityValue('measure_battery', battery).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\HybridThermostatBase.js",
+        "line": 204,
+        "code": "this.setCapabilityValue('measure_temperature', v / 100).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\TuyaHybridDevice.js",
+        "line": 1312,
+        "code": "this.setCapabilityValue('measure_battery', percentage).catch(err => {",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\WallTouchDevice.js",
+        "line": 233,
+        "code": "await Promise.resolve(setCapabilityValue('measure_temperature', temp)).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\diagnostics\\DeviceHealth.js",
+        "line": 178,
+        "code": "await device.setCapabilityValue('measure_rssi', rssi);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\HeimanIasDevice.js",
+        "line": 418,
+        "code": "this.setCapabilityValue('measure_battery', clampedPercentage).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\helpers\\BatteryRouter.js",
+        "line": 131,
+        "code": "await device.setCapabilityValue('measure_battery', 100).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\helpers\\BatteryRouter.js",
+        "line": 213,
+        "code": "await device.setCapabilityValue('measure_battery', batteryValue).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\helpers\\BatteryRouter.js",
+        "line": 223,
+        "code": "await device.setCapabilityValue('measure_battery', batteryValue).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\helpers\\BatteryRouter.js",
+        "line": 241,
+        "code": "await device.setCapabilityValue('measure_voltage', voltage).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\helpers\\VirtualCapabilities.js",
+        "line": 53,
+        "code": "await device.setCapabilityValue('measure_apparent_power', VA);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\helpers\\VirtualCapabilities.js",
+        "line": 68,
+        "code": "await device.setCapabilityValue('measure_power_factor', Math.min(1, Math.max(0, PF)));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\helpers\\VirtualCapabilities.js",
+        "line": 174,
+        "code": "await device.setCapabilityValue('measure_rssi', rssi || -100);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\HybridDriverSystem.js",
+        "line": 596,
+        "code": "await this.setCapabilityValue('measure_power', value);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\HybridDriverSystem.js",
+        "line": 645,
+        "code": "await this.setCapabilityValue('measure_temperature', value / 100).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\HybridDriverSystem.js",
+        "line": 654,
+        "code": "await this.setCapabilityValue('measure_humidity', value / 100).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\intelligent\\IntelligentDeviceAdapter.js",
+        "line": 931,
+        "code": "this.device.setCapabilityValue('measure_battery', value).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\managers\\AutonomousMigrationManager.js",
+        "line": 628,
+        "code": "await this.device.setCapabilityValue('measure_temperature', temp).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\managers\\AutonomousMigrationManager.js",
+        "line": 638,
+        "code": "await this.device.setCapabilityValue('measure_humidity', humidity).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\managers\\AutonomousMigrationManager.js",
+        "line": 654,
+        "code": "await this.device.setCapabilityValue('measure_power', power).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\managers\\AutonomousMigrationManager.js",
+        "line": 661,
+        "code": "await this.device.setCapabilityValue('measure_voltage', voltage).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\managers\\AutonomousMigrationManager.js",
+        "line": 668,
+        "code": "await this.device.setCapabilityValue('measure_current', current).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\managers\\AutonomousMigrationManager.js",
+        "line": 684,
+        "code": "await this.device.setCapabilityValue('measure_battery', percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\managers\\EnergyManager.js",
+        "line": 130,
+        "code": "await this.device.setCapabilityValue('measure_power', power).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\managers\\EnergyManager.js",
+        "line": 147,
+        "code": "await this.device.setCapabilityValue('measure_voltage', voltage).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\managers\\EnergyManager.js",
+        "line": 161,
+        "code": "await this.device.setCapabilityValue('measure_current', current).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\managers\\IASZoneManager.js",
+        "line": 403,
+        "code": "device.setCapabilityValue('measure_battery', 15).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\mixins\\TuyaDeviceMixin.js",
+        "line": 164,
+        "code": "await this.setCapabilityValue('measure_battery', 100).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\mixins\\TuyaDeviceMixin.js",
+        "line": 196,
+        "code": "this.setCapabilityValue('measure_battery', percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\mixins\\TuyaDeviceMixin.js",
+        "line": 206,
+        "code": "this.setCapabilityValue('measure_temperature', temp).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\mixins\\TuyaDeviceMixin.js",
+        "line": 217,
+        "code": "this.setCapabilityValue('measure_humidity', hum).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\mixins\\TuyaDeviceMixin.js",
+        "line": 227,
+        "code": "this.setCapabilityValue('measure_voltage', voltage).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\SonoffZclDevice.js",
+        "line": 140,
+        "code": "await this.setCapabilityValue('measure_battery', 100).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\SonoffZclDevice.js",
+        "line": 156,
+        "code": "this.setCapabilityValue('measure_battery', Math.min(100, Math.max(0, percentage)))",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\SonoffZclDevice.js",
+        "line": 253,
+        "code": "this.setCapabilityValue('measure_temperature', temp).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\SonoffZclDevice.js",
+        "line": 297,
+        "code": "this.setCapabilityValue('measure_humidity', humidity).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\SonoffZclDevice.js",
+        "line": 341,
+        "code": "this.setCapabilityValue('measure_luminance', 0).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\SonoffZclDevice.js",
+        "line": 346,
+        "code": "this.setCapabilityValue('measure_luminance', lux).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\templates\\TuyaTS0601DeviceTemplate.js",
+        "line": 122,
+        "code": "this.setCapabilityValue('measure_battery', percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\DataRecoveryManager.js",
+        "line": 322,
+        "code": "await this.device.setCapabilityValue('measure_temperature', temp).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\DataRecoveryManager.js",
+        "line": 334,
+        "code": "await this.device.setCapabilityValue('measure_humidity', hum).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\DataRecoveryManager.js",
+        "line": 347,
+        "code": "await this.device.setCapabilityValue('measure_battery', bat).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\DataRecoveryManager.js",
+        "line": 353,
+        "code": "await this.device.setCapabilityValue('measure_battery', bat).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\DataRecoveryManager.js",
+        "line": 368,
+        "code": "await this.device.setCapabilityValue('measure_luminance', lux).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\DataRecoveryManager.js",
+        "line": 371,
+        "code": "await this.device.setCapabilityValue('measure_lux', lux).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\dpMapper.js",
+        "line": 76,
+        "code": "device.setCapabilityValue('measure_battery', battery).catch(e => device.error('[DP-MAPPER] measure_battery:', e.message));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\dpMapper.js",
+        "line": 86,
+        "code": "device.setCapabilityValue('measure_battery', battery).catch(e => device.error('[DP-MAPPER] measure_battery:', e.message));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\dpMapper.js",
+        "line": 127,
+        "code": "device.setCapabilityValue('measure_temperature', temp).catch(e => device.error('[DP-MAPPER] measure_temperature:', e.message));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\dpMapper.js",
+        "line": 140,
+        "code": "device.setCapabilityValue('measure_humidity', humidity).catch(e => device.error('[DP-MAPPER] measure_humidity:', e.message));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\dpMapper.js",
+        "line": 154,
+        "code": "device.setCapabilityValue('measure_temperature', temp).catch(e => device.error('[DP-MAPPER] measure_temperature:', e.message));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\dpMapper.js",
+        "line": 161,
+        "code": "device.setCapabilityValue('measure_battery', battery).catch(e => device.error('[DP-MAPPER] measure_battery:', e.message));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\dpMapper.js",
+        "line": 173,
+        "code": "device.setCapabilityValue('measure_humidity', humidity).catch(e => device.error('[DP-MAPPER] measure_humidity:', e.message));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\dpMapper.js",
+        "line": 186,
+        "code": "device.setCapabilityValue('measure_humidity', moisture).catch(e => device.error('[DP-MAPPER] measure_humidity:', e.message));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\dpMapper.js",
+        "line": 197,
+        "code": "device.setCapabilityValue('measure_luminance', value).catch(e => device.error('[DP-MAPPER] measure_luminance:', e.message));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\dpMapper.js",
+        "line": 210,
+        "code": "device.setCapabilityValue('measure_voltage', voltage).catch(e => device.error('[DP-MAPPER] measure_voltage:', e.message));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\dpMapper.js",
+        "line": 223,
+        "code": "device.setCapabilityValue('measure_voltage', voltage).catch(e => device.error('[DP-MAPPER] measure_voltage:', e.message));",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\TuyaDPManager_Enhanced.js",
+        "line": 164,
+        "code": "this.device.setCapabilityValue('measure_battery', value).catch(err =>",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\TuyaDPManager_Enhanced.js",
+        "line": 176,
+        "code": "this.device.setCapabilityValue('measure_temperature', tempCelsius).catch(err =>",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\TuyaDPManager_Enhanced.js",
+        "line": 186,
+        "code": "this.device.setCapabilityValue('measure_humidity', value).catch(err =>",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\TuyaEF00Manager.js",
+        "line": 592,
+        "code": "this.device.setCapabilityValue('measure_voltage', voltage).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\TuyaEF00Manager.js",
+        "line": 1737,
+        "code": "this.device.setCapabilityValue?.('measure_battery', 100).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\TuyaGatewayEmulator.js",
+        "line": 614,
+        "code": "device.setCapabilityValue?.('measure_temperature', temp).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\TuyaGatewayEmulator.js",
+        "line": 630,
+        "code": "device.setCapabilityValue?.('measure_humidity', hum).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\TuyaGatewayEmulator.js",
+        "line": 646,
+        "code": "device.setCapabilityValue?.('measure_battery', bat).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\TuyaSyncManager.js",
+        "line": 228,
+        "code": "this.device.setCapabilityValue('measure_battery', percentage).catch(() => {});",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\UniversalIasDevice.js",
+        "line": 332,
+        "code": "this.setCapabilityValue('measure_battery', value).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\UniversalIasDevice.js",
+        "line": 341,
+        "code": "this.setCapabilityValue('measure_temperature', temp).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\UniversalIasDevice.js",
+        "line": 347,
+        "code": "this.setCapabilityValue('measure_humidity', value).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\utils\\battery-reporting-manager.js",
+        "line": 213,
+        "code": "this.device.setCapabilityValue('measure_battery', percent)",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\utils\\battery-reporting-manager.js",
+        "line": 278,
+        "code": "this.device.setCapabilityValue('measure_battery', percent)",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\utils\\battery-reporting-manager.js",
+        "line": 318,
+        "code": "this.device.setCapabilityValue('measure_battery', percent)",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\utils\\battery-reporting-manager.js",
+        "line": 390,
+        "code": "await this.device.setCapabilityValue('measure_battery', percent);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\utils\\data-collector.js",
+        "line": 52,
+        "code": "await device.setCapabilityValue('measure_battery', percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\utils\\data-collector.js",
+        "line": 70,
+        "code": "await device.setCapabilityValue('measure_voltage', voltage).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\utils\\data-collector.js",
+        "line": 76,
+        "code": "await device.setCapabilityValue('measure_battery', percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\utils\\data-collector.js",
+        "line": 95,
+        "code": "await device.setCapabilityValue('measure_power', value).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\utils\\data-collector.js",
+        "line": 112,
+        "code": "await device.setCapabilityValue('measure_voltage', value).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\utils\\data-collector.js",
+        "line": 130,
+        "code": "await device.setCapabilityValue('measure_current', current).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\utils\\data-collector.js",
+        "line": 152,
+        "code": "await device.setCapabilityValue('measure_temperature', temp).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\utils\\data-collector.js",
+        "line": 171,
+        "code": "await device.setCapabilityValue('measure_humidity', humidity).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\utils\\data-collector.js",
+        "line": 338,
+        "code": "await device.setCapabilityValue('measure_battery', batteryData.percent).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\utils\\data-collector.js",
+        "line": 350,
+        "code": "await device.setCapabilityValue('measure_power', energyData.power).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\utils\\data-collector.js",
+        "line": 354,
+        "code": "await device.setCapabilityValue('measure_voltage', energyData.voltage).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\utils\\data-collector.js",
+        "line": 358,
+        "code": "await device.setCapabilityValue('measure_current', energyData.current).catch(() => { });",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\xiaomi\\XiaomiSpecialHandler.js",
+        "line": 81,
+        "code": "await this.device.setCapabilityValue('measure_battery', data.battery);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\xiaomi\\XiaomiSpecialHandler.js",
+        "line": 86,
+        "code": "await this.device.setCapabilityValue('measure_temperature', data.temperature);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\ZigbeeClusterManager.js",
+        "line": 701,
+        "code": "this.device.setCapabilityValue('measure_battery', percent).catch(this.error);",
+        "message": "setCapabilityValue sans conversion type explicite"
+      }
+    ],
+    "manufacturerIds": [
+      {
+        "severity": "WARNING",
+        "file": "drivers\\presence_sensor_radar\\driver.compose.json",
+        "count": 110,
+        "message": "Trop de manufacturer IDs (110) - possibles duplicates"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\radiator_valve\\driver.compose.json",
+        "count": 138,
+        "message": "Trop de manufacturer IDs (138) - possibles duplicates"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\usb_outlet_advanced\\driver.compose.json",
+        "count": 25,
+        "message": "Trop de manufacturer IDs (25) - possibles duplicates"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0201",
+        "drivers": [
+          "drivers\\air_quality_co2\\driver.compose.json",
+          "drivers\\climate_sensor\\driver.compose.json",
+          "drivers\\lcdtemphumidsensor\\driver.compose.json",
+          "drivers\\plug_energy_monitor\\driver.compose.json"
+        ],
+        "count": 4,
+        "message": "ID partagé par 4 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0601",
+        "drivers": [
+          "drivers\\air_quality_co2\\driver.compose.json",
+          "drivers\\air_quality_comprehensive\\driver.compose.json",
+          "drivers\\button_wireless\\driver.compose.json",
+          "drivers\\button_wireless_1\\driver.compose.json",
+          "drivers\\button_wireless_2\\driver.compose.json",
+          "drivers\\button_wireless_3\\driver.compose.json",
+          "drivers\\button_wireless_4\\driver.compose.json",
+          "drivers\\ceiling_fan\\driver.compose.json",
+          "drivers\\climate_sensor\\driver.compose.json",
+          "drivers\\contact_sensor\\driver.compose.json",
+          "drivers\\co_sensor\\driver.compose.json",
+          "drivers\\curtain_motor\\driver.compose.json",
+          "drivers\\curtain_motor_tilt\\driver.compose.json",
+          "drivers\\dimmer_3gang\\driver.compose.json",
+          "drivers\\dimmer_dual_channel\\driver.compose.json",
+          "drivers\\dimmer_wall_1gang\\driver.compose.json",
+          "drivers\\doorbell\\driver.compose.json",
+          "drivers\\door_controller\\driver.compose.json",
+          "drivers\\energy_meter_3phase\\driver.compose.json",
+          "drivers\\formaldehyde_sensor\\driver.compose.json",
+          "drivers\\gas_detector\\driver.compose.json",
+          "drivers\\gas_sensor\\driver.compose.json",
+          "drivers\\gateway_zigbee_bridge\\driver.compose.json",
+          "drivers\\generic_tuya\\driver.compose.json",
+          "drivers\\hvac_air_conditioner\\driver.compose.json",
+          "drivers\\hvac_dehumidifier\\driver.compose.json",
+          "drivers\\ir_blaster\\driver.compose.json",
+          "drivers\\led_strip\\driver.compose.json",
+          "drivers\\led_strip_advanced\\driver.compose.json",
+          "drivers\\led_strip_rgbw\\driver.compose.json",
+          "drivers\\lock_smart\\driver.compose.json",
+          "drivers\\motion_sensor\\driver.compose.json",
+          "drivers\\motion_sensor_radar_mmwave\\driver.compose.json",
+          "drivers\\plug_energy_monitor\\driver.compose.json",
+          "drivers\\plug_smart\\driver.compose.json",
+          "drivers\\power_meter\\driver.compose.json",
+          "drivers\\presence_sensor_radar\\driver.compose.json",
+          "drivers\\radiator_controller\\driver.compose.json",
+          "drivers\\radiator_valve\\driver.compose.json",
+          "drivers\\rain_sensor\\driver.compose.json",
+          "drivers\\scene_switch_4\\driver.compose.json",
+          "drivers\\shutter_roller_controller\\driver.compose.json",
+          "drivers\\siren\\driver.compose.json",
+          "drivers\\smart_heater\\driver.compose.json",
+          "drivers\\smart_heater_controller\\driver.compose.json",
+          "drivers\\smart_rcbo\\driver.compose.json",
+          "drivers\\smoke_detector_advanced\\driver.compose.json",
+          "drivers\\soil_sensor\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json",
+          "drivers\\switch_2gang\\driver.compose.json",
+          "drivers\\switch_3gang\\driver.compose.json",
+          "drivers\\switch_4gang\\driver.compose.json",
+          "drivers\\switch_wall_6gang\\driver.compose.json",
+          "drivers\\thermostat_4ch\\driver.compose.json",
+          "drivers\\thermostat_tuya_dp\\driver.compose.json",
+          "drivers\\usb_outlet_advanced\\driver.compose.json",
+          "drivers\\valve_irrigation\\driver.compose.json",
+          "drivers\\vibration_sensor\\driver.compose.json",
+          "drivers\\water_leak_sensor\\driver.compose.json",
+          "drivers\\water_tank_monitor\\driver.compose.json",
+          "drivers\\water_valve_smart\\driver.compose.json",
+          "drivers\\weather_station_outdoor\\driver.compose.json"
+        ],
+        "count": 62,
+        "message": "ID partagé par 62 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0005",
+        "drivers": [
+          "drivers\\air_quality_comprehensive\\driver.compose.json",
+          "drivers\\switch_4gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0006",
+        "drivers": [
+          "drivers\\air_quality_comprehensive\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json",
+          "drivers\\switch_4gang\\driver.compose.json"
+        ],
+        "count": 3,
+        "message": "ID partagé par 3 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0218",
+        "drivers": [
+          "drivers\\button_emergency_sos\\driver.compose.json",
+          "drivers\\plug_smart\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0041",
+        "drivers": [
+          "drivers\\button_wireless\\driver.compose.json",
+          "drivers\\button_wireless_1\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json"
+        ],
+        "count": 3,
+        "message": "ID partagé par 3 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0042",
+        "drivers": [
+          "drivers\\button_wireless\\driver.compose.json",
+          "drivers\\button_wireless_2\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0043",
+        "drivers": [
+          "drivers\\button_wireless\\driver.compose.json",
+          "drivers\\button_wireless_3\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0044",
+        "drivers": [
+          "drivers\\button_wireless\\driver.compose.json",
+          "drivers\\button_wireless_4\\driver.compose.json",
+          "drivers\\scene_switch_4\\driver.compose.json"
+        ],
+        "count": 3,
+        "message": "ID partagé par 3 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0046",
+        "drivers": [
+          "drivers\\button_wireless_6\\driver.compose.json",
+          "drivers\\scene_switch_6\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json"
+        ],
+        "count": 3,
+        "message": "ID partagé par 3 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0222",
+        "drivers": [
+          "drivers\\climate_sensor\\driver.compose.json",
+          "drivers\\motion_sensor\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0225",
+        "drivers": [
+          "drivers\\climate_sensor\\driver.compose.json",
+          "drivers\\motion_sensor_radar_mmwave\\driver.compose.json",
+          "drivers\\presence_sensor_radar\\driver.compose.json"
+        ],
+        "count": 3,
+        "message": "ID partagé par 3 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0203",
+        "drivers": [
+          "drivers\\contact_sensor\\driver.compose.json",
+          "drivers\\scene_switch_1\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0210",
+        "drivers": [
+          "drivers\\contact_sensor\\driver.compose.json",
+          "drivers\\motion_sensor\\driver.compose.json",
+          "drivers\\vibration_sensor\\driver.compose.json"
+        ],
+        "count": 3,
+        "message": "ID partagé par 3 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0302",
+        "drivers": [
+          "drivers\\curtain_motor\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0111",
+        "drivers": [
+          "drivers\\dimmer_wall_1gang\\driver.compose.json",
+          "drivers\\plug_smart\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0001",
+        "drivers": [
+          "drivers\\module_mini_switch\\driver.compose.json",
+          "drivers\\plug_smart\\driver.compose.json",
+          "drivers\\radiator_controller\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json"
+        ],
+        "count": 4,
+        "message": "ID partagé par 4 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0011",
+        "drivers": [
+          "drivers\\module_mini_switch\\driver.compose.json",
+          "drivers\\radiator_controller\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json",
+          "drivers\\thermostat_tuya_dp\\driver.compose.json"
+        ],
+        "count": 4,
+        "message": "ID partagé par 4 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0202",
+        "drivers": [
+          "drivers\\motion_sensor\\driver.compose.json",
+          "drivers\\motion_sensor_radar_mmwave\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0121",
+        "drivers": [
+          "drivers\\plug_energy_monitor\\driver.compose.json",
+          "drivers\\plug_smart\\driver.compose.json",
+          "drivers\\usb_outlet_advanced\\driver.compose.json"
+        ],
+        "count": 3,
+        "message": "ID partagé par 3 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0115",
+        "drivers": [
+          "drivers\\plug_smart\\driver.compose.json",
+          "drivers\\usb_outlet_advanced\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0002",
+        "drivers": [
+          "drivers\\radiator_controller\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json",
+          "drivers\\switch_2gang\\driver.compose.json",
+          "drivers\\usb_dongle_dual_repeater\\driver.compose.json"
+        ],
+        "count": 4,
+        "message": "ID partagé par 4 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0012",
+        "drivers": [
+          "drivers\\radiator_controller\\driver.compose.json",
+          "drivers\\switch_1gang\\driver.compose.json",
+          "drivers\\switch_2gang\\driver.compose.json"
+        ],
+        "count": 3,
+        "message": "ID partagé par 3 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0207",
+        "drivers": [
+          "drivers\\rain_sensor\\driver.compose.json",
+          "drivers\\water_leak_sensor\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0003",
+        "drivers": [
+          "drivers\\switch_1gang\\driver.compose.json",
+          "drivers\\switch_2gang\\driver.compose.json",
+          "drivers\\switch_3gang\\driver.compose.json"
+        ],
+        "count": 3,
+        "message": "ID partagé par 3 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0004",
+        "drivers": [
+          "drivers\\switch_1gang\\driver.compose.json",
+          "drivers\\switch_3gang\\driver.compose.json",
+          "drivers\\switch_4gang\\driver.compose.json"
+        ],
+        "count": 3,
+        "message": "ID partagé par 3 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0013",
+        "drivers": [
+          "drivers\\switch_1gang\\driver.compose.json",
+          "drivers\\switch_3gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      },
+      {
+        "severity": "CRITICAL",
+        "manufacturerId": "PRODUCT:TS0014",
+        "drivers": [
+          "drivers\\switch_1gang\\driver.compose.json",
+          "drivers\\switch_4gang\\driver.compose.json"
+        ],
+        "count": 2,
+        "message": "ID partagé par 2 drivers"
+      }
+    ],
+    "iasZone": [],
+    "eventListeners": [
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_emergency_sos\\device.js",
+        "event": "report",
+        "message": "Event listener 'report' sans removeListener"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_emergency_sos\\device.js",
+        "event": "report",
+        "message": "Event listener 'report' sans removeListener"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_wireless_1\\device.js",
+        "event": "report",
+        "message": "Event listener 'report' sans removeListener"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_wireless_1\\device.js",
+        "event": "report",
+        "message": "Event listener 'report' sans removeListener"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_wireless_4\\device.js",
+        "event": "report",
+        "message": "Event listener 'report' sans removeListener"
+      },
+      {
+        "severity": "WARNING",
+        "file": "drivers\\button_wireless_4\\device.js",
+        "event": "report",
+        "message": "Event listener 'report' sans removeListener"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\BatteryManagerV5.js",
+        "event": "report",
+        "message": "Event listener 'report' sans removeListener"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\ButtonDevice.js",
+        "event": "report",
+        "message": "Event listener 'report' sans removeListener"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\devices\\TuyaHybridDevice.js",
+        "event": "report",
+        "message": "Event listener 'report' sans removeListener"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\tuya\\UniversalTuyaParser.js",
+        "event": "report",
+        "message": "Event listener 'report' sans removeListener"
+      }
+    ],
+    "replaceUsages": [
+      {
+        "severity": "WARNING",
+        "file": "lib\\discovery\\SmartDiscovery.js",
+        "varName": "profile.type",
+        "message": "Usage de .replace() sans String() wrapper sur: profile.type"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\flow\\FlowCardManager.js",
+        "varName": "parsed.hex",
+        "message": "Usage de .replace() sans String() wrapper sur: parsed.hex"
+      },
+      {
+        "severity": "WARNING",
+        "file": "lib\\flow\\FlowCardManager.js",
+        "varName": "parsed.hex",
+        "message": "Usage de .replace() sans String() wrapper sur: parsed.hex"
+      }
+    ],
+    "endpoints": [
+      {
+        "severity": "INFO",
+        "file": "drivers\\button_wireless\\driver.compose.json",
+        "count": 8,
+        "message": "Multi-endpoint device (8 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\button_wireless_2\\driver.compose.json",
+        "count": 2,
+        "message": "Multi-endpoint device (2 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\button_wireless_4\\driver.compose.json",
+        "count": 4,
+        "message": "Multi-endpoint device (4 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\button_wireless_6\\driver.compose.json",
+        "count": 6,
+        "message": "Multi-endpoint device (6 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\button_wireless_8\\driver.compose.json",
+        "count": 8,
+        "message": "Multi-endpoint device (8 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\dimmer_dual_channel\\driver.compose.json",
+        "count": 2,
+        "message": "Multi-endpoint device (2 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\module_mini_switch\\driver.compose.json",
+        "count": 2,
+        "message": "Multi-endpoint device (2 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\scene_switch_2\\driver.compose.json",
+        "count": 2,
+        "message": "Multi-endpoint device (2 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\scene_switch_3\\driver.compose.json",
+        "count": 3,
+        "message": "Multi-endpoint device (3 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\scene_switch_4\\driver.compose.json",
+        "count": 4,
+        "message": "Multi-endpoint device (4 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\scene_switch_6\\driver.compose.json",
+        "count": 6,
+        "message": "Multi-endpoint device (6 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_2gang\\driver.compose.json",
+        "count": 2,
+        "message": "Multi-endpoint device (2 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_3gang\\driver.compose.json",
+        "count": 3,
+        "message": "Multi-endpoint device (3 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_4gang\\driver.compose.json",
+        "count": 4,
+        "message": "Multi-endpoint device (4 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_wall_5gang\\driver.compose.json",
+        "count": 5,
+        "message": "Multi-endpoint device (5 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_wall_6gang\\driver.compose.json",
+        "count": 6,
+        "message": "Multi-endpoint device (6 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_wall_7gang\\driver.compose.json",
+        "count": 7,
+        "message": "Multi-endpoint device (7 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_wall_8gang\\driver.compose.json",
+        "count": 8,
+        "message": "Multi-endpoint device (8 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\usb_dongle_dual_repeater\\driver.compose.json",
+        "count": 2,
+        "message": "Multi-endpoint device (2 endpoints)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\usb_outlet_advanced\\driver.compose.json",
+        "count": 3,
+        "message": "Multi-endpoint device (3 endpoints)"
+      }
+    ],
+    "images": [],
+    "energyConfig": [],
+    "hybridDevices": [
+      {
+        "severity": "INFO",
+        "file": "drivers\\bulb_dimmable\\driver.compose.json",
+        "capabilities": [
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature",
+          "light_mode",
+          "onoff",
+          "measure_battery"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\bulb_rgb\\driver.compose.json",
+        "capabilities": [
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature",
+          "light_mode",
+          "onoff",
+          "measure_battery"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\bulb_rgbw\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature",
+          "light_mode",
+          "measure_battery"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\bulb_tunable_white\\driver.compose.json",
+        "capabilities": [
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature",
+          "light_mode",
+          "onoff",
+          "measure_battery"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\bulb_white\\driver.compose.json",
+        "capabilities": [
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature",
+          "light_mode",
+          "onoff",
+          "measure_battery"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\ceiling_fan\\driver.compose.json",
+        "capabilities": [
+          "dim",
+          "measure_battery",
+          "onoff",
+          "fan_speed"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\dimmer_wall_1gang\\driver.compose.json",
+        "capabilities": [
+          "dim",
+          "onoff",
+          "measure_battery",
+          "measure_power",
+          "button_toggle",
+          "button_dim_up",
+          "button_dim_down",
+          "button_identify"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\gateway_zigbee_bridge\\driver.compose.json",
+        "capabilities": [
+          "alarm_generic",
+          "measure_battery",
+          "onoff"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\hvac_air_conditioner\\driver.compose.json",
+        "capabilities": [
+          "target_temperature",
+          "measure_temperature",
+          "thermostat_mode",
+          "fan_speed",
+          "measure_battery",
+          "onoff"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\hvac_dehumidifier\\driver.compose.json",
+        "capabilities": [
+          "target_humidity",
+          "measure_humidity",
+          "measure_temperature",
+          "measure_power",
+          "alarm_water",
+          "measure_battery",
+          "onoff",
+          "target_temperature",
+          "fan_speed"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\led_controller_cct\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_temperature",
+          "light_mode",
+          "measure_battery"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\led_controller_rgb\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature",
+          "light_mode",
+          "measure_battery"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\led_strip\\driver.compose.json",
+        "capabilities": [
+          "dim",
+          "measure_battery",
+          "onoff",
+          "light_hue",
+          "light_saturation",
+          "light_mode"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\led_strip_advanced\\driver.compose.json",
+        "capabilities": [
+          "dim",
+          "light_hue",
+          "light_saturation",
+          "light_temperature",
+          "light_mode",
+          "onoff",
+          "measure_battery"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\led_strip_rgbw\\driver.compose.json",
+        "capabilities": [
+          "light_hue",
+          "light_saturation",
+          "light_temperature",
+          "light_mode",
+          "dim",
+          "onoff",
+          "measure_battery"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\module_mini_switch\\driver.compose.json",
+        "capabilities": [
+          "measure_battery",
+          "alarm_generic",
+          "measure_power",
+          "measure_voltage",
+          "measure_current",
+          "onoff",
+          "meter_power"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\plug_energy_monitor\\driver.compose.json",
+        "capabilities": [
+          "measure_power",
+          "meter_power",
+          "measure_voltage",
+          "measure_current",
+          "onoff",
+          "measure_battery"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\plug_smart\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "measure_current",
+          "measure_voltage",
+          "measure_battery",
+          "button_toggle",
+          "button_identify"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\radiator_controller\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "target_temperature",
+          "measure_temperature",
+          "thermostat_mode"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\siren\\driver.compose.json",
+        "capabilities": [
+          "alarm_motion",
+          "measure_battery",
+          "alarm_generic",
+          "onoff"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\smart_heater\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "target_temperature",
+          "thermostat_mode",
+          "measure_temperature",
+          "measure_battery",
+          "measure_power"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\smart_heater_controller\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "target_temperature",
+          "measure_temperature",
+          "thermostat_mode",
+          "measure_power",
+          "meter_power",
+          "alarm_generic"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\smart_rcbo\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "alarm_generic",
+          "measure_power",
+          "meter_power",
+          "measure_current",
+          "measure_voltage",
+          "measure_battery"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_1gang\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "measure_battery",
+          "measure_power",
+          "meter_power",
+          "measure_voltage",
+          "measure_current",
+          "button_toggle",
+          "button_identify"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_2gang\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2",
+          "measure_power",
+          "measure_voltage",
+          "measure_current",
+          "meter_power",
+          "button_toggle_1",
+          "button_toggle_2",
+          "button_identify"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_3gang\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2",
+          "onoff.gang3",
+          "measure_power",
+          "meter_power",
+          "button_toggle_1",
+          "button_toggle_2",
+          "button_toggle_3",
+          "button_identify"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_4gang\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "onoff.gang2",
+          "onoff.gang3",
+          "onoff.gang4",
+          "measure_power",
+          "button_toggle_1",
+          "button_toggle_2",
+          "button_toggle_3",
+          "button_toggle_4",
+          "button_identify"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_plug_1\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power",
+          "measure_battery"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_plug_2\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "onoff.outlet2",
+          "measure_power",
+          "meter_power"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_temp_sensor\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "measure_temperature",
+          "measure_humidity"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\thermostat_4ch\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "onoff.ch2",
+          "onoff.ch3",
+          "onoff.ch4",
+          "target_temperature",
+          "target_temperature.ch2",
+          "target_temperature.ch3",
+          "target_temperature.ch4",
+          "measure_temperature",
+          "measure_temperature.ch2",
+          "measure_temperature.ch3",
+          "measure_temperature.ch4",
+          "thermostat_mode"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\thermostat_tuya_dp\\driver.compose.json",
+        "capabilities": [
+          "target_temperature",
+          "measure_temperature",
+          "thermostat_mode",
+          "measure_battery",
+          "onoff",
+          "measure_humidity"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\usb_dongle_dual_repeater\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "onoff.usb2",
+          "measure_power",
+          "meter_power",
+          "measure_voltage",
+          "measure_current"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\usb_outlet_advanced\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "onoff.socket2",
+          "onoff.usb1",
+          "onoff.usb2",
+          "onoff.led",
+          "measure_power",
+          "meter_power",
+          "measure_voltage",
+          "measure_current"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\valve_irrigation\\driver.compose.json",
+        "capabilities": [
+          "valve_position.1",
+          "valve_position.2",
+          "valve_position.3",
+          "valve_position.4",
+          "measure_battery",
+          "onoff"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\valve_single\\driver.compose.json",
+        "capabilities": [
+          "onoff",
+          "valve_position",
+          "measure_battery"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\water_valve_smart\\driver.compose.json",
+        "capabilities": [
+          "alarm_motion",
+          "measure_temperature",
+          "alarm_water",
+          "measure_battery",
+          "onoff"
+        ],
+        "message": "Device hybride détecté (actuator + sensor)"
+      }
+    ],
+    "customCapabilities": [
+      {
+        "severity": "INFO",
+        "file": "drivers\\button_wireless_1\\driver.compose.json",
+        "capabilities": [
+          "button"
+        ],
+        "message": "Capabilities custom/propriétaires: button"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\ceiling_fan\\driver.compose.json",
+        "capabilities": [
+          "fan_speed"
+        ],
+        "message": "Capabilities custom/propriétaires: fan_speed"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\curtain_motor\\driver.compose.json",
+        "capabilities": [
+          "button"
+        ],
+        "message": "Capabilities custom/propriétaires: button"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\dimmer_wall_1gang\\driver.compose.json",
+        "capabilities": [
+          "button_toggle",
+          "button_dim_up",
+          "button_dim_down",
+          "button_identify"
+        ],
+        "message": "Capabilities custom/propriétaires: button_toggle, button_dim_up, button_dim_down, button_identify"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\door_controller\\driver.compose.json",
+        "capabilities": [
+          "locked"
+        ],
+        "message": "Capabilities custom/propriétaires: locked"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\hvac_air_conditioner\\driver.compose.json",
+        "capabilities": [
+          "target_temperature",
+          "thermostat_mode",
+          "fan_speed"
+        ],
+        "message": "Capabilities custom/propriétaires: target_temperature, thermostat_mode, fan_speed"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\hvac_dehumidifier\\driver.compose.json",
+        "capabilities": [
+          "target_humidity",
+          "target_temperature",
+          "fan_speed"
+        ],
+        "message": "Capabilities custom/propriétaires: target_humidity, target_temperature, fan_speed"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\ir_blaster\\driver.compose.json",
+        "capabilities": [
+          "ir_code_received"
+        ],
+        "message": "Capabilities custom/propriétaires: ir_code_received"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\lock_smart\\driver.compose.json",
+        "capabilities": [
+          "locked",
+          "lock_mode"
+        ],
+        "message": "Capabilities custom/propriétaires: locked, lock_mode"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\plug_smart\\driver.compose.json",
+        "capabilities": [
+          "button_toggle",
+          "button_identify"
+        ],
+        "message": "Capabilities custom/propriétaires: button_toggle, button_identify"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\radiator_controller\\driver.compose.json",
+        "capabilities": [
+          "target_temperature",
+          "thermostat_mode"
+        ],
+        "message": "Capabilities custom/propriétaires: target_temperature, thermostat_mode"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\radiator_valve\\driver.compose.json",
+        "capabilities": [
+          "target_temperature",
+          "thermostat_mode"
+        ],
+        "message": "Capabilities custom/propriétaires: target_temperature, thermostat_mode"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\scene_switch_1\\driver.compose.json",
+        "capabilities": [
+          "button"
+        ],
+        "message": "Capabilities custom/propriétaires: button"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\smart_heater\\driver.compose.json",
+        "capabilities": [
+          "target_temperature",
+          "thermostat_mode"
+        ],
+        "message": "Capabilities custom/propriétaires: target_temperature, thermostat_mode"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\smart_heater_controller\\driver.compose.json",
+        "capabilities": [
+          "target_temperature",
+          "thermostat_mode"
+        ],
+        "message": "Capabilities custom/propriétaires: target_temperature, thermostat_mode"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_1gang\\driver.compose.json",
+        "capabilities": [
+          "button_toggle",
+          "button_identify"
+        ],
+        "message": "Capabilities custom/propriétaires: button_toggle, button_identify"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_2gang\\driver.compose.json",
+        "capabilities": [
+          "button_toggle_1",
+          "button_toggle_2",
+          "button_identify"
+        ],
+        "message": "Capabilities custom/propriétaires: button_toggle_1, button_toggle_2, button_identify"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_3gang\\driver.compose.json",
+        "capabilities": [
+          "button_toggle_1",
+          "button_toggle_2",
+          "button_toggle_3",
+          "button_identify"
+        ],
+        "message": "Capabilities custom/propriétaires: button_toggle_1, button_toggle_2, button_toggle_3, button_identify"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\switch_4gang\\driver.compose.json",
+        "capabilities": [
+          "button_toggle_1",
+          "button_toggle_2",
+          "button_toggle_3",
+          "button_toggle_4",
+          "button_identify"
+        ],
+        "message": "Capabilities custom/propriétaires: button_toggle_1, button_toggle_2, button_toggle_3, button_toggle_4, button_identify"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\thermostat_4ch\\driver.compose.json",
+        "capabilities": [
+          "target_temperature",
+          "target_temperature.ch2",
+          "target_temperature.ch3",
+          "target_temperature.ch4",
+          "thermostat_mode"
+        ],
+        "message": "Capabilities custom/propriétaires: target_temperature, target_temperature.ch2, target_temperature.ch3, target_temperature.ch4, thermostat_mode"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\thermostat_tuya_dp\\driver.compose.json",
+        "capabilities": [
+          "target_temperature",
+          "thermostat_mode"
+        ],
+        "message": "Capabilities custom/propriétaires: target_temperature, thermostat_mode"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\valve_irrigation\\driver.compose.json",
+        "capabilities": [
+          "valve_position.1",
+          "valve_position.2",
+          "valve_position.3",
+          "valve_position.4"
+        ],
+        "message": "Capabilities custom/propriétaires: valve_position.1, valve_position.2, valve_position.3, valve_position.4"
+      },
+      {
+        "severity": "INFO",
+        "file": "drivers\\valve_single\\driver.compose.json",
+        "capabilities": [
+          "valve_position"
+        ],
+        "message": "Capabilities custom/propriétaires: valve_position"
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "action": "Corriger immédiatement les issues critiques (IAS Zone, manufacturer ID duplicates)"
+    },
+    {
+      "priority": "MEDIUM",
+      "action": "Ajouter parseFloat() aux 237 setCapabilityValue suspects"
+    },
+    {
+      "priority": "LOW",
+      "action": "Enrichir 37 devices hybrides avec settings power_source"
+    }
+  ]
+}

@@ -1,0 +1,440 @@
+{
+  "name": {
+    "en": "Dimmer 1gang",
+    "fr": "Dimmer 1gang"
+  },
+  "class": "light",
+  "capabilities": [
+    "dim",
+    "onoff",
+    "measure_battery",
+    "measure_power",
+    "button_toggle",
+    "button_dim_up",
+    "button_dim_down",
+    "button_identify"
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 0.5
+    },
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_49qchf10",
+      "_TZ3000_7ed9cqgi",
+      "_TZ3000_7ysdnebc",
+      "_TZ3000_f3xka28j",
+      "_TZ3000_fjgwfl3z",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_kdi2o9m6",
+      "_TZ3000_ktuoyvt5"
+    ],
+    "productId": [
+      "TS0101",
+      "TS0111",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          6,
+          8,
+          61184,
+          2820
+        ],
+        "bindings": [
+          1,
+          6,
+          8
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/dimmer_wall_1gang/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "power_source",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "ac",
+          "label": {
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
+    },
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA",
+            "fr": "AAA"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA",
+            "fr": "AA"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A",
+            "fr": "CR123A"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "optimization_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+      }
+    },
+    {
+      "id": "enable_power_estimation",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Power Estimation",
+        "fr": "Activer Estimation Puissance"
+      },
+      "value": true,
+      "hint": {
+        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "dimmer_turned_on",
+        "title": {
+          "en": "Dimmer turned on",
+          "fr": "Variateur allumé"
+        }
+      },
+      {
+        "id": "dimmer_turned_off",
+        "title": {
+          "en": "Dimmer turned off",
+          "fr": "Variateur éteint"
+        }
+      },
+      {
+        "id": "dimmer_level_changed",
+        "title": {
+          "en": "Brightness changed",
+          "fr": "Luminosité changée"
+        },
+        "tokens": [
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Level (%)"
+            },
+            "example": 75
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "dimmer_is_on",
+        "title": {
+          "en": "Dimmer !{{is|isn't}} on",
+          "fr": "Variateur !{{est|n'est pas}} allumé"
+        }
+      },
+      {
+        "id": "dimmer_level_is",
+        "title": {
+          "en": "Brightness !{{above|below}} threshold",
+          "fr": "Luminosité !{{au-dessus|en-dessous}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "Brightness !{{above|below}} [[threshold]] %"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "dimmer_set_level",
+        "title": {
+          "en": "Set brightness",
+          "fr": "Définir luminosité"
+        },
+        "titleFormatted": {
+          "en": "Set brightness to [[level]] %"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "level",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "label": "%"
+          }
+        ]
+      },
+      {
+        "id": "dimmer_fade_to",
+        "title": {
+          "en": "Fade to level",
+          "fr": "Transition vers niveau"
+        },
+        "titleFormatted": {
+          "en": "Fade to [[level]] % in [[duration]] seconds"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "level",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "label": "%"
+          },
+          {
+            "type": "number",
+            "name": "duration",
+            "min": 1,
+            "max": 60,
+            "step": 1
+          }
+        ]
+      }
+    ]
+  },
+  "images": {
+    "small": "drivers/dimmer_wall_1gang/assets/images/small.png",
+    "large": "drivers/dimmer_wall_1gang/assets/images/large.png",
+    "xlarge": "drivers/dimmer_wall_1gang/assets/images/xlarge.png"
+  },
+  "id": "dimmer_wall_1gang",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": true
+    }
+  }
+}
