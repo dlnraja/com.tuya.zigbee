@@ -127,7 +127,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
       } else if (dp === TUYA_DP.BRIGHTNESS) {
         // Tuya brightness is typically 0-1000
         const dim = Math.max(0, Math.min(1, value / 1000));
-        this.setCapabilityValue('dim', dim).catch(this.error);
+        this.setCapabilityValue('dim', parseFloat(dim)).catch(this.error);
       }
     }
   }
@@ -146,7 +146,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
       this._levelCluster.on('attr.currentLevel', (value) => {
         const dim = Math.max(0, Math.min(1, value / 254));
         this.log(`[LED] currentLevel attribute changed: ${value} → dim=${dim}`);
-        this.setCapabilityValue('dim', dim).catch(this.error);
+        this.setCapabilityValue('dim', parseFloat(dim)).catch(this.error);
       });
     }
   }
@@ -348,7 +348,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
         const levelAttrs = await this._levelCluster.readAttributes(['currentLevel']).catch(() => ({}));
         if (levelAttrs.currentLevel !== undefined) {
           const dim = Math.max(0, Math.min(1, levelAttrs.currentLevel / 254));
-          await this.setCapabilityValue('dim', dim).catch(() => { });
+          await this.setCapabilityValue('dim', parseFloat(dim)).catch(() => { });
           this.log(`[LED] Initial level: ${levelAttrs.currentLevel} → dim=${dim}`);
         }
       }

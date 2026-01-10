@@ -60,7 +60,7 @@ class RadiatorValveDevice extends HybridThermostatBase {
     try {
       const thermo = ep1.clusters?.hvacThermostat;
       if (thermo?.on) {
-        thermo.on('attr.localTemperature', (v) => this.setCapabilityValue('measure_temperature', v / 100).catch(() => { }));
+        thermo.on('attr.localTemperature', (v) => this.setCapabilityValue('measure_temperature', parseFloat(v) / 100).catch(() => { }));
         thermo.on('attr.occupiedHeatingSetpoint', (v) => this.setCapabilityValue('target_temperature', v / 100).catch(() => { }));
         thermo.on('attr.pIHeatingDemand', (v) => {
           if (this.hasCapability('dim')) this.setCapabilityValue('dim', v / 100).catch(() => { });

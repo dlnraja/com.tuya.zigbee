@@ -182,7 +182,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       if (!isNaN(battery) && battery >= 0 && battery <= 100) {
         this.log(`[SOS] 🔋 Tuya DP${dp} battery: ${battery}%`);
         if (this.hasCapability('measure_battery')) {
-          this.setCapabilityValue('measure_battery', battery).catch(() => { });
+          this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
         }
         return; // Don't process as SOS!
       }
@@ -194,7 +194,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
         // Numeric value = battery percentage
         this.log(`[SOS] 🔋 Tuya DP101 battery: ${value}%`);
         if (this.hasCapability('measure_battery')) {
-          this.setCapabilityValue('measure_battery', value).catch(() => { });
+          this.setCapabilityValue('measure_battery', parseFloat(value)).catch(() => { });
         }
         return; // Don't process as SOS!
       }
@@ -739,7 +739,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       const percent = Math.round(value / 2);
       if (percent < 0 || percent > 100) return false;
       this.log(`[SOS] 🔋 Battery ${source}: ${percent}%`);
-      this.setCapabilityValue('measure_battery', percent).catch(() => { });
+      this.setCapabilityValue('measure_battery', parseFloat(percent)).catch(() => { });
       this._updateActivity();
       return true;
     };
@@ -753,7 +753,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       // CR2032: Map 2.0V-3.0V to 0-100%
       const percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) / 1.0 * 100)));
       this.log(`[SOS] 🔋 Battery ${source} (${voltage}V): ${percent}%`);
-      this.setCapabilityValue('measure_battery', percent).catch(() => { });
+      this.setCapabilityValue('measure_battery', parseFloat(percent)).catch(() => { });
       this._updateActivity();
       return true;
     };
@@ -840,7 +840,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
         const percent = Math.round(result.batteryPercentageRemaining / 2);
         if (percent >= 0 && percent <= 100) {
           this.log(`[SOS] 🔋 Battery: ${percent}%`);
-          await this.setCapabilityValue('measure_battery', percent).catch(() => { });
+          await this.setCapabilityValue('measure_battery', parseFloat(percent)).catch(() => { });
           return;
         }
       }
@@ -851,7 +851,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
         // CR2032: Map 2.0V-3.0V to 0-100%
         const percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) / 1.0 * 100)));
         this.log(`[SOS] 🔋 Battery from voltage (${voltage}V): ${percent}%`);
-        await this.setCapabilityValue('measure_battery', percent).catch(() => { });
+        await this.setCapabilityValue('measure_battery', parseFloat(percent)).catch(() => { });
       }
     } catch (e) {
       this.log('[SOS] 🔋 Battery read error:', e.message);
@@ -1078,7 +1078,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
             const percent = Math.round(value / 2);
             if (percent >= 0 && percent <= 100) {
               this.log(`[SOS] 🔋 GLOBAL Battery: ${percent}%`);
-              this.setCapabilityValue('measure_battery', percent).catch(() => { });
+              this.setCapabilityValue('measure_battery', parseFloat(percent)).catch(() => { });
             }
             return; // Don't trigger alarm for battery reports
           }
@@ -1087,7 +1087,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
             // CR2032: Map 2.0V-3.0V to 0-100%
             const percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) / 1.0 * 100)));
             this.log(`[SOS] 🔋 GLOBAL Battery (${voltage}V): ${percent}%`);
-            this.setCapabilityValue('measure_battery', percent).catch(() => { });
+            this.setCapabilityValue('measure_battery', parseFloat(percent)).catch(() => { });
             return; // Don't trigger alarm for battery reports
           }
 
@@ -1102,7 +1102,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
             const percent = Math.round(attrs.batteryPercentageRemaining / 2);
             if (percent >= 0 && percent <= 100) {
               this.log(`[SOS] 🔋 HEARTBEAT Battery: ${percent}%`);
-              this.setCapabilityValue('measure_battery', percent).catch(() => { });
+              this.setCapabilityValue('measure_battery', parseFloat(percent)).catch(() => { });
             }
           }
           if (attrs?.batteryVoltage !== undefined && attrs.batteryVoltage > 0) {
@@ -1110,7 +1110,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
             // CR2032: Map 2.0V-3.0V to 0-100%
             const percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) / 1.0 * 100)));
             this.log(`[SOS] 🔋 HEARTBEAT Battery (${voltage}V): ${percent}%`);
-            this.setCapabilityValue('measure_battery', percent).catch(() => { });
+            this.setCapabilityValue('measure_battery', parseFloat(percent)).catch(() => { });
           }
         });
 
@@ -1135,7 +1135,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
               const battery = data.value;
               if (battery >= 0 && battery <= 100) {
                 this.log(`[SOS] 🔋 Tuya DP4 Battery: ${battery}%`);
-                this.setCapabilityValue('measure_battery', battery).catch(() => { });
+                this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
               }
             }
             this._handleAlarm({ source: 'tuya-report', ...data });

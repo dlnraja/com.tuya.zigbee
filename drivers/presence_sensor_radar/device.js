@@ -1589,7 +1589,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       const deviceId = this.getData()?.id;
       const finalLux = transformLux(luxValue, dpMap[dpId].type || 'lux_direct', mfr, deviceId);
       this.log(`[RADAR-LUX] ☀️ DP${dpId} → measure_luminance = ${finalLux} lux (local config)`);
-      this.setCapabilityValue('measure_luminance', finalLux).catch(() => { });
+      this.setCapabilityValue('measure_luminance', parseFloat(finalLux)).catch(() => { });
 
       // v5.5.315: Feed lux to intelligent inference engine
       if (dpMap[dpId].feedInference) {
@@ -1690,7 +1690,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     // Always update distance capability
     const divisor = config.dpMap?.[9]?.divisor || 100;
     const distanceMeters = rawDistance / divisor;
-    this.setCapabilityValue('measure_distance', distanceMeters).catch(() => { });
+    this.setCapabilityValue('measure_distance', parseFloat(distanceMeters)).catch(() => { });
     this.log(`[RADAR] 📏 Distance: ${distanceMeters}m (raw: ${rawDistance})`);
 
     // v5.5.315: Feed distance to intelligent inference engine
@@ -1896,7 +1896,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       if (illumCluster?.on) {
         illumCluster.on('attr.measuredValue', (v) => {
           const lux = Math.pow(10, (v - 1) / 10000);
-          this.setCapabilityValue('measure_luminance', Math.round(lux)).catch(() => { });
+          this.setCapabilityValue('measure_luminance', parseFloat(Math.round(lux))).catch(() => { });
         });
         this.log('[RADAR] ✅ Illuminance cluster configured');
       }

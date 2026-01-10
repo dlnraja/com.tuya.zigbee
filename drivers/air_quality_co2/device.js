@@ -106,11 +106,11 @@ class AirQualityCO2Device extends HybridSensorBase {
     try {
       const temp = ep1.clusters?.msTemperatureMeasurement;
       if (temp?.on) {
-        temp.on('attr.measuredValue', (v) => this.setCapabilityValue('measure_temperature', v / 100).catch(() => { }));
+        temp.on('attr.measuredValue', (v) => this.setCapabilityValue('measure_temperature', parseFloat(v) / 100).catch(() => { }));
       }
       const hum = ep1.clusters?.msRelativeHumidity;
       if (hum?.on) {
-        hum.on('attr.measuredValue', (v) => this.setCapabilityValue('measure_humidity', v / 100).catch(() => { }));
+        hum.on('attr.measuredValue', (v) => this.setCapabilityValue('measure_humidity', parseFloat(v) / 100).catch(() => { }));
       }
     } catch (e) { /* ignore */ }
   }

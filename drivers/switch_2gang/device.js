@@ -88,7 +88,7 @@ class Switch2GangDevice extends VirtualButtonMixin(HybridSwitchBase) {
           const watts = value / 10; // Typically in 0.1W units
           this.log(`[ZCL-DATA] switch.power raw=${value} → ${watts}W`);
           if (this.hasCapability('measure_power')) {
-            this.setCapabilityValue('measure_power', watts).catch(() => { });
+            this.setCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
           }
         });
 
@@ -97,7 +97,7 @@ class Switch2GangDevice extends VirtualButtonMixin(HybridSwitchBase) {
           const volts = value / 10; // Typically in 0.1V units
           this.log(`[ZCL-DATA] switch.voltage raw=${value} → ${volts}V`);
           if (this.hasCapability('measure_voltage')) {
-            this.setCapabilityValue('measure_voltage', volts).catch(() => { });
+            this.setCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
           }
         });
 
@@ -106,7 +106,7 @@ class Switch2GangDevice extends VirtualButtonMixin(HybridSwitchBase) {
           const amps = value / 1000; // Typically in mA
           this.log(`[ZCL-DATA] switch.current raw=${value} → ${amps}A`);
           if (this.hasCapability('measure_current')) {
-            this.setCapabilityValue('measure_current', amps).catch(() => { });
+            this.setCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
           }
         });
       }
@@ -135,7 +135,7 @@ class Switch2GangDevice extends VirtualButtonMixin(HybridSwitchBase) {
           const kwh = value / 1000; // Typically in Wh
           this.log(`[ZCL-DATA] switch.energy raw=${value} → ${kwh}kWh`);
           if (this.hasCapability('meter_power')) {
-            this.setCapabilityValue('meter_power', kwh).catch(() => { });
+            this.setCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
           }
         });
       }
@@ -230,13 +230,13 @@ class Switch2GangDevice extends VirtualButtonMixin(HybridSwitchBase) {
       ]).catch(() => ({}));
 
       if (attrs.activePower != null && this.hasCapability('measure_power')) {
-        this.setCapabilityValue('measure_power', attrs.activePower / 10).catch(() => { });
+        this.setCapabilityValue('measure_power', parseFloat(attrs.activePower) / 10).catch(() => { });
       }
       if (attrs.rmsVoltage != null && this.hasCapability('measure_voltage')) {
-        this.setCapabilityValue('measure_voltage', attrs.rmsVoltage / 10).catch(() => { });
+        this.setCapabilityValue('measure_voltage', parseFloat(attrs.rmsVoltage) / 10).catch(() => { });
       }
       if (attrs.rmsCurrent != null && this.hasCapability('measure_current')) {
-        this.setCapabilityValue('measure_current', attrs.rmsCurrent / 1000).catch(() => { });
+        this.setCapabilityValue('measure_current', parseFloat(attrs.rmsCurrent) / 1000).catch(() => { });
       }
       this.log('[SWITCH-2G] Initial electrical values read');
     } catch (e) {
