@@ -1468,6 +1468,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           const occupied = (v & 0x01) !== 0;
           this.log(`[RADAR-BATTERY] Occupancy: ${occupied}`);
           this.setCapabilityValue('alarm_motion', occupied).catch(() => { });
+          this._triggerPresenceFlows(occupied);
         });
         this.log('[RADAR] ✅ Passive occupancy listener configured');
       }
@@ -1909,6 +1910,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         occCluster.on('attr.occupancy', (v) => {
           const occupied = (v & 0x01) !== 0;
           this.setCapabilityValue('alarm_motion', occupied).catch(() => { });
+          this._triggerPresenceFlows(occupied);
         });
         this.log('[RADAR] ✅ Occupancy cluster configured');
       }
@@ -1974,6 +1976,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           const motion = alarm1 || alarm2;
           this.log(`[RADAR] IAS Zone status: ${status} -> motion: ${motion}`);
           this.setCapabilityValue('alarm_motion', motion).catch(() => { });
+          this._triggerPresenceFlows(motion);
         });
 
         iasZone.onZoneStatusChangeNotification = (payload) => {
@@ -1981,6 +1984,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           const motion = (status & 0x03) !== 0;
           this.log(`[RADAR] IAS Zone notification: ${status} -> motion: ${motion}`);
           this.setCapabilityValue('alarm_motion', motion).catch(() => { });
+          this._triggerPresenceFlows(motion);
         };
 
         this.log('[RADAR] ✅ IAS Zone listeners configured');
