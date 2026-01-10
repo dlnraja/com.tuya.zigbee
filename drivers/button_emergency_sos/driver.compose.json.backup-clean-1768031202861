@@ -1,201 +1,122 @@
 {
   "name": {
-    "en": "4-Buttons Wireless Controller",
-    "fr": "4-Boutons Contrôleur Sans Fil",
-    "nl": "4-Knoppen Draadloze Controller",
-    "de": "4-Tasten Drahtlos-Controller",
-    "it": "4-Pulsanti Controller Wireless",
-    "sv": "4-Knappar Trådlös Kontroller",
-    "no": "4-Knapper Trådløs Kontroller",
-    "es": "4-Botones Controlador Inalámbrico",
-    "da": "4-Knapper Trådløs Controller"
+    "en": "Sos Emergency Button",
+    "fr": "Sos Emergency Button"
   },
-  "class": "button",
+  "class": "sensor",
   "capabilities": [
-    "button.1",
-    "button.2",
-    "button.3",
-    "button.4",
+    "alarm_generic",
     "measure_battery"
   ],
   "capabilitiesOptions": {
-    "button.1": {
+    "alarm_generic": {
       "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1",
-        "nl": "Knop 1",
-        "de": "Taste 1"
-      }
-    },
-    "button.2": {
-      "title": {
-        "en": "Button 2",
-        "fr": "Bouton 2",
-        "nl": "Knop 2",
-        "de": "Taste 2"
-      }
-    },
-    "button.3": {
-      "title": {
-        "en": "Button 3",
-        "fr": "Bouton 3",
-        "nl": "Knop 3",
-        "de": "Taste 3"
-      }
-    },
-    "button.4": {
-      "title": {
-        "en": "Button 4",
-        "fr": "Bouton 4",
-        "nl": "Knop 4",
-        "de": "Taste 4"
-      }
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
+        "en": "SOS Alert",
+        "fr": "Alerte SOS"
+      },
+      "insightsTitleTrue": {
+        "en": "SOS pressed",
+        "fr": "SOS appuyé"
+      },
+      "insightsTitleFalse": {
+        "en": "SOS reset",
+        "fr": "SOS réinitialisé"
       }
     }
   },
   "energy": {
     "batteries": [
       "CR2032",
-      "CR2450",
-      "AAA"
-    ],
-    "approximation": {
-      "usageConstant": 0.5
-    }
+      "CR2450"
+    ]
   },
   "zigbee": {
     "manufacturerName": [
-      "_TYZB01_qm6djpta",
-      "_TZ3000_11PG3IMA",
-      "_TZ3000_5TQXPINE",
-      "_TZ3000_A4XYCPRS",
-      "_TZ3000_ABCI1HIU",
-      "_TZ3000_B3MGFU0D",
-      "_TZ3000_BGTZM4NY",
-      "_TZ3000_CZUYT8LZ",
-      "_TZ3000_DZIAICT4",
-      "_TZ3000_EE8NRT2L",
-      "_TZ3000_ET7AFZXZ",
-      "_TZ3000_J61X9RXN",
-      "_TZ3000_KFU8ZAPD",
-      "_TZ3000_MH9PX7CQ",
-      "_TZ3000_NUOMBROO",
-      "_TZ3000_PCQJMCUD",
-      "_TZ3000_U3NV1JWK",
-      "_TZ3000_UAA99ARV",
-      "_TZ3000_UFHTXR59",
-      "_TZ3000_VP6CLF9D",
-      "_TZ3000_W4THIANR",
-      "_TZ3000_WKAI4GA5",
-      "_TZ3000_XABCKQ1V",
-      "_TZ3000_ZGYZGDUA",
-      "_TZ3040_FWXUZCF4",
-      "_TZ3290_785FBXIK",
-      "_TZ3290_IXD9MVV4",
-      "_TZ3290_NKPXAPOZ",
-      "_TZ3290_YYAX9AJF"
+      "_TZ3000_0DUMFK2Z",
+      "_TZ3000_EL5KT5IM",
+      "_TZ3000_EO3DTTWE",
+      "_TZ3000_FSIEPNRH",
+      "_TZ3000_IYSTCADI",
+      "_TZ3000_8XZ0PYQY",
+      "_TZ3000_ZPJUQNCO",
+      "_TZ3000_QJHWTNKF",
+      "_TZ3000_GRATY6SJ",
+      "_TZ3000_IMKWGFWH",
+      "_TZE200_0BLE7OW3",
+      "_TZ3000_SSP0MAQM",
+      "_TYZB01_trqoesc6",
+      "_TZ3000_IS27VZCO",
+      "_TZ3000_GNWGNWVQ",
+      "_TZ3000_FYWHZH9U",
+      "_TZ3000_RMHKDZ0L",
+      "_TZ3000_N0H1DR7U",
+      "_tyzb01_trqoesc6"
     ],
     "productId": [
-      "TS0044",
-      "TS0601"
+      "TS0218"
     ],
-    "learnmode": {
-      "image": "/drivers/button_wireless_4/assets/learnmode.svg",
-      "instruction": {
-        "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
-      }
-    },
     "endpoints": {
       "1": {
         "clusters": [
           0,
           1,
           3,
-          4,
-          5,
           6,
-          8,
-          18,
-          1280
+          1280,
+          1281,
+          61184
         ],
         "bindings": [
           1,
-          3,
-          5,
-          6,
-          8
+          1280,
+          1281
         ]
-      },
-      "2": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          18
-        ],
-        "bindings": [
-          5,
-          6
-        ]
-      },
-      "3": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          18
-        ],
-        "bindings": [
-          5,
-          6
-        ]
-      },
-      "4": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          18
-        ],
-        "bindings": [
-          5,
-          6
-        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/button_emergency_sos/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     }
   },
-  "images": {
-    "small": "drivers/button_wireless_4/assets/images/small.png",
-    "large": "drivers/button_wireless_4/assets/images/large.png"
-  },
-  "platforms": [
-    "local"
-  ],
-  "connectivity": [
-    "zigbee"
-  ],
   "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "🔧 Maintenance",
+        "fr": "🔧 Maintenance"
+      },
+      "children": [
+        {
+          "id": "refresh_battery",
+          "type": "checkbox",
+          "label": {
+            "en": "Force Battery Read (toggle to trigger)",
+            "fr": "Forcer Lecture Batterie (basculer pour déclencher)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Toggle this setting to force a battery reading. The device must be awake (press SOS button first).",
+            "fr": "Basculer ce paramètre pour forcer une lecture de batterie. L'appareil doit être éveillé (appuyez d'abord sur le bouton SOS)."
+          }
+        },
+        {
+          "id": "re_enroll",
+          "type": "checkbox",
+          "label": {
+            "en": "Re-enroll IAS Zone (toggle to trigger)",
+            "fr": "Ré-inscrire IAS Zone (basculer pour déclencher)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Toggle this setting to re-enroll the device. Press SOS button first to wake device.",
+            "fr": "Basculer ce paramètre pour ré-inscrire l'appareil. Appuyez d'abord sur le bouton SOS pour réveiller l'appareil."
+          }
+        }
+      ]
+    },
     {
       "id": "power_source",
       "type": "dropdown",
@@ -426,7 +347,7 @@
         "en": "Tuya Datapoint Configuration",
         "fr": "Configuration Tuya Datapoint"
       },
-      "value": "{\n  \"1\": \"button_1_action\",\n  \"2\": \"button_2_action\",\n  \"3\": \"button_3_action\",\n  \"4\": \"button_4_action\",\n  \"101\": \"battery_percentage\"\n}"
+      "value": "DP1/DP14: SOS (bool)\nDP4/DP15: Battery %\nDP101: Context (bool=SOS, num=battery)"
     },
     {
       "id": "dp_debug_mode",
@@ -455,7 +376,78 @@
       }
     }
   ],
-  "id": "button_wireless_4",
+  "flow": {
+    "triggers": [
+      {
+        "id": "sos_button_pressed",
+        "title": {
+          "en": "SOS button pressed",
+          "fr": "Bouton SOS appuyé",
+          "nl": "SOS knop ingedrukt",
+          "de": "SOS-Taste gedrückt"
+        }
+      },
+      {
+        "id": "sos_button_released",
+        "title": {
+          "en": "SOS button released",
+          "fr": "Bouton SOS relâché"
+        }
+      },
+      {
+        "id": "sos_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "fr": "Batterie faible"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)"
+            },
+            "example": 15
+          }
+        ]
+      },
+      {
+        "id": "sos_tamper_alarm",
+        "title": {
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme sabotage déclenchée"
+        }
+      },
+      {
+        "id": "button_emergency_sos_pressed",
+        "title": {
+          "en": "Button Emergency Sos Pressed",
+          "fr": "Button Emergency Sos Pressed"
+        }
+      }
+    ],
+    "conditions": [
+      {
+        "id": "sos_is_active",
+        "title": {
+          "en": "SOS !{{is|isn't}} active",
+          "fr": "SOS !{{est|n'est pas}} actif"
+        }
+      }
+    ]
+  },
+  "images": {
+    "small": "drivers/button_emergency_sos/assets/images/small.png",
+    "large": "drivers/button_emergency_sos/assets/images/large.png",
+    "xlarge": "drivers/button_emergency_sos/assets/images/xlarge.png"
+  },
+  "id": "button_emergency_sos",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "pair": [
     {
       "id": "list_devices",
@@ -474,75 +466,5 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ],
-  "flow": {
-    "triggers": [
-      {
-        "id": "key_held",
-        "title": {
-          "en": "Key held down",
-          "nl": "Toets ingedrukt gehouden",
-          "fr": "Touche maintenue"
-        },
-        "hint": {
-          "en": "Triggered when a button is held down (for continuous dimming)",
-          "nl": "Geactiveerd wanneer een knop ingedrukt wordt gehouden"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "number",
-            "title": {
-              "en": "Button number"
-            },
-            "example": 1
-          }
-        ]
-      },
-      {
-        "id": "key_released",
-        "title": {
-          "en": "Key released",
-          "nl": "Toets losgelaten",
-          "fr": "Touche relâchée"
-        },
-        "hint": {
-          "en": "Triggered when a held button is released",
-          "nl": "Geactiveerd wanneer een ingedrukte knop wordt losgelaten"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "number",
-            "title": {
-              "en": "Button number"
-            },
-            "example": 1
-          }
-        ]
-      },
-      {
-        "id": "battery_low",
-        "title": {
-          "en": "Battery low",
-          "nl": "Batterij bijna leeg",
-          "fr": "Batterie faible"
-        },
-        "hint": {
-          "en": "Triggered when battery level drops below threshold",
-          "nl": "Geactiveerd wanneer batterijniveau onder drempel zakt"
-        },
-        "tokens": [
-          {
-            "name": "level",
-            "type": "number",
-            "title": {
-              "en": "Battery level (%)"
-            },
-            "example": 15
-          }
-        ]
-      }
-    ]
-  }
+  ]
 }
