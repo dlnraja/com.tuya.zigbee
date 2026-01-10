@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.439** | 🔧 LCD TIME SYNC: Improved error message when Tuya cluster unavailable - inst... |
 | **v5.5.438** | ⚡ SPEED FIX: _TZE204_gkfbdvyx radar sensor now responds faster. Reduced debou... |
 | **v5.5.437** | 🔧 DIAGNOSTIC FIX: Climate sensor LCD time sync fixed (_getTuyaManager error)... |
 | **v5.5.436** | 🎮 FORUM #890: Added TS004F 4-button scene switch support. Added 8 new manufa... |
@@ -78,7 +79,6 @@
 | **v5.5.432** | 🔍 DEEP 100-COMMIT SCAN: Found and restored 1 orphan manufacturerName (_TZ300... |
 | **v5.5.431** | 🔧 Z2M RESEARCH: Added firmware bug compensation for TS0201 humidity sensors ... |
 | **v5.5.430** | 🔘 FORUM #879 FIX: Fixed button random triggers and 'stays true' issue. Added... |
-| **v5.5.429** | 🔄 MASSIVE RESTORATION: Added 2094 orphaned manufacturerNames back to drivers... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
