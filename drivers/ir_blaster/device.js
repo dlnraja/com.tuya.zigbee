@@ -899,12 +899,177 @@ class IrBlasterDevice extends ZigBeeDevice {
       this._handleTransmitComplete(data);
     });
 
-    // v5.5.361: Handle additional events from Z2M protocol
-    cluster.on('doneReceiving', (data) => {
-      this.log('IR code receive completed:', data);
-      // Read the learned code after receiving
-      this.readLastLearnedCode().catch(this.error);
+    // v5.5.362: FORUM FIX - Handle IR code reception during learning
+    // When device receives IR signal, it sends doneReceiving with total length
+    // We must then request chunks to get the full code
+    cluster.on('doneReceiving', async (data) => {
+      this.log('📥 IR code receive completed:', data);
+      const { sequenceNumber, totalLength } = data;
+
+      if (totalLength > 0) {
+        // Start requesting chunks to get the learned IR code
+        await this._requestLearnedCodeChunks(cluster, sequenceNumber, totalLength);
+      } else {
+        // Fallback: try reading attribute
+        this.readLastLearnedCode().catch(this.error);
+      }
     });
+
+    // v5.5.362: Handle incoming code data (device sending learned code chunks)
+    cluster.on('codeDataResponse', async (data) => {
+      this.log('📥 IR code chunk received:', data);
+      await this._handleReceivedCodeChunk(data);
+    });
+
+    // v5.5.362: Handle startTransmit from device (learning mode)
+    cluster.on('startTransmit', async (data) => {
+      this.log('📥 IR code transmission starting from device:', data);
+      const { sequenceNumber, totalLength } = data;
+
+      // Initialize receive buffer for this sequence
+      this._receiveBuffers[sequenceNumber] = {
+        totalLength,
+        receivedLength: 0,
+        chunks: [],
+        startTime: Date.now()
+      };
+
+      // Send ACK to device
+      try {
+        await cluster.startTransmitAck({
+          sequenceNumber,
+          status: 0 // OK
+        });
+        this.log('✅ Sent startTransmitAck');
+      } catch (err) {
+        this.log('⚠️ Failed to send startTransmitAck:', err.message);
+      }
+    });
+  }
+
+  /**
+   * v5.5.362: FORUM FIX - Request learned code chunks from device
+   * Based on Zigbee2MQTT zosung protocol implementation
+   */
+  async _requestLearnedCodeChunks(cluster, sequenceNumber, totalLength) {
+    this.log(`📥 Requesting ${totalLength} bytes of IR code data, seq=${sequenceNumber}`);
+
+    // Initialize receive buffer
+    this._receiveBuffers[sequenceNumber] = {
+      totalLength,
+      receivedLength: 0,
+      chunks: [],
+      startTime: Date.now()
+    };
+
+    const CHUNK_SIZE = 0x32; // 50 bytes per chunk (standard Zosung protocol)
+    let position = 0;
+
+    try {
+      while (position < totalLength) {
+        const remainingLength = totalLength - position;
+        const requestLength = Math.min(CHUNK_SIZE, remainingLength);
+
+        this.log(`📤 Requesting chunk: pos=${position}, len=${requestLength}`);
+
+        await cluster.codeDataRequest({
+          sequenceNumber,
+          position,
+          maxLength: requestLength
+        });
+
+        // Wait for response (handled by codeDataResponse listener)
+        await new Promise(resolve => this.homey.setTimeout(resolve, 100));
+
+        // Check if we received the chunk
+        const buffer = this._receiveBuffers[sequenceNumber];
+        if (buffer && buffer.receivedLength > position) {
+          position = buffer.receivedLength;
+        } else {
+          // Timeout waiting for chunk, move to next position anyway
+          position += requestLength;
+        }
+
+        // Safety timeout
+        if (Date.now() - buffer.startTime > 10000) {
+          this.log('⚠️ Timeout requesting IR code chunks');
+          break;
+        }
+      }
+
+      // Assemble final code
+      await this._assembleReceivedCode(sequenceNumber);
+
+    } catch (err) {
+      this.error('Failed to request IR code chunks:', err);
+    }
+  }
+
+  /**
+   * v5.5.362: Handle received code chunk during learning
+   */
+  async _handleReceivedCodeChunk(data) {
+    const { sequenceNumber, position, data: chunkData } = data;
+
+    const buffer = this._receiveBuffers[sequenceNumber];
+    if (!buffer) {
+      this.log(`⚠️ Unexpected chunk for seq=${sequenceNumber}, no buffer`);
+      return;
+    }
+
+    // Store chunk
+    buffer.chunks.push({ position, data: chunkData });
+    buffer.receivedLength = Math.max(buffer.receivedLength, position + chunkData.length);
+
+    this.log(`📥 Chunk stored: pos=${position}, len=${chunkData.length}, total=${buffer.receivedLength}/${buffer.totalLength}`);
+
+    // Check if complete
+    if (buffer.receivedLength >= buffer.totalLength) {
+      await this._assembleReceivedCode(sequenceNumber);
+    }
+  }
+
+  /**
+   * v5.5.362: Assemble received chunks into complete IR code
+   */
+  async _assembleReceivedCode(sequenceNumber) {
+    const buffer = this._receiveBuffers[sequenceNumber];
+    if (!buffer || buffer.chunks.length === 0) {
+      this.log('⚠️ No chunks to assemble');
+      return;
+    }
+
+    try {
+      // Sort chunks by position
+      buffer.chunks.sort((a, b) => a.position - b.position);
+
+      // Concatenate all chunk data
+      const totalBuffer = Buffer.alloc(buffer.totalLength);
+      for (const chunk of buffer.chunks) {
+        chunk.data.copy(totalBuffer, chunk.position);
+      }
+
+      // Convert to base64 string (standard IR code format)
+      const irCode = totalBuffer.toString('base64');
+
+      this.log(`✅ Assembled IR code: ${irCode.length} chars (${buffer.totalLength} bytes)`);
+      this.log(`📝 IR Code preview: ${irCode.substring(0, 100)}...`);
+
+      // Store and display the learned code
+      this._handleLearnedCode(irCode);
+
+      // Update capability immediately
+      if (this.hasCapability('ir_code_received')) {
+        await this.setCapabilityValue('ir_code_received', irCode).catch(() => { });
+        this.log('✅ Updated ir_code_received capability');
+      }
+
+      // Cleanup
+      delete this._receiveBuffers[sequenceNumber];
+
+    } catch (err) {
+      this.error('Failed to assemble IR code:', err);
+    }
   }
 
   // Handle Tuya IR datapoint
