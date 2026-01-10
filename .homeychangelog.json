@@ -1,4 +1,10 @@
 {
+  "5.5.434": {
+    "en": "🔥 FORUM FIXES: Jolink smoke detector PG-S11Z pairing fix (added IAS Zone cluster 1280 + bindings). Added _TZE200_5d3vhjro, _TZE200_m9skfctm smoke fingerprints. Rolp switch+temp & soil sensor verified.",
+    "fr": "🔥 CORRECTIONS FORUM: Correction appairage détecteur fumée PG-S11Z (cluster IAS Zone 1280). Ajout empreintes fumée _TZE200_5d3vhjro, _TZE200_m9skfctm.",
+    "nl": "🔥 FORUM FIXES: Jolink rookmelder PG-S11Z pairing fix (IAS Zone cluster 1280 toegevoegd). Rookmelder fingerprints toegevoegd.",
+    "de": "🔥 FORUM-FIXES: Jolink Rauchmelder PG-S11Z Pairing-Fix (IAS Zone Cluster 1280 hinzugefügt). Rauchmelder-Fingerprints hinzugefügt."
+  },
   "5.5.433": {
     "en": "📱 FORUM #884: Added 15+ new 2-gang touch dimmer fingerprints (Moes, Girier, Lonsonho, Avatto). Research from Z2M, Hubitat, SmartHomeScene. Supports TS0601, TS110E, TS110F dimmers.",
     "fr": "📱 FORUM #884: Ajouté 15+ empreintes de variateurs tactiles 2 voies (Moes, Girier, Lonsonho, Avatto). Recherche Z2M, Hubitat, SmartHomeScene.",
