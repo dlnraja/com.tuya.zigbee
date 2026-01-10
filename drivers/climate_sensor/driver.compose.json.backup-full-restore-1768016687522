@@ -1,0 +1,540 @@
+{
+  "name": {
+    "en": "Climate Sensor",
+    "fr": "Capteur Climatique"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "CR2032",
+      "CR2450"
+    ]
+  },
+  "$comment": "CRITICAL: Sensors do NOT have sub-devices - this prevents phantom device creation",
+  "subDevices": [],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ1800_ladpngdx",
+      "_TZ2000_a476raq2",
+      "_TZ2000_xogb73am",
+      "_TZ3000_0ausfos0\r",
+      "_TZ3000_0dumfk2z\r",
+      "_TZ3000_0ghwhypc",
+      "_TZ3000_0ghwhypc\r",
+      "_TZ3000_0hkmcrza",
+      "_TYZB01_1xktopx6",
+      "_TYZB01_4mdqxxnn",
+      "_TYZB01_4qw4rl1u",
+      "_TYZB01_5nr7ncpl",
+      "_TYZB01_7yidyqxd",
+      "_TYZB01_821siati",
+      "_TYZB01_aneiicmq",
+      "_TYZB01_hlla45kx",
+      "_TYZB01_ijihzffk",
+      "_TYZB01_m6ec2pgj",
+      "_TYZB01_mtunwanm",
+      "_TYZB01_ncutbjdi",
+      "_TYZB01_rifa0wlb",
+      "_TYZB01_sbpc1zrb",
+      "_TYZB01_ttvdudvx",
+      "_TYZB01_u9kkqh5o",
+      "_TYZB01_uqkphoed",
+      "_TYZB01_yr95mpib",
+      "_TYZB01_z2umiwvq",
+      "_TYZB01_zqvwka4k",
+      "_TZ3000_0s1izerx",
+      "_TZ3000_0zrccfgx"
+    ],
+    "productId": [
+      "TS0201",
+      "TS0222",
+      "TS0225",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1026,
+          1029
+        ],
+        "bindings": [
+          1026,
+          1029,
+          1
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "🌡️ Calibration (v5.5.28)",
+        "fr": "🌡️ Calibration (v5.5.28)"
+      },
+      "children": [
+        {
+          "id": "temperature_calibration",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)",
+            "fr": "Décalage Température (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1,
+          "hint": {
+            "en": "Add or subtract from temperature reading. Use positive value if sensor reads too low.",
+            "fr": "Ajouter ou soustraire de la température lue. Valeur positive si capteur lit trop bas."
+          }
+        },
+        {
+          "id": "humidity_calibration",
+          "type": "number",
+          "label": {
+            "en": "Humidity Offset (%)",
+            "fr": "Décalage Humidité (%)"
+          },
+          "value": 0,
+          "min": -20,
+          "max": 20,
+          "step": 1,
+          "hint": {
+            "en": "Add or subtract from humidity reading. Use positive value if sensor reads too low.",
+            "fr": "Ajouter ou soustraire de l'humidité lue. Valeur positive si capteur lit trop bas."
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "🕒 Time Sync (v5.5.384)",
+        "fr": "🕒 Sync Heure (v5.5.384)",
+        "nl": "🕒 Tijdsync (v5.5.384)",
+        "de": "🕒 Zeitsync (v5.5.384)"
+      },
+      "children": [
+        {
+          "id": "time_sync_format",
+          "type": "dropdown",
+          "label": {
+            "en": "Time Format",
+            "fr": "Format Heure",
+            "nl": "Tijdformaat",
+            "de": "Zeitformat"
+          },
+          "value": "auto",
+          "hint": {
+            "en": "Select time sync format. Auto works for most devices. Change only if clock shows wrong time.",
+            "fr": "Format de synchronisation. Auto fonctionne pour la plupart. Changer si l'heure affichée est incorrecte.",
+            "nl": "Selecteer tijdsync formaat. Auto werkt voor de meeste apparaten.",
+            "de": "Zeitsync-Format wählen. Auto funktioniert für die meisten Geräte."
+          },
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "🔄 Auto-detect (recommended)",
+                "fr": "🔄 Auto-détection (recommandé)"
+              }
+            },
+            {
+              "id": "tuya_timestamp",
+              "label": {
+                "en": "📺 LCD Sensor (8-byte epoch 2000)",
+                "fr": "📺 Capteur LCD (8 octets epoch 2000)"
+              }
+            },
+            {
+              "id": "tuya_ts_unix",
+              "label": {
+                "en": "📺 LCD Sensor Unix (8-byte epoch 1970)",
+                "fr": "📺 Capteur LCD Unix (8 octets epoch 1970)"
+              }
+            },
+            {
+              "id": "tuya_standard",
+              "label": {
+                "en": "📅 Tuya Standard (7-byte local)",
+                "fr": "📅 Tuya Standard (7 octets local)"
+              }
+            },
+            {
+              "id": "tuya_utc_string",
+              "label": {
+                "en": "📅 Tuya UTC (7-byte UTC)",
+                "fr": "📅 Tuya UTC (7 octets UTC)"
+              }
+            },
+            {
+              "id": "tuya_mcu",
+              "label": {
+                "en": "🔧 Tuya MCU (9-byte with header)",
+                "fr": "🔧 Tuya MCU (9 octets avec header)"
+              }
+            },
+            {
+              "id": "tuya_extended",
+              "label": {
+                "en": "🌍 Tuya Extended (9-byte + timezone)",
+                "fr": "🌍 Tuya Étendu (9 octets + fuseau)"
+              }
+            },
+            {
+              "id": "tuya_full_tz",
+              "label": {
+                "en": "🌍 Tuya Full TZ (10-byte + DST)",
+                "fr": "🌍 Tuya Full TZ (10 octets + DST)"
+              }
+            },
+            {
+              "id": "zigbee_2000",
+              "label": {
+                "en": "⏱️ Zigbee 2000 (4-byte epoch 2000)",
+                "fr": "⏱️ Zigbee 2000 (4 octets epoch 2000)"
+              }
+            },
+            {
+              "id": "unix_1970",
+              "label": {
+                "en": "⏱️ Unix 1970 (4-byte epoch 1970)",
+                "fr": "⏱️ Unix 1970 (4 octets epoch 1970)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "time_sync_timezone",
+          "type": "dropdown",
+          "label": {
+            "en": "Timezone Override",
+            "fr": "Forcer Fuseau Horaire",
+            "nl": "Tijdzone Override",
+            "de": "Zeitzone Override"
+          },
+          "value": "auto",
+          "hint": {
+            "en": "Override timezone. Use Auto to use Homey's timezone. Manual override for devices that don't handle DST.",
+            "fr": "Forcer le fuseau. Auto utilise celui de Homey. Manuel pour appareils sans gestion heure d'été.",
+            "nl": "Overschrijf tijdzone. Auto gebruikt Homey's tijdzone.",
+            "de": "Zeitzone überschreiben. Auto verwendet Homey's Zeitzone."
+          },
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "🔄 Auto (Homey timezone)",
+                "fr": "🔄 Auto (fuseau Homey)"
+              }
+            },
+            {
+              "id": "utc",
+              "label": {
+                "en": "🌐 UTC (GMT+0)",
+                "fr": "🌐 UTC (GMT+0)"
+              }
+            },
+            {
+              "id": "gmt+1",
+              "label": {
+                "en": "🇪🇺 GMT+1 (CET)",
+                "fr": "🇪🇺 GMT+1 (Paris hiver)"
+              }
+            },
+            {
+              "id": "gmt+2",
+              "label": {
+                "en": "🇪🇺 GMT+2 (CEST/EET)",
+                "fr": "🇪🇺 GMT+2 (Paris été)"
+              }
+            },
+            {
+              "id": "gmt+3",
+              "label": {
+                "en": "🇷🇺 GMT+3 (Moscow)",
+                "fr": "🇷🇺 GMT+3 (Moscou)"
+              }
+            },
+            {
+              "id": "gmt-5",
+              "label": {
+                "en": "🇺🇸 GMT-5 (EST)",
+                "fr": "🇺🇸 GMT-5 (New York)"
+              }
+            },
+            {
+              "id": "gmt-8",
+              "label": {
+                "en": "🇺🇸 GMT-8 (PST)",
+                "fr": "🇺🇸 GMT-8 (Los Angeles)"
+              }
+            },
+            {
+              "id": "gmt+8",
+              "label": {
+                "en": "🇨🇳 GMT+8 (China)",
+                "fr": "🇨🇳 GMT+8 (Chine)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "🧪 Debug (Expert)",
+        "fr": "🧪 Debug (Expert)"
+      },
+      "children": [
+        {
+          "id": "zigbee_time_debug",
+          "type": "checkbox",
+          "label": {
+            "en": "ZCL Time Cluster Debug Mode",
+            "fr": "Mode Debug ZCL Time Cluster"
+          },
+          "value": false,
+          "hint": {
+            "en": "⚠️ EXPERT ONLY: Test all ZCL Time sync methods on device startup. May drain battery if used frequently.",
+            "fr": "⚠️ EXPERT UNIQUEMENT: Teste toutes les méthodes sync ZCL Time au démarrage. Peut vider la batterie si utilisé fréquemment."
+          }
+        }
+      ]
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "climate_temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée",
+          "nl": "Temperatuur gewijzigd",
+          "de": "Temperatur geändert"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)"
+            },
+            "example": 21.5
+          }
+        ]
+      },
+      {
+        "id": "climate_humidity_changed",
+        "title": {
+          "en": "Humidity changed",
+          "fr": "Humidité changée",
+          "nl": "Luchtvochtigheid gewijzigd",
+          "de": "Luftfeuchtigkeit geändert"
+        },
+        "tokens": [
+          {
+            "name": "humidity",
+            "type": "number",
+            "title": {
+              "en": "Humidity (%)",
+              "fr": "Humidité (%)"
+            },
+            "example": 55
+          }
+        ]
+      },
+      {
+        "id": "climate_temperature_above",
+        "title": {
+          "en": "Temperature rises above",
+          "fr": "Température dépasse",
+          "nl": "Temperatuur stijgt boven",
+          "de": "Temperatur steigt über"
+        },
+        "titleFormatted": {
+          "en": "Temperature rises above [[threshold]] °C",
+          "fr": "Température dépasse [[threshold]] °C"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": -20,
+            "max": 60,
+            "step": 0.5,
+            "placeholder": {
+              "en": "25"
+            }
+          }
+        ]
+      },
+      {
+        "id": "climate_temperature_below",
+        "title": {
+          "en": "Temperature drops below",
+          "fr": "Température tombe sous",
+          "nl": "Temperatuur daalt onder",
+          "de": "Temperatur fällt unter"
+        },
+        "titleFormatted": {
+          "en": "Temperature drops below [[threshold]] °C",
+          "fr": "Température tombe sous [[threshold]] °C"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": -20,
+            "max": 60,
+            "step": 0.5,
+            "placeholder": {
+              "en": "18"
+            }
+          }
+        ]
+      },
+      {
+        "id": "climate_humidity_above",
+        "title": {
+          "en": "Humidity rises above",
+          "fr": "Humidité dépasse",
+          "nl": "Luchtvochtigheid stijgt boven",
+          "de": "Luftfeuchtigkeit steigt über"
+        },
+        "titleFormatted": {
+          "en": "Humidity rises above [[threshold]] %",
+          "fr": "Humidité dépasse [[threshold]] %"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "placeholder": {
+              "en": "70"
+            }
+          }
+        ]
+      },
+      {
+        "id": "climate_humidity_below",
+        "title": {
+          "en": "Humidity drops below",
+          "fr": "Humidité tombe sous",
+          "nl": "Luchtvochtigheid daalt onder",
+          "de": "Luftfeuchtigkeit fällt unter"
+        },
+        "titleFormatted": {
+          "en": "Humidity drops below [[threshold]] %",
+          "fr": "Humidité tombe sous [[threshold]] %"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "placeholder": {
+              "en": "30"
+            }
+          }
+        ]
+      },
+      {
+        "id": "climate_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "fr": "Batterie faible",
+          "nl": "Batterij is laag",
+          "de": "Batterie ist schwach"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)",
+              "fr": "Batterie (%)"
+            },
+            "example": 15
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "climate_temperature_is",
+        "title": {
+          "en": "Temperature is !{{above|below}} threshold",
+          "fr": "Température est !{{au-dessus|en-dessous}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "Temperature is !{{above|below}} [[threshold]] °C",
+          "fr": "Température est !{{au-dessus|en-dessous de}} [[threshold]] °C"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": -20,
+            "max": 60,
+            "step": 0.5,
+            "placeholder": {
+              "en": "20"
+            }
+          }
+        ]
+      },
+      {
+        "id": "climate_humidity_is",
+        "title": {
+          "en": "Humidity is !{{above|below}} threshold",
+          "fr": "Humidité est !{{au-dessus|en-dessous}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "Humidity is !{{above|below}} [[threshold]] %",
+          "fr": "Humidité est !{{au-dessus|en-dessous de}} [[threshold]] %"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "placeholder": {
+              "en": "50"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "images": {
+    "small": "drivers/climate_sensor/assets/images/small.png",
+    "large": "drivers/climate_sensor/assets/images/large.png",
+    "xlarge": "drivers/climate_sensor/assets/images/xlarge.png"
+  },
+  "id": "climate_sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

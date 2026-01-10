@@ -1,0 +1,131 @@
+{
+  "name": {
+    "en": "USB Dongle Dual Repeater",
+    "fr": "Dongle USB Double Répéteur"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "onoff.usb2",
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "USB Port 1",
+        "fr": "Port USB 1"
+      }
+    },
+    "onoff.usb2": {
+      "title": {
+        "en": "USB Port 2",
+        "fr": "Port USB 2"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Power",
+        "fr": "Puissance"
+      }
+    },
+    "meter_power": {
+      "title": {
+        "en": "Energy",
+        "fr": "Énergie"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 5
+    },
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_h1ipgkwn",
+      "_tz3000_h1ipgkwn"
+    ],
+    "productId": [
+      "TS0002"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820
+        ],
+        "bindings": [
+          6,
+          1794,
+          2820
+        ]
+      },
+      "2": {
+        "clusters": [
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the button for 5 seconds until the LED flashes rapidly.",
+        "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power-on Behavior",
+        "fr": "Comportement au démarrage"
+      },
+      "value": "previous",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "fr": "Éteint"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "On",
+            "fr": "Allumé"
+          }
+        },
+        {
+          "id": "previous",
+          "label": {
+            "en": "Previous State",
+            "fr": "État précédent"
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "/drivers/usb_dongle_dual_repeater/assets/images/small.png",
+    "large": "/drivers/usb_dongle_dual_repeater/assets/images/large.png",
+    "xlarge": "/drivers/usb_dongle_dual_repeater/assets/images/xlarge.png"
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "name": {
+    "en": "Zigbee Air Quality / CO2 Sensor",
+    "fr": "Capteur qualité air / CO2 Zigbee"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_co2",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_generic",
+    "measure_battery"
+  ],
+  "subDevices": [],
+  "capabilitiesOptions": {
+    "measure_co2": {
+      "title": {
+        "en": "CO2 Level",
+        "fr": "Niveau CO2"
+      },
+      "units": "ppm"
+    },
+    "alarm_generic": {
+      "title": {
+        "en": "CO2 Alert",
+        "fr": "Alerte CO2"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 1,
+      "usageOff": 0.5
+    },
+    "batteries": [
+      "AAA",
+      "OTHER"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_ywagc4rj",
+      "_TZE200_9cxuhakf",
+      "_TZE204_ywagc4rj",
+      "_TZE204_zl1kmjqx",
+      "_TZE204_a8sdabtg",
+      "_tze200_9cxuhakf",
+      "_tze200_ywagc4rj",
+      "_tze204_a8sdabtg",
+      "_tze204_ywagc4rj",
+      "_tze204_zl1kmjqx"
+    ],
+    "productId": [
+      "TS0201",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          61184,
+          1026,
+          1029,
+          1
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "co2_threshold",
+      "type": "number",
+      "label": {
+        "en": "CO2 Alert Threshold",
+        "fr": "Seuil alerte CO2"
+      },
+      "value": 1000,
+      "min": 400,
+      "max": 5000,
+      "units": "ppm"
+    },
+    {
+      "id": "temperature_unit",
+      "type": "dropdown",
+      "label": {
+        "en": "Temperature Unit",
+        "fr": "Unité température"
+      },
+      "value": "celsius",
+      "values": [
+        {
+          "id": "celsius",
+          "label": {
+            "en": "Celsius",
+            "fr": "Celsius"
+          }
+        },
+        {
+          "id": "fahrenheit",
+          "label": {
+            "en": "Fahrenheit",
+            "fr": "Fahrenheit"
+          }
+        }
+      ]
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "co2_level_changed",
+        "title": {
+          "en": "CO2 level changed",
+          "fr": "Niveau CO2 changé"
+        },
+        "tokens": [
+          {
+            "name": "co2",
+            "type": "number",
+            "title": {
+              "en": "CO2 (ppm)"
+            },
+            "example": 800
+          }
+        ]
+      },
+      {
+        "id": "co2_level_above",
+        "title": {
+          "en": "CO2 rises above threshold",
+          "fr": "CO2 dépasse le seuil"
+        },
+        "titleFormatted": {
+          "en": "CO2 rises above [[threshold]] ppm"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 400,
+            "max": 5000,
+            "step": 100,
+            "placeholder": {
+              "en": "1000"
+            }
+          }
+        ]
+      },
+      {
+        "id": "co2_level_below",
+        "title": {
+          "en": "CO2 drops below threshold",
+          "fr": "CO2 tombe sous le seuil"
+        },
+        "titleFormatted": {
+          "en": "CO2 drops below [[threshold]] ppm"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 400,
+            "max": 5000,
+            "step": 100,
+            "placeholder": {
+              "en": "800"
+            }
+          }
+        ]
+      },
+      {
+        "id": "co2_alert_triggered",
+        "title": {
+          "en": "CO2 alert triggered",
+          "fr": "Alerte CO2 déclenchée"
+        }
+      }
+    ],
+    "conditions": [
+      {
+        "id": "co2_level_is",
+        "title": {
+          "en": "CO2 !{{above|below}} threshold",
+          "fr": "CO2 !{{au-dessus|en-dessous}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "CO2 !{{above|below}} [[threshold]] ppm"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 400,
+            "max": 5000,
+            "step": 100
+          }
+        ]
+      }
+    ]
+  },
+  "images": {
+    "small": "drivers/air_quality_co2/assets/images/small.png",
+    "large": "drivers/air_quality_co2/assets/images/large.png"
+  }
+}

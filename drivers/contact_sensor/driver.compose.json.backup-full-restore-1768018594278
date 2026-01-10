@@ -1,0 +1,547 @@
+{
+  "name": {
+    "en": "Contact Sensor",
+    "fr": "Capteur de Contact"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_contact",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR1632",
+      "AAA"
+    ],
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
+  "subDevices": [],
+  "zigbee": {
+    "manufacturerName": [
+      "_TYZB01_xph99wvr",
+      "_tyzb01_xph99wvr",
+      "_TZ1800_ejwkn2h2",
+      "_TZ3000_2dlwlvex",
+      "_tz3000_2dlwlvex",
+      "_TZ3000_2mbfxlzr",
+      "_tz3000_2mbfxlzr",
+      "_TZ3000_402jjyro",
+      "_tz3000_402jjyro",
+      "_TZ3000_4ugnzsli",
+      "_tz3000_4ugnzsli",
+      "_TZ3000_6jeesvrt",
+      "_tz3000_6jeesvrt",
+      "_TZ3000_7d8yme6f",
+      "_tz3000_7d8yme6f",
+      "_TZ3000_7tbsruql",
+      "_tz3000_7tbsruql",
+      "_TZ3000_8yhypbo7",
+      "_tz3000_8yhypbo7",
+      "_TZ3000_996rpfy6",
+      "_tz3000_996rpfy6",
+      "_TZ3000_9eeavbk5",
+      "_tz3000_9eeavbk5",
+      "_TZ3000_amdymr7l",
+      "_tz3000_amdymr7l",
+      "_TZ3000_au1rjicn",
+      "_tz3000_au1rjicn",
+      "_TZ3000_bmg14ax2",
+      "_tz3000_bmg14ax2",
+      "_TZ3000_br3laukf",
+      "_tz3000_br3laukf",
+      "_TZ3000_bwlvyjwk",
+      "_tz3000_bwlvyjwk",
+      "_TZ3000_bzxloft",
+      "_tz3000_bzxloft",
+      "_TZ3000_bzxloft2",
+      "_tz3000_bzxloft2",
+      "_TZ3000_bzxlofth",
+      "_tz3000_bzxlofth",
+      "_TZ3000_cea5xugq",
+      "_tz3000_cea5xugq",
+      "_TZ3000_cjfmu5he",
+      "_tz3000_cjfmu5he",
+      "_TZ3000_cjrngdr3",
+      "_tz3000_cjrngdr3",
+      "_TZ3000_decxrtwa",
+      "_tz3000_decxrtwa",
+      "_TZ3000_do6txrcw",
+      "_tz3000_do6txrcw",
+      "_TZ3000_eafaa66e",
+      "_tz3000_eafaa66e",
+      "_TZ3000_ebar6ljy",
+      "_tz3000_ebar6ljy",
+      "_TZ3000_fa9mlvja",
+      "_tz3000_fa9mlvja",
+      "_TZ3000_gntwytxo",
+      "_tz3000_gntwytxo",
+      "_TZ3000_hgu1dlak",
+      "_tz3000_hgu1dlak",
+      "_TZ3000_j2w1dw29",
+      "_tz3000_j2w1dw29",
+      "_TZ3000_jqge2fjx",
+      "_tz3000_jqge2fjx",
+      "_TZ3000_keayt8ol",
+      "_tz3000_keayt8ol",
+      "_TZ3000_msl2rxjn",
+      "_tz3000_msl2rxjn",
+      "_TZ3000_n2egfsli",
+      "_tz3000_n2egfsli",
+      "_TZ3000_nbnmw9nc",
+      "_tz3000_nbnmw9nc",
+      "_TZ3000_o4mkahkc",
+      "_tz3000_o4mkahkc",
+      "_TZ3000_p8alo7qa",
+      "_tz3000_p8alo7qa",
+      "_TZ3000_pzui3skt",
+      "_tz3000_pzui3skt",
+      "_TZ3000_q50zhdsc",
+      "_tz3000_q50zhdsc",
+      "_TZ3000_qrldbmfn",
+      "_tz3000_qrldbmfn",
+      "_TZ3000_rcuyhwe3",
+      "_tz3000_rcuyhwe3",
+      "_TZ3000_rgchmad8",
+      "_tz3000_rgchmad8",
+      "_TZ3000_rid8lzvo",
+      "_tz3000_rid8lzvo",
+      "_TZ3000_rylaozuc",
+      "_tz3000_rylaozuc",
+      "_TZ3000_s8r1qoyq",
+      "_tz3000_s8r1qoyq",
+      "_TZ3000_taspddvq",
+      "_tz3000_taspddvq",
+      "_TZ3000_th6zqqy6",
+      "_tz3000_th6zqqy6",
+      "_TZ3000_timx9ivq",
+      "_tz3000_timx9ivq",
+      "_TZ3000_udyjylt7",
+      "_tz3000_udyjylt7",
+      "_TZ3000_uvti8nkd",
+      "_tz3000_uvti8nkd",
+      "_TZ3000_v7chgqso",
+      "_tz3000_v7chgqso",
+      "_TZ3000_wptayaqr",
+      "_tz3000_wptayaqr",
+      "_TZ3000_wut53hfm",
+      "_tz3000_wut53hfm",
+      "_TZ3000_wyhuocal",
+      "_tz3000_wyhuocal",
+      "_TZ3000_x8q36xwf",
+      "_tz3000_x8q36xwf",
+      "_TZ3000_xpq2nmkr",
+      "_tz3000_xpq2nmkr",
+      "_TZ3000_yfekcy3n",
+      "_tz3000_yfekcy3n",
+      "_TZ3000_yxqnffam",
+      "_tz3000_yxqnffam",
+      "_TZ3000_zgrffiwg",
+      "_tz3000_zgrffiwg",
+      "_TZ3000_zutizvyk",
+      "_tz3000_zutizvyk",
+      "_TZ3000_zutizvykTS0203",
+      "_tz3000_zutizvykTS0203",
+      "_TZ3210_0jxeoadc",
+      "_tz3210_0jxeoadc",
+      "_TZ3210_bfwvfyx1",
+      "_tz3210_bfwvfyx1",
+      "_TZ3210_umi6vbsz",
+      "_tz3210_umi6vbsz",
+      "_TZ3210_zbabx9wh",
+      "_tz3210_zbabx9wh",
+      "_TZ3210_zmppwawa",
+      "_tz3210_zmppwawa",
+      "_TZB210_zmppwawa",
+      "_TZE204_jktmrpoj",
+      "_tze204_jktmrpoj",
+      "_TZE284_nklqjk62",
+      "_tze284_nklqjk62",
+      "5rta89nj",
+      "HOBEIAN",
+      "Immax",
+      "TS0301",
+      "TUYATEC-0l6xaqmi",
+      "TUYATEC-7qunn4gq",
+      "TUYATEC-abkehqus",
+      "TUYATEC-Bfq2i2Sy",
+      "TUYATEC-crr8qb0p",
+      "TUYATEC-g3gl6cgy",
+      "TUYATEC-ip9ganvw",
+      "TUYATEC-kbqf60nt",
+      "TUYATEC-r9hgssol",
+      "TUYATEC-rkqiqvcs",
+      "TUYATEC-sb6t7ett",
+      "TUYATEC-trhrga6p",
+      "Visonic",
+      "zbeacon"
+    ],
+    "productId": [
+      "TS0203",
+      "TS0210",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          1280,
+          61184
+        ],
+        "bindings": [
+          1,
+          6,
+          1280
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/contact_sensor/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "power_source",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "ac",
+          "label": {
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
+    },
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA",
+            "fr": "AAA"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA",
+            "fr": "AA"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A",
+            "fr": "CR123A"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "optimization_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+      }
+    },
+    {
+      "id": "enable_power_estimation",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Power Estimation",
+        "fr": "Activer Estimation Puissance"
+      },
+      "value": true,
+      "hint": {
+        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    },
+    {
+      "id": "invert_contact",
+      "type": "checkbox",
+      "label": {
+        "en": "Invert Contact State",
+        "fr": "Inverser État Contact"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable if sensor reports OPEN when CLOSED and vice versa",
+        "fr": "Activer si le capteur signale OUVERT quand FERMÉ et vice versa"
+      }
+    },
+    {
+      "id": "debounce_time",
+      "type": "number",
+      "label": {
+        "en": "Debounce Time (seconds)",
+        "fr": "Temps Anti-Rebond (secondes)"
+      },
+      "value": 2,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "Time to wait before confirming state change (0=disabled). Increase for unstable sensors.",
+        "fr": "Temps d'attente avant de confirmer un changement d'état (0=désactivé). Augmenter pour capteurs instables."
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "contact_opened",
+        "title": {
+          "en": "Door/window opened",
+          "fr": "Porte/fenêtre ouverte",
+          "nl": "Deur/raam geopend",
+          "de": "Tür/Fenster geöffnet"
+        }
+      },
+      {
+        "id": "contact_closed",
+        "title": {
+          "en": "Door/window closed",
+          "fr": "Porte/fenêtre fermée",
+          "nl": "Deur/raam gesloten",
+          "de": "Tür/Fenster geschlossen"
+        }
+      },
+      {
+        "id": "contact_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "fr": "Batterie faible"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)",
+              "fr": "Batterie (%)"
+            },
+            "example": 15
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "contact_is_open",
+        "title": {
+          "en": "Door/window !{{is|isn't}} open",
+          "fr": "Porte/fenêtre !{{est|n'est pas}} ouverte"
+        }
+      }
+    ]
+  },
+  "images": {
+    "small": "drivers/contact_sensor/assets/images/small.png",
+    "large": "drivers/contact_sensor/assets/images/large.png",
+    "xlarge": "drivers/contact_sensor/assets/images/xlarge.png"
+  },
+  "id": "contact_sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

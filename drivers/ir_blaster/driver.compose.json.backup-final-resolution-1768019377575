@@ -1,0 +1,80 @@
+{
+  "name": {
+    "en": "IR Blaster Remote",
+    "nl": "IR Afstandsbediening",
+    "de": "IR-Fernbedienung"
+  },
+  "class": "remote",
+  "capabilities": [
+    "button.learn_ir",
+    "ir_code_received",
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "button.learn_ir": {
+      "title": {
+        "en": "Learn IR Code",
+        "nl": "Leer IR Code",
+        "de": "IR-Code lernen"
+      }
+    },
+    "onoff": {
+      "title": {
+        "en": "Power",
+        "nl": "Aan/Uit",
+        "de": "Ein/Aus"
+      }
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3290_7v1k4vufotpowp9z",
+      "_TZ3290_acv1iuslxi3shaaj",
+      "_TZ3290_ai4v11wr0mycyh7k",
+      "_TZ3290_gnl5a6a5xvql7c2a",
+      "_TZ3290_gnlsafc7",
+      "_TZ3290_j37rooaxrcdcqo5n",
+      "_TZ3290_ot6ewjvmejq5ekhl",
+      "_TZ3290_rlkmy85q4pzoxobl",
+      "_TZ3290_u9xac5rv",
+      "_TZE204_ikvncluo",
+      "_tz3290_7v1k4vufotpowp9z",
+      "_tz3290_gnl5a6a5xvql7c2a",
+      "_tz3290_ot6ewjvmejq5ekhl",
+      "_tz3290_rlkmy85q4pzoxobl",
+      "_tz3290_u9xac5rv",
+      "_tze204_ikvncluo"
+    ],
+    "productId": [
+      "TS1201",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          57348,
+          60672
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/ir_blaster/assets/images/small.png",
+    "large": "drivers/ir_blaster/assets/images/large.png",
+    "xlarge": "drivers/ir_blaster/assets/images/xlarge.png"
+  }
+}

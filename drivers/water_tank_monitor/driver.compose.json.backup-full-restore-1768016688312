@@ -1,0 +1,201 @@
+{
+  "name": {
+    "en": "Water Tank Level Monitor",
+    "fr": "Moniteur Niveau Réservoir d'Eau",
+    "nl": "Watertank Niveau Monitor",
+    "de": "Wassertank Füllstandsmonitor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_water_level",
+    "measure_water_percentage",
+    "alarm_water_low",
+    "measure_battery",
+    "measure_temperature"
+  ],
+  "capabilitiesOptions": {
+    "measure_water_level": {
+      "title": {
+        "en": "Water Level",
+        "fr": "Niveau d'Eau",
+        "nl": "Waterniveau",
+        "de": "Wasserstand"
+      },
+      "units": "m",
+      "decimals": 2
+    },
+    "measure_water_percentage": {
+      "title": {
+        "en": "Tank Fill Level",
+        "fr": "Niveau de Remplissage",
+        "nl": "Tank Vulniveau",
+        "de": "Tank Füllstand"
+      },
+      "units": "%"
+    },
+    "alarm_water_low": {
+      "title": {
+        "en": "Low Water Alert",
+        "fr": "Alerte Eau Faible",
+        "nl": "Laag Water Alarm",
+        "de": "Niedrig Wasser Alarm"
+      }
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "drivers/water_tank_monitor/assets/images/small.png",
+    "large": "drivers/water_tank_monitor/assets/images/large.png",
+    "xlarge": "drivers/water_tank_monitor/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_8ygqkfpo",
+      "_TZE200_do4ckv7k",
+      "_TZE200_fdtjuw7u",
+      "_TZE200_lvkk0hdg",
+      "_TZE200_ojzhk75b",
+      "_TZE200_rgfzq1fl",
+      "_TZE200_wcnjrsjf",
+      "_TZE204_htnnfasr",
+      "_TZE204_lvkk0hdg",
+      "_TZE200_81isopgh",
+      "_TZE200_htnnfasr",
+      "_TZE204_ikvncluo"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          61184
+        ],
+        "bindings": []
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AA",
+      "CR123A"
+    ]
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Tank Configuration",
+        "fr": "Configuration Réservoir",
+        "nl": "Tank Configuratie",
+        "de": "Tank Konfiguration"
+      },
+      "children": [
+        {
+          "id": "tank_height",
+          "type": "number",
+          "label": {
+            "en": "Tank Height (m)",
+            "fr": "Hauteur Réservoir (m)",
+            "nl": "Tank Hoogte (m)",
+            "de": "Tank Höhe (m)"
+          },
+          "hint": {
+            "en": "Total height of the tank in meters (0.1 - 4.0m)",
+            "fr": "Hauteur totale du réservoir en mètres (0.1 - 4.0m)",
+            "nl": "Totale hoogte van de tank in meters (0.1 - 4.0m)",
+            "de": "Gesamthöhe des Tanks in Metern (0.1 - 4.0m)"
+          },
+          "value": 2,
+          "min": 0.1,
+          "max": 4,
+          "step": 0.1,
+          "units": "m"
+        },
+        {
+          "id": "sensor_offset",
+          "type": "number",
+          "label": {
+            "en": "Sensor Offset (m)",
+            "fr": "Décalage Capteur (m)",
+            "nl": "Sensor Offset (m)",
+            "de": "Sensor Offset (m)"
+          },
+          "hint": {
+            "en": "Distance from sensor to tank bottom when full (calibration)",
+            "fr": "Distance du capteur au fond du réservoir quand plein (calibrage)",
+            "nl": "Afstand van sensor naar tankbodem wanneer vol (kalibratie)",
+            "de": "Abstand vom Sensor zum Tankboden wenn voll (Kalibrierung)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "units": "m"
+        },
+        {
+          "id": "low_water_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Water Threshold (%)",
+            "fr": "Seuil Eau Faible (%)",
+            "nl": "Laag Water Drempel (%)",
+            "de": "Niedrig Wasser Schwelle (%)"
+          },
+          "hint": {
+            "en": "Alert when water level drops below this percentage",
+            "fr": "Alerte quand le niveau d'eau descend sous ce pourcentage",
+            "nl": "Waarschuwing wanneer waterniveau onder dit percentage komt",
+            "de": "Warnung wenn Wasserpegel unter diesen Prozentsatz fällt"
+          },
+          "value": 20,
+          "min": 5,
+          "max": 50,
+          "step": 1,
+          "units": "%"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Sensor Settings",
+        "fr": "Paramètres Capteur",
+        "nl": "Sensor Instellingen",
+        "de": "Sensor Einstellungen"
+      },
+      "children": [
+        {
+          "id": "update_interval",
+          "type": "number",
+          "label": {
+            "en": "Update Interval (minutes)",
+            "fr": "Intervalle Mise à Jour (minutes)",
+            "nl": "Update Interval (minuten)",
+            "de": "Update Intervall (Minuten)"
+          },
+          "hint": {
+            "en": "How often the sensor reports new values",
+            "fr": "Fréquence de rapport des nouvelles valeurs",
+            "nl": "Hoe vaak de sensor nieuwe waarden rapporteert",
+            "de": "Wie oft der Sensor neue Werte meldet"
+          },
+          "value": 10,
+          "min": 1,
+          "max": 60,
+          "step": 1,
+          "units": "min"
+        }
+      ]
+    }
+  ]
+}
