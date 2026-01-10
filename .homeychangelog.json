@@ -1,4 +1,10 @@
 {
+  "5.5.439": {
+    "en": "🔧 LCD TIME SYNC: Improved error message when Tuya cluster unavailable - instructs user to RE-PAIR device. BUTTONS: Virtual buttons are flow-only (use Flow cards, not device UI).",
+    "fr": "🔧 SYNC HEURE LCD: Message d'erreur amélioré - RE-APPAIRER le device requis. BOUTONS: Boutons virtuels = Flow cards uniquement.",
+    "nl": "🔧 LCD TIJD SYNC: Verbeterde foutmelding - RE-PAIREN vereist. KNOPPEN: Virtuele knoppen = alleen Flow cards.",
+    "de": "🔧 LCD ZEIT SYNC: Verbesserte Fehlermeldung - RE-PAIRING erforderlich. TASTEN: Virtuelle Tasten = nur Flow Cards."
+  },
   "5.5.438": {
     "en": "⚡ SPEED FIX: _TZE204_gkfbdvyx radar sensor now responds faster. Reduced debouncing from 7 counts + 15s to 3 counts + 5s. Better balance between speed and false-positive filtering.",
     "fr": "⚡ CORRECTION VITESSE: Capteur radar _TZE204_gkfbdvyx plus rapide. Debouncing réduit de 7 rapports + 15s à 3 + 5s. Meilleur équilibre vitesse/filtrage.",
