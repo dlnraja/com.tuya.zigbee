@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.444** | 🕐 LCD TIME SYNC v3: Added raw ZCL frame bypass for devices paired before v5.... |
 | **v5.5.443** | ➕ NEW DEVICE: BSEED Smart Wall Sockets with power monitoring (_TZ3210_2uollq9... |
 | **v5.5.442** | 🕐 LCD TIME SYNC: Added ZCL Time cluster (0x000A) as fallback method. If Tuya... |
 | **v5.5.441** | 🔧 BUTTONS FIX: Changed class from 'button' to 'sensor' + added button.X capa... |
@@ -78,7 +79,6 @@
 | **v5.5.437** | 🔧 DIAGNOSTIC FIX: Climate sensor LCD time sync fixed (_getTuyaManager error)... |
 | **v5.5.436** | 🎮 FORUM #890: Added TS004F 4-button scene switch support. Added 8 new manufa... |
 | **v5.5.435** | 🧠 INTELLIGENT AUTO-DISCOVERY: Added smart DP auto-detection for unknown rada... |
-| **v5.5.434** | 🔥 FORUM FIXES: Jolink smoke detector PG-S11Z pairing fix (added IAS Zone clu... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
