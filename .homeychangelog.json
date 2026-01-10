@@ -1,4 +1,8 @@
 {
+  "5.5.451": {
+    "en": "🔧 3-BUTTON FIX: Added _ensureCapabilities() - devices paired before fix had NO capabilities! Now auto-adds button.1/2/3 + measure_battery on init. No RE-PAIR needed!",
+    "fr": "🔧 FIX 3-BOUTONS: Ajout _ensureCapabilities() - devices pairés avant le fix n'avaient AUCUNE capability! Ajoute auto button.1/2/3 + measure_battery. Pas de RE-PAIR requis!"
+  },
   "5.5.450": {
     "en": "🔧 HOBEIAN ZG-101ZL FIX: Added HOBEIAN to button_wireless_1, removed from contact_sensor. Forum user Ronny_M: RE-PAIR your ZG-101ZL button to get proper button functionality!",
     "fr": "🔧 FIX HOBEIAN ZG-101ZL: Ajouté HOBEIAN à button_wireless_1, retiré de contact_sensor. RE-APPAIRER votre bouton ZG-101ZL pour fonctionnalité correcte!"
