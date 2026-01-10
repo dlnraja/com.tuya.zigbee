@@ -350,6 +350,66 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "power_compensation",
+      "type": "number",
+      "label": {
+        "en": "Power Compensation",
+        "fr": "power compensation"
+      },
+      "value": 0,
+      "min": -10,
+      "max": 10,
+      "step": 0.1,
+      "hint": {
+        "en": "Adjust power compensation (supports decimals)"
+      }
+    },
+    {
+      "id": "voltage_calibration",
+      "type": "number",
+      "label": {
+        "en": "Voltage Calibration",
+        "fr": "voltage calibration"
+      },
+      "value": 0,
+      "min": -50,
+      "max": 50,
+      "step": 0.1,
+      "hint": {
+        "en": "Adjust voltage calibration (supports decimals)"
+      }
+    },
+    {
+      "id": "current_calibration",
+      "type": "number",
+      "label": {
+        "en": "Current Calibration",
+        "fr": "current calibration"
+      },
+      "value": 0,
+      "min": -5,
+      "max": 5,
+      "step": 0.01,
+      "hint": {
+        "en": "Adjust current calibration (supports decimals)"
+      }
+    },
+    {
+      "id": "power_calibration",
+      "type": "number",
+      "label": {
+        "en": "Power Calibration",
+        "fr": "power calibration"
+      },
+      "value": 0,
+      "min": -100,
+      "max": 100,
+      "step": 0.1,
+      "hint": {
+        "en": "Adjust power calibration (supports decimals)"
+      }
     }
   ],
   "images": {
