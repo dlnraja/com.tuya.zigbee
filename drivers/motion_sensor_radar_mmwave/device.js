@@ -234,7 +234,7 @@ class MotionSensorRadarDevice extends HybridSensorBase {
           illuminanceCluster.on('attr.measuredValue', async (value) => {
             if (value !== null && value !== undefined && value >= 0) {
               this.log(`[LUMINANCE-FIX] 🌞 Continuous luminance update: ${value} lux`);
-              await this.setCapabilityValue('measure_luminance', value).catch(() => { });
+              await this.setCapabilityValue('measure_luminance', parseFloat(value)).catch(() => { });
             }
           });
 
@@ -243,7 +243,7 @@ class MotionSensorRadarDevice extends HybridSensorBase {
             const initialValue = await illuminanceCluster.readAttributes(['measuredValue']);
             if (initialValue?.measuredValue !== undefined && initialValue.measuredValue >= 0) {
               this.log(`[LUMINANCE-FIX] 📖 Initial luminance: ${initialValue.measuredValue} lux`);
-              await this.setCapabilityValue('measure_luminance', initialValue.measuredValue).catch(() => { });
+              await this.setCapabilityValue('measure_luminance', parseFloat(initialValue.measuredValue)).catch(() => { });
             }
           } catch (e) {
             this.log('[LUMINANCE-FIX] ⚠️ Initial read failed (normal for sleepy devices)');

@@ -487,7 +487,7 @@ class Button4GangDevice extends ButtonDevice {
    */
   async _updateBattery(battery) {
     if (battery >= 0 && battery <= 100) {
-      await this.setCapabilityValue('measure_battery', battery).catch(() => { });
+      await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
       await this.setStoreValue('last_battery_percentage', battery).catch(() => { });
       await this.setStoreValue('last_battery_time', Date.now()).catch(() => { });
       this._lastBatteryRead = Date.now();
@@ -592,7 +592,7 @@ class Button4GangDevice extends ButtonDevice {
 
             if (battery !== null && battery >= 0 && battery <= 100) {
               this.log(`[BUTTON4-BATTERY-DP] ✅ Battery from DP${dp}: ${battery}%`);
-              await this.setCapabilityValue('measure_battery', battery).catch(() => { });
+              await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
               await this.setStoreValue('last_battery_percentage', battery).catch(() => { });
             }
           }

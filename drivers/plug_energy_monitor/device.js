@@ -284,7 +284,7 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
           elecCluster.on('attr.activePower', (value) => {
             const power = value / (zclAttrs.power.divisor || 1);
             this.log(`[ENERGY-ZCL] Power: ${power}W`);
-            this.setCapabilityValue('measure_power', Math.max(0, power)).catch(() => { });
+            this.setCapabilityValue('measure_power', parseFloat(Math.max(0, power))).catch(() => { });
           });
         }
 
@@ -293,7 +293,7 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
           elecCluster.on('attr.rmsVoltage', (value) => {
             const voltage = value / (zclAttrs.voltage.divisor || 1);
             this.log(`[ENERGY-ZCL] Voltage: ${voltage}V`);
-            this.setCapabilityValue('measure_voltage', voltage).catch(() => { });
+            this.setCapabilityValue('measure_voltage', parseFloat(voltage)).catch(() => { });
           });
         }
 
@@ -302,7 +302,7 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
           elecCluster.on('attr.rmsCurrent', (value) => {
             const current = value / (zclAttrs.current.divisor || 1);
             this.log(`[ENERGY-ZCL] Current: ${current}A`);
-            this.setCapabilityValue('measure_current', current).catch(() => { });
+            this.setCapabilityValue('measure_current', parseFloat(current)).catch(() => { });
           });
         }
 
@@ -321,7 +321,7 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
           const rawValue = typeof value === 'object' ? value[0] || 0 : value;
           const energy = rawValue / (zclAttrs.energy.divisor || 1);
           this.log(`[ENERGY-ZCL] Energy: ${energy}kWh`);
-          this.setCapabilityValue('meter_power', energy).catch(() => { });
+          this.setCapabilityValue('meter_power', parseFloat(energy)).catch(() => { });
         });
         this.log('[ENERGY] ✅ ZCL Metering configured');
       }
