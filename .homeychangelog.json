@@ -1,4 +1,8 @@
 {
+  "5.5.449": {
+    "en": "🔧 BUTTON FIX: Removed _TZ3000_bczr4e10 (TS0043) and _TZ3000_bgtzm4ny (TS0044) from climate_sensor driver - were causing buttons to show as toggles! RE-PAIR your TS0043/TS0044 to button_wireless_3/4 driver!",
+    "fr": "🔧 FIX BOUTONS: Retiré _TZ3000_bczr4e10 (TS0043) et _TZ3000_bgtzm4ny (TS0044) du driver climate_sensor - causait l'affichage en toggle! RE-APPAIRER vos TS0043/TS0044 vers button_wireless_3/4!"
+  },
   "5.5.448": {
     "en": "⏰ DUAL TIME SYNC: Added ZCL Time cluster (0x000A) handler! Device interview shows outputClusters:[10] = device REQUESTS time. Now handles BOTH Tuya mcuSyncTime AND ZCL Time. RE-PAIR required!",
     "fr": "⏰ DOUBLE TIME SYNC: Ajout handler ZCL Time cluster (0x000A)! Interview montre outputClusters:[10] = device DEMANDE l'heure. Gère TUYA mcuSyncTime ET ZCL Time. RE-APPAIRER requis!"
