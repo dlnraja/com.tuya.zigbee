@@ -538,6 +538,79 @@
             "step": 1
           }
         ]
+      },
+      {
+        "id": "set_forced_brightness",
+        "title": {
+          "en": "Set forced brightness",
+          "nl": "Forceer helderheid",
+          "fr": "Forcer luminosité"
+        },
+        "titleFormatted": {
+          "en": "Set [[device]] to [[brightness]]% brightness",
+          "nl": "Zet [[device]] op [[brightness]]% helderheid"
+        },
+        "hint": {
+          "en": "Force a specific brightness level, ignoring current state",
+          "nl": "Forceer een specifiek helderheidsniveau, negeer huidige status"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "brightness",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "label": "%",
+            "labelMultiplier": 1
+          }
+        ]
+      },
+      {
+        "id": "dim_up",
+        "title": {
+          "en": "Dim up",
+          "nl": "Omhoog dimmen",
+          "fr": "Augmenter luminosité"
+        },
+        "titleFormatted": {
+          "en": "Dim [[device]] up by [[step]]%",
+          "nl": "Dim [[device]] omhoog met [[step]]%"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "step",
+            "min": 1,
+            "max": 50,
+            "step": 1,
+            "label": "%",
+            "labelMultiplier": 1
+          }
+        ]
+      },
+      {
+        "id": "dim_down",
+        "title": {
+          "en": "Dim down",
+          "nl": "Omlaag dimmen",
+          "fr": "Diminuer luminosité"
+        },
+        "titleFormatted": {
+          "en": "Dim [[device]] down by [[step]]%",
+          "nl": "Dim [[device]] omlaag met [[step]]%"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "step",
+            "min": 1,
+            "max": 50,
+            "step": 1,
+            "label": "%",
+            "labelMultiplier": 1
+          }
+        ]
       }
     ]
   },
