@@ -1,4 +1,8 @@
 {
+  "5.5.447": {
+    "en": "⏰ TIME SYNC LISTENER: Added mcuSyncTime BoundCluster - device REQUESTS time, we now RESPOND! Critical fix for _TZE284_vvmbj46n LCD sensors. RE-PAIR required!",
+    "fr": "⏰ LISTENER TIME SYNC: Ajout BoundCluster mcuSyncTime - on RÉPOND aux requêtes du device! Fix critique pour capteurs LCD _TZE284_vvmbj46n. RE-APPAIRER requis!"
+  },
   "5.5.446": {
     "en": "🕐 LCD TIME SYNC FIX: Fixed payload order [UTC][Local] per Z2M spec. Added cluster 61184 to bindings. RE-PAIR _TZE284_vvmbj46n devices for LCD time sync!",
     "fr": "🕐 FIX SYNC LCD: Ordre payload corrigé [UTC][Local] selon Z2M. Cluster 61184 ajouté aux bindings. RE-APPAIRER _TZE284_vvmbj46n!"
