@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "Wall Switch 7-Gang",
-    "fr": "Interrupteur mural 7 gangs"
+    "en": "Wall Switch 8-Gang",
+    "fr": "Interrupteur mural 8 gangs"
   },
   "class": "socket",
   "capabilities": [
@@ -11,7 +11,8 @@
     "onoff.gang4",
     "onoff.gang5",
     "onoff.gang6",
-    "onoff.gang7"
+    "onoff.gang7",
+    "onoff.gang8"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -55,6 +56,12 @@
         "en": "Gang 7",
         "fr": "Gang 7"
       }
+    },
+    "onoff.gang8": {
+      "title": {
+        "en": "Gang 8",
+        "fr": "Gang 8"
+      }
     }
   },
   "energy": {
@@ -64,11 +71,12 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TYZB01_7gang001",
-      "_TZ3000_7GANG001"
+      "_TYZB01_8gang001",
+      "_TZ3000_8GANG001",
+      "_tyzb01_8gang001"
     ],
     "productId": [
-      "TS0007"
+      "TS0008"
     ],
     "endpoints": {
       "1": {
@@ -96,6 +104,9 @@
         "clusters": []
       },
       "7": {
+        "clusters": []
+      },
+      "8": {
         "clusters": []
       }
     }
@@ -305,66 +316,10 @@
           "value": false
         }
       ]
-    },
-    {
-      "id": "power_on_behavior",
-      "type": "dropdown",
-      "label": {
-        "en": "Power On Behavior"
-      },
-      "value": "previous",
-      "values": [
-        {
-          "id": "previous",
-          "label": {
-            "en": "Previous state"
-          }
-        },
-        {
-          "id": "on",
-          "label": {
-            "en": "Always ON"
-          }
-        },
-        {
-          "id": "off",
-          "label": {
-            "en": "Always OFF"
-          }
-        }
-      ]
-    },
-    {
-      "id": "switch_type",
-      "type": "dropdown",
-      "label": {
-        "en": "Switch Type"
-      },
-      "value": "toggle",
-      "values": [
-        {
-          "id": "toggle",
-          "label": {
-            "en": "Toggle"
-          }
-        },
-        {
-          "id": "state",
-          "label": {
-            "en": "State"
-          }
-        },
-        {
-          "id": "momentary",
-          "label": {
-            "en": "Momentary"
-          }
-        }
-      ]
     }
   ],
   "images": {
-    "small": "drivers/switch_wall_7gang/assets/images/small.png",
-    "large": "drivers/switch_wall_7gang/assets/images/large.png"
+    "small": "drivers/switch_wall_8gang/assets/images/small.png",
+    "large": "drivers/switch_wall_8gang/assets/images/large.png"
   }
 }

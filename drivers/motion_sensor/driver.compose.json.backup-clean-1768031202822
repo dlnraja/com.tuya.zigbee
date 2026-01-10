@@ -1,125 +1,117 @@
 {
   "name": {
-    "en": "4-Buttons Wireless Controller",
-    "fr": "4-Boutons Contrôleur Sans Fil",
-    "nl": "4-Knoppen Draadloze Controller",
-    "de": "4-Tasten Drahtlos-Controller",
-    "it": "4-Pulsanti Controller Wireless",
-    "sv": "4-Knappar Trådlös Kontroller",
-    "no": "4-Knapper Trådløs Kontroller",
-    "es": "4-Botones Controlador Inalámbrico",
-    "da": "4-Knapper Trådløs Controller"
+    "en": "Motion Sensor",
+    "fr": "Capteur de Mouvement"
   },
-  "class": "button",
+  "class": "sensor",
   "capabilities": [
-    "button.1",
-    "button.2",
-    "button.3",
-    "button.4",
-    "measure_battery"
+    "alarm_motion",
+    "measure_battery",
+    "measure_luminance"
   ],
-  "capabilitiesOptions": {
-    "button.1": {
-      "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1",
-        "nl": "Knop 1",
-        "de": "Taste 1"
-      }
-    },
-    "button.2": {
-      "title": {
-        "en": "Button 2",
-        "fr": "Bouton 2",
-        "nl": "Knop 2",
-        "de": "Taste 2"
-      }
-    },
-    "button.3": {
-      "title": {
-        "en": "Button 3",
-        "fr": "Bouton 3",
-        "nl": "Knop 3",
-        "de": "Taste 3"
-      }
-    },
-    "button.4": {
-      "title": {
-        "en": "Button 4",
-        "fr": "Bouton 4",
-        "nl": "Knop 4",
-        "de": "Taste 4"
-      }
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
-    }
-  },
+  "$comment_capabilities": "v5.5.181: measure_temperature and measure_humidity are added DYNAMICALLY by device.js only if ZCL clusters 0x0402/0x0405 are detected. This prevents showing unused capabilities on simple PIR sensors.",
   "energy": {
     "batteries": [
-      "CR2032",
       "CR2450",
+      "CR123A",
       "AAA"
     ],
     "approximation": {
       "usageConstant": 0.5
     }
   },
+  "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_TYZB01_qm6djpta",
-      "_TZ3000_11PG3IMA",
-      "_TZ3000_5TQXPINE",
-      "_TZ3000_A4XYCPRS",
-      "_TZ3000_ABCI1HIU",
-      "_TZ3000_B3MGFU0D",
-      "_TZ3000_BGTZM4NY",
-      "_TZ3000_CZUYT8LZ",
-      "_TZ3000_DZIAICT4",
-      "_TZ3000_EE8NRT2L",
-      "_TZ3000_ET7AFZXZ",
-      "_TZ3000_J61X9RXN",
-      "_TZ3000_KFU8ZAPD",
-      "_TZ3000_MH9PX7CQ",
-      "_TZ3000_NUOMBROO",
-      "_TZ3000_PCQJMCUD",
-      "_TZ3000_U3NV1JWK",
-      "_TZ3000_UAA99ARV",
-      "_TZ3000_UFHTXR59",
-      "_TZ3000_VP6CLF9D",
-      "_TZ3000_W4THIANR",
-      "_TZ3000_WKAI4GA5",
-      "_TZ3000_XABCKQ1V",
-      "_TZ3000_ZGYZGDUA",
-      "_TZ3040_FWXUZCF4",
-      "_TZ3290_785FBXIK",
-      "_TZ3290_IXD9MVV4",
-      "_TZ3290_NKPXAPOZ",
-      "_TZ3290_YYAX9AJF"
+      "_TYST11_7hfcudw5",
+      "_TYST11_i5j6ifxj",
+      "_TYZB01_dl7cejts",
+      "_TYZB01_dr6sduka",
+      "_TYZB01_jytabjkb",
+      "_TZ1800_FCDJZZ3S",
+      "_TZ3000_1OBWWNMQ",
+      "_TZ3000_6YGJFYLL",
+      "_TZ3000_BSVQRK3B",
+      "_TZ3000_BSVQRXRU",
+      "_TZ3000_C8OZAH8N",
+      "_TZ3000_H4WNRTCK",
+      "_TZ3000_JMRGYL7O",
+      "_TZ3000_LLTEMGSF",
+      "_TZ3000_MCXW5EHU",
+      "_TZ3000_MG4DY6Z6",
+      "_TZ3000_MMTWJMAQ",
+      "_TZ3000_MSL6WXK9",
+      "_TZ3000_NSS8AMZ9",
+      "_TZ3000_OTVN3LNE",
+      "_TZ3000_PIRDDKFC",
+      "_TZ3000_QOMXLRYD",
+      "_TZ3000_TIWQ83WK",
+      "_TZ3000_UIM07OEM",
+      "_TZ3000_Y56PGPGS",
+      "_TZ3000_YKWCWXMZ",
+      "_TZ3040_6YGJFYLL",
+      "_TZ3040_BB6XAIHH",
+      "_TZ3040_MSL6WXK9",
+      "_TZ3040_WQMTJSYK",
+      "_TZ3210_CWAMKVUA",
+      "_TZ3210_JIJR1SSS",
+      "_TZE200_3TOWULQD",
+      "_TZE200_4MH6TYYO",
+      "_TZE200_68NVBIO9",
+      "_TZE200_6KIJC7ND",
+      "_TZE200_7HFCUDW5",
+      "_TZE200_8VIYDIWR",
+      "_TZE200_A7SGHMMS",
+      "_TZE200_AKJEFHJ5",
+      "_TZE200_AMP6TSVY",
+      "_TZE200_ARGE1PTM",
+      "_TZE200_BJZROWV2",
+      "_TZE200_CF1SL3TJ",
+      "_TZE200_CPBO62RN",
+      "_TZE200_DCRRZTPA",
+      "_TZE200_GHYNNVOS",
+      "_TZE200_MCHXVE9O",
+      "_TZE200_ME6WTIQS",
+      "_TZE200_NHK3BPXQ",
+      "_TZE200_S6HZW8G2",
+      "_TZE200_XQ4HGAFZ",
+      "_TZE204_MCHXVE9O",
+      "_TZE204_N8DLJORX",
+      "eWeLink",
+      "Fantem",
+      "Perenio",
+      "SONOFF",
+      "TS0207",
+      "TUYATEC-53o41joc",
+      "TUYATEC-b5g40alm",
+      "TUYATEC-bd5faf9p",
+      "TUYATEC-deetibst",
+      "TUYATEC-dgtxmihe",
+      "TUYATEC-dxnohkpd",
+      "TUYATEC-lha8pbwd",
+      "TUYATEC-zn9wyqtr",
+      "TUYATEC-zw6hxafz",
+      "ZG-204ZE",
+      "ZG-302ZL",
+      "ZG-302ZM",
+      "_TYZB01_vwqnz1sn",
+      "_TZ3000_3TOWULQD",
+      "_TZE284_MRF6VTUA",
+      "_TZE200_BH4N9CLUK",
+      "_TZE284_0ZSE7XQG",
+      "_tyzb01_dl7cejts",
+      "_tyzb01_dr6sduka",
+      "_tyzb01_jytabjkb",
+      "_tyzb01_vwqnz1sn",
+      "_TZ3000_MSL6WXKP",
+      "_TZ3000_OTVN6Y0A"
     ],
     "productId": [
-      "TS0044",
+      "TS0202",
+      "TS0210",
+      "TS0222",
       "TS0601"
     ],
-    "learnmode": {
-      "image": "/drivers/button_wireless_4/assets/learnmode.svg",
-      "instruction": {
-        "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
-      }
-    },
     "endpoints": {
       "1": {
         "clusters": [
@@ -129,72 +121,29 @@
           4,
           5,
           6,
-          8,
-          18,
-          1280
+          1024,
+          1026,
+          1029,
+          1030,
+          1280,
+          61184
         ],
         "bindings": [
           1,
-          3,
-          5,
           6,
-          8
+          1024,
+          1280
         ]
-      },
-      "2": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          18
-        ],
-        "bindings": [
-          5,
-          6
-        ]
-      },
-      "3": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          18
-        ],
-        "bindings": [
-          5,
-          6
-        ]
-      },
-      "4": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          18
-        ],
-        "bindings": [
-          5,
-          6
-        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/motion_sensor/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     }
   },
-  "images": {
-    "small": "drivers/button_wireless_4/assets/images/small.png",
-    "large": "drivers/button_wireless_4/assets/images/large.png"
-  },
-  "platforms": [
-    "local"
-  ],
-  "connectivity": [
-    "zigbee"
-  ],
   "settings": [
     {
       "id": "power_source",
@@ -418,106 +367,93 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
-    },
-    {
-      "id": "tuya_dp_configuration",
-      "type": "label",
-      "label": {
-        "en": "Tuya Datapoint Configuration",
-        "fr": "Configuration Tuya Datapoint"
-      },
-      "value": "{\n  \"1\": \"button_1_action\",\n  \"2\": \"button_2_action\",\n  \"3\": \"button_3_action\",\n  \"4\": \"button_4_action\",\n  \"101\": \"battery_percentage\"\n}"
-    },
-    {
-      "id": "dp_debug_mode",
-      "type": "checkbox",
-      "label": {
-        "en": "DP Debug Mode",
-        "fr": "Mode Debug DP"
-      },
-      "value": false,
-      "hint": {
-        "en": "Log all Tuya DP data for troubleshooting",
-        "fr": "Logger toutes les données Tuya DP pour diagnostic"
-      }
-    },
-    {
-      "id": "enable_time_sync",
-      "type": "checkbox",
-      "label": {
-        "en": "Enable Time Sync",
-        "fr": "Activer Synchro Heure"
-      },
-      "value": true,
-      "hint": {
-        "en": "Sync device time with Homey",
-        "fr": "Synchroniser l'heure du device avec Homey"
-      }
-    }
-  ],
-  "id": "button_wireless_4",
-  "pair": [
-    {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "select_driver"
-      }
-    },
-    {
-      "id": "select_driver",
-      "navigation": {
-        "next": "add_devices"
-      }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
     }
   ],
   "flow": {
     "triggers": [
       {
-        "id": "key_held",
+        "id": "motion_illuminance_changed",
         "title": {
-          "en": "Key held down",
-          "nl": "Toets ingedrukt gehouden",
-          "fr": "Touche maintenue"
-        },
-        "hint": {
-          "en": "Triggered when a button is held down (for continuous dimming)",
-          "nl": "Geactiveerd wanneer een knop ingedrukt wordt gehouden"
+          "en": "Illuminance changed",
+          "fr": "Luminosité changée",
+          "nl": "Lichtsterkte gewijzigd",
+          "de": "Helligkeit geändert"
         },
         "tokens": [
           {
-            "name": "button",
+            "name": "lux",
             "type": "number",
             "title": {
-              "en": "Button number"
+              "en": "Lux",
+              "fr": "Lux"
             },
-            "example": 1
+            "example": 150
           }
         ]
       },
       {
-        "id": "key_released",
+        "id": "motion_illuminance_above",
         "title": {
-          "en": "Key released",
-          "nl": "Toets losgelaten",
-          "fr": "Touche relâchée"
+          "en": "Illuminance rises above",
+          "fr": "Luminosité dépasse"
         },
-        "hint": {
-          "en": "Triggered when a held button is released",
-          "nl": "Geactiveerd wanneer een ingedrukte knop wordt losgelaten"
+        "titleFormatted": {
+          "en": "Illuminance rises above [[threshold]] lux",
+          "fr": "Luminosité dépasse [[threshold]] lux"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 10000,
+            "step": 10,
+            "placeholder": {
+              "en": "200"
+            }
+          }
+        ]
+      },
+      {
+        "id": "motion_illuminance_below",
+        "title": {
+          "en": "Illuminance drops below",
+          "fr": "Luminosité tombe sous"
+        },
+        "titleFormatted": {
+          "en": "Illuminance drops below [[threshold]] lux",
+          "fr": "Luminosité tombe sous [[threshold]] lux"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 10000,
+            "step": 10,
+            "placeholder": {
+              "en": "50"
+            }
+          }
+        ]
+      },
+      {
+        "id": "motion_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "fr": "Batterie faible",
+          "nl": "Batterij is laag",
+          "de": "Batterie ist schwach"
         },
         "tokens": [
           {
-            "name": "button",
+            "name": "battery",
             "type": "number",
             "title": {
-              "en": "Button number"
+              "en": "Battery (%)",
+              "fr": "Batterie (%)"
             },
-            "example": 1
+            "example": 15
           }
         ]
       },
@@ -543,6 +479,62 @@
           }
         ]
       }
+    ],
+    "conditions": [
+      {
+        "id": "motion_illuminance_is",
+        "title": {
+          "en": "Illuminance is !{{above|below}} threshold",
+          "fr": "Luminosité est !{{au-dessus|en-dessous}} du seuil"
+        },
+        "titleFormatted": {
+          "en": "Illuminance is !{{above|below}} [[threshold]] lux",
+          "fr": "Luminosité est !{{au-dessus|en-dessous de}} [[threshold]] lux"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 10000,
+            "step": 10,
+            "placeholder": {
+              "en": "100"
+            }
+          }
+        ]
+      }
     ]
-  }
+  },
+  "images": {
+    "small": "drivers/motion_sensor/assets/images/small.png",
+    "large": "drivers/motion_sensor/assets/images/large.png",
+    "xlarge": "drivers/motion_sensor/assets/images/xlarge.png"
+  },
+  "id": "motion_sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }

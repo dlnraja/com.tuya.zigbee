@@ -1,125 +1,123 @@
 {
   "name": {
-    "en": "4-Buttons Wireless Controller",
-    "fr": "4-Boutons Contrôleur Sans Fil",
-    "nl": "4-Knoppen Draadloze Controller",
-    "de": "4-Tasten Drahtlos-Controller",
-    "it": "4-Pulsanti Controller Wireless",
-    "sv": "4-Knappar Trådlös Kontroller",
-    "no": "4-Knapper Trådløs Kontroller",
-    "es": "4-Botones Controlador Inalámbrico",
-    "da": "4-Knapper Trådløs Controller"
+    "en": "Contact Sensor",
+    "fr": "Capteur de Contact"
   },
-  "class": "button",
+  "class": "sensor",
   "capabilities": [
-    "button.1",
-    "button.2",
-    "button.3",
-    "button.4",
+    "alarm_contact",
     "measure_battery"
   ],
-  "capabilitiesOptions": {
-    "button.1": {
-      "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1",
-        "nl": "Knop 1",
-        "de": "Taste 1"
-      }
-    },
-    "button.2": {
-      "title": {
-        "en": "Button 2",
-        "fr": "Bouton 2",
-        "nl": "Knop 2",
-        "de": "Taste 2"
-      }
-    },
-    "button.3": {
-      "title": {
-        "en": "Button 3",
-        "fr": "Bouton 3",
-        "nl": "Knop 3",
-        "de": "Taste 3"
-      }
-    },
-    "button.4": {
-      "title": {
-        "en": "Button 4",
-        "fr": "Bouton 4",
-        "nl": "Knop 4",
-        "de": "Taste 4"
-      }
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
-    }
-  },
   "energy": {
     "batteries": [
       "CR2032",
-      "CR2450",
+      "CR1632",
       "AAA"
     ],
     "approximation": {
       "usageConstant": 0.5
     }
   },
+  "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_TYZB01_qm6djpta",
-      "_TZ3000_11PG3IMA",
-      "_TZ3000_5TQXPINE",
-      "_TZ3000_A4XYCPRS",
-      "_TZ3000_ABCI1HIU",
-      "_TZ3000_B3MGFU0D",
-      "_TZ3000_BGTZM4NY",
-      "_TZ3000_CZUYT8LZ",
-      "_TZ3000_DZIAICT4",
-      "_TZ3000_EE8NRT2L",
-      "_TZ3000_ET7AFZXZ",
-      "_TZ3000_J61X9RXN",
-      "_TZ3000_KFU8ZAPD",
-      "_TZ3000_MH9PX7CQ",
-      "_TZ3000_NUOMBROO",
-      "_TZ3000_PCQJMCUD",
-      "_TZ3000_U3NV1JWK",
-      "_TZ3000_UAA99ARV",
-      "_TZ3000_UFHTXR59",
-      "_TZ3000_VP6CLF9D",
-      "_TZ3000_W4THIANR",
-      "_TZ3000_WKAI4GA5",
-      "_TZ3000_XABCKQ1V",
-      "_TZ3000_ZGYZGDUA",
-      "_TZ3040_FWXUZCF4",
-      "_TZ3290_785FBXIK",
-      "_TZ3290_IXD9MVV4",
-      "_TZ3290_NKPXAPOZ",
-      "_TZ3290_YYAX9AJF"
+      "_TYZB01_xph99wvr",
+      "_tyzb01_xph99wvr",
+      "_TZ1800_EJWKN2H2",
+      "_TZ3000_2DLWLVEX",
+      "_TZ3000_2MBFXLZR",
+      "_TZ3000_402JJYRO",
+      "_TZ3000_4UGNZSLI",
+      "_TZ3000_6JEESVRT",
+      "_TZ3000_7D8YME6F",
+      "_TZ3000_7TBSRUQL",
+      "_TZ3000_8YHYPBO7",
+      "_TZ3000_996RPFY6",
+      "_TZ3000_9EEAVBK5",
+      "_TZ3000_AMDYMR7L",
+      "_TZ3000_AU1RJICN",
+      "_TZ3000_BMG14AX2",
+      "_TZ3000_BR3LAUKF",
+      "_TZ3000_BWLVYJWK",
+      "_TZ3000_BZXLOFT",
+      "_TZ3000_BZXLOFT2",
+      "_TZ3000_BZXLOFTH",
+      "_TZ3000_CEA5XUGQ",
+      "_TZ3000_CJFMU5HE",
+      "_TZ3000_CJRNGDR3",
+      "_TZ3000_DECXRTWA",
+      "_TZ3000_DO6TXRCW",
+      "_TZ3000_EAFAA66E",
+      "_TZ3000_EBAR6LJY",
+      "_TZ3000_FA9MLVJA",
+      "_TZ3000_GNTWYTXO",
+      "_TZ3000_HGU1DLAK",
+      "_TZ3000_J2W1DW29",
+      "_TZ3000_JQGE2FJX",
+      "_TZ3000_KEAYT8OL",
+      "_TZ3000_MSL2RXJN",
+      "_TZ3000_N2EGFSLI",
+      "_TZ3000_NBNMW9NC",
+      "_TZ3000_O4MKAHKC",
+      "_TZ3000_P8ALO7QA",
+      "_TZ3000_PZUI3SKT",
+      "_TZ3000_Q50ZHDSC",
+      "_TZ3000_QRLDBMFN",
+      "_TZ3000_RCUYHWE3",
+      "_TZ3000_RGCHMAD8",
+      "_TZ3000_RID8LZVO",
+      "_TZ3000_RYLAOZUC",
+      "_TZ3000_S8R1QOYQ",
+      "_TZ3000_TASPDDVQ",
+      "_TZ3000_TH6ZQQY6",
+      "_TZ3000_TIMX9IVQ",
+      "_TZ3000_UDYJYLT7",
+      "_TZ3000_UVTI8NKD",
+      "_TZ3000_V7CHGQSO",
+      "_TZ3000_WPTAYAQR",
+      "_TZ3000_WUT53HFM",
+      "_TZ3000_WYHUOCAL",
+      "_TZ3000_X8Q36XWF",
+      "_TZ3000_XPQ2NMKR",
+      "_TZ3000_YFEKCY3N",
+      "_TZ3000_YXQNFFAM",
+      "_TZ3000_ZGRFFIWG",
+      "_TZ3000_ZUTIZVYK",
+      "_TZ3000_ZUTIZVYKTS0203",
+      "_TZ3210_0JXEOADC",
+      "_TZ3210_BFWVFYX1",
+      "_TZ3210_UMI6VBSZ",
+      "_TZ3210_ZBABX9WH",
+      "_TZ3210_ZMPPWAWA",
+      "_TZB210_ZMPPWAWA",
+      "_TZE204_JKTMRPOJ",
+      "_TZE284_NKLQJK62",
+      "5rta89nj",
+      "HOBEIAN",
+      "Immax",
+      "TS0301",
+      "TUYATEC-0l6xaqmi",
+      "TUYATEC-7qunn4gq",
+      "TUYATEC-abkehqus",
+      "TUYATEC-Bfq2i2Sy",
+      "TUYATEC-crr8qb0p",
+      "TUYATEC-g3gl6cgy",
+      "TUYATEC-ip9ganvw",
+      "TUYATEC-kbqf60nt",
+      "TUYATEC-r9hgssol",
+      "TUYATEC-rkqiqvcs",
+      "TUYATEC-sb6t7ett",
+      "TUYATEC-trhrga6p",
+      "Visonic",
+      "zbeacon",
+      "_TZ3000_26FMUPBB",
+      "_TZ3000_OXSLV1C9"
     ],
     "productId": [
-      "TS0044",
+      "TS0203",
+      "TS0210",
       "TS0601"
     ],
-    "learnmode": {
-      "image": "/drivers/button_wireless_4/assets/learnmode.svg",
-      "instruction": {
-        "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
-      }
-    },
     "endpoints": {
       "1": {
         "clusters": [
@@ -129,72 +127,24 @@
           4,
           5,
           6,
-          8,
-          18,
-          1280
+          1280,
+          61184
         ],
         "bindings": [
           1,
-          3,
-          5,
           6,
-          8
+          1280
         ]
-      },
-      "2": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          18
-        ],
-        "bindings": [
-          5,
-          6
-        ]
-      },
-      "3": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          18
-        ],
-        "bindings": [
-          5,
-          6
-        ]
-      },
-      "4": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          18
-        ],
-        "bindings": [
-          5,
-          6
-        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/contact_sensor/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     }
   },
-  "images": {
-    "small": "drivers/button_wireless_4/assets/images/small.png",
-    "large": "drivers/button_wireless_4/assets/images/large.png"
-  },
-  "platforms": [
-    "local"
-  ],
-  "connectivity": [
-    "zigbee"
-  ],
   "settings": [
     {
       "id": "power_source",
@@ -420,104 +370,83 @@
       }
     },
     {
-      "id": "tuya_dp_configuration",
-      "type": "label",
-      "label": {
-        "en": "Tuya Datapoint Configuration",
-        "fr": "Configuration Tuya Datapoint"
-      },
-      "value": "{\n  \"1\": \"button_1_action\",\n  \"2\": \"button_2_action\",\n  \"3\": \"button_3_action\",\n  \"4\": \"button_4_action\",\n  \"101\": \"battery_percentage\"\n}"
-    },
-    {
-      "id": "dp_debug_mode",
+      "id": "invert_contact",
       "type": "checkbox",
       "label": {
-        "en": "DP Debug Mode",
-        "fr": "Mode Debug DP"
+        "en": "Invert Contact State",
+        "fr": "Inverser État Contact"
       },
       "value": false,
       "hint": {
-        "en": "Log all Tuya DP data for troubleshooting",
-        "fr": "Logger toutes les données Tuya DP pour diagnostic"
+        "en": "Enable if sensor reports OPEN when CLOSED and vice versa",
+        "fr": "Activer si le capteur signale OUVERT quand FERMÉ et vice versa"
       }
     },
     {
-      "id": "enable_time_sync",
+      "id": "debounce_time",
+      "type": "number",
+      "label": {
+        "en": "Debounce Time (seconds)",
+        "fr": "Temps Anti-Rebond (secondes)"
+      },
+      "value": 2,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "Time to wait before confirming state change (0=disabled). Increase for unstable sensors.",
+        "fr": "Temps d'attente avant de confirmer un changement d'état (0=désactivé). Augmenter pour capteurs instables."
+      }
+    },
+    {
+      "id": "reverse_alarm",
       "type": "checkbox",
       "label": {
-        "en": "Enable Time Sync",
-        "fr": "Activer Synchro Heure"
+        "en": "Reverse alarm logic",
+        "nl": "Alarm logica omkeren"
       },
-      "value": true,
       "hint": {
-        "en": "Sync device time with Homey",
-        "fr": "Synchroniser l'heure du device avec Homey"
-      }
-    }
-  ],
-  "id": "button_wireless_4",
-  "pair": [
-    {
-      "id": "list_devices",
-      "template": "list_devices",
-      "navigation": {
-        "next": "select_driver"
-      }
-    },
-    {
-      "id": "select_driver",
-      "navigation": {
-        "next": "add_devices"
-      }
-    },
-    {
-      "id": "add_devices",
-      "template": "add_devices"
+        "en": "Swap open/closed states if sensor reports inverted",
+        "nl": "Wissel open/gesloten om indien sensor omgekeerd rapporteert"
+      },
+      "value": false
     }
   ],
   "flow": {
     "triggers": [
       {
-        "id": "key_held",
+        "id": "contact_opened",
         "title": {
-          "en": "Key held down",
-          "nl": "Toets ingedrukt gehouden",
-          "fr": "Touche maintenue"
-        },
-        "hint": {
-          "en": "Triggered when a button is held down (for continuous dimming)",
-          "nl": "Geactiveerd wanneer een knop ingedrukt wordt gehouden"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "number",
-            "title": {
-              "en": "Button number"
-            },
-            "example": 1
-          }
-        ]
+          "en": "Door/window opened",
+          "fr": "Porte/fenêtre ouverte",
+          "nl": "Deur/raam geopend",
+          "de": "Tür/Fenster geöffnet"
+        }
       },
       {
-        "id": "key_released",
+        "id": "contact_closed",
         "title": {
-          "en": "Key released",
-          "nl": "Toets losgelaten",
-          "fr": "Touche relâchée"
-        },
-        "hint": {
-          "en": "Triggered when a held button is released",
-          "nl": "Geactiveerd wanneer een ingedrukte knop wordt losgelaten"
+          "en": "Door/window closed",
+          "fr": "Porte/fenêtre fermée",
+          "nl": "Deur/raam gesloten",
+          "de": "Tür/Fenster geschlossen"
+        }
+      },
+      {
+        "id": "contact_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "fr": "Batterie faible"
         },
         "tokens": [
           {
-            "name": "button",
+            "name": "battery",
             "type": "number",
             "title": {
-              "en": "Button number"
+              "en": "Battery (%)",
+              "fr": "Batterie (%)"
             },
-            "example": 1
+            "example": 15
           }
         ]
       },
@@ -543,6 +472,46 @@
           }
         ]
       }
+    ],
+    "conditions": [
+      {
+        "id": "contact_is_open",
+        "title": {
+          "en": "Door/window !{{is|isn't}} open",
+          "fr": "Porte/fenêtre !{{est|n'est pas}} ouverte"
+        }
+      }
     ]
-  }
+  },
+  "images": {
+    "small": "drivers/contact_sensor/assets/images/small.png",
+    "large": "drivers/contact_sensor/assets/images/large.png",
+    "xlarge": "drivers/contact_sensor/assets/images/xlarge.png"
+  },
+  "id": "contact_sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }
