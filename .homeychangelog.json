@@ -1,4 +1,8 @@
 {
+  "5.5.453": {
+    "en": "📚 SDK3 BEST PRACTICES: Created SDK3BestPractices utility, integrated into BaseHybridDevice, added Flow card highlights, IAS Zone proactive enrollment, battery best practices compliance. All 45 Flow cards improved!",
+    "fr": "📚 BONNES PRATIQUES SDK3: Utilitaire SDK3BestPractices créé, intégré à BaseHybridDevice, highlights Flow cards, enrollment IAS Zone proactif, conformité batterie. 45 Flow cards améliorées!"
+  },
   "5.5.452": {
     "en": "🚀 DYNAMIC CAPABILITIES: All button drivers now auto-add missing capabilities at runtime! Uses Homey SDK3 addCapability/removeCapability. No RE-PAIR needed - just restart app!",
     "fr": "🚀 CAPABILITIES DYNAMIQUES: Tous les drivers boutons ajoutent auto les capabilities manquantes! Utilise SDK3 addCapability/removeCapability. Pas de RE-PAIR - redémarrer l'app!"

@@ -2,6 +2,7 @@
   "triggers": [
     {
       "id": "contact_sensor_contact_sensor_alarm_contact_true",
+      "highlight": true,
       "title": {
         "en": "Contact alarm activated",
         "fr": "Alarme de contact activée"
@@ -34,4 +35,3 @@
     }
   ]
 }
-
