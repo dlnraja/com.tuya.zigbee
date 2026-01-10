@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.442** | 🕐 LCD TIME SYNC: Added ZCL Time cluster (0x000A) as fallback method. If Tuya... |
 | **v5.5.441** | 🔧 BUTTONS FIX: Changed class from 'button' to 'sensor' + added button.X capa... |
 | **v5.5.440** | 🔧 BUTTONS: Removed button.X capabilities - use FLOW CARDS for automation (si... |
 | **v5.5.439** | 🔧 LCD TIME SYNC: Improved error message when Tuya cluster unavailable - inst... |
@@ -78,7 +79,6 @@
 | **v5.5.435** | 🧠 INTELLIGENT AUTO-DISCOVERY: Added smart DP auto-detection for unknown rada... |
 | **v5.5.434** | 🔥 FORUM FIXES: Jolink smoke detector PG-S11Z pairing fix (added IAS Zone clu... |
 | **v5.5.433** | 📱 FORUM #884: Added 15+ new 2-gang touch dimmer fingerprints (Moes, Girier, ... |
-| **v5.5.432** | 🔍 DEEP 100-COMMIT SCAN: Found and restored 1 orphan manufacturerName (_TZ300... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
