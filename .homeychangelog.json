@@ -1,4 +1,10 @@
 {
+  "5.5.440": {
+    "en": "🔧 BUTTONS: Removed button.X capabilities - use FLOW CARDS for automation (single/double/long press). LCD TIME SYNC: Added DP-based time sync (DP101-103) for devices that don't respond to EF00 command.",
+    "fr": "🔧 BOUTONS: Capabilities button.X supprimées - utiliser FLOW CARDS. SYNC LCD: Ajout sync via DP Tuya (DP101-103) pour devices ne répondant pas à EF00.",
+    "nl": "🔧 KNOPPEN: button.X capabilities verwijderd - gebruik FLOW CARDS. LCD SYNC: DP-gebaseerde tijdsync toegevoegd.",
+    "de": "🔧 TASTEN: button.X Capabilities entfernt - FLOW CARDS verwenden. LCD SYNC: DP-basierte Zeitsync hinzugefügt."
+  },
   "5.5.439": {
     "en": "🔧 LCD TIME SYNC: Improved error message when Tuya cluster unavailable - instructs user to RE-PAIR device. BUTTONS: Virtual buttons are flow-only (use Flow cards, not device UI).",
     "fr": "🔧 SYNC HEURE LCD: Message d'erreur amélioré - RE-APPAIRER le device requis. BOUTONS: Boutons virtuels = Flow cards uniquement.",
