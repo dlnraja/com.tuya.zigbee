@@ -2,6 +2,7 @@
   "triggers": [
     {
       "id": "motion_sensor_motion_detected",
+      "highlight": true,
       "title": {
         "en": "Motion detected",
         "fr": "Mouvement détecté"

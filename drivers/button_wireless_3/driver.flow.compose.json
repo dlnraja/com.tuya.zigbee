@@ -2,6 +2,7 @@
   "triggers": [
     {
       "id": "button_wireless_3_button_3gang_button_pressed",
+      "highlight": true,
       "title": {
         "en": "Button pressed",
         "fr": "Bouton appuyé",
