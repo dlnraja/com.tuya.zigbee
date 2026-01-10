@@ -1,98 +1,125 @@
 {
   "name": {
-    "en": "Water Leak Sensor",
-    "fr": "Water Leak Sensor"
+    "en": "Plug Energy Monitor",
+    "fr": "Plug Energy Monitor"
   },
-  "class": "sensor",
+  "class": "socket",
   "capabilities": [
-    "alarm_water",
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current",
+    "onoff",
     "measure_battery"
   ],
-  "capabilitiesOptions": {
-    "alarm_water": {
-      "title": {
-        "en": "Water Detected",
-        "fr": "Eau Détectée"
-      }
-    }
-  },
   "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA"
-    ],
     "approximation": {
       "usageConstant": 0.5
-    }
+    },
+    "batteries": [
+      "OTHER"
+    ]
   },
-  "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "TUYATEC-3tipnsrx",
-      "_TYST11_qq9mpfhw",
-      "_TYZB01_o63ssaah",
-      "_TYZB01_sqmd19i1",
-      "_TZ3000_0S9GUKZT",
-      "_TZ3000_2WCYNPML",
-      "_TZ3000_3DFEWSK1",
-      "_TZ3000_4QAOWTDO",
-      "_TZ3000_4UVOVZ4R",
-      "_TZ3000_5K5VH43T",
-      "_TZ3000_85CZD6FY",
-      "_TZ3000_BFOPM9GA",
-      "_TZ3000_BZT33CYU",
-      "_TZ3000_EIT7P838",
-      "_TZ3000_EIT8C5CS",
-      "_TZ3000_FVM13J8W",
-      "_TZ3000_FXJO6GFE",
-      "_TZ3000_FXVJHDYL",
-      "_TZ3000_JS34CUMA",
-      "_TZ3000_K4EJ3WW2",
-      "_TZ3000_KSTBKT6A",
-      "_TZ3000_KYB656NO",
-      "_TZ3000_MUGYHZ0Q",
-      "_TZ3000_NKKL7UZV",
-      "_TZ3000_NLSSZMZL",
-      "_TZ3000_O9F2ZQLN",
-      "_TZ3000_OCJLO4EA",
-      "_TZ3000_QDMNMDDG",
-      "_TZ3000_QHOZXS2B",
-      "_TZ3000_RURVXHCX",
-      "_TZ3000_SQ510A",
-      "_TZ3000_T6JRIAWG",
-      "_TZ3000_UPGCBODY",
-      "_TZ3000_WUEP9ZNG",
-      "_TZ3000_WW9I3E0Y",
-      "_TZE204_QQ9MPFHW",
-      "_tyzb01_o63ssaah",
-      "_tyzb01_sqmd19i1",
-      "_TZ3000_KYAKWBF8"
+      "MatSeePlus",
+      "_TZ3000_0ZFRHQ4I",
+      "_TZ3000_1H2X4AKH",
+      "_TZ3000_3OOAZ3NG",
+      "_TZ3000_3ZOFVCAA",
+      "_TZ3000_5F43H46B",
+      "_TZ3000_6S5DC9LX",
+      "_TZ3000_8NKB7MOF",
+      "_TZ3000_92QD4SQA",
+      "_TZ3000_B28WRPVX",
+      "_TZ3000_BEP7CCEW",
+      "_TZ3000_BFN1W0MM",
+      "_TZ3000_CPHMQ0Q7",
+      "_TZ3000_DPO1YSAK",
+      "_TZ3000_EW3LDMGX",
+      "_TZ3000_FQOYNHKU",
+      "_TZ3000_G5XAWFCQ",
+      "_TZ3000_GJNOZSAZ",
+      "_TZ3000_GNJOZSAZ",
+      "_TZ3000_GVN91TMX",
+      "_TZ3000_GZNH2XLA",
+      "_TZ3000_HDOPUWV6",
+      "_TZ3000_HELYQDVS",
+      "_TZ3000_K6FVKNRR",
+      "_TZ3000_KSW8QTMT",
+      "_TZ3000_KX0PRIS5",
+      "_TZ3000_LEPZUHTO",
+      "_TZ3000_MRAOVVMM",
+      "_TZ3000_MVN6JL7X",
+      "_TZ3000_NEDIS",
+      "_TZ3000_OIYMH3QU",
+      "_TZ3000_PVLVOXVT",
+      "_TZ3000_QEUVNOHG",
+      "_TZ3000_QLMNXMAC",
+      "_TZ3000_QYSTBCJG",
+      "_TZ3000_R6BUO8BA",
+      "_TZ3000_RAVIYUVK",
+      "_TZ3000_RDTIXBNU",
+      "_TZ3000_SS98EC5D",
+      "_TZ3000_TVUARKSA",
+      "_TZ3000_TYPDPBPG",
+      "_TZ3000_HHIODEZ3",
+      "_TZ3000_JVZVULEN",
+      "_TZ3000_TYPDPDPG",
+      "_TZ3000_UWAORT14",
+      "_TZ3000_VTSCRPMW",
+      "_TZ3000_VZOPCETZ",
+      "_TZ3000_W0QQDE0G",
+      "_TZ3000_WXTP7C5Y",
+      "_TZ3000_YNMOWQK2",
+      "_TZ3000_ZLOSO4JK",
+      "_TZ3000_ZWAADVUS",
+      "_TZ3210_CEHUW1LW",
+      "_TZE200_F91MIYHJ",
+      "_TZE200_2USB_SOCKET",
+      "_TZE204_2USB_SOCKET",
+      "_TZE284_AHWVLKPY",
+      "_TZE284_DAPWRYY7",
+      "_TZE284_DCNSGGVZ",
+      "_TZE284_BJZROWV2",
+      "_TZE284_5CUOCQTY",
+      "_TZ3000_U1RKAJSR",
+      "_TZE284_81YRT3LO",
+      "_TZE284_CJBOFHXW",
+      "_TZE204_81YRT3LO",
+      "_TZE200_AC0FHFIQ",
+      "_TZE204_AC0FHFIQ",
+      "_TZE204_VES1YCWX",
+      "_TZE200_VES1YCWX",
+      "_TZE200_V9HKZ2Y",
+      "_TZE200_RKS0SGB7"
     ],
     "productId": [
-      "TS0207",
-      "TS0601",
-      "q9mpfhw"
+      "TS0121",
+      "TS0201",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          1026,
-          1280,
-          61184,
-          1280,
-          1
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820,
+          61184
         ],
         "bindings": [
           1,
-          1280
+          6,
+          2820
         ]
       }
     },
     "learnmode": {
-      "image": "/drivers/water_leak_sensor/assets/learnmode.svg",
+      "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
@@ -324,61 +351,12 @@
       }
     }
   ],
-  "flow": {
-    "triggers": [
-      {
-        "id": "water_leak_detected",
-        "title": {
-          "en": "Water leak detected",
-          "fr": "Fuite d'eau détectée",
-          "nl": "Waterlek gedetecteerd",
-          "de": "Wasserleck erkannt"
-        }
-      },
-      {
-        "id": "water_leak_cleared",
-        "title": {
-          "en": "Water leak cleared",
-          "fr": "Fuite d'eau terminée",
-          "nl": "Waterlek gestopt",
-          "de": "Wasserleck beendet"
-        }
-      },
-      {
-        "id": "water_battery_low",
-        "title": {
-          "en": "Battery is low",
-          "fr": "Batterie faible"
-        },
-        "tokens": [
-          {
-            "name": "battery",
-            "type": "number",
-            "title": {
-              "en": "Battery (%)",
-              "fr": "Batterie (%)"
-            },
-            "example": 15
-          }
-        ]
-      }
-    ],
-    "conditions": [
-      {
-        "id": "water_leak_is_active",
-        "title": {
-          "en": "Water leak !{{is|isn't}} detected",
-          "fr": "Fuite d'eau !{{est|n'est pas}} détectée"
-        }
-      }
-    ]
-  },
   "images": {
-    "small": "drivers/water_leak_sensor/assets/images/small.png",
-    "large": "drivers/water_leak_sensor/assets/images/large.png",
-    "xlarge": "drivers/water_leak_sensor/assets/images/xlarge.png"
+    "small": "drivers/plug_energy_monitor/assets/images/small.png",
+    "large": "drivers/plug_energy_monitor/assets/images/large.png",
+    "xlarge": "drivers/plug_energy_monitor/assets/images/xlarge.png"
   },
-  "id": "water_leak_sensor",
+  "id": "plug_energy_monitor",
   "platforms": [
     "local"
   ],
@@ -403,5 +381,6 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ]
+  ],
+  "capabilitiesOptions": {}
 }
