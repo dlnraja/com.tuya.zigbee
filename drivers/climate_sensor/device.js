@@ -673,6 +673,39 @@ class ClimateSensorDevice extends HybridSensorBase {
         this.log('[CLIMATE] 🔥 ⚠️ DP method failed:', e.message);
       }
 
+      // v5.5.444: Method 3 - Raw ZCL frame bypass (for devices paired before cluster was added)
+      if (!success && this.zclNode) {
+        try {
+          // Calculate local time with timezone offset
+          const localSeconds = utcSeconds + (timezoneMinutes * 60);
+
+          // Build raw Tuya mcuSyncTime frame: [seqHi][seqLo][0x24][payloadLen:2][Local:4][UTC:4]
+          const rawFrame = Buffer.alloc(13);
+          rawFrame.writeUInt16BE(Date.now() % 65535, 0); // Sequence number
+          rawFrame.writeUInt8(0x24, 2);                   // Command: mcuSyncTime
+          rawFrame.writeUInt16BE(8, 3);                   // Payload length: 8 bytes
+          rawFrame.writeUInt32BE(localSeconds, 5);        // Local time FIRST (Tuya epoch)
+          rawFrame.writeUInt32BE(utcSeconds, 9);          // UTC time SECOND (Tuya epoch)
+
+          this.log(`[CLIMATE] 🔧 Raw frame attempt: Local=${localSeconds}, UTC=${utcSeconds}`);
+          this.log(`[CLIMATE] 🔧 Frame hex: ${rawFrame.toString('hex')}`);
+
+          // Try to send via endpoint
+          const ep = this.zclNode?.endpoints?.[1];
+          if (ep && typeof ep.sendFrame === 'function') {
+            await ep.sendFrame(0xEF00, rawFrame);
+            this.log('[CLIMATE] ✅ Sent via endpoint.sendFrame(0xEF00)');
+            success = true;
+          } else if (this.node && typeof this.node.sendFrame === 'function') {
+            await this.node.sendFrame(0xEF00, rawFrame, 1);
+            this.log('[CLIMATE] ✅ Sent via node.sendFrame(0xEF00)');
+            success = true;
+          }
+        } catch (e) {
+          this.log('[CLIMATE] Raw frame failed:', e.message);
+        }
+      }
+
       if (success) {
         this.log('[CLIMATE] 🔥 ✅ FORCED time sync delivered!');
         this.log('[CLIMATE] 🔥 ⏰ LCD display should now show correct time');
