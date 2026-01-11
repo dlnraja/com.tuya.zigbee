@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.464** | 🎯 CAM COMPLETE FIX: Added TS0041/_TZ3000_5bpeda8u to button_wireless_4 (4-en... |
 | **v5.5.463** | 🔧 GITHUB PRs BATCH: Added 15+ device IDs from PRs #1333 (siren), #1306 (rada... |
 | **v5.5.462** | 🔧 GITHUB FIXES (#1267, #1268): HOBEIAN ZG-204ZL PIR+Lux moved to motion_sens... |
 | **v5.5.461** | 🔧 FORUM FIXES (Cam, GStock, Peter_Kawa): Added BSEED plug USB-C (_TZ3000_5ct... |
@@ -78,7 +79,6 @@
 | **v5.5.457** | 🔘 HOBEIAN FIX (Ronny_M): ZG-101ZL button now detects presses! Added onOff at... |
 | **v5.5.456** | 🕐 TIME-SYNC ENHANCED: Improved diagnostic logging for LCD climate sensors. A... |
 | **v5.5.455** | 🚨 CRITICAL FIX: Fixed app crash (SyntaxError app.js:786). Added fastInitMode... |
-| **v5.5.454** | 🔥 SMOKE DETECTOR FIX (Jolink): Fixed critical syntax error in driver.js - or... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
