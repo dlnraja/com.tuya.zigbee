@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.476** | 🔧 DRIVER SIMPLIFICATION: Removed invalid flow card registrations from 10 dri... |
 | **v5.5.475** | 🔧 CRITICAL FIX: Fixed 9 drivers with orphaned flow card code causing initial... |
 | **v5.5.474** | 🔧 CRITICAL FIX: HOBEIAN ZG-101ZL now correctly recognized! Moved ZG-101ZL fr... |
 | **v5.5.473** | 🔧 FORUM FIX: Removed HOBEIAN from climate_sensor driver - HOBEIAN ZG-101ZL b... |
@@ -78,7 +79,6 @@
 | **v5.5.469** | 🔧 LCD TIME SYNC FIX: Climate sensor LCD now syncs time in passive mode. Fixe... |
 | **v5.5.468** | 🔧 CRITICAL FIXES: Fixed 9 driver initialization errors (siren, switch_1gang/... |
 | **v5.5.467** | 📊 COMPREHENSIVE SYNC: +52 IDs from Forums (Universal Tuya, Johan Bendz, Arch... |
-| **v5.5.466** | 🔍 JOHAN BENDZ SYNC: Added 26+ IDs from GitHub Issues (#1320-#1331), PRs (#10... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
