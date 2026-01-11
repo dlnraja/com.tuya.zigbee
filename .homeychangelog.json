@@ -1,4 +1,9 @@
 {
+  "5.5.462": {
+    "en": "🔧 GITHUB FIXES (#1267, #1268): HOBEIAN ZG-204ZL PIR+Lux moved to motion_sensor (was climate). Added _TZ3000_5bpeda8u button lowercase variant. Case sensitivity fixes.",
+    "nl": "🔧 GITHUB FIXES: HOBEIAN ZG-204ZL PIR+Lux verplaatst naar motion_sensor. Button case sensitivity fix.",
+    "fr": "🔧 GITHUB FIXES: HOBEIAN ZG-204ZL PIR+Lux déplacé vers motion_sensor. Fix case sensitivity bouton."
+  },
   "5.5.461": {
     "en": "🔧 FORUM FIXES (Cam, GStock, Peter_Kawa): Added BSEED plug USB-C (_TZ3000_5ct6e7ye). Fixed PJ-1203A energy meter wrongly paired as climate sensor. Scene switches improved in v5.5.460.",
     "nl": "🔧 FORUM FIXES: BSEED plug USB-C toegevoegd. PJ-1203A energy meter fix (was climate sensor). Scene switches verbeterd in v5.5.460.",
