@@ -207,27 +207,64 @@ class Button1GangDevice extends ButtonDevice {
       }
 
       // v5.5.371: IAS ZONE CLUSTER - For button devices with iasZone
+      // v5.5.480: FIX for Cam's issue - debounce IAS Zone to filter keep-alive messages
+      // Keep-alive messages occur at regular intervals (30min/1hour) and should not trigger button press
       const iasZoneCluster = endpoint.clusters?.iasZone || endpoint.clusters?.ssIasZone || endpoint.clusters?.[1280];
       if (iasZoneCluster && typeof iasZoneCluster.on === 'function') {
-        this.log('[BUTTON1-PHYSICAL] 📡 Setting up IAS Zone listeners...');
+        this.log('[BUTTON1-PHYSICAL] 📡 Setting up IAS Zone listeners with keep-alive filter...');
 
-        iasZoneCluster.on('zoneStatusChangeNotification', async (payload) => {
-          this.log('[BUTTON1-IASZONE] zoneStatusChangeNotification:', payload);
-          // Zone status bit 0 = alarm1 (button press)
-          if (payload?.zoneStatus & 0x01) {
-            this.log('[BUTTON1-IASZONE] 🔘 Button 1 SINGLE (IAS Zone alarm)');
+        // v5.5.480: Track IAS Zone events to filter keep-alive vs real button presses
+        this._lastIasZoneTime = 0;
+        this._iasZoneDebounceMs = 5000; // 5 second debounce
+        this._iasZoneLastStatus = null;
+
+        const handleIasZoneEvent = async (payload, eventName) => {
+          const now = Date.now();
+          const timeSinceLast = now - this._lastIasZoneTime;
+          const zoneStatus = payload?.zoneStatus;
+
+          this.log(`[BUTTON1-IASZONE] ${eventName}: zoneStatus=${zoneStatus}, timeSinceLast=${timeSinceLast}ms`);
+
+          // v5.5.480: Filter keep-alive messages
+          // Keep-alive typically sends the SAME status at regular intervals
+          // Real button presses have status change or rapid succession
+          if (zoneStatus !== undefined && (zoneStatus & 0x01)) {
+            // Debounce: ignore if same status within 5 seconds (keep-alive filter)
+            if (this._iasZoneLastStatus === zoneStatus && timeSinceLast < this._iasZoneDebounceMs) {
+              this.log('[BUTTON1-IASZONE] ⏭️ Debounced (same status within 5s - likely keep-alive)');
+              return;
+            }
+
+            // v5.5.480: Additional keep-alive detection
+            // If message arrives at ~30min or ~60min intervals, it's likely keep-alive
+            const isLikelyKeepAlive = (
+              (timeSinceLast > 1700000 && timeSinceLast < 1900000) || // ~30 min
+              (timeSinceLast > 3500000 && timeSinceLast < 3700000)    // ~60 min
+            );
+
+            if (isLikelyKeepAlive && this._iasZoneLastStatus === zoneStatus) {
+              this.log('[BUTTON1-IASZONE] 🚫 BLOCKED: Likely keep-alive message (30/60min interval)');
+              this._lastIasZoneTime = now;
+              return;
+            }
+
+            this._lastIasZoneTime = now;
+            this._iasZoneLastStatus = zoneStatus;
+
+            this.log('[BUTTON1-IASZONE] 🔘 Button 1 SINGLE (IAS Zone alarm - real press)');
             await this.triggerButtonPress(1, 'single');
           }
+        };
+
+        iasZoneCluster.on('zoneStatusChangeNotification', async (payload) => {
+          await handleIasZoneEvent(payload, 'zoneStatusChangeNotification');
         });
 
         iasZoneCluster.on('statusChangeNotification', async (payload) => {
-          this.log('[BUTTON1-IASZONE] statusChangeNotification:', payload);
-          if (payload?.zoneStatus & 0x01) {
-            await this.triggerButtonPress(1, 'single');
-          }
+          await handleIasZoneEvent(payload, 'statusChangeNotification');
         });
 
-        this.log('[BUTTON1-PHYSICAL] ✅ IAS Zone listeners configured');
+        this.log('[BUTTON1-PHYSICAL] ✅ IAS Zone listeners configured with keep-alive filter');
       }
 
       // v5.5.376: IAS ACE CLUSTER - For SOS/Emergency buttons (TS0215A)
