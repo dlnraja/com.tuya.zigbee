@@ -1,4 +1,10 @@
 {
+  "5.5.475": {
+    "en": "🔧 CRITICAL FIX: Fixed 9 drivers with orphaned flow card code causing initialization errors. Moved flow card registrations inside onInit() for: contact_sensor, motion_sensor, radiator_controller, air_quality_co2, plug_smart, button_wireless, dimmer_wall_1gang, gas_sensor, curtain_motor.",
+    "nl": "🔧 CRITICAL FIX: 9 drivers gerepareerd met flow card initialisatiefouten.",
+    "fr": "🔧 CRITICAL FIX: 9 pilotes réparés avec erreurs d'initialisation des cartes de flux.",
+    "de": "🔧 CRITICAL FIX: 9 Treiber mit Flow-Karten-Initialisierungsfehlern behoben."
+  },
   "5.5.474": {
     "en": "🔧 CRITICAL FIX: HOBEIAN ZG-101ZL now correctly recognized! Moved ZG-101ZL from manufacturerName to productId array. Device will now pair as 1-Button Wireless Controller.",
     "nl": "🔧 CRITICAL FIX: HOBEIAN ZG-101ZL wordt nu correct herkend als knop.",
