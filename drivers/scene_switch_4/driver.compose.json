@@ -3,7 +3,7 @@
     "en": "Scene Switch 4-Gang",
     "fr": "Interrupteur Scène 4 Boutons"
   },
-  "class": "button",
+  "class": "sensor",
   "capabilities": [
     "button.1",
     "button.2",
@@ -14,34 +14,50 @@
   "capabilitiesOptions": {
     "button.1": {
       "title": {
-        "en": "Upper Left",
-        "fr": "Haut Gauche",
-        "nl": "Linksboven",
-        "de": "Oben Links"
-      }
+        "en": "Button 1",
+        "fr": "Bouton 1",
+        "nl": "Knop 1",
+        "de": "Taste 1"
+      },
+      "getable": false,
+      "setable": true
     },
     "button.2": {
       "title": {
-        "en": "Upper Right",
-        "fr": "Haut Droite",
-        "nl": "Rechtsboven",
-        "de": "Oben Rechts"
-      }
+        "en": "Button 2",
+        "fr": "Bouton 2",
+        "nl": "Knop 2",
+        "de": "Taste 2"
+      },
+      "getable": false,
+      "setable": true
     },
     "button.3": {
       "title": {
-        "en": "Lower Left",
-        "fr": "Bas Gauche",
-        "nl": "Linksonder",
-        "de": "Unten Links"
-      }
+        "en": "Button 3",
+        "fr": "Bouton 3",
+        "nl": "Knop 3",
+        "de": "Taste 3"
+      },
+      "getable": false,
+      "setable": true
     },
     "button.4": {
       "title": {
-        "en": "Lower Right",
-        "fr": "Bas Droite",
-        "nl": "Rechtsonder",
-        "de": "Unten Rechts"
+        "en": "Button 4",
+        "fr": "Bouton 4",
+        "nl": "Knop 4",
+        "de": "Taste 4"
+      },
+      "getable": false,
+      "setable": true
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
       }
     }
   },
@@ -50,7 +66,9 @@
       "_TZ3000_JCKXIP3G",
       "_TZE204_ZQTIAM9D",
       "_TZE200_ZQTIAM9D",
-      "_TZ3000_KGVAMGXS"
+      "_TZ3000_KGVAMGXS",
+      "_TZ3000_ZGYZGDUA",
+      "MOES"
     ],
     "productId": [
       "TS0044",

@@ -1,4 +1,9 @@
 {
+  "5.5.460": {
+    "en": "🔧 FORUM FIXES: Added eWeLink CK-TLSR8656-SS5-01(7014) temp sensor. Fixed ALL scene switch drivers (1/2/3/4/6) - class 'sensor' + clickable buttons. Added MOES 4-gang scene switch. RE-PAIR scene switches after update!",
+    "nl": "🔧 FORUM FIXES: eWeLink CK-TLSR8656 temp sensor toegevoegd. ALLE scene switch drivers (1/2/3/4/6) gefixed - klasse 'sensor' + klikbare knoppen. RE-PAIREN na update!",
+    "fr": "🔧 FORUM FIXES: Capteur temp eWeLink CK-TLSR8656 ajouté. TOUS les drivers scene switch (1/2/3/4/6) corrigés - classe 'sensor' + boutons cliquables. RE-APPAIRER après mise à jour!"
+  },
   "5.5.459": {
     "en": "📡 SONOFF FULL SUPPORT: All SONOFF Zigbee devices added - SNZB-01/01P (button), SNZB-02/02P/02D (climate), SNZB-03/03P (motion), SNZB-04/04P (contact), SNZB-05P (water), SNZB-06P (presence), ZBMINI/L2/R2 (switch), TRVZB (valve), ZBCurtain, S26/S31/S40/S60ZB (plugs).",
     "nl": "📡 SONOFF VOLLEDIG SUPPORT: Alle SONOFF Zigbee apparaten - SNZB-01/01P (knop), SNZB-02/02P/02D (klimaat), SNZB-03/03P (beweging), SNZB-04/04P (contact), SNZB-05P (water), SNZB-06P (aanwezigheid), ZBMINI/L2/R2 (schakelaar), TRVZB (klep), ZBCurtain, pluggen.",
