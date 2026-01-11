@@ -1,4 +1,10 @@
 {
+  "5.5.470": {
+    "en": "🔧 DRIVER ASSIGNMENT FIX: Fixed 5 manufacturer IDs in wrong drivers. _TZE204_laokfqwu moved to climate_sensor, _TZE284_oitavov2 to soil_sensor only, _TZE200_rhgsbacq to presence_sensor_radar only, _TZ3000_h1ipgkwn to usb_dongle only.",
+    "nl": "🔧 DRIVER FIX: 5 manufacturer IDs naar juiste drivers verplaatst.",
+    "fr": "🔧 FIX DRIVERS: 5 IDs fabricants déplacés vers les bons pilotes.",
+    "de": "🔧 TREIBER FIX: 5 Hersteller-IDs zu richtigen Treibern verschoben."
+  },
   "5.5.469": {
     "en": "🔧 LCD TIME SYNC FIX: Climate sensor LCD now syncs time in passive mode. Fixed button_emergency_sos driver crash. All driver fixes from v5.5.468 included.",
     "nl": "🔧 LCD TIME SYNC FIX: Klimaatsensor LCD synchroniseert nu tijd in passieve modus. button_emergency_sos crash opgelost.",
