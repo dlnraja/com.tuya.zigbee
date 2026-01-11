@@ -1,4 +1,10 @@
 {
+  "5.5.476": {
+    "en": "🔧 DRIVER SIMPLIFICATION: Removed invalid flow card registrations from 10 drivers. SDK3 auto-registers flow cards from driver.flow.compose.json. Fixed: contact_sensor, motion_sensor, radiator_controller, air_quality_co2, plug_smart, button_wireless, dimmer_wall_1gang, gas_sensor, curtain_motor.",
+    "nl": "🔧 DRIVER SIMPLIFICATIE: Ongeldige flow card registraties verwijderd uit 10 drivers.",
+    "fr": "🔧 SIMPLIFICATION DRIVERS: Enregistrements de cartes de flux invalides supprimés de 10 pilotes.",
+    "de": "🔧 TREIBER VEREINFACHUNG: Ungültige Flow-Karten-Registrierungen aus 10 Treibern entfernt."
+  },
   "5.5.475": {
     "en": "🔧 CRITICAL FIX: Fixed 9 drivers with orphaned flow card code causing initialization errors. Moved flow card registrations inside onInit() for: contact_sensor, motion_sensor, radiator_controller, air_quality_co2, plug_smart, button_wireless, dimmer_wall_1gang, gas_sensor, curtain_motor.",
     "nl": "🔧 CRITICAL FIX: 9 drivers gerepareerd met flow card initialisatiefouten.",
