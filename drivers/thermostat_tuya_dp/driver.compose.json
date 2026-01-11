@@ -20,10 +20,6 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "AVATTO",
-      "Beca",
-      "Beok",
-      "Moes",
       "_TZE200_0DVM9MVA",
       "_tze200_0dvm9mva",
       "_TZE200_2EKUZ3DZ",
@@ -32,6 +28,8 @@
       "_tze200_4utwoz2",
       "_TZE200_9MJY74MP",
       "_tze200_9mjy74mp",
+      "_TZE200_b6wax7g0",
+      "_tze200_b6wax7g0",
       "_TZE200_BVRLMAJK",
       "_tze200_bvrlmajk",
       "_TZE200_CPMGN2CF",
@@ -40,6 +38,8 @@
       "_tze200_cwbvmsar",
       "_TZE200_KDS0PQET",
       "_tze200_kds0pqet",
+      "_TZE200_PAY2BYAX",
+      "_tze200_pay2byax",
       "_TZE200_VIY9IHS7",
       "_tze200_viy9ihs7",
       "_TZE200_WLOSFENA",
@@ -70,8 +70,10 @@
       "_tze284_gops3slb",
       "_TZE284_LTWBM23F",
       "_tze284_ltwbm23f",
-      "_TZE200_PAY2BYAX",
-      "_tze200_pay2byax"
+      "AVATTO",
+      "Beca",
+      "Beok",
+      "Moes"
     ],
     "productId": [
       "TS0011",
