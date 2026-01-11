@@ -1,4 +1,9 @@
 {
+  "5.5.456": {
+    "en": "🕐 TIME-SYNC ENHANCED: Improved diagnostic logging for LCD climate sensors. Added docs/TIME_SYNC_TECHNICAL.md. Better firmware behavior detection (cooperative/hybrid/cloud-only).",
+    "nl": "🕐 TIME-SYNC VERBETERD: Betere diagnostische logging voor LCD klimaatsensoren. docs/TIME_SYNC_TECHNICAL.md toegevoegd. Betere firmware gedragsdetectie.",
+    "fr": "🕐 TIME-SYNC AMÉLIORÉ: Logging diagnostique amélioré pour capteurs climat LCD. docs/TIME_SYNC_TECHNICAL.md ajouté. Meilleure détection comportement firmware."
+  },
   "5.5.455": {
     "en": "🚨 CRITICAL FIX: Fixed app crash (SyntaxError app.js:786). Added fastInitMode for sleepy buttons (Ronny_M). Multiple diagnostic reports addressed!",
     "nl": "🚨 KRITIEKE FIX: App crash opgelost (SyntaxError app.js:786). fastInitMode toegevoegd voor sleepy buttons (Ronny_M). Meerdere diagnostische rapporten behandeld!",
