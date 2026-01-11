@@ -2,10 +2,13 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
+/**
+ * v5.5.475: FIXED - Moved orphaned flow card code inside onInit()
+ */
 class RadiatorControllerDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('RadiatorControllerDriver initialized');
+    this.log('RadiatorControllerDriver v5.5.475 initialized');
 
     // Register flow triggers
     this._controller_target_changedTrigger = this.homey.flow.getDeviceTriggerCard('controller_target_changed');
@@ -19,7 +22,6 @@ class RadiatorControllerDriver extends ZigBeeDriver {
     this._set_temperature_offsetAction = this.homey.flow.getDeviceActionCard('set_temperature_offset');
     this._set_temperature_offsetAction?.registerRunListener(async (args) => {
       const { device, offset } = args;
-      // DP 104 = temp_offset, multiplied by 10
       await device._sendTuyaDP(104, Math.round(offset * 10), 'value');
       this.log(`[RADIATOR_CTRL] Temperature offset set to ${offset}°C`);
       return true;
