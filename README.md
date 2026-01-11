@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.460** | 🔧 FORUM FIXES: Added eWeLink CK-TLSR8656-SS5-01(7014) temp sensor. Fixed ALL... |
 | **v5.5.459** | 📡 SONOFF FULL SUPPORT: All SONOFF Zigbee devices added - SNZB-01/01P (button... |
 | **v5.5.458** | 🏭 HOBEIAN FULL SUPPORT: Added all HOBEIAN devices across drivers - ZG-101ZL ... |
 | **v5.5.457** | 🔘 HOBEIAN FIX (Ronny_M): ZG-101ZL button now detects presses! Added onOff at... |
@@ -78,7 +79,6 @@
 | **v5.5.453** | 📚 SDK3 BEST PRACTICES: Created SDK3BestPractices utility, integrated into Ba... |
 | **v5.5.452** | 🚀 DYNAMIC CAPABILITIES: All button drivers now auto-add missing capabilities... |
 | **v5.5.451** | 🔧 3-BUTTON FIX: Added _ensureCapabilities() - devices paired before fix had ... |
-| **v5.5.450** | 🔧 HOBEIAN ZG-101ZL FIX: Added HOBEIAN to button_wireless_1, removed from con... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
