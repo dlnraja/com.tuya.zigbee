@@ -3,11 +3,21 @@
     "en": "Scene Switch 1-Gang",
     "fr": "Interrupteur Scène 1 Bouton"
   },
-  "class": "button",
+  "class": "sensor",
   "capabilities": [
     "button",
     "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "button": {
+      "title": {
+        "en": "Button",
+        "fr": "Bouton"
+      },
+      "getable": false,
+      "setable": true
+    }
+  },
   "zigbee": {
     "manufacturerName": [],
     "productId": [
