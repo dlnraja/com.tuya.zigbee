@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.459** | 📡 SONOFF FULL SUPPORT: All SONOFF Zigbee devices added - SNZB-01/01P (button... |
 | **v5.5.458** | 🏭 HOBEIAN FULL SUPPORT: Added all HOBEIAN devices across drivers - ZG-101ZL ... |
 | **v5.5.457** | 🔘 HOBEIAN FIX (Ronny_M): ZG-101ZL button now detects presses! Added onOff at... |
 | **v5.5.456** | 🕐 TIME-SYNC ENHANCED: Improved diagnostic logging for LCD climate sensors. A... |
@@ -78,7 +79,6 @@
 | **v5.5.452** | 🚀 DYNAMIC CAPABILITIES: All button drivers now auto-add missing capabilities... |
 | **v5.5.451** | 🔧 3-BUTTON FIX: Added _ensureCapabilities() - devices paired before fix had ... |
 | **v5.5.450** | 🔧 HOBEIAN ZG-101ZL FIX: Added HOBEIAN to button_wireless_1, removed from con... |
-| **v5.5.449** | 🔧 BUTTON FIX: Removed _TZ3000_bczr4e10 (TS0043) and _TZ3000_bgtzm4ny (TS0044... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
