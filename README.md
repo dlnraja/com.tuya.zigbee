@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.470** | 🔧 DRIVER ASSIGNMENT FIX: Fixed 5 manufacturer IDs in wrong drivers. _TZE204_... |
 | **v5.5.469** | 🔧 LCD TIME SYNC FIX: Climate sensor LCD now syncs time in passive mode. Fixe... |
 | **v5.5.468** | 🔧 CRITICAL FIXES: Fixed 9 driver initialization errors (siren, switch_1gang/... |
 | **v5.5.467** | 📊 COMPREHENSIVE SYNC: +52 IDs from Forums (Universal Tuya, Johan Bendz, Arch... |
@@ -78,7 +79,6 @@
 | **v5.5.463** | 🔧 GITHUB PRs BATCH: Added 15+ device IDs from PRs #1333 (siren), #1306 (rada... |
 | **v5.5.462** | 🔧 GITHUB FIXES (#1267, #1268): HOBEIAN ZG-204ZL PIR+Lux moved to motion_sens... |
 | **v5.5.461** | 🔧 FORUM FIXES (Cam, GStock, Peter_Kawa): Added BSEED plug USB-C (_TZ3000_5ct... |
-| **v5.5.460** | 🔧 FORUM FIXES: Added eWeLink CK-TLSR8656-SS5-01(7014) temp sensor. Fixed ALL... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
