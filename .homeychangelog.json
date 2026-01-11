@@ -1,4 +1,9 @@
 {
+  "5.5.466": {
+    "en": "🔍 JOHAN BENDZ SYNC: Added 26+ IDs from GitHub Issues (#1320-#1331), PRs (#1017, #1065, #1075, #1118), and 100+ forks analysis. Fingerbot, tank monitor, smart plugs, LED strips, switches enhanced.",
+    "nl": "🔍 JOHAN BENDZ SYNC: 26+ IDs toegevoegd van GitHub Issues, PRs en forks analyse.",
+    "fr": "🔍 JOHAN BENDZ SYNC: 26+ IDs ajoutés depuis GitHub Issues, PRs et analyse des forks."
+  },
   "5.5.465": {
     "en": "🔧 CASE SENSITIVITY FIX: Added 2481 lowercase manufacturer IDs. Homey does EXACT case matching - now supports both UPPERCASE and lowercase device firmware variants. Maximum compatibility!",
     "nl": "🔧 CASE FIX: 2481 lowercase IDs toegevoegd. Homey is case-sensitive - nu beide varianten ondersteund.",
