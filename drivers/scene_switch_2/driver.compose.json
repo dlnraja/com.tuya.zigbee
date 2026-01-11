@@ -3,12 +3,30 @@
     "en": "Scene Switch 2-Gang",
     "fr": "Interrupteur Scène 2 Boutons"
   },
-  "class": "button",
+  "class": "sensor",
   "capabilities": [
     "button.1",
     "button.2",
     "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "getable": false,
+      "setable": true
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "getable": false,
+      "setable": true
+    }
+  },
   "zigbee": {
     "manufacturerName": [],
     "productId": [],
