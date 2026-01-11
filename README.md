@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.462** | 🔧 GITHUB FIXES (#1267, #1268): HOBEIAN ZG-204ZL PIR+Lux moved to motion_sens... |
 | **v5.5.461** | 🔧 FORUM FIXES (Cam, GStock, Peter_Kawa): Added BSEED plug USB-C (_TZ3000_5ct... |
 | **v5.5.460** | 🔧 FORUM FIXES: Added eWeLink CK-TLSR8656-SS5-01(7014) temp sensor. Fixed ALL... |
 | **v5.5.459** | 📡 SONOFF FULL SUPPORT: All SONOFF Zigbee devices added - SNZB-01/01P (button... |
@@ -78,7 +79,6 @@
 | **v5.5.455** | 🚨 CRITICAL FIX: Fixed app crash (SyntaxError app.js:786). Added fastInitMode... |
 | **v5.5.454** | 🔥 SMOKE DETECTOR FIX (Jolink): Fixed critical syntax error in driver.js - or... |
 | **v5.5.453** | 📚 SDK3 BEST PRACTICES: Created SDK3BestPractices utility, integrated into Ba... |
-| **v5.5.452** | 🚀 DYNAMIC CAPABILITIES: All button drivers now auto-add missing capabilities... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
