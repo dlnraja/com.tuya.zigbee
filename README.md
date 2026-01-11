@@ -69,6 +69,8 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.468** | 🔧 CRITICAL FIXES: Fixed 9 driver initialization errors (siren, switch_1gang/... |
+| **v5.5.467** | 📊 COMPREHENSIVE SYNC: +52 IDs from Forums (Universal Tuya, Johan Bendz, Arch... |
 | **v5.5.466** | 🔍 JOHAN BENDZ SYNC: Added 26+ IDs from GitHub Issues (#1320-#1331), PRs (#10... |
 | **v5.5.465** | 🔧 CASE SENSITIVITY FIX: Added 2481 lowercase manufacturer IDs. Homey does EX... |
 | **v5.5.464** | 🎯 CAM COMPLETE FIX: Added TS0041/_TZ3000_5bpeda8u to button_wireless_4 (4-en... |
@@ -77,8 +79,6 @@
 | **v5.5.461** | 🔧 FORUM FIXES (Cam, GStock, Peter_Kawa): Added BSEED plug USB-C (_TZ3000_5ct... |
 | **v5.5.460** | 🔧 FORUM FIXES: Added eWeLink CK-TLSR8656-SS5-01(7014) temp sensor. Fixed ALL... |
 | **v5.5.459** | 📡 SONOFF FULL SUPPORT: All SONOFF Zigbee devices added - SNZB-01/01P (button... |
-| **v5.5.458** | 🏭 HOBEIAN FULL SUPPORT: Added all HOBEIAN devices across drivers - ZG-101ZL ... |
-| **v5.5.457** | 🔘 HOBEIAN FIX (Ronny_M): ZG-101ZL button now detects presses! Added onOff at... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
