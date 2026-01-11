@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.474** | 🔧 CRITICAL FIX: HOBEIAN ZG-101ZL now correctly recognized! Moved ZG-101ZL fr... |
 | **v5.5.473** | 🔧 FORUM FIX: Removed HOBEIAN from climate_sensor driver - HOBEIAN ZG-101ZL b... |
 | **v5.5.472** | 🔧 ID DATABASE FIX: Improved driver loading timing with multiple rebuild atte... |
 | **v5.5.471** | 🔧 FORUM FIXES: Fixed manufacturer ID duplications across drivers. _TZ3000_0d... |
@@ -78,7 +79,6 @@
 | **v5.5.467** | 📊 COMPREHENSIVE SYNC: +52 IDs from Forums (Universal Tuya, Johan Bendz, Arch... |
 | **v5.5.466** | 🔍 JOHAN BENDZ SYNC: Added 26+ IDs from GitHub Issues (#1320-#1331), PRs (#10... |
 | **v5.5.465** | 🔧 CASE SENSITIVITY FIX: Added 2481 lowercase manufacturer IDs. Homey does EX... |
-| **v5.5.464** | 🎯 CAM COMPLETE FIX: Added TS0041/_TZ3000_5bpeda8u to button_wireless_4 (4-en... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
