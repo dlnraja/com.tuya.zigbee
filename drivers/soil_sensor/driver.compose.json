@@ -48,6 +48,8 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
+      "HOBEIAN",
+      "ZG-303Z",
       "_TZE200_WQASHYQO",
       "_TZE200_9CV5TCGQ",
       "_TZE284_OITAVOV2",
@@ -79,7 +81,8 @@
       "_TZE284_A0GSPFYZ"
     ],
     "productId": [
-      "TS0601"
+      "TS0601",
+      "ZG-303Z"
     ],
     "endpoints": {
       "1": {
