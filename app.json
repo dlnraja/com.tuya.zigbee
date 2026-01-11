@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.477",
+  "version": "5.5.478",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -25009,7 +25009,6 @@
       "zigbee": {
         "manufacturerName": [
           "5rta89nj",
-          "HOBEIAN",
           "Immax",
           "TS0301",
           "TUYATEC-0l6xaqmi",
@@ -32020,7 +32019,6 @@
           "_TZE204_n8dljorx",
           "eWeLink",
           "Fantem",
-          "HOBEIAN",
           "Perenio",
           "SONOFF",
           "TS0207",
@@ -32618,7 +32616,6 @@
           "Treatlife",
           "Wenzhi",
           "Zecamin",
-          "HOBEIAN",
           "_tze200_1ibpyhdc",
           "_tze200_2aaelwxk",
           "_tze200_3towulqd",
@@ -34738,8 +34735,7 @@
           "_tze284_sxm7l9xa",
           "_tze284_xsm7l9xa",
           "_tze284_yrwmnya3",
-          "_tze284_ztc6ggyl",
-          "HOBEIAN"
+          "_tze284_ztc6ggyl"
         ],
         "productId": [
           "ATMS1602Z",
@@ -38605,7 +38601,6 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
-          "HOBEIAN",
           "_TZE200_wqashyqo",
           "_TZE200_9cv5tcgq",
           "_TZE284_oitavov2",
