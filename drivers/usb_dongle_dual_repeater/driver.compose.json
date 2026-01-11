@@ -127,5 +127,11 @@
     "small": "/drivers/usb_dongle_dual_repeater/assets/images/small.png",
     "large": "/drivers/usb_dongle_dual_repeater/assets/images/large.png",
     "xlarge": "/drivers/usb_dongle_dual_repeater/assets/images/xlarge.png"
-  }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }
