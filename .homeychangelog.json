@@ -1,4 +1,10 @@
 {
+  "5.5.483": {
+    "en": "🔧 CRITICAL FIX: Jolink smoke detector (_TZE284_rccxox8p) now correctly matches smoke_detector_advanced driver. Added cluster 60672 (0xED00). Removed from wrong drivers (gas_sensor_ts0601, ceiling_fan).",
+    "nl": "🔧 KRITIEKE FIX: Jolink rookmelder (_TZE284_rccxox8p) matcht nu correct met smoke_detector_advanced. Cluster 60672 toegevoegd.",
+    "fr": "🔧 FIX CRITIQUE: Détecteur de fumée Jolink (_TZE284_rccxox8p) associé correctement au driver smoke_detector_advanced. Cluster 60672 ajouté.",
+    "de": "🔧 KRITISCHER FIX: Jolink Rauchmelder (_TZE284_rccxox8p) korrekt mit smoke_detector_advanced verknüpft. Cluster 60672 hinzugefügt."
+  },
   "5.5.482": {
     "en": "🔧 CRITICAL FIX: Removed HOBEIAN from corrupted ceiling_fan driver section. HOBEIAN devices now correctly match button_wireless_1 (ZG-101ZL) and contact_sensor (ZG-102Z) only. Fixes Ronny_M's button pairing issue.",
     "nl": "🔧 KRITIEKE FIX: HOBEIAN uit corrupte ceiling_fan sectie verwijderd. Lost Ronny_M's knop-koppeling probleem op.",
