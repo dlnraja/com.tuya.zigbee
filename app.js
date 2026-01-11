@@ -612,6 +612,11 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       // v5.5.437: Wrapped in try-catch to prevent app crash if cards not found
       // ═══════════════════════════════════════════════════════════════════
 
+      // v5.5.468: DISABLED - These flow cards cause Invalid Flow Card ID errors
+      // The cards exist in app.json but Homey SDK3 requires different registration
+      // TODO: Investigate proper SDK3 device trigger card registration
+      this.log('ℹ️ Tuya DP Flow Cards skipped (SDK3 compatibility)');
+      /*
       try {
         // TRIGGER: Receive DP Boolean
         this.homey.flow.getTriggerCard('receive_dp_boolean')
@@ -639,6 +644,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       } catch (err) {
         this.error('⚠️ Error registering DP trigger flow cards:', err.message);
       }
+      */
 
       // ACTION: Send DP Boolean (wrapped in try-catch v5.5.437)
       try {
