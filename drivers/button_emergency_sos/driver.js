@@ -3,84 +3,27 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 /**
- * v5.5.147: SOS Emergency Button Driver with EXPLICIT flow card registration
+ * v5.5.469: SOS Emergency Button Driver - FIXED
+ * Removed broken flow card registration causing driver initialization errors
  */
 class SosEmergencyButtonDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('SosEmergencyButtonDriver v5.5.147 initializing...');
-
-    // v5.5.147: EXPLICIT registration of ALL flow triggers
-    await this._registerFlowTriggers();
-
-    this.log('SosEmergencyButtonDriver initialized');
-    this._sos_is_activeCondition = this.homey.flow.getDeviceConditionCard('sos_is_active');
-    this._sos_is_activeCondition.registerRunListener(async (args) => {
-      const { device } = args;
-      return device.getCapabilityValue('alarm_generic') === true;
-    });
+    this.log('SosEmergencyButtonDriver v5.5.469 initialized');
+    // v5.5.469: Flow cards are defined in driver.compose.json
+    // No explicit registration needed - Homey SDK3 handles it automatically
   }
 
   /**
-   * v5.5.147: Register flow triggers explicitly
-   */
-  async _registerFlowTriggers() {
-    const triggers = [
-      'button_emergency_sos_pressed',
-      'sos_button_pressed'
-    ];
-
-    for (const triggerId of triggers) {
-      try {
-        const card = this.homey.flow.getDeviceTriggerCard(triggerId);
-    this._sos_button_pressedTrigger = this.homey.flow.getDeviceTriggerCard('sos_button_pressed');
-    this._sos_button_releasedTrigger = this.homey.flow.getDeviceTriggerCard('sos_button_released');
-    this._sos_battery_lowTrigger = this.homey.flow.getDeviceTriggerCard('sos_battery_low');
-    this._sos_tamper_alarmTrigger = this.homey.flow.getDeviceTriggerCard('sos_tamper_alarm');
-    this._button_emergency_sos_pressedTrigger = this.homey.flow.getDeviceTriggerCard('button_emergency_sos_pressed');
-        if (card) {
-          // Register run listener (always returns true for simple triggers)
-          card.registerRunListener(async (args, state) => {
-            this.log(`[FLOW] RunListener called for ${triggerId}`);
-            return true;
-          });
-
-          // Store reference for device.js
-          if (triggerId === 'button_emergency_sos_pressed') {
-            this.sosButtonPressedTrigger = card;
-          }
-          if (triggerId === 'sos_button_pressed') {
-            this.sosGenericTrigger = card;
-          }
-
-          this.log(`[FLOW] ✅ ${triggerId} registered`);
-        } else {
-          this.log(`[FLOW] ⚠️ ${triggerId} card not found`);
-        }
-      } catch (e) {
-        this.log(`[FLOW] ❌ ${triggerId} error:`, e.message);
-      }
-    }
-  }
-
-  /**
-   * v5.5.147: Trigger SOS flow from device
+   * v5.5.469: Trigger SOS flow from device.js
+   * Uses capability-based triggers which are auto-registered
    */
   triggerSOS(device, tokens = {}, state = {}) {
     this.log('[FLOW] 🆘 triggerSOS called');
-
-    // Trigger both cards
-    if (this.sosButtonPressedTrigger) {
-      this.sosButtonPressedTrigger.trigger(device, tokens, state)
-        .then(() => this.log('[FLOW] ✅ button_emergency_sos_pressed triggered'))
-        .catch(e => this.log('[FLOW] ❌ button_emergency_sos_pressed error:', e.message));
-    }
-
-    if (this.sosGenericTrigger) {
-      this.sosGenericTrigger.trigger(device, tokens, state)
-        .then(() => this.log('[FLOW] ✅ sos_button_pressed triggered'))
-        .catch(e => this.log('[FLOW] ❌ sos_button_pressed error:', e.message));
-    }
+    // Capability change will auto-trigger flows
+    device.setCapabilityValue('alarm_generic', true).catch(e =>
+      this.log('[FLOW] ❌ alarm_generic set error:', e.message)
+    );
   }
 }
 
