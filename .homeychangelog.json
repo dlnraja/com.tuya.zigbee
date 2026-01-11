@@ -1,4 +1,10 @@
 {
+  "5.5.487": {
+    "en": "🔧 MAJOR SYNC: Synchronized 3199 manufacturerName/productId entries from driver.compose.json to app.json across 66 drivers. Fixes device recognition issues.",
+    "nl": "🔧 GROTE SYNC: 3199 entries gesynchroniseerd van driver.compose.json naar app.json voor 66 drivers.",
+    "fr": "🔧 SYNC MAJEURE: 3199 entrées synchronisées de driver.compose.json vers app.json pour 66 drivers.",
+    "de": "🔧 GROSSE SYNC: 3199 Einträge von driver.compose.json nach app.json für 66 Treiber synchronisiert."
+  },
   "5.5.486": {
     "en": "🔧 FIX: Added _TZ321C_fkzihaxe8 (Wenzhi TS0225) to app.json and fingerprint databases. Both variants (fkzihax8 and fkzihaxe8) now supported for presence_sensor_radar.",
     "nl": "🔧 FIX: _TZ321C_fkzihaxe8 (Wenzhi TS0225) toegevoegd. Beide varianten nu ondersteund.",
