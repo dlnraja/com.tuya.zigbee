@@ -1,4 +1,10 @@
 {
+  "5.5.478": {
+    "en": "🔧 FIX: Removed HOBEIAN manufacturer from conflicting drivers (motion_sensor, presence_sensor_radar, soil_sensor). HOBEIAN devices now exclusively pair with button_wireless_1 driver. Fixes Ronny_M's HOBEIAN button not working issue.",
+    "nl": "🔧 FIX: HOBEIAN fabrikant verwijderd uit conflicterende drivers. HOBEIAN apparaten koppelen nu met button_wireless_1.",
+    "fr": "🔧 FIX: Fabricant HOBEIAN retiré des pilotes conflictuels. Les appareils HOBEIAN s'appairent maintenant avec button_wireless_1.",
+    "de": "🔧 FIX: HOBEIAN Hersteller aus konfliktierenden Treibern entfernt. HOBEIAN Geräte koppeln jetzt mit button_wireless_1."
+  },
   "5.5.477": {
     "en": "🔧 VALIDATION FIX: Added platforms property to 11 drivers missing it (air_quality_co2, formaldehyde_sensor, generic_tuya, lcdtemphumidsensor, led_controller_dimmable, rain_sensor, switch_wall_7gang, switch_wall_8gang, temphumidsensor, usb_dongle_dual_repeater, weather_station_outdoor). Fixed switch_temp_sensor cloud platform. App now passes verified-level validation.",
     "nl": "🔧 VALIDATIE FIX: Platforms eigenschap toegevoegd aan 11 drivers.",
