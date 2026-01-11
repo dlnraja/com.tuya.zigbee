@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.480** | 🔧 FORUM FIXES: Added HOBEIAN ZG-102Z door sensor support (contact_sensor). A... |
 | **v5.5.479** | 🔧 FLOW CARD FIX: Removed 50+ duplicate flow card definitions from 31 drivers... |
 | **v5.5.478** | 🔧 FIX: Removed HOBEIAN manufacturer from conflicting drivers (motion_sensor,... |
 | **v5.5.477** | 🔧 VALIDATION FIX: Added platforms property to 11 drivers missing it (air_qua... |
@@ -78,7 +79,6 @@
 | **v5.5.473** | 🔧 FORUM FIX: Removed HOBEIAN from climate_sensor driver - HOBEIAN ZG-101ZL b... |
 | **v5.5.472** | 🔧 ID DATABASE FIX: Improved driver loading timing with multiple rebuild atte... |
 | **v5.5.471** | 🔧 FORUM FIXES: Fixed manufacturer ID duplications across drivers. _TZ3000_0d... |
-| **v5.5.470** | 🔧 DRIVER ASSIGNMENT FIX: Fixed 5 manufacturer IDs in wrong drivers. _TZE204_... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
