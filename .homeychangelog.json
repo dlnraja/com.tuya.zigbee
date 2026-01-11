@@ -1,4 +1,10 @@
 {
+  "5.5.486": {
+    "en": "🔧 FIX: Added _TZ321C_fkzihaxe8 (Wenzhi TS0225) to app.json and fingerprint databases. Both variants (fkzihax8 and fkzihaxe8) now supported for presence_sensor_radar.",
+    "nl": "🔧 FIX: _TZ321C_fkzihaxe8 (Wenzhi TS0225) toegevoegd. Beide varianten nu ondersteund.",
+    "fr": "🔧 FIX: _TZ321C_fkzihaxe8 (Wenzhi TS0225) ajouté. Les deux variantes sont maintenant supportées.",
+    "de": "🔧 FIX: _TZ321C_fkzihaxe8 (Wenzhi TS0225) hinzugefügt. Beide Varianten werden jetzt unterstützt."
+  },
   "5.5.485": {
     "en": "🔧 FIX: NoroddH presence sensor (_TZ321C_fkzihax8, TS0225) - Fixed fingerprint databases. Device now correctly uses presence_sensor_radar driver with IAS Zone. Re-pair to apply.",
     "nl": "🔧 FIX: NoroddH aanwezigheidssensor (_TZ321C_fkzihax8, TS0225) - Fingerprint databases gecorrigeerd. Opnieuw koppelen om toe te passen.",
