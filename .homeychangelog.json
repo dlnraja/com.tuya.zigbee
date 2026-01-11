@@ -1,4 +1,10 @@
 {
+  "5.5.473": {
+    "en": "🔧 FORUM FIX: Removed HOBEIAN from climate_sensor driver - HOBEIAN ZG-101ZL buttons were wrongly assigned to climate sensor. Now correctly pairs as button.",
+    "nl": "🔧 FORUM FIX: HOBEIAN verwijderd uit climate_sensor driver.",
+    "fr": "🔧 FORUM FIX: HOBEIAN supprimé du pilote climate_sensor.",
+    "de": "🔧 FORUM FIX: HOBEIAN aus climate_sensor Treiber entfernt."
+  },
   "5.5.472": {
     "en": "🔧 ID DATABASE FIX: Improved driver loading timing with multiple rebuild attempts. Fixes '0 drivers found' issue on slow devices like Homey (Early 2016).",
     "nl": "🔧 ID DATABASE FIX: Verbeterde timing voor driver laden.",
