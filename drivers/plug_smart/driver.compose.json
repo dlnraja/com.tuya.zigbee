@@ -25,12 +25,6 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "SONOFF",
-      "eWeLink",
-      "S26R2ZB",
-      "S31ZB",
-      "S40ZB",
-      "S60ZB",
       "_TZ1800_AKZVKZQQ",
       "_tz1800_akzvkzqq",
       "_TZ1800_HO6I0ZK9",
@@ -84,6 +78,8 @@
       "_tz3000_waho4jtj",
       "_TZ3000_WAMQDR3F",
       "_tz3000_wamqdr3f",
+      "_TZ3000_ww6drja5",
+      "_tz3000_ww6drja5",
       "_TZ3000_YUJKCHBZ",
       "_tz3000_yujkchbz",
       "_TZ3210_1AC",
@@ -91,7 +87,13 @@
       "_TZ3210_2AC",
       "_tz3210_2ac",
       "_TZ3210_7JNK7L3K",
-      "_tz3210_7jnk7l3k"
+      "_tz3210_7jnk7l3k",
+      "eWeLink",
+      "S26R2ZB",
+      "S31ZB",
+      "S40ZB",
+      "S60ZB",
+      "SONOFF"
     ],
     "productId": [
       "TS0001",
