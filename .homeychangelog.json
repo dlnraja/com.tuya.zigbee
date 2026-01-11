@@ -1,4 +1,15 @@
 {
+  "5.5.468": {
+    "en": "🔧 CRITICAL FIXES: Fixed 9 driver initialization errors (siren, switch_1gang/2gang/3gang, water_leak_sensor, presence_sensor_radar, radiator_valve, smoke_detector_advanced, thermostat_tuya_dp). Removed orphaned code causing 'flow undefined' crashes. Disabled problematic DP trigger flow cards. Climate sensor time sync note: RE-PAIR device if LCD doesn't show time.",
+    "nl": "🔧 KRITIEKE FIXES: 9 driver initialisatiefouten opgelost. Orphaned code verwijderd. Climate sensor: RE-PAIR device indien LCD geen tijd toont.",
+    "fr": "🔧 FIXES CRITIQUES: 9 erreurs d'initialisation de pilotes corrigées. Code orphelin supprimé. Capteur climatique: RE-PAIR l'appareil si l'écran LCD n'affiche pas l'heure.",
+    "de": "🔧 KRITISCHE FIXES: 9 Treiber-Initialisierungsfehler behoben. Verwaister Code entfernt. Klimasensor: Gerät NEU PAIREN falls LCD keine Zeit anzeigt."
+  },
+  "5.5.467": {
+    "en": "📊 COMPREHENSIVE SYNC: +52 IDs from Forums (Universal Tuya, Johan Bendz, Archive pages 1-50) + GitHub Issues #50-#1331 + PRs #42-#1333 + 100+ forks + Z2M cross-ref. Motion, radar, climate, plugs, switches, thermostats enhanced.",
+    "nl": "📊 COMPREHENSIVE SYNC: +52 IDs van Forums + GitHub Issues/PRs + Z2M cross-ref. Motion, radar, climate, plugs, switches, thermostaten verbeterd.",
+    "fr": "📊 COMPREHENSIVE SYNC: +52 IDs des Forums + GitHub Issues/PRs + Z2M cross-ref. Motion, radar, climate, plugs, switches, thermostats améliorés."
+  },
   "5.5.466": {
     "en": "🔍 JOHAN BENDZ SYNC: Added 26+ IDs from GitHub Issues (#1320-#1331), PRs (#1017, #1065, #1075, #1118), and 100+ forks analysis. Fingerbot, tank monitor, smart plugs, LED strips, switches enhanced.",
     "nl": "🔍 JOHAN BENDZ SYNC: 26+ IDs toegevoegd van GitHub Issues, PRs en forks analyse.",
