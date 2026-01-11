@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.477** | 🔧 VALIDATION FIX: Added platforms property to 11 drivers missing it (air_qua... |
 | **v5.5.476** | 🔧 DRIVER SIMPLIFICATION: Removed invalid flow card registrations from 10 dri... |
 | **v5.5.475** | 🔧 CRITICAL FIX: Fixed 9 drivers with orphaned flow card code causing initial... |
 | **v5.5.474** | 🔧 CRITICAL FIX: HOBEIAN ZG-101ZL now correctly recognized! Moved ZG-101ZL fr... |
@@ -78,7 +79,6 @@
 | **v5.5.470** | 🔧 DRIVER ASSIGNMENT FIX: Fixed 5 manufacturer IDs in wrong drivers. _TZE204_... |
 | **v5.5.469** | 🔧 LCD TIME SYNC FIX: Climate sensor LCD now syncs time in passive mode. Fixe... |
 | **v5.5.468** | 🔧 CRITICAL FIXES: Fixed 9 driver initialization errors (siren, switch_1gang/... |
-| **v5.5.467** | 📊 COMPREHENSIVE SYNC: +52 IDs from Forums (Universal Tuya, Johan Bendz, Arch... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
