@@ -1,4 +1,10 @@
 {
+  "5.5.485": {
+    "en": "🔧 FIX: NoroddH presence sensor (_TZ321C_fkzihax8, TS0225) - Fixed fingerprint databases. Device now correctly uses presence_sensor_radar driver with IAS Zone. Re-pair to apply.",
+    "nl": "🔧 FIX: NoroddH aanwezigheidssensor (_TZ321C_fkzihax8, TS0225) - Fingerprint databases gecorrigeerd. Opnieuw koppelen om toe te passen.",
+    "fr": "🔧 FIX: Capteur de présence NoroddH (_TZ321C_fkzihax8, TS0225) - Bases de données d'empreintes corrigées. Réappairer pour appliquer.",
+    "de": "🔧 FIX: NoroddH Präsenzsensor (_TZ321C_fkzihax8, TS0225) - Fingerprint-Datenbanken korrigiert. Neu koppeln um anzuwenden."
+  },
   "5.5.484": {
     "en": "🔧 FIX: Removed rccxox8p entries from climate_sensor and gas_sensor_ts0601 drivers. Smoke detector _TZE284_rccxox8p now ONLY in smoke_detector_advanced.",
     "nl": "🔧 FIX: rccxox8p verwijderd uit climate_sensor en gas_sensor_ts0601. Rookmelder nu alleen in smoke_detector_advanced.",
