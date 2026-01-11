@@ -1,4 +1,10 @@
 {
+  "5.5.482": {
+    "en": "🔧 CRITICAL FIX: Removed HOBEIAN from corrupted ceiling_fan driver section. HOBEIAN devices now correctly match button_wireless_1 (ZG-101ZL) and contact_sensor (ZG-102Z) only. Fixes Ronny_M's button pairing issue.",
+    "nl": "🔧 KRITIEKE FIX: HOBEIAN uit corrupte ceiling_fan sectie verwijderd. Lost Ronny_M's knop-koppeling probleem op.",
+    "fr": "🔧 FIX CRITIQUE: HOBEIAN supprimé de la section ceiling_fan corrompue. Corrige le problème d'appairage du bouton de Ronny_M.",
+    "de": "🔧 KRITISCHER FIX: HOBEIAN aus korruptem ceiling_fan Abschnitt entfernt. Behebt Ronny_Ms Button-Pairing-Problem."
+  },
   "5.5.481": {
     "en": "🔧 CRITICAL FIX: Added HOBEIAN + ZG-101ZL to app.json for button_wireless_1 driver. Fixes Ronny_M's button not pairing issue - driver.compose.json had correct IDs but app.json was missing them.",
     "nl": "🔧 KRITIEKE FIX: HOBEIAN + ZG-101ZL toegevoegd aan app.json. Lost Ronny_M's knop-koppeling probleem op.",
