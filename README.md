@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.457** | 🔘 HOBEIAN FIX (Ronny_M): ZG-101ZL button now detects presses! Added onOff at... |
 | **v5.5.456** | 🕐 TIME-SYNC ENHANCED: Improved diagnostic logging for LCD climate sensors. A... |
 | **v5.5.455** | 🚨 CRITICAL FIX: Fixed app crash (SyntaxError app.js:786). Added fastInitMode... |
 | **v5.5.454** | 🔥 SMOKE DETECTOR FIX (Jolink): Fixed critical syntax error in driver.js - or... |
@@ -78,7 +79,6 @@
 | **v5.5.450** | 🔧 HOBEIAN ZG-101ZL FIX: Added HOBEIAN to button_wireless_1, removed from con... |
 | **v5.5.449** | 🔧 BUTTON FIX: Removed _TZ3000_bczr4e10 (TS0043) and _TZ3000_bgtzm4ny (TS0044... |
 | **v5.5.448** | ⏰ DUAL TIME SYNC: Added ZCL Time cluster (0x000A) handler! Device interview s... |
-| **v5.5.447** | ⏰ TIME SYNC LISTENER: Added mcuSyncTime BoundCluster - device REQUESTS time, ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
