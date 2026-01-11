@@ -1,4 +1,10 @@
 {
+  "5.5.472": {
+    "en": "🔧 ID DATABASE FIX: Improved driver loading timing with multiple rebuild attempts. Fixes '0 drivers found' issue on slow devices like Homey (Early 2016).",
+    "nl": "🔧 ID DATABASE FIX: Verbeterde timing voor driver laden.",
+    "fr": "🔧 ID DATABASE FIX: Amélioration du timing de chargement des pilotes.",
+    "de": "🔧 ID DATABASE FIX: Verbesserte Treiber-Lade-Timing."
+  },
   "5.5.471": {
     "en": "🔧 FORUM FIXES: Fixed manufacturer ID duplications across drivers. _TZ3000_0dumfk2z (SOS) now only in button_emergency_sos. _TZE200_kb5noeto (PIR+Lux) now only in motion_sensor. Removed from 4 wrong drivers.",
     "nl": "🔧 FORUM FIXES: Dubbele manufacturer IDs verwijderd uit verkeerde drivers.",
