@@ -1,4 +1,9 @@
 {
+  "5.5.458": {
+    "en": "🏭 HOBEIAN FULL SUPPORT: Added all HOBEIAN devices across drivers - ZG-101ZL (button), ZG-102ZM (vibration), ZG-204Z/ZV/ZH/ZK/ZM (presence/motion), ZG-223Z (water), ZG-227Z (climate), ZG-302ZM (motion switch), ZG-303Z (soil).",
+    "nl": "🏭 HOBEIAN VOLLEDIG SUPPORT: Alle HOBEIAN apparaten toegevoegd - ZG-101ZL (knop), ZG-102ZM (trilsensor), ZG-204Z/ZV/ZH/ZK/ZM (aanwezigheid), ZG-223Z (water), ZG-227Z (klimaat), ZG-302ZM (bewegingsschakelaar), ZG-303Z (bodem).",
+    "fr": "🏭 HOBEIAN SUPPORT COMPLET: Tous appareils HOBEIAN ajoutés - ZG-101ZL (bouton), ZG-102ZM (vibration), ZG-204Z/ZV/ZH/ZK/ZM (présence), ZG-223Z (eau), ZG-227Z (climat), ZG-302ZM (détecteur mouvement), ZG-303Z (sol)."
+  },
   "5.5.457": {
     "en": "🔘 HOBEIAN FIX (Ronny_M): ZG-101ZL button now detects presses! Added onOff attribute listener + cluster 0xE001 support. RE-PAIR your HOBEIAN button after update!",
     "nl": "🔘 HOBEIAN FIX (Ronny_M): ZG-101ZL knop detecteert nu indrukken! onOff attribuut listener + cluster 0xE001 support toegevoegd. RE-PAIR je HOBEIAN knop na update!",
