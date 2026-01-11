@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.480",
+  "version": "5.5.481",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -18067,6 +18067,7 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "HOBEIAN",
           "_TYZB02_keyjqthh",
           "_TZ3000_0DUMFK2Z",
           "_TZ3000_5bpeda8u",
@@ -18156,7 +18157,8 @@
           "TS0041",
           "TS004F",
           "TS0215A",
-          "TS0601"
+          "TS0601",
+          "ZG-101ZL"
         ],
         "endpoints": {
           "1": {

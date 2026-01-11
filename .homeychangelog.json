@@ -1,4 +1,10 @@
 {
+  "5.5.481": {
+    "en": "🔧 CRITICAL FIX: Added HOBEIAN + ZG-101ZL to app.json for button_wireless_1 driver. Fixes Ronny_M's button not pairing issue - driver.compose.json had correct IDs but app.json was missing them.",
+    "nl": "🔧 KRITIEKE FIX: HOBEIAN + ZG-101ZL toegevoegd aan app.json. Lost Ronny_M's knop-koppeling probleem op.",
+    "fr": "🔧 FIX CRITIQUE: HOBEIAN + ZG-101ZL ajoutés à app.json. Corrige le problème d'appairage du bouton de Ronny_M.",
+    "de": "🔧 KRITISCHER FIX: HOBEIAN + ZG-101ZL zu app.json hinzugefügt. Behebt Ronny_Ms Button-Pairing-Problem."
+  },
   "5.5.480": {
     "en": "🔧 FORUM FIXES: Added HOBEIAN ZG-102Z door sensor support (contact_sensor). Added BSEED TS0726/_TZ3002_pzao9ls1 4-gang switch. Fixed button auto-trigger issue (Cam) - IAS Zone keep-alive messages now filtered to prevent false triggers every 30/60 minutes.",
     "nl": "🔧 FORUM FIXES: HOBEIAN ZG-102Z deur sensor toegevoegd. BSEED TS0726 4-gang schakelaar toegevoegd. Button auto-trigger bug opgelost.",
