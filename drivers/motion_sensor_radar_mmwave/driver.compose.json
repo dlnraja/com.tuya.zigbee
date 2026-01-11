@@ -540,31 +540,5 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ],
-  "flow": {
-    "triggers": [
-      {
-        "id": "battery_low",
-        "title": {
-          "en": "Battery low",
-          "nl": "Batterij bijna leeg",
-          "fr": "Batterie faible"
-        },
-        "hint": {
-          "en": "Triggered when battery level drops below threshold",
-          "nl": "Geactiveerd wanneer batterijniveau onder drempel zakt"
-        },
-        "tokens": [
-          {
-            "name": "level",
-            "type": "number",
-            "title": {
-              "en": "Battery level (%)"
-            },
-            "example": 15
-          }
-        ]
-      }
-    ]
-  }
+  ]
 }
