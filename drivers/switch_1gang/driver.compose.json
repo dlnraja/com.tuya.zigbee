@@ -855,50 +855,6 @@
       "OTHER"
     ]
   },
-  "flow": {
-    "triggers": [
-      {
-        "id": "switch_turned_on",
-        "title": {
-          "en": "Switch turned on",
-          "fr": "Interrupteur allumé"
-        }
-      },
-      {
-        "id": "switch_turned_off",
-        "title": {
-          "en": "Switch turned off",
-          "fr": "Interrupteur éteint"
-        }
-      },
-      {
-        "id": "switch_power_changed",
-        "title": {
-          "en": "Power changed",
-          "fr": "Puissance changée"
-        },
-        "tokens": [
-          {
-            "name": "power",
-            "type": "number",
-            "title": {
-              "en": "Power (W)"
-            },
-            "example": 100
-          }
-        ]
-      }
-    ],
-    "conditions": [
-      {
-        "id": "switch_is_on",
-        "title": {
-          "en": "Switch !{{is|isn't}} on",
-          "fr": "Interrupteur !{{est|n'est pas}} allumé"
-        }
-      }
-    ]
-  },
   "pair": [
     {
       "id": "list_devices",

@@ -1,4 +1,10 @@
 {
+  "5.5.479": {
+    "en": "🔧 FLOW CARD FIX: Removed 50+ duplicate flow card definitions from 31 drivers. Flow cards now use unique driver-prefixed IDs (e.g., button_wireless_button_pressed instead of generic button_pressed). Prevents flow card conflicts and improves reliability.",
+    "nl": "🔧 FLOW CARD FIX: 50+ dubbele flow card definities verwijderd uit 31 drivers. Verbetert betrouwbaarheid.",
+    "fr": "🔧 FIX FLOW CARDS: 50+ définitions de cartes de flux dupliquées supprimées de 31 pilotes. Améliore la fiabilité.",
+    "de": "🔧 FLOW CARD FIX: 50+ doppelte Flow-Karten-Definitionen aus 31 Treibern entfernt. Verbessert Zuverlässigkeit."
+  },
   "5.5.478": {
     "en": "🔧 FIX: Removed HOBEIAN manufacturer from conflicting drivers (motion_sensor, presence_sensor_radar, soil_sensor). HOBEIAN devices now exclusively pair with button_wireless_1 driver. Fixes Ronny_M's HOBEIAN button not working issue.",
     "nl": "🔧 FIX: HOBEIAN fabrikant verwijderd uit conflicterende drivers. HOBEIAN apparaten koppelen nu met button_wireless_1.",
