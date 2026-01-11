@@ -1,4 +1,10 @@
 {
+  "5.5.474": {
+    "en": "🔧 CRITICAL FIX: HOBEIAN ZG-101ZL now correctly recognized! Moved ZG-101ZL from manufacturerName to productId array. Device will now pair as 1-Button Wireless Controller.",
+    "nl": "🔧 CRITICAL FIX: HOBEIAN ZG-101ZL wordt nu correct herkend als knop.",
+    "fr": "🔧 CRITICAL FIX: HOBEIAN ZG-101ZL maintenant reconnu comme bouton.",
+    "de": "🔧 CRITICAL FIX: HOBEIAN ZG-101ZL wird jetzt als Taste erkannt."
+  },
   "5.5.473": {
     "en": "🔧 FORUM FIX: Removed HOBEIAN from climate_sensor driver - HOBEIAN ZG-101ZL buttons were wrongly assigned to climate sensor. Now correctly pairs as button.",
     "nl": "🔧 FORUM FIX: HOBEIAN verwijderd uit climate_sensor driver.",
