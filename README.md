@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.482** | 🔧 CRITICAL FIX: Removed HOBEIAN from corrupted ceiling_fan driver section. H... |
 | **v5.5.481** | 🔧 CRITICAL FIX: Added HOBEIAN + ZG-101ZL to app.json for button_wireless_1 d... |
 | **v5.5.480** | 🔧 FORUM FIXES: Added HOBEIAN ZG-102Z door sensor support (contact_sensor). A... |
 | **v5.5.479** | 🔧 FLOW CARD FIX: Removed 50+ duplicate flow card definitions from 31 drivers... |
@@ -78,7 +79,6 @@
 | **v5.5.475** | 🔧 CRITICAL FIX: Fixed 9 drivers with orphaned flow card code causing initial... |
 | **v5.5.474** | 🔧 CRITICAL FIX: HOBEIAN ZG-101ZL now correctly recognized! Moved ZG-101ZL fr... |
 | **v5.5.473** | 🔧 FORUM FIX: Removed HOBEIAN from climate_sensor driver - HOBEIAN ZG-101ZL b... |
-| **v5.5.472** | 🔧 ID DATABASE FIX: Improved driver loading timing with multiple rebuild atte... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
