@@ -1,4 +1,10 @@
 {
+  "5.5.471": {
+    "en": "🔧 FORUM FIXES: Fixed manufacturer ID duplications across drivers. _TZ3000_0dumfk2z (SOS) now only in button_emergency_sos. _TZE200_kb5noeto (PIR+Lux) now only in motion_sensor. Removed from 4 wrong drivers.",
+    "nl": "🔧 FORUM FIXES: Dubbele manufacturer IDs verwijderd uit verkeerde drivers.",
+    "fr": "🔧 FORUM FIXES: IDs fabricants en double supprimés des mauvais pilotes.",
+    "de": "🔧 FORUM FIXES: Doppelte Hersteller-IDs aus falschen Treibern entfernt."
+  },
   "5.5.470": {
     "en": "🔧 DRIVER ASSIGNMENT FIX: Fixed 5 manufacturer IDs in wrong drivers. _TZE204_laokfqwu moved to climate_sensor, _TZE284_oitavov2 to soil_sensor only, _TZE200_rhgsbacq to presence_sensor_radar only, _TZ3000_h1ipgkwn to usb_dongle only.",
     "nl": "🔧 DRIVER FIX: 5 manufacturer IDs naar juiste drivers verplaatst.",
