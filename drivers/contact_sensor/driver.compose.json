@@ -21,6 +21,7 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
+      "HOBEIAN",
       "_TYZB01_xph99wvr",
       "_TZ1800_EJWKN2H2",
       "_tz1800_ejwkn2h2",
@@ -190,7 +191,8 @@
     "productId": [
       "TS0203",
       "TS0210",
-      "TS0601"
+      "TS0601",
+      "ZG-102Z"
     ],
     "endpoints": {
       "1": {
