@@ -170,7 +170,40 @@ class Button1GangDevice extends ButtonDevice {
           }
         });
 
-        this.log('[BUTTON1-PHYSICAL] ✅ Enhanced onOff command listeners configured');
+        // v5.5.457: HOBEIAN FIX - Listen for onOff ATTRIBUTE changes (not just commands)
+        // HOBEIAN ZG-101ZL uses onOff attribute reports for button presses
+        this._lastOnOffState = null;
+        this._lastOnOffTime = 0;
+
+        onOffCluster.on('attr.onOff', async (value) => {
+          const now = Date.now();
+          // Debounce: ignore if same value within 500ms
+          if (this._lastOnOffState === value && (now - this._lastOnOffTime) < 500) {
+            return;
+          }
+          this._lastOnOffState = value;
+          this._lastOnOffTime = now;
+
+          this.log(`[BUTTON1-ONOFF] 🔘 HOBEIAN attr.onOff change: ${value}`);
+          // onOff true = single press, false = can indicate release or double
+          await this.triggerButtonPress(1, 'single');
+        });
+
+        onOffCluster.on('report', async (attributes) => {
+          if (attributes?.onOff !== undefined) {
+            const now = Date.now();
+            if (this._lastOnOffState === attributes.onOff && (now - this._lastOnOffTime) < 500) {
+              return;
+            }
+            this._lastOnOffState = attributes.onOff;
+            this._lastOnOffTime = now;
+
+            this.log(`[BUTTON1-ONOFF] 🔘 HOBEIAN report.onOff: ${attributes.onOff}`);
+            await this.triggerButtonPress(1, 'single');
+          }
+        });
+
+        this.log('[BUTTON1-PHYSICAL] ✅ Enhanced onOff command + attribute listeners configured');
       }
 
       // v5.5.371: IAS ZONE CLUSTER - For button devices with iasZone
@@ -237,10 +270,60 @@ class Button1GangDevice extends ButtonDevice {
       // v5.5.371: TUYA DP CLUSTER - For Tuya-specific devices
       await this._setupTuyaDPButtonDetection(zclNode);
 
+      // v5.5.457: HOBEIAN CLUSTER 57345 (0xE001) - Tuya button-specific cluster
+      await this._setupHobeianCluster(zclNode);
+
       this.log('[BUTTON1-PHYSICAL] ✅ Enhanced physical button detection configured');
 
     } catch (error) {
       this.log('[BUTTON1-PHYSICAL] ❌ Setup error:', error.message);
+    }
+  }
+
+  /**
+   * v5.5.457: HOBEIAN cluster 57345 (0xE001) support
+   * HOBEIAN ZG-101ZL uses this Tuya-specific cluster for button events
+   */
+  async _setupHobeianCluster(zclNode) {
+    try {
+      const endpoint = zclNode?.endpoints?.[1];
+      if (!endpoint) return;
+
+      // Cluster 57345 = 0xE001 - Tuya button event cluster
+      const hobeianCluster = endpoint.clusters?.[57345] || endpoint.clusters?.['57345'];
+
+      if (hobeianCluster && typeof hobeianCluster.on === 'function') {
+        this.log('[BUTTON1-HOBEIAN] 📡 Setting up HOBEIAN cluster 0xE001 listeners...');
+
+        const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
+
+        // Listen for any events from this cluster
+        hobeianCluster.on('report', async (data) => {
+          this.log('[BUTTON1-HOBEIAN] 📡 Report:', data);
+          const value = data?.value ?? data?.[0] ?? 0;
+          const pressType = pressTypeMap[value] || 'single';
+          await this.triggerButtonPress(1, pressType);
+        });
+
+        hobeianCluster.on('response', async (data) => {
+          this.log('[BUTTON1-HOBEIAN] 📡 Response:', data);
+          const value = data?.value ?? data?.data ?? 0;
+          const pressType = pressTypeMap[value] || 'single';
+          await this.triggerButtonPress(1, pressType);
+        });
+
+        // Generic command listener
+        hobeianCluster.on('command', async (commandName, payload) => {
+          this.log(`[BUTTON1-HOBEIAN] 📡 Command ${commandName}:`, payload);
+          await this.triggerButtonPress(1, 'single');
+        });
+
+        this.log('[BUTTON1-HOBEIAN] ✅ HOBEIAN cluster 0xE001 listeners configured');
+      } else {
+        this.log('[BUTTON1-HOBEIAN] ℹ️ Cluster 57345 (0xE001) not found');
+      }
+    } catch (err) {
+      this.log('[BUTTON1-HOBEIAN] ⚠️ Setup error:', err.message);
     }
   }
 
