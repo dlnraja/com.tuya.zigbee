@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.487** | 🔧 MAJOR SYNC: Synchronized 3199 manufacturerName/productId entries from driv... |
 | **v5.5.486** | 🔧 FIX: Added _TZ321C_fkzihaxe8 (Wenzhi TS0225) to app.json and fingerprint d... |
 | **v5.5.485** | 🔧 FIX: NoroddH presence sensor (_TZ321C_fkzihax8, TS0225) - Fixed fingerprin... |
 | **v5.5.484** | 🔧 FIX: Removed rccxox8p entries from climate_sensor and gas_sensor_ts0601 dr... |
@@ -78,7 +79,6 @@
 | **v5.5.480** | 🔧 FORUM FIXES: Added HOBEIAN ZG-102Z door sensor support (contact_sensor). A... |
 | **v5.5.479** | 🔧 FLOW CARD FIX: Removed 50+ duplicate flow card definitions from 31 drivers... |
 | **v5.5.478** | 🔧 FIX: Removed HOBEIAN manufacturer from conflicting drivers (motion_sensor,... |
-| **v5.5.477** | 🔧 VALIDATION FIX: Added platforms property to 11 drivers missing it (air_qua... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
