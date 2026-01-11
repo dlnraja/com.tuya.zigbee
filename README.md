@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.466** | 🔍 JOHAN BENDZ SYNC: Added 26+ IDs from GitHub Issues (#1320-#1331), PRs (#10... |
 | **v5.5.465** | 🔧 CASE SENSITIVITY FIX: Added 2481 lowercase manufacturer IDs. Homey does EX... |
 | **v5.5.464** | 🎯 CAM COMPLETE FIX: Added TS0041/_TZ3000_5bpeda8u to button_wireless_4 (4-en... |
 | **v5.5.463** | 🔧 GITHUB PRs BATCH: Added 15+ device IDs from PRs #1333 (siren), #1306 (rada... |
@@ -78,7 +79,6 @@
 | **v5.5.459** | 📡 SONOFF FULL SUPPORT: All SONOFF Zigbee devices added - SNZB-01/01P (button... |
 | **v5.5.458** | 🏭 HOBEIAN FULL SUPPORT: Added all HOBEIAN devices across drivers - ZG-101ZL ... |
 | **v5.5.457** | 🔘 HOBEIAN FIX (Ronny_M): ZG-101ZL button now detects presses! Added onOff at... |
-| **v5.5.456** | 🕐 TIME-SYNC ENHANCED: Improved diagnostic logging for LCD climate sensors. A... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
