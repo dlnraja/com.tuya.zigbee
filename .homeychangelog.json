@@ -1,4 +1,10 @@
 {
+  "5.5.469": {
+    "en": "🔧 LCD TIME SYNC FIX: Climate sensor LCD now syncs time in passive mode. Fixed button_emergency_sos driver crash. All driver fixes from v5.5.468 included.",
+    "nl": "🔧 LCD TIME SYNC FIX: Klimaatsensor LCD synchroniseert nu tijd in passieve modus. button_emergency_sos crash opgelost.",
+    "fr": "🔧 LCD TIME SYNC FIX: Capteur climatique LCD synchronise l'heure en mode passif. Crash button_emergency_sos corrigé.",
+    "de": "🔧 LCD TIME SYNC FIX: Klimasensor LCD synchronisiert Zeit im passiven Modus. button_emergency_sos Crash behoben."
+  },
   "5.5.468": {
     "en": "🔧 CRITICAL FIXES: Fixed 9 driver initialization errors (siren, switch_1gang/2gang/3gang, water_leak_sensor, presence_sensor_radar, radiator_valve, smoke_detector_advanced, thermostat_tuya_dp). Removed orphaned code causing 'flow undefined' crashes. Disabled problematic DP trigger flow cards. Climate sensor time sync note: RE-PAIR device if LCD doesn't show time.",
     "nl": "🔧 KRITIEKE FIXES: 9 driver initialisatiefouten opgelost. Orphaned code verwijderd. Climate sensor: RE-PAIR device indien LCD geen tijd toont.",
