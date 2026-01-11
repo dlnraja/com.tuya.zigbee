@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.484** | 🔧 FIX: Removed rccxox8p entries from climate_sensor and gas_sensor_ts0601 dr... |
 | **v5.5.483** | 🔧 CRITICAL FIX: Jolink smoke detector (_TZE284_rccxox8p) now correctly match... |
 | **v5.5.482** | 🔧 CRITICAL FIX: Removed HOBEIAN from corrupted ceiling_fan driver section. H... |
 | **v5.5.481** | 🔧 CRITICAL FIX: Added HOBEIAN + ZG-101ZL to app.json for button_wireless_1 d... |
@@ -78,7 +79,6 @@
 | **v5.5.477** | 🔧 VALIDATION FIX: Added platforms property to 11 drivers missing it (air_qua... |
 | **v5.5.476** | 🔧 DRIVER SIMPLIFICATION: Removed invalid flow card registrations from 10 dri... |
 | **v5.5.475** | 🔧 CRITICAL FIX: Fixed 9 drivers with orphaned flow card code causing initial... |
-| **v5.5.474** | 🔧 CRITICAL FIX: HOBEIAN ZG-101ZL now correctly recognized! Moved ZG-101ZL fr... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
