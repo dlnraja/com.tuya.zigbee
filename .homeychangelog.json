@@ -1,4 +1,9 @@
 {
+  "5.5.457": {
+    "en": "🔘 HOBEIAN FIX (Ronny_M): ZG-101ZL button now detects presses! Added onOff attribute listener + cluster 0xE001 support. RE-PAIR your HOBEIAN button after update!",
+    "nl": "🔘 HOBEIAN FIX (Ronny_M): ZG-101ZL knop detecteert nu indrukken! onOff attribuut listener + cluster 0xE001 support toegevoegd. RE-PAIR je HOBEIAN knop na update!",
+    "fr": "🔘 HOBEIAN FIX (Ronny_M): Bouton ZG-101ZL détecte maintenant les pressions! Ajouté listener attribut onOff + support cluster 0xE001. RE-PAIRER votre bouton HOBEIAN après mise à jour!"
+  },
   "5.5.456": {
     "en": "🕐 TIME-SYNC ENHANCED: Improved diagnostic logging for LCD climate sensors. Added docs/TIME_SYNC_TECHNICAL.md. Better firmware behavior detection (cooperative/hybrid/cloud-only).",
     "nl": "🕐 TIME-SYNC VERBETERD: Betere diagnostische logging voor LCD klimaatsensoren. docs/TIME_SYNC_TECHNICAL.md toegevoegd. Betere firmware gedragsdetectie.",
