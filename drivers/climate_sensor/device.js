@@ -505,11 +505,12 @@ class ClimateSensorDevice extends HybridSensorBase {
     }
 
     // ═══════════════════════════════════════════════════════════════════════
-    // v5.5.227: DUAL TIME SYNC FOR LCD CLIMATE SENSORS
+    // v5.5.469: DUAL TIME SYNC FOR LCD CLIMATE SENSORS
     // Some LCD devices need Tuya EF00 time sync IN ADDITION to ZCL Time Cluster
-    // Send both methods for maximum compatibility
+    // v5.5.469: Removed _hasTuyaCluster check - device receives EF00 frames even
+    // when cluster object isn't exposed (passive mode). Try sync anyway!
     // ═══════════════════════════════════════════════════════════════════════
-    if (this.isLCDClimateDevice() && this._hasTuyaCluster) {
+    if (this.isLCDClimateDevice()) {
       this.log('[CLIMATE] 🔥 LCD DEVICE - Sending DUAL time sync (ZCL + Tuya EF00)...');
 
       // v5.5.375: AGGRESSIVE LCD TIME SYNC - Send multiple times to ensure delivery
