@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.472** | 🔧 ID DATABASE FIX: Improved driver loading timing with multiple rebuild atte... |
 | **v5.5.471** | 🔧 FORUM FIXES: Fixed manufacturer ID duplications across drivers. _TZ3000_0d... |
 | **v5.5.470** | 🔧 DRIVER ASSIGNMENT FIX: Fixed 5 manufacturer IDs in wrong drivers. _TZE204_... |
 | **v5.5.469** | 🔧 LCD TIME SYNC FIX: Climate sensor LCD now syncs time in passive mode. Fixe... |
@@ -78,7 +79,6 @@
 | **v5.5.465** | 🔧 CASE SENSITIVITY FIX: Added 2481 lowercase manufacturer IDs. Homey does EX... |
 | **v5.5.464** | 🎯 CAM COMPLETE FIX: Added TS0041/_TZ3000_5bpeda8u to button_wireless_4 (4-en... |
 | **v5.5.463** | 🔧 GITHUB PRs BATCH: Added 15+ device IDs from PRs #1333 (siren), #1306 (rada... |
-| **v5.5.462** | 🔧 GITHUB FIXES (#1267, #1268): HOBEIAN ZG-204ZL PIR+Lux moved to motion_sens... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
