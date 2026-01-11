@@ -9490,18 +9490,18 @@
   },
   {
     "manufacturerName": "_TZ321C_fkzihax8",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
+    "powerSource": "mains",
     "modelIds": [
       "TS0225"
     ]
   },
   {
     "manufacturerName": "_TZ321C_4slreunp",
-    "driverId": "zigbee_universal",
-    "type": "other",
-    "powerSource": "unknown",
+    "driverId": "presence_sensor_radar",
+    "type": "presence",
+    "powerSource": "mains",
     "modelIds": [
       "TS0225"
     ]
