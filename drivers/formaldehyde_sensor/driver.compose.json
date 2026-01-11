@@ -61,5 +61,11 @@
     "small": "drivers/formaldehyde_sensor/assets/images/small.png",
     "large": "drivers/formaldehyde_sensor/assets/images/large.png"
   },
-  "capabilitiesOptions": {}
+  "capabilitiesOptions": {},
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }

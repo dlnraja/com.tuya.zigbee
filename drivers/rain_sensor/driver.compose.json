@@ -71,5 +71,11 @@
   "images": {
     "small": "drivers/rain_sensor/assets/images/small.png",
     "large": "drivers/rain_sensor/assets/images/large.png"
-  }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }
