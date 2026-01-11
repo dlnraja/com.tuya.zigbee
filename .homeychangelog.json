@@ -1,4 +1,9 @@
 {
+  "5.5.464": {
+    "en": "🎯 CAM COMPLETE FIX: Added TS0041/_TZ3000_5bpeda8u to button_wireless_4 (4-endpoint support). HOBEIAN ZG-204ZL PIR+Lux in motion_sensor. Cross-referenced GitHub B4ttleCat + Forum Cam.",
+    "nl": "🎯 CAM FIX: TS0041 button toegevoegd aan button_wireless_4. ZG-204ZL in motion_sensor.",
+    "fr": "🎯 CAM FIX: Bouton TS0041 ajouté à button_wireless_4. ZG-204ZL dans motion_sensor."
+  },
   "5.5.463": {
     "en": "🔧 GITHUB PRs BATCH: Added 15+ device IDs from PRs #1333 (siren), #1306 (radar), #1292 (radar+lux), #1237 (smoke+temp), #1166 (PIR), #1122 (radar 24GHz), #1171 (water leak), #1162/#1161 (PIR), #1128 (button). Case sensitivity fixes.",
     "nl": "🔧 GITHUB PRs: 15+ device IDs toegevoegd van diverse PRs. Case sensitivity fixes.",
