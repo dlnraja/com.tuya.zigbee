@@ -35,9 +35,13 @@
   "zigbee": {
     "manufacturerName": [
       "_TZE200_M6KDUJME",
+      "_tze200_m6kdujme",
       "_TZE204_CHBYV06",
+      "_tze204_chbyv06",
       "_TZE204_CHBYV06X",
-      "_TZE284_AAO6QTCS"
+      "_tze204_chbyv06x",
+      "_TZE284_AAO6QTCS",
+      "_tze284_aao6qtcs"
     ],
     "endpoints": {
       "1": {

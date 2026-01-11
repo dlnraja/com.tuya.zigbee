@@ -1,4 +1,9 @@
 {
+  "5.5.465": {
+    "en": "🔧 CASE SENSITIVITY FIX: Added 2481 lowercase manufacturer IDs. Homey does EXACT case matching - now supports both UPPERCASE and lowercase device firmware variants. Maximum compatibility!",
+    "nl": "🔧 CASE FIX: 2481 lowercase IDs toegevoegd. Homey is case-sensitive - nu beide varianten ondersteund.",
+    "fr": "🔧 FIX CASE: 2481 IDs lowercase ajoutés. Homey est case-sensitive - les deux variantes supportées."
+  },
   "5.5.464": {
     "en": "🎯 CAM COMPLETE FIX: Added TS0041/_TZ3000_5bpeda8u to button_wireless_4 (4-endpoint support). HOBEIAN ZG-204ZL PIR+Lux in motion_sensor. Cross-referenced GitHub B4ttleCat + Forum Cam.",
     "nl": "🎯 CAM FIX: TS0041 button toegevoegd aan button_wireless_4. ZG-204ZL in motion_sensor.",
