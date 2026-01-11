@@ -1,4 +1,10 @@
 {
+  "5.5.484": {
+    "en": "🔧 FIX: Removed rccxox8p entries from climate_sensor and gas_sensor_ts0601 drivers. Smoke detector _TZE284_rccxox8p now ONLY in smoke_detector_advanced.",
+    "nl": "🔧 FIX: rccxox8p verwijderd uit climate_sensor en gas_sensor_ts0601. Rookmelder nu alleen in smoke_detector_advanced.",
+    "fr": "🔧 FIX: rccxox8p supprimé de climate_sensor et gas_sensor_ts0601. Détecteur uniquement dans smoke_detector_advanced.",
+    "de": "🔧 FIX: rccxox8p aus climate_sensor und gas_sensor_ts0601 entfernt. Rauchmelder nur noch in smoke_detector_advanced."
+  },
   "5.5.483": {
     "en": "🔧 CRITICAL FIX: Jolink smoke detector (_TZE284_rccxox8p) now correctly matches smoke_detector_advanced driver. Added cluster 60672 (0xED00). Removed from wrong drivers (gas_sensor_ts0601, ceiling_fan).",
     "nl": "🔧 KRITIEKE FIX: Jolink rookmelder (_TZE284_rccxox8p) matcht nu correct met smoke_detector_advanced. Cluster 60672 toegevoegd.",
