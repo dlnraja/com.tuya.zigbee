@@ -4,6 +4,46 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.496] - 2026-01-12
+
+### 🌍 Translations & Image Audit
+
+- Added Dutch (nl) and German (de) translations to 70+ drivers
+- Verified all driver images: small.png (75x75), large.png (500x500)
+- All images comply with Homey SDK3 guidelines
+
+---
+
+## [5.5.495] - 2026-01-12
+
+### 🔘 Virtual Button Push Mode Fix
+
+- Fixed virtual buttons to behave as push buttons (single/double/long press)
+- Previously acted as toggle on/off switches
+- Changed `setable: false` + `maintenanceAction: true` for correct behavior
+- Applied to all button drivers: button_wireless_1-8, scene_switch_1-6
+
+---
+
+## [5.5.494] - 2026-01-12
+
+### 🔧 Forum Issue #931 - Duplicate Button Fix
+
+**Reported by:** Ronny_M, Cam (HOBEIAN ZG-101ZL)
+
+**Issues Fixed:**
+- Two buttons appearing in device UI (duplicate capabilities)
+- Flow cards appearing twice
+- Physical button not triggering flows
+
+**Root Cause:** Driver had both `button` and `button.1` capabilities
+
+**Fix:** Changed `button` to `button.1` in driver.compose.json for:
+- button_wireless_1
+- scene_switch_1
+
+---
+
 ## [5.5.229] - 2025-12-24
 
 ### 🔧 Forum Bug Fixes
