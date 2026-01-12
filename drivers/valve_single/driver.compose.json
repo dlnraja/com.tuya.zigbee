@@ -10,8 +10,13 @@
     "measure_battery"
   ],
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZE200_sh1btabb",
+      "_TZE200_vrjkcam9"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
