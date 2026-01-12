@@ -23,7 +23,11 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE200_dwcarsat",
+      "_TZE200_ryfmq5rl",
+      "_TZE200_mce9kjpm"
+    ],
     "productId": [
       "TS0601"
     ],

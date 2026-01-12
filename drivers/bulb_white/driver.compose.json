@@ -22,8 +22,15 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZ3000_49qchf10",
+      "_TZ3000_oboryztc",
+      "_TZ3000_gxnstjts"
+    ],
+    "productId": [
+      "TS0501A",
+      "TS0501B"
+    ],
     "endpoints": {
       "1": {
         "clusters": [

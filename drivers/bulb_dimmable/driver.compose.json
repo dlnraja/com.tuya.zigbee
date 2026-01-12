@@ -32,7 +32,12 @@
       "_TZ3000_DBOU1AP4",
       "_tz3000_dbou1ap4"
     ],
-    "productId": [],
+    "productId": [
+      "TS0502A",
+      "TS0502B",
+      "TS0501A",
+      "TS0501B"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
