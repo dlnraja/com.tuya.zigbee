@@ -1,0 +1,97 @@
+{
+  "name": {
+    "en": "DIN Rail Switch",
+    "fr": "Interrupteur DIN Rail",
+    "nl": "DIN Rail Schakelaar",
+    "de": "DIN-Schienen Schalter",
+    "it": "Interruttore DIN Rail",
+    "sv": "DIN-skena Strömbrytare",
+    "no": "DIN-skinne Bryter",
+    "es": "Interruptor DIN Rail",
+    "da": "DIN-skinne Kontakt"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current"
+  ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "title": {
+        "en": "Power",
+        "fr": "Puissance"
+      },
+      "units": "W"
+    },
+    "meter_power": {
+      "title": {
+        "en": "Energy",
+        "fr": "Énergie"
+      },
+      "units": "kWh"
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_qystbcjg",
+      "_TZ3000_7y5ikxwq",
+      "_TZ3000_cayepv1a",
+      "_TZ3000_fjm6mjrj",
+      "_TZ3000_ji4araar",
+      "_TZ3000_3r9fthmw",
+      "_TZ3000_hdc8bbha",
+      "_TZ3000_rjxqso4a",
+      "_TZ3000_1h2x4akh",
+      "_TZ3000_5f43h46b",
+      "_TZE200_aqnazj70",
+      "_TZE204_aqnazj70",
+      "_TZE200_fjb98hbq",
+      "_TZE204_fjb98hbq",
+      "TOMZN",
+      "MatSeePlus",
+      "Tongou",
+      "EARU"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0011",
+      "TS0601",
+      "TS011F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          61184,
+          2820,
+          1794
+        ],
+        "bindings": [
+          6,
+          2820
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press the pairing button for 5-10 seconds until LED blinks rapidly",
+        "fr": "Appuyez sur le bouton d'appairage pendant 5-10 secondes jusqu'à clignotement rapide"
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/din_rail_switch/assets/images/small.png",
+    "large": "drivers/din_rail_switch/assets/images/large.png"
+  },
+  "id": "din_rail_switch",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "name": {
+    "en": "Garage Door Controller",
+    "fr": "Contrôleur Porte Garage",
+    "nl": "Garagedeur Controller",
+    "de": "Garagentorsteuerung",
+    "it": "Controller Porta Garage",
+    "sv": "Garageportskontroll",
+    "no": "Garasjeportkontroller",
+    "es": "Controlador Puerta Garaje",
+    "da": "Garageportkontrol"
+  },
+  "class": "garagedoor",
+  "capabilities": [
+    "garagedoor_closed",
+    "alarm_contact"
+  ],
+  "capabilitiesOptions": {
+    "garagedoor_closed": {
+      "title": {
+        "en": "Door Closed",
+        "fr": "Porte Fermée"
+      }
+    },
+    "alarm_contact": {
+      "title": {
+        "en": "Door Open",
+        "fr": "Porte Ouverte"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_wfxuhoea",
+      "_TZE204_wfxuhoea",
+      "_TZE200_nklqjk62",
+      "_TZE204_nklqjk62",
+      "_TZE200_3jbslzh4",
+      "_TZE204_3jbslzh4",
+      "_TZ3000_e3wzdxcx",
+      "_TZ3000_sj7xocbp",
+      "Tuya",
+      "MOES"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          61184
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds",
+        "fr": "Maintenez le bouton d'appairage pendant 5 secondes"
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/garage_door/assets/images/small.png",
+    "large": "drivers/garage_door/assets/images/large.png"
+  },
+  "id": "garage_door",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}
