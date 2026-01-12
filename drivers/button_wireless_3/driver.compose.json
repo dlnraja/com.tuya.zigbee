@@ -18,7 +18,8 @@
     "measure_battery"
   ],
   "capabilitiesOptions": {
-    "maintenanceAction": true,"button.1": {
+    "maintenanceAction": true,
+    "button.1": {
       "title": {
         "en": "Button 1",
         "fr": "Bouton 1"
@@ -26,7 +27,8 @@
       "getable": false,
       "setable": false
     },
-    "maintenanceAction": true,"button.2": {
+    "maintenanceAction": true,
+    "button.2": {
       "title": {
         "en": "Button 2",
         "fr": "Bouton 2"
@@ -34,7 +36,8 @@
       "getable": false,
       "setable": false
     },
-    "maintenanceAction": true,"button.3": {
+    "maintenanceAction": true,
+    "button.3": {
       "title": {
         "en": "Button 3",
         "fr": "Bouton 3"
@@ -77,7 +80,9 @@
       "_tz3000_iy2c3n6p",
       "_TZ3000_FKVANIUU",
       "_tz3000_fkvaniuu",
-      "_TYZB02_key8kk7r"
+      "_TYZB02_key8kk7r",
+      "_TZ3000_FAMKXCI2",
+      "_tz3000_famkxci2"
     ],
     "productId": [
       "TS0043",
@@ -410,4 +415,3 @@
     }
   ]
 }
-
