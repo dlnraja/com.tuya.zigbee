@@ -1,4 +1,10 @@
 {
+  "5.5.503": {
+    "en": "🔧 FIX: Presence sensor _TZE200_crq3r3la moved from climate_sensor to presence_sensor_radar (was incorrectly mapping DP103 as temperature). Smoke detector _TZE284_rccxox8p: enhanced diagnostic logging - RE-PAIR device after update!",
+    "nl": "🔧 FIX: Presence sensor _TZE200_crq3r3la verplaatst naar presence_sensor_radar (DP103 was verkeerd als temperatuur). Rookmelder: verbeterde diagnostiek - OPNIEUW PAIREN na update!",
+    "fr": "🔧 FIX: Capteur présence _TZE200_crq3r3la déplacé vers presence_sensor_radar (DP103 mappé incorrectement). Détecteur fumée: diagnostic amélioré - RE-APPAIRER après mise à jour!",
+    "de": "🔧 FIX: Präsenzsensor _TZE200_crq3r3la zu presence_sensor_radar verschoben (DP103 war falsch). Rauchmelder: verbesserte Diagnose - NEU PAIREN nach Update!"
+  },
   "5.5.502": {
     "en": "🔥 FORUM FIX (Jolink): Added smoke detector _TZE284_rccxox8p (exact case match). Thanks Martijn for the diagnostic analysis!",
     "nl": "🔥 FORUM FIX (Jolink): Rookmelder _TZE284_rccxox8p toegevoegd. Bedankt Martijn voor de diagnostische analyse!",
