@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Motion Sensor",
-    "fr": "Capteur de Mouvement"
+    "fr": "Capteur de Mouvement",
+    "nl": "Bewegingssensor",
+    "de": "Bewegungssensor"
   },
   "class": "sensor",
   "capabilities": [

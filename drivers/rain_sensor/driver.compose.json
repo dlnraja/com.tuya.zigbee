@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Zigbee Rain Sensor",
-    "fr": "Capteur de pluie Zigbee"
+    "fr": "Capteur de pluie Zigbee",
+    "nl": "Regensensor",
+    "de": "Regensensor"
   },
   "class": "sensor",
   "capabilities": [

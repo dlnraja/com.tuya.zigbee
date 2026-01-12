@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Zigbee Air Quality / CO2 Sensor",
-    "fr": "Capteur qualité air / CO2 Zigbee"
+    "fr": "Capteur qualité air / CO2 Zigbee",
+    "nl": "CO2 Luchtkwaliteit Sensor",
+    "de": "CO2 Luftqualitätssensor"
   },
   "class": "sensor",
   "capabilities": [

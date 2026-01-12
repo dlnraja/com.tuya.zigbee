@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Sos Emergency Button",
-    "fr": "Sos Emergency Button"
+    "fr": "Sos Emergency Button",
+    "nl": "SOS Noodknop",
+    "de": "SOS Notfalltaste"
   },
   "class": "sensor",
   "capabilities": [

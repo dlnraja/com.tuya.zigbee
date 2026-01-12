@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Energy Meter 3-Phase",
-    "fr": "Compteur Triphasé"
+    "fr": "Compteur Triphasé",
+    "nl": "3-Fase Energiemeter",
+    "de": "3-Phasen Energiezähler"
   },
   "class": "sensor",
   "capabilities": [
