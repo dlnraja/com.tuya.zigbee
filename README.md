@@ -69,6 +69,9 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.496** | 🌍 TRANSLATIONS: Added Dutch (nl) and German (de) translations to 70+ drivers... |
+| **v5.5.495** | 🔘 BUTTON FIX: Virtual buttons now behave as push buttons (single/double/long... |
+| **v5.5.494** | 🔧 FORUM #931 FIX: Fixed duplicate button issue (Ronny_M, Cam - HOBEIAN ZG-10... |
 | **v5.5.489** | 🔧 DRIVER SYNC: Added dimmer_3gang driver, enriched 25 drivers with missing m... |
 | **v5.5.488** | 🔧 Z2M SYNC: Added _TZE200_qcasmfan (GISE smoke sensor), _TZE204_byzdayie (TO... |
 | **v5.5.487** | 🔧 MAJOR SYNC: Synchronized 3199 manufacturerName/productId entries from driv... |
@@ -76,9 +79,6 @@
 | **v5.5.485** | 🔧 FIX: NoroddH presence sensor (_TZ321C_fkzihax8, TS0225) - Fixed fingerprin... |
 | **v5.5.484** | 🔧 FIX: Removed rccxox8p entries from climate_sensor and gas_sensor_ts0601 dr... |
 | **v5.5.483** | 🔧 CRITICAL FIX: Jolink smoke detector (_TZE284_rccxox8p) now correctly match... |
-| **v5.5.482** | 🔧 CRITICAL FIX: Removed HOBEIAN from corrupted ceiling_fan driver section. H... |
-| **v5.5.481** | 🔧 CRITICAL FIX: Added HOBEIAN + ZG-101ZL to app.json for button_wireless_1 d... |
-| **v5.5.480** | 🔧 FORUM FIXES: Added HOBEIAN ZG-102Z door sensor support (contact_sensor). A... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
