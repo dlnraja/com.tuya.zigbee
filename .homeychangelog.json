@@ -1,4 +1,10 @@
 {
+  "5.5.488": {
+    "en": "🔧 Z2M SYNC: Added _TZE200_qcasmfan (GISE smoke sensor), _TZE204_byzdayie (TOMZN DIN energy meter). Updated fingerprint databases.",
+    "nl": "🔧 Z2M SYNC: _TZE200_qcasmfan (rookmelder), _TZE204_byzdayie (DIN energiemeter) toegevoegd.",
+    "fr": "🔧 Z2M SYNC: _TZE200_qcasmfan (détecteur fumée), _TZE204_byzdayie (compteur énergie DIN) ajoutés.",
+    "de": "🔧 Z2M SYNC: _TZE200_qcasmfan (Rauchmelder), _TZE204_byzdayie (DIN Energiezähler) hinzugefügt."
+  },
   "5.5.487": {
     "en": "🔧 MAJOR SYNC: Synchronized 3199 manufacturerName/productId entries from driver.compose.json to app.json across 66 drivers. Fixes device recognition issues.",
     "nl": "🔧 GROTE SYNC: 3199 entries gesynchroniseerd van driver.compose.json naar app.json voor 66 drivers.",
