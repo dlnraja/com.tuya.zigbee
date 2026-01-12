@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Zigbee Weather Station (Outdoor)",
-    "fr": "Station météo Zigbee (Extérieur)"
+    "fr": "Station météo Zigbee (Extérieur)",
+    "nl": "Buitenweerstation",
+    "de": "Außenwetterstation"
   },
   "class": "sensor",
   "capabilities": [

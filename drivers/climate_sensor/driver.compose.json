@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Climate Sensor",
-    "fr": "Capteur Climatique"
+    "fr": "Capteur Climatique",
+    "nl": "Klimaatsensor",
+    "de": "Klimasensor"
   },
   "class": "sensor",
   "capabilities": [

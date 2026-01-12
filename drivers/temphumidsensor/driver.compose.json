@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "TUYATEC Temperature & Humidity Sensor",
-    "fr": "Capteur de Température et Humidité TUYATEC"
+    "fr": "Capteur de Température et Humidité TUYATEC",
+    "nl": "Temp/Vocht Sensor",
+    "de": "Temp/Feuchte Sensor"
   },
   "class": "sensor",
   "capabilities": [

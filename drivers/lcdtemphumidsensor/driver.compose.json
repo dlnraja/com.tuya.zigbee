@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "LCD Temperature & Humidity Sensor",
-    "fr": "Capteur de Température et Humidité LCD"
+    "fr": "Capteur de Température et Humidité LCD",
+    "nl": "LCD Temp/Vocht Sensor",
+    "de": "LCD Temp/Feuchte Sensor"
   },
   "class": "sensor",
   "capabilities": [
