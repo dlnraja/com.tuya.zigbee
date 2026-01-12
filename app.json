@@ -27905,18 +27905,55 @@
         ],
         "endpoints": {
           "1": {
-            "clusters": [0, 4, 5, 61184],
-            "bindings": [61184]
+            "clusters": [
+              0,
+              4,
+              5,
+              61184
+            ],
+            "bindings": [
+              61184
+            ]
           }
         }
       },
       "capabilitiesOptions": {
-        "onoff": { "title": { "en": "Channel 1", "fr": "Canal 1" } },
-        "dim": { "title": { "en": "Brightness 1", "fr": "Luminosité 1" } },
-        "onoff.channel2": { "title": { "en": "Channel 2", "fr": "Canal 2" } },
-        "dim.channel2": { "title": { "en": "Brightness 2", "fr": "Luminosité 2" } },
-        "onoff.channel3": { "title": { "en": "Channel 3", "fr": "Canal 3" } },
-        "dim.channel3": { "title": { "en": "Brightness 3", "fr": "Luminosité 3" } }
+        "onoff": {
+          "title": {
+            "en": "Channel 1",
+            "fr": "Canal 1"
+          }
+        },
+        "dim": {
+          "title": {
+            "en": "Brightness 1",
+            "fr": "Luminosité 1"
+          }
+        },
+        "onoff.channel2": {
+          "title": {
+            "en": "Channel 2",
+            "fr": "Canal 2"
+          }
+        },
+        "dim.channel2": {
+          "title": {
+            "en": "Brightness 2",
+            "fr": "Luminosité 2"
+          }
+        },
+        "onoff.channel3": {
+          "title": {
+            "en": "Channel 3",
+            "fr": "Canal 3"
+          }
+        },
+        "dim.channel3": {
+          "title": {
+            "en": "Brightness 3",
+            "fr": "Luminosité 3"
+          }
+        }
       },
       "images": {
         "small": "drivers/dimmer_3gang/assets/images/small.png",
@@ -49034,6 +49071,1186 @@
         "large": "drivers/weather_station_outdoor/assets/images/large.png"
       },
       "id": "weather_station_outdoor"
+    },
+    {
+      "name": {
+        "en": "Air Purifier",
+        "fr": "Purificateur d'Air",
+        "nl": "Luchtreiniger",
+        "de": "Luftreiniger",
+        "it": "Purificatore d'Aria",
+        "sv": "Luftrenare",
+        "no": "Luftrenser",
+        "es": "Purificador de Aire",
+        "da": "Luftrenser"
+      },
+      "class": "fan",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_pm25"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "title": {
+            "en": "Fan Speed",
+            "fr": "Vitesse Ventilateur"
+          }
+        },
+        "measure_pm25": {
+          "title": {
+            "en": "PM2.5",
+            "fr": "PM2.5"
+          },
+          "units": "µg/m³"
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_7bztmfm1",
+          "_TZE204_7bztmfm1",
+          "_TZE200_qpn5q17m",
+          "_TZE204_qpn5q17m",
+          "_TZE200_mja3fuja",
+          "_TZE204_mja3fuja",
+          "_TZE200_dwcarsat",
+          "_TZE204_dwcarsat",
+          "Tuya",
+          "MOES"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              61184
+            ],
+            "bindings": []
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press and hold the power button for 5 seconds",
+            "fr": "Maintenez le bouton power pendant 5 secondes"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/air_purifier/assets/images/small.png",
+        "large": "drivers/air_purifier/assets/images/large.png"
+      },
+      "id": "air_purifier",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "pair": [
+        {
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "id": "list_devices"
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "DIN Rail Energy Meter",
+        "fr": "Compteur DIN Rail",
+        "nl": "DIN Rail Energiemeter",
+        "de": "DIN-Schienen Energiezähler",
+        "it": "Contatore DIN Rail",
+        "sv": "DIN-skena Energimätare",
+        "no": "DIN-skinne Energimåler",
+        "es": "Medidor DIN Rail",
+        "da": "DIN-skinne Energimåler"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current",
+        "meter_power.exported"
+      ],
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power",
+            "fr": "Puissance"
+          },
+          "units": "W"
+        },
+        "meter_power": {
+          "title": {
+            "en": "Energy Consumed",
+            "fr": "Énergie Consommée"
+          },
+          "units": "kWh"
+        },
+        "meter_power.exported": {
+          "title": {
+            "en": "Energy Exported",
+            "fr": "Énergie Exportée"
+          },
+          "units": "kWh"
+        },
+        "measure_voltage": {
+          "title": {
+            "en": "Voltage",
+            "fr": "Tension"
+          },
+          "units": "V"
+        },
+        "measure_current": {
+          "title": {
+            "en": "Current",
+            "fr": "Courant"
+          },
+          "units": "A"
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Measurement Settings",
+            "fr": "Paramètres de Mesure"
+          },
+          "children": [
+            {
+              "id": "power_scale",
+              "type": "dropdown",
+              "label": {
+                "en": "Power Scale",
+                "fr": "Échelle Puissance"
+              },
+              "value": "1",
+              "values": [
+                {
+                  "id": "0.1",
+                  "label": {
+                    "en": "÷10",
+                    "fr": "÷10"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "×1 (Default)",
+                    "fr": "×1 (Par défaut)"
+                  }
+                },
+                {
+                  "id": "10",
+                  "label": {
+                    "en": "×10",
+                    "fr": "×10"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "bidirectional",
+              "type": "checkbox",
+              "label": {
+                "en": "Bidirectional (Solar)",
+                "fr": "Bidirectionnel (Solaire)"
+              },
+              "value": false,
+              "hint": {
+                "en": "Enable for solar/grid meters",
+                "fr": "Activer pour compteurs solaires"
+              }
+            }
+          ]
+        }
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_bkkmqmyo",
+          "_TZE200_eaac7dkw",
+          "_TZE204_wbhaespm",
+          "_TZE200_wbhaespm",
+          "_TZE204_ves1ycwx",
+          "_TZE200_ves1ycwx",
+          "_TZE204_lzriup1j",
+          "_TZE200_lzriup1j",
+          "_TZE204_davzgqq0",
+          "_TZE200_davzgqq0",
+          "_TZE204_81yrt3lo",
+          "_TZE200_81yrt3lo",
+          "_TZE204_cjbofhxw",
+          "_TZE200_cjbofhxw",
+          "_TZE204_shkxsgis",
+          "_TZE200_shkxsgis",
+          "_TZE204_2dpa3fqj",
+          "_TZE284_2dpa3fqj",
+          "_TZE204_ipxszdhv",
+          "_TZE200_ipxszdhv",
+          "_TZ3000_xkap8wtb",
+          "_TZ3000_qeuvnohg",
+          "Tuya",
+          "TOMZN",
+          "MatSeePlus"
+        ],
+        "productId": [
+          "TS0601",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              61184,
+              2820,
+              1794
+            ],
+            "bindings": [
+              2820,
+              1794
+            ]
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press the pairing button on the meter for 5 seconds until LED blinks rapidly",
+            "fr": "Appuyez sur le bouton d'appairage du compteur pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/din_rail_meter/assets/images/small.png",
+        "large": "drivers/din_rail_meter/assets/images/large.png"
+      },
+      "id": "din_rail_meter",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "pair": [
+        {
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "id": "list_devices"
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "DIN Rail Switch",
+        "fr": "Interrupteur DIN Rail",
+        "nl": "DIN Rail Schakelaar",
+        "de": "DIN-Schienen Schalter",
+        "it": "Interruttore DIN Rail",
+        "sv": "DIN-skena Strömbrytare",
+        "no": "DIN-skinne Bryter",
+        "es": "Interruptor DIN Rail",
+        "da": "DIN-skinne Kontakt"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Power",
+            "fr": "Puissance"
+          },
+          "units": "W"
+        },
+        "meter_power": {
+          "title": {
+            "en": "Energy",
+            "fr": "Énergie"
+          },
+          "units": "kWh"
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_qystbcjg",
+          "_TZ3000_7y5ikxwq",
+          "_TZ3000_cayepv1a",
+          "_TZ3000_fjm6mjrj",
+          "_TZ3000_ji4araar",
+          "_TZ3000_3r9fthmw",
+          "_TZ3000_hdc8bbha",
+          "_TZ3000_rjxqso4a",
+          "_TZ3000_1h2x4akh",
+          "_TZ3000_5f43h46b",
+          "_TZE200_aqnazj70",
+          "_TZE204_aqnazj70",
+          "_TZE200_fjb98hbq",
+          "_TZE204_fjb98hbq",
+          "TOMZN",
+          "MatSeePlus",
+          "Tongou",
+          "EARU"
+        ],
+        "productId": [
+          "TS0001",
+          "TS0011",
+          "TS0601",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6,
+              61184,
+              2820,
+              1794
+            ],
+            "bindings": [
+              6,
+              2820
+            ]
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press the pairing button for 5-10 seconds until LED blinks rapidly",
+            "fr": "Appuyez sur le bouton d'appairage pendant 5-10 secondes jusqu'à clignotement rapide"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/din_rail_switch/assets/images/small.png",
+        "large": "drivers/din_rail_switch/assets/images/large.png"
+      },
+      "id": "din_rail_switch",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "pair": [
+        {
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "id": "list_devices"
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "Fan Speed Controller",
+        "fr": "Contrôleur Ventilateur",
+        "nl": "Ventilator Controller",
+        "de": "Lüfterregler",
+        "it": "Controller Ventilatore",
+        "sv": "Fläktkontroll",
+        "no": "Viftekontroller",
+        "es": "Controlador Ventilador",
+        "da": "Blæserkontrol"
+      },
+      "class": "fan",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "title": {
+            "en": "Fan Speed",
+            "fr": "Vitesse"
+          },
+          "min": 0,
+          "max": 1,
+          "step": 0.25
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_r32ctezx",
+          "_TZE204_r32ctezx",
+          "_TZE200_dzuqwsyg",
+          "_TZE204_dzuqwsyg",
+          "_TZE200_a5zyjdpn",
+          "_TZE204_a5zyjdpn",
+          "_TZE200_kds0prmv",
+          "_TZE204_kds0prmv",
+          "_TZE200_fvldku9h",
+          "_TZE204_fvldku9h",
+          "_TZ3000_hk7wdzrv",
+          "_TZ3000_cphmq0q7",
+          "_TZ3210_lzqq3u4r",
+          "_TZ3210_x1mdzm6o",
+          "Tuya",
+          "MOES"
+        ],
+        "productId": [
+          "TS0601",
+          "TS0501A",
+          "TS0501B"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6,
+              8,
+              61184
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press and hold the power button for 5 seconds until LED blinks",
+            "fr": "Maintenez le bouton power pendant 5 secondes"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/fan_controller/assets/images/small.png",
+        "large": "drivers/fan_controller/assets/images/large.png"
+      },
+      "id": "fan_controller",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "pair": [
+        {
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "id": "list_devices"
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "Fingerprint Smart Lock",
+        "fr": "Serrure Empreinte Digitale",
+        "nl": "Vingerafdruk Slim Slot",
+        "de": "Fingerabdruck Smartlock",
+        "it": "Serratura Impronta Digitale",
+        "sv": "Fingeravtryckslås",
+        "no": "Fingeravtrykkslås",
+        "es": "Cerradura Huella Digital",
+        "da": "Fingeraftrykslås"
+      },
+      "class": "lock",
+      "capabilities": [
+        "locked",
+        "alarm_tamper",
+        "measure_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "AA",
+          "AA",
+          "AA",
+          "AA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_3t91nb6k",
+          "_TZE204_3t91nb6k",
+          "_TZE200_bwerwhpr",
+          "_TZE204_bwerwhpr",
+          "_TZE200_pvvbommb",
+          "_TZE204_pvvbommb",
+          "_TZE200_xyhhcx94",
+          "_TZE204_xyhhcx94",
+          "Tuya",
+          "MOES"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              61184,
+              257
+            ],
+            "bindings": [
+              1,
+              257
+            ]
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Follow the lock's pairing instructions (usually hold * + # for 5 seconds)",
+            "fr": "Suivez les instructions d'appairage de la serrure"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/fingerprint_lock/assets/images/small.png",
+        "large": "drivers/fingerprint_lock/assets/images/large.png"
+      },
+      "id": "fingerprint_lock",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "pair": [
+        {
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "id": "list_devices"
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "Garage Door Controller",
+        "fr": "Contrôleur Porte Garage",
+        "nl": "Garagedeur Controller",
+        "de": "Garagentorsteuerung",
+        "it": "Controller Porta Garage",
+        "sv": "Garageportskontroll",
+        "no": "Garasjeportkontroller",
+        "es": "Controlador Puerta Garaje",
+        "da": "Garageportkontrol"
+      },
+      "class": "garagedoor",
+      "capabilities": [
+        "garagedoor_closed",
+        "alarm_contact"
+      ],
+      "capabilitiesOptions": {
+        "garagedoor_closed": {
+          "title": {
+            "en": "Door Closed",
+            "fr": "Porte Fermée"
+          }
+        },
+        "alarm_contact": {
+          "title": {
+            "en": "Door Open",
+            "fr": "Porte Ouverte"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_wfxuhoea",
+          "_TZE204_wfxuhoea",
+          "_TZE200_nklqjk62",
+          "_TZE204_nklqjk62",
+          "_TZE200_3jbslzh4",
+          "_TZE204_3jbslzh4",
+          "_TZ3000_e3wzdxcx",
+          "_TZ3000_sj7xocbp",
+          "Tuya",
+          "MOES"
+        ],
+        "productId": [
+          "TS0601",
+          "TS0001"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6,
+              61184
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press and hold the pairing button for 5 seconds",
+            "fr": "Maintenez le bouton d'appairage pendant 5 secondes"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/garage_door/assets/images/small.png",
+        "large": "drivers/garage_door/assets/images/large.png"
+      },
+      "id": "garage_door",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "pair": [
+        {
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "id": "list_devices"
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "Smart Humidifier",
+        "fr": "Humidificateur Connecté",
+        "nl": "Slimme Luchtbevochtiger",
+        "de": "Intelligenter Luftbefeuchter",
+        "it": "Umidificatore Smart",
+        "sv": "Smart Luftfuktare",
+        "no": "Smart Luftfukter",
+        "es": "Humidificador Inteligente",
+        "da": "Smart Luftfugter"
+      },
+      "class": "fan",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_humidity",
+        "target_humidity"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "title": {
+            "en": "Mist Level",
+            "fr": "Niveau Brume"
+          },
+          "min": 0,
+          "max": 1,
+          "step": 0.33
+        },
+        "target_humidity": {
+          "title": {
+            "en": "Target Humidity",
+            "fr": "Humidité Cible"
+          },
+          "min": 30,
+          "max": 80,
+          "step": 5
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_mja3fuja",
+          "_TZE204_mja3fuja",
+          "_TZE200_a0syesf5",
+          "_TZE204_a0syesf5",
+          "_TZE200_k7qgyrrb",
+          "_TZE204_k7qgyrrb",
+          "_TZE200_dwcarsat",
+          "_TZE204_dwcarsat",
+          "_TZE200_nt5dgejc",
+          "_TZE204_nt5dgejc",
+          "Tuya",
+          "MOES"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              61184
+            ],
+            "bindings": []
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press and hold the power button for 5 seconds until WiFi indicator blinks",
+            "fr": "Maintenez le bouton power pendant 5 secondes"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/humidifier/assets/images/small.png",
+        "large": "drivers/humidifier/assets/images/large.png"
+      },
+      "id": "humidifier",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "pair": [
+        {
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "id": "list_devices"
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "Smart Pet Feeder",
+        "fr": "Distributeur Croquettes Connecté",
+        "nl": "Slimme Voerbak",
+        "de": "Intelligenter Futterautomat",
+        "it": "Distributore Cibo Smart",
+        "sv": "Smart Matningsautomat",
+        "no": "Smart Fôrautomat",
+        "es": "Comedero Inteligente",
+        "da": "Smart Fodderautomat"
+      },
+      "class": "other",
+      "capabilities": [
+        "button.feed",
+        "alarm_generic"
+      ],
+      "capabilitiesOptions": {
+        "button.feed": {
+          "title": {
+            "en": "Feed Now",
+            "fr": "Distribuer"
+          }
+        },
+        "alarm_generic": {
+          "title": {
+            "en": "Food Low",
+            "fr": "Niveau Bas"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_a5zyjdpn",
+          "_TZE204_a5zyjdpn",
+          "_TZE200_arrw4hhc",
+          "_TZE204_arrw4hhc",
+          "_TZE200_nymxy9gq",
+          "_TZE204_nymxy9gq",
+          "_TZE200_dq1mfjug",
+          "_TZE204_dq1mfjug",
+          "Tuya"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              61184
+            ],
+            "bindings": []
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press and hold the pairing button for 5 seconds",
+            "fr": "Maintenez le bouton d'appairage pendant 5 secondes"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/pet_feeder/assets/images/small.png",
+        "large": "drivers/pet_feeder/assets/images/large.png"
+      },
+      "id": "pet_feeder",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "pair": [
+        {
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "id": "list_devices"
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "Pool/Spa Pump Controller",
+        "fr": "Contrôleur Pompe Piscine",
+        "nl": "Zwembadpomp Controller",
+        "de": "Pool-Pumpensteuerung",
+        "it": "Controller Pompa Piscina",
+        "sv": "Poolpumpkontroll",
+        "no": "Bassengpumpekontroller",
+        "es": "Controlador Bomba Piscina",
+        "da": "Poolpumpekontrol"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_k6jhsr0q",
+          "_TZE204_k6jhsr0q",
+          "_TZE200_ruavtjnq",
+          "_TZE204_ruavtjnq",
+          "_TZ3000_8bxrzyxz",
+          "_TZ3000_qystbcjg",
+          "Tuya"
+        ],
+        "productId": [
+          "TS0601",
+          "TS011F",
+          "TS0001"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6,
+              61184,
+              2820
+            ],
+            "bindings": [
+              6,
+              2820
+            ]
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press and hold the power button for 5 seconds",
+            "fr": "Maintenez le bouton power pendant 5 secondes"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/pool_pump/assets/images/small.png",
+        "large": "drivers/pool_pump/assets/images/large.png"
+      },
+      "id": "pool_pump",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "pair": [
+        {
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "id": "list_devices"
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "CT Clamp Power Meter",
+        "fr": "Compteur Pince Ampèremétrique",
+        "nl": "Stroomtang Meter",
+        "de": "Stromzangen Messgerät",
+        "it": "Misuratore Pinza Amperometrica",
+        "sv": "Strömtång Mätare",
+        "no": "Strømtang Måler",
+        "es": "Medidor Pinza Amperimétrica",
+        "da": "Strømtang Måler"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_current",
+        "measure_voltage",
+        "measure_power.phase1",
+        "measure_power.phase2",
+        "measure_power.phase3"
+      ],
+      "capabilitiesOptions": {
+        "measure_power": {
+          "title": {
+            "en": "Total Power",
+            "fr": "Puissance Totale"
+          },
+          "units": "W"
+        },
+        "measure_power.phase1": {
+          "title": {
+            "en": "Phase 1",
+            "fr": "Phase 1"
+          },
+          "units": "W"
+        },
+        "measure_power.phase2": {
+          "title": {
+            "en": "Phase 2",
+            "fr": "Phase 2"
+          },
+          "units": "W"
+        },
+        "measure_power.phase3": {
+          "title": {
+            "en": "Phase 3",
+            "fr": "Phase 3"
+          },
+          "units": "W"
+        },
+        "meter_power": {
+          "title": {
+            "en": "Energy",
+            "fr": "Énergie"
+          },
+          "units": "kWh"
+        }
+      },
+      "settings": [
+        {
+          "id": "ct_ratio",
+          "type": "number",
+          "label": {
+            "en": "CT Ratio",
+            "fr": "Ratio Pince"
+          },
+          "value": 1,
+          "min": 1,
+          "max": 3000,
+          "hint": {
+            "en": "Current transformer ratio (e.g. 100:1 = 100)",
+            "fr": "Ratio du transformateur de courant"
+          }
+        }
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_nslr42tt",
+          "_TZE204_nslr42tt",
+          "_TZE200_bkkmqmyo",
+          "_TZE204_bkkmqmyo",
+          "_TZE200_sur36rju",
+          "_TZE204_sur36rju",
+          "_TZE200_d0ypnbvn",
+          "_TZE204_d0ypnbvn",
+          "_TZE200_v9hkz2yn",
+          "_TZE204_v9hkz2yn",
+          "_TZE200_byzdayie",
+          "_TZE284_byzdayie",
+          "_TZ3000_qeuvnohg",
+          "Tuya",
+          "TOMZN",
+          "Tongou"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              61184,
+              2820,
+              1794
+            ],
+            "bindings": [
+              2820,
+              1794
+            ]
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press the pairing button for 5 seconds until LED blinks",
+            "fr": "Appuyez sur le bouton d'appairage pendant 5 secondes"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/power_clamp_meter/assets/images/small.png",
+        "large": "drivers/power_clamp_meter/assets/images/large.png"
+      },
+      "id": "power_clamp_meter",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "pair": [
+        {
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "id": "list_devices"
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "Smart Circuit Breaker",
+        "fr": "Disjoncteur Intelligent",
+        "nl": "Slimme Stroomonderbreker",
+        "de": "Intelligenter Leitungsschutzschalter",
+        "it": "Interruttore Automatico Smart",
+        "sv": "Smart Säkringsbrytare",
+        "no": "Smart Sikringsbryter",
+        "es": "Interruptor Automático Inteligente",
+        "da": "Smart Sikringsafbryder"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "alarm_generic",
+        "measure_power",
+        "meter_power",
+        "measure_current",
+        "measure_voltage"
+      ],
+      "capabilitiesOptions": {
+        "alarm_generic": {
+          "title": {
+            "en": "Trip Alarm",
+            "fr": "Alarme Déclenchement"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_aqnazj70",
+          "_TZE204_aqnazj70",
+          "_TZE200_68nvbio9",
+          "_TZE204_68nvbio9",
+          "_TZE200_hkdl5fmv",
+          "_TZE204_hkdl5fmv",
+          "_TZE200_wbhaespm",
+          "_TZE204_wbhaespm",
+          "_TZE200_fjb98hbq",
+          "_TZE204_fjb98hbq",
+          "_TZE200_aoclfnxz",
+          "_TZE204_aoclfnxz",
+          "_TZE200_byzdayie",
+          "_TZE204_byzdayie",
+          "_TZ3000_cayepv1a",
+          "_TZ3000_ji4araar",
+          "TOMZN",
+          "EARU",
+          "MatSeePlus"
+        ],
+        "productId": [
+          "TS0601",
+          "TS0001",
+          "TS011F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6,
+              61184,
+              2820,
+              1794
+            ],
+            "bindings": [
+              6,
+              2820
+            ]
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press and hold the reset button for 5 seconds until LED blinks rapidly",
+            "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/smart_breaker/assets/images/small.png",
+        "large": "drivers/smart_breaker/assets/images/large.png"
+      },
+      "id": "smart_breaker",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "pair": [
+        {
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "id": "list_devices"
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
     }
   ],
   "capabilities": {
