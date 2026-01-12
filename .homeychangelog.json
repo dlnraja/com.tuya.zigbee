@@ -1,4 +1,10 @@
 {
+  "5.5.502": {
+    "en": "🔥 FORUM FIX (Jolink): Added smoke detector _TZE284_rccxox8p (exact case match). Thanks Martijn for the diagnostic analysis!",
+    "nl": "🔥 FORUM FIX (Jolink): Rookmelder _TZE284_rccxox8p toegevoegd. Bedankt Martijn voor de diagnostische analyse!",
+    "fr": "🔥 FORUM FIX (Jolink): Ajout du détecteur de fumée _TZE284_rccxox8p. Merci Martijn pour l'analyse diagnostic!",
+    "de": "🔥 FORUM FIX (Jolink): Rauchmelder _TZE284_rccxox8p hinzugefügt. Danke Martijn für die Diagnoseanalyse!"
+  },
   "5.5.501": {
     "en": "🛡️ STABILITY FIX: Fixed 'Frame parse error: value is not defined' in presence sensor radar. Added safety checks for buffer operations in Tuya frame parsing.",
     "nl": "🛡️ STABILITEIT FIX: 'Frame parse error' opgelost in presence sensor radar. Veiligheidscontroles toegevoegd voor buffer operaties.",
