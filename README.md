@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.499** | 🔧 DIAGNOSTICS FIXES: (1) HOBEIAN ZG-101ZL button command mapping fixed (foru... |
 | **v5.5.498** | 🚪 FORUM #934 FIX: Added 11 new door sensor manufacturer IDs (Lasse_K). Inclu... |
 | **v5.5.497** | 🔧 FORUM #933 FIX: Fixed bizarre temp/humidity values on presence sensors (Ru... |
 | **v5.5.496** | 🌍 TRANSLATIONS: Added Dutch (nl) and German (de) translations to 70+ drivers... |
@@ -78,7 +79,6 @@
 | **v5.5.488** | 🔧 Z2M SYNC: Added _TZE200_qcasmfan (GISE smoke sensor), _TZE204_byzdayie (TO... |
 | **v5.5.487** | 🔧 MAJOR SYNC: Synchronized 3199 manufacturerName/productId entries from driv... |
 | **v5.5.486** | 🔧 FIX: Added _TZ321C_fkzihaxe8 (Wenzhi TS0225) to app.json and fingerprint d... |
-| **v5.5.485** | 🔧 FIX: NoroddH presence sensor (_TZ321C_fkzihax8, TS0225) - Fixed fingerprin... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
