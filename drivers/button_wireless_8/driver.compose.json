@@ -23,69 +23,69 @@
     "measure_battery"
   ],
   "capabilitiesOptions": {
-    "button.1": {
+    "maintenanceAction": true,"button.1": {
       "title": {
         "en": "Button 1",
         "fr": "Bouton 1"
       },
       "getable": false,
-      "setable": true
+      "setable": false
     },
-    "button.2": {
+    "maintenanceAction": true,"button.2": {
       "title": {
         "en": "Button 2",
         "fr": "Bouton 2"
       },
       "getable": false,
-      "setable": true
+      "setable": false
     },
-    "button.3": {
+    "maintenanceAction": true,"button.3": {
       "title": {
         "en": "Button 3",
         "fr": "Bouton 3"
       },
       "getable": false,
-      "setable": true
+      "setable": false
     },
-    "button.4": {
+    "maintenanceAction": true,"button.4": {
       "title": {
         "en": "Button 4",
         "fr": "Bouton 4"
       },
       "getable": false,
-      "setable": true
+      "setable": false
     },
-    "button.5": {
+    "maintenanceAction": true,"button.5": {
       "title": {
         "en": "Button 5",
         "fr": "Bouton 5"
       },
       "getable": false,
-      "setable": true
+      "setable": false
     },
-    "button.6": {
+    "maintenanceAction": true,"button.6": {
       "title": {
         "en": "Button 6",
         "fr": "Bouton 6"
       },
       "getable": false,
-      "setable": true
+      "setable": false
     },
-    "button.7": {
+    "maintenanceAction": true,"button.7": {
       "title": {
         "en": "Button 7",
         "fr": "Bouton 7"
       },
       "getable": false,
-      "setable": true
+      "setable": false
     },
-    "button.8": {
+    "maintenanceAction": true,"button.8": {
       "title": {
         "en": "Button 8",
         "fr": "Bouton 8"
       },
       "getable": false,
-      "setable": true
+      "setable": false
     },
     "measure_battery": {
       "title": {
@@ -499,3 +499,4 @@
     }
   ]
 }
+
