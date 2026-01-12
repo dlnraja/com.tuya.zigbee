@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Zigbee Formaldehyde/VOC Sensor",
-    "fr": "Capteur formaldéhyde/VOC Zigbee"
+    "fr": "Capteur formaldéhyde/VOC Zigbee",
+    "nl": "Formaldehyde Sensor",
+    "de": "Formaldehyd Sensor"
   },
   "class": "sensor",
   "capabilities": [

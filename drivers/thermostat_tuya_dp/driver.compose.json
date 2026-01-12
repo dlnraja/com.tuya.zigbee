@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Thermostat / TRV",
-    "fr": "Thermostat / Vanne"
+    "fr": "Thermostat / Vanne",
+    "nl": "Tuya DP Thermostaat",
+    "de": "Tuya DP Thermostat"
   },
   "class": "thermostat",
   "capabilities": [

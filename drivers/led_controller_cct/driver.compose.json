@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "LED Controller CCT",
-    "fr": "Contrôleur LED CCT"
+    "fr": "Contrôleur LED CCT",
+    "nl": "LED CCT Controller",
+    "de": "LED CCT Steuerung"
   },
   "class": "light",
   "capabilities": [

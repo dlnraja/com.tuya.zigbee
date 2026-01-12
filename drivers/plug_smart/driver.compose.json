@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Smart Plug with Energy Monitoring",
-    "fr": "Prise Connectée avec Mesure Énergie"
+    "fr": "Prise Connectée avec Mesure Énergie",
+    "nl": "Slimme Stekker",
+    "de": "Smart Steckdose"
   },
   "class": "socket",
   "capabilities": [

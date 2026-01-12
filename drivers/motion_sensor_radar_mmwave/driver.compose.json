@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Presence Sensor (Radar)",
-    "fr": "Capteur de Présence (Radar)"
+    "fr": "Capteur de Présence (Radar)",
+    "nl": "mmWave Radar Sensor",
+    "de": "mmWave Radarsensor"
   },
   "class": "sensor",
   "capabilities": [

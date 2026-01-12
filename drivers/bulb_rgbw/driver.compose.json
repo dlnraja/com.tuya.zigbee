@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Smart RGB/RGBW Bulb",
-    "fr": "Ampoule Connectée RGB/RGBW"
+    "fr": "Ampoule Connectée RGB/RGBW",
+    "nl": "RGBW Lamp",
+    "de": "RGBW Glühbirne"
   },
   "class": "light",
   "capabilities": [
