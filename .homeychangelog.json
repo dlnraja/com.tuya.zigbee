@@ -1,4 +1,10 @@
 {
+  "5.5.501": {
+    "en": "🛡️ STABILITY FIX: Fixed 'Frame parse error: value is not defined' in presence sensor radar. Added safety checks for buffer operations in Tuya frame parsing.",
+    "nl": "🛡️ STABILITEIT FIX: 'Frame parse error' opgelost in presence sensor radar. Veiligheidscontroles toegevoegd voor buffer operaties.",
+    "fr": "🛡️ CORRECTION STABILITÉ: Erreur 'Frame parse error' corrigée dans le capteur présence radar. Contrôles de sécurité ajoutés pour les opérations buffer.",
+    "de": "🛡️ STABILITÄTS-FIX: 'Frame parse error' im Präsenzsensor-Radar behoben. Sicherheitsprüfungen für Buffer-Operationen hinzugefügt."
+  },
   "5.5.500": {
     "en": "🔘 FORUM #936 FIX v2: HOBEIAN ZG-101ZL button now supports BOTH modes - Event mode (default: single/double/hold) AND Command mode (triple-click to switch). Added comprehensive event listeners.",
     "nl": "🔘 FORUM #936 FIX v2: HOBEIAN ZG-101ZL knop ondersteunt nu BEIDE modes - Event mode (standaard) EN Command mode (triple-klik om te wisselen).",
