@@ -4,6 +4,30 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.503] - 2026-01-12
+
+### 🔧 Device Classification & Diagnostic Fixes
+
+**Fix: _TZE200_crq3r3la Presence Sensor (Report 0790faa4)**
+- Moved from `climate_sensor` to `presence_sensor_radar` driver
+- Was incorrectly mapping DP103 as temperature instead of illuminance
+- Added proper sensor config with DP mappings:
+  - DP1: alarm_motion (presence)
+  - DP103: measure_luminance (illuminance)
+  - DP113/119/123/124: settings
+
+**Fix: Smoke Detector Enhanced Diagnostics (Martijn report)**
+- Added comprehensive diagnostic logging for `_TZE284_rccxox8p`
+- Logs manufacturer name, model ID, device ID at initialization
+- Logs available clusters (Tuya 0xEF00, IAS Zone 0x0500)
+- Helps troubleshoot pairing issues - user must RE-PAIR after update
+
+**Reminder for Smoke Detector Users:**
+- After updating, DELETE the device and RE-PAIR it
+- The manufacturerName is checked during pairing, not after
+
+---
+
 ## [5.5.496] - 2026-01-12
 
 ### 🌍 Translations & Image Audit
