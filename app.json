@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.488",
+  "version": "5.5.489",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -15272,7 +15272,11 @@
           "E11-N14",
           "E12-N14",
           "E1C-NB6",
-          "E1C-NB7"
+          "E1C-NB7",
+          "TS0502A",
+          "TS0502B",
+          "TS0501A",
+          "TS0501B"
         ],
         "endpoints": {
           "1": {
@@ -15869,7 +15873,8 @@
           "TS0503B",
           "TS0504B",
           "TS0505A",
-          "TS0505B"
+          "TS0505B",
+          "TS0504A"
         ]
       },
       "settings": [
@@ -16677,7 +16682,13 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_49qchf10",
+          "_TZ3000_obacbukl",
+          "_TZ3000_9cpuaca6",
+          "_TZ3000_psg0zx5j",
+          "_TZ3210_agwvapnp"
+        ],
         "productId": [
           "TS0502A",
           "TS0502B"
@@ -16996,8 +17007,15 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
-        "productId": [],
+        "manufacturerName": [
+          "_TZ3000_49qchf10",
+          "_TZ3000_oboryztc",
+          "_TZ3000_gxnstjts"
+        ],
+        "productId": [
+          "TS0501A",
+          "TS0501B"
+        ],
         "endpoints": {
           "1": {
             "clusters": [
@@ -19960,7 +19978,11 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_bi6lpsew",
+          "_TZE200_zxx7mi77",
+          "_TZE204_zxx7mi77"
+        ],
         "productId": [
           "TS0046"
         ],
@@ -20358,7 +20380,8 @@
           "_tz3400_keyjqthh"
         ],
         "productId": [
-          "TS004F"
+          "TS004F",
+          "TS0044"
         ],
         "endpoints": {
           "1": {
@@ -20754,7 +20777,11 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE200_r32ctezx",
+          "_TZE200_dzuqwsyg",
+          "_TZE204_r32ctezx"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -27848,6 +27875,58 @@
     },
     {
       "name": {
+        "en": "3-Gang Dimmer Module",
+        "fr": "Module Variateur 3 Canaux"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "onoff.channel2",
+        "dim.channel2",
+        "onoff.channel3",
+        "dim.channel3"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_1V1DXKCK",
+          "_tze200_1v1dxkck",
+          "_TZE200_BXOO2SWD",
+          "_tze200_bxoo2swd"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [0, 4, 5, 61184],
+            "bindings": [61184]
+          }
+        }
+      },
+      "capabilitiesOptions": {
+        "onoff": { "title": { "en": "Channel 1", "fr": "Canal 1" } },
+        "dim": { "title": { "en": "Brightness 1", "fr": "Luminosité 1" } },
+        "onoff.channel2": { "title": { "en": "Channel 2", "fr": "Canal 2" } },
+        "dim.channel2": { "title": { "en": "Brightness 2", "fr": "Luminosité 2" } },
+        "onoff.channel3": { "title": { "en": "Channel 3", "fr": "Canal 3" } },
+        "dim.channel3": { "title": { "en": "Brightness 3", "fr": "Luminosité 3" } }
+      },
+      "images": {
+        "small": "drivers/dimmer_3gang/assets/images/small.png",
+        "large": "drivers/dimmer_3gang/assets/images/large.png",
+        "xlarge": "drivers/dimmer_3gang/assets/images/xlarge.png"
+      },
+      "id": "dimmer_3gang"
+    },
+    {
+      "name": {
         "en": "Dimmer 1gang",
         "fr": "Dimmer 1gang"
       },
@@ -29237,7 +29316,11 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE200_dwcarsat",
+          "_TZE200_ryfmq5rl",
+          "_TZE200_mce9kjpm"
+        ],
         "productId": [
           "AIRQ01",
           "TS0601",
@@ -31488,9 +31571,13 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_7ysdnebc",
+          "_TZ3000_xfs39dbf"
+        ],
         "productId": [
-          "TS0501A"
+          "TS0501A",
+          "TS1101"
         ],
         "endpoints": {
           "1": {
@@ -31973,7 +32060,11 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_riwp3k79",
+          "_TZ3000_oboryztc",
+          "_TZ3210_r0xgkft5"
+        ],
         "endpoints": {
           "1": {
             "clusters": [
@@ -37815,7 +37906,11 @@
         "measure_battery"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_peszejy7",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_tkusjmue"
+        ],
         "productId": [
           "TS0203"
         ],
@@ -37865,8 +37960,13 @@
         "measure_battery"
       ],
       "zigbee": {
-        "manufacturerName": [],
-        "productId": [],
+        "manufacturerName": [
+          "_TZ3000_dfgbtub0",
+          "_TZ3000_gbm10jnj"
+        ],
+        "productId": [
+          "TS0012"
+        ],
         "endpoints": {
           "1": {
             "clusters": [
@@ -37925,8 +38025,13 @@
         "measure_battery"
       ],
       "zigbee": {
-        "manufacturerName": [],
-        "productId": [],
+        "manufacturerName": [
+          "_TZ3000_w8jwkczz",
+          "_TZ3000_qdgg10wg"
+        ],
+        "productId": [
+          "TS0013"
+        ],
         "endpoints": {
           "1": {
             "clusters": [
@@ -38134,7 +38239,10 @@
         "measure_battery"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_iszegwpd",
+          "_TZ3000_bi6lpsew"
+        ],
         "productId": [
           "TS0046"
         ],
@@ -38250,7 +38358,11 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE200_cowvfni3",
+          "_TZE200_wmcdj3aq",
+          "_TZE204_guvc7pdy"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -38927,7 +39039,11 @@
         "measure_power"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE200_ckud7u2l",
+          "_TZE200_aoclfnxz",
+          "_TZE204_ckud7u2l"
+        ],
         "productId": [
           "TS0601"
         ],
@@ -43701,8 +43817,13 @@
         "measure_battery"
       ],
       "zigbee": {
-        "manufacturerName": [],
-        "productId": [],
+        "manufacturerName": [
+          "_TZ3000_gjnozsaz",
+          "_TZ3000_typdpbpg"
+        ],
+        "productId": [
+          "TS011F"
+        ],
         "endpoints": {
           "1": {
             "clusters": [
@@ -43955,8 +44076,13 @@
         "meter_power"
       ],
       "zigbee": {
-        "manufacturerName": [],
-        "productId": [],
+        "manufacturerName": [
+          "_TZ3000_wxtp7c5y",
+          "_TZ3000_zloso4jk"
+        ],
+        "productId": [
+          "TS011F"
+        ],
         "endpoints": {
           "1": {
             "clusters": [
@@ -44260,7 +44386,9 @@
           "_tz3218_7fiyo3kv"
         ],
         "productId": [
-          "TS000F"
+          "TS000F",
+          "TS0001",
+          "TS0011"
         ],
         "endpoints": {
           "1": {
@@ -44315,7 +44443,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_mraovvmm",
+          "_TZE200_tz32mtza"
+        ],
         "productId": [
           "TS0015",
           "TS004F"
@@ -44937,7 +45068,11 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE200_tz32mtza",
+          "_TZE204_tz32mtza",
+          "_TZE284_tz32mtza"
+        ],
         "productId": [
           "TS0016",
           "TS004F",
@@ -46190,10 +46325,17 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3000_dfgbtub0",
+          "_TZ3000_ixla93vd"
+        ],
         "productId": [
           "SNZB-01",
-          "TS004F"
+          "TS004F",
+          "TS0041",
+          "TS0042",
+          "TS0043",
+          "TS0044"
         ],
         "endpoints": {
           "1": {
@@ -46724,7 +46866,10 @@
         ],
         "productId": [
           "TUYATEC_TempHumid",
-          "CK-TLSR8656-SS5-01(7014)"
+          "CK-TLSR8656-SS5-01(7014)",
+          "TS0201",
+          "TY0201",
+          "SNTZ003"
         ],
         "endpoints": {
           "1": {
@@ -47634,9 +47779,13 @@
         "measure_battery"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE200_sh1btabb",
+          "_TZE200_vrjkcam9"
+        ],
         "productId": [
-          "TS000A"
+          "TS000A",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -48813,7 +48962,10 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE200_vkibfp3d",
+          "_TZE200_wlcyxdky"
+        ],
         "productId": [
           "TH01",
           "TS0601",
