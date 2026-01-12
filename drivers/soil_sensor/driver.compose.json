@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Soil Moisture Sensor",
-    "fr": "Capteur d'Humidité du Sol"
+    "fr": "Capteur d'Humidité du Sol",
+    "nl": "Bodemsensor",
+    "de": "Bodensensor"
   },
   "class": "sensor",
   "capabilities": [

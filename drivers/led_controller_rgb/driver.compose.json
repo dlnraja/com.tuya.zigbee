@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "LED Controller RGB",
-    "fr": "Contrôleur LED RGB"
+    "fr": "Contrôleur LED RGB",
+    "nl": "RGB LED Controller",
+    "de": "RGB LED Steuerung"
   },
   "class": "light",
   "capabilities": [

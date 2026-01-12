@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Power Meter",
-    "fr": "Compteur Électrique"
+    "fr": "Compteur Électrique",
+    "nl": "Energiemeter",
+    "de": "Stromzähler"
   },
   "class": "sensor",
   "capabilities": [
