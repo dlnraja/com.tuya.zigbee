@@ -1,4 +1,10 @@
 {
+  "5.5.497": {
+    "en": "🔧 FORUM #933 FIX: Fixed bizarre temp/humidity values on presence sensors (Rudy_De_Vylder). Added battery sanity checks to prevent 0%↔100% jumps on sleepy devices.",
+    "nl": "🔧 FORUM #933 FIX: Rare temp/vochtigheid waarden op presence sensors opgelost. Batterij sanity checks toegevoegd.",
+    "fr": "🔧 FORUM #933 FIX: Valeurs temp/humidité bizarres sur capteurs présence corrigées. Vérifications batterie ajoutées.",
+    "de": "🔧 FORUM #933 FIX: Seltsame Temp/Feuchtigkeit Werte bei Präsenzsensoren behoben. Batterie-Prüfungen hinzugefügt."
+  },
   "5.5.496": {
     "en": "🌍 TRANSLATIONS: Added Dutch (nl) and German (de) translations to 70+ drivers. All driver images verified (75x75 small, 500x500 large) - SDK3 compliant.",
     "nl": "🌍 VERTALINGEN: Nederlandse (nl) en Duitse (de) vertalingen toegevoegd aan 70+ drivers. Alle driver images geverifieerd (75x75 small, 500x500 large).",
