@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.487",
+  "version": "5.5.488",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -39218,7 +39218,9 @@
         "manufacturerName": [
           "_TZE204_hkdl5fmv",
           "_tze204_hkdl5fmv",
-          "_TZE204_HKDL5FMV"
+          "_TZE204_HKDL5FMV",
+          "_TZE204_byzdayie",
+          "_tze204_byzdayie"
         ],
         "productId": [
           "TS0601"
@@ -39378,7 +39380,8 @@
           "_TZE284_6YCGARAB",
           "_tze284_6ycgarab",
           "_TZE284_GYZLWU5Q",
-          "_TZE284_N4TTSCK2"
+          "_TZE284_N4TTSCK2",
+          "_TZE200_qcasmfan"
         ],
         "endpoints": {
           "1": {
