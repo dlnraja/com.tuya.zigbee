@@ -4,7 +4,7 @@ const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║     BUTTON 1 GANG - v5.5.499 ENHANCED FOR TS0041 / TS0042 / TS0215A         ║
+ * ║     BUTTON 1 GANG - v5.5.500 ENHANCED FOR TS0041 / TS0042 / TS0215A         ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  v5.5.376: FIX for "No Action detected" - Added IAS ACE support             ║
@@ -26,7 +26,7 @@ class Button1GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('═══════════════════════════════════════════════════════════════');
-    this.log('[BUTTON1] 🔘 Button1GangDevice v5.5.376 initializing...');
+    this.log('[BUTTON1] 🔘 Button1GangDevice v5.5.500 initializing...');
     this.log('[BUTTON1] FIX: Enhanced detection for "No Action detected" issue');
     this.log('═══════════════════════════════════════════════════════════════');
 
@@ -151,16 +151,36 @@ class Button1GangDevice extends ButtonDevice {
       if (onOffCluster && typeof onOffCluster.on === 'function') {
         this.log('[BUTTON1-PHYSICAL] 📡 Setting up enhanced onOff command listeners...');
 
-        onOffCluster.on('command', async (commandName, commandPayload) => {
-          this.log(`[BUTTON1-ONOFF] command: ${commandName}`, commandPayload);
+        // v5.5.500: HOBEIAN ZG-101ZL DUAL MODE SUPPORT
+        // The device has TWO modes (switch with triple-click):
+        // 1. EVENT mode (default): sends single/double/hold via commandOn/Off/Toggle
+        // 2. COMMAND mode: sends toggle/on/off for group control
+        //
+        // In EVENT mode (Z2M fz.on_off_action):
+        // - commandOn = single press
+        // - commandOff = double press
+        // - commandToggle = hold/long press
+        //
+        // In COMMAND mode:
+        // - toggle = single press
+        // - on = double press
+        // - off = long press
 
-          // v5.5.499: FORUM #936 FIX - HOBEIAN ZG-101ZL command mapping
-          // Source: ZHA Blueprint + Zigbee2MQTT documentation
-          // In "command" mode (triple-click to switch modes):
-          // - toggle = single press
-          // - on = double press
-          // - off = long press
-          const commandMap = {
+        onOffCluster.on('command', async (commandName, commandPayload) => {
+          this.log(`[BUTTON1-ONOFF] 🎯 COMMAND RECEIVED: ${commandName}`, commandPayload);
+
+          // v5.5.500: EVENT MODE mapping (default mode)
+          // This is what Z2M's fz.on_off_action uses
+          const eventModeMap = {
+            'commandOn': 'single',
+            'commandOff': 'double',
+            'commandToggle': 'long',
+            'commandOnWithTimedOff': 'single',
+            'commandOffWithEffect': 'double'
+          };
+
+          // v5.5.500: COMMAND MODE mapping (triple-click to switch)
+          const commandModeMap = {
             'toggle': 'single',
             'setToggle': 'single',
             'on': 'double',
@@ -169,11 +189,49 @@ class Button1GangDevice extends ButtonDevice {
             'setOff': 'long'
           };
 
-          const pressType = commandMap[commandName];
+          // Try event mode first (default), then command mode
+          let pressType = eventModeMap[commandName] || commandModeMap[commandName];
+
           if (pressType) {
             this.log(`[BUTTON1-ONOFF] 🔘 Button 1 ${pressType.toUpperCase()} (${commandName})`);
             await this.triggerButtonPress(1, pressType);
+          } else {
+            this.log(`[BUTTON1-ONOFF] ⚠️ Unknown command: ${commandName}`);
+            // Fallback: trigger single press for any unknown command
+            await this.triggerButtonPress(1, 'single');
           }
+        });
+
+        // v5.5.500: Additional command listeners for different SDK event names
+        onOffCluster.on('commandOn', async (payload) => {
+          this.log('[BUTTON1-ONOFF] 🔘 commandOn event (EVENT MODE: single)');
+          await this.triggerButtonPress(1, 'single');
+        });
+
+        onOffCluster.on('commandOff', async (payload) => {
+          this.log('[BUTTON1-ONOFF] 🔘 commandOff event (EVENT MODE: double)');
+          await this.triggerButtonPress(1, 'double');
+        });
+
+        onOffCluster.on('commandToggle', async (payload) => {
+          this.log('[BUTTON1-ONOFF] 🔘 commandToggle event (EVENT MODE: long)');
+          await this.triggerButtonPress(1, 'long');
+        });
+
+        // v5.5.500: Direct command name listeners
+        onOffCluster.on('toggle', async () => {
+          this.log('[BUTTON1-ONOFF] 🔘 toggle event (COMMAND MODE: single)');
+          await this.triggerButtonPress(1, 'single');
+        });
+
+        onOffCluster.on('on', async () => {
+          this.log('[BUTTON1-ONOFF] 🔘 on event (COMMAND MODE: double)');
+          await this.triggerButtonPress(1, 'double');
+        });
+
+        onOffCluster.on('off', async () => {
+          this.log('[BUTTON1-ONOFF] 🔘 off event (COMMAND MODE: long)');
+          await this.triggerButtonPress(1, 'long');
         });
 
         // v5.5.457: HOBEIAN FIX - Listen for onOff ATTRIBUTE changes (not just commands)

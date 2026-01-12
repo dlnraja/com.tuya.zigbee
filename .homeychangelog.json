@@ -1,4 +1,10 @@
 {
+  "5.5.500": {
+    "en": "🔘 FORUM #936 FIX v2: HOBEIAN ZG-101ZL button now supports BOTH modes - Event mode (default: single/double/hold) AND Command mode (triple-click to switch). Added comprehensive event listeners.",
+    "nl": "🔘 FORUM #936 FIX v2: HOBEIAN ZG-101ZL knop ondersteunt nu BEIDE modes - Event mode (standaard) EN Command mode (triple-klik om te wisselen).",
+    "fr": "🔘 FORUM #936 FIX v2: Le bouton HOBEIAN ZG-101ZL supporte maintenant les DEUX modes - Event mode (défaut) ET Command mode (triple-clic pour changer).",
+    "de": "🔘 FORUM #936 FIX v2: HOBEIAN ZG-101ZL Taste unterstützt jetzt BEIDE Modi - Event-Modus (Standard) UND Command-Modus (Dreifachklick zum Wechseln)."
+  },
   "5.5.499": {
     "en": "🔧 DIAGNOSTICS FIXES: (1) HOBEIAN ZG-101ZL button command mapping fixed (forum #936). (2) Climate sensor DP103 no longer incorrectly mapped to humidity. (3) Ceiling PIR _TZ3000_8bxrzyxz now reports illuminance via DP103.",
     "nl": "🔧 DIAGNOSTICS FIXES: (1) HOBEIAN ZG-101ZL knop mapping gefixd. (2) Climate sensor DP103 niet meer naar humidity. (3) Plafond PIR _TZ3000_8bxrzyxz meldt nu verlichting.",
