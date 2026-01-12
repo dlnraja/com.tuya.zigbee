@@ -19,37 +19,37 @@
     "measure_battery"
   ],
   "capabilitiesOptions": {
-    "button.1": {
+    "maintenanceAction": true,"button.1": {
       "title": {
         "en": "Button 1",
         "fr": "Bouton 1"
       },
       "getable": false,
-      "setable": true
+      "setable": false
     },
-    "button.2": {
+    "maintenanceAction": true,"button.2": {
       "title": {
         "en": "Button 2",
         "fr": "Bouton 2"
       },
       "getable": false,
-      "setable": true
+      "setable": false
     },
-    "button.3": {
+    "maintenanceAction": true,"button.3": {
       "title": {
         "en": "Button 3",
         "fr": "Bouton 3"
       },
       "getable": false,
-      "setable": true
+      "setable": false
     },
-    "button.4": {
+    "maintenanceAction": true,"button.4": {
       "title": {
         "en": "Button 4",
         "fr": "Bouton 4"
       },
       "getable": false,
-      "setable": true
+      "setable": false
     },
     "measure_battery": {
       "title": {
@@ -527,3 +527,4 @@
     }
   ]
 }
+
