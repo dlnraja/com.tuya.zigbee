@@ -1,4 +1,22 @@
 {
+  "5.5.496": {
+    "en": "🌍 TRANSLATIONS: Added Dutch (nl) and German (de) translations to 70+ drivers. All driver images verified (75x75 small, 500x500 large) - SDK3 compliant.",
+    "nl": "🌍 VERTALINGEN: Nederlandse (nl) en Duitse (de) vertalingen toegevoegd aan 70+ drivers. Alle driver images geverifieerd (75x75 small, 500x500 large).",
+    "fr": "🌍 TRADUCTIONS: Traductions néerlandais (nl) et allemand (de) ajoutées à 70+ drivers. Toutes les images vérifiées (75x75 small, 500x500 large).",
+    "de": "🌍 ÜBERSETZUNGEN: Niederländische (nl) und deutsche (de) Übersetzungen zu 70+ Treibern hinzugefügt. Alle Treiber-Bilder verifiziert."
+  },
+  "5.5.495": {
+    "en": "🔘 BUTTON FIX: Virtual buttons now behave as push buttons (single/double/long press) instead of toggle on/off. Applied to all button_wireless and scene_switch drivers.",
+    "nl": "🔘 KNOP FIX: Virtuele knoppen werken nu als drukknop (single/double/long press) ipv toggle on/off.",
+    "fr": "🔘 FIX BOUTONS: Les boutons virtuels fonctionnent maintenant en mode push (single/double/long) au lieu de toggle on/off.",
+    "de": "🔘 TASTEN FIX: Virtuelle Tasten funktionieren jetzt als Drucktasten (single/double/long) statt Toggle on/off."
+  },
+  "5.5.494": {
+    "en": "🔧 FORUM #931 FIX: Fixed duplicate button issue (Ronny_M, Cam - HOBEIAN ZG-101ZL). Changed button to button.1 capability. RE-PAIR device after update!",
+    "nl": "🔧 FORUM #931 FIX: Dubbele knop probleem opgelost (HOBEIAN ZG-101ZL). RE-PAIREN na update!",
+    "fr": "🔧 FORUM #931 FIX: Problème bouton dupliqué corrigé (HOBEIAN ZG-101ZL). RE-APPAIRER après mise à jour!",
+    "de": "🔧 FORUM #931 FIX: Doppeltes Tasten-Problem behoben (HOBEIAN ZG-101ZL). Nach Update NEU PAIREN!"
+  },
   "5.5.489": {
     "en": "🔧 DRIVER SYNC: Added dimmer_3gang driver, enriched 25 drivers with missing manufacturerName/productId. 89 drivers total.",
     "nl": "🔧 DRIVER SYNC: dimmer_3gang driver toegevoegd, 25 drivers verrijkt. 89 drivers totaal.",
