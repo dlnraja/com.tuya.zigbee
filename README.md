@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.501** | 🛡️ STABILITY FIX: Fixed 'Frame parse error: value is not defined' in presenc... |
 | **v5.5.500** | 🔘 FORUM #936 FIX v2: HOBEIAN ZG-101ZL button now supports BOTH modes - Event... |
 | **v5.5.499** | 🔧 DIAGNOSTICS FIXES: (1) HOBEIAN ZG-101ZL button command mapping fixed (foru... |
 | **v5.5.498** | 🚪 FORUM #934 FIX: Added 11 new door sensor manufacturer IDs (Lasse_K). Inclu... |
@@ -78,7 +79,6 @@
 | **v5.5.494** | 🔧 FORUM #931 FIX: Fixed duplicate button issue (Ronny_M, Cam - HOBEIAN ZG-10... |
 | **v5.5.489** | 🔧 DRIVER SYNC: Added dimmer_3gang driver, enriched 25 drivers with missing m... |
 | **v5.5.488** | 🔧 Z2M SYNC: Added _TZE200_qcasmfan (GISE smoke sensor), _TZE204_byzdayie (TO... |
-| **v5.5.487** | 🔧 MAJOR SYNC: Synchronized 3199 manufacturerName/productId entries from driv... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
