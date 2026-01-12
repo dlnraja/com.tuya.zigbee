@@ -1002,6 +1002,27 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
+  // TYPE I: TZE200_crq3r3la Presence Sensor (Forum report 0790faa4)
+  // v5.5.503: User reported as "presence sensor" wrongly classified as climate_sensor
+  // DPs: 103=illuminance, 113/119/123/124=settings
+  // ─────────────────────────────────────────────────────────────────────────────
+  'TZE200_CRQ3R3LA': {
+    sensors: ['_TZE200_crq3r3la', '_TZE200_CRQ3R3LA'],
+    battery: true,
+    hasIlluminance: true,
+    noTemperature: true,
+    noHumidity: true,
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_bool' },
+      103: { cap: 'measure_luminance', type: 'lux_direct' },
+      113: { cap: null, setting: 'mode' },
+      119: { cap: null, setting: 'sensitivity' },
+      123: { cap: null, setting: 'detection_delay' },
+      124: { cap: null, setting: 'indicator' },
+    }
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
   // v5.5.278: DEFAULT fallback config (generic DP mappings)
   // Applied when manufacturerName not found in any config
   // Uses common DPs that work for most sensors

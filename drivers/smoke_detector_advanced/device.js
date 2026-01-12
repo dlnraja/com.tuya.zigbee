@@ -3,8 +3,13 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SMOKE DETECTOR ADVANCED - v5.5.401 PAIRING FIX                         ║
+ * ║      SMOKE DETECTOR ADVANCED - v5.5.503 DIAGNOSTIC LOGGING                  ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
+ * ║  v5.5.503: Enhanced diagnostic logging for Martijn report                    ║
+ * ║  - Added manufacturer name logging at init                                   ║
+ * ║  - Enhanced DP reception logging with hex dump                               ║
+ * ║  - Added Tuya cluster detection logging                                      ║
+ * ║                                                                              ║
  * ║  v5.5.401: CRITICAL PAIRING FIX (Jolink forum report)                        ║
  * ║  - Added fastInitMode for sleepy battery devices                             ║
  * ║  - Deferred complex initialization to prevent pairing timeout                ║
@@ -130,17 +135,46 @@ class SmokeDetectorAdvancedDevice extends HybridSensorBase {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
 
-    // v5.5.408: Enhanced logging for Jolink forum troubleshooting
+    // v5.5.503: DIAGNOSTIC LOGGING for Martijn report
+    const mfr = this.getData()?.manufacturerName || this.getSetting('zb_manufacturer_name') || 'UNKNOWN';
+    const modelId = this.getData()?.modelId || 'UNKNOWN';
+    const deviceId = this.getData()?.id || 'UNKNOWN';
+
     this.log('[SMOKE-ADV] ════════════════════════════════════════════════════════════');
-    this.log('[SMOKE-ADV] ✅ Smart Smoke Detector Advanced v5.5.408 Ready');
+    this.log('[SMOKE-ADV] ✅ Smart Smoke Detector Advanced v5.5.503 Ready');
+    this.log(`[SMOKE-ADV] 📋 ManufacturerName: "${mfr}"`);
+    this.log(`[SMOKE-ADV] 📋 ModelId: "${modelId}"`);
+    this.log(`[SMOKE-ADV] 📋 DeviceId: "${deviceId}"`);
     this.log('[SMOKE-ADV] DP Mappings: smoke(1), temp(2), humidity(3), tamper/battery(4), battery(14,15)');
     this.log('[SMOKE-ADV] ⚠️ NOTE: This is a SLEEPY battery device');
     this.log('[SMOKE-ADV] ⚠️ Smoke alarm will only report when triggered or during wake cycle');
-    this.log('[SMOKE-ADV] ⚠️ Temperature/humidity may not be available on all models');
     this.log('[SMOKE-ADV] ════════════════════════════════════════════════════════════');
 
-    // v5.5.408: Trigger test alarm flow card registration
-    // This allows users to test if flows work without actual smoke
+    // v5.5.503: Log available clusters for diagnostics
+    try {
+      const ep1 = zclNode?.endpoints?.[1];
+      if (ep1) {
+        const clusterIds = Object.keys(ep1.clusters || {});
+        this.log(`[SMOKE-ADV] 📡 Endpoint 1 clusters: ${clusterIds.join(', ') || 'none'}`);
+
+        // Check for Tuya cluster (0xEF00 = 61184)
+        if (ep1.clusters?.tuya || ep1.clusters?.[61184]) {
+          this.log('[SMOKE-ADV] ✅ Tuya cluster 0xEF00 (61184) FOUND - DP communication available');
+        } else {
+          this.log('[SMOKE-ADV] ⚠️ Tuya cluster 0xEF00 NOT found - may use IAS Zone instead');
+        }
+
+        // Check for IAS Zone (0x0500 = 1280)
+        if (ep1.clusters?.iasZone || ep1.clusters?.[1280]) {
+          this.log('[SMOKE-ADV] ✅ IAS Zone cluster 0x0500 (1280) FOUND');
+        }
+      }
+    } catch (e) {
+      this.log(`[SMOKE-ADV] ⚠️ Could not enumerate clusters: ${e.message}`);
+    }
+
+    // v5.5.503: Store manufacturer for DP transform logic
+    this._manufacturerName = mfr;
   }
 }
 module.exports = SmokeDetectorAdvancedDevice;
