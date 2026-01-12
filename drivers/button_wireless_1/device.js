@@ -234,35 +234,68 @@ class Button1GangDevice extends ButtonDevice {
           await this.triggerButtonPress(1, 'long');
         });
 
-        // v5.5.457: HOBEIAN FIX - Listen for onOff ATTRIBUTE changes (not just commands)
+        // v5.5.504: HOBEIAN FIX - Listen for onOff ATTRIBUTE changes with PERIODIC REPORT FILTERING
         // HOBEIAN ZG-101ZL uses onOff attribute reports for button presses
+        // BUT also sends periodic reports every ~10 minutes that should NOT trigger button press
         this._lastOnOffState = null;
         this._lastOnOffTime = 0;
+        this._initTime = Date.now();
 
         onOffCluster.on('attr.onOff', async (value) => {
           const now = Date.now();
-          // Debounce: ignore if same value within 500ms
-          if (this._lastOnOffState === value && (now - this._lastOnOffTime) < 500) {
+          const timeSinceLastEvent = now - this._lastOnOffTime;
+          const timeSinceInit = now - this._initTime;
+
+          this.log(`[BUTTON1-ONOFF] attr.onOff: ${value} (last=${this._lastOnOffState}, sinceEvent=${timeSinceLastEvent}ms)`);
+
+          // v5.5.504: IGNORE PERIODIC REPORTS - same value after >5 seconds = status report, NOT button press
+          if (this._lastOnOffState !== null && value === this._lastOnOffState && timeSinceLastEvent > 5000) {
+            this.log(`[BUTTON1-ONOFF] ⏭️ Ignored: periodic report (same value after ${Math.round(timeSinceLastEvent / 1000)}s)`);
+            this._lastOnOffTime = now;
             return;
           }
+
+          // Ignore initial state report within first 3 seconds of init
+          if (this._lastOnOffState === null && timeSinceInit < 3000) {
+            this.log(`[BUTTON1-ONOFF] ℹ️ Initial state stored (not triggering)`);
+            this._lastOnOffState = value;
+            this._lastOnOffTime = now;
+            return;
+          }
+
+          // Debounce rapid duplicates (<100ms)
+          if (this._lastOnOffState === value && timeSinceLastEvent < 100) {
+            this.log(`[BUTTON1-ONOFF] ⏭️ Debounced duplicate`);
+            return;
+          }
+
           this._lastOnOffState = value;
           this._lastOnOffTime = now;
 
-          this.log(`[BUTTON1-ONOFF] 🔘 HOBEIAN attr.onOff change: ${value}`);
-          // onOff true = single press, false = can indicate release or double
+          this.log(`[BUTTON1-ONOFF] 🔘 HOBEIAN button press detected: ${value}`);
           await this.triggerButtonPress(1, 'single');
         });
 
         onOffCluster.on('report', async (attributes) => {
           if (attributes?.onOff !== undefined) {
             const now = Date.now();
-            if (this._lastOnOffState === attributes.onOff && (now - this._lastOnOffTime) < 500) {
+            const timeSinceLastEvent = now - this._lastOnOffTime;
+
+            // v5.5.504: IGNORE PERIODIC REPORTS
+            if (this._lastOnOffState !== null && attributes.onOff === this._lastOnOffState && timeSinceLastEvent > 5000) {
+              this.log(`[BUTTON1-ONOFF] ⏭️ Ignored report: periodic (same value after ${Math.round(timeSinceLastEvent / 1000)}s)`);
+              this._lastOnOffTime = now;
               return;
             }
+
+            if (this._lastOnOffState === attributes.onOff && timeSinceLastEvent < 100) {
+              return; // Debounce
+            }
+
             this._lastOnOffState = attributes.onOff;
             this._lastOnOffTime = now;
 
-            this.log(`[BUTTON1-ONOFF] 🔘 HOBEIAN report.onOff: ${attributes.onOff}`);
+            this.log(`[BUTTON1-ONOFF] 🔘 HOBEIAN report button press: ${attributes.onOff}`);
             await this.triggerButtonPress(1, 'single');
           }
         });
