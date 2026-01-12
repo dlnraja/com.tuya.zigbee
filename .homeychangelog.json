@@ -1,4 +1,10 @@
 {
+  "5.5.504": {
+    "en": "🔧 FIX: HOBEIAN ZG-101ZL button no longer triggers on periodic reports (~10min status updates). Fixed measure_battery error when capability removed. Added LoraTap TS0043 3-button remote (_TZ3000_famkxci2).",
+    "nl": "🔧 FIX: HOBEIAN ZG-101ZL knop triggert niet meer op periodieke reports. measure_battery fout opgelost. LoraTap TS0043 3-knops afstandsbediening toegevoegd.",
+    "fr": "🔧 FIX: Le bouton HOBEIAN ZG-101ZL ne déclenche plus sur les rapports périodiques. Erreur measure_battery corrigée. Télécommande 3 boutons LoraTap TS0043 ajoutée.",
+    "de": "🔧 FIX: HOBEIAN ZG-101ZL Taste löst nicht mehr bei periodischen Reports aus. measure_battery Fehler behoben. LoraTap TS0043 3-Tasten Fernbedienung hinzugefügt."
+  },
   "5.5.503": {
     "en": "🔧 FIX: Presence sensor _TZE200_crq3r3la moved from climate_sensor to presence_sensor_radar (was incorrectly mapping DP103 as temperature). Smoke detector _TZE284_rccxox8p: enhanced diagnostic logging - RE-PAIR device after update!",
     "nl": "🔧 FIX: Presence sensor _TZE200_crq3r3la verplaatst naar presence_sensor_radar (DP103 was verkeerd als temperatuur). Rookmelder: verbeterde diagnostiek - OPNIEUW PAIREN na update!",
