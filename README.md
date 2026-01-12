@@ -69,6 +69,9 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.504** | 🔧 FIX: HOBEIAN ZG-101ZL button no longer triggers on periodic reports (~10mi... |
+| **v5.5.503** | 🔧 FIX: Presence sensor _TZE200_crq3r3la moved from climate_sensor to presenc... |
+| **v5.5.502** | 🔥 FORUM FIX (Jolink): Added smoke detector _TZE284_rccxox8p (exact case matc... |
 | **v5.5.501** | 🛡️ STABILITY FIX: Fixed 'Frame parse error: value is not defined' in presenc... |
 | **v5.5.500** | 🔘 FORUM #936 FIX v2: HOBEIAN ZG-101ZL button now supports BOTH modes - Event... |
 | **v5.5.499** | 🔧 DIAGNOSTICS FIXES: (1) HOBEIAN ZG-101ZL button command mapping fixed (foru... |
@@ -76,9 +79,6 @@
 | **v5.5.497** | 🔧 FORUM #933 FIX: Fixed bizarre temp/humidity values on presence sensors (Ru... |
 | **v5.5.496** | 🌍 TRANSLATIONS: Added Dutch (nl) and German (de) translations to 70+ drivers... |
 | **v5.5.495** | 🔘 BUTTON FIX: Virtual buttons now behave as push buttons (single/double/long... |
-| **v5.5.494** | 🔧 FORUM #931 FIX: Fixed duplicate button issue (Ronny_M, Cam - HOBEIAN ZG-10... |
-| **v5.5.489** | 🔧 DRIVER SYNC: Added dimmer_3gang driver, enriched 25 drivers with missing m... |
-| **v5.5.488** | 🔧 Z2M SYNC: Added _TZE200_qcasmfan (GISE smoke sensor), _TZE204_byzdayie (TO... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
