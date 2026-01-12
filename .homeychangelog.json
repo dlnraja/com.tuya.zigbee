@@ -1,4 +1,10 @@
 {
+  "5.5.498": {
+    "en": "🚪 FORUM #934 FIX: Added 11 new door sensor manufacturer IDs (Lasse_K). Includes _TZ3000_1bwpjvlz, _TZ3000_fku2h3gw, _TZ3000_hkcpblrs and more. RE-PAIR if your door sensor was 'unknown'.",
+    "nl": "🚪 FORUM #934 FIX: 11 nieuwe deur sensor manufacturer IDs toegevoegd. RE-PAIREN als uw sensor 'onbekend' was.",
+    "fr": "🚪 FORUM #934 FIX: 11 nouveaux IDs fabricant pour capteurs de porte ajoutés. RE-APPAIRER si votre capteur était 'inconnu'.",
+    "de": "🚪 FORUM #934 FIX: 11 neue Türsensor-Hersteller-IDs hinzugefügt. NEU PAIREN wenn Ihr Sensor 'unbekannt' war."
+  },
   "5.5.497": {
     "en": "🔧 FORUM #933 FIX: Fixed bizarre temp/humidity values on presence sensors (Rudy_De_Vylder). Added battery sanity checks to prevent 0%↔100% jumps on sleepy devices.",
     "nl": "🔧 FORUM #933 FIX: Rare temp/vochtigheid waarden op presence sensors opgelost. Batterij sanity checks toegevoegd.",
