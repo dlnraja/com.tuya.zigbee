@@ -4,7 +4,7 @@ const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║     BUTTON 1 GANG - v5.5.376 ENHANCED FOR TS0041 / TS0042 / TS0215A         ║
+ * ║     BUTTON 1 GANG - v5.5.499 ENHANCED FOR TS0041 / TS0042 / TS0215A         ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  v5.5.376: FIX for "No Action detected" - Added IAS ACE support             ║
@@ -154,13 +154,19 @@ class Button1GangDevice extends ButtonDevice {
         onOffCluster.on('command', async (commandName, commandPayload) => {
           this.log(`[BUTTON1-ONOFF] command: ${commandName}`, commandPayload);
 
-          // Map onOff commands to press types
+          // v5.5.499: FORUM #936 FIX - HOBEIAN ZG-101ZL command mapping
+          // Source: ZHA Blueprint + Zigbee2MQTT documentation
+          // In "command" mode (triple-click to switch modes):
+          // - toggle = single press
+          // - on = double press
+          // - off = long press
           const commandMap = {
-            'on': 'single',
-            'setOn': 'single',
-            'off': 'double',
-            'setOff': 'double',
-            'toggle': 'long'
+            'toggle': 'single',
+            'setToggle': 'single',
+            'on': 'double',
+            'setOn': 'double',
+            'off': 'long',
+            'setOff': 'long'
           };
 
           const pressType = commandMap[commandName];

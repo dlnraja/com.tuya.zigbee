@@ -1,4 +1,10 @@
 {
+  "5.5.499": {
+    "en": "🔧 DIAGNOSTICS FIXES: (1) HOBEIAN ZG-101ZL button command mapping fixed (forum #936). (2) Climate sensor DP103 no longer incorrectly mapped to humidity. (3) Ceiling PIR _TZ3000_8bxrzyxz now reports illuminance via DP103.",
+    "nl": "🔧 DIAGNOSTICS FIXES: (1) HOBEIAN ZG-101ZL knop mapping gefixd. (2) Climate sensor DP103 niet meer naar humidity. (3) Plafond PIR _TZ3000_8bxrzyxz meldt nu verlichting.",
+    "fr": "🔧 CORRECTIONS DIAGNOSTICS: (1) Mapping bouton HOBEIAN ZG-101ZL corrigé. (2) DP103 capteur climat ne mappe plus l'humidité. (3) PIR plafond _TZ3000_8bxrzyxz rapporte illumination.",
+    "de": "🔧 DIAGNOSTIK FIXES: (1) HOBEIAN ZG-101ZL Tasten-Mapping behoben. (2) Klimasensor DP103 nicht mehr auf Feuchtigkeit. (3) Decken-PIR _TZ3000_8bxrzyxz meldet Beleuchtung."
+  },
   "5.5.498": {
     "en": "🚪 FORUM #934 FIX: Added 11 new door sensor manufacturer IDs (Lasse_K). Includes _TZ3000_1bwpjvlz, _TZ3000_fku2h3gw, _TZ3000_hkcpblrs and more. RE-PAIR if your door sensor was 'unknown'.",
     "nl": "🚪 FORUM #934 FIX: 11 nieuwe deur sensor manufacturer IDs toegevoegd. RE-PAIREN als uw sensor 'onbekend' was.",

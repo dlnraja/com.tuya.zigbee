@@ -978,8 +978,9 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // TYPE H: TZ3000 PIR Sensors (standard PIR, not radar)
-  // Uses ZCL occupancy cluster primarily
+  // TYPE H: TZ3000 PIR/Ceiling Sensors (hybrid ZCL + Tuya DP)
+  // v5.5.499: FORUM FIX - Added DP103 illuminance + settings for ceiling sensors
+  // _TZ3000_8bxrzyxz is a ceiling PIR with Tuya DP illuminance reporting
   // ─────────────────────────────────────────────────────────────────────────────
   'TZ3000_PIR': {
     sensors: [
@@ -991,10 +992,12 @@ const SENSOR_CONFIGS = {
     ],
     battery: true,
     useZcl: true,
+    hasIlluminance: true,   // v5.5.499: Has illuminance via Tuya DP103
     noTemperature: true,    // v5.5.372: Forum fix - PIR sensors have NO temp
     noHumidity: true,       // v5.5.372: Forum fix - PIR sensors have NO humidity
     dpMap: {
-      // PIR uses ZCL occupancy, not Tuya DPs
+      // v5.5.499: Ceiling PIR sensors report illuminance via DP103
+      103: { cap: 'measure_luminance', type: 'lux_direct' },
     }
   },
 
