@@ -171,7 +171,8 @@ class ClimateSensorDevice extends HybridSensorBase {
       // ═══════════════════════════════════════════════════════════════════
       2: { capability: 'measure_humidity', divisor: 1 },        // Standard: all _TZE* devices
       7: { capability: 'measure_humidity', divisor: 1 },        // Alt: some _TZE204 models
-      103: { capability: 'measure_humidity', divisor: 1 },      // Alt: rare models
+      // v5.5.499: REMOVED DP103 humidity - was causing incorrect values
+      // DP103 is illuminance on most devices, not humidity (forum diagnostics)
 
       // ═══════════════════════════════════════════════════════════════════
       // BATTERY DPs - INTELLIGENT HANDLING
