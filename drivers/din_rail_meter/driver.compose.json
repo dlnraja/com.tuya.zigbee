@@ -1,0 +1,178 @@
+{
+  "name": {
+    "en": "DIN Rail Energy Meter",
+    "fr": "Compteur DIN Rail",
+    "nl": "DIN Rail Energiemeter",
+    "de": "DIN-Schienen Energiezähler",
+    "it": "Contatore DIN Rail",
+    "sv": "DIN-skena Energimätare",
+    "no": "DIN-skinne Energimåler",
+    "es": "Medidor DIN Rail",
+    "da": "DIN-skinne Energimåler"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current",
+    "meter_power.exported"
+  ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "title": {
+        "en": "Power",
+        "fr": "Puissance"
+      },
+      "units": "W"
+    },
+    "meter_power": {
+      "title": {
+        "en": "Energy Consumed",
+        "fr": "Énergie Consommée"
+      },
+      "units": "kWh"
+    },
+    "meter_power.exported": {
+      "title": {
+        "en": "Energy Exported",
+        "fr": "Énergie Exportée"
+      },
+      "units": "kWh"
+    },
+    "measure_voltage": {
+      "title": {
+        "en": "Voltage",
+        "fr": "Tension"
+      },
+      "units": "V"
+    },
+    "measure_current": {
+      "title": {
+        "en": "Current",
+        "fr": "Courant"
+      },
+      "units": "A"
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Measurement Settings",
+        "fr": "Paramètres de Mesure"
+      },
+      "children": [
+        {
+          "id": "power_scale",
+          "type": "dropdown",
+          "label": {
+            "en": "Power Scale",
+            "fr": "Échelle Puissance"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0.1",
+              "label": {
+                "en": "÷10",
+                "fr": "÷10"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "×1 (Default)",
+                "fr": "×1 (Par défaut)"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "×10",
+                "fr": "×10"
+              }
+            }
+          ]
+        },
+        {
+          "id": "bidirectional",
+          "type": "checkbox",
+          "label": {
+            "en": "Bidirectional (Solar)",
+            "fr": "Bidirectionnel (Solaire)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Enable for solar/grid meters",
+            "fr": "Activer pour compteurs solaires"
+          }
+        }
+      ]
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_bkkmqmyo",
+      "_TZE200_eaac7dkw",
+      "_TZE204_wbhaespm",
+      "_TZE200_wbhaespm",
+      "_TZE204_ves1ycwx",
+      "_TZE200_ves1ycwx",
+      "_TZE204_lzriup1j",
+      "_TZE200_lzriup1j",
+      "_TZE204_davzgqq0",
+      "_TZE200_davzgqq0",
+      "_TZE204_81yrt3lo",
+      "_TZE200_81yrt3lo",
+      "_TZE204_cjbofhxw",
+      "_TZE200_cjbofhxw",
+      "_TZE204_shkxsgis",
+      "_TZE200_shkxsgis",
+      "_TZE204_2dpa3fqj",
+      "_TZE284_2dpa3fqj",
+      "_TZE204_ipxszdhv",
+      "_TZE200_ipxszdhv",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_qeuvnohg",
+      "Tuya",
+      "TOMZN",
+      "MatSeePlus"
+    ],
+    "productId": [
+      "TS0601",
+      "TS011F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184,
+          2820,
+          1794
+        ],
+        "bindings": [
+          2820,
+          1794
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press the pairing button on the meter for 5 seconds until LED blinks rapidly",
+        "fr": "Appuyez sur le bouton d'appairage du compteur pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/din_rail_meter/assets/images/small.png",
+    "large": "drivers/din_rail_meter/assets/images/large.png"
+  },
+  "id": "din_rail_meter",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

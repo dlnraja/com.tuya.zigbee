@@ -1,0 +1,66 @@
+{
+  "name": {
+    "en": "Pool/Spa Pump Controller",
+    "fr": "Contrôleur Pompe Piscine",
+    "nl": "Zwembadpomp Controller",
+    "de": "Pool-Pumpensteuerung",
+    "it": "Controller Pompa Piscina",
+    "sv": "Poolpumpkontroll",
+    "no": "Bassengpumpekontroller",
+    "es": "Controlador Bomba Piscina",
+    "da": "Poolpumpekontrol"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_power",
+    "meter_power"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_k6jhsr0q",
+      "_TZE204_k6jhsr0q",
+      "_TZE200_ruavtjnq",
+      "_TZE204_ruavtjnq",
+      "_TZ3000_8bxrzyxz",
+      "_TZ3000_qystbcjg",
+      "Tuya"
+    ],
+    "productId": [
+      "TS0601",
+      "TS011F",
+      "TS0001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          61184,
+          2820
+        ],
+        "bindings": [
+          6,
+          2820
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the power button for 5 seconds",
+        "fr": "Maintenez le bouton power pendant 5 secondes"
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/pool_pump/assets/images/small.png",
+    "large": "drivers/pool_pump/assets/images/large.png"
+  },
+  "id": "pool_pump",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}
