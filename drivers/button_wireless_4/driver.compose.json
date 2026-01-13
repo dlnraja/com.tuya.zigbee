@@ -19,7 +19,7 @@
     "measure_battery"
   ],
   "capabilitiesOptions": {
-    "maintenanceAction": true,"button.1": {
+    "button.1": {
       "title": {
         "en": "Button 1",
         "fr": "Bouton 1"
@@ -27,7 +27,7 @@
       "getable": false,
       "setable": false
     },
-    "maintenanceAction": true,"button.2": {
+    "button.2": {
       "title": {
         "en": "Button 2",
         "fr": "Bouton 2"
@@ -35,7 +35,7 @@
       "getable": false,
       "setable": false
     },
-    "maintenanceAction": true,"button.3": {
+    "button.3": {
       "title": {
         "en": "Button 3",
         "fr": "Bouton 3"
@@ -43,7 +43,7 @@
       "getable": false,
       "setable": false
     },
-    "maintenanceAction": true,"button.4": {
+    "button.4": {
       "title": {
         "en": "Button 4",
         "fr": "Bouton 4"
@@ -527,4 +527,3 @@
     }
   ]
 }
-
