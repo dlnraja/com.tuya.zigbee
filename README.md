@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.505** | 🔧 FIX GitHub #97: NoroddH _TZ321C_fkzihax8 5.8G Radar - enhanced IAS Zone en... |
 | **v5.5.504** | 🔧 FIX: HOBEIAN ZG-101ZL button no longer triggers on periodic reports (~10mi... |
 | **v5.5.503** | 🔧 FIX: Presence sensor _TZE200_crq3r3la moved from climate_sensor to presenc... |
 | **v5.5.502** | 🔥 FORUM FIX (Jolink): Added smoke detector _TZE284_rccxox8p (exact case matc... |
@@ -78,7 +79,6 @@
 | **v5.5.498** | 🚪 FORUM #934 FIX: Added 11 new door sensor manufacturer IDs (Lasse_K). Inclu... |
 | **v5.5.497** | 🔧 FORUM #933 FIX: Fixed bizarre temp/humidity values on presence sensors (Ru... |
 | **v5.5.496** | 🌍 TRANSLATIONS: Added Dutch (nl) and German (de) translations to 70+ drivers... |
-| **v5.5.495** | 🔘 BUTTON FIX: Virtual buttons now behave as push buttons (single/double/long... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
