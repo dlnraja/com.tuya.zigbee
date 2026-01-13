@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.522** | 🔧 FIXES: (1) smoke_detector_advanced pairing FIXED - broken pair flow causin... |
 | **v5.5.521** | 🔬 DIAGNOSTIC FIXES: (1) _TZE200_crq3r3la presence sensor: Already configured... |
 | **v5.5.520** | 🔧 MISCLASSIFICATION FIXES: Removed wrongly classified IDs from climate_senso... |
 | **v5.5.519** | 🔧 FIXES: (1) _TZ321C_fkzihax8 vs _TZ321C_fkzihaxe8 CORRECTED: Without 'e'=IA... |
@@ -78,7 +79,6 @@
 | **v5.5.515** | 🔧 FORUM FIXES: (1) Lasse_K: HOBEIAN ZG-222Z water leak sensor added. (2) Nor... |
 | **v5.5.514** | 🔧 HOBEIAN ZG-303Z: Added HOBEIAN to soil_sensor manufacturerName for proper ... |
 | **v5.5.513** | 🔧 HOBEIAN DRIVER CONFLICT FIX: Removed HOBEIAN from contact_sensor (wrong dr... |
-| **v5.5.512** | 🔧 FORUM FIX 4x4_Pete: HOBEIAN ZG-204ZM enhanced - Now properly detects as ZC... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
