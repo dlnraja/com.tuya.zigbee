@@ -1,4 +1,10 @@
 {
+  "5.5.519": {
+    "en": "🔧 FIXES: (1) _TZ321C_fkzihax8 vs _TZ321C_fkzihaxe8 CORRECTED: Without 'e'=IAS Zone only PIR, With 'e'=mmWave Tuya DP radar. (2) HOBEIAN button: Fixed 'Invalid Capability: measure_battery' error for AC-powered buttons. (3) _TZE200_crq3r3la presence sensor config verified. RE-PAIR required for device type changes!",
+    "nl": "🔧 FIXES: _TZ321C_fkzihax8 vs _TZ321C_fkzihaxe8 onderscheid, HOBEIAN knop batterij fix. OPNIEUW KOPPELEN!",
+    "fr": "🔧 FIXES: Différenciation _TZ321C_fkzihax8 vs _TZ321C_fkzihaxe8, bouton HOBEIAN batterie corrigé. RE-APPAIRER!",
+    "de": "🔧 FIXES: _TZ321C_fkzihax8 vs _TZ321C_fkzihaxe8 Unterscheidung, HOBEIAN Taste Batterie behoben. NEU PAIREN!"
+  },
   "5.5.518": {
     "en": "🔧 MAJOR FIX NoroddH _TZ321C_fkzihax8: LeapMMW 5.8G radar is IAS Zone + Tuya DP HYBRID (Z2M research). Added LEAPMW_5G8_RADAR config with DP101-120 mappings (distance, illuminance, sensitivity, scenes). Moved from motion_sensor to presence_sensor_radar. Added Tuya magic packet. RE-PAIR required!",
     "nl": "🔧 MAJOR FIX: LeapMMW 5.8G radar hybride ondersteuning met Tuya DPs. OPNIEUW KOPPELEN!",
