@@ -663,14 +663,19 @@ const SENSOR_CONFIGS = {
   // These expose: presence, duration_of_attendance, duration_of_absence, led_state
   // Source: Z2M converters + Reddit r/homeassistant
   // ─────────────────────────────────────────────────────────────────────────────
+  // v5.5.509: Forum fix Ricardo_Lenior - Added mainsPowered + noBatteryCapability
   'ZY_M100_SIMPLE': {
     sensors: [
       '_TZE200_0u3bj3rc', '_TZE200_mx6u6l4y', '_TZE200_v6ossqfy',
       // v5.5.281: Added from Z2M research
       '_TZE200_3towulqd', '_TZE204_3towulqd',
       '_TZE200_1ibpyhdc', '_TZE204_1ibpyhdc',
+      // v5.5.509: Additional mains-powered ceiling sensors
+      '_TZE200_auin8mzr', '_TZE204_auin8mzr',
     ],
     battery: false,
+    mainsPowered: true,           // v5.5.509: Force mains power detection
+    noBatteryCapability: true,    // v5.5.509: Remove battery capability for ceiling sensors
     hasIlluminance: false,
     noTemperature: true,    // v5.5.372: Forum fix - no temp sensor
     noHumidity: true,       // v5.5.372: Forum fix - no humidity sensor
@@ -804,6 +809,8 @@ const SENSOR_CONFIGS = {
       '_TZE204_kyhbrfyl', '_TZE204_ex3rcdha',
     ],
     battery: false,
+    mainsPowered: true,
+    noBatteryCapability: true,
     hasIlluminance: true,
     needsPolling: true,
     noTemperature: true,    // v5.5.372: Forum fix - no temp sensor
@@ -835,6 +842,8 @@ const SENSOR_CONFIGS = {
       // Z2M uses 'trueFalse1' for DP105 (bool not enum)
     ],
     battery: false,
+    mainsPowered: true,
+    noBatteryCapability: true,
     hasIlluminance: true,
     needsPolling: true,
     noTemperature: true,    // v5.5.372: Forum fix - no temp sensor
@@ -860,6 +869,8 @@ const SENSOR_CONFIGS = {
       '_TZE200_7gclukjs', '_TZE204_7gclukjs',
     ],
     battery: false,
+    mainsPowered: true,
+    noBatteryCapability: true,
     noTemperature: true,    // v5.5.372: Forum fix - no temp sensor
     noHumidity: true,       // v5.5.372: Forum fix - no humidity sensor
     dpMap: {
@@ -882,6 +893,8 @@ const SENSOR_CONFIGS = {
       '_tze200_y4mdop0b',
     ],
     battery: false,
+    mainsPowered: true,
+    noBatteryCapability: true,
     noTemperature: true,    // v5.5.372: Forum fix - no temp sensor
     noHumidity: true,       // v5.5.372: Forum fix - no humidity sensor
     dpMap: {
@@ -902,6 +915,8 @@ const SENSOR_CONFIGS = {
       // See Z2M note: https://github.com/Koenkk/zigbee2mqtt/issues/19045
     ],
     battery: false,
+    mainsPowered: true,           // v5.5.509: Force mains power
+    noBatteryCapability: true,    // v5.5.509: Remove battery capability
     hasIlluminance: true,
     reportsFrequently: true,  // Warning flag
     noTemperature: true,    // v5.5.372: Forum fix - no temp sensor

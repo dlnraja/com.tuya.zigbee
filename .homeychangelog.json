@@ -1,4 +1,10 @@
 {
+  "5.5.509": {
+    "en": "🔧 FORUM FIX Ricardo_Lenior: mmWave ceiling sensors now correctly show as mains-powered. Removed battery capability display for all ceiling-mounted radar sensors. RE-PAIR required for existing devices.",
+    "nl": "🔧 FORUM FIX: mmWave plafond sensoren nu correct als netspanning. Batterij-weergave verwijderd. RE-PAIREN vereist!",
+    "fr": "🔧 FORUM FIX: Capteurs radar plafond maintenant correctement alimentés secteur. Affichage batterie supprimé. RE-APPAIRER requis!",
+    "de": "🔧 FORUM FIX: mmWave Decken-Sensoren jetzt korrekt als Netzstrom. Batterieanzeige entfernt. NEU PAIREN erforderlich!"
+  },
   "5.5.508": {
     "en": "🔧 FORUM FIX Ronny_M #936: HOBEIAN ZG-101ZL button - Fixed cluster mismatch in driver config. Device now properly pairs as 1-Button Wireless. Added clusters 57345 (Tuya) + 4096 (touchlink). RE-PAIR required!",
     "nl": "🔧 FORUM FIX: HOBEIAN ZG-101ZL knop - Cluster mismatch in driver config opgelost. RE-PAIREN vereist!",
