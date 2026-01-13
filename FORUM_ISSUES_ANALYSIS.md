@@ -128,4 +128,75 @@
 3. https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352?page=47
 4. https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352?page=46
 
-**NEXT**: Continuer analyse pages 44-45 et antérieures
+**NEXT**: Implémenter corrections identifiées
+
+---
+
+## 🆕 NOUVEAUX DEVICES IDENTIFIÉS (Pages 40-42)
+
+### eWeLink Temperature & Humidity Sensor
+- **ManufacturerID**: `eWeLink`
+- **ProductID**: `CK-TLSR8656-SS5-01(7014)`
+- **Clusters**: [0, 1, 3, 4, 32, 1026, 1029, 64529]
+- **Features**: Temperature, Humidity, Battery, Poll Control
+- **Status**: ⚠️ À AJOUTER au driver climate_sensor
+- **Interview**: Complète disponible
+
+### HOBEIAN ZG-102Z Contact Sensor
+- **ManufacturerID**: `HOBEIAN`
+- **ProductID**: `ZG-102Z`
+- **Clusters**: [0, 3, 1280, 61184, 1] - IAS Zone + Tuya DP
+- **Features**: Contact, Battery, Tamper
+- **Status**: ⚠️ À AJOUTER au driver contact_sensor
+- **Interview**: Complète disponible
+
+### RGB Bulb TS0505B
+- **ManufacturerID**: `_TZ3210_s8lvbbuc`
+- **ProductID**: `TS0505B`
+- **Features**: RGB+CCT, mains-powered
+- **Status**: ✅ Probablement déjà supporté
+
+### 4-Scene Button Switches
+- **ManufacturerID**: `_TZ3000_wkai4ga5`, `_TZ3000_5tqxpine`
+- **Problème**: Paired as "Wireless Controller" instead of "4-Scene Switch"
+- **Demande**: Better capability naming (button_upper_left vs button.1)
+- **Action**: Vérifier driver button_wireless_4 mapping
+
+---
+
+## 📋 DEMANDES SUPPLÉMENTAIRES
+
+### Zigbee IR Blaster
+- **Utilisateur**: FrankP
+- **Status**: En attente de développement
+- **Priority**: MEDIUM
+
+### Motion Sensor Lux Updates
+- **Problème**: Lux level only updates on motion trigger, not continuously
+- **Demande**: Update lux independently of motion events
+- **Action**: Modifier reporting configuration
+
+### Curtain Motor Improvements
+- **Demande**: Better battery/luminance reporting
+- **ManufacturerID**: `_TZ3000_5tqxpine`
+
+---
+
+## 📊 STATISTIQUES FINALES
+
+- **Pages analysées**: 40-48 (9 pages)
+- **Problèmes critiques**: 9
+- **Nouveaux devices**: 4
+- **Bugs logiques**: 3
+- **Demandes features**: 3
+- **Corrections power source**: 2
+- **Users impactés**: 10+
+
+---
+
+## ✅ ACTIONS COMPLÉTÉES
+
+1. ✅ GitHub Actions workflows corrigés (permissions + YAML)
+2. ✅ Forum analysé exhaustivement (pages 40-48)
+3. ✅ Problèmes documentés avec interviews complètes
+4. ✅ FORUM_ISSUES_ANALYSIS.md créé
