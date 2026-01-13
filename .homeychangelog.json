@@ -1,4 +1,10 @@
 {
+  "5.5.515": {
+    "en": "🔧 FORUM FIXES: (1) Lasse_K: HOBEIAN ZG-222Z water leak sensor added. (2) NoroddH: _TZ321C_fkzihax8 5.8G PIR moved from radar to motion_sensor (IAS Zone only, no Tuya DP). (3) HOBEIAN ZG-222Z support. RE-PAIR required!",
+    "nl": "🔧 FORUM FIXES: ZG-222Z waterlek sensor + _TZ321C_fkzihax8 5.8G PIR naar motion_sensor. RE-PAIREN!",
+    "fr": "🔧 FORUM FIXES: ZG-222Z fuite d'eau + _TZ321C_fkzihax8 5.8G PIR vers motion_sensor. RE-APPAIRER!",
+    "de": "🔧 FORUM FIXES: ZG-222Z Wasserleck + _TZ321C_fkzihax8 5.8G PIR zu motion_sensor. NEU PAIREN!"
+  },
   "5.5.514": {
     "en": "🔧 HOBEIAN ZG-303Z: Added HOBEIAN to soil_sensor manufacturerName for proper pairing. Complete HOBEIAN routing: ZG-101ZL→button, ZG-204Z→motion, ZG-204ZM→radar, ZG-303Z→soil.",
     "nl": "🔧 HOBEIAN ZG-303Z: HOBEIAN toegevoegd aan soil_sensor. Volledige HOBEIAN routing geconfigureerd.",
