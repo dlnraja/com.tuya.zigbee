@@ -539,7 +539,10 @@ class Button1GangDevice extends ButtonDevice {
           if (value !== undefined && value !== 255 && value !== 0) {
             const battery = Math.round(value / 2);
             this.log(`[BUTTON1-BATTERY] ✅ Battery report: ${battery}%`);
-            await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+            // v5.5.519: Check capability exists before setting (fix HOBEIAN AC-powered button error)
+            if (this.hasCapability('measure_battery')) {
+              await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+            }
           }
         });
 
@@ -548,7 +551,10 @@ class Button1GangDevice extends ButtonDevice {
             const voltage = value / 10;
             const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
             this.log(`[BUTTON1-BATTERY] ✅ Battery from voltage: ${voltage}V → ${battery}%`);
-            await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+            // v5.5.519: Check capability exists before setting
+            if (this.hasCapability('measure_battery')) {
+              await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+            }
           }
         });
 
@@ -576,7 +582,10 @@ class Button1GangDevice extends ButtonDevice {
           if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
             const battery = Math.round(attrs.batteryPercentageRemaining / 2);
             this.log(`[BUTTON1-BATTERY] 📊 Battery read on wake: ${battery}%`);
-            await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+            // v5.5.519: Check capability exists before setting
+            if (this.hasCapability('measure_battery')) {
+              await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+            }
           }
         } catch (err) {
           // Expected for sleeping devices

@@ -1022,11 +1022,13 @@ const SENSOR_CONFIGS = {
     sensors: [
       '_TZ3000_8bxrzyxz', '_TZ3000_aigddb2b',
       '_TZ3000_ky0fq4ho',
-      // _TZ321C_fkzihaxe8 (with 'e') is Wenzhi radar -> ZY_M100_STANDARD
       '_TZ3210_fkzihax8',
+      // v5.5.519: _TZ321C_fkzihax8 (without 'e') = IAS Zone ONLY PIR (user clarification)
+      '_TZ321C_fkzihax8',
     ],
-    battery: true,
+    battery: false,         // v5.5.519: Mains powered PIR
     useZcl: true,
+    useIasZone: true,       // v5.5.519: IAS Zone ONLY for _TZ321C_fkzihax8
     hasIlluminance: true,   // v5.5.499: Has illuminance via Tuya DP103
     noTemperature: true,    // v5.5.372: Forum fix - PIR sensors have NO temp
     noHumidity: true,       // v5.5.372: Forum fix - PIR sensors have NO humidity
@@ -1037,15 +1039,16 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // TYPE H2: LeapMMW 5.8G Radar (_TZ321C_fkzihax8, _TZ321C_4slreunp)
-  // v5.5.518: FORUM FIX NoroddH - IAS Zone + Tuya DP hybrid
+  // TYPE H2: LeapMMW 5.8G mmWave Radar (_TZ321C_fkzihaxe8 with 'e', _TZ321C_4slreunp)
+  // v5.5.519: CORRECTED - Only devices WITH 'e' are mmWave radar with Tuya DPs
+  // _TZ321C_fkzihaxe8 (with 'e') = mmWave radar using Tuya DPs
+  // _TZ321C_fkzihax8 (without 'e') = Simple IAS Zone PIR -> TZ3000_PIR config
   // Source: Z2M #23853, #23913 - Uses IAS Zone (1280) for occupancy + Tuya DPs for radar
-  // Device clusters: [0, 4, 5, 1280] - NO visible 61184 but uses Tuya DPs via magic packet
   // MAINS POWERED (Router), NOT battery!
   // ─────────────────────────────────────────────────────────────────────────────
   'LEAPMW_5G8_RADAR': {
     sensors: [
-      '_TZ321C_fkzihax8',  // LeapMMW MTD085-ZB 5.8G radar (NoroddH)
+      '_TZ321C_fkzihaxe8', // LeapMMW mmWave radar (WITH 'e' = Tuya DP support)
       '_TZ321C_4slreunp',  // LeapMMW MTD095-ZB variant
     ],
     battery: false,         // MAINS POWERED - Router device
