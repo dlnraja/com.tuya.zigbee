@@ -442,6 +442,31 @@ class MotionSensorDevice extends HybridSensorBase {
 
       this.log('[MOTION-IAS] IAS Zone cluster found - setting up motion detection');
 
+      // v5.5.517: Handle Zone Enroll Request from device (NoroddH fix for _TZ321C_fkzihax8)
+      iasCluster.onZoneEnrollRequest = async (payload) => {
+        this.log('[MOTION-IAS] 📥 Zone Enroll Request received:', payload);
+        try {
+          await iasCluster.zoneEnrollResponse({
+            enrollResponseCode: 0, // Success
+            zoneId: 23
+          });
+          this.log('[MOTION-IAS] ✅ Zone Enroll Response sent (device-initiated)');
+        } catch (err) {
+          this.log('[MOTION-IAS] Zone enroll response error:', err.message);
+        }
+      };
+
+      // v5.5.517: Try to write CIE address for proper enrollment
+      try {
+        const homeyIeeeAddress = this.homey.zigbee?.getNetwork?.()?.ieeeAddress;
+        if (homeyIeeeAddress) {
+          await iasCluster.writeAttributes({ iasCieAddress: homeyIeeeAddress });
+          this.log('[MOTION-IAS] ✅ CIE address written:', homeyIeeeAddress);
+        }
+      } catch (cieErr) {
+        this.log('[MOTION-IAS] CIE address write (normal if already set):', cieErr.message);
+      }
+
       // Zone Status Change Notification (motion detected)
       iasCluster.onZoneStatusChangeNotification = (payload) => {
         // v5.5.299: Mark device as awake on ANY motion event
