@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.512** | 🔧 FORUM FIX 4x4_Pete: HOBEIAN ZG-204ZM enhanced - Now properly detects as ZC... |
 | **v5.5.511** | 🔧 FORUM FIX 4x4_Pete: HOBEIAN ZG-204ZM PIR+Radar sensor - Added HOBEIAN to m... |
 | **v5.5.510** | 🔧 DIAG FIX Martijn: _TZE284_rccxox8p smoke detector - Fixed cluster mismatch... |
 | **v5.5.509** | 🔧 FORUM FIX Ricardo_Lenior: mmWave ceiling sensors now correctly show as mai... |
@@ -78,7 +79,6 @@
 | **v5.5.505** | 🔧 FIX GitHub #97: NoroddH _TZ321C_fkzihax8 5.8G Radar - enhanced IAS Zone en... |
 | **v5.5.504** | 🔧 FIX: HOBEIAN ZG-101ZL button no longer triggers on periodic reports (~10mi... |
 | **v5.5.503** | 🔧 FIX: Presence sensor _TZE200_crq3r3la moved from climate_sensor to presenc... |
-| **v5.5.502** | 🔥 FORUM FIX (Jolink): Added smoke detector _TZE284_rccxox8p (exact case matc... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
