@@ -16,39 +16,50 @@ class SoilSensorDriver extends ZigBeeDriver {
 
   async onInit() {
     this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║    SOIL SENSOR DRIVER v5.4.3 - NEW                          ║');
+    this.log('║    SOIL SENSOR DRIVER v5.5.506 - FLOW FIX                   ║');
     this.log('╚══════════════════════════════════════════════════════════════╝');
 
     // Track IEEE addresses to prevent duplicates
     this._registeredIeeeAddresses = new Set();
+
+    // v5.5.506: Register flow cards in onInit with error handling
+    try {
+      this._soil_sensor_soil_moisture_changedTrigger = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_moisture_changed');
+      this._soil_sensor_soil_dryTrigger = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_dry');
+      this._soil_sensor_soil_wetTrigger = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_wet');
+      this._soil_sensor_soil_temperature_changedTrigger = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_temperature_changed');
+      this._soil_sensor_battery_lowTrigger = this.homey.flow.getDeviceTriggerCard('soil_sensor_battery_low');
+
+      // Register condition cards
+      const moistureBelowCondition = this.homey.flow.getConditionCard('soil_sensor_moisture_below');
+      if (moistureBelowCondition) {
+        moistureBelowCondition.registerRunListener(async (args) => {
+          if (!args.device) throw new Error('Device not found');
+          const moisture = args.device.getCapabilityValue('measure_humidity');
+          return moisture !== null && moisture < args.threshold;
+        });
+      }
+
+      const moistureAboveCondition = this.homey.flow.getConditionCard('soil_sensor_moisture_above');
+      if (moistureAboveCondition) {
+        moistureAboveCondition.registerRunListener(async (args) => {
+          if (!args.device) throw new Error('Device not found');
+          const moisture = args.device.getCapabilityValue('measure_humidity');
+          return moisture !== null && moisture > args.threshold;
+        });
+      }
+
+      this.log('Soil Sensor ✅ Flow cards registered');
+    } catch (err) {
+      this.error('Soil Sensor flow card registration failed:', err.message);
+    }
   }
 
   /**
    * Filter out sub-devices during pairing
+   * v5.5.506: Moved flow card registration to onInit with error handling
    */
   async onPairListDevices(devices) {
-    
-    // Register flow triggers
-    this._soil_moisture_changedTrigger = this.homey.flow.getDeviceTriggerCard('soil_moisture_changed');
-    this._soil_moisture_belowTrigger = this.homey.flow.getDeviceTriggerCard('soil_moisture_below');
-    this._soil_moisture_aboveTrigger = this.homey.flow.getDeviceTriggerCard('soil_moisture_above');
-    this._soil_temperature_changedTrigger = this.homey.flow.getDeviceTriggerCard('soil_temperature_changed');
-    this._soil_battery_lowTrigger = this.homey.flow.getDeviceTriggerCard('soil_battery_low');
-    this._soil_sensor_soil_moisture_changedTrigger = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_moisture_changed');
-    this._soil_sensor_soil_dryTrigger = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_dry');
-    this._soil_sensor_soil_wetTrigger = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_wet');
-    this._soil_sensor_soil_temperature_changedTrigger = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_temperature_changed');
-    this._soil_sensor_battery_lowTrigger = this.homey.flow.getDeviceTriggerCard('soil_sensor_battery_low');
-    
-    // Register flow conditions
-    this._soil_moisture_is_belowCondition = this.homey.flow.getDeviceConditionCard('soil_moisture_is_below');
-    this._soil_temperature_is_belowCondition = this.homey.flow.getDeviceConditionCard('soil_temperature_is_below');
-    this._soil_temperature_is_belowCondition.registerRunListener(async (args) => {
-      const { device } = args;
-      return device.getCapabilityValue('measure_temperature') === true;
-    });
-    
-    this.log('soil_sensor: Flow cards registered');
     this.log('[PAIR] Raw devices from Zigbee:', devices?.length || 0);
 
     if (!devices || devices.length === 0) {
