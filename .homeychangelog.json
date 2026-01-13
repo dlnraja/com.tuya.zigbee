@@ -1,4 +1,10 @@
 {
+  "5.5.521": {
+    "en": "🔬 DIAGNOSTIC FIXES: (1) _TZE200_crq3r3la presence sensor: Already configured in presence_sensor_radar - RE-PAIR required if showing as climate_sensor. (2) _TZ321C_fkzihax8 LeapMMW 5.8G: Z2M research confirmed DP101-120 mappings for radar features. (3) Mains-powered sensors showing battery: RE-PAIR to correct driver. All configs verified against Z2M/ZHA sources.",
+    "nl": "🔬 DIAGNOSTIC FIXES: _TZE200_crq3r3la en _TZ321C_fkzihax8 configuraties geverifieerd. OPNIEUW KOPPELEN!",
+    "fr": "🔬 DIAGNOSTIC FIXES: Configs _TZE200_crq3r3la et _TZ321C_fkzihax8 vérifiées. RE-APPAIRER!",
+    "de": "🔬 DIAGNOSTIC FIXES: _TZE200_crq3r3la und _TZ321C_fkzihax8 Konfigurationen verifiziert. NEU PAIREN!"
+  },
   "5.5.520": {
     "en": "🔧 MISCLASSIFICATION FIXES: Removed wrongly classified IDs from climate_sensor driver - _TZ3000_famkxci2 (TS0043 3-button), _TZ3000_zgyzgdua (MOES TS0044 4-gang button), _TZE204_iaeejhvf (radar sensor). These devices will now pair to correct drivers. RE-PAIR required!",
     "nl": "🔧 MISCLASSIFICATIE FIXES: Verkeerde IDs verwijderd uit climate_sensor. OPNIEUW KOPPELEN!",
