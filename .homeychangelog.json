@@ -1,4 +1,10 @@
 {
+  "5.5.516": {
+    "en": "🔧 IR Blaster: Enhanced diagnostic logging for learning issues (FrankP). Shows cluster availability in logs. Check logs for '[IR-SETUP]' messages if learning fails.",
+    "nl": "🔧 IR Blaster: Verbeterde diagnostische logging voor leerproblemen.",
+    "fr": "🔧 IR Blaster: Logging diagnostic amélioré pour problèmes d'apprentissage.",
+    "de": "🔧 IR Blaster: Verbesserte Diagnose-Protokollierung für Lernprobleme."
+  },
   "5.5.515": {
     "en": "🔧 FORUM FIXES: (1) Lasse_K: HOBEIAN ZG-222Z water leak sensor added. (2) NoroddH: _TZ321C_fkzihax8 5.8G PIR moved from radar to motion_sensor (IAS Zone only, no Tuya DP). (3) HOBEIAN ZG-222Z support. RE-PAIR required!",
     "nl": "🔧 FORUM FIXES: ZG-222Z waterlek sensor + _TZ321C_fkzihax8 5.8G PIR naar motion_sensor. RE-PAIREN!",
