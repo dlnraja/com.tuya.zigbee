@@ -1,4 +1,10 @@
 {
+  "5.5.510": {
+    "en": "🔧 DIAG FIX Martijn: _TZE284_rccxox8p smoke detector - Fixed cluster mismatch. TZE284 devices use clusters [0,4,5,60672,61184] without IAS Zone. RE-PAIR required!",
+    "nl": "🔧 DIAG FIX: _TZE284_rccxox8p rookmelder - Cluster mismatch opgelost. RE-PAIREN vereist!",
+    "fr": "🔧 DIAG FIX: Détecteur fumée _TZE284_rccxox8p - Mismatch clusters corrigé. RE-APPAIRER requis!",
+    "de": "🔧 DIAG FIX: _TZE284_rccxox8p Rauchmelder - Cluster Mismatch behoben. NEU PAIREN erforderlich!"
+  },
   "5.5.509": {
     "en": "🔧 FORUM FIX Ricardo_Lenior: mmWave ceiling sensors now correctly show as mains-powered. Removed battery capability display for all ceiling-mounted radar sensors. RE-PAIR required for existing devices.",
     "nl": "🔧 FORUM FIX: mmWave plafond sensoren nu correct als netspanning. Batterij-weergave verwijderd. RE-PAIREN vereist!",
