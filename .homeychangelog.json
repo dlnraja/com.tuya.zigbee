@@ -1,4 +1,10 @@
 {
+  "5.5.518": {
+    "en": "🔧 MAJOR FIX NoroddH _TZ321C_fkzihax8: LeapMMW 5.8G radar is IAS Zone + Tuya DP HYBRID (Z2M research). Added LEAPMW_5G8_RADAR config with DP101-120 mappings (distance, illuminance, sensitivity, scenes). Moved from motion_sensor to presence_sensor_radar. Added Tuya magic packet. RE-PAIR required!",
+    "nl": "🔧 MAJOR FIX: LeapMMW 5.8G radar hybride ondersteuning met Tuya DPs. OPNIEUW KOPPELEN!",
+    "fr": "🔧 MAJOR FIX: Support hybride radar LeapMMW 5.8G avec Tuya DPs. RE-APPAIRER!",
+    "de": "🔧 MAJOR FIX: LeapMMW 5.8G Radar Hybrid-Unterstützung mit Tuya DPs. NEU PAIREN!"
+  },
   "5.5.517": {
     "en": "🔧 FORUM FIXES: (1) TS0044 4-gang button: Fixed malformed capabilities causing 'Invalid capabilities' error - flows should now trigger. (2) Martijn smoke detector _TZE284_rccxox8p: Fixed bindings mismatch causing pairing as 'Unknown Device'. (3) NoroddH _TZ321C_fkzihax8: Enhanced IAS Zone enrollment with onZoneEnrollRequest handler and CIE address writing. RE-PAIR required!",
     "nl": "🔧 FORUM FIXES: TS0044 knop fix, _TZE284_rccxox8p rookmelder pairing, IAS Zone enrollment verbeterd. OPNIEUW KOPPELEN!",
