@@ -1,4 +1,10 @@
 {
+  "5.5.517": {
+    "en": "🔧 FORUM FIXES: (1) TS0044 4-gang button: Fixed malformed capabilities causing 'Invalid capabilities' error - flows should now trigger. (2) Martijn smoke detector _TZE284_rccxox8p: Fixed bindings mismatch causing pairing as 'Unknown Device'. (3) NoroddH _TZ321C_fkzihax8: Enhanced IAS Zone enrollment with onZoneEnrollRequest handler and CIE address writing. RE-PAIR required!",
+    "nl": "🔧 FORUM FIXES: TS0044 knop fix, _TZE284_rccxox8p rookmelder pairing, IAS Zone enrollment verbeterd. OPNIEUW KOPPELEN!",
+    "fr": "🔧 FORUM FIXES: Bouton TS0044 corrigé, détecteur fumée _TZE284_rccxox8p, enrollment IAS Zone amélioré. RE-APPAIRER!",
+    "de": "🔧 FORUM FIXES: TS0044 Taste behoben, _TZE284_rccxox8p Rauchmelder, IAS Zone Enrollment verbessert. NEU PAIREN!"
+  },
   "5.5.516": {
     "en": "🔧 IR Blaster: Enhanced diagnostic logging for learning issues (FrankP). Shows cluster availability in logs. Check logs for '[IR-SETUP]' messages if learning fails.",
     "nl": "🔧 IR Blaster: Verbeterde diagnostische logging voor leerproblemen.",
