@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.517** | 🔧 FORUM FIXES: (1) TS0044 4-gang button: Fixed malformed capabilities causin... |
 | **v5.5.516** | 🔧 IR Blaster: Enhanced diagnostic logging for learning issues (FrankP). Show... |
 | **v5.5.515** | 🔧 FORUM FIXES: (1) Lasse_K: HOBEIAN ZG-222Z water leak sensor added. (2) Nor... |
 | **v5.5.514** | 🔧 HOBEIAN ZG-303Z: Added HOBEIAN to soil_sensor manufacturerName for proper ... |
@@ -78,7 +79,6 @@
 | **v5.5.510** | 🔧 DIAG FIX Martijn: _TZE284_rccxox8p smoke detector - Fixed cluster mismatch... |
 | **v5.5.509** | 🔧 FORUM FIX Ricardo_Lenior: mmWave ceiling sensors now correctly show as mai... |
 | **v5.5.508** | 🔧 FORUM FIX Ronny_M #936: HOBEIAN ZG-101ZL button - Fixed cluster mismatch i... |
-| **v5.5.507** | 🔧 FLOW FIX: Fixed 'Could not get device by id' errors. Improved flow card re... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
