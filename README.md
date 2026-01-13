@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.515** | 🔧 FORUM FIXES: (1) Lasse_K: HOBEIAN ZG-222Z water leak sensor added. (2) Nor... |
 | **v5.5.514** | 🔧 HOBEIAN ZG-303Z: Added HOBEIAN to soil_sensor manufacturerName for proper ... |
 | **v5.5.513** | 🔧 HOBEIAN DRIVER CONFLICT FIX: Removed HOBEIAN from contact_sensor (wrong dr... |
 | **v5.5.512** | 🔧 FORUM FIX 4x4_Pete: HOBEIAN ZG-204ZM enhanced - Now properly detects as ZC... |
@@ -78,7 +79,6 @@
 | **v5.5.508** | 🔧 FORUM FIX Ronny_M #936: HOBEIAN ZG-101ZL button - Fixed cluster mismatch i... |
 | **v5.5.507** | 🔧 FLOW FIX: Fixed 'Could not get device by id' errors. Improved flow card re... |
 | **v5.5.506** | 🔧 FORUM FIX: HOBEIAN ZG-102Z door sensor inverted logic fixed (Lasse_K). Sen... |
-| **v5.5.505** | 🔧 FIX GitHub #97: NoroddH _TZ321C_fkzihax8 5.8G Radar - enhanced IAS Zone en... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
