@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.507** | 🔧 FLOW FIX: Fixed 'Could not get device by id' errors. Improved flow card re... |
 | **v5.5.506** | 🔧 FORUM FIX: HOBEIAN ZG-102Z door sensor inverted logic fixed (Lasse_K). Sen... |
 | **v5.5.505** | 🔧 FIX GitHub #97: NoroddH _TZ321C_fkzihax8 5.8G Radar - enhanced IAS Zone en... |
 | **v5.5.504** | 🔧 FIX: HOBEIAN ZG-101ZL button no longer triggers on periodic reports (~10mi... |
@@ -78,7 +79,6 @@
 | **v5.5.500** | 🔘 FORUM #936 FIX v2: HOBEIAN ZG-101ZL button now supports BOTH modes - Event... |
 | **v5.5.499** | 🔧 DIAGNOSTICS FIXES: (1) HOBEIAN ZG-101ZL button command mapping fixed (foru... |
 | **v5.5.498** | 🚪 FORUM #934 FIX: Added 11 new door sensor manufacturer IDs (Lasse_K). Inclu... |
-| **v5.5.497** | 🔧 FORUM #933 FIX: Fixed bizarre temp/humidity values on presence sensors (Ru... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
