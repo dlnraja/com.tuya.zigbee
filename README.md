@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.516** | 🔧 IR Blaster: Enhanced diagnostic logging for learning issues (FrankP). Show... |
 | **v5.5.515** | 🔧 FORUM FIXES: (1) Lasse_K: HOBEIAN ZG-222Z water leak sensor added. (2) Nor... |
 | **v5.5.514** | 🔧 HOBEIAN ZG-303Z: Added HOBEIAN to soil_sensor manufacturerName for proper ... |
 | **v5.5.513** | 🔧 HOBEIAN DRIVER CONFLICT FIX: Removed HOBEIAN from contact_sensor (wrong dr... |
@@ -78,7 +79,6 @@
 | **v5.5.509** | 🔧 FORUM FIX Ricardo_Lenior: mmWave ceiling sensors now correctly show as mai... |
 | **v5.5.508** | 🔧 FORUM FIX Ronny_M #936: HOBEIAN ZG-101ZL button - Fixed cluster mismatch i... |
 | **v5.5.507** | 🔧 FLOW FIX: Fixed 'Could not get device by id' errors. Improved flow card re... |
-| **v5.5.506** | 🔧 FORUM FIX: HOBEIAN ZG-102Z door sensor inverted logic fixed (Lasse_K). Sen... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
