@@ -1,4 +1,10 @@
 {
+  "5.5.513": {
+    "en": "🔧 HOBEIAN DRIVER CONFLICT FIX: Removed HOBEIAN from contact_sensor (wrong driver). Added HOBEIAN ZG-204Z simple PIR to motion_sensor. Each HOBEIAN model now routes to correct driver: ZG-101ZL→button, ZG-204Z→motion, ZG-204ZM→radar. RE-PAIR required!",
+    "nl": "🔧 HOBEIAN conflict fix: Elk model naar juiste driver. ZG-204Z PIR toegevoegd aan motion_sensor. RE-PAIREN!",
+    "fr": "🔧 HOBEIAN conflit corrigé: Chaque modèle vers bon driver. ZG-204Z PIR ajouté à motion_sensor. RE-APPAIRER!",
+    "de": "🔧 HOBEIAN Konflikt behoben: Jedes Modell zum richtigen Treiber. ZG-204Z PIR zu motion_sensor. NEU PAIREN!"
+  },
   "5.5.512": {
     "en": "🔧 FORUM FIX 4x4_Pete: HOBEIAN ZG-204ZM enhanced - Now properly detects as ZCL+Tuya hybrid. Uses IAS Zone for presence, ZCL for illuminance/battery, Tuya DP for settings only. ModelId matching added. RE-PAIR required!",
     "nl": "🔧 FORUM FIX: HOBEIAN ZG-204ZM verbeterd - ZCL+Tuya hybrid detectie. IAS Zone voor aanwezigheid. RE-PAIREN vereist!",
