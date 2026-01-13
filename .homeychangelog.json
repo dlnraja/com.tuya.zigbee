@@ -1,4 +1,10 @@
 {
+  "5.5.505": {
+    "en": "🔧 FIX GitHub #97: NoroddH _TZ321C_fkzihax8 5.8G Radar - enhanced IAS Zone enrollment. Added binding for cluster 1280, improved zoneEnrollRequest handler. RE-PAIR device after update!",
+    "nl": "🔧 FIX GitHub #97: _TZ321C_fkzihax8 5.8G Radar - verbeterde IAS Zone inschrijving. RE-PAIREN na update!",
+    "fr": "🔧 FIX GitHub #97: Radar 5.8G _TZ321C_fkzihax8 - inscription IAS Zone améliorée. RE-APPAIRER après mise à jour!",
+    "de": "🔧 FIX GitHub #97: 5.8G Radar _TZ321C_fkzihax8 - verbesserte IAS Zone Anmeldung. NEU PAIREN nach Update!"
+  },
   "5.5.504": {
     "en": "🔧 FIX: HOBEIAN ZG-101ZL button no longer triggers on periodic reports (~10min status updates). Fixed measure_battery error when capability removed. Added LoraTap TS0043 3-button remote (_TZ3000_famkxci2).",
     "nl": "🔧 FIX: HOBEIAN ZG-101ZL knop triggert niet meer op periodieke reports. measure_battery fout opgelost. LoraTap TS0043 3-knops afstandsbediening toegevoegd.",
