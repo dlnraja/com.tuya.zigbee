@@ -1,4 +1,10 @@
 {
+  "5.5.506": {
+    "en": "🔧 FORUM FIX: HOBEIAN ZG-102Z door sensor inverted logic fixed (Lasse_K). Sensor now correctly shows alarm when door opens.",
+    "nl": "🔧 FORUM FIX: HOBEIAN ZG-102Z deur sensor omgekeerde logica opgelost. Sensor toont nu correct alarm bij openen deur.",
+    "fr": "🔧 FORUM FIX: Capteur porte HOBEIAN ZG-102Z logique inversée corrigée. Le capteur affiche maintenant correctement l'alarme à l'ouverture.",
+    "de": "🔧 FORUM FIX: HOBEIAN ZG-102Z Türsensor invertierte Logik behoben. Sensor zeigt jetzt korrekt Alarm beim Öffnen."
+  },
   "5.5.505": {
     "en": "🔧 FIX GitHub #97: NoroddH _TZ321C_fkzihax8 5.8G Radar - enhanced IAS Zone enrollment. Added binding for cluster 1280, improved zoneEnrollRequest handler. RE-PAIR device after update!",
     "nl": "🔧 FIX GitHub #97: _TZ321C_fkzihax8 5.8G Radar - verbeterde IAS Zone inschrijving. RE-PAIREN na update!",
