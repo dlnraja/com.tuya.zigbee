@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.509** | 🔧 FORUM FIX Ricardo_Lenior: mmWave ceiling sensors now correctly show as mai... |
 | **v5.5.508** | 🔧 FORUM FIX Ronny_M #936: HOBEIAN ZG-101ZL button - Fixed cluster mismatch i... |
 | **v5.5.507** | 🔧 FLOW FIX: Fixed 'Could not get device by id' errors. Improved flow card re... |
 | **v5.5.506** | 🔧 FORUM FIX: HOBEIAN ZG-102Z door sensor inverted logic fixed (Lasse_K). Sen... |
@@ -78,7 +79,6 @@
 | **v5.5.502** | 🔥 FORUM FIX (Jolink): Added smoke detector _TZE284_rccxox8p (exact case matc... |
 | **v5.5.501** | 🛡️ STABILITY FIX: Fixed 'Frame parse error: value is not defined' in presenc... |
 | **v5.5.500** | 🔘 FORUM #936 FIX v2: HOBEIAN ZG-101ZL button now supports BOTH modes - Event... |
-| **v5.5.499** | 🔧 DIAGNOSTICS FIXES: (1) HOBEIAN ZG-101ZL button command mapping fixed (foru... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
