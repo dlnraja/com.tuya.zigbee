@@ -272,15 +272,19 @@ class IrBlasterDevice extends ZigBeeDevice {
    */
   async _setupAdvancedIRClusters(zclNode) {
     const endpoint = zclNode.endpoints[1];
-    if (!endpoint) return;
+    if (!endpoint) {
+      this.log('[IR-SETUP] ⚠️ Endpoint 1 not available');
+      return;
+    }
 
-    this.log('Setting up advanced IR clusters...');
+    this.log('[IR-SETUP] Setting up advanced IR clusters...');
+    this.log('[IR-SETUP] Available clusters:', Object.keys(endpoint.clusters || {}));
 
     try {
       // Setup ZosungIRControl cluster (0xE004)
       const irControlCluster = endpoint.clusters.zosungIRControl;
       if (irControlCluster) {
-        this.log('ZosungIRControl cluster available - setting up listeners');
+        this.log('[IR-SETUP] ✅ ZosungIRControl cluster (0xE004) available');
 
         // Listen for learning status changes
         irControlCluster.on('attr.learningStatus', (status) => {
@@ -302,20 +306,24 @@ class IrBlasterDevice extends ZigBeeDevice {
         } catch (readErr) {
           this.log('Could not read IR capabilities:', readErr.message);
         }
+      } else {
+        this.log('[IR-SETUP] ⚠️ ZosungIRControl cluster NOT available - will use OnOff fallback');
       }
 
       // Setup ZosungIRTransmit cluster (0xED00)
       const irTransmitCluster = endpoint.clusters.zosungIRTransmit;
       if (irTransmitCluster) {
-        this.log('ZosungIRTransmit cluster available - setting up advanced protocol');
+        this.log('[IR-SETUP] ✅ ZosungIRTransmit cluster (0xED00) available');
         this._irTransmitCluster = irTransmitCluster;
 
         // Setup transmit protocol listeners
         this._setupTransmitProtocol(irTransmitCluster);
+      } else {
+        this.log('[IR-SETUP] ⚠️ ZosungIRTransmit cluster NOT available');
       }
 
     } catch (err) {
-      this.log('Advanced IR cluster setup error:', err.message);
+      this.log('[IR-SETUP] ❌ Advanced IR cluster setup error:', err.message);
     }
   }
 
