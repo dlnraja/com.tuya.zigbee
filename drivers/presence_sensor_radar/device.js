@@ -1022,9 +1022,8 @@ const SENSOR_CONFIGS = {
     sensors: [
       '_TZ3000_8bxrzyxz', '_TZ3000_aigddb2b',
       '_TZ3000_ky0fq4ho',
-      // Note: _TZ3210_fkzihax8 and _TZ321C_fkzihax8 (without 'e') are PIR
       // _TZ321C_fkzihaxe8 (with 'e') is Wenzhi radar -> ZY_M100_STANDARD
-      '_TZ3210_fkzihax8', '_TZ321C_fkzihax8',
+      '_TZ3210_fkzihax8',
     ],
     battery: true,
     useZcl: true,
@@ -1034,6 +1033,51 @@ const SENSOR_CONFIGS = {
     dpMap: {
       // v5.5.499: Ceiling PIR sensors report illuminance via DP103
       103: { cap: 'measure_luminance', type: 'lux_direct' },
+    }
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // TYPE H2: LeapMMW 5.8G Radar (_TZ321C_fkzihax8, _TZ321C_4slreunp)
+  // v5.5.518: FORUM FIX NoroddH - IAS Zone + Tuya DP hybrid
+  // Source: Z2M #23853, #23913 - Uses IAS Zone (1280) for occupancy + Tuya DPs for radar
+  // Device clusters: [0, 4, 5, 1280] - NO visible 61184 but uses Tuya DPs via magic packet
+  // MAINS POWERED (Router), NOT battery!
+  // ─────────────────────────────────────────────────────────────────────────────
+  'LEAPMW_5G8_RADAR': {
+    sensors: [
+      '_TZ321C_fkzihax8',  // LeapMMW MTD085-ZB 5.8G radar (NoroddH)
+      '_TZ321C_4slreunp',  // LeapMMW MTD095-ZB variant
+    ],
+    battery: false,         // MAINS POWERED - Router device
+    useIasZone: true,       // Occupancy via IAS Zone cluster 1280
+    hasIlluminance: true,   // DP107 illuminance
+    noTemperature: true,
+    noHumidity: true,
+    needsMagicPacket: true, // v5.5.518: Requires Tuya magic packet for DP communication
+    dpMap: {
+      // ═══════════════════════════════════════════════════════════════════
+      // RADAR DATA via Tuya DPs (Source: Z2M converter)
+      // ═══════════════════════════════════════════════════════════════════
+      107: { cap: 'measure_luminance', divisor: 10, type: 'lux_direct' },
+      109: { cap: 'measure_distance', divisor: 100 },      // debug_distance (real-time)
+      119: { cap: 'measure_distance', divisor: 100 },      // target_distance
+      // ═══════════════════════════════════════════════════════════════════
+      // SETTINGS via Tuya DPs
+      // ═══════════════════════════════════════════════════════════════════
+      101: { cap: null, setting: 'entry_sensitivity', min: 10, max: 100 },
+      102: { cap: null, setting: 'entry_distance', divisor: 100, min: 0, max: 10 },
+      103: { cap: null, setting: 'departure_delay', min: 5, max: 7200 },
+      104: { cap: null, setting: 'entry_filter_time', divisor: 100 },
+      105: { cap: null, setting: 'block_time', divisor: 10 },
+      108: { cap: null, setting: 'debug_mode' },           // 0=off, 1=on
+      110: { cap: null, internal: 'debug_countdown' },
+      111: { cap: null, setting: 'radar_scene' },          // 0-7 presets
+      112: { cap: null, setting: 'sensor_mode' },          // 0=normal, 1=occupied, 2=unoccupied
+      114: { cap: null, setting: 'status_indication' },    // LED indicator
+      115: { cap: null, setting: 'radar_sensitivity', min: 10, max: 100 },
+      116: { cap: null, setting: 'minimum_range', divisor: 100, min: 0, max: 10 },
+      117: { cap: null, setting: 'maximum_range', divisor: 100, min: 0, max: 10 },
+      120: { cap: null, setting: 'distance_report_mode' }, // 0=normal, 1=occupancy_detection
     }
   },
 
@@ -1729,6 +1773,12 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     // Mains-powered radar sensors: full init
     await super.onNodeInit({ zclNode });
     await this._setupZclClusters(zclNode);
+
+    // v5.5.518: Send Tuya magic packet for devices that need it (LeapMMW 5.8G hybrid)
+    // These devices don't show cluster 61184 in interview but still use Tuya DPs
+    if (config.needsMagicPacket) {
+      await this._sendTuyaMagicPacket(zclNode);
+    }
 
     // v5.5.270: CRITICAL FIX - Setup Tuya DP listeners for mains-powered sensors too!
     // This was missing and caused presence not to work on TZE284 devices
@@ -2461,6 +2511,60 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       this.log('[RADAR] ✅ IAS Zone enrollment complete');
     } catch (e) {
       this.log(`[RADAR] ⚠️ IAS Zone enrollment error: ${e.message}`);
+    }
+  }
+
+  /**
+   * v5.5.518: Send Tuya Magic Packet to enable DP communication
+   * Required for LeapMMW 5.8G hybrid devices that don't show cluster 61184
+   * Source: Z2M configureMagicPacket + dataQuery sequence
+   */
+  async _sendTuyaMagicPacket(zclNode) {
+    try {
+      this.log('[RADAR] 🪄 Sending Tuya Magic Packet (LeapMMW 5.8G hybrid)...');
+
+      const ep1 = zclNode?.endpoints?.[1];
+      if (!ep1) {
+        this.log('[RADAR] ⚠️ No endpoint 1 for magic packet');
+        return;
+      }
+
+      // Step 1: Read basic cluster (Z2M configureMagicPacket)
+      const basicCluster = ep1.clusters?.basic || ep1.clusters?.genBasic;
+      if (basicCluster && typeof basicCluster.readAttributes === 'function') {
+        try {
+          await basicCluster.readAttributes(['manufacturerName', 'modelId', 'powerSource']);
+          this.log('[RADAR] ✅ Basic cluster read (magic packet step 1)');
+        } catch (e) {
+          this.log('[RADAR] ⚠️ Basic cluster read failed:', e.message);
+        }
+      }
+
+      // Step 2: Try to access Tuya cluster and send dataQuery
+      const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184] || ep1.clusters?.manuSpecificTuya;
+      if (tuyaCluster) {
+        // MCU Version Request
+        if (typeof tuyaCluster.mcuVersionRequest === 'function') {
+          try {
+            await tuyaCluster.mcuVersionRequest({});
+            this.log('[RADAR] ✅ MCU Version Request sent');
+          } catch (e) { /* ignore */ }
+        }
+
+        // Data Query
+        if (typeof tuyaCluster.dataQuery === 'function') {
+          try {
+            await tuyaCluster.dataQuery({});
+            this.log('[RADAR] ✅ Data Query sent');
+          } catch (e) { /* ignore */ }
+        }
+      } else {
+        this.log('[RADAR] ℹ️ No Tuya cluster found - device may use IAS Zone only');
+      }
+
+      this.log('[RADAR] ✅ Magic packet sequence complete');
+    } catch (e) {
+      this.log('[RADAR] ⚠️ Magic packet error:', e.message);
     }
   }
 
