@@ -1,4 +1,10 @@
 {
+  "5.5.514": {
+    "en": "🔧 HOBEIAN ZG-303Z: Added HOBEIAN to soil_sensor manufacturerName for proper pairing. Complete HOBEIAN routing: ZG-101ZL→button, ZG-204Z→motion, ZG-204ZM→radar, ZG-303Z→soil.",
+    "nl": "🔧 HOBEIAN ZG-303Z: HOBEIAN toegevoegd aan soil_sensor. Volledige HOBEIAN routing geconfigureerd.",
+    "fr": "🔧 HOBEIAN ZG-303Z: HOBEIAN ajouté à soil_sensor. Routage complet HOBEIAN configuré.",
+    "de": "🔧 HOBEIAN ZG-303Z: HOBEIAN zu soil_sensor hinzugefügt. Vollständiges HOBEIAN Routing konfiguriert."
+  },
   "5.5.513": {
     "en": "🔧 HOBEIAN DRIVER CONFLICT FIX: Removed HOBEIAN from contact_sensor (wrong driver). Added HOBEIAN ZG-204Z simple PIR to motion_sensor. Each HOBEIAN model now routes to correct driver: ZG-101ZL→button, ZG-204Z→motion, ZG-204ZM→radar. RE-PAIR required!",
     "nl": "🔧 HOBEIAN conflict fix: Elk model naar juiste driver. ZG-204Z PIR toegevoegd aan motion_sensor. RE-PAIREN!",
