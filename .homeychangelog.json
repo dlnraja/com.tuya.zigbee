@@ -1,4 +1,10 @@
 {
+  "5.5.512": {
+    "en": "🔧 FORUM FIX 4x4_Pete: HOBEIAN ZG-204ZM enhanced - Now properly detects as ZCL+Tuya hybrid. Uses IAS Zone for presence, ZCL for illuminance/battery, Tuya DP for settings only. ModelId matching added. RE-PAIR required!",
+    "nl": "🔧 FORUM FIX: HOBEIAN ZG-204ZM verbeterd - ZCL+Tuya hybrid detectie. IAS Zone voor aanwezigheid. RE-PAIREN vereist!",
+    "fr": "🔧 FORUM FIX: HOBEIAN ZG-204ZM amélioré - Détection hybride ZCL+Tuya. IAS Zone pour présence. RE-APPAIRER requis!",
+    "de": "🔧 FORUM FIX: HOBEIAN ZG-204ZM verbessert - ZCL+Tuya Hybrid-Erkennung. IAS Zone für Präsenz. NEU PAIREN erforderlich!"
+  },
   "5.5.511": {
     "en": "🔧 FORUM FIX 4x4_Pete: HOBEIAN ZG-204ZM PIR+Radar sensor - Added HOBEIAN to manufacturerName list + Fixed cluster mismatch. Device uses clusters [0,1,3,61184,1024,1280]. RE-PAIR required!",
     "nl": "🔧 FORUM FIX: HOBEIAN ZG-204ZM sensor - ManufacturerName + cluster mismatch opgelost. RE-PAIREN vereist!",

@@ -946,49 +946,70 @@ const SENSOR_CONFIGS = {
   //
   // WARNING: _TZE200_kb5noeto may get stuck in "presence detected" state
   // ─────────────────────────────────────────────────────────────────────────────
+  'HOBEIAN_ZG204ZM': {
+    sensors: ['HOBEIAN'],
+    modelId: 'ZG-204ZM',  // v5.5.512: Match specific modelId
+    battery: true,
+    useZcl: true,           // v5.5.512: Use ZCL clusters for main data
+    useIasZone: true,       // v5.5.512: Presence via IAS Zone cluster 1280
+    hasIlluminance: true,   // v5.5.512: ZCL illuminanceMeasurement cluster 1024
+    noTemperature: true,
+    noHumidity: true,
+    // v5.5.512: Tuya DPs for SETTINGS ONLY (not for data)
+    writableDPs: [2, 4, 102, 107, 122, 123],
+    dpMap: {
+      // Settings via Tuya DP cluster (61184)
+      2: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 },
+      4: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 6 },
+      102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
+      107: { cap: null, setting: 'indicator' },
+      122: { cap: null, setting: 'motion_detection_mode' },  // 0=only_pir, 1=pir_and_radar, 2=only_radar
+      123: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
+    }
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // TYPE G2: ZG-204ZM Pure Tuya DP variants (_TZE200_* manufacturerNames)
+  // These use Tuya DP cluster for ALL data including presence/illuminance
+  // Source: https://github.com/Koenkk/zigbee2mqtt/issues/21919
+  //
+  // WARNING: _TZE200_kb5noeto may get stuck in "presence detected" state
+  // ─────────────────────────────────────────────────────────────────────────────
   'ZG_204ZM_RADAR': {
     sensors: [
-      '_TZE200_2aaelwxk', '_TZE200_kb5noeto', '_TZE200_tyffvoij',
-      'HOBEIAN',  // v5.5.395: Added per 4x4_Pete forum interview
+      '_TZE200_2aaelwxk', '_TZE204_2aaelwxk',
+      '_TZE200_kb5noeto',  // WARNING: May get stuck in presence detected
+      '_TZE200_tyffvoij',
     ],
     battery: true,
     hasIlluminance: true,
-    noTemperature: true,    // v5.5.368: 4x4_Pete fix - device has NO temp sensor
-    noHumidity: true,       // v5.5.368: 4x4_Pete fix - device has NO humidity sensor
-    // v5.5.395: Settings that can be written to device
-    writableDPs: [2, 4, 102, 103, 104, 107],
+    noTemperature: true,
+    noHumidity: true,
+    writableDPs: [2, 4, 102, 107, 122, 123],
     dpMap: {
       // ═══════════════════════════════════════════════════════════════════
-      // PRESENCE DETECTION
+      // PRESENCE DETECTION via Tuya DP
       // ═══════════════════════════════════════════════════════════════════
-      1: { cap: 'alarm_motion', type: 'presence_bool' },           // presence (binary)
-      101: { cap: 'alarm_motion', type: 'motion_state_enum' },     // motion_state: 0=none, 1=large, 2=small, 3=static
+      1: { cap: 'alarm_motion', type: 'presence_bool' },
+      101: { cap: 'alarm_motion', type: 'motion_state_enum' },  // 0=none, 1=large, 2=small, 3=static
 
       // ═══════════════════════════════════════════════════════════════════
-      // ILLUMINANCE
+      // ILLUMINANCE + BATTERY via Tuya DP
       // ═══════════════════════════════════════════════════════════════════
-      106: { cap: 'measure_luminance', type: 'lux_direct' },       // illuminance (lux)
+      106: { cap: 'measure_luminance', type: 'lux_direct' },
+      121: { cap: 'measure_battery', divisor: 1 },
 
       // ═══════════════════════════════════════════════════════════════════
-      // BATTERY
+      // SETTINGS
       // ═══════════════════════════════════════════════════════════════════
-      4: { cap: 'measure_battery', divisor: 1 },                   // battery %
-      15: { cap: 'measure_battery', divisor: 1 },                  // battery % (alternate)
-
-      // ═══════════════════════════════════════════════════════════════════
-      // SETTINGS (internal, writable via settings)
-      // ═══════════════════════════════════════════════════════════════════
-      2: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },  // motion sensitivity
-      102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },              // presence keep time (s)
-      103: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 }, // static sensitivity
-      104: { cap: null, setting: 'motion_detection_mode' },                        // 0=pir, 1=pir+radar, 2=radar
-      107: { cap: null, setting: 'indicator' },                                    // LED on/off
-
-      // ═══════════════════════════════════════════════════════════════════
-      // DISTANCE SETTINGS (read-only for now)
-      // ═══════════════════════════════════════════════════════════════════
-      108: { cap: null, internal: 'small_detection_distance', divisor: 100 },      // m
-      109: { cap: null, internal: 'small_detection_sensitivity' },                 // 0-10
+      2: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 },
+      4: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 6 },
+      102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
+      107: { cap: null, setting: 'indicator' },
+      122: { cap: null, setting: 'motion_detection_mode' },  // 0=only_pir, 1=pir_and_radar, 2=only_radar
+      123: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
+      108: { cap: null, internal: 'small_detection_distance', divisor: 100 },
+      109: { cap: null, internal: 'small_detection_sensitivity' },
     }
   },
 
@@ -1073,8 +1094,19 @@ for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
   }
 }
 
-// Get sensor config by manufacturerName
-function getSensorConfig(manufacturerName) {
+// Get sensor config by manufacturerName and optional modelId
+// v5.5.512: Added modelId matching for HOBEIAN devices
+function getSensorConfig(manufacturerName, modelId = null) {
+  // v5.5.512: HOBEIAN special handling - match by manufacturerName + modelId
+  // HOBEIAN makes multiple products, need modelId to distinguish
+  if (manufacturerName === 'HOBEIAN' && modelId) {
+    if (modelId === 'ZG-204ZM') {
+      console.log(`[RADAR] 🔍 HOBEIAN ZG-204ZM matched → HOBEIAN_ZG204ZM config (ZCL+Tuya hybrid)`);
+      return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
+    }
+    // Add other HOBEIAN models here as needed
+  }
+
   // v5.5.286: RONNY FIX - Enhanced matching for TZE284/TZE204 series
   // When exact match fails, try pattern matching for known problematic series
 
@@ -1489,8 +1521,9 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   _getSensorConfig() {
     if (!this._sensorConfig) {
       const mfr = this._getManufacturerName();
-      this._sensorConfig = getSensorConfig(mfr);
-      this.log(`[RADAR] 🔍 ManufacturerName resolved: "${mfr}" → config: ${this._sensorConfig.configName || 'DEFAULT'}`);
+      const modelId = this.getData()?.modelId || null;  // v5.5.512: Pass modelId for HOBEIAN matching
+      this._sensorConfig = getSensorConfig(mfr, modelId);
+      this.log(`[RADAR] 🔍 ManufacturerName: "${mfr}", ModelId: "${modelId}" → config: ${this._sensorConfig.configName || 'DEFAULT'}`);
 
       // v5.5.364: Initialize auto-discovery for DEFAULT/unknown devices
       if (this._sensorConfig.configName === 'DEFAULT') {
@@ -2251,6 +2284,30 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   async _setupZclClusters(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
     if (!ep1) return;
+
+    // v5.5.512: Power Configuration cluster (0x0001) for battery
+    // HOBEIAN ZG-204ZM uses ZCL battery reporting
+    try {
+      const powerCluster = ep1.clusters?.genPowerCfg || ep1.clusters?.powerConfiguration;
+      if (powerCluster?.on) {
+        powerCluster.on('attr.batteryPercentageRemaining', (v) => {
+          // ZCL reports battery as 0-200 (0.5% steps), convert to 0-100%
+          const battery = Math.min(100, Math.round(v / 2));
+          this.log(`[RADAR] 🔋 ZCL Battery: ${v} -> ${battery}%`);
+          this.setCapabilityValue('measure_battery', battery).catch(() => { });
+        });
+        powerCluster.on('attr.batteryVoltage', (v) => {
+          // Backup: calculate from voltage if percentage not available
+          // Typical CR2450: 3.0V full, 2.0V empty
+          if (v && !this.getCapabilityValue('measure_battery')) {
+            const battery = Math.min(100, Math.max(0, Math.round((v - 20) * 10)));
+            this.log(`[RADAR] 🔋 ZCL Battery voltage: ${v / 10}V -> ${battery}%`);
+            this.setCapabilityValue('measure_battery', battery).catch(() => { });
+          }
+        });
+        this.log('[RADAR] ✅ PowerConfiguration cluster configured');
+      }
+    } catch (e) { /* ignore */ }
 
     // Illuminance cluster (0x0400)
     try {
