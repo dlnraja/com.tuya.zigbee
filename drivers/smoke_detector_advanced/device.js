@@ -40,6 +40,7 @@ class SmokeDetectorAdvancedDevice extends HybridSensorBase {
    * - _TZE200_rccxox8p: DP1=smoke, DP4=tamper, DP14=battery_low
    * - _TZE200_m9skfctm: DP1=smoke, DP2=temp, DP3=humidity, DP4=battery
    * - _TZE284_*: Similar patterns with extended features
+   * - PG-S11Z: DP1=smoke, DP4=battery, standard Tuya pattern
    */
   get dpMappings() {
     return {
