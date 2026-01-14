@@ -1,0 +1,36 @@
+{
+  "triggers": [
+    {
+      "id": "module_mini_switch_onoff_true",
+      "title": "Turned on",
+      "tokens": [
+        {
+          "name": "timestamp",
+          "type": "string",
+          "title": "Timestamp"
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "module_mini_switch_is_on",
+      "title": "Is !{{on|off}}"
+    }
+  ],
+  "actions": [
+    {
+      "id": "module_mini_switch_turn_on",
+      "title": "Turn on"
+    },
+    {
+      "id": "module_mini_switch_turn_off",
+      "title": "Turn off"
+    },
+    {
+      "id": "module_mini_switch_toggle",
+      "title": "Toggle"
+    }
+  ]
+}
+

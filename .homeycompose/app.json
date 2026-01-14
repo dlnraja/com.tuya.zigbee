@@ -1,0 +1,47 @@
+{
+  "id": "com.dlnraja.tuya.zigbee",
+  "version": "5.5.530",
+  "compatibility": ">=12.2.0",
+  "sdk": 3,
+  "platforms": ["local"],
+  "name": {
+    "en": "Universal Tuya Zigbee"
+  },
+  "description": {
+    "en": "Control your Tuya Zigbee devices locally without cloud! Supports 4200+ devices: switches, sensors, lights, thermostats, and more. 100% local, hybrid Tuya DP + ZCL.",
+    "nl": "Bedien je Tuya Zigbee apparaten lokaal zonder cloud! Ondersteunt 4200+ apparaten: schakelaars, sensoren, lampen, thermostaten en meer.",
+    "de": "Steuern Sie Ihre Tuya Zigbee-Geräte lokal ohne Cloud! Unterstützt 4200+ Geräte: Schalter, Sensoren, Lampen, Thermostate und mehr.",
+    "fr": "Contrôlez vos appareils Tuya Zigbee localement sans cloud ! Supporte 4200+ appareils : interrupteurs, capteurs, lumières, thermostats et plus. 100% local."
+  },
+  "category": "appliances",
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Dylan Rajasekaram"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Dylan Rajasekaram",
+        "email": "dlnraja@gmail.com"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "dlnraja"
+      }
+    }
+  },
+  "support": "mailto:dlnraja@gmail.com",
+  "homepage": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352",
+  "bugs": {
+    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+  },
+  "brandColor": "#00E6A0"
+}

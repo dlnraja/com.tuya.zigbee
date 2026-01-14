@@ -1,0 +1,89 @@
+{
+  "name": {
+    "en": "3-Gang Dimmer Module",
+    "fr": "Module Variateur 3 Canaux",
+    "nl": "3-Voudige Dimmer",
+    "de": "3-Kanal Dimmer"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "onoff.channel2",
+    "dim.channel2",
+    "onoff.channel3",
+    "dim.channel3"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_1V1DXKCK",
+      "_tze200_1v1dxkck",
+      "_TZE200_BXOO2SWD",
+      "_tze200_bxoo2swd"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          61184
+        ],
+        "bindings": [
+          61184
+        ]
+      }
+    }
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Channel 1",
+        "fr": "Canal 1"
+      }
+    },
+    "dim": {
+      "title": {
+        "en": "Brightness 1",
+        "fr": "Luminosité 1"
+      }
+    },
+    "onoff.channel2": {
+      "title": {
+        "en": "Channel 2",
+        "fr": "Canal 2"
+      }
+    },
+    "dim.channel2": {
+      "title": {
+        "en": "Brightness 2",
+        "fr": "Luminosité 2"
+      }
+    },
+    "onoff.channel3": {
+      "title": {
+        "en": "Channel 3",
+        "fr": "Canal 3"
+      }
+    },
+    "dim.channel3": {
+      "title": {
+        "en": "Brightness 3",
+        "fr": "Luminosité 3"
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/dimmer_3gang/assets/images/small.png",
+    "large": "drivers/dimmer_3gang/assets/images/large.png"
+  }
+}

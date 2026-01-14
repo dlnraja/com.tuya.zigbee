@@ -1,0 +1,123 @@
+{
+  "triggers": [
+    {
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allumé"
+      }
+    },
+    {
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint"
+      }
+    },
+    {
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_measure_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity",
+            "fr": "Humidité"
+          },
+          "example": 65
+        }
+      ]
+    },
+    {
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_measure_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
+          "example": 20.5
+        }
+      ]
+    },
+    {
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_measure_power_changed",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée"
+      },
+      "tokens": [
+        {
+          "name": "power",
+          "type": "number",
+          "title": {
+            "en": "Power",
+            "fr": "Puissance"
+          },
+          "example": 100
+        }
+      ]
+    },
+    {
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_alarm_water_true",
+      "title": {
+        "en": "Water leak detected",
+        "fr": "Fuite d'eau détectée"
+      }
+    },
+    {
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_alarm_water_false",
+      "title": {
+        "en": "No water leak",
+        "fr": "Aucune fuite d'eau"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_is_on",
+      "title": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}"
+      },
+      "titleFormatted": {
+        "en": "Is turned !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
+    },
+    {
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre"
+      }
+    },
+    {
+      "id": "hvac_dehumidifier_dehumidifier_hybrid_toggle",
+      "title": {
+        "en": "Toggle on or off",
+        "fr": "Basculer"
+      }
+    }
+  ]
+}
+
