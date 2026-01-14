@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.532** | 🔧 CONTACT SENSOR FIX (Lasse_K #945): Inverted alarm_contact logic corrected ... |
 | **v5.5.531** | 🔧 FORUM FIXES: (1) Cam TS0041/_TZ3000_5bpeda8u - MOVED from button_wireless_... |
 | **v5.5.530** | 🔧 CRITICAL FLOW CARDS FIX: Complete rewrite of motion_sensor and climate_sen... |
 | **v5.5.529** | 🚨 CRITICAL MANUFACTURERNAME CONFLICTS FIX: _TZE200_rhgsbacq (4-in-1 multisen... |
@@ -78,7 +79,6 @@
 | **v5.5.525** | DEPRECATED: Incorrect fix for _TZ321C_fkzihax8 - see v5.5.526 |
 | **v5.5.524** | FIX: HOBEIAN button battery capability check (prevent crash after Intelligent... |
 | **v5.5.523** | 🔧 FIXES: (1) smoke_detector_advanced pairing FIXED - broken pair flow causin... |
-| **v5.5.522** | 🔧 FIXES: (1) smoke_detector_advanced pairing FIXED - broken pair flow causin... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
