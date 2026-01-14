@@ -1,0 +1,9 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Rain Detected"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor"
+}
