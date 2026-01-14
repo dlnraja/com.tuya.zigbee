@@ -1,6 +1,9 @@
 {
+  "5.5.526": {
+    "en": "🔧 CRITICAL FIX: GitHub Issue #97 - _TZ321C_fkzihax8 TS0225 MOVED to motion_sensor driver (was in wrong driver!). Device is pure IAS Zone PIR, not Tuya DP radar. Users: RE-PAIR device!"
+  },
   "5.5.525": {
-    "en": "FIX: GitHub Issue #97 - _TZ321C_fkzihax8 TS0225 5.8G Radar IAS Zone enrollment (NoroddH). NEW: TZ321C_HYBRID config with enhanced enrollment sequence"
+    "en": "DEPRECATED: Incorrect fix for _TZ321C_fkzihax8 - see v5.5.526"
   },
   "5.5.524": {
     "en": "FIX: HOBEIAN button battery capability check (prevent crash after Intelligent Adapter removes measure_battery)"
