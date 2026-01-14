@@ -1,4 +1,10 @@
 {
+  "5.5.541": {
+    "en": "🔧 FIX Cam: Moved _TZ3000_5bpeda8u from button_wireless_4 to button_wireless_1 (TS0041 is a 1-button device). Forum analysis: verified HOBEIAN devices, TS0203 contact sensor, presence sensors.",
+    "nl": "🔧 FIX: _TZ3000_5bpeda8u verplaatst naar button_wireless_1.",
+    "fr": "🔧 FIX: _TZ3000_5bpeda8u déplacé vers button_wireless_1.",
+    "de": "🔧 FIX: _TZ3000_5bpeda8u nach button_wireless_1 verschoben."
+  },
   "5.5.540": {
     "en": "🔧 FIX JJ10: Removed _TZE204_dtzziy1e from climate_sensor driver - ceiling presence sensors now correctly classified in presence_sensor_ceiling driver. Users must re-pair device to use correct driver.",
     "nl": "🔧 FIX: Plafond aanwezigheidssensoren nu correct geclassificeerd.",
