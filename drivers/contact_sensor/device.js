@@ -34,18 +34,26 @@ class ContactSensorDevice extends HybridSensorBase {
       // CONTACT STATE - v5.5.343: Debounced to prevent rapid toggling
       // ═══════════════════════════════════════════════════════════════════
       // Contact state - DP 1 (0=open, 1=closed for most)
+      // v5.5.531: FIXED inverted logic per Z2M: contact=true means CLOSED, contact=false means OPEN
+      // Homey: alarm_contact=true means OPEN (alarm!), alarm_contact=false means CLOSED (normal)
       1: {
         capability: 'alarm_contact',
         transform: (v) => {
-          if (typeof v === 'boolean') return v;
+          // Boolean: Z2M sends true=closed, false=open → invert for Homey
+          if (typeof v === 'boolean') return !v;
+          // Numeric/string: 0 or 'open' means open → alarm=true
           return v === 0 || v === 'open';
         },
         debounce: 500 // v5.5.343: 500ms debounce to prevent rapid toggling
       },
       // Alternative contact DP - DP 101
+      // v5.5.531: Same inversion logic
       101: {
         capability: 'alarm_contact',
-        transform: (v) => v === true || v === 1 || v === 'open',
+        transform: (v) => {
+          if (typeof v === 'boolean') return !v;
+          return v === 0 || v === 'open';
+        },
         debounce: 500
       },
 
