@@ -1,4 +1,7 @@
 {
+  "5.5.529": {
+    "en": "🚨 CRITICAL MANUFACTURERNAME CONFLICTS FIX: _TZE200_rhgsbacq (4-in-1 multisensor) removed from presence_sensor_radar - was causing 'not working at all'. _TZ3000_qgwcxxws (button TS0041) removed from climate_sensor. Enhanced smoke detector DPs with Z2M logging (silence_alarm, self_test, fault_alarm diagnostics)."
+  },
   "5.5.528": {
     "en": "🔧 CRITICAL FLOW CARDS FIX: 'Cannot get device by id' error - Added device validation to motion_sensor and climate_sensor flow card listeners. Prevents crashes when args.device is null/undefined."
   },
