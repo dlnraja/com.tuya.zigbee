@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.539** | ✨ NEW DRIVER: Ceiling Presence Sensor (230V) with relay control for MTG075-ZB... |
 | **v5.5.538** | 🔧 IAS ZONE FIX: GitHub #97 NoroddH _TZ321C_fkzihax8 5.8G Radar - Enhanced IA... |
 | **v5.5.537** | ✨ NEW DEVICE: COOLO CS-201Z soil sensor (forum #961). Features: soil moisture... |
 | **v5.5.536** | ✨ NEW DEVICE: Sonoff S60ZBTPF/S60ZBTPG smart plug with energy monitoring (Git... |
@@ -78,7 +79,6 @@
 | **v5.5.532** | 🔧 CONTACT SENSOR FIX (Lasse_K #945): Inverted alarm_contact logic corrected ... |
 | **v5.5.531** | 🔧 FORUM FIXES: (1) Cam TS0041/_TZ3000_5bpeda8u - MOVED from button_wireless_... |
 | **v5.5.530** | 🔧 CRITICAL FLOW CARDS FIX: Complete rewrite of motion_sensor and climate_sen... |
-| **v5.5.529** | 🚨 CRITICAL MANUFACTURERNAME CONFLICTS FIX: _TZE200_rhgsbacq (4-in-1 multisen... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
