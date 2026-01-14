@@ -1,0 +1,544 @@
+{
+  "name": {
+    "en": "Presence Sensor (Radar)",
+    "fr": "Capteur de Présence (Radar)",
+    "nl": "mmWave Radar Sensor",
+    "de": "mmWave Radarsensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_distance",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_luminance",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA",
+      "CR123A"
+    ],
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
+  "subDevices": [],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3218_AWARHUSB",
+      "_tz3218_awarhusb",
+      "_TZ3218_T9YNFZ4X",
+      "_tz3218_t9ynfz4x",
+      "_TZE200_1IBPYHDC",
+      "_tze200_1ibpyhdc",
+      "_TZE200_2AAELWXK",
+      "_tze200_2aaelwxk",
+      "_TZE200_5B5NOETO",
+      "_tze200_5b5noeto",
+      "_TZE200_AR0SLWND",
+      "_tze200_ar0slwnd",
+      "_TZE200_CLRDRNYA",
+      "_tze200_clrdrnya",
+      "_TZE200_HOLEL4DK",
+      "_tze200_holel4dk",
+      "_TZE200_JVA8INK8",
+      "_tze200_jva8ink8",
+      "_TZE200_LU01T0ZL",
+      "_tze200_lu01t0zl",
+      "_TZE200_LYETPPRM",
+      "_tze200_lyetpprm",
+      "_TZE200_MRF6VTUA",
+      "_tze200_mrf6vtua",
+      "_TZE200_PAY2BYAX",
+      "_tze200_pay2byax",
+      "_TZE200_SFIY5TFS",
+      "_tze200_sfiy5tfs",
+      "_TZE200_SGPEACQP",
+      "_tze200_sgpeacqp",
+      "_TZE200_TTCOVULF",
+      "_tze200_ttcovulf",
+      "_TZE200_WUKB7RHC",
+      "_tze200_wukb7rhc",
+      "_TZE200_XPQ2RZHQ",
+      "_tze200_xpq2rzhq",
+      "_TZE200_ZTC6GGYL",
+      "_tze200_ztc6ggyl",
+      "_TZE201_ZTC6GGYL",
+      "_tze201_ztc6ggyl",
+      "_TZE202_ZTC6GGYL",
+      "_tze202_ztc6ggyl",
+      "_TZE203_ZTC6GGYL",
+      "_tze203_ztc6ggyl",
+      "_TZE204_7GCLUKJS",
+      "_tze204_7gclukjs",
+      "_TZE204_CLRDRNYA",
+      "_tze204_clrdrnya",
+      "_TZE204_DTZZIY1E",
+      "_tze204_dtzziy1e",
+      "_TZE204_E5M9C5HL",
+      "_tze204_e5m9c5hl",
+      "_TZE204_FWONDBZY",
+      "_tze204_fwondbzy",
+      "_TZE204_iaeejhvf",
+      "_tze204_iaeejhvf",
+      "_TZE204_IJXVKHD0",
+      "_tze204_ijxvkhd0",
+      "_TZE204_LBBG34RJ",
+      "_tze204_lbbg34rj",
+      "_TZE204_PFAYRZCW",
+      "_tze204_pfayrzcw",
+      "_TZE204_QASJIF9E",
+      "_tze204_qasjif9e",
+      "_TZE204_qasjif9e",
+      "_TZE204_SBYX0LM6",
+      "_tze204_sbyx0lm6",
+      "_TZE204_SXM7L9XA",
+      "_tze204_sxm7l9xa",
+      "_TZE204_UXLLNYWP",
+      "_tze204_uxllnywp",
+      "_TZE204_XSM7L9XA",
+      "_tze204_xsm7l9xa",
+      "_TZE204_YENSYA2C",
+      "_tze204_yensya2c",
+      "_TZE204_ZTC6GGYL",
+      "_tze204_ztc6ggyl",
+      "_TZE204_ZTQNH5CG",
+      "_tze204_ztqnh5cg",
+      "_TZE284_0WFZACEL",
+      "_tze284_0wfzacel",
+      "_TZE284_4QZNLKBU",
+      "_tze284_4qznlkbu",
+      "_TZE284_FWONDBZY",
+      "_tze284_fwondbzy",
+      "_TZE284_ZY6WJM01",
+      "_tze284_zy6wjm01",
+      "Loginovo",
+      "Treatlife",
+      "Wenzhi",
+      "Zecamin"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1024,
+          1030,
+          1280,
+          61184,
+          61184,
+          1280,
+          1,
+          1026,
+          1029
+        ],
+        "bindings": [
+          1,
+          1280
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/motion_sensor_radar_mmwave/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    },
+    "productId": [
+      "TS0202",
+      "TS0225",
+      "TS0601"
+    ]
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "🎯 Radar Detection (FP300-like)",
+        "fr": "🎯 Détection Radar (FP300-like)"
+      },
+      "children": [
+        {
+          "id": "radar_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Radar Sensitivity",
+            "fr": "Sensibilité Radar"
+          },
+          "value": 7,
+          "min": 0,
+          "max": 9,
+          "step": 1,
+          "hint": {
+            "en": "Detection sensitivity (0=lowest, 9=highest). Higher values detect smaller movements.",
+            "fr": "Sensibilité de détection (0=min, 9=max). Valeurs élevées détectent les petits mouvements."
+          }
+        },
+        {
+          "id": "minimum_range",
+          "type": "number",
+          "label": {
+            "en": "Minimum Range (m)",
+            "fr": "Distance Minimum (m)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 9.5,
+          "step": 0.5,
+          "hint": {
+            "en": "Minimum detection distance in meters. Objects closer will be ignored.",
+            "fr": "Distance minimale de détection en mètres. Objets plus proches seront ignorés."
+          }
+        },
+        {
+          "id": "maximum_range",
+          "type": "number",
+          "label": {
+            "en": "Maximum Range (m)",
+            "fr": "Distance Maximum (m)"
+          },
+          "value": 6,
+          "min": 0.5,
+          "max": 9.5,
+          "step": 0.5,
+          "hint": {
+            "en": "Maximum detection distance in meters (up to 9.5m for most sensors).",
+            "fr": "Distance maximale de détection en mètres (jusqu'à 9.5m pour la plupart)."
+          }
+        },
+        {
+          "id": "detection_delay",
+          "type": "number",
+          "label": {
+            "en": "Detection Delay (s)",
+            "fr": "Délai de Détection (s)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "hint": {
+            "en": "Delay before reporting presence (0=instant). Helps avoid false positives.",
+            "fr": "Délai avant de signaler une présence (0=instantané). Évite les faux positifs."
+          }
+        },
+        {
+          "id": "fading_time",
+          "type": "number",
+          "label": {
+            "en": "Absence Delay / Fading Time (s)",
+            "fr": "Délai d'Absence (s)"
+          },
+          "value": 60,
+          "min": 0.5,
+          "max": 1500,
+          "step": 5,
+          "hint": {
+            "en": "Time before clearing presence after no movement detected. Like FP300 absence delay.",
+            "fr": "Temps avant de signaler l'absence après aucun mouvement. Similaire au délai FP300."
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "🌡️ Calibration (v5.5.28)",
+        "fr": "🌡️ Calibration (v5.5.28)"
+      },
+      "children": [
+        {
+          "id": "temperature_calibration",
+          "type": "number",
+          "label": {
+            "en": "Temperature Offset (°C)",
+            "fr": "Décalage Température (°C)"
+          },
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1,
+          "hint": {
+            "en": "Add or subtract from temperature reading. Use positive value if sensor reads too low, negative if too high.",
+            "fr": "Ajouter ou soustraire de la température lue. Valeur positive si capteur lit trop bas, négative si trop haut."
+          }
+        },
+        {
+          "id": "humidity_calibration",
+          "type": "number",
+          "label": {
+            "en": "Humidity Offset (%)",
+            "fr": "Décalage Humidité (%)"
+          },
+          "value": 0,
+          "min": -20,
+          "max": 20,
+          "step": 1,
+          "hint": {
+            "en": "Add or subtract from humidity reading. Use positive value if sensor reads too low, negative if too high.",
+            "fr": "Ajouter ou soustraire de l'humidité lue. Valeur positive si capteur lit trop bas, négative si trop haut."
+          }
+        }
+      ]
+    },
+    {
+      "id": "power_source",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "ac",
+          "label": {
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
+    },
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA",
+            "fr": "AAA"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA",
+            "fr": "AA"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A",
+            "fr": "CR123A"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "optimization_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+      }
+    },
+    {
+      "id": "enable_power_estimation",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Power Estimation",
+        "fr": "Activer Estimation Puissance"
+      },
+      "value": true,
+      "hint": {
+        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    }
+  ],
+  "images": {
+    "small": "drivers/motion_sensor_radar_mmwave/assets/images/small.png",
+    "large": "drivers/motion_sensor_radar_mmwave/assets/images/large.png",
+    "xlarge": "drivers/motion_sensor_radar_mmwave/assets/images/xlarge.png"
+  },
+  "id": "motion_sensor_radar_mmwave",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

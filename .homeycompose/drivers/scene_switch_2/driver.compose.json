@@ -1,0 +1,82 @@
+{
+  "name": {
+    "en": "Scene Switch 2-Gang",
+    "fr": "Interrupteur Scène 2 Boutons"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "button.1",
+    "button.2",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "maintenanceAction": true,"button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "getable": false,
+      "setable": false
+    },
+    "maintenanceAction": true,"button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "getable": false,
+      "setable": false
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_dfgbtub0",
+      "_TZ3000_gbm10jnj"
+    ],
+    "productId": [
+      "TS0012"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          5,
+          6
+        ],
+        "bindings": [
+          1,
+          5,
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          5,
+          6
+        ],
+        "bindings": [
+          5,
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/scene_switch_2/assets/images/small.png",
+    "large": "drivers/scene_switch_2/assets/images/large.png",
+    "xlarge": "drivers/scene_switch_2/assets/images/xlarge.png"
+  },
+  "id": "scene_switch_2",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450"
+    ]
+  }
+}

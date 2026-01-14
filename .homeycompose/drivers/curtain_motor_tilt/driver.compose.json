@@ -1,0 +1,127 @@
+{
+  "name": {
+    "en": "Curtain Motor with Tilt",
+    "fr": "Moteur Volet avec Inclinaison",
+    "nl": "Gordijn Kantelmotor",
+    "de": "Vorhang Kippmotor"
+  },
+  "class": "windowcoverings",
+  "capabilities": [
+    "windowcoverings_state",
+    "windowcoverings_set",
+    "windowcoverings_tilt_set",
+    "alarm_generic",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_FCTWHUGX",
+      "_tze200_fctwhugx"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          258,
+          61184
+        ],
+        "bindings": [
+          258
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/curtain_motor_tilt/assets/images/small.png",
+    "large": "drivers/curtain_motor_tilt/assets/images/large.png",
+    "xlarge": "drivers/curtain_motor_tilt/assets/images/xlarge.png"
+  },
+  "id": "curtain_motor_tilt",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "flow": {
+    "actions": [
+      {
+        "id": "curtain_calibrate",
+        "title": {
+          "en": "Calibrate curtain motor",
+          "nl": "Kalibreer gordijnmotor"
+        },
+        "titleFormatted": {
+          "en": "Calibrate [[device]]",
+          "nl": "Kalibreer [[device]]"
+        },
+        "hint": {
+          "en": "Run full open/close cycle for position calibration",
+          "nl": "Voer volledige open/sluit cyclus uit voor positie kalibratie"
+        }
+      },
+      {
+        "id": "curtain_reset_position",
+        "title": {
+          "en": "Reset position to 0%",
+          "nl": "Reset positie naar 0%"
+        },
+        "titleFormatted": {
+          "en": "Reset [[device]] position",
+          "nl": "Reset [[device]] positie"
+        },
+        "hint": {
+          "en": "Reset current position to fully closed",
+          "nl": "Reset huidige positie naar volledig gesloten"
+        }
+      },
+      {
+        "id": "curtain_hold",
+        "title": {
+          "en": "Hold curtain position",
+          "nl": "Gordijn positie vasthouden",
+          "fr": "Maintenir position rideau"
+        },
+        "titleFormatted": {
+          "en": "Hold [[device]] at current position",
+          "nl": "Houd [[device]] op huidige positie"
+        },
+        "hint": {
+          "en": "Stop curtain movement and hold at current position",
+          "nl": "Stop gordijn beweging en houd huidige positie vast"
+        }
+      },
+      {
+        "id": "curtain_open_partial",
+        "title": {
+          "en": "Open curtain partially",
+          "nl": "Gordijn gedeeltelijk openen",
+          "fr": "Ouvrir rideau partiellement"
+        },
+        "titleFormatted": {
+          "en": "Open [[device]] to [[position]]%",
+          "nl": "Open [[device]] naar [[position]]%"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "position",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "label": "%",
+            "labelMultiplier": 1
+          }
+        ]
+      }
+    ]
+  }
+}

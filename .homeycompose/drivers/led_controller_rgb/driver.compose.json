@@ -1,0 +1,68 @@
+{
+  "name": {
+    "en": "LED Controller RGB",
+    "fr": "Contrôleur LED RGB",
+    "nl": "RGB LED Controller",
+    "de": "RGB LED Steuerung"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "light_hue",
+    "light_saturation",
+    "light_temperature",
+    "light_mode",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZB210_LMQQUXUS",
+      "_tzb210_lmqquxus",
+      "_TZB210_ENDMGGWS",
+      "_tzb210_endmggws",
+      "eWeLight"
+    ],
+    "productId": [
+      "TS0503",
+      "TS0504"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          8,
+          768
+        ],
+        "bindings": [
+          6,
+          8,
+          768
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/led_controller_rgb/assets/images/small.png",
+    "large": "drivers/led_controller_rgb/assets/images/large.png",
+    "xlarge": "drivers/led_controller_rgb/assets/images/xlarge.png"
+  },
+  "id": "led_controller_rgb",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": true
+    }
+  }
+}

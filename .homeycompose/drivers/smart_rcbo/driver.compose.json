@@ -1,0 +1,61 @@
+{
+  "name": {
+    "en": "Smart RCBO",
+    "fr": "Disjoncteur Différentiel Connecté",
+    "nl": "Slimme RCBO",
+    "de": "Smart FI-Schalter"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "alarm_generic",
+    "measure_power",
+    "meter_power",
+    "measure_current",
+    "measure_voltage",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE204_HKDL5FMV",
+      "_tze204_hkdl5fmv",
+      "_TZE204_byzdayie",
+      "_tze204_byzdayie"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184,
+          6,
+          2820,
+          1794
+        ],
+        "bindings": [
+          6,
+          2820
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/smart_rcbo/assets/images/small.png",
+    "large": "drivers/smart_rcbo/assets/images/large.png",
+    "xlarge": "drivers/smart_rcbo/assets/images/xlarge.png"
+  },
+  "id": "smart_rcbo",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  }
+}
