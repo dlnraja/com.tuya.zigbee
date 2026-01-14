@@ -1,4 +1,10 @@
 {
+  "5.5.532": {
+    "en": "🔧 CONTACT SENSOR FIX (Lasse_K #945): Inverted alarm_contact logic corrected per Zigbee2MQTT. Now: door OPEN = alarm ON, door CLOSED = alarm OFF. RE-PAIR your contact sensors!",
+    "nl": "🔧 CONTACT SENSOR FIX: Logica gecorrigeerd. Deur OPEN = alarm AAN.",
+    "fr": "🔧 FIX CAPTEUR CONTACT: Logique corrigée. Porte OUVERTE = alarme ON.",
+    "de": "🔧 KONTAKTSENSOR FIX: Logik korrigiert. Tür OFFEN = Alarm EIN."
+  },
   "5.5.531": {
     "en": "🔧 FORUM FIXES: (1) Cam TS0041/_TZ3000_5bpeda8u - MOVED from button_wireless_1 to button_wireless_4 ONLY (4-endpoint device). (2) Removed _TZ3000_5bpeda8u from climate_sensor (was wrongly classified). (3) bulb_rgb driver fixed with await super.onInit(). RE-PAIR button devices!",
     "nl": "🔧 FORUM FIXES: TS0041 knop naar juiste driver verplaatst. RE-PAIREN vereist!",
