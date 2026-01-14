@@ -1,10 +1,14 @@
 'use strict';
 
-const { Driver } = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class USBHubDualDriver extends Driver {
+/**
+ * v5.5.534: FIXED to use ZigBeeDriver + await super.onInit()
+ */
+class USBHubDualDriver extends ZigBeeDriver {
   async onInit() {
-    this.log('USB Hub Dual Driver initialized');
+    await super.onInit(); // v5.5.534: SDK3 CRITICAL
+    this.log('USB Hub Dual Driver v5.5.534 initialized');
   }
 }
 

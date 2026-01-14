@@ -1,14 +1,16 @@
 'use strict';
 
-const { Driver } = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 /**
- * v5.5.506: Fixed flow card registration with error handling
+ * v5.5.534: FIXED to use ZigBeeDriver + await super.onInit()
+ * v5.5.506: Original - used Driver instead of ZigBeeDriver
  */
-class WaterTankMonitorDriver extends Driver {
+class WaterTankMonitorDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('Water Tank Monitor driver v5.5.506 initializing...');
+    await super.onInit(); // v5.5.534: SDK3 CRITICAL
+    this.log('Water Tank Monitor driver v5.5.534 initializing...');
 
     try {
       // Register flow card triggers
