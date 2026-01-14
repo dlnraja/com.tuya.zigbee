@@ -1,4 +1,7 @@
 {
+  "5.5.528": {
+    "en": "🔧 CRITICAL FLOW CARDS FIX: 'Cannot get device by id' error - Added device validation to motion_sensor and climate_sensor flow card listeners. Prevents crashes when args.device is null/undefined."
+  },
   "5.5.527": {
     "en": "🔥 CRITICAL PAIRING FIX: PG-S11Z smoke detector (_TZE284_rccxox8p TS0601) - Enhanced pairing robustness to prevent 'Unknown Zigbee Device' error. Device was supported but pairing process failed."
   },
