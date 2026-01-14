@@ -1,4 +1,13 @@
 {
+  "5.5.524": {
+    "en": "FIX: HOBEIAN button battery capability check (prevent crash after Intelligent Adapter removes measure_battery)"
+  },
+  "5.5.523": {
+    "en": "🔧 FIXES: (1) smoke_detector_advanced pairing FIXED - broken pair flow causing 'unknown device'. (2) HOBEIAN button measure_battery error FULLY FIXED - added hasCapability checks to ALL battery code paths in BaseHybridDevice. RE-PAIR smoke detectors!",
+    "nl": "🔧 FIXES: smoke_detector_advanced pairing gerepareerd, HOBEIAN batterij volledig gefixed. OPNIEUW KOPPELEN!",
+    "fr": "🔧 FIXES: Appairage smoke_detector_advanced corrigé, batterie HOBEIAN complètement fixée. RE-APPAIRER!",
+    "de": "🔧 FIXES: smoke_detector_advanced Pairing behoben, HOBEIAN Batterie vollständig gefixt. NEU PAIREN!"
+  },
   "5.5.522": {
     "en": "🔧 FIXES: (1) smoke_detector_advanced pairing FIXED - broken pair flow causing 'unknown device'. (2) HOBEIAN button measure_battery error FULLY FIXED - added hasCapability checks to ALL battery code paths in BaseHybridDevice. RE-PAIR smoke detectors!",
     "nl": "🔧 FIXES: smoke_detector_advanced pairing gerepareerd, HOBEIAN batterij volledig gefixed. OPNIEUW KOPPELEN!",
