@@ -1,0 +1,97 @@
+{
+  "name": {
+    "en": "Vibration Sensor",
+    "fr": "Capteur de Vibration",
+    "nl": "Trillingssensor",
+    "de": "Vibrationssensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_vibration",
+    "measure_battery",
+    "alarm_tamper"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450"
+    ]
+  },
+  "subDevices": [],
+  "zigbee": {
+    "manufacturerName": [
+      "_TYZB01_3zv6oleo",
+      "_TYZB01_geigpsy4",
+      "_TYZB01_j9xxahcl",
+      "ZG-102ZM",
+      "_TZ3000_BMFW11GS",
+      "_tz3000_bmfw11gs",
+      "_TZ3000_BMFW9YKL",
+      "_tz3000_bmfw9ykl",
+      "_TZ3000_C0EPQJ4N",
+      "_tz3000_c0epqj4n",
+      "_TZ3000_D9MXCG6G",
+      "_tz3000_d9mxcg6g",
+      "_TZ3000_EZ2W5NZP",
+      "_tz3000_ez2w5nzp",
+      "_TZ3000_FBJNWZKO",
+      "_tz3000_fbjnwzko",
+      "_TZ3000_FKXMYWJV",
+      "_tz3000_fkxmywjv",
+      "_TZ3000_LF56VPXJ",
+      "_tz3000_lf56vpxj",
+      "_TZ3000_LQPT3MVR",
+      "_tz3000_lqpt3mvr",
+      "_TZ3000_LZDJJFSS",
+      "_tz3000_lzdjjfss",
+      "_TZ3000_OSU834UN",
+      "_tz3000_osu834un",
+      "_TZ3000_RCFWRSLT",
+      "_tz3000_rcfwrslt",
+      "_TZ3000_WQWDOQIB",
+      "_tz3000_wqwdoqib",
+      "_TZE200_CSCPPKXZ",
+      "_tze200_cscppkxz",
+      "_TZE200_GNPN9HXB",
+      "_tze200_gnpn9hxb",
+      "_TZE200_VQ5U79U3",
+      "_tze200_vq5u79u3",
+      "_TZE204_CSCPPKXZ",
+      "_tze204_cscppkxz",
+      "_TZE284_CSCPPKXZ",
+      "_tze284_cscppkxz"
+    ],
+    "productId": [
+      "TS0209",
+      "TS0210",
+      "TS0601",
+      "ZG-102ZM"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          257,
+          1280
+        ],
+        "bindings": [
+          1280,
+          1
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/vibration_sensor/assets/images/small.png",
+    "large": "drivers/vibration_sensor/assets/images/large.png",
+    "xlarge": "drivers/vibration_sensor/assets/images/xlarge.png"
+  },
+  "id": "vibration_sensor",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

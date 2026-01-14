@@ -1,0 +1,56 @@
+{
+  "name": {
+    "en": "Smart Valve 4-Way",
+    "fr": "Vanne Connectée 4 Voies",
+    "nl": "Irrigatieklep",
+    "de": "Bewässerungsventil"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "valve_position.1",
+    "valve_position.2",
+    "valve_position.3",
+    "valve_position.4",
+    "measure_battery",
+    "onoff"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TYZB01_4tlksk8a",
+      "_TYZB01_ymcdbl3u"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184,
+          6,
+          1
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/valve_irrigation/assets/images/small.png",
+    "large": "drivers/valve_irrigation/assets/images/large.png",
+    "xlarge": "drivers/valve_irrigation/assets/images/xlarge.png"
+  },
+  "id": "valve_irrigation",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "AA"
+    ]
+  }
+}
