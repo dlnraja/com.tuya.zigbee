@@ -1,4 +1,10 @@
 {
+  "5.5.530": {
+    "en": "🔧 CRITICAL FLOW CARDS FIX: Complete rewrite of motion_sensor and climate_sensor driver.js - Flow cards now registered in onInit() (NOT onPairListDevices), correct IDs matching driver.flow.compose.json, device validation in ALL runListeners. Fixes 'Cannot get device by id' error permanently.",
+    "nl": "🔧 KRITIEKE FLOW CARDS FIX: Complete herschrijving motion_sensor en climate_sensor. Flow cards nu correct geregistreerd. Voorkomt 'Cannot get device by id' error.",
+    "fr": "🔧 FIX CRITIQUE FLOW CARDS: Réécriture complète motion_sensor et climate_sensor. Flow cards correctement enregistrées. Corrige l'erreur 'Cannot get device by id'.",
+    "de": "🔧 KRITISCHER FLOW CARDS FIX: Vollständige Neuschreibung motion_sensor und climate_sensor. Flow Cards korrekt registriert. Behebt 'Cannot get device by id' Fehler."
+  },
   "5.5.529": {
     "en": "🚨 CRITICAL MANUFACTURERNAME CONFLICTS FIX: _TZE200_rhgsbacq (4-in-1 multisensor) removed from presence_sensor_radar - was causing 'not working at all'. _TZ3000_qgwcxxws (button TS0041) removed from climate_sensor. Enhanced smoke detector DPs with Z2M logging (silence_alarm, self_test, fault_alarm diagnostics)."
   },
