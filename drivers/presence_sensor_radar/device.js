@@ -1022,9 +1022,7 @@ const SENSOR_CONFIGS = {
     sensors: [
       '_TZ3000_8bxrzyxz', '_TZ3000_aigddb2b',
       '_TZ3000_ky0fq4ho',
-      '_TZ3210_fkzihax8',
-      // v5.5.519: MOVED to dedicated TZ321C_HYBRID config
-      // '_TZ321C_fkzihax8',
+      '_TZ3210_fkzihax8'
     ],
     battery: false,         // v5.5.519: Mains powered PIR
     useZcl: true,
@@ -1039,37 +1037,10 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // TYPE H1B: _TZ321C_fkzihax8 Hybrid IAS Zone + Basic DPs (no full radar DPs)
-  // v5.5.525: Special hybrid config for _TZ321C_fkzihax8 (no 'e' = no full radar)
-  // Uses IAS Zone (1280) for motion + limited Tuya DPs for illuminance
-  // Input clusters: [0, 4, 5, 1280] - NO cluster 0xEF00!
-  // ─────────────────────────────────────────────────────────────────────────────
-  'TZ321C_HYBRID': {
-    sensors: [
-      '_TZ321C_fkzihax8', // v5.5.525: Special hybrid config for NoroddH device
-    ],
-    battery: false,         // MAINS POWERED - confirmed by NoroddH powerSource: 'mains'
-    useZcl: false,          // No standard ZCL - device uses IAS Zone + basic DPs
-    useIasZone: true,       // PRIMARY: Motion detection via IAS Zone cluster 1280
-    hasIlluminance: false,  // v5.5.525: No Tuya DP cluster - try basic cluster attrs
-    noTemperature: true,    // Confirmed - motion sensor only
-    noHumidity: true,       // Confirmed - motion sensor only
-    specialEnrollment: true, // v5.5.525: Needs enhanced IAS Zone enrollment
-    dpMap: {
-      // v5.5.525: Minimal DP map - device may not have 0xEF00 cluster
-      // Try basic cluster attributes instead of Tuya DPs
-    },
-    zclAttributes: {
-      // v5.5.525: Try reading illuminance from basic cluster custom attributes
-      'basic': [65504, 65505, 65506, 65507], // Custom manufacturer attributes
-    }
-  },
-
-  // ─────────────────────────────────────────────────────────────────────────────
   // TYPE H2: LeapMMW 5.8G mmWave Radar (_TZ321C_fkzihaxe8 with 'e', _TZ321C_4slreunp)
-  // v5.5.519: CORRECTED - Only devices WITH 'e' are mmWave radar with Tuya DPs
+  // v5.5.526: CORRECTED - Only devices WITH 'e' are mmWave radar with Tuya DPs
   // _TZ321C_fkzihaxe8 (with 'e') = mmWave radar using Tuya DPs
-  // _TZ321C_fkzihax8 (without 'e') = Simple IAS Zone PIR -> TZ3000_PIR config
+  // _TZ321C_fkzihax8 (without 'e') = Pure IAS Zone PIR -> MOVED to motion_sensor driver
   // Source: Z2M #23853, #23913 - Uses IAS Zone (1280) for occupancy + Tuya DPs for radar
   // MAINS POWERED (Router), NOT battery!
   // ─────────────────────────────────────────────────────────────────────────────
@@ -2501,49 +2472,15 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         this.log(`[RADAR] ⚠️ Could not setup enrollRequest handler: ${e.message}`);
       }
 
-      // Step 5: Enhanced enrollment for TZ321C_HYBRID devices
-      const deviceConfig = this._getDeviceConfig();
-      if (deviceConfig?.specialEnrollment && (currentState !== 1 && currentState !== 'enrolled')) {
-        this.log('[RADAR] 🔧 TZ321C_HYBRID special enrollment sequence...');
-        
-        // Method A: Try multiple enrollment attempts with delays
-        for (let attempt = 1; attempt <= 3; attempt++) {
-          try {
-            this.log(`[RADAR] Enrollment attempt ${attempt}/3...`);
-            
-            // Force write CIE address again
-            await iasZone.writeAttributes({ iasCieAddress: homeyIeee });
-            await this._sleep(1000);
-            
-            // Send enrollment command directly
-            if (iasZone.zoneEnrollResponse) {
-              await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 1 });
-              this.log(`[RADAR] ✅ Enrollment attempt ${attempt} sent`);
-            }
-            
-            await this._sleep(2000);
-            
-            // Check if enrollment worked
-            const checkState = await iasZone.readAttributes(['zoneState']).catch(() => null);
-            if (checkState?.zoneState === 1 || checkState?.zoneState === 'enrolled') {
-              this.log(`[RADAR] 🎉 Enrollment SUCCESS on attempt ${attempt}!`);
-              break;
-            }
-            
-          } catch (e) {
-            this.log(`[RADAR] ⚠️ Enrollment attempt ${attempt} failed: ${e.message}`);
-            if (attempt < 3) await this._sleep(3000); // Wait before retry
-          }
-        }
-      } else if (currentState !== 1 && currentState !== 'enrolled') {
-        // Standard enrollment for other devices
+      // Step 5: Standard IAS Zone enrollment
+      if (currentState !== 1 && currentState !== 'enrolled') {
         try {
           if (iasZone.zoneEnrollResponse) {
             await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 1 });
-            this.log('[RADAR] ✅ Standard enrollment response sent');
+            this.log('[RADAR] ✅ IAS Zone enrollment response sent');
           }
         } catch (e) {
-          this.log(`[RADAR] ⚠️ Standard enrollment failed: ${e.message}`);
+          this.log(`[RADAR] ⚠️ IAS Zone enrollment failed: ${e.message}`);
         }
       }
 
@@ -2576,29 +2513,6 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     } catch (error) {
       this.log(`[RADAR] ❌ IAS Zone enrollment failed: ${error.message}`);
     }
-  }
-
-  /**
-   * v5.5.525: Helper method for delays in enrollment sequence
-   */
-  async _sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
-  /**
-   * v5.5.525: Get device configuration for current device
-   */
-  _getDeviceConfig() {
-    const manufacturerName = this.getData()?.token?.split(':')[0];
-    if (!manufacturerName) return null;
-    
-    // Find config for current device
-    for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
-      if (config.sensors?.includes(manufacturerName)) {
-        return { ...config, configName };
-      }
-    }
-    return null;
   }
 
   /**
