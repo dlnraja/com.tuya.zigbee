@@ -1,4 +1,10 @@
 {
+  "5.5.534": {
+    "en": "🚨 CRITICAL SDK3 FIX: (1) ALL button drivers (1-8 gang) - FlowCardHelper fixed to generate correct IDs. (2) ir_blaster, water_tank_monitor, usb_dongle_dual_repeater, dimmer_3gang - Changed from Driver to ZigBeeDriver + await super.onInit(). Fixes FrankP IR remote #950 and button issues!",
+    "nl": "🚨 KRITIEKE SDK3 FIX: Alle button + IR drivers gerepareerd met ZigBeeDriver!",
+    "fr": "🚨 FIX CRITIQUE SDK3: Tous les drivers boutons + IR réparés avec ZigBeeDriver!",
+    "de": "🚨 KRITISCHER SDK3 FIX: Alle Button + IR Treiber mit ZigBeeDriver repariert!"
+  },
   "5.5.533": {
     "en": "🔧 HARTMUT FIX (#925/#955): TS0726/_TZ3002_pzao9ls1 4-gang switch - REMOVED from switch_2gang and climate_sensor (was wrongly classified). Now ONLY in switch_4gang. RE-PAIR your 4-gang switches!",
     "nl": "🔧 HARTMUT FIX: TS0726 4-gang switch naar juiste driver. RE-PAIREN vereist!",
