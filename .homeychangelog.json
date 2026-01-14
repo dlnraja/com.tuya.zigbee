@@ -1,4 +1,10 @@
 {
+  "5.5.531": {
+    "en": "🔧 FORUM FIXES: (1) Cam TS0041/_TZ3000_5bpeda8u - MOVED from button_wireless_1 to button_wireless_4 ONLY (4-endpoint device). (2) Removed _TZ3000_5bpeda8u from climate_sensor (was wrongly classified). (3) bulb_rgb driver fixed with await super.onInit(). RE-PAIR button devices!",
+    "nl": "🔧 FORUM FIXES: TS0041 knop naar juiste driver verplaatst. RE-PAIREN vereist!",
+    "fr": "🔧 FORUM FIXES: Bouton TS0041 déplacé vers bon driver. RE-APPAIRER requis!",
+    "de": "🔧 FORUM FIXES: TS0041 Taste zum richtigen Treiber verschoben. NEU PAIREN erforderlich!"
+  },
   "5.5.530": {
     "en": "🔧 CRITICAL FLOW CARDS FIX: Complete rewrite of motion_sensor and climate_sensor driver.js - Flow cards now registered in onInit() (NOT onPairListDevices), correct IDs matching driver.flow.compose.json, device validation in ALL runListeners. Fixes 'Cannot get device by id' error permanently.",
     "nl": "🔧 KRITIEKE FLOW CARDS FIX: Complete herschrijving motion_sensor en climate_sensor. Flow cards nu correct geregistreerd. Voorkomt 'Cannot get device by id' error.",
