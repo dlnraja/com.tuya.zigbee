@@ -2391,9 +2391,15 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.505: Enhanced IAS Zone enrollment - fixes "notEnrolled" status
+   * v5.5.538: Enhanced IAS Zone enrollment - fixes "notEnrolled" status
    * GitHub Issue #97: NoroddH _TZ321C_fkzihax8 5.8G Radar not working
-   * Root cause: IAS Zone binding was missing, enrollment not completing
+   * Root cause: IAS Zone enrollment not persisting, needs retry mechanism
+   * 
+   * FIXES in v5.5.538:
+   * 1. Added retry mechanism with delays
+   * 2. Store iasZone reference for re-enrollment
+   * 3. Periodic check and re-enrollment if lost
+   * 4. Better zoneStatus parsing for 5.8G radar
    */
   async _enrollIASZone(zclNode) {
     try {
@@ -2405,18 +2411,26 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         return;
       }
 
-      this.log('[RADAR] 🔐 Starting IAS Zone enrollment (v5.5.505 enhanced)...');
+      // Store reference for re-enrollment
+      this._iasZoneCluster = iasZone;
+      this._zclNode = zclNode;
+
+      this.log('[RADAR] 🔐 Starting IAS Zone enrollment (v5.5.538 with retry)...');
 
       // Step 1: Read current zone state
       let currentState = null;
+      let currentZoneId = null;
       try {
-        const attrs = await iasZone.readAttributes(['zoneState', 'zoneType', 'zoneStatus']);
-        this.log(`[RADAR] IAS Zone current: zoneState=${attrs?.zoneState}, zoneType=${attrs?.zoneType}`);
+        const attrs = await iasZone.readAttributes(['zoneState', 'zoneType', 'zoneStatus', 'zoneId']);
+        this.log(`[RADAR] IAS Zone current: zoneState=${attrs?.zoneState}, zoneType=${attrs?.zoneType}, zoneId=${attrs?.zoneId}`);
         currentState = attrs?.zoneState;
+        currentZoneId = attrs?.zoneId;
 
-        // If already enrolled (zoneState=1), just setup listeners
-        if (currentState === 1 || currentState === 'enrolled') {
+        // If already enrolled (zoneState=1 and zoneId != 255), just setup listeners
+        if ((currentState === 1 || currentState === 'enrolled') && currentZoneId !== 255) {
           this.log('[RADAR] ✅ IAS Zone already enrolled - setting up listeners only');
+          await this._setupIASZoneListeners(iasZone);
+          return;
         }
       } catch (e) {
         this.log(`[RADAR] ⚠️ Could not read zone state: ${e.message}`);
@@ -2425,94 +2439,189 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       // Step 2: Get Homey's IEEE address for CIE
       let homeyIeee = null;
       try {
-        homeyIeee = this.homey?.zigbee?.ieeeAddress
-          || zclNode?.networkAddress?.ieeeAddr
-          || this.getData()?.token
-          || '0000000000000000';
+        // Try multiple sources for Homey's IEEE address
+        homeyIeee = this.homey?.zigbee?.ieeeAddress;
+        if (!homeyIeee) {
+          // Try to get from first router or use a valid address
+          homeyIeee = zclNode?.networkAddress?.ieeeAddr || this.getData()?.token;
+        }
+        if (!homeyIeee || homeyIeee === '0000000000000000') {
+          // Use a default valid address format
+          homeyIeee = '0x00124b0000000000';
+        }
         this.log(`[RADAR] Homey IEEE for CIE: ${homeyIeee}`);
       } catch (e) {
-        homeyIeee = '0000000000000000';
+        homeyIeee = '0x00124b0000000000';
       }
 
-      // Step 3: Write IAS CIE address (required for enrollment)
-      if (currentState !== 1 && currentState !== 'enrolled') {
+      // Step 3: Write IAS CIE address with retry
+      for (let attempt = 1; attempt <= 3; attempt++) {
         try {
           await iasZone.writeAttributes({ iasCieAddress: homeyIeee });
-          this.log(`[RADAR] ✅ Wrote IAS CIE address`);
+          this.log(`[RADAR] ✅ Wrote IAS CIE address (attempt ${attempt})`);
+          break;
         } catch (e) {
-          this.log(`[RADAR] ⚠️ Could not write IAS CIE: ${e.message}`);
+          this.log(`[RADAR] ⚠️ Could not write IAS CIE (attempt ${attempt}): ${e.message}`);
+          if (attempt < 3) await new Promise(r => setTimeout(r, 1000));
         }
       }
 
-      // Step 4: Setup handler for zoneEnrollRequest (device-initiated enrollment)
-      // This is CRITICAL - some devices send enrollRequest and wait for response
-      try {
-        if (typeof iasZone.onZoneEnrollRequest === 'function' || iasZone.on) {
-          const enrollHandler = async (payload) => {
-            this.log(`[RADAR] 📩 Received zoneEnrollRequest: ${JSON.stringify(payload)}`);
-            try {
-              if (iasZone.zoneEnrollResponse) {
-                await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 1 });
-                this.log('[RADAR] ✅ Sent zoneEnrollResponse (success, zoneId=1)');
-              }
-            } catch (err) {
-              this.log(`[RADAR] ⚠️ zoneEnrollResponse failed: ${err.message}`);
-            }
-          };
+      // Step 4: Setup handler for zoneEnrollRequest BEFORE sending response
+      await this._setupIASZoneEnrollHandler(iasZone);
 
-          if (iasZone.onZoneEnrollRequest) {
-            iasZone.onZoneEnrollRequest = enrollHandler;
-          }
-          if (iasZone.on) {
-            iasZone.on('zoneEnrollRequest', enrollHandler);
-          }
-          this.log('[RADAR] ✅ zoneEnrollRequest handler configured');
-        }
-      } catch (e) {
-        this.log(`[RADAR] ⚠️ Could not setup enrollRequest handler: ${e.message}`);
-      }
-
-      // Step 5: Standard IAS Zone enrollment
-      if (currentState !== 1 && currentState !== 'enrolled') {
+      // Step 5: Send enrollment response with retry
+      await new Promise(r => setTimeout(r, 500)); // Small delay
+      for (let attempt = 1; attempt <= 3; attempt++) {
         try {
           if (iasZone.zoneEnrollResponse) {
             await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 1 });
-            this.log('[RADAR] ✅ IAS Zone enrollment response sent');
+            this.log(`[RADAR] ✅ IAS Zone enrollment response sent (attempt ${attempt})`);
+            break;
           }
         } catch (e) {
-          this.log(`[RADAR] ⚠️ IAS Zone enrollment failed: ${e.message}`);
+          this.log(`[RADAR] ⚠️ IAS Zone enrollment failed (attempt ${attempt}): ${e.message}`);
+          if (attempt < 3) await new Promise(r => setTimeout(r, 1000));
         }
       }
 
-      // Step 6: Listen for zone status changes (motion detection)
-      if (iasZone.on) {
-        // Attribute change listener
-        iasZone.on('attr.zoneStatus', (status) => {
-          const statusNum = typeof status === 'object' ? (status?.data?.[0] || 0) : status;
-          const alarm1 = (statusNum & 0x01) !== 0;
-          const alarm2 = (statusNum & 0x02) !== 0;
-          const motion = alarm1 || alarm2;
-          this.log(`[RADAR] IAS zoneStatus attr: ${statusNum} -> motion: ${motion}`);
-          this.setCapabilityValue('alarm_motion', motion).catch(() => { });
-          this._triggerPresenceFlows(motion);
-        });
-
-        // Zone status change notification (ZCL command)
-        iasZone.onZoneStatusChangeNotification = (payload) => {
-          const status = payload?.zoneStatus ?? payload?.data?.[0] ?? 0;
-          const motion = (status & 0x03) !== 0;
-          this.log(`[RADAR] IAS zoneStatusChangeNotification: ${status} -> motion: ${motion}`);
-          this.setCapabilityValue('alarm_motion', motion).catch(() => { });
-          this._triggerPresenceFlows(motion);
-        };
-
-        this.log('[RADAR] ✅ IAS Zone status listeners configured');
+      // Step 6: Verify enrollment after delay
+      await new Promise(r => setTimeout(r, 2000));
+      try {
+        const verifyAttrs = await iasZone.readAttributes(['zoneState', 'zoneId']);
+        this.log(`[RADAR] 🔍 Verify enrollment: zoneState=${verifyAttrs?.zoneState}, zoneId=${verifyAttrs?.zoneId}`);
+        if (verifyAttrs?.zoneState === 1 || verifyAttrs?.zoneState === 'enrolled') {
+          this.log('[RADAR] ✅ IAS Zone enrollment VERIFIED');
+        } else {
+          this.log('[RADAR] ⚠️ IAS Zone enrollment NOT verified - will retry on next init');
+        }
+      } catch (e) {
+        this.log(`[RADAR] ⚠️ Could not verify enrollment: ${e.message}`);
       }
+
+      // Step 7: Setup zone status listeners
+      await this._setupIASZoneListeners(iasZone);
+
+      // Step 8: Start periodic enrollment check for devices that lose enrollment
+      this._startEnrollmentCheck();
 
       this.log('[RADAR] ✅ IAS Zone enrollment complete');
     } catch (error) {
       this.log(`[RADAR] ❌ IAS Zone enrollment failed: ${error.message}`);
     }
+  }
+
+  /**
+   * v5.5.538: Setup IAS Zone enroll request handler
+   */
+  async _setupIASZoneEnrollHandler(iasZone) {
+    try {
+      const enrollHandler = async (payload) => {
+        this.log(`[RADAR] 📩 Received zoneEnrollRequest: ${JSON.stringify(payload)}`);
+        try {
+          if (iasZone.zoneEnrollResponse) {
+            await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 1 });
+            this.log('[RADAR] ✅ Sent zoneEnrollResponse (success, zoneId=1)');
+          }
+        } catch (err) {
+          this.log(`[RADAR] ⚠️ zoneEnrollResponse failed: ${err.message}`);
+        }
+      };
+
+      if (iasZone.onZoneEnrollRequest) {
+        iasZone.onZoneEnrollRequest = enrollHandler;
+      }
+      if (iasZone.on) {
+        iasZone.on('zoneEnrollRequest', enrollHandler);
+      }
+      this.log('[RADAR] ✅ zoneEnrollRequest handler configured');
+    } catch (e) {
+      this.log(`[RADAR] ⚠️ Could not setup enrollRequest handler: ${e.message}`);
+    }
+  }
+
+  /**
+   * v5.5.538: Setup IAS Zone status listeners
+   */
+  async _setupIASZoneListeners(iasZone) {
+    if (!iasZone?.on) return;
+
+    // Attribute change listener
+    iasZone.on('attr.zoneStatus', (status) => {
+      const statusNum = typeof status === 'object' ? (status?.data?.[0] || 0) : (typeof status === 'number' ? status : 0);
+      const alarm1 = (statusNum & 0x01) !== 0;
+      const alarm2 = (statusNum & 0x02) !== 0;
+      const motion = alarm1 || alarm2;
+      this.log(`[RADAR] IAS zoneStatus attr: ${statusNum} -> motion: ${motion}`);
+      this.setCapabilityValue('alarm_motion', motion).catch(() => { });
+      this._triggerPresenceFlows(motion);
+    });
+
+    // Zone status change notification (ZCL command)
+    iasZone.onZoneStatusChangeNotification = (payload) => {
+      const status = payload?.zoneStatus ?? payload?.data?.[0] ?? 0;
+      const motion = (status & 0x03) !== 0;
+      this.log(`[RADAR] IAS zoneStatusChangeNotification: ${status} -> motion: ${motion}`);
+      this.setCapabilityValue('alarm_motion', motion).catch(() => { });
+      this._triggerPresenceFlows(motion);
+    };
+
+    // Also listen for attr.zoneState to detect enrollment loss
+    iasZone.on('attr.zoneState', async (state) => {
+      this.log(`[RADAR] IAS zoneState changed: ${state}`);
+      if (state === 0 || state === 'notEnrolled') {
+        this.log('[RADAR] ⚠️ Zone became notEnrolled - attempting re-enrollment');
+        await this._reEnrollIASZone();
+      }
+    });
+
+    this.log('[RADAR] ✅ IAS Zone status listeners configured');
+  }
+
+  /**
+   * v5.5.538: Re-enroll IAS Zone if enrollment is lost
+   */
+  async _reEnrollIASZone() {
+    if (!this._iasZoneCluster) return;
+
+    try {
+      this.log('[RADAR] 🔄 Re-enrolling IAS Zone...');
+      const iasZone = this._iasZoneCluster;
+
+      // Try to enroll again
+      if (iasZone.zoneEnrollResponse) {
+        await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 1 });
+        this.log('[RADAR] ✅ Re-enrollment response sent');
+      }
+    } catch (e) {
+      this.log(`[RADAR] ⚠️ Re-enrollment failed: ${e.message}`);
+    }
+  }
+
+  /**
+   * v5.5.538: Start periodic enrollment check for problematic devices
+   */
+  _startEnrollmentCheck() {
+    // Clear any existing interval
+    if (this._enrollmentCheckInterval) {
+      clearInterval(this._enrollmentCheckInterval);
+    }
+
+    // Check every 5 minutes if enrollment is still valid
+    this._enrollmentCheckInterval = setInterval(async () => {
+      if (!this._iasZoneCluster) return;
+
+      try {
+        const attrs = await this._iasZoneCluster.readAttributes(['zoneState', 'zoneId']);
+        if (attrs?.zoneState === 0 || attrs?.zoneState === 'notEnrolled' || attrs?.zoneId === 255) {
+          this.log('[RADAR] ⚠️ Periodic check: enrollment lost - re-enrolling');
+          await this._reEnrollIASZone();
+        }
+      } catch (e) {
+        // Ignore read errors during periodic check
+      }
+    }, 5 * 60 * 1000); // 5 minutes
+
+    this.log('[RADAR] ✅ Periodic enrollment check started');
   }
 
   /**
