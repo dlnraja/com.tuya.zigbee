@@ -1,4 +1,10 @@
 {
+  "5.5.536": {
+    "en": "✨ NEW DEVICE: Sonoff S60ZBTPF/S60ZBTPG smart plug with energy monitoring (GitHub #99). Features: onoff, measure_power, meter_power, measure_current, measure_voltage.",
+    "nl": "✨ NIEUW: Sonoff S60ZBTPF/S60ZBTPG smart plug met energiemonitoring.",
+    "fr": "✨ NOUVEAU: Prise Sonoff S60ZBTPF/S60ZBTPG avec mesure d'énergie.",
+    "de": "✨ NEU: Sonoff S60ZBTPF/S60ZBTPG Smart Plug mit Energiemessung."
+  },
   "5.5.535": {
     "en": "🧹 DEEP CLEANUP: Analyzed 50 commits, fixed device classification conflicts. Removed _TZ321C_fkzihax8 from motion_sensor/climate_sensor (mmWave radar→presence_sensor_radar ONLY). Added _TZ3000_qgwcxxws to button_wireless_4. Removed 26 IR Blaster IDs from climate_sensor.",
     "nl": "🧹 DIEPE OPRUIMING: Device classificatie conflicten opgelost.",
