@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.527** | 🔥 CRITICAL PAIRING FIX: PG-S11Z smoke detector (_TZE284_rccxox8p TS0601) - E... |
 | **v5.5.526** | 🔧 CRITICAL FIX: GitHub Issue #97 - _TZ321C_fkzihax8 TS0225 MOVED to motion_s... |
 | **v5.5.525** | DEPRECATED: Incorrect fix for _TZ321C_fkzihax8 - see v5.5.526 |
 | **v5.5.524** | FIX: HOBEIAN button battery capability check (prevent crash after Intelligent... |
@@ -78,7 +79,6 @@
 | **v5.5.520** | 🔧 MISCLASSIFICATION FIXES: Removed wrongly classified IDs from climate_senso... |
 | **v5.5.519** | 🔧 FIXES: (1) _TZ321C_fkzihax8 vs _TZ321C_fkzihaxe8 CORRECTED: Without 'e'=IA... |
 | **v5.5.518** | 🔧 MAJOR FIX NoroddH _TZ321C_fkzihax8: LeapMMW 5.8G radar is IAS Zone + Tuya ... |
-| **v5.5.517** | 🔧 FORUM FIXES: (1) TS0044 4-gang button: Fixed malformed capabilities causin... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
