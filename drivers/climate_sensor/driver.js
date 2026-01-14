@@ -44,11 +44,13 @@ class ClimateSensorDriver extends ZigBeeDriver {
     this._climate_temperature_isCondition = this.homey.flow.getDeviceConditionCard('climate_temperature_is');
     this._climate_temperature_isCondition.registerRunListener(async (args) => {
       const { device } = args;
+      if (!device) throw new Error('Device not found');
       return device.getCapabilityValue('measure_temperature') === true;
     });
     this._climate_humidity_isCondition = this.homey.flow.getDeviceConditionCard('climate_humidity_is');
     this._climate_humidity_isCondition.registerRunListener(async (args) => {
       const { device } = args;
+      if (!device) throw new Error('Device not found');
       return device.getCapabilityValue('measure_humidity') === true;
     });
     

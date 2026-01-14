@@ -15,6 +15,7 @@ class MotionSensorDriver extends ZigBeeDriver {
       this._motionActiveCondition = this.homey.flow.getDeviceConditionCard('motion_sensor_motion_active');
       this._motionActiveCondition?.registerRunListener(async (args) => {
         const { device } = args;
+        if (!device) throw new Error('Device not found');
         return device.getCapabilityValue('alarm_motion') === true;
       });
     } catch (e) {
