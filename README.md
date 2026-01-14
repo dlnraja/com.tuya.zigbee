@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.525** | FIX: GitHub Issue #97 - _TZ321C_fkzihax8 TS0225 5.8G Radar IAS Zone enrollmen... |
 | **v5.5.524** | FIX: HOBEIAN button battery capability check (prevent crash after Intelligent... |
 | **v5.5.523** | 🔧 FIXES: (1) smoke_detector_advanced pairing FIXED - broken pair flow causin... |
 | **v5.5.522** | 🔧 FIXES: (1) smoke_detector_advanced pairing FIXED - broken pair flow causin... |
@@ -78,7 +79,6 @@
 | **v5.5.518** | 🔧 MAJOR FIX NoroddH _TZ321C_fkzihax8: LeapMMW 5.8G radar is IAS Zone + Tuya ... |
 | **v5.5.517** | 🔧 FORUM FIXES: (1) TS0044 4-gang button: Fixed malformed capabilities causin... |
 | **v5.5.516** | 🔧 IR Blaster: Enhanced diagnostic logging for learning issues (FrankP). Show... |
-| **v5.5.515** | 🔧 FORUM FIXES: (1) Lasse_K: HOBEIAN ZG-222Z water leak sensor added. (2) Nor... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
