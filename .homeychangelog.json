@@ -1,4 +1,10 @@
 {
+  "5.5.538": {
+    "en": "🔧 IAS ZONE FIX: GitHub #97 NoroddH _TZ321C_fkzihax8 5.8G Radar - Enhanced IAS Zone enrollment with retry mechanism, verification, auto re-enrollment if lost. Fixes 'notEnrolled' status persistence issues.",
+    "nl": "🔧 IAS ZONE FIX: Verbeterde IAS Zone enrollment met retry en auto re-enrollment.",
+    "fr": "🔧 FIX IAS ZONE: Enrollment IAS Zone amélioré avec retry et re-enrollment automatique.",
+    "de": "🔧 IAS ZONE FIX: Verbesserte IAS Zone Enrollment mit Retry und Auto Re-Enrollment."
+  },
   "5.5.537": {
     "en": "✨ NEW DEVICE: COOLO CS-201Z soil sensor (forum #961). Features: soil moisture, temperature, humidity, battery, water shortage alarm.",
     "nl": "✨ NIEUW: COOLO CS-201Z bodemsensor toegevoegd.",
