@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.535** | 🧹 DEEP CLEANUP: Analyzed 50 commits, fixed device classification conflicts. ... |
 | **v5.5.534** | 🚨 CRITICAL SDK3 FIX: (1) ALL button drivers (1-8 gang) - FlowCardHelper fixe... |
 | **v5.5.533** | 🔧 HARTMUT FIX (#925/#955): TS0726/_TZ3002_pzao9ls1 4-gang switch - REMOVED f... |
 | **v5.5.532** | 🔧 CONTACT SENSOR FIX (Lasse_K #945): Inverted alarm_contact logic corrected ... |
@@ -78,7 +79,6 @@
 | **v5.5.528** | 🔧 CRITICAL FLOW CARDS FIX: 'Cannot get device by id' error - Added device va... |
 | **v5.5.527** | 🔥 CRITICAL PAIRING FIX: PG-S11Z smoke detector (_TZE284_rccxox8p TS0601) - E... |
 | **v5.5.526** | 🔧 CRITICAL FIX: GitHub Issue #97 - _TZ321C_fkzihax8 TS0225 MOVED to motion_s... |
-| **v5.5.525** | DEPRECATED: Incorrect fix for _TZ321C_fkzihax8 - see v5.5.526 |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
