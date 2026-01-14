@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.530** | 🔧 CRITICAL FLOW CARDS FIX: Complete rewrite of motion_sensor and climate_sen... |
 | **v5.5.529** | 🚨 CRITICAL MANUFACTURERNAME CONFLICTS FIX: _TZE200_rhgsbacq (4-in-1 multisen... |
 | **v5.5.528** | 🔧 CRITICAL FLOW CARDS FIX: 'Cannot get device by id' error - Added device va... |
 | **v5.5.527** | 🔥 CRITICAL PAIRING FIX: PG-S11Z smoke detector (_TZE284_rccxox8p TS0601) - E... |
@@ -78,7 +79,6 @@
 | **v5.5.523** | 🔧 FIXES: (1) smoke_detector_advanced pairing FIXED - broken pair flow causin... |
 | **v5.5.522** | 🔧 FIXES: (1) smoke_detector_advanced pairing FIXED - broken pair flow causin... |
 | **v5.5.521** | 🔬 DIAGNOSTIC FIXES: (1) _TZE200_crq3r3la presence sensor: Already configured... |
-| **v5.5.520** | 🔧 MISCLASSIFICATION FIXES: Removed wrongly classified IDs from climate_senso... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
