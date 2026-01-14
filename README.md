@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.531** | 🔧 FORUM FIXES: (1) Cam TS0041/_TZ3000_5bpeda8u - MOVED from button_wireless_... |
 | **v5.5.530** | 🔧 CRITICAL FLOW CARDS FIX: Complete rewrite of motion_sensor and climate_sen... |
 | **v5.5.529** | 🚨 CRITICAL MANUFACTURERNAME CONFLICTS FIX: _TZE200_rhgsbacq (4-in-1 multisen... |
 | **v5.5.528** | 🔧 CRITICAL FLOW CARDS FIX: 'Cannot get device by id' error - Added device va... |
@@ -78,7 +79,6 @@
 | **v5.5.524** | FIX: HOBEIAN button battery capability check (prevent crash after Intelligent... |
 | **v5.5.523** | 🔧 FIXES: (1) smoke_detector_advanced pairing FIXED - broken pair flow causin... |
 | **v5.5.522** | 🔧 FIXES: (1) smoke_detector_advanced pairing FIXED - broken pair flow causin... |
-| **v5.5.521** | 🔬 DIAGNOSTIC FIXES: (1) _TZE200_crq3r3la presence sensor: Already configured... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
