@@ -1,16 +1,18 @@
 'use strict';
 
-const { Driver } = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 /**
- * v5.5.362: Enhanced IR Blaster Driver with robust error handling
+ * v5.5.534: Enhanced IR Blaster Driver - FIXED to use ZigBeeDriver + await super.onInit()
+ * v5.5.362: Original - used Driver instead of ZigBeeDriver (caused FrankP issue #950)
  * CRITICAL FIX: All getActionCard/getTriggerCard/getConditionCard calls wrapped in try-catch
  * to prevent driver crash when flow cards are missing (diagnostic reports #7cb5ca58 #5dc85d82)
  */
-class IrBlasterDriver extends Driver {
+class IrBlasterDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('Enhanced IR Blaster driver initializing...');
+    await super.onInit(); // v5.5.534: SDK3 CRITICAL - must call super first!
+    this.log('Enhanced IR Blaster driver v5.5.534 initializing...');
 
     // v5.5.362: Register flow cards with robust error handling
     try {

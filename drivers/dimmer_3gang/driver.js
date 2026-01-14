@@ -1,10 +1,14 @@
 'use strict';
 
-const { Driver } = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class Dimmer3GangDriver extends Driver {
+/**
+ * v5.5.534: FIXED to use ZigBeeDriver + await super.onInit()
+ */
+class Dimmer3GangDriver extends ZigBeeDriver {
   async onInit() {
-    this.log('3-Gang Dimmer Driver initialized');
+    await super.onInit(); // v5.5.534: SDK3 CRITICAL
+    this.log('3-Gang Dimmer Driver v5.5.534 initialized');
   }
 }
 
