@@ -1,4 +1,10 @@
 {
+  "5.5.533": {
+    "en": "🔧 HARTMUT FIX (#925/#955): TS0726/_TZ3002_pzao9ls1 4-gang switch - REMOVED from switch_2gang and climate_sensor (was wrongly classified). Now ONLY in switch_4gang. RE-PAIR your 4-gang switches!",
+    "nl": "🔧 HARTMUT FIX: TS0726 4-gang switch naar juiste driver. RE-PAIREN vereist!",
+    "fr": "🔧 FIX HARTMUT: Switch 4-gang TS0726 déplacé vers bon driver. RE-APPAIRER requis!",
+    "de": "🔧 HARTMUT FIX: TS0726 4-Gang Schalter zum richtigen Treiber. NEU PAIREN erforderlich!"
+  },
   "5.5.532": {
     "en": "🔧 CONTACT SENSOR FIX (Lasse_K #945): Inverted alarm_contact logic corrected per Zigbee2MQTT. Now: door OPEN = alarm ON, door CLOSED = alarm OFF. RE-PAIR your contact sensors!",
     "nl": "🔧 CONTACT SENSOR FIX: Logica gecorrigeerd. Deur OPEN = alarm AAN.",
