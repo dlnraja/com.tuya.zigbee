@@ -13,9 +13,7 @@
     "measure_temperature",
     "measure_humidity",
     "measure_battery",
-    "alarm_generic",
-    "measure_voc",
-    "measure_formaldehyde"
+    "alarm_generic"
   ],
   "capabilitiesOptions": {
     "alarm_generic": {

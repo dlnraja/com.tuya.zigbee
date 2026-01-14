@@ -3,58 +3,76 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 /**
- * ClimateSensorDriver - v5.3.86 FIXED
- *
- * CRITICAL: This driver prevents phantom sub-device creation.
- *
- * The problem: homey-zigbeedriver creates sub-devices even when subDevices: []
- * is set in driver.compose.json. This happens because:
- * 1. Device wake-up can trigger re-registration
- * 2. App restart can trigger re-pairing
- * 3. ZigBee stack events can create duplicates
- *
- * Solution: Override ALL device creation methods and strictly filter.
+ * ClimateSensorDriver - v5.5.530 FIXED
+ * 
+ * CRITICAL FIXES:
+ * 1. Flow cards registered in onInit (NOT onPairListDevices)
+ * 2. Correct flow card IDs matching driver.flow.compose.json
+ * 3. Device validation to prevent "Cannot get device by id" error
+ * 4. Prevents phantom sub-device creation
  */
 class ClimateSensorDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║    CLIMATE SENSOR DRIVER v5.3.86 - WORKING                  ║');
-    this.log('╚══════════════════════════════════════════════════════════════╝');
+    await super.onInit();
+    this.log('ClimateSensorDriver v5.5.530 initializing...');
 
     // Track IEEE addresses to prevent duplicates
     this._registeredIeeeAddresses = new Set();
+
+    try {
+      // ═══════════════════════════════════════════════════════════════
+      // TRIGGER CARDS - IDs must match driver.flow.compose.json
+      // ═══════════════════════════════════════════════════════════════
+      this.temperatureChangedTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_temperature_changed');
+      this.humidityChangedTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_humidity_changed');
+      this.batteryLowTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_battery_low');
+      this.tempAlarmHighTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_temperature_alarm_high');
+      this.tempAlarmLowTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_temperature_alarm_low');
+      this.humidityAlarmHighTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_humidity_alarm_high');
+      this.humidityAlarmLowTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_humidity_alarm_low');
+
+      // ═══════════════════════════════════════════════════════════════
+      // CONDITION CARDS - with device validation
+      // ═══════════════════════════════════════════════════════════════
+      this.tempAboveCondition = this.homey.flow.getConditionCard('climate_sensor_temperature_above');
+      this.tempAboveCondition?.registerRunListener(async (args) => {
+        if (!args.device) throw new Error('Device not found');
+        const temp = args.device.getCapabilityValue('measure_temperature');
+        return temp !== null && temp > args.temp;
+      });
+
+      this.tempBelowCondition = this.homey.flow.getConditionCard('climate_sensor_temperature_below');
+      this.tempBelowCondition?.registerRunListener(async (args) => {
+        if (!args.device) throw new Error('Device not found');
+        const temp = args.device.getCapabilityValue('measure_temperature');
+        return temp !== null && temp < args.temp;
+      });
+
+      this.humidityAboveCondition = this.homey.flow.getConditionCard('climate_sensor_humidity_above');
+      this.humidityAboveCondition?.registerRunListener(async (args) => {
+        if (!args.device) throw new Error('Device not found');
+        const humidity = args.device.getCapabilityValue('measure_humidity');
+        return humidity !== null && humidity > args.humidity;
+      });
+
+      this.humidityBelowCondition = this.homey.flow.getConditionCard('climate_sensor_humidity_below');
+      this.humidityBelowCondition?.registerRunListener(async (args) => {
+        if (!args.device) throw new Error('Device not found');
+        const humidity = args.device.getCapabilityValue('measure_humidity');
+        return humidity !== null && humidity < args.humidity;
+      });
+
+      this.log('ClimateSensorDriver v5.5.530 ✅ All flow cards registered');
+    } catch (err) {
+      this.error('ClimateSensorDriver flow card registration failed:', err.message);
+    }
   }
 
   /**
    * v5.3.79: AGGRESSIVE FIX - Prevent ANY sub-device creation
    */
   async onPairListDevices(devices) {
-    
-    // Register flow triggers
-    this._climate_temperature_changedTrigger = this.homey.flow.getDeviceTriggerCard('climate_temperature_changed');
-    this._climate_humidity_changedTrigger = this.homey.flow.getDeviceTriggerCard('climate_humidity_changed');
-    this._climate_temperature_aboveTrigger = this.homey.flow.getDeviceTriggerCard('climate_temperature_above');
-    this._climate_temperature_belowTrigger = this.homey.flow.getDeviceTriggerCard('climate_temperature_below');
-    this._climate_humidity_aboveTrigger = this.homey.flow.getDeviceTriggerCard('climate_humidity_above');
-    this._climate_humidity_belowTrigger = this.homey.flow.getDeviceTriggerCard('climate_humidity_below');
-    this._climate_battery_lowTrigger = this.homey.flow.getDeviceTriggerCard('climate_battery_low');
-    
-    // Register flow conditions
-    this._climate_temperature_isCondition = this.homey.flow.getDeviceConditionCard('climate_temperature_is');
-    this._climate_temperature_isCondition.registerRunListener(async (args) => {
-      const { device } = args;
-      if (!device) throw new Error('Device not found');
-      return device.getCapabilityValue('measure_temperature') === true;
-    });
-    this._climate_humidity_isCondition = this.homey.flow.getDeviceConditionCard('climate_humidity_is');
-    this._climate_humidity_isCondition.registerRunListener(async (args) => {
-      const { device } = args;
-      if (!device) throw new Error('Device not found');
-      return device.getCapabilityValue('measure_humidity') === true;
-    });
-    
-    this.log('climate_sensor: Flow cards registered');
     this.log('[PAIR] Raw devices from Zigbee:', devices?.length || 0);
 
     if (!devices || devices.length === 0) {
