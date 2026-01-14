@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Pressure"
+  },
+  "units": {
+    "en": "hPa"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "insights": true
+}

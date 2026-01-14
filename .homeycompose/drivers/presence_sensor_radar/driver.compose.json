@@ -8,7 +8,6 @@
   "class": "sensor",
   "capabilities": [
     "alarm_motion",
-    "alarm_human",
     "measure_luminance",
     "measure_battery",
     "measure_distance"

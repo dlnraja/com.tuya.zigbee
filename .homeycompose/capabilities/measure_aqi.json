@@ -1,0 +1,10 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Air Quality Index"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "insights": true
+}

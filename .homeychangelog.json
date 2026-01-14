@@ -1,4 +1,10 @@
 {
+  "5.5.539": {
+    "en": "✨ NEW DRIVER: Ceiling Presence Sensor (230V) with relay control for MTG075-ZB-RL and similar devices (Ricardo_Lenior). Includes relay on/off, presence detection, luminance, distance. No battery options for mains-powered devices.",
+    "nl": "✨ NIEUW: Plafond Aanwezigheidssensor (230V) met relais besturing.",
+    "fr": "✨ NOUVEAU: Capteur de Présence Plafond (230V) avec contrôle relais.",
+    "de": "✨ NEU: Decken-Präsenzsensor (230V) mit Relaissteuerung."
+  },
   "5.5.538": {
     "en": "🔧 IAS ZONE FIX: GitHub #97 NoroddH _TZ321C_fkzihax8 5.8G Radar - Enhanced IAS Zone enrollment with retry mechanism, verification, auto re-enrollment if lost. Fixes 'notEnrolled' status persistence issues.",
     "nl": "🔧 IAS ZONE FIX: Verbeterde IAS Zone enrollment met retry en auto re-enrollment.",
