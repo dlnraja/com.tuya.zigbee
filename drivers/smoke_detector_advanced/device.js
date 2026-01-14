@@ -122,14 +122,65 @@ class SmokeDetectorAdvancedDevice extends HybridSensorBase {
       15: { capability: 'measure_battery', divisor: 1 },
 
       // ═══════════════════════════════════════════════════════════════════
-      // FAULT & CONTROL FEATURES
+      // FAULT & CONTROL FEATURES (v5.5.529: Enhanced Z2M compatibility)
+      // Sources: Zigbee2MQTT TS0601_smoke_1-5 definitions
       // ═══════════════════════════════════════════════════════════════════
-      11: { capability: null, internal: 'fault_alarm' },
-      16: { capability: null, setting: 'silence', writable: true },
-      13: { capability: null, setting: 'alarm_enable', writable: true },
-      8: { capability: null, setting: 'self_test', writable: true },
-      5: { capability: null, setting: 'alarm_volume' },
-      9: { capability: null, internal: 'smoke_concentration' },
+      11: { 
+        capability: null, 
+        internal: 'fault_alarm',
+        transform: (v, device) => {
+          // Log fault status for diagnostics
+          if (device) device.log?.(`[SMOKE] DP11 fault_alarm: ${v}`);
+          return v;
+        }
+      },
+      16: { 
+        capability: null, 
+        setting: 'silence_alarm', 
+        writable: true,
+        transform: (v, device) => {
+          if (device) device.log?.(`[SMOKE] DP16 silence: ${v ? 'ACTIVE' : 'INACTIVE'}`);
+          return v;
+        }
+      },
+      13: { 
+        capability: null, 
+        setting: 'alarm_enable', 
+        writable: true,
+        transform: (v, device) => {
+          if (device) device.log?.(`[SMOKE] DP13 alarm_enable: ${v ? 'ENABLED' : 'DISABLED'}`);
+          return v;
+        }
+      },
+      8: { 
+        capability: null, 
+        setting: 'self_test', 
+        writable: true,
+        transform: (v, device) => {
+          if (device) device.log?.(`[SMOKE] DP8 self_test: ${v ? 'TESTING' : 'IDLE'}`);
+          return v;
+        }
+      },
+      5: { 
+        capability: null, 
+        setting: 'alarm_volume',
+        transform: (v, device) => {
+          // Volume levels: low=0, medium=1, high=2
+          const volumeMap = { 0: 'low', 1: 'medium', 2: 'high' };
+          const volume = volumeMap[v] ?? 'unknown';
+          if (device) device.log?.(`[SMOKE] DP5 alarm_volume: ${v} (${volume})`);
+          return v;
+        }
+      },
+      9: { 
+        capability: null, 
+        internal: 'smoke_concentration',
+        transform: (v, device) => {
+          // Smoke concentration in ppm or percentage
+          if (device) device.log?.(`[SMOKE] DP9 smoke_concentration: ${v}`);
+          return v;
+        }
+      },
     };
   }
 
