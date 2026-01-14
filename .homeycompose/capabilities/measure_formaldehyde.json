@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Formaldehyde"
+  },
+  "units": {
+    "en": "mg/m³"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "insights": true
+}

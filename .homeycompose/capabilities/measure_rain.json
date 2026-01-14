@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Rain"
+  },
+  "units": {
+    "en": "mm"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "insights": true
+}
