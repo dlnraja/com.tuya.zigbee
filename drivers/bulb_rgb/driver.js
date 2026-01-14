@@ -13,7 +13,8 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
 class SmartBulbRgbDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('SmartBulbRgbDriver v5.5.238 initialized');
+    await super.onInit();
+    this.log('SmartBulbRgbDriver v5.5.531 initialized');
 
     // Register flow card: Set Light Effect
     this._registerSetLightEffectAction();
