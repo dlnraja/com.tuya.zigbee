@@ -1,4 +1,10 @@
 {
+  "5.5.535": {
+    "en": "🧹 DEEP CLEANUP: Analyzed 50 commits, fixed device classification conflicts. Removed _TZ321C_fkzihax8 from motion_sensor/climate_sensor (mmWave radar→presence_sensor_radar ONLY). Added _TZ3000_qgwcxxws to button_wireless_4. Removed 26 IR Blaster IDs from climate_sensor.",
+    "nl": "🧹 DIEPE OPRUIMING: Device classificatie conflicten opgelost.",
+    "fr": "🧹 NETTOYAGE PROFOND: Conflits de classification des appareils corrigés.",
+    "de": "🧹 TIEFE BEREINIGUNG: Geräteklassifizierungskonflikte behoben."
+  },
   "5.5.534": {
     "en": "🚨 CRITICAL SDK3 FIX: (1) ALL button drivers (1-8 gang) - FlowCardHelper fixed to generate correct IDs. (2) ir_blaster, water_tank_monitor, usb_dongle_dual_repeater, dimmer_3gang - Changed from Driver to ZigBeeDriver + await super.onInit(). Fixes FrankP IR remote #950 and button issues!",
     "nl": "🚨 KRITIEKE SDK3 FIX: Alle button + IR drivers gerepareerd met ZigBeeDriver!",
