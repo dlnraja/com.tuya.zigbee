@@ -1,0 +1,203 @@
+{
+  "triggers": [
+    {
+      "id": "button_wireless_4_button_4gang_button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] pressed",
+        "fr": "Bouton [[button]] appuyé"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
+      ]
+    },
+    {
+      "id": "button_wireless_4_button_4gang_button_double_press",
+      "title": {
+        "en": "Button double-pressed",
+        "fr": "Bouton double-cliqué"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] double-pressed",
+        "fr": "Bouton [[button]] double-cliqué"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
+      ]
+    },
+    {
+      "id": "button_wireless_4_button_4gang_button_long_press",
+      "title": {
+        "en": "Button long-pressed",
+        "fr": "Bouton pressé longtemps"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] long-pressed",
+        "fr": "Bouton [[button]] pressé longtemps"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
+      ]
+    },
+    {
+      "id": "button_wireless_4_button_4gang_button_multi_press",
+      "title": {
+        "en": "Button multi-pressed",
+        "fr": "Bouton multi-cliqué"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] pressed [[count]] times",
+        "fr": "Bouton [[button]] appuyé [[count]] fois"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        },
+        {
+          "name": "count",
+          "type": "number",
+          "title": {
+            "en": "Press count",
+            "fr": "Nombre de pressions"
+          },
+          "example": 3
+        }
+      ]
+    },
+    {
+      "id": "button_wireless_4_button_4gang_button_1_pressed",
+      "title": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 appuyé"
+      }
+    },
+    {
+      "id": "button_wireless_4_button_4gang_button_1_double",
+      "title": {
+        "en": "Button 1 double-pressed",
+        "fr": "Bouton 1 double-cliqué"
+      }
+    },
+    {
+      "id": "button_wireless_4_button_4gang_button_1_long",
+      "title": {
+        "en": "Button 1 long-pressed",
+        "fr": "Bouton 1 pressé longtemps"
+      }
+    },
+    {
+      "id": "button_wireless_4_button_4gang_button_2_pressed",
+      "title": {
+        "en": "Button 2 pressed",
+        "fr": "Bouton 2 appuyé"
+      }
+    },
+    {
+      "id": "button_wireless_4_button_4gang_button_2_double",
+      "title": {
+        "en": "Button 2 double-pressed",
+        "fr": "Bouton 2 double-cliqué"
+      }
+    },
+    {
+      "id": "button_wireless_4_button_4gang_button_2_long",
+      "title": {
+        "en": "Button 2 long-pressed",
+        "fr": "Bouton 2 pressé longtemps"
+      }
+    },
+    {
+      "id": "button_wireless_4_button_4gang_button_3_pressed",
+      "title": {
+        "en": "Button 3 pressed",
+        "fr": "Bouton 3 appuyé"
+      }
+    },
+    {
+      "id": "button_wireless_4_button_4gang_button_3_double",
+      "title": {
+        "en": "Button 3 double-pressed",
+        "fr": "Bouton 3 double-cliqué"
+      }
+    },
+    {
+      "id": "button_wireless_4_button_4gang_button_3_long",
+      "title": {
+        "en": "Button 3 long-pressed",
+        "fr": "Bouton 3 pressé longtemps"
+      }
+    },
+    {
+      "id": "button_wireless_4_button_4gang_button_4_pressed",
+      "title": {
+        "en": "Button 4 pressed",
+        "fr": "Bouton 4 appuyé"
+      }
+    },
+    {
+      "id": "button_wireless_4_button_4gang_button_4_double",
+      "title": {
+        "en": "Button 4 double-pressed",
+        "fr": "Bouton 4 double-cliqué"
+      }
+    },
+    {
+      "id": "button_wireless_4_button_4gang_button_4_long",
+      "title": {
+        "en": "Button 4 long-pressed",
+        "fr": "Bouton 4 pressé longtemps"
+      }
+    },
+    {
+      "id": "button_wireless_4_button_4gang_measure_battery_changed",
+      "title": {
+        "en": "Battery level changed",
+        "fr": "Niveau batterie changé"
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "Battery (%)",
+            "fr": "Batterie (%)"
+          },
+          "example": 75
+        }
+      ]
+    }
+  ]
+}

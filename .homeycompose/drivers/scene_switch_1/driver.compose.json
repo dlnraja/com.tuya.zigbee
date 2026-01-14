@@ -1,0 +1,64 @@
+{
+  "name": {
+    "en": "Scene Switch 1-Gang",
+    "fr": "Interrupteur Scène 1 Bouton"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "button.1",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "maintenanceAction": true,
+      "getable": false,
+      "setable": false
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_peszejy7",
+      "_TZ3000_qzjcsmar",
+      "_TZ3000_tkusjmue"
+    ],
+    "productId": [
+      "TS0203"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          5,
+          6
+        ],
+        "bindings": [
+          1,
+          5,
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/scene_switch_1/assets/images/small.png",
+    "large": "drivers/scene_switch_1/assets/images/large.png",
+    "xlarge": "drivers/scene_switch_1/assets/images/xlarge.png"
+  },
+  "id": "scene_switch_1",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  }
+}

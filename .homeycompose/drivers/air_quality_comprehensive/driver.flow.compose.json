@@ -1,0 +1,59 @@
+{
+  "triggers": [
+    {
+      "id": "air_quality_comprehensive_comprehensive_air_monitor_measure_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
+          "example": 20.5
+        }
+      ]
+    },
+    {
+      "id": "air_quality_comprehensive_comprehensive_air_monitor_measure_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity",
+            "fr": "Humidité"
+          },
+          "example": 65
+        }
+      ]
+    },
+    {
+      "id": "air_quality_comprehensive_comprehensive_air_monitor_measure_battery_changed",
+      "title": {
+        "en": "Battery level changed",
+        "fr": "Niveau batterie changé"
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "Battery (%)",
+            "fr": "Batterie (%)"
+          },
+          "example": 75
+        }
+      ]
+    }
+  ]
+}
+
