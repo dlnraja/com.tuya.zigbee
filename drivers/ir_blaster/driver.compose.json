@@ -7,7 +7,6 @@
   "class": "remote",
   "capabilities": [
     "button.learn_ir",
-    "ir_code_received",
     "onoff"
   ],
   "capabilitiesOptions": {
