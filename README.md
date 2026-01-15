@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.545** | 🔧 Forum analysis #961-973: Added CK-BL702-MWS-01(7016) to presence_sensor_ra... |
 | **v5.5.544** | 🔧 FIX Lasse_K: Removed ZG-102Z/ZL/ZM from climate_sensor (conflict with cont... |
 | **v5.5.543** | 🔧 Forum analysis: Added _TZ3210_s8lvbbuc to bulb_rgbw (Fiek TS0505B). Verifi... |
 | **v5.5.542** | 🔧 CRITICAL FIX: Fixed HybridSwitchBase import error in 9 switch drivers (1-8... |
@@ -78,7 +79,6 @@
 | **v5.5.538** | 🔧 IAS ZONE FIX: GitHub #97 NoroddH _TZ321C_fkzihax8 5.8G Radar - Enhanced IA... |
 | **v5.5.537** | ✨ NEW DEVICE: COOLO CS-201Z soil sensor (forum #961). Features: soil moisture... |
 | **v5.5.536** | ✨ NEW DEVICE: Sonoff S60ZBTPF/S60ZBTPG smart plug with energy monitoring (Git... |
-| **v5.5.535** | 🧹 DEEP CLEANUP: Analyzed 50 commits, fixed device classification conflicts. ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
