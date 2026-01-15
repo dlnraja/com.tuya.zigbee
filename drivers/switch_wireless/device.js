@@ -1,5 +1,5 @@
 'use strict';
-const { HybridSwitchBase } = require('../../lib/devices/HybridSwitchBase');
+const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
 
 class SwitchWirelessDevice extends HybridSwitchBase {
   get mainsPowered() { return false; }
