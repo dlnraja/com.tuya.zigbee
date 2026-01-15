@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.557** | 📦 MANUFACTURER ID ENRICHMENT: Added BSEED 4-gang switch IDs (_TZ3000_s6ma1nh... |
 | **v5.5.556** | 🔇 STDERR FIX: All flow card errors now log to stdout only. Fixed VirtualButt... |
 | **v5.5.555** | 🚨 HOTFIX: Fixed critical syntax error in app.js causing app crash on startup... |
 | **v5.5.554** | 🎯 PRESENCE FIX: Added DP119 presence detection mapping to presence_sensor_ra... |
@@ -78,7 +79,6 @@
 | **v5.5.550** | 🔬 DEEP RESEARCH: Water leak sensor enriched with manufacturer-specific profi... |
 | **v5.5.549** | 🔧 FIX Lasse_K #978: Water leak sensor alarm not triggering. Some sensors use... |
 | **v5.5.548** | 🔧 FIX switch_4gang: Robust HybridSwitchBase loading to prevent 'Class extend... |
-| **v5.5.545** | 🔧 Forum analysis #961-973: Added CK-BL702-MWS-01(7016) to presence_sensor_ra... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
