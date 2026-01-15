@@ -1127,6 +1127,8 @@ const SENSOR_CONFIGS = {
       105: { cap: 'alarm_motion', type: 'presence_enum' },
       109: { cap: 'measure_distance', divisor: 100 },
       112: { cap: 'alarm_motion', type: 'presence_bool' },
+      // v5.5.554: DP119 presence detection (diagnostic report 725b1c78)
+      119: { cap: 'alarm_motion', type: 'presence_bool' },
     }
   },
 };
