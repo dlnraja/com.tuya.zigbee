@@ -1,38 +1,70 @@
 {
   "triggers": [
     {
-      "id": "doorbell_alarm_motion_true",
+      "id": "doorbell_button_pressed",
+      "highlight": true,
       "title": {
-        "en": "Motion detected",
-        "fr": "Mouvement détecté"
+        "en": "Doorbell pressed",
+        "nl": "Deurbel ingedrukt",
+        "fr": "Sonnette pressée",
+        "de": "Türklingel gedrückt"
+      },
+      "titleFormatted": {
+        "en": "Someone rang the doorbell!",
+        "nl": "Iemand heeft aangebeld!",
+        "fr": "Quelqu'un a sonné !",
+        "de": "Jemand hat geklingelt!"
+      },
+      "hint": {
+        "en": "Triggers when someone presses the doorbell button",
+        "nl": "Triggert wanneer iemand op de deurbel drukt",
+        "fr": "Se déclenche quand quelqu'un appuie sur la sonnette",
+        "de": "Wird ausgelöst, wenn jemand die Türklingel drückt"
       }
     },
     {
-      "id": "doorbell_alarm_motion_false",
+      "id": "doorbell_motion_detected",
       "title": {
-        "en": "No motion",
-        "fr": "Aucun mouvement"
+        "en": "Motion at door",
+        "nl": "Beweging bij deur",
+        "fr": "Mouvement à la porte",
+        "de": "Bewegung an der Tür"
+      },
+      "hint": {
+        "en": "Triggers when motion is detected near the doorbell (if supported)",
+        "nl": "Triggert wanneer beweging wordt gedetecteerd bij de deurbel (indien ondersteund)",
+        "fr": "Se déclenche quand un mouvement est détecté près de la sonnette (si supporté)",
+        "de": "Wird ausgelöst, wenn Bewegung in der Nähe der Türklingel erkannt wird (falls unterstützt)"
       }
     },
     {
-      "id": "doorbell_alarm_contact_true",
+      "id": "doorbell_tamper_true",
       "title": {
-        "en": "Contact alarm activated",
-        "fr": "Alarme de contact activée"
+        "en": "Tamper alert",
+        "nl": "Sabotage alarm",
+        "fr": "Alerte sabotage",
+        "de": "Manipulationsalarm"
+      },
+      "hint": {
+        "en": "Triggers when the doorbell has been tampered with",
+        "nl": "Triggert wanneer er met de deurbel is geknoeid",
+        "fr": "Se déclenche quand la sonnette a été sabotée",
+        "de": "Wird ausgelöst, wenn die Türklingel manipuliert wurde"
       }
     },
     {
-      "id": "doorbell_alarm_contact_false",
-      "title": {
-        "en": "Contact alarm deactivated",
-        "fr": "Alarme de contact désactivée"
-      }
-    },
-    {
-      "id": "doorbell_measure_battery_changed",
+      "id": "doorbell_battery_changed",
       "title": {
         "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
+        "nl": "Batterijniveau veranderd",
+        "fr": "Niveau batterie changé",
+        "de": "Batteriestand geändert"
+      },
+      "titleFormatted": {
+        "en": "Battery level changed to [[battery]]%",
+        "nl": "Batterijniveau veranderd naar [[battery]]%",
+        "fr": "Niveau batterie changé à [[battery]]%",
+        "de": "Batteriestand geändert zu [[battery]]%"
       },
       "tokens": [
         {
@@ -40,11 +72,68 @@
           "type": "number",
           "title": {
             "en": "Battery (%)",
-            "fr": "Batterie (%)"
+            "nl": "Batterij (%)",
+            "fr": "Batterie (%)",
+            "de": "Batterie (%)"
           },
           "example": 75
         }
       ]
+    },
+    {
+      "id": "doorbell_battery_low",
+      "title": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "doorbell_battery_above",
+      "title": {
+        "en": "Battery !{{is|is not}} above",
+        "nl": "Batterij !{{is|is niet}} boven",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de",
+        "de": "Batterie !{{ist|ist nicht}} über"
+      },
+      "titleFormatted": {
+        "en": "Battery !{{is|is not}} above [[threshold]]%",
+        "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
+        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
+      },
+      "args": [
+        {
+          "name": "threshold",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": {
+            "en": "20"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "doorbell_ring_chime",
+      "title": {
+        "en": "Ring the chime",
+        "nl": "Laat de bel rinkelen",
+        "fr": "Faire sonner le carillon",
+        "de": "Glocke läuten"
+      },
+      "hint": {
+        "en": "Manually triggers the doorbell chime (if supported)",
+        "nl": "Laat de deurbel handmatig rinkelen (indien ondersteund)",
+        "fr": "Déclenche manuellement le carillon de la sonnette (si supporté)",
+        "de": "Löst die Türklingel manuell aus (falls unterstützt)"
+      }
     }
   ]
 }

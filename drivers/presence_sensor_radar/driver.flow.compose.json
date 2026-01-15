@@ -1,34 +1,175 @@
 {
   "triggers": [
     {
-      "id": "presence_sensor_radar_alarm_motion_true",
+      "id": "presence_sensor_radar_presence_detected",
+      "highlight": true,
+      "title": {
+        "en": "Presence detected",
+        "nl": "Aanwezigheid gedetecteerd",
+        "fr": "Présence détectée",
+        "de": "Anwesenheit erkannt"
+      },
+      "titleFormatted": {
+        "en": "Human presence detected in the room",
+        "nl": "Menselijke aanwezigheid gedetecteerd in de kamer",
+        "fr": "Présence humaine détectée dans la pièce",
+        "de": "Menschliche Anwesenheit im Raum erkannt"
+      },
+      "hint": {
+        "en": "Triggers when the mmWave radar detects human presence (even stationary)",
+        "nl": "Triggert wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
+        "fr": "Se déclenche quand le radar mmWave détecte une présence humaine (même immobile)",
+        "de": "Wird ausgelöst, wenn der mmWave-Radar menschliche Anwesenheit erkennt (auch stationär)"
+      }
+    },
+    {
+      "id": "presence_sensor_radar_presence_cleared",
+      "title": {
+        "en": "Presence cleared",
+        "nl": "Aanwezigheid opgeheven",
+        "fr": "Présence terminée",
+        "de": "Anwesenheit beendet"
+      },
+      "hint": {
+        "en": "Triggers when no human presence is detected for the configured timeout",
+        "nl": "Triggert wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
+        "fr": "Se déclenche quand aucune présence humaine n'est détectée pendant le délai configuré",
+        "de": "Wird ausgelöst, wenn für die konfigurierte Zeitüberschreitung keine menschliche Anwesenheit erkannt wird"
+      }
+    },
+    {
+      "id": "presence_sensor_radar_motion_detected",
       "title": {
         "en": "Motion detected",
-        "fr": "Mouvement détecté"
+        "nl": "Beweging gedetecteerd",
+        "fr": "Mouvement détecté",
+        "de": "Bewegung erkannt"
+      },
+      "hint": {
+        "en": "Triggers when active motion is detected (walking, moving)",
+        "nl": "Triggert wanneer actieve beweging wordt gedetecteerd (lopen, bewegen)",
+        "fr": "Se déclenche quand un mouvement actif est détecté (marche, mouvement)",
+        "de": "Wird ausgelöst, wenn aktive Bewegung erkannt wird (Gehen, Bewegen)"
       }
     },
     {
-      "id": "presence_sensor_radar_alarm_motion_false",
+      "id": "presence_sensor_radar_illuminance_changed",
       "title": {
-        "en": "No motion",
-        "fr": "Aucun mouvement"
-      }
-    },
-    {
-      "id": "presence_sensor_radar_measure_battery_changed",
-      "title": {
-        "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
+        "en": "Illuminance changed",
+        "nl": "Lichtsterkte veranderd",
+        "fr": "Luminosité changée",
+        "de": "Helligkeit geändert"
+      },
+      "titleFormatted": {
+        "en": "Illuminance changed to [[lux]] lux",
+        "nl": "Lichtsterkte veranderd naar [[lux]] lux",
+        "fr": "Luminosité changée à [[lux]] lux",
+        "de": "Helligkeit geändert zu [[lux]] lux"
       },
       "tokens": [
         {
-          "name": "battery",
+          "name": "lux",
           "type": "number",
           "title": {
-            "en": "Battery (%)",
-            "fr": "Batterie (%)"
+            "en": "Illuminance (lux)",
+            "nl": "Lichtsterkte (lux)",
+            "fr": "Luminosité (lux)",
+            "de": "Helligkeit (lux)"
           },
-          "example": 75
+          "example": 150
+        }
+      ]
+    },
+    {
+      "id": "presence_sensor_radar_distance_changed",
+      "title": {
+        "en": "Detection distance changed",
+        "nl": "Detectieafstand veranderd",
+        "fr": "Distance de détection changée",
+        "de": "Erkennungsabstand geändert"
+      },
+      "titleFormatted": {
+        "en": "Target distance changed to [[distance]] cm",
+        "nl": "Doelafstand veranderd naar [[distance]] cm",
+        "fr": "Distance cible changée à [[distance]] cm",
+        "de": "Zielentfernung geändert zu [[distance]] cm"
+      },
+      "tokens": [
+        {
+          "name": "distance",
+          "type": "number",
+          "title": {
+            "en": "Distance (cm)",
+            "nl": "Afstand (cm)",
+            "fr": "Distance (cm)",
+            "de": "Abstand (cm)"
+          },
+          "example": 200
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "presence_sensor_radar_is_present",
+      "title": {
+        "en": "Someone !{{is|is not}} present",
+        "nl": "Iemand !{{is|is niet}} aanwezig",
+        "fr": "Quelqu'un !{{est|n'est pas}} présent",
+        "de": "Jemand !{{ist|ist nicht}} anwesend"
+      }
+    },
+    {
+      "id": "presence_sensor_radar_illuminance_above",
+      "title": {
+        "en": "Illuminance !{{is|is not}} above",
+        "nl": "Lichtsterkte !{{is|is niet}} boven",
+        "fr": "Luminosité !{{est|n'est pas}} au-dessus de",
+        "de": "Helligkeit !{{ist|ist nicht}} über"
+      },
+      "titleFormatted": {
+        "en": "Illuminance !{{is|is not}} above [[lux]] lux",
+        "nl": "Lichtsterkte !{{is|is niet}} boven [[lux]] lux",
+        "fr": "Luminosité !{{est|n'est pas}} au-dessus de [[lux]] lux",
+        "de": "Helligkeit !{{ist|ist nicht}} über [[lux]] lux"
+      },
+      "args": [
+        {
+          "name": "lux",
+          "type": "number",
+          "min": 0,
+          "max": 10000,
+          "step": 10,
+          "placeholder": {
+            "en": "100"
+          }
+        }
+      ]
+    },
+    {
+      "id": "presence_sensor_radar_distance_within",
+      "title": {
+        "en": "Target !{{is|is not}} within distance",
+        "nl": "Doel !{{is|is niet}} binnen afstand",
+        "fr": "Cible !{{est|n'est pas}} dans la distance",
+        "de": "Ziel !{{ist|ist nicht}} innerhalb der Entfernung"
+      },
+      "titleFormatted": {
+        "en": "Target !{{is|is not}} within [[distance]] cm",
+        "nl": "Doel !{{is|is niet}} binnen [[distance]] cm",
+        "fr": "Cible !{{est|n'est pas}} dans [[distance]] cm",
+        "de": "Ziel !{{ist|ist nicht}} innerhalb von [[distance]] cm"
+      },
+      "args": [
+        {
+          "name": "distance",
+          "type": "number",
+          "min": 0,
+          "max": 800,
+          "step": 10,
+          "placeholder": {
+            "en": "300"
+          }
         }
       ]
     }

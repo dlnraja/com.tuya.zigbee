@@ -1,17 +1,70 @@
 {
   "triggers": [
     {
-      "id": "smoke_detector_advanced_smart_smoke_detector_advanced_alarm_smoke_true",
+      "id": "smoke_detector_advanced_alarm_smoke_true",
+      "highlight": true,
       "title": {
         "en": "Smoke detected",
-        "fr": "Fumée détectée"
+        "nl": "Rook gedetecteerd",
+        "fr": "Fumée détectée",
+        "de": "Rauch erkannt"
+      },
+      "titleFormatted": {
+        "en": "Smoke alarm triggered!",
+        "nl": "Rookalarm geactiveerd!",
+        "fr": "Alarme fumée déclenchée !",
+        "de": "Rauchalarm ausgelöst!"
+      },
+      "hint": {
+        "en": "Triggers when smoke is detected - CRITICAL SAFETY ALERT",
+        "nl": "Triggert wanneer rook wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
+        "fr": "Se déclenche quand de la fumée est détectée - ALERTE DE SÉCURITÉ CRITIQUE",
+        "de": "Wird ausgelöst, wenn Rauch erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
       }
     },
     {
-      "id": "smoke_detector_advanced_smart_smoke_detector_advanced_measure_battery_changed",
+      "id": "smoke_detector_advanced_alarm_smoke_false",
+      "title": {
+        "en": "Smoke cleared",
+        "nl": "Rook opgeheven",
+        "fr": "Fumée dissipée",
+        "de": "Rauch verschwunden"
+      },
+      "hint": {
+        "en": "Triggers when smoke is no longer detected",
+        "nl": "Triggert wanneer er geen rook meer wordt gedetecteerd",
+        "fr": "Se déclenche quand la fumée n'est plus détectée",
+        "de": "Wird ausgelöst, wenn kein Rauch mehr erkannt wird"
+      }
+    },
+    {
+      "id": "smoke_detector_advanced_alarm_tamper_true",
+      "title": {
+        "en": "Tamper alert",
+        "nl": "Sabotage alarm",
+        "fr": "Alerte sabotage",
+        "de": "Manipulationsalarm"
+      },
+      "hint": {
+        "en": "Triggers when the detector has been tampered with",
+        "nl": "Triggert wanneer er met de detector is geknoeid",
+        "fr": "Se déclenche quand le détecteur a été saboté",
+        "de": "Wird ausgelöst, wenn der Melder manipuliert wurde"
+      }
+    },
+    {
+      "id": "smoke_detector_advanced_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
+        "nl": "Batterijniveau veranderd",
+        "fr": "Niveau batterie changé",
+        "de": "Batteriestand geändert"
+      },
+      "titleFormatted": {
+        "en": "Battery level changed to [[battery]]%",
+        "nl": "Batterijniveau veranderd naar [[battery]]%",
+        "fr": "Niveau batterie changé à [[battery]]%",
+        "de": "Batteriestand geändert zu [[battery]]%"
       },
       "tokens": [
         {
@@ -19,11 +72,104 @@
           "type": "number",
           "title": {
             "en": "Battery (%)",
-            "fr": "Batterie (%)"
+            "nl": "Batterij (%)",
+            "fr": "Batterie (%)",
+            "de": "Batterie (%)"
           },
           "example": 75
         }
       ]
+    },
+    {
+      "id": "smoke_detector_advanced_battery_low",
+      "title": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      },
+      "hint": {
+        "en": "Triggers when battery drops below threshold - Replace battery soon!",
+        "nl": "Triggert wanneer de batterij onder de drempel zakt - Vervang binnenkort de batterij!",
+        "fr": "Se déclenche quand la batterie passe sous le seuil - Remplacez la batterie bientôt !",
+        "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt - Batterie bald ersetzen!"
+      }
+    },
+    {
+      "id": "smoke_detector_advanced_test_triggered",
+      "title": {
+        "en": "Test button pressed",
+        "nl": "Testknop ingedrukt",
+        "fr": "Bouton test pressé",
+        "de": "Testtaste gedrückt"
+      },
+      "hint": {
+        "en": "Triggers when the test button is pressed on the detector",
+        "nl": "Triggert wanneer de testknop op de detector wordt ingedrukt",
+        "fr": "Se déclenche quand le bouton test est pressé sur le détecteur",
+        "de": "Wird ausgelöst, wenn die Testtaste am Melder gedrückt wird"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "smoke_detector_advanced_smoke_detected",
+      "title": {
+        "en": "Smoke !{{is|is not}} detected",
+        "nl": "Rook !{{is|is niet}} gedetecteerd",
+        "fr": "Fumée !{{est|n'est pas}} détectée",
+        "de": "Rauch !{{ist|ist nicht}} erkannt"
+      }
+    },
+    {
+      "id": "smoke_detector_advanced_battery_above",
+      "title": {
+        "en": "Battery !{{is|is not}} above",
+        "nl": "Batterij !{{is|is niet}} boven",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de",
+        "de": "Batterie !{{ist|ist nicht}} über"
+      },
+      "titleFormatted": {
+        "en": "Battery !{{is|is not}} above [[threshold]]%",
+        "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
+        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
+      },
+      "args": [
+        {
+          "name": "threshold",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": {
+            "en": "20"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "smoke_detector_advanced_test_alarm",
+      "title": {
+        "en": "Test the alarm",
+        "nl": "Test het alarm",
+        "fr": "Tester l'alarme",
+        "de": "Alarm testen"
+      },
+      "titleFormatted": {
+        "en": "Test the smoke alarm",
+        "nl": "Test het rookalarm",
+        "fr": "Tester l'alarme fumée",
+        "de": "Rauchalarm testen"
+      },
+      "hint": {
+        "en": "Triggers a test on the smoke detector (if supported by device)",
+        "nl": "Start een test op de rookmelder (indien ondersteund door apparaat)",
+        "fr": "Déclenche un test sur le détecteur de fumée (si supporté par l'appareil)",
+        "de": "Löst einen Test am Rauchmelder aus (falls vom Gerät unterstützt)"
+      }
     }
   ]
 }

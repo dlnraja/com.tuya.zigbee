@@ -91,13 +91,65 @@
     {
       "id": "plug_energy_monitor_is_on",
       "title": {
-        "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "en": "Plug !{{is|is not}} on",
+        "nl": "Stekker !{{is|is niet}} aan",
+        "fr": "Prise !{{est|n'est pas}} allumée",
+        "de": "Stecker !{{ist|ist nicht}} an"
+      }
+    },
+    {
+      "id": "plug_energy_monitor_power_above",
+      "title": {
+        "en": "Power !{{is|is not}} above",
+        "nl": "Vermogen !{{is|is niet}} boven",
+        "fr": "Puissance !{{est|n'est pas}} au-dessus de",
+        "de": "Leistung !{{ist|ist nicht}} über"
       },
       "titleFormatted": {
-        "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
-      }
+        "en": "Power !{{is|is not}} above [[power]] W",
+        "nl": "Vermogen !{{is|is niet}} boven [[power]] W",
+        "fr": "Puissance !{{est|n'est pas}} au-dessus de [[power]] W",
+        "de": "Leistung !{{ist|ist nicht}} über [[power]] W"
+      },
+      "args": [
+        {
+          "name": "power",
+          "type": "number",
+          "min": 0,
+          "max": 3680,
+          "step": 10,
+          "placeholder": {
+            "en": "100"
+          }
+        }
+      ]
+    },
+    {
+      "id": "plug_energy_monitor_energy_above",
+      "title": {
+        "en": "Energy !{{is|is not}} above",
+        "nl": "Energie !{{is|is niet}} boven",
+        "fr": "Énergie !{{est|n'est pas}} au-dessus de",
+        "de": "Energie !{{ist|ist nicht}} über"
+      },
+      "titleFormatted": {
+        "en": "Energy !{{is|is not}} above [[energy]] kWh",
+        "nl": "Energie !{{is|is niet}} boven [[energy]] kWh",
+        "fr": "Énergie !{{est|n'est pas}} au-dessus de [[energy]] kWh",
+        "de": "Energie !{{ist|ist nicht}} über [[energy]] kWh"
+      },
+      "args": [
+        {
+          "name": "energy",
+          "type": "number",
+          "min": 0,
+          "max": 10000,
+          "step": 1,
+          "placeholder": {
+            "en": "10"
+          }
+        }
+      ]
     }
   ],
   "actions": [
@@ -105,21 +157,42 @@
       "id": "plug_energy_monitor_turn_on",
       "title": {
         "en": "Turn on",
-        "fr": "Allumer"
+        "nl": "Inschakelen",
+        "fr": "Allumer",
+        "de": "Einschalten"
       }
     },
     {
       "id": "plug_energy_monitor_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "nl": "Uitschakelen",
+        "fr": "Éteindre",
+        "de": "Ausschalten"
       }
     },
     {
       "id": "plug_energy_monitor_toggle",
       "title": {
-        "en": "Toggle on or off",
-        "fr": "Basculer"
+        "en": "Toggle",
+        "nl": "Schakelen",
+        "fr": "Basculer",
+        "de": "Umschalten"
+      }
+    },
+    {
+      "id": "plug_energy_monitor_reset_meter",
+      "title": {
+        "en": "Reset energy meter",
+        "nl": "Energiemeter resetten",
+        "fr": "Réinitialiser compteur",
+        "de": "Energiezähler zurücksetzen"
+      },
+      "hint": {
+        "en": "Resets the energy consumption counter to 0 kWh",
+        "nl": "Reset de energieverbruikteller naar 0 kWh",
+        "fr": "Réinitialise le compteur de consommation à 0 kWh",
+        "de": "Setzt den Energieverbrauchszähler auf 0 kWh zurück"
       }
     }
   ]

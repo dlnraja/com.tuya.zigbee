@@ -20825,7 +20825,8 @@
           "ZG-204ZV",
           "ZG-204ZH",
           "ZG-204ZK",
-          "ZG-204ZM"
+          "ZG-204ZM",
+          "CK-BL702-MWS-01(7016)"
         ],
         "learnmode": {
           "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
@@ -35573,39 +35574,104 @@
         ]
       },
       {
-        "id": "contact_sensor_contact_sensor_alarm_contact_true",
+        "id": "co_sensor_alarm_co_true",
         "highlight": true,
         "title": {
-          "en": "Contact alarm activated",
-          "fr": "Alarme de contact activée"
+          "en": "CO detected",
+          "nl": "CO gedetecteerd",
+          "fr": "CO détecté",
+          "de": "CO erkannt"
+        },
+        "titleFormatted": {
+          "en": "Carbon monoxide alarm triggered!",
+          "nl": "Koolmonoxide alarm geactiveerd!",
+          "fr": "Alarme monoxyde de carbone déclenchée !",
+          "de": "Kohlenmonoxid-Alarm ausgelöst!"
+        },
+        "hint": {
+          "en": "Triggers when carbon monoxide is detected - CRITICAL SAFETY ALERT",
+          "nl": "Triggert wanneer koolmonoxide wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
+          "fr": "Se déclenche quand du monoxyde de carbone est détecté - ALERTE DE SÉCURITÉ CRITIQUE",
+          "de": "Wird ausgelöst, wenn Kohlenmonoxid erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=contact_sensor"
+            "filter": "driver_id=co_sensor"
           }
         ]
       },
       {
-        "id": "contact_sensor_contact_sensor_alarm_contact_false",
+        "id": "co_sensor_alarm_co_false",
         "title": {
-          "en": "Contact alarm deactivated",
-          "fr": "Alarme de contact désactivée"
+          "en": "CO cleared",
+          "nl": "CO opgeheven",
+          "fr": "CO dissipé",
+          "de": "CO verschwunden"
+        },
+        "hint": {
+          "en": "Triggers when carbon monoxide is no longer detected",
+          "nl": "Triggert wanneer koolmonoxide niet meer wordt gedetecteerd",
+          "fr": "Se déclenche quand le monoxyde de carbone n'est plus détecté",
+          "de": "Wird ausgelöst, wenn kein Kohlenmonoxid mehr erkannt wird"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=contact_sensor"
+            "filter": "driver_id=co_sensor"
           }
         ]
       },
       {
-        "id": "contact_sensor_contact_sensor_measure_battery_changed",
+        "id": "co_sensor_measure_co_changed",
+        "title": {
+          "en": "CO level changed",
+          "nl": "CO niveau veranderd",
+          "fr": "Niveau CO changé",
+          "de": "CO-Wert geändert"
+        },
+        "titleFormatted": {
+          "en": "CO level changed to [[ppm]] ppm",
+          "nl": "CO niveau veranderd naar [[ppm]] ppm",
+          "fr": "Niveau CO changé à [[ppm]] ppm",
+          "de": "CO-Wert geändert zu [[ppm]] ppm"
+        },
+        "tokens": [
+          {
+            "name": "ppm",
+            "type": "number",
+            "title": {
+              "en": "CO (ppm)",
+              "nl": "CO (ppm)",
+              "fr": "CO (ppm)",
+              "de": "CO (ppm)"
+            },
+            "example": 50
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=co_sensor"
+          }
+        ]
+      },
+      {
+        "id": "co_sensor_measure_battery_changed",
         "title": {
           "en": "Battery level changed",
-          "fr": "Niveau batterie changé"
+          "nl": "Batterijniveau veranderd",
+          "fr": "Niveau batterie changé",
+          "de": "Batteriestand geändert"
+        },
+        "titleFormatted": {
+          "en": "Battery level changed to [[battery]]%",
+          "nl": "Batterijniveau veranderd naar [[battery]]%",
+          "fr": "Niveau batterie changé à [[battery]]%",
+          "de": "Batteriestand geändert zu [[battery]]%"
         },
         "tokens": [
           {
@@ -35613,9 +35679,204 @@
             "type": "number",
             "title": {
               "en": "Battery (%)",
-              "fr": "Batterie (%)"
+              "nl": "Batterij (%)",
+              "fr": "Batterie (%)",
+              "de": "Batterie (%)"
             },
             "example": 75
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=co_sensor"
+          }
+        ]
+      },
+      {
+        "id": "co_sensor_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "nl": "Batterij is bijna leeg",
+          "fr": "Batterie faible",
+          "de": "Batterie ist schwach"
+        },
+        "hint": {
+          "en": "Triggers when battery drops below threshold - Replace battery soon!",
+          "nl": "Triggert wanneer de batterij onder de drempel zakt - Vervang binnenkort de batterij!",
+          "fr": "Se déclenche quand la batterie passe sous le seuil - Remplacez la batterie bientôt !",
+          "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt - Batterie bald ersetzen!"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=co_sensor"
+          }
+        ]
+      },
+      {
+        "id": "contact_sensor_opened",
+        "highlight": true,
+        "title": {
+          "en": "Door/window opened",
+          "nl": "Deur/raam geopend",
+          "fr": "Porte/fenêtre ouverte",
+          "de": "Tür/Fenster geöffnet"
+        },
+        "titleFormatted": {
+          "en": "The door or window was opened",
+          "nl": "De deur of het raam werd geopend",
+          "fr": "La porte ou fenêtre a été ouverte",
+          "de": "Die Tür oder das Fenster wurde geöffnet"
+        },
+        "hint": {
+          "en": "Triggers when the magnet separates from the sensor",
+          "nl": "Triggert wanneer de magneet van de sensor wordt gescheiden",
+          "fr": "Se déclenche quand l'aimant se sépare du capteur",
+          "de": "Wird ausgelöst, wenn der Magnet vom Sensor getrennt wird"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor"
+          }
+        ]
+      },
+      {
+        "id": "contact_sensor_closed",
+        "title": {
+          "en": "Door/window closed",
+          "nl": "Deur/raam gesloten",
+          "fr": "Porte/fenêtre fermée",
+          "de": "Tür/Fenster geschlossen"
+        },
+        "hint": {
+          "en": "Triggers when the magnet contacts the sensor",
+          "nl": "Triggert wanneer de magneet de sensor raakt",
+          "fr": "Se déclenche quand l'aimant touche le capteur",
+          "de": "Wird ausgelöst, wenn der Magnet den Sensor berührt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor"
+          }
+        ]
+      },
+      {
+        "id": "contact_sensor_tamper_true",
+        "title": {
+          "en": "Tamper alert",
+          "nl": "Sabotage alarm",
+          "fr": "Alerte sabotage",
+          "de": "Manipulationsalarm"
+        },
+        "hint": {
+          "en": "Triggers when the sensor has been tampered with",
+          "nl": "Triggert wanneer er met de sensor is geknoeid",
+          "fr": "Se déclenche quand le capteur a été saboté",
+          "de": "Wird ausgelöst, wenn der Sensor manipuliert wurde"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor"
+          }
+        ]
+      },
+      {
+        "id": "contact_sensor_battery_changed",
+        "title": {
+          "en": "Battery level changed",
+          "nl": "Batterijniveau veranderd",
+          "fr": "Niveau batterie changé",
+          "de": "Batteriestand geändert"
+        },
+        "titleFormatted": {
+          "en": "Battery level changed to [[battery]]%",
+          "nl": "Batterijniveau veranderd naar [[battery]]%",
+          "fr": "Niveau batterie changé à [[battery]]%",
+          "de": "Batteriestand geändert zu [[battery]]%"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)",
+              "nl": "Batterij (%)",
+              "fr": "Batterie (%)",
+              "de": "Batterie (%)"
+            },
+            "example": 75
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor"
+          }
+        ]
+      },
+      {
+        "id": "contact_sensor_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "nl": "Batterij is bijna leeg",
+          "fr": "Batterie faible",
+          "de": "Batterie ist schwach"
+        },
+        "hint": {
+          "en": "Triggers when battery drops below threshold",
+          "nl": "Triggert wanneer de batterij onder de drempel zakt",
+          "fr": "Se déclenche quand la batterie passe sous le seuil",
+          "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor"
+          }
+        ]
+      },
+      {
+        "id": "contact_sensor_left_open",
+        "title": {
+          "en": "Left open for duration",
+          "nl": "Te lang open gelaten",
+          "fr": "Resté ouvert trop longtemps",
+          "de": "Zu lange offen gelassen"
+        },
+        "titleFormatted": {
+          "en": "Left open for [[duration]] minutes",
+          "nl": "Meer dan [[duration]] minuten open",
+          "fr": "Ouvert depuis [[duration]] minutes",
+          "de": "Seit [[duration]] Minuten offen"
+        },
+        "hint": {
+          "en": "Triggers when the sensor has been open for the specified duration",
+          "nl": "Triggert wanneer de sensor langer dan de opgegeven tijd open is",
+          "fr": "Se déclenche quand le capteur est ouvert depuis la durée spécifiée",
+          "de": "Wird ausgelöst, wenn der Sensor länger als die angegebene Dauer offen ist"
+        },
+        "tokens": [
+          {
+            "name": "duration",
+            "type": "number",
+            "title": {
+              "en": "Duration (min)",
+              "nl": "Duur (min)",
+              "fr": "Durée (min)",
+              "de": "Dauer (min)"
+            },
+            "example": 5
           }
         ],
         "args": [
@@ -35808,10 +36069,19 @@
         ]
       },
       {
-        "id": "door_controller_alarm_motion_true",
+        "id": "door_controller_opened",
+        "highlight": true,
         "title": {
-          "en": "Motion detected",
-          "fr": "Mouvement détecté"
+          "en": "Door opened",
+          "nl": "Deur geopend",
+          "fr": "Porte ouverte",
+          "de": "Tür geöffnet"
+        },
+        "hint": {
+          "en": "Triggers when the door is opened",
+          "nl": "Triggert wanneer de deur wordt geopend",
+          "fr": "Se déclenche quand la porte est ouverte",
+          "de": "Wird ausgelöst, wenn die Tür geöffnet wird"
         },
         "args": [
           {
@@ -35822,10 +36092,18 @@
         ]
       },
       {
-        "id": "door_controller_alarm_motion_false",
+        "id": "door_controller_closed",
         "title": {
-          "en": "No motion",
-          "fr": "Aucun mouvement"
+          "en": "Door closed",
+          "nl": "Deur gesloten",
+          "fr": "Porte fermée",
+          "de": "Tür geschlossen"
+        },
+        "hint": {
+          "en": "Triggers when the door is closed",
+          "nl": "Triggert wanneer de deur wordt gesloten",
+          "fr": "Se déclenche quand la porte est fermée",
+          "de": "Wird ausgelöst, wenn die Tür geschlossen wird"
         },
         "args": [
           {
@@ -35836,10 +36114,12 @@
         ]
       },
       {
-        "id": "door_controller_alarm_contact_true",
+        "id": "door_controller_locked",
         "title": {
-          "en": "Contact alarm activated",
-          "fr": "Alarme de contact activée"
+          "en": "Door locked",
+          "nl": "Deur vergrendeld",
+          "fr": "Porte verrouillée",
+          "de": "Tür verriegelt"
         },
         "args": [
           {
@@ -35850,10 +36130,12 @@
         ]
       },
       {
-        "id": "door_controller_alarm_contact_false",
+        "id": "door_controller_unlocked",
         "title": {
-          "en": "Contact alarm deactivated",
-          "fr": "Alarme de contact désactivée"
+          "en": "Door unlocked",
+          "nl": "Deur ontgrendeld",
+          "fr": "Porte déverrouillée",
+          "de": "Tür entriegelt"
         },
         "args": [
           {
@@ -35864,10 +36146,91 @@
         ]
       },
       {
-        "id": "door_controller_measure_battery_changed",
+        "id": "doorbell_button_pressed",
+        "highlight": true,
+        "title": {
+          "en": "Doorbell pressed",
+          "nl": "Deurbel ingedrukt",
+          "fr": "Sonnette pressée",
+          "de": "Türklingel gedrückt"
+        },
+        "titleFormatted": {
+          "en": "Someone rang the doorbell!",
+          "nl": "Iemand heeft aangebeld!",
+          "fr": "Quelqu'un a sonné !",
+          "de": "Jemand hat geklingelt!"
+        },
+        "hint": {
+          "en": "Triggers when someone presses the doorbell button",
+          "nl": "Triggert wanneer iemand op de deurbel drukt",
+          "fr": "Se déclenche quand quelqu'un appuie sur la sonnette",
+          "de": "Wird ausgelöst, wenn jemand die Türklingel drückt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorbell"
+          }
+        ]
+      },
+      {
+        "id": "doorbell_motion_detected",
+        "title": {
+          "en": "Motion at door",
+          "nl": "Beweging bij deur",
+          "fr": "Mouvement à la porte",
+          "de": "Bewegung an der Tür"
+        },
+        "hint": {
+          "en": "Triggers when motion is detected near the doorbell (if supported)",
+          "nl": "Triggert wanneer beweging wordt gedetecteerd bij de deurbel (indien ondersteund)",
+          "fr": "Se déclenche quand un mouvement est détecté près de la sonnette (si supporté)",
+          "de": "Wird ausgelöst, wenn Bewegung in der Nähe der Türklingel erkannt wird (falls unterstützt)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorbell"
+          }
+        ]
+      },
+      {
+        "id": "doorbell_tamper_true",
+        "title": {
+          "en": "Tamper alert",
+          "nl": "Sabotage alarm",
+          "fr": "Alerte sabotage",
+          "de": "Manipulationsalarm"
+        },
+        "hint": {
+          "en": "Triggers when the doorbell has been tampered with",
+          "nl": "Triggert wanneer er met de deurbel is geknoeid",
+          "fr": "Se déclenche quand la sonnette a été sabotée",
+          "de": "Wird ausgelöst, wenn die Türklingel manipuliert wurde"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorbell"
+          }
+        ]
+      },
+      {
+        "id": "doorbell_battery_changed",
         "title": {
           "en": "Battery level changed",
-          "fr": "Niveau batterie changé"
+          "nl": "Batterijniveau veranderd",
+          "fr": "Niveau batterie changé",
+          "de": "Batteriestand geändert"
+        },
+        "titleFormatted": {
+          "en": "Battery level changed to [[battery]]%",
+          "nl": "Batterijniveau veranderd naar [[battery]]%",
+          "fr": "Niveau batterie changé à [[battery]]%",
+          "de": "Batteriestand geändert zu [[battery]]%"
         },
         "tokens": [
           {
@@ -35875,7 +36238,9 @@
             "type": "number",
             "title": {
               "en": "Battery (%)",
-              "fr": "Batterie (%)"
+              "nl": "Batterij (%)",
+              "fr": "Batterie (%)",
+              "de": "Batterie (%)"
             },
             "example": 75
           }
@@ -35884,83 +36249,18 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=door_controller"
-          }
-        ]
-      },
-      {
-        "id": "doorbell_alarm_motion_true",
-        "title": {
-          "en": "Motion detected",
-          "fr": "Mouvement détecté"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
             "filter": "driver_id=doorbell"
           }
         ]
       },
       {
-        "id": "doorbell_alarm_motion_false",
+        "id": "doorbell_battery_low",
         "title": {
-          "en": "No motion",
-          "fr": "Aucun mouvement"
+          "en": "Battery is low",
+          "nl": "Batterij is bijna leeg",
+          "fr": "Batterie faible",
+          "de": "Batterie ist schwach"
         },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=doorbell"
-          }
-        ]
-      },
-      {
-        "id": "doorbell_alarm_contact_true",
-        "title": {
-          "en": "Contact alarm activated",
-          "fr": "Alarme de contact activée"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=doorbell"
-          }
-        ]
-      },
-      {
-        "id": "doorbell_alarm_contact_false",
-        "title": {
-          "en": "Contact alarm deactivated",
-          "fr": "Alarme de contact désactivée"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=doorbell"
-          }
-        ]
-      },
-      {
-        "id": "doorbell_measure_battery_changed",
-        "title": {
-          "en": "Battery level changed",
-          "fr": "Niveau batterie changé"
-        },
-        "tokens": [
-          {
-            "name": "battery",
-            "type": "number",
-            "title": {
-              "en": "Battery (%)",
-              "fr": "Batterie (%)"
-            },
-            "example": 75
-          }
-        ],
         "args": [
           {
             "type": "device",
@@ -36048,10 +36348,19 @@
         ]
       },
       {
-        "id": "gas_detector_alarm_motion_true",
+        "id": "gas_detector_gas_detected",
+        "highlight": true,
         "title": {
-          "en": "Motion detected",
-          "fr": "Mouvement détecté"
+          "en": "Gas detected!",
+          "nl": "Gas gedetecteerd!",
+          "fr": "Gaz détecté !",
+          "de": "Gas erkannt!"
+        },
+        "hint": {
+          "en": "Triggers when combustible gas is detected - evacuate immediately!",
+          "nl": "Triggert wanneer brandbaar gas wordt gedetecteerd - evacueer onmiddellijk!",
+          "fr": "Se déclenche quand du gaz combustible est détecté - évacuez immédiatement !",
+          "de": "Wird ausgelöst, wenn brennbares Gas erkannt wird - sofort evakuieren!"
         },
         "args": [
           {
@@ -36062,10 +36371,12 @@
         ]
       },
       {
-        "id": "gas_detector_alarm_motion_false",
+        "id": "gas_detector_gas_cleared",
         "title": {
-          "en": "No motion",
-          "fr": "Aucun mouvement"
+          "en": "Gas alarm cleared",
+          "nl": "Gas alarm opgeheven",
+          "fr": "Alarme gaz terminée",
+          "de": "Gasalarm aufgehoben"
         },
         "args": [
           {
@@ -36076,10 +36387,19 @@
         ]
       },
       {
-        "id": "gas_detector_alarm_co_true",
+        "id": "gas_detector_co_detected",
+        "highlight": true,
         "title": {
-          "en": "Carbon monoxide detected",
-          "fr": "Monoxyde de carbone détecté"
+          "en": "Carbon monoxide detected!",
+          "nl": "Koolmonoxide gedetecteerd!",
+          "fr": "Monoxyde de carbone détecté !",
+          "de": "Kohlenmonoxid erkannt!"
+        },
+        "hint": {
+          "en": "Triggers when CO is detected - evacuate immediately!",
+          "nl": "Triggert wanneer CO wordt gedetecteerd - evacueer onmiddellijk!",
+          "fr": "Se déclenche quand du CO est détecté - évacuez immédiatement !",
+          "de": "Wird ausgelöst, wenn CO erkannt wird - sofort evakuieren!"
         },
         "args": [
           {
@@ -36090,10 +36410,12 @@
         ]
       },
       {
-        "id": "gas_detector_alarm_co2_true",
+        "id": "gas_detector_co_cleared",
         "title": {
-          "en": "CO2 alarm triggered",
-          "fr": "Alarme CO2 déclenchée"
+          "en": "CO alarm cleared",
+          "nl": "CO alarm opgeheven",
+          "fr": "Alarme CO terminée",
+          "de": "CO-Alarm aufgehoben"
         },
         "args": [
           {
@@ -36104,10 +36426,28 @@
         ]
       },
       {
-        "id": "gas_detector_measure_battery_changed",
+        "id": "gas_detector_tamper_true",
+        "title": {
+          "en": "Tamper alert",
+          "nl": "Sabotage alarm",
+          "fr": "Alerte sabotage",
+          "de": "Manipulationsalarm"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gas_detector"
+          }
+        ]
+      },
+      {
+        "id": "gas_detector_battery_changed",
         "title": {
           "en": "Battery level changed",
-          "fr": "Niveau batterie changé"
+          "nl": "Batterijniveau veranderd",
+          "fr": "Niveau batterie changé",
+          "de": "Batteriestand geändert"
         },
         "tokens": [
           {
@@ -36115,7 +36455,9 @@
             "type": "number",
             "title": {
               "en": "Battery (%)",
-              "fr": "Batterie (%)"
+              "nl": "Batterij (%)",
+              "fr": "Batterie (%)",
+              "de": "Batterie (%)"
             },
             "example": 75
           }
@@ -36129,10 +36471,86 @@
         ]
       },
       {
-        "id": "gas_sensor_ts0601_alarm_co_true",
+        "id": "gas_detector_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "nl": "Batterij is bijna leeg",
+          "fr": "Batterie faible",
+          "de": "Batterie ist schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gas_detector"
+          }
+        ]
+      },
+      {
+        "id": "gas_sensor_alarm_gas_true",
+        "highlight": true,
+        "title": {
+          "en": "Gas detected",
+          "nl": "Gas gedetecteerd",
+          "fr": "Gaz détecté",
+          "de": "Gas erkannt"
+        },
+        "titleFormatted": {
+          "en": "Combustible gas alarm triggered!",
+          "nl": "Brandbaar gas alarm geactiveerd!",
+          "fr": "Alarme gaz combustible déclenchée !",
+          "de": "Brenngasalarm ausgelöst!"
+        },
+        "hint": {
+          "en": "Triggers when combustible gas (methane/LPG/natural gas) is detected - CRITICAL SAFETY ALERT",
+          "nl": "Triggert wanneer brandbaar gas (methaan/LPG/aardgas) wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
+          "fr": "Se déclenche quand du gaz combustible (méthane/GPL/gaz naturel) est détecté - ALERTE DE SÉCURITÉ CRITIQUE",
+          "de": "Wird ausgelöst, wenn brennbares Gas (Methan/LPG/Erdgas) erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gas_sensor"
+          }
+        ]
+      },
+      {
+        "id": "gas_sensor_alarm_gas_false",
+        "title": {
+          "en": "Gas cleared",
+          "nl": "Gas opgeheven",
+          "fr": "Gaz dissipé",
+          "de": "Gas verschwunden"
+        },
+        "hint": {
+          "en": "Triggers when gas is no longer detected",
+          "nl": "Triggert wanneer geen gas meer wordt gedetecteerd",
+          "fr": "Se déclenche quand le gaz n'est plus détecté",
+          "de": "Wird ausgelöst, wenn kein Gas mehr erkannt wird"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gas_sensor"
+          }
+        ]
+      },
+      {
+        "id": "gas_sensor_alarm_co_true",
+        "highlight": true,
         "title": {
           "en": "Carbon monoxide detected",
-          "fr": "Monoxyde de carbone détecté"
+          "nl": "Koolmonoxide gedetecteerd",
+          "fr": "Monoxyde de carbone détecté",
+          "de": "Kohlenmonoxid erkannt"
+        },
+        "hint": {
+          "en": "Triggers when CO is detected - CRITICAL SAFETY ALERT",
+          "nl": "Triggert wanneer CO wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
+          "fr": "Se déclenche quand du CO est détecté - ALERTE DE SÉCURITÉ CRITIQUE",
+          "de": "Wird ausgelöst, wenn CO erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
         },
         "args": [
           {
@@ -36143,34 +36561,59 @@
         ]
       },
       {
-        "id": "gas_sensor_ts0601_alarm_co2_true",
+        "id": "gas_sensor_gas_level_changed",
         "title": {
-          "en": "CO2 alarm triggered",
-          "fr": "Alarme CO2 déclenchée"
+          "en": "Gas level changed",
+          "nl": "Gasniveau veranderd",
+          "fr": "Niveau de gaz changé",
+          "de": "Gaswert geändert"
         },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=gas_sensor"
-          }
-        ]
-      },
-      {
-        "id": "gas_sensor_ts0601_measure_battery_changed",
-        "title": {
-          "en": "Battery level changed",
-          "fr": "Niveau batterie changé"
+        "titleFormatted": {
+          "en": "Gas level changed to [[level]]%",
+          "nl": "Gasniveau veranderd naar [[level]]%",
+          "fr": "Niveau de gaz changé à [[level]]%",
+          "de": "Gaswert geändert zu [[level]]%"
         },
         "tokens": [
           {
-            "name": "battery",
+            "name": "level",
             "type": "number",
             "title": {
-              "en": "Battery (%)",
-              "fr": "Batterie (%)"
+              "en": "Gas level (%)",
+              "nl": "Gasniveau (%)",
+              "fr": "Niveau de gaz (%)",
+              "de": "Gaswert (%)"
             },
-            "example": 75
+            "example": 15
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gas_sensor"
+          }
+        ]
+      },
+      {
+        "id": "gas_sensor_self_test_result",
+        "title": {
+          "en": "Self-test completed",
+          "nl": "Zelftest voltooid",
+          "fr": "Auto-test terminé",
+          "de": "Selbsttest abgeschlossen"
+        },
+        "tokens": [
+          {
+            "name": "result",
+            "type": "string",
+            "title": {
+              "en": "Result",
+              "nl": "Resultaat",
+              "fr": "Résultat",
+              "de": "Ergebnis"
+            },
+            "example": "passed"
           }
         ],
         "args": [
@@ -37357,16 +37800,20 @@
         ]
       },
       {
-        "id": "plug_smart_onoff_true",
+        "id": "plug_smart_turned_on",
         "highlight": true,
-        "title": "Turned on",
-        "tokens": [
-          {
-            "name": "timestamp",
-            "type": "string",
-            "title": "Timestamp"
-          }
-        ],
+        "title": {
+          "en": "Turned on",
+          "nl": "Ingeschakeld",
+          "fr": "Allumé",
+          "de": "Eingeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the plug is turned on",
+          "nl": "Triggert wanneer de stekker wordt ingeschakeld",
+          "fr": "Se déclenche quand la prise est allumée",
+          "de": "Wird ausgelöst, wenn der Stecker eingeschaltet wird"
+        },
         "args": [
           {
             "type": "device",
@@ -37376,10 +37823,113 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_alarm_motion_true",
+        "id": "plug_smart_turned_off",
+        "title": {
+          "en": "Turned off",
+          "nl": "Uitgeschakeld",
+          "fr": "Éteint",
+          "de": "Ausgeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the plug is turned off",
+          "nl": "Triggert wanneer de stekker wordt uitgeschakeld",
+          "fr": "Se déclenche quand la prise est éteinte",
+          "de": "Wird ausgelöst, wenn der Stecker ausgeschaltet wird"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=plug_smart"
+          }
+        ]
+      },
+      {
+        "id": "plug_smart_power_restored",
+        "title": {
+          "en": "Power restored",
+          "nl": "Stroom hersteld",
+          "fr": "Alimentation rétablie",
+          "de": "Stromversorgung wiederhergestellt"
+        },
+        "hint": {
+          "en": "Triggers when power is restored after an outage",
+          "nl": "Triggert wanneer de stroom is hersteld na een stroomstoring",
+          "fr": "Se déclenche quand l'alimentation est rétablie après une coupure",
+          "de": "Wird ausgelöst, wenn die Stromversorgung nach einem Ausfall wiederhergestellt wird"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=plug_smart"
+          }
+        ]
+      },
+      {
+        "id": "presence_sensor_radar_presence_detected",
+        "highlight": true,
+        "title": {
+          "en": "Presence detected",
+          "nl": "Aanwezigheid gedetecteerd",
+          "fr": "Présence détectée",
+          "de": "Anwesenheit erkannt"
+        },
+        "titleFormatted": {
+          "en": "Human presence detected in the room",
+          "nl": "Menselijke aanwezigheid gedetecteerd in de kamer",
+          "fr": "Présence humaine détectée dans la pièce",
+          "de": "Menschliche Anwesenheit im Raum erkannt"
+        },
+        "hint": {
+          "en": "Triggers when the mmWave radar detects human presence (even stationary)",
+          "nl": "Triggert wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
+          "fr": "Se déclenche quand le radar mmWave détecte une présence humaine (même immobile)",
+          "de": "Wird ausgelöst, wenn der mmWave-Radar menschliche Anwesenheit erkennt (auch stationär)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=presence_sensor_radar"
+          }
+        ]
+      },
+      {
+        "id": "presence_sensor_radar_presence_cleared",
+        "title": {
+          "en": "Presence cleared",
+          "nl": "Aanwezigheid opgeheven",
+          "fr": "Présence terminée",
+          "de": "Anwesenheit beendet"
+        },
+        "hint": {
+          "en": "Triggers when no human presence is detected for the configured timeout",
+          "nl": "Triggert wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
+          "fr": "Se déclenche quand aucune présence humaine n'est détectée pendant le délai configuré",
+          "de": "Wird ausgelöst, wenn für die konfigurierte Zeitüberschreitung keine menschliche Anwesenheit erkannt wird"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=presence_sensor_radar"
+          }
+        ]
+      },
+      {
+        "id": "presence_sensor_radar_motion_detected",
         "title": {
           "en": "Motion detected",
-          "fr": "Mouvement détecté"
+          "nl": "Beweging gedetecteerd",
+          "fr": "Mouvement détecté",
+          "de": "Bewegung erkannt"
+        },
+        "hint": {
+          "en": "Triggers when active motion is detected (walking, moving)",
+          "nl": "Triggert wanneer actieve beweging wordt gedetecteerd (lopen, bewegen)",
+          "fr": "Se déclenche quand un mouvement actif est détecté (marche, mouvement)",
+          "de": "Wird ausgelöst, wenn aktive Bewegung erkannt wird (Gehen, Bewegen)"
         },
         "args": [
           {
@@ -37390,34 +37940,65 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_alarm_motion_false",
+        "id": "presence_sensor_radar_illuminance_changed",
         "title": {
-          "en": "No motion",
-          "fr": "Aucun mouvement"
+          "en": "Illuminance changed",
+          "nl": "Lichtsterkte veranderd",
+          "fr": "Luminosité changée",
+          "de": "Helligkeit geändert"
         },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=presence_sensor_radar"
-          }
-        ]
-      },
-      {
-        "id": "presence_sensor_radar_measure_battery_changed",
-        "title": {
-          "en": "Battery level changed",
-          "fr": "Niveau batterie changé"
+        "titleFormatted": {
+          "en": "Illuminance changed to [[lux]] lux",
+          "nl": "Lichtsterkte veranderd naar [[lux]] lux",
+          "fr": "Luminosité changée à [[lux]] lux",
+          "de": "Helligkeit geändert zu [[lux]] lux"
         },
         "tokens": [
           {
-            "name": "battery",
+            "name": "lux",
             "type": "number",
             "title": {
-              "en": "Battery (%)",
-              "fr": "Batterie (%)"
+              "en": "Illuminance (lux)",
+              "nl": "Lichtsterkte (lux)",
+              "fr": "Luminosité (lux)",
+              "de": "Helligkeit (lux)"
             },
-            "example": 75
+            "example": 150
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=presence_sensor_radar"
+          }
+        ]
+      },
+      {
+        "id": "presence_sensor_radar_distance_changed",
+        "title": {
+          "en": "Detection distance changed",
+          "nl": "Detectieafstand veranderd",
+          "fr": "Distance de détection changée",
+          "de": "Erkennungsabstand geändert"
+        },
+        "titleFormatted": {
+          "en": "Target distance changed to [[distance]] cm",
+          "nl": "Doelafstand veranderd naar [[distance]] cm",
+          "fr": "Distance cible changée à [[distance]] cm",
+          "de": "Zielentfernung geändert zu [[distance]] cm"
+        },
+        "tokens": [
+          {
+            "name": "distance",
+            "type": "number",
+            "title": {
+              "en": "Distance (cm)",
+              "nl": "Afstand (cm)",
+              "fr": "Distance (cm)",
+              "de": "Abstand (cm)"
+            },
+            "example": 200
           }
         ],
         "args": [
@@ -37627,10 +38208,19 @@
         ]
       },
       {
-        "id": "siren_alarm_motion_true",
+        "id": "siren_alarm_triggered",
+        "highlight": true,
         "title": {
-          "en": "Motion detected",
-          "fr": "Mouvement détecté"
+          "en": "Siren started",
+          "nl": "Sirene gestart",
+          "fr": "Sirène démarrée",
+          "de": "Sirene gestartet"
+        },
+        "hint": {
+          "en": "Triggers when the siren starts sounding",
+          "nl": "Triggert wanneer de sirene begint te loeien",
+          "fr": "Se déclenche quand la sirène commence à sonner",
+          "de": "Wird ausgelöst, wenn die Sirene zu tönen beginnt"
         },
         "args": [
           {
@@ -37641,10 +38231,18 @@
         ]
       },
       {
-        "id": "siren_alarm_motion_false",
+        "id": "siren_alarm_stopped",
         "title": {
-          "en": "No motion",
-          "fr": "Aucun mouvement"
+          "en": "Siren stopped",
+          "nl": "Sirene gestopt",
+          "fr": "Sirène arrêtée",
+          "de": "Sirene gestoppt"
+        },
+        "hint": {
+          "en": "Triggers when the siren stops sounding",
+          "nl": "Triggert wanneer de sirene stopt met loeien",
+          "fr": "Se déclenche quand la sirène arrête de sonner",
+          "de": "Wird ausgelöst, wenn die Sirene aufhört zu tönen"
         },
         "args": [
           {
@@ -37658,7 +38256,15 @@
         "id": "siren_measure_battery_changed",
         "title": {
           "en": "Battery level changed",
-          "fr": "Niveau batterie changé"
+          "nl": "Batterijniveau veranderd",
+          "fr": "Niveau batterie changé",
+          "de": "Batteriestand geändert"
+        },
+        "titleFormatted": {
+          "en": "Battery level changed to [[battery]]%",
+          "nl": "Batterijniveau veranderd naar [[battery]]%",
+          "fr": "Niveau batterie changé à [[battery]]%",
+          "de": "Batteriestand geändert zu [[battery]]%"
         },
         "tokens": [
           {
@@ -37666,7 +38272,9 @@
             "type": "number",
             "title": {
               "en": "Battery (%)",
-              "fr": "Batterie (%)"
+              "nl": "Batterij (%)",
+              "fr": "Batterie (%)",
+              "de": "Batterie (%)"
             },
             "example": 75
           }
@@ -37680,10 +38288,41 @@
         ]
       },
       {
-        "id": "smoke_detector_advanced_smart_smoke_detector_advanced_alarm_smoke_true",
+        "id": "siren_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "nl": "Batterij is bijna leeg",
+          "fr": "Batterie faible",
+          "de": "Batterie ist schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=siren"
+          }
+        ]
+      },
+      {
+        "id": "smoke_detector_advanced_alarm_smoke_true",
+        "highlight": true,
         "title": {
           "en": "Smoke detected",
-          "fr": "Fumée détectée"
+          "nl": "Rook gedetecteerd",
+          "fr": "Fumée détectée",
+          "de": "Rauch erkannt"
+        },
+        "titleFormatted": {
+          "en": "Smoke alarm triggered!",
+          "nl": "Rookalarm geactiveerd!",
+          "fr": "Alarme fumée déclenchée !",
+          "de": "Rauchalarm ausgelöst!"
+        },
+        "hint": {
+          "en": "Triggers when smoke is detected - CRITICAL SAFETY ALERT",
+          "nl": "Triggert wanneer rook wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
+          "fr": "Se déclenche quand de la fumée est détectée - ALERTE DE SÉCURITÉ CRITIQUE",
+          "de": "Wird ausgelöst, wenn Rauch erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
         },
         "args": [
           {
@@ -37694,10 +38333,62 @@
         ]
       },
       {
-        "id": "smoke_detector_advanced_smart_smoke_detector_advanced_measure_battery_changed",
+        "id": "smoke_detector_advanced_alarm_smoke_false",
+        "title": {
+          "en": "Smoke cleared",
+          "nl": "Rook opgeheven",
+          "fr": "Fumée dissipée",
+          "de": "Rauch verschwunden"
+        },
+        "hint": {
+          "en": "Triggers when smoke is no longer detected",
+          "nl": "Triggert wanneer er geen rook meer wordt gedetecteerd",
+          "fr": "Se déclenche quand la fumée n'est plus détectée",
+          "de": "Wird ausgelöst, wenn kein Rauch mehr erkannt wird"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_detector_advanced"
+          }
+        ]
+      },
+      {
+        "id": "smoke_detector_advanced_alarm_tamper_true",
+        "title": {
+          "en": "Tamper alert",
+          "nl": "Sabotage alarm",
+          "fr": "Alerte sabotage",
+          "de": "Manipulationsalarm"
+        },
+        "hint": {
+          "en": "Triggers when the detector has been tampered with",
+          "nl": "Triggert wanneer er met de detector is geknoeid",
+          "fr": "Se déclenche quand le détecteur a été saboté",
+          "de": "Wird ausgelöst, wenn der Melder manipuliert wurde"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_detector_advanced"
+          }
+        ]
+      },
+      {
+        "id": "smoke_detector_advanced_measure_battery_changed",
         "title": {
           "en": "Battery level changed",
-          "fr": "Niveau batterie changé"
+          "nl": "Batterijniveau veranderd",
+          "fr": "Niveau batterie changé",
+          "de": "Batteriestand geändert"
+        },
+        "titleFormatted": {
+          "en": "Battery level changed to [[battery]]%",
+          "nl": "Batterijniveau veranderd naar [[battery]]%",
+          "fr": "Niveau batterie changé à [[battery]]%",
+          "de": "Batteriestand geändert zu [[battery]]%"
         },
         "tokens": [
           {
@@ -37705,7 +38396,9 @@
             "type": "number",
             "title": {
               "en": "Battery (%)",
-              "fr": "Batterie (%)"
+              "nl": "Batterij (%)",
+              "fr": "Batterie (%)",
+              "de": "Batterie (%)"
             },
             "example": 75
           }
@@ -37719,10 +38412,62 @@
         ]
       },
       {
-        "id": "soil_sensor_soil_moisture_changed",
+        "id": "smoke_detector_advanced_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "nl": "Batterij is bijna leeg",
+          "fr": "Batterie faible",
+          "de": "Batterie ist schwach"
+        },
+        "hint": {
+          "en": "Triggers when battery drops below threshold - Replace battery soon!",
+          "nl": "Triggert wanneer de batterij onder de drempel zakt - Vervang binnenkort de batterij!",
+          "fr": "Se déclenche quand la batterie passe sous le seuil - Remplacez la batterie bientôt !",
+          "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt - Batterie bald ersetzen!"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_detector_advanced"
+          }
+        ]
+      },
+      {
+        "id": "smoke_detector_advanced_test_triggered",
+        "title": {
+          "en": "Test button pressed",
+          "nl": "Testknop ingedrukt",
+          "fr": "Bouton test pressé",
+          "de": "Testtaste gedrückt"
+        },
+        "hint": {
+          "en": "Triggers when the test button is pressed on the detector",
+          "nl": "Triggert wanneer de testknop op de detector wordt ingedrukt",
+          "fr": "Se déclenche quand le bouton test est pressé sur le détecteur",
+          "de": "Wird ausgelöst, wenn die Testtaste am Melder gedrückt wird"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_detector_advanced"
+          }
+        ]
+      },
+      {
+        "id": "soil_sensor_moisture_changed",
         "title": {
           "en": "Soil moisture changed",
-          "fr": "Humidité sol changée"
+          "nl": "Bodemvochtigheid veranderd",
+          "fr": "Humidité sol changée",
+          "de": "Bodenfeuchtigkeit geändert"
+        },
+        "titleFormatted": {
+          "en": "Soil moisture changed to [[moisture]]%",
+          "nl": "Bodemvochtigheid veranderd naar [[moisture]]%",
+          "fr": "Humidité sol changée à [[moisture]]%",
+          "de": "Bodenfeuchtigkeit geändert zu [[moisture]]%"
         },
         "tokens": [
           {
@@ -37730,7 +38475,9 @@
             "type": "number",
             "title": {
               "en": "Moisture (%)",
-              "fr": "Humidité (%)"
+              "nl": "Vochtigheid (%)",
+              "fr": "Humidité (%)",
+              "de": "Feuchtigkeit (%)"
             },
             "example": 45
           }
@@ -37744,10 +38491,18 @@
         ]
       },
       {
-        "id": "soil_sensor_soil_temperature_changed",
+        "id": "soil_sensor_temperature_changed",
         "title": {
           "en": "Soil temperature changed",
-          "fr": "Température sol changée"
+          "nl": "Bodemtemperatuur veranderd",
+          "fr": "Température sol changée",
+          "de": "Bodentemperatur geändert"
+        },
+        "titleFormatted": {
+          "en": "Soil temperature changed to [[temperature]]°C",
+          "nl": "Bodemtemperatuur veranderd naar [[temperature]]°C",
+          "fr": "Température sol changée à [[temperature]]°C",
+          "de": "Bodentemperatur geändert zu [[temperature]]°C"
         },
         "tokens": [
           {
@@ -37755,7 +38510,9 @@
             "type": "number",
             "title": {
               "en": "Temperature (°C)",
-              "fr": "Température (°C)"
+              "nl": "Temperatuur (°C)",
+              "fr": "Température (°C)",
+              "de": "Temperatur (°C)"
             },
             "example": 18
           }
@@ -37770,9 +38527,18 @@
       },
       {
         "id": "soil_sensor_soil_dry",
+        "highlight": true,
         "title": {
-          "en": "Soil is dry",
-          "fr": "Sol sec"
+          "en": "Soil is dry - needs water",
+          "nl": "Grond is droog - heeft water nodig",
+          "fr": "Sol sec - besoin d'eau",
+          "de": "Boden ist trocken - braucht Wasser"
+        },
+        "hint": {
+          "en": "Triggers when soil moisture drops below the configured dry threshold",
+          "nl": "Triggert wanneer de bodemvochtigheid onder de droge drempel zakt",
+          "fr": "Se déclenche quand l'humidité du sol passe sous le seuil de sécheresse",
+          "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit unter den Trockenschwellenwert fällt"
         },
         "args": [
           {
@@ -37786,8 +38552,95 @@
         "id": "soil_sensor_soil_wet",
         "title": {
           "en": "Soil is wet",
-          "fr": "Sol humide"
+          "nl": "Grond is nat",
+          "fr": "Sol humide",
+          "de": "Boden ist nass"
         },
+        "hint": {
+          "en": "Triggers when soil moisture rises above the configured wet threshold",
+          "nl": "Triggert wanneer de bodemvochtigheid boven de natte drempel stijgt",
+          "fr": "Se déclenche quand l'humidité du sol dépasse le seuil d'humidité",
+          "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit über den Nässeschwellenwert steigt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=soil_sensor"
+          }
+        ]
+      },
+      {
+        "id": "soil_sensor_soil_optimal",
+        "title": {
+          "en": "Soil moisture is optimal",
+          "nl": "Bodemvochtigheid is optimaal",
+          "fr": "Humidité du sol optimale",
+          "de": "Bodenfeuchtigkeit ist optimal"
+        },
+        "hint": {
+          "en": "Triggers when soil moisture is in the optimal range for plant growth",
+          "nl": "Triggert wanneer de bodemvochtigheid in het optimale bereik voor plantengroei is",
+          "fr": "Se déclenche quand l'humidité du sol est dans la plage optimale pour la croissance des plantes",
+          "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit im optimalen Bereich für Pflanzenwachstum liegt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=soil_sensor"
+          }
+        ]
+      },
+      {
+        "id": "soil_sensor_frost_warning",
+        "title": {
+          "en": "Frost warning",
+          "nl": "Vorstwaarschwing",
+          "fr": "Alerte gel",
+          "de": "Frostwarnung"
+        },
+        "hint": {
+          "en": "Triggers when soil temperature drops below 2°C - protect your plants!",
+          "nl": "Triggert wanneer de bodemtemperatuur onder 2°C zakt - bescherm je planten!",
+          "fr": "Se déclenche quand la température du sol passe sous 2°C - protégez vos plantes !",
+          "de": "Wird ausgelöst, wenn die Bodentemperatur unter 2°C fällt - schützen Sie Ihre Pflanzen!"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=soil_sensor"
+          }
+        ]
+      },
+      {
+        "id": "soil_sensor_battery_changed",
+        "title": {
+          "en": "Battery level changed",
+          "nl": "Batterijniveau veranderd",
+          "fr": "Niveau batterie changé",
+          "de": "Batteriestand geändert"
+        },
+        "titleFormatted": {
+          "en": "Battery level changed to [[battery]]%",
+          "nl": "Batterijniveau veranderd naar [[battery]]%",
+          "fr": "Niveau batterie changé à [[battery]]%",
+          "de": "Batteriestand geändert zu [[battery]]%"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)",
+              "nl": "Batterij (%)",
+              "fr": "Batterie (%)",
+              "de": "Batterie (%)"
+            },
+            "example": 75
+          }
+        ],
         "args": [
           {
             "type": "device",
@@ -37799,8 +38652,10 @@
       {
         "id": "soil_sensor_battery_low",
         "title": {
-          "en": "Battery low",
-          "fr": "Batterie faible"
+          "en": "Battery is low",
+          "nl": "Batterij is bijna leeg",
+          "fr": "Batterie faible",
+          "de": "Batterie ist schwach"
         },
         "args": [
           {
@@ -39212,55 +40067,148 @@
         ]
       },
       {
-        "id": "water_leak_sensor_alarm_motion_true",
+        "id": "vibration_sensor_vibration_detected",
+        "highlight": true,
         "title": {
-          "en": "Motion detected",
-          "fr": "Mouvement détecté"
+          "en": "Vibration detected",
+          "nl": "Trillingen gedetecteerd",
+          "fr": "Vibration détectée",
+          "de": "Vibration erkannt"
+        },
+        "titleFormatted": {
+          "en": "Vibration was detected",
+          "nl": "Trillingen werden gedetecteerd",
+          "fr": "Une vibration a été détectée",
+          "de": "Vibration wurde erkannt"
+        },
+        "hint": {
+          "en": "Triggers when the sensor detects movement or vibration",
+          "nl": "Triggert wanneer de sensor beweging of trillingen detecteert",
+          "fr": "Se déclenche quand le capteur détecte un mouvement ou une vibration",
+          "de": "Wird ausgelöst, wenn der Sensor Bewegung oder Vibration erkennt"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_leak_sensor"
+            "filter": "driver_id=vibration_sensor"
           }
         ]
       },
       {
-        "id": "water_leak_sensor_alarm_motion_false",
+        "id": "vibration_sensor_tilt_detected",
         "title": {
-          "en": "No motion",
-          "fr": "Aucun mouvement"
+          "en": "Tilt detected",
+          "nl": "Kanteling gedetecteerd",
+          "fr": "Inclinaison détectée",
+          "de": "Neigung erkannt"
+        },
+        "hint": {
+          "en": "Triggers when the sensor detects a change in orientation",
+          "nl": "Triggert wanneer de sensor een verandering in oriëntatie detecteert",
+          "fr": "Se déclenche quand le capteur détecte un changement d'orientation",
+          "de": "Wird ausgelöst, wenn der Sensor eine Änderung der Ausrichtung erkennt"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_leak_sensor"
+            "filter": "driver_id=vibration_sensor"
           }
         ]
       },
       {
-        "id": "water_leak_sensor_measure_temperature_changed",
+        "id": "vibration_sensor_drop_detected",
         "title": {
-          "en": "Temperature changed",
-          "fr": "Température changée"
+          "en": "Drop detected",
+          "nl": "Val gedetecteerd",
+          "fr": "Chute détectée",
+          "de": "Fall erkannt"
+        },
+        "hint": {
+          "en": "Triggers when the sensor detects a freefall or drop",
+          "nl": "Triggert wanneer de sensor een vrije val of val detecteert",
+          "fr": "Se déclenche quand le capteur détecte une chute libre",
+          "de": "Wird ausgelöst, wenn der Sensor einen freien Fall erkennt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=vibration_sensor"
+          }
+        ]
+      },
+      {
+        "id": "vibration_sensor_tamper_true",
+        "title": {
+          "en": "Tamper alert",
+          "nl": "Sabotage alarm",
+          "fr": "Alerte sabotage",
+          "de": "Manipulationsalarm"
+        },
+        "hint": {
+          "en": "Triggers when the sensor has been tampered with",
+          "nl": "Triggert wanneer er met de sensor is geknoeid",
+          "fr": "Se déclenche quand le capteur a été saboté",
+          "de": "Wird ausgelöst, wenn der Sensor manipuliert wurde"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=vibration_sensor"
+          }
+        ]
+      },
+      {
+        "id": "vibration_sensor_battery_changed",
+        "title": {
+          "en": "Battery level changed",
+          "nl": "Batterijniveau veranderd",
+          "fr": "Niveau batterie changé",
+          "de": "Batteriestand geändert"
+        },
+        "titleFormatted": {
+          "en": "Battery level changed to [[battery]]%",
+          "nl": "Batterijniveau veranderd naar [[battery]]%",
+          "fr": "Niveau batterie changé à [[battery]]%",
+          "de": "Batteriestand geändert zu [[battery]]%"
         },
         "tokens": [
           {
-            "name": "temperature",
+            "name": "battery",
             "type": "number",
             "title": {
-              "en": "Temperature",
-              "fr": "Température"
+              "en": "Battery (%)",
+              "nl": "Batterij (%)",
+              "fr": "Batterie (%)",
+              "de": "Batterie (%)"
             },
-            "example": 20.5
+            "example": 75
           }
         ],
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=water_leak_sensor"
+            "filter": "driver_id=vibration_sensor"
+          }
+        ]
+      },
+      {
+        "id": "vibration_sensor_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "nl": "Batterij is bijna leeg",
+          "fr": "Batterie faible",
+          "de": "Batterie ist schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=vibration_sensor"
           }
         ]
       },
@@ -39269,7 +40217,21 @@
         "highlight": true,
         "title": {
           "en": "Water leak detected",
-          "fr": "Fuite d'eau détectée"
+          "nl": "Waterlek gedetecteerd",
+          "fr": "Fuite d'eau détectée",
+          "de": "Wasserleck erkannt"
+        },
+        "titleFormatted": {
+          "en": "Water leak detected!",
+          "nl": "Waterlek gedetecteerd!",
+          "fr": "Fuite d'eau détectée !",
+          "de": "Wasserleck erkannt!"
+        },
+        "hint": {
+          "en": "Triggers when the sensor detects water",
+          "nl": "Triggert wanneer de sensor water detecteert",
+          "fr": "Se déclenche quand le capteur détecte de l'eau",
+          "de": "Wird ausgelöst, wenn der Sensor Wasser erkennt"
         },
         "args": [
           {
@@ -39282,8 +40244,16 @@
       {
         "id": "water_leak_sensor_alarm_water_false",
         "title": {
-          "en": "No water leak",
-          "fr": "Aucune fuite d'eau"
+          "en": "Water leak cleared",
+          "nl": "Waterlek opgeheven",
+          "fr": "Fuite d'eau terminée",
+          "de": "Wasserleck behoben"
+        },
+        "hint": {
+          "en": "Triggers when the sensor no longer detects water",
+          "nl": "Triggert wanneer de sensor geen water meer detecteert",
+          "fr": "Se déclenche quand le capteur ne détecte plus d'eau",
+          "de": "Wird ausgelöst, wenn der Sensor kein Wasser mehr erkennt"
         },
         "args": [
           {
@@ -39297,7 +40267,15 @@
         "id": "water_leak_sensor_measure_battery_changed",
         "title": {
           "en": "Battery level changed",
-          "fr": "Niveau batterie changé"
+          "nl": "Batterijniveau veranderd",
+          "fr": "Niveau batterie changé",
+          "de": "Batteriestand geändert"
+        },
+        "titleFormatted": {
+          "en": "Battery level changed to [[battery]]%",
+          "nl": "Batterijniveau veranderd naar [[battery]]%",
+          "fr": "Niveau batterie changé à [[battery]]%",
+          "de": "Batteriestand geändert zu [[battery]]%"
         },
         "tokens": [
           {
@@ -39305,7 +40283,9 @@
             "type": "number",
             "title": {
               "en": "Battery (%)",
-              "fr": "Batterie (%)"
+              "nl": "Batterij (%)",
+              "fr": "Batterie (%)",
+              "de": "Batterie (%)"
             },
             "example": 75
           }
@@ -39319,10 +40299,41 @@
         ]
       },
       {
-        "id": "water_valve_smart_alarm_motion_true",
+        "id": "water_leak_sensor_battery_low",
         "title": {
-          "en": "Motion detected",
-          "fr": "Mouvement détecté"
+          "en": "Battery is low",
+          "nl": "Batterij is bijna leeg",
+          "fr": "Batterie faible",
+          "de": "Batterie ist schwach"
+        },
+        "hint": {
+          "en": "Triggers when the battery level drops below threshold",
+          "nl": "Triggert wanneer het batterijniveau onder de drempel zakt",
+          "fr": "Se déclenche quand le niveau de batterie passe sous le seuil",
+          "de": "Wird ausgelöst, wenn der Batteriestand unter den Schwellenwert fällt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_leak_sensor"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_opened",
+        "highlight": true,
+        "title": {
+          "en": "Valve opened",
+          "nl": "Klep geopend",
+          "fr": "Vanne ouverte",
+          "de": "Ventil geöffnet"
+        },
+        "hint": {
+          "en": "Triggers when the water valve is opened",
+          "nl": "Triggert wanneer de waterklep wordt geopend",
+          "fr": "Se déclenche quand la vanne d'eau est ouverte",
+          "de": "Wird ausgelöst, wenn das Wasserventil geöffnet wird"
         },
         "args": [
           {
@@ -39333,10 +40344,18 @@
         ]
       },
       {
-        "id": "water_valve_smart_alarm_motion_false",
+        "id": "water_valve_closed",
         "title": {
-          "en": "No motion",
-          "fr": "Aucun mouvement"
+          "en": "Valve closed",
+          "nl": "Klep gesloten",
+          "fr": "Vanne fermée",
+          "de": "Ventil geschlossen"
+        },
+        "hint": {
+          "en": "Triggers when the water valve is closed",
+          "nl": "Triggert wanneer de waterklep wordt gesloten",
+          "fr": "Se déclenche quand la vanne d'eau est fermée",
+          "de": "Wird ausgelöst, wenn das Wasserventil geschlossen wird"
         },
         "args": [
           {
@@ -39347,18 +40366,67 @@
         ]
       },
       {
-        "id": "water_valve_smart_measure_temperature_changed",
+        "id": "water_valve_leak_detected",
+        "highlight": true,
+        "title": {
+          "en": "Water leak detected!",
+          "nl": "Waterlek gedetecteerd!",
+          "fr": "Fuite d'eau détectée !",
+          "de": "Wasserleck erkannt!"
+        },
+        "hint": {
+          "en": "Triggers when water is detected - valve will close automatically",
+          "nl": "Triggert wanneer water wordt gedetecteerd - klep sluit automatisch",
+          "fr": "Se déclenche quand de l'eau est détectée - la vanne se ferme automatiquement",
+          "de": "Wird ausgelöst, wenn Wasser erkannt wird - Ventil schließt automatisch"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_leak_cleared",
+        "title": {
+          "en": "Water leak cleared",
+          "nl": "Waterlek opgeheven",
+          "fr": "Fuite d'eau terminée",
+          "de": "Wasserleck behoben"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_temperature_changed",
         "title": {
           "en": "Temperature changed",
-          "fr": "Température changée"
+          "nl": "Temperatuur veranderd",
+          "fr": "Température changée",
+          "de": "Temperatur geändert"
+        },
+        "titleFormatted": {
+          "en": "Temperature changed to [[temperature]]°C",
+          "nl": "Temperatuur veranderd naar [[temperature]]°C",
+          "fr": "Température changée à [[temperature]]°C",
+          "de": "Temperatur geändert zu [[temperature]]°C"
         },
         "tokens": [
           {
             "name": "temperature",
             "type": "number",
             "title": {
-              "en": "Temperature",
-              "fr": "Température"
+              "en": "Temperature (°C)",
+              "nl": "Temperatuur (°C)",
+              "fr": "Température (°C)",
+              "de": "Temperatur (°C)"
             },
             "example": 20.5
           }
@@ -39372,10 +40440,18 @@
         ]
       },
       {
-        "id": "water_valve_smart_alarm_water_true",
+        "id": "water_valve_frost_warning",
         "title": {
-          "en": "Water leak detected",
-          "fr": "Fuite d'eau détectée"
+          "en": "Frost warning",
+          "nl": "Vorstwaarschwing",
+          "fr": "Alerte gel",
+          "de": "Frostwarnung"
+        },
+        "hint": {
+          "en": "Triggers when temperature drops below 5°C - risk of frozen pipes!",
+          "nl": "Triggert wanneer de temperatuur onder 5°C zakt - risico op bevroren leidingen!",
+          "fr": "Se déclenche quand la température passe sous 5°C - risque de tuyaux gelés !",
+          "de": "Wird ausgelöst, wenn die Temperatur unter 5°C fällt - Gefahr eingefrorener Rohre!"
         },
         "args": [
           {
@@ -39386,36 +40462,13 @@
         ]
       },
       {
-        "id": "water_valve_smart_alarm_water_false",
+        "id": "water_valve_battery_low",
         "title": {
-          "en": "No water leak",
-          "fr": "Aucune fuite d'eau"
+          "en": "Battery is low",
+          "nl": "Batterij is bijna leeg",
+          "fr": "Batterie faible",
+          "de": "Batterie ist schwach"
         },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ]
-      },
-      {
-        "id": "water_valve_smart_measure_battery_changed",
-        "title": {
-          "en": "Battery level changed",
-          "fr": "Niveau batterie changé"
-        },
-        "tokens": [
-          {
-            "name": "battery",
-            "type": "number",
-            "title": {
-              "en": "Battery (%)",
-              "fr": "Batterie (%)"
-            },
-            "example": 75
-          }
-        ],
         "args": [
           {
             "type": "device",
@@ -39827,6 +40880,134 @@
         ]
       },
       {
+        "id": "co_sensor_co_detected",
+        "title": {
+          "en": "CO !{{is|is not}} detected",
+          "nl": "CO !{{is|is niet}} gedetecteerd",
+          "fr": "CO !{{est|n'est pas}} détecté",
+          "de": "CO !{{ist|ist nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=co_sensor"
+          }
+        ]
+      },
+      {
+        "id": "co_sensor_co_above",
+        "title": {
+          "en": "CO level !{{is|is not}} above",
+          "nl": "CO niveau !{{is|is niet}} boven",
+          "fr": "Niveau CO !{{est|n'est pas}} au-dessus de",
+          "de": "CO-Wert !{{ist|ist nicht}} über"
+        },
+        "titleFormatted": {
+          "en": "CO level !{{is|is not}} above [[ppm]] ppm",
+          "nl": "CO niveau !{{is|is niet}} boven [[ppm]] ppm",
+          "fr": "Niveau CO !{{est|n'est pas}} au-dessus de [[ppm]] ppm",
+          "de": "CO-Wert !{{ist|ist nicht}} über [[ppm]] ppm"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=co_sensor"
+          },
+          {
+            "name": "ppm",
+            "type": "number",
+            "min": 0,
+            "max": 500,
+            "step": 10,
+            "placeholder": {
+              "en": "50"
+            }
+          }
+        ]
+      },
+      {
+        "id": "co_sensor_battery_above",
+        "title": {
+          "en": "Battery !{{is|is not}} above",
+          "nl": "Batterij !{{is|is niet}} boven",
+          "fr": "Batterie !{{est|n'est pas}} au-dessus de",
+          "de": "Batterie !{{ist|ist nicht}} über"
+        },
+        "titleFormatted": {
+          "en": "Battery !{{is|is not}} above [[threshold]]%",
+          "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
+          "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
+          "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=co_sensor"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "placeholder": {
+              "en": "20"
+            }
+          }
+        ]
+      },
+      {
+        "id": "contact_sensor_is_open",
+        "title": {
+          "en": "Door/window !{{is|is not}} open",
+          "nl": "Deur/raam !{{is|is niet}} open",
+          "fr": "Porte/fenêtre !{{est|n'est pas}} ouverte",
+          "de": "Tür/Fenster !{{ist|ist nicht}} offen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor"
+          }
+        ]
+      },
+      {
+        "id": "contact_sensor_battery_above",
+        "title": {
+          "en": "Battery !{{is|is not}} above",
+          "nl": "Batterij !{{is|is niet}} boven",
+          "fr": "Batterie !{{est|n'est pas}} au-dessus de",
+          "de": "Batterie !{{ist|ist nicht}} über"
+        },
+        "titleFormatted": {
+          "en": "Battery !{{is|is not}} above [[threshold]]%",
+          "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
+          "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
+          "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "placeholder": {
+              "en": "20"
+            }
+          }
+        ]
+      },
+      {
         "id": "dimmer_dual_channel_is_on",
         "title": {
           "en": "Dimmer is !{{on|off}}",
@@ -39884,6 +41065,70 @@
         ]
       },
       {
+        "id": "door_controller_is_open",
+        "title": {
+          "en": "Door !{{is|is not}} open",
+          "nl": "Deur !{{is|is niet}} open",
+          "fr": "Porte !{{est|n'est pas}} ouverte",
+          "de": "Tür !{{ist|ist nicht}} offen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=door_controller"
+          }
+        ]
+      },
+      {
+        "id": "door_controller_is_locked",
+        "title": {
+          "en": "Door !{{is|is not}} locked",
+          "nl": "Deur !{{is|is niet}} vergrendeld",
+          "fr": "Porte !{{est|n'est pas}} verrouillée",
+          "de": "Tür !{{ist|ist nicht}} verriegelt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=door_controller"
+          }
+        ]
+      },
+      {
+        "id": "doorbell_battery_above",
+        "title": {
+          "en": "Battery !{{is|is not}} above",
+          "nl": "Batterij !{{is|is niet}} boven",
+          "fr": "Batterie !{{est|n'est pas}} au-dessus de",
+          "de": "Batterie !{{ist|ist nicht}} über"
+        },
+        "titleFormatted": {
+          "en": "Battery !{{is|is not}} above [[threshold]]%",
+          "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
+          "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
+          "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorbell"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "placeholder": {
+              "en": "20"
+            }
+          }
+        ]
+      },
+      {
         "id": "formaldehyde_sensor_formaldehyde_above",
         "title": {
           "en": "Formaldehyde is above",
@@ -39919,6 +41164,102 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=formaldehyde_sensor"
+          }
+        ]
+      },
+      {
+        "id": "gas_detector_gas_detected",
+        "title": {
+          "en": "Gas !{{is|is not}} detected",
+          "nl": "Gas !{{is|is niet}} gedetecteerd",
+          "fr": "Gaz !{{est|n'est pas}} détecté",
+          "de": "Gas !{{ist|ist nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gas_detector"
+          }
+        ]
+      },
+      {
+        "id": "gas_detector_co_detected",
+        "title": {
+          "en": "CO !{{is|is not}} detected",
+          "nl": "CO !{{is|is niet}} gedetecteerd",
+          "fr": "CO !{{est|n'est pas}} détecté",
+          "de": "CO !{{ist|ist nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gas_detector"
+          }
+        ]
+      },
+      {
+        "id": "gas_sensor_gas_detected",
+        "title": {
+          "en": "Gas !{{is|is not}} detected",
+          "nl": "Gas !{{is|is niet}} gedetecteerd",
+          "fr": "Gaz !{{est|n'est pas}} détecté",
+          "de": "Gas !{{ist|ist nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gas_sensor"
+          }
+        ]
+      },
+      {
+        "id": "gas_sensor_co_detected",
+        "title": {
+          "en": "CO !{{is|is not}} detected",
+          "nl": "CO !{{is|is niet}} gedetecteerd",
+          "fr": "CO !{{est|n'est pas}} détecté",
+          "de": "CO !{{ist|ist nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gas_sensor"
+          }
+        ]
+      },
+      {
+        "id": "gas_sensor_level_above",
+        "title": {
+          "en": "Gas level !{{is|is not}} above",
+          "nl": "Gasniveau !{{is|is niet}} boven",
+          "fr": "Niveau de gaz !{{est|n'est pas}} au-dessus de",
+          "de": "Gaswert !{{ist|ist nicht}} über"
+        },
+        "titleFormatted": {
+          "en": "Gas level !{{is|is not}} above [[threshold]]%",
+          "nl": "Gasniveau !{{is|is niet}} boven [[threshold]]%",
+          "fr": "Niveau de gaz !{{est|n'est pas}} au-dessus de [[threshold]]%",
+          "de": "Gaswert !{{ist|ist nicht}} über [[threshold]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gas_sensor"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "placeholder": {
+              "en": "20"
+            }
           }
         ]
       },
@@ -40358,12 +41699,10 @@
       {
         "id": "plug_energy_monitor_is_on",
         "title": {
-          "en": "Is turned !{{on|off}}",
-          "fr": "Est !{{allumé|éteint}}"
-        },
-        "titleFormatted": {
-          "en": "Is turned !{{on|off}}",
-          "fr": "Est !{{allumé|éteint}}"
+          "en": "Plug !{{is|is not}} on",
+          "nl": "Stekker !{{is|is niet}} aan",
+          "fr": "Prise !{{est|n'est pas}} allumée",
+          "de": "Stecker !{{ist|ist nicht}} an"
         },
         "args": [
           {
@@ -40374,13 +41713,162 @@
         ]
       },
       {
+        "id": "plug_energy_monitor_power_above",
+        "title": {
+          "en": "Power !{{is|is not}} above",
+          "nl": "Vermogen !{{is|is niet}} boven",
+          "fr": "Puissance !{{est|n'est pas}} au-dessus de",
+          "de": "Leistung !{{ist|ist nicht}} über"
+        },
+        "titleFormatted": {
+          "en": "Power !{{is|is not}} above [[power]] W",
+          "nl": "Vermogen !{{is|is niet}} boven [[power]] W",
+          "fr": "Puissance !{{est|n'est pas}} au-dessus de [[power]] W",
+          "de": "Leistung !{{ist|ist nicht}} über [[power]] W"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=plug_energy_monitor"
+          },
+          {
+            "name": "power",
+            "type": "number",
+            "min": 0,
+            "max": 3680,
+            "step": 10,
+            "placeholder": {
+              "en": "100"
+            }
+          }
+        ]
+      },
+      {
+        "id": "plug_energy_monitor_energy_above",
+        "title": {
+          "en": "Energy !{{is|is not}} above",
+          "nl": "Energie !{{is|is niet}} boven",
+          "fr": "Énergie !{{est|n'est pas}} au-dessus de",
+          "de": "Energie !{{ist|ist nicht}} über"
+        },
+        "titleFormatted": {
+          "en": "Energy !{{is|is not}} above [[energy]] kWh",
+          "nl": "Energie !{{is|is niet}} boven [[energy]] kWh",
+          "fr": "Énergie !{{est|n'est pas}} au-dessus de [[energy]] kWh",
+          "de": "Energie !{{ist|ist nicht}} über [[energy]] kWh"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=plug_energy_monitor"
+          },
+          {
+            "name": "energy",
+            "type": "number",
+            "min": 0,
+            "max": 10000,
+            "step": 1,
+            "placeholder": {
+              "en": "10"
+            }
+          }
+        ]
+      },
+      {
         "id": "plug_smart_is_on",
-        "title": "Is !{{on|off}}",
+        "title": {
+          "en": "Plug !{{is|is not}} on",
+          "nl": "Stekker !{{is|is niet}} aan",
+          "fr": "Prise !{{est|n'est pas}} allumée",
+          "de": "Stecker !{{ist|ist nicht}} an"
+        },
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=plug_smart"
+          }
+        ]
+      },
+      {
+        "id": "presence_sensor_radar_is_present",
+        "title": {
+          "en": "Someone !{{is|is not}} present",
+          "nl": "Iemand !{{is|is niet}} aanwezig",
+          "fr": "Quelqu'un !{{est|n'est pas}} présent",
+          "de": "Jemand !{{ist|ist nicht}} anwesend"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=presence_sensor_radar"
+          }
+        ]
+      },
+      {
+        "id": "presence_sensor_radar_illuminance_above",
+        "title": {
+          "en": "Illuminance !{{is|is not}} above",
+          "nl": "Lichtsterkte !{{is|is niet}} boven",
+          "fr": "Luminosité !{{est|n'est pas}} au-dessus de",
+          "de": "Helligkeit !{{ist|ist nicht}} über"
+        },
+        "titleFormatted": {
+          "en": "Illuminance !{{is|is not}} above [[lux]] lux",
+          "nl": "Lichtsterkte !{{is|is niet}} boven [[lux]] lux",
+          "fr": "Luminosité !{{est|n'est pas}} au-dessus de [[lux]] lux",
+          "de": "Helligkeit !{{ist|ist nicht}} über [[lux]] lux"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=presence_sensor_radar"
+          },
+          {
+            "name": "lux",
+            "type": "number",
+            "min": 0,
+            "max": 10000,
+            "step": 10,
+            "placeholder": {
+              "en": "100"
+            }
+          }
+        ]
+      },
+      {
+        "id": "presence_sensor_radar_distance_within",
+        "title": {
+          "en": "Target !{{is|is not}} within distance",
+          "nl": "Doel !{{is|is niet}} binnen afstand",
+          "fr": "Cible !{{est|n'est pas}} dans la distance",
+          "de": "Ziel !{{ist|ist nicht}} innerhalb der Entfernung"
+        },
+        "titleFormatted": {
+          "en": "Target !{{is|is not}} within [[distance]] cm",
+          "nl": "Doel !{{is|is niet}} binnen [[distance]] cm",
+          "fr": "Cible !{{est|n'est pas}} dans [[distance]] cm",
+          "de": "Ziel !{{ist|ist nicht}} innerhalb von [[distance]] cm"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=presence_sensor_radar"
+          },
+          {
+            "name": "distance",
+            "type": "number",
+            "min": 0,
+            "max": 800,
+            "step": 10,
+            "placeholder": {
+              "en": "300"
+            }
           }
         ]
       },
@@ -40477,39 +41965,82 @@
         ]
       },
       {
-        "id": "soil_sensor_moisture_above",
+        "id": "siren_is_sounding",
         "title": {
-          "en": "Soil moisture is above",
-          "fr": "Humidité sol supérieure à"
-        },
-        "titleFormatted": {
-          "en": "Soil moisture is above [[moisture]]%",
-          "fr": "Humidité sol supérieure à [[moisture]]%"
+          "en": "Siren !{{is|is not}} sounding",
+          "nl": "Sirene !{{loeit|loeit niet}}",
+          "fr": "Sirène !{{sonne|ne sonne pas}}",
+          "de": "Sirene !{{tönt|tönt nicht}}"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=soil_sensor"
-          },
-          {
-            "name": "moisture",
-            "type": "number",
-            "min": 0,
-            "max": 100,
-            "step": 1
+            "filter": "driver_id=siren"
           }
         ]
       },
       {
-        "id": "soil_sensor_moisture_below",
+        "id": "smoke_detector_advanced_smoke_detected",
         "title": {
-          "en": "Soil moisture is below",
-          "fr": "Humidité sol inférieure à"
+          "en": "Smoke !{{is|is not}} detected",
+          "nl": "Rook !{{is|is niet}} gedetecteerd",
+          "fr": "Fumée !{{est|n'est pas}} détectée",
+          "de": "Rauch !{{ist|ist nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_detector_advanced"
+          }
+        ]
+      },
+      {
+        "id": "smoke_detector_advanced_battery_above",
+        "title": {
+          "en": "Battery !{{is|is not}} above",
+          "nl": "Batterij !{{is|is niet}} boven",
+          "fr": "Batterie !{{est|n'est pas}} au-dessus de",
+          "de": "Batterie !{{ist|ist nicht}} über"
         },
         "titleFormatted": {
-          "en": "Soil moisture is below [[moisture]]%",
-          "fr": "Humidité sol inférieure à [[moisture]]%"
+          "en": "Battery !{{is|is not}} above [[threshold]]%",
+          "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
+          "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
+          "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_detector_advanced"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "placeholder": {
+              "en": "20"
+            }
+          }
+        ]
+      },
+      {
+        "id": "soil_sensor_moisture_above",
+        "title": {
+          "en": "Soil moisture !{{is|is not}} above",
+          "nl": "Bodemvochtigheid !{{is|is niet}} boven",
+          "fr": "Humidité sol !{{est|n'est pas}} au-dessus de",
+          "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} über"
+        },
+        "titleFormatted": {
+          "en": "Soil moisture !{{is|is not}} above [[moisture]]%",
+          "nl": "Bodemvochtigheid !{{is|is niet}} boven [[moisture]]%",
+          "fr": "Humidité sol !{{est|n'est pas}} au-dessus de [[moisture]]%",
+          "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} über [[moisture]]%"
         },
         "args": [
           {
@@ -40522,19 +42053,26 @@
             "type": "number",
             "min": 0,
             "max": 100,
-            "step": 1
+            "step": 5,
+            "placeholder": {
+              "en": "40"
+            }
           }
         ]
       },
       {
         "id": "soil_sensor_temperature_above",
         "title": {
-          "en": "Soil temperature is above",
-          "fr": "Température sol supérieure à"
+          "en": "Soil temperature !{{is|is not}} above",
+          "nl": "Bodemtemperatuur !{{is|is niet}} boven",
+          "fr": "Température sol !{{est|n'est pas}} au-dessus de",
+          "de": "Bodentemperatur !{{ist|ist nicht}} über"
         },
         "titleFormatted": {
-          "en": "Soil temperature is above [[temp]]°C",
-          "fr": "Température sol supérieure à [[temp]]°C"
+          "en": "Soil temperature !{{is|is not}} above [[temp]]°C",
+          "nl": "Bodemtemperatuur !{{is|is niet}} boven [[temp]]°C",
+          "fr": "Température sol !{{est|n'est pas}} au-dessus de [[temp]]°C",
+          "de": "Bodentemperatur !{{ist|ist nicht}} über [[temp]]°C"
         },
         "args": [
           {
@@ -40547,7 +42085,58 @@
             "type": "number",
             "min": -20,
             "max": 60,
-            "step": 1
+            "step": 1,
+            "placeholder": {
+              "en": "5"
+            }
+          }
+        ]
+      },
+      {
+        "id": "soil_sensor_needs_water",
+        "title": {
+          "en": "Soil !{{needs|does not need}} water",
+          "nl": "Grond !{{heeft|heeft geen}} water nodig",
+          "fr": "Sol !{{a besoin|n'a pas besoin}} d'eau",
+          "de": "Boden !{{braucht|braucht kein}} Wasser"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=soil_sensor"
+          }
+        ]
+      },
+      {
+        "id": "soil_sensor_battery_above",
+        "title": {
+          "en": "Battery !{{is|is not}} above",
+          "nl": "Batterij !{{is|is niet}} boven",
+          "fr": "Batterie !{{est|n'est pas}} au-dessus de",
+          "de": "Batterie !{{ist|ist nicht}} über"
+        },
+        "titleFormatted": {
+          "en": "Battery !{{is|is not}} above [[threshold]]%",
+          "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
+          "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
+          "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=soil_sensor"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "placeholder": {
+              "en": "20"
+            }
           }
         ]
       },
@@ -41251,6 +42840,166 @@
         ]
       },
       {
+        "id": "vibration_sensor_is_vibrating",
+        "title": {
+          "en": "Vibration !{{is|is not}} detected",
+          "nl": "Trillingen !{{worden|worden niet}} gedetecteerd",
+          "fr": "Vibration !{{est|n'est pas}} détectée",
+          "de": "Vibration !{{wird|wird nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=vibration_sensor"
+          }
+        ]
+      },
+      {
+        "id": "vibration_sensor_battery_above",
+        "title": {
+          "en": "Battery !{{is|is not}} above",
+          "nl": "Batterij !{{is|is niet}} boven",
+          "fr": "Batterie !{{est|n'est pas}} au-dessus de",
+          "de": "Batterie !{{ist|ist nicht}} über"
+        },
+        "titleFormatted": {
+          "en": "Battery !{{is|is not}} above [[threshold]]%",
+          "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
+          "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
+          "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=vibration_sensor"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "placeholder": {
+              "en": "20"
+            }
+          }
+        ]
+      },
+      {
+        "id": "water_leak_sensor_water_detected",
+        "title": {
+          "en": "Water !{{is|is not}} detected",
+          "nl": "Water !{{is|is niet}} gedetecteerd",
+          "fr": "Eau !{{est|n'est pas}} détectée",
+          "de": "Wasser !{{ist|ist nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_leak_sensor"
+          }
+        ]
+      },
+      {
+        "id": "water_leak_sensor_battery_above",
+        "title": {
+          "en": "Battery !{{is|is not}} above",
+          "nl": "Batterij !{{is|is niet}} boven",
+          "fr": "Batterie !{{est|n'est pas}} au-dessus de",
+          "de": "Batterie !{{ist|ist nicht}} über"
+        },
+        "titleFormatted": {
+          "en": "Battery !{{is|is not}} above [[threshold]]%",
+          "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
+          "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
+          "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_leak_sensor"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "placeholder": {
+              "en": "20"
+            }
+          }
+        ]
+      },
+      {
+        "id": "water_valve_is_open",
+        "title": {
+          "en": "Valve !{{is|is not}} open",
+          "nl": "Klep !{{is|is niet}} open",
+          "fr": "Vanne !{{est|n'est pas}} ouverte",
+          "de": "Ventil !{{ist|ist nicht}} offen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_leak_detected",
+        "title": {
+          "en": "Water leak !{{is|is not}} detected",
+          "nl": "Waterlek !{{is|is niet}} gedetecteerd",
+          "fr": "Fuite d'eau !{{est|n'est pas}} détectée",
+          "de": "Wasserleck !{{ist|ist nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_temperature_above",
+        "title": {
+          "en": "Temperature !{{is|is not}} above",
+          "nl": "Temperatuur !{{is|is niet}} boven",
+          "fr": "Température !{{est|n'est pas}} au-dessus de",
+          "de": "Temperatur !{{ist|ist nicht}} über"
+        },
+        "titleFormatted": {
+          "en": "Temperature !{{is|is not}} above [[temp]]°C",
+          "nl": "Temperatuur !{{is|is niet}} boven [[temp]]°C",
+          "fr": "Température !{{est|n'est pas}} au-dessus de [[temp]]°C",
+          "de": "Temperatur !{{ist|ist nicht}} über [[temp]]°C"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          },
+          {
+            "name": "temp",
+            "type": "number",
+            "min": -20,
+            "max": 60,
+            "step": 1,
+            "placeholder": {
+              "en": "5"
+            }
+          }
+        ]
+      },
+      {
         "id": "weather_station_outdoor_outdoor_temp_above",
         "title": {
           "en": "Outdoor temperature above",
@@ -41736,6 +43485,34 @@
         }
       },
       {
+        "id": "co_sensor_test_alarm",
+        "title": {
+          "en": "Test the CO alarm",
+          "nl": "Test het CO alarm",
+          "fr": "Tester l'alarme CO",
+          "de": "CO-Alarm testen"
+        },
+        "titleFormatted": {
+          "en": "Test the carbon monoxide alarm",
+          "nl": "Test het koolmonoxide alarm",
+          "fr": "Tester l'alarme monoxyde de carbone",
+          "de": "Kohlenmonoxid-Alarm testen"
+        },
+        "hint": {
+          "en": "Triggers a test on the CO detector (if supported by device)",
+          "nl": "Start een test op de CO detector (indien ondersteund door apparaat)",
+          "fr": "Déclenche un test sur le détecteur CO (si supporté par l'appareil)",
+          "de": "Löst einen Test am CO-Melder aus (falls vom Gerät unterstützt)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=co_sensor"
+          }
+        ]
+      },
+      {
         "id": "curtain_motor_set_windowcoverings_set",
         "title": {
           "en": "Set position to...",
@@ -41994,6 +43771,174 @@
         }
       },
       {
+        "id": "door_controller_open",
+        "title": {
+          "en": "Open door",
+          "nl": "Deur openen",
+          "fr": "Ouvrir la porte",
+          "de": "Tür öffnen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=door_controller"
+          }
+        ]
+      },
+      {
+        "id": "door_controller_close",
+        "title": {
+          "en": "Close door",
+          "nl": "Deur sluiten",
+          "fr": "Fermer la porte",
+          "de": "Tür schließen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=door_controller"
+          }
+        ]
+      },
+      {
+        "id": "door_controller_lock",
+        "title": {
+          "en": "Lock door",
+          "nl": "Deur vergrendelen",
+          "fr": "Verrouiller la porte",
+          "de": "Tür verriegeln"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=door_controller"
+          }
+        ]
+      },
+      {
+        "id": "door_controller_unlock",
+        "title": {
+          "en": "Unlock door",
+          "nl": "Deur ontgrendelen",
+          "fr": "Déverrouiller la porte",
+          "de": "Tür entriegeln"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=door_controller"
+          }
+        ]
+      },
+      {
+        "id": "doorbell_ring_chime",
+        "title": {
+          "en": "Ring the chime",
+          "nl": "Laat de bel rinkelen",
+          "fr": "Faire sonner le carillon",
+          "de": "Glocke läuten"
+        },
+        "hint": {
+          "en": "Manually triggers the doorbell chime (if supported)",
+          "nl": "Laat de deurbel handmatig rinkelen (indien ondersteund)",
+          "fr": "Déclenche manuellement le carillon de la sonnette (si supporté)",
+          "de": "Löst die Türklingel manuell aus (falls unterstützt)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=doorbell"
+          }
+        ]
+      },
+      {
+        "id": "gas_detector_test",
+        "title": {
+          "en": "Test the detector",
+          "nl": "Detector testen",
+          "fr": "Tester le détecteur",
+          "de": "Detektor testen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gas_detector"
+          }
+        ]
+      },
+      {
+        "id": "gas_detector_mute",
+        "title": {
+          "en": "Mute alarm",
+          "nl": "Alarm dempen",
+          "fr": "Couper l'alarme",
+          "de": "Alarm stummschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gas_detector"
+          }
+        ]
+      },
+      {
+        "id": "gas_sensor_mute_alarm",
+        "title": {
+          "en": "Mute alarm",
+          "nl": "Alarm dempen",
+          "fr": "Couper l'alarme",
+          "de": "Alarm stumm schalten"
+        },
+        "titleFormatted": {
+          "en": "Mute the gas alarm",
+          "nl": "Demp het gasalarm",
+          "fr": "Couper l'alarme de gaz",
+          "de": "Gasalarm stumm schalten"
+        },
+        "hint": {
+          "en": "Mutes the alarm temporarily (if supported by device)",
+          "nl": "Dempt het alarm tijdelijk (indien ondersteund door apparaat)",
+          "fr": "Coupe l'alarme temporairement (si supporté par l'appareil)",
+          "de": "Schaltet den Alarm vorübergehend stumm (falls vom Gerät unterstützt)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gas_sensor"
+          }
+        ]
+      },
+      {
+        "id": "gas_sensor_self_test",
+        "title": {
+          "en": "Run self-test",
+          "nl": "Zelftest uitvoeren",
+          "fr": "Lancer l'auto-test",
+          "de": "Selbsttest ausführen"
+        },
+        "hint": {
+          "en": "Triggers a self-test on the gas detector",
+          "nl": "Start een zelftest op de gasdetector",
+          "fr": "Déclenche un auto-test sur le détecteur de gaz",
+          "de": "Führt einen Selbsttest am Gasdetektor durch"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gas_sensor"
+          }
+        ]
+      },
+      {
         "id": "gateway_zigbee_bridge_permit_join",
         "title": {
           "en": "Permit joining",
@@ -42171,9 +44116,9 @@
           "de": "IR-Code Lernen"
         },
         "titleFormatted": {
-          "en": "Learn IR code [[code_name]] with [[protocol]] protocol for [[duration]]s (category: [[category]])",
-          "nl": "Leer IR code [[code_name]] met [[protocol]] protocol voor [[duration]]s (categorie: [[category]])",
-          "de": "IR-Code [[code_name]] mit [[protocol]] Protokoll für [[duration]]s lernen (Kategorie: [[category]])"
+          "en": "Learn IR code [[code_name]] with [[protocol]] protocol at [[frequency]]Hz for [[duration]]s (category: [[category]])",
+          "nl": "Leer IR code [[code_name]] met [[protocol]] protocol bij [[frequency]]Hz voor [[duration]]s (categorie: [[category]])",
+          "de": "IR-Code [[code_name]] mit [[protocol]] Protokoll bei [[frequency]]Hz für [[duration]]s lernen (Kategorie: [[category]])"
         },
         "args": [
           {
@@ -42324,9 +44269,9 @@
           "nl": "Verstuur een geleerde of raw IR code. Gebruik de codenaam of plak een Base64 gecodeerde IR code."
         },
         "titleFormatted": {
-          "en": "Send IR code [[ir_code]] with [[protocol]] protocol ([[repeat]]x repeats)",
-          "nl": "Verstuur IR code [[ir_code]] met [[protocol]] protocol ([[repeat]]x herhalingen)",
-          "de": "IR-Code [[ir_code]] mit [[protocol]] Protokoll senden ([[repeat]]x Wiederholungen)"
+          "en": "Send IR code [[ir_code]] with [[protocol]] at [[frequency]]Hz ([[repeat]]x repeats)",
+          "nl": "Verstuur IR code [[ir_code]] met [[protocol]] bij [[frequency]]Hz ([[repeat]]x herhalingen)",
+          "de": "IR-Code [[ir_code]] mit [[protocol]] bei [[frequency]]Hz senden ([[repeat]]x Wiederholungen)"
         },
         "args": [
           {
@@ -42852,7 +44797,9 @@
         "id": "plug_energy_monitor_turn_on",
         "title": {
           "en": "Turn on",
-          "fr": "Allumer"
+          "nl": "Inschakelen",
+          "fr": "Allumer",
+          "de": "Einschalten"
         },
         "args": [
           {
@@ -42866,7 +44813,9 @@
         "id": "plug_energy_monitor_turn_off",
         "title": {
           "en": "Turn off",
-          "fr": "Éteindre"
+          "nl": "Uitschakelen",
+          "fr": "Éteindre",
+          "de": "Ausschalten"
         },
         "args": [
           {
@@ -42879,8 +44828,32 @@
       {
         "id": "plug_energy_monitor_toggle",
         "title": {
-          "en": "Toggle on or off",
-          "fr": "Basculer"
+          "en": "Toggle",
+          "nl": "Schakelen",
+          "fr": "Basculer",
+          "de": "Umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=plug_energy_monitor"
+          }
+        ]
+      },
+      {
+        "id": "plug_energy_monitor_reset_meter",
+        "title": {
+          "en": "Reset energy meter",
+          "nl": "Energiemeter resetten",
+          "fr": "Réinitialiser compteur",
+          "de": "Energiezähler zurücksetzen"
+        },
+        "hint": {
+          "en": "Resets the energy consumption counter to 0 kWh",
+          "nl": "Reset de energieverbruikteller naar 0 kWh",
+          "fr": "Réinitialise le compteur de consommation à 0 kWh",
+          "de": "Setzt den Energieverbrauchszähler auf 0 kWh zurück"
         },
         "args": [
           {
@@ -42892,7 +44865,18 @@
       },
       {
         "id": "plug_smart_turn_on",
-        "title": "Turn on",
+        "title": {
+          "en": "Turn on",
+          "nl": "Inschakelen",
+          "fr": "Allumer",
+          "de": "Einschalten"
+        },
+        "titleFormatted": {
+          "en": "Turn on the plug",
+          "nl": "Schakel de stekker in",
+          "fr": "Allumer la prise",
+          "de": "Stecker einschalten"
+        },
         "args": [
           {
             "type": "device",
@@ -42903,7 +44887,18 @@
       },
       {
         "id": "plug_smart_turn_off",
-        "title": "Turn off",
+        "title": {
+          "en": "Turn off",
+          "nl": "Uitschakelen",
+          "fr": "Éteindre",
+          "de": "Ausschalten"
+        },
+        "titleFormatted": {
+          "en": "Turn off the plug",
+          "nl": "Schakel de stekker uit",
+          "fr": "Éteindre la prise",
+          "de": "Stecker ausschalten"
+        },
         "args": [
           {
             "type": "device",
@@ -42914,12 +44909,87 @@
       },
       {
         "id": "plug_smart_toggle",
-        "title": "Toggle",
+        "title": {
+          "en": "Toggle",
+          "nl": "Schakelen",
+          "fr": "Basculer",
+          "de": "Umschalten"
+        },
+        "titleFormatted": {
+          "en": "Toggle the plug on or off",
+          "nl": "Schakel de stekker aan of uit",
+          "fr": "Basculer la prise",
+          "de": "Stecker ein- oder ausschalten"
+        },
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=plug_smart"
+          }
+        ]
+      },
+      {
+        "id": "plug_smart_turn_on_delay",
+        "title": {
+          "en": "Turn on after delay",
+          "nl": "Inschakelen na vertraging",
+          "fr": "Allumer après délai",
+          "de": "Nach Verzögerung einschalten"
+        },
+        "titleFormatted": {
+          "en": "Turn on after [[delay]] seconds",
+          "nl": "Inschakelen na [[delay]] seconden",
+          "fr": "Allumer après [[delay]] secondes",
+          "de": "Nach [[delay]] Sekunden einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=plug_smart"
+          },
+          {
+            "name": "delay",
+            "type": "number",
+            "min": 1,
+            "max": 3600,
+            "step": 1,
+            "placeholder": {
+              "en": "10"
+            }
+          }
+        ]
+      },
+      {
+        "id": "plug_smart_turn_off_delay",
+        "title": {
+          "en": "Turn off after delay",
+          "nl": "Uitschakelen na vertraging",
+          "fr": "Éteindre après délai",
+          "de": "Nach Verzögerung ausschalten"
+        },
+        "titleFormatted": {
+          "en": "Turn off after [[delay]] seconds",
+          "nl": "Uitschakelen na [[delay]] seconden",
+          "fr": "Éteindre après [[delay]] secondes",
+          "de": "Nach [[delay]] Sekunden ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=plug_smart"
+          },
+          {
+            "name": "delay",
+            "type": "number",
+            "min": 1,
+            "max": 3600,
+            "step": 1,
+            "placeholder": {
+              "en": "10"
+            }
           }
         ]
       },
@@ -43016,6 +45086,171 @@
             "min": 0,
             "max": 100,
             "step": 5
+          }
+        ]
+      },
+      {
+        "id": "siren_turn_on",
+        "title": {
+          "en": "Turn on siren",
+          "nl": "Sirene aanzetten",
+          "fr": "Activer la sirène",
+          "de": "Sirene einschalten"
+        },
+        "titleFormatted": {
+          "en": "Turn on the siren",
+          "nl": "Zet de sirene aan",
+          "fr": "Activer la sirène",
+          "de": "Sirene einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=siren"
+          }
+        ]
+      },
+      {
+        "id": "siren_turn_off",
+        "title": {
+          "en": "Turn off siren",
+          "nl": "Sirene uitzetten",
+          "fr": "Désactiver la sirène",
+          "de": "Sirene ausschalten"
+        },
+        "titleFormatted": {
+          "en": "Turn off the siren",
+          "nl": "Zet de sirene uit",
+          "fr": "Désactiver la sirène",
+          "de": "Sirene ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=siren"
+          }
+        ]
+      },
+      {
+        "id": "siren_set_volume",
+        "title": {
+          "en": "Set volume",
+          "nl": "Volume instellen",
+          "fr": "Régler le volume",
+          "de": "Lautstärke einstellen"
+        },
+        "titleFormatted": {
+          "en": "Set siren volume to [[volume]]",
+          "nl": "Stel sirene volume in op [[volume]]",
+          "fr": "Régler le volume de la sirène à [[volume]]",
+          "de": "Sirenenlautstärke auf [[volume]] einstellen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=siren"
+          },
+          {
+            "name": "volume",
+            "type": "dropdown",
+            "title": {
+              "en": "Volume level",
+              "nl": "Volumeniveau",
+              "fr": "Niveau de volume",
+              "de": "Lautstärkestufe"
+            },
+            "values": [
+              {
+                "id": "low",
+                "label": {
+                  "en": "Low",
+                  "nl": "Laag",
+                  "fr": "Bas",
+                  "de": "Niedrig"
+                }
+              },
+              {
+                "id": "medium",
+                "label": {
+                  "en": "Medium",
+                  "nl": "Gemiddeld",
+                  "fr": "Moyen",
+                  "de": "Mittel"
+                }
+              },
+              {
+                "id": "high",
+                "label": {
+                  "en": "High",
+                  "nl": "Hoog",
+                  "fr": "Haut",
+                  "de": "Hoch"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "siren_set_duration",
+        "title": {
+          "en": "Set alarm duration",
+          "nl": "Alarmduur instellen",
+          "fr": "Définir la durée de l'alarme",
+          "de": "Alarmdauer einstellen"
+        },
+        "titleFormatted": {
+          "en": "Set alarm duration to [[duration]] seconds",
+          "nl": "Stel alarmduur in op [[duration]] seconden",
+          "fr": "Définir la durée de l'alarme à [[duration]] secondes",
+          "de": "Alarmdauer auf [[duration]] Sekunden einstellen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=siren"
+          },
+          {
+            "name": "duration",
+            "type": "number",
+            "min": 1,
+            "max": 300,
+            "step": 1,
+            "placeholder": {
+              "en": "30"
+            }
+          }
+        ]
+      },
+      {
+        "id": "smoke_detector_advanced_test_alarm",
+        "title": {
+          "en": "Test the alarm",
+          "nl": "Test het alarm",
+          "fr": "Tester l'alarme",
+          "de": "Alarm testen"
+        },
+        "titleFormatted": {
+          "en": "Test the smoke alarm",
+          "nl": "Test het rookalarm",
+          "fr": "Tester l'alarme fumée",
+          "de": "Rauchalarm testen"
+        },
+        "hint": {
+          "en": "Triggers a test on the smoke detector (if supported by device)",
+          "nl": "Start een test op de rookmelder (indien ondersteund door apparaat)",
+          "fr": "Déclenche un test sur le détecteur de fumée (si supporté par l'appareil)",
+          "de": "Löst einen Test am Rauchmelder aus (falls vom Gerät unterstützt)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smoke_detector_advanced"
           }
         ]
       },
@@ -44375,6 +46610,66 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=usb_outlet_advanced"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_open",
+        "title": {
+          "en": "Open valve",
+          "nl": "Klep openen",
+          "fr": "Ouvrir la vanne",
+          "de": "Ventil öffnen"
+        },
+        "hint": {
+          "en": "Opens the water valve to allow water flow",
+          "nl": "Opent de waterklep om water door te laten stromen",
+          "fr": "Ouvre la vanne d'eau pour permettre l'écoulement",
+          "de": "Öffnet das Wasserventil, um den Wasserfluss zu ermöglichen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_close",
+        "title": {
+          "en": "Close valve",
+          "nl": "Klep sluiten",
+          "fr": "Fermer la vanne",
+          "de": "Ventil schließen"
+        },
+        "hint": {
+          "en": "Closes the water valve to stop water flow",
+          "nl": "Sluit de waterklep om de waterstroom te stoppen",
+          "fr": "Ferme la vanne d'eau pour arrêter l'écoulement",
+          "de": "Schließt das Wasserventil, um den Wasserfluss zu stoppen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_toggle",
+        "title": {
+          "en": "Toggle valve",
+          "nl": "Klep schakelen",
+          "fr": "Basculer la vanne",
+          "de": "Ventil umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
           }
         ]
       }
