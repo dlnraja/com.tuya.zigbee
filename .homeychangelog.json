@@ -1,4 +1,10 @@
 {
+  "5.5.544": {
+    "en": "🔧 FIX Lasse_K: Removed ZG-102Z/ZL/ZM from climate_sensor (conflict with contact_sensor). Removed ZG-222Z/223Z from climate_sensor (water leak sensors). Added ZG-102ZL/ZM to contact_sensor. Forum deep analysis complete.",
+    "nl": "🔧 FIX: ZG-102Z verwijderd uit climate_sensor, toegevoegd aan contact_sensor.",
+    "fr": "🔧 FIX: ZG-102Z retiré de climate_sensor, ajouté à contact_sensor.",
+    "de": "🔧 FIX: ZG-102Z aus climate_sensor entfernt, zu contact_sensor hinzugefügt."
+  },
   "5.5.543": {
     "en": "🔧 Forum analysis: Added _TZ3210_s8lvbbuc to bulb_rgbw (Fiek TS0505B). Verified HOBEIAN ZG-101ZL, ZG-222Z, CS-201Z already supported. All switch HybridSwitchBase imports fixed.",
     "nl": "🔧 Forum analyse: _TZ3210_s8lvbbuc toegevoegd aan bulb_rgbw.",
