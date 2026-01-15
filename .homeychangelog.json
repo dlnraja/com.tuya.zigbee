@@ -1,4 +1,10 @@
 {
+  "5.5.542": {
+    "en": "🔧 CRITICAL FIX: Fixed HybridSwitchBase import error in 9 switch drivers (1-8 gang + mini + wireless). Resolves 'Class extends value undefined' crash reported by Hartmut_Dunker. Re-pair devices after update.",
+    "nl": "🔧 KRITIEKE FIX: HybridSwitchBase import fout opgelost in 9 switch drivers.",
+    "fr": "🔧 FIX CRITIQUE: Erreur import HybridSwitchBase corrigée dans 9 drivers switch.",
+    "de": "🔧 KRITISCHER FIX: HybridSwitchBase Import-Fehler in 9 Switch-Treibern behoben."
+  },
   "5.5.541": {
     "en": "🔧 FIX Cam: Moved _TZ3000_5bpeda8u from button_wireless_4 to button_wireless_1 (TS0041 is a 1-button device). Forum analysis: verified HOBEIAN devices, TS0203 contact sensor, presence sensors.",
     "nl": "🔧 FIX: _TZ3000_5bpeda8u verplaatst naar button_wireless_1.",
