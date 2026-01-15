@@ -1,0 +1,95 @@
+{
+  "triggers": [
+    {
+      "id": "water_level_changed",
+      "title": {
+        "en": "Water level changed",
+        "nl": "Waterniveau veranderd",
+        "fr": "Niveau d'eau changé",
+        "de": "Wasserstand geändert"
+      },
+      "titleFormatted": {
+        "en": "Water level changed to [[level]]%",
+        "nl": "Waterniveau veranderd naar [[level]]%",
+        "fr": "Niveau d'eau changé à [[level]]%",
+        "de": "Wasserstand geändert zu [[level]]%"
+      },
+      "tokens": [
+        {
+          "name": "level",
+          "type": "number",
+          "title": {
+            "en": "Water level (%)",
+            "nl": "Waterniveau (%)",
+            "fr": "Niveau d'eau (%)",
+            "de": "Wasserstand (%)"
+          },
+          "example": 75
+        }
+      ]
+    },
+    {
+      "id": "water_tank_low",
+      "highlight": true,
+      "title": {
+        "en": "Water tank is low",
+        "nl": "Watertank is bijna leeg",
+        "fr": "Réservoir d'eau bas",
+        "de": "Wassertank ist niedrig"
+      },
+      "hint": {
+        "en": "Triggers when water level drops below the configured threshold",
+        "nl": "Triggert wanneer het waterniveau onder de drempel zakt",
+        "fr": "Se déclenche quand le niveau d'eau passe sous le seuil",
+        "de": "Wird ausgelöst, wenn der Wasserstand unter den Schwellenwert fällt"
+      }
+    },
+    {
+      "id": "water_tank_full",
+      "title": {
+        "en": "Water tank is full",
+        "nl": "Watertank is vol",
+        "fr": "Réservoir d'eau plein",
+        "de": "Wassertank ist voll"
+      }
+    },
+    {
+      "id": "water_tank_battery_low",
+      "title": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "water_level_above",
+      "title": {
+        "en": "Water level !{{is|is not}} above",
+        "nl": "Waterniveau !{{is|is niet}} boven",
+        "fr": "Niveau d'eau !{{est|n'est pas}} au-dessus de",
+        "de": "Wasserstand !{{ist|ist nicht}} über"
+      },
+      "titleFormatted": {
+        "en": "Water level !{{is|is not}} above [[level]]%",
+        "nl": "Waterniveau !{{is|is niet}} boven [[level]]%",
+        "fr": "Niveau d'eau !{{est|n'est pas}} au-dessus de [[level]]%",
+        "de": "Wasserstand !{{ist|ist nicht}} über [[level]]%"
+      },
+      "args": [
+        {
+          "name": "level",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": {
+            "en": "20"
+          }
+        }
+      ]
+    }
+  ]
+}

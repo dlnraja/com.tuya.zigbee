@@ -3,16 +3,19 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 /**
- * v5.5.506: Fixed flow card registration with error handling
+ * v5.5.551: Fixed - removed non-existent flow card reference
  */
 class UsbOutletAdvancedDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('UsbOutletAdvancedDriver v5.5.506 initializing...');
+    this.log('UsbOutletAdvancedDriver v5.5.551 initializing...');
     await super.onInit();
 
+    // v5.5.551: Only register flow cards that exist in driver.flow.compose.json
     try {
-      this._usb_outlet_button_pressedTrigger = this.homey.flow.getDeviceTriggerCard('usb_outlet_button_pressed');
+      this._turnedOnTrigger = this.homey.flow.getDeviceTriggerCard('usb_outlet_advanced_turned_on');
+      this._turnedOffTrigger = this.homey.flow.getDeviceTriggerCard('usb_outlet_advanced_turned_off');
+      this._powerChangedTrigger = this.homey.flow.getDeviceTriggerCard('usb_outlet_advanced_measure_power_changed');
       this.log('UsbOutletAdvancedDriver ✅ Flow cards registered');
     } catch (err) {
       this.error('UsbOutletAdvancedDriver flow card registration failed:', err.message);
