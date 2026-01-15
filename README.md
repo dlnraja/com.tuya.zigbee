@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.553** | 🏭 BSEED: Added all BSEED Zigbee devices - wall sockets (_TZ3000_b28wrpvx, _T... |
 | **v5.5.552** | 🔇 SILENT: Removed non-existent flow card triggers (tuya_dp_received, receive... |
 | **v5.5.551** | 🔧 FIX: Multiple Invalid Flow Card ID errors - bulb_rgb driver crash fixed, O... |
 | **v5.5.550** | 🔬 DEEP RESEARCH: Water leak sensor enriched with manufacturer-specific profi... |
@@ -78,7 +79,6 @@
 | **v5.5.544** | 🔧 FIX Lasse_K: Removed ZG-102Z/ZL/ZM from climate_sensor (conflict with cont... |
 | **v5.5.543** | 🔧 Forum analysis: Added _TZ3210_s8lvbbuc to bulb_rgbw (Fiek TS0505B). Verifi... |
 | **v5.5.542** | 🔧 CRITICAL FIX: Fixed HybridSwitchBase import error in 9 switch drivers (1-8... |
-| **v5.5.541** | 🔧 FIX Cam: Moved _TZ3000_5bpeda8u from button_wireless_4 to button_wireless_... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
