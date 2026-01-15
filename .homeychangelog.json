@@ -1,4 +1,10 @@
 {
+  "5.5.555": {
+    "en": "🚨 HOTFIX: Fixed critical syntax error in app.js causing app crash on startup. Missing try block restored.",
+    "nl": "🚨 HOTFIX: Kritieke syntaxfout in app.js opgelost die app crash bij opstarten veroorzaakte.",
+    "fr": "🚨 HOTFIX: Erreur de syntaxe critique dans app.js corrigée causant le crash au démarrage.",
+    "de": "🚨 HOTFIX: Kritischer Syntaxfehler in app.js behoben, der App-Absturz beim Start verursachte."
+  },
   "5.5.554": {
     "en": "🎯 PRESENCE FIX: Added DP119 presence detection mapping to presence_sensor_radar. Fixes presence sensors wrongly assigned to climate_sensor (diagnostic 725b1c78).",
     "nl": "🎯 PRESENCE FIX: DP119 aanwezigheidsdetectie toegevoegd aan presence_sensor_radar.",
