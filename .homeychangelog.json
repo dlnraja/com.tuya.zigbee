@@ -1,4 +1,10 @@
 {
+  "5.5.545": {
+    "en": "🔧 Forum analysis #961-973: Added CK-BL702-MWS-01(7016) to presence_sensor_radar (JJ10). Fixed ZG-102Z driver conflicts. Verified CS-201Z, HOBEIAN ZG-303Z, TS0203 contact sensors. Deep Z2M research integrated.",
+    "nl": "🔧 Forum analyse: CK-BL702-MWS-01 toegevoegd aan presence_sensor_radar.",
+    "fr": "🔧 Analyse forum: Ajout CK-BL702-MWS-01 à presence_sensor_radar.",
+    "de": "🔧 Forum-Analyse: CK-BL702-MWS-01 zu presence_sensor_radar hinzugefügt."
+  },
   "5.5.544": {
     "en": "🔧 FIX Lasse_K: Removed ZG-102Z/ZL/ZM from climate_sensor (conflict with contact_sensor). Removed ZG-222Z/223Z from climate_sensor (water leak sensors). Added ZG-102ZL/ZM to contact_sensor. Forum deep analysis complete.",
     "nl": "🔧 FIX: ZG-102Z verwijderd uit climate_sensor, toegevoegd aan contact_sensor.",
