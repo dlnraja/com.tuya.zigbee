@@ -1,4 +1,10 @@
 {
+  "5.5.558": {
+    "en": "🔧 FIX: Contact sensor _TZ3000_996rpfy6 (TS0203) removed from climate_sensor driver - was causing misclassification. Forum issue blutch32 resolved.",
+    "nl": "🔧 FIX: Contact sensor _TZ3000_996rpfy6 verwijderd uit climate_sensor driver.",
+    "fr": "🔧 FIX: Capteur contact _TZ3000_996rpfy6 retiré du driver climate_sensor - causait mauvaise classification.",
+    "de": "🔧 FIX: Kontaktsensor _TZ3000_996rpfy6 aus climate_sensor Treiber entfernt."
+  },
   "5.5.557": {
     "en": "📦 MANUFACTURER ID ENRICHMENT: Added BSEED 4-gang switch IDs (_TZ3000_s6ma1nh4, _TZ3000_imaccztn, _TZ3000_wkr3jqmr, _TZ3000_knoj8lpk). Added presence sensor IDs (_TZE200_kb5noeto, _TZE204_ijxvkhd0, _TZE204_kyhbrfyl, _TZE200_1ibpyhdc, ZG-204ZL, ZG-205Z) to prevent misclassification.",
     "nl": "📦 MANUFACTURER ID VERRIJKING: BSEED 4-gang schakelaar IDs en extra aanwezigheidssensor IDs toegevoegd.",
