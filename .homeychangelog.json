@@ -1,4 +1,10 @@
 {
+  "5.5.552": {
+    "en": "🔇 SILENT: Removed non-existent flow card triggers (tuya_dp_received, receive_status_boolean) that were spamming stderr logs.",
+    "nl": "🔇 STILLE: Verwijderde niet-bestaande flow card triggers die stderr logs spamden.",
+    "fr": "🔇 SILENCIEUX: Suppression des triggers flow cards inexistants qui spammaient les logs stderr.",
+    "de": "🔇 STILL: Entfernte nicht existierende Flow Card Triggers die stderr Logs gespammt haben."
+  },
   "5.5.551": {
     "en": "🔧 FIX: Multiple Invalid Flow Card ID errors - bulb_rgb driver crash fixed, OTA/health flow cards wrapped in safe handlers, soil_sensor/usb_outlet_advanced/water_tank_monitor flow card IDs corrected.",
     "nl": "🔧 FIX: Meerdere Invalid Flow Card ID fouten opgelost - bulb_rgb crash verholpen.",
