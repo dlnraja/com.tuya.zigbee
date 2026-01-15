@@ -1,0 +1,200 @@
+{
+  "triggers": [
+    {
+      "id": "co_sensor_alarm_co_true",
+      "highlight": true,
+      "title": {
+        "en": "CO detected",
+        "nl": "CO gedetecteerd",
+        "fr": "CO détecté",
+        "de": "CO erkannt"
+      },
+      "titleFormatted": {
+        "en": "Carbon monoxide alarm triggered!",
+        "nl": "Koolmonoxide alarm geactiveerd!",
+        "fr": "Alarme monoxyde de carbone déclenchée !",
+        "de": "Kohlenmonoxid-Alarm ausgelöst!"
+      },
+      "hint": {
+        "en": "Triggers when carbon monoxide is detected - CRITICAL SAFETY ALERT",
+        "nl": "Triggert wanneer koolmonoxide wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
+        "fr": "Se déclenche quand du monoxyde de carbone est détecté - ALERTE DE SÉCURITÉ CRITIQUE",
+        "de": "Wird ausgelöst, wenn Kohlenmonoxid erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
+      }
+    },
+    {
+      "id": "co_sensor_alarm_co_false",
+      "title": {
+        "en": "CO cleared",
+        "nl": "CO opgeheven",
+        "fr": "CO dissipé",
+        "de": "CO verschwunden"
+      },
+      "hint": {
+        "en": "Triggers when carbon monoxide is no longer detected",
+        "nl": "Triggert wanneer koolmonoxide niet meer wordt gedetecteerd",
+        "fr": "Se déclenche quand le monoxyde de carbone n'est plus détecté",
+        "de": "Wird ausgelöst, wenn kein Kohlenmonoxid mehr erkannt wird"
+      }
+    },
+    {
+      "id": "co_sensor_measure_co_changed",
+      "title": {
+        "en": "CO level changed",
+        "nl": "CO niveau veranderd",
+        "fr": "Niveau CO changé",
+        "de": "CO-Wert geändert"
+      },
+      "titleFormatted": {
+        "en": "CO level changed to [[ppm]] ppm",
+        "nl": "CO niveau veranderd naar [[ppm]] ppm",
+        "fr": "Niveau CO changé à [[ppm]] ppm",
+        "de": "CO-Wert geändert zu [[ppm]] ppm"
+      },
+      "tokens": [
+        {
+          "name": "ppm",
+          "type": "number",
+          "title": {
+            "en": "CO (ppm)",
+            "nl": "CO (ppm)",
+            "fr": "CO (ppm)",
+            "de": "CO (ppm)"
+          },
+          "example": 50
+        }
+      ]
+    },
+    {
+      "id": "co_sensor_measure_battery_changed",
+      "title": {
+        "en": "Battery level changed",
+        "nl": "Batterijniveau veranderd",
+        "fr": "Niveau batterie changé",
+        "de": "Batteriestand geändert"
+      },
+      "titleFormatted": {
+        "en": "Battery level changed to [[battery]]%",
+        "nl": "Batterijniveau veranderd naar [[battery]]%",
+        "fr": "Niveau batterie changé à [[battery]]%",
+        "de": "Batteriestand geändert zu [[battery]]%"
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "Battery (%)",
+            "nl": "Batterij (%)",
+            "fr": "Batterie (%)",
+            "de": "Batterie (%)"
+          },
+          "example": 75
+        }
+      ]
+    },
+    {
+      "id": "co_sensor_battery_low",
+      "title": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      },
+      "hint": {
+        "en": "Triggers when battery drops below threshold - Replace battery soon!",
+        "nl": "Triggert wanneer de batterij onder de drempel zakt - Vervang binnenkort de batterij!",
+        "fr": "Se déclenche quand la batterie passe sous le seuil - Remplacez la batterie bientôt !",
+        "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt - Batterie bald ersetzen!"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "co_sensor_co_detected",
+      "title": {
+        "en": "CO !{{is|is not}} detected",
+        "nl": "CO !{{is|is niet}} gedetecteerd",
+        "fr": "CO !{{est|n'est pas}} détecté",
+        "de": "CO !{{ist|ist nicht}} erkannt"
+      }
+    },
+    {
+      "id": "co_sensor_co_above",
+      "title": {
+        "en": "CO level !{{is|is not}} above",
+        "nl": "CO niveau !{{is|is niet}} boven",
+        "fr": "Niveau CO !{{est|n'est pas}} au-dessus de",
+        "de": "CO-Wert !{{ist|ist nicht}} über"
+      },
+      "titleFormatted": {
+        "en": "CO level !{{is|is not}} above [[ppm]] ppm",
+        "nl": "CO niveau !{{is|is niet}} boven [[ppm]] ppm",
+        "fr": "Niveau CO !{{est|n'est pas}} au-dessus de [[ppm]] ppm",
+        "de": "CO-Wert !{{ist|ist nicht}} über [[ppm]] ppm"
+      },
+      "args": [
+        {
+          "name": "ppm",
+          "type": "number",
+          "min": 0,
+          "max": 500,
+          "step": 10,
+          "placeholder": {
+            "en": "50"
+          }
+        }
+      ]
+    },
+    {
+      "id": "co_sensor_battery_above",
+      "title": {
+        "en": "Battery !{{is|is not}} above",
+        "nl": "Batterij !{{is|is niet}} boven",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de",
+        "de": "Batterie !{{ist|ist nicht}} über"
+      },
+      "titleFormatted": {
+        "en": "Battery !{{is|is not}} above [[threshold]]%",
+        "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
+        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
+      },
+      "args": [
+        {
+          "name": "threshold",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": {
+            "en": "20"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "co_sensor_test_alarm",
+      "title": {
+        "en": "Test the CO alarm",
+        "nl": "Test het CO alarm",
+        "fr": "Tester l'alarme CO",
+        "de": "CO-Alarm testen"
+      },
+      "titleFormatted": {
+        "en": "Test the carbon monoxide alarm",
+        "nl": "Test het koolmonoxide alarm",
+        "fr": "Tester l'alarme monoxyde de carbone",
+        "de": "Kohlenmonoxid-Alarm testen"
+      },
+      "hint": {
+        "en": "Triggers a test on the CO detector (if supported by device)",
+        "nl": "Start een test op de CO detector (indien ondersteund door apparaat)",
+        "fr": "Déclenche un test sur le détecteur CO (si supporté par l'appareil)",
+        "de": "Löst einen Test am CO-Melder aus (falls vom Gerät unterstützt)"
+      }
+    }
+  ]
+}

@@ -1,68 +1,200 @@
 {
   "triggers": [
     {
-      "id": "water_valve_smart_alarm_motion_true",
+      "id": "water_valve_opened",
+      "highlight": true,
       "title": {
-        "en": "Motion detected",
-        "fr": "Mouvement détecté"
+        "en": "Valve opened",
+        "nl": "Klep geopend",
+        "fr": "Vanne ouverte",
+        "de": "Ventil geöffnet"
+      },
+      "hint": {
+        "en": "Triggers when the water valve is opened",
+        "nl": "Triggert wanneer de waterklep wordt geopend",
+        "fr": "Se déclenche quand la vanne d'eau est ouverte",
+        "de": "Wird ausgelöst, wenn das Wasserventil geöffnet wird"
       }
     },
     {
-      "id": "water_valve_smart_alarm_motion_false",
+      "id": "water_valve_closed",
       "title": {
-        "en": "No motion",
-        "fr": "Aucun mouvement"
+        "en": "Valve closed",
+        "nl": "Klep gesloten",
+        "fr": "Vanne fermée",
+        "de": "Ventil geschlossen"
+      },
+      "hint": {
+        "en": "Triggers when the water valve is closed",
+        "nl": "Triggert wanneer de waterklep wordt gesloten",
+        "fr": "Se déclenche quand la vanne d'eau est fermée",
+        "de": "Wird ausgelöst, wenn das Wasserventil geschlossen wird"
       }
     },
     {
-      "id": "water_valve_smart_measure_temperature_changed",
+      "id": "water_valve_leak_detected",
+      "highlight": true,
+      "title": {
+        "en": "Water leak detected!",
+        "nl": "Waterlek gedetecteerd!",
+        "fr": "Fuite d'eau détectée !",
+        "de": "Wasserleck erkannt!"
+      },
+      "hint": {
+        "en": "Triggers when water is detected - valve will close automatically",
+        "nl": "Triggert wanneer water wordt gedetecteerd - klep sluit automatisch",
+        "fr": "Se déclenche quand de l'eau est détectée - la vanne se ferme automatiquement",
+        "de": "Wird ausgelöst, wenn Wasser erkannt wird - Ventil schließt automatisch"
+      }
+    },
+    {
+      "id": "water_valve_leak_cleared",
+      "title": {
+        "en": "Water leak cleared",
+        "nl": "Waterlek opgeheven",
+        "fr": "Fuite d'eau terminée",
+        "de": "Wasserleck behoben"
+      }
+    },
+    {
+      "id": "water_valve_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "nl": "Temperatuur veranderd",
+        "fr": "Température changée",
+        "de": "Temperatur geändert"
+      },
+      "titleFormatted": {
+        "en": "Temperature changed to [[temperature]]°C",
+        "nl": "Temperatuur veranderd naar [[temperature]]°C",
+        "fr": "Température changée à [[temperature]]°C",
+        "de": "Temperatur geändert zu [[temperature]]°C"
       },
       "tokens": [
         {
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature",
-            "fr": "Température"
+            "en": "Temperature (°C)",
+            "nl": "Temperatuur (°C)",
+            "fr": "Température (°C)",
+            "de": "Temperatur (°C)"
           },
           "example": 20.5
         }
       ]
     },
     {
-      "id": "water_valve_smart_alarm_water_true",
+      "id": "water_valve_frost_warning",
       "title": {
-        "en": "Water leak detected",
-        "fr": "Fuite d'eau détectée"
-      }
-    },
-    {
-      "id": "water_valve_smart_alarm_water_false",
-      "title": {
-        "en": "No water leak",
-        "fr": "Aucune fuite d'eau"
-      }
-    },
-    {
-      "id": "water_valve_smart_measure_battery_changed",
-      "title": {
-        "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
+        "en": "Frost warning",
+        "nl": "Vorstwaarschwing",
+        "fr": "Alerte gel",
+        "de": "Frostwarnung"
       },
-      "tokens": [
+      "hint": {
+        "en": "Triggers when temperature drops below 5°C - risk of frozen pipes!",
+        "nl": "Triggert wanneer de temperatuur onder 5°C zakt - risico op bevroren leidingen!",
+        "fr": "Se déclenche quand la température passe sous 5°C - risque de tuyaux gelés !",
+        "de": "Wird ausgelöst, wenn die Temperatur unter 5°C fällt - Gefahr eingefrorener Rohre!"
+      }
+    },
+    {
+      "id": "water_valve_battery_low",
+      "title": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "water_valve_is_open",
+      "title": {
+        "en": "Valve !{{is|is not}} open",
+        "nl": "Klep !{{is|is niet}} open",
+        "fr": "Vanne !{{est|n'est pas}} ouverte",
+        "de": "Ventil !{{ist|ist nicht}} offen"
+      }
+    },
+    {
+      "id": "water_valve_leak_detected",
+      "title": {
+        "en": "Water leak !{{is|is not}} detected",
+        "nl": "Waterlek !{{is|is niet}} gedetecteerd",
+        "fr": "Fuite d'eau !{{est|n'est pas}} détectée",
+        "de": "Wasserleck !{{ist|ist nicht}} erkannt"
+      }
+    },
+    {
+      "id": "water_valve_temperature_above",
+      "title": {
+        "en": "Temperature !{{is|is not}} above",
+        "nl": "Temperatuur !{{is|is niet}} boven",
+        "fr": "Température !{{est|n'est pas}} au-dessus de",
+        "de": "Temperatur !{{ist|ist nicht}} über"
+      },
+      "titleFormatted": {
+        "en": "Temperature !{{is|is not}} above [[temp]]°C",
+        "nl": "Temperatuur !{{is|is niet}} boven [[temp]]°C",
+        "fr": "Température !{{est|n'est pas}} au-dessus de [[temp]]°C",
+        "de": "Temperatur !{{ist|ist nicht}} über [[temp]]°C"
+      },
+      "args": [
         {
-          "name": "battery",
+          "name": "temp",
           "type": "number",
-          "title": {
-            "en": "Battery (%)",
-            "fr": "Batterie (%)"
-          },
-          "example": 75
+          "min": -20,
+          "max": 60,
+          "step": 1,
+          "placeholder": {
+            "en": "5"
+          }
         }
       ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "water_valve_open",
+      "title": {
+        "en": "Open valve",
+        "nl": "Klep openen",
+        "fr": "Ouvrir la vanne",
+        "de": "Ventil öffnen"
+      },
+      "hint": {
+        "en": "Opens the water valve to allow water flow",
+        "nl": "Opent de waterklep om water door te laten stromen",
+        "fr": "Ouvre la vanne d'eau pour permettre l'écoulement",
+        "de": "Öffnet das Wasserventil, um den Wasserfluss zu ermöglichen"
+      }
+    },
+    {
+      "id": "water_valve_close",
+      "title": {
+        "en": "Close valve",
+        "nl": "Klep sluiten",
+        "fr": "Fermer la vanne",
+        "de": "Ventil schließen"
+      },
+      "hint": {
+        "en": "Closes the water valve to stop water flow",
+        "nl": "Sluit de waterklep om de waterstroom te stoppen",
+        "fr": "Ferme la vanne d'eau pour arrêter l'écoulement",
+        "de": "Schließt das Wasserventil, um den Wasserfluss zu stoppen"
+      }
+    },
+    {
+      "id": "water_valve_toggle",
+      "title": {
+        "en": "Toggle valve",
+        "nl": "Klep schakelen",
+        "fr": "Basculer la vanne",
+        "de": "Ventil umschalten"
+      }
     }
   ]
 }

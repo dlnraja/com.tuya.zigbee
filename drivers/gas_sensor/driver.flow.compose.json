@@ -1,36 +1,192 @@
 {
   "triggers": [
     {
-      "id": "gas_sensor_ts0601_alarm_co_true",
+      "id": "gas_sensor_alarm_gas_true",
+      "highlight": true,
+      "title": {
+        "en": "Gas detected",
+        "nl": "Gas gedetecteerd",
+        "fr": "Gaz détecté",
+        "de": "Gas erkannt"
+      },
+      "titleFormatted": {
+        "en": "Combustible gas alarm triggered!",
+        "nl": "Brandbaar gas alarm geactiveerd!",
+        "fr": "Alarme gaz combustible déclenchée !",
+        "de": "Brenngasalarm ausgelöst!"
+      },
+      "hint": {
+        "en": "Triggers when combustible gas (methane/LPG/natural gas) is detected - CRITICAL SAFETY ALERT",
+        "nl": "Triggert wanneer brandbaar gas (methaan/LPG/aardgas) wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
+        "fr": "Se déclenche quand du gaz combustible (méthane/GPL/gaz naturel) est détecté - ALERTE DE SÉCURITÉ CRITIQUE",
+        "de": "Wird ausgelöst, wenn brennbares Gas (Methan/LPG/Erdgas) erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
+      }
+    },
+    {
+      "id": "gas_sensor_alarm_gas_false",
+      "title": {
+        "en": "Gas cleared",
+        "nl": "Gas opgeheven",
+        "fr": "Gaz dissipé",
+        "de": "Gas verschwunden"
+      },
+      "hint": {
+        "en": "Triggers when gas is no longer detected",
+        "nl": "Triggert wanneer geen gas meer wordt gedetecteerd",
+        "fr": "Se déclenche quand le gaz n'est plus détecté",
+        "de": "Wird ausgelöst, wenn kein Gas mehr erkannt wird"
+      }
+    },
+    {
+      "id": "gas_sensor_alarm_co_true",
+      "highlight": true,
       "title": {
         "en": "Carbon monoxide detected",
-        "fr": "Monoxyde de carbone détecté"
+        "nl": "Koolmonoxide gedetecteerd",
+        "fr": "Monoxyde de carbone détecté",
+        "de": "Kohlenmonoxid erkannt"
+      },
+      "hint": {
+        "en": "Triggers when CO is detected - CRITICAL SAFETY ALERT",
+        "nl": "Triggert wanneer CO wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
+        "fr": "Se déclenche quand du CO est détecté - ALERTE DE SÉCURITÉ CRITIQUE",
+        "de": "Wird ausgelöst, wenn CO erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
       }
     },
     {
-      "id": "gas_sensor_ts0601_alarm_co2_true",
+      "id": "gas_sensor_gas_level_changed",
       "title": {
-        "en": "CO2 alarm triggered",
-        "fr": "Alarme CO2 déclenchée"
-      }
-    },
-    {
-      "id": "gas_sensor_ts0601_measure_battery_changed",
-      "title": {
-        "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
+        "en": "Gas level changed",
+        "nl": "Gasniveau veranderd",
+        "fr": "Niveau de gaz changé",
+        "de": "Gaswert geändert"
+      },
+      "titleFormatted": {
+        "en": "Gas level changed to [[level]]%",
+        "nl": "Gasniveau veranderd naar [[level]]%",
+        "fr": "Niveau de gaz changé à [[level]]%",
+        "de": "Gaswert geändert zu [[level]]%"
       },
       "tokens": [
         {
-          "name": "battery",
+          "name": "level",
           "type": "number",
           "title": {
-            "en": "Battery (%)",
-            "fr": "Batterie (%)"
+            "en": "Gas level (%)",
+            "nl": "Gasniveau (%)",
+            "fr": "Niveau de gaz (%)",
+            "de": "Gaswert (%)"
           },
-          "example": 75
+          "example": 15
         }
       ]
+    },
+    {
+      "id": "gas_sensor_self_test_result",
+      "title": {
+        "en": "Self-test completed",
+        "nl": "Zelftest voltooid",
+        "fr": "Auto-test terminé",
+        "de": "Selbsttest abgeschlossen"
+      },
+      "tokens": [
+        {
+          "name": "result",
+          "type": "string",
+          "title": {
+            "en": "Result",
+            "nl": "Resultaat",
+            "fr": "Résultat",
+            "de": "Ergebnis"
+          },
+          "example": "passed"
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "gas_sensor_gas_detected",
+      "title": {
+        "en": "Gas !{{is|is not}} detected",
+        "nl": "Gas !{{is|is niet}} gedetecteerd",
+        "fr": "Gaz !{{est|n'est pas}} détecté",
+        "de": "Gas !{{ist|ist nicht}} erkannt"
+      }
+    },
+    {
+      "id": "gas_sensor_co_detected",
+      "title": {
+        "en": "CO !{{is|is not}} detected",
+        "nl": "CO !{{is|is niet}} gedetecteerd",
+        "fr": "CO !{{est|n'est pas}} détecté",
+        "de": "CO !{{ist|ist nicht}} erkannt"
+      }
+    },
+    {
+      "id": "gas_sensor_level_above",
+      "title": {
+        "en": "Gas level !{{is|is not}} above",
+        "nl": "Gasniveau !{{is|is niet}} boven",
+        "fr": "Niveau de gaz !{{est|n'est pas}} au-dessus de",
+        "de": "Gaswert !{{ist|ist nicht}} über"
+      },
+      "titleFormatted": {
+        "en": "Gas level !{{is|is not}} above [[threshold]]%",
+        "nl": "Gasniveau !{{is|is niet}} boven [[threshold]]%",
+        "fr": "Niveau de gaz !{{est|n'est pas}} au-dessus de [[threshold]]%",
+        "de": "Gaswert !{{ist|ist nicht}} über [[threshold]]%"
+      },
+      "args": [
+        {
+          "name": "threshold",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": {
+            "en": "20"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "gas_sensor_mute_alarm",
+      "title": {
+        "en": "Mute alarm",
+        "nl": "Alarm dempen",
+        "fr": "Couper l'alarme",
+        "de": "Alarm stumm schalten"
+      },
+      "titleFormatted": {
+        "en": "Mute the gas alarm",
+        "nl": "Demp het gasalarm",
+        "fr": "Couper l'alarme de gaz",
+        "de": "Gasalarm stumm schalten"
+      },
+      "hint": {
+        "en": "Mutes the alarm temporarily (if supported by device)",
+        "nl": "Dempt het alarm tijdelijk (indien ondersteund door apparaat)",
+        "fr": "Coupe l'alarme temporairement (si supporté par l'appareil)",
+        "de": "Schaltet den Alarm vorübergehend stumm (falls vom Gerät unterstützt)"
+      }
+    },
+    {
+      "id": "gas_sensor_self_test",
+      "title": {
+        "en": "Run self-test",
+        "nl": "Zelftest uitvoeren",
+        "fr": "Lancer l'auto-test",
+        "de": "Selbsttest ausführen"
+      },
+      "hint": {
+        "en": "Triggers a self-test on the gas detector",
+        "nl": "Start een zelftest op de gasdetector",
+        "fr": "Déclenche un auto-test sur le détecteur de gaz",
+        "de": "Führt einen Selbsttest am Gasdetektor durch"
+      }
     }
   ]
 }

@@ -1,25 +1,70 @@
 {
   "triggers": [
     {
-      "id": "contact_sensor_contact_sensor_alarm_contact_true",
+      "id": "contact_sensor_opened",
       "highlight": true,
       "title": {
-        "en": "Contact alarm activated",
-        "fr": "Alarme de contact activée"
+        "en": "Door/window opened",
+        "nl": "Deur/raam geopend",
+        "fr": "Porte/fenêtre ouverte",
+        "de": "Tür/Fenster geöffnet"
+      },
+      "titleFormatted": {
+        "en": "The door or window was opened",
+        "nl": "De deur of het raam werd geopend",
+        "fr": "La porte ou fenêtre a été ouverte",
+        "de": "Die Tür oder das Fenster wurde geöffnet"
+      },
+      "hint": {
+        "en": "Triggers when the magnet separates from the sensor",
+        "nl": "Triggert wanneer de magneet van de sensor wordt gescheiden",
+        "fr": "Se déclenche quand l'aimant se sépare du capteur",
+        "de": "Wird ausgelöst, wenn der Magnet vom Sensor getrennt wird"
       }
     },
     {
-      "id": "contact_sensor_contact_sensor_alarm_contact_false",
+      "id": "contact_sensor_closed",
       "title": {
-        "en": "Contact alarm deactivated",
-        "fr": "Alarme de contact désactivée"
+        "en": "Door/window closed",
+        "nl": "Deur/raam gesloten",
+        "fr": "Porte/fenêtre fermée",
+        "de": "Tür/Fenster geschlossen"
+      },
+      "hint": {
+        "en": "Triggers when the magnet contacts the sensor",
+        "nl": "Triggert wanneer de magneet de sensor raakt",
+        "fr": "Se déclenche quand l'aimant touche le capteur",
+        "de": "Wird ausgelöst, wenn der Magnet den Sensor berührt"
       }
     },
     {
-      "id": "contact_sensor_contact_sensor_measure_battery_changed",
+      "id": "contact_sensor_tamper_true",
+      "title": {
+        "en": "Tamper alert",
+        "nl": "Sabotage alarm",
+        "fr": "Alerte sabotage",
+        "de": "Manipulationsalarm"
+      },
+      "hint": {
+        "en": "Triggers when the sensor has been tampered with",
+        "nl": "Triggert wanneer er met de sensor is geknoeid",
+        "fr": "Se déclenche quand le capteur a été saboté",
+        "de": "Wird ausgelöst, wenn der Sensor manipuliert wurde"
+      }
+    },
+    {
+      "id": "contact_sensor_battery_changed",
       "title": {
         "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
+        "nl": "Batterijniveau veranderd",
+        "fr": "Niveau batterie changé",
+        "de": "Batteriestand geändert"
+      },
+      "titleFormatted": {
+        "en": "Battery level changed to [[battery]]%",
+        "nl": "Batterijniveau veranderd naar [[battery]]%",
+        "fr": "Niveau batterie changé à [[battery]]%",
+        "de": "Batteriestand geändert zu [[battery]]%"
       },
       "tokens": [
         {
@@ -27,9 +72,98 @@
           "type": "number",
           "title": {
             "en": "Battery (%)",
-            "fr": "Batterie (%)"
+            "nl": "Batterij (%)",
+            "fr": "Batterie (%)",
+            "de": "Batterie (%)"
           },
           "example": 75
+        }
+      ]
+    },
+    {
+      "id": "contact_sensor_battery_low",
+      "title": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      },
+      "hint": {
+        "en": "Triggers when battery drops below threshold",
+        "nl": "Triggert wanneer de batterij onder de drempel zakt",
+        "fr": "Se déclenche quand la batterie passe sous le seuil",
+        "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt"
+      }
+    },
+    {
+      "id": "contact_sensor_left_open",
+      "title": {
+        "en": "Left open for duration",
+        "nl": "Te lang open gelaten",
+        "fr": "Resté ouvert trop longtemps",
+        "de": "Zu lange offen gelassen"
+      },
+      "titleFormatted": {
+        "en": "Left open for [[duration]] minutes",
+        "nl": "Meer dan [[duration]] minuten open",
+        "fr": "Ouvert depuis [[duration]] minutes",
+        "de": "Seit [[duration]] Minuten offen"
+      },
+      "hint": {
+        "en": "Triggers when the sensor has been open for the specified duration",
+        "nl": "Triggert wanneer de sensor langer dan de opgegeven tijd open is",
+        "fr": "Se déclenche quand le capteur est ouvert depuis la durée spécifiée",
+        "de": "Wird ausgelöst, wenn der Sensor länger als die angegebene Dauer offen ist"
+      },
+      "tokens": [
+        {
+          "name": "duration",
+          "type": "number",
+          "title": {
+            "en": "Duration (min)",
+            "nl": "Duur (min)",
+            "fr": "Durée (min)",
+            "de": "Dauer (min)"
+          },
+          "example": 5
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "contact_sensor_is_open",
+      "title": {
+        "en": "Door/window !{{is|is not}} open",
+        "nl": "Deur/raam !{{is|is niet}} open",
+        "fr": "Porte/fenêtre !{{est|n'est pas}} ouverte",
+        "de": "Tür/Fenster !{{ist|ist nicht}} offen"
+      }
+    },
+    {
+      "id": "contact_sensor_battery_above",
+      "title": {
+        "en": "Battery !{{is|is not}} above",
+        "nl": "Batterij !{{is|is niet}} boven",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de",
+        "de": "Batterie !{{ist|ist nicht}} über"
+      },
+      "titleFormatted": {
+        "en": "Battery !{{is|is not}} above [[threshold]]%",
+        "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
+        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
+      },
+      "args": [
+        {
+          "name": "threshold",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": {
+            "en": "20"
+          }
         }
       ]
     }
