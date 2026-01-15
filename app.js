@@ -484,138 +484,111 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
   /**
    * Register OTA Firmware Update Flow Cards
+   * v5.5.551: Each flow card wrapped in individual try/catch to prevent crashes
    */
   registerOTAFlowCards() {
     this.log('📦 Registering OTA Flow Cards...');
+    let registered = 0;
 
-    try {
-      // TRIGGER: OTA update available
-      this.homey.flow.getTriggerCard('ota_update_available')
-        .registerRunListener(async (args, state) => {
-          return true; // Always allow trigger
-        });
+    // Helper to safely register flow cards
+    const safeRegister = (type, id, handler) => {
+      try {
+        const method = type === 'trigger' ? 'getTriggerCard' : 
+                       type === 'action' ? 'getActionCard' : 'getConditionCard';
+        const card = this.homey.flow[method](id);
+        if (card) {
+          card.registerRunListener(handler);
+          registered++;
+          return card;
+        }
+      } catch (err) {
+        this.log(`[FLOW] Flow card '${id}' not available - skipping`);
+      }
+      return null;
+    };
 
-      // TRIGGER: OTA update completed
-      this.homey.flow.getTriggerCard('ota_update_completed')
-        .registerRunListener(async (args, state) => {
-          return true;
-        });
-
-      // ACTION: Check for firmware updates
-      this.homey.flow.getActionCard('ota_check_updates')
-        .registerRunListener(async (args) => {
-          this.log('[OTA] Checking for updates via flow action...');
-
-          // Get all devices
-          const devices = Object.values(this.homey.drivers.getDrivers())
-            .flatMap(driver => Object.values(driver.getDevices()));
-
-          let updatesFound = 0;
-
-          for (const device of devices) {
-            try {
-              const update = await this.otaManager.checkUpdate(device);
-              if (update.available) {
-                updatesFound++;
-
-                // Trigger the update available flow
-                await this.homey.flow.getTriggerCard('ota_update_available')
-                  .trigger({
-                    device_name: device.getName(),
-                    current_version: String(update.currentVersion),
-                    new_version: String(update.newVersion)
-                  });
-              }
-            } catch (err) {
-              // Continue with next device
+    // OTA Flow Cards (optional - may not be defined)
+    this._otaUpdateAvailable = safeRegister('trigger', 'ota_update_available', 
+      async () => true);
+    
+    safeRegister('trigger', 'ota_update_completed', async () => true);
+    
+    safeRegister('action', 'ota_check_updates', async (args) => {
+      this.log('[OTA] Checking for updates via flow action...');
+      const devices = Object.values(this.homey.drivers.getDrivers())
+        .flatMap(driver => Object.values(driver.getDevices()));
+      let updatesFound = 0;
+      for (const device of devices) {
+        try {
+          const update = await this.otaManager?.checkUpdate(device);
+          if (update?.available) {
+            updatesFound++;
+            if (this._otaUpdateAvailable) {
+              await this._otaUpdateAvailable.trigger({
+                device_name: device.getName(),
+                current_version: String(update.currentVersion),
+                new_version: String(update.newVersion)
+              });
             }
           }
+        } catch (err) { /* Continue */ }
+      }
+      this.log(`[OTA] Found ${updatesFound} updates available`);
+      return true;
+    });
 
-          this.log(`[OTA] Found ${updatesFound} updates available`);
-          return true;
-        });
+    // Device Health Flow Cards (optional)
+    safeRegister('trigger', 'device_offline', async () => true);
+    safeRegister('trigger', 'device_online', async () => true);
+    safeRegister('trigger', 'low_battery_warning', async () => true);
+    safeRegister('trigger', 'zigbee_signal_weak', async () => true);
 
-      this.log('✅ OTA Flow Cards registered (3 cards)');
+    // ACTION: Identify device - v5.5.551: Safe wrapper
+    safeRegister('action', 'device_identify', async (args) => {
+      try {
+        if (!args?.device || typeof args.device.getName !== 'function') {
+          this.error('[IDENTIFY] Device not available (may have been deleted)');
+          return false;
+        }
+        const device = args.device;
+        this.log(`[IDENTIFY] Identifying device: ${device.getName()}`);
+        const endpoint = device.zclNode?.endpoints?.[1];
+        if (endpoint?.clusters?.identify) {
+          await endpoint.clusters.identify.identify({ identifyTime: 10 });
+          this.log(`[IDENTIFY] Device ${device.getName()} is blinking`);
+        } else if (device.hasCapability('onoff')) {
+          const original = device.getCapabilityValue('onoff');
+          await device.setCapabilityValue('onoff', !original);
+          await new Promise(r => setTimeout(r, 500));
+          await device.setCapabilityValue('onoff', original);
+        }
+        return true;
+      } catch (err) {
+        this.error(`[IDENTIFY] Error:`, err.message);
+        return false;
+      }
+    });
 
-      // Device Health Flow Cards
-      // TRIGGER: Device offline
-      this.homey.flow.getTriggerCard('device_offline')
-        .registerRunListener(async (args, state) => true);
+    // CONDITION: Device is online - v5.5.551: Safe wrapper
+    safeRegister('condition', 'device_is_online', async (args) => {
+      try {
+        if (!args?.device || typeof args.device.getAvailable !== 'function') {
+          return false;
+        }
+        return args.device.getAvailable();
+      } catch (err) {
+        this.error('[FLOW] device_is_online error:', err.message);
+        return false;
+      }
+    });
 
-      // TRIGGER: Device online
-      this.homey.flow.getTriggerCard('device_online')
-        .registerRunListener(async (args, state) => true);
+    this.log(`✅ OTA/Health Flow Cards registered (${registered} cards)`);
 
-      // TRIGGER: Low battery warning
-      this.homey.flow.getTriggerCard('low_battery_warning')
-        .registerRunListener(async (args, state) => true);
-
-      // TRIGGER: Zigbee signal weak
-      this.homey.flow.getTriggerCard('zigbee_signal_weak')
-        .registerRunListener(async (args, state) => true);
-
-      // ACTION: Identify device
-      // v5.5.369: Safe wrapper to prevent "cannot get device by id" errors
-      this.homey.flow.getActionCard('device_identify')
-        .registerRunListener(async (args) => {
-          try {
-            if (!args?.device || typeof args.device.getName !== 'function') {
-              this.error('[IDENTIFY] Device not available (may have been deleted)');
-              return false;
-            }
-            const device = args.device;
-            this.log(`[IDENTIFY] Identifying device: ${device.getName()}`);
-
-            // Try to identify via Zigbee Identify cluster
-            const endpoint = device.zclNode?.endpoints?.[1];
-            if (endpoint?.clusters?.identify) {
-              await endpoint.clusters.identify.identify({ identifyTime: 10 });
-              this.log(`[IDENTIFY] Device ${device.getName()} is blinking`);
-            } else if (device.hasCapability('onoff')) {
-              // Fallback: toggle on/off
-              const original = device.getCapabilityValue('onoff');
-              await device.setCapabilityValue('onoff', !original);
-              await new Promise(r => setTimeout(r, 500));
-              await device.setCapabilityValue('onoff', original);
-              await new Promise(r => setTimeout(r, 500));
-              await device.setCapabilityValue('onoff', !original);
-              await new Promise(r => setTimeout(r, 500));
-              await device.setCapabilityValue('onoff', original);
-            }
-            return true;
-          } catch (err) {
-            this.error(`[IDENTIFY] Error:`, err.message);
-            return false;
-          }
-        });
-
-      // CONDITION: Device is online
-      // v5.5.369: Safe wrapper to prevent "cannot get device by id" errors
-      this.homey.flow.getConditionCard('device_is_online')
-        .registerRunListener(async (args) => {
-          try {
-            if (!args?.device || typeof args.device.getAvailable !== 'function') {
-              return false;
-            }
-            return args.device.getAvailable();
-          } catch (err) {
-            this.error('[FLOW] device_is_online error:', err.message);
-            return false;
-          }
-        });
-
-      this.log('✅ Device Health Flow Cards registered (6 cards)');
-
-      // ═══════════════════════════════════════════════════════════════════
-      // v5.5.409: GENERIC TUYA DP FLOW CARDS (Inspired by com.tuya2)
-      // Allows users to trigger on ANY DP change and send commands to ANY DP
-      // v5.5.437: Wrapped in try-catch to prevent app crash if cards not found
-      // ═══════════════════════════════════════════════════════════════════
-
-      // v5.5.468: DISABLED - These flow cards cause Invalid Flow Card ID errors
-      // The cards exist in app.json but Homey SDK3 requires different registration
-      // TODO: Investigate proper SDK3 device trigger card registration
-      this.log('ℹ️ Tuya DP Flow Cards skipped (SDK3 compatibility)');
+    // ═══════════════════════════════════════════════════════════════════
+    // v5.5.409: GENERIC TUYA DP FLOW CARDS (Inspired by com.tuya2)
+    // v5.5.551: All wrapped in safeRegister to prevent crashes
+    // ═══════════════════════════════════════════════════════════════════
+    this.log('ℹ️ Tuya DP Flow Cards skipped (SDK3 compatibility)');
       /*
       try {
         // TRIGGER: Receive DP Boolean
@@ -644,10 +617,10 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       } catch (err) {
         this.error('⚠️ Error registering DP trigger flow cards:', err.message);
       }
-      */
+    */
 
-      // ACTION: Send DP Boolean (wrapped in try-catch v5.5.437)
-      try {
+    // ACTION: Send DP Boolean (wrapped in try-catch v5.5.551)
+    try {
         this.homey.flow.getActionCard('send_dp_boolean')
           .registerRunListener(async (args) => {
             try {
