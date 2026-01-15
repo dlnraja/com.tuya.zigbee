@@ -1,4 +1,10 @@
 {
+  "5.5.550": {
+    "en": "🔬 DEEP RESEARCH: Water leak sensor enriched with manufacturer-specific profiles from Zigbee2MQTT/GitHub research. Supports TS0207 (IAS Zone), TS0601 (Tuya DP), SONOFF SNZB-05P, HOBEIAN. Known issues documented per manufacturerName.",
+    "nl": "🔬 Water leak sensor verrijkt met fabrikant-specifieke profielen uit Zigbee2MQTT onderzoek.",
+    "fr": "🔬 Capteur fuite d'eau enrichi avec profils spécifiques par fabricant (recherche Zigbee2MQTT).",
+    "de": "🔬 Wasserlecksensor mit herstellerspezifischen Profilen aus Zigbee2MQTT-Recherche angereichert."
+  },
   "5.5.549": {
     "en": "🔧 FIX Lasse_K #978: Water leak sensor alarm not triggering. Some sensors use IAS Zone alarm2 bit instead of alarm1. Now using alarm1 OR alarm2 for water/smoke/gas/CO sensors.",
     "nl": "🔧 FIX: Waterlek sensor alarm werkt nu correct (alarm1 OF alarm2).",
