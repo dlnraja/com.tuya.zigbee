@@ -1,4 +1,10 @@
 {
+  "5.5.549": {
+    "en": "🔧 FIX Lasse_K #978: Water leak sensor alarm not triggering. Some sensors use IAS Zone alarm2 bit instead of alarm1. Now using alarm1 OR alarm2 for water/smoke/gas/CO sensors.",
+    "nl": "🔧 FIX: Waterlek sensor alarm werkt nu correct (alarm1 OF alarm2).",
+    "fr": "🔧 FIX: Alarme capteur fuite d'eau corrigée (alarm1 OU alarm2).",
+    "de": "🔧 FIX: Wasserlecksensor Alarm funktioniert jetzt korrekt (alarm1 ODER alarm2)."
+  },
   "5.5.548": {
     "en": "🔧 FIX switch_4gang: Robust HybridSwitchBase loading to prevent 'Class extends undefined' error (Hartmut_Dunker diag fc94daab). Removed .homeycompose from Git tracking. Flow cards enriched for 15+ drivers.",
     "nl": "🔧 FIX switch_4gang: Robuust laden HybridSwitchBase om 'Class extends undefined' fout te voorkomen.",
