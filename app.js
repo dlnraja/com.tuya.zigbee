@@ -490,6 +490,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     this.log('📦 Registering OTA Flow Cards...');
     let registered = 0;
 
+    try {
     // Helper to safely register flow cards
     const safeRegister = (type, id, handler) => {
       try {
