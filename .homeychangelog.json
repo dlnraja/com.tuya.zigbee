@@ -1,4 +1,10 @@
 {
+  "5.5.559": {
+    "en": "🔧 FIX: Presence sensor CK-BL702-MWS-01(7016) matching - added productId variant without parentheses (JJ10 forum fix).",
+    "nl": "🔧 FIX: Presence sensor CK-BL702-MWS-01 matching verbeterd.",
+    "fr": "🔧 FIX: Capteur présence CK-BL702-MWS-01 - variante productId ajoutée.",
+    "de": "🔧 FIX: Präsenzsensor CK-BL702-MWS-01 Matching verbessert."
+  },
   "5.5.558": {
     "en": "🔧 FIX: Contact sensor _TZ3000_996rpfy6 (TS0203) removed from climate_sensor driver - was causing misclassification. Forum issue blutch32 resolved.",
     "nl": "🔧 FIX: Contact sensor _TZ3000_996rpfy6 verwijderd uit climate_sensor driver.",
