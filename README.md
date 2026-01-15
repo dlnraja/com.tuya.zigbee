@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.544** | 🔧 FIX Lasse_K: Removed ZG-102Z/ZL/ZM from climate_sensor (conflict with cont... |
 | **v5.5.543** | 🔧 Forum analysis: Added _TZ3210_s8lvbbuc to bulb_rgbw (Fiek TS0505B). Verifi... |
 | **v5.5.542** | 🔧 CRITICAL FIX: Fixed HybridSwitchBase import error in 9 switch drivers (1-8... |
 | **v5.5.541** | 🔧 FIX Cam: Moved _TZ3000_5bpeda8u from button_wireless_4 to button_wireless_... |
@@ -78,7 +79,6 @@
 | **v5.5.537** | ✨ NEW DEVICE: COOLO CS-201Z soil sensor (forum #961). Features: soil moisture... |
 | **v5.5.536** | ✨ NEW DEVICE: Sonoff S60ZBTPF/S60ZBTPG smart plug with energy monitoring (Git... |
 | **v5.5.535** | 🧹 DEEP CLEANUP: Analyzed 50 commits, fixed device classification conflicts. ... |
-| **v5.5.534** | 🚨 CRITICAL SDK3 FIX: (1) ALL button drivers (1-8 gang) - FlowCardHelper fixe... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
