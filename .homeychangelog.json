@@ -1,4 +1,10 @@
 {
+  "5.5.554": {
+    "en": "🎯 PRESENCE FIX: Added DP119 presence detection mapping to presence_sensor_radar. Fixes presence sensors wrongly assigned to climate_sensor (diagnostic 725b1c78).",
+    "nl": "🎯 PRESENCE FIX: DP119 aanwezigheidsdetectie toegevoegd aan presence_sensor_radar.",
+    "fr": "🎯 PRESENCE FIX: Mapping DP119 détection de présence ajouté au presence_sensor_radar.",
+    "de": "🎯 PRESENCE FIX: DP119 Anwesenheitserkennung zum presence_sensor_radar hinzugefügt."
+  },
   "5.5.553": {
     "en": "🏭 BSEED: Added all BSEED Zigbee devices - wall sockets (_TZ3000_b28wrpvx, _TZ3000_5ct6e7ye, _TZ3000_o1jzcxou, _TZ3000_ibefeicf), 3-gang switches (_TZ3000_adkvzooy, _TZ3000_ly9apzky, _TZ3000_odzoiovu), covers/curtains (_TZE200_fzo2pocs, _TZE200_wmcdj3aq).",
     "nl": "🏭 BSEED: Alle BSEED Zigbee apparaten toegevoegd - wandcontactdozen, schakelaars, gordijnmotoren.",
