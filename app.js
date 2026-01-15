@@ -484,14 +484,14 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
   /**
    * Register OTA Firmware Update Flow Cards
+   * v5.5.556: Safe registration - all errors go to stdout, not stderr
    * v5.5.551: Each flow card wrapped in individual try/catch to prevent crashes
    */
   registerOTAFlowCards() {
     this.log('📦 Registering OTA Flow Cards...');
     let registered = 0;
 
-    try {
-    // Helper to safely register flow cards
+    // v5.5.556: Helper to safely register flow cards (no stderr output)
     const safeRegister = (type, id, handler) => {
       try {
         const method = type === 'trigger' ? 'getTriggerCard' : 
@@ -503,10 +503,13 @@ class UniversalTuyaZigbeeApp extends Homey.App {
           return card;
         }
       } catch (err) {
-        this.log(`[FLOW] Flow card '${id}' not available - skipping`);
+        // v5.5.556: Log to stdout only, not stderr
+        this.log(`[FLOW] Flow card '${id}' not defined - skipping`);
       }
       return null;
     };
+
+    try {
 
     // OTA Flow Cards (optional - may not be defined)
     this._otaUpdateAvailable = safeRegister('trigger', 'ota_update_available', 
@@ -761,11 +764,13 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         this.log('✅ Generic Tuya DP Flow Cards registered (8 cards)');
 
       } catch (err) {
-        this.error('⚠️ Error registering DP action flow cards:', err.message);
+        // v5.5.556: Log to stdout only, not stderr
+        this.log('⚠️ Error registering DP action flow cards:', err.message);
       }
 
     } catch (err) {
-      this.error('⚠️ Error registering OTA flow cards:', err.message);
+      // v5.5.556: Log to stdout only, not stderr
+      this.log('⚠️ Error registering OTA flow cards:', err.message);
     }
   }
 
