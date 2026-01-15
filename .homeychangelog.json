@@ -1,4 +1,10 @@
 {
+  "5.5.551": {
+    "en": "🔧 FIX: Multiple Invalid Flow Card ID errors - bulb_rgb driver crash fixed, OTA/health flow cards wrapped in safe handlers, soil_sensor/usb_outlet_advanced/water_tank_monitor flow card IDs corrected.",
+    "nl": "🔧 FIX: Meerdere Invalid Flow Card ID fouten opgelost - bulb_rgb crash verholpen.",
+    "fr": "🔧 FIX: Erreurs Invalid Flow Card ID multiples corrigées - crash bulb_rgb résolu.",
+    "de": "🔧 FIX: Mehrere Invalid Flow Card ID Fehler behoben - bulb_rgb Absturz behoben."
+  },
   "5.5.550": {
     "en": "🔬 DEEP RESEARCH: Water leak sensor enriched with manufacturer-specific profiles from Zigbee2MQTT/GitHub research. Supports TS0207 (IAS Zone), TS0601 (Tuya DP), SONOFF SNZB-05P, HOBEIAN. Known issues documented per manufacturerName.",
     "nl": "🔬 Water leak sensor verrijkt met fabrikant-specifieke profielen uit Zigbee2MQTT onderzoek.",
