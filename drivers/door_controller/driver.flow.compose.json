@@ -1,50 +1,111 @@
 {
   "triggers": [
     {
-      "id": "door_controller_alarm_motion_true",
+      "id": "door_controller_opened",
+      "highlight": true,
       "title": {
-        "en": "Motion detected",
-        "fr": "Mouvement détecté"
-      }
-    },
-    {
-      "id": "door_controller_alarm_motion_false",
-      "title": {
-        "en": "No motion",
-        "fr": "Aucun mouvement"
-      }
-    },
-    {
-      "id": "door_controller_alarm_contact_true",
-      "title": {
-        "en": "Contact alarm activated",
-        "fr": "Alarme de contact activée"
-      }
-    },
-    {
-      "id": "door_controller_alarm_contact_false",
-      "title": {
-        "en": "Contact alarm deactivated",
-        "fr": "Alarme de contact désactivée"
-      }
-    },
-    {
-      "id": "door_controller_measure_battery_changed",
-      "title": {
-        "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
+        "en": "Door opened",
+        "nl": "Deur geopend",
+        "fr": "Porte ouverte",
+        "de": "Tür geöffnet"
       },
-      "tokens": [
-        {
-          "name": "battery",
-          "type": "number",
-          "title": {
-            "en": "Battery (%)",
-            "fr": "Batterie (%)"
-          },
-          "example": 75
-        }
-      ]
+      "hint": {
+        "en": "Triggers when the door is opened",
+        "nl": "Triggert wanneer de deur wordt geopend",
+        "fr": "Se déclenche quand la porte est ouverte",
+        "de": "Wird ausgelöst, wenn die Tür geöffnet wird"
+      }
+    },
+    {
+      "id": "door_controller_closed",
+      "title": {
+        "en": "Door closed",
+        "nl": "Deur gesloten",
+        "fr": "Porte fermée",
+        "de": "Tür geschlossen"
+      },
+      "hint": {
+        "en": "Triggers when the door is closed",
+        "nl": "Triggert wanneer de deur wordt gesloten",
+        "fr": "Se déclenche quand la porte est fermée",
+        "de": "Wird ausgelöst, wenn die Tür geschlossen wird"
+      }
+    },
+    {
+      "id": "door_controller_locked",
+      "title": {
+        "en": "Door locked",
+        "nl": "Deur vergrendeld",
+        "fr": "Porte verrouillée",
+        "de": "Tür verriegelt"
+      }
+    },
+    {
+      "id": "door_controller_unlocked",
+      "title": {
+        "en": "Door unlocked",
+        "nl": "Deur ontgrendeld",
+        "fr": "Porte déverrouillée",
+        "de": "Tür entriegelt"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "door_controller_is_open",
+      "title": {
+        "en": "Door !{{is|is not}} open",
+        "nl": "Deur !{{is|is niet}} open",
+        "fr": "Porte !{{est|n'est pas}} ouverte",
+        "de": "Tür !{{ist|ist nicht}} offen"
+      }
+    },
+    {
+      "id": "door_controller_is_locked",
+      "title": {
+        "en": "Door !{{is|is not}} locked",
+        "nl": "Deur !{{is|is niet}} vergrendeld",
+        "fr": "Porte !{{est|n'est pas}} verrouillée",
+        "de": "Tür !{{ist|ist nicht}} verriegelt"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "door_controller_open",
+      "title": {
+        "en": "Open door",
+        "nl": "Deur openen",
+        "fr": "Ouvrir la porte",
+        "de": "Tür öffnen"
+      }
+    },
+    {
+      "id": "door_controller_close",
+      "title": {
+        "en": "Close door",
+        "nl": "Deur sluiten",
+        "fr": "Fermer la porte",
+        "de": "Tür schließen"
+      }
+    },
+    {
+      "id": "door_controller_lock",
+      "title": {
+        "en": "Lock door",
+        "nl": "Deur vergrendelen",
+        "fr": "Verrouiller la porte",
+        "de": "Tür verriegeln"
+      }
+    },
+    {
+      "id": "door_controller_unlock",
+      "title": {
+        "en": "Unlock door",
+        "nl": "Deur ontgrendelen",
+        "fr": "Déverrouiller la porte",
+        "de": "Tür entriegeln"
+      }
     }
   ]
 }
