@@ -1,4 +1,10 @@
 {
+  "5.5.556": {
+    "en": "🔇 STDERR FIX: All flow card errors now log to stdout only. Fixed VirtualButtonMixin undefined crash, safe flow card registration in water_tank_monitor, soil_sensor, usb_outlet_advanced, bulb_rgb drivers. No more Invalid Flow Card ID errors in stderr.",
+    "nl": "🔇 STDERR FIX: Alle flow card fouten loggen nu alleen naar stdout. VirtualButtonMixin crash opgelost, veilige flow card registratie.",
+    "fr": "🔇 STDERR FIX: Toutes les erreurs flow cards sont maintenant logguées en stdout uniquement. Crash VirtualButtonMixin corrigé.",
+    "de": "🔇 STDERR FIX: Alle Flow Card Fehler werden jetzt nur noch zu stdout geloggt. VirtualButtonMixin Crash behoben."
+  },
   "5.5.555": {
     "en": "🚨 HOTFIX: Fixed critical syntax error in app.js causing app crash on startup. Missing try block restored.",
     "nl": "🚨 HOTFIX: Kritieke syntaxfout in app.js opgelost die app crash bij opstarten veroorzaakte.",

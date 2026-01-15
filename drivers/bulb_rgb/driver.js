@@ -26,22 +26,9 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
   }
 
   _registerSetLightEffectAction() {
-    try {
-      const action = this.homey.flow.getActionCard('set_light_effect');
-      if (!action) return;
-
-      action.registerRunListener(async (args) => {
-        const { device, effect } = args;
-        if (!device || !effect) throw new Error('Device and effect required');
-
-        this.log(`[RGB-DRIVER] Setting effect: ${effect} on ${device.getName()}`);
-        await device.setLightEffect(effect);
-        return true;
-      });
-    } catch (err) {
-      // Flow card not defined - skip silently
-      this.log('[RGB-DRIVER] set_light_effect flow card not available');
-    }
+    // v5.5.556: Flow card disabled - not defined in app.json
+    // To re-enable: add set_light_effect to .homeycompose/flow/actions/
+    this.log('[RGB-DRIVER] set_light_effect flow card skipped (not defined)');
   }
 
   _registerSetColorTempKelvinAction() {
