@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.555** | 🚨 HOTFIX: Fixed critical syntax error in app.js causing app crash on startup... |
 | **v5.5.554** | 🎯 PRESENCE FIX: Added DP119 presence detection mapping to presence_sensor_ra... |
 | **v5.5.553** | 🏭 BSEED: Added all BSEED Zigbee devices - wall sockets (_TZ3000_b28wrpvx, _T... |
 | **v5.5.552** | 🔇 SILENT: Removed non-existent flow card triggers (tuya_dp_received, receive... |
@@ -78,7 +79,6 @@
 | **v5.5.548** | 🔧 FIX switch_4gang: Robust HybridSwitchBase loading to prevent 'Class extend... |
 | **v5.5.545** | 🔧 Forum analysis #961-973: Added CK-BL702-MWS-01(7016) to presence_sensor_ra... |
 | **v5.5.544** | 🔧 FIX Lasse_K: Removed ZG-102Z/ZL/ZM from climate_sensor (conflict with cont... |
-| **v5.5.543** | 🔧 Forum analysis: Added _TZ3210_s8lvbbuc to bulb_rgbw (Fiek TS0505B). Verifi... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
