@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.559** | 🔧 FIX: Presence sensor CK-BL702-MWS-01(7016) matching - added productId vari... |
 | **v5.5.558** | 🔧 FIX: Contact sensor _TZ3000_996rpfy6 (TS0203) removed from climate_sensor ... |
 | **v5.5.557** | 📦 MANUFACTURER ID ENRICHMENT: Added BSEED 4-gang switch IDs (_TZ3000_s6ma1nh... |
 | **v5.5.556** | 🔇 STDERR FIX: All flow card errors now log to stdout only. Fixed VirtualButt... |
@@ -78,7 +79,6 @@
 | **v5.5.552** | 🔇 SILENT: Removed non-existent flow card triggers (tuya_dp_received, receive... |
 | **v5.5.551** | 🔧 FIX: Multiple Invalid Flow Card ID errors - bulb_rgb driver crash fixed, O... |
 | **v5.5.550** | 🔬 DEEP RESEARCH: Water leak sensor enriched with manufacturer-specific profi... |
-| **v5.5.549** | 🔧 FIX Lasse_K #978: Water leak sensor alarm not triggering. Some sensors use... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
