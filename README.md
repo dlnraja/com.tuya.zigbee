@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.550** | 🔬 DEEP RESEARCH: Water leak sensor enriched with manufacturer-specific profi... |
 | **v5.5.549** | 🔧 FIX Lasse_K #978: Water leak sensor alarm not triggering. Some sensors use... |
 | **v5.5.548** | 🔧 FIX switch_4gang: Robust HybridSwitchBase loading to prevent 'Class extend... |
 | **v5.5.545** | 🔧 Forum analysis #961-973: Added CK-BL702-MWS-01(7016) to presence_sensor_ra... |
@@ -78,7 +79,6 @@
 | **v5.5.541** | 🔧 FIX Cam: Moved _TZ3000_5bpeda8u from button_wireless_4 to button_wireless_... |
 | **v5.5.540** | 🔧 FIX JJ10: Removed _TZE204_dtzziy1e from climate_sensor driver - ceiling pr... |
 | **v5.5.539** | ✨ NEW DRIVER: Ceiling Presence Sensor (230V) with relay control for MTG075-ZB... |
-| **v5.5.538** | 🔧 IAS ZONE FIX: GitHub #97 NoroddH _TZ321C_fkzihax8 5.8G Radar - Enhanced IA... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
