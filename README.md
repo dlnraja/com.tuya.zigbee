@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.542** | 🔧 CRITICAL FIX: Fixed HybridSwitchBase import error in 9 switch drivers (1-8... |
 | **v5.5.541** | 🔧 FIX Cam: Moved _TZ3000_5bpeda8u from button_wireless_4 to button_wireless_... |
 | **v5.5.540** | 🔧 FIX JJ10: Removed _TZE204_dtzziy1e from climate_sensor driver - ceiling pr... |
 | **v5.5.539** | ✨ NEW DRIVER: Ceiling Presence Sensor (230V) with relay control for MTG075-ZB... |
@@ -78,7 +79,6 @@
 | **v5.5.535** | 🧹 DEEP CLEANUP: Analyzed 50 commits, fixed device classification conflicts. ... |
 | **v5.5.534** | 🚨 CRITICAL SDK3 FIX: (1) ALL button drivers (1-8 gang) - FlowCardHelper fixe... |
 | **v5.5.533** | 🔧 HARTMUT FIX (#925/#955): TS0726/_TZ3002_pzao9ls1 4-gang switch - REMOVED f... |
-| **v5.5.532** | 🔧 CONTACT SENSOR FIX (Lasse_K #945): Inverted alarm_contact logic corrected ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
