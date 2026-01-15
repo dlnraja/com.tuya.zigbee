@@ -1,24 +1,49 @@
 {
   "triggers": [
     {
-      "id": "siren_alarm_motion_true",
+      "id": "siren_alarm_triggered",
+      "highlight": true,
       "title": {
-        "en": "Motion detected",
-        "fr": "Mouvement détecté"
+        "en": "Siren started",
+        "nl": "Sirene gestart",
+        "fr": "Sirène démarrée",
+        "de": "Sirene gestartet"
+      },
+      "hint": {
+        "en": "Triggers when the siren starts sounding",
+        "nl": "Triggert wanneer de sirene begint te loeien",
+        "fr": "Se déclenche quand la sirène commence à sonner",
+        "de": "Wird ausgelöst, wenn die Sirene zu tönen beginnt"
       }
     },
     {
-      "id": "siren_alarm_motion_false",
+      "id": "siren_alarm_stopped",
       "title": {
-        "en": "No motion",
-        "fr": "Aucun mouvement"
+        "en": "Siren stopped",
+        "nl": "Sirene gestopt",
+        "fr": "Sirène arrêtée",
+        "de": "Sirene gestoppt"
+      },
+      "hint": {
+        "en": "Triggers when the siren stops sounding",
+        "nl": "Triggert wanneer de sirene stopt met loeien",
+        "fr": "Se déclenche quand la sirène arrête de sonner",
+        "de": "Wird ausgelöst, wenn die Sirene aufhört zu tönen"
       }
     },
     {
       "id": "siren_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
+        "nl": "Batterijniveau veranderd",
+        "fr": "Niveau batterie changé",
+        "de": "Batteriestand geändert"
+      },
+      "titleFormatted": {
+        "en": "Battery level changed to [[battery]]%",
+        "nl": "Batterijniveau veranderd naar [[battery]]%",
+        "fr": "Niveau batterie changé à [[battery]]%",
+        "de": "Batteriestand geändert zu [[battery]]%"
       },
       "tokens": [
         {
@@ -26,9 +51,122 @@
           "type": "number",
           "title": {
             "en": "Battery (%)",
-            "fr": "Batterie (%)"
+            "nl": "Batterij (%)",
+            "fr": "Batterie (%)",
+            "de": "Batterie (%)"
           },
           "example": 75
+        }
+      ]
+    },
+    {
+      "id": "siren_battery_low",
+      "title": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "siren_is_sounding",
+      "title": {
+        "en": "Siren !{{is|is not}} sounding",
+        "nl": "Sirene !{{loeit|loeit niet}}",
+        "fr": "Sirène !{{sonne|ne sonne pas}}",
+        "de": "Sirene !{{tönt|tönt nicht}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "siren_turn_on",
+      "title": {
+        "en": "Turn on siren",
+        "nl": "Sirene aanzetten",
+        "fr": "Activer la sirène",
+        "de": "Sirene einschalten"
+      },
+      "titleFormatted": {
+        "en": "Turn on the siren",
+        "nl": "Zet de sirene aan",
+        "fr": "Activer la sirène",
+        "de": "Sirene einschalten"
+      }
+    },
+    {
+      "id": "siren_turn_off",
+      "title": {
+        "en": "Turn off siren",
+        "nl": "Sirene uitzetten",
+        "fr": "Désactiver la sirène",
+        "de": "Sirene ausschalten"
+      },
+      "titleFormatted": {
+        "en": "Turn off the siren",
+        "nl": "Zet de sirene uit",
+        "fr": "Désactiver la sirène",
+        "de": "Sirene ausschalten"
+      }
+    },
+    {
+      "id": "siren_set_volume",
+      "title": {
+        "en": "Set volume",
+        "nl": "Volume instellen",
+        "fr": "Régler le volume",
+        "de": "Lautstärke einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set siren volume to [[volume]]",
+        "nl": "Stel sirene volume in op [[volume]]",
+        "fr": "Régler le volume de la sirène à [[volume]]",
+        "de": "Sirenenlautstärke auf [[volume]] einstellen"
+      },
+      "args": [
+        {
+          "name": "volume",
+          "type": "dropdown",
+          "title": {
+            "en": "Volume level",
+            "nl": "Volumeniveau",
+            "fr": "Niveau de volume",
+            "de": "Lautstärkestufe"
+          },
+          "values": [
+            { "id": "low", "label": { "en": "Low", "nl": "Laag", "fr": "Bas", "de": "Niedrig" } },
+            { "id": "medium", "label": { "en": "Medium", "nl": "Gemiddeld", "fr": "Moyen", "de": "Mittel" } },
+            { "id": "high", "label": { "en": "High", "nl": "Hoog", "fr": "Haut", "de": "Hoch" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "siren_set_duration",
+      "title": {
+        "en": "Set alarm duration",
+        "nl": "Alarmduur instellen",
+        "fr": "Définir la durée de l'alarme",
+        "de": "Alarmdauer einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set alarm duration to [[duration]] seconds",
+        "nl": "Stel alarmduur in op [[duration]] seconden",
+        "fr": "Définir la durée de l'alarme à [[duration]] secondes",
+        "de": "Alarmdauer auf [[duration]] Sekunden einstellen"
+      },
+      "args": [
+        {
+          "name": "duration",
+          "type": "number",
+          "min": 1,
+          "max": 300,
+          "step": 1,
+          "placeholder": {
+            "en": "30"
+          }
         }
       ]
     }

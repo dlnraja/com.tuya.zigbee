@@ -1,0 +1,146 @@
+{
+  "triggers": [
+    {
+      "id": "vibration_sensor_vibration_detected",
+      "highlight": true,
+      "title": {
+        "en": "Vibration detected",
+        "nl": "Trillingen gedetecteerd",
+        "fr": "Vibration détectée",
+        "de": "Vibration erkannt"
+      },
+      "titleFormatted": {
+        "en": "Vibration was detected",
+        "nl": "Trillingen werden gedetecteerd",
+        "fr": "Une vibration a été détectée",
+        "de": "Vibration wurde erkannt"
+      },
+      "hint": {
+        "en": "Triggers when the sensor detects movement or vibration",
+        "nl": "Triggert wanneer de sensor beweging of trillingen detecteert",
+        "fr": "Se déclenche quand le capteur détecte un mouvement ou une vibration",
+        "de": "Wird ausgelöst, wenn der Sensor Bewegung oder Vibration erkennt"
+      }
+    },
+    {
+      "id": "vibration_sensor_tilt_detected",
+      "title": {
+        "en": "Tilt detected",
+        "nl": "Kanteling gedetecteerd",
+        "fr": "Inclinaison détectée",
+        "de": "Neigung erkannt"
+      },
+      "hint": {
+        "en": "Triggers when the sensor detects a change in orientation",
+        "nl": "Triggert wanneer de sensor een verandering in oriëntatie detecteert",
+        "fr": "Se déclenche quand le capteur détecte un changement d'orientation",
+        "de": "Wird ausgelöst, wenn der Sensor eine Änderung der Ausrichtung erkennt"
+      }
+    },
+    {
+      "id": "vibration_sensor_drop_detected",
+      "title": {
+        "en": "Drop detected",
+        "nl": "Val gedetecteerd",
+        "fr": "Chute détectée",
+        "de": "Fall erkannt"
+      },
+      "hint": {
+        "en": "Triggers when the sensor detects a freefall or drop",
+        "nl": "Triggert wanneer de sensor een vrije val of val detecteert",
+        "fr": "Se déclenche quand le capteur détecte une chute libre",
+        "de": "Wird ausgelöst, wenn der Sensor einen freien Fall erkennt"
+      }
+    },
+    {
+      "id": "vibration_sensor_tamper_true",
+      "title": {
+        "en": "Tamper alert",
+        "nl": "Sabotage alarm",
+        "fr": "Alerte sabotage",
+        "de": "Manipulationsalarm"
+      },
+      "hint": {
+        "en": "Triggers when the sensor has been tampered with",
+        "nl": "Triggert wanneer er met de sensor is geknoeid",
+        "fr": "Se déclenche quand le capteur a été saboté",
+        "de": "Wird ausgelöst, wenn der Sensor manipuliert wurde"
+      }
+    },
+    {
+      "id": "vibration_sensor_battery_changed",
+      "title": {
+        "en": "Battery level changed",
+        "nl": "Batterijniveau veranderd",
+        "fr": "Niveau batterie changé",
+        "de": "Batteriestand geändert"
+      },
+      "titleFormatted": {
+        "en": "Battery level changed to [[battery]]%",
+        "nl": "Batterijniveau veranderd naar [[battery]]%",
+        "fr": "Niveau batterie changé à [[battery]]%",
+        "de": "Batteriestand geändert zu [[battery]]%"
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "Battery (%)",
+            "nl": "Batterij (%)",
+            "fr": "Batterie (%)",
+            "de": "Batterie (%)"
+          },
+          "example": 75
+        }
+      ]
+    },
+    {
+      "id": "vibration_sensor_battery_low",
+      "title": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "vibration_sensor_is_vibrating",
+      "title": {
+        "en": "Vibration !{{is|is not}} detected",
+        "nl": "Trillingen !{{worden|worden niet}} gedetecteerd",
+        "fr": "Vibration !{{est|n'est pas}} détectée",
+        "de": "Vibration !{{wird|wird nicht}} erkannt"
+      }
+    },
+    {
+      "id": "vibration_sensor_battery_above",
+      "title": {
+        "en": "Battery !{{is|is not}} above",
+        "nl": "Batterij !{{is|is niet}} boven",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de",
+        "de": "Batterie !{{ist|ist nicht}} über"
+      },
+      "titleFormatted": {
+        "en": "Battery !{{is|is not}} above [[threshold]]%",
+        "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
+        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
+      },
+      "args": [
+        {
+          "name": "threshold",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": {
+            "en": "20"
+          }
+        }
+      ]
+    }
+  ]
+}
