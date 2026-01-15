@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.558** | 🔧 FIX: Contact sensor _TZ3000_996rpfy6 (TS0203) removed from climate_sensor ... |
 | **v5.5.557** | 📦 MANUFACTURER ID ENRICHMENT: Added BSEED 4-gang switch IDs (_TZ3000_s6ma1nh... |
 | **v5.5.556** | 🔇 STDERR FIX: All flow card errors now log to stdout only. Fixed VirtualButt... |
 | **v5.5.555** | 🚨 HOTFIX: Fixed critical syntax error in app.js causing app crash on startup... |
@@ -78,7 +79,6 @@
 | **v5.5.551** | 🔧 FIX: Multiple Invalid Flow Card ID errors - bulb_rgb driver crash fixed, O... |
 | **v5.5.550** | 🔬 DEEP RESEARCH: Water leak sensor enriched with manufacturer-specific profi... |
 | **v5.5.549** | 🔧 FIX Lasse_K #978: Water leak sensor alarm not triggering. Some sensors use... |
-| **v5.5.548** | 🔧 FIX switch_4gang: Robust HybridSwitchBase loading to prevent 'Class extend... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
