@@ -420,9 +420,9 @@
         "nl": "Verstuur een geleerde of raw IR code. Gebruik de codenaam of plak een Base64 gecodeerde IR code."
       },
       "titleFormatted": {
-        "en": "Send IR code [[ir_code]] with [[protocol]] protocol ([[repeat]]x repeats)",
-        "nl": "Verstuur IR code [[ir_code]] met [[protocol]] protocol ([[repeat]]x herhalingen)",
-        "de": "IR-Code [[ir_code]] mit [[protocol]] Protokoll senden ([[repeat]]x Wiederholungen)"
+        "en": "Send IR code [[ir_code]] with [[protocol]] at [[frequency]]Hz ([[repeat]]x repeats)",
+        "nl": "Verstuur IR code [[ir_code]] met [[protocol]] bij [[frequency]]Hz ([[repeat]]x herhalingen)",
+        "de": "IR-Code [[ir_code]] mit [[protocol]] bei [[frequency]]Hz senden ([[repeat]]x Wiederholungen)"
       },
       "args": [
         {
