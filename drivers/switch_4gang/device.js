@@ -1,8 +1,28 @@
 'use strict';
-const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+
+// v5.5.530: Fix "Class extends value undefined" error
+// Ensure HybridSwitchBase is loaded before mixin application
+let HybridSwitchBase;
+try {
+  HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+  if (!HybridSwitchBase) {
+    throw new Error('HybridSwitchBase is undefined');
+  }
+} catch (e) {
+  // Fallback to ZigBeeDevice if HybridSwitchBase fails to load
+  console.error('[switch_4gang] HybridSwitchBase load failed:', e.message);
+  const { ZigBeeDevice } = require('homey-zigbeedriver');
+  HybridSwitchBase = ZigBeeDevice;
+}
+
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
-class Switch4GangDevice extends VirtualButtonMixin(HybridSwitchBase) {
+// v5.5.530: Safe mixin application with fallback
+const BaseClass = typeof HybridSwitchBase === 'function' 
+  ? VirtualButtonMixin(HybridSwitchBase) 
+  : HybridSwitchBase;
+
+class Switch4GangDevice extends BaseClass {
   get gangCount() { return 4; }
 
   async onNodeInit({ zclNode }) {
@@ -17,7 +37,7 @@ class Switch4GangDevice extends VirtualButtonMixin(HybridSwitchBase) {
     // v5.5.412: Initialize virtual buttons for remote control
     await this.initVirtualButtons();
 
-    this.log('[SWITCH-4G] v5.5.412 ✅ Ready + virtual buttons');
+    this.log('[SWITCH-4G] v5.5.530 ✅ Ready + virtual buttons (robust loading)');
   }
 
   /**
