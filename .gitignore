@@ -1,5 +1,6 @@
-# Homey build
+# Homey build - GENERATED AT BUILD TIME, NEVER COMMIT
 .homeybuild/
+.homeycompose/
 env.json
 node_modules/
 
