@@ -1,4 +1,10 @@
 {
+  "5.5.553": {
+    "en": "🏭 BSEED: Added all BSEED Zigbee devices - wall sockets (_TZ3000_b28wrpvx, _TZ3000_5ct6e7ye, _TZ3000_o1jzcxou, _TZ3000_ibefeicf), 3-gang switches (_TZ3000_adkvzooy, _TZ3000_ly9apzky, _TZ3000_odzoiovu), covers/curtains (_TZE200_fzo2pocs, _TZE200_wmcdj3aq).",
+    "nl": "🏭 BSEED: Alle BSEED Zigbee apparaten toegevoegd - wandcontactdozen, schakelaars, gordijnmotoren.",
+    "fr": "🏭 BSEED: Ajout de tous les appareils BSEED Zigbee - prises murales, interrupteurs, moteurs de volets.",
+    "de": "🏭 BSEED: Alle BSEED Zigbee Geräte hinzugefügt - Steckdosen, Schalter, Vorhangmotoren."
+  },
   "5.5.552": {
     "en": "🔇 SILENT: Removed non-existent flow card triggers (tuya_dp_received, receive_status_boolean) that were spamming stderr logs.",
     "nl": "🔇 STILLE: Verwijderde niet-bestaande flow card triggers die stderr logs spamden.",
