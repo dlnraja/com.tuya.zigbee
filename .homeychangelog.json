@@ -1,4 +1,10 @@
 {
+  "5.5.543": {
+    "en": "🔧 Forum analysis: Added _TZ3210_s8lvbbuc to bulb_rgbw (Fiek TS0505B). Verified HOBEIAN ZG-101ZL, ZG-222Z, CS-201Z already supported. All switch HybridSwitchBase imports fixed.",
+    "nl": "🔧 Forum analyse: _TZ3210_s8lvbbuc toegevoegd aan bulb_rgbw.",
+    "fr": "🔧 Analyse forum: Ajout _TZ3210_s8lvbbuc à bulb_rgbw.",
+    "de": "🔧 Forum-Analyse: _TZ3210_s8lvbbuc zu bulb_rgbw hinzugefügt."
+  },
   "5.5.542": {
     "en": "🔧 CRITICAL FIX: Fixed HybridSwitchBase import error in 9 switch drivers (1-8 gang + mini + wireless). Resolves 'Class extends value undefined' crash reported by Hartmut_Dunker. Re-pair devices after update.",
     "nl": "🔧 KRITIEKE FIX: HybridSwitchBase import fout opgelost in 9 switch drivers.",
