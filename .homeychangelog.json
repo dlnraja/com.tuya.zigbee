@@ -1,4 +1,10 @@
 {
+  "5.5.557": {
+    "en": "📦 MANUFACTURER ID ENRICHMENT: Added BSEED 4-gang switch IDs (_TZ3000_s6ma1nh4, _TZ3000_imaccztn, _TZ3000_wkr3jqmr, _TZ3000_knoj8lpk). Added presence sensor IDs (_TZE200_kb5noeto, _TZE204_ijxvkhd0, _TZE204_kyhbrfyl, _TZE200_1ibpyhdc, ZG-204ZL, ZG-205Z) to prevent misclassification.",
+    "nl": "📦 MANUFACTURER ID VERRIJKING: BSEED 4-gang schakelaar IDs en extra aanwezigheidssensor IDs toegevoegd.",
+    "fr": "📦 ENRICHISSEMENT IDs FABRICANT: IDs interrupteurs BSEED 4-gang et capteurs de présence ajoutés pour éviter la mauvaise classification.",
+    "de": "📦 HERSTELLER-ID ANREICHERUNG: BSEED 4-Gang Schalter IDs und Präsenzsensor IDs hinzugefügt."
+  },
   "5.5.556": {
     "en": "🔇 STDERR FIX: All flow card errors now log to stdout only. Fixed VirtualButtonMixin undefined crash, safe flow card registration in water_tank_monitor, soil_sensor, usb_outlet_advanced, bulb_rgb drivers. No more Invalid Flow Card ID errors in stderr.",
     "nl": "🔇 STDERR FIX: Alle flow card fouten loggen nu alleen naar stdout. VirtualButtonMixin crash opgelost, veilige flow card registratie.",
