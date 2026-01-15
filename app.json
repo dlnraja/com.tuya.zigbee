@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.544",
+  "version": "5.5.545",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -1638,6 +1638,8 @@
           "_tz3210_s1x06gja",
           "_TZ3210_S8LVBBU",
           "_tz3210_s8lvbbu",
+          "_TZ3210_s8lvbbuc",
+          "_tz3210_s8lvbbuc",
           "_TZ3210_WDEXAYPG",
           "_tz3210_wdexaypg",
           "_TZ3210_WUHEIK5L",
@@ -3514,6 +3516,8 @@
           "_TYZB02_keyjqthh",
           "_TZ3000_4fjiwweb",
           "_tz3000_4fjiwweb",
+          "_TZ3000_5bpeda8u",
+          "_tz3000_5bpeda8u",
           "_TZ3000_ABRSVSOU",
           "_tz3000_abrsvsou",
           "_TZ3000_AN5RJIWD",
@@ -4799,7 +4803,6 @@
           "_tz3000_4fjiwweb",
           "_TZ3000_ABRSVSOU",
           "_tz3000_abrsvsou",
-          "_TZ3000_5bpeda8u",
           "_TZ3000_qgwcxxws",
           "_TZ3000_JA5OSU5G",
           "_tz3000_ja5osu5g",
@@ -9733,9 +9736,6 @@
           "TS130F",
           "TY0201",
           "ZBT-CCTfilament-D0000",
-          "ZG-102Z",
-          "ZG-102ZL",
-          "ZG-102ZM",
           "ZG-103Z",
           "ZG-106Z",
           "ZG-204Z",
@@ -9745,8 +9745,6 @@
           "ZG-204ZQ",
           "ZG-204ZV",
           "ZG-205ZL",
-          "ZG-222Z",
-          "ZG-223Z",
           "ZG-225Z",
           "ZG-227Z",
           "ZG-227ZL",
@@ -10344,7 +10342,9 @@
           "TS0203",
           "TS0210",
           "TS0601",
-          "ZG-102Z"
+          "ZG-102Z",
+          "ZG-102ZL",
+          "ZG-102ZM"
         ],
         "endpoints": {
           "1": {
