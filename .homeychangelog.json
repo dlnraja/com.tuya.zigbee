@@ -1,4 +1,10 @@
 {
+  "5.5.566": {
+    "en": "🔧 FIX: Added missing titleFormatted to ir_code_exists and ir_protocol_detected flow card conditions. All validation warnings resolved. App now passes publish validation without warnings.",
+    "nl": "🔧 FIX: Ontbrekende titleFormatted toegevoegd aan ir_blaster flow cards. Geen validatie waarschuwingen meer.",
+    "fr": "🔧 FIX: titleFormatted manquant ajouté aux conditions flow cards ir_blaster. Aucun avertissement de validation.",
+    "de": "🔧 FIX: Fehlende titleFormatted zu ir_blaster Flow Card Bedingungen hinzugefügt. Keine Validierungswarnungen mehr."
+  },
   "5.5.565": {
     "en": "🔧 FLOW CARDS FIX: Extended 'could not get device by id' fix to ir_blaster driver. All flow card handlers now return gracefully instead of throwing errors. Total 7 drivers fixed.",
     "nl": "🔧 FLOW CARDS FIX: ir_blaster driver toegevoegd. Alle flow cards retourneren nu correct.",
