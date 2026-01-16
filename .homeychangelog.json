@@ -1,4 +1,10 @@
 {
+  "5.5.561": {
+    "en": "🔧 FIX: BSEED TS0726 4-gang switch (_TZ3002_pzao9ls1) cluster mismatch fixed. Simplified endpoint clusters for broader device compatibility. RE-PAIR required! (Hartmut_Dunker forum report)",
+    "nl": "🔧 FIX: BSEED TS0726 4-gang switch cluster mismatch opgelost. OPNIEUW KOPPELEN!",
+    "fr": "🔧 FIX: BSEED TS0726 4-gang switch mismatch clusters corrigé. RE-APPAIRER!",
+    "de": "🔧 FIX: BSEED TS0726 4-Gang Schalter Cluster-Mismatch behoben. NEU PAIREN!"
+  },
   "5.5.560": {
     "en": "🔧 SYNTAX FIX: Fixed critical JavaScript syntax errors in fingerprint data files (new_fingerprints.js, smart_fingerprints.js). Added proper module.exports wrappers. Build validation passed.",
     "nl": "🔧 SYNTAX FIX: JavaScript syntaxfouten in fingerprint databestanden opgelost.",
