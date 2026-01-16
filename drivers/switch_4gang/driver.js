@@ -3,16 +3,52 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 /**
+ * v5.5.562: CRITICAL FIX - "Could not get device by id" error prevention
+ * - Conditions now return false instead of throwing when device missing
+ * - Actions now return silently instead of throwing when device missing
+ * - Added try-catch wrappers to prevent error propagation to Homey
+ *
  * v5.5.506: Fixed flow card registration with proper error handling
- * Prevents "Could not get device by id" errors by:
- * 1. Wrapping all flow card registrations in try-catch
- * 2. Using triggerDevice() for proper device targeting
- * 3. Validating device exists before capability operations
  */
 class Switch4GangDriver extends ZigBeeDriver {
 
+  /**
+   * Safe wrapper for condition handlers - returns false if device invalid
+   */
+  _safeCondition(handler) {
+    return async (args) => {
+      try {
+        if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
+          this.log('[FLOW] Condition: Device not available (deleted/re-paired?)');
+          return false;
+        }
+        return await handler(args);
+      } catch (err) {
+        this.error('[FLOW] Condition error:', err.message);
+        return false;
+      }
+    };
+  }
+
+  /**
+   * Safe wrapper for action handlers - returns silently if device invalid
+   */
+  _safeAction(handler) {
+    return async (args) => {
+      try {
+        if (!args?.device || typeof args.device.triggerCapabilityListener !== 'function') {
+          this.log('[FLOW] Action: Device not available (deleted/re-paired?)');
+          return;
+        }
+        await handler(args);
+      } catch (err) {
+        this.error('[FLOW] Action error:', err.message);
+      }
+    };
+  }
+
   async onInit() {
-    this.log('4-Gang Switch Driver v5.5.506 initializing...');
+    this.log('4-Gang Switch Driver v5.5.562 initializing...');
     await super.onInit();
 
     try {
@@ -26,81 +62,69 @@ class Switch4GangDriver extends ZigBeeDriver {
       this.gang4OnTrigger = this.homey.flow.getDeviceTriggerCard('switch_4gang_gang4_turned_on');
       this.gang4OffTrigger = this.homey.flow.getDeviceTriggerCard('switch_4gang_gang4_turned_off');
 
-      // Register flow card conditions with device validation
+      // Register flow card conditions - v5.5.562: using safe wrapper
       this.gang1IsOnCondition = this.homey.flow.getConditionCard('switch_4gang_gang1_is_on');
-      this.gang1IsOnCondition.registerRunListener(async (args) => {
-        if (!args.device) throw new Error('Device not found');
+      this.gang1IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
         return args.device.getCapabilityValue('onoff') === true;
-      });
+      }));
 
       this.gang2IsOnCondition = this.homey.flow.getConditionCard('switch_4gang_gang2_is_on');
-      this.gang2IsOnCondition.registerRunListener(async (args) => {
-        if (!args.device) throw new Error('Device not found');
+      this.gang2IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
         return args.device.getCapabilityValue('onoff.gang2') === true;
-      });
+      }));
 
       this.gang3IsOnCondition = this.homey.flow.getConditionCard('switch_4gang_gang3_is_on');
-      this.gang3IsOnCondition.registerRunListener(async (args) => {
-        if (!args.device) throw new Error('Device not found');
+      this.gang3IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
         return args.device.getCapabilityValue('onoff.gang3') === true;
-      });
+      }));
 
       this.gang4IsOnCondition = this.homey.flow.getConditionCard('switch_4gang_gang4_is_on');
-      this.gang4IsOnCondition.registerRunListener(async (args) => {
-        if (!args.device) throw new Error('Device not found');
+      this.gang4IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
         return args.device.getCapabilityValue('onoff.gang4') === true;
-      });
+      }));
 
-      // Register flow card actions with device validation and proper capability control
+      // Register flow card actions - v5.5.562: using safe wrapper
       this.gang1OnAction = this.homey.flow.getActionCard('switch_4gang_turn_on_gang1');
-      this.gang1OnAction.registerRunListener(async (args) => {
-        if (!args.device) throw new Error('Device not found');
+      this.gang1OnAction.registerRunListener(this._safeAction(async (args) => {
         await args.device.triggerCapabilityListener('onoff', true);
-      });
+      }));
 
       this.gang1OffAction = this.homey.flow.getActionCard('switch_4gang_turn_off_gang1');
-      this.gang1OffAction.registerRunListener(async (args) => {
-        if (!args.device) throw new Error('Device not found');
+      this.gang1OffAction.registerRunListener(this._safeAction(async (args) => {
         await args.device.triggerCapabilityListener('onoff', false);
-      });
+      }));
 
       this.gang2OnAction = this.homey.flow.getActionCard('switch_4gang_turn_on_gang2');
-      this.gang2OnAction.registerRunListener(async (args) => {
-        if (!args.device) throw new Error('Device not found');
+      this.gang2OnAction.registerRunListener(this._safeAction(async (args) => {
         await args.device.triggerCapabilityListener('onoff.gang2', true);
-      });
+      }));
 
       this.gang2OffAction = this.homey.flow.getActionCard('switch_4gang_turn_off_gang2');
-      this.gang2OffAction.registerRunListener(async (args) => {
-        if (!args.device) throw new Error('Device not found');
+      this.gang2OffAction.registerRunListener(this._safeAction(async (args) => {
         await args.device.triggerCapabilityListener('onoff.gang2', false);
-      });
+      }));
 
       this.gang3OnAction = this.homey.flow.getActionCard('switch_4gang_turn_on_gang3');
-      this.gang3OnAction.registerRunListener(async (args) => {
-        if (!args.device) throw new Error('Device not found');
+      this.gang3OnAction.registerRunListener(this._safeAction(async (args) => {
         await args.device.triggerCapabilityListener('onoff.gang3', true);
-      });
+      }));
 
       this.gang3OffAction = this.homey.flow.getActionCard('switch_4gang_turn_off_gang3');
-      this.gang3OffAction.registerRunListener(async (args) => {
-        if (!args.device) throw new Error('Device not found');
+      this.gang3OffAction.registerRunListener(this._safeAction(async (args) => {
         await args.device.triggerCapabilityListener('onoff.gang3', false);
-      });
+      }));
 
       this.gang4OnAction = this.homey.flow.getActionCard('switch_4gang_turn_on_gang4');
-      this.gang4OnAction.registerRunListener(async (args) => {
-        if (!args.device) throw new Error('Device not found');
+      this.gang4OnAction.registerRunListener(this._safeAction(async (args) => {
         await args.device.triggerCapabilityListener('onoff.gang4', true);
-      });
+      }));
 
       this.gang4OffAction = this.homey.flow.getActionCard('switch_4gang_turn_off_gang4');
-      this.gang4OffAction.registerRunListener(async (args) => {
-        if (!args.device) throw new Error('Device not found');
+      this.gang4OffAction.registerRunListener(this._safeAction(async (args) => {
         await args.device.triggerCapabilityListener('onoff.gang4', false);
-      });
+      }));
 
-      this.log('4-Gang Switch Driver v5.5.506 ✅ Flow cards registered');
+      this.log('4-Gang Switch Driver v5.5.562 ✅ Flow cards registered');
     } catch (err) {
       this.error('4-Gang Switch Driver flow card registration failed:', err.message);
     }
