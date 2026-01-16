@@ -3,7 +3,8 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 /**
- * v5.5.534: Enhanced IR Blaster Driver - FIXED to use ZigBeeDriver + await super.onInit()
+ * v5.5.565: Enhanced IR Blaster Driver - FIXED flow cards to return gracefully
+ * v5.5.534: FIXED to use ZigBeeDriver + await super.onInit()
  * v5.5.362: Original - used Driver instead of ZigBeeDriver (caused FrankP issue #950)
  * CRITICAL FIX: All getActionCard/getTriggerCard/getConditionCard calls wrapped in try-catch
  * to prevent driver crash when flow cards are missing (diagnostic reports #7cb5ca58 #5dc85d82)
@@ -12,7 +13,7 @@ class IrBlasterDriver extends ZigBeeDriver {
 
   async onInit() {
     await super.onInit(); // v5.5.534: SDK3 CRITICAL - must call super first!
-    this.log('Enhanced IR Blaster driver v5.5.534 initializing...');
+    this.log('Enhanced IR Blaster driver v5.5.565 initializing...');
 
     // v5.5.362: Register flow cards with robust error handling
     try {
@@ -46,8 +47,9 @@ class IrBlasterDriver extends ZigBeeDriver {
       this.irLearnCodeAction = this.homey.flow.getActionCard('ir_learn_code');
       this.irLearnCodeAction.registerRunListener(async (args, state) => {
         const device = args.device;
-        if (!device || !device._enableAdvancedLearnMode) {
-          throw new Error('Device not ready or missing enhanced learn method');
+        if (!device || typeof device._enableAdvancedLearnMode !== 'function') {
+          this.log('[FLOW] Action: Device not ready or missing enhanced learn method');
+          return false;
         }
 
         const { code_name, duration, protocol, frequency, category } = args;
@@ -72,8 +74,9 @@ class IrBlasterDriver extends ZigBeeDriver {
       this.irSendCodeAction = this.homey.flow.getActionCard('ir_send_code');
       this.irSendCodeAction.registerRunListener(async (args, state) => {
         const device = args.device;
-        if (!device || !device.sendEnhancedIRCode) {
-          throw new Error('Device not ready or missing enhanced send method');
+        if (!device || typeof device.sendEnhancedIRCode !== 'function') {
+          this.log('[FLOW] Action: Device not ready or missing enhanced send method');
+          return false;
         }
 
         const { ir_code, protocol, frequency, repeat } = args;
@@ -97,16 +100,18 @@ class IrBlasterDriver extends ZigBeeDriver {
       this.irSendByCategoryAction = this.homey.flow.getActionCard('ir_send_by_category');
       this.irSendByCategoryAction.registerRunListener(async (args, state) => {
         const device = args.device;
-        if (!device || !device.getCodesByCategory) {
-          throw new Error('Device not ready or missing category method');
+        if (!device || typeof device.getCodesByCategory !== 'function') {
+          this.log('[FLOW] Action: Device not ready or missing category method');
+          return false;
         }
 
         const { category, code_name } = args;
         this.log(`Sending IR code "${code_name}" from category "${category}"`);
 
         const codes = device.getCodesByCategory(category);
-        if (!codes[code_name]) {
-          throw new Error(`Code "${code_name}" not found in category "${category}"`);
+        if (!codes || !codes[code_name]) {
+          this.log(`[FLOW] Code "${code_name}" not found in category "${category}"`);
+          return false;
         }
 
         await device.sendIRCode(codes[code_name]);

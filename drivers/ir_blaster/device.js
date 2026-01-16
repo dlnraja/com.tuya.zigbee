@@ -760,7 +760,7 @@ class IrBlasterDevice extends ZigBeeDevice {
           return true;
         } catch (err) {
           this.error('Enhanced flow learn action failed:', err);
-          throw new Error(`Failed to start learning: ${err.message}`);
+          return false;
         }
       });
     }
@@ -788,7 +788,7 @@ class IrBlasterDevice extends ZigBeeDevice {
           return true;
         } catch (err) {
           this.error('Enhanced flow send action failed:', err);
-          throw new Error(`Failed to send IR code: ${err.message}`);
+          return false;
         }
       });
     }
