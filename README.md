@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.568** | 🔧 FIX: Smoke detector flow cards now work! Added missing run listeners for c... |
 | **v5.5.567** | 🐛 CRASH FIX: Fixed ReferenceError 'value is not defined' in presence_sensor_... |
 | **v5.5.566** | 🔧 FIX: Added missing titleFormatted to ir_code_exists and ir_protocol_detect... |
 | **v5.5.565** | 🔧 FLOW CARDS FIX: Extended 'could not get device by id' fix to ir_blaster dr... |
@@ -78,7 +79,6 @@
 | **v5.5.561** | 🔧 FIX: BSEED TS0726 4-gang switch (_TZ3002_pzao9ls1) cluster mismatch fixed.... |
 | **v5.5.560** | 🔧 SYNTAX FIX: Fixed critical JavaScript syntax errors in fingerprint data fi... |
 | **v5.5.559** | 🔧 FIX: Presence sensor CK-BL702-MWS-01(7016) matching - added productId vari... |
-| **v5.5.558** | 🔧 FIX: Contact sensor _TZ3000_996rpfy6 (TS0203) removed from climate_sensor ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
