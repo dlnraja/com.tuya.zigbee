@@ -1,4 +1,10 @@
 {
+  "5.5.560": {
+    "en": "🔧 SYNTAX FIX: Fixed critical JavaScript syntax errors in fingerprint data files (new_fingerprints.js, smart_fingerprints.js). Added proper module.exports wrappers. Build validation passed.",
+    "nl": "🔧 SYNTAX FIX: JavaScript syntaxfouten in fingerprint databestanden opgelost.",
+    "fr": "🔧 SYNTAX FIX: Erreurs de syntaxe JavaScript corrigées dans les fichiers fingerprint.",
+    "de": "🔧 SYNTAX FIX: JavaScript-Syntaxfehler in Fingerprint-Dateien behoben."
+  },
   "5.5.559": {
     "en": "🔧 FIX: Presence sensor CK-BL702-MWS-01(7016) matching - added productId variant without parentheses (JJ10 forum fix).",
     "nl": "🔧 FIX: Presence sensor CK-BL702-MWS-01 matching verbeterd.",
