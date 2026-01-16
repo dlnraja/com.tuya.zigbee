@@ -1,4 +1,10 @@
 {
+  "5.5.564": {
+    "en": "🔧 COMPREHENSIVE FIX: 'Could not get device by id' error resolved across 5 drivers (climate_sensor, soil_sensor, motion_sensor, bulb_rgb, switch_4gang). Flow cards now return gracefully instead of throwing errors when devices are deleted/re-paired.",
+    "nl": "🔧 UITGEBREIDE FIX: 'Could not get device by id' fout opgelost in 5 drivers.",
+    "fr": "🔧 FIX COMPLET: Erreur 'Could not get device by id' résolue dans 5 drivers. Les flow cards gèrent maintenant les appareils supprimés sans erreurs.",
+    "de": "🔧 UMFASSENDER FIX: 'Could not get device by id' Fehler in 5 Treibern behoben."
+  },
   "5.5.563": {
     "en": "📦 ADD: Rain sensor _TZ3210_p68kms0l (TS0207) added to rain_sensor driver. Forum request Ferdy_van_Hove.",
     "nl": "📦 TOEVOEGEN: Regensensor _TZ3210_p68kms0l toegevoegd.",
