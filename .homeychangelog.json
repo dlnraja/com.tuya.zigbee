@@ -1,4 +1,10 @@
 {
+  "5.5.562": {
+    "en": "🔧 CRITICAL FIX: 'Could not get device by id' error resolved. Flow cards now gracefully handle deleted/re-paired devices instead of throwing errors. Applies to switch_4gang driver.",
+    "nl": "🔧 KRITIEKE FIX: 'Could not get device by id' fout opgelost. Flow cards verwerken verwijderde apparaten nu correct.",
+    "fr": "🔧 FIX CRITIQUE: Erreur 'Could not get device by id' résolue. Les flow cards gèrent maintenant les appareils supprimés/ré-appairés sans erreurs.",
+    "de": "🔧 KRITISCHER FIX: 'Could not get device by id' Fehler behoben. Flow Cards behandeln gelöschte/neu gepaarte Geräte jetzt korrekt."
+  },
   "5.5.561": {
     "en": "🔧 FIX: BSEED TS0726 4-gang switch (_TZ3002_pzao9ls1) cluster mismatch fixed. Simplified endpoint clusters for broader device compatibility. RE-PAIR required! (Hartmut_Dunker forum report)",
     "nl": "🔧 FIX: BSEED TS0726 4-gang switch cluster mismatch opgelost. OPNIEUW KOPPELEN!",
