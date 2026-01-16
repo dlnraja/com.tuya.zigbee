@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.560** | 🔧 SYNTAX FIX: Fixed critical JavaScript syntax errors in fingerprint data fi... |
 | **v5.5.559** | 🔧 FIX: Presence sensor CK-BL702-MWS-01(7016) matching - added productId vari... |
 | **v5.5.558** | 🔧 FIX: Contact sensor _TZ3000_996rpfy6 (TS0203) removed from climate_sensor ... |
 | **v5.5.557** | 📦 MANUFACTURER ID ENRICHMENT: Added BSEED 4-gang switch IDs (_TZ3000_s6ma1nh... |
@@ -78,7 +79,6 @@
 | **v5.5.553** | 🏭 BSEED: Added all BSEED Zigbee devices - wall sockets (_TZ3000_b28wrpvx, _T... |
 | **v5.5.552** | 🔇 SILENT: Removed non-existent flow card triggers (tuya_dp_received, receive... |
 | **v5.5.551** | 🔧 FIX: Multiple Invalid Flow Card ID errors - bulb_rgb driver crash fixed, O... |
-| **v5.5.550** | 🔬 DEEP RESEARCH: Water leak sensor enriched with manufacturer-specific profi... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
