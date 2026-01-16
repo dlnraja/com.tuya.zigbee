@@ -167,6 +167,11 @@
         "nl": "IR code bestaat",
         "de": "IR-Code existiert"
       },
+      "titleFormatted": {
+        "en": "IR code [[code_name]] exists",
+        "nl": "IR code [[code_name]] bestaat",
+        "de": "IR-Code [[code_name]] existiert"
+      },
       "args": [
         {
           "name": "code_name",
@@ -190,6 +195,11 @@
         "en": "IR protocol detected",
         "nl": "IR protocol gedetecteerd",
         "de": "IR-Protokoll erkannt"
+      },
+      "titleFormatted": {
+        "en": "IR code [[code_name]] uses [[protocol]] protocol",
+        "nl": "IR code [[code_name]] gebruikt [[protocol]] protocol",
+        "de": "IR-Code [[code_name]] verwendet [[protocol]] Protokoll"
       },
       "args": [
         {
