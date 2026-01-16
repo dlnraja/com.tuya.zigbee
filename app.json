@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.565",
+  "version": "5.5.566",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -41364,6 +41364,11 @@
           "nl": "IR code bestaat",
           "de": "IR-Code existiert"
         },
+        "titleFormatted": {
+          "en": "IR code [[code_name]] exists",
+          "nl": "IR code [[code_name]] bestaat",
+          "de": "IR-Code [[code_name]] existiert"
+        },
         "args": [
           {
             "type": "device",
@@ -41392,6 +41397,11 @@
           "en": "IR protocol detected",
           "nl": "IR protocol gedetecteerd",
           "de": "IR-Protokoll erkannt"
+        },
+        "titleFormatted": {
+          "en": "IR code [[code_name]] uses [[protocol]] protocol",
+          "nl": "IR code [[code_name]] gebruikt [[protocol]] protocol",
+          "de": "IR-Code [[code_name]] verwendet [[protocol]] Protokoll"
         },
         "args": [
           {
