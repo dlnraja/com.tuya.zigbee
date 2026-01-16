@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.566** | 🔧 FIX: Added missing titleFormatted to ir_code_exists and ir_protocol_detect... |
 | **v5.5.565** | 🔧 FLOW CARDS FIX: Extended 'could not get device by id' fix to ir_blaster dr... |
 | **v5.5.564** | 🔧 COMPREHENSIVE FIX: 'Could not get device by id' error resolved across 5 dr... |
 | **v5.5.563** | 📦 ADD: Rain sensor _TZ3210_p68kms0l (TS0207) added to rain_sensor driver. Fo... |
@@ -78,7 +79,6 @@
 | **v5.5.559** | 🔧 FIX: Presence sensor CK-BL702-MWS-01(7016) matching - added productId vari... |
 | **v5.5.558** | 🔧 FIX: Contact sensor _TZ3000_996rpfy6 (TS0203) removed from climate_sensor ... |
 | **v5.5.557** | 📦 MANUFACTURER ID ENRICHMENT: Added BSEED 4-gang switch IDs (_TZ3000_s6ma1nh... |
-| **v5.5.556** | 🔇 STDERR FIX: All flow card errors now log to stdout only. Fixed VirtualButt... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
