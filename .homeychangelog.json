@@ -1,4 +1,10 @@
 {
+  "5.5.563": {
+    "en": "📦 ADD: Rain sensor _TZ3210_p68kms0l (TS0207) added to rain_sensor driver. Forum request Ferdy_van_Hove.",
+    "nl": "📦 TOEVOEGEN: Regensensor _TZ3210_p68kms0l toegevoegd.",
+    "fr": "📦 AJOUT: Capteur de pluie _TZ3210_p68kms0l ajouté au driver rain_sensor.",
+    "de": "📦 HINZUFÜGEN: Regensensor _TZ3210_p68kms0l hinzugefügt."
+  },
   "5.5.562": {
     "en": "🔧 CRITICAL FIX: 'Could not get device by id' error resolved. Flow cards now gracefully handle deleted/re-paired devices instead of throwing errors. Applies to switch_4gang driver.",
     "nl": "🔧 KRITIEKE FIX: 'Could not get device by id' fout opgelost. Flow cards verwerken verwijderde apparaten nu correct.",
