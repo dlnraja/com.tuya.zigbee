@@ -1390,8 +1390,8 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   if (type === 'lux_raw') {
     // Raw ADC value - apply conversion ONLY for sensors that actually need it
     // Based on Z2M issue #18950: some sensors report raw ADC values
-    if (value > 0) {
-      lux = Math.round(value / 10);
+    if (rawValue > 0) {
+      lux = Math.round(rawValue / 10);
     } else {
       lux = 0;
     }
@@ -1399,10 +1399,10 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   else if (type === 'lux_direct') {
     // v5.5.316: Most Tuya sensors report direct lux - NO conversion needed
     // Z2M #27212: _TZE284_iadro9bf reports "illuminance": 282 (direct lux)
-    lux = value;
+    lux = rawValue;
   }
   else if (type === 'lux_div10') {
-    lux = value / 10;
+    lux = rawValue / 10;
   }
 
   // v5.5.316: SMART MAX LUX - Different sensors have different ranges

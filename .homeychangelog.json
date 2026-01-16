@@ -1,4 +1,10 @@
 {
+  "5.5.567": {
+    "en": "🐛 CRASH FIX: Fixed ReferenceError 'value is not defined' in presence_sensor_radar transformLux function. Variable was incorrectly named 'value' instead of 'rawValue' (the function parameter).",
+    "nl": "🐛 CRASH FIX: ReferenceError 'value is not defined' in presence_sensor_radar opgelost.",
+    "fr": "🐛 CRASH FIX: Corrigé ReferenceError 'value is not defined' dans presence_sensor_radar transformLux.",
+    "de": "🐛 CRASH FIX: ReferenceError 'value is not defined' in presence_sensor_radar behoben."
+  },
   "5.5.566": {
     "en": "🔧 FIX: Added missing titleFormatted to ir_code_exists and ir_protocol_detected flow card conditions. All validation warnings resolved. App now passes publish validation without warnings.",
     "nl": "🔧 FIX: Ontbrekende titleFormatted toegevoegd aan ir_blaster flow cards. Geen validatie waarschuwingen meer.",
