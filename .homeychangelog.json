@@ -1,4 +1,10 @@
 {
+  "5.5.565": {
+    "en": "🔧 FLOW CARDS FIX: Extended 'could not get device by id' fix to ir_blaster driver. All flow card handlers now return gracefully instead of throwing errors. Total 7 drivers fixed.",
+    "nl": "🔧 FLOW CARDS FIX: ir_blaster driver toegevoegd. Alle flow cards retourneren nu correct.",
+    "fr": "🔧 FIX FLOW CARDS: Driver ir_blaster ajouté. Toutes les flow cards retournent correctement.",
+    "de": "🔧 FLOW CARDS FIX: ir_blaster Treiber hinzugefügt. Alle Flow Cards funktionieren korrekt."
+  },
   "5.5.564": {
     "en": "🔧 COMPREHENSIVE FIX: 'Could not get device by id' error resolved across 5 drivers (climate_sensor, soil_sensor, motion_sensor, bulb_rgb, switch_4gang). Flow cards now return gracefully instead of throwing errors when devices are deleted/re-paired.",
     "nl": "🔧 UITGEBREIDE FIX: 'Could not get device by id' fout opgelost in 5 drivers.",
