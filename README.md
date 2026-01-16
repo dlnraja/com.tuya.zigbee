@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.561** | 🔧 FIX: BSEED TS0726 4-gang switch (_TZ3002_pzao9ls1) cluster mismatch fixed.... |
 | **v5.5.560** | 🔧 SYNTAX FIX: Fixed critical JavaScript syntax errors in fingerprint data fi... |
 | **v5.5.559** | 🔧 FIX: Presence sensor CK-BL702-MWS-01(7016) matching - added productId vari... |
 | **v5.5.558** | 🔧 FIX: Contact sensor _TZ3000_996rpfy6 (TS0203) removed from climate_sensor ... |
@@ -78,7 +79,6 @@
 | **v5.5.554** | 🎯 PRESENCE FIX: Added DP119 presence detection mapping to presence_sensor_ra... |
 | **v5.5.553** | 🏭 BSEED: Added all BSEED Zigbee devices - wall sockets (_TZ3000_b28wrpvx, _T... |
 | **v5.5.552** | 🔇 SILENT: Removed non-existent flow card triggers (tuya_dp_received, receive... |
-| **v5.5.551** | 🔧 FIX: Multiple Invalid Flow Card ID errors - bulb_rgb driver crash fixed, O... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
