@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.564** | 🔧 COMPREHENSIVE FIX: 'Could not get device by id' error resolved across 5 dr... |
 | **v5.5.563** | 📦 ADD: Rain sensor _TZ3210_p68kms0l (TS0207) added to rain_sensor driver. Fo... |
 | **v5.5.562** | 🔧 CRITICAL FIX: 'Could not get device by id' error resolved. Flow cards now ... |
 | **v5.5.561** | 🔧 FIX: BSEED TS0726 4-gang switch (_TZ3002_pzao9ls1) cluster mismatch fixed.... |
@@ -78,7 +79,6 @@
 | **v5.5.557** | 📦 MANUFACTURER ID ENRICHMENT: Added BSEED 4-gang switch IDs (_TZ3000_s6ma1nh... |
 | **v5.5.556** | 🔇 STDERR FIX: All flow card errors now log to stdout only. Fixed VirtualButt... |
 | **v5.5.555** | 🚨 HOTFIX: Fixed critical syntax error in app.js causing app crash on startup... |
-| **v5.5.554** | 🎯 PRESENCE FIX: Added DP119 presence detection mapping to presence_sensor_ra... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
