@@ -1,4 +1,10 @@
 {
+  "5.5.568": {
+    "en": "🔧 FIX: Smoke detector flow cards now work! Added missing run listeners for conditions (smoke_detected, battery_above) and actions (test_alarm). Forum report: Jolink.",
+    "nl": "🔧 FIX: Rookmelder flow cards werken nu! Run listeners toegevoegd voor conditions en actions.",
+    "fr": "🔧 FIX: Les flow cards du détecteur de fumée fonctionnent maintenant! Listeners ajoutés pour les conditions et actions.",
+    "de": "🔧 FIX: Rauchmelder Flow Cards funktionieren jetzt! Run Listeners für Bedingungen und Aktionen hinzugefügt."
+  },
   "5.5.567": {
     "en": "🐛 CRASH FIX: Fixed ReferenceError 'value is not defined' in presence_sensor_radar transformLux function. Variable was incorrectly named 'value' instead of 'rawValue' (the function parameter).",
     "nl": "🐛 CRASH FIX: ReferenceError 'value is not defined' in presence_sensor_radar opgelost.",
