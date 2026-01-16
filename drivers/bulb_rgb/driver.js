@@ -38,7 +38,14 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
 
       action.registerRunListener(async (args) => {
         const { device, kelvin } = args;
-        if (!device || !kelvin) throw new Error('Device and kelvin required');
+        if (!device || typeof device.setColorTemperatureKelvin !== 'function') {
+          this.log('[FLOW] Action: Device not available');
+          return false;
+        }
+        if (!kelvin) {
+          this.log('[FLOW] Action: Kelvin value required');
+          return false;
+        }
 
         this.log(`[RGB-DRIVER] Setting color temp: ${kelvin}K on ${device.getName()}`);
         await device.setColorTemperatureKelvin(kelvin);

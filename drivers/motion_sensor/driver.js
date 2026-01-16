@@ -3,14 +3,14 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 /**
- * v5.5.530: COMPLETE FLOW CARDS with device validation
- * Fixes "Cannot get device by id" error
+ * v5.5.564: COMPLETE FLOW CARDS with safe device validation
+ * Fixes "Cannot get device by id" error - returns false instead of throwing
  */
 class MotionSensorDriver extends ZigBeeDriver {
 
   async onInit() {
     await super.onInit();
-    this.log('MotionSensorDriver v5.5.530 initializing...');
+    this.log('MotionSensorDriver v5.5.564 initializing...');
 
     try {
       // ═══════════════════════════════════════════════════════════════
@@ -27,11 +27,14 @@ class MotionSensorDriver extends ZigBeeDriver {
       // ═══════════════════════════════════════════════════════════════
       this.motionActiveCondition = this.homey.flow.getConditionCard('motion_sensor_motion_active');
       this.motionActiveCondition?.registerRunListener(async (args) => {
-        if (!args.device) throw new Error('Device not found');
+        if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
+          this.log('[FLOW] Condition: Device not available');
+          return false;
+        }
         return args.device.getCapabilityValue('alarm_motion') === true;
       });
 
-      this.log('MotionSensorDriver v5.5.530 ✅ All flow cards registered');
+      this.log('MotionSensorDriver v5.5.564 ✅ All flow cards registered');
     } catch (err) {
       this.error('MotionSensorDriver flow card registration failed:', err.message);
     }

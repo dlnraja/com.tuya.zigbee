@@ -16,7 +16,7 @@ class SoilSensorDriver extends ZigBeeDriver {
 
   async onInit() {
     this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║    SOIL SENSOR DRIVER v5.5.556 - SAFE FLOW REGISTRATION     ║');
+    this.log('║    SOIL SENSOR DRIVER v5.5.564 - SAFE FLOW REGISTRATION     ║');
     this.log('╚══════════════════════════════════════════════════════════════╝');
 
     // Track IEEE addresses to prevent duplicates
@@ -55,7 +55,10 @@ class SoilSensorDriver extends ZigBeeDriver {
     const moistureAboveCondition = safeGetCondition('soil_sensor_moisture_above');
     if (moistureAboveCondition) {
       moistureAboveCondition.registerRunListener(async (args) => {
-        if (!args.device) throw new Error('Device not found');
+        if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
+          this.log('[FLOW] Condition: Device not available');
+          return false;
+        }
         const moisture = args.device.getCapabilityValue('measure_humidity');
         return moisture !== null && moisture > args.moisture;
       });
@@ -64,7 +67,10 @@ class SoilSensorDriver extends ZigBeeDriver {
     const tempAboveCondition = safeGetCondition('soil_sensor_temperature_above');
     if (tempAboveCondition) {
       tempAboveCondition.registerRunListener(async (args) => {
-        if (!args.device) throw new Error('Device not found');
+        if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
+          this.log('[FLOW] Condition: Device not available');
+          return false;
+        }
         const temp = args.device.getCapabilityValue('measure_temperature');
         return temp !== null && temp > args.temp;
       });
@@ -73,7 +79,10 @@ class SoilSensorDriver extends ZigBeeDriver {
     const needsWaterCondition = safeGetCondition('soil_sensor_needs_water');
     if (needsWaterCondition) {
       needsWaterCondition.registerRunListener(async (args) => {
-        if (!args.device) throw new Error('Device not found');
+        if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
+          this.log('[FLOW] Condition: Device not available');
+          return false;
+        }
         return args.device.getCapabilityValue('alarm_water') === true;
       });
     }
@@ -81,7 +90,10 @@ class SoilSensorDriver extends ZigBeeDriver {
     const batteryAboveCondition = safeGetCondition('soil_sensor_battery_above');
     if (batteryAboveCondition) {
       batteryAboveCondition.registerRunListener(async (args) => {
-        if (!args.device) throw new Error('Device not found');
+        if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
+          this.log('[FLOW] Condition: Device not available');
+          return false;
+        }
         const battery = args.device.getCapabilityValue('measure_battery');
         return battery !== null && battery > args.threshold;
       });
