@@ -8,6 +8,7 @@ EventEmitter.defaultMaxListeners = 50;
 const Homey = require('homey');
 const { registerCustomClusters } = require('./lib/zigbee/registerClusters');
 const FlowCardManager = require('./lib/flow/FlowCardManager');
+const UniversalFlowCardLoader = require('./lib/flow/UniversalFlowCardLoader');
 const CapabilityManager = require('./lib/utils/CapabilityManager');
 const AdvancedAnalytics = require('./lib/analytics/AdvancedAnalytics');
 const SmartDeviceDiscovery = require('./lib/discovery/SmartDeviceDiscovery');
@@ -98,6 +99,11 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     this.flowCardManager = new FlowCardManager(this.homey);
     this.flowCardManager.registerAll();
     this.log('✅ Flow cards registered (+33 nouveaux)');
+
+    // v5.5.597: Universal Flow Card Loader for sub-capabilities and generic DP
+    this.universalFlowLoader = new UniversalFlowCardLoader(this.homey);
+    await this.universalFlowLoader.initialize();
+    this.log('✅ Universal Flow Card Loader initialized (sub-capabilities + DP)');
 
     // Initialize Advanced Analytics
     this.analytics = new AdvancedAnalytics(this.homey);
