@@ -118,6 +118,25 @@ Comprehensive flow cards for all major drivers:
 - **Smart Battery** - 8 chemistries, 4 algorithms
 - **Energy Monitoring** - Full kWh, W, V, A support
 
+### ⚠️ Known Firmware Limitations
+
+Some Tuya devices have firmware limitations that cannot be resolved by this app:
+
+| Issue | Affected Devices | Status |
+|-------|-----------------|--------|
+| **TS0601 Time Sync** | LCD climate sensors (_TZE284_vvmbj46n, etc.) | Some firmwares ignore Zigbee time responses and only sync with Tuya cloud gateway |
+| **Battery 0%** | TS0044 buttons (_TZ3000_wkai4ga5) | Reports 0% always - firmware bug |
+| **Cloud-only devices** | Some TS0601 variants | MCU ignores local Zigbee commands |
+
+**Time Sync Details:**
+- The Time cluster (0x000A) is exposed as OUTPUT (device is client)
+- Device requests time, doesn't receive push
+- **Cooperative firmware**: LCD syncs correctly
+- **Hybrid firmware**: Logs OK, LCD not updated
+- **Cloud-only firmware**: Cannot fix locally
+
+> 💡 **Re-pairing required** after driver updates to apply new mappings.
+
 ## 📦 Installation
 
 ### From Homey App Store (Recommended)
