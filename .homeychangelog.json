@@ -1,4 +1,10 @@
 {
+  "5.5.569": {
+    "en": "🔧 FIX: Siren flow cards now work! Added missing run listeners for conditions (is_sounding) and actions (turn_on, turn_off, set_volume, set_duration). Same fix pattern as smoke detector.",
+    "nl": "🔧 FIX: Sirene flow cards werken nu! Run listeners toegevoegd voor conditions en actions.",
+    "fr": "🔧 FIX: Les flow cards de la sirène fonctionnent maintenant! Listeners ajoutés.",
+    "de": "🔧 FIX: Sirenen Flow Cards funktionieren jetzt! Run Listeners hinzugefügt."
+  },
   "5.5.568": {
     "en": "🔧 FIX: Smoke detector flow cards now work! Added missing run listeners for conditions (smoke_detected, battery_above) and actions (test_alarm). Forum report: Jolink.",
     "nl": "🔧 FIX: Rookmelder flow cards werken nu! Run listeners toegevoegd voor conditions en actions.",
