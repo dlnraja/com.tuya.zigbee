@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.601** | 🐛 FIX: HOBEIAN water leak sensors not reporting alarms (forum #1010 Lasse_K)... |
 | **v5.5.600** | 🐛 FIX: IAS Zone enrollment for TS0203 contact sensors (forum #1011). Sensors... |
 | **v5.5.597** | 🔧 FLOW CARDS: Added universal DP trigger/condition/action cards for exotic d... |
 | **v5.5.596** | 📦 NEW DEVICES: Added Bseed dimmer IDs (_TZE200_ctq0k47x, _TZE200_ip2akl9w, _... |
@@ -78,7 +79,6 @@
 | **v5.5.592** | 🔔 ALARM TRIGGER FIX: Fixed flow card triggering for alarm_water, alarm_conta... |
 | **v5.5.591** | 📦 NEW DEVICES: Added 18 new device IDs from Zigbee2MQTT (Nous A7Z/A11Z plugs... |
 | **v5.5.590** | 🧹 CLIMATE SENSOR CLEANUP: Removed 1113 misplaced manufacturer IDs from clima... |
-| **v5.5.589** | 🎯 SENSOR PAIRING FIX: Relaxed endpoint cluster requirements for 5 sensor dri... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
