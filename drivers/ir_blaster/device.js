@@ -595,11 +595,12 @@ class IrBlasterDevice extends ZigBeeDevice {
   }
 
   /**
-   * v5.5.361: Enhanced IR code sending with chunked transmission protocol
-   * Based on Zigbee2MQTT zosungIRTransmit implementation
+   * v5.5.602: Enhanced IR code sending with multiple protocol support
+   * Based on Zigbee2MQTT zosungIRTransmit + SmartIR MQTT format
    * @param {string} irCode - Base64 encoded IR code
+   * @param {object} options - Send options (format, frequency)
    */
-  async sendIRCode(irCode) {
+  async sendIRCode(irCode, options = {}) {
     this.log(`Sending IR code: ${irCode.substring(0, 30)}...`);
 
     const zclNode = this._zclNode;
@@ -608,17 +609,26 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
 
     try {
-      // v5.5.361: Build JSON wrapper as per Z2M implementation
-      const irMessage = JSON.stringify({
+      // v5.5.602: Support multiple message formats for compatibility
+      // Format 1: Simple Z2M/SmartIR format (most compatible)
+      const simpleMessage = JSON.stringify({
+        'ir_code_to_send': irCode
+      });
+      
+      // Format 2: Extended format with frequency/timing (for complex codes)
+      const extendedMessage = JSON.stringify({
         'key_num': 1,
         'delay': 300,
         'key1': {
           'num': 1,
-          'freq': 38000,
+          'freq': options.frequency || 38000,
           'type': 1,
           'key_code': irCode
         }
       });
+      
+      // Use simple format by default, extended for large codes
+      const irMessage = irCode.length > 500 ? extendedMessage : simpleMessage;
 
       // Try chunked transmission first (most reliable for large codes)
       const irTransmitCluster = zclNode.endpoints[1].clusters.zosungIRTransmit;
