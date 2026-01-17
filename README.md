@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.571** | 🔧 CONTINUED FIX: Added flow card run listeners to 4 more drivers: curtain_mo... |
 | **v5.5.570** | 🔧 MASSIVE FIX: Added missing flow card run listeners to 12 drivers! Fixed: g... |
 | **v5.5.569** | 🔧 FIX: Siren flow cards now work! Added missing run listeners for conditions... |
 | **v5.5.568** | 🔧 FIX: Smoke detector flow cards now work! Added missing run listeners for c... |
@@ -78,7 +79,6 @@
 | **v5.5.564** | 🔧 COMPREHENSIVE FIX: 'Could not get device by id' error resolved across 5 dr... |
 | **v5.5.563** | 📦 ADD: Rain sensor _TZ3210_p68kms0l (TS0207) added to rain_sensor driver. Fo... |
 | **v5.5.562** | 🔧 CRITICAL FIX: 'Could not get device by id' error resolved. Flow cards now ... |
-| **v5.5.561** | 🔧 FIX: BSEED TS0726 4-gang switch (_TZ3002_pzao9ls1) cluster mismatch fixed.... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
