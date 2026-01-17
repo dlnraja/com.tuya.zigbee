@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.591** | 📦 NEW DEVICES: Added 18 new device IDs from Zigbee2MQTT (Nous A7Z/A11Z plugs... |
 | **v5.5.590** | 🧹 CLIMATE SENSOR CLEANUP: Removed 1113 misplaced manufacturer IDs from clima... |
 | **v5.5.589** | 🎯 SENSOR PAIRING FIX: Relaxed endpoint cluster requirements for 5 sensor dri... |
 | **v5.5.588** | 🔥 CRITICAL FIX: Flow card triggering now uses driver-specific card IDs (fixe... |
@@ -78,7 +79,6 @@
 | **v5.5.584** | 🔧 CONTINUED FIX: Added flow card run listeners to air_quality_co2 (3 cards).... |
 | **v5.5.583** | 🔧 CONTINUED FIX: Added flow card run listeners to generic_tuya (2 cards), mo... |
 | **v5.5.582** | 🔧 CONTINUED FIX: Added flow card run listeners to gateway_zigbee_bridge (3 c... |
-| **v5.5.581** | 🔧 CONTINUED FIX: Added flow card run listeners to weather_station_outdoor (4... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
