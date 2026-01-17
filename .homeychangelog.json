@@ -1,4 +1,10 @@
 {
+  "5.5.578": {
+    "en": "🔧 CONTINUED FIX: Added flow card run listeners to 2 more drivers: dimmer_wall_1gang (6 cards), dimmer_dual_channel (8 cards). Total: 39 drivers now have working flow cards!",
+    "nl": "🔧 VERVOLG FIX: Flow card run listeners toegevoegd aan 2 extra drivers.",
+    "fr": "🔧 SUITE CORRECTION: Listeners ajoutés à 2 drivers supplémentaires.",
+    "de": "🔧 WEITERE FIX: Run Listeners zu 2 weiteren Treibern hinzugefügt."
+  },
   "5.5.577": {
     "en": "🔧 CONTINUED FIX: Added flow card run listeners to 3 more drivers: bulb_tunable_white, bulb_white, led_strip_rgbw. Total: 37 drivers now have working flow cards!",
     "nl": "🔧 VERVOLG FIX: Flow card run listeners toegevoegd aan 3 extra drivers.",
