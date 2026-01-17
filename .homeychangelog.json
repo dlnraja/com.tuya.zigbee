@@ -1,4 +1,28 @@
 {
+  "5.5.589": {
+    "en": "🎯 SENSOR PAIRING FIX: Relaxed endpoint cluster requirements for 5 sensor drivers (presence_sensor_radar, water_leak_sensor, gas_sensor, contact_sensor, motion_sensor). Devices that were pairing as 'Unknown' will now correctly pair. Fixes CK-BL702-MWS-01 and water sensor alarm issues.",
+    "nl": "🎯 SENSOR FIX: Cluster vereisten versoepeld voor 5 sensor drivers. Devices pairen nu correct.",
+    "fr": "🎯 CORRECTION CAPTEURS: Exigences clusters assouplies pour 5 drivers. Les appareils s'apparient maintenant correctement.",
+    "de": "🎯 SENSOR FIX: Cluster-Anforderungen für 5 Sensor-Treiber gelockert. Geräte koppeln jetzt korrekt."
+  },
+  "5.5.588": {
+    "en": "🔥 CRITICAL FIX: Flow card triggering now uses driver-specific card IDs (fixes Jolink smoke detector flow errors). Added fallback to generic cards for compatibility.",
+    "nl": "🔥 KRITIEKE FIX: Flow card triggering gebruikt nu driver-specifieke kaart IDs (fix voor rookmelder flow fouten).",
+    "fr": "🔥 CORRECTION CRITIQUE: Déclenchement flow cards utilise maintenant les IDs spécifiques au driver (corrige erreurs fumée).",
+    "de": "🔥 KRITISCHER FIX: Flow-Karten-Auslösung verwendet jetzt treiberspezifische Karten-IDs (behebt Rauchmelder-Flow-Fehler)."
+  },
+  "5.5.587": {
+    "en": "🔧 FLOW CARD FIX: Added run listeners to 5 drivers (switch_wall_5gang, 6gang, 7gang, 8gang, water_tank_monitor). Added 22 new manufacturer IDs from Zigbee2MQTT.",
+    "nl": "🔧 FLOW CARD FIX: Run listeners toegevoegd aan 5 drivers + 22 nieuwe manufacturer IDs.",
+    "fr": "🔧 CORRECTION FLOW: Listeners ajoutés à 5 drivers + 22 nouveaux IDs fabricants.",
+    "de": "🔧 FLOW CARD FIX: Run Listeners zu 5 Treibern + 22 neue Hersteller-IDs hinzugefügt."
+  },
+  "5.5.586": {
+    "en": "🔧 DRIVER MAPPING FIX: Removed 40+ misplaced manufacturer IDs from wrong drivers (climate_sensor, switch_1gang, switch_3gang, bulb_rgbw). Buttons, dimmers, switches now pair to correct drivers.",
+    "nl": "🔧 DRIVER MAPPING FIX: 34 button manufacturer IDs verwijderd uit verkeerde drivers.",
+    "fr": "🔧 CORRECTION MAPPING: 34 IDs de boutons retirés des mauvais drivers.",
+    "de": "🔧 DRIVER MAPPING FIX: 34 Button-Hersteller-IDs aus falschen Treibern entfernt."
+  },
   "5.5.585": {
     "en": "🔧 CONTINUED FIX: Added flow card run listener to button_wireless (1 card). Total: 50 drivers now have working flow cards!",
     "nl": "🔧 VERVOLG FIX: Flow card run listener toegevoegd aan button_wireless.",
