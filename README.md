@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.597** | 🔧 FLOW CARDS: Added universal DP trigger/condition/action cards for exotic d... |
 | **v5.5.596** | 📦 NEW DEVICES: Added Bseed dimmer IDs (_TZE200_ctq0k47x, _TZE200_ip2akl9w, _... |
 | **v5.5.595** | 📦 NEW DEVICE: Added _TZE204_tgl8i2np (curtain motor MI-P82) from Zigbee2MQTT... |
 | **v5.5.594** | 📦 NEW DEVICE: Added _TZE284_la9vhsok (IR blaster/transmitter) from Zigbee2MQ... |
@@ -78,7 +79,6 @@
 | **v5.5.590** | 🧹 CLIMATE SENSOR CLEANUP: Removed 1113 misplaced manufacturer IDs from clima... |
 | **v5.5.589** | 🎯 SENSOR PAIRING FIX: Relaxed endpoint cluster requirements for 5 sensor dri... |
 | **v5.5.588** | 🔥 CRITICAL FIX: Flow card triggering now uses driver-specific card IDs (fixe... |
-| **v5.5.587** | 🔧 FLOW CARD FIX: Added run listeners to 5 drivers (switch_wall_5gang, 6gang,... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
