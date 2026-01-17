@@ -1,4 +1,10 @@
 {
+  "5.5.590": {
+    "en": "🧹 CLIMATE SENSOR CLEANUP: Removed 1113 misplaced manufacturer IDs from climate_sensor driver. IDs for presence sensors, buttons, switches, motion sensors, curtains, plugs, bulbs, and other device types were incorrectly duplicated. Devices now pair to correct drivers.",
+    "nl": "🧹 CLIMATE SENSOR CLEANUP: 1113 verkeerd geplaatste IDs verwijderd. Devices pairen nu correct.",
+    "fr": "🧹 NETTOYAGE CLIMATE SENSOR: 1113 IDs mal placés supprimés. Les appareils s'apparient maintenant correctement.",
+    "de": "🧹 CLIMATE SENSOR BEREINIGUNG: 1113 falsch platzierte IDs entfernt. Geräte koppeln jetzt korrekt."
+  },
   "5.5.589": {
     "en": "🎯 SENSOR PAIRING FIX: Relaxed endpoint cluster requirements for 5 sensor drivers (presence_sensor_radar, water_leak_sensor, gas_sensor, contact_sensor, motion_sensor). Devices that were pairing as 'Unknown' will now correctly pair. Fixes CK-BL702-MWS-01 and water sensor alarm issues.",
     "nl": "🎯 SENSOR FIX: Cluster vereisten versoepeld voor 5 sensor drivers. Devices pairen nu correct.",
