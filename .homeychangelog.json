@@ -1,4 +1,10 @@
 {
+  "5.5.571": {
+    "en": "🔧 CONTINUED FIX: Added flow card run listeners to 4 more drivers: curtain_motor, doorbell, bulb_dimmable. Total fixed: 16 drivers now have working flow cards!",
+    "nl": "🔧 VERVOLG FIX: Flow card run listeners toegevoegd aan 4 extra drivers.",
+    "fr": "🔧 SUITE CORRECTION: Listeners ajoutés à 4 drivers supplémentaires.",
+    "de": "🔧 WEITERE FIX: Run Listeners zu 4 weiteren Treibern hinzugefügt."
+  },
   "5.5.570": {
     "en": "🔧 MASSIVE FIX: Added missing flow card run listeners to 12 drivers! Fixed: gas_sensor, gas_detector, co_sensor, contact_sensor, water_leak_sensor, vibration_sensor, plug_smart, switch_1gang, switch_2gang, switch_3gang. Root cause: SDK3 auto-registers cards but NOT run listeners for conditions/actions.",
     "nl": "🔧 GROTE FIX: Ontbrekende flow card run listeners toegevoegd aan 12 drivers!",
