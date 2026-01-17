@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.602",
+  "version": "5.5.603",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -40563,6 +40563,68 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=weather_station_outdoor"
+          }
+        ]
+      },
+      {
+        "id": "tuya_dp_threshold_crossed",
+        "title": {
+          "en": "DP threshold crossed",
+          "fr": "Seuil DP franchi",
+          "nl": "DP drempel overschreden",
+          "de": "DP Schwellwert überschritten"
+        },
+        "titleFormatted": {
+          "en": "DP [[dp]] crossed threshold [[threshold]] on [[device]]",
+          "fr": "DP [[dp]] a franchi le seuil [[threshold]] sur [[device]]"
+        },
+        "hint": {
+          "en": "Triggers when a numeric DP value crosses a threshold (forum #1016)",
+          "fr": "Se déclenche quand une valeur DP numérique franchit un seuil"
+        },
+        "tokens": [
+          {
+            "name": "dp",
+            "type": "number",
+            "title": { "en": "DP Number", "fr": "Numéro DP" },
+            "example": 1
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "title": { "en": "Current Value", "fr": "Valeur actuelle" },
+            "example": 25
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": { "en": "Threshold", "fr": "Seuil" },
+            "example": 30
+          },
+          {
+            "name": "direction",
+            "type": "string",
+            "title": { "en": "Direction", "fr": "Direction" },
+            "example": "above"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=tuya_data_report|onoff|measure_temperature"
+          },
+          {
+            "name": "dp",
+            "type": "number",
+            "title": { "en": "DP Number", "fr": "Numéro DP" },
+            "min": 1,
+            "max": 255
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": { "en": "Threshold Value", "fr": "Valeur seuil" }
           }
         ]
       },
