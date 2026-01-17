@@ -69,16 +69,16 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.589** | 🎯 SENSOR PAIRING FIX: Relaxed endpoint cluster requirements for 5 sensor dri... |
+| **v5.5.588** | 🔥 CRITICAL FIX: Flow card triggering now uses driver-specific card IDs (fixe... |
+| **v5.5.587** | 🔧 FLOW CARD FIX: Added run listeners to 5 drivers (switch_wall_5gang, 6gang,... |
+| **v5.5.586** | 🔧 DRIVER MAPPING FIX: Removed 40+ misplaced manufacturer IDs from wrong driv... |
 | **v5.5.585** | 🔧 CONTINUED FIX: Added flow card run listener to button_wireless (1 card). T... |
 | **v5.5.584** | 🔧 CONTINUED FIX: Added flow card run listeners to air_quality_co2 (3 cards).... |
 | **v5.5.583** | 🔧 CONTINUED FIX: Added flow card run listeners to generic_tuya (2 cards), mo... |
 | **v5.5.582** | 🔧 CONTINUED FIX: Added flow card run listeners to gateway_zigbee_bridge (3 c... |
 | **v5.5.581** | 🔧 CONTINUED FIX: Added flow card run listeners to weather_station_outdoor (4... |
 | **v5.5.580** | 🔧 CONTINUED FIX: Added flow card run listeners to presence_sensor_radar (3 c... |
-| **v5.5.579** | 🔧 CONTINUED FIX: Added flow card run listeners to module_mini_switch (4 card... |
-| **v5.5.578** | 🔧 CONTINUED FIX: Added flow card run listeners to 2 more drivers: dimmer_wal... |
-| **v5.5.577** | 🔧 CONTINUED FIX: Added flow card run listeners to 3 more drivers: bulb_tunab... |
-| **v5.5.576** | 🔧 CONTINUED FIX: Added flow card run listeners to 4 more drivers: led_strip_... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
