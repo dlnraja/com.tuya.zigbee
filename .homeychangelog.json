@@ -1,4 +1,10 @@
 {
+  "5.5.591": {
+    "en": "📦 NEW DEVICES: Added 18 new device IDs from Zigbee2MQTT (Nous A7Z/A11Z plugs, L14 valve, ZC-LS02 curtain motor, SZLMR10 presence sensor, ZG-101ZS scene switch, SPM/SDM energy meters).",
+    "nl": "📦 NIEUWE APPARATEN: 18 nieuwe device IDs toegevoegd van Zigbee2MQTT.",
+    "fr": "📦 NOUVEAUX APPAREILS: 18 nouveaux IDs ajoutés depuis Zigbee2MQTT.",
+    "de": "📦 NEUE GERÄTE: 18 neue Geräte-IDs von Zigbee2MQTT hinzugefügt."
+  },
   "5.5.590": {
     "en": "🧹 CLIMATE SENSOR CLEANUP: Removed 1113 misplaced manufacturer IDs from climate_sensor driver. IDs for presence sensors, buttons, switches, motion sensors, curtains, plugs, bulbs, and other device types were incorrectly duplicated. Devices now pair to correct drivers.",
     "nl": "🧹 CLIMATE SENSOR CLEANUP: 1113 verkeerd geplaatste IDs verwijderd. Devices pairen nu correct.",
