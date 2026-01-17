@@ -1,4 +1,10 @@
 {
+  "5.5.600": {
+    "en": "🐛 FIX: IAS Zone enrollment for TS0203 contact sensors (forum #1011). Sensors now properly enroll and report status.",
+    "nl": "🐛 FIX: IAS Zone enrollment voor TS0203 contact sensors.",
+    "fr": "🐛 FIX: Enrollment IAS Zone pour capteurs contact TS0203 (forum #1011).",
+    "de": "🐛 FIX: IAS Zone Enrollment für TS0203 Kontaktsensoren."
+  },
   "5.5.597": {
     "en": "🔧 FLOW CARDS: Added universal DP trigger/condition/action cards for exotic devices + sub-capability flow cards (gang2, gang3...). Fixes forum #1015/#1016.",
     "nl": "🔧 FLOW CARDS: Universele DP en sub-capability flow cards toegevoegd.",
