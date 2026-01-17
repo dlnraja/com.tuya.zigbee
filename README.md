@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.579** | 🔧 CONTINUED FIX: Added flow card run listeners to module_mini_switch (4 card... |
 | **v5.5.578** | 🔧 CONTINUED FIX: Added flow card run listeners to 2 more drivers: dimmer_wal... |
 | **v5.5.577** | 🔧 CONTINUED FIX: Added flow card run listeners to 3 more drivers: bulb_tunab... |
 | **v5.5.576** | 🔧 CONTINUED FIX: Added flow card run listeners to 4 more drivers: led_strip_... |
@@ -78,7 +79,6 @@
 | **v5.5.572** | 🔧 CONTINUED FIX: Added flow card run listeners to plug_energy_monitor (with ... |
 | **v5.5.571** | 🔧 CONTINUED FIX: Added flow card run listeners to 4 more drivers: curtain_mo... |
 | **v5.5.570** | 🔧 MASSIVE FIX: Added missing flow card run listeners to 12 drivers! Fixed: g... |
-| **v5.5.569** | 🔧 FIX: Siren flow cards now work! Added missing run listeners for conditions... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
