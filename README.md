@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.582** | 🔧 CONTINUED FIX: Added flow card run listeners to gateway_zigbee_bridge (3 c... |
 | **v5.5.581** | 🔧 CONTINUED FIX: Added flow card run listeners to weather_station_outdoor (4... |
 | **v5.5.580** | 🔧 CONTINUED FIX: Added flow card run listeners to presence_sensor_radar (3 c... |
 | **v5.5.579** | 🔧 CONTINUED FIX: Added flow card run listeners to module_mini_switch (4 card... |
@@ -78,7 +79,6 @@
 | **v5.5.575** | 🔧 CONTINUED FIX: Added flow card run listeners to 5 more drivers: shutter_ro... |
 | **v5.5.574** | 🔧 CONTINUED FIX: Added flow card run listeners to 5 more drivers: bulb_rgb, ... |
 | **v5.5.573** | 🔧 CONTINUED FIX: Added flow card run listeners to thermostat_tuya_dp (8 card... |
-| **v5.5.572** | 🔧 CONTINUED FIX: Added flow card run listeners to plug_energy_monitor (with ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
