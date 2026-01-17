@@ -1,4 +1,10 @@
 {
+  "5.5.593": {
+    "en": "📦 NEW DEVICES: Added _TZE284_cgr0rhza (TRV), _TZE284_rlytpmij, _TZE284_ar5przmw (presence sensors) from Zigbee2MQTT research.",
+    "nl": "📦 NIEUWE APPARATEN: Nieuwe TRV en aanwezigheidssensoren toegevoegd.",
+    "fr": "📦 NOUVEAUX APPAREILS: Nouveaux TRV et capteurs de présence ajoutés.",
+    "de": "📦 NEUE GERÄTE: Neue TRV und Präsenzsensoren hinzugefügt."
+  },
   "5.5.592": {
     "en": "🔔 ALARM TRIGGER FIX: Fixed flow card triggering for alarm_water, alarm_contact, alarm_smoke, alarm_gas. Flows now properly trigger when sensor alarms change state.",
     "nl": "🔔 ALARM TRIGGER FIX: Flow cards triggeren nu correct bij alarm wijzigingen.",
