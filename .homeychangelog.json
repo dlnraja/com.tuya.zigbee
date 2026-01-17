@@ -1,4 +1,10 @@
 {
+  "5.5.573": {
+    "en": "🔧 CONTINUED FIX: Added flow card run listeners to thermostat_tuya_dp (8 cards!) and water_valve_smart (6 cards). Total: 20 drivers now have working flow cards!",
+    "nl": "🔧 VERVOLG FIX: Flow card run listeners toegevoegd aan thermostat_tuya_dp en water_valve_smart.",
+    "fr": "🔧 SUITE CORRECTION: Listeners ajoutés à thermostat_tuya_dp et water_valve_smart.",
+    "de": "🔧 WEITERE FIX: Run Listeners zu thermostat_tuya_dp und water_valve_smart hinzugefügt."
+  },
   "5.5.572": {
     "en": "🔧 CONTINUED FIX: Added flow card run listeners to plug_energy_monitor (with power/energy conditions) and radiator_valve. Total: 18 drivers now have working flow cards!",
     "nl": "🔧 VERVOLG FIX: Flow card run listeners toegevoegd aan plug_energy_monitor en radiator_valve.",
