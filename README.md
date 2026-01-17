@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.573** | 🔧 CONTINUED FIX: Added flow card run listeners to thermostat_tuya_dp (8 card... |
 | **v5.5.572** | 🔧 CONTINUED FIX: Added flow card run listeners to plug_energy_monitor (with ... |
 | **v5.5.571** | 🔧 CONTINUED FIX: Added flow card run listeners to 4 more drivers: curtain_mo... |
 | **v5.5.570** | 🔧 MASSIVE FIX: Added missing flow card run listeners to 12 drivers! Fixed: g... |
@@ -78,7 +79,6 @@
 | **v5.5.566** | 🔧 FIX: Added missing titleFormatted to ir_code_exists and ir_protocol_detect... |
 | **v5.5.565** | 🔧 FLOW CARDS FIX: Extended 'could not get device by id' fix to ir_blaster dr... |
 | **v5.5.564** | 🔧 COMPREHENSIVE FIX: 'Could not get device by id' error resolved across 5 dr... |
-| **v5.5.563** | 📦 ADD: Rain sensor _TZ3210_p68kms0l (TS0207) added to rain_sensor driver. Fo... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
