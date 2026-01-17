@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.577** | 🔧 CONTINUED FIX: Added flow card run listeners to 3 more drivers: bulb_tunab... |
 | **v5.5.576** | 🔧 CONTINUED FIX: Added flow card run listeners to 4 more drivers: led_strip_... |
 | **v5.5.575** | 🔧 CONTINUED FIX: Added flow card run listeners to 5 more drivers: shutter_ro... |
 | **v5.5.574** | 🔧 CONTINUED FIX: Added flow card run listeners to 5 more drivers: bulb_rgb, ... |
@@ -78,7 +79,6 @@
 | **v5.5.570** | 🔧 MASSIVE FIX: Added missing flow card run listeners to 12 drivers! Fixed: g... |
 | **v5.5.569** | 🔧 FIX: Siren flow cards now work! Added missing run listeners for conditions... |
 | **v5.5.568** | 🔧 FIX: Smoke detector flow cards now work! Added missing run listeners for c... |
-| **v5.5.567** | 🐛 CRASH FIX: Fixed ReferenceError 'value is not defined' in presence_sensor_... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
