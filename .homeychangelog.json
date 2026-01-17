@@ -1,4 +1,10 @@
 {
+  "5.5.601": {
+    "en": "🐛 FIX: HOBEIAN water leak sensors not reporting alarms (forum #1010 Lasse_K). Fixed CIE address mismatch + Buffer parsing for IAS Zone status.",
+    "nl": "🐛 FIX: HOBEIAN waterleksensoren melden nu alarm correct.",
+    "fr": "🐛 FIX: Capteurs fuite eau HOBEIAN - alarmes maintenant reportées (forum #1010).",
+    "de": "🐛 FIX: HOBEIAN Wasserlecksensoren melden jetzt Alarme korrekt."
+  },
   "5.5.600": {
     "en": "🐛 FIX: IAS Zone enrollment for TS0203 contact sensors (forum #1011). Sensors now properly enroll and report status.",
     "nl": "🐛 FIX: IAS Zone enrollment voor TS0203 contact sensors.",
