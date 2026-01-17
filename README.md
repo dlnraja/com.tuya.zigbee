@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.575** | 🔧 CONTINUED FIX: Added flow card run listeners to 5 more drivers: shutter_ro... |
 | **v5.5.574** | 🔧 CONTINUED FIX: Added flow card run listeners to 5 more drivers: bulb_rgb, ... |
 | **v5.5.573** | 🔧 CONTINUED FIX: Added flow card run listeners to thermostat_tuya_dp (8 card... |
 | **v5.5.572** | 🔧 CONTINUED FIX: Added flow card run listeners to plug_energy_monitor (with ... |
@@ -78,7 +79,6 @@
 | **v5.5.568** | 🔧 FIX: Smoke detector flow cards now work! Added missing run listeners for c... |
 | **v5.5.567** | 🐛 CRASH FIX: Fixed ReferenceError 'value is not defined' in presence_sensor_... |
 | **v5.5.566** | 🔧 FIX: Added missing titleFormatted to ir_code_exists and ir_protocol_detect... |
-| **v5.5.565** | 🔧 FLOW CARDS FIX: Extended 'could not get device by id' fix to ir_blaster dr... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
