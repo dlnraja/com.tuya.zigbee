@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.596",
+  "version": "5.5.597",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -40565,9 +40565,164 @@
             "filter": "driver_id=weather_station_outdoor"
           }
         ]
+      },
+      {
+        "id": "tuya_dp_received",
+        "title": {
+          "en": "Tuya Data Point received",
+          "fr": "Data Point Tuya reçu",
+          "nl": "Tuya Data Point ontvangen",
+          "de": "Tuya Datenpunkt empfangen"
+        },
+        "titleFormatted": {
+          "en": "DP [[dp]] received on [[device]]",
+          "fr": "DP [[dp]] reçu sur [[device]]",
+          "nl": "DP [[dp]] ontvangen op [[device]]",
+          "de": "DP [[dp]] empfangen auf [[device]]"
+        },
+        "hint": {
+          "en": "Triggers when a raw Tuya DP is received. Use DP 0 to match any DP.",
+          "fr": "Se déclenche quand un DP Tuya brut est reçu. Utilisez DP 0 pour tous les DP."
+        },
+        "tokens": [
+          {
+            "name": "dp",
+            "type": "number",
+            "title": { "en": "DP Number", "fr": "Numéro DP" },
+            "example": 1
+          },
+          {
+            "name": "value",
+            "type": "string",
+            "title": { "en": "Value", "fr": "Valeur" },
+            "example": "true"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=tuya_data_report|onoff"
+          },
+          {
+            "name": "dp",
+            "type": "number",
+            "title": { "en": "DP Number (0=any)", "fr": "Numéro DP (0=tous)" },
+            "min": 0,
+            "max": 255
+          }
+        ]
+      },
+      {
+        "id": "sub_capability_changed",
+        "title": {
+          "en": "Sub-capability changed",
+          "fr": "Sous-capacité changée",
+          "nl": "Sub-capability gewijzigd",
+          "de": "Sub-Fähigkeit geändert"
+        },
+        "titleFormatted": {
+          "en": "[[capability]] changed on [[device]]",
+          "fr": "[[capability]] changé sur [[device]]",
+          "nl": "[[capability]] gewijzigd op [[device]]",
+          "de": "[[capability]] geändert auf [[device]]"
+        },
+        "hint": {
+          "en": "Triggers when any sub-capability changes (e.g. onoff.gang2, dim.1)",
+          "fr": "Se déclenche quand une sous-capacité change (ex: onoff.gang2, dim.1)"
+        },
+        "tokens": [
+          {
+            "name": "capability",
+            "type": "string",
+            "title": { "en": "Capability", "fr": "Capacité" },
+            "example": "onoff.gang2"
+          },
+          {
+            "name": "value",
+            "type": "string",
+            "title": { "en": "Value", "fr": "Valeur" },
+            "example": "true"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=onoff"
+          },
+          {
+            "name": "capability",
+            "type": "text",
+            "title": { "en": "Capability (empty=any)", "fr": "Capacité (vide=toutes)" },
+            "placeholder": { "en": "onoff.gang2", "fr": "onoff.gang2" }
+          }
+        ]
       }
     ],
     "conditions": [
+      {
+        "id": "tuya_dp_equals",
+        "title": {
+          "en": "Tuya DP [[dp]] equals [[value]]",
+          "fr": "DP Tuya [[dp]] égal à [[value]]"
+        },
+        "titleFormatted": {
+          "en": "Tuya DP [[dp]] equals [[value]] on [[device]]",
+          "fr": "DP Tuya [[dp]] égal à [[value]] sur [[device]]"
+        },
+        "hint": {
+          "en": "Check if a raw Tuya datapoint has a specific value",
+          "fr": "Vérifie si un datapoint Tuya brut a une valeur spécifique"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=tuya_data_report|onoff"
+          },
+          {
+            "name": "dp",
+            "type": "number",
+            "title": { "en": "DP Number", "fr": "Numéro DP" },
+            "min": 1,
+            "max": 255
+          },
+          {
+            "name": "value",
+            "type": "text",
+            "title": { "en": "Value", "fr": "Valeur" }
+          }
+        ]
+      },
+      {
+        "id": "sub_capability_is",
+        "title": {
+          "en": "Sub-capability [[capability]] is on",
+          "fr": "Sous-capacité [[capability]] est active"
+        },
+        "titleFormatted": {
+          "en": "[[capability]] is !{{on|off}} on [[device]]",
+          "fr": "[[capability]] est !{{actif|inactif}} sur [[device]]"
+        },
+        "hint": {
+          "en": "Check if a sub-capability is on (e.g. onoff.gang2)",
+          "fr": "Vérifie si une sous-capacité est active (ex: onoff.gang2)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=onoff"
+          },
+          {
+            "name": "capability",
+            "type": "text",
+            "title": { "en": "Capability", "fr": "Capacité" },
+            "placeholder": { "en": "onoff.gang2", "fr": "onoff.gang2" }
+          }
+        ]
+      },
       {
         "id": "air_quality_co2_co2_above",
         "title": {
@@ -43087,6 +43242,77 @@
       }
     ],
     "actions": [
+      {
+        "id": "tuya_dp_send",
+        "title": {
+          "en": "Send Tuya DP",
+          "fr": "Envoyer DP Tuya",
+          "nl": "Tuya DP verzenden",
+          "de": "Tuya DP senden"
+        },
+        "titleFormatted": {
+          "en": "Send DP [[dp]] with value [[value]] to [[device]]",
+          "fr": "Envoyer DP [[dp]] avec valeur [[value]] à [[device]]"
+        },
+        "hint": {
+          "en": "Send a raw Tuya datapoint value to the device",
+          "fr": "Envoie une valeur brute de datapoint Tuya à l'appareil"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=tuya_data_report|onoff"
+          },
+          {
+            "name": "dp",
+            "type": "number",
+            "title": { "en": "DP Number", "fr": "Numéro DP" },
+            "min": 1,
+            "max": 255
+          },
+          {
+            "name": "value",
+            "type": "text",
+            "title": { "en": "Value", "fr": "Valeur" }
+          }
+        ]
+      },
+      {
+        "id": "sub_capability_set",
+        "title": {
+          "en": "Set sub-capability",
+          "fr": "Définir sous-capacité",
+          "nl": "Sub-capability instellen",
+          "de": "Sub-Fähigkeit setzen"
+        },
+        "titleFormatted": {
+          "en": "Set [[capability]] to [[value]] on [[device]]",
+          "fr": "Définir [[capability]] à [[value]] sur [[device]]"
+        },
+        "hint": {
+          "en": "Set a sub-capability value (e.g. onoff.gang2)",
+          "fr": "Définit une valeur de sous-capacité (ex: onoff.gang2)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=onoff"
+          },
+          {
+            "name": "capability",
+            "type": "text",
+            "title": { "en": "Capability", "fr": "Capacité" },
+            "placeholder": { "en": "onoff.gang2", "fr": "onoff.gang2" }
+          },
+          {
+            "name": "value",
+            "type": "checkbox",
+            "title": { "en": "On/Off", "fr": "Marche/Arrêt" }
+          }
+        ]
+      },
       {
         "id": "bulb_dimmable_smart_bulb_dimmer_turn_on",
         "title": {
