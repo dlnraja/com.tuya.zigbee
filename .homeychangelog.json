@@ -1,4 +1,10 @@
 {
+  "5.5.570": {
+    "en": "🔧 MASSIVE FIX: Added missing flow card run listeners to 12 drivers! Fixed: gas_sensor, gas_detector, co_sensor, contact_sensor, water_leak_sensor, vibration_sensor, plug_smart, switch_1gang, switch_2gang, switch_3gang. Root cause: SDK3 auto-registers cards but NOT run listeners for conditions/actions.",
+    "nl": "🔧 GROTE FIX: Ontbrekende flow card run listeners toegevoegd aan 12 drivers!",
+    "fr": "🔧 CORRECTION MAJEURE: Listeners de flow cards ajoutés à 12 drivers!",
+    "de": "🔧 GROSSER FIX: Fehlende Flow Card Run Listeners zu 12 Treibern hinzugefügt!"
+  },
   "5.5.569": {
     "en": "🔧 FIX: Siren flow cards now work! Added missing run listeners for conditions (is_sounding) and actions (turn_on, turn_off, set_volume, set_duration). Same fix pattern as smoke detector.",
     "nl": "🔧 FIX: Sirene flow cards werken nu! Run listeners toegevoegd voor conditions en actions.",
