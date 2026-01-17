@@ -1,4 +1,10 @@
 {
+  "5.5.580": {
+    "en": "🔧 CONTINUED FIX: Added flow card run listeners to presence_sensor_radar (3 cards), rain_sensor (2 cards). Total: 42 drivers now have working flow cards!",
+    "nl": "🔧 VERVOLG FIX: Flow card run listeners toegevoegd aan 2 extra drivers.",
+    "fr": "🔧 SUITE CORRECTION: Listeners ajoutés à 2 drivers supplémentaires.",
+    "de": "🔧 WEITERE FIX: Run Listeners zu 2 weiteren Treibern hinzugefügt."
+  },
   "5.5.579": {
     "en": "🔧 CONTINUED FIX: Added flow card run listeners to module_mini_switch (4 cards). Total: 40 drivers now have working flow cards!",
     "nl": "🔧 VERVOLG FIX: Flow card run listeners toegevoegd aan module_mini_switch.",
