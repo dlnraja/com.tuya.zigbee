@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.603** | ✨ TS0601 FlowCards: Generic DP FlowCard manager with threshold triggers, cond... |
 | **v5.5.602** | ✨ IR Blaster: Enhanced ZS06/UFO-R11 support with Z2M ir_code_to_send format +... |
 | **v5.5.601** | 🐛 FIX: HOBEIAN water leak sensors not reporting alarms (forum #1010 Lasse_K)... |
 | **v5.5.600** | 🐛 FIX: IAS Zone enrollment for TS0203 contact sensors (forum #1011). Sensors... |
@@ -78,7 +79,6 @@
 | **v5.5.594** | 📦 NEW DEVICE: Added _TZE284_la9vhsok (IR blaster/transmitter) from Zigbee2MQ... |
 | **v5.5.593** | 📦 NEW DEVICES: Added _TZE284_cgr0rhza (TRV), _TZE284_rlytpmij, _TZE284_ar5pr... |
 | **v5.5.592** | 🔔 ALARM TRIGGER FIX: Fixed flow card triggering for alarm_water, alarm_conta... |
-| **v5.5.591** | 📦 NEW DEVICES: Added 18 new device IDs from Zigbee2MQTT (Nous A7Z/A11Z plugs... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
