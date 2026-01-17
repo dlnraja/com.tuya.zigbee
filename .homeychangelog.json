@@ -1,4 +1,10 @@
 {
+  "5.5.579": {
+    "en": "🔧 CONTINUED FIX: Added flow card run listeners to module_mini_switch (4 cards). Total: 40 drivers now have working flow cards!",
+    "nl": "🔧 VERVOLG FIX: Flow card run listeners toegevoegd aan module_mini_switch.",
+    "fr": "🔧 SUITE CORRECTION: Listeners ajoutés à module_mini_switch.",
+    "de": "🔧 WEITERE FIX: Run Listeners zu module_mini_switch hinzugefügt."
+  },
   "5.5.578": {
     "en": "🔧 CONTINUED FIX: Added flow card run listeners to 2 more drivers: dimmer_wall_1gang (6 cards), dimmer_dual_channel (8 cards). Total: 39 drivers now have working flow cards!",
     "nl": "🔧 VERVOLG FIX: Flow card run listeners toegevoegd aan 2 extra drivers.",
