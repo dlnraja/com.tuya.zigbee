@@ -1,4 +1,10 @@
 {
+  "5.5.576": {
+    "en": "🔧 CONTINUED FIX: Added flow card run listeners to 4 more drivers: led_strip_advanced, hvac_air_conditioner, hvac_dehumidifier. Total: 34 drivers now have working flow cards!",
+    "nl": "🔧 VERVOLG FIX: Flow card run listeners toegevoegd aan 4 extra drivers.",
+    "fr": "🔧 SUITE CORRECTION: Listeners ajoutés à 4 drivers supplémentaires.",
+    "de": "🔧 WEITERE FIX: Run Listeners zu 4 weiteren Treibern hinzugefügt."
+  },
   "5.5.575": {
     "en": "🔧 CONTINUED FIX: Added flow card run listeners to 5 more drivers: shutter_roller_controller (7 cards), ceiling_fan, door_controller, usb_outlet_advanced. Total: 30 drivers now have working flow cards!",
     "nl": "🔧 VERVOLG FIX: Flow card run listeners toegevoegd aan 5 extra drivers.",
