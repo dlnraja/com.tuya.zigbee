@@ -1,4 +1,10 @@
 {
+  "5.5.577": {
+    "en": "🔧 CONTINUED FIX: Added flow card run listeners to 3 more drivers: bulb_tunable_white, bulb_white, led_strip_rgbw. Total: 37 drivers now have working flow cards!",
+    "nl": "🔧 VERVOLG FIX: Flow card run listeners toegevoegd aan 3 extra drivers.",
+    "fr": "🔧 SUITE CORRECTION: Listeners ajoutés à 3 drivers supplémentaires.",
+    "de": "🔧 WEITERE FIX: Run Listeners zu 3 weiteren Treibern hinzugefügt."
+  },
   "5.5.576": {
     "en": "🔧 CONTINUED FIX: Added flow card run listeners to 4 more drivers: led_strip_advanced, hvac_air_conditioner, hvac_dehumidifier. Total: 34 drivers now have working flow cards!",
     "nl": "🔧 VERVOLG FIX: Flow card run listeners toegevoegd aan 4 extra drivers.",
