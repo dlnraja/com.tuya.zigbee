@@ -1,4 +1,10 @@
 {
+  "5.5.583": {
+    "en": "🔧 CONTINUED FIX: Added flow card run listeners to generic_tuya (2 cards), motion_sensor_radar_mmwave (9 cards). Total: 48 drivers now have working flow cards!",
+    "nl": "🔧 VERVOLG FIX: Flow card run listeners toegevoegd aan 2 extra drivers.",
+    "fr": "🔧 SUITE CORRECTION: Listeners ajoutés à 2 drivers supplémentaires.",
+    "de": "🔧 WEITERE FIX: Run Listeners zu 2 weiteren Treibern hinzugefügt."
+  },
   "5.5.582": {
     "en": "🔧 CONTINUED FIX: Added flow card run listeners to gateway_zigbee_bridge (3 cards), formaldehyde_sensor (2 cards). Total: 46 drivers now have working flow cards!",
     "nl": "🔧 VERVOLG FIX: Flow card run listeners toegevoegd aan 2 extra drivers.",
