@@ -1,4 +1,10 @@
 {
+  "5.5.592": {
+    "en": "🔔 ALARM TRIGGER FIX: Fixed flow card triggering for alarm_water, alarm_contact, alarm_smoke, alarm_gas. Flows now properly trigger when sensor alarms change state.",
+    "nl": "🔔 ALARM TRIGGER FIX: Flow cards triggeren nu correct bij alarm wijzigingen.",
+    "fr": "🔔 CORRECTION ALARME: Les cartes flow se déclenchent maintenant correctement lors des changements d'alarme.",
+    "de": "🔔 ALARM TRIGGER FIX: Flow-Karten werden jetzt bei Alarmänderungen korrekt ausgelöst."
+  },
   "5.5.591": {
     "en": "📦 NEW DEVICES: Added 18 new device IDs from Zigbee2MQTT (Nous A7Z/A11Z plugs, L14 valve, ZC-LS02 curtain motor, SZLMR10 presence sensor, ZG-101ZS scene switch, SPM/SDM energy meters).",
     "nl": "📦 NIEUWE APPARATEN: 18 nieuwe device IDs toegevoegd van Zigbee2MQTT.",
