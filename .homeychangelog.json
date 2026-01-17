@@ -1,4 +1,10 @@
 {
+  "5.5.602": {
+    "en": "✨ IR Blaster: Enhanced ZS06/UFO-R11 support with Z2M ir_code_to_send format + new manufacturer IDs from Zigbee2MQTT research.",
+    "nl": "✨ IR Blaster: Verbeterde ZS06/UFO-R11 ondersteuning met Z2M formaat.",
+    "fr": "✨ IR Blaster: Support amélioré ZS06/UFO-R11 avec format Z2M ir_code_to_send.",
+    "de": "✨ IR Blaster: Verbesserte ZS06/UFO-R11 Unterstützung mit Z2M Format."
+  },
   "5.5.601": {
     "en": "🐛 FIX: HOBEIAN water leak sensors not reporting alarms (forum #1010 Lasse_K). Fixed CIE address mismatch + Buffer parsing for IAS Zone status.",
     "nl": "🐛 FIX: HOBEIAN waterleksensoren melden nu alarm correct.",
