@@ -1,4 +1,7 @@
 {
+  "5.5.627": {
+    "en": "🔘 FIX: TS0044 button flow cards now show button selection dropdown (Freddyboy). Added 'args' with Button 1-4 selector to pressed/double/long triggers."
+  },
   "5.5.626": {
     "en": "🐛 FIX: Rain sensor _TZ3210_p68kms0l/TS0207 conflict - removed from dimmer driver (Ferdy_van_Hove). Device should now pair correctly as Rain Sensor."
   },
