@@ -1,4 +1,7 @@
 {
+  "5.5.658": {
+    "en": "🔀 HYBRID ARCHITECTURE: debouncedFlow() for 1-action-1-event, handleHybridData() for ZCL+DP+private simultaneous handling."
+  },
   "5.5.657": {
     "en": "🌐 UNIVERSAL ENGINE v4: Complete Time Sync (UTC+TZ+DST), DP parser with unknown fallback, handleTimeRequest() for ZCL/DP/MCU requests."
   },
