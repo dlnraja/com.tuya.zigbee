@@ -1,4 +1,7 @@
 {
+  "5.5.619": {
+    "en": "🕐 TIME SYNC OVERHAUL: Passive mode - respond to device requests only (per Z2M/HA research). Added ZCL Time cluster (0x000A) listener. DST flag support. Fixed devices falling back to Zigbee Generic due to failed time sync."
+  },
   "5.5.618": {
     "en": "🔧 CRITICAL FIX: Removed duplicate debounce in button_wireless_4 causing button presses to be filtered (parent ButtonDevice already has comprehensive debouncing). Single press = single trigger on Homey."
   },
