@@ -1,4 +1,7 @@
 {
+  "5.5.625": {
+    "en": "📋 MANUFACTURER ID ENRICHMENT: Added IDs from Z2M + Forum: Thermostats (_TZE284_znlqjmih), 3-phase energy meters (+12 IDs from Nous D4Z, XOCA). Universal Fallback Driver catches unknown devices."
+  },
   "5.5.624": {
     "en": "🔧 UNIVERSAL FALLBACK DRIVER: Auto-detect capabilities for unknown Tuya/Zigbee devices. Intelligent DP mapping, ZCL cluster detection, coherent value ranges. Devices not in manufacturer list now get dynamic capabilities."
   },
