@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.653** | 🎛️ ZCL COMMANDS: Added sendOnOff(), sendLevel(), readAttribute() to Universa... |
 | **v5.5.652** | ⏱️ MCU SYNC & BINDING: Added syncMcuTime() and bindCluster() to UniversalZigb... |
 | **v5.5.651** | 🧠 PROFILE LEARNING: Added learnProfile() to UniversalZigbeeProtocol. Auto-in... |
 | **v5.5.650** | 🔗 PROTOCOL INTEGRATION: Integrated UniversalZigbeeProtocol into BaseHybridDe... |
@@ -78,7 +79,6 @@
 | **v5.5.646** | 🔧 IAS ZONE ENHANCEMENT: Added detailed logging for IAS Zone setup to debug H... |
 | **v5.5.645** | 🔧 FIX Lasse_K #1052: Water leak sensor alarm not triggering. Fixed IAS Zone ... |
 | **v5.5.644** | 🌐 REGIONAL BRANDS: +5,111 IDs! Added 68 EU brands (Eurotronic, Vimar, Hager,... |
-| **v5.5.643** | 🔌 SPECIALTY DEVICES: +158 IDs for air quality, CO/gas sensors, fans, locks, ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
