@@ -1,4 +1,7 @@
 {
+  "5.5.624": {
+    "en": "🔧 UNIVERSAL FALLBACK DRIVER: Auto-detect capabilities for unknown Tuya/Zigbee devices. Intelligent DP mapping, ZCL cluster detection, coherent value ranges. Devices not in manufacturer list now get dynamic capabilities."
+  },
   "5.5.623": {
     "en": "🕐 INTELLIGENT TIME SYNC: Hybrid mode - respond to device requests (primary) + delayed push after 15 min (fallback for devices that don't ask). No immediate push at init."
   },
