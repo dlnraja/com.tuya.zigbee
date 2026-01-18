@@ -1,0 +1,145 @@
+{
+  "name": {
+    "en": "Universal Zigbee/Tuya Device",
+    "fr": "Appareil Zigbee/Tuya Universel",
+    "nl": "Universeel Zigbee/Tuya Apparaat",
+    "de": "Universelles Zigbee/Tuya Gerät"
+  },
+  "class": "other",
+  "capabilities": [],
+  "capabilitiesOptions": {},
+  "energy": {
+    "batteries": ["OTHER"]
+  },
+  "zigbee": {
+    "manufacturerName": [],
+    "productId": [
+      "TS0001", "TS0002", "TS0003", "TS0004", "TS0005", "TS0006",
+      "TS0011", "TS0012", "TS0013", "TS0014",
+      "TS0041", "TS0042", "TS0043", "TS0044", "TS004F",
+      "TS0101", "TS0111", "TS0121",
+      "TS0201", "TS0202", "TS0203", "TS0204", "TS0205", "TS0206", "TS0207",
+      "TS0210", "TS0211", "TS0215",
+      "TS0301", "TS0302",
+      "TS0501", "TS0502", "TS0503", "TS0504", "TS0505",
+      "TS0601", "TS0602", "TS0603",
+      "TS011F", "TS0121", "TS130F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 3, 4, 5, 6, 8, 768, 1026, 1029, 1280, 61184],
+        "bindings": [6, 8, 768]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/universal_fallback/assets/images/small.png",
+    "large": "drivers/universal_fallback/assets/images/large.png"
+  },
+  "platforms": ["local"],
+  "connectivity": ["zigbee"],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Device Information",
+        "fr": "Informations Appareil"
+      },
+      "children": [
+        {
+          "id": "detected_type",
+          "type": "label",
+          "label": {
+            "en": "Detected Device Type",
+            "fr": "Type d'Appareil Détecté"
+          },
+          "value": "Unknown"
+        },
+        {
+          "id": "detected_capabilities",
+          "type": "label",
+          "label": {
+            "en": "Detected Capabilities",
+            "fr": "Capacités Détectées"
+          },
+          "value": "None"
+        },
+        {
+          "id": "detected_clusters",
+          "type": "label",
+          "label": {
+            "en": "Available Clusters",
+            "fr": "Clusters Disponibles"
+          },
+          "value": "None"
+        },
+        {
+          "id": "tuya_datapoints",
+          "type": "label",
+          "label": {
+            "en": "Tuya Datapoints Detected",
+            "fr": "Datapoints Tuya Détectés"
+          },
+          "value": "None"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Manual Configuration",
+        "fr": "Configuration Manuelle"
+      },
+      "children": [
+        {
+          "id": "force_device_class",
+          "type": "dropdown",
+          "label": {
+            "en": "Force Device Class",
+            "fr": "Forcer Classe d'Appareil"
+          },
+          "value": "auto",
+          "values": [
+            { "id": "auto", "label": { "en": "Auto Detect", "fr": "Détection Auto" } },
+            { "id": "light", "label": { "en": "Light", "fr": "Lumière" } },
+            { "id": "socket", "label": { "en": "Socket/Plug", "fr": "Prise" } },
+            { "id": "sensor", "label": { "en": "Sensor", "fr": "Capteur" } },
+            { "id": "thermostat", "label": { "en": "Thermostat", "fr": "Thermostat" } },
+            { "id": "windowcoverings", "label": { "en": "Curtain/Blind", "fr": "Store/Rideau" } },
+            { "id": "button", "label": { "en": "Button/Remote", "fr": "Bouton/Télécommande" } },
+            { "id": "other", "label": { "en": "Other", "fr": "Autre" } }
+          ]
+        },
+        {
+          "id": "enable_dp_logging",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable DP Logging (Debug)",
+            "fr": "Activer Logs DP (Debug)"
+          },
+          "value": true,
+          "hint": {
+            "en": "Log all Tuya datapoint messages for debugging unknown devices",
+            "fr": "Logger tous les messages DP Tuya pour débugger les appareils inconnus"
+          }
+        }
+      ]
+    }
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "singular": true
+      },
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}
