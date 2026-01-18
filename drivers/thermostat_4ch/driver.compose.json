@@ -62,24 +62,40 @@
   },
   "capabilitiesOptions": {
     "onoff": {
-      "title": {
-        "en": "Zone 1"
-      }
+      "title": { "en": "Zone 1", "fr": "Zone 1" }
     },
-    "onoff.1": {
-      "title": {
-        "en": "Zone 2"
-      }
+    "onoff.ch2": {
+      "title": { "en": "Zone 2", "fr": "Zone 2" }
     },
-    "onoff.2": {
-      "title": {
-        "en": "Zone 3"
-      }
+    "onoff.ch3": {
+      "title": { "en": "Zone 3", "fr": "Zone 3" }
     },
-    "onoff.3": {
-      "title": {
-        "en": "Zone 4"
-      }
+    "onoff.ch4": {
+      "title": { "en": "Zone 4", "fr": "Zone 4" }
+    },
+    "target_temperature": {
+      "title": { "en": "Target Zone 1", "fr": "Cible Zone 1" }
+    },
+    "target_temperature.ch2": {
+      "title": { "en": "Target Zone 2", "fr": "Cible Zone 2" }
+    },
+    "target_temperature.ch3": {
+      "title": { "en": "Target Zone 3", "fr": "Cible Zone 3" }
+    },
+    "target_temperature.ch4": {
+      "title": { "en": "Target Zone 4", "fr": "Cible Zone 4" }
+    },
+    "measure_temperature": {
+      "title": { "en": "Temp Zone 1", "fr": "Temp Zone 1" }
+    },
+    "measure_temperature.ch2": {
+      "title": { "en": "Temp Zone 2", "fr": "Temp Zone 2" }
+    },
+    "measure_temperature.ch3": {
+      "title": { "en": "Temp Zone 3", "fr": "Temp Zone 3" }
+    },
+    "measure_temperature.ch4": {
+      "title": { "en": "Temp Zone 4", "fr": "Temp Zone 4" }
     }
   }
 }
