@@ -1,4 +1,7 @@
 {
+  "5.5.637": {
+    "en": "✅ GitHub Issues: Added BSEED switches (_TZ3000_ysdv91bk, _TZ3000_blhvsaqf, _TZ3000_qkixdnon) and soil sensor variant (_TZE284_aa03yzhs). Issues #101-105 resolved."
+  },
   "5.5.636": {
     "en": "🔧 SYNC FIX: Added 164 missing manufacturerNames/productIds to app.json that were in driver.compose.json but not published. Affected: bulb_rgbw, curtain_motor, dimmer_wall_1gang, presence_sensor_radar, switches, thermostat, and more."
   },

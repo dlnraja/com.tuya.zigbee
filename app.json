@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.636",
+  "version": "5.5.637",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -23476,7 +23476,9 @@
           "HOBEIAN",
           "ZG-303Z",
           "COOLO",
-          "_TZE200_ga1maeof"
+          "_TZE200_ga1maeof",
+          "_TZE284_AA03YZHS",
+          "_tze284_aa03yzhs"
         ],
         "productId": [
           "TS0601",
@@ -24016,7 +24018,11 @@
           "_TZ3000_w0ypwa1f",
           "_TZ3000_wpueorev",
           "_TZ3000_cmcjbqup",
-          "_TZ3000_jcqs2mrv"
+          "_TZ3000_jcqs2mrv",
+          "_TZ3000_BLHVSAQF",
+          "_tz3000_blhvsaqf",
+          "_TZ3000_YSDV91BK",
+          "_tz3000_ysdv91bk"
         ]
       },
       "images": {
@@ -25270,7 +25276,9 @@
           "_TZ3000_ODZOIOVU",
           "_tz3000_odzoiovu",
           "_TZ3000_4O16JDCA",
-          "_tz3000_4o16jdca"
+          "_tz3000_4o16jdca",
+          "_TZ3000_QKIXDNON",
+          "_tz3000_qkixdnon"
         ]
       },
       "images": {
