@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.644** | 🌐 REGIONAL BRANDS: +5,111 IDs! Added 68 EU brands (Eurotronic, Vimar, Hager,... |
 | **v5.5.643** | 🔌 SPECIALTY DEVICES: +158 IDs for air quality, CO/gas sensors, fans, locks, ... |
 | **v5.5.642** | 🔧 TUYA VARIANTS: +880 _TZ3000/_TZE200/_TZE204/_TZ3210 manufacturerName varia... |
 | **v5.5.641** | 📦 PRODUCT IDS: +612 device model IDs from Zigbee2MQTT, ZHA, SmartThings. Ful... |
@@ -78,7 +79,6 @@
 | **v5.5.637** | ✅ GitHub Issues: Added BSEED switches (_TZ3000_ysdv91bk, _TZ3000_blhvsaqf, _T... |
 | **v5.5.636** | 🔧 SYNC FIX: Added 164 missing manufacturerNames/productIds to app.json that ... |
 | **v5.5.635** | 🔥 MAJOR FIX: Cleaned 1145 stale/duplicate manufacturerNames from app.json th... |
-| **v5.5.634** | 🐛 CRITICAL FIX: Removed duplicate manufacturerNames from climate_sensor that... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
