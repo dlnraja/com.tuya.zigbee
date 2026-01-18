@@ -1,4 +1,7 @@
 {
+  "5.5.661": {
+    "en": "🗺️ CLUSTER-BRAND MAP: CLUSTER_BRAND_MAP for 19 ecosystems (Tuya, Xiaomi, Philips, IKEA, etc.). getBrandsForCluster(), detectBrandFromClusters()."
+  },
   "5.5.660": {
     "en": "🔄 MCU SYNC + BUTTONS: handleMcuFullSync() for TS0601 time sync, triggerButtonEvent() for event-only buttons (TS0043/TS0044). Extended MFR_CLUSTERS."
   },
