@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.610** | 📱 Forum devices: Added BSeed 2-gang UK wall socket with USB (_TZE204_mvtclcl... |
 | **v5.5.609** | 🔧 Collision fixes: Fixed 7 critical sensor/switch collisions (Z2M research).... |
 | **v5.5.608** | 📋 Forum analysis: Added eWeLink CK-TLSR8656 temp/humidity sensor, verified Z... |
 | **v5.5.607** | 📡 IR Blaster Enrichment: +10 manufacturer IDs from Z2M/ZHA/Blakadder researc... |
@@ -78,7 +79,6 @@
 | **v5.5.603** | ✨ TS0601 FlowCards: Generic DP FlowCard manager with threshold triggers, cond... |
 | **v5.5.602** | ✨ IR Blaster: Enhanced ZS06/UFO-R11 support with Z2M ir_code_to_send format +... |
 | **v5.5.601** | 🐛 FIX: HOBEIAN water leak sensors not reporting alarms (forum #1010 Lasse_K)... |
-| **v5.5.600** | 🐛 FIX: IAS Zone enrollment for TS0203 contact sensors (forum #1011). Sensors... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
