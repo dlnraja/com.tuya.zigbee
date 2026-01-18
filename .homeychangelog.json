@@ -1,4 +1,7 @@
 {
+  "5.5.649": {
+    "en": "🔍 DP FALLBACK & LEARNING: Added unknown DP fallback handler, automatic pattern learning, device profile export for driver generation. Enhanced UniversalDataHandler with getLearnedPatterns() and exportDeviceProfile() methods."
+  },
   "5.5.648": {
     "en": "🔌 UNIVERSAL ZIGBEE PROTOCOL: New UniversalZigbeeProtocol.js supports ALL Zigbee profiles (ZHA/ZLL/SE), manufacturer-specific clusters (Xiaomi 0xFCC0, Philips 0xFC00, IKEA 0xFC7C, Danfoss, Bosch, etc.), automatic device analysis, and unknown cluster handlers."
   },
