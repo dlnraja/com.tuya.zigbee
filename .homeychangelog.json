@@ -1,4 +1,7 @@
 {
+  "5.5.645": {
+    "en": "🔧 FIX Lasse_K #1052: Water leak sensor alarm not triggering. Fixed IAS Zone status parsing (Buffer/object handling), enhanced zoneStatusChangeNotification listener, added robust numeric conversion. Re-pair device to apply fix."
+  },
   "5.5.644": {
     "en": "🌐 REGIONAL BRANDS: +5,111 IDs! Added 68 EU brands (Eurotronic, Vimar, Hager, Jung), 20 Asian (Zemismart, Moes, Livolo), 21 US (GE, Leviton, Lutron, Inovelli), 7 AU/NZ (Clipsal, Arlec). Plus 996 additional _TZ/_TZE variants. 101 drivers updated!"
   },
