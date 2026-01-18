@@ -73,12 +73,20 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TYZB01_8gang001",
-      "_TZ3000_8GANG001",
-      "_tz3000_8gang001"
+      "_TZE204_nvxorhcj",
+      "_tze204_nvxorhcj",
+      "_TZE200_nvxorhcj",
+      "_tze200_nvxorhcj",
+      "_TZE204_r32ctezx",
+      "_tze204_r32ctezx",
+      "_TZE200_r32ctezx",
+      "_TZE204_8gang001",
+      "_TZE200_8gang001",
+      "_TZE204_ws8g8u0b",
+      "_TZE200_ws8g8u0b"
     ],
     "productId": [
-      "TS0008"
+      "TS0601"
     ],
     "endpoints": {
       "1": {

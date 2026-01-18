@@ -1,4 +1,7 @@
 {
+  "5.5.621": {
+    "en": "🔧 FIX: 8-gang switch (switch_wall_8gang) - Fixed DP mappings (Gang 7=DP101, Gang 8=DP102 per Z2M #26001). Added real manufacturer IDs (_TZE204_nvxorhcj). Changed productId from TS0008 to TS0601."
+  },
   "5.5.620": {
     "en": "🕐 MCU FULL SYNC: Added implicit time in heartbeat/dataQuery responses (cmd 0x01, 0x02). Devices requesting 'give me everything' now get time included. Fixes LCD displays not syncing."
   },
