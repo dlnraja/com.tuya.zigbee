@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.659** | 🧠 INTELLIGENT FALLBACK: intelligentFallback() infers caps from clusters, aut... |
 | **v5.5.658** | 🔀 HYBRID ARCHITECTURE: debouncedFlow() for 1-action-1-event, handleHybridDat... |
 | **v5.5.657** | 🌐 UNIVERSAL ENGINE v4: Complete Time Sync (UTC+TZ+DST), DP parser with unkno... |
 | **v5.5.656** | 📦 EXTENDED ZCL: Added IDENTIFY, GROUPS, SCENES, FAN, PRESSURE clusters. Comp... |
@@ -78,7 +79,6 @@
 | **v5.5.652** | ⏱️ MCU SYNC & BINDING: Added syncMcuTime() and bindCluster() to UniversalZigb... |
 | **v5.5.651** | 🧠 PROFILE LEARNING: Added learnProfile() to UniversalZigbeeProtocol. Auto-in... |
 | **v5.5.650** | 🔗 PROTOCOL INTEGRATION: Integrated UniversalZigbeeProtocol into BaseHybridDe... |
-| **v5.5.649** | 🔍 DP FALLBACK & LEARNING: Added unknown DP fallback handler, automatic patte... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
