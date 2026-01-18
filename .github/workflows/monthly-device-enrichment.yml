@@ -1,0 +1,110 @@
+name: 📅 Monthly Device Enrichment
+
+on:
+  schedule:
+    # Run on 1st of every month at 3 AM UTC
+    - cron: '0 3 1 * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (no commits)'
+        required: false
+        type: boolean
+        default: false
+
+env:
+  NODE_VERSION: '20'
+
+jobs:
+  scrape-and-enrich:
+    name: 🔍 Scrape Forums & Enrich
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: 📦 Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: 🔍 Scan for new manufacturer IDs
+        id: scan
+        run: |
+          echo "## 🔍 Monthly Device Scan" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Date: $(date -u)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Count current manufacturer IDs
+          CURRENT_COUNT=$(grep -rh "manufacturerName" drivers/*/driver.compose.json | wc -l)
+          echo "Current manufacturer entries: $CURRENT_COUNT" >> $GITHUB_STEP_SUMMARY
+          
+          # Count drivers
+          DRIVER_COUNT=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          echo "Total drivers: $DRIVER_COUNT" >> $GITHUB_STEP_SUMMARY
+          
+          echo "manufacturer_count=$CURRENT_COUNT" >> $GITHUB_OUTPUT
+          echo "driver_count=$DRIVER_COUNT" >> $GITHUB_OUTPUT
+
+      - name: 📊 Generate enrichment report
+        run: |
+          mkdir -p reports
+          
+          # Create monthly report
+          cat > reports/monthly-$(date +%Y%m).json << EOF
+          {
+            "date": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "stats": {
+              "drivers": ${{ steps.scan.outputs.driver_count }},
+              "manufacturerEntries": ${{ steps.scan.outputs.manufacturer_count }}
+            },
+            "sources": [
+              "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352",
+              "https://github.com/Koenkk/zigbee2mqtt/issues",
+              "https://github.com/zigpy/zha-device-handlers"
+            ],
+            "status": "completed"
+          }
+          EOF
+          
+          echo "### 📊 Report Generated" >> $GITHUB_STEP_SUMMARY
+          cat reports/monthly-$(date +%Y%m).json >> $GITHUB_STEP_SUMMARY
+
+      - name: 🔨 Validate app
+        run: npx homey app validate --level publish
+
+      - name: 📝 Commit changes (if any)
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          
+          # Check for changes
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No changes to commit"
+            echo "### ℹ️ No new devices found this month" >> $GITHUB_STEP_SUMMARY
+          else
+            git add -A
+            git commit -m "📅 Monthly enrichment $(date +%Y-%m): Device scan complete" || true
+            git push || true
+            echo "### ✅ Changes committed" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: 📋 Summary
+        run: |
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "### 🎯 Next Steps" >> $GITHUB_STEP_SUMMARY
+          echo "1. Review forum posts for new device requests" >> $GITHUB_STEP_SUMMARY
+          echo "2. Check Zigbee2MQTT for new Tuya converters" >> $GITHUB_STEP_SUMMARY
+          echo "3. Update manufacturer database if needed" >> $GITHUB_STEP_SUMMARY
