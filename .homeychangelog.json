@@ -1,4 +1,7 @@
 {
+  "5.5.648": {
+    "en": "🔌 UNIVERSAL ZIGBEE PROTOCOL: New UniversalZigbeeProtocol.js supports ALL Zigbee profiles (ZHA/ZLL/SE), manufacturer-specific clusters (Xiaomi 0xFCC0, Philips 0xFC00, IKEA 0xFC7C, Danfoss, Bosch, etc.), automatic device analysis, and unknown cluster handlers."
+  },
   "5.5.647": {
     "en": "🌐 ZIGBEE ECOSYSTEM EXPANSION: +200 manufacturer IDs! Added Xiaomi/Aqara (lumi.xxx models), SmartThings/Centralite, Hive/AlertMe, Iris, Nyce, Ecolink, Aeotec, Frient, Perenio, Orvibo, Linkind, First Alert across 7 sensor/switch/plug drivers."
   },
