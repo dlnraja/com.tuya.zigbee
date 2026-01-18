@@ -1,10 +1,11 @@
 'use strict';
 
 const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const IASAlarmFallback = require('../../lib/IASAlarmFallback');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      WATER LEAK SENSOR - v5.5.550 DEEP RESEARCH ENRICHED                    ║
+ * ║      WATER LEAK SENSOR - v5.5.670 DEEP RESEARCH ENRICHED                    ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  Sources:                                                                    ║
  * ║  - Zigbee2MQTT: TS0207_water_leak_detector, TS0601_water_sensor             ║
@@ -270,7 +271,28 @@ class WaterLeakSensorDevice extends HybridSensorBase {
       this.log(`[WATER] ⚠️ Known issues for this device: ${profile.knownIssues.join(', ')}`);
     }
 
+    // v5.5.670: Initialize IAS Alarm Fallback for INVALID_EP devices
+    if (profile.knownIssues?.some(i => i.includes('INVALID_EP')) || profile.type === 'ias_zone') {
+      this._iasFallback = new IASAlarmFallback(this, {
+        pollInterval: 30000, // Poll every 30s for water leak detection
+        useTuyaMirror: true
+      });
+      await this._iasFallback.init().catch(e => {
+        this.log(`[WATER] ⚠️ IAS Fallback init failed: ${e.message}`);
+      });
+      this.log('[WATER] ✅ IAS Alarm Fallback enabled for INVALID_EP workaround');
+    }
+
     this.log('[WATER] ✅ Water leak sensor ready');
+  }
+
+  async onDeleted() {
+    if (this._iasFallback) {
+      this._iasFallback.destroy();
+    }
+    if (super.onDeleted) {
+      await super.onDeleted();
+    }
   }
 }
 
