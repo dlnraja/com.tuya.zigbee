@@ -1,4 +1,7 @@
 {
+  "5.5.650": {
+    "en": "🔗 PROTOCOL INTEGRATION: Integrated UniversalZigbeeProtocol into BaseHybridDevice. Automatic profile detection (ZHA/ZLL/SE) on device init. Foundation for comprehensive multi-protocol Zigbee support."
+  },
   "5.5.649": {
     "en": "🔍 DP FALLBACK & LEARNING: Added unknown DP fallback handler, automatic pattern learning, device profile export for driver generation. Enhanced UniversalDataHandler with getLearnedPatterns() and exportDeviceProfile() methods."
   },
