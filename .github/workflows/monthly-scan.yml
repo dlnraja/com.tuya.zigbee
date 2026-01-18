@@ -1,0 +1,49 @@
+name: Monthly Device Scan
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Scan zigbee2mqtt converters
+        run: |
+          echo "Scanning zigbee2mqtt for new Tuya devices..."
+          curl -s https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.ts > /tmp/tuya.ts
+          grep -oE "_TZ[A-Z0-9]{4}_[a-z0-9]{8}" /tmp/tuya.ts | sort -u > /tmp/z2m_ids.txt
+          echo "Found $(wc -l < /tmp/z2m_ids.txt) manufacturer IDs"
+      
+      - name: Compare with current DB
+        run: |
+          echo "Comparing with existing manufacturerName entries..."
+          grep -ohE '"_TZ[^"]+"|"_TZE[^"]+"' drivers/*/driver.compose.json | sort -u > /tmp/current_ids.txt
+          comm -23 /tmp/z2m_ids.txt /tmp/current_ids.txt > /tmp/missing_ids.txt
+          echo "Missing IDs: $(wc -l < /tmp/missing_ids.txt)"
+          cat /tmp/missing_ids.txt
+      
+      - name: Create issue if new devices found
+        if: ${{ hashFiles('/tmp/missing_ids.txt') != '' }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const missing = fs.readFileSync('/tmp/missing_ids.txt', 'utf8').trim();
+            if (missing) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: '[Auto] New Tuya devices found in zigbee2mqtt',
+                body: `Monthly scan found new manufacturerName IDs:\n\`\`\`\n${missing}\n\`\`\`\nPlease review and add support.`,
+                labels: ['enhancement', 'auto-scan']
+              });
+            }
