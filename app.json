@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.642",
+  "version": "5.5.643",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -740,7 +740,15 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZE200_dwcarsat",
+          "_TZE200_ryfmq5rl",
+          "_TZE200_yvx5lh6k",
+          "_TZE200_8ygsuhe1",
+          "_TZE204_laokfqwu",
+          "AAQS-S01",
+          "lumi.airmonitor.acn01",
+          "VINDSTYRKA"
         ],
         "productId": [
           "TS0201",
@@ -1193,7 +1201,14 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZE200_dwcarsat",
+          "_TZE200_ryfmq5rl",
+          "_TZE200_8ygsuhe1",
+          "_TZE204_laokfqwu",
+          "AAQS-S01",
+          "lumi.airmonitor.acn01",
+          "VINDSTYRKA"
         ],
         "productId": [
           "TS0005",
@@ -11491,7 +11506,13 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZ3000_1h2x4akh",
+          "_TZ3210_t46srmxd",
+          "King Of Fans",
+          "Hampton Bay",
+          "Hunter",
+          "E1746"
         ],
         "productId": [
           "TS0601"
@@ -14877,7 +14898,14 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZE200_m9skfctm",
+          "_TZE200_aycxwiau",
+          "_TZE204_cjbofhxw",
+          "HS1CA",
+          "HS1CA-E",
+          "SGMHM-I1",
+          "Kidde"
         ],
         "productId": [
           "TS0601"
@@ -19217,7 +19245,15 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZ3000_amdymr7l",
+          "_TZ3000_typdpbpg",
+          "_TZE200_lsanae15",
+          "_TZE204_lsanae15",
+          "SPM01",
+          "SPM02",
+          "TONGOU",
+          "Siemens"
         ],
         "productId": [
           "TS0601",
@@ -19599,7 +19635,15 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZ3000_amdymr7l",
+          "_TZ3000_typdpbpg",
+          "_TZE200_bkkmqmyo",
+          "_TZE200_lsanae15",
+          "_TZE204_lsanae15",
+          "SPM01",
+          "SPM02",
+          "Siemens"
         ],
         "productId": [
           "TS0001",
@@ -20563,7 +20607,14 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZ3000_8h73rpe5",
+          "_TZ3000_d0yu2xgi",
+          "_TZE200_d0yu2xgi",
+          "TS0216",
+          "Aeotec",
+          "Ecolink",
+          "Linear"
         ],
         "productId": [
           "TS0211",
@@ -21531,7 +21582,16 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZ3000_1h2x4akh",
+          "_TZ3000_9hv6kpds",
+          "_TZ3000_hk7bcqhu",
+          "E1746",
+          "King Of Fans",
+          "Hampton Bay",
+          "Hunter",
+          "_TZ3000_cpyisd3c",
+          "_TZ3210_t46srmxd"
         ],
         "productId": [
           "TS0601",
@@ -21887,7 +21947,10 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZE200_bse1xpui",
+          "_TZE200_vu0jdqnm",
+          "_TZE204_vu0jdqnm"
         ],
         "productId": [
           "TS0601"
@@ -22608,7 +22671,11 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "GD-DC-001",
+          "PF-PM02D-TYZ",
+          "Linear",
+          "GoControl"
         ],
         "productId": [
           "TS0601",
@@ -22974,7 +23041,16 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZE200_dq1mfjug",
+          "_TZE200_yojqa8xn",
+          "_TZE200_rccxox8p",
+          "HS1CG",
+          "HS1CG-E",
+          "HS1CG-M",
+          "JY-GZ-01AQ",
+          "JY-GZ-03AQ",
+          "_TZE200_ggev5fsl"
         ],
         "endpoints": {
           "1": {
@@ -23619,7 +23695,16 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZE200_dq1mfjug",
+          "_TZE200_yojqa8xn",
+          "_TZE200_rccxox8p",
+          "HS1CG",
+          "HS1CG-E",
+          "HS1CG-M",
+          "JY-GZ-01AQ",
+          "JY-GZ-03AQ",
+          "_TZE200_ggev5fsl"
         ],
         "productId": [
           "TS0601"
@@ -25250,7 +25335,11 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZE200_qtbrwrfv",
+          "_TZE204_qtbrwrfv",
+          "Midea",
+          "Haier"
         ],
         "productId": [
           "TS0601"
@@ -25682,7 +25771,12 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZE200_qtbrwrfv",
+          "_TZE200_a0syesf5",
+          "_TZE204_qtbrwrfv",
+          "Midea",
+          "Haier"
         ],
         "productId": [
           "TS0601"
@@ -26342,7 +26436,12 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZE200_qtbrwrfv",
+          "_TZE200_a0syesf5",
+          "_TZE204_qtbrwrfv",
+          "Midea",
+          "Haier"
         ],
         "productId": [
           "TS0601"
@@ -26986,7 +27085,12 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZE200_kyfgcyf1",
+          "_TZE200_dzuqwsyg",
+          "_TZE204_dzuqwsyg",
+          "Broadlink",
+          "SwitchBot"
         ],
         "productId": [
           "TS1201",
@@ -27673,7 +27777,15 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZ3000_gek6snaj",
+          "_TZ3000_oborybow",
+          "_TZ3210_iystcadi",
+          "GL-C-006",
+          "GL-C-007",
+          "GL-C-008",
+          "GL-S-007Z",
+          "Airam"
         ],
         "productId": [
           "TS0502"
@@ -28022,7 +28134,15 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZ3000_gek6snaj",
+          "_TZ3000_oborybow",
+          "_TZ3210_iystcadi",
+          "GL-C-006",
+          "GL-C-007",
+          "GL-C-008",
+          "GL-S-007Z",
+          "Airam"
         ],
         "productId": [
           "TS1101"
@@ -28362,7 +28482,15 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZ3000_gek6snaj",
+          "_TZ3000_oborybow",
+          "_TZ3210_iystcadi",
+          "GL-C-006",
+          "GL-C-007",
+          "GL-C-008",
+          "GL-S-007Z",
+          "Airam"
         ],
         "productId": [
           "TS0503",
@@ -28744,7 +28872,14 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZ3000_oborybow",
+          "_TZ3210_iystcadi",
+          "GL-C-006",
+          "GL-C-007",
+          "GL-C-008",
+          "GL-S-007Z",
+          "Airam"
         ],
         "productId": [
           "TS0601"
@@ -29353,7 +29488,15 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZ3000_gek6snaj",
+          "_TZ3000_oborybow",
+          "_TZ3210_iystcadi",
+          "GL-C-006",
+          "GL-C-007",
+          "GL-C-008",
+          "GL-S-007Z",
+          "Airam"
         ],
         "endpoints": {
           "1": {
@@ -29977,7 +30120,15 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZ3000_gek6snaj",
+          "_TZ3000_oborybow",
+          "_TZ3210_iystcadi",
+          "GL-C-006",
+          "GL-C-007",
+          "GL-C-008",
+          "GL-S-007Z",
+          "Airam"
         ],
         "productId": [
           "TS0601"
@@ -30631,7 +30782,11 @@
           "KEEN",
           "Zen",
           "ZEN",
-          "Zen Thermostat"
+          "Zen Thermostat",
+          "_TZE200_3t91nb6k",
+          "_TZE200_bse1xpui",
+          "_TZE200_vu0jdqnm",
+          "_TZE204_vu0jdqnm"
         ],
         "productId": [
           "TS0601"
@@ -32064,7 +32219,10 @@
           "_TZ3000_yxqnffam",
           "_TZ3000_zf1lxtlj",
           "_TZ3000_402jjyro",
-          "_TZ3000_4rbqgcuv"
+          "_TZ3000_4rbqgcuv",
+          "_TZ3000_bmg14ax7",
+          "_TZ3000_7d8yme6f",
+          "lumi.vibration.aq1"
         ],
         "productId": [
           "TS0202",
