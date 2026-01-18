@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.618** | 🔧 CRITICAL FIX: Removed duplicate debounce in button_wireless_4 causing butt... |
 | **v5.5.617** | 🧠 INTELLIGENT TS004F Mode Switch: Exponential backoff retry (50-1000ms), mod... |
 | **v5.5.616** | 🆕 New Devices: HOBEIAN ZG-303Z climate sensor. Enhanced IAS Zone handling fo... |
 | **v5.5.615** | 🔧 Driver Fixes: Added capabilitiesOptions for button_wireless, energy_meter_... |
@@ -78,7 +79,6 @@
 | **v5.5.611** | 📚 Documentation: Added DRIVER_MAPPING_POLICY, CONTRIBUTING guide, forum resp... |
 | **v5.5.610** | 📱 Forum devices: Added BSeed 2-gang UK wall socket with USB (_TZE204_mvtclcl... |
 | **v5.5.609** | 🔧 Collision fixes: Fixed 7 critical sensor/switch collisions (Z2M research).... |
-| **v5.5.608** | 📋 Forum analysis: Added eWeLink CK-TLSR8656 temp/humidity sensor, verified Z... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
