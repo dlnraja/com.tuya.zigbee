@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.634** | 🐛 CRITICAL FIX: Removed duplicate manufacturerNames from climate_sensor that... |
 | **v5.5.633** | 🔧 FIX: _TZE204_n9ctkb6j BSEED dimmer moved from climate_sensor to dimmer_wal... |
 | **v5.5.632** | 🔧 SDK3: registerCapability() pattern improvements and bug fixes. |
 | **v5.5.631** | 🔧 SDK3: Implemented registerCapability() pattern in universal_fallback drive... |
@@ -78,7 +79,6 @@
 | **v5.5.627** | 🔘 FIX: TS0044 button flow cards now show button selection dropdown (Freddybo... |
 | **v5.5.626** | 🐛 FIX: Rain sensor _TZ3210_p68kms0l/TS0207 conflict - removed from dimmer dr... |
 | **v5.5.625** | 📋 MANUFACTURER ID ENRICHMENT: Added IDs from Z2M + Forum: Thermostats (_TZE2... |
-| **v5.5.624** | 🔧 UNIVERSAL FALLBACK DRIVER: Auto-detect capabilities for unknown Tuya/Zigbe... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
