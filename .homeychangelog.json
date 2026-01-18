@@ -1,4 +1,7 @@
 {
+  "5.5.632": {
+    "en": "🔧 SDK3: registerCapability() pattern improvements and bug fixes."
+  },
   "5.5.631": {
     "en": "🔧 SDK3: Implemented registerCapability() pattern in universal_fallback driver. Auto-maps capabilities to ZCL clusters (ON_OFF, LEVEL_CONTROL, TEMPERATURE_MEASUREMENT, etc.). Source: athombv.github.io/node-homey-zigbeedriver"
   },
