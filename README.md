@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.615** | 🔧 Driver Fixes: Added capabilitiesOptions for button_wireless, energy_meter_... |
 | **v5.5.614** | 🤖 Complete Automation: GitHub Actions monthly workflow, driver validator, Fl... |
 | **v5.5.613** | 🔄 Monthly Pipeline: Forum scanner, PR analyzer, device classifier. Auto-gene... |
 | **v5.5.612** | 🤖 Automation: Collision lint script, device matrix generator, DP mappings. 1... |
@@ -78,7 +79,6 @@
 | **v5.5.608** | 📋 Forum analysis: Added eWeLink CK-TLSR8656 temp/humidity sensor, verified Z... |
 | **v5.5.607** | 📡 IR Blaster Enrichment: +10 manufacturer IDs from Z2M/ZHA/Blakadder researc... |
 | **v5.5.606** | 📡 IR Blaster: SmartIR/Z2M format import/export, AC command flow action, enha... |
-| **v5.5.605** | 🚀 Forum synthesis: TuyaDPFlowCardManager, TS1201 UFO-R11 verified, collision... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
