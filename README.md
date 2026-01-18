@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.641** | 📦 PRODUCT IDS: +612 device model IDs from Zigbee2MQTT, ZHA, SmartThings. Ful... |
 | **v5.5.640** | 🌍 MEGA UNIVERSAL UPDATE: +27,613 manufacturer IDs across 101 drivers! Now su... |
 | **v5.5.639** | 🌍 UNIVERSAL ZIGBEE: Added 651 manufacturer IDs across 18 drivers. Now suppor... |
 | **v5.5.638** | ✅ GitHub Issues #96, #99: Added Sonoff S60ZBTPE variant, smoke detector produ... |
@@ -78,7 +79,6 @@
 | **v5.5.634** | 🐛 CRITICAL FIX: Removed duplicate manufacturerNames from climate_sensor that... |
 | **v5.5.633** | 🔧 FIX: _TZE204_n9ctkb6j BSEED dimmer moved from climate_sensor to dimmer_wal... |
 | **v5.5.632** | 🔧 SDK3: registerCapability() pattern improvements and bug fixes. |
-| **v5.5.631** | 🔧 SDK3: Implemented registerCapability() pattern in universal_fallback drive... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
