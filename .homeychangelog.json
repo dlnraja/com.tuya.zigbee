@@ -1,4 +1,7 @@
 {
+  "5.5.620": {
+    "en": "🕐 MCU FULL SYNC: Added implicit time in heartbeat/dataQuery responses (cmd 0x01, 0x02). Devices requesting 'give me everything' now get time included. Fixes LCD displays not syncing."
+  },
   "5.5.619": {
     "en": "🕐 TIME SYNC OVERHAUL: Passive mode - respond to device requests only (per Z2M/HA research). Added ZCL Time cluster (0x000A) listener. DST flag support. Fixed devices falling back to Zigbee Generic due to failed time sync."
   },
