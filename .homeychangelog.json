@@ -1,4 +1,7 @@
 {
+  "5.5.634": {
+    "en": "🐛 CRITICAL FIX: Removed duplicate manufacturerNames from climate_sensor that caused 4-gang buttons (_TZ3000_5tqxpine, _TZ3000_wkai4ga5) to pair as wrong device type (Eftychis). Devices now correctly match to button_wireless_4."
+  },
   "5.5.633": {
     "en": "🔧 FIX: _TZE204_n9ctkb6j BSEED dimmer moved from climate_sensor to dimmer_wall_1gang (Attilla forum report). Device will now pair correctly as 1-Gang Dimmer."
   },
