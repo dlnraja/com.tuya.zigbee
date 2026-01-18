@@ -1,10 +1,14 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { CLUSTER } = require('zigbee-clusters');
 
 /**
- * UNIVERSAL FALLBACK DEVICE - v5.5.624
+ * UNIVERSAL FALLBACK DEVICE - v5.5.631
  * Intelligent auto-detection for unknown Tuya/Zigbee devices
+ * 
+ * v5.5.631: SDK3 BEST PRACTICE - Uses registerCapability() from homey-zigbeedriver
+ * Source: athombv.github.io/node-homey-zigbeedriver/ZigBeeDevice.html
  */
 
 const CLUSTER_MAP = {
@@ -39,6 +43,7 @@ class UniversalFallbackDevice extends ZigBeeDevice {
     this.zclNode = zclNode;
 
     await this._detectCapabilities(zclNode);
+    await this._registerSDK3Capabilities(zclNode);  // v5.5.631: SDK3 pattern
     await this._setupTuyaDP(zclNode);
     await this._setupZCLListeners(zclNode);
     
@@ -76,6 +81,89 @@ class UniversalFallbackDevice extends ZigBeeDevice {
     }
 
     this.setSettings({ detected_capabilities: this._detectedCaps.join(', ') }).catch(() => {});
+  }
+
+  /**
+   * v5.5.631: SDK3 BEST PRACTICE - Use registerCapability() from homey-zigbeedriver
+   * This automatically handles get/set/report for standard ZCL clusters
+   * Source: athombv.github.io/node-homey-zigbeedriver/ZigBeeDevice.html#registerCapability
+   */
+  async _registerSDK3Capabilities(zclNode) {
+    this.log('[SDK3] 📋 Registering capabilities via SDK3 pattern...');
+    
+    const ep1 = zclNode?.endpoints?.[1];
+    if (!ep1) return;
+
+    // OnOff cluster (6)
+    if (this.hasCapability('onoff') && ep1.clusters?.onOff) {
+      try {
+        this.registerCapability('onoff', CLUSTER.ON_OFF);
+        this.log('[SDK3] ✅ Registered onoff → ON_OFF cluster');
+      } catch (e) { this.log('[SDK3] ⚠️ onoff:', e.message); }
+    }
+
+    // Level Control cluster (8) for dim
+    if (this.hasCapability('dim') && ep1.clusters?.levelControl) {
+      try {
+        this.registerCapability('dim', CLUSTER.LEVEL_CONTROL);
+        this.log('[SDK3] ✅ Registered dim → LEVEL_CONTROL cluster');
+      } catch (e) { this.log('[SDK3] ⚠️ dim:', e.message); }
+    }
+
+    // Temperature Measurement cluster (1026)
+    if (this.hasCapability('measure_temperature') && ep1.clusters?.temperatureMeasurement) {
+      try {
+        this.registerCapability('measure_temperature', CLUSTER.TEMPERATURE_MEASUREMENT);
+        this.log('[SDK3] ✅ Registered measure_temperature → TEMPERATURE_MEASUREMENT');
+      } catch (e) { this.log('[SDK3] ⚠️ measure_temperature:', e.message); }
+    }
+
+    // Relative Humidity cluster (1029)
+    if (this.hasCapability('measure_humidity') && ep1.clusters?.relativeHumidity) {
+      try {
+        this.registerCapability('measure_humidity', CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT);
+        this.log('[SDK3] ✅ Registered measure_humidity → RELATIVE_HUMIDITY_MEASUREMENT');
+      } catch (e) { this.log('[SDK3] ⚠️ measure_humidity:', e.message); }
+    }
+
+    // Illuminance Measurement cluster (1024)
+    if (this.hasCapability('measure_luminance') && ep1.clusters?.illuminanceMeasurement) {
+      try {
+        this.registerCapability('measure_luminance', CLUSTER.ILLUMINANCE_MEASUREMENT);
+        this.log('[SDK3] ✅ Registered measure_luminance → ILLUMINANCE_MEASUREMENT');
+      } catch (e) { this.log('[SDK3] ⚠️ measure_luminance:', e.message); }
+    }
+
+    // Power Configuration cluster (1) for battery
+    if (this.hasCapability('measure_battery') && ep1.clusters?.powerConfiguration) {
+      try {
+        this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
+          get: 'batteryPercentageRemaining',
+          report: 'batteryPercentageRemaining',
+          reportParser: value => Math.round(value / 2),
+          getOpts: { getOnStart: true, getOnOnline: true }
+        });
+        this.log('[SDK3] ✅ Registered measure_battery → POWER_CONFIGURATION');
+      } catch (e) { this.log('[SDK3] ⚠️ measure_battery:', e.message); }
+    }
+
+    // Electrical Measurement cluster (2820) for power
+    if (this.hasCapability('measure_power') && ep1.clusters?.electricalMeasurement) {
+      try {
+        this.registerCapability('measure_power', CLUSTER.ELECTRICAL_MEASUREMENT);
+        this.log('[SDK3] ✅ Registered measure_power → ELECTRICAL_MEASUREMENT');
+      } catch (e) { this.log('[SDK3] ⚠️ measure_power:', e.message); }
+    }
+
+    // Window Covering cluster (258)
+    if (this.hasCapability('windowcoverings_set') && ep1.clusters?.windowCovering) {
+      try {
+        this.registerCapability('windowcoverings_set', CLUSTER.WINDOW_COVERING);
+        this.log('[SDK3] ✅ Registered windowcoverings_set → WINDOW_COVERING');
+      } catch (e) { this.log('[SDK3] ⚠️ windowcoverings_set:', e.message); }
+    }
+
+    this.log('[SDK3] 📋 SDK3 capability registration complete');
   }
 
   async _setupTuyaDP(zclNode) {
