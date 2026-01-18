@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.657** | 🌐 UNIVERSAL ENGINE v4: Complete Time Sync (UTC+TZ+DST), DP parser with unkno... |
 | **v5.5.656** | 📦 EXTENDED ZCL: Added IDENTIFY, GROUPS, SCENES, FAN, PRESSURE clusters. Comp... |
 | **v5.5.655** | 🛡️ SAFE HANDLERS: Added safeFlowTrigger() and safeCap() to UniversalZigbeePr... |
 | **v5.5.654** | 🔧 DRIVER GENERATION: Added generateDriverConfig() to auto-create driver conf... |
@@ -78,7 +79,6 @@
 | **v5.5.650** | 🔗 PROTOCOL INTEGRATION: Integrated UniversalZigbeeProtocol into BaseHybridDe... |
 | **v5.5.649** | 🔍 DP FALLBACK & LEARNING: Added unknown DP fallback handler, automatic patte... |
 | **v5.5.648** | 🔌 UNIVERSAL ZIGBEE PROTOCOL: New UniversalZigbeeProtocol.js supports ALL Zig... |
-| **v5.5.647** | 🌐 ZIGBEE ECOSYSTEM EXPANSION: +200 manufacturer IDs! Added Xiaomi/Aqara (lum... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
