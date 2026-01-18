@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.612** | 🤖 Automation: Collision lint script, device matrix generator, DP mappings. 1... |
 | **v5.5.611** | 📚 Documentation: Added DRIVER_MAPPING_POLICY, CONTRIBUTING guide, forum resp... |
 | **v5.5.610** | 📱 Forum devices: Added BSeed 2-gang UK wall socket with USB (_TZE204_mvtclcl... |
 | **v5.5.609** | 🔧 Collision fixes: Fixed 7 critical sensor/switch collisions (Z2M research).... |
@@ -78,7 +79,6 @@
 | **v5.5.605** | 🚀 Forum synthesis: TuyaDPFlowCardManager, TS1201 UFO-R11 verified, collision... |
 | **v5.5.604** | 🔧 Consolidated analysis fixes: Fixed pet_feeder/fan_controller collision, ve... |
 | **v5.5.603** | ✨ TS0601 FlowCards: Generic DP FlowCard manager with threshold triggers, cond... |
-| **v5.5.602** | ✨ IR Blaster: Enhanced ZS06/UFO-R11 support with Z2M ir_code_to_send format +... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
