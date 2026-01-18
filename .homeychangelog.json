@@ -1,4 +1,7 @@
 {
+  "5.5.615": {
+    "en": "🔧 Driver Fixes: Added capabilitiesOptions for button_wireless, energy_meter_3phase, thermostat_4ch, valve_irrigation. 0 validation warnings."
+  },
   "5.5.614": {
     "en": "🤖 Complete Automation: GitHub Actions monthly workflow, driver validator, Flow Card auditor. Self-enriching pipeline."
   },

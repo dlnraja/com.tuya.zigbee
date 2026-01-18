@@ -12,9 +12,18 @@
   },
   "class": "button",
   "capabilities": [
+    "button.1",
     "measure_battery"
   ],
   "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button",
+        "fr": "Bouton"
+      },
+      "getable": false,
+      "setable": false
+    },
     "measure_battery": {
       "title": {
         "en": "Battery",
