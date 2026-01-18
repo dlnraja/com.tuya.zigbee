@@ -1,4 +1,7 @@
 {
+  "5.5.654": {
+    "en": "🔧 DRIVER GENERATION: Added generateDriverConfig() to auto-create driver configs from learned profiles. Infers device class and clusters from capabilities."
+  },
   "5.5.653": {
     "en": "🎛️ ZCL COMMANDS: Added sendOnOff(), sendLevel(), readAttribute() to UniversalZigbeeProtocol. Direct ZCL cluster control for standard Zigbee devices."
   },
