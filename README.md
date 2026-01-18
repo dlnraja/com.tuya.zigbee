@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.605** | 🚀 Forum synthesis: TuyaDPFlowCardManager, TS1201 UFO-R11 verified, collision... |
 | **v5.5.604** | 🔧 Consolidated analysis fixes: Fixed pet_feeder/fan_controller collision, ve... |
 | **v5.5.603** | ✨ TS0601 FlowCards: Generic DP FlowCard manager with threshold triggers, cond... |
 | **v5.5.602** | ✨ IR Blaster: Enhanced ZS06/UFO-R11 support with Z2M ir_code_to_send format +... |
@@ -78,7 +79,6 @@
 | **v5.5.596** | 📦 NEW DEVICES: Added Bseed dimmer IDs (_TZE200_ctq0k47x, _TZE200_ip2akl9w, _... |
 | **v5.5.595** | 📦 NEW DEVICE: Added _TZE204_tgl8i2np (curtain motor MI-P82) from Zigbee2MQTT... |
 | **v5.5.594** | 📦 NEW DEVICE: Added _TZE284_la9vhsok (IR blaster/transmitter) from Zigbee2MQ... |
-| **v5.5.593** | 📦 NEW DEVICES: Added _TZE284_cgr0rhza (TRV), _TZE284_rlytpmij, _TZE284_ar5pr... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
