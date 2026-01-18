@@ -1,4 +1,7 @@
 {
+  "5.5.626": {
+    "en": "🐛 FIX: Rain sensor _TZ3210_p68kms0l/TS0207 conflict - removed from dimmer driver (Ferdy_van_Hove). Device should now pair correctly as Rain Sensor."
+  },
   "5.5.625": {
     "en": "📋 MANUFACTURER ID ENRICHMENT: Added IDs from Z2M + Forum: Thermostats (_TZE284_znlqjmih), 3-phase energy meters (+12 IDs from Nous D4Z, XOCA). Universal Fallback Driver catches unknown devices."
   },
