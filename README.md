@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.616** | 🆕 New Devices: HOBEIAN ZG-303Z climate sensor. Enhanced IAS Zone handling fo... |
 | **v5.5.615** | 🔧 Driver Fixes: Added capabilitiesOptions for button_wireless, energy_meter_... |
 | **v5.5.614** | 🤖 Complete Automation: GitHub Actions monthly workflow, driver validator, Fl... |
 | **v5.5.613** | 🔄 Monthly Pipeline: Forum scanner, PR analyzer, device classifier. Auto-gene... |
@@ -78,7 +79,6 @@
 | **v5.5.609** | 🔧 Collision fixes: Fixed 7 critical sensor/switch collisions (Z2M research).... |
 | **v5.5.608** | 📋 Forum analysis: Added eWeLink CK-TLSR8656 temp/humidity sensor, verified Z... |
 | **v5.5.607** | 📡 IR Blaster Enrichment: +10 manufacturer IDs from Z2M/ZHA/Blakadder researc... |
-| **v5.5.606** | 📡 IR Blaster: SmartIR/Z2M format import/export, AC command flow action, enha... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
