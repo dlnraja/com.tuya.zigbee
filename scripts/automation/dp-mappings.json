@@ -1,0 +1,32 @@
+{
+  "climate": {
+    "1": {"capability": "measure_temperature", "multiplier": 0.1},
+    "2": {"capability": "measure_humidity", "multiplier": 1},
+    "4": {"capability": "measure_battery", "multiplier": 2},
+    "9": {"capability": "temp_unit", "internal": true},
+    "101": {"capability": "time_sync", "internal": true}
+  },
+  "soil": {
+    "3": {"capability": "measure_humidity", "multiplier": 0.01},
+    "5": {"capability": "measure_temperature", "multiplier": 0.01},
+    "15": {"capability": "measure_battery", "multiplier": 2}
+  },
+  "switch": {
+    "1": {"capability": "onoff", "endpoint": 1},
+    "2": {"capability": "onoff.2", "endpoint": 2},
+    "3": {"capability": "onoff.3", "endpoint": 3}
+  },
+  "plug": {
+    "1": {"capability": "onoff"},
+    "9": {"capability": "countdown", "internal": true},
+    "17": {"capability": "measure_power", "multiplier": 0.1},
+    "18": {"capability": "measure_current", "multiplier": 0.001},
+    "19": {"capability": "measure_voltage", "multiplier": 0.1},
+    "20": {"capability": "meter_power", "multiplier": 0.01}
+  },
+  "presence": {
+    "1": {"capability": "alarm_motion"},
+    "9": {"capability": "measure_luminance"},
+    "101": {"capability": "target_distance"}
+  }
+}
