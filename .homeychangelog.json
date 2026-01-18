@@ -1,4 +1,7 @@
 {
+  "5.5.646": {
+    "en": "🔧 IAS ZONE ENHANCEMENT: Added detailed logging for IAS Zone setup to debug HOBEIAN water leak sensors. Improved CIE address handling and zone status reading. Diagnostic logs now show [IAS] setup progress."
+  },
   "5.5.645": {
     "en": "🔧 FIX Lasse_K #1052: Water leak sensor alarm not triggering. Fixed IAS Zone status parsing (Buffer/object handling), enhanced zoneStatusChangeNotification listener, added robust numeric conversion. Re-pair device to apply fix."
   },
