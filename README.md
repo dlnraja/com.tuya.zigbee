@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.632** | 🔧 SDK3: registerCapability() pattern improvements and bug fixes. |
 | **v5.5.631** | 🔧 SDK3: Implemented registerCapability() pattern in universal_fallback drive... |
 | **v5.5.630** | 🔧 SDK3 BEST PRACTICES: Added isFirstInit() pattern + configureAttributeRepor... |
 | **v5.5.629** | 🔧 SDK3 FIX: Button flow cards now properly match selected button. Added drop... |
@@ -78,7 +79,6 @@
 | **v5.5.625** | 📋 MANUFACTURER ID ENRICHMENT: Added IDs from Z2M + Forum: Thermostats (_TZE2... |
 | **v5.5.624** | 🔧 UNIVERSAL FALLBACK DRIVER: Auto-detect capabilities for unknown Tuya/Zigbe... |
 | **v5.5.623** | 🕐 INTELLIGENT TIME SYNC: Hybrid mode - respond to device requests (primary) ... |
-| **v5.5.622** | 📋 FORUM FIXES: 8-gang switch DP mapping (ManuelKugler). TS0044 _TZ3000_zgyzg... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
