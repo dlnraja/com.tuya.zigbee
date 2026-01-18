@@ -1,4 +1,7 @@
 {
+  "5.5.660": {
+    "en": "🔄 MCU SYNC + BUTTONS: handleMcuFullSync() for TS0601 time sync, triggerButtonEvent() for event-only buttons (TS0043/TS0044). Extended MFR_CLUSTERS."
+  },
   "5.5.659": {
     "en": "🧠 INTELLIGENT FALLBACK: intelligentFallback() infers caps from clusters, autoRegisterCapabilities() adds missing caps. No more generic zigbee!"
   },
