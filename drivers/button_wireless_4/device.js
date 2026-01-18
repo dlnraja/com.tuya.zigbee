@@ -32,8 +32,7 @@ class Button4GangDevice extends ButtonDevice {
   static SCENE_MODE = 1;
   static DIMMER_MODE = 0;
 
-  // v5.5.617: Debounce + retry tracking
-  _lastButtonEvent = {};
+  // v5.5.618: Mode tracking (debounce removed - handled by parent)
   _modeSwitchAttempts = 0;
   _modeVerified = false;
   _zclNode = null;
@@ -606,25 +605,12 @@ class Button4GangDevice extends ButtonDevice {
   }
 
   /**
-   * v5.5.617: Override triggerButtonPress with DEBOUNCE filtering
-   * Research (Z2M #7158): Buttons 2,3,4 send events 3x in scene mode
-   * Solution: Filter duplicate events within 300ms window
+   * v5.5.618: Override triggerButtonPress - MODE VERIFICATION + PARENT DEBOUNCE
+   * CRITICAL FIX: Removed duplicate debounce (parent ButtonDevice already has 300ms debounce)
+   * Double debouncing caused events to be filtered incorrectly
    */
   async triggerButtonPress(buttonNumber, pressType) {
-    // v5.5.617: DEBOUNCE - Filter duplicate events (Z2M research: 3x events)
-    const eventKey = `${buttonNumber}_${pressType}`;
-    const now = Date.now();
-    const lastEvent = this._lastButtonEvent[eventKey] || 0;
-
-    if (now - lastEvent < 300) {
-      this.log(`[BUTTON4-DEBOUNCE] 🚫 Filtered duplicate: Button ${buttonNumber} ${pressType} (${now - lastEvent}ms)`);
-      return;
-    }
-
-    this._lastButtonEvent[eventKey] = now;
-    this.log(`[BUTTON4-DEBOUNCE] ✅ Accepted: Button ${buttonNumber} ${pressType}`);
-
-    // v5.5.617: If mode not verified, try to switch on button press (device awake)
+    // v5.5.618: MODE VERIFICATION on button press (device awake)
     if (!this._modeVerified && this._onOffCluster) {
       this.homey.setTimeout(async () => {
         const verified = await this._verifySceneMode(this._onOffCluster);
@@ -635,7 +621,7 @@ class Button4GangDevice extends ButtonDevice {
       }, 100);
     }
 
-    // Call parent implementation
+    // Call parent implementation (includes comprehensive debouncing)
     if (super.triggerButtonPress) {
       await super.triggerButtonPress(buttonNumber, pressType);
     }

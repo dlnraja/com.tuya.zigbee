@@ -1,6 +1,9 @@
 {
+  "5.5.618": {
+    "en": "🔧 CRITICAL FIX: Removed duplicate debounce in button_wireless_4 causing button presses to be filtered (parent ButtonDevice already has comprehensive debouncing). Single press = single trigger on Homey."
+  },
   "5.5.617": {
-    "en": "🧠 INTELLIGENT TS004F Mode Switch: Exponential backoff retry (50-1000ms), mode verification, cold boot recovery via onEndDeviceAnnounce, duplicate event debounce (300ms). Added _TZ3000_zgyzgdua. Research: Z2M #7158, SmartThings."
+    "en": "🧠 INTELLIGENT TS004F Mode Switch: Exponential backoff retry (50-1000ms), mode verification, cold boot recovery via onEndDeviceAnnounce. Added _TZ3000_zgyzgdua. Research: Z2M #7158, SmartThings."
   },
   "5.5.616": {
     "en": "🆕 New Devices: HOBEIAN ZG-303Z climate sensor. Enhanced IAS Zone handling for water leak sensors. 0 validation warnings."
