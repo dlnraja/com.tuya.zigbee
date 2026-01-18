@@ -1,4 +1,7 @@
 {
+  "5.5.633": {
+    "en": "🔧 FIX: _TZE204_n9ctkb6j BSEED dimmer moved from climate_sensor to dimmer_wall_1gang (Attilla forum report). Device will now pair correctly as 1-Gang Dimmer."
+  },
   "5.5.632": {
     "en": "🔧 SDK3: registerCapability() pattern improvements and bug fixes."
   },
