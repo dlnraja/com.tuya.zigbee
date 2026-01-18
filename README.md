@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.637** | ✅ GitHub Issues: Added BSEED switches (_TZ3000_ysdv91bk, _TZ3000_blhvsaqf, _T... |
 | **v5.5.636** | 🔧 SYNC FIX: Added 164 missing manufacturerNames/productIds to app.json that ... |
 | **v5.5.635** | 🔥 MAJOR FIX: Cleaned 1145 stale/duplicate manufacturerNames from app.json th... |
 | **v5.5.634** | 🐛 CRITICAL FIX: Removed duplicate manufacturerNames from climate_sensor that... |
@@ -78,7 +79,6 @@
 | **v5.5.630** | 🔧 SDK3 BEST PRACTICES: Added isFirstInit() pattern + configureAttributeRepor... |
 | **v5.5.629** | 🔧 SDK3 FIX: Button flow cards now properly match selected button. Added drop... |
 | **v5.5.628** | 🐛 FIX: TS0505B _TZ3210_s8lvbbuc RGB bulb conflict - removed duplicate from b... |
-| **v5.5.627** | 🔘 FIX: TS0044 button flow cards now show button selection dropdown (Freddybo... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
