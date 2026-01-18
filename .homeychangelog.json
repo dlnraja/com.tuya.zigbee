@@ -1,4 +1,7 @@
 {
+  "5.5.653": {
+    "en": "🎛️ ZCL COMMANDS: Added sendOnOff(), sendLevel(), readAttribute() to UniversalZigbeeProtocol. Direct ZCL cluster control for standard Zigbee devices."
+  },
   "5.5.652": {
     "en": "⏱️ MCU SYNC & BINDING: Added syncMcuTime() and bindCluster() to UniversalZigbeeProtocol. Green Power profile support. Foundation for universal device communication."
   },
