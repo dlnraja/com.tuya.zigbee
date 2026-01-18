@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.639** | 🌍 UNIVERSAL ZIGBEE: Added 651 manufacturer IDs across 18 drivers. Now suppor... |
 | **v5.5.638** | ✅ GitHub Issues #96, #99: Added Sonoff S60ZBTPE variant, smoke detector produ... |
 | **v5.5.637** | ✅ GitHub Issues: Added BSEED switches (_TZ3000_ysdv91bk, _TZ3000_blhvsaqf, _T... |
 | **v5.5.636** | 🔧 SYNC FIX: Added 164 missing manufacturerNames/productIds to app.json that ... |
@@ -78,7 +79,6 @@
 | **v5.5.632** | 🔧 SDK3: registerCapability() pattern improvements and bug fixes. |
 | **v5.5.631** | 🔧 SDK3: Implemented registerCapability() pattern in universal_fallback drive... |
 | **v5.5.630** | 🔧 SDK3 BEST PRACTICES: Added isFirstInit() pattern + configureAttributeRepor... |
-| **v5.5.629** | 🔧 SDK3 FIX: Button flow cards now properly match selected button. Added drop... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
