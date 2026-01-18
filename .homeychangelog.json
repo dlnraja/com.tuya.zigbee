@@ -1,4 +1,7 @@
 {
+  "5.5.655": {
+    "en": "🛡️ SAFE HANDLERS: Added safeFlowTrigger() and safeCap() to UniversalZigbeeProtocol. Prevents Flow card and capability errors from crashing devices."
+  },
   "5.5.654": {
     "en": "🔧 DRIVER GENERATION: Added generateDriverConfig() to auto-create driver configs from learned profiles. Infers device class and clusters from capabilities."
   },
