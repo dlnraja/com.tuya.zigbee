@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.627** | 🔘 FIX: TS0044 button flow cards now show button selection dropdown (Freddybo... |
 | **v5.5.626** | 🐛 FIX: Rain sensor _TZ3210_p68kms0l/TS0207 conflict - removed from dimmer dr... |
 | **v5.5.625** | 📋 MANUFACTURER ID ENRICHMENT: Added IDs from Z2M + Forum: Thermostats (_TZE2... |
 | **v5.5.624** | 🔧 UNIVERSAL FALLBACK DRIVER: Auto-detect capabilities for unknown Tuya/Zigbe... |
@@ -78,7 +79,6 @@
 | **v5.5.620** | 🕐 MCU FULL SYNC: Added implicit time in heartbeat/dataQuery responses (cmd 0... |
 | **v5.5.619** | 🕐 TIME SYNC OVERHAUL: Passive mode - respond to device requests only (per Z2... |
 | **v5.5.618** | 🔧 CRITICAL FIX: Removed duplicate debounce in button_wireless_4 causing butt... |
-| **v5.5.617** | 🧠 INTELLIGENT TS004F Mode Switch: Exponential backoff retry (50-1000ms), mod... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
