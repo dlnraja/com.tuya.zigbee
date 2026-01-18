@@ -1,4 +1,7 @@
 {
+  "5.5.635": {
+    "en": "🔥 MAJOR FIX: Cleaned 1145 stale/duplicate manufacturerNames from app.json that were causing devices to pair to wrong drivers. Root cause: app.json wasn't synced with driver.compose.json files. This fixes pairing issues for buttons, switches, sensors, and more."
+  },
   "5.5.634": {
     "en": "🐛 CRITICAL FIX: Removed duplicate manufacturerNames from climate_sensor that caused 4-gang buttons (_TZ3000_5tqxpine, _TZ3000_wkai4ga5) to pair as wrong device type (Eftychis). Devices now correctly match to button_wireless_4."
   },
