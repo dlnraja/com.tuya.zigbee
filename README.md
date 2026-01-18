@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.625** | 📋 MANUFACTURER ID ENRICHMENT: Added IDs from Z2M + Forum: Thermostats (_TZE2... |
 | **v5.5.624** | 🔧 UNIVERSAL FALLBACK DRIVER: Auto-detect capabilities for unknown Tuya/Zigbe... |
 | **v5.5.623** | 🕐 INTELLIGENT TIME SYNC: Hybrid mode - respond to device requests (primary) ... |
 | **v5.5.622** | 📋 FORUM FIXES: 8-gang switch DP mapping (ManuelKugler). TS0044 _TZ3000_zgyzg... |
@@ -78,7 +79,6 @@
 | **v5.5.618** | 🔧 CRITICAL FIX: Removed duplicate debounce in button_wireless_4 causing butt... |
 | **v5.5.617** | 🧠 INTELLIGENT TS004F Mode Switch: Exponential backoff retry (50-1000ms), mod... |
 | **v5.5.616** | 🆕 New Devices: HOBEIAN ZG-303Z climate sensor. Enhanced IAS Zone handling fo... |
-| **v5.5.615** | 🔧 Driver Fixes: Added capabilitiesOptions for button_wireless, energy_meter_... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
