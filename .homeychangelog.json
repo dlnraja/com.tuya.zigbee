@@ -1,4 +1,7 @@
 {
+  "5.5.636": {
+    "en": "🔧 SYNC FIX: Added 164 missing manufacturerNames/productIds to app.json that were in driver.compose.json but not published. Affected: bulb_rgbw, curtain_motor, dimmer_wall_1gang, presence_sensor_radar, switches, thermostat, and more."
+  },
   "5.5.635": {
     "en": "🔥 MAJOR FIX: Cleaned 1145 stale/duplicate manufacturerNames from app.json that were causing devices to pair to wrong drivers. Root cause: app.json wasn't synced with driver.compose.json files. This fixes pairing issues for buttons, switches, sensors, and more."
   },
