@@ -2,69 +2,69 @@
   "triggers": [
     {
       "id": "button_wireless_8_button_8gang_button_pressed",
-      "title": {
-        "en": "Button pressed",
-        "fr": "Bouton appuyé"
-      },
-      "titleFormatted": {
-        "en": "Button [[button]] pressed",
-        "fr": "Bouton [[button]] appuyé"
-      },
-      "tokens": [
+      "title": { "en": "Button pressed", "fr": "Bouton appuyé" },
+      "titleFormatted": { "en": "Button [[button]] pressed", "fr": "Bouton [[button]] appuyé" },
+      "args": [
         {
-          "name": "button",
-          "type": "string",
-          "title": {
-            "en": "Button",
-            "fr": "Bouton"
-          },
-          "example": "1"
+          "name": "button", "type": "dropdown",
+          "title": { "en": "Button", "fr": "Bouton" },
+          "values": [
+            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
+            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } },
+            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3" } },
+            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4" } },
+            { "id": "5", "label": { "en": "Button 5", "fr": "Bouton 5" } },
+            { "id": "6", "label": { "en": "Button 6", "fr": "Bouton 6" } },
+            { "id": "7", "label": { "en": "Button 7", "fr": "Bouton 7" } },
+            { "id": "8", "label": { "en": "Button 8", "fr": "Bouton 8" } }
+          ]
         }
-      ]
+      ],
+      "tokens": [{ "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton" }, "example": "1" }]
     },
     {
       "id": "button_wireless_8_button_8gang_button_double_press",
-      "title": {
-        "en": "Button double-pressed",
-        "fr": "Bouton double-cliqué"
-      },
-      "titleFormatted": {
-        "en": "Button [[button]] double-pressed",
-        "fr": "Bouton [[button]] double-cliqué"
-      },
-      "tokens": [
+      "title": { "en": "Button double-pressed", "fr": "Bouton double-cliqué" },
+      "titleFormatted": { "en": "Button [[button]] double-pressed", "fr": "Bouton [[button]] double-cliqué" },
+      "args": [
         {
-          "name": "button",
-          "type": "string",
-          "title": {
-            "en": "Button",
-            "fr": "Bouton"
-          },
-          "example": "1"
+          "name": "button", "type": "dropdown",
+          "title": { "en": "Button", "fr": "Bouton" },
+          "values": [
+            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
+            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } },
+            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3" } },
+            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4" } },
+            { "id": "5", "label": { "en": "Button 5", "fr": "Bouton 5" } },
+            { "id": "6", "label": { "en": "Button 6", "fr": "Bouton 6" } },
+            { "id": "7", "label": { "en": "Button 7", "fr": "Bouton 7" } },
+            { "id": "8", "label": { "en": "Button 8", "fr": "Bouton 8" } }
+          ]
         }
-      ]
+      ],
+      "tokens": [{ "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton" }, "example": "1" }]
     },
     {
       "id": "button_wireless_8_button_8gang_button_long_press",
-      "title": {
-        "en": "Button long-pressed",
-        "fr": "Bouton pressé longtemps"
-      },
-      "titleFormatted": {
-        "en": "Button [[button]] long-pressed",
-        "fr": "Bouton [[button]] pressé longtemps"
-      },
-      "tokens": [
+      "title": { "en": "Button long-pressed", "fr": "Bouton pressé longtemps" },
+      "titleFormatted": { "en": "Button [[button]] long-pressed", "fr": "Bouton [[button]] pressé longtemps" },
+      "args": [
         {
-          "name": "button",
-          "type": "string",
-          "title": {
-            "en": "Button",
-            "fr": "Bouton"
-          },
-          "example": "1"
+          "name": "button", "type": "dropdown",
+          "title": { "en": "Button", "fr": "Bouton" },
+          "values": [
+            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
+            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } },
+            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3" } },
+            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4" } },
+            { "id": "5", "label": { "en": "Button 5", "fr": "Bouton 5" } },
+            { "id": "6", "label": { "en": "Button 6", "fr": "Bouton 6" } },
+            { "id": "7", "label": { "en": "Button 7", "fr": "Bouton 7" } },
+            { "id": "8", "label": { "en": "Button 8", "fr": "Bouton 8" } }
+          ]
         }
-      ]
+      ],
+      "tokens": [{ "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton" }, "example": "1" }]
     },
     {
       "id": "button_wireless_8_button_8gang_button_multi_press",
