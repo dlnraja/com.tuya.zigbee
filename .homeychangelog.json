@@ -1,4 +1,7 @@
 {
+  "5.5.647": {
+    "en": "🌐 ZIGBEE ECOSYSTEM EXPANSION: +200 manufacturer IDs! Added Xiaomi/Aqara (lumi.xxx models), SmartThings/Centralite, Hive/AlertMe, Iris, Nyce, Ecolink, Aeotec, Frient, Perenio, Orvibo, Linkind, First Alert across 7 sensor/switch/plug drivers."
+  },
   "5.5.646": {
     "en": "🔧 IAS ZONE ENHANCEMENT: Added detailed logging for IAS Zone setup to debug HOBEIAN water leak sensors. Improved CIE address handling and zone status reading. Diagnostic logs now show [IAS] setup progress."
   },
