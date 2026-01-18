@@ -10,6 +10,22 @@
         "en": "Button [[button]] pressed",
         "fr": "Bouton [[button]] appuyé"
       },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "values": [
+            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
+            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } },
+            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3" } },
+            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4" } }
+          ]
+        }
+      ],
       "tokens": [
         {
           "name": "button",
@@ -32,6 +48,22 @@
         "en": "Button [[button]] double-pressed",
         "fr": "Bouton [[button]] double-cliqué"
       },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "values": [
+            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
+            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } },
+            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3" } },
+            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4" } }
+          ]
+        }
+      ],
       "tokens": [
         {
           "name": "button",
@@ -54,6 +86,22 @@
         "en": "Button [[button]] long-pressed",
         "fr": "Bouton [[button]] pressé longtemps"
       },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "values": [
+            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
+            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } },
+            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3" } },
+            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4" } }
+          ]
+        }
+      ],
       "tokens": [
         {
           "name": "button",
