@@ -95,7 +95,8 @@ class Button4GangDevice extends ButtonDevice {
       '_TZ3000_ixla93vd',
       '_TZ3000_qzjcsmar',
       '_TZ3000_wkai4ga5',  // v5.5.419: Forum report Eftychis
-      '_TZ3000_5tqxpine'   // v5.5.419: Forum report Eftychis
+      '_TZ3000_5tqxpine',  // v5.5.419: Forum report Eftychis
+      '_TZ3000_zgyzgdua'   // v5.5.617: Forum report Freddyboy - Moes 4-button
     ];
     const needsModeSwitching = isTS004F || ts004fManufacturers.includes(manufacturerName);
 
