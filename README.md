@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.648** | 🔌 UNIVERSAL ZIGBEE PROTOCOL: New UniversalZigbeeProtocol.js supports ALL Zig... |
 | **v5.5.647** | 🌐 ZIGBEE ECOSYSTEM EXPANSION: +200 manufacturer IDs! Added Xiaomi/Aqara (lum... |
 | **v5.5.646** | 🔧 IAS ZONE ENHANCEMENT: Added detailed logging for IAS Zone setup to debug H... |
 | **v5.5.645** | 🔧 FIX Lasse_K #1052: Water leak sensor alarm not triggering. Fixed IAS Zone ... |
@@ -78,7 +79,6 @@
 | **v5.5.641** | 📦 PRODUCT IDS: +612 device model IDs from Zigbee2MQTT, ZHA, SmartThings. Ful... |
 | **v5.5.640** | 🌍 MEGA UNIVERSAL UPDATE: +27,613 manufacturer IDs across 101 drivers! Now su... |
 | **v5.5.639** | 🌍 UNIVERSAL ZIGBEE: Added 651 manufacturer IDs across 18 drivers. Now suppor... |
-| **v5.5.638** | ✅ GitHub Issues #96, #99: Added Sonoff S60ZBTPE variant, smoke detector produ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
