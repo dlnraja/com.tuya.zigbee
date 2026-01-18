@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.651** | 🧠 PROFILE LEARNING: Added learnProfile() to UniversalZigbeeProtocol. Auto-in... |
 | **v5.5.650** | 🔗 PROTOCOL INTEGRATION: Integrated UniversalZigbeeProtocol into BaseHybridDe... |
 | **v5.5.649** | 🔍 DP FALLBACK & LEARNING: Added unknown DP fallback handler, automatic patte... |
 | **v5.5.648** | 🔌 UNIVERSAL ZIGBEE PROTOCOL: New UniversalZigbeeProtocol.js supports ALL Zig... |
@@ -78,7 +79,6 @@
 | **v5.5.644** | 🌐 REGIONAL BRANDS: +5,111 IDs! Added 68 EU brands (Eurotronic, Vimar, Hager,... |
 | **v5.5.643** | 🔌 SPECIALTY DEVICES: +158 IDs for air quality, CO/gas sensors, fans, locks, ... |
 | **v5.5.642** | 🔧 TUYA VARIANTS: +880 _TZ3000/_TZE200/_TZE204/_TZ3210 manufacturerName varia... |
-| **v5.5.641** | 📦 PRODUCT IDS: +612 device model IDs from Zigbee2MQTT, ZHA, SmartThings. Ful... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
