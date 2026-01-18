@@ -1,4 +1,7 @@
 {
+  "5.5.659": {
+    "en": "🧠 INTELLIGENT FALLBACK: intelligentFallback() infers caps from clusters, autoRegisterCapabilities() adds missing caps. No more generic zigbee!"
+  },
   "5.5.658": {
     "en": "🔀 HYBRID ARCHITECTURE: debouncedFlow() for 1-action-1-event, handleHybridData() for ZCL+DP+private simultaneous handling."
   },
