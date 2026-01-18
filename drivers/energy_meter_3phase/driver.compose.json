@@ -16,6 +16,20 @@
     "measure_power.phase3",
     "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "title": { "en": "Total Power", "fr": "Puissance Totale" }
+    },
+    "measure_power.phase1": {
+      "title": { "en": "Phase 1 Power", "fr": "Puissance Phase 1" }
+    },
+    "measure_power.phase2": {
+      "title": { "en": "Phase 2 Power", "fr": "Puissance Phase 2" }
+    },
+    "measure_power.phase3": {
+      "title": { "en": "Phase 3 Power", "fr": "Puissance Phase 3" }
+    }
+  },
   "energy": {
     "batteries": [
       "AAA",
