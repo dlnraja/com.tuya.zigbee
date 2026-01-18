@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.631** | 🔧 SDK3: Implemented registerCapability() pattern in universal_fallback drive... |
 | **v5.5.630** | 🔧 SDK3 BEST PRACTICES: Added isFirstInit() pattern + configureAttributeRepor... |
 | **v5.5.629** | 🔧 SDK3 FIX: Button flow cards now properly match selected button. Added drop... |
 | **v5.5.628** | 🐛 FIX: TS0505B _TZ3210_s8lvbbuc RGB bulb conflict - removed duplicate from b... |
@@ -78,7 +79,6 @@
 | **v5.5.624** | 🔧 UNIVERSAL FALLBACK DRIVER: Auto-detect capabilities for unknown Tuya/Zigbe... |
 | **v5.5.623** | 🕐 INTELLIGENT TIME SYNC: Hybrid mode - respond to device requests (primary) ... |
 | **v5.5.622** | 📋 FORUM FIXES: 8-gang switch DP mapping (ManuelKugler). TS0044 _TZ3000_zgyzg... |
-| **v5.5.621** | 🔧 FIX: 8-gang switch (switch_wall_8gang) - Fixed DP mappings (Gang 7=DP101, ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
