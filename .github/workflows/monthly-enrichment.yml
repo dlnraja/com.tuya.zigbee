@@ -1,0 +1,77 @@
+# Monthly Enrichment Pipeline - Universal Tuya Zigbee
+# Runs monthly to scan forums, analyze PRs, validate drivers, and generate reports
+# ENRICHMENT ONLY - Never removes existing functionality
+
+name: Monthly Enrichment Pipeline
+
+on:
+  schedule:
+    - cron: '0 3 1 * *'  # First day of each month at 3 AM UTC
+  workflow_dispatch:
+    inputs:
+      force_full_scan:
+        description: 'Force full scan (ignore cache)'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  monthly-scan:
+    name: Monthly Intelligence Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run collision lint
+        id: lint
+        run: |
+          echo "## Collision Analysis" >> $GITHUB_STEP_SUMMARY
+          node scripts/automation/lint-collisions.js 2>&1 | tee lint-output.txt || true
+          cat lint-output.txt >> $GITHUB_STEP_SUMMARY
+          
+      - name: Generate device matrix
+        run: |
+          echo "## Device Matrix" >> $GITHUB_STEP_SUMMARY
+          node scripts/automation/generate-matrix.js
+          
+      - name: Run monthly scan
+        run: |
+          echo "## Monthly Scan" >> $GITHUB_STEP_SUMMARY
+          node scripts/automation/monthly-scan.js
+          
+      - name: Validate YAML-JS consistency
+        run: |
+          echo "## Driver Validation" >> $GITHUB_STEP_SUMMARY
+          node scripts/automation/validate-drivers.js 2>&1 | tee validation.txt || true
+          cat validation.txt >> $GITHUB_STEP_SUMMARY
+          
+      - name: Audit Flow Cards
+        run: |
+          echo "## Flow Card Audit" >> $GITHUB_STEP_SUMMARY
+          node scripts/automation/audit-flowcards.js 2>&1 | tee flowcards.txt || true
+          cat flowcards.txt >> $GITHUB_STEP_SUMMARY
+          
+      - name: Commit reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/*.md data/*.json || true
+          git diff --staged --quiet || git commit -m "chore: Monthly enrichment report $(date +%Y-%m)"
+          git push || true
