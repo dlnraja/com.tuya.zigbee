@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.623** | 🕐 INTELLIGENT TIME SYNC: Hybrid mode - respond to device requests (primary) ... |
 | **v5.5.622** | 📋 FORUM FIXES: 8-gang switch DP mapping (ManuelKugler). TS0044 _TZ3000_zgyzg... |
 | **v5.5.621** | 🔧 FIX: 8-gang switch (switch_wall_8gang) - Fixed DP mappings (Gang 7=DP101, ... |
 | **v5.5.620** | 🕐 MCU FULL SYNC: Added implicit time in heartbeat/dataQuery responses (cmd 0... |
@@ -78,7 +79,6 @@
 | **v5.5.616** | 🆕 New Devices: HOBEIAN ZG-303Z climate sensor. Enhanced IAS Zone handling fo... |
 | **v5.5.615** | 🔧 Driver Fixes: Added capabilitiesOptions for button_wireless, energy_meter_... |
 | **v5.5.614** | 🤖 Complete Automation: GitHub Actions monthly workflow, driver validator, Fl... |
-| **v5.5.613** | 🔄 Monthly Pipeline: Forum scanner, PR analyzer, device classifier. Auto-gene... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
