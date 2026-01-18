@@ -1,4 +1,7 @@
 {
+  "5.5.656": {
+    "en": "📦 EXTENDED ZCL: Added IDENTIFY, GROUPS, SCENES, FAN, PRESSURE clusters. Complete ZCL standard cluster coverage for universal device support."
+  },
   "5.5.655": {
     "en": "🛡️ SAFE HANDLERS: Added safeFlowTrigger() and safeCap() to UniversalZigbeeProtocol. Prevents Flow card and capability errors from crashing devices."
   },
