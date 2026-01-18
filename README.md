@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.643** | 🔌 SPECIALTY DEVICES: +158 IDs for air quality, CO/gas sensors, fans, locks, ... |
 | **v5.5.642** | 🔧 TUYA VARIANTS: +880 _TZ3000/_TZE200/_TZE204/_TZ3210 manufacturerName varia... |
 | **v5.5.641** | 📦 PRODUCT IDS: +612 device model IDs from Zigbee2MQTT, ZHA, SmartThings. Ful... |
 | **v5.5.640** | 🌍 MEGA UNIVERSAL UPDATE: +27,613 manufacturer IDs across 101 drivers! Now su... |
@@ -78,7 +79,6 @@
 | **v5.5.636** | 🔧 SYNC FIX: Added 164 missing manufacturerNames/productIds to app.json that ... |
 | **v5.5.635** | 🔥 MAJOR FIX: Cleaned 1145 stale/duplicate manufacturerNames from app.json th... |
 | **v5.5.634** | 🐛 CRITICAL FIX: Removed duplicate manufacturerNames from climate_sensor that... |
-| **v5.5.633** | 🔧 FIX: _TZE204_n9ctkb6j BSEED dimmer moved from climate_sensor to dimmer_wal... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
