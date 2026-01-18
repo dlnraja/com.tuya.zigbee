@@ -1410,6 +1410,45 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
   }
 
+  /**
+   * v5.5.606: SmartIR/Z2M format support
+   */
+  async importSmartIRCodes(jsonData, category = 'imported') {
+    const data = typeof jsonData === 'string' ? JSON.parse(jsonData) : jsonData;
+    let count = 0;
+    if (data.commands) {
+      for (const [name, code] of Object.entries(data.commands)) {
+        const irCode = typeof code === 'string' && code.includes('ir_code_to_send') 
+          ? JSON.parse(code).ir_code_to_send : code;
+        if (irCode) {
+          await this.storeEnhancedLearnedCode(`${category}_${name}`, irCode, { category });
+          count++;
+        }
+      }
+    }
+    this.log(`Imported ${count} SmartIR codes`);
+    return { success: true, count };
+  }
+
+  exportSmartIRFormat() {
+    const result = { commands: {} };
+    for (const [name, code] of Object.entries(this._learnedCodes)) {
+      result.commands[name] = JSON.stringify({ ir_code_to_send: code });
+    }
+    return result;
+  }
+
+  async sendACCommand(mode, temp, fan = 'auto') {
+    const patterns = [`ac_${mode}_${fan}_${temp}`, `${mode}_${fan}_${temp}`];
+    for (const p of patterns) {
+      if (this._learnedCodes[p]) {
+        await this.sendIRCode(this._learnedCodes[p]);
+        return true;
+      }
+    }
+    return false;
+  }
+
   onDeleted() {
     this.log('IR Blaster device deleted');
 
