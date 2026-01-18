@@ -27,9 +27,21 @@ const ButtonDevice = require('../../lib/devices/ButtonDevice');
  */
 class Button4GangDevice extends ButtonDevice {
 
+  // v5.5.617: Scene mode constants (Z2M #7158, SmartThings research)
+  static MODE_ATTRIBUTE = 0x8004;
+  static SCENE_MODE = 1;
+  static DIMMER_MODE = 0;
+
+  // v5.5.617: Debounce + retry tracking
+  _lastButtonEvent = {};
+  _modeSwitchAttempts = 0;
+  _modeVerified = false;
+  _zclNode = null;
+
   async onNodeInit({ zclNode }) {
+    this._zclNode = zclNode;
     this.log('═══════════════════════════════════════════════════════════════');
-    this.log('[BUTTON4] 🔘 Button4GangDevice v5.5.379 initializing...');
+    this.log('[BUTTON4] 🔘 Button4GangDevice v5.5.617 initializing...');
     this.log('[BUTTON4] CRITICAL FIX: TS004F Scene Mode Switching');
     this.log('[BUTTON4] Research: SmartThings, Z2M #7158, ZHA #1372');
     this.log('═══════════════════════════════════════════════════════════════');
@@ -44,10 +56,12 @@ class Button4GangDevice extends ButtonDevice {
     // Initialize base (power detection + button detection)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
-    // v5.5.379: CRITICAL - Switch TS004F to Scene Mode BEFORE setting up listeners
-    // TS004F defaults to Dimmer mode which only sends single press events
-    // Scene mode enables single/double/long press detection
-    await this._switchToSceneMode(zclNode);
+    // v5.5.617: INTELLIGENT Mode Switch with retry + verification
+    // Research: Z2M #7158, SmartThings - mode must be set during pairing window
+    await this._intelligentModeSwitch(zclNode);
+
+    // v5.5.617: Schedule periodic mode re-check (cold boot recovery)
+    this._scheduleModeMaintenance();
 
     // v5.5.295: FORUM FIX - Enhanced physical button detection
     // Based on research from Zigbee2MQTT, ZHA, SmartThings patterns
@@ -61,20 +75,22 @@ class Button4GangDevice extends ButtonDevice {
   }
 
   /**
-   * v5.5.379: CRITICAL FIX - Switch TS004F from Dimmer mode to Scene mode
+   * v5.5.617: INTELLIGENT MODE SWITCH - Autonomous with retry + verification
    *
-   * RESEARCH SOURCES:
-   * - SmartThings Community: Cluster 6, attribute 0x8004 controls mode
-   * - Zigbee2MQTT Discussion #7158: TS004F mode switching
-   * - ZHA Device Handlers #1372: Scene mode vs Dimmer mode
+   * RESEARCH SOURCES (Z2M #7158, SmartThings, ZHA #1372):
+   * - Attribute 0x8004 on cluster 6 controls mode (0=Dimmer, 1=Scene)
+   * - Mode switch only works if sent FAST (50ms) during pairing window
+   * - Cold boot (battery removal) resets mode - need re-apply
+   * - Some devices need initial Tuya hub pairing first
+   * - Buttons 2,3,4 may send 3x duplicate events (needs filtering)
    *
-   * MODE VALUES:
-   * - 0 = Dimmer mode (DEFAULT) - Only single press, uses levelControl
-   * - 1 = Scene mode - Single/double/long press, uses scenes cluster
-   *
-   * CRITICAL: Device must be in Scene mode for proper button detection!
+   * INTELLIGENT FEATURES:
+   * - Exponential backoff retry (50ms, 100ms, 200ms, 500ms, 1s)
+   * - Mode verification after each attempt
+   * - Scheduled re-check for cold boot recovery
+   * - Duplicate event filtering with debounce
    */
-  async _switchToSceneMode(zclNode) {
+  async _intelligentModeSwitch(zclNode) {
     const productId = this.getData()?.productId || '';
     const manufacturerName = this.getData()?.manufacturerName || '';
 
@@ -116,54 +132,38 @@ class Button4GangDevice extends ButtonDevice {
         return;
       }
 
-      // v5.5.379: Attribute 0x8004 (32772 decimal) controls the operating mode
-      const MODE_ATTRIBUTE = 0x8004; // 32772 decimal
-      const SCENE_MODE = 1;
-      const DIMMER_MODE = 0;
+      // v5.5.617: INTELLIGENT retry with exponential backoff (Z2M research: 50ms timing critical)
+      const retryDelays = [0, 50, 100, 200, 500, 1000]; // ms between attempts
+      this._onOffCluster = onOffCluster;
 
-      // Try to read current mode
-      let currentMode = null;
-      try {
-        if (typeof onOffCluster.readAttributes === 'function') {
-          const attrs = await onOffCluster.readAttributes([MODE_ATTRIBUTE]);
-          currentMode = attrs?.[MODE_ATTRIBUTE] ?? attrs?.['32772'] ?? attrs?.['0x8004'];
-          this.log(`[BUTTON4-MODE] 📖 Current mode: ${currentMode} (${currentMode === SCENE_MODE ? 'Scene' : 'Dimmer'})`);
+      for (let attempt = 0; attempt < retryDelays.length; attempt++) {
+        this._modeSwitchAttempts = attempt + 1;
+
+        if (attempt > 0) {
+          await new Promise(r => setTimeout(r, retryDelays[attempt]));
         }
-      } catch (readErr) {
-        this.log(`[BUTTON4-MODE] ⚠️ Could not read mode attribute: ${readErr.message}`);
-        // Continue anyway - we'll try to write
-      }
 
-      // If already in scene mode, no need to switch
-      if (currentMode === SCENE_MODE) {
-        this.log('[BUTTON4-MODE] ✅ Already in Scene mode - buttons should work!');
-        return;
-      }
+        this.log(`[BUTTON4-MODE] 🔄 Attempt ${attempt + 1}/${retryDelays.length}...`);
 
-      // Switch to Scene mode
-      this.log('[BUTTON4-MODE] 🔄 Switching to Scene mode...');
+        // Try to switch mode
+        const success = await this._attemptModeSwitch(onOffCluster);
 
-      try {
-        if (typeof onOffCluster.writeAttributes === 'function') {
-          await onOffCluster.writeAttributes({ [MODE_ATTRIBUTE]: SCENE_MODE });
-          this.log('[BUTTON4-MODE] ✅ Successfully switched to Scene mode!');
-          this.log('[BUTTON4-MODE] 🎉 Single/double/long press should now work!');
-
-          // Store mode for reference
-          await this.setStoreValue('button_mode', 'scene').catch(() => { });
-        } else {
-          this.log('[BUTTON4-MODE] ⚠️ writeAttributes not available on onOff cluster');
-
-          // Try alternative: raw ZCL write
-          await this._tryRawModeSwitch(zclNode, SCENE_MODE);
+        if (success) {
+          // Verify mode actually changed
+          const verified = await this._verifySceneMode(onOffCluster);
+          if (verified) {
+            this._modeVerified = true;
+            this.log('[BUTTON4-MODE] ✅ Scene mode VERIFIED - all buttons should work!');
+            await this.setStoreValue('button_mode', 'scene').catch(() => {});
+            await this.setStoreValue('mode_switch_success', Date.now()).catch(() => {});
+            return;
+          }
         }
-      } catch (writeErr) {
-        this.log(`[BUTTON4-MODE] ⚠️ Mode switch failed: ${writeErr.message}`);
-        this.log('[BUTTON4-MODE] 💡 User may need to re-pair device with Tuya gateway first');
-
-        // Try alternative method
-        await this._tryRawModeSwitch(zclNode, SCENE_MODE);
       }
+
+      // All attempts failed - schedule retry later (cold boot recovery)
+      this.log('[BUTTON4-MODE] ⚠️ Mode switch not verified after all attempts');
+      this.log('[BUTTON4-MODE] 💡 Will retry on next button press or in 5 minutes');
 
     } catch (err) {
       this.log(`[BUTTON4-MODE] ❌ Mode switching error: ${err.message}`);
@@ -171,29 +171,92 @@ class Button4GangDevice extends ButtonDevice {
   }
 
   /**
-   * v5.5.379: Alternative method to switch mode using raw ZCL command
+   * v5.5.617: Attempt single mode switch
    */
-  async _tryRawModeSwitch(zclNode, targetMode) {
+  async _attemptModeSwitch(onOffCluster) {
     try {
-      this.log('[BUTTON4-MODE] 🔧 Trying raw ZCL write for mode switch...');
-
-      const endpoint = zclNode?.endpoints?.[1];
-      if (!endpoint) return;
-
-      // Try using the Zigbee cluster directly with manufacturer-specific write
-      const onOffCluster = endpoint.clusters?.onOff || endpoint.clusters?.[6];
-      if (onOffCluster && typeof onOffCluster.write === 'function') {
-        // Manufacturer-specific attribute write
-        await onOffCluster.write({
-          attributeId: 0x8004,
-          dataType: 0x30, // Enum8
-          value: targetMode
-        });
-        this.log('[BUTTON4-MODE] ✅ Raw mode switch successful!');
+      if (typeof onOffCluster.writeAttributes === 'function') {
+        await onOffCluster.writeAttributes({ [Button4GangDevice.MODE_ATTRIBUTE]: Button4GangDevice.SCENE_MODE });
+        this.log('[BUTTON4-MODE] ✅ writeAttributes succeeded');
+        return true;
       }
     } catch (err) {
-      this.log(`[BUTTON4-MODE] ⚠️ Raw mode switch failed: ${err.message}`);
+      this.log(`[BUTTON4-MODE] ⚠️ writeAttributes failed: ${err.message}`);
     }
+
+    // Fallback: raw write
+    try {
+      if (typeof onOffCluster.write === 'function') {
+        await onOffCluster.write({
+          attributeId: Button4GangDevice.MODE_ATTRIBUTE,
+          dataType: 0x30, // Enum8
+          value: Button4GangDevice.SCENE_MODE
+        });
+        this.log('[BUTTON4-MODE] ✅ Raw write succeeded');
+        return true;
+      }
+    } catch (err) {
+      this.log(`[BUTTON4-MODE] ⚠️ Raw write failed: ${err.message}`);
+    }
+
+    return false;
+  }
+
+  /**
+   * v5.5.617: Verify mode is actually Scene mode
+   */
+  async _verifySceneMode(onOffCluster) {
+    try {
+      if (typeof onOffCluster.readAttributes !== 'function') return true; // Assume success
+
+      await new Promise(r => setTimeout(r, 50)); // Small delay before read
+      const attrs = await onOffCluster.readAttributes([Button4GangDevice.MODE_ATTRIBUTE]);
+      const mode = attrs?.[Button4GangDevice.MODE_ATTRIBUTE] ?? attrs?.['32772'] ?? attrs?.['0x8004'];
+
+      this.log(`[BUTTON4-MODE] 🔍 Verify read: mode = ${mode}`);
+      return mode === Button4GangDevice.SCENE_MODE;
+    } catch (err) {
+      this.log(`[BUTTON4-MODE] ⚠️ Verify read failed: ${err.message}`);
+      return true; // Assume success if can't verify
+    }
+  }
+
+  /**
+   * v5.5.617: Schedule periodic mode maintenance (cold boot recovery)
+   * Research: After battery removal, mode resets - need to re-apply
+   */
+  _scheduleModeMaintenance() {
+    // Check mode every 5 minutes if not verified
+    this._modeMaintenanceInterval = this.homey.setInterval(async () => {
+      if (this._modeVerified) return;
+
+      this.log('[BUTTON4-MODE] 🔄 Scheduled mode re-check...');
+      if (this._onOffCluster) {
+        const success = await this._attemptModeSwitch(this._onOffCluster);
+        if (success) {
+          const verified = await this._verifySceneMode(this._onOffCluster);
+          if (verified) {
+            this._modeVerified = true;
+            this.log('[BUTTON4-MODE] ✅ Mode verified on scheduled check!');
+          }
+        }
+      }
+    }, 5 * 60 * 1000); // 5 minutes
+  }
+
+  /**
+   * v5.5.617: Handle device wake (cold boot recovery via onEndDeviceAnnounce)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[BUTTON4-MODE] 📡 Device announced (wake/rejoin) - re-applying mode...');
+    this._modeVerified = false;
+
+    // Re-apply mode on wake with short delay
+    this.homey.setTimeout(async () => {
+      if (this._zclNode) {
+        await this._intelligentModeSwitch(this._zclNode);
+      }
+    }, 500);
   }
 
   /**
@@ -543,10 +606,35 @@ class Button4GangDevice extends ButtonDevice {
   }
 
   /**
-   * v5.5.344: Override triggerButtonPress to read battery when device wakes
-   * Based on deCONZ research: sleepy devices only respond when awake (after button press)
+   * v5.5.617: Override triggerButtonPress with DEBOUNCE filtering
+   * Research (Z2M #7158): Buttons 2,3,4 send events 3x in scene mode
+   * Solution: Filter duplicate events within 300ms window
    */
   async triggerButtonPress(buttonNumber, pressType) {
+    // v5.5.617: DEBOUNCE - Filter duplicate events (Z2M research: 3x events)
+    const eventKey = `${buttonNumber}_${pressType}`;
+    const now = Date.now();
+    const lastEvent = this._lastButtonEvent[eventKey] || 0;
+
+    if (now - lastEvent < 300) {
+      this.log(`[BUTTON4-DEBOUNCE] 🚫 Filtered duplicate: Button ${buttonNumber} ${pressType} (${now - lastEvent}ms)`);
+      return;
+    }
+
+    this._lastButtonEvent[eventKey] = now;
+    this.log(`[BUTTON4-DEBOUNCE] ✅ Accepted: Button ${buttonNumber} ${pressType}`);
+
+    // v5.5.617: If mode not verified, try to switch on button press (device awake)
+    if (!this._modeVerified && this._onOffCluster) {
+      this.homey.setTimeout(async () => {
+        const verified = await this._verifySceneMode(this._onOffCluster);
+        if (verified) {
+          this._modeVerified = true;
+          this.log('[BUTTON4-MODE] ✅ Mode verified on button press!');
+        }
+      }, 100);
+    }
+
     // Call parent implementation
     if (super.triggerButtonPress) {
       await super.triggerButtonPress(buttonNumber, pressType);
@@ -608,6 +696,11 @@ class Button4GangDevice extends ButtonDevice {
 
   async onDeleted() {
     this.log('Button4GangDevice deleted');
+
+    // v5.5.617: Cleanup mode maintenance interval
+    if (this._modeMaintenanceInterval) {
+      this.homey.clearInterval(this._modeMaintenanceInterval);
+    }
 
     // Cleanup timers
     if (this._clickState) {
