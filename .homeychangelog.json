@@ -1,4 +1,7 @@
 {
+  "5.5.651": {
+    "en": "🧠 PROFILE LEARNING: Added learnProfile() to UniversalZigbeeProtocol. Auto-infers Homey capabilities from ZCL clusters (onOff→onoff, temperature→measure_temperature, etc.)."
+  },
   "5.5.650": {
     "en": "🔗 PROTOCOL INTEGRATION: Integrated UniversalZigbeeProtocol into BaseHybridDevice. Automatic profile detection (ZHA/ZLL/SE) on device init. Foundation for comprehensive multi-protocol Zigbee support."
   },
