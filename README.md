@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.608** | 📋 Forum analysis: Added eWeLink CK-TLSR8656 temp/humidity sensor, verified Z... |
 | **v5.5.607** | 📡 IR Blaster Enrichment: +10 manufacturer IDs from Z2M/ZHA/Blakadder researc... |
 | **v5.5.606** | 📡 IR Blaster: SmartIR/Z2M format import/export, AC command flow action, enha... |
 | **v5.5.605** | 🚀 Forum synthesis: TuyaDPFlowCardManager, TS1201 UFO-R11 verified, collision... |
@@ -78,7 +79,6 @@
 | **v5.5.601** | 🐛 FIX: HOBEIAN water leak sensors not reporting alarms (forum #1010 Lasse_K)... |
 | **v5.5.600** | 🐛 FIX: IAS Zone enrollment for TS0203 contact sensors (forum #1011). Sensors... |
 | **v5.5.597** | 🔧 FLOW CARDS: Added universal DP trigger/condition/action cards for exotic d... |
-| **v5.5.596** | 📦 NEW DEVICES: Added Bseed dimmer IDs (_TZE200_ctq0k47x, _TZE200_ip2akl9w, _... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
