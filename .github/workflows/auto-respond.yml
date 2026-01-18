@@ -1,0 +1,33 @@
+name: Auto-Respond Issues/PRs
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+
+jobs:
+  respond:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const author = context.payload.issue?.user?.login || context.payload.pull_request?.user?.login;
+            const isIssue = !!context.payload.issue;
+            const number = context.issue.number;
+            
+            let msg = `Hi @${author}! 👋\n\n`;
+            msg += `**Please provide:**\n`;
+            msg += `- manufacturerName: \`zb_manufacturer_name\`\n`;
+            msg += `- productId: \`zb_product_id\`\n`;
+            msg += `- Diagnostics Report\n\n`;
+            msg += `Get these from [Developer Tools](https://tools.developer.homey.app)\n\n`;
+            msg += `*Auto-response - maintainer will review soon.*`;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: number,
+              body: msg
+            });
