@@ -1,4 +1,7 @@
 {
+  "5.5.652": {
+    "en": "⏱️ MCU SYNC & BINDING: Added syncMcuTime() and bindCluster() to UniversalZigbeeProtocol. Green Power profile support. Foundation for universal device communication."
+  },
   "5.5.651": {
     "en": "🧠 PROFILE LEARNING: Added learnProfile() to UniversalZigbeeProtocol. Auto-infers Homey capabilities from ZCL clusters (onOff→onoff, temperature→measure_temperature, etc.)."
   },
