@@ -10,14 +10,22 @@
         "en": "Button [[button]] pressed",
         "fr": "Bouton [[button]] appuyé"
       },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": { "en": "Button", "fr": "Bouton" },
+          "values": [
+            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
+            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } }
+          ]
+        }
+      ],
       "tokens": [
         {
           "name": "button",
           "type": "string",
-          "title": {
-            "en": "Button",
-            "fr": "Bouton"
-          },
+          "title": { "en": "Button", "fr": "Bouton" },
           "example": "1"
         }
       ]
@@ -32,14 +40,22 @@
         "en": "Button [[button]] double-pressed",
         "fr": "Bouton [[button]] double-cliqué"
       },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": { "en": "Button", "fr": "Bouton" },
+          "values": [
+            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
+            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } }
+          ]
+        }
+      ],
       "tokens": [
         {
           "name": "button",
           "type": "string",
-          "title": {
-            "en": "Button",
-            "fr": "Bouton"
-          },
+          "title": { "en": "Button", "fr": "Bouton" },
           "example": "1"
         }
       ]
@@ -54,14 +70,22 @@
         "en": "Button [[button]] long-pressed",
         "fr": "Bouton [[button]] pressé longtemps"
       },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": { "en": "Button", "fr": "Bouton" },
+          "values": [
+            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
+            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } }
+          ]
+        }
+      ],
       "tokens": [
         {
           "name": "button",
           "type": "string",
-          "title": {
-            "en": "Button",
-            "fr": "Bouton"
-          },
+          "title": { "en": "Button", "fr": "Bouton" },
           "example": "1"
         }
       ]

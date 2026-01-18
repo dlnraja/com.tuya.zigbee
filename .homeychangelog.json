@@ -1,4 +1,7 @@
 {
+  "5.5.629": {
+    "en": "🔧 SDK3 FIX: Button flow cards now properly match selected button. Added dropdown args to 2/4/6-gang buttons. Based on Athom IKEA Tradfri official pattern (triggerFlow + state matching)."
+  },
   "5.5.628": {
     "en": "🐛 FIX: TS0505B _TZ3210_s8lvbbuc RGB bulb conflict - removed duplicate from bulb_rgb (Fiek). Device should now pair correctly as RGBW Bulb."
   },
