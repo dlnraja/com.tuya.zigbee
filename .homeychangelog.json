@@ -1,4 +1,7 @@
 {
+  "5.5.628": {
+    "en": "🐛 FIX: TS0505B _TZ3210_s8lvbbuc RGB bulb conflict - removed duplicate from bulb_rgb (Fiek). Device should now pair correctly as RGBW Bulb."
+  },
   "5.5.627": {
     "en": "🔘 FIX: TS0044 button flow cards now show button selection dropdown (Freddyboy). Added 'args' with Button 1-4 selector to pressed/double/long triggers."
   },
