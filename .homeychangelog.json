@@ -1,4 +1,7 @@
 {
+  "5.5.631": {
+    "en": "🔧 SDK3: Implemented registerCapability() pattern in universal_fallback driver. Auto-maps capabilities to ZCL clusters (ON_OFF, LEVEL_CONTROL, TEMPERATURE_MEASUREMENT, etc.). Source: athombv.github.io/node-homey-zigbeedriver"
+  },
   "5.5.630": {
     "en": "🔧 SDK3 BEST PRACTICES: Added isFirstInit() pattern + configureAttributeReporting for sleepy battery devices (HybridSensorBase). Added dropdown args to 8-gang button. Source: apps.developer.homey.app/wireless/zigbee"
   },
