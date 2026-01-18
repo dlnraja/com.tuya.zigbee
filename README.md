@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.646** | 🔧 IAS ZONE ENHANCEMENT: Added detailed logging for IAS Zone setup to debug H... |
 | **v5.5.645** | 🔧 FIX Lasse_K #1052: Water leak sensor alarm not triggering. Fixed IAS Zone ... |
 | **v5.5.644** | 🌐 REGIONAL BRANDS: +5,111 IDs! Added 68 EU brands (Eurotronic, Vimar, Hager,... |
 | **v5.5.643** | 🔌 SPECIALTY DEVICES: +158 IDs for air quality, CO/gas sensors, fans, locks, ... |
@@ -78,7 +79,6 @@
 | **v5.5.639** | 🌍 UNIVERSAL ZIGBEE: Added 651 manufacturer IDs across 18 drivers. Now suppor... |
 | **v5.5.638** | ✅ GitHub Issues #96, #99: Added Sonoff S60ZBTPE variant, smoke detector produ... |
 | **v5.5.637** | ✅ GitHub Issues: Added BSEED switches (_TZ3000_ysdv91bk, _TZ3000_blhvsaqf, _T... |
-| **v5.5.636** | 🔧 SYNC FIX: Added 164 missing manufacturerNames/productIds to app.json that ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
