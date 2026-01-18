@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.621** | 🔧 FIX: 8-gang switch (switch_wall_8gang) - Fixed DP mappings (Gang 7=DP101, ... |
 | **v5.5.620** | 🕐 MCU FULL SYNC: Added implicit time in heartbeat/dataQuery responses (cmd 0... |
 | **v5.5.619** | 🕐 TIME SYNC OVERHAUL: Passive mode - respond to device requests only (per Z2... |
 | **v5.5.618** | 🔧 CRITICAL FIX: Removed duplicate debounce in button_wireless_4 causing butt... |
@@ -78,7 +79,6 @@
 | **v5.5.614** | 🤖 Complete Automation: GitHub Actions monthly workflow, driver validator, Fl... |
 | **v5.5.613** | 🔄 Monthly Pipeline: Forum scanner, PR analyzer, device classifier. Auto-gene... |
 | **v5.5.612** | 🤖 Automation: Collision lint script, device matrix generator, DP mappings. 1... |
-| **v5.5.611** | 📚 Documentation: Added DRIVER_MAPPING_POLICY, CONTRIBUTING guide, forum resp... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
