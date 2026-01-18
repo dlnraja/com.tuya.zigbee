@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.617** | 🔧 Fixes: TS0044 _TZ3000_zgyzgdua Moes 4-button mode switching. HOBEIAN ZG-30... |
 | **v5.5.616** | 🆕 New Devices: HOBEIAN ZG-303Z climate sensor. Enhanced IAS Zone handling fo... |
 | **v5.5.615** | 🔧 Driver Fixes: Added capabilitiesOptions for button_wireless, energy_meter_... |
 | **v5.5.614** | 🤖 Complete Automation: GitHub Actions monthly workflow, driver validator, Fl... |
@@ -78,7 +79,6 @@
 | **v5.5.610** | 📱 Forum devices: Added BSeed 2-gang UK wall socket with USB (_TZE204_mvtclcl... |
 | **v5.5.609** | 🔧 Collision fixes: Fixed 7 critical sensor/switch collisions (Z2M research).... |
 | **v5.5.608** | 📋 Forum analysis: Added eWeLink CK-TLSR8656 temp/humidity sensor, verified Z... |
-| **v5.5.607** | 📡 IR Blaster Enrichment: +10 manufacturer IDs from Z2M/ZHA/Blakadder researc... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
