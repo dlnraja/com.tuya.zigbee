@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.620** | 🕐 MCU FULL SYNC: Added implicit time in heartbeat/dataQuery responses (cmd 0... |
 | **v5.5.619** | 🕐 TIME SYNC OVERHAUL: Passive mode - respond to device requests only (per Z2... |
 | **v5.5.618** | 🔧 CRITICAL FIX: Removed duplicate debounce in button_wireless_4 causing butt... |
 | **v5.5.617** | 🧠 INTELLIGENT TS004F Mode Switch: Exponential backoff retry (50-1000ms), mod... |
@@ -78,7 +79,6 @@
 | **v5.5.613** | 🔄 Monthly Pipeline: Forum scanner, PR analyzer, device classifier. Auto-gene... |
 | **v5.5.612** | 🤖 Automation: Collision lint script, device matrix generator, DP mappings. 1... |
 | **v5.5.611** | 📚 Documentation: Added DRIVER_MAPPING_POLICY, CONTRIBUTING guide, forum resp... |
-| **v5.5.610** | 📱 Forum devices: Added BSeed 2-gang UK wall socket with USB (_TZE204_mvtclcl... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
