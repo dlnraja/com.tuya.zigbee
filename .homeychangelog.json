@@ -1,4 +1,7 @@
 {
+  "5.5.657": {
+    "en": "🌐 UNIVERSAL ENGINE v4: Complete Time Sync (UTC+TZ+DST), DP parser with unknown fallback, handleTimeRequest() for ZCL/DP/MCU requests."
+  },
   "5.5.656": {
     "en": "📦 EXTENDED ZCL: Added IDENTIFY, GROUPS, SCENES, FAN, PRESSURE clusters. Complete ZCL standard cluster coverage for universal device support."
   },
