@@ -1,4 +1,7 @@
 {
+  "5.5.609": {
+    "en": "🔧 Collision fixes: Fixed 7 critical sensor/switch collisions (Z2M research). Removed misplaced BlitzWolf plug, switch IDs from sensor drivers."
+  },
   "5.5.608": {
     "en": "📋 Forum analysis: Added eWeLink CK-TLSR8656 temp/humidity sensor, verified Z2M latest IDs coverage."
   },
