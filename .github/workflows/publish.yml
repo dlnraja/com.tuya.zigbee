@@ -38,6 +38,9 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
 
+      - name: 🔄 Sync app.json with driver.compose.json
+        run: node scripts/maintenance/sync-app-json.js
+
       - name: 🔨 Build app
         run: npx homey app build
 
