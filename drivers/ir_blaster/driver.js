@@ -122,6 +122,22 @@ class IrBlasterDriver extends ZigBeeDriver {
       this.log('⚠️ ir_send_by_category not available:', err.message);
     }
 
+    // v5.5.606: AC command action (SmartIR compatible)
+    try {
+      this.irSendACAction = this.homey.flow.getActionCard('ir_send_ac_command');
+      this.irSendACAction.registerRunListener(async (args, state) => {
+        const device = args.device;
+        if (!device || typeof device.sendACCommand !== 'function') {
+          return false;
+        }
+        const { mode, temperature, fan_speed } = args;
+        return await device.sendACCommand(mode, temperature, fan_speed);
+      });
+      this.log('✅ ir_send_ac_command registered');
+    } catch (err) {
+      this.log('⚠️ ir_send_ac_command not available:', err.message);
+    }
+
     this.log('Action registration complete');
   }
 
