@@ -69,7 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.5.617** | 🔧 Fixes: TS0044 _TZ3000_zgyzgdua Moes 4-button mode switching. HOBEIAN ZG-30... |
+| **v5.5.617** | 🧠 INTELLIGENT TS004F Mode Switch: Exponential backoff retry (50-1000ms), mod... |
 | **v5.5.616** | 🆕 New Devices: HOBEIAN ZG-303Z climate sensor. Enhanced IAS Zone handling fo... |
 | **v5.5.615** | 🔧 Driver Fixes: Added capabilitiesOptions for button_wireless, energy_meter_... |
 | **v5.5.614** | 🤖 Complete Automation: GitHub Actions monthly workflow, driver validator, Fl... |
