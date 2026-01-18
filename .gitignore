@@ -4,6 +4,17 @@
 env.json
 node_modules/
 
+# Archive folder - temporary/analysis files, NEVER COMMIT
+.archive/
+
+# Temporary analysis files at root - NEVER CREATE THESE
+*.txt
+!README.txt
+*_ids.json
+*_orphans*.json
+*_mapping*.json
+tuya_full.ts
+
 # GitHub Pages (désactivé - mais on garde docs/ pour notre documentation)
 # docs/ <- ne plus ignorer, on utilise docs/ pour notre documentation
 _site/
