@@ -1,4 +1,7 @@
 {
+  "5.5.630": {
+    "en": "🔧 SDK3 BEST PRACTICES: Added isFirstInit() pattern + configureAttributeReporting for sleepy battery devices (HybridSensorBase). Added dropdown args to 8-gang button. Source: apps.developer.homey.app/wireless/zigbee"
+  },
   "5.5.629": {
     "en": "🔧 SDK3 FIX: Button flow cards now properly match selected button. Added dropdown args to 2/4/6-gang buttons. Based on Athom IKEA Tradfri official pattern (triggerFlow + state matching)."
   },
