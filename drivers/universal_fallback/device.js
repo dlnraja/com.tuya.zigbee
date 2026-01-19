@@ -2,6 +2,7 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
+const { syncDeviceTime } = require('../../lib/tuya/TuyaTimeSync');
 
 /**
  * UNIVERSAL FALLBACK DEVICE - v5.5.631
@@ -400,45 +401,20 @@ class UniversalFallbackDevice extends ZigBeeDevice {
   }
 
   async _setupTimeSync(zclNode) {
-    this.log('[TIMESYNC] Init v2');
+    this.log('[TIMESYNC] Init v4 - using TuyaTimeSync module');
     this._setupTuyaTimeListener();
-    this.homey.setTimeout(() => this._doTimeSync(zclNode), 5000);
-    this.homey.setInterval(() => this._doTimeSync(zclNode), 21600000);
+    this.homey.setTimeout(() => syncDeviceTime(this).catch(() => {}), 5000);
+    this.homey.setInterval(() => syncDeviceTime(this).catch(() => {}), 21600000);
   }
-  async _doTimeSync(zclNode) {
-    try {
-      const ep = zclNode?.endpoints?.[1];
-      if (ep?.clusters?.time) {
-        const t = Math.floor(Date.now()/1000) - 946684800;
-        await ep.clusters.time.writeAttributes({time:t});
-        this.log('[TIMESYNC] OK');
-      }
-    } catch(e) { this.log('[TIMESYNC] ZCL err', e.message); }
-  }
-
   _setupTuyaTimeListener() {
     if (!this.tuyaCluster?.on) return;
     try {
-      this.tuyaCluster.on('mcuSyncTime', () => this._sendTuyaTime());
-      this.log('[TIMESYNC] Tuya mcuSyncTime listener OK');
+      this.tuyaCluster.on('mcuSyncTime', () => {
+        this.log('[TIMESYNC] Device requested time sync');
+        syncDeviceTime(this, { preferTuya: true }).catch(() => {});
+      });
+      this.log('[TIMESYNC] mcuSyncTime listener active');
     } catch(e) {}
-  }
-
-  async _sendTuyaTime() {
-    if (!this.tuyaCluster) return;
-    try {
-      const d = new Date();
-      const buf = Buffer.alloc(8);
-      buf.writeUInt16BE(d.getFullYear(), 0);
-      buf.writeUInt8(d.getMonth()+1, 2);
-      buf.writeUInt8(d.getDate(), 3);
-      buf.writeUInt8(d.getHours(), 4);
-      buf.writeUInt8(d.getMinutes(), 5);
-      buf.writeUInt8(d.getSeconds(), 6);
-      buf.writeInt8(60, 7); // Europe/Paris offset
-      await this.tuyaCluster.mcuSyncTime({payload: buf});
-      this.log('[TIMESYNC] Tuya DP time sent');
-    } catch(e) { this.log('[TIMESYNC] Tuya err', e.message); }
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {

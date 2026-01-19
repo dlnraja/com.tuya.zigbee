@@ -1,4 +1,7 @@
 {
+  "5.5.683": { "en": "📋 GitHub Issues: BSEED switches (TS0001/TS0002/TS0003), Soil sensor TS0601 (_TZE284_aa03yzhs), PG-S11Z smoke detector - all already supported!" },
+  "5.5.682": { "en": "🔧 LocalTuya-inspired: Entity auto-detection, DP mappings for switch/light/cover/climate/fan/sensor. Enhanced TuyaEF00Manager with entity handler integration." },
+  "5.5.681": { "en": "🕐 TIME SYNC v4: zigbee-herdsman format (8-byte UTC+Local). TuyaTimeSync module integration. Epoch 2000 auto-detect for LCD devices (_TZE284/_TZE204)." },
   "5.5.679": {
     "en": "🕐 TIME SYNC v2: Full Tuya mcuSyncTime + ZCL Time cluster. +17 manufacturerName prefixes (MOES, eWeLink, SONOFF, LIDL). +26 productIds. 102 drivers audit-safe."
   },
