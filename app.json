@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.674",
+  "version": "5.5.675",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -5970,7 +5970,9 @@
           "Ecolink",
           "Dome",
           "Vision",
-          "Monoprice"
+          "Monoprice",
+          "_TZ3000_4ux0ondb",
+          "_TZ3000_yfekcy3n"
         ],
         "productId": [
           "TS0041",
@@ -7137,7 +7139,9 @@
           "Ecolink",
           "Dome",
           "Vision",
-          "Monoprice"
+          "Monoprice",
+          "_TZ3000_gjnozsaz",
+          "_TZ3000_a7ouggvs"
         ],
         "productId": [
           "TS0043"
@@ -7807,7 +7811,8 @@
           "Ecolink",
           "Dome",
           "Vision",
-          "Monoprice"
+          "Monoprice",
+          "_TZ3000_vp6clf9d"
         ],
         "productId": [
           "TS0726",
@@ -12418,7 +12423,9 @@
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
           "_TZE200_dcydapr2",
-          "_TZE200_dfry6ylv"
+          "_TZE200_dfry6ylv",
+          "_TZ3000_xr3htd96",
+          "_TZ3000_dowj6gyi"
         ],
         "productId": [
           "TS0201",
@@ -13564,7 +13571,8 @@
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
           "_TZE200_dcydapr2",
-          "_TZE200_dfry6ylv"
+          "_TZE200_dfry6ylv",
+          "_TZ3000_b7m9qda0"
         ],
         "productId": [
           "TS0203",
@@ -14492,7 +14500,8 @@
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
           "_TZE200_dcydapr2",
-          "_TZE200_dfry6ylv"
+          "_TZE200_dfry6ylv",
+          "_TZE200_aoclfnxz"
         ],
         "productId": [
           "TS0302",
@@ -28123,7 +28132,12 @@
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
           "_TZE200_dcydapr2",
-          "_TZE200_dfry6ylv"
+          "_TZE200_dfry6ylv",
+          "_TZE200_crq3r3la",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_6ygjfyll",
+          "_TZ3000_nss8amz9",
+          "_TZ3000_otvn3lne"
         ],
         "productId": [
           "TS0202",
@@ -29856,7 +29870,11 @@
           "Ecolink",
           "Dome",
           "Vision",
-          "Monoprice"
+          "Monoprice",
+          "_TZ3000_5ct6e7ye",
+          "_TZ3000_typdpdpg",
+          "_TZ3000_rdtixbnu",
+          "_TZ3000_w0qqde0g"
         ],
         "productId": [
           "TS0121",
@@ -33171,7 +33189,8 @@
           "Ecolink",
           "Dome",
           "Vision",
-          "Monoprice"
+          "Monoprice",
+          "_TZE204_qasjif9e"
         ],
         "productId": [
           "TS0225",
@@ -34865,7 +34884,9 @@
           "_TZE200_d8fp6ivb",
           "_TZE200_dcydapr2",
           "_TZE200_dfry6ylv",
-          "_TZE284_o3x45p96"
+          "_TZE284_o3x45p96",
+          "_TZE200_chyvmhay",
+          "_TZE200_cwbvmsar"
         ],
         "productId": [
           "TV01-ZB",
@@ -39630,7 +39651,9 @@
           "Broan",
           "Dome",
           "Vision",
-          "Monoprice"
+          "Monoprice",
+          "_TZ3210_up3pngle",
+          "_TZE200_ntcy3xu1"
         ],
         "endpoints": {
           "1": {
@@ -41141,7 +41164,9 @@
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
           "_TZE200_dcydapr2",
-          "_TZE200_dfry6ylv"
+          "_TZE200_dfry6ylv",
+          "_TZ3000_tqlv4ug4",
+          "_TZ3000_4hbrrn7e"
         ]
       },
       "images": {
@@ -50270,7 +50295,8 @@
           "_TZE200_d8fp6ivb",
           "_TZE200_dcydapr2",
           "_TZE200_dfry6ylv",
-          "_TZE284_o3x45p96"
+          "_TZE284_o3x45p96",
+          "_TZE200_s8gkrkxk"
         ],
         "productId": [
           "TS0601_thermo"
@@ -52666,7 +52692,8 @@
           "Tuya Water",
           "TUYATEC-h4wnrtck",
           "TUYATEC-ktev3uwq",
-          "TUYATEC-bduz1xxp"
+          "TUYATEC-bduz1xxp",
+          "_TZ3210_p68kms0l"
         ],
         "productId": [
           "TS0207",
