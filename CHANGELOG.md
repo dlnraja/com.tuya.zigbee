@@ -4,6 +4,19 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.686] - 2026-01-19
+
+### 🔌 Sonoff S60ZBTPF Smart Plug Support
+
+**Added SONOFF manufacturerName to plug_energy_monitor**
+- ✅ Sonoff S60ZBTPF (EU plug with energy monitoring)
+- ✅ Sonoff S60ZBTPG (UK plug)
+- ✅ Sonoff S60ZBTPE (?)
+- ZCL Electrical Measurement protocol (cluster 0x0B04)
+- Full energy monitoring: Power, Voltage, Current, Energy
+
+---
+
 ## [5.5.685] - 2026-01-19
 
 ### 📋 GitHub Issues Resolution - All 12 Issues Closed
