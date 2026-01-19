@@ -22,44 +22,27 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          4,
-          5,
-          6
+          0
         ],
-        "bindings": [
-          6
-        ]
+        "bindings": []
       },
       "2": {
         "clusters": [
-          4,
-          5,
-          6
+          0
         ],
-        "bindings": [
-          6
-        ]
+        "bindings": []
       },
       "3": {
         "clusters": [
-          4,
-          5,
-          6
+          0
         ],
-        "bindings": [
-          6
-        ]
+        "bindings": []
       },
       "4": {
         "clusters": [
-          4,
-          5,
-          6
+          0
         ],
-        "bindings": [
-          6
-        ]
+        "bindings": []
       }
     },
     "learnmode": {

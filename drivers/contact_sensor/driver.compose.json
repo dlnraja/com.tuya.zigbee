@@ -584,12 +584,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1280
+          0
         ],
-        "bindings": [
-          1280
-        ]
+        "bindings": []
       }
     },
     "learnmode": {
