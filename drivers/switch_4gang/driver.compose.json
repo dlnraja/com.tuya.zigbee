@@ -15,34 +15,9 @@
   "zigbee": {
     "productId": [
       "TS0004",
-      "TS0005",
-      "TS0006",
       "TS0014",
-      "TS0601",
-      "TS0726",
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0001_power",
-      "TS0001_switch",
-      "TS0002_power",
-      "TS0003_power",
       "TS0004_power",
-      "TS0001_switch_module",
-      "TS0002_switch_module",
-      "TS0003_switch_module",
-      "TS0041",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "TS0045",
-      "TS0046",
-      "TS000F",
-      "TS0121",
-      "TS0115"
+      "TS0004_switch_module"
     ],
     "endpoints": {
       "1": {
