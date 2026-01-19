@@ -400,7 +400,8 @@ class UniversalFallbackDevice extends ZigBeeDevice {
   }
 
   async _setupTimeSync(zclNode) {
-    this.log('[TIMESYNC] Init');
+    this.log('[TIMESYNC] Init v2');
+    this._setupTuyaTimeListener();
     this.homey.setTimeout(() => this._doTimeSync(zclNode), 5000);
     this.homey.setInterval(() => this._doTimeSync(zclNode), 21600000);
   }
@@ -412,7 +413,32 @@ class UniversalFallbackDevice extends ZigBeeDevice {
         await ep.clusters.time.writeAttributes({time:t});
         this.log('[TIMESYNC] OK');
       }
-    } catch(e) { this.log('[TIMESYNC] err', e.message); }
+    } catch(e) { this.log('[TIMESYNC] ZCL err', e.message); }
+  }
+
+  _setupTuyaTimeListener() {
+    if (!this.tuyaCluster?.on) return;
+    try {
+      this.tuyaCluster.on('mcuSyncTime', () => this._sendTuyaTime());
+      this.log('[TIMESYNC] Tuya mcuSyncTime listener OK');
+    } catch(e) {}
+  }
+
+  async _sendTuyaTime() {
+    if (!this.tuyaCluster) return;
+    try {
+      const d = new Date();
+      const buf = Buffer.alloc(8);
+      buf.writeUInt16BE(d.getFullYear(), 0);
+      buf.writeUInt8(d.getMonth()+1, 2);
+      buf.writeUInt8(d.getDate(), 3);
+      buf.writeUInt8(d.getHours(), 4);
+      buf.writeUInt8(d.getMinutes(), 5);
+      buf.writeUInt8(d.getSeconds(), 6);
+      buf.writeInt8(60, 7); // Europe/Paris offset
+      await this.tuyaCluster.mcuSyncTime({payload: buf});
+      this.log('[TIMESYNC] Tuya DP time sent');
+    } catch(e) { this.log('[TIMESYNC] Tuya err', e.message); }
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
@@ -432,4 +458,5 @@ class UniversalFallbackDevice extends ZigBeeDevice {
 }
 
 module.exports = UniversalFallbackDevice;
+
 

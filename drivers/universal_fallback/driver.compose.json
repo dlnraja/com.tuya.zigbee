@@ -17,11 +17,32 @@
     "manufacturerName": [
       "_TZE200_",
       "_TZE204_",
+      "_TZE284_",
       "_TZ3000_",
-      "_TZ3210_", "_TZE284_", "_TYZB01_", "TS", "TUYATEC"
+      "_TZ3210_",
+      "_TZ3400_",
+      "_TYZB01_",
+      "_TYZB02_",
+      "_TYST11_",
+      "_TZQ0_",
+      "TS",
+      "TUYATEC",
+      "Tuya",
+      "MOES",
+      "eWeLink",
+      "SONOFF",
+      "LIDL"
     ],
     "productId": [
-      "TS0601", "TS0001", "TS0011", "TS0121", "TS0201", "TS0202", "TS0203", "TS0501B", "TS0502B", "TS0504B", "TS011F", "TS004F", "TS110E", "TS130F"
+      "TS0601",
+      "TS0001", "TS0002", "TS0003", "TS0004",
+      "TS0011", "TS0012", "TS0013", "TS0014",
+      "TS0041", "TS0042", "TS0043", "TS0044",
+      "TS0121", "TS0201", "TS0202", "TS0203", "TS0204", "TS0205",
+      "TS0501A", "TS0501B", "TS0502A", "TS0502B", "TS0503A", "TS0503B", "TS0504A", "TS0504B",
+      "TS011F", "TS004F", "TS0215", "TS0216",
+      "TS110E", "TS110F", "TS130F",
+      "TS0101", "TS0111"
     ],
     "endpoints": {
       "1": {
