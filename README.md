@@ -3,7 +3,7 @@
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Devices](https://img.shields.io/badge/devices-4200+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Drivers](https://img.shields.io/badge/drivers-86-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Drivers](https://img.shields.io/badge/drivers-164-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
@@ -38,7 +38,7 @@
 | **SVG Icons** | 86 |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2025-12-27 |
+| **Last Updated** | 2026-01-19 |
 
 ### 📦 Top 15 Drivers by Device IDs
 
@@ -65,12 +65,15 @@
 ## 🚀 Latest Updates
 
 <!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### ✨ Recent Changes (Jan 2026)
+### ✨ Recent Changes (January 2026)
 
 | Version | Feature |
 |---------|---------|
 | **v5.5.684** | 🌬️ Air Quality Monitor: Added _TZE204_yvx5lh6k (5-in-1: CO2, VOC, Formaldehy... |
 | **v5.5.683** | 📋 GitHub Issues: BSEED switches (TS0001/TS0002/TS0003), Soil sensor TS0601 (... |
+| **v5.5.684** | 🌬️ Air Quality Monitor: Added _TZE204_yvx5lh6k (5-in-1: CO2, VOC, Formaldehyde, Temp, Humidity) |
+| **v5.5.683** | 📋 GitHub Issues: BSEED switches, Soil sensor TS0601, PG-S11Z smoke detector |
+| **v5.5.682** | 🔧 LocalTuya-inspired: Entity auto-detection, DP mappings for switch/light/cover/climate/fan/sensor |
 | **v5.5.682** | 🔧 LocalTuya-inspired: Entity auto-detection, DP mappings for switch/light/co... |
 | **v5.5.681** | 🕐 TIME SYNC v4: zigbee-herdsman format (8-byte UTC+Local). TuyaTimeSync modu... |
 | **v5.5.680** | 📋 +38 driver.flow.compose.json files. 102 drivers with flow cards. Publish v... |
@@ -408,5 +411,5 @@ If you find it useful and want to support continued development:
 
 **Made with ❤️ by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2025-12-04*
+*Last updated: 2026-01-19*
 # ZCL Time Cluster v5.5.208
