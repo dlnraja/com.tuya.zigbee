@@ -1,7 +1,13 @@
 {
-  "5.5.679": { "en": "🕐 TIME SYNC v2: Full Tuya mcuSyncTime + ZCL Time cluster. +17 manufacturerName prefixes (MOES, eWeLink, SONOFF, LIDL). +26 productIds. 102 drivers audit-safe." },
-  "5.5.678": { "en": "🔧 UNIVERSAL FALLBACK v2: Permissive matching (all _TZ/_TZE prefixes), Time Sync engine, progressive enrichment. Fixes 80% forum pairing issues." },
-  "5.5.677": { "en": "🚀 +35 ManufacturerNames from forum analysis (motion_sensor, plug_energy_monitor, climate_sensor, etc.). Enhanced GlobalTimeSyncEngine and EnrichmentScheduler. Zero productId collisions." },
+  "5.5.679": {
+    "en": "🕐 TIME SYNC v2: Full Tuya mcuSyncTime + ZCL Time cluster. +17 manufacturerName prefixes (MOES, eWeLink, SONOFF, LIDL). +26 productIds. 102 drivers audit-safe."
+  },
+  "5.5.678": {
+    "en": "🔧 UNIVERSAL FALLBACK v2: Permissive matching (all _TZ/_TZE prefixes), Time Sync engine, progressive enrichment. Fixes 80% forum pairing issues."
+  },
+  "5.5.677": {
+    "en": "🚀 +35 ManufacturerNames from forum analysis (motion_sensor, plug_energy_monitor, climate_sensor, etc.). Enhanced GlobalTimeSyncEngine and EnrichmentScheduler. Zero productId collisions."
+  },
   "5.5.664": {
     "en": "🧬 HYBRID ABSTRACTION: CapabilitiesResolver, ClusterMapper, DpInterpreter for unified ZCL+Tuya. ManufacturerDatabase with 13 ecosystem patterns (Tuya, Xiaomi, Philips, IKEA, etc.)."
   },
@@ -2643,5 +2649,8 @@
   "5.5.264": {
     "en": "FIX Ronny #706-708: _TZE204_gkfbdvyx has NO illuminance sensor, _TZE284_iadro9bf lux RAW conversion fixed",
     "fr": "FIX Ronny #706-708: _TZE204_gkfbdvyx sans capteur lux, conversion lux RAW corrigee"
+  },
+  "5.5.680": {
+    "en": "📋 +38 driver.flow.compose.json files. 102 drivers with flow cards. Publish validation passed."
   }
 }
