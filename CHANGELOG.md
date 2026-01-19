@@ -4,6 +4,38 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.677] - 2026-01-19
+
+### 🚀 Forum Analysis & Device Compatibility
+
+**+35 New ManufacturerNames from Community Forum**
+- Analyzed 1000+ forum posts for device diagnostics
+- Added manufacturerNames to 18 drivers:
+  - `motion_sensor`: _TZE200_crq3r3la, _TZ3000_mcxw5ehu, _TZ3000_402jjyro, _TZ3000_6ygjfyll, _TZ3000_nss8amz9, _TZ3000_otvn3lne, _TZ3000_bsvqrxru
+  - `water_leak_sensor`: _TZ3210_p68kms0l
+  - `button_wireless_1`: _TZ3000_4ux0ondb, _TZ3000_yfekcy3n
+  - `plug_energy_monitor`: _TZ3000_5ct6e7ye, _TZ3000_typdpdpg, _TZ3000_rdtixbnu, _TZ3000_w0qqde0g
+  - `button_wireless_3`: _TZ3000_gjnozsaz, _TZ3000_a7ouggvs
+  - `thermostat_tuya_dp`: _TZE200_s8gkrkxk
+  - `curtain_motor`: _TZE200_aoclfnxz, _TZE200_uj3f4wr5
+  - `contact_sensor`: _TZ3000_b7m9qda0, HOBEIAN
+  - `presence_sensor_radar`: _TZE204_qasjif9e, _TZE204_gkfbdvyx, _TZE284_iadro9bf
+  - `button_wireless_4`: _TZ3000_vp6clf9d, _TZ3000_zgyzgdua
+  - `switch_1gang`: _TZ3000_tqlv4ug4, _TZ3000_4hbrrn7e
+  - `switch_2gang`: _TZ3000_18ejxno0, _TZ3000_zmy4lslw
+  - `climate_sensor`: _TZ3000_xr3htd96, _TZ3000_dowj6gyi, _TZ3000_qaaysllp, _TZE200_lve3dvpy
+  - `smoke_detector_advanced`: _TZ3210_up3pngle, _TZE200_ntcy3xu1, _TZ3210_dse8ogfy
+  - `radiator_valve`: _TZE200_chyvmhay, _TZE200_cwbvmsar
+  - `soil_sensor`: _TZE200_myd45weu
+  - `led_controller_cct`: TS0501B
+
+**Architecture Improvements**
+- Enhanced `GlobalTimeSyncEngine` with device time request listener
+- Improved `EnrichmentScheduler` with exponential backoff and fallback
+- Zero productId collisions (validated by CI script)
+
+---
+
 ## [5.5.503] - 2026-01-12
 
 ### 🔧 Device Classification & Diagnostic Fixes
