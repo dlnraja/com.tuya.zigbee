@@ -1,0 +1,18 @@
+{
+  "triggers": [],
+  "conditions": [],
+  "actions": [
+    {
+      "id": "turn_on",
+      "title": {
+        "en": "Turn on"
+      }
+    },
+    {
+      "id": "turn_off",
+      "title": {
+        "en": "Turn off"
+      }
+    }
+  ]
+}
