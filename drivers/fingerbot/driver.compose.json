@@ -1,0 +1,171 @@
+{
+  "name": {
+    "en": "Fingerbot Button Pusher",
+    "fr": "Fingerbot Poussoir de Bouton",
+    "nl": "Fingerbot Knopdrukker",
+    "de": "Fingerbot Tastendrücker"
+  },
+  "class": "button",
+  "capabilities": [
+    "onoff",
+    "measure_battery",
+    "button.push"
+  ],
+  "capabilitiesOptions": {
+    "button.push": {
+      "title": {
+        "en": "Push Button",
+        "fr": "Appuyer sur le Bouton",
+        "nl": "Druk op Knop",
+        "de": "Taste Drücken"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2"
+    ],
+    "approximation": {
+      "usageConstant": 0.3
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3210_J4PDTZ9V",
+      "_tz3210_j4pdtz9v",
+      "_TZ3210_DSE8OGFY",
+      "_tz3210_dse8ogfy",
+      "_TZ3210_OKBSS9DY",
+      "_tz3210_okbss9dy",
+      "_TZ3210_232NRYQH",
+      "_tz3210_232nryqh"
+    ],
+    "productId": [
+      "TS0001",
+      "TS0001_fingerbot"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/fingerbot/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "fingerbot_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Operating Mode",
+        "fr": "Mode de Fonctionnement"
+      },
+      "value": "click",
+      "values": [
+        {
+          "id": "click",
+          "label": {
+            "en": "Click (push and release)",
+            "fr": "Clic (appuyer et relâcher)"
+          }
+        },
+        {
+          "id": "switch",
+          "label": {
+            "en": "Switch (toggle position)",
+            "fr": "Interrupteur (basculer position)"
+          }
+        },
+        {
+          "id": "program",
+          "label": {
+            "en": "Program (custom sequence)",
+            "fr": "Programme (séquence personnalisée)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "lower_limit",
+      "type": "number",
+      "label": {
+        "en": "Down Movement Limit (%)",
+        "fr": "Limite de Mouvement Bas (%)"
+      },
+      "value": 100,
+      "min": 50,
+      "max": 100,
+      "units": "%",
+      "hint": {
+        "en": "How far down the finger moves (50-100%)",
+        "fr": "Distance de descente du doigt (50-100%)"
+      }
+    },
+    {
+      "id": "upper_limit",
+      "type": "number",
+      "label": {
+        "en": "Up Movement Limit (%)",
+        "fr": "Limite de Mouvement Haut (%)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 50,
+      "units": "%",
+      "hint": {
+        "en": "How far up the finger moves (0-50%)",
+        "fr": "Distance de montée du doigt (0-50%)"
+      }
+    },
+    {
+      "id": "sustain_time",
+      "type": "number",
+      "label": {
+        "en": "Sustain Time (seconds)",
+        "fr": "Temps de Maintien (secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 10,
+      "units": "s",
+      "hint": {
+        "en": "How long to hold the button (0-10s)",
+        "fr": "Durée de maintien du bouton (0-10s)"
+      }
+    },
+    {
+      "id": "reverse_direction",
+      "type": "checkbox",
+      "label": {
+        "en": "Reverse Direction",
+        "fr": "Inverser la Direction"
+      },
+      "value": false,
+      "hint": {
+        "en": "Reverse the push direction",
+        "fr": "Inverser la direction de poussée"
+      }
+    }
+  ],
+  "images": {
+    "small": "drivers/fingerbot/assets/images/small.png",
+    "large": "drivers/fingerbot/assets/images/large.png",
+    "xlarge": "drivers/fingerbot/assets/images/xlarge.png"
+  },
+  "id": "fingerbot",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}
