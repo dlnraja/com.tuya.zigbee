@@ -65,15 +65,12 @@
 ## 🚀 Latest Updates
 
 <!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### ✨ Recent Changes (January 2026)
+### ✨ Recent Changes (Jan 2026)
 
 | Version | Feature |
 |---------|---------|
 | **v5.5.684** | 🌬️ Air Quality Monitor: Added _TZE204_yvx5lh6k (5-in-1: CO2, VOC, Formaldehy... |
 | **v5.5.683** | 📋 GitHub Issues: BSEED switches (TS0001/TS0002/TS0003), Soil sensor TS0601 (... |
-| **v5.5.684** | 🌬️ Air Quality Monitor: Added _TZE204_yvx5lh6k (5-in-1: CO2, VOC, Formaldehyde, Temp, Humidity) |
-| **v5.5.683** | 📋 GitHub Issues: BSEED switches, Soil sensor TS0601, PG-S11Z smoke detector |
-| **v5.5.682** | 🔧 LocalTuya-inspired: Entity auto-detection, DP mappings for switch/light/cover/climate/fan/sensor |
 | **v5.5.682** | 🔧 LocalTuya-inspired: Entity auto-detection, DP mappings for switch/light/co... |
 | **v5.5.681** | 🕐 TIME SYNC v4: zigbee-herdsman format (8-byte UTC+Local). TuyaTimeSync modu... |
 | **v5.5.680** | 📋 +38 driver.flow.compose.json files. 102 drivers with flow cards. Publish v... |
