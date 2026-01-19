@@ -311,35 +311,21 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          1794,
-          2820,
-          61184
+          0
         ],
-        "bindings": [
-          1,
-          6
-        ]
+        "bindings": []
       },
       "2": {
         "clusters": [
           6
         ],
-        "bindings": [
-          6
-        ]
+        "bindings": []
       },
       "3": {
         "clusters": [
           6
         ],
-        "bindings": [
-          6
-        ]
+        "bindings": []
       }
     },
     "learnmode": {
