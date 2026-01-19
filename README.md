@@ -69,6 +69,9 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.683** | 📋 GitHub Issues: BSEED switches (TS0001/TS0002/TS0003), Soil sensor TS0601 (... |
+| **v5.5.682** | 🔧 LocalTuya-inspired: Entity auto-detection, DP mappings for switch/light/co... |
+| **v5.5.681** | 🕐 TIME SYNC v4: zigbee-herdsman format (8-byte UTC+Local). TuyaTimeSync modu... |
 | **v5.5.680** | 📋 +38 driver.flow.compose.json files. 102 drivers with flow cards. Publish v... |
 | **v5.5.679** | 🕐 TIME SYNC v2: Full Tuya mcuSyncTime + ZCL Time cluster. +17 manufacturerNa... |
 | **v5.5.678** | 🔧 UNIVERSAL FALLBACK v2: Permissive matching (all _TZ/_TZE prefixes), Time S... |
@@ -76,9 +79,6 @@
 | **v5.5.664** | 🧬 HYBRID ABSTRACTION: CapabilitiesResolver, ClusterMapper, DpInterpreter for... |
 | **v5.5.663** | 🔬 DIAGNOSTIC ENGINE: Auto-explain device issues (D100-D500 codes). Anti-dupl... |
 | **v5.5.662** | 🔧 SDK3 FIX: HybridSwitchBase constructor must pass args to parent. Fixes swi... |
-| **v5.5.661** | 🗺️ CLUSTER-BRAND MAP: CLUSTER_BRAND_MAP for 19 ecosystems (Tuya, Xiaomi, Phi... |
-| **v5.5.660** | 🔄 MCU SYNC + BUTTONS: handleMcuFullSync() for TS0601 time sync, triggerButto... |
-| **v5.5.659** | 🧠 INTELLIGENT FALLBACK: intelligentFallback() infers caps from clusters, aut... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
