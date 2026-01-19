@@ -4,6 +4,18 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.688] - 2026-01-19
+
+### 🔧 CRITICAL FIX - Case-Insensitive Pairing
+
+**Fixed manufacturerName/productId matching during device pairing**
+- 🐛 Bug: Tuya devices report inconsistent casing (firmware dependent)
+- 🐛 Example: Device reports `_tze284_vvmbj46n` but driver has `_TZE284_VVMBJ46N`
+- ✅ Fix: `PermissiveMatchingEngine.js` now uses case-insensitive comparison
+- ✅ All matching levels (exact, manufacturer, productId) are now case-insensitive
+
+---
+
 ## [5.5.687] - 2026-01-19
 
 ### 📊 Tuya TS0601 _TZE284_vvmbj46n Technical Analysis
