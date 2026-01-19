@@ -70,22 +70,6 @@ jobs:
       - name: 📥 Checkout
         uses: actions/checkout@v4
 
-      - name: 🔑 Check HOMEY_PAT
-        env:
-          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-        run: |
-          if [ -z "${HOMEY_PAT}" ]; then
-            echo "::error::HOMEY_PAT not configured!"
-            echo "## ❌ Authentication Required" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### Setup:" >> $GITHUB_STEP_SUMMARY
-            echo "1. Go to [tools.developer.homey.app/me](https://tools.developer.homey.app/me)" >> $GITHUB_STEP_SUMMARY
-            echo "2. Copy your **Personal Access Token**" >> $GITHUB_STEP_SUMMARY
-            echo "3. Add as GitHub Secret: **HOMEY_PAT**" >> $GITHUB_STEP_SUMMARY
-            exit 1
-          fi
-          echo "✅ HOMEY_PAT configured (${#HOMEY_PAT} chars)"
-
       - name: 🚀 Publish (Athom Official)
         uses: athombv/github-action-homey-app-publish@v1
         id: publish
