@@ -15,13 +15,13 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_generic",
-      "_TZE204_generic",
-      "_TZ3000_generic",
-      "UNBRANDED"
+      "_TZE200_",
+      "_TZE204_",
+      "_TZ3000_",
+      "_TZ3210_", "_TZE284_", "_TYZB01_", "TS", "TUYATEC"
     ],
     "productId": [
-      "TS0601_fallback"
+      "TS0601", "TS0001", "TS0011", "TS0121", "TS0201", "TS0202", "TS0203", "TS0501B", "TS0502B", "TS0504B", "TS011F", "TS004F", "TS110E", "TS130F"
     ],
     "endpoints": {
       "1": {
@@ -195,3 +195,4 @@
     }
   ]
 }
+
