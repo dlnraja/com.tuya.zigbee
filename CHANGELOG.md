@@ -4,6 +4,16 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.692] - 2026-01-19
+
+### 🐛 Forum Bug Fixes (Hartmut_Dunker)
+
+- 🐛 **CRITICAL**: Fixed `switch_4gang` JSON parsing error causing "Cannot read properties of undefined (reading 'name')"
+- 🐛 Root cause: Malformed newline in `driver.compose.json` (backtick-n instead of proper newline)
+- ✅ User Hartmut_Dunker's BSEED 4-Gang Switch should now initialize correctly
+
+---
+
 ## [5.5.691] - 2026-01-19
 
 ### ✨ NEW: Fingerbot Button Pusher Driver
