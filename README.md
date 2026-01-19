@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.679** | 🕐 TIME SYNC v2: Full Tuya mcuSyncTime + ZCL Time cluster. +17 manufacturerNa... |
 | **v5.5.678** | 🔧 UNIVERSAL FALLBACK v2: Permissive matching (all _TZ/_TZE prefixes), Time S... |
 | **v5.5.677** | 🚀 +35 ManufacturerNames from forum analysis (motion_sensor, plug_energy_moni... |
 | **v5.5.664** | 🧬 HYBRID ABSTRACTION: CapabilitiesResolver, ClusterMapper, DpInterpreter for... |
@@ -78,7 +79,6 @@
 | **v5.5.660** | 🔄 MCU SYNC + BUTTONS: handleMcuFullSync() for TS0601 time sync, triggerButto... |
 | **v5.5.659** | 🧠 INTELLIGENT FALLBACK: intelligentFallback() infers caps from clusters, aut... |
 | **v5.5.658** | 🔀 HYBRID ARCHITECTURE: debouncedFlow() for 1-action-1-event, handleHybridDat... |
-| **v5.5.657** | 🌐 UNIVERSAL ENGINE v4: Complete Time Sync (UTC+TZ+DST), DP parser with unkno... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
