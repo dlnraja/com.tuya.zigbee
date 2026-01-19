@@ -4,6 +4,18 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.691] - 2026-01-19
+
+### ✨ NEW: Fingerbot Button Pusher Driver
+
+- ✅ Added dedicated `fingerbot` driver for Tuya Fingerbot Plus devices
+- ✅ Supported: `_TZ3210_j4pdtz9v`, `_TZ3210_dse8ogfy`, `_TZ3210_okbss9dy`, `_TZ3210_232nryqh`
+- ✅ Features: Push action, battery monitoring, mode selection (click/switch/program)
+- ✅ Settings: Movement limits, sustain time, reverse direction
+- 🐛 Removed `_TZ3210_j4pdtz9v` from wrong drivers (curtain_motor, dimmer_dual_channel, dimmer_wall_1gang)
+
+---
+
 ## [5.5.690] - 2026-01-19
 
 ### 🚨 CRITICAL FIX - TS0601 ProductId Missing in 65 Drivers
