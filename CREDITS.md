@@ -13,6 +13,39 @@ This application relies heavily on the incredible work of the Zigbee open-source
 
 ---
 
+## 🌟 KEY INSPIRATIONS
+
+### 🔥 LocalTuya (Home Assistant)
+| | |
+|---|---|
+| **Repository** | https://github.com/rospogrigio/localtuya |
+| **Creator** | **Rospogrigio** ([@rospogrigio](https://github.com/rospogrigio)) |
+| **License** | Apache-2.0 |
+
+**Inspiration Used:**
+- `LocalTuyaEntity` architecture pattern for entity-based DP handling
+- Entity type auto-detection (switch, light, cover, climate, fan, sensor)
+- DP-to-capability mapping methodology
+- Local-first philosophy (no cloud dependency)
+- `LocalTuyaEntityHandler.js` - Directly inspired by LocalTuya's entity system
+- `LocalTuyaDPDatabase.js` - DP database structure from LocalTuya patterns
+
+### 📦 TinyTuya (Python)
+| | |
+|---|---|
+| **Repository** | https://github.com/jasonacox/tinytuya |
+| **Creator** | **Jason Cox** ([@jasonacox](https://github.com/jasonacox)) |
+| **License** | MIT |
+
+**Inspiration Used:**
+- Tuya protocol documentation (v3.1, v3.3, v3.4)
+- DP (Data Point) table with standard Tuya values
+- Device type detection patterns
+- Energy monitoring value handling (current, voltage, power)
+- Battery-powered sensor handling strategies
+
+---
+
 ## 📦 PRIMARY DATA SOURCES
 
 ### 🔷 Zigbee2MQTT (Main Source)
@@ -21,7 +54,7 @@ This application relies heavily on the incredible work of the Zigbee open-source
 | **Repository** | https://github.com/Koenkk/zigbee2mqtt |
 | **Converters** | https://github.com/Koenkk/zigbee-herdsman-converters |
 | **Website** | https://www.zigbee2mqtt.io |
-| **Devices** | 4797+ supported |
+| **Devices** | 4800+ supported |
 | **License** | GPL-3.0 |
 | **Creator** | **Koen Kanters** ([@Koenkk](https://github.com/Koenkk)) |
 
@@ -98,10 +131,14 @@ This application relies heavily on the incredible work of the Zigbee open-source
 | **Repository** | https://github.com/JohanBendz/com.tuya.zigbee |
 | **License** | GPL-3.0 |
 | **Creator** | **Johan Bendz** ([@JohanBendz](https://github.com/JohanBendz)) |
+| **Statistics** | 164 forks, 1314+ issues, 177+ PRs analyzed |
 
 **Data Used:**
 - Homey-specific device implementations
 - Tuya device fingerprints for Homey
+- SDK2 to SDK3 migration patterns
+- Device driver structure and organization
+- Community device requests and implementations
 
 ---
 
@@ -244,13 +281,13 @@ https://www.matteralpha.com
 
 | Category | Count |
 |----------|-------|
-| **Total Devices** | 1372+ |
+| **Total Devices** | 4200+ |
 | **Categories** | 27 |
-| **Sources Used** | 15+ |
-| **Contributors Credited** | 50+ |
-| **Flow Cards** | 570 |
-| **Drivers** | 60 |
-| **Vendors Supported** | 529+ |
+| **Sources Used** | 20+ |
+| **Contributors Credited** | 60+ |
+| **Flow Cards** | 800+ |
+| **Drivers** | 164 |
+| **Vendors Supported** | 600+ |
 
 ---
 
@@ -310,6 +347,6 @@ https://www.matteralpha.com
 ---
 
 *This file is maintained as part of the Universal Tuya Zigbee app.*
-*Last updated: 2025-11-29*
+*Last updated: 2026-01-19*
 
 **Made with ❤️ by the Zigbee community**
