@@ -53,7 +53,7 @@ const ENERGY_DEVICE_CONFIGS = {
     }
   },
 
-  // Type C: ZCL Electrical Measurement (TS011F standard)
+  // Type C: ZCL Electrical Measurement (TS011F standard + Sonoff)
   'ZCL_ELECTRICAL': {
     sensors: [
       '_TZ3000_cphmq0q7', '_TZ3000_dpo1ysak', '_TZ3000_ew3ldmgx',
@@ -65,6 +65,7 @@ const ENERGY_DEVICE_CONFIGS = {
       '_TZ3000_zloso4jk', '_TZ3000_5f43h46b', '_TZ3000_cehuw1lw',
       '_TZ3000_g5xawfcq', '_TZ3000_hdopuwv6', '_TZ3000_mraovvmm',
       '_TZ3000_ss98ec5d', '_TZ3000_uwkja6z1', '_TZ3000_yujkchbz',
+      'SONOFF', 'Sonoff',  // Sonoff S60ZBTPF/S60ZBTPG/S60ZBTPE
     ],
     protocol: 'zcl',
     clusters: {
