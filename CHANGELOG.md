@@ -4,6 +4,24 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.696] - 2026-01-19
+
+### 🎛️ Flow Cards Fix - Moes Wireless Scene Switch
+
+**Issue:** `_TZ3000_zgyzgdua` (Moes 4-button wireless switch) had missing/non-functional flow cards.
+
+**Root Cause:** Duplicate manufacturerName in both `scene_switch_4` (0 flow cards) and `button_wireless_4` (16 flow cards).
+
+**Fix:**
+- 🔧 Removed `_TZ3000_zgyzgdua` from `scene_switch_4` driver
+- ✅ Moes wireless switches now correctly use `button_wireless_4` with full flow support
+- ➕ Added 16 flow cards to `scene_switch_4` for other devices (press/double/long for 4 buttons)
+- ➕ Updated `scene_switch_4/driver.js` with flow card registration
+
+**User Action Required:** Re-pair your Moes wireless switch after updating to v5.5.696.
+
+---
+
 ## [5.5.694] - 2026-01-19
 
 ### 🐛 Critical JSON Fix

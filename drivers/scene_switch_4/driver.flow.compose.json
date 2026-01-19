@@ -1,5 +1,179 @@
 {
-  "triggers": [],
+  "triggers": [
+    {
+      "id": "scene_switch_4_button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé",
+        "nl": "Knop ingedrukt",
+        "de": "Taste gedrückt"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] pressed",
+        "fr": "Bouton [[button]] appuyé",
+        "nl": "Knop [[button]] ingedrukt",
+        "de": "Taste [[button]] gedrückt"
+      },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "values": [
+            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } },
+            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } },
+            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3", "nl": "Knop 3", "de": "Taste 3" } },
+            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4", "nl": "Knop 4", "de": "Taste 4" } }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" },
+          "example": "1"
+        }
+      ]
+    },
+    {
+      "id": "scene_switch_4_button_double_press",
+      "title": {
+        "en": "Button double-pressed",
+        "fr": "Bouton double-cliqué",
+        "nl": "Knop dubbel ingedrukt",
+        "de": "Taste doppelt gedrückt"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] double-pressed",
+        "fr": "Bouton [[button]] double-cliqué",
+        "nl": "Knop [[button]] dubbel ingedrukt",
+        "de": "Taste [[button]] doppelt gedrückt"
+      },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" },
+          "values": [
+            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } },
+            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } },
+            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3", "nl": "Knop 3", "de": "Taste 3" } },
+            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4", "nl": "Knop 4", "de": "Taste 4" } }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" },
+          "example": "1"
+        }
+      ]
+    },
+    {
+      "id": "scene_switch_4_button_long_press",
+      "title": {
+        "en": "Button long-pressed",
+        "fr": "Bouton appui long",
+        "nl": "Knop lang ingedrukt",
+        "de": "Taste lange gedrückt"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] long-pressed",
+        "fr": "Bouton [[button]] appui long",
+        "nl": "Knop [[button]] lang ingedrukt",
+        "de": "Taste [[button]] lange gedrückt"
+      },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" },
+          "values": [
+            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } },
+            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } },
+            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3", "nl": "Knop 3", "de": "Taste 3" } },
+            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4", "nl": "Knop 4", "de": "Taste 4" } }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" },
+          "example": "1"
+        }
+      ]
+    },
+    {
+      "id": "scene_switch_4_button_1_pressed",
+      "title": { "en": "Button 1 pressed", "fr": "Bouton 1 appuyé", "nl": "Knop 1 ingedrukt", "de": "Taste 1 gedrückt" }
+    },
+    {
+      "id": "scene_switch_4_button_1_double",
+      "title": { "en": "Button 1 double-pressed", "fr": "Bouton 1 double-cliqué", "nl": "Knop 1 dubbel", "de": "Taste 1 doppelt" }
+    },
+    {
+      "id": "scene_switch_4_button_1_long",
+      "title": { "en": "Button 1 long-pressed", "fr": "Bouton 1 appui long", "nl": "Knop 1 lang", "de": "Taste 1 lange" }
+    },
+    {
+      "id": "scene_switch_4_button_2_pressed",
+      "title": { "en": "Button 2 pressed", "fr": "Bouton 2 appuyé", "nl": "Knop 2 ingedrukt", "de": "Taste 2 gedrückt" }
+    },
+    {
+      "id": "scene_switch_4_button_2_double",
+      "title": { "en": "Button 2 double-pressed", "fr": "Bouton 2 double-cliqué", "nl": "Knop 2 dubbel", "de": "Taste 2 doppelt" }
+    },
+    {
+      "id": "scene_switch_4_button_2_long",
+      "title": { "en": "Button 2 long-pressed", "fr": "Bouton 2 appui long", "nl": "Knop 2 lang", "de": "Taste 2 lange" }
+    },
+    {
+      "id": "scene_switch_4_button_3_pressed",
+      "title": { "en": "Button 3 pressed", "fr": "Bouton 3 appuyé", "nl": "Knop 3 ingedrukt", "de": "Taste 3 gedrückt" }
+    },
+    {
+      "id": "scene_switch_4_button_3_double",
+      "title": { "en": "Button 3 double-pressed", "fr": "Bouton 3 double-cliqué", "nl": "Knop 3 dubbel", "de": "Taste 3 doppelt" }
+    },
+    {
+      "id": "scene_switch_4_button_3_long",
+      "title": { "en": "Button 3 long-pressed", "fr": "Bouton 3 appui long", "nl": "Knop 3 lang", "de": "Taste 3 lange" }
+    },
+    {
+      "id": "scene_switch_4_button_4_pressed",
+      "title": { "en": "Button 4 pressed", "fr": "Bouton 4 appuyé", "nl": "Knop 4 ingedrukt", "de": "Taste 4 gedrückt" }
+    },
+    {
+      "id": "scene_switch_4_button_4_double",
+      "title": { "en": "Button 4 double-pressed", "fr": "Bouton 4 double-cliqué", "nl": "Knop 4 dubbel", "de": "Taste 4 doppelt" }
+    },
+    {
+      "id": "scene_switch_4_button_4_long",
+      "title": { "en": "Button 4 long-pressed", "fr": "Bouton 4 appui long", "nl": "Knop 4 lang", "de": "Taste 4 lange" }
+    },
+    {
+      "id": "scene_switch_4_battery_changed",
+      "title": { "en": "Battery level changed", "fr": "Niveau batterie changé", "nl": "Batterijniveau gewijzigd", "de": "Batteriestand geändert" },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": { "en": "Battery (%)", "fr": "Batterie (%)", "nl": "Batterij (%)", "de": "Batterie (%)" },
+          "example": 75
+        }
+      ]
+    }
+  ],
   "conditions": [],
   "actions": []
 }
