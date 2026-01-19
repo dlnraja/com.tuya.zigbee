@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.695** | 🐛 BSEED TS0726 Fix: Removed _tz3002_pzao9ls1 from button_wireless_4 - now co... |
 | **v5.5.694** | 🐛 Critical JSON Fix: Fixed malformed newline in 63 driver.compose.json files... |
 | **v5.5.693** | 🐛 Diagnostic Reports: smoke_detector_advanced EF00 cluster fix, TS0726 moved... |
 | **v5.5.692** | 🐛 switch_4gang JSON fix: Fixed malformed newline causing device init failure... |
@@ -78,7 +79,6 @@
 | **v5.5.688** | 🔧 Forum fixes: Multiple device support improvements based on community feedb... |
 | **v5.5.687** | 🔧 Device database: Enhanced manufacturer ID coverage for better pairing succ... |
 | **v5.5.686** | 🔧 Cluster binding: Improved EF00 cluster binding for TS0601 devices. |
-| **v5.5.685** | 🔧 Time sync: Enhanced mcuSyncTime for battery devices. |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
