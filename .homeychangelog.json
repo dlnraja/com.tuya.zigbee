@@ -1,4 +1,5 @@
 {
+  "5.5.696": { "en": "🎛️ Flow Cards Fix: scene_switch_4 now has 16 button flow cards (press/double/long for 4 buttons). Removed _TZ3000_zgyzgdua duplication - Moes wireless switches now use button_wireless_4 with full flow support." },
   "5.5.695": { "en": "🐛 BSEED TS0726 Fix: Removed _tz3002_pzao9ls1 from button_wireless_4 - now correctly pairs as switch_4gang (mains wall switch)." },
   "5.5.694": { "en": "🐛 Critical JSON Fix: Fixed malformed newline in 63 driver.compose.json files. GitHub Actions workflow now passes validation." },
   "5.5.693": { "en": "🐛 Diagnostic Reports: smoke_detector_advanced EF00 cluster fix, TS0726 moved to switch_4gang, TS0002 support verified." },
