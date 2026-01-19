@@ -4,6 +4,19 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.687] - 2026-01-19
+
+### 📊 Tuya TS0601 _TZE284_vvmbj46n Technical Analysis
+
+**Complete protocol study and implementation verification**
+- ✅ Added DP18 (humidity_report_interval) - was missing
+- ✅ Verified Time Sync with Tuya Epoch 2000 (TUYA_EPOCH_OFFSET = 946684800)
+- ✅ All DPs 1-20 properly mapped for TH05Z/ZG227C LCD sensors
+- ✅ Sleepy device behavior with onEndDeviceAnnounce() wake detection
+- 📄 Created technical documentation: `docs/devices/TS0601_TZE284_vvmbj46n.md`
+
+---
+
 ## [5.5.686] - 2026-01-19
 
 ### 🔌 Sonoff S60ZBTPF Smart Plug Support
