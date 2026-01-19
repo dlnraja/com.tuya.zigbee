@@ -402,14 +402,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          6,
-          2820,
-          1794
+          0
         ],
-        "bindings": [
-          2820
-        ]
+        "bindings": []
       }
     }
   },

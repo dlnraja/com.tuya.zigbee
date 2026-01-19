@@ -287,66 +287,39 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          5,
-          6
+          0
         ],
-        "bindings": [
-          1,
-          5,
-          6
-        ]
+        "bindings": []
       },
       "2": {
         "clusters": [
-          5,
-          6
+          0
         ],
-        "bindings": [
-          5,
-          6
-        ]
+        "bindings": []
       },
       "3": {
         "clusters": [
-          5,
-          6
+          0
         ],
-        "bindings": [
-          5,
-          6
-        ]
+        "bindings": []
       },
       "4": {
         "clusters": [
-          5,
-          6
+          0
         ],
-        "bindings": [
-          5,
-          6
-        ]
+        "bindings": []
       },
       "5": {
         "clusters": [
-          5,
-          6
+          0
         ],
-        "bindings": [
-          5,
-          6
-        ]
+        "bindings": []
       },
       "6": {
         "clusters": [
-          5,
-          6
+          0
         ],
-        "bindings": [
-          5,
-          6
-        ]
+        "bindings": []
       }
     }
   },
