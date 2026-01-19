@@ -4,6 +4,21 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.690] - 2026-01-19
+
+### 🚨 CRITICAL FIX - TS0601 ProductId Missing in 65 Drivers
+
+**Root cause of mass pairing failures (Jolink, gfi63, others)**
+- 🐛 Bug: 65 drivers had `_TZE284_`/`_TZE200_`/`_TZE204_` manufacturerNames but **missing** `TS0601` in productId
+- 🐛 Result: Devices paired as "Generic Zigbee" instead of correct driver
+- ✅ Fix: Added `TS0601` to productId in ALL affected drivers
+- ✅ Affected: smoke_detector_advanced, climate_sensor, thermostat_tuya_dp, presence_sensor_radar, and 61 more
+
+**Drivers fixed:**
+`air_purifier`, `air_quality_co2`, `button_emergency_sos`, `ceiling_fan`, `climate_sensor`, `contact_sensor`, `co_sensor`, `curtain_motor`, `dimmer_*`, `din_rail_*`, `doorbell`, `fan_controller`, `garage_door`, `gas_*`, `humidifier`, `hvac_*`, `ir_blaster`, `lock_smart`, `motion_sensor*`, `pet_feeder`, `plug_*`, `power_*`, `presence_sensor_*`, `radiator_*`, `shutter_*`, `siren`, `smart_*`, `switch_*gang`, `thermostat_*`, `usb_outlet_*`, `valve_*`, `vibration_sensor`, `water_*`, `weather_station_outdoor`
+
+---
+
 ## [5.5.689] - 2026-01-19
 
 ### 🐛 gfi63 Device Issues Resolution
