@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.684** | 🌬️ Air Quality Monitor: Added _TZE204_yvx5lh6k (5-in-1: CO2, VOC, Formaldehy... |
 | **v5.5.683** | 📋 GitHub Issues: BSEED switches (TS0001/TS0002/TS0003), Soil sensor TS0601 (... |
 | **v5.5.682** | 🔧 LocalTuya-inspired: Entity auto-detection, DP mappings for switch/light/co... |
 | **v5.5.681** | 🕐 TIME SYNC v4: zigbee-herdsman format (8-byte UTC+Local). TuyaTimeSync modu... |
@@ -78,7 +79,6 @@
 | **v5.5.677** | 🚀 +35 ManufacturerNames from forum analysis (motion_sensor, plug_energy_moni... |
 | **v5.5.664** | 🧬 HYBRID ABSTRACTION: CapabilitiesResolver, ClusterMapper, DpInterpreter for... |
 | **v5.5.663** | 🔬 DIAGNOSTIC ENGINE: Auto-explain device issues (D100-D500 codes). Anti-dupl... |
-| **v5.5.662** | 🔧 SDK3 FIX: HybridSwitchBase constructor must pass args to parent. Fixes swi... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
