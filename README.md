@@ -69,16 +69,16 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.5.684** | 🌬️ Air Quality Monitor: Added _TZE204_yvx5lh6k (5-in-1: CO2, VOC, Formaldehy... |
-| **v5.5.683** | 📋 GitHub Issues: BSEED switches (TS0001/TS0002/TS0003), Soil sensor TS0601 (... |
-| **v5.5.682** | 🔧 LocalTuya-inspired: Entity auto-detection, DP mappings for switch/light/co... |
-| **v5.5.681** | 🕐 TIME SYNC v4: zigbee-herdsman format (8-byte UTC+Local). TuyaTimeSync modu... |
-| **v5.5.680** | 📋 +38 driver.flow.compose.json files. 102 drivers with flow cards. Publish v... |
-| **v5.5.679** | 🕐 TIME SYNC v2: Full Tuya mcuSyncTime + ZCL Time cluster. +17 manufacturerNa... |
-| **v5.5.678** | 🔧 UNIVERSAL FALLBACK v2: Permissive matching (all _TZ/_TZE prefixes), Time S... |
-| **v5.5.677** | 🚀 +35 ManufacturerNames from forum analysis (motion_sensor, plug_energy_moni... |
-| **v5.5.664** | 🧬 HYBRID ABSTRACTION: CapabilitiesResolver, ClusterMapper, DpInterpreter for... |
-| **v5.5.663** | 🔬 DIAGNOSTIC ENGINE: Auto-explain device issues (D100-D500 codes). Anti-dupl... |
+| **v5.5.694** | 🐛 Critical JSON Fix: Fixed malformed newline in 63 driver.compose.json files... |
+| **v5.5.693** | 🐛 Diagnostic Reports: smoke_detector_advanced EF00 cluster fix, TS0726 moved... |
+| **v5.5.692** | 🐛 switch_4gang JSON fix: Fixed malformed newline causing device init failure... |
+| **v5.5.691** | 🤖 Fingerbot driver: New dedicated driver for Tuya Fingerbot Plus (_TZ3210_j4... |
+| **v5.5.690** | 🔧 TS0601 productId: Added to 5 drivers (air_purifier, air_quality_co2, butto... |
+| **v5.5.689** | 🔧 Case-insensitive matching: ManufacturerName matching now ignores case for ... |
+| **v5.5.688** | 🔧 Forum fixes: Multiple device support improvements based on community feedb... |
+| **v5.5.687** | 🔧 Device database: Enhanced manufacturer ID coverage for better pairing succ... |
+| **v5.5.686** | 🔧 Cluster binding: Improved EF00 cluster binding for TS0601 devices. |
+| **v5.5.685** | 🔧 Time sync: Enhanced mcuSyncTime for battery devices. |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
