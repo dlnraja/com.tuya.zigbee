@@ -35268,7 +35268,8 @@
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
           "_TZE200_dcydapr2",
-          "_TZE200_dfry6ylv"
+          "_TZE200_dfry6ylv",
+          "_TZE284_o3x45p96"
         ],
         "productId": [
           "TS0601",
@@ -40821,35 +40822,10 @@
       "zigbee": {
         "productId": [
           "TS0001",
-          "TS0002",
-          "TS0003",
-          "TS0004",
-          "TS0006",
           "TS0011",
-          "TS0012",
-          "TS0013",
-          "TS0014",
-          "TS0041",
-          "TS0046",
-          "TS0112",
-          "TS0302",
-          "TS0601",
           "TS0001_power",
           "TS0001_switch",
-          "TS0002_power",
-          "TS0003_power",
-          "TS0004_power",
-          "TS0001_switch_module",
-          "TS0002_switch_module",
-          "TS0003_switch_module",
-          "TS0042",
-          "TS0043",
-          "TS0044",
-          "TS0045",
-          "TS000F",
-          "TS0121",
-          "TS0115",
-          "TS0726"
+          "TS0001_switch_module"
         ],
         "endpoints": {
           "1": {
@@ -42104,32 +42080,9 @@
       "zigbee": {
         "productId": [
           "TS0002",
-          "TS0003",
           "TS0012",
-          "TS0601",
-          "TS0001",
-          "TS0004",
-          "TS0011",
-          "TS0013",
-          "TS0014",
-          "TS0001_power",
-          "TS0001_switch",
           "TS0002_power",
-          "TS0003_power",
-          "TS0004_power",
-          "TS0001_switch_module",
-          "TS0002_switch_module",
-          "TS0003_switch_module",
-          "TS0041",
-          "TS0042",
-          "TS0043",
-          "TS0044",
-          "TS0045",
-          "TS0046",
-          "TS000F",
-          "TS0121",
-          "TS0115",
-          "TS0726"
+          "TS0002_switch_module"
         ],
         "learnmode": {
           "image": "/drivers/switch_2gang/assets/learnmode.svg",
@@ -43144,32 +43097,9 @@
       "zigbee": {
         "productId": [
           "TS0003",
-          "TS0004",
           "TS0013",
-          "TS0601",
-          "TS0001",
-          "TS0002",
-          "TS0011",
-          "TS0012",
-          "TS0014",
-          "TS0001_power",
-          "TS0001_switch",
-          "TS0002_power",
           "TS0003_power",
-          "TS0004_power",
-          "TS0001_switch_module",
-          "TS0002_switch_module",
-          "TS0003_switch_module",
-          "TS0041",
-          "TS0042",
-          "TS0043",
-          "TS0044",
-          "TS0045",
-          "TS0046",
-          "TS000F",
-          "TS0121",
-          "TS0115",
-          "TS0726"
+          "TS0003_switch_module"
         ],
         "endpoints": {
           "1": {
@@ -44118,34 +44048,9 @@
       "zigbee": {
         "productId": [
           "TS0004",
-          "TS0005",
-          "TS0006",
           "TS0014",
-          "TS0601",
-          "TS0726",
-          "TS0001",
-          "TS0002",
-          "TS0003",
-          "TS0011",
-          "TS0012",
-          "TS0013",
-          "TS0001_power",
-          "TS0001_switch",
-          "TS0002_power",
-          "TS0003_power",
           "TS0004_power",
-          "TS0001_switch_module",
-          "TS0002_switch_module",
-          "TS0003_switch_module",
-          "TS0041",
-          "TS0042",
-          "TS0043",
-          "TS0044",
-          "TS0045",
-          "TS0046",
-          "TS000F",
-          "TS0121",
-          "TS0115"
+          "TS0004_switch_module"
         ],
         "endpoints": {
           "1": {
@@ -50793,7 +50698,8 @@
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
           "_TZE200_dcydapr2",
-          "_TZE200_dfry6ylv"
+          "_TZE200_dfry6ylv",
+          "_TZE284_o3x45p96"
         ],
         "productId": [
           "TS0011",
