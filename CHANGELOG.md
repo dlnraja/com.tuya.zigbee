@@ -4,6 +4,18 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.689] - 2026-01-19
+
+### 🐛 gfi63 Device Issues Resolution
+
+**Fixed GitHub Issues #26, #27, #33, #108**
+- ✅ Issue #108: Added `TS0601` to `air_quality_comprehensive` productId for `_TZE204_yvx5lh6k`
+- ✅ Issue #27: Added `_TZ3000_npg02xft` to `plug_energy_monitor` for TS011F socket
+- ✅ Issue #27: Removed `_TZ3000_npg02xft` from `climate_sensor` (wrong driver)
+- ✅ Issue #26: `_TZ3000_lqpt3mvr` / TS0210 already in `vibration_sensor` driver
+
+---
+
 ## [5.5.688] - 2026-01-19
 
 ### 🔧 CRITICAL FIX - Case-Insensitive Pairing
