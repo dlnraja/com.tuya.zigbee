@@ -4,6 +4,25 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.693] - 2026-01-19
+
+### 🐛 Diagnostic Reports Fixes
+
+**3 diagnostic reports processed from v5.5.684 users:**
+
+1. **Smoke Detector `_TZE284_rccxox8p`** (Jolink)
+   - 🐛 Added cluster 61184 (0xEF00) to `smoke_detector_advanced` endpoints
+   - ✅ TS0601 Tuya DP devices will now properly bind to EF00 cluster
+
+2. **TS0002 Switch `_TZ3000_l9brjwau`**
+   - ✅ Already present in `switch_2gang` - user needs to update to v5.5.693
+
+3. **BSEED TS0726 4-Gang Wall Switch** (mains-powered)
+   - 🐛 Moved `TS0726` from `button_wireless_4` to `switch_4gang`
+   - ✅ Was incorrectly classified as battery button instead of mains wall switch
+
+---
+
 ## [5.5.692] - 2026-01-19
 
 ### 🐛 Forum Bug Fixes (Hartmut_Dunker)
