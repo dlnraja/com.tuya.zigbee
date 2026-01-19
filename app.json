@@ -303,7 +303,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_air_purifier"
         ],
         "endpoints": {
           "1": {
@@ -607,8 +607,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0201",
-          "TS0601"
+          "TS0601_co2"
         ],
         "endpoints": {
           "1": {
@@ -989,9 +988,7 @@
         ],
         "productId": [
           "TS0005",
-          "TS0006",
-          "TS0501",
-          "TS0601"
+          "TS0006"
         ],
         "endpoints": {
           "1": {
@@ -1545,73 +1542,26 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0502A",
-          "TS0502B",
           "TS0501A",
           "TS0501B",
-          "TS0503A",
-          "TS0503B",
-          "TS0504A",
-          "TS0504B",
-          "TS0505A",
-          "TS0505B",
           "TS110E",
           "TS110F",
-          "LED1545G12",
-          "LED1546G12",
           "LED1623G12",
           "LED1649C5",
           "LED1836G9",
-          "LCT001",
-          "LCT002",
-          "LCT003",
-          "LCT007",
-          "LCT010",
-          "LCT011",
-          "LCT012",
-          "LCT014",
-          "LCT015",
-          "LCT016",
-          "LTW001",
-          "LTW004",
-          "LTW010",
-          "LTW012",
-          "LTW013",
-          "LTW015",
           "LWB004",
           "LWB006",
           "LWB010",
           "LWB014",
-          "Classic A60 TW",
-          "Classic A60 RGBW",
-          "Flex RGBW",
           "Plug 01",
           "A19 W 10 year",
           "BR30 W 10 year",
           "PAR38 W 10 year",
-          "GL-C-006",
-          "GL-C-007",
-          "GL-C-008",
           "GL-B-001Z",
-          "GL-B-007Z",
-          "GL-B-008Z",
-          "RB 185 C",
-          "RB 285 C",
           "RS 125",
-          "RS 128 T",
           "RB 165",
           "RB 175 W",
-          "RB 178 T",
-          "E11-G13",
-          "E11-G14",
-          "E11-G23",
-          "E11-N13",
-          "E11-N14",
-          "E12-N13",
-          "E12-N14",
-          "ZBT-DimmableLight",
-          "ZBT-ColorLight",
-          "ZBT-CCTLight"
+          "ZBT-DimmableLight"
         ],
         "endpoints": {
           "1": {
@@ -2348,21 +2298,6 @@
         "productId": [
           "TS0503A",
           "TS0503B",
-          "TS0504A",
-          "TS0504B",
-          "TS0501A",
-          "TS0501B",
-          "TS0502A",
-          "TS0502B",
-          "TS0505A",
-          "TS0505B",
-          "TS110E",
-          "TS110F",
-          "LED1545G12",
-          "LED1546G12",
-          "LED1623G12",
-          "LED1649C5",
-          "LED1836G9",
           "LCT001",
           "LCT002",
           "LCT003",
@@ -2373,46 +2308,13 @@
           "LCT014",
           "LCT015",
           "LCT016",
-          "LTW001",
-          "LTW004",
-          "LTW010",
-          "LTW012",
-          "LTW013",
-          "LTW015",
-          "LWB004",
-          "LWB006",
-          "LWB010",
-          "LWB014",
-          "Classic A60 TW",
-          "Classic A60 RGBW",
-          "Flex RGBW",
-          "Plug 01",
-          "A19 W 10 year",
-          "BR30 W 10 year",
-          "PAR38 W 10 year",
           "GL-C-006",
-          "GL-C-007",
-          "GL-C-008",
-          "GL-B-001Z",
-          "GL-B-007Z",
-          "GL-B-008Z",
           "RB 185 C",
           "RB 285 C",
-          "RS 125",
-          "RS 128 T",
-          "RB 165",
-          "RB 175 W",
-          "RB 178 T",
           "E11-G13",
           "E11-G14",
           "E11-G23",
-          "E11-N13",
-          "E11-N14",
-          "E12-N13",
-          "E12-N14",
-          "ZBT-DimmableLight",
-          "ZBT-ColorLight",
-          "ZBT-CCTLight"
+          "ZBT-ColorLight"
         ]
       },
       "settings": [
@@ -3125,73 +3027,14 @@
         ],
         "productId": [
           "generic",
-          "TS0501A",
-          "TS0501B",
-          "TS0502A",
-          "TS0502B",
-          "TS0503A",
-          "TS0503B",
           "TS0504A",
           "TS0504B",
           "TS0505A",
           "TS0505B",
-          "TS110E",
-          "TS110F",
-          "LED1545G12",
-          "LED1546G12",
-          "LED1623G12",
-          "LED1649C5",
-          "LED1836G9",
-          "LCT001",
-          "LCT002",
-          "LCT003",
-          "LCT007",
-          "LCT010",
-          "LCT011",
-          "LCT012",
-          "LCT014",
-          "LCT015",
-          "LCT016",
-          "LTW001",
-          "LTW004",
-          "LTW010",
-          "LTW012",
-          "LTW013",
-          "LTW015",
-          "LWB004",
-          "LWB006",
-          "LWB010",
-          "LWB014",
-          "Classic A60 TW",
           "Classic A60 RGBW",
           "Flex RGBW",
-          "Plug 01",
-          "A19 W 10 year",
-          "BR30 W 10 year",
-          "PAR38 W 10 year",
-          "GL-C-006",
-          "GL-C-007",
           "GL-C-008",
-          "GL-B-001Z",
-          "GL-B-007Z",
-          "GL-B-008Z",
-          "RB 185 C",
-          "RB 285 C",
-          "RS 125",
-          "RS 128 T",
-          "RB 165",
-          "RB 175 W",
-          "RB 178 T",
-          "E11-G13",
-          "E11-G14",
-          "E11-G23",
-          "E11-N13",
-          "E11-N14",
-          "E12-N13",
-          "E12-N14",
-          "ZBT-DimmableLight",
-          "ZBT-ColorLight",
-          "ZBT-CCTLight"
+          "GL-B-008Z"
         ],
         "endpoints": {
           "1": {
@@ -3761,70 +3604,23 @@
         "productId": [
           "TS0502A",
           "TS0502B",
-          "TS0501A",
-          "TS0501B",
-          "TS0503A",
-          "TS0503B",
-          "TS0504A",
-          "TS0504B",
-          "TS0505A",
-          "TS0505B",
-          "TS110E",
-          "TS110F",
           "LED1545G12",
           "LED1546G12",
-          "LED1623G12",
-          "LED1649C5",
-          "LED1836G9",
-          "LCT001",
-          "LCT002",
-          "LCT003",
-          "LCT007",
-          "LCT010",
-          "LCT011",
-          "LCT012",
-          "LCT014",
-          "LCT015",
-          "LCT016",
           "LTW001",
           "LTW004",
           "LTW010",
           "LTW012",
           "LTW013",
           "LTW015",
-          "LWB004",
-          "LWB006",
-          "LWB010",
-          "LWB014",
           "Classic A60 TW",
-          "Classic A60 RGBW",
-          "Flex RGBW",
-          "Plug 01",
-          "A19 W 10 year",
-          "BR30 W 10 year",
-          "PAR38 W 10 year",
-          "GL-C-006",
           "GL-C-007",
-          "GL-C-008",
-          "GL-B-001Z",
           "GL-B-007Z",
-          "GL-B-008Z",
-          "RB 185 C",
-          "RB 285 C",
-          "RS 125",
           "RS 128 T",
-          "RB 165",
-          "RB 175 W",
           "RB 178 T",
-          "E11-G13",
-          "E11-G14",
-          "E11-G23",
           "E11-N13",
           "E11-N14",
           "E12-N13",
           "E12-N14",
-          "ZBT-DimmableLight",
-          "ZBT-ColorLight",
           "ZBT-CCTLight"
         ],
         "endpoints": {
@@ -4349,8 +4145,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0501A",
-          "TS0501B"
+          "TS0501"
         ],
         "endpoints": {
           "1": {
@@ -5501,11 +5296,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0041",
-          "TS0042",
-          "TS0043",
-          "TS0044",
-          "TS0601"
+          "TS0040"
         ],
         "endpoints": {
           "1": {
@@ -6183,13 +5974,7 @@
         ],
         "productId": [
           "TS0041",
-          "TS0601",
           "ZG-101ZL",
-          "TS0042",
-          "TS0043",
-          "TS0044",
-          "TS004F",
-          "TS0046",
           "WXKG01LM",
           "WXKG02LM",
           "WXKG03LM",
@@ -6771,37 +6556,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0042",
-          "TS0601",
-          "TS0041",
-          "TS0043",
-          "TS0044",
-          "TS004F",
-          "TS0046",
-          "WXKG01LM",
-          "WXKG02LM",
-          "WXKG03LM",
-          "WXKG11LM",
-          "WXKG12LM",
-          "WXKG06LM",
-          "WXKG07LM",
-          "lumi.sensor_switch",
-          "lumi.sensor_switch.aq2",
-          "lumi.sensor_switch.aq3",
-          "lumi.remote.b1acn01",
-          "E1524/E1810",
-          "E1743",
-          "E1812",
-          "E1744",
-          "E2001/E2002",
-          "E2123",
-          "RWL020",
-          "RWL021",
-          "RWL022",
-          "ROM001",
-          "3450-L",
-          "SNZB-01",
-          "SNZB-01P"
+          "TS0042"
         ],
         "endpoints": {
           "1": {
@@ -7385,37 +7140,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0043",
-          "TS0601",
-          "TS0041",
-          "TS0042",
-          "TS0044",
-          "TS004F",
-          "TS0046",
-          "WXKG01LM",
-          "WXKG02LM",
-          "WXKG03LM",
-          "WXKG11LM",
-          "WXKG12LM",
-          "WXKG06LM",
-          "WXKG07LM",
-          "lumi.sensor_switch",
-          "lumi.sensor_switch.aq2",
-          "lumi.sensor_switch.aq3",
-          "lumi.remote.b1acn01",
-          "E1524/E1810",
-          "E1743",
-          "E1812",
-          "E1744",
-          "E2001/E2002",
-          "E2123",
-          "RWL020",
-          "RWL021",
-          "RWL022",
-          "ROM001",
-          "3450-L",
-          "SNZB-01",
-          "SNZB-01P"
+          "TS0043"
         ],
         "learnmode": {
           "image": "/drivers/button_wireless_3/assets/learnmode.svg",
@@ -8086,36 +7811,8 @@
         ],
         "productId": [
           "TS0726",
-          "TS0041",
           "TS0044",
-          "TS004F",
-          "TS0042",
-          "TS0043",
-          "TS0046",
-          "WXKG01LM",
-          "WXKG02LM",
-          "WXKG03LM",
-          "WXKG11LM",
-          "WXKG12LM",
-          "WXKG06LM",
-          "WXKG07LM",
-          "lumi.sensor_switch",
-          "lumi.sensor_switch.aq2",
-          "lumi.sensor_switch.aq3",
-          "lumi.remote.b1acn01",
-          "E1524/E1810",
-          "E1743",
-          "E1812",
-          "E1744",
-          "E2001/E2002",
-          "E2123",
-          "RWL020",
-          "RWL021",
-          "RWL022",
-          "ROM001",
-          "3450-L",
-          "SNZB-01",
-          "SNZB-01P"
+          "TS004F"
         ],
         "learnmode": {
           "image": "/drivers/button_wireless_4/assets/learnmode.svg",
@@ -9395,8 +9092,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0044",
-          "TS004F"
+          "TS0048"
         ],
         "endpoints": {
           "1": {
@@ -9970,7 +9666,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_fan"
         ],
         "endpoints": {
           "1": {
@@ -12727,8 +12423,6 @@
         "productId": [
           "TS0201",
           "TS0222",
-          "TS0225",
-          "TS0601",
           "TH01",
           "WSDCGQ01LM",
           "WSDCGQ11LM",
@@ -12738,9 +12432,7 @@
           "lumi.weather",
           "SNZB-02",
           "SNZB-02D",
-          "SNZB-02P",
-          "SML001",
-          "E1744"
+          "SNZB-02P"
         ],
         "endpoints": {
           "1": {
@@ -13293,7 +12985,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_co"
         ],
         "endpoints": {
           "1": {
@@ -13876,11 +13568,8 @@
         ],
         "productId": [
           "TS0203",
-          "TS0210",
-          "TS0601",
           "ZG-102Z",
           "ZG-102ZL",
-          "ZG-102ZM",
           "DS01",
           "RH3001",
           "MCCGQ01LM",
@@ -14807,7 +14496,6 @@
         ],
         "productId": [
           "TS0302",
-          "TS0601",
           "ZC-LS02",
           "TS130F",
           "DS82",
@@ -15422,7 +15110,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_curtain_tilt"
         ],
         "endpoints": {
           "1": {
@@ -15766,7 +15454,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_dimmer3"
         ],
         "endpoints": {
           "1": {
@@ -16099,7 +15787,6 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601",
           "TS1101"
         ],
         "endpoints": {
@@ -16705,9 +16392,7 @@
           "_TZE200_dfry6ylv"
         ],
         "productId": [
-          "TS0101",
-          "TS0111",
-          "TS0601"
+          "TS0601_dim1"
         ],
         "endpoints": {
           "1": {
@@ -17392,8 +17077,6 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601",
-          "TS011F",
           "SPM01-1Z2",
           "SDM01-3Z1",
           "SDM02-2Z1",
@@ -17704,10 +17387,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0001",
-          "TS0011",
-          "TS0601",
-          "TS011F"
+          "TS0001_din"
         ],
         "endpoints": {
           "1": {
@@ -17979,7 +17659,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_door"
         ],
         "endpoints": {
           "1": {
@@ -18512,8 +18192,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0211",
-          "TS0601"
+          "TS0211"
         ],
         "endpoints": {
           "1": {
@@ -19043,7 +18722,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_3phase"
         ],
         "endpoints": {
           "1": {
@@ -19332,9 +19011,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601",
-          "TS0501A",
-          "TS0501B"
+          "TS0601_fanctrl"
         ],
         "endpoints": {
           "1": {
@@ -19614,7 +19291,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_lock"
         ],
         "endpoints": {
           "1": {
@@ -19888,7 +19565,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_hcho"
         ],
         "endpoints": {
           "1": {
@@ -20181,8 +19858,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601",
-          "TS0001"
+          "TS0601_garage"
         ],
         "endpoints": {
           "1": {
@@ -20495,8 +20171,7 @@
           }
         },
         "productId": [
-          "TS0204",
-          "TS0601"
+          "TS0204"
         ]
       },
       "settings": [
@@ -21050,7 +20725,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_gas"
         ],
         "endpoints": {
           "1": {
@@ -21569,7 +21244,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_gw"
         ],
         "endpoints": {
           "1": {
@@ -22169,7 +21844,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_generic"
         ],
         "endpoints": {
           "1": {
@@ -22509,7 +22184,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_humid"
         ],
         "endpoints": {
           "1": {
@@ -22873,7 +22548,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_ac"
         ],
         "endpoints": {
           "1": {
@@ -23454,7 +23129,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_dehum"
         ],
         "endpoints": {
           "1": {
@@ -24010,8 +23685,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS1201",
-          "TS0601"
+          "TS1201"
         ],
         "endpoints": {
           "1": {
@@ -24271,7 +23945,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0201"
+          "TS0601_lcd"
         ],
         "endpoints": {
           "1": {
@@ -24824,7 +24498,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS1101"
+          "TS0601_led"
         ],
         "endpoints": {
           "1": {
@@ -25405,7 +25079,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_strip"
         ],
         "endpoints": {
           "1": {
@@ -25952,7 +25626,7 @@
           }
         },
         "productId": [
-          "TS0601"
+          "TS0601_strip_adv"
         ]
       },
       "settings": [
@@ -26485,7 +26159,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_strip_rgbw"
         ],
         "endpoints": {
           "1": {
@@ -27060,7 +26734,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_smartlock"
         ],
         "endpoints": {
           "1": {
@@ -27602,8 +27276,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0001",
-          "TS0011"
+          "ZBMINI",
+          "ZBMINI-L"
         ],
         "endpoints": {
           "1": {
@@ -28453,10 +28127,6 @@
         ],
         "productId": [
           "TS0202",
-          "TS0210",
-          "TS0222",
-          "TS0225",
-          "TS0601",
           "ZG-204Z",
           "MS01",
           "RH3040",
@@ -29100,9 +28770,7 @@
           }
         },
         "productId": [
-          "TS0202",
-          "TS0225",
-          "TS0601"
+          "TS0601_mmwave"
         ]
       },
       "settings": [
@@ -29744,7 +29412,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_feeder"
         ],
         "endpoints": {
           "1": {
@@ -30192,12 +29860,9 @@
         ],
         "productId": [
           "TS0121",
-          "TS0201",
-          "TS0601",
           "TS011F",
           "A7Z",
           "A11Z",
-          "TS0101",
           "SP-EUC01",
           "SP-EUC02",
           "SP 120",
@@ -30210,7 +29875,6 @@
           "S31 Lite zb",
           "S26R2ZB",
           "S40ZBTPB",
-          "TS0601_din",
           "LSPA9",
           "HY0105",
           "HY0104",
@@ -30995,37 +30659,8 @@
           "_TZE200_dfry6ylv"
         ],
         "productId": [
-          "TS0001",
           "TS0111",
-          "TS0115",
-          "TS0121",
-          "TS0218",
-          "TS0601",
-          "S60ZBTPF",
-          "S60ZBTPG",
-          "S60ZBTPE",
-          "TS011F",
-          "TS0101",
-          "SP-EUC01",
-          "SP-EUC02",
-          "SP 120",
-          "SP 220",
-          "SP 222",
-          "S31ZB",
-          "S31 Lite zb",
-          "S26R2ZB",
-          "S40ZBTPB",
-          "TS0601_din",
-          "LSPA9",
-          "HY0105",
-          "HY0104",
-          "JZ-ZB-005",
-          "ZBMINIL2",
-          "lumi.plug.maeu01",
-          "lumi.plug.macn01",
-          "lumi.plug.mmeu01",
-          "E1603/E1702/E1708",
-          "TRADFRI control outlet"
+          "TS0101"
         ],
         "endpoints": {
           "1": {
@@ -31885,9 +31520,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601",
-          "TS011F",
-          "TS0001"
+          "TS0601_pool"
         ],
         "endpoints": {
           "1": {
@@ -32222,7 +31855,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_clamp"
         ],
         "endpoints": {
           "1": {
@@ -32650,7 +32283,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_meter"
         ],
         "endpoints": {
           "1": {
@@ -32941,7 +32574,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_ceiling"
         ],
         "endpoints": {
           "1": {
@@ -33542,7 +33175,6 @@
         ],
         "productId": [
           "TS0225",
-          "TS0601",
           "ZG-204ZL",
           "ZG-204ZV",
           "ZG-204ZH",
@@ -33976,11 +33608,7 @@
       ],
       "zigbee": {
         "productId": [
-          "TS0001",
-          "TS0002",
-          "TS0011",
-          "TS0012",
-          "TS0601"
+          "TS0601_rad"
         ],
         "endpoints": {
           "1": {
@@ -35240,7 +34868,6 @@
           "_TZE284_o3x45p96"
         ],
         "productId": [
-          "TS0601",
           "TV01-ZB",
           "TV02-ZB",
           "TRV601",
@@ -35797,8 +35424,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0207",
-          "TS0601"
+          "TS0207_rain"
         ],
         "endpoints": {
           "1": {
@@ -36061,7 +35687,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0203"
+          "TS0601_scene1"
         ],
         "endpoints": {
           "1": {
@@ -36338,7 +35964,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0012"
+          "TS0601_scene2"
         ],
         "endpoints": {
           "1": {
@@ -36631,7 +36257,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0013"
+          "TS0601_scene3"
         ],
         "endpoints": {
           "1": {
@@ -37296,7 +36922,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0046"
+          "TS0601_scene6"
         ],
         "endpoints": {
           "1": {
@@ -37603,7 +37229,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_shutter"
         ],
         "endpoints": {
           "1": {
@@ -38157,8 +37783,7 @@
         ],
         "productId": [
           "TS0216",
-          "TS0219",
-          "TS0601"
+          "TS0219"
         ],
         "endpoints": {
           "1": {
@@ -38698,9 +38323,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601",
-          "TS0001",
-          "TS011F"
+          "TS0601_breaker"
         ],
         "endpoints": {
           "1": {
@@ -38964,7 +38587,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_heater"
         ],
         "endpoints": {
           "1": {
@@ -39264,7 +38887,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_heatctrl"
         ],
         "endpoints": {
           "1": {
@@ -39656,7 +39279,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_rcbo"
         ],
         "endpoints": {
           "1": {
@@ -40026,7 +39649,6 @@
         },
         "productId": [
           "TS0205",
-          "TS0601",
           "PG-S11Z",
           "YG400A",
           "SA12IZL",
@@ -40623,7 +40245,6 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601",
           "ZG-303Z",
           "CS-201Z"
         ],
@@ -45197,7 +44818,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS011F"
+          "TS0601_sp1"
         ],
         "endpoints": {
           "1": {
@@ -45665,7 +45286,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS011F"
+          "TS0122"
         ],
         "endpoints": {
           "1": {
@@ -46176,8 +45797,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0001",
-          "TS0011"
+          "TS0601_tempswitch"
         ],
         "endpoints": {
           "1": {
@@ -47266,8 +46886,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0016",
-          "TS0601"
+          "TS0016"
         ],
         "learnmode": {
           "image": "/drivers/switch_wall_6gang/assets/learnmode.svg",
@@ -48665,7 +48284,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_8gang"
         ],
         "endpoints": {
           "1": {
@@ -49154,10 +48773,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0041",
-          "TS0042",
-          "TS0043",
-          "TS0044"
+          "TS0601_wirelesssw"
         ],
         "endpoints": {
           "1": {
@@ -49885,7 +49501,6 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0201",
           "TY0201",
           "SNTZ003",
           "CK-TLSR8656-SS5-01(7014)"
@@ -50153,7 +49768,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_thermo4ch"
         ],
         "endpoints": {
           "1": {
@@ -50658,23 +50273,7 @@
           "_TZE284_o3x45p96"
         ],
         "productId": [
-          "TS0011",
-          "TS0601",
-          "TV01-ZB",
-          "TV02-ZB",
-          "TRV601",
-          "TRV602",
-          "SEA801-Zigbee",
-          "eTRV0100",
-          "SPZB0001",
-          "SPZB0003",
-          "lumi.airrtc.agl001",
-          "lumi.airrtc.vrfegl01",
-          "014G2461",
-          "014G2463",
-          "STZB402",
-          "STZB403",
-          "Zen-01"
+          "TS0601_thermo"
         ],
         "endpoints": {
           "1": {
@@ -50965,7 +50564,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0002"
+          "TS0601_repeater"
         ],
         "endpoints": {
           "1": {
@@ -51341,9 +50940,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0115",
-          "TS0121",
-          "TS0601"
+          "TS0115"
         ],
         "endpoints": {
           "1": {
@@ -52089,7 +51686,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_irrigation"
         ],
         "endpoints": {
           "1": {
@@ -52349,7 +51946,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_valve"
         ],
         "endpoints": {
           "1": {
@@ -52656,7 +52253,6 @@
         "productId": [
           "TS0209",
           "TS0210",
-          "TS0601",
           "ZG-102ZM"
         ],
         "endpoints": {
@@ -53074,7 +52670,6 @@
         ],
         "productId": [
           "TS0207",
-          "TS0601",
           "q9mpfhw",
           "ZG-222Z",
           "ZG-223Z",
@@ -53655,7 +53250,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_tank"
         ],
         "endpoints": {
           "1": {
@@ -54051,7 +53646,7 @@
           }
         },
         "productId": [
-          "TS0601"
+          "TS0601_watervalve"
         ]
       },
       "settings": [
@@ -54559,7 +54154,7 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601"
+          "TS0601_weather"
         ],
         "endpoints": {
           "1": {
