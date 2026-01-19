@@ -4,6 +4,16 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.694] - 2026-01-19
+
+### 🐛 Critical JSON Fix
+
+- 🐛 Fixed malformed newline (backtick-n) in **63 driver.compose.json files**
+- ✅ GitHub Actions workflow now passes validation
+- ✅ All productId arrays properly formatted
+
+---
+
 ## [5.5.693] - 2026-01-19
 
 ### 🐛 Diagnostic Reports Fixes
