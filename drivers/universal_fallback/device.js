@@ -46,6 +46,7 @@ class UniversalFallbackDevice extends ZigBeeDevice {
     await this._registerSDK3Capabilities(zclNode);  // v5.5.631: SDK3 pattern
     await this._setupTuyaDP(zclNode);
     await this._setupZCLListeners(zclNode);
+    await this._setupTimeSync(zclNode);
     
     this.log('[UNIVERSAL] ✅ Ready - Caps: ' + this._detectedCaps.join(', '));
     this.log('[UNIVERSAL] ═══════════════════════════════════════════════════');
@@ -398,6 +399,22 @@ class UniversalFallbackDevice extends ZigBeeDevice {
     this.log('[UNIVERSAL] ZCL listeners active');
   }
 
+  async _setupTimeSync(zclNode) {
+    this.log('[TIMESYNC] Init');
+    this.homey.setTimeout(() => this._doTimeSync(zclNode), 5000);
+    this.homey.setInterval(() => this._doTimeSync(zclNode), 21600000);
+  }
+  async _doTimeSync(zclNode) {
+    try {
+      const ep = zclNode?.endpoints?.[1];
+      if (ep?.clusters?.time) {
+        const t = Math.floor(Date.now()/1000) - 946684800;
+        await ep.clusters.time.writeAttributes({time:t});
+        this.log('[TIMESYNC] OK');
+      }
+    } catch(e) { this.log('[TIMESYNC] err', e.message); }
+  }
+
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     if (changedKeys.includes('force_device_class')) {
       const newClass = newSettings.force_device_class;
@@ -415,3 +432,4 @@ class UniversalFallbackDevice extends ZigBeeDevice {
 }
 
 module.exports = UniversalFallbackDevice;
+

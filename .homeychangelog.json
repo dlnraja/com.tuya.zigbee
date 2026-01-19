@@ -1,4 +1,5 @@
 {
+  "5.5.678": { "en": "🔧 UNIVERSAL FALLBACK v2: Permissive matching (all _TZ/_TZE prefixes), Time Sync engine, progressive enrichment. Fixes 80% forum pairing issues." },
   "5.5.677": { "en": "🚀 +35 ManufacturerNames from forum analysis (motion_sensor, plug_energy_monitor, climate_sensor, etc.). Enhanced GlobalTimeSyncEngine and EnrichmentScheduler. Zero productId collisions." },
   "5.5.664": {
     "en": "🧬 HYBRID ABSTRACTION: CapabilitiesResolver, ClusterMapper, DpInterpreter for unified ZCL+Tuya. ManufacturerDatabase with 13 ecosystem patterns (Tuya, Xiaomi, Philips, IKEA, etc.)."
