@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.677** | 🚀 +35 ManufacturerNames from forum analysis (motion_sensor, plug_energy_moni... |
 | **v5.5.664** | 🧬 HYBRID ABSTRACTION: CapabilitiesResolver, ClusterMapper, DpInterpreter for... |
 | **v5.5.663** | 🔬 DIAGNOSTIC ENGINE: Auto-explain device issues (D100-D500 codes). Anti-dupl... |
 | **v5.5.662** | 🔧 SDK3 FIX: HybridSwitchBase constructor must pass args to parent. Fixes swi... |
@@ -78,7 +79,6 @@
 | **v5.5.658** | 🔀 HYBRID ARCHITECTURE: debouncedFlow() for 1-action-1-event, handleHybridDat... |
 | **v5.5.657** | 🌐 UNIVERSAL ENGINE v4: Complete Time Sync (UTC+TZ+DST), DP parser with unkno... |
 | **v5.5.656** | 📦 EXTENDED ZCL: Added IDENTIFY, GROUPS, SCENES, FAN, PRESSURE clusters. Comp... |
-| **v5.5.655** | 🛡️ SAFE HANDLERS: Added safeFlowTrigger() and safeCap() to UniversalZigbeePr... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
