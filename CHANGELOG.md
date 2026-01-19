@@ -4,6 +4,96 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.685] - 2026-01-19
+
+### 📋 GitHub Issues Resolution - All 12 Issues Closed
+
+**Issues #102-#105: BSEED Wall Switches**
+- ✅ `_TZ3000_blhvsaqf` / TS0001 (1-gang) - Confirmed supported
+- ✅ `_TZ3000_ysdv91bk` / TS0001 (1-gang) - Confirmed supported
+- ✅ `_TZ3000_l9brjwau` / TS0002 (2-gang) - Confirmed supported
+- ✅ `_TZ3000_qkixdnon` / TS0003 (3-gang) - Confirmed supported
+
+**Issue #101: Soil Moisture Sensor**
+- ✅ `_TZE284_aa03yzhs` / TS0601 - Confirmed in `soil_sensor` driver
+
+**Issue #99: Sonoff S60ZBTPF Smart Plug**
+- ✅ Energy monitoring plug - Confirmed in `plug_energy_monitor` driver
+
+**Issue #98: LoraTap TS0043 3-Button Remote**
+- ✅ Confirmed in `button_wireless_3` driver
+
+**Issue #97: Presence Sensor TS0225**
+- ✅ `_TZ321C_fkzihaxe8` - Confirmed in `presence_sensor_radar` driver
+
+**Issue #96: PG-S11Z Smoke Detector**
+- ✅ Confirmed in `smoke_detector_advanced` driver
+
+**Issue #95: HOBEIAN ZG-227Z Temperature Sensor**
+- ✅ `HOBEIAN` manufacturerName - Confirmed in `climate_sensor` driver
+
+**Issues #107-#108: Air Quality & Climate Sensors**
+- ✅ All common Tuya sensors supported across multiple drivers
+
+---
+
+## [5.5.684] - 2026-01-19
+
+### 🌬️ Air Quality Monitor Enhancement
+
+**Added _TZE204_yvx5lh6k Support**
+- 5-in-1 air quality sensor: CO2, VOC, Formaldehyde, Temperature, Humidity
+- Added both case variants: `_TZE204_yvx5lh6k` and `_tze204_yvx5lh6k`
+- Full DP mapping for all sensor values
+
+---
+
+## [5.5.683] - 2026-01-19
+
+### 📋 GitHub Issues Resolution
+
+**BSEED Switches (Issues #xxx)**
+- Added TS0001, TS0002, TS0003 productIds for BSEED brand switches
+- Full switch_1gang, switch_2gang, switch_3gang support
+
+**Soil Sensor TS0601 (Issue #xxx)**
+- Added _TZE284_aa03yzhs manufacturerName for soil moisture sensors
+- Proper DP mappings for soil moisture and temperature
+
+**PG-S11Z Smoke Detector**
+- Added diagnostic logging for troubleshooting
+- Improved IAS Zone handling
+
+---
+
+## [5.5.682] - 2026-01-19
+
+### 🔧 LocalTuya-Inspired Architecture
+
+**Entity Auto-Detection System**
+- New `LocalTuyaEntityHandler.js` - Entity type detection from DPs
+- Supports: switch, light, cover, climate, fan, sensor types
+- Automatic capability mapping based on detected entity
+
+**DP Database Enhancement**
+- `LocalTuyaDPDatabase.js` - Comprehensive DP mappings
+- Standard Tuya DP values for all device categories
+- Energy monitoring value handling patterns
+
+---
+
+## [5.5.681] - 2026-01-19
+
+### 🕐 TIME SYNC v4 - Zigbee-Herdsman Format
+
+**TuyaTimeSync Module**
+- 8-byte UTC+Local time format (Zigbee2MQTT compatible)
+- Tuya epoch 2000 offset handling (946,684,800 seconds)
+- Fixes "Year 2055 bug" on devices with LCD clocks
+- Automatic detection of devices needing epoch offset
+
+---
+
 ## [5.5.677] - 2026-01-19
 
 ### 🚀 Forum Analysis & Device Compatibility
