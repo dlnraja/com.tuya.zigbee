@@ -1,5 +1,50 @@
 {
-  "triggers": [],
+  "triggers": [
+    {
+      "id": "scene_switch_1_button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé",
+        "nl": "Knop ingedrukt",
+        "de": "Taste gedrückt"
+      }
+    },
+    {
+      "id": "scene_switch_1_button_double_press",
+      "title": {
+        "en": "Button double-pressed",
+        "fr": "Bouton double-cliqué",
+        "nl": "Knop dubbel ingedrukt",
+        "de": "Taste doppelt gedrückt"
+      }
+    },
+    {
+      "id": "scene_switch_1_button_long_press",
+      "title": {
+        "en": "Button long-pressed",
+        "fr": "Bouton appui long",
+        "nl": "Knop lang ingedrukt",
+        "de": "Taste lang gedrückt"
+      }
+    },
+    {
+      "id": "scene_switch_1_battery_changed",
+      "title": {
+        "en": "Battery level changed",
+        "fr": "Niveau de batterie changé",
+        "nl": "Batterijniveau gewijzigd",
+        "de": "Batteriestand geändert"
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": { "en": "Battery %", "fr": "Batterie %", "nl": "Batterij %", "de": "Batterie %" },
+          "example": 80
+        }
+      ]
+    }
+  ],
   "conditions": [],
   "actions": []
 }

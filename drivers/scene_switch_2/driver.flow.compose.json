@@ -1,5 +1,93 @@
 {
-  "triggers": [],
+  "triggers": [
+    {
+      "id": "scene_switch_2_button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé",
+        "nl": "Knop ingedrukt",
+        "de": "Taste gedrückt"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] pressed",
+        "fr": "Bouton [[button]] appuyé",
+        "nl": "Knop [[button]] ingedrukt",
+        "de": "Taste [[button]] gedrückt"
+      },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" },
+          "values": [
+            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } },
+            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } }
+          ]
+        }
+      ],
+      "tokens": [
+        { "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "example": "1" }
+      ]
+    },
+    {
+      "id": "scene_switch_2_button_double_press",
+      "title": {
+        "en": "Button double-pressed",
+        "fr": "Bouton double-cliqué",
+        "nl": "Knop dubbel ingedrukt",
+        "de": "Taste doppelt gedrückt"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] double-pressed",
+        "fr": "Bouton [[button]] double-cliqué",
+        "nl": "Knop [[button]] dubbel ingedrukt",
+        "de": "Taste [[button]] doppelt gedrückt"
+      },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" },
+          "values": [
+            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } },
+            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } }
+          ]
+        }
+      ],
+      "tokens": [
+        { "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "example": "1" }
+      ]
+    },
+    {
+      "id": "scene_switch_2_button_long_press",
+      "title": {
+        "en": "Button long-pressed",
+        "fr": "Bouton appui long",
+        "nl": "Knop lang ingedrukt",
+        "de": "Taste lang gedrückt"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] long-pressed",
+        "fr": "Bouton [[button]] appui long",
+        "nl": "Knop [[button]] lang ingedrukt",
+        "de": "Taste [[button]] lang gedrückt"
+      },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" },
+          "values": [
+            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } },
+            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } }
+          ]
+        }
+      ],
+      "tokens": [
+        { "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "example": "1" }
+      ]
+    }
+  ],
   "conditions": [],
   "actions": []
 }
