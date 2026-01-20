@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.708** | 🎛️ SCENE SWITCH FLOW CARDS FIX: Added 13 missing flow triggers to app.json f... |
 | **v5.5.707** | 🔧 DIAGNOSTIC FIXES: Fixed ir_send_ac_command flow card for IR Blaster (JSON ... |
 | **v5.5.706** | 📖 TROUBLESHOOTING GUIDE: Added comprehensive Zigbee troubleshooting document... |
 | **v5.5.705** | 🔧 DIAGNOSTIC FIXES: Fixed flow card ID mismatches in soil_sensor (moisture_c... |
@@ -78,7 +79,6 @@
 | **v5.5.700** | 🔧 UNIVERSAL PERMISSIVE SOLUTION: New lib/Util.js with normalizeTuyaID, equal... |
 | **v5.5.699** | 🔧 DEEP CASE-INSENSITIVE FIX: Extended case-insensitive matching to ALL devic... |
 | **v5.5.698** | 🎛️ SCENE SWITCH FLOW CARDS: Added flow triggers for scene_switch_1/2/3/6 dri... |
-| **v5.5.697** | 🔧 UNIVERSAL CASE-INSENSITIVE MATCHING: All manufacturerName/productId compar... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
