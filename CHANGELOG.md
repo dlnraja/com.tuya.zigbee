@@ -4,6 +4,41 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.697] - 2026-01-19
+
+### 🔧 UNIVERSAL CASE-INSENSITIVE MATCHING
+
+**Problem:** Many Tuya devices report `manufacturerName` and `productId` with inconsistent casing:
+- `_TZ3000_zgyzgdua` vs `_TZ3000_ZGYZGDUA` vs `_tz3000_zgyzgdua`
+- `TS0044` vs `ts0044`
+
+**Solution:** Implemented case-insensitive matching throughout the entire codebase:
+
+**New Utility:** `lib/utils/CaseInsensitiveMatcher.js`
+- `includesCI()` - Case-insensitive array includes
+- `startsWithCI()` - Case-insensitive startsWith
+- `equalsCI()` - Case-insensitive equality
+- `containsCI()` - Case-insensitive contains
+
+**Updated Files (12+):**
+- `ManufacturerVariationManager.js` - All device config lookups
+- `ButtonDevice.js` - Hybrid device detection
+- `button_wireless_4/device.js` - TS004F mode switching
+- `UniversalIasDevice.js` - Brand detection
+- `ZigbeeHealthMonitor.js` - Metrics collection
+- `tuyaUtils.js` - Tuya DP detection
+- `TuyaRtcDetector.js` - RTC device detection
+- `BatteryManagerV2.js` - Battery protocol detection
+- `KnownProtocolsDatabase.js` - Protocol lookup
+- `ZigbeeProtocolComplete.js` - Protocol detection
+- `DeviceIdentificationDatabase.js` - Device matching
+- `TuyaXiaomiOTAProvider.js` - OTA matching
+- `TuyaTimeSyncFormats.js` - Time sync format detection
+
+**Result:** Devices now pair and function correctly regardless of casing variations.
+
+---
+
 ## [5.5.696] - 2026-01-19
 
 ### 🎛️ Flow Cards Fix - Moes Wireless Scene Switch
