@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.706",
+  "version": "5.5.707",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -66341,6 +66341,62 @@
               "nl": "power_on",
               "de": "power_on"
             }
+          }
+        ]
+      },
+      {
+        "id": "ir_send_ac_command",
+        "title": {
+          "en": "Send AC Command",
+          "nl": "Verstuur Airco Commando",
+          "de": "AC-Befehl Senden"
+        },
+        "hint": {
+          "en": "Send AC command with mode, temperature and fan speed (SmartIR compatible)",
+          "nl": "Verstuur airco commando met modus, temperatuur en ventilator snelheid"
+        },
+        "titleFormatted": {
+          "en": "Set AC to [[mode]] at [[temperature]]°C with [[fan_speed]] fan",
+          "nl": "Zet airco op [[mode]] bij [[temperature]]°C met [[fan_speed]] ventilator",
+          "de": "AC auf [[mode]] bei [[temperature]]°C mit [[fan_speed]] Lüfter setzen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "title": { "en": "Mode" },
+            "values": [
+              { "id": "cool", "label": { "en": "Cool" } },
+              { "id": "heat", "label": { "en": "Heat" } },
+              { "id": "auto", "label": { "en": "Auto" } },
+              { "id": "dry", "label": { "en": "Dry" } },
+              { "id": "fan_only", "label": { "en": "Fan Only" } },
+              { "id": "off", "label": { "en": "Off" } }
+            ]
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": { "en": "Temperature (°C)" },
+            "min": 16,
+            "max": 30,
+            "step": 1
+          },
+          {
+            "name": "fan_speed",
+            "type": "dropdown",
+            "title": { "en": "Fan Speed" },
+            "values": [
+              { "id": "auto", "label": { "en": "Auto" } },
+              { "id": "low", "label": { "en": "Low" } },
+              { "id": "medium", "label": { "en": "Medium" } },
+              { "id": "high", "label": { "en": "High" } }
+            ]
           }
         ]
       },
