@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.703** | 🔧 CRITICAL DUPLICATES FIX: Removed 48 manufacturerNames from wrong drivers b... |
 | **v5.5.702** | 🔧 ANALYSIS: Added scripts/fix-true-duplicates.js for duplicate analysis. Man... |
 | **v5.5.700** | 🔧 UNIVERSAL PERMISSIVE SOLUTION: New lib/Util.js with normalizeTuyaID, equal... |
 | **v5.5.699** | 🔧 DEEP CASE-INSENSITIVE FIX: Extended case-insensitive matching to ALL devic... |
@@ -78,7 +79,6 @@
 | **v5.5.695** | 🐛 BSEED TS0726 Fix: Removed _tz3002_pzao9ls1 from button_wireless_4 - now co... |
 | **v5.5.694** | 🐛 Critical JSON Fix: Fixed malformed newline in 63 driver.compose.json files... |
 | **v5.5.693** | 🐛 Diagnostic Reports: smoke_detector_advanced EF00 cluster fix, TS0726 moved... |
-| **v5.5.692** | 🐛 switch_4gang JSON fix: Fixed malformed newline causing device init failure... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
