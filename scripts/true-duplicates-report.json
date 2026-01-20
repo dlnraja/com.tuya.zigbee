@@ -1,113 +1,8 @@
 {
-  "timestamp": "2026-01-20T10:01:56.446Z",
-  "totalCombinations": 47374,
-  "trueDuplicates": 204,
+  "timestamp": "2026-01-20T10:40:40.824Z",
+  "totalCombinations": 47089,
+  "trueDuplicates": 192,
   "duplicates": [
-    {
-      "key": "_TZE200_mja3fuja|TS0601",
-      "mfr": "_TZE200_mja3fuja",
-      "productId": "TS0601",
-      "drivers": [
-        "air_purifier",
-        "humidifier"
-      ]
-    },
-    {
-      "key": "_TZE204_mja3fuja|TS0601",
-      "mfr": "_TZE204_mja3fuja",
-      "productId": "TS0601",
-      "drivers": [
-        "air_purifier",
-        "humidifier"
-      ]
-    },
-    {
-      "key": "_TZE200_dwcarsat|TS0601",
-      "mfr": "_TZE200_dwcarsat",
-      "productId": "TS0601",
-      "drivers": [
-        "air_purifier",
-        "air_quality_co2",
-        "air_quality_comprehensive",
-        "formaldehyde_sensor",
-        "humidifier"
-      ]
-    },
-    {
-      "key": "_TZE204_dwcarsat|TS0601",
-      "mfr": "_TZE204_dwcarsat",
-      "productId": "TS0601",
-      "drivers": [
-        "air_purifier",
-        "humidifier"
-      ]
-    },
-    {
-      "key": "_TZE200_8ygsuhe1|TS0601",
-      "mfr": "_TZE200_8ygsuhe1",
-      "productId": "TS0601",
-      "drivers": [
-        "air_quality_co2",
-        "air_quality_comprehensive",
-        "ir_blaster"
-      ]
-    },
-    {
-      "key": "_TZ3000_gjnozsaz|TS0601",
-      "mfr": "_TZ3000_gjnozsaz",
-      "productId": "TS0601",
-      "drivers": [
-        "button_emergency_sos",
-        "plug_smart",
-        "switch_1gang",
-        "switch_2gang",
-        "switch_3gang",
-        "switch_4gang"
-      ]
-    },
-    {
-      "key": "_TZ3000_p6ju8myv|TS0601",
-      "mfr": "_TZ3000_p6ju8myv",
-      "productId": "TS0601",
-      "drivers": [
-        "button_emergency_sos",
-        "climate_sensor",
-        "contact_sensor",
-        "motion_sensor",
-        "water_leak_sensor"
-      ]
-    },
-    {
-      "key": "_TZE200_r32ctezx|TS0601",
-      "mfr": "_TZE200_r32ctezx",
-      "productId": "TS0601",
-      "drivers": [
-        "ceiling_fan",
-        "fan_controller",
-        "switch_wall_8gang"
-      ]
-    },
-    {
-      "key": "_TZE200_dzuqwsyg|TS0601",
-      "mfr": "_TZE200_dzuqwsyg",
-      "productId": "TS0601",
-      "drivers": [
-        "ceiling_fan",
-        "fan_controller",
-        "ir_blaster",
-        "thermostat_tuya_dp"
-      ]
-    },
-    {
-      "key": "_TZE204_r32ctezx|TS0601",
-      "mfr": "_TZE204_r32ctezx",
-      "productId": "TS0601",
-      "drivers": [
-        "ceiling_fan",
-        "fan_controller",
-        "switch_wall_8gang"
-      ]
-    },
     {
       "key": "_TZ3000_1h2x4akh|TS0601",
       "mfr": "_TZ3000_1h2x4akh",
@@ -2191,25 +2086,6 @@
       ]
     },
     {
-      "key": "_TZE200_cirvgep4|TS0601",
-      "mfr": "_TZE200_cirvgep4",
-      "productId": "TS0601",
-      "drivers": [
-        "contact_sensor",
-        "curtain_motor",
-        "dimmer_wall_1gang",
-        "ir_blaster",
-        "motion_sensor",
-        "plug_smart",
-        "radiator_valve",
-        "switch_1gang",
-        "switch_2gang",
-        "switch_3gang",
-        "switch_4gang",
-        "thermostat_tuya_dp"
-      ]
-    },
-    {
       "key": "_TZE204_cjbofhxw|TS0601",
       "mfr": "_TZE204_cjbofhxw",
       "productId": "TS0601",
@@ -2465,15 +2341,6 @@
         "energy_meter_3phase",
         "power_clamp_meter",
         "smart_breaker"
-      ]
-    },
-    {
-      "key": "_TZE204_dzuqwsyg|TS0601",
-      "mfr": "_TZE204_dzuqwsyg",
-      "productId": "TS0601",
-      "drivers": [
-        "fan_controller",
-        "ir_blaster"
       ]
     },
     {
