@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.707",
+  "version": "5.5.708",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -54275,6 +54275,117 @@
   ],
   "flow": {
     "triggers": [
+      {
+        "id": "scene_switch_1_button_pressed",
+        "title": { "en": "Button pressed", "fr": "Bouton appuyé", "nl": "Knop ingedrukt", "de": "Taste gedrückt" },
+        "args": [{ "type": "device", "name": "device", "filter": "driver_id=scene_switch_1" }]
+      },
+      {
+        "id": "scene_switch_1_button_double_press",
+        "title": { "en": "Button double-pressed", "fr": "Bouton double-cliqué", "nl": "Knop dubbel ingedrukt", "de": "Taste doppelt gedrückt" },
+        "args": [{ "type": "device", "name": "device", "filter": "driver_id=scene_switch_1" }]
+      },
+      {
+        "id": "scene_switch_1_button_long_press",
+        "title": { "en": "Button long-pressed", "fr": "Bouton appui long", "nl": "Knop lang ingedrukt", "de": "Taste lang gedrückt" },
+        "args": [{ "type": "device", "name": "device", "filter": "driver_id=scene_switch_1" }]
+      },
+      {
+        "id": "scene_switch_1_battery_changed",
+        "title": { "en": "Battery level changed", "fr": "Niveau de batterie changé", "nl": "Batterijniveau gewijzigd", "de": "Batteriestand geändert" },
+        "tokens": [{ "name": "battery", "type": "number", "title": { "en": "Battery %", "fr": "Batterie %", "nl": "Batterij %", "de": "Batterie %" }, "example": 80 }],
+        "args": [{ "type": "device", "name": "device", "filter": "driver_id=scene_switch_1" }]
+      },
+      {
+        "id": "scene_switch_2_button_pressed",
+        "title": { "en": "Button pressed", "fr": "Bouton appuyé", "nl": "Knop ingedrukt", "de": "Taste gedrückt" },
+        "titleFormatted": { "en": "Button [[button]] pressed", "fr": "Bouton [[button]] appuyé", "nl": "Knop [[button]] ingedrukt", "de": "Taste [[button]] gedrückt" },
+        "args": [
+          { "type": "device", "name": "device", "filter": "driver_id=scene_switch_2" },
+          { "name": "button", "type": "dropdown", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "values": [{ "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } }, { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } }] }
+        ],
+        "tokens": [{ "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "example": "1" }]
+      },
+      {
+        "id": "scene_switch_2_button_double_press",
+        "title": { "en": "Button double-pressed", "fr": "Bouton double-cliqué", "nl": "Knop dubbel ingedrukt", "de": "Taste doppelt gedrückt" },
+        "titleFormatted": { "en": "Button [[button]] double-pressed", "fr": "Bouton [[button]] double-cliqué", "nl": "Knop [[button]] dubbel ingedrukt", "de": "Taste [[button]] doppelt gedrückt" },
+        "args": [
+          { "type": "device", "name": "device", "filter": "driver_id=scene_switch_2" },
+          { "name": "button", "type": "dropdown", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "values": [{ "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } }, { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } }] }
+        ],
+        "tokens": [{ "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "example": "1" }]
+      },
+      {
+        "id": "scene_switch_2_button_long_press",
+        "title": { "en": "Button long-pressed", "fr": "Bouton appui long", "nl": "Knop lang ingedrukt", "de": "Taste lang gedrückt" },
+        "titleFormatted": { "en": "Button [[button]] long-pressed", "fr": "Bouton [[button]] appui long", "nl": "Knop [[button]] lang ingedrukt", "de": "Taste [[button]] lang gedrückt" },
+        "args": [
+          { "type": "device", "name": "device", "filter": "driver_id=scene_switch_2" },
+          { "name": "button", "type": "dropdown", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "values": [{ "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } }, { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } }] }
+        ],
+        "tokens": [{ "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "example": "1" }]
+      },
+      {
+        "id": "scene_switch_3_button_pressed",
+        "title": { "en": "Button pressed", "fr": "Bouton appuyé", "nl": "Knop ingedrukt", "de": "Taste gedrückt" },
+        "titleFormatted": { "en": "Button [[button]] pressed", "fr": "Bouton [[button]] appuyé", "nl": "Knop [[button]] ingedrukt", "de": "Taste [[button]] gedrückt" },
+        "args": [
+          { "type": "device", "name": "device", "filter": "driver_id=scene_switch_3" },
+          { "name": "button", "type": "dropdown", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "values": [{ "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } }, { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } }, { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3", "nl": "Knop 3", "de": "Taste 3" } }] }
+        ],
+        "tokens": [{ "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "example": "1" }]
+      },
+      {
+        "id": "scene_switch_3_button_double_press",
+        "title": { "en": "Button double-pressed", "fr": "Bouton double-cliqué", "nl": "Knop dubbel ingedrukt", "de": "Taste doppelt gedrückt" },
+        "titleFormatted": { "en": "Button [[button]] double-pressed", "fr": "Bouton [[button]] double-cliqué", "nl": "Knop [[button]] dubbel ingedrukt", "de": "Taste [[button]] doppelt gedrückt" },
+        "args": [
+          { "type": "device", "name": "device", "filter": "driver_id=scene_switch_3" },
+          { "name": "button", "type": "dropdown", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "values": [{ "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } }, { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } }, { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3", "nl": "Knop 3", "de": "Taste 3" } }] }
+        ],
+        "tokens": [{ "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "example": "1" }]
+      },
+      {
+        "id": "scene_switch_3_button_long_press",
+        "title": { "en": "Button long-pressed", "fr": "Bouton appui long", "nl": "Knop lang ingedrukt", "de": "Taste lang gedrückt" },
+        "titleFormatted": { "en": "Button [[button]] long-pressed", "fr": "Bouton [[button]] appui long", "nl": "Knop [[button]] lang ingedrukt", "de": "Taste [[button]] lang gedrückt" },
+        "args": [
+          { "type": "device", "name": "device", "filter": "driver_id=scene_switch_3" },
+          { "name": "button", "type": "dropdown", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "values": [{ "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } }, { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } }, { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3", "nl": "Knop 3", "de": "Taste 3" } }] }
+        ],
+        "tokens": [{ "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "example": "1" }]
+      },
+      {
+        "id": "scene_switch_6_button_pressed",
+        "title": { "en": "Button pressed", "fr": "Bouton appuyé", "nl": "Knop ingedrukt", "de": "Taste gedrückt" },
+        "titleFormatted": { "en": "Button [[button]] pressed", "fr": "Bouton [[button]] appuyé", "nl": "Knop [[button]] ingedrukt", "de": "Taste [[button]] gedrückt" },
+        "args": [
+          { "type": "device", "name": "device", "filter": "driver_id=scene_switch_6" },
+          { "name": "button", "type": "dropdown", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "values": [{ "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } }, { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } }, { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3", "nl": "Knop 3", "de": "Taste 3" } }, { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4", "nl": "Knop 4", "de": "Taste 4" } }, { "id": "5", "label": { "en": "Button 5", "fr": "Bouton 5", "nl": "Knop 5", "de": "Taste 5" } }, { "id": "6", "label": { "en": "Button 6", "fr": "Bouton 6", "nl": "Knop 6", "de": "Taste 6" } }] }
+        ],
+        "tokens": [{ "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "example": "1" }]
+      },
+      {
+        "id": "scene_switch_6_button_double_press",
+        "title": { "en": "Button double-pressed", "fr": "Bouton double-cliqué", "nl": "Knop dubbel ingedrukt", "de": "Taste doppelt gedrückt" },
+        "titleFormatted": { "en": "Button [[button]] double-pressed", "fr": "Bouton [[button]] double-cliqué", "nl": "Knop [[button]] dubbel ingedrukt", "de": "Taste [[button]] doppelt gedrückt" },
+        "args": [
+          { "type": "device", "name": "device", "filter": "driver_id=scene_switch_6" },
+          { "name": "button", "type": "dropdown", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "values": [{ "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } }, { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } }, { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3", "nl": "Knop 3", "de": "Taste 3" } }, { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4", "nl": "Knop 4", "de": "Taste 4" } }, { "id": "5", "label": { "en": "Button 5", "fr": "Bouton 5", "nl": "Knop 5", "de": "Taste 5" } }, { "id": "6", "label": { "en": "Button 6", "fr": "Bouton 6", "nl": "Knop 6", "de": "Taste 6" } }] }
+        ],
+        "tokens": [{ "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "example": "1" }]
+      },
+      {
+        "id": "scene_switch_6_button_long_press",
+        "title": { "en": "Button long-pressed", "fr": "Bouton appui long", "nl": "Knop lang ingedrukt", "de": "Taste lang gedrückt" },
+        "titleFormatted": { "en": "Button [[button]] long-pressed", "fr": "Bouton [[button]] appui long", "nl": "Knop [[button]] lang ingedrukt", "de": "Taste [[button]] lang gedrückt" },
+        "args": [
+          { "type": "device", "name": "device", "filter": "driver_id=scene_switch_6" },
+          { "name": "button", "type": "dropdown", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "values": [{ "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } }, { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } }, { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3", "nl": "Knop 3", "de": "Taste 3" } }, { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4", "nl": "Knop 4", "de": "Taste 4" } }, { "id": "5", "label": { "en": "Button 5", "fr": "Bouton 5", "nl": "Knop 5", "de": "Taste 5" } }, { "id": "6", "label": { "en": "Button 6", "fr": "Bouton 6", "nl": "Knop 6", "de": "Taste 6" } }] }
+        ],
+        "tokens": [{ "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "example": "1" }]
+      },
       {
         "id": "air_quality_co2_co2_level_changed",
         "title": {
