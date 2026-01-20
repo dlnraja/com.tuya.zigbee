@@ -17,6 +17,10 @@ on:
           - verified
         default: publish
 
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   NODE_VERSION: "20"
 
@@ -38,6 +42,17 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
 
+      - name: 🔄 Check driver/app.json sync
+        id: sync
+        run: |
+          node scripts/maintenance/sync-app-json.js 2>&1 || true
+          if git diff --quiet app.json 2>/dev/null; then
+            echo "synced=true" >> $GITHUB_OUTPUT
+          else
+            echo "synced=false" >> $GITHUB_OUTPUT
+            echo "⚠️ app.json is out of sync with drivers!"
+          fi
+
       - name: 🔨 Build app
         run: npx homey app build
 
@@ -46,9 +61,11 @@ jobs:
         run: |
           VERSION=$(node -p "require('./app.json').version")
           NAME=$(node -p "require('./app.json').name.en")
+          DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "name=$NAME" >> $GITHUB_OUTPUT
-          echo "📦 $NAME v$VERSION"
+          echo "drivers=$DRIVERS" >> $GITHUB_OUTPUT
+          echo "📦 $NAME v$VERSION - $DRIVERS drivers"
 
       - name: 🔍 Validate (Athom Official)
         uses: athombv/github-action-homey-app-validate@v1
@@ -60,7 +77,11 @@ jobs:
         run: |
           echo "## ✅ ${{ steps.info.outputs.name }} v${{ steps.info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Validation passed at **${{ inputs.level || 'publish' }}** level." >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Validation Level | ${{ inputs.level || 'publish' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Drivers | ${{ steps.info.outputs.drivers }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Sync Status | ${{ steps.sync.outputs.synced == 'true' && '✅ Synced' || '⚠️ Out of sync' }} |" >> $GITHUB_STEP_SUMMARY
 
       - name: ❌ Failed
         if: failure()
@@ -68,3 +89,8 @@ jobs:
           echo "## ❌ Validation Failed" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "Run \`homey app validate --level publish\` locally for details." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🛠️ Quick Fixes" >> $GITHUB_STEP_SUMMARY
+          echo "1. \`node scripts/maintenance/sync-app-json.js\`" >> $GITHUB_STEP_SUMMARY
+          echo "2. \`npx homey app build\`" >> $GITHUB_STEP_SUMMARY
+          echo "3. \`npx homey app validate --level publish\`" >> $GITHUB_STEP_SUMMARY

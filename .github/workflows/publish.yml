@@ -13,21 +13,29 @@ on:
         type: boolean
         default: false
 
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   NODE_VERSION: "20"
 
 jobs:
   validate:
-    name: 🔍 Validate
+    name: 🔍 Validate & Sync
     runs-on: ubuntu-latest
     timeout-minutes: 15
     outputs:
       version: ${{ steps.info.outputs.version }}
       name: ${{ steps.info.outputs.name }}
       id: ${{ steps.info.outputs.id }}
+      changed: ${{ steps.sync.outputs.changed }}
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 📦 Setup Node.js
         uses: actions/setup-node@v4
@@ -39,7 +47,23 @@ jobs:
         run: npm ci --prefer-offline --no-audit || npm install
 
       - name: 🔄 Sync app.json with driver.compose.json
-        run: node scripts/maintenance/sync-app-json.js
+        id: sync
+        run: |
+          node scripts/maintenance/sync-app-json.js
+          if git diff --quiet app.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 📝 Commit sync changes
+        if: steps.sync.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add app.json
+          git commit -m "🔄 Auto-sync app.json with drivers [skip ci]" || true
+          git push || true
 
       - name: 🔨 Build app
         run: npx homey app build
@@ -50,15 +74,27 @@ jobs:
           VERSION=$(node -p "require('./app.json').version")
           NAME=$(node -p "require('./app.json').name.en")
           ID=$(node -p "require('./app.json').id")
+          DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "name=$NAME" >> $GITHUB_OUTPUT
           echo "id=$ID" >> $GITHUB_OUTPUT
-          echo "📦 $NAME v$VERSION ($ID)"
+          echo "📦 $NAME v$VERSION ($ID) - $DRIVERS drivers"
 
       - name: 🔍 Validate (Athom Official)
         uses: athombv/github-action-homey-app-validate@v1
         with:
           level: publish
+
+      - name: 📊 Validation Summary
+        run: |
+          echo "## 🔍 Validation Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Property | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|----------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| App | ${{ steps.info.outputs.name }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Version | ${{ steps.info.outputs.version }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Drivers | $(ls -d drivers/*/ | wc -l) |" >> $GITHUB_STEP_SUMMARY
+          echo "| Sync Changes | ${{ steps.sync.outputs.changed }} |" >> $GITHUB_STEP_SUMMARY
 
   publish:
     name: 🚀 Publish
@@ -69,6 +105,17 @@ jobs:
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 📦 Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: 🔨 Build app
+        run: npx homey app build
 
       - name: 🚀 Publish (Athom Official)
         uses: athombv/github-action-homey-app-publish@v1
@@ -84,6 +131,10 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "🔗 [Manage Build](${{ steps.publish.outputs.url }})" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### Next Steps:" >> $GITHUB_STEP_SUMMARY
+          echo "### 📋 Details" >> $GITHUB_STEP_SUMMARY
+          echo "- **App ID**: ${{ needs.validate.outputs.id }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Drivers**: $(ls -d drivers/*/ | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🎯 Next Steps:" >> $GITHUB_STEP_SUMMARY
           echo "1. Review the uploaded version" >> $GITHUB_STEP_SUMMARY
           echo "2. Submit for Test or Live certification" >> $GITHUB_STEP_SUMMARY
