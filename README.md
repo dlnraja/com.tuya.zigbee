@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.700** | 🔧 UNIVERSAL PERMISSIVE SOLUTION: New lib/Util.js with normalizeTuyaID, equal... |
 | **v5.5.699** | 🔧 DEEP CASE-INSENSITIVE FIX: Extended case-insensitive matching to ALL devic... |
 | **v5.5.698** | 🎛️ SCENE SWITCH FLOW CARDS: Added flow triggers for scene_switch_1/2/3/6 dri... |
 | **v5.5.697** | 🔧 UNIVERSAL CASE-INSENSITIVE MATCHING: All manufacturerName/productId compar... |
@@ -78,7 +79,6 @@
 | **v5.5.693** | 🐛 Diagnostic Reports: smoke_detector_advanced EF00 cluster fix, TS0726 moved... |
 | **v5.5.692** | 🐛 switch_4gang JSON fix: Fixed malformed newline causing device init failure... |
 | **v5.5.691** | 🤖 Fingerbot driver: New dedicated driver for Tuya Fingerbot Plus (_TZ3210_j4... |
-| **v5.5.690** | 🔧 TS0601 productId: Added to 5 drivers (air_purifier, air_quality_co2, butto... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
