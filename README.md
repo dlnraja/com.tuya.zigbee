@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.701** | 🔧 CRITICAL DUPLICATE FIX: Removed 1339 duplicate manufacturerNames from 65 d... |
 | **v5.5.700** | 🔧 UNIVERSAL PERMISSIVE SOLUTION: New lib/Util.js with normalizeTuyaID, equal... |
 | **v5.5.699** | 🔧 DEEP CASE-INSENSITIVE FIX: Extended case-insensitive matching to ALL devic... |
 | **v5.5.698** | 🎛️ SCENE SWITCH FLOW CARDS: Added flow triggers for scene_switch_1/2/3/6 dri... |
@@ -78,7 +79,6 @@
 | **v5.5.694** | 🐛 Critical JSON Fix: Fixed malformed newline in 63 driver.compose.json files... |
 | **v5.5.693** | 🐛 Diagnostic Reports: smoke_detector_advanced EF00 cluster fix, TS0726 moved... |
 | **v5.5.692** | 🐛 switch_4gang JSON fix: Fixed malformed newline causing device init failure... |
-| **v5.5.691** | 🤖 Fingerbot driver: New dedicated driver for Tuya Fingerbot Plus (_TZ3210_j4... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
