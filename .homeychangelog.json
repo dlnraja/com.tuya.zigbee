@@ -1,4 +1,5 @@
 {
+  "5.5.702": { "en": "🔧 ANALYSIS: Added scripts/fix-true-duplicates.js for duplicate analysis. ManufacturerNames CAN be in multiple drivers when productIds differ. Only TRUE duplicates (same mfr + same productId in incompatible drivers) are issues." },
   "5.5.700": { "en": "🔧 UNIVERSAL PERMISSIVE SOLUTION: New lib/Util.js with normalizeTuyaID, equalsIgnoreCase, requirePermissive (case-insensitive file loader), parseFlowBoolean. Updated PermissiveMatchingEngine and FlowCardManager. Flow cards now accept 'On/ON/on', dp_type 'ENUM/enum'. Complete anti-casing layer for Linux filesystem and Tuya ID chaos." },
   "5.5.699": { "en": "🔧 DEEP CASE-INSENSITIVE FIX: Extended case-insensitive matching to ALL device lookup functions. Fixed 15+ additional files: TuyaProfiles, TuyaDPDatabase, DeviceFingerprintDB, DeviceIdentificationDatabase, NewDevices2025, DeviceHintsDatabase, device_helpers, tuya-engine. Pairing now works regardless of case for ALL devices." },
   "5.5.698": { "en": "🎛️ SCENE SWITCH FLOW CARDS: Added flow triggers for scene_switch_1/2/3/6 drivers (press/double/long for all buttons). Fixed 37 drivers with empty flow triggers. Scene switches now work properly in Homey flows." },
@@ -114,9 +115,6 @@
   },
   "5.5.636": {
     "en": "🔧 SYNC FIX: Added 164 missing manufacturerNames/productIds to app.json that were in driver.compose.json but not published. Affected: bulb_rgbw, curtain_motor, dimmer_wall_1gang, presence_sensor_radar, switches, thermostat, and more."
-  },
-  "5.5.635": {
-    "en": "🔥 MAJOR FIX: Cleaned 1145 stale/duplicate manufacturerNames from app.json that were causing devices to pair to wrong drivers. Root cause: app.json wasn't synced with driver.compose.json files. This fixes pairing issues for buttons, switches, sensors, and more."
   },
   "5.5.634": {
     "en": "🐛 CRITICAL FIX: Removed duplicate manufacturerNames from climate_sensor that caused 4-gang buttons (_TZ3000_5tqxpine, _TZ3000_wkai4ga5) to pair as wrong device type (Eftychis). Devices now correctly match to button_wireless_4."
