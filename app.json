@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.703",
+  "version": "5.5.704",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -87,10 +87,6 @@
           "_TZE204_7bztmfm1",
           "_TZE200_qpn5q17m",
           "_TZE204_qpn5q17m",
-          "_TZE200_mja3fuja",
-          "_TZE204_mja3fuja",
-          "_TZE200_dwcarsat",
-          "_TZE204_dwcarsat",
           "Danfoss",
           "DANFOSS",
           "Eurotronic",
@@ -303,7 +299,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_air_purifier"
+          "TS0601_air_purifier",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -569,7 +566,6 @@
           "Zen",
           "ZEN",
           "Zen Thermostat",
-          "_TZE200_dwcarsat",
           "_TZE200_ryfmq5rl",
           "_TZE200_yvx5lh6k",
           "_TZE200_8ygsuhe1",
@@ -607,7 +603,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_co2"
+          "TS0601_co2",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -952,7 +949,6 @@
           "Zen Thermostat",
           "_TZE200_dwcarsat",
           "_TZE200_ryfmq5rl",
-          "_TZE200_8ygsuhe1",
           "_TZE204_laokfqwu",
           "AAQS-S01",
           "lumi.airmonitor.acn01",
@@ -984,11 +980,14 @@
           "Ecolink",
           "Dome",
           "Vision",
-          "Monoprice"
+          "Monoprice",
+          "_TZE204_yvx5lh6k",
+          "_tze204_yvx5lh6k"
         ],
         "productId": [
           "TS0005",
-          "TS0006"
+          "TS0006",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -4700,7 +4699,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0218"
+          "TS0218",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -7140,7 +7140,6 @@
           "Dome",
           "Vision",
           "Monoprice",
-          "_TZ3000_gjnozsaz",
           "_TZ3000_a7ouggvs"
         ],
         "productId": [
@@ -7534,8 +7533,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3002_pzao9ls1",
-          "_tz3002_pzao9ls1",
           "_TZ3002_vaq2bfcu",
           "_tz3002_vaq2bfcu",
           "_TZ3002_zyuajkzz",
@@ -7816,7 +7813,6 @@
           "_TZ3000_zgyzgdua"
         ],
         "productId": [
-          "TS0726",
           "TS0044",
           "TS004F"
         ],
@@ -8461,7 +8457,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0046"
+          "TS0046",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -9449,9 +9446,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_r32ctezx",
-          "_TZE200_dzuqwsyg",
-          "_TZE204_r32ctezx",
           "Danfoss",
           "DANFOSS",
           "Eurotronic",
@@ -9672,7 +9666,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_fan"
+          "TS0601_fan",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -10381,8 +10376,6 @@
           "_tz3000_noru9tix",
           "_TZ3000_NOSNX7IM",
           "_tz3000_nosnx7im",
-          "_TZ3000_NPG02XFT",
-          "_tz3000_npg02xft",
           "_TZ3000_NPGIPL5D",
           "_tz3000_npgipl5d",
           "_TZ3000_NPZFDCOF",
@@ -12319,7 +12312,6 @@
           "_TZ3000_nss8amz9",
           "_TZ3000_ocunfvbh",
           "_TZ3000_otvn3lne",
-          "_TZ3000_p6ju8myv",
           "_TZ3000_qogsnsxh",
           "_TZ3000_rcuqxkq0",
           "_TZ3000_sfhyve2g",
@@ -12442,7 +12434,8 @@
           "lumi.weather",
           "SNZB-02",
           "SNZB-02D",
-          "SNZB-02P"
+          "SNZB-02P",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -12995,7 +12988,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_co"
+          "TS0601_co",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -13449,7 +13443,6 @@
           "_TZ3000_nss8amz9",
           "_TZ3000_ocunfvbh",
           "_TZ3000_otvn3lne",
-          "_TZ3000_p6ju8myv",
           "_TZ3000_qaaysllp",
           "_TZ3000_qogsnsxh",
           "_TZ3000_rcuqxkq0",
@@ -13569,7 +13562,6 @@
           "_TZE200_bq5c8xfe",
           "_TZE200_c2fmom5z",
           "_TZE200_cf1sl3tj",
-          "_TZE200_cirvgep4",
           "_TZE200_cpmgn2cf",
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
@@ -13595,7 +13587,8 @@
           "TRADFRI open/close remote",
           "3300-S",
           "3320-L",
-          "SNZB-04"
+          "SNZB-04",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -14032,8 +14025,6 @@
           "_tz3210_dxroobu3",
           "_TZ3210_FRM6149R",
           "_tz3210_frm6149r",
-          "_TZ3210_j4pdtz9v",
-          "_tz3210_j4pdtz9v",
           "_TZ3210_JICMOITE",
           "_tz3210_jicmoite",
           "_TZ3210_JTIFM80B",
@@ -14498,7 +14489,6 @@
           "_TZE200_bq5c8xfe",
           "_TZE200_c2fmom5z",
           "_TZE200_cf1sl3tj",
-          "_TZE200_cirvgep4",
           "_TZE200_cpmgn2cf",
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
@@ -14521,7 +14511,8 @@
           "FYRTUR",
           "AM02",
           "AM43-0.45/40-ES-EZ",
-          "AM43-0.45/40-ES-EB"
+          "AM43-0.45/40-ES-EB",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -15123,7 +15114,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_curtain_tilt"
+          "TS0601_curtain_tilt",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -15467,7 +15459,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_dimmer3"
+          "TS0601_dimmer3",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -15752,7 +15745,6 @@
           "_TZ3210_fxlkqwfl",
           "_TZ3210_hbmqbozl",
           "_TZ3210_ip2akl4w",
-          "_TZ3210_j4pdtz9v",
           "_TZ3210_k1msuvg6",
           "_TZ3210_kvnbgrrj",
           "_TZ3210_mgqzzwxi",
@@ -15800,7 +15792,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS1101"
+          "TS1101",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -16274,7 +16267,6 @@
           "_TZ3210_fxlkqwfl",
           "_TZ3210_hbmqbozl",
           "_TZ3210_ip2akl4w",
-          "_TZ3210_j4pdtz9v",
           "_TZ3210_kvnbgrrj",
           "_TZ3210_mgqzzwxi",
           "_TZ3210_onejz0gt",
@@ -16397,7 +16389,6 @@
           "_TZE200_bq5c8xfe",
           "_TZE200_c2fmom5z",
           "_TZE200_cf1sl3tj",
-          "_TZE200_cirvgep4",
           "_TZE200_cpmgn2cf",
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
@@ -16405,7 +16396,8 @@
           "_TZE200_dfry6ylv"
         ],
         "productId": [
-          "TS0601_dim1"
+          "TS0601_dim1",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -17093,7 +17085,8 @@
           "SPM01-1Z2",
           "SDM01-3Z1",
           "SDM02-2Z1",
-          "SPM02-3Z3"
+          "SPM02-3Z3",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -17400,7 +17393,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0001_din"
+          "TS0001_din",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -17672,7 +17666,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_door"
+          "TS0601_door",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -18205,7 +18200,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0211"
+          "TS0211",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -18735,7 +18731,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_3phase"
+          "TS0601_3phase",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -19024,7 +19021,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_fanctrl"
+          "TS0601_fanctrl",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -19304,7 +19302,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_lock"
+          "TS0601_lock",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -19361,7 +19360,6 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_dwcarsat",
           "_TZE200_ryfmq5rl",
           "_TZE200_mce9kjpm",
           "Danfoss",
@@ -19578,7 +19576,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_hcho"
+          "TS0601_hcho",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -19871,7 +19870,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_garage"
+          "TS0601_garage",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -20184,7 +20184,8 @@
           }
         },
         "productId": [
-          "TS0204"
+          "TS0204",
+          "TS0601"
         ]
       },
       "settings": [
@@ -20738,7 +20739,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_gas"
+          "TS0601_gas",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -21977,8 +21979,6 @@
           "_TZE204_a0syesf5",
           "_TZE200_k7qgyrrb",
           "_TZE204_k7qgyrrb",
-          "_TZE200_dwcarsat",
-          "_TZE204_dwcarsat",
           "_TZE200_nt5dgejc",
           "_TZE204_nt5dgejc",
           "Danfoss",
@@ -22197,7 +22197,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_humid"
+          "TS0601_humid",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -22561,7 +22562,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_ac"
+          "TS0601_ac",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -23142,7 +23144,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_dehum"
+          "TS0601_dehum",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -23476,9 +23479,7 @@
           "_TZ3290_hdlpifbk",
           "_TZE284_la9vhsok",
           "_TZE200_owvfni2z",
-          "_TZE200_cirvgep4",
           "_TZE200_ikvncluo",
-          "_TZE200_8ygsuhe1",
           "_TZE204_ikvncluo",
           "Danfoss",
           "DANFOSS",
@@ -23665,8 +23666,6 @@
           "ZEN",
           "Zen Thermostat",
           "_TZE200_kyfgcyf1",
-          "_TZE200_dzuqwsyg",
-          "_TZE204_dzuqwsyg",
           "SwitchBot",
           "Bitron Home",
           "Perenio",
@@ -23698,7 +23697,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS1201"
+          "TS1201",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -23955,7 +23955,8 @@
           "Ecolink",
           "Dome",
           "Vision",
-          "Monoprice"
+          "Monoprice",
+          "_TZE200_a8sdabtg"
         ],
         "productId": [
           "TS0601_lcd"
@@ -26748,7 +26749,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_smartlock"
+          "TS0601_smartlock",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -28011,7 +28013,6 @@
           "_TZ3000_lepzuhto",
           "_TZ3000_n2xgb8o5",
           "_TZ3000_ocunfvbh",
-          "_TZ3000_p6ju8myv",
           "_TZ3000_qaaysllp",
           "_TZ3000_qogsnsxh",
           "_TZ3000_rcuqxkq0",
@@ -28132,7 +28133,6 @@
           "_TZE200_b8x72kmy",
           "_TZE200_bq5c8xfe",
           "_TZE200_c2fmom5z",
-          "_TZE200_cirvgep4",
           "_TZE200_cpmgn2cf",
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
@@ -28166,7 +28166,8 @@
           "3326-L",
           "3305-S",
           "3325-S",
-          "SNZB-03"
+          "SNZB-03",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -28790,7 +28791,8 @@
           }
         },
         "productId": [
-          "TS0601_mmwave"
+          "TS0601_mmwave",
+          "TS0601"
         ]
       },
       "settings": [
@@ -29432,7 +29434,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_feeder"
+          "TS0601_feeder",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -29880,7 +29883,11 @@
           "_TZ3000_5ct6e7ye",
           "_TZ3000_typdpdpg",
           "_TZ3000_rdtixbnu",
-          "_TZ3000_w0qqde0g"
+          "_TZ3000_w0qqde0g",
+          "_TZ3000_NPG02XFT",
+          "_tz3000_npg02xft",
+          "SONOFF",
+          "Sonoff"
         ],
         "productId": [
           "TS0121",
@@ -29908,7 +29915,8 @@
           "lumi.plug.macn01",
           "lumi.plug.mmeu01",
           "E1603/E1702/E1708",
-          "TRADFRI control outlet"
+          "TRADFRI control outlet",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -30553,7 +30561,6 @@
           "_TZ3000_b28wrpvx",
           "_TZ3000_cehuw1lw",
           "_TZ3000_dpo1ysak",
-          "_TZ3000_gjnozsaz",
           "_TZ3000_gvn91tmx",
           "_TZ3000_hdopuwv6",
           "_TZ3000_i8l0nqdu",
@@ -30675,7 +30682,6 @@
           "_TZE200_bq5c8xfe",
           "_TZE200_c2fmom5z",
           "_TZE200_cf1sl3tj",
-          "_TZE200_cirvgep4",
           "_TZE200_cpmgn2cf",
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
@@ -30684,7 +30690,8 @@
         ],
         "productId": [
           "TS0111",
-          "TS0101"
+          "TS0101",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -31544,7 +31551,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_pool"
+          "TS0601_pool",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -31879,7 +31887,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_clamp"
+          "TS0601_clamp",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -32307,7 +32316,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_meter"
+          "TS0601_meter",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -32598,7 +32608,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_ceiling"
+          "TS0601_ceiling",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -33209,7 +33220,8 @@
           "ZG-205Z",
           "CK-BL702-MWS-01(7016)",
           "CK-BL702-MWS-01",
-          "SZLMR10"
+          "SZLMR10",
+          "TS0601"
         ],
         "learnmode": {
           "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
@@ -33634,7 +33646,8 @@
       ],
       "zigbee": {
         "productId": [
-          "TS0601_rad"
+          "TS0601_rad",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -34885,7 +34898,6 @@
           "_TZE200_bq5c8xfe",
           "_TZE200_c2fmom5z",
           "_TZE200_cf1sl3tj",
-          "_TZE200_cirvgep4",
           "_TZE200_cpmgn2cf",
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
@@ -34910,7 +34922,8 @@
           "014G2463",
           "STZB402",
           "STZB403",
-          "Zen-01"
+          "Zen-01",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -35452,7 +35465,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0207_rain"
+          "TS0207_rain",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -36397,9 +36411,6 @@
           "_tz3000_jckxip3g",
           "_TZ3000_KGVAMGXS",
           "_tz3000_kgvamgxs",
-          "_TZ3000_ZGYZGDUA",
-          "_tz3000_zgyzgdua",
-          "_TZ3000_zgyzgdua",
           "_TZE200_ZQTIAM9D",
           "_tze200_zqtiam9d",
           "_TZE204_ZQTIAM9D",
@@ -37257,7 +37268,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_shutter"
+          "TS0601_shutter",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -37811,7 +37823,8 @@
         ],
         "productId": [
           "TS0216",
-          "TS0219"
+          "TS0219",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -38351,7 +38364,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_breaker"
+          "TS0601_breaker",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -38615,7 +38629,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_heater"
+          "TS0601_heater",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -38915,7 +38930,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_heatctrl"
+          "TS0601_heatctrl",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -39307,7 +39323,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_rcbo"
+          "TS0601_rcbo",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -39691,7 +39708,8 @@
           "lumi.sensor_smoke",
           "JTYJ-GD-01LM/BW",
           "SSSQS01LM",
-          "NAS-SD02B0"
+          "NAS-SD02B0",
+          "TS0601"
         ]
       },
       "settings": [
@@ -40277,7 +40295,8 @@
         ],
         "productId": [
           "ZG-303Z",
-          "CS-201Z"
+          "CS-201Z",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -40441,7 +40460,8 @@
           "TS0011",
           "TS0001_power",
           "TS0001_switch",
-          "TS0001_switch_module"
+          "TS0001_switch_module",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -40994,7 +41014,6 @@
           "_TZ3000_46t1rvdu",
           "_TZ3000_5ajpkyq6",
           "_TZ3000_fvh3pjaz",
-          "_TZ3000_gjnozsaz",
           "_TZ3000_hauznfgh",
           "_TZ3000_hbdzfqjl",
           "_TZ3000_ibpqrvcy",
@@ -41167,7 +41186,6 @@
           "_TZE200_bq5c8xfe",
           "_TZE200_c2fmom5z",
           "_TZE200_cf1sl3tj",
-          "_TZE200_cirvgep4",
           "_TZE200_cpmgn2cf",
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
@@ -41696,7 +41714,8 @@
           "TS0002",
           "TS0012",
           "TS0002_power",
-          "TS0002_switch_module"
+          "TS0002_switch_module",
+          "TS0601"
         ],
         "learnmode": {
           "image": "/drivers/switch_2gang/assets/learnmode.svg",
@@ -41985,7 +42004,6 @@
           "_TZ3000_46t1rvdu",
           "_TZ3000_5ajpkyq6",
           "_TZ3000_fvh3pjaz",
-          "_TZ3000_gjnozsaz",
           "_TZ3000_hauznfgh",
           "_TZ3000_hbdzfqjl",
           "_TZ3000_ibpqrvcy",
@@ -42167,7 +42185,6 @@
           "_TZE200_bq5c8xfe",
           "_TZE200_c2fmom5z",
           "_TZE200_cf1sl3tj",
-          "_TZE200_cirvgep4",
           "_TZE200_cpmgn2cf",
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
@@ -42713,7 +42730,8 @@
           "TS0003",
           "TS0013",
           "TS0003_power",
-          "TS0003_switch_module"
+          "TS0003_switch_module",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -42942,7 +42960,6 @@
           "_TZ3000_46t1rvdu",
           "_TZ3000_5ajpkyq6",
           "_TZ3000_fvh3pjaz",
-          "_TZ3000_gjnozsaz",
           "_TZ3000_hauznfgh",
           "_TZ3000_hbdzfqjl",
           "_TZ3000_ibpqrvcy",
@@ -43125,7 +43142,6 @@
           "_TZE200_bq5c8xfe",
           "_TZE200_c2fmom5z",
           "_TZE200_cf1sl3tj",
-          "_TZE200_cirvgep4",
           "_TZE200_cpmgn2cf",
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
@@ -43664,7 +43680,9 @@
           "TS0004",
           "TS0014",
           "TS0004_power",
-          "TS0004_switch_module"
+          "TS0004_switch_module",
+          "TS0601",
+          "TS0726"
         ],
         "endpoints": {
           "1": {
@@ -43909,7 +43927,6 @@
           "_TZ3000_46t1rvdu",
           "_TZ3000_5ajpkyq6",
           "_TZ3000_fvh3pjaz",
-          "_TZ3000_gjnozsaz",
           "_TZ3000_hauznfgh",
           "_TZ3000_hbdzfqjl",
           "_TZ3000_ibpqrvcy",
@@ -44093,7 +44110,6 @@
           "_TZE200_bq5c8xfe",
           "_TZE200_c2fmom5z",
           "_TZE200_cf1sl3tj",
-          "_TZE200_cirvgep4",
           "_TZE200_cpmgn2cf",
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
@@ -44635,7 +44651,6 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_gjnozsaz",
           "_TZ3000_typdpbpg",
           "Danfoss",
           "DANFOSS",
@@ -46097,7 +46112,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0015"
+          "TS0015",
+          "TS0601"
         ],
         "learnmode": {
           "image": "/drivers/switch_wall_5gang/assets/learnmode.svg",
@@ -46919,7 +46935,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0016"
+          "TS0016",
+          "TS0601"
         ],
         "learnmode": {
           "image": "/drivers/switch_wall_6gang/assets/learnmode.svg",
@@ -48098,7 +48115,6 @@
           "_tze200_nvxorhcj",
           "_TZE204_r32ctezx",
           "_tze204_r32ctezx",
-          "_TZE200_r32ctezx",
           "_TZE204_8gang001",
           "_TZE200_8gang001",
           "_TZE204_ws8g8u0b",
@@ -48317,7 +48333,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_8gang"
+          "TS0601_8gang",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -49801,7 +49818,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_thermo4ch"
+          "TS0601_thermo4ch",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -50143,7 +50161,6 @@
           "_TZE200_c88teujp",
           "_TZE200_ckud7u2l",
           "_TZE200_d0yu2xgi",
-          "_TZE200_dzuqwsyg",
           "_TZE200_e9ba97vf",
           "_TZE200_ebb90c7y",
           "_TZE200_fhn3negr",
@@ -50156,7 +50173,6 @@
           "_TZE200_iyizdvls",
           "_TZE200_kds0pmmv",
           "_TZE200_kkr3igo4",
-          "_TZE200_locansqn",
           "_TZE200_lpwgshtl",
           "_TZE200_mudxchsu",
           "_TZE200_ne7xgwgv",
@@ -50298,7 +50314,6 @@
           "_TZE200_bq5c8xfe",
           "_TZE200_c2fmom5z",
           "_TZE200_cf1sl3tj",
-          "_TZE200_cirvgep4",
           "_TZE200_d5p1kr8z",
           "_TZE200_d8fp6ivb",
           "_TZE200_dcydapr2",
@@ -50307,7 +50322,8 @@
           "_TZE200_s8gkrkxk"
         ],
         "productId": [
-          "TS0601_thermo"
+          "TS0601_thermo",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -50974,7 +50990,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0115"
+          "TS0115",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -51980,7 +51997,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_valve"
+          "TS0601_valve",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -52287,7 +52305,8 @@
         "productId": [
           "TS0209",
           "TS0210",
-          "ZG-102ZM"
+          "ZG-102ZM",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -52616,7 +52635,6 @@
           "_TZ3000_nss8amz9",
           "_TZ3000_ocunfvbh",
           "_TZ3000_otvn3lne",
-          "_TZ3000_p6ju8myv",
           "_TZ3000_qaaysllp",
           "_TZ3000_qogsnsxh",
           "_TZ3000_rcuqxkq0",
@@ -52719,7 +52737,8 @@
           "HS1WL",
           "SNZB-05",
           "3315-S",
-          "3315-Seu"
+          "3315-Seu",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -53285,7 +53304,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_tank"
+          "TS0601_tank",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -53681,7 +53701,8 @@
           }
         },
         "productId": [
-          "TS0601_watervalve"
+          "TS0601_watervalve",
+          "TS0601"
         ]
       },
       "settings": [
@@ -54189,7 +54210,8 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_weather"
+          "TS0601_weather",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
