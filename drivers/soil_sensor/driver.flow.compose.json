@@ -157,6 +157,33 @@
   ],
   "conditions": [
     {
+      "id": "soil_sensor_moisture_below",
+      "title": {
+        "en": "Soil moisture !{{is|is not}} below",
+        "nl": "Bodemvochtigheid !{{is|is niet}} onder",
+        "fr": "Humidité sol !{{est|n'est pas}} en-dessous de",
+        "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} unter"
+      },
+      "titleFormatted": {
+        "en": "Soil moisture !{{is|is not}} below [[moisture]]%",
+        "nl": "Bodemvochtigheid !{{is|is niet}} onder [[moisture]]%",
+        "fr": "Humidité sol !{{est|n'est pas}} en-dessous de [[moisture]]%",
+        "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} unter [[moisture]]%"
+      },
+      "args": [
+        {
+          "name": "moisture",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": {
+            "en": "30"
+          }
+        }
+      ]
+    },
+    {
       "id": "soil_sensor_moisture_above",
       "title": {
         "en": "Soil moisture !{{is|is not}} above",
