@@ -1,6 +1,15 @@
 {
   "triggers": [
     {
+      "id": "usb_outlet_button_pressed",
+      "title": {
+        "en": "Button was pressed",
+        "fr": "Le bouton a été pressé",
+        "nl": "Knop is ingedrukt",
+        "de": "Taste wurde gedrückt"
+      }
+    },
+    {
       "id": "usb_outlet_advanced_turned_on",
       "title": {
         "en": "Turned on",
