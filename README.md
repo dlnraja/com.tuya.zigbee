@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.705** | 🔧 DIAGNOSTIC FIXES: Fixed flow card ID mismatches in soil_sensor (moisture_c... |
 | **v5.5.704** | 🔄 SYNC & WORKFLOWS: Fixed 53 stale + added 75 missing manufacturer/product I... |
 | **v5.5.703** | 🔧 CRITICAL DUPLICATES FIX: Removed 48 manufacturerNames from wrong drivers b... |
 | **v5.5.702** | 🔧 ANALYSIS: Added scripts/fix-true-duplicates.js for duplicate analysis. Man... |
@@ -78,7 +79,6 @@
 | **v5.5.697** | 🔧 UNIVERSAL CASE-INSENSITIVE MATCHING: All manufacturerName/productId compar... |
 | **v5.5.696** | 🎛️ Flow Cards Fix: scene_switch_4 now has 16 button flow cards (press/double... |
 | **v5.5.695** | 🐛 BSEED TS0726 Fix: Removed _tz3002_pzao9ls1 from button_wireless_4 - now co... |
-| **v5.5.694** | 🐛 Critical JSON Fix: Fixed malformed newline in 63 driver.compose.json files... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
