@@ -1,6 +1,7 @@
 'use strict';
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { includesCI, containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -94,7 +95,7 @@ class Button4GangDevice extends ButtonDevice {
     const manufacturerName = this.getData()?.manufacturerName || '';
 
     // Only TS004F needs mode switching (TS0044 doesn't have this issue)
-    const isTS004F = productId.includes('TS004F') || productId === 'TS004F';
+    const isTS004F = containsCI(productId, 'TS004F');
 
     this.log(`[BUTTON4-MODE] 🔍 Device: ${productId} / ${manufacturerName}`);
     this.log(`[BUTTON4-MODE] 🔍 Is TS004F: ${isTS004F}`);
@@ -113,7 +114,7 @@ class Button4GangDevice extends ButtonDevice {
       '_TZ3000_5tqxpine',  // v5.5.419: Forum report Eftychis
       '_TZ3000_zgyzgdua'   // v5.5.617: Forum report Freddyboy - Moes 4-button
     ];
-    const needsModeSwitching = isTS004F || ts004fManufacturers.includes(manufacturerName);
+    const needsModeSwitching = isTS004F || includesCI(ts004fManufacturers, manufacturerName);
 
     if (!needsModeSwitching) {
       this.log('[BUTTON4-MODE] ℹ️ Device is TS0044-type, no mode switching needed');
