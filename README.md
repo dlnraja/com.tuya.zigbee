@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.699** | 🔧 DEEP CASE-INSENSITIVE FIX: Extended case-insensitive matching to ALL devic... |
 | **v5.5.698** | 🎛️ SCENE SWITCH FLOW CARDS: Added flow triggers for scene_switch_1/2/3/6 dri... |
 | **v5.5.697** | 🔧 UNIVERSAL CASE-INSENSITIVE MATCHING: All manufacturerName/productId compar... |
 | **v5.5.696** | 🎛️ Flow Cards Fix: scene_switch_4 now has 16 button flow cards (press/double... |
@@ -78,7 +79,6 @@
 | **v5.5.692** | 🐛 switch_4gang JSON fix: Fixed malformed newline causing device init failure... |
 | **v5.5.691** | 🤖 Fingerbot driver: New dedicated driver for Tuya Fingerbot Plus (_TZ3210_j4... |
 | **v5.5.690** | 🔧 TS0601 productId: Added to 5 drivers (air_purifier, air_quality_co2, butto... |
-| **v5.5.689** | 🔧 Case-insensitive matching: ManufacturerName matching now ignores case for ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
