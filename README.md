@@ -69,7 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.5.701** | 🔧 CRITICAL DUPLICATE FIX: Removed 1339 duplicate manufacturerNames from 65 d... |
+| **v5.5.702** | 🔧 ANALYSIS: Added scripts/fix-true-duplicates.js for duplicate analysis. Man... |
 | **v5.5.700** | 🔧 UNIVERSAL PERMISSIVE SOLUTION: New lib/Util.js with normalizeTuyaID, equal... |
 | **v5.5.699** | 🔧 DEEP CASE-INSENSITIVE FIX: Extended case-insensitive matching to ALL devic... |
 | **v5.5.698** | 🎛️ SCENE SWITCH FLOW CARDS: Added flow triggers for scene_switch_1/2/3/6 dri... |
