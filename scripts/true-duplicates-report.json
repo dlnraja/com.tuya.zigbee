@@ -1,0 +1,2838 @@
+{
+  "timestamp": "2026-01-20T10:01:56.446Z",
+  "totalCombinations": 47374,
+  "trueDuplicates": 204,
+  "duplicates": [
+    {
+      "key": "_TZE200_mja3fuja|TS0601",
+      "mfr": "_TZE200_mja3fuja",
+      "productId": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "humidifier"
+      ]
+    },
+    {
+      "key": "_TZE204_mja3fuja|TS0601",
+      "mfr": "_TZE204_mja3fuja",
+      "productId": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "humidifier"
+      ]
+    },
+    {
+      "key": "_TZE200_dwcarsat|TS0601",
+      "mfr": "_TZE200_dwcarsat",
+      "productId": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "air_quality_co2",
+        "air_quality_comprehensive",
+        "formaldehyde_sensor",
+        "humidifier"
+      ]
+    },
+    {
+      "key": "_TZE204_dwcarsat|TS0601",
+      "mfr": "_TZE204_dwcarsat",
+      "productId": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "humidifier"
+      ]
+    },
+    {
+      "key": "_TZE200_8ygsuhe1|TS0601",
+      "mfr": "_TZE200_8ygsuhe1",
+      "productId": "TS0601",
+      "drivers": [
+        "air_quality_co2",
+        "air_quality_comprehensive",
+        "ir_blaster"
+      ]
+    },
+    {
+      "key": "_TZ3000_gjnozsaz|TS0601",
+      "mfr": "_TZ3000_gjnozsaz",
+      "productId": "TS0601",
+      "drivers": [
+        "button_emergency_sos",
+        "plug_smart",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang"
+      ]
+    },
+    {
+      "key": "_TZ3000_p6ju8myv|TS0601",
+      "mfr": "_TZ3000_p6ju8myv",
+      "productId": "TS0601",
+      "drivers": [
+        "button_emergency_sos",
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZE200_r32ctezx|TS0601",
+      "mfr": "_TZE200_r32ctezx",
+      "productId": "TS0601",
+      "drivers": [
+        "ceiling_fan",
+        "fan_controller",
+        "switch_wall_8gang"
+      ]
+    },
+    {
+      "key": "_TZE200_dzuqwsyg|TS0601",
+      "mfr": "_TZE200_dzuqwsyg",
+      "productId": "TS0601",
+      "drivers": [
+        "ceiling_fan",
+        "fan_controller",
+        "ir_blaster",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE204_r32ctezx|TS0601",
+      "mfr": "_TZE204_r32ctezx",
+      "productId": "TS0601",
+      "drivers": [
+        "ceiling_fan",
+        "fan_controller",
+        "switch_wall_8gang"
+      ]
+    },
+    {
+      "key": "_TZ3000_1h2x4akh|TS0601",
+      "mfr": "_TZ3000_1h2x4akh",
+      "productId": "TS0601",
+      "drivers": [
+        "ceiling_fan",
+        "din_rail_switch",
+        "fan_controller"
+      ]
+    },
+    {
+      "key": "_TZ3210_t46srmxd|TS0601",
+      "mfr": "_TZ3210_t46srmxd",
+      "productId": "TS0601",
+      "drivers": [
+        "ceiling_fan",
+        "fan_controller"
+      ]
+    },
+    {
+      "key": "_TZ3000_YSDV91BK|TS0601",
+      "mfr": "_TZ3000_YSDV91BK",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "key": "_TZE200_CTQ0K47X|TS0601",
+      "mfr": "_TZE200_CTQ0K47X",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "key": "_TZ3000_6ygjfyll|TS0601",
+      "mfr": "_TZ3000_6ygjfyll",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_85czd6fy|TS0601",
+      "mfr": "_TZ3000_85czd6fy",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_aqqcrptj|TS0601",
+      "mfr": "_TZ3000_aqqcrptj",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_decxrtwa|TS0601",
+      "mfr": "_TZ3000_decxrtwa",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_eit6l5|TS0601",
+      "mfr": "_TZ3000_eit6l5",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_exc99dvw|TS0601",
+      "mfr": "_TZ3000_exc99dvw",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_fkxmyics|TS0601",
+      "mfr": "_TZ3000_fkxmyics",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_geyh5rfs|TS0601",
+      "mfr": "_TZ3000_geyh5rfs",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_gntwytxo|TS0601",
+      "mfr": "_TZ3000_gntwytxo",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_h4wnrtck|TS0601",
+      "mfr": "_TZ3000_h4wnrtck",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_hgu1dlak|TS0601",
+      "mfr": "_TZ3000_hgu1dlak",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_iugnaasp|TS0601",
+      "mfr": "_TZ3000_iugnaasp",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_k4ej3ww2|TS0601",
+      "mfr": "_TZ3000_k4ej3ww2",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_kdi2o9m6|TS0601",
+      "mfr": "_TZ3000_kdi2o9m6",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "plug_energy_monitor",
+        "plug_smart",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_kmh5qpmb|TS0601",
+      "mfr": "_TZ3000_kmh5qpmb",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_kyb656no|TS0601",
+      "mfr": "_TZ3000_kyb656no",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_lepzuhto|TS0601",
+      "mfr": "_TZ3000_lepzuhto",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_mcxw5ehu|TS0601",
+      "mfr": "_TZ3000_mcxw5ehu",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_msl6wxk9|TS0601",
+      "mfr": "_TZ3000_msl6wxk9",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_n2xgb8o5|TS0601",
+      "mfr": "_TZ3000_n2xgb8o5",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_nss8amz9|TS0601",
+      "mfr": "_TZ3000_nss8amz9",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_ocunfvbh|TS0601",
+      "mfr": "_TZ3000_ocunfvbh",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_otvn3lne|TS0601",
+      "mfr": "_TZ3000_otvn3lne",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_qogsnsxh|TS0601",
+      "mfr": "_TZ3000_qogsnsxh",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_rcuqxkq0|TS0601",
+      "mfr": "_TZ3000_rcuqxkq0",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_sfhyve2g|TS0601",
+      "mfr": "_TZ3000_sfhyve2g",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_t6jrifu5|TS0601",
+      "mfr": "_TZ3000_t6jrifu5",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_upgcbody|TS0601",
+      "mfr": "_TZ3000_upgcbody",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_usvkzkyn|TS0601",
+      "mfr": "_TZ3000_usvkzkyn",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_wkai4ga5|TS0601",
+      "mfr": "_TZ3000_wkai4ga5",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_yxqnffam|TS0601",
+      "mfr": "_TZ3000_yxqnffam",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_zf1lxtlj|TS0601",
+      "mfr": "_TZ3000_zf1lxtlj",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_402jjyro|TS0601",
+      "mfr": "_TZ3000_402jjyro",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_abci1hiu|TS0601",
+      "mfr": "_TZ3000_abci1hiu",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_b28wrpvx|TS0601",
+      "mfr": "_TZ3000_b28wrpvx",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_bvrlqyj7|TS0601",
+      "mfr": "_TZ3000_bvrlqyj7",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_c3g3pupu|TS0601",
+      "mfr": "_TZ3000_c3g3pupu",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_cduqh1l0|TS0601",
+      "mfr": "_TZ3000_cduqh1l0",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_ckq7u3r4|TS0601",
+      "mfr": "_TZ3000_ckq7u3r4",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_cphmq0q7|TS0601",
+      "mfr": "_TZ3000_cphmq0q7",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "fan_controller",
+        "motion_sensor",
+        "plug_energy_monitor",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_cxkjlbxx|TS0601",
+      "mfr": "_TZ3000_cxkjlbxx",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_dffvflui|TS0601",
+      "mfr": "_TZ3000_dffvflui",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_dksbtrzs|TS0601",
+      "mfr": "_TZ3000_dksbtrzs",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_e3vhyrdz|TS0601",
+      "mfr": "_TZ3000_e3vhyrdz",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_egfdwm0f|TS0601",
+      "mfr": "_TZ3000_egfdwm0f",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_exni6swi|TS0601",
+      "mfr": "_TZ3000_exni6swi",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_f1bapcit|TS0601",
+      "mfr": "_TZ3000_f1bapcit",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_femsrftq|TS0601",
+      "mfr": "_TZ3000_femsrftq",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_fgwhjm9j|TS0601",
+      "mfr": "_TZ3000_fgwhjm9j",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_gp7p1xsn|TS0601",
+      "mfr": "_TZ3000_gp7p1xsn",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_gznh2xla|TS0601",
+      "mfr": "_TZ3000_gznh2xla",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_h1jnz6l9|TS0601",
+      "mfr": "_TZ3000_h1jnz6l9",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_hdc8bbhc|TS0601",
+      "mfr": "_TZ3000_hdc8bbhc",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_hgpnzgac|TS0601",
+      "mfr": "_TZ3000_hgpnzgac",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_hmitslt3|TS0601",
+      "mfr": "_TZ3000_hmitslt3",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_i1rw7p4p|TS0601",
+      "mfr": "_TZ3000_i1rw7p4p",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_idrffznf|TS0601",
+      "mfr": "_TZ3000_idrffznf",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_imaccztn|TS0601",
+      "mfr": "_TZ3000_imaccztn",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_iv2hvncp|TS0601",
+      "mfr": "_TZ3000_iv2hvncp",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_j34bmidp|TS0601",
+      "mfr": "_TZ3000_j34bmidp",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_jabbwuie|TS0601",
+      "mfr": "_TZ3000_jabbwuie",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_jbjz13kn|TS0601",
+      "mfr": "_TZ3000_jbjz13kn",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_jeanjpmj|TS0601",
+      "mfr": "_TZ3000_jeanjpmj",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_jimbwdxd|TS0601",
+      "mfr": "_TZ3000_jimbwdxd",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_jkbrnvhr|TS0601",
+      "mfr": "_TZ3000_jkbrnvhr",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_jnihvwo1|TS0601",
+      "mfr": "_TZ3000_jnihvwo1",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_jvvhvqjk|TS0601",
+      "mfr": "_TZ3000_jvvhvqjk",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_k6fvknrr|TS0601",
+      "mfr": "_TZ3000_k6fvknrr",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_kas5qbpq|TS0601",
+      "mfr": "_TZ3000_kas5qbpq",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_kgvnspdl|TS0601",
+      "mfr": "_TZ3000_kgvnspdl",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_kksch6ep|TS0601",
+      "mfr": "_TZ3000_kksch6ep",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_klch39xt|TS0601",
+      "mfr": "_TZ3000_klch39xt",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_kmuxjukf|TS0601",
+      "mfr": "_TZ3000_kmuxjukf",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_kud7u2l1|TS0601",
+      "mfr": "_TZ3000_kud7u2l1",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_kvwjujy9|TS0601",
+      "mfr": "_TZ3000_kvwjujy9",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_l6pwxuxm|TS0601",
+      "mfr": "_TZ3000_l6pwxuxm",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_ld6g3agd|TS0601",
+      "mfr": "_TZ3000_ld6g3agd",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_1agwnafq|TS0601",
+      "mfr": "_TZE200_1agwnafq",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_44af8ipg|TS0601",
+      "mfr": "_TZE200_44af8ipg",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_4hbx5cvx|TS0601",
+      "mfr": "_TZE200_4hbx5cvx",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_502zx5sl|TS0601",
+      "mfr": "_TZE200_502zx5sl",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_56bdwt92|TS0601",
+      "mfr": "_TZE200_56bdwt92",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_5bdnqwnx|TS0601",
+      "mfr": "_TZE200_5bdnqwnx",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_5tgzpccv|TS0601",
+      "mfr": "_TZE200_5tgzpccv",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_6mafo2gv|TS0601",
+      "mfr": "_TZE200_6mafo2gv",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_8k8k3t3j|TS0601",
+      "mfr": "_TZE200_8k8k3t3j",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_8xtk0cjs|TS0601",
+      "mfr": "_TZE200_8xtk0cjs",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_9cxuhakf|TS0601",
+      "mfr": "_TZE200_9cxuhakf",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_9kqxlpby|TS0601",
+      "mfr": "_TZE200_9kqxlpby",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_a4cjpzdi|TS0601",
+      "mfr": "_TZE200_a4cjpzdi",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_ahl6l9k5|TS0601",
+      "mfr": "_TZE200_ahl6l9k5",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_akjefhj5|TS0601",
+      "mfr": "_TZE200_akjefhj5",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_amp6tsvy|TS0601",
+      "mfr": "_TZE200_amp6tsvy",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_ar0slwnd|TS0601",
+      "mfr": "_TZE200_ar0slwnd",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_axbpz5wm|TS0601",
+      "mfr": "_TZE200_axbpz5wm",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_b8x72kmy|TS0601",
+      "mfr": "_TZE200_b8x72kmy",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_cf1sl3tj|TS0601",
+      "mfr": "_TZE200_cf1sl3tj",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_cpmgn2cf|TS0601",
+      "mfr": "_TZE200_cpmgn2cf",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang"
+      ]
+    },
+    {
+      "key": "_TZE200_d5p1kr8z|TS0601",
+      "mfr": "_TZE200_d5p1kr8z",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_d8fp6ivb|TS0601",
+      "mfr": "_TZE200_d8fp6ivb",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_dcydapr2|TS0601",
+      "mfr": "_TZE200_dcydapr2",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_dfry6ylv|TS0601",
+      "mfr": "_TZE200_dfry6ylv",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_xr3htd96|TS0601",
+      "mfr": "_TZ3000_xr3htd96",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_dowj6gyi|TS0601",
+      "mfr": "_TZ3000_dowj6gyi",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_qaaysllp|TS0601",
+      "mfr": "_TZ3000_qaaysllp",
+      "productId": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_OSU834UN|TS0601",
+      "mfr": "_TZ3000_OSU834UN",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "vibration_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_bpkijo14|TS0601",
+      "mfr": "_TZ3000_bpkijo14",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_hktqahrq|TS0601",
+      "mfr": "_TZ3000_hktqahrq",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_rdhukkmi|TS0601",
+      "mfr": "_TZ3000_rdhukkmi",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_rusu2vzb|TS0601",
+      "mfr": "_TZ3000_rusu2vzb",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_v1pdxuqq|TS0601",
+      "mfr": "_TZ3000_v1pdxuqq",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_ywagc4rj|TS0601",
+      "mfr": "_TZ3000_ywagc4rj",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_4rbqgcuv|TS0601",
+      "mfr": "_TZ3000_4rbqgcuv",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZ3000_cfnprab5|TS0601",
+      "mfr": "_TZ3000_cfnprab5",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_eei0ubpy|TS0601",
+      "mfr": "_TZ3000_eei0ubpy",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_fbjdkph9|TS0601",
+      "mfr": "_TZ3000_fbjdkph9",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_g1glzzfk|TS0601",
+      "mfr": "_TZ3000_g1glzzfk",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_0j5jma9b|TS0601",
+      "mfr": "_TZE200_0j5jma9b",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_1ibpyhdc|TS0601",
+      "mfr": "_TZE200_1ibpyhdc",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "presence_sensor_radar",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_2hf7x9n3|TS0601",
+      "mfr": "_TZE200_2hf7x9n3",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_3towulqd|TS0601",
+      "mfr": "_TZE200_3towulqd",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_7tdtqgwv|TS0601",
+      "mfr": "_TZE200_7tdtqgwv",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_9mahtqtg|TS0601",
+      "mfr": "_TZE200_9mahtqtg",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_anv5ujhv|TS0601",
+      "mfr": "_TZE200_anv5ujhv",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_atpwqgml|TS0601",
+      "mfr": "_TZE200_atpwqgml",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_bq5c8xfe|TS0601",
+      "mfr": "_TZE200_bq5c8xfe",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_c2fmom5z|TS0601",
+      "mfr": "_TZE200_c2fmom5z",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_cirvgep4|TS0601",
+      "mfr": "_TZE200_cirvgep4",
+      "productId": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "curtain_motor",
+        "dimmer_wall_1gang",
+        "ir_blaster",
+        "motion_sensor",
+        "plug_smart",
+        "radiator_valve",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE204_cjbofhxw|TS0601",
+      "mfr": "_TZE204_cjbofhxw",
+      "productId": "TS0601",
+      "drivers": [
+        "co_sensor",
+        "din_rail_meter",
+        "radiator_valve",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_68nvbio9|TS0601",
+      "mfr": "_TZE200_68nvbio9",
+      "productId": "TS0601",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_tilt",
+        "smart_breaker"
+      ]
+    },
+    {
+      "key": "_TZE200_sur6q7ko|TS0601",
+      "mfr": "_TZE200_sur6q7ko",
+      "productId": "TS0601",
+      "drivers": [
+        "curtain_motor",
+        "curtain_motor_tilt",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_aoclfnxz|TS0601",
+      "mfr": "_TZE200_aoclfnxz",
+      "productId": "TS0601",
+      "drivers": [
+        "curtain_motor",
+        "smart_breaker",
+        "smart_heater",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TYZB01_v8gtiaed|TS0601",
+      "mfr": "_TYZB01_v8gtiaed",
+      "productId": "TS0601",
+      "drivers": [
+        "dimmer_dual_channel",
+        "switch_1gang"
+      ]
+    },
+    {
+      "key": "_TZ3210_4ux0ondb|TS0601",
+      "mfr": "_TZ3210_4ux0ondb",
+      "productId": "TS0601",
+      "drivers": [
+        "dimmer_dual_channel",
+        "dimmer_wall_1gang",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "key": "_TZE200_bkkmqmyo|TS0601",
+      "mfr": "_TZE200_bkkmqmyo",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "din_rail_switch",
+        "plug_energy_monitor",
+        "power_clamp_meter"
+      ]
+    },
+    {
+      "key": "_TZE204_wbhaespm|TS0601",
+      "mfr": "_TZE204_wbhaespm",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "smart_breaker"
+      ]
+    },
+    {
+      "key": "_TZE200_wbhaespm|TS0601",
+      "mfr": "_TZE200_wbhaespm",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "smart_breaker"
+      ]
+    },
+    {
+      "key": "_TZE204_lzriup1j|TS0601",
+      "mfr": "_TZE204_lzriup1j",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "radiator_valve",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3000_xkap8wtb|TS0601",
+      "mfr": "_TZ3000_xkap8wtb",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "plug_energy_monitor",
+        "plug_smart"
+      ]
+    },
+    {
+      "key": "_TZ3000_qeuvnohg|TS0601",
+      "mfr": "_TZ3000_qeuvnohg",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "power_clamp_meter",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang"
+      ]
+    },
+    {
+      "key": "_TZE200_nslr42tt|TS0601",
+      "mfr": "_TZE200_nslr42tt",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "power_clamp_meter"
+      ]
+    },
+    {
+      "key": "_TZE204_nslr42tt|TS0601",
+      "mfr": "_TZE204_nslr42tt",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "power_clamp_meter"
+      ]
+    },
+    {
+      "key": "_TZ3000_amdymr7l|TS0601",
+      "mfr": "_TZ3000_amdymr7l",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "din_rail_switch",
+        "plug_energy_monitor",
+        "plug_smart"
+      ]
+    },
+    {
+      "key": "_TZ3000_typdpbpg|TS0601",
+      "mfr": "_TZ3000_typdpbpg",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "din_rail_switch",
+        "plug_energy_monitor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang"
+      ]
+    },
+    {
+      "key": "_TZ3000_qystbcjg|TS0601",
+      "mfr": "_TZ3000_qystbcjg",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_switch",
+        "pool_pump"
+      ]
+    },
+    {
+      "key": "_TZ3000_cayepv1a|TS0601",
+      "mfr": "_TZ3000_cayepv1a",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_switch",
+        "smart_breaker"
+      ]
+    },
+    {
+      "key": "_TZ3000_ji4araar|TS0601",
+      "mfr": "_TZ3000_ji4araar",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_switch",
+        "smart_breaker"
+      ]
+    },
+    {
+      "key": "_TZ3000_5f43h46b|TS0601",
+      "mfr": "_TZ3000_5f43h46b",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_switch",
+        "plug_smart"
+      ]
+    },
+    {
+      "key": "_TZE200_aqnazj70|TS0601",
+      "mfr": "_TZE200_aqnazj70",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_switch",
+        "smart_breaker"
+      ]
+    },
+    {
+      "key": "_TZE204_aqnazj70|TS0601",
+      "mfr": "_TZE204_aqnazj70",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_switch",
+        "smart_breaker"
+      ]
+    },
+    {
+      "key": "_TZE200_fjb98hbq|TS0601",
+      "mfr": "_TZE200_fjb98hbq",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_switch",
+        "smart_breaker"
+      ]
+    },
+    {
+      "key": "_TZE204_fjb98hbq|TS0601",
+      "mfr": "_TZE204_fjb98hbq",
+      "productId": "TS0601",
+      "drivers": [
+        "din_rail_switch",
+        "smart_breaker"
+      ]
+    },
+    {
+      "key": "_TZE200_d0yu2xgi|TS0601",
+      "mfr": "_TZE200_d0yu2xgi",
+      "productId": "TS0601",
+      "drivers": [
+        "doorbell",
+        "radiator_valve",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_byzdayie|TS0601",
+      "mfr": "_TZE200_byzdayie",
+      "productId": "TS0601",
+      "drivers": [
+        "energy_meter_3phase",
+        "power_clamp_meter",
+        "smart_breaker"
+      ]
+    },
+    {
+      "key": "_TZE204_dzuqwsyg|TS0601",
+      "mfr": "_TZE204_dzuqwsyg",
+      "productId": "TS0601",
+      "drivers": [
+        "fan_controller",
+        "ir_blaster"
+      ]
+    },
+    {
+      "key": "_TZE200_3t91nb6k|TS0601",
+      "mfr": "_TZE200_3t91nb6k",
+      "productId": "TS0601",
+      "drivers": [
+        "fingerprint_lock",
+        "lock_smart"
+      ]
+    },
+    {
+      "key": "_TZE200_pvvbommb|TS0601",
+      "mfr": "_TZE200_pvvbommb",
+      "productId": "TS0601",
+      "drivers": [
+        "fingerprint_lock",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_bse1xpui|TS0601",
+      "mfr": "_TZE200_bse1xpui",
+      "productId": "TS0601",
+      "drivers": [
+        "fingerprint_lock",
+        "lock_smart"
+      ]
+    },
+    {
+      "key": "_TZE200_vu0jdqnm|TS0601",
+      "mfr": "_TZE200_vu0jdqnm",
+      "productId": "TS0601",
+      "drivers": [
+        "fingerprint_lock",
+        "lock_smart"
+      ]
+    },
+    {
+      "key": "_TZE204_vu0jdqnm|TS0601",
+      "mfr": "_TZE204_vu0jdqnm",
+      "productId": "TS0601",
+      "drivers": [
+        "fingerprint_lock",
+        "lock_smart"
+      ]
+    },
+    {
+      "key": "_TZE200_wfxuhoea|TS0601",
+      "mfr": "_TZE200_wfxuhoea",
+      "productId": "TS0601",
+      "drivers": [
+        "garage_door",
+        "radiator_valve",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_dq1mfjug|TS0601",
+      "mfr": "_TZE200_dq1mfjug",
+      "productId": "TS0601",
+      "drivers": [
+        "gas_detector",
+        "gas_sensor",
+        "pet_feeder"
+      ]
+    },
+    {
+      "key": "_TZE200_a0syesf5|TS0601",
+      "mfr": "_TZE200_a0syesf5",
+      "productId": "TS0601",
+      "drivers": [
+        "humidifier",
+        "hvac_air_conditioner",
+        "hvac_dehumidifier"
+      ]
+    },
+    {
+      "key": "_TZE200_qtbrwrfv|TS0601",
+      "mfr": "_TZE200_qtbrwrfv",
+      "productId": "TS0601",
+      "drivers": [
+        "humidifier",
+        "hvac_air_conditioner",
+        "hvac_dehumidifier"
+      ]
+    },
+    {
+      "key": "_TZE204_qtbrwrfv|TS0601",
+      "mfr": "_TZE204_qtbrwrfv",
+      "productId": "TS0601",
+      "drivers": [
+        "humidifier",
+        "hvac_air_conditioner",
+        "hvac_dehumidifier"
+      ]
+    },
+    {
+      "key": "_TZE200_PAY2BYAX|TS0601",
+      "mfr": "_TZE200_PAY2BYAX",
+      "productId": "TS0601",
+      "drivers": [
+        "motion_sensor_radar_mmwave",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_SGPEACQP|TS0601",
+      "mfr": "_TZE200_SGPEACQP",
+      "productId": "TS0601",
+      "drivers": [
+        "motion_sensor_radar_mmwave",
+        "radiator_valve"
+      ]
+    },
+    {
+      "key": "_TZ3000_okaz9tjs|TS0601",
+      "mfr": "_TZ3000_okaz9tjs",
+      "productId": "TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang"
+      ]
+    },
+    {
+      "key": "_TZ3000_VTSCRPMX|TS0601",
+      "mfr": "_TZ3000_VTSCRPMX",
+      "productId": "TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "key": "_TZE204_81YRT3LO|TS0601",
+      "mfr": "_TZE204_81YRT3LO",
+      "productId": "TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "power_meter"
+      ]
+    },
+    {
+      "key": "_TZE204_bkkmqmyo|TS0601",
+      "mfr": "_TZE204_bkkmqmyo",
+      "productId": "TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "power_clamp_meter"
+      ]
+    },
+    {
+      "key": "_TZ3000_wamqdr3f|TS0601",
+      "mfr": "_TZ3000_wamqdr3f",
+      "productId": "TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang"
+      ]
+    },
+    {
+      "key": "_TZ3000_fdxihpp7|TS0601",
+      "mfr": "_TZ3000_fdxihpp7",
+      "productId": "TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang"
+      ]
+    },
+    {
+      "key": "_TZ3000_lelb6ejs|TS0601",
+      "mfr": "_TZ3000_lelb6ejs",
+      "productId": "TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang"
+      ]
+    },
+    {
+      "key": "_TZ3000_rdtixbnu|TS0601",
+      "mfr": "_TZ3000_rdtixbnu",
+      "productId": "TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang"
+      ]
+    },
+    {
+      "key": "_TZ3000_w0qqde0g|TS0601",
+      "mfr": "_TZ3000_w0qqde0g",
+      "productId": "TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "plug_smart",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang"
+      ]
+    },
+    {
+      "key": "_TZ3000_g5xawfcq|TS0601",
+      "mfr": "_TZ3000_g5xawfcq",
+      "productId": "TS0601",
+      "drivers": [
+        "plug_smart",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang"
+      ]
+    },
+    {
+      "key": "_TZ3000_gvn91tmx|TS0601",
+      "mfr": "_TZ3000_gvn91tmx",
+      "productId": "TS0601",
+      "drivers": [
+        "plug_smart",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang"
+      ]
+    },
+    {
+      "key": "_TZ3000_mraovvmm|TS0601",
+      "mfr": "_TZ3000_mraovvmm",
+      "productId": "TS0601",
+      "drivers": [
+        "plug_smart",
+        "switch_1gang",
+        "switch_2gang",
+        "switch_3gang",
+        "switch_4gang",
+        "switch_wall_5gang"
+      ]
+    },
+    {
+      "key": "_TZ3000_8BXRZYXZ|TS0601",
+      "mfr": "_TZ3000_8BXRZYXZ",
+      "productId": "TS0601",
+      "drivers": [
+        "power_meter",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "key": "_TZE200_ztc6ggyl|TS0601",
+      "mfr": "_TZE200_ztc6ggyl",
+      "productId": "TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "radiator_valve",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_kb5noeto|TS0601",
+      "mfr": "_TZE200_kb5noeto",
+      "productId": "TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "smoke_detector_advanced"
+      ]
+    },
+    {
+      "key": "_TZE204_AOCLFNXZ|TS0601",
+      "mfr": "_TZE204_AOCLFNXZ",
+      "productId": "TS0601",
+      "drivers": [
+        "radiator_valve",
+        "switch_4gang"
+      ]
+    },
+    {
+      "key": "_TZE200_ckud7u2l|TS0601",
+      "mfr": "_TZE200_ckud7u2l",
+      "productId": "TS0601",
+      "drivers": [
+        "radiator_valve",
+        "smart_heater",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_ntcy3xu1|TS0601",
+      "mfr": "_TZE200_ntcy3xu1",
+      "productId": "TS0601",
+      "drivers": [
+        "radiator_valve",
+        "smoke_detector_advanced",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE200_sh1btabb|TS0601",
+      "mfr": "_TZE200_sh1btabb",
+      "productId": "TS0601",
+      "drivers": [
+        "radiator_valve",
+        "thermostat_tuya_dp",
+        "valve_single"
+      ]
+    },
+    {
+      "key": "_TZE200_t1blo2bj|TS0601",
+      "mfr": "_TZE200_t1blo2bj",
+      "productId": "TS0601",
+      "drivers": [
+        "radiator_valve",
+        "siren",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZ3210_p68kms0l|TS0601",
+      "mfr": "_TZ3210_p68kms0l",
+      "productId": "TS0601",
+      "drivers": [
+        "rain_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "key": "_TZE204_aoclfnxz|TS0601",
+      "mfr": "_TZE204_aoclfnxz",
+      "productId": "TS0601",
+      "drivers": [
+        "smart_breaker",
+        "thermostat_tuya_dp"
+      ]
+    },
+    {
+      "key": "_TZE204_ckud7u2l|TS0601",
+      "mfr": "_TZE204_ckud7u2l",
+      "productId": "TS0601",
+      "drivers": [
+        "smart_heater",
+        "thermostat_tuya_dp"
+      ]
+    }
+  ]
+}
