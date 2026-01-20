@@ -459,11 +459,11 @@ class SoilSensorDevice extends TuyaHybridDevice {
    */
   _initFlowTriggers() {
     // Register flow trigger cards
-    // v5.5.178: Fixed Flow Card IDs to match driver.flow.compose.json
-    this._flowTriggerMoistureChanged = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_moisture_changed');
+    // v5.5.705: Fixed Flow Card IDs to match driver.flow.compose.json exactly
+    this._flowTriggerMoistureChanged = this.homey.flow.getDeviceTriggerCard('soil_sensor_moisture_changed');
     this._flowTriggerSoilDry = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_dry');
     this._flowTriggerSoilWet = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_wet');
-    this._flowTriggerTemperatureChanged = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_temperature_changed');
+    this._flowTriggerTemperatureChanged = this.homey.flow.getDeviceTriggerCard('soil_sensor_temperature_changed');
     this._flowTriggerBatteryLow = this.homey.flow.getDeviceTriggerCard('soil_sensor_battery_low');
 
     // Register condition cards (correct IDs from driver.flow.compose.json)
