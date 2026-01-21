@@ -231,6 +231,7 @@ _TZE200_a8sdabtg  → climate_sensor (temp/humidity)
 
 | Version | Key Changes |
 |---------|-------------|
+| 5.5.719 | NEW: DIY Custom Zigbee driver (PTVO, ESP32-H2, CC2530, DIYRuZ, Tasmota) |
 | 5.5.718 | TS0726 bidirectional fix - onOff cluster bindings (Hartmut_Dunker) |
 | 5.5.717 | Enrichment update - +7 IDs, DP mappings enhanced |
 | 5.5.716 | Driver overlap fix - TS0726 wall switches (Hartmut_Dunker) |
