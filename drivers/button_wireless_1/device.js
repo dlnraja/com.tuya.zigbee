@@ -24,7 +24,12 @@ const ButtonDevice = require('../../lib/devices/ButtonDevice');
  */
 class Button1GangDevice extends ButtonDevice {
 
+  // v5.5.715: Track binding state for HOBEIAN
+  _onOffBound = false;
+  _zclNode = null;
+
   async onNodeInit({ zclNode }) {
+    this._zclNode = zclNode;
     this.log('═══════════════════════════════════════════════════════════════');
     this.log('[BUTTON1] 🔘 Button1GangDevice v5.5.500 initializing...');
     this.log('[BUTTON1] FIX: Enhanced detection for "No Action detected" issue');
@@ -39,6 +44,10 @@ class Button1GangDevice extends ButtonDevice {
 
     // Initialize ButtonDevice (handles basic button detection + battery)
     await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+
+    // v5.5.715: HOBEIAN FIX - Explicit onOff binding for command reception
+    // The device sends onOff commands (outputCluster 6) which need binding
+    await this._setupOnOffBinding(zclNode);
 
     // v5.5.371: FORUM FIX - Enhanced physical button detection
     // Based on research from Zigbee2MQTT, ZHA, SmartThings patterns
@@ -458,6 +467,77 @@ class Button1GangDevice extends ButtonDevice {
       }
     } catch (err) {
       this.log('[BUTTON1-HOBEIAN] ⚠️ Setup error:', err.message);
+    }
+  }
+
+  /**
+   * v5.5.715: HOBEIAN FIX - Explicit onOff cluster binding
+   * 
+   * HOBEIAN ZG-101ZL sends button events via onOff cluster COMMANDS (outputCluster 6)
+   * For Homey to receive these commands, the cluster must be bound.
+   * 
+   * Z2M docs: Device has two modes (triple-click to switch):
+   * - EVENT mode: commandOn=single, commandOff=double, commandToggle=hold
+   * - COMMAND mode: on/off/toggle for group control
+   */
+  async _setupOnOffBinding(zclNode) {
+    const manufacturerName = this.getData()?.manufacturerName || '';
+    const isHobeian = manufacturerName.toUpperCase().includes('HOBEIAN');
+    
+    if (!isHobeian) {
+      this.log('[BUTTON1-BIND] ℹ️ Not HOBEIAN device, skipping explicit binding');
+      return;
+    }
+
+    this.log('[BUTTON1-BIND] 🔗 HOBEIAN detected - setting up onOff binding for commands...');
+
+    try {
+      const endpoint = zclNode?.endpoints?.[1];
+      if (!endpoint) {
+        this.log('[BUTTON1-BIND] ⚠️ Endpoint 1 not found');
+        return;
+      }
+
+      const onOffCluster = endpoint.clusters?.onOff || endpoint.clusters?.genOnOff || endpoint.clusters?.[6];
+      if (!onOffCluster) {
+        this.log('[BUTTON1-BIND] ⚠️ OnOff cluster not found');
+        return;
+      }
+
+      // Try to bind the onOff cluster for command reception
+      if (typeof onOffCluster.bind === 'function') {
+        try {
+          await onOffCluster.bind();
+          this._onOffBound = true;
+          this.log('[BUTTON1-BIND] ✅ OnOff cluster bound successfully');
+        } catch (bindErr) {
+          this.log(`[BUTTON1-BIND] ⚠️ Bind failed (expected for sleepy): ${bindErr.message}`);
+          // This is expected for sleepy devices - binding happens at pairing
+        }
+      }
+
+      // Store for later use
+      this._onOffCluster = onOffCluster;
+
+      this.log('[BUTTON1-BIND] ✅ HOBEIAN onOff binding setup complete');
+      this.log('[BUTTON1-BIND] 💡 TIP: Triple-click button to switch between EVENT and COMMAND modes');
+
+    } catch (err) {
+      this.log('[BUTTON1-BIND] ⚠️ Setup error:', err.message);
+    }
+  }
+
+  /**
+   * v5.5.715: Handle device wake/rejoin - re-attempt binding
+   * Sleepy devices only accept commands when awake
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[BUTTON1] 📡 Device announced (wake/rejoin)');
+    
+    // Try to bind onOff cluster when device wakes
+    if (this._zclNode && !this._onOffBound) {
+      this.log('[BUTTON1] 🔄 Attempting onOff binding on wake...');
+      await this._setupOnOffBinding(this._zclNode);
     }
   }
 
