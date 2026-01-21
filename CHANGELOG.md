@@ -6,6 +6,37 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.717] - 2026-01-21
+
+### 📊 ENRICHMENT UPDATE
+
+**Scripts Executed:**
+- `comprehensive_forum_github_sync.js`: +7 manufacturer IDs (curtain_motor, scene_switch_4, ir_blaster, switch_1gang)
+- `enrich_from_community_reports.js`: +1 ID (eWeLink for climate_sensor)
+- `scan_all_community_sources.js`: Phase 2 analysis complete
+
+**DP Mappings Enhanced (`dp-mappings.json`):**
+- 15 device categories with comprehensive mappings
+- Intelligent fallbacks for alternate DPs
+- Sanity checks with min/max validation
+- Multiplier corrections per device type
+- New categories: air_quality, energy_meter, button, dimmer, curtain
+
+**Drivers Enriched:**
+- `curtain_motor`: +2 IDs (`_TZ3210_j4pdtz9v`)
+- `scene_switch_4`: +2 IDs (`_TZ3000_zgyzgdua`)
+- `ir_blaster`: +1 ID (`_tz3290_j37rooaxrcdcqo5n`)
+- `switch_1gang`: +2 IDs (`_TZ3218_7fiyo3kv`)
+- `climate_sensor`: +1 ID (eWeLink)
+
+**Existing Intelligent Systems:**
+- `FallbackSystem.js`: Multi-strategy with exponential backoff
+- `ProductValueValidator.js`: Auto-correction for 10+ product types
+- `IntelligentSensorInference.js`: Cross-sensor data correlation
+- `ProtocolAutoOptimizer.js`: Auto-learns Tuya DP vs ZCL protocol
+
+---
+
 ## [5.5.716] - 2026-01-21
 
 ### 🔧 DRIVER OVERLAP FIX (Hartmut_Dunker)
