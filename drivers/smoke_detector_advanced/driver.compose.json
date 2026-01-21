@@ -328,17 +328,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1280,
-          1282,
-          61184,
-          60672
+          0
         ],
-        "bindings": [
-          1,
-          1280
-        ]
+        "bindings": []
       }
     },
     "learnmode": {
@@ -350,7 +342,6 @@
     },
     "productId": [
       "TS0205",
-      "TS0601",
       "PG-S11Z",
       "YG400A",
       "SA12IZL",
@@ -362,7 +353,8 @@
       "lumi.sensor_smoke",
       "JTYJ-GD-01LM/BW",
       "SSSQS01LM",
-      "NAS-SD02B0"
+      "NAS-SD02B0",
+      "TS0601"
     ]
   },
   "settings": [
@@ -595,7 +587,6 @@
     "large": "drivers/smoke_detector_advanced/assets/images/large.png",
     "xlarge": "drivers/smoke_detector_advanced/assets/images/xlarge.png"
   },
-  "id": "smoke_detector_advanced",
   "platforms": [
     "local"
   ],

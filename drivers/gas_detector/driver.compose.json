@@ -282,8 +282,8 @@
       }
     },
     "productId": [
-      "TS0601",
-      "TS0204"
+      "TS0204",
+      "TS0601"
     ]
   },
   "settings": [
@@ -516,7 +516,6 @@
     "large": "drivers/gas_detector/assets/images/large.png",
     "xlarge": "drivers/gas_detector/assets/images/xlarge.png"
   },
-  "id": "gas_detector",
   "platforms": [
     "local"
   ],

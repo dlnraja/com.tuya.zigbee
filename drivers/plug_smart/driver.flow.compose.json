@@ -14,7 +14,8 @@
         "nl": "Triggert wanneer de stekker wordt ingeschakeld",
         "fr": "Se déclenche quand la prise est allumée",
         "de": "Wird ausgelöst, wenn der Stecker eingeschaltet wird"
-      }
+      },
+      "args": []
     },
     {
       "id": "plug_smart_turned_off",
@@ -29,7 +30,8 @@
         "nl": "Triggert wanneer de stekker wordt uitgeschakeld",
         "fr": "Se déclenche quand la prise est éteinte",
         "de": "Wird ausgelöst, wenn der Stecker ausgeschaltet wird"
-      }
+      },
+      "args": []
     },
     {
       "id": "plug_smart_power_restored",
@@ -44,7 +46,8 @@
         "nl": "Triggert wanneer de stroom is hersteld na een stroomstoring",
         "fr": "Se déclenche quand l'alimentation est rétablie après une coupure",
         "de": "Wird ausgelöst, wenn die Stromversorgung nach einem Ausfall wiederhergestellt wird"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -55,7 +58,8 @@
         "nl": "Stekker !{{is|is niet}} aan",
         "fr": "Prise !{{est|n'est pas}} allumée",
         "de": "Stecker !{{ist|ist nicht}} an"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -72,7 +76,8 @@
         "nl": "Schakel de stekker in",
         "fr": "Allumer la prise",
         "de": "Stecker einschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "plug_smart_turn_off",
@@ -87,7 +92,8 @@
         "nl": "Schakel de stekker uit",
         "fr": "Éteindre la prise",
         "de": "Stecker ausschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "plug_smart_toggle",
@@ -102,7 +108,8 @@
         "nl": "Schakel de stekker aan of uit",
         "fr": "Basculer la prise",
         "de": "Stecker ein- oder ausschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "plug_smart_turn_on_delay",

@@ -255,8 +255,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0211"
+      "TS0211",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -504,7 +504,6 @@
     "large": "drivers/doorbell/assets/images/large.png",
     "xlarge": "drivers/doorbell/assets/images/xlarge.png"
   },
-  "id": "doorbell",
   "platforms": [
     "local"
   ],

@@ -50,8 +50,6 @@
       "_tze200_nnrfa68v",
       "_TZE200_yvx5lh6k",
       "_tze200_yvx5lh6k",
-      "_TZE204_yvx5lh6k",
-      "_tze204_yvx5lh6k",
       "_TZE204_NNRFA68V",
       "_tze204_nnrfa68v",
       "Danfoss",
@@ -271,7 +269,9 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "_TZE204_yvx5lh6k",
+      "_tze204_yvx5lh6k"
     ],
     "productId": [
       "TS0005",
@@ -524,7 +524,6 @@
     "large": "drivers/air_quality_comprehensive/assets/images/large.png",
     "xlarge": "drivers/air_quality_comprehensive/assets/images/xlarge.png"
   },
-  "id": "air_quality_comprehensive",
   "platforms": [
     "local"
   ],

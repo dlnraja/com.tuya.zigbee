@@ -263,8 +263,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_humid"
+      "TS0601_humid",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -285,7 +285,6 @@
     "small": "drivers/humidifier/assets/images/small.png",
     "large": "drivers/humidifier/assets/images/large.png"
   },
-  "id": "humidifier",
   "platforms": [
     "local"
   ],

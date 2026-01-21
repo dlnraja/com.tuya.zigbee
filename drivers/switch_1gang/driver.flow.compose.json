@@ -7,7 +7,8 @@
         "fr": "Allumé",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_1gang_turned_off",
@@ -16,7 +17,8 @@
         "fr": "Éteint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -27,7 +29,8 @@
         "fr": "Est !{{allumé|éteint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -38,7 +41,8 @@
         "fr": "Allumer",
         "nl": "Aanzetten",
         "de": "Einschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_1gang_turn_off",
@@ -47,7 +51,8 @@
         "fr": "Éteindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
-      }
+      },
+      "args": []
     }
   ]
 }

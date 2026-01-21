@@ -249,8 +249,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_lock"
+      "TS0601_lock",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -271,7 +271,6 @@
     "small": "drivers/fingerprint_lock/assets/images/small.png",
     "large": "drivers/fingerprint_lock/assets/images/large.png"
   },
-  "id": "fingerprint_lock",
   "platforms": [
     "local"
   ],

@@ -245,8 +245,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_shutter"
+      "TS0601_shutter",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -494,7 +494,6 @@
     "large": "drivers/shutter_roller_controller/assets/images/large.png",
     "xlarge": "drivers/shutter_roller_controller/assets/images/xlarge.png"
   },
-  "id": "shutter_roller_controller",
   "platforms": [
     "local"
   ],

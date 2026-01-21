@@ -7,7 +7,8 @@
         "fr": "Gang 1 allumé",
         "nl": "Gang 1 aangezet",
         "de": "Gang 1 eingeschaltet"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_gang1_turned_off",
@@ -16,7 +17,8 @@
         "fr": "Gang 1 éteint",
         "nl": "Gang 1 uitgezet",
         "de": "Gang 1 ausgeschaltet"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_gang2_turned_on",
@@ -25,7 +27,8 @@
         "fr": "Gang 2 allumé",
         "nl": "Gang 2 aangezet",
         "de": "Gang 2 eingeschaltet"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_gang2_turned_off",
@@ -34,7 +37,8 @@
         "fr": "Gang 2 éteint",
         "nl": "Gang 2 uitgezet",
         "de": "Gang 2 ausgeschaltet"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_gang3_turned_on",
@@ -43,7 +47,8 @@
         "fr": "Gang 3 allumé",
         "nl": "Gang 3 aangezet",
         "de": "Gang 3 eingeschaltet"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_gang3_turned_off",
@@ -52,7 +57,8 @@
         "fr": "Gang 3 éteint",
         "nl": "Gang 3 uitgezet",
         "de": "Gang 3 ausgeschaltet"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_gang4_turned_on",
@@ -61,7 +67,8 @@
         "fr": "Gang 4 allumé",
         "nl": "Gang 4 aangezet",
         "de": "Gang 4 eingeschaltet"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_gang4_turned_off",
@@ -70,7 +77,8 @@
         "fr": "Gang 4 éteint",
         "nl": "Gang 4 uitgezet",
         "de": "Gang 4 ausgeschaltet"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -81,7 +89,8 @@
         "fr": "Gang 1 est !{{allumé|éteint}}",
         "nl": "Gang 1 is !{{aan|uit}}",
         "de": "Gang 1 ist !{{ein|aus}}"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_gang2_is_on",
@@ -90,7 +99,8 @@
         "fr": "Gang 2 est !{{allumé|éteint}}",
         "nl": "Gang 2 is !{{aan|uit}}",
         "de": "Gang 2 ist !{{ein|aus}}"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_gang3_is_on",
@@ -99,7 +109,8 @@
         "fr": "Gang 3 est !{{allumé|éteint}}",
         "nl": "Gang 3 is !{{aan|uit}}",
         "de": "Gang 3 ist !{{ein|aus}}"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_gang4_is_on",
@@ -108,7 +119,8 @@
         "fr": "Gang 4 est !{{allumé|éteint}}",
         "nl": "Gang 4 is !{{aan|uit}}",
         "de": "Gang 4 ist !{{ein|aus}}"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -119,7 +131,8 @@
         "fr": "Allumer gang 1",
         "nl": "Gang 1 aanzetten",
         "de": "Gang 1 einschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_turn_off_gang1",
@@ -128,7 +141,8 @@
         "fr": "Éteindre gang 1",
         "nl": "Gang 1 uitzetten",
         "de": "Gang 1 ausschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_turn_on_gang2",
@@ -137,7 +151,8 @@
         "fr": "Allumer gang 2",
         "nl": "Gang 2 aanzetten",
         "de": "Gang 2 einschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_turn_off_gang2",
@@ -146,7 +161,8 @@
         "fr": "Éteindre gang 2",
         "nl": "Gang 2 uitzetten",
         "de": "Gang 2 ausschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_turn_on_gang3",
@@ -155,7 +171,8 @@
         "fr": "Allumer gang 3",
         "nl": "Gang 3 aanzetten",
         "de": "Gang 3 einschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_turn_off_gang3",
@@ -164,7 +181,8 @@
         "fr": "Éteindre gang 3",
         "nl": "Gang 3 uitzetten",
         "de": "Gang 3 ausschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_turn_on_gang4",
@@ -173,7 +191,8 @@
         "fr": "Allumer gang 4",
         "nl": "Gang 4 aanzetten",
         "de": "Gang 4 einschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_turn_off_gang4",
@@ -182,7 +201,8 @@
         "fr": "Éteindre gang 4",
         "nl": "Gang 4 uitzetten",
         "de": "Gang 4 ausschalten"
-      }
+      },
+      "args": []
     }
   ]
 }

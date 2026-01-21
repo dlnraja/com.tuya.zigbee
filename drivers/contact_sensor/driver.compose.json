@@ -555,7 +555,6 @@
       "_TZ3000_b7m9qda0"
     ],
     "productId": [
-      "TS0601",
       "TS0203",
       "ZG-102Z",
       "ZG-102ZL",
@@ -573,7 +572,8 @@
       "TRADFRI open/close remote",
       "3300-S",
       "3320-L",
-      "SNZB-04"
+      "SNZB-04",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -863,7 +863,6 @@
     "large": "drivers/contact_sensor/assets/images/large.png",
     "xlarge": "drivers/contact_sensor/assets/images/xlarge.png"
   },
-  "id": "contact_sensor",
   "platforms": [
     "local"
   ],
