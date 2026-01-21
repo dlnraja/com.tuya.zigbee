@@ -1,32 +1,166 @@
 {
+  "_metadata": {
+    "version": "5.5.716",
+    "updated": "2026-01-21",
+    "sources": ["Zigbee2MQTT", "Tuya Developer Docs", "Forum Reports", "Device Interviews"]
+  },
   "climate": {
-    "1": {"capability": "measure_temperature", "multiplier": 0.1},
-    "2": {"capability": "measure_humidity", "multiplier": 1},
-    "4": {"capability": "measure_battery", "multiplier": 2},
-    "9": {"capability": "temp_unit", "internal": true},
-    "101": {"capability": "time_sync", "internal": true}
+    "1": {"capability": "measure_temperature", "multiplier": 0.1, "fallback": [2, 101], "sanity": {"min": -40, "max": 80}},
+    "2": {"capability": "measure_humidity", "multiplier": 1, "fallback": [1], "sanity": {"min": 0, "max": 100}},
+    "4": {"capability": "measure_battery", "multiplier": 2, "fallback": [101, 15], "sanity": {"min": 0, "max": 100}},
+    "9": {"capability": "temp_unit", "internal": true, "values": {"0": "celsius", "1": "fahrenheit"}},
+    "10": {"capability": "alarm_battery", "values": {"0": false, "1": true}},
+    "14": {"capability": "measure_battery", "multiplier": 1, "fallback": [4]},
+    "15": {"capability": "measure_battery", "multiplier": 2, "fallback": [4]},
+    "101": {"capability": "time_sync", "internal": true},
+    "102": {"capability": "temp_calibration", "internal": true, "range": [-10, 10]},
+    "103": {"capability": "humidity_calibration", "internal": true, "range": [-20, 20]},
+    "110": {"capability": "measure_temperature", "multiplier": 0.01, "fallback": [1]},
+    "111": {"capability": "measure_humidity", "multiplier": 0.01, "fallback": [2]}
   },
   "soil": {
-    "3": {"capability": "measure_humidity", "multiplier": 0.01},
-    "5": {"capability": "measure_temperature", "multiplier": 0.01},
-    "15": {"capability": "measure_battery", "multiplier": 2}
+    "3": {"capability": "measure_humidity", "multiplier": 0.01, "alias": "soil_moisture", "sanity": {"min": 0, "max": 100}},
+    "5": {"capability": "measure_temperature", "multiplier": 0.01, "sanity": {"min": -20, "max": 60}},
+    "14": {"capability": "measure_battery", "multiplier": 1},
+    "15": {"capability": "measure_battery", "multiplier": 2, "fallback": [14]},
+    "101": {"capability": "soil_conductivity", "multiplier": 1},
+    "102": {"capability": "measure_temperature", "multiplier": 0.1, "fallback": [5]}
   },
   "switch": {
     "1": {"capability": "onoff", "endpoint": 1},
     "2": {"capability": "onoff.2", "endpoint": 2},
-    "3": {"capability": "onoff.3", "endpoint": 3}
+    "3": {"capability": "onoff.3", "endpoint": 3},
+    "4": {"capability": "onoff.4", "endpoint": 4},
+    "5": {"capability": "onoff.5", "endpoint": 5},
+    "6": {"capability": "onoff.6", "endpoint": 6},
+    "7": {"capability": "countdown_1", "internal": true},
+    "8": {"capability": "countdown_2", "internal": true},
+    "9": {"capability": "countdown_3", "internal": true},
+    "10": {"capability": "countdown_4", "internal": true},
+    "13": {"capability": "power_on_behavior", "values": {"0": "off", "1": "on", "2": "last"}}
   },
   "plug": {
     "1": {"capability": "onoff"},
-    "9": {"capability": "countdown", "internal": true},
-    "17": {"capability": "measure_power", "multiplier": 0.1},
-    "18": {"capability": "measure_current", "multiplier": 0.001},
-    "19": {"capability": "measure_voltage", "multiplier": 0.1},
-    "20": {"capability": "meter_power", "multiplier": 0.01}
+    "9": {"capability": "countdown", "internal": true, "unit": "seconds"},
+    "16": {"capability": "measure_power", "multiplier": 0.1, "fallback": [17, 18]},
+    "17": {"capability": "measure_power", "multiplier": 0.1, "sanity": {"min": 0, "max": 50000}},
+    "18": {"capability": "measure_current", "multiplier": 0.001, "sanity": {"min": 0, "max": 100}},
+    "19": {"capability": "measure_voltage", "multiplier": 0.1, "sanity": {"min": 50, "max": 300}},
+    "20": {"capability": "meter_power", "multiplier": 0.01, "sanity": {"min": 0, "max": 1000000}},
+    "21": {"capability": "measure_voltage", "multiplier": 0.1, "fallback": [19]},
+    "22": {"capability": "measure_current", "multiplier": 0.001, "fallback": [18]},
+    "23": {"capability": "measure_power", "multiplier": 1, "fallback": [17]},
+    "101": {"capability": "power_on_behavior", "values": {"0": "off", "1": "on", "2": "last"}},
+    "102": {"capability": "led_indicator", "values": {"0": "off", "1": "on", "2": "relay"}},
+    "104": {"capability": "overload_threshold", "multiplier": 1, "unit": "watts"}
   },
   "presence": {
-    "1": {"capability": "alarm_motion"},
-    "9": {"capability": "measure_luminance"},
-    "101": {"capability": "target_distance"}
+    "1": {"capability": "alarm_motion", "values": {"0": false, "1": true, "none": false, "presence": true}},
+    "2": {"capability": "presence_sensitivity", "internal": true, "range": [1, 10]},
+    "3": {"capability": "minimum_range", "internal": true, "multiplier": 0.01},
+    "4": {"capability": "maximum_range", "internal": true, "multiplier": 0.01},
+    "9": {"capability": "measure_luminance", "multiplier": 1, "sanity": {"min": 0, "max": 100000}},
+    "10": {"capability": "target_distance", "multiplier": 0.01, "unit": "meters"},
+    "101": {"capability": "target_distance", "multiplier": 0.01, "fallback": [10]},
+    "102": {"capability": "measure_luminance", "multiplier": 1, "fallback": [9]},
+    "103": {"capability": "presence_delay", "internal": true, "unit": "seconds"},
+    "104": {"capability": "fading_time", "internal": true, "unit": "seconds"},
+    "105": {"capability": "small_motion_detection", "internal": true},
+    "106": {"capability": "static_detection_distance", "internal": true, "multiplier": 0.01}
+  },
+  "motion": {
+    "1": {"capability": "alarm_motion", "values": {"pir": true, "0": false, "1": true}},
+    "2": {"capability": "measure_battery", "multiplier": 1, "fallback": [4, 15]},
+    "3": {"capability": "occupancy_timeout", "internal": true},
+    "4": {"capability": "measure_battery", "multiplier": 2, "fallback": [2]},
+    "9": {"capability": "pir_sensitivity", "internal": true, "range": [1, 3]},
+    "10": {"capability": "measure_luminance", "multiplier": 1},
+    "12": {"capability": "measure_illuminance_raw", "internal": true},
+    "101": {"capability": "alarm_motion", "fallback": [1]},
+    "102": {"capability": "measure_luminance", "fallback": [10]}
+  },
+  "contact": {
+    "1": {"capability": "alarm_contact", "values": {"0": false, "1": true}, "invert_possible": true},
+    "2": {"capability": "measure_battery", "multiplier": 1, "fallback": [4]},
+    "3": {"capability": "measure_battery", "multiplier": 2},
+    "4": {"capability": "measure_battery", "multiplier": 2, "fallback": [2]},
+    "101": {"capability": "alarm_contact", "fallback": [1]}
+  },
+  "water_leak": {
+    "1": {"capability": "alarm_water", "values": {"0": false, "1": true, "leak": true, "normal": false}, "invert_possible": true},
+    "4": {"capability": "measure_battery", "multiplier": 2},
+    "101": {"capability": "alarm_water", "fallback": [1]}
+  },
+  "smoke": {
+    "1": {"capability": "alarm_smoke", "values": {"0": false, "1": true}},
+    "2": {"capability": "alarm_tamper", "values": {"0": false, "1": true}},
+    "4": {"capability": "measure_battery", "multiplier": 2},
+    "14": {"capability": "alarm_smoke", "fallback": [1]},
+    "15": {"capability": "measure_battery", "multiplier": 2, "fallback": [4]},
+    "16": {"capability": "silence_alarm", "internal": true}
+  },
+  "thermostat": {
+    "1": {"capability": "onoff"},
+    "2": {"capability": "target_temperature", "multiplier": 0.1, "sanity": {"min": 5, "max": 35}},
+    "3": {"capability": "measure_temperature", "multiplier": 0.1, "sanity": {"min": -20, "max": 50}},
+    "4": {"capability": "thermostat_mode", "values": {"0": "auto", "1": "heat", "2": "off"}},
+    "5": {"capability": "eco_mode", "values": {"0": false, "1": true}},
+    "6": {"capability": "child_lock", "values": {"0": false, "1": true}},
+    "7": {"capability": "alarm_battery", "values": {"0": false, "1": true}},
+    "8": {"capability": "frost_protection", "values": {"0": false, "1": true}},
+    "12": {"capability": "window_detection", "internal": true},
+    "13": {"capability": "valve_position", "multiplier": 1},
+    "14": {"capability": "measure_battery", "multiplier": 1},
+    "101": {"capability": "local_temperature_calibration", "internal": true, "range": [-10, 10]},
+    "102": {"capability": "target_temperature", "multiplier": 1, "fallback": [2]},
+    "103": {"capability": "measure_temperature", "multiplier": 1, "fallback": [3]}
+  },
+  "curtain": {
+    "1": {"capability": "windowcoverings_state", "values": {"open": "up", "close": "down", "stop": "idle"}},
+    "2": {"capability": "windowcoverings_set", "multiplier": 0.01, "invert_possible": true},
+    "3": {"capability": "windowcoverings_set", "multiplier": 0.01, "fallback": [2]},
+    "5": {"capability": "motor_direction", "internal": true, "values": {"0": "forward", "1": "reverse"}},
+    "7": {"capability": "work_state", "internal": true},
+    "101": {"capability": "windowcoverings_set", "fallback": [2, 3]}
+  },
+  "dimmer": {
+    "1": {"capability": "onoff"},
+    "2": {"capability": "dim", "multiplier": 0.001, "range": [0, 1000]},
+    "3": {"capability": "dim_min", "internal": true, "multiplier": 0.001},
+    "4": {"capability": "dim_max", "internal": true, "multiplier": 0.001},
+    "5": {"capability": "countdown", "internal": true},
+    "6": {"capability": "countdown", "internal": true},
+    "7": {"capability": "light_mode", "internal": true},
+    "101": {"capability": "dim", "multiplier": 0.01, "fallback": [2], "range": [0, 100]}
+  },
+  "button": {
+    "1": {"capability": "button.1", "values": {"0": "single", "1": "double", "2": "long"}},
+    "2": {"capability": "button.2", "values": {"0": "single", "1": "double", "2": "long"}},
+    "3": {"capability": "button.3", "values": {"0": "single", "1": "double", "2": "long"}},
+    "4": {"capability": "button.4", "values": {"0": "single", "1": "double", "2": "long"}},
+    "5": {"capability": "button.5", "values": {"0": "single", "1": "double", "2": "long"}},
+    "6": {"capability": "button.6", "values": {"0": "single", "1": "double", "2": "long"}},
+    "10": {"capability": "measure_battery", "multiplier": 2},
+    "101": {"capability": "button_mode", "internal": true}
+  },
+  "air_quality": {
+    "1": {"capability": "measure_co2", "multiplier": 1, "sanity": {"min": 0, "max": 10000}},
+    "2": {"capability": "measure_temperature", "multiplier": 0.1},
+    "3": {"capability": "measure_humidity", "multiplier": 1},
+    "18": {"capability": "measure_pm25", "multiplier": 1, "sanity": {"min": 0, "max": 1000}},
+    "19": {"capability": "measure_voc", "multiplier": 1},
+    "20": {"capability": "measure_formaldehyde", "multiplier": 0.01},
+    "21": {"capability": "measure_co2", "fallback": [1]},
+    "22": {"capability": "measure_pm25", "fallback": [18]}
+  },
+  "energy_meter": {
+    "1": {"capability": "measure_power", "multiplier": 0.1, "sanity": {"min": -50000, "max": 50000}},
+    "6": {"capability": "meter_power", "multiplier": 0.01},
+    "101": {"capability": "measure_power.forward", "multiplier": 0.1},
+    "102": {"capability": "measure_power.reverse", "multiplier": 0.1},
+    "103": {"capability": "meter_power.forward", "multiplier": 0.01},
+    "104": {"capability": "meter_power.reverse", "multiplier": 0.01},
+    "105": {"capability": "measure_voltage", "multiplier": 0.1},
+    "106": {"capability": "measure_current", "multiplier": 0.001}
   }
 }
