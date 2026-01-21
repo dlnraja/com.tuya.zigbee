@@ -6,6 +6,29 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.729] - 2026-01-21
+
+### 🆘 SOS Button Enrichment - GitHub Research
+
+**New Manufacturer IDs Added (from GitHub issues):**
+
+| ID | Source | Brand |
+|----|--------|-------|
+| `_TZ3000_p3fph1go` | GitHub #21102 | Generic |
+| `_TZ3000_tj4pwzzm` | GitHub #12910 | Generic |
+| `_TZ3000_ug1vtuzn` | Blakadder | Generic |
+| `_TZ3000_zsh6uat3` | Z2M Converter | Generic |
+| `Woox` / `WOOX` | GitHub #21102 | Woox R7052 |
+
+**Known Issues Fixed:**
+- Battery reporting: Uses 4-hour heartbeat (Tuya standard)
+- commandEmergency: IAS ACE cluster 1281 (not IAS Zone!)
+- Sleepy device: Bindings only work at pairing time
+
+**Re-pair Required:** For new bindings to take effect.
+
+---
+
 ## [5.5.728] - 2026-01-21
 
 ### 🆘 SOS Emergency Button Pairing Fix (Peter_van_Werkhoven Forum #1115)
