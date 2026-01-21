@@ -227,6 +227,72 @@ class SmokeDetectorAdvancedDevice extends HybridSensorBase {
 
     // v5.5.503: Store manufacturer for DP transform logic
     this._manufacturerName = mfr;
+
+    // v5.5.725: IAS Zone enrollment for smoke alarm capability (Jolink forum fix)
+    try {
+      const iasZoneCluster = zclNode?.endpoints?.[1]?.clusters?.iasZone || zclNode?.endpoints?.[1]?.clusters?.[1280];
+      if (iasZoneCluster) {
+        this.log('[SMOKE-ADV] 🔥 Setting up IAS Zone for smoke alarm...');
+        
+        // Register for zone status changes (smoke alarm)
+        iasZoneCluster.on('attr.zoneStatus', (zoneStatus) => {
+          this.log(`[SMOKE-ADV] 🚨 IAS Zone status: ${zoneStatus}`);
+          // Bit 0 = Alarm1 (smoke detected)
+          const smokeAlarm = !!(zoneStatus & 0x0001);
+          // Bit 2 = Tamper
+          const tamperAlarm = !!(zoneStatus & 0x0004);
+          // Bit 3 = Battery low
+          const batteryLow = !!(zoneStatus & 0x0008);
+          
+          this.log(`[SMOKE-ADV] smoke: ${smokeAlarm}, tamper: ${tamperAlarm}, batteryLow: ${batteryLow}`);
+          
+          this.setCapabilityValue('alarm_smoke', smokeAlarm).catch(e => this.error('Failed to set alarm_smoke', e));
+          if (this.hasCapability('alarm_tamper')) {
+            this.setCapabilityValue('alarm_tamper', tamperAlarm).catch(e => this.error('Failed to set alarm_tamper', e));
+          }
+          if (batteryLow && this.hasCapability('measure_battery')) {
+            this.setCapabilityValue('measure_battery', 10).catch(() => {});
+          }
+        });
+
+        // Zone enrollment
+        this._performIASZoneEnrollment(zclNode);
+      }
+    } catch (e) {
+      this.log(`[SMOKE-ADV] ⚠️ IAS Zone setup error: ${e.message}`);
+    }
+  }
+
+  /**
+   * v5.5.725: IAS Zone Enrollment for smoke detectors
+   */
+  async _performIASZoneEnrollment(zclNode) {
+    try {
+      const iasZone = zclNode?.endpoints?.[1]?.clusters?.iasZone;
+      if (!iasZone) return;
+
+      // Get coordinator IEEE address
+      let ieeeAddress = null;
+      try {
+        ieeeAddress = this.homey.zigbee?.ieeeAddress || 
+                      await this.homey.zigbee?.getIeeeAddress?.() ||
+                      this.getData()?.ieeeAddress;
+      } catch (e) {
+        this.log('[SMOKE-ADV] Could not get coordinator IEEE address');
+      }
+
+      if (ieeeAddress) {
+        this.log(`[SMOKE-ADV] Enrolling IAS Zone with CIE: ${ieeeAddress}`);
+        try {
+          await iasZone.writeAttributes({ iasCieAddress: ieeeAddress });
+          this.log('[SMOKE-ADV] ✅ IAS Zone CIE address written');
+        } catch (e) {
+          this.log(`[SMOKE-ADV] ⚠️ CIE write failed: ${e.message}`);
+        }
+      }
+    } catch (e) {
+      this.log(`[SMOKE-ADV] IAS enrollment error: ${e.message}`);
+    }
   }
 }
 module.exports = SmokeDetectorAdvancedDevice;
