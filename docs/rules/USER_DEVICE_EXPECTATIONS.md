@@ -244,28 +244,59 @@ _TZE200_a8sdabtg  → climate_sensor (temp/humidity)
 
 ---
 
-## 🔬 Pending Investigations
+## 🔬 Forum Issues Tracking (Pages 55-56, Jan 2026)
 
-### Button Issues (Need More Diagnostics)
-| User | Device | Issue | Status |
-|------|--------|-------|--------|
-| Freddyboy | _TZ3000_zgyzgdua (Moes 4-gang) | Not responding | ⏳ Need logs after mode switch |
-| Ronny_M | HOBEIAN ZG-101ZL | Works with periodic filters | ✅ Fixed v5.5.504 |
+### ✅ FIXED Issues
 
-### Sensor Polarity Issues
-| User | Device | Issue | Status |
-|------|--------|-------|--------|
-| Lasse_K | Contact sensors | Inverted indication | ✅ Fixed v5.5.713 (auto-invert) |
-| Lasse_K | Water leak sensor | No alarm | ✅ Fixed v5.5.713 (invert_alarm setting) |
+| User | Device | ManufacturerID | Issue | Fix Version | Notes |
+|------|--------|----------------|-------|-------------|-------|
+| Freddyboy | Moes 4-button | `_TZ3000_zgyzgdua` | Buttons not responding | ✅ v5.5.714 | TS0044 uses cluster 0xE000, not TS004F |
+| Ronny_M | HOBEIAN ZG-101ZL | `HOBEIAN` | Button not working | ✅ v5.5.715 | Added onOff binding + dual mode support |
+| Lasse_K | Contact sensors | Multiple | Inverted indication | ✅ v5.5.713 | Auto-inversion for known IDs |
+| Lasse_K | Water leak sensor | Multiple | No alarm | ✅ v5.5.713 | Added `invert_alarm` setting |
+| Peter_van_Werkhoven | HOBEIAN Multisensor | `HOBEIAN` | Temp/humidity not updating | ✅ v5.5.710 | Added HOBEIAN to climate_sensor |
+| Peter_van_Werkhoven | SOS Button | TS0215A | Can't re-add | ✅ v5.5.712 | Fixed corrupted manufacturer list |
+| Multiple | Scene switches | scene_switch_1/2/3/6 | Invalid Flow Card ID | ✅ v5.5.708 | Added 13 missing flow triggers |
+| Pieter_Pessers | BSEED wall switch | `_TZ3000_l9brjwau` | Unknown device | ✅ Already supported | TS0002 in switch_2gang |
 
-### Scene Switch Flow Cards
-| User | Device | Issue | Status |
-|------|--------|-------|--------|
-| Multiple | scene_switch_1/2/3/6 | Invalid Flow Card ID | ✅ Fixed v5.5.708 |
+### ⏳ PENDING Issues (Need Investigation)
 
-### User Action Required
-For devices in "Need logs" status:
-1. Enable Developer Mode in Homey
-2. Open device page → More → View logs
-3. Press button/trigger sensor
-4. Copy logs and send diagnostic via app settings
+| User | Device | ManufacturerID | Issue | Diag Code | Status |
+|------|--------|----------------|-------|-----------|--------|
+| Hartmut_Dunker | 4-Gang Smart Switch | Unknown | Recognized as wireless controller, buttons don't work | `7fab96a9-09f6-4df4-ae01-9873f72ecc5e` | ⏳ Need mfr ID from diag |
+| JJ10 | Presence sensor | Unknown | Connected as unknown device | `999de772-5ce2-4674-86c3-c267c7e3a3f0` | ⏳ Need mfr ID from diag |
+| AlbertQ | HOBEIAN ZG-227Z | `_TZE200_a8sdabtg` | Pairs as generic Zigbee | N/A | ✅ Already in climate_sensor |
+| Attilla | Touch dimmers | `_TZE200_3p5ydos3`, `_TZE204_n9ctkb6j` | Pairs as generic since v690 | N/A | ✅ Already in dimmer_wall_1gang |
+| FrankP | IR Blaster | Unknown | Giving errors | `89e408fe-d0ba-4216-95be-951824dac2b8` | ⏳ Need to check flow cards |
+
+### 📋 Forum ManufacturerIDs Summary (Pages 55-56)
+
+```
+Already Supported:
+✅ _TZ3000_zgyzgdua  → button_wireless_4 (v5.5.714 cluster 0xE000 fix)
+✅ _TZ3000_l9brjwau  → switch_2gang (TS0002)
+✅ _TZ3000_wkai4ga5  → button_wireless_4 (4-gang scene)
+✅ _TZ3000_5tqxpine  → button_wireless_4 (4-gang scene)
+✅ _TZE200_3p5ydos3  → dimmer_wall_1gang (touch dimmer)
+✅ _TZE204_n9ctkb6j  → dimmer_wall_1gang (touch dimmer)
+✅ _TZE200_a8sdabtg  → climate_sensor (HOBEIAN ZG-227Z)
+✅ HOBEIAN           → button_wireless_1 (v5.5.715 binding fix)
+```
+
+### 🔄 User Action Required
+
+**For RE-PAIR Required fixes (v5.5.714, v5.5.715):**
+1. Update app to latest version
+2. Delete device from Homey
+3. Factory reset device (hold button 5+ seconds)
+4. Re-pair device
+
+**For HOBEIAN ZG-101ZL (triple-click mode switch):**
+- EVENT mode: commandOn=single, commandOff=double, commandToggle=hold
+- COMMAND mode: toggle=single, on=double, off=long
+- Triple-click to switch between modes
+
+**For devices showing as "Unknown Zigbee":**
+1. Send diagnostic code via app settings
+2. Check if manufacturerName is in driver's driver.compose.json
+3. If missing, report on forum with interview data
