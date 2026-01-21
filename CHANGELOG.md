@@ -6,6 +6,23 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.728] - 2026-01-21
+
+### 🆘 SOS Emergency Button Pairing Fix (Peter_van_Werkhoven Forum #1115)
+
+**Issue:** SOS button can't pair after factory reset, only pairs as "Universal ZigBee device"
+
+**Fix Applied:**
+- Added IAS Zone cluster (1280) for zone status events
+- Added IAS ACE cluster (1281) for commandEmergency 
+- Added powerConfiguration cluster (1) for battery
+- Added Tuya cluster (61184) for TS0601 variants
+- Added bindings [1, 1280, 1281] for proper event reception
+
+**Re-pair Required:** Users must re-pair SOS button after this update.
+
+---
+
 ## [5.5.727] - 2026-01-21
 
 ### 🔧 Moes 4-Button Controller Fix (Freddyboy Forum #1116)
