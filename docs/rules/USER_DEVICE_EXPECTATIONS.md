@@ -1,7 +1,9 @@
 # User Device Expectations & Diagnostic Summary
 
 This document summarizes user-reported devices and their expected behavior based on diagnostic logs and community feedback.
-**Last Updated**: 2026-01-21 (v5.5.713)
+**Last Updated**: 2026-01-21 (v5.5.716)
+
+> ⚠️ **WORKFLOW**: This document must be updated at each prompt/session in Windsurf AI to stay synchronized with code changes.
 
 ---
 
@@ -229,6 +231,9 @@ _TZE200_a8sdabtg  → climate_sensor (temp/humidity)
 
 | Version | Key Changes |
 |---------|-------------|
+| 5.5.716 | Driver overlap fix - TS0726 wall switches (Hartmut_Dunker) |
+| 5.5.715 | HOBEIAN ZG-101ZL onOff binding fix (Ronny_M) |
+| 5.5.714 | Moes _TZ3000_zgyzgdua cluster 0xE000 fix (Freddyboy) |
 | 5.5.713 | Contact/water sensor polarity inversion fix (Lasse_K) |
 | 5.5.712 | Forum issues cross-reference update |
 | 5.5.708 | scene_switch flow cards fix |
