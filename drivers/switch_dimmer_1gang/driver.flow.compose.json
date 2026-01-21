@@ -1,0 +1,190 @@
+{
+    "triggers": [
+      {
+        "id": "switch_dimmer_1gang_turned_on",
+        "title": {
+          "en": "Turned on (physical button)",
+          "nl": "Aangezet (fysieke knop)"
+        },
+        "hint": {
+          "en": "Triggered when the switch is turned on using the physical button",
+          "nl": "Geactiveerd wanneer de schakelaar wordt aangezet met de fysieke knop"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_dimmer_1gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_dimmer_1gang_turned_off",
+        "title": {
+          "en": "Turned off (physical button)",
+          "nl": "Uitgezet (fysieke knop)"
+        },
+        "hint": {
+          "en": "Triggered when the switch is turned off using the physical button",
+          "nl": "Geactiveerd wanneer de schakelaar wordt uitgezet met de fysieke knop"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_dimmer_1gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_dimmer_1gang_brightness_increased",
+        "title": {
+          "en": "Brightness increased (physical button)",
+          "nl": "Helderheid verhoogd (fysieke knop)"
+        },
+        "hint": {
+          "en": "Triggered when brightness is increased using the physical button",
+          "nl": "Geactiveerd wanneer de helderheid wordt verhoogd met de fysieke knop"
+        },
+        "tokens": [
+          {
+            "name": "brightness",
+            "type": "number",
+            "title": {
+              "en": "Brightness",
+              "nl": "Helderheid"
+            },
+            "example": 0.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_dimmer_1gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_dimmer_1gang_brightness_decreased",
+        "title": {
+          "en": "Brightness decreased (physical button)",
+          "nl": "Helderheid verlaagd (fysieke knop)"
+        },
+        "hint": {
+          "en": "Triggered when brightness is decreased using the physical button",
+          "nl": "Geactiveerd wanneer de helderheid wordt verlaagd met de fysieke knop"
+        },
+        "tokens": [
+          {
+            "name": "brightness",
+            "type": "number",
+            "title": {
+              "en": "Brightness",
+              "nl": "Helderheid"
+            },
+            "example": 0.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_dimmer_1gang"
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "switch_dimmer_1gang_is_on",
+        "title": {
+          "en": "Is !{{on|off}}",
+          "nl": "Is !{{aan|uit}}"
+        },
+        "titleFormatted": {
+          "en": "[[device]] is !{{on|off}}",
+          "nl": "[[device]] is !{{aan|uit}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_dimmer_1gang"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "switch_dimmer_1gang_turn_on",
+        "title": {
+          "en": "Turn on",
+          "nl": "Aanzetten"
+        },
+        "titleFormatted": {
+          "en": "Turn [[device]] on",
+          "nl": "Zet [[device]] aan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_dimmer_1gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_dimmer_1gang_turn_off",
+        "title": {
+          "en": "Turn off",
+          "nl": "Uitzetten"
+        },
+        "titleFormatted": {
+          "en": "Turn [[device]] off",
+          "nl": "Zet [[device]] uit"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_dimmer_1gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_dimmer_1gang_set_brightness",
+        "title": {
+          "en": "Set brightness",
+          "nl": "Stel helderheid in"
+        },
+        "titleFormatted": {
+          "en": "Set [[device]] brightness to [[brightness]]",
+          "nl": "Stel [[device]] helderheid in op [[brightness]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_dimmer_1gang"
+          },
+          {
+            "name": "brightness",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "label": {
+              "en": "Brightness",
+              "nl": "Helderheid"
+            },
+            "title": {
+              "en": "Brightness",
+              "nl": "Helderheid"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
