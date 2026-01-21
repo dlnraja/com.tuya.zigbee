@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.714** | 🔘 MOES 4-BUTTON FIX (Freddyboy): Fixed _TZ3000_zgyzgdua Moes TS0044 4-button... |
 | **v5.5.713** | 🔧 SENSOR POLARITY FIX (Lasse_K): Water leak sensor: Added 'Invert Water Alar... |
 | **v5.5.712** | 🆘 SOS BUTTON FIX: Fixed corrupted manufacturer list in button_emergency_sos ... |
 | **v5.5.711** | 🌡️ ZBEACON TH01: Added Zbeacon manufacturerName support for TH01 temp/humidi... |
@@ -78,7 +79,6 @@
 | **v5.5.707** | 🔧 DIAGNOSTIC FIXES: Fixed ir_send_ac_command flow card for IR Blaster (JSON ... |
 | **v5.5.706** | 📖 TROUBLESHOOTING GUIDE: Added comprehensive Zigbee troubleshooting document... |
 | **v5.5.705** | 🔧 DIAGNOSTIC FIXES: Fixed flow card ID mismatches in soil_sensor (moisture_c... |
-| **v5.5.704** | 🔄 SYNC & WORKFLOWS: Fixed 53 stale + added 75 missing manufacturer/product I... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
