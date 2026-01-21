@@ -6,6 +6,32 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.718] - 2026-01-21
+
+### 🔧 TS0726 4-GANG BIDIRECTIONAL FIX (Hartmut_Dunker)
+
+**Problem:** TS0726 4-gang wall switch recognized correctly but buttons don't work in either direction:
+- Physical buttons → no response in Homey
+- Homey virtual buttons → no response on switch
+
+**Root Cause:** `switch_4gang/driver.compose.json` endpoints had only cluster 0 (Basic) and no bindings.
+
+**Fix:**
+- Added onOff cluster (6) to all 4 endpoints
+- Added bindings for onOff cluster to receive attribute reports
+```json
+"endpoints": {
+  "1": { "clusters": [0, 6], "bindings": [6] },
+  "2": { "clusters": [0, 6], "bindings": [6] },
+  "3": { "clusters": [0, 6], "bindings": [6] },
+  "4": { "clusters": [0, 6], "bindings": [6] }
+}
+```
+
+**User Action:** RE-PAIR device after updating.
+
+---
+
 ## [5.5.717] - 2026-01-21
 
 ### 📊 ENRICHMENT UPDATE

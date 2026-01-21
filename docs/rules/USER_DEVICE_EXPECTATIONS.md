@@ -1,7 +1,7 @@
 # User Device Expectations & Diagnostic Summary
 
 This document summarizes user-reported devices and their expected behavior based on diagnostic logs and community feedback.
-**Last Updated**: 2026-01-21 (v5.5.716)
+**Last Updated**: 2026-01-21 (v5.5.718)
 
 > ⚠️ **WORKFLOW**: This document must be updated at each prompt/session in Windsurf AI to stay synchronized with code changes.
 
@@ -29,7 +29,7 @@ This document summarizes user-reported devices and their expected behavior based
 | 9 | Eftychis_Georgilas | 4-gang Switch | `_TZ3000_5tqxpine` | TS004F | Unknown device | ✅ IN CODE (button_wireless_4) |
 | 10 | Attilla | Touch Dimmer | `_TZE200_3p5ydos3` | TS0601 | Not working since v5.5.690 | ✅ IN CODE (dimmer_wall_1gang) |
 | 11 | Attilla | Touch Dimmer | `_TZE204_n9ctkb6j` | TS0601 | Pairs as generic Zigbee | ✅ IN CODE (dimmer_wall_1gang) |
-| 12 | Hartmut_Dunker | 4-gang Switch | `_TZ3000_*` | TS0726 | Buttons don't work in Homey | ⚠️ NEEDS DIAG |
+| 12 | Hartmut_Dunker | 4-gang Switch | `_TZ3002_vaq2bfcu` | TS0726 | Buttons don't work bidirectionally | ✅ v5.5.718 FIXED |
 | 13 | JJ10 | Presence Sensor | unknown | TS0601 | Not working | ⚠️ NEEDS DIAG |
 | 14 | FrankP | IR Blaster | unknown | TS1201 | Errors in latest version | ⚠️ NEEDS DIAG |
 | 15 | ManuelKugler | Valve | `_TZE284_o3x45p96` | TS0601 | Request to add | ✅ IN CODE (radiator_valve) |
@@ -231,6 +231,8 @@ _TZE200_a8sdabtg  → climate_sensor (temp/humidity)
 
 | Version | Key Changes |
 |---------|-------------|
+| 5.5.718 | TS0726 bidirectional fix - onOff cluster bindings (Hartmut_Dunker) |
+| 5.5.717 | Enrichment update - +7 IDs, DP mappings enhanced |
 | 5.5.716 | Driver overlap fix - TS0726 wall switches (Hartmut_Dunker) |
 | 5.5.715 | HOBEIAN ZG-101ZL onOff binding fix (Ronny_M) |
 | 5.5.714 | Moes _TZ3000_zgyzgdua cluster 0xE000 fix (Freddyboy) |
@@ -268,11 +270,16 @@ _TZE200_a8sdabtg  → climate_sensor (temp/humidity)
 
 | User | Device | ManufacturerID | Issue | Diag Code | Status |
 |------|--------|----------------|-------|-----------|--------|
-| Hartmut_Dunker | 4-Gang Smart Switch | `_TZ3002_vaq2bfcu` | Recognized as wireless controller, buttons don't work | `7fab96a9-09f6-4df4-ae01-9873f72ecc5e` | ✅ v5.5.716 Driver overlap fix |
 | JJ10 | Presence sensor | Unknown | Connected as unknown device | `999de772-5ce2-4674-86c3-c267c7e3a3f0` | ⏳ Need mfr ID from diag |
-| AlbertQ | HOBEIAN ZG-227Z | `_TZE200_a8sdabtg` | Pairs as generic Zigbee | N/A | ✅ Already in climate_sensor |
-| Attilla | Touch dimmers | `_TZE200_3p5ydos3`, `_TZE204_n9ctkb6j` | Pairs as generic since v690 | N/A | ✅ Already in dimmer_wall_1gang |
-| FrankP | IR Blaster | Unknown | Giving errors | `89e408fe-d0ba-4216-95be-951824dac2b8` | ⏳ Need to check flow cards |
+| FrankP | IR Blaster | Unknown | Giving errors | `89e408fe-d0ba-4216-95be-951824dac2b8` | ⏳ TS1201 in ir_blaster, need specific error |
+
+### ✅ RECENTLY FIXED (Moved from Pending)
+
+| User | Device | ManufacturerID | Issue | Fix Version | Notes |
+|------|--------|----------------|-------|-------------|-------|
+| Hartmut_Dunker | 4-Gang Smart Switch | `_TZ3002_vaq2bfcu` | Buttons don't work bidirectionally | ✅ v5.5.718 | Added onOff cluster bindings to all 4 endpoints |
+| AlbertQ | HOBEIAN ZG-227Z | `_TZE200_a8sdabtg` | Pairs as generic Zigbee | ✅ Already supported | In climate_sensor driver |
+| Attilla | Touch dimmers | `_TZE200_3p5ydos3`, `_TZE204_n9ctkb6j` | Pairs as generic since v690 | ✅ Already supported | In dimmer_wall_1gang driver |
 
 ### 📋 Forum ManufacturerIDs Summary (Pages 55-56)
 
