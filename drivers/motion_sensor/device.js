@@ -70,7 +70,14 @@ class MotionSensorDevice extends HybridSensorBase {
       // v5.5.228: Fixed DP101 - it's presence_time in seconds, not boolean motion
       // ═══════════════════════════════════════════════════════════════════
       1: { capability: 'alarm_motion', transform: (v) => v === 1 || v === true },
-      101: { capability: null, setting: 'presence_time' },  // Presence time (seconds) - NOT motion boolean!
+      // v5.5.710: HOBEIAN FIX - DP101 can be battery (0-100) OR presence_time (seconds)
+      // Check value range: battery is 0-100, presence_time is typically >100
+      101: { capability: 'measure_battery', transform: (v) => {
+        // If value is 0-100, treat as battery percentage
+        // If value is >100, it's likely presence_time - return null to skip
+        if (v >= 0 && v <= 100) return v;
+        return null; // Skip invalid battery values
+      }},
 
       // ═══════════════════════════════════════════════════════════════════
       // BATTERY
