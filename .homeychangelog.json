@@ -1,41 +1,115 @@
 {
-  "5.5.718": { "en": "🔧 TS0726 4-GANG FIX (Hartmut_Dunker): Added onOff cluster (6) and bindings to all 4 endpoints. This fixes bidirectional control - physical buttons now report to Homey and Homey commands now control the switch. RE-PAIR REQUIRED after update." },
-  "5.5.717": { "en": "📊 ENRICHMENT UPDATE: Enhanced DP mappings with 15 device categories, intelligent fallbacks, sanity checks. Added +8 manufacturer IDs from forum/GitHub sync. Improved curtain_motor, scene_switch_4, ir_blaster, switch_1gang drivers. climate_sensor enriched with eWeLink support." },
-  "5.5.716": { "en": "🔧 DRIVER OVERLAP FIX (Hartmut_Dunker): Removed _TZ3002_vaq2bfcu and _TZ3002_zyuajkzz from button_wireless_4 driver - these are TS0726 mains-powered wall switches, not battery-powered wireless buttons. Devices now correctly pair to switch_4gang driver. RE-PAIR REQUIRED." },
-  "5.5.715": { "en": "🔘 HOBEIAN ZG-101ZL FIX (Ronny_M): Added onOff cluster binding (cluster 6) for receiving button commands. Added powerConfiguration cluster. Device has 2 modes - triple-click to switch: EVENT mode (commandOn/Off/Toggle) or COMMAND mode (on/off/toggle). RE-PAIR REQUIRED. TIP: Triple-click to switch modes if buttons don't respond." },
-  "5.5.714": { "en": "🔘 MOES 4-BUTTON FIX (Freddyboy): Fixed _TZ3000_zgyzgdua Moes TS0044 4-button remote not responding. Device uses cluster 0xE000 (57344) instead of standard scenes. Added dedicated cluster listeners + enhanced onOff commandOn/Off/Toggle handlers. Removed incorrect TS004F mode switching for this TS0044 device. RE-PAIR REQUIRED after update." },
-  "5.5.713": { "en": "🔧 SENSOR POLARITY FIX (Lasse_K): Water leak sensor: Added 'Invert Water Alarm' setting for sensors with reversed polarity. Contact sensor: Expanded auto-inversion to more _TZ3000_* manufacturers. Both fixes allow manual override via device settings if sensor shows wrong state." },
-  "5.5.712": { "en": "🆘 SOS BUTTON FIX: Fixed corrupted manufacturer list in button_emergency_sos driver - removed 200+ unrelated brand names, kept only actual SOS button IDs (TS0215, TS0215A, TS0218). This fixes pairing issues for SOS/emergency buttons. HOBEIAN temp/humidity fix already in v5.5.710." },
-  "5.5.711": { "en": "🌡️ ZBEACON TH01: Added Zbeacon manufacturerName support for TH01 temp/humidity sensor (GitHub Issue #109). Device pairs correctly to climate_sensor driver." },
-  "5.5.710": { "en": "🔧 HOBEIAN FIX: Fixed HOBEIAN temp/humidity sensors not updating - added HOBEIAN to climate_sensor driver, fixed DP101 battery mapping. Motion sensor DP101 now intelligently detects battery (0-100) vs presence_time (>100). Scene switch flow cards already fixed in v5.5.708 - users need to update app." },
-  "5.5.709": { "en": "📚 RULES & ENRICHMENT: Created docs/rules/ with DEVELOPMENT_RULES.md, USER_DEVICE_EXPECTATIONS.md, UNSUPPORTED_DEVICES.md. Added Z2M 2025 manufacturer IDs: presence sensors (_TZE200_qasjif9e, _TZE204_ya4ft0w4, _TZE204_bvfld3xc, _TZE200_hyhl5y36), switches (_TZ3210_tqlv4ug4, _TZ3000_iv4eq7eh, _TZ3000_3n2minvf), TRVs (_TZE200_cxakecfo, _TZE204_woww89ip), bidirectional energy meters (_TZE204_ac0fhfiq). APsystems solar (proprietary Zigbee) documented as unsupported." },
-  "5.5.708": { "en": "🎛️ SCENE SWITCH FLOW CARDS FIX: Added 13 missing flow triggers to app.json for scene_switch_1/2/3/6 drivers. Fixed Invalid Flow Card ID errors (scene_switch_1_button_pressed, scene_switch_2_button_pressed, etc.). Presence sensor drivers verified with 100+ manufacturer IDs. smoke_detector_advanced _TZE284_rccxox8p already supported." },
-  "5.5.707": { "en": "🔧 DIAGNOSTIC FIXES: Fixed ir_send_ac_command flow card for IR Blaster (JSON structure issue). Verified _TZ3000_l9brjwau TS0002 support in switch_2gang driver. Fixed ir_blaster driver.flow.compose.json indentation. smoke_detector_advanced (_TZE284_rccxox8p) uses passive mode for sleepy battery devices - initial data may take up to 24h." },
-  "5.5.706": { "en": "📖 TROUBLESHOOTING GUIDE: Added comprehensive Zigbee troubleshooting documentation (docs/ZIGBEE_TROUBLESHOOTING_GUIDE.md). Covers pairing issues (mesh limits, WiFi interference, Tuya Magic Spell, interview timeout) and Flow issues (attribute reporting, multi-endpoint mapping, capability listeners, EF00 cluster conflicts)." },
-  "5.5.705": { "en": "🔧 DIAGNOSTIC FIXES: Fixed flow card ID mismatches in soil_sensor (moisture_changed, temperature_changed), added usb_outlet_button_pressed trigger, added soil_sensor_moisture_below condition. _TZE284_rccxox8p smoke detector and _TZ3000_l9brjwau switch already supported." },
-  "5.5.704": { "en": "🔄 SYNC & WORKFLOWS: Fixed 53 stale + added 75 missing manufacturer/product IDs via auto-sync. Enhanced GitHub Actions with concurrency control, auto-commit sync, validation summaries. publish.yml and validate.yml improved with driver count, sync status reporting." },
-  "5.5.703": { "en": "🔧 CRITICAL DUPLICATES FIX: Removed 48 manufacturerNames from wrong drivers based on GitHub issues #1104, #1063 and forum research. Fixed _TZE200_cirvgep4 (LCD temp sensor), _TZE200_a8sdabtg (climate sensor), _TZE200_locansqn (radiator valve), _TZ3000_gjnozsaz/_TZ3000_p6ju8myv (SOS buttons), air quality sensors, fan controllers. Devices now pair to correct driver." },
-  "5.5.702": { "en": "🔧 ANALYSIS: Added scripts/fix-true-duplicates.js for duplicate analysis. ManufacturerNames CAN be in multiple drivers when productIds differ. Only TRUE duplicates (same mfr + same productId in incompatible drivers) are issues." },
-  "5.5.700": { "en": "🔧 UNIVERSAL PERMISSIVE SOLUTION: New lib/Util.js with normalizeTuyaID, equalsIgnoreCase, requirePermissive (case-insensitive file loader), parseFlowBoolean. Updated PermissiveMatchingEngine and FlowCardManager. Flow cards now accept 'On/ON/on', dp_type 'ENUM/enum'. Complete anti-casing layer for Linux filesystem and Tuya ID chaos." },
-  "5.5.699": { "en": "🔧 DEEP CASE-INSENSITIVE FIX: Extended case-insensitive matching to ALL device lookup functions. Fixed 15+ additional files: TuyaProfiles, TuyaDPDatabase, DeviceFingerprintDB, DeviceIdentificationDatabase, NewDevices2025, DeviceHintsDatabase, device_helpers, tuya-engine. Pairing now works regardless of case for ALL devices." },
-  "5.5.698": { "en": "🎛️ SCENE SWITCH FLOW CARDS: Added flow triggers for scene_switch_1/2/3/6 drivers (press/double/long for all buttons). Fixed 37 drivers with empty flow triggers. Scene switches now work properly in Homey flows." },
-  "5.5.697": { "en": "🔧 UNIVERSAL CASE-INSENSITIVE MATCHING: All manufacturerName/productId comparisons now ignore case. Fixes device recognition when Tuya reports mixed casing (_TZ3000_xyz vs _tz3000_XYZ). Updated 12+ files including ManufacturerVariationManager, ButtonDevice, and protocol handlers." },
-  "5.5.696": { "en": "🎛️ Flow Cards Fix: scene_switch_4 now has 16 button flow cards (press/double/long for 4 buttons). Removed _TZ3000_zgyzgdua duplication - Moes wireless switches now use button_wireless_4 with full flow support." },
-  "5.5.695": { "en": "🐛 BSEED TS0726 Fix: Removed _tz3002_pzao9ls1 from button_wireless_4 - now correctly pairs as switch_4gang (mains wall switch)." },
-  "5.5.694": { "en": "🐛 Critical JSON Fix: Fixed malformed newline in 63 driver.compose.json files. GitHub Actions workflow now passes validation." },
-  "5.5.693": { "en": "🐛 Diagnostic Reports: smoke_detector_advanced EF00 cluster fix, TS0726 moved to switch_4gang, TS0002 support verified." },
-  "5.5.692": { "en": "🐛 switch_4gang JSON fix: Fixed malformed newline causing device init failure (Hartmut_Dunker report)." },
-  "5.5.691": { "en": "🤖 Fingerbot driver: New dedicated driver for Tuya Fingerbot Plus (_TZ3210_j4pdtz9v). Push action, battery, mode settings." },
-  "5.5.690": { "en": "🔧 TS0601 productId: Added to 5 drivers (air_purifier, air_quality_co2, button_emergency_sos, button_wireless_6, smoke_detector_advanced)." },
-  "5.5.689": { "en": "🔧 Case-insensitive matching: ManufacturerName matching now ignores case for better device recognition." },
-  "5.5.688": { "en": "🔧 Forum fixes: Multiple device support improvements based on community feedback." },
-  "5.5.687": { "en": "🔧 Device database: Enhanced manufacturer ID coverage for better pairing success." },
-  "5.5.686": { "en": "🔧 Cluster binding: Improved EF00 cluster binding for TS0601 devices." },
-  "5.5.685": { "en": "🔧 Time sync: Enhanced mcuSyncTime for battery devices." },
-  "5.5.684": { "en": "🌬️ Air Quality Monitor: Added _TZE204_yvx5lh6k (5-in-1: CO2, VOC, Formaldehyde, Temp, Humidity). Climate sensor _TZE200_a8sdabtg confirmed." },
-  "5.5.683": { "en": "📋 GitHub Issues: BSEED switches (TS0001/TS0002/TS0003), Soil sensor TS0601 (_TZE284_aa03yzhs), PG-S11Z smoke detector - all already supported!" },
-  "5.5.682": { "en": "🔧 LocalTuya-inspired: Entity auto-detection, DP mappings for switch/light/cover/climate/fan/sensor. Enhanced TuyaEF00Manager with entity handler integration." },
-  "5.5.681": { "en": "🕐 TIME SYNC v4: zigbee-herdsman format (8-byte UTC+Local). TuyaTimeSync module integration. Epoch 2000 auto-detect for LCD devices (_TZE284/_TZE204)." },
+  "5.5.718": {
+    "en": "🔧 TS0726 4-GANG FIX (Hartmut_Dunker): Added onOff cluster (6) and bindings to all 4 endpoints. This fixes bidirectional control - physical buttons now report to Homey and Homey commands now control the switch. RE-PAIR REQUIRED after update."
+  },
+  "5.5.717": {
+    "en": "📊 ENRICHMENT UPDATE: Enhanced DP mappings with 15 device categories, intelligent fallbacks, sanity checks. Added +8 manufacturer IDs from forum/GitHub sync. Improved curtain_motor, scene_switch_4, ir_blaster, switch_1gang drivers. climate_sensor enriched with eWeLink support."
+  },
+  "5.5.716": {
+    "en": "🔧 DRIVER OVERLAP FIX (Hartmut_Dunker): Removed _TZ3002_vaq2bfcu and _TZ3002_zyuajkzz from button_wireless_4 driver - these are TS0726 mains-powered wall switches, not battery-powered wireless buttons. Devices now correctly pair to switch_4gang driver. RE-PAIR REQUIRED."
+  },
+  "5.5.715": {
+    "en": "🔘 HOBEIAN ZG-101ZL FIX (Ronny_M): Added onOff cluster binding (cluster 6) for receiving button commands. Added powerConfiguration cluster. Device has 2 modes - triple-click to switch: EVENT mode (commandOn/Off/Toggle) or COMMAND mode (on/off/toggle). RE-PAIR REQUIRED. TIP: Triple-click to switch modes if buttons don't respond."
+  },
+  "5.5.714": {
+    "en": "🔘 MOES 4-BUTTON FIX (Freddyboy): Fixed _TZ3000_zgyzgdua Moes TS0044 4-button remote not responding. Device uses cluster 0xE000 (57344) instead of standard scenes. Added dedicated cluster listeners + enhanced onOff commandOn/Off/Toggle handlers. Removed incorrect TS004F mode switching for this TS0044 device. RE-PAIR REQUIRED after update."
+  },
+  "5.5.713": {
+    "en": "🔧 SENSOR POLARITY FIX (Lasse_K): Water leak sensor: Added 'Invert Water Alarm' setting for sensors with reversed polarity. Contact sensor: Expanded auto-inversion to more _TZ3000_* manufacturers. Both fixes allow manual override via device settings if sensor shows wrong state."
+  },
+  "5.5.712": {
+    "en": "🆘 SOS BUTTON FIX: Fixed corrupted manufacturer list in button_emergency_sos driver - removed 200+ unrelated brand names, kept only actual SOS button IDs (TS0215, TS0215A, TS0218). This fixes pairing issues for SOS/emergency buttons. HOBEIAN temp/humidity fix already in v5.5.710."
+  },
+  "5.5.711": {
+    "en": "🌡️ ZBEACON TH01: Added Zbeacon manufacturerName support for TH01 temp/humidity sensor (GitHub Issue #109). Device pairs correctly to climate_sensor driver."
+  },
+  "5.5.710": {
+    "en": "🔧 HOBEIAN FIX: Fixed HOBEIAN temp/humidity sensors not updating - added HOBEIAN to climate_sensor driver, fixed DP101 battery mapping. Motion sensor DP101 now intelligently detects battery (0-100) vs presence_time (>100). Scene switch flow cards already fixed in v5.5.708 - users need to update app."
+  },
+  "5.5.709": {
+    "en": "📚 RULES & ENRICHMENT: Created docs/rules/ with DEVELOPMENT_RULES.md, USER_DEVICE_EXPECTATIONS.md, UNSUPPORTED_DEVICES.md. Added Z2M 2025 manufacturer IDs: presence sensors (_TZE200_qasjif9e, _TZE204_ya4ft0w4, _TZE204_bvfld3xc, _TZE200_hyhl5y36), switches (_TZ3210_tqlv4ug4, _TZ3000_iv4eq7eh, _TZ3000_3n2minvf), TRVs (_TZE200_cxakecfo, _TZE204_woww89ip), bidirectional energy meters (_TZE204_ac0fhfiq). APsystems solar (proprietary Zigbee) documented as unsupported."
+  },
+  "5.5.708": {
+    "en": "🎛️ SCENE SWITCH FLOW CARDS FIX: Added 13 missing flow triggers to app.json for scene_switch_1/2/3/6 drivers. Fixed Invalid Flow Card ID errors (scene_switch_1_button_pressed, scene_switch_2_button_pressed, etc.). Presence sensor drivers verified with 100+ manufacturer IDs. smoke_detector_advanced _TZE284_rccxox8p already supported."
+  },
+  "5.5.707": {
+    "en": "🔧 DIAGNOSTIC FIXES: Fixed ir_send_ac_command flow card for IR Blaster (JSON structure issue). Verified _TZ3000_l9brjwau TS0002 support in switch_2gang driver. Fixed ir_blaster driver.flow.compose.json indentation. smoke_detector_advanced (_TZE284_rccxox8p) uses passive mode for sleepy battery devices - initial data may take up to 24h."
+  },
+  "5.5.706": {
+    "en": "📖 TROUBLESHOOTING GUIDE: Added comprehensive Zigbee troubleshooting documentation (docs/ZIGBEE_TROUBLESHOOTING_GUIDE.md). Covers pairing issues (mesh limits, WiFi interference, Tuya Magic Spell, interview timeout) and Flow issues (attribute reporting, multi-endpoint mapping, capability listeners, EF00 cluster conflicts)."
+  },
+  "5.5.705": {
+    "en": "🔧 DIAGNOSTIC FIXES: Fixed flow card ID mismatches in soil_sensor (moisture_changed, temperature_changed), added usb_outlet_button_pressed trigger, added soil_sensor_moisture_below condition. _TZE284_rccxox8p smoke detector and _TZ3000_l9brjwau switch already supported."
+  },
+  "5.5.704": {
+    "en": "🔄 SYNC & WORKFLOWS: Fixed 53 stale + added 75 missing manufacturer/product IDs via auto-sync. Enhanced GitHub Actions with concurrency control, auto-commit sync, validation summaries. publish.yml and validate.yml improved with driver count, sync status reporting."
+  },
+  "5.5.703": {
+    "en": "🔧 CRITICAL DUPLICATES FIX: Removed 48 manufacturerNames from wrong drivers based on GitHub issues #1104, #1063 and forum research. Fixed _TZE200_cirvgep4 (LCD temp sensor), _TZE200_a8sdabtg (climate sensor), _TZE200_locansqn (radiator valve), _TZ3000_gjnozsaz/_TZ3000_p6ju8myv (SOS buttons), air quality sensors, fan controllers. Devices now pair to correct driver."
+  },
+  "5.5.702": {
+    "en": "🔧 ANALYSIS: Added scripts/fix-true-duplicates.js for duplicate analysis. ManufacturerNames CAN be in multiple drivers when productIds differ. Only TRUE duplicates (same mfr + same productId in incompatible drivers) are issues."
+  },
+  "5.5.700": {
+    "en": "🔧 UNIVERSAL PERMISSIVE SOLUTION: New lib/Util.js with normalizeTuyaID, equalsIgnoreCase, requirePermissive (case-insensitive file loader), parseFlowBoolean. Updated PermissiveMatchingEngine and FlowCardManager. Flow cards now accept 'On/ON/on', dp_type 'ENUM/enum'. Complete anti-casing layer for Linux filesystem and Tuya ID chaos."
+  },
+  "5.5.699": {
+    "en": "🔧 DEEP CASE-INSENSITIVE FIX: Extended case-insensitive matching to ALL device lookup functions. Fixed 15+ additional files: TuyaProfiles, TuyaDPDatabase, DeviceFingerprintDB, DeviceIdentificationDatabase, NewDevices2025, DeviceHintsDatabase, device_helpers, tuya-engine. Pairing now works regardless of case for ALL devices."
+  },
+  "5.5.698": {
+    "en": "🎛️ SCENE SWITCH FLOW CARDS: Added flow triggers for scene_switch_1/2/3/6 drivers (press/double/long for all buttons). Fixed 37 drivers with empty flow triggers. Scene switches now work properly in Homey flows."
+  },
+  "5.5.697": {
+    "en": "🔧 UNIVERSAL CASE-INSENSITIVE MATCHING: All manufacturerName/productId comparisons now ignore case. Fixes device recognition when Tuya reports mixed casing (_TZ3000_xyz vs _tz3000_XYZ). Updated 12+ files including ManufacturerVariationManager, ButtonDevice, and protocol handlers."
+  },
+  "5.5.696": {
+    "en": "🎛️ Flow Cards Fix: scene_switch_4 now has 16 button flow cards (press/double/long for 4 buttons). Removed _TZ3000_zgyzgdua duplication - Moes wireless switches now use button_wireless_4 with full flow support."
+  },
+  "5.5.695": {
+    "en": "🐛 BSEED TS0726 Fix: Removed _tz3002_pzao9ls1 from button_wireless_4 - now correctly pairs as switch_4gang (mains wall switch)."
+  },
+  "5.5.694": {
+    "en": "🐛 Critical JSON Fix: Fixed malformed newline in 63 driver.compose.json files. GitHub Actions workflow now passes validation."
+  },
+  "5.5.693": {
+    "en": "🐛 Diagnostic Reports: smoke_detector_advanced EF00 cluster fix, TS0726 moved to switch_4gang, TS0002 support verified."
+  },
+  "5.5.692": {
+    "en": "🐛 switch_4gang JSON fix: Fixed malformed newline causing device init failure (Hartmut_Dunker report)."
+  },
+  "5.5.691": {
+    "en": "🤖 Fingerbot driver: New dedicated driver for Tuya Fingerbot Plus (_TZ3210_j4pdtz9v). Push action, battery, mode settings."
+  },
+  "5.5.690": {
+    "en": "🔧 TS0601 productId: Added to 5 drivers (air_purifier, air_quality_co2, button_emergency_sos, button_wireless_6, smoke_detector_advanced)."
+  },
+  "5.5.689": {
+    "en": "🔧 Case-insensitive matching: ManufacturerName matching now ignores case for better device recognition."
+  },
+  "5.5.688": {
+    "en": "🔧 Forum fixes: Multiple device support improvements based on community feedback."
+  },
+  "5.5.687": {
+    "en": "🔧 Device database: Enhanced manufacturer ID coverage for better pairing success."
+  },
+  "5.5.686": {
+    "en": "🔧 Cluster binding: Improved EF00 cluster binding for TS0601 devices."
+  },
+  "5.5.685": {
+    "en": "🔧 Time sync: Enhanced mcuSyncTime for battery devices."
+  },
+  "5.5.684": {
+    "en": "🌬️ Air Quality Monitor: Added _TZE204_yvx5lh6k (5-in-1: CO2, VOC, Formaldehyde, Temp, Humidity). Climate sensor _TZE200_a8sdabtg confirmed."
+  },
+  "5.5.683": {
+    "en": "📋 GitHub Issues: BSEED switches (TS0001/TS0002/TS0003), Soil sensor TS0601 (_TZE284_aa03yzhs), PG-S11Z smoke detector - all already supported!"
+  },
+  "5.5.682": {
+    "en": "🔧 LocalTuya-inspired: Entity auto-detection, DP mappings for switch/light/cover/climate/fan/sensor. Enhanced TuyaEF00Manager with entity handler integration."
+  },
+  "5.5.681": {
+    "en": "🕐 TIME SYNC v4: zigbee-herdsman format (8-byte UTC+Local). TuyaTimeSync module integration. Epoch 2000 auto-detect for LCD devices (_TZE284/_TZE204)."
+  },
   "5.5.679": {
     "en": "🕐 TIME SYNC v2: Full Tuya mcuSyncTime + ZCL Time cluster. +17 manufacturerName prefixes (MOES, eWeLink, SONOFF, LIDL). +26 productIds. 102 drivers audit-safe."
   },
@@ -2686,5 +2760,8 @@
   },
   "5.5.680": {
     "en": "📋 +38 driver.flow.compose.json files. 102 drivers with flow cards. Publish validation passed."
+  },
+  "5.5.731": {
+    "en": "Complete forum review & SOS button analysis. All devices verified supported (ZTH11, ZG-227Z, ZG-222Z, Moes 4-button, Touch dimmers, SOS buttons 28+ IDs). Common solution: re-pair devices after driver updates."
   }
 }
