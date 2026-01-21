@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.710** | 🔧 HOBEIAN FIX: Fixed HOBEIAN temp/humidity sensors not updating - added HOBE... |
 | **v5.5.709** | 📚 RULES & ENRICHMENT: Created docs/rules/ with DEVELOPMENT_RULES.md, USER_DE... |
 | **v5.5.708** | 🎛️ SCENE SWITCH FLOW CARDS FIX: Added 13 missing flow triggers to app.json f... |
 | **v5.5.707** | 🔧 DIAGNOSTIC FIXES: Fixed ir_send_ac_command flow card for IR Blaster (JSON ... |
@@ -78,7 +79,6 @@
 | **v5.5.703** | 🔧 CRITICAL DUPLICATES FIX: Removed 48 manufacturerNames from wrong drivers b... |
 | **v5.5.702** | 🔧 ANALYSIS: Added scripts/fix-true-duplicates.js for duplicate analysis. Man... |
 | **v5.5.700** | 🔧 UNIVERSAL PERMISSIVE SOLUTION: New lib/Util.js with normalizeTuyaID, equal... |
-| **v5.5.699** | 🔧 DEEP CASE-INSENSITIVE FIX: Extended case-insensitive matching to ALL devic... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
