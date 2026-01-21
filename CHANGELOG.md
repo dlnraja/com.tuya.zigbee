@@ -6,6 +6,25 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.724] - 2026-01-21
+
+### 📦 Forum Post #1126 Enrichment
+
+**New IDs Added from Forum Pages 55-56:**
+
+| ID | Device | Driver | Source |
+|----|--------|--------|--------|
+| `_TZ3000_wkai4ga5` | 4-Gang Scene Switch | scene_switch_4 | Forum #1126 |
+| `_TZ3000_5tqxpine` | 4-Gang Scene Switch | scene_switch_4 | Forum #1126 |
+| `HOBEIAN` + `ZG-101ZL` | Wireless Button | button_wireless_1 | Forum #1126 |
+
+**Issues Tracked:**
+- Hartmut_Dunker: switch_4gang buttons not working (diag: 8cbd94dd)
+- Freddyboy: _TZ3000_zgyzgdua Moes switch buttons issue
+- Ronny_M: HOBEIAN ZG-101ZL flow cards not working
+
+---
+
 ## [5.5.723] - 2026-01-21
 
 ### 📦 FINAL ENRICHMENT - New Manufacturer IDs
