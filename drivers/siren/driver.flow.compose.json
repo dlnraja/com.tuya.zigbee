@@ -14,7 +14,8 @@
         "nl": "Triggert wanneer de sirene begint te loeien",
         "fr": "Se déclenche quand la sirène commence à sonner",
         "de": "Wird ausgelöst, wenn die Sirene zu tönen beginnt"
-      }
+      },
+      "args": []
     },
     {
       "id": "siren_alarm_stopped",
@@ -29,7 +30,8 @@
         "nl": "Triggert wanneer de sirene stopt met loeien",
         "fr": "Se déclenche quand la sirène arrête de sonner",
         "de": "Wird ausgelöst, wenn die Sirene aufhört zu tönen"
-      }
+      },
+      "args": []
     },
     {
       "id": "siren_measure_battery_changed",
@@ -57,7 +59,8 @@
           },
           "example": 75
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "siren_battery_low",
@@ -66,7 +69,8 @@
         "nl": "Batterij is bijna leeg",
         "fr": "Batterie faible",
         "de": "Batterie ist schwach"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -77,7 +81,8 @@
         "nl": "Sirene !{{loeit|loeit niet}}",
         "fr": "Sirène !{{sonne|ne sonne pas}}",
         "de": "Sirene !{{tönt|tönt nicht}}"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -94,7 +99,8 @@
         "nl": "Zet de sirene aan",
         "fr": "Activer la sirène",
         "de": "Sirene einschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "siren_turn_off",
@@ -109,7 +115,8 @@
         "nl": "Zet de sirene uit",
         "fr": "Désactiver la sirène",
         "de": "Sirene ausschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "siren_set_volume",
@@ -136,9 +143,33 @@
             "de": "Lautstärkestufe"
           },
           "values": [
-            { "id": "low", "label": { "en": "Low", "nl": "Laag", "fr": "Bas", "de": "Niedrig" } },
-            { "id": "medium", "label": { "en": "Medium", "nl": "Gemiddeld", "fr": "Moyen", "de": "Mittel" } },
-            { "id": "high", "label": { "en": "High", "nl": "Hoog", "fr": "Haut", "de": "Hoch" } }
+            {
+              "id": "low",
+              "label": {
+                "en": "Low",
+                "nl": "Laag",
+                "fr": "Bas",
+                "de": "Niedrig"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium",
+                "nl": "Gemiddeld",
+                "fr": "Moyen",
+                "de": "Mittel"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High",
+                "nl": "Hoog",
+                "fr": "Haut",
+                "de": "Hoch"
+              }
+            }
           ]
         }
       ]
@@ -172,4 +203,3 @@
     }
   ]
 }
-

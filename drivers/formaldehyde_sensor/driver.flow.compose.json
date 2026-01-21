@@ -16,7 +16,8 @@
           },
           "example": 25
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "formaldehyde_sensor_voc_changed",
@@ -34,21 +35,24 @@
           },
           "example": 100
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "formaldehyde_sensor_air_quality_alert",
       "title": {
         "en": "Air quality alert",
         "fr": "Alerte qualité air"
-      }
+      },
+      "args": []
     },
     {
       "id": "formaldehyde_sensor_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -77,8 +81,8 @@
       "title": {
         "en": "Air quality is !{{good|poor}}",
         "fr": "Qualité air !{{bonne|mauvaise}}"
-      }
+      },
+      "args": []
     }
-  ],
-  "actions": []
+  ]
 }

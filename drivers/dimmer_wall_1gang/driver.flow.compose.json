@@ -5,14 +5,16 @@
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
-      }
+      },
+      "args": []
     },
     {
       "id": "dimmer_wall_1gang_dimmer_1gang_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Éteint"
-      }
+      },
+      "args": []
     },
     {
       "id": "dimmer_wall_1gang_dimmer_1gang_dim_changed",
@@ -30,7 +32,8 @@
           },
           "example": 0.75
         }
-      ]
+      ],
+      "args": []
     }
   ],
   "conditions": [
@@ -43,7 +46,8 @@
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -52,21 +56,24 @@
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
-      }
+      },
+      "args": []
     },
     {
       "id": "dimmer_wall_1gang_dimmer_1gang_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Éteindre"
-      }
+      },
+      "args": []
     },
     {
       "id": "dimmer_wall_1gang_dimmer_1gang_toggle",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
-      }
+      },
+      "args": []
     },
     {
       "id": "dimmer_wall_1gang_dimmer_1gang_set_dim",
@@ -96,4 +103,3 @@
     }
   ]
 }
-

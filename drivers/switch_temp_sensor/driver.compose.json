@@ -279,8 +279,8 @@
     }
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+    "small": "/drivers/switch_temp_sensor/assets/images/small.png",
+    "large": "/drivers/switch_temp_sensor/assets/images/large.png",
+    "xlarge": "/drivers/switch_temp_sensor/assets/images/xlarge.png"
   }
 }

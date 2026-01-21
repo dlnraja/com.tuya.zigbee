@@ -266,8 +266,8 @@
       }
     },
     "productId": [
-      "TS0601",
-      "TS0601_watervalve"
+      "TS0601_watervalve",
+      "TS0601"
     ]
   },
   "settings": [
@@ -500,7 +500,6 @@
     "large": "drivers/water_valve_smart/assets/images/large.png",
     "xlarge": "drivers/water_valve_smart/assets/images/xlarge.png"
   },
-  "id": "water_valve_smart",
   "platforms": [
     "local"
   ],

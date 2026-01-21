@@ -5,14 +5,16 @@
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
-      }
+      },
+      "args": []
     },
     {
       "id": "plug_energy_monitor_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Éteint"
-      }
+      },
+      "args": []
     },
     {
       "id": "plug_energy_monitor_measure_power_changed",
@@ -30,7 +32,8 @@
           },
           "example": 100
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "plug_energy_monitor_measure_voltage_changed",
@@ -48,7 +51,8 @@
           },
           "example": 230
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "plug_energy_monitor_measure_current_changed",
@@ -66,7 +70,8 @@
           },
           "example": 0.5
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "plug_energy_monitor_meter_power_changed",
@@ -84,7 +89,8 @@
           },
           "example": 1.5
         }
-      ]
+      ],
+      "args": []
     }
   ],
   "conditions": [
@@ -95,7 +101,8 @@
         "nl": "Stekker !{{is|is niet}} aan",
         "fr": "Prise !{{est|n'est pas}} allumée",
         "de": "Stecker !{{ist|ist nicht}} an"
-      }
+      },
+      "args": []
     },
     {
       "id": "plug_energy_monitor_power_above",
@@ -160,7 +167,8 @@
         "nl": "Inschakelen",
         "fr": "Allumer",
         "de": "Einschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "plug_energy_monitor_turn_off",
@@ -169,7 +177,8 @@
         "nl": "Uitschakelen",
         "fr": "Éteindre",
         "de": "Ausschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "plug_energy_monitor_toggle",
@@ -178,7 +187,8 @@
         "nl": "Schakelen",
         "fr": "Basculer",
         "de": "Umschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "plug_energy_monitor_reset_meter",
@@ -193,8 +203,8 @@
         "nl": "Reset de energieverbruikteller naar 0 kWh",
         "fr": "Réinitialise le compteur de consommation à 0 kWh",
         "de": "Setzt den Energieverbrauchszähler auf 0 kWh zurück"
-      }
+      },
+      "args": []
     }
   ]
 }
-

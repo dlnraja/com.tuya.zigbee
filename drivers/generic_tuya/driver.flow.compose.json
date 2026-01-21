@@ -16,7 +16,8 @@
           },
           "example": 75
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "generic_tuya_measure_temperature_changed",
@@ -34,7 +35,8 @@
           },
           "example": 22.5
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "generic_tuya_measure_humidity_changed",
@@ -52,7 +54,8 @@
           },
           "example": 65
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "generic_tuya_dp_received",
@@ -79,7 +82,8 @@
           },
           "example": "100"
         }
-      ]
+      ],
+      "args": []
     }
   ],
   "conditions": [
@@ -135,4 +139,3 @@
     }
   ]
 }
-

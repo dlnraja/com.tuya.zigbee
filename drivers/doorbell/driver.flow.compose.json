@@ -20,7 +20,8 @@
         "nl": "Triggert wanneer iemand op de deurbel drukt",
         "fr": "Se déclenche quand quelqu'un appuie sur la sonnette",
         "de": "Wird ausgelöst, wenn jemand die Türklingel drückt"
-      }
+      },
+      "args": []
     },
     {
       "id": "doorbell_motion_detected",
@@ -35,7 +36,8 @@
         "nl": "Triggert wanneer beweging wordt gedetecteerd bij de deurbel (indien ondersteund)",
         "fr": "Se déclenche quand un mouvement est détecté près de la sonnette (si supporté)",
         "de": "Wird ausgelöst, wenn Bewegung in der Nähe der Türklingel erkannt wird (falls unterstützt)"
-      }
+      },
+      "args": []
     },
     {
       "id": "doorbell_tamper_true",
@@ -50,7 +52,8 @@
         "nl": "Triggert wanneer er met de deurbel is geknoeid",
         "fr": "Se déclenche quand la sonnette a été sabotée",
         "de": "Wird ausgelöst, wenn die Türklingel manipuliert wurde"
-      }
+      },
+      "args": []
     },
     {
       "id": "doorbell_battery_changed",
@@ -78,7 +81,8 @@
           },
           "example": 75
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "doorbell_battery_low",
@@ -87,7 +91,8 @@
         "nl": "Batterij is bijna leeg",
         "fr": "Batterie faible",
         "de": "Batterie ist schwach"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -133,8 +138,8 @@
         "nl": "Laat de deurbel handmatig rinkelen (indien ondersteund)",
         "fr": "Déclenche manuellement le carillon de la sonnette (si supporté)",
         "de": "Löst die Türklingel manuell aus (falls unterstützt)"
-      }
+      },
+      "args": []
     }
   ]
 }
-

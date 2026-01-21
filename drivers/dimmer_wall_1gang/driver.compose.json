@@ -547,8 +547,8 @@
       "_TZE200_dfry6ylv"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_dim1"
+      "TS0601_dim1",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -839,7 +839,6 @@
     "large": "drivers/dimmer_wall_1gang/assets/images/large.png",
     "xlarge": "drivers/dimmer_wall_1gang/assets/images/xlarge.png"
   },
-  "id": "dimmer_wall_1gang",
   "platforms": [
     "local"
   ],

@@ -20,7 +20,8 @@
         "nl": "Triggert wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
         "fr": "Se déclenche quand le radar mmWave détecte une présence humaine (même immobile)",
         "de": "Wird ausgelöst, wenn der mmWave-Radar menschliche Anwesenheit erkennt (auch stationär)"
-      }
+      },
+      "args": []
     },
     {
       "id": "presence_sensor_radar_presence_cleared",
@@ -35,7 +36,8 @@
         "nl": "Triggert wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
         "fr": "Se déclenche quand aucune présence humaine n'est détectée pendant le délai configuré",
         "de": "Wird ausgelöst, wenn für die konfigurierte Zeitüberschreitung keine menschliche Anwesenheit erkannt wird"
-      }
+      },
+      "args": []
     },
     {
       "id": "presence_sensor_radar_motion_detected",
@@ -50,7 +52,8 @@
         "nl": "Triggert wanneer actieve beweging wordt gedetecteerd (lopen, bewegen)",
         "fr": "Se déclenche quand un mouvement actif est détecté (marche, mouvement)",
         "de": "Wird ausgelöst, wenn aktive Bewegung erkannt wird (Gehen, Bewegen)"
-      }
+      },
+      "args": []
     },
     {
       "id": "presence_sensor_radar_illuminance_changed",
@@ -78,7 +81,8 @@
           },
           "example": 150
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "presence_sensor_radar_distance_changed",
@@ -106,7 +110,8 @@
           },
           "example": 200
         }
-      ]
+      ],
+      "args": []
     }
   ],
   "conditions": [
@@ -117,7 +122,8 @@
         "nl": "Iemand !{{is|is niet}} aanwezig",
         "fr": "Quelqu'un !{{est|n'est pas}} présent",
         "de": "Jemand !{{ist|ist nicht}} anwesend"
-      }
+      },
+      "args": []
     },
     {
       "id": "presence_sensor_radar_illuminance_above",
@@ -175,4 +181,3 @@
     }
   ]
 }
-
