@@ -368,27 +368,36 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          1,
+          6,
+          57344
         ],
-        "bindings": []
+        "bindings": [6]
       },
       "2": {
         "clusters": [
-          0
+          0,
+          1,
+          6
         ],
-        "bindings": []
+        "bindings": [6]
       },
       "3": {
         "clusters": [
-          0
+          0,
+          1,
+          6
         ],
-        "bindings": []
+        "bindings": [6]
       },
       "4": {
         "clusters": [
-          0
+          0,
+          1,
+          6
         ],
-        "bindings": []
+        "bindings": [6]
       }
     }
   },

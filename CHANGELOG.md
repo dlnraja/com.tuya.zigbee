@@ -6,6 +6,24 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.727] - 2026-01-21
+
+### 🔧 Moes 4-Button Controller Fix (Freddyboy Forum #1116)
+
+**Issue:** Moes `_TZ3000_zgyzgdua` physical buttons and app buttons not working
+
+**Root Cause:** Missing cluster bindings in `button_wireless_4` driver
+
+**Fix Applied:**
+- Added cluster 6 (onOff) to all 4 endpoints with bindings
+- Added cluster 1 (powerConfiguration) for battery
+- Added cluster 57344 (0xE000) on EP1 for Tuya button events
+- Bindings [6] on all endpoints for button command reception
+
+**Re-pair Required:** Users must re-pair device after this update for bindings to take effect.
+
+---
+
 ## [5.5.726] - 2026-01-21
 
 ### 📦 GitHub Issues Enrichment - New Manufacturer IDs
