@@ -6,6 +6,23 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.723] - 2026-01-21
+
+### 📦 FINAL ENRICHMENT - New Manufacturer IDs
+
+**New IDs Added:**
+
+| ID | Device | Driver | Source |
+|----|--------|--------|--------|
+| `_TZE284_dmckrsxg` | TS0601 Switch | switch_1gang | GitHub #29657 |
+
+**Already Present (Verified):**
+- `_TZ3002_pzao9ls1` (TS0726 4-gang switch)
+- `_TZE284_yrwmnya3` (Presence sensor radar)
+- All IDs from Gmail/PDF/Forum verified present
+
+---
+
 ## [5.5.722] - 2026-01-21
 
 ### 📦 COMPREHENSIVE VERIFICATION (Gmail + PDF + Forum + GitHub)
