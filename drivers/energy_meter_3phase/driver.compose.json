@@ -16,32 +16,6 @@
     "measure_power.phase3",
     "measure_battery"
   ],
-  "capabilitiesOptions": {
-    "measure_power": {
-      "title": {
-        "en": "Total Power",
-        "fr": "Puissance Totale"
-      }
-    },
-    "measure_power.phase1": {
-      "title": {
-        "en": "Phase 1 Power",
-        "fr": "Puissance Phase 1"
-      }
-    },
-    "measure_power.phase2": {
-      "title": {
-        "en": "Phase 2 Power",
-        "fr": "Puissance Phase 2"
-      }
-    },
-    "measure_power.phase3": {
-      "title": {
-        "en": "Phase 3 Power",
-        "fr": "Puissance Phase 3"
-      }
-    }
-  },
   "energy": {
     "batteries": [
       "AAA",
@@ -278,8 +252,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_3phase"
+      "TS0601_3phase",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -295,7 +269,6 @@
     "large": "drivers/energy_meter_3phase/assets/images/large.png",
     "xlarge": "drivers/energy_meter_3phase/assets/images/xlarge.png"
   },
-  "id": "energy_meter_3phase",
   "platforms": [
     "local"
   ],

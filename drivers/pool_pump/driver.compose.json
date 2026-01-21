@@ -237,8 +237,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_pool"
+      "TS0601_pool",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -259,7 +259,6 @@
     "small": "drivers/pool_pump/assets/images/small.png",
     "large": "drivers/pool_pump/assets/images/large.png"
   },
-  "id": "pool_pump",
   "platforms": [
     "local"
   ],

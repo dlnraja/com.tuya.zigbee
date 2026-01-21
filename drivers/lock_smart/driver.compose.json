@@ -258,8 +258,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_smartlock"
+      "TS0601_smartlock",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -507,7 +507,6 @@
     "large": "drivers/lock_smart/assets/images/large.png",
     "xlarge": "drivers/lock_smart/assets/images/xlarge.png"
   },
-  "id": "lock_smart",
   "platforms": [
     "local"
   ],

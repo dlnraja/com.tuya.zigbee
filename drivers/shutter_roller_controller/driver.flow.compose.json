@@ -16,35 +16,40 @@
           },
           "example": 50
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "shutter_roller_controller_fully_opened",
       "title": {
         "en": "Fully opened",
         "fr": "Complètement ouvert"
-      }
+      },
+      "args": []
     },
     {
       "id": "shutter_roller_controller_fully_closed",
       "title": {
         "en": "Fully closed",
         "fr": "Complètement fermé"
-      }
+      },
+      "args": []
     },
     {
       "id": "shutter_roller_controller_started_moving",
       "title": {
         "en": "Started moving",
         "fr": "Démarrage mouvement"
-      }
+      },
+      "args": []
     },
     {
       "id": "shutter_roller_controller_stopped_moving",
       "title": {
         "en": "Stopped moving",
         "fr": "Arrêt mouvement"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -53,7 +58,8 @@
       "title": {
         "en": "Shutter is !{{open|closed}}",
         "fr": "Volet est !{{ouvert|fermé}}"
-      }
+      },
+      "args": []
     },
     {
       "id": "shutter_roller_controller_position_above",
@@ -80,7 +86,8 @@
       "title": {
         "en": "Shutter is !{{moving|stopped}}",
         "fr": "Volet !{{en mouvement|arrêté}}"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -89,21 +96,24 @@
       "title": {
         "en": "Open",
         "fr": "Ouvrir"
-      }
+      },
+      "args": []
     },
     {
       "id": "shutter_roller_controller_close",
       "title": {
         "en": "Close",
         "fr": "Fermer"
-      }
+      },
+      "args": []
     },
     {
       "id": "shutter_roller_controller_stop",
       "title": {
         "en": "Stop",
         "fr": "Arrêter"
-      }
+      },
+      "args": []
     },
     {
       "id": "shutter_roller_controller_set_position",

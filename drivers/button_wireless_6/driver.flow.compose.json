@@ -2,63 +2,72 @@
   "triggers": [
     {
       "id": "button_wireless_6_button_6gang_button_pressed",
-      "title": { "en": "Button pressed", "fr": "Bouton appuyé" },
-      "titleFormatted": { "en": "Button [[button]] pressed", "fr": "Bouton [[button]] appuyé" },
-      "args": [
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] pressed",
+        "fr": "Bouton [[button]] appuyé"
+      },
+      "tokens": [
         {
-          "name": "button", "type": "dropdown",
-          "title": { "en": "Button", "fr": "Bouton" },
-          "values": [
-            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
-            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } },
-            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3" } },
-            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4" } },
-            { "id": "5", "label": { "en": "Button 5", "fr": "Bouton 5" } },
-            { "id": "6", "label": { "en": "Button 6", "fr": "Bouton 6" } }
-          ]
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
         }
       ],
-      "tokens": [{ "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton" }, "example": "1" }]
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_double_press",
-      "title": { "en": "Button double-pressed", "fr": "Bouton double-cliqué" },
-      "titleFormatted": { "en": "Button [[button]] double-pressed", "fr": "Bouton [[button]] double-cliqué" },
-      "args": [
+      "title": {
+        "en": "Button double-pressed",
+        "fr": "Bouton double-cliqué"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] double-pressed",
+        "fr": "Bouton [[button]] double-cliqué"
+      },
+      "tokens": [
         {
-          "name": "button", "type": "dropdown",
-          "title": { "en": "Button", "fr": "Bouton" },
-          "values": [
-            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
-            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } },
-            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3" } },
-            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4" } },
-            { "id": "5", "label": { "en": "Button 5", "fr": "Bouton 5" } },
-            { "id": "6", "label": { "en": "Button 6", "fr": "Bouton 6" } }
-          ]
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
         }
       ],
-      "tokens": [{ "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton" }, "example": "1" }]
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_long_press",
-      "title": { "en": "Button long-pressed", "fr": "Bouton pressé longtemps" },
-      "titleFormatted": { "en": "Button [[button]] long-pressed", "fr": "Bouton [[button]] pressé longtemps" },
-      "args": [
+      "title": {
+        "en": "Button long-pressed",
+        "fr": "Bouton pressé longtemps"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] long-pressed",
+        "fr": "Bouton [[button]] pressé longtemps"
+      },
+      "tokens": [
         {
-          "name": "button", "type": "dropdown",
-          "title": { "en": "Button", "fr": "Bouton" },
-          "values": [
-            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
-            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } },
-            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3" } },
-            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4" } },
-            { "id": "5", "label": { "en": "Button 5", "fr": "Bouton 5" } },
-            { "id": "6", "label": { "en": "Button 6", "fr": "Bouton 6" } }
-          ]
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
         }
       ],
-      "tokens": [{ "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton" }, "example": "1" }]
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_multi_press",
@@ -89,133 +98,152 @@
           },
           "example": 3
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_1_pressed",
       "title": {
         "en": "Button 1 pressed",
         "fr": "Bouton 1 appuyé"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_1_double",
       "title": {
         "en": "Button 1 double-pressed",
         "fr": "Bouton 1 double-cliqué"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_1_long",
       "title": {
         "en": "Button 1 long-pressed",
         "fr": "Bouton 1 pressé longtemps"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_2_pressed",
       "title": {
         "en": "Button 2 pressed",
         "fr": "Bouton 2 appuyé"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_2_double",
       "title": {
         "en": "Button 2 double-pressed",
         "fr": "Bouton 2 double-cliqué"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_2_long",
       "title": {
         "en": "Button 2 long-pressed",
         "fr": "Bouton 2 pressé longtemps"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_3_pressed",
       "title": {
         "en": "Button 3 pressed",
         "fr": "Bouton 3 appuyé"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_3_double",
       "title": {
         "en": "Button 3 double-pressed",
         "fr": "Bouton 3 double-cliqué"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_3_long",
       "title": {
         "en": "Button 3 long-pressed",
         "fr": "Bouton 3 pressé longtemps"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_4_pressed",
       "title": {
         "en": "Button 4 pressed",
         "fr": "Bouton 4 appuyé"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_4_double",
       "title": {
         "en": "Button 4 double-pressed",
         "fr": "Bouton 4 double-cliqué"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_4_long",
       "title": {
         "en": "Button 4 long-pressed",
         "fr": "Bouton 4 pressé longtemps"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_5_pressed",
       "title": {
         "en": "Button 5 pressed",
         "fr": "Bouton 5 appuyé"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_5_double",
       "title": {
         "en": "Button 5 double-pressed",
         "fr": "Bouton 5 double-cliqué"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_5_long",
       "title": {
         "en": "Button 5 long-pressed",
         "fr": "Bouton 5 pressé longtemps"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_6_pressed",
       "title": {
         "en": "Button 6 pressed",
         "fr": "Bouton 6 appuyé"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_6_double",
       "title": {
         "en": "Button 6 double-pressed",
         "fr": "Bouton 6 double-cliqué"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_button_6_long",
       "title": {
         "en": "Button 6 long-pressed",
         "fr": "Bouton 6 pressé longtemps"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_6_button_6gang_measure_battery_changed",
@@ -233,7 +261,8 @@
           },
           "example": 75
         }
-      ]
+      ],
+      "args": []
     }
   ]
 }

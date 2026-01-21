@@ -255,9 +255,9 @@
     "subDevices": []
   },
   "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+    "small": "/drivers/led_controller_dimmable/assets/images/small.png",
+    "large": "/drivers/led_controller_dimmable/assets/images/large.png",
+    "xlarge": "/drivers/led_controller_dimmable/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

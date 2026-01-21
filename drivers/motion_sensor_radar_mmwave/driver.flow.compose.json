@@ -5,28 +5,32 @@
       "title": {
         "en": "Presence detected",
         "fr": "Présence détectée"
-      }
+      },
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_presence_cleared",
       "title": {
         "en": "Presence cleared",
         "fr": "Présence disparue"
-      }
+      },
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_motion_detected",
       "title": {
         "en": "Motion detected",
         "fr": "Mouvement détecté"
-      }
+      },
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_no_motion",
       "title": {
         "en": "No motion",
         "fr": "Aucun mouvement"
-      }
+      },
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_illuminance_changed",
@@ -44,7 +48,8 @@
           },
           "example": 150
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_temperature_changed",
@@ -62,7 +67,8 @@
           },
           "example": 22.5
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_humidity_changed",
@@ -80,7 +86,8 @@
           },
           "example": 55
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_target_distance_changed",
@@ -98,14 +105,16 @@
           },
           "example": 2.5
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
-      }
+      },
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_battery_changed",
@@ -123,7 +132,8 @@
           },
           "example": 75
         }
-      ]
+      ],
+      "args": []
     }
   ],
   "conditions": [
@@ -132,7 +142,8 @@
       "title": {
         "en": "Presence is !{{detected|not detected}}",
         "fr": "Présence !{{détectée|non détectée}}"
-      }
+      },
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_illuminance_above",

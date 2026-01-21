@@ -249,8 +249,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_air_purifier"
+      "TS0601_air_purifier",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -271,7 +271,6 @@
     "small": "drivers/air_purifier/assets/images/small.png",
     "large": "drivers/air_purifier/assets/images/large.png"
   },
-  "id": "air_purifier",
   "platforms": [
     "local"
   ],

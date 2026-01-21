@@ -262,8 +262,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_breaker"
+      "TS0601_breaker",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -284,7 +284,6 @@
     "small": "drivers/smart_breaker/assets/images/small.png",
     "large": "drivers/smart_breaker/assets/images/large.png"
   },
-  "id": "smart_breaker",
   "platforms": [
     "local"
   ],
