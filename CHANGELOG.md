@@ -2,6 +2,76 @@
 
 All notable changes to the Universal Tuya Zigbee app.
 
+> ⚠️ **WORKFLOW**: This changelog must be updated at each prompt/session in Windsurf AI.
+
+---
+
+## [5.5.716] - 2026-01-21
+
+### 🔧 DRIVER OVERLAP FIX (Hartmut_Dunker)
+
+**Problem:** TS0726 mains-powered wall switches incorrectly paired as battery-powered wireless controllers.
+
+**Root Cause:** `_TZ3002_vaq2bfcu` and `_TZ3002_zyuajkzz` were in BOTH `button_wireless_4` AND `switch_4gang` drivers.
+
+**Fix:**
+- Removed overlapping manufacturer IDs from `button_wireless_4`
+- These are TS0726 mains-powered switches, not battery buttons
+- Devices now correctly pair to `switch_4gang` driver
+
+**User Action:** RE-PAIR device after updating.
+
+---
+
+## [5.5.715] - 2026-01-21
+
+### 🔘 HOBEIAN ZG-101ZL FIX (Ronny_M)
+
+**Problem:** HOBEIAN ZG-101ZL button not triggering flows despite correct pairing.
+
+**Root Cause:** Device sends button events via onOff cluster COMMANDS (outputCluster 6), but cluster wasn't bound.
+
+**Fix:**
+- Added onOff cluster (6) to bindings in `driver.compose.json`
+- Added `_setupOnOffBinding()` for explicit HOBEIAN binding
+- Added `onEndDeviceAnnounce()` for wake/rejoin binding
+- Device has 2 modes (triple-click to switch):
+  - EVENT mode: commandOn=single, commandOff=double, commandToggle=hold
+  - COMMAND mode: toggle=single, on=double, off=long
+
+**User Action:** RE-PAIR device after updating. Triple-click to switch modes if buttons don't respond.
+
+---
+
+## [5.5.714] - 2026-01-21
+
+### 🔘 MOES 4-BUTTON FIX (Freddyboy)
+
+**Problem:** Moes `_TZ3000_zgyzgdua` 4-button remote not responding to any button presses.
+
+**Root Cause:** Device is TS0044 using cluster 0xE000 (57344), NOT TS004F. Was incorrectly treated as TS004F needing mode switching.
+
+**Fix:**
+- Added `_setupTuyaE000ButtonDetection()` for cluster 57344 handling
+- Enhanced onOff listeners (commandOn/Off/Toggle) per endpoint
+- Removed from TS004F mode switching list (not needed for TS0044)
+
+**User Action:** RE-PAIR device after updating.
+
+---
+
+## [5.5.713] - 2026-01-21
+
+### 🔧 SENSOR POLARITY FIX (Lasse_K)
+
+**Water Leak Sensor:**
+- Added "Invert Water Alarm" setting for sensors with reversed polarity
+- Override in `setCapabilityValue()` for `alarm_water`
+
+**Contact Sensor:**
+- Expanded auto-inversion list for more `_TZ3000_*` manufacturers
+- Manual override via device settings
+
 ---
 
 ## [5.5.697] - 2026-01-19
