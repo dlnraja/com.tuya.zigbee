@@ -6,6 +6,26 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.720] - 2026-01-21
+
+### 📦 GITHUB/FORUM ENRICHMENT
+
+**New Manufacturer IDs added from Zigbee2MQTT issues and Homey Community:**
+
+| ID | Device | Driver | Source |
+|----|--------|--------|--------|
+| `_TZ3000_hy6ncvmw` | TS0222 Luminance Sensor | climate_sensor | GitHub #29203 |
+
+**Already present (verified):**
+- `_TZ3000_wn65ixz9` (Repeater) → climate_sensor
+- `_TZE204_e1hutaaj` (Multi-gang switch) → switch_3gang  
+- `_TZE204_qyr2m29i` (TRV Moes TRV801Z) → radiator_valve
+- `_TZE204_gkfbdvyx` (Presence ZY-M100) → presence_sensor_radar
+- `_TZE284_iadro9bf` (Presence TZE284) → presence_sensor_radar
+- `_TZE284_o3x45p96` (TRV) → radiator_valve
+
+---
+
 ## [5.5.719] - 2026-01-21
 
 ### 🛠️ NEW: DIY CUSTOM ZIGBEE DRIVER
