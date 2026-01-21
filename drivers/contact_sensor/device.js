@@ -111,8 +111,18 @@ class ContactSensorDevice extends HybridSensorBase {
     ].includes(mfr);
 
     // v5.5.506: Forum fix Lasse_K - HOBEIAN ZG-102Z reports inverted by default
+    // v5.5.713: Expanded list of sensors that report inverted by default
     // These sensors report closed=alarm, open=no alarm (inverted from standard)
-    const invertedByDefault = ['HOBEIAN'].includes(mfr);
+    const invertedByDefault = [
+      'HOBEIAN',
+      '_TZ3000_26fmupbb',  // Known inverted
+      '_TZ3000_n2egfsli',  // Known inverted
+      '_TZ3000_oxslv1c9',  // Known inverted
+      '_TZ3000_402jjyro',  // Known inverted
+      '_TZ3000_2mbfxlzr',  // Known inverted
+      '_TZ3000_bzxloft2',  // Known inverted (forum reports)
+      '_TZ3000_yxqnffam',  // Known inverted (forum reports)
+    ].some(id => mfr.includes(id) || mfr.toUpperCase().includes(id.toUpperCase()));
     if (invertedByDefault && !this.getSetting('invert_contact')) {
       this._invertContact = true;
       this.log(`[CONTACT] ⚠️ Sensor ${mfr} inverted by default`);

@@ -1,4 +1,5 @@
 {
+  "5.5.713": { "en": "🔧 SENSOR POLARITY FIX (Lasse_K): Water leak sensor: Added 'Invert Water Alarm' setting for sensors with reversed polarity. Contact sensor: Expanded auto-inversion to more _TZ3000_* manufacturers. Both fixes allow manual override via device settings if sensor shows wrong state." },
   "5.5.712": { "en": "🆘 SOS BUTTON FIX: Fixed corrupted manufacturer list in button_emergency_sos driver - removed 200+ unrelated brand names, kept only actual SOS button IDs (TS0215, TS0215A, TS0218). This fixes pairing issues for SOS/emergency buttons. HOBEIAN temp/humidity fix already in v5.5.710." },
   "5.5.711": { "en": "🌡️ ZBEACON TH01: Added Zbeacon manufacturerName support for TH01 temp/humidity sensor (GitHub Issue #109). Device pairs correctly to climate_sensor driver." },
   "5.5.710": { "en": "🔧 HOBEIAN FIX: Fixed HOBEIAN temp/humidity sensors not updating - added HOBEIAN to climate_sensor driver, fixed DP101 battery mapping. Motion sensor DP101 now intelligently detects battery (0-100) vs presence_time (>100). Scene switch flow cards already fixed in v5.5.708 - users need to update app." },

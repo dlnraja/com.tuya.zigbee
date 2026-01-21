@@ -244,6 +244,9 @@ class WaterLeakSensorDevice extends HybridSensorBase {
     // Get device profile before parent init
     this._deviceProfile = this._getDeviceProfile();
 
+    // v5.5.713: Check for invert_alarm setting (Lasse_K forum fix)
+    this._invertAlarm = this.getSetting('invert_alarm') || false;
+
     await super.onNodeInit({ zclNode });
 
     // Log device-specific info
@@ -283,7 +286,37 @@ class WaterLeakSensorDevice extends HybridSensorBase {
       this.log('[WATER] ✅ IAS Alarm Fallback enabled for INVALID_EP workaround');
     }
 
-    this.log('[WATER] ✅ Water leak sensor ready');
+    this.log(`[WATER] ✅ Water leak sensor ready (invert: ${this._invertAlarm})`);
+  }
+
+  /**
+   * v5.5.713: Handle settings changes (Lasse_K forum fix)
+   */
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    if (changedKeys.includes('invert_alarm')) {
+      this._invertAlarm = newSettings.invert_alarm;
+      this.log(`[WATER] Invert setting changed to: ${this._invertAlarm}`);
+      // Toggle current state if inverted
+      const current = this.getCapabilityValue('alarm_water');
+      if (current !== null) {
+        await this.setCapabilityValue('alarm_water', !current).catch(() => { });
+      }
+    }
+    if (super.onSettings) {
+      await super.onSettings({ oldSettings, newSettings, changedKeys });
+    }
+  }
+
+  /**
+   * v5.5.713: Override setCapabilityValue to apply inversion for alarm_water (Lasse_K forum fix)
+   */
+  async setCapabilityValue(capability, value) {
+    if (capability === 'alarm_water' && this._invertAlarm) {
+      const invertedValue = !value;
+      this.log(`[WATER] 🔄 Inverting alarm: ${value} → ${invertedValue}`);
+      return super.setCapabilityValue(capability, invertedValue);
+    }
+    return super.setCapabilityValue(capability, value);
   }
 
   async onDeleted() {
