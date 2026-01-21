@@ -6,6 +6,23 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.726] - 2026-01-21
+
+### 📦 GitHub Issues Enrichment - New Manufacturer IDs
+
+**New IDs Added:**
+
+| ID | Device | Driver | Source |
+|----|--------|--------|--------|
+| `_TZE284_65gzcss7` | Soil/Temp/Humidity/Illuminance Sensor | soil_sensor | GitHub #29340 |
+| `_TZE284_libht6ua` | Zigbee Blind Motor | curtain_motor | GitHub #27643 |
+
+**Fixes Applied:**
+- Moved `_TZE284_libht6ua` from climate_sensor to curtain_motor (was incorrectly classified)
+- Added `_TZE284_65gzcss7` to soil_sensor for 4-in-1 soil/climate sensor
+
+---
+
 ## [5.5.725] - 2026-01-21
 
 ### 🔥 Smoke Detector Advanced - Critical Fix (Jolink Forum Report)
