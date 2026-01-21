@@ -6,6 +6,31 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.731] - 2026-01-21
+
+### 📡 Complete Forum Review & SOS Button Analysis
+
+**Forum Posts Reviewed:**
+- #1127, #1124, #1122, #1116, #1115, #1114, #1113, #1108, #1106, #1104, #1099
+
+**All Devices Verified Supported:**
+- ZTH11 (`_TZE204_1wnh8bqp`) → climate_sensor ✅
+- ZG-227Z → climate_sensor ✅
+- ZG-222Z → water_leak_sensor ✅
+- Moes 4-button (`_TZ3000_zgyzgdua`) → button_wireless_4 ✅
+- Touch dimmers → dimmer_wall_1gang ✅
+- SOS buttons → button_emergency_sos ✅ (28+ manufacturer IDs)
+
+**SOS Button Analysis Complete:**
+- All known manufacturer IDs present
+- IAS ACE + IAS Zone + Tuya DP + genOnOff support
+- Battery reporting via ZCL and Tuya DP
+- Flow cards for sos_pressed and battery_changed
+
+**Common Solution**: Re-pair devices after driver updates
+
+---
+
 ## [5.5.730] - 2026-01-21
 
 ### 📡 Forum Research Summary
