@@ -6,6 +6,22 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.721] - 2026-01-21
+
+### 📦 FORUM/PDF/GITHUB ENRICHMENT
+
+**New Manufacturer IDs from Zigbee2MQTT & Forum:**
+
+| ID | Device | Driver | Source |
+|----|--------|--------|--------|
+| `_TZE284_o9ofysmo` | Soil Moisture Sensor | soil_sensor | GitHub #27956 |
+| `_TZE284_xc3vwx5a` | Soil Moisture Sensor | soil_sensor | GitHub #27956 |
+
+**Smoke Detector (verified present):** All IDs from PDF/forum already in `smoke_detector_advanced`
+- PG-S11Z, _TZE200_ntcy3xu1, _TZE200_m9skfctm, _TZE200_rccxox8p, _TZE200_uebojraa
+
+---
+
 ## [5.5.720] - 2026-01-21
 
 ### 📦 GITHUB/FORUM ENRICHMENT
