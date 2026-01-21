@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.717** | 📊 ENRICHMENT UPDATE: Enhanced DP mappings with 15 device categories, intelli... |
 | **v5.5.716** | 🔧 DRIVER OVERLAP FIX (Hartmut_Dunker): Removed _TZ3002_vaq2bfcu and _TZ3002_... |
 | **v5.5.715** | 🔘 HOBEIAN ZG-101ZL FIX (Ronny_M): Added onOff cluster binding (cluster 6) fo... |
 | **v5.5.714** | 🔘 MOES 4-BUTTON FIX (Freddyboy): Fixed _TZ3000_zgyzgdua Moes TS0044 4-button... |
@@ -78,7 +79,6 @@
 | **v5.5.710** | 🔧 HOBEIAN FIX: Fixed HOBEIAN temp/humidity sensors not updating - added HOBE... |
 | **v5.5.709** | 📚 RULES & ENRICHMENT: Created docs/rules/ with DEVELOPMENT_RULES.md, USER_DE... |
 | **v5.5.708** | 🎛️ SCENE SWITCH FLOW CARDS FIX: Added 13 missing flow triggers to app.json f... |
-| **v5.5.707** | 🔧 DIAGNOSTIC FIXES: Fixed ir_send_ac_command flow card for IR Blaster (JSON ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
