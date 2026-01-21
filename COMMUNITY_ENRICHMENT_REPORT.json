@@ -1,0 +1,152 @@
+{
+  "timestamp": "2026-01-21T07:35:17.117Z",
+  "stats": {
+    "driversEnriched": 1,
+    "idsAdded": 1,
+    "newDriversNeeded": 0,
+    "backupsCreated": 1
+  },
+  "flowIssues": [],
+  "communityReports": {
+    "presence_sensor_radar": {
+      "ids": [
+        "_TZE204_ZTQNH5CG"
+      ],
+      "issue": "Flow triggers ne déclenchaient pas - FIXED driver.js"
+    },
+    "energy_meter": {
+      "ids": [
+        "_TZE204_81YRT3LO"
+      ],
+      "modelId": "TS0601",
+      "productId": "PJ-1203A",
+      "capabilities": [
+        "measure_power",
+        "measure_voltage",
+        "measure_current",
+        "meter_power"
+      ],
+      "clusters": [
+        0,
+        4,
+        5,
+        61184
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            4,
+            5,
+            61184
+          ],
+          "bindings": [
+            61184
+          ]
+        }
+      },
+      "deviceType": "router",
+      "powerSource": "mains",
+      "description": "Tuya Energy Meter PJ-1203A",
+      "driver": "power_meter",
+      "zigbee2mqtt": "https://www.zigbee2mqtt.io/devices/PJ-1203A.html"
+    },
+    "climate_sensor_ewelink": {
+      "ids": [
+        "eWeLink"
+      ],
+      "modelId": "CK-TLSR8656-SS5-01(7014)",
+      "productId": "CK-TLSR8656-SS5-01",
+      "capabilities": [
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
+      ],
+      "clusters": [
+        0,
+        1,
+        3,
+        4,
+        32,
+        1026,
+        1029,
+        64529
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [
+            0,
+            1,
+            3,
+            4,
+            32,
+            1026,
+            1029
+          ],
+          "bindings": [
+            1026,
+            1029
+          ]
+        }
+      },
+      "deviceType": "enddevice",
+      "powerSource": "battery",
+      "battery": [
+        "CR2032"
+      ],
+      "description": "eWeLink Temperature & Humidity Sensor",
+      "driver": "climate_sensor",
+      "note": "Uses standard ZCL clusters 1026/1029"
+    }
+  },
+  "enrichmentIds": {
+    "presence_sensor_radar": [
+      "_TZE204_ZTQNH5CG",
+      "_TZE200_3TOWULQD",
+      "_TZE204_QASJIF9E",
+      "_TZE284_SXM7L9XA"
+    ],
+    "motion_sensor": [
+      "_TZ3000_MCXW5EHU",
+      "_TZ3000_MSL6WXKP",
+      "_TZ3000_OTVN6Y0A"
+    ],
+    "contact_sensor": [
+      "_TZ3000_N2EGFSLI",
+      "_TZ3000_26FMUPBB",
+      "_TZ3000_OXSLV1C9"
+    ],
+    "climate_sensor": [
+      "eWeLink",
+      "_TZE200_YVJC5CJN",
+      "_TZE204_YVJC5CJN"
+    ],
+    "power_meter": [
+      "_TZE204_81YRT3LO",
+      "_TZ3000_VSN4QAL7",
+      "_TZ3000_8BXRZYXZ"
+    ],
+    "plug_energy_monitor": [
+      "_TZ3000_G5XAWFCQ",
+      "_TZ3000_TYPDPBPG",
+      "_TZ3000_VTSCRPMX"
+    ],
+    "smoke_detector_advanced": [
+      "_TZE204_NTCY3XU1",
+      "_TZE200_M9SKFCTM"
+    ],
+    "water_leak_sensor": [
+      "_TZ3000_KYAKWBF8",
+      "_TZ3000_EIT8C5CS"
+    ],
+    "switch_1gang": [
+      "_TZ3000_TGDDLLX4",
+      "_TZ3000_LUPFD8BQ"
+    ],
+    "curtain_motor": [
+      "_TZE200_FCTWHUGX",
+      "_TZE200_COWVFNI3",
+      "_TZE204_FCTWHUGX"
+    ]
+  }
+}
