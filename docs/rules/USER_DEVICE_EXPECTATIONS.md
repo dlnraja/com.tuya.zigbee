@@ -43,6 +43,28 @@ This document summarizes user-reported devices and their expected behavior based
 **Recommended**: Send diagnostic with specific manufacturerName
 **Status**: ⚠️ NEEDS MORE INFO
 
+### 5. HOBEIAN Temperature & Humidity Sensor (v5.5.710)
+**Device**: HOBEIAN temp/humidity sensors
+**Issue**: Device not updating temperature/humidity values since v5.5.677
+**Root Cause**: 
+1. HOBEIAN was only in motion_sensor driver (wrong driver for temp/humidity)
+2. DP101 was mapped to `null` (presence_time) instead of battery
+**Fix Applied**: v5.5.710
+1. Added HOBEIAN to climate_sensor driver
+2. Fixed DP101 mapping to intelligently detect battery (0-100) vs presence_time (>100)
+**User Action**: Re-pair device to use correct driver (climate_sensor)
+**Status**: ✅ FIXED
+
+### 6. button_wireless_1 Cluster Detection (v5.5.710)
+**Device**: Various wireless buttons (TS0041, ZG-101ZL, etc.)
+**Issue**: "No button clusters found on endpoint 1"
+**Root Cause**: Zigbee interview issue - device didn't report clusters during pairing
+**Recommended Actions**:
+1. Factory reset button (remove battery 10s, then hold button while inserting)
+2. Re-pair within 1m of Homey
+3. Ensure no interference during pairing
+**Status**: ⚠️ DEVICE INTERVIEW ISSUE (user re-pair required)
+
 ---
 
 ## 📱 Device Categories & Expectations
