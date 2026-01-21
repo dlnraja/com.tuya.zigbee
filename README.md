@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.713** | 🔧 SENSOR POLARITY FIX (Lasse_K): Water leak sensor: Added 'Invert Water Alar... |
 | **v5.5.712** | 🆘 SOS BUTTON FIX: Fixed corrupted manufacturer list in button_emergency_sos ... |
 | **v5.5.711** | 🌡️ ZBEACON TH01: Added Zbeacon manufacturerName support for TH01 temp/humidi... |
 | **v5.5.710** | 🔧 HOBEIAN FIX: Fixed HOBEIAN temp/humidity sensors not updating - added HOBE... |
@@ -78,7 +79,6 @@
 | **v5.5.706** | 📖 TROUBLESHOOTING GUIDE: Added comprehensive Zigbee troubleshooting document... |
 | **v5.5.705** | 🔧 DIAGNOSTIC FIXES: Fixed flow card ID mismatches in soil_sensor (moisture_c... |
 | **v5.5.704** | 🔄 SYNC & WORKFLOWS: Fixed 53 stale + added 75 missing manufacturer/product I... |
-| **v5.5.703** | 🔧 CRITICAL DUPLICATES FIX: Removed 48 manufacturerNames from wrong drivers b... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
