@@ -16,7 +16,8 @@
           },
           "example": 15
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "weather_station_outdoor_outdoor_humidity_changed",
@@ -34,7 +35,8 @@
           },
           "example": 65
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "weather_station_outdoor_pressure_changed",
@@ -52,14 +54,16 @@
           },
           "example": 1013
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "weather_station_outdoor_weather_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -106,14 +110,16 @@
       "title": {
         "en": "Pressure is rising (good weather)",
         "fr": "Pression en hausse (beau temps)"
-      }
+      },
+      "args": []
     },
     {
       "id": "weather_station_outdoor_pressure_falling",
       "title": {
         "en": "Pressure is falling (bad weather)",
         "fr": "Pression en baisse (mauvais temps)"
-      }
+      },
+      "args": []
     }
   ]
 }

@@ -26,7 +26,8 @@
           },
           "example": 45
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "soil_sensor_temperature_changed",
@@ -54,7 +55,8 @@
           },
           "example": 18
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "soil_sensor_soil_dry",
@@ -70,7 +72,8 @@
         "nl": "Triggert wanneer de bodemvochtigheid onder de droge drempel zakt",
         "fr": "Se déclenche quand l'humidité du sol passe sous le seuil de sécheresse",
         "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit unter den Trockenschwellenwert fällt"
-      }
+      },
+      "args": []
     },
     {
       "id": "soil_sensor_soil_wet",
@@ -85,7 +88,8 @@
         "nl": "Triggert wanneer de bodemvochtigheid boven de natte drempel stijgt",
         "fr": "Se déclenche quand l'humidité du sol dépasse le seuil d'humidité",
         "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit über den Nässeschwellenwert steigt"
-      }
+      },
+      "args": []
     },
     {
       "id": "soil_sensor_soil_optimal",
@@ -100,7 +104,8 @@
         "nl": "Triggert wanneer de bodemvochtigheid in het optimale bereik voor plantengroei is",
         "fr": "Se déclenche quand l'humidité du sol est dans la plage optimale pour la croissance des plantes",
         "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit im optimalen Bereich für Pflanzenwachstum liegt"
-      }
+      },
+      "args": []
     },
     {
       "id": "soil_sensor_frost_warning",
@@ -115,7 +120,8 @@
         "nl": "Triggert wanneer de bodemtemperatuur onder 2°C zakt - bescherm je planten!",
         "fr": "Se déclenche quand la température du sol passe sous 2°C - protégez vos plantes !",
         "de": "Wird ausgelöst, wenn die Bodentemperatur unter 2°C fällt - schützen Sie Ihre Pflanzen!"
-      }
+      },
+      "args": []
     },
     {
       "id": "soil_sensor_battery_changed",
@@ -143,7 +149,8 @@
           },
           "example": 75
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "soil_sensor_battery_low",
@@ -152,37 +159,11 @@
         "nl": "Batterij is bijna leeg",
         "fr": "Batterie faible",
         "de": "Batterie ist schwach"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
-    {
-      "id": "soil_sensor_moisture_below",
-      "title": {
-        "en": "Soil moisture !{{is|is not}} below",
-        "nl": "Bodemvochtigheid !{{is|is niet}} onder",
-        "fr": "Humidité sol !{{est|n'est pas}} en-dessous de",
-        "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} unter"
-      },
-      "titleFormatted": {
-        "en": "Soil moisture !{{is|is not}} below [[moisture]]%",
-        "nl": "Bodemvochtigheid !{{is|is niet}} onder [[moisture]]%",
-        "fr": "Humidité sol !{{est|n'est pas}} en-dessous de [[moisture]]%",
-        "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} unter [[moisture]]%"
-      },
-      "args": [
-        {
-          "name": "moisture",
-          "type": "number",
-          "min": 0,
-          "max": 100,
-          "step": 5,
-          "placeholder": {
-            "en": "30"
-          }
-        }
-      ]
-    },
     {
       "id": "soil_sensor_moisture_above",
       "title": {
@@ -244,7 +225,8 @@
         "nl": "Grond !{{heeft|heeft geen}} water nodig",
         "fr": "Sol !{{a besoin|n'a pas besoin}} d'eau",
         "de": "Boden !{{braucht|braucht kein}} Wasser"
-      }
+      },
+      "args": []
     },
     {
       "id": "soil_sensor_battery_above",

@@ -246,8 +246,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_fan"
+      "TS0601_fan",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -495,7 +495,6 @@
     "large": "drivers/ceiling_fan/assets/images/large.png",
     "xlarge": "drivers/ceiling_fan/assets/images/xlarge.png"
   },
-  "id": "ceiling_fan",
   "platforms": [
     "local"
   ],

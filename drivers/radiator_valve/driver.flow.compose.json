@@ -16,7 +16,8 @@
           },
           "example": 21
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "radiator_valve_measure_temperature_changed",
@@ -34,7 +35,8 @@
           },
           "example": 20.5
         }
-      ]
+      ],
+      "args": []
     }
   ],
   "actions": [

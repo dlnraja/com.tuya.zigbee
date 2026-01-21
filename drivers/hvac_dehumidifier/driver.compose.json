@@ -1,5 +1,4 @@
 {
-  "id": "hvac_dehumidifier",
   "name": {
     "en": "Dehumidifier (Smart)",
     "fr": "Déshumidificateur (Smart)",
@@ -303,8 +302,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_dehum"
+      "TS0601_dehum",
+      "TS0601"
     ],
     "endpoints": {
       "1": {

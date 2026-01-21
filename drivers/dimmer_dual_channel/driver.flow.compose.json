@@ -16,21 +16,24 @@
           },
           "example": 50
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "dimmer_dual_channel_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
-      }
+      },
+      "args": []
     },
     {
       "id": "dimmer_dual_channel_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Éteint"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -39,7 +42,8 @@
       "title": {
         "en": "Dimmer is !{{on|off}}",
         "fr": "Variateur est !{{allumé|éteint}}"
-      }
+      },
+      "args": []
     },
     {
       "id": "dimmer_dual_channel_dim_above",
@@ -68,21 +72,24 @@
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
-      }
+      },
+      "args": []
     },
     {
       "id": "dimmer_dual_channel_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Éteindre"
-      }
+      },
+      "args": []
     },
     {
       "id": "dimmer_dual_channel_toggle",
       "title": {
         "en": "Toggle",
         "fr": "Basculer"
-      }
+      },
+      "args": []
     },
     {
       "id": "dimmer_dual_channel_set_dim",
@@ -109,14 +116,16 @@
       "title": {
         "en": "Dim up",
         "fr": "Augmenter luminosité"
-      }
+      },
+      "args": []
     },
     {
       "id": "dimmer_dual_channel_dim_down",
       "title": {
         "en": "Dim down",
         "fr": "Diminuer luminosité"
-      }
+      },
+      "args": []
     }
   ]
 }

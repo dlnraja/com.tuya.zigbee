@@ -248,7 +248,6 @@
     "large": "drivers/valve_irrigation/assets/images/large.png",
     "xlarge": "drivers/valve_irrigation/assets/images/xlarge.png"
   },
-  "id": "valve_irrigation",
   "platforms": [
     "local"
   ],
@@ -259,31 +258,5 @@
     "batteries": [
       "AA"
     ]
-  },
-  "capabilitiesOptions": {
-    "valve_position.1": {
-      "title": {
-        "en": "Valve 1",
-        "fr": "Vanne 1"
-      }
-    },
-    "valve_position.2": {
-      "title": {
-        "en": "Valve 2",
-        "fr": "Vanne 2"
-      }
-    },
-    "valve_position.3": {
-      "title": {
-        "en": "Valve 3",
-        "fr": "Vanne 3"
-      }
-    },
-    "valve_position.4": {
-      "title": {
-        "en": "Valve 4",
-        "fr": "Vanne 4"
-      }
-    }
   }
 }

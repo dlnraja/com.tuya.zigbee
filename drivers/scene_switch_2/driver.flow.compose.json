@@ -18,15 +18,46 @@
         {
           "name": "button",
           "type": "dropdown",
-          "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" },
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
           "values": [
-            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } },
-            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } }
+            {
+              "id": "1",
+              "label": {
+                "en": "Button 1",
+                "fr": "Bouton 1",
+                "nl": "Knop 1",
+                "de": "Taste 1"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Button 2",
+                "fr": "Bouton 2",
+                "nl": "Knop 2",
+                "de": "Taste 2"
+              }
+            }
           ]
         }
       ],
       "tokens": [
-        { "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "example": "1" }
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "example": "1"
+        }
       ]
     },
     {
@@ -47,15 +78,46 @@
         {
           "name": "button",
           "type": "dropdown",
-          "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" },
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
           "values": [
-            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } },
-            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } }
+            {
+              "id": "1",
+              "label": {
+                "en": "Button 1",
+                "fr": "Bouton 1",
+                "nl": "Knop 1",
+                "de": "Taste 1"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Button 2",
+                "fr": "Bouton 2",
+                "nl": "Knop 2",
+                "de": "Taste 2"
+              }
+            }
           ]
         }
       ],
       "tokens": [
-        { "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "example": "1" }
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "example": "1"
+        }
       ]
     },
     {
@@ -76,18 +138,47 @@
         {
           "name": "button",
           "type": "dropdown",
-          "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" },
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
           "values": [
-            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } },
-            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } }
+            {
+              "id": "1",
+              "label": {
+                "en": "Button 1",
+                "fr": "Bouton 1",
+                "nl": "Knop 1",
+                "de": "Taste 1"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Button 2",
+                "fr": "Bouton 2",
+                "nl": "Knop 2",
+                "de": "Taste 2"
+              }
+            }
           ]
         }
       ],
       "tokens": [
-        { "name": "button", "type": "string", "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" }, "example": "1" }
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "example": "1"
+        }
       ]
     }
-  ],
-  "conditions": [],
-  "actions": []
+  ]
 }

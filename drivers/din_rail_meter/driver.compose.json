@@ -326,13 +326,6 @@
       "_TZ3000_typdpbpg",
       "_TZE200_lsanae15",
       "_TZE204_lsanae15",
-      "_TZE204_ac0fhfiq",
-      "_TZE200_ac0fhfiq",
-      "_TZE204_byzdayie",
-      "_TZE200_byzdayie",
-      "_TZE204_eaac7dkw",
-      "_TZE204_fsb6zw01",
-      "_TZE200_fsb6zw01",
       "SPM01",
       "SPM02",
       "TONGOU",
@@ -364,14 +357,21 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "_TZE204_ac0fhfiq",
+      "_TZE200_ac0fhfiq",
+      "_TZE204_byzdayie",
+      "_TZE200_byzdayie",
+      "_TZE204_eaac7dkw",
+      "_TZE204_fsb6zw01",
+      "_TZE200_fsb6zw01"
     ],
     "productId": [
-      "TS0601",
       "SPM01-1Z2",
       "SDM01-3Z1",
       "SDM02-2Z1",
-      "SPM02-3Z3"
+      "SPM02-3Z3",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -392,7 +392,6 @@
     "small": "drivers/din_rail_meter/assets/images/small.png",
     "large": "drivers/din_rail_meter/assets/images/large.png"
   },
-  "id": "din_rail_meter",
   "platforms": [
     "local"
   ],

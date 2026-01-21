@@ -16,21 +16,24 @@
           },
           "example": 800
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "air_quality_co2_co2_alert_on",
       "title": {
         "en": "CO2 alert triggered",
         "fr": "Alerte CO2 déclenchée"
-      }
+      },
+      "args": []
     },
     {
       "id": "air_quality_co2_co2_alert_off",
       "title": {
         "en": "CO2 returned to normal",
         "fr": "CO2 revenu à la normale"
-      }
+      },
+      "args": []
     },
     {
       "id": "air_quality_co2_air_temperature_changed",
@@ -48,7 +51,8 @@
           },
           "example": 22
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "air_quality_co2_air_humidity_changed",
@@ -66,7 +70,8 @@
           },
           "example": 50
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "air_quality_co2_pm25_changed",
@@ -84,7 +89,8 @@
           },
           "example": 25
         }
-      ]
+      ],
+      "args": []
     }
   ],
   "conditions": [
@@ -131,7 +137,8 @@
       "title": {
         "en": "Air quality is good",
         "fr": "Qualité air bonne"
-      }
+      },
+      "args": []
     }
   ]
 }

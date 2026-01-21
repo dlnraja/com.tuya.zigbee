@@ -42,7 +42,8 @@
           },
           "example": "1"
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "button_wireless_3_button_3gang_button_double_press",
@@ -85,7 +86,8 @@
           },
           "example": "1"
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "button_wireless_3_button_3gang_button_long_press",
@@ -128,7 +130,8 @@
           },
           "example": "1"
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "button_wireless_3_button_3gang_button_multi_press",
@@ -187,7 +190,8 @@
           },
           "example": 3
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "button_wireless_3_button_3gang_button_1_pressed",
@@ -201,7 +205,8 @@
         "no": "Knapp 1 trykket",
         "es": "Botón 1 presionado",
         "da": "Knap 1 trykket"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_3_button_3gang_button_2_pressed",
@@ -215,7 +220,8 @@
         "no": "Knapp 2 trykket",
         "es": "Botón 2 presionado",
         "da": "Knap 2 trykket"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_3_button_3gang_button_3_pressed",
@@ -229,7 +235,8 @@
         "no": "Knapp 3 trykket",
         "es": "Botón 3 presionado",
         "da": "Knap 3 trykket"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_3_button_3gang_button_1_double",
@@ -243,7 +250,8 @@
         "no": "Knapp 1 dobbeltrykket",
         "es": "Botón 1 presionado dos veces",
         "da": "Knap 1 dobbeltklikket"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_3_button_3gang_button_2_double",
@@ -257,7 +265,8 @@
         "no": "Knapp 2 dobbeltrykket",
         "es": "Botón 2 presionado dos veces",
         "da": "Knap 2 dobbeltklikket"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_3_button_3gang_button_3_double",
@@ -271,7 +280,8 @@
         "no": "Knapp 3 dobbeltrykket",
         "es": "Botón 3 presionado dos veces",
         "da": "Knap 3 dobbeltklikket"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_3_button_3gang_button_1_long",
@@ -285,7 +295,8 @@
         "no": "Knapp 1 langttrykket",
         "es": "Botón 1 presionado largo",
         "da": "Knap 1 langt trykket"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_3_button_3gang_button_2_long",
@@ -299,7 +310,8 @@
         "no": "Knapp 2 langttrykket",
         "es": "Botón 2 presionado largo",
         "da": "Knap 2 langt trykket"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_3_button_3gang_button_3_long",
@@ -313,7 +325,8 @@
         "no": "Knapp 3 langttrykket",
         "es": "Botón 3 presionado largo",
         "da": "Knap 3 langt trykket"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_3_button_3gang_measure_battery_changed",
@@ -331,7 +344,8 @@
           },
           "example": 75
         }
-      ]
+      ],
+      "args": []
     }
   ]
 }

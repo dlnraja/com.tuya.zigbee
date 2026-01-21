@@ -250,8 +250,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_feeder"
+      "TS0601_feeder",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -272,7 +272,6 @@
     "small": "drivers/pet_feeder/assets/images/small.png",
     "large": "drivers/pet_feeder/assets/images/large.png"
   },
-  "id": "pet_feeder",
   "platforms": [
     "local"
   ],
