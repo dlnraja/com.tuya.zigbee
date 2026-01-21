@@ -6,6 +6,33 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.719] - 2026-01-21
+
+### 🛠️ NEW: DIY CUSTOM ZIGBEE DRIVER
+
+**New Driver Category:** `diy_custom_zigbee`
+
+Supports exotic/custom Zigbee devices built with:
+- **PTVO Firmware** (CC2530/CC2531/CC2652) - up to 8 GPIO, sensors, UART, ADC
+- **ESP32-H2/C6** (Espressif ESP Zigbee SDK) - custom ZCL clusters
+- **DIYRuZ Projects** - Geiger, AirSense, Flower sensors
+- **Tasmota Zigbee** (Z2T) - bridge mode devices
+- **TI Z-Stack** (CC26xx, CC13xx) - reference firmware
+- **SiLabs SDK** (EFR32MG21/22) - Silicon Labs Zigbee
+- **Nordic** (nRF52840) - Nordic Zigbee
+- **Routers/Coordinators** - ZigStar, zzh, Tube, SLZB-06/07
+
+**Features:**
+- Auto-detection of firmware type
+- Dynamic endpoint/cluster scanning
+- Automatic capability registration based on detected clusters
+- Support for 1-8 endpoints (PTVO multi-channel)
+- Debug logging for custom ZCL messages
+
+**Manufacturer IDs:** 150+ including ptvo.info, ESP32, DIYRuZ, Tasmota, CC2530, etc.
+
+---
+
 ## [5.5.718] - 2026-01-21
 
 ### 🔧 TS0726 4-GANG BIDIRECTIONAL FIX (Hartmut_Dunker)
