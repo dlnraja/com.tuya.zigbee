@@ -263,7 +263,7 @@ _TZE200_a8sdabtg  → climate_sensor (temp/humidity)
 
 | User | Device | ManufacturerID | Issue | Diag Code | Status |
 |------|--------|----------------|-------|-----------|--------|
-| Hartmut_Dunker | 4-Gang Smart Switch | Unknown | Recognized as wireless controller, buttons don't work | `7fab96a9-09f6-4df4-ae01-9873f72ecc5e` | ⏳ Need mfr ID from diag |
+| Hartmut_Dunker | 4-Gang Smart Switch | `_TZ3002_vaq2bfcu` | Recognized as wireless controller, buttons don't work | `7fab96a9-09f6-4df4-ae01-9873f72ecc5e` | ✅ v5.5.716 Driver overlap fix |
 | JJ10 | Presence sensor | Unknown | Connected as unknown device | `999de772-5ce2-4674-86c3-c267c7e3a3f0` | ⏳ Need mfr ID from diag |
 | AlbertQ | HOBEIAN ZG-227Z | `_TZE200_a8sdabtg` | Pairs as generic Zigbee | N/A | ✅ Already in climate_sensor |
 | Attilla | Touch dimmers | `_TZE200_3p5ydos3`, `_TZE204_n9ctkb6j` | Pairs as generic since v690 | N/A | ✅ Already in dimmer_wall_1gang |
