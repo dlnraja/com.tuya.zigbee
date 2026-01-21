@@ -211,10 +211,11 @@ class ClimateSensorDevice extends HybridSensorBase {
       5: { capability: 'measure_luminance', divisor: 1 },       // Lux (some models)
 
       // ═══════════════════════════════════════════════════════════════════
-      // BUTTON PRESS (devices with physical buttons)
+      // BATTERY ALTERNATE DPs (HOBEIAN and some other sensors)
+      // v5.5.710: Fix for HOBEIAN temp/humidity sensors using DP101 for battery
       // ═══════════════════════════════════════════════════════════════════
-      101: { capability: 'button', transform: () => true },
-      102: { capability: 'button', transform: () => true },
+      101: { capability: 'measure_battery', transform: (v) => Math.min(Math.max(v, 0), 100) },
+      102: { capability: 'measure_battery', transform: (v) => Math.min(Math.max(v, 0), 100) },
     };
   }
 
