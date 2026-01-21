@@ -6,6 +6,34 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.730] - 2026-01-21
+
+### 📡 Forum Research Summary
+
+**Analyzed Posts:**
+
+| Post | User | Issue | Status |
+|------|------|-------|--------|
+| #1127 | LukasT | ZTH11 sensor | ✅ Already supported |
+| #1124 | Lasse_K | Water sensor "56 year" | ✅ Normal Homey UI |
+| #1122 | AlbertQ | ZG-227Z pairing | ✅ Re-pair needed |
+| #1116 | Freddyboy | Moes 4-button | ✅ FIXED v5.5.727 |
+| #1115 | Peter | SOS button | ✅ FIXED v5.5.728 |
+| #1114 | JJ10 | Presence sensor | ⚠️ Needs manufacturerName |
+| #1113 | Lasse_K | Invert settings | ✅ Settings exist |
+| #1104 | Hartmut | 4-gang switch | ✅ Re-pair needed |
+| #1099 | Attilla | Touch dimmers | ✅ Already supported, re-pair |
+
+**Presence Sensor IDs Added:**
+- `_TZE204_ztc6ggyl` (GitHub #14823)
+
+**Touch Dimmers Status:**
+- `_TZE200_3p5ydos3` ✅ Already in dimmer_wall_1gang
+- `_TZE204_n9ctkb6j` ✅ Already in dimmer_wall_1gang
+- **Solution**: Re-pair device after v5.5.690 TS0601 fix
+
+---
+
 ## [5.5.729] - 2026-01-21
 
 ### 🆘 SOS Button Enrichment - GitHub Research
