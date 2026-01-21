@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.715** | 🔘 HOBEIAN ZG-101ZL FIX (Ronny_M): Added onOff cluster binding (cluster 6) fo... |
 | **v5.5.714** | 🔘 MOES 4-BUTTON FIX (Freddyboy): Fixed _TZ3000_zgyzgdua Moes TS0044 4-button... |
 | **v5.5.713** | 🔧 SENSOR POLARITY FIX (Lasse_K): Water leak sensor: Added 'Invert Water Alar... |
 | **v5.5.712** | 🆘 SOS BUTTON FIX: Fixed corrupted manufacturer list in button_emergency_sos ... |
@@ -78,7 +79,6 @@
 | **v5.5.708** | 🎛️ SCENE SWITCH FLOW CARDS FIX: Added 13 missing flow triggers to app.json f... |
 | **v5.5.707** | 🔧 DIAGNOSTIC FIXES: Fixed ir_send_ac_command flow card for IR Blaster (JSON ... |
 | **v5.5.706** | 📖 TROUBLESHOOTING GUIDE: Added comprehensive Zigbee troubleshooting document... |
-| **v5.5.705** | 🔧 DIAGNOSTIC FIXES: Fixed flow card ID mismatches in soil_sensor (moisture_c... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
