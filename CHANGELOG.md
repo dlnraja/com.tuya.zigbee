@@ -6,6 +6,31 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.725] - 2026-01-21
+
+### 🔥 Smoke Detector Advanced - Critical Fix (Jolink Forum Report)
+
+**Issue:** Smoke detector pairing issues, temperature showing 0°C, flow cards not working
+
+**Fixes Applied:**
+- Added IAS Zone cluster (1280) support for smoke alarm detection
+- Added IAS WD cluster (1282) for warning device features
+- Added cluster 60672 (0xED00) for TZE284 smoke detectors
+- Added powerConfiguration cluster (1) for battery reporting
+- Implemented proper IAS Zone enrollment with CIE address
+- Added zone status handler for smoke/tamper/battery events
+- Added bindings for powerConfiguration and IAS Zone
+
+**Technical Details:**
+- Zone status bit 0 = Smoke alarm
+- Zone status bit 2 = Tamper alarm  
+- Zone status bit 3 = Battery low
+- Proper IEEE address enrollment for coordinator
+
+**Re-pair Required:** Users must re-pair smoke detector after this update for bindings to take effect.
+
+---
+
 ## [5.5.724] - 2026-01-21
 
 ### 📦 Forum Post #1126 Enrichment
