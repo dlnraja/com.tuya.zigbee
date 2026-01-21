@@ -111,8 +111,8 @@ class Button4GangDevice extends ButtonDevice {
       '_TZ3000_ixla93vd',
       '_TZ3000_qzjcsmar',
       '_TZ3000_wkai4ga5',  // v5.5.419: Forum report Eftychis
-      '_TZ3000_5tqxpine',  // v5.5.419: Forum report Eftychis
-      '_TZ3000_zgyzgdua'   // v5.5.617: Forum report Freddyboy - Moes 4-button
+      '_TZ3000_5tqxpine'   // v5.5.419: Forum report Eftychis
+      // NOTE: _TZ3000_zgyzgdua is TS0044, NOT TS004F - uses cluster 0xE000, no mode switching needed
     ];
     const needsModeSwitching = isTS004F || includesCI(ts004fManufacturers, manufacturerName);
 
@@ -413,6 +413,10 @@ class Button4GangDevice extends ButtonDevice {
       // Some MOES devices use Tuya cluster (0xEF00) for physical button presses
       await this._setupTuyaDPButtonDetection(zclNode);
 
+      // v5.5.714: MOES _TZ3000_zgyzgdua FIX - Setup cluster 0xE000 (57344) button detection
+      // This Moes TS0044 device uses cluster 57344 (0xE000) instead of standard scenes
+      await this._setupTuyaE000ButtonDetection(zclNode);
+
     } catch (error) {
       this.log('[BUTTON4-PHYSICAL] ❌ Setup error:', error.message);
     }
@@ -489,6 +493,110 @@ class Button4GangDevice extends ButtonDevice {
       }
     } catch (err) {
       this.log('[BUTTON4-TUYA-DP] ⚠️ Setup error:', err.message);
+    }
+  }
+
+  /**
+   * v5.5.714: MOES _TZ3000_zgyzgdua FIX - Cluster 0xE000 (57344) button detection
+   * 
+   * Z2M Issue #28224 shows this Moes TS0044 uses cluster 57344 (0xE000) on EP1
+   * Device structure: EP1 inClusterList: [1, 6, 57344, 0]
+   * 
+   * This is a Tuya-specific button cluster different from 0xEF00
+   * Button presses are sent as attribute reports or commands on this cluster
+   */
+  async _setupTuyaE000ButtonDetection(zclNode) {
+    try {
+      const manufacturerName = this.getData()?.manufacturerName || '';
+      
+      // Only apply to known devices using this cluster
+      const usesE000Cluster = [
+        '_TZ3000_zgyzgdua',  // Moes XH-SY-04Z 4-button remote
+        '_TZ3000_abrsvsou',  // Similar Moes variant
+        '_TZ3000_mh9px7cq'   // Similar Moes variant
+      ].some(id => manufacturerName.includes(id));
+
+      if (!usesE000Cluster) {
+        this.log('[BUTTON4-E000] ℹ️ Device does not use cluster 0xE000');
+        return;
+      }
+
+      this.log('[BUTTON4-E000] 🔧 Setting up cluster 0xE000 (57344) button detection for Moes...');
+
+      // Setup listeners on all 4 endpoints
+      for (let ep = 1; ep <= 4; ep++) {
+        const endpoint = zclNode?.endpoints?.[ep];
+        if (!endpoint) continue;
+
+        // Try to get cluster 57344 (0xE000)
+        const e000Cluster = endpoint.clusters?.[57344] 
+          || endpoint.clusters?.['57344']
+          || endpoint.clusters?.['0xE000'];
+
+        if (e000Cluster && typeof e000Cluster.on === 'function') {
+          this.log(`[BUTTON4-E000] 📡 Setting up cluster 0xE000 listener on EP${ep}...`);
+
+          // Press type mapping (0=single, 1=double, 2=long)
+          const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
+
+          // Listen for any attribute reports
+          e000Cluster.on('report', async (data) => {
+            this.log(`[BUTTON4-E000] EP${ep} report:`, data);
+            const value = data?.value ?? data?.[0] ?? data?.presentValue ?? 0;
+            const pressType = pressTypeMap[value] || 'single';
+            this.log(`[BUTTON4-E000] 🔘 Button ${ep} ${pressType.toUpperCase()} (value=${value})`);
+            await this.triggerButtonPress(ep, pressType);
+          });
+
+          // Listen for commands
+          e000Cluster.on('command', async (commandName, payload) => {
+            this.log(`[BUTTON4-E000] EP${ep} command ${commandName}:`, payload);
+            const value = payload?.value ?? payload?.[0] ?? 0;
+            const pressType = pressTypeMap[value] || 'single';
+            await this.triggerButtonPress(ep, pressType);
+          });
+
+          // Listen for response events
+          e000Cluster.on('response', async (data) => {
+            this.log(`[BUTTON4-E000] EP${ep} response:`, data);
+            const value = data?.value ?? data?.[0] ?? 0;
+            const pressType = pressTypeMap[value] || 'single';
+            await this.triggerButtonPress(ep, pressType);
+          });
+
+          this.log(`[BUTTON4-E000] ✅ Cluster 0xE000 listener configured for EP${ep}`);
+        }
+
+        // v5.5.714: CRITICAL - Also enhance onOff command listeners for TS0044
+        // Z2M shows TS0044 sends commandOn/commandOff/commandToggle on onOff cluster
+        const onOffCluster = endpoint.clusters?.onOff || endpoint.clusters?.genOnOff || endpoint.clusters?.[6];
+        if (onOffCluster && typeof onOffCluster.on === 'function') {
+          this.log(`[BUTTON4-E000] 📡 Enhancing onOff listeners on EP${ep} for TS0044...`);
+
+          // Direct command event listeners (Z2M pattern)
+          onOffCluster.on('commandOn', async () => {
+            this.log(`[BUTTON4-E000] 🔘 EP${ep} commandOn → Button ${ep} SINGLE`);
+            await this.triggerButtonPress(ep, 'single');
+          });
+
+          onOffCluster.on('commandOff', async () => {
+            this.log(`[BUTTON4-E000] 🔘 EP${ep} commandOff → Button ${ep} DOUBLE`);
+            await this.triggerButtonPress(ep, 'double');
+          });
+
+          onOffCluster.on('commandToggle', async () => {
+            this.log(`[BUTTON4-E000] 🔘 EP${ep} commandToggle → Button ${ep} LONG`);
+            await this.triggerButtonPress(ep, 'long');
+          });
+
+          this.log(`[BUTTON4-E000] ✅ Enhanced onOff listeners for EP${ep}`);
+        }
+      }
+
+      this.log('[BUTTON4-E000] ✅ Moes TS0044 cluster 0xE000 + onOff detection configured');
+
+    } catch (err) {
+      this.log('[BUTTON4-E000] ⚠️ Setup error:', err.message);
     }
   }
 
