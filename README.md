@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.718** | 🔧 TS0726 4-GANG FIX (Hartmut_Dunker): Added onOff cluster (6) and bindings t... |
 | **v5.5.717** | 📊 ENRICHMENT UPDATE: Enhanced DP mappings with 15 device categories, intelli... |
 | **v5.5.716** | 🔧 DRIVER OVERLAP FIX (Hartmut_Dunker): Removed _TZ3002_vaq2bfcu and _TZ3002_... |
 | **v5.5.715** | 🔘 HOBEIAN ZG-101ZL FIX (Ronny_M): Added onOff cluster binding (cluster 6) fo... |
@@ -78,7 +79,6 @@
 | **v5.5.711** | 🌡️ ZBEACON TH01: Added Zbeacon manufacturerName support for TH01 temp/humidi... |
 | **v5.5.710** | 🔧 HOBEIAN FIX: Fixed HOBEIAN temp/humidity sensors not updating - added HOBE... |
 | **v5.5.709** | 📚 RULES & ENRICHMENT: Created docs/rules/ with DEVELOPMENT_RULES.md, USER_DE... |
-| **v5.5.708** | 🎛️ SCENE SWITCH FLOW CARDS FIX: Added 13 missing flow triggers to app.json f... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
