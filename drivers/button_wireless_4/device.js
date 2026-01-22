@@ -497,29 +497,46 @@ class Button4GangDevice extends ButtonDevice {
   }
 
   /**
-   * v5.5.714: MOES _TZ3000_zgyzgdua FIX - Cluster 0xE000 (57344) button detection
+   * v5.5.757: MOES _TZ3000_zgyzgdua FIX - Cluster 0xE000 (57344) button detection
    * 
    * Z2M Issue #28224 shows this Moes TS0044 uses cluster 57344 (0xE000) on EP1
    * Device structure: EP1 inClusterList: [1, 6, 57344, 0]
    * 
    * This is a Tuya-specific button cluster different from 0xEF00
    * Button presses are sent as attribute reports or commands on this cluster
+   * 
+   * v5.5.757: FIX - manufacturerName may be empty on first init, check cluster presence instead
    */
   async _setupTuyaE000ButtonDetection(zclNode) {
     try {
-      const manufacturerName = this.getData()?.manufacturerName || '';
+      // v5.5.757: Get manufacturer from multiple sources (may be empty on first init)
+      const manufacturerName = this.getData()?.manufacturerName 
+        || this.getStoreValue?.('manufacturerName')
+        || this.getSetting?.('zb_manufacturer_name')
+        || '';
       
-      // Only apply to known devices using this cluster
-      const usesE000Cluster = [
+      // v5.5.757: Known devices that use cluster 0xE000
+      const knownE000Devices = [
         '_TZ3000_zgyzgdua',  // Moes XH-SY-04Z 4-button remote
         '_TZ3000_abrsvsou',  // Similar Moes variant
         '_TZ3000_mh9px7cq'   // Similar Moes variant
-      ].some(id => manufacturerName.includes(id));
+      ];
+      const usesE000ByManufacturer = knownE000Devices.some(id => manufacturerName.includes(id));
 
-      if (!usesE000Cluster) {
+      // v5.5.757: CRITICAL FIX - Also check if cluster 57344 exists on EP1
+      // This handles devices where manufacturerName is empty on first init
+      const hasE000Cluster = zclNode?.endpoints?.[1]?.clusters?.[57344] 
+        || zclNode?.endpoints?.[1]?.clusters?.['57344']
+        || zclNode?.endpoints?.[1]?.clusters?.['0xE000'];
+
+      // Apply if manufacturer matches OR if cluster 57344 is present
+      if (!usesE000ByManufacturer && !hasE000Cluster) {
         this.log('[BUTTON4-E000] ℹ️ Device does not use cluster 0xE000');
         return;
       }
+      
+      this.log(`[BUTTON4-E000] 🔧 Detected cluster 0xE000 (mfr: ${manufacturerName || 'unknown'}, hasCluster: ${!!hasE000Cluster})`);
+
 
       this.log('[BUTTON4-E000] 🔧 Setting up cluster 0xE000 (57344) button detection for Moes...');
 
