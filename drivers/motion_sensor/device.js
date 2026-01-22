@@ -83,8 +83,18 @@ class MotionSensorDevice extends HybridSensorBase {
       // BATTERY
       // ═══════════════════════════════════════════════════════════════════
       2: { capability: 'measure_battery', divisor: 1 },
-      4: { capability: 'measure_battery', divisor: 1 },
       15: { capability: 'measure_battery', divisor: 1 },
+
+      // ═══════════════════════════════════════════════════════════════════
+      // v5.5.751: ZG-204ZV TEMPERATURE FIX (Peter_van_Werkhoven forum #267)
+      // DP 4 = Temperature (÷10) for ZG-204ZV multisensor
+      // Was incorrectly mapped to battery - REGRESSION FIX
+      // ═══════════════════════════════════════════════════════════════════
+      4: {
+        capability: 'measure_temperature',
+        divisor: 10,
+        transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null
+      },
 
       // ═══════════════════════════════════════════════════════════════════
       // LUMINANCE (LUX)
@@ -96,14 +106,13 @@ class MotionSensorDevice extends HybridSensorBase {
       106: { capability: 'measure_luminance', divisor: 1 },  // ZG-204ZM radar (v5.5.138)
 
       // ═══════════════════════════════════════════════════════════════════
-      // v5.5.107: TEMPERATURE (for 4-in-1 multisensors) - with validation
-      // Fantem ZB003-x, Immax 07502L use these DPs
-      // NOTE: transform is applied AFTER divisor, so values are in °C
+      // v5.5.751: HUMIDITY FIX for ZG-204ZV (Peter_van_Werkhoven forum #267)
+      // DP 5 = Humidity for ZG-204ZV - was incorrectly mapped to temperature
       // ═══════════════════════════════════════════════════════════════════
       5: {
-        capability: 'measure_temperature',
-        divisor: 10,
-        transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null
+        capability: 'measure_humidity',
+        divisor: 1,
+        transform: (v) => (v >= 0 && v <= 100) ? Math.round(v) : null
       },
       18: {
         capability: 'measure_temperature',
