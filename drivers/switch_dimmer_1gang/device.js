@@ -12,24 +12,28 @@ const dataPoints = {
   lightType: 16,
 };
 
+/**
+ * Driver for Bseed Touch Dimmer Wall Switches
+ * Supports manufacturer IDs: _TZE200_3p5ydos3, _TZE204_n9ctkb6j
+ * Model: TS0601
+ */
 class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
 
   async onNodeInit({zclNode}) {
     
-    this.log('════════════════════════════════════════');
-    this.log('SwitchDimmer1Gang onNodeInit STARTING');
-    this.log('════════════════════════════════════════');
+    this.log('Bseed Touch Dimmer initializing...');
     
+    // Call parent initialization
     await super.onNodeInit({zclNode});
     
     this.printNode();
 
-    // Track last state for detecting physical button presses
-    this._lastOnoffState = null;
-    this._lastBrightnessValue = null;
+    // Track last known state to detect actual changes
+    this._lastState = null;
+    this._lastBrightness = null;
 
     // Register Tuya datapoint mappings
-    this.log('Registering Tuya datapoint mappings...');
+    this.log('Registering datapoint mappings...');
     
     this.registerTuyaDatapoint(dataPoints.state, 'onoff', {
       type: 'bool',
@@ -45,24 +49,25 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
     this.log('Registering capability listeners...');
     
     this.registerCapabilityListener('onoff', async (value) => {
-      this.log('onoff capability changed to:', value);
+      this.log('Setting onoff to:', value);
       await this.sendTuyaCommand(dataPoints.state, value, 'bool');
     });
     
     this.registerCapabilityListener('dim', async (value) => {
-      this.log('Dim capability changed to:', value);
+      this.log('Setting brightness to:', Math.round(value * 100) + '%');
       const brightness = Math.round(10 + (value * 990));
-      this.log('Converted to Tuya brightness:', brightness);
       await this.sendTuyaCommand(dataPoints.brightness, brightness, 'value');
     });
 
+    // Setup listener for incoming data
     this.setupTuyaClusterListener();
 
-    this.log('════════════════════════════════════════');
-    this.log('SwitchDimmer1Gang onNodeInit COMPLETE');
-    this.log('════════════════════════════════════════');
+    this.log('Bseed Touch Dimmer ready');
   }
 
+  /**
+   * Setup Tuya cluster listener to receive device state updates
+   */
   setupTuyaClusterListener() {
     try {
       const tuyaCluster = this.zclNode.endpoints[1]?.clusters?.tuya;
@@ -72,30 +77,36 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
         return;
       }
 
-      this.log('Setting up Tuya cluster listener...');
+      this.log('Setting up cluster listeners...');
 
+      // Listen for automatic state reports
       tuyaCluster.on('dataReport', (data) => {
-        this.log('Tuya dataReport received:', JSON.stringify(data, null, 2));
-        this.handleTuyaDataReport(data);
+        this.handleTuyaDataReport(data, false);
       });
 
+      // Listen for query responses
       tuyaCluster.on('response', (data) => {
-        this.log('Tuya response:', JSON.stringify(data, null, 2));
-        this.handleTuyaDataReport(data);
+        this.handleTuyaDataReport(data, false);
       });
 
+      // Listen for physical button presses
       tuyaCluster.on('reporting', (data) => {
-        this.log('Tuya reporting:', JSON.stringify(data, null, 2));
-        this.handleTuyaDataReport(data, true); // Pass true to indicate physical press
+        this.handleTuyaDataReport(data, true);
       });
 
-      this.log('✅ Tuya cluster listener configured');
+      this.log('Cluster listeners configured');
 
     } catch (err) {
-      this.error('Failed to setup Tuya cluster:', err);
+      this.error('Failed to setup cluster listeners:', err);
     }
   }
 
+  /**
+   * Send command to Tuya device
+   * @param {number} dp - Datapoint ID
+   * @param {*} value - Value to send
+   * @param {string} type - Data type (bool/value/enum/string)
+   */
   async sendTuyaCommand(dp, value, type = 'value') {
     try {
       const tuyaCluster = this.zclNode.endpoints[1]?.clusters?.tuya;
@@ -104,10 +115,7 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
         throw new Error('Tuya cluster not available');
       }
 
-      this.log(`════════════════════════════════════════`);
-      this.log(`Sending Tuya command: DP ${dp} = ${value} (${type})`);
-      this.log(`════════════════════════════════════════`);
-
+      // Prepare data buffer based on type
       let dataBuffer;
       let datatype;
       
@@ -140,44 +148,41 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
           datatype = 2;
       }
 
-      this.log('Data buffer:', dataBuffer);
-      this.log('Data type:', datatype);
-
+      // Create length buffer (big-endian 16-bit)
       const lengthBuffer = Buffer.alloc(2);
       lengthBuffer.writeUInt16BE(dataBuffer.length, 0);
 
-      const transid = Math.floor(Math.random() * 256);
-
-      this.log('Calling datapoint command...');
+      // Send command via Tuya datapoint protocol
       await tuyaCluster.datapoint({
         status: 0,
-        transid,
+        transid: Math.floor(Math.random() * 256),
         dp,
         datatype,
         length: lengthBuffer,
         data: dataBuffer,
       });
 
-      this.log('✅ Tuya command sent successfully');
-
     } catch (err) {
-      this.error('Failed to send Tuya command:', err);
-      this.error('Error stack:', err.stack);
+      this.error('Failed to send command:', err);
       throw err;
     }
   }
 
+  /**
+   * Handle incoming Tuya data reports
+   * @param {Object} data - Tuya datapoint report
+   * @param {boolean} isPhysicalPress - True if triggered by physical button
+   */
   handleTuyaDataReport(data, isPhysicalPress = false) {
-    this.log('handleTuyaDataReport called with:', data, 'isPhysicalPress:', isPhysicalPress);
     
     if (!data || typeof data.dp === 'undefined') {
-      this.log('Invalid data format');
       return;
     }
 
-    // Handle state (onoff)
+    // Handle on/off state (DP 1)
     if (data.dp === dataPoints.state) {
       let state;
+      
       if (Buffer.isBuffer(data.data)) {
         state = data.data.readUInt8(0) === 1;
       } else if (Array.isArray(data.data)) {
@@ -186,31 +191,29 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
         state = Boolean(data.data);
       }
       
-      this.log('State update:', state);
-      
-      // Trigger flow cards if this is a physical button press (reporting event)
-      if (isPhysicalPress && this._lastOnoffState !== null && this._lastOnoffState !== state) {
-        this.log('Physical button press detected!');
-        if (state) {
-          this.log('Triggering: switch_dimmer_1gang_turned_on');
-          this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_turned_on')
+      // Only process if state actually changed
+      if (this._lastState !== state) {
+        this.log('State update:', state ? 'ON' : 'OFF', isPhysicalPress ? '(physical button)' : '');
+        this._lastState = state;
+        this.setCapabilityValue('onoff', state).catch(this.error);
+
+        // Trigger flow cards for physical button presses
+        if (isPhysicalPress) {
+          const triggerCard = state ? 'switch_dimmer_1gang_turned_on' : 'switch_dimmer_1gang_turned_off';
+          this.homey.flow.getDeviceTriggerCard(triggerCard)
             .trigger(this, {}, {})
-            .catch(this.error);
-        } else {
-          this.log('Triggering: switch_dimmer_1gang_turned_off');
-          this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_turned_off')
-            .trigger(this, {}, {})
-            .catch(this.error);
+            .catch(err => this.error('Flow trigger error:', err));
         }
+      } else {
+        // Silently ignore duplicate state reports
+        this.debug('Ignoring duplicate state report:', state);
       }
-      
-      this._lastOnoffState = state;
-      this.setCapabilityValue('onoff', state).catch(this.error);
     }
 
-    // Handle brightness
+    // Handle brightness (DP 2)
     if (data.dp === dataPoints.brightness) {
       let brightnessRaw;
+      
       if (Buffer.isBuffer(data.data)) {
         brightnessRaw = data.data.readInt32BE(0);
       } else if (Array.isArray(data.data) && data.data.length >= 4) {
@@ -219,31 +222,43 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
         brightnessRaw = data.data || 0;
       }
       
+      // Convert from Tuya range (10-1000) to Homey range (0-1)
       const brightness = Math.max(0, Math.min(1, (brightnessRaw - 10) / 990));
-      this.log('Brightness update - raw:', brightnessRaw, 'converted:', brightness);
       
-      // Trigger flow cards if this is a physical button press
-      if (isPhysicalPress && this._lastBrightnessValue !== null) {
-        if (brightnessRaw > this._lastBrightnessValue) {
-          this.log('Triggering: switch_dimmer_1gang_brightness_increased');
-          this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_brightness_increased')
+      // Only process if brightness actually changed (with small threshold to avoid noise)
+      const brightnessChanged = this._lastBrightness === null || 
+                                Math.abs(brightness - this._lastBrightness) > 0.01;
+      
+      if (brightnessChanged) {
+        this.log('Brightness update:', Math.round(brightness * 100) + '%', isPhysicalPress ? '(physical button)' : '');
+        
+        const previousBrightness = this._lastBrightness;
+        this._lastBrightness = brightness;
+        
+        this.setCapabilityValue('dim', brightness).catch(this.error);
+
+        // Trigger flow cards for physical brightness changes
+        if (isPhysicalPress && previousBrightness !== null) {
+          const triggerCard = brightness > previousBrightness 
+            ? 'switch_dimmer_1gang_brightness_increased' 
+            : 'switch_dimmer_1gang_brightness_decreased';
+          
+          this.homey.flow.getDeviceTriggerCard(triggerCard)
             .trigger(this, {brightness}, {})
-            .catch(this.error);
-        } else if (brightnessRaw < this._lastBrightnessValue) {
-          this.log('Triggering: switch_dimmer_1gang_brightness_decreased');
-          this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_brightness_decreased')
-            .trigger(this, {brightness}, {})
-            .catch(this.error);
+            .catch(err => this.error('Flow trigger error:', err));
         }
+      } else {
+        // Silently ignore duplicate brightness reports
+        this.debug('Ignoring duplicate brightness report:', Math.round(brightness * 100) + '%');
       }
-      
-      this._lastBrightnessValue = brightnessRaw;
-      this.setCapabilityValue('dim', brightness).catch(this.error);
     }
   }
 
+  /**
+   * Called when device is deleted
+   */
   onDeleted() {
-    this.log('Switch Touch Dimmer (1 Gang) removed');
+    this.log('Bseed Touch Dimmer removed');
   }
 
 }
