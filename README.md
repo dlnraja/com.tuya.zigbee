@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.732** | 🔧 GitHub Issues: Added _TZ3210_w0qqde0g to plug_energy_monitor (#110). Verif... |
 | **v5.5.731** | Complete forum review & SOS button analysis. All devices verified supported (... |
 | **v5.5.718** | 🔧 TS0726 4-GANG FIX (Hartmut_Dunker): Added onOff cluster (6) and bindings t... |
 | **v5.5.717** | 📊 ENRICHMENT UPDATE: Enhanced DP mappings with 15 device categories, intelli... |
@@ -78,7 +79,6 @@
 | **v5.5.713** | 🔧 SENSOR POLARITY FIX (Lasse_K): Water leak sensor: Added 'Invert Water Alar... |
 | **v5.5.712** | 🆘 SOS BUTTON FIX: Fixed corrupted manufacturer list in button_emergency_sos ... |
 | **v5.5.711** | 🌡️ ZBEACON TH01: Added Zbeacon manufacturerName support for TH01 temp/humidi... |
-| **v5.5.710** | 🔧 HOBEIAN FIX: Fixed HOBEIAN temp/humidity sensors not updating - added HOBE... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
