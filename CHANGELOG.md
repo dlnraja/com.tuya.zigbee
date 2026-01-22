@@ -6,6 +6,20 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.739] - 2026-01-22
+
+### 🔄 Hybrid Merge - Upstream JohanBendz Integration
+
+**New Manufacturer IDs from upstream (plug_energy_monitor):**
+- `_TZ3000_u5u4cakc`, `_TZ3000_2putqrmw`, `_TZ3000_5ity3zyu`
+- `_TZ3000_eyzb8yg3`, `_TZ3000_dksbtrzs`, `_TZ3000_nkcobies`
+- `_TZ3000_j1v25l17`, `_TZ3000_waho4jtj`, `_TZ3000_3uimvkn6`
+- `_TZ3000_pjcqjtev`, `_TZ3000_amdymr71`, `_TYZB01_iuepbmpv`
+
+**Hybrid approach**: Merged upstream IDs while preserving local enhancements (flow cards, settings, capabilities).
+
+---
+
 ## [5.5.738] - 2026-01-22
 
 ### 🔧 PR Code Improvements Integration
