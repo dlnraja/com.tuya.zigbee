@@ -497,100 +497,102 @@ class Button4GangDevice extends ButtonDevice {
   }
 
   /**
-   * v5.5.757: MOES _TZ3000_zgyzgdua FIX - Cluster 0xE000 (57344) button detection
+   * v5.5.758: MOES _TZ3000_zgyzgdua FIX - Cluster 0xE000 (57344) button detection
    * 
-   * Z2M Issue #28224 shows this Moes TS0044 uses cluster 57344 (0xE000) on EP1
+   * CRITICAL FIX: Homey SDK does NOT expose unknown clusters like 57344 in zclNode.endpoints[].clusters
+   * Diagnostics show: "EP1 available clusters: basic" - only known clusters are exposed
+   * 
+   * Solution: Use BoundCluster pattern to receive incoming frames from cluster 57344
+   * - Create TuyaE000BoundCluster instance
+   * - Manually bind to endpoint.bindings[57344] (bypassing standard bind method)
+   * 
+   * Z2M Issue #28224: MOES XH-SY-04Z 4-button remote
    * Device structure: EP1 inClusterList: [1, 6, 57344, 0]
-   * 
-   * This is a Tuya-specific button cluster different from 0xEF00
-   * Button presses are sent as attribute reports or commands on this cluster
-   * 
-   * v5.5.757: FIX - manufacturerName may be empty on first init, check cluster presence instead
    */
   async _setupTuyaE000ButtonDetection(zclNode) {
     try {
-      // v5.5.757: Get manufacturer from multiple sources (may be empty on first init)
+      // v5.5.758: Get manufacturer from multiple sources (may be empty on first init)
       const manufacturerName = this.getData()?.manufacturerName 
         || this.getStoreValue?.('manufacturerName')
         || this.getSetting?.('zb_manufacturer_name')
         || '';
+      const productId = this.getData()?.productId || '';
       
-      // v5.5.757: Known devices that use cluster 0xE000
+      // v5.5.758: Known devices that use cluster 0xE000
       const knownE000Devices = [
         '_TZ3000_zgyzgdua',  // Moes XH-SY-04Z 4-button remote
         '_TZ3000_abrsvsou',  // Similar Moes variant
-        '_TZ3000_mh9px7cq'   // Similar Moes variant
+        '_TZ3000_mh9px7cq',  // Similar Moes variant
+        '_TZ3000_uri7ez8u',  // Another MOES TS0044 variant
+        '_TZ3000_rrjr1q0u',  // MOES TS0044 variant
       ];
+      
+      // Check if this is TS0044 product (uses 4 endpoints with cluster 57344)
+      const isTS0044 = productId.includes('TS0044') || productId.includes('TS004F');
       const usesE000ByManufacturer = knownE000Devices.some(id => manufacturerName.includes(id));
 
-      // v5.5.757: CRITICAL FIX - Also check if cluster 57344 exists on EP1
-      // This handles devices where manufacturerName is empty on first init
-      const hasE000Cluster = zclNode?.endpoints?.[1]?.clusters?.[57344] 
-        || zclNode?.endpoints?.[1]?.clusters?.['57344']
-        || zclNode?.endpoints?.[1]?.clusters?.['0xE000'];
-
-      // Apply if manufacturer matches OR if cluster 57344 is present
-      if (!usesE000ByManufacturer && !hasE000Cluster) {
-        this.log('[BUTTON4-E000] ℹ️ Device does not use cluster 0xE000');
+      // v5.5.758: ALWAYS try to bind for TS0044/TS004F and known manufacturers
+      // Don't check if cluster object exists - it won't! Homey doesn't expose unknown clusters
+      if (!usesE000ByManufacturer && !isTS0044) {
+        this.log('[BUTTON4-E000] ℹ️ Device is not a known E000 user, skipping BoundCluster setup');
         return;
       }
       
-      this.log(`[BUTTON4-E000] 🔧 Detected cluster 0xE000 (mfr: ${manufacturerName || 'unknown'}, hasCluster: ${!!hasE000Cluster})`);
+      this.log(`[BUTTON4-E000] 🔧 Setting up BoundCluster for cluster 0xE000 (57344)`);
+      this.log(`[BUTTON4-E000] 📋 Manufacturer: ${manufacturerName || 'unknown'}, Product: ${productId || 'unknown'}`);
 
+      // v5.5.758: Import TuyaE000BoundCluster for receiving button presses
+      let TuyaE000BoundCluster;
+      try {
+        TuyaE000BoundCluster = require('../../lib/clusters/TuyaE000BoundCluster');
+      } catch (e) {
+        this.log('[BUTTON4-E000] ⚠️ Could not load TuyaE000BoundCluster:', e.message);
+        return;
+      }
 
-      this.log('[BUTTON4-E000] 🔧 Setting up cluster 0xE000 (57344) button detection for Moes...');
+      // Setup BoundCluster on all 4 endpoints
+      for (let ep = 1; ep <= 4; ep++) {
+        const endpoint = zclNode?.endpoints?.[ep];
+        if (!endpoint) {
+          this.log(`[BUTTON4-E000] ⚠️ EP${ep} not available`);
+          continue;
+        }
 
-      // Setup listeners on all 4 endpoints
+        // v5.5.758: CRITICAL - Manually bind BoundCluster using numeric cluster ID
+        // Standard endpoint.bind() requires known cluster - we bypass this
+        const boundCluster = new TuyaE000BoundCluster({
+          device: this,
+          onButtonPress: async (button, pressType) => {
+            // Button number from frame, or use endpoint number
+            const buttonNum = (button >= 1 && button <= 4) ? button : ep;
+            this.log(`[BUTTON4-E000] 🔘 Button ${buttonNum} ${pressType.toUpperCase()} (from EP${ep})`);
+            await this.triggerButtonPress(buttonNum, pressType);
+          }
+        });
+
+        // Set endpoint reference for the bound cluster
+        boundCluster.endpoint = ep;
+
+        // CRITICAL: Bind to endpoint.bindings using numeric cluster ID
+        // This is how zigbee-clusters handles unknown clusters (see Endpoint.js handleZCLFrame)
+        if (!endpoint.bindings) {
+          endpoint.bindings = {};
+        }
+        endpoint.bindings[57344] = boundCluster;
+        
+        this.log(`[BUTTON4-E000] ✅ BoundCluster registered for EP${ep} cluster 57344`);
+      }
+
+      // v5.5.758: Also setup onOff command listeners as fallback
+      // Some TS0044 variants send commandOn/commandOff/commandToggle on onOff cluster
       for (let ep = 1; ep <= 4; ep++) {
         const endpoint = zclNode?.endpoints?.[ep];
         if (!endpoint) continue;
 
-        // Try to get cluster 57344 (0xE000)
-        const e000Cluster = endpoint.clusters?.[57344] 
-          || endpoint.clusters?.['57344']
-          || endpoint.clusters?.['0xE000'];
-
-        if (e000Cluster && typeof e000Cluster.on === 'function') {
-          this.log(`[BUTTON4-E000] 📡 Setting up cluster 0xE000 listener on EP${ep}...`);
-
-          // Press type mapping (0=single, 1=double, 2=long)
-          const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
-
-          // Listen for any attribute reports
-          e000Cluster.on('report', async (data) => {
-            this.log(`[BUTTON4-E000] EP${ep} report:`, data);
-            const value = data?.value ?? data?.[0] ?? data?.presentValue ?? 0;
-            const pressType = pressTypeMap[value] || 'single';
-            this.log(`[BUTTON4-E000] 🔘 Button ${ep} ${pressType.toUpperCase()} (value=${value})`);
-            await this.triggerButtonPress(ep, pressType);
-          });
-
-          // Listen for commands
-          e000Cluster.on('command', async (commandName, payload) => {
-            this.log(`[BUTTON4-E000] EP${ep} command ${commandName}:`, payload);
-            const value = payload?.value ?? payload?.[0] ?? 0;
-            const pressType = pressTypeMap[value] || 'single';
-            await this.triggerButtonPress(ep, pressType);
-          });
-
-          // Listen for response events
-          e000Cluster.on('response', async (data) => {
-            this.log(`[BUTTON4-E000] EP${ep} response:`, data);
-            const value = data?.value ?? data?.[0] ?? 0;
-            const pressType = pressTypeMap[value] || 'single';
-            await this.triggerButtonPress(ep, pressType);
-          });
-
-          this.log(`[BUTTON4-E000] ✅ Cluster 0xE000 listener configured for EP${ep}`);
-        }
-
-        // v5.5.714: CRITICAL - Also enhance onOff command listeners for TS0044
-        // Z2M shows TS0044 sends commandOn/commandOff/commandToggle on onOff cluster
         const onOffCluster = endpoint.clusters?.onOff || endpoint.clusters?.genOnOff || endpoint.clusters?.[6];
         if (onOffCluster && typeof onOffCluster.on === 'function') {
-          this.log(`[BUTTON4-E000] 📡 Enhancing onOff listeners on EP${ep} for TS0044...`);
+          this.log(`[BUTTON4-E000] 📡 Setting up onOff command listeners on EP${ep}...`);
 
-          // Direct command event listeners (Z2M pattern)
           onOffCluster.on('commandOn', async () => {
             this.log(`[BUTTON4-E000] 🔘 EP${ep} commandOn → Button ${ep} SINGLE`);
             await this.triggerButtonPress(ep, 'single');
@@ -606,11 +608,11 @@ class Button4GangDevice extends ButtonDevice {
             await this.triggerButtonPress(ep, 'long');
           });
 
-          this.log(`[BUTTON4-E000] ✅ Enhanced onOff listeners for EP${ep}`);
+          this.log(`[BUTTON4-E000] ✅ onOff command listeners configured for EP${ep}`);
         }
       }
 
-      this.log('[BUTTON4-E000] ✅ Moes TS0044 cluster 0xE000 + onOff detection configured');
+      this.log('[BUTTON4-E000] ✅ MOES TS0044 cluster 0xE000 BoundCluster setup complete');
 
     } catch (err) {
       this.log('[BUTTON4-E000] ⚠️ Setup error:', err.message);

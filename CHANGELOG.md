@@ -6,14 +6,27 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.758] - 2026-01-22
+
+### 🐛 CRITICAL: MOES Button BoundCluster Fix
+
+- **button_wireless_4**: Fixed MOES `_TZ3000_zgyzgdua` button presses not detected
+  - **Root cause**: Homey SDK does NOT expose unknown clusters like 57344 (0xE000)
+  - Diagnostics showed: `EP1 available clusters: basic` - only known clusters exposed
+  - **Solution**: Created `TuyaE000BoundCluster` using BoundCluster pattern
+  - Manually bind to `endpoint.bindings[57344]` bypassing standard bind method
+  - This allows receiving incoming frames from cluster 57344 even without cluster object
+  - Source: Z2M Issue #28224 (Moes XH-SY-04Z 4-button remote)
+- **New file**: `lib/clusters/TuyaE000BoundCluster.js` for cluster 0xE000 handling
+
+---
+
 ## [5.5.757] - 2026-01-22
 
 ### 🐛 Diagnostics Report Fixes
 
-- **button_wireless_4**: Fixed MOES `_TZ3000_zgyzgdua` not responding to button presses
-  - Root cause: manufacturerName empty on first init, cluster 0xE000 detection skipped
-  - Fix: Also check cluster 57344 presence, not just manufacturer ID
-  - Source: Z2M Issue #28224 (Moes XH-SY-04Z 4-button remote)
+- **button_wireless_4**: Initial fix attempt for MOES `_TZ3000_zgyzgdua`
+  - Added cluster 57344 presence check (insufficient - cluster not exposed by SDK)
 - **button_emergency_sos**: Improved logging for IAS Zone absence
   - Changed error to info log - many SOS buttons work via IAS ACE or Tuya DP
   - Affected devices: TS0215A, TS0601 SOS buttons
