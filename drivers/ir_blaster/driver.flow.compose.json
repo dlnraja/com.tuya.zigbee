@@ -40,7 +40,8 @@
             "de": "Dauer (Sekunden)"
           }
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "ir_learning_state_changed",
@@ -73,7 +74,8 @@
             "de": "Status Code"
           }
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "ir_code_learned",
@@ -97,7 +99,8 @@
             "de": "IR-Code"
           }
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "ir_code_analyzed",
@@ -148,7 +151,8 @@
             "de": "Code Länge"
           }
         }
-      ]
+      ],
+      "args": []
     }
   ],
   "conditions": [
@@ -158,7 +162,8 @@
         "en": "IR learning is active",
         "nl": "IR leren is actief",
         "de": "IR-Lernen ist aktiv"
-      }
+      },
+      "args": []
     },
     {
       "id": "ir_code_exists",
@@ -619,20 +624,54 @@
         {
           "name": "mode",
           "type": "dropdown",
-          "title": { "en": "Mode" },
+          "title": {
+            "en": "Mode"
+          },
           "values": [
-            { "id": "cool", "label": { "en": "Cool" } },
-            { "id": "heat", "label": { "en": "Heat" } },
-            { "id": "auto", "label": { "en": "Auto" } },
-            { "id": "dry", "label": { "en": "Dry" } },
-            { "id": "fan_only", "label": { "en": "Fan Only" } },
-            { "id": "off", "label": { "en": "Off" } }
+            {
+              "id": "cool",
+              "label": {
+                "en": "Cool"
+              }
+            },
+            {
+              "id": "heat",
+              "label": {
+                "en": "Heat"
+              }
+            },
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto"
+              }
+            },
+            {
+              "id": "dry",
+              "label": {
+                "en": "Dry"
+              }
+            },
+            {
+              "id": "fan_only",
+              "label": {
+                "en": "Fan Only"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Off"
+              }
+            }
           ]
         },
         {
           "name": "temperature",
           "type": "number",
-          "title": { "en": "Temperature (°C)" },
+          "title": {
+            "en": "Temperature (°C)"
+          },
           "min": 16,
           "max": 30,
           "step": 1
@@ -640,12 +679,34 @@
         {
           "name": "fan_speed",
           "type": "dropdown",
-          "title": { "en": "Fan Speed" },
+          "title": {
+            "en": "Fan Speed"
+          },
           "values": [
-            { "id": "auto", "label": { "en": "Auto" } },
-            { "id": "low", "label": { "en": "Low" } },
-            { "id": "medium", "label": { "en": "Medium" } },
-            { "id": "high", "label": { "en": "High" } }
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto"
+              }
+            },
+            {
+              "id": "low",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High"
+              }
+            }
           ]
         }
       ]

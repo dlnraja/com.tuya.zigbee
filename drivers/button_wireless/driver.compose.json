@@ -12,18 +12,9 @@
   },
   "class": "button",
   "capabilities": [
-    "button.1",
     "measure_battery"
   ],
   "capabilitiesOptions": {
-    "button.1": {
-      "title": {
-        "en": "Button",
-        "fr": "Bouton"
-      },
-      "getable": false,
-      "setable": false
-    },
     "measure_battery": {
       "title": {
         "en": "Battery",
@@ -568,7 +559,6 @@
       "usageConstant": 0.5
     }
   },
-  "id": "button_wireless",
   "pair": [
     {
       "id": "list_devices",

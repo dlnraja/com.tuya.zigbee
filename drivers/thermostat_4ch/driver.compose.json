@@ -239,8 +239,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_thermo4ch"
+      "TS0601_thermo4ch",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -256,7 +256,6 @@
     "large": "drivers/thermostat_4ch/assets/images/large.png",
     "xlarge": "drivers/thermostat_4ch/assets/images/xlarge.png"
   },
-  "id": "thermostat_4ch",
   "platforms": [
     "local"
   ],
@@ -271,74 +270,22 @@
   "capabilitiesOptions": {
     "onoff": {
       "title": {
-        "en": "Zone 1",
-        "fr": "Zone 1"
+        "en": "Zone 1"
       }
     },
-    "onoff.ch2": {
+    "onoff.1": {
       "title": {
-        "en": "Zone 2",
-        "fr": "Zone 2"
+        "en": "Zone 2"
       }
     },
-    "onoff.ch3": {
+    "onoff.2": {
       "title": {
-        "en": "Zone 3",
-        "fr": "Zone 3"
+        "en": "Zone 3"
       }
     },
-    "onoff.ch4": {
+    "onoff.3": {
       "title": {
-        "en": "Zone 4",
-        "fr": "Zone 4"
-      }
-    },
-    "target_temperature": {
-      "title": {
-        "en": "Target Zone 1",
-        "fr": "Cible Zone 1"
-      }
-    },
-    "target_temperature.ch2": {
-      "title": {
-        "en": "Target Zone 2",
-        "fr": "Cible Zone 2"
-      }
-    },
-    "target_temperature.ch3": {
-      "title": {
-        "en": "Target Zone 3",
-        "fr": "Cible Zone 3"
-      }
-    },
-    "target_temperature.ch4": {
-      "title": {
-        "en": "Target Zone 4",
-        "fr": "Cible Zone 4"
-      }
-    },
-    "measure_temperature": {
-      "title": {
-        "en": "Temp Zone 1",
-        "fr": "Temp Zone 1"
-      }
-    },
-    "measure_temperature.ch2": {
-      "title": {
-        "en": "Temp Zone 2",
-        "fr": "Temp Zone 2"
-      }
-    },
-    "measure_temperature.ch3": {
-      "title": {
-        "en": "Temp Zone 3",
-        "fr": "Temp Zone 3"
-      }
-    },
-    "measure_temperature.ch4": {
-      "title": {
-        "en": "Temp Zone 4",
-        "fr": "Temp Zone 4"
+        "en": "Zone 4"
       }
     }
   }

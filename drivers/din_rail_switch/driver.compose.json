@@ -276,8 +276,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0001_din"
+      "TS0001_din",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -298,7 +298,6 @@
     "small": "drivers/din_rail_switch/assets/images/small.png",
     "large": "drivers/din_rail_switch/assets/images/large.png"
   },
-  "id": "din_rail_switch",
   "platforms": [
     "local"
   ],

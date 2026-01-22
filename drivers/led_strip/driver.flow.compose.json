@@ -5,14 +5,16 @@
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
-      }
+      },
+      "args": []
     },
     {
       "id": "led_strip_led_strip_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Éteint"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -25,7 +27,8 @@
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -34,22 +37,24 @@
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
-      }
+      },
+      "args": []
     },
     {
       "id": "led_strip_led_strip_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Éteindre"
-      }
+      },
+      "args": []
     },
     {
       "id": "led_strip_led_strip_toggle",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
-      }
+      },
+      "args": []
     }
   ]
 }
-

@@ -16,7 +16,8 @@
           },
           "example": 0.5
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "curtain_motor_dim_changed",
@@ -34,7 +35,8 @@
           },
           "example": 0.75
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "curtain_motor_measure_battery_changed",
@@ -52,7 +54,8 @@
           },
           "example": 75
         }
-      ]
+      ],
+      "args": []
     }
   ],
   "actions": [
@@ -87,14 +90,16 @@
       "title": {
         "en": "Open",
         "fr": "Ouvrir"
-      }
+      },
+      "args": []
     },
     {
       "id": "curtain_motor_windowcoverings_close",
       "title": {
         "en": "Close",
         "fr": "Fermer"
-      }
+      },
+      "args": []
     },
     {
       "id": "curtain_motor_set_dim",
@@ -124,4 +129,3 @@
     }
   ]
 }
-

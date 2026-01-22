@@ -9,7 +9,8 @@
         "de": "SOS-Taste gedrückt",
         "it": "Pulsante SOS premuto",
         "es": "Botón SOS presionado"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_emergency_sos_measure_battery_changed",
@@ -20,10 +21,8 @@
           "type": "number",
           "title": "Battery"
         }
-      ]
+      ],
+      "args": []
     }
-  ],
-  "conditions": [],
-  "actions": []
+  ]
 }
-

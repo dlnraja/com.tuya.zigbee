@@ -235,8 +235,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_rcbo"
+      "TS0601_rcbo",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -252,7 +252,6 @@
     "large": "drivers/smart_rcbo/assets/images/large.png",
     "xlarge": "drivers/smart_rcbo/assets/images/xlarge.png"
   },
-  "id": "smart_rcbo",
   "platforms": [
     "local"
   ],

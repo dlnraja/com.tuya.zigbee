@@ -6,21 +6,24 @@
       "title": {
         "en": "Motion detected",
         "fr": "Mouvement détecté"
-      }
+      },
+      "args": []
     },
     {
       "id": "motion_sensor_motion_cleared",
       "title": {
         "en": "Motion cleared",
         "fr": "Mouvement terminé"
-      }
+      },
+      "args": []
     },
     {
       "id": "motion_sensor_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
-      }
+      },
+      "args": []
     },
     {
       "id": "motion_sensor_battery_changed",
@@ -38,7 +41,8 @@
           },
           "example": 75
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "motion_sensor_lux_changed",
@@ -83,7 +87,8 @@
           },
           "example": "smart_reporting"
         }
-      ]
+      ],
+      "args": []
     }
   ],
   "conditions": [
@@ -92,7 +97,8 @@
       "title": {
         "en": "Motion !{{is|is not}} detected",
         "fr": "Mouvement !{{est|n'est pas}} détecté"
-      }
+      },
+      "args": []
     }
   ]
 }

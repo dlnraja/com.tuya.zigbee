@@ -8,8 +8,8 @@
   ],
   "zigbee": {
     "productId": [
-      "TS0601",
-      "TS0601_rad"
+      "TS0601_rad",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -27,6 +27,7 @@
       }
     },
     "manufacturerName": [
+      "_TZE200_LOCANSQN",
       "_tze200_locansqn",
       "Danfoss",
       "DANFOSS",
@@ -515,7 +516,6 @@
       "preventInsights": false
     }
   },
-  "id": "radiator_controller",
   "learnmode": {
     "image": "./assets/learnmode.svg",
     "instruction": {
