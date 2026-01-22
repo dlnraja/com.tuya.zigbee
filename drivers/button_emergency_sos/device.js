@@ -168,8 +168,10 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
   /**
    * v5.5.146: Handle Tuya DP values - FIXED battery/SOS conflict
+   * v5.5.751: Added DP13 button action (forum #267 Peter_van_Werkhoven)
    * BATTERY DPs (numeric 0-100): DP4, DP15
    * SOS DPs (boolean true): DP1, DP14
+   * DP13: Button action (enum) - 0=single, 1=double, 2=hold
    * DP101 is context-dependent: boolean=SOS, number=battery
    */
   _handleTuyaDP(dp, value) {
@@ -199,6 +201,20 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
         return; // Don't process as SOS!
       }
       // Boolean true = SOS (fall through to SOS handling)
+    }
+
+    // v5.5.751: DP13 button action (forum #267 - Peter_van_Werkhoven)
+    // Enum: 0=single_click, 1=double_click, 2=long_press
+    // Any action on SOS button should trigger the alarm
+    if (dp === 13) {
+      const actionMap = { 0: 'single_click', 1: 'double_click', 2: 'long_press' };
+      const action = actionMap[value] || `action_${value}`;
+      this.log(`[SOS] 🆘 Tuya DP13 button action: ${action} (value: ${value})`);
+      this._handleAlarm({ source: 'tuya-dp13', dp, value, action });
+
+      // Read battery when device is awake
+      this.homey.setTimeout(() => this._readBatteryNow(), 200);
+      return;
     }
 
     // SOS button press DPs: DP1, DP14, and DP101 (boolean only)
