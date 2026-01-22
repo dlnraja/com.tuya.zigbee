@@ -3,13 +3,13 @@
   "conditions": [],
   "actions": [
     {
-      "id": "turn_on",
+      "id": "air_purifier_turn_on",
       "title": {
         "en": "Turn on"
       }
     },
     {
-      "id": "turn_off",
+      "id": "air_purifier_turn_off",
       "title": {
         "en": "Turn off"
       }
