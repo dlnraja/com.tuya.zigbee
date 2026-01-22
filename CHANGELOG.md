@@ -6,6 +6,33 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.741] - 2026-01-22
+
+### 🎛️ Fan Controller Enhanced (from PR #1210)
+
+**New Flow Cards (drivers/fan_controller/driver.flow.compose.json):**
+- **Triggers**: `fan_speed_changed`, `fan_turned_on`, `fan_turned_off`
+- **Conditions**: `fan_is_on`, `fan_speed_is`
+- **Actions**: `fan_set_speed`, `fan_speed_up`, `fan_speed_down`
+
+**New Manufacturer ID:**
+- `_TZE204_lawxy9e2` (Fan/Light combo from PR #1210)
+
+**Device.js Enhancements:**
+- Flow card listener registration
+- Speed change triggers with percentage tokens
+- On/Off state change triggers
+
+### 🏠 MOES 6-Gang Scene+Switch (from PR #1106)
+
+**New IDs Added to switch_wall_6gang:**
+- Manufacturer: `_TZ3002_vaq2bfcu`
+- Product ID: `TS0726`
+
+**Source:** https://github.com/JohanBendz/com.tuya.zigbee/pull/1106
+
+---
+
 ## [5.5.740] - 2026-01-22
 
 ### 🚀 Enhanced TuyaSpecificClusterDevice (from PR #1204 + #774)
