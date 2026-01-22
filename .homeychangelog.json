@@ -1,4 +1,16 @@
 {
+  "5.5.736": {
+    "en": "🔌 Forum Requests: Added Hejhome Pika 3-gang & 6-gang switches (_TZE284_c8ipbljq) + radar presence sensor (_TZE284_debczeci). RE-PAIR REQUIRED after update."
+  },
+  "5.5.735": {
+    "en": "🔧 ROOT CAUSE FIX: Integrated DeviceDataHelper in HybridSwitchBase, HybridSensorBase, and water_leak_sensor. Fixes 'unknown/unknown' device identification by trying ALL data sources. Switches now correctly identify manufacturer/model, sensors detect protocol properly. RE-PAIR REQUIRED."
+  },
+  "5.5.734": {
+    "en": "🔌 eWeLink Plug Support (Forum #1133): Added eWeLink CK-BL702-SWP-01(7020) plug with power meter to plug_energy_monitor driver. RE-PAIR REQUIRED after update."
+  },
+  "5.5.733": {
+    "en": "🔘 HOBEIAN ZG-101ZL FIX (Forum #1135): Added OnOffBoundCluster to receive button commands from outputCluster. Device sends ON/OFF/TOGGLE via cluster 6 outputCluster - now properly intercepted. Mapped: ON=single, OFF=double, TOGGLE=long. RE-PAIR REQUIRED after update."
+  },
   "5.5.732": {
     "en": "🔧 GitHub Issues: Added _TZ3210_w0qqde0g to plug_energy_monitor (#110). Verified Zbeacon TH01 support (#109). All Johan's GitHub requests already supported."
   },
