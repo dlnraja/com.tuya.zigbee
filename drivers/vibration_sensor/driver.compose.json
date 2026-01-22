@@ -274,10 +274,10 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
       "TS0209",
       "TS0210",
-      "ZG-102ZM"
+      "ZG-102ZM",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -293,7 +293,6 @@
     "large": "drivers/vibration_sensor/assets/images/large.png",
     "xlarge": "drivers/vibration_sensor/assets/images/xlarge.png"
   },
-  "id": "vibration_sensor",
   "platforms": [
     "local"
   ],

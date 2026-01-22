@@ -14,7 +14,8 @@
         "nl": "Triggert wanneer brandbaar gas wordt gedetecteerd - evacueer onmiddellijk!",
         "fr": "Se déclenche quand du gaz combustible est détecté - évacuez immédiatement !",
         "de": "Wird ausgelöst, wenn brennbares Gas erkannt wird - sofort evakuieren!"
-      }
+      },
+      "args": []
     },
     {
       "id": "gas_detector_gas_cleared",
@@ -23,7 +24,8 @@
         "nl": "Gas alarm opgeheven",
         "fr": "Alarme gaz terminée",
         "de": "Gasalarm aufgehoben"
-      }
+      },
+      "args": []
     },
     {
       "id": "gas_detector_co_detected",
@@ -39,7 +41,8 @@
         "nl": "Triggert wanneer CO wordt gedetecteerd - evacueer onmiddellijk!",
         "fr": "Se déclenche quand du CO est détecté - évacuez immédiatement !",
         "de": "Wird ausgelöst, wenn CO erkannt wird - sofort evakuieren!"
-      }
+      },
+      "args": []
     },
     {
       "id": "gas_detector_co_cleared",
@@ -48,7 +51,8 @@
         "nl": "CO alarm opgeheven",
         "fr": "Alarme CO terminée",
         "de": "CO-Alarm aufgehoben"
-      }
+      },
+      "args": []
     },
     {
       "id": "gas_detector_tamper_true",
@@ -57,7 +61,8 @@
         "nl": "Sabotage alarm",
         "fr": "Alerte sabotage",
         "de": "Manipulationsalarm"
-      }
+      },
+      "args": []
     },
     {
       "id": "gas_detector_battery_changed",
@@ -79,7 +84,8 @@
           },
           "example": 75
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "gas_detector_battery_low",
@@ -88,7 +94,8 @@
         "nl": "Batterij is bijna leeg",
         "fr": "Batterie faible",
         "de": "Batterie ist schwach"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -99,7 +106,8 @@
         "nl": "Gas !{{is|is niet}} gedetecteerd",
         "fr": "Gaz !{{est|n'est pas}} détecté",
         "de": "Gas !{{ist|ist nicht}} erkannt"
-      }
+      },
+      "args": []
     },
     {
       "id": "gas_detector_co_detected",
@@ -108,7 +116,8 @@
         "nl": "CO !{{is|is niet}} gedetecteerd",
         "fr": "CO !{{est|n'est pas}} détecté",
         "de": "CO !{{ist|ist nicht}} erkannt"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -119,7 +128,8 @@
         "nl": "Detector testen",
         "fr": "Tester le détecteur",
         "de": "Detektor testen"
-      }
+      },
+      "args": []
     },
     {
       "id": "gas_detector_mute",
@@ -128,8 +138,8 @@
         "nl": "Alarm dempen",
         "fr": "Couper l'alarme",
         "de": "Alarm stummschalten"
-      }
+      },
+      "args": []
     }
   ]
 }
-

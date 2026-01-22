@@ -16,7 +16,8 @@
           },
           "example": "1"
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "button_wireless_button_double_pressed",
@@ -34,7 +35,8 @@
           },
           "example": "1"
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "button_wireless_button_long_pressed",
@@ -52,7 +54,8 @@
           },
           "example": "1"
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "button_wireless_button_released",
@@ -70,14 +73,16 @@
           },
           "example": "1"
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "button_wireless_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -101,6 +106,5 @@
         }
       ]
     }
-  ],
-  "actions": []
+  ]
 }

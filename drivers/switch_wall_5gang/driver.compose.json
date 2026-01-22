@@ -239,8 +239,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0015"
+      "TS0015",
+      "TS0601"
     ],
     "learnmode": {
       "image": "/drivers/switch_wall_5gang/assets/learnmode.svg",
@@ -717,7 +717,6 @@
     "large": "drivers/switch_wall_5gang/assets/images/large.png",
     "xlarge": "drivers/switch_wall_5gang/assets/images/xlarge.png"
   },
-  "id": "switch_wall_5gang",
   "platforms": [
     "local"
   ],
