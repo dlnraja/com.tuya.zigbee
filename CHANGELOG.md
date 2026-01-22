@@ -6,6 +6,180 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.739] - 2026-01-22
+
+### 🔄 Hybrid Merge - Upstream JohanBendz Integration
+
+**New Manufacturer IDs from upstream (plug_energy_monitor):**
+- `_TZ3000_u5u4cakc`, `_TZ3000_2putqrmw`, `_TZ3000_5ity3zyu`
+- `_TZ3000_eyzb8yg3`, `_TZ3000_dksbtrzs`, `_TZ3000_nkcobies`
+- `_TZ3000_j1v25l17`, `_TZ3000_waho4jtj`, `_TZ3000_3uimvkn6`
+- `_TZ3000_pjcqjtev`, `_TZ3000_amdymr71`, `_TYZB01_iuepbmpv`
+
+**Hybrid approach**: Merged upstream IDs while preserving local enhancements (flow cards, settings, capabilities).
+
+### 🎵 Siren Melody Flow Card (from JohanBendz PR analysis)
+
+**New Flow Action: `siren_set_melody`**
+- 18 melody options (Doorbell, Für Elise, Westminster, Police Siren, etc.)
+- Source: Upstream sirentemphumidsensor.js patterns
+- Full flow card registration for all siren actions
+
+### 📡 HOBEIAN 10G Radar Multi-Sensor (from PR #1306)
+
+**New Sensor Config: `HOBEIAN_10G_MULTI`**
+- Manufacturer IDs: `_TZE200_rhgsbacq`, `_TZE204_rhgsbacq`
+- Model: ZG-227Z
+- **UNIQUE**: Radar sensor WITH temperature + humidity!
+- DP Mappings: DP1=presence, DP101=humidity/10, DP106=lux, DP111=temp/10
+- Source: https://github.com/JohanBendz/com.tuya.zigbee/pull/1306
+
+**Capabilities Added to presence_sensor_radar:**
+- `measure_temperature` (for multi-sensor variants)
+- `measure_humidity` (for multi-sensor variants)
+
+---
+
+## [5.5.738] - 2026-01-22
+
+### 🔧 PR Code Improvements Integration
+
+**Thermostat Flow Cards (from PR #948 suggestions):**
+- Added `child_lock` flow action (enable/disable)
+- Added `child_lock` condition (is enabled/disabled)
+- Inspired by mhaid's wall thermostat improvements
+
+**Code Already Integrated from Closed PRs:**
+- PR #1027: onZoneStatusChangeNotification fix for PIR sensors ✅
+- PR #927: TZE204_yjjdcqsq temp/humidity with different DPs ✅
+- PR #948: Smoke detector TS0205 + child_lock support ✅
+- PR #84: Soil sensor fix + mmWave radar mappings ✅
+
+---
+
+## [5.5.737] - 2026-01-22
+
+### 🔌 PR #111 Merged - Bseed Touch Dimmer Driver (packetninja)
+
+**New Driver: `switch_dimmer_1gang`**
+- Dedicated driver for Bseed touch dimmer wall switches
+- Manufacturer IDs: `_TZE200_3p5ydos3`, `_TZE204_n9ctkb6j`
+- Model: TS0601
+
+**Features:**
+- On/Off control + Dimming (0-100%)
+- State sync with physical button presses
+- Flow cards: triggers for on/off/brightness changes
+
+**Flow Card Fixes:**
+- Multiple driver flow card improvements across 100+ files
+
+---
+
+## [5.5.736] - 2026-01-22
+
+### 🔧 Forum Requests (Page 44)
+
+**Hejhome Pika Multi-gang Switches (Trey_Rogerson):**
+- Added `_TZE284_c8ipbljq` to `switch_3gang` driver (GKZSW391L2DB03)
+- Added `_TZE284_c8ipbljq` to `switch_wall_6gang` driver (GKZSW391L2DB06)
+- TS0601 Tuya DP switches with 3 or 6 gangs
+
+**Radar Presence Sensor (Eastmaster):**
+- Added `_TZE284_debczeci` to `presence_sensor_radar` driver
+- Device was incorrectly pairing as climate_sensor
+
+**User Action Required:**
+- RE-PAIR devices after update
+
+---
+
+## [5.5.735] - 2026-01-22
+
+### 🔧 ROOT CAUSE FIX: Consistent Device Data Retrieval
+
+**Critical Fix - DeviceDataHelper Integration:**
+- **Root Cause Identified**: `HybridSwitchBase` and `HybridSensorBase` were using inconsistent methods to retrieve manufacturer/model data
+- Devices showed "unknown / unknown" because `getData().manufacturerName` doesn't match Homey's actual property names
+- Integrated `DeviceDataHelper` which tries ALL possible data sources in order of reliability:
+  - `data.manufacturerName`, `data.manufacturer`, `data.zb_manufacturer_name`
+  - `settings.zb_manufacturerName`, `settings.zb_manufacturer_name`
+  - `zclNode.manufacturerName`
+
+**Files Fixed:**
+- `lib/devices/HybridSwitchBase.js`: `_applyManufacturerConfig()` and `_detectProtocol()` now use DeviceDataHelper
+- `lib/devices/HybridSensorBase.js`: `_detectProtocol()` now uses DeviceDataHelper
+- `drivers/water_leak_sensor/device.js`: `_getDeviceProfile()` now uses DeviceDataHelper
+
+**Impact:**
+- All switch drivers (1-8 gang) now correctly identify manufacturer/model
+- All sensor drivers now correctly detect protocol (Tuya DP vs ZCL)
+- Water leak sensors now correctly match device profiles for alarm handling
+
+**User Action Required:**
+- RE-PAIR devices after update for best results
+
+---
+
+## [5.5.734] - 2026-01-22
+
+### 🔧 Forum & Diagnostic Reports Review
+
+**Forum #1133 - eWeLink Plug with Power Meter:**
+- Added `eWeLink` manufacturer and `CK-BL702-SWP-01(7020)` productId to `plug_energy_monitor`
+- Device has electricalMeasurement cluster (2820) for power monitoring
+
+**Forum #1132 & #1134 - Unknown Devices:**
+- Users need to provide device interview for manufacturer ID investigation
+- Requested diagnostic reports with device details
+
+**Diagnostic Reports Analyzed:**
+- Water sensor not alarming: User needs to re-pair and test water alarm
+- BSEED 4-gang switch: Device working correctly, flows triggering properly
+- Presence sensor: Needs device interview for manufacturer ID support
+
+---
+
+## [5.5.733] - 2026-01-22
+
+### 🔧 HOBEIAN ZG-101ZL Button Fix (Forum #1135)
+
+**Critical Fix - BoundCluster Implementation:**
+- Added `OnOffBoundCluster` to `button_wireless_1/device.js` for HOBEIAN devices
+- Device sends commands via outputCluster (cluster 6) - requires BoundCluster to receive
+- Mapped commands: ON=single, OFF=double, TOGGLE=long press
+- Pattern adapted from SOS button driver's IAS ACE BoundCluster implementation
+
+**User Action Required:**
+- Re-pair device after updating to apply new bindings
+- Triple-click button to switch between EVENT and COMMAND modes
+
+---
+
+## [5.5.732] - 2026-01-22
+
+### 🔧 GitHub Issues Resolution
+
+**Issue #110 - TS011F Plug Energy Monitor:**
+- Added `_TZ3210_w0qqde0g` to plug_energy_monitor driver
+- Device now pairs with full energy metering (W, kWh, V, A)
+
+**Issue #109 - Zbeacon TH01:**
+- Already supported in climate_sensor driver
+- Both manufacturerName `Zbeacon` and productId `TH01` present
+
+**Johan's GitHub Review:**
+- All recent device requests already supported
+- _TZE284_aao3yzhs (soil sensor) ✅
+- _TZ3000_blhvsaqf (BSEED switch) ✅
+- _TZ3000_qkixdnon (BSEED 3-gang) ✅
+- _TZ3000_l9brjwau (BSEED 2-gang) ✅
+- _TZE284_9ern5sfh (climate sensor) ✅
+- _TZE200_t1blo2bj (siren) ✅
+- ZG-227Z (HOBEIAN climate) ✅
+
+---
+
 ## [5.5.731] - 2026-01-21
 
 ### 📡 Complete Forum Review & SOS Button Analysis

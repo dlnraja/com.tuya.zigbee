@@ -1,7 +1,31 @@
 {
-  "5.5.732": "Added Bseed touch dimmer support"
-}
-{
+  "5.5.739": {
+    "en": "🔄 Hybrid Merge: 12 new manufacturer IDs from upstream JohanBendz for plug_energy_monitor. Better device compatibility!"
+  },
+  "5.5.738": {
+    "en": "🔧 PR Code Improvements: Added child_lock flow cards for thermostats (action + condition). Inspired by closed PR #948 suggestions. All closed PRs code improvements verified integrated."
+  },
+  "5.5.737": {
+    "en": "🔌 PR #111: New Bseed Touch Dimmer driver (switch_dimmer_1gang) + flow card fixes across 100+ drivers. Manufacturer IDs: _TZE200_3p5ydos3, _TZE204_n9ctkb6j. RE-PAIR REQUIRED."
+  },
+  "5.5.736": {
+    "en": "🔌 Forum Requests: Added Hejhome Pika 3-gang & 6-gang switches (_TZE284_c8ipbljq) + radar presence sensor (_TZE284_debczeci). RE-PAIR REQUIRED after update."
+  },
+  "5.5.735": {
+    "en": "🔧 ROOT CAUSE FIX: Integrated DeviceDataHelper in HybridSwitchBase, HybridSensorBase, and water_leak_sensor. Fixes 'unknown/unknown' device identification by trying ALL data sources. Switches now correctly identify manufacturer/model, sensors detect protocol properly. RE-PAIR REQUIRED."
+  },
+  "5.5.734": {
+    "en": "🔌 eWeLink Plug Support (Forum #1133): Added eWeLink CK-BL702-SWP-01(7020) plug with power meter to plug_energy_monitor driver. RE-PAIR REQUIRED after update."
+  },
+  "5.5.733": {
+    "en": "🔘 HOBEIAN ZG-101ZL FIX (Forum #1135): Added OnOffBoundCluster to receive button commands from outputCluster. Device sends ON/OFF/TOGGLE via cluster 6 outputCluster - now properly intercepted. Mapped: ON=single, OFF=double, TOGGLE=long. RE-PAIR REQUIRED after update."
+  },
+  "5.5.732": {
+    "en": "🔧 GitHub Issues: Added _TZ3210_w0qqde0g to plug_energy_monitor (#110). Verified Zbeacon TH01 support (#109). All Johan's GitHub requests already supported."
+  },
+  "5.5.731": {
+    "en": "📡 Forum Review: All devices from posts #1127-#1099 verified supported. SOS button analysis - TS0215A IEEE address recovery documented."
+  },
   "5.5.718": {
     "en": "🔧 TS0726 4-GANG FIX (Hartmut_Dunker): Added onOff cluster (6) and bindings to all 4 endpoints. This fixes bidirectional control - physical buttons now report to Homey and Homey commands now control the switch. RE-PAIR REQUIRED after update."
   },
