@@ -1,6 +1,6 @@
 'use strict';
 
-const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
+const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice');
 const {CLUSTER} = require('zigbee-clusters');
 
 const dataPoints = {
@@ -31,6 +31,8 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
     // Track last known state to detect actual changes
     this._lastState = null;
     this._lastBrightness = null;
+    this._lastStateTimestamp = 0;
+    this._lastBrightnessTimestamp = 0;
 
     // Register Tuya datapoint mappings
     this.log('Registering datapoint mappings...');
@@ -79,18 +81,23 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
 
       this.log('Setting up cluster listeners...');
 
-      // Listen for automatic state reports
-      tuyaCluster.on('dataReport', (data) => {
-        this.handleTuyaDataReport(data, false);
-      });
-
-      // Listen for query responses
+      // Listen for query responses - this is where physical button presses come from
       tuyaCluster.on('response', (data) => {
+        this.log('[response event]');
+        // Treat as physical press if it contains actual data
+        const isPhysicalPress = data && typeof data.dp !== 'undefined';
+        this.handleTuyaDataReport(data, isPhysicalPress);
+      });
+
+      // Listen for automatic state reports (polling/heartbeat)
+      tuyaCluster.on('dataReport', (data) => {
+        this.log('[dataReport event]');
         this.handleTuyaDataReport(data, false);
       });
 
-      // Listen for physical button presses
+      // Listen for reporting events (might not be used by this device)
       tuyaCluster.on('reporting', (data) => {
+        this.log('[reporting event]');
         this.handleTuyaDataReport(data, true);
       });
 
@@ -179,6 +186,8 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
       return;
     }
 
+    const now = Date.now();
+
     // Handle on/off state (DP 1)
     if (data.dp === dataPoints.state) {
       let state;
@@ -191,22 +200,35 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
         state = Boolean(data.data);
       }
       
-      // Only process if state actually changed
-      if (this._lastState !== state) {
-        this.log('State update:', state ? 'ON' : 'OFF', isPhysicalPress ? '(physical button)' : '');
+      // Check if this is a duplicate within 1 second
+      const isDuplicate = (this._lastState === state && (now - this._lastStateTimestamp) < 1000);
+      
+      if (!isDuplicate) {
+        const eventType = isPhysicalPress ? '🔘 PHYSICAL BUTTON' : '📡 automatic';
+        this.log(`State update: ${state ? 'ON' : 'OFF'} [response] ${eventType}`);
+        
+        const stateChanged = this._lastState !== state;
         this._lastState = state;
-        this.setCapabilityValue('onoff', state).catch(this.error);
+        this._lastStateTimestamp = now;
+        
+        if (stateChanged) {
+          this.setCapabilityValue('onoff', state).catch(this.error);
+        }
 
         // Trigger flow cards for physical button presses
-        if (isPhysicalPress) {
+        if (isPhysicalPress && stateChanged) {
           const triggerCard = state ? 'switch_dimmer_1gang_turned_on' : 'switch_dimmer_1gang_turned_off';
+          this.log('🎯 Triggering flow card:', triggerCard);
+          
           this.homey.flow.getDeviceTriggerCard(triggerCard)
             .trigger(this, {}, {})
-            .catch(err => this.error('Flow trigger error:', err));
+            .then(() => {
+              this.log('✅ Flow triggered successfully');
+            })
+            .catch(err => {
+              this.error('❌ Flow trigger error:', err);
+            });
         }
-      } else {
-        // Silently ignore duplicate state reports
-        this.debug('Ignoring duplicate state report:', state);
       }
     }
 
@@ -225,15 +247,18 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
       // Convert from Tuya range (10-1000) to Homey range (0-1)
       const brightness = Math.max(0, Math.min(1, (brightnessRaw - 10) / 990));
       
-      // Only process if brightness actually changed (with small threshold to avoid noise)
+      // Check if brightness actually changed (> 1% difference) and not a duplicate within 1 second
       const brightnessChanged = this._lastBrightness === null || 
                                 Math.abs(brightness - this._lastBrightness) > 0.01;
+      const isDuplicate = !brightnessChanged && (now - this._lastBrightnessTimestamp) < 1000;
       
-      if (brightnessChanged) {
-        this.log('Brightness update:', Math.round(brightness * 100) + '%', isPhysicalPress ? '(physical button)' : '');
+      if (!isDuplicate && brightnessChanged) {
+        const eventType = isPhysicalPress ? '🔘 PHYSICAL BUTTON' : '📡 automatic';
+        this.log(`Brightness update: ${Math.round(brightness * 100)}% [response] ${eventType}`);
         
         const previousBrightness = this._lastBrightness;
         this._lastBrightness = brightness;
+        this._lastBrightnessTimestamp = now;
         
         this.setCapabilityValue('dim', brightness).catch(this.error);
 
@@ -243,13 +268,17 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
             ? 'switch_dimmer_1gang_brightness_increased' 
             : 'switch_dimmer_1gang_brightness_decreased';
           
+          this.log('🎯 Triggering flow card:', triggerCard, 'with brightness:', brightness);
+          
           this.homey.flow.getDeviceTriggerCard(triggerCard)
-            .trigger(this, {brightness}, {})
-            .catch(err => this.error('Flow trigger error:', err));
+            .trigger(this, {brightness: brightness}, {})
+            .then(() => {
+              this.log('✅ Flow triggered successfully with brightness:', Math.round(brightness * 100) + '%');
+            })
+            .catch(err => {
+              this.error('❌ Flow trigger error:', err);
+            });
         }
-      } else {
-        // Silently ignore duplicate brightness reports
-        this.debug('Ignoring duplicate brightness report:', Math.round(brightness * 100) + '%');
       }
     }
   }
