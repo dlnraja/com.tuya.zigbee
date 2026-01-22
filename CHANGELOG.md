@@ -6,6 +6,24 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.743] - 2026-01-22
+
+### 💧 Water Leak Sensor Fix (Community Report #1142 - Lasse_K)
+
+**Issue**: HOBEIAN ZG-222Z water leak sensor "installs but no alarm"
+
+**Root Cause**: Missing IAS Zone cluster (1280) and bindings in driver.compose.json
+
+**Fix Applied to `water_leak_sensor/driver.compose.json`:**
+- Added cluster 1 (powerConfiguration) for battery
+- Added cluster 1280 (IAS Zone) for alarm detection
+- Added cluster 61184 (Tuya) for DP fallback
+- Added bindings [1, 1280] for automatic reporting
+
+**Note**: Users with existing HOBEIAN ZG-222Z sensors should RE-PAIR the device after updating to apply the new bindings.
+
+---
+
 ## [5.5.742] - 2026-01-22
 
 ### 🔆 Touch Dimmer IDs Expanded (Community Request #1141)
