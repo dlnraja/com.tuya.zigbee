@@ -6,6 +6,20 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.755] - 2026-01-22
+
+### 🎛️ PR #112: Physical Button Flow Triggers (packetninja)
+
+- **switch_dimmer_1gang**: Improved physical vs app command detection
+- Added `_markAppCommand()` to track app-initiated commands
+- Heartbeat filtering: Only trigger flows when values actually change
+- Brightness change threshold (~1%) to filter noise
+- APP/PHYSICAL indicators in logs for debugging
+- DEBUG_MODE constant for optional detailed logging
+- Credits: Attilla de Groot (@packetninja)
+
+---
+
 ## [5.5.754] - 2026-01-22
 
 ### 🔍 Comprehensive DP Audit
