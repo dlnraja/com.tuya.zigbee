@@ -6,6 +6,86 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.736] - 2026-01-22
+
+### 🔧 Forum Requests (Page 44)
+
+**Hejhome Pika Multi-gang Switches (Trey_Rogerson):**
+- Added `_TZE284_c8ipbljq` to `switch_3gang` driver (GKZSW391L2DB03)
+- Added `_TZE284_c8ipbljq` to `switch_wall_6gang` driver (GKZSW391L2DB06)
+- TS0601 Tuya DP switches with 3 or 6 gangs
+
+**Radar Presence Sensor (Eastmaster):**
+- Added `_TZE284_debczeci` to `presence_sensor_radar` driver
+- Device was incorrectly pairing as climate_sensor
+
+**User Action Required:**
+- RE-PAIR devices after update
+
+---
+
+## [5.5.735] - 2026-01-22
+
+### 🔧 ROOT CAUSE FIX: Consistent Device Data Retrieval
+
+**Critical Fix - DeviceDataHelper Integration:**
+- **Root Cause Identified**: `HybridSwitchBase` and `HybridSensorBase` were using inconsistent methods to retrieve manufacturer/model data
+- Devices showed "unknown / unknown" because `getData().manufacturerName` doesn't match Homey's actual property names
+- Integrated `DeviceDataHelper` which tries ALL possible data sources in order of reliability:
+  - `data.manufacturerName`, `data.manufacturer`, `data.zb_manufacturer_name`
+  - `settings.zb_manufacturerName`, `settings.zb_manufacturer_name`
+  - `zclNode.manufacturerName`
+
+**Files Fixed:**
+- `lib/devices/HybridSwitchBase.js`: `_applyManufacturerConfig()` and `_detectProtocol()` now use DeviceDataHelper
+- `lib/devices/HybridSensorBase.js`: `_detectProtocol()` now uses DeviceDataHelper
+- `drivers/water_leak_sensor/device.js`: `_getDeviceProfile()` now uses DeviceDataHelper
+
+**Impact:**
+- All switch drivers (1-8 gang) now correctly identify manufacturer/model
+- All sensor drivers now correctly detect protocol (Tuya DP vs ZCL)
+- Water leak sensors now correctly match device profiles for alarm handling
+
+**User Action Required:**
+- RE-PAIR devices after update for best results
+
+---
+
+## [5.5.734] - 2026-01-22
+
+### 🔧 Forum & Diagnostic Reports Review
+
+**Forum #1133 - eWeLink Plug with Power Meter:**
+- Added `eWeLink` manufacturer and `CK-BL702-SWP-01(7020)` productId to `plug_energy_monitor`
+- Device has electricalMeasurement cluster (2820) for power monitoring
+
+**Forum #1132 & #1134 - Unknown Devices:**
+- Users need to provide device interview for manufacturer ID investigation
+- Requested diagnostic reports with device details
+
+**Diagnostic Reports Analyzed:**
+- Water sensor not alarming: User needs to re-pair and test water alarm
+- BSEED 4-gang switch: Device working correctly, flows triggering properly
+- Presence sensor: Needs device interview for manufacturer ID support
+
+---
+
+## [5.5.733] - 2026-01-22
+
+### 🔧 HOBEIAN ZG-101ZL Button Fix (Forum #1135)
+
+**Critical Fix - BoundCluster Implementation:**
+- Added `OnOffBoundCluster` to `button_wireless_1/device.js` for HOBEIAN devices
+- Device sends commands via outputCluster (cluster 6) - requires BoundCluster to receive
+- Mapped commands: ON=single, OFF=double, TOGGLE=long press
+- Pattern adapted from SOS button driver's IAS ACE BoundCluster implementation
+
+**User Action Required:**
+- Re-pair device after updating to apply new bindings
+- Triple-click button to switch between EVENT and COMMAND modes
+
+---
+
 ## [5.5.732] - 2026-01-22
 
 ### 🔧 GitHub Issues Resolution
