@@ -6,6 +6,23 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.738] - 2026-01-22
+
+### 🔧 PR Code Improvements Integration
+
+**Thermostat Flow Cards (from PR #948 suggestions):**
+- Added `child_lock` flow action (enable/disable)
+- Added `child_lock` condition (is enabled/disabled)
+- Inspired by mhaid's wall thermostat improvements
+
+**Code Already Integrated from Closed PRs:**
+- PR #1027: onZoneStatusChangeNotification fix for PIR sensors ✅
+- PR #927: TZE204_yjjdcqsq temp/humidity with different DPs ✅
+- PR #948: Smoke detector TS0205 + child_lock support ✅
+- PR #84: Soil sensor fix + mmWave radar mappings ✅
+
+---
+
 ## [5.5.737] - 2026-01-22
 
 ### 🔌 PR #111 Merged - Bseed Touch Dimmer Driver (packetninja)
