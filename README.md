@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.759** | 📦 Publish Release: MOES button BoundCluster fix (cluster 0xE000/57344), SOS ... |
 | **v5.5.739** | 🔄 Hybrid Merge: 12 new manufacturer IDs from upstream JohanBendz for plug_en... |
 | **v5.5.738** | 🔧 PR Code Improvements: Added child_lock flow cards for thermostats (action ... |
 | **v5.5.737** | 🔌 PR #111: New Bseed Touch Dimmer driver (switch_dimmer_1gang) + flow card f... |
@@ -78,7 +79,6 @@
 | **v5.5.733** | 🔘 HOBEIAN ZG-101ZL FIX (Forum #1135): Added OnOffBoundCluster to receive but... |
 | **v5.5.732** | 🔧 GitHub Issues: Added _TZ3210_w0qqde0g to plug_energy_monitor (#110). Verif... |
 | **v5.5.731** | Complete forum review & SOS button analysis. All devices verified supported (... |
-| **v5.5.718** | 🔧 TS0726 4-GANG FIX (Hartmut_Dunker): Added onOff cluster (6) and bindings t... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
