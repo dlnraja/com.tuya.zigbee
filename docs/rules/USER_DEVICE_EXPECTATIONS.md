@@ -1,7 +1,7 @@
 # User Device Expectations & Diagnostic Summary
 
 This document summarizes user-reported devices and their expected behavior based on diagnostic logs and community feedback.
-**Last Updated**: 2026-01-21 (v5.5.718)
+**Last Updated**: 2026-01-22 (v5.5.732)
 
 > ⚠️ **WORKFLOW**: This document must be updated at each prompt/session in Windsurf AI to stay synchronized with code changes.
 
@@ -19,20 +19,20 @@ This document summarizes user-reported devices and their expected behavior based
 | 4 | Lasse_K | Contact Sensors | various | Reversed indication after upgrades | v5.5.713 | ✅ FIXED |
 | 5 | Multiple | Scene Switches | scene_switch_1/2/3/6 | Invalid Flow Card ID | v5.5.708 | ✅ FIXED |
 
-### ⚠️ PENDING INVESTIGATION
+### ⚠️ PENDING INVESTIGATION (v5.5.732)
 
-| # | User | Device | ManufacturerID | ProductID | Issue | Code Status |
-|---|------|--------|----------------|-----------|-------|-------------|
-| 6 | Freddyboy | Moes Scene Switch | `_TZ3000_zgyzgdua` | TS004F | Physical/app buttons don't work | ✅ IN CODE (button_wireless_4) |
-| 7 | Ronny_M | HOBEIAN Button | `HOBEIAN` | ZG-101ZL | Flow cards exist but nothing works | ✅ IN CODE (button_wireless_1) |
-| 8 | Eftychis_Georgilas | 4-gang Switch | `_TZ3000_wkai4ga5` | TS004F | Unknown device | ✅ IN CODE (button_wireless_4) |
-| 9 | Eftychis_Georgilas | 4-gang Switch | `_TZ3000_5tqxpine` | TS004F | Unknown device | ✅ IN CODE (button_wireless_4) |
-| 10 | Attilla | Touch Dimmer | `_TZE200_3p5ydos3` | TS0601 | Not working since v5.5.690 | ✅ IN CODE (dimmer_wall_1gang) |
-| 11 | Attilla | Touch Dimmer | `_TZE204_n9ctkb6j` | TS0601 | Pairs as generic Zigbee | ✅ IN CODE (dimmer_wall_1gang) |
-| 12 | Hartmut_Dunker | 4-gang Switch | `_TZ3002_vaq2bfcu` | TS0726 | Buttons don't work bidirectionally | ✅ v5.5.718 FIXED |
-| 13 | JJ10 | Presence Sensor | unknown | TS0601 | Not working | ⚠️ NEEDS DIAG |
-| 14 | FrankP | IR Blaster | unknown | TS1201 | Errors in latest version | ⚠️ NEEDS DIAG |
-| 15 | ManuelKugler | Valve | `_TZE284_o3x45p96` | TS0601 | Request to add | ✅ IN CODE (radiator_valve) |
+| # | User | Device | ManufacturerID | ProductID | Issue | Code Status | Action |
+|---|------|--------|----------------|-----------|-------|-------------|--------|
+| 6 | Freddyboy | Moes Scene Switch | `_TZ3000_zgyzgdua` | TS0044 | Physical/app buttons don't work | ✅ v5.5.714 cluster 0xE000 | **RE-PAIR REQUIRED** |
+| 7 | Ronny_M | HOBEIAN Button | `HOBEIAN` | ZG-101ZL | Flow cards exist but nothing works | ✅ v5.5.715 onOff binding | **RE-PAIR REQUIRED** |
+| 8 | Eftychis_Georgilas | 4-gang Switch | `_TZ3000_wkai4ga5` | TS004F | Unknown device | ✅ IN CODE (button_wireless_4, scene_switch_4) | **RE-PAIR REQUIRED** |
+| 9 | Eftychis_Georgilas | 4-gang Switch | `_TZ3000_5tqxpine` | TS004F | Unknown device | ✅ IN CODE (button_wireless_4, scene_switch_4) | **RE-PAIR REQUIRED** |
+| 10 | Attilla | Touch Dimmer | `_TZE200_3p5ydos3` | TS0601 | Not working since v5.5.690 | ✅ IN CODE (dimmer_wall_1gang) | **RE-PAIR REQUIRED** |
+| 11 | Attilla | Touch Dimmer | `_TZE204_n9ctkb6j` | TS0601 | Pairs as generic Zigbee | ✅ IN CODE (dimmer_wall_1gang) | **RE-PAIR REQUIRED** |
+| 12 | Hartmut_Dunker | 4-gang Switch | `_TZ3002_vaq2bfcu` | TS0726 | Buttons don't work bidirectionally | ✅ v5.5.718 FIXED | **RE-PAIR REQUIRED** |
+| 13 | JJ10 | Presence Sensor | unknown | TS0601 | Not working | ⚠️ NEEDS DIAG | Send diagnostic |
+| 14 | FrankP | IR Blaster | unknown | TS1201 | Errors in latest version | ✅ v5.5.565 Flow cards verified | Check flow setup |
+| 15 | ManuelKugler | Valve | `_TZE284_o3x45p96` | TS0601 | Request to add | ✅ IN CODE (radiator_valve) | **RE-PAIR REQUIRED** |
 
 ### 🔍 CROSS-REFERENCE VERIFICATION
 
