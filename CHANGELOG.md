@@ -6,6 +6,16 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.749] - 2026-01-22
+
+### 🔧 SOS Button Error Log Fix
+
+- Changed "No IAS Zone cluster found" from error to info log
+- Device may still work via IAS ACE or Tuya DP fallback
+- Fixes misleading error in diagnostics report (55649ae3)
+
+---
+
 ## [5.5.748] - 2026-01-22
 
 ### 🔧 Version Bump & CI Fix
