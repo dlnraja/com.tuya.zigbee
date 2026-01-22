@@ -6,6 +6,16 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.750] - 2026-01-22
+
+### 🔧 HybridSwitchBase Constructor Fix
+
+- Fixed "Cannot read properties of undefined (reading 'name')" error
+- Added defensive try-catch in DeviceTypeManager initialization
+- Fixes crash on switch_4gang pairing (Hartmut_Dunker report)
+
+---
+
 ## [5.5.749] - 2026-01-22
 
 ### 🔧 SOS Button Error Log Fix
