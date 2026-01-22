@@ -6,6 +6,17 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.759] - 2026-01-22
+
+### 📦 Publish Release
+
+- All GitHub issues resolved (#101-#110)
+- All manufacturer IDs verified in drivers
+- MOES button BoundCluster fix confirmed working
+- SOS button IAS Zone logging fix included
+
+---
+
 ## [5.5.758] - 2026-01-22
 
 ### 🐛 CRITICAL: MOES Button BoundCluster Fix
