@@ -10,7 +10,9 @@
     "alarm_motion",
     "measure_luminance",
     "measure_battery",
-    "measure_distance"
+    "measure_distance",
+    "measure_temperature",
+    "measure_humidity"
   ],
   "subDevices": [],
   "zigbee": {
@@ -390,6 +392,7 @@
       "ZG-204ZK",
       "ZG-204ZM",
       "ZG-205Z",
+      "ZG-227Z",
       "CK-BL702-MWS-01(7016)",
       "CK-BL702-MWS-01",
       "SZLMR10",
