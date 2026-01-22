@@ -2,6 +2,15 @@
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
+// v5.5.733: HOBEIAN ZG-101ZL FIX - Import OnOffBoundCluster for outputCluster command reception
+let OnOffBoundCluster = null;
+try {
+  OnOffBoundCluster = require('../../lib/clusters/OnOffBoundCluster');
+  console.log('[BUTTON1] ✅ OnOffBoundCluster loaded');
+} catch (e) {
+  console.log('[BUTTON1] ⚠️ OnOffBoundCluster not available:', e.message);
+}
+
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
  * ║     BUTTON 1 GANG - v5.5.500 ENHANCED FOR TS0041 / TS0042 / TS0215A         ║
@@ -24,8 +33,9 @@ const ButtonDevice = require('../../lib/devices/ButtonDevice');
  */
 class Button1GangDevice extends ButtonDevice {
 
-  // v5.5.715: Track binding state for HOBEIAN
+  // v5.5.733: Track binding state for HOBEIAN
   _onOffBound = false;
+  _onOffBoundClusterInstalled = false;
   _zclNode = null;
 
   async onNodeInit({ zclNode }) {
@@ -498,21 +508,52 @@ class Button1GangDevice extends ButtonDevice {
         return;
       }
 
-      const onOffCluster = endpoint.clusters?.onOff || endpoint.clusters?.genOnOff || endpoint.clusters?.[6];
-      if (!onOffCluster) {
-        this.log('[BUTTON1-BIND] ⚠️ OnOff cluster not found');
-        return;
+      // v5.5.733: CRITICAL FIX - Use OnOffBoundCluster to RECEIVE commands from outputCluster
+      // HOBEIAN ZG-101ZL sends button presses via onOff outputCluster (cluster 6 in outputClusters)
+      // We need a BoundCluster to intercept these incoming commands
+      if (OnOffBoundCluster && typeof endpoint.bind === 'function' && !this._onOffBoundClusterInstalled) {
+        try {
+          this.log('[BUTTON1-BIND] 🔗 Installing OnOffBoundCluster to receive commands...');
+          
+          const boundCluster = new OnOffBoundCluster({
+            onSetOn: () => {
+              this.log('[BUTTON1-BOUND] 🔘 ON command received (EVENT MODE: single)');
+              this.triggerButtonPress(1, 'single');
+            },
+            onSetOff: () => {
+              this.log('[BUTTON1-BOUND] 🔘 OFF command received (EVENT MODE: double)');
+              this.triggerButtonPress(1, 'double');
+            },
+            onToggle: () => {
+              this.log('[BUTTON1-BOUND] 🔘 TOGGLE command received (EVENT MODE: long)');
+              this.triggerButtonPress(1, 'long');
+            },
+            onWithTimedOff: (payload) => {
+              this.log('[BUTTON1-BOUND] 🔘 onWithTimedOff received:', payload);
+              this.triggerButtonPress(1, 'single');
+            }
+          });
+
+          // Bind to onOff cluster name (cluster 6)
+          endpoint.bind('onOff', boundCluster);
+          this._onOffBoundClusterInstalled = true;
+          this.log('[BUTTON1-BIND] ✅ OnOffBoundCluster installed successfully!');
+          this.log('[BUTTON1-BIND] 📡 Now listening for ON/OFF/TOGGLE commands from device');
+          
+        } catch (boundErr) {
+          this.log(`[BUTTON1-BIND] ⚠️ BoundCluster install failed: ${boundErr.message}`);
+        }
       }
 
-      // Try to bind the onOff cluster for command reception
-      if (typeof onOffCluster.bind === 'function') {
+      // Fallback: Try regular cluster binding
+      const onOffCluster = endpoint.clusters?.onOff || endpoint.clusters?.genOnOff || endpoint.clusters?.[6];
+      if (onOffCluster && typeof onOffCluster.bind === 'function') {
         try {
           await onOffCluster.bind();
           this._onOffBound = true;
-          this.log('[BUTTON1-BIND] ✅ OnOff cluster bound successfully');
+          this.log('[BUTTON1-BIND] ✅ OnOff cluster bound (fallback method)');
         } catch (bindErr) {
           this.log(`[BUTTON1-BIND] ⚠️ Bind failed (expected for sleepy): ${bindErr.message}`);
-          // This is expected for sleepy devices - binding happens at pairing
         }
       }
 
