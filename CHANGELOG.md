@@ -6,6 +6,25 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.737] - 2026-01-22
+
+### 🔌 PR #111 Merged - Bseed Touch Dimmer Driver (packetninja)
+
+**New Driver: `switch_dimmer_1gang`**
+- Dedicated driver for Bseed touch dimmer wall switches
+- Manufacturer IDs: `_TZE200_3p5ydos3`, `_TZE204_n9ctkb6j`
+- Model: TS0601
+
+**Features:**
+- On/Off control + Dimming (0-100%)
+- State sync with physical button presses
+- Flow cards: triggers for on/off/brightness changes
+
+**Flow Card Fixes:**
+- Multiple driver flow card improvements across 100+ files
+
+---
+
 ## [5.5.736] - 2026-01-22
 
 ### 🔧 Forum Requests (Page 44)
