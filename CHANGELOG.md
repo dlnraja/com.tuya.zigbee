@@ -6,6 +6,23 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.744] - 2026-01-22
+
+### 🔧 Flow Card ID Namespacing (PR #111 Best Practices)
+
+**Applied PR #111 best practices to all drivers:**
+- `fan_controller`: All flow card IDs now prefixed with `fan_controller_`
+- Updated device.js to match new namespaced IDs
+- Prevents flow card conflicts when multiple drivers are installed
+
+**Pattern Applied:**
+```
+Old: fan_set_speed → New: fan_controller_set_speed
+Old: fan_is_on → New: fan_controller_is_on
+```
+
+---
+
 ## [5.5.743] - 2026-01-22
 
 ### 💧 Water Leak Sensor Fix (Community Report #1142 - Lasse_K)

@@ -40,7 +40,7 @@ class FanControllerDevice extends ZigBeeDevice {
 
   async _registerFlowCards() {
     // Action: Set fan speed
-    this.homey.flow.getDeviceActionCard('fan_set_speed')
+    this.homey.flow.getDeviceActionCard('fan_controller_set_speed')
       .registerRunListener(async (args, state) => {
         const speed = args.speed / 100; // Convert 0-100 to 0-1
         await this.setCapabilityValue('dim', speed);
@@ -49,7 +49,7 @@ class FanControllerDevice extends ZigBeeDevice {
       });
 
     // Action: Increase fan speed
-    this.homey.flow.getDeviceActionCard('fan_speed_up')
+    this.homey.flow.getDeviceActionCard('fan_controller_speed_up')
       .registerRunListener(async (args, state) => {
         const current = this.getCapabilityValue('dim') || 0;
         const newSpeed = Math.min(1, current + 0.25);
@@ -59,7 +59,7 @@ class FanControllerDevice extends ZigBeeDevice {
       });
 
     // Action: Decrease fan speed
-    this.homey.flow.getDeviceActionCard('fan_speed_down')
+    this.homey.flow.getDeviceActionCard('fan_controller_speed_down')
       .registerRunListener(async (args, state) => {
         const current = this.getCapabilityValue('dim') || 0;
         const newSpeed = Math.max(0, current - 0.25);
@@ -69,13 +69,13 @@ class FanControllerDevice extends ZigBeeDevice {
       });
 
     // Condition: Fan is on
-    this.homey.flow.getDeviceConditionCard('fan_is_on')
+    this.homey.flow.getDeviceConditionCard('fan_controller_is_on')
       .registerRunListener(async (args, state) => {
         return this.getCapabilityValue('onoff') === true;
       });
 
     // Condition: Fan speed is
-    this.homey.flow.getDeviceConditionCard('fan_speed_is')
+    this.homey.flow.getDeviceConditionCard('fan_controller_speed_is')
       .registerRunListener(async (args, state) => {
         const current = (this.getCapabilityValue('dim') || 0) * 100;
         return Math.abs(current - args.speed) < 5;
