@@ -1,4 +1,7 @@
 {
+  "5.5.732": "Added Bseed touch dimmer support"
+}
+{
   "5.5.718": {
     "en": "🔧 TS0726 4-GANG FIX (Hartmut_Dunker): Added onOff cluster (6) and bindings to all 4 endpoints. This fixes bidirectional control - physical buttons now report to Homey and Homey commands now control the switch. RE-PAIR REQUIRED after update."
   },

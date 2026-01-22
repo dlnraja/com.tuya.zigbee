@@ -12267,7 +12267,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "air_purifier_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -12280,7 +12280,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "air_purifier_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -12818,7 +12818,7 @@
         }
       },
       {
-        "id": "turn_on",
+        "id": "dimmer_3gang_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -12831,7 +12831,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "dimmer_3gang_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -13012,7 +13012,7 @@
         }
       },
       {
-        "id": "turn_on",
+        "id": "din_rail_switch_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -13025,7 +13025,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "din_rail_switch_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -13124,7 +13124,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "fan_controller_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -13137,7 +13137,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "fan_controller_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -13289,7 +13289,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "humidifier_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -13302,7 +13302,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "humidifier_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -13880,7 +13880,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "led_controller_cct_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -13893,7 +13893,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "led_controller_cct_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -13906,7 +13906,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "led_controller_dimmable_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -13919,7 +13919,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "led_controller_dimmable_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -13932,7 +13932,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "led_controller_rgb_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -13945,7 +13945,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "led_controller_rgb_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -14503,7 +14503,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "pool_pump_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -14516,7 +14516,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "pool_pump_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -14529,7 +14529,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "presence_sensor_ceiling_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -14542,7 +14542,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "presence_sensor_ceiling_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -14555,7 +14555,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "radiator_controller_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -14568,7 +14568,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "radiator_controller_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -14814,7 +14814,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "smart_breaker_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -14827,7 +14827,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "smart_breaker_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -14840,7 +14840,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "smart_heater_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -14853,7 +14853,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "smart_heater_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -14866,7 +14866,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "smart_heater_controller_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -14879,7 +14879,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "smart_heater_controller_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -14892,7 +14892,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "smart_rcbo_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -14905,7 +14905,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "smart_rcbo_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -15266,7 +15266,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "switch_plug_1_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -15279,7 +15279,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "switch_plug_1_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -15292,7 +15292,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "switch_plug_2_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -15305,7 +15305,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "switch_plug_2_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -15318,7 +15318,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "switch_temp_sensor_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -15331,7 +15331,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "switch_temp_sensor_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -16209,7 +16209,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "thermostat_4ch_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -16222,7 +16222,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "thermostat_4ch_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -16367,7 +16367,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "usb_dongle_dual_repeater_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -16380,7 +16380,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "usb_dongle_dual_repeater_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -16435,7 +16435,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "valve_irrigation_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -16448,7 +16448,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "valve_irrigation_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -16461,7 +16461,7 @@
         ]
       },
       {
-        "id": "turn_on",
+        "id": "valve_single_turn_on",
         "title": {
           "en": "Turn on"
         },
@@ -16474,7 +16474,7 @@
         ]
       },
       {
-        "id": "turn_off",
+        "id": "valve_single_turn_off",
         "title": {
           "en": "Turn off"
         },
@@ -61787,8 +61787,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/bseed_dimmer_1gang/assets/images/small.png",
-        "large": "/drivers/bseed_dimmer_1gang/assets/images/large.png"
+        "small": "/drivers/switch_dimmer_1gang/assets/images/small.png",
+        "large": "/drivers/switch_dimmer_1gang/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
