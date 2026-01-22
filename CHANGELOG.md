@@ -6,6 +6,42 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.740] - 2026-01-22
+
+### 🚀 Enhanced TuyaSpecificClusterDevice (from PR #1204 + #774)
+
+**New Core Methods (lib/tuya/TuyaSpecificClusterDevice.js):**
+- `isDeviceReady()` - Check device availability before commands
+- `waitForDeviceReady(timeout)` - Wait for device with timeout
+- `_sendTuyaDatapoint()` - Enhanced retry logic with input validation
+- `writeBool()`, `writeData32()`, `writeString()`, `writeEnum()`, `writeBitmap()`, `writeRaw()` - Direct DP writing methods
+- `sendBulkCommands()` - Send multiple commands with configurable delays
+- `debug()` - Enhanced contextual logging with timestamps
+
+**Improvements:**
+- Transaction ID management (0-255 cycling)
+- Input validation for DP values (0-255 range check)
+- Exponential backoff retry (300ms × attempt)
+- Device readiness checks before sending
+
+**Source PRs:**
+- https://github.com/JohanBendz/com.tuya.zigbee/pull/1204 (retry logic, bulk commands)
+- https://github.com/JohanBendz/com.tuya.zigbee/pull/774 (writeBitmap, DP methods)
+
+### 🛠️ TuyaDataPointUtils Module (from PR #740 pattern)
+
+**New Module: `lib/utils/TuyaDataPointUtils.js`**
+- `TUYA_DATA_TYPES` constants (RAW, BOOL, VALUE, STRING, ENUM, BITMAP)
+- `COMMON_DATAPOINTS` constants for all device types
+- `getDataValue()` - Parse DP values by datatype
+- `encodeDataValue()` - Encode values to DP format
+- `scaleTemperature()`, `scaleHumidity()`, `scaleBattery()` - Value scalers
+- `parseIlluminance()` - Handle different lux formats
+
+**Source:** Inspired by maccyber PR #740 utils.js pattern
+
+---
+
 ## [5.5.739] - 2026-01-22
 
 ### 🔄 Hybrid Merge - Upstream JohanBendz Integration
