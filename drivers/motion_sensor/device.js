@@ -59,142 +59,208 @@ class MotionSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.86: ENHANCED DP MAPPINGS
-   * Added temperature/humidity DPs for Fantem ZB003-x and similar 4-in-1 sensors
-   * Source: Zigbee2MQTT device definitions
+   * v5.5.753: MANUFACTURER-AWARE DP MAPPINGS
+   * Different manufacturers use same DPs for different purposes!
+   * 
+   * MANUFACTURER PROFILES:
+   * ┌────────────────────────┬────────┬────────┬────────┬────────┬────────┐
+   * │ Manufacturer           │ DP4    │ DP5    │ DP6    │ DP9    │ DP102  │
+   * ├────────────────────────┼────────┼────────┼────────┼────────┼────────┤
+   * │ ZG-204ZV (_TZE200_3to) │ TEMP   │ HUMID  │ -      │ LUX    │ -      │
+   * │ Fantem ZB003-x         │ BATT   │ TEMP   │ HUMID  │ LUX    │ LUX    │
+   * │ Simple PIR (_TZ3000_*) │ BATT   │ -      │ -      │ LUX    │ -      │
+   * │ ZG-204ZM Radar         │ DIST   │ -      │ -      │ -      │ TIME   │
+   * │ Default TS0601         │ BATT   │ TEMP   │ HUMID  │ LUX    │ LUX    │
+   * └────────────────────────┴────────┴────────┴────────┴────────┴────────┘
    */
-  get dpMappings() {
+  
+  // v5.5.753: Manufacturer profiles for DP mapping
+  static get MANUFACTURER_DP_PROFILES() {
     return {
+      // ZG-204ZV Multisensor (Peter_van_Werkhoven forum #267)
+      // DP4=temp, DP5=humidity - CONFIRMED WORKING in v2.1.85
+      'ZG204ZV': {
+        patterns: ['_TZE200_3towulqd', '_tze200_3towulqd', '_TZE204_3towulqd'],
+        dp4: 'measure_temperature',
+        dp5: 'measure_humidity',
+        dp4_divisor: 10,
+        dp5_divisor: 1,
+      },
+      // Fantem ZB003-x 4-in-1 multisensor
+      // DP5=temp(÷10), DP6=humidity
+      'FANTEM': {
+        patterns: ['_TZE200_7hfcudw5', '_TZE200_myd45weu', '_TZE200_pay2byax', 
+                   '_TZE200_nlrfgpny', 'ZB003-X'],
+        dp4: 'measure_battery',
+        dp5: 'measure_temperature',
+        dp6: 'measure_humidity',
+        dp5_divisor: 10,
+        dp6_divisor: 1,
+        dp102: 'measure_luminance',
+      },
+      // HOBEIAN ZG-204ZM Radar (mmWave presence)
+      // DP4=distance, NOT battery or temp
+      'ZG204ZM_RADAR': {
+        patterns: ['_TZE200_2aaelwxk', '_tze200_2aaelwxk', '_TZE204_2aaelwxk',
+                   '_TZE200_kb5noeto', '_tze200_kb5noeto'],
+        dp4: 'internal_distance', // Not a standard capability
+        dp102: 'internal_fading_time',
+        isRadar: true,
+      },
+      // Simple PIR sensors (no temp/humidity)
+      'SIMPLE_PIR': {
+        patterns: ['_TZ3000_', '_TZ3210_', '_TYZB01_'],
+        dp4: 'measure_battery',
+        dp5: null,
+        dp6: null,
+        isPirOnly: true,
+      },
+      // Immax 07502L and similar
+      'IMMAX': {
+        patterns: ['_TZE200_ppuj1vem', 'Immax'],
+        dp4: 'measure_battery',
+        dp5: 'measure_temperature',
+        dp6: 'measure_humidity',
+        dp5_divisor: 10,
+        dp6_divisor: 1,
+      },
+    };
+  }
+
+  /**
+   * v5.5.753: Detect manufacturer profile from device data
+   */
+  _getManufacturerProfile() {
+    const mfr = this.getData()?.manufacturerName || 
+                this.getSetting('zb_manufacturer_name') || '';
+    const mfrLower = mfr.toLowerCase();
+    
+    for (const [profileName, profile] of Object.entries(MotionSensorDevice.MANUFACTURER_DP_PROFILES)) {
+      for (const pattern of profile.patterns) {
+        if (mfrLower.includes(pattern.toLowerCase()) || mfr.includes(pattern)) {
+          this.log(`[MOTION-DP] 🎯 Matched profile: ${profileName} (pattern: ${pattern})`);
+          return { name: profileName, ...profile };
+        }
+      }
+    }
+    
+    // Default profile
+    this.log('[MOTION-DP] ℹ️ Using default DP profile');
+    return { name: 'DEFAULT', dp4: 'measure_battery', dp5: 'measure_temperature', 
+             dp6: 'measure_humidity', dp5_divisor: 10, dp6_divisor: 1 };
+  }
+
+  get dpMappings() {
+    const profile = this._getManufacturerProfile();
+    
+    // Base mappings (common to all)
+    const mappings = {
       // ═══════════════════════════════════════════════════════════════════
-      // MOTION / OCCUPANCY
-      // v5.5.228: Fixed DP101 - it's presence_time in seconds, not boolean motion
+      // MOTION / OCCUPANCY (universal)
       // ═══════════════════════════════════════════════════════════════════
       1: { capability: 'alarm_motion', transform: (v) => v === 1 || v === true },
-      // v5.5.710: HOBEIAN FIX - DP101 can be battery (0-100) OR presence_time (seconds)
-      // Check value range: battery is 0-100, presence_time is typically >100
       101: { capability: 'measure_battery', transform: (v) => {
-        // If value is 0-100, treat as battery percentage
-        // If value is >100, it's likely presence_time - return null to skip
         if (v >= 0 && v <= 100) return v;
-        return null; // Skip invalid battery values
+        return null; // Skip if >100 (likely presence_time)
       }},
 
       // ═══════════════════════════════════════════════════════════════════
-      // BATTERY
+      // BATTERY (universal fallbacks)
       // ═══════════════════════════════════════════════════════════════════
       2: { capability: 'measure_battery', divisor: 1 },
       15: { capability: 'measure_battery', divisor: 1 },
 
       // ═══════════════════════════════════════════════════════════════════
-      // v5.5.751: ZG-204ZV TEMPERATURE FIX (Peter_van_Werkhoven forum #267)
-      // DP 4 = Temperature (÷10) for ZG-204ZV multisensor
-      // Was incorrectly mapped to battery - REGRESSION FIX
-      // ═══════════════════════════════════════════════════════════════════
-      4: {
-        capability: 'measure_temperature',
-        divisor: 10,
-        transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null
-      },
-
-      // ═══════════════════════════════════════════════════════════════════
-      // LUMINANCE (LUX)
+      // LUMINANCE (universal)
       // ═══════════════════════════════════════════════════════════════════
       3: { capability: 'measure_luminance', divisor: 1 },
       9: { capability: 'measure_luminance', divisor: 1 },
       12: { capability: 'measure_luminance', divisor: 1 },
-      102: { capability: 'measure_luminance', divisor: 1 },  // Fantem lux
-      106: { capability: 'measure_luminance', divisor: 1 },  // ZG-204ZM radar (v5.5.138)
+      106: { capability: 'measure_luminance', divisor: 1 },
 
       // ═══════════════════════════════════════════════════════════════════
-      // v5.5.751: HUMIDITY FIX for ZG-204ZV (Peter_van_Werkhoven forum #267)
-      // DP 5 = Humidity for ZG-204ZV - was incorrectly mapped to temperature
+      // ALTERNATE TEMP/HUMIDITY DPs (some models)
       // ═══════════════════════════════════════════════════════════════════
-      5: {
-        capability: 'measure_humidity',
-        divisor: 1,
-        transform: (v) => (v >= 0 && v <= 100) ? Math.round(v) : null
-      },
       18: {
         capability: 'measure_temperature',
         divisor: 10,
         transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null
-      },
-      103: {
-        capability: 'measure_temperature',
-        divisor: 10,
-        transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null
-      },
-
-      // ═══════════════════════════════════════════════════════════════════
-      // v5.5.107: HUMIDITY (for 4-in-1 multisensors) - with validation
-      // ═══════════════════════════════════════════════════════════════════
-      6: {
-        capability: 'measure_humidity',
-        divisor: 1,
-        transform: (v) => (v >= 0 && v <= 100) ? Math.round(v) : null
       },
       19: {
         capability: 'measure_humidity',
         divisor: 1,
         transform: (v) => (v >= 0 && v <= 100) ? Math.round(v) : null
       },
+      103: {
+        capability: 'measure_temperature',
+        divisor: 10,
+        transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null
+      },
       104: {
         capability: 'measure_humidity',
         divisor: 1,
         transform: (v) => (v >= 0 && v <= 100) ? Math.round(v) : null
       },
-
-      // ═══════════════════════════════════════════════════════════════════
-      // v5.5.139: ZG-204ZM RADAR SENSOR DPs (24GHz mmWave)
-      // Source: https://github.com/Koenkk/zigbee2mqtt/issues/21919
-      // ═══════════════════════════════════════════════════════════════════
-      // DP1 = presence (also mapped above as alarm_motion)
-      // DP2 = large_motion_detection_sensitivity (0-10)
-      // DP4 = large_motion_detection_distance (/100 = meters) - also battery above
-
-      // DP101 = motion_state (0=none, 1=large, 2=medium, 3=small)
-      // 101 already mapped to alarm_motion above
-
-      // DP102 = fading_time (presence keep time in seconds)
-      // 102 already mapped to measure_luminance above for Fantem
-
-      // DP104 = medium_motion_detection_distance (/100 = meters)
-      // 104 already mapped to measure_humidity for some sensors
-
-      // DP107 = LED indicator (on/off)
-      107: { capability: null, setting: 'led_indicator' },
-
-      // DP108 = small_detection_distance (/100 = meters)
-      108: { capability: null, setting: 'small_detection_distance' },
-
-      // DP109 = small_detection_sensitivity (0-10)
-      109: { capability: null, setting: 'small_detection_sensitivity' },
-
-      // ═══════════════════════════════════════════════════════════════════
-      // v5.5.130: SETTINGS from Zigbee2MQTT TS0601_motion_sensor (PIR)
-      // https://www.zigbee2mqtt.io/devices/TS0601_motion_sensor.html
-      // ═══════════════════════════════════════════════════════════════════
-      // O-Sensitivity (enum: sensitive, normal, cautious)
-      9: { capability: null, setting: 'o_sensitivity' },
-      // V-Sensitivity (enum: speed_priority, normal_priority, accuracy_priority)
-      10: { capability: null, setting: 'v_sensitivity' },
-      // LED status (ON/OFF)
-      13: { capability: null, setting: 'led_status' },
-      // Vacancy delay (0-1000 sec)
-      110: { capability: null, setting: 'vacancy_delay' },
-      // Light-on luminance prefer (0-10000)
-      111: { capability: null, setting: 'light_on_luminance_prefer' },
-      // Light-off luminance prefer (0-10000)
-      112: { capability: null, setting: 'light_off_luminance_prefer' },
-      // Mode (general_model, temporary_stay, basic_detection, sensor_test)
-      113: { capability: null, setting: 'mode' },
-      // Keep time (seconds)
-      105: { capability: null, setting: 'keep_time' },
-
-      // Tamper alarm
-      20: { capability: 'alarm_tamper', transform: (v) => v === 1 || v === true },
     };
+
+    // ═══════════════════════════════════════════════════════════════════
+    // v5.5.753: MANUFACTURER-SPECIFIC DP4, DP5, DP6, DP102 MAPPINGS
+    // ═══════════════════════════════════════════════════════════════════
+    
+    // DP4 - varies by manufacturer
+    if (profile.dp4 === 'measure_temperature') {
+      mappings[4] = {
+        capability: 'measure_temperature',
+        divisor: profile.dp4_divisor || 10,
+        transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null
+      };
+    } else if (profile.dp4 === 'measure_battery') {
+      mappings[4] = { capability: 'measure_battery', divisor: 1 };
+    } else if (profile.dp4 === 'internal_distance') {
+      mappings[4] = { 
+        capability: null, 
+        internal: 'detection_distance',
+        transform: (v) => v / 100 // Convert to meters
+      };
+    }
+
+    // DP5 - varies by manufacturer
+    if (profile.dp5 === 'measure_humidity') {
+      mappings[5] = {
+        capability: 'measure_humidity',
+        divisor: profile.dp5_divisor || 1,
+        transform: (v) => (v >= 0 && v <= 100) ? Math.round(v) : null
+      };
+    } else if (profile.dp5 === 'measure_temperature') {
+      mappings[5] = {
+        capability: 'measure_temperature',
+        divisor: profile.dp5_divisor || 10,
+        transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null
+      };
+    }
+
+    // DP6 - humidity for some models
+    if (profile.dp6 === 'measure_humidity') {
+      mappings[6] = {
+        capability: 'measure_humidity',
+        divisor: profile.dp6_divisor || 1,
+        transform: (v) => (v >= 0 && v <= 100) ? Math.round(v) : null
+      };
+    }
+
+    // DP102 - lux for Fantem, fading_time for radar
+    if (profile.dp102 === 'measure_luminance') {
+      mappings[102] = { capability: 'measure_luminance', divisor: 1 };
+    } else if (profile.dp102 === 'internal_fading_time') {
+      mappings[102] = { capability: null, internal: 'fading_time' };
+    } else {
+      // Default: Fantem lux
+      mappings[102] = { capability: 'measure_luminance', divisor: 1 };
+    }
+
+    return mappings;
   }
+
 
   /**
    * v5.5.86: ZCL cluster handlers for 4-in-1 multisensors
