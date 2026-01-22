@@ -6,6 +6,16 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.754] - 2026-01-22
+
+### 🔍 Comprehensive DP Audit
+
+- Full audit of all drivers for manufacturer-specific DP variations
+- Verified existing implementations in 9 critical drivers
+- All manufacturer-aware systems confirmed working
+
+---
+
 ## [5.5.753] - 2026-01-22
 
 ### 🎯 MANUFACTURER-AWARE DP MAPPINGS (motion_sensor)
