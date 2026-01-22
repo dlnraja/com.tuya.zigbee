@@ -6,6 +6,18 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.751] - 2026-01-22
+
+### 🐛 ZG-204ZV Temperature/Humidity REGRESSION FIX
+
+- **Root cause**: DP mappings were incorrect since v5.5.107
+- **DP 4** was mapped to `measure_battery` → now correctly maps to `measure_temperature` (÷10)
+- **DP 5** was mapped to `measure_temperature` → now correctly maps to `measure_humidity`
+- Restores functionality from forum fix v2.1.85 (Peter_van_Werkhoven #267)
+- ZG-204ZV multisensor now reports temperature and humidity correctly via Tuya DPs
+
+---
+
 ## [5.5.750] - 2026-01-22
 
 ### 🔧 HybridSwitchBase Constructor Fix
