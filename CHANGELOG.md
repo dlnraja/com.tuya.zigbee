@@ -6,6 +6,17 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.752] - 2026-01-22
+
+### 🐛 SOS Button DP13 REGRESSION FIX
+
+- **Root cause**: DP13 (button action enum) was missing from handler
+- **DP 13** now triggers SOS alarm: 0=single_click, 1=double_click, 2=long_press
+- Restores functionality from forum fix v2.1.85 (Peter_van_Werkhoven #267)
+- SOS buttons using Tuya DP13 now properly trigger flows
+
+---
+
 ## [5.5.751] - 2026-01-22
 
 ### 🐛 ZG-204ZV Temperature/Humidity REGRESSION FIX
