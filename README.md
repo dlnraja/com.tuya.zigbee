@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.739** | 🔄 Hybrid Merge: 12 new manufacturer IDs from upstream JohanBendz for plug_en... |
 | **v5.5.738** | 🔧 PR Code Improvements: Added child_lock flow cards for thermostats (action ... |
 | **v5.5.737** | 🔌 PR #111: New Bseed Touch Dimmer driver (switch_dimmer_1gang) + flow card f... |
 | **v5.5.736** | 🔌 Forum Requests: Added Hejhome Pika 3-gang & 6-gang switches (_TZE284_c8ipb... |
@@ -78,7 +79,6 @@
 | **v5.5.732** | 🔧 GitHub Issues: Added _TZ3210_w0qqde0g to plug_energy_monitor (#110). Verif... |
 | **v5.5.731** | Complete forum review & SOS button analysis. All devices verified supported (... |
 | **v5.5.718** | 🔧 TS0726 4-GANG FIX (Hartmut_Dunker): Added onOff cluster (6) and bindings t... |
-| **v5.5.717** | 📊 ENRICHMENT UPDATE: Enhanced DP mappings with 15 device categories, intelli... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
