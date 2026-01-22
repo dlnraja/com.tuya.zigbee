@@ -6,6 +6,24 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.742] - 2026-01-22
+
+### 🔆 Touch Dimmer IDs Expanded (Community Request #1141)
+
+**22 additional manufacturer IDs for `switch_dimmer_1gang`:**
+- `_TZE200_ip2akl4w`, `_TZE200_1agwnems`, `_TZE200_la2c2uo9`, `_TZE200_579lguh2`
+- `_TZE200_vucankjx`, `_TZE200_4mh6tyyo`, `_TZE204_hlx9tnzb`, `_TZE204_9qhuzgo0`
+- `_TZE200_9cxuhakf`, `_TZE200_a0syesf5`, `_TZE200_swaamsoy`, `_TZE200_ojzhk75b`
+- `_TZE200_w4cryh2i`, `_TZE200_dfxkcots`, `_TZE200_9i9dt8is`, `_TZE200_ctq0k47x`
+- `_TZE200_ebwgzdqq`, `_TZE204_vevc4c6g`, `_TZE200_0nauxa0p`, `_TZE200_ykgar0ow`
+- `_TZE200_qzaing2g`, `_TZE204_3z6hca0q`
+
+**Brands supported:** Bseed, Moes, Lerlink, Larkkey, Earda, Mercator Ikuü, Lonsonho, ION Industries, PSMART
+
+**Source:** Zigbee2MQTT fingerprints + Community forum request from Attilla
+
+---
+
 ## [5.5.741] - 2026-01-22
 
 ### 🎛️ Fan Controller Enhanced (from PR #1210)
