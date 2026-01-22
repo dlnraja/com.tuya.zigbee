@@ -1,4 +1,7 @@
 {
+  "5.5.738": {
+    "en": "🔧 PR Code Improvements: Added child_lock flow cards for thermostats (action + condition). Inspired by closed PR #948 suggestions. All closed PRs code improvements verified integrated."
+  },
   "5.5.737": {
     "en": "🔌 PR #111: New Bseed Touch Dimmer driver (switch_dimmer_1gang) + flow card fixes across 100+ drivers. Manufacturer IDs: _TZE200_3p5ydos3, _TZE204_n9ctkb6j. RE-PAIR REQUIRED."
   },

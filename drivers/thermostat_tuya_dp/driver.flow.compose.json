@@ -145,6 +145,14 @@
           ]
         }
       ]
+    },
+    {
+      "id": "thermostat_tuya_dp_child_lock_is",
+      "title": {
+        "en": "Child lock is !{{enabled|disabled}}",
+        "fr": "Verrouillage enfant !{{activé|désactivé}}"
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -257,6 +265,39 @@
             "en": "Degrees",
             "fr": "Degrés"
           }
+        }
+      ]
+    },
+    {
+      "id": "thermostat_tuya_dp_set_child_lock",
+      "title": {
+        "en": "Set child lock",
+        "fr": "Définir verrouillage enfant"
+      },
+      "titleFormatted": {
+        "en": "Set child lock to [[enabled]]",
+        "fr": "Définir verrouillage enfant à [[enabled]]"
+      },
+      "args": [
+        {
+          "name": "enabled",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "true",
+              "label": {
+                "en": "Enabled",
+                "fr": "Activé"
+              }
+            },
+            {
+              "id": "false",
+              "label": {
+                "en": "Disabled",
+                "fr": "Désactivé"
+              }
+            }
+          ]
         }
       ]
     }
