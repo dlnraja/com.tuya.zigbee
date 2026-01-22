@@ -304,8 +304,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_clamp"
+      "TS0601_clamp",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -326,7 +326,6 @@
     "small": "drivers/power_clamp_meter/assets/images/small.png",
     "large": "drivers/power_clamp_meter/assets/images/large.png"
   },
-  "id": "power_clamp_meter",
   "platforms": [
     "local"
   ],

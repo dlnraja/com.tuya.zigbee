@@ -3,13 +3,13 @@
   "conditions": [],
   "actions": [
     {
-      "id": "turn_on",
+      "id": "usb_dongle_dual_repeater_turn_on",
       "title": {
         "en": "Turn on"
       }
     },
     {
-      "id": "turn_off",
+      "id": "usb_dongle_dual_repeater_turn_off",
       "title": {
         "en": "Turn off"
       }

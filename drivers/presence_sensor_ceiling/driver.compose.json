@@ -265,8 +265,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_ceiling"
+      "TS0601_ceiling",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -473,7 +473,6 @@
     "large": "drivers/presence_sensor_ceiling/assets/images/large.png",
     "xlarge": "drivers/presence_sensor_ceiling/assets/images/xlarge.png"
   },
-  "id": "presence_sensor_ceiling",
   "platforms": [
     "local"
   ],

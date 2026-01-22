@@ -17,7 +17,8 @@
           },
           "example": 22.5
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "climate_sensor_humidity_changed",
@@ -35,42 +36,48 @@
           },
           "example": 55
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "climate_sensor_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
-      }
+      },
+      "args": []
     },
     {
       "id": "climate_sensor_temperature_alarm_high",
       "title": {
         "en": "Temperature too high",
         "fr": "Température trop haute"
-      }
+      },
+      "args": []
     },
     {
       "id": "climate_sensor_temperature_alarm_low",
       "title": {
         "en": "Temperature too low",
         "fr": "Température trop basse"
-      }
+      },
+      "args": []
     },
     {
       "id": "climate_sensor_humidity_alarm_high",
       "title": {
         "en": "Humidity too high",
         "fr": "Humidité trop haute"
-      }
+      },
+      "args": []
     },
     {
       "id": "climate_sensor_humidity_alarm_low",
       "title": {
         "en": "Humidity too low",
         "fr": "Humidité trop basse"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -170,6 +177,5 @@
         }
       ]
     }
-  ],
-  "actions": []
+  ]
 }

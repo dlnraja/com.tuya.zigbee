@@ -20,7 +20,8 @@
         "nl": "Triggert wanneer de sensor beweging of trillingen detecteert",
         "fr": "Se déclenche quand le capteur détecte un mouvement ou une vibration",
         "de": "Wird ausgelöst, wenn der Sensor Bewegung oder Vibration erkennt"
-      }
+      },
+      "args": []
     },
     {
       "id": "vibration_sensor_tilt_detected",
@@ -35,7 +36,8 @@
         "nl": "Triggert wanneer de sensor een verandering in oriëntatie detecteert",
         "fr": "Se déclenche quand le capteur détecte un changement d'orientation",
         "de": "Wird ausgelöst, wenn der Sensor eine Änderung der Ausrichtung erkennt"
-      }
+      },
+      "args": []
     },
     {
       "id": "vibration_sensor_drop_detected",
@@ -50,7 +52,8 @@
         "nl": "Triggert wanneer de sensor een vrije val of val detecteert",
         "fr": "Se déclenche quand le capteur détecte une chute libre",
         "de": "Wird ausgelöst, wenn der Sensor einen freien Fall erkennt"
-      }
+      },
+      "args": []
     },
     {
       "id": "vibration_sensor_tamper_true",
@@ -65,7 +68,8 @@
         "nl": "Triggert wanneer er met de sensor is geknoeid",
         "fr": "Se déclenche quand le capteur a été saboté",
         "de": "Wird ausgelöst, wenn der Sensor manipuliert wurde"
-      }
+      },
+      "args": []
     },
     {
       "id": "vibration_sensor_battery_changed",
@@ -93,7 +97,8 @@
           },
           "example": 75
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "vibration_sensor_battery_low",
@@ -102,7 +107,8 @@
         "nl": "Batterij is bijna leeg",
         "fr": "Batterie faible",
         "de": "Batterie ist schwach"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -113,7 +119,8 @@
         "nl": "Trillingen !{{worden|worden niet}} gedetecteerd",
         "fr": "Vibration !{{est|n'est pas}} détectée",
         "de": "Vibration !{{wird|wird nicht}} erkannt"
-      }
+      },
+      "args": []
     },
     {
       "id": "vibration_sensor_battery_above",

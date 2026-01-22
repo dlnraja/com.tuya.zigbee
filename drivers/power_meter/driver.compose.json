@@ -397,8 +397,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_meter"
+      "TS0601_meter",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -414,7 +414,6 @@
     "large": "drivers/power_meter/assets/images/large.png",
     "xlarge": "drivers/power_meter/assets/images/xlarge.png"
   },
-  "id": "power_meter",
   "platforms": [
     "local"
   ],

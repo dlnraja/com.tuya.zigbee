@@ -275,9 +275,9 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
       "TS0216",
-      "TS0219"
+      "TS0219",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -525,7 +525,6 @@
     "large": "drivers/siren/assets/images/large.png",
     "xlarge": "drivers/siren/assets/images/xlarge.png"
   },
-  "id": "siren",
   "platforms": [
     "local"
   ],

@@ -11,7 +11,6 @@
     "measure_battery",
     "measure_luminance"
   ],
-  "$comment_capabilities": "v5.5.181: measure_temperature and measure_humidity are added DYNAMICALLY by device.js only if ZCL clusters 0x0402/0x0405 are detected. This prevents showing unused capabilities on simple PIR sensors.",
   "energy": {
     "batteries": [
       "CR2450",
@@ -535,7 +534,6 @@
       "_TZ3000_bsvqrxru"
     ],
     "productId": [
-      "TS0601",
       "TS0202",
       "ZG-204Z",
       "MS01",
@@ -556,7 +554,8 @@
       "3326-L",
       "3305-S",
       "3325-S",
-      "SNZB-03"
+      "SNZB-03",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -804,7 +803,6 @@
     "large": "drivers/motion_sensor/assets/images/large.png",
     "xlarge": "drivers/motion_sensor/assets/images/xlarge.png"
   },
-  "id": "motion_sensor",
   "platforms": [
     "local"
   ],

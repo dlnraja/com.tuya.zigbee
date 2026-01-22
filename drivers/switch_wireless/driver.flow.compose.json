@@ -9,28 +9,32 @@
           "type": "string",
           "title": "Timestamp"
         }
-      ]
+      ],
+      "args": []
     }
   ],
   "conditions": [
     {
       "id": "switch_wireless_is_on",
-      "title": "Is !{{on|off}}"
+      "title": "Is !{{on|off}}",
+      "args": []
     }
   ],
   "actions": [
     {
       "id": "switch_wireless_turn_on",
-      "title": "Turn on"
+      "title": "Turn on",
+      "args": []
     },
     {
       "id": "switch_wireless_turn_off",
-      "title": "Turn off"
+      "title": "Turn off",
+      "args": []
     },
     {
       "id": "switch_wireless_toggle",
-      "title": "Toggle"
+      "title": "Toggle",
+      "args": []
     }
   ]
 }
-

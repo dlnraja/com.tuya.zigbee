@@ -1,0 +1,99 @@
+[
+  {
+    "type": "group",
+    "label": {
+      "en": "Dimmer Settings",
+      "nl": "Dimmer Instellingen"
+    },
+    "children": [
+      {
+        "id": "min_brightness",
+        "type": "number",
+        "label": {
+          "en": "Minimum Brightness (%)",
+          "nl": "Minimale Helderheid (%)"
+        },
+        "hint": {
+          "en": "Set the minimum brightness level (1-100)",
+          "nl": "Stel het minimale helderheidsniveau in (1-100)"
+        },
+        "value": 1,
+        "min": 1,
+        "max": 100,
+        "units": "%"
+      },
+      {
+        "id": "power_on_behavior",
+        "type": "dropdown",
+        "label": {
+          "en": "Power-on Behavior",
+          "nl": "Inschakelen Gedrag"
+        },
+        "hint": {
+          "en": "Select the behavior when power is restored",
+          "nl": "Selecteer het gedrag wanneer de stroom wordt hersteld"
+        },
+        "value": "0",
+        "values": [
+          {
+            "id": "0",
+            "label": {
+              "en": "Off",
+              "nl": "Uit"
+            }
+          },
+          {
+            "id": "1",
+            "label": {
+              "en": "On",
+              "nl": "Aan"
+            }
+          },
+          {
+            "id": "2",
+            "label": {
+              "en": "Last State",
+              "nl": "Laatste Status"
+            }
+          }
+        ]
+      },
+      {
+        "id": "light_type",
+        "type": "dropdown",
+        "label": {
+          "en": "Light Type",
+          "nl": "Lichttype"
+        },
+        "hint": {
+          "en": "Select the type of light connected",
+          "nl": "Selecteer het type aangesloten lamp"
+        },
+        "value": "0",
+        "values": [
+          {
+            "id": "0",
+            "label": {
+              "en": "LED",
+              "nl": "LED"
+            }
+          },
+          {
+            "id": "1",
+            "label": {
+              "en": "Incandescent",
+              "nl": "Gloeilamp"
+            }
+          },
+          {
+            "id": "2",
+            "label": {
+              "en": "Halogen",
+              "nl": "Halogeen"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

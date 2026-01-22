@@ -71,8 +71,6 @@
       "_tze200_ybwa4x5a",
       "_TZE200_ztc6ggyl",
       "_tze200_ztc6ggyl",
-      "_TZE204_ztc6ggyl",
-      "_tze204_ztc6ggyl",
       "_TZE200_ZTQNH5CG",
       "_tze200_ztqnh5cg",
       "_TZE204_AUIN8MZR",
@@ -172,13 +170,6 @@
       "_tze284_rlytpmij",
       "_TZE284_AR5PRZMW",
       "_tze284_ar5przmw",
-      "_TZE200_qasjif9e",
-      "_TZE204_ya4ft0w4",
-      "_tze204_ya4ft0w4",
-      "_TZE204_bvfld3xc",
-      "_tze204_bvfld3xc",
-      "_TZE200_hyhl5y36",
-      "_tze200_hyhl5y36",
       "GLEDOPTO",
       "Third Reality, Inc",
       "Danfoss",
@@ -380,10 +371,18 @@
       "Vision",
       "Monoprice",
       "_TZE204_qasjif9e",
-      "_TZE284_iadro9bf"
+      "_TZE284_iadro9bf",
+      "_TZE200_qasjif9e",
+      "_TZE204_ya4ft0w4",
+      "_tze204_ya4ft0w4",
+      "_TZE204_bvfld3xc",
+      "_tze204_bvfld3xc",
+      "_TZE200_hyhl5y36",
+      "_tze200_hyhl5y36",
+      "_TZE204_ztc6ggyl",
+      "_tze204_ztc6ggyl"
     ],
     "productId": [
-      "TS0601",
       "TS0225",
       "ZG-204ZL",
       "ZG-204ZV",
@@ -393,7 +392,8 @@
       "ZG-205Z",
       "CK-BL702-MWS-01(7016)",
       "CK-BL702-MWS-01",
-      "SZLMR10"
+      "SZLMR10",
+      "TS0601"
     ],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
@@ -768,7 +768,6 @@
     "large": "drivers/presence_sensor_radar/assets/images/large.png",
     "xlarge": "drivers/presence_sensor_radar/assets/images/xlarge.png"
   },
-  "id": "presence_sensor_radar",
   "platforms": [
     "local"
   ],

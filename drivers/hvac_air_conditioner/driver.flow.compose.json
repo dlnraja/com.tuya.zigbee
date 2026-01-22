@@ -5,14 +5,16 @@
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
-      }
+      },
+      "args": []
     },
     {
       "id": "hvac_air_conditioner_air_conditioner_hybrid_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Éteint"
-      }
+      },
+      "args": []
     },
     {
       "id": "hvac_air_conditioner_air_conditioner_hybrid_target_temperature_changed",
@@ -30,7 +32,8 @@
           },
           "example": 21
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "hvac_air_conditioner_air_conditioner_hybrid_measure_temperature_changed",
@@ -48,7 +51,8 @@
           },
           "example": 20.5
         }
-      ]
+      ],
+      "args": []
     }
   ],
   "conditions": [
@@ -61,7 +65,8 @@
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -70,21 +75,24 @@
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
-      }
+      },
+      "args": []
     },
     {
       "id": "hvac_air_conditioner_air_conditioner_hybrid_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Éteindre"
-      }
+      },
+      "args": []
     },
     {
       "id": "hvac_air_conditioner_air_conditioner_hybrid_toggle",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
-      }
+      },
+      "args": []
     },
     {
       "id": "hvac_air_conditioner_air_conditioner_hybrid_set_target_temperature",
@@ -112,4 +120,3 @@
     }
   ]
 }
-

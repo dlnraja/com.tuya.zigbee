@@ -5,14 +5,16 @@
       "title": {
         "en": "Rain detected",
         "fr": "Pluie détectée"
-      }
+      },
+      "args": []
     },
     {
       "id": "rain_sensor_rain_stopped",
       "title": {
         "en": "Rain stopped",
         "fr": "Pluie arrêtée"
-      }
+      },
+      "args": []
     },
     {
       "id": "rain_sensor_rain_intensity_changed",
@@ -30,14 +32,16 @@
           },
           "example": 50
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "rain_sensor_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -46,7 +50,8 @@
       "title": {
         "en": "It is !{{raining|not raining}}",
         "fr": "Il !{{pleut|ne pleut pas}}"
-      }
+      },
+      "args": []
     },
     {
       "id": "rain_sensor_rain_intensity_above",
@@ -68,6 +73,5 @@
         }
       ]
     }
-  ],
-  "actions": []
+  ]
 }

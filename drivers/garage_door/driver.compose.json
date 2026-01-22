@@ -253,8 +253,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_garage"
+      "TS0601_garage",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -275,7 +275,6 @@
     "small": "drivers/garage_door/assets/images/small.png",
     "large": "drivers/garage_door/assets/images/large.png"
   },
-  "id": "garage_door",
   "platforms": [
     "local"
   ],

@@ -20,7 +20,8 @@
         "nl": "Triggert wanneer de magneet van de sensor wordt gescheiden",
         "fr": "Se déclenche quand l'aimant se sépare du capteur",
         "de": "Wird ausgelöst, wenn der Magnet vom Sensor getrennt wird"
-      }
+      },
+      "args": []
     },
     {
       "id": "contact_sensor_closed",
@@ -35,7 +36,8 @@
         "nl": "Triggert wanneer de magneet de sensor raakt",
         "fr": "Se déclenche quand l'aimant touche le capteur",
         "de": "Wird ausgelöst, wenn der Magnet den Sensor berührt"
-      }
+      },
+      "args": []
     },
     {
       "id": "contact_sensor_tamper_true",
@@ -50,7 +52,8 @@
         "nl": "Triggert wanneer er met de sensor is geknoeid",
         "fr": "Se déclenche quand le capteur a été saboté",
         "de": "Wird ausgelöst, wenn der Sensor manipuliert wurde"
-      }
+      },
+      "args": []
     },
     {
       "id": "contact_sensor_battery_changed",
@@ -78,7 +81,8 @@
           },
           "example": 75
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "contact_sensor_battery_low",
@@ -93,7 +97,8 @@
         "nl": "Triggert wanneer de batterij onder de drempel zakt",
         "fr": "Se déclenche quand la batterie passe sous le seuil",
         "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt"
-      }
+      },
+      "args": []
     },
     {
       "id": "contact_sensor_left_open",
@@ -127,7 +132,8 @@
           },
           "example": 5
         }
-      ]
+      ],
+      "args": []
     }
   ],
   "conditions": [
@@ -138,7 +144,8 @@
         "nl": "Deur/raam !{{is|is niet}} open",
         "fr": "Porte/fenêtre !{{est|n'est pas}} ouverte",
         "de": "Tür/Fenster !{{ist|ist nicht}} offen"
-      }
+      },
+      "args": []
     },
     {
       "id": "contact_sensor_battery_above",

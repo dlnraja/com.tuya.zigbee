@@ -20,7 +20,8 @@
         "nl": "Triggert wanneer koolmonoxide wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
         "fr": "Se déclenche quand du monoxyde de carbone est détecté - ALERTE DE SÉCURITÉ CRITIQUE",
         "de": "Wird ausgelöst, wenn Kohlenmonoxid erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
-      }
+      },
+      "args": []
     },
     {
       "id": "co_sensor_alarm_co_false",
@@ -35,7 +36,8 @@
         "nl": "Triggert wanneer koolmonoxide niet meer wordt gedetecteerd",
         "fr": "Se déclenche quand le monoxyde de carbone n'est plus détecté",
         "de": "Wird ausgelöst, wenn kein Kohlenmonoxid mehr erkannt wird"
-      }
+      },
+      "args": []
     },
     {
       "id": "co_sensor_measure_co_changed",
@@ -63,7 +65,8 @@
           },
           "example": 50
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "co_sensor_measure_battery_changed",
@@ -91,7 +94,8 @@
           },
           "example": 75
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "co_sensor_battery_low",
@@ -106,7 +110,8 @@
         "nl": "Triggert wanneer de batterij onder de drempel zakt - Vervang binnenkort de batterij!",
         "fr": "Se déclenche quand la batterie passe sous le seuil - Remplacez la batterie bientôt !",
         "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt - Batterie bald ersetzen!"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -117,7 +122,8 @@
         "nl": "CO !{{is|is niet}} gedetecteerd",
         "fr": "CO !{{est|n'est pas}} détecté",
         "de": "CO !{{ist|ist nicht}} erkannt"
-      }
+      },
+      "args": []
     },
     {
       "id": "co_sensor_co_above",
@@ -194,7 +200,8 @@
         "nl": "Start een test op de CO detector (indien ondersteund door apparaat)",
         "fr": "Déclenche un test sur le détecteur CO (si supporté par l'appareil)",
         "de": "Löst einen Test am CO-Melder aus (falls vom Gerät unterstützt)"
-      }
+      },
+      "args": []
     }
   ]
 }

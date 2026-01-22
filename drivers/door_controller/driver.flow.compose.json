@@ -14,7 +14,8 @@
         "nl": "Triggert wanneer de deur wordt geopend",
         "fr": "Se déclenche quand la porte est ouverte",
         "de": "Wird ausgelöst, wenn die Tür geöffnet wird"
-      }
+      },
+      "args": []
     },
     {
       "id": "door_controller_closed",
@@ -29,7 +30,8 @@
         "nl": "Triggert wanneer de deur wordt gesloten",
         "fr": "Se déclenche quand la porte est fermée",
         "de": "Wird ausgelöst, wenn die Tür geschlossen wird"
-      }
+      },
+      "args": []
     },
     {
       "id": "door_controller_locked",
@@ -38,7 +40,8 @@
         "nl": "Deur vergrendeld",
         "fr": "Porte verrouillée",
         "de": "Tür verriegelt"
-      }
+      },
+      "args": []
     },
     {
       "id": "door_controller_unlocked",
@@ -47,7 +50,8 @@
         "nl": "Deur ontgrendeld",
         "fr": "Porte déverrouillée",
         "de": "Tür entriegelt"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -58,7 +62,8 @@
         "nl": "Deur !{{is|is niet}} open",
         "fr": "Porte !{{est|n'est pas}} ouverte",
         "de": "Tür !{{ist|ist nicht}} offen"
-      }
+      },
+      "args": []
     },
     {
       "id": "door_controller_is_locked",
@@ -67,7 +72,8 @@
         "nl": "Deur !{{is|is niet}} vergrendeld",
         "fr": "Porte !{{est|n'est pas}} verrouillée",
         "de": "Tür !{{ist|ist nicht}} verriegelt"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -78,7 +84,8 @@
         "nl": "Deur openen",
         "fr": "Ouvrir la porte",
         "de": "Tür öffnen"
-      }
+      },
+      "args": []
     },
     {
       "id": "door_controller_close",
@@ -87,7 +94,8 @@
         "nl": "Deur sluiten",
         "fr": "Fermer la porte",
         "de": "Tür schließen"
-      }
+      },
+      "args": []
     },
     {
       "id": "door_controller_lock",
@@ -96,7 +104,8 @@
         "nl": "Deur vergrendelen",
         "fr": "Verrouiller la porte",
         "de": "Tür verriegeln"
-      }
+      },
+      "args": []
     },
     {
       "id": "door_controller_unlock",
@@ -105,8 +114,8 @@
         "nl": "Deur ontgrendelen",
         "fr": "Déverrouiller la porte",
         "de": "Tür entriegeln"
-      }
+      },
+      "args": []
     }
   ]
 }
-

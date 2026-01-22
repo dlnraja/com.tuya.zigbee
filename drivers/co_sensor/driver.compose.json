@@ -244,8 +244,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_co"
+      "TS0601_co",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -261,7 +261,6 @@
     "large": "drivers/co_sensor/assets/images/large.png",
     "xlarge": "drivers/co_sensor/assets/images/xlarge.png"
   },
-  "id": "co_sensor",
   "platforms": [
     "local"
   ],

@@ -16,7 +16,8 @@
           },
           "example": 20.5
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "air_quality_comprehensive_comprehensive_air_monitor_measure_humidity_changed",
@@ -34,7 +35,8 @@
           },
           "example": 65
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "air_quality_comprehensive_comprehensive_air_monitor_measure_battery_changed",
@@ -52,8 +54,8 @@
           },
           "example": 75
         }
-      ]
+      ],
+      "args": []
     }
   ]
 }
-

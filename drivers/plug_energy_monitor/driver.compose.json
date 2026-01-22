@@ -48,8 +48,6 @@
       "_tz3000_6s5dc9lx",
       "_TZ3000_8NKB7MOF",
       "_tz3000_8nkb7mof",
-      "_TZ3000_NPG02XFT",
-      "_tz3000_npg02xft",
       "_TZ3000_92QD4SQA",
       "_tz3000_92qd4sqa",
       "_TZ3000_amdymr7l",
@@ -72,6 +70,7 @@
       "_tz3000_fqoynhku",
       "_TZ3000_G5XAWFCQ",
       "_tz3000_g5xawfcq",
+      "_TZ3000_GJNOZSAZ",
       "_tz3000_gjnozsaz",
       "_TZ3000_GNJOZSAZ",
       "_tz3000_gnjozsaz",
@@ -154,8 +153,6 @@
       "_tz3210_4ux0ondb",
       "_TZ3210_CEHUW1LW",
       "_tz3210_cehuw1lw",
-      "_TZ3210_W0QQDE0G",
-      "_tz3210_w0qqde0g",
       "_TZE200_2USB_SOCKET",
       "_TZE200_AC0FHFIQ",
       "_tze200_ac0fhfiq",
@@ -421,12 +418,12 @@
       "_TZ3000_typdpdpg",
       "_TZ3000_rdtixbnu",
       "_TZ3000_w0qqde0g",
+      "_TZ3000_NPG02XFT",
+      "_tz3000_npg02xft",
       "SONOFF",
-      "Sonoff",
-      "eWeLink"
+      "Sonoff"
     ],
     "productId": [
-      "TS0601",
       "TS0121",
       "TS011F",
       "A7Z",
@@ -453,7 +450,7 @@
       "lumi.plug.mmeu01",
       "E1603/E1702/E1708",
       "TRADFRI control outlet",
-      "CK-BL702-SWP-01(7020)"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -761,7 +758,6 @@
     "large": "drivers/plug_energy_monitor/assets/images/large.png",
     "xlarge": "drivers/plug_energy_monitor/assets/images/xlarge.png"
   },
-  "id": "plug_energy_monitor",
   "platforms": [
     "local"
   ],

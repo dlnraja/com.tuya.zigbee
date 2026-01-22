@@ -390,7 +390,6 @@
       "_TZ3210_p68kms0l"
     ],
     "productId": [
-      "TS0601",
       "TS0207",
       "q9mpfhw",
       "ZG-222Z",
@@ -406,7 +405,8 @@
       "HS1WL",
       "SNZB-05",
       "3315-S",
-      "3315-Seu"
+      "3315-Seu",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -647,23 +647,6 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
-    },
-    {
-      "id": "invert_alarm",
-      "type": "checkbox",
-      "label": {
-        "en": "Invert Water Alarm",
-        "fr": "Inverser Alarme Eau",
-        "nl": "Wateralarm Omkeren",
-        "de": "Wasseralarm Invertieren"
-      },
-      "value": false,
-      "hint": {
-        "en": "Enable if the sensor shows alarm when dry and no alarm when wet (inverted polarity)",
-        "fr": "Activer si le capteur affiche une alarme quand sec et pas d'alarme quand mouillé (polarité inversée)",
-        "nl": "Inschakelen als de sensor alarm toont wanneer droog en geen alarm wanneer nat (omgekeerde polariteit)",
-        "de": "Aktivieren, wenn der Sensor Alarm anzeigt wenn trocken und keinen Alarm wenn nass (invertierte Polarität)"
-      }
     }
   ],
   "images": {
@@ -671,7 +654,6 @@
     "large": "drivers/water_leak_sensor/assets/images/large.png",
     "xlarge": "drivers/water_leak_sensor/assets/images/xlarge.png"
   },
-  "id": "water_leak_sensor",
   "platforms": [
     "local"
   ],

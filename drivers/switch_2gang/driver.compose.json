@@ -13,11 +13,11 @@
   ],
   "zigbee": {
     "productId": [
-      "TS0601",
       "TS0002",
       "TS0012",
       "TS0002_power",
-      "TS0002_switch_module"
+      "TS0002_switch_module",
+      "TS0601"
     ],
     "learnmode": {
       "image": "/drivers/switch_2gang/assets/learnmode.svg",
@@ -967,7 +967,6 @@
       }
     }
   },
-  "id": "switch_2gang",
   "learnmode": {
     "image": "./assets/learnmode.svg",
     "instruction": {

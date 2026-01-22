@@ -263,8 +263,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_fanctrl"
+      "TS0601_fanctrl",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -285,7 +285,6 @@
     "small": "drivers/fan_controller/assets/images/small.png",
     "large": "drivers/fan_controller/assets/images/large.png"
   },
-  "id": "fan_controller",
   "platforms": [
     "local"
   ],

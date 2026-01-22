@@ -292,8 +292,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_gas"
+      "TS0601_gas",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -541,7 +541,6 @@
     "large": "drivers/gas_sensor/assets/images/large.png",
     "xlarge": "drivers/gas_sensor/assets/images/xlarge.png"
   },
-  "id": "gas_sensor",
   "platforms": [
     "local"
   ],

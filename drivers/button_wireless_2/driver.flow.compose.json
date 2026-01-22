@@ -10,25 +10,18 @@
         "en": "Button [[button]] pressed",
         "fr": "Bouton [[button]] appuyé"
       },
-      "args": [
-        {
-          "name": "button",
-          "type": "dropdown",
-          "title": { "en": "Button", "fr": "Bouton" },
-          "values": [
-            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
-            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } }
-          ]
-        }
-      ],
       "tokens": [
         {
           "name": "button",
           "type": "string",
-          "title": { "en": "Button", "fr": "Bouton" },
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
           "example": "1"
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "button_wireless_2_button_2gang_button_double_press",
@@ -40,25 +33,18 @@
         "en": "Button [[button]] double-pressed",
         "fr": "Bouton [[button]] double-cliqué"
       },
-      "args": [
-        {
-          "name": "button",
-          "type": "dropdown",
-          "title": { "en": "Button", "fr": "Bouton" },
-          "values": [
-            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
-            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } }
-          ]
-        }
-      ],
       "tokens": [
         {
           "name": "button",
           "type": "string",
-          "title": { "en": "Button", "fr": "Bouton" },
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
           "example": "1"
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "button_wireless_2_button_2gang_button_long_press",
@@ -70,25 +56,18 @@
         "en": "Button [[button]] long-pressed",
         "fr": "Bouton [[button]] pressé longtemps"
       },
-      "args": [
-        {
-          "name": "button",
-          "type": "dropdown",
-          "title": { "en": "Button", "fr": "Bouton" },
-          "values": [
-            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
-            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } }
-          ]
-        }
-      ],
       "tokens": [
         {
           "name": "button",
           "type": "string",
-          "title": { "en": "Button", "fr": "Bouton" },
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
           "example": "1"
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "button_wireless_2_button_2gang_button_multi_press",
@@ -119,49 +98,56 @@
           },
           "example": 3
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "button_wireless_2_button_2gang_button_1_pressed",
       "title": {
         "en": "Button 1 pressed",
         "fr": "Bouton 1 appuyé"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_2_button_2gang_button_1_double",
       "title": {
         "en": "Button 1 double-pressed",
         "fr": "Bouton 1 double-cliqué"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_2_button_2gang_button_1_long",
       "title": {
         "en": "Button 1 long-pressed",
         "fr": "Bouton 1 pressé longtemps"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_2_button_2gang_button_2_pressed",
       "title": {
         "en": "Button 2 pressed",
         "fr": "Bouton 2 appuyé"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_2_button_2gang_button_2_double",
       "title": {
         "en": "Button 2 double-pressed",
         "fr": "Bouton 2 double-cliqué"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_2_button_2gang_button_2_long",
       "title": {
         "en": "Button 2 long-pressed",
         "fr": "Bouton 2 pressé longtemps"
-      }
+      },
+      "args": []
     },
     {
       "id": "button_wireless_2_button_2gang_measure_battery_changed",
@@ -179,7 +165,8 @@
           },
           "example": 75
         }
-      ]
+      ],
+      "args": []
     }
   ]
 }
