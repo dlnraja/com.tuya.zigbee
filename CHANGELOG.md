@@ -6,6 +6,23 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.745] - 2026-01-22
+
+### 🔌 EU 16A Smart Plug Fix (GitHub Issue #110)
+
+**Device**: EU 16A Tuya Zigbee Smart Plug with Energy Metering
+- **Model**: TS011F
+- **Manufacturer**: `_TZ3210_w0qqde0g`
+
+**Changes to `plug_energy_monitor/driver.compose.json`:**
+- Added manufacturer ID `_TZ3210_w0qqde0g` (was only `_TZ3000_` variant)
+- Added clusters: 6 (onOff), 1794 (metering), 2820 (electricalMeasurement)
+- Added bindings for automatic energy reporting
+
+**Note**: Users must RE-PAIR the device after updating.
+
+---
+
 ## [5.5.744] - 2026-01-22
 
 ### 🔧 Flow Card ID Namespacing (PR #111 Best Practices)
