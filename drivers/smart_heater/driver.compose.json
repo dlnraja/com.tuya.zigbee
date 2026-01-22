@@ -233,8 +233,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_heater"
+      "TS0601_heater",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -250,7 +250,6 @@
     "large": "drivers/smart_heater/assets/images/large.png",
     "xlarge": "drivers/smart_heater/assets/images/xlarge.png"
   },
-  "id": "smart_heater",
   "platforms": [
     "local"
   ],

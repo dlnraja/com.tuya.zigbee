@@ -5,14 +5,16 @@
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
-      }
+      },
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_hybrid_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Éteint"
-      }
+      },
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_hybrid_measure_humidity_changed",
@@ -30,7 +32,8 @@
           },
           "example": 65
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_hybrid_measure_temperature_changed",
@@ -48,7 +51,8 @@
           },
           "example": 20.5
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_hybrid_measure_power_changed",
@@ -66,21 +70,24 @@
           },
           "example": 100
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_hybrid_alarm_water_true",
       "title": {
         "en": "Water leak detected",
         "fr": "Fuite d'eau détectée"
-      }
+      },
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_hybrid_alarm_water_false",
       "title": {
         "en": "No water leak",
         "fr": "Aucune fuite d'eau"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -93,7 +100,8 @@
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -102,22 +110,24 @@
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
-      }
+      },
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_hybrid_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Éteindre"
-      }
+      },
+      "args": []
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_hybrid_toggle",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
-      }
+      },
+      "args": []
     }
   ]
 }
-

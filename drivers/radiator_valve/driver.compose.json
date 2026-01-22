@@ -47,6 +47,7 @@
       "_tze200_chyvmhay",
       "_TZE200_CWNJRR72",
       "_tze200_cwnjrr72",
+      "_TZE200_DZUQWSYG",
       "_tze200_dzuqwsyg",
       "_TZE200_E9BA97VF",
       "_tze200_e9ba97vf",
@@ -60,10 +61,6 @@
       "_tze200_husqqvux",
       "_TZE200_HVAXB2TC",
       "_tze200_hvaxb2tc",
-      "_TZE200_cxakecfo",
-      "_tze200_cxakecfo",
-      "_TZE204_woww89ip",
-      "_tze204_woww89ip",
       "_TZE200_KDS0PMMV",
       "_tze200_kds0pmmv",
       "_TZE200_KFVQ6AVY",
@@ -515,10 +512,13 @@
       "_TZE200_dfry6ylv",
       "_TZE284_o3x45p96",
       "_TZE200_chyvmhay",
-      "_TZE200_cwbvmsar"
+      "_TZE200_cwbvmsar",
+      "_TZE200_cxakecfo",
+      "_tze200_cxakecfo",
+      "_TZE204_woww89ip",
+      "_tze204_woww89ip"
     ],
     "productId": [
-      "TS0601",
       "TV01-ZB",
       "TV02-ZB",
       "TRV601",
@@ -533,7 +533,8 @@
       "014G2463",
       "STZB402",
       "STZB403",
-      "Zen-01"
+      "Zen-01",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -781,7 +782,6 @@
     "large": "drivers/radiator_valve/assets/images/large.png",
     "xlarge": "drivers/radiator_valve/assets/images/xlarge.png"
   },
-  "id": "radiator_valve",
   "platforms": [
     "local"
   ],

@@ -39,7 +39,6 @@
       "_TZ3000_2izubafb",
       "_TZ3000_4fsgukof",
       "_TZ3000_8xz0pyqy",
-      "_TZ3000_c0gf6xd7",
       "_TZ3000_el5kt5im",
       "_TZ3000_eo3dttwe",
       "_TZ3000_fsiepnrh",
@@ -51,43 +50,40 @@
       "_TZ3000_is27vzco",
       "_TZ3000_iystcadi",
       "_TZ3000_n0h1dr7u",
-      "_TZ3000_p3fph1go",
       "_TZ3000_p6ju8myv",
       "_TZ3000_peszejy7",
       "_TZ3000_pkfazisv",
       "_TZ3000_qjhwtnkf",
       "_TZ3000_rmhkdz0l",
       "_TZ3000_ssp0maqm",
-      "_TZ3000_tj4pwzzm",
-      "_TZ3000_ug1vtuzn",
       "_TZ3000_wr2ucaj9",
       "_TZ3000_zpjuqnco",
-      "_TZ3000_zsh6uat3",
       "_TZE200_0ble7ow3",
+      "_TZ3000_c0gf6xd7",
       "_TZE200_kzm5w4iz",
       "_TZE284_3qhgndv6",
       "ORVIBO",
       "Heiman",
       "HEIMAN",
+      "_TZ3000_p3fph1go",
+      "_TZ3000_tj4pwzzm",
+      "_TZ3000_ug1vtuzn",
+      "_TZ3000_zsh6uat3",
       "Woox",
       "WOOX"
     ],
     "productId": [
-      "TS0215",
-      "TS0215A",
       "TS0218",
-      "TS0601"
+      "TS0601",
+      "TS0215",
+      "TS0215A"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1280,
-          1281,
-          61184
+          0
         ],
-        "bindings": [1, 1280, 1281]
+        "bindings": []
       }
     },
     "learnmode": {
@@ -398,7 +394,6 @@
     "large": "drivers/button_emergency_sos/assets/images/large.png",
     "xlarge": "drivers/button_emergency_sos/assets/images/xlarge.png"
   },
-  "id": "button_emergency_sos",
   "platforms": [
     "local"
   ],

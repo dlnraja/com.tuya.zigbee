@@ -347,8 +347,8 @@
       }
     },
     "productId": [
-      "TS0601",
-      "TS0601_mmwave"
+      "TS0601_mmwave",
+      "TS0601"
     ]
   },
   "settings": [
@@ -711,7 +711,6 @@
     "large": "drivers/motion_sensor_radar_mmwave/assets/images/large.png",
     "xlarge": "drivers/motion_sensor_radar_mmwave/assets/images/xlarge.png"
   },
-  "id": "motion_sensor_radar_mmwave",
   "platforms": [
     "local"
   ],

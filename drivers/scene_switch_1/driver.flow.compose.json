@@ -7,7 +7,8 @@
         "fr": "Bouton appuyé",
         "nl": "Knop ingedrukt",
         "de": "Taste gedrückt"
-      }
+      },
+      "args": []
     },
     {
       "id": "scene_switch_1_button_double_press",
@@ -16,7 +17,8 @@
         "fr": "Bouton double-cliqué",
         "nl": "Knop dubbel ingedrukt",
         "de": "Taste doppelt gedrückt"
-      }
+      },
+      "args": []
     },
     {
       "id": "scene_switch_1_button_long_press",
@@ -25,7 +27,8 @@
         "fr": "Bouton appui long",
         "nl": "Knop lang ingedrukt",
         "de": "Taste lang gedrückt"
-      }
+      },
+      "args": []
     },
     {
       "id": "scene_switch_1_battery_changed",
@@ -39,12 +42,16 @@
         {
           "name": "battery",
           "type": "number",
-          "title": { "en": "Battery %", "fr": "Batterie %", "nl": "Batterij %", "de": "Batterie %" },
+          "title": {
+            "en": "Battery %",
+            "fr": "Batterie %",
+            "nl": "Batterij %",
+            "de": "Batterie %"
+          },
           "example": 80
         }
-      ]
+      ],
+      "args": []
     }
-  ],
-  "conditions": [],
-  "actions": []
+  ]
 }

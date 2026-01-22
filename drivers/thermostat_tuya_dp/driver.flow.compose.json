@@ -16,7 +16,8 @@
           },
           "example": 21
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_temperature_changed",
@@ -34,7 +35,8 @@
           },
           "example": 22.5
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_mode_changed",
@@ -52,21 +54,24 @@
           },
           "example": "heat"
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_heating_started",
       "title": {
         "en": "Heating started",
         "fr": "Chauffage démarré"
-      }
+      },
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_heating_stopped",
       "title": {
         "en": "Heating stopped",
         "fr": "Chauffage arrêté"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -75,21 +80,24 @@
       "title": {
         "en": "Thermostat is !{{heating|not heating}}",
         "fr": "Thermostat !{{chauffe|ne chauffe pas}}"
-      }
+      },
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_temperature_above_target",
       "title": {
         "en": "Temperature is above target",
         "fr": "Température supérieure à la cible"
-      }
+      },
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_temperature_below_target",
       "title": {
         "en": "Temperature is below target",
         "fr": "Température inférieure à la cible"
-      }
+      },
+      "args": []
     },
     {
       "id": "thermostat_tuya_dp_mode_is",

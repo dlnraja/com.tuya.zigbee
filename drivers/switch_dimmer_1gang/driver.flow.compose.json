@@ -1,0 +1,114 @@
+{
+  "triggers": [
+    {
+      "id": "switch_dimmer_1gang_turned_on",
+      "title": {
+        "en": "Turned on",
+        "nl": "Aangezet"
+      },
+      "titleFormatted": {
+        "en": "[[device]] turned on (physical button)",
+        "nl": "[[device]] aangezet (fysieke knop)"
+      },
+      "hint": {
+        "en": "Triggered when the switch is turned on using the physical button",
+        "nl": "Geactiveerd wanneer de schakelaar wordt aangezet met de fysieke knop"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=switch_dimmer_1gang"
+        }
+      ]
+    },
+    {
+      "id": "switch_dimmer_1gang_turned_off",
+      "title": {
+        "en": "Turned off",
+        "nl": "Uitgezet"
+      },
+      "titleFormatted": {
+        "en": "[[device]] turned off (physical button)",
+        "nl": "[[device]] uitgezet (fysieke knop)"
+      },
+      "hint": {
+        "en": "Triggered when the switch is turned off using the physical button",
+        "nl": "Geactiveerd wanneer de schakelaar wordt uitgezet met de fysieke knop"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=switch_dimmer_1gang"
+        }
+      ]
+    },
+    {
+      "id": "switch_dimmer_1gang_brightness_increased",
+      "title": {
+        "en": "Brightness increased",
+        "nl": "Helderheid verhoogd"
+      },
+      "titleFormatted": {
+        "en": "[[device]] brightness increased (physical button)",
+        "nl": "[[device]] helderheid verhoogd (fysieke knop)"
+      },
+      "hint": {
+        "en": "Triggered when brightness is increased using the physical button",
+        "nl": "Geactiveerd wanneer de helderheid wordt verhoogd met de fysieke knop"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness",
+            "nl": "Helderheid"
+          },
+          "example": 0.5
+        }
+      ],
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=switch_dimmer_1gang"
+        }
+      ]
+    },
+    {
+      "id": "switch_dimmer_1gang_brightness_decreased",
+      "title": {
+        "en": "Brightness decreased",
+        "nl": "Helderheid verlaagd"
+      },
+      "titleFormatted": {
+        "en": "[[device]] brightness decreased (physical button)",
+        "nl": "[[device]] helderheid verlaagd (fysieke knop)"
+      },
+      "hint": {
+        "en": "Triggered when brightness is decreased using the physical button",
+        "nl": "Geactiveerd wanneer de helderheid wordt verlaagd met de fysieke knop"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness",
+            "nl": "Helderheid"
+          },
+          "example": 0.5
+        }
+      ],
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=switch_dimmer_1gang"
+        }
+      ]
+    }
+  ]
+}

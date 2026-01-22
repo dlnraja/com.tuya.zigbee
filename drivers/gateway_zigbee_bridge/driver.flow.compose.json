@@ -5,28 +5,32 @@
       "title": {
         "en": "Device joined network",
         "fr": "Appareil rejoint le réseau"
-      }
+      },
+      "args": []
     },
     {
       "id": "gateway_zigbee_bridge_device_left",
       "title": {
         "en": "Device left network",
         "fr": "Appareil quitté le réseau"
-      }
+      },
+      "args": []
     },
     {
       "id": "gateway_zigbee_bridge_connection_lost",
       "title": {
         "en": "Connection lost",
         "fr": "Connexion perdue"
-      }
+      },
+      "args": []
     },
     {
       "id": "gateway_zigbee_bridge_connection_restored",
       "title": {
         "en": "Connection restored",
         "fr": "Connexion rétablie"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -35,7 +39,8 @@
       "title": {
         "en": "Gateway is !{{connected|disconnected}}",
         "fr": "Passerelle !{{connectée|déconnectée}}"
-      }
+      },
+      "args": []
     }
   ],
   "actions": [
@@ -44,14 +49,16 @@
       "title": {
         "en": "Permit joining",
         "fr": "Autoriser l'appairage"
-      }
+      },
+      "args": []
     },
     {
       "id": "gateway_zigbee_bridge_disable_join",
       "title": {
         "en": "Disable joining",
         "fr": "Désactiver l'appairage"
-      }
+      },
+      "args": []
     }
   ]
 }

@@ -304,8 +304,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0115"
+      "TS0115",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -790,7 +790,6 @@
     "large": "drivers/usb_outlet_advanced/assets/images/large.png",
     "xlarge": "drivers/usb_outlet_advanced/assets/images/xlarge.png"
   },
-  "id": "usb_outlet_advanced",
   "platforms": [
     "local"
   ],

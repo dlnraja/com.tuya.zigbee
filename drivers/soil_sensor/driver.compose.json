@@ -46,7 +46,6 @@
       "CR2450"
     ]
   },
-  "$comment": "v5.4.3: NEW - Dedicated soil sensor driver to avoid conflicts with climate_sensor",
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
@@ -107,16 +106,10 @@
       "_tze284_myd45weu",
       "_TZE284_NPJ9BUG3",
       "_tze284_npj9bug3",
-      "_TZE284_O9OFYSMO",
-      "_tze284_o9ofysmo",
       "_TZE284_OITAVOV2",
       "_tze284_oitavov2",
       "_TZE284_SGABHWA6",
       "_tze284_sgabhwa6",
-      "_TZE284_XC3VWX5A",
-      "_tze284_xc3vwx5a",
-      "_TZE284_65GZCSS7",
-      "_tze284_65gzcss7",
       "HOBEIAN",
       "ZG-303Z",
       "COOLO",
@@ -332,12 +325,18 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "_TZE284_O9OFYSMO",
+      "_tze284_o9ofysmo",
+      "_TZE284_XC3VWX5A",
+      "_tze284_xc3vwx5a",
+      "_TZE284_65GZCSS7",
+      "_tze284_65gzcss7"
     ],
     "productId": [
-      "TS0601",
       "ZG-303Z",
-      "CS-201Z"
+      "CS-201Z",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -475,7 +474,6 @@
     "large": "drivers/soil_sensor/assets/images/large.png",
     "xlarge": "drivers/soil_sensor/assets/images/xlarge.png"
   },
-  "id": "soil_sensor",
   "platforms": [
     "local"
   ],

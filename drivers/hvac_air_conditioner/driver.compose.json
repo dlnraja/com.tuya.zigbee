@@ -1,5 +1,4 @@
 {
-  "id": "hvac_air_conditioner",
   "name": {
     "en": "Air Conditioner (Smart)",
     "fr": "Climatiseur (Smart)",
@@ -333,8 +332,8 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_ac"
+      "TS0601_ac",
+      "TS0601"
     ],
     "endpoints": {
       "1": {

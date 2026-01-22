@@ -51,8 +51,6 @@
   "zigbee": {
     "manufacturerName": [
       "_TYZB02_keyjqthh",
-      "HOBEIAN",
-      "ZG-101ZL",
       "_TZ3000_4fjiwweb",
       "_tz3000_4fjiwweb",
       "_TZ3000_5bpeda8u",
@@ -345,7 +343,8 @@
       "Vision",
       "Monoprice",
       "_TZ3000_4ux0ondb",
-      "_TZ3000_yfekcy3n"
+      "_TZ3000_yfekcy3n",
+      "ZG-101ZL"
     ],
     "productId": [
       "TS0041",
@@ -378,13 +377,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          6
+          0
         ],
-        "bindings": [
-          6
-        ]
+        "bindings": []
       }
     },
     "learnmode": {
@@ -637,7 +632,6 @@
       }
     }
   ],
-  "id": "button_wireless_1",
   "pair": [
     {
       "id": "list_devices",

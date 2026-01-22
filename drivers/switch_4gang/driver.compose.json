@@ -14,29 +14,37 @@
   ],
   "zigbee": {
     "productId": [
-      "TS0601",
-      "TS0726",
       "TS0004",
       "TS0014",
       "TS0004_power",
-      "TS0004_switch_module"
+      "TS0004_switch_module",
+      "TS0601",
+      "TS0726"
     ],
     "endpoints": {
       "1": {
-        "clusters": [0, 6],
-        "bindings": [6]
+        "clusters": [
+          0
+        ],
+        "bindings": []
       },
       "2": {
-        "clusters": [0, 6],
-        "bindings": [6]
+        "clusters": [
+          0
+        ],
+        "bindings": []
       },
       "3": {
-        "clusters": [0, 6],
-        "bindings": [6]
+        "clusters": [
+          0
+        ],
+        "bindings": []
       },
       "4": {
-        "clusters": [0, 6],
-        "bindings": [6]
+        "clusters": [
+          0
+        ],
+        "bindings": []
       }
     },
     "learnmode": {
@@ -55,10 +63,6 @@
       "_TYZB01_bagt1e4o",
       "_TZ3000_4VOBCWSC",
       "_tz3000_4vobcwsc",
-      "_TZ3000_iv4eq7eh",
-      "_tz3000_iv4eq7eh",
-      "_TZ3000_3n2minvf",
-      "_tz3000_3n2minvf",
       "_TZ3000_a37eix1s",
       "_TZ3000_A37EIX1S",
       "_TZ3000_CAYEPV1A",
@@ -447,7 +451,11 @@
       "_TZE200_d5p1kr8z",
       "_TZE200_d8fp6ivb",
       "_TZE200_dcydapr2",
-      "_TZE200_dfry6ylv"
+      "_TZE200_dfry6ylv",
+      "_TZ3000_iv4eq7eh",
+      "_tz3000_iv4eq7eh",
+      "_TZ3000_3n2minvf",
+      "_tz3000_3n2minvf"
     ]
   },
   "images": {
@@ -921,7 +929,6 @@
       }
     }
   },
-  "id": "switch_4gang",
   "learnmode": {
     "image": "./assets/learnmode.svg",
     "instruction": {
