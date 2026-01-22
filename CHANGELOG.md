@@ -6,6 +6,17 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.747] - 2026-01-22
+
+### 📋 Forum Device Requests Batch #2
+
+**Added:**
+| Device | Model | Manufacturer ID | Driver |
+|--------|-------|-----------------|--------|
+| eWeLink Plug | CK-BL702-SWP-01(7020) | `eWeLink` | `plug_energy_monitor` |
+
+---
+
 ## [5.5.746] - 2026-01-22
 
 ### 📋 Forum Device Requests Batch
