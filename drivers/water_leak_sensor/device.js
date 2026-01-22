@@ -2,6 +2,7 @@
 
 const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 const IASAlarmFallback = require('../../lib/IASAlarmFallback');
+const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHelper');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -164,8 +165,9 @@ class WaterLeakSensorDevice extends HybridSensorBase {
    * v5.5.550: Get manufacturer-specific profile
    */
   _getDeviceProfile() {
-    const mfr = this.getSetting('zb_manufacturer_name') || '';
-    const modelId = this.getSetting('zb_modelId') || '';
+    // v5.5.735: Use DeviceDataHelper for consistent manufacturer/model retrieval
+    const mfr = getManufacturer(this) || '';
+    const modelId = getModelId(this) || '';
 
     // Try exact match first
     if (WATER_SENSOR_PROFILES[mfr]) {
