@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "fan_speed_changed",
+      "id": "fan_controller_speed_changed",
       "title": {
         "en": "Fan speed changed",
         "fr": "Vitesse ventilateur modifiée",
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "id": "fan_turned_on",
+      "id": "fan_controller_turned_on",
       "title": {
         "en": "Fan turned on",
         "fr": "Ventilateur allumé",
@@ -30,7 +30,7 @@
       }
     },
     {
-      "id": "fan_turned_off",
+      "id": "fan_controller_turned_off",
       "title": {
         "en": "Fan turned off",
         "fr": "Ventilateur éteint",
@@ -41,7 +41,7 @@
   ],
   "conditions": [
     {
-      "id": "fan_is_on",
+      "id": "fan_controller_is_on",
       "title": {
         "en": "Fan is !{{on|off}}",
         "fr": "Ventilateur est !{{allumé|éteint}}",
@@ -50,7 +50,7 @@
       }
     },
     {
-      "id": "fan_speed_is",
+      "id": "fan_controller_speed_is",
       "title": {
         "en": "Fan speed is !{{equal to|not equal to}}",
         "fr": "Vitesse ventilateur !{{égale à|différente de}}",
@@ -94,7 +94,7 @@
       }
     },
     {
-      "id": "fan_set_speed",
+      "id": "fan_controller_set_speed",
       "title": {
         "en": "Set fan speed",
         "fr": "Définir vitesse ventilateur",
@@ -118,7 +118,7 @@
       ]
     },
     {
-      "id": "fan_speed_up",
+      "id": "fan_controller_speed_up",
       "title": {
         "en": "Increase fan speed",
         "fr": "Augmenter vitesse ventilateur",
@@ -127,7 +127,7 @@
       }
     },
     {
-      "id": "fan_speed_down",
+      "id": "fan_controller_speed_down",
       "title": {
         "en": "Decrease fan speed",
         "fr": "Diminuer vitesse ventilateur",
