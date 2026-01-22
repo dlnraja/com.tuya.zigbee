@@ -554,8 +554,9 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     const iasZone = ep1?.clusters?.iasZone;
 
     if (!iasZone) {
-      // v5.5.748: Changed from error to log - device may work via IAS ACE or Tuya DP
-      this.log('[SOS] ℹ️ IAS Zone cluster not available - using IAS ACE or Tuya DP instead');
+      // v5.5.757: Changed from error to log - device may work via IAS ACE or Tuya DP
+      // Many SOS devices (TS0215A, TS0601) work perfectly without IAS Zone
+      this.log('[SOS] ℹ️ IAS Zone not available - using IAS ACE or Tuya DP instead');
       return;
     }
 
