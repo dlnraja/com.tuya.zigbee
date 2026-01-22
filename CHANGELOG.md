@@ -6,6 +6,23 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.753] - 2026-01-22
+
+### 🎯 MANUFACTURER-AWARE DP MAPPINGS (motion_sensor)
+
+- **Root cause**: Same DP IDs have different functions per manufacturer
+- Implemented dynamic DP profile detection based on `manufacturerName`
+- **Manufacturer Profiles**:
+  - **ZG-204ZV** (`_TZE200_3towulqd`): DP4=temperature, DP5=humidity
+  - **Fantem ZB003-x** (`_TZE200_7hfcudw5`): DP4=battery, DP5=temp, DP6=humidity
+  - **ZG-204ZM Radar** (`_TZE200_2aaelwxk`): DP4=distance, DP102=fading_time
+  - **Simple PIR** (`_TZ3000_*`): DP4=battery only (no temp/humidity)
+  - **Immax** (`_TZE200_ppuj1vem`): DP4=battery, DP5=temp, DP6=humidity
+- Prevents regressions when fixing one device from breaking another
+- Each device now gets correct DP mappings based on its manufacturer
+
+---
+
 ## [5.5.752] - 2026-01-22
 
 ### 🐛 SOS Button DP13 REGRESSION FIX
