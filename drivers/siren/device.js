@@ -75,6 +75,9 @@ class SirenDevice extends HybridPlugBase {
       });
     }
 
+    // v5.5.740: Register flow card listeners from upstream PR patterns
+    await this._registerFlowCards();
+
     this.log('[SIREN] ✅ Ready');
   }
 
@@ -111,6 +114,64 @@ class SirenDevice extends HybridPlugBase {
   async _sendTuyaDP(dp, value, type) {
     const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
     if (tuya?.datapoint) await tuya.datapoint({ dp, value, type });
+  }
+
+  /**
+   * v5.5.740: Flow card registration from upstream PR patterns
+   * Source: JohanBendz siren.js + sirentemphumidsensor.js
+   */
+  async _registerFlowCards() {
+    // Volume mapping from upstream
+    const volumeMap = { low: 0, medium: 1, high: 2 };
+
+    // Siren turn on
+    this.homey.flow.getActionCard('siren_turn_on')
+      .registerRunListener(async () => {
+        await this._setOnOff(true);
+        return true;
+      });
+
+    // Siren turn off
+    this.homey.flow.getActionCard('siren_turn_off')
+      .registerRunListener(async () => {
+        await this._setOnOff(false);
+        return true;
+      });
+
+    // Set volume
+    this.homey.flow.getActionCard('siren_set_volume')
+      .registerRunListener(async ({ volume }) => {
+        const volumeValue = volumeMap[volume] ?? 1;
+        this.log(`[SIREN] 🔊 Set volume: ${volume} → DP5=${volumeValue}`);
+        await this._sendTuyaDP(5, volumeValue, 'enum');
+        return true;
+      });
+
+    // Set duration
+    this.homey.flow.getActionCard('siren_set_duration')
+      .registerRunListener(async ({ duration }) => {
+        const durationSec = Math.max(1, Math.min(300, duration));
+        this.log(`[SIREN] ⏱️ Set duration: ${durationSec}s → DP7`);
+        await this._sendTuyaDP(7, durationSec, 'value');
+        return true;
+      });
+
+    // v5.5.740: Set melody from upstream sirentemphumidsensor.js
+    this.homey.flow.getActionCard('siren_set_melody')
+      .registerRunListener(async ({ melody }) => {
+        const melodyId = parseInt(melody, 10);
+        this.log(`[SIREN] 🎵 Set melody: ${melodyId} → DP21`);
+        await this._sendTuyaDP(21, melodyId, 'enum');
+        return true;
+      });
+
+    // Condition: is siren sounding
+    this.homey.flow.getConditionCard('siren_is_sounding')
+      .registerRunListener(async () => {
+        return this.getCapabilityValue('onoff') === true;
+      });
+
+    this.log('[SIREN] ✅ Flow cards registered');
   }
 }
 

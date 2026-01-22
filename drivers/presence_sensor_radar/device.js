@@ -969,6 +969,42 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
+  // v5.5.740: TYPE G1b: HOBEIAN 10G Radar Multi-Sensor (from JohanBendz PR #1306)
+  // Source: https://github.com/JohanBendz/com.tuya.zigbee/pull/1306
+  // Hubitat reference: https://github.com/kkossev/Hubitat
+  // UNIQUE: This radar ALSO has temperature + humidity sensors!
+  // DP1=presence, DP101=humidity/10, DP106=illuminance, DP111=temperature/10
+  // ─────────────────────────────────────────────────────────────────────────────
+  'HOBEIAN_10G_MULTI': {
+    sensors: [
+      '_TZE200_rhgsbacq',  // HOBEIAN 10G radar multi-sensor
+      '_TZE204_rhgsbacq',
+    ],
+    modelId: 'ZG-227Z',  // v5.5.740: From PR #1306
+    battery: false,
+    mainsPowered: true,
+    noBatteryCapability: true,
+    hasIlluminance: true,
+    hasTemperature: true,   // v5.5.740: UNIQUE - this radar HAS temp sensor!
+    hasHumidity: true,      // v5.5.740: UNIQUE - this radar HAS humidity sensor!
+    noTemperature: false,   // Override default
+    noHumidity: false,      // Override default
+    dpMap: {
+      // ═══════════════════════════════════════════════════════════════════
+      // PRESENCE DETECTION
+      // ═══════════════════════════════════════════════════════════════════
+      1: { cap: 'alarm_motion', type: 'presence_bool' },
+
+      // ═══════════════════════════════════════════════════════════════════
+      // ENVIRONMENTAL SENSORS (unique to this radar!)
+      // ═══════════════════════════════════════════════════════════════════
+      101: { cap: 'measure_humidity', divisor: 10 },      // Humidity ÷10
+      106: { cap: 'measure_luminance', type: 'lux_direct' }, // Illuminance
+      111: { cap: 'measure_temperature', divisor: 10 },   // Temperature ÷10
+    }
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
   // TYPE G2: ZG-204ZM Pure Tuya DP variants (_TZE200_* manufacturerNames)
   // These use Tuya DP cluster for ALL data including presence/illuminance
   // Source: https://github.com/Koenkk/zigbee2mqtt/issues/21919
@@ -1151,7 +1187,11 @@ function getSensorConfig(manufacturerName, modelId = null) {
       console.log(`[RADAR] 🔍 HOBEIAN ZG-204ZM matched → HOBEIAN_ZG204ZM config (ZCL+Tuya hybrid)`);
       return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
     }
-    // Add other HOBEIAN models here as needed
+    // v5.5.740: HOBEIAN 10G multi-sensor from PR #1306
+    if (modelId === 'ZG-227Z') {
+      console.log(`[RADAR] 🔍 HOBEIAN ZG-227Z matched → HOBEIAN_10G_MULTI config (radar + temp/humidity)`);
+      return { ...SENSOR_CONFIGS.HOBEIAN_10G_MULTI, configName: 'HOBEIAN_10G_MULTI' };
+    }
   }
 
   // v5.5.286: RONNY FIX - Enhanced matching for TZE284/TZE204 series

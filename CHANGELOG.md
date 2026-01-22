@@ -18,6 +18,26 @@ All notable changes to the Universal Tuya Zigbee app.
 
 **Hybrid approach**: Merged upstream IDs while preserving local enhancements (flow cards, settings, capabilities).
 
+### 🎵 Siren Melody Flow Card (from JohanBendz PR analysis)
+
+**New Flow Action: `siren_set_melody`**
+- 18 melody options (Doorbell, Für Elise, Westminster, Police Siren, etc.)
+- Source: Upstream sirentemphumidsensor.js patterns
+- Full flow card registration for all siren actions
+
+### 📡 HOBEIAN 10G Radar Multi-Sensor (from PR #1306)
+
+**New Sensor Config: `HOBEIAN_10G_MULTI`**
+- Manufacturer IDs: `_TZE200_rhgsbacq`, `_TZE204_rhgsbacq`
+- Model: ZG-227Z
+- **UNIQUE**: Radar sensor WITH temperature + humidity!
+- DP Mappings: DP1=presence, DP101=humidity/10, DP106=lux, DP111=temp/10
+- Source: https://github.com/JohanBendz/com.tuya.zigbee/pull/1306
+
+**Capabilities Added to presence_sensor_radar:**
+- `measure_temperature` (for multi-sensor variants)
+- `measure_humidity` (for multi-sensor variants)
+
 ---
 
 ## [5.5.738] - 2026-01-22
