@@ -6,14 +6,20 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
-## [5.5.747] - 2026-01-22
+## [5.5.748] - 2026-01-22
 
-### 📋 Forum Device Requests Batch #2
+### 🔧 Version Bump & CI Fix
 
-**Added:**
-| Device | Model | Manufacturer ID | Driver |
-|--------|-------|-----------------|--------|
-| eWeLink Plug | CK-BL702-SWP-01(7020) | `eWeLink` | `plug_energy_monitor` |
+- Fixed GitHub Actions publish workflow failures (version 5.5.739 was already published)
+- Consolidated versions 5.5.740-5.5.747 changes into 5.5.748
+
+### 📋 Included from recent updates:
+- eWeLink CK-BL702-SWP-01(7020) plug with energy monitoring
+- Anti-zigbee-generic audit script and checklist
+- CCT LED strip _TZ3210_ksqwlz9v support
+- EU 16A Smart Plug energy metering fix (Issue #110)
+- Flow card ID namespacing for fan_controller (PR #111)
+- HOBEIAN ZG-222Z water leak sensor alarm fix
 
 ---
 
