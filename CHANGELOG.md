@@ -6,6 +6,30 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.732] - 2026-01-22
+
+### 🔧 GitHub Issues Resolution
+
+**Issue #110 - TS011F Plug Energy Monitor:**
+- Added `_TZ3210_w0qqde0g` to plug_energy_monitor driver
+- Device now pairs with full energy metering (W, kWh, V, A)
+
+**Issue #109 - Zbeacon TH01:**
+- Already supported in climate_sensor driver
+- Both manufacturerName `Zbeacon` and productId `TH01` present
+
+**Johan's GitHub Review:**
+- All recent device requests already supported
+- _TZE284_aao3yzhs (soil sensor) ✅
+- _TZ3000_blhvsaqf (BSEED switch) ✅
+- _TZ3000_qkixdnon (BSEED 3-gang) ✅
+- _TZ3000_l9brjwau (BSEED 2-gang) ✅
+- _TZE284_9ern5sfh (climate sensor) ✅
+- _TZE200_t1blo2bj (siren) ✅
+- ZG-227Z (HOBEIAN climate) ✅
+
+---
+
 ## [5.5.731] - 2026-01-21
 
 ### 📡 Complete Forum Review & SOS Button Analysis
