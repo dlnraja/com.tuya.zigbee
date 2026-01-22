@@ -6,6 +6,17 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.756] - 2026-01-22
+
+### 📊 Forum: PJ-1203A Bidirectional Energy Meter
+
+- **power_clamp_meter**: Added `_TZE204_81yrt3lo` and `_TZE284_81yrt3lo`
+- Tuya PJ-1203A 80A CT clamp bidirectional energy meter
+- Forum request by @blutch32 (device paired as wrong type)
+- Source: Homey Community Forum page 44
+
+---
+
 ## [5.5.755] - 2026-01-22
 
 ### 🎛️ PR #112: Physical Button Flow Triggers (packetninja)
