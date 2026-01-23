@@ -6,6 +6,45 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.761] - 2026-01-23
+
+### 🔧 Zigbee2MQTT (Z2M) Enrichment
+
+- **TuyaDataPointsZ2M.js**: Comprehensive Z2M-based enrichment
+  - `DATA_TYPES`: Standard Tuya data type definitions (raw, bool, number, string, enum, bitmap)
+  - `valueConverterBasic`: Factory for lookup, scale, divideBy converters
+  - `valueConverter`: Pre-built converters (powerOnBehavior, switchType, temperatureUnit, etc.)
+  - `getDataValue()`: Parse DP values by datatype
+  - Schedule parsers: `parseSchedule()`, `marshalSchedule()`, `parseScheduleMultiDP()`
+  - Energy meter: `parsePhaseVariant1/2/3()`, `parseThreshold()`
+  - DP creators: `dpValueFromNumber/Bool/Enum/String/Raw/Bitmap()`
+  - Inching switch: `parseInchingSwitch()`, `marshalInchingSwitch()`
+  - Weather conditions & backlight colors enums
+- Source: https://github.com/Koenkk/zigbee-herdsman-converters
+
+---
+
+## [5.5.760] - 2026-01-23
+
+### 🔧 Johan Bendz DP/ZCL Enrichment
+
+- **TuyaDataPointsJohan.js**: Comprehensive versioned DP definitions
+  - V1/V2 Thermostat DPs (TRVs, climate control)
+  - V1/V2 Curtain Motor DPs (basic & with tilt)
+  - V1/V2 Fan Switch DPs
+  - V1/V2 Dimmer DPs (1-gang, 2-gang)
+  - Multi-Gang Switch DPs (1-6 gang)
+  - Sensor DPs: Climate, Motion, Contact, Water Leak, Smoke, Air Quality, Soil
+  - Siren, Smart Plug, Garage Door, Irrigation DPs
+- **TuyaHelpersJohan.js**: Utility functions
+  - `getDataValue()`: Parse Tuya DP values by datatype
+  - `parseSchedule()` / `marshalSchedule()`: Thermostat schedule handling
+  - Temperature/Brightness/Position conversion helpers
+  - Dimmer configuration helpers (min/max brightness, light source type)
+- Source: https://github.com/JohanBendz/com.tuya.zigbee
+
+---
+
 ## [5.5.759] - 2026-01-22
 
 ### 📦 Publish Release
