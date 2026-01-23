@@ -531,11 +531,20 @@ class Button4GangDevice extends ButtonDevice {
       const isTS0044 = productId.includes('TS0044') || productId.includes('TS004F');
       const usesE000ByManufacturer = knownE000Devices.some(id => manufacturerName.includes(id));
 
-      // v5.5.758: ALWAYS try to bind for TS0044/TS004F and known manufacturers
-      // Don't check if cluster object exists - it won't! Homey doesn't expose unknown clusters
-      if (!usesE000ByManufacturer && !isTS0044) {
+      // v5.5.762: ALWAYS setup E000 BoundCluster for 4-button devices
+      // On first init, manufacturerName/productId may be empty - we can't know if device uses E000
+      // Better to setup and not receive anything than to miss button presses
+      // This is a no-op if device doesn't actually use cluster 57344
+      const shouldSetupE000 = usesE000ByManufacturer || isTS0044 || !manufacturerName;
+      
+      if (!shouldSetupE000) {
         this.log('[BUTTON4-E000] ℹ️ Device is not a known E000 user, skipping BoundCluster setup');
         return;
+      }
+      
+      // Log why we're setting up
+      if (!manufacturerName) {
+        this.log('[BUTTON4-E000] ⚠️ ManufacturerName empty on first init - setting up E000 as fallback');
       }
       
       this.log(`[BUTTON4-E000] 🔧 Setting up BoundCluster for cluster 0xE000 (57344)`);
