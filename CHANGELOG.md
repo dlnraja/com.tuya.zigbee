@@ -6,6 +6,18 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.762] - 2026-01-23
+
+### 🐛 Diagnostics Fixes
+
+- **MOES _TZ3000_zgyzgdua Button Fix**: Always setup E000 BoundCluster for 4-button devices
+  - On first init, manufacturerName/productId may be empty
+  - Now sets up cluster 57344 binding as fallback when manufacturer unknown
+  - Prevents "Device does not use cluster 0xE000" on first pairing
+- **SOS Button IAS Zone**: Already fixed in v5.5.757 (info log instead of error)
+
+---
+
 ## [5.5.761] - 2026-01-23
 
 ### 🔧 Zigbee2MQTT (Z2M) Enrichment
