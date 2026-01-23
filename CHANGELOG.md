@@ -6,6 +6,59 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.764] - 2026-01-23
+
+### 🚀 TuyaDataPointsZ2M.js Expanded Enrichment
+
+- **Device Fingerprints**: Added `TUYA_FINGERPRINTS` categorized database
+  - TRV (20 fingerprints including `_TZE284_o3x45p96`)
+  - Presence/Radar sensors (16 fingerprints)
+  - Smart Locks (8 fingerprints)
+  - Curtain motors (16 fingerprints)
+  - Dimmers (12 fingerprints)
+  - Plugs with energy (12 fingerprints)
+  - Garage doors, irrigation, smoke/gas, air quality, scene switches
+
+- **Color Converters**: HSV/RGB/Tuya color format utilities
+  - `hsvToRgb()`, `rgbToHsv()`: Standard color conversions
+  - `tuyaToHsv()`, `hsvToTuya()`: Tuya HHHHSSSSBBBB format
+  - `kelvinToTuya()`, `tuyaToKelvin()`: Color temperature (2700-6500K)
+  - `miredToTuya()`, `tuyaToMired()`: Mired conversion
+
+- **Extended Value Converters**: 20+ new pre-built converters
+  - Thermostat: `thermostatPreset`, `thermostatSystemMode`, `thermostatRunningState`
+  - Fan: `fanMode`, `fanMode2`, `fanDirection`
+  - Alarm: `alarmVolume`, `alarmMode`
+  - Lock: `lockState`, `lockAction`
+  - Garage: `garageDoorState`, `garageDoorAction`
+  - Curtain: `curtainState`, `curtainMotorDirection`
+  - Presence: `presenceSensitivity`, `radarSensitivity`
+  - Irrigation: `irrigationMode`, `irrigationState`
+  - Smoke/Gas: `smokeAlarmState`, `gasAlarmState`
+
+- **Device-Specific DP Definitions**:
+  - `PRESENCE_DPS`: Radar/presence sensor DPs (presence, sensitivity, distance, etc.)
+  - `LOCK_DPS`: Smart lock DPs (state, battery, child lock, auto lock)
+  - `GARAGE_DPS`: Garage door DPs (trigger, state, countdown, light)
+  - `IRRIGATION_DPS`: Irrigation controller DPs (4 zones, timers, battery)
+  - `SMOKE_GAS_DPS`: Detector DPs (alarm states, battery, self-test)
+
+- **Helper Functions**:
+  - `parsePresenceConfig()`: Parse radar sensor configuration
+  - `parseLockUser()`: Parse lock user entry data
+  - `parseGarageDoorState()`: Parse garage door state
+  - `parseIrrigationSchedule()`: Parse irrigation schedules
+  - `detectDeviceType()`: Auto-detect device type from manufacturer
+  - `isDeviceCategory()`: Check if device belongs to category
+
+- **Power-on Behavior**: `POWER_ON_BEHAVIORS`, `getPowerOnBehaviorName()`
+
+### ✅ No Conflicts
+- Complements `TuyaDataPointsJohan.js` (versioned DP mappings)
+- Complements `TuyaDataPointsComplete.js` (cluster/command database)
+
+---
+
 ## [5.5.763] - 2026-01-23
 
 ### 🔧 Cluster Binding Fixes (GitHub Issue #110 + Forum Reports)
