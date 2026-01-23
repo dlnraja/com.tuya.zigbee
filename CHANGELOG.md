@@ -6,6 +6,33 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.763] - 2026-01-23
+
+### 🔧 Cluster Binding Fixes (GitHub Issue #110 + Forum Reports)
+
+- **button_wireless_4**: Added proper cluster bindings for MOES TS0044 button detection
+  - EP1: clusters [0,1,5,6,18,57344] with bindings [1,5,6,18,57344]
+  - EP2-4: clusters [0,6,18] with bindings [6,18]
+  - Enables powerConfiguration, scenes, onOff, multistateInput, and Tuya E000
+  - **RE-PAIR REQUIRED** for bindings to take effect
+- **curtain_motor**: Added clusters for TS130F windowCovering support
+  - EP1: clusters [0,6,258,61184] with bindings [6,258]
+  - Enables onOff, windowCovering (position), and Tuya EF00
+
+### ✅ Devices Already Supported (Verified)
+
+- `_TZ3210_w0qqde0g` / TS011F: **plug_energy_monitor** (lines 156-157)
+- `_TZ3000_bs93npae` / TS130F: **curtain_motor** (lines 71-72)
+- `_TZE284_o3x45p96` / TS0601: **radiator_valve** (AVATTO TRV, lines 136-137)
+- `_TZ3000_wkai4ga5`, `_TZ3000_5tqxpine`: **button_wireless_4** (lines 116-117, 78-79)
+- `_TZ3000_zgyzgdua` / TS0044: **button_wireless_4** (line 348)
+
+### ⚠️ User Action Required
+
+**Issue #110 users**: Please **RE-PAIR** your device after updating. Cluster bindings are only applied during pairing.
+
+---
+
 ## [5.5.762] - 2026-01-23
 
 ### 🐛 Diagnostics Fixes
