@@ -6,6 +6,15 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.765] - 2026-01-23
+
+### 📦 Publish Release
+
+- Z2M enrichments release with expanded TuyaDataPointsZ2M.js
+- Device fingerprints, color converters, device-specific DPs, helpers
+
+---
+
 ## [5.5.764] - 2026-01-23
 
 ### 🚀 TuyaDataPointsZ2M.js Expanded Enrichment
