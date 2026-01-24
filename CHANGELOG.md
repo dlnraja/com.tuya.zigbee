@@ -6,6 +6,17 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.768] - 2026-01-24
+
+### 🐛 Bug Fixes
+
+- **DriverMappingLoader**: Fixed stderr log spam for optional database file
+  - Removed error log when `driver-mapping-database.json` not found
+  - This is an optional enhancement file, not a required component
+  - App functions normally without it (uses empty database fallback)
+
+---
+
 ## [5.5.767] - 2026-01-24
 
 ### 🐛 Bug Fixes (Cam's Diagnostics Reports)
