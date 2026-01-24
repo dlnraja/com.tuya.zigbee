@@ -6,6 +6,33 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.767] - 2026-01-24
+
+### 🐛 Bug Fixes (Cam's Diagnostics Reports)
+
+- **button_emergency_sos**: Added proper cluster bindings for IAS Zone, IAS ACE, and Tuya DP
+  - Fixed: `❌ No IAS Zone cluster found!` error
+  - Added clusters: basic(0), powerConfiguration(1), iasZone(1280), iasAce(1281), tuya(61184)
+  - ⚠️ **Users must RE-PAIR** SOS buttons for bindings to take effect
+
+- **button_wireless_4 (MOES TS0044/TS004F)**: Cluster bindings already present since v5.5.763
+  - Diagnostics show `Only basic cluster available` = device paired before bindings were added
+  - ⚠️ **Users must RE-PAIR** their devices for scenes/onOff/multistateInput clusters
+
+- **Smart button paired as motion_sensor**: Wrong driver during initial pairing
+  - User should delete device and RE-PAIR using correct driver type
+
+### ℹ️ User Action Required
+
+| Device | Issue | Solution |
+|--------|-------|----------|
+| SOS Button | "No IAS Zone cluster" | RE-PAIR device |
+| MOES TS0044/TS004F | No button response | RE-PAIR device |
+| Wireless buttons | Only basic cluster | RE-PAIR device |
+| Smart button as motion_sensor | Wrong driver | Delete + RE-PAIR |
+
+---
+
 ## [5.5.766] - 2026-01-24
 
 ### 🐛 Bug Fixes (Diagnostics Reports)
