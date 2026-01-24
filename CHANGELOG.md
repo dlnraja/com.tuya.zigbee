@@ -6,6 +6,29 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.766] - 2026-01-24
+
+### 🐛 Bug Fixes (Diagnostics Reports)
+
+- **switch_dimmer_1gang**: Added driver to app manifest (PR #112 from Attilla)
+  - Driver was present in codebase but missing from app.json
+  - Now properly included with all 24 manufacturer IDs
+  - Supports TS0601 Tuya touch dimmers
+
+- **button_wireless_4**: Cluster bindings already fixed in v5.5.763
+  - ⚠️ **Users must RE-PAIR** their MOES TS0044 devices after updating
+  - Cluster bindings (scenes, onOff, multistateInput, E000) only apply during pairing
+
+- **TS0726/_TZ3002_pzao9ls1**: Already supported in switch_4gang driver
+  - BSEED 4-gang switch working correctly per diagnostics
+
+### ℹ️ Known Issues (User Action Required)
+
+- **SOS Button IAS Zone**: Some devices report "No IAS Zone cluster" - ensure proper pairing
+- **Button devices not responding**: RE-PAIR required after v5.5.763+ update
+
+---
+
 ## [5.5.765] - 2026-01-23
 
 ### 📦 Publish Release
