@@ -27,7 +27,7 @@
     "en": "🔧 GitHub Issues: Added _TZ3210_w0qqde0g to plug_energy_monitor (#110). Verified Zbeacon TH01 support (#109). All Johan's GitHub requests already supported."
   },
   "5.5.731": {
-    "en": "📡 Forum Review: All devices from posts #1127-#1099 verified supported. SOS button analysis - TS0215A IEEE address recovery documented."
+    "en": "Complete forum review & SOS button analysis. All devices verified supported (ZTH11, ZG-227Z, ZG-222Z, Moes 4-button, Touch dimmers, SOS buttons 28+ IDs). Common solution: re-pair devices after driver updates."
   },
   "5.5.718": {
     "en": "🔧 TS0726 4-GANG FIX (Hartmut_Dunker): Added onOff cluster (6) and bindings to all 4 endpoints. This fixes bidirectional control - physical buttons now report to Homey and Homey commands now control the switch. RE-PAIR REQUIRED after update."
@@ -2791,7 +2791,7 @@
   "5.5.680": {
     "en": "📋 +38 driver.flow.compose.json files. 102 drivers with flow cards. Publish validation passed."
   },
-  "5.5.731": {
-    "en": "Complete forum review & SOS button analysis. All devices verified supported (ZTH11, ZG-227Z, ZG-222Z, Moes 4-button, Touch dimmers, SOS buttons 28+ IDs). Common solution: re-pair devices after driver updates."
+  "5.5.769": {
+    "en": "op^timise and fix issues related to optinal referencies "
   }
 }
