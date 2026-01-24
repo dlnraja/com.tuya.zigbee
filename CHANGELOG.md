@@ -6,6 +6,29 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.770] - 2026-01-24
+
+### 📚 Documentation & Research
+
+- **USER_EXPERIENCE_TRACKER.md**: Updated with comprehensive research findings
+  - Added 10+ source references (Z2M, ZHA, Blakadder, Homey SDK)
+  - Updated issue statuses and fix versions
+  - Added session log with completed tasks
+
+### ✅ Verification
+
+- **Flow cards**: Verified all critical drivers have proper flow card implementations
+  - `button_wireless_4`: 17 flow triggers with unique namespace
+  - `button_emergency_sos`: 2 flow triggers with unique namespace
+  - `motion_sensor`: 5 triggers, 1 condition with unique namespace
+  - `thermostat_tuya_dp`: 5 triggers, 5 conditions, 5 actions with unique namespace
+  - `radiator_valve`: 2 triggers, 1 action with unique namespace
+
+- **Flow namespaces**: All drivers use unique flow card IDs to prevent conflicts
+  - Pattern: `{driver_id}_{action}` (e.g., `button_wireless_4_button_4gang_button_pressed`)
+
+---
+
 ## [5.5.768] - 2026-01-24
 
 ### 🐛 Bug Fixes
