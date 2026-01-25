@@ -15,7 +15,7 @@ try {
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SOS EMERGENCY BUTTON - v5.5.146 UNIVERSAL (ZCL + Tuya DP)               ║
+ * ║      SOS EMERGENCY BUTTON - v5.5.804 PETER_VAN_WERKHOVEN FIX                 ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  SUPPORTED PROTOCOLS:                                                        ║
@@ -52,6 +52,9 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
     // v5.5.120: Debug - show ALL available endpoints and clusters
     this._debugShowAllClusters();
+
+    // v5.5.804: Check for missing clusters and warn user
+    await this._checkClustersAndWarn();
 
     // v5.5.120: Setup GLOBAL listener for ALL traffic
     this._setupGlobalListeners();
@@ -543,6 +546,72 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       if (!this.hasCapability(cap)) {
         await this.addCapability(cap).catch(() => { });
       }
+    }
+  }
+
+  /**
+   * v5.5.804: Check for missing clusters and warn user (Peter_van_Werkhoven fix)
+   * If device only has basic cluster, it didn't interview properly
+   */
+  async _checkClustersAndWarn() {
+    const ep1 = this.zclNode?.endpoints?.[1];
+    if (!ep1?.clusters) {
+      this.log('[SOS] ⚠️ WARNING: No clusters available on endpoint 1!');
+      this.setWarning('Device interview failed. Please remove and re-pair this device.').catch(() => {});
+      return;
+    }
+
+    const clusterNames = Object.keys(ep1.clusters);
+    this.log(`[SOS] 📊 Available clusters: ${clusterNames.join(', ')}`);
+
+    // Check for essential SOS button clusters
+    const hasIasAce = clusterNames.some(n => n.toLowerCase().includes('ace') || n === '1281');
+    const hasIasZone = clusterNames.some(n => n.toLowerCase().includes('iaszone') || n === '1280');
+    const hasPowerCfg = clusterNames.some(n => n.toLowerCase().includes('power') || n === '1');
+    const hasTuya = clusterNames.some(n => n.toLowerCase().includes('tuya') || n === '61184' || n === 'ef00');
+
+    // Count essential clusters
+    const essentialCount = [hasIasAce, hasIasZone, hasPowerCfg, hasTuya].filter(Boolean).length;
+
+    if (essentialCount === 0 && clusterNames.length <= 2) {
+      // Only basic cluster - interview failed!
+      this.log('[SOS] ⚠️⚠️⚠️ CRITICAL: Device only has basic cluster!');
+      this.log('[SOS] ⚠️ This means the Zigbee interview failed during pairing.');
+      this.log('[SOS] ⚠️ The device will NOT work until it is re-paired.');
+      this.log('[SOS] ');
+      this.log('[SOS] 📋 TO FIX:');
+      this.log('[SOS]   1. Remove this device from Homey');
+      this.log('[SOS]   2. Factory reset the SOS button (hold button 5-10 seconds)');
+      this.log('[SOS]   3. Re-pair the device (keep it close to Homey)');
+      this.log('[SOS]   4. Press the SOS button during pairing to keep it awake');
+      this.log('[SOS] ');
+      
+      // Set warning on device tile
+      await this.setWarning('⚠️ Interview failed! Remove and re-pair device.').catch(() => {});
+      
+      // Also set unavailable with explanation
+      await this.setUnavailable('Device needs to be re-paired. Remove from Homey, factory reset (hold button 5-10s), then re-pair.').catch(() => {});
+      
+      this._interviewFailed = true;
+    } else if (essentialCount < 2) {
+      // Partial interview - might work partially
+      this.log('[SOS] ⚠️ Partial interview: Some clusters missing');
+      this.log(`[SOS]   IAS ACE (1281): ${hasIasAce ? '✅' : '❌'}`);
+      this.log(`[SOS]   IAS Zone (1280): ${hasIasZone ? '✅' : '❌'}`);
+      this.log(`[SOS]   Power Config (1): ${hasPowerCfg ? '✅' : '❌'}`);
+      this.log(`[SOS]   Tuya DP (61184): ${hasTuya ? '✅' : '❌'}`);
+      
+      if (!hasPowerCfg) {
+        this.log('[SOS] ℹ️ Battery reading may not work without powerConfiguration cluster');
+      }
+      
+      // Set a mild warning but don't mark unavailable
+      await this.setWarning('Some features may not work. Re-pair if issues persist.').catch(() => {});
+    } else {
+      // Good interview
+      this.log('[SOS] ✅ Cluster check passed - device should work correctly');
+      await this.unsetWarning().catch(() => {});
+      this._interviewFailed = false;
     }
   }
 

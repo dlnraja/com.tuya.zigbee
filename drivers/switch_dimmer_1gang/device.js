@@ -4,6 +4,7 @@ const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDev
 const {CLUSTER} = require('zigbee-clusters');
 
 // v5.5.755: PR #112 (packetninja) - Debug mode for detailed logging
+// v5.5.799: Enhanced with settings support and robustness improvements
 const DEBUG_MODE = false;
 
 const dataPoints = {
@@ -13,6 +14,20 @@ const dataPoints = {
   countdown: 9,
   powerOnBehavior: 14,
   lightType: 16,
+};
+
+// v5.5.799: Light type enum values
+const LIGHT_TYPES = {
+  LED: 0,
+  INCANDESCENT: 1,
+  HALOGEN: 2
+};
+
+// v5.5.799: Power-on behavior enum values
+const POWER_ON_BEHAVIOR = {
+  OFF: 0,
+  ON: 1,
+  LAST_STATE: 2
 };
 
 class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
@@ -32,6 +47,9 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
     this._lastBrightnessValue = null;
     this._appCommandPending = false;  // Track if app sent command recently
     this._appCommandTimeout = null;
+    
+    // v5.5.799: Track settings to avoid unnecessary writes
+    this._settingsApplied = false;
 
     // Register Tuya datapoint mappings
     this.log('Registering Tuya datapoint mappings...');
@@ -64,10 +82,92 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
     });
 
     this.setupTuyaClusterListener();
+    
+    // v5.5.799: Apply saved settings after init (with delay for device stability)
+    setTimeout(() => this._applyInitialSettings(), 3000);
 
     this.log('════════════════════════════════════════');
     this.log('SwitchDimmer1Gang onNodeInit COMPLETE');
     this.log('════════════════════════════════════════');
+  }
+  
+  /**
+   * v5.5.799: Handle settings changes from Homey UI
+   * Implements min_brightness, power_on_behavior, light_type settings
+   */
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    this.log('⚙️ Settings changed:', changedKeys);
+    
+    for (const key of changedKeys) {
+      try {
+        switch (key) {
+          case 'min_brightness':
+            // Convert percentage (1-100) to Tuya range (10-1000)
+            const minBrightness = Math.round(10 + ((newSettings.min_brightness / 100) * 990));
+            this.log(`Setting min_brightness: ${newSettings.min_brightness}% → ${minBrightness}`);
+            await this.sendTuyaCommand(dataPoints.minBrightness, minBrightness, 'value');
+            break;
+            
+          case 'power_on_behavior':
+            const powerOnValue = parseInt(newSettings.power_on_behavior, 10);
+            this.log(`Setting power_on_behavior: ${powerOnValue}`);
+            await this.sendTuyaCommand(dataPoints.powerOnBehavior, powerOnValue, 'enum');
+            break;
+            
+          case 'light_type':
+            const lightTypeValue = parseInt(newSettings.light_type, 10);
+            this.log(`Setting light_type: ${lightTypeValue}`);
+            await this.sendTuyaCommand(dataPoints.lightType, lightTypeValue, 'enum');
+            break;
+            
+          default:
+            this.log(`Unknown setting: ${key}`);
+        }
+      } catch (err) {
+        this.error(`Failed to apply setting ${key}:`, err);
+        throw new Error(`Failed to apply ${key}: ${err.message}`);
+      }
+    }
+  }
+  
+  /**
+   * v5.5.799: Apply initial settings after device init
+   */
+  async _applyInitialSettings() {
+    if (this._settingsApplied) return;
+    this._settingsApplied = true;
+    
+    try {
+      const settings = this.getSettings();
+      this.log('📋 Applying initial settings:', settings);
+      
+      // Apply min_brightness if set
+      if (settings.min_brightness && settings.min_brightness > 1) {
+        const minBrightness = Math.round(10 + ((settings.min_brightness / 100) * 990));
+        this.log(`Applying min_brightness: ${settings.min_brightness}% → ${minBrightness}`);
+        await this.sendTuyaCommand(dataPoints.minBrightness, minBrightness, 'value').catch(e => 
+          this.log('min_brightness not supported by this device'));
+      }
+      
+      // Apply power_on_behavior if not default
+      if (settings.power_on_behavior && settings.power_on_behavior !== '2') {
+        const powerOnValue = parseInt(settings.power_on_behavior, 10);
+        this.log(`Applying power_on_behavior: ${powerOnValue}`);
+        await this.sendTuyaCommand(dataPoints.powerOnBehavior, powerOnValue, 'enum').catch(e =>
+          this.log('power_on_behavior not supported by this device'));
+      }
+      
+      // Apply light_type if not default
+      if (settings.light_type && settings.light_type !== '0') {
+        const lightTypeValue = parseInt(settings.light_type, 10);
+        this.log(`Applying light_type: ${lightTypeValue}`);
+        await this.sendTuyaCommand(dataPoints.lightType, lightTypeValue, 'enum').catch(e =>
+          this.log('light_type not supported by this device'));
+      }
+      
+    } catch (err) {
+      this.error('Failed to apply initial settings:', err);
+    }
   }
 
   setupTuyaClusterListener() {

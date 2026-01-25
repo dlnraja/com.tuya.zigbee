@@ -1232,18 +1232,31 @@ for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
 // Get sensor config by manufacturerName and optional modelId
 // v5.5.512: Added modelId matching for HOBEIAN devices
 function getSensorConfig(manufacturerName, modelId = null) {
-  // v5.5.512: HOBEIAN special handling - match by manufacturerName + modelId
+  // v5.5.803: HOBEIAN special handling - match by manufacturerName + modelId
   // HOBEIAN makes multiple products, need modelId to distinguish
-  if (manufacturerName === 'HOBEIAN' && modelId) {
-    if (modelId === 'ZG-204ZM') {
-      console.log(`[RADAR] 🔍 HOBEIAN ZG-204ZM matched → HOBEIAN_ZG204ZM config (HYBRID: ZCL + Tuya DP)`);
-      return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
+  // v5.5.803 FIX: Handle "null" string and actual null values - use DEFAULT config for auto-discovery
+  if (manufacturerName === 'HOBEIAN') {
+    // Check for valid modelId (not null, not "null" string, not empty)
+    const validModelId = modelId && modelId !== 'null' && modelId.trim() !== '';
+    
+    if (validModelId) {
+      if (modelId === 'ZG-204ZM') {
+        console.log(`[RADAR] 🔍 HOBEIAN ZG-204ZM matched → HOBEIAN_ZG204ZM config (HYBRID: ZCL + Tuya DP)`);
+        return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
+      }
+      // v5.5.740: HOBEIAN 10G multi-sensor from PR #1306
+      if (modelId === 'ZG-227Z') {
+        console.log(`[RADAR] 🔍 HOBEIAN ZG-227Z matched → HOBEIAN_10G_MULTI config (radar + temp/humidity)`);
+        return { ...SENSOR_CONFIGS.HOBEIAN_10G_MULTI, configName: 'HOBEIAN_10G_MULTI' };
+      }
     }
-    // v5.5.740: HOBEIAN 10G multi-sensor from PR #1306
-    if (modelId === 'ZG-227Z') {
-      console.log(`[RADAR] 🔍 HOBEIAN ZG-227Z matched → HOBEIAN_10G_MULTI config (radar + temp/humidity)`);
-      return { ...SENSOR_CONFIGS.HOBEIAN_10G_MULTI, configName: 'HOBEIAN_10G_MULTI' };
-    }
+    
+    // v5.5.803: When modelId is null/unknown, use HOBEIAN_10G_MULTI as default
+    // because it has the most complete feature set (temp + humidity + illuminance + motion)
+    // Users with ZG-204ZM (no temp/humidity) will simply see those values as null
+    console.log(`[RADAR] 🔍 HOBEIAN with unknown modelId "${modelId}" → using HOBEIAN_10G_MULTI config (most complete)`);
+    console.log(`[RADAR] ℹ️ If wrong, device should be re-paired to get correct modelId`);
+    return { ...SENSOR_CONFIGS.HOBEIAN_10G_MULTI, configName: 'HOBEIAN_10G_MULTI_FALLBACK' };
   }
 
   // v5.5.286: RONNY FIX - Enhanced matching for TZE284/TZE204 series

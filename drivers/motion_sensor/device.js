@@ -21,6 +21,7 @@ const VALIDATION = {
 /**
  * Motion Sensor Device - HybridSensorBase implementation
  *
+ * v5.5.806: FORUM FIX - Continuous illuminance reporting (independent of motion)
  * v5.5.317: INTELLIGENT INFERENCE - Infer motion from lux changes when PIR fails
  * v5.5.299: SLEEPY DEVICE COMMUNICATION FIX (@fiek diagnostic d8b86ec9)
  * - Smart ZCL timeout reduction for sleepy devices (5s → 2s)
@@ -848,14 +849,15 @@ class MotionSensorDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.104: Configure attribute reporting (once per session)
+   * v5.5.806: Configure attribute reporting (once per session)
    * This tells the device to send updates automatically
+   * v5.5.806: FORUM FIX - Added illuminance reporting for continuous lux updates
    */
   async _configureReportingOnce(endpoint) {
     if (this._reportingConfigured) return;
     this._reportingConfigured = true;
 
-    this.log('[MOTION-REPORTING] Configuring attribute reporting for temp/humidity...');
+    this.log('[MOTION-REPORTING] Configuring attribute reporting for temp/humidity/illuminance...');
 
     // Configure temperature reporting
     const tempCluster = endpoint.clusters?.temperatureMeasurement;
@@ -888,6 +890,26 @@ class MotionSensorDevice extends HybridSensorBase {
         this.log('[MOTION-REPORTING] ✅ Humidity reporting configured');
       } catch (e) {
         this.log('[MOTION-REPORTING] Humidity reporting failed (device may not support)');
+      }
+    }
+
+    // v5.5.806: FORUM FIX - Configure illuminance reporting for CONTINUOUS lux updates
+    // Forum issue: Luminance only updates on motion, should update independently
+    const illuminanceCluster = endpoint.clusters?.illuminanceMeasurement 
+      || endpoint.clusters?.msIlluminanceMeasurement
+      || endpoint.clusters?.[0x0400];
+    if (illuminanceCluster?.configureReporting) {
+      try {
+        await illuminanceCluster.configureReporting({
+          measuredValue: {
+            minInterval: 30,       // Min 30 seconds between reports
+            maxInterval: 300,      // Max 5 minutes - ensures continuous updates
+            minChange: 50          // Report if change >= 50 lux
+          }
+        });
+        this.log('[MOTION-REPORTING] ✅ Illuminance reporting configured (30s-5min, 50lux change)');
+      } catch (e) {
+        this.log('[MOTION-REPORTING] Illuminance reporting failed:', e.message);
       }
     }
   }
