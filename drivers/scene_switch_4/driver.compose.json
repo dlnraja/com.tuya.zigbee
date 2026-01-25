@@ -12,7 +12,6 @@
     "measure_battery"
   ],
   "capabilitiesOptions": {
-    "maintenanceAction": true,
     "button.1": {
       "title": {
         "en": "Button 1",
@@ -20,7 +19,7 @@
         "nl": "Knop 1",
         "de": "Taste 1"
       },
-      "getable": false,
+      "getable": true,
       "setable": false
     },
     "button.2": {
@@ -30,7 +29,7 @@
         "nl": "Knop 2",
         "de": "Taste 2"
       },
-      "getable": false,
+      "getable": true,
       "setable": false
     },
     "button.3": {
@@ -40,7 +39,7 @@
         "nl": "Knop 3",
         "de": "Taste 3"
       },
-      "getable": false,
+      "getable": true,
       "setable": false
     },
     "button.4": {
@@ -50,7 +49,7 @@
         "nl": "Knop 4",
         "de": "Taste 4"
       },
-      "getable": false,
+      "getable": true,
       "setable": false
     },
     "measure_battery": {
@@ -288,11 +287,13 @@
       "_TZ3000_5TQXPINE",
       "_tz3000_5tqxpine",
       "_TZ3000_WKAI4GA5",
-      "_tz3000_wkai4ga5"
+      "_tz3000_wkai4ga5",
+      "_TZ3000_xabckq1v"
     ],
     "productId": [
       "TS0601",
-      "ZG-101ZS"
+      "ZG-101ZS",
+      "ERS-10TZBVK-AA"
     ],
     "endpoints": {
       "1": {
