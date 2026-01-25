@@ -69,16 +69,16 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.5.794** | 📦 NEW SONOFF DEVICES: Added SNZB-02DR2 (Airguard TH 3.6 large LCD), SNZB-01M... |
-| **v5.5.793** | 🔧 SENSOR ENRICHMENT: Added validation constants, battery throttling, and enh... |
-| **v5.5.792** | 🔧 FIX LukasT #1163: _TZE284_1wnh8bqp temp/humidity sensor - auto-detect humi... |
-| **v5.5.791** | 🔧 PROJECT-WIDE IMPROVEMENTS: Presence inversion support in HybridSensorBase ... |
-| **v5.5.790** | 🔧 DEVICE INTERVIEW FIXES: INT-001 _TZE284_iadro9bf radar motion always YES (... |
-| **v5.5.789** | 🔧 BUG FIXES: Fixed switch_dimmer_1gang 'Invalid Flow Card ID' error + AVATTO... |
-| **v5.5.769** | op^timise and fix issues related to optinal referencies  |
-| **v5.5.759** | 📦 Publish Release: MOES button BoundCluster fix (cluster 0xE000/57344), SOS ... |
-| **v5.5.739** | 🔄 Hybrid Merge: 12 new manufacturer IDs from upstream JohanBendz for plug_en... |
-| **v5.5.738** | 🔧 PR Code Improvements: Added child_lock flow cards for thermostats (action ... |
+| **v5.5.808** | 🔧 DIAGNOSTICS FIX: 1) Water valve _TZ3000_iedbgyxt/TS0001 now correctly dete... |
+| **v5.5.807** | 🔒 SDK3 IAS ZONE COMPLIANCE FIX: 1) Removed hardcoded fallback IEEE address t... |
+| **v5.5.806** | 💡 FORUM COMPREHENSIVE FIX: 1) Motion sensor continuous illuminance - lux now... |
+| **v5.5.805** | 🔘 BUTTON FIX (Forum Ronny_M/Cam/Hartmut #1172/#1160/#1155): Fixed wireless b... |
+| **v5.5.804** | 🔧 DIAGNOSTICS REPORT FIXES: 1) HOBEIAN multisensor - fixed wrong detection w... |
+| **v5.5.803** | 💧 WATER LEAK SENSOR FIX (Forum #1166 Lasse_K): Fixed 'installs but no alarm'... |
+| **v5.5.802** | 📡 BLAKADDER DATABASE INTEGRATION: Added brand names Eardatek, Linptech, Rehe... |
+| **v5.5.801** | 🔘 LORATAP TS0043 FIX (Issue #98): Added missing manufacturer ID _TZ3000_bi6l... |
+| **v5.5.800** | 📡 ZIGBEE DEVICE EXPANSION: Added 30+ new manufacturer IDs from ZHA/Zigbee2MQ... |
+| **v5.5.799** | 💡 SWITCH DIMMER 1GANG ENHANCEMENT: Full settings support (min_brightness, po... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
