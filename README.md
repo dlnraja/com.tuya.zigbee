@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.794** | 📦 NEW SONOFF DEVICES: Added SNZB-02DR2 (Airguard TH 3.6 large LCD), SNZB-01M... |
 | **v5.5.793** | 🔧 SENSOR ENRICHMENT: Added validation constants, battery throttling, and enh... |
 | **v5.5.792** | 🔧 FIX LukasT #1163: _TZE284_1wnh8bqp temp/humidity sensor - auto-detect humi... |
 | **v5.5.791** | 🔧 PROJECT-WIDE IMPROVEMENTS: Presence inversion support in HybridSensorBase ... |
@@ -78,7 +79,6 @@
 | **v5.5.759** | 📦 Publish Release: MOES button BoundCluster fix (cluster 0xE000/57344), SOS ... |
 | **v5.5.739** | 🔄 Hybrid Merge: 12 new manufacturer IDs from upstream JohanBendz for plug_en... |
 | **v5.5.738** | 🔧 PR Code Improvements: Added child_lock flow cards for thermostats (action ... |
-| **v5.5.737** | 🔌 PR #111: New Bseed Touch Dimmer driver (switch_dimmer_1gang) + flow card f... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
