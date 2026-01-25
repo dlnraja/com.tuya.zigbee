@@ -1,4 +1,7 @@
 {
+  "5.5.809": {
+    "en": "🎛️ FORUM FIX #113: Added Smart Knobe Scene Switch (_TZ3000_4fjiwweb/TS004F) to switch_dimmer_1gang driver for remote dimmer functionality. LoraTap TS0043 (_TZ3000_famkxci2) already supported in button_wireless_3."
+  },
   "5.5.808": {
     "en": "🔧 DIAGNOSTICS FIX: 1) Water valve _TZ3000_iedbgyxt/TS0001 now correctly detected as valve (was wrongly detected as 1-gang switch). 2) Fixed water_valve_smart Flow Card IDs mismatch - flow cards now work correctly. 3) Moved 10+ valve manufacturer IDs from switch_1gang to valve_single driver."
   },
