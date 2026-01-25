@@ -2,6 +2,25 @@
 
 const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
+// ═══════════════════════════════════════════════════════════════════════════════
+// v5.5.793: VALIDATION CONSTANTS - Centralized thresholds for data validation
+// ═══════════════════════════════════════════════════════════════════════════════
+const VALIDATION = {
+  BATTERY_MIN: 0,
+  BATTERY_MAX: 100,
+};
+
+// v5.5.793: Battery report throttling (prevents spam on frequent reports)
+const BATTERY_THROTTLE_MS = 300000; // 5 minutes minimum between updates
+
+// v5.5.793: Debounce defaults
+const DEBOUNCE = {
+  DEFAULT_MS: 2000,           // 2 seconds default
+  PROBLEMATIC_MIN_MS: 3000,   // 3 seconds minimum for problematic sensors
+  KEEP_ALIVE_MIN_MS: 3600000, // 60 minutes (keep-alive window start)
+  KEEP_ALIVE_MAX_MS: 4000000, // ~67 minutes (keep-alive window end)
+};
+
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
  * ║      CONTACT / DOOR SENSOR - v5.5.344 IAS ZONE KEEP-ALIVE FIX               ║
@@ -60,14 +79,32 @@ class ContactSensorDevice extends HybridSensorBase {
       // ═══════════════════════════════════════════════════════════════════
       // BATTERY (multiple DPs depending on model)
       // ═══════════════════════════════════════════════════════════════════
-      // Battery level - DP 2
-      2: { capability: 'measure_battery', divisor: 1 },
+      // Battery level - DP 2 (v5.5.793: Added validation)
+      2: { 
+        capability: 'measure_battery', 
+        transform: (v) => {
+          const battery = Math.max(VALIDATION.BATTERY_MIN, Math.min(VALIDATION.BATTERY_MAX, v));
+          return battery;
+        }
+      },
       // Battery state - DP 3 (enum: 0=normal, 1=low) - SDK3: alarm_battery obsolète, utiliser internal
       3: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' },
-      // Battery alt - DP 4
-      4: { capability: 'measure_battery', divisor: 1 },
-      // Battery alt2 - DP 15
-      15: { capability: 'measure_battery', divisor: 1 },
+      // Battery alt - DP 4 (v5.5.793: Added validation)
+      4: { 
+        capability: 'measure_battery', 
+        transform: (v) => {
+          const battery = Math.max(VALIDATION.BATTERY_MIN, Math.min(VALIDATION.BATTERY_MAX, v));
+          return battery;
+        }
+      },
+      // Battery alt2 - DP 15 (v5.5.793: Added validation)
+      15: { 
+        capability: 'measure_battery', 
+        transform: (v) => {
+          const battery = Math.max(VALIDATION.BATTERY_MIN, Math.min(VALIDATION.BATTERY_MAX, v));
+          return battery;
+        }
+      },
 
       // ═══════════════════════════════════════════════════════════════════
       // TAMPER DETECTION
@@ -98,8 +135,10 @@ class ContactSensorDevice extends HybridSensorBase {
     };
 
     // v5.5.344: Check for invert setting and debounce time
+    // v5.5.793: Use constants for defaults
     this._invertContact = this.getSetting('invert_contact') || false;
-    this._debounceMs = (this.getSetting('debounce_time') || 2) * 1000; // Default 2 seconds
+    this._debounceMs = (this.getSetting('debounce_time') || DEBOUNCE.DEFAULT_MS / 1000) * 1000;
+    this._lastBatteryReportTime = 0; // v5.5.793: Battery throttling
 
     // v5.5.344: Get manufacturer for problematic device detection
     const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
@@ -131,7 +170,7 @@ class ContactSensorDevice extends HybridSensorBase {
 
     if (this._isProblematicSensor) {
       this.log(`[CONTACT] ⚠️ Problematic sensor detected (${mfr}) - extended debounce enabled`);
-      this._debounceMs = Math.max(this._debounceMs, 3000); // Min 3 seconds for problematic sensors
+      this._debounceMs = Math.max(this._debounceMs, DEBOUNCE.PROBLEMATIC_MIN_MS);
     }
 
     // Parent handles EVERYTHING: Tuya DP, ZCL, IAS Zone, battery
@@ -225,7 +264,8 @@ class ContactSensorDevice extends HybridSensorBase {
         // If changing FROM open TO closed, be extra careful (common false positive)
         if (state.confirmedValue === true && finalValue === false) {
           // Check if this is likely the 1-hour keep-alive bug
-          const keepAliveWindow = timeSinceLastChange >= 3600000 && timeSinceLastChange <= 4000000; // 60-67 minutes
+          // v5.5.793: Use constants for keep-alive window
+          const keepAliveWindow = timeSinceLastChange >= DEBOUNCE.KEEP_ALIVE_MIN_MS && timeSinceLastChange <= DEBOUNCE.KEEP_ALIVE_MAX_MS;
 
           if (keepAliveWindow) {
             this.log(`[CONTACT] 🚫 BLOCKED: Likely 1-hour keep-alive false "closed" (${Math.round(timeSinceLastChange / 60000)}min since open)`);
@@ -274,15 +314,45 @@ class ContactSensorDevice extends HybridSensorBase {
   }
 
   /**
+   * v5.5.793: Override setCapabilityValue for battery throttling
+   */
+  async _handleBatteryUpdate(value) {
+    const now = Date.now();
+    if (this._lastBatteryReportTime && (now - this._lastBatteryReportTime) < BATTERY_THROTTLE_MS) {
+      return; // Skip - too soon since last report
+    }
+    this._lastBatteryReportTime = now;
+    
+    const battery = Math.max(VALIDATION.BATTERY_MIN, Math.min(VALIDATION.BATTERY_MAX, value));
+    this.log(`[CONTACT] 🔋 Battery: ${battery}%`);
+    await super.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+  }
+
+  /**
    * v5.5.344: Cleanup on uninit
+   * v5.5.793: Enhanced cleanup
    */
   async onUninit() {
+    this.log('[CONTACT] onUninit - cleaning up...');
     if (this._contactState?.timer) {
       this.homey.clearTimeout(this._contactState.timer);
+      this._contactState.timer = null;
     }
     if (super.onUninit) {
       await super.onUninit();
     }
+    this.log('[CONTACT] ✅ Cleanup complete');
+  }
+
+  /**
+   * v5.5.793: Cleanup on device delete
+   */
+  async onDeleted() {
+    if (this._contactState?.timer) {
+      this.homey.clearTimeout(this._contactState.timer);
+      this._contactState.timer = null;
+    }
+    await super.onDeleted?.();
   }
 }
 

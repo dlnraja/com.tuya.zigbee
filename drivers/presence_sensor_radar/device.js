@@ -2,6 +2,27 @@
 
 const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
+// ═══════════════════════════════════════════════════════════════════════════════
+// v5.5.793: VALIDATION CONSTANTS - Centralized thresholds for data validation
+// ═══════════════════════════════════════════════════════════════════════════════
+const VALIDATION = {
+  BATTERY_MIN: 0,
+  BATTERY_MAX: 100,
+  LUX_MIN: 0,
+  LUX_MAX: 10000,
+  LUX_ZYM100_MAX: 2000,     // ZY-M100 series confirmed 0-2000 lux range
+  DISTANCE_MIN: 0,
+  DISTANCE_MAX: 10,          // Most radar sensors have 0-10m range
+};
+
+// v5.5.793: Timing constants for debouncing and throttling
+const TIMING = {
+  MOTION_THROTTLE_MS: 60000,       // 60s between identical motion updates
+  LUX_OSCILLATION_LOCK_MS: 120000, // 2 minutes lock after oscillation
+  LUX_SMOOTHING_RESET_MS: 120000,  // 2 minutes to reset smoothing state
+  PRESENCE_POLLING_MS: 30000,      // 30s polling interval
+};
+
 // v5.5.404: Module-level state for lux oscillation detection across device instances
 const luxOscillationState = new Map();
 
@@ -1395,10 +1416,10 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   // v5.5.316: Direct lux reporting confirmed (no conversion needed)
   let lux = typeof rawValue === 'number' ? rawValue : 0;
 
-  // v5.5.357: HARD CLAMP to 2000 max AND detect 30↔2000 oscillation
-  if (lux > 2000) {
-    console.log(`[LUX] 🔒 Clamped ${lux} -> 2000 (max spec limit)`);
-    lux = 2000;
+  // v5.5.793: HARD CLAMP to max AND detect 30↔2000 oscillation
+  if (lux > VALIDATION.LUX_ZYM100_MAX) {
+    console.log(`[LUX] 🔒 Clamped ${lux} -> ${VALIDATION.LUX_ZYM100_MAX} (max spec limit)`);
+    lux = VALIDATION.LUX_ZYM100_MAX;
   }
 
   // v5.5.357: OSCILLATION DETECTION - Lock value when 30↔2000 flip detected
@@ -1438,7 +1459,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   // If locked, return locked value for next 2 minutes
   if (oscState.locked) {
     const lockDuration = Date.now() - oscState.lockTime;
-    if (lockDuration < 120000) { // 2 minutes lock
+    if (lockDuration < TIMING.LUX_OSCILLATION_LOCK_MS) { // v5.5.793: Use constant
       console.log(`[LUX] 🔒 LOCKED: Using ${oscState.lockedValue} instead of ${lux} (${Math.round(lockDuration / 1000)}s into lock)`);
       lux = oscState.lockedValue;
     } else {
@@ -1577,17 +1598,17 @@ function transformDistance(value, divisor = 100, manufacturerName = '') {
   const originalValue = value;
   let distance = value / divisor;
 
-  // v5.5.283: Enhanced validation with logging
+  // v5.5.793: Enhanced validation using constants
   if (typeof value !== 'number' || isNaN(value) || value < 0) {
     console.log(`[DISTANCE-FIX] ⚠️ Invalid distance value for ${manufacturerName}: ${originalValue} (type: ${typeof value})`);
     return null;  // Don't update capability for invalid values
   }
 
-  // Sanity check: most radar sensors have 0-10m range
-  if (distance < 0) distance = 0;
-  if (distance > 10) {
-    console.log(`[DISTANCE-FIX] 📏 Distance over range for ${manufacturerName}: ${distance}m -> 10m (clamped)`);
-    distance = 10;
+  // v5.5.793: Use validation constants for range check
+  if (distance < VALIDATION.DISTANCE_MIN) distance = VALIDATION.DISTANCE_MIN;
+  if (distance > VALIDATION.DISTANCE_MAX) {
+    console.log(`[DISTANCE-FIX] 📏 Distance over range for ${manufacturerName}: ${distance}m -> ${VALIDATION.DISTANCE_MAX}m (clamped)`);
+    distance = VALIDATION.DISTANCE_MAX;
   }
 
   const result = Math.round(distance * 100) / 100; // 2 decimal places
@@ -2317,10 +2338,10 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     };
 
     const timeSinceLastUpdate = now - this._motionThrottle.lastUpdate;
-    const THROTTLE_MS = 60000; // 60 seconds
 
+    // v5.5.793: Use TIMING constant for throttle
     // If same value and within throttle window, block it
-    if (presence === this._motionThrottle.lastValue && timeSinceLastUpdate < THROTTLE_MS) {
+    if (presence === this._motionThrottle.lastValue && timeSinceLastUpdate < TIMING.MOTION_THROTTLE_MS) {
       this._motionThrottle.spamCount++;
       this.log(`[RADAR] 🚫 MOTION SPAM BLOCKED: same value within ${timeSinceLastUpdate}ms (spam count: ${this._motionThrottle.spamCount})`);
       return null; // Block update
@@ -3040,14 +3061,63 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.268: Cleanup on device removal
+   * v5.5.793: Enhanced cleanup on device removal
    */
   onDeleted() {
+    this._cleanupTimers();
+    super.onDeleted?.();
+  }
+
+  /**
+   * v5.5.793: Cleanup on uninit (driver reload, app restart)
+   */
+  async onUninit() {
+    this._cleanupTimers();
+    await super.onUninit?.();
+  }
+
+  /**
+   * v5.5.793: Centralized timer cleanup
+   */
+  _cleanupTimers() {
+    // Clear polling interval
     if (this._pollingInterval) {
       clearInterval(this._pollingInterval);
       this._pollingInterval = null;
     }
-    super.onDeleted?.();
+
+    // Clear enrollment check interval
+    if (this._enrollmentCheckInterval) {
+      clearInterval(this._enrollmentCheckInterval);
+      this._enrollmentCheckInterval = null;
+    }
+
+    // Clear any pending debounce timers
+    if (this._presenceDebounceTimer) {
+      clearTimeout(this._presenceDebounceTimer);
+      this._presenceDebounceTimer = null;
+    }
+
+    // Clear motion throttle state
+    this._motionThrottle = null;
+
+    // Clear inference engine state
+    if (this._presenceInference) {
+      this._presenceInference = null;
+    }
+
+    // Clear DP auto-discovery state
+    if (this._dpAutoDiscovery) {
+      this._dpAutoDiscovery = null;
+    }
+
+    // Clear lux oscillation state for this device
+    const deviceId = this.getData()?.id;
+    if (deviceId && luxOscillationState.has(deviceId)) {
+      luxOscillationState.delete(deviceId);
+    }
+
+    this.log('[RADAR] 🧹 All timers and state cleaned up');
   }
 }
 

@@ -10,6 +10,24 @@ const TuyaRtcDetector = require('../../lib/TuyaRtcDetector');
 const { syncDeviceTimeTuya } = require('../../lib/tuya/TuyaTimeSync');
 const { ClimateInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
+// ═══════════════════════════════════════════════════════════════════════════════
+// v5.5.793: VALIDATION CONSTANTS - Centralized thresholds for data validation
+// ═══════════════════════════════════════════════════════════════════════════════
+const VALIDATION = {
+  TEMP_MIN: -40,
+  TEMP_MAX: 80,
+  HUMIDITY_MIN: 0,
+  HUMIDITY_MAX: 100,
+  BATTERY_MIN: 0,
+  BATTERY_MAX: 100,
+  LUX_MIN: 0,
+  LUX_MAX: 100000,
+  HUMIDITY_AUTO_DIVISOR_THRESHOLD: 100, // If value > 100, divide by 10
+};
+
+// v5.5.793: Battery report throttling (prevents spam on frequent reports)
+const BATTERY_THROTTLE_MS = 300000; // 5 minutes minimum between updates
+
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
  * ║     CLIMATE SENSOR ULTIMATE - v5.5.317 INTELLIGENT INFERENCE                 ║
@@ -328,8 +346,15 @@ class ClimateSensorDevice extends HybridSensorBase {
       // ═══════════════════════════════════════════════════════════════════
       temperatureMeasurement: {
         attributeReport: (data) => {
-          if (data.measuredValue !== undefined) {
+          if (data.measuredValue !== undefined && data.measuredValue !== -32768) {
             let rawTemp = data.measuredValue / 100;
+            
+            // v5.5.793: Validate range before processing
+            if (rawTemp < VALIDATION.TEMP_MIN || rawTemp > VALIDATION.TEMP_MAX) {
+              this.log(`[ZCL] ⚠️ Temperature out of range: ${rawTemp}°C`);
+              return;
+            }
+            
             // v5.5.317: Validate with inference engine (smooths erratic readings)
             if (this._climateInference) {
               rawTemp = this._climateInference.validateTemperature(rawTemp);
@@ -381,9 +406,22 @@ class ClimateSensorDevice extends HybridSensorBase {
       // ═══════════════════════════════════════════════════════════════════
       powerConfiguration: {
         attributeReport: (data) => {
-          if (data.batteryPercentageRemaining !== undefined) {
+          if (data.batteryPercentageRemaining !== undefined && data.batteryPercentageRemaining !== 255) {
+            // v5.5.793: Battery throttling to prevent spam
+            const now = Date.now();
+            if (this._lastBatteryReportTime && (now - this._lastBatteryReportTime) < BATTERY_THROTTLE_MS) {
+              return; // Skip - too soon since last report
+            }
+            this._lastBatteryReportTime = now;
+            
             let battery = Math.round(data.batteryPercentageRemaining / 2);
-            battery = Math.max(0, Math.min(100, battery)); // Clamp
+            battery = Math.max(VALIDATION.BATTERY_MIN, Math.min(VALIDATION.BATTERY_MAX, battery));
+            
+            // v5.5.793: Validate with inference engine
+            if (this._batteryInference) {
+              battery = this._batteryInference.validateBattery(battery) ?? battery;
+            }
+            
             this.log(`[ZCL] 🔋 Battery: ${battery}%`);
             this._registerZclData?.(); // v5.5.108: Track for learning
             this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
@@ -971,9 +1009,11 @@ class ClimateSensorDevice extends HybridSensorBase {
         if (typeof tempCluster.on === 'function') {
           tempCluster.on('attr.measuredValue', (value) => {
             const temp = value / 100;
-            if (temp >= -40 && temp <= 80) {
-              this.log(`[ZCL] 🌡️ Temperature: ${temp}°C`);
-              this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+            if (temp >= VALIDATION.TEMP_MIN && temp <= VALIDATION.TEMP_MAX) {
+              // v5.5.793: Apply calibration offset
+              const calibratedTemp = this._applyTempOffset(temp);
+              this.log(`[ZCL] 🌡️ Temperature: ${calibratedTemp}°C`);
+              this.setCapabilityValue('measure_temperature', parseFloat(calibratedTemp)).catch(() => { });
             }
           });
           this.log('[ZCL-SETUP] ✅ Temperature listener active');
@@ -1010,10 +1050,16 @@ class ClimateSensorDevice extends HybridSensorBase {
 
         if (typeof humCluster.on === 'function') {
           humCluster.on('attr.measuredValue', (value) => {
-            const hum = value / 100;
-            if (hum >= 0 && hum <= 100) {
-              this.log(`[ZCL] 💧 Humidity: ${hum}%`);
-              this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
+            let hum = value / 100;
+            // v5.5.793: Auto-detect divisor for devices reporting 0-1000 scale
+            if (hum > VALIDATION.HUMIDITY_AUTO_DIVISOR_THRESHOLD) {
+              hum = Math.round(hum / 10);
+            }
+            if (hum >= VALIDATION.HUMIDITY_MIN && hum <= VALIDATION.HUMIDITY_MAX) {
+              // v5.5.793: Apply calibration offset
+              const calibratedHum = this._applyHumOffset(hum);
+              this.log(`[ZCL] 💧 Humidity: ${calibratedHum}%`);
+              this.setCapabilityValue('measure_humidity', parseFloat(calibratedHum)).catch(() => { });
             }
           });
           this.log('[ZCL-SETUP] ✅ Humidity listener active');

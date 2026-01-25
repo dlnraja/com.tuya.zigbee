@@ -3,6 +3,21 @@
 const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 const { MotionLuxInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
+// ═══════════════════════════════════════════════════════════════════════════════
+// v5.5.793: VALIDATION CONSTANTS - Centralized thresholds for data validation
+// ═══════════════════════════════════════════════════════════════════════════════
+const VALIDATION = {
+  TEMP_MIN: -40,
+  TEMP_MAX: 80,
+  HUMIDITY_MIN: 0,
+  HUMIDITY_MAX: 100,
+  BATTERY_MIN: 0,
+  BATTERY_MAX: 100,
+  LUX_MIN: 0,
+  LUX_MAX: 100000,
+  HUMIDITY_AUTO_DIVISOR_THRESHOLD: 100,
+};
+
 /**
  * Motion Sensor Device - HybridSensorBase implementation
  *
@@ -272,9 +287,12 @@ class MotionSensorDevice extends HybridSensorBase {
       temperatureMeasurement: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined && data.measuredValue !== -32768) {
-            const temp = Math.round((data.measuredValue / 100) * 10) / 10;
-            // v5.5.107: Sanity check - ignore extreme values
-            if (temp >= -40 && temp <= 80) {
+            let temp = Math.round((data.measuredValue / 100) * 10) / 10;
+            // v5.5.793: Use validation constants
+            if (temp >= VALIDATION.TEMP_MIN && temp <= VALIDATION.TEMP_MAX) {
+              // v5.5.793: Apply calibration offset if available
+              const offset = this.getSetting?.('temp_offset') || 0;
+              temp = Math.round((temp + offset) * 10) / 10;
               this.log(`[ZCL] 🌡️ Temperature: ${temp}°C (raw: ${data.measuredValue})`);
               this._registerZigbeeHit?.();
               this._lastTempSource = 'ZCL';
@@ -290,9 +308,16 @@ class MotionSensorDevice extends HybridSensorBase {
       relativeHumidity: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined && data.measuredValue !== 65535) {
-            const hum = Math.round(data.measuredValue / 100);
-            // v5.5.107: Sanity check - ignore extreme values
-            if (hum >= 0 && hum <= 100) {
+            let hum = Math.round(data.measuredValue / 100);
+            // v5.5.793: Auto-detect divisor for devices reporting 0-1000 scale
+            if (hum > VALIDATION.HUMIDITY_AUTO_DIVISOR_THRESHOLD) {
+              hum = Math.round(hum / 10);
+            }
+            // v5.5.793: Use validation constants
+            if (hum >= VALIDATION.HUMIDITY_MIN && hum <= VALIDATION.HUMIDITY_MAX) {
+              // v5.5.793: Apply calibration offset if available
+              const offset = this.getSetting?.('humidity_offset') || 0;
+              hum = Math.max(0, Math.min(100, Math.round(hum + offset)));
               this.log(`[ZCL] 💧 Humidity: ${hum}% (raw: ${data.measuredValue})`);
               this._registerZigbeeHit?.();
               this._lastHumSource = 'ZCL';
@@ -308,13 +333,18 @@ class MotionSensorDevice extends HybridSensorBase {
       illuminanceMeasurement: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
-            const lux = Math.round(Math.pow(10, (data.measuredValue - 1) / 10000));
-            this.log(`[ZCL] 💡 Luminance: ${lux} lux`);
-            this._registerZigbeeHit?.();
-            this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
+            let lux = Math.round(Math.pow(10, (data.measuredValue - 1) / 10000));
+            // v5.5.793: Validate lux range
+            if (lux >= VALIDATION.LUX_MIN && lux <= VALIDATION.LUX_MAX) {
+              this.log(`[ZCL] 💡 Luminance: ${lux} lux`);
+              this._registerZigbeeHit?.();
+              this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
 
-            // v5.5.317: Feed lux to motion inference engine
-            this._handleLuxForMotionInference(lux);
+              // v5.5.317: Feed lux to motion inference engine
+              this._handleLuxForMotionInference(lux);
+            } else {
+              this.log(`[ZCL] ⚠️ Luminance out of range: ${lux} lux`);
+            }
           }
         }
       },
@@ -1077,11 +1107,44 @@ class MotionSensorDevice extends HybridSensorBase {
   /**
    * Cleanup timers on device destroy
    */
+  /**
+   * v5.5.793: Enhanced cleanup on device destroy
+   */
   async onDeleted() {
+    // Clear lux reporting timer
     if (this._luxReportTimer) {
       clearInterval(this._luxReportTimer);
+      this._luxReportTimer = null;
+    }
+    // Clear sleep timer
+    if (this._sleepTimer) {
+      clearTimeout(this._sleepTimer);
+      this._sleepTimer = null;
+    }
+    // Clear pending ZCL reads
+    if (this._pendingZclReads) {
+      this._pendingZclReads.clear();
     }
     await super.onDeleted?.();
+  }
+
+  /**
+   * v5.5.793: Cleanup on uninit
+   */
+  async onUninit() {
+    this.log('[MOTION] onUninit - cleaning up...');
+    if (this._luxReportTimer) {
+      clearInterval(this._luxReportTimer);
+      this._luxReportTimer = null;
+    }
+    if (this._sleepTimer) {
+      clearTimeout(this._sleepTimer);
+      this._sleepTimer = null;
+    }
+    if (super.onUninit) {
+      await super.onUninit();
+    }
+    this.log('[MOTION] ✅ Cleanup complete');
   }
 
 }
