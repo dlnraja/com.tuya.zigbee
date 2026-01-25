@@ -13,7 +13,7 @@ try {
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║     BUTTON 1 GANG - v5.5.500 ENHANCED FOR TS0041 / TS0042 / TS0215A         ║
+ * ║     BUTTON 1 GANG - v5.5.805 FORUM FIX RONNY_M + CAM + HARTMUT             ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  v5.5.376: FIX for "No Action detected" - Added IAS ACE support             ║
@@ -41,8 +41,8 @@ class Button1GangDevice extends ButtonDevice {
   async onNodeInit({ zclNode }) {
     this._zclNode = zclNode;
     this.log('═══════════════════════════════════════════════════════════════');
-    this.log('[BUTTON1] 🔘 Button1GangDevice v5.5.500 initializing...');
-    this.log('[BUTTON1] FIX: Enhanced detection for "No Action detected" issue');
+    this.log('[BUTTON1] 🔘 Button1GangDevice v5.5.805 initializing...');
+    this.log('[BUTTON1] FIX: Forum Ronny_M/Cam/Hartmut - Button not responding');
     this.log('═══════════════════════════════════════════════════════════════');
 
     // Set button count BEFORE calling super
