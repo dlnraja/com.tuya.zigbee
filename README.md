@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.789** | 🔧 BUG FIXES: Fixed switch_dimmer_1gang 'Invalid Flow Card ID' error + AVATTO... |
 | **v5.5.769** | op^timise and fix issues related to optinal referencies  |
 | **v5.5.759** | 📦 Publish Release: MOES button BoundCluster fix (cluster 0xE000/57344), SOS ... |
 | **v5.5.739** | 🔄 Hybrid Merge: 12 new manufacturer IDs from upstream JohanBendz for plug_en... |
@@ -78,7 +79,6 @@
 | **v5.5.735** | 🔧 ROOT CAUSE FIX: Integrated DeviceDataHelper in HybridSwitchBase, HybridSen... |
 | **v5.5.734** | 🔌 eWeLink Plug Support (Forum #1133): Added eWeLink CK-BL702-SWP-01(7020) pl... |
 | **v5.5.733** | 🔘 HOBEIAN ZG-101ZL FIX (Forum #1135): Added OnOffBoundCluster to receive but... |
-| **v5.5.732** | 🔧 GitHub Issues: Added _TZ3210_w0qqde0g to plug_energy_monitor (#110). Verif... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
