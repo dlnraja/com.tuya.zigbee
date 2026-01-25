@@ -759,7 +759,7 @@ const SENSOR_CONFIGS = {
     noTemperature: true,    // v5.5.377: mmWave radar has NO temp sensor (Z2M #27212, #30326)
     noHumidity: true,       // v5.5.377: mmWave radar has NO humidity sensor
     needsPolling: false,  // v5.5.326: Disable polling - rely on inference only
-    invertPresence: false,
+    invertPresence: true,   // v5.5.775: FORUM FIX - Ronny #1160+ reports motion stuck YES, test inversion
     // v5.5.326: RONNY #760 - Enhanced intelligent inference
     useIntelligentInference: true,
     useDistanceInference: true,
@@ -929,42 +929,73 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // TYPE G: ZG-204ZM PIR + 24GHz Radar Battery Sensor
-  // v5.5.395: ENHANCED per 4x4_Pete forum post + Z2M full spec
-  // Source: https://www.zigbee2mqtt.io/devices/ZG-204ZM.html
-  // Source: https://github.com/Koenkk/zigbee2mqtt/issues/21919
-  // Features: PIR + 24GHz radar hybrid, battery powered, illuminance
+  // TYPE G: ZG-204ZM PIR + 24GHz Radar Battery Sensor (HOBEIAN / Tuya)
+  // v5.5.772: CORRECTED based on USER INTERVIEW DATA - HYBRID device!
+  // 
+  // USER INTERVIEW DATA (Jan 24, 2026):
+  // manufacturerName: "HOBEIAN", modelId: "ZG-204ZM"
+  // Input Clusters: [0, 1, 3, 1024, 1280, 61184]
+  //   - 0 (basic): Device info
+  //   - 1 (powerConfiguration): Battery (batteryVoltage=30, batteryPercentageRemaining=200)
+  //   - 3 (identify): Identify
+  //   - 1024 (illuminanceMeasurement): ZCL illuminance! (measuredValue=1, max=4000)
+  //   - 1280 (iasZone): ZCL motion! (zoneType=motionSensor, zoneState=enrolled)
+  //   - 61184 (tuya): Additional Tuya DPs for settings
   //
-  // Z2M COMPLETE DP MAPPING:
-  // DP1=presence (bool), DP2=motion_sensitivity (0-10), DP4=static_detection_distance (m)
-  // DP101=motion_state (enum: 0=none,1=large,2=small,3=static)
-  // DP102=fading_time (0-28800s), DP103=static_detection_sensitivity (0-10)
-  // DP104=motion_detection_mode (enum: 0=only_pir, 1=pir_and_radar, 2=only_radar)
-  // DP106=illuminance (lux), DP107=indicator (bool on/off)
-  // DP108=small_detection_distance, DP109=small_detection_sensitivity
-  // DP15=battery (%)
+  // CRITICAL: This is a HYBRID device - uses BOTH ZCL AND Tuya DP!
+  //   - Motion: via IAS Zone cluster 1280 (ZCL)
+  //   - Illuminance: via illuminanceMeasurement cluster 1024 (ZCL)
+  //   - Battery: via powerConfiguration cluster 1 (ZCL)
+  //   - Settings: via Tuya DP cluster 61184 (DP2, DP4, DP102, etc.)
   //
-  // WARNING: _TZE200_kb5noeto may get stuck in "presence detected" state
+  // SOURCES (12+):
+  // 1. USER INTERVIEW DATA (primary source!)
+  // 2. Z2M: https://www.zigbee2mqtt.io/devices/ZG-204ZM.html
+  // 3. Z2M Issue #21919: https://github.com/Koenkk/zigbee2mqtt/issues/21919
+  // 4. ZHA Issue #3125: https://github.com/zigpy/zha-device-handlers/issues/3125
+  // 5. SmartHomeScene Review
+  // 6. Johan Bendz PR #1306
+  // 7. Hubitat/kkossev implementations
+  //
+  // NOTE: _TZE200_* variants use pure Tuya DP (see ZG_204ZM_RADAR config below)
+  //       But "HOBEIAN" branded uses hybrid ZCL + Tuya!
   // ─────────────────────────────────────────────────────────────────────────────
   'HOBEIAN_ZG204ZM': {
     sensors: ['HOBEIAN'],
-    modelId: 'ZG-204ZM',  // v5.5.512: Match specific modelId
+    modelId: 'ZG-204ZM',
     battery: true,
-    useZcl: true,           // v5.5.512: Use ZCL clusters for main data
-    useIasZone: true,       // v5.5.512: Presence via IAS Zone cluster 1280
-    hasIlluminance: true,   // v5.5.512: ZCL illuminanceMeasurement cluster 1024
-    noTemperature: true,
-    noHumidity: true,
-    // v5.5.512: Tuya DPs for SETTINGS ONLY (not for data)
-    writableDPs: [2, 4, 102, 107, 122, 123],
+    useZcl: true,           // v5.5.772: YES - illuminance via cluster 1024!
+    useIasZone: true,       // v5.5.772: YES - motion via IAS Zone cluster 1280!
+    useTuyaDP: true,        // v5.5.772: YES - settings via Tuya DP cluster 61184
+    hasIlluminance: true,   // Via ZCL cluster 1024, NOT Tuya DP106!
+    noTemperature: true,    // NO temperature sensor on this device
+    noHumidity: true,       // NO humidity sensor on this device
+    writableDPs: [2, 4, 102, 104, 105, 107, 108, 109],
     dpMap: {
-      // Settings via Tuya DP cluster (61184)
-      2: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 },
-      4: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 6 },
+      // ═══════════════════════════════════════════════════════════════════
+      // PRESENCE: Handled by IAS Zone cluster 1280, NOT Tuya DP!
+      // But we keep DP mappings in case Tuya cluster also reports
+      // ═══════════════════════════════════════════════════════════════════
+      1: { cap: 'alarm_motion', type: 'presence_bool' },
+      101: { cap: 'alarm_motion', type: 'motion_state_enum', enumMap: { 0: false, 1: true, 2: true, 3: true } },
+      
+      // ═══════════════════════════════════════════════════════════════════
+      // ILLUMINANCE: Handled by ZCL cluster 1024, NOT Tuya DP106!
+      // But we keep DP106 mapping as fallback
+      // ═══════════════════════════════════════════════════════════════════
+      106: { cap: 'measure_luminance', type: 'lux_direct' },
+      
+      // ═══════════════════════════════════════════════════════════════════
+      // SETTINGS (via Tuya DP cluster 61184) - these ARE Tuya DPs
+      // ═══════════════════════════════════════════════════════════════════
+      2: { cap: null, setting: 'large_motion_detection_sensitivity', min: 0, max: 10 },
+      4: { cap: null, setting: 'large_motion_detection_distance', divisor: 100, min: 0, max: 10 },
       102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
+      104: { cap: null, setting: 'medium_motion_detection_distance', divisor: 100 },
+      105: { cap: null, setting: 'medium_motion_detection_sensitivity', min: 0, max: 10 },
       107: { cap: null, setting: 'indicator' },
-      122: { cap: null, setting: 'motion_detection_mode' },  // 0=only_pir, 1=pir_and_radar, 2=only_radar
-      123: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
+      108: { cap: null, setting: 'small_detection_distance', divisor: 100 },
+      109: { cap: null, setting: 'small_detection_sensitivity', min: 0, max: 10 },
     }
   },
 
@@ -1184,7 +1215,7 @@ function getSensorConfig(manufacturerName, modelId = null) {
   // HOBEIAN makes multiple products, need modelId to distinguish
   if (manufacturerName === 'HOBEIAN' && modelId) {
     if (modelId === 'ZG-204ZM') {
-      console.log(`[RADAR] 🔍 HOBEIAN ZG-204ZM matched → HOBEIAN_ZG204ZM config (ZCL+Tuya hybrid)`);
+      console.log(`[RADAR] 🔍 HOBEIAN ZG-204ZM matched → HOBEIAN_ZG204ZM config (HYBRID: ZCL + Tuya DP)`);
       return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
     }
     // v5.5.740: HOBEIAN 10G multi-sensor from PR #1306

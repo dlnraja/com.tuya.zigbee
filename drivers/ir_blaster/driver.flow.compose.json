@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "ir_learning_started",
+      "id": "ir_blaster_learning_started",
       "title": {
         "en": "IR Learning Started",
         "nl": "IR Leren Gestart",
@@ -44,7 +44,7 @@
       "args": []
     },
     {
-      "id": "ir_learning_state_changed",
+      "id": "ir_blaster_learning_state_changed",
       "title": {
         "en": "IR Learning State Changed",
         "nl": "IR Leer Status Gewijzigd",
@@ -78,7 +78,7 @@
       "args": []
     },
     {
-      "id": "ir_code_learned",
+      "id": "ir_blaster_code_learned",
       "title": {
         "en": "IR Code Learned",
         "nl": "IR Code Geleerd",
@@ -103,7 +103,7 @@
       "args": []
     },
     {
-      "id": "ir_code_analyzed",
+      "id": "ir_blaster_code_analyzed",
       "title": {
         "en": "IR Code Analyzed",
         "nl": "IR Code Geanalyseerd",
@@ -157,7 +157,7 @@
   ],
   "conditions": [
     {
-      "id": "ir_learning_active",
+      "id": "ir_blaster_learning_active",
       "title": {
         "en": "IR learning is active",
         "nl": "IR leren is actief",
@@ -166,7 +166,7 @@
       "args": []
     },
     {
-      "id": "ir_code_exists",
+      "id": "ir_blaster_code_exists",
       "title": {
         "en": "IR code exists",
         "nl": "IR code bestaat",
@@ -195,7 +195,7 @@
       ]
     },
     {
-      "id": "ir_protocol_detected",
+      "id": "ir_blaster_protocol_detected",
       "title": {
         "en": "IR protocol detected",
         "nl": "IR protocol gedetecteerd",
@@ -280,7 +280,7 @@
   ],
   "actions": [
     {
-      "id": "ir_learn_code",
+      "id": "ir_blaster_learn_code",
       "title": {
         "en": "Learn IR Code",
         "nl": "Leer IR Code",
@@ -424,7 +424,7 @@
       ]
     },
     {
-      "id": "ir_send_code",
+      "id": "ir_blaster_send_code",
       "title": {
         "en": "Send IR Code",
         "nl": "Verstuur IR Code",
@@ -558,7 +558,7 @@
       ]
     },
     {
-      "id": "ir_send_by_category",
+      "id": "ir_blaster_send_by_category",
       "title": {
         "en": "Send IR Code by Category",
         "nl": "Verstuur IR Code per Categorie",
@@ -605,7 +605,7 @@
       ]
     },
     {
-      "id": "ir_send_ac_command",
+      "id": "ir_blaster_send_ac_command",
       "title": {
         "en": "Send AC Command",
         "nl": "Verstuur Airco Commando",

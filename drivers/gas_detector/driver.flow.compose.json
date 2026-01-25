@@ -100,7 +100,7 @@
   ],
   "conditions": [
     {
-      "id": "gas_detector_gas_detected",
+      "id": "gas_detector_gas_is_detected",
       "title": {
         "en": "Gas !{{is|is not}} detected",
         "nl": "Gas !{{is|is niet}} gedetecteerd",
@@ -110,7 +110,7 @@
       "args": []
     },
     {
-      "id": "gas_detector_co_detected",
+      "id": "gas_detector_co_is_detected",
       "title": {
         "en": "CO !{{is|is not}} detected",
         "nl": "CO !{{is|is niet}} gedetecteerd",

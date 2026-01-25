@@ -112,9 +112,10 @@ class ContactSensorDevice extends HybridSensorBase {
 
     // v5.5.506: Forum fix Lasse_K - HOBEIAN ZG-102Z reports inverted by default
     // v5.5.713: Expanded list of sensors that report inverted by default
+    // v5.5.776: REMOVED HOBEIAN - Lasse_K forum Jan 2026 confirms ZG-102Z works correctly WITHOUT inversion
     // These sensors report closed=alarm, open=no alarm (inverted from standard)
     const invertedByDefault = [
-      'HOBEIAN',
+      // 'HOBEIAN',  // v5.5.776: REMOVED - Lasse_K confirms ZG-102Z NOT inverted
       '_TZ3000_26fmupbb',  // Known inverted
       '_TZ3000_n2egfsli',  // Known inverted
       '_TZ3000_oxslv1c9',  // Known inverted

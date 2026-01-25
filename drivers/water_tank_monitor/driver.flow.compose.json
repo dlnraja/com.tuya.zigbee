@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "water_level_changed",
+      "id": "water_tank_monitor_level_changed",
       "title": {
         "en": "Water level changed",
         "nl": "Waterniveau veranderd",
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "id": "water_tank_low",
+      "id": "water_tank_monitor_low",
       "highlight": true,
       "title": {
         "en": "Water tank is low",
@@ -45,7 +45,7 @@
       }
     },
     {
-      "id": "water_tank_full",
+      "id": "water_tank_monitor_full",
       "title": {
         "en": "Water tank is full",
         "nl": "Watertank is vol",
@@ -54,7 +54,7 @@
       }
     },
     {
-      "id": "water_tank_battery_low",
+      "id": "water_tank_monitor_battery_low",
       "title": {
         "en": "Battery is low",
         "nl": "Batterij is bijna leeg",
@@ -65,7 +65,7 @@
   ],
   "conditions": [
     {
-      "id": "water_level_above",
+      "id": "water_tank_monitor_level_above",
       "title": {
         "en": "Water level !{{is|is not}} above",
         "nl": "Waterniveau !{{is|is niet}} boven",

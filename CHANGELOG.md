@@ -6,6 +6,404 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.789] - 2026-01-24
+
+### 🐛 Bug Fixes
+
+- **switch_dimmer_1gang Flow Cards**: Added missing flow card triggers to `app.json`
+  - Fixes "Invalid Flow Card ID: switch_dimmer_1gang_turned_on" error
+  - Added 4 flow triggers: turned_on, turned_off, brightness_increased, brightness_decreased
+
+---
+
+## [5.5.788] - 2026-01-24
+
+### 🐛 Bug Fixes
+
+- **AVATTO ME167/TRV06 Thermostat Support**: Added dynamic DP profile detection for `radiator_valve` driver
+  - Fixes inoperable thermostat issue for `TS0601 _TZE284_o3x45p96` and similar devices
+  - **ME167 Profile**: DPs 2 (mode), 4 (target_temp), 5 (measure_temp), 7 (child_lock), 35 (battery), etc.
+  - **Standard Profile**: DPs 1-10, 13-15, 101-109 (MOES, SEA-ICON, etc.)
+  - Auto-detection based on `manufacturerName` prefix (`_TZE284_o3x45p96`, `_TZE284_p3dbf6qs`, etc.)
+  - Mode mapping corrected: ME167 uses 0=auto, 1=heat, 2=off vs standard 0=heat, 1=auto, 2=off
+
+---
+
+## [5.5.787] - 2026-01-24
+
+### 🐛 Bug Fixes
+
+- **eWeLink Temperature Sensor Support**: Added `eWeLink` manufacturer to `temphumidsensor` driver
+  - Fixes "unknown Zigbee device" issue for `CK-TLSR8656-SS5-01(7014)` temperature sensors
+  - Device will now pair correctly as Temperature & Humidity Sensor
+
+---
+
+## [5.5.786] - 2026-01-24
+
+### 🔧 Improvements
+
+- **Flow Card ID Namespacing**: Applied consistent driver-prefixed namespacing to all flow card IDs
+  - `ir_blaster`: Renamed all 11 flow cards from `ir_*` to `ir_blaster_*` prefix
+  - `water_tank_monitor`: Renamed 5 flow cards from `water_*` to `water_tank_monitor_*` prefix
+  - `water_valve_smart`: Renamed 13 flow cards from `water_valve_*` to `water_valve_smart_*` prefix
+  - Updated all corresponding driver.js files to use new namespaced IDs
+
+---
+
+## [5.5.785] - 2026-01-24
+
+### 🐛 Bug Fixes
+
+- **Flow Card Namespace Conflicts**: Fixed duplicate flow card IDs causing conflicts
+  - `gas_detector_gas_detected` (trigger) vs `gas_detector_gas_is_detected` (condition)
+  - `gas_detector_co_detected` (trigger) vs `gas_detector_co_is_detected` (condition)
+  - `water_valve_leak_detected` (trigger) vs `water_valve_leak_is_detected` (condition)
+  - Updated driver.js files to use correct condition card IDs
+
+---
+
+## [5.5.784] - 2026-01-24
+
+### 📚 Documentation
+
+- **Homey SDK Best Practices**: Added comprehensive documentation from official Homey developer docs
+  - Zigbee initialization best practices (promise catching, isFirstInit)
+  - IAS Zone enrollment patterns (cluster 1280)
+  - Attribute reporting configuration for sleepy devices
+  - Sub-device patterns for multi-gang switches
+  - Matter bridge support documentation
+  - Key cluster ID reference table
+
+---
+
+## [5.5.783] - 2026-01-24
+
+### 🐛 Bug Fixes
+
+- **Climate Sensor DP12 Illuminance**: Fixed DP12 mapping for multi-sensors with illuminance
+  - DP12 now correctly maps to `measure_luminance` instead of null
+  - Added `measure_luminance` capability to climate_sensor driver
+  - Fixes "Missing capability: null" error in diagnostics
+
+---
+
+## [5.5.782] - 2026-01-24
+
+### 📡 New Device Support
+
+- **HOBEIAN ZG-204ZM**: Added PIR motion sensor with illuminance
+  - ManufacturerName: `HOBEIAN`, ProductId: `ZG-204ZM`
+  - Clusters: IAS Zone (motion) + illuminanceMeasurement + Tuya 61184
+  - Capabilities: alarm_motion, measure_luminance, measure_battery
+  - Driver: `motion_sensor`
+
+---
+
+## [5.5.781] - 2026-01-24
+
+### 📋 Forum Issues Integration & Documentation
+
+- **Comprehensive Forum Analysis**:
+  - Created `docs/data/DEVICE_INTERVIEWS.json` - Database of 35+ device interviews
+  - Created `docs/FORUM_ISSUES_CONSOLIDATED.md` - Master reference for all issues
+  - Analyzed Homey Community Forum pages 1-46
+  - Cross-referenced GitHub Issues/PRs (JohanBendz & dlnraja)
+
+- **Critical Issues Tracked**:
+  - `_TZE284_iadro9bf`: Motion alarm stuck - `invertPresence: true` applied (v5.5.775)
+  - HOBEIAN ZG-102Z: CIE enrollment fix applied (v5.5.776)
+  - Smart buttons: Visibility fix `getable: true` applied (v5.5.778)
+  - eWeLink CK-TLSR8656: Added to climate_sensor
+
+- **Fingerprint Collisions Resolved**:
+  - `_TZ3000_wkai4ga5`: Fixed in button_wireless_4 (v5.5.419)
+  - `_TZ3000_5tqxpine`: Properly mapped to button drivers
+
+- **Statistics**:
+  - 36/42 issues fixed (86% resolution rate)
+  - 6 issues under investigation
+  - 4 regressions identified and fixed (v5.5.718-752)
+
+---
+
+## [5.5.780] - 2026-01-24
+
+### 📦 GitHub PRs & Issues Integration
+
+- **ManufacturerName Additions from Closed PRs**:
+  - `climate_sensor`: Added `ZG-227Z`, `CK-TLSR8656-SS5-01(7014)` (eWeLink sensors)
+  - `curtain_motor`: Added `_TZE200_j1xl73iw` (2-channel curtain)
+  - `switch_2gang`: Added `_TZ3000_qaa59zqd` (BSEED 2-gang)
+  - `motion_sensor`: Added `_TZE200_y8jijhba` (PIR sensor)
+  - `water_leak_sensor`: Added `_TZ3210_tgvtvdoc` (rain sensor TS0207)
+  - `switch_dimmer_1gang`: Added `_TZ3000_abrsvsou`, `TS004F` (smart knob)
+  - `switch_4gang`: Added `_TZ3000_hdopuwv6`, `_TZ3000_aqsjyh1h` (relay boards)
+  - `plug_smart`: Added `_TZ3000_kfu8zapd`, `TS011F`
+  - `contact_sensor`: Added `eWeLink`, `SNZB-04`
+  - `led_strip`: Added `TS0505B`
+  - `button_wireless_4`: Added `_TZ3000_rrjr1q0u`
+  - `scene_switch_4`: Added `_TZ3000_xabckq1v`, `ERS-10TZBVK-AA`
+  - `thermostat_tuya_dp`: Added `_TZE200_kds22l0t`, `_TZE200_husqqvux` (006 series)
+
+- **Source PRs Integrated**:
+  - PR #1085: TS0201 humidity sensor
+  - PR #1074, #1073, #729: Curtain motors
+  - PR #1072, #898: 2-gang switches
+  - PR #1027, #735, #740: Motion/PIR sensors
+  - PR #983: Rain sensor TS0207
+  - PR #930: Smart knob TS004F
+  - PR #899: Moes 006 series thermostat
+  - PR #882, #948: Smoke detectors
+  - PR #904: eWeLink door/window sensor
+  - PR #915: 4-channel relay boards
+
+---
+
+## [5.5.779] - 2026-01-24
+
+### 🛡️ Anti-Generic Strategy Implementation
+
+- **universal_fallback Enhanced**: Expanded to 70+ manufacturerName prefixes
+  - Covers ALL Tuya prefixes: `_TZ`, `_TZE`, `_TYZB`, `_TYST`, `_TZQ`, `_TY`, etc.
+  - Covers major brands: Tuya, MOES, eWeLink, SONOFF, LIDL, BlitzWolf, ZemiSmart, etc.
+  - Covers additional brands: Aubess, Avatto, Bseed, Girier, Woox, Immax, Nous, etc.
+  - Prevents ANY Tuya-like device from falling to "zigbee generic"
+
+- **Anti-Generic Audit Script v5.5.779**: Enhanced validation tool
+  - Phase 1: Driver configuration audit (manufacturerName presence)
+  - Phase 2: ManufacturerName + ProductId collision detection
+  - Phase 3: Pairing-blocking code check (no throws in onNodeInit)
+  - Reports Anti-Generic Score percentage
+
+- **Pairing Philosophy Verified**:
+  - PermissiveMatchingEngine: `areClustersRequired()` returns false - never blocks on clusters
+  - TuyaTimeSyncManager: Hybrid mode - responds to device requests, never blocks pairing
+  - All 105 drivers pass anti-generic audit (100% score)
+  - No blocking throws in any driver's onNodeInit
+
+---
+
+## [5.5.778] - 2026-01-24
+
+### 🐛 Bug Fixes - Forum #1160 Smart Button Issues
+
+- **Smart Button UI Visibility Fixed**: Removed `maintenanceAction: true` from all button drivers
+  - `button.X` capabilities now visible in Homey mobile app
+  - Fixed: button_wireless_1, button_wireless_2, button_wireless_3, button_wireless_6, button_wireless_8
+  - Fixed: scene_switch_1, scene_switch_2, scene_switch_3, scene_switch_4, scene_switch_6
+  - Set `getable: true` for proper UI display
+
+- **Smart Button Event Detection Enhanced**: Added missing ZCL clusters to all button drivers
+  - Endpoint 1: clusters 0, 1, 3, 4, 5, 6, 18, 1280, 1281, 61184
+  - Added bindings for powerConfiguration (1), scenes (5), onOff (6)
+  - Enables battery reporting and button event detection via ZCL
+  - Supports Tuya DP cluster (61184) for Tuya-specific button events
+
+- **Battery Reporting Fixed**: Added proper cluster bindings
+  - powerConfiguration cluster (1) binding for automatic battery reports
+  - Works for sleepy devices that wake on button press
+  - Fallback to Tuya DP (DP4, DP101) for devices using proprietary protocol
+
+---
+
+## [5.5.777] - 2026-01-24
+
+### 🐛 Bug Fixes - Diagnostic Reports
+
+- **switch_dimmer_1gang Driver Crash**: Fixed "Invalid Flow Card ID" error
+  - Removed manual flow card registration that failed when cards weren't compiled
+  - Driver now initializes without errors
+  - Flow cards auto-registered by homeycompose when properly built
+
+### 📖 User Support
+
+- **_TZE284_o3x45p96 TRV Support**: Already supported in `radiator_valve` driver
+  - AVATTO TRV (Thermostatic Radiator Valve) uses Tuya DP cluster
+  - Pair device as "Radiator Valve" in Homey
+  - Capabilities: target_temperature, measure_temperature, thermostat_mode, battery
+
+---
+
+## [5.5.776] - 2026-01-24
+
+### 🐛 Bug Fixes - Forum Pages 40-42
+
+- **Fingerprint Collision Fix `_TZ3000_wkai4ga5`**: Removed from 8 wrong drivers
+  - Device was matching water_leak_sensor, motion_sensor, contact_sensor, climate_sensor, switch_1gang, switch_2gang, switch_3gang, switch_4gang
+  - Now only matches button drivers as intended
+  - Fixes pairing to wrong device type
+
+- **HOBEIAN ZG-102Z Contact Sensor**: Fixed IAS CIE enrollment + inversion
+  - Enhanced CIE enrollment detection (checks for null/zero addresses)
+  - Auto-enrollment workaround for devices with failed CIE binding
+  - Removed HOBEIAN from invertedByDefault list (Lasse_K forum confirmation)
+  - Device works correctly without inversion after CIE fix
+
+- **button_wireless_4 Flow Dropdown**: Added button selection to flows
+  - Flow triggers now have Button 1-4 dropdown selector (Eftychis issue)
+  - Matches scene_switch_4 flow card behavior
+  - Users can now filter by specific button in flows
+
+### 📝 Technical Improvements
+
+- **HybridSensorBase IAS Zone**: Enhanced enrollment diagnostics
+  - Logs CIE address state (null, zero, or valid)
+  - Shows user warning if enrollment may need re-pairing
+  - Better error messages for troubleshooting
+
+---
+
+## [5.5.775] - 2026-01-24
+
+### 🐛 Bug Fixes - Forum Issues #1160+
+
+- **_TZE284_iadro9bf Motion Alarm Stuck**: Enabled presence inversion
+  - Forum report (Ronny): Motion alarm always YES every 20 seconds
+  - Solution: Set `invertPresence: true` for TZE284_IADRO9BF config
+  - Device reports inverted motion state (active when empty, inactive when occupied)
+  - Throttling already in place (60s window for duplicate values)
+
+- **eWeLink CK-TLSR8656-SS5-01(7014) Support**: Added temperature sensor
+  - Added "eWeLink" to climate_sensor driver manufacturerName list
+  - Pure ZCL device (no Tuya cluster 61184)
+  - Clusters: temp (1026), humidity (1029), battery (1), pollControl (32)
+
+### 📖 Documentation
+
+- **BUTTON_CAPABILITY_GUIDE.md**: Created comprehensive button guide
+  - Explains why button.1 capability has no GUI widget (by design)
+  - Event-only devices vs state devices concept
+  - Flow card usage instructions
+  - Battery reporting behavior for sleepy devices
+  - Troubleshooting guide for "no response through flows"
+
+- **FORUM_ISSUES_ANALYSIS.md**: Comprehensive forum analysis report
+  - Analyzed messages 1160+ from Homey community forum
+  - 6 issues identified and categorized
+  - Root cause analysis for each issue
+  - Cross-referenced with git history and Zigbee2MQTT
+
+### ⚠️ User Support Notes
+
+**Button Issues (Cam, Eftychis)**: No GUI button is CORRECT behavior
+  - Wireless buttons are event-only (maintenanceAction: true)
+  - Use flow WHEN cards, not app widgets
+  - Battery reports on wake (press button or wait 4h heartbeat)
+
+**Contact Sensor (Lasse_K)**: Needs diagnostic report
+  - IAS Zone listeners verified in HybridSensorBase
+  - May need invert_contact setting adjustment
+  - Or debounce timeout blocking legitimate changes
+
+**_TZE204_gkfbdvyx**: Monitoring after gkfbdvyx debounce fixes
+  - User reported "now working with movement"
+  - Enhanced debouncing already in place (v5.5.438)
+
+---
+
+## [5.5.774] - 2026-01-24
+
+### 🐛 Bug Fixes - Forum Issue Resolution
+
+- **HOBEIAN ZG-222Z Water Sensor**: Enhanced IAS Zone fallback (Lasse_K forum fix)
+  - Added wake detection for sleepy devices with INVALID_EP binding failures
+  - Immediate status read when device wakes up (GitHub #28181)
+  - Handles both alarm1 and alarm2 bits for water detection
+  - Source: Homey Forum + Zigbee2MQTT GitHub #28181
+
+- **IASAlarmFallback v5.5.774**: Major enhancement for sleepy devices
+  - Wake detection listeners on basic + IAS Zone clusters
+  - Debounced wake handling (5s minimum interval)
+  - Direct zoneStatusChangeNotification processing
+  - Improved logging for debugging INVALID_EP issues
+
+### ✅ Verified Already Fixed
+
+- **`_TZ3210_ksqwlz9v`**: Already in `bulb_tunable_white` driver (FinnKje CCT dimmer)
+- **`switch_dimmer_1gang`**: Properly registered in app.json (Attilla)
+- **Button flow triggers**: All 4 trigger types present (pressed, double, long, multi)
+
+### 📋 Forum Issues Analyzed
+
+| User | Device | Issue | Status |
+|------|--------|-------|--------|
+| Lasse_K | HOBEIAN ZG-222Z | No alarm triggered | ✅ Enhanced fallback |
+| FinnKje | _TZ3210_ksqwlz9v | CCT dimming | ✅ Already supported |
+| Attilla | switch_dimmer_1gang | Missing driver | ✅ Driver exists |
+| Cam/Freddyboy | Buttons | No flow response | ✅ Triggers present |
+
+---
+
+## [5.5.773] - 2026-01-24
+
+### ✨ Device Support - User Device Analysis
+
+- **Added `_TZ3000_h1lpgkwn`** to `switch_2gang` driver
+  - Dual USB Switch (router device)
+  - Source: Z2M Issue #23625
+  - TS0002 modelId with 2 endpoints for independent USB port control
+
+- **Verified `_TZE284_oitavov2`** already in `soil_sensor` driver
+  - Soil moisture sensor with temp/battery
+  - DP3: soil_moisture, DP5: temperature, DP15: battery
+
+### 📋 User Device Audit (11 devices analyzed)
+
+| Device | Manufacturer | Status |
+|--------|--------------|--------|
+| 3-Button Remote | `_TZ3000_bczr4e10` | ✅ `button_wireless_3` |
+| Climate Sensor | `_TZE204_laokfqwu` | ✅ `presence_sensor_radar` |
+| Soil Sensor | `_TZE284_oltavov2` | ✅ `soil_sensor` |
+| Presence Radar | `_TZE200_rhgsbacq` | ✅ `presence_sensor_radar` |
+| 4-Button Remote | `_TZ3000_bgtzm4ny` | ✅ `button_wireless_4` |
+| Dual USB Switch | `_TZ3000_h1lpgkwn` | ✅ `switch_2gang` (NEW) |
+| PIR Sensor | `_TZE200_3towulqd` | ✅ `motion_sensor` |
+| HOBEIAN ZG-204ZM | `HOBEIAN` | ✅ `presence_sensor_radar` |
+| SOS Button | `_TZ3000_0dumfk2z` | ✅ `button_emergency_sos` |
+| LCD Climate | `_TZE284_vvmbj46n` | ✅ `climate_sensor` |
+| Presence Radar | `_TZE284_iadro9bf` | ✅ `presence_sensor_radar` |
+
+---
+
+## [5.5.772] - 2026-01-24
+
+### 🐛 Bug Fixes - HOBEIAN ZG-204ZM HYBRID Configuration
+
+- **HOBEIAN ZG-204ZM**: Corrected based on **USER INTERVIEW DATA**
+  - **CRITICAL**: Device is HYBRID (ZCL + Tuya DP), not pure Tuya DP!
+  - **Motion**: Via IAS Zone cluster 1280 (ZCL) ✓
+  - **Illuminance**: Via illuminanceMeasurement cluster 1024 (ZCL, max=4000) ✓
+  - **Battery**: Via powerConfiguration cluster 1 (ZCL) ✓
+  - **Settings**: Via Tuya DP cluster 61184 (DP2, DP4, DP102, etc.)
+  
+- **User Interview Clusters Detected**:
+  ```
+  Input Clusters: [0, 1, 3, 1024, 1280, 61184]
+  - 0 (basic): Device info
+  - 1 (powerConfiguration): batteryVoltage=30, batteryPercentageRemaining=200
+  - 1024 (illuminanceMeasurement): measuredValue=1, maxMeasuredValue=4000
+  - 1280 (iasZone): zoneType=motionSensor, zoneState=enrolled
+  - 61184 (tuya): Additional settings DPs
+  ```
+
+- **Config Flags**:
+  - `useZcl: true` - illuminance via ZCL cluster 1024
+  - `useIasZone: true` - motion via ZCL IAS Zone cluster 1280
+  - `useTuyaDP: true` - settings via Tuya DP cluster 61184
+  - `noTemperature: true` - NO temperature sensor
+  - `noHumidity: true` - NO humidity sensor
+
+---
+
+## [5.5.771] - 2026-01-24
+
+### 🐛 Bug Fixes - HOBEIAN ZG-204ZM (Initial - Superseded by 5.5.772)
+
+- Initial attempt based on Z2M documentation (incorrect for "HOBEIAN" branded variant)
+
+---
+
 ## [5.5.770] - 2026-01-24
 
 ### 📚 Documentation & Research
