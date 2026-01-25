@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.792** | 🔧 FIX LukasT #1163: _TZE284_1wnh8bqp temp/humidity sensor - auto-detect humi... |
 | **v5.5.791** | 🔧 PROJECT-WIDE IMPROVEMENTS: Presence inversion support in HybridSensorBase ... |
 | **v5.5.790** | 🔧 DEVICE INTERVIEW FIXES: INT-001 _TZE284_iadro9bf radar motion always YES (... |
 | **v5.5.789** | 🔧 BUG FIXES: Fixed switch_dimmer_1gang 'Invalid Flow Card ID' error + AVATTO... |
@@ -78,7 +79,6 @@
 | **v5.5.738** | 🔧 PR Code Improvements: Added child_lock flow cards for thermostats (action ... |
 | **v5.5.737** | 🔌 PR #111: New Bseed Touch Dimmer driver (switch_dimmer_1gang) + flow card f... |
 | **v5.5.736** | 🔌 Forum Requests: Added Hejhome Pika 3-gang & 6-gang switches (_TZE284_c8ipb... |
-| **v5.5.735** | 🔧 ROOT CAUSE FIX: Integrated DeviceDataHelper in HybridSwitchBase, HybridSen... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
