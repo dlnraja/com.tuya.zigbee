@@ -6,6 +6,24 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.791] - 2026-01-25
+
+### 🔧 Project-Wide Improvements
+
+- **HybridSensorBase Presence Inversion**: Centralized inversion logic for all IAS Zone and ZCL occupancy sensors
+  - `_handleIASZoneStatus()` now checks `invert_presence` / `invert_contact` settings
+  - ZCL occupancy cluster setup respects `invert_presence` setting
+  - Benefits all sensors extending HybridSensorBase
+
+- **New Driver Settings**: Added `invert_presence` checkbox to:
+  - `motion_sensor` driver
+  - `motion_sensor_radar_mmwave` driver
+  - Users can now fix inverted sensors without code changes
+
+- **DEVICE_INTERVIEWS.json**: Marked INT-001 and INT-021 as fixed
+
+---
+
 ## [5.5.790] - 2026-01-24
 
 ### 🐛 Bug Fixes (Device Interview Issues)

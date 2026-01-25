@@ -1,4 +1,7 @@
 {
+  "5.5.791": {
+    "en": "🔧 PROJECT-WIDE IMPROVEMENTS: Presence inversion support in HybridSensorBase (all IAS Zone + ZCL sensors), invert_presence setting for motion_sensor drivers. Fixes INT-001/INT-021."
+  },
   "5.5.790": {
     "en": "🔧 DEVICE INTERVIEW FIXES: INT-001 _TZE284_iadro9bf radar motion always YES (ZCL inversion fix), INT-021 HOBEIAN ZG-102Z CIE enrollment (force write CIE address). RE-PAIR sensors after update."
   },

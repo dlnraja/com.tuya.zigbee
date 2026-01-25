@@ -577,6 +577,19 @@
   },
   "settings": [
     {
+      "id": "invert_presence",
+      "type": "checkbox",
+      "label": {
+        "en": "Invert Motion Detection",
+        "fr": "Inverser la Détection de Mouvement"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable if motion is always detected or never detected (inverted sensor)",
+        "fr": "Activer si le mouvement est toujours détecté ou jamais détecté (capteur inversé)"
+      }
+    },
+    {
       "id": "power_source",
       "type": "dropdown",
       "label": {
