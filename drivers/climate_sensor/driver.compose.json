@@ -9,8 +9,15 @@
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
-    "measure_battery"
+    "measure_battery",
+    "measure_luminance"
   ],
+  "capabilitiesOptions": {
+    "measure_luminance": {
+      "title": { "en": "Illuminance" },
+      "units": { "en": "lux" }
+    }
+  },
   "energy": {
     "batteries": [
       "AAA",
@@ -2371,7 +2378,6 @@
       "_TZ3000_t6jrifu5",
       "_TZ3000_upgcbody",
       "_TZ3000_usvkzkyn",
-      "_TZ3000_wkai4ga5",
       "_TZ3000_yxqnffam",
       "_TZ3000_zf1lxtlj",
       "_TZ3000_402jjyro",
@@ -2478,6 +2484,7 @@
       "Zbeacon",
       "zbeacon",
       "EWELINK",
+      "eWeLink",
       "_TZ3000_HY6NCVMW",
       "_tz3000_hy6ncvmw"
     ],
@@ -2494,7 +2501,9 @@
       "SNZB-02",
       "SNZB-02D",
       "SNZB-02P",
-      "TS0601"
+      "TS0601",
+      "ZG-227Z",
+      "CK-TLSR8656-SS5-01(7014)"
     ],
     "endpoints": {
       "1": {

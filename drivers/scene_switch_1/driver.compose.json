@@ -10,12 +10,8 @@
   ],
   "capabilitiesOptions": {
     "button.1": {
-      "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1"
-      },
-      "maintenanceAction": true,
-      "getable": false,
+      "title": { "en": "Button 1", "fr": "Bouton 1" },
+      "getable": true,
       "setable": false
     }
   },

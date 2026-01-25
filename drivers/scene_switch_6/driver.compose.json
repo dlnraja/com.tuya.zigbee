@@ -14,55 +14,12 @@
     "measure_battery"
   ],
   "capabilitiesOptions": {
-    "maintenanceAction": true,
-    "button.1": {
-      "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1"
-      },
-      "getable": false,
-      "setable": false
-    },
-    "button.2": {
-      "title": {
-        "en": "Button 2",
-        "fr": "Bouton 2"
-      },
-      "getable": false,
-      "setable": false
-    },
-    "button.3": {
-      "title": {
-        "en": "Button 3",
-        "fr": "Bouton 3"
-      },
-      "getable": false,
-      "setable": false
-    },
-    "button.4": {
-      "title": {
-        "en": "Button 4",
-        "fr": "Bouton 4"
-      },
-      "getable": false,
-      "setable": false
-    },
-    "button.5": {
-      "title": {
-        "en": "Button 5",
-        "fr": "Bouton 5"
-      },
-      "getable": false,
-      "setable": false
-    },
-    "button.6": {
-      "title": {
-        "en": "Button 6",
-        "fr": "Bouton 6"
-      },
-      "getable": false,
-      "setable": false
-    }
+    "button.1": { "title": { "en": "Button 1", "fr": "Bouton 1" }, "getable": true, "setable": false },
+    "button.2": { "title": { "en": "Button 2", "fr": "Bouton 2" }, "getable": true, "setable": false },
+    "button.3": { "title": { "en": "Button 3", "fr": "Bouton 3" }, "getable": true, "setable": false },
+    "button.4": { "title": { "en": "Button 4", "fr": "Bouton 4" }, "getable": true, "setable": false },
+    "button.5": { "title": { "en": "Button 5", "fr": "Bouton 5" }, "getable": true, "setable": false },
+    "button.6": { "title": { "en": "Button 6", "fr": "Bouton 6" }, "getable": true, "setable": false }
   },
   "zigbee": {
     "manufacturerName": [

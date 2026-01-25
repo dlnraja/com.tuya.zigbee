@@ -22,23 +22,23 @@ class WaterTankMonitorDriver extends ZigBeeDriver {
       }
     };
 
-    this.waterLevelChangedTrigger = safeGetTrigger('water_level_changed');
-    this.lowWaterAlarmTrigger = safeGetTrigger('water_tank_low');
-    this.fullWaterTrigger = safeGetTrigger('water_tank_full');
-    this.batteryLowTrigger = safeGetTrigger('water_tank_battery_low');
+    this.waterLevelChangedTrigger = safeGetTrigger('water_tank_monitor_level_changed');
+    this.lowWaterAlarmTrigger = safeGetTrigger('water_tank_monitor_low');
+    this.fullWaterTrigger = safeGetTrigger('water_tank_monitor_full');
+    this.batteryLowTrigger = safeGetTrigger('water_tank_monitor_battery_low');
     
     // v5.5.587: Register condition run listener
     try {
-      this.homey.flow.getConditionCard('water_level_above')
+      this.homey.flow.getConditionCard('water_tank_monitor_level_above')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const level = args.device.getCapabilityValue('measure_water') || 0;
           const threshold = args.level || 20;
           return level > threshold;
         });
-      this.log('[FLOW] ✅ water_level_above condition registered');
+      this.log('[FLOW] ✅ water_tank_monitor_level_above condition registered');
     } catch (err) {
-      this.log(`[FLOW] ⚠️ water_level_above: ${err.message}`);
+      this.log(`[FLOW] ⚠️ water_tank_monitor_level_above: ${err.message}`);
     }
 
     const registered = [this.waterLevelChangedTrigger, this.lowWaterAlarmTrigger, 

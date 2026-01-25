@@ -196,7 +196,7 @@ class ClimateSensorDevice extends HybridSensorBase {
       9: { capability: null, setting: 'temperature_unit' },     // 0=Celsius, 1=Fahrenheit
       10: { capability: null, setting: 'max_temp_alarm', divisor: 10 },  // Max temp °C/10
       11: { capability: null, setting: 'min_temp_alarm', divisor: 10 },  // Min temp °C/10
-      12: { capability: null, setting: 'max_humidity_alarm' },  // Max humidity %
+      12: { capability: 'measure_luminance', divisor: 1 },       // v5.5.783: DP12=Lux for multi-sensors
       13: { capability: null, setting: 'min_humidity_alarm' },  // Min humidity %
       14: { capability: null, setting: 'temp_alarm_status' },   // 0=cancel, 1=lower, 2=upper
       15: { capability: null, setting: 'humidity_alarm_status' }, // 0=cancel, 1=lower, 2=upper

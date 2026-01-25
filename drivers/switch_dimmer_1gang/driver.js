@@ -7,18 +7,9 @@ class SwitchDimmer1GangDriver extends Homey.Driver {
   async onInit() {
     this.log('Switch Touch Dimmer (1 Gang) Driver has been initialized');
     
-    // Register flow card listeners
-    this.registerFlowCards();
-  }
-
-  registerFlowCards() {
-    // Register trigger cards (these will be used in device.js via trigger())
-    this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_turned_on');
-    this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_turned_off');
-    this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_brightness_increased');
-    this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_brightness_decreased');
-
-    this.log('Flow trigger cards registered');
+    // v5.5.776: Flow cards are auto-registered by homeycompose from driver.flow.compose.json
+    // Manual registration removed to prevent "Invalid Flow Card ID" errors
+    // when driver.flow.compose.json is not properly compiled into app.json
   }
 
   async onPairListDevices() {

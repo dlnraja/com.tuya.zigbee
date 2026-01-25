@@ -18,13 +18,12 @@
     "measure_battery"
   ],
   "capabilitiesOptions": {
-    "maintenanceAction": true,
     "button.1": {
       "title": {
         "en": "Button 1",
         "fr": "Bouton 1"
       },
-      "getable": false,
+      "getable": true,
       "setable": false
     },
     "button.2": {
@@ -32,7 +31,7 @@
         "en": "Button 2",
         "fr": "Bouton 2"
       },
-      "getable": false,
+      "getable": true,
       "setable": false
     },
     "button.3": {
@@ -40,7 +39,7 @@
         "en": "Button 3",
         "fr": "Bouton 3"
       },
-      "getable": false,
+      "getable": true,
       "setable": false
     },
     "measure_battery": {
@@ -314,10 +313,16 @@
     },
     "endpoints": {
       "1": {
-        "clusters": [
-          0
-        ],
-        "bindings": []
+        "clusters": [0, 1, 3, 4, 5, 6, 18, 1280, 1281, 61184],
+        "bindings": [1, 5, 6]
+      },
+      "2": {
+        "clusters": [0, 4, 5, 6, 18],
+        "bindings": [5, 6]
+      },
+      "3": {
+        "clusters": [0, 4, 5, 6, 18],
+        "bindings": [5, 6]
       }
     }
   },
