@@ -7611,11 +7611,14 @@
           "Monoprice",
           "_TZ3000_vp6clf9d",
           "_TZ3000_zgyzgdua",
-          "_TZ3000_rrjr1q0u"
+          "_TZ3000_rrjr1q0u",
+          "eWeLink",
+          "SONOFF"
         ],
         "productId": [
           "TS0044",
-          "TS004F"
+          "TS004F",
+          "SNZB-01M"
         ],
         "learnmode": {
           "image": "/drivers/button_wireless_4/assets/learnmode.svg",
@@ -12224,7 +12227,9 @@
           "zbeacon",
           "EWELINK",
           "_TZ3000_HY6NCVMW",
-          "_tz3000_hy6ncvmw"
+          "_tz3000_hy6ncvmw",
+          "SNZB-02DR2",
+          "SONOFF"
         ],
         "productId": [
           "TS0201",
@@ -12241,7 +12246,10 @@
           "SNZB-02P",
           "TS0601",
           "ZG-227Z",
-          "CK-TLSR8656-SS5-01(7014)"
+          "CK-TLSR8656-SS5-01(7014)",
+          "SNZB-02DR2",
+          "SNZB-02LD",
+          "SNZB-02WD"
         ],
         "endpoints": {
           "1": {
@@ -13373,7 +13381,8 @@
           "_TZE200_dcydapr2",
           "_TZE200_dfry6ylv",
           "_TZ3000_b7m9qda0",
-          "eWeLink"
+          "eWeLink",
+          "SONOFF"
         ],
         "productId": [
           "TS0203",
@@ -13394,7 +13403,8 @@
           "3300-S",
           "3320-L",
           "SNZB-04",
-          "TS0601"
+          "TS0601",
+          "SNZB-04P"
         ],
         "endpoints": {
           "1": {
@@ -27105,11 +27115,16 @@
           "Ecolink",
           "Dome",
           "Vision",
-          "Monoprice"
+          "Monoprice",
+          "SONOFF",
+          "eWeLink"
         ],
         "productId": [
           "ZBMINI",
-          "ZBMINI-L"
+          "ZBMINI-L",
+          "ZBMINIL2",
+          "ZBMINIR2",
+          "01MINIZB"
         ],
         "endpoints": {
           "1": {
@@ -27960,7 +27975,9 @@
           "_TZ3000_otvn3lne",
           "_TZ3000_bsvqrxru",
           "ZG-204ZM",
-          "_TZE200_y8jijhba"
+          "_TZE200_y8jijhba",
+          "eWeLink",
+          "SONOFF"
         ],
         "productId": [
           "TS0202",
@@ -27985,7 +28002,8 @@
           "3325-S",
           "SNZB-03",
           "TS0601",
-          "ZG-204ZM"
+          "ZG-204ZM",
+          "SNZB-03P"
         ],
         "endpoints": {
           "1": {
