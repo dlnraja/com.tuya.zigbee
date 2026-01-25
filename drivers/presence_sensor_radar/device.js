@@ -1956,14 +1956,32 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       const occCluster = ep1.clusters?.msOccupancySensing;
       if (occCluster?.on) {
         occCluster.on('attr.occupancy', (v) => {
-          const occupied = (v & 0x01) !== 0;
-          this.log(`[RADAR-BATTERY] Occupancy: ${occupied}`);
+          const rawOccupied = (v & 0x01) !== 0;
+          const occupied = this._applyPresenceInversion(rawOccupied);
+          this.log(`[RADAR-BATTERY] Occupancy: raw=${rawOccupied} → ${occupied}`);
           this.setCapabilityValue('alarm_motion', occupied).catch(() => { });
           this._triggerPresenceFlows(occupied);
         });
         this.log('[RADAR] ✅ Passive occupancy listener configured');
       }
     } catch (e) { /* ignore */ }
+  }
+
+  /**
+   * v5.5.790: Apply presence inversion for ZCL paths
+   * Forum INT-001: _TZE284_iadro9bf motion ALWAYS YES - ZCL not using invertPresence
+   */
+  _applyPresenceInversion(occupied) {
+    const config = this._getSensorConfig();
+    const settings = this.getSettings() || {};
+    const invertPresence = settings.invert_presence ?? config.invertPresence ?? false;
+    
+    if (invertPresence) {
+      const inverted = !occupied;
+      this.log(`[RADAR] 🔄 ZCL presence inversion: ${occupied} → ${inverted}`);
+      return inverted;
+    }
+    return occupied;
   }
 
   /**
@@ -2450,11 +2468,13 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       const occCluster = ep1.clusters?.msOccupancySensing;
       if (occCluster?.on) {
         occCluster.on('attr.occupancy', (v) => {
-          const occupied = (v & 0x01) !== 0;
+          const rawOccupied = (v & 0x01) !== 0;
+          const occupied = this._applyPresenceInversion(rawOccupied);
+          this.log(`[RADAR] Occupancy: raw=${rawOccupied} → ${occupied}`);
           this.setCapabilityValue('alarm_motion', occupied).catch(() => { });
           this._triggerPresenceFlows(occupied);
         });
-        this.log('[RADAR] ✅ Occupancy cluster configured');
+        this.log('[RADAR] ✅ Occupancy cluster configured (with inversion support)');
       }
     } catch (e) { /* ignore */ }
 
@@ -2618,22 +2638,24 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   async _setupIASZoneListeners(iasZone) {
     if (!iasZone?.on) return;
 
-    // Attribute change listener
+    // Attribute change listener - v5.5.790: Apply presence inversion
     iasZone.on('attr.zoneStatus', (status) => {
       const statusNum = typeof status === 'object' ? (status?.data?.[0] || 0) : (typeof status === 'number' ? status : 0);
       const alarm1 = (statusNum & 0x01) !== 0;
       const alarm2 = (statusNum & 0x02) !== 0;
-      const motion = alarm1 || alarm2;
-      this.log(`[RADAR] IAS zoneStatus attr: ${statusNum} -> motion: ${motion}`);
+      const rawMotion = alarm1 || alarm2;
+      const motion = this._applyPresenceInversion(rawMotion);
+      this.log(`[RADAR] IAS zoneStatus attr: ${statusNum} -> raw=${rawMotion} -> ${motion}`);
       this.setCapabilityValue('alarm_motion', motion).catch(() => { });
       this._triggerPresenceFlows(motion);
     });
 
-    // Zone status change notification (ZCL command)
+    // Zone status change notification (ZCL command) - v5.5.790: Apply presence inversion
     iasZone.onZoneStatusChangeNotification = (payload) => {
       const status = payload?.zoneStatus ?? payload?.data?.[0] ?? 0;
-      const motion = (status & 0x03) !== 0;
-      this.log(`[RADAR] IAS zoneStatusChangeNotification: ${status} -> motion: ${motion}`);
+      const rawMotion = (status & 0x03) !== 0;
+      const motion = this._applyPresenceInversion(rawMotion);
+      this.log(`[RADAR] IAS zoneStatusChangeNotification: ${status} -> raw=${rawMotion} -> ${motion}`);
       this.setCapabilityValue('alarm_motion', motion).catch(() => { });
       this._triggerPresenceFlows(motion);
     };

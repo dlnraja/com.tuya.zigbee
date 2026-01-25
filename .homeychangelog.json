@@ -1,4 +1,7 @@
 {
+  "5.5.790": {
+    "en": "🔧 DEVICE INTERVIEW FIXES: INT-001 _TZE284_iadro9bf radar motion always YES (ZCL inversion fix), INT-021 HOBEIAN ZG-102Z CIE enrollment (force write CIE address). RE-PAIR sensors after update."
+  },
   "5.5.789": {
     "en": "🔧 BUG FIXES: Fixed switch_dimmer_1gang 'Invalid Flow Card ID' error + AVATTO ME167/TRV06 thermostat DP profile support (_TZE284_o3x45p96). RE-PAIR thermostats after update."
   },
