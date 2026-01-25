@@ -168,9 +168,25 @@ class ClimateSensorDevice extends HybridSensorBase {
 
       // ═══════════════════════════════════════════════════════════════════
       // HUMIDITY DPs (multiple variants)
+      // v5.5.792: FIX LukasT #1163 - _TZE284_1wnh8bqp needs humidity ÷10
+      // Some devices report humidity as 0-1000 (÷10), others as 0-100 (direct)
       // ═══════════════════════════════════════════════════════════════════
-      2: { capability: 'measure_humidity', divisor: 1 },        // Standard: all _TZE* devices
-      7: { capability: 'measure_humidity', divisor: 1 },        // Alt: some _TZE204 models
+      2: {
+        capability: 'measure_humidity',
+        transform: (v) => {
+          // v5.5.792: Auto-detect divisor based on value range
+          // If value > 100, it's likely ×10 scaled (e.g., 650 → 65.0%)
+          if (v > 100) return Math.round(v / 10);
+          return v;
+        }
+      },
+      7: {
+        capability: 'measure_humidity',
+        transform: (v) => {
+          if (v > 100) return Math.round(v / 10);
+          return v;
+        }
+      },
       // v5.5.499: REMOVED DP103 humidity - was causing incorrect values
       // DP103 is illuminance on most devices, not humidity (forum diagnostics)
 
