@@ -1,4 +1,7 @@
 {
+  "5.5.794": {
+    "en": "📦 NEW SONOFF DEVICES: Added SNZB-02DR2 (Airguard TH 3.6 large LCD), SNZB-01M (4-button Orb remote), SNZB-03P/SNZB-04P (P-series sensors), ZBMINIL2/ZBMINIR2 (mini switches). Enhanced SONOFF fingerprinting across all sensor drivers."
+  },
   "5.5.793": {
     "en": "🔧 SENSOR ENRICHMENT: Added validation constants, battery throttling, and enhanced cleanup across all sensor drivers (climate_sensor, motion_sensor, contact_sensor, presence_sensor_radar, HybridSensorBase). Improved robustness and reduced battery spam."
   },
