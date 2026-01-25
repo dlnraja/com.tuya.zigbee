@@ -6,6 +6,23 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.790] - 2026-01-24
+
+### 🐛 Bug Fixes (Device Interview Issues)
+
+- **INT-001: _TZE284_iadro9bf Radar Sensor** - Fixed motion alarm ALWAYS YES
+  - Root cause: ZCL occupancy/IAS handlers not using `invertPresence` config
+  - Added `_applyPresenceInversion()` helper to all ZCL paths
+  - Now respects `invertPresence: true` from config or user settings
+
+- **INT-021: HOBEIAN ZG-102Z Contact Sensor** - Fixed CIE enrollment failure
+  - Root cause: Device CIE address showing 00:00:00:00:00:00:00:00 (not enrolled)
+  - Enhanced IAS Zone enrollment to force-write CIE address
+  - Added 3-step process: write CIE → send enrollment response → verify
+  - Affected devices should now properly report contact state
+
+---
+
 ## [5.5.789] - 2026-01-24
 
 ### 🐛 Bug Fixes
