@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.791** | 🔧 PROJECT-WIDE IMPROVEMENTS: Presence inversion support in HybridSensorBase ... |
 | **v5.5.790** | 🔧 DEVICE INTERVIEW FIXES: INT-001 _TZE284_iadro9bf radar motion always YES (... |
 | **v5.5.789** | 🔧 BUG FIXES: Fixed switch_dimmer_1gang 'Invalid Flow Card ID' error + AVATTO... |
 | **v5.5.769** | op^timise and fix issues related to optinal referencies  |
@@ -78,7 +79,6 @@
 | **v5.5.737** | 🔌 PR #111: New Bseed Touch Dimmer driver (switch_dimmer_1gang) + flow card f... |
 | **v5.5.736** | 🔌 Forum Requests: Added Hejhome Pika 3-gang & 6-gang switches (_TZE284_c8ipb... |
 | **v5.5.735** | 🔧 ROOT CAUSE FIX: Integrated DeviceDataHelper in HybridSwitchBase, HybridSen... |
-| **v5.5.734** | 🔌 eWeLink Plug Support (Forum #1133): Added eWeLink CK-BL702-SWP-01(7020) pl... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
