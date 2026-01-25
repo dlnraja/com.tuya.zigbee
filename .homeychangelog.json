@@ -1,4 +1,7 @@
 {
+  "5.5.793": {
+    "en": "🔧 SENSOR ENRICHMENT: Added validation constants, battery throttling, and enhanced cleanup across all sensor drivers (climate_sensor, motion_sensor, contact_sensor, presence_sensor_radar, HybridSensorBase). Improved robustness and reduced battery spam."
+  },
   "5.5.792": {
     "en": "🔧 FIX LukasT #1163: _TZE284_1wnh8bqp temp/humidity sensor - auto-detect humidity divisor (values >100 now correctly divided by 10)."
   },
