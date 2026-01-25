@@ -1,4 +1,7 @@
 {
+  "5.5.789": {
+    "en": "🔧 BUG FIXES: Fixed switch_dimmer_1gang 'Invalid Flow Card ID' error + AVATTO ME167/TRV06 thermostat DP profile support (_TZE284_o3x45p96). RE-PAIR thermostats after update."
+  },
   "5.5.759": {
     "en": "📦 Publish Release: MOES button BoundCluster fix (cluster 0xE000/57344), SOS button IAS Zone logging fix, all GitHub issues #101-#110 resolved. RE-PAIR REQUIRED for MOES buttons."
   },
