@@ -1,4 +1,7 @@
 {
+  "5.5.792": {
+    "en": "🔧 FIX LukasT #1163: _TZE284_1wnh8bqp temp/humidity sensor - auto-detect humidity divisor (values >100 now correctly divided by 10)."
+  },
   "5.5.791": {
     "en": "🔧 PROJECT-WIDE IMPROVEMENTS: Presence inversion support in HybridSensorBase (all IAS Zone + ZCL sensors), invert_presence setting for motion_sensor drivers. Fixes INT-001/INT-021."
   },

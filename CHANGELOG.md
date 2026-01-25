@@ -6,6 +6,18 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.5.792] - 2026-01-25
+
+### 🐛 Bug Fixes
+
+- **LukasT #1163: _TZE284_1wnh8bqp Temp/Humidity Sensor**
+  - Device already supported in `climate_sensor` driver
+  - Fixed humidity DP2 mapping - auto-detect divisor based on value range
+  - Values > 100 now correctly divided by 10 (e.g., 650 → 65%)
+  - Also applies to DP7 alternate humidity
+
+---
+
 ## [5.5.791] - 2026-01-25
 
 ### 🔧 Project-Wide Improvements
