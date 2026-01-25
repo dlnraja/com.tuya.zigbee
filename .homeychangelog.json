@@ -1,4 +1,46 @@
 {
+  "5.5.808": {
+    "en": "🔧 DIAGNOSTICS FIX: 1) Water valve _TZ3000_iedbgyxt/TS0001 now correctly detected as valve (was wrongly detected as 1-gang switch). 2) Fixed water_valve_smart Flow Card IDs mismatch - flow cards now work correctly. 3) Moved 10+ valve manufacturer IDs from switch_1gang to valve_single driver."
+  },
+  "5.5.807": {
+    "en": "🔒 SDK3 IAS ZONE COMPLIANCE FIX: 1) Removed hardcoded fallback IEEE address that caused enrollment failures. 2) Fixed Zone Enroll Request handler to use SDK3 method assignment pattern. 3) Added proactive Zone Enroll Response on init (SDK3 best practice). 4) Improved CIE address handling - Homey v8.1.1+ auto-writes during pairing. 5) Better error handling when coordinator IEEE unavailable. Fixes HOBEIAN ZG-102Z and similar sensor enrollment issues."
+  },
+  "5.5.806": {
+    "en": "💡 FORUM COMPREHENSIVE FIX: 1) Motion sensor continuous illuminance - lux now updates independently of motion (30s-5min intervals). 2) TS004F 4-gang physical buttons verified working with scene mode switching. 3) Contact sensor _TZ3000_n2egfsli support verified. All forum issues from homey_forum_analysis addressed."
+  },
+  "5.5.805": {
+    "en": "🔘 BUTTON FIX (Forum Ronny_M/Cam/Hartmut #1172/#1160/#1155): Fixed wireless buttons not responding to presses and missing battery readings. Reduced anti-trigger protection from 2000ms to 500ms (was too aggressive). Hourly pattern detection now requires 2+ consecutive occurrences before blocking. Buttons should now trigger flows correctly on every press."
+  },
+  "5.5.804": {
+    "en": "🔧 DIAGNOSTICS REPORT FIXES: 1) HOBEIAN multisensor - fixed wrong detection when modelId is null/unknown, now defaults to HOBEIAN_10G_MULTI config with temp+humidity support. 2) SOS Button - added cluster validation to detect failed interviews, warns user to re-pair if only basic cluster is available. Enhanced diagnostic logging for both issues."
+  },
+  "5.5.803": {
+    "en": "💧 WATER LEAK SENSOR FIX (Forum #1166 Lasse_K): Fixed 'installs but no alarm' issue. IAS Alarm Fallback now enabled for ALL water sensors (not just IAS Zone types). Added force initial alarm state read after pairing. Enhanced polling and wake detection for sleepy water sensors."
+  },
+  "5.5.802": {
+    "en": "📡 BLAKADDER DATABASE INTEGRATION: Added brand names Eardatek, Linptech, Rehent, Nous, RTX, Fantem to motion_sensor, contact_sensor, climate_sensor, water_leak_sensor drivers. Enhanced device recognition for third-party Tuya-compatible sensors."
+  },
+  "5.5.801": {
+    "en": "🔘 LORATAP TS0043 FIX (Issue #98): Added missing manufacturer ID _TZ3000_bi6lpsew and LoraTap brand name for 3-button remote. Device already had _TZ3000_famkxci2 support. Users should re-pair device after update for proper recognition."
+  },
+  "5.5.800": {
+    "en": "📡 ZIGBEE DEVICE EXPANSION: Added 30+ new manufacturer IDs from ZHA/Zigbee2MQTT/Hubitat sources. Thermostats: _TZE284_cvub6xbb (hydronic floor heating), _TZE284_xnbkhhdr, _TZE284_pcdmj88b. Valves: SASWELL, LIDL Parkside, GiEX (_TZE204_7ytb3h8u), FrankEver FK_V02, NovaDigital, MUCIAKiE. Motion Sensors: 2-in-1 variants, IMOU ZP2-EN, Azoula 4-in-1."
+  },
+  "5.5.799": {
+    "en": "💡 SWITCH DIMMER 1GANG ENHANCEMENT: Full settings support (min_brightness, power_on_behavior, light_type) with onSettings handler and initial settings application. Added 7 new manufacturer IDs (BSEED, Avatto ZDMS16-1, Mercator IKUU). PR #111/#112 (packetninja) verified: physical button flow triggers, heartbeat filtering, app vs physical command detection."
+  },
+  "5.5.798": {
+    "en": "🔧 PROJECT AUDIT: Complete codebase audit and reorganization. Fixed import paths (BatteryMonitoringMixin, security index). Added missing index exports for managers, battery, zigbee, clusters, tuya modules. Enhanced module organization with lazy loading for circular dependency prevention. SDK3 compliance verified across all drivers."
+  },
+  "5.5.797": {
+    "en": "🔧 IEEE ADDRESS MANAGEMENT: New centralized IEEEAddressManager with 7 fallback methods for device/coordinator IEEE retrieval, robust CIE address write with verification, IEEE normalization and validation. Fixes IAS Zone enrollment issues across all sensors/buttons."
+  },
+  "5.5.796": {
+    "en": "🔧 FORUM #1159 FIXES: MOES buttons (Freddyboy/Hartmut) - enhanced TuyaE000BoundCluster with multiple parsing strategies. Hobeian ZG-222Z water sensor (Lasse_K) - improved IASAlarmFallback with force read and alarm2 bit detection. BSEED TS0003 switch support verified."
+  },
+  "5.5.795": {
+    "en": "🔧 RAW DATA INTERPRETATION: Enhanced CIE address verification for IAS Zone enrollment, new UniversalRawInterpreter for unknown clusters/commands, improved TuyaBoundCluster with raw frame handling and debugging. Better support for non-standard Zigbee devices."
+  },
   "5.5.794": {
     "en": "📦 NEW SONOFF DEVICES: Added SNZB-02DR2 (Airguard TH 3.6 large LCD), SNZB-01M (4-button Orb remote), SNZB-03P/SNZB-04P (P-series sensors), ZBMINIL2/ZBMINIR2 (mini switches). Enhanced SONOFF fingerprinting across all sensor drivers."
   },
