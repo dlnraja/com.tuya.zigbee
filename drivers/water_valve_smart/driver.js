@@ -15,67 +15,67 @@ class WaterValveSmartDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Valve is open
     try {
-      this.homey.flow.getConditionCard('water_valve_is_open')
+      this.homey.flow.getConditionCard('water_valve_smart_is_open')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ water_valve_is_open');
+      this.log('[FLOW] ✅ water_valve_smart_is_open');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     // CONDITION: Leak detected
     try {
-      this.homey.flow.getConditionCard('water_valve_leak_detected')
+      this.homey.flow.getConditionCard('water_valve_smart_leak_is_detected')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_water') === true;
         });
-      this.log('[FLOW] ✅ water_valve_leak_detected');
+      this.log('[FLOW] ✅ water_valve_smart_leak_is_detected');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     // CONDITION: Temperature above
     try {
-      this.homey.flow.getConditionCard('water_valve_temperature_above')
+      this.homey.flow.getConditionCard('water_valve_smart_temperature_above')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const temp = args.device.getCapabilityValue('measure_temperature') || 0;
           return temp > (args.temp || 5);
         });
-      this.log('[FLOW] ✅ water_valve_temperature_above');
+      this.log('[FLOW] ✅ water_valve_smart_temperature_above');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     // ACTION: Open valve
     try {
-      this.homey.flow.getActionCard('water_valve_open')
+      this.homey.flow.getActionCard('water_valve_smart_open')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setCapabilityValue('onoff', true);
           return true;
         });
-      this.log('[FLOW] ✅ water_valve_open');
+      this.log('[FLOW] ✅ water_valve_smart_open');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     // ACTION: Close valve
     try {
-      this.homey.flow.getActionCard('water_valve_close')
+      this.homey.flow.getActionCard('water_valve_smart_close')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setCapabilityValue('onoff', false);
           return true;
         });
-      this.log('[FLOW] ✅ water_valve_close');
+      this.log('[FLOW] ✅ water_valve_smart_close');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     // ACTION: Toggle valve
     try {
-      this.homey.flow.getActionCard('water_valve_toggle')
+      this.homey.flow.getActionCard('water_valve_smart_toggle')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
           await args.device.setCapabilityValue('onoff', !current);
           return true;
         });
-      this.log('[FLOW] ✅ water_valve_toggle');
+      this.log('[FLOW] ✅ water_valve_smart_toggle');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     this.log('[FLOW] 🎉 Water valve flow cards registered');

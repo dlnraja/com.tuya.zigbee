@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "water_valve_opened",
+      "id": "water_valve_smart_opened",
       "highlight": true,
       "title": {
         "en": "Valve opened",
@@ -18,7 +18,7 @@
       "args": []
     },
     {
-      "id": "water_valve_closed",
+      "id": "water_valve_smart_closed",
       "title": {
         "en": "Valve closed",
         "nl": "Klep gesloten",
@@ -34,7 +34,7 @@
       "args": []
     },
     {
-      "id": "water_valve_leak_detected",
+      "id": "water_valve_smart_leak_detected",
       "highlight": true,
       "title": {
         "en": "Water leak detected!",
@@ -51,7 +51,7 @@
       "args": []
     },
     {
-      "id": "water_valve_leak_cleared",
+      "id": "water_valve_smart_leak_cleared",
       "title": {
         "en": "Water leak cleared",
         "nl": "Waterlek opgeheven",
@@ -61,7 +61,7 @@
       "args": []
     },
     {
-      "id": "water_valve_temperature_changed",
+      "id": "water_valve_smart_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "nl": "Temperatuur veranderd",
@@ -90,7 +90,7 @@
       "args": []
     },
     {
-      "id": "water_valve_frost_warning",
+      "id": "water_valve_smart_frost_warning",
       "title": {
         "en": "Frost warning",
         "nl": "Vorstwaarschwing",
@@ -106,7 +106,7 @@
       "args": []
     },
     {
-      "id": "water_valve_battery_low",
+      "id": "water_valve_smart_battery_low",
       "title": {
         "en": "Battery is low",
         "nl": "Batterij is bijna leeg",
@@ -118,7 +118,7 @@
   ],
   "conditions": [
     {
-      "id": "water_valve_is_open",
+      "id": "water_valve_smart_is_open",
       "title": {
         "en": "Valve !{{is|is not}} open",
         "nl": "Klep !{{is|is niet}} open",
@@ -128,7 +128,7 @@
       "args": []
     },
     {
-      "id": "water_valve_leak_detected",
+      "id": "water_valve_smart_leak_is_detected",
       "title": {
         "en": "Water leak !{{is|is not}} detected",
         "nl": "Waterlek !{{is|is niet}} gedetecteerd",
@@ -138,7 +138,7 @@
       "args": []
     },
     {
-      "id": "water_valve_temperature_above",
+      "id": "water_valve_smart_temperature_above",
       "title": {
         "en": "Temperature !{{is|is not}} above",
         "nl": "Temperatuur !{{is|is niet}} boven",
@@ -167,7 +167,7 @@
   ],
   "actions": [
     {
-      "id": "water_valve_open",
+      "id": "water_valve_smart_open",
       "title": {
         "en": "Open valve",
         "nl": "Klep openen",
@@ -183,7 +183,7 @@
       "args": []
     },
     {
-      "id": "water_valve_close",
+      "id": "water_valve_smart_close",
       "title": {
         "en": "Close valve",
         "nl": "Klep sluiten",
@@ -199,7 +199,7 @@
       "args": []
     },
     {
-      "id": "water_valve_toggle",
+      "id": "water_valve_smart_toggle",
       "title": {
         "en": "Toggle valve",
         "nl": "Klep schakelen",

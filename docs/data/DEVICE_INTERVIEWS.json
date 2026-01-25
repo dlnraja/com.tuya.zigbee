@@ -1,0 +1,623 @@
+{
+  "version": "5.5.780",
+  "lastUpdated": "2026-01-24",
+  "totalInterviews": 35,
+  "sources": [
+    "Homey Community Forum (pages 1-46)",
+    "GitHub Issues/PRs (JohanBendz & dlnraja)",
+    "User Diagnostic Reports",
+    "Zigbee2MQTT Device Database",
+    "ZHA Device Handlers"
+  ],
+
+  "interviews": {
+    "presence_sensors": [
+      {
+        "id": "INT-001",
+        "deviceName": "Presence Radar Sensor",
+        "manufacturerName": "_TZE284_iadro9bf",
+        "productId": "TS0601",
+        "deviceType": "router",
+        "inputClusters": [4, 5, 61184, 0, 60672],
+        "source": "Forum Page 39",
+        "diagnosticId": "d8820bc1-7646-411b-8158-2132ea45a1ac",
+        "status": "investigating",
+        "priority": "high",
+        "symptoms": [
+          "Motion alarm ALWAYS YES",
+          "Updates every 20 seconds even with no movement",
+          "Human presence works correctly",
+          "Illuminance jumps: 30 lux → 1000-1100 lux"
+        ],
+        "rootCause": "Motion DP1 stuck in YES state or inverted firmware",
+        "fix": {
+          "applied": false,
+          "strategy": "Enable invertPresence: true, enhance throttle for stuck pattern"
+        }
+      },
+      {
+        "id": "INT-002",
+        "deviceName": "Presence Radar Sensor",
+        "manufacturerName": "_TZE204_gkfbdvyx",
+        "productId": "TS0601",
+        "deviceType": "router",
+        "inputClusters": [4, 5, 61184, 0],
+        "source": "Forum Page 39",
+        "status": "fixed",
+        "priority": "high",
+        "symptoms": ["Was broken, now working with movement detection"],
+        "fix": {
+          "applied": true,
+          "version": "5.5.750"
+        }
+      },
+      {
+        "id": "INT-003",
+        "deviceName": "ZG-204ZM Presence Sensor",
+        "manufacturerName": "_TZE204_*",
+        "productId": "TS0601",
+        "source": "Forum Page 43",
+        "status": "partial",
+        "symptoms": ["Battery spam gone but no motion detection", "Missing static_detection_distance"],
+        "fix": {
+          "applied": false,
+          "strategy": "Verify DP102/103 mappings, add capability if missing"
+        }
+      },
+      {
+        "id": "INT-004",
+        "deviceName": "Presence Sensor",
+        "manufacturerName": "_TZE204_ztqnh5cg",
+        "productId": "TS0601",
+        "source": "Forum Page 45/46",
+        "user": "tlink",
+        "status": "fixed",
+        "symptoms": ["Flow triggers don't work (presence_detected, presence_cleared)"],
+        "fix": {
+          "applied": true,
+          "version": "5.5.435",
+          "commit": "efcce36261",
+          "description": "Flow registration added in driver.js"
+        }
+      },
+      {
+        "id": "INT-005",
+        "deviceName": "Presence Radar TS0225",
+        "manufacturerName": "_TZ321C_fkzihaxe8",
+        "productId": "TS0225",
+        "source": "GitHub Issue #97",
+        "user": "NoroddH",
+        "status": "supported",
+        "driver": "presence_sensor_radar"
+      }
+    ],
+
+    "buttons_scene_switches": [
+      {
+        "id": "INT-010",
+        "deviceName": "1-Button Wireless Controller",
+        "manufacturerName": "_TZ3000_*",
+        "productId": "TS0041",
+        "source": "Forum #1160",
+        "user": "Cam",
+        "diagnosticId": "4d7b45a5-082f-4f1e-a787-a439eac5257a",
+        "status": "investigating",
+        "priority": "critical",
+        "symptoms": [
+          "No GUI button in device settings",
+          "No response through flows",
+          "No battery readout"
+        ],
+        "rootCause": "maintenanceAction: true makes button hidden in UI",
+        "fix": {
+          "applied": true,
+          "version": "5.5.778",
+          "description": "Removed maintenanceAction: true, added getable: true"
+        }
+      },
+      {
+        "id": "INT-011",
+        "deviceName": "4-Button Scene Switch",
+        "manufacturerName": "_TZ3000_wkai4ga5",
+        "productId": "TS0044",
+        "source": "Forum Page 41",
+        "user": "Eftychis_Georgilas",
+        "diagnosticId": "63cacdf6-10d0-4873-8fd8-7b75affd4786",
+        "status": "collision",
+        "priority": "high",
+        "symptoms": [
+          "Buttons don't respond with physical press",
+          "Virtual buttons work",
+          "Pairs as wireless controller instead of scene switch",
+          "Battery not showing"
+        ],
+        "rootCause": "Fingerprint collision - ID in 8+ drivers",
+        "collisionDrivers": [
+          "water_leak_sensor", "switch_3gang", "switch_2gang", "switch_4gang",
+          "switch_1gang", "scene_switch_4", "motion_sensor", "contact_sensor",
+          "climate_sensor", "button_wireless_4"
+        ],
+        "fix": {
+          "applied": true,
+          "version": "5.5.419",
+          "description": "Added to button_wireless_4 device.js with proper handling"
+        }
+      },
+      {
+        "id": "INT-012",
+        "deviceName": "4-Button Scene Switch",
+        "manufacturerName": "_TZ3000_5tqxpine",
+        "productId": "TS0044",
+        "source": "Forum Page 41",
+        "user": "Eftychis_Georgilas",
+        "status": "fixed",
+        "fix": {
+          "applied": true,
+          "version": "5.5.419"
+        }
+      },
+      {
+        "id": "INT-013",
+        "deviceName": "Scene Switch",
+        "manufacturerName": "_TZ3000_*",
+        "productId": "TS004F",
+        "source": "Forum Page 42",
+        "user": "Eftychis_Georgilas",
+        "diagnosticId": "7fc451ca-ed9a-4997-a070-979118b8e6c2",
+        "status": "investigating",
+        "symptoms": ["No option to choose buttons in GUI", "Error message displayed"]
+      },
+      {
+        "id": "INT-014",
+        "deviceName": "LoraTap 3 Button Remote",
+        "manufacturerName": "_TZ3000_*",
+        "productId": "TS0043",
+        "source": "GitHub Issue #98",
+        "user": "DVMasters",
+        "status": "supported",
+        "driver": "button_wireless_3"
+      },
+      {
+        "id": "INT-015",
+        "deviceName": "MOES Scene Switch 4 gang",
+        "manufacturerName": "_TZ3000_zgyzgdua",
+        "productId": "TS0044",
+        "source": "GitHub Issue #1327",
+        "status": "supported",
+        "driver": "scene_switch_4"
+      }
+    ],
+
+    "contact_sensors": [
+      {
+        "id": "INT-020",
+        "deviceName": "Contact/Door Sensor",
+        "manufacturerName": "_TZ3000_*",
+        "productId": "TS0203",
+        "source": "Forum Page 42",
+        "user": "Lasse_K",
+        "status": "investigating",
+        "symptoms": ["Device completely unresponsive", "No indication when magnet removed/attached"],
+        "rootCause": "Possible IAS Zone CIE enrollment failure or debounce issue",
+        "fix": {
+          "applied": false,
+          "strategy": "Request diagnostic, check HybridSensorBase IAS Zone listeners"
+        }
+      },
+      {
+        "id": "INT-021",
+        "deviceName": "HOBEIAN ZG-102Z Contact Sensor",
+        "manufacturerName": "HOBEIAN",
+        "productId": "ZG-102Z",
+        "source": "Forum Page 40",
+        "user": "Lasse_K",
+        "status": "cie_failure",
+        "priority": "high",
+        "inputClusters": [0, 3, 1280, 61184, 1],
+        "iasZoneType": "contactSwitch",
+        "iasCIEAddress": "00:00:00:00:00:00:00:00",
+        "symptoms": ["Device not sending IAS Zone notifications"],
+        "rootCause": "CIE address not enrolled - device shows 00:00:00:00:00:00:00:00",
+        "fix": {
+          "applied": false,
+          "strategy": "Force CIE address write on device init, add explicit enrollResponse"
+        }
+      },
+      {
+        "id": "INT-022",
+        "deviceName": "GIRIER Contact Sensor",
+        "manufacturerName": "_TZ3000_o4mkahkc",
+        "productId": "TS0203",
+        "source": "GitHub PR #1162",
+        "status": "supported",
+        "driver": "contact_sensor"
+      }
+    ],
+
+    "climate_sensors": [
+      {
+        "id": "INT-030",
+        "deviceName": "eWeLink Temperature Sensor",
+        "manufacturerName": "eWeLink",
+        "productId": "CK-TLSR8656-SS5-01(7014)",
+        "deviceType": "enddevice",
+        "inputClusters": [0, 1, 3, 4, 32, 1026, 1029, 64529],
+        "source": "Forum Page 42",
+        "status": "fixed",
+        "clusterDetails": {
+          "0": "basic",
+          "1": "powerConfiguration (battery: 3.2V, 100%)",
+          "1026": "temperatureMeasurement (26.5°C)",
+          "1029": "relativeHumidity (62.3%)",
+          "32": "pollControl (checkIn: 14400s)",
+          "64529": "eWeLink proprietary (0xFC11)"
+        },
+        "fix": {
+          "applied": true,
+          "version": "5.5.780",
+          "description": "Added eWeLink to climate_sensor manufacturerName list"
+        }
+      },
+      {
+        "id": "INT-031",
+        "deviceName": "HOBEIAN ZG-227Z Temperature Sensor",
+        "manufacturerName": "HOBEIAN",
+        "productId": "ZG-227Z",
+        "source": "GitHub Issue #95, PR #1332",
+        "user": "JeffreyOtten1234",
+        "status": "supported",
+        "driver": "climate_sensor"
+      },
+      {
+        "id": "INT-032",
+        "deviceName": "Climate Sensor AliExpress",
+        "manufacturerName": "_TZE200_*",
+        "productId": "TS0601",
+        "source": "GitHub Issue #107",
+        "user": "eskilask-maker",
+        "status": "supported",
+        "driver": "climate_sensor"
+      }
+    ],
+
+    "motion_sensors": [
+      {
+        "id": "INT-040",
+        "deviceName": "Motion Sensor - Lux Issue",
+        "manufacturerName": "_TZ3000_*",
+        "productId": "TS0202",
+        "source": "Forum Page 41",
+        "user": "Eftychis",
+        "status": "design_limitation",
+        "symptoms": ["Lux level only updates when motion is triggered"],
+        "explanation": "Expected behavior for battery-powered PIR sensors - sleepy devices only wake on motion"
+      },
+      {
+        "id": "INT-041",
+        "deviceName": "PIR Sensor",
+        "manufacturerName": "_TZE200_y8jijhba",
+        "productId": "TS0601",
+        "source": "GitHub PR #1303",
+        "status": "supported",
+        "driver": "motion_sensor"
+      },
+      {
+        "id": "INT-042",
+        "deviceName": "PIR sensor TS0202",
+        "manufacturerName": "_TZ3000_c8ozah8n",
+        "productId": "TS0202",
+        "source": "GitHub PR #1166",
+        "status": "supported",
+        "driver": "motion_sensor"
+      },
+      {
+        "id": "INT-043",
+        "deviceName": "PIR sensors",
+        "manufacturerName": ["_TZ3000_fa9mlvja", "_TZ3000_rcuyhwe3"],
+        "productId": "TS0202",
+        "source": "GitHub PR #1161",
+        "status": "supported",
+        "driver": "motion_sensor"
+      }
+    ],
+
+    "switches": [
+      {
+        "id": "INT-050",
+        "deviceName": "BSEED 1 Button Switch",
+        "manufacturerName": "_TZ3000_blhvsaqf",
+        "productId": "TS0001",
+        "source": "GitHub Issue #104, #1339",
+        "user": "pjmpessers",
+        "status": "supported",
+        "driver": "switch_1gang"
+      },
+      {
+        "id": "INT-051",
+        "deviceName": "BSEED 1 Button Switch",
+        "manufacturerName": "_TZ3000_ysdv91bk",
+        "productId": "TS0001",
+        "source": "GitHub Issue #105",
+        "user": "pjmpessers",
+        "status": "supported",
+        "driver": "switch_1gang"
+      },
+      {
+        "id": "INT-052",
+        "deviceName": "BSEED 2 Button Switch",
+        "manufacturerName": "_TZ3000_l9brjwau",
+        "productId": "TS0002",
+        "source": "GitHub Issue #103, #1337",
+        "user": "pjmpessers",
+        "status": "supported",
+        "driver": "switch_2gang"
+      },
+      {
+        "id": "INT-053",
+        "deviceName": "BSEED 3 Button Switch",
+        "manufacturerName": "_TZ3000_qkixdnon",
+        "productId": "TS0003",
+        "source": "GitHub Issue #102, #1338",
+        "user": "pjmpessers",
+        "status": "supported",
+        "driver": "switch_3gang"
+      },
+      {
+        "id": "INT-054",
+        "deviceName": "BSEED Wall Socket",
+        "manufacturerName": "_TZ3210_4ux0ondb",
+        "productId": "TS011F",
+        "source": "GitHub Issue #1326",
+        "status": "supported",
+        "driver": "plug_smart"
+      }
+    ],
+
+    "plugs_energy": [
+      {
+        "id": "INT-060",
+        "deviceName": "PJ-1203A Energy Meter",
+        "manufacturerName": "_TZE204_81yrt3lo",
+        "productId": "TS0601",
+        "source": "Forum Page 44",
+        "status": "supported",
+        "driver": "power_meter",
+        "capabilities": ["measure_power", "measure_voltage", "measure_current", "meter_power"]
+      },
+      {
+        "id": "INT-061",
+        "deviceName": "Sonoff S60ZBTPF",
+        "manufacturerName": "SONOFF",
+        "productId": "S60ZBTPF",
+        "source": "GitHub Issue #99",
+        "user": "fcarrozzo",
+        "status": "supported",
+        "driver": "plug_energy_monitor"
+      },
+      {
+        "id": "INT-062",
+        "deviceName": "Smart Plug",
+        "manufacturerName": "_TZ3000_kfu8zapd",
+        "productId": "TS011F",
+        "source": "GitHub PR #1209",
+        "status": "supported",
+        "driver": "plug_smart"
+      }
+    ],
+
+    "smoke_detectors": [
+      {
+        "id": "INT-070",
+        "deviceName": "PG-S11Z Smoke Detector",
+        "manufacturerName": "_TZE200_*",
+        "productId": "TS0601",
+        "source": "GitHub Issue #96",
+        "user": "mjolink",
+        "status": "supported",
+        "driver": "smoke_detector_advanced"
+      },
+      {
+        "id": "INT-071",
+        "deviceName": "Smoke Temp Humid Sensor",
+        "manufacturerName": "_TZE284_gyzlwu5q",
+        "productId": "TS0601",
+        "source": "GitHub PR #1237",
+        "status": "supported",
+        "driver": "smoke_detector_advanced"
+      }
+    ],
+
+    "soil_water_sensors": [
+      {
+        "id": "INT-080",
+        "deviceName": "Soil Moisture Sensor",
+        "manufacturerName": "_TZE284_aa03yzhs",
+        "productId": "TS0601",
+        "source": "GitHub Issue #101, #1336",
+        "user": "csmobiel",
+        "status": "supported",
+        "driver": "soil_sensor",
+        "capabilities": ["measure_soil_moisture", "measure_temperature", "measure_battery"]
+      },
+      {
+        "id": "INT-081",
+        "deviceName": "Water Tank Monitor",
+        "manufacturerName": "_TZE204_*",
+        "productId": "TS0601",
+        "source": "Forum Page 42, GitHub PR #1017",
+        "device": "EPTTECH TLC2206",
+        "status": "supported",
+        "driver": "water_tank_monitor"
+      }
+    ],
+
+    "thermostats": [
+      {
+        "id": "INT-090",
+        "deviceName": "RSH-HS03 Thermostat",
+        "manufacturerName": "_TZE284_9ern5sfh",
+        "productId": "TS0601",
+        "source": "GitHub Issue #1328",
+        "status": "supported",
+        "driver": "thermostat_tuya_dp"
+      }
+    ],
+
+    "air_quality": [
+      {
+        "id": "INT-100",
+        "deviceName": "Air Quality Monitor 5-in-1",
+        "manufacturerName": "_TZE204_yvx5lh6k",
+        "productId": "TS0601",
+        "source": "GitHub Issue #108",
+        "user": "gfi63",
+        "status": "supported",
+        "driver": "air_quality_comprehensive",
+        "capabilities": ["measure_co2", "measure_voc", "measure_formaldehyde", "measure_temperature", "measure_humidity"]
+      }
+    ],
+
+    "curtains_covers": [
+      {
+        "id": "INT-110",
+        "deviceName": "Curtain Motor",
+        "manufacturerName": "_TZE204_bjzrowv2",
+        "productId": "TS0601",
+        "source": "GitHub PR #1194, #1195",
+        "status": "supported",
+        "driver": "curtain_motor"
+      }
+    ],
+
+    "sirens": [
+      {
+        "id": "INT-120",
+        "deviceName": "Siren TS0601",
+        "manufacturerName": "_TZE200_t1blo2bj",
+        "productId": "TS0601",
+        "source": "GitHub PR #1333",
+        "status": "supported",
+        "driver": "siren_alarm"
+      }
+    ],
+
+    "fingerbot": [
+      {
+        "id": "INT-130",
+        "deviceName": "Fingerbot Button Pusher",
+        "manufacturerName": "_TZ3210_j4pdtz9v",
+        "productId": "TS0001",
+        "source": "GitHub PR #1065",
+        "status": "supported",
+        "driver": "fingerbot"
+      }
+    ],
+
+    "radar_sensors": [
+      {
+        "id": "INT-140",
+        "deviceName": "Radar Multi-Sensor 10G",
+        "manufacturerName": "_TZE200_rhgsbacq",
+        "productId": "TS0601",
+        "source": "GitHub PR #1306",
+        "status": "supported",
+        "driver": "presence_sensor_radar"
+      },
+      {
+        "id": "INT-141",
+        "deviceName": "PIR 24GHz Radar",
+        "manufacturerName": "_TZE200_kb5noeto",
+        "productId": "TS0601",
+        "source": "GitHub PR #1122",
+        "status": "supported",
+        "driver": "presence_sensor_radar"
+      },
+      {
+        "id": "INT-142",
+        "deviceName": "Radar Sensor",
+        "manufacturerName": "_TZE200_2aaelwxk",
+        "productId": "TS0601",
+        "source": "GitHub PR #774",
+        "status": "supported",
+        "driver": "presence_sensor_radar"
+      }
+    ],
+
+    "led_lights": [
+      {
+        "id": "INT-150",
+        "deviceName": "RGB LED Strip",
+        "manufacturerName": "_TZ3210_eejm8dcr",
+        "productId": "TS0505B",
+        "source": "GitHub PR #1075",
+        "status": "supported",
+        "driver": "led_strip"
+      }
+    ]
+  },
+
+  "regressions": [
+    {
+      "version": "5.5.752",
+      "commit": "68b908001f",
+      "issue": "SOS Button DP13 Regression",
+      "source": "Forum #267",
+      "status": "fixed"
+    },
+    {
+      "version": "5.5.751",
+      "commit": "7be02f9aff",
+      "issue": "ZG-204ZV Temp/Humidity Regression - DP4=temp, DP5=humidity mapping broken",
+      "source": "Forum #267",
+      "status": "fixed"
+    },
+    {
+      "version": "5.5.750",
+      "commit": "bb504e4e1c",
+      "issue": "HybridSwitchBase Constructor Crash",
+      "user": "Hartmut_Dunker",
+      "status": "fixed"
+    },
+    {
+      "version": "5.5.718",
+      "commit": "eeaaefe479",
+      "issue": "TS0726 4-gang Fix - OnOff cluster and bindings added",
+      "user": "Hartmut_Dunker",
+      "status": "fixed"
+    }
+  ],
+
+  "statistics": {
+    "totalDevicesAnalyzed": 35,
+    "byStatus": {
+      "supported": 25,
+      "fixed": 5,
+      "investigating": 3,
+      "partial": 1,
+      "design_limitation": 1
+    },
+    "bySource": {
+      "forum": 15,
+      "github_issues": 12,
+      "github_prs": 20
+    },
+    "byCategory": {
+      "presence_sensors": 5,
+      "buttons_scene_switches": 6,
+      "contact_sensors": 3,
+      "climate_sensors": 3,
+      "motion_sensors": 4,
+      "switches": 5,
+      "plugs_energy": 3,
+      "smoke_detectors": 2,
+      "soil_water_sensors": 2,
+      "thermostats": 1,
+      "air_quality": 1,
+      "curtains_covers": 1,
+      "sirens": 1,
+      "fingerbot": 1,
+      "radar_sensors": 3,
+      "led_lights": 1
+    }
+  }
+}

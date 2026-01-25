@@ -15,22 +15,22 @@ class GasDetectorDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Gas is/is not detected
     try {
-      this.homey.flow.getConditionCard('gas_detector_gas_detected')
+      this.homey.flow.getConditionCard('gas_detector_gas_is_detected')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_gas') === true;
         });
-      this.log('[FLOW] ✅ gas_detector_gas_detected');
+      this.log('[FLOW] ✅ gas_detector_gas_is_detected');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     // CONDITION: CO is/is not detected
     try {
-      this.homey.flow.getConditionCard('gas_detector_co_detected')
+      this.homey.flow.getConditionCard('gas_detector_co_is_detected')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_co') === true;
         });
-      this.log('[FLOW] ✅ gas_detector_co_detected');
+      this.log('[FLOW] ✅ gas_detector_co_is_detected');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     // ACTION: Test detector
