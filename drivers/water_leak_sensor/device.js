@@ -6,7 +6,7 @@ const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHel
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      WATER LEAK SENSOR - v5.5.670 DEEP RESEARCH ENRICHED                    ║
+ * ║      WATER LEAK SENSOR - v5.5.803 FORUM #1166 LASSE_K FIX                   ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  Sources:                                                                    ║
  * ║  - Zigbee2MQTT: TS0207_water_leak_detector, TS0601_water_sensor             ║
@@ -19,6 +19,7 @@ const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHel
  * ║                                                                              ║
  * ║  KNOWN ISSUES FIXED:                                                         ║
  * ║  - Lasse_K #978: Some sensors use IAS alarm2 instead of alarm1              ║
+ * ║  - Lasse_K #1166: Water sensor installs but no alarm (v5.5.803 fix)         ║
  * ║  - HOBEIAN #28181: INVALID_EP binding error (sleepy device timing)          ║
  * ║  - _TZ3000_85czd6fy: Tamper support added                                   ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
@@ -276,19 +277,84 @@ class WaterLeakSensorDevice extends HybridSensorBase {
       this.log(`[WATER] ⚠️ Known issues for this device: ${profile.knownIssues.join(', ')}`);
     }
 
-    // v5.5.670: Initialize IAS Alarm Fallback for INVALID_EP devices
-    if (profile.knownIssues?.some(i => i.includes('INVALID_EP')) || profile.type === 'ias_zone') {
-      this._iasFallback = new IASAlarmFallback(this, {
-        pollInterval: 30000, // Poll every 30s for water leak detection
-        useTuyaMirror: true
-      });
-      await this._iasFallback.init().catch(e => {
-        this.log(`[WATER] ⚠️ IAS Fallback init failed: ${e.message}`);
-      });
-      this.log('[WATER] ✅ IAS Alarm Fallback enabled for INVALID_EP workaround');
-    }
+    // v5.5.803: FORUM #1166 FIX - Initialize IAS Alarm Fallback for ALL water leak sensors
+    // Previously only enabled for IAS Zone type devices, but many sensors need this fallback
+    // to ensure alarms are properly detected via polling when notifications fail
+    this._iasFallback = new IASAlarmFallback(this, {
+      pollInterval: 30000, // Poll every 30s for water leak detection
+      useTuyaMirror: true
+    });
+    await this._iasFallback.init().catch(e => {
+      this.log(`[WATER] ⚠️ IAS Fallback init failed: ${e.message}`);
+    });
+    this.log('[WATER] ✅ IAS Alarm Fallback enabled for ALL water sensors (v5.5.803)');
+
+    // v5.5.803: FORUM #1166 FIX - Force initial alarm state read
+    await this._forceInitialAlarmRead(zclNode);
 
     this.log(`[WATER] ✅ Water leak sensor ready (invert: ${this._invertAlarm})`);
+  }
+
+  /**
+   * v5.5.803: FORUM #1166 FIX - Force initial alarm state read
+   * Some water sensors don't send notifications, only respond to reads
+   * This ensures we get the current state immediately after pairing
+   */
+  async _forceInitialAlarmRead(zclNode) {
+    try {
+      this.log('[WATER] 📖 Forcing initial alarm state read...');
+      
+      const ep = zclNode?.endpoints?.[1];
+      if (!ep) {
+        this.log('[WATER] ⚠️ No endpoint 1 for initial read');
+        return;
+      }
+
+      // Try IAS Zone cluster first
+      const iasCluster = ep.clusters?.iasZone || ep.clusters?.ssIasZone || ep.clusters?.[0x0500];
+      if (iasCluster?.readAttributes) {
+        try {
+          const attrs = await Promise.race([
+            iasCluster.readAttributes(['zoneStatus', 'zoneState']),
+            new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 5000))
+          ]);
+          
+          this.log('[WATER] 📖 Initial IAS read:', JSON.stringify(attrs));
+          
+          if (attrs?.zoneStatus !== undefined) {
+            const status = typeof attrs.zoneStatus === 'number' ? attrs.zoneStatus : 0;
+            const alarm1 = (status & 0x01) > 0;
+            const alarm2 = (status & 0x02) > 0;
+            const waterDetected = alarm1 || alarm2;
+            
+            this.log(`[WATER] 📊 Initial status: 0x${status.toString(16)} → alarm1=${alarm1}, alarm2=${alarm2}, water=${waterDetected}`);
+            
+            // Set initial alarm state
+            if (this.hasCapability('alarm_water')) {
+              await this.setCapabilityValue('alarm_water', waterDetected).catch(() => {});
+              this.log(`[WATER] ✅ Initial alarm_water set to: ${waterDetected}`);
+            }
+          }
+        } catch (e) {
+          this.log(`[WATER] ⚠️ Initial IAS read failed: ${e.message}`);
+        }
+      }
+
+      // Also try Tuya DP query for TS0601 devices
+      if (this._deviceProfile?.type === 'tuya_dp' || this._deviceProfile?.matchedBy?.includes('_TZE')) {
+        try {
+          const tuyaCluster = ep.clusters?.['tuya'] || ep.clusters?.[0xEF00] || ep.clusters?.[61184];
+          if (tuyaCluster?.dataQuery) {
+            await tuyaCluster.dataQuery({}).catch(() => {});
+            this.log('[WATER] 📤 Sent Tuya DP query for initial state');
+          }
+        } catch (e) {
+          this.log(`[WATER] ⚠️ Tuya DP query failed: ${e.message}`);
+        }
+      }
+    } catch (e) {
+      this.log(`[WATER] ⚠️ Force initial read error: ${e.message}`);
+    }
   }
 
   /**
