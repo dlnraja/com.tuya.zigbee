@@ -495,20 +495,26 @@
       "_TZE200_d8fp6ivb",
       "_TZE200_dcydapr2",
       "_TZE200_dfry6ylv",
-      "_TZ3000_qaa59zqd"
+      "_TZ3000_qaa59zqd",
+      "_TZ3000_ptjcjise"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          6
         ],
-        "bindings": []
+        "bindings": [
+          6
+        ]
       },
       "2": {
         "clusters": [
           6
         ],
-        "bindings": []
+        "bindings": [
+          6
+        ]
       }
     }
   },
