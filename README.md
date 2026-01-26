@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.822** | 🔄 FRESH Z2M SYNC + USER INTERVIEWS: Synced TuyaDataPointsZ2M.js with latest ... |
 | **v5.5.821** | 📊 ENRICHED DP MAPPINGS: Added device profiles from JohanBendz PRs + Z2M + Hu... |
 | **v5.5.820** | 🚨 CRITICAL FIX: Devices not working after re-pair! TuyaSpecificClusterDevice... |
 | **v5.5.819** | 🎮 LoraTap TS0043 FIX (DVMasters #98): 3-button remote now recognized! Added ... |
@@ -78,7 +79,6 @@
 | **v5.5.815** | 🚨 MASSIVE FIX: 89 drivers now have correct zigbee cluster endpoints! Sensors... |
 | **v5.5.814** | 🔧 CRITICAL FIX: Synced zigbee endpoints from driver.compose.json to app.json... |
 | **v5.5.813** | 🔌 HYBRIDSWITCH ENHANCEMENT: Complete method implementation - onSettings (pow... |
-| **v5.5.812** | 🔧 FORUM MULTI-FIX: 1) BSEED TS0726 4-gang physical buttons now work (Hartmut... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
