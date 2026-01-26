@@ -1,4 +1,7 @@
 {
+  "5.5.814": {
+    "en": "🔧 CRITICAL FIX: Synced zigbee endpoints from driver.compose.json to app.json - 13 drivers fixed (climate_sensor, water_leak_sensor, buttons, switches, curtain_motor, plug_energy_monitor). Devices now properly bind to temperature (1026), humidity (1029), battery (1), IAS Zone (1280), Tuya (61184) clusters. Re-pair devices after update!"
+  },
   "5.5.813": {
     "en": "🔌 HYBRIDSWITCH ENHANCEMENT: Complete method implementation - onSettings (power_on_behavior, LED), _readInitialState, _setupReporting (ZCL attribute reporting), _setupPowerMetering (measure_power/voltage/current/meter_power), _sendTuyaDP. Supports 8-gang switches and automatic power metering detection."
   },
