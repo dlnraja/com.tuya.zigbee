@@ -1,4 +1,7 @@
 {
+  "5.5.821": {
+    "en": "📊 ENRICHED DP MAPPINGS: Added device profiles from JohanBendz PRs + Z2M + Hubitat. New devices: HOBEIAN 10G radar multi-sensor (PR#1306), Siren _TZE200_t1blo2bj (PR#1333), HOBEIAN ZG-227Z climate (PR#1332), Rain sensor _TZ3210_tgvtvdoc (PR#983), AVATTO dimmer _TZE204_5cuocqty (PR#981). Updated ZG-204ZM DP mappings with correct temp/humidity DPs."
+  },
   "5.5.820": {
     "en": "🚨 CRITICAL FIX: Devices not working after re-pair! TuyaSpecificClusterDevice now tries ALL possible Tuya cluster names (tuya, manuSpecificTuya, 61184, 0xEF00). Added raw frame fallback when cluster not found. This fixes the root cause of 'devices not receiving data' reports!"
   },
