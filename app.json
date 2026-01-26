@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.814",
+  "version": "5.5.815",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -305,7 +305,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -609,9 +610,13 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1
+            ]
           }
         }
       },
@@ -992,9 +997,13 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1
+            ]
           }
         },
         "learnmode": {
@@ -1565,9 +1574,17 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              8
+            ]
           }
         },
         "learnmode": {
@@ -2282,9 +2299,19 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              768
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              8,
+              768
+            ]
           }
         },
         "learnmode": {
@@ -3038,9 +3065,19 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              768
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              8,
+              768
+            ]
           }
         },
         "learnmode": {
@@ -3626,9 +3663,19 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              768
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              8,
+              768
+            ]
           }
         },
         "learnmode": {
@@ -4150,9 +4197,17 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              8
+            ]
           }
         },
         "learnmode": {
@@ -5113,51 +5168,18 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              3,
+              6,
+              4096,
+              61184
             ],
-            "bindings": []
-          },
-          "2": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
-          },
-          "3": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
-          },
-          "4": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
-          },
-          "5": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
-          },
-          "6": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
-          },
-          "7": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
-          },
-          "8": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
+            "bindings": [
+              1,
+              6,
+              4096
+            ]
           }
         },
         "learnmode": {
@@ -9693,7 +9715,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -13041,9 +13064,15 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              1280,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              1280
+            ]
           }
         }
       },
@@ -13650,9 +13679,15 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              1280,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              1280
+            ]
           }
         },
         "learnmode": {
@@ -15188,9 +15223,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              258,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              258
+            ]
           }
         }
       },
@@ -15533,9 +15575,18 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              8
+            ]
           }
         }
       },
@@ -15866,15 +15917,18 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              61184
             ],
-            "bindings": []
-          },
-          "2": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
+            "bindings": [
+              6,
+              8
+            ]
           }
         }
       },
@@ -16466,9 +16520,18 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              8
+            ]
           }
         },
         "learnmode": {
@@ -17162,9 +17225,20 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              2820,
+              1794,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              2820,
+              1794
+            ]
           }
         },
         "learnmode": {
@@ -17470,9 +17544,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              6
+            ]
           }
         },
         "learnmode": {
@@ -17743,7 +17824,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -18277,9 +18359,18 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              3,
+              6,
+              4096,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              6,
+              4096
+            ]
           }
         },
         "learnmode": {
@@ -18808,9 +18899,20 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              2820,
+              1794,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              2820,
+              1794
+            ]
           }
         }
       },
@@ -19099,7 +19201,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -19380,7 +19483,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -19654,9 +19758,13 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1
+            ]
           }
         }
       },
@@ -19948,7 +20056,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -20243,9 +20352,15 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              1280,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              1280
+            ]
           }
         },
         "learnmode": {
@@ -20817,9 +20932,15 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              1280,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              1280
+            ]
           }
         },
         "learnmode": {
@@ -21336,7 +21457,9 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              61184
             ],
             "bindings": []
           }
@@ -21936,7 +22059,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -22275,7 +22399,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -22640,9 +22765,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              3,
+              513,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              513
+            ]
           }
         },
         "learnmode": {
@@ -23222,7 +23354,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -23775,7 +23908,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -24036,9 +24170,17 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              1026,
+              1029,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              1026,
+              1029
+            ]
           }
         }
       },
@@ -24312,9 +24454,19 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              768
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              8,
+              768
+            ]
           }
         }
       },
@@ -24590,9 +24742,17 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              8
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              8
+            ]
           }
         },
         "subDevices": []
@@ -24862,9 +25022,19 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              768
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              8,
+              768
+            ]
           }
         }
       },
@@ -25172,9 +25342,19 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              768
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              8,
+              768
+            ]
           }
         },
         "learnmode": {
@@ -25701,9 +25881,19 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              768
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              8,
+              768
+            ]
           }
         },
         "learnmode": {
@@ -26252,9 +26442,19 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              8,
+              768
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              8,
+              768
+            ]
           }
         },
         "learnmode": {
@@ -26828,7 +27028,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -27376,15 +27577,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              61184
             ],
-            "bindings": []
-          },
-          "2": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
+            "bindings": [
+              6
+            ]
           }
         },
         "learnmode": {
@@ -28270,9 +28472,18 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              1024,
+              1280,
+              1030,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              1280,
+              1030
+            ]
           }
         },
         "learnmode": {
@@ -28876,9 +29087,18 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              1024,
+              1280,
+              1030,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              1280,
+              1030
+            ]
           }
         },
         "learnmode": {
@@ -29538,7 +29758,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -30829,9 +31050,20 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              2820,
+              1794,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              2820,
+              1794
+            ]
           }
         },
         "learnmode": {
@@ -31690,7 +31922,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -32028,9 +32261,20 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              2820,
+              1794,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              2820,
+              1794
+            ]
           }
         },
         "learnmode": {
@@ -32457,9 +32701,20 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              2820,
+              1794,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              2820,
+              1794
+            ]
           }
         }
       },
@@ -32749,9 +33004,18 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              1024,
+              1280,
+              1030,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              1280,
+              1030
+            ]
           }
         },
         "learnmode": {
@@ -33378,9 +33642,18 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              1024,
+              1280,
+              1030,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              1280,
+              1030
+            ]
           }
         }
       },
@@ -33797,9 +34070,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              3,
+              513,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              513
+            ]
           }
         },
         "learnmode": {
@@ -35077,9 +35357,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              3,
+              513,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              513
+            ]
           }
         },
         "learnmode": {
@@ -35620,9 +35907,15 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              1280,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              1280
+            ]
           }
         }
       },
@@ -35883,9 +36176,18 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              3,
+              6,
+              4096,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              6,
+              4096
+            ]
           }
         }
       },
@@ -36160,15 +36462,18 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              3,
+              6,
+              4096,
+              61184
             ],
-            "bindings": []
-          },
-          "2": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
+            "bindings": [
+              1,
+              6,
+              4096
+            ]
           }
         }
       },
@@ -36453,21 +36758,18 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              3,
+              6,
+              4096,
+              61184
             ],
-            "bindings": []
-          },
-          "2": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
-          },
-          "3": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
+            "bindings": [
+              1,
+              6,
+              4096
+            ]
           }
         }
       },
@@ -36791,27 +37093,18 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              3,
+              6,
+              4096,
+              61184
             ],
-            "bindings": []
-          },
-          "2": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
-          },
-          "3": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
-          },
-          "4": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
+            "bindings": [
+              1,
+              6,
+              4096
+            ]
           }
         }
       },
@@ -37123,39 +37416,18 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              3,
+              6,
+              4096,
+              61184
             ],
-            "bindings": []
-          },
-          "2": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
-          },
-          "3": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
-          },
-          "4": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
-          },
-          "5": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
-          },
-          "6": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
+            "bindings": [
+              1,
+              6,
+              4096
+            ]
           }
         }
       },
@@ -37431,9 +37703,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              258,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              258
+            ]
           }
         },
         "learnmode": {
@@ -37986,7 +38265,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -38527,9 +38807,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              6
+            ]
           }
         },
         "learnmode": {
@@ -38792,9 +39079,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              3,
+              513,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              513
+            ]
           }
         }
       },
@@ -39093,9 +39387,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              3,
+              513,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              513
+            ]
           }
         }
       },
@@ -39486,9 +39787,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              6
+            ]
           }
         }
       },
@@ -39840,9 +40148,15 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              1280,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              1280
+            ]
           }
         },
         "learnmode": {
@@ -40464,9 +40778,13 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1
+            ]
           }
         }
       },
@@ -40629,9 +40947,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              6
+            ]
           }
         },
         "learnmode": {
@@ -43870,27 +44195,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              61184
             ],
-            "bindings": []
-          },
-          "2": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
-          },
-          "3": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
-          },
-          "4": {
-            "clusters": [
-              0
-            ],
-            "bindings": []
+            "bindings": [
+              6
+            ]
           }
         },
         "learnmode": {
@@ -45059,9 +45373,20 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              2820,
+              1794,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              2820,
+              1794
+            ]
           }
         }
       },
@@ -45527,9 +45852,20 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              2820,
+              1794,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              6,
+              2820,
+              1794
+            ]
           }
         }
       },
@@ -46038,9 +46374,17 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              1026,
+              1029,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              1026,
+              1029
+            ]
           }
         },
         "learnmode": {
@@ -46313,33 +46657,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              61184
             ],
-            "bindings": []
-          },
-          "2": {
-            "clusters": [
+            "bindings": [
               6
-            ],
-            "bindings": []
-          },
-          "3": {
-            "clusters": [
-              6
-            ],
-            "bindings": []
-          },
-          "4": {
-            "clusters": [
-              6
-            ],
-            "bindings": []
-          },
-          "5": {
-            "clusters": [
-              6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -47140,39 +47467,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              61184
             ],
-            "bindings": []
-          },
-          "2": {
-            "clusters": [
+            "bindings": [
               6
-            ],
-            "bindings": []
-          },
-          "3": {
-            "clusters": [
-              6
-            ],
-            "bindings": []
-          },
-          "4": {
-            "clusters": [
-              6
-            ],
-            "bindings": []
-          },
-          "5": {
-            "clusters": [
-              6
-            ],
-            "bindings": []
-          },
-          "6": {
-            "clusters": [
-              6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -47927,27 +48231,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              61184
             ],
-            "bindings": []
-          },
-          "2": {
-            "clusters": []
-          },
-          "3": {
-            "clusters": []
-          },
-          "4": {
-            "clusters": []
-          },
-          "5": {
-            "clusters": []
-          },
-          "6": {
-            "clusters": []
-          },
-          "7": {
-            "clusters": []
+            "bindings": [
+              6
+            ]
           }
         }
       },
@@ -48531,30 +48824,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              61184
             ],
-            "bindings": []
-          },
-          "2": {
-            "clusters": []
-          },
-          "3": {
-            "clusters": []
-          },
-          "4": {
-            "clusters": []
-          },
-          "5": {
-            "clusters": []
-          },
-          "6": {
-            "clusters": []
-          },
-          "7": {
-            "clusters": []
-          },
-          "8": {
-            "clusters": []
+            "bindings": [
+              6
+            ]
           }
         }
       },
@@ -49020,9 +49299,18 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              3,
+              6,
+              4096,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              6,
+              4096
+            ]
           }
         },
         "learnmode": {
@@ -49752,9 +50040,17 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              1026,
+              1029,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              1026,
+              1029
+            ]
           }
         }
       },
@@ -50018,9 +50314,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              3,
+              513,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              513
+            ]
           }
         }
       },
@@ -50529,9 +50832,16 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              3,
+              513,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              513
+            ]
           }
         }
       },
@@ -50820,13 +51130,9 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
-            ],
-            "bindings": []
-          },
-          "2": {
-            "clusters": [
-              0
+              0,
+              3,
+              61184
             ],
             "bindings": []
           }
@@ -51197,21 +51503,20 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              3,
+              4,
+              5,
+              6,
+              2820,
+              1794,
+              61184
             ],
-            "bindings": []
-          },
-          "2": {
-            "clusters": [
-              6
-            ],
-            "bindings": []
-          },
-          "3": {
-            "clusters": [
-              6
-            ],
-            "bindings": []
+            "bindings": [
+              6,
+              2820,
+              1794
+            ]
           }
         },
         "learnmode": {
@@ -51962,7 +52267,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -52233,7 +52539,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -52545,9 +52852,15 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              1280,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              1280
+            ]
           }
         }
       },
@@ -53558,7 +53871,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -53936,7 +54250,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ],
             "bindings": []
           }
@@ -54464,9 +54779,17 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              1,
+              1026,
+              1029,
+              61184
             ],
-            "bindings": []
+            "bindings": [
+              1,
+              1026,
+              1029
+            ]
           }
         }
       },

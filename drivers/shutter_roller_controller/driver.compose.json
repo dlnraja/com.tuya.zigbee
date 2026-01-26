@@ -251,9 +251,16 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          258,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          258
+        ]
       }
     },
     "learnmode": {

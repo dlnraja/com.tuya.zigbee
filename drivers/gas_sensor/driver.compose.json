@@ -298,9 +298,15 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          1,
+          1280,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          1,
+          1280
+        ]
       }
     },
     "learnmode": {
