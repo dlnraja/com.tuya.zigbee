@@ -1,4 +1,7 @@
 {
+  "5.5.817": {
+    "en": "🔘 HOBEIAN ZG-101ZL FIX (Ronny_M #1197): Added SDK3 method aliases (setOn/setOff/setToggle) to OnOffBoundCluster for proper button command reception. Button should now respond to single/double/long press. Re-pair device after update!"
+  },
   "5.5.816": {
     "en": "🔧 FIX: Added missing driver.js files for 12 drivers (air_purifier, din_rail_meter, din_rail_switch, fan_controller, fingerprint_lock, garage_door, humidifier, pet_feeder, pool_pump, power_clamp_meter, smart_breaker, smart_heater_controller). These drivers were failing silently without driver.js."
   },
