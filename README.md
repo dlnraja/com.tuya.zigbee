@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.816** | 🔧 FIX: Added missing driver.js files for 12 drivers (air_purifier, din_rail_... |
 | **v5.5.815** | 🚨 MASSIVE FIX: 89 drivers now have correct zigbee cluster endpoints! Sensors... |
 | **v5.5.814** | 🔧 CRITICAL FIX: Synced zigbee endpoints from driver.compose.json to app.json... |
 | **v5.5.813** | 🔌 HYBRIDSWITCH ENHANCEMENT: Complete method implementation - onSettings (pow... |
@@ -78,7 +79,6 @@
 | **v5.5.809** | 🎛️ FORUM FIX #113: Added Smart Knobe Scene Switch (_TZ3000_4fjiwweb/TS004F) ... |
 | **v5.5.808** | 🔧 DIAGNOSTICS FIX: 1) Water valve _TZ3000_iedbgyxt/TS0001 now correctly dete... |
 | **v5.5.807** | 🔒 SDK3 IAS ZONE COMPLIANCE FIX: 1) Removed hardcoded fallback IEEE address t... |
-| **v5.5.806** | 💡 FORUM COMPREHENSIVE FIX: 1) Motion sensor continuous illuminance - lux now... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
