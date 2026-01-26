@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.819** | 🎮 LoraTap TS0043 FIX (DVMasters #98): 3-button remote now recognized! Added ... |
 | **v5.5.818** | 🔘 BSEED TS0726 4-GANG FIX (Hartmut #1194): Physical buttons now work! Added ... |
 | **v5.5.817** | 🔘 HOBEIAN ZG-101ZL FIX (Ronny_M #1197): Added SDK3 method aliases (setOn/set... |
 | **v5.5.816** | 🔧 FIX: Added missing driver.js files for 12 drivers (air_purifier, din_rail_... |
@@ -78,7 +79,6 @@
 | **v5.5.812** | 🔧 FORUM MULTI-FIX: 1) BSEED TS0726 4-gang physical buttons now work (Hartmut... |
 | **v5.5.811** | 🔌 BSEED FIX (Pieter_Pessers): Added BSEED wall switch manufacturer IDs (_TZ3... |
 | **v5.5.810** | 🌡️ CRITICAL FIX (Lars-Arne): TS0201 temperature sensors (_TZ3000_fllyghyj, e... |
-| **v5.5.809** | 🎛️ FORUM FIX #113: Added Smart Knobe Scene Switch (_TZ3000_4fjiwweb/TS004F) ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
