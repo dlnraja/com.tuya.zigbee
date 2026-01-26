@@ -69,6 +69,8 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.813** | 🔌 HYBRIDSWITCH ENHANCEMENT: Complete method implementation - onSettings (pow... |
+| **v5.5.812** | 🔧 FORUM MULTI-FIX: 1) BSEED TS0726 4-gang physical buttons now work (Hartmut... |
 | **v5.5.811** | 🔌 BSEED FIX (Pieter_Pessers): Added BSEED wall switch manufacturer IDs (_TZ3... |
 | **v5.5.810** | 🌡️ CRITICAL FIX (Lars-Arne): TS0201 temperature sensors (_TZ3000_fllyghyj, e... |
 | **v5.5.809** | 🎛️ FORUM FIX #113: Added Smart Knobe Scene Switch (_TZ3000_4fjiwweb/TS004F) ... |
@@ -77,8 +79,6 @@
 | **v5.5.806** | 💡 FORUM COMPREHENSIVE FIX: 1) Motion sensor continuous illuminance - lux now... |
 | **v5.5.805** | 🔘 BUTTON FIX (Forum Ronny_M/Cam/Hartmut #1172/#1160/#1155): Fixed wireless b... |
 | **v5.5.804** | 🔧 DIAGNOSTICS REPORT FIXES: 1) HOBEIAN multisensor - fixed wrong detection w... |
-| **v5.5.803** | 💧 WATER LEAK SENSOR FIX (Forum #1166 Lasse_K): Fixed 'installs but no alarm'... |
-| **v5.5.802** | 📡 BLAKADDER DATABASE INTEGRATION: Added brand names Eardatek, Linptech, Rehe... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
