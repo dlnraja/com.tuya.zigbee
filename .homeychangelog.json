@@ -1,4 +1,7 @@
 {
+  "5.5.819": {
+    "en": "🎮 LoraTap TS0043 FIX (DVMasters #98): 3-button remote now recognized! Added endpoint 4 and cluster 57344 (0xE000) to button_wireless_3 driver. Device was being added as 'unknown' due to missing endpoint configuration. Re-pair after update!"
+  },
   "5.5.818": {
     "en": "🔘 BSEED TS0726 4-GANG FIX (Hartmut #1194): Physical buttons now work! Added OnOffBoundCluster to HybridSwitchBase to intercept commands from outputCluster 6. Each gang endpoint now has BoundCluster installed. Re-pair switch after update!"
   },
