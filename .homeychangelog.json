@@ -1,4 +1,7 @@
 {
+  "5.5.820": {
+    "en": "🚨 CRITICAL FIX: Devices not working after re-pair! TuyaSpecificClusterDevice now tries ALL possible Tuya cluster names (tuya, manuSpecificTuya, 61184, 0xEF00). Added raw frame fallback when cluster not found. This fixes the root cause of 'devices not receiving data' reports!"
+  },
   "5.5.819": {
     "en": "🎮 LoraTap TS0043 FIX (DVMasters #98): 3-button remote now recognized! Added endpoint 4 and cluster 57344 (0xE000) to button_wireless_3 driver. Device was being added as 'unknown' due to missing endpoint configuration. Re-pair after update!"
   },
