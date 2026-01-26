@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.818** | 🔘 BSEED TS0726 4-GANG FIX (Hartmut #1194): Physical buttons now work! Added ... |
 | **v5.5.817** | 🔘 HOBEIAN ZG-101ZL FIX (Ronny_M #1197): Added SDK3 method aliases (setOn/set... |
 | **v5.5.816** | 🔧 FIX: Added missing driver.js files for 12 drivers (air_purifier, din_rail_... |
 | **v5.5.815** | 🚨 MASSIVE FIX: 89 drivers now have correct zigbee cluster endpoints! Sensors... |
@@ -78,7 +79,6 @@
 | **v5.5.811** | 🔌 BSEED FIX (Pieter_Pessers): Added BSEED wall switch manufacturer IDs (_TZ3... |
 | **v5.5.810** | 🌡️ CRITICAL FIX (Lars-Arne): TS0201 temperature sensors (_TZ3000_fllyghyj, e... |
 | **v5.5.809** | 🎛️ FORUM FIX #113: Added Smart Knobe Scene Switch (_TZ3000_4fjiwweb/TS004F) ... |
-| **v5.5.808** | 🔧 DIAGNOSTICS FIX: 1) Water valve _TZ3000_iedbgyxt/TS0001 now correctly dete... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
