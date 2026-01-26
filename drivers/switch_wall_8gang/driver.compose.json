@@ -303,30 +303,16 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          6,
+          61184
         ],
-        "bindings": []
-      },
-      "2": {
-        "clusters": []
-      },
-      "3": {
-        "clusters": []
-      },
-      "4": {
-        "clusters": []
-      },
-      "5": {
-        "clusters": []
-      },
-      "6": {
-        "clusters": []
-      },
-      "7": {
-        "clusters": []
-      },
-      "8": {
-        "clusters": []
+        "bindings": [
+          6
+        ]
       }
     }
   },

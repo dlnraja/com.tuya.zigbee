@@ -246,7 +246,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          61184
         ],
         "bindings": []
       }
