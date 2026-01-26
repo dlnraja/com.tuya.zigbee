@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.814** | 🔧 CRITICAL FIX: Synced zigbee endpoints from driver.compose.json to app.json... |
 | **v5.5.813** | 🔌 HYBRIDSWITCH ENHANCEMENT: Complete method implementation - onSettings (pow... |
 | **v5.5.812** | 🔧 FORUM MULTI-FIX: 1) BSEED TS0726 4-gang physical buttons now work (Hartmut... |
 | **v5.5.811** | 🔌 BSEED FIX (Pieter_Pessers): Added BSEED wall switch manufacturer IDs (_TZ3... |
@@ -78,7 +79,6 @@
 | **v5.5.807** | 🔒 SDK3 IAS ZONE COMPLIANCE FIX: 1) Removed hardcoded fallback IEEE address t... |
 | **v5.5.806** | 💡 FORUM COMPREHENSIVE FIX: 1) Motion sensor continuous illuminance - lux now... |
 | **v5.5.805** | 🔘 BUTTON FIX (Forum Ronny_M/Cam/Hartmut #1172/#1160/#1155): Fixed wireless b... |
-| **v5.5.804** | 🔧 DIAGNOSTICS REPORT FIXES: 1) HOBEIAN multisensor - fixed wrong detection w... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
