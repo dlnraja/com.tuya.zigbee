@@ -1,4 +1,7 @@
 {
+  "5.5.816": {
+    "en": "🔧 FIX: Added missing driver.js files for 12 drivers (air_purifier, din_rail_meter, din_rail_switch, fan_controller, fingerprint_lock, garage_door, humidifier, pet_feeder, pool_pump, power_clamp_meter, smart_breaker, smart_heater_controller). These drivers were failing silently without driver.js."
+  },
   "5.5.815": {
     "en": "🚨 MASSIVE FIX: 89 drivers now have correct zigbee cluster endpoints! Sensors: temp(1026), humidity(1029), motion(1030), IAS(1280), illuminance(1024). Switches: onOff(6). Plugs: metering(2820,1794). Lights: levelControl(8), colorControl(768). Covers: windowCovering(258). All devices: Tuya(61184), battery(1). THIS IS THE FIX for devices not receiving data. RE-PAIR ALL DEVICES!"
   },
