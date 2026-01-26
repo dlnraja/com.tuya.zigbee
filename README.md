@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.810** | 🌡️ CRITICAL FIX (Lars-Arne): TS0201 temperature sensors (_TZ3000_fllyghyj, e... |
 | **v5.5.809** | 🎛️ FORUM FIX #113: Added Smart Knobe Scene Switch (_TZ3000_4fjiwweb/TS004F) ... |
 | **v5.5.808** | 🔧 DIAGNOSTICS FIX: 1) Water valve _TZ3000_iedbgyxt/TS0001 now correctly dete... |
 | **v5.5.807** | 🔒 SDK3 IAS ZONE COMPLIANCE FIX: 1) Removed hardcoded fallback IEEE address t... |
@@ -78,7 +79,6 @@
 | **v5.5.803** | 💧 WATER LEAK SENSOR FIX (Forum #1166 Lasse_K): Fixed 'installs but no alarm'... |
 | **v5.5.802** | 📡 BLAKADDER DATABASE INTEGRATION: Added brand names Eardatek, Linptech, Rehe... |
 | **v5.5.801** | 🔘 LORATAP TS0043 FIX (Issue #98): Added missing manufacturer ID _TZ3000_bi6l... |
-| **v5.5.800** | 📡 ZIGBEE DEVICE EXPANSION: Added 30+ new manufacturer IDs from ZHA/Zigbee2MQ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
