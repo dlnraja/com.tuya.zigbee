@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.818",
+  "version": "5.5.819",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -7041,6 +7041,7 @@
               5,
               6,
               18,
+              57344,
               1280,
               1281,
               61184
@@ -7054,12 +7055,14 @@
           "2": {
             "clusters": [
               0,
+              1,
               4,
               5,
               6,
               18
             ],
             "bindings": [
+              1,
               5,
               6
             ]
@@ -7067,12 +7070,29 @@
           "3": {
             "clusters": [
               0,
+              1,
               4,
               5,
               6,
               18
             ],
             "bindings": [
+              1,
+              5,
+              6
+            ]
+          },
+          "4": {
+            "clusters": [
+              0,
+              1,
+              4,
+              5,
+              6,
+              18
+            ],
+            "bindings": [
+              1,
               5,
               6
             ]
