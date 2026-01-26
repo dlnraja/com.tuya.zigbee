@@ -11,10 +11,24 @@ try {
   console.log('[BUTTON1] ⚠️ OnOffBoundCluster not available:', e.message);
 }
 
+// v5.5.823: TS004F Smart Knob FIX (GitHub #113) - Import LevelControlBoundCluster for rotary dimmer
+let LevelControlBoundCluster = null;
+try {
+  LevelControlBoundCluster = require('../../lib/clusters/LevelControlBoundCluster');
+  console.log('[BUTTON1] ✅ LevelControlBoundCluster loaded');
+} catch (e) {
+  console.log('[BUTTON1] ⚠️ LevelControlBoundCluster not available:', e.message);
+}
+
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║     BUTTON 1 GANG - v5.5.805 FORUM FIX RONNY_M + CAM + HARTMUT             ║
+ * ║     BUTTON 1 GANG - v5.5.823 + TS004F SMART KNOB FIX (GitHub #113)         ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
+ * ║                                                                              ║
+ * ║  v5.5.823: TS004F Smart Knob Dimmer support (GitHub #113)                   ║
+ * ║  - Added LevelControlBoundCluster for rotary dimmer commands                 ║
+ * ║  - Supports step/move/stop commands from rotary knobs                        ║
+ * ║  - _TZ3000_gwkzibhs Smart Knob Scene Switch                                  ║
  * ║                                                                              ║
  * ║  v5.5.376: FIX for "No Action detected" - Added IAS ACE support             ║
  * ║  - IAS ACE cluster (1281) for SOS/Emergency buttons (TS0215A)               ║
@@ -24,10 +38,10 @@ try {
  * ║  - Multiple event listener patterns for SDK3 compatibility                   ║
  * ║  - Tuya DP fallback for non-ZCL button events                               ║
  * ║                                                                              ║
- * ║  STRUCTURE TS0041:                                                           ║
- * ║  EP1: Button 1 (scenes, onOff, powerCfg, groups, iasZone, iasAce)           ║
+ * ║  STRUCTURE TS0041/TS004F:                                                    ║
+ * ║  EP1: Button 1 (scenes, onOff, powerCfg, groups, levelControl)              ║
  * ║                                                                              ║
- * ║  ACTIONS: single, double, hold                                               ║
+ * ║  ACTIONS: single, double, hold, rotate_left, rotate_right                    ║
  * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
@@ -41,8 +55,8 @@ class Button1GangDevice extends ButtonDevice {
   async onNodeInit({ zclNode }) {
     this._zclNode = zclNode;
     this.log('═══════════════════════════════════════════════════════════════');
-    this.log('[BUTTON1] 🔘 Button1GangDevice v5.5.805 initializing...');
-    this.log('[BUTTON1] FIX: Forum Ronny_M/Cam/Hartmut - Button not responding');
+    this.log('[BUTTON1] 🔘 Button1GangDevice v5.5.823 initializing...');
+    this.log('[BUTTON1] FIX: TS004F Smart Knob + Forum fixes');
     this.log('═══════════════════════════════════════════════════════════════');
 
     // Set button count BEFORE calling super
@@ -58,6 +72,9 @@ class Button1GangDevice extends ButtonDevice {
     // v5.5.715: HOBEIAN FIX - Explicit onOff binding for command reception
     // The device sends onOff commands (outputCluster 6) which need binding
     await this._setupOnOffBinding(zclNode);
+
+    // v5.5.823: TS004F Smart Knob FIX (GitHub #113) - LevelControl for rotary dimmer
+    await this._setupLevelControlBinding(zclNode);
 
     // v5.5.371: FORUM FIX - Enhanced physical button detection
     // Based on research from Zigbee2MQTT, ZHA, SmartThings patterns
@@ -712,6 +729,77 @@ class Button1GangDevice extends ButtonDevice {
           // Expected for sleeping devices
         }
       }, 500);
+    }
+  }
+
+  /**
+   * v5.5.823: TS004F Smart Knob FIX (GitHub #113)
+   * Setup LevelControlBoundCluster for rotary dimmer commands
+   * The TS004F sends levelControl commands (outputCluster 8) for rotation
+   */
+  async _setupLevelControlBinding(zclNode) {
+    if (!LevelControlBoundCluster) {
+      this.log('[BUTTON1-LEVEL] ⚠️ LevelControlBoundCluster not available');
+      return;
+    }
+
+    const modelId = this.getData()?.modelId || '';
+    const manufacturerName = this.getData()?.manufacturerName || '';
+    
+    // Only setup for TS004F Smart Knob devices
+    const isSmartKnob = modelId.toUpperCase().includes('TS004F') || 
+                        manufacturerName.toLowerCase().includes('gwkzibhs');
+    
+    if (!isSmartKnob) {
+      this.log('[BUTTON1-LEVEL] Not a Smart Knob device, skipping levelControl setup');
+      return;
+    }
+
+    this.log('[BUTTON1-LEVEL] 🎛️ Setting up LevelControl for Smart Knob...');
+
+    try {
+      const endpoint = zclNode?.endpoints?.[1];
+      if (!endpoint) {
+        this.log('[BUTTON1-LEVEL] ⚠️ Endpoint 1 not found');
+        return;
+      }
+
+      // Install LevelControlBoundCluster to receive rotation commands
+      const levelControlBoundCluster = new LevelControlBoundCluster({
+        onStep: async ({ mode, stepSize }) => {
+          this.log(`[BUTTON1-LEVEL] 🔄 Step ${mode} (size: ${stepSize})`);
+          const pressType = mode === 'up' ? 'rotate_right' : 'rotate_left';
+          await this.triggerButtonPress(1, pressType);
+        },
+        onStepWithOnOff: async ({ mode, stepSize }) => {
+          this.log(`[BUTTON1-LEVEL] 🔄 StepWithOnOff ${mode} (size: ${stepSize})`);
+          const pressType = mode === 'up' ? 'rotate_right' : 'rotate_left';
+          await this.triggerButtonPress(1, pressType);
+        },
+        onMove: async ({ moveMode, rate }) => {
+          this.log(`[BUTTON1-LEVEL] 🔄 Move ${moveMode} (rate: ${rate})`);
+          const pressType = moveMode === 'up' ? 'rotate_right' : 'rotate_left';
+          await this.triggerButtonPress(1, pressType);
+        },
+        onMoveWithOnOff: async ({ moveMode, rate }) => {
+          this.log(`[BUTTON1-LEVEL] 🔄 MoveWithOnOff ${moveMode} (rate: ${rate})`);
+          const pressType = moveMode === 'up' ? 'rotate_right' : 'rotate_left';
+          await this.triggerButtonPress(1, pressType);
+        },
+        onStop: async () => {
+          this.log('[BUTTON1-LEVEL] 🛑 Stop (rotation released)');
+        },
+        onStopWithOnOff: async () => {
+          this.log('[BUTTON1-LEVEL] 🛑 StopWithOnOff (rotation released)');
+        },
+      });
+
+      // Bind the cluster
+      endpoint.bind('levelControl', levelControlBoundCluster);
+      this.log('[BUTTON1-LEVEL] ✅ LevelControlBoundCluster installed for Smart Knob');
+
+    } catch (err) {
+      this.log('[BUTTON1-LEVEL] ⚠️ LevelControl setup error:', err.message);
     }
   }
 
