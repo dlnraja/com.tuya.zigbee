@@ -1,4 +1,7 @@
 {
+  "5.5.811": {
+    "en": "🔌 BSEED FIX (Pieter_Pessers): Added BSEED wall switch manufacturer IDs (_TZ3000_ptjcjise, _TZ3000_nnwehhst, _TZ3000_fawk5xjv) for 2-gang and 3-gang switches. Fixed multi-button simultaneous control issue by adding proper onOff cluster bindings to switch endpoints. Re-pair devices after update."
+  },
   "5.5.810": {
     "en": "🌡️ CRITICAL FIX (Lars-Arne): TS0201 temperature sensors (_TZ3000_fllyghyj, etc.) now report data! Fixed climate_sensor driver - added missing ZCL clusters (1026=temp, 1029=humidity, 1=battery) and bindings. Devices that paired but never updated will now work after re-pairing. Also fixes TS0041 buttons."
   },

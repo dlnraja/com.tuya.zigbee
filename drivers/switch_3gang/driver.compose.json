@@ -297,6 +297,9 @@
       "_TZ3000_lelb6ejs",
       "_TZ3000_lupfd8zu",
       "_TZ3000_mraovvmm",
+      "_TZ3000_nnwehhst",
+      "_TZ3000_ptjcjise",
+      "_TZ3000_fawk5xjv",
       "_TZ3000_mtmtljo4",
       "_TZ3000_nahxzcpz",
       "_TZ3000_nz98vdvj",
@@ -434,7 +437,34 @@
       "_TZE200_d8fp6ivb",
       "_TZE200_dcydapr2",
       "_TZE200_dfry6ylv"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "3": {
+        "clusters": [
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
   },
   "images": {
     "small": "drivers/switch_3gang/assets/images/small.png",
