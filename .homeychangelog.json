@@ -1,4 +1,7 @@
 {
+  "5.5.822": {
+    "en": "🔄 FRESH Z2M SYNC + USER INTERVIEWS: Synced TuyaDataPointsZ2M.js with latest zigbee-herdsman-converters. Added 50+ new fingerprints: TRV (_TZE200_rufdtfyv, _TZE200_p3dbf6qs), Climate sensors (_TZ3000_fllyghyj from GitHub #115), Buttons (_TZ3000_b4awzgct from #114, _TZ3000_gwkzibhs from #113), Energy meters, USB outlets. User interview data has PRIORITY over external sources."
+  },
   "5.5.821": {
     "en": "📊 ENRICHED DP MAPPINGS: Added device profiles from JohanBendz PRs + Z2M + Hubitat. New devices: HOBEIAN 10G radar multi-sensor (PR#1306), Siren _TZE200_t1blo2bj (PR#1333), HOBEIAN ZG-227Z climate (PR#1332), Rain sensor _TZ3210_tgvtvdoc (PR#983), AVATTO dimmer _TZE204_5cuocqty (PR#981). Updated ZG-204ZM DP mappings with correct temp/humidity DPs."
   },
