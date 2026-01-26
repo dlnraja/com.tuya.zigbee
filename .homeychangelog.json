@@ -1,4 +1,7 @@
 {
+  "5.5.810": {
+    "en": "🌡️ CRITICAL FIX (Lars-Arne): TS0201 temperature sensors (_TZ3000_fllyghyj, etc.) now report data! Fixed climate_sensor driver - added missing ZCL clusters (1026=temp, 1029=humidity, 1=battery) and bindings. Devices that paired but never updated will now work after re-pairing. Also fixes TS0041 buttons."
+  },
   "5.5.809": {
     "en": "🎛️ FORUM FIX #113: Added Smart Knobe Scene Switch (_TZ3000_4fjiwweb/TS004F) to switch_dimmer_1gang driver for remote dimmer functionality. LoraTap TS0043 (_TZ3000_famkxci2) already supported in button_wireless_3."
   },
