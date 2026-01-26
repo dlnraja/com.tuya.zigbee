@@ -1,4 +1,7 @@
 {
+  "5.5.825": {
+    "en": "🔧 SENSOR FIX: Extended v5.5.824 fix to HybridSensorBase! Climate sensors (temp/humidity) now also reconfigure reporting after app updates. Added _shouldConfigureReportingSensor() with version tracking. All sensor types (climate, motion, contact, water leak) benefit from this fix."
+  },
   "5.5.824": {
     "en": "🚨 CRITICAL FIX: Devices not working after update! Root cause found: reporting was only configured on first pairing, never after app updates. Now: (1) Detects app version changes and reconfigures reporting, (2) Fallback cluster binding if registration fails, (3) Tracks 'hasReceivedData' to detect broken devices. NO RE-PAIR NEEDED - just update and wait 2 minutes!"
   },
