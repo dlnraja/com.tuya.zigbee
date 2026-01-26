@@ -1,4 +1,7 @@
 {
+  "5.5.818": {
+    "en": "🔘 BSEED TS0726 4-GANG FIX (Hartmut #1194): Physical buttons now work! Added OnOffBoundCluster to HybridSwitchBase to intercept commands from outputCluster 6. Each gang endpoint now has BoundCluster installed. Re-pair switch after update!"
+  },
   "5.5.817": {
     "en": "🔘 HOBEIAN ZG-101ZL FIX (Ronny_M #1197): Added SDK3 method aliases (setOn/setOff/setToggle) to OnOffBoundCluster for proper button command reception. Button should now respond to single/double/long press. Re-pair device after update!"
   },
