@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.824** | 🚨 CRITICAL FIX: Devices not working after update! Root cause found: reportin... |
 | **v5.5.823** | 🎛️ TS004F SMART KNOB FIX (GitHub #113): Added LevelControlBoundCluster suppo... |
 | **v5.5.822** | 🔄 FRESH Z2M SYNC + USER INTERVIEWS: Synced TuyaDataPointsZ2M.js with latest ... |
 | **v5.5.821** | 📊 ENRICHED DP MAPPINGS: Added device profiles from JohanBendz PRs + Z2M + Hu... |
@@ -78,7 +79,6 @@
 | **v5.5.817** | 🔘 HOBEIAN ZG-101ZL FIX (Ronny_M #1197): Added SDK3 method aliases (setOn/set... |
 | **v5.5.816** | 🔧 FIX: Added missing driver.js files for 12 drivers (air_purifier, din_rail_... |
 | **v5.5.815** | 🚨 MASSIVE FIX: 89 drivers now have correct zigbee cluster endpoints! Sensors... |
-| **v5.5.814** | 🔧 CRITICAL FIX: Synced zigbee endpoints from driver.compose.json to app.json... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
