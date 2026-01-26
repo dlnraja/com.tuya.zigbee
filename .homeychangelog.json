@@ -1,4 +1,7 @@
 {
+  "5.5.824": {
+    "en": "🚨 CRITICAL FIX: Devices not working after update! Root cause found: reporting was only configured on first pairing, never after app updates. Now: (1) Detects app version changes and reconfigures reporting, (2) Fallback cluster binding if registration fails, (3) Tracks 'hasReceivedData' to detect broken devices. NO RE-PAIR NEEDED - just update and wait 2 minutes!"
+  },
   "5.5.823": {
     "en": "🎛️ TS004F SMART KNOB FIX (GitHub #113): Added LevelControlBoundCluster support for rotary dimmers! Device _TZ3000_gwkzibhs now receives rotation commands (step/move/stop). Triggers 'rotate_left' and 'rotate_right' button events. Re-pair Smart Knob after update!"
   },
