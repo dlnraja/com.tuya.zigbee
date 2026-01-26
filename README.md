@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.821** | 📊 ENRICHED DP MAPPINGS: Added device profiles from JohanBendz PRs + Z2M + Hu... |
 | **v5.5.820** | 🚨 CRITICAL FIX: Devices not working after re-pair! TuyaSpecificClusterDevice... |
 | **v5.5.819** | 🎮 LoraTap TS0043 FIX (DVMasters #98): 3-button remote now recognized! Added ... |
 | **v5.5.818** | 🔘 BSEED TS0726 4-GANG FIX (Hartmut #1194): Physical buttons now work! Added ... |
@@ -78,7 +79,6 @@
 | **v5.5.814** | 🔧 CRITICAL FIX: Synced zigbee endpoints from driver.compose.json to app.json... |
 | **v5.5.813** | 🔌 HYBRIDSWITCH ENHANCEMENT: Complete method implementation - onSettings (pow... |
 | **v5.5.812** | 🔧 FORUM MULTI-FIX: 1) BSEED TS0726 4-gang physical buttons now work (Hartmut... |
-| **v5.5.811** | 🔌 BSEED FIX (Pieter_Pessers): Added BSEED wall switch manufacturer IDs (_TZ3... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
