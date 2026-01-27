@@ -27,7 +27,9 @@
           4,
           5,
           6,
-          61184
+          61184,
+          57344,
+          57345
         ],
         "bindings": [
           6
@@ -37,7 +39,10 @@
     "learnmode": {
       "image": "/drivers/switch_1gang/assets/learnmode.svg",
       "instruction": {
-        "en": "Turn the switch on/off 3 times quickly"
+        "en": "Turn the switch on/off 3 times quickly, or hold reset button 5 seconds",
+        "fr": "Basculez l'interrupteur 3 fois rapidement, ou maintenez reset 5 secondes",
+        "nl": "Schakel 3 keer snel aan/uit, of houd reset 5 seconden ingedrukt",
+        "de": "Schalter 3x schnell ein/aus, oder Reset-Taste 5 Sekunden halten"
       }
     },
     "manufacturerName": [
