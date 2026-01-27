@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.849** | 🔧 FIX: Removed _TZE204_laokfqwu from climate_sensor - it's an mmWave presenc... |
 | **v5.5.848** | 🔧 SDK3 COMPLIANCE: Per Homey Developer docs - deferred init communication (d... |
 | **v5.5.847** | 🔧 DEVICE FIX: Fixed _TZE204_laokfqwu misidentification - moved from CO2 sens... |
 | **v5.5.846** | 🔍 EXTENDED VERIFICATION: Added 5 more TRV fingerprints (_TZE204_wgrffniy, _T... |
@@ -78,7 +79,6 @@
 | **v5.5.842** | 📦 Maintenance release - all previous fixes included (HOBEIAN ZG-204ZV temp/h... |
 | **v5.5.841** | 🔧 DIAGNOSTIC FIX (Peter_van_Werkhoven): HOBEIAN ZG-204ZV multisensor COMPLET... |
 | **v5.5.840** | 🔄 FORUM FIX (Cam): HOBEIAN ZG-204ZL motion sensor 'always active' issue FIXE... |
-| **v5.5.834** | ✅ GitHub Issues #113, #114, #115 VERIFIED: All devices already supported! TS0... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
