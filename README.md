@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.828** | 🔘 PHYSICAL BUTTON FIX (Attilla's report): switch_dimmer_1gang now correctly ... |
 | **v5.5.827** | 🔧 DIAGNOSTICS BATCH FIX: 1) AVATTO TRV Smart Radiator Valve (_TZE284_o3x45p9... |
 | **v5.5.826** | 🔧 DIAGNOSTICS FIXES: 1) HOBEIAN ZG-204ZV multi-sensor now reports temperatur... |
 | **v5.5.825** | 🔧 SENSOR FIX: Extended v5.5.824 fix to HybridSensorBase! Climate sensors (te... |
@@ -78,7 +79,6 @@
 | **v5.5.821** | 📊 ENRICHED DP MAPPINGS: Added device profiles from JohanBendz PRs + Z2M + Hu... |
 | **v5.5.820** | 🚨 CRITICAL FIX: Devices not working after re-pair! TuyaSpecificClusterDevice... |
 | **v5.5.819** | 🎮 LoraTap TS0043 FIX (DVMasters #98): 3-button remote now recognized! Added ... |
-| **v5.5.818** | 🔘 BSEED TS0726 4-GANG FIX (Hartmut #1194): Physical buttons now work! Added ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
