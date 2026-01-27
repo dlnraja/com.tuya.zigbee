@@ -12,10 +12,19 @@
     "windowcoverings_tilt_set",
     "measure_battery",
     "measure_luminance",
-    "button",
+    "button.calibrate",
+    "button.reset_position",
     "dim"
   ],
   "capabilitiesOptions": {
+    "button.calibrate": {
+      "title": { "en": "Calibrate", "fr": "Calibrer", "nl": "Kalibreren", "de": "Kalibrieren" },
+      "maintenanceAction": true
+    },
+    "button.reset_position": {
+      "title": { "en": "Reset Position", "fr": "Réinitialiser Position", "nl": "Reset Positie", "de": "Position zurücksetzen" },
+      "maintenanceAction": true
+    },
     "windowcoverings_set": {
       "title": {
         "en": "Position"

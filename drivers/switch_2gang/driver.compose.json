@@ -11,6 +11,12 @@
     "button_toggle_2",
     "button_identify"
   ],
+  "energy": {
+    "approximation": {
+      "usageOn": 5,
+      "usageOff": 0.5
+    }
+  },
   "zigbee": {
     "productId": [
       "TS0002",
