@@ -28,14 +28,18 @@
     "measure_power": {
       "title": {
         "en": "Power",
-        "fr": "Puissance"
+        "fr": "Puissance",
+        "nl": "Vermogen",
+        "de": "Leistung"
       },
       "units": "W"
     },
     "meter_power": {
       "title": {
         "en": "Energy",
-        "fr": "Énergie"
+        "fr": "Énergie",
+        "nl": "Energie",
+        "de": "Energie"
       },
       "units": "kWh"
     }
