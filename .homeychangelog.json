@@ -1,4 +1,7 @@
 {
+  "5.5.906": {
+    "en": "🎯 New Flow Cards: Toggle action for 1-gang switch. Toggle + All-gangs actions for 2-gang switch. Forum: Attilla confirms physical button flows now working. BSEED cluster handling improved."
+  },
   "5.5.905": {
     "en": "📊 Enhanced Diagnostics for ALL Sensors: HybridSensorBase now logs DP data with type/interval/count (same as switches). Helps diagnose device issues from logs. Forum docs updated with completed fixes."
   },
