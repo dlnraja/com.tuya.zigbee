@@ -377,6 +377,7 @@ _TZE200_a8sdabtg  → climate_sensor (temp/humidity)
 | ManuelKugler | Radiator Valve ME167 | `_TZE284_o3x45p96` | Not working #1223 | f089e2e7 | ✅ ID in driver (ME167 profile) - USER NEEDS RE-PAIR |
 | Peter_van_Werkhoven | HOBEIAN ZG-204ZV | `HOBEIAN` | Temp/Humidity no data #1225 | Forum | ✅ v5.5.907 - USER MUST RE-PAIR to get temp/hum/battery + remove Distance |
 | Pieter_Pessers | BSEED 1-gang TS0001 | `_TZ3000_ysdv91bk` | Unknown device #1219 | Forum | ✅ In switch_1gang - USER MUST RE-PAIR |
+| blutch32 | Contact Sensor TS0203 | `_TZ3000_996rpfy6` | Alarm always "no" #1011 | Forum | ✅ v5.5.908 - Added to inverted list - USER MUST RE-PAIR |
 | FrankP | IR Blaster | Unknown | Flow card errors | `89e408fe-d0ba-4216-95be-951824dac2b8` | ✅ v5.5.565 Flow cards verified working (sendEnhancedIRCode, sendACCommand exist) |
 
 ### ✅ RECENTLY FIXED (Moved from Pending)
