@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.883** | 🌡️ Climate Sensor and Generic Tuya Device: NL/DE localization for temperatur... |
 | **v5.5.882** | 💡 Dimmers: Wall Dimmer 1-Gang proper naming. 3-Gang Dimmer channel titles wi... |
 | **v5.5.881** | 🔧 Fixes: SOS Button class changed to 'button' + full localization. Door Cont... |
 | **v5.5.880** | 🌬️ Sensors: Gas Detector, Air Quality CO2, Comprehensive Air Monitor - prope... |
@@ -78,7 +79,6 @@
 | **v5.5.876** | 🔋 Energy Tracking: Garage door (150W), IR Blaster (2W constant), Dual Dimmer... |
 | **v5.5.875** | ⚡ Smart RCBO: Changed to 'socket' class with cumulative energy tracking. Adde... |
 | **v5.5.874** | 🌡️ 4-Channel Thermostat: Energy tracking (3W), NL/DE localized channel names... |
-| **v5.5.873** | 🔧 Device Improvements: Siren uses proper 'siren' class. Fixed duplicate name... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
