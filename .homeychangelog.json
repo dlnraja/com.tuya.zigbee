@@ -1,4 +1,7 @@
 {
+  "5.5.886": {
+    "en": "💡 Smart Bulbs: Major cleanup - removed incorrect battery capabilities from all bulb drivers, fixed FR naming, proper capability sets per bulb type. HVAC AC: removed battery capability."
+  },
   "5.5.885": {
     "en": "💡 LED Strips: Removed incorrect battery capabilities, proper energy tracking, fixed naming. DIY Custom Device: NL/DE switch title localization."
   },
