@@ -1,8 +1,8 @@
 {
   "name": {
     "en": "Gas Detector",
-    "fr": "Gas Detector",
-    "nl": "Gas Detector",
+    "fr": "Détecteur de Gaz",
+    "nl": "Gasdetector",
     "de": "Gasdetektor"
   },
   "class": "sensor",
@@ -17,7 +17,9 @@
     "alarm_generic": {
       "title": {
         "en": "Gas Alarm",
-        "fr": "Alarme Gaz"
+        "fr": "Alarme Gaz",
+        "nl": "Gasalarm",
+        "de": "Gasalarm"
       }
     }
   },
