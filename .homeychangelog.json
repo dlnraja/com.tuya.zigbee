@@ -1,4 +1,7 @@
 {
+  "5.5.848": {
+    "en": "🔧 SDK3 COMPLIANCE: Per Homey Developer docs - deferred init communication (don't communicate in onInit), SED-aware request handling, improved IAS Zone enrollment. Better reliability for sleepy battery devices."
+  },
   "5.5.847": {
     "en": "🔧 DEVICE FIX: Fixed _TZE204_laokfqwu misidentification - moved from CO2 sensor to presence_sensor_radar (DP1=presence, DP9=lux). RE-PAIR devices showing as 'Appareil Zigbee' to use correct driver."
   },
