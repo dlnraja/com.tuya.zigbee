@@ -434,9 +434,12 @@
     {
       "id": "power_source",
       "type": "dropdown",
+      "highlight": true,
       "label": {
         "en": "Power Source",
-        "fr": "Source d'Alimentation"
+        "fr": "Source d'Alimentation",
+        "nl": "Stroombron",
+        "de": "Stromquelle"
       },
       "value": "auto",
       "values": [
