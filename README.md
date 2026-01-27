@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.840** | 🔄 FORUM FIX (Cam): HOBEIAN ZG-204ZL motion sensor 'always active' issue FIXE... |
 | **v5.5.834** | ✅ GitHub Issues #113, #114, #115 VERIFIED: All devices already supported! TS0... |
 | **v5.5.833** | 🌧️ FORUM FIX (Dominique_C #1202): Rain sensor TS0207/_TZ3210_p68kms0l now pa... |
 | **v5.5.832** | 🆘 FORUM FIX (Peter_van_Werkhoven #1203): SOS button flow cards now trigger p... |
@@ -78,7 +79,6 @@
 | **v5.5.828** | 🔘 PHYSICAL BUTTON FIX (Attilla's report): switch_dimmer_1gang now correctly ... |
 | **v5.5.827** | 🔧 DIAGNOSTICS BATCH FIX: 1) AVATTO TRV Smart Radiator Valve (_TZE284_o3x45p9... |
 | **v5.5.826** | 🔧 DIAGNOSTICS FIXES: 1) HOBEIAN ZG-204ZV multi-sensor now reports temperatur... |
-| **v5.5.825** | 🔧 SENSOR FIX: Extended v5.5.824 fix to HybridSensorBase! Climate sensors (te... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
