@@ -1,4 +1,7 @@
 {
+  "5.5.869": {
+    "en": "🏠 Device Classes: Cover Controller now uses 'curtains' class, Roller Shutter uses 'blinds' class per SDK best practices. Highlighted power source setting for radar sensors."
+  },
   "5.5.868": {
     "en": "✨ Flow Cards: Added highlights to 3-gang, 4-gang switches, RGB bulb, radiator valve. Improved NL/DE localization. Easier to find important triggers in Flow editor."
   },
