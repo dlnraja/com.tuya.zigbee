@@ -7,11 +7,15 @@
   },
   "class": "fan",
   "capabilities": [
-    "dim",
-    "measure_battery",
     "onoff",
+    "dim",
     "fan_speed"
   ],
+  "capabilitiesOptions": {
+    "dim": {
+      "title": { "en": "Fan Speed", "fr": "Vitesse", "nl": "Ventilatorsnelheid", "de": "Lüftergeschwindigkeit" }
+    }
+  },
   "energy": {
     "approximation": {
       "usageOn": 65,
