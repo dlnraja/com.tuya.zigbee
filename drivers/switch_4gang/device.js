@@ -1,25 +1,25 @@
 'use strict';
 
 // v5.5.530: Fix "Class extends value undefined" error
-// Ensure HybridSwitchBase is loaded before mixin application
 let HybridSwitchBase;
 try {
   HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
-  if (!HybridSwitchBase) {
-    throw new Error('HybridSwitchBase is undefined');
-  }
+  if (!HybridSwitchBase) throw new Error('HybridSwitchBase is undefined');
 } catch (e) {
-  // Fallback to ZigBeeDevice if HybridSwitchBase fails to load
   console.error('[switch_4gang] HybridSwitchBase load failed:', e.message);
   const { ZigBeeDevice } = require('homey-zigbeedriver');
   HybridSwitchBase = ZigBeeDevice;
 }
 
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
-// v5.5.530: Safe mixin application with fallback
+/**
+ * 4-GANG SWITCH - v5.5.896 + PhysicalButtonMixin
+ * Physical button detection: single/double/long/triple per gang
+ */
 const BaseClass = typeof HybridSwitchBase === 'function' 
-  ? VirtualButtonMixin(HybridSwitchBase) 
+  ? PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) 
   : HybridSwitchBase;
 
 class Switch4GangDevice extends BaseClass {
@@ -28,16 +28,13 @@ class Switch4GangDevice extends BaseClass {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
 
-    // Register capability listeners for flow triggers
-    this.registerCapabilityListener('onoff', (value) => this._onCapabilityChanged('onoff', value, 1));
-    this.registerCapabilityListener('onoff.gang2', (value) => this._onCapabilityChanged('onoff.gang2', value, 2));
-    this.registerCapabilityListener('onoff.gang3', (value) => this._onCapabilityChanged('onoff.gang3', value, 3));
-    this.registerCapabilityListener('onoff.gang4', (value) => this._onCapabilityChanged('onoff.gang4', value, 4));
+    // v5.5.896: Physical button detection (single/double/long/triple)
+    await this.initPhysicalButtonDetection?.(zclNode);
 
-    // v5.5.412: Initialize virtual buttons for remote control
-    await this.initVirtualButtons();
+    // v5.5.412: Initialize virtual buttons
+    await this.initVirtualButtons?.();
 
-    this.log('[SWITCH-4G] v5.5.530 ✅ Ready + virtual buttons (robust loading)');
+    this.log('[SWITCH-4G] v5.5.896 - Physical button detection enabled');
   }
 
   /**
