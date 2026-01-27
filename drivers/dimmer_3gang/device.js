@@ -4,7 +4,7 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      3-GANG DIMMER - v5.5.399 (Tuya DP-based)                               ║
+ * ║      3-GANG DIMMER - v5.5.829 (Tuya DP-based)                               ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  MOES 3-Gang Dimmer - _TZE204_1v1dxkck / TS0601                              ║
  * ║  Uses Tuya cluster 0xEF00 for control                                        ║
@@ -16,6 +16,11 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 class Dimmer3GangDevice extends ZigBeeDevice {
+
+  // v5.5.829: Physical button detection (inspired by Attilla/packetninja PR #112)
+  _appCommandPending = false;
+  _appCommandTimeout = null;
+  _lastStates = {}; // Track last known states for heartbeat filtering
 
   get dpMappings() {
     return {
@@ -33,7 +38,7 @@ class Dimmer3GangDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║         3-GANG DIMMER v5.5.399 (Tuya DP)                     ║');
+    this.log('║         3-GANG DIMMER v5.5.829 (Tuya DP)                     ║');
     this.log('╚══════════════════════════════════════════════════════════════╝');
 
     this.zclNode = zclNode;
@@ -71,21 +76,40 @@ class Dimmer3GangDevice extends ZigBeeDevice {
     }
   }
 
+  // v5.5.829: Mark app command to distinguish from physical button
+  _markAppCommand() {
+    this._appCommandPending = true;
+    if (this._appCommandTimeout) clearTimeout(this._appCommandTimeout);
+    this._appCommandTimeout = setTimeout(() => {
+      this._appCommandPending = false;
+    }, 2000);
+  }
+
   _handleTuyaResponse(data) {
     try {
       if (!data || !data.dp) return;
 
       const dp = data.dp;
       const value = data.value !== undefined ? data.value : data.data;
-
-      this.log(`[DIMMER-3G] DP${dp} = ${value}`);
+      
+      // v5.5.829: Detect physical button press (no pending app command)
+      const isPhysical = !this._appCommandPending;
 
       const mapping = this.dpMappings[dp];
       if (mapping && mapping.capability) {
         const transformedValue = mapping.transform ? mapping.transform(value) : value;
-        this.setCapabilityValue(mapping.capability, transformedValue).catch(err => {
-          this.error(`[DIMMER-3G] Error setting ${mapping.capability}:`, err.message);
-        });
+        const stateKey = `dp${dp}`;
+        const lastValue = this._lastStates[stateKey];
+        
+        // v5.5.829: Heartbeat filter - only process if value changed
+        if (lastValue !== transformedValue) {
+          this._lastStates[stateKey] = transformedValue;
+          this.log(`[DIMMER-3G] DP${dp} = ${transformedValue} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
+          
+          this.setCapabilityValue(mapping.capability, transformedValue).catch(err => {
+            this.error(`[DIMMER-3G] Error setting ${mapping.capability}:`, err.message);
+          });
+        }
       }
     } catch (err) {
       this.error('[DIMMER-3G] Error handling Tuya response:', err.message);
@@ -96,12 +120,14 @@ class Dimmer3GangDevice extends ZigBeeDevice {
     // Gang 1
     if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (value) => {
+        this._markAppCommand(); // v5.5.829
         await this._sendTuyaDP(1, value ? 1 : 0, 'bool');
       });
     }
 
     if (this.hasCapability('dim')) {
       this.registerCapabilityListener('dim', async (value) => {
+        this._markAppCommand(); // v5.5.829
         await this._sendTuyaDP(2, Math.round(value * 1000), 'value');
       });
     }
@@ -109,12 +135,14 @@ class Dimmer3GangDevice extends ZigBeeDevice {
     // Gang 2
     if (this.hasCapability('onoff.channel2')) {
       this.registerCapabilityListener('onoff.channel2', async (value) => {
+        this._markAppCommand(); // v5.5.829
         await this._sendTuyaDP(7, value ? 1 : 0, 'bool');
       });
     }
 
     if (this.hasCapability('dim.channel2')) {
       this.registerCapabilityListener('dim.channel2', async (value) => {
+        this._markAppCommand(); // v5.5.829
         await this._sendTuyaDP(8, Math.round(value * 1000), 'value');
       });
     }
@@ -122,12 +150,14 @@ class Dimmer3GangDevice extends ZigBeeDevice {
     // Gang 3
     if (this.hasCapability('onoff.channel3')) {
       this.registerCapabilityListener('onoff.channel3', async (value) => {
+        this._markAppCommand(); // v5.5.829
         await this._sendTuyaDP(15, value ? 1 : 0, 'bool');
       });
     }
 
     if (this.hasCapability('dim.channel3')) {
       this.registerCapabilityListener('dim.channel3', async (value) => {
+        this._markAppCommand(); // v5.5.829
         await this._sendTuyaDP(16, Math.round(value * 1000), 'value');
       });
     }
