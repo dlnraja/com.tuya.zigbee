@@ -5,7 +5,7 @@
     "nl": "Irrigatieklep",
     "de": "Bewässerungsventil"
   },
-  "class": "thermostat",
+  "class": "other",
   "capabilities": [
     "valve_position.1",
     "valve_position.2",
@@ -14,6 +14,12 @@
     "measure_battery",
     "onoff"
   ],
+  "capabilitiesOptions": {
+    "valve_position.1": { "title": { "en": "Zone 1", "fr": "Zone 1", "nl": "Zone 1", "de": "Zone 1" } },
+    "valve_position.2": { "title": { "en": "Zone 2", "fr": "Zone 2", "nl": "Zone 2", "de": "Zone 2" } },
+    "valve_position.3": { "title": { "en": "Zone 3", "fr": "Zone 3", "nl": "Zone 3", "de": "Zone 3" } },
+    "valve_position.4": { "title": { "en": "Zone 4", "fr": "Zone 4", "nl": "Zone 4", "de": "Zone 4" } }
+  },
   "energy": {
     "batteries": [
       "AA",
