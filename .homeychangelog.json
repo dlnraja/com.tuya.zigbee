@@ -1,4 +1,7 @@
 {
+  "5.5.831": {
+    "en": "🌡️ FORUM FIX (Peter_van_Werkhoven): HOBEIAN ZG-204ZV multisensor now reports temperature & humidity! Device was incorrectly mapped to config without temp/humidity. Created dedicated ZG_204ZV_MULTISENSOR config with DP3=temp, DP4=humidity. Forum devices verified: TS130F curtain (_TZ3000_5iixzdo7, _TZ3000_bs93npae), TS0207 rain sensor (_TZ3210_p68kms0l) - all already supported."
+  },
   "5.5.830": {
     "en": "📧 EMAIL/ZHA BATCH: Added new 6-channel relay fingerprints from ZHA issue #4376: _TZE284_l8xiyymq (PN6), _TZE204_znbl8dj5, _TZE204_ikvncluo. Verified Zbeacon TH01 and soil sensor _TZE284_aa03yzhs already supported. Sources: Gmail diagnostics, ZHA device handlers, Z2M database."
   },

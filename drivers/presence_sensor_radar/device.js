@@ -684,12 +684,32 @@ const SENSOR_CONFIGS = {
   // These expose: presence, duration_of_attendance, duration_of_absence, led_state
   // Source: Z2M converters + Reddit r/homeassistant
   // ─────────────────────────────────────────────────────────────────────────────
+  // v5.5.831: HOBEIAN ZG-204ZV MULTISENSOR (Peter_van_Werkhoven forum fix)
+  // This is a 5-in-1 multisensor with motion, illuminance, temp, humidity, battery
+  // DP mappings confirmed from motion_sensor device.js ZG204ZV profile
+  'ZG_204ZV_MULTISENSOR': {
+    sensors: [
+      '_TZE200_3towulqd', '_TZE204_3towulqd', '_tze200_3towulqd',
+    ],
+    battery: true,
+    hasIlluminance: true,
+    noTemperature: false,   // v5.5.831: ZG-204ZV HAS temperature!
+    noHumidity: false,      // v5.5.831: ZG-204ZV HAS humidity!
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_bool' },
+      // v5.5.831: ZG-204ZV specific - DP3=temp(÷10), DP4=humidity
+      3: { cap: 'measure_temperature', divisor: 10 },
+      4: { cap: 'measure_humidity', divisor: 1 },
+      9: { cap: 'measure_luminance', type: 'lux_direct' },
+      10: { cap: 'measure_battery', divisor: 1 },
+    }
+  },
+
   // v5.5.509: Forum fix Ricardo_Lenior - Added mainsPowered + noBatteryCapability
   'ZY_M100_SIMPLE': {
     sensors: [
       '_TZE200_0u3bj3rc', '_TZE200_mx6u6l4y', '_TZE200_v6ossqfy',
-      // v5.5.281: Added from Z2M research
-      '_TZE200_3towulqd', '_TZE204_3towulqd',
+      // v5.5.281: Added from Z2M research (removed _TZE200_3towulqd - now in ZG_204ZV_MULTISENSOR)
       '_TZE200_1ibpyhdc', '_TZE204_1ibpyhdc',
       // v5.5.509: Additional mains-powered ceiling sensors
       '_TZE200_auin8mzr', '_TZE204_auin8mzr',
