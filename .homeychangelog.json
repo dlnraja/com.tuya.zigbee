@@ -1,4 +1,7 @@
 {
+  "5.5.912": {
+    "en": "🌡️ ZG-204ZV Fix: Added ZCL temperature (0x0402) + humidity (0x0405) cluster listeners. ZHA #4452: Some ZG-204ZV variants use ZCL clusters, not Tuya DP. Peter_van_Werkhoven: RE-PAIR to apply fix."
+  },
   "5.5.911": {
     "en": "💧 Water Valve Enhancement: Z2M DP mappings (water consumption, flow rate, temp, battery). Added fingerprints: vuwtqx0t, fphxkxue, a7sghmms. Pieter_Pessers: RE-PAIR water valve after update."
   },
