@@ -1,4 +1,7 @@
 {
+  "5.5.849": {
+    "en": "🔧 FIX: Removed _TZE204_laokfqwu from climate_sensor - it's an mmWave presence sensor (Z2M #23217). Device correctly maps to presence_sensor_radar. RE-PAIR required."
+  },
   "5.5.848": {
     "en": "🔧 SDK3 COMPLIANCE: Per Homey Developer docs - deferred init communication (don't communicate in onInit), SED-aware request handling, improved IAS Zone enrollment. Better reliability for sleepy battery devices."
   },
