@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.906** | 🎯 New Flow Cards: Toggle action for 1-gang switch. Toggle + All-gangs action... |
 | **v5.5.905** | 📊 Enhanced Diagnostics for ALL Sensors: HybridSensorBase now logs DP data wi... |
 | **v5.5.904** | 🧹 Orphan Capability Cleanup: Radar sensors now auto-remove capabilities not ... |
 | **v5.5.903** | 🛠️ Forum Fixes: _TZE284_iadro9bf motion alarm stuck - added stuck pattern de... |
@@ -78,7 +79,6 @@
 | **v5.5.899** | 🎯 Device Profiles: Comprehensive manufacturer-specific handling based on Z2M... |
 | **v5.5.898** | ⚙️ Configurable Physical Button Detection: New settings for all switch driver... |
 | **v5.5.897** | 🔵 BSEED Special Mode: Dedicated handling for _TZ3000_blhvsaqf/_TZ3000_ysdv91... |
-| **v5.5.896** | 🎯 PhysicalButtonMixin: Advanced button detection for all switch drivers (1-4... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
