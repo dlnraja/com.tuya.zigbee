@@ -9,13 +9,25 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
+      "titleFormatted": {
+        "en": "[[device]] turned on",
+        "fr": "[[device]] allumé",
+        "nl": "[[device]] aangezet",
+        "de": "[[device]] eingeschaltet"
+      },
       "hint": {
         "en": "Triggers when the switch is turned on (manually or via app)",
         "fr": "Se déclenche quand l'interrupteur est allumé",
         "nl": "Triggert wanneer de schakelaar wordt ingeschakeld",
         "de": "Wird ausgelöst, wenn der Schalter eingeschaltet wird"
       },
-      "args": []
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=switch_1gang"
+        }
+      ]
     },
     {
       "id": "switch_1gang_turned_off",
@@ -25,31 +37,81 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": []
-    },
-    {
-      "id": "switch_1gang_physical_button",
-      "title": {
-        "en": "Physical button pressed",
-        "fr": "Bouton physique pressé",
-        "nl": "Fysieke knop ingedrukt",
-        "de": "Physische Taste gedrückt"
+      "titleFormatted": {
+        "en": "[[device]] turned off",
+        "fr": "[[device]] éteint",
+        "nl": "[[device]] uitgezet",
+        "de": "[[device]] ausgeschaltet"
       },
       "hint": {
-        "en": "Triggers only when the physical wall button is pressed",
-        "fr": "Se déclenche uniquement quand le bouton mural est pressé",
-        "nl": "Triggert alleen wanneer de fysieke muurknop wordt ingedrukt",
-        "de": "Wird nur ausgelöst, wenn die physische Wandtaste gedrückt wird"
+        "en": "Triggers when the switch is turned off (manually or via app)",
+        "fr": "Se déclenche quand l'interrupteur est éteint",
+        "nl": "Triggert wanneer de schakelaar wordt uitgeschakeld",
+        "de": "Wird ausgelöst, wenn der Schalter ausgeschaltet wird"
       },
-      "tokens": [
+      "args": [
         {
-          "name": "state",
-          "type": "boolean",
-          "title": { "en": "State (on/off)", "fr": "État (on/off)" },
-          "example": true
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=switch_1gang"
         }
-      ],
-      "args": []
+      ]
+    },
+    {
+      "id": "switch_1gang_physical_on",
+      "title": {
+        "en": "Physical button ON",
+        "fr": "Bouton physique ON",
+        "nl": "Fysieke knop AAN",
+        "de": "Physische Taste EIN"
+      },
+      "titleFormatted": {
+        "en": "[[device]] turned on (physical button)",
+        "fr": "[[device]] allumé (bouton physique)",
+        "nl": "[[device]] aangezet (fysieke knop)",
+        "de": "[[device]] eingeschaltet (physische Taste)"
+      },
+      "hint": {
+        "en": "Triggers only when the physical wall button turns ON the switch",
+        "fr": "Se déclenche uniquement quand le bouton physique allume l'interrupteur",
+        "nl": "Triggert alleen wanneer de fysieke knop de schakelaar inschakelt",
+        "de": "Wird nur ausgelöst, wenn die physische Taste den Schalter einschaltet"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=switch_1gang"
+        }
+      ]
+    },
+    {
+      "id": "switch_1gang_physical_off",
+      "title": {
+        "en": "Physical button OFF",
+        "fr": "Bouton physique OFF",
+        "nl": "Fysieke knop UIT",
+        "de": "Physische Taste AUS"
+      },
+      "titleFormatted": {
+        "en": "[[device]] turned off (physical button)",
+        "fr": "[[device]] éteint (bouton physique)",
+        "nl": "[[device]] uitgezet (fysieke knop)",
+        "de": "[[device]] ausgeschaltet (physische Taste)"
+      },
+      "hint": {
+        "en": "Triggers only when the physical wall button turns OFF the switch",
+        "fr": "Se déclenche uniquement quand le bouton physique éteint l'interrupteur",
+        "nl": "Triggert alleen wanneer de fysieke knop de schakelaar uitschakelt",
+        "de": "Wird nur ausgelöst, wenn die physische Taste den Schalter ausschaltet"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=switch_1gang"
+        }
+      ]
     }
   ],
   "conditions": [
