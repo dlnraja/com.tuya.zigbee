@@ -40,6 +40,22 @@ This document summarizes user-reported devices and their expected behavior based
 | 20 | csmobiel | Soil Sensor | `_TZE284_aao3yzhs` | TS0601 | Pairs as unknown | ✅ IN CODE soil_sensor | **RE-PAIR REQUIRED** |
 | 21 | Pollepa | Energy Meter | unknown | TS0601 | W/A/V not visible, KWH=0 | ⚠️ Issue #110 | Need full diagnostic |
 | 22 | eskilask-maker | Climate Sensor | `Zbeacon` | TH01 | Pairs to wrong app | ✅ IN CODE climate_sensor | **RE-PAIR as Climate Sensor** |
+| 23 | Jolink (PM) | Smoke Detector | unknown | TS0601 | Flow cards don't control device | ✅ IN CODE smoke_detector_advanced | Check sleepy device behavior |
+| 24 | Lars-Arne Kvien | Smart Button | unknown | unknown | Pairs as generic zigbee | ⚠️ Need interview | Post interview to forum |
+| 25 | Lars-Arne Kvien | Temp/Humidity | unknown | unknown | Pairs as generic zigbee | ⚠️ Need interview | Post interview to forum |
+
+### 📧 GITHUB PRs PENDING REVIEW
+
+| PR | Author | Description | Status |
+|----|--------|-------------|--------|
+| #111 | packetninja | Separate driver for Tuya/Bseed touch dimmer | ⚠️ Review requested |
+| #112 | packetninja | Physical button flows + improved logging | ✅ Closed |
+
+### 💥 APP CRASH REPORTS
+
+| Version | Error | Root Cause | Status |
+|---------|-------|------------|--------|
+| v5.5.811 | `Could not get device by id` in PlugSmartDriver | Device deleted during flow execution | ✅ FIXED in later versions |
 
 ### 🔍 CROSS-REFERENCE VERIFICATION
 
