@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.844** | 🔍 BLAKADDER/ZHA VERIFICATION: Added missing TRV fingerprints (_TZE204_pay2by... |
 | **v5.5.843** | 🔍 BLAKADDER VERIFICATION: Added missing motion sensor fingerprints (_TYZB01_... |
 | **v5.5.842** | 📦 Maintenance release - all previous fixes included (HOBEIAN ZG-204ZV temp/h... |
 | **v5.5.841** | 🔧 DIAGNOSTIC FIX (Peter_van_Werkhoven): HOBEIAN ZG-204ZV multisensor COMPLET... |
@@ -78,7 +79,6 @@
 | **v5.5.832** | 🆘 FORUM FIX (Peter_van_Werkhoven #1203): SOS button flow cards now trigger p... |
 | **v5.5.831** | 🌡️ FORUM FIX (Peter_van_Werkhoven): HOBEIAN ZG-204ZV multisensor now reports... |
 | **v5.5.830** | 📧 EMAIL/ZHA BATCH: Added new 6-channel relay fingerprints from ZHA issue #43... |
-| **v5.5.829** | 🔧 ATTILLA/PACKETNINJA PATTERN: Applied physical button detection to dimmer_3... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
