@@ -1,4 +1,7 @@
 {
+  "5.5.871": {
+    "en": "🌍 Localization: Added Dutch (NL) and German (DE) translations to pairing instructions for motion sensor and contact sensor. Better multilingual support."
+  },
   "5.5.870": {
     "en": "📊 Energy Monitoring: Smart plugs with power measurement now use cumulative energy tracking (not approximated). Better accuracy in Homey Energy dashboard."
   },
