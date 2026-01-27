@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.830** | 📧 EMAIL/ZHA BATCH: Added new 6-channel relay fingerprints from ZHA issue #43... |
 | **v5.5.829** | 🔧 ATTILLA/PACKETNINJA PATTERN: Applied physical button detection to dimmer_3... |
 | **v5.5.828** | 🔘 PHYSICAL BUTTON FIX (Attilla's report): switch_dimmer_1gang now correctly ... |
 | **v5.5.827** | 🔧 DIAGNOSTICS BATCH FIX: 1) AVATTO TRV Smart Radiator Valve (_TZE284_o3x45p9... |
@@ -78,7 +79,6 @@
 | **v5.5.823** | 🎛️ TS004F SMART KNOB FIX (GitHub #113): Added LevelControlBoundCluster suppo... |
 | **v5.5.822** | 🔄 FRESH Z2M SYNC + USER INTERVIEWS: Synced TuyaDataPointsZ2M.js with latest ... |
 | **v5.5.821** | 📊 ENRICHED DP MAPPINGS: Added device profiles from JohanBendz PRs + Z2M + Hu... |
-| **v5.5.820** | 🚨 CRITICAL FIX: Devices not working after re-pair! TuyaSpecificClusterDevice... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
