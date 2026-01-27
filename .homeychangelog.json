@@ -1,4 +1,7 @@
 {
+  "5.5.858": {
+    "en": "🎯 UX: Highlighted important dimmer settings (min_brightness) for quick access during pairing. Improved hints for LED compatibility."
+  },
   "5.5.857": {
     "en": "⚡ Homey Energy: Improved energy tracking for bulbs (7-9W), LED strips (24W), RGB controllers (36W), dimmers (60-180W). Proper usageOn/usageOff instead of usageConstant."
   },

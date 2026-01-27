@@ -14,8 +14,8 @@
           "nl": "Minimale Helderheid (%)"
         },
         "hint": {
-          "en": "Set the minimum brightness level (1-100)",
-          "nl": "Stel het minimale helderheidsniveau in (1-100)"
+          "en": "Set the minimum brightness level (1-100). Important for LED compatibility.",
+          "nl": "Stel het minimale helderheidsniveau in (1-100). Belangrijk voor LED-compatibiliteit."
         },
         "value": 1,
         "min": 1,
