@@ -1,4 +1,7 @@
 {
+  "5.5.834": {
+    "en": "✅ GitHub Issues #113, #114, #115 VERIFIED: All devices already supported! TS004F knob dimmer (_TZ3000_gwkzibhs), TS0041 smart button (_TZ3000_b4awzgct), TS0201 temp/humidity (_TZ3000_fllyghyj) - fingerprints present in button_wireless_1 and climate_sensor drivers. Issues can be closed."
+  },
   "5.5.833": {
     "en": "🌧️ FORUM FIX (Dominique_C #1202): Rain sensor TS0207/_TZ3210_p68kms0l now pairs correctly! Added missing TS0207 productId to rain_sensor driver. IAS Zone error should be resolved."
   },
