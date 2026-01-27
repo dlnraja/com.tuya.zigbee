@@ -491,10 +491,28 @@
       }
     }
   },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": { "next": "add_devices" },
+      "options": {
+        "singular": true
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
   "images": {
     "large": "drivers/thermostat_tuya_dp/assets/images/large.png",
     "xlarge": "drivers/thermostat_tuya_dp/assets/images/xlarge.png",
     "small": "drivers/thermostat_tuya_dp/assets/images/small.png"
+  },
+  "repair": {
+    "id": "repair",
+    "navigation": {}
   },
   "energy": {
     "batteries": [
