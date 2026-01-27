@@ -9,7 +9,15 @@
         "nl": "Gang 1 aangezet",
         "de": "Gang 1 eingeschaltet"
       },
-      "args": []
+      "titleFormatted": {
+        "en": "[[device]] gang 1 turned on",
+        "fr": "[[device]] gang 1 allumé",
+        "nl": "[[device]] gang 1 aangezet",
+        "de": "[[device]] gang 1 eingeschaltet"
+      },
+      "args": [
+        { "type": "device", "name": "device", "filter": "driver_id=switch_2gang" }
+      ]
     },
     {
       "id": "switch_2gang_gang1_turned_off",
@@ -19,7 +27,15 @@
         "nl": "Gang 1 uitgezet",
         "de": "Gang 1 ausgeschaltet"
       },
-      "args": []
+      "titleFormatted": {
+        "en": "[[device]] gang 1 turned off",
+        "fr": "[[device]] gang 1 éteint",
+        "nl": "[[device]] gang 1 uitgezet",
+        "de": "[[device]] gang 1 ausgeschaltet"
+      },
+      "args": [
+        { "type": "device", "name": "device", "filter": "driver_id=switch_2gang" }
+      ]
     },
     {
       "id": "switch_2gang_gang2_turned_on",
@@ -29,7 +45,15 @@
         "nl": "Gang 2 aangezet",
         "de": "Gang 2 eingeschaltet"
       },
-      "args": []
+      "titleFormatted": {
+        "en": "[[device]] gang 2 turned on",
+        "fr": "[[device]] gang 2 allumé",
+        "nl": "[[device]] gang 2 aangezet",
+        "de": "[[device]] gang 2 eingeschaltet"
+      },
+      "args": [
+        { "type": "device", "name": "device", "filter": "driver_id=switch_2gang" }
+      ]
     },
     {
       "id": "switch_2gang_gang2_turned_off",
@@ -39,7 +63,93 @@
         "nl": "Gang 2 uitgezet",
         "de": "Gang 2 ausgeschaltet"
       },
-      "args": []
+      "titleFormatted": {
+        "en": "[[device]] gang 2 turned off",
+        "fr": "[[device]] gang 2 éteint",
+        "nl": "[[device]] gang 2 uitgezet",
+        "de": "[[device]] gang 2 ausgeschaltet"
+      },
+      "args": [
+        { "type": "device", "name": "device", "filter": "driver_id=switch_2gang" }
+      ]
+    },
+    {
+      "id": "switch_2gang_physical_gang1_on",
+      "title": {
+        "en": "Physical button gang 1 ON",
+        "fr": "Bouton physique gang 1 ON",
+        "nl": "Fysieke knop gang 1 AAN",
+        "de": "Physische Taste gang 1 EIN"
+      },
+      "titleFormatted": {
+        "en": "[[device]] gang 1 turned on (physical)",
+        "fr": "[[device]] gang 1 allumé (physique)",
+        "nl": "[[device]] gang 1 aangezet (fysiek)",
+        "de": "[[device]] gang 1 eingeschaltet (physisch)"
+      },
+      "hint": {
+        "en": "Triggers only when physical button turns ON gang 1",
+        "fr": "Se déclenche uniquement quand le bouton physique allume gang 1",
+        "nl": "Triggert alleen wanneer fysieke knop gang 1 inschakelt",
+        "de": "Wird nur ausgelöst, wenn physische Taste gang 1 einschaltet"
+      },
+      "args": [
+        { "type": "device", "name": "device", "filter": "driver_id=switch_2gang" }
+      ]
+    },
+    {
+      "id": "switch_2gang_physical_gang1_off",
+      "title": {
+        "en": "Physical button gang 1 OFF",
+        "fr": "Bouton physique gang 1 OFF",
+        "nl": "Fysieke knop gang 1 UIT",
+        "de": "Physische Taste gang 1 AUS"
+      },
+      "titleFormatted": {
+        "en": "[[device]] gang 1 turned off (physical)",
+        "fr": "[[device]] gang 1 éteint (physique)",
+        "nl": "[[device]] gang 1 uitgezet (fysiek)",
+        "de": "[[device]] gang 1 ausgeschaltet (physisch)"
+      },
+      "args": [
+        { "type": "device", "name": "device", "filter": "driver_id=switch_2gang" }
+      ]
+    },
+    {
+      "id": "switch_2gang_physical_gang2_on",
+      "title": {
+        "en": "Physical button gang 2 ON",
+        "fr": "Bouton physique gang 2 ON",
+        "nl": "Fysieke knop gang 2 AAN",
+        "de": "Physische Taste gang 2 EIN"
+      },
+      "titleFormatted": {
+        "en": "[[device]] gang 2 turned on (physical)",
+        "fr": "[[device]] gang 2 allumé (physique)",
+        "nl": "[[device]] gang 2 aangezet (fysiek)",
+        "de": "[[device]] gang 2 eingeschaltet (physisch)"
+      },
+      "args": [
+        { "type": "device", "name": "device", "filter": "driver_id=switch_2gang" }
+      ]
+    },
+    {
+      "id": "switch_2gang_physical_gang2_off",
+      "title": {
+        "en": "Physical button gang 2 OFF",
+        "fr": "Bouton physique gang 2 OFF",
+        "nl": "Fysieke knop gang 2 UIT",
+        "de": "Physische Taste gang 2 AUS"
+      },
+      "titleFormatted": {
+        "en": "[[device]] gang 2 turned off (physical)",
+        "fr": "[[device]] gang 2 éteint (physique)",
+        "nl": "[[device]] gang 2 uitgezet (fysiek)",
+        "de": "[[device]] gang 2 ausgeschaltet (physisch)"
+      },
+      "args": [
+        { "type": "device", "name": "device", "filter": "driver_id=switch_2gang" }
+      ]
     }
   ],
   "conditions": [
