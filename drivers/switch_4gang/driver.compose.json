@@ -1,5 +1,11 @@
 {
   "class": "socket",
+  "energy": {
+    "approximation": {
+      "usageOn": 5,
+      "usageOff": 0.5
+    }
+  },
   "capabilities": [
     "onoff",
     "onoff.gang2",

@@ -1,4 +1,7 @@
 {
+  "5.5.856": {
+    "en": "✨ SDK3 Best Practices: Added Homey Energy approximation to switches (2-4 gang, DIN rail, smart breaker). Added maintenance actions for curtain motors (calibrate, reset) and thermostats (boost, calibrate)."
+  },
   "5.5.855": {
     "en": "✨ NEW: Periodic Auto-Enrichment for ALL drivers! Automatic ZCL cluster + Tuya DP detection at 15min after pairing, then hourly. Dynamic capability + flow card registration."
   },
