@@ -81,7 +81,8 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
       await this.sendTuyaCommand(dataPoints.brightness, brightness, 'value');
     });
 
-    this.setupTuyaClusterListener();
+    // v5.5.854: Parent class TuyaSpecificClusterDevice sets up Tuya listeners
+    // We override handleTuyaResponse() and handleTuyaDataReport() for physical button detection
     
     // v5.5.799: Apply saved settings after init (with delay for device stability)
     setTimeout(() => this._applyInitialSettings(), 3000);
@@ -170,39 +171,111 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
     }
   }
 
-  setupTuyaClusterListener() {
-    try {
-      const tuyaCluster = this.zclNode.endpoints[1]?.clusters?.tuya;
+  /**
+   * v5.5.854: Override parent's handleTuyaResponse to detect physical button presses
+   * Parent class TuyaSpecificClusterDevice calls this for 'response' events
+   * Physical button presses come as 'response' events when no app command is pending
+   */
+  handleTuyaResponse(data) {
+    const isPhysical = !this._appCommandPending;
+    this.log(`>>> Tuya response (dp: ${data?.dp}) - ${isPhysical ? 'PHYSICAL' : 'APP'}`);
+    this.handleTuyaDataReport(data, isPhysical);
+  }
 
-      if (!tuyaCluster) {
-        this.error('Tuya cluster not found on endpoint 1');
-        return;
+  /**
+   * v5.5.854: Override parent's handleTuyaDataReport for consistent handling
+   * This is called by parent for 'dataReport' events
+   */
+  handleTuyaDataReport(data, isReportingEvent = false) {
+    // Route to our physical-button-aware handler
+    this._processTuyaData(data, isReportingEvent);
+  }
+
+  /**
+   * v5.5.854: Renamed from handleTuyaDataReport to avoid confusion with parent class
+   * Handles both dataReport and response events with physical button detection
+   */
+  _processTuyaData(data, isReportingEvent = false) {
+    if (DEBUG_MODE) {
+      this.log('_processTuyaData:', JSON.stringify(data), 'reporting:', isReportingEvent);
+    }
+    
+    if (!data || typeof data.dp === 'undefined') {
+      if (DEBUG_MODE) this.log('Invalid data format');
+      return;
+    }
+
+    // v5.5.854: Physical = reporting event AND no pending app command
+    const isPhysicalPress = isReportingEvent && !this._appCommandPending;
+
+    // Handle state (onoff)
+    if (data.dp === dataPoints.state) {
+      let state;
+      if (Buffer.isBuffer(data.data)) {
+        state = data.data.readUInt8(0) === 1;
+      } else if (Array.isArray(data.data)) {
+        state = data.data[0] === 1;
+      } else {
+        state = Boolean(data.data);
       }
+      
+      // Only process if state actually changed (heartbeat filter)
+      if (this._lastOnoffState !== state) {
+        this.log(`State changed: ${this._lastOnoffState} → ${state} (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
+        
+        this._lastOnoffState = state;
+        this.setCapabilityValue('onoff', state).catch(this.error);
+        
+        // Trigger flow cards ONLY if this is a physical button press
+        if (isPhysicalPress) {
+          const flowCardId = state ? 'switch_dimmer_1gang_turned_on' : 'switch_dimmer_1gang_turned_off';
+          this.log(`Triggering: ${flowCardId}`);
+          this.homey.flow.getDeviceTriggerCard(flowCardId)
+            .trigger(this, {}, {})
+            .catch(err => this.error(`Flow trigger failed: ${err.message}`));
+        }
+      }
+    }
 
-      this.log('Setting up Tuya cluster listener...');
-
-      tuyaCluster.on('dataReport', (data) => {
-        this.log('Tuya dataReport received:', JSON.stringify(data, null, 2));
-        this.handleTuyaDataReport(data);
-      });
-
-      tuyaCluster.on('response', (data) => {
-        // v5.5.828: Fix physical button detection (Attilla's report)
-        // Physical presses come as 'response' events, not 'reporting'
-        const isPhysical = !this._appCommandPending;
-        this.log(`>>> EVENT: response (dp: ${data?.dp}) - ${isPhysical ? 'PHYSICAL' : 'APP'}`);
-        this.handleTuyaDataReport(data, isPhysical);
-      });
-
-      tuyaCluster.on('reporting', (data) => {
-        this.log('Tuya reporting:', JSON.stringify(data, null, 2));
-        this.handleTuyaDataReport(data, true); // Pass true to indicate physical press
-      });
-
-      this.log('✅ Tuya cluster listener configured');
-
-    } catch (err) {
-      this.error('Failed to setup Tuya cluster:', err);
+    // Handle brightness
+    if (data.dp === dataPoints.brightness) {
+      let brightnessRaw;
+      if (Buffer.isBuffer(data.data)) {
+        brightnessRaw = data.data.readInt32BE(0);
+      } else if (Array.isArray(data.data) && data.data.length >= 4) {
+        brightnessRaw = Buffer.from(data.data).readInt32BE(0);
+      } else {
+        brightnessRaw = data.data || 0;
+      }
+      
+      const brightness = Math.max(0, Math.min(1, (brightnessRaw - 10) / 990));
+      
+      // Only process if brightness changed significantly (~1%)
+      const changeThreshold = 10;
+      if (this._lastBrightnessValue === null || Math.abs(brightnessRaw - this._lastBrightnessValue) >= changeThreshold) {
+        this.log(`Brightness changed: ${this._lastBrightnessValue} → ${brightnessRaw} (${brightness.toFixed(2)}) (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
+        
+        const brightnessIncreased = this._lastBrightnessValue !== null && brightnessRaw > this._lastBrightnessValue;
+        const brightnessDecreased = this._lastBrightnessValue !== null && brightnessRaw < this._lastBrightnessValue;
+        
+        this._lastBrightnessValue = brightnessRaw;
+        this.setCapabilityValue('dim', brightness).catch(this.error);
+        
+        // Trigger flow cards ONLY if this is a physical button press
+        if (isPhysicalPress) {
+          if (brightnessIncreased) {
+            this.log('Triggering: switch_dimmer_1gang_brightness_increased (PHYSICAL)');
+            this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_brightness_increased')
+              .trigger(this, { brightness })
+              .catch(this.error);
+          } else if (brightnessDecreased) {
+            this.log('Triggering: switch_dimmer_1gang_brightness_decreased (PHYSICAL)');
+            this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_brightness_decreased')
+              .trigger(this, { brightness })
+              .catch(this.error);
+          }
+        }
+      }
     }
   }
 
@@ -290,103 +363,6 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
     this._appCommandTimeout = setTimeout(() => {
       this._appCommandPending = false;
     }, 2000);
-  }
-
-  /**
-   * v5.5.755: PR #112 (packetninja) - Enhanced with heartbeat filtering
-   * and improved physical vs app command detection
-   */
-  handleTuyaDataReport(data, isReportingEvent = false) {
-    if (DEBUG_MODE) {
-      this.log('handleTuyaDataReport:', JSON.stringify(data), 'reporting:', isReportingEvent);
-    }
-    
-    if (!data || typeof data.dp === 'undefined') {
-      if (DEBUG_MODE) this.log('Invalid data format');
-      return;
-    }
-
-    // v5.5.755: PR #112 - Determine if this is a physical button press
-    // Physical = reporting event AND no pending app command
-    const isPhysicalPress = isReportingEvent && !this._appCommandPending;
-
-    // Handle state (onoff)
-    if (data.dp === dataPoints.state) {
-      let state;
-      if (Buffer.isBuffer(data.data)) {
-        state = data.data.readUInt8(0) === 1;
-      } else if (Array.isArray(data.data)) {
-        state = data.data[0] === 1;
-      } else {
-        state = Boolean(data.data);
-      }
-      
-      // v5.5.755: PR #112 - Only process if state actually changed (heartbeat filter)
-      if (this._lastOnoffState !== state) {
-        this.log(`State changed: ${this._lastOnoffState} -> ${state} (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
-        
-        // Update state before triggering
-        this._lastOnoffState = state;
-        this.setCapabilityValue('onoff', state).catch(this.error);
-        
-        // v5.5.828: Trigger flow cards ONLY if this is a physical button press
-        if (isPhysicalPress) {
-          const flowCardId = state ? 'switch_dimmer_1gang_turned_on' : 'switch_dimmer_1gang_turned_off';
-          this.log(`Triggering: ${flowCardId}`);
-          this.homey.flow.getDeviceTriggerCard(flowCardId)
-            .trigger(this, {}, {})
-            .catch(err => this.error(`Flow trigger failed: ${err.message}`));
-        }
-      } else {
-        // Heartbeat with no change - don't log or trigger
-        if (DEBUG_MODE) this.log('State unchanged (heartbeat), skipping');
-      }
-    }
-
-    // Handle brightness
-    if (data.dp === dataPoints.brightness) {
-      let brightnessRaw;
-      if (Buffer.isBuffer(data.data)) {
-        brightnessRaw = data.data.readInt32BE(0);
-      } else if (Array.isArray(data.data) && data.data.length >= 4) {
-        brightnessRaw = Buffer.from(data.data).readInt32BE(0);
-      } else {
-        brightnessRaw = data.data || 0;
-      }
-      
-      const brightness = Math.max(0, Math.min(1, (brightnessRaw - 10) / 990));
-      
-      // v5.5.755: PR #112 - Only process if brightness changed significantly (~1%)
-      const changeThreshold = 10; // ~1% of 990 range
-      if (this._lastBrightnessValue === null || Math.abs(brightnessRaw - this._lastBrightnessValue) >= changeThreshold) {
-        this.log(`Brightness changed: ${this._lastBrightnessValue} -> ${brightnessRaw} (${brightness.toFixed(2)}) (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
-        
-        // Determine direction before updating
-        const brightnessIncreased = this._lastBrightnessValue !== null && brightnessRaw > this._lastBrightnessValue;
-        const brightnessDecreased = this._lastBrightnessValue !== null && brightnessRaw < this._lastBrightnessValue;
-        
-        this._lastBrightnessValue = brightnessRaw;
-        this.setCapabilityValue('dim', brightness).catch(this.error);
-        
-        // Trigger flow cards ONLY if this is a physical button press
-        if (isPhysicalPress) {
-          if (brightnessIncreased) {
-            this.log('Triggering: switch_dimmer_1gang_brightness_increased (PHYSICAL)');
-            this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_brightness_increased')
-              .trigger(this, { brightness })
-              .catch(this.error);
-          } else if (brightnessDecreased) {
-            this.log('Triggering: switch_dimmer_1gang_brightness_decreased (PHYSICAL)');
-            this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_brightness_decreased')
-              .trigger(this, { brightness })
-              .catch(this.error);
-          }
-        }
-      } else {
-        // Heartbeat with no significant change - don't log or trigger
-        if (DEBUG_MODE) this.log('Brightness unchanged (heartbeat), skipping');
-      }
-    }
   }
 
   onDeleted() {
