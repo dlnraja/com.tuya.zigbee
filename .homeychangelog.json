@@ -1,4 +1,7 @@
 {
+  "5.5.895": {
+    "en": "🔀 MERGED: switch_1gang_bseed → switch_1gang. Unified driver supports Tuya DP, ZCL onOff, BSEED clusters (0xE000/0xE001). Physical button detection for all 1-gang switches."
+  },
   "5.5.894": {
     "en": "🎨 Flow Cards: Enhanced switch drivers (1-4 gang) with titleFormatted, device args, physical button triggers (PR #116 pattern). Full EN/FR/NL/DE localization."
   },
