@@ -1,4 +1,7 @@
 {
+  "5.5.903": {
+    "en": "🛠️ Forum Fixes: _TZE284_iadro9bf motion alarm stuck - added stuck pattern detection (5+ consecutive same values → distance inference only). Enhanced throttle for qasjif9e variants."
+  },
   "5.5.902": {
     "en": "📊 Diagnostic Logs Cleanup: Removed verbose ID DATABASE logging (was polluting diagnostics). Added enhanced DP/ZCL logging with data types, intervals, counts. Database is internal cache only - does NOT affect Homey driver pairing."
   },
