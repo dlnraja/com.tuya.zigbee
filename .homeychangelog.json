@@ -1,4 +1,7 @@
 {
+  "5.5.847": {
+    "en": "🔧 DEVICE FIX: Fixed _TZE204_laokfqwu misidentification - moved from CO2 sensor to presence_sensor_radar (DP1=presence, DP9=lux). RE-PAIR devices showing as 'Appareil Zigbee' to use correct driver."
+  },
   "5.5.846": {
     "en": "🔍 EXTENDED VERIFICATION: Added 5 more TRV fingerprints (_TZE204_wgrffniy, _TZE204_xby0s3ta, _TZE204_pisltm67, _TZE204_qdihqf3l, _TZE204_v6ossqfy) verified against Blakadder/Zigbee2MQTT/ZHA."
   },
