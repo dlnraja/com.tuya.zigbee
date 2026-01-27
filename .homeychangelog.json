@@ -1,4 +1,7 @@
 {
+  "5.5.917": {
+    "en": "🔍 FORK/PR AUDIT: Added Longsam mini m3 Smart Curtain (_TZE204_xu4a5rhj) from Issue #117. PR #118 (_TZ3000_ysdv91bk) already integrated in v5.5.913. Verified all 7 child forks and 75+ JohanBendz network forks - all valuable contributions integrated."
+  },
   "5.5.916": {
     "en": "🐛 CRITICAL FIX: Fixed manufacturer/model retrieval in all base classes (HybridCoverBase, HybridPlugBase, HybridSensorBase, HybridThermostatBase, HybridLightBase, ButtonDevice). Devices showing 'unknown / unknown' will now be correctly identified. Curtain motors (TS0601), water valves, and other devices should work properly after RE-PAIRING."
   },
