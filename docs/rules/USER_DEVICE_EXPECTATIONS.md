@@ -375,7 +375,8 @@ _TZE200_a8sdabtg  → climate_sensor (temp/humidity)
 | JJ10 | Presence sensor | Unknown | Connected as unknown device | `999de772-5ce2-4674-86c3-c267c7e3a3f0` | ⏳ Need mfr ID - ask user to send diagnostic |
 | Lalla80111 | Smart Button TS0041 | `_TZ3000_b4awzgct` | Unknown zigbee v5.5.897 | GitHub #114 | ✅ ID in driver - USER NEEDS RE-PAIR + UPDATE to v5.5.907 |
 | ManuelKugler | Radiator Valve ME167 | `_TZE284_o3x45p96` | Not working #1223 | f089e2e7 | ✅ ID in driver (ME167 profile) - USER NEEDS RE-PAIR |
-| Peter_van_Werkhoven | HOBEIAN ZG-204ZV | `HOBEIAN` | Temp/Humidity no data #1225 | Forum | ✅ v5.5.907 battery fix - USER NEEDS RE-PAIR |
+| Peter_van_Werkhoven | HOBEIAN ZG-204ZV | `HOBEIAN` | Temp/Humidity no data #1225 | Forum | ✅ v5.5.907 - USER MUST RE-PAIR to get temp/hum/battery + remove Distance |
+| Pieter_Pessers | BSEED 1-gang TS0001 | `_TZ3000_ysdv91bk` | Unknown device #1219 | Forum | ✅ In switch_1gang - USER MUST RE-PAIR |
 | FrankP | IR Blaster | Unknown | Flow card errors | `89e408fe-d0ba-4216-95be-951824dac2b8` | ✅ v5.5.565 Flow cards verified working (sendEnhancedIRCode, sendACCommand exist) |
 
 ### ✅ RECENTLY FIXED (Moved from Pending)
