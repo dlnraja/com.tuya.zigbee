@@ -34,6 +34,12 @@ This document summarizes user-reported devices and their expected behavior based
 | 14 | FrankP | IR Blaster | unknown | TS1201 | Errors in latest version | ✅ v5.5.565 Flow cards verified | Check flow setup |
 | 15 | ManuelKugler | Valve | `_TZE284_o3x45p96` | TS0601 | Request to add | ✅ v5.5.827 fingerprint added | **RE-PAIR REQUIRED** |
 | 16 | Cam | HOBEIAN ZG-204ZL | `HOBEIAN` | ZG-204ZL | Motion always active | ✅ v5.5.840 invert_presence fix | Enable "Invert Motion" setting |
+| 17 | Peter_van_Werkhoven | HOBEIAN ZG-204ZV | `HOBEIAN` | ZG-204ZV | SOS button triggers app not Flow, no Temp/Hum | ⚠️ Diag 52546992 | Check DP mappings |
+| 18 | Hartmut_Dunker | switch_4gang | `_TZ3002_*` | TS0726 | Buttons still don't work v718 | ⚠️ Diag 8cbd94dd | Check onOff bindings |
+| 19 | DVMasters | LoraTap 3-Button | unknown | TS0043 | Not working v5.5.820 | ✅ IN CODE button_wireless_3 | **RE-PAIR REQUIRED** |
+| 20 | csmobiel | Soil Sensor | `_TZE284_aao3yzhs` | TS0601 | Pairs as unknown | ✅ IN CODE soil_sensor | **RE-PAIR REQUIRED** |
+| 21 | Pollepa | Energy Meter | unknown | TS0601 | W/A/V not visible, KWH=0 | ⚠️ Issue #110 | Need full diagnostic |
+| 22 | eskilask-maker | Climate Sensor | `Zbeacon` | TH01 | Pairs to wrong app | ✅ IN CODE climate_sensor | **RE-PAIR as Climate Sensor** |
 
 ### 🔍 CROSS-REFERENCE VERIFICATION
 
@@ -301,7 +307,7 @@ _TZE200_a8sdabtg  → climate_sensor (temp/humidity)
 
 | Version | Key Changes |
 |---------|-------------|
-| 5.5.840 | FORUM FIX: HOBEIAN ZG-204ZL motion sensor "always active" - invert_presence now applied to IAS Zone + Tuya DP |
+| 5.5.840 | FORUM FIX: HOBEIAN ZG-204ZL motion sensor "always active" - invert_presence now applied to IAS Zone + Tuya DP. +4 new motion sensor fingerprints from Z2M |
 | 5.5.719 | NEW: DIY Custom Zigbee driver (PTVO, ESP32-H2, CC2530, DIYRuZ, Tasmota) |
 | 5.5.718 | TS0726 bidirectional fix - onOff cluster bindings (Hartmut_Dunker) |
 | 5.5.717 | Enrichment update - +7 IDs, DP mappings enhanced |
