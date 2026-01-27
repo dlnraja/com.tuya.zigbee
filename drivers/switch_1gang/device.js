@@ -29,8 +29,9 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * - TS0726: BSEED 4-gang needs explicit binding
  */
 const ZCL_ONLY_MANUFACTURERS = [
-  // BSEED (PR #116)
-  '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk',
+  // BSEED (PR #116, Blakadder, forum diagnostics)
+  '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk', '_TZ3000_hafsqare', 
+  '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt',
   // Zemismart (ZHA #2443)
   '_TZ3000_a37eix1s', '_TZ3000_empogkya', '_TZ3000_18ejxrzk',
   // TS0726 BSEED 4-gang (Hartmut_Dunker)
@@ -43,17 +44,27 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
 
   /**
    * Check if this device requires ZCL-only mode (no Tuya DP)
-   * Uses PhysicalButtonMixin.getDeviceProfile() or fallback check
+   * Multiple fallback sources for manufacturer name detection
    */
   get isZclOnlyDevice() {
-    // First try mixin method if available
-    if (typeof super.isZclOnlyDevice === 'function') {
-      return super.isZclOnlyDevice();
-    }
-    // Fallback to direct check
+    // Get manufacturer name from multiple sources (some may not be available at init)
     const mfr = this.getSetting?.('zb_manufacturer_name') || 
-                this.getStoreValue?.('manufacturerName') || '';
-    return ZCL_ONLY_MANUFACTURERS.some(b => mfr.toLowerCase().includes(b.toLowerCase()));
+                this.getStoreValue?.('zb_manufacturer_name') ||
+                this.getStoreValue?.('manufacturerName') ||
+                this.zclNode?.endpoints?.[1]?.clusters?.basic?.attributes?.manufacturerName ||
+                '';
+    
+    const isZclOnly = ZCL_ONLY_MANUFACTURERS.some(b => 
+      mfr.toLowerCase().includes(b.toLowerCase())
+    );
+    
+    // Log for debugging
+    if (this._zclOnlyCheckLogged !== mfr) {
+      this._zclOnlyCheckLogged = mfr;
+      this.log(`[SWITCH-1G] Manufacturer: "${mfr}" → ZCL-only: ${isZclOnly}`);
+    }
+    
+    return isZclOnly;
   }
 
   /**
