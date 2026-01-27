@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.875** | ⚡ Smart RCBO: Changed to 'socket' class with cumulative energy tracking. Adde... |
 | **v5.5.874** | 🌡️ 4-Channel Thermostat: Energy tracking (3W), NL/DE localized channel names... |
 | **v5.5.873** | 🔧 Device Improvements: Siren uses proper 'siren' class. Fixed duplicate name... |
 | **v5.5.872** | 📊 Energy Meters: DIN Rail, CT Clamp, and 3-Phase meters now use cumulative e... |
@@ -78,7 +79,6 @@
 | **v5.5.868** | ✨ Flow Cards: Added highlights to 3-gang, 4-gang switches, RGB bulb, radiator... |
 | **v5.5.867** | ⚡ Energy Tracking: Air purifier (45W), smart heater (2000W), fan controller (... |
 | **v5.5.866** | ⚡ SDK3 Best Practices: Fixed LED strip energy (24W), added radiator valve cal... |
-| **v5.5.865** | 🎛️ NEW: Smart Knob / Scene Switch driver (ERS-10TZBVK-AA) - Rotary dimmer wi... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
