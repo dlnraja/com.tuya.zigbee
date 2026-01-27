@@ -1,4 +1,7 @@
 {
+  "5.5.870": {
+    "en": "📊 Energy Monitoring: Smart plugs with power measurement now use cumulative energy tracking (not approximated). Better accuracy in Homey Energy dashboard."
+  },
   "5.5.869": {
     "en": "🏠 Device Classes: Cover Controller now uses 'curtains' class, Roller Shutter uses 'blinds' class per SDK best practices. Highlighted power source setting for radar sensors."
   },

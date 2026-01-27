@@ -14,13 +14,13 @@
     "onoff",
     "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "meter_power": {
+      "approximated": false
+    }
+  },
   "energy": {
-    "approximation": {
-      "usageConstant": 0.5
-    },
-    "batteries": [
-      "OTHER"
-    ]
+    "cumulative": true
   },
   "zigbee": {
     "manufacturerName": [
