@@ -1,4 +1,7 @@
 {
+  "5.5.902": {
+    "en": "📊 Diagnostic Logs Cleanup: Removed verbose ID DATABASE logging (was polluting diagnostics). Added enhanced DP/ZCL logging with data types, intervals, counts. Database is internal cache only - does NOT affect Homey driver pairing."
+  },
   "5.5.901": {
     "en": "🔧 BSEED Fix: Improved manufacturer detection with multiple fallback sources. Added 5 new BSEED IDs (_TZ3000_hafsqare, _TZ3000_e98krvvk, _TZ3000_iedbgyxt). Debug logging for ZCL-only mode detection. Forum diagnostic fixes."
   },
