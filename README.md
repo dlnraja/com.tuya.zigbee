@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.881** | 🔧 Fixes: SOS Button class changed to 'button' + full localization. Door Cont... |
 | **v5.5.880** | 🌬️ Sensors: Gas Detector, Air Quality CO2, Comprehensive Air Monitor - prope... |
 | **v5.5.879** | 🏠 Curtain Motor: Energy tracking (40W) + NL/DE. Irrigation Valve: Changed to... |
 | **v5.5.878** | 🌡️ HVAC: Air Conditioner (1200W) and Dehumidifier (350W) proper energy track... |
@@ -78,7 +79,6 @@
 | **v5.5.874** | 🌡️ 4-Channel Thermostat: Energy tracking (3W), NL/DE localized channel names... |
 | **v5.5.873** | 🔧 Device Improvements: Siren uses proper 'siren' class. Fixed duplicate name... |
 | **v5.5.872** | 📊 Energy Meters: DIN Rail, CT Clamp, and 3-Phase meters now use cumulative e... |
-| **v5.5.871** | 🌍 Localization: Added Dutch (NL) and German (DE) translations to pairing ins... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
