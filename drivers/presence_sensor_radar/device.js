@@ -2029,6 +2029,15 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       } catch (e) { /* ignore */ }
     }
 
+    // v5.5.907: ADD battery capability for sensors with battery DP (Peter ZG-204ZV fix)
+    const hasBatteryDP = config.dpMap && Object.values(config.dpMap).some(dp => dp.cap === 'measure_battery');
+    if ((config.battery || hasBatteryDP) && !config.noBatteryCapability && !this.hasCapability('measure_battery')) {
+      try {
+        await this.addCapability('measure_battery');
+        this.log('[RADAR] 🔋 Added measure_battery (sensor supports it)');
+      } catch (e) { /* ignore */ }
+    }
+
     // v5.5.268: Start periodic polling for TZE284 devices that need it
     if (config.needsPolling) {
       this._startPresencePolling(zclNode);
