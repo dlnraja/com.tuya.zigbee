@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.880** | 🌬️ Sensors: Gas Detector, Air Quality CO2, Comprehensive Air Monitor - prope... |
 | **v5.5.879** | 🏠 Curtain Motor: Energy tracking (40W) + NL/DE. Irrigation Valve: Changed to... |
 | **v5.5.878** | 🌡️ HVAC: Air Conditioner (1200W) and Dehumidifier (350W) proper energy track... |
 | **v5.5.877** | 🔧 Fixes: LED Strip name fixed, Ceiling Fan proper energy (65W) + localizatio... |
@@ -78,7 +79,6 @@
 | **v5.5.873** | 🔧 Device Improvements: Siren uses proper 'siren' class. Fixed duplicate name... |
 | **v5.5.872** | 📊 Energy Meters: DIN Rail, CT Clamp, and 3-Phase meters now use cumulative e... |
 | **v5.5.871** | 🌍 Localization: Added Dutch (NL) and German (DE) translations to pairing ins... |
-| **v5.5.870** | 📊 Energy Monitoring: Smart plugs with power measurement now use cumulative e... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
