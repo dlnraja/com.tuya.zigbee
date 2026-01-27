@@ -1,9 +1,11 @@
 {
   "name": {
     "en": "Bseed 1-Gang Switch",
-    "nl": "Bseed 1-Gang Schakelaar"
+    "fr": "Interrupteur Bseed 1 Gang",
+    "nl": "Bseed 1-Gang Schakelaar",
+    "de": "Bseed 1-Gang Schalter"
   },
-  "class": "socket",
+  "class": "switch",
   "capabilities": [
     "onoff"
   ],
@@ -50,7 +52,9 @@
     "learnmode": {
       "instruction": {
         "en": "Press and hold the reset button for 5 seconds until the LED blinks, or toggle the switch on/off 3 times quickly.",
-        "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED knippert, of schakel de schakelaar 3 keer snel aan/uit."
+        "fr": "Maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote, ou basculez l'interrupteur 3 fois rapidement.",
+        "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED knippert, of schakel de schakelaar 3 keer snel aan/uit.",
+        "de": "Halten Sie die Reset-Taste 5 Sekunden lang gedrückt, bis die LED blinkt, oder schalten Sie den Schalter 3 Mal schnell ein/aus."
       }
     }
   }
