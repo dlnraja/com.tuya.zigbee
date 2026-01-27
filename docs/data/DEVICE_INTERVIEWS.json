@@ -1,11 +1,11 @@
 {
-  "version": "5.5.791",
-  "lastUpdated": "2026-01-25",
-  "totalInterviews": 35,
+  "version": "5.5.840",
+  "lastUpdated": "2026-01-27",
+  "totalInterviews": 45,
   "sources": [
-    "Homey Community Forum (pages 1-46)",
+    "Homey Community Forum (pages 1-56)",
     "GitHub Issues/PRs (JohanBendz & dlnraja)",
-    "User Diagnostic Reports",
+    "User Diagnostic Reports (Gmail Jan 2026)",
     "Zigbee2MQTT Device Database",
     "ZHA Device Handlers"
   ],
@@ -283,6 +283,23 @@
     ],
 
     "motion_sensors": [
+      {
+        "id": "INT-044",
+        "deviceName": "HOBEIAN ZG-204ZL Motion Sensor",
+        "manufacturerName": "HOBEIAN",
+        "productId": "ZG-204ZL",
+        "source": "Forum Page 56 (Cam)",
+        "user": "Cam",
+        "status": "fixed",
+        "priority": "high",
+        "symptoms": ["Motion sensor always shows active in Homey UI", "Never goes inactive even after hour"],
+        "rootCause": "invert_presence setting not applied to IAS Zone and Tuya DP motion handlers",
+        "fix": {
+          "applied": true,
+          "version": "5.5.840",
+          "description": "Added invert_presence check to motion_sensor IAS Zone handlers and HybridSensorBase Tuya DP1 handler"
+        }
+      },
       {
         "id": "INT-040",
         "deviceName": "Motion Sensor - Lux Issue",
