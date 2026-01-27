@@ -1,7 +1,7 @@
 # User Device Expectations & Diagnostic Summary
 
 This document summarizes user-reported devices and their expected behavior based on diagnostic logs and community feedback.
-**Last Updated**: 2026-01-22 (v5.5.732)
+**Last Updated**: 2026-01-27 (v5.5.840)
 
 > ⚠️ **WORKFLOW**: This document must be updated at each prompt/session in Windsurf AI to stay synchronized with code changes.
 
@@ -19,7 +19,7 @@ This document summarizes user-reported devices and their expected behavior based
 | 4 | Lasse_K | Contact Sensors | various | Reversed indication after upgrades | v5.5.713 | ✅ FIXED |
 | 5 | Multiple | Scene Switches | scene_switch_1/2/3/6 | Invalid Flow Card ID | v5.5.708 | ✅ FIXED |
 
-### ⚠️ PENDING INVESTIGATION (v5.5.732)
+### ⚠️ PENDING INVESTIGATION (v5.5.840)
 
 | # | User | Device | ManufacturerID | ProductID | Issue | Code Status | Action |
 |---|------|--------|----------------|-----------|-------|-------------|--------|
@@ -32,7 +32,8 @@ This document summarizes user-reported devices and their expected behavior based
 | 12 | Hartmut_Dunker | 4-gang Switch | `_TZ3002_vaq2bfcu` | TS0726 | Buttons don't work bidirectionally | ✅ v5.5.718 FIXED | **RE-PAIR REQUIRED** |
 | 13 | JJ10 | Presence Sensor | unknown | TS0601 | Not working | ⚠️ NEEDS DIAG | Send diagnostic |
 | 14 | FrankP | IR Blaster | unknown | TS1201 | Errors in latest version | ✅ v5.5.565 Flow cards verified | Check flow setup |
-| 15 | ManuelKugler | Valve | `_TZE284_o3x45p96` | TS0601 | Request to add | ✅ IN CODE (radiator_valve) | **RE-PAIR REQUIRED** |
+| 15 | ManuelKugler | Valve | `_TZE284_o3x45p96` | TS0601 | Request to add | ✅ v5.5.827 fingerprint added | **RE-PAIR REQUIRED** |
+| 16 | Cam | HOBEIAN ZG-204ZL | `HOBEIAN` | ZG-204ZL | Motion always active | ✅ v5.5.840 invert_presence fix | Enable "Invert Motion" setting |
 
 ### 🔍 CROSS-REFERENCE VERIFICATION
 
@@ -60,6 +61,75 @@ This document summarizes user-reported devices and their expected behavior based
    - Found in: `dimmer_wall_1gang/driver.compose.json` ✅
    - Issue: TS0601 touch dimmer pairing as generic since v5.5.690
    - Action: TS0601 productId restriction may be too aggressive
+
+---
+
+## 📧 GMAIL DIAGNOSTIC REPORTS (Jan 2026)
+
+### Report 0 (v5.5.820) - HOBEIAN ZG-204ZV Multisensor
+**User Message**: "Readded the HOBEIAN Multisensor, no Temp and Humidity data and SOS button flow not triggering"
+**Device**: HOBEIAN ZG-204ZV (presence_sensor_radar)
+**Issues**:
+- Missing measure_temperature and measure_distance after recovery
+- SOS button flow not triggering
+**Root Cause**: Wrong DP profile used (radar DPs instead of PIR+temp/humidity)
+**Fix**: v5.5.826/v5.5.831 - Created dedicated ZG_204ZV_MULTISENSOR config
+**Status**: ✅ FIXED
+
+### Report 1 (v5.5.794) - BSEED Wall Switch & Water Valve
+**User Message**: "Bseed wallswitches seen as unknown zigbee devices and water valve control seen as 1 gang smart switch"
+**Devices**: 
+- _TZ3000_iedbgyxt / TS0001 (switch_1gang) - Working correctly
+- Water valve - Misidentified as switch
+**Issues**: Flow card ID errors for water_valve_smart
+**Root Cause**: Flow card IDs mismatch in driver vs app.json
+**Fix**: v5.5.794+ - Flow cards corrected
+**Status**: ✅ FIXED
+
+### Report 2 (v5.5.769) - AVATTO TRV
+**User Message**: "TS0601 _TZE284_o3x45p96"
+**Device**: AVATTO Smart Radiator Valve
+**Issues**: Invalid Flow Card ID: switch_dimmer_1gang_turned_on
+**Root Cause**: Flow card registration error in switch_dimmer_1gang driver
+**Fix**: v5.5.827 - Added fingerprint to thermostat driver
+**Status**: ✅ FIXED
+
+### Report 3 (v5.5.759) - Smart Button
+**User Message**: "Smart button not registering any button presses nor does it have a GUI button"
+**Device**: motion_sensor receiving Tuya frames (wrong driver pairing)
+**Root Cause**: Device paired to wrong driver
+**Fix**: User needs to re-pair as button_wireless device
+**Status**: ⚠️ USER ACTION REQUIRED
+
+### Report 4 (v5.5.759) - TS0726 4-Gang Switch
+**User Message**: "TS0726 / _TZ3002_pzao9ls1"
+**Device**: BSEED 4-gang switch (switch_4gang)
+**Status**: ✅ Working correctly with special handling
+
+### Report 5 (v5.5.718) - Presence Sensor
+**User Message**: "Presence Sensor"
+**Status**: ℹ️ General initialization log, no specific error
+
+### Report 6 (v5.5.718) - BSEED 4 Gang Button
+**User Message**: "BSEED Zigbee 4 Gang Button Switch"
+**Issues**: Partial initialization, no capabilities discovered
+**Root Cause**: Protocol learning phase - device needs interaction
+**Status**: ✅ Expected behavior during learning
+
+### Report 7 & 9 (v5.5.708) - Button Not Working
+**User Message**: "Button not working"
+**Device**: button_wireless_1
+**Issues**: "Invalid capabilities in manifest: button.1"
+**Root Cause**: Manifest configuration issue
+**Fix**: Later versions corrected button capability definitions
+**Status**: ✅ FIXED in newer versions
+
+### Report 8 (v5.5.654) - BSEED 4 Gang TypeError
+**User Message**: "BSEED 4 Gang Button Switch"
+**Issues**: TypeError: Cannot read properties of undefined (reading 'name') in HybridSwitchBase.js
+**Root Cause**: Null reference in device initialization
+**Fix**: Fixed in v5.5.700+
+**Status**: ✅ FIXED
 
 ---
 
@@ -231,6 +301,7 @@ _TZE200_a8sdabtg  → climate_sensor (temp/humidity)
 
 | Version | Key Changes |
 |---------|-------------|
+| 5.5.840 | FORUM FIX: HOBEIAN ZG-204ZL motion sensor "always active" - invert_presence now applied to IAS Zone + Tuya DP |
 | 5.5.719 | NEW: DIY Custom Zigbee driver (PTVO, ESP32-H2, CC2530, DIYRuZ, Tasmota) |
 | 5.5.718 | TS0726 bidirectional fix - onOff cluster bindings (Hartmut_Dunker) |
 | 5.5.717 | Enrichment update - +7 IDs, DP mappings enhanced |
