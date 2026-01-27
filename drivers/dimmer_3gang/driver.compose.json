@@ -6,6 +6,12 @@
     "de": "3-Kanal Dimmer"
   },
   "class": "light",
+  "energy": {
+    "approximation": {
+      "usageOn": 180,
+      "usageOff": 2
+    }
+  },
   "capabilities": [
     "onoff",
     "dim",
