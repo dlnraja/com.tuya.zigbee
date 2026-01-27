@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.910** | 🔥 CRITICAL FIX: PhysicalButtonMixin crash (Invalid Flow Card ID). getDeviceT... |
 | **v5.5.909** | 🔥 CRITICAL FIX: Radiator valve driver crash (Class extends undefined). Manue... |
 | **v5.5.908** | 🚪 Forum Fix #1011: Contact sensor _TZ3000_996rpfy6 (TS0203) always showing '... |
 | **v5.5.907** | 🔋 Forum Fix #1225: HOBEIAN ZG-204ZV battery capability now auto-added. Senso... |
@@ -78,7 +79,6 @@
 | **v5.5.903** | 🛠️ Forum Fixes: _TZE284_iadro9bf motion alarm stuck - added stuck pattern de... |
 | **v5.5.902** | 📊 Diagnostic Logs Cleanup: Removed verbose ID DATABASE logging (was pollutin... |
 | **v5.5.901** | 🔧 BSEED Fix: Improved manufacturer detection with multiple fallback sources.... |
-| **v5.5.900** | 💡 Switch Behavior Settings: Power-On Behavior (off/on/memory), LED Backlight... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
