@@ -4,15 +4,21 @@
       "id": "switch_1gang_bseed_turned_on",
       "title": {
         "en": "Turned on",
-        "nl": "Aangezet"
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
       },
       "titleFormatted": {
         "en": "[[device]] turned on (physical button)",
-        "nl": "[[device]] aangezet (fysieke knop)"
+        "fr": "[[device]] allumé (bouton physique)",
+        "nl": "[[device]] aangezet (fysieke knop)",
+        "de": "[[device]] eingeschaltet (physische Taste)"
       },
       "hint": {
         "en": "Triggered when the switch is turned on using the physical button",
-        "nl": "Geactiveerd wanneer de schakelaar wordt aangezet met de fysieke knop"
+        "fr": "Déclenché lorsque l'interrupteur est allumé avec le bouton physique",
+        "nl": "Geactiveerd wanneer de schakelaar wordt aangezet met de fysieke knop",
+        "de": "Ausgelöst wenn der Schalter mit der physischen Taste eingeschaltet wird"
       },
       "args": [
         {
@@ -26,15 +32,21 @@
       "id": "switch_1gang_bseed_turned_off",
       "title": {
         "en": "Turned off",
-        "nl": "Uitgezet"
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
       },
       "titleFormatted": {
         "en": "[[device]] turned off (physical button)",
-        "nl": "[[device]] uitgezet (fysieke knop)"
+        "fr": "[[device]] éteint (bouton physique)",
+        "nl": "[[device]] uitgezet (fysieke knop)",
+        "de": "[[device]] ausgeschaltet (physische Taste)"
       },
       "hint": {
         "en": "Triggered when the switch is turned off using the physical button",
-        "nl": "Geactiveerd wanneer de schakelaar wordt uitgezet met de fysieke knop"
+        "fr": "Déclenché lorsque l'interrupteur est éteint avec le bouton physique",
+        "nl": "Geactiveerd wanneer de schakelaar wordt uitgezet met de fysieke knop",
+        "de": "Ausgelöst wenn der Schalter mit der physischen Taste ausgeschaltet wird"
       },
       "args": [
         {
