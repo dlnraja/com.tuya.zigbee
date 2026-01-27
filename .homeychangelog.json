@@ -1,4 +1,7 @@
 {
+  "5.5.914": {
+    "en": "🔀 FORK ANALYSIS: Integrated improvements from shaarkys & eelco2k forks. ZG-204ZV: Added fingerprints (rhgsbacq, grgol3xp, uli8wasj, y8jijhba) + alternate DP mappings (101/106/110/111). Rain sensor: Added HOBEIAN ZG-223Z (_TZE200_u6x1zyv2). Thank you shaarkys!"
+  },
   "5.5.913": {
     "en": "🎉 PR #118 MERGED (packetninja/Attilla): BSEED switch ZCL-only mode with physical button detection via attribute reports. Fingerprints _TZ3000_ysdv91bk, _TZ3000_blhvsaqf fully integrated. 2000ms app command window. Thank you packetninja!"
   },
