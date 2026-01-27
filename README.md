@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.860** | 🔌 Flow Cards: Added power monitoring triggers (power_changed, power_threshol... |
 | **v5.5.859** | 📡 Sensors: Added alarm_tamper + measure_temperature to contact, motion, wate... |
 | **v5.5.858** | 🎯 UX: Highlighted important dimmer settings (min_brightness) for quick acces... |
 | **v5.5.857** | ⚡ Homey Energy: Improved energy tracking for bulbs (7-9W), LED strips (24W), ... |
@@ -78,7 +79,6 @@
 | **v5.5.853** | 🔧 FIX: Moved _TZE284_3mzb0sdz from climate_sensor to ir_blaster - it's an IR... |
 | **v5.5.852** | 🔧 FIX: HOBEIAN ZG-204ZV now properly adds temperature + humidity capabilitie... |
 | **v5.5.851** | 🔧 FIX: Removed _TZ3000_h1ipgkwn from switch_2gang - it's a Dual USB switch (... |
-| **v5.5.850** | 🔧 FIX: IAS Zone warning now only shows for pure IAS devices. Hybrid Tuya DP ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
