@@ -1,7 +1,7 @@
 # User Device Expectations & Diagnostic Summary
 
 This document summarizes user-reported devices and their expected behavior based on diagnostic logs and community feedback.
-**Last Updated**: 2026-01-27 (v5.5.841)
+**Last Updated**: 2026-01-27 (v5.5.905)
 
 > ⚠️ **WORKFLOW**: This document must be updated at each prompt/session in Windsurf AI to stay synchronized with code changes.
 
@@ -323,6 +323,11 @@ _TZE200_a8sdabtg  → climate_sensor (temp/humidity)
 
 | Version | Key Changes |
 |---------|-------------|
+| 5.5.905 | Enhanced diagnostics for ALL sensors (HybridSensorBase DP logging with type/interval/count) |
+| 5.5.904 | Orphan capability cleanup for radar sensors - ZG-204ZV Distance fix (Z2M: static_detection_distance is SETTING not measurement) |
+| 5.5.903 | _TZE284_iadro9bf stuck pattern detection (5+ consecutive same values → distance inference) |
+| 5.5.902 | Diagnostic logs cleanup - removed verbose ID DATABASE logging, enhanced DP/ZCL stats |
+| 5.5.901 | BSEED manufacturer detection with 4 fallback sources, +5 new BSEED IDs |
 | 5.5.840 | FORUM FIX: HOBEIAN ZG-204ZL motion sensor "always active" - invert_presence now applied to IAS Zone + Tuya DP. +4 new motion sensor fingerprints from Z2M |
 | 5.5.719 | NEW: DIY Custom Zigbee driver (PTVO, ESP32-H2, CC2530, DIYRuZ, Tasmota) |
 | 5.5.718 | TS0726 bidirectional fix - onOff cluster bindings (Hartmut_Dunker) |
@@ -351,6 +356,9 @@ _TZE200_a8sdabtg  → climate_sensor (temp/humidity)
 
 | User | Device | ManufacturerID | Issue | Fix Version | Notes |
 |------|--------|----------------|-------|-------------|-------|
+| Peter_van_Werkhoven | ZG-204ZV | `HOBEIAN` | Distance capability showing (orphan) | ✅ v5.5.904 | Orphan capability auto-cleanup |
+| Forum | _TZE284_iadro9bf | `_TZE284_iadro9bf` | Motion alarm stuck YES | ✅ v5.5.903 | Stuck pattern detection |
+| Forum | BSEED switches | Multiple | Unknown device | ✅ v5.5.901 | 4 fallback manufacturer sources |
 | Freddyboy | Moes 4-button | `_TZ3000_zgyzgdua` | Buttons not responding | ✅ v5.5.714 | TS0044 uses cluster 0xE000, not TS004F |
 | Ronny_M | HOBEIAN ZG-101ZL | `HOBEIAN` | Button not working | ✅ v5.5.715 | Added onOff binding + dual mode support |
 | Lasse_K | Contact sensors | Multiple | Inverted indication | ✅ v5.5.713 | Auto-inversion for known IDs |
