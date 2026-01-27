@@ -1,4 +1,7 @@
 {
+  "5.5.864": {
+    "en": "🔧 Pairing: Added repair view support for thermostats. Improved pairing flow with singular device selection. Better device recovery after connection issues."
+  },
   "5.5.863": {
     "en": "🔒 Device Classes: Smoke detector now uses 'smokedetector' class, CO sensor uses 'co' class. Water leak sensor added to home alarm. Better Homey integration."
   },
