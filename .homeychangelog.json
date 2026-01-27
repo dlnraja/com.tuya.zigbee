@@ -1,4 +1,7 @@
 {
+  "5.5.840": {
+    "en": "🔄 FORUM FIX (Cam): HOBEIAN ZG-204ZL motion sensor 'always active' issue FIXED! The invert_presence setting was not being applied to IAS Zone and Tuya DP motion handlers. Now motion inversion works correctly for sensors reporting inverted values. Go to device settings → enable 'Invert Motion Detection' if your sensor shows always active or never active."
+  },
   "5.5.834": {
     "en": "✅ GitHub Issues #113, #114, #115 VERIFIED: All devices already supported! TS004F knob dimmer (_TZ3000_gwkzibhs), TS0041 smart button (_TZ3000_b4awzgct), TS0201 temp/humidity (_TZ3000_fllyghyj) - fingerprints present in button_wireless_1 and climate_sensor drivers. Issues can be closed."
   },

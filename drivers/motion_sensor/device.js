@@ -587,7 +587,15 @@ class MotionSensorDevice extends HybridSensorBase {
 
         // v5.5.17: Use universal parser from HybridSensorBase
         const parsed = this._parseIASZoneStatus(payload?.zoneStatus);
-        const motion = parsed.alarm1 || parsed.alarm2;
+        let motion = parsed.alarm1 || parsed.alarm2;
+
+        // v5.5.840: FORUM FIX - Apply invert_presence setting for ZG-204ZL and similar
+        // Some sensors report inverted motion values (always active or never active)
+        const invertSetting = this.getSetting?.('invert_presence');
+        if (invertSetting) {
+          motion = !motion;
+          this.log(`[IAS] 🔄 Motion inversion applied: ${parsed.alarm1 || parsed.alarm2} → ${motion}`);
+        }
 
         this.log(`[ZCL-DATA] motion_sensor.ias_zone raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2} → motion=${motion}`);
 
@@ -612,7 +620,15 @@ class MotionSensorDevice extends HybridSensorBase {
         // v5.5.299: Mark device as awake on zone status changes
         this._markDeviceAwake();
 
-        const motion = (status & 0x01) !== 0 || (status & 0x02) !== 0;
+        let motion = (status & 0x01) !== 0 || (status & 0x02) !== 0;
+        
+        // v5.5.840: FORUM FIX - Apply invert_presence setting
+        const invertSetting = this.getSetting?.('invert_presence');
+        if (invertSetting) {
+          motion = !motion;
+          this.log(`[IAS] 🔄 Motion inversion applied: ${((status & 0x01) !== 0 || (status & 0x02) !== 0)} → ${motion}`);
+        }
+        
         this.log(`[ZCL-DATA] motion_sensor.zone_status raw=${status} → alarm_motion=${motion}`);
 
         if (this.hasCapability('alarm_motion')) {
