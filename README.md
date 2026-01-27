@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.897** | 🔵 BSEED Special Mode: Dedicated handling for _TZ3000_blhvsaqf/_TZ3000_ysdv91... |
 | **v5.5.896** | 🎯 PhysicalButtonMixin: Advanced button detection for all switch drivers (1-4... |
 | **v5.5.895** | 🔀 MERGED: switch_1gang_bseed → switch_1gang. Unified driver supports Tuya DP... |
 | **v5.5.894** | 🎨 Flow Cards: Enhanced switch drivers (1-4 gang) with titleFormatted, device... |
@@ -78,7 +79,6 @@
 | **v5.5.890** | 🌧️ Rain Sensor: Added IAS Zone support for TS0207 devices (Dominique_C forum... |
 | **v5.5.889** | ✨ NEW: Bseed 1-Gang Switch (PR #116 by packetninja) - Physical button detecti... |
 | **v5.5.888** | 🔧 Motion Sensor FIX (Peter #1204): ZG-204ZV now correctly shows temperature ... |
-| **v5.5.887** | 🌡️ Air Quality CO2 Sensor: Fixed naming. Curtain Motor Tilt: Added energy ap... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
