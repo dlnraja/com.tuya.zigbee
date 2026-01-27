@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.913** | 🎉 PR #118 MERGED (packetninja/Attilla): BSEED switch ZCL-only mode with phys... |
 | **v5.5.912** | 🌡️ ZG-204ZV Fix: Added ZCL temperature (0x0402) + humidity (0x0405) cluster ... |
 | **v5.5.911** | 💧 Water Valve Enhancement: Z2M DP mappings (water consumption, flow rate, te... |
 | **v5.5.910** | 🔥 CRITICAL FIX: PhysicalButtonMixin crash (Invalid Flow Card ID). getDeviceT... |
@@ -78,7 +79,6 @@
 | **v5.5.906** | 🎯 New Flow Cards: Toggle action for 1-gang switch. Toggle + All-gangs action... |
 | **v5.5.905** | 📊 Enhanced Diagnostics for ALL Sensors: HybridSensorBase now logs DP data wi... |
 | **v5.5.904** | 🧹 Orphan Capability Cleanup: Radar sensors now auto-remove capabilities not ... |
-| **v5.5.903** | 🛠️ Forum Fixes: _TZE284_iadro9bf motion alarm stuck - added stuck pattern de... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
