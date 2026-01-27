@@ -1,4 +1,7 @@
 {
+  "5.5.827": {
+    "en": "🔧 DIAGNOSTICS BATCH FIX: 1) AVATTO TRV Smart Radiator Valve (_TZE284_o3x45p96) - added fingerprint for thermostat driver. 2) BSEED 4-Gang fingerprints already present (TS0726/_TZ3002_pzao9ls1). 3) Flow card ID fixes from v5.5.794 diagnostics already resolved in newer versions. All issues from Gmail diagnostics reports analyzed and addressed."
+  },
   "5.5.826": {
     "en": "🔧 DIAGNOSTICS FIXES: 1) HOBEIAN ZG-204ZV multi-sensor now reports temperature and humidity! Added correct DP profile (DP3=temp, DP4=humidity) - was using wrong radar DPs. 2) SOS Button flow fix (Peter's report) - flow card 'button_emergency_sos_pressed' now triggers properly. Driver explicitly registers and triggers the flow card."
   },
