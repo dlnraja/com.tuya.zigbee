@@ -288,6 +288,17 @@ class WaterLeakSensorDevice extends HybridSensorBase {
       this.log(`[WATER] ⚠️ IAS Fallback init failed: ${e.message}`);
     });
     this.log('[WATER] ✅ IAS Alarm Fallback enabled for ALL water sensors (v5.5.803)');
+    
+    // v5.5.918: FORUM FIX - Delayed secondary read for sleepy sensors
+    // Some water sensors need extra time after pairing before they respond
+    this.homey.setTimeout(async () => {
+      try {
+        this.log('[WATER] 📖 Delayed secondary alarm read (5s post-init)...');
+        await this._forceInitialAlarmRead(zclNode);
+      } catch (e) {
+        this.log(`[WATER] ⚠️ Secondary read failed: ${e.message}`);
+      }
+    }, 5000);
 
     // v5.5.803: FORUM #1166 FIX - Force initial alarm state read
     await this._forceInitialAlarmRead(zclNode);
