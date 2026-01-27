@@ -1,4 +1,7 @@
 {
+  "5.5.893": {
+    "en": "📦 Enrichment: Added HOBEIAN ZG-303Z temp/humidity (blutch32 #1011). Cross-referenced 20 JohanBendz PRs - all IDs verified."
+  },
   "5.5.892": {
     "en": "🔧 Motion Sensor FIX (Peter #1211): Removed orphan 'Distance' capability from ZG-204ZV. Distance is only for radar sensors."
   },
