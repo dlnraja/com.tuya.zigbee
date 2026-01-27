@@ -2377,16 +2377,17 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.357: RONNY FORUM FIX - Ultra throttle motion spam
+   * v5.5.902: FORUM FIX - Enhanced stuck detection for motion spam
    * _TZE284_iadro9bf sends motion=YES every 20s even without presence
-   * Solution: Max 1 motion update per 60 seconds if no real change
+   * v5.5.357: Original throttle + v5.5.902: Stuck pattern detection
+   * Solution: If device is stuck sending same value, use distance-based inference instead
    */
   _throttleMotionSpam(presence, dpId) {
     const config = this._getSensorConfig();
     const mfr = this.getData()?.manufacturerName || '';
 
     // Only apply to problematic sensors
-    if (!mfr.includes('iadro9bf')) {
+    if (!mfr.includes('iadro9bf') && !mfr.includes('qasjif9e')) {
       return presence;
     }
 
@@ -2394,10 +2395,35 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     this._motionThrottle = this._motionThrottle || {
       lastUpdate: 0,
       lastValue: null,
-      spamCount: 0
+      spamCount: 0,
+      consecutiveSame: 0,  // v5.5.902: Track consecutive same values
+      stuckMode: false     // v5.5.902: Device is stuck - use inference only
     };
 
     const timeSinceLastUpdate = now - this._motionThrottle.lastUpdate;
+
+    // v5.5.902: STUCK PATTERN DETECTION
+    // If we receive the same value 5+ times in a row, device is likely stuck
+    if (presence === this._motionThrottle.lastValue) {
+      this._motionThrottle.consecutiveSame++;
+      if (this._motionThrottle.consecutiveSame >= 5 && !this._motionThrottle.stuckMode) {
+        this._motionThrottle.stuckMode = true;
+        this.log(`[RADAR] ⚠️ STUCK MODE ACTIVATED: ${this._motionThrottle.consecutiveSame} consecutive ${presence} values - using distance inference only`);
+      }
+    } else {
+      // Value changed - reset stuck detection
+      if (this._motionThrottle.stuckMode) {
+        this.log(`[RADAR] ✅ STUCK MODE CLEARED: value changed from ${this._motionThrottle.lastValue} to ${presence}`);
+      }
+      this._motionThrottle.consecutiveSame = 0;
+      this._motionThrottle.stuckMode = false;
+    }
+
+    // v5.5.902: In stuck mode, ignore DP1 completely - use distance inference only
+    if (this._motionThrottle.stuckMode) {
+      this.log(`[RADAR] 🚫 DP${dpId} BLOCKED (stuck mode): using distance-based inference instead`);
+      return null;
+    }
 
     // v5.5.793: Use TIMING constant for throttle
     // If same value and within throttle window, block it
