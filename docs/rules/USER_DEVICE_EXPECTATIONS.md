@@ -373,6 +373,7 @@ _TZE200_a8sdabtg  → climate_sensor (temp/humidity)
 | User | Device | ManufacturerID | Issue | Diag Code | Status |
 |------|--------|----------------|-------|-----------|--------|
 | JJ10 | Presence sensor | Unknown | Connected as unknown device | `999de772-5ce2-4674-86c3-c267c7e3a3f0` | ⏳ Need mfr ID - ask user to send diagnostic |
+| Lalla80111 | Smart Button TS0041 | `_TZ3000_b4awzgct` | Unknown zigbee v5.5.897 | GitHub #114 | ✅ ID in driver - USER NEEDS RE-PAIR + UPDATE to v5.5.907 |
 | FrankP | IR Blaster | Unknown | Flow card errors | `89e408fe-d0ba-4216-95be-951824dac2b8` | ✅ v5.5.565 Flow cards verified working (sendEnhancedIRCode, sendACCommand exist) |
 
 ### ✅ RECENTLY FIXED (Moved from Pending)
