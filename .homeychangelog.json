@@ -1,4 +1,7 @@
 {
+  "5.5.855": {
+    "en": "✨ NEW: Periodic Auto-Enrichment for ALL drivers! Automatic ZCL cluster + Tuya DP detection at 15min after pairing, then hourly. Dynamic capability + flow card registration."
+  },
   "5.5.854": {
     "en": "🔧 FIX: switch_dimmer_1gang physical button detection now works correctly (Attilla forum #1205). Override parent class methods instead of duplicate listeners."
   },
