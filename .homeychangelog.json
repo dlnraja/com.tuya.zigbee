@@ -1,4 +1,7 @@
 {
+  "5.5.860": {
+    "en": "🔌 Flow Cards: Added power monitoring triggers (power_changed, power_threshold) with tokens (power, voltage, current) for smart plugs. Enhanced Advanced Flow support."
+  },
   "5.5.859": {
     "en": "📡 Sensors: Added alarm_tamper + measure_temperature to contact, motion, water leak sensors. Better device indicators and auto-discovery support."
   },
