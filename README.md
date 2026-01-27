@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.884** | 🌀 Ceiling Fan: Removed incorrect battery capability, added speed title local... |
 | **v5.5.883** | 🌡️ Climate Sensor and Generic Tuya Device: NL/DE localization for temperatur... |
 | **v5.5.882** | 💡 Dimmers: Wall Dimmer 1-Gang proper naming. 3-Gang Dimmer channel titles wi... |
 | **v5.5.881** | 🔧 Fixes: SOS Button class changed to 'button' + full localization. Door Cont... |
@@ -78,7 +79,6 @@
 | **v5.5.877** | 🔧 Fixes: LED Strip name fixed, Ceiling Fan proper energy (65W) + localizatio... |
 | **v5.5.876** | 🔋 Energy Tracking: Garage door (150W), IR Blaster (2W constant), Dual Dimmer... |
 | **v5.5.875** | ⚡ Smart RCBO: Changed to 'socket' class with cumulative energy tracking. Adde... |
-| **v5.5.874** | 🌡️ 4-Channel Thermostat: Energy tracking (3W), NL/DE localized channel names... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
