@@ -44,9 +44,17 @@
     "measure_battery": {
       "title": {
         "en": "Battery",
-        "fr": "Batterie"
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
       },
       "preventInsights": false
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 40,
+      "usageOff": 1
     }
   },
   "platforms": [
