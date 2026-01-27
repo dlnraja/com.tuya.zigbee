@@ -2612,6 +2612,39 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       }
     } catch (e) { /* ignore */ }
 
+    // v5.5.912: Temperature cluster (0x0402) - HOBEIAN ZG-204ZV with temp/humidity
+    // ZHA issue #4452: ZG-204ZV variant WITH temp/humidity has ZCL clusters 0x0402 + 0x0405
+    try {
+      const tempCluster = ep1.clusters?.msTemperatureMeasurement || ep1.clusters?.temperatureMeasurement;
+      if (tempCluster?.on) {
+        tempCluster.on('attr.measuredValue', (v) => {
+          // ZCL reports temperature in hundredths of °C (e.g., 2350 = 23.50°C)
+          const temp = v / 100;
+          if (temp > -40 && temp < 100) { // Sanity check
+            this.log(`[RADAR] 🌡️ ZCL Temperature: ${v} -> ${temp}°C`);
+            this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+          }
+        });
+        this.log('[RADAR] ✅ Temperature cluster (0x0402) configured - ZG-204ZV fix');
+      }
+    } catch (e) { /* ignore */ }
+
+    // v5.5.912: Humidity cluster (0x0405) - HOBEIAN ZG-204ZV with temp/humidity
+    try {
+      const humCluster = ep1.clusters?.msRelativeHumidity || ep1.clusters?.relativeHumidity;
+      if (humCluster?.on) {
+        humCluster.on('attr.measuredValue', (v) => {
+          // ZCL reports humidity in hundredths of % (e.g., 6500 = 65.00%)
+          const humidity = v / 100;
+          if (humidity >= 0 && humidity <= 100) { // Sanity check
+            this.log(`[RADAR] 💧 ZCL Humidity: ${v} -> ${humidity}%`);
+            this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
+          }
+        });
+        this.log('[RADAR] ✅ Humidity cluster (0x0405) configured - ZG-204ZV fix');
+      }
+    } catch (e) { /* ignore */ }
+
     // Occupancy cluster (0x0406)
     try {
       const occCluster = ep1.clusters?.msOccupancySensing;
