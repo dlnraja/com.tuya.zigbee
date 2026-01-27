@@ -1,4 +1,7 @@
 {
+  "5.5.899": {
+    "en": "🎯 Device Profiles: Comprehensive manufacturer-specific handling based on Z2M/ZHA research. BSEED, Zemismart (ZHA #2443), Moes, TS0726 profiles. ZCL-only mode auto-detection, custom clusters 0xE000/0xE001, per-endpoint control."
+  },
   "5.5.898": {
     "en": "⚙️ Configurable Physical Button Detection: New settings for all switch drivers (1-4 gang). App Command Window (100-5000ms), Double Click Window (200-1000ms), Long Press Threshold (300-2000ms). BSEED default=2000ms."
   },
