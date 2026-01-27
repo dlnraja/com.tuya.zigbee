@@ -690,6 +690,11 @@ const SENSOR_CONFIGS = {
   'ZG_204ZV_MULTISENSOR': {
     sensors: [
       '_TZE200_3towulqd', '_TZE204_3towulqd', '_tze200_3towulqd',
+      // v5.5.914: shaarkys fork - additional ZG-204ZV fingerprints
+      '_TZE200_rhgsbacq', '_TZE204_rhgsbacq',
+      '_TZE200_grgol3xp', '_TZE204_grgol3xp',
+      '_TZE200_uli8wasj', '_TZE204_uli8wasj',
+      '_TZE200_y8jijhba', '_TZE204_y8jijhba',
       'HOBEIAN',  // v5.5.841: Added for direct HOBEIAN ZG-204ZV matching
     ],
     modelId: 'ZG-204ZV',  // v5.5.841: Explicit modelId for HOBEIAN routing
@@ -707,6 +712,12 @@ const SENSOR_CONFIGS = {
       // v5.5.841: SOS button (Peter_van_Werkhoven diagnostic - DP17 or DP18 typical for SOS)
       17: { cap: 'alarm_generic', type: 'bool', flowTrigger: 'sos_pressed' },
       18: { cap: 'alarm_generic', type: 'bool', flowTrigger: 'sos_pressed' },
+      // v5.5.914: shaarkys fork - alternate DP mappings for ZG-204ZV Type H variant
+      // Some devices use DP101/106/110/111 instead of DP3/4/9/10
+      101: { cap: 'measure_humidity', divisor: 1 },
+      106: { cap: 'measure_luminance', type: 'lux_direct' },
+      110: { cap: 'measure_battery', divisor: 1 },
+      111: { cap: 'measure_temperature', divisor: 10 },
     }
   },
 
