@@ -18,7 +18,13 @@
     "measure_current",
     "meter_power.exported"
   ],
+  "energy": {
+    "cumulative": true
+  },
   "capabilitiesOptions": {
+    "meter_power": {
+      "approximated": false
+    },
     "measure_power": {
       "title": {
         "en": "Power",
