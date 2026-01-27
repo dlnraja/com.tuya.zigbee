@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.846** | 🔍 EXTENDED VERIFICATION: Added 5 more TRV fingerprints (_TZE204_wgrffniy, _T... |
 | **v5.5.845** | 🔍 DEEP VERIFICATION: Added 7 missing fingerprints verified against Blakadder... |
 | **v5.5.844** | 🔍 BLAKADDER/ZHA VERIFICATION: Added missing TRV fingerprints (_TZE204_pay2by... |
 | **v5.5.843** | 🔍 BLAKADDER VERIFICATION: Added missing motion sensor fingerprints (_TYZB01_... |
@@ -78,7 +79,6 @@
 | **v5.5.834** | ✅ GitHub Issues #113, #114, #115 VERIFIED: All devices already supported! TS0... |
 | **v5.5.833** | 🌧️ FORUM FIX (Dominique_C #1202): Rain sensor TS0207/_TZ3210_p68kms0l now pa... |
 | **v5.5.832** | 🆘 FORUM FIX (Peter_van_Werkhoven #1203): SOS button flow cards now trigger p... |
-| **v5.5.831** | 🌡️ FORUM FIX (Peter_van_Werkhoven): HOBEIAN ZG-204ZV multisensor now reports... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
