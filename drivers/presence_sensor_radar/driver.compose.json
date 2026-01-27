@@ -14,6 +14,11 @@
     "measure_temperature",
     "measure_humidity"
   ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 1.5
+    }
+  },
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
