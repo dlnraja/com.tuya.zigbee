@@ -300,6 +300,55 @@
           ]
         }
       ]
+    },
+    {
+      "id": "thermostat_tuya_dp_set_comfort_preset",
+      "highlight": true,
+      "title": {
+        "en": "Set comfort preset",
+        "fr": "Définir préréglage confort",
+        "nl": "Comfort preset instellen",
+        "de": "Komfort-Voreinstellung"
+      },
+      "titleFormatted": {
+        "en": "Set to [[preset]] preset",
+        "fr": "Définir préréglage [[preset]]",
+        "nl": "Instellen op [[preset]] preset",
+        "de": "Auf [[preset]] Voreinstellung setzen"
+      },
+      "args": [
+        {
+          "name": "preset",
+          "type": "dropdown",
+          "values": [
+            { "id": "comfort", "label": { "en": "Comfort (21°C)", "fr": "Confort (21°C)" } },
+            { "id": "eco", "label": { "en": "Eco (18°C)", "fr": "Éco (18°C)" } },
+            { "id": "away", "label": { "en": "Away (15°C)", "fr": "Absent (15°C)" } },
+            { "id": "sleep", "label": { "en": "Sleep (19°C)", "fr": "Nuit (19°C)" } },
+            { "id": "boost", "label": { "en": "Boost (25°C)", "fr": "Boost (25°C)" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thermostat_tuya_dp_schedule_on",
+      "title": {
+        "en": "Enable schedule",
+        "fr": "Activer programmation",
+        "nl": "Schema inschakelen",
+        "de": "Zeitplan aktivieren"
+      },
+      "args": []
+    },
+    {
+      "id": "thermostat_tuya_dp_schedule_off",
+      "title": {
+        "en": "Disable schedule",
+        "fr": "Désactiver programmation",
+        "nl": "Schema uitschakelen",
+        "de": "Zeitplan deaktivieren"
+      },
+      "args": []
     }
   ]
 }
