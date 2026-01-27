@@ -1,27 +1,24 @@
 {
   "name": {
-    "en": "Led Strip Advanced",
-    "fr": "Led Strip Advanced",
+    "en": "LED Strip Advanced",
+    "fr": "Bande LED Avancée",
     "nl": "Geavanceerde LED Strip",
     "de": "Erweiterte LED Streifen"
   },
   "class": "light",
   "capabilities": [
+    "onoff",
     "dim",
     "light_hue",
     "light_saturation",
     "light_temperature",
-    "light_mode",
-    "onoff",
-    "measure_battery"
+    "light_mode"
   ],
   "energy": {
     "approximation": {
-      "usageConstant": 0.5
-    },
-    "batteries": [
-      "OTHER"
-    ]
+      "usageOn": 36,
+      "usageOff": 1
+    }
   },
   "zigbee": {
     "manufacturerName": [
