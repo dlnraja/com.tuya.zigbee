@@ -21,12 +21,20 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 
-// BSEED manufacturer names (PR #116)
-const BSEED_MANUFACTURERS = [
-  '_TZ3000_blhvsaqf',
-  '_TZ3000_ysdv91bk',
-  '_tz3000_blhvsaqf',
-  '_tz3000_ysdv91bk'
+/**
+ * ZCL-Only manufacturers that should NOT use Tuya DP protocol
+ * Based on Z2M, ZHA research and forum feedback:
+ * - BSEED: Uses clusters 0xE000/0xE001
+ * - Zemismart: Same as BSEED, "all gangs toggle" bug fixed with per-endpoint
+ * - TS0726: BSEED 4-gang needs explicit binding
+ */
+const ZCL_ONLY_MANUFACTURERS = [
+  // BSEED (PR #116)
+  '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk',
+  // Zemismart (ZHA #2443)
+  '_TZ3000_a37eix1s', '_TZ3000_empogkya', '_TZ3000_18ejxrzk',
+  // TS0726 BSEED 4-gang (Hartmut_Dunker)
+  '_TZ3002_pzao9ls1', '_TZ3002_vaq2bfcu'
 ];
 
 class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
@@ -34,22 +42,36 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
   get gangCount() { return 1; }
 
   /**
-   * Check if this is a BSEED device
+   * Check if this device requires ZCL-only mode (no Tuya DP)
+   * Uses PhysicalButtonMixin.getDeviceProfile() or fallback check
    */
-  get isBseedDevice() {
+  get isZclOnlyDevice() {
+    // First try mixin method if available
+    if (typeof super.isZclOnlyDevice === 'function') {
+      return super.isZclOnlyDevice();
+    }
+    // Fallback to direct check
     const mfr = this.getSetting?.('zb_manufacturer_name') || 
                 this.getStoreValue?.('manufacturerName') || '';
-    return BSEED_MANUFACTURERS.some(b => mfr.toLowerCase().includes(b.toLowerCase()));
+    return ZCL_ONLY_MANUFACTURERS.some(b => mfr.toLowerCase().includes(b.toLowerCase()));
+  }
+
+  /**
+   * Get device brand for logging
+   */
+  get deviceBrand() {
+    const profile = this.getDeviceProfile?.() || {};
+    return profile.brand || 'Generic';
   }
 
   /**
    * EXTEND parent dpMappings with energy monitoring DPs
-   * BSEED devices don't use Tuya DP - they use pure ZCL
+   * ZCL-only devices (BSEED, Zemismart) don't use Tuya DP
    */
   get dpMappings() {
-    // BSEED: Skip Tuya DP mappings entirely
-    if (this.isBseedDevice) {
-      return {}; // No Tuya DP for BSEED
+    // ZCL-only devices: Skip Tuya DP mappings entirely
+    if (this.isZclOnlyDevice) {
+      return {}; // No Tuya DP for ZCL-only devices
     }
     
     const parentMappings = Object.getPrototypeOf(Object.getPrototypeOf(this)).dpMappings || {};
@@ -63,16 +85,18 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
   }
 
   async onNodeInit({ zclNode }) {
-    // Detect BSEED early
-    const isBseed = this.isBseedDevice;
+    // Get device profile for brand-specific handling
+    const profile = this.getDeviceProfile?.() || {};
+    const isZclOnly = this.isZclOnlyDevice;
     
-    if (isBseed) {
+    if (isZclOnly) {
       // ════════════════════════════════════════════════════════════════════════
-      // BSEED MODE - PR #116 by packetninja
-      // Uses ZCL onOff only (no Tuya DP), custom clusters 0xE000/0xE001
+      // ZCL-ONLY MODE (BSEED, Zemismart, etc.)
+      // Uses ZCL onOff only (no Tuya DP), may have custom clusters 0xE000/0xE001
+      // Sources: PR #116, ZHA #2443, forum reports
       // ════════════════════════════════════════════════════════════════════════
-      this.log('[SWITCH-1G] 🔵 BSEED MODE ACTIVATED');
-      await this._initBseedMode(zclNode);
+      this.log(`[SWITCH-1G] 🔵 ZCL-ONLY MODE: ${profile.brand || 'Unknown'}`);
+      await this._initZclOnlyMode(zclNode, profile);
     } else {
       // ════════════════════════════════════════════════════════════════════════
       // STANDARD MODE - Tuya DP + ZCL hybrid
@@ -80,88 +104,97 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
       await super.onNodeInit({ zclNode });
       await this.initPhysicalButtonDetection(zclNode);
       await this.initVirtualButtons();
-      this.log('[SWITCH-1G] v5.5.897 STANDARD - Hybrid Tuya DP + ZCL');
+      this.log(`[SWITCH-1G] v5.5.899 STANDARD - ${profile.brand || 'Hybrid'} Tuya DP + ZCL`);
     }
   }
 
   /**
    * ════════════════════════════════════════════════════════════════════════════
-   * BSEED SPECIFIC INITIALIZATION (PR #116)
+   * ZCL-ONLY MODE INITIALIZATION
+   * For: BSEED, Zemismart, and other devices that don't use Tuya DP
+   * Sources: PR #116, ZHA #2443, Z2M #14523, forum reports
    * Features:
-   * - Standard ZCL onOff control (cluster 6)
-   * - Custom Bseed clusters 0xE000 (57344) and 0xE001 (57345)
+   * - Standard ZCL onOff control (cluster 6) per endpoint
+   * - Custom clusters 0xE000 (57344) and 0xE001 (57345) if present
    * - Physical button detection via attribute reports
-   * - 2-second timeout window for app vs physical detection
+   * - Configurable timeout window (brand-specific defaults)
    * ════════════════════════════════════════════════════════════════════════════
    */
-  async _initBseedMode(zclNode) {
-    this.log('[BSEED] Initializing BSEED 1-Gang Switch...');
+  async _initZclOnlyMode(zclNode, profile = {}) {
+    const brand = profile.brand || 'ZCL-Only';
+    this.log(`[${brand}] Initializing ${brand} 1-Gang Switch...`);
     this.printNode?.();
 
-    // BSEED-specific state tracking
-    this._bseedState = {
+    // ZCL-only state tracking
+    this._zclOnlyState = {
+      brand,
+      profile,
       lastOnoffState: null,
       appCommandPending: false,
       appCommandTimeout: null
     };
 
     // Register onoff with pure ZCL (no Tuya DP)
-    await this._setupBseedOnOff(zclNode);
+    await this._setupZclOnlyOnOff(zclNode, profile);
 
-    // Setup BSEED custom clusters (0xE000, 0xE001)
-    await this._setupBseedCustomClusters(zclNode);
+    // Setup custom clusters (0xE000, 0xE001) if device has them
+    if (profile.customClusters?.length > 0) {
+      await this._setupCustomClusters(zclNode, profile);
+    }
 
     // Initialize virtual buttons (optional features)
     await this.initVirtualButtons?.();
 
-    this.log('[BSEED] ✅ BSEED mode ready - ZCL onOff + physical detection');
+    this.log(`[${brand}] ✅ Ready - ZCL onOff + physical detection (window: ${profile.appCommandWindow}ms)`);
   }
 
   /**
-   * BSEED: Setup ZCL onOff with physical button detection
+   * ZCL-Only: Setup ZCL onOff with physical button detection
    */
-  async _setupBseedOnOff(zclNode) {
+  async _setupZclOnlyOnOff(zclNode, profile = {}) {
+    const brand = profile.brand || 'ZCL';
     const endpoint = zclNode?.endpoints?.[1];
     const onOffCluster = endpoint?.clusters?.onOff;
 
     if (!onOffCluster) {
-      this.error('[BSEED] No onOff cluster on EP1!');
+      this.error(`[${brand}] No onOff cluster on EP1!`);
       return;
     }
 
     // Listen for attribute reports (physical button presses)
     if (typeof onOffCluster.on === 'function') {
       onOffCluster.on('attr.onOff', (value) => {
-        this.log(`[BSEED] 📥 Attribute report: onOff = ${value}`);
-        this._handleBseedOnOffChange(value, !this._bseedState.appCommandPending);
+        this.log(`[${brand}] 📥 Attribute report: onOff = ${value}`);
+        this._handleZclOnlyOnOffChange(value, !this._zclOnlyState.appCommandPending);
       });
-      this.log('[BSEED] ✅ Attribute report listener registered');
+      this.log(`[${brand}] ✅ Attribute report listener registered`);
     }
 
     // Register capability listener for app commands
     this.registerCapabilityListener('onoff', async (value) => {
-      this.log(`[BSEED] 📤 App command: onOff = ${value}`);
-      this._markBseedAppCommand();
+      this.log(`[${brand}] 📤 App command: onOff = ${value}`);
+      this._markZclOnlyAppCommand();
       
       try {
         await onOffCluster[value ? 'setOn' : 'setOff']();
-        this.log(`[BSEED] ✅ ZCL command sent: ${value ? 'ON' : 'OFF'}`);
+        this.log(`[${brand}] ✅ ZCL command sent: ${value ? 'ON' : 'OFF'}`);
         return true;
       } catch (e) {
-        this.error(`[BSEED] ZCL command failed: ${e.message}`);
+        this.error(`[${brand}] ZCL command failed: ${e.message}`);
         throw e;
       }
     });
   }
 
   /**
-   * BSEED: Handle onOff state changes and trigger physical button flows
+   * ZCL-Only: Handle onOff state changes and trigger physical button flows
    */
-  _handleBseedOnOffChange(value, isPhysical) {
-    const state = this._bseedState;
+  _handleZclOnlyOnOffChange(value, isPhysical) {
+    const state = this._zclOnlyState;
+    const brand = state?.brand || 'ZCL';
     
     if (state.lastOnoffState !== value) {
-      this.log(`[BSEED] State: ${state.lastOnoffState} → ${value} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
+      this.log(`[${brand}] State: ${state.lastOnoffState} → ${value} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
       state.lastOnoffState = value;
 
       // Update capability
@@ -173,62 +206,55 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
         const basicFlowId = value ? 'switch_1gang_physical_on' : 'switch_1gang_physical_off';
         this.homey.flow.getDeviceTriggerCard(basicFlowId)
           .trigger(this, {}, {})
-          .catch(err => this.log(`[BSEED] Flow error: ${err.message}`));
+          .catch(err => this.log(`[${brand}] Flow error: ${err.message}`));
 
-        // Also trigger single press (BSEED doesn't support double/long detection natively)
+        // Also trigger single press
         this.homey.flow.getDeviceTriggerCard('switch_1gang_physical_single')
           .trigger(this, {}, {})
           .catch(() => {});
 
-        this.log(`[BSEED] 🔘 Physical button ${value ? 'ON' : 'OFF'} triggered`);
+        this.log(`[${brand}] 🔘 Physical button ${value ? 'ON' : 'OFF'} triggered`);
       }
     }
   }
 
   /**
-   * BSEED: Mark app command (configurable timeout, default 2000ms)
+   * ZCL-Only: Mark app command (configurable timeout from profile/settings)
    */
-  _markBseedAppCommand() {
-    const state = this._bseedState;
+  _markZclOnlyAppCommand() {
+    const state = this._zclOnlyState;
+    const brand = state?.brand || 'ZCL';
     state.appCommandPending = true;
     
     if (state.appCommandTimeout) clearTimeout(state.appCommandTimeout);
     
-    // Get timeout from settings or use BSEED default (2000ms)
-    const timeout = this.getSetting?.('app_command_timeout') || 2000;
+    // Get timeout from settings or use profile default
+    const timeout = this.getSetting?.('app_command_timeout') || state.profile?.appCommandWindow || 2000;
     
     state.appCommandTimeout = setTimeout(() => {
       state.appCommandPending = false;
-      this.log('[BSEED] App command window closed');
+      this.log(`[${brand}] App command window closed`);
     }, timeout);
   }
 
   /**
-   * BSEED: Setup custom clusters 0xE000 and 0xE001
-   * These are proprietary Bseed clusters for extended functionality
+   * ZCL-Only: Setup custom clusters (0xE000, 0xE001, etc.)
+   * Used by BSEED, Zemismart and similar devices
    */
-  async _setupBseedCustomClusters(zclNode) {
+  async _setupCustomClusters(zclNode, profile = {}) {
+    const brand = profile.brand || 'ZCL';
     const endpoint = zclNode?.endpoints?.[1];
+    const customClusters = profile.customClusters || [0xE000, 0xE001];
     
-    // Cluster 0xE000 (57344) - Bseed proprietary
-    const cluster57344 = endpoint?.clusters?.[57344] || endpoint?.clusters?.['57344'];
-    if (cluster57344) {
-      this.log('[BSEED] ✅ Custom cluster 0xE000 (57344) found');
-      if (typeof cluster57344.on === 'function') {
-        cluster57344.on('attr', (attrId, value) => {
-          this.log(`[BSEED] 0xE000 attr ${attrId}: ${JSON.stringify(value)}`);
-        });
-      }
-    }
-
-    // Cluster 0xE001 (57345) - Bseed proprietary
-    const cluster57345 = endpoint?.clusters?.[57345] || endpoint?.clusters?.['57345'];
-    if (cluster57345) {
-      this.log('[BSEED] ✅ Custom cluster 0xE001 (57345) found');
-      if (typeof cluster57345.on === 'function') {
-        cluster57345.on('attr', (attrId, value) => {
-          this.log(`[BSEED] 0xE001 attr ${attrId}: ${JSON.stringify(value)}`);
-        });
+    for (const clusterId of customClusters) {
+      const cluster = endpoint?.clusters?.[clusterId] || endpoint?.clusters?.[String(clusterId)];
+      if (cluster) {
+        this.log(`[${brand}] ✅ Custom cluster 0x${clusterId.toString(16).toUpperCase()} (${clusterId}) found`);
+        if (typeof cluster.on === 'function') {
+          cluster.on('attr', (attrId, value) => {
+            this.log(`[${brand}] 0x${clusterId.toString(16).toUpperCase()} attr ${attrId}: ${JSON.stringify(value)}`);
+          });
+        }
       }
     }
   }
@@ -237,7 +263,7 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
    * Override for standard mode only
    */
   async _registerCapabilityListeners() {
-    if (this.isBseedDevice) return; // BSEED has its own listener
+    if (this.isZclOnlyDevice) return; // ZCL-only devices have their own listener
     
     await super._registerCapabilityListeners?.();
     this.registerCapabilityListener('onoff', async (value) => {
@@ -247,9 +273,9 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
   }
 
   onDeleted() {
-    // BSEED cleanup
-    if (this._bseedState?.appCommandTimeout) {
-      clearTimeout(this._bseedState.appCommandTimeout);
+    // ZCL-only cleanup
+    if (this._zclOnlyState?.appCommandTimeout) {
+      clearTimeout(this._zclOnlyState.appCommandTimeout);
     }
     super.onDeleted?.();
     this.log('[SWITCH-1G] Device removed');
