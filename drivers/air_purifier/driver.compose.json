@@ -31,6 +31,12 @@
       "units": "µg/m³"
     }
   },
+  "energy": {
+    "approximation": {
+      "usageOn": 45,
+      "usageOff": 2
+    }
+  },
   "zigbee": {
     "manufacturerName": [
       "_TZE200_7bztmfm1",
