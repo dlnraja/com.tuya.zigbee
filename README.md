@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.900** | 💡 Switch Behavior Settings: Power-On Behavior (off/on/memory), LED Backlight... |
 | **v5.5.899** | 🎯 Device Profiles: Comprehensive manufacturer-specific handling based on Z2M... |
 | **v5.5.898** | ⚙️ Configurable Physical Button Detection: New settings for all switch driver... |
 | **v5.5.897** | 🔵 BSEED Special Mode: Dedicated handling for _TZ3000_blhvsaqf/_TZ3000_ysdv91... |
@@ -78,7 +79,6 @@
 | **v5.5.893** | 📦 Enrichment: Added HOBEIAN ZG-303Z temp/humidity (blutch32 #1011). Cross-re... |
 | **v5.5.892** | 🔧 Motion Sensor FIX (Peter #1211): Removed orphan 'Distance' capability from... |
 | **v5.5.891** | 🔧 Bseed Switch: Added _TZ3000_ysdv91bk variant (Pieter_Pessers forum). PR #1... |
-| **v5.5.890** | 🌧️ Rain Sensor: Added IAS Zone support for TS0207 devices (Dominique_C forum... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
