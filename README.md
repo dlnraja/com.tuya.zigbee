@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.892** | 🔧 Motion Sensor FIX (Peter #1211): Removed orphan 'Distance' capability from... |
 | **v5.5.891** | 🔧 Bseed Switch: Added _TZ3000_ysdv91bk variant (Pieter_Pessers forum). PR #1... |
 | **v5.5.890** | 🌧️ Rain Sensor: Added IAS Zone support for TS0207 devices (Dominique_C forum... |
 | **v5.5.889** | ✨ NEW: Bseed 1-Gang Switch (PR #116 by packetninja) - Physical button detecti... |
@@ -78,7 +79,6 @@
 | **v5.5.885** | 💡 LED Strips: Removed incorrect battery capabilities, proper energy tracking... |
 | **v5.5.884** | 🌀 Ceiling Fan: Removed incorrect battery capability, added speed title local... |
 | **v5.5.883** | 🌡️ Climate Sensor and Generic Tuya Device: NL/DE localization for temperatur... |
-| **v5.5.882** | 💡 Dimmers: Wall Dimmer 1-Gang proper naming. 3-Gang Dimmer channel titles wi... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
