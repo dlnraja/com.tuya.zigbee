@@ -1,4 +1,7 @@
 {
+  "5.5.888": {
+    "en": "🔧 Motion Sensor FIX (Peter #1204): ZG-204ZV now correctly shows temperature & humidity. Removed incorrect PIR-only classification for 4-in-1 multisensors."
+  },
   "5.5.887": {
     "en": "🌡️ Air Quality CO2 Sensor: Fixed naming. Curtain Motor Tilt: Added energy approximation (40W)."
   },
