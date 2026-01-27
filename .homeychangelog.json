@@ -1,4 +1,7 @@
 {
+  "5.5.877": {
+    "en": "🔧 Fixes: LED Strip name fixed, Ceiling Fan proper energy (65W) + localization, Water Tank battery types added. Removed incorrect battery configs from AC devices."
+  },
   "5.5.876": {
     "en": "🔋 Energy Tracking: Garage door (150W), IR Blaster (2W constant), Dual Dimmer (100W), LED CCT Controller (24W). IR Blaster learn button now maintenance action."
   },
