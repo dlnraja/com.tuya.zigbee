@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.863** | 🔒 Device Classes: Smoke detector now uses 'smokedetector' class, CO sensor u... |
 | **v5.5.862** | 🏠 Flow Cards: Thermostat comfort presets (Eco/Away/Sleep/Boost) + schedule c... |
 | **v5.5.861** | 🎛️ Flow Cards: Added physical button triggers for switches. Highlighted key ... |
 | **v5.5.860** | 🔌 Flow Cards: Added power monitoring triggers (power_changed, power_threshol... |
@@ -78,7 +79,6 @@
 | **v5.5.856** | ✨ SDK3 Best Practices: Added Homey Energy approximation to switches (2-4 gang... |
 | **v5.5.855** | ✨ NEW: Periodic Auto-Enrichment for ALL drivers! Automatic ZCL cluster + Tuya... |
 | **v5.5.854** | 🔧 FIX: switch_dimmer_1gang physical button detection now works correctly (At... |
-| **v5.5.853** | 🔧 FIX: Moved _TZE284_3mzb0sdz from climate_sensor to ir_blaster - it's an IR... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
