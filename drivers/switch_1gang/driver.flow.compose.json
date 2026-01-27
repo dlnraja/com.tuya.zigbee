@@ -133,6 +133,22 @@
         "de": "Ausschalten"
       },
       "args": []
+    },
+    {
+      "id": "switch_1gang_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "hint": {
+        "en": "Toggle the switch state (on→off, off→on)",
+        "fr": "Basculer l'état (on→off, off→on)",
+        "nl": "Wissel de status (aan→uit, uit→aan)",
+        "de": "Status umschalten (ein→aus, aus→ein)"
+      },
+      "args": []
     }
   ]
 }
