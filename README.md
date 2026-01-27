@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.869** | 🏠 Device Classes: Cover Controller now uses 'curtains' class, Roller Shutter... |
 | **v5.5.868** | ✨ Flow Cards: Added highlights to 3-gang, 4-gang switches, RGB bulb, radiator... |
 | **v5.5.867** | ⚡ Energy Tracking: Air purifier (45W), smart heater (2000W), fan controller (... |
 | **v5.5.866** | ⚡ SDK3 Best Practices: Fixed LED strip energy (24W), added radiator valve cal... |
@@ -78,7 +79,6 @@
 | **v5.5.862** | 🏠 Flow Cards: Thermostat comfort presets (Eco/Away/Sleep/Boost) + schedule c... |
 | **v5.5.861** | 🎛️ Flow Cards: Added physical button triggers for switches. Highlighted key ... |
 | **v5.5.860** | 🔌 Flow Cards: Added power monitoring triggers (power_changed, power_threshol... |
-| **v5.5.859** | 📡 Sensors: Added alarm_tamper + measure_temperature to contact, motion, wate... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
