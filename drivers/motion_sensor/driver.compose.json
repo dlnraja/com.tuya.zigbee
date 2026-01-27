@@ -8,8 +8,10 @@
   "class": "sensor",
   "capabilities": [
     "alarm_motion",
+    "alarm_tamper",
     "measure_battery",
-    "measure_luminance"
+    "measure_luminance",
+    "measure_temperature"
   ],
   "energy": {
     "batteries": [
