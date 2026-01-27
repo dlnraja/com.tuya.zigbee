@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.893** | 📦 Enrichment: Added HOBEIAN ZG-303Z temp/humidity (blutch32 #1011). Cross-re... |
 | **v5.5.892** | 🔧 Motion Sensor FIX (Peter #1211): Removed orphan 'Distance' capability from... |
 | **v5.5.891** | 🔧 Bseed Switch: Added _TZ3000_ysdv91bk variant (Pieter_Pessers forum). PR #1... |
 | **v5.5.890** | 🌧️ Rain Sensor: Added IAS Zone support for TS0207 devices (Dominique_C forum... |
@@ -78,7 +79,6 @@
 | **v5.5.886** | 💡 Smart Bulbs: Major cleanup - removed incorrect battery capabilities from a... |
 | **v5.5.885** | 💡 LED Strips: Removed incorrect battery capabilities, proper energy tracking... |
 | **v5.5.884** | 🌀 Ceiling Fan: Removed incorrect battery capability, added speed title local... |
-| **v5.5.883** | 🌡️ Climate Sensor and Generic Tuya Device: NL/DE localization for temperatur... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
