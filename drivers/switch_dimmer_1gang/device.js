@@ -187,8 +187,11 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
       });
 
       tuyaCluster.on('response', (data) => {
-        this.log('Tuya response:', JSON.stringify(data, null, 2));
-        this.handleTuyaDataReport(data);
+        // v5.5.828: Fix physical button detection (Attilla's report)
+        // Physical presses come as 'response' events, not 'reporting'
+        const isPhysical = !this._appCommandPending;
+        this.log(`>>> EVENT: response (dp: ${data?.dp}) - ${isPhysical ? 'PHYSICAL' : 'APP'}`);
+        this.handleTuyaDataReport(data, isPhysical);
       });
 
       tuyaCluster.on('reporting', (data) => {
@@ -326,19 +329,13 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
         this._lastOnoffState = state;
         this.setCapabilityValue('onoff', state).catch(this.error);
         
-        // Trigger flow cards ONLY if this is a physical button press
+        // v5.5.828: Trigger flow cards ONLY if this is a physical button press
         if (isPhysicalPress) {
-          if (state) {
-            this.log('Triggering: switch_dimmer_1gang_turned_on (PHYSICAL)');
-            this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_turned_on')
-              .trigger(this, {}, {})
-              .catch(this.error);
-          } else {
-            this.log('Triggering: switch_dimmer_1gang_turned_off (PHYSICAL)');
-            this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_turned_off')
-              .trigger(this, {}, {})
-              .catch(this.error);
-          }
+          const flowCardId = state ? 'switch_dimmer_1gang_turned_on' : 'switch_dimmer_1gang_turned_off';
+          this.log(`Triggering: ${flowCardId}`);
+          this.homey.flow.getDeviceTriggerCard(flowCardId)
+            .trigger(this, {}, {})
+            .catch(err => this.error(`Flow trigger failed: ${err.message}`));
         }
       } else {
         // Heartbeat with no change - don't log or trigger

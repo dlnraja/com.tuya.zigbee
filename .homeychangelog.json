@@ -1,4 +1,7 @@
 {
+  "5.5.828": {
+    "en": "🔘 PHYSICAL BUTTON FIX (Attilla's report): switch_dimmer_1gang now correctly detects physical button presses! Flow cards 'turned_on' and 'turned_off' trigger properly. Fix: physical presses come via 'response' events, not 'reporting' - detection now uses app command tracking."
+  },
   "5.5.827": {
     "en": "🔧 DIAGNOSTICS BATCH FIX: 1) AVATTO TRV Smart Radiator Valve (_TZE284_o3x45p96) - added fingerprint for thermostat driver. 2) BSEED 4-Gang fingerprints already present (TS0726/_TZ3002_pzao9ls1). 3) Flow card ID fixes from v5.5.794 diagnostics already resolved in newer versions. All issues from Gmail diagnostics reports analyzed and addressed."
   },
