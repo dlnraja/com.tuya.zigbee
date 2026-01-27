@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.912** | 🌡️ ZG-204ZV Fix: Added ZCL temperature (0x0402) + humidity (0x0405) cluster ... |
 | **v5.5.911** | 💧 Water Valve Enhancement: Z2M DP mappings (water consumption, flow rate, te... |
 | **v5.5.910** | 🔥 CRITICAL FIX: PhysicalButtonMixin crash (Invalid Flow Card ID). getDeviceT... |
 | **v5.5.909** | 🔥 CRITICAL FIX: Radiator valve driver crash (Class extends undefined). Manue... |
@@ -78,7 +79,6 @@
 | **v5.5.905** | 📊 Enhanced Diagnostics for ALL Sensors: HybridSensorBase now logs DP data wi... |
 | **v5.5.904** | 🧹 Orphan Capability Cleanup: Radar sensors now auto-remove capabilities not ... |
 | **v5.5.903** | 🛠️ Forum Fixes: _TZE284_iadro9bf motion alarm stuck - added stuck pattern de... |
-| **v5.5.902** | 📊 Diagnostic Logs Cleanup: Removed verbose ID DATABASE logging (was pollutin... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
