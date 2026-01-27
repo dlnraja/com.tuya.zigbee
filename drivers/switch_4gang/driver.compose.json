@@ -886,6 +886,16 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "type": "group",
+      "label": { "en": "🔘 Physical Button Detection", "fr": "🔘 Détection Bouton Physique", "nl": "🔘 Fysieke Knop Detectie", "de": "🔘 Physische Tastenerkennung" },
+      "children": [
+        { "id": "physical_button_enabled", "type": "checkbox", "label": { "en": "Enable Physical Button Detection", "fr": "Activer détection bouton physique" }, "value": true, "hint": { "en": "Detect when physical button is pressed vs app/voice commands", "fr": "Détecter quand le bouton physique est appuyé vs commandes app/voix" } },
+        { "id": "app_command_timeout", "type": "number", "label": { "en": "App Command Window (ms)", "fr": "Fenêtre commande app (ms)" }, "value": 500, "min": 100, "max": 5000, "step": 100, "hint": { "en": "Time window to distinguish app commands from physical presses", "fr": "Fenêtre de temps pour distinguer les commandes app des pressions physiques" } },
+        { "id": "double_click_window", "type": "number", "label": { "en": "Double Click Window (ms)", "fr": "Fenêtre double-clic (ms)" }, "value": 400, "min": 200, "max": 1000, "step": 50, "hint": { "en": "Time window to detect double/triple clicks", "fr": "Fenêtre de temps pour détecter les doubles/triples clics" } },
+        { "id": "long_press_threshold", "type": "number", "label": { "en": "Long Press Threshold (ms)", "fr": "Seuil pression longue (ms)" }, "value": 600, "min": 300, "max": 2000, "step": 100, "hint": { "en": "How long button must be held for long press detection", "fr": "Durée de maintien du bouton pour détecter une pression longue" } }
+      ]
     }
   ],
   "name": {
