@@ -5,7 +5,7 @@
     "nl": "CO Sensor",
     "de": "CO Sensor"
   },
-  "class": "sensor",
+  "class": "co",
   "capabilities": [
     "alarm_co",
     "measure_battery",

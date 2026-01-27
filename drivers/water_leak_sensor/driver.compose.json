@@ -6,6 +6,7 @@
     "de": "Wasserlecksensor"
   },
   "class": "sensor",
+  "virtualClass": "homealarm",
   "capabilities": [
     "alarm_water",
     "alarm_tamper",
