@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.890** | 🌧️ Rain Sensor: Added IAS Zone support for TS0207 devices (Dominique_C forum... |
 | **v5.5.889** | ✨ NEW: Bseed 1-Gang Switch (PR #116 by packetninja) - Physical button detecti... |
 | **v5.5.888** | 🔧 Motion Sensor FIX (Peter #1204): ZG-204ZV now correctly shows temperature ... |
 | **v5.5.887** | 🌡️ Air Quality CO2 Sensor: Fixed naming. Curtain Motor Tilt: Added energy ap... |
@@ -78,7 +79,6 @@
 | **v5.5.883** | 🌡️ Climate Sensor and Generic Tuya Device: NL/DE localization for temperatur... |
 | **v5.5.882** | 💡 Dimmers: Wall Dimmer 1-Gang proper naming. 3-Gang Dimmer channel titles wi... |
 | **v5.5.881** | 🔧 Fixes: SOS Button class changed to 'button' + full localization. Door Cont... |
-| **v5.5.880** | 🌬️ Sensors: Gas Detector, Air Quality CO2, Comprehensive Air Monitor - prope... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
