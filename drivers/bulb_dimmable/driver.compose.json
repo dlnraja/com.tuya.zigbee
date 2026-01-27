@@ -1,19 +1,18 @@
 {
   "name": {
-    "en": "Smart Bulb Dimmer",
-    "fr": "Smart Bulb Dimmer",
+    "en": "Smart Bulb Dimmable",
+    "fr": "Ampoule Connectée Dimmable",
     "nl": "Dimbare Lamp",
     "de": "Dimmbare Glühbirne"
   },
   "class": "light",
   "capabilities": [
+    "onoff",
     "dim",
     "light_hue",
     "light_saturation",
     "light_temperature",
-    "light_mode",
-    "onoff",
-    "measure_battery"
+    "light_mode"
   ],
   "energy": {
     "approximation": {

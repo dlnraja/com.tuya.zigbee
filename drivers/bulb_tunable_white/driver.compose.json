@@ -1,27 +1,22 @@
 {
   "name": {
-    "en": "Bulb Tunable",
-    "fr": "Bulb Tunable",
+    "en": "Tunable White Bulb",
+    "fr": "Ampoule Blanc Ajustable",
     "nl": "Instelbaar Wit Lamp",
     "de": "Einstellbares Weißlicht"
   },
   "class": "light",
   "capabilities": [
-    "dim",
-    "light_hue",
-    "light_saturation",
-    "light_temperature",
-    "light_mode",
     "onoff",
-    "measure_battery"
+    "dim",
+    "light_temperature",
+    "light_mode"
   ],
   "energy": {
     "approximation": {
-      "usageConstant": 0.5
-    },
-    "batteries": [
-      "OTHER"
-    ]
+      "usageOn": 9,
+      "usageOff": 0.5
+    }
   },
   "zigbee": {
     "manufacturerName": [
