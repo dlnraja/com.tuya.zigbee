@@ -1,4 +1,7 @@
 {
+  "5.5.889": {
+    "en": "✨ NEW: Bseed 1-Gang Switch (PR #116 by packetninja) - Physical button detection, flow triggers. Added FR/DE localization."
+  },
   "5.5.888": {
     "en": "🔧 Motion Sensor FIX (Peter #1204): ZG-204ZV now correctly shows temperature & humidity. Removed incorrect PIR-only classification for 4-in-1 multisensors."
   },
