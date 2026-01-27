@@ -1,7 +1,7 @@
 # User Device Expectations & Diagnostic Summary
 
 This document summarizes user-reported devices and their expected behavior based on diagnostic logs and community feedback.
-**Last Updated**: 2026-01-27 (v5.5.840)
+**Last Updated**: 2026-01-27 (v5.5.841)
 
 > ⚠️ **WORKFLOW**: This document must be updated at each prompt/session in Windsurf AI to stay synchronized with code changes.
 
@@ -34,7 +34,7 @@ This document summarizes user-reported devices and their expected behavior based
 | 14 | FrankP | IR Blaster | unknown | TS1201 | Errors in latest version | ✅ v5.5.565 Flow cards verified | Check flow setup |
 | 15 | ManuelKugler | Valve | `_TZE284_o3x45p96` | TS0601 | Request to add | ✅ v5.5.827 fingerprint added | **RE-PAIR REQUIRED** |
 | 16 | Cam | HOBEIAN ZG-204ZL | `HOBEIAN` | ZG-204ZL | Motion always active | ✅ v5.5.840 invert_presence fix | Enable "Invert Motion" setting |
-| 17 | Peter_van_Werkhoven | HOBEIAN ZG-204ZV | `HOBEIAN` | ZG-204ZV | SOS button triggers app not Flow, no Temp/Hum | ⚠️ Diag 52546992 | Check DP mappings |
+| 17 | Peter_van_Werkhoven | HOBEIAN ZG-204ZV | `HOBEIAN` | ZG-204ZV | SOS button triggers app not Flow, no Temp/Hum | ✅ v5.5.841 FIXED | **RE-PAIR REQUIRED** |
 | 18 | Hartmut_Dunker | switch_4gang | `_TZ3002_*` | TS0726 | Buttons still don't work v718 | ⚠️ Diag 8cbd94dd | Check onOff bindings |
 | 19 | DVMasters | LoraTap 3-Button | unknown | TS0043 | Not working v5.5.820 | ✅ IN CODE button_wireless_3 | **RE-PAIR REQUIRED** |
 | 20 | csmobiel | Soil Sensor | `_TZE284_aao3yzhs` | TS0601 | Pairs as unknown | ✅ IN CODE soil_sensor | **RE-PAIR REQUIRED** |
