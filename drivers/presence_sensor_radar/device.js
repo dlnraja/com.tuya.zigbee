@@ -690,7 +690,9 @@ const SENSOR_CONFIGS = {
   'ZG_204ZV_MULTISENSOR': {
     sensors: [
       '_TZE200_3towulqd', '_TZE204_3towulqd', '_tze200_3towulqd',
+      'HOBEIAN',  // v5.5.841: Added for direct HOBEIAN ZG-204ZV matching
     ],
+    modelId: 'ZG-204ZV',  // v5.5.841: Explicit modelId for HOBEIAN routing
     battery: true,
     hasIlluminance: true,
     noTemperature: false,   // v5.5.831: ZG-204ZV HAS temperature!
@@ -702,6 +704,9 @@ const SENSOR_CONFIGS = {
       4: { cap: 'measure_humidity', divisor: 1 },
       9: { cap: 'measure_luminance', type: 'lux_direct' },
       10: { cap: 'measure_battery', divisor: 1 },
+      // v5.5.841: SOS button (Peter_van_Werkhoven diagnostic - DP17 or DP18 typical for SOS)
+      17: { cap: 'alarm_generic', type: 'bool', flowTrigger: 'sos_pressed' },
+      18: { cap: 'alarm_generic', type: 'bool', flowTrigger: 'sos_pressed' },
     }
   },
 
@@ -1263,6 +1268,13 @@ function getSensorConfig(manufacturerName, modelId = null) {
       if (modelId === 'ZG-204ZM') {
         console.log(`[RADAR] 🔍 HOBEIAN ZG-204ZM matched → HOBEIAN_ZG204ZM config (HYBRID: ZCL + Tuya DP)`);
         return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
+      }
+      // v5.5.841: HOBEIAN ZG-204ZV MULTISENSOR (Peter_van_Werkhoven diagnostic fix)
+      // 5-in-1 sensor: motion, illuminance, temp, humidity, battery
+      // DP mappings: DP1=motion, DP3=temp÷10, DP4=humidity, DP9=lux, DP10=battery
+      if (modelId === 'ZG-204ZV') {
+        console.log(`[RADAR] 🔍 HOBEIAN ZG-204ZV matched → ZG_204ZV_MULTISENSOR config (5-in-1: motion+lux+temp+hum+battery)`);
+        return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };
       }
       // v5.5.740: HOBEIAN 10G multi-sensor from PR #1306
       if (modelId === 'ZG-227Z') {

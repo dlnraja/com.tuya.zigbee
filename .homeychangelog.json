@@ -1,4 +1,7 @@
 {
+  "5.5.841": {
+    "en": "🔧 DIAGNOSTIC FIX (Peter_van_Werkhoven): HOBEIAN ZG-204ZV multisensor COMPLETE FIX! (1) Fixed config routing - HOBEIAN+ZG-204ZV modelId now correctly routes to ZG_204ZV_MULTISENSOR config. (2) Temperature & humidity now report properly via DP3/DP4. (3) Added SOS button DP17/DP18 mapping for flow triggers. Re-pair device to apply fix."
+  },
   "5.5.840": {
     "en": "🔄 FORUM FIX (Cam): HOBEIAN ZG-204ZL motion sensor 'always active' issue FIXED! The invert_presence setting was not being applied to IAS Zone and Tuya DP motion handlers. Now motion inversion works correctly for sensors reporting inverted values. Go to device settings → enable 'Invert Motion Detection' if your sensor shows always active or never active."
   },
