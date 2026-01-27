@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.878** | 🌡️ HVAC: Air Conditioner (1200W) and Dehumidifier (350W) proper energy track... |
 | **v5.5.877** | 🔧 Fixes: LED Strip name fixed, Ceiling Fan proper energy (65W) + localizatio... |
 | **v5.5.876** | 🔋 Energy Tracking: Garage door (150W), IR Blaster (2W constant), Dual Dimmer... |
 | **v5.5.875** | ⚡ Smart RCBO: Changed to 'socket' class with cumulative energy tracking. Adde... |
@@ -78,7 +79,6 @@
 | **v5.5.871** | 🌍 Localization: Added Dutch (NL) and German (DE) translations to pairing ins... |
 | **v5.5.870** | 📊 Energy Monitoring: Smart plugs with power measurement now use cumulative e... |
 | **v5.5.869** | 🏠 Device Classes: Cover Controller now uses 'curtains' class, Roller Shutter... |
-| **v5.5.868** | ✨ Flow Cards: Added highlights to 3-gang, 4-gang switches, RGB bulb, radiator... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
