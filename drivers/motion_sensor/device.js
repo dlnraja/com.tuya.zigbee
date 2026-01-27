@@ -443,23 +443,15 @@ class MotionSensorDevice extends HybridSensorBase {
   }
 
   static get PIR_ONLY_MANUFACTURERS() {
+    // v5.5.888: FORUM FIX (Peter_van_Werkhoven #1204)
+    // Removed _TZE200_3towulqd - this is ZG-204ZV with temp/humidity (handled by ZG204ZV profile)
+    // Only include devices that truly have NO temp/humidity sensors
     return [
-      // v5.5.366: Expanded list per 4x4_Pete forum feedback #851
-      // These devices only have motion + luminance, NO temp/humidity
-      '_TZE200_3towulqd',  // ZG-204ZL PIR only
-      '_tze200_3towulqd',
-      '_TZE204_3towulqd',
-      '_tze204_3towulqd',
-      '_TZE200_1ibpyhdc',  // ZG-204ZL variant
+      '_TZE200_1ibpyhdc',  // ZG-204ZL PIR only variant
       '_tze200_1ibpyhdc',
-      '_TZE200_bh3n6gk8',  // ZG-204ZL variant
+      '_TZE200_bh3n6gk8',  // ZG-204ZL PIR only variant
       '_tze200_bh3n6gk8',
-      '_TZE200_2aaelwxk',  // ZG-204ZM battery
-      '_tze200_2aaelwxk',
-      '_TZE204_2aaelwxk',
-      '_tze204_2aaelwxk',
-      '_TZE200_kb5noeto',  // ZG-204ZM variant
-      '_tze200_kb5noeto',
+      // Note: ZG-204ZM radar sensors handled by ZG204ZM_RADAR profile
     ];
   }
 
