@@ -1,4 +1,7 @@
 {
+  "5.5.830": {
+    "en": "📧 EMAIL/ZHA BATCH: Added new 6-channel relay fingerprints from ZHA issue #4376: _TZE284_l8xiyymq (PN6), _TZE204_znbl8dj5, _TZE204_ikvncluo. Verified Zbeacon TH01 and soil sensor _TZE284_aa03yzhs already supported. Sources: Gmail diagnostics, ZHA device handlers, Z2M database."
+  },
   "5.5.829": {
     "en": "🔧 ATTILLA/PACKETNINJA PATTERN: Applied physical button detection to dimmer_3gang driver! Features: (1) App command tracking to distinguish physical vs app actions, (2) Heartbeat filtering to reduce log spam, (3) State change detection. Inspired by PR #112 contributions."
   },
