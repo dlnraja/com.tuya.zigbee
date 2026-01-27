@@ -17,11 +17,9 @@
   ],
   "energy": {
     "approximation": {
-      "usageConstant": 0.5
-    },
-    "batteries": [
-      "OTHER"
-    ]
+      "usageOn": 7,
+      "usageOff": 0.5
+    }
   },
   "zigbee": {
     "manufacturerName": [
