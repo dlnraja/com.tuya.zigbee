@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.918** | 🐛 FORUM FIX (Lasse_K #1700): Fixed contact sensors installing in reverse - I... |
 | **v5.5.917** | 🔍 FORK/PR AUDIT: Added Longsam mini m3 Smart Curtain (_TZE204_xu4a5rhj) from... |
 | **v5.5.916** | 🐛 CRITICAL FIX: Fixed manufacturer/model retrieval in all base classes (Hybr... |
 | **v5.5.915** | 🔀 FORK ANALYSIS v2: Analyzed 75+ forks (JohanBendz network + dlnraja childre... |
@@ -78,7 +79,6 @@
 | **v5.5.911** | 💧 Water Valve Enhancement: Z2M DP mappings (water consumption, flow rate, te... |
 | **v5.5.910** | 🔥 CRITICAL FIX: PhysicalButtonMixin crash (Invalid Flow Card ID). getDeviceT... |
 | **v5.5.909** | 🔥 CRITICAL FIX: Radiator valve driver crash (Class extends undefined). Manue... |
-| **v5.5.908** | 🚪 Forum Fix #1011: Contact sensor _TZ3000_996rpfy6 (TS0203) always showing '... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
