@@ -186,7 +186,7 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
   }
 
   /**
-   * BSEED: Mark app command (2-second window)
+   * BSEED: Mark app command (configurable timeout, default 2000ms)
    */
   _markBseedAppCommand() {
     const state = this._bseedState;
@@ -194,11 +194,13 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     
     if (state.appCommandTimeout) clearTimeout(state.appCommandTimeout);
     
-    // BSEED needs 2-second window (slower device response)
+    // Get timeout from settings or use BSEED default (2000ms)
+    const timeout = this.getSetting?.('app_command_timeout') || 2000;
+    
     state.appCommandTimeout = setTimeout(() => {
       state.appCommandPending = false;
       this.log('[BSEED] App command window closed');
-    }, 2000);
+    }, timeout);
   }
 
   /**
