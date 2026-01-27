@@ -1,4 +1,7 @@
 {
+  "5.5.829": {
+    "en": "🔧 ATTILLA/PACKETNINJA PATTERN: Applied physical button detection to dimmer_3gang driver! Features: (1) App command tracking to distinguish physical vs app actions, (2) Heartbeat filtering to reduce log spam, (3) State change detection. Inspired by PR #112 contributions."
+  },
   "5.5.828": {
     "en": "🔘 PHYSICAL BUTTON FIX (Attilla's report): switch_dimmer_1gang now correctly detects physical button presses! Flow cards 'turned_on' and 'turned_off' trigger properly. Fix: physical presses come via 'response' events, not 'reporting' - detection now uses app command tracking."
   },
