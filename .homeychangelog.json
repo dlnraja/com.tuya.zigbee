@@ -1,4 +1,7 @@
 {
+  "5.5.851": {
+    "en": "🔧 FIX: Removed _TZ3000_h1ipgkwn from switch_2gang - it's a Dual USB switch (Z2M #23625), not a wall switch. Now correctly maps to usb_dongle_dual_repeater. RE-PAIR required."
+  },
   "5.5.850": {
     "en": "🔧 FIX: IAS Zone warning now only shows for pure IAS devices. Hybrid Tuya DP devices won't show misleading 're-pair' warnings since they work via DP fallback."
   },
