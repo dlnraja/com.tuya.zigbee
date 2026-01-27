@@ -12,6 +12,14 @@
     "meter_power",
     "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "meter_power": {
+      "approximated": false
+    }
+  },
+  "energy": {
+    "cumulative": true
+  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_typdpbpg",
