@@ -1,4 +1,7 @@
 {
+  "5.5.859": {
+    "en": "📡 Sensors: Added alarm_tamper + measure_temperature to contact, motion, water leak sensors. Better device indicators and auto-discovery support."
+  },
   "5.5.858": {
     "en": "🎯 UX: Highlighted important dimmer settings (min_brightness) for quick access during pairing. Improved hints for LED compatibility."
   },
