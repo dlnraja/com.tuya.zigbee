@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.832** | 🆘 FORUM FIX (Peter_van_Werkhoven #1203): SOS button flow cards now trigger p... |
 | **v5.5.831** | 🌡️ FORUM FIX (Peter_van_Werkhoven): HOBEIAN ZG-204ZV multisensor now reports... |
 | **v5.5.830** | 📧 EMAIL/ZHA BATCH: Added new 6-channel relay fingerprints from ZHA issue #43... |
 | **v5.5.829** | 🔧 ATTILLA/PACKETNINJA PATTERN: Applied physical button detection to dimmer_3... |
@@ -78,7 +79,6 @@
 | **v5.5.825** | 🔧 SENSOR FIX: Extended v5.5.824 fix to HybridSensorBase! Climate sensors (te... |
 | **v5.5.824** | 🚨 CRITICAL FIX: Devices not working after update! Root cause found: reportin... |
 | **v5.5.823** | 🎛️ TS004F SMART KNOB FIX (GitHub #113): Added LevelControlBoundCluster suppo... |
-| **v5.5.822** | 🔄 FRESH Z2M SYNC + USER INTERVIEWS: Synced TuyaDataPointsZ2M.js with latest ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
