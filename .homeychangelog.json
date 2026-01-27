@@ -1,4 +1,7 @@
 {
+  "5.5.911": {
+    "en": "💧 Water Valve Enhancement: Z2M DP mappings (water consumption, flow rate, temp, battery). Added fingerprints: vuwtqx0t, fphxkxue, a7sghmms. Pieter_Pessers: RE-PAIR water valve after update."
+  },
   "5.5.910": {
     "en": "🔥 CRITICAL FIX: PhysicalButtonMixin crash (Invalid Flow Card ID). getDeviceTriggerCard throws synchronously - wrapped in try-catch. App no longer crashes when physical flow cards missing."
   },
