@@ -1,4 +1,7 @@
 {
+  "5.5.833": {
+    "en": "🌧️ FORUM FIX (Dominique_C #1202): Rain sensor TS0207/_TZ3210_p68kms0l now pairs correctly! Added missing TS0207 productId to rain_sensor driver. IAS Zone error should be resolved."
+  },
   "5.5.832": {
     "en": "🆘 FORUM FIX (Peter_van_Werkhoven #1203): SOS button flow cards now trigger properly! Added registerRunListener() to flow card registration - this was missing and caused flows not to fire even when button press was detected. Also includes ZG-204ZV temp/humidity fix from v5.5.831."
   },
