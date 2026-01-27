@@ -7,9 +7,8 @@
   },
   "class": "light",
   "capabilities": [
-    "dim",
-    "measure_battery",
     "onoff",
+    "dim",
     "light_hue",
     "light_saturation",
     "light_mode"
