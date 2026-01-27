@@ -17,7 +17,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * ║  - Standard ZCL onOff (cluster 6) - NOT Tuya DP                             ║
  * ║  - 2000ms app command window (slower device response)                       ║
  * ║  - Dedicated physical button detection via attribute reports                ║
- * ║  - PR #116 by packetninja - Full feature parity                             ║
+ * ║  - PR #118 by packetninja (Attilla) - Full feature parity                   ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 
@@ -29,7 +29,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * - TS0726: BSEED 4-gang needs explicit binding
  */
 const ZCL_ONLY_MANUFACTURERS = [
-  // BSEED (PR #116, Blakadder, forum diagnostics)
+  // BSEED (PR #118 packetninja/Attilla, Blakadder, forum diagnostics)
   '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk', '_TZ3000_hafsqare', 
   '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt',
   // Zemismart (ZHA #2443)
@@ -123,7 +123,7 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
    * ════════════════════════════════════════════════════════════════════════════
    * ZCL-ONLY MODE INITIALIZATION
    * For: BSEED, Zemismart, and other devices that don't use Tuya DP
-   * Sources: PR #116, ZHA #2443, Z2M #14523, forum reports
+   * Sources: PR #118 (packetninja/Attilla), ZHA #2443, Z2M #14523, forum reports
    * Features:
    * - Standard ZCL onOff control (cluster 6) per endpoint
    * - Custom clusters 0xE000 (57344) and 0xE001 (57345) if present
@@ -134,7 +134,10 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
   async _initZclOnlyMode(zclNode, profile = {}) {
     const brand = profile.brand || 'ZCL-Only';
     this.log(`[${brand}] Initializing ${brand} 1-Gang Switch...`);
-    this.printNode?.();
+    // v5.5.913: Print node info for debugging (packetninja PR #118)
+    if (typeof this.printNode === 'function') {
+      this.printNode();
+    }
 
     // ZCL-only state tracking
     this._zclOnlyState = {
