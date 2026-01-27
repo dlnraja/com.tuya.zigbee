@@ -1,9 +1,9 @@
 {
   "name": {
     "en": "Comprehensive Air Monitor",
-    "fr": "Comprehensive Air Monitor",
-    "nl": "Uitgebreide Luchtkwaliteit",
-    "de": "Umfassende Luftqualität"
+    "fr": "Moniteur Air Complet",
+    "nl": "Uitgebreide Luchtmonitor",
+    "de": "Umfassender Luftmonitor"
   },
   "class": "sensor",
   "capabilities": [
@@ -19,7 +19,9 @@
     "alarm_generic": {
       "title": {
         "en": "Air Quality Alert",
-        "fr": "Alerte Qualité Air"
+        "fr": "Alerte Qualité Air",
+        "nl": "Luchtkwaliteit Alarm",
+        "de": "Luftqualität Alarm"
       }
     }
   },
