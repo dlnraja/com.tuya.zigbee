@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.916** | 🐛 CRITICAL FIX: Fixed manufacturer/model retrieval in all base classes (Hybr... |
 | **v5.5.915** | 🔀 FORK ANALYSIS v2: Analyzed 75+ forks (JohanBendz network + dlnraja childre... |
 | **v5.5.914** | 🔀 FORK ANALYSIS: Integrated improvements from shaarkys & eelco2k forks. ZG-2... |
 | **v5.5.913** | 🎉 PR #118 MERGED (packetninja/Attilla): BSEED switch ZCL-only mode with phys... |
@@ -78,7 +79,6 @@
 | **v5.5.909** | 🔥 CRITICAL FIX: Radiator valve driver crash (Class extends undefined). Manue... |
 | **v5.5.908** | 🚪 Forum Fix #1011: Contact sensor _TZ3000_996rpfy6 (TS0203) always showing '... |
 | **v5.5.907** | 🔋 Forum Fix #1225: HOBEIAN ZG-204ZV battery capability now auto-added. Senso... |
-| **v5.5.906** | 🎯 New Flow Cards: Toggle action for 1-gang switch. Toggle + All-gangs action... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
