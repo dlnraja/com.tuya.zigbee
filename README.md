@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.903** | 🛠️ Forum Fixes: _TZE284_iadro9bf motion alarm stuck - added stuck pattern de... |
 | **v5.5.902** | 📊 Diagnostic Logs Cleanup: Removed verbose ID DATABASE logging (was pollutin... |
 | **v5.5.901** | 🔧 BSEED Fix: Improved manufacturer detection with multiple fallback sources.... |
 | **v5.5.900** | 💡 Switch Behavior Settings: Power-On Behavior (off/on/memory), LED Backlight... |
@@ -78,7 +79,6 @@
 | **v5.5.896** | 🎯 PhysicalButtonMixin: Advanced button detection for all switch drivers (1-4... |
 | **v5.5.895** | 🔀 MERGED: switch_1gang_bseed → switch_1gang. Unified driver supports Tuya DP... |
 | **v5.5.894** | 🎨 Flow Cards: Enhanced switch drivers (1-4 gang) with titleFormatted, device... |
-| **v5.5.893** | 📦 Enrichment: Added HOBEIAN ZG-303Z temp/humidity (blutch32 #1011). Cross-re... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
