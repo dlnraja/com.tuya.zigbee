@@ -20,13 +20,17 @@
     "measure_temperature": {
       "title": {
         "en": "Temperature",
-        "fr": "Température"
+        "fr": "Température",
+        "nl": "Temperatuur",
+        "de": "Temperatur"
       }
     },
     "measure_humidity": {
       "title": {
         "en": "Humidity",
-        "fr": "Humidité"
+        "fr": "Humidité",
+        "nl": "Luchtvochtigheid",
+        "de": "Luftfeuchtigkeit"
       }
     }
   },
