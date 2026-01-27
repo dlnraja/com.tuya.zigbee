@@ -1,4 +1,7 @@
 {
+  "5.5.900": {
+    "en": "💡 Switch Behavior Settings: Power-On Behavior (off/on/memory), LED Backlight Mode (off/normal/inverted), Child Lock. All 1-4 gang switches. Z2M parity. Forum feedback integration complete."
+  },
   "5.5.899": {
     "en": "🎯 Device Profiles: Comprehensive manufacturer-specific handling based on Z2M/ZHA research. BSEED, Zemismart (ZHA #2443), Moes, TS0726 profiles. ZCL-only mode auto-detection, custom clusters 0xE000/0xE001, per-endpoint control."
   },
