@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.851** | 🔧 FIX: Removed _TZ3000_h1ipgkwn from switch_2gang - it's a Dual USB switch (... |
 | **v5.5.850** | 🔧 FIX: IAS Zone warning now only shows for pure IAS devices. Hybrid Tuya DP ... |
 | **v5.5.849** | 🔧 FIX: Removed _TZE204_laokfqwu from climate_sensor - it's an mmWave presenc... |
 | **v5.5.848** | 🔧 SDK3 COMPLIANCE: Per Homey Developer docs - deferred init communication (d... |
@@ -78,7 +79,6 @@
 | **v5.5.844** | 🔍 BLAKADDER/ZHA VERIFICATION: Added missing TRV fingerprints (_TZE204_pay2by... |
 | **v5.5.843** | 🔍 BLAKADDER VERIFICATION: Added missing motion sensor fingerprints (_TYZB01_... |
 | **v5.5.842** | 📦 Maintenance release - all previous fixes included (HOBEIAN ZG-204ZV temp/h... |
-| **v5.5.841** | 🔧 DIAGNOSTIC FIX (Peter_van_Werkhoven): HOBEIAN ZG-204ZV multisensor COMPLET... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
