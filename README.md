@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.826** | 🔧 DIAGNOSTICS FIXES: 1) HOBEIAN ZG-204ZV multi-sensor now reports temperatur... |
 | **v5.5.825** | 🔧 SENSOR FIX: Extended v5.5.824 fix to HybridSensorBase! Climate sensors (te... |
 | **v5.5.824** | 🚨 CRITICAL FIX: Devices not working after update! Root cause found: reportin... |
 | **v5.5.823** | 🎛️ TS004F SMART KNOB FIX (GitHub #113): Added LevelControlBoundCluster suppo... |
@@ -78,7 +79,6 @@
 | **v5.5.819** | 🎮 LoraTap TS0043 FIX (DVMasters #98): 3-button remote now recognized! Added ... |
 | **v5.5.818** | 🔘 BSEED TS0726 4-GANG FIX (Hartmut #1194): Physical buttons now work! Added ... |
 | **v5.5.817** | 🔘 HOBEIAN ZG-101ZL FIX (Ronny_M #1197): Added SDK3 method aliases (setOn/set... |
-| **v5.5.816** | 🔧 FIX: Added missing driver.js files for 12 drivers (air_purifier, din_rail_... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
