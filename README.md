@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.854** | 🔧 FIX: switch_dimmer_1gang physical button detection now works correctly (At... |
 | **v5.5.853** | 🔧 FIX: Moved _TZE284_3mzb0sdz from climate_sensor to ir_blaster - it's an IR... |
 | **v5.5.852** | 🔧 FIX: HOBEIAN ZG-204ZV now properly adds temperature + humidity capabilitie... |
 | **v5.5.851** | 🔧 FIX: Removed _TZ3000_h1ipgkwn from switch_2gang - it's a Dual USB switch (... |
@@ -78,7 +79,6 @@
 | **v5.5.847** | 🔧 DEVICE FIX: Fixed _TZE204_laokfqwu misidentification - moved from CO2 sens... |
 | **v5.5.846** | 🔍 EXTENDED VERIFICATION: Added 5 more TRV fingerprints (_TZE204_wgrffniy, _T... |
 | **v5.5.845** | 🔍 DEEP VERIFICATION: Added 7 missing fingerprints verified against Blakadder... |
-| **v5.5.844** | 🔍 BLAKADDER/ZHA VERIFICATION: Added missing TRV fingerprints (_TZE204_pay2by... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
