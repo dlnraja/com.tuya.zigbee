@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.848** | 🔧 SDK3 COMPLIANCE: Per Homey Developer docs - deferred init communication (d... |
 | **v5.5.847** | 🔧 DEVICE FIX: Fixed _TZE204_laokfqwu misidentification - moved from CO2 sens... |
 | **v5.5.846** | 🔍 EXTENDED VERIFICATION: Added 5 more TRV fingerprints (_TZE204_wgrffniy, _T... |
 | **v5.5.845** | 🔍 DEEP VERIFICATION: Added 7 missing fingerprints verified against Blakadder... |
@@ -78,7 +79,6 @@
 | **v5.5.841** | 🔧 DIAGNOSTIC FIX (Peter_van_Werkhoven): HOBEIAN ZG-204ZV multisensor COMPLET... |
 | **v5.5.840** | 🔄 FORUM FIX (Cam): HOBEIAN ZG-204ZL motion sensor 'always active' issue FIXE... |
 | **v5.5.834** | ✅ GitHub Issues #113, #114, #115 VERIFIED: All devices already supported! TS0... |
-| **v5.5.833** | 🌧️ FORUM FIX (Dominique_C #1202): Rain sensor TS0207/_TZ3210_p68kms0l now pa... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
