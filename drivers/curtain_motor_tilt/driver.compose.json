@@ -13,6 +13,12 @@
     "alarm_generic",
     "measure_battery"
   ],
+  "energy": {
+    "approximation": {
+      "usageOn": 40,
+      "usageOff": 1
+    }
+  },
   "zigbee": {
     "manufacturerName": [
       "_TZE200_FCTWHUGX",
