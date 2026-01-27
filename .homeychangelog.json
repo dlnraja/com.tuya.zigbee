@@ -1,4 +1,7 @@
 {
+  "5.5.876": {
+    "en": "🔋 Energy Tracking: Garage door (150W), IR Blaster (2W constant), Dual Dimmer (100W), LED CCT Controller (24W). IR Blaster learn button now maintenance action."
+  },
   "5.5.875": {
     "en": "⚡ Smart RCBO: Changed to 'socket' class with cumulative energy tracking. Added trip alarm localization. Fixed Zigbee Gateway name."
   },

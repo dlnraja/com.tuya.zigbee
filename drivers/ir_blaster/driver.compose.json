@@ -9,19 +9,27 @@
     "button.learn_ir",
     "onoff"
   ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 2
+    }
+  },
   "capabilitiesOptions": {
     "button.learn_ir": {
       "title": {
         "en": "Learn IR Code",
         "nl": "Leer IR Code",
-        "de": "IR-Code lernen"
-      }
+        "de": "IR-Code lernen",
+        "fr": "Apprendre Code IR"
+      },
+      "maintenanceAction": true
     },
     "onoff": {
       "title": {
         "en": "Power",
         "nl": "Aan/Uit",
-        "de": "Ein/Aus"
+        "de": "Ein/Aus",
+        "fr": "Alimentation"
       }
     }
   },
