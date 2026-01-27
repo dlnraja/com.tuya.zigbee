@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.889** | ✨ NEW: Bseed 1-Gang Switch (PR #116 by packetninja) - Physical button detecti... |
 | **v5.5.888** | 🔧 Motion Sensor FIX (Peter #1204): ZG-204ZV now correctly shows temperature ... |
 | **v5.5.887** | 🌡️ Air Quality CO2 Sensor: Fixed naming. Curtain Motor Tilt: Added energy ap... |
 | **v5.5.886** | 💡 Smart Bulbs: Major cleanup - removed incorrect battery capabilities from a... |
@@ -78,7 +79,6 @@
 | **v5.5.882** | 💡 Dimmers: Wall Dimmer 1-Gang proper naming. 3-Gang Dimmer channel titles wi... |
 | **v5.5.881** | 🔧 Fixes: SOS Button class changed to 'button' + full localization. Door Cont... |
 | **v5.5.880** | 🌬️ Sensors: Gas Detector, Air Quality CO2, Comprehensive Air Monitor - prope... |
-| **v5.5.879** | 🏠 Curtain Motor: Energy tracking (40W) + NL/DE. Irrigation Valve: Changed to... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
