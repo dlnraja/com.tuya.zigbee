@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.872** | 📊 Energy Meters: DIN Rail, CT Clamp, and 3-Phase meters now use cumulative e... |
 | **v5.5.871** | 🌍 Localization: Added Dutch (NL) and German (DE) translations to pairing ins... |
 | **v5.5.870** | 📊 Energy Monitoring: Smart plugs with power measurement now use cumulative e... |
 | **v5.5.869** | 🏠 Device Classes: Cover Controller now uses 'curtains' class, Roller Shutter... |
@@ -78,7 +79,6 @@
 | **v5.5.865** | 🎛️ NEW: Smart Knob / Scene Switch driver (ERS-10TZBVK-AA) - Rotary dimmer wi... |
 | **v5.5.864** | 🔧 Pairing: Added repair view support for thermostats. Improved pairing flow ... |
 | **v5.5.863** | 🔒 Device Classes: Smoke detector now uses 'smokedetector' class, CO sensor u... |
-| **v5.5.862** | 🏠 Flow Cards: Thermostat comfort presets (Eco/Away/Sleep/Boost) + schedule c... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
