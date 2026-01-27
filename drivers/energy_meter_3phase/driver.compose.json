@@ -17,10 +17,7 @@
     "measure_battery"
   ],
   "energy": {
-    "batteries": [
-      "AAA",
-      "AAA"
-    ]
+    "cumulative": true
   },
   "zigbee": {
     "manufacturerName": [
