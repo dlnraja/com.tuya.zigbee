@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.866** | ⚡ SDK3 Best Practices: Fixed LED strip energy (24W), added radiator valve cal... |
 | **v5.5.865** | 🎛️ NEW: Smart Knob / Scene Switch driver (ERS-10TZBVK-AA) - Rotary dimmer wi... |
 | **v5.5.864** | 🔧 Pairing: Added repair view support for thermostats. Improved pairing flow ... |
 | **v5.5.863** | 🔒 Device Classes: Smoke detector now uses 'smokedetector' class, CO sensor u... |
@@ -78,7 +79,6 @@
 | **v5.5.859** | 📡 Sensors: Added alarm_tamper + measure_temperature to contact, motion, wate... |
 | **v5.5.858** | 🎯 UX: Highlighted important dimmer settings (min_brightness) for quick acces... |
 | **v5.5.857** | ⚡ Homey Energy: Improved energy tracking for bulbs (7-9W), LED strips (24W), ... |
-| **v5.5.856** | ✨ SDK3 Best Practices: Added Homey Energy approximation to switches (2-4 gang... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
