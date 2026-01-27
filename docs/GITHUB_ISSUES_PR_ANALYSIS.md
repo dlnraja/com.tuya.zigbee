@@ -1,13 +1,22 @@
 # GitHub Issues & PRs Analysis - JohanBendz & dlnraja Forks
 
-*Generated: 2026-01-19*
+*Generated: 2026-01-27*
 
 ## Summary
 
 | Repository | Open Issues | Open PRs | Forks |
 |------------|-------------|----------|-------|
-| JohanBendz/com.tuya.zigbee | 12+ | 30+ | 164+ |
-| dlnraja/com.tuya.zigbee | 0 | 0 | - |
+| JohanBendz/com.tuya.zigbee | 15+ | 30+ | 164+ |
+| dlnraja/com.tuya.zigbee | 2 | 0 | - |
+
+---
+
+## dlnraja Open Issues (Recent)
+
+| # | Issue | ManufacturerName | ProductId | Status |
+|---|-------|------------------|-----------|--------|
+| 117 | Longsam mini m3 Smart Curtain | `_TZE204_xu4a5rhj` | TS0601 | ✅ In curtain_motor - USER RE-PAIR |
+| 114 | Smart Button TS0041 | `_TZ3000_b4awzgct` | TS0041 | ✅ In button_wireless_1 - USER RE-PAIR |
 
 ---
 
@@ -21,7 +30,9 @@
 | 1336 | Soil Moisture Sensor | `_TZE284_aa03yzhs` | TS0601 | ✅ Supported |
 | 1335 | dlnraja Fork v5.5.518 | - | - | ✅ Info Issue |
 | 1334 | Device Request (incomplete) | - | - | ❓ Needs info |
-| 1331 | UFO-R11 MOES | - | - | ❓ Needs info |
+| 1345 | AVATTO thermostat WT198 | `_TZE284_xnbkhhdr` | TS0601 | ✅ In climate_sensor |
+| 1344 | TS0201 sensors stopped | `_TZ3000_bgsigers` | TS0201 | ✅ In climate_sensor - Bug report |
+| 1331 | UFO-R11 MOES | `_TZ3290_ot6ewjvmejq5ekhl` | TS1201 | ✅ In ir_blaster |
 | 1330 | Device Request (incomplete) | - | - | ❓ Needs info |
 | 1329 | Smart Switch | `zigbee tuya` | TYZGTH1CH-D1RF | ❓ Needs info |
 | 1328 | RSH-HS03 | `_TZE284_9ern5sfh` | TS0601 | ✅ Supported |
