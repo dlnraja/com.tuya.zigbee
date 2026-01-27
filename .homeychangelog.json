@@ -1,4 +1,7 @@
 {
+  "5.5.853": {
+    "en": "🔧 FIX: Moved _TZE284_3mzb0sdz from climate_sensor to ir_blaster - it's an IR Blaster (Z2M #29098, zosungIRTransmit cluster). RE-PAIR required."
+  },
   "5.5.852": {
     "en": "🔧 FIX: HOBEIAN ZG-204ZV now properly adds temperature + humidity capabilities (Peter_van_Werkhoven forum #1203). RE-PAIR or restart app to see new capabilities."
   },
