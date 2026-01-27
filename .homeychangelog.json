@@ -1,4 +1,7 @@
 {
+  "5.5.826": {
+    "en": "🔧 DIAGNOSTICS FIXES: 1) HOBEIAN ZG-204ZV multi-sensor now reports temperature and humidity! Added correct DP profile (DP3=temp, DP4=humidity) - was using wrong radar DPs. 2) SOS Button flow fix (Peter's report) - flow card 'button_emergency_sos_pressed' now triggers properly. Driver explicitly registers and triggers the flow card."
+  },
   "5.5.825": {
     "en": "🔧 SENSOR FIX: Extended v5.5.824 fix to HybridSensorBase! Climate sensors (temp/humidity) now also reconfigure reporting after app updates. Added _shouldConfigureReportingSensor() with version tracking. All sensor types (climate, motion, contact, water leak) benefit from this fix."
   },
