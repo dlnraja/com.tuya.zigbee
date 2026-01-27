@@ -1,4 +1,7 @@
 {
+  "5.5.904": {
+    "en": "🧹 Orphan Capability Cleanup: Radar sensors now auto-remove capabilities not supported by device config. Fixes ZG-204ZV showing 'Distance' from previous pairing. Z2M research: static_detection_distance is a SETTING, not real-time measurement."
+  },
   "5.5.903": {
     "en": "🛠️ Forum Fixes: _TZE284_iadro9bf motion alarm stuck - added stuck pattern detection (5+ consecutive same values → distance inference only). Enhanced throttle for qasjif9e variants."
   },
