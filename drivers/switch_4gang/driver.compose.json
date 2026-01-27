@@ -896,6 +896,15 @@
         { "id": "double_click_window", "type": "number", "label": { "en": "Double Click Window (ms)", "fr": "Fenêtre double-clic (ms)" }, "value": 400, "min": 200, "max": 1000, "step": 50, "hint": { "en": "Time window to detect double/triple clicks", "fr": "Fenêtre de temps pour détecter les doubles/triples clics" } },
         { "id": "long_press_threshold", "type": "number", "label": { "en": "Long Press Threshold (ms)", "fr": "Seuil pression longue (ms)" }, "value": 600, "min": 300, "max": 2000, "step": 100, "hint": { "en": "How long button must be held for long press detection", "fr": "Durée de maintien du bouton pour détecter une pression longue" } }
       ]
+    },
+    {
+      "type": "group",
+      "label": { "en": "💡 Switch Behavior", "fr": "💡 Comportement Interrupteur" },
+      "children": [
+        { "id": "power_on_behavior", "type": "dropdown", "label": { "en": "Power-On Behavior", "fr": "Comportement au démarrage" }, "value": "memory", "values": [{ "id": "off", "label": { "en": "Always OFF", "fr": "Toujours OFF" } }, { "id": "on", "label": { "en": "Always ON", "fr": "Toujours ON" } }, { "id": "memory", "label": { "en": "Remember last state", "fr": "Mémoriser dernier état" } }], "hint": { "en": "What happens when power is restored", "fr": "Comportement après coupure de courant" } },
+        { "id": "backlight_mode", "type": "dropdown", "label": { "en": "LED Backlight Mode", "fr": "Mode rétroéclairage LED" }, "value": "normal", "values": [{ "id": "off", "label": { "en": "Off", "fr": "Éteint" } }, { "id": "normal", "label": { "en": "Normal", "fr": "Normal" } }, { "id": "inverted", "label": { "en": "Inverted", "fr": "Inversé" } }], "hint": { "en": "LED indicator behavior", "fr": "Comportement du voyant LED" } },
+        { "id": "child_lock", "type": "checkbox", "label": { "en": "Child Lock", "fr": "Verrouillage enfant" }, "value": false, "hint": { "en": "Disable physical buttons", "fr": "Désactiver boutons physiques" } }
+      ]
     }
   ],
   "name": {

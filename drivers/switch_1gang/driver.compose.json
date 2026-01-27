@@ -1282,6 +1282,102 @@
           }
         }
       ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "💡 Switch Behavior",
+        "fr": "💡 Comportement Interrupteur",
+        "nl": "💡 Schakelaar Gedrag",
+        "de": "💡 Schalterverhalten"
+      },
+      "children": [
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-On Behavior",
+            "fr": "Comportement au démarrage"
+          },
+          "value": "memory",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Always OFF",
+                "fr": "Toujours OFF"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Always ON",
+                "fr": "Toujours ON"
+              }
+            },
+            {
+              "id": "memory",
+              "label": {
+                "en": "Remember last state",
+                "fr": "Mémoriser dernier état"
+              }
+            }
+          ],
+          "hint": {
+            "en": "What happens when power is restored after outage",
+            "fr": "Que se passe-t-il après une coupure de courant"
+          }
+        },
+        {
+          "id": "backlight_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "LED Backlight Mode",
+            "fr": "Mode rétroéclairage LED"
+          },
+          "value": "normal",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Off (no LED)",
+                "fr": "Éteint (pas de LED)"
+              }
+            },
+            {
+              "id": "normal",
+              "label": {
+                "en": "Normal (LED when ON)",
+                "fr": "Normal (LED quand allumé)"
+              }
+            },
+            {
+              "id": "inverted",
+              "label": {
+                "en": "Inverted (LED when OFF)",
+                "fr": "Inversé (LED quand éteint)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Controls LED indicator behavior (Z2M: backlight_mode)",
+            "fr": "Contrôle le comportement du voyant LED"
+          }
+        },
+        {
+          "id": "child_lock",
+          "type": "checkbox",
+          "label": {
+            "en": "Child Lock (disable physical buttons)",
+            "fr": "Verrouillage enfant (désactiver boutons)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Prevents accidental button presses on the device",
+            "fr": "Empêche les appuis accidentels sur l'appareil"
+          }
+        }
+      ]
     }
   ],
   "name": {
