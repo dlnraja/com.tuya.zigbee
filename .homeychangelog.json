@@ -1,4 +1,7 @@
 {
+  "5.5.916": {
+    "en": "🐛 CRITICAL FIX: Fixed manufacturer/model retrieval in all base classes (HybridCoverBase, HybridPlugBase, HybridSensorBase, HybridThermostatBase, HybridLightBase, ButtonDevice). Devices showing 'unknown / unknown' will now be correctly identified. Curtain motors (TS0601), water valves, and other devices should work properly after RE-PAIRING."
+  },
   "5.5.915": {
     "en": "🔀 FORK ANALYSIS v2: Analyzed 75+ forks (JohanBendz network + dlnraja children). Gas detector: Added Heiman HS1CG-N (_TYZB01_0w3d5uw3). Credits: gpmachado (gas detector, Zemismart switches), bmalkow (siren fixes), baschte (signal repeater)."
   },
