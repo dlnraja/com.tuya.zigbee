@@ -1,4 +1,7 @@
 {
+  "5.5.875": {
+    "en": "⚡ Smart RCBO: Changed to 'socket' class with cumulative energy tracking. Added trip alarm localization. Fixed Zigbee Gateway name."
+  },
   "5.5.874": {
     "en": "🌡️ 4-Channel Thermostat: Energy tracking (3W), NL/DE localized channel names for all 4 temperature/control channels. Better multi-zone heating management."
   },
