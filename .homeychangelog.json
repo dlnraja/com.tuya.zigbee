@@ -1,4 +1,7 @@
 {
+  "5.5.854": {
+    "en": "🔧 FIX: switch_dimmer_1gang physical button detection now works correctly (Attilla forum #1205). Override parent class methods instead of duplicate listeners."
+  },
   "5.5.853": {
     "en": "🔧 FIX: Moved _TZE284_3mzb0sdz from climate_sensor to ir_blaster - it's an IR Blaster (Z2M #29098, zosungIRTransmit cluster). RE-PAIR required."
   },
