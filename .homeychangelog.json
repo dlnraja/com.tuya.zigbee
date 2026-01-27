@@ -1,4 +1,7 @@
 {
+  "5.5.901": {
+    "en": "🔧 BSEED Fix: Improved manufacturer detection with multiple fallback sources. Added 5 new BSEED IDs (_TZ3000_hafsqare, _TZ3000_e98krvvk, _TZ3000_iedbgyxt). Debug logging for ZCL-only mode detection. Forum diagnostic fixes."
+  },
   "5.5.900": {
     "en": "💡 Switch Behavior Settings: Power-On Behavior (off/on/memory), LED Backlight Mode (off/normal/inverted), Child Lock. All 1-4 gang switches. Z2M parity. Forum feedback integration complete."
   },
