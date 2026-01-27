@@ -1,4 +1,7 @@
 {
+  "5.5.918": {
+    "en": "🐛 FORUM FIX (Lasse_K #1700): Fixed contact sensors installing in reverse - IAS Zone now applies default inversion for known inverted manufacturers. Enhanced water sensor alarm detection with delayed secondary read for sleepy sensors. RE-PAIR devices after update!"
+  },
   "5.5.917": {
     "en": "🔍 FORK/PR AUDIT: Added Longsam mini m3 Smart Curtain (_TZE204_xu4a5rhj) from Issue #117. PR #118 (_TZ3000_ysdv91bk) already integrated in v5.5.913. Verified all 7 child forks and 75+ JohanBendz network forks - all valuable contributions integrated."
   },
