@@ -1,4 +1,7 @@
 {
+  "5.5.887": {
+    "en": "🌡️ Air Quality CO2 Sensor: Fixed naming. Curtain Motor Tilt: Added energy approximation (40W)."
+  },
   "5.5.886": {
     "en": "💡 Smart Bulbs: Major cleanup - removed incorrect battery capabilities from all bulb drivers, fixed FR naming, proper capability sets per bulb type. HVAC AC: removed battery capability."
   },
