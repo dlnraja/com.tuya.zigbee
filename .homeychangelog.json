@@ -1,4 +1,7 @@
 {
+  "5.5.873": {
+    "en": "🔧 Device Improvements: Siren uses proper 'siren' class. Fixed duplicate names (Siren, Doorbell). Energy tracking for humidifier (25W), pet feeder (5W). NL/DE localization expanded."
+  },
   "5.5.872": {
     "en": "📊 Energy Meters: DIN Rail, CT Clamp, and 3-Phase meters now use cumulative energy tracking. More accurate power consumption in Homey Energy dashboard."
   },
