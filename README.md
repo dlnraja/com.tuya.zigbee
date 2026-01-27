@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.858** | 🎯 UX: Highlighted important dimmer settings (min_brightness) for quick acces... |
 | **v5.5.857** | ⚡ Homey Energy: Improved energy tracking for bulbs (7-9W), LED strips (24W), ... |
 | **v5.5.856** | ✨ SDK3 Best Practices: Added Homey Energy approximation to switches (2-4 gang... |
 | **v5.5.855** | ✨ NEW: Periodic Auto-Enrichment for ALL drivers! Automatic ZCL cluster + Tuya... |
@@ -78,7 +79,6 @@
 | **v5.5.851** | 🔧 FIX: Removed _TZ3000_h1ipgkwn from switch_2gang - it's a Dual USB switch (... |
 | **v5.5.850** | 🔧 FIX: IAS Zone warning now only shows for pure IAS devices. Hybrid Tuya DP ... |
 | **v5.5.849** | 🔧 FIX: Removed _TZE204_laokfqwu from climate_sensor - it's an mmWave presenc... |
-| **v5.5.848** | 🔧 SDK3 COMPLIANCE: Per Homey Developer docs - deferred init communication (d... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
