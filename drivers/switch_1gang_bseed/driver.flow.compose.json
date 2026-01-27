@@ -1,0 +1,48 @@
+{
+  "triggers": [
+    {
+      "id": "switch_1gang_bseed_turned_on",
+      "title": {
+        "en": "Turned on",
+        "nl": "Aangezet"
+      },
+      "titleFormatted": {
+        "en": "[[device]] turned on (physical button)",
+        "nl": "[[device]] aangezet (fysieke knop)"
+      },
+      "hint": {
+        "en": "Triggered when the switch is turned on using the physical button",
+        "nl": "Geactiveerd wanneer de schakelaar wordt aangezet met de fysieke knop"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=switch_1gang_bseed"
+        }
+      ]
+    },
+    {
+      "id": "switch_1gang_bseed_turned_off",
+      "title": {
+        "en": "Turned off",
+        "nl": "Uitgezet"
+      },
+      "titleFormatted": {
+        "en": "[[device]] turned off (physical button)",
+        "nl": "[[device]] uitgezet (fysieke knop)"
+      },
+      "hint": {
+        "en": "Triggered when the switch is turned off using the physical button",
+        "nl": "Geactiveerd wanneer de schakelaar wordt uitgezet met de fysieke knop"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=switch_1gang_bseed"
+        }
+      ]
+    }
+  ]
+}
