@@ -1,0 +1,139 @@
+{
+  "triggers": [
+    {
+      "id": "smart_knob_rotate_left",
+      "highlight": true,
+      "title": {
+        "en": "Rotated left",
+        "fr": "Rotation gauche",
+        "nl": "Naar links gedraaid",
+        "de": "Nach links gedreht"
+      },
+      "hint": {
+        "en": "When the knob is rotated counter-clockwise",
+        "fr": "Lorsque le bouton est tourné dans le sens antihoraire"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness %",
+            "fr": "Luminosité %"
+          },
+          "example": 50
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "smart_knob_rotate_right",
+      "highlight": true,
+      "title": {
+        "en": "Rotated right",
+        "fr": "Rotation droite",
+        "nl": "Naar rechts gedraaid",
+        "de": "Nach rechts gedreht"
+      },
+      "hint": {
+        "en": "When the knob is rotated clockwise",
+        "fr": "Lorsque le bouton est tourné dans le sens horaire"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness %",
+            "fr": "Luminosité %"
+          },
+          "example": 50
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "smart_knob_pressed",
+      "highlight": true,
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé",
+        "nl": "Knop ingedrukt",
+        "de": "Taste gedrückt"
+      },
+      "hint": {
+        "en": "When the knob button is pressed (single, double, or hold)",
+        "fr": "Lorsque le bouton est appuyé (simple, double ou maintenu)"
+      },
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action",
+            "fr": "Action"
+          },
+          "example": "single"
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "smart_knob_single_press",
+      "title": {
+        "en": "Single press",
+        "fr": "Appui simple",
+        "nl": "Enkele druk",
+        "de": "Einfacher Druck"
+      },
+      "args": []
+    },
+    {
+      "id": "smart_knob_double_press",
+      "title": {
+        "en": "Double press",
+        "fr": "Double appui",
+        "nl": "Dubbele druk",
+        "de": "Doppelter Druck"
+      },
+      "args": []
+    },
+    {
+      "id": "smart_knob_long_press",
+      "title": {
+        "en": "Long press",
+        "fr": "Appui long",
+        "nl": "Lange druk",
+        "de": "Langer Druck"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "smart_knob_brightness_above",
+      "title": {
+        "en": "Brightness level is above...",
+        "fr": "Niveau de luminosité supérieur à..."
+      },
+      "titleFormatted": {
+        "en": "Brightness level is above [[level]]%",
+        "fr": "Niveau de luminosité supérieur à [[level]]%"
+      },
+      "args": [
+        {
+          "name": "level",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "title": {
+            "en": "Level",
+            "fr": "Niveau"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": []
+}
