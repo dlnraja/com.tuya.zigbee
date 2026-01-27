@@ -2,11 +2,18 @@
   "triggers": [
     {
       "id": "switch_1gang_turned_on",
+      "highlight": true,
       "title": {
         "en": "Turned on",
         "fr": "Allumé",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
+      },
+      "hint": {
+        "en": "Triggers when the switch is turned on (manually or via app)",
+        "fr": "Se déclenche quand l'interrupteur est allumé",
+        "nl": "Triggert wanneer de schakelaar wordt ingeschakeld",
+        "de": "Wird ausgelöst, wenn der Schalter eingeschaltet wird"
       },
       "args": []
     },
@@ -18,6 +25,30 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
+      "args": []
+    },
+    {
+      "id": "switch_1gang_physical_button",
+      "title": {
+        "en": "Physical button pressed",
+        "fr": "Bouton physique pressé",
+        "nl": "Fysieke knop ingedrukt",
+        "de": "Physische Taste gedrückt"
+      },
+      "hint": {
+        "en": "Triggers only when the physical wall button is pressed",
+        "fr": "Se déclenche uniquement quand le bouton mural est pressé",
+        "nl": "Triggert alleen wanneer de fysieke muurknop wordt ingedrukt",
+        "de": "Wird nur ausgelöst, wenn die physische Wandtaste gedrückt wird"
+      },
+      "tokens": [
+        {
+          "name": "state",
+          "type": "boolean",
+          "title": { "en": "State (on/off)", "fr": "État (on/off)" },
+          "example": true
+        }
+      ],
       "args": []
     }
   ],

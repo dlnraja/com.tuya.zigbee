@@ -1,4 +1,7 @@
 {
+  "5.5.861": {
+    "en": "🎛️ Flow Cards: Added physical button triggers for switches. Highlighted key triggers for faster flow creation. Better hints and translations."
+  },
   "5.5.860": {
     "en": "🔌 Flow Cards: Added power monitoring triggers (power_changed, power_threshold) with tokens (power, voltage, current) for smart plugs. Enhanced Advanced Flow support."
   },
