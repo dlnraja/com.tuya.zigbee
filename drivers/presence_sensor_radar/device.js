@@ -1971,14 +1971,33 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       }
     }
 
-    // Ensure required capabilities
-    for (const cap of ['measure_distance', 'measure_luminance']) {
-      if (!this.hasCapability(cap)) {
-        try {
-          await this.addCapability(cap);
-          this.log(`[RADAR] ✅ Added ${cap} capability`);
-        } catch (e) { /* ignore */ }
-      }
+    // v5.5.903: CAPABILITY MANAGEMENT - Add/remove based on device config
+    // Z2M research: ZG-204ZV does NOT have measure_distance (static_detection_distance is a SETTING, not measurement)
+    const hasDistanceDP = config.dpMap && Object.values(config.dpMap).some(dp => dp.cap === 'measure_distance');
+    const hasLuxDP = config.hasIlluminance || (config.dpMap && Object.values(config.dpMap).some(dp => dp.cap === 'measure_luminance'));
+    
+    // Add capabilities that ARE supported
+    if (hasLuxDP && !this.hasCapability('measure_luminance')) {
+      try {
+        await this.addCapability('measure_luminance');
+        this.log('[RADAR] ✅ Added measure_luminance (config supports it)');
+      } catch (e) { /* ignore */ }
+    }
+    
+    if (hasDistanceDP && !this.hasCapability('measure_distance')) {
+      try {
+        await this.addCapability('measure_distance');
+        this.log('[RADAR] ✅ Added measure_distance (config supports it)');
+      } catch (e) { /* ignore */ }
+    }
+    
+    // v5.5.903: REMOVE orphan capabilities that are NOT supported by this device
+    // Fixes Peter's ZG-204ZV showing "Distance" from previous pairing
+    if (!hasDistanceDP && this.hasCapability('measure_distance')) {
+      try {
+        await this.removeCapability('measure_distance');
+        this.log('[RADAR] 🧹 Removed orphan measure_distance (not supported by this sensor)');
+      } catch (e) { /* ignore */ }
     }
 
     // v5.5.852: ADD temperature/humidity for sensors that support them (ZG-204ZV fix)
@@ -1993,6 +2012,20 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       try {
         await this.addCapability('measure_humidity');
         this.log('[RADAR] 💧 Added measure_humidity (sensor supports it)');
+      } catch (e) { /* ignore */ }
+    }
+    
+    // v5.5.903: Remove orphan temp/humidity if config says device doesn't have them
+    if (config.noTemperature && this.hasCapability('measure_temperature')) {
+      try {
+        await this.removeCapability('measure_temperature');
+        this.log('[RADAR] 🧹 Removed orphan measure_temperature (not supported)');
+      } catch (e) { /* ignore */ }
+    }
+    if (config.noHumidity && this.hasCapability('measure_humidity')) {
+      try {
+        await this.removeCapability('measure_humidity');
+        this.log('[RADAR] 🧹 Removed orphan measure_humidity (not supported)');
       } catch (e) { /* ignore */ }
     }
 
