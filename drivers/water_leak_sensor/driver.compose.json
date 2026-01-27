@@ -8,7 +8,9 @@
   "class": "sensor",
   "capabilities": [
     "alarm_water",
-    "measure_battery"
+    "alarm_tamper",
+    "measure_battery",
+    "measure_temperature"
   ],
   "capabilitiesOptions": {
     "alarm_water": {
