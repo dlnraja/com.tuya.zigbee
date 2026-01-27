@@ -1981,6 +1981,21 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       }
     }
 
+    // v5.5.852: ADD temperature/humidity for sensors that support them (ZG-204ZV fix)
+    // Peter_van_Werkhoven forum #1203: ZG-204ZV should have temp+humidity
+    if (!config.noTemperature && !this.hasCapability('measure_temperature')) {
+      try {
+        await this.addCapability('measure_temperature');
+        this.log('[RADAR] 🌡️ Added measure_temperature (sensor supports it)');
+      } catch (e) { /* ignore */ }
+    }
+    if (!config.noHumidity && !this.hasCapability('measure_humidity')) {
+      try {
+        await this.addCapability('measure_humidity');
+        this.log('[RADAR] 💧 Added measure_humidity (sensor supports it)');
+      } catch (e) { /* ignore */ }
+    }
+
     // v5.5.268: Start periodic polling for TZE284 devices that need it
     if (config.needsPolling) {
       this._startPresencePolling(zclNode);

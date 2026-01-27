@@ -1,4 +1,7 @@
 {
+  "5.5.852": {
+    "en": "🔧 FIX: HOBEIAN ZG-204ZV now properly adds temperature + humidity capabilities (Peter_van_Werkhoven forum #1203). RE-PAIR or restart app to see new capabilities."
+  },
   "5.5.851": {
     "en": "🔧 FIX: Removed _TZ3000_h1ipgkwn from switch_2gang - it's a Dual USB switch (Z2M #23625), not a wall switch. Now correctly maps to usb_dongle_dual_repeater. RE-PAIR required."
   },
