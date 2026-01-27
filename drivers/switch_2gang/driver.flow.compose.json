@@ -214,6 +214,58 @@
         "de": "Gang 2 ausschalten"
       },
       "args": []
+    },
+    {
+      "id": "switch_2gang_toggle_gang1",
+      "title": {
+        "en": "Toggle gang 1",
+        "fr": "Basculer gang 1",
+        "nl": "Gang 1 wisselen",
+        "de": "Gang 1 umschalten"
+      },
+      "hint": {
+        "en": "Toggle the state of gang 1 (on→off, off→on)",
+        "fr": "Basculer l'état du gang 1",
+        "nl": "Wissel de status van gang 1",
+        "de": "Status von Gang 1 umschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_2gang_toggle_gang2",
+      "title": {
+        "en": "Toggle gang 2",
+        "fr": "Basculer gang 2",
+        "nl": "Gang 2 wisselen",
+        "de": "Gang 2 umschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_2gang_turn_on_all",
+      "title": {
+        "en": "Turn on all gangs",
+        "fr": "Allumer tous les gangs",
+        "nl": "Alle gangs aanzetten",
+        "de": "Alle Gangs einschalten"
+      },
+      "hint": {
+        "en": "Turn on both gang 1 and gang 2",
+        "fr": "Allumer gang 1 et gang 2",
+        "nl": "Gang 1 en gang 2 aanzetten",
+        "de": "Gang 1 und Gang 2 einschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_2gang_turn_off_all",
+      "title": {
+        "en": "Turn off all gangs",
+        "fr": "Éteindre tous les gangs",
+        "nl": "Alle gangs uitzetten",
+        "de": "Alle Gangs ausschalten"
+      },
+      "args": []
     }
   ]
 }
