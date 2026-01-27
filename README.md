@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.843** | 🔍 BLAKADDER VERIFICATION: Added missing motion sensor fingerprints (_TYZB01_... |
 | **v5.5.842** | 📦 Maintenance release - all previous fixes included (HOBEIAN ZG-204ZV temp/h... |
 | **v5.5.841** | 🔧 DIAGNOSTIC FIX (Peter_van_Werkhoven): HOBEIAN ZG-204ZV multisensor COMPLET... |
 | **v5.5.840** | 🔄 FORUM FIX (Cam): HOBEIAN ZG-204ZL motion sensor 'always active' issue FIXE... |
@@ -78,7 +79,6 @@
 | **v5.5.831** | 🌡️ FORUM FIX (Peter_van_Werkhoven): HOBEIAN ZG-204ZV multisensor now reports... |
 | **v5.5.830** | 📧 EMAIL/ZHA BATCH: Added new 6-channel relay fingerprints from ZHA issue #43... |
 | **v5.5.829** | 🔧 ATTILLA/PACKETNINJA PATTERN: Applied physical button detection to dimmer_3... |
-| **v5.5.828** | 🔘 PHYSICAL BUTTON FIX (Attilla's report): switch_dimmer_1gang now correctly ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
