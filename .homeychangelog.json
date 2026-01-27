@@ -1,4 +1,7 @@
 {
+  "5.5.890": {
+    "en": "🌧️ Rain Sensor: Added IAS Zone support for TS0207 devices (Dominique_C forum). Fixes 'IAS Zone error' on pairing."
+  },
   "5.5.889": {
     "en": "✨ NEW: Bseed 1-Gang Switch (PR #116 by packetninja) - Physical button detection, flow triggers. Added FR/DE localization."
   },
