@@ -11,6 +11,12 @@
     "da": "DIN-skinne Kontakt"
   },
   "class": "socket",
+  "energy": {
+    "approximation": {
+      "usageOn": 10,
+      "usageOff": 1
+    }
+  },
   "capabilities": [
     "onoff",
     "measure_power",

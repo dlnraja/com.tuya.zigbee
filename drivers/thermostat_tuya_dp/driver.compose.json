@@ -12,8 +12,20 @@
     "thermostat_mode",
     "measure_battery",
     "onoff",
-    "measure_humidity"
+    "measure_humidity",
+    "button.boost",
+    "button.calibrate"
   ],
+  "capabilitiesOptions": {
+    "button.boost": {
+      "title": { "en": "Boost Mode", "fr": "Mode Boost", "nl": "Boost Modus", "de": "Boost Modus" },
+      "maintenanceAction": true
+    },
+    "button.calibrate": {
+      "title": { "en": "Calibrate Temp", "fr": "Calibrer Temp", "nl": "Kalibreren", "de": "Kalibrieren" },
+      "maintenanceAction": true
+    }
+  },
   "platforms": [
     "local"
   ],
