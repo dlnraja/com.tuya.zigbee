@@ -1,4 +1,7 @@
 {
+  "5.5.896": {
+    "en": "🎯 PhysicalButtonMixin: Advanced button detection for all switch drivers (1-4 gang). Single/double/long/triple press. BSEED=2000ms, others=500ms (faster). Flow cards with duration tokens."
+  },
   "5.5.895": {
     "en": "🔀 MERGED: switch_1gang_bseed → switch_1gang. Unified driver supports Tuya DP, ZCL onOff, BSEED clusters (0xE000/0xE001). Physical button detection for all 1-gang switches."
   },
