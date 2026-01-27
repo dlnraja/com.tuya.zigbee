@@ -19,7 +19,9 @@
     "dim": {
       "title": {
         "en": "Fan Speed",
-        "fr": "Vitesse"
+        "fr": "Vitesse",
+        "nl": "Ventilatorsnelheid",
+        "de": "Lüftergeschwindigkeit"
       },
       "min": 0,
       "max": 1,
