@@ -385,6 +385,17 @@ class MotionSensorDevice extends HybridSensorBase {
       this.log('[MOTION] ⚠️ Removed incorrect alarm_contact capability');
     }
 
+    // v5.5.892: FORUM FIX (Peter_van_Werkhoven #1211)
+    // Remove "distance" capability that was incorrectly showing on ZG-204ZV
+    // Distance is only for radar sensors (ZG-204ZM), not PIR multisensors
+    const orphanCaps = ['measure_distance', 'distance', 'internal_distance', 'detection_distance'];
+    for (const cap of orphanCaps) {
+      if (this.hasCapability(cap)) {
+        await this.removeCapability(cap).catch(() => { });
+        this.log(`[MOTION] ⚠️ Removed orphan capability: ${cap}`);
+      }
+    }
+
     // v5.5.113: Detect available clusters BEFORE super.onNodeInit
     // This adds temp/humidity capabilities only if clusters exist
     await this._detectAvailableClusters(zclNode);
