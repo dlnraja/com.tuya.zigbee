@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.932** | 🔧 FORUM FIXES: 1) PETER: HOBEIAN multisensor temp/humidity now shows correct... |
 | **v5.5.931** | 🔧 FLOW CARD FIX + CREDITS: Unique flow card IDs for switch_wall_5-8gang. CRE... |
 | **v5.5.930** | 🔧 PETER FIX + LED CONTROL: 1) HOBEIAN Multisensor (ZG-204ZV) - added DP poll... |
 | **v5.5.929** | 🎯 SMART DISTANCE FIX (Peter): 1) Auto-detect distance divisor for OEM varian... |
@@ -78,7 +79,6 @@
 | **v5.5.925** | 🔀 PERMISSIVE VARIANT MODE (Peter_van_Werkhoven): Same manufacturerName (_TZE... |
 | **v5.5.924** | 🔘 MOES BUTTON FIX (GitHub #1327 Kokosnootmelk/nickpatteeuw): Physical button... |
 | **v5.5.923** | 🔧 DIAGNOSTICS FIX (User Reports): 1) Curtain motor TS0601 showing 'unknown/u... |
-| **v5.5.922** | 🔘 FORKS ANALYSIS + PACKETNINJA TECHNIQUE: Applied physical button detection ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
