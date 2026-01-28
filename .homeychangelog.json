@@ -1,4 +1,7 @@
 {
+  "5.5.938": {
+    "en": "🎉 PR #118 MERGED - HUGE THANKS TO @packetninja (Attilla de Groot)! New BSEED 1-Gang Wall Switch (wall_switch_1gang_1way) and Wall Dimmer (wall_dimmer_1gang_1way) drivers with: ✅ Physical button detection (PhysicalButtonMixin) ✅ LED backlight control (DP15) ✅ Flow cards for physical on/off triggers ✅ Supports _TZ3000_blhvsaqf, _TZ3000_ysdv91bk. This community contribution brings advanced physical button press detection to BSEED/Zemismart switches. RE-PAIR your devices after update!"
+  },
   "5.5.937": {
     "en": "🔧 CURTAIN MOTOR FIX v2: Fixed direct cluster DP communication fallback. Now uses correct tuyaCluster.datapoint({dp, datatype, data}) format instead of broken dataRequest/setData methods. This fixes 'tuya.datapoint: value is unexpected property' errors when TuyaEF00Manager is unavailable. RE-PAIR curtain motors if controls still don't work!"
   },

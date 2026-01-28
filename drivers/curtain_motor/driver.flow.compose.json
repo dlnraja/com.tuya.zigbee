@@ -87,12 +87,9 @@
     },
     {
       "id": "curtain_motor_windowcoverings_open",
-      "highlight": true,
       "title": {
         "en": "Open",
-        "fr": "Ouvrir",
-        "nl": "Openen",
-        "de": "Öffnen"
+        "fr": "Ouvrir"
       },
       "args": []
     },
@@ -100,33 +97,7 @@
       "id": "curtain_motor_windowcoverings_close",
       "title": {
         "en": "Close",
-        "fr": "Fermer",
-        "nl": "Sluiten",
-        "de": "Schließen"
-      },
-      "args": []
-    },
-    {
-      "id": "curtain_motor_stop",
-      "title": {
-        "en": "Stop",
-        "fr": "Arrêter",
-        "nl": "Stoppen",
-        "de": "Stoppen"
-      },
-      "args": []
-    },
-    {
-      "id": "curtain_motor_set_favorite",
-      "title": {
-        "en": "Go to favorite position",
-        "fr": "Aller position favorite",
-        "nl": "Ga naar favoriete positie",
-        "de": "Zur Lieblingsposition"
-      },
-      "hint": {
-        "en": "Move to the saved favorite position (if supported)",
-        "fr": "Aller à la position favorite enregistrée"
+        "fr": "Fermer"
       },
       "args": []
     },
@@ -155,6 +126,30 @@
         "en": "Set brightness to [[brightness]]%",
         "fr": "Régler la luminosité à [[brightness]]%"
       }
+    },
+    {
+      "id": "curtain_motor_stop",
+      "title": {
+        "en": "Stop",
+        "fr": "Arrêter",
+        "nl": "Stoppen",
+        "de": "Stoppen"
+      },
+      "args": []
+    },
+    {
+      "id": "curtain_motor_set_favorite",
+      "title": {
+        "en": "Go to favorite position",
+        "fr": "Aller position favorite",
+        "nl": "Ga naar favoriete positie",
+        "de": "Zur Lieblingsposition"
+      },
+      "hint": {
+        "en": "Move to the saved favorite position (if supported)",
+        "fr": "Aller à la position favorite enregistrée"
+      },
+      "args": []
     }
   ]
 }

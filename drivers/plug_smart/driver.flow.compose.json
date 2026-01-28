@@ -15,14 +15,6 @@
         "fr": "Se déclenche quand la prise est allumée",
         "de": "Wird ausgelöst, wenn der Stecker eingeschaltet wird"
       },
-      "tokens": [
-        {
-          "name": "power",
-          "type": "number",
-          "title": { "en": "Power (W)" },
-          "example": 150
-        }
-      ],
       "args": []
     },
     {
@@ -69,19 +61,34 @@
         {
           "name": "power",
           "type": "number",
-          "title": { "en": "Power (W)", "nl": "Vermogen (W)", "fr": "Puissance (W)", "de": "Leistung (W)" },
+          "title": {
+            "en": "Power (W)",
+            "nl": "Vermogen (W)",
+            "fr": "Puissance (W)",
+            "de": "Leistung (W)"
+          },
           "example": 150
         },
         {
           "name": "voltage",
           "type": "number",
-          "title": { "en": "Voltage (V)", "nl": "Spanning (V)", "fr": "Tension (V)", "de": "Spannung (V)" },
+          "title": {
+            "en": "Voltage (V)",
+            "nl": "Spanning (V)",
+            "fr": "Tension (V)",
+            "de": "Spannung (V)"
+          },
           "example": 230
         },
         {
           "name": "current",
           "type": "number",
-          "title": { "en": "Current (A)", "nl": "Stroom (A)", "fr": "Courant (A)", "de": "Strom (A)" },
+          "title": {
+            "en": "Current (A)",
+            "nl": "Stroom (A)",
+            "fr": "Courant (A)",
+            "de": "Strom (A)"
+          },
           "example": 0.65
         }
       ],
@@ -106,7 +113,9 @@
         {
           "name": "power",
           "type": "number",
-          "title": { "en": "Power (W)" },
+          "title": {
+            "en": "Power (W)"
+          },
           "example": 150
         }
       ],
@@ -116,7 +125,9 @@
           "type": "number",
           "min": 1,
           "max": 3600,
-          "placeholder": { "en": "100" }
+          "placeholder": {
+            "en": "100"
+          }
         }
       ]
     }
@@ -238,26 +249,130 @@
     },
     {
       "id": "plug_smart_set_indicator",
-      "title": { "en": "Set LED indicator mode", "fr": "Définir le mode LED", "nl": "LED indicator instellen", "de": "LED-Anzeige einstellen" },
-      "titleFormatted": { "en": "Set LED indicator to [[mode]]", "fr": "Définir LED sur [[mode]]", "nl": "Stel LED in op [[mode]]", "de": "LED auf [[mode]] setzen" },
-      "hint": { "en": "Control the plug LED indicator (DP26/27)", "fr": "Contrôle l'indicateur LED", "nl": "Beheer de LED indicator", "de": "LED-Anzeige steuern" },
-      "args": [{ "type": "dropdown", "name": "mode", "title": { "en": "Mode" }, "values": [
-        { "id": "off", "label": { "en": "Always Off", "fr": "Toujours éteint", "nl": "Altijd uit", "de": "Immer aus" } },
-        { "id": "relay", "label": { "en": "Follow Relay", "fr": "Suivre relais", "nl": "Volg relais", "de": "Relais folgen" } },
-        { "id": "inverted", "label": { "en": "Inverted", "fr": "Inversé", "nl": "Omgekeerd", "de": "Invertiert" } },
-        { "id": "always_on", "label": { "en": "Always On", "fr": "Toujours allumé", "nl": "Altijd aan", "de": "Immer an" } }
-      ]}]
+      "title": {
+        "en": "Set LED indicator mode",
+        "fr": "Définir le mode LED",
+        "nl": "LED indicator instellen",
+        "de": "LED-Anzeige einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set LED indicator to [[mode]]",
+        "fr": "Définir LED sur [[mode]]",
+        "nl": "Stel LED in op [[mode]]",
+        "de": "LED auf [[mode]] setzen"
+      },
+      "hint": {
+        "en": "Control the plug LED indicator (DP26/27)",
+        "fr": "Contrôle l'indicateur LED",
+        "nl": "Beheer de LED indicator",
+        "de": "LED-Anzeige steuern"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "mode",
+          "title": {
+            "en": "Mode"
+          },
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Always Off",
+                "fr": "Toujours éteint",
+                "nl": "Altijd uit",
+                "de": "Immer aus"
+              }
+            },
+            {
+              "id": "relay",
+              "label": {
+                "en": "Follow Relay",
+                "fr": "Suivre relais",
+                "nl": "Volg relais",
+                "de": "Relais folgen"
+              }
+            },
+            {
+              "id": "inverted",
+              "label": {
+                "en": "Inverted",
+                "fr": "Inversé",
+                "nl": "Omgekeerd",
+                "de": "Invertiert"
+              }
+            },
+            {
+              "id": "always_on",
+              "label": {
+                "en": "Always On",
+                "fr": "Toujours allumé",
+                "nl": "Altijd aan",
+                "de": "Immer an"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "plug_smart_set_power_on",
-      "title": { "en": "Set power-on behavior", "fr": "Définir comportement démarrage", "nl": "Opstart gedrag instellen", "de": "Einschaltverhalten setzen" },
-      "titleFormatted": { "en": "Set power-on behavior to [[behavior]]", "fr": "Définir démarrage sur [[behavior]]", "nl": "Stel opstart in op [[behavior]]", "de": "Einschaltverhalten auf [[behavior]] setzen" },
-      "hint": { "en": "What happens when power is restored", "fr": "Comportement après coupure", "nl": "Wat gebeurt na stroomuitval", "de": "Nach Stromausfall" },
-      "args": [{ "type": "dropdown", "name": "behavior", "title": { "en": "Behavior" }, "values": [
-        { "id": "off", "label": { "en": "Start OFF", "fr": "Démarrer éteint", "nl": "Start UIT", "de": "Start AUS" } },
-        { "id": "on", "label": { "en": "Start ON", "fr": "Démarrer allumé", "nl": "Start AAN", "de": "Start EIN" } },
-        { "id": "memory", "label": { "en": "Remember state", "fr": "Mémoriser état", "nl": "Onthoud staat", "de": "Zustand merken" } }
-      ]}]
+      "title": {
+        "en": "Set power-on behavior",
+        "fr": "Définir comportement démarrage",
+        "nl": "Opstart gedrag instellen",
+        "de": "Einschaltverhalten setzen"
+      },
+      "titleFormatted": {
+        "en": "Set power-on behavior to [[behavior]]",
+        "fr": "Définir démarrage sur [[behavior]]",
+        "nl": "Stel opstart in op [[behavior]]",
+        "de": "Einschaltverhalten auf [[behavior]] setzen"
+      },
+      "hint": {
+        "en": "What happens when power is restored",
+        "fr": "Comportement après coupure",
+        "nl": "Wat gebeurt na stroomuitval",
+        "de": "Nach Stromausfall"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "behavior",
+          "title": {
+            "en": "Behavior"
+          },
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Start OFF",
+                "fr": "Démarrer éteint",
+                "nl": "Start UIT",
+                "de": "Start AUS"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Start ON",
+                "fr": "Démarrer allumé",
+                "nl": "Start AAN",
+                "de": "Start EIN"
+              }
+            },
+            {
+              "id": "memory",
+              "label": {
+                "en": "Remember state",
+                "fr": "Mémoriser état",
+                "nl": "Onthoud staat",
+                "de": "Zustand merken"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

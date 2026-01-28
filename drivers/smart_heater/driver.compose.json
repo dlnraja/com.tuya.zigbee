@@ -14,12 +14,6 @@
     "measure_battery",
     "measure_power"
   ],
-  "energy": {
-    "approximation": {
-      "usageOn": 2000,
-      "usageOff": 5
-    }
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZE200_ckud7u2l",

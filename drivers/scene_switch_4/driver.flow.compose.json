@@ -25,10 +25,42 @@
             "de": "Taste"
           },
           "values": [
-            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } },
-            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } },
-            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3", "nl": "Knop 3", "de": "Taste 3" } },
-            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4", "nl": "Knop 4", "de": "Taste 4" } }
+            {
+              "id": "1",
+              "label": {
+                "en": "Button 1",
+                "fr": "Bouton 1",
+                "nl": "Knop 1",
+                "de": "Taste 1"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Button 2",
+                "fr": "Bouton 2",
+                "nl": "Knop 2",
+                "de": "Taste 2"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Button 3",
+                "fr": "Bouton 3",
+                "nl": "Knop 3",
+                "de": "Taste 3"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Button 4",
+                "fr": "Bouton 4",
+                "nl": "Knop 4",
+                "de": "Taste 4"
+              }
+            }
           ]
         }
       ],
@@ -36,7 +68,12 @@
         {
           "name": "button",
           "type": "string",
-          "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" },
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
           "example": "1"
         }
       ]
@@ -59,12 +96,49 @@
         {
           "name": "button",
           "type": "dropdown",
-          "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" },
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
           "values": [
-            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } },
-            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } },
-            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3", "nl": "Knop 3", "de": "Taste 3" } },
-            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4", "nl": "Knop 4", "de": "Taste 4" } }
+            {
+              "id": "1",
+              "label": {
+                "en": "Button 1",
+                "fr": "Bouton 1",
+                "nl": "Knop 1",
+                "de": "Taste 1"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Button 2",
+                "fr": "Bouton 2",
+                "nl": "Knop 2",
+                "de": "Taste 2"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Button 3",
+                "fr": "Bouton 3",
+                "nl": "Knop 3",
+                "de": "Taste 3"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Button 4",
+                "fr": "Bouton 4",
+                "nl": "Knop 4",
+                "de": "Taste 4"
+              }
+            }
           ]
         }
       ],
@@ -72,7 +146,12 @@
         {
           "name": "button",
           "type": "string",
-          "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" },
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
           "example": "1"
         }
       ]
@@ -95,12 +174,49 @@
         {
           "name": "button",
           "type": "dropdown",
-          "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" },
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
           "values": [
-            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1", "nl": "Knop 1", "de": "Taste 1" } },
-            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2", "nl": "Knop 2", "de": "Taste 2" } },
-            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3", "nl": "Knop 3", "de": "Taste 3" } },
-            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4", "nl": "Knop 4", "de": "Taste 4" } }
+            {
+              "id": "1",
+              "label": {
+                "en": "Button 1",
+                "fr": "Bouton 1",
+                "nl": "Knop 1",
+                "de": "Taste 1"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Button 2",
+                "fr": "Bouton 2",
+                "nl": "Knop 2",
+                "de": "Taste 2"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Button 3",
+                "fr": "Bouton 3",
+                "nl": "Knop 3",
+                "de": "Taste 3"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Button 4",
+                "fr": "Bouton 4",
+                "nl": "Knop 4",
+                "de": "Taste 4"
+              }
+            }
           ]
         }
       ],
@@ -108,72 +224,158 @@
         {
           "name": "button",
           "type": "string",
-          "title": { "en": "Button", "fr": "Bouton", "nl": "Knop", "de": "Taste" },
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
           "example": "1"
         }
       ]
     },
     {
       "id": "scene_switch_4_button_1_pressed",
-      "title": { "en": "Button 1 pressed", "fr": "Bouton 1 appuyé", "nl": "Knop 1 ingedrukt", "de": "Taste 1 gedrückt" }
+      "title": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 appuyé",
+        "nl": "Knop 1 ingedrukt",
+        "de": "Taste 1 gedrückt"
+      },
+      "args": []
     },
     {
       "id": "scene_switch_4_button_1_double",
-      "title": { "en": "Button 1 double-pressed", "fr": "Bouton 1 double-cliqué", "nl": "Knop 1 dubbel", "de": "Taste 1 doppelt" }
+      "title": {
+        "en": "Button 1 double-pressed",
+        "fr": "Bouton 1 double-cliqué",
+        "nl": "Knop 1 dubbel",
+        "de": "Taste 1 doppelt"
+      },
+      "args": []
     },
     {
       "id": "scene_switch_4_button_1_long",
-      "title": { "en": "Button 1 long-pressed", "fr": "Bouton 1 appui long", "nl": "Knop 1 lang", "de": "Taste 1 lange" }
+      "title": {
+        "en": "Button 1 long-pressed",
+        "fr": "Bouton 1 appui long",
+        "nl": "Knop 1 lang",
+        "de": "Taste 1 lange"
+      },
+      "args": []
     },
     {
       "id": "scene_switch_4_button_2_pressed",
-      "title": { "en": "Button 2 pressed", "fr": "Bouton 2 appuyé", "nl": "Knop 2 ingedrukt", "de": "Taste 2 gedrückt" }
+      "title": {
+        "en": "Button 2 pressed",
+        "fr": "Bouton 2 appuyé",
+        "nl": "Knop 2 ingedrukt",
+        "de": "Taste 2 gedrückt"
+      },
+      "args": []
     },
     {
       "id": "scene_switch_4_button_2_double",
-      "title": { "en": "Button 2 double-pressed", "fr": "Bouton 2 double-cliqué", "nl": "Knop 2 dubbel", "de": "Taste 2 doppelt" }
+      "title": {
+        "en": "Button 2 double-pressed",
+        "fr": "Bouton 2 double-cliqué",
+        "nl": "Knop 2 dubbel",
+        "de": "Taste 2 doppelt"
+      },
+      "args": []
     },
     {
       "id": "scene_switch_4_button_2_long",
-      "title": { "en": "Button 2 long-pressed", "fr": "Bouton 2 appui long", "nl": "Knop 2 lang", "de": "Taste 2 lange" }
+      "title": {
+        "en": "Button 2 long-pressed",
+        "fr": "Bouton 2 appui long",
+        "nl": "Knop 2 lang",
+        "de": "Taste 2 lange"
+      },
+      "args": []
     },
     {
       "id": "scene_switch_4_button_3_pressed",
-      "title": { "en": "Button 3 pressed", "fr": "Bouton 3 appuyé", "nl": "Knop 3 ingedrukt", "de": "Taste 3 gedrückt" }
+      "title": {
+        "en": "Button 3 pressed",
+        "fr": "Bouton 3 appuyé",
+        "nl": "Knop 3 ingedrukt",
+        "de": "Taste 3 gedrückt"
+      },
+      "args": []
     },
     {
       "id": "scene_switch_4_button_3_double",
-      "title": { "en": "Button 3 double-pressed", "fr": "Bouton 3 double-cliqué", "nl": "Knop 3 dubbel", "de": "Taste 3 doppelt" }
+      "title": {
+        "en": "Button 3 double-pressed",
+        "fr": "Bouton 3 double-cliqué",
+        "nl": "Knop 3 dubbel",
+        "de": "Taste 3 doppelt"
+      },
+      "args": []
     },
     {
       "id": "scene_switch_4_button_3_long",
-      "title": { "en": "Button 3 long-pressed", "fr": "Bouton 3 appui long", "nl": "Knop 3 lang", "de": "Taste 3 lange" }
+      "title": {
+        "en": "Button 3 long-pressed",
+        "fr": "Bouton 3 appui long",
+        "nl": "Knop 3 lang",
+        "de": "Taste 3 lange"
+      },
+      "args": []
     },
     {
       "id": "scene_switch_4_button_4_pressed",
-      "title": { "en": "Button 4 pressed", "fr": "Bouton 4 appuyé", "nl": "Knop 4 ingedrukt", "de": "Taste 4 gedrückt" }
+      "title": {
+        "en": "Button 4 pressed",
+        "fr": "Bouton 4 appuyé",
+        "nl": "Knop 4 ingedrukt",
+        "de": "Taste 4 gedrückt"
+      },
+      "args": []
     },
     {
       "id": "scene_switch_4_button_4_double",
-      "title": { "en": "Button 4 double-pressed", "fr": "Bouton 4 double-cliqué", "nl": "Knop 4 dubbel", "de": "Taste 4 doppelt" }
+      "title": {
+        "en": "Button 4 double-pressed",
+        "fr": "Bouton 4 double-cliqué",
+        "nl": "Knop 4 dubbel",
+        "de": "Taste 4 doppelt"
+      },
+      "args": []
     },
     {
       "id": "scene_switch_4_button_4_long",
-      "title": { "en": "Button 4 long-pressed", "fr": "Bouton 4 appui long", "nl": "Knop 4 lang", "de": "Taste 4 lange" }
+      "title": {
+        "en": "Button 4 long-pressed",
+        "fr": "Bouton 4 appui long",
+        "nl": "Knop 4 lang",
+        "de": "Taste 4 lange"
+      },
+      "args": []
     },
     {
       "id": "scene_switch_4_battery_changed",
-      "title": { "en": "Battery level changed", "fr": "Niveau batterie changé", "nl": "Batterijniveau gewijzigd", "de": "Batteriestand geändert" },
+      "title": {
+        "en": "Battery level changed",
+        "fr": "Niveau batterie changé",
+        "nl": "Batterijniveau gewijzigd",
+        "de": "Batteriestand geändert"
+      },
       "tokens": [
         {
           "name": "battery",
           "type": "number",
-          "title": { "en": "Battery (%)", "fr": "Batterie (%)", "nl": "Batterij (%)", "de": "Batterie (%)" },
+          "title": {
+            "en": "Battery (%)",
+            "fr": "Batterie (%)",
+            "nl": "Batterij (%)",
+            "de": "Batterie (%)"
+          },
           "example": 75
         }
-      ]
+      ],
+      "args": []
     }
-  ],
-  "conditions": [],
-  "actions": []
+  ]
 }

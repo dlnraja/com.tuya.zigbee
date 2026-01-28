@@ -12,14 +12,9 @@
     "light_hue",
     "light_saturation",
     "light_temperature",
-    "light_mode"
+    "light_mode",
+    "measure_battery"
   ],
-  "energy": {
-    "approximation": {
-      "usageOn": 36,
-      "usageOff": 1
-    }
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZB210_LMQQUXUS",

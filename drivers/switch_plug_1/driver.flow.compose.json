@@ -1,18 +1,18 @@
 {
-  "triggers": [],
-  "conditions": [],
   "actions": [
     {
       "id": "switch_plug_1_turn_on",
       "title": {
         "en": "Turn on"
-      }
+      },
+      "args": []
     },
     {
       "id": "switch_plug_1_turn_off",
       "title": {
         "en": "Turn off"
-      }
+      },
+      "args": []
     }
   ]
 }

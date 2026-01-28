@@ -1,0 +1,195 @@
+{
+  "name": {
+    "en": "Wall Dimmer 1-Gang 1-Way",
+    "nl": "Muurschakelaar Dimmer 1-Gang 1-Weg"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": false
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 100,
+      "usageOff": 1
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "/drivers/wall_dimmer_1gang_1way/assets/images/small.png",
+    "large": "/drivers/wall_dimmer_1gang_1way/assets/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_4fjiwweb",
+      "_TZE200_3p5ydos3",
+      "_TZE204_n9ctkb6j",
+      "_TZE200_ip2akl4w",
+      "_TZE200_1agwnems",
+      "_TZE200_la2c2uo9",
+      "_TZE200_579lguh2",
+      "_TZE200_vucankjx",
+      "_TZE200_4mh6tyyo",
+      "_TZE204_hlx9tnzb",
+      "_TZE204_9qhuzgo0",
+      "_TZE200_9cxuhakf",
+      "_TZE200_a0syesf5",
+      "_TZE200_swaamsoy",
+      "_TZE200_ojzhk75b",
+      "_TZE200_w4cryh2i",
+      "_TZE200_dfxkcots",
+      "_TZE200_9i9dt8is",
+      "_TZE200_ctq0k47x",
+      "_TZE200_ebwgzdqq",
+      "_TZE204_vevc4c6g",
+      "_TZE200_0nauxa0p",
+      "_TZE200_ykgar0ow",
+      "_TZE200_qzaing2g",
+      "_TZE204_3z6hca0q",
+      "_TZ3000_abrsvsou",
+      "_TZE200_whpb9yts",
+      "_TZE200_y8yjulon",
+      "_TZE204_5cuocqty",
+      "_TZE204_nqqylykc",
+      "_TZE200_p0gzbqct",
+      "_TZE204_dcnsggvz",
+      "_TZE200_6fjev1mn"
+    ],
+    "productId": [
+      "TS0601",
+      "TS004F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          4,
+          5,
+          61184
+        ],
+        "bindings": [
+          25,
+          10
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Toggle the switch to start pairing.\n\nIf pairing does not automatically start, try resetting the device by holding the button for 10 seconds until the LED flashes rapidly.",
+        "nl": "Schakel de schakelaar om te beginnen met koppelen.\n\nAls het koppelen niet automatisch start, probeer het apparaat te resetten door de knop 10 seconden ingedrukt te houden totdat de LED snel knippert."
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Dimmer Settings",
+        "nl": "Dimmer Instellingen"
+      },
+      "children": [
+        {
+          "id": "min_brightness",
+          "type": "number",
+          "label": {
+            "en": "Minimum Brightness (%)",
+            "nl": "Minimale Helderheid (%)"
+          },
+          "hint": {
+            "en": "Set the minimum brightness level (1-100)",
+            "nl": "Stel het minimale helderheidsniveau in (1-100)"
+          },
+          "value": 1,
+          "min": 1,
+          "max": 100,
+          "units": {
+            "en": "%",
+            "nl": "%"
+          }
+        },
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-on Behavior",
+            "nl": "Inschakelen Gedrag"
+          },
+          "hint": {
+            "en": "Select the behavior when power is restored",
+            "nl": "Selecteer het gedrag wanneer de stroom wordt hersteld"
+          },
+          "value": "2",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Off",
+                "nl": "Uit"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "On",
+                "nl": "Aan"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Last State",
+                "nl": "Laatste Status"
+              }
+            }
+          ]
+        },
+        {
+          "id": "light_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Light Type",
+            "nl": "Lichttype"
+          },
+          "hint": {
+            "en": "Select the type of light connected",
+            "nl": "Selecteer het type aangesloten lamp"
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "LED",
+                "nl": "LED"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Incandescent",
+                "nl": "Gloeilamp"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Halogen",
+                "nl": "Halogeen"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
