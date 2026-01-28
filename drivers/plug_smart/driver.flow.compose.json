@@ -235,6 +235,29 @@
           }
         }
       ]
+    },
+    {
+      "id": "plug_smart_set_indicator",
+      "title": { "en": "Set LED indicator mode", "fr": "Définir le mode LED", "nl": "LED indicator instellen", "de": "LED-Anzeige einstellen" },
+      "titleFormatted": { "en": "Set LED indicator to [[mode]]", "fr": "Définir LED sur [[mode]]", "nl": "Stel LED in op [[mode]]", "de": "LED auf [[mode]] setzen" },
+      "hint": { "en": "Control the plug LED indicator (DP26/27)", "fr": "Contrôle l'indicateur LED", "nl": "Beheer de LED indicator", "de": "LED-Anzeige steuern" },
+      "args": [{ "type": "dropdown", "name": "mode", "title": { "en": "Mode" }, "values": [
+        { "id": "off", "label": { "en": "Always Off", "fr": "Toujours éteint", "nl": "Altijd uit", "de": "Immer aus" } },
+        { "id": "relay", "label": { "en": "Follow Relay", "fr": "Suivre relais", "nl": "Volg relais", "de": "Relais folgen" } },
+        { "id": "inverted", "label": { "en": "Inverted", "fr": "Inversé", "nl": "Omgekeerd", "de": "Invertiert" } },
+        { "id": "always_on", "label": { "en": "Always On", "fr": "Toujours allumé", "nl": "Altijd aan", "de": "Immer an" } }
+      ]}]
+    },
+    {
+      "id": "plug_smart_set_power_on",
+      "title": { "en": "Set power-on behavior", "fr": "Définir comportement démarrage", "nl": "Opstart gedrag instellen", "de": "Einschaltverhalten setzen" },
+      "titleFormatted": { "en": "Set power-on behavior to [[behavior]]", "fr": "Définir démarrage sur [[behavior]]", "nl": "Stel opstart in op [[behavior]]", "de": "Einschaltverhalten auf [[behavior]] setzen" },
+      "hint": { "en": "What happens when power is restored", "fr": "Comportement après coupure", "nl": "Wat gebeurt na stroomuitval", "de": "Nach Stromausfall" },
+      "args": [{ "type": "dropdown", "name": "behavior", "title": { "en": "Behavior" }, "values": [
+        { "id": "off", "label": { "en": "Start OFF", "fr": "Démarrer éteint", "nl": "Start UIT", "de": "Start AUS" } },
+        { "id": "on", "label": { "en": "Start ON", "fr": "Démarrer allumé", "nl": "Start AAN", "de": "Start EIN" } },
+        { "id": "memory", "label": { "en": "Remember state", "fr": "Mémoriser état", "nl": "Onthoud staat", "de": "Zustand merken" } }
+      ]}]
     }
   ]
 }

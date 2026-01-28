@@ -115,8 +115,11 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
       await super.onNodeInit({ zclNode });
       await this.initPhysicalButtonDetection(zclNode);
       await this.initVirtualButtons();
-      this.log(`[SWITCH-1G] v5.5.899 STANDARD - ${profile.brand || 'Hybrid'} Tuya DP + ZCL`);
+      this.log(`[SWITCH-1G] v5.5.929 STANDARD - ${profile.brand || 'Hybrid'} Tuya DP + ZCL`);
     }
+    
+    // v5.5.929: Register flow cards (backlight, etc.)
+    await this._registerFlowCards();
   }
 
   /**
@@ -284,6 +287,48 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
       this.markAppCommand(1);
       return this._setGangState?.(1, value) || this._setOnOff?.(value);
     });
+  }
+
+  /**
+   * v5.5.929: Register flow cards including backlight control
+   */
+  async _registerFlowCards() {
+    // Backlight mode flow action card
+    const backlightCard = this.homey.flow.getActionCard('switch_1gang_set_backlight');
+    if (backlightCard) {
+      backlightCard.registerRunListener(async (args, state) => {
+        const mode = args.mode;
+        this.log(`[SWITCH-1G] 💡 Flow: Set backlight mode to ${mode}`);
+        return this.setBacklightMode(mode);
+      });
+      this.log('[SWITCH-1G] ✅ Backlight flow card registered');
+    }
+  }
+
+  /**
+   * v5.5.929: Set LED backlight mode via DP15
+   * @param {string} mode - 'off', 'normal', or 'inverted'
+   */
+  async setBacklightMode(mode) {
+    const modeMap = { off: 0, normal: 1, inverted: 2 };
+    const dpValue = modeMap[mode] ?? 1;
+    
+    this.log(`[SWITCH-1G] 💡 Setting backlight: ${mode} (DP15=${dpValue})`);
+    
+    // Use Tuya DP if available
+    if (typeof this._sendTuyaDP === 'function') {
+      await this._sendTuyaDP(15, dpValue, 'enum');
+      return true;
+    }
+    
+    // Fallback: Try settings update (triggers onSettings handler)
+    try {
+      await this.setSettings({ backlight_mode: mode });
+      return true;
+    } catch (e) {
+      this.error(`[SWITCH-1G] Backlight set failed: ${e.message}`);
+      throw new Error('Device does not support LED backlight control');
+    }
   }
 
   onDeleted() {
