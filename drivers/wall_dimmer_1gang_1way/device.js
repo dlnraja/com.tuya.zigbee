@@ -13,7 +13,10 @@ const dataPoints = {
   minBrightness: 3,
   countdown: 9,
   powerOnBehavior: 14,
+  backlightMode: 15,        // Original - doesn't work for this device
   lightType: 16,
+  backlightSwitch: 36,      // Alternative: Backlight on/off
+  backlightLightMode: 37,   // Alternative: Light mode (none/relay/pos)
 };
 
 // v5.5.799: Light type enum values
@@ -30,12 +33,12 @@ const POWER_ON_BEHAVIOR = {
   LAST_STATE: 2
 };
 
-class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
+class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
 
   async onNodeInit({zclNode}) {
-    
+
     this.log('════════════════════════════════════════');
-    this.log('SwitchDimmer1Gang onNodeInit STARTING');
+    this.log('WallDimmer1Gang1Way onNodeInit STARTING');
     this.log('════════════════════════════════════════');
     
     await super.onNodeInit({zclNode});
@@ -120,7 +123,35 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
             this.log(`Setting light_type: ${lightTypeValue}`);
             await this.sendTuyaCommand(dataPoints.lightType, lightTypeValue, 'enum');
             break;
-            
+
+          case 'backlight_mode':
+            const backlightValue = parseInt(newSettings.backlight_mode, 10);
+            this.log(`Setting backlight_mode: ${backlightValue} (0=off, 1=normal, 2=inverted)`);
+
+            // Try alternative datapoints DP36+DP37 (from issue #26578)
+            if (backlightValue === 0) {
+              // Always off: Set DP36=0 (backlight disabled)
+              this.log('Trying DP36=0 (backlight off)');
+              await this.sendTuyaCommand(dataPoints.backlightSwitch, false, 'bool').catch(err =>
+                this.log('DP36 not supported:', err.message));
+            } else {
+              // Normal or inverted: Enable backlight (DP36=1) and set mode (DP37)
+              this.log('Trying DP36=1 (backlight on)');
+              await this.sendTuyaCommand(dataPoints.backlightSwitch, true, 'bool').catch(err =>
+                this.log('DP36 not supported:', err.message));
+
+              // DP37: 0=none, 1=relay/normal, 2=pos/inverted
+              const lightMode = backlightValue; // 1=normal(relay), 2=inverted(pos)
+              this.log(`Trying DP37=${lightMode} (light mode)`);
+              await this.sendTuyaCommand(dataPoints.backlightLightMode, lightMode, 'enum').catch(err =>
+                this.log('DP37 not supported:', err.message));
+            }
+
+            // Also try original DP15 as fallback
+            await this.sendTuyaCommand(dataPoints.backlightMode, backlightValue, 'enum').catch(err =>
+              this.log('DP15 failed (expected):', err.message));
+            break;
+
           default:
             this.log(`Unknown setting: ${key}`);
         }
@@ -165,7 +196,21 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
         await this.sendTuyaCommand(dataPoints.lightType, lightTypeValue, 'enum').catch(e =>
           this.log('light_type not supported by this device'));
       }
-      
+
+      // Apply backlight_mode if not default
+      if (settings.backlight_mode && settings.backlight_mode !== '1') {
+        const backlightValue = parseInt(settings.backlight_mode, 10);
+        this.log(`Applying initial backlight_mode: ${backlightValue}`);
+
+        // Try alternative datapoints DP36+DP37
+        if (backlightValue === 0) {
+          await this.sendTuyaCommand(dataPoints.backlightSwitch, false, 'bool').catch(() => {});
+        } else {
+          await this.sendTuyaCommand(dataPoints.backlightSwitch, true, 'bool').catch(() => {});
+          await this.sendTuyaCommand(dataPoints.backlightLightMode, backlightValue, 'enum').catch(() => {});
+        }
+      }
+
     } catch (err) {
       this.error('Failed to apply initial settings:', err);
     }
@@ -228,7 +273,7 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
         
         // Trigger flow cards ONLY if this is a physical button press
         if (isPhysicalPress) {
-          const flowCardId = state ? 'switch_dimmer_1gang_turned_on' : 'switch_dimmer_1gang_turned_off';
+          const flowCardId = state ? 'wall_dimmer_1gang_1way_turned_on' : 'wall_dimmer_1gang_1way_turned_off';
           this.log(`Triggering: ${flowCardId}`);
           this.homey.flow.getDeviceTriggerCard(flowCardId)
             .trigger(this, {}, {})
@@ -264,13 +309,13 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
         // Trigger flow cards ONLY if this is a physical button press
         if (isPhysicalPress) {
           if (brightnessIncreased) {
-            this.log('Triggering: switch_dimmer_1gang_brightness_increased (PHYSICAL)');
-            this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_brightness_increased')
+            this.log('Triggering: wall_dimmer_1gang_1way_brightness_increased (PHYSICAL)');
+            this.homey.flow.getDeviceTriggerCard('wall_dimmer_1gang_1way_brightness_increased')
               .trigger(this, { brightness })
               .catch(this.error);
           } else if (brightnessDecreased) {
-            this.log('Triggering: switch_dimmer_1gang_brightness_decreased (PHYSICAL)');
-            this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_brightness_decreased')
+            this.log('Triggering: wall_dimmer_1gang_1way_brightness_decreased (PHYSICAL)');
+            this.homey.flow.getDeviceTriggerCard('wall_dimmer_1gang_1way_brightness_decreased')
               .trigger(this, { brightness })
               .catch(this.error);
           }
@@ -371,4 +416,4 @@ class SwitchDimmer1Gang extends TuyaSpecificClusterDevice {
 
 }
 
-module.exports = SwitchDimmer1Gang;
+module.exports = WallDimmer1Gang1Way;

@@ -42242,8 +42242,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/switch_1gang_bseed/assets/images/small.png",
-        "large": "/drivers/switch_1gang_bseed/assets/images/large.png"
+        "small": "/drivers/wall_switch_1gang_1way/assets/images/small.png",
+        "large": "/drivers/wall_switch_1gang_1way/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -42277,11 +42277,58 @@
           }
         }
       },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "💡 LED Indicator (Backlight)",
+            "nl": "💡 LED-indicator (Achtergrondverlichting)"
+          },
+          "children": [
+            {
+              "id": "backlight_mode",
+              "type": "dropdown",
+              "label": {
+                "en": "LED Indicator Mode",
+                "nl": "LED-indicator Modus"
+              },
+              "hint": {
+                "en": "Control when the LED indicator on the switch is lit",
+                "nl": "Bepaal wanneer de LED-indicator op de schakelaar brandt"
+              },
+              "value": "normal",
+              "values": [
+                {
+                  "id": "off",
+                  "label": {
+                    "en": "Always Off",
+                    "nl": "Altijd Uit"
+                  }
+                },
+                {
+                  "id": "normal",
+                  "label": {
+                    "en": "On when Switch ON (Normal)",
+                    "nl": "Aan wanneer Schakelaar AAN (Normaal)"
+                  }
+                },
+                {
+                  "id": "inverted",
+                  "label": {
+                    "en": "On when Switch OFF (Inverted)",
+                    "nl": "Aan wanneer Schakelaar UIT (Omgekeerd)"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "name": {
-        "en": "Bseed 1-Gang Switch",
-        "nl": "Bseed 1-Gang Schakelaar"
+        "en": "Wall Switch 1-Gang 1-Way",
+        "nl": "Muurschakelaar 1-Gang 1-Weg"
       },
-      "id": "switch_1gang_bseed"
+      "id": "wall_switch_1gang_1way"
     },
     {
       "class": "socket",
@@ -54949,10 +54996,10 @@
     },
     {
       "name": {
-        "en": "Switch Touch Dimmer (1 Gang)",
-        "nl": "Switch Touch Dimmer (1 Gang)"
+        "en": "Wall Dimmer 1-Gang 1-Way",
+        "nl": "Wall Dimmer 1-Gang 1-Way"
       },
-      "class": "light",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "dim"
@@ -54974,9 +55021,9 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/switch_dimmer_1gang/assets/images/small.png",
-        "large": "/drivers/switch_dimmer_1gang/assets/images/large.png",
-        "xlarge": "/drivers/switch_dimmer_1gang/assets/images/xlarge.png"
+        "small": "/drivers/wall_dimmer_1gang_1way/assets/images/small.png",
+        "large": "/drivers/wall_dimmer_1gang_1way/assets/images/large.png",
+        "xlarge": "/drivers/wall_dimmer_1gang_1way/assets/images/xlarge.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -55139,9 +55186,54 @@
               ]
             }
           ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "💡 LED Indicator (Backlight)",
+            "nl": "💡 LED-indicator (Achtergrondverlichting)"
+          },
+          "children": [
+            {
+              "id": "backlight_mode",
+              "type": "dropdown",
+              "label": {
+                "en": "LED Indicator Mode",
+                "nl": "LED-indicator Modus"
+              },
+              "hint": {
+                "en": "Control when the LED indicator on the switch is lit",
+                "nl": "Bepaal wanneer de LED-indicator op de schakelaar brandt"
+              },
+              "value": "1",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Always Off",
+                    "nl": "Altijd Uit"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "On when Light ON (Normal)",
+                    "nl": "Aan wanneer Licht AAN (Normaal)"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "On when Light OFF (Inverted)",
+                    "nl": "Aan wanneer Licht UIT (Omgekeerd)"
+                  }
+                }
+              ]
+            }
+          ]
         }
       ],
-      "id": "switch_dimmer_1gang",
+      "id": "wall_dimmer_1gang_1way",
       "pair": [
         {
           "id": "list_devices",
@@ -55160,7 +55252,7 @@
   "flow": {
     "triggers": [
       {
-        "id": "switch_dimmer_1gang_turned_on",
+        "id": "wall_dimmer_1gang_1way_turned_on",
         "title": {
           "en": "Turned on",
           "nl": "Aangezet"
@@ -55177,12 +55269,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_dimmer_1gang"
+            "filter": "driver_id=wall_dimmer_1gang_1way"
           }
         ]
       },
       {
-        "id": "switch_dimmer_1gang_turned_off",
+        "id": "wall_dimmer_1gang_1way_turned_off",
         "title": {
           "en": "Turned off",
           "nl": "Uitgezet"
@@ -55199,12 +55291,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_dimmer_1gang"
+            "filter": "driver_id=wall_dimmer_1gang_1way"
           }
         ]
       },
       {
-        "id": "switch_dimmer_1gang_brightness_increased",
+        "id": "wall_dimmer_1gang_1way_brightness_increased",
         "title": {
           "en": "Brightness increased",
           "nl": "Helderheid verhoogd"
@@ -55232,12 +55324,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_dimmer_1gang"
+            "filter": "driver_id=wall_dimmer_1gang_1way"
           }
         ]
       },
       {
-        "id": "switch_dimmer_1gang_brightness_decreased",
+        "id": "wall_dimmer_1gang_1way_brightness_decreased",
         "title": {
           "en": "Brightness decreased",
           "nl": "Helderheid verlaagd"
@@ -55265,7 +55357,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_dimmer_1gang"
+            "filter": "driver_id=wall_dimmer_1gang_1way"
           }
         ]
       },
@@ -64084,7 +64176,7 @@
         ]
       },
       {
-        "id": "switch_1gang_bseed_turned_on",
+        "id": "wall_switch_1gang_1way_turned_on",
         "title": {
           "en": "Turned on",
           "nl": "Aangezet"
@@ -64101,12 +64193,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_1gang_bseed"
+            "filter": "driver_id=wall_switch_1gang_1way"
           }
         ]
       },
       {
-        "id": "switch_1gang_bseed_turned_off",
+        "id": "wall_switch_1gang_1way_turned_off",
         "title": {
           "en": "Turned off",
           "nl": "Uitgezet"
@@ -64123,7 +64215,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_1gang_bseed"
+            "filter": "driver_id=wall_switch_1gang_1way"
           }
         ]
       }
@@ -66722,6 +66814,104 @@
       }
     ],
     "actions": [
+      {
+        "id": "wall_dimmer_1gang_1way_set_backlight",
+        "title": {
+          "en": "Set LED indicator mode",
+          "nl": "Stel LED-indicator modus in"
+        },
+        "titleFormatted": {
+          "en": "Set LED indicator to [[mode]]",
+          "nl": "Stel LED-indicator in op [[mode]]"
+        },
+        "hint": {
+          "en": "Control when the LED indicator on the switch is lit",
+          "nl": "Bepaal wanneer de LED-indicator op de schakelaar brandt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_dimmer_1gang_1way"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Always Off",
+                  "nl": "Altijd Uit"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "On when Light ON (Normal)",
+                  "nl": "Aan wanneer Licht AAN (Normaal)"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "On when Light OFF (Inverted)",
+                  "nl": "Aan wanneer Licht UIT (Omgekeerd)"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_1gang_1way_set_backlight",
+        "title": {
+          "en": "Set LED indicator mode",
+          "nl": "Stel LED-indicator modus in"
+        },
+        "titleFormatted": {
+          "en": "Set LED indicator to [[mode]]",
+          "nl": "Stel LED-indicator in op [[mode]]"
+        },
+        "hint": {
+          "en": "Control when the LED indicator on the switch is lit",
+          "nl": "Bepaal wanneer de LED-indicator op de schakelaar brandt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_1gang_1way"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Always Off",
+                  "nl": "Altijd Uit"
+                }
+              },
+              {
+                "id": "normal",
+                "label": {
+                  "en": "On when Switch ON (Normal)",
+                  "nl": "Aan wanneer Schakelaar AAN (Normaal)"
+                }
+              },
+              {
+                "id": "inverted",
+                "label": {
+                  "en": "On when Switch OFF (Inverted)",
+                  "nl": "Aan wanneer Schakelaar UIT (Omgekeerd)"
+                }
+              }
+            ]
+          }
+        ]
+      },
       {
         "id": "tuya_dp_send",
         "title": {

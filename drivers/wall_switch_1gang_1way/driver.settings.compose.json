@@ -1,0 +1,47 @@
+[
+  {
+    "type": "group",
+    "label": {
+      "en": "💡 LED Indicator (Backlight)",
+      "nl": "💡 LED-indicator (Achtergrondverlichting)"
+    },
+    "children": [
+      {
+        "id": "backlight_mode",
+        "type": "dropdown",
+        "label": {
+          "en": "LED Indicator Mode",
+          "nl": "LED-indicator Modus"
+        },
+        "hint": {
+          "en": "Control when the LED indicator on the switch is lit",
+          "nl": "Bepaal wanneer de LED-indicator op de schakelaar brandt"
+        },
+        "value": "normal",
+        "values": [
+          {
+            "id": "off",
+            "label": {
+              "en": "Always Off",
+              "nl": "Altijd Uit"
+            }
+          },
+          {
+            "id": "normal",
+            "label": {
+              "en": "On when Switch ON (Normal)",
+              "nl": "Aan wanneer Schakelaar AAN (Normaal)"
+            }
+          },
+          {
+            "id": "inverted",
+            "label": {
+              "en": "On when Switch OFF (Inverted)",
+              "nl": "Aan wanneer Schakelaar UIT (Omgekeerd)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
