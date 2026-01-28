@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.950",
+  "version": "5.5.951",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -64124,6 +64124,7 @@
       "zigbee": {
         "productId": [
           "TS0002",
+          "TS0003",
           "TS0012",
           "TS0002_power",
           "TS0002_switch_module",
