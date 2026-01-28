@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.939",
+  "version": "5.5.940",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -63342,10 +63342,6 @@
           }
         },
         "manufacturerName": [
-          "_TZ3000_BLHVSAQF",
-          "_tz3000_blhvsaqf",
-          "_TZ3000_YSDV91BK",
-          "_tz3000_ysdv91bk",
           "_tyzb01_1xktopx6",
           "_tyzb01_4mdqxxnn",
           "_TYZB01_4qw4rl1u",

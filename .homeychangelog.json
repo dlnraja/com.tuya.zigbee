@@ -1,4 +1,7 @@
 {
+  "5.5.940": {
+    "en": "🔧 PR #118 PROPER INTEGRATION (@packetninja): Separated BSEED switch support into dedicated wall_switch_1gang_1way driver. Removed duplicate BSEED code from switch_1gang (fingerprints _TZ3000_blhvsaqf, _TZ3000_ysdv91bk now exclusively in wall_switch_1gang_1way). This follows packetninja's refactor for cleaner architecture. BSEED users: RE-PAIR your devices to use the new dedicated driver!"
+  },
   "5.5.939": {
     "en": "🔧 CURTAIN MOTOR FIX v3: Fixed datapoint() payload format. Now uses { data: cmd } with complete DP frame buffer [seq:2][dp:1][type:1][len:2][data:N] instead of { dp, datatype, data }. This is the correct format matching ZigbeeClusterManager.sendTuyaDatapoint(). Fixes 'tuya.datapoint: value is unexpected property' error!"
   },
