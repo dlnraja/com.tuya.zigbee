@@ -1,9 +1,9 @@
 {
   "name": {
-    "en": "Switch Touch Dimmer (1 Gang)",
-    "nl": "Switch Touch Dimmer (1 Gang)"
+    "en": "Wall Dimmer 1-Gang 1-Way",
+    "nl": "Muurschakelaar Dimmer 1-Gang 1-Weg"
   },
-  "class": "light",
+  "class": "socket",
   "capabilities": [
     "onoff",
     "dim"
@@ -26,8 +26,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "/drivers/switch_dimmer_1gang/assets/images/small.png",
-    "large": "/drivers/switch_dimmer_1gang/assets/images/large.png"
+    "small": "/drivers/wall_dimmer_1gang_1way/assets/images/small.png",
+    "large": "/drivers/wall_dimmer_1gang_1way/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [

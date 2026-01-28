@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "Bseed 1-Gang Switch",
-    "nl": "Bseed 1-Gang Schakelaar"
+    "en": "Wall Switch 1-Gang 1-Way",
+    "nl": "Muurschakelaar 1-Gang 1-Weg"
   },
   "class": "socket",
   "capabilities": [
@@ -20,8 +20,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "/drivers/switch_1gang_bseed/assets/images/small.png",
-    "large": "/drivers/switch_1gang_bseed/assets/images/large.png"
+    "small": "/drivers/wall_switch_1gang_1way/assets/images/small.png",
+    "large": "/drivers/wall_switch_1gang_1way/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [

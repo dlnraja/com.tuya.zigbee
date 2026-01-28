@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "switch_dimmer_1gang_turned_on",
+      "id": "wall_dimmer_1gang_1way_turned_on",
       "title": {
         "en": "Turned on",
         "nl": "Aangezet"
@@ -18,12 +18,12 @@
         {
           "type": "device",
           "name": "device",
-          "filter": "driver_id=switch_dimmer_1gang"
+          "filter": "driver_id=wall_dimmer_1gang_1way"
         }
       ]
     },
     {
-      "id": "switch_dimmer_1gang_turned_off",
+      "id": "wall_dimmer_1gang_1way_turned_off",
       "title": {
         "en": "Turned off",
         "nl": "Uitgezet"
@@ -40,12 +40,12 @@
         {
           "type": "device",
           "name": "device",
-          "filter": "driver_id=switch_dimmer_1gang"
+          "filter": "driver_id=wall_dimmer_1gang_1way"
         }
       ]
     },
     {
-      "id": "switch_dimmer_1gang_brightness_increased",
+      "id": "wall_dimmer_1gang_1way_brightness_increased",
       "title": {
         "en": "Brightness increased",
         "nl": "Helderheid verhoogd"
@@ -73,12 +73,12 @@
         {
           "type": "device",
           "name": "device",
-          "filter": "driver_id=switch_dimmer_1gang"
+          "filter": "driver_id=wall_dimmer_1gang_1way"
         }
       ]
     },
     {
-      "id": "switch_dimmer_1gang_brightness_decreased",
+      "id": "wall_dimmer_1gang_1way_brightness_decreased",
       "title": {
         "en": "Brightness decreased",
         "nl": "Helderheid verlaagd"
@@ -106,7 +106,58 @@
         {
           "type": "device",
           "name": "device",
-          "filter": "driver_id=switch_dimmer_1gang"
+          "filter": "driver_id=wall_dimmer_1gang_1way"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "wall_dimmer_1gang_1way_set_backlight",
+      "title": {
+        "en": "Set LED indicator mode",
+        "nl": "Stel LED-indicator modus in"
+      },
+      "titleFormatted": {
+        "en": "Set LED indicator to [[mode]]",
+        "nl": "Stel LED-indicator in op [[mode]]"
+      },
+      "hint": {
+        "en": "Control when the LED indicator on the switch is lit",
+        "nl": "Bepaal wanneer de LED-indicator op de schakelaar brandt"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=wall_dimmer_1gang_1way"
+        },
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "On when Light ON (Normal)",
+                "nl": "Aan wanneer Licht AAN (Normaal)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "On when Light OFF (Inverted)",
+                "nl": "Aan wanneer Licht UIT (Omgekeerd)"
+              }
+            }
+          ]
         }
       ]
     }

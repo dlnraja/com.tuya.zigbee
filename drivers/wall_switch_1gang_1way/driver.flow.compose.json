@@ -1,0 +1,99 @@
+{
+  "triggers": [
+    {
+      "id": "wall_switch_1gang_1way_turned_on",
+      "title": {
+        "en": "Turned on",
+        "nl": "Aangezet"
+      },
+      "titleFormatted": {
+        "en": "[[device]] turned on (physical button)",
+        "nl": "[[device]] aangezet (fysieke knop)"
+      },
+      "hint": {
+        "en": "Triggered when the switch is turned on using the physical button",
+        "nl": "Geactiveerd wanneer de schakelaar wordt aangezet met de fysieke knop"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=wall_switch_1gang_1way"
+        }
+      ]
+    },
+    {
+      "id": "wall_switch_1gang_1way_turned_off",
+      "title": {
+        "en": "Turned off",
+        "nl": "Uitgezet"
+      },
+      "titleFormatted": {
+        "en": "[[device]] turned off (physical button)",
+        "nl": "[[device]] uitgezet (fysieke knop)"
+      },
+      "hint": {
+        "en": "Triggered when the switch is turned off using the physical button",
+        "nl": "Geactiveerd wanneer de schakelaar wordt uitgezet met de fysieke knop"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=wall_switch_1gang_1way"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "wall_switch_1gang_1way_set_backlight",
+      "title": {
+        "en": "Set LED indicator mode",
+        "nl": "Stel LED-indicator modus in"
+      },
+      "titleFormatted": {
+        "en": "Set LED indicator to [[mode]]",
+        "nl": "Stel LED-indicator in op [[mode]]"
+      },
+      "hint": {
+        "en": "Control when the LED indicator on the switch is lit",
+        "nl": "Bepaal wanneer de LED-indicator op de schakelaar brandt"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=wall_switch_1gang_1way"
+        },
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit"
+              }
+            },
+            {
+              "id": "normal",
+              "label": {
+                "en": "On when Switch ON (Normal)",
+                "nl": "Aan wanneer Schakelaar AAN (Normaal)"
+              }
+            },
+            {
+              "id": "inverted",
+              "label": {
+                "en": "On when Switch OFF (Inverted)",
+                "nl": "Aan wanneer Schakelaar UIT (Omgekeerd)"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
