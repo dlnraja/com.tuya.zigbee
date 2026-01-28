@@ -623,8 +623,154 @@ class Button4GangDevice extends ButtonDevice {
 
       this.log('[BUTTON4-E000] ✅ MOES TS0044 cluster 0xE000 BoundCluster setup complete');
 
+      // v5.5.923: CRITICAL FIX - Add raw frame interceptor for cluster 57344
+      // BoundCluster may not receive frames if endpoint doesn't route unknown clusters
+      // This intercepts ALL frames at the endpoint level before they're discarded
+      await this._setupRawFrameInterceptor(zclNode);
+
     } catch (err) {
       this.log('[BUTTON4-E000] ⚠️ Setup error:', err.message);
+    }
+  }
+
+  /**
+   * v5.5.923: CRITICAL FIX - Raw frame interceptor for MOES _TZ3000_zgyzgdua
+   * Issue: BoundCluster may not receive frames because Homey SDK discards unknown cluster frames
+   * Solution: Intercept frames at endpoint level using 'frame' event before they're discarded
+   * 
+   * Forum reports: Kokosnootmelk, nickpatteeuw - physical buttons don't trigger
+   */
+  async _setupRawFrameInterceptor(zclNode) {
+    try {
+      this.log('[BUTTON4-RAW] 🔧 Setting up raw frame interceptor for cluster 57344...');
+      
+      for (let ep = 1; ep <= 4; ep++) {
+        const endpoint = zclNode?.endpoints?.[ep];
+        if (!endpoint) continue;
+
+        // v5.5.923: Listen for ALL incoming frames at endpoint level
+        if (typeof endpoint.on === 'function') {
+          endpoint.on('frame', (clusterId, frame, meta) => {
+            // Only process cluster 57344 (0xE000) frames
+            if (clusterId === 57344 || clusterId === 0xE000) {
+              this.log(`[BUTTON4-RAW] 📥 EP${ep} cluster 57344 frame:`, {
+                clusterId,
+                cmdId: frame?.cmdId,
+                data: frame?.data?.toString?.('hex') || 'no data'
+              });
+              
+              // Parse button press from frame
+              this._handleRawE000Frame(ep, frame);
+            }
+          });
+          this.log(`[BUTTON4-RAW] ✅ Raw frame listener on EP${ep}`);
+        }
+
+        // v5.5.923: Also listen for 'command' events at endpoint level (alternative pattern)
+        if (typeof endpoint.on === 'function') {
+          endpoint.on('command', (clusterId, commandId, payload) => {
+            if (clusterId === 57344 || clusterId === 0xE000) {
+              this.log(`[BUTTON4-RAW] 📥 EP${ep} cluster 57344 command:`, { commandId, payload });
+              this._handleRawE000Command(ep, commandId, payload);
+            }
+          });
+        }
+
+        // v5.5.923: FALLBACK - Hook into handleFrame if available (zigbee-clusters internal)
+        const originalHandleFrame = endpoint.handleFrame?.bind(endpoint);
+        if (originalHandleFrame) {
+          endpoint.handleFrame = async (clusterId, frame, meta) => {
+            // Intercept cluster 57344 frames BEFORE they're discarded
+            if (clusterId === 57344 || clusterId === 0xE000) {
+              this.log(`[BUTTON4-HOOK] 📥 EP${ep} intercepted cluster 57344 frame`);
+              this._handleRawE000Frame(ep, frame);
+            }
+            // Always call original handler
+            return originalHandleFrame(clusterId, frame, meta);
+          };
+          this.log(`[BUTTON4-HOOK] ✅ Frame handler hooked on EP${ep}`);
+        }
+      }
+
+      this.log('[BUTTON4-RAW] ✅ Raw frame interceptor setup complete');
+    } catch (err) {
+      this.log('[BUTTON4-RAW] ⚠️ Setup error:', err.message);
+    }
+  }
+
+  /**
+   * v5.5.923: Handle raw cluster 57344 frame
+   */
+  _handleRawE000Frame(ep, frame) {
+    try {
+      const cmdId = frame?.cmdId ?? frame?.commandId;
+      const data = frame?.data;
+      
+      this.log(`[BUTTON4-RAW] 🔍 Parsing frame: cmdId=${cmdId}, data=${data?.toString?.('hex')}`);
+      
+      // Press type mapping
+      const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
+      
+      // Strategy 1: cmdId as button number (1-4), data[0] as press type
+      if (cmdId >= 1 && cmdId <= 4) {
+        const button = cmdId;
+        const pressType = pressTypeMap[data?.[0]] || 'single';
+        this.log(`[BUTTON4-RAW] 🔘 Button ${button} ${pressType.toUpperCase()} (cmdId strategy)`);
+        this.triggerButtonPress(button, pressType);
+        return;
+      }
+      
+      // Strategy 2: data[0] as button, data[1] as press type
+      if (data && data.length >= 2) {
+        const button = data[0];
+        const pressType = pressTypeMap[data[1]] || 'single';
+        if (button >= 1 && button <= 4) {
+          this.log(`[BUTTON4-RAW] 🔘 Button ${button} ${pressType.toUpperCase()} (data strategy)`);
+          this.triggerButtonPress(button, pressType);
+          return;
+        }
+      }
+      
+      // Strategy 3: Single byte - endpoint as button, value as press type
+      if (data && data.length === 1) {
+        const button = ep;
+        const pressType = pressTypeMap[data[0]] || 'single';
+        this.log(`[BUTTON4-RAW] 🔘 Button ${button} ${pressType.toUpperCase()} (single byte strategy)`);
+        this.triggerButtonPress(button, pressType);
+        return;
+      }
+      
+      // Strategy 4: Fallback - use endpoint as button, single press
+      this.log(`[BUTTON4-RAW] 🔘 Button ${ep} SINGLE (fallback strategy)`);
+      this.triggerButtonPress(ep, 'single');
+      
+    } catch (err) {
+      this.log(`[BUTTON4-RAW] ⚠️ Parse error: ${err.message}`);
+    }
+  }
+
+  /**
+   * v5.5.923: Handle raw cluster 57344 command
+   */
+  _handleRawE000Command(ep, commandId, payload) {
+    try {
+      this.log(`[BUTTON4-RAW] 🔍 Command: id=${commandId}, payload=`, payload);
+      
+      const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
+      
+      // Command ID might be button number
+      if (commandId >= 1 && commandId <= 4) {
+        const button = commandId;
+        const pressType = pressTypeMap[payload?.[0] ?? payload?.data?.[0]] || 'single';
+        this.log(`[BUTTON4-RAW] 🔘 Button ${button} ${pressType.toUpperCase()} (command strategy)`);
+        this.triggerButtonPress(button, pressType);
+      } else {
+        // Use endpoint as button
+        this.log(`[BUTTON4-RAW] 🔘 Button ${ep} SINGLE (command fallback)`);
+        this.triggerButtonPress(ep, 'single');
+      }
+    } catch (err) {
+      this.log(`[BUTTON4-RAW] ⚠️ Command error: ${err.message}`);
     }
   }
 

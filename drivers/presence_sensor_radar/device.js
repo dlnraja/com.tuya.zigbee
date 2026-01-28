@@ -392,16 +392,18 @@ class IntelligentDPAutoDiscovery {
     const minValue = Math.min(...numericSamples);
     const range = maxValue - minValue;
 
+    // v5.5.927: Fixed distance divisor detection (Peter_van_Werkhoven forum)
+    // Z2M/Hubitat research: ALL radar sensors use scale 100 (cm to meters)
+    // Only specific sensors (_TZE204_gkfbdvyx ceiling radar) use scale 10 (dm to meters)
     const isDistancePattern =
-      (dpId === 9 || dpId === 109 || dpId === 101) &&
+      (dpId === 9 || dpId === 109 || dpId === 119 || dpId === 19) &&
       avgValue >= 0 && avgValue <= 1000 &&
       range < 500;  // Distance shouldn't jump wildly
 
     if (isDistancePattern) {
-      // Detect divisor: if max > 100, probably cm (÷100), else dm (÷10) or m (÷1)
+      // v5.5.927: Default to 100 (cm to m) - Z2M/Hubitat standard
+      // Most sensors report in centimeters: 150 = 1.5m
       let divisor = 100;
-      if (maxValue <= 100) divisor = 10;
-      if (maxValue <= 10) divisor = 1;
 
       dpInfo.inferredType = 'distance';
       dpInfo.inferredCapability = 'measure_distance';
@@ -661,8 +663,9 @@ const SENSOR_CONFIGS = {
       3: { cap: null, internal: 'detection_distance_min', divisor: 100 },  // cm -> m
       4: { cap: null, internal: 'detection_distance_max', divisor: 100 },  // cm -> m
 
-      // v5.5.325: DISTANCE - DP9 primary, ×0.1 = dm to meters
-      9: { cap: 'measure_distance', divisor: 10 },
+      // v5.5.927: DISTANCE - DP9, ×0.01 = cm to meters (Hubitat research confirms scale: 100)
+      // v5.5.325 used divisor 10 but Hubitat deviceProfilesV4 shows scale: 100 for most sensors
+      9: { cap: 'measure_distance', divisor: 100 },
 
       // v5.5.325: MORE SETTINGS
       101: { cap: null, internal: 'distance_tracking' },     // switch
@@ -2562,21 +2565,17 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   async _triggerPresenceFlows(detected) {
     try {
       if (detected) {
-        // Trigger: presence_detected
-        await this.homey.flow.getDeviceTriggerCard('presence_detected')
+        // v5.5.926: Fixed flow card IDs - must match driver.flow.compose.json
+        // Trigger: presence_sensor_radar_presence_detected
+        await this.homey.flow.getDeviceTriggerCard('presence_sensor_radar_presence_detected')
           .trigger(this).catch(() => { });
-        // Trigger: presence_someone_enters
-        await this.homey.flow.getDeviceTriggerCard('presence_someone_enters')
-          .trigger(this).catch(() => { });
-        this.log('[RADAR-FLOW] ✅ Triggered: presence_detected, presence_someone_enters');
+        this.log('[RADAR-FLOW] ✅ Triggered: presence_sensor_radar_presence_detected');
       } else {
-        // Trigger: presence_cleared
-        await this.homey.flow.getDeviceTriggerCard('presence_cleared')
+        // v5.5.926: Fixed flow card IDs - must match driver.flow.compose.json
+        // Trigger: presence_sensor_radar_presence_cleared
+        await this.homey.flow.getDeviceTriggerCard('presence_sensor_radar_presence_cleared')
           .trigger(this).catch(() => { });
-        // Trigger: presence_zone_empty
-        await this.homey.flow.getDeviceTriggerCard('presence_zone_empty')
-          .trigger(this).catch(() => { });
-        this.log('[RADAR-FLOW] ✅ Triggered: presence_cleared, presence_zone_empty');
+        this.log('[RADAR-FLOW] ✅ Triggered: presence_sensor_radar_presence_cleared');
       }
     } catch (err) {
       this.log('[RADAR-FLOW] ⚠️ Flow trigger error:', err.message);
