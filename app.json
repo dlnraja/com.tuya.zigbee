@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.943",
+  "version": "5.5.944",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -4558,184 +4558,6 @@
         ]
       },
       {
-        "id": "ir_learning_started",
-        "title": {
-          "en": "IR Learning Started",
-          "nl": "IR Leren Gestart",
-          "de": "IR-Lernen Gestartet"
-        },
-        "titleFormatted": {
-          "en": "IR learning started with [[protocol]] protocol at [[frequency]]Hz for [[duration]]s",
-          "nl": "IR leren gestart met [[protocol]] protocol op [[frequency]]Hz voor [[duration]]s",
-          "de": "IR-Lernen gestartet mit [[protocol]] Protokoll bei [[frequency]]Hz für [[duration]]s"
-        },
-        "tokens": [
-          {
-            "name": "protocol",
-            "type": "string",
-            "title": {
-              "en": "Protocol",
-              "nl": "Protocol",
-              "de": "Protokoll"
-            }
-          },
-          {
-            "name": "frequency",
-            "type": "number",
-            "title": {
-              "en": "Frequency (Hz)",
-              "nl": "Frequentie (Hz)",
-              "de": "Frequenz (Hz)"
-            }
-          },
-          {
-            "name": "duration",
-            "type": "number",
-            "title": {
-              "en": "Duration (seconds)",
-              "nl": "Duur (seconden)",
-              "de": "Dauer (Sekunden)"
-            }
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ir_blaster"
-          }
-        ]
-      },
-      {
-        "id": "ir_learning_state_changed",
-        "title": {
-          "en": "IR Learning State Changed",
-          "nl": "IR Leer Status Gewijzigd",
-          "de": "IR-Lern Status Geändert"
-        },
-        "titleFormatted": {
-          "en": "IR learning state changed to [[state]]",
-          "nl": "IR leer status gewijzigd naar [[state]]",
-          "de": "IR-Lern Status geändert zu [[state]]"
-        },
-        "tokens": [
-          {
-            "name": "state",
-            "type": "string",
-            "title": {
-              "en": "Learning State",
-              "nl": "Leer Status",
-              "de": "Lern Status"
-            }
-          },
-          {
-            "name": "state_code",
-            "type": "number",
-            "title": {
-              "en": "State Code",
-              "nl": "Status Code",
-              "de": "Status Code"
-            }
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ir_blaster"
-          }
-        ]
-      },
-      {
-        "id": "ir_code_learned",
-        "title": {
-          "en": "IR Code Learned",
-          "nl": "IR Code Geleerd",
-          "de": "IR-Code Gelernt"
-        },
-        "titleFormatted": {
-          "en": "New IR code learned: [[ir_code]]",
-          "nl": "Nieuwe IR code geleerd: [[ir_code]]",
-          "de": "Neuer IR-Code gelernt: [[ir_code]]"
-        },
-        "tokens": [
-          {
-            "name": "ir_code",
-            "type": "string",
-            "title": {
-              "en": "IR Code",
-              "nl": "IR Code",
-              "de": "IR-Code"
-            }
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ir_blaster"
-          }
-        ]
-      },
-      {
-        "id": "ir_code_analyzed",
-        "title": {
-          "en": "IR Code Analyzed",
-          "nl": "IR Code Geanalyseerd",
-          "de": "IR-Code Analysiert"
-        },
-        "titleFormatted": {
-          "en": "IR code [[code_name]] analyzed: [[protocol]] protocol at [[frequency]]Hz ([[length]] bytes)",
-          "nl": "IR code [[code_name]] geanalyseerd: [[protocol]] protocol op [[frequency]]Hz ([[length]] bytes)",
-          "de": "IR-Code [[code_name]] analysiert: [[protocol]] Protokoll bei [[frequency]]Hz ([[length]] Bytes)"
-        },
-        "tokens": [
-          {
-            "name": "code_name",
-            "type": "string",
-            "title": {
-              "en": "Code Name",
-              "nl": "Code Naam",
-              "de": "Code Name"
-            }
-          },
-          {
-            "name": "protocol",
-            "type": "string",
-            "title": {
-              "en": "Detected Protocol",
-              "nl": "Gedetecteerd Protocol",
-              "de": "Erkanntes Protokoll"
-            }
-          },
-          {
-            "name": "frequency",
-            "type": "number",
-            "title": {
-              "en": "Carrier Frequency",
-              "nl": "Draaggolf Frequentie",
-              "de": "Trägerfrequenz"
-            }
-          },
-          {
-            "name": "length",
-            "type": "number",
-            "title": {
-              "en": "Code Length",
-              "nl": "Code Lengte",
-              "de": "Code Länge"
-            }
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ir_blaster"
-          }
-        ]
-      },
-      {
         "id": "ir_blaster_learning_started",
         "title": {
           "en": "IR Learning Started",
@@ -4857,6 +4679,184 @@
       },
       {
         "id": "ir_blaster_code_analyzed",
+        "title": {
+          "en": "IR Code Analyzed",
+          "nl": "IR Code Geanalyseerd",
+          "de": "IR-Code Analysiert"
+        },
+        "titleFormatted": {
+          "en": "IR code [[code_name]] analyzed: [[protocol]] protocol at [[frequency]]Hz ([[length]] bytes)",
+          "nl": "IR code [[code_name]] geanalyseerd: [[protocol]] protocol op [[frequency]]Hz ([[length]] bytes)",
+          "de": "IR-Code [[code_name]] analysiert: [[protocol]] Protokoll bei [[frequency]]Hz ([[length]] Bytes)"
+        },
+        "tokens": [
+          {
+            "name": "code_name",
+            "type": "string",
+            "title": {
+              "en": "Code Name",
+              "nl": "Code Naam",
+              "de": "Code Name"
+            }
+          },
+          {
+            "name": "protocol",
+            "type": "string",
+            "title": {
+              "en": "Detected Protocol",
+              "nl": "Gedetecteerd Protocol",
+              "de": "Erkanntes Protokoll"
+            }
+          },
+          {
+            "name": "frequency",
+            "type": "number",
+            "title": {
+              "en": "Carrier Frequency",
+              "nl": "Draaggolf Frequentie",
+              "de": "Trägerfrequenz"
+            }
+          },
+          {
+            "name": "length",
+            "type": "number",
+            "title": {
+              "en": "Code Length",
+              "nl": "Code Lengte",
+              "de": "Code Länge"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_blaster_learning_started",
+        "title": {
+          "en": "IR Learning Started",
+          "nl": "IR Leren Gestart",
+          "de": "IR-Lernen Gestartet"
+        },
+        "titleFormatted": {
+          "en": "IR learning started with [[protocol]] protocol at [[frequency]]Hz for [[duration]]s",
+          "nl": "IR leren gestart met [[protocol]] protocol op [[frequency]]Hz voor [[duration]]s",
+          "de": "IR-Lernen gestartet mit [[protocol]] Protokoll bei [[frequency]]Hz für [[duration]]s"
+        },
+        "tokens": [
+          {
+            "name": "protocol",
+            "type": "string",
+            "title": {
+              "en": "Protocol",
+              "nl": "Protocol",
+              "de": "Protokoll"
+            }
+          },
+          {
+            "name": "frequency",
+            "type": "number",
+            "title": {
+              "en": "Frequency (Hz)",
+              "nl": "Frequentie (Hz)",
+              "de": "Frequenz (Hz)"
+            }
+          },
+          {
+            "name": "duration",
+            "type": "number",
+            "title": {
+              "en": "Duration (seconds)",
+              "nl": "Duur (seconden)",
+              "de": "Dauer (Sekunden)"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_blaster_learning_state_changed",
+        "title": {
+          "en": "IR Learning State Changed",
+          "nl": "IR Leer Status Gewijzigd",
+          "de": "IR-Lern Status Geändert"
+        },
+        "titleFormatted": {
+          "en": "IR learning state changed to [[state]]",
+          "nl": "IR leer status gewijzigd naar [[state]]",
+          "de": "IR-Lern Status geändert zu [[state]]"
+        },
+        "tokens": [
+          {
+            "name": "state",
+            "type": "string",
+            "title": {
+              "en": "Learning State",
+              "nl": "Leer Status",
+              "de": "Lern Status"
+            }
+          },
+          {
+            "name": "state_code",
+            "type": "number",
+            "title": {
+              "en": "State Code",
+              "nl": "Status Code",
+              "de": "Status Code"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_blaster_code_learned",
+        "title": {
+          "en": "IR Code Learned",
+          "nl": "IR Code Geleerd",
+          "de": "IR-Code Gelernt"
+        },
+        "titleFormatted": {
+          "en": "New IR code learned: [[ir_code]]",
+          "nl": "Nieuwe IR code geleerd: [[ir_code]]",
+          "de": "Neuer IR-Code gelernt: [[ir_code]]"
+        },
+        "tokens": [
+          {
+            "name": "ir_code",
+            "type": "string",
+            "title": {
+              "en": "IR Code",
+              "nl": "IR Code",
+              "de": "IR-Code"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_blaster_code_analyzed",
         "title": {
           "en": "IR Code Analyzed",
           "nl": "IR Code Geanalyseerd",
@@ -7401,7 +7401,7 @@
         ]
       },
       {
-        "id": "smart_knob_rotate_left",
+        "id": "smart_knob_rotary_rotate_left",
         "highlight": true,
         "title": {
           "en": "Rotated left",
@@ -7433,7 +7433,7 @@
         ]
       },
       {
-        "id": "smart_knob_rotate_right",
+        "id": "smart_knob_rotary_rotate_right",
         "highlight": true,
         "title": {
           "en": "Rotated right",
@@ -7465,7 +7465,7 @@
         ]
       },
       {
-        "id": "smart_knob_pressed",
+        "id": "smart_knob_rotary_pressed",
         "highlight": true,
         "title": {
           "en": "Button pressed",
@@ -7497,7 +7497,7 @@
         ]
       },
       {
-        "id": "smart_knob_single_press",
+        "id": "smart_knob_rotary_single_press",
         "title": {
           "en": "Single press",
           "fr": "Appui simple",
@@ -7513,7 +7513,7 @@
         ]
       },
       {
-        "id": "smart_knob_double_press",
+        "id": "smart_knob_rotary_double_press",
         "title": {
           "en": "Double press",
           "fr": "Double appui",
@@ -7529,7 +7529,7 @@
         ]
       },
       {
-        "id": "smart_knob_long_press",
+        "id": "smart_knob_rotary_long_press",
         "title": {
           "en": "Long press",
           "fr": "Appui long",
@@ -10536,176 +10536,14 @@
         ]
       },
       {
-        "id": "water_valve_opened",
-        "highlight": true,
-        "title": {
-          "en": "Valve opened",
-          "nl": "Klep geopend",
-          "fr": "Vanne ouverte",
-          "de": "Ventil geöffnet"
-        },
-        "hint": {
-          "en": "Triggers when the water valve is opened",
-          "nl": "Triggert wanneer de waterklep wordt geopend",
-          "fr": "Se déclenche quand la vanne d'eau est ouverte",
-          "de": "Wird ausgelöst, wenn das Wasserventil geöffnet wird"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ]
-      },
-      {
-        "id": "water_valve_closed",
-        "title": {
-          "en": "Valve closed",
-          "nl": "Klep gesloten",
-          "fr": "Vanne fermée",
-          "de": "Ventil geschlossen"
-        },
-        "hint": {
-          "en": "Triggers when the water valve is closed",
-          "nl": "Triggert wanneer de waterklep wordt gesloten",
-          "fr": "Se déclenche quand la vanne d'eau est fermée",
-          "de": "Wird ausgelöst, wenn das Wasserventil geschlossen wird"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ]
-      },
-      {
-        "id": "water_valve_leak_detected",
-        "highlight": true,
-        "title": {
-          "en": "Water leak detected!",
-          "nl": "Waterlek gedetecteerd!",
-          "fr": "Fuite d'eau détectée !",
-          "de": "Wasserleck erkannt!"
-        },
-        "hint": {
-          "en": "Triggers when water is detected - valve will close automatically",
-          "nl": "Triggert wanneer water wordt gedetecteerd - klep sluit automatisch",
-          "fr": "Se déclenche quand de l'eau est détectée - la vanne se ferme automatiquement",
-          "de": "Wird ausgelöst, wenn Wasser erkannt wird - Ventil schließt automatisch"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ]
-      },
-      {
-        "id": "water_valve_leak_cleared",
-        "title": {
-          "en": "Water leak cleared",
-          "nl": "Waterlek opgeheven",
-          "fr": "Fuite d'eau terminée",
-          "de": "Wasserleck behoben"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ]
-      },
-      {
-        "id": "water_valve_temperature_changed",
-        "title": {
-          "en": "Temperature changed",
-          "nl": "Temperatuur veranderd",
-          "fr": "Température changée",
-          "de": "Temperatur geändert"
-        },
-        "titleFormatted": {
-          "en": "Temperature changed to [[temperature]]°C",
-          "nl": "Temperatuur veranderd naar [[temperature]]°C",
-          "fr": "Température changée à [[temperature]]°C",
-          "de": "Temperatur geändert zu [[temperature]]°C"
-        },
-        "tokens": [
-          {
-            "name": "temperature",
-            "type": "number",
-            "title": {
-              "en": "Temperature (°C)",
-              "nl": "Temperatuur (°C)",
-              "fr": "Température (°C)",
-              "de": "Temperatur (°C)"
-            },
-            "example": 20.5
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ]
-      },
-      {
-        "id": "water_valve_frost_warning",
-        "title": {
-          "en": "Frost warning",
-          "nl": "Vorstwaarschwing",
-          "fr": "Alerte gel",
-          "de": "Frostwarnung"
-        },
-        "hint": {
-          "en": "Triggers when temperature drops below 5°C - risk of frozen pipes!",
-          "nl": "Triggert wanneer de temperatuur onder 5°C zakt - risico op bevroren leidingen!",
-          "fr": "Se déclenche quand la température passe sous 5°C - risque de tuyaux gelés !",
-          "de": "Wird ausgelöst, wenn die Temperatur unter 5°C fällt - Gefahr eingefrorener Rohre!"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ]
-      },
-      {
-        "id": "water_valve_battery_low",
-        "title": {
-          "en": "Battery is low",
-          "nl": "Batterij is bijna leeg",
-          "fr": "Batterie faible",
-          "de": "Batterie ist schwach"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ]
-      },
-      {
         "id": "water_valve_smart_opened",
         "highlight": true,
         "title": {
           "en": "Valve opened",
-          "nl": "Klep geopend",
-          "fr": "Vanne ouverte",
-          "de": "Ventil geöffnet"
+          "nl": "Klep geopend"
         },
         "hint": {
-          "en": "Triggers when the water valve is opened",
-          "nl": "Triggert wanneer de waterklep wordt geopend",
-          "fr": "Se déclenche quand la vanne d'eau est ouverte",
-          "de": "Wird ausgelöst, wenn das Wasserventil geöffnet wird"
+          "en": "Triggers when the water valve is opened"
         },
         "args": [
           {
@@ -10719,15 +10557,7 @@
         "id": "water_valve_smart_closed",
         "title": {
           "en": "Valve closed",
-          "nl": "Klep gesloten",
-          "fr": "Vanne fermée",
-          "de": "Ventil geschlossen"
-        },
-        "hint": {
-          "en": "Triggers when the water valve is closed",
-          "nl": "Triggert wanneer de waterklep wordt gesloten",
-          "fr": "Se déclenche quand la vanne d'eau est fermée",
-          "de": "Wird ausgelöst, wenn das Wasserventil geschlossen wird"
+          "nl": "Klep gesloten"
         },
         "args": [
           {
@@ -10742,15 +10572,7 @@
         "highlight": true,
         "title": {
           "en": "Water leak detected!",
-          "nl": "Waterlek gedetecteerd!",
-          "fr": "Fuite d'eau détectée !",
-          "de": "Wasserleck erkannt!"
-        },
-        "hint": {
-          "en": "Triggers when water is detected - valve will close automatically",
-          "nl": "Triggert wanneer water wordt gedetecteerd - klep sluit automatisch",
-          "fr": "Se déclenche quand de l'eau est détectée - la vanne se ferme automatiquement",
-          "de": "Wird ausgelöst, wenn Wasser erkannt wird - Ventil schließt automatisch"
+          "nl": "Waterlek gedetecteerd!"
         },
         "args": [
           {
@@ -10764,9 +10586,7 @@
         "id": "water_valve_smart_leak_cleared",
         "title": {
           "en": "Water leak cleared",
-          "nl": "Waterlek opgeheven",
-          "fr": "Fuite d'eau terminée",
-          "de": "Wasserleck behoben"
+          "nl": "Waterlek opgeheven"
         },
         "args": [
           {
@@ -10779,28 +10599,18 @@
       {
         "id": "water_valve_smart_temperature_changed",
         "title": {
-          "en": "Temperature changed",
-          "nl": "Temperatuur veranderd",
-          "fr": "Température changée",
-          "de": "Temperatur geändert"
+          "en": "Temperature changed"
         },
         "titleFormatted": {
-          "en": "Temperature changed to [[temperature]]°C",
-          "nl": "Temperatuur veranderd naar [[temperature]]°C",
-          "fr": "Température changée à [[temperature]]°C",
-          "de": "Temperatur geändert zu [[temperature]]°C"
+          "en": "Temperature changed to [[temperature]]C"
         },
         "tokens": [
           {
             "name": "temperature",
             "type": "number",
             "title": {
-              "en": "Temperature (°C)",
-              "nl": "Temperatuur (°C)",
-              "fr": "Température (°C)",
-              "de": "Temperatur (°C)"
-            },
-            "example": 20.5
+              "en": "Temperature"
+            }
           }
         ],
         "args": [
@@ -10814,16 +10624,7 @@
       {
         "id": "water_valve_smart_frost_warning",
         "title": {
-          "en": "Frost warning",
-          "nl": "Vorstwaarschwing",
-          "fr": "Alerte gel",
-          "de": "Frostwarnung"
-        },
-        "hint": {
-          "en": "Triggers when temperature drops below 5°C - risk of frozen pipes!",
-          "nl": "Triggert wanneer de temperatuur onder 5°C zakt - risico op bevroren leidingen!",
-          "fr": "Se déclenche quand la température passe sous 5°C - risque de tuyaux gelés !",
-          "de": "Wird ausgelöst, wenn die Temperatur unter 5°C fällt - Gefahr eingefrorener Rohre!"
+          "en": "Frost warning"
         },
         "args": [
           {
@@ -10836,10 +10637,7 @@
       {
         "id": "water_valve_smart_battery_low",
         "title": {
-          "en": "Battery is low",
-          "nl": "Batterij is bijna leeg",
-          "fr": "Batterie faible",
-          "de": "Batterie ist schwach"
+          "en": "Battery is low"
         },
         "args": [
           {
@@ -11866,7 +11664,7 @@
         ]
       },
       {
-        "id": "ir_learning_active",
+        "id": "ir_blaster_learning_active",
         "title": {
           "en": "IR learning is active",
           "nl": "IR leren is actief",
@@ -11881,7 +11679,7 @@
         ]
       },
       {
-        "id": "ir_code_exists",
+        "id": "ir_blaster_code_exists",
         "title": {
           "en": "IR code exists",
           "nl": "IR code bestaat",
@@ -11915,7 +11713,7 @@
         ]
       },
       {
-        "id": "ir_protocol_detected",
+        "id": "ir_blaster_protocol_detected",
         "title": {
           "en": "IR protocol detected",
           "nl": "IR protocol gedetecteerd",
@@ -12003,7 +11801,7 @@
         ]
       },
       {
-        "id": "ir_blaster_learning_active",
+        "id": "ir_blaster_blaster_learning_active",
         "title": {
           "en": "IR learning is active",
           "nl": "IR leren is actief",
@@ -12018,7 +11816,7 @@
         ]
       },
       {
-        "id": "ir_blaster_code_exists",
+        "id": "ir_blaster_blaster_code_exists",
         "title": {
           "en": "IR code exists",
           "nl": "IR code bestaat",
@@ -12052,7 +11850,7 @@
         ]
       },
       {
-        "id": "ir_blaster_protocol_detected",
+        "id": "ir_blaster_blaster_protocol_detected",
         "title": {
           "en": "IR protocol detected",
           "nl": "IR protocol gedetecteerd",
@@ -12651,7 +12449,7 @@
         ]
       },
       {
-        "id": "smart_knob_brightness_above",
+        "id": "smart_knob_rotary_brightness_above",
         "title": {
           "en": "Brightness level is above...",
           "fr": "Niveau de luminosité supérieur à..."
@@ -13681,76 +13479,9 @@
         ]
       },
       {
-        "id": "water_valve_is_open",
-        "title": {
-          "en": "Valve !{{is|is not}} open",
-          "nl": "Klep !{{is|is niet}} open",
-          "fr": "Vanne !{{est|n'est pas}} ouverte",
-          "de": "Ventil !{{ist|ist nicht}} offen"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ]
-      },
-      {
-        "id": "water_valve_leak_detected",
-        "title": {
-          "en": "Water leak !{{is|is not}} detected",
-          "nl": "Waterlek !{{is|is niet}} gedetecteerd",
-          "fr": "Fuite d'eau !{{est|n'est pas}} détectée",
-          "de": "Wasserleck !{{ist|ist nicht}} erkannt"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ]
-      },
-      {
-        "id": "water_valve_temperature_above",
-        "title": {
-          "en": "Temperature !{{is|is not}} above",
-          "nl": "Temperatuur !{{is|is niet}} boven",
-          "fr": "Température !{{est|n'est pas}} au-dessus de",
-          "de": "Temperatur !{{ist|ist nicht}} über"
-        },
-        "titleFormatted": {
-          "en": "Temperature !{{is|is not}} above [[temp]]°C",
-          "nl": "Temperatuur !{{is|is niet}} boven [[temp]]°C",
-          "fr": "Température !{{est|n'est pas}} au-dessus de [[temp]]°C",
-          "de": "Temperatur !{{ist|ist nicht}} über [[temp]]°C"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          },
-          {
-            "name": "temp",
-            "type": "number",
-            "min": -20,
-            "max": 60,
-            "step": 1,
-            "placeholder": {
-              "en": "5"
-            }
-          }
-        ]
-      },
-      {
         "id": "water_valve_smart_is_open",
         "title": {
-          "en": "Valve !{{is|is not}} open",
-          "nl": "Klep !{{is|is niet}} open",
-          "fr": "Vanne !{{est|n'est pas}} ouverte",
-          "de": "Ventil !{{ist|ist nicht}} offen"
+          "en": "Valve !{{is|is not}} open"
         },
         "args": [
           {
@@ -13763,10 +13494,7 @@
       {
         "id": "water_valve_smart_leak_is_detected",
         "title": {
-          "en": "Water leak !{{is|is not}} detected",
-          "nl": "Waterlek !{{is|is niet}} gedetecteerd",
-          "fr": "Fuite d'eau !{{est|n'est pas}} détectée",
-          "de": "Wasserleck !{{ist|ist nicht}} erkannt"
+          "en": "Water leak !{{is|is not}} detected"
         },
         "args": [
           {
@@ -13779,16 +13507,10 @@
       {
         "id": "water_valve_smart_temperature_above",
         "title": {
-          "en": "Temperature !{{is|is not}} above",
-          "nl": "Temperatuur !{{is|is niet}} boven",
-          "fr": "Température !{{est|n'est pas}} au-dessus de",
-          "de": "Temperatur !{{ist|ist nicht}} über"
+          "en": "Temperature !{{is|is not}} above"
         },
         "titleFormatted": {
-          "en": "Temperature !{{is|is not}} above [[temp]]°C",
-          "nl": "Temperatuur !{{is|is niet}} boven [[temp]]°C",
-          "fr": "Température !{{est|n'est pas}} au-dessus de [[temp]]°C",
-          "de": "Temperatur !{{ist|ist nicht}} über [[temp]]°C"
+          "en": "Temperature !{{is|is not}} above [[temp]]C"
         },
         "args": [
           {
@@ -13800,11 +13522,7 @@
             "name": "temp",
             "type": "number",
             "min": -20,
-            "max": 60,
-            "step": 1,
-            "placeholder": {
-              "en": "5"
-            }
+            "max": 60
           }
         ]
       },
@@ -15237,458 +14955,6 @@
         ]
       },
       {
-        "id": "ir_learn_code",
-        "title": {
-          "en": "Learn IR Code",
-          "nl": "Leer IR Code",
-          "de": "IR-Code Lernen"
-        },
-        "titleFormatted": {
-          "en": "Learn IR code [[code_name]] with [[protocol]] protocol at [[frequency]]Hz for [[duration]]s (category: [[category]])",
-          "nl": "Leer IR code [[code_name]] met [[protocol]] protocol bij [[frequency]]Hz voor [[duration]]s (categorie: [[category]])",
-          "de": "IR-Code [[code_name]] mit [[protocol]] Protokoll bei [[frequency]]Hz für [[duration]]s lernen (Kategorie: [[category]])"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ir_blaster"
-          },
-          {
-            "name": "code_name",
-            "type": "text",
-            "title": {
-              "en": "Code Name",
-              "nl": "Code Naam",
-              "de": "Code Name"
-            },
-            "placeholder": {
-              "en": "power_on",
-              "nl": "power_on",
-              "de": "power_on"
-            }
-          },
-          {
-            "name": "duration",
-            "type": "number",
-            "title": {
-              "en": "Duration (seconds)",
-              "nl": "Duur (seconden)",
-              "de": "Dauer (Sekunden)"
-            },
-            "min": 5,
-            "max": 120,
-            "step": 5,
-            "placeholder": {
-              "en": "30",
-              "nl": "30",
-              "de": "30"
-            }
-          },
-          {
-            "name": "protocol",
-            "type": "dropdown",
-            "title": {
-              "en": "IR Protocol",
-              "nl": "IR Protocol",
-              "de": "IR-Protokoll"
-            },
-            "values": [
-              {
-                "id": "auto",
-                "label": {
-                  "en": "Auto-detect",
-                  "nl": "Auto-detectie",
-                  "de": "Auto-Erkennung"
-                }
-              },
-              {
-                "id": "NEC",
-                "label": {
-                  "en": "NEC",
-                  "nl": "NEC",
-                  "de": "NEC"
-                }
-              },
-              {
-                "id": "RC5",
-                "label": {
-                  "en": "RC5",
-                  "nl": "RC5",
-                  "de": "RC5"
-                }
-              },
-              {
-                "id": "RC6",
-                "label": {
-                  "en": "RC6",
-                  "nl": "RC6",
-                  "de": "RC6"
-                }
-              },
-              {
-                "id": "SONY",
-                "label": {
-                  "en": "Sony",
-                  "nl": "Sony",
-                  "de": "Sony"
-                }
-              },
-              {
-                "id": "SAMSUNG",
-                "label": {
-                  "en": "Samsung",
-                  "nl": "Samsung",
-                  "de": "Samsung"
-                }
-              },
-              {
-                "id": "PRONTOHEX",
-                "label": {
-                  "en": "ProntoHex",
-                  "nl": "ProntoHex",
-                  "de": "ProntoHex"
-                }
-              }
-            ]
-          },
-          {
-            "name": "frequency",
-            "type": "number",
-            "title": {
-              "en": "Carrier Frequency (Hz)",
-              "nl": "Draaggolf Frequentie (Hz)",
-              "de": "Trägerfrequenz (Hz)"
-            },
-            "min": 30000,
-            "max": 45000,
-            "step": 1000,
-            "placeholder": {
-              "en": "38000",
-              "nl": "38000",
-              "de": "38000"
-            }
-          },
-          {
-            "name": "category",
-            "type": "text",
-            "title": {
-              "en": "Category",
-              "nl": "Categorie",
-              "de": "Kategorie"
-            },
-            "placeholder": {
-              "en": "TV Remote",
-              "nl": "TV Afstandsbediening",
-              "de": "TV-Fernbedienung"
-            }
-          }
-        ]
-      },
-      {
-        "id": "ir_send_code",
-        "title": {
-          "en": "Send IR Code",
-          "nl": "Verstuur IR Code",
-          "de": "IR-Code Senden"
-        },
-        "hint": {
-          "en": "Send a learned or raw IR code. Use the code name or paste a Base64 encoded IR code.",
-          "nl": "Verstuur een geleerde of raw IR code. Gebruik de codenaam of plak een Base64 gecodeerde IR code."
-        },
-        "titleFormatted": {
-          "en": "Send IR code [[ir_code]] with [[protocol]] at [[frequency]]Hz ([[repeat]]x repeats)",
-          "nl": "Verstuur IR code [[ir_code]] met [[protocol]] bij [[frequency]]Hz ([[repeat]]x herhalingen)",
-          "de": "IR-Code [[ir_code]] mit [[protocol]] bei [[frequency]]Hz senden ([[repeat]]x Wiederholungen)"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ir_blaster"
-          },
-          {
-            "name": "ir_code",
-            "type": "text",
-            "title": {
-              "en": "IR Code or Name",
-              "nl": "IR Code of Naam",
-              "de": "IR-Code oder Name"
-            },
-            "placeholder": {
-              "en": "power_on or base64 code",
-              "nl": "power_on of base64 code",
-              "de": "power_on oder base64 Code"
-            }
-          },
-          {
-            "name": "protocol",
-            "type": "dropdown",
-            "title": {
-              "en": "Force Protocol (optional)",
-              "nl": "Forceer Protocol (optioneel)",
-              "de": "Protokoll Erzwingen (optional)"
-            },
-            "values": [
-              {
-                "id": "",
-                "label": {
-                  "en": "Auto (recommended)",
-                  "nl": "Auto (aanbevolen)",
-                  "de": "Auto (empfohlen)"
-                }
-              },
-              {
-                "id": "NEC",
-                "label": {
-                  "en": "NEC",
-                  "nl": "NEC",
-                  "de": "NEC"
-                }
-              },
-              {
-                "id": "RC5",
-                "label": {
-                  "en": "RC5",
-                  "nl": "RC5",
-                  "de": "RC5"
-                }
-              },
-              {
-                "id": "RC6",
-                "label": {
-                  "en": "RC6",
-                  "nl": "RC6",
-                  "de": "RC6"
-                }
-              },
-              {
-                "id": "SONY",
-                "label": {
-                  "en": "Sony",
-                  "nl": "Sony",
-                  "de": "Sony"
-                }
-              },
-              {
-                "id": "SAMSUNG",
-                "label": {
-                  "en": "Samsung",
-                  "nl": "Samsung",
-                  "de": "Samsung"
-                }
-              },
-              {
-                "id": "PRONTOHEX",
-                "label": {
-                  "en": "ProntoHex",
-                  "nl": "ProntoHex",
-                  "de": "ProntoHex"
-                }
-              }
-            ]
-          },
-          {
-            "name": "frequency",
-            "type": "number",
-            "title": {
-              "en": "Frequency Override (Hz)",
-              "nl": "Frequentie Override (Hz)",
-              "de": "Frequenz Override (Hz)"
-            },
-            "min": 30000,
-            "max": 45000,
-            "step": 1000,
-            "placeholder": {
-              "en": "Leave empty for auto",
-              "nl": "Leeg laten voor auto",
-              "de": "Leer lassen für Auto"
-            }
-          },
-          {
-            "name": "repeat",
-            "type": "number",
-            "title": {
-              "en": "Repeat Count",
-              "nl": "Aantal Herhalingen",
-              "de": "Wiederholungsanzahl"
-            },
-            "min": 1,
-            "max": 10,
-            "step": 1,
-            "placeholder": {
-              "en": "1",
-              "nl": "1",
-              "de": "1"
-            }
-          }
-        ]
-      },
-      {
-        "id": "ir_send_by_category",
-        "title": {
-          "en": "Send IR Code by Category",
-          "nl": "Verstuur IR Code per Categorie",
-          "de": "IR-Code nach Kategorie Senden"
-        },
-        "hint": {
-          "en": "Send a stored IR code from a specific category (e.g., TV Remote, AC).",
-          "nl": "Verstuur een opgeslagen IR code uit een specifieke categorie (bijv. TV Afstandsbediening, Airco)."
-        },
-        "titleFormatted": {
-          "en": "Send IR code [[code_name]] from category [[category]]",
-          "nl": "Verstuur IR code [[code_name]] uit categorie [[category]]",
-          "de": "IR-Code [[code_name]] aus Kategorie [[category]] senden"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ir_blaster"
-          },
-          {
-            "name": "category",
-            "type": "text",
-            "title": {
-              "en": "Category",
-              "nl": "Categorie",
-              "de": "Kategorie"
-            },
-            "placeholder": {
-              "en": "TV Remote",
-              "nl": "TV Afstandsbediening",
-              "de": "TV-Fernbedienung"
-            }
-          },
-          {
-            "name": "code_name",
-            "type": "text",
-            "title": {
-              "en": "Code Name",
-              "nl": "Code Naam",
-              "de": "Code Name"
-            },
-            "placeholder": {
-              "en": "power_on",
-              "nl": "power_on",
-              "de": "power_on"
-            }
-          }
-        ]
-      },
-      {
-        "id": "ir_send_ac_command",
-        "title": {
-          "en": "Send AC Command",
-          "nl": "Verstuur Airco Commando",
-          "de": "AC-Befehl Senden"
-        },
-        "hint": {
-          "en": "Send AC command with mode, temperature and fan speed (SmartIR compatible)",
-          "nl": "Verstuur airco commando met modus, temperatuur en ventilator snelheid"
-        },
-        "titleFormatted": {
-          "en": "Set AC to [[mode]] at [[temperature]]°C with [[fan_speed]] fan",
-          "nl": "Zet airco op [[mode]] bij [[temperature]]°C met [[fan_speed]] ventilator",
-          "de": "AC auf [[mode]] bei [[temperature]]°C mit [[fan_speed]] Lüfter setzen"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ir_blaster"
-          },
-          {
-            "name": "mode",
-            "type": "dropdown",
-            "title": {
-              "en": "Mode"
-            },
-            "values": [
-              {
-                "id": "cool",
-                "label": {
-                  "en": "Cool"
-                }
-              },
-              {
-                "id": "heat",
-                "label": {
-                  "en": "Heat"
-                }
-              },
-              {
-                "id": "auto",
-                "label": {
-                  "en": "Auto"
-                }
-              },
-              {
-                "id": "dry",
-                "label": {
-                  "en": "Dry"
-                }
-              },
-              {
-                "id": "fan_only",
-                "label": {
-                  "en": "Fan Only"
-                }
-              },
-              {
-                "id": "off",
-                "label": {
-                  "en": "Off"
-                }
-              }
-            ]
-          },
-          {
-            "name": "temperature",
-            "type": "number",
-            "title": {
-              "en": "Temperature (°C)"
-            },
-            "min": 16,
-            "max": 30,
-            "step": 1
-          },
-          {
-            "name": "fan_speed",
-            "type": "dropdown",
-            "title": {
-              "en": "Fan Speed"
-            },
-            "values": [
-              {
-                "id": "auto",
-                "label": {
-                  "en": "Auto"
-                }
-              },
-              {
-                "id": "low",
-                "label": {
-                  "en": "Low"
-                }
-              },
-              {
-                "id": "medium",
-                "label": {
-                  "en": "Medium"
-                }
-              },
-              {
-                "id": "high",
-                "label": {
-                  "en": "High"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
         "id": "ir_blaster_learn_code",
         "title": {
           "en": "Learn IR Code",
@@ -16030,6 +15296,458 @@
       },
       {
         "id": "ir_blaster_send_ac_command",
+        "title": {
+          "en": "Send AC Command",
+          "nl": "Verstuur Airco Commando",
+          "de": "AC-Befehl Senden"
+        },
+        "hint": {
+          "en": "Send AC command with mode, temperature and fan speed (SmartIR compatible)",
+          "nl": "Verstuur airco commando met modus, temperatuur en ventilator snelheid"
+        },
+        "titleFormatted": {
+          "en": "Set AC to [[mode]] at [[temperature]]°C with [[fan_speed]] fan",
+          "nl": "Zet airco op [[mode]] bij [[temperature]]°C met [[fan_speed]] ventilator",
+          "de": "AC auf [[mode]] bei [[temperature]]°C mit [[fan_speed]] Lüfter setzen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "title": {
+              "en": "Mode"
+            },
+            "values": [
+              {
+                "id": "cool",
+                "label": {
+                  "en": "Cool"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Heat"
+                }
+              },
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto"
+                }
+              },
+              {
+                "id": "dry",
+                "label": {
+                  "en": "Dry"
+                }
+              },
+              {
+                "id": "fan_only",
+                "label": {
+                  "en": "Fan Only"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off"
+                }
+              }
+            ]
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)"
+            },
+            "min": 16,
+            "max": 30,
+            "step": 1
+          },
+          {
+            "name": "fan_speed",
+            "type": "dropdown",
+            "title": {
+              "en": "Fan Speed"
+            },
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto"
+                }
+              },
+              {
+                "id": "low",
+                "label": {
+                  "en": "Low"
+                }
+              },
+              {
+                "id": "medium",
+                "label": {
+                  "en": "Medium"
+                }
+              },
+              {
+                "id": "high",
+                "label": {
+                  "en": "High"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_blaster_learn_code",
+        "title": {
+          "en": "Learn IR Code",
+          "nl": "Leer IR Code",
+          "de": "IR-Code Lernen"
+        },
+        "titleFormatted": {
+          "en": "Learn IR code [[code_name]] with [[protocol]] protocol at [[frequency]]Hz for [[duration]]s (category: [[category]])",
+          "nl": "Leer IR code [[code_name]] met [[protocol]] protocol bij [[frequency]]Hz voor [[duration]]s (categorie: [[category]])",
+          "de": "IR-Code [[code_name]] mit [[protocol]] Protokoll bei [[frequency]]Hz für [[duration]]s lernen (Kategorie: [[category]])"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "code_name",
+            "type": "text",
+            "title": {
+              "en": "Code Name",
+              "nl": "Code Naam",
+              "de": "Code Name"
+            },
+            "placeholder": {
+              "en": "power_on",
+              "nl": "power_on",
+              "de": "power_on"
+            }
+          },
+          {
+            "name": "duration",
+            "type": "number",
+            "title": {
+              "en": "Duration (seconds)",
+              "nl": "Duur (seconden)",
+              "de": "Dauer (Sekunden)"
+            },
+            "min": 5,
+            "max": 120,
+            "step": 5,
+            "placeholder": {
+              "en": "30",
+              "nl": "30",
+              "de": "30"
+            }
+          },
+          {
+            "name": "protocol",
+            "type": "dropdown",
+            "title": {
+              "en": "IR Protocol",
+              "nl": "IR Protocol",
+              "de": "IR-Protokoll"
+            },
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto-detect",
+                  "nl": "Auto-detectie",
+                  "de": "Auto-Erkennung"
+                }
+              },
+              {
+                "id": "NEC",
+                "label": {
+                  "en": "NEC",
+                  "nl": "NEC",
+                  "de": "NEC"
+                }
+              },
+              {
+                "id": "RC5",
+                "label": {
+                  "en": "RC5",
+                  "nl": "RC5",
+                  "de": "RC5"
+                }
+              },
+              {
+                "id": "RC6",
+                "label": {
+                  "en": "RC6",
+                  "nl": "RC6",
+                  "de": "RC6"
+                }
+              },
+              {
+                "id": "SONY",
+                "label": {
+                  "en": "Sony",
+                  "nl": "Sony",
+                  "de": "Sony"
+                }
+              },
+              {
+                "id": "SAMSUNG",
+                "label": {
+                  "en": "Samsung",
+                  "nl": "Samsung",
+                  "de": "Samsung"
+                }
+              },
+              {
+                "id": "PRONTOHEX",
+                "label": {
+                  "en": "ProntoHex",
+                  "nl": "ProntoHex",
+                  "de": "ProntoHex"
+                }
+              }
+            ]
+          },
+          {
+            "name": "frequency",
+            "type": "number",
+            "title": {
+              "en": "Carrier Frequency (Hz)",
+              "nl": "Draaggolf Frequentie (Hz)",
+              "de": "Trägerfrequenz (Hz)"
+            },
+            "min": 30000,
+            "max": 45000,
+            "step": 1000,
+            "placeholder": {
+              "en": "38000",
+              "nl": "38000",
+              "de": "38000"
+            }
+          },
+          {
+            "name": "category",
+            "type": "text",
+            "title": {
+              "en": "Category",
+              "nl": "Categorie",
+              "de": "Kategorie"
+            },
+            "placeholder": {
+              "en": "TV Remote",
+              "nl": "TV Afstandsbediening",
+              "de": "TV-Fernbedienung"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_blaster_send_code",
+        "title": {
+          "en": "Send IR Code",
+          "nl": "Verstuur IR Code",
+          "de": "IR-Code Senden"
+        },
+        "hint": {
+          "en": "Send a learned or raw IR code. Use the code name or paste a Base64 encoded IR code.",
+          "nl": "Verstuur een geleerde of raw IR code. Gebruik de codenaam of plak een Base64 gecodeerde IR code."
+        },
+        "titleFormatted": {
+          "en": "Send IR code [[ir_code]] with [[protocol]] at [[frequency]]Hz ([[repeat]]x repeats)",
+          "nl": "Verstuur IR code [[ir_code]] met [[protocol]] bij [[frequency]]Hz ([[repeat]]x herhalingen)",
+          "de": "IR-Code [[ir_code]] mit [[protocol]] bei [[frequency]]Hz senden ([[repeat]]x Wiederholungen)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "ir_code",
+            "type": "text",
+            "title": {
+              "en": "IR Code or Name",
+              "nl": "IR Code of Naam",
+              "de": "IR-Code oder Name"
+            },
+            "placeholder": {
+              "en": "power_on or base64 code",
+              "nl": "power_on of base64 code",
+              "de": "power_on oder base64 Code"
+            }
+          },
+          {
+            "name": "protocol",
+            "type": "dropdown",
+            "title": {
+              "en": "Force Protocol (optional)",
+              "nl": "Forceer Protocol (optioneel)",
+              "de": "Protokoll Erzwingen (optional)"
+            },
+            "values": [
+              {
+                "id": "",
+                "label": {
+                  "en": "Auto (recommended)",
+                  "nl": "Auto (aanbevolen)",
+                  "de": "Auto (empfohlen)"
+                }
+              },
+              {
+                "id": "NEC",
+                "label": {
+                  "en": "NEC",
+                  "nl": "NEC",
+                  "de": "NEC"
+                }
+              },
+              {
+                "id": "RC5",
+                "label": {
+                  "en": "RC5",
+                  "nl": "RC5",
+                  "de": "RC5"
+                }
+              },
+              {
+                "id": "RC6",
+                "label": {
+                  "en": "RC6",
+                  "nl": "RC6",
+                  "de": "RC6"
+                }
+              },
+              {
+                "id": "SONY",
+                "label": {
+                  "en": "Sony",
+                  "nl": "Sony",
+                  "de": "Sony"
+                }
+              },
+              {
+                "id": "SAMSUNG",
+                "label": {
+                  "en": "Samsung",
+                  "nl": "Samsung",
+                  "de": "Samsung"
+                }
+              },
+              {
+                "id": "PRONTOHEX",
+                "label": {
+                  "en": "ProntoHex",
+                  "nl": "ProntoHex",
+                  "de": "ProntoHex"
+                }
+              }
+            ]
+          },
+          {
+            "name": "frequency",
+            "type": "number",
+            "title": {
+              "en": "Frequency Override (Hz)",
+              "nl": "Frequentie Override (Hz)",
+              "de": "Frequenz Override (Hz)"
+            },
+            "min": 30000,
+            "max": 45000,
+            "step": 1000,
+            "placeholder": {
+              "en": "Leave empty for auto",
+              "nl": "Leeg laten voor auto",
+              "de": "Leer lassen für Auto"
+            }
+          },
+          {
+            "name": "repeat",
+            "type": "number",
+            "title": {
+              "en": "Repeat Count",
+              "nl": "Aantal Herhalingen",
+              "de": "Wiederholungsanzahl"
+            },
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "placeholder": {
+              "en": "1",
+              "nl": "1",
+              "de": "1"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_blaster_send_by_category",
+        "title": {
+          "en": "Send IR Code by Category",
+          "nl": "Verstuur IR Code per Categorie",
+          "de": "IR-Code nach Kategorie Senden"
+        },
+        "hint": {
+          "en": "Send a stored IR code from a specific category (e.g., TV Remote, AC).",
+          "nl": "Verstuur een opgeslagen IR code uit een specifieke categorie (bijv. TV Afstandsbediening, Airco)."
+        },
+        "titleFormatted": {
+          "en": "Send IR code [[code_name]] from category [[category]]",
+          "nl": "Verstuur IR code [[code_name]] uit categorie [[category]]",
+          "de": "IR-Code [[code_name]] aus Kategorie [[category]] senden"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "category",
+            "type": "text",
+            "title": {
+              "en": "Category",
+              "nl": "Categorie",
+              "de": "Kategorie"
+            },
+            "placeholder": {
+              "en": "TV Remote",
+              "nl": "TV Afstandsbediening",
+              "de": "TV-Fernbedienung"
+            }
+          },
+          {
+            "name": "code_name",
+            "type": "text",
+            "title": {
+              "en": "Code Name",
+              "nl": "Code Naam",
+              "de": "Code Name"
+            },
+            "placeholder": {
+              "en": "power_on",
+              "nl": "power_on",
+              "de": "power_on"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_blaster_send_ac_command",
         "title": {
           "en": "Send AC Command",
           "nl": "Verstuur Airco Commando",
@@ -21355,78 +21073,9 @@
         ]
       },
       {
-        "id": "water_valve_open",
-        "title": {
-          "en": "Open valve",
-          "nl": "Klep openen",
-          "fr": "Ouvrir la vanne",
-          "de": "Ventil öffnen"
-        },
-        "hint": {
-          "en": "Opens the water valve to allow water flow",
-          "nl": "Opent de waterklep om water door te laten stromen",
-          "fr": "Ouvre la vanne d'eau pour permettre l'écoulement",
-          "de": "Öffnet das Wasserventil, um den Wasserfluss zu ermöglichen"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ]
-      },
-      {
-        "id": "water_valve_close",
-        "title": {
-          "en": "Close valve",
-          "nl": "Klep sluiten",
-          "fr": "Fermer la vanne",
-          "de": "Ventil schließen"
-        },
-        "hint": {
-          "en": "Closes the water valve to stop water flow",
-          "nl": "Sluit de waterklep om de waterstroom te stoppen",
-          "fr": "Ferme la vanne d'eau pour arrêter l'écoulement",
-          "de": "Schließt das Wasserventil, um den Wasserfluss zu stoppen"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ]
-      },
-      {
-        "id": "water_valve_toggle",
-        "title": {
-          "en": "Toggle valve",
-          "nl": "Klep schakelen",
-          "fr": "Basculer la vanne",
-          "de": "Ventil umschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ]
-      },
-      {
         "id": "water_valve_smart_open",
         "title": {
-          "en": "Open valve",
-          "nl": "Klep openen",
-          "fr": "Ouvrir la vanne",
-          "de": "Ventil öffnen"
-        },
-        "hint": {
-          "en": "Opens the water valve to allow water flow",
-          "nl": "Opent de waterklep om water door te laten stromen",
-          "fr": "Ouvre la vanne d'eau pour permettre l'écoulement",
-          "de": "Öffnet das Wasserventil, um den Wasserfluss zu ermöglichen"
+          "en": "Open valve"
         },
         "args": [
           {
@@ -21439,16 +21088,7 @@
       {
         "id": "water_valve_smart_close",
         "title": {
-          "en": "Close valve",
-          "nl": "Klep sluiten",
-          "fr": "Fermer la vanne",
-          "de": "Ventil schließen"
-        },
-        "hint": {
-          "en": "Closes the water valve to stop water flow",
-          "nl": "Sluit de waterklep om de waterstroom te stoppen",
-          "fr": "Ferme la vanne d'eau pour arrêter l'écoulement",
-          "de": "Schließt das Wasserventil, um den Wasserfluss zu stoppen"
+          "en": "Close valve"
         },
         "args": [
           {
@@ -21461,10 +21101,7 @@
       {
         "id": "water_valve_smart_toggle",
         "title": {
-          "en": "Toggle valve",
-          "nl": "Klep schakelen",
-          "fr": "Basculer la vanne",
-          "de": "Ventil umschalten"
+          "en": "Toggle valve"
         },
         "args": [
           {

@@ -204,7 +204,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     }
 
     // Trigger flow card
-    const rotateLeftTrigger = this.homey.flow.getDeviceTriggerCard('smart_knob_rotate_left');
+    const rotateLeftTrigger = this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_left');
     if (rotateLeftTrigger) {
       await rotateLeftTrigger.trigger(this, { 
         brightness: Math.round(this._simulatedBrightness * 100) 
@@ -223,7 +223,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     }
 
     // Trigger flow card
-    const rotateRightTrigger = this.homey.flow.getDeviceTriggerCard('smart_knob_rotate_right');
+    const rotateRightTrigger = this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_right');
     if (rotateRightTrigger) {
       await rotateRightTrigger.trigger(this, { 
         brightness: Math.round(this._simulatedBrightness * 100) 
@@ -242,7 +242,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     }
 
     // Trigger flow card
-    const pressTrigger = this.homey.flow.getDeviceTriggerCard('smart_knob_pressed');
+    const pressTrigger = this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_pressed');
     if (pressTrigger) {
       await pressTrigger.trigger(this, { action }).catch(this.error);
     }
@@ -255,3 +255,4 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 }
 
 module.exports = SmartKnobRotaryDevice;
+
