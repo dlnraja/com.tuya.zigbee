@@ -8,11 +8,8 @@
   "class": "sensor",
   "capabilities": [
     "alarm_motion",
-    "alarm_tamper",
     "measure_battery",
-    "measure_luminance",
-    "measure_temperature",
-    "measure_humidity"
+    "measure_luminance"
   ],
   "energy": {
     "batteries": [
@@ -32,10 +29,6 @@
       "_TYST11_7hfcudw5",
       "_TYST11_i5j6ifxj",
       "_TYZB01_dl7cejts",
-      "_TYZB01_ef5xlc9q",
-      "_TYZB01_zwvaj5wy",
-      "_TYZB01_tv3wxhcz",
-      "_TYZB01_jytabjkb",
       "_TZ1800_FCDJZZ3S",
       "_tz1800_fcdjzz3s",
       "_TZ3000_1OBWWNMQ",
@@ -181,7 +174,6 @@
       "ZG-204Z",
       "ZG-204ZE",
       "ZG-204ZL",
-      "ZG-204ZM",
       "ZG-302ZL",
       "ZG-302ZM",
       "lumi.sensor_motion",
@@ -427,10 +419,6 @@
       "_TZ3000_4rbqgcuv",
       "_TZ3000_bmg14ax7",
       "_TZ3000_7d8yme6f",
-      "_TYZB01_vwqnz1sn",
-      "_TYZB01_jytabjkb",
-      "_TYZB01_5nr7ncpl",
-      "_TZ3040_fwxuzcf4",
       "lumi.vibration.aq1",
       "Bitron Home",
       "Comap",
@@ -543,6 +531,7 @@
       "_TZ3000_nss8amz9",
       "_TZ3000_otvn3lne",
       "_TZ3000_bsvqrxru",
+      "ZG-204ZM",
       "_TZE200_y8jijhba",
       "eWeLink",
       "SONOFF",
@@ -553,7 +542,6 @@
       "MultIR",
       "ZP2-EN",
       "HK-SENSOR-4IN1-A",
-      "_TZ3000_msl6wxk9",
       "Eardatek",
       "EARDATEK",
       "Linptech",
@@ -561,15 +549,18 @@
       "Rehent",
       "REHENT",
       "RTX",
-      "Fantem",
-      "FANTEM",
       "_TZ3000_6zvpcdny",
-      "_TZ3000_h4wnrtck"
+      "_TYZB01_vwqnz1sn",
+      "_TYZB01_jytabjkb",
+      "_TYZB01_5nr7ncpl",
+      "_TZ3040_fwxuzcf4",
+      "_TYZB01_ef5xlc9q",
+      "_TYZB01_zwvaj5wy",
+      "_TYZB01_tv3wxhcz"
     ],
     "productId": [
       "TS0202",
       "ZG-204Z",
-      "ZG-204ZM",
       "MS01",
       "RH3040",
       "IH012-RT01",
@@ -589,8 +580,9 @@
       "3305-S",
       "3325-S",
       "SNZB-03",
-      "SNZB-03P",
-      "TS0601"
+      "TS0601",
+      "ZG-204ZM",
+      "SNZB-03P"
     ],
     "endpoints": {
       "1": {
@@ -613,26 +605,11 @@
       "image": "/drivers/motion_sensor/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote.",
-        "nl": "Houd de koppelknop 5 seconden ingedrukt totdat de LED knippert.",
-        "de": "Halten Sie die Kopplungstaste 5 Sekunden lang gedrückt, bis die LED blinkt."
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     }
   },
   "settings": [
-    {
-      "id": "invert_presence",
-      "type": "checkbox",
-      "label": {
-        "en": "Invert Motion Detection",
-        "fr": "Inverser la Détection de Mouvement"
-      },
-      "value": false,
-      "hint": {
-        "en": "Enable if motion is always detected or never detected (inverted sensor)",
-        "fr": "Activer si le mouvement est toujours détecté ou jamais détecté (capteur inversé)"
-      }
-    },
     {
       "id": "power_source",
       "type": "dropdown",

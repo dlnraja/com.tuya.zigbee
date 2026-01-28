@@ -1,18 +1,18 @@
 {
-  "triggers": [],
-  "conditions": [],
   "actions": [
     {
       "id": "led_controller_dimmable_turn_on",
       "title": {
         "en": "Turn on"
-      }
+      },
+      "args": []
     },
     {
       "id": "led_controller_dimmable_turn_off",
       "title": {
         "en": "Turn off"
-      }
+      },
+      "args": []
     }
   ]
 }

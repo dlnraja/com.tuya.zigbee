@@ -1,8 +1,8 @@
 {
   "name": {
     "en": "Gas Detector",
-    "fr": "Détecteur de Gaz",
-    "nl": "Gasdetector",
+    "fr": "Gas Detector",
+    "nl": "Gas Detector",
     "de": "Gasdetektor"
   },
   "class": "sensor",
@@ -17,9 +17,7 @@
     "alarm_generic": {
       "title": {
         "en": "Gas Alarm",
-        "fr": "Alarme Gaz",
-        "nl": "Gasalarm",
-        "de": "Gasalarm"
+        "fr": "Alarme Gaz"
       }
     }
   },
@@ -38,8 +36,6 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_TYZB01_0W3D5UW3",
-      "_TYZB01_0w3d5uw3",
       "_TZE200_M6KDUJME",
       "_tze200_m6kdujme",
       "_TZE204_CHBYV06",
@@ -268,7 +264,9 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "_TYZB01_0W3D5UW3",
+      "_TYZB01_0w3d5uw3"
     ],
     "endpoints": {
       "1": {

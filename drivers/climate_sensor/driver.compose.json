@@ -9,15 +9,8 @@
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
-    "measure_battery",
-    "measure_luminance"
+    "measure_battery"
   ],
-  "capabilitiesOptions": {
-    "measure_luminance": {
-      "title": { "en": "Illuminance", "fr": "Luminosité", "nl": "Lichtniveau", "de": "Beleuchtung" },
-      "units": { "en": "lux" }
-    }
-  },
   "energy": {
     "batteries": [
       "AAA",
@@ -743,7 +736,6 @@
       "_tze200_1fuxihti",
       "_TZE200_1N2KYPHZ",
       "_tze200_1n2kyphz",
-      "_TZE204_1n2kyphz",
       "_TZE200_1N2ZEV06",
       "_tze200_1n2zev06",
       "_TZE200_1OZGUK6X",
@@ -925,7 +917,6 @@
       "_tze200_dikb3dp6",
       "_TZE200_DIKKIKA5",
       "_tze200_dikkika5",
-      "_TZE204_dikkika5",
       "_TZE200_DNG9FN0K",
       "_tze200_dng9fn0k",
       "_TZE200_DNZ6YVL2",
@@ -2127,7 +2118,6 @@
       "SNTZ003",
       "SNZB-02",
       "SNZB-02D",
-      "SNZB-02DR2",
       "SNZB-02LD",
       "SNZB-02P",
       "SNZB-02WD",
@@ -2152,7 +2142,6 @@
       "ZG-225Z",
       "ZG-227Z",
       "ZG-227ZL",
-      "ZG-303Z",
       "ZGAF-205L",
       "lumi.sensor_ht",
       "lumi.weather",
@@ -2484,10 +2473,10 @@
       "Zbeacon",
       "zbeacon",
       "EWELINK",
-      "eWeLink",
-      "SONOFF",
       "_TZ3000_HY6NCVMW",
       "_tz3000_hy6ncvmw",
+      "SNZB-02DR2",
+      "SONOFF",
       "Eardatek",
       "EARDATEK",
       "Linptech",
@@ -2495,7 +2484,10 @@
       "Rehent",
       "REHENT",
       "Nous",
-      "NOUS"
+      "NOUS",
+      "_TZE204_1n2kyphz",
+      "_TZE204_dikkika5",
+      "ZG-303Z"
     ],
     "productId": [
       "TS0201",
@@ -2509,13 +2501,13 @@
       "lumi.weather",
       "SNZB-02",
       "SNZB-02D",
-      "SNZB-02DR2",
-      "SNZB-02LD",
       "SNZB-02P",
-      "SNZB-02WD",
       "TS0601",
       "ZG-227Z",
-      "CK-TLSR8656-SS5-01(7014)"
+      "CK-TLSR8656-SS5-01(7014)",
+      "SNZB-02DR2",
+      "SNZB-02LD",
+      "SNZB-02WD"
     ],
     "endpoints": {
       "1": {

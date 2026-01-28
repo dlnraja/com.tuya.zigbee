@@ -11,12 +11,6 @@
     "button_toggle_2",
     "button_identify"
   ],
-  "energy": {
-    "approximation": {
-      "usageOn": 5,
-      "usageOff": 0.5
-    }
-  },
   "zigbee": {
     "productId": [
       "TS0002",
@@ -51,8 +45,6 @@
       "_tz3000_5e235jpa",
       "_TZ3000_7VCDO2VN",
       "_tz3000_7vcdo2vn",
-      "_TZ3000_H1LPGKWN",
-      "_tz3000_h1lpgkwn",
       "_TZ3000_ADKVZOOY",
       "_tz3000_adkvzooy",
       "_TZ3000_ATP7XMD9",
@@ -499,6 +491,8 @@
       "_TZE200_d8fp6ivb",
       "_TZE200_dcydapr2",
       "_TZE200_dfry6ylv",
+      "_TZ3000_H1LPGKWN",
+      "_tz3000_h1lpgkwn",
       "_TZ3000_qaa59zqd",
       "_TZ3000_ptjcjise"
     ],
@@ -954,32 +948,12 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
-    },
-    {
-      "type": "group",
-      "label": { "en": "🔘 Physical Button Detection", "fr": "🔘 Détection Bouton Physique", "nl": "🔘 Fysieke Knop Detectie", "de": "🔘 Physische Tastenerkennung" },
-      "children": [
-        { "id": "physical_button_enabled", "type": "checkbox", "label": { "en": "Enable Physical Button Detection", "fr": "Activer détection bouton physique" }, "value": true, "hint": { "en": "Detect when physical button is pressed vs app/voice commands", "fr": "Détecter quand le bouton physique est appuyé vs commandes app/voix" } },
-        { "id": "app_command_timeout", "type": "number", "label": { "en": "App Command Window (ms)", "fr": "Fenêtre commande app (ms)" }, "value": 500, "min": 100, "max": 5000, "step": 100, "hint": { "en": "Time window to distinguish app commands from physical presses", "fr": "Fenêtre de temps pour distinguer les commandes app des pressions physiques" } },
-        { "id": "double_click_window", "type": "number", "label": { "en": "Double Click Window (ms)", "fr": "Fenêtre double-clic (ms)" }, "value": 400, "min": 200, "max": 1000, "step": 50, "hint": { "en": "Time window to detect double/triple clicks", "fr": "Fenêtre de temps pour détecter les doubles/triples clics" } },
-        { "id": "long_press_threshold", "type": "number", "label": { "en": "Long Press Threshold (ms)", "fr": "Seuil pression longue (ms)" }, "value": 600, "min": 300, "max": 2000, "step": 100, "hint": { "en": "How long button must be held for long press detection", "fr": "Durée de maintien du bouton pour détecter une pression longue" } }
-      ]
-    },
-    {
-      "type": "group",
-      "label": { "en": "💡 Switch Behavior", "fr": "💡 Comportement Interrupteur" },
-      "children": [
-        { "id": "power_on_behavior", "type": "dropdown", "label": { "en": "Power-On Behavior", "fr": "Comportement au démarrage" }, "value": "memory", "values": [{ "id": "off", "label": { "en": "Always OFF", "fr": "Toujours OFF" } }, { "id": "on", "label": { "en": "Always ON", "fr": "Toujours ON" } }, { "id": "memory", "label": { "en": "Remember last state", "fr": "Mémoriser dernier état" } }], "hint": { "en": "What happens when power is restored", "fr": "Comportement après coupure de courant" } },
-        { "id": "backlight_mode", "type": "dropdown", "label": { "en": "LED Backlight Mode", "fr": "Mode rétroéclairage LED" }, "value": "normal", "values": [{ "id": "off", "label": { "en": "Off", "fr": "Éteint" } }, { "id": "normal", "label": { "en": "Normal", "fr": "Normal" } }, { "id": "inverted", "label": { "en": "Inverted", "fr": "Inversé" } }], "hint": { "en": "LED indicator behavior", "fr": "Comportement du voyant LED" } },
-        { "id": "child_lock", "type": "checkbox", "label": { "en": "Child Lock", "fr": "Verrouillage enfant" }, "value": false, "hint": { "en": "Disable physical buttons", "fr": "Désactiver boutons physiques" } }
-      ]
     }
   ],
   "name": {
-    "en": "Wall Switch 2-Gang",
-    "fr": "Interrupteur Mural 2 Gangs",
-    "nl": "Wandschakelaar 2-Voudig",
-    "de": "Wandschalter 2-Kanal"
+    "en": "2-Gang Smart Switch",
+    "nl": "2-Voudige Schakelaar",
+    "de": "2-Kanal Schalter"
   },
   "platforms": [
     "local"

@@ -1,19 +1,29 @@
 {
   "name": {
-    "en": "Mini Switch Module",
-    "fr": "Module Mini Switch",
+    "en": "Mini Switch",
+    "fr": "Mini Switch",
     "nl": "Mini Schakelmodule",
     "de": "Mini Schaltmodul"
   },
   "class": "socket",
   "capabilities": [
-    "onoff",
+    "measure_battery",
+    "alarm_generic",
     "measure_power",
     "measure_voltage",
     "measure_current",
+    "onoff",
     "meter_power"
   ],
   "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA",
+      "CR123A",
+      "INTERNAL"
+    ],
     "approximation": {
       "usageConstant": 0.5
     }
@@ -24,8 +34,6 @@
       "ZBMINIL2",
       "ZBMINIR2",
       "BASICZBR3",
-      "SONOFF",
-      "eWeLink",
       "_TZ3000_VMPBYGS5",
       "_tz3000_vmpbygs5",
       "_TZ3000_46T1RVDU",
@@ -253,7 +261,9 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "SONOFF",
+      "eWeLink"
     ],
     "productId": [
       "ZBMINI",
@@ -330,34 +340,171 @@
       }
     },
     {
-      "type": "group",
-      "label": { "en": "💡 LED Indicator", "fr": "💡 Indicateur LED", "nl": "💡 LED Indicator", "de": "💡 LED-Anzeige" },
-      "children": [
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
+      },
+      "value": "auto",
+      "values": [
         {
-          "id": "indicator_mode",
-          "type": "dropdown",
-          "label": { "en": "LED Indicator Mode", "fr": "Mode indicateur LED", "nl": "LED indicator modus", "de": "LED-Anzeige Modus" },
-          "value": "relay",
-          "values": [
-            { "id": "off", "label": { "en": "Always Off", "fr": "Toujours éteint", "nl": "Altijd uit", "de": "Immer aus" } },
-            { "id": "relay", "label": { "en": "Follow Relay (default)", "fr": "Suivre le relais", "nl": "Volg relais", "de": "Relais folgen" } },
-            { "id": "inverted", "label": { "en": "Inverted (LED when OFF)", "fr": "Inversé (LED quand éteint)", "nl": "Omgekeerd (LED bij UIT)", "de": "Invertiert (LED bei AUS)" } }
-          ],
-          "hint": { "en": "Control how the LED indicator behaves (DP17)", "fr": "Contrôle le comportement du voyant LED", "nl": "Bepaal hoe de LED indicator zich gedraagt", "de": "Steuert das Verhalten der LED-Anzeige" }
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
         },
         {
-          "id": "power_on_behavior",
-          "type": "dropdown",
-          "label": { "en": "Power-On Behavior", "fr": "Comportement au démarrage", "nl": "Gedrag bij opstarten", "de": "Einschaltverhalten" },
-          "value": "memory",
-          "values": [
-            { "id": "off", "label": { "en": "Start OFF", "fr": "Démarrer éteint", "nl": "Start UIT", "de": "Start AUS" } },
-            { "id": "on", "label": { "en": "Start ON", "fr": "Démarrer allumé", "nl": "Start AAN", "de": "Start EIN" } },
-            { "id": "memory", "label": { "en": "Remember last state", "fr": "Mémoriser l'état", "nl": "Onthoud laatste staat", "de": "Letzten Zustand merken" } }
-          ],
-          "hint": { "en": "What happens after power outage", "fr": "Comportement après coupure de courant", "nl": "Wat gebeurt er na stroomuitval", "de": "Was passiert nach Stromausfall" }
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA",
+            "fr": "AAA"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA",
+            "fr": "AA"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A",
+            "fr": "CR123A"
+          }
         }
-      ]
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "optimization_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+      }
     },
     {
       "id": "enable_power_estimation",

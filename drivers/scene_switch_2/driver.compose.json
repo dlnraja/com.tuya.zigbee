@@ -10,12 +10,13 @@
     "measure_battery"
   ],
   "capabilitiesOptions": {
+    "maintenanceAction": true,
     "button.1": {
       "title": {
         "en": "Button 1",
         "fr": "Bouton 1"
       },
-      "getable": true,
+      "getable": false,
       "setable": false
     },
     "button.2": {
@@ -23,7 +24,7 @@
         "en": "Button 2",
         "fr": "Bouton 2"
       },
-      "getable": true,
+      "getable": false,
       "setable": false
     }
   },

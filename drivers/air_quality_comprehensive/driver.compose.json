@@ -1,9 +1,9 @@
 {
   "name": {
     "en": "Comprehensive Air Monitor",
-    "fr": "Moniteur Air Complet",
-    "nl": "Uitgebreide Luchtmonitor",
-    "de": "Umfassender Luftmonitor"
+    "fr": "Comprehensive Air Monitor",
+    "nl": "Uitgebreide Luchtkwaliteit",
+    "de": "Umfassende Luftqualität"
   },
   "class": "sensor",
   "capabilities": [
@@ -19,9 +19,7 @@
     "alarm_generic": {
       "title": {
         "en": "Air Quality Alert",
-        "fr": "Alerte Qualité Air",
-        "nl": "Luchtkwaliteit Alarm",
-        "de": "Luftqualität Alarm"
+        "fr": "Alerte Qualité Air"
       }
     }
   },
@@ -239,7 +237,6 @@
       "ZEN",
       "Zen Thermostat",
       "_TZE200_dwcarsat",
-      "_TZE200_8ygsuhe1",
       "_TZE200_ryfmq5rl",
       "AAQS-S01",
       "lumi.airmonitor.acn01",
@@ -273,7 +270,8 @@
       "Vision",
       "Monoprice",
       "_TZE204_yvx5lh6k",
-      "_tze204_yvx5lh6k"
+      "_tze204_yvx5lh6k",
+      "_TZE200_8ygsuhe1"
     ],
     "productId": [
       "TS0005",

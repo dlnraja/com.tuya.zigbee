@@ -321,11 +321,41 @@
           "name": "preset",
           "type": "dropdown",
           "values": [
-            { "id": "comfort", "label": { "en": "Comfort (21°C)", "fr": "Confort (21°C)" } },
-            { "id": "eco", "label": { "en": "Eco (18°C)", "fr": "Éco (18°C)" } },
-            { "id": "away", "label": { "en": "Away (15°C)", "fr": "Absent (15°C)" } },
-            { "id": "sleep", "label": { "en": "Sleep (19°C)", "fr": "Nuit (19°C)" } },
-            { "id": "boost", "label": { "en": "Boost (25°C)", "fr": "Boost (25°C)" } }
+            {
+              "id": "comfort",
+              "label": {
+                "en": "Comfort (21°C)",
+                "fr": "Confort (21°C)"
+              }
+            },
+            {
+              "id": "eco",
+              "label": {
+                "en": "Eco (18°C)",
+                "fr": "Éco (18°C)"
+              }
+            },
+            {
+              "id": "away",
+              "label": {
+                "en": "Away (15°C)",
+                "fr": "Absent (15°C)"
+              }
+            },
+            {
+              "id": "sleep",
+              "label": {
+                "en": "Sleep (19°C)",
+                "fr": "Nuit (19°C)"
+              }
+            },
+            {
+              "id": "boost",
+              "label": {
+                "en": "Boost (25°C)",
+                "fr": "Boost (25°C)"
+              }
+            }
           ]
         }
       ]

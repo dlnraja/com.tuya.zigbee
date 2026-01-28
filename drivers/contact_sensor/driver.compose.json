@@ -8,9 +8,7 @@
   "class": "sensor",
   "capabilities": [
     "alarm_contact",
-    "alarm_tamper",
-    "measure_battery",
-    "measure_temperature"
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -584,8 +582,8 @@
       "3300-S",
       "3320-L",
       "SNZB-04",
-      "SNZB-04P",
-      "TS0601"
+      "TS0601",
+      "SNZB-04P"
     ],
     "endpoints": {
       "1": {
@@ -605,9 +603,7 @@
       "image": "/drivers/contact_sensor/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote.",
-        "nl": "Houd de koppelknop 5 seconden ingedrukt totdat de LED knippert.",
-        "de": "Halten Sie die Kopplungstaste 5 Sekunden lang gedrückt, bis die LED blinkt."
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     }
   },

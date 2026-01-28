@@ -1,24 +1,27 @@
 {
   "name": {
-    "en": "Smart Bulb RGB",
-    "fr": "Ampoule Connectée RGB",
+    "en": "Smart Bulb Rgb",
+    "fr": "Smart Bulb Rgb",
     "nl": "RGB Lamp",
     "de": "RGB Glühbirne"
   },
   "class": "light",
   "capabilities": [
-    "onoff",
     "dim",
     "light_hue",
     "light_saturation",
     "light_temperature",
-    "light_mode"
+    "light_mode",
+    "onoff",
+    "measure_battery"
   ],
   "energy": {
     "approximation": {
-      "usageOn": 9,
-      "usageOff": 0.5
-    }
+      "usageConstant": 0.5
+    },
+    "batteries": [
+      "OTHER"
+    ]
   },
   "zigbee": {
     "manufacturerName": [

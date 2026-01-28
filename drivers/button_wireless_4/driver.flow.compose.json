@@ -21,19 +21,7 @@
           "example": "1"
         }
       ],
-      "args": [
-        {
-          "name": "button",
-          "type": "dropdown",
-          "title": { "en": "Button", "fr": "Bouton" },
-          "values": [
-            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
-            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } },
-            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3" } },
-            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4" } }
-          ]
-        }
-      ]
+      "args": []
     },
     {
       "id": "button_wireless_4_button_4gang_button_double_press",
@@ -56,19 +44,7 @@
           "example": "1"
         }
       ],
-      "args": [
-        {
-          "name": "button",
-          "type": "dropdown",
-          "title": { "en": "Button", "fr": "Bouton" },
-          "values": [
-            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
-            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } },
-            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3" } },
-            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4" } }
-          ]
-        }
-      ]
+      "args": []
     },
     {
       "id": "button_wireless_4_button_4gang_button_long_press",
@@ -91,19 +67,7 @@
           "example": "1"
         }
       ],
-      "args": [
-        {
-          "name": "button",
-          "type": "dropdown",
-          "title": { "en": "Button", "fr": "Bouton" },
-          "values": [
-            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
-            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } },
-            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3" } },
-            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4" } }
-          ]
-        }
-      ]
+      "args": []
     },
     {
       "id": "button_wireless_4_button_4gang_button_multi_press",
@@ -135,19 +99,7 @@
           "example": 3
         }
       ],
-      "args": [
-        {
-          "name": "button",
-          "type": "dropdown",
-          "title": { "en": "Button", "fr": "Bouton" },
-          "values": [
-            { "id": "1", "label": { "en": "Button 1", "fr": "Bouton 1" } },
-            { "id": "2", "label": { "en": "Button 2", "fr": "Bouton 2" } },
-            { "id": "3", "label": { "en": "Button 3", "fr": "Bouton 3" } },
-            { "id": "4", "label": { "en": "Button 4", "fr": "Bouton 4" } }
-          ]
-        }
-      ]
+      "args": []
     },
     {
       "id": "button_wireless_4_button_4gang_button_1_pressed",

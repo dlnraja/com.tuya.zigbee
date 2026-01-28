@@ -11,12 +11,6 @@
     "da": "Smart Sikringsafbryder"
   },
   "class": "socket",
-  "energy": {
-    "approximation": {
-      "usageOn": 15,
-      "usageOff": 2
-    }
-  },
   "capabilities": [
     "onoff",
     "alarm_generic",

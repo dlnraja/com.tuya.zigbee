@@ -1,0 +1,58 @@
+{
+  "name": {
+    "en": "Wall Switch 1-Gang 1-Way",
+    "nl": "Muurschakelaar 1-Gang 1-Weg"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff"
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 100,
+      "usageOff": 1
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "/drivers/wall_switch_1gang_1way/assets/images/small.png",
+    "large": "/drivers/wall_switch_1gang_1way/assets/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_blhvsaqf",
+      "_TZ3000_BLHVSAQF",
+      "_TZ3000_ysdv91bk"
+    ],
+    "productId": [
+      "TS0001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          57344,
+          57345
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the reset button for 5 seconds until the LED blinks, or toggle the switch on/off 3 times quickly.",
+        "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED knippert, of schakel de schakelaar 3 keer snel aan/uit."
+      }
+    }
+  }
+}

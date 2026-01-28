@@ -2,100 +2,211 @@
   "triggers": [
     {
       "id": "switch_4gang_gang1_turned_on",
-      "highlight": true,
-      "title": { "en": "Gang 1 turned on", "fr": "Gang 1 allumé", "nl": "Gang 1 aangezet", "de": "Gang 1 eingeschaltet" },
-      "titleFormatted": { "en": "[[device]] gang 1 turned on", "fr": "[[device]] gang 1 allumé", "nl": "[[device]] gang 1 aangezet", "de": "[[device]] gang 1 eingeschaltet" },
-      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_4gang" }]
+      "title": {
+        "en": "Gang 1 turned on",
+        "fr": "Gang 1 allumé",
+        "nl": "Gang 1 aangezet",
+        "de": "Gang 1 eingeschaltet"
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_gang1_turned_off",
-      "title": { "en": "Gang 1 turned off", "fr": "Gang 1 éteint", "nl": "Gang 1 uitgezet", "de": "Gang 1 ausgeschaltet" },
-      "titleFormatted": { "en": "[[device]] gang 1 turned off", "fr": "[[device]] gang 1 éteint", "nl": "[[device]] gang 1 uitgezet", "de": "[[device]] gang 1 ausgeschaltet" },
-      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_4gang" }]
+      "title": {
+        "en": "Gang 1 turned off",
+        "fr": "Gang 1 éteint",
+        "nl": "Gang 1 uitgezet",
+        "de": "Gang 1 ausgeschaltet"
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_gang2_turned_on",
-      "title": { "en": "Gang 2 turned on", "fr": "Gang 2 allumé", "nl": "Gang 2 aangezet", "de": "Gang 2 eingeschaltet" },
-      "titleFormatted": { "en": "[[device]] gang 2 turned on", "fr": "[[device]] gang 2 allumé", "nl": "[[device]] gang 2 aangezet", "de": "[[device]] gang 2 eingeschaltet" },
-      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_4gang" }]
+      "title": {
+        "en": "Gang 2 turned on",
+        "fr": "Gang 2 allumé",
+        "nl": "Gang 2 aangezet",
+        "de": "Gang 2 eingeschaltet"
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_gang2_turned_off",
-      "title": { "en": "Gang 2 turned off", "fr": "Gang 2 éteint", "nl": "Gang 2 uitgezet", "de": "Gang 2 ausgeschaltet" },
-      "titleFormatted": { "en": "[[device]] gang 2 turned off", "fr": "[[device]] gang 2 éteint", "nl": "[[device]] gang 2 uitgezet", "de": "[[device]] gang 2 ausgeschaltet" },
-      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_4gang" }]
+      "title": {
+        "en": "Gang 2 turned off",
+        "fr": "Gang 2 éteint",
+        "nl": "Gang 2 uitgezet",
+        "de": "Gang 2 ausgeschaltet"
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_gang3_turned_on",
-      "title": { "en": "Gang 3 turned on", "fr": "Gang 3 allumé", "nl": "Gang 3 aangezet", "de": "Gang 3 eingeschaltet" },
-      "titleFormatted": { "en": "[[device]] gang 3 turned on", "fr": "[[device]] gang 3 allumé", "nl": "[[device]] gang 3 aangezet", "de": "[[device]] gang 3 eingeschaltet" },
-      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_4gang" }]
+      "title": {
+        "en": "Gang 3 turned on",
+        "fr": "Gang 3 allumé",
+        "nl": "Gang 3 aangezet",
+        "de": "Gang 3 eingeschaltet"
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_gang3_turned_off",
-      "title": { "en": "Gang 3 turned off", "fr": "Gang 3 éteint", "nl": "Gang 3 uitgezet", "de": "Gang 3 ausgeschaltet" },
-      "titleFormatted": { "en": "[[device]] gang 3 turned off", "fr": "[[device]] gang 3 éteint", "nl": "[[device]] gang 3 uitgezet", "de": "[[device]] gang 3 ausgeschaltet" },
-      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_4gang" }]
+      "title": {
+        "en": "Gang 3 turned off",
+        "fr": "Gang 3 éteint",
+        "nl": "Gang 3 uitgezet",
+        "de": "Gang 3 ausgeschaltet"
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_gang4_turned_on",
-      "title": { "en": "Gang 4 turned on", "fr": "Gang 4 allumé", "nl": "Gang 4 aangezet", "de": "Gang 4 eingeschaltet" },
-      "titleFormatted": { "en": "[[device]] gang 4 turned on", "fr": "[[device]] gang 4 allumé", "nl": "[[device]] gang 4 aangezet", "de": "[[device]] gang 4 eingeschaltet" },
-      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_4gang" }]
+      "title": {
+        "en": "Gang 4 turned on",
+        "fr": "Gang 4 allumé",
+        "nl": "Gang 4 aangezet",
+        "de": "Gang 4 eingeschaltet"
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_gang4_turned_off",
-      "title": { "en": "Gang 4 turned off", "fr": "Gang 4 éteint", "nl": "Gang 4 uitgezet", "de": "Gang 4 ausgeschaltet" },
-      "titleFormatted": { "en": "[[device]] gang 4 turned off", "fr": "[[device]] gang 4 éteint", "nl": "[[device]] gang 4 uitgezet", "de": "[[device]] gang 4 ausgeschaltet" },
-      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_4gang" }]
+      "title": {
+        "en": "Gang 4 turned off",
+        "fr": "Gang 4 éteint",
+        "nl": "Gang 4 uitgezet",
+        "de": "Gang 4 ausgeschaltet"
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_physical_gang1_on",
-      "title": { "en": "Physical gang 1 ON", "fr": "Physique gang 1 ON", "nl": "Fysiek gang 1 AAN", "de": "Physisch gang 1 EIN" },
-      "titleFormatted": { "en": "[[device]] gang 1 on (physical)", "fr": "[[device]] gang 1 allumé (physique)", "nl": "[[device]] gang 1 aan (fysiek)", "de": "[[device]] gang 1 ein (physisch)" },
-      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_4gang" }]
+      "title": {
+        "en": "Physical gang 1 ON",
+        "fr": "Physique gang 1 ON",
+        "nl": "Fysiek gang 1 AAN",
+        "de": "Physisch gang 1 EIN"
+      },
+      "titleFormatted": {
+        "en": "[[device]] gang 1 on (physical)",
+        "fr": "[[device]] gang 1 allumé (physique)",
+        "nl": "[[device]] gang 1 aan (fysiek)",
+        "de": "[[device]] gang 1 ein (physisch)"
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_physical_gang1_off",
-      "title": { "en": "Physical gang 1 OFF", "fr": "Physique gang 1 OFF", "nl": "Fysiek gang 1 UIT", "de": "Physisch gang 1 AUS" },
-      "titleFormatted": { "en": "[[device]] gang 1 off (physical)", "fr": "[[device]] gang 1 éteint (physique)", "nl": "[[device]] gang 1 uit (fysiek)", "de": "[[device]] gang 1 aus (physisch)" },
-      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_4gang" }]
+      "title": {
+        "en": "Physical gang 1 OFF",
+        "fr": "Physique gang 1 OFF",
+        "nl": "Fysiek gang 1 UIT",
+        "de": "Physisch gang 1 AUS"
+      },
+      "titleFormatted": {
+        "en": "[[device]] gang 1 off (physical)",
+        "fr": "[[device]] gang 1 éteint (physique)",
+        "nl": "[[device]] gang 1 uit (fysiek)",
+        "de": "[[device]] gang 1 aus (physisch)"
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_physical_gang2_on",
-      "title": { "en": "Physical gang 2 ON", "fr": "Physique gang 2 ON", "nl": "Fysiek gang 2 AAN", "de": "Physisch gang 2 EIN" },
-      "titleFormatted": { "en": "[[device]] gang 2 on (physical)", "fr": "[[device]] gang 2 allumé (physique)", "nl": "[[device]] gang 2 aan (fysiek)", "de": "[[device]] gang 2 ein (physisch)" },
-      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_4gang" }]
+      "title": {
+        "en": "Physical gang 2 ON",
+        "fr": "Physique gang 2 ON",
+        "nl": "Fysiek gang 2 AAN",
+        "de": "Physisch gang 2 EIN"
+      },
+      "titleFormatted": {
+        "en": "[[device]] gang 2 on (physical)",
+        "fr": "[[device]] gang 2 allumé (physique)",
+        "nl": "[[device]] gang 2 aan (fysiek)",
+        "de": "[[device]] gang 2 ein (physisch)"
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_physical_gang2_off",
-      "title": { "en": "Physical gang 2 OFF", "fr": "Physique gang 2 OFF", "nl": "Fysiek gang 2 UIT", "de": "Physisch gang 2 AUS" },
-      "titleFormatted": { "en": "[[device]] gang 2 off (physical)", "fr": "[[device]] gang 2 éteint (physique)", "nl": "[[device]] gang 2 uit (fysiek)", "de": "[[device]] gang 2 aus (physisch)" },
-      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_4gang" }]
+      "title": {
+        "en": "Physical gang 2 OFF",
+        "fr": "Physique gang 2 OFF",
+        "nl": "Fysiek gang 2 UIT",
+        "de": "Physisch gang 2 AUS"
+      },
+      "titleFormatted": {
+        "en": "[[device]] gang 2 off (physical)",
+        "fr": "[[device]] gang 2 éteint (physique)",
+        "nl": "[[device]] gang 2 uit (fysiek)",
+        "de": "[[device]] gang 2 aus (physisch)"
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_physical_gang3_on",
-      "title": { "en": "Physical gang 3 ON", "fr": "Physique gang 3 ON", "nl": "Fysiek gang 3 AAN", "de": "Physisch gang 3 EIN" },
-      "titleFormatted": { "en": "[[device]] gang 3 on (physical)", "fr": "[[device]] gang 3 allumé (physique)", "nl": "[[device]] gang 3 aan (fysiek)", "de": "[[device]] gang 3 ein (physisch)" },
-      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_4gang" }]
+      "title": {
+        "en": "Physical gang 3 ON",
+        "fr": "Physique gang 3 ON",
+        "nl": "Fysiek gang 3 AAN",
+        "de": "Physisch gang 3 EIN"
+      },
+      "titleFormatted": {
+        "en": "[[device]] gang 3 on (physical)",
+        "fr": "[[device]] gang 3 allumé (physique)",
+        "nl": "[[device]] gang 3 aan (fysiek)",
+        "de": "[[device]] gang 3 ein (physisch)"
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_physical_gang3_off",
-      "title": { "en": "Physical gang 3 OFF", "fr": "Physique gang 3 OFF", "nl": "Fysiek gang 3 UIT", "de": "Physisch gang 3 AUS" },
-      "titleFormatted": { "en": "[[device]] gang 3 off (physical)", "fr": "[[device]] gang 3 éteint (physique)", "nl": "[[device]] gang 3 uit (fysiek)", "de": "[[device]] gang 3 aus (physisch)" },
-      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_4gang" }]
+      "title": {
+        "en": "Physical gang 3 OFF",
+        "fr": "Physique gang 3 OFF",
+        "nl": "Fysiek gang 3 UIT",
+        "de": "Physisch gang 3 AUS"
+      },
+      "titleFormatted": {
+        "en": "[[device]] gang 3 off (physical)",
+        "fr": "[[device]] gang 3 éteint (physique)",
+        "nl": "[[device]] gang 3 uit (fysiek)",
+        "de": "[[device]] gang 3 aus (physisch)"
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_physical_gang4_on",
-      "title": { "en": "Physical gang 4 ON", "fr": "Physique gang 4 ON", "nl": "Fysiek gang 4 AAN", "de": "Physisch gang 4 EIN" },
-      "titleFormatted": { "en": "[[device]] gang 4 on (physical)", "fr": "[[device]] gang 4 allumé (physique)", "nl": "[[device]] gang 4 aan (fysiek)", "de": "[[device]] gang 4 ein (physisch)" },
-      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_4gang" }]
+      "title": {
+        "en": "Physical gang 4 ON",
+        "fr": "Physique gang 4 ON",
+        "nl": "Fysiek gang 4 AAN",
+        "de": "Physisch gang 4 EIN"
+      },
+      "titleFormatted": {
+        "en": "[[device]] gang 4 on (physical)",
+        "fr": "[[device]] gang 4 allumé (physique)",
+        "nl": "[[device]] gang 4 aan (fysiek)",
+        "de": "[[device]] gang 4 ein (physisch)"
+      },
+      "args": []
     },
     {
       "id": "switch_4gang_physical_gang4_off",
-      "title": { "en": "Physical gang 4 OFF", "fr": "Physique gang 4 OFF", "nl": "Fysiek gang 4 UIT", "de": "Physisch gang 4 AUS" },
-      "titleFormatted": { "en": "[[device]] gang 4 off (physical)", "fr": "[[device]] gang 4 éteint (physique)", "nl": "[[device]] gang 4 uit (fysiek)", "de": "[[device]] gang 4 aus (physisch)" },
-      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_4gang" }]
+      "title": {
+        "en": "Physical gang 4 OFF",
+        "fr": "Physique gang 4 OFF",
+        "nl": "Fysiek gang 4 UIT",
+        "de": "Physisch gang 4 AUS"
+      },
+      "titleFormatted": {
+        "en": "[[device]] gang 4 off (physical)",
+        "fr": "[[device]] gang 4 éteint (physique)",
+        "nl": "[[device]] gang 4 uit (fysiek)",
+        "de": "[[device]] gang 4 aus (physisch)"
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -223,10 +334,122 @@
     },
     {
       "id": "switch_4gang_set_backlight",
-      "title": { "en": "Set LED backlight mode", "fr": "Définir le mode rétroéclairage LED", "nl": "LED achtergrondverlichting instellen", "de": "LED-Hintergrundbeleuchtung einstellen" },
-      "titleFormatted": { "en": "Set LED backlight to [[mode]]", "fr": "Définir le rétroéclairage sur [[mode]]", "nl": "Stel LED achtergrondverlichting in op [[mode]]", "de": "LED-Hintergrundbeleuchtung auf [[mode]] setzen" },
-      "hint": { "en": "Control the switch LED indicator (requires Tuya DP15 support)", "fr": "Contrôle l'indicateur LED (nécessite Tuya DP15)", "nl": "Beheer de schakelaar LED indicator (vereist Tuya DP15)", "de": "Steuert die Schalter-LED-Anzeige (erfordert Tuya DP15)" },
-      "args": [{ "type": "dropdown", "name": "mode", "title": { "en": "Mode", "fr": "Mode", "nl": "Modus", "de": "Modus" }, "values": [{ "id": "off", "label": { "en": "Off", "fr": "Éteint", "nl": "Uit", "de": "Aus" } }, { "id": "normal", "label": { "en": "Normal (LED when ON)", "fr": "Normal (LED quand allumé)", "nl": "Normaal (LED bij AAN)", "de": "Normal (LED bei EIN)" } }, { "id": "inverted", "label": { "en": "Inverted (LED when OFF)", "fr": "Inversé (LED quand éteint)", "nl": "Omgekeerd (LED bij UIT)", "de": "Invertiert (LED bei AUS)" } }] }]
+      "title": {
+        "en": "Set LED backlight mode",
+        "fr": "Mode rétroéclairage LED"
+      },
+      "titleFormatted": {
+        "en": "Set LED backlight to [[mode]]",
+        "fr": "Définir le rétroéclairage sur [[mode]]"
+      },
+      "hint": {
+        "en": "Control the switch LED indicator (requires Tuya DP15 support)"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "mode",
+          "title": {
+            "en": "Mode"
+          },
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Off"
+              }
+            },
+            {
+              "id": "normal",
+              "label": {
+                "en": "Normal (LED when ON)"
+              }
+            },
+            {
+              "id": "inverted",
+              "label": {
+                "en": "Inverted (LED when OFF)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "switch_4gang_set_backlight_color",
+      "title": {
+        "en": "Set LED color",
+        "fr": "Couleur LED"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "state",
+          "title": {
+            "en": "State"
+          },
+          "values": [
+            {
+              "id": "on",
+              "label": {
+                "en": "When ON"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "When OFF"
+              }
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "color",
+          "title": {
+            "en": "Color"
+          },
+          "values": [
+            {
+              "id": "blue",
+              "label": {
+                "en": "Blue"
+              }
+            },
+            {
+              "id": "red",
+              "label": {
+                "en": "Red"
+              }
+            },
+            {
+              "id": "green",
+              "label": {
+                "en": "Green"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "switch_4gang_set_backlight_brightness",
+      "title": {
+        "en": "Set LED brightness",
+        "fr": "Luminosité LED"
+      },
+      "args": [
+        {
+          "type": "range",
+          "name": "brightness",
+          "min": 0,
+          "max": 100,
+          "step": 10,
+          "title": {
+            "en": "Brightness %"
+          }
+        }
+      ]
     }
   ]
 }

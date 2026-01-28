@@ -1,22 +1,29 @@
 {
   "name": {
-    "en": "LED Strip Controller",
-    "fr": "Contrôleur LED Strip",
-    "nl": "LED Strip Controller",
-    "de": "LED Streifen Controller"
+    "en": "LED Strip Led Strip",
+    "fr": "LED Strip Led Strip",
+    "nl": "LED Strip",
+    "de": "LED Streifen"
   },
   "class": "light",
   "capabilities": [
-    "onoff",
     "dim",
+    "measure_battery",
+    "onoff",
     "light_hue",
     "light_saturation",
     "light_mode"
   ],
   "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA",
+      "CR123A"
+    ],
     "approximation": {
-      "usageOn": 24,
-      "usageOff": 1
+      "usageConstant": 0.5
     }
   },
   "zigbee": {

@@ -10,15 +10,8 @@
     "target_temperature",
     "measure_temperature",
     "thermostat_mode",
-    "measure_battery",
-    "button.calibrate"
+    "measure_battery"
   ],
-  "capabilitiesOptions": {
-    "button.calibrate": {
-      "title": { "en": "Calibrate Valve", "fr": "Calibrer Vanne", "nl": "Klep Kalibreren", "de": "Ventil Kalibrieren" },
-      "maintenanceAction": true
-    }
-  },
   "energy": {
     "batteries": [
       "AA"
@@ -375,7 +368,6 @@
       "_TZE200_iyizdvls",
       "_TZE200_kkr3igo4",
       "_TZE200_locansqn",
-      "_TZE204_locansqn",
       "_TZE200_lpwgshtl",
       "_TZE200_ne7xgwgv",
       "_TZE200_npp2i7sb",
@@ -383,28 +375,19 @@
       "_TZE200_o9d1hdma",
       "_TZE200_owwdxjwl",
       "_TZE200_pay2byax",
-      "_TZE204_pay2byax",
       "_TZE200_pisltm67",
-      "_TZE204_pisltm67",
       "_TZE200_qdihqf3l",
-      "_TZE204_qdihqf3l",
       "_TZE200_qoy0ekbd",
-      "_TZE204_qoy0ekbd",
       "_TZE200_qq9mpfhw",
       "_TZE200_r731zlxk",
       "_TZE200_sh1btabb",
-      "_TZE204_sh1btabb",
       "_TZE200_t1blo2bj",
       "_TZE200_utkemkbs",
       "_TZE200_v6ossqfy",
-      "_TZE204_v6ossqfy",
       "_TZE200_wfxuhoea",
       "_TZE200_wgrffniy",
-      "_TZE204_wgrffniy",
       "_TZE200_xby0s3ta",
-      "_TZE204_xby0s3ta",
       "_TZE200_ywdxldoj",
-      "_TZE204_ywdxldoj",
       "_TZE200_znbl8dj5",
       "_TZE200_ztc6ggyl",
       "_TZE204_0dvm9mva",
@@ -533,7 +516,17 @@
       "_TZE200_cxakecfo",
       "_tze200_cxakecfo",
       "_TZE204_woww89ip",
-      "_tze204_woww89ip"
+      "_tze204_woww89ip",
+      "_TZE204_locansqn",
+      "_TZE204_pay2byax",
+      "_TZE204_pisltm67",
+      "_TZE204_qdihqf3l",
+      "_TZE204_qoy0ekbd",
+      "_TZE204_sh1btabb",
+      "_TZE204_v6ossqfy",
+      "_TZE204_wgrffniy",
+      "_TZE204_xby0s3ta",
+      "_TZE204_ywdxldoj"
     ],
     "productId": [
       "TV01-ZB",

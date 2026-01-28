@@ -21,41 +21,6 @@
     "measure_temperature.ch4",
     "thermostat_mode"
   ],
-  "energy": {
-    "approximation": {
-      "usageOn": 3,
-      "usageOff": 1
-    }
-  },
-  "capabilitiesOptions": {
-    "onoff.ch2": {
-      "title": { "en": "Channel 2", "nl": "Kanaal 2", "de": "Kanal 2" }
-    },
-    "onoff.ch3": {
-      "title": { "en": "Channel 3", "nl": "Kanaal 3", "de": "Kanal 3" }
-    },
-    "onoff.ch4": {
-      "title": { "en": "Channel 4", "nl": "Kanaal 4", "de": "Kanal 4" }
-    },
-    "target_temperature.ch2": {
-      "title": { "en": "Target Ch2", "nl": "Doel K2", "de": "Ziel K2" }
-    },
-    "target_temperature.ch3": {
-      "title": { "en": "Target Ch3", "nl": "Doel K3", "de": "Ziel K3" }
-    },
-    "target_temperature.ch4": {
-      "title": { "en": "Target Ch4", "nl": "Doel K4", "de": "Ziel K4" }
-    },
-    "measure_temperature.ch2": {
-      "title": { "en": "Temp Ch2", "nl": "Temp K2", "de": "Temp K2" }
-    },
-    "measure_temperature.ch3": {
-      "title": { "en": "Temp Ch3", "nl": "Temp K3", "de": "Temp K3" }
-    },
-    "measure_temperature.ch4": {
-      "title": { "en": "Temp Ch4", "nl": "Temp K4", "de": "Temp K4" }
-    }
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZE200_ZION52EF",

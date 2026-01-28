@@ -11,39 +11,16 @@
     "meter_power",
     "measure_voltage",
     "measure_current",
-    "measure_power.phase_a",
-    "measure_power.phase_b",
-    "measure_power.phase_c",
-    "measure_voltage.phase_a",
-    "measure_voltage.phase_b",
-    "measure_voltage.phase_c",
-    "measure_current.phase_a",
-    "measure_current.phase_b",
-    "measure_current.phase_c",
-    "meter_power.phase_a",
-    "meter_power.phase_b",
-    "meter_power.phase_c"
+    "measure_power.phase1",
+    "measure_power.phase2",
+    "measure_power.phase3",
+    "measure_battery"
   ],
-  "capabilitiesOptions": {
-    "measure_power": { "title": { "en": "Total Power", "fr": "Puissance Totale" } },
-    "measure_power.phase_a": { "title": { "en": "Power Phase A", "fr": "Puissance Phase A" } },
-    "measure_power.phase_b": { "title": { "en": "Power Phase B", "fr": "Puissance Phase B" } },
-    "measure_power.phase_c": { "title": { "en": "Power Phase C", "fr": "Puissance Phase C" } },
-    "measure_voltage": { "title": { "en": "Total Voltage", "fr": "Tension Totale" } },
-    "measure_voltage.phase_a": { "title": { "en": "Voltage Phase A", "fr": "Tension Phase A" } },
-    "measure_voltage.phase_b": { "title": { "en": "Voltage Phase B", "fr": "Tension Phase B" } },
-    "measure_voltage.phase_c": { "title": { "en": "Voltage Phase C", "fr": "Tension Phase C" } },
-    "measure_current": { "title": { "en": "Total Current", "fr": "Courant Total" } },
-    "measure_current.phase_a": { "title": { "en": "Current Phase A", "fr": "Courant Phase A" } },
-    "measure_current.phase_b": { "title": { "en": "Current Phase B", "fr": "Courant Phase B" } },
-    "measure_current.phase_c": { "title": { "en": "Current Phase C", "fr": "Courant Phase C" } },
-    "meter_power": { "title": { "en": "Total Energy", "fr": "Énergie Totale" } },
-    "meter_power.phase_a": { "title": { "en": "Energy Phase A", "fr": "Énergie Phase A" } },
-    "meter_power.phase_b": { "title": { "en": "Energy Phase B", "fr": "Énergie Phase B" } },
-    "meter_power.phase_c": { "title": { "en": "Energy Phase C", "fr": "Énergie Phase C" } }
-  },
   "energy": {
-    "cumulative": true
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
   },
   "zigbee": {
     "manufacturerName": [

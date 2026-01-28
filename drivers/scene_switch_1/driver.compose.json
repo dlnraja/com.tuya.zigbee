@@ -14,7 +14,8 @@
         "en": "Button 1",
         "fr": "Bouton 1"
       },
-      "getable": true,
+      "maintenanceAction": true,
+      "getable": false,
       "setable": false
     }
   },

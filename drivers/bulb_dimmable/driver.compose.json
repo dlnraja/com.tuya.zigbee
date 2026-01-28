@@ -1,24 +1,27 @@
 {
   "name": {
-    "en": "Smart Bulb Dimmable",
-    "fr": "Ampoule Connectée Dimmable",
+    "en": "Smart Bulb Dimmer",
+    "fr": "Smart Bulb Dimmer",
     "nl": "Dimbare Lamp",
     "de": "Dimmbare Glühbirne"
   },
   "class": "light",
   "capabilities": [
-    "onoff",
     "dim",
     "light_hue",
     "light_saturation",
     "light_temperature",
-    "light_mode"
+    "light_mode",
+    "onoff",
+    "measure_battery"
   ],
   "energy": {
     "approximation": {
-      "usageOn": 9,
-      "usageOff": 0.5
-    }
+      "usageConstant": 0.5
+    },
+    "batteries": [
+      "OTHER"
+    ]
   },
   "zigbee": {
     "manufacturerName": [

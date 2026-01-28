@@ -230,24 +230,132 @@
             "de": "Melodie"
           },
           "values": [
-            { "id": "0", "label": { "en": "Doorbell Chime", "fr": "Sonnette" } },
-            { "id": "1", "label": { "en": "Für Elise", "fr": "Pour Élise" } },
-            { "id": "2", "label": { "en": "Westminster Chimes", "fr": "Carillon Westminster" } },
-            { "id": "3", "label": { "en": "4-Key Chime", "fr": "Carillon 4 notes" } },
-            { "id": "4", "label": { "en": "William Tell Overture", "fr": "Guillaume Tell" } },
-            { "id": "5", "label": { "en": "Mozart Piano", "fr": "Mozart Piano" } },
-            { "id": "6", "label": { "en": "Space Alarm", "fr": "Alarme Spatiale" } },
-            { "id": "7", "label": { "en": "Klaxon", "fr": "Klaxon" } },
-            { "id": "8", "label": { "en": "Meep Meep", "fr": "Bip Bip" } },
-            { "id": "9", "label": { "en": "Wheep", "fr": "Sifflement" } },
-            { "id": "10", "label": { "en": "Barking Dog", "fr": "Chien qui aboie" } },
-            { "id": "11", "label": { "en": "Alarm Siren", "fr": "Sirène d'alarme" } },
-            { "id": "12", "label": { "en": "Doorbell 2", "fr": "Sonnette 2" } },
-            { "id": "13", "label": { "en": "Old Phone", "fr": "Vieux téléphone" } },
-            { "id": "14", "label": { "en": "Police Siren", "fr": "Sirène Police" } },
-            { "id": "15", "label": { "en": "Evacuation Bell", "fr": "Cloche Évacuation" } },
-            { "id": "16", "label": { "en": "Clock Alarm", "fr": "Réveil" } },
-            { "id": "17", "label": { "en": "Fire Alarm", "fr": "Alarme Incendie" } }
+            {
+              "id": "0",
+              "label": {
+                "en": "Doorbell Chime",
+                "fr": "Sonnette"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Für Elise",
+                "fr": "Pour Élise"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Westminster Chimes",
+                "fr": "Carillon Westminster"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "4-Key Chime",
+                "fr": "Carillon 4 notes"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "William Tell Overture",
+                "fr": "Guillaume Tell"
+              }
+            },
+            {
+              "id": "5",
+              "label": {
+                "en": "Mozart Piano",
+                "fr": "Mozart Piano"
+              }
+            },
+            {
+              "id": "6",
+              "label": {
+                "en": "Space Alarm",
+                "fr": "Alarme Spatiale"
+              }
+            },
+            {
+              "id": "7",
+              "label": {
+                "en": "Klaxon",
+                "fr": "Klaxon"
+              }
+            },
+            {
+              "id": "8",
+              "label": {
+                "en": "Meep Meep",
+                "fr": "Bip Bip"
+              }
+            },
+            {
+              "id": "9",
+              "label": {
+                "en": "Wheep",
+                "fr": "Sifflement"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "Barking Dog",
+                "fr": "Chien qui aboie"
+              }
+            },
+            {
+              "id": "11",
+              "label": {
+                "en": "Alarm Siren",
+                "fr": "Sirène d'alarme"
+              }
+            },
+            {
+              "id": "12",
+              "label": {
+                "en": "Doorbell 2",
+                "fr": "Sonnette 2"
+              }
+            },
+            {
+              "id": "13",
+              "label": {
+                "en": "Old Phone",
+                "fr": "Vieux téléphone"
+              }
+            },
+            {
+              "id": "14",
+              "label": {
+                "en": "Police Siren",
+                "fr": "Sirène Police"
+              }
+            },
+            {
+              "id": "15",
+              "label": {
+                "en": "Evacuation Bell",
+                "fr": "Cloche Évacuation"
+              }
+            },
+            {
+              "id": "16",
+              "label": {
+                "en": "Clock Alarm",
+                "fr": "Réveil"
+              }
+            },
+            {
+              "id": "17",
+              "label": {
+                "en": "Fire Alarm",
+                "fr": "Alarme Incendie"
+              }
+            }
           ]
         }
       ]

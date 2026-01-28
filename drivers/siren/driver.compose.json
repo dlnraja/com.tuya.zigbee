@@ -1,11 +1,11 @@
 {
   "name": {
-    "en": "Smart Siren",
-    "fr": "Sirène Connectée",
-    "nl": "Slimme Sirene",
-    "de": "Intelligente Sirene"
+    "en": "Siren Siren",
+    "fr": "Siren Siren",
+    "nl": "Sirene",
+    "de": "Sirene"
   },
-  "class": "siren",
+  "class": "other",
   "capabilities": [
     "alarm_motion",
     "measure_battery",

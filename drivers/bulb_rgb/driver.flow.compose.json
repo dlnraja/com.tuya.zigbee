@@ -2,12 +2,9 @@
   "triggers": [
     {
       "id": "bulb_rgb_smart_bulb_rgb_turned_on",
-      "highlight": true,
       "title": {
         "en": "Turned on",
-        "fr": "Allumé",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
+        "fr": "Allumé"
       },
       "args": []
     },

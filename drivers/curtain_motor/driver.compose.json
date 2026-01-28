@@ -5,26 +5,17 @@
     "nl": "Gordijnmotor",
     "de": "Vorhangmotor"
   },
-  "class": "curtains",
+  "class": "windowcoverings",
   "capabilities": [
     "windowcoverings_state",
     "windowcoverings_set",
     "windowcoverings_tilt_set",
     "measure_battery",
     "measure_luminance",
-    "button.calibrate",
-    "button.reset_position",
+    "button",
     "dim"
   ],
   "capabilitiesOptions": {
-    "button.calibrate": {
-      "title": { "en": "Calibrate", "fr": "Calibrer", "nl": "Kalibreren", "de": "Kalibrieren" },
-      "maintenanceAction": true
-    },
-    "button.reset_position": {
-      "title": { "en": "Reset Position", "fr": "Réinitialiser Position", "nl": "Reset Positie", "de": "Position zurücksetzen" },
-      "maintenanceAction": true
-    },
     "windowcoverings_set": {
       "title": {
         "en": "Position"
@@ -44,17 +35,9 @@
     "measure_battery": {
       "title": {
         "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
+        "fr": "Batterie"
       },
       "preventInsights": false
-    }
-  },
-  "energy": {
-    "approximation": {
-      "usageOn": 40,
-      "usageOff": 1
     }
   },
   "platforms": [
@@ -582,7 +565,6 @@
       "_TZE200_5tgzpccv",
       "_TZE200_6mafo2gv",
       "_TZE200_7tdtqgwv",
-      "_TZE204_7tdtqgwv",
       "_TZE200_8k8k3t3j",
       "_TZE200_8xtk0cjs",
       "_TZE200_9cxuhakf",
@@ -612,8 +594,7 @@
       "_TZE284_LIBHT6UA",
       "_tze284_libht6ua",
       "_TZE200_j1xl73iw",
-      "_TZE204_xu4a5rhj",
-      "_tze204_xu4a5rhj"
+      "_TZE204_7tdtqgwv"
     ],
     "productId": [
       "TS0302",
@@ -655,75 +636,49 @@
   },
   "settings": [
     {
-      "type": "group",
-      "label": { "en": "📐 Position Calibration", "fr": "📐 Calibration Position", "nl": "📐 Positie Kalibratie", "de": "📐 Positions-Kalibrierung" },
-      "children": [
-        {
-          "id": "upper_limit",
-          "type": "number",
-          "label": { "en": "Upper Limit (%)", "fr": "Limite Haute (%)", "nl": "Bovengrens (%)", "de": "Obere Grenze (%)" },
-          "value": 100,
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "hint": { "en": "Maximum open position (100% = fully open)", "fr": "Position d'ouverture maximale (100% = complètement ouvert)" }
-        },
-        {
-          "id": "lower_limit",
-          "type": "number",
-          "label": { "en": "Lower Limit (%)", "fr": "Limite Basse (%)", "nl": "Ondergrens (%)", "de": "Untere Grenze (%)" },
-          "value": 0,
-          "min": 0,
-          "max": 100,
-          "step": 1,
-          "hint": { "en": "Minimum close position (0% = fully closed)", "fr": "Position de fermeture minimale (0% = complètement fermé)" }
-        },
-        {
-          "id": "open_time",
-          "type": "number",
-          "label": { "en": "Open Time (seconds)", "fr": "Temps d'ouverture (secondes)" },
-          "value": 0,
-          "min": 0,
-          "max": 120,
-          "step": 1,
-          "hint": { "en": "Time to fully open (0 = auto). Used for position calculation.", "fr": "Temps pour ouvrir (0 = auto). Utilisé pour calcul de position." }
-        },
-        {
-          "id": "close_time",
-          "type": "number",
-          "label": { "en": "Close Time (seconds)", "fr": "Temps de fermeture (secondes)" },
-          "value": 0,
-          "min": 0,
-          "max": 120,
-          "step": 1,
-          "hint": { "en": "Time to fully close (0 = auto). Used for position calculation.", "fr": "Temps pour fermer (0 = auto). Utilisé pour calcul de position." }
-        }
-      ]
+      "id": "open_time",
+      "type": "number",
+      "label": {
+        "en": "Open Time (seconds)",
+        "fr": "Temps d'ouverture (secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "hint": {
+        "en": "Time to fully open the cover (0 = auto calibration). Set this to calibrate the open position.",
+        "fr": "Temps pour ouvrir complètement le volet (0 = calibration auto). Définir pour calibrer la position ouverte."
+      }
     },
     {
-      "type": "group",
-      "label": { "en": "⚙️ Motor Settings", "fr": "⚙️ Paramètres Moteur", "nl": "⚙️ Motor Instellingen", "de": "⚙️ Motor Einstellungen" },
-      "children": [
-        {
-          "id": "reverse_direction",
-          "type": "checkbox",
-          "label": { "en": "Reverse Direction", "fr": "Inverser Direction" },
-          "value": false,
-          "hint": { "en": "Swap open/close direction if your curtain moves the wrong way", "fr": "Inverser si le rideau se déplace dans le mauvais sens" }
-        },
-        {
-          "id": "motor_speed",
-          "type": "dropdown",
-          "label": { "en": "Motor Speed", "fr": "Vitesse Moteur", "nl": "Motor Snelheid", "de": "Motor Geschwindigkeit" },
-          "value": "normal",
-          "values": [
-            { "id": "slow", "label": { "en": "Slow", "fr": "Lent", "nl": "Langzaam", "de": "Langsam" } },
-            { "id": "normal", "label": { "en": "Normal", "fr": "Normal", "nl": "Normaal", "de": "Normal" } },
-            { "id": "fast", "label": { "en": "Fast", "fr": "Rapide", "nl": "Snel", "de": "Schnell" } }
-          ],
-          "hint": { "en": "Motor movement speed (if supported)", "fr": "Vitesse de mouvement du moteur (si supporté)" }
-        }
-      ]
+      "id": "close_time",
+      "type": "number",
+      "label": {
+        "en": "Close Time (seconds)",
+        "fr": "Temps de fermeture (secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "hint": {
+        "en": "Time to fully close the cover (0 = auto calibration). Set this to calibrate the close position.",
+        "fr": "Temps pour fermer complètement le volet (0 = calibration auto). Définir pour calibrer la position fermée."
+      }
+    },
+    {
+      "id": "reverse_direction",
+      "type": "checkbox",
+      "label": {
+        "en": "Reverse Direction",
+        "fr": "Inverser Direction"
+      },
+      "value": false,
+      "hint": {
+        "en": "Swap open/close direction if your curtain moves the wrong way",
+        "fr": "Inverser la direction si votre rideau se déplace dans le mauvais sens"
+      }
     },
     {
       "id": "power_source",
