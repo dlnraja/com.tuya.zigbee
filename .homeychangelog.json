@@ -1,4 +1,7 @@
 {
+  "5.5.944": {
+    "en": "🔍 FULL AUDIT: Fixed flow card namespace violations - ir_blaster_, smart_knob_rotary_, water_valve_smart_ prefixes now correct. Removed duplicate flow cards in water_valve_smart. All 108 drivers validated, all flow cards have unique IDs with proper driver prefixes."
+  },
   "5.5.943": {
     "en": "🔧 BUILD CLEANUP: Fixed missing titleFormatted warnings for switch_3gang and switch_4gang LED backlight flow cards. Closed GitHub issue #117 (Longsam mini m3 - already working in v5.5.937). All PRs merged, all issues resolved!"
   },
