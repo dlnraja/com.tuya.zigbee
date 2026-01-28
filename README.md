@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.950** | ➕ NEW DEVICES: MiBoxer Zigbee rotary dimmers (TRI-C1ZR, TRI-K1ZR) now support... |
 | **v5.5.949** | 🧹 CLEANUP: Removed duplicate switch_dimmer_1gang driver as per @Attilla's su... |
 | **v5.5.948** | 🔧 PR #119 merged: @packetninja's flexible HybridSwitchBase refactor for wall... |
 | **v5.5.947** | ➕ NEW DEVICE: Pressure band (_TZ3000_pjb1ua0m / TS0203) added to Contact Sens... |
@@ -78,7 +79,6 @@
 | **v5.5.943** | 🔧 BUILD CLEANUP: Fixed missing titleFormatted warnings for switch_3gang and ... |
 | **v5.5.942** | 🔧 FORUM FIXES: Added all case variants for BSEED fingerprints (wall_switch_1... |
 | **v5.5.941** | 🙏 PR #118 COMPLETE FIX (@packetninja): Rewrote wall_switch_1gang_1way with P... |
-| **v5.5.940** | 🔧 PR #118 PROPER INTEGRATION (@packetninja): Separated BSEED switch support ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
