@@ -9,27 +9,19 @@
     "button.learn_ir",
     "onoff"
   ],
-  "energy": {
-    "approximation": {
-      "usageConstant": 2
-    }
-  },
   "capabilitiesOptions": {
     "button.learn_ir": {
       "title": {
         "en": "Learn IR Code",
         "nl": "Leer IR Code",
-        "de": "IR-Code lernen",
-        "fr": "Apprendre Code IR"
-      },
-      "maintenanceAction": true
+        "de": "IR-Code lernen"
+      }
     },
     "onoff": {
       "title": {
         "en": "Power",
         "nl": "Aan/Uit",
-        "de": "Ein/Aus",
-        "fr": "Alimentation"
+        "de": "Ein/Aus"
       }
     }
   },
@@ -63,8 +55,6 @@
       "_TZ3290_5luhabkc",
       "_TZ3290_hdlpifbk",
       "_TZE284_la9vhsok",
-      "_TZE284_3MZB0SDZ",
-      "_tze284_3mzb0sdz",
       "_TZE200_owvfni2z",
       "_TZE200_ikvncluo",
       "_TZE204_ikvncluo",
@@ -281,7 +271,9 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "_TZE284_3MZB0SDZ",
+      "_tze284_3mzb0sdz"
     ],
     "productId": [
       "TS1201",

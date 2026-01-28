@@ -12,20 +12,6 @@
     "onoff.channel2",
     "dim.channel2"
   ],
-  "energy": {
-    "approximation": {
-      "usageOn": 100,
-      "usageOff": 1
-    }
-  },
-  "capabilitiesOptions": {
-    "onoff.channel2": {
-      "title": { "en": "Channel 2", "nl": "Kanaal 2", "de": "Kanal 2", "fr": "Canal 2" }
-    },
-    "dim.channel2": {
-      "title": { "en": "Dim Ch2", "nl": "Dim K2", "de": "Dimmen K2", "fr": "Dim C2" }
-    }
-  },
   "platforms": [
     "local"
   ],

@@ -2,22 +2,13 @@
   "triggers": [
     {
       "id": "switch_2gang_gang1_turned_on",
-      "highlight": true,
       "title": {
         "en": "Gang 1 turned on",
         "fr": "Gang 1 allumé",
         "nl": "Gang 1 aangezet",
         "de": "Gang 1 eingeschaltet"
       },
-      "titleFormatted": {
-        "en": "[[device]] gang 1 turned on",
-        "fr": "[[device]] gang 1 allumé",
-        "nl": "[[device]] gang 1 aangezet",
-        "de": "[[device]] gang 1 eingeschaltet"
-      },
-      "args": [
-        { "type": "device", "name": "device", "filter": "driver_id=switch_2gang" }
-      ]
+      "args": []
     },
     {
       "id": "switch_2gang_gang1_turned_off",
@@ -27,15 +18,7 @@
         "nl": "Gang 1 uitgezet",
         "de": "Gang 1 ausgeschaltet"
       },
-      "titleFormatted": {
-        "en": "[[device]] gang 1 turned off",
-        "fr": "[[device]] gang 1 éteint",
-        "nl": "[[device]] gang 1 uitgezet",
-        "de": "[[device]] gang 1 ausgeschaltet"
-      },
-      "args": [
-        { "type": "device", "name": "device", "filter": "driver_id=switch_2gang" }
-      ]
+      "args": []
     },
     {
       "id": "switch_2gang_gang2_turned_on",
@@ -45,15 +28,7 @@
         "nl": "Gang 2 aangezet",
         "de": "Gang 2 eingeschaltet"
       },
-      "titleFormatted": {
-        "en": "[[device]] gang 2 turned on",
-        "fr": "[[device]] gang 2 allumé",
-        "nl": "[[device]] gang 2 aangezet",
-        "de": "[[device]] gang 2 eingeschaltet"
-      },
-      "args": [
-        { "type": "device", "name": "device", "filter": "driver_id=switch_2gang" }
-      ]
+      "args": []
     },
     {
       "id": "switch_2gang_gang2_turned_off",
@@ -63,15 +38,7 @@
         "nl": "Gang 2 uitgezet",
         "de": "Gang 2 ausgeschaltet"
       },
-      "titleFormatted": {
-        "en": "[[device]] gang 2 turned off",
-        "fr": "[[device]] gang 2 éteint",
-        "nl": "[[device]] gang 2 uitgezet",
-        "de": "[[device]] gang 2 ausgeschaltet"
-      },
-      "args": [
-        { "type": "device", "name": "device", "filter": "driver_id=switch_2gang" }
-      ]
+      "args": []
     },
     {
       "id": "switch_2gang_physical_gang1_on",
@@ -93,9 +60,7 @@
         "nl": "Triggert alleen wanneer fysieke knop gang 1 inschakelt",
         "de": "Wird nur ausgelöst, wenn physische Taste gang 1 einschaltet"
       },
-      "args": [
-        { "type": "device", "name": "device", "filter": "driver_id=switch_2gang" }
-      ]
+      "args": []
     },
     {
       "id": "switch_2gang_physical_gang1_off",
@@ -111,9 +76,7 @@
         "nl": "[[device]] gang 1 uitgezet (fysiek)",
         "de": "[[device]] gang 1 ausgeschaltet (physisch)"
       },
-      "args": [
-        { "type": "device", "name": "device", "filter": "driver_id=switch_2gang" }
-      ]
+      "args": []
     },
     {
       "id": "switch_2gang_physical_gang2_on",
@@ -129,9 +92,7 @@
         "nl": "[[device]] gang 2 aangezet (fysiek)",
         "de": "[[device]] gang 2 eingeschaltet (physisch)"
       },
-      "args": [
-        { "type": "device", "name": "device", "filter": "driver_id=switch_2gang" }
-      ]
+      "args": []
     },
     {
       "id": "switch_2gang_physical_gang2_off",
@@ -147,9 +108,7 @@
         "nl": "[[device]] gang 2 uitgezet (fysiek)",
         "de": "[[device]] gang 2 ausgeschaltet (physisch)"
       },
-      "args": [
-        { "type": "device", "name": "device", "filter": "driver_id=switch_2gang" }
-      ]
+      "args": []
     }
   ],
   "conditions": [
@@ -269,10 +228,65 @@
     },
     {
       "id": "switch_2gang_set_backlight",
-      "title": { "en": "Set LED backlight mode", "fr": "Définir le mode rétroéclairage LED", "nl": "LED achtergrondverlichting instellen", "de": "LED-Hintergrundbeleuchtung einstellen" },
-      "titleFormatted": { "en": "Set LED backlight to [[mode]]", "fr": "Définir le rétroéclairage sur [[mode]]", "nl": "Stel LED achtergrondverlichting in op [[mode]]", "de": "LED-Hintergrundbeleuchtung auf [[mode]] setzen" },
-      "hint": { "en": "Control the switch LED indicator (requires Tuya DP15 support)", "fr": "Contrôle l'indicateur LED (nécessite Tuya DP15)", "nl": "Beheer de schakelaar LED indicator (vereist Tuya DP15)", "de": "Steuert die Schalter-LED-Anzeige (erfordert Tuya DP15)" },
-      "args": [{ "type": "dropdown", "name": "mode", "title": { "en": "Mode", "fr": "Mode", "nl": "Modus", "de": "Modus" }, "values": [{ "id": "off", "label": { "en": "Off", "fr": "Éteint", "nl": "Uit", "de": "Aus" } }, { "id": "normal", "label": { "en": "Normal (LED when ON)", "fr": "Normal (LED quand allumé)", "nl": "Normaal (LED bij AAN)", "de": "Normal (LED bei EIN)" } }, { "id": "inverted", "label": { "en": "Inverted (LED when OFF)", "fr": "Inversé (LED quand éteint)", "nl": "Omgekeerd (LED bij UIT)", "de": "Invertiert (LED bei AUS)" } }] }]
+      "title": {
+        "en": "Set LED backlight mode",
+        "fr": "Définir le mode rétroéclairage LED",
+        "nl": "LED achtergrondverlichting instellen",
+        "de": "LED-Hintergrundbeleuchtung einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set LED backlight to [[mode]]",
+        "fr": "Définir le rétroéclairage sur [[mode]]",
+        "nl": "Stel LED achtergrondverlichting in op [[mode]]",
+        "de": "LED-Hintergrundbeleuchtung auf [[mode]] setzen"
+      },
+      "hint": {
+        "en": "Control the switch LED indicator (requires Tuya DP15 support)",
+        "fr": "Contrôle l'indicateur LED (nécessite Tuya DP15)",
+        "nl": "Beheer de schakelaar LED indicator (vereist Tuya DP15)",
+        "de": "Steuert die Schalter-LED-Anzeige (erfordert Tuya DP15)"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "mode",
+          "title": {
+            "en": "Mode",
+            "fr": "Mode",
+            "nl": "Modus",
+            "de": "Modus"
+          },
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Éteint",
+                "nl": "Uit",
+                "de": "Aus"
+              }
+            },
+            {
+              "id": "normal",
+              "label": {
+                "en": "Normal (LED when ON)",
+                "fr": "Normal (LED quand allumé)",
+                "nl": "Normaal (LED bij AAN)",
+                "de": "Normal (LED bei EIN)"
+              }
+            },
+            {
+              "id": "inverted",
+              "label": {
+                "en": "Inverted (LED when OFF)",
+                "fr": "Inversé (LED quand éteint)",
+                "nl": "Omgekeerd (LED bij UIT)",
+                "de": "Invertiert (LED bei AUS)"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

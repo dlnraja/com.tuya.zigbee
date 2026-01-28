@@ -10,15 +10,8 @@
     "alarm_motion",
     "measure_luminance",
     "measure_battery",
-    "measure_distance",
-    "measure_temperature",
-    "measure_humidity"
+    "measure_distance"
   ],
-  "energy": {
-    "approximation": {
-      "usageConstant": 1.5
-    }
-  },
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
@@ -38,8 +31,6 @@
       "_tz321c_4slreunp",
       "_TZE200_2aaelwxk",
       "_tze200_2aaelwxk",
-      "_TZE284_DEBCZECI",
-      "_tze284_debczeci",
       "_TZE200_3TOWULQD",
       "_tze200_3towulqd",
       "_TZE200_7GCLUKJS",
@@ -61,8 +52,6 @@
       "_TZE200_QOMXLRYD",
       "_tze200_qomxlryd",
       "_TZE200_rhgsbacq",
-      "_TZE200_laokfqwu",
-      "_TZE204_laokfqwu",
       "_TZE200_SFIY8PUU",
       "_tze200_sfiy8puu",
       "_TZE200_SGFMFPIY",
@@ -389,7 +378,9 @@
       "_TZE200_hyhl5y36",
       "_tze200_hyhl5y36",
       "_TZE204_ztc6ggyl",
-      "_tze204_ztc6ggyl"
+      "_tze204_ztc6ggyl",
+      "_TZE200_laokfqwu",
+      "_TZE204_laokfqwu"
     ],
     "productId": [
       "TS0225",
@@ -399,11 +390,11 @@
       "ZG-204ZK",
       "ZG-204ZM",
       "ZG-205Z",
-      "ZG-227Z",
       "CK-BL702-MWS-01(7016)",
       "CK-BL702-MWS-01",
       "SZLMR10",
-      "TS0601"
+      "TS0601",
+      "ZG-227Z"
     ],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
@@ -434,12 +425,9 @@
     {
       "id": "power_source",
       "type": "dropdown",
-      "highlight": true,
       "label": {
         "en": "Power Source",
-        "fr": "Source d'Alimentation",
-        "nl": "Stroombron",
-        "de": "Stromquelle"
+        "fr": "Source d'Alimentation"
       },
       "value": "auto",
       "values": [

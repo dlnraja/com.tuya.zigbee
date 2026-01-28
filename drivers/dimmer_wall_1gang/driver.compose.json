@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "Wall Dimmer 1-Gang",
-    "fr": "Variateur Mural 1 Canal",
+    "en": "Dimmer 1gang",
+    "fr": "Dimmer 1gang",
     "nl": "1-Voudige Wanddimmer",
     "de": "1-Kanal Wanddimmer"
   },
@@ -13,9 +13,11 @@
   ],
   "energy": {
     "approximation": {
-      "usageOn": 60,
-      "usageOff": 1
-    }
+      "usageConstant": 0.5
+    },
+    "batteries": [
+      "OTHER"
+    ]
   },
   "zigbee": {
     "manufacturerName": [

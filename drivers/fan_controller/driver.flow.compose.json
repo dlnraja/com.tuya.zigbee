@@ -18,7 +18,8 @@
           },
           "example": 50
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "fan_controller_turned_on",
@@ -27,7 +28,8 @@
         "fr": "Ventilateur allumé",
         "nl": "Ventilator ingeschakeld",
         "de": "Lüfter eingeschaltet"
-      }
+      },
+      "args": []
     },
     {
       "id": "fan_controller_turned_off",
@@ -36,7 +38,8 @@
         "fr": "Ventilateur éteint",
         "nl": "Ventilator uitgeschakeld",
         "de": "Lüfter ausgeschaltet"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -47,7 +50,8 @@
         "fr": "Ventilateur est !{{allumé|éteint}}",
         "nl": "Ventilator is !{{aan|uit}}",
         "de": "Lüfter ist !{{ein|aus}}"
-      }
+      },
+      "args": []
     },
     {
       "id": "fan_controller_speed_is",
@@ -82,7 +86,8 @@
         "fr": "Allumer",
         "nl": "Inschakelen",
         "de": "Einschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "fan_controller_turn_off",
@@ -91,7 +96,8 @@
         "fr": "Éteindre",
         "nl": "Uitschakelen",
         "de": "Ausschalten"
-      }
+      },
+      "args": []
     },
     {
       "id": "fan_controller_set_speed",
@@ -124,7 +130,8 @@
         "fr": "Augmenter vitesse ventilateur",
         "nl": "Verhoog ventilatorsnelheid",
         "de": "Lüftergeschwindigkeit erhöhen"
-      }
+      },
+      "args": []
     },
     {
       "id": "fan_controller_speed_down",
@@ -133,7 +140,8 @@
         "fr": "Diminuer vitesse ventilateur",
         "nl": "Verlaag ventilatorsnelheid",
         "de": "Lüftergeschwindigkeit verringern"
-      }
+      },
+      "args": []
     }
   ]
 }

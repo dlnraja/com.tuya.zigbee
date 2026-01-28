@@ -1,18 +1,18 @@
 {
-  "triggers": [],
-  "conditions": [],
   "actions": [
     {
       "id": "smart_heater_controller_turn_on",
       "title": {
         "en": "Turn on"
-      }
+      },
+      "args": []
     },
     {
       "id": "smart_heater_controller_turn_off",
       "title": {
         "en": "Turn off"
-      }
+      },
+      "args": []
     }
   ]
 }

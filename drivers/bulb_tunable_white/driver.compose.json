@@ -1,22 +1,27 @@
 {
   "name": {
-    "en": "Tunable White Bulb",
-    "fr": "Ampoule Blanc Ajustable",
+    "en": "Bulb Tunable",
+    "fr": "Bulb Tunable",
     "nl": "Instelbaar Wit Lamp",
     "de": "Einstellbares Weißlicht"
   },
   "class": "light",
   "capabilities": [
-    "onoff",
     "dim",
+    "light_hue",
+    "light_saturation",
     "light_temperature",
-    "light_mode"
+    "light_mode",
+    "onoff",
+    "measure_battery"
   ],
   "energy": {
     "approximation": {
-      "usageOn": 9,
-      "usageOff": 0.5
-    }
+      "usageConstant": 0.5
+    },
+    "batteries": [
+      "OTHER"
+    ]
   },
   "zigbee": {
     "manufacturerName": [
@@ -25,7 +30,6 @@
       "_TZ3000_9cpuaca6",
       "_TZ3000_psg0zx5j",
       "_TZ3210_agwvapnp",
-      "_TZ3210_ksqwlz9v",
       "Danfoss",
       "DANFOSS",
       "Eurotronic",
@@ -279,7 +283,8 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "_TZ3210_ksqwlz9v"
     ],
     "productId": [
       "TS0502A",

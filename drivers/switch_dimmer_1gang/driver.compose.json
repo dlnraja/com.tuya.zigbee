@@ -1,9 +1,7 @@
 {
   "name": {
-    "en": "Wall Dimmer 1-Gang",
-    "fr": "Variateur Mural 1 Gang",
-    "nl": "Wanddimmer 1-Voudig",
-    "de": "Wanddimmer 1-Kanal"
+    "en": "Switch Touch Dimmer (1 Gang)",
+    "nl": "Switch Touch Dimmer (1 Gang)"
   },
   "class": "light",
   "capabilities": [
@@ -17,8 +15,7 @@
   },
   "energy": {
     "approximation": {
-      "usageOn": 100,
-      "usageOff": 1
+      "usageConstant": 5
     }
   },
   "platforms": [
@@ -29,11 +26,11 @@
   ],
   "images": {
     "small": "/drivers/switch_dimmer_1gang/assets/images/small.png",
-    "large": "/drivers/switch_dimmer_1gang/assets/images/large.png"
+    "large": "/drivers/switch_dimmer_1gang/assets/images/large.png",
+    "xlarge": "/drivers/switch_dimmer_1gang/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_4fjiwweb",
       "_TZE200_3p5ydos3",
       "_TZE204_n9ctkb6j",
       "_TZE200_ip2akl4w",
@@ -65,7 +62,8 @@
       "_TZE204_nqqylykc",
       "_TZE200_p0gzbqct",
       "_TZE204_dcnsggvz",
-      "_TZE200_6fjev1mn"
+      "_TZE200_6fjev1mn",
+      "_TZ3000_4fjiwweb"
     ],
     "productId": [
       "TS0601",
@@ -192,6 +190,19 @@
           ]
         }
       ]
+    }
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
     }
   ]
 }

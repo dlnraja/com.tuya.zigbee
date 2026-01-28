@@ -12,6 +12,7 @@
     "measure_battery"
   ],
   "capabilitiesOptions": {
+    "maintenanceAction": true,
     "button.1": {
       "title": {
         "en": "Button 1",
@@ -19,7 +20,7 @@
         "nl": "Knop 1",
         "de": "Taste 1"
       },
-      "getable": true,
+      "getable": false,
       "setable": false
     },
     "button.2": {
@@ -29,7 +30,7 @@
         "nl": "Knop 2",
         "de": "Taste 2"
       },
-      "getable": true,
+      "getable": false,
       "setable": false
     },
     "button.3": {
@@ -39,7 +40,7 @@
         "nl": "Knop 3",
         "de": "Taste 3"
       },
-      "getable": true,
+      "getable": false,
       "setable": false
     },
     "button.4": {
@@ -49,7 +50,7 @@
         "nl": "Knop 4",
         "de": "Taste 4"
       },
-      "getable": true,
+      "getable": false,
       "setable": false
     },
     "measure_battery": {

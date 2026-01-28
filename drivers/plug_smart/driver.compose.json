@@ -630,37 +630,6 @@
       }
     },
     {
-      "type": "group",
-      "label": { "en": "💡 LED Indicator", "fr": "💡 Indicateur LED", "nl": "💡 LED Indicator", "de": "💡 LED-Anzeige" },
-      "children": [
-        {
-          "id": "indicator_mode",
-          "type": "dropdown",
-          "label": { "en": "LED Indicator Mode", "fr": "Mode indicateur LED", "nl": "LED indicator modus", "de": "LED-Anzeige Modus" },
-          "value": "relay",
-          "values": [
-            { "id": "off", "label": { "en": "Always Off", "fr": "Toujours éteint", "nl": "Altijd uit", "de": "Immer aus" } },
-            { "id": "relay", "label": { "en": "Follow Relay (default)", "fr": "Suivre le relais", "nl": "Volg relais", "de": "Relais folgen" } },
-            { "id": "inverted", "label": { "en": "Inverted (LED when OFF)", "fr": "Inversé (LED quand éteint)", "nl": "Omgekeerd (LED bij UIT)", "de": "Invertiert (LED bei AUS)" } },
-            { "id": "always_on", "label": { "en": "Always On", "fr": "Toujours allumé", "nl": "Altijd aan", "de": "Immer an" } }
-          ],
-          "hint": { "en": "Control how the LED indicator behaves (DP26/27)", "fr": "Contrôle le comportement du voyant LED", "nl": "Bepaal hoe de LED indicator zich gedraagt", "de": "Steuert das Verhalten der LED-Anzeige" }
-        },
-        {
-          "id": "power_on_behavior",
-          "type": "dropdown",
-          "label": { "en": "Power-On Behavior", "fr": "Comportement au démarrage", "nl": "Gedrag bij opstarten", "de": "Einschaltverhalten" },
-          "value": "memory",
-          "values": [
-            { "id": "off", "label": { "en": "Start OFF", "fr": "Démarrer éteint", "nl": "Start UIT", "de": "Start AUS" } },
-            { "id": "on", "label": { "en": "Start ON", "fr": "Démarrer allumé", "nl": "Start AAN", "de": "Start EIN" } },
-            { "id": "memory", "label": { "en": "Remember last state", "fr": "Mémoriser l'état", "nl": "Onthoud laatste staat", "de": "Letzten Zustand merken" } }
-          ],
-          "hint": { "en": "What happens after power outage (DP14/121)", "fr": "Comportement après coupure de courant", "nl": "Wat gebeurt er na stroomuitval", "de": "Was passiert nach Stromausfall" }
-        }
-      ]
-    },
-    {
       "id": "optimization_mode",
       "type": "dropdown",
       "label": {

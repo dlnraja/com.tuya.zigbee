@@ -34,11 +34,6 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_U6X1ZYV2",
-      "_tze200_u6x1zyv2",
-      "_TZE204_U6X1ZYV2",
-      "_tze204_u6x1zyv2",
-      "HOBEIAN",
       "_TZ3000_ABAPLIMJ",
       "_tz3000_abaplimj",
       "_TZ3000_ABJODZAS",
@@ -267,12 +262,17 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "_TZE200_U6X1ZYV2",
+      "_tze200_u6x1zyv2",
+      "_TZE204_U6X1ZYV2",
+      "_tze204_u6x1zyv2",
+      "HOBEIAN"
     ],
     "productId": [
-      "TS0207",
       "TS0207_rain",
-      "TS0601"
+      "TS0601",
+      "TS0207"
     ],
     "endpoints": {
       "1": {

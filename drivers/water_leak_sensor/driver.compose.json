@@ -6,12 +6,9 @@
     "de": "Wasserlecksensor"
   },
   "class": "sensor",
-  "virtualClass": "homealarm",
   "capabilities": [
     "alarm_water",
-    "alarm_tamper",
-    "measure_battery",
-    "measure_temperature"
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "alarm_water": {

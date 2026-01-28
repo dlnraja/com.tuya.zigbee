@@ -5,7 +5,7 @@
     "nl": "Slimme RCBO",
     "de": "Smart FI-Schalter"
   },
-  "class": "socket",
+  "class": "other",
   "capabilities": [
     "onoff",
     "alarm_generic",
@@ -15,17 +15,6 @@
     "measure_voltage",
     "measure_battery"
   ],
-  "energy": {
-    "cumulative": true
-  },
-  "capabilitiesOptions": {
-    "meter_power": {
-      "approximated": false
-    },
-    "alarm_generic": {
-      "title": { "en": "Trip Alarm", "fr": "Alarme Déclenchement", "nl": "Trip Alarm", "de": "Auslösealarm" }
-    }
-  },
   "zigbee": {
     "manufacturerName": [
       "_TZE204_HKDL5FMV",

@@ -26,7 +26,8 @@
           },
           "example": 75
         }
-      ]
+      ],
+      "args": []
     },
     {
       "id": "water_tank_monitor_low",
@@ -42,7 +43,8 @@
         "nl": "Triggert wanneer het waterniveau onder de drempel zakt",
         "fr": "Se déclenche quand le niveau d'eau passe sous le seuil",
         "de": "Wird ausgelöst, wenn der Wasserstand unter den Schwellenwert fällt"
-      }
+      },
+      "args": []
     },
     {
       "id": "water_tank_monitor_full",
@@ -51,7 +53,8 @@
         "nl": "Watertank is vol",
         "fr": "Réservoir d'eau plein",
         "de": "Wassertank ist voll"
-      }
+      },
+      "args": []
     },
     {
       "id": "water_tank_monitor_battery_low",
@@ -60,7 +63,8 @@
         "nl": "Batterij is bijna leeg",
         "fr": "Batterie faible",
         "de": "Batterie ist schwach"
-      }
+      },
+      "args": []
     }
   ],
   "conditions": [

@@ -20,13 +20,7 @@
     "measure_power.phase2",
     "measure_power.phase3"
   ],
-  "energy": {
-    "cumulative": true
-  },
   "capabilitiesOptions": {
-    "meter_power": {
-      "approximated": false
-    },
     "measure_power": {
       "title": {
         "en": "Total Power",
@@ -94,8 +88,6 @@
       "_TZE204_v9hkz2yn",
       "_TZE200_byzdayie",
       "_TZE284_byzdayie",
-      "_TZE204_81yrt3lo",
-      "_TZE284_81yrt3lo",
       "_TZ3000_qeuvnohg",
       "TOMZN",
       "Tongou",
@@ -309,7 +301,9 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "_TZE204_81yrt3lo",
+      "_TZE284_81yrt3lo"
     ],
     "productId": [
       "TS0601_clamp",

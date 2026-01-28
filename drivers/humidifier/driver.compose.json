@@ -17,19 +17,11 @@
     "measure_humidity",
     "target_humidity"
   ],
-  "energy": {
-    "approximation": {
-      "usageOn": 25,
-      "usageOff": 1
-    }
-  },
   "capabilitiesOptions": {
     "dim": {
       "title": {
         "en": "Mist Level",
-        "fr": "Niveau Brume",
-        "nl": "Mistniveau",
-        "de": "Nebelstufe"
+        "fr": "Niveau Brume"
       },
       "min": 0,
       "max": 1,
@@ -38,9 +30,7 @@
     "target_humidity": {
       "title": {
         "en": "Target Humidity",
-        "fr": "Humidité Cible",
-        "nl": "Doelvochtigheid",
-        "de": "Zielfeuchtigkeit"
+        "fr": "Humidité Cible"
       },
       "min": 30,
       "max": 80,
