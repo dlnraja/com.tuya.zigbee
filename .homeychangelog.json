@@ -1,4 +1,43 @@
 {
+  "5.5.931": {
+    "en": "🔧 FLOW CARD NAMESPACE FIX: 1) Added unique flow card IDs with driver prefixes for switch_wall_5gang through 8gang. 2) Toggle actions: switch_wall_Xgang_toggle_gangY. 3) LED backlight actions: set_backlight, set_backlight_color, set_backlight_brightness. 4) All on/off actions: turn_on_all, turn_off_all. 5) Each driver now has unique namespaced flow cards preventing conflicts."
+  },
+  "5.5.930": {
+    "en": "🔧 PETER FIX + LED CONTROL: 1) HOBEIAN Multisensor (ZG-204ZV) - added DP polling for temp/humidity/battery (forum #1253). 2) motion_sensor DP3/4/5/6/9/12 periodic refresh. 3) Curtain motor 'unknown/unknown' fix. 4) LED backlight flow cards for ALL switch drivers (1-8 gang). 5) Toggle + turn_on_all/off_all actions. RE-PAIR multisensors after update!"
+  },
+  "5.5.929": {
+    "en": "🎯 SMART DISTANCE FIX (Peter): 1) Auto-detect distance divisor for OEM variants (cm/dm/m). 2) Per-device divisor caching for consistent values. 3) OEM variant auto-discovery: temp, humidity, distance patterns. 4) UniversalDriverInit helper for ZCL/Tuya/Hybrid protocols. 5) 3-Phase, Fil Pilote, Cover calibration. Z2M/Hubitat/ZHA research applied!"
+  },
+  "5.5.928": {
+    "en": "🔄 DYNAMIC VARIANT DETECTION: Chinese manufacturers use same manufacturerName for different device variants with different capabilities. New UniversalVariantManager automatically detects and adds capabilities when device reports new DPs (even after pairing). No more re-pairing needed for variant devices! Supports: temp, humidity, illuminance, distance, battery, power, voltage, current, energy."
+  },
+  "5.5.927": {
+    "en": "📏 DISTANCE FIX (Peter_van_Werkhoven forum): Fixed radar sensor distance showing wrong values (e.g., 8 instead of 1.5m). Z2M/Hubitat research confirms ALL radar sensors use scale 100 (cm to meters). Fixed ZY_M100_CEILING_24G divisor (was 10, now 100). Fixed auto-discovery to default to divisor 100. Added DP19/DP119 distance patterns. RE-PAIR radar sensors after update!"
+  },
+  "5.5.926": {
+    "en": "🔧 DIAGNOSTIC FIXES: 1) HOBEIAN ZG-101ZL (_TZ3000_ja5osu5g) fingerprint removed from wrong drivers (plug, energy_monitor, button_4gang) - now ONLY in button_wireless_1. 2) presence_sensor_radar flow cards fixed - 'Invalid Flow Card ID: presence_cleared' error resolved. 3) Motion sensor permissive variant mode for ZG-204ZL/ZG-204ZV. RE-PAIR devices after update!"
+  },
+  "5.5.925": {
+    "en": "🔀 PERMISSIVE VARIANT MODE (Peter_van_Werkhoven): Same manufacturerName (_TZE200_3towulqd) can be ZG-204ZL (PIR only) OR ZG-204ZV (with temp/humidity). Now uses DYNAMIC capability detection - capabilities are ADDED when device reports temp/humidity DPs, not removed upfront. This handles manufacturer variants with same ID but different sensors. RE-PAIR motion sensors after update!"
+  },
+  "5.5.924": {
+    "en": "🔘 MOES BUTTON FIX (GitHub #1327 Kokosnootmelk/nickpatteeuw): Physical buttons not triggering on MOES _TZ3000_zgyzgdua TS0044 4-gang scene switch. Added raw frame interceptor for cluster 0xE000 (57344) with multiple parsing strategies. Hooks into endpoint.handleFrame to catch unknown cluster frames before they're discarded. RE-PAIR button devices after update!"
+  },
+  "5.5.923": {
+    "en": "🔧 DIAGNOSTICS FIX (User Reports): 1) Curtain motor TS0601 showing 'unknown/unknown' - FIXED protocol detection using wrong settings keys (zb_modelId vs zb_model_id). 2) Water valve TS0601 same fix. 3) Both HybridCoverBase and HybridPlugBase now correctly detect TUYA_DP vs ZCL protocol. Commands no longer timeout on TS0601 devices. RE-PAIR curtain/valve devices after update!"
+  },
+  "5.5.922": {
+    "en": "🔘 FORKS ANALYSIS + PACKETNINJA TECHNIQUE: Applied physical button detection to ALL multi-gang switches (2-8 gang). Added ZCL-only mode, per-endpoint state tracking, 2000ms app command window. Verified fingerprints from JohanBendz PRs already present. BSEED/Zemismart switches now fully supported with physical button detection."
+  },
+  "5.5.921": {
+    "en": "🔧 FORUM FIXES: 1) ZG-204ZL PIR-only sensor: Removed false temp/humidity, added battery DP4 (Peter_van_Werkhoven #1225). 2) AVATTO ME167 TRV: Added alarm_battery capability for DP35 (ManuelKugler #1223). 3) BSEED switches: Already fixed in v5.5.919 - users on v5.5.907 must UPDATE! RE-PAIR after update!"
+  },
+  "5.5.920": {
+    "en": "🔧 CRITICAL FIX (Peter_van_Werkhoven #1225): _TZE200_3towulqd is ZG-204ZL (PIR only) NOT ZG-204ZV! This device has NO temp/humidity sensors. Removed incorrect capabilities. Added battery support via DP4. Source: Z2M GitHub #12364, Blakadder database. RE-PAIR after update!"
+  },
+  "5.5.919": {
+    "en": "🔧 FORUM FIXES (Post #1225-1230): 1) BSEED 2-gang (_TZ3000_l9brjwau) and 3-gang (_TZ3000_qkixdnon) switches now use ZCL-only mode like 1-gang. 2) HOBEIAN ZG-204ZV multisensor: Fixed temp/humidity not showing - added Tuya DP capability support. 3) Removed false 'Distance' option from PIR sensors. Pieter_Pessers, Peter_van_Werkhoven: RE-PAIR devices after update!"
+  },
   "5.5.918": {
     "en": "🐛 FORUM FIX (Lasse_K #1700): Fixed contact sensors installing in reverse - IAS Zone now applies default inversion for known inverted manufacturers. Enhanced water sensor alarm detection with delayed secondary read for sleepy sensors. RE-PAIR devices after update!"
   },

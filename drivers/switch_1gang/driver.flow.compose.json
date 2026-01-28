@@ -149,6 +149,64 @@
         "de": "Status umschalten (ein→aus, aus→ein)"
       },
       "args": []
+    },
+    {
+      "id": "switch_1gang_set_backlight",
+      "title": { "en": "Set LED backlight mode", "fr": "Définir le mode rétroéclairage LED", "nl": "LED achtergrondverlichting instellen", "de": "LED-Hintergrundbeleuchtung einstellen" },
+      "titleFormatted": { "en": "Set LED backlight to [[mode]]", "fr": "Définir le rétroéclairage sur [[mode]]", "nl": "Stel LED achtergrondverlichting in op [[mode]]", "de": "LED-Hintergrundbeleuchtung auf [[mode]] setzen" },
+      "hint": { "en": "Control the switch LED indicator (DP15)", "fr": "Contrôle l'indicateur LED (DP15)", "nl": "Beheer de LED indicator (DP15)", "de": "Steuert die LED-Anzeige (DP15)" },
+      "args": [{ "type": "dropdown", "name": "mode", "title": { "en": "Mode" }, "values": [
+        { "id": "off", "label": { "en": "Off", "fr": "Éteint", "nl": "Uit", "de": "Aus" } },
+        { "id": "normal", "label": { "en": "Normal (LED when ON)", "fr": "Normal (LED quand allumé)", "nl": "Normaal (LED bij AAN)", "de": "Normal (LED bei EIN)" } },
+        { "id": "inverted", "label": { "en": "Inverted (LED when OFF)", "fr": "Inversé (LED quand éteint)", "nl": "Omgekeerd (LED bij UIT)", "de": "Invertiert (LED bei AUS)" } }
+      ]}]
+    },
+    {
+      "id": "switch_1gang_set_backlight_color",
+      "title": { "en": "Set LED color", "fr": "Définir la couleur LED", "nl": "LED kleur instellen", "de": "LED-Farbe einstellen" },
+      "titleFormatted": { "en": "Set [[state]] LED color to [[color]]", "fr": "Définir couleur LED [[state]] sur [[color]]", "nl": "Stel [[state]] LED kleur in op [[color]]", "de": "Setze [[state]] LED-Farbe auf [[color]]" },
+      "hint": { "en": "Set LED color for ON or OFF state (DP103/104, requires colored backlight)", "fr": "Définir couleur LED pour état ON/OFF (DP103/104)", "nl": "Stel LED kleur in voor AAN/UIT (DP103/104)", "de": "LED-Farbe für EIN/AUS setzen (DP103/104)" },
+      "args": [
+        { "type": "dropdown", "name": "state", "title": { "en": "State" }, "values": [
+          { "id": "on", "label": { "en": "ON state", "fr": "État ON", "nl": "AAN staat", "de": "EIN-Zustand" } },
+          { "id": "off", "label": { "en": "OFF state", "fr": "État OFF", "nl": "UIT staat", "de": "AUS-Zustand" } }
+        ]},
+        { "type": "dropdown", "name": "color", "title": { "en": "Color" }, "values": [
+          { "id": "red", "label": { "en": "Red", "fr": "Rouge", "nl": "Rood", "de": "Rot" } },
+          { "id": "blue", "label": { "en": "Blue", "fr": "Bleu", "nl": "Blauw", "de": "Blau" } },
+          { "id": "green", "label": { "en": "Green", "fr": "Vert", "nl": "Groen", "de": "Grün" } },
+          { "id": "white", "label": { "en": "White", "fr": "Blanc", "nl": "Wit", "de": "Weiß" } },
+          { "id": "yellow", "label": { "en": "Yellow", "fr": "Jaune", "nl": "Geel", "de": "Gelb" } },
+          { "id": "magenta", "label": { "en": "Magenta", "fr": "Magenta", "nl": "Magenta", "de": "Magenta" } },
+          { "id": "cyan", "label": { "en": "Cyan", "fr": "Cyan", "nl": "Cyaan", "de": "Cyan" } },
+          { "id": "warm_white", "label": { "en": "Warm White", "fr": "Blanc Chaud", "nl": "Warm Wit", "de": "Warmweiß" } },
+          { "id": "warm_yellow", "label": { "en": "Warm Yellow", "fr": "Jaune Chaud", "nl": "Warm Geel", "de": "Warmgelb" } }
+        ]}
+      ]
+    },
+    {
+      "id": "switch_1gang_set_backlight_brightness",
+      "title": { "en": "Set LED brightness", "fr": "Définir luminosité LED", "nl": "LED helderheid instellen", "de": "LED-Helligkeit einstellen" },
+      "titleFormatted": { "en": "Set LED brightness to [[brightness]]%", "fr": "Définir luminosité LED à [[brightness]]%", "nl": "Stel LED helderheid in op [[brightness]]%", "de": "LED-Helligkeit auf [[brightness]]% setzen" },
+      "hint": { "en": "Set LED backlight brightness 0-100% (DP102)", "fr": "Luminosité rétroéclairage 0-100% (DP102)", "nl": "LED helderheid 0-100% (DP102)", "de": "LED-Helligkeit 0-100% (DP102)" },
+      "args": [{ "type": "range", "name": "brightness", "min": 0, "max": 100, "step": 5, "label": "%", "labelDecimals": 0 }]
+    },
+    {
+      "id": "switch_1gang_set_countdown",
+      "title": { "en": "Set countdown timer", "fr": "Définir minuterie", "nl": "Afteltimer instellen", "de": "Countdown-Timer setzen" },
+      "titleFormatted": { "en": "Turn off after [[seconds]] seconds", "fr": "Éteindre après [[seconds]] secondes", "nl": "Uitschakelen na [[seconds]] seconden", "de": "Nach [[seconds]] Sekunden ausschalten" },
+      "hint": { "en": "Auto turn off after countdown (DP7, max 86400s = 24h)", "fr": "Extinction auto après compte à rebours (DP7, max 86400s)", "nl": "Auto uit na aftellen (DP7, max 86400s)", "de": "Auto-Aus nach Countdown (DP7, max 86400s)" },
+      "args": [{ "type": "number", "name": "seconds", "min": 0, "max": 86400, "step": 1, "placeholder": { "en": "60" } }]
+    },
+    {
+      "id": "switch_1gang_set_child_lock",
+      "title": { "en": "Set child lock", "fr": "Définir verrouillage enfant", "nl": "Kinderslot instellen", "de": "Kindersicherung setzen" },
+      "titleFormatted": { "en": "Set child lock to [[locked]]", "fr": "Définir verrouillage sur [[locked]]", "nl": "Stel kinderslot in op [[locked]]", "de": "Kindersicherung auf [[locked]] setzen" },
+      "hint": { "en": "Lock/unlock physical buttons (DP101)", "fr": "Verrouiller/déverrouiller boutons (DP101)", "nl": "Vergrendel/ontgrendel knoppen (DP101)", "de": "Tasten sperren/entsperren (DP101)" },
+      "args": [{ "type": "dropdown", "name": "locked", "title": { "en": "Lock" }, "values": [
+        { "id": "true", "label": { "en": "Locked", "fr": "Verrouillé", "nl": "Vergrendeld", "de": "Gesperrt" } },
+        { "id": "false", "label": { "en": "Unlocked", "fr": "Déverrouillé", "nl": "Ontgrendeld", "de": "Entsperrt" } }
+      ]}]
     }
   ]
 }
