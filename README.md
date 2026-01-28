@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.939** | 🔧 CURTAIN MOTOR FIX v3: Fixed datapoint() payload format. Now uses { data: c... |
 | **v5.5.938** | 🎉 PR #118 MERGED - HUGE THANKS TO @packetninja (Attilla de Groot)! New BSEED... |
 | **v5.5.937** | 🔧 CURTAIN MOTOR FIX v2: Fixed direct cluster DP communication fallback. Now ... |
 | **v5.5.936** | 🚀 MASSIVE FLOW CARD UPDATE: Added 153 missing flow cards (74 actions, 66 tri... |
@@ -78,7 +79,6 @@
 | **v5.5.932** | 🔧 FORUM FIXES: 1) PETER: HOBEIAN multisensor temp/humidity now shows correct... |
 | **v5.5.931** | 🔧 FLOW CARD FIX + CREDITS: Unique flow card IDs for switch_wall_5-8gang. CRE... |
 | **v5.5.930** | 🔧 PETER FIX + LED CONTROL: 1) HOBEIAN Multisensor (ZG-204ZV) - added DP poll... |
-| **v5.5.929** | 🎯 SMART DISTANCE FIX (Peter): 1) Auto-detect distance divisor for OEM varian... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
