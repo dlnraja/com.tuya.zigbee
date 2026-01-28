@@ -1,4 +1,7 @@
 {
+  "5.5.932": {
+    "en": "🔧 FORUM FIXES: 1) PETER: HOBEIAN multisensor temp/humidity now shows correct values (DP3/4 divisor fix). 2) VITALII: Gas detector _TZE204_chbyv06x enhanced with full DP mappings (gas_value, self_test, preheat, alarm_time, ringtone). 3) presence_sensor_radar now handles temp/humidity/battery DPs locally with proper divisors. RE-PAIR sensors after update!"
+  },
   "5.5.931": {
     "en": "🔧 FLOW CARD FIX + CREDITS: Unique flow card IDs for switch_wall_5-8gang. CREDITS: @packetninja (BSEED switches, physical button detection), @vl14-dev (AM25 motor), @bmalkow (siren), @michelhelsdingen (10G radar), @WJGvdVelden (smoke+radar sensors), @Peter-Celica, @gpmachado (dimmer), @TKGHill (garage door), @sinan92 (PIR), @NicolasYDDER (HOBEIAN). Thank you all!"
   },
