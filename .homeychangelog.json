@@ -1,4 +1,7 @@
 {
+  "5.5.945": {
+    "en": "📢 DIAGNOSTICS RESPONSE: Curtain motor 'value is unexpected property' was FIXED in v5.5.939. Users on v5.5.934 or earlier: please UPDATE to latest version! UFO-R11 IR remote (_TZ3290_ot6ewjvmejq5ekhl/TS1201) already supported in ir_blaster driver. MOES button _TZ3000_zgyzgdua has cluster 0xE000 detection in place."
+  },
   "5.5.944": {
     "en": "🔍 FULL AUDIT: Fixed flow card namespace violations - ir_blaster_, smart_knob_rotary_, water_valve_smart_ prefixes now correct. Removed duplicate flow cards in water_valve_smart. All 108 drivers validated, all flow cards have unique IDs with proper driver prefixes."
   },
