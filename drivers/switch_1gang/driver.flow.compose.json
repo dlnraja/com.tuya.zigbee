@@ -2,13 +2,32 @@
   "triggers": [
     {
       "id": "switch_1gang_turned_on",
+      "highlight": true,
       "title": {
         "en": "Turned on",
         "fr": "Allumé",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": []
+      "titleFormatted": {
+        "en": "[[device]] turned on",
+        "fr": "[[device]] allumé",
+        "nl": "[[device]] aangezet",
+        "de": "[[device]] eingeschaltet"
+      },
+      "hint": {
+        "en": "Triggers when the switch is turned on (manually or via app)",
+        "fr": "Se déclenche quand l'interrupteur est allumé",
+        "nl": "Triggert wanneer de schakelaar wordt ingeschakeld",
+        "de": "Wird ausgelöst, wenn der Schalter eingeschaltet wird"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=switch_1gang"
+        }
+      ]
     },
     {
       "id": "switch_1gang_turned_off",
@@ -18,7 +37,68 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": []
+      "titleFormatted": {
+        "en": "[[device]] turned off",
+        "fr": "[[device]] éteint",
+        "nl": "[[device]] uitgezet",
+        "de": "[[device]] ausgeschaltet"
+      },
+      "hint": {
+        "en": "Triggers when the switch is turned off (manually or via app)",
+        "fr": "Se déclenche quand l'interrupteur est éteint",
+        "nl": "Triggert wanneer de schakelaar wordt uitgeschakeld",
+        "de": "Wird ausgelöst, wenn der Schalter ausgeschaltet wird"
+      },
+      "args": [
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=switch_1gang"
+        }
+      ]
+    },
+    {
+      "id": "switch_1gang_physical_on",
+      "title": { "en": "Physical ON", "fr": "Physique ON", "nl": "Fysiek AAN", "de": "Physisch EIN" },
+      "titleFormatted": { "en": "[[device]] turned on (physical)", "fr": "[[device]] allumé (physique)", "nl": "[[device]] aan (fysiek)", "de": "[[device]] ein (physisch)" },
+      "hint": { "en": "Physical button turns ON", "fr": "Bouton physique allume", "nl": "Fysieke knop schakelt in", "de": "Physische Taste schaltet ein" },
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_1gang" }]
+    },
+    {
+      "id": "switch_1gang_physical_off",
+      "title": { "en": "Physical OFF", "fr": "Physique OFF", "nl": "Fysiek UIT", "de": "Physisch AUS" },
+      "titleFormatted": { "en": "[[device]] turned off (physical)", "fr": "[[device]] éteint (physique)", "nl": "[[device]] uit (fysiek)", "de": "[[device]] aus (physisch)" },
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_1gang" }]
+    },
+    {
+      "id": "switch_1gang_physical_single",
+      "title": { "en": "Single press", "fr": "Simple pression", "nl": "Enkele druk", "de": "Einfacher Druck" },
+      "titleFormatted": { "en": "[[device]] single press (physical)", "fr": "[[device]] simple pression (physique)", "nl": "[[device]] enkele druk (fysiek)", "de": "[[device]] einfacher Druck (physisch)" },
+      "hint": { "en": "Physical button single press", "fr": "Simple pression du bouton physique", "nl": "Enkele druk op fysieke knop", "de": "Einfacher Druck auf physische Taste" },
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_1gang" }]
+    },
+    {
+      "id": "switch_1gang_physical_double",
+      "title": { "en": "Double press", "fr": "Double pression", "nl": "Dubbele druk", "de": "Doppelter Druck" },
+      "titleFormatted": { "en": "[[device]] double press (physical)", "fr": "[[device]] double pression (physique)", "nl": "[[device]] dubbele druk (fysiek)", "de": "[[device]] doppelter Druck (physisch)" },
+      "hint": { "en": "Physical button double press", "fr": "Double pression du bouton physique", "nl": "Dubbele druk op fysieke knop", "de": "Doppelter Druck auf physische Taste" },
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_1gang" }]
+    },
+    {
+      "id": "switch_1gang_physical_long_press",
+      "title": { "en": "Long press", "fr": "Pression longue", "nl": "Lange druk", "de": "Langer Druck" },
+      "titleFormatted": { "en": "[[device]] long press (physical)", "fr": "[[device]] pression longue (physique)", "nl": "[[device]] lange druk (fysiek)", "de": "[[device]] langer Druck (physisch)" },
+      "hint": { "en": "Physical button held >600ms", "fr": "Bouton physique maintenu >600ms", "nl": "Fysieke knop ingedrukt >600ms", "de": "Physische Taste gehalten >600ms" },
+      "tokens": [{ "name": "duration", "type": "number", "title": { "en": "Duration (ms)" }, "example": 1200 }],
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_1gang" }]
+    },
+    {
+      "id": "switch_1gang_physical_triple",
+      "title": { "en": "Triple press", "fr": "Triple pression", "nl": "Drievoudige druk", "de": "Dreifacher Druck" },
+      "titleFormatted": { "en": "[[device]] triple press (physical)", "fr": "[[device]] triple pression (physique)", "nl": "[[device]] drievoudige druk (fysiek)", "de": "[[device]] dreifacher Druck (physisch)" },
+      "hint": { "en": "Physical button triple press or more", "fr": "Triple pression ou plus", "nl": "Drievoudige druk of meer", "de": "Dreifacher Druck oder mehr" },
+      "tokens": [{ "name": "clicks", "type": "number", "title": { "en": "Click count" }, "example": 3 }],
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_1gang" }]
     }
   ],
   "conditions": [
@@ -51,6 +131,22 @@
         "fr": "Éteindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_1gang_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "hint": {
+        "en": "Toggle the switch state (on→off, off→on)",
+        "fr": "Basculer l'état (on→off, off→on)",
+        "nl": "Wissel de status (aan→uit, uit→aan)",
+        "de": "Status umschalten (ein→aus, aus→ein)"
       },
       "args": []
     }

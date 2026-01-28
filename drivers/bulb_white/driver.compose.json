@@ -1,19 +1,14 @@
 {
   "name": {
     "en": "Smart Bulb White",
-    "fr": "Smart Bulb White",
+    "fr": "Ampoule Connectée Blanche",
     "nl": "Witte Lamp",
     "de": "Weiße Glühbirne"
   },
   "class": "light",
   "capabilities": [
-    "dim",
-    "light_hue",
-    "light_saturation",
-    "light_temperature",
-    "light_mode",
     "onoff",
-    "measure_battery"
+    "dim"
   ],
   "energy": {
     "approximation": {

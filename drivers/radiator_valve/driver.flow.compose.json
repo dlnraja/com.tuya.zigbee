@@ -2,9 +2,12 @@
   "triggers": [
     {
       "id": "radiator_valve_target_temperature_changed",
+      "highlight": true,
       "title": {
         "en": "Target temperature changed",
-        "fr": "Température cible changée"
+        "fr": "Température cible changée",
+        "nl": "Doeltemperatuur veranderd",
+        "de": "Zieltemperatur geändert"
       },
       "tokens": [
         {

@@ -16,6 +16,12 @@
       "step": 0.01
     }
   },
+  "energy": {
+    "approximation": {
+      "usageOn": 24,
+      "usageOff": 1
+    }
+  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_7ysdnebc",

@@ -5,7 +5,7 @@
     "nl": "Gordijnmotor",
     "de": "Vorhangmotor"
   },
-  "class": "windowcoverings",
+  "class": "curtains",
   "capabilities": [
     "windowcoverings_state",
     "windowcoverings_set",
@@ -44,9 +44,17 @@
     "measure_battery": {
       "title": {
         "en": "Battery",
-        "fr": "Batterie"
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
       },
       "preventInsights": false
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 40,
+      "usageOff": 1
     }
   },
   "platforms": [
@@ -603,7 +611,9 @@
       "_tz3210_j4pdtz9v",
       "_TZE284_LIBHT6UA",
       "_tze284_libht6ua",
-      "_TZE200_j1xl73iw"
+      "_TZE200_j1xl73iw",
+      "_TZE204_xu4a5rhj",
+      "_tze204_xu4a5rhj"
     ],
     "productId": [
       "TS0302",

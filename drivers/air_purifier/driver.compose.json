@@ -20,15 +20,25 @@
     "dim": {
       "title": {
         "en": "Fan Speed",
-        "fr": "Vitesse Ventilateur"
+        "fr": "Vitesse Ventilateur",
+        "nl": "Ventilatorsnelheid",
+        "de": "Lüftergeschwindigkeit"
       }
     },
     "measure_pm25": {
       "title": {
         "en": "PM2.5",
-        "fr": "PM2.5"
+        "fr": "PM2.5",
+        "nl": "PM2.5",
+        "de": "PM2.5"
       },
       "units": "µg/m³"
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 45,
+      "usageOff": 2
     }
   },
   "zigbee": {

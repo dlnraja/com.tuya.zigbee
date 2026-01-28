@@ -10,8 +10,15 @@
     "target_temperature",
     "measure_temperature",
     "thermostat_mode",
-    "measure_battery"
+    "measure_battery",
+    "button.calibrate"
   ],
+  "capabilitiesOptions": {
+    "button.calibrate": {
+      "title": { "en": "Calibrate Valve", "fr": "Calibrer Vanne", "nl": "Klep Kalibreren", "de": "Ventil Kalibrieren" },
+      "maintenanceAction": true
+    }
+  },
   "energy": {
     "batteries": [
       "AA"

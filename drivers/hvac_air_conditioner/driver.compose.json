@@ -7,12 +7,11 @@
   },
   "class": "thermostat",
   "capabilities": [
+    "onoff",
     "target_temperature",
     "measure_temperature",
     "thermostat_mode",
-    "fan_speed",
-    "measure_battery",
-    "onoff"
+    "fan_speed"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -81,22 +80,18 @@
     "measure_battery": {
       "title": {
         "en": "Battery",
-        "fr": "Batterie"
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
       },
       "preventInsights": false
     }
   },
   "energy": {
     "approximation": {
-      "usageConstant": 0.5
-    },
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A"
-    ]
+      "usageOn": 1200,
+      "usageOff": 5
+    }
   },
   "platforms": [
     "local"

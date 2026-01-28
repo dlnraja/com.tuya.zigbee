@@ -153,6 +153,7 @@ class ContactSensorDevice extends HybridSensorBase {
     // v5.5.713: Expanded list of sensors that report inverted by default
     // v5.5.776: REMOVED HOBEIAN - Lasse_K forum Jan 2026 confirms ZG-102Z works correctly WITHOUT inversion
     // These sensors report closed=alarm, open=no alarm (inverted from standard)
+    // v5.5.908: Added _TZ3000_996rpfy6 (blutch32 forum #1011 - always shows "no")
     const invertedByDefault = [
       // 'HOBEIAN',  // v5.5.776: REMOVED - Lasse_K confirms ZG-102Z NOT inverted
       '_TZ3000_26fmupbb',  // Known inverted
@@ -162,6 +163,7 @@ class ContactSensorDevice extends HybridSensorBase {
       '_TZ3000_2mbfxlzr',  // Known inverted
       '_TZ3000_bzxloft2',  // Known inverted (forum reports)
       '_TZ3000_yxqnffam',  // Known inverted (forum reports)
+      '_TZ3000_996rpfy6',  // v5.5.908: blutch32 forum - TS0203 always "no" fix
     ].some(id => mfr.includes(id) || mfr.toUpperCase().includes(id.toUpperCase()));
     if (invertedByDefault && !this.getSetting('invert_contact')) {
       this._invertContact = true;

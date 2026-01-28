@@ -69,16 +69,16 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.5.859** | 📡 Sensors: Added alarm_tamper + measure_temperature to contact, motion, wate... |
-| **v5.5.858** | 🎯 UX: Highlighted important dimmer settings (min_brightness) for quick acces... |
-| **v5.5.857** | ⚡ Homey Energy: Improved energy tracking for bulbs (7-9W), LED strips (24W), ... |
-| **v5.5.856** | ✨ SDK3 Best Practices: Added Homey Energy approximation to switches (2-4 gang... |
-| **v5.5.855** | ✨ NEW: Periodic Auto-Enrichment for ALL drivers! Automatic ZCL cluster + Tuya... |
-| **v5.5.854** | 🔧 FIX: switch_dimmer_1gang physical button detection now works correctly (At... |
-| **v5.5.853** | 🔧 FIX: Moved _TZE284_3mzb0sdz from climate_sensor to ir_blaster - it's an IR... |
-| **v5.5.852** | 🔧 FIX: HOBEIAN ZG-204ZV now properly adds temperature + humidity capabilitie... |
-| **v5.5.851** | 🔧 FIX: Removed _TZ3000_h1ipgkwn from switch_2gang - it's a Dual USB switch (... |
-| **v5.5.850** | 🔧 FIX: IAS Zone warning now only shows for pure IAS devices. Hybrid Tuya DP ... |
+| **v5.5.918** | 🐛 FORUM FIX (Lasse_K #1700): Fixed contact sensors installing in reverse - I... |
+| **v5.5.917** | 🔍 FORK/PR AUDIT: Added Longsam mini m3 Smart Curtain (_TZE204_xu4a5rhj) from... |
+| **v5.5.916** | 🐛 CRITICAL FIX: Fixed manufacturer/model retrieval in all base classes (Hybr... |
+| **v5.5.915** | 🔀 FORK ANALYSIS v2: Analyzed 75+ forks (JohanBendz network + dlnraja childre... |
+| **v5.5.914** | 🔀 FORK ANALYSIS: Integrated improvements from shaarkys & eelco2k forks. ZG-2... |
+| **v5.5.913** | 🎉 PR #118 MERGED (packetninja/Attilla): BSEED switch ZCL-only mode with phys... |
+| **v5.5.912** | 🌡️ ZG-204ZV Fix: Added ZCL temperature (0x0402) + humidity (0x0405) cluster ... |
+| **v5.5.911** | 💧 Water Valve Enhancement: Z2M DP mappings (water consumption, flow rate, te... |
+| **v5.5.910** | 🔥 CRITICAL FIX: PhysicalButtonMixin crash (Invalid Flow Card ID). getDeviceT... |
+| **v5.5.909** | 🔥 CRITICAL FIX: Radiator valve driver crash (Class extends undefined). Manue... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
