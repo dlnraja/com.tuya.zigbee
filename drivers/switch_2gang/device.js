@@ -6,20 +6,39 @@ const { CLUSTER } = require('zigbee-clusters');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      2-GANG SWITCH - v5.5.896 + PhysicalButtonMixin                         ║
+ * ║      2-GANG SWITCH - v5.5.919 + ZCL-Only Mode (BSEED)                       ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  Features:                                                                   ║
  * ║  - 2 endpoints On/Off (EP1, EP2)                                            ║
  * ║  - Power measurement via electricalMeasurement (0x0B04)                     ║
  * ║  - Energy metering via metering (0x0702)                                    ║
  * ║  - Physical button detection: single/double/long/triple per gang            ║
- * ║  - BSEED timing: 2000ms | Others: 500ms (faster)                            ║
+ * ║  - BSEED ZCL-only mode: _TZ3000_l9brjwau (Pieter_Pessers forum)             ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
+
+// ZCL-Only manufacturers (no Tuya DP) - forum: Pieter_Pessers BSEED 2-gang
+const ZCL_ONLY_MANUFACTURERS_2G = [
+  '_TZ3000_l9brjwau', '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk',
+  '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt'
+];
+
 class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
   get gangCount() { return 2; }
 
+  get isZclOnlyDevice() {
+    const mfr = this.getSetting?.('zb_manufacturer_name') ||
+                this.getStoreValue?.('zb_manufacturer_name') ||
+                this.getStoreValue?.('manufacturerName') || '';
+    return ZCL_ONLY_MANUFACTURERS_2G.some(b => mfr.toLowerCase().includes(b.toLowerCase()));
+  }
+
   async onNodeInit({ zclNode }) {
+    if (this.isZclOnlyDevice) {
+      this.log('[SWITCH-2G] 🔵 ZCL-ONLY MODE (BSEED)');
+      await this._initZclOnlyMode(zclNode);
+      return;
+    }
     await super.onNodeInit({ zclNode });
 
     // v5.5.43: Cleanup orphan capabilities
@@ -262,6 +281,73 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     } catch (e) {
       this.log('[SWITCH-2G] Initial metering read failed:', e.message);
     }
+  }
+
+  /**
+   * v5.5.921: ZCL-Only mode for BSEED 2-gang switches
+   * Enhanced with physical button flow triggers (packetninja technique)
+   * Forum: Pieter_Pessers - _TZ3000_l9brjwau TS0003
+   */
+  async _initZclOnlyMode(zclNode) {
+    // State tracking per endpoint
+    this._zclState = {
+      lastState: { 1: null, 2: null },
+      pending: { 1: false, 2: false },
+      timeout: { 1: null, 2: null }
+    };
+
+    // Setup both endpoints with physical button detection
+    for (const epNum of [1, 2]) {
+      const ep = zclNode?.endpoints?.[epNum];
+      const onOff = ep?.clusters?.onOff;
+      if (!onOff) continue;
+
+      const capName = epNum === 1 ? 'onoff' : 'onoff.gang2';
+      
+      // Listen for attribute reports (physical button presses)
+      if (typeof onOff.on === 'function') {
+        onOff.on('attr.onOff', (value) => {
+          const isPhysical = !this._zclState.pending[epNum];
+          this.log(`[BSEED-2G] EP${epNum} attr: ${value} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
+          
+          if (this._zclState.lastState[epNum] !== value) {
+            this._zclState.lastState[epNum] = value;
+            this.setCapabilityValue(capName, value).catch(() => {});
+            
+            // Trigger flow cards for PHYSICAL button presses only
+            if (isPhysical) {
+              const flowId = `switch_2gang_gang${epNum}_physical_${value ? 'on' : 'off'}`;
+              this.homey.flow.getDeviceTriggerCard(flowId)
+                .trigger(this, { gang: epNum, state: value }, {})
+                .catch(() => {});
+              this.log(`[BSEED-2G] 🔘 Physical button G${epNum} ${value ? 'ON' : 'OFF'}`);
+            }
+          }
+        });
+      }
+
+      // Register capability listener for app commands
+      this.registerCapabilityListener(capName, async (value) => {
+        this.log(`[BSEED-2G] EP${epNum} app cmd: ${value}`);
+        this._zclState.pending[epNum] = true;
+        clearTimeout(this._zclState.timeout[epNum]);
+        this._zclState.timeout[epNum] = setTimeout(() => {
+          this._zclState.pending[epNum] = false;
+        }, 2000);
+        await onOff[value ? 'setOn' : 'setOff']();
+        return true;
+      });
+
+      this.log(`[BSEED-2G] EP${epNum} ZCL onOff + physical detection registered`);
+    }
+
+    await this.initVirtualButtons?.();
+    this.log('[SWITCH-2G] ✅ BSEED ZCL-only mode ready (packetninja technique)');
+  }
+
+  onDeleted() {
+    if (this._zclState?.timeout) clearTimeout(this._zclState.timeout);
+    super.onDeleted?.();
   }
 }
 

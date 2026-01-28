@@ -253,6 +253,73 @@
         "de": "Gang 5 ausschalten"
       },
       "args": []
+    },
+    {
+      "id": "switch_wall_5gang_toggle_gang1",
+      "title": { "en": "Toggle gang 1", "fr": "Basculer gang 1", "nl": "Gang 1 schakelen", "de": "Gang 1 umschalten" },
+      "args": []
+    },
+    {
+      "id": "switch_wall_5gang_toggle_gang2",
+      "title": { "en": "Toggle gang 2", "fr": "Basculer gang 2", "nl": "Gang 2 schakelen", "de": "Gang 2 umschalten" },
+      "args": []
+    },
+    {
+      "id": "switch_wall_5gang_toggle_gang3",
+      "title": { "en": "Toggle gang 3", "fr": "Basculer gang 3", "nl": "Gang 3 schakelen", "de": "Gang 3 umschalten" },
+      "args": []
+    },
+    {
+      "id": "switch_wall_5gang_toggle_gang4",
+      "title": { "en": "Toggle gang 4", "fr": "Basculer gang 4", "nl": "Gang 4 schakelen", "de": "Gang 4 umschalten" },
+      "args": []
+    },
+    {
+      "id": "switch_wall_5gang_toggle_gang5",
+      "title": { "en": "Toggle gang 5", "fr": "Basculer gang 5", "nl": "Gang 5 schakelen", "de": "Gang 5 umschalten" },
+      "args": []
+    },
+    {
+      "id": "switch_wall_5gang_turn_on_all",
+      "title": { "en": "Turn on all gangs", "fr": "Allumer tous", "nl": "Alles aanzetten", "de": "Alle einschalten" },
+      "args": []
+    },
+    {
+      "id": "switch_wall_5gang_turn_off_all",
+      "title": { "en": "Turn off all gangs", "fr": "Éteindre tous", "nl": "Alles uitzetten", "de": "Alle ausschalten" },
+      "args": []
+    },
+    {
+      "id": "switch_wall_5gang_set_backlight",
+      "title": { "en": "Set LED backlight mode", "fr": "Mode rétroéclairage LED", "nl": "LED achtergrondverlichting", "de": "LED-Hintergrundbeleuchtung" },
+      "titleFormatted": { "en": "Set LED backlight to [[mode]]", "fr": "Rétroéclairage sur [[mode]]", "nl": "LED op [[mode]]", "de": "LED auf [[mode]]" },
+      "args": [{ "type": "dropdown", "name": "mode", "title": { "en": "Mode" }, "values": [
+        { "id": "off", "label": { "en": "Off", "fr": "Éteint", "nl": "Uit", "de": "Aus" } },
+        { "id": "normal", "label": { "en": "Normal (LED when ON)", "fr": "Normal", "nl": "Normaal", "de": "Normal" } },
+        { "id": "inverted", "label": { "en": "Inverted (LED when OFF)", "fr": "Inversé", "nl": "Omgekeerd", "de": "Invertiert" } }
+      ]}]
+    },
+    {
+      "id": "switch_wall_5gang_set_backlight_color",
+      "title": { "en": "Set LED color", "fr": "Couleur LED", "nl": "LED kleur", "de": "LED-Farbe" },
+      "titleFormatted": { "en": "Set [[state]] LED to [[color]]", "fr": "LED [[state]] sur [[color]]", "nl": "[[state]] LED op [[color]]", "de": "[[state]] LED auf [[color]]" },
+      "args": [
+        { "type": "dropdown", "name": "state", "title": { "en": "State" }, "values": [
+          { "id": "on", "label": { "en": "ON state", "fr": "État ON", "nl": "AAN", "de": "EIN" } },
+          { "id": "off", "label": { "en": "OFF state", "fr": "État OFF", "nl": "UIT", "de": "AUS" } }
+        ]},
+        { "type": "dropdown", "name": "color", "title": { "en": "Color" }, "values": [
+          { "id": "red", "label": { "en": "Red" } }, { "id": "blue", "label": { "en": "Blue" } },
+          { "id": "green", "label": { "en": "Green" } }, { "id": "white", "label": { "en": "White" } },
+          { "id": "yellow", "label": { "en": "Yellow" } }, { "id": "cyan", "label": { "en": "Cyan" } }
+        ]}
+      ]
+    },
+    {
+      "id": "switch_wall_5gang_set_backlight_brightness",
+      "title": { "en": "Set LED brightness", "fr": "Luminosité LED", "nl": "LED helderheid", "de": "LED-Helligkeit" },
+      "titleFormatted": { "en": "Set LED brightness to [[brightness]]%", "fr": "Luminosité LED à [[brightness]]%", "nl": "LED helderheid op [[brightness]]%", "de": "LED-Helligkeit auf [[brightness]]%" },
+      "args": [{ "type": "range", "name": "brightness", "min": 0, "max": 100, "step": 5, "label": "%", "labelDecimals": 0 }]
     }
   ]
 }

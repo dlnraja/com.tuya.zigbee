@@ -37,13 +37,14 @@ class RadiatorValveDevice extends HybridThermostatBase {
   get dpMappings() {
     if (this.dpProfile === 'me167') {
       // Profile B: AVATTO ME167/TRV06 DP mapping
+      // v5.5.921: FORUM FIX (ManuelKugler #1223) - Added alarm_battery for DP35
       return {
         2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off' }[v] ?? 'heat') },
         3: { capability: null, internal: 'running_state', transform: (v) => v === 0 ? 'heat' : 'idle' },
         4: { capability: 'target_temperature', divisor: 10 },
         5: { capability: 'measure_temperature', divisor: 10 },
         7: { capability: null, internal: 'child_lock', writable: true },
-        35: { capability: null, internal: 'error_battery', transform: (v) => v === 1 },
+        35: { capability: 'alarm_battery', transform: (v) => v === 1 },
         36: { capability: null, internal: 'frost_protection', writable: true },
         39: { capability: null, internal: 'anti_scaling', writable: true },
         47: { capability: null, internal: 'temp_calibration', writable: true }

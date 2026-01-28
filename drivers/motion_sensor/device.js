@@ -82,7 +82,7 @@ class MotionSensorDevice extends HybridSensorBase {
    * ┌────────────────────────┬────────┬────────┬────────┬────────┬────────┐
    * │ Manufacturer           │ DP4    │ DP5    │ DP6    │ DP9    │ DP102  │
    * ├────────────────────────┼────────┼────────┼────────┼────────┼────────┤
-   * │ ZG-204ZV (_TZE200_3to) │ TEMP   │ HUMID  │ -      │ LUX    │ -      │
+   * │ ZG-204ZL (_TZE200_3to) │ BATT   │ -      │ -      │ LUX    │ -      │
    * │ Fantem ZB003-x         │ BATT   │ TEMP   │ HUMID  │ LUX    │ LUX    │
    * │ Simple PIR (_TZ3000_*) │ BATT   │ -      │ -      │ LUX    │ -      │
    * │ ZG-204ZM Radar         │ DIST   │ -      │ -      │ -      │ TIME   │
@@ -93,14 +93,16 @@ class MotionSensorDevice extends HybridSensorBase {
   // v5.5.753: Manufacturer profiles for DP mapping
   static get MANUFACTURER_DP_PROFILES() {
     return {
-      // ZG-204ZV Multisensor (Peter_van_Werkhoven forum #267)
-      // DP4=temp, DP5=humidity - CONFIRMED WORKING in v2.1.85
-      'ZG204ZV': {
-        patterns: ['_TZE200_3towulqd', '_tze200_3towulqd', '_TZE204_3towulqd'],
-        dp4: 'measure_temperature',
-        dp5: 'measure_humidity',
-        dp4_divisor: 10,
-        dp5_divisor: 1,
+      // v5.5.920: FORUM FIX (Peter_van_Werkhoven #1225)
+      // _TZE200_3towulqd is ZG-204ZL (PIR ONLY - NO temp/humidity!)
+      // ZG-204ZV with temp/humidity uses DIFFERENT manufacturer IDs
+      // Source: Z2M GitHub #12364, Blakadder database
+      'ZG204ZL_PIR_ONLY': {
+        patterns: ['_TZE200_3towulqd', '_tze200_3towulqd', '_TZE204_3towulqd',
+                   '_TZE200_1ibpyhdc', '_tze200_1ibpyhdc', '_TZE200_bh3n6gk8'],
+        dp4: 'measure_battery',  // DP4 = battery, NOT temperature
+        dp12: 'measure_luminance',
+        isPirOnly: true,  // NO temp/humidity sensors
       },
       // Fantem ZB003-x 4-in-1 multisensor
       // DP5=temp(÷10), DP6=humidity
@@ -166,8 +168,39 @@ class MotionSensorDevice extends HybridSensorBase {
              dp6: 'measure_humidity', dp5_divisor: 10, dp6_divisor: 1 };
   }
 
+  /**
+   * v5.5.925: DYNAMIC CAPABILITY ADDITION for variant devices
+   * Called when DP reports temp/humidity - adds capability if not present
+   * This allows ZG-204ZV variants to get temp/humidity even with same manufacturerName as ZG-204ZL
+   */
+  async _dynamicCapabilityFromDP(dpId, value, capabilityName) {
+    // Only for variant devices in permissive mode
+    if (!this._isVariantDevice) return;
+    
+    // Skip invalid values
+    if (value === null || value === undefined) return;
+    
+    // Track which DPs we've received
+    if (capabilityName === 'measure_temperature') {
+      this._hasReceivedTempDP = true;
+    } else if (capabilityName === 'measure_humidity') {
+      this._hasReceivedHumidityDP = true;
+    }
+    
+    // Add capability if not present
+    if (!this.hasCapability(capabilityName)) {
+      try {
+        await this.addCapability(capabilityName);
+        this.log(`[MOTION-DYNAMIC] ✅ Added ${capabilityName} from DP${dpId} (variant device)`);
+      } catch (err) {
+        this.log(`[MOTION-DYNAMIC] ⚠️ Failed to add ${capabilityName}:`, err.message);
+      }
+    }
+  }
+
   get dpMappings() {
     const profile = this._getManufacturerProfile();
+    const device = this; // Reference for dynamic capability addition
     
     // Base mappings (common to all)
     const mappings = {
@@ -196,26 +229,39 @@ class MotionSensorDevice extends HybridSensorBase {
 
       // ═══════════════════════════════════════════════════════════════════
       // ALTERNATE TEMP/HUMIDITY DPs (some models)
+      // v5.5.925: Added dynamic capability addition for variant devices
       // ═══════════════════════════════════════════════════════════════════
       18: {
         capability: 'measure_temperature',
         divisor: 10,
-        transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null
+        transform: (v) => {
+          device._dynamicCapabilityFromDP?.(18, v, 'measure_temperature');
+          return (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null;
+        }
       },
       19: {
         capability: 'measure_humidity',
         divisor: 1,
-        transform: (v) => (v >= 0 && v <= 100) ? Math.round(v) : null
+        transform: (v) => {
+          device._dynamicCapabilityFromDP?.(19, v, 'measure_humidity');
+          return (v >= 0 && v <= 100) ? Math.round(v) : null;
+        }
       },
       103: {
         capability: 'measure_temperature',
         divisor: 10,
-        transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null
+        transform: (v) => {
+          device._dynamicCapabilityFromDP?.(103, v, 'measure_temperature');
+          return (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null;
+        }
       },
       104: {
         capability: 'measure_humidity',
         divisor: 1,
-        transform: (v) => (v >= 0 && v <= 100) ? Math.round(v) : null
+        transform: (v) => {
+          device._dynamicCapabilityFromDP?.(104, v, 'measure_humidity');
+          return (v >= 0 && v <= 100) ? Math.round(v) : null;
+        }
       },
     };
 
@@ -241,26 +287,37 @@ class MotionSensorDevice extends HybridSensorBase {
     }
 
     // DP5 - varies by manufacturer
+    // v5.5.925: Added dynamic capability for variant devices
     if (profile.dp5 === 'measure_humidity') {
       mappings[5] = {
         capability: 'measure_humidity',
         divisor: profile.dp5_divisor || 1,
-        transform: (v) => (v >= 0 && v <= 100) ? Math.round(v) : null
+        transform: (v) => {
+          device._dynamicCapabilityFromDP?.(5, v, 'measure_humidity');
+          return (v >= 0 && v <= 100) ? Math.round(v) : null;
+        }
       };
     } else if (profile.dp5 === 'measure_temperature') {
       mappings[5] = {
         capability: 'measure_temperature',
         divisor: profile.dp5_divisor || 10,
-        transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null
+        transform: (v) => {
+          device._dynamicCapabilityFromDP?.(5, v, 'measure_temperature');
+          return (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null;
+        }
       };
     }
 
     // DP6 - humidity for some models
+    // v5.5.925: Added dynamic capability for variant devices
     if (profile.dp6 === 'measure_humidity') {
       mappings[6] = {
         capability: 'measure_humidity',
         divisor: profile.dp6_divisor || 1,
-        transform: (v) => (v >= 0 && v <= 100) ? Math.round(v) : null
+        transform: (v) => {
+          device._dynamicCapabilityFromDP?.(6, v, 'measure_humidity');
+          return (v >= 0 && v <= 100) ? Math.round(v) : null;
+        }
       };
     }
 
@@ -400,6 +457,11 @@ class MotionSensorDevice extends HybridSensorBase {
     // This adds temp/humidity capabilities only if clusters exist
     await this._detectAvailableClusters(zclNode);
 
+    // v5.5.919: FORUM FIX (Peter_van_Werkhoven #1225)
+    // For TS0601 Tuya DP multisensors like ZG-204ZV, add capabilities based on profile
+    // These don't have ZCL clusters but send temp/humidity via Tuya DPs
+    await this._ensureTuyaDPCapabilities();
+
     await super.onNodeInit({ zclNode });
 
     // v5.5.299: Initialize sleepy device state tracking
@@ -433,8 +495,12 @@ class MotionSensorDevice extends HybridSensorBase {
     // v5.5.18: Explicit IAS Zone setup for HOBEIAN and other non-Tuya motion sensors
     await this._setupMotionIASZone(zclNode);
 
+    // v5.5.930: DP POLLING for HOBEIAN Multisensor (Peter_van_Werkhoven #1253)
+    // Request temp/humidity/battery DPs for TS0601 devices that don't send automatically
+    await this._setupTuyaDPPolling(zclNode);
+
     // v5.5.292: Flow triggers now handled by HybridSensorBase._triggerCustomFlowsIfNeeded()
-    this.log('[MOTION] v5.5.292 ✅ Motion sensor ready');
+    this.log('[MOTION] v5.5.930 ✅ Motion sensor ready');
     this.log('[MOTION] Manufacturer:', this.getSetting('zb_manufacturer_name') || 'unknown');
     this.log(`[MOTION] Clusters: temp=${this._hasTemperatureCluster}, hum=${this._hasHumidityCluster}`);
   }
@@ -454,15 +520,31 @@ class MotionSensorDevice extends HybridSensorBase {
   }
 
   static get PIR_ONLY_MANUFACTURERS() {
-    // v5.5.888: FORUM FIX (Peter_van_Werkhoven #1204)
-    // Removed _TZE200_3towulqd - this is ZG-204ZV with temp/humidity (handled by ZG204ZV profile)
-    // Only include devices that truly have NO temp/humidity sensors
+    // v5.5.925: PERMISSIVE MODE (Peter_van_Werkhoven forum feedback)
+    // REMOVED _TZE200_3towulqd from this list!
+    // Reason: Some variants (ZG-204ZV) with SAME manufacturerName DO have temp/humidity
+    // Solution: Don't block capabilities upfront - add them dynamically when DPs are received
+    // This handles variants with same manufacturerName but different capabilities
     return [
-      '_TZE200_1ibpyhdc',  // ZG-204ZL PIR only variant
+      // v5.5.925: Only block devices we're 100% CERTAIN have no temp/humidity
+      // Empty for now - use dynamic detection instead
+      // '_TZE200_bh3n6gk8',  // Confirmed PIR-only (no variants known)
+    ];
+  }
+
+  /**
+   * v5.5.925: PERMISSIVE VARIANT DETECTION (Peter_van_Werkhoven)
+   * Some manufacturerNames have MULTIPLE variants with different capabilities:
+   * - _TZE200_3towulqd can be ZG-204ZL (PIR only) OR ZG-204ZV (with temp/humidity)
+   * These are handled dynamically - capabilities added when DPs are received
+   */
+  static get VARIANT_MANUFACTURERS() {
+    return [
+      '_TZE200_3towulqd',  // Can be ZG-204ZL (PIR) or ZG-204ZV (multisensor)
+      '_tze200_3towulqd',
+      '_TZE204_3towulqd',
+      '_TZE200_1ibpyhdc',  // Has variants
       '_tze200_1ibpyhdc',
-      '_TZE200_bh3n6gk8',  // ZG-204ZL PIR only variant
-      '_tze200_bh3n6gk8',
-      // Note: ZG-204ZM radar sensors handled by ZG204ZM_RADAR profile
     ];
   }
 
@@ -470,7 +552,7 @@ class MotionSensorDevice extends HybridSensorBase {
    * v5.5.113: Cluster detection AND dynamic capability addition
    * Only add temp/humidity capabilities if device actually has these clusters
    * Fixes "incorrect labels" issue (Cam's report #604)
-   * v5.5.335: Skip temp/humidity for PIR-only devices (4x4_Pete forum feedback)
+   * v5.5.925: PERMISSIVE MODE - Don't remove capabilities for variant manufacturers
    */
   async _detectAvailableClusters(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
@@ -479,24 +561,32 @@ class MotionSensorDevice extends HybridSensorBase {
 
     this.log(`[MOTION-CLUSTERS] Available clusters: ${clusterNames.join(', ')}`);
 
-    // v5.5.335: Check if this is a PIR-only device that doesn't have temp/humidity
+    // v5.5.925: Check if this is a variant manufacturer (may have temp/humidity)
     const manufacturerName = this.getData()?.manufacturerName || this.getSetting('zb_manufacturer_name') || '';
+    const isVariant = MotionSensorDevice.VARIANT_MANUFACTURERS.some(v => 
+      manufacturerName.toLowerCase().includes(v.toLowerCase())
+    );
     const isPirOnly = MotionSensorDevice.PIR_ONLY_MANUFACTURERS.includes(manufacturerName);
 
-    if (isPirOnly) {
-      this.log(`[MOTION-CLUSTERS] ⚠️ PIR-only device detected: ${manufacturerName}`);
-      this.log('[MOTION-CLUSTERS] Skipping temp/humidity - device only has motion + luminance');
+    // v5.5.925: For variant manufacturers, DON'T remove capabilities
+    // Let dynamic DP detection handle it
+    if (isVariant) {
+      this.log(`[MOTION-CLUSTERS] 🔀 VARIANT device detected: ${manufacturerName}`);
+      this.log('[MOTION-CLUSTERS] Using PERMISSIVE mode - capabilities will be added dynamically from DPs');
+      this._isVariantDevice = true;
+      // Don't remove anything - wait for DP reports
+    } else if (isPirOnly) {
+      this.log(`[MOTION-CLUSTERS] ⚠️ Confirmed PIR-only device: ${manufacturerName}`);
       this._hasTemperatureCluster = false;
       this._hasHumidityCluster = false;
-
-      // Remove any incorrectly added capabilities
+      // Only remove if NOT a variant
       if (this.hasCapability('measure_temperature')) {
         await this.removeCapability('measure_temperature').catch(() => { });
-        this.log('[MOTION-CLUSTERS] ✅ Removed incorrect measure_temperature');
+        this.log('[MOTION-CLUSTERS] ✅ Removed measure_temperature (confirmed PIR-only)');
       }
       if (this.hasCapability('measure_humidity')) {
         await this.removeCapability('measure_humidity').catch(() => { });
-        this.log('[MOTION-CLUSTERS] ✅ Removed incorrect measure_humidity');
+        this.log('[MOTION-CLUSTERS] ✅ Removed measure_humidity (confirmed PIR-only)');
       }
       return;
     }
@@ -540,6 +630,69 @@ class MotionSensorDevice extends HybridSensorBase {
 
     this.log(`[MOTION-CLUSTERS] Temperature ZCL: ${this._hasTemperatureCluster}`);
     this.log(`[MOTION-CLUSTERS] Humidity ZCL: ${this._hasHumidityCluster}`);
+  }
+
+  /**
+   * v5.5.925: PERMISSIVE MODE (Peter_van_Werkhoven forum feedback)
+   * DON'T remove capabilities for variant devices - add dynamically from DPs
+   * This handles ZG-204ZL vs ZG-204ZV with same manufacturerName
+   */
+  async _ensureTuyaDPCapabilities() {
+    const profile = this._getManufacturerProfile();
+    
+    // v5.5.925: For variant devices, DON'T remove capabilities
+    // They will be added dynamically when DPs are received
+    if (this._isVariantDevice) {
+      this.log('[MOTION-DP] 🔀 VARIANT mode - skipping capability removal');
+      this.log('[MOTION-DP] Capabilities will be added when DPs report temp/humidity');
+      // Ensure battery is present (all variants have battery)
+      if (!this.hasCapability('measure_battery')) {
+        await this.addCapability('measure_battery').catch(() => {});
+        this.log('[MOTION-DP] ✅ Added measure_battery (universal)');
+      }
+      return;
+    }
+    
+    // v5.5.925: Only remove for CONFIRMED PIR-only (non-variant) devices
+    if (profile.isPirOnly && profile.name === 'ZG204ZL_PIR_ONLY' && !this._isVariantDevice) {
+      this.log('[MOTION-DP] 🔧 Confirmed PIR-only device - checking capabilities');
+      // Even for PIR-only, don't remove if device has reported these DPs
+      if (!this._hasReceivedTempDP) {
+        if (this.hasCapability('measure_temperature')) {
+          await this.removeCapability('measure_temperature').catch(() => {});
+          this.log('[MOTION-DP] ❌ Removed measure_temperature (no DP received)');
+        }
+      }
+      if (!this._hasReceivedHumidityDP) {
+        if (this.hasCapability('measure_humidity')) {
+          await this.removeCapability('measure_humidity').catch(() => {});
+          this.log('[MOTION-DP] ❌ Removed measure_humidity (no DP received)');
+        }
+      }
+      if (!this.hasCapability('measure_battery')) {
+        await this.addCapability('measure_battery').catch(() => {});
+        this.log('[MOTION-DP] ✅ Added measure_battery (Tuya DP4)');
+      }
+      return;
+    }
+
+    // FANTEM/IMMAX profiles: DP5=temp, DP6=humidity, DP4=battery
+    if (profile.name === 'FANTEM' || profile.name === 'IMMAX') {
+      this.log(`[MOTION-DP] 🌡️ ${profile.name} detected - adding Tuya DP capabilities`);
+      
+      if (!this.hasCapability('measure_temperature')) {
+        await this.addCapability('measure_temperature').catch(() => {});
+        this.log('[MOTION-DP] ✅ Added measure_temperature (Tuya DP5)');
+      }
+      if (!this.hasCapability('measure_humidity')) {
+        await this.addCapability('measure_humidity').catch(() => {});
+        this.log('[MOTION-DP] ✅ Added measure_humidity (Tuya DP6)');
+      }
+      if (!this.hasCapability('measure_battery')) {
+        await this.addCapability('measure_battery').catch(() => {});
+        this.log('[MOTION-DP] ✅ Added measure_battery (Tuya DP4)');
+      }
+    }
   }
 
   /**
@@ -659,6 +812,81 @@ class MotionSensorDevice extends HybridSensorBase {
       this.log('[MOTION-IAS] ✅ Motion detection via IAS Zone configured');
     } catch (err) {
       this.log('[MOTION-IAS] Setup error:', err.message);
+    }
+  }
+
+  /**
+   * v5.5.930: TUYA DP POLLING for HOBEIAN Multisensor (Peter_van_Werkhoven #1253)
+   * Request temp/humidity/battery DPs for TS0601 devices that don't send automatically
+   * ZG-204ZV DPs: DP1=motion, DP3=temp(/10), DP4=humidity, DP9=lux, DP12=battery
+   */
+  async _setupTuyaDPPolling(zclNode) {
+    const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
+    const modelId = this.getSetting('zb_model_id') || this.getData()?.modelId || '';
+    
+    // Only for TS0601 Tuya DP devices (variants that may have temp/humidity)
+    const isTuyaDP = modelId === 'TS0601' || mfr.startsWith('_TZE');
+    if (!isTuyaDP) {
+      this.log('[MOTION-DP] Not a Tuya DP device, skipping DP polling');
+      return;
+    }
+
+    // Check if this is a variant manufacturer (may have temp/humidity)
+    const isVariant = MotionSensorDevice.VARIANT_MANUFACTURERS.some(v => 
+      mfr.toLowerCase().includes(v.toLowerCase())
+    );
+    
+    this.log(`[MOTION-DP] 🔄 Setting up DP polling for ${mfr} (variant=${isVariant})`);
+
+    const ep1 = zclNode?.endpoints?.[1];
+    const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
+    if (!tuyaCluster) {
+      this.log('[MOTION-DP] No Tuya cluster found');
+      return;
+    }
+
+    // Request specific DPs for HOBEIAN Multisensor variants
+    const requestDP = async (dpId) => {
+      try {
+        if (tuyaCluster.dataRequest) {
+          await tuyaCluster.dataRequest({ dp: dpId });
+          this.log(`[MOTION-DP] 📡 Requested DP${dpId}`);
+        } else if (tuyaCluster.sendData) {
+          const payload = Buffer.alloc(3);
+          payload.writeUInt16BE(0, 0); // seq
+          payload.writeUInt8(dpId, 2); // dp
+          await tuyaCluster.sendData({ dp: dpId, datatype: 0, data: Buffer.from([]) });
+          this.log(`[MOTION-DP] 📡 Requested DP${dpId} (alt)`);
+        }
+      } catch (e) { /* ignore */ }
+    };
+
+    // Initial poll after 3 seconds
+    setTimeout(async () => {
+      this.log('[MOTION-DP] 🔄 Initial DP poll...');
+      // Request all DPs that might contain temp/humidity/battery
+      await requestDP(3);   // Temperature (ZG-204ZV)
+      await requestDP(4);   // Humidity or Battery
+      await requestDP(5);   // Temperature (Fantem)
+      await requestDP(6);   // Humidity (Fantem)
+      await requestDP(9);   // Luminance
+      await requestDP(12);  // Battery (some variants)
+      
+      // Also try generic DP refresh
+      if (tuyaCluster.dataQuery) {
+        await tuyaCluster.dataQuery().catch(() => {});
+        this.log('[MOTION-DP] 📡 Generic DP refresh requested');
+      }
+    }, 3000);
+
+    // Periodic poll every 5 minutes for variant devices
+    if (isVariant) {
+      this._dpPollingInterval = setInterval(async () => {
+        this.log('[MOTION-DP] 🔄 Periodic DP poll...');
+        await requestDP(3);  // Temperature
+        await requestDP(4);  // Humidity
+        await requestDP(12); // Battery
+      }, 5 * 60 * 1000);
     }
   }
 
@@ -1152,6 +1380,11 @@ class MotionSensorDevice extends HybridSensorBase {
    * v5.5.793: Enhanced cleanup on device destroy
    */
   async onDeleted() {
+    // v5.5.930: Clear DP polling interval
+    if (this._dpPollingInterval) {
+      clearInterval(this._dpPollingInterval);
+      this._dpPollingInterval = null;
+    }
     // Clear lux reporting timer
     if (this._luxReportTimer) {
       clearInterval(this._luxReportTimer);
@@ -1174,6 +1407,11 @@ class MotionSensorDevice extends HybridSensorBase {
    */
   async onUninit() {
     this.log('[MOTION] onUninit - cleaning up...');
+    // v5.5.930: Clear DP polling interval
+    if (this._dpPollingInterval) {
+      clearInterval(this._dpPollingInterval);
+      this._dpPollingInterval = null;
+    }
     if (this._luxReportTimer) {
       clearInterval(this._luxReportTimer);
       this._luxReportTimer = null;

@@ -124,7 +124,32 @@ class Switch4GangDriver extends ZigBeeDriver {
         await args.device.triggerCapabilityListener('onoff.gang4', false);
       }));
 
-      this.log('4-Gang Switch Driver v5.5.562 ✅ Flow cards registered');
+      // v5.5.930: LED backlight flow cards
+      try {
+        this.homey.flow.getActionCard('switch_4gang_set_backlight')
+          .registerRunListener(this._safeAction(async (args) => {
+            await args.device.setBacklightMode(args.mode);
+          }));
+        this.log('[FLOW] ✅ switch_4gang_set_backlight');
+      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
+
+      try {
+        this.homey.flow.getActionCard('switch_4gang_set_backlight_color')
+          .registerRunListener(this._safeAction(async (args) => {
+            await args.device.setBacklightColor(args.state, args.color);
+          }));
+        this.log('[FLOW] ✅ switch_4gang_set_backlight_color');
+      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
+
+      try {
+        this.homey.flow.getActionCard('switch_4gang_set_backlight_brightness')
+          .registerRunListener(this._safeAction(async (args) => {
+            await args.device.setBacklightBrightness(args.brightness);
+          }));
+        this.log('[FLOW] ✅ switch_4gang_set_backlight_brightness');
+      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
+
+      this.log('4-Gang Switch Driver v5.5.930 ✅ Flow cards registered');
     } catch (err) {
       this.error('4-Gang Switch Driver flow card registration failed:', err.message);
     }
