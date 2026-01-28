@@ -581,8 +581,8 @@ class IrBlasterDevice extends ZigBeeDevice {
       if (this._lastLearnedCode) {
         this.log(`Last learned code: ${this._lastLearnedCode.substring(0, 50)}...`);
         // Update capability if available
-        if (this.hasCapability('ir_code_received')) {
-          this.setCapabilityValue('ir_code_received', this._lastLearnedCode).catch(() => { });
+        if (this.hasCapability('ir_blaster_code_received')) {
+          this.setCapabilityValue('ir_blaster_code_received', this._lastLearnedCode).catch(() => { });
         }
         // Trigger flow
         this.driver.codeLearnedTrigger?.trigger(this, { ir_code: this._lastLearnedCode }, {}).catch(() => { });
@@ -612,7 +612,7 @@ class IrBlasterDevice extends ZigBeeDevice {
       // v5.5.602: Support multiple message formats for compatibility
       // Format 1: Simple Z2M/SmartIR format (most compatible)
       const simpleMessage = JSON.stringify({
-        'ir_code_to_send': irCode
+        'ir_blaster_code_to_send': irCode
       });
       
       // Format 2: Extended format with frequency/timing (for complex codes)
@@ -753,7 +753,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     this.log('Registering enhanced IR flow card actions...');
 
     // Enhanced learn IR code action
-    const learnAction = this.homey.flow.getActionCard('ir_learn_code');
+    const learnAction = this.homey.flow.getActionCard('ir_blaster_learn_code');
     if (learnAction) {
       learnAction.registerRunListener(async (args) => {
         const { code_name, duration, protocol, frequency, category } = args;
@@ -776,7 +776,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
 
     // Enhanced send IR code action
-    const sendAction = this.homey.flow.getActionCard('ir_send_code');
+    const sendAction = this.homey.flow.getActionCard('ir_blaster_send_code');
     if (sendAction) {
       sendAction.registerRunListener(async (args) => {
         const { ir_code, protocol, frequency, repeat } = args;
@@ -1077,8 +1077,8 @@ class IrBlasterDevice extends ZigBeeDevice {
       this._handleLearnedCode(irCode);
 
       // Update capability immediately
-      if (this.hasCapability('ir_code_received')) {
-        await this.setCapabilityValue('ir_code_received', irCode).catch(() => { });
+      if (this.hasCapability('ir_blaster_code_received')) {
+        await this.setCapabilityValue('ir_blaster_code_received', irCode).catch(() => { });
         this.log('✅ Updated ir_code_received capability');
       }
 
@@ -1418,7 +1418,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     let count = 0;
     if (data.commands) {
       for (const [name, code] of Object.entries(data.commands)) {
-        const irCode = typeof code === 'string' && code.includes('ir_code_to_send') 
+        const irCode = typeof code === 'string' && code.includes('ir_blaster_code_to_send') 
           ? JSON.parse(code).ir_code_to_send : code;
         if (irCode) {
           await this.storeEnhancedLearnedCode(`${category}_${name}`, irCode, { category });
@@ -1464,3 +1464,4 @@ class IrBlasterDevice extends ZigBeeDevice {
 }
 
 module.exports = IrBlasterDevice;
+
