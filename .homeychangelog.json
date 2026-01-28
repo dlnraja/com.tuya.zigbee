@@ -1,4 +1,181 @@
 {
+  "5.5.918": {
+    "en": "🐛 FORUM FIX (Lasse_K #1700): Fixed contact sensors installing in reverse - IAS Zone now applies default inversion for known inverted manufacturers. Enhanced water sensor alarm detection with delayed secondary read for sleepy sensors. RE-PAIR devices after update!"
+  },
+  "5.5.917": {
+    "en": "🔍 FORK/PR AUDIT: Added Longsam mini m3 Smart Curtain (_TZE204_xu4a5rhj) from Issue #117. PR #118 (_TZ3000_ysdv91bk) already integrated in v5.5.913. Verified all 7 child forks and 75+ JohanBendz network forks - all valuable contributions integrated."
+  },
+  "5.5.916": {
+    "en": "🐛 CRITICAL FIX: Fixed manufacturer/model retrieval in all base classes (HybridCoverBase, HybridPlugBase, HybridSensorBase, HybridThermostatBase, HybridLightBase, ButtonDevice). Devices showing 'unknown / unknown' will now be correctly identified. Curtain motors (TS0601), water valves, and other devices should work properly after RE-PAIRING."
+  },
+  "5.5.915": {
+    "en": "🔀 FORK ANALYSIS v2: Analyzed 75+ forks (JohanBendz network + dlnraja children). Gas detector: Added Heiman HS1CG-N (_TYZB01_0w3d5uw3). Credits: gpmachado (gas detector, Zemismart switches), bmalkow (siren fixes), baschte (signal repeater)."
+  },
+  "5.5.914": {
+    "en": "🔀 FORK ANALYSIS: Integrated improvements from shaarkys & eelco2k forks. ZG-204ZV: Added fingerprints (rhgsbacq, grgol3xp, uli8wasj, y8jijhba) + alternate DP mappings (101/106/110/111). Rain sensor: Added HOBEIAN ZG-223Z (_TZE200_u6x1zyv2). Thank you shaarkys!"
+  },
+  "5.5.913": {
+    "en": "🎉 PR #118 MERGED (packetninja/Attilla): BSEED switch ZCL-only mode with physical button detection via attribute reports. Fingerprints _TZ3000_ysdv91bk, _TZ3000_blhvsaqf fully integrated. 2000ms app command window. Thank you packetninja!"
+  },
+  "5.5.912": {
+    "en": "🌡️ ZG-204ZV Fix: Added ZCL temperature (0x0402) + humidity (0x0405) cluster listeners. ZHA #4452: Some ZG-204ZV variants use ZCL clusters, not Tuya DP. Peter_van_Werkhoven: RE-PAIR to apply fix."
+  },
+  "5.5.911": {
+    "en": "💧 Water Valve Enhancement: Z2M DP mappings (water consumption, flow rate, temp, battery). Added fingerprints: vuwtqx0t, fphxkxue, a7sghmms. Pieter_Pessers: RE-PAIR water valve after update."
+  },
+  "5.5.910": {
+    "en": "🔥 CRITICAL FIX: PhysicalButtonMixin crash (Invalid Flow Card ID). getDeviceTriggerCard throws synchronously - wrapped in try-catch. App no longer crashes when physical flow cards missing."
+  },
+  "5.5.909": {
+    "en": "🔥 CRITICAL FIX: Radiator valve driver crash (Class extends undefined). ManuelKugler diagnostic report. Import syntax error fixed."
+  },
+  "5.5.908": {
+    "en": "🚪 Forum Fix #1011: Contact sensor _TZ3000_996rpfy6 (TS0203) always showing 'no' - added to inverted list. blutch32: RE-PAIR device to apply fix."
+  },
+  "5.5.907": {
+    "en": "🔋 Forum Fix #1225: HOBEIAN ZG-204ZV battery capability now auto-added. Sensors with battery DP mapping get measure_battery. Peter_van_Werkhoven: RE-PAIR device to apply orphan cleanup + battery."
+  },
+  "5.5.906": {
+    "en": "🎯 New Flow Cards: Toggle action for 1-gang switch. Toggle + All-gangs actions for 2-gang switch. Forum: Attilla confirms physical button flows now working. BSEED cluster handling improved."
+  },
+  "5.5.905": {
+    "en": "📊 Enhanced Diagnostics for ALL Sensors: HybridSensorBase now logs DP data with type/interval/count (same as switches). Helps diagnose device issues from logs. Forum docs updated with completed fixes."
+  },
+  "5.5.904": {
+    "en": "🧹 Orphan Capability Cleanup: Radar sensors now auto-remove capabilities not supported by device config. Fixes ZG-204ZV showing 'Distance' from previous pairing. Z2M research: static_detection_distance is a SETTING, not real-time measurement."
+  },
+  "5.5.903": {
+    "en": "🛠️ Forum Fixes: _TZE284_iadro9bf motion alarm stuck - added stuck pattern detection (5+ consecutive same values → distance inference only). Enhanced throttle for qasjif9e variants."
+  },
+  "5.5.902": {
+    "en": "📊 Diagnostic Logs Cleanup: Removed verbose ID DATABASE logging (was polluting diagnostics). Added enhanced DP/ZCL logging with data types, intervals, counts. Database is internal cache only - does NOT affect Homey driver pairing."
+  },
+  "5.5.901": {
+    "en": "🔧 BSEED Fix: Improved manufacturer detection with multiple fallback sources. Added 5 new BSEED IDs (_TZ3000_hafsqare, _TZ3000_e98krvvk, _TZ3000_iedbgyxt). Debug logging for ZCL-only mode detection. Forum diagnostic fixes."
+  },
+  "5.5.900": {
+    "en": "💡 Switch Behavior Settings: Power-On Behavior (off/on/memory), LED Backlight Mode (off/normal/inverted), Child Lock. All 1-4 gang switches. Z2M parity. Forum feedback integration complete."
+  },
+  "5.5.899": {
+    "en": "🎯 Device Profiles: Comprehensive manufacturer-specific handling based on Z2M/ZHA research. BSEED, Zemismart (ZHA #2443), Moes, TS0726 profiles. ZCL-only mode auto-detection, custom clusters 0xE000/0xE001, per-endpoint control."
+  },
+  "5.5.898": {
+    "en": "⚙️ Configurable Physical Button Detection: New settings for all switch drivers (1-4 gang). App Command Window (100-5000ms), Double Click Window (200-1000ms), Long Press Threshold (300-2000ms). BSEED default=2000ms."
+  },
+  "5.5.897": {
+    "en": "🔵 BSEED Special Mode: Dedicated handling for _TZ3000_blhvsaqf/_TZ3000_ysdv91bk. Pure ZCL (no Tuya DP), custom clusters 0xE000/0xE001, 2s response window. PR #116 full feature parity. Other 1-gang switches unchanged."
+  },
+  "5.5.896": {
+    "en": "🎯 PhysicalButtonMixin: Advanced button detection for all switch drivers (1-4 gang). Single/double/long/triple press. BSEED=2000ms, others=500ms (faster). Flow cards with duration tokens."
+  },
+  "5.5.895": {
+    "en": "🔀 MERGED: switch_1gang_bseed → switch_1gang. Unified driver supports Tuya DP, ZCL onOff, BSEED clusters (0xE000/0xE001). Physical button detection for all 1-gang switches."
+  },
+  "5.5.894": {
+    "en": "🎨 Flow Cards: Enhanced switch drivers (1-4 gang) with titleFormatted, device args, physical button triggers (PR #116 pattern). Full EN/FR/NL/DE localization."
+  },
+  "5.5.893": {
+    "en": "📦 Enrichment: Added HOBEIAN ZG-303Z temp/humidity (blutch32 #1011). Cross-referenced 20 JohanBendz PRs - all IDs verified."
+  },
+  "5.5.892": {
+    "en": "🔧 Motion Sensor FIX (Peter #1211): Removed orphan 'Distance' capability from ZG-204ZV. Distance is only for radar sensors."
+  },
+  "5.5.891": {
+    "en": "🔧 Bseed Switch: Added _TZ3000_ysdv91bk variant (Pieter_Pessers forum). PR #116 closed with thanks to packetninja."
+  },
+  "5.5.890": {
+    "en": "🌧️ Rain Sensor: Added IAS Zone support for TS0207 devices (Dominique_C forum). Fixes 'IAS Zone error' on pairing."
+  },
+  "5.5.889": {
+    "en": "✨ NEW: Bseed 1-Gang Switch (PR #116 by packetninja) - Physical button detection, flow triggers. Added FR/DE localization."
+  },
+  "5.5.888": {
+    "en": "🔧 Motion Sensor FIX (Peter #1204): ZG-204ZV now correctly shows temperature & humidity. Removed incorrect PIR-only classification for 4-in-1 multisensors."
+  },
+  "5.5.887": {
+    "en": "🌡️ Air Quality CO2 Sensor: Fixed naming. Curtain Motor Tilt: Added energy approximation (40W)."
+  },
+  "5.5.886": {
+    "en": "💡 Smart Bulbs: Major cleanup - removed incorrect battery capabilities from all bulb drivers, fixed FR naming, proper capability sets per bulb type. HVAC AC: removed battery capability."
+  },
+  "5.5.885": {
+    "en": "💡 LED Strips: Removed incorrect battery capabilities, proper energy tracking, fixed naming. DIY Custom Device: NL/DE switch title localization."
+  },
+  "5.5.884": {
+    "en": "🌀 Ceiling Fan: Removed incorrect battery capability, added speed title localization. Formaldehyde Sensor: Fixed naming with VOC in all languages."
+  },
+  "5.5.883": {
+    "en": "🌡️ Climate Sensor and Generic Tuya Device: NL/DE localization for temperature, humidity, and illuminance titles."
+  },
+  "5.5.882": {
+    "en": "💡 Dimmers: Wall Dimmer 1-Gang proper naming. 3-Gang Dimmer channel titles with full NL/DE localization for better UX."
+  },
+  "5.5.881": {
+    "en": "🔧 Fixes: SOS Button class changed to 'button' + full localization. Door Controller, DIN Rail Switch, Gas Sensor - proper names and NL/DE translations."
+  },
+  "5.5.880": {
+    "en": "🌬️ Sensors: Gas Detector, Air Quality CO2, Comprehensive Air Monitor - proper French names and NL/DE localization for all alarm titles."
+  },
+  "5.5.879": {
+    "en": "🏠 Curtain Motor: Energy tracking (40W) + NL/DE. Irrigation Valve: Changed to 'other' class, zone titles localized. Improved device classification."
+  },
+  "5.5.878": {
+    "en": "🌡️ HVAC: Air Conditioner (1200W) and Dehumidifier (350W) proper energy tracking. Fan Controller and Air Purifier NL/DE localization. Removed incorrect battery configs."
+  },
+  "5.5.877": {
+    "en": "🔧 Fixes: LED Strip name fixed, Ceiling Fan proper energy (65W) + localization, Water Tank battery types added. Removed incorrect battery configs from AC devices."
+  },
+  "5.5.876": {
+    "en": "🔋 Energy Tracking: Garage door (150W), IR Blaster (2W constant), Dual Dimmer (100W), LED CCT Controller (24W). IR Blaster learn button now maintenance action."
+  },
+  "5.5.875": {
+    "en": "⚡ Smart RCBO: Changed to 'socket' class with cumulative energy tracking. Added trip alarm localization. Fixed Zigbee Gateway name."
+  },
+  "5.5.874": {
+    "en": "🌡️ 4-Channel Thermostat: Energy tracking (3W), NL/DE localized channel names for all 4 temperature/control channels. Better multi-zone heating management."
+  },
+  "5.5.873": {
+    "en": "🔧 Device Improvements: Siren uses proper 'siren' class. Fixed duplicate names (Siren, Doorbell). Energy tracking for humidifier (25W), pet feeder (5W). NL/DE localization expanded."
+  },
+  "5.5.872": {
+    "en": "📊 Energy Meters: DIN Rail, CT Clamp, and 3-Phase meters now use cumulative energy tracking. More accurate power consumption in Homey Energy dashboard."
+  },
+  "5.5.871": {
+    "en": "🌍 Localization: Added Dutch (NL) and German (DE) translations to pairing instructions for motion sensor and contact sensor. Better multilingual support."
+  },
+  "5.5.870": {
+    "en": "📊 Energy Monitoring: Smart plugs with power measurement now use cumulative energy tracking (not approximated). Better accuracy in Homey Energy dashboard."
+  },
+  "5.5.869": {
+    "en": "🏠 Device Classes: Cover Controller now uses 'curtains' class, Roller Shutter uses 'blinds' class per SDK best practices. Highlighted power source setting for radar sensors."
+  },
+  "5.5.868": {
+    "en": "✨ Flow Cards: Added highlights to 3-gang, 4-gang switches, RGB bulb, radiator valve. Improved NL/DE localization. Easier to find important triggers in Flow editor."
+  },
+  "5.5.867": {
+    "en": "⚡ Energy Tracking: Air purifier (45W), smart heater (2000W), fan controller (75W), irrigation valve. Better power consumption estimates for Homey Energy dashboard."
+  },
+  "5.5.866": {
+    "en": "⚡ SDK3 Best Practices: Fixed LED strip energy (24W), added radiator valve calibration button, radar sensor energy tracking, power meter cumulative flag. Better Homey Energy integration."
+  },
+  "5.5.865": {
+    "en": "🎛️ NEW: Smart Knob / Scene Switch driver (ERS-10TZBVK-AA) - Rotary dimmer with rotation left/right triggers, button press detection, simulated brightness. Fixes Issue #113."
+  },
+  "5.5.864": {
+    "en": "🔧 Pairing: Added repair view support for thermostats. Improved pairing flow with singular device selection. Better device recovery after connection issues."
+  },
+  "5.5.863": {
+    "en": "🔒 Device Classes: Smoke detector now uses 'smokedetector' class, CO sensor uses 'co' class. Water leak sensor added to home alarm. Better Homey integration."
+  },
+  "5.5.862": {
+    "en": "🏠 Flow Cards: Thermostat comfort presets (Eco/Away/Sleep/Boost) + schedule control. Curtain stop/favorite actions. Better multi-language support."
+  },
+  "5.5.861": {
+    "en": "🎛️ Flow Cards: Added physical button triggers for switches. Highlighted key triggers for faster flow creation. Better hints and translations."
+  },
+  "5.5.860": {
+    "en": "🔌 Flow Cards: Added power monitoring triggers (power_changed, power_threshold) with tokens (power, voltage, current) for smart plugs. Enhanced Advanced Flow support."
+  },
   "5.5.859": {
     "en": "📡 Sensors: Added alarm_tamper + measure_temperature to contact, motion, water leak sensors. Better device indicators and auto-discovery support."
   },

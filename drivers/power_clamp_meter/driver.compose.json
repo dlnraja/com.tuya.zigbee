@@ -20,7 +20,13 @@
     "measure_power.phase2",
     "measure_power.phase3"
   ],
+  "energy": {
+    "cumulative": true
+  },
   "capabilitiesOptions": {
+    "meter_power": {
+      "approximated": false
+    },
     "measure_power": {
       "title": {
         "en": "Total Power",

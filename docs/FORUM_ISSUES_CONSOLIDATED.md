@@ -176,12 +176,13 @@
 ## 🎯 ACTION ITEMS
 
 ### Immediate
-- [ ] Fix `_TZE284_iadro9bf` motion alarm stuck issue
-- [ ] Fix HOBEIAN ZG-102Z CIE enrollment
+- [x] Fix `_TZE284_iadro9bf` motion alarm stuck issue (v5.5.903 - stuck pattern detection)
+- [x] Fix HOBEIAN ZG-102Z CIE enrollment (already in HybridSensorBase v5.5.807+)
 - [ ] Request diagnostic from Lasse_K for contact sensor
 
 ### Short Term
-- [ ] Add ZG-204ZM static_detection_distance capability
+- [x] ZG-204ZM static_detection_distance - Z2M confirms this is a SETTING not measurement (v5.5.904)
+- [x] Orphan capability cleanup for radar sensors (v5.5.904)
 - [ ] Review all recent regressions
 - [ ] Add regression tests
 

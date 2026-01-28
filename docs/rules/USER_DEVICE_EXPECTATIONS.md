@@ -1,7 +1,7 @@
 # User Device Expectations & Diagnostic Summary
 
 This document summarizes user-reported devices and their expected behavior based on diagnostic logs and community feedback.
-**Last Updated**: 2026-01-27 (v5.5.841)
+**Last Updated**: 2026-01-27 (v5.5.905)
 
 > ⚠️ **WORKFLOW**: This document must be updated at each prompt/session in Windsurf AI to stay synchronized with code changes.
 
@@ -323,6 +323,11 @@ _TZE200_a8sdabtg  → climate_sensor (temp/humidity)
 
 | Version | Key Changes |
 |---------|-------------|
+| 5.5.905 | Enhanced diagnostics for ALL sensors (HybridSensorBase DP logging with type/interval/count) |
+| 5.5.904 | Orphan capability cleanup for radar sensors - ZG-204ZV Distance fix (Z2M: static_detection_distance is SETTING not measurement) |
+| 5.5.903 | _TZE284_iadro9bf stuck pattern detection (5+ consecutive same values → distance inference) |
+| 5.5.902 | Diagnostic logs cleanup - removed verbose ID DATABASE logging, enhanced DP/ZCL stats |
+| 5.5.901 | BSEED manufacturer detection with 4 fallback sources, +5 new BSEED IDs |
 | 5.5.840 | FORUM FIX: HOBEIAN ZG-204ZL motion sensor "always active" - invert_presence now applied to IAS Zone + Tuya DP. +4 new motion sensor fingerprints from Z2M |
 | 5.5.719 | NEW: DIY Custom Zigbee driver (PTVO, ESP32-H2, CC2530, DIYRuZ, Tasmota) |
 | 5.5.718 | TS0726 bidirectional fix - onOff cluster bindings (Hartmut_Dunker) |
@@ -351,6 +356,9 @@ _TZE200_a8sdabtg  → climate_sensor (temp/humidity)
 
 | User | Device | ManufacturerID | Issue | Fix Version | Notes |
 |------|--------|----------------|-------|-------------|-------|
+| Peter_van_Werkhoven | ZG-204ZV | `HOBEIAN` | Distance capability showing (orphan) | ✅ v5.5.904 | Orphan capability auto-cleanup |
+| Forum | _TZE284_iadro9bf | `_TZE284_iadro9bf` | Motion alarm stuck YES | ✅ v5.5.903 | Stuck pattern detection |
+| Forum | BSEED switches | Multiple | Unknown device | ✅ v5.5.901 | 4 fallback manufacturer sources |
 | Freddyboy | Moes 4-button | `_TZ3000_zgyzgdua` | Buttons not responding | ✅ v5.5.714 | TS0044 uses cluster 0xE000, not TS004F |
 | Ronny_M | HOBEIAN ZG-101ZL | `HOBEIAN` | Button not working | ✅ v5.5.715 | Added onOff binding + dual mode support |
 | Lasse_K | Contact sensors | Multiple | Inverted indication | ✅ v5.5.713 | Auto-inversion for known IDs |
@@ -365,6 +373,11 @@ _TZE200_a8sdabtg  → climate_sensor (temp/humidity)
 | User | Device | ManufacturerID | Issue | Diag Code | Status |
 |------|--------|----------------|-------|-----------|--------|
 | JJ10 | Presence sensor | Unknown | Connected as unknown device | `999de772-5ce2-4674-86c3-c267c7e3a3f0` | ⏳ Need mfr ID - ask user to send diagnostic |
+| Lalla80111 | Smart Button TS0041 | `_TZ3000_b4awzgct` | Unknown zigbee v5.5.897 | GitHub #114 | ✅ ID in driver - USER NEEDS RE-PAIR + UPDATE to v5.5.907 |
+| ManuelKugler | Radiator Valve ME167 | `_TZE284_o3x45p96` | Not working #1223 | f089e2e7 | ✅ ID in driver (ME167 profile) - USER NEEDS RE-PAIR |
+| Peter_van_Werkhoven | HOBEIAN ZG-204ZV | `HOBEIAN` | Temp/Humidity no data #1225 | Forum | ✅ v5.5.907 - USER MUST RE-PAIR to get temp/hum/battery + remove Distance |
+| Pieter_Pessers | BSEED 1-gang TS0001 | `_TZ3000_ysdv91bk` | Unknown device #1219 | Forum | ✅ In switch_1gang - USER MUST RE-PAIR |
+| blutch32 | Contact Sensor TS0203 | `_TZ3000_996rpfy6` | Alarm always "no" #1011 | Forum | ✅ v5.5.908 - Added to inverted list - USER MUST RE-PAIR |
 | FrankP | IR Blaster | Unknown | Flow card errors | `89e408fe-d0ba-4216-95be-951824dac2b8` | ✅ v5.5.565 Flow cards verified working (sendEnhancedIRCode, sendACCommand exist) |
 
 ### ✅ RECENTLY FIXED (Moved from Pending)

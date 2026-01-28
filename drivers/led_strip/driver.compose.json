@@ -1,15 +1,14 @@
 {
   "name": {
-    "en": "LED Strip Led Strip",
-    "fr": "LED Strip Led Strip",
-    "nl": "LED Strip",
-    "de": "LED Streifen"
+    "en": "LED Strip Controller",
+    "fr": "Contrôleur LED Strip",
+    "nl": "LED Strip Controller",
+    "de": "LED Streifen Controller"
   },
   "class": "light",
   "capabilities": [
-    "dim",
-    "measure_battery",
     "onoff",
+    "dim",
     "light_hue",
     "light_saturation",
     "light_mode"

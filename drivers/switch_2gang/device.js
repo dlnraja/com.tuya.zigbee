@@ -1,38 +1,40 @@
 'use strict';
 const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
- * 2-Gang Smart Switch - v5.5.412 + Virtual Buttons
- *
- * Sources: Z2M dual USB switch / TS0002
- * https://github.com/Koenkk/zigbee2mqtt/issues/...
- *
- * Features:
- * - 2 endpoints On/Off (EP1, EP2)
- * - Power measurement via electricalMeasurement (0x0B04)
- * - Energy metering via metering (0x0702)
- * - Settings: switchType, powerOnBehavior, backlight
- *
- * Models: _TZ3000_h1ipgkwn, _TZ3000_jl7w3l3q, etc.
+ * ╔══════════════════════════════════════════════════════════════════════════════╗
+ * ║      2-GANG SWITCH - v5.5.896 + PhysicalButtonMixin                         ║
+ * ╠══════════════════════════════════════════════════════════════════════════════╣
+ * ║  Features:                                                                   ║
+ * ║  - 2 endpoints On/Off (EP1, EP2)                                            ║
+ * ║  - Power measurement via electricalMeasurement (0x0B04)                     ║
+ * ║  - Energy metering via metering (0x0702)                                    ║
+ * ║  - Physical button detection: single/double/long/triple per gang            ║
+ * ║  - BSEED timing: 2000ms | Others: 500ms (faster)                            ║
+ * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class Switch2GangDevice extends VirtualButtonMixin(HybridSwitchBase) {
+class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
   get gangCount() { return 2; }
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
 
-    // v5.5.43: Cleanup orphan capabilities (like "Active" button that does nothing)
+    // v5.5.43: Cleanup orphan capabilities
     await this._cleanupOrphanCapabilities();
 
-    // v5.5.26: Setup power measurement for ZCL devices (router/mains)
+    // v5.5.26: Setup power measurement for ZCL devices
     await this._setupPowerMeasurement(zclNode);
 
-    // v5.5.412: Initialize virtual buttons for remote control
+    // v5.5.896: Initialize physical button detection (single/double/long/triple)
+    await this.initPhysicalButtonDetection(zclNode);
+
+    // v5.5.412: Initialize virtual buttons
     await this.initVirtualButtons();
 
-    this.log('[SWITCH-2G] ✅ Ready with power measurement + virtual buttons');
+    this.log('[SWITCH-2G] v5.5.896 - Physical button detection enabled');
   }
 
   /**

@@ -14,7 +14,7 @@
   ],
   "capabilitiesOptions": {
     "measure_luminance": {
-      "title": { "en": "Illuminance" },
+      "title": { "en": "Illuminance", "fr": "Luminosité", "nl": "Lichtniveau", "de": "Beleuchtung" },
       "units": { "en": "lux" }
     }
   },
@@ -2152,6 +2152,7 @@
       "ZG-225Z",
       "ZG-227Z",
       "ZG-227ZL",
+      "ZG-303Z",
       "ZGAF-205L",
       "lumi.sensor_ht",
       "lumi.weather",

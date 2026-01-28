@@ -1,19 +1,18 @@
 {
   "name": {
-    "en": "Smart Bulb Rgb",
-    "fr": "Smart Bulb Rgb",
+    "en": "Smart Bulb RGB",
+    "fr": "Ampoule Connectée RGB",
     "nl": "RGB Lamp",
     "de": "RGB Glühbirne"
   },
   "class": "light",
   "capabilities": [
+    "onoff",
     "dim",
     "light_hue",
     "light_saturation",
     "light_temperature",
-    "light_mode",
-    "onoff",
-    "measure_battery"
+    "light_mode"
   ],
   "energy": {
     "approximation": {

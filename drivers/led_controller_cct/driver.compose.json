@@ -13,6 +13,12 @@
     "light_mode",
     "measure_battery"
   ],
+  "energy": {
+    "approximation": {
+      "usageOn": 24,
+      "usageOff": 0.5
+    }
+  },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_OBACBUKL",

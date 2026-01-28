@@ -1,27 +1,25 @@
 {
   "name": {
-    "en": "Ceiling Fan",
-    "fr": "Ceiling Fan",
-    "nl": "Plafondventilator",
-    "de": "Deckenventilator"
+    "en": "Ceiling Fan Controller",
+    "fr": "Contrôleur Ventilateur Plafond",
+    "nl": "Plafondventilator Controller",
+    "de": "Deckenventilator Steuerung"
   },
   "class": "fan",
   "capabilities": [
-    "dim",
-    "measure_battery",
     "onoff",
+    "dim",
     "fan_speed"
   ],
+  "capabilitiesOptions": {
+    "dim": {
+      "title": { "en": "Fan Speed", "fr": "Vitesse", "nl": "Ventilatorsnelheid", "de": "Lüftergeschwindigkeit" }
+    }
+  },
   "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A"
-    ],
     "approximation": {
-      "usageConstant": 0.5
+      "usageOn": 65,
+      "usageOff": 1
     }
   },
   "zigbee": {

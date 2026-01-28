@@ -690,6 +690,11 @@ const SENSOR_CONFIGS = {
   'ZG_204ZV_MULTISENSOR': {
     sensors: [
       '_TZE200_3towulqd', '_TZE204_3towulqd', '_tze200_3towulqd',
+      // v5.5.914: shaarkys fork - additional ZG-204ZV fingerprints
+      '_TZE200_rhgsbacq', '_TZE204_rhgsbacq',
+      '_TZE200_grgol3xp', '_TZE204_grgol3xp',
+      '_TZE200_uli8wasj', '_TZE204_uli8wasj',
+      '_TZE200_y8jijhba', '_TZE204_y8jijhba',
       'HOBEIAN',  // v5.5.841: Added for direct HOBEIAN ZG-204ZV matching
     ],
     modelId: 'ZG-204ZV',  // v5.5.841: Explicit modelId for HOBEIAN routing
@@ -707,6 +712,12 @@ const SENSOR_CONFIGS = {
       // v5.5.841: SOS button (Peter_van_Werkhoven diagnostic - DP17 or DP18 typical for SOS)
       17: { cap: 'alarm_generic', type: 'bool', flowTrigger: 'sos_pressed' },
       18: { cap: 'alarm_generic', type: 'bool', flowTrigger: 'sos_pressed' },
+      // v5.5.914: shaarkys fork - alternate DP mappings for ZG-204ZV Type H variant
+      // Some devices use DP101/106/110/111 instead of DP3/4/9/10
+      101: { cap: 'measure_humidity', divisor: 1 },
+      106: { cap: 'measure_luminance', type: 'lux_direct' },
+      110: { cap: 'measure_battery', divisor: 1 },
+      111: { cap: 'measure_temperature', divisor: 10 },
     }
   },
 
@@ -1971,14 +1982,33 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       }
     }
 
-    // Ensure required capabilities
-    for (const cap of ['measure_distance', 'measure_luminance']) {
-      if (!this.hasCapability(cap)) {
-        try {
-          await this.addCapability(cap);
-          this.log(`[RADAR] ✅ Added ${cap} capability`);
-        } catch (e) { /* ignore */ }
-      }
+    // v5.5.903: CAPABILITY MANAGEMENT - Add/remove based on device config
+    // Z2M research: ZG-204ZV does NOT have measure_distance (static_detection_distance is a SETTING, not measurement)
+    const hasDistanceDP = config.dpMap && Object.values(config.dpMap).some(dp => dp.cap === 'measure_distance');
+    const hasLuxDP = config.hasIlluminance || (config.dpMap && Object.values(config.dpMap).some(dp => dp.cap === 'measure_luminance'));
+    
+    // Add capabilities that ARE supported
+    if (hasLuxDP && !this.hasCapability('measure_luminance')) {
+      try {
+        await this.addCapability('measure_luminance');
+        this.log('[RADAR] ✅ Added measure_luminance (config supports it)');
+      } catch (e) { /* ignore */ }
+    }
+    
+    if (hasDistanceDP && !this.hasCapability('measure_distance')) {
+      try {
+        await this.addCapability('measure_distance');
+        this.log('[RADAR] ✅ Added measure_distance (config supports it)');
+      } catch (e) { /* ignore */ }
+    }
+    
+    // v5.5.903: REMOVE orphan capabilities that are NOT supported by this device
+    // Fixes Peter's ZG-204ZV showing "Distance" from previous pairing
+    if (!hasDistanceDP && this.hasCapability('measure_distance')) {
+      try {
+        await this.removeCapability('measure_distance');
+        this.log('[RADAR] 🧹 Removed orphan measure_distance (not supported by this sensor)');
+      } catch (e) { /* ignore */ }
     }
 
     // v5.5.852: ADD temperature/humidity for sensors that support them (ZG-204ZV fix)
@@ -1993,6 +2023,29 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       try {
         await this.addCapability('measure_humidity');
         this.log('[RADAR] 💧 Added measure_humidity (sensor supports it)');
+      } catch (e) { /* ignore */ }
+    }
+    
+    // v5.5.903: Remove orphan temp/humidity if config says device doesn't have them
+    if (config.noTemperature && this.hasCapability('measure_temperature')) {
+      try {
+        await this.removeCapability('measure_temperature');
+        this.log('[RADAR] 🧹 Removed orphan measure_temperature (not supported)');
+      } catch (e) { /* ignore */ }
+    }
+    if (config.noHumidity && this.hasCapability('measure_humidity')) {
+      try {
+        await this.removeCapability('measure_humidity');
+        this.log('[RADAR] 🧹 Removed orphan measure_humidity (not supported)');
+      } catch (e) { /* ignore */ }
+    }
+
+    // v5.5.907: ADD battery capability for sensors with battery DP (Peter ZG-204ZV fix)
+    const hasBatteryDP = config.dpMap && Object.values(config.dpMap).some(dp => dp.cap === 'measure_battery');
+    if ((config.battery || hasBatteryDP) && !config.noBatteryCapability && !this.hasCapability('measure_battery')) {
+      try {
+        await this.addCapability('measure_battery');
+        this.log('[RADAR] 🔋 Added measure_battery (sensor supports it)');
       } catch (e) { /* ignore */ }
     }
 
@@ -2377,16 +2430,17 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   }
 
   /**
-   * v5.5.357: RONNY FORUM FIX - Ultra throttle motion spam
+   * v5.5.902: FORUM FIX - Enhanced stuck detection for motion spam
    * _TZE284_iadro9bf sends motion=YES every 20s even without presence
-   * Solution: Max 1 motion update per 60 seconds if no real change
+   * v5.5.357: Original throttle + v5.5.902: Stuck pattern detection
+   * Solution: If device is stuck sending same value, use distance-based inference instead
    */
   _throttleMotionSpam(presence, dpId) {
     const config = this._getSensorConfig();
     const mfr = this.getData()?.manufacturerName || '';
 
     // Only apply to problematic sensors
-    if (!mfr.includes('iadro9bf')) {
+    if (!mfr.includes('iadro9bf') && !mfr.includes('qasjif9e')) {
       return presence;
     }
 
@@ -2394,10 +2448,35 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     this._motionThrottle = this._motionThrottle || {
       lastUpdate: 0,
       lastValue: null,
-      spamCount: 0
+      spamCount: 0,
+      consecutiveSame: 0,  // v5.5.902: Track consecutive same values
+      stuckMode: false     // v5.5.902: Device is stuck - use inference only
     };
 
     const timeSinceLastUpdate = now - this._motionThrottle.lastUpdate;
+
+    // v5.5.902: STUCK PATTERN DETECTION
+    // If we receive the same value 5+ times in a row, device is likely stuck
+    if (presence === this._motionThrottle.lastValue) {
+      this._motionThrottle.consecutiveSame++;
+      if (this._motionThrottle.consecutiveSame >= 5 && !this._motionThrottle.stuckMode) {
+        this._motionThrottle.stuckMode = true;
+        this.log(`[RADAR] ⚠️ STUCK MODE ACTIVATED: ${this._motionThrottle.consecutiveSame} consecutive ${presence} values - using distance inference only`);
+      }
+    } else {
+      // Value changed - reset stuck detection
+      if (this._motionThrottle.stuckMode) {
+        this.log(`[RADAR] ✅ STUCK MODE CLEARED: value changed from ${this._motionThrottle.lastValue} to ${presence}`);
+      }
+      this._motionThrottle.consecutiveSame = 0;
+      this._motionThrottle.stuckMode = false;
+    }
+
+    // v5.5.902: In stuck mode, ignore DP1 completely - use distance inference only
+    if (this._motionThrottle.stuckMode) {
+      this.log(`[RADAR] 🚫 DP${dpId} BLOCKED (stuck mode): using distance-based inference instead`);
+      return null;
+    }
 
     // v5.5.793: Use TIMING constant for throttle
     // If same value and within throttle window, block it
@@ -2541,6 +2620,39 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           this.setCapabilityValue('measure_luminance', parseFloat(Math.round(lux))).catch(() => { });
         });
         this.log('[RADAR] ✅ Illuminance cluster configured');
+      }
+    } catch (e) { /* ignore */ }
+
+    // v5.5.912: Temperature cluster (0x0402) - HOBEIAN ZG-204ZV with temp/humidity
+    // ZHA issue #4452: ZG-204ZV variant WITH temp/humidity has ZCL clusters 0x0402 + 0x0405
+    try {
+      const tempCluster = ep1.clusters?.msTemperatureMeasurement || ep1.clusters?.temperatureMeasurement;
+      if (tempCluster?.on) {
+        tempCluster.on('attr.measuredValue', (v) => {
+          // ZCL reports temperature in hundredths of °C (e.g., 2350 = 23.50°C)
+          const temp = v / 100;
+          if (temp > -40 && temp < 100) { // Sanity check
+            this.log(`[RADAR] 🌡️ ZCL Temperature: ${v} -> ${temp}°C`);
+            this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+          }
+        });
+        this.log('[RADAR] ✅ Temperature cluster (0x0402) configured - ZG-204ZV fix');
+      }
+    } catch (e) { /* ignore */ }
+
+    // v5.5.912: Humidity cluster (0x0405) - HOBEIAN ZG-204ZV with temp/humidity
+    try {
+      const humCluster = ep1.clusters?.msRelativeHumidity || ep1.clusters?.relativeHumidity;
+      if (humCluster?.on) {
+        humCluster.on('attr.measuredValue', (v) => {
+          // ZCL reports humidity in hundredths of % (e.g., 6500 = 65.00%)
+          const humidity = v / 100;
+          if (humidity >= 0 && humidity <= 100) { // Sanity check
+            this.log(`[RADAR] 💧 ZCL Humidity: ${v} -> ${humidity}%`);
+            this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
+          }
+        });
+        this.log('[RADAR] ✅ Humidity cluster (0x0405) configured - ZG-204ZV fix');
       }
     } catch (e) { /* ignore */ }
 

@@ -5,7 +5,7 @@
     "nl": "Rookmelder",
     "de": "Rauchmelder"
   },
-  "class": "sensor",
+  "class": "smokedetector",
   "capabilities": [
     "alarm_smoke",
     "measure_battery",

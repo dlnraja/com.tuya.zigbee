@@ -2,63 +2,77 @@
   "triggers": [
     {
       "id": "switch_3gang_gang1_turned_on",
-      "title": {
-        "en": "Gang 1 turned on",
-        "fr": "Gang 1 allumé",
-        "nl": "Gang 1 aangezet",
-        "de": "Gang 1 eingeschaltet"
-      },
-      "args": []
+      "highlight": true,
+      "title": { "en": "Gang 1 turned on", "fr": "Gang 1 allumé", "nl": "Gang 1 aangezet", "de": "Gang 1 eingeschaltet" },
+      "titleFormatted": { "en": "[[device]] gang 1 turned on", "fr": "[[device]] gang 1 allumé", "nl": "[[device]] gang 1 aangezet", "de": "[[device]] gang 1 eingeschaltet" },
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_3gang" }]
     },
     {
       "id": "switch_3gang_gang1_turned_off",
-      "title": {
-        "en": "Gang 1 turned off",
-        "fr": "Gang 1 éteint",
-        "nl": "Gang 1 uitgezet",
-        "de": "Gang 1 ausgeschaltet"
-      },
-      "args": []
+      "title": { "en": "Gang 1 turned off", "fr": "Gang 1 éteint", "nl": "Gang 1 uitgezet", "de": "Gang 1 ausgeschaltet" },
+      "titleFormatted": { "en": "[[device]] gang 1 turned off", "fr": "[[device]] gang 1 éteint", "nl": "[[device]] gang 1 uitgezet", "de": "[[device]] gang 1 ausgeschaltet" },
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_3gang" }]
     },
     {
       "id": "switch_3gang_gang2_turned_on",
-      "title": {
-        "en": "Gang 2 turned on",
-        "fr": "Gang 2 allumé",
-        "nl": "Gang 2 aangezet",
-        "de": "Gang 2 eingeschaltet"
-      },
-      "args": []
+      "title": { "en": "Gang 2 turned on", "fr": "Gang 2 allumé", "nl": "Gang 2 aangezet", "de": "Gang 2 eingeschaltet" },
+      "titleFormatted": { "en": "[[device]] gang 2 turned on", "fr": "[[device]] gang 2 allumé", "nl": "[[device]] gang 2 aangezet", "de": "[[device]] gang 2 eingeschaltet" },
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_3gang" }]
     },
     {
       "id": "switch_3gang_gang2_turned_off",
-      "title": {
-        "en": "Gang 2 turned off",
-        "fr": "Gang 2 éteint",
-        "nl": "Gang 2 uitgezet",
-        "de": "Gang 2 ausgeschaltet"
-      },
-      "args": []
+      "title": { "en": "Gang 2 turned off", "fr": "Gang 2 éteint", "nl": "Gang 2 uitgezet", "de": "Gang 2 ausgeschaltet" },
+      "titleFormatted": { "en": "[[device]] gang 2 turned off", "fr": "[[device]] gang 2 éteint", "nl": "[[device]] gang 2 uitgezet", "de": "[[device]] gang 2 ausgeschaltet" },
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_3gang" }]
     },
     {
       "id": "switch_3gang_gang3_turned_on",
-      "title": {
-        "en": "Gang 3 turned on",
-        "fr": "Gang 3 allumé",
-        "nl": "Gang 3 aangezet",
-        "de": "Gang 3 eingeschaltet"
-      },
-      "args": []
+      "title": { "en": "Gang 3 turned on", "fr": "Gang 3 allumé", "nl": "Gang 3 aangezet", "de": "Gang 3 eingeschaltet" },
+      "titleFormatted": { "en": "[[device]] gang 3 turned on", "fr": "[[device]] gang 3 allumé", "nl": "[[device]] gang 3 aangezet", "de": "[[device]] gang 3 eingeschaltet" },
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_3gang" }]
     },
     {
       "id": "switch_3gang_gang3_turned_off",
-      "title": {
-        "en": "Gang 3 turned off",
-        "fr": "Gang 3 éteint",
-        "nl": "Gang 3 uitgezet",
-        "de": "Gang 3 ausgeschaltet"
-      },
-      "args": []
+      "title": { "en": "Gang 3 turned off", "fr": "Gang 3 éteint", "nl": "Gang 3 uitgezet", "de": "Gang 3 ausgeschaltet" },
+      "titleFormatted": { "en": "[[device]] gang 3 turned off", "fr": "[[device]] gang 3 éteint", "nl": "[[device]] gang 3 uitgezet", "de": "[[device]] gang 3 ausgeschaltet" },
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_3gang" }]
+    },
+    {
+      "id": "switch_3gang_physical_gang1_on",
+      "title": { "en": "Physical gang 1 ON", "fr": "Physique gang 1 ON", "nl": "Fysiek gang 1 AAN", "de": "Physisch gang 1 EIN" },
+      "titleFormatted": { "en": "[[device]] gang 1 on (physical)", "fr": "[[device]] gang 1 allumé (physique)", "nl": "[[device]] gang 1 aan (fysiek)", "de": "[[device]] gang 1 ein (physisch)" },
+      "hint": { "en": "Physical button turns ON gang 1", "fr": "Bouton physique allume gang 1", "nl": "Fysieke knop schakelt gang 1 in", "de": "Physische Taste schaltet gang 1 ein" },
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_3gang" }]
+    },
+    {
+      "id": "switch_3gang_physical_gang1_off",
+      "title": { "en": "Physical gang 1 OFF", "fr": "Physique gang 1 OFF", "nl": "Fysiek gang 1 UIT", "de": "Physisch gang 1 AUS" },
+      "titleFormatted": { "en": "[[device]] gang 1 off (physical)", "fr": "[[device]] gang 1 éteint (physique)", "nl": "[[device]] gang 1 uit (fysiek)", "de": "[[device]] gang 1 aus (physisch)" },
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_3gang" }]
+    },
+    {
+      "id": "switch_3gang_physical_gang2_on",
+      "title": { "en": "Physical gang 2 ON", "fr": "Physique gang 2 ON", "nl": "Fysiek gang 2 AAN", "de": "Physisch gang 2 EIN" },
+      "titleFormatted": { "en": "[[device]] gang 2 on (physical)", "fr": "[[device]] gang 2 allumé (physique)", "nl": "[[device]] gang 2 aan (fysiek)", "de": "[[device]] gang 2 ein (physisch)" },
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_3gang" }]
+    },
+    {
+      "id": "switch_3gang_physical_gang2_off",
+      "title": { "en": "Physical gang 2 OFF", "fr": "Physique gang 2 OFF", "nl": "Fysiek gang 2 UIT", "de": "Physisch gang 2 AUS" },
+      "titleFormatted": { "en": "[[device]] gang 2 off (physical)", "fr": "[[device]] gang 2 éteint (physique)", "nl": "[[device]] gang 2 uit (fysiek)", "de": "[[device]] gang 2 aus (physisch)" },
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_3gang" }]
+    },
+    {
+      "id": "switch_3gang_physical_gang3_on",
+      "title": { "en": "Physical gang 3 ON", "fr": "Physique gang 3 ON", "nl": "Fysiek gang 3 AAN", "de": "Physisch gang 3 EIN" },
+      "titleFormatted": { "en": "[[device]] gang 3 on (physical)", "fr": "[[device]] gang 3 allumé (physique)", "nl": "[[device]] gang 3 aan (fysiek)", "de": "[[device]] gang 3 ein (physisch)" },
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_3gang" }]
+    },
+    {
+      "id": "switch_3gang_physical_gang3_off",
+      "title": { "en": "Physical gang 3 OFF", "fr": "Physique gang 3 OFF", "nl": "Fysiek gang 3 UIT", "de": "Physisch gang 3 AUS" },
+      "titleFormatted": { "en": "[[device]] gang 3 off (physical)", "fr": "[[device]] gang 3 éteint (physique)", "nl": "[[device]] gang 3 uit (fysiek)", "de": "[[device]] gang 3 aus (physisch)" },
+      "args": [{ "type": "device", "name": "device", "filter": "driver_id=switch_3gang" }]
     }
   ],
   "conditions": [
