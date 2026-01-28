@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.937** | 🔧 CURTAIN MOTOR FIX v2: Fixed direct cluster DP communication fallback. Now ... |
 | **v5.5.936** | 🚀 MASSIVE FLOW CARD UPDATE: Added 153 missing flow cards (74 actions, 66 tri... |
 | **v5.5.935** | 🔧 CRITICAL FIXES: 1) CURTAIN MOTOR: Fixed 'tuya.datapoint: value is unexpect... |
 | **v5.5.934** | 🔧 FLOW CARD FIX: Added missing toggle_gang, turn_on_all, turn_off_all, and L... |
@@ -78,7 +79,6 @@
 | **v5.5.930** | 🔧 PETER FIX + LED CONTROL: 1) HOBEIAN Multisensor (ZG-204ZV) - added DP poll... |
 | **v5.5.929** | 🎯 SMART DISTANCE FIX (Peter): 1) Auto-detect distance divisor for OEM varian... |
 | **v5.5.928** | 🔄 DYNAMIC VARIANT DETECTION: Chinese manufacturers use same manufacturerName... |
-| **v5.5.927** | 📏 DISTANCE FIX (Peter_van_Werkhoven forum): Fixed radar sensor distance show... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
