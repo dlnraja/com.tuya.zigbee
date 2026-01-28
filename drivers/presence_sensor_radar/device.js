@@ -2372,10 +2372,50 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       return;
     }
 
-    // Only filter DPs that HybridSensorBase handles (battery, settings - NOT lux!)
-    const HYBRIDSENSOR_DPS = [2, 3, 4, 15]; // settings, battery only
-    if (HYBRIDSENSOR_DPS.includes(dpId)) {
-      // Let HybridSensorBase handle these
+    // v5.5.932: PETER FIX - Handle temperature/humidity DPs locally when config specifies
+    // HOBEIAN ZG-204ZV uses DP3=temp, DP4=humidity - must apply divisor correctly!
+    if (dpMap[dpId]?.cap === 'measure_temperature') {
+      const rawTemp = this._parseBufferValue(data.value || data.data);
+      const divisor = dpMap[dpId].divisor || 10;
+      const temp = Math.round((rawTemp / divisor) * 10) / 10;
+      if (temp >= -40 && temp <= 80) {
+        this.log(`[RADAR] 🌡️ DP${dpId} → temperature = ${temp}°C (raw: ${rawTemp}, ÷${divisor})`);
+        this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+      } else {
+        this.log(`[RADAR] ⚠️ DP${dpId} temperature out of range: ${temp}°C (raw: ${rawTemp})`);
+      }
+      return;
+    }
+
+    if (dpMap[dpId]?.cap === 'measure_humidity') {
+      const rawHumid = this._parseBufferValue(data.value || data.data);
+      const divisor = dpMap[dpId].divisor || 1;
+      const humidity = Math.round(rawHumid / divisor);
+      if (humidity >= 0 && humidity <= 100) {
+        this.log(`[RADAR] 💧 DP${dpId} → humidity = ${humidity}% (raw: ${rawHumid}, ÷${divisor})`);
+        this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
+      } else {
+        this.log(`[RADAR] ⚠️ DP${dpId} humidity out of range: ${humidity}% (raw: ${rawHumid})`);
+      }
+      return;
+    }
+
+    // v5.5.932: Handle battery DPs locally when config specifies
+    if (dpMap[dpId]?.cap === 'measure_battery') {
+      const rawBatt = this._parseBufferValue(data.value || data.data);
+      const divisor = dpMap[dpId].divisor || 1;
+      const battery = Math.round(rawBatt / divisor);
+      if (battery >= 0 && battery <= 100) {
+        this.log(`[RADAR] 🔋 DP${dpId} → battery = ${battery}%`);
+        this.setCapabilityValue('measure_battery', battery).catch(() => { });
+      }
+      return;
+    }
+
+    // Only filter DPs that HybridSensorBase handles for settings (NOT capabilities!)
+    const HYBRIDSENSOR_SETTINGS_DPS = [2, 15]; // settings only, NOT temp/humidity/battery
+    if (HYBRIDSENSOR_SETTINGS_DPS.includes(dpId) && !dpMap[dpId]?.cap) {
+      // Let HybridSensorBase handle settings DPs only
       return;
     }
 
