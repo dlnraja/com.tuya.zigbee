@@ -1,11 +1,11 @@
 {
   "name": {
-    "en": "SOS Emergency Button",
-    "fr": "Bouton d'Urgence SOS",
+    "en": "Sos Emergency Button",
+    "fr": "Sos Emergency Button",
     "nl": "SOS Noodknop",
     "de": "SOS Notfalltaste"
   },
-  "class": "button",
+  "class": "sensor",
   "capabilities": [
     "alarm_generic",
     "measure_battery"
@@ -14,21 +14,15 @@
     "alarm_generic": {
       "title": {
         "en": "SOS Alert",
-        "fr": "Alerte SOS",
-        "nl": "SOS Alarm",
-        "de": "SOS Alarm"
+        "fr": "Alerte SOS"
       },
       "insightsTitleTrue": {
         "en": "SOS pressed",
-        "fr": "SOS appuyé",
-        "nl": "SOS ingedrukt",
-        "de": "SOS gedrückt"
+        "fr": "SOS appuyé"
       },
       "insightsTitleFalse": {
         "en": "SOS reset",
-        "fr": "SOS réinitialisé",
-        "nl": "SOS gereset",
-        "de": "SOS zurückgesetzt"
+        "fr": "SOS réinitialisé"
       }
     }
   },

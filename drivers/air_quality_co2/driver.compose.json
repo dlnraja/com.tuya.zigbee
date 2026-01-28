@@ -1,7 +1,7 @@
 {
   "name": {
-    "en": "Air Quality / CO2 Sensor",
-    "fr": "Capteur Qualité Air / CO2",
+    "en": "Zigbee Air Quality / CO2 Sensor",
+    "fr": "Capteur qualité air / CO2 Zigbee",
     "nl": "CO2 Luchtkwaliteit Sensor",
     "de": "CO2 Luftqualitätssensor"
   },
@@ -18,18 +18,14 @@
     "measure_co2": {
       "title": {
         "en": "CO2 Level",
-        "fr": "Niveau CO2",
-        "nl": "CO2 Niveau",
-        "de": "CO2 Niveau"
+        "fr": "Niveau CO2"
       },
       "units": "ppm"
     },
     "alarm_generic": {
       "title": {
         "en": "CO2 Alert",
-        "fr": "Alerte CO2",
-        "nl": "CO2 Alarm",
-        "de": "CO2 Alarm"
+        "fr": "Alerte CO2"
       }
     }
   },

@@ -11,12 +11,6 @@
     "da": "DIN-skinne Kontakt"
   },
   "class": "socket",
-  "energy": {
-    "approximation": {
-      "usageOn": 10,
-      "usageOff": 1
-    }
-  },
   "capabilities": [
     "onoff",
     "measure_power",
@@ -28,18 +22,14 @@
     "measure_power": {
       "title": {
         "en": "Power",
-        "fr": "Puissance",
-        "nl": "Vermogen",
-        "de": "Leistung"
+        "fr": "Puissance"
       },
       "units": "W"
     },
     "meter_power": {
       "title": {
         "en": "Energy",
-        "fr": "Énergie",
-        "nl": "Energie",
-        "de": "Energie"
+        "fr": "Énergie"
       },
       "units": "kWh"
     }

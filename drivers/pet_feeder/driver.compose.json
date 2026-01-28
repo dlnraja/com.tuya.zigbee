@@ -15,27 +15,17 @@
     "button.feed",
     "alarm_generic"
   ],
-  "energy": {
-    "approximation": {
-      "usageOn": 5,
-      "usageOff": 1
-    }
-  },
   "capabilitiesOptions": {
     "button.feed": {
       "title": {
         "en": "Feed Now",
-        "fr": "Distribuer",
-        "nl": "Voer Nu",
-        "de": "Jetzt Füttern"
+        "fr": "Distribuer"
       }
     },
     "alarm_generic": {
       "title": {
         "en": "Food Low",
-        "fr": "Niveau Bas",
-        "nl": "Voer Laag",
-        "de": "Futter Niedrig"
+        "fr": "Niveau Bas"
       }
     }
   },

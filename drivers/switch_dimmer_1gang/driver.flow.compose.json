@@ -14,13 +14,7 @@
         "en": "Triggered when the switch is turned on using the physical button",
         "nl": "Geactiveerd wanneer de schakelaar wordt aangezet met de fysieke knop"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=switch_dimmer_1gang"
-        }
-      ]
+      "args": []
     },
     {
       "id": "switch_dimmer_1gang_turned_off",
@@ -36,13 +30,7 @@
         "en": "Triggered when the switch is turned off using the physical button",
         "nl": "Geactiveerd wanneer de schakelaar wordt uitgezet met de fysieke knop"
       },
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=switch_dimmer_1gang"
-        }
-      ]
+      "args": []
     },
     {
       "id": "switch_dimmer_1gang_brightness_increased",
@@ -69,13 +57,7 @@
           "example": 0.5
         }
       ],
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=switch_dimmer_1gang"
-        }
-      ]
+      "args": []
     },
     {
       "id": "switch_dimmer_1gang_brightness_decreased",
@@ -102,13 +84,7 @@
           "example": 0.5
         }
       ],
-      "args": [
-        {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=switch_dimmer_1gang"
-        }
-      ]
+      "args": []
     }
   ]
 }

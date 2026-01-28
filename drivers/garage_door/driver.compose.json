@@ -15,27 +15,17 @@
     "garagedoor_closed",
     "alarm_contact"
   ],
-  "energy": {
-    "approximation": {
-      "usageOn": 150,
-      "usageOff": 2
-    }
-  },
   "capabilitiesOptions": {
     "garagedoor_closed": {
       "title": {
         "en": "Door Closed",
-        "fr": "Porte Fermée",
-        "nl": "Deur Gesloten",
-        "de": "Tür Geschlossen"
+        "fr": "Porte Fermée"
       }
     },
     "alarm_contact": {
       "title": {
         "en": "Door Open",
-        "fr": "Porte Ouverte",
-        "nl": "Deur Open",
-        "de": "Tür Offen"
+        "fr": "Porte Ouverte"
       }
     }
   },
