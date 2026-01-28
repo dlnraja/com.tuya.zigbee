@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.946** | 📝 Responded to all GitHub issues/PRs: Thanked @packetninja for BSEED contrib... |
 | **v5.5.945** | 📢 DIAGNOSTICS RESPONSE: Curtain motor 'value is unexpected property' was FIX... |
 | **v5.5.944** | 🔍 FULL AUDIT: Fixed flow card namespace violations - ir_blaster_, smart_knob... |
 | **v5.5.943** | 🔧 BUILD CLEANUP: Fixed missing titleFormatted warnings for switch_3gang and ... |
@@ -78,7 +79,6 @@
 | **v5.5.939** | 🔧 CURTAIN MOTOR FIX v3: Fixed datapoint() payload format. Now uses { data: c... |
 | **v5.5.938** | 🎉 PR #118 MERGED - HUGE THANKS TO @packetninja (Attilla de Groot)! New BSEED... |
 | **v5.5.937** | 🔧 CURTAIN MOTOR FIX v2: Fixed direct cluster DP communication fallback. Now ... |
-| **v5.5.936** | 🚀 MASSIVE FLOW CARD UPDATE: Added 153 missing flow cards (74 actions, 66 tri... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
