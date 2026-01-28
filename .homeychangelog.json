@@ -1,4 +1,7 @@
 {
+  "5.5.949": {
+    "en": "🧹 CLEANUP: Removed duplicate switch_dimmer_1gang driver as per @Attilla's suggestion - wall_dimmer_1gang_1way is the complete replacement with better backlight support (DP36/37)."
+  },
   "5.5.948": {
     "en": "🔧 PR #119 merged: @packetninja's flexible HybridSwitchBase refactor for wall_switch_1gang_1way driver. Shorter code, more maintainable, better BSEED support!"
   },
