@@ -1,4 +1,7 @@
 {
+  "5.5.933": {
+    "en": "🔧 CURTAIN MOTOR FIX: _TZE204_xu4a5rhj (Longsam mini m3) now correctly detected as TUYA_DP protocol instead of ZCL. Fixed protocol detection in HybridCoverBase to use cached manufacturer info from zclNode. RE-PAIR curtain motors after update for proper control!"
+  },
   "5.5.932": {
     "en": "🔧 FORUM FIXES: 1) PETER: HOBEIAN multisensor temp/humidity now shows correct values (DP3/4 divisor fix). 2) VITALII: Gas detector _TZE204_chbyv06x enhanced with full DP mappings (gas_value, self_test, preheat, alarm_time, ringtone). 3) presence_sensor_radar now handles temp/humidity/battery DPs locally with proper divisors. RE-PAIR sensors after update!"
   },
