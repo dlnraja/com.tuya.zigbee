@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "smart_knob_rotate_left",
+      "id": "smart_knob_rotary_rotate_left",
       "highlight": true,
       "title": {
         "en": "Rotated left",
@@ -27,7 +27,7 @@
       "args": []
     },
     {
-      "id": "smart_knob_rotate_right",
+      "id": "smart_knob_rotary_rotate_right",
       "highlight": true,
       "title": {
         "en": "Rotated right",
@@ -53,7 +53,7 @@
       "args": []
     },
     {
-      "id": "smart_knob_pressed",
+      "id": "smart_knob_rotary_pressed",
       "highlight": true,
       "title": {
         "en": "Button pressed",
@@ -79,7 +79,7 @@
       "args": []
     },
     {
-      "id": "smart_knob_single_press",
+      "id": "smart_knob_rotary_single_press",
       "title": {
         "en": "Single press",
         "fr": "Appui simple",
@@ -89,7 +89,7 @@
       "args": []
     },
     {
-      "id": "smart_knob_double_press",
+      "id": "smart_knob_rotary_double_press",
       "title": {
         "en": "Double press",
         "fr": "Double appui",
@@ -99,7 +99,7 @@
       "args": []
     },
     {
-      "id": "smart_knob_long_press",
+      "id": "smart_knob_rotary_long_press",
       "title": {
         "en": "Long press",
         "fr": "Appui long",
@@ -111,7 +111,7 @@
   ],
   "conditions": [
     {
-      "id": "smart_knob_brightness_above",
+      "id": "smart_knob_rotary_brightness_above",
       "title": {
         "en": "Brightness level is above...",
         "fr": "Niveau de luminosité supérieur à..."
@@ -137,3 +137,4 @@
   ],
   "actions": []
 }
+

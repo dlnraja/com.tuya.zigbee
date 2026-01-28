@@ -259,3 +259,4 @@ class IrBlasterDriver extends ZigBeeDriver {
 }
 
 module.exports = IrBlasterDriver;
+
