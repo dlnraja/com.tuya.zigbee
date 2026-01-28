@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.949",
+  "version": "5.5.950",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -46483,6 +46483,11 @@
           "Coswall",
           "Wallpad",
           "Miboxer",
+          "MiBoxer",
+          "MIBOXER",
+          "_TZB210_g01ie5wu",
+          "_TZB210_3dxbg9ks",
+          "_TZB210_zxbtub8r",
           "Zigbee2MQTT",
           "Konyks",
           "Enbrighten",
@@ -46497,7 +46502,10 @@
           "Monoprice"
         ],
         "productId": [
-          "TS0601_led"
+          "TS0601_led",
+          "TS0501B",
+          "TRI-C1ZR",
+          "TRI-K1ZR"
         ],
         "endpoints": {
           "1": {
@@ -75196,11 +75204,20 @@
           "_TZE204_nqqylykc",
           "_TZE200_p0gzbqct",
           "_TZE204_dcnsggvz",
-          "_TZE200_6fjev1mn"
+          "_TZE200_6fjev1mn",
+          "_TZB210_g01ie5wu",
+          "_TZB210_3dxbg9ks",
+          "_TZB210_zxbtub8r",
+          "MiBoxer",
+          "Miboxer",
+          "MIBOXER"
         ],
         "productId": [
           "TS0601",
-          "TS004F"
+          "TS004F",
+          "TS0501B",
+          "TRI-C1ZR",
+          "TRI-K1ZR"
         ],
         "endpoints": {
           "1": {

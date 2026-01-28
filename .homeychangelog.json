@@ -1,4 +1,7 @@
 {
+  "5.5.950": {
+    "en": "➕ NEW DEVICES: MiBoxer Zigbee rotary dimmers (TRI-C1ZR, TRI-K1ZR) now supported! Added _TZB210_g01ie5wu and other MiBoxer fingerprints to wall_dimmer_1gang_1way and led_controller_dimmable drivers."
+  },
   "5.5.949": {
     "en": "🧹 CLEANUP: Removed duplicate switch_dimmer_1gang driver as per @Attilla's suggestion - wall_dimmer_1gang_1way is the complete replacement with better backlight support (DP36/37)."
   },
