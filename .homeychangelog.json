@@ -1,4 +1,7 @@
 {
+  "5.5.934": {
+    "en": "🔧 FLOW CARD FIX: Added missing toggle_gang, turn_on_all, turn_off_all, and LED backlight flow cards for switch_wall_5-8gang drivers. These were in driver definitions but not composed into app.json."
+  },
   "5.5.933": {
     "en": "🔧 CURTAIN MOTOR FIX: _TZE204_xu4a5rhj (Longsam mini m3) now correctly detected as TUYA_DP protocol instead of ZCL. Fixed protocol detection in HybridCoverBase to use cached manufacturer info from zclNode. RE-PAIR curtain motors after update for proper control!"
   },
