@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.941** | 🙏 PR #118 COMPLETE FIX (@packetninja): Rewrote wall_switch_1gang_1way with P... |
 | **v5.5.940** | 🔧 PR #118 PROPER INTEGRATION (@packetninja): Separated BSEED switch support ... |
 | **v5.5.939** | 🔧 CURTAIN MOTOR FIX v3: Fixed datapoint() payload format. Now uses { data: c... |
 | **v5.5.938** | 🎉 PR #118 MERGED - HUGE THANKS TO @packetninja (Attilla de Groot)! New BSEED... |
@@ -78,7 +79,6 @@
 | **v5.5.934** | 🔧 FLOW CARD FIX: Added missing toggle_gang, turn_on_all, turn_off_all, and L... |
 | **v5.5.933** | 🔧 CURTAIN MOTOR FIX: _TZE204_xu4a5rhj (Longsam mini m3) now correctly detect... |
 | **v5.5.932** | 🔧 FORUM FIXES: 1) PETER: HOBEIAN multisensor temp/humidity now shows correct... |
-| **v5.5.931** | 🔧 FLOW CARD FIX + CREDITS: Unique flow card IDs for switch_wall_5-8gang. CRE... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
