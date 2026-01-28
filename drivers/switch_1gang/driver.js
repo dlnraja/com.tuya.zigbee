@@ -57,7 +57,40 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ switch_1gang_toggle');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 1-Gang switch flow cards registered (v5.5.906)');
+    // v5.5.930: ACTION: Set LED backlight mode
+    try {
+      this.homey.flow.getActionCard('switch_1gang_set_backlight')
+        .registerRunListener(async (args) => {
+          if (!args.device || !args.mode) return false;
+          await args.device.setBacklightMode(args.mode);
+          return true;
+        });
+      this.log('[FLOW] ✅ switch_1gang_set_backlight');
+    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+
+    // v5.5.930: ACTION: Set LED backlight color
+    try {
+      this.homey.flow.getActionCard('switch_1gang_set_backlight_color')
+        .registerRunListener(async (args) => {
+          if (!args.device || !args.state || !args.color) return false;
+          await args.device.setBacklightColor(args.state, args.color);
+          return true;
+        });
+      this.log('[FLOW] ✅ switch_1gang_set_backlight_color');
+    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+
+    // v5.5.930: ACTION: Set LED backlight brightness
+    try {
+      this.homey.flow.getActionCard('switch_1gang_set_backlight_brightness')
+        .registerRunListener(async (args) => {
+          if (!args.device || args.brightness === undefined) return false;
+          await args.device.setBacklightBrightness(args.brightness);
+          return true;
+        });
+      this.log('[FLOW] ✅ switch_1gang_set_backlight_brightness');
+    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+
+    this.log('[FLOW] 🎉 1-Gang switch flow cards registered (v5.5.930)');
   }
 }
 

@@ -51,7 +51,38 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
     });
 
-    this.log('[FLOW] 🎉 3-Gang switch flow cards registered');
+    // v5.5.930: LED backlight flow cards
+    try {
+      this.homey.flow.getActionCard('switch_3gang_set_backlight')
+        .registerRunListener(async (args) => {
+          if (!args.device || !args.mode) return false;
+          await args.device.setBacklightMode(args.mode);
+          return true;
+        });
+      this.log('[FLOW] ✅ switch_3gang_set_backlight');
+    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+
+    try {
+      this.homey.flow.getActionCard('switch_3gang_set_backlight_color')
+        .registerRunListener(async (args) => {
+          if (!args.device || !args.state || !args.color) return false;
+          await args.device.setBacklightColor(args.state, args.color);
+          return true;
+        });
+      this.log('[FLOW] ✅ switch_3gang_set_backlight_color');
+    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+
+    try {
+      this.homey.flow.getActionCard('switch_3gang_set_backlight_brightness')
+        .registerRunListener(async (args) => {
+          if (!args.device || args.brightness === undefined) return false;
+          await args.device.setBacklightBrightness(args.brightness);
+          return true;
+        });
+      this.log('[FLOW] ✅ switch_3gang_set_backlight_brightness');
+    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+
+    this.log('[FLOW] 🎉 3-Gang switch flow cards registered (v5.5.930)');
   }
 }
 

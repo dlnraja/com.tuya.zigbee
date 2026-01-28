@@ -509,14 +509,20 @@ class Button1GangDevice extends ButtonDevice {
    */
   async _setupOnOffBinding(zclNode) {
     const manufacturerName = this.getData()?.manufacturerName || '';
-    const isHobeian = manufacturerName.toUpperCase().includes('HOBEIAN');
+    const modelId = this.getData()?.productId || this.getData()?.modelId || '';
+    
+    // v5.5.929: HOBEIAN ZG-101ZL uses manufacturerName _TZ3000_ja5osu5g, NOT "HOBEIAN"
+    // Also check for ZG-101ZL model ID and TS004F with this manufacturer
+    const hobeianManufacturers = ['_TZ3000_ja5osu5g', '_tz3000_ja5osu5g', 'HOBEIAN'];
+    const isHobeian = hobeianManufacturers.some(m => manufacturerName.toLowerCase().includes(m.toLowerCase())) ||
+                      modelId.toUpperCase().includes('ZG-101ZL');
     
     if (!isHobeian) {
-      this.log('[BUTTON1-BIND] ℹ️ Not HOBEIAN device, skipping explicit binding');
+      this.log('[BUTTON1-BIND] ℹ️ Not HOBEIAN/ZG-101ZL device, skipping explicit binding');
       return;
     }
 
-    this.log('[BUTTON1-BIND] 🔗 HOBEIAN detected - setting up onOff binding for commands...');
+    this.log(`[BUTTON1-BIND] 🔗 HOBEIAN/ZG-101ZL detected (${manufacturerName}) - setting up onOff binding...`);
 
     try {
       const endpoint = zclNode?.endpoints?.[1];

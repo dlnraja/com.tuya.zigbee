@@ -49,9 +49,81 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
           });
         this.log(`[FLOW] ✅ switch_wall_5gang_turn_off_gang${gang}`);
       } catch (err) { this.log(`[FLOW] ⚠️ turn_off_gang${gang}: ${err.message}`); }
+
+      // v5.5.930: Toggle action
+      try {
+        this.homey.flow.getActionCard(`switch_wall_5gang_toggle_gang${gang}`)
+          .registerRunListener(async (args) => {
+            if (!args.device) return false;
+            const current = args.device.getCapabilityValue(capMap[gang]);
+            await args.device.setCapabilityValue(capMap[gang], !current);
+            return true;
+          });
+        this.log(`[FLOW] ✅ switch_wall_5gang_toggle_gang${gang}`);
+      } catch (err) { this.log(`[FLOW] ⚠️ toggle_gang${gang}: ${err.message}`); }
     });
 
-    this.log('[FLOW] 🎉 All 5-gang switch flow cards registered');
+    // v5.5.930: LED backlight flow cards
+    try {
+      this.homey.flow.getActionCard('switch_wall_5gang_set_backlight')
+        .registerRunListener(async (args) => {
+          if (!args.device || !args.mode) return false;
+          await args.device.setBacklightMode(args.mode);
+          return true;
+        });
+      this.log('[FLOW] ✅ switch_wall_5gang_set_backlight');
+    } catch (err) { this.log(`[FLOW] ⚠️ set_backlight: ${err.message}`); }
+
+    try {
+      this.homey.flow.getActionCard('switch_wall_5gang_set_backlight_color')
+        .registerRunListener(async (args) => {
+          if (!args.device || !args.state || !args.color) return false;
+          await args.device.setBacklightColor(args.state, args.color);
+          return true;
+        });
+      this.log('[FLOW] ✅ switch_wall_5gang_set_backlight_color');
+    } catch (err) { this.log(`[FLOW] ⚠️ set_backlight_color: ${err.message}`); }
+
+    try {
+      this.homey.flow.getActionCard('switch_wall_5gang_set_backlight_brightness')
+        .registerRunListener(async (args) => {
+          if (!args.device || args.brightness === undefined) return false;
+          await args.device.setBacklightBrightness(args.brightness);
+          return true;
+        });
+      this.log('[FLOW] ✅ switch_wall_5gang_set_backlight_brightness');
+    } catch (err) { this.log(`[FLOW] ⚠️ set_backlight_brightness: ${err.message}`); }
+
+    // v5.5.930: All on/off actions
+    try {
+      this.homey.flow.getActionCard('switch_wall_5gang_turn_on_all')
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          for (const cap of Object.values(capMap)) {
+            if (args.device.hasCapability(cap)) {
+              await args.device.setCapabilityValue(cap, true);
+            }
+          }
+          return true;
+        });
+      this.log('[FLOW] ✅ switch_wall_5gang_turn_on_all');
+    } catch (err) { this.log(`[FLOW] ⚠️ turn_on_all: ${err.message}`); }
+
+    try {
+      this.homey.flow.getActionCard('switch_wall_5gang_turn_off_all')
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          for (const cap of Object.values(capMap)) {
+            if (args.device.hasCapability(cap)) {
+              await args.device.setCapabilityValue(cap, false);
+            }
+          }
+          return true;
+        });
+      this.log('[FLOW] ✅ switch_wall_5gang_turn_off_all');
+    } catch (err) { this.log(`[FLOW] ⚠️ turn_off_all: ${err.message}`); }
+
+    this.log('[FLOW] 🎉 All 5-gang switch flow cards registered (v5.5.930)');
   }
 }
 
