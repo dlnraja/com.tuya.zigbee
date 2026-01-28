@@ -1,4 +1,7 @@
 {
+  "5.5.946": {
+    "en": "📝 Responded to all GitHub issues/PRs: Thanked @packetninja for BSEED contributions, helped @DVMasters with TS0043 LoraTap 3-button remote (already supported in button_wireless_3 driver). All 0 open PRs/issues - app is stable!"
+  },
   "5.5.945": {
     "en": "📢 DIAGNOSTICS RESPONSE: Curtain motor 'value is unexpected property' was FIXED in v5.5.939. Users on v5.5.934 or earlier: please UPDATE to latest version! UFO-R11 IR remote (_TZ3290_ot6ewjvmejq5ekhl/TS1201) already supported in ir_blaster driver. MOES button _TZ3000_zgyzgdua has cluster 0xE000 detection in place."
   },
