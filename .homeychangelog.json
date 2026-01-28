@@ -1,4 +1,7 @@
 {
+  "5.5.942": {
+    "en": "🔧 FORUM FIXES: Added all case variants for BSEED fingerprints (wall_switch_1gang_1way) - fixes 'unknown zigbee' for Pieter_Pessers. For ManuelKugler's TRV _TZE284_o3x45p96: Use 'Radiator Valve' driver (not thermostat_tuya_dp) - it has ME167 profile with correct DP4/DP5 mappings for target/actual temp."
+  },
   "5.5.941": {
     "en": "🙏 PR #118 COMPLETE FIX (@packetninja): Rewrote wall_switch_1gang_1way with PURE ZCL-only implementation for BSEED devices. These devices don't use Tuya DP - they need standard ZCL onOff cluster. Features: ✅ Pure ZCL onOff control ✅ Physical button detection via attr.onOff reports ✅ Flow cards for physical on/off ✅ LED backlight via settings. HUGE thanks to @packetninja for patience and contributions!"
   },
