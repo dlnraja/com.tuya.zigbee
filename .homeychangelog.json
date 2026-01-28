@@ -1,4 +1,7 @@
 {
+  "5.5.937": {
+    "en": "🔧 CURTAIN MOTOR FIX v2: Fixed direct cluster DP communication fallback. Now uses correct tuyaCluster.datapoint({dp, datatype, data}) format instead of broken dataRequest/setData methods. This fixes 'tuya.datapoint: value is unexpected property' errors when TuyaEF00Manager is unavailable. RE-PAIR curtain motors if controls still don't work!"
+  },
   "5.5.936": {
     "en": "🚀 MASSIVE FLOW CARD UPDATE: Added 153 missing flow cards (74 actions, 66 triggers, 13 conditions). Now complete for: air_purifier, curtain_motor, dimmer_3gang, din_rail_switch, fan_controller, humidifier, ir_blaster, led_controller, plug_smart, scene_switch, thermostat, water_tank_monitor, and more!"
   },
