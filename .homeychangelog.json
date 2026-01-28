@@ -1,4 +1,7 @@
 {
+  "5.5.936": {
+    "en": "🚀 MASSIVE FLOW CARD UPDATE: Added 153 missing flow cards (74 actions, 66 triggers, 13 conditions). Now complete for: air_purifier, curtain_motor, dimmer_3gang, din_rail_switch, fan_controller, humidifier, ir_blaster, led_controller, plug_smart, scene_switch, thermostat, water_tank_monitor, and more!"
+  },
   "5.5.935": {
     "en": "🔧 CRITICAL FIXES: 1) CURTAIN MOTOR: Fixed 'tuya.datapoint: value is unexpected' error - removed broken _sendTuyaDP override, now uses parent HybridCoverBase correctly. 2) FLOW CARDS: Added missing switch_3gang and switch_4gang LED backlight flow cards (set_backlight, set_backlight_color, set_backlight_brightness). RE-PAIR curtain motors if controls don't work!"
   },
