@@ -220,6 +220,13 @@
         "de": "Gang 4 ausschalten"
       },
       "args": []
+    },
+    {
+      "id": "switch_4gang_set_backlight",
+      "title": { "en": "Set LED backlight mode", "fr": "Définir le mode rétroéclairage LED", "nl": "LED achtergrondverlichting instellen", "de": "LED-Hintergrundbeleuchtung einstellen" },
+      "titleFormatted": { "en": "Set LED backlight to [[mode]]", "fr": "Définir le rétroéclairage sur [[mode]]", "nl": "Stel LED achtergrondverlichting in op [[mode]]", "de": "LED-Hintergrundbeleuchtung auf [[mode]] setzen" },
+      "hint": { "en": "Control the switch LED indicator (requires Tuya DP15 support)", "fr": "Contrôle l'indicateur LED (nécessite Tuya DP15)", "nl": "Beheer de schakelaar LED indicator (vereist Tuya DP15)", "de": "Steuert die Schalter-LED-Anzeige (erfordert Tuya DP15)" },
+      "args": [{ "type": "dropdown", "name": "mode", "title": { "en": "Mode", "fr": "Mode", "nl": "Modus", "de": "Modus" }, "values": [{ "id": "off", "label": { "en": "Off", "fr": "Éteint", "nl": "Uit", "de": "Aus" } }, { "id": "normal", "label": { "en": "Normal (LED when ON)", "fr": "Normal (LED quand allumé)", "nl": "Normaal (LED bij AAN)", "de": "Normal (LED bei EIN)" } }, { "id": "inverted", "label": { "en": "Inverted (LED when OFF)", "fr": "Inversé (LED quand éteint)", "nl": "Omgekeerd (LED bij UIT)", "de": "Invertiert (LED bei AUS)" } }] }]
     }
   ]
 }

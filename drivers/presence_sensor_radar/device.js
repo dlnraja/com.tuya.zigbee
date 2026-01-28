@@ -392,16 +392,18 @@ class IntelligentDPAutoDiscovery {
     const minValue = Math.min(...numericSamples);
     const range = maxValue - minValue;
 
+    // v5.5.927: Fixed distance divisor detection (Peter_van_Werkhoven forum)
+    // Z2M/Hubitat research: ALL radar sensors use scale 100 (cm to meters)
+    // Only specific sensors (_TZE204_gkfbdvyx ceiling radar) use scale 10 (dm to meters)
     const isDistancePattern =
-      (dpId === 9 || dpId === 109 || dpId === 101) &&
+      (dpId === 9 || dpId === 109 || dpId === 119 || dpId === 19) &&
       avgValue >= 0 && avgValue <= 1000 &&
       range < 500;  // Distance shouldn't jump wildly
 
     if (isDistancePattern) {
-      // Detect divisor: if max > 100, probably cm (÷100), else dm (÷10) or m (÷1)
+      // v5.5.927: Default to 100 (cm to m) - Z2M/Hubitat standard
+      // Most sensors report in centimeters: 150 = 1.5m
       let divisor = 100;
-      if (maxValue <= 100) divisor = 10;
-      if (maxValue <= 10) divisor = 1;
 
       dpInfo.inferredType = 'distance';
       dpInfo.inferredCapability = 'measure_distance';
@@ -472,6 +474,51 @@ class IntelligentDPAutoDiscovery {
       dpInfo.confidence = 65;
       this.device?.log?.(`[AUTO-DISCOVERY] 📐 DP${dpId} → RANGE SETTING`);
       return;
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // v5.5.929: PATTERN 7: TEMPERATURE (OEM variants with temp sensor)
+    // DP3 or DP111 typically used, value 150-350 (÷10 = 15-35°C)
+    // ─────────────────────────────────────────────────────────────────────────
+    const isTempPattern =
+      (dpId === 3 || dpId === 111 || dpId === 18) &&
+      avgValue >= 100 && avgValue <= 500 &&  // 10-50°C when ÷10
+      range < 50;
+
+    if (isTempPattern && !dpInfo.inferredCapability) {
+      dpInfo.inferredType = 'temperature';
+      dpInfo.inferredCapability = 'measure_temperature';
+      dpInfo.divisor = 10;
+      dpInfo.confidence = 75;
+      this.device?.log?.(`[AUTO-DISCOVERY] 🌡️ DP${dpId} → TEMPERATURE (÷10)`);
+      return;
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // v5.5.929: PATTERN 8: HUMIDITY (OEM variants with humidity sensor)
+    // DP4 or DP101 typically used, value 0-100 (direct %)
+    // ─────────────────────────────────────────────────────────────────────────
+    const isHumidityPattern =
+      (dpId === 4 || dpId === 101) &&
+      avgValue >= 0 && avgValue <= 100 &&
+      range < 30 &&
+      !dpInfo.inferredCapability;  // Don't override battery detection
+
+    // Distinguish from battery by checking if device already has humidity capability hint
+    if (isHumidityPattern && dpId !== 15) {
+      // DP4 could be humidity OR battery - check context
+      const hasMotionDP = this.discoveredDPs.has(1);
+      const hasTempDP = this.discoveredDPs.has(3) || this.discoveredDPs.has(111);
+      
+      if (hasTempDP && dpId === 4) {
+        // If we have temp, DP4 is likely humidity (multi-sensor)
+        dpInfo.inferredType = 'humidity';
+        dpInfo.inferredCapability = 'measure_humidity';
+        dpInfo.divisor = 1;
+        dpInfo.confidence = 70;
+        this.device?.log?.(`[AUTO-DISCOVERY] 💧 DP${dpId} → HUMIDITY (multi-sensor)`);
+        return;
+      }
     }
 
     // Unknown pattern - log for diagnostics
@@ -556,6 +603,14 @@ class IntelligentDPAutoDiscovery {
         break;
       case 'battery':
         value = Math.max(0, Math.min(100, rawValue));
+        break;
+      // v5.5.929: OEM variant support for temp/humidity
+      case 'temperature':
+        value = rawValue / (info.divisor || 10);
+        value = Math.round(value * 10) / 10;
+        break;
+      case 'humidity':
+        value = Math.max(0, Math.min(100, rawValue / (info.divisor || 1)));
         break;
     }
 
@@ -661,8 +716,9 @@ const SENSOR_CONFIGS = {
       3: { cap: null, internal: 'detection_distance_min', divisor: 100 },  // cm -> m
       4: { cap: null, internal: 'detection_distance_max', divisor: 100 },  // cm -> m
 
-      // v5.5.325: DISTANCE - DP9 primary, ×0.1 = dm to meters
-      9: { cap: 'measure_distance', divisor: 10 },
+      // v5.5.927: DISTANCE - DP9, ×0.01 = cm to meters (Hubitat research confirms scale: 100)
+      // v5.5.325 used divisor 10 but Hubitat deviceProfilesV4 shows scale: 100 for most sensors
+      9: { cap: 'measure_distance', divisor: 100 },
 
       // v5.5.325: MORE SETTINGS
       101: { cap: null, internal: 'distance_tracking' },     // switch
@@ -1648,27 +1704,73 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   return lux;
 }
 
-// v5.5.283: Enhanced distance transformation with debug logging
-// Ronny report: DP9 distance "not responding" on _TZE284_iadro9bf
-function transformDistance(value, divisor = 100, manufacturerName = '') {
-  const originalValue = value;
-  let distance = value / divisor;
+// v5.5.929: SMART DISTANCE TRANSFORMATION with auto-divisor detection
+// Peter_van_Werkhoven fix: Value 8 instead of 1.5m - wrong divisor detection
+// Z2M/Hubitat research: ALL radar sensors use scale 100 (cm to meters)
+// OEM variants may report in different units - auto-detect and correct
+const distanceDivisorCache = new Map(); // Cache learned divisors per device
 
-  // v5.5.793: Enhanced validation using constants
+function transformDistance(value, divisor = 100, manufacturerName = '', deviceId = '') {
+  const originalValue = value;
+  const cacheKey = `${manufacturerName}_${deviceId}`;
+  
+  // v5.5.929: Validate input
   if (typeof value !== 'number' || isNaN(value) || value < 0) {
-    console.log(`[DISTANCE-FIX] ⚠️ Invalid distance value for ${manufacturerName}: ${originalValue} (type: ${typeof value})`);
-    return null;  // Don't update capability for invalid values
+    console.log(`[DISTANCE-FIX] ⚠️ Invalid distance value for ${manufacturerName}: ${originalValue}`);
+    return null;
   }
+
+  // v5.5.929: SMART DIVISOR DETECTION for OEM variants
+  // If raw value seems too high for meters but makes sense for cm, use 100
+  // If raw value seems right for dm (decimeters), use 10
+  // Z2M/Hubitat standard: most sensors report in cm (divisor 100)
+  let effectiveDivisor = divisor;
+  
+  // Check cached divisor first (learned from previous values)
+  if (distanceDivisorCache.has(cacheKey)) {
+    effectiveDivisor = distanceDivisorCache.get(cacheKey);
+  } else {
+    // v5.5.929: Auto-detect divisor based on value range
+    // Typical radar range is 0-10m, so valid values after conversion should be 0-10
+    const withDiv100 = value / 100;  // cm to m
+    const withDiv10 = value / 10;    // dm to m
+    const withDiv1 = value;          // already in m
+    
+    // If value/100 gives reasonable range (0-10m), use 100
+    if (withDiv100 >= 0 && withDiv100 <= 10) {
+      effectiveDivisor = 100;
+    }
+    // If value/10 gives reasonable range but /100 is too small (<0.1m), use 10
+    else if (withDiv10 >= 0.1 && withDiv10 <= 10 && withDiv100 < 0.1) {
+      effectiveDivisor = 10;
+    }
+    // If raw value is already in valid range (0-10), no division needed
+    else if (withDiv1 >= 0 && withDiv1 <= 10) {
+      effectiveDivisor = 1;
+    }
+    // Default to 100 (Z2M standard)
+    else {
+      effectiveDivisor = 100;
+    }
+    
+    // Cache the learned divisor for this device
+    if (effectiveDivisor !== divisor) {
+      console.log(`[DISTANCE-FIX] 🔧 Auto-detected divisor for ${manufacturerName}: ${divisor} → ${effectiveDivisor}`);
+      distanceDivisorCache.set(cacheKey, effectiveDivisor);
+    }
+  }
+
+  let distance = value / effectiveDivisor;
 
   // v5.5.793: Use validation constants for range check
   if (distance < VALIDATION.DISTANCE_MIN) distance = VALIDATION.DISTANCE_MIN;
   if (distance > VALIDATION.DISTANCE_MAX) {
-    console.log(`[DISTANCE-FIX] 📏 Distance over range for ${manufacturerName}: ${distance}m -> ${VALIDATION.DISTANCE_MAX}m (clamped)`);
+    console.log(`[DISTANCE-FIX] 📏 Distance clamped for ${manufacturerName}: ${distance}m -> ${VALIDATION.DISTANCE_MAX}m`);
     distance = VALIDATION.DISTANCE_MAX;
   }
 
   const result = Math.round(distance * 100) / 100; // 2 decimal places
-  console.log(`[DISTANCE-FIX] ✅ Distance for ${manufacturerName}: ${originalValue} (÷${divisor}) -> ${result}m`);
+  console.log(`[DISTANCE-FIX] ✅ ${manufacturerName}: ${originalValue} (÷${effectiveDivisor}) -> ${result}m`);
   return result;
 }
 
@@ -1825,11 +1927,12 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           transform: (v) => transformLux(v, dpConfig.type || 'lux_direct', mfr, this.getData()?.id),
         };
       } else if (dpConfig.cap === 'measure_distance') {
-        // Distance DP - use enhanced transform with manufacturerName and null handling
+        // v5.5.929: Distance DP - use smart transform with auto-divisor detection
+        const deviceId = this.getData()?.id || '';
         mappings[dp] = {
           capability: dpConfig.cap,
           transform: (v) => {
-            const result = transformDistance(v, dpConfig.divisor || 100, mfr);
+            const result = transformDistance(v, dpConfig.divisor || 100, mfr, deviceId);
             // v5.5.283: Skip capability update if transform returns null (invalid data)
             return result !== null ? result : undefined;
           },
@@ -2562,21 +2665,17 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   async _triggerPresenceFlows(detected) {
     try {
       if (detected) {
-        // Trigger: presence_detected
-        await this.homey.flow.getDeviceTriggerCard('presence_detected')
+        // v5.5.926: Fixed flow card IDs - must match driver.flow.compose.json
+        // Trigger: presence_sensor_radar_presence_detected
+        await this.homey.flow.getDeviceTriggerCard('presence_sensor_radar_presence_detected')
           .trigger(this).catch(() => { });
-        // Trigger: presence_someone_enters
-        await this.homey.flow.getDeviceTriggerCard('presence_someone_enters')
-          .trigger(this).catch(() => { });
-        this.log('[RADAR-FLOW] ✅ Triggered: presence_detected, presence_someone_enters');
+        this.log('[RADAR-FLOW] ✅ Triggered: presence_sensor_radar_presence_detected');
       } else {
-        // Trigger: presence_cleared
-        await this.homey.flow.getDeviceTriggerCard('presence_cleared')
+        // v5.5.926: Fixed flow card IDs - must match driver.flow.compose.json
+        // Trigger: presence_sensor_radar_presence_cleared
+        await this.homey.flow.getDeviceTriggerCard('presence_sensor_radar_presence_cleared')
           .trigger(this).catch(() => { });
-        // Trigger: presence_zone_empty
-        await this.homey.flow.getDeviceTriggerCard('presence_zone_empty')
-          .trigger(this).catch(() => { });
-        this.log('[RADAR-FLOW] ✅ Triggered: presence_cleared, presence_zone_empty');
+        this.log('[RADAR-FLOW] ✅ Triggered: presence_sensor_radar_presence_cleared');
       }
     } catch (err) {
       this.log('[RADAR-FLOW] ⚠️ Flow trigger error:', err.message);
@@ -3100,13 +3199,25 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           luxPollCounter = 0;
           if (config.hasIlluminance !== false) {
             this.log(`[RADAR] ☀️ Polling lux DPs...`);
-            // Try common lux DPs: 12, 102, 103, 104
-            const luxDPs = [12, 102, 103, 104];
+            // Try common lux DPs: 12, 102, 103, 104, 106
+            const luxDPs = [12, 102, 103, 104, 106];
             for (const dp of luxDPs) {
               if (config.dpMap?.[dp]?.cap === 'measure_luminance') {
                 await this._requestSpecificDP(zclNode, dp);
                 break; // Only poll first matching lux DP
               }
+            }
+          }
+          
+          // v5.5.930: Poll temp/humidity DPs for HOBEIAN 10G multi-sensors
+          if (config.hasTemperature || config.hasHumidity) {
+            this.log(`[RADAR] 🌡️ Polling temp/humidity DPs...`);
+            // DP101=humidity, DP111=temperature for HOBEIAN 10G
+            if (config.dpMap?.[101]?.cap === 'measure_humidity') {
+              await this._requestSpecificDP(zclNode, 101);
+            }
+            if (config.dpMap?.[111]?.cap === 'measure_temperature') {
+              await this._requestSpecificDP(zclNode, 111);
             }
           }
         }

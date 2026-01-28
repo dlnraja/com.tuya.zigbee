@@ -518,5 +518,101 @@
     "batteries": [
       "OTHER"
     ]
-  }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": { "en": "🇫🇷 French Pilot Wire (Fil Pilote)", "fr": "🇫🇷 Mode Fil Pilote", "nl": "🇫🇷 Frans Stuurdraad", "de": "🇫🇷 Französischer Steuerdraht" },
+      "children": [
+        {
+          "id": "fil_pilote_enabled",
+          "type": "checkbox",
+          "label": { "en": "Enable Pilot Wire Mode", "fr": "Activer Mode Fil Pilote", "nl": "Stuurdraad Modus Inschakelen", "de": "Steuerdraht-Modus Aktivieren" },
+          "value": false,
+          "hint": { "en": "Enable French heating pilot wire protocol (6 orders)", "fr": "Activer le protocole fil pilote français (6 ordres)" }
+        },
+        {
+          "id": "fil_pilote_mode",
+          "type": "dropdown",
+          "label": { "en": "Pilot Wire Order", "fr": "Ordre Fil Pilote", "nl": "Stuurdraad Order", "de": "Steuerdraht-Befehl" },
+          "value": "comfort",
+          "values": [
+            { "id": "comfort", "label": { "en": "Comfort (19-21°C)", "fr": "Confort (19-21°C)" } },
+            { "id": "comfort_minus_1", "label": { "en": "Comfort -1°C", "fr": "Confort -1°C" } },
+            { "id": "comfort_minus_2", "label": { "en": "Comfort -2°C", "fr": "Confort -2°C" } },
+            { "id": "eco", "label": { "en": "Eco (15-17°C)", "fr": "Éco (15-17°C)" } },
+            { "id": "frost_protection", "label": { "en": "Frost Protection (7°C)", "fr": "Hors-Gel (7°C)" } },
+            { "id": "off", "label": { "en": "Off (Arrêt)", "fr": "Arrêt" } }
+          ],
+          "hint": { "en": "French heating standard: 6 pilot wire orders", "fr": "Standard chauffage français: 6 ordres fil pilote" }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": { "en": "🌡️ Temperature Settings", "fr": "🌡️ Paramètres Température", "nl": "🌡️ Temperatuur Instellingen", "de": "🌡️ Temperatur Einstellungen" },
+      "children": [
+        {
+          "id": "temp_calibration",
+          "type": "number",
+          "label": { "en": "Temperature Calibration (°C)", "fr": "Calibration Température (°C)" },
+          "value": 0,
+          "min": -5,
+          "max": 5,
+          "step": 0.5,
+          "hint": { "en": "Offset to correct temperature reading", "fr": "Décalage pour corriger la lecture de température" }
+        },
+        {
+          "id": "min_temp",
+          "type": "number",
+          "label": { "en": "Minimum Temperature (°C)", "fr": "Température Minimum (°C)" },
+          "value": 5,
+          "min": 1,
+          "max": 15,
+          "step": 1,
+          "hint": { "en": "Lowest allowed target temperature", "fr": "Température cible la plus basse autorisée" }
+        },
+        {
+          "id": "max_temp",
+          "type": "number",
+          "label": { "en": "Maximum Temperature (°C)", "fr": "Température Maximum (°C)" },
+          "value": 35,
+          "min": 20,
+          "max": 40,
+          "step": 1,
+          "hint": { "en": "Highest allowed target temperature", "fr": "Température cible la plus haute autorisée" }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": { "en": "⚙️ Thermostat Behavior", "fr": "⚙️ Comportement Thermostat", "nl": "⚙️ Thermostaat Gedrag", "de": "⚙️ Thermostat Verhalten" },
+      "children": [
+        {
+          "id": "hysteresis",
+          "type": "number",
+          "label": { "en": "Hysteresis (°C)", "fr": "Hystérésis (°C)" },
+          "value": 0.5,
+          "min": 0.1,
+          "max": 3,
+          "step": 0.1,
+          "hint": { "en": "Temperature swing before heating turns on/off", "fr": "Écart de température avant activation/désactivation" }
+        },
+        {
+          "id": "window_detection",
+          "type": "checkbox",
+          "label": { "en": "Window Detection", "fr": "Détection Fenêtre Ouverte" },
+          "value": true,
+          "hint": { "en": "Auto pause heating when window open detected", "fr": "Pause automatique du chauffage si fenêtre ouverte détectée" }
+        },
+        {
+          "id": "child_lock",
+          "type": "checkbox",
+          "label": { "en": "Child Lock", "fr": "Verrouillage Enfant" },
+          "value": false,
+          "hint": { "en": "Lock physical controls on device", "fr": "Verrouiller les commandes physiques sur l'appareil" }
+        }
+      ]
+    }
+  ]
 }
