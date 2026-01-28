@@ -41,23 +41,8 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
           if (!args.device) return false;
           this.log(`Flow: Setting backlight mode to ${args.mode}`);
 
-          // Map string mode to enum value for Tuya DP15
-          const backlightValue = { off: 0, normal: 1, inverted: 2 }[args.mode] ?? 1;
-
-          // v5.5.941: Send via device's setBacklight method or direct Tuya DP
-          if (typeof args.device.setBacklight === 'function') {
-            await args.device.setBacklight(backlightValue);
-          } else {
-            // Direct Tuya DP15 for backlight
-            const ep = args.device.zclNode?.endpoints?.[1];
-            const tuyaCluster = ep?.clusters?.tuya || ep?.clusters?.[61184];
-            if (tuyaCluster?.datapoint) {
-              const cmd = Buffer.alloc(7);
-              cmd.writeUInt16BE(Math.floor(Math.random() * 65535), 0);
-              cmd[2] = 15; cmd[3] = 4; cmd.writeUInt16BE(1, 4); cmd[6] = backlightValue;
-              await tuyaCluster.datapoint({ data: cmd });
-            }
-          }
+          // Use HybridSwitchBase's setBacklightMode method
+          await args.device.setBacklightMode(args.mode);
 
           // Update the setting in Homey
           await args.device.setSettings({ backlight_mode: args.mode }).catch(() => {});
