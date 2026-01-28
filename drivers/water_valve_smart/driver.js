@@ -18,7 +18,7 @@ class WaterValveSmartDriver extends ZigBeeDriver {
     
     // CONDITION: Valve is open
     try {
-      this.homey.flow.getConditionCard('water_valve_is_open')
+      this.homey.flow.getConditionCard('water_valve_smart_is_open')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -28,7 +28,7 @@ class WaterValveSmartDriver extends ZigBeeDriver {
 
     // CONDITION: Leak detected (note: condition ID is water_valve_leak_detected, not leak_is_detected)
     try {
-      this.homey.flow.getConditionCard('water_valve_leak_detected')
+      this.homey.flow.getConditionCard('water_valve_smart_leak_detected')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_water') === true;
@@ -38,7 +38,7 @@ class WaterValveSmartDriver extends ZigBeeDriver {
 
     // CONDITION: Temperature above
     try {
-      this.homey.flow.getConditionCard('water_valve_temperature_above')
+      this.homey.flow.getConditionCard('water_valve_smart_temperature_above')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const temp = args.device.getCapabilityValue('measure_temperature') || 0;
@@ -49,7 +49,7 @@ class WaterValveSmartDriver extends ZigBeeDriver {
 
     // ACTION: Open valve
     try {
-      this.homey.flow.getActionCard('water_valve_open')
+      this.homey.flow.getActionCard('water_valve_smart_open')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setCapabilityValue('onoff', true);
@@ -60,7 +60,7 @@ class WaterValveSmartDriver extends ZigBeeDriver {
 
     // ACTION: Close valve
     try {
-      this.homey.flow.getActionCard('water_valve_close')
+      this.homey.flow.getActionCard('water_valve_smart_close')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setCapabilityValue('onoff', false);
@@ -71,7 +71,7 @@ class WaterValveSmartDriver extends ZigBeeDriver {
 
     // ACTION: Toggle valve
     try {
-      this.homey.flow.getActionCard('water_valve_toggle')
+      this.homey.flow.getActionCard('water_valve_smart_toggle')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
@@ -86,3 +86,4 @@ class WaterValveSmartDriver extends ZigBeeDriver {
 }
 
 module.exports = WaterValveSmartDriver;
+
