@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.935",
+  "version": "5.5.936",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -64036,6 +64036,1787 @@
             }
           }
         ]
+      },
+      {
+        "id": "fan_controller_speed_changed",
+        "title": {
+          "en": "Fan speed changed",
+          "fr": "Vitesse ventilateur modifiée",
+          "nl": "Ventilatorsnelheid gewijzigd",
+          "de": "Lüftergeschwindigkeit geändert"
+        },
+        "tokens": [
+          {
+            "name": "speed",
+            "type": "number",
+            "title": {
+              "en": "Speed",
+              "fr": "Vitesse"
+            },
+            "example": 50
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan_controller"
+          }
+        ]
+      },
+      {
+        "id": "fan_controller_turned_on",
+        "title": {
+          "en": "Fan turned on",
+          "fr": "Ventilateur allumé",
+          "nl": "Ventilator ingeschakeld",
+          "de": "Lüfter eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan_controller"
+          }
+        ]
+      },
+      {
+        "id": "fan_controller_turned_off",
+        "title": {
+          "en": "Fan turned off",
+          "fr": "Ventilateur éteint",
+          "nl": "Ventilator uitgeschakeld",
+          "de": "Lüfter ausgeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan_controller"
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_learning_started",
+        "title": {
+          "en": "IR Learning Started",
+          "nl": "IR Leren Gestart",
+          "de": "IR-Lernen Gestartet"
+        },
+        "titleFormatted": {
+          "en": "IR learning started with [[protocol]] protocol at [[frequency]]Hz for [[duration]]s",
+          "nl": "IR leren gestart met [[protocol]] protocol op [[frequency]]Hz voor [[duration]]s",
+          "de": "IR-Lernen gestartet mit [[protocol]] Protokoll bei [[frequency]]Hz für [[duration]]s"
+        },
+        "tokens": [
+          {
+            "name": "protocol",
+            "type": "string",
+            "title": {
+              "en": "Protocol",
+              "nl": "Protocol",
+              "de": "Protokoll"
+            }
+          },
+          {
+            "name": "frequency",
+            "type": "number",
+            "title": {
+              "en": "Frequency (Hz)",
+              "nl": "Frequentie (Hz)",
+              "de": "Frequenz (Hz)"
+            }
+          },
+          {
+            "name": "duration",
+            "type": "number",
+            "title": {
+              "en": "Duration (seconds)",
+              "nl": "Duur (seconden)",
+              "de": "Dauer (Sekunden)"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_learning_state_changed",
+        "title": {
+          "en": "IR Learning State Changed",
+          "nl": "IR Leer Status Gewijzigd",
+          "de": "IR-Lern Status Geändert"
+        },
+        "titleFormatted": {
+          "en": "IR learning state changed to [[state]]",
+          "nl": "IR leer status gewijzigd naar [[state]]",
+          "de": "IR-Lern Status geändert zu [[state]]"
+        },
+        "tokens": [
+          {
+            "name": "state",
+            "type": "string",
+            "title": {
+              "en": "Learning State",
+              "nl": "Leer Status",
+              "de": "Lern Status"
+            }
+          },
+          {
+            "name": "state_code",
+            "type": "number",
+            "title": {
+              "en": "State Code",
+              "nl": "Status Code",
+              "de": "Status Code"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_code_learned",
+        "title": {
+          "en": "IR Code Learned",
+          "nl": "IR Code Geleerd",
+          "de": "IR-Code Gelernt"
+        },
+        "titleFormatted": {
+          "en": "New IR code learned: [[ir_code]]",
+          "nl": "Nieuwe IR code geleerd: [[ir_code]]",
+          "de": "Neuer IR-Code gelernt: [[ir_code]]"
+        },
+        "tokens": [
+          {
+            "name": "ir_code",
+            "type": "string",
+            "title": {
+              "en": "IR Code",
+              "nl": "IR Code",
+              "de": "IR-Code"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_code_analyzed",
+        "title": {
+          "en": "IR Code Analyzed",
+          "nl": "IR Code Geanalyseerd",
+          "de": "IR-Code Analysiert"
+        },
+        "titleFormatted": {
+          "en": "IR code [[code_name]] analyzed: [[protocol]] protocol at [[frequency]]Hz ([[length]] bytes)",
+          "nl": "IR code [[code_name]] geanalyseerd: [[protocol]] protocol op [[frequency]]Hz ([[length]] bytes)",
+          "de": "IR-Code [[code_name]] analysiert: [[protocol]] Protokoll bei [[frequency]]Hz ([[length]] Bytes)"
+        },
+        "tokens": [
+          {
+            "name": "code_name",
+            "type": "string",
+            "title": {
+              "en": "Code Name",
+              "nl": "Code Naam",
+              "de": "Code Name"
+            }
+          },
+          {
+            "name": "protocol",
+            "type": "string",
+            "title": {
+              "en": "Detected Protocol",
+              "nl": "Gedetecteerd Protocol",
+              "de": "Erkanntes Protokoll"
+            }
+          },
+          {
+            "name": "frequency",
+            "type": "number",
+            "title": {
+              "en": "Carrier Frequency",
+              "nl": "Draaggolf Frequentie",
+              "de": "Trägerfrequenz"
+            }
+          },
+          {
+            "name": "length",
+            "type": "number",
+            "title": {
+              "en": "Code Length",
+              "nl": "Code Lengte",
+              "de": "Code Länge"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          }
+        ]
+      },
+      {
+        "id": "plug_smart_power_changed",
+        "title": {
+          "en": "Power consumption changed",
+          "nl": "Stroomverbruik gewijzigd",
+          "fr": "Consommation changée",
+          "de": "Stromverbrauch geändert"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)",
+              "nl": "Vermogen (W)",
+              "fr": "Puissance (W)",
+              "de": "Leistung (W)"
+            },
+            "example": 150
+          },
+          {
+            "name": "voltage",
+            "type": "number",
+            "title": {
+              "en": "Voltage (V)",
+              "nl": "Spanning (V)",
+              "fr": "Tension (V)",
+              "de": "Spannung (V)"
+            },
+            "example": 230
+          },
+          {
+            "name": "current",
+            "type": "number",
+            "title": {
+              "en": "Current (A)",
+              "nl": "Stroom (A)",
+              "fr": "Courant (A)",
+              "de": "Strom (A)"
+            },
+            "example": 0.65
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=plug_smart"
+          }
+        ]
+      },
+      {
+        "id": "plug_smart_power_threshold",
+        "highlight": true,
+        "title": {
+          "en": "Power exceeds threshold",
+          "nl": "Vermogen overschrijdt drempel",
+          "fr": "Puissance dépasse seuil",
+          "de": "Leistung überschreitet Schwelle"
+        },
+        "titleFormatted": {
+          "en": "Power exceeds [[threshold]] W",
+          "nl": "Vermogen overschrijdt [[threshold]] W",
+          "fr": "Puissance dépasse [[threshold]] W",
+          "de": "Leistung überschreitet [[threshold]] W"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)"
+            },
+            "example": 150
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=plug_smart"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 1,
+            "max": 3600,
+            "placeholder": {
+              "en": "100"
+            }
+          }
+        ]
+      },
+      {
+        "id": "scene_switch_4_button_pressed",
+        "title": {
+          "en": "Button pressed",
+          "fr": "Bouton appuyé",
+          "nl": "Knop ingedrukt",
+          "de": "Taste gedrückt"
+        },
+        "titleFormatted": {
+          "en": "Button [[button]] pressed",
+          "fr": "Bouton [[button]] appuyé",
+          "nl": "Knop [[button]] ingedrukt",
+          "de": "Taste [[button]] gedrückt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=scene_switch_4"
+          },
+          {
+            "name": "button",
+            "type": "dropdown",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton",
+              "nl": "Knop",
+              "de": "Taste"
+            },
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Button 1",
+                  "fr": "Bouton 1",
+                  "nl": "Knop 1",
+                  "de": "Taste 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Button 2",
+                  "fr": "Bouton 2",
+                  "nl": "Knop 2",
+                  "de": "Taste 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Button 3",
+                  "fr": "Bouton 3",
+                  "nl": "Knop 3",
+                  "de": "Taste 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Button 4",
+                  "fr": "Bouton 4",
+                  "nl": "Knop 4",
+                  "de": "Taste 4"
+                }
+              }
+            ]
+          }
+        ],
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton",
+              "nl": "Knop",
+              "de": "Taste"
+            },
+            "example": "1"
+          }
+        ]
+      },
+      {
+        "id": "scene_switch_4_button_double_press",
+        "title": {
+          "en": "Button double-pressed",
+          "fr": "Bouton double-cliqué",
+          "nl": "Knop dubbel ingedrukt",
+          "de": "Taste doppelt gedrückt"
+        },
+        "titleFormatted": {
+          "en": "Button [[button]] double-pressed",
+          "fr": "Bouton [[button]] double-cliqué",
+          "nl": "Knop [[button]] dubbel ingedrukt",
+          "de": "Taste [[button]] doppelt gedrückt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=scene_switch_4"
+          },
+          {
+            "name": "button",
+            "type": "dropdown",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton",
+              "nl": "Knop",
+              "de": "Taste"
+            },
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Button 1",
+                  "fr": "Bouton 1",
+                  "nl": "Knop 1",
+                  "de": "Taste 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Button 2",
+                  "fr": "Bouton 2",
+                  "nl": "Knop 2",
+                  "de": "Taste 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Button 3",
+                  "fr": "Bouton 3",
+                  "nl": "Knop 3",
+                  "de": "Taste 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Button 4",
+                  "fr": "Bouton 4",
+                  "nl": "Knop 4",
+                  "de": "Taste 4"
+                }
+              }
+            ]
+          }
+        ],
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton",
+              "nl": "Knop",
+              "de": "Taste"
+            },
+            "example": "1"
+          }
+        ]
+      },
+      {
+        "id": "scene_switch_4_button_long_press",
+        "title": {
+          "en": "Button long-pressed",
+          "fr": "Bouton appui long",
+          "nl": "Knop lang ingedrukt",
+          "de": "Taste lange gedrückt"
+        },
+        "titleFormatted": {
+          "en": "Button [[button]] long-pressed",
+          "fr": "Bouton [[button]] appui long",
+          "nl": "Knop [[button]] lang ingedrukt",
+          "de": "Taste [[button]] lange gedrückt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=scene_switch_4"
+          },
+          {
+            "name": "button",
+            "type": "dropdown",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton",
+              "nl": "Knop",
+              "de": "Taste"
+            },
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Button 1",
+                  "fr": "Bouton 1",
+                  "nl": "Knop 1",
+                  "de": "Taste 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Button 2",
+                  "fr": "Bouton 2",
+                  "nl": "Knop 2",
+                  "de": "Taste 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Button 3",
+                  "fr": "Bouton 3",
+                  "nl": "Knop 3",
+                  "de": "Taste 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Button 4",
+                  "fr": "Bouton 4",
+                  "nl": "Knop 4",
+                  "de": "Taste 4"
+                }
+              }
+            ]
+          }
+        ],
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton",
+              "nl": "Knop",
+              "de": "Taste"
+            },
+            "example": "1"
+          }
+        ]
+      },
+      {
+        "id": "scene_switch_4_button_1_pressed",
+        "title": {
+          "en": "Button 1 pressed",
+          "fr": "Bouton 1 appuyé",
+          "nl": "Knop 1 ingedrukt",
+          "de": "Taste 1 gedrückt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=scene_switch_4"
+          }
+        ]
+      },
+      {
+        "id": "scene_switch_4_button_1_double",
+        "title": {
+          "en": "Button 1 double-pressed",
+          "fr": "Bouton 1 double-cliqué",
+          "nl": "Knop 1 dubbel",
+          "de": "Taste 1 doppelt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=scene_switch_4"
+          }
+        ]
+      },
+      {
+        "id": "scene_switch_4_button_1_long",
+        "title": {
+          "en": "Button 1 long-pressed",
+          "fr": "Bouton 1 appui long",
+          "nl": "Knop 1 lang",
+          "de": "Taste 1 lange"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=scene_switch_4"
+          }
+        ]
+      },
+      {
+        "id": "scene_switch_4_button_2_pressed",
+        "title": {
+          "en": "Button 2 pressed",
+          "fr": "Bouton 2 appuyé",
+          "nl": "Knop 2 ingedrukt",
+          "de": "Taste 2 gedrückt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=scene_switch_4"
+          }
+        ]
+      },
+      {
+        "id": "scene_switch_4_button_2_double",
+        "title": {
+          "en": "Button 2 double-pressed",
+          "fr": "Bouton 2 double-cliqué",
+          "nl": "Knop 2 dubbel",
+          "de": "Taste 2 doppelt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=scene_switch_4"
+          }
+        ]
+      },
+      {
+        "id": "scene_switch_4_button_2_long",
+        "title": {
+          "en": "Button 2 long-pressed",
+          "fr": "Bouton 2 appui long",
+          "nl": "Knop 2 lang",
+          "de": "Taste 2 lange"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=scene_switch_4"
+          }
+        ]
+      },
+      {
+        "id": "scene_switch_4_button_3_pressed",
+        "title": {
+          "en": "Button 3 pressed",
+          "fr": "Bouton 3 appuyé",
+          "nl": "Knop 3 ingedrukt",
+          "de": "Taste 3 gedrückt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=scene_switch_4"
+          }
+        ]
+      },
+      {
+        "id": "scene_switch_4_button_3_double",
+        "title": {
+          "en": "Button 3 double-pressed",
+          "fr": "Bouton 3 double-cliqué",
+          "nl": "Knop 3 dubbel",
+          "de": "Taste 3 doppelt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=scene_switch_4"
+          }
+        ]
+      },
+      {
+        "id": "scene_switch_4_button_3_long",
+        "title": {
+          "en": "Button 3 long-pressed",
+          "fr": "Bouton 3 appui long",
+          "nl": "Knop 3 lang",
+          "de": "Taste 3 lange"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=scene_switch_4"
+          }
+        ]
+      },
+      {
+        "id": "scene_switch_4_button_4_pressed",
+        "title": {
+          "en": "Button 4 pressed",
+          "fr": "Bouton 4 appuyé",
+          "nl": "Knop 4 ingedrukt",
+          "de": "Taste 4 gedrückt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=scene_switch_4"
+          }
+        ]
+      },
+      {
+        "id": "scene_switch_4_button_4_double",
+        "title": {
+          "en": "Button 4 double-pressed",
+          "fr": "Bouton 4 double-cliqué",
+          "nl": "Knop 4 dubbel",
+          "de": "Taste 4 doppelt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=scene_switch_4"
+          }
+        ]
+      },
+      {
+        "id": "scene_switch_4_button_4_long",
+        "title": {
+          "en": "Button 4 long-pressed",
+          "fr": "Bouton 4 appui long",
+          "nl": "Knop 4 lang",
+          "de": "Taste 4 lange"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=scene_switch_4"
+          }
+        ]
+      },
+      {
+        "id": "scene_switch_4_battery_changed",
+        "title": {
+          "en": "Battery level changed",
+          "fr": "Niveau batterie changé",
+          "nl": "Batterijniveau gewijzigd",
+          "de": "Batteriestand geändert"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery (%)",
+              "fr": "Batterie (%)",
+              "nl": "Batterij (%)",
+              "de": "Batterie (%)"
+            },
+            "example": 75
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=scene_switch_4"
+          }
+        ]
+      },
+      {
+        "id": "smart_knob_rotate_left",
+        "highlight": true,
+        "title": {
+          "en": "Rotated left",
+          "fr": "Rotation gauche",
+          "nl": "Naar links gedraaid",
+          "de": "Nach links gedreht"
+        },
+        "hint": {
+          "en": "When the knob is rotated counter-clockwise",
+          "fr": "Lorsque le bouton est tourné dans le sens antihoraire"
+        },
+        "tokens": [
+          {
+            "name": "brightness",
+            "type": "number",
+            "title": {
+              "en": "Brightness %",
+              "fr": "Luminosité %"
+            },
+            "example": 50
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_knob_rotary"
+          }
+        ]
+      },
+      {
+        "id": "smart_knob_rotate_right",
+        "highlight": true,
+        "title": {
+          "en": "Rotated right",
+          "fr": "Rotation droite",
+          "nl": "Naar rechts gedraaid",
+          "de": "Nach rechts gedreht"
+        },
+        "hint": {
+          "en": "When the knob is rotated clockwise",
+          "fr": "Lorsque le bouton est tourné dans le sens horaire"
+        },
+        "tokens": [
+          {
+            "name": "brightness",
+            "type": "number",
+            "title": {
+              "en": "Brightness %",
+              "fr": "Luminosité %"
+            },
+            "example": 50
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_knob_rotary"
+          }
+        ]
+      },
+      {
+        "id": "smart_knob_pressed",
+        "highlight": true,
+        "title": {
+          "en": "Button pressed",
+          "fr": "Bouton appuyé",
+          "nl": "Knop ingedrukt",
+          "de": "Taste gedrückt"
+        },
+        "hint": {
+          "en": "When the knob button is pressed (single, double, or hold)",
+          "fr": "Lorsque le bouton est appuyé (simple, double ou maintenu)"
+        },
+        "tokens": [
+          {
+            "name": "action",
+            "type": "string",
+            "title": {
+              "en": "Action",
+              "fr": "Action"
+            },
+            "example": "single"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_knob_rotary"
+          }
+        ]
+      },
+      {
+        "id": "smart_knob_single_press",
+        "title": {
+          "en": "Single press",
+          "fr": "Appui simple",
+          "nl": "Enkele druk",
+          "de": "Einfacher Druck"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_knob_rotary"
+          }
+        ]
+      },
+      {
+        "id": "smart_knob_double_press",
+        "title": {
+          "en": "Double press",
+          "fr": "Double appui",
+          "nl": "Dubbele druk",
+          "de": "Doppelter Druck"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_knob_rotary"
+          }
+        ]
+      },
+      {
+        "id": "smart_knob_long_press",
+        "title": {
+          "en": "Long press",
+          "fr": "Appui long",
+          "nl": "Lange druk",
+          "de": "Langer Druck"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_knob_rotary"
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_physical_on",
+        "title": {
+          "en": "Physical ON",
+          "fr": "Physique ON",
+          "nl": "Fysiek AAN",
+          "de": "Physisch EIN"
+        },
+        "titleFormatted": {
+          "en": "[[device]] turned on (physical)",
+          "fr": "[[device]] allumé (physique)",
+          "nl": "[[device]] aan (fysiek)",
+          "de": "[[device]] ein (physisch)"
+        },
+        "hint": {
+          "en": "Physical button turns ON",
+          "fr": "Bouton physique allume",
+          "nl": "Fysieke knop schakelt in",
+          "de": "Physische Taste schaltet ein"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_physical_off",
+        "title": {
+          "en": "Physical OFF",
+          "fr": "Physique OFF",
+          "nl": "Fysiek UIT",
+          "de": "Physisch AUS"
+        },
+        "titleFormatted": {
+          "en": "[[device]] turned off (physical)",
+          "fr": "[[device]] éteint (physique)",
+          "nl": "[[device]] uit (fysiek)",
+          "de": "[[device]] aus (physisch)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_physical_single",
+        "title": {
+          "en": "Single press",
+          "fr": "Simple pression",
+          "nl": "Enkele druk",
+          "de": "Einfacher Druck"
+        },
+        "titleFormatted": {
+          "en": "[[device]] single press (physical)",
+          "fr": "[[device]] simple pression (physique)",
+          "nl": "[[device]] enkele druk (fysiek)",
+          "de": "[[device]] einfacher Druck (physisch)"
+        },
+        "hint": {
+          "en": "Physical button single press",
+          "fr": "Simple pression du bouton physique",
+          "nl": "Enkele druk op fysieke knop",
+          "de": "Einfacher Druck auf physische Taste"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_physical_double",
+        "title": {
+          "en": "Double press",
+          "fr": "Double pression",
+          "nl": "Dubbele druk",
+          "de": "Doppelter Druck"
+        },
+        "titleFormatted": {
+          "en": "[[device]] double press (physical)",
+          "fr": "[[device]] double pression (physique)",
+          "nl": "[[device]] dubbele druk (fysiek)",
+          "de": "[[device]] doppelter Druck (physisch)"
+        },
+        "hint": {
+          "en": "Physical button double press",
+          "fr": "Double pression du bouton physique",
+          "nl": "Dubbele druk op fysieke knop",
+          "de": "Doppelter Druck auf physische Taste"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_physical_long_press",
+        "title": {
+          "en": "Long press",
+          "fr": "Pression longue",
+          "nl": "Lange druk",
+          "de": "Langer Druck"
+        },
+        "titleFormatted": {
+          "en": "[[device]] long press (physical)",
+          "fr": "[[device]] pression longue (physique)",
+          "nl": "[[device]] lange druk (fysiek)",
+          "de": "[[device]] langer Druck (physisch)"
+        },
+        "hint": {
+          "en": "Physical button held >600ms",
+          "fr": "Bouton physique maintenu >600ms",
+          "nl": "Fysieke knop ingedrukt >600ms",
+          "de": "Physische Taste gehalten >600ms"
+        },
+        "tokens": [
+          {
+            "name": "duration",
+            "type": "number",
+            "title": {
+              "en": "Duration (ms)"
+            },
+            "example": 1200
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_physical_triple",
+        "title": {
+          "en": "Triple press",
+          "fr": "Triple pression",
+          "nl": "Drievoudige druk",
+          "de": "Dreifacher Druck"
+        },
+        "titleFormatted": {
+          "en": "[[device]] triple press (physical)",
+          "fr": "[[device]] triple pression (physique)",
+          "nl": "[[device]] drievoudige druk (fysiek)",
+          "de": "[[device]] dreifacher Druck (physisch)"
+        },
+        "hint": {
+          "en": "Physical button triple press or more",
+          "fr": "Triple pression ou plus",
+          "nl": "Drievoudige druk of meer",
+          "de": "Dreifacher Druck oder mehr"
+        },
+        "tokens": [
+          {
+            "name": "clicks",
+            "type": "number",
+            "title": {
+              "en": "Click count"
+            },
+            "example": 3
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_2gang_physical_gang1_on",
+        "title": {
+          "en": "Physical button gang 1 ON",
+          "fr": "Bouton physique gang 1 ON",
+          "nl": "Fysieke knop gang 1 AAN",
+          "de": "Physische Taste gang 1 EIN"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 1 turned on (physical)",
+          "fr": "[[device]] gang 1 allumé (physique)",
+          "nl": "[[device]] gang 1 aangezet (fysiek)",
+          "de": "[[device]] gang 1 eingeschaltet (physisch)"
+        },
+        "hint": {
+          "en": "Triggers only when physical button turns ON gang 1",
+          "fr": "Se déclenche uniquement quand le bouton physique allume gang 1",
+          "nl": "Triggert alleen wanneer fysieke knop gang 1 inschakelt",
+          "de": "Wird nur ausgelöst, wenn physische Taste gang 1 einschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_2gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_2gang_physical_gang1_off",
+        "title": {
+          "en": "Physical button gang 1 OFF",
+          "fr": "Bouton physique gang 1 OFF",
+          "nl": "Fysieke knop gang 1 UIT",
+          "de": "Physische Taste gang 1 AUS"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 1 turned off (physical)",
+          "fr": "[[device]] gang 1 éteint (physique)",
+          "nl": "[[device]] gang 1 uitgezet (fysiek)",
+          "de": "[[device]] gang 1 ausgeschaltet (physisch)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_2gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_2gang_physical_gang2_on",
+        "title": {
+          "en": "Physical button gang 2 ON",
+          "fr": "Bouton physique gang 2 ON",
+          "nl": "Fysieke knop gang 2 AAN",
+          "de": "Physische Taste gang 2 EIN"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 2 turned on (physical)",
+          "fr": "[[device]] gang 2 allumé (physique)",
+          "nl": "[[device]] gang 2 aangezet (fysiek)",
+          "de": "[[device]] gang 2 eingeschaltet (physisch)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_2gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_2gang_physical_gang2_off",
+        "title": {
+          "en": "Physical button gang 2 OFF",
+          "fr": "Bouton physique gang 2 OFF",
+          "nl": "Fysieke knop gang 2 UIT",
+          "de": "Physische Taste gang 2 AUS"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 2 turned off (physical)",
+          "fr": "[[device]] gang 2 éteint (physique)",
+          "nl": "[[device]] gang 2 uitgezet (fysiek)",
+          "de": "[[device]] gang 2 ausgeschaltet (physisch)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_2gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_3gang_physical_gang1_on",
+        "title": {
+          "en": "Physical gang 1 ON",
+          "fr": "Physique gang 1 ON",
+          "nl": "Fysiek gang 1 AAN",
+          "de": "Physisch gang 1 EIN"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 1 on (physical)",
+          "fr": "[[device]] gang 1 allumé (physique)",
+          "nl": "[[device]] gang 1 aan (fysiek)",
+          "de": "[[device]] gang 1 ein (physisch)"
+        },
+        "hint": {
+          "en": "Physical button turns ON gang 1",
+          "fr": "Bouton physique allume gang 1",
+          "nl": "Fysieke knop schakelt gang 1 in",
+          "de": "Physische Taste schaltet gang 1 ein"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_3gang_physical_gang1_off",
+        "title": {
+          "en": "Physical gang 1 OFF",
+          "fr": "Physique gang 1 OFF",
+          "nl": "Fysiek gang 1 UIT",
+          "de": "Physisch gang 1 AUS"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 1 off (physical)",
+          "fr": "[[device]] gang 1 éteint (physique)",
+          "nl": "[[device]] gang 1 uit (fysiek)",
+          "de": "[[device]] gang 1 aus (physisch)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_3gang_physical_gang2_on",
+        "title": {
+          "en": "Physical gang 2 ON",
+          "fr": "Physique gang 2 ON",
+          "nl": "Fysiek gang 2 AAN",
+          "de": "Physisch gang 2 EIN"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 2 on (physical)",
+          "fr": "[[device]] gang 2 allumé (physique)",
+          "nl": "[[device]] gang 2 aan (fysiek)",
+          "de": "[[device]] gang 2 ein (physisch)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_3gang_physical_gang2_off",
+        "title": {
+          "en": "Physical gang 2 OFF",
+          "fr": "Physique gang 2 OFF",
+          "nl": "Fysiek gang 2 UIT",
+          "de": "Physisch gang 2 AUS"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 2 off (physical)",
+          "fr": "[[device]] gang 2 éteint (physique)",
+          "nl": "[[device]] gang 2 uit (fysiek)",
+          "de": "[[device]] gang 2 aus (physisch)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_3gang_physical_gang3_on",
+        "title": {
+          "en": "Physical gang 3 ON",
+          "fr": "Physique gang 3 ON",
+          "nl": "Fysiek gang 3 AAN",
+          "de": "Physisch gang 3 EIN"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 3 on (physical)",
+          "fr": "[[device]] gang 3 allumé (physique)",
+          "nl": "[[device]] gang 3 aan (fysiek)",
+          "de": "[[device]] gang 3 ein (physisch)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_3gang_physical_gang3_off",
+        "title": {
+          "en": "Physical gang 3 OFF",
+          "fr": "Physique gang 3 OFF",
+          "nl": "Fysiek gang 3 UIT",
+          "de": "Physisch gang 3 AUS"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 3 off (physical)",
+          "fr": "[[device]] gang 3 éteint (physique)",
+          "nl": "[[device]] gang 3 uit (fysiek)",
+          "de": "[[device]] gang 3 aus (physisch)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang1_on",
+        "title": {
+          "en": "Physical gang 1 ON",
+          "fr": "Physique gang 1 ON",
+          "nl": "Fysiek gang 1 AAN",
+          "de": "Physisch gang 1 EIN"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 1 on (physical)",
+          "fr": "[[device]] gang 1 allumé (physique)",
+          "nl": "[[device]] gang 1 aan (fysiek)",
+          "de": "[[device]] gang 1 ein (physisch)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang1_off",
+        "title": {
+          "en": "Physical gang 1 OFF",
+          "fr": "Physique gang 1 OFF",
+          "nl": "Fysiek gang 1 UIT",
+          "de": "Physisch gang 1 AUS"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 1 off (physical)",
+          "fr": "[[device]] gang 1 éteint (physique)",
+          "nl": "[[device]] gang 1 uit (fysiek)",
+          "de": "[[device]] gang 1 aus (physisch)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang2_on",
+        "title": {
+          "en": "Physical gang 2 ON",
+          "fr": "Physique gang 2 ON",
+          "nl": "Fysiek gang 2 AAN",
+          "de": "Physisch gang 2 EIN"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 2 on (physical)",
+          "fr": "[[device]] gang 2 allumé (physique)",
+          "nl": "[[device]] gang 2 aan (fysiek)",
+          "de": "[[device]] gang 2 ein (physisch)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang2_off",
+        "title": {
+          "en": "Physical gang 2 OFF",
+          "fr": "Physique gang 2 OFF",
+          "nl": "Fysiek gang 2 UIT",
+          "de": "Physisch gang 2 AUS"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 2 off (physical)",
+          "fr": "[[device]] gang 2 éteint (physique)",
+          "nl": "[[device]] gang 2 uit (fysiek)",
+          "de": "[[device]] gang 2 aus (physisch)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang3_on",
+        "title": {
+          "en": "Physical gang 3 ON",
+          "fr": "Physique gang 3 ON",
+          "nl": "Fysiek gang 3 AAN",
+          "de": "Physisch gang 3 EIN"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 3 on (physical)",
+          "fr": "[[device]] gang 3 allumé (physique)",
+          "nl": "[[device]] gang 3 aan (fysiek)",
+          "de": "[[device]] gang 3 ein (physisch)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang3_off",
+        "title": {
+          "en": "Physical gang 3 OFF",
+          "fr": "Physique gang 3 OFF",
+          "nl": "Fysiek gang 3 UIT",
+          "de": "Physisch gang 3 AUS"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 3 off (physical)",
+          "fr": "[[device]] gang 3 éteint (physique)",
+          "nl": "[[device]] gang 3 uit (fysiek)",
+          "de": "[[device]] gang 3 aus (physisch)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang4_on",
+        "title": {
+          "en": "Physical gang 4 ON",
+          "fr": "Physique gang 4 ON",
+          "nl": "Fysiek gang 4 AAN",
+          "de": "Physisch gang 4 EIN"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 4 on (physical)",
+          "fr": "[[device]] gang 4 allumé (physique)",
+          "nl": "[[device]] gang 4 aan (fysiek)",
+          "de": "[[device]] gang 4 ein (physisch)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang4_off",
+        "title": {
+          "en": "Physical gang 4 OFF",
+          "fr": "Physique gang 4 OFF",
+          "nl": "Fysiek gang 4 UIT",
+          "de": "Physisch gang 4 AUS"
+        },
+        "titleFormatted": {
+          "en": "[[device]] gang 4 off (physical)",
+          "fr": "[[device]] gang 4 éteint (physique)",
+          "nl": "[[device]] gang 4 uit (fysiek)",
+          "de": "[[device]] gang 4 aus (physisch)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "water_tank_monitor_level_changed",
+        "title": {
+          "en": "Water level changed",
+          "nl": "Waterniveau veranderd",
+          "fr": "Niveau d'eau changé",
+          "de": "Wasserstand geändert"
+        },
+        "titleFormatted": {
+          "en": "Water level changed to [[level]]%",
+          "nl": "Waterniveau veranderd naar [[level]]%",
+          "fr": "Niveau d'eau changé à [[level]]%",
+          "de": "Wasserstand geändert zu [[level]]%"
+        },
+        "tokens": [
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Water level (%)",
+              "nl": "Waterniveau (%)",
+              "fr": "Niveau d'eau (%)",
+              "de": "Wasserstand (%)"
+            },
+            "example": 75
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_tank_monitor"
+          }
+        ]
+      },
+      {
+        "id": "water_tank_monitor_low",
+        "highlight": true,
+        "title": {
+          "en": "Water tank is low",
+          "nl": "Watertank is bijna leeg",
+          "fr": "Réservoir d'eau bas",
+          "de": "Wassertank ist niedrig"
+        },
+        "hint": {
+          "en": "Triggers when water level drops below the configured threshold",
+          "nl": "Triggert wanneer het waterniveau onder de drempel zakt",
+          "fr": "Se déclenche quand le niveau d'eau passe sous le seuil",
+          "de": "Wird ausgelöst, wenn der Wasserstand unter den Schwellenwert fällt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_tank_monitor"
+          }
+        ]
+      },
+      {
+        "id": "water_tank_monitor_full",
+        "title": {
+          "en": "Water tank is full",
+          "nl": "Watertank is vol",
+          "fr": "Réservoir d'eau plein",
+          "de": "Wassertank ist voll"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_tank_monitor"
+          }
+        ]
+      },
+      {
+        "id": "water_tank_monitor_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "nl": "Batterij is bijna leeg",
+          "fr": "Batterie faible",
+          "de": "Batterie ist schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_tank_monitor"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_smart_opened",
+        "highlight": true,
+        "title": {
+          "en": "Valve opened",
+          "nl": "Klep geopend",
+          "fr": "Vanne ouverte",
+          "de": "Ventil geöffnet"
+        },
+        "hint": {
+          "en": "Triggers when the water valve is opened",
+          "nl": "Triggert wanneer de waterklep wordt geopend",
+          "fr": "Se déclenche quand la vanne d'eau est ouverte",
+          "de": "Wird ausgelöst, wenn das Wasserventil geöffnet wird"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_smart_closed",
+        "title": {
+          "en": "Valve closed",
+          "nl": "Klep gesloten",
+          "fr": "Vanne fermée",
+          "de": "Ventil geschlossen"
+        },
+        "hint": {
+          "en": "Triggers when the water valve is closed",
+          "nl": "Triggert wanneer de waterklep wordt gesloten",
+          "fr": "Se déclenche quand la vanne d'eau est fermée",
+          "de": "Wird ausgelöst, wenn das Wasserventil geschlossen wird"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_smart_leak_detected",
+        "highlight": true,
+        "title": {
+          "en": "Water leak detected!",
+          "nl": "Waterlek gedetecteerd!",
+          "fr": "Fuite d'eau détectée !",
+          "de": "Wasserleck erkannt!"
+        },
+        "hint": {
+          "en": "Triggers when water is detected - valve will close automatically",
+          "nl": "Triggert wanneer water wordt gedetecteerd - klep sluit automatisch",
+          "fr": "Se déclenche quand de l'eau est détectée - la vanne se ferme automatiquement",
+          "de": "Wird ausgelöst, wenn Wasser erkannt wird - Ventil schließt automatisch"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_smart_leak_cleared",
+        "title": {
+          "en": "Water leak cleared",
+          "nl": "Waterlek opgeheven",
+          "fr": "Fuite d'eau terminée",
+          "de": "Wasserleck behoben"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_smart_temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "nl": "Temperatuur veranderd",
+          "fr": "Température changée",
+          "de": "Temperatur geändert"
+        },
+        "titleFormatted": {
+          "en": "Temperature changed to [[temperature]]°C",
+          "nl": "Temperatuur veranderd naar [[temperature]]°C",
+          "fr": "Température changée à [[temperature]]°C",
+          "de": "Temperatur geändert zu [[temperature]]°C"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "nl": "Temperatuur (°C)",
+              "fr": "Température (°C)",
+              "de": "Temperatur (°C)"
+            },
+            "example": 20.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_smart_frost_warning",
+        "title": {
+          "en": "Frost warning",
+          "nl": "Vorstwaarschwing",
+          "fr": "Alerte gel",
+          "de": "Frostwarnung"
+        },
+        "hint": {
+          "en": "Triggers when temperature drops below 5°C - risk of frozen pipes!",
+          "nl": "Triggert wanneer de temperatuur onder 5°C zakt - risico op bevroren leidingen!",
+          "fr": "Se déclenche quand la température passe sous 5°C - risque de tuyaux gelés !",
+          "de": "Wird ausgelöst, wenn die Temperatur unter 5°C fällt - Gefahr eingefrorener Rohre!"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_smart_battery_low",
+        "title": {
+          "en": "Battery is low",
+          "nl": "Batterij is bijna leeg",
+          "fr": "Batterie faible",
+          "de": "Batterie ist schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          }
+        ]
       }
     ],
     "conditions": [
@@ -66627,6 +68408,359 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=weather_station_outdoor"
+          }
+        ]
+      },
+      {
+        "id": "fan_controller_is_on",
+        "title": {
+          "en": "Fan is !{{on|off}}",
+          "fr": "Ventilateur est !{{allumé|éteint}}",
+          "nl": "Ventilator is !{{aan|uit}}",
+          "de": "Lüfter ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan_controller"
+          }
+        ]
+      },
+      {
+        "id": "fan_controller_speed_is",
+        "title": {
+          "en": "Fan speed is !{{equal to|not equal to}}",
+          "fr": "Vitesse ventilateur !{{égale à|différente de}}",
+          "nl": "Ventilatorsnelheid is !{{gelijk aan|niet gelijk aan}}",
+          "de": "Lüftergeschwindigkeit ist !{{gleich|nicht gleich}}"
+        },
+        "titleFormatted": {
+          "en": "Fan speed is !{{equal to|not equal to}} [[speed]]%",
+          "fr": "Vitesse ventilateur !{{égale à|différente de}} [[speed]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan_controller"
+          },
+          {
+            "name": "speed",
+            "type": "range",
+            "min": 0,
+            "max": 100,
+            "step": 25,
+            "label": "%",
+            "labelDecimals": 0
+          }
+        ]
+      },
+      {
+        "id": "gas_detector_gas_is_detected",
+        "title": {
+          "en": "Gas !{{is|is not}} detected",
+          "nl": "Gas !{{is|is niet}} gedetecteerd",
+          "fr": "Gaz !{{est|n'est pas}} détecté",
+          "de": "Gas !{{ist|ist nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gas_detector"
+          }
+        ]
+      },
+      {
+        "id": "gas_detector_co_is_detected",
+        "title": {
+          "en": "CO !{{is|is not}} detected",
+          "nl": "CO !{{is|is niet}} gedetecteerd",
+          "fr": "CO !{{est|n'est pas}} détecté",
+          "de": "CO !{{ist|ist nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gas_detector"
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_learning_active",
+        "title": {
+          "en": "IR learning is active",
+          "nl": "IR leren is actief",
+          "de": "IR-Lernen ist aktiv"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_code_exists",
+        "title": {
+          "en": "IR code exists",
+          "nl": "IR code bestaat",
+          "de": "IR-Code existiert"
+        },
+        "titleFormatted": {
+          "en": "IR code [[code_name]] exists",
+          "nl": "IR code [[code_name]] bestaat",
+          "de": "IR-Code [[code_name]] existiert"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "code_name",
+            "type": "text",
+            "title": {
+              "en": "Code Name",
+              "nl": "Code Naam",
+              "de": "Code Name"
+            },
+            "placeholder": {
+              "en": "power_on",
+              "nl": "power_on",
+              "de": "power_on"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_protocol_detected",
+        "title": {
+          "en": "IR protocol detected",
+          "nl": "IR protocol gedetecteerd",
+          "de": "IR-Protokoll erkannt"
+        },
+        "titleFormatted": {
+          "en": "IR code [[code_name]] uses [[protocol]] protocol",
+          "nl": "IR code [[code_name]] gebruikt [[protocol]] protocol",
+          "de": "IR-Code [[code_name]] verwendet [[protocol]] Protokoll"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "code_name",
+            "type": "text",
+            "title": {
+              "en": "Code Name",
+              "nl": "Code Naam",
+              "de": "Code Name"
+            }
+          },
+          {
+            "name": "protocol",
+            "type": "dropdown",
+            "title": {
+              "en": "Expected Protocol",
+              "nl": "Verwacht Protocol",
+              "de": "Erwartetes Protokoll"
+            },
+            "values": [
+              {
+                "id": "NEC",
+                "label": {
+                  "en": "NEC",
+                  "nl": "NEC",
+                  "de": "NEC"
+                }
+              },
+              {
+                "id": "RC5",
+                "label": {
+                  "en": "RC5",
+                  "nl": "RC5",
+                  "de": "RC5"
+                }
+              },
+              {
+                "id": "RC6",
+                "label": {
+                  "en": "RC6",
+                  "nl": "RC6",
+                  "de": "RC6"
+                }
+              },
+              {
+                "id": "SONY",
+                "label": {
+                  "en": "Sony",
+                  "nl": "Sony",
+                  "de": "Sony"
+                }
+              },
+              {
+                "id": "SAMSUNG",
+                "label": {
+                  "en": "Samsung",
+                  "nl": "Samsung",
+                  "de": "Samsung"
+                }
+              },
+              {
+                "id": "PRONTOHEX",
+                "label": {
+                  "en": "ProntoHex",
+                  "nl": "ProntoHex",
+                  "de": "ProntoHex"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "smart_knob_brightness_above",
+        "title": {
+          "en": "Brightness level is above...",
+          "fr": "Niveau de luminosité supérieur à..."
+        },
+        "titleFormatted": {
+          "en": "Brightness level is above [[level]]%",
+          "fr": "Niveau de luminosité supérieur à [[level]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_knob_rotary"
+          },
+          {
+            "name": "level",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "title": {
+              "en": "Level",
+              "fr": "Niveau"
+            }
+          }
+        ]
+      },
+      {
+        "id": "thermostat_tuya_dp_child_lock_is",
+        "title": {
+          "en": "Child lock is !{{enabled|disabled}}",
+          "fr": "Verrouillage enfant !{{activé|désactivé}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_tuya_dp"
+          }
+        ]
+      },
+      {
+        "id": "water_tank_monitor_level_above",
+        "title": {
+          "en": "Water level !{{is|is not}} above",
+          "nl": "Waterniveau !{{is|is niet}} boven",
+          "fr": "Niveau d'eau !{{est|n'est pas}} au-dessus de",
+          "de": "Wasserstand !{{ist|ist nicht}} über"
+        },
+        "titleFormatted": {
+          "en": "Water level !{{is|is not}} above [[level]]%",
+          "nl": "Waterniveau !{{is|is niet}} boven [[level]]%",
+          "fr": "Niveau d'eau !{{est|n'est pas}} au-dessus de [[level]]%",
+          "de": "Wasserstand !{{ist|ist nicht}} über [[level]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_tank_monitor"
+          },
+          {
+            "name": "level",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "placeholder": {
+              "en": "20"
+            }
+          }
+        ]
+      },
+      {
+        "id": "water_valve_smart_is_open",
+        "title": {
+          "en": "Valve !{{is|is not}} open",
+          "nl": "Klep !{{is|is niet}} open",
+          "fr": "Vanne !{{est|n'est pas}} ouverte",
+          "de": "Ventil !{{ist|ist nicht}} offen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_smart_leak_is_detected",
+        "title": {
+          "en": "Water leak !{{is|is not}} detected",
+          "nl": "Waterlek !{{is|is niet}} gedetecteerd",
+          "fr": "Fuite d'eau !{{est|n'est pas}} détectée",
+          "de": "Wasserleck !{{ist|ist nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_smart_temperature_above",
+        "title": {
+          "en": "Temperature !{{is|is not}} above",
+          "nl": "Temperatuur !{{is|is niet}} boven",
+          "fr": "Température !{{est|n'est pas}} au-dessus de",
+          "de": "Temperatur !{{ist|ist nicht}} über"
+        },
+        "titleFormatted": {
+          "en": "Temperature !{{is|is not}} above [[temp]]°C",
+          "nl": "Temperatuur !{{is|is niet}} boven [[temp]]°C",
+          "fr": "Température !{{est|n'est pas}} au-dessus de [[temp]]°C",
+          "de": "Temperatur !{{ist|ist nicht}} über [[temp]]°C"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          },
+          {
+            "name": "temp",
+            "type": "number",
+            "min": -20,
+            "max": 60,
+            "step": 1,
+            "placeholder": {
+              "en": "5"
+            }
           }
         ]
       }
@@ -71967,6 +74101,2132 @@
             "title": {
               "en": "Brightness %"
             }
+          }
+        ]
+      },
+      {
+        "id": "air_purifier_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air_purifier"
+          }
+        ]
+      },
+      {
+        "id": "air_purifier_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=air_purifier"
+          }
+        ]
+      },
+      {
+        "id": "curtain_motor_stop",
+        "title": {
+          "en": "Stop",
+          "fr": "Arrêter",
+          "nl": "Stoppen",
+          "de": "Stoppen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=curtain_motor"
+          }
+        ]
+      },
+      {
+        "id": "curtain_motor_set_favorite",
+        "title": {
+          "en": "Go to favorite position",
+          "fr": "Aller position favorite",
+          "nl": "Ga naar favoriete positie",
+          "de": "Zur Lieblingsposition"
+        },
+        "hint": {
+          "en": "Move to the saved favorite position (if supported)",
+          "fr": "Aller à la position favorite enregistrée"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=curtain_motor"
+          }
+        ]
+      },
+      {
+        "id": "dimmer_3gang_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dimmer_3gang"
+          }
+        ]
+      },
+      {
+        "id": "dimmer_3gang_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dimmer_3gang"
+          }
+        ]
+      },
+      {
+        "id": "din_rail_switch_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=din_rail_switch"
+          }
+        ]
+      },
+      {
+        "id": "din_rail_switch_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=din_rail_switch"
+          }
+        ]
+      },
+      {
+        "id": "fan_controller_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer",
+          "nl": "Inschakelen",
+          "de": "Einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan_controller"
+          }
+        ]
+      },
+      {
+        "id": "fan_controller_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre",
+          "nl": "Uitschakelen",
+          "de": "Ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan_controller"
+          }
+        ]
+      },
+      {
+        "id": "fan_controller_set_speed",
+        "title": {
+          "en": "Set fan speed",
+          "fr": "Définir vitesse ventilateur",
+          "nl": "Stel ventilatorsnelheid in",
+          "de": "Lüftergeschwindigkeit einstellen"
+        },
+        "titleFormatted": {
+          "en": "Set fan speed to [[speed]]%",
+          "fr": "Définir vitesse ventilateur à [[speed]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan_controller"
+          },
+          {
+            "name": "speed",
+            "type": "range",
+            "min": 0,
+            "max": 100,
+            "step": 25,
+            "label": "%",
+            "labelDecimals": 0
+          }
+        ]
+      },
+      {
+        "id": "fan_controller_speed_up",
+        "title": {
+          "en": "Increase fan speed",
+          "fr": "Augmenter vitesse ventilateur",
+          "nl": "Verhoog ventilatorsnelheid",
+          "de": "Lüftergeschwindigkeit erhöhen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan_controller"
+          }
+        ]
+      },
+      {
+        "id": "fan_controller_speed_down",
+        "title": {
+          "en": "Decrease fan speed",
+          "fr": "Diminuer vitesse ventilateur",
+          "nl": "Verlaag ventilatorsnelheid",
+          "de": "Lüftergeschwindigkeit verringern"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=fan_controller"
+          }
+        ]
+      },
+      {
+        "id": "humidifier_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=humidifier"
+          }
+        ]
+      },
+      {
+        "id": "humidifier_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=humidifier"
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_learn_code",
+        "title": {
+          "en": "Learn IR Code",
+          "nl": "Leer IR Code",
+          "de": "IR-Code Lernen"
+        },
+        "titleFormatted": {
+          "en": "Learn IR code [[code_name]] with [[protocol]] protocol at [[frequency]]Hz for [[duration]]s (category: [[category]])",
+          "nl": "Leer IR code [[code_name]] met [[protocol]] protocol bij [[frequency]]Hz voor [[duration]]s (categorie: [[category]])",
+          "de": "IR-Code [[code_name]] mit [[protocol]] Protokoll bei [[frequency]]Hz für [[duration]]s lernen (Kategorie: [[category]])"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "code_name",
+            "type": "text",
+            "title": {
+              "en": "Code Name",
+              "nl": "Code Naam",
+              "de": "Code Name"
+            },
+            "placeholder": {
+              "en": "power_on",
+              "nl": "power_on",
+              "de": "power_on"
+            }
+          },
+          {
+            "name": "duration",
+            "type": "number",
+            "title": {
+              "en": "Duration (seconds)",
+              "nl": "Duur (seconden)",
+              "de": "Dauer (Sekunden)"
+            },
+            "min": 5,
+            "max": 120,
+            "step": 5,
+            "placeholder": {
+              "en": "30",
+              "nl": "30",
+              "de": "30"
+            }
+          },
+          {
+            "name": "protocol",
+            "type": "dropdown",
+            "title": {
+              "en": "IR Protocol",
+              "nl": "IR Protocol",
+              "de": "IR-Protokoll"
+            },
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto-detect",
+                  "nl": "Auto-detectie",
+                  "de": "Auto-Erkennung"
+                }
+              },
+              {
+                "id": "NEC",
+                "label": {
+                  "en": "NEC",
+                  "nl": "NEC",
+                  "de": "NEC"
+                }
+              },
+              {
+                "id": "RC5",
+                "label": {
+                  "en": "RC5",
+                  "nl": "RC5",
+                  "de": "RC5"
+                }
+              },
+              {
+                "id": "RC6",
+                "label": {
+                  "en": "RC6",
+                  "nl": "RC6",
+                  "de": "RC6"
+                }
+              },
+              {
+                "id": "SONY",
+                "label": {
+                  "en": "Sony",
+                  "nl": "Sony",
+                  "de": "Sony"
+                }
+              },
+              {
+                "id": "SAMSUNG",
+                "label": {
+                  "en": "Samsung",
+                  "nl": "Samsung",
+                  "de": "Samsung"
+                }
+              },
+              {
+                "id": "PRONTOHEX",
+                "label": {
+                  "en": "ProntoHex",
+                  "nl": "ProntoHex",
+                  "de": "ProntoHex"
+                }
+              }
+            ]
+          },
+          {
+            "name": "frequency",
+            "type": "number",
+            "title": {
+              "en": "Carrier Frequency (Hz)",
+              "nl": "Draaggolf Frequentie (Hz)",
+              "de": "Trägerfrequenz (Hz)"
+            },
+            "min": 30000,
+            "max": 45000,
+            "step": 1000,
+            "placeholder": {
+              "en": "38000",
+              "nl": "38000",
+              "de": "38000"
+            }
+          },
+          {
+            "name": "category",
+            "type": "text",
+            "title": {
+              "en": "Category",
+              "nl": "Categorie",
+              "de": "Kategorie"
+            },
+            "placeholder": {
+              "en": "TV Remote",
+              "nl": "TV Afstandsbediening",
+              "de": "TV-Fernbedienung"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_send_code",
+        "title": {
+          "en": "Send IR Code",
+          "nl": "Verstuur IR Code",
+          "de": "IR-Code Senden"
+        },
+        "hint": {
+          "en": "Send a learned or raw IR code. Use the code name or paste a Base64 encoded IR code.",
+          "nl": "Verstuur een geleerde of raw IR code. Gebruik de codenaam of plak een Base64 gecodeerde IR code."
+        },
+        "titleFormatted": {
+          "en": "Send IR code [[ir_code]] with [[protocol]] at [[frequency]]Hz ([[repeat]]x repeats)",
+          "nl": "Verstuur IR code [[ir_code]] met [[protocol]] bij [[frequency]]Hz ([[repeat]]x herhalingen)",
+          "de": "IR-Code [[ir_code]] mit [[protocol]] bei [[frequency]]Hz senden ([[repeat]]x Wiederholungen)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "ir_code",
+            "type": "text",
+            "title": {
+              "en": "IR Code or Name",
+              "nl": "IR Code of Naam",
+              "de": "IR-Code oder Name"
+            },
+            "placeholder": {
+              "en": "power_on or base64 code",
+              "nl": "power_on of base64 code",
+              "de": "power_on oder base64 Code"
+            }
+          },
+          {
+            "name": "protocol",
+            "type": "dropdown",
+            "title": {
+              "en": "Force Protocol (optional)",
+              "nl": "Forceer Protocol (optioneel)",
+              "de": "Protokoll Erzwingen (optional)"
+            },
+            "values": [
+              {
+                "id": "",
+                "label": {
+                  "en": "Auto (recommended)",
+                  "nl": "Auto (aanbevolen)",
+                  "de": "Auto (empfohlen)"
+                }
+              },
+              {
+                "id": "NEC",
+                "label": {
+                  "en": "NEC",
+                  "nl": "NEC",
+                  "de": "NEC"
+                }
+              },
+              {
+                "id": "RC5",
+                "label": {
+                  "en": "RC5",
+                  "nl": "RC5",
+                  "de": "RC5"
+                }
+              },
+              {
+                "id": "RC6",
+                "label": {
+                  "en": "RC6",
+                  "nl": "RC6",
+                  "de": "RC6"
+                }
+              },
+              {
+                "id": "SONY",
+                "label": {
+                  "en": "Sony",
+                  "nl": "Sony",
+                  "de": "Sony"
+                }
+              },
+              {
+                "id": "SAMSUNG",
+                "label": {
+                  "en": "Samsung",
+                  "nl": "Samsung",
+                  "de": "Samsung"
+                }
+              },
+              {
+                "id": "PRONTOHEX",
+                "label": {
+                  "en": "ProntoHex",
+                  "nl": "ProntoHex",
+                  "de": "ProntoHex"
+                }
+              }
+            ]
+          },
+          {
+            "name": "frequency",
+            "type": "number",
+            "title": {
+              "en": "Frequency Override (Hz)",
+              "nl": "Frequentie Override (Hz)",
+              "de": "Frequenz Override (Hz)"
+            },
+            "min": 30000,
+            "max": 45000,
+            "step": 1000,
+            "placeholder": {
+              "en": "Leave empty for auto",
+              "nl": "Leeg laten voor auto",
+              "de": "Leer lassen für Auto"
+            }
+          },
+          {
+            "name": "repeat",
+            "type": "number",
+            "title": {
+              "en": "Repeat Count",
+              "nl": "Aantal Herhalingen",
+              "de": "Wiederholungsanzahl"
+            },
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "placeholder": {
+              "en": "1",
+              "nl": "1",
+              "de": "1"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_send_by_category",
+        "title": {
+          "en": "Send IR Code by Category",
+          "nl": "Verstuur IR Code per Categorie",
+          "de": "IR-Code nach Kategorie Senden"
+        },
+        "hint": {
+          "en": "Send a stored IR code from a specific category (e.g., TV Remote, AC).",
+          "nl": "Verstuur een opgeslagen IR code uit een specifieke categorie (bijv. TV Afstandsbediening, Airco)."
+        },
+        "titleFormatted": {
+          "en": "Send IR code [[code_name]] from category [[category]]",
+          "nl": "Verstuur IR code [[code_name]] uit categorie [[category]]",
+          "de": "IR-Code [[code_name]] aus Kategorie [[category]] senden"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "category",
+            "type": "text",
+            "title": {
+              "en": "Category",
+              "nl": "Categorie",
+              "de": "Kategorie"
+            },
+            "placeholder": {
+              "en": "TV Remote",
+              "nl": "TV Afstandsbediening",
+              "de": "TV-Fernbedienung"
+            }
+          },
+          {
+            "name": "code_name",
+            "type": "text",
+            "title": {
+              "en": "Code Name",
+              "nl": "Code Naam",
+              "de": "Code Name"
+            },
+            "placeholder": {
+              "en": "power_on",
+              "nl": "power_on",
+              "de": "power_on"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ir_blaster_send_ac_command",
+        "title": {
+          "en": "Send AC Command",
+          "nl": "Verstuur Airco Commando",
+          "de": "AC-Befehl Senden"
+        },
+        "hint": {
+          "en": "Send AC command with mode, temperature and fan speed (SmartIR compatible)",
+          "nl": "Verstuur airco commando met modus, temperatuur en ventilator snelheid"
+        },
+        "titleFormatted": {
+          "en": "Set AC to [[mode]] at [[temperature]]°C with [[fan_speed]] fan",
+          "nl": "Zet airco op [[mode]] bij [[temperature]]°C met [[fan_speed]] ventilator",
+          "de": "AC auf [[mode]] bei [[temperature]]°C mit [[fan_speed]] Lüfter setzen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_blaster"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "title": {
+              "en": "Mode"
+            },
+            "values": [
+              {
+                "id": "cool",
+                "label": {
+                  "en": "Cool"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Heat"
+                }
+              },
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto"
+                }
+              },
+              {
+                "id": "dry",
+                "label": {
+                  "en": "Dry"
+                }
+              },
+              {
+                "id": "fan_only",
+                "label": {
+                  "en": "Fan Only"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off"
+                }
+              }
+            ]
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)"
+            },
+            "min": 16,
+            "max": 30,
+            "step": 1
+          },
+          {
+            "name": "fan_speed",
+            "type": "dropdown",
+            "title": {
+              "en": "Fan Speed"
+            },
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto"
+                }
+              },
+              {
+                "id": "low",
+                "label": {
+                  "en": "Low"
+                }
+              },
+              {
+                "id": "medium",
+                "label": {
+                  "en": "Medium"
+                }
+              },
+              {
+                "id": "high",
+                "label": {
+                  "en": "High"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "led_controller_cct_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=led_controller_cct"
+          }
+        ]
+      },
+      {
+        "id": "led_controller_cct_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=led_controller_cct"
+          }
+        ]
+      },
+      {
+        "id": "led_controller_dimmable_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=led_controller_dimmable"
+          }
+        ]
+      },
+      {
+        "id": "led_controller_dimmable_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=led_controller_dimmable"
+          }
+        ]
+      },
+      {
+        "id": "led_controller_rgb_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=led_controller_rgb"
+          }
+        ]
+      },
+      {
+        "id": "led_controller_rgb_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=led_controller_rgb"
+          }
+        ]
+      },
+      {
+        "id": "plug_smart_set_indicator",
+        "title": {
+          "en": "Set LED indicator mode",
+          "fr": "Définir le mode LED",
+          "nl": "LED indicator instellen",
+          "de": "LED-Anzeige einstellen"
+        },
+        "titleFormatted": {
+          "en": "Set LED indicator to [[mode]]",
+          "fr": "Définir LED sur [[mode]]",
+          "nl": "Stel LED in op [[mode]]",
+          "de": "LED auf [[mode]] setzen"
+        },
+        "hint": {
+          "en": "Control the plug LED indicator (DP26/27)",
+          "fr": "Contrôle l'indicateur LED",
+          "nl": "Beheer de LED indicator",
+          "de": "LED-Anzeige steuern"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=plug_smart"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode"
+            },
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Always Off",
+                  "fr": "Toujours éteint",
+                  "nl": "Altijd uit",
+                  "de": "Immer aus"
+                }
+              },
+              {
+                "id": "relay",
+                "label": {
+                  "en": "Follow Relay",
+                  "fr": "Suivre relais",
+                  "nl": "Volg relais",
+                  "de": "Relais folgen"
+                }
+              },
+              {
+                "id": "inverted",
+                "label": {
+                  "en": "Inverted",
+                  "fr": "Inversé",
+                  "nl": "Omgekeerd",
+                  "de": "Invertiert"
+                }
+              },
+              {
+                "id": "always_on",
+                "label": {
+                  "en": "Always On",
+                  "fr": "Toujours allumé",
+                  "nl": "Altijd aan",
+                  "de": "Immer an"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "plug_smart_set_power_on",
+        "title": {
+          "en": "Set power-on behavior",
+          "fr": "Définir comportement démarrage",
+          "nl": "Opstart gedrag instellen",
+          "de": "Einschaltverhalten setzen"
+        },
+        "titleFormatted": {
+          "en": "Set power-on behavior to [[behavior]]",
+          "fr": "Définir démarrage sur [[behavior]]",
+          "nl": "Stel opstart in op [[behavior]]",
+          "de": "Einschaltverhalten auf [[behavior]] setzen"
+        },
+        "hint": {
+          "en": "What happens when power is restored",
+          "fr": "Comportement après coupure",
+          "nl": "Wat gebeurt na stroomuitval",
+          "de": "Nach Stromausfall"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=plug_smart"
+          },
+          {
+            "type": "dropdown",
+            "name": "behavior",
+            "title": {
+              "en": "Behavior"
+            },
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Start OFF",
+                  "fr": "Démarrer éteint",
+                  "nl": "Start UIT",
+                  "de": "Start AUS"
+                }
+              },
+              {
+                "id": "on",
+                "label": {
+                  "en": "Start ON",
+                  "fr": "Démarrer allumé",
+                  "nl": "Start AAN",
+                  "de": "Start EIN"
+                }
+              },
+              {
+                "id": "memory",
+                "label": {
+                  "en": "Remember state",
+                  "fr": "Mémoriser état",
+                  "nl": "Onthoud staat",
+                  "de": "Zustand merken"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pool_pump_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pool_pump"
+          }
+        ]
+      },
+      {
+        "id": "pool_pump_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pool_pump"
+          }
+        ]
+      },
+      {
+        "id": "presence_sensor_ceiling_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=presence_sensor_ceiling"
+          }
+        ]
+      },
+      {
+        "id": "presence_sensor_ceiling_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=presence_sensor_ceiling"
+          }
+        ]
+      },
+      {
+        "id": "radiator_controller_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_controller"
+          }
+        ]
+      },
+      {
+        "id": "radiator_controller_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_controller"
+          }
+        ]
+      },
+      {
+        "id": "siren_set_melody",
+        "title": {
+          "en": "Set alarm melody",
+          "nl": "Alarm melodie instellen",
+          "fr": "Définir la mélodie d'alarme",
+          "de": "Alarmmelodie einstellen"
+        },
+        "titleFormatted": {
+          "en": "Set alarm melody to [[melody]]",
+          "nl": "Stel alarm melodie in op [[melody]]",
+          "fr": "Définir la mélodie d'alarme à [[melody]]",
+          "de": "Alarmmelodie auf [[melody]] einstellen"
+        },
+        "hint": {
+          "en": "Select the melody/ringtone for the siren alarm",
+          "fr": "Sélectionner la mélodie/sonnerie pour l'alarme sirène"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=siren"
+          },
+          {
+            "name": "melody",
+            "type": "dropdown",
+            "title": {
+              "en": "Melody",
+              "nl": "Melodie",
+              "fr": "Mélodie",
+              "de": "Melodie"
+            },
+            "values": [
+              {
+                "id": "0",
+                "label": {
+                  "en": "Doorbell Chime",
+                  "fr": "Sonnette"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "Für Elise",
+                  "fr": "Pour Élise"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Westminster Chimes",
+                  "fr": "Carillon Westminster"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "4-Key Chime",
+                  "fr": "Carillon 4 notes"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "William Tell Overture",
+                  "fr": "Guillaume Tell"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Mozart Piano",
+                  "fr": "Mozart Piano"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Space Alarm",
+                  "fr": "Alarme Spatiale"
+                }
+              },
+              {
+                "id": "7",
+                "label": {
+                  "en": "Klaxon",
+                  "fr": "Klaxon"
+                }
+              },
+              {
+                "id": "8",
+                "label": {
+                  "en": "Meep Meep",
+                  "fr": "Bip Bip"
+                }
+              },
+              {
+                "id": "9",
+                "label": {
+                  "en": "Wheep",
+                  "fr": "Sifflement"
+                }
+              },
+              {
+                "id": "10",
+                "label": {
+                  "en": "Barking Dog",
+                  "fr": "Chien qui aboie"
+                }
+              },
+              {
+                "id": "11",
+                "label": {
+                  "en": "Alarm Siren",
+                  "fr": "Sirène d'alarme"
+                }
+              },
+              {
+                "id": "12",
+                "label": {
+                  "en": "Doorbell 2",
+                  "fr": "Sonnette 2"
+                }
+              },
+              {
+                "id": "13",
+                "label": {
+                  "en": "Old Phone",
+                  "fr": "Vieux téléphone"
+                }
+              },
+              {
+                "id": "14",
+                "label": {
+                  "en": "Police Siren",
+                  "fr": "Sirène Police"
+                }
+              },
+              {
+                "id": "15",
+                "label": {
+                  "en": "Evacuation Bell",
+                  "fr": "Cloche Évacuation"
+                }
+              },
+              {
+                "id": "16",
+                "label": {
+                  "en": "Clock Alarm",
+                  "fr": "Réveil"
+                }
+              },
+              {
+                "id": "17",
+                "label": {
+                  "en": "Fire Alarm",
+                  "fr": "Alarme Incendie"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "smart_breaker_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_breaker"
+          }
+        ]
+      },
+      {
+        "id": "smart_breaker_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_breaker"
+          }
+        ]
+      },
+      {
+        "id": "smart_heater_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_heater"
+          }
+        ]
+      },
+      {
+        "id": "smart_heater_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_heater"
+          }
+        ]
+      },
+      {
+        "id": "smart_heater_controller_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_heater_controller"
+          }
+        ]
+      },
+      {
+        "id": "smart_heater_controller_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_heater_controller"
+          }
+        ]
+      },
+      {
+        "id": "smart_rcbo_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_rcbo"
+          }
+        ]
+      },
+      {
+        "id": "smart_rcbo_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_rcbo"
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer",
+          "nl": "Wisselen",
+          "de": "Umschalten"
+        },
+        "hint": {
+          "en": "Toggle the switch state (on→off, off→on)",
+          "fr": "Basculer l'état (on→off, off→on)",
+          "nl": "Wissel de status (aan→uit, uit→aan)",
+          "de": "Status umschalten (ein→aus, aus→ein)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_set_backlight",
+        "title": {
+          "en": "Set LED backlight mode",
+          "fr": "Définir le mode rétroéclairage LED",
+          "nl": "LED achtergrondverlichting instellen",
+          "de": "LED-Hintergrundbeleuchtung einstellen"
+        },
+        "titleFormatted": {
+          "en": "Set LED backlight to [[mode]]",
+          "fr": "Définir le rétroéclairage sur [[mode]]",
+          "nl": "Stel LED achtergrondverlichting in op [[mode]]",
+          "de": "LED-Hintergrundbeleuchtung auf [[mode]] setzen"
+        },
+        "hint": {
+          "en": "Control the switch LED indicator (DP15)",
+          "fr": "Contrôle l'indicateur LED (DP15)",
+          "nl": "Beheer de LED indicator (DP15)",
+          "de": "Steuert die LED-Anzeige (DP15)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode"
+            },
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Éteint",
+                  "nl": "Uit",
+                  "de": "Aus"
+                }
+              },
+              {
+                "id": "normal",
+                "label": {
+                  "en": "Normal (LED when ON)",
+                  "fr": "Normal (LED quand allumé)",
+                  "nl": "Normaal (LED bij AAN)",
+                  "de": "Normal (LED bei EIN)"
+                }
+              },
+              {
+                "id": "inverted",
+                "label": {
+                  "en": "Inverted (LED when OFF)",
+                  "fr": "Inversé (LED quand éteint)",
+                  "nl": "Omgekeerd (LED bij UIT)",
+                  "de": "Invertiert (LED bei AUS)"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_set_backlight_color",
+        "title": {
+          "en": "Set LED color",
+          "fr": "Définir la couleur LED",
+          "nl": "LED kleur instellen",
+          "de": "LED-Farbe einstellen"
+        },
+        "titleFormatted": {
+          "en": "Set [[state]] LED color to [[color]]",
+          "fr": "Définir couleur LED [[state]] sur [[color]]",
+          "nl": "Stel [[state]] LED kleur in op [[color]]",
+          "de": "Setze [[state]] LED-Farbe auf [[color]]"
+        },
+        "hint": {
+          "en": "Set LED color for ON or OFF state (DP103/104, requires colored backlight)",
+          "fr": "Définir couleur LED pour état ON/OFF (DP103/104)",
+          "nl": "Stel LED kleur in voor AAN/UIT (DP103/104)",
+          "de": "LED-Farbe für EIN/AUS setzen (DP103/104)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          },
+          {
+            "type": "dropdown",
+            "name": "state",
+            "title": {
+              "en": "State"
+            },
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "ON state",
+                  "fr": "État ON",
+                  "nl": "AAN staat",
+                  "de": "EIN-Zustand"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "OFF state",
+                  "fr": "État OFF",
+                  "nl": "UIT staat",
+                  "de": "AUS-Zustand"
+                }
+              }
+            ]
+          },
+          {
+            "type": "dropdown",
+            "name": "color",
+            "title": {
+              "en": "Color"
+            },
+            "values": [
+              {
+                "id": "red",
+                "label": {
+                  "en": "Red",
+                  "fr": "Rouge",
+                  "nl": "Rood",
+                  "de": "Rot"
+                }
+              },
+              {
+                "id": "blue",
+                "label": {
+                  "en": "Blue",
+                  "fr": "Bleu",
+                  "nl": "Blauw",
+                  "de": "Blau"
+                }
+              },
+              {
+                "id": "green",
+                "label": {
+                  "en": "Green",
+                  "fr": "Vert",
+                  "nl": "Groen",
+                  "de": "Grün"
+                }
+              },
+              {
+                "id": "white",
+                "label": {
+                  "en": "White",
+                  "fr": "Blanc",
+                  "nl": "Wit",
+                  "de": "Weiß"
+                }
+              },
+              {
+                "id": "yellow",
+                "label": {
+                  "en": "Yellow",
+                  "fr": "Jaune",
+                  "nl": "Geel",
+                  "de": "Gelb"
+                }
+              },
+              {
+                "id": "magenta",
+                "label": {
+                  "en": "Magenta",
+                  "fr": "Magenta",
+                  "nl": "Magenta",
+                  "de": "Magenta"
+                }
+              },
+              {
+                "id": "cyan",
+                "label": {
+                  "en": "Cyan",
+                  "fr": "Cyan",
+                  "nl": "Cyaan",
+                  "de": "Cyan"
+                }
+              },
+              {
+                "id": "warm_white",
+                "label": {
+                  "en": "Warm White",
+                  "fr": "Blanc Chaud",
+                  "nl": "Warm Wit",
+                  "de": "Warmweiß"
+                }
+              },
+              {
+                "id": "warm_yellow",
+                "label": {
+                  "en": "Warm Yellow",
+                  "fr": "Jaune Chaud",
+                  "nl": "Warm Geel",
+                  "de": "Warmgelb"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_set_backlight_brightness",
+        "title": {
+          "en": "Set LED brightness",
+          "fr": "Définir luminosité LED",
+          "nl": "LED helderheid instellen",
+          "de": "LED-Helligkeit einstellen"
+        },
+        "titleFormatted": {
+          "en": "Set LED brightness to [[brightness]]%",
+          "fr": "Définir luminosité LED à [[brightness]]%",
+          "nl": "Stel LED helderheid in op [[brightness]]%",
+          "de": "LED-Helligkeit auf [[brightness]]% setzen"
+        },
+        "hint": {
+          "en": "Set LED backlight brightness 0-100% (DP102)",
+          "fr": "Luminosité rétroéclairage 0-100% (DP102)",
+          "nl": "LED helderheid 0-100% (DP102)",
+          "de": "LED-Helligkeit 0-100% (DP102)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          },
+          {
+            "type": "range",
+            "name": "brightness",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "label": "%",
+            "labelDecimals": 0
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_set_countdown",
+        "title": {
+          "en": "Set countdown timer",
+          "fr": "Définir minuterie",
+          "nl": "Afteltimer instellen",
+          "de": "Countdown-Timer setzen"
+        },
+        "titleFormatted": {
+          "en": "Turn off after [[seconds]] seconds",
+          "fr": "Éteindre après [[seconds]] secondes",
+          "nl": "Uitschakelen na [[seconds]] seconden",
+          "de": "Nach [[seconds]] Sekunden ausschalten"
+        },
+        "hint": {
+          "en": "Auto turn off after countdown (DP7, max 86400s = 24h)",
+          "fr": "Extinction auto après compte à rebours (DP7, max 86400s)",
+          "nl": "Auto uit na aftellen (DP7, max 86400s)",
+          "de": "Auto-Aus nach Countdown (DP7, max 86400s)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          },
+          {
+            "type": "number",
+            "name": "seconds",
+            "min": 0,
+            "max": 86400,
+            "step": 1,
+            "placeholder": {
+              "en": "60"
+            }
+          }
+        ]
+      },
+      {
+        "id": "switch_1gang_set_child_lock",
+        "title": {
+          "en": "Set child lock",
+          "fr": "Définir verrouillage enfant",
+          "nl": "Kinderslot instellen",
+          "de": "Kindersicherung setzen"
+        },
+        "titleFormatted": {
+          "en": "Set child lock to [[locked]]",
+          "fr": "Définir verrouillage sur [[locked]]",
+          "nl": "Stel kinderslot in op [[locked]]",
+          "de": "Kindersicherung auf [[locked]] setzen"
+        },
+        "hint": {
+          "en": "Lock/unlock physical buttons (DP101)",
+          "fr": "Verrouiller/déverrouiller boutons (DP101)",
+          "nl": "Vergrendel/ontgrendel knoppen (DP101)",
+          "de": "Tasten sperren/entsperren (DP101)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          },
+          {
+            "type": "dropdown",
+            "name": "locked",
+            "title": {
+              "en": "Lock"
+            },
+            "values": [
+              {
+                "id": "true",
+                "label": {
+                  "en": "Locked",
+                  "fr": "Verrouillé",
+                  "nl": "Vergrendeld",
+                  "de": "Gesperrt"
+                }
+              },
+              {
+                "id": "false",
+                "label": {
+                  "en": "Unlocked",
+                  "fr": "Déverrouillé",
+                  "nl": "Ontgrendeld",
+                  "de": "Entsperrt"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "switch_2gang_toggle_gang1",
+        "title": {
+          "en": "Toggle gang 1",
+          "fr": "Basculer gang 1",
+          "nl": "Gang 1 wisselen",
+          "de": "Gang 1 umschalten"
+        },
+        "hint": {
+          "en": "Toggle the state of gang 1 (on→off, off→on)",
+          "fr": "Basculer l'état du gang 1",
+          "nl": "Wissel de status van gang 1",
+          "de": "Status von Gang 1 umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_2gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_2gang_toggle_gang2",
+        "title": {
+          "en": "Toggle gang 2",
+          "fr": "Basculer gang 2",
+          "nl": "Gang 2 wisselen",
+          "de": "Gang 2 umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_2gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_2gang_turn_on_all",
+        "title": {
+          "en": "Turn on all gangs",
+          "fr": "Allumer tous les gangs",
+          "nl": "Alle gangs aanzetten",
+          "de": "Alle Gangs einschalten"
+        },
+        "hint": {
+          "en": "Turn on both gang 1 and gang 2",
+          "fr": "Allumer gang 1 et gang 2",
+          "nl": "Gang 1 en gang 2 aanzetten",
+          "de": "Gang 1 und Gang 2 einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_2gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_2gang_turn_off_all",
+        "title": {
+          "en": "Turn off all gangs",
+          "fr": "Éteindre tous les gangs",
+          "nl": "Alle gangs uitzetten",
+          "de": "Alle Gangs ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_2gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_2gang_set_backlight",
+        "title": {
+          "en": "Set LED backlight mode",
+          "fr": "Définir le mode rétroéclairage LED",
+          "nl": "LED achtergrondverlichting instellen",
+          "de": "LED-Hintergrundbeleuchtung einstellen"
+        },
+        "titleFormatted": {
+          "en": "Set LED backlight to [[mode]]",
+          "fr": "Définir le rétroéclairage sur [[mode]]",
+          "nl": "Stel LED achtergrondverlichting in op [[mode]]",
+          "de": "LED-Hintergrundbeleuchtung auf [[mode]] setzen"
+        },
+        "hint": {
+          "en": "Control the switch LED indicator (requires Tuya DP15 support)",
+          "fr": "Contrôle l'indicateur LED (nécessite Tuya DP15)",
+          "nl": "Beheer de schakelaar LED indicator (vereist Tuya DP15)",
+          "de": "Steuert die Schalter-LED-Anzeige (erfordert Tuya DP15)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_2gang"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode",
+              "fr": "Mode",
+              "nl": "Modus",
+              "de": "Modus"
+            },
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Éteint",
+                  "nl": "Uit",
+                  "de": "Aus"
+                }
+              },
+              {
+                "id": "normal",
+                "label": {
+                  "en": "Normal (LED when ON)",
+                  "fr": "Normal (LED quand allumé)",
+                  "nl": "Normaal (LED bij AAN)",
+                  "de": "Normal (LED bei EIN)"
+                }
+              },
+              {
+                "id": "inverted",
+                "label": {
+                  "en": "Inverted (LED when OFF)",
+                  "fr": "Inversé (LED quand éteint)",
+                  "nl": "Omgekeerd (LED bij UIT)",
+                  "de": "Invertiert (LED bei AUS)"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "switch_plug_1_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_plug_1"
+          }
+        ]
+      },
+      {
+        "id": "switch_plug_1_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_plug_1"
+          }
+        ]
+      },
+      {
+        "id": "switch_plug_2_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_plug_2"
+          }
+        ]
+      },
+      {
+        "id": "switch_plug_2_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_plug_2"
+          }
+        ]
+      },
+      {
+        "id": "switch_temp_sensor_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_temp_sensor"
+          }
+        ]
+      },
+      {
+        "id": "switch_temp_sensor_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_temp_sensor"
+          }
+        ]
+      },
+      {
+        "id": "thermostat_4ch_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_4ch"
+          }
+        ]
+      },
+      {
+        "id": "thermostat_4ch_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_4ch"
+          }
+        ]
+      },
+      {
+        "id": "thermostat_tuya_dp_set_child_lock",
+        "title": {
+          "en": "Set child lock",
+          "fr": "Définir verrouillage enfant"
+        },
+        "titleFormatted": {
+          "en": "Set child lock to [[enabled]]",
+          "fr": "Définir verrouillage enfant à [[enabled]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_tuya_dp"
+          },
+          {
+            "name": "enabled",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "true",
+                "label": {
+                  "en": "Enabled",
+                  "fr": "Activé"
+                }
+              },
+              {
+                "id": "false",
+                "label": {
+                  "en": "Disabled",
+                  "fr": "Désactivé"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "thermostat_tuya_dp_set_comfort_preset",
+        "highlight": true,
+        "title": {
+          "en": "Set comfort preset",
+          "fr": "Définir préréglage confort",
+          "nl": "Comfort preset instellen",
+          "de": "Komfort-Voreinstellung"
+        },
+        "titleFormatted": {
+          "en": "Set to [[preset]] preset",
+          "fr": "Définir préréglage [[preset]]",
+          "nl": "Instellen op [[preset]] preset",
+          "de": "Auf [[preset]] Voreinstellung setzen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_tuya_dp"
+          },
+          {
+            "name": "preset",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "comfort",
+                "label": {
+                  "en": "Comfort (21°C)",
+                  "fr": "Confort (21°C)"
+                }
+              },
+              {
+                "id": "eco",
+                "label": {
+                  "en": "Eco (18°C)",
+                  "fr": "Éco (18°C)"
+                }
+              },
+              {
+                "id": "away",
+                "label": {
+                  "en": "Away (15°C)",
+                  "fr": "Absent (15°C)"
+                }
+              },
+              {
+                "id": "sleep",
+                "label": {
+                  "en": "Sleep (19°C)",
+                  "fr": "Nuit (19°C)"
+                }
+              },
+              {
+                "id": "boost",
+                "label": {
+                  "en": "Boost (25°C)",
+                  "fr": "Boost (25°C)"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "thermostat_tuya_dp_schedule_on",
+        "title": {
+          "en": "Enable schedule",
+          "fr": "Activer programmation",
+          "nl": "Schema inschakelen",
+          "de": "Zeitplan aktivieren"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_tuya_dp"
+          }
+        ]
+      },
+      {
+        "id": "thermostat_tuya_dp_schedule_off",
+        "title": {
+          "en": "Disable schedule",
+          "fr": "Désactiver programmation",
+          "nl": "Schema uitschakelen",
+          "de": "Zeitplan deaktivieren"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=thermostat_tuya_dp"
+          }
+        ]
+      },
+      {
+        "id": "usb_dongle_dual_repeater_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=usb_dongle_dual_repeater"
+          }
+        ]
+      },
+      {
+        "id": "usb_dongle_dual_repeater_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=usb_dongle_dual_repeater"
+          }
+        ]
+      },
+      {
+        "id": "valve_irrigation_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=valve_irrigation"
+          }
+        ]
+      },
+      {
+        "id": "valve_irrigation_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=valve_irrigation"
+          }
+        ]
+      },
+      {
+        "id": "valve_single_turn_on",
+        "title": {
+          "en": "Turn on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=valve_single"
+          }
+        ]
+      },
+      {
+        "id": "valve_single_turn_off",
+        "title": {
+          "en": "Turn off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=valve_single"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_smart_open",
+        "title": {
+          "en": "Open valve",
+          "nl": "Klep openen",
+          "fr": "Ouvrir la vanne",
+          "de": "Ventil öffnen"
+        },
+        "hint": {
+          "en": "Opens the water valve to allow water flow",
+          "nl": "Opent de waterklep om water door te laten stromen",
+          "fr": "Ouvre la vanne d'eau pour permettre l'écoulement",
+          "de": "Öffnet das Wasserventil, um den Wasserfluss zu ermöglichen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_smart_close",
+        "title": {
+          "en": "Close valve",
+          "nl": "Klep sluiten",
+          "fr": "Fermer la vanne",
+          "de": "Ventil schließen"
+        },
+        "hint": {
+          "en": "Closes the water valve to stop water flow",
+          "nl": "Sluit de waterklep om de waterstroom te stoppen",
+          "fr": "Ferme la vanne d'eau pour arrêter l'écoulement",
+          "de": "Schließt das Wasserventil, um den Wasserfluss zu stoppen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
+          }
+        ]
+      },
+      {
+        "id": "water_valve_smart_toggle",
+        "title": {
+          "en": "Toggle valve",
+          "nl": "Klep schakelen",
+          "fr": "Basculer la vanne",
+          "de": "Ventil umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_valve_smart"
           }
         ]
       }
