@@ -2562,21 +2562,17 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   async _triggerPresenceFlows(detected) {
     try {
       if (detected) {
-        // Trigger: presence_detected
-        await this.homey.flow.getDeviceTriggerCard('presence_detected')
+        // v5.5.926: Fixed flow card IDs - must match driver.flow.compose.json
+        // Trigger: presence_sensor_radar_presence_detected
+        await this.homey.flow.getDeviceTriggerCard('presence_sensor_radar_presence_detected')
           .trigger(this).catch(() => { });
-        // Trigger: presence_someone_enters
-        await this.homey.flow.getDeviceTriggerCard('presence_someone_enters')
-          .trigger(this).catch(() => { });
-        this.log('[RADAR-FLOW] ✅ Triggered: presence_detected, presence_someone_enters');
+        this.log('[RADAR-FLOW] ✅ Triggered: presence_sensor_radar_presence_detected');
       } else {
-        // Trigger: presence_cleared
-        await this.homey.flow.getDeviceTriggerCard('presence_cleared')
+        // v5.5.926: Fixed flow card IDs - must match driver.flow.compose.json
+        // Trigger: presence_sensor_radar_presence_cleared
+        await this.homey.flow.getDeviceTriggerCard('presence_sensor_radar_presence_cleared')
           .trigger(this).catch(() => { });
-        // Trigger: presence_zone_empty
-        await this.homey.flow.getDeviceTriggerCard('presence_zone_empty')
-          .trigger(this).catch(() => { });
-        this.log('[RADAR-FLOW] ✅ Triggered: presence_cleared, presence_zone_empty');
+        this.log('[RADAR-FLOW] ✅ Triggered: presence_sensor_radar_presence_cleared');
       }
     } catch (err) {
       this.log('[RADAR-FLOW] ⚠️ Flow trigger error:', err.message);
