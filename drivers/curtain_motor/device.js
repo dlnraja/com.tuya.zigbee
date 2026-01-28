@@ -206,22 +206,9 @@ class CurtainMotorDevice extends HybridCoverBase {
     }
   }
 
-  /**
-   * v5.5.321: Send Tuya DP command
-   */
-  async _sendTuyaDP(dp, value, type = 'value') {
-    try {
-      const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya
-        || this.zclNode?.endpoints?.[1]?.clusters?.[61184];
-
-      if (tuyaCluster?.datapoint) {
-        await tuyaCluster.datapoint({ dp, value, datatype: type === 'bool' ? 1 : 2 });
-        this.log(`[CURTAIN] ✅ Sent DP${dp}=${value}`);
-      }
-    } catch (err) {
-      this.log(`[CURTAIN] ⚠️ DP${dp} send failed:`, err.message);
-    }
-  }
+  // v5.5.935: REMOVED broken _sendTuyaDP override
+  // Parent HybridCoverBase._sendTuyaDP() handles all DP communication correctly
+  // The override was causing "tuya.datapoint: value is an unexpected property" errors
 }
 
 module.exports = CurtainMotorDevice;
