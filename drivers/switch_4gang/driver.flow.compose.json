@@ -381,6 +381,10 @@
         "en": "Set LED color",
         "fr": "Couleur LED"
       },
+      "titleFormatted": {
+        "en": "Set LED [[color]] when [[state]]",
+        "fr": "Couleur LED [[color]] quand [[state]]"
+      },
       "args": [
         {
           "type": "dropdown",
@@ -437,6 +441,10 @@
       "title": {
         "en": "Set LED brightness",
         "fr": "Luminosité LED"
+      },
+      "titleFormatted": {
+        "en": "Set LED brightness to [[brightness]]%",
+        "fr": "Luminosité LED à [[brightness]]%"
       },
       "args": [
         {
