@@ -1,4 +1,7 @@
 {
+  "5.5.951": {
+    "en": "🔧 FIX: BSEED 2-button switches (_TZ3000_l9brjwau TS0003) now properly recognized - added TS0003 to switch_2gang productId. Forum post #1264 fix for Pieter_Pessers."
+  },
   "5.5.950": {
     "en": "➕ NEW DEVICES: MiBoxer Zigbee rotary dimmers (TRI-C1ZR, TRI-K1ZR) now supported! Added _TZB210_g01ie5wu and other MiBoxer fingerprints to wall_dimmer_1gang_1way and led_controller_dimmable drivers."
   },
