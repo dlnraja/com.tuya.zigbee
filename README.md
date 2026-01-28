@@ -69,16 +69,16 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.5.918** | 🐛 FORUM FIX (Lasse_K #1700): Fixed contact sensors installing in reverse - I... |
-| **v5.5.917** | 🔍 FORK/PR AUDIT: Added Longsam mini m3 Smart Curtain (_TZE204_xu4a5rhj) from... |
-| **v5.5.916** | 🐛 CRITICAL FIX: Fixed manufacturer/model retrieval in all base classes (Hybr... |
-| **v5.5.915** | 🔀 FORK ANALYSIS v2: Analyzed 75+ forks (JohanBendz network + dlnraja childre... |
-| **v5.5.914** | 🔀 FORK ANALYSIS: Integrated improvements from shaarkys & eelco2k forks. ZG-2... |
-| **v5.5.913** | 🎉 PR #118 MERGED (packetninja/Attilla): BSEED switch ZCL-only mode with phys... |
-| **v5.5.912** | 🌡️ ZG-204ZV Fix: Added ZCL temperature (0x0402) + humidity (0x0405) cluster ... |
-| **v5.5.911** | 💧 Water Valve Enhancement: Z2M DP mappings (water consumption, flow rate, te... |
-| **v5.5.910** | 🔥 CRITICAL FIX: PhysicalButtonMixin crash (Invalid Flow Card ID). getDeviceT... |
-| **v5.5.909** | 🔥 CRITICAL FIX: Radiator valve driver crash (Class extends undefined). Manue... |
+| **v5.5.931** | 🔧 FLOW CARD NAMESPACE FIX: 1) Added unique flow card IDs with driver prefixe... |
+| **v5.5.930** | 🔧 PETER FIX + LED CONTROL: 1) HOBEIAN Multisensor (ZG-204ZV) - added DP poll... |
+| **v5.5.929** | 🎯 SMART DISTANCE FIX (Peter): 1) Auto-detect distance divisor for OEM varian... |
+| **v5.5.928** | 🔄 DYNAMIC VARIANT DETECTION: Chinese manufacturers use same manufacturerName... |
+| **v5.5.927** | 📏 DISTANCE FIX (Peter_van_Werkhoven forum): Fixed radar sensor distance show... |
+| **v5.5.926** | 🔧 DIAGNOSTIC FIXES: 1) HOBEIAN ZG-101ZL (_TZ3000_ja5osu5g) fingerprint remov... |
+| **v5.5.925** | 🔀 PERMISSIVE VARIANT MODE (Peter_van_Werkhoven): Same manufacturerName (_TZE... |
+| **v5.5.924** | 🔘 MOES BUTTON FIX (GitHub #1327 Kokosnootmelk/nickpatteeuw): Physical button... |
+| **v5.5.923** | 🔧 DIAGNOSTICS FIX (User Reports): 1) Curtain motor TS0601 showing 'unknown/u... |
+| **v5.5.922** | 🔘 FORKS ANALYSIS + PACKETNINJA TECHNIQUE: Applied physical button detection ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
