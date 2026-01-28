@@ -1,4 +1,7 @@
 {
+  "5.5.943": {
+    "en": "🔧 BUILD CLEANUP: Fixed missing titleFormatted warnings for switch_3gang and switch_4gang LED backlight flow cards. Closed GitHub issue #117 (Longsam mini m3 - already working in v5.5.937). All PRs merged, all issues resolved!"
+  },
   "5.5.942": {
     "en": "🔧 FORUM FIXES: Added all case variants for BSEED fingerprints (wall_switch_1gang_1way) - fixes 'unknown zigbee' for Pieter_Pessers. For ManuelKugler's TRV _TZE284_o3x45p96: Use 'Radiator Valve' driver (not thermostat_tuya_dp) - it has ME167 profile with correct DP4/DP5 mappings for target/actual temp."
   },
