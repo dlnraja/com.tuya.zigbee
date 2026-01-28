@@ -1,6 +1,6 @@
 {
   "5.5.931": {
-    "en": "🔧 FLOW CARD NAMESPACE FIX: 1) Added unique flow card IDs with driver prefixes for switch_wall_5gang through 8gang. 2) Toggle actions: switch_wall_Xgang_toggle_gangY. 3) LED backlight actions: set_backlight, set_backlight_color, set_backlight_brightness. 4) All on/off actions: turn_on_all, turn_off_all. 5) Each driver now has unique namespaced flow cards preventing conflicts."
+    "en": "🔧 FLOW CARD FIX + CREDITS: Unique flow card IDs for switch_wall_5-8gang. CREDITS: @packetninja (BSEED switches, physical button detection), @vl14-dev (AM25 motor), @bmalkow (siren), @michelhelsdingen (10G radar), @WJGvdVelden (smoke+radar sensors), @Peter-Celica, @gpmachado (dimmer), @TKGHill (garage door), @sinan92 (PIR), @NicolasYDDER (HOBEIAN). Thank you all!"
   },
   "5.5.930": {
     "en": "🔧 PETER FIX + LED CONTROL: 1) HOBEIAN Multisensor (ZG-204ZV) - added DP polling for temp/humidity/battery (forum #1253). 2) motion_sensor DP3/4/5/6/9/12 periodic refresh. 3) Curtain motor 'unknown/unknown' fix. 4) LED backlight flow cards for ALL switch drivers (1-8 gang). 5) Toggle + turn_on_all/off_all actions. RE-PAIR multisensors after update!"
