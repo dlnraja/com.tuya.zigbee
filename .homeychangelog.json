@@ -1,4 +1,7 @@
 {
+  "5.5.935": {
+    "en": "🔧 CRITICAL FIXES: 1) CURTAIN MOTOR: Fixed 'tuya.datapoint: value is unexpected' error - removed broken _sendTuyaDP override, now uses parent HybridCoverBase correctly. 2) FLOW CARDS: Added missing switch_3gang and switch_4gang LED backlight flow cards (set_backlight, set_backlight_color, set_backlight_brightness). RE-PAIR curtain motors if controls don't work!"
+  },
   "5.5.934": {
     "en": "🔧 FLOW CARD FIX: Added missing toggle_gang, turn_on_all, turn_off_all, and LED backlight flow cards for switch_wall_5-8gang drivers. These were in driver definitions but not composed into app.json."
   },
