@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.933** | 🔧 CURTAIN MOTOR FIX: _TZE204_xu4a5rhj (Longsam mini m3) now correctly detect... |
 | **v5.5.932** | 🔧 FORUM FIXES: 1) PETER: HOBEIAN multisensor temp/humidity now shows correct... |
 | **v5.5.931** | 🔧 FLOW CARD FIX + CREDITS: Unique flow card IDs for switch_wall_5-8gang. CRE... |
 | **v5.5.930** | 🔧 PETER FIX + LED CONTROL: 1) HOBEIAN Multisensor (ZG-204ZV) - added DP poll... |
@@ -78,7 +79,6 @@
 | **v5.5.926** | 🔧 DIAGNOSTIC FIXES: 1) HOBEIAN ZG-101ZL (_TZ3000_ja5osu5g) fingerprint remov... |
 | **v5.5.925** | 🔀 PERMISSIVE VARIANT MODE (Peter_van_Werkhoven): Same manufacturerName (_TZE... |
 | **v5.5.924** | 🔘 MOES BUTTON FIX (GitHub #1327 Kokosnootmelk/nickpatteeuw): Physical button... |
-| **v5.5.923** | 🔧 DIAGNOSTICS FIX (User Reports): 1) Curtain motor TS0601 showing 'unknown/u... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
