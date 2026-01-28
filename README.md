@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.944** | 🔍 FULL AUDIT: Fixed flow card namespace violations - ir_blaster_, smart_knob... |
 | **v5.5.943** | 🔧 BUILD CLEANUP: Fixed missing titleFormatted warnings for switch_3gang and ... |
 | **v5.5.942** | 🔧 FORUM FIXES: Added all case variants for BSEED fingerprints (wall_switch_1... |
 | **v5.5.941** | 🙏 PR #118 COMPLETE FIX (@packetninja): Rewrote wall_switch_1gang_1way with P... |
@@ -78,7 +79,6 @@
 | **v5.5.937** | 🔧 CURTAIN MOTOR FIX v2: Fixed direct cluster DP communication fallback. Now ... |
 | **v5.5.936** | 🚀 MASSIVE FLOW CARD UPDATE: Added 153 missing flow cards (74 actions, 66 tri... |
 | **v5.5.935** | 🔧 CRITICAL FIXES: 1) CURTAIN MOTOR: Fixed 'tuya.datapoint: value is unexpect... |
-| **v5.5.934** | 🔧 FLOW CARD FIX: Added missing toggle_gang, turn_on_all, turn_off_all, and L... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
