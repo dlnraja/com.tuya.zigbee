@@ -69,6 +69,9 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.963** | 🔧 FIX: Fingerbot MODULE_NOT_FOUND error fixed (import path correction). Fixe... |
+| **v5.5.962** | 🔧 FIX: Physical button flow detection added to switch_1gang (PR #120 pattern... |
+| **v5.5.961** | 🔧 FIX: Physical button flow cards now trigger correctly for BSEED 2/3/4-gang... |
 | **v5.5.960** | 🔧 FIX: Added missing BSEED fingerprints (_TZ3000_blhvsaqf, _TZ3000_ysdv91bk,... |
 | **v5.5.959** | 🔧 FIX: Fingerbot driver module import error fixed (MODULE_NOT_FOUND). App wi... |
 | **v5.5.958** | 🔧 FIX: Ian_Gibbo TS0012 2-gang switch (_TZ3000_zmlunnhy) - Moved from switch... |
@@ -76,9 +79,6 @@
 | **v5.5.956** | 🔧 FIX: JJ10 presence sensor CK-BL702-MWS-01 (_TZE200_crq3r3la) - Removed dup... |
 | **v5.5.955** | 🔧 FIX: Jolink smoke detector - Flow card triggers now fire! Added explicit t... |
 | **v5.5.954** | 🔧 RESTORE: Added 14 missing TS0601 dimmer fingerprints to dimmer_wall_1gang ... |
-| **v5.5.953** | 🔧 FIX: Peter_van_Werkhoven #1265 - Humidity now shows correct values (was 9%... |
-| **v5.5.952** | 🧹 CLEANUP: Removed 23 overlapping fingerprints from wall_dimmer_1gang_1way t... |
-| **v5.5.951** | 🔧 FIX: BSEED 2-button switches (_TZ3000_l9brjwau TS0003) now properly recogn... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
