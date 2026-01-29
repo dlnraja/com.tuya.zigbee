@@ -264,8 +264,7 @@
   },
   "images": {
     "small": "drivers/co_sensor/assets/images/small.png",
-    "large": "drivers/co_sensor/assets/large.png",
-    "xlarge": "drivers/co_sensor/assets/images/xlarge.png"
+    "large": "drivers/co_sensor/assets/large.png"
   },
   "platforms": [
     "local"
