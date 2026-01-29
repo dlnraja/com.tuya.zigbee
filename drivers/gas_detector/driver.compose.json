@@ -521,8 +521,7 @@
   ],
   "images": {
     "small": "drivers/gas_detector/assets/images/small.png",
-    "large": "drivers/gas_detector/assets/large.png",
-    "xlarge": "drivers/gas_detector/assets/images/xlarge.png"
+    "large": "drivers/gas_detector/assets/large.png"
   },
   "platforms": [
     "local"

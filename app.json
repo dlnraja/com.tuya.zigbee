@@ -21834,8 +21834,7 @@
       ],
       "images": {
         "small": "drivers/air_quality_comprehensive/assets/images/small.png",
-        "large": "drivers/air_quality_comprehensive/assets/large.png",
-        "xlarge": "drivers/air_quality_comprehensive/assets/images/xlarge.png"
+        "large": "drivers/air_quality_comprehensive/assets/large.png"
       },
       "platforms": [
         "local"
@@ -22415,8 +22414,7 @@
       ],
       "images": {
         "small": "drivers/bulb_dimmable/assets/images/small.png",
-        "large": "drivers/bulb_dimmable/assets/large.png",
-        "xlarge": "drivers/bulb_dimmable/assets/images/xlarge.png"
+        "large": "drivers/bulb_dimmable/assets/large.png"
       },
       "platforms": [
         "local"
@@ -23292,8 +23290,7 @@
       ],
       "images": {
         "small": "drivers/bulb_rgb/assets/images/small.png",
-        "large": "drivers/bulb_rgb/assets/large.png",
-        "xlarge": "drivers/bulb_rgb/assets/images/xlarge.png"
+        "large": "drivers/bulb_rgb/assets/large.png"
       },
       "platforms": [
         "local"
@@ -23908,8 +23905,7 @@
       ],
       "images": {
         "small": "drivers/bulb_rgbw/assets/images/small.png",
-        "large": "drivers/bulb_rgbw/assets/large.png",
-        "xlarge": "drivers/bulb_rgbw/assets/images/xlarge.png"
+        "large": "drivers/bulb_rgbw/assets/large.png"
       },
       "platforms": [
         "local"
@@ -24506,8 +24502,7 @@
       ],
       "images": {
         "small": "drivers/bulb_tunable_white/assets/images/small.png",
-        "large": "drivers/bulb_tunable_white/assets/large.png",
-        "xlarge": "drivers/bulb_tunable_white/assets/images/xlarge.png"
+        "large": "drivers/bulb_tunable_white/assets/large.png"
       },
       "platforms": [
         "local"
@@ -25038,8 +25033,7 @@
       ],
       "images": {
         "small": "drivers/bulb_white/assets/images/small.png",
-        "large": "drivers/bulb_white/assets/large.png",
-        "xlarge": "drivers/bulb_white/assets/images/xlarge.png"
+        "large": "drivers/bulb_white/assets/large.png"
       },
       "platforms": [
         "local"
@@ -25475,8 +25469,7 @@
       ],
       "images": {
         "small": "drivers/button_emergency_sos/assets/images/small.png",
-        "large": "drivers/button_emergency_sos/assets/large.png",
-        "xlarge": "drivers/button_emergency_sos/assets/images/xlarge.png"
+        "large": "drivers/button_emergency_sos/assets/large.png"
       },
       "platforms": [
         "local"
@@ -30582,8 +30575,7 @@
       ],
       "images": {
         "small": "drivers/ceiling_fan/assets/images/small.png",
-        "large": "drivers/ceiling_fan/assets/large.png",
-        "xlarge": "drivers/ceiling_fan/assets/images/xlarge.png"
+        "large": "drivers/ceiling_fan/assets/large.png"
       },
       "platforms": [
         "local"
@@ -33426,8 +33418,7 @@
       ],
       "images": {
         "small": "drivers/climate_sensor/assets/images/small.png",
-        "large": "drivers/climate_sensor/assets/large.png",
-        "xlarge": "drivers/climate_sensor/assets/images/xlarge.png"
+        "large": "drivers/climate_sensor/assets/large.png"
       },
       "platforms": [
         "local"
@@ -33703,8 +33694,7 @@
       },
       "images": {
         "small": "drivers/co_sensor/assets/images/small.png",
-        "large": "drivers/co_sensor/assets/large.png",
-        "xlarge": "drivers/co_sensor/assets/images/xlarge.png"
+        "large": "drivers/co_sensor/assets/large.png"
       },
       "platforms": [
         "local"
@@ -34594,8 +34584,7 @@
       ],
       "images": {
         "small": "drivers/contact_sensor/assets/images/small.png",
-        "large": "drivers/contact_sensor/assets/large.png",
-        "xlarge": "drivers/contact_sensor/assets/images/xlarge.png"
+        "large": "drivers/contact_sensor/assets/large.png"
       },
       "platforms": [
         "local"
@@ -35866,8 +35855,7 @@
       },
       "images": {
         "small": "drivers/curtain_motor_tilt/assets/images/small.png",
-        "large": "drivers/curtain_motor_tilt/assets/large.png",
-        "xlarge": "drivers/curtain_motor_tilt/assets/images/xlarge.png"
+        "large": "drivers/curtain_motor_tilt/assets/large.png"
       },
       "platforms": [
         "local"
@@ -36588,7 +36576,6 @@
       },
       "images": {
         "large": "drivers/dimmer_dual_channel/assets/large.png",
-        "xlarge": "drivers/dimmer_dual_channel/assets/images/xlarge.png",
         "small": "drivers/dimmer_dual_channel/assets/images/small.png"
       },
       "id": "dimmer_dual_channel"
@@ -37454,8 +37441,7 @@
       ],
       "images": {
         "small": "drivers/dimmer_wall_1gang/assets/images/small.png",
-        "large": "drivers/dimmer_wall_1gang/assets/large.png",
-        "xlarge": "drivers/dimmer_wall_1gang/assets/images/xlarge.png"
+        "large": "drivers/dimmer_wall_1gang/assets/large.png"
       },
       "platforms": [
         "local"
@@ -38254,8 +38240,7 @@
       },
       "images": {
         "small": "/drivers/diy_custom_zigbee/assets/images/small.png",
-        "large": "/drivers/diy_custom_zigbee/assets/large.png",
-        "xlarge": "/drivers/diy_custom_zigbee/assets/images/xlarge.png"
+        "large": "drivers/diy_custom_zigbee/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -39317,8 +39302,7 @@
       ],
       "images": {
         "small": "drivers/door_controller/assets/images/small.png",
-        "large": "drivers/door_controller/assets/large.png",
-        "xlarge": "drivers/door_controller/assets/images/xlarge.png"
+        "large": "drivers/door_controller/assets/large.png"
       },
       "platforms": [
         "local"
@@ -39860,8 +39844,7 @@
       ],
       "images": {
         "small": "drivers/doorbell/assets/images/small.png",
-        "large": "drivers/doorbell/assets/large.png",
-        "xlarge": "drivers/doorbell/assets/images/xlarge.png"
+        "large": "drivers/doorbell/assets/large.png"
       },
       "platforms": [
         "local"
@@ -40170,8 +40153,7 @@
       },
       "images": {
         "small": "drivers/energy_meter_3phase/assets/images/small.png",
-        "large": "drivers/energy_meter_3phase/assets/large.png",
-        "xlarge": "drivers/energy_meter_3phase/assets/images/xlarge.png"
+        "large": "drivers/energy_meter_3phase/assets/large.png"
       },
       "platforms": [
         "local"
@@ -40638,8 +40620,7 @@
       ],
       "images": {
         "small": "drivers/fingerbot/assets/images/small.png",
-        "large": "drivers/fingerbot/assets/large.png",
-        "xlarge": "drivers/fingerbot/assets/images/xlarge.png"
+        "large": "drivers/fingerbot/assets/large.png"
       },
       "id": "fingerbot",
       "platforms": [
@@ -42027,8 +42008,7 @@
       ],
       "images": {
         "small": "drivers/gas_detector/assets/images/small.png",
-        "large": "drivers/gas_detector/assets/large.png",
-        "xlarge": "drivers/gas_detector/assets/images/xlarge.png"
+        "large": "drivers/gas_detector/assets/large.png"
       },
       "platforms": [
         "local"
@@ -42603,8 +42583,7 @@
       ],
       "images": {
         "small": "drivers/gas_sensor/assets/images/small.png",
-        "large": "drivers/gas_sensor/assets/large.png",
-        "xlarge": "drivers/gas_sensor/assets/images/xlarge.png"
+        "large": "drivers/gas_sensor/assets/large.png"
       },
       "platforms": [
         "local"
@@ -43124,8 +43103,7 @@
       ],
       "images": {
         "small": "drivers/gateway_zigbee_bridge/assets/images/small.png",
-        "large": "drivers/gateway_zigbee_bridge/assets/large.png",
-        "xlarge": "drivers/gateway_zigbee_bridge/assets/images/xlarge.png"
+        "large": "drivers/gateway_zigbee_bridge/assets/large.png"
       },
       "platforms": [
         "local"
@@ -43165,8 +43143,7 @@
       "class": "other",
       "images": {
         "small": "/drivers/generic_tuya/assets/images/small.png",
-        "large": "/drivers/generic_tuya/assets/large.png",
-        "xlarge": "/drivers/generic_tuya/assets/images/xlarge.png"
+        "large": "drivers/generic_tuya/assets/large.png"
       },
       "capabilities": [
         "measure_battery",
@@ -43957,8 +43934,7 @@
       ],
       "images": {
         "small": "drivers/hvac_air_conditioner/assets/images/small.png",
-        "large": "drivers/hvac_air_conditioner/assets/large.png",
-        "xlarge": "drivers/hvac_air_conditioner/assets/images/xlarge.png"
+        "large": "drivers/hvac_air_conditioner/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -44536,8 +44512,7 @@
       ],
       "images": {
         "small": "drivers/hvac_dehumidifier/assets/images/small.png",
-        "large": "drivers/hvac_dehumidifier/assets/large.png",
-        "xlarge": "drivers/hvac_dehumidifier/assets/images/xlarge.png"
+        "large": "drivers/hvac_dehumidifier/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -45344,8 +45319,7 @@
       },
       "images": {
         "small": "drivers/ir_blaster/assets/images/small.png",
-        "large": "drivers/ir_blaster/assets/large.png",
-        "xlarge": "drivers/ir_blaster/assets/images/xlarge.png"
+        "large": "drivers/ir_blaster/assets/large.png"
       },
       "id": "ir_blaster"
     },
@@ -45613,8 +45587,7 @@
       },
       "images": {
         "small": "drivers/lcdtemphumidsensor/assets/images/small.png",
-        "large": "drivers/lcdtemphumidsensor/assets/large.png",
-        "xlarge": "drivers/lcdtemphumidsensor/assets/images/xlarge.png"
+        "large": "drivers/lcdtemphumidsensor/assets/large.png"
       },
       "platforms": [
         "local"
@@ -45899,8 +45872,7 @@
       },
       "images": {
         "small": "drivers/led_controller_cct/assets/images/small.png",
-        "large": "drivers/led_controller_cct/assets/large.png",
-        "xlarge": "drivers/led_controller_cct/assets/images/xlarge.png"
+        "large": "drivers/led_controller_cct/assets/large.png"
       },
       "platforms": [
         "local"
@@ -46194,8 +46166,7 @@
       },
       "images": {
         "small": "/drivers/led_controller_dimmable/assets/images/small.png",
-        "large": "/drivers/led_controller_dimmable/assets/large.png",
-        "xlarge": "/drivers/led_controller_dimmable/assets/images/xlarge.png"
+        "large": "drivers/led_controller_dimmable/assets/large.png"
       },
       "platforms": [
         "local"
@@ -46475,8 +46446,7 @@
       },
       "images": {
         "small": "drivers/led_controller_rgb/assets/images/small.png",
-        "large": "drivers/led_controller_rgb/assets/large.png",
-        "xlarge": "drivers/led_controller_rgb/assets/images/xlarge.png"
+        "large": "drivers/led_controller_rgb/assets/large.png"
       },
       "platforms": [
         "local"
@@ -47027,8 +46997,7 @@
       ],
       "images": {
         "small": "drivers/led_strip/assets/images/small.png",
-        "large": "drivers/led_strip/assets/large.png",
-        "xlarge": "drivers/led_strip/assets/images/xlarge.png"
+        "large": "drivers/led_strip/assets/large.png"
       },
       "platforms": [
         "local"
@@ -47569,8 +47538,7 @@
       ],
       "images": {
         "small": "drivers/led_strip_advanced/assets/images/small.png",
-        "large": "drivers/led_strip_advanced/assets/large.png",
-        "xlarge": "drivers/led_strip_advanced/assets/images/xlarge.png"
+        "large": "drivers/led_strip_advanced/assets/large.png"
       },
       "platforms": [
         "local"
@@ -48162,8 +48130,7 @@
       ],
       "images": {
         "small": "drivers/led_strip_rgbw/assets/images/small.png",
-        "large": "drivers/led_strip_rgbw/assets/large.png",
-        "xlarge": "drivers/led_strip_rgbw/assets/images/xlarge.png"
+        "large": "drivers/led_strip_rgbw/assets/large.png"
       },
       "platforms": [
         "local"
@@ -48704,8 +48671,7 @@
       ],
       "images": {
         "small": "drivers/lock_smart/assets/images/small.png",
-        "large": "drivers/lock_smart/assets/large.png",
-        "xlarge": "drivers/lock_smart/assets/images/xlarge.png"
+        "large": "drivers/lock_smart/assets/large.png"
       },
       "platforms": [
         "local"
@@ -49294,8 +49260,7 @@
       ],
       "images": {
         "small": "drivers/module_mini_switch/assets/images/small.png",
-        "large": "drivers/module_mini_switch/assets/large.png",
-        "xlarge": "drivers/module_mini_switch/assets/images/xlarge.png"
+        "large": "drivers/module_mini_switch/assets/large.png"
       },
       "platforms": [
         "local"
@@ -50162,8 +50127,7 @@
       ],
       "images": {
         "small": "drivers/motion_sensor/assets/images/small.png",
-        "large": "drivers/motion_sensor/assets/large.png",
-        "xlarge": "drivers/motion_sensor/assets/images/xlarge.png"
+        "large": "drivers/motion_sensor/assets/large.png"
       },
       "platforms": [
         "local"
@@ -50911,8 +50875,7 @@
       ],
       "images": {
         "small": "drivers/motion_sensor_radar_mmwave/assets/images/small.png",
-        "large": "drivers/motion_sensor_radar_mmwave/assets/large.png",
-        "xlarge": "drivers/motion_sensor_radar_mmwave/assets/images/xlarge.png"
+        "large": "drivers/motion_sensor_radar_mmwave/assets/large.png"
       },
       "platforms": [
         "local"
@@ -52013,8 +51976,7 @@
       ],
       "images": {
         "small": "drivers/plug_energy_monitor/assets/images/small.png",
-        "large": "drivers/plug_energy_monitor/assets/large.png",
-        "xlarge": "drivers/plug_energy_monitor/assets/images/xlarge.png"
+        "large": "drivers/plug_energy_monitor/assets/large.png"
       },
       "platforms": [
         "local"
@@ -53086,8 +53048,7 @@
       ],
       "images": {
         "small": "drivers/plug_smart/assets/images/small.png",
-        "large": "drivers/plug_smart/assets/large.png",
-        "xlarge": "drivers/plug_smart/assets/images/xlarge.png"
+        "large": "drivers/plug_smart/assets/large.png"
       },
       "platforms": [
         "local"
@@ -54159,8 +54120,7 @@
       },
       "images": {
         "small": "drivers/power_meter/assets/images/small.png",
-        "large": "drivers/power_meter/assets/large.png",
-        "xlarge": "drivers/power_meter/assets/images/xlarge.png"
+        "large": "drivers/power_meter/assets/large.png"
       },
       "platforms": [
         "local"
@@ -54651,8 +54611,7 @@
       ],
       "images": {
         "small": "drivers/presence_sensor_ceiling/assets/images/small.png",
-        "large": "drivers/presence_sensor_ceiling/assets/large.png",
-        "xlarge": "drivers/presence_sensor_ceiling/assets/images/xlarge.png"
+        "large": "drivers/presence_sensor_ceiling/assets/large.png"
       },
       "platforms": [
         "local"
@@ -55460,8 +55419,7 @@
       ],
       "images": {
         "small": "drivers/presence_sensor_radar/assets/images/small.png",
-        "large": "drivers/presence_sensor_radar/assets/large.png",
-        "xlarge": "drivers/presence_sensor_radar/assets/images/xlarge.png"
+        "large": "drivers/presence_sensor_radar/assets/large.png"
       },
       "platforms": [
         "local"
@@ -57063,8 +57021,7 @@
       ],
       "images": {
         "small": "drivers/radiator_valve/assets/images/small.png",
-        "large": "drivers/radiator_valve/assets/large.png",
-        "xlarge": "drivers/radiator_valve/assets/images/xlarge.png"
+        "large": "drivers/radiator_valve/assets/large.png"
       },
       "platforms": [
         "local"
@@ -57658,8 +57615,7 @@
       },
       "images": {
         "small": "drivers/scene_switch_1/assets/images/small.png",
-        "large": "drivers/scene_switch_1/assets/large.png",
-        "xlarge": "drivers/scene_switch_1/assets/images/xlarge.png"
+        "large": "drivers/scene_switch_1/assets/large.png"
       },
       "platforms": [
         "local"
@@ -57944,8 +57900,7 @@
       },
       "images": {
         "small": "drivers/scene_switch_2/assets/images/small.png",
-        "large": "drivers/scene_switch_2/assets/large.png",
-        "xlarge": "drivers/scene_switch_2/assets/images/xlarge.png"
+        "large": "drivers/scene_switch_2/assets/large.png"
       },
       "platforms": [
         "local"
@@ -58240,8 +58195,7 @@
       },
       "images": {
         "small": "drivers/scene_switch_3/assets/images/small.png",
-        "large": "drivers/scene_switch_3/assets/large.png",
-        "xlarge": "drivers/scene_switch_3/assets/images/xlarge.png"
+        "large": "drivers/scene_switch_3/assets/large.png"
       },
       "platforms": [
         "local"
@@ -58575,8 +58529,7 @@
       },
       "images": {
         "small": "drivers/scene_switch_4/assets/images/small.png",
-        "large": "drivers/scene_switch_4/assets/large.png",
-        "xlarge": "drivers/scene_switch_4/assets/images/xlarge.png"
+        "large": "drivers/scene_switch_4/assets/large.png"
       },
       "platforms": [
         "local"
@@ -58898,8 +58851,7 @@
       },
       "images": {
         "small": "drivers/scene_switch_6/assets/images/small.png",
-        "large": "drivers/scene_switch_6/assets/large.png",
-        "xlarge": "drivers/scene_switch_6/assets/images/xlarge.png"
+        "large": "drivers/scene_switch_6/assets/large.png"
       },
       "platforms": [
         "local"
@@ -59415,8 +59367,7 @@
       ],
       "images": {
         "small": "drivers/shutter_roller_controller/assets/images/small.png",
-        "large": "drivers/shutter_roller_controller/assets/large.png",
-        "xlarge": "drivers/shutter_roller_controller/assets/images/xlarge.png"
+        "large": "drivers/shutter_roller_controller/assets/large.png"
       },
       "platforms": [
         "local"
@@ -59971,8 +59922,7 @@
       ],
       "images": {
         "small": "drivers/siren/assets/images/small.png",
-        "large": "drivers/siren/assets/large.png",
-        "xlarge": "drivers/siren/assets/images/xlarge.png"
+        "large": "drivers/siren/assets/large.png"
       },
       "platforms": [
         "local"
@@ -60559,8 +60509,7 @@
       },
       "images": {
         "small": "drivers/smart_heater/assets/images/small.png",
-        "large": "drivers/smart_heater/assets/large.png",
-        "xlarge": "drivers/smart_heater/assets/images/xlarge.png"
+        "large": "drivers/smart_heater/assets/large.png"
       },
       "platforms": [
         "local"
@@ -60615,8 +60564,7 @@
       ],
       "images": {
         "small": "drivers/smart_heater_controller/assets/images/small.png",
-        "large": "drivers/smart_heater_controller/assets/large.png",
-        "xlarge": "drivers/smart_heater_controller/assets/images/xlarge.png"
+        "large": "drivers/smart_heater_controller/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -61145,7 +61093,7 @@
       },
       "images": {
         "small": "/drivers/smart_knob_rotary/assets/images/small.png",
-        "large": "/drivers/smart_knob_rotary/assets/large.png"
+        "large": "drivers/smart_knob_rotary/assets/large.png"
       },
       "id": "smart_knob_rotary"
     },
@@ -61407,8 +61355,7 @@
       },
       "images": {
         "small": "drivers/smart_rcbo/assets/images/small.png",
-        "large": "drivers/smart_rcbo/assets/large.png",
-        "xlarge": "drivers/smart_rcbo/assets/images/xlarge.png"
+        "large": "drivers/smart_rcbo/assets/large.png"
       },
       "platforms": [
         "local"
@@ -62015,8 +61962,7 @@
       ],
       "images": {
         "small": "drivers/smoke_detector_advanced/assets/images/small.png",
-        "large": "drivers/smoke_detector_advanced/assets/large.png",
-        "xlarge": "drivers/smoke_detector_advanced/assets/images/xlarge.png"
+        "large": "drivers/smoke_detector_advanced/assets/large.png"
       },
       "platforms": [
         "local"
@@ -62517,8 +62463,7 @@
       ],
       "images": {
         "small": "drivers/soil_sensor/assets/images/small.png",
-        "large": "drivers/soil_sensor/assets/large.png",
-        "xlarge": "drivers/soil_sensor/assets/images/xlarge.png"
+        "large": "drivers/soil_sensor/assets/large.png"
       },
       "platforms": [
         "local"
@@ -67046,8 +66991,7 @@
       },
       "images": {
         "small": "drivers/switch_plug_1/assets/images/small.png",
-        "large": "drivers/switch_plug_1/assets/large.png",
-        "xlarge": "drivers/switch_plug_1/assets/images/xlarge.png"
+        "large": "drivers/switch_plug_1/assets/large.png"
       },
       "platforms": [
         "local"
@@ -67525,8 +67469,7 @@
       },
       "images": {
         "small": "drivers/switch_plug_2/assets/images/small.png",
-        "large": "drivers/switch_plug_2/assets/large.png",
-        "xlarge": "drivers/switch_plug_2/assets/images/xlarge.png"
+        "large": "drivers/switch_plug_2/assets/large.png"
       },
       "platforms": [
         "local"
@@ -68052,8 +67995,7 @@
       },
       "images": {
         "small": "/drivers/switch_temp_sensor/assets/images/small.png",
-        "large": "/drivers/switch_temp_sensor/assets/large.png",
-        "xlarge": "/drivers/switch_temp_sensor/assets/images/xlarge.png"
+        "large": "drivers/switch_temp_sensor/assets/large.png"
       },
       "id": "switch_temp_sensor"
     },
@@ -68756,8 +68698,7 @@
       ],
       "images": {
         "small": "drivers/switch_wall_5gang/assets/images/small.png",
-        "large": "drivers/switch_wall_5gang/assets/large.png",
-        "xlarge": "drivers/switch_wall_5gang/assets/images/xlarge.png"
+        "large": "drivers/switch_wall_5gang/assets/large.png"
       },
       "platforms": [
         "local"
@@ -69142,7 +69083,7 @@
       },
       "images": {
         "small": "/drivers/switch_wall_6gang/assets/images/small.png",
-        "large": "/drivers/switch_wall_6gang/assets/large.png"
+        "large": "drivers/switch_wall_6gang/assets/large.png"
       },
       "platforms": [
         "local"
@@ -71413,8 +71354,7 @@
       ],
       "images": {
         "small": "drivers/switch_wireless/assets/images/small.png",
-        "large": "drivers/switch_wireless/assets/large.png",
-        "xlarge": "drivers/switch_wireless/assets/images/xlarge.png"
+        "large": "drivers/switch_wireless/assets/large.png"
       },
       "platforms": [
         "local"
@@ -71716,8 +71656,7 @@
       },
       "images": {
         "small": "drivers/temphumidsensor/assets/images/small.png",
-        "large": "drivers/temphumidsensor/assets/large.png",
-        "xlarge": "drivers/temphumidsensor/assets/images/xlarge.png"
+        "large": "drivers/temphumidsensor/assets/large.png"
       },
       "platforms": [
         "local"
@@ -71989,8 +71928,7 @@
       },
       "images": {
         "small": "drivers/thermostat_4ch/assets/images/small.png",
-        "large": "drivers/thermostat_4ch/assets/large.png",
-        "xlarge": "drivers/thermostat_4ch/assets/images/xlarge.png"
+        "large": "drivers/thermostat_4ch/assets/large.png"
       },
       "platforms": [
         "local"
@@ -72506,7 +72444,6 @@
       },
       "images": {
         "large": "drivers/thermostat_tuya_dp/assets/large.png",
-        "xlarge": "drivers/thermostat_tuya_dp/assets/images/xlarge.png",
         "small": "drivers/thermostat_tuya_dp/assets/images/small.png"
       },
       "energy": {
@@ -73172,8 +73109,7 @@
       ],
       "images": {
         "small": "/drivers/usb_dongle_dual_repeater/assets/images/small.png",
-        "large": "/drivers/usb_dongle_dual_repeater/assets/large.png",
-        "xlarge": "/drivers/usb_dongle_dual_repeater/assets/images/xlarge.png"
+        "large": "drivers/usb_dongle_dual_repeater/assets/large.png"
       },
       "platforms": [
         "local"
@@ -73971,8 +73907,7 @@
       ],
       "images": {
         "small": "drivers/usb_outlet_advanced/assets/images/small.png",
-        "large": "drivers/usb_outlet_advanced/assets/large.png",
-        "xlarge": "drivers/usb_outlet_advanced/assets/images/xlarge.png"
+        "large": "drivers/usb_outlet_advanced/assets/large.png"
       },
       "platforms": [
         "local"
@@ -74268,8 +74203,7 @@
       },
       "images": {
         "small": "drivers/valve_irrigation/assets/images/small.png",
-        "large": "drivers/valve_irrigation/assets/large.png",
-        "xlarge": "drivers/valve_irrigation/assets/images/xlarge.png"
+        "large": "drivers/valve_irrigation/assets/large.png"
       },
       "platforms": [
         "local"
@@ -74561,8 +74495,7 @@
       },
       "images": {
         "small": "drivers/valve_single/assets/images/small.png",
-        "large": "drivers/valve_single/assets/large.png",
-        "xlarge": "drivers/valve_single/assets/images/xlarge.png"
+        "large": "drivers/valve_single/assets/large.png"
       },
       "platforms": [
         "local"
@@ -74879,8 +74812,7 @@
       },
       "images": {
         "small": "drivers/vibration_sensor/assets/images/small.png",
-        "large": "drivers/vibration_sensor/assets/large.png",
-        "xlarge": "drivers/vibration_sensor/assets/images/xlarge.png"
+        "large": "drivers/vibration_sensor/assets/large.png"
       },
       "platforms": [
         "local"
@@ -74919,7 +74851,7 @@
       ],
       "images": {
         "small": "/drivers/wall_dimmer_1gang_1way/assets/images/small.png",
-        "large": "/drivers/wall_dimmer_1gang_1way/assets/large.png"
+        "large": "drivers/wall_dimmer_1gang_1way/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -75130,7 +75062,7 @@
       ],
       "images": {
         "small": "/drivers/wall_switch_1gang_1way/assets/images/small.png",
-        "large": "/drivers/wall_switch_1gang_1way/assets/large.png"
+        "large": "drivers/wall_switch_1gang_1way/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -75898,8 +75830,7 @@
       ],
       "images": {
         "small": "drivers/water_leak_sensor/assets/images/small.png",
-        "large": "drivers/water_leak_sensor/assets/large.png",
-        "xlarge": "drivers/water_leak_sensor/assets/images/xlarge.png"
+        "large": "drivers/water_leak_sensor/assets/large.png"
       },
       "platforms": [
         "local"
@@ -75980,8 +75911,7 @@
       ],
       "images": {
         "small": "drivers/water_tank_monitor/assets/images/small.png",
-        "large": "drivers/water_tank_monitor/assets/large.png",
-        "xlarge": "drivers/water_tank_monitor/assets/images/xlarge.png"
+        "large": "drivers/water_tank_monitor/assets/large.png"
       },
       "zigbee": {
         "manufacturerName": [
@@ -76859,8 +76789,7 @@
       ],
       "images": {
         "small": "drivers/water_valve_smart/assets/images/small.png",
-        "large": "drivers/water_valve_smart/assets/large.png",
-        "xlarge": "drivers/water_valve_smart/assets/images/xlarge.png"
+        "large": "drivers/water_valve_smart/assets/large.png"
       },
       "platforms": [
         "local"

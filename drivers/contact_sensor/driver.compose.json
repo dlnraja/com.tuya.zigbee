@@ -878,8 +878,7 @@
   ],
   "images": {
     "small": "drivers/contact_sensor/assets/images/small.png",
-    "large": "drivers/contact_sensor/assets/large.png",
-    "xlarge": "drivers/contact_sensor/assets/images/xlarge.png"
+    "large": "drivers/contact_sensor/assets/large.png"
   },
   "platforms": [
     "local"
