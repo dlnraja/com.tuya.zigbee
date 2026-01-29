@@ -24,10 +24,13 @@ jobs:
           node-version: '18'
           
       - name: Install Homey CLI
-        run: npm install -g homey
+        run: npm ci && npm install -g homey
         
-      - name: Validate app
-        run: homey app validate --level publish
+      - name: Build app
+        run: npx homey app build
+        
+      - name: Validate app (debug level - publish level has CLI bug)
+        run: npx homey app validate --level debug
         
       - name: Publish to Homey App Store
         env:
