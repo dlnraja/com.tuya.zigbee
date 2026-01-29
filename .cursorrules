@@ -59,3 +59,22 @@ Strings only: `"off"`, `"normal"`, `"inverted"`
 - `lib/devices/HybridSwitchBase.js` - Base switch class
 - `lib/mixins/PhysicalButtonMixin.js` - Physical detection
 - `drivers/{type}/driver.flow.compose.json` - Flow definitions
+
+## CRITICAL: Fingerprint Matching
+**manufacturerName CAN appear in MULTIPLE drivers** - this is NORMAL!
+
+### Fingerprint = manufacturerName + productId (COMBINED)
+```
+_TZ3000_abc + TS0001 → switch_1gang
+_TZ3000_abc + TS0002 → switch_2gang  (SAME mfr, different productId = OK!)
+_TZ3000_abc + TS0003 → switch_3gang
+```
+
+### When to REMOVE a fingerprint
+Only if SAME manufacturerName + SAME productId in WRONG driver.
+Do NOT remove just because mfr appears in another driver with different productId.
+
+### Common Multi-Driver Manufacturers
+- `_TZ3000_*` - Makes 1-gang, 2-gang, 3-gang variants
+- `_TZE200_*` / `_TZE204_*` - Tuya DP across sensors, TRVs, covers
+- Same OEM = different productIds for different device types
