@@ -1,0 +1,44 @@
+# Universal Tuya Zigbee - Cascade AI Context
+# com.dlnraja.tuya.zigbee | Homey SDK3 Zigbee
+
+## Project Type
+Homey Pro app for Tuya Zigbee devices (4200+ supported)
+
+## Protocol
+Hybrid: Tuya DP cluster (0xEF00) + Standard ZCL clusters
+
+## BUGS TO AVOID
+
+1. Settings keys: `zb_model_id`, `zb_manufacturer_name` (exact!)
+2. Flow IDs: `{driver}_physical_gang{N}_{on|off}`
+3. No `titleFormatted` with `[[device]]` in triggers
+4. Backlight: strings `"off"`, `"normal"`, `"inverted"`
+
+## CODE PATTERNS
+
+### Imports
+```javascript
+const { ZigBeeDevice } = require('homey-zigbeedriver');
+const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+```
+
+### Mixins
+```javascript
+class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
+```
+
+### Physical Detection (PR #120)
+```javascript
+this._lastOnoffState = null;
+this._appCommandPending = false;
+// Mark app: this._appCommandPending = true; setTimeout 2000ms
+// Check: const isPhysical = reportingEvent && !this._appCommandPending;
+```
+
+## BSEED ZCL-ONLY
+`_TZ3000_l9brjwau`, `_TZ3000_blhvsaqf`, `_TZ3000_ysdv91bk`
+
+## KEY FILES
+- lib/devices/HybridSwitchBase.js
+- lib/mixins/PhysicalButtonMixin.js
+- drivers/{type}/driver.flow.compose.json
