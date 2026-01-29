@@ -271,9 +271,13 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          3,
-          61184
+          0
+        ],
+        "bindings": []
+      },
+      "2": {
+        "clusters": [
+          0
         ],
         "bindings": []
       }
@@ -321,7 +325,8 @@
   ],
   "images": {
     "small": "/drivers/usb_dongle_dual_repeater/assets/images/small.png",
-    "large": "drivers/usb_dongle_dual_repeater/assets/large.png"
+    "large": "/drivers/usb_dongle_dual_repeater/assets/images/large.png",
+    "xlarge": "/drivers/usb_dongle_dual_repeater/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

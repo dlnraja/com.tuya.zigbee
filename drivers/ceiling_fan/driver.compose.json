@@ -252,8 +252,7 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          61184
+          0
         ],
         "bindings": []
       }
@@ -493,7 +492,8 @@
   ],
   "images": {
     "small": "drivers/ceiling_fan/assets/images/small.png",
-    "large": "drivers/ceiling_fan/assets/large.png"
+    "large": "drivers/ceiling_fan/assets/images/large.png",
+    "xlarge": "drivers/ceiling_fan/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

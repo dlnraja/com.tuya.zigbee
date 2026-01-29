@@ -16,26 +16,20 @@
     "onoff": {
       "title": {
         "en": "Switch 1",
-        "fr": "Interrupteur 1",
-        "nl": "Schakelaar 1",
-        "de": "Schalter 1"
+        "fr": "Interrupteur 1"
       }
     }
   },
   "energy": {
-    "batteries": [
-      "CR2032",
-      "AAA",
-      "AA",
-      "OTHER"
-    ],
+    "batteries": ["CR2032", "AAA", "AA", "OTHER"],
     "approximation": {
       "usageConstant": 0.5
     }
   },
   "images": {
     "small": "/drivers/diy_custom_zigbee/assets/images/small.png",
-    "large": "drivers/diy_custom_zigbee/assets/large.png"
+    "large": "/drivers/diy_custom_zigbee/assets/images/large.png",
+    "xlarge": "/drivers/diy_custom_zigbee/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [
@@ -310,88 +304,36 @@
     ],
     "endpoints": {
       "1": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          8,
-          768,
-          1026,
-          1029,
-          1280
-        ],
-        "bindings": [
-          6,
-          8,
-          768,
-          1026,
-          1029
-        ]
+        "clusters": [0, 3, 4, 5, 6, 8, 768, 1026, 1029, 1280],
+        "bindings": [6, 8, 768, 1026, 1029]
       },
       "2": {
-        "clusters": [
-          0,
-          6
-        ],
-        "bindings": [
-          6
-        ]
+        "clusters": [0, 6],
+        "bindings": [6]
       },
       "3": {
-        "clusters": [
-          0,
-          6
-        ],
-        "bindings": [
-          6
-        ]
+        "clusters": [0, 6],
+        "bindings": [6]
       },
       "4": {
-        "clusters": [
-          0,
-          6
-        ],
-        "bindings": [
-          6
-        ]
+        "clusters": [0, 6],
+        "bindings": [6]
       },
       "5": {
-        "clusters": [
-          0,
-          6
-        ],
-        "bindings": [
-          6
-        ]
+        "clusters": [0, 6],
+        "bindings": [6]
       },
       "6": {
-        "clusters": [
-          0,
-          6
-        ],
-        "bindings": [
-          6
-        ]
+        "clusters": [0, 6],
+        "bindings": [6]
       },
       "7": {
-        "clusters": [
-          0,
-          6
-        ],
-        "bindings": [
-          6
-        ]
+        "clusters": [0, 6],
+        "bindings": [6]
       },
       "8": {
-        "clusters": [
-          0,
-          6
-        ],
-        "bindings": [
-          6
-        ]
+        "clusters": [0, 6],
+        "bindings": [6]
       }
     },
     "learnmode": {
@@ -500,48 +442,12 @@
           },
           "value": "auto",
           "values": [
-            {
-              "id": "auto",
-              "label": {
-                "en": "Auto Detect",
-                "fr": "Détection Auto"
-              }
-            },
-            {
-              "id": "switch",
-              "label": {
-                "en": "Switch (1-8 channels)",
-                "fr": "Interrupteur (1-8 canaux)"
-              }
-            },
-            {
-              "id": "dimmer",
-              "label": {
-                "en": "Dimmer",
-                "fr": "Variateur"
-              }
-            },
-            {
-              "id": "sensor",
-              "label": {
-                "en": "Sensor",
-                "fr": "Capteur"
-              }
-            },
-            {
-              "id": "router",
-              "label": {
-                "en": "Router Only",
-                "fr": "Routeur Uniquement"
-              }
-            },
-            {
-              "id": "light",
-              "label": {
-                "en": "Light (RGB/CCT)",
-                "fr": "Lumière (RGB/CCT)"
-              }
-            }
+            { "id": "auto", "label": { "en": "Auto Detect", "fr": "Détection Auto" } },
+            { "id": "switch", "label": { "en": "Switch (1-8 channels)", "fr": "Interrupteur (1-8 canaux)" } },
+            { "id": "dimmer", "label": { "en": "Dimmer", "fr": "Variateur" } },
+            { "id": "sensor", "label": { "en": "Sensor", "fr": "Capteur" } },
+            { "id": "router", "label": { "en": "Router Only", "fr": "Routeur Uniquement" } },
+            { "id": "light", "label": { "en": "Light (RGB/CCT)", "fr": "Lumière (RGB/CCT)" } }
           ]
         },
         {
@@ -566,43 +472,15 @@
           },
           "value": "1",
           "values": [
-            {
-              "id": "1",
-              "label": {
-                "en": "1 Endpoint",
-                "fr": "1 Endpoint"
-              }
-            },
-            {
-              "id": "2",
-              "label": {
-                "en": "2 Endpoints",
-                "fr": "2 Endpoints"
-              }
-            },
-            {
-              "id": "4",
-              "label": {
-                "en": "4 Endpoints",
-                "fr": "4 Endpoints"
-              }
-            },
-            {
-              "id": "8",
-              "label": {
-                "en": "8 Endpoints",
-                "fr": "8 Endpoints"
-              }
-            }
+            { "id": "1", "label": { "en": "1 Endpoint", "fr": "1 Endpoint" } },
+            { "id": "2", "label": { "en": "2 Endpoints", "fr": "2 Endpoints" } },
+            { "id": "4", "label": { "en": "4 Endpoints", "fr": "4 Endpoints" } },
+            { "id": "8", "label": { "en": "8 Endpoints", "fr": "8 Endpoints" } }
           ]
         }
       ]
     }
   ],
-  "platforms": [
-    "local"
-  ],
-  "connectivity": [
-    "zigbee"
-  ]
+  "platforms": ["local"],
+  "connectivity": ["zigbee"]
 }

@@ -27,26 +27,47 @@
   ],
   "images": {
     "small": "/drivers/wall_dimmer_1gang_1way/assets/images/small.png",
-    "large": "drivers/wall_dimmer_1gang_1way/assets/large.png"
+    "large": "/drivers/wall_dimmer_1gang_1way/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_4fjiwweb",
-      "_TZB210_g01ie5wu",
-      "_TZB210_3dxbg9ks",
-      "_TZB210_zxbtub8r",
-      "MiBoxer",
-      "Miboxer",
-      "MIBOXER",
-      "Eardatek",
-      "EARDATEK"
+      "_TZE200_3p5ydos3",
+      "_TZE204_n9ctkb6j",
+      "_TZE200_ip2akl4w",
+      "_TZE200_1agwnems",
+      "_TZE200_la2c2uo9",
+      "_TZE200_579lguh2",
+      "_TZE200_vucankjx",
+      "_TZE200_4mh6tyyo",
+      "_TZE204_hlx9tnzb",
+      "_TZE204_9qhuzgo0",
+      "_TZE200_9cxuhakf",
+      "_TZE200_a0syesf5",
+      "_TZE200_swaamsoy",
+      "_TZE200_ojzhk75b",
+      "_TZE200_w4cryh2i",
+      "_TZE200_dfxkcots",
+      "_TZE200_9i9dt8is",
+      "_TZE200_ctq0k47x",
+      "_TZE200_ebwgzdqq",
+      "_TZE204_vevc4c6g",
+      "_TZE200_0nauxa0p",
+      "_TZE200_ykgar0ow",
+      "_TZE200_qzaing2g",
+      "_TZE204_3z6hca0q",
+      "_TZ3000_abrsvsou",
+      "_TZE200_whpb9yts",
+      "_TZE200_y8yjulon",
+      "_TZE204_5cuocqty",
+      "_TZE204_nqqylykc",
+      "_TZE200_p0gzbqct",
+      "_TZE204_dcnsggvz",
+      "_TZE200_6fjev1mn"
     ],
     "productId": [
-      "TS004F",
-      "TS0501B",
-      "TRI-C1ZR",
-      "TRI-K1ZR",
-      "EDM-1ZBA-EU"
+      "TS0601",
+      "TS004F"
     ],
     "endpoints": {
       "1": {

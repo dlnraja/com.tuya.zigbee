@@ -264,22 +264,14 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice",
-      "_TYZB01_0W3D5UW3",
-      "_TYZB01_0w3d5uw3"
+      "Monoprice"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1280,
-          61184
+          0
         ],
-        "bindings": [
-          1,
-          1280
-        ]
+        "bindings": []
       }
     },
     "learnmode": {
@@ -521,7 +513,8 @@
   ],
   "images": {
     "small": "drivers/gas_detector/assets/images/small.png",
-    "large": "drivers/gas_detector/assets/large.png"
+    "large": "drivers/gas_detector/assets/images/large.png",
+    "xlarge": "drivers/gas_detector/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

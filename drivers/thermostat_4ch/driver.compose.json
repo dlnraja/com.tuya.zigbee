@@ -245,22 +245,16 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          3,
-          513,
-          61184
+          0
         ],
-        "bindings": [
-          1,
-          513
-        ]
+        "bindings": []
       }
     }
   },
   "images": {
     "small": "drivers/thermostat_4ch/assets/images/small.png",
-    "large": "drivers/thermostat_4ch/assets/large.png"
+    "large": "drivers/thermostat_4ch/assets/images/large.png",
+    "xlarge": "drivers/thermostat_4ch/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

@@ -81,18 +81,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1280,
-          1281,
-          61184
+          0
         ],
-        "bindings": [
-          1,
-          1280,
-          1281,
-          61184
-        ]
+        "bindings": []
       }
     },
     "learnmode": {
@@ -400,7 +391,8 @@
   ],
   "images": {
     "small": "drivers/button_emergency_sos/assets/images/small.png",
-    "large": "drivers/button_emergency_sos/assets/large.png"
+    "large": "drivers/button_emergency_sos/assets/images/large.png",
+    "xlarge": "drivers/button_emergency_sos/assets/images/xlarge.png"
   },
   "platforms": [
     "local"
