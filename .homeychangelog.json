@@ -1,4 +1,7 @@
 {
+  "5.5.975": {
+    "en": "🆕 NEW: Ernst02507 TS004F Smart Knob Scene Switch - added _TZ3000_gwkzibhs fingerprint to smart_knob_rotary driver. Device will now pair correctly."
+  },
   "5.5.974": {
     "en": "🔧 FIX: ManuelKugler TRV issue - removed _TZE284_o3x45p96 from thermostat_tuya_dp driver (it's a TRV, now only in radiator_valve). Device will pair correctly after re-pairing."
   },
