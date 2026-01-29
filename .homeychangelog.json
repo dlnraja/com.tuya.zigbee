@@ -1,4 +1,7 @@
 {
+  "5.5.959": {
+    "en": "🔧 FIX: Fingerbot driver module import error fixed (MODULE_NOT_FOUND). App will now start correctly."
+  },
   "5.5.958": {
     "en": "🔧 FIX: Ian_Gibbo TS0012 2-gang switch (_TZ3000_zmlunnhy) - Moved from switch_1gang to switch_2gang. Now both gangs work correctly. Delete & re-pair."
   },
