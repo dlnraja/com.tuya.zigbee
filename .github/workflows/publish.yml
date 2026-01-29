@@ -160,34 +160,11 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
 
-      - name: 🔨 Build app
-        run: npx homey app build
-
-      - name: 🚀 Publish (Direct CLI - bypass Athom action validation bug)
+      - name:  Publish (Official Athom Action)
         id: publish
-        env:
-          HOMEY_TOKEN: ${{ secrets.HOMEY_PAT }}
-        run: |
-          # Install global homey CLI for login
-          npm install -g homey
-          
-          # Login with token (try multiple methods)
-          echo "🔐 Authenticating with Homey..."
-          homey login --token "$HOMEY_TOKEN" 2>/dev/null || \
-          echo "$HOMEY_TOKEN" | homey login --token 2>/dev/null || \
-          echo "⚠️ Token login may have issues, continuing..."
-          
-          # Try publish with retry
-          echo "📦 Publishing v${{ needs.validate.outputs.version }}..."
-          if homey app publish; then
-            echo "result=success" >> $GITHUB_OUTPUT
-            echo "✅ Published successfully!"
-          else
-            echo "result=warning" >> $GITHUB_OUTPUT
-            echo "⚠️ Publish returned non-zero - check Developer Portal"
-          fi
-          
-          echo "url=https://developer.athom.com/apps/${{ needs.validate.outputs.id }}" >> $GITHUB_OUTPUT
+        uses: athombv/github-action-homey-app-publish@master
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
 
       - name: ✅ Summary
         run: |
