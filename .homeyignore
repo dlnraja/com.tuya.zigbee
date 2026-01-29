@@ -99,3 +99,13 @@ tmp/
 # Logs et reporting
 reports/
 logs/
+
+# Large audit files
+MANUFACTURER_IDS_AUDIT.json
+**/MANUFACTURER_IDS_AUDIT.json
+
+# Archive folder
+.archive/
+
+# Large image assets (xlarge not needed for Homey)
+**/xlarge.png
