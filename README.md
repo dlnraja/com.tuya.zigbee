@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.967** | 🔧 FIX: Curtain motor mfr=unknown - added timeout protection and delayed retr... |
 | **v5.5.966** | 🆕 ADD: TS0044 button fingerprints (sqw3qqtc, dku2cfsc, ja5osu5g, xkh6oajz, z... |
 | **v5.5.965** | 🆕 ADD: 50+ new fingerprints from Z2M/ZHA/Hubitat research. TS0001: npzfdcof,... |
 | **v5.5.964** | 🔧 FIX: Case-insensitive matching for manufacturerName/productId across entir... |
@@ -78,7 +79,6 @@
 | **v5.5.960** | 🔧 FIX: Added missing BSEED fingerprints (_TZ3000_blhvsaqf, _TZ3000_ysdv91bk,... |
 | **v5.5.959** | 🔧 FIX: Fingerbot driver module import error fixed (MODULE_NOT_FOUND). App wi... |
 | **v5.5.958** | 🔧 FIX: Ian_Gibbo TS0012 2-gang switch (_TZ3000_zmlunnhy) - Moved from switch... |
-| **v5.5.957** | 🔧 FIX: Rolp switch+temperature sensor (_TZ3218_7fiyo3kv TS000F) - Removed du... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
