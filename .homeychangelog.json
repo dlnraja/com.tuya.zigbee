@@ -1,4 +1,7 @@
 {
+  "5.5.969": {
+    "en": "🔧 FIX: BSEED water valve pairing - removed conflicting fingerprints from switch_1gang driver (_TZ3000_iedbgyxt, _TZ3000_j9568h44). Added case variants to valve_single for reliable driver selection."
+  },
   "5.5.968": {
     "en": "🔧 FIX: Moes TS0044 _TZ3000_zgyzgdua button detection - multi-level frame interception (zclNode.handleFrame hook, message listener, endpoint hooks). Now intercepts cluster 0xE000 frames at 5 different levels."
   },
