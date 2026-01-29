@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.964** | 🔧 FIX: Case-insensitive matching for manufacturerName/productId across entir... |
 | **v5.5.963** | 🔧 FIX: Fingerbot MODULE_NOT_FOUND error fixed (import path correction). Fixe... |
 | **v5.5.962** | 🔧 FIX: Physical button flow detection added to switch_1gang (PR #120 pattern... |
 | **v5.5.961** | 🔧 FIX: Physical button flow cards now trigger correctly for BSEED 2/3/4-gang... |
@@ -78,7 +79,6 @@
 | **v5.5.957** | 🔧 FIX: Rolp switch+temperature sensor (_TZ3218_7fiyo3kv TS000F) - Removed du... |
 | **v5.5.956** | 🔧 FIX: JJ10 presence sensor CK-BL702-MWS-01 (_TZE200_crq3r3la) - Removed dup... |
 | **v5.5.955** | 🔧 FIX: Jolink smoke detector - Flow card triggers now fire! Added explicit t... |
-| **v5.5.954** | 🔧 RESTORE: Added 14 missing TS0601 dimmer fingerprints to dimmer_wall_1gang ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
