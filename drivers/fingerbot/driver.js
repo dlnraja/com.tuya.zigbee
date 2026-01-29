@@ -1,12 +1,11 @@
 'use strict';
 
-const TuyaZigbeeDriver = require('../../lib/TuyaZigbeeDriver');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class FingerbotDriver extends TuyaZigbeeDriver {
+class FingerbotDriver extends ZigBeeDriver {
 
-  onInit() {
-    super.onInit();
-    this.log('Fingerbot driver initialized');
+  async onInit() {
+    this.log('FingerbotDriver v5.5.959 initialized');
   }
 
 }
