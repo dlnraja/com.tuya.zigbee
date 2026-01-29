@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.954** | 🔧 RESTORE: Added 14 missing TS0601 dimmer fingerprints to dimmer_wall_1gang ... |
 | **v5.5.953** | 🔧 FIX: Peter_van_Werkhoven #1265 - Humidity now shows correct values (was 9%... |
 | **v5.5.952** | 🧹 CLEANUP: Removed 23 overlapping fingerprints from wall_dimmer_1gang_1way t... |
 | **v5.5.951** | 🔧 FIX: BSEED 2-button switches (_TZ3000_l9brjwau TS0003) now properly recogn... |
@@ -78,7 +79,6 @@
 | **v5.5.947** | ➕ NEW DEVICE: Pressure band (_TZ3000_pjb1ua0m / TS0203) added to Contact Sens... |
 | **v5.5.946** | 📝 Responded to all GitHub issues/PRs: Thanked @packetninja for BSEED contrib... |
 | **v5.5.945** | 📢 DIAGNOSTICS RESPONSE: Curtain motor 'value is unexpected property' was FIX... |
-| **v5.5.944** | 🔍 FULL AUDIT: Fixed flow card namespace violations - ir_blaster_, smart_knob... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
