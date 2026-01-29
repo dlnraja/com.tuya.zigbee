@@ -13,6 +13,7 @@ try {
 
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -42,7 +43,7 @@ class Switch4GangDevice extends BaseClass {
     const mfr = this.getSetting?.('zb_manufacturer_name') ||
                 this.getStoreValue?.('zb_manufacturer_name') ||
                 this.getStoreValue?.('manufacturerName') || '';
-    return ZCL_ONLY_MANUFACTURERS_4G.some(b => mfr.toLowerCase().includes(b.toLowerCase()));
+    return includesCI(ZCL_ONLY_MANUFACTURERS_4G, mfr);
   }
 
   async onNodeInit({ zclNode }) {

@@ -1,4 +1,7 @@
 {
+  "5.5.964": {
+    "en": "🔧 FIX: Case-insensitive matching for manufacturerName/productId across entire codebase. Devices now match regardless of case (_TZ3000_xxx = _tz3000_XXX = _TZ3000_XXX). Uses CaseInsensitiveMatcher utility."
+  },
   "5.5.963": {
     "en": "🔧 FIX: Fingerbot MODULE_NOT_FOUND error fixed (import path correction). Fixed duplicate flow triggers in switch_4gang (now fires once, not twice). Based on user diagnostics reports."
   },

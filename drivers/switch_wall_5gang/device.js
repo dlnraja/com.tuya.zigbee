@@ -1,6 +1,7 @@
 'use strict';
 const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
@@ -17,7 +18,7 @@ class Switch5GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
   get isZclOnlyDevice() {
     const mfr = this.getSetting?.('zb_manufacturer_name') ||
                 this.getStoreValue?.('manufacturerName') || '';
-    return ZCL_ONLY_MANUFACTURERS_5G.some(b => mfr.toLowerCase().includes(b.toLowerCase()));
+    return includesCI(ZCL_ONLY_MANUFACTURERS_5G, mfr);
   }
 
   async onNodeInit({ zclNode }) {
