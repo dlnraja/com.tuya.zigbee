@@ -1,4 +1,4 @@
-name: Auto-Respond Issues/PRs
+name: 🤖 Auto-Respond Issues/PRs
 
 on:
   issues:
@@ -16,14 +16,30 @@ jobs:
             const author = context.payload.issue?.user?.login || context.payload.pull_request?.user?.login;
             const isIssue = !!context.payload.issue;
             const number = context.issue.number;
+            const title = context.payload.issue?.title || context.payload.pull_request?.title || '';
+            
+            // Check if it's a device request
+            const isDeviceRequest = /fingerprint|device|sensor|switch|button|not work|pair/i.test(title);
             
             let msg = `Hi @${author}! 👋\n\n`;
-            msg += `**Please provide:**\n`;
-            msg += `- manufacturerName: \`zb_manufacturer_name\`\n`;
-            msg += `- productId: \`zb_product_id\`\n`;
-            msg += `- Diagnostics Report\n\n`;
-            msg += `Get these from [Developer Tools](https://tools.developer.homey.app)\n\n`;
-            msg += `*Auto-response - maintainer will review soon.*`;
+            msg += `Thanks for your ${isIssue ? 'issue' : 'PR'}!\n\n`;
+            
+            if (isDeviceRequest) {
+              msg += `## 📋 Device Information Needed\n\n`;
+              msg += `Please provide from **Homey Developer Tools** → Zigbee → Your Device:\n\n`;
+              msg += `| Info | How to Get |\n`;
+              msg += `|------|------------|\n`;
+              msg += `| \`manufacturerName\` | Settings → zb_manufacturer_name |\n`;
+              msg += `| \`modelId\` | Settings → zb_model_id |\n`;
+              msg += `| Interview JSON | Click "Interview" button |\n\n`;
+              msg += `🔗 [Open Developer Tools](https://tools.developer.homey.app)\n\n`;
+              msg += `### 💡 Common Issues:\n`;
+              msg += `- **Device shows "unknown"**: Re-pair after app update\n`;
+              msg += `- **Wrong driver**: Check fingerprint conflicts\n`;
+              msg += `- **Buttons not working**: Check TS004F scene mode\n\n`;
+            }
+            
+            msg += `*🤖 Auto-response - maintainer will review soon.*`;
             
             await github.rest.issues.createComment({
               owner: context.repo.owner,
