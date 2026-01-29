@@ -61,14 +61,22 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
 
-      - name: 🔄 Sync app.json with driver.compose.json
+      - name: 🔄 Full sync from .homeycompose
         id: sync
         run: |
+          echo "📦 Regenerating app.json from .homeycompose..."
+          npx homey app build 2>&1 | tail -5
+          
+          echo "🔄 Running sync script..."
           node scripts/maintenance/sync-app-json.js
-          if git diff --quiet app.json; then
+          
+          # Check for any changes
+          if git diff --quiet app.json .homeycompose/ drivers/*/driver.compose.json 2>/dev/null; then
             echo "changed=false" >> $GITHUB_OUTPUT
+            echo "✅ No changes detected"
           else
             echo "changed=true" >> $GITHUB_OUTPUT
+            echo "📝 Changes detected, will commit"
           fi
 
       - name: 📝 Commit sync changes
@@ -76,8 +84,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add app.json
-          git commit -m "🔄 Auto-sync app.json with drivers [skip ci]" || true
+          git add app.json .homeycompose/ drivers/*/driver.compose.json 2>/dev/null || true
+          git commit -m "🔄 Auto-sync app.json and compose files [skip ci]" || true
           git push || true
 
       - name: 🔨 Build app
