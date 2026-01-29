@@ -69,7 +69,12 @@ class SmokeDetectorAdvancedDevice extends HybridSensorBase {
             isAlarm = (v === 0);
           }
 
-          if (device) device.log?.(`[SMOKE] 🔥 Smoke alarm: ${isAlarm ? '🚨 TRIGGERED!' : '✅ clear'}`);
+          if (device) {
+            device.log?.(`[SMOKE] 🔥 Smoke alarm: ${isAlarm ? '🚨 TRIGGERED!' : '✅ clear'}`);
+            // v5.5.955: Trigger flow cards (Jolink forum fix)
+            const triggerId = isAlarm ? 'smoke_detector_advanced_alarm_smoke_true' : 'smoke_detector_advanced_alarm_smoke_false';
+            device.driver?.homey?.flow?.getTriggerCard?.(triggerId)?.trigger(device, {}).catch(() => {});
+          }
           return isAlarm;
         }
       },
@@ -91,12 +96,26 @@ class SmokeDetectorAdvancedDevice extends HybridSensorBase {
           // If value is > 1, it's battery percentage
           if (v === 0 || v === 1 || v === true || v === false) {
             const isTampered = v === 1 || v === true;
-            if (device) device.log?.(`[SMOKE] DP4 as tamper: ${isTampered}`);
+            if (device) {
+              device.log?.(`[SMOKE] DP4 as tamper: ${isTampered}`);
+              // v5.5.955: Trigger tamper flow card
+              if (isTampered) {
+                device.driver?.homey?.flow?.getTriggerCard?.('smoke_detector_advanced_alarm_tamper_true')?.trigger(device, {}).catch(() => {});
+              }
+            }
             device?.setCapabilityValue?.('alarm_tamper', isTampered).catch(() => { });
             return null; // Already handled
           } else if (typeof v === 'number' && v > 1) {
-            if (device) device.log?.(`[SMOKE] DP4 as battery: ${v}%`);
-            device?.setCapabilityValue?.('measure_battery', parseFloat(Math.min(100, v))).catch(() => { });
+            const battery = Math.min(100, v);
+            if (device) {
+              device.log?.(`[SMOKE] DP4 as battery: ${battery}%`);
+              // v5.5.955: Trigger battery flow cards
+              device.driver?.homey?.flow?.getTriggerCard?.('smoke_detector_advanced_measure_battery_changed')?.trigger(device, { battery }).catch(() => {});
+              if (battery < 20) {
+                device.driver?.homey?.flow?.getTriggerCard?.('smoke_detector_advanced_battery_low')?.trigger(device, {}).catch(() => {});
+              }
+            }
+            device?.setCapabilityValue?.('measure_battery', parseFloat(battery)).catch(() => { });
             return null; // Already handled
           }
           return v;
@@ -246,12 +265,20 @@ class SmokeDetectorAdvancedDevice extends HybridSensorBase {
           
           this.log(`[SMOKE-ADV] smoke: ${smokeAlarm}, tamper: ${tamperAlarm}, batteryLow: ${batteryLow}`);
           
+          // v5.5.955: Trigger flow cards for IAS Zone events (Jolink forum fix)
+          const smokeTriggerId = smokeAlarm ? 'smoke_detector_advanced_alarm_smoke_true' : 'smoke_detector_advanced_alarm_smoke_false';
+          this.driver?.homey?.flow?.getTriggerCard?.(smokeTriggerId)?.trigger(this, {}).catch(() => {});
+          
           this.setCapabilityValue('alarm_smoke', smokeAlarm).catch(e => this.error('Failed to set alarm_smoke', e));
           if (this.hasCapability('alarm_tamper')) {
             this.setCapabilityValue('alarm_tamper', tamperAlarm).catch(e => this.error('Failed to set alarm_tamper', e));
+            if (tamperAlarm) {
+              this.driver?.homey?.flow?.getTriggerCard?.('smoke_detector_advanced_alarm_tamper_true')?.trigger(this, {}).catch(() => {});
+            }
           }
           if (batteryLow && this.hasCapability('measure_battery')) {
             this.setCapabilityValue('measure_battery', 10).catch(() => {});
+            this.driver?.homey?.flow?.getTriggerCard?.('smoke_detector_advanced_battery_low')?.trigger(this, {}).catch(() => {});
           }
         });
 
