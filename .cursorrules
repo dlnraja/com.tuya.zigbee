@@ -1,0 +1,61 @@
+# Universal Tuya Zigbee - Cursor AI Rules
+# Project: com.dlnraja.tuya.zigbee
+
+## Project Context
+Homey Pro app for 4200+ Tuya Zigbee devices. Hybrid protocol: Tuya DP (0xEF00) + ZCL clusters.
+
+## CRITICAL: Settings Keys
+- Use `zb_model_id` NOT zb_modelId
+- Use `zb_manufacturer_name` NOT zb_manufacturerName
+
+## Flow Cards
+- ID pattern: `{driver}_physical_gang{N}_{on|off}`
+- NO `titleFormatted` with `[[device]]` - causes bugs
+- Always check driver.flow.compose.json for exact IDs
+
+## Imports
+```javascript
+const { ZigBeeDevice } = require('homey-zigbeedriver');
+const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+```
+
+## Switch Mixin Order
+```javascript
+class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
+```
+
+## Physical Button Detection (PR #120 pattern)
+```javascript
+// State tracking
+this._lastOnoffState = null;
+this._appCommandPending = false;
+this._appCommandTimeout = null;
+
+// Mark app command (2000ms timeout)
+_markAppCommand() {
+  this._appCommandPending = true;
+  clearTimeout(this._appCommandTimeout);
+  this._appCommandTimeout = setTimeout(() => {
+    this._appCommandPending = false;
+  }, 2000);
+}
+
+// In DP handler:
+const isPhysical = reportingEvent && !this._appCommandPending;
+```
+
+## Backlight Values
+Strings only: `"off"`, `"normal"`, `"inverted"`
+
+## BSEED ZCL-Only Fingerprints
+`_TZ3000_l9brjwau`, `_TZ3000_blhvsaqf`, `_TZ3000_ysdv91bk`,
+`_TZ3000_hafsqare`, `_TZ3000_e98krvvk`, `_TZ3000_iedbgyxt`
+
+## Tuya DP Protocol
+- Cluster: 0xEF00 | DP1-8: gangs | DP14: power-on | DP15: backlight
+- Types: 0=Raw, 1=Bool, 2=Value, 3=String, 4=Enum, 5=Bitmap
+
+## Key Files
+- `lib/devices/HybridSwitchBase.js` - Base switch class
+- `lib/mixins/PhysicalButtonMixin.js` - Physical detection
+- `drivers/{type}/driver.flow.compose.json` - Flow definitions

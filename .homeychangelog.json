@@ -1,4 +1,13 @@
 {
+  "5.5.963": {
+    "en": "🔧 FIX: Fingerbot MODULE_NOT_FOUND error fixed (import path correction). Fixed duplicate flow triggers in switch_4gang (now fires once, not twice). Based on user diagnostics reports."
+  },
+  "5.5.962": {
+    "en": "🔧 FIX: Physical button flow detection added to switch_1gang (PR #120 pattern). Flow triggers added to switch_wall_5/6/7/8gang ZCL-only mode. State tracking for app vs physical button detection."
+  },
+  "5.5.961": {
+    "en": "🔧 FIX: Physical button flow cards now trigger correctly for BSEED 2/3/4-gang switches in ZCL-only mode. Fixed flow card ID mismatch (switch_Xgang_physical_gangN_on/off). PR #120 pattern applied."
+  },
   "5.5.960": {
     "en": "🔧 FIX: Added missing BSEED fingerprints (_TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_iedbgyxt) to switch_1gang driver. Delete & re-pair BSEED switches."
   },

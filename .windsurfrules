@@ -1,0 +1,100 @@
+# Universal Tuya Zigbee - AI Rules
+# Project: com.dlnraja.tuya.zigbee | SDK: Homey SDK3 Zigbee
+
+## CRITICAL BUGS TO AVOID
+
+### Settings Keys (ALWAYS use these exact keys):
+- `zb_model_id` NOT zb_modelId
+- `zb_manufacturer_name` NOT zb_manufacturerName
+
+### Flow Card IDs must match exactly:
+- Pattern: `{driver}_physical_gang{N}_{on|off}`
+- Example: `switch_2gang_physical_gang1_on`
+- Check driver.flow.compose.json before using
+
+### NO titleFormatted with [[device]] in triggers:
+- Causes manual device selection bug
+- Put text in `title` field instead
+
+### Imports:
+```javascript
+// CORRECT:
+const { ZigBeeDevice } = require('homey-zigbeedriver');
+const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+// WRONG: const TuyaZigbeeDriver = require('../../lib/TuyaZigbeeDriver');
+```
+
+## PATTERNS
+
+### Mixin Order:
+```javascript
+class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
+```
+
+### Backlight values: `"off"`, `"normal"`, `"inverted"` (strings, not numbers)
+
+### Physical button detection (2000ms timeout):
+```javascript
+// State tracking (PR #120 pattern)
+this._lastOnoffState = null;
+this._appCommandPending = false;
+this._appCommandTimeout = null;
+
+// Mark app command:
+_markAppCommand() {
+  this._appCommandPending = true;
+  clearTimeout(this._appCommandTimeout);
+  this._appCommandTimeout = setTimeout(() => {
+    this._appCommandPending = false;
+  }, 2000);
+}
+
+// In DP handler - detect physical:
+const isPhysical = reportingEvent && !this._appCommandPending;
+if (isPhysical) {
+  this.homey.flow.getDeviceTriggerCard(flowId).trigger(this, {}, {});
+}
+```
+
+### BSEED ZCL-only fingerprints:
+`_TZ3000_l9brjwau`, `_TZ3000_blhvsaqf`, `_TZ3000_ysdv91bk`,
+`_TZ3000_hafsqare`, `_TZ3000_e98krvvk`, `_TZ3000_iedbgyxt`
+
+## TUYA DP PROTOCOL
+- Cluster 0xEF00 (61184)
+- DP1-8: gang states | DP14: power-on | DP15: backlight | DP101: child_lock
+- Types: 0=Raw, 1=Bool, 2=Value, 3=String, 4=Enum, 5=Bitmap
+
+## FILES STRUCTURE
+- `lib/devices/HybridSwitchBase.js` - Base class for switches
+- `lib/mixins/PhysicalButtonMixin.js` - Physical button detection
+- `lib/mixins/VirtualButtonMixin.js` - Virtual button support
+- `lib/tuya/TuyaZigbeeDevice.js` - Base Tuya device class
+- `drivers/{type}/device.js` - Device implementation
+- `drivers/{type}/driver.flow.compose.json` - Flow cards definition
+
+## COMMON DIAGNOSTIC ISSUES
+
+### Duplicate Flow Triggers
+Add deduplication when overriding setCapabilityValue:
+```javascript
+const dedupKey = `${capability}_${value}`;
+const now = Date.now();
+if (this._lastFlowTrigger?.[dedupKey] && now - this._lastFlowTrigger[dedupKey] < 500) {
+  return; // Skip duplicate
+}
+this._lastFlowTrigger = this._lastFlowTrigger || {};
+this._lastFlowTrigger[dedupKey] = now;
+```
+
+### TuyaZigbeeDevice Import Path
+```javascript
+// CORRECT:
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+// WRONG:
+const TuyaZigbeeDevice = require('../../lib/TuyaZigbeeDevice');
+```
+
+### Device Shows as "unknown/unknown"
+- Check settings keys: `zb_model_id`, `zb_manufacturer_name`
+- Verify fingerprints in driver.compose.json
