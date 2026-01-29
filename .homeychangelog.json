@@ -1,4 +1,7 @@
 {
+  "5.5.968": {
+    "en": "🔧 FIX: Moes TS0044 _TZ3000_zgyzgdua button detection - multi-level frame interception (zclNode.handleFrame hook, message listener, endpoint hooks). Now intercepts cluster 0xE000 frames at 5 different levels."
+  },
   "5.5.967": {
     "en": "🔧 FIX: Curtain motor mfr=unknown - added timeout protection and delayed retry for basic cluster read. Moes TS0044 button detection - expanded E000 device list. BSEED water valve - added TS0001 productId."
   },

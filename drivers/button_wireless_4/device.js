@@ -643,21 +643,60 @@ class Button4GangDevice extends ButtonDevice {
   }
 
   /**
-   * v5.5.923: CRITICAL FIX - Raw frame interceptor for MOES _TZ3000_zgyzgdua
+   * v5.5.968: CRITICAL FIX - Raw frame interceptor for MOES _TZ3000_zgyzgdua
    * Issue: BoundCluster may not receive frames because Homey SDK discards unknown cluster frames
-   * Solution: Intercept frames at endpoint level using 'frame' event before they're discarded
+   * Solution: Intercept frames at MULTIPLE levels - endpoint, zclNode, and onMessage
    * 
    * Forum reports: Kokosnootmelk, nickpatteeuw - physical buttons don't trigger
+   * Z2M #28224: Device uses cluster 0xE000 (57344) for button presses
    */
   async _setupRawFrameInterceptor(zclNode) {
     try {
       this.log('[BUTTON4-RAW] 🔧 Setting up raw frame interceptor for cluster 57344...');
       
+      // v5.5.968: LEVEL 1 - Hook zclNode.handleFrame for ALL incoming frames
+      // This catches frames BEFORE they're routed to endpoints
+      if (zclNode && typeof zclNode.handleFrame === 'function') {
+        const originalNodeHandleFrame = zclNode.handleFrame.bind(zclNode);
+        zclNode.handleFrame = async (endpointId, clusterId, frame, meta) => {
+          // Log ALL frames for debugging (only when dp_debug_mode is enabled)
+          if (this.getSetting?.('dp_debug_mode')) {
+            this.log(`[BUTTON4-NODE] 📥 EP${endpointId} cluster ${clusterId} frame received`);
+          }
+          
+          // Intercept cluster 57344 (0xE000) frames
+          if (clusterId === 57344 || clusterId === 0xE000) {
+            this.log(`[BUTTON4-NODE] 📥 EP${endpointId} cluster 57344 INTERCEPTED:`, {
+              cmdId: frame?.cmdId,
+              data: frame?.data?.toString?.('hex') || 'no data'
+            });
+            this._handleRawE000Frame(endpointId, frame);
+          }
+          
+          // Always call original handler
+          return originalNodeHandleFrame(endpointId, clusterId, frame, meta);
+        };
+        this.log(`[BUTTON4-NODE] ✅ zclNode.handleFrame hooked`);
+      }
+      
+      // v5.5.968: LEVEL 2 - Listen for 'message' event on zclNode (lower level)
+      if (zclNode && typeof zclNode.on === 'function') {
+        zclNode.on('message', (message) => {
+          const clusterId = message?.clusterId;
+          if (clusterId === 57344 || clusterId === 0xE000) {
+            this.log(`[BUTTON4-MSG] 📥 zclNode message cluster 57344:`, message);
+            const ep = message?.endpointId || 1;
+            this._handleRawE000Frame(ep, message);
+          }
+        });
+        this.log(`[BUTTON4-MSG] ✅ zclNode message listener registered`);
+      }
+      
       for (let ep = 1; ep <= 4; ep++) {
         const endpoint = zclNode?.endpoints?.[ep];
         if (!endpoint) continue;
 
-        // v5.5.923: Listen for ALL incoming frames at endpoint level
+        // v5.5.968: LEVEL 3 - Listen for ALL incoming frames at endpoint level
         if (typeof endpoint.on === 'function') {
           endpoint.on('frame', (clusterId, frame, meta) => {
             // Only process cluster 57344 (0xE000) frames
@@ -675,7 +714,7 @@ class Button4GangDevice extends ButtonDevice {
           this.log(`[BUTTON4-RAW] ✅ Raw frame listener on EP${ep}`);
         }
 
-        // v5.5.923: Also listen for 'command' events at endpoint level (alternative pattern)
+        // v5.5.968: LEVEL 4 - Listen for 'command' events at endpoint level
         if (typeof endpoint.on === 'function') {
           endpoint.on('command', (clusterId, commandId, payload) => {
             if (clusterId === 57344 || clusterId === 0xE000) {
@@ -685,7 +724,7 @@ class Button4GangDevice extends ButtonDevice {
           });
         }
 
-        // v5.5.923: FALLBACK - Hook into handleFrame if available (zigbee-clusters internal)
+        // v5.5.968: LEVEL 5 - Hook into endpoint.handleFrame
         const originalHandleFrame = endpoint.handleFrame?.bind(endpoint);
         if (originalHandleFrame) {
           endpoint.handleFrame = async (clusterId, frame, meta) => {
