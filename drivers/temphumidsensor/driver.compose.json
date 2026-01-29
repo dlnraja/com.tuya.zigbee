@@ -270,8 +270,7 @@
   },
   "images": {
     "small": "drivers/temphumidsensor/assets/images/small.png",
-    "large": "drivers/temphumidsensor/assets/large.png",
-    "xlarge": "drivers/temphumidsensor/assets/images/xlarge.png"
+    "large": "drivers/temphumidsensor/assets/large.png"
   },
   "platforms": [
     "local"

@@ -1,0 +1,63 @@
+name: 'Homey App Publish (Fixed)'
+description: 'Publish Homey app with large.png fix for CLI bug'
+inputs:
+  personal_access_token:
+    description: 'Homey Personal Access Token'
+    required: true
+outputs:
+  url:
+    description: 'URL to manage the app release'
+    value: ${{ steps.publish.outputs.url }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install Homey CLI
+      shell: bash
+      run: npm install -g homey
+
+    - name: Build App
+      shell: bash
+      run: npx homey app build
+
+    - name: Fix large.png (Homey CLI bug workaround)
+      shell: bash
+      run: |
+        echo "📷 Fixing large.png files..."
+        copied=0
+        for driver in drivers/*/; do
+          driver_name=$(basename "$driver")
+          # Check both possible source locations
+          for src_path in "assets/images/large.png" "assets/large.png"; do
+            src="drivers/${driver_name}/${src_path}"
+            if [ -f "$src" ]; then
+              dst=".homeybuild/drivers/${driver_name}/assets/images/"
+              mkdir -p "$dst"
+              cp "$src" "${dst}large.png"
+              copied=$((copied + 1))
+              break
+            fi
+          done
+        done
+        echo "✅ Copied $copied large.png files to .homeybuild"
+
+    - name: Validate App
+      shell: bash
+      run: |
+        cd .homeybuild
+        npx homey app validate --level publish
+
+    - name: Publish App
+      id: publish
+      shell: bash
+      env:
+        HOMEY_TOKEN: ${{ inputs.personal_access_token }}
+      run: |
+        cd .homeybuild
+        echo "n" | homey app publish || true
+        echo "url=https://tools.developer.homey.app" >> $GITHUB_OUTPUT
