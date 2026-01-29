@@ -1,4 +1,7 @@
 {
+  "5.5.967": {
+    "en": "🔧 FIX: Curtain motor mfr=unknown - added timeout protection and delayed retry for basic cluster read. Moes TS0044 button detection - expanded E000 device list. BSEED water valve - added TS0001 productId."
+  },
   "5.5.966": {
     "en": "🆕 ADD: TS0044 button fingerprints (sqw3qqtc, dku2cfsc, ja5osu5g, xkh6oajz, zszzgweg, lxw3kcw2, yesuiipb). TZE284 radar sensors (o9ofysmo, xc3vwx5a, yjjdcqsq, 4qznlkbu). All with case variants."
   },

@@ -497,7 +497,7 @@ class Button4GangDevice extends ButtonDevice {
   }
 
   /**
-   * v5.5.758: MOES _TZ3000_zgyzgdua FIX - Cluster 0xE000 (57344) button detection
+   * v5.5.967: MOES _TZ3000_zgyzgdua FIX - Cluster 0xE000 (57344) button detection
    * 
    * CRITICAL FIX: Homey SDK does NOT expose unknown clusters like 57344 in zclNode.endpoints[].clusters
    * Diagnostics show: "EP1 available clusters: basic" - only known clusters are exposed
@@ -505,26 +505,35 @@ class Button4GangDevice extends ButtonDevice {
    * Solution: Use BoundCluster pattern to receive incoming frames from cluster 57344
    * - Create TuyaE000BoundCluster instance
    * - Manually bind to endpoint.bindings[57344] (bypassing standard bind method)
+   * - v5.5.967: Also register cluster in endpoint.clusters for better SDK integration
    * 
    * Z2M Issue #28224: MOES XH-SY-04Z 4-button remote
    * Device structure: EP1 inClusterList: [1, 6, 57344, 0]
    */
   async _setupTuyaE000ButtonDetection(zclNode) {
     try {
-      // v5.5.758: Get manufacturer from multiple sources (may be empty on first init)
+      // v5.5.967: Get manufacturer from multiple sources (may be empty on first init)
       const manufacturerName = this.getData()?.manufacturerName 
         || this.getStoreValue?.('manufacturerName')
         || this.getSetting?.('zb_manufacturer_name')
         || '';
       const productId = this.getData()?.productId || '';
       
-      // v5.5.758: Known devices that use cluster 0xE000
+      // v5.5.967: Log device info for debugging
+      this.log(`[BUTTON4-E000] 🔍 Device: mfr=${manufacturerName || 'empty'}, product=${productId || 'empty'}`);
+      
+      // v5.5.967: Known devices that use cluster 0xE000 (expanded list)
       const knownE000Devices = [
         '_TZ3000_zgyzgdua',  // Moes XH-SY-04Z 4-button remote
         '_TZ3000_abrsvsou',  // Similar Moes variant
         '_TZ3000_mh9px7cq',  // Similar Moes variant
         '_TZ3000_uri7ez8u',  // Another MOES TS0044 variant
         '_TZ3000_rrjr1q0u',  // MOES TS0044 variant
+        '_TZ3000_vp6clf9d',  // MOES TS0044 variant
+        '_TZ3000_xabckq1v',  // TS004F variant that may use E000
+        '_TZ3000_w8jwkczz',  // TS0044 variant
+        '_TZ3000_dku2cfsc',  // TS0044 variant
+        '_TZ3000_ja5osu5g',  // TS0044 variant
       ];
       
       // Check if this is TS0044 product (uses 4 endpoints with cluster 57344)
