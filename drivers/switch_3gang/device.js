@@ -70,7 +70,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
             
             // Trigger flow cards for PHYSICAL button presses only
             if (isPhysical) {
-              const flowId = `switch_3gang_gang${epNum}_physical_${value ? 'on' : 'off'}`;
+              const flowId = `switch_3gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
               this.homey.flow.getDeviceTriggerCard(flowId)
                 .trigger(this, { gang: epNum, state: value }, {})
                 .catch(() => {});
