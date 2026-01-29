@@ -69,6 +69,8 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.966** | 🆕 ADD: TS0044 button fingerprints (sqw3qqtc, dku2cfsc, ja5osu5g, xkh6oajz, z... |
+| **v5.5.965** | 🆕 ADD: 50+ new fingerprints from Z2M/ZHA/Hubitat research. TS0001: npzfdcof,... |
 | **v5.5.964** | 🔧 FIX: Case-insensitive matching for manufacturerName/productId across entir... |
 | **v5.5.963** | 🔧 FIX: Fingerbot MODULE_NOT_FOUND error fixed (import path correction). Fixe... |
 | **v5.5.962** | 🔧 FIX: Physical button flow detection added to switch_1gang (PR #120 pattern... |
@@ -77,8 +79,6 @@
 | **v5.5.959** | 🔧 FIX: Fingerbot driver module import error fixed (MODULE_NOT_FOUND). App wi... |
 | **v5.5.958** | 🔧 FIX: Ian_Gibbo TS0012 2-gang switch (_TZ3000_zmlunnhy) - Moved from switch... |
 | **v5.5.957** | 🔧 FIX: Rolp switch+temperature sensor (_TZ3218_7fiyo3kv TS000F) - Removed du... |
-| **v5.5.956** | 🔧 FIX: JJ10 presence sensor CK-BL702-MWS-01 (_TZE200_crq3r3la) - Removed dup... |
-| **v5.5.955** | 🔧 FIX: Jolink smoke detector - Flow card triggers now fire! Added explicit t... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
