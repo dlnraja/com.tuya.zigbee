@@ -4,6 +4,7 @@
   "description": "Universal Tuya Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
+    "postbuild": "node scripts/maintenance/fix-large-images.js",
     "validate": "homey app validate",
     "validate:debug": "homey app validate --level debug",
     "validate:publish": "homey app validate --level publish",
