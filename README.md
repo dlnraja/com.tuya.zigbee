@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.957** | 🔧 FIX: Rolp switch+temperature sensor (_TZ3218_7fiyo3kv TS000F) - Removed du... |
 | **v5.5.956** | 🔧 FIX: JJ10 presence sensor CK-BL702-MWS-01 (_TZE200_crq3r3la) - Removed dup... |
 | **v5.5.955** | 🔧 FIX: Jolink smoke detector - Flow card triggers now fire! Added explicit t... |
 | **v5.5.954** | 🔧 RESTORE: Added 14 missing TS0601 dimmer fingerprints to dimmer_wall_1gang ... |
@@ -78,7 +79,6 @@
 | **v5.5.950** | ➕ NEW DEVICES: MiBoxer Zigbee rotary dimmers (TRI-C1ZR, TRI-K1ZR) now support... |
 | **v5.5.949** | 🧹 CLEANUP: Removed duplicate switch_dimmer_1gang driver as per @Attilla's su... |
 | **v5.5.948** | 🔧 PR #119 merged: @packetninja's flexible HybridSwitchBase refactor for wall... |
-| **v5.5.947** | ➕ NEW DEVICE: Pressure band (_TZ3000_pjb1ua0m / TS0203) added to Contact Sens... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
