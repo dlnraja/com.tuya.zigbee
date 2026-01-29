@@ -168,16 +168,18 @@ jobs:
           # WORKAROUND: homey app build doesn't copy large.png to .homeybuild
           # Copy all large.png files from source to .homeybuild
           echo "📷 Copying large.png files to .homeybuild..."
+          copied=0
           for driver in drivers/*/; do
             driver_name=$(basename "$driver")
             src="drivers/${driver_name}/assets/images/large.png"
             dst=".homeybuild/drivers/${driver_name}/assets/images/"
-            if [ -f "$src" ] && [ -d "$dst" ]; then
+            if [ -f "$src" ]; then
+              mkdir -p "$dst"
               cp "$src" "$dst"
-              echo "  ✓ Copied ${driver_name}/large.png"
+              copied=$((copied + 1))
             fi
           done
-          echo "✅ Image fix complete"
+          echo "✅ Copied $copied large.png files"
 
       - name: 🚀 Publish
         id: publish
