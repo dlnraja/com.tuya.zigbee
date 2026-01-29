@@ -1,4 +1,7 @@
 {
+  "5.5.972": {
+    "en": "🔧 FIX: Lasse_K water sensor IAS Zone fix - invert_alarm setting now works for IAS Zone sensors (not just Tuya DP). HybridSensorBase.js updated to check invert_alarm for alarm_water capability."
+  },
   "5.5.971": {
     "en": "🔧 FIX: Lasse_K water sensor 'inactivated' - added missing invert_alarm setting to driver.compose.json. Contact sensor 'reversed' - use existing invert_contact setting in device settings."
   },
