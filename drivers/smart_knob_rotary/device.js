@@ -7,6 +7,9 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('Smart Knob Rotary device initialized');
+    
+    // Store zclNode for later use
+    this._zclNode = zclNode;
 
     // Initialize brightness simulation state
     this._simulatedBrightness = 0.5;
@@ -16,6 +19,9 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
       await this.setCapabilityValue('dim', this._simulatedBrightness).catch(this.error);
     }
 
+    // v5.5.976: Enable TS004F scene mode (critical for button events)
+    await this._enableTS004FSceneMode(zclNode);
+
     // Setup battery reporting
     await this._setupBatteryReporting(zclNode);
 
@@ -23,6 +29,60 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     await this._setupKnobEventHandling(zclNode);
 
     this.log('Smart Knob Rotary initialization complete');
+  }
+
+  /**
+   * v5.5.976: Enable TS004F scene mode via attribute 0x8004 on OnOff cluster
+   * Without this, TS004F devices may not send scene/button commands
+   * Based on Ernst02507 interview data and Z2M/ZHA research
+   */
+  async _enableTS004FSceneMode(zclNode) {
+    try {
+      const modelId = this.getSetting('zb_model_id') || '';
+      const mfr = this.getSetting('zb_manufacturer_name') || '';
+      
+      // Only for TS004F devices
+      if (!modelId.includes('TS004F')) {
+        this.log('[TS004F] Not a TS004F device, skipping scene mode enable');
+        return;
+      }
+      
+      this.log('[TS004F] Attempting to enable scene mode for', mfr);
+      
+      if (zclNode.endpoints[1]?.clusters?.onOff) {
+        const onOffCluster = zclNode.endpoints[1].clusters.onOff;
+        
+        // Try to write attribute 0x8004 = 1 to enable scene mode
+        // This switches TS004F from dimmer mode to scene/command mode
+        try {
+          await onOffCluster.writeAttributes({ 32772: 1 }); // 0x8004 = 32772
+          this.log('[TS004F] ✅ Scene mode enabled via attribute 0x8004');
+        } catch (writeErr) {
+          // Some devices don't support this attribute - that's OK
+          this.log('[TS004F] Could not write 0x8004:', writeErr.message);
+          
+          // Alternative: Try via raw Zigbee command
+          try {
+            await onOffCluster.writeAttributes({ switchMode: 1 });
+            this.log('[TS004F] ✅ Scene mode enabled via switchMode');
+          } catch (altErr) {
+            this.log('[TS004F] Alternative also failed:', altErr.message);
+          }
+        }
+        
+        // Read back to verify
+        try {
+          const attrs = await onOffCluster.readAttributes([32772]).catch(() => null);
+          if (attrs) {
+            this.log('[TS004F] Current mode attribute:', attrs);
+          }
+        } catch (readErr) {
+          // Ignore read errors
+        }
+      }
+    } catch (err) {
+      this.log('[TS004F] Scene mode setup error:', err.message);
+    }
   }
 
   async _setupBatteryReporting(zclNode) {
@@ -56,9 +116,34 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     try {
       // Handle On/Off cluster for toggle actions
       if (zclNode.endpoints[1] && zclNode.endpoints[1].clusters[CLUSTER.ON_OFF.NAME]) {
-        zclNode.endpoints[1].clusters[CLUSTER.ON_OFF.NAME].on('attr.onOff', (value) => {
-          this.log('On/Off toggle received:', value);
+        const onOffCluster = zclNode.endpoints[1].clusters[CLUSTER.ON_OFF.NAME];
+        
+        // Attribute change
+        onOffCluster.on('attr.onOff', (value) => {
+          this.log('On/Off attr change:', value);
+          this._triggerButtonPress(value ? 'on' : 'off');
+        });
+        
+        // v5.5.976: Handle command events (Ernst02507 interview shows these)
+        onOffCluster.on('on', () => {
+          this.log('On command received');
+          this._triggerButtonPress('on');
+        });
+        
+        onOffCluster.on('off', () => {
+          this.log('Off command received');
+          this._triggerButtonPress('off');
+        });
+        
+        onOffCluster.on('toggle', () => {
+          this.log('Toggle command received');
           this._triggerButtonPress('toggle');
+        });
+        
+        // Handle onWithTimedOff (some devices use this)
+        onOffCluster.on('onWithTimedOff', (payload) => {
+          this.log('OnWithTimedOff command:', payload);
+          this._triggerButtonPress('on');
         });
       }
 
@@ -104,13 +189,9 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
         });
       }
 
-      // Handle Scenes cluster for scene button presses
-      if (zclNode.endpoints[1] && zclNode.endpoints[1].clusters[CLUSTER.SCENES.NAME]) {
-        zclNode.endpoints[1].clusters[CLUSTER.SCENES.NAME].on('recall', (payload) => {
-          this.log('Scene recall:', payload);
-          this._triggerButtonPress(`scene_${payload.sceneId}`);
-        });
-      }
+      // v5.5.976: Enhanced Scenes cluster handling (Ernst02507 interview shows scenes in bindings)
+      // TS004F devices use scenes cluster for button press types
+      await this._setupScenesCluster(zclNode);
 
       // Set up command listeners for button events
       this._setupCommandListeners(zclNode);
@@ -139,6 +220,25 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     } catch (err) {
       this.log('Command listener setup error:', err.message);
     }
+  }
+
+  // v5.5.976: Scenes cluster for TS004F (Ernst02507)
+  async _setupScenesCluster(zclNode) {
+    try {
+      const ep = zclNode.endpoints[1];
+      const sc = ep?.clusters?.scenes || ep?.clusters?.[5];
+      if (sc) {
+        sc.on('recall', (p) => { this.log('[SCENES] recall:', p); this._handleSceneCommand(p.sceneId ?? p); });
+        sc.on('recallScene', (p) => { this.log('[SCENES] recallScene:', p); this._handleSceneCommand(p.sceneId ?? p); });
+        if (typeof sc.bind === 'function') await sc.bind().catch(() => {});
+      }
+    } catch (e) { this.log('[SCENES] Error:', e.message); }
+  }
+
+  _handleSceneCommand(sceneId) {
+    // Scene IDs: 0=single, 1=double, 2=long (TS004F pattern)
+    const map = { 0: 'single', 1: 'double', 2: 'hold', 3: 'triple' };
+    this._triggerButtonPress(map[sceneId] || `scene_${sceneId}`);
   }
 
   _handleMultistateInput(payload) {
