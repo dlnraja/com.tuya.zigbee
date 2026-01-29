@@ -10156,12 +10156,8 @@
       {
         "id": "wall_dimmer_1gang_1way_turned_on",
         "title": {
-          "en": "Turned on",
-          "nl": "Aangezet"
-        },
-        "titleFormatted": {
-          "en": "[[device]] turned on (physical button)",
-          "nl": "[[device]] aangezet (fysieke knop)"
+          "en": "Turned on (physical button)",
+          "nl": "Aangezet (fysieke knop)"
         },
         "hint": {
           "en": "Triggered when the switch is turned on using the physical button",
@@ -10172,23 +10168,14 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=wall_dimmer_1gang_1way"
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_dimmer_1gang_1way"
           }
         ]
       },
       {
         "id": "wall_dimmer_1gang_1way_turned_off",
         "title": {
-          "en": "Turned off",
-          "nl": "Uitgezet"
-        },
-        "titleFormatted": {
-          "en": "[[device]] turned off (physical button)",
-          "nl": "[[device]] uitgezet (fysieke knop)"
+          "en": "Turned off (physical button)",
+          "nl": "Uitgezet (fysieke knop)"
         },
         "hint": {
           "en": "Triggered when the switch is turned off using the physical button",
@@ -10199,23 +10186,14 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=wall_dimmer_1gang_1way"
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_dimmer_1gang_1way"
           }
         ]
       },
       {
         "id": "wall_dimmer_1gang_1way_brightness_increased",
         "title": {
-          "en": "Brightness increased",
-          "nl": "Helderheid verhoogd"
-        },
-        "titleFormatted": {
-          "en": "[[device]] brightness increased (physical button)",
-          "nl": "[[device]] helderheid verhoogd (fysieke knop)"
+          "en": "Brightness increased (physical button)",
+          "nl": "Helderheid verhoogd (fysieke knop)"
         },
         "hint": {
           "en": "Triggered when brightness is increased using the physical button",
@@ -10237,23 +10215,14 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=wall_dimmer_1gang_1way"
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_dimmer_1gang_1way"
           }
         ]
       },
       {
         "id": "wall_dimmer_1gang_1way_brightness_decreased",
         "title": {
-          "en": "Brightness decreased",
-          "nl": "Helderheid verlaagd"
-        },
-        "titleFormatted": {
-          "en": "[[device]] brightness decreased (physical button)",
-          "nl": "[[device]] helderheid verlaagd (fysieke knop)"
+          "en": "Brightness decreased (physical button)",
+          "nl": "Helderheid verlaagd (fysieke knop)"
         },
         "hint": {
           "en": "Triggered when brightness is decreased using the physical button",
@@ -10275,23 +10244,14 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=wall_dimmer_1gang_1way"
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_dimmer_1gang_1way"
           }
         ]
       },
       {
         "id": "wall_switch_1gang_1way_turned_on",
         "title": {
-          "en": "Turned on",
-          "nl": "Aangezet"
-        },
-        "titleFormatted": {
-          "en": "[[device]] turned on (physical button)",
-          "nl": "[[device]] aangezet (fysieke knop)"
+          "en": "Turned on (physical button)",
+          "nl": "Aangezet (fysieke knop)"
         },
         "hint": {
           "en": "Triggered when the switch is turned on using the physical button",
@@ -10302,34 +10262,20 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=wall_switch_1gang_1way"
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_1gang_1way"
           }
         ]
       },
       {
         "id": "wall_switch_1gang_1way_turned_off",
         "title": {
-          "en": "Turned off",
-          "nl": "Uitgezet"
-        },
-        "titleFormatted": {
-          "en": "[[device]] turned off (physical button)",
-          "nl": "[[device]] uitgezet (fysieke knop)"
+          "en": "Turned off (physical button)",
+          "nl": "Uitgezet (fysieke knop)"
         },
         "hint": {
           "en": "Triggered when the switch is turned off using the physical button",
           "nl": "Geactiveerd wanneer de schakelaar wordt uitgezet met de fysieke knop"
         },
         "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_switch_1gang_1way"
-          },
           {
             "type": "device",
             "name": "device",
