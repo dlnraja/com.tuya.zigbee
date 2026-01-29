@@ -111,6 +111,9 @@ MANUFACTURER_IDS_AUDIT.json
 **/xlarge.png
 **/large.png
 
+# Learnmode SVGs (optional, reduces payload significantly)
+**/learnmode.svg
+
 # Large data files not needed at runtime
 lib/data/new_fingerprints.json
 **/new_fingerprints.json
@@ -120,12 +123,24 @@ CHANGELOG.md
 # Backup folders
 backup/
 
+# Markdown files (not needed at runtime)
+**/*.md
+*.md
+
+# Backup files
+**/*.backup*
+**/*.bak
+
 # Tools folder (development only)
 tools/
 
 # Large data files
 lib/data/new_fingerprints.js
 lib/data/smart_fingerprints.js
+
+# CSV files (development only)
+*.csv
+**/*.csv
 
 # Cascade/AI files
 .cascade
