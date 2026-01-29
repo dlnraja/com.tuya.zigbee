@@ -1,4 +1,7 @@
 {
+  "5.5.971": {
+    "en": "🔧 FIX: Lasse_K water sensor 'inactivated' - added missing invert_alarm setting to driver.compose.json. Contact sensor 'reversed' - use existing invert_contact setting in device settings."
+  },
   "5.5.970": {
     "en": "🔧 FIX: BSEED switch pairing conflicts (Pieter_Pessers forum) - removed wrong fingerprints from drivers: _TZ3000_qkixdnon (TS0003) only in switch_3gang, _TZ3000_l9brjwau (TS0002) only in switch_2gang, _TZ3000_ysdv91bk/_TZ3000_blhvsaqf (TS0001) only in switch_1gang."
   },
