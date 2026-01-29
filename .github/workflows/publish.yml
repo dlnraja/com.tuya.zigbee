@@ -189,15 +189,11 @@ jobs:
           done
           echo "✅ Copied $copied large.png files"
 
-      - name: 🚀 Publish
+      - name: 🚀 Publish (Official Athom Action)
         id: publish
-        env:
-          HOMEY_TOKEN: ${{ secrets.HOMEY_PAT }}
-        run: |
-          npm install -g homey
-          cd .homeybuild
-          echo "n" | homey app publish --token "$HOMEY_TOKEN" || true
-          echo "url=https://tools.developer.homey.app" >> $GITHUB_OUTPUT
+        uses: athombv/github-action-homey-app-publish@master
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
 
       - name: ✅ Summary
         run: |
