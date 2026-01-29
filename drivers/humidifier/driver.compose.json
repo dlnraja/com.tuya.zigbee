@@ -269,8 +269,7 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          61184
+          0
         ],
         "bindings": []
       }
@@ -284,7 +283,7 @@
   },
   "images": {
     "small": "drivers/humidifier/assets/images/small.png",
-    "large": "drivers/humidifier/assets/large.png"
+    "large": "drivers/humidifier/assets/images/large.png"
   },
   "platforms": [
     "local"

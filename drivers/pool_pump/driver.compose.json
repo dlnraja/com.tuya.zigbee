@@ -243,8 +243,7 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          61184
+          0
         ],
         "bindings": []
       }
@@ -258,7 +257,7 @@
   },
   "images": {
     "small": "drivers/pool_pump/assets/images/small.png",
-    "large": "drivers/pool_pump/assets/large.png"
+    "large": "drivers/pool_pump/assets/images/large.png"
   },
   "platforms": [
     "local"

@@ -256,8 +256,7 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          61184
+          0
         ],
         "bindings": []
       }
@@ -271,7 +270,7 @@
   },
   "images": {
     "small": "drivers/pet_feeder/assets/images/small.png",
-    "large": "drivers/pet_feeder/assets/large.png"
+    "large": "drivers/pet_feeder/assets/images/large.png"
   },
   "platforms": [
     "local"

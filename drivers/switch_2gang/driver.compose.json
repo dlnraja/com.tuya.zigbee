@@ -14,7 +14,6 @@
   "zigbee": {
     "productId": [
       "TS0002",
-      "TS0003",
       "TS0012",
       "TS0002_power",
       "TS0002_switch_module",
@@ -27,18 +26,6 @@
       }
     },
     "manufacturerName": [
-      "_TZ3000_ruldv5dt",
-      "_tz3000_ruldv5dt",
-      "_TZ3000_hznzbl0x",
-      "_tz3000_hznzbl0x",
-      "_TZ3000_mtnpt6ws",
-      "_tz3000_mtnpt6ws",
-      "_TZ3000_pxfjrzyj",
-      "_tz3000_pxfjrzyj",
-      "_TZ3000_ywubfuvt",
-      "_tz3000_ywubfuvt",
-      "_TZ3000_5gey1ohx",
-      "_tz3000_5gey1ohx",
       "_TYZB01_2athzhfr",
       "_TYZB01_6g8b7at8",
       "_TYZB01_6sadkhcy",
@@ -392,6 +379,10 @@
       "_TZ3000_vp6clf9d",
       "_TZ3000_vsasbzkf",
       "_TZ3000_w0qqde0g",
+      "_TZ3000_wkai4ga5",
+      "_TZ3000_ysdv91bk",
+      "_TZ3000_blhvsaqf",
+      "_TZ3000_qkixdnon",
       "Bitron Home",
       "Perenio",
       "Comap",
@@ -500,37 +491,26 @@
       "_TZE200_d5p1kr8z",
       "_TZE200_d8fp6ivb",
       "_TZE200_dcydapr2",
-      "_TZE200_dfry6ylv",
-      "_TZ3000_H1LPGKWN",
-      "_tz3000_h1lpgkwn",
-      "_TZ3000_qaa59zqd",
-      "_TZ3000_ptjcjise",
-      "_TZ3000_ZMLUNNHY",
-      "_tz3000_zmlunnhy"
+      "_TZE200_dfry6ylv"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          6
+          0
         ],
-        "bindings": [
-          6
-        ]
+        "bindings": []
       },
       "2": {
         "clusters": [
           6
         ],
-        "bindings": [
-          6
-        ]
+        "bindings": []
       }
     }
   },
   "images": {
     "small": "drivers/switch_2gang/assets/images/small.png",
-    "large": "drivers/switch_2gang/assets/large.png"
+    "large": "drivers/switch_2gang/assets/images/large.png"
   },
   "settings": [
     {

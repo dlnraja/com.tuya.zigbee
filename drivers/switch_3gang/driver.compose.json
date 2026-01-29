@@ -22,28 +22,21 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          6
+          0
         ],
-        "bindings": [
-          6
-        ]
+        "bindings": []
       },
       "2": {
         "clusters": [
-          6
+          0
         ],
-        "bindings": [
-          6
-        ]
+        "bindings": []
       },
       "3": {
         "clusters": [
-          6
+          0
         ],
-        "bindings": [
-          6
-        ]
+        "bindings": []
       }
     },
     "learnmode": {
@@ -53,30 +46,6 @@
       }
     },
     "manufacturerName": [
-      "_TZ3000_vjhcenzo",
-      "_tz3000_vjhcenzo",
-      "_TZ3000_udtmrasg",
-      "_tz3000_udtmrasg",
-      "_TZ3000_iwhuhzdo",
-      "_tz3000_iwhuhzdo",
-      "_TZ3000_pfc7i3kt",
-      "_tz3000_pfc7i3kt",
-      "_TZ3000_qxcnwv26",
-      "_tz3000_qxcnwv26",
-      "_TZ3000_tbfw3xj0",
-      "_tz3000_tbfw3xj0",
-      "_TZ3000_odzoiovu",
-      "_tz3000_odzoiovu",
-      "_TZ3000_vsasbzkf",
-      "_tz3000_vsasbzkf",
-      "_TZ3000_34zbimxh",
-      "_tz3000_34zbimxh",
-      "_TZ3000_wqfdvxen",
-      "_tz3000_wqfdvxen",
-      "_TZ3000_c0wbnbbf",
-      "_tz3000_c0wbnbbf",
-      "_TZ3000_ly9apzky",
-      "_tz3000_ly9apzky",
       "_TZ3000_QKIXDNON",
       "_tz3000_qkixdnon",
       "_TYZB01_b8cr31hp",
@@ -102,6 +71,8 @@
       "_tz3000_vjhcxjeb",
       "_TZE204_E1HUTAAJ",
       "_tze204_e1hutaaj",
+      "_TZE284_C8IPBLJQ",
+      "_tze284_c8ipbljq",
       "GLEDOPTO",
       "Third Reality, Inc",
       "Danfoss",
@@ -351,6 +322,10 @@
       "_TZ3000_vp6clf9d",
       "_TZ3000_vsasbzkf",
       "_TZ3000_w0qqde0g",
+      "_TZ3000_wkai4ga5",
+      "_TZ3000_ysdv91bk",
+      "_TZ3000_blhvsaqf",
+      "_TZ3000_l9brjwau",
       "Bitron Home",
       "Perenio",
       "Comap",
@@ -459,17 +434,12 @@
       "_TZE200_d5p1kr8z",
       "_TZE200_d8fp6ivb",
       "_TZE200_dcydapr2",
-      "_TZE200_dfry6ylv",
-      "_TZE284_C8IPBLJQ",
-      "_tze284_c8ipbljq",
-      "_TZ3000_nnwehhst",
-      "_TZ3000_ptjcjise",
-      "_TZ3000_fawk5xjv"
+      "_TZE200_dfry6ylv"
     ]
   },
   "images": {
     "small": "drivers/switch_3gang/assets/images/small.png",
-    "large": "drivers/switch_3gang/assets/large.png"
+    "large": "drivers/switch_3gang/assets/images/large.png"
   },
   "settings": [
     {
