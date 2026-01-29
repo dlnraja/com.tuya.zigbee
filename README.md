@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.968** | 🔧 FIX: Moes TS0044 _TZ3000_zgyzgdua button detection - multi-level frame int... |
 | **v5.5.967** | 🔧 FIX: Curtain motor mfr=unknown - added timeout protection and delayed retr... |
 | **v5.5.966** | 🆕 ADD: TS0044 button fingerprints (sqw3qqtc, dku2cfsc, ja5osu5g, xkh6oajz, z... |
 | **v5.5.965** | 🆕 ADD: 50+ new fingerprints from Z2M/ZHA/Hubitat research. TS0001: npzfdcof,... |
@@ -78,7 +79,6 @@
 | **v5.5.961** | 🔧 FIX: Physical button flow cards now trigger correctly for BSEED 2/3/4-gang... |
 | **v5.5.960** | 🔧 FIX: Added missing BSEED fingerprints (_TZ3000_blhvsaqf, _TZ3000_ysdv91bk,... |
 | **v5.5.959** | 🔧 FIX: Fingerbot driver module import error fixed (MODULE_NOT_FOUND). App wi... |
-| **v5.5.958** | 🔧 FIX: Ian_Gibbo TS0012 2-gang switch (_TZ3000_zmlunnhy) - Moved from switch... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
