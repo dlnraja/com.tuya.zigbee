@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.976** | 🔧 FIX: Ernst02507 TS004F Smart Knob - enabled scene mode (attr 0x8004), impr... |
 | **v5.5.975** | 🆕 NEW: Ernst02507 TS004F Smart Knob Scene Switch - added _TZ3000_gwkzibhs fi... |
 | **v5.5.974** | 🔧 FIX: ManuelKugler TRV issue - removed _TZE284_o3x45p96 from thermostat_tuy... |
 | **v5.5.973** | 🔧 FIX: Improved inversion logic for water/contact sensors - XOR logic allows... |
@@ -78,7 +79,6 @@
 | **v5.5.969** | 🔧 FIX: BSEED water valve pairing - removed conflicting fingerprints from swi... |
 | **v5.5.968** | 🔧 FIX: Moes TS0044 _TZ3000_zgyzgdua button detection - multi-level frame int... |
 | **v5.5.967** | 🔧 FIX: Curtain motor mfr=unknown - added timeout protection and delayed retr... |
-| **v5.5.966** | 🆕 ADD: TS0044 button fingerprints (sqw3qqtc, dku2cfsc, ja5osu5g, xkh6oajz, z... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
