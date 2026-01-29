@@ -89,6 +89,9 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
             this._zclState.lastState[epNum] = value;
             this.setCapabilityValue(capName, value).catch(() => {});
             if (isPhysical) {
+              const flowId = `switch_wall_8gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
+              this.homey.flow.getDeviceTriggerCard(flowId)
+                .trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
               this.log(`[SWITCH-8G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
             }
           }

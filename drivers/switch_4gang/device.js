@@ -95,7 +95,7 @@ class Switch4GangDevice extends BaseClass {
             
             // Trigger flow cards for PHYSICAL button presses only
             if (isPhysical) {
-              const flowId = `switch_4gang_gang${epNum}_physical_${value ? 'on' : 'off'}`;
+              const flowId = `switch_4gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
               this.homey.flow.getDeviceTriggerCard(flowId)
                 .trigger(this, { gang: epNum, state: value }, {})
                 .catch(() => {});
@@ -152,6 +152,7 @@ class Switch4GangDevice extends BaseClass {
 
   /**
    * Override setCapabilityValue to also trigger flows for external changes
+   * v5.5.962: Added deduplication to prevent duplicate flow triggers
    */
   async setCapabilityValue(capability, value) {
     const oldValue = this.getCapabilityValue(capability);
@@ -165,6 +166,15 @@ class Switch4GangDevice extends BaseClass {
       else if (capability === 'onoff.gang4') gang = 4;
 
       if (['onoff', 'onoff.gang2', 'onoff.gang3', 'onoff.gang4'].includes(capability)) {
+        // v5.5.962: Deduplicate flow triggers (500ms window)
+        const dedupKey = `${capability}_${value}`;
+        const now = Date.now();
+        if (this._lastFlowTrigger?.[dedupKey] && now - this._lastFlowTrigger[dedupKey] < 500) {
+          return; // Skip duplicate trigger
+        }
+        this._lastFlowTrigger = this._lastFlowTrigger || {};
+        this._lastFlowTrigger[dedupKey] = now;
+        
         await this._onCapabilityChanged(capability, value, gang);
       }
     }

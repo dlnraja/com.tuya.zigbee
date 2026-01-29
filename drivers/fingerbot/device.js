@@ -1,6 +1,6 @@
 'use strict';
 
-const TuyaZigbeeDevice = require('../../lib/TuyaZigbeeDevice');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 const TUYA_CLUSTER_ID = 0xEF00;
 
