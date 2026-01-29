@@ -15,8 +15,8 @@ This document summarizes user-reported devices and their expected behavior based
 |---|------|--------|----------------|-------|-------------|--------|
 | 1 | Peter (DutchDuke) | HOBEIAN Temp/Hum | `HOBEIAN` | Not updating since v5.5.677 | v5.5.710 | ✅ FIXED |
 | 2 | Peter (DutchDuke) | SOS Button | TS0215A | Can't pair after factory reset | v5.5.712 | ✅ FIXED |
-| 3 | Lasse_K | Water Leak Sensor | various | No alarm, reversed polarity | v5.5.713 | ✅ FIXED |
-| 4 | Lasse_K | Contact Sensors | various | Reversed indication after upgrades | v5.5.713 | ✅ FIXED |
+| 3 | Lasse_K | Water Leak Sensor | various | No alarm, reversed polarity | v5.5.973 | ✅ FIXED (XOR logic) |
+| 4 | Lasse_K | Contact Sensors | various | Reversed indication after upgrades | v5.5.973 | ✅ FIXED (XOR logic) |
 | 5 | Multiple | Scene Switches | scene_switch_1/2/3/6 | Invalid Flow Card ID | v5.5.708 | ✅ FIXED |
 
 ### ⚠️ PENDING INVESTIGATION (v5.5.840)
@@ -188,18 +188,33 @@ This document summarizes user-reported devices and their expected behavior based
 **Driver Status**: 100+ manufacturer IDs supported
 **Status**: ⚠️ NEEDS DIAGNOSTIC
 
-### Water Leak Sensor Polarity (v5.5.713)
+### Water Leak Sensor Polarity (v5.5.713 → v5.5.973)
 **Device**: Various water leak sensors
+**User**: Lasse_K (forum #1274)
 **Issue**: Alarm shows when dry, no alarm when wet
-**Fix Applied**: v5.5.713 - Added "Invert Water Alarm" setting
-**User Action**: Enable setting in device configuration
-**Status**: ✅ FIXED
+**Fix History**:
+- v5.5.713: Added `invert_alarm` setting
+- v5.5.971: Added setting to driver.compose.json
+- v5.5.972: Made setting work for IAS Zone sensors
+- v5.5.973: **XOR logic** - user setting can override manufacturer default
+**User Action**: Enable "Invert Water Alarm" in device settings
+**Pending**: Need Lasse_K's `manufacturerName` to add to auto-invert list
+**Status**: ✅ FIXED (manual setting works, auto-invert ready for known IDs)
 
-### Contact Sensor Polarity (v5.5.713)
+### Contact Sensor Polarity (v5.5.713 → v5.5.973)
 **Device**: Various _TZ3000_* contact sensors
+**User**: Lasse_K
 **Issue**: Reversed indication after app upgrades
-**Fix Applied**: v5.5.713 - Expanded auto-inversion list + manual setting
-**User Action**: Toggle "Invert Contact State" in device settings
+**Fix History**:
+- v5.5.713: Added auto-inversion for known IDs + manual setting
+- v5.5.973: **XOR logic** - user setting can override manufacturer default
+**Known Inverted Manufacturers** (auto-invert):
+```
+_TZ3000_26fmupbb, _TZ3000_n2egfsli, _TZ3000_oxslv1c9,
+_TZ3000_402jjyro, _TZ3000_2mbfxlzr, _TZ3000_bzxloft2,
+_TZ3000_yxqnffam, _TZ3000_996rpfy6
+```
+**User Action**: Toggle "Invert Contact State" in device settings if needed
 **Status**: ✅ FIXED
 
 ---
