@@ -1,4 +1,7 @@
 {
+  "5.5.970": {
+    "en": "🔧 FIX: BSEED switch pairing conflicts (Pieter_Pessers forum) - removed wrong fingerprints from drivers: _TZ3000_qkixdnon (TS0003) only in switch_3gang, _TZ3000_l9brjwau (TS0002) only in switch_2gang, _TZ3000_ysdv91bk/_TZ3000_blhvsaqf (TS0001) only in switch_1gang."
+  },
   "5.5.969": {
     "en": "🔧 FIX: BSEED water valve pairing - removed conflicting fingerprints from switch_1gang driver (_TZ3000_iedbgyxt, _TZ3000_j9568h44). Added case variants to valve_single for reliable driver selection."
   },
