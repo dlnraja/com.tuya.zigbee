@@ -1,4 +1,10 @@
 {
+  "5.5.966": {
+    "en": "🆕 ADD: TS0044 button fingerprints (sqw3qqtc, dku2cfsc, ja5osu5g, xkh6oajz, zszzgweg, lxw3kcw2, yesuiipb). TZE284 radar sensors (o9ofysmo, xc3vwx5a, yjjdcqsq, 4qznlkbu). All with case variants."
+  },
+  "5.5.965": {
+    "en": "🆕 ADD: 50+ new fingerprints from Z2M/ZHA/Hubitat research. TS0001: npzfdcof, hktqahrq, mx3vgyea, 5ng23zjs, rmjr4ufz, ovyaisip. TS0002: ruldv5dt, hznzbl0x, mtnpt6ws, 5gey1ohx. TS0003: vjhcenzo, udtmrasg, iwhuhzdo, pfc7i3kt. TS0004/TS0726: 6ahhkwyh, kt6xxa4o, u3oupgdy, jwoyqycg."
+  },
   "5.5.964": {
     "en": "🔧 FIX: Case-insensitive matching for manufacturerName/productId across entire codebase. Devices now match regardless of case (_TZ3000_xxx = _tz3000_XXX = _TZ3000_XXX). Uses CaseInsensitiveMatcher utility."
   },
