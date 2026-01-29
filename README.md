@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.955** | 🔧 FIX: Jolink smoke detector - Flow cards now work! Added missing device arg... |
 | **v5.5.954** | 🔧 RESTORE: Added 14 missing TS0601 dimmer fingerprints to dimmer_wall_1gang ... |
 | **v5.5.953** | 🔧 FIX: Peter_van_Werkhoven #1265 - Humidity now shows correct values (was 9%... |
 | **v5.5.952** | 🧹 CLEANUP: Removed 23 overlapping fingerprints from wall_dimmer_1gang_1way t... |
@@ -78,7 +79,6 @@
 | **v5.5.948** | 🔧 PR #119 merged: @packetninja's flexible HybridSwitchBase refactor for wall... |
 | **v5.5.947** | ➕ NEW DEVICE: Pressure band (_TZ3000_pjb1ua0m / TS0203) added to Contact Sens... |
 | **v5.5.946** | 📝 Responded to all GitHub issues/PRs: Thanked @packetninja for BSEED contrib... |
-| **v5.5.945** | 📢 DIAGNOSTICS RESPONSE: Curtain motor 'value is unexpected property' was FIX... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
