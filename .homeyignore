@@ -107,5 +107,26 @@ MANUFACTURER_IDS_AUDIT.json
 # Archive folder
 .archive/
 
-# Large image assets (xlarge not needed for Homey)
+# Large image assets (xlarge and large not needed for runtime - small.png is sufficient)
 **/xlarge.png
+**/large.png
+
+# Large data files not needed at runtime
+lib/data/new_fingerprints.json
+**/new_fingerprints.json
+package-lock.json
+CHANGELOG.md
+
+# Backup folders
+backup/
+
+# Cascade/AI files
+.cascade
+.windsurfrules
+.cursorrules
+
+# Documentation and reports
+docs/reports/
+*.analysis.json
+
+# Note: .homeychangelog.json is REQUIRED for app store - do not exclude
