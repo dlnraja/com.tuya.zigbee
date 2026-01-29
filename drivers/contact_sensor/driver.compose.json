@@ -100,8 +100,6 @@
       "_tz3000_oxslv1c9",
       "_TZ3000_P8ALO7QA",
       "_tz3000_p8alo7qa",
-      "_TZ3000_PJB1UA0M",
-      "_tz3000_pjb1ua0m",
       "_TZ3000_PZUI3SKT",
       "_tz3000_pzui3skt",
       "_TZ3000_Q50ZHDSC",
@@ -440,6 +438,7 @@
       "_TZ3000_upgcbody",
       "_TZ3000_usvkzkyn",
       "_TZ3000_v1pdxuqq",
+      "_TZ3000_wkai4ga5",
       "_TZ3000_xr3htd96",
       "_TZ3000_ywagc4rj",
       "_TZ3000_zf1lxtlj",
@@ -553,17 +552,7 @@
       "_TZE200_d8fp6ivb",
       "_TZE200_dcydapr2",
       "_TZE200_dfry6ylv",
-      "_TZ3000_b7m9qda0",
-      "eWeLink",
-      "SONOFF",
-      "Eardatek",
-      "EARDATEK",
-      "Linptech",
-      "LINPTECH",
-      "Rehent",
-      "REHENT",
-      "Nous",
-      "NOUS"
+      "_TZ3000_b7m9qda0"
     ],
     "productId": [
       "TS0203",
@@ -584,21 +573,14 @@
       "3300-S",
       "3320-L",
       "SNZB-04",
-      "TS0601",
-      "SNZB-04P"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1280,
-          61184
+          0
         ],
-        "bindings": [
-          1,
-          1280
-        ]
+        "bindings": []
       }
     },
     "learnmode": {
@@ -878,7 +860,8 @@
   ],
   "images": {
     "small": "drivers/contact_sensor/assets/images/small.png",
-    "large": "drivers/contact_sensor/assets/large.png"
+    "large": "drivers/contact_sensor/assets/images/large.png",
+    "xlarge": "drivers/contact_sensor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

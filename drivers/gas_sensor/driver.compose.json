@@ -298,15 +298,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1280,
-          61184
+          0
         ],
-        "bindings": [
-          1,
-          1280
-        ]
+        "bindings": []
       }
     },
     "learnmode": {
@@ -544,7 +538,8 @@
   ],
   "images": {
     "small": "drivers/gas_sensor/assets/images/small.png",
-    "large": "drivers/gas_sensor/assets/large.png"
+    "large": "drivers/gas_sensor/assets/images/large.png",
+    "xlarge": "drivers/gas_sensor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

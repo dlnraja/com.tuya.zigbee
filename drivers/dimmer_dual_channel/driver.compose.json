@@ -281,18 +281,15 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          8,
-          61184
+          0
         ],
-        "bindings": [
-          6,
-          8
-        ]
+        "bindings": []
+      },
+      "2": {
+        "clusters": [
+          0
+        ],
+        "bindings": []
       }
     }
   },
@@ -323,7 +320,8 @@
     }
   },
   "images": {
-    "large": "drivers/dimmer_dual_channel/assets/large.png",
+    "large": "drivers/dimmer_dual_channel/assets/images/large.png",
+    "xlarge": "drivers/dimmer_dual_channel/assets/images/xlarge.png",
     "small": "drivers/dimmer_dual_channel/assets/images/small.png"
   }
 }

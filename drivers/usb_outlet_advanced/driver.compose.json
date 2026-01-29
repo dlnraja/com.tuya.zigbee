@@ -310,20 +310,21 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          2820,
-          1794,
-          61184
+          0
         ],
-        "bindings": [
-          6,
-          2820,
-          1794
-        ]
+        "bindings": []
+      },
+      "2": {
+        "clusters": [
+          6
+        ],
+        "bindings": []
+      },
+      "3": {
+        "clusters": [
+          6
+        ],
+        "bindings": []
       }
     },
     "learnmode": {
@@ -786,7 +787,8 @@
   ],
   "images": {
     "small": "drivers/usb_outlet_advanced/assets/images/small.png",
-    "large": "drivers/usb_outlet_advanced/assets/large.png"
+    "large": "drivers/usb_outlet_advanced/assets/images/large.png",
+    "xlarge": "drivers/usb_outlet_advanced/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

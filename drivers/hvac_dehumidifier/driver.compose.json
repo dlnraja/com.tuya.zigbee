@@ -66,7 +66,8 @@
   ],
   "images": {
     "small": "drivers/hvac_dehumidifier/assets/images/small.png",
-    "large": "drivers/hvac_dehumidifier/assets/large.png"
+    "large": "drivers/hvac_dehumidifier/assets/images/large.png",
+    "xlarge": "drivers/hvac_dehumidifier/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [
@@ -307,8 +308,7 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          61184
+          0
         ],
         "bindings": []
       }

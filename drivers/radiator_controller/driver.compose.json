@@ -14,16 +14,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          3,
-          513,
-          61184
+          0
         ],
-        "bindings": [
-          1,
-          513
-        ]
+        "bindings": []
       }
     },
     "learnmode": {
@@ -252,7 +245,7 @@
   },
   "images": {
     "small": "drivers/radiator_controller/assets/images/small.png",
-    "large": "drivers/radiator_controller/assets/large.png"
+    "large": "drivers/radiator_controller/assets/images/large.png"
   },
   "settings": [
     {

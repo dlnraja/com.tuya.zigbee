@@ -19,8 +19,6 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "eWeLink",
-      "EWELINK",
       "TUYATEC-1g3tawnp",
       "TUYATEC-1uxx9cci",
       "TUYATEC-HaoiuWzy",
@@ -254,23 +252,16 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1026,
-          1029,
-          61184
+          0
         ],
-        "bindings": [
-          1,
-          1026,
-          1029
-        ]
+        "bindings": []
       }
     }
   },
   "images": {
     "small": "drivers/temphumidsensor/assets/images/small.png",
-    "large": "drivers/temphumidsensor/assets/large.png"
+    "large": "drivers/temphumidsensor/assets/images/large.png",
+    "xlarge": "drivers/temphumidsensor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

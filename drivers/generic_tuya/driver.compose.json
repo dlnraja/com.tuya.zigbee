@@ -8,7 +8,8 @@
   "class": "other",
   "images": {
     "small": "/drivers/generic_tuya/assets/images/small.png",
-    "large": "drivers/generic_tuya/assets/large.png"
+    "large": "/drivers/generic_tuya/assets/images/large.png",
+    "xlarge": "/drivers/generic_tuya/assets/images/xlarge.png"
   },
   "capabilities": [
     "measure_battery",
@@ -326,8 +327,7 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          61184
+          0
         ],
         "bindings": []
       }

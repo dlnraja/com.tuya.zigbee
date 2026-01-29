@@ -271,36 +271,27 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice",
-      "ZG-103ZL",
-      "HOBEIAN",
-      "Hobeian"
+      "Monoprice"
     ],
     "productId": [
       "TS0209",
       "TS0210",
       "ZG-102ZM",
-      "TS0601",
-      "ZG-103ZL"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1280,
-          61184
+          0
         ],
-        "bindings": [
-          1,
-          1280
-        ]
+        "bindings": []
       }
     }
   },
   "images": {
     "small": "drivers/vibration_sensor/assets/images/small.png",
-    "large": "drivers/vibration_sensor/assets/large.png"
+    "large": "drivers/vibration_sensor/assets/images/large.png",
+    "xlarge": "drivers/vibration_sensor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

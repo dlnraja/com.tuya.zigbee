@@ -238,6 +238,7 @@
       "_TZE200_ryfmq5rl",
       "_TZE200_yvx5lh6k",
       "_TZE200_8ygsuhe1",
+      "_TZE204_laokfqwu",
       "AAQS-S01",
       "lumi.airmonitor.acn01",
       "VINDSTYRKA",
@@ -277,13 +278,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          61184
+          0
         ],
-        "bindings": [
-          1
-        ]
+        "bindings": []
       }
     }
   },
@@ -371,7 +368,7 @@
   ],
   "images": {
     "small": "drivers/air_quality_co2/assets/images/small.png",
-    "large": "drivers/air_quality_co2/assets/large.png"
+    "large": "drivers/air_quality_co2/assets/images/large.png"
   },
   "platforms": [
     "local"

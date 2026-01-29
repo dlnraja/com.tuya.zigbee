@@ -1593,6 +1593,8 @@
       "_tze204_l6llgoxq",
       "_TZE204_L8XIYYMQ",
       "_tze204_l8xiyymq",
+      "_TZE204_LAOKFQWU",
+      "_tze204_laokfqwu",
       "_TZE204_LAWXY9E2",
       "_tze204_lawxy9e2",
       "_TZE204_LBHH5O6Z",
@@ -1807,6 +1809,8 @@
       "_tze284_33bwcga2",
       "_TZE284_3CTWOAIP",
       "_tze284_3ctwoaip",
+      "_TZE284_3MZB0SDZ",
+      "_tze284_3mzb0sdz",
       "_TZE284_3URSCHQL",
       "_tze284_3urschql",
       "_TZE284_3YP57TBY",
@@ -2367,6 +2371,7 @@
       "_TZ3000_t6jrifu5",
       "_TZ3000_upgcbody",
       "_TZ3000_usvkzkyn",
+      "_TZ3000_wkai4ga5",
       "_TZ3000_yxqnffam",
       "_TZ3000_zf1lxtlj",
       "_TZ3000_402jjyro",
@@ -2474,20 +2479,7 @@
       "zbeacon",
       "EWELINK",
       "_TZ3000_HY6NCVMW",
-      "_tz3000_hy6ncvmw",
-      "SNZB-02DR2",
-      "SONOFF",
-      "Eardatek",
-      "EARDATEK",
-      "Linptech",
-      "LINPTECH",
-      "Rehent",
-      "REHENT",
-      "Nous",
-      "NOUS",
-      "_TZE204_1n2kyphz",
-      "_TZE204_dikkika5",
-      "ZG-303Z"
+      "_tz3000_hy6ncvmw"
     ],
     "productId": [
       "TS0201",
@@ -2502,27 +2494,14 @@
       "SNZB-02",
       "SNZB-02D",
       "SNZB-02P",
-      "TS0601",
-      "ZG-227Z",
-      "CK-TLSR8656-SS5-01(7014)",
-      "SNZB-02DR2",
-      "SNZB-02LD",
-      "SNZB-02WD"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1026,
-          1029,
-          61184
+          0
         ],
-        "bindings": [
-          1,
-          1026,
-          1029
-        ]
+        "bindings": []
       }
     }
   },
@@ -2811,7 +2790,8 @@
   ],
   "images": {
     "small": "drivers/climate_sensor/assets/images/small.png",
-    "large": "drivers/climate_sensor/assets/large.png"
+    "large": "drivers/climate_sensor/assets/images/large.png",
+    "xlarge": "drivers/climate_sensor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

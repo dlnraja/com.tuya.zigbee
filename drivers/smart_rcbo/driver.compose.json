@@ -241,22 +241,16 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          61184
+          0
         ],
-        "bindings": [
-          6
-        ]
+        "bindings": []
       }
     }
   },
   "images": {
     "small": "drivers/smart_rcbo/assets/images/small.png",
-    "large": "drivers/smart_rcbo/assets/large.png"
+    "large": "drivers/smart_rcbo/assets/images/large.png",
+    "xlarge": "drivers/smart_rcbo/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

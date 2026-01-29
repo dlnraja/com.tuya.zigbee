@@ -258,26 +258,16 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          2820,
-          1794,
-          61184
+          0
         ],
-        "bindings": [
-          6,
-          2820,
-          1794
-        ]
+        "bindings": []
       }
     }
   },
   "images": {
     "small": "drivers/energy_meter_3phase/assets/images/small.png",
-    "large": "drivers/energy_meter_3phase/assets/large.png"
+    "large": "drivers/energy_meter_3phase/assets/images/large.png",
+    "xlarge": "drivers/energy_meter_3phase/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

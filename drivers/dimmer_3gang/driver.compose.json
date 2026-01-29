@@ -246,18 +246,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          8,
-          61184
+          0
         ],
-        "bindings": [
-          6,
-          8
-        ]
+        "bindings": []
       }
     }
   },
@@ -301,6 +292,6 @@
   },
   "images": {
     "small": "drivers/dimmer_3gang/assets/images/small.png",
-    "large": "drivers/dimmer_3gang/assets/large.png"
+    "large": "drivers/dimmer_3gang/assets/images/large.png"
   }
 }
