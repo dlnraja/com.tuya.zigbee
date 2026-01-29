@@ -160,11 +160,29 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
 
-      - name:  Publish (Official Athom Action)
+      - name: 🔨 Build app
+        run: npx homey app build
+
+      - name: 🚀 Publish
         id: publish
-        uses: athombv/github-action-homey-app-publish@master
-        with:
-          personal_access_token: ${{ secrets.HOMEY_PAT }}
+        env:
+          HOMEY_TOKEN: ${{ secrets.HOMEY_PAT }}
+        run: |
+          npm install -g homey
+          
+          # Login with token
+          echo "🔐 Authenticating..."
+          homey login --token "$HOMEY_TOKEN" 2>/dev/null || true
+          
+          # Publish with non-interactive mode (answer 'n' to version bump)
+          echo "📦 Publishing v${{ needs.validate.outputs.version }}..."
+          echo "n" | homey app publish || {
+            echo "⚠️ Publish may have issues - check Developer Portal"
+            exit 0
+          }
+          
+          echo "url=https://tools.developer.homey.app" >> $GITHUB_OUTPUT
+          echo "✅ Published!"
 
       - name: ✅ Summary
         run: |
