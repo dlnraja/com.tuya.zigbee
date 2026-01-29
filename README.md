@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.970** | 🔧 FIX: BSEED switch pairing conflicts (Pieter_Pessers forum) - removed wrong... |
 | **v5.5.969** | 🔧 FIX: BSEED water valve pairing - removed conflicting fingerprints from swi... |
 | **v5.5.968** | 🔧 FIX: Moes TS0044 _TZ3000_zgyzgdua button detection - multi-level frame int... |
 | **v5.5.967** | 🔧 FIX: Curtain motor mfr=unknown - added timeout protection and delayed retr... |
@@ -78,7 +79,6 @@
 | **v5.5.963** | 🔧 FIX: Fingerbot MODULE_NOT_FOUND error fixed (import path correction). Fixe... |
 | **v5.5.962** | 🔧 FIX: Physical button flow detection added to switch_1gang (PR #120 pattern... |
 | **v5.5.961** | 🔧 FIX: Physical button flow cards now trigger correctly for BSEED 2/3/4-gang... |
-| **v5.5.960** | 🔧 FIX: Added missing BSEED fingerprints (_TZ3000_blhvsaqf, _TZ3000_ysdv91bk,... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
