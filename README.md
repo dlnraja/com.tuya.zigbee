@@ -69,7 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.5.955** | 🔧 FIX: Jolink smoke detector - Flow cards now work! Added missing device arg... |
+| **v5.5.955** | 🔧 FIX: Jolink smoke detector - Flow card triggers now fire! Added explicit t... |
 | **v5.5.954** | 🔧 RESTORE: Added 14 missing TS0601 dimmer fingerprints to dimmer_wall_1gang ... |
 | **v5.5.953** | 🔧 FIX: Peter_van_Werkhoven #1265 - Humidity now shows correct values (was 9%... |
 | **v5.5.952** | 🧹 CLEANUP: Removed 23 overlapping fingerprints from wall_dimmer_1gang_1way t... |
