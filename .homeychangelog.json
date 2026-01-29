@@ -1,4 +1,7 @@
 {
+  "5.5.954": {
+    "en": "🔧 RESTORE: Added 14 missing TS0601 dimmer fingerprints to dimmer_wall_1gang that were lost when switch_dimmer_1gang was deleted. Full coverage now restored for touch dimmers."
+  },
   "5.5.953": {
     "en": "🔧 FIX: Peter_van_Werkhoven #1265 - Humidity now shows correct values (was 9%, now 90%). HOBEIAN ZG-204ZL/ZV sensors updated with proper humidity scaling (raw values, no divisor)."
   },
