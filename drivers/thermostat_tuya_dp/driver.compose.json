@@ -446,14 +446,8 @@
       "_TZE200_d8fp6ivb",
       "_TZE200_dcydapr2",
       "_TZE200_dfry6ylv",
-      "_TZE200_s8gkrkxk",
-      "_TZE200_kds22l0t",
-      "_TZE284_cvub6xbb",
-      "_TZE204_cvub6xbb",
-      "_TZE284_xnbkhhdr",
-      "_TZE284_pcdmj88b",
-      "_TZE204_pcdmj88b",
-      "_TZE284_ogx8u5z6"
+      "_TZE284_o3x45p96",
+      "_TZE200_s8gkrkxk"
     ],
     "productId": [
       "TS0601_thermo",
@@ -462,21 +456,15 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          3,
-          513,
-          61184
+          0
         ],
-        "bindings": [
-          1,
-          513
-        ]
+        "bindings": []
       }
     }
   },
   "images": {
-    "large": "drivers/thermostat_tuya_dp/assets/large.png",
+    "large": "drivers/thermostat_tuya_dp/assets/images/large.png",
+    "xlarge": "drivers/thermostat_tuya_dp/assets/images/xlarge.png",
     "small": "drivers/thermostat_tuya_dp/assets/images/small.png"
   },
   "energy": {

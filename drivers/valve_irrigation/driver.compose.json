@@ -229,35 +229,15 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice",
-      "_TZE200_sh1btabb",
-      "_TZE200_81isopgh",
-      "_TZE200_2wg5qrjy",
-      "_TZE200_htnnfasr",
-      "_TZE200_a7sghmms",
-      "_TZE204_7ytb3h8u",
-      "_TZE200_7ytb3h8u",
-      "_TZE284_7ytb3h8u",
-      "_TZE200_yxcgyjf1",
-      "_TZE200_d0ypnbvn",
-      "_TZE200_1n2zev06",
-      "_TZE284_8zizsafo",
-      "_TZE284_eaet5qt5",
-      "_TZE284_fhvpaltk",
-      "_TZE204_a7sghmms",
-      "_TZE200_fphxkxue",
-      "_TZ3210_0jxeoadc"
+      "Monoprice"
     ],
     "productId": [
-      "TS0601_irrigation",
-      "TS0601",
-      "TS0049"
+      "TS0601_irrigation"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          61184
+          0
         ],
         "bindings": []
       }
@@ -265,7 +245,8 @@
   },
   "images": {
     "small": "drivers/valve_irrigation/assets/images/small.png",
-    "large": "drivers/valve_irrigation/assets/large.png"
+    "large": "drivers/valve_irrigation/assets/images/large.png",
+    "xlarge": "drivers/valve_irrigation/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

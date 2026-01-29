@@ -271,18 +271,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          1,
-          1024,
-          1280,
-          1030,
-          61184
+          0
         ],
-        "bindings": [
-          1,
-          1280,
-          1030
-        ]
+        "bindings": []
       }
     },
     "learnmode": {
@@ -479,7 +470,8 @@
   ],
   "images": {
     "small": "drivers/presence_sensor_ceiling/assets/images/small.png",
-    "large": "drivers/presence_sensor_ceiling/assets/large.png"
+    "large": "drivers/presence_sensor_ceiling/assets/images/large.png",
+    "xlarge": "drivers/presence_sensor_ceiling/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

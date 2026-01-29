@@ -322,6 +322,7 @@
       "_TZ3000_gznh2xla",
       "_TZ3000_hyfvrar3",
       "_TZ3000_iksasdbv",
+      "_TZ3000_ja5osu5g",
       "_TZ3000_kx0pris5",
       "_TZ3000_lelb6ejs",
       "_TZ3000_vmpbygsz",
@@ -431,32 +432,19 @@
       "_TZE200_d5p1kr8z",
       "_TZE200_d8fp6ivb",
       "_TZE200_dcydapr2",
-      "_TZE200_dfry6ylv",
-      "_TZ3000_kfu8zapd"
+      "_TZE200_dfry6ylv"
     ],
     "productId": [
       "TS0111",
       "TS0101",
-      "TS0601",
-      "TS011F"
+      "TS0601"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          2820,
-          1794,
-          61184
+          0
         ],
-        "bindings": [
-          6,
-          2820,
-          1794
-        ]
+        "bindings": []
       }
     },
     "learnmode": {
@@ -1040,7 +1028,8 @@
   ],
   "images": {
     "small": "drivers/plug_smart/assets/images/small.png",
-    "large": "drivers/plug_smart/assets/large.png"
+    "large": "drivers/plug_smart/assets/images/large.png",
+    "xlarge": "drivers/plug_smart/assets/images/xlarge.png"
   },
   "platforms": [
     "local"
