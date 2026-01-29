@@ -1,4 +1,7 @@
 {
+  "5.5.957": {
+    "en": "🔧 FIX: Rolp switch+temperature sensor (_TZ3218_7fiyo3kv TS000F) - Removed duplicate from switch_1gang driver. Now pairs correctly with switch_temp_sensor showing temperature. Delete & re-pair."
+  },
   "5.5.956": {
     "en": "🔧 FIX: JJ10 presence sensor CK-BL702-MWS-01 (_TZE200_crq3r3la) - Removed duplicate fingerprint from motion_sensor driver causing pairing conflict. Delete device, re-pair after update."
   },
