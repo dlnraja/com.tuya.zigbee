@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.959** | 🔧 FIX: Fingerbot driver module import error fixed (MODULE_NOT_FOUND). App wi... |
 | **v5.5.958** | 🔧 FIX: Ian_Gibbo TS0012 2-gang switch (_TZ3000_zmlunnhy) - Moved from switch... |
 | **v5.5.957** | 🔧 FIX: Rolp switch+temperature sensor (_TZ3218_7fiyo3kv TS000F) - Removed du... |
 | **v5.5.956** | 🔧 FIX: JJ10 presence sensor CK-BL702-MWS-01 (_TZE200_crq3r3la) - Removed dup... |
@@ -78,7 +79,6 @@
 | **v5.5.952** | 🧹 CLEANUP: Removed 23 overlapping fingerprints from wall_dimmer_1gang_1way t... |
 | **v5.5.951** | 🔧 FIX: BSEED 2-button switches (_TZ3000_l9brjwau TS0003) now properly recogn... |
 | **v5.5.950** | ➕ NEW DEVICES: MiBoxer Zigbee rotary dimmers (TRI-C1ZR, TRI-K1ZR) now support... |
-| **v5.5.949** | 🧹 CLEANUP: Removed duplicate switch_dimmer_1gang driver as per @Attilla's su... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
