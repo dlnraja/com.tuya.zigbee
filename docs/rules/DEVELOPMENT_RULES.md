@@ -8,13 +8,31 @@ Always publish via GitHub Actions by pushing to master/main branch.
 The workflow `.github/workflows/publish.yml` handles publication automatically.
 
 ### 2. ManufacturerName Duplication Rule
-**ManufacturerNames CAN be in multiple drivers** as long as:
-- The `productId` is different, OR
-- The device type/class is clearly different
+**ManufacturerNames CAN be in multiple drivers** - this is NORMAL and EXPECTED!
 
-Example: `_TZ3000_abcdefgh` can be in both `switch_2gang` (productId: TS0002) and `dimmer_2gang` (productId: TS0012).
+#### ✅ VALID: Same manufacturerName in multiple drivers
+```
+_TZ3000_abcdefgh + TS0001 → switch_1gang
+_TZ3000_abcdefgh + TS0002 → switch_2gang
+_TZ3000_abcdefgh + TS0003 → switch_3gang
+_TZ3000_abcdefgh + TS0012 → dimmer_2gang
+```
+The same manufacturer makes multiple device variants with different productIds.
 
-**TRUE duplicates to avoid**: Same manufacturerName + same productId in incompatible drivers.
+#### Fingerprint = manufacturerName + productId (COMBINED)
+Homey matches BOTH values together. A device is matched when:
+- Its `manufacturerName` is in the driver's list AND
+- Its `productId` is in the driver's list
+
+#### ❌ TRUE conflicts to avoid
+Only remove a fingerprint if it causes WRONG driver matching:
+- Same manufacturerName + same productId in two incompatible drivers
+- Example: `_TZ3000_xyz` + `TS0002` in both `switch_2gang` AND `dimmer_2gang`
+
+#### Common Multi-Driver Manufacturers
+- `_TZ3000_*` - Often makes 1-gang, 2-gang, 3-gang switch variants
+- `_TZE200_*` / `_TZE204_*` - Tuya DP devices across sensors, TRVs, covers
+- Same OEM supplies different productIds for different device types
 
 ### 3. SDK3 Compliance
 - **No wildcards** in manufacturerName (e.g., `_TZE284_*` is INVALID)
