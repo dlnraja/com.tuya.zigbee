@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.5.960",
+  "version": "5.5.972",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -13535,7 +13535,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=air_purifier"
+            "filter": "driver_id=_air_purifier_backup"
           }
         ]
       },
@@ -13548,7 +13548,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=air_purifier"
+            "filter": "driver_id=_air_purifier_backup"
           }
         ]
       },
@@ -21230,7 +21230,7 @@
       "connectivity": [
         "zigbee"
       ],
-      "id": "air_purifier"
+      "id": "_air_purifier_backup"
     },
     {
       "name": {
@@ -28636,10 +28636,11 @@
           "Vision",
           "Monoprice",
           "_TZ3000_vp6clf9d",
+          "_tz3000_vp6clf9d",
           "_TZ3000_zgyzgdua",
+          "_tz3000_zgyzgdua",
           "_TZ3000_rrjr1q0u",
-          "eWeLink",
-          "SONOFF",
+          "_tz3000_rrjr1q0u",
           "_TZ3000_sqw3qqtc",
           "_tz3000_sqw3qqtc",
           "_TZ3000_dku2cfsc",
@@ -28653,7 +28654,9 @@
           "_TZ3000_lxw3kcw2",
           "_tz3000_lxw3kcw2",
           "_TZ3000_yesuiipb",
-          "_tz3000_yesuiipb"
+          "_tz3000_yesuiipb",
+          "eWeLink",
+          "SONOFF"
         ],
         "productId": [
           "TS0044",
@@ -55124,6 +55127,14 @@
           "_tze284_yrwmnya3",
           "_TZE284_ZTC6GGYL",
           "_tze284_ztc6ggyl",
+          "_TZE284_o9ofysmo",
+          "_tze284_o9ofysmo",
+          "_TZE284_xc3vwx5a",
+          "_tze284_xc3vwx5a",
+          "_TZE284_yjjdcqsq",
+          "_tze284_yjjdcqsq",
+          "_TZE284_4qznlkbu",
+          "_tze284_4qznlkbu",
           "_TZE200_1ibpyhdc",
           "_tze200_1ibpyhdc",
           "_TZE200_f1pvdgoh",
@@ -55364,15 +55375,7 @@
           "_TZE204_ztc6ggyl",
           "_tze204_ztc6ggyl",
           "_TZE200_laokfqwu",
-          "_TZE204_laokfqwu",
-          "_TZE284_o9ofysmo",
-          "_tze284_o9ofysmo",
-          "_TZE284_xc3vwx5a",
-          "_tze284_xc3vwx5a",
-          "_TZE284_yjjdcqsq",
-          "_tze284_yjjdcqsq",
-          "_TZE284_4qznlkbu",
-          "_tze284_4qznlkbu"
+          "_TZE204_laokfqwu"
         ],
         "productId": [
           "TS0225",
@@ -62876,6 +62879,28 @@
           }
         },
         "manufacturerName": [
+          "_TZ3000_npzfdcof",
+          "_tz3000_npzfdcof",
+          "_TZ3000_hktqahrq",
+          "_tz3000_hktqahrq",
+          "_TZ3000_mx3vgyea",
+          "_tz3000_mx3vgyea",
+          "_TZ3000_5ng23zjs",
+          "_tz3000_5ng23zjs",
+          "_TZ3000_rmjr4ufz",
+          "_tz3000_rmjr4ufz",
+          "_TZ3000_v7gnj3ad",
+          "_tz3000_v7gnj3ad",
+          "_TZ3000_qsp2pwtf",
+          "_tz3000_qsp2pwtf",
+          "_TZ3000_ovyaisip",
+          "_tz3000_ovyaisip",
+          "_TZ3000_4rbqgcuv",
+          "_tz3000_4rbqgcuv",
+          "_TZ3000_pk8tgtdb",
+          "_tz3000_pk8tgtdb",
+          "_TZ3000_syoxtjf0",
+          "_tz3000_syoxtjf0",
           "_tyzb01_1xktopx6",
           "_tyzb01_4mdqxxnn",
           "_TYZB01_4qw4rl1u",
@@ -63581,25 +63606,7 @@
           "_TZ3210_tqlv4ug4",
           "_tz3210_tqlv4ug4",
           "_TZE284_DMCKRSXG",
-          "_tze284_dmckrsxg",
-          "_TZ3000_npzfdcof",
-          "_tz3000_npzfdcof",
-          "_TZ3000_mx3vgyea",
-          "_tz3000_mx3vgyea",
-          "_TZ3000_5ng23zjs",
-          "_tz3000_5ng23zjs",
-          "_TZ3000_rmjr4ufz",
-          "_tz3000_rmjr4ufz",
-          "_TZ3000_qsp2pwtf",
-          "_tz3000_qsp2pwtf",
-          "_TZ3000_ovyaisip",
-          "_tz3000_ovyaisip",
-          "_TZ3000_4rbqgcuv",
-          "_tz3000_4rbqgcuv",
-          "_TZ3000_pk8tgtdb",
-          "_tz3000_pk8tgtdb",
-          "_TZ3000_syoxtjf0",
-          "_tz3000_syoxtjf0"
+          "_tze284_dmckrsxg"
         ]
       },
       "images": {
@@ -64132,6 +64139,18 @@
           }
         },
         "manufacturerName": [
+          "_TZ3000_ruldv5dt",
+          "_tz3000_ruldv5dt",
+          "_TZ3000_hznzbl0x",
+          "_tz3000_hznzbl0x",
+          "_TZ3000_mtnpt6ws",
+          "_tz3000_mtnpt6ws",
+          "_TZ3000_pxfjrzyj",
+          "_tz3000_pxfjrzyj",
+          "_TZ3000_ywubfuvt",
+          "_tz3000_ywubfuvt",
+          "_TZ3000_5gey1ohx",
+          "_tz3000_5gey1ohx",
           "_TYZB01_2athzhfr",
           "_TYZB01_6g8b7at8",
           "_TYZB01_6sadkhcy",
@@ -64599,17 +64618,7 @@
           "_TZ3000_qaa59zqd",
           "_TZ3000_ptjcjise",
           "_TZ3000_ZMLUNNHY",
-          "_tz3000_zmlunnhy",
-          "_TZ3000_hznzbl0x",
-          "_tz3000_hznzbl0x",
-          "_TZ3000_mtnpt6ws",
-          "_tz3000_mtnpt6ws",
-          "_TZ3000_pxfjrzyj",
-          "_tz3000_pxfjrzyj",
-          "_TZ3000_ywubfuvt",
-          "_tz3000_ywubfuvt",
-          "_TZ3000_5gey1ohx",
-          "_tz3000_5gey1ohx"
+          "_tz3000_zmlunnhy"
         ],
         "endpoints": {
           "1": {
@@ -65192,6 +65201,30 @@
           }
         },
         "manufacturerName": [
+          "_TZ3000_vjhcenzo",
+          "_tz3000_vjhcenzo",
+          "_TZ3000_udtmrasg",
+          "_tz3000_udtmrasg",
+          "_TZ3000_iwhuhzdo",
+          "_tz3000_iwhuhzdo",
+          "_TZ3000_pfc7i3kt",
+          "_tz3000_pfc7i3kt",
+          "_TZ3000_qxcnwv26",
+          "_tz3000_qxcnwv26",
+          "_TZ3000_tbfw3xj0",
+          "_tz3000_tbfw3xj0",
+          "_TZ3000_odzoiovu",
+          "_tz3000_odzoiovu",
+          "_TZ3000_vsasbzkf",
+          "_tz3000_vsasbzkf",
+          "_TZ3000_34zbimxh",
+          "_tz3000_34zbimxh",
+          "_TZ3000_wqfdvxen",
+          "_tz3000_wqfdvxen",
+          "_TZ3000_c0wbnbbf",
+          "_tz3000_c0wbnbbf",
+          "_TZ3000_ly9apzky",
+          "_tz3000_ly9apzky",
           "_TZ3000_QKIXDNON",
           "_tz3000_qkixdnon",
           "_TYZB01_b8cr31hp",
@@ -65579,21 +65612,7 @@
           "_tze284_c8ipbljq",
           "_TZ3000_nnwehhst",
           "_TZ3000_ptjcjise",
-          "_TZ3000_fawk5xjv",
-          "_TZ3000_vjhcenzo",
-          "_tz3000_vjhcenzo",
-          "_TZ3000_udtmrasg",
-          "_tz3000_udtmrasg",
-          "_TZ3000_qxcnwv26",
-          "_tz3000_qxcnwv26",
-          "_TZ3000_tbfw3xj0",
-          "_tz3000_tbfw3xj0",
-          "_TZ3000_34zbimxh",
-          "_tz3000_34zbimxh",
-          "_TZ3000_wqfdvxen",
-          "_tz3000_wqfdvxen",
-          "_TZ3000_c0wbnbbf",
-          "_tz3000_c0wbnbbf"
+          "_TZ3000_fawk5xjv"
         ]
       },
       "images": {
@@ -66159,6 +66178,14 @@
           "_tz3002_vaq2bfcu",
           "_TZ3002_zyuajkzz",
           "_tz3002_zyuajkzz",
+          "_TZ3002_6ahhkwyh",
+          "_tz3002_6ahhkwyh",
+          "_TZ3000_kt6xxa4o",
+          "_tz3000_kt6xxa4o",
+          "_TZ3000_u3oupgdy",
+          "_tz3000_u3oupgdy",
+          "_TZ3000_jwoyqycg",
+          "_tz3000_jwoyqycg",
           "_TYZB01_bagt1e4o",
           "_TZ3000_4VOBCWSC",
           "_tz3000_4vobcwsc",
@@ -66551,13 +66578,7 @@
           "_TZ3000_3n2minvf",
           "_tz3000_3n2minvf",
           "_TZ3000_hdopuwv6",
-          "_TZ3000_aqsjyh1h",
-          "_TZ3002_6ahhkwyh",
-          "_tz3002_6ahhkwyh",
-          "_TZ3000_kt6xxa4o",
-          "_tz3000_kt6xxa4o",
-          "_TZ3000_jwoyqycg",
-          "_tz3000_jwoyqycg"
+          "_TZ3000_aqsjyh1h"
         ]
       },
       "images": {
@@ -74802,15 +74823,35 @@
           "Vision",
           "Monoprice",
           "_TZ3000_o4cjetlm",
+          "_tz3000_o4cjetlm",
+          "_TZ3000_O4CJETLM",
           "_TZ3000_iedbgyxt",
+          "_tz3000_iedbgyxt",
+          "_TZ3000_IEDBGYXT",
           "_TZ3000_h3noz0a5",
+          "_tz3000_h3noz0a5",
+          "_TZ3000_H3NOZ0A5",
           "_TZ3000_5ucujjts",
+          "_tz3000_5ucujjts",
+          "_TZ3000_5UCUJJTS",
           "_TZ3000_h8ngtlxy",
+          "_tz3000_h8ngtlxy",
+          "_TZ3000_H8NGTLXY",
           "_TZ3000_w0ypwa1f",
+          "_tz3000_w0ypwa1f",
+          "_TZ3000_W0YPWA1F",
           "_TYZB01_4tlksk8a",
+          "_tyzb01_4tlksk8a",
+          "_TYZB01_4TLKSK8A",
           "_TZ3000_tvuarksa",
+          "_tz3000_tvuarksa",
+          "_TZ3000_TVUARKSA",
           "_TZ3000_j9568h44",
-          "_TYZB01_ymcdbl3u"
+          "_tz3000_j9568h44",
+          "_TZ3000_J9568H44",
+          "_TYZB01_ymcdbl3u",
+          "_tyzb01_ymcdbl3u",
+          "_TYZB01_YMCDBL3U"
         ],
         "productId": [
           "TS0601_valve",
@@ -76146,6 +76187,21 @@
           "hint": {
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+          }
+        },
+        {
+          "id": "invert_alarm",
+          "type": "checkbox",
+          "label": {
+            "en": "🔄 Invert Water Alarm",
+            "fr": "🔄 Inverser Alarme Eau",
+            "nl": "🔄 Inverteer Wateralarm",
+            "de": "🔄 Wasseralarm Invertieren"
+          },
+          "value": false,
+          "hint": {
+            "en": "Enable if water detection shows opposite state (wet=dry, dry=wet). Lasse_K forum fix.",
+            "fr": "Activer si la détection d'eau affiche l'état inverse (mouillé=sec, sec=mouillé)"
           }
         }
       ],
