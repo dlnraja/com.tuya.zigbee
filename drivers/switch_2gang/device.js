@@ -3,6 +3,7 @@ const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { CLUSTER } = require('zigbee-clusters');
+const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -30,7 +31,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     const mfr = this.getSetting?.('zb_manufacturer_name') ||
                 this.getStoreValue?.('zb_manufacturer_name') ||
                 this.getStoreValue?.('manufacturerName') || '';
-    return ZCL_ONLY_MANUFACTURERS_2G.some(b => mfr.toLowerCase().includes(b.toLowerCase()));
+    return includesCI(ZCL_ONLY_MANUFACTURERS_2G, mfr);
   }
 
   async onNodeInit({ zclNode }) {
