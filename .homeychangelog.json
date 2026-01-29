@@ -1,4 +1,7 @@
 {
+  "5.5.974": {
+    "en": "🔧 FIX: ManuelKugler TRV issue - removed _TZE284_o3x45p96 from thermostat_tuya_dp driver (it's a TRV, now only in radiator_valve). Device will pair correctly after re-pairing."
+  },
   "5.5.973": {
     "en": "🔧 FIX: Improved inversion logic for water/contact sensors - XOR logic allows user setting to override manufacturer default. Infrastructure ready for auto-invert by manufacturer (like contact sensors). Lasse_K forum #1274."
   },
