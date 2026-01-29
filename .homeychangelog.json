@@ -1,4 +1,7 @@
 {
+  "5.5.977": {
+    "en": "🔧 FIX: Ernst02507 TS004F Smart Knob - removed duplicate fingerprint _TZ3000_gwkzibhs from button_wireless_1 (only in smart_knob_rotary now). RE-PAIR REQUIRED after update."
+  },
   "5.5.976": {
     "en": "🔧 FIX: Ernst02507 TS004F Smart Knob - enabled scene mode (attr 0x8004), improved OnOff command handling and scenes cluster support for button press detection. GitHub #113."
   },
