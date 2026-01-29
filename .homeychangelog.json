@@ -1,4 +1,7 @@
 {
+  "5.5.958": {
+    "en": "🔧 FIX: Ian_Gibbo TS0012 2-gang switch (_TZ3000_zmlunnhy) - Moved from switch_1gang to switch_2gang. Now both gangs work correctly. Delete & re-pair."
+  },
   "5.5.957": {
     "en": "🔧 FIX: Rolp switch+temperature sensor (_TZ3218_7fiyo3kv TS000F) - Removed duplicate from switch_1gang driver. Now pairs correctly with switch_temp_sensor showing temperature. Delete & re-pair."
   },
