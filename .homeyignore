@@ -127,6 +127,10 @@ tools/
 lib/data/new_fingerprints.js
 lib/data/smart_fingerprints.js
 
+# CSV files (development only)
+*.csv
+**/*.csv
+
 # Cascade/AI files
 .cascade
 .windsurfrules
