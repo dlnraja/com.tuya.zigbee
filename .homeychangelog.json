@@ -1,4 +1,7 @@
 {
+  "5.5.952": {
+    "en": "🧹 CLEANUP: Removed 23 overlapping fingerprints from wall_dimmer_1gang_1way to prevent pairing conflicts with dimmer_wall_1gang. wall_dimmer_1gang_1way now focused on MiBoxer/Eardatek ZCL devices (TS004F, TS0501B). TS0601 dimmers use dimmer_wall_1gang."
+  },
   "5.5.951": {
     "en": "🔧 FIX: BSEED 2-button switches (_TZ3000_l9brjwau TS0003) now properly recognized - added TS0003 to switch_2gang productId. Forum post #1264 fix for Pieter_Pessers."
   },
