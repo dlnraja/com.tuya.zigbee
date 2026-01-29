@@ -98,3 +98,35 @@ const TuyaZigbeeDevice = require('../../lib/TuyaZigbeeDevice');
 ### Device Shows as "unknown/unknown"
 - Check settings keys: `zb_model_id`, `zb_manufacturer_name`
 - Verify fingerprints in driver.compose.json
+
+## CRITICAL: Fingerprint Matching Rules
+
+### manufacturerName CAN appear in MULTIPLE drivers - THIS IS NORMAL!
+
+**Fingerprint = manufacturerName + productId (COMBINED)**
+```
+_TZ3000_abc + TS0001 → switch_1gang
+_TZ3000_abc + TS0002 → switch_2gang  (SAME mfr, different productId = OK!)
+_TZ3000_abc + TS0003 → switch_3gang
+_TZ3000_abc + TS0012 → dimmer_2gang
+```
+
+### When to REMOVE a fingerprint:
+- ONLY if SAME manufacturerName + SAME productId causes WRONG driver match
+- Do NOT remove just because mfr appears in another driver with different productId
+
+### Common Multi-Driver Manufacturers:
+- `_TZ3000_*` - Often makes 1-gang, 2-gang, 3-gang switch variants
+- `_TZE200_*` / `_TZE204_*` - Tuya DP devices across sensors, TRVs, covers
+- Same OEM supplies different productIds for different device types
+
+### Matching Logic in driver.compose.json:
+```json
+{
+  "zigbee": {
+    "manufacturerName": ["_TZ3000_abc", "_TZ3000_xyz"],
+    "productId": ["TS0002", "TS0012"]
+  }
+}
+```
+Device matches if manufacturerName IN list AND productId IN list.
