@@ -1,4 +1,7 @@
 {
+  "5.5.973": {
+    "en": "🔧 FIX: Improved inversion logic for water/contact sensors - XOR logic allows user setting to override manufacturer default. Infrastructure ready for auto-invert by manufacturer (like contact sensors). Lasse_K forum #1274."
+  },
   "5.5.972": {
     "en": "🔧 FIX: Lasse_K water sensor IAS Zone fix - invert_alarm setting now works for IAS Zone sensors (not just Tuya DP). HybridSensorBase.js updated to check invert_alarm for alarm_water capability."
   },
