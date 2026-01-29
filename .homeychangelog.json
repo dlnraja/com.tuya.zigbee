@@ -1,4 +1,7 @@
 {
+  "5.5.976": {
+    "en": "🔧 FIX: Ernst02507 TS004F Smart Knob - enabled scene mode (attr 0x8004), improved OnOff command handling and scenes cluster support for button press detection. GitHub #113."
+  },
   "5.5.975": {
     "en": "🆕 NEW: Ernst02507 TS004F Smart Knob Scene Switch - added _TZ3000_gwkzibhs fingerprint to smart_knob_rotary driver. Device will now pair correctly."
   },
