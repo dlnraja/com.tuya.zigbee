@@ -120,6 +120,13 @@ CHANGELOG.md
 # Backup folders
 backup/
 
+# Tools folder (development only)
+tools/
+
+# Large data files
+lib/data/new_fingerprints.js
+lib/data/smart_fingerprints.js
+
 # Cascade/AI files
 .cascade
 .windsurfrules
