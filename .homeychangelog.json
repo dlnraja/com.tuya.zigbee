@@ -1,4 +1,7 @@
 {
+  "5.5.960": {
+    "en": "🔧 FIX: Added missing BSEED fingerprints (_TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_iedbgyxt) to switch_1gang driver. Delete & re-pair BSEED switches."
+  },
   "5.5.959": {
     "en": "🔧 FIX: Fingerbot driver module import error fixed (MODULE_NOT_FOUND). App will now start correctly."
   },
