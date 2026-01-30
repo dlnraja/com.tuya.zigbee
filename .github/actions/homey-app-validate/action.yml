@@ -1,0 +1,36 @@
+name: 'Homey App Validate (Fixed)'
+description: 'Validate Homey App with large.png fix for CLI bug'
+inputs:
+  level:
+    description: 'Validation level (debug, publish, verified)'
+    required: false
+    default: 'publish'
+runs:
+  using: 'composite'
+  steps:
+    - name: Build App
+      shell: bash
+      run: npx homey app build
+
+    - name: Fix large.png files (CLI bug workaround)
+      shell: bash
+      run: |
+        # Copy driver large.png files
+        for driver in drivers/*/; do
+          dn=$(basename "$driver")
+          if [ -f "drivers/${dn}/assets/images/large.png" ]; then
+            mkdir -p ".homeybuild/drivers/${dn}/assets/images/"
+            cp "drivers/${dn}/assets/images/large.png" ".homeybuild/drivers/${dn}/assets/images/"
+          fi
+        done
+        # Copy app-level large.png
+        if [ -f "assets/images/large.png" ]; then
+          mkdir -p ".homeybuild/assets/images/"
+          cp "assets/images/large.png" ".homeybuild/assets/images/"
+        fi
+
+    - name: Validate App
+      shell: bash
+      run: |
+        cd .homeybuild
+        npx homey app validate --level ${{ inputs.level }}
