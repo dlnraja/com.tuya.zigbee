@@ -171,9 +171,11 @@ jobs:
       - name: 🔨 Build App
         run: npx homey app build
 
-      - name: 📷 Fix large.png (Homey CLI bug workaround)
+      - name: 📷 Fix build artifacts (CLI bug workarounds)
         run: |
-          echo "📷 Copying large.png files to .homeybuild..."
+          echo "📷 Copying missing files to .homeybuild..."
+          # Copy changelog (required for headless publish)
+          cp ".homeychangelog.json" ".homeybuild/" 2>/dev/null || true
           copied=0
           # App-level large.png
           if [ -f "assets/images/large.png" ]; then
