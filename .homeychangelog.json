@@ -1,4 +1,7 @@
 {
+  "5.5.980": {
+    "en": "🔧 FIX: BSEED 4-gang switch - added missing flow cards for single/double/long_press/triple physical button detection (all 4 gangs). Diagnostic report fix."
+  },
   "5.5.979": {
     "en": "🎨 IMAGES: Added missing app xlarge.png (1000x700), created water_tank_monitor icon.svg. All 108 drivers now have proper icon.svg. Compliant with Homey App Store guidelines."
   },
