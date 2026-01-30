@@ -814,11 +814,15 @@ const SENSOR_CONFIGS = {
     battery: true,
     noTemperature: true,    // v5.5.368: 4x4_Pete fix - device has NO temp sensor
     noHumidity: true,       // v5.5.368: 4x4_Pete fix - device has NO humidity sensor
+    // v5.5.983: 4x4_Pete forum fix - suppress battery spam warnings
+    suppressBatteryWarnings: true,
+    batteryThrottleMs: 3600000,  // Only update battery max every hour
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       4: { cap: 'measure_battery', divisor: 1 },
       9: { cap: 'measure_luminance', divisor: 1 },
-      15: { cap: 'measure_battery', divisor: 1 },
+      // v5.5.983: Remove duplicate battery DP15 - causes spam
+      // 15: { cap: 'measure_battery', divisor: 1 },
     }
   },
 
@@ -1165,6 +1169,9 @@ const SENSOR_CONFIGS = {
     hasIlluminance: true,
     noTemperature: true,
     noHumidity: true,
+    // v5.5.983: 4x4_Pete forum fix - suppress battery spam warnings
+    suppressBatteryWarnings: true,
+    batteryThrottleMs: 3600000,  // Only update battery max every hour
     writableDPs: [2, 4, 102, 107, 122, 123],
     dpMap: {
       // ═══════════════════════════════════════════════════════════════════
@@ -2401,13 +2408,27 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     }
 
     // v5.5.932: Handle battery DPs locally when config specifies
+    // v5.5.983: 4x4_Pete forum fix - add battery throttling to prevent spam
     if (dpMap[dpId]?.cap === 'measure_battery') {
       const rawBatt = this._parseBufferValue(data.value || data.data);
       const divisor = dpMap[dpId].divisor || 1;
       const battery = Math.round(rawBatt / divisor);
       if (battery >= 0 && battery <= 100) {
-        this.log(`[RADAR] 🔋 DP${dpId} → battery = ${battery}%`);
-        this.setCapabilityValue('measure_battery', battery).catch(() => { });
+        // v5.5.983: Check battery throttling config
+        const now = Date.now();
+        const throttleMs = config?.batteryThrottleMs || 300000; // Default 5 min
+        const lastBatteryUpdate = this._lastBatteryUpdate || 0;
+        const currentBattery = this.getCapabilityValue('measure_battery');
+        const batteryChange = Math.abs((currentBattery || 0) - battery);
+        
+        // Only update if: significant change (>5%) OR enough time passed OR first report
+        if (batteryChange >= 5 || (now - lastBatteryUpdate) > throttleMs || lastBatteryUpdate === 0) {
+          this.log(`[RADAR] 🔋 DP${dpId} → battery = ${battery}% (change: ${batteryChange}%)`);
+          this.setCapabilityValue('measure_battery', battery).catch(() => { });
+          this._lastBatteryUpdate = now;
+        } else {
+          // Suppress spam - don't log to reduce noise
+        }
       }
       return;
     }
