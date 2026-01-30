@@ -1,4 +1,7 @@
 {
+  "5.5.989": {
+    "en": "🔧 FIX: GitHub #121 - Move _TZ3000_an5rjiwd from 4-button to 1-button driver (David's button delay fix). Verified #122 Longsam curtain motor already supported."
+  },
   "5.5.988": {
     "en": "🔧 FIX: Patrick #1288 - ZCL battery throttle (5min + 5% minChange) to stop battery spam (100% ↔ 1-2%) on _TZE200_kb5noeto radar sensors."
   },
