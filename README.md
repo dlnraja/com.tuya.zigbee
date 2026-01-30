@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.988** | 🔧 FIX: Patrick #1288 - ZCL battery throttle (5min + 5% minChange) to stop ba... |
 | **v5.5.987** | 🔧 FIX: Peter #1265 - HOBEIAN ZG-204ZV humidity multiplier (9% → 90%). Added ... |
 | **v5.5.986** | 🔧 FIX: Peter #1282 - ZCL illuminance throttle (30s + 15% minChange) to stop ... |
 | **v5.5.985** | 🔧 FIX: Peter_van_Werkhoven #1282 - HOBEIAN ZG-204ZV Lux smoothing (15% thres... |
@@ -78,7 +79,6 @@
 | **v5.5.981** | ➕ NEW: Added Pressure band sensor support (_TZ3000_pjb1ua0m / TS0203) to Cont... |
 | **v5.5.980** | 🔧 FIX: BSEED 4-gang switch - added missing flow cards for single/double/long... |
 | **v5.5.979** | 🎨 IMAGES: Added missing app xlarge.png (1000x700), created water_tank_monito... |
-| **v5.5.978** | 🔧 FIX: BSEED 4-gang switch (diagnostic report) - fixed Missing Capability Li... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
