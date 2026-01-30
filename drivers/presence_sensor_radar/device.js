@@ -763,9 +763,10 @@ const SENSOR_CONFIGS = {
     luxMinChangePercent: 15,       // Ignore changes < 15%
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
-      // v5.5.831: ZG-204ZV specific - DP3=temp(÷10), DP4=humidity
+      // v5.5.831: ZG-204ZV specific - DP3=temp(÷10), DP4=humidity(×10)
+      // v5.5.987: Peter #1265 - Humidity 9% instead of 90% - needs multiplier
       3: { cap: 'measure_temperature', divisor: 10 },
-      4: { cap: 'measure_humidity', divisor: 1 },
+      4: { cap: 'measure_humidity', multiplier: 10 },
       9: { cap: 'measure_luminance', type: 'lux_direct' },
       10: { cap: 'measure_battery', divisor: 1 },
       // v5.5.841: SOS button (Peter_van_Werkhoven diagnostic - DP17 or DP18 typical for SOS)
@@ -2421,9 +2422,11 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     if (dpMap[dpId]?.cap === 'measure_humidity') {
       const rawHumid = this._parseBufferValue(data.value || data.data);
       const divisor = dpMap[dpId].divisor || 1;
-      const humidity = Math.round(rawHumid / divisor);
+      const multiplier = dpMap[dpId].multiplier || 1;
+      // v5.5.987: Peter #1265 - Support multiplier for humidity (9% → 90%)
+      const humidity = Math.round((rawHumid / divisor) * multiplier);
       if (humidity >= 0 && humidity <= 100) {
-        this.log(`[RADAR] 💧 DP${dpId} → humidity = ${humidity}% (raw: ${rawHumid}, ÷${divisor})`);
+        this.log(`[RADAR] 💧 DP${dpId} → humidity = ${humidity}% (raw: ${rawHumid}, ÷${divisor}, ×${multiplier})`);
         this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
       } else {
         this.log(`[RADAR] ⚠️ DP${dpId} humidity out of range: ${humidity}% (raw: ${rawHumid})`);
