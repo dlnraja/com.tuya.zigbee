@@ -43,16 +43,10 @@
     {
       "id": "switch_2gang_physical_gang1_on",
       "title": {
-        "en": "Physical button gang 1 ON",
-        "fr": "Bouton physique gang 1 ON",
-        "nl": "Fysieke knop gang 1 AAN",
-        "de": "Physische Taste gang 1 EIN"
-      },
-      "titleFormatted": {
-        "en": "[[device]] gang 1 turned on (physical)",
-        "fr": "[[device]] gang 1 allumé (physique)",
-        "nl": "[[device]] gang 1 aangezet (fysiek)",
-        "de": "[[device]] gang 1 eingeschaltet (physisch)"
+        "en": "Gang 1 turned on (physical button)",
+        "fr": "Gang 1 allumé (bouton physique)",
+        "nl": "Gang 1 aangezet (fysieke knop)",
+        "de": "Gang 1 eingeschaltet (physische Taste)"
       },
       "hint": {
         "en": "Triggers only when physical button turns ON gang 1",
@@ -65,48 +59,30 @@
     {
       "id": "switch_2gang_physical_gang1_off",
       "title": {
-        "en": "Physical button gang 1 OFF",
-        "fr": "Bouton physique gang 1 OFF",
-        "nl": "Fysieke knop gang 1 UIT",
-        "de": "Physische Taste gang 1 AUS"
-      },
-      "titleFormatted": {
-        "en": "[[device]] gang 1 turned off (physical)",
-        "fr": "[[device]] gang 1 éteint (physique)",
-        "nl": "[[device]] gang 1 uitgezet (fysiek)",
-        "de": "[[device]] gang 1 ausgeschaltet (physisch)"
+        "en": "Gang 1 turned off (physical button)",
+        "fr": "Gang 1 éteint (bouton physique)",
+        "nl": "Gang 1 uitgezet (fysieke knop)",
+        "de": "Gang 1 ausgeschaltet (physische Taste)"
       },
       "args": []
     },
     {
       "id": "switch_2gang_physical_gang2_on",
       "title": {
-        "en": "Physical button gang 2 ON",
-        "fr": "Bouton physique gang 2 ON",
-        "nl": "Fysieke knop gang 2 AAN",
-        "de": "Physische Taste gang 2 EIN"
-      },
-      "titleFormatted": {
-        "en": "[[device]] gang 2 turned on (physical)",
-        "fr": "[[device]] gang 2 allumé (physique)",
-        "nl": "[[device]] gang 2 aangezet (fysiek)",
-        "de": "[[device]] gang 2 eingeschaltet (physisch)"
+        "en": "Gang 2 turned on (physical button)",
+        "fr": "Gang 2 allumé (bouton physique)",
+        "nl": "Gang 2 aangezet (fysieke knop)",
+        "de": "Gang 2 eingeschaltet (physische Taste)"
       },
       "args": []
     },
     {
       "id": "switch_2gang_physical_gang2_off",
       "title": {
-        "en": "Physical button gang 2 OFF",
-        "fr": "Bouton physique gang 2 OFF",
-        "nl": "Fysieke knop gang 2 UIT",
-        "de": "Physische Taste gang 2 AUS"
-      },
-      "titleFormatted": {
-        "en": "[[device]] gang 2 turned off (physical)",
-        "fr": "[[device]] gang 2 éteint (physique)",
-        "nl": "[[device]] gang 2 uitgezet (fysiek)",
-        "de": "[[device]] gang 2 ausgeschaltet (physisch)"
+        "en": "Gang 2 turned off (physical button)",
+        "fr": "Gang 2 éteint (bouton physique)",
+        "nl": "Gang 2 uitgezet (fysieke knop)",
+        "de": "Gang 2 ausgeschaltet (physische Taste)"
       },
       "args": []
     }
