@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.979** | 🎨 IMAGES: Added missing app xlarge.png (1000x700), created water_tank_monito... |
 | **v5.5.978** | 🔧 FIX: BSEED 4-gang switch (diagnostic report) - fixed Missing Capability Li... |
 | **v5.5.977** | 🔧 FIX: Ernst02507 TS004F Smart Knob - removed duplicate fingerprint _TZ3000_... |
 | **v5.5.976** | 🔧 FIX: Ernst02507 TS004F Smart Knob - enabled scene mode (attr 0x8004), impr... |
@@ -78,7 +79,6 @@
 | **v5.5.972** | 🔧 FIX: Lasse_K water sensor IAS Zone fix - invert_alarm setting now works fo... |
 | **v5.5.971** | 🔧 FIX: Lasse_K water sensor 'inactivated' - added missing invert_alarm setti... |
 | **v5.5.970** | 🔧 FIX: BSEED switch pairing conflicts (Pieter_Pessers forum) - removed wrong... |
-| **v5.5.969** | 🔧 FIX: BSEED water valve pairing - removed conflicting fingerprints from swi... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
