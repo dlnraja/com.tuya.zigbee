@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.985** | 🔧 FIX: Peter_van_Werkhoven #1282 - HOBEIAN ZG-204ZV Lux smoothing (15% thres... |
 | **v5.5.984** | 🔧 FIX: Peter_van_Werkhoven forum #1282 - HOBEIAN ZG-204ZV multisensor losing... |
 | **v5.5.983** | 🔧 FIX: 4x4_Pete forum - ZG-204ZM battery spam fix (throttling + removed dupl... |
 | **v5.5.982** | 🔧 FIX: DAVID9SE Issue #121 - Moved _TZ3000_an5rjiwd from button_wireless_1 t... |
@@ -78,7 +79,6 @@
 | **v5.5.978** | 🔧 FIX: BSEED 4-gang switch (diagnostic report) - fixed Missing Capability Li... |
 | **v5.5.977** | 🔧 FIX: Ernst02507 TS004F Smart Knob - removed duplicate fingerprint _TZ3000_... |
 | **v5.5.976** | 🔧 FIX: Ernst02507 TS004F Smart Knob - enabled scene mode (attr 0x8004), impr... |
-| **v5.5.975** | 🆕 NEW: Ernst02507 TS004F Smart Knob Scene Switch - added _TZ3000_gwkzibhs fi... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
