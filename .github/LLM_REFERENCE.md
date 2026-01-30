@@ -1,4 +1,6 @@
-# LLM Project Reference v5.5.991
+# LLM Project Reference
+
+> **Version**: Read from `app.json` (single source of truth)
 
 ## Critical Rules
 - Settings: `zb_model_id`, `zb_manufacturer_name` (NOT zb_modelId)
