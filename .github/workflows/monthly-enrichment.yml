@@ -68,10 +68,16 @@ jobs:
           node scripts/automation/audit-flowcards.js 2>&1 | tee flowcards.txt || true
           cat flowcards.txt >> $GITHUB_STEP_SUMMARY
           
+      - name: 🌐 Run Community Sync
+        run: |
+          echo "## Community Sync" >> $GITHUB_STEP_SUMMARY
+          node scripts/community-sync/sync-all.js 2>&1 | tee community-sync.txt || true
+          node scripts/community-sync/generate-report.js >> $GITHUB_STEP_SUMMARY || true
+
       - name: Commit reports
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/*.md data/*.json || true
+          git add docs/*.md data/*.json data/community-sync/*.json || true
           git diff --staged --quiet || git commit -m "chore: Monthly enrichment report $(date +%Y-%m)"
           git push || true
