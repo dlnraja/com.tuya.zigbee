@@ -1,4 +1,7 @@
 {
+  "5.5.987": {
+    "en": "🔧 FIX: Peter #1265 - HOBEIAN ZG-204ZV humidity multiplier (9% → 90%). Added multiplier support for humidity DP processing."
+  },
   "5.5.986": {
     "en": "🔧 FIX: Peter #1282 - ZCL illuminance throttle (30s + 15% minChange) to stop disco lights. Removed HOBEIAN from motion_sensor driver (must use presence_sensor_radar)."
   },
