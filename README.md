@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.990** | 🔧 FIX: GitHub #110 - Add _TZ3210_w0qqde0g to ZCL_ELECTRICAL config for energ... |
 | **v5.5.989** | 🔧 FIX: GitHub #121 - Move _TZ3000_an5rjiwd from 4-button to 1-button driver ... |
 | **v5.5.988** | 🔧 FIX: Patrick #1288 - ZCL battery throttle (5min + 5% minChange) to stop ba... |
 | **v5.5.987** | 🔧 FIX: Peter #1265 - HOBEIAN ZG-204ZV humidity multiplier (9% → 90%). Added ... |
@@ -78,7 +79,6 @@
 | **v5.5.983** | 🔧 FIX: 4x4_Pete forum - ZG-204ZM battery spam fix (throttling + removed dupl... |
 | **v5.5.982** | 🔧 FIX: DAVID9SE Issue #121 - Moved _TZ3000_an5rjiwd from button_wireless_1 t... |
 | **v5.5.981** | ➕ NEW: Added Pressure band sensor support (_TZ3000_pjb1ua0m / TS0203) to Cont... |
-| **v5.5.980** | 🔧 FIX: BSEED 4-gang switch - added missing flow cards for single/double/long... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
