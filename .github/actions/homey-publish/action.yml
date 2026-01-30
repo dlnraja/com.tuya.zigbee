@@ -30,9 +30,18 @@ runs:
       run: |
         echo "📷 Fixing large.png files..."
         copied=0
+        
+        # Fix app-level large.png
+        if [ -f "assets/images/large.png" ]; then
+          mkdir -p ".homeybuild/assets/images/"
+          cp "assets/images/large.png" ".homeybuild/assets/images/large.png"
+          copied=$((copied + 1))
+          echo "✅ Copied app-level large.png"
+        fi
+        
+        # Fix driver-level large.png
         for driver in drivers/*/; do
           driver_name=$(basename "$driver")
-          # Check both possible source locations
           for src_path in "assets/images/large.png" "assets/large.png"; do
             src="drivers/${driver_name}/${src_path}"
             if [ -f "$src" ]; then
@@ -44,7 +53,7 @@ runs:
             fi
           done
         done
-        echo "✅ Copied $copied large.png files to .homeybuild"
+        echo "✅ Copied $copied large.png files total"
 
     - name: Validate App
       shell: bash
