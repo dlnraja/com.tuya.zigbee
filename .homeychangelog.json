@@ -1,4 +1,7 @@
 {
+  "5.5.992": {
+    "en": "📚 DOCS: Centralized version references - app.json is now single source of truth. Responded to GitHub issues #110, #121, #98."
+  },
   "5.5.991": {
     "en": "✨ IMPROVE: VirtualButtonMixin ZCL fallback for ZCL-only BSEED devices. Time sync already implemented. BSEED fingerprints #1337/#1338/#1339 already present."
   },
