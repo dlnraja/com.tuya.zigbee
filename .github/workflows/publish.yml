@@ -168,46 +168,16 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
 
-      - name: 🔨 Build App
-        run: npx homey app build
+      - name: � Validate App (Pre-publish check)
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: publish
 
-      - name: 📷 Fix build artifacts (CLI bug workarounds)
-        run: |
-          echo "📷 Copying missing files to .homeybuild..."
-          # Copy changelog (required for headless publish)
-          cp ".homeychangelog.json" ".homeybuild/" 2>/dev/null || true
-          copied=0
-          # App-level large.png
-          if [ -f "assets/images/large.png" ]; then
-            mkdir -p ".homeybuild/assets/images/"
-            cp "assets/images/large.png" ".homeybuild/assets/images/"
-            copied=$((copied + 1))
-          fi
-          # Driver-level large.png
-          for driver in drivers/*/; do
-            driver_name=$(basename "$driver")
-            if [ -f "drivers/${driver_name}/assets/images/large.png" ]; then
-              mkdir -p ".homeybuild/drivers/${driver_name}/assets/images/"
-              cp "drivers/${driver_name}/assets/images/large.png" ".homeybuild/drivers/${driver_name}/assets/images/"
-              copied=$((copied + 1))
-            fi
-          done
-          echo "✅ Copied $copied large.png files"
-
-      - name: ✅ Validate App
-        run: |
-          cd .homeybuild
-          npx homey app validate --level publish
-
-      - name: 🚀 Publish to Homey App Store
+      - name: 🚀 Publish (Official Athom Action)
         id: publish
-        env:
-          HOMEY_HEADLESS: "1"
-          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-        run: |
-          cd .homeybuild
-          npx homey app publish
-          echo "url=https://tools.developer.homey.app/apps/app/$(cat app.json | jq --raw-output .id)" >> $GITHUB_OUTPUT
+        uses: athombv/github-action-homey-app-publish@master
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
 
       - name: ✅ Summary
         run: |
