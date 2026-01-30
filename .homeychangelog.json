@@ -1,4 +1,7 @@
 {
+  "5.5.988": {
+    "en": "🔧 FIX: Patrick #1288 - ZCL battery throttle (5min + 5% minChange) to stop battery spam (100% ↔ 1-2%) on _TZE200_kb5noeto radar sensors."
+  },
   "5.5.987": {
     "en": "🔧 FIX: Peter #1265 - HOBEIAN ZG-204ZV humidity multiplier (9% → 90%). Added multiplier support for humidity DP processing."
   },
