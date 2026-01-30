@@ -2776,12 +2776,35 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
     // v5.5.512: Power Configuration cluster (0x0001) for battery
     // HOBEIAN ZG-204ZM uses ZCL battery reporting
+    // v5.5.988: Patrick #1288 - Add throttle to prevent battery spam (100% ↔ 1-2%)
     try {
       const powerCluster = ep1.clusters?.genPowerCfg || ep1.clusters?.powerConfiguration;
       if (powerCluster?.on) {
+        let lastZclBatteryUpdate = 0;
+        let lastZclBatteryValue = null;
+        const BATTERY_MIN_INTERVAL_MS = 300000;  // 5 minutes minimum between updates
+        const BATTERY_MIN_CHANGE = 5;             // Ignore changes < 5%
+        
         powerCluster.on('attr.batteryPercentageRemaining', (v) => {
+          const now = Date.now();
           // ZCL reports battery as 0-200 (0.5% steps), convert to 0-100%
           const battery = Math.min(100, Math.round(v / 2));
+          
+          // Throttle: Skip if less than 5 min since last update
+          if (now - lastZclBatteryUpdate < BATTERY_MIN_INTERVAL_MS) {
+            return;
+          }
+          
+          // MinChange: Skip if change < 5%
+          if (lastZclBatteryValue !== null) {
+            const change = Math.abs(battery - lastZclBatteryValue);
+            if (change < BATTERY_MIN_CHANGE) {
+              return;
+            }
+          }
+          
+          lastZclBatteryUpdate = now;
+          lastZclBatteryValue = battery;
           this.log(`[RADAR] 🔋 ZCL Battery: ${v} -> ${battery}%`);
           this.setCapabilityValue('measure_battery', battery).catch(() => { });
         });
@@ -2794,7 +2817,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
             this.setCapabilityValue('measure_battery', battery).catch(() => { });
           }
         });
-        this.log('[RADAR] ✅ PowerConfiguration cluster configured');
+        this.log('[RADAR] ✅ PowerConfiguration cluster configured (5min throttle + 5% minChange)');
       }
     } catch (e) { /* ignore */ }
 
