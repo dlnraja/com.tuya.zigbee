@@ -159,7 +159,23 @@
         "de": "Physisch gang 4 AUS"
       },
       "args": []
-    }
+    },
+    {"id": "switch_4gang_physical_gang1_single", "title": {"en": "Gang 1 single press"}, "args": []},
+    {"id": "switch_4gang_physical_gang2_single", "title": {"en": "Gang 2 single press"}, "args": []},
+    {"id": "switch_4gang_physical_gang3_single", "title": {"en": "Gang 3 single press"}, "args": []},
+    {"id": "switch_4gang_physical_gang4_single", "title": {"en": "Gang 4 single press"}, "args": []},
+    {"id": "switch_4gang_physical_gang1_double", "title": {"en": "Gang 1 double press"}, "args": []},
+    {"id": "switch_4gang_physical_gang2_double", "title": {"en": "Gang 2 double press"}, "args": []},
+    {"id": "switch_4gang_physical_gang3_double", "title": {"en": "Gang 3 double press"}, "args": []},
+    {"id": "switch_4gang_physical_gang4_double", "title": {"en": "Gang 4 double press"}, "args": []},
+    {"id": "switch_4gang_physical_gang1_long_press", "title": {"en": "Gang 1 long press"}, "args": []},
+    {"id": "switch_4gang_physical_gang2_long_press", "title": {"en": "Gang 2 long press"}, "args": []},
+    {"id": "switch_4gang_physical_gang3_long_press", "title": {"en": "Gang 3 long press"}, "args": []},
+    {"id": "switch_4gang_physical_gang4_long_press", "title": {"en": "Gang 4 long press"}, "args": []},
+    {"id": "switch_4gang_physical_gang1_triple", "title": {"en": "Gang 1 triple press"}, "args": []},
+    {"id": "switch_4gang_physical_gang2_triple", "title": {"en": "Gang 2 triple press"}, "args": []},
+    {"id": "switch_4gang_physical_gang3_triple", "title": {"en": "Gang 3 triple press"}, "args": []},
+    {"id": "switch_4gang_physical_gang4_triple", "title": {"en": "Gang 4 triple press"}, "args": []}
   ],
   "conditions": [
     {
