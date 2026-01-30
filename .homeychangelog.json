@@ -1,4 +1,7 @@
 {
+  "5.5.982": {
+    "en": "🔧 FIX: DAVID9SE Issue #121 - Moved _TZ3000_an5rjiwd from button_wireless_1 to button_wireless_4 (device has 4 endpoints = 4 buttons). RE-PAIR REQUIRED."
+  },
   "5.5.981": {
     "en": "➕ NEW: Added Pressure band sensor support (_TZ3000_pjb1ua0m / TS0203) to Contact Sensor driver. Discussion #100."
   },
