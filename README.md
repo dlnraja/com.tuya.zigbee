@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.978** | 🔧 FIX: BSEED 4-gang switch (diagnostic report) - fixed Missing Capability Li... |
 | **v5.5.977** | 🔧 FIX: Ernst02507 TS004F Smart Knob - removed duplicate fingerprint _TZ3000_... |
 | **v5.5.976** | 🔧 FIX: Ernst02507 TS004F Smart Knob - enabled scene mode (attr 0x8004), impr... |
 | **v5.5.975** | 🆕 NEW: Ernst02507 TS004F Smart Knob Scene Switch - added _TZ3000_gwkzibhs fi... |
@@ -78,7 +79,6 @@
 | **v5.5.971** | 🔧 FIX: Lasse_K water sensor 'inactivated' - added missing invert_alarm setti... |
 | **v5.5.970** | 🔧 FIX: BSEED switch pairing conflicts (Pieter_Pessers forum) - removed wrong... |
 | **v5.5.969** | 🔧 FIX: BSEED water valve pairing - removed conflicting fingerprints from swi... |
-| **v5.5.968** | 🔧 FIX: Moes TS0044 _TZ3000_zgyzgdua button detection - multi-level frame int... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
