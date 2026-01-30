@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.993** | 🔧 FIX: PR #120 pattern applied to switch_1gang, switch_2gang, switch_3gang -... |
 | **v5.5.992** | 📚 DOCS: Centralized version references - app.json is now single source of tr... |
 | **v5.5.991** | ✨ IMPROVE: VirtualButtonMixin ZCL fallback for ZCL-only BSEED devices. Time s... |
 | **v5.5.990** | 🔧 FIX: GitHub #110 - Add _TZ3210_w0qqde0g to ZCL_ELECTRICAL config for energ... |
@@ -78,7 +79,6 @@
 | **v5.5.986** | 🔧 FIX: Peter #1282 - ZCL illuminance throttle (30s + 15% minChange) to stop ... |
 | **v5.5.985** | 🔧 FIX: Peter_van_Werkhoven #1282 - HOBEIAN ZG-204ZV Lux smoothing (15% thres... |
 | **v5.5.984** | 🔧 FIX: Peter_van_Werkhoven forum #1282 - HOBEIAN ZG-204ZV multisensor losing... |
-| **v5.5.983** | 🔧 FIX: 4x4_Pete forum - ZG-204ZM battery spam fix (throttling + removed dupl... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
