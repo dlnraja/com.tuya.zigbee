@@ -168,9 +168,31 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
 
-      - name: � Publish (Custom Action with large.png fix)
+      - name: 🔨 Pre-build with large.png fix
+        run: |
+          npx homey app build
+          echo "📷 Copying large.png files..."
+          copied=0
+          # App-level large.png
+          if [ -f "assets/images/large.png" ]; then
+            mkdir -p ".homeybuild/assets/images/"
+            cp "assets/images/large.png" ".homeybuild/assets/images/"
+            copied=$((copied + 1))
+          fi
+          # Driver-level large.png
+          for driver in drivers/*/; do
+            driver_name=$(basename "$driver")
+            if [ -f "drivers/${driver_name}/assets/images/large.png" ]; then
+              mkdir -p ".homeybuild/drivers/${driver_name}/assets/images/"
+              cp "drivers/${driver_name}/assets/images/large.png" ".homeybuild/drivers/${driver_name}/assets/images/"
+              copied=$((copied + 1))
+            fi
+          done
+          echo "✅ Copied $copied large.png files"
+
+      - name: 🚀 Publish (Official Athom Action)
         id: publish
-        uses: ./.github/actions/homey-publish
+        uses: athombv/github-action-homey-app-publish@master
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
