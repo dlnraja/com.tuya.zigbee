@@ -1,4 +1,7 @@
 {
+  "5.5.981": {
+    "en": "➕ NEW: Added Pressure band sensor support (_TZ3000_pjb1ua0m / TS0203) to Contact Sensor driver. Discussion #100."
+  },
   "5.5.980": {
     "en": "🔧 FIX: BSEED 4-gang switch - added missing flow cards for single/double/long_press/triple physical button detection (all 4 gangs). Diagnostic report fix."
   },
