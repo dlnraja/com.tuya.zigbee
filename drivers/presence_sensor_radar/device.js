@@ -1825,7 +1825,13 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   _getSensorConfig() {
     if (!this._sensorConfig) {
       const mfr = this._getManufacturerName();
-      const modelId = this.getData()?.modelId || null;  // v5.5.512: Pass modelId for HOBEIAN matching
+      // v5.5.984: Peter_van_Werkhoven HOBEIAN fix - check multiple sources for modelId
+      const settings = this.getSettings() || {};
+      const modelId = this.getData()?.modelId 
+        || settings.zb_model_id 
+        || settings.zb_modelId 
+        || this.getStoreValue?.('modelId')
+        || null;
       this._sensorConfig = getSensorConfig(mfr, modelId);
       this.log(`[RADAR] 🔍 ManufacturerName: "${mfr}", ModelId: "${modelId}" → config: ${this._sensorConfig.configName || 'DEFAULT'}`);
 
