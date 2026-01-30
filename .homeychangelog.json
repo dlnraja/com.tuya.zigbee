@@ -1,4 +1,7 @@
 {
+  "5.5.991": {
+    "en": "✨ IMPROVE: VirtualButtonMixin ZCL fallback for ZCL-only BSEED devices. Time sync already implemented. BSEED fingerprints #1337/#1338/#1339 already present."
+  },
   "5.5.990": {
     "en": "🔧 FIX: GitHub #110 - Add _TZ3210_w0qqde0g to ZCL_ELECTRICAL config for energy monitoring (Ernst/Pollepa plug). Diagnostics analysis: BSEED 4-gang fix already in v5.5.978+, HOBEIAN radar PIR-only variant detection, ME167 TRV verified."
   },
