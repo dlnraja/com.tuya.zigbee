@@ -200,12 +200,12 @@ jobs:
       - name: 🚀 Publish to Homey App Store
         id: publish
         env:
-          HOMEY_TOKEN: ${{ secrets.HOMEY_PAT }}
+          HOMEY_HEADLESS: "1"
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
           cd .homeybuild
-          # Publish without version bump prompt
-          echo "n" | npx homey app publish 2>&1 || true
-          echo "url=https://tools.developer.homey.app" >> $GITHUB_OUTPUT
+          npx homey app publish
+          echo "url=https://tools.developer.homey.app/apps/app/$(cat app.json | jq --raw-output .id)" >> $GITHUB_OUTPUT
 
       - name: ✅ Summary
         run: |
