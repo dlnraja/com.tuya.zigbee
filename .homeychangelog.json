@@ -1,4 +1,7 @@
 {
+  "5.5.986": {
+    "en": "🔧 FIX: Peter #1282 - ZCL illuminance throttle (30s + 15% minChange) to stop disco lights. Removed HOBEIAN from motion_sensor driver (must use presence_sensor_radar)."
+  },
   "5.5.985": {
     "en": "🔧 FIX: Peter_van_Werkhoven #1282 - HOBEIAN ZG-204ZV Lux smoothing (15% threshold) to prevent light flickering from rapid Lux changes triggering flows."
   },
