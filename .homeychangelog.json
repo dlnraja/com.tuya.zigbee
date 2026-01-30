@@ -1,4 +1,7 @@
 {
+  "5.5.994": {
+    "en": "🔧 FIX: _TZE200_3towulqd fingerprint collision - ZG-204ZL/ZG-204ZV is PIR sensor, removed from 7 wrong drivers (gas_sensor, co, contact_sensor, curtain_motor, dimmer, plug, TRV). Correct driver: presence_sensor_radar/motion_sensor."
+  },
   "5.5.993": {
     "en": "🔧 FIX: PR #120 pattern applied to switch_1gang, switch_2gang, switch_3gang - remove titleFormatted [[device]] from physical button triggers (fixes manual device selection bug). Credit: packetninja/Attilla."
   },
