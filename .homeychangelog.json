@@ -1,4 +1,7 @@
 {
+  "5.5.984": {
+    "en": "🔧 FIX: Peter_van_Werkhoven forum #1282 - HOBEIAN ZG-204ZV multisensor losing temp/battery after updates. Fixed modelId detection from settings/store for correct config matching."
+  },
   "5.5.983": {
     "en": "🔧 FIX: 4x4_Pete forum - ZG-204ZM battery spam fix (throttling + removed duplicate DP15). Rain sensor TS0207 productId fix (Ferdy_van_Hove). Permissive DP auto-inference for unknown sensors."
   },
