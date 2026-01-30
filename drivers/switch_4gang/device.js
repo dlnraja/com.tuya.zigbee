@@ -65,48 +65,27 @@ class Switch4GangDevice extends BaseClass {
   }
 
   /**
-   * v5.5.921: ZCL-Only mode for BSEED/Zemismart 4-gang switches
-   * Enhanced with physical button flow triggers (packetninja technique)
+   * v5.5.978: ZCL-Only mode for BSEED/Zemismart 4-gang switches
+   * Fixed: Register capability listeners for ALL gangs first (before cluster check)
    */
   async _initZclOnlyMode(zclNode) {
-    // State tracking per endpoint
     this._zclState = {
       lastState: { 1: null, 2: null, 3: null, 4: null },
       pending: { 1: false, 2: false, 3: false, 4: false },
       timeout: { 1: null, 2: null, 3: null, 4: null }
     };
+    this._zclNode = zclNode;
 
-    // Setup all 4 endpoints with physical button detection
+    // Helper to get onOff cluster from endpoint
+    const getOnOffCluster = (epNum) => {
+      const ep = this._zclNode?.endpoints?.[epNum];
+      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
+    };
+
+    // v5.5.978: Register capability listeners for ALL gangs FIRST
     for (const epNum of [1, 2, 3, 4]) {
-      const ep = zclNode?.endpoints?.[epNum];
-      const onOff = ep?.clusters?.onOff;
-      if (!onOff) continue;
-
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       
-      // Listen for attribute reports (physical button presses)
-      if (typeof onOff.on === 'function') {
-        onOff.on('attr.onOff', (value) => {
-          const isPhysical = !this._zclState.pending[epNum];
-          this.log(`[BSEED-4G] EP${epNum} attr: ${value} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
-          
-          if (this._zclState.lastState[epNum] !== value) {
-            this._zclState.lastState[epNum] = value;
-            this.setCapabilityValue(capName, value).catch(() => {});
-            
-            // Trigger flow cards for PHYSICAL button presses only
-            if (isPhysical) {
-              const flowId = `switch_4gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-              this.homey.flow.getDeviceTriggerCard(flowId)
-                .trigger(this, { gang: epNum, state: value }, {})
-                .catch(() => {});
-              this.log(`[BSEED-4G] 🔘 Physical button G${epNum} ${value ? 'ON' : 'OFF'}`);
-            }
-          }
-        });
-      }
-
-      // Register capability listener for app commands
       this.registerCapabilityListener(capName, async (value) => {
         this.log(`[BSEED-4G] EP${epNum} app cmd: ${value}`);
         this._zclState.pending[epNum] = true;
@@ -114,15 +93,49 @@ class Switch4GangDevice extends BaseClass {
         this._zclState.timeout[epNum] = setTimeout(() => {
           this._zclState.pending[epNum] = false;
         }, 2000);
-        await onOff[value ? 'setOn' : 'setOff']();
+        
+        const onOff = getOnOffCluster(epNum);
+        if (onOff) {
+          await onOff[value ? 'setOn' : 'setOff']();
+        } else {
+          this.log(`[BSEED-4G] EP${epNum} onOff cluster not found`);
+        }
         return true;
       });
+      this.log(`[BSEED-4G] EP${epNum} capability listener registered`);
+    }
 
-      this.log(`[BSEED-4G] EP${epNum} ZCL onOff + physical detection registered`);
+    // Setup attribute listeners for available endpoints
+    for (const epNum of [1, 2, 3, 4]) {
+      const onOff = getOnOffCluster(epNum);
+      if (!onOff || typeof onOff.on !== 'function') {
+        this.log(`[BSEED-4G] EP${epNum} no attr listener (cluster not ready)`);
+        continue;
+      }
+
+      const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
+      onOff.on('attr.onOff', (value) => {
+        const isPhysical = !this._zclState.pending[epNum];
+        this.log(`[BSEED-4G] EP${epNum} attr: ${value} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
+        
+        if (this._zclState.lastState[epNum] !== value) {
+          this._zclState.lastState[epNum] = value;
+          this.setCapabilityValue(capName, value).catch(() => {});
+          
+          if (isPhysical) {
+            const flowId = `switch_4gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
+            this.homey.flow.getDeviceTriggerCard(flowId)
+              .trigger(this, { gang: epNum, state: value }, {})
+              .catch(() => {});
+            this.log(`[BSEED-4G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+          }
+        }
+      });
+      this.log(`[BSEED-4G] EP${epNum} attr listener registered`);
     }
 
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-4G] ✅ BSEED ZCL-only mode ready (packetninja technique)');
+    this.log('[SWITCH-4G] ✅ BSEED ZCL-only mode ready');
   }
 
   /**

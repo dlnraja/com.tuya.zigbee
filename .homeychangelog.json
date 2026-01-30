@@ -1,4 +1,7 @@
 {
+  "5.5.978": {
+    "en": "🔧 FIX: BSEED 4-gang switch (diagnostic report) - fixed Missing Capability Listener for onoff.gang2/3/4 by registering listeners before cluster check. Removed titleFormatted with [[device]] from physical flow cards (PR #120 fix)."
+  },
   "5.5.977": {
     "en": "🔧 FIX: Ernst02507 TS004F Smart Knob - removed duplicate fingerprint _TZ3000_gwkzibhs from button_wireless_1 (only in smart_knob_rotary now). RE-PAIR REQUIRED after update."
   },
