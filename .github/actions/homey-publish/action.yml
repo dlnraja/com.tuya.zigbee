@@ -64,9 +64,9 @@ runs:
     - name: Publish App
       id: publish
       shell: bash
-      env:
-        HOMEY_TOKEN: ${{ inputs.personal_access_token }}
       run: |
         cd .homeybuild
-        echo "n" | homey app publish || true
+        # Use homey login with token first, then publish
+        echo "${{ inputs.personal_access_token }}" | homey login --token 2>/dev/null || true
+        echo "n" | homey app publish 2>&1 || echo "Publish attempted"
         echo "url=https://tools.developer.homey.app" >> $GITHUB_OUTPUT
