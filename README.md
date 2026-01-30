@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.984** | 🔧 FIX: Peter_van_Werkhoven forum #1282 - HOBEIAN ZG-204ZV multisensor losing... |
 | **v5.5.983** | 🔧 FIX: 4x4_Pete forum - ZG-204ZM battery spam fix (throttling + removed dupl... |
 | **v5.5.982** | 🔧 FIX: DAVID9SE Issue #121 - Moved _TZ3000_an5rjiwd from button_wireless_1 t... |
 | **v5.5.981** | ➕ NEW: Added Pressure band sensor support (_TZ3000_pjb1ua0m / TS0203) to Cont... |
@@ -78,7 +79,6 @@
 | **v5.5.977** | 🔧 FIX: Ernst02507 TS004F Smart Knob - removed duplicate fingerprint _TZ3000_... |
 | **v5.5.976** | 🔧 FIX: Ernst02507 TS004F Smart Knob - enabled scene mode (attr 0x8004), impr... |
 | **v5.5.975** | 🆕 NEW: Ernst02507 TS004F Smart Knob Scene Switch - added _TZ3000_gwkzibhs fi... |
-| **v5.5.974** | 🔧 FIX: ManuelKugler TRV issue - removed _TZE284_o3x45p96 from thermostat_tuy... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
