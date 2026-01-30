@@ -1,4 +1,7 @@
 {
+  "5.5.985": {
+    "en": "🔧 FIX: Peter_van_Werkhoven #1282 - HOBEIAN ZG-204ZV Lux smoothing (15% threshold) to prevent light flickering from rapid Lux changes triggering flows."
+  },
   "5.5.984": {
     "en": "🔧 FIX: Peter_van_Werkhoven forum #1282 - HOBEIAN ZG-204ZV multisensor losing temp/battery after updates. Fixed modelId detection from settings/store for correct config matching."
   },
