@@ -1,4 +1,6 @@
-# Lib - Universal Tuya Zigbee Library v5.5.991
+# Lib - Universal Tuya Zigbee Library
+
+> **Version**: See `app.json` for current version (single source of truth)
 
 > Architecture complète pour la gestion des devices Tuya et Zigbee standard.
 
