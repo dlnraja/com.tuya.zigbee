@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.992** | 📚 DOCS: Centralized version references - app.json is now single source of tr... |
 | **v5.5.991** | ✨ IMPROVE: VirtualButtonMixin ZCL fallback for ZCL-only BSEED devices. Time s... |
 | **v5.5.990** | 🔧 FIX: GitHub #110 - Add _TZ3210_w0qqde0g to ZCL_ELECTRICAL config for energ... |
 | **v5.5.989** | 🔧 FIX: GitHub #121 - Move _TZ3000_an5rjiwd from 4-button to 1-button driver ... |
@@ -78,7 +79,6 @@
 | **v5.5.985** | 🔧 FIX: Peter_van_Werkhoven #1282 - HOBEIAN ZG-204ZV Lux smoothing (15% thres... |
 | **v5.5.984** | 🔧 FIX: Peter_van_Werkhoven forum #1282 - HOBEIAN ZG-204ZV multisensor losing... |
 | **v5.5.983** | 🔧 FIX: 4x4_Pete forum - ZG-204ZM battery spam fix (throttling + removed dupl... |
-| **v5.5.982** | 🔧 FIX: DAVID9SE Issue #121 - Moved _TZ3000_an5rjiwd from button_wireless_1 t... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
