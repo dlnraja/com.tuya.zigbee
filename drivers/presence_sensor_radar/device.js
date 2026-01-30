@@ -758,6 +758,9 @@ const SENSOR_CONFIGS = {
     hasIlluminance: true,
     noTemperature: false,   // v5.5.831: ZG-204ZV HAS temperature!
     noHumidity: false,      // v5.5.831: ZG-204ZV HAS humidity!
+    // v5.5.985: Peter #1282 - Lux smoothing to prevent light flickering
+    luxSmoothingEnabled: true,
+    luxMinChangePercent: 15,       // Ignore changes < 15%
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       // v5.5.831: ZG-204ZV specific - DP3=temp(÷10), DP4=humidity
@@ -2374,8 +2377,23 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       const luxValue = this._parseBufferValue(data.value || data.data);
       const mfr = this._getManufacturerName();
       const deviceId = this.getData()?.id;
-      const finalLux = transformLux(luxValue, dpMap[dpId].type || 'lux_direct', mfr, deviceId);
-      this.log(`[RADAR-LUX] ☀️ DP${dpId} → measure_luminance = ${finalLux} lux (local config)`);
+      let finalLux = transformLux(luxValue, dpMap[dpId].type || 'lux_direct', mfr, deviceId);
+
+      // v5.5.985: Peter #1282 - Lux smoothing to prevent light flickering
+      if (config.luxSmoothingEnabled) {
+        const currentLux = this.getCapabilityValue('measure_luminance') || 0;
+        const minChange = config.luxMinChangePercent || 10;
+        const changePercent = currentLux > 0 ? Math.abs(finalLux - currentLux) / currentLux * 100 : 100;
+        
+        if (changePercent < minChange && currentLux > 0) {
+          // Ignore small changes to prevent flow triggers
+          return;
+        }
+        this.log(`[RADAR-LUX] ☀️ DP${dpId} → ${finalLux} lux (change: ${changePercent.toFixed(1)}%)`);
+      } else {
+        this.log(`[RADAR-LUX] ☀️ DP${dpId} → measure_luminance = ${finalLux} lux (local config)`);
+      }
+      
       this.setCapabilityValue('measure_luminance', parseFloat(finalLux)).catch(() => { });
 
       // v5.5.315: Feed lux to intelligent inference engine
