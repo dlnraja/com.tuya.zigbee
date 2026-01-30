@@ -1,0 +1,330 @@
+{
+  "ts": "2026-01-30T20:50:00.587Z",
+  "currentCount": 6304,
+  "src": {
+    "johan": {
+      "error": "Command failed: rm -rf /tmp/johan && git clone --depth 1 https://github.com/JohanBendz/com.tuya.zigbee.git /tmp/johan\n'rm' n'est pas reconnu en tant que commande interne\r\nou externe, un programme ex�cutable ou un fichier de commandes.\r\n"
+    },
+    "z2m": {
+      "count": 1420,
+      "sample": [
+        "_TZE204_81yrt3lo",
+        "_TZ3000_lqmvrwa2",
+        "_TZ3210_ncw88jfq",
+        "_TZ3000_ywagc4rj",
+        "_TZ3000_isw9u95y",
+        "_TZ3000_yupc0pb7",
+        "_TZ3210_up3pngle",
+        "_TZ3000_qrldbmfn",
+        "_TZ3000_rcuyhwe3",
+        "_TZ3000_996rpfy6",
+        "_TZ3000_7d8yme6f",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_n2egfsli",
+        "_TZ3000_yfekcy3n",
+        "_TZ3000_decxrtwa",
+        "_TZ3000_8yhypbo7",
+        "_TZ3000_gntwytxo",
+        "_TZ3000_4ugnzsli",
+        "_TZ3000_udyjylt7",
+        "_TZ3000_v7chgqso",
+        "_TZ3000_timx9ivq",
+        "_TZ3000_rid8lzvo",
+        "_TZ3000_bpkijo14",
+        "_TZ3000_t3vvhrmh",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_oxslv1c9",
+        "_TZ3000_osu834un",
+        "_TZE284_vuwtqx0t",
+        "_TZE200_vuwtqx0t",
+        "_TZE284_ajlu4cud"
+      ],
+      "src": "Z2M"
+    },
+    "gh": {
+      "issueCount": 45,
+      "prCount": 5,
+      "deviceRequests": [
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1346,
+          "title": "Add time sync support and fix LCD temp/humidity sensor",
+          "mfrs": [
+            "_TZE200_locansqn"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1345,
+          "title": "Device Request - AVATTO Smart thermostat WT198 - _TZE284_xnbkhhdr / TS0601",
+          "mfrs": [
+            "_TZE284_xnbkhhdr",
+            "_TZE284_xnbkhhdr",
+            "_TZE284_xnbkhhdr"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1344,
+          "title": "Bug report - [Short description] _TZ3000_bgsigers - TS0201 sensors stopped working",
+          "mfrs": [
+            "_TZ3000_bgsigers"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1343,
+          "title": "Device Request - 10G 4 in 1 human motionsensor  - _TZE200_rhgsbacq / TS0601",
+          "mfrs": [
+            "_TZE200_rhgsbacq",
+            "_TZE200_rhgsbacq",
+            "_TZE200_rhgsbacq"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1341,
+          "title": "Device Request - Tuya Smart Plant sensor - _TZE284_aao3yzhs / TS0601",
+          "mfrs": [
+            "_TZE284_aao3yzhs",
+            "_TZE284_aao3yzhs",
+            "_TZE284_aao3yzhs"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1339,
+          "title": "BSEED 1 button wall switch with neutral. _TZ3000_blhvsaqf TS0001",
+          "mfrs": [
+            "_TZ3000_blhvsaqf",
+            "_TZ3000_blhvsaqf",
+            "_TZ3000_blhvsaqf",
+            "_TZ3000_blhvsaqf"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1338,
+          "title": "BSEED 3 button wall switch with neutral _TZ3000_qkixdnon\tTS0003",
+          "mfrs": [
+            "_TZ3000_qkixdnon",
+            "_TZ3000_qkixdnon",
+            "_TZ3000_qkixdnon"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1337,
+          "title": "BSEED 2 button wallswitch zigbee with nuetral _TZ3000_l9brjwau TS0002",
+          "mfrs": [
+            "_TZ3000_qkixdnon",
+            "_TZ3000_qkixdnon",
+            "_TZ3000_qkixdnon",
+            "_TZ3000_l9brjwau",
+            "_TZ3000_l9brjwau",
+            "_TZ3000_l9brjwau"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1336,
+          "title": "Device Request - Tuya Zigbee Soil Moisture / Temperature Sensor - _TZE284_aa03yzhs / TS0601",
+          "mfrs": [
+            "_TZE284_aa03yzhs",
+            "_TZE284_aa03yzhs"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1335,
+          "title": "📦 dlnraja Fork v5.5.518: Major Improvements Available for Merge",
+          "mfrs": [
+            "_TZ321C_fkzihax8",
+            "_TZE284_rccxox8p",
+            "_TZE200_myd45weu",
+            "_TZE284_aao3yzhs"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1333,
+          "title": "Add support for _TZE200_t1blo2bj / TS0601 Siren",
+          "mfrs": [
+            "_TZE200_t1blo2bj"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1331,
+          "title": "Device Request - [UFO-R11] - [Moes] / [modelId]",
+          "mfrs": [
+            "_TZ3290_ot6ewjvm",
+            "_TZ3290_ot6ewjvm",
+            "_TZ3290_ot6ewjvm"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1329,
+          "title": "Device Request - [smart switch] - [zigbee tuya] / [TYZGTH1CH-D1RF]",
+          "mfrs": [
+            "_TZ3218_7fiyo3kv",
+            "_TZ3218_7fiyo3kv",
+            "_TZ3218_7fiyo3kv"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1328,
+          "title": "Device Request - [RSH-HS03] - _TZE284_9ern5sfh | TS0601",
+          "mfrs": [
+            "_TZE284_9ern5sfh",
+            "_TZE284_9ern5sfh",
+            "_TZE284_9ern5sfh",
+            "_TZE284_9ern5sfh"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1327,
+          "title": "Device Request - [MOES Scene Switch 4 gang] - [MOES] / [_TZ3000_zgyzgdua\"]",
+          "mfrs": [
+            "_TZ3000_zgyzgdua",
+            "_TZ3000_zgyzgdua"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1326,
+          "title": "Device Request - [Bseed Wall socket] - [_TZ3210_4ux0ondb] / [TS011F]",
+          "mfrs": [
+            "_TZ3210_4ux0ondb",
+            "_TZ3210_4ux0ondb",
+            "_TZ3210_4ux0ondb",
+            "_TZ3210_4ux0ondb"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1325,
+          "title": "Device Request - [E14 LED color bulb] - [ _TZ3210_s8lvbbu] / [TS0505B",
+          "mfrs": [
+            "_TZ3210_s8lvbbuc",
+            "_TZ3210_s8lvbbuc"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1324,
+          "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
+          "mfrs": [
+            "_TZ3000_lf56vpxj"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1323,
+          "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
+          "mfrs": [
+            "_TZ3000_6zvw8ham",
+            "_TZ3000_6zvw8ham"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1322,
+          "title": "Device Request - [WenzhiIoT Smart Motion Sensor 24GHz mmWave] - [_TZE204_gkfbdvyx] / [TS0601]",
+          "mfrs": [
+            "_TZE204_gkfbdvyx",
+            "_TZE204_gkfbdvyx",
+            "_TZE204_gkfbdvyx",
+            "_TZE204_gkfbdvyx"
+          ]
+        }
+      ]
+    }
+  },
+  "newFps": [
+    {
+      "mfr": "_TZ3000_lqmvrwa2",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZ3210_ncw88jfq",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZ3000_isw9u95y",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZ3000_yupc0pb7",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZ3000_qrldbmfn",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZ3000_996rpfy6",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZ3000_2mbfxlzr",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZ3000_n2egfsli",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZ3000_8yhypbo7",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZ3000_4ugnzsli",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZ3000_udyjylt7",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZ3000_v7chgqso",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZ3000_timx9ivq",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZ3000_rid8lzvo",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZ3000_t3vvhrmh",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZ3000_26fmupbb",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZ3000_osu834un",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZE284_vuwtqx0t",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZE200_vuwtqx0t",
+      "source": "Z2M"
+    },
+    {
+      "mfr": "_TZE284_ajlu4cud",
+      "source": "Z2M"
+    }
+  ],
+  "newCount": 20
+}
