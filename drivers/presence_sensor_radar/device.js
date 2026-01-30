@@ -2796,14 +2796,38 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     } catch (e) { /* ignore */ }
 
     // Illuminance cluster (0x0400)
+    // v5.5.986: Peter #1282 - Add throttle to prevent disco lights
     try {
       const illumCluster = ep1.clusters?.msIlluminanceMeasurement;
       if (illumCluster?.on) {
+        let lastLuxUpdate = 0;
+        let lastLuxValue = null;
+        const MIN_REPORT_INTERVAL_MS = 30000;  // 30 seconds minimum between updates
+        const MIN_CHANGE_PERCENT = 15;          // Ignore changes < 15%
+        
         illumCluster.on('attr.measuredValue', (v) => {
+          const now = Date.now();
           const lux = Math.pow(10, (v - 1) / 10000);
-          this.setCapabilityValue('measure_luminance', parseFloat(Math.round(lux))).catch(() => { });
+          const roundedLux = parseFloat(Math.round(lux));
+          
+          // Throttle: Skip if less than 30s since last update
+          if (now - lastLuxUpdate < MIN_REPORT_INTERVAL_MS) {
+            return;
+          }
+          
+          // MinChange: Skip if change < 15%
+          if (lastLuxValue !== null && lastLuxValue > 0) {
+            const changePercent = Math.abs(roundedLux - lastLuxValue) / lastLuxValue * 100;
+            if (changePercent < MIN_CHANGE_PERCENT) {
+              return;
+            }
+          }
+          
+          lastLuxUpdate = now;
+          lastLuxValue = roundedLux;
+          this.setCapabilityValue('measure_luminance', roundedLux).catch(() => { });
         });
-        this.log('[RADAR] ✅ Illuminance cluster configured');
+        this.log('[RADAR] ✅ Illuminance cluster configured (30s throttle + 15% minChange)');
       }
     } catch (e) { /* ignore */ }
 
