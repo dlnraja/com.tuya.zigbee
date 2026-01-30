@@ -1,4 +1,7 @@
 {
+  "5.5.983": {
+    "en": "🔧 FIX: 4x4_Pete forum - ZG-204ZM battery spam fix (throttling + removed duplicate DP15). Rain sensor TS0207 productId fix (Ferdy_van_Hove). Permissive DP auto-inference for unknown sensors."
+  },
   "5.5.982": {
     "en": "🔧 FIX: DAVID9SE Issue #121 - Moved _TZ3000_an5rjiwd from button_wireless_1 to button_wireless_4 (device has 4 endpoints = 4 buttons). RE-PAIR REQUIRED."
   },
