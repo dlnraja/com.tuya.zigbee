@@ -1,0 +1,55 @@
+name: 'Homey App Publish (Fixed)'
+description: 'Publish Homey App with large.png fix for CLI bug'
+inputs:
+  personal_access_token:
+    description: 'Homey Personal Access Token'
+    required: true
+outputs:
+  url:
+    description: 'URL to manage the app release'
+    value: ${{ steps.publish.outputs.url }}
+runs:
+  using: 'composite'
+  steps:
+    - name: Build App
+      shell: bash
+      run: npx homey app build
+
+    - name: Fix large.png files (CLI bug workaround)
+      shell: bash
+      run: |
+        # Copy changelog
+        cp ".homeychangelog.json" ".homeybuild/" 2>/dev/null || true
+        # Copy driver large.png files
+        for driver in drivers/*/; do
+          dn=$(basename "$driver")
+          if [ -f "drivers/${dn}/assets/images/large.png" ]; then
+            mkdir -p ".homeybuild/drivers/${dn}/assets/images/"
+            cp "drivers/${dn}/assets/images/large.png" ".homeybuild/drivers/${dn}/assets/images/"
+            echo "Copied large.png for $dn"
+          fi
+        done
+        # Copy app-level large.png
+        if [ -f "assets/images/large.png" ]; then
+          mkdir -p ".homeybuild/assets/images/"
+          cp "assets/images/large.png" ".homeybuild/assets/images/"
+          echo "Copied app-level large.png"
+        fi
+
+    - name: Validate App
+      shell: bash
+      run: |
+        cd .homeybuild
+        npx homey app validate --level publish
+
+    - name: Publish App
+      id: publish
+      shell: bash
+      env:
+        HOMEY_HEADLESS: "1"
+        HOMEY_PAT: ${{ inputs.personal_access_token }}
+      run: |
+        cd .homeybuild
+        npx homey app publish
+        APP_ID=$(cat app.json | jq -r .id)
+        echo "url=https://tools.developer.homey.app/apps/app/${APP_ID}" >> $GITHUB_OUTPUT
