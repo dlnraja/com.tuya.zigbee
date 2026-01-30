@@ -1,4 +1,7 @@
 {
+  "5.5.979": {
+    "en": "🎨 IMAGES: Added missing app xlarge.png (1000x700), created water_tank_monitor icon.svg. All 108 drivers now have proper icon.svg. Compliant with Homey App Store guidelines."
+  },
   "5.5.978": {
     "en": "🔧 FIX: BSEED 4-gang switch (diagnostic report) - fixed Missing Capability Listener for onoff.gang2/3/4 by registering listeners before cluster check. Removed titleFormatted with [[device]] from physical flow cards (PR #120 fix)."
   },
