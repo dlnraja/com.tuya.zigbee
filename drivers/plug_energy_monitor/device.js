@@ -61,7 +61,7 @@ const ENERGY_DEVICE_CONFIGS = {
       '_TZ3000_iv6ph5tr', '_TZ3000_jvovfwyk', '_TZ3000_kdi2o9m6',
       '_TZ3000_mlswgkc3', '_TZ3000_okaz9tjs', '_TZ3000_ps3dmato',
       '_TZ3000_qeuvnohg', '_TZ3000_rdtixbnu', '_TZ3000_typdpbpg',
-      '_TZ3000_upjrsxh1', '_TZ3000_w0qqde0g', '_TZ3000_waho4ber',
+      '_TZ3000_upjrsxh1', '_TZ3000_w0qqde0g', '_TZ3210_w0qqde0g', '_TZ3000_waho4ber',
       '_TZ3000_zloso4jk', '_TZ3000_5f43h46b', '_TZ3000_cehuw1lw',
       '_TZ3000_g5xawfcq', '_TZ3000_hdopuwv6', '_TZ3000_mraovvmm',
       '_TZ3000_ss98ec5d', '_TZ3000_uwkja6z1', '_TZ3000_yujkchbz',

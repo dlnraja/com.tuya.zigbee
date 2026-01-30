@@ -1,4 +1,7 @@
 {
+  "5.5.990": {
+    "en": "🔧 FIX: GitHub #110 - Add _TZ3210_w0qqde0g to ZCL_ELECTRICAL config for energy monitoring (Ernst/Pollepa plug). Diagnostics analysis: BSEED 4-gang fix already in v5.5.978+, HOBEIAN radar PIR-only variant detection, ME167 TRV verified."
+  },
   "5.5.989": {
     "en": "🔧 FIX: GitHub #121 - Move _TZ3000_an5rjiwd from 4-button to 1-button driver (David's button delay fix). Verified #122 Longsam curtain motor already supported."
   },
