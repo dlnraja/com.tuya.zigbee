@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.5.982** | 🔧 FIX: DAVID9SE Issue #121 - Moved _TZ3000_an5rjiwd from button_wireless_1 t... |
 | **v5.5.981** | ➕ NEW: Added Pressure band sensor support (_TZ3000_pjb1ua0m / TS0203) to Cont... |
 | **v5.5.980** | 🔧 FIX: BSEED 4-gang switch - added missing flow cards for single/double/long... |
 | **v5.5.979** | 🎨 IMAGES: Added missing app xlarge.png (1000x700), created water_tank_monito... |
@@ -78,7 +79,6 @@
 | **v5.5.975** | 🆕 NEW: Ernst02507 TS004F Smart Knob Scene Switch - added _TZ3000_gwkzibhs fi... |
 | **v5.5.974** | 🔧 FIX: ManuelKugler TRV issue - removed _TZE284_o3x45p96 from thermostat_tuy... |
 | **v5.5.973** | 🔧 FIX: Improved inversion logic for water/contact sensors - XOR logic allows... |
-| **v5.5.972** | 🔧 FIX: Lasse_K water sensor IAS Zone fix - invert_alarm setting now works fo... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
