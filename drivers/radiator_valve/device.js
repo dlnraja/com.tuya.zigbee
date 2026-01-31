@@ -79,6 +79,16 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridT
 
   get gangCount() { return 1; }
 
+  /**
+   * v5.7.4: Override parent's capability listener registration to use correct DPs per profile
+   * FIX: Parent was sending target_temperature to DP2 always, but me167 needs DP4
+   */
+  _registerCapabilityListeners() {
+    // Override parent - we handle target_temperature in _setupTRVListeners with correct DP per profile
+    // Don't call super._registerCapabilityListeners() - it sends to wrong DP for me167
+    this.log('[TRV] Using profile-specific capability listeners (not parent)');
+  }
+
   async onNodeInit({ zclNode }) {
     // v5.6.0: Track state for physical button detection
     this._lastModeState = null;
