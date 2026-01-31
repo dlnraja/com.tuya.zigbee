@@ -1,4 +1,7 @@
 {
+  "5.7.5": {
+    "en": "⚡ POWER METER FIX: PJ-1203A (_TZE284_81yrt3lo) DP mappings corrected per Z2M #18419. Power values now divide by 10, correct DPs for voltage (112), current (113/114), energy (106-109). Fixed 0W readings. (blutch32 forum)"
+  },
   "5.7.4": {
     "en": "🔧 TRV FIX: AVATTO ME167/TRV06 (_TZE284_o3x45p96) now uses correct DP4 for target_temperature instead of DP2. Fixed parent class listener conflict. (ManuelKugler diagnostic)"
   },
