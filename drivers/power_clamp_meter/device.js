@@ -4,29 +4,30 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 /**
  * CT Clamp Power Meter Device
- * v5.5.995: Enhanced for PJ-1203A 2-channel bidirectional meter (blutch32 forum #1011)
+ * v5.7.5: FIXED DP mappings for PJ-1203A per Z2M #18419 (blutch32 forum #1011)
  *
  * Non-invasive current monitoring via CT clamps
  * Supports single-phase, 2-channel (A/B), and 3-phase configurations
  *
  * ═══════════════════════════════════════════════════════════════════════════
- * PJ-1203A 2-CHANNEL DP MAPPINGS (from Z2M tuya.ts):
+ * PJ-1203A 2-CHANNEL DP MAPPINGS (CORRECTED from Z2M #18419):
  * ═══════════════════════════════════════════════════════════════════════════
- * DP6:   ac_frequency (Hz * 100)
- * DP9:   energy_flow_a (0=consuming, 1=producing, 2=sign)
- * DP10:  energy_flow_b
- * DP16:  voltage (V * 10)
- * DP101: power_a (W, channel A)
- * DP102: power_b (W, channel B)
- * DP105: power_ab (W, total A+B)
- * DP111: energy_a (kWh * 100, channel A consumed)
- * DP112: energy_b (kWh * 100, channel B consumed)
- * DP115: energy_produced_a (kWh * 100, channel A produced)
- * DP116: energy_produced_b (kWh * 100, channel B produced)
- * DP121: current_a (A * 1000)
- * DP122: current_b (A * 1000)
- * DP131: power_factor_a (%)
- * DP132: power_factor_b (%)
+ * DP101: power_a (W ÷10)
+ * DP102: power_direction_a (0=forward, 1=reverse)
+ * DP104: power_direction_b
+ * DP105: power_b (W ÷10)
+ * DP106: energy_forward_a (kWh ÷100)
+ * DP107: energy_reverse_a (kWh ÷100)
+ * DP108: energy_forward_b (kWh ÷100)
+ * DP109: energy_reverse_b (kWh ÷100)
+ * DP110: power_factor_a (÷100)
+ * DP111: ac_frequency (Hz ÷100)
+ * DP112: voltage (V ÷10)
+ * DP113: current_a (A ÷1000)
+ * DP114: current_b (A ÷1000)
+ * DP115: power_ab (W ÷10) - Total power
+ * DP121: power_factor_b (÷100)
+ * DP129: update_frequency (seconds)
  *
  * ═══════════════════════════════════════════════════════════════════════════
  * 3-PHASE DP MAPPINGS:
@@ -92,62 +93,148 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     tuyaCluster.on('datapoint', (dp, value) => this._handleDP(dp, value));
   }
 
+  /**
+   * v5.7.5: Detect meter profile based on manufacturerName
+   * PJ-1203A: _TZE284_81yrt3lo, _TZE204_81yrt3lo (2-channel bidirectional)
+   * 3-phase: _TZE200_nslr42tt, _TZE204_nslr42tt
+   */
+  get meterProfile() {
+    const mfr = this.getSetting('zb_manufacturer_name') || this.getStoreValue('manufacturerName') || '';
+    const pj1203aIds = ['_TZE284_81yrt3lo', '_TZE204_81yrt3lo', '_tze284_81yrt3lo', '_tze204_81yrt3lo'];
+    return pj1203aIds.some(id => mfr.toLowerCase().includes(id.toLowerCase())) ? 'pj1203a' : '3phase';
+  }
+
   _handleDP(dp, value) {
     if (dp === undefined) return;
-    this.log(`[DP${dp}] = ${value}`);
+    const profile = this.meterProfile;
+    this.log(`[DP${dp}] = ${value} (profile: ${profile})`);
 
+    // ═══════════════════════════════════════════════════════════════════
+    // v5.7.5: PJ-1203A 2-CHANNEL BIDIRECTIONAL (FIXED per Z2M #18419)
+    // ═══════════════════════════════════════════════════════════════════
+    if (profile === 'pj1203a') {
+      switch (dp) {
+        case 101: // Power A (W ÷10)
+          const powerA = value / 10;
+          if (this.hasCapability('measure_power.phase1')) {
+            this.setCapabilityValue('measure_power.phase1', powerA).catch(this.error);
+          }
+          this._powerA = powerA;
+          this.log(`[PJ1203A] ⚡ Power A: ${powerA} W`);
+          this._updateTotalPowerPJ1203A();
+          break;
+
+        case 102: // Power direction A (0=forward/consuming, 1=reverse/producing)
+          this._directionA = value;
+          this.log(`[PJ1203A] 🔄 Direction A: ${value === 0 ? 'consuming' : 'producing'}`);
+          break;
+
+        case 104: // Power direction B
+          this._directionB = value;
+          this.log(`[PJ1203A] 🔄 Direction B: ${value === 0 ? 'consuming' : 'producing'}`);
+          break;
+
+        case 105: // Power B (W ÷10)
+          const powerB = value / 10;
+          if (this.hasCapability('measure_power.phase2')) {
+            this.setCapabilityValue('measure_power.phase2', powerB).catch(this.error);
+          }
+          this._powerB = powerB;
+          this.log(`[PJ1203A] ⚡ Power B: ${powerB} W`);
+          this._updateTotalPowerPJ1203A();
+          break;
+
+        case 106: // Energy forward A (kWh ÷100)
+          this._energyForwardA = value / 100;
+          this.log(`[PJ1203A] 📊 Energy Forward A: ${this._energyForwardA} kWh`);
+          this._updateTotalEnergy();
+          break;
+
+        case 107: // Energy reverse A (kWh ÷100) - produced/exported
+          this._energyReverseA = value / 100;
+          this.log(`[PJ1203A] 🔋 Energy Reverse A: ${this._energyReverseA} kWh`);
+          break;
+
+        case 108: // Energy forward B (kWh ÷100)
+          this._energyForwardB = value / 100;
+          this.log(`[PJ1203A] 📊 Energy Forward B: ${this._energyForwardB} kWh`);
+          this._updateTotalEnergy();
+          break;
+
+        case 109: // Energy reverse B (kWh ÷100) - produced/exported
+          this._energyReverseB = value / 100;
+          this.log(`[PJ1203A] 🔋 Energy Reverse B: ${this._energyReverseB} kWh`);
+          break;
+
+        case 110: // Power factor A (÷100)
+          this.log(`[PJ1203A] 📈 Power Factor A: ${value / 100}`);
+          break;
+
+        case 111: // AC frequency (Hz ÷100)
+          this.log(`[PJ1203A] ⚡ AC Frequency: ${value / 100} Hz`);
+          break;
+
+        case 112: // Voltage (V ÷10)
+          this.setCapabilityValue('measure_voltage', value / 10).catch(this.error);
+          this.log(`[PJ1203A] ⚡ Voltage: ${value / 10} V`);
+          break;
+
+        case 113: // Current A (A ÷1000)
+          this.setCapabilityValue('measure_current', (value / 1000) * this._ctRatio).catch(this.error);
+          this.log(`[PJ1203A] ⚡ Current A: ${value / 1000} A`);
+          break;
+
+        case 114: // Current B (A ÷1000)
+          this.log(`[PJ1203A] ⚡ Current B: ${value / 1000} A`);
+          break;
+
+        case 115: // Power AB Total (W ÷10)
+          const totalPower = value / 10;
+          this.setCapabilityValue('measure_power', totalPower).catch(this.error);
+          this.log(`[PJ1203A] ⚡ Total Power: ${totalPower} W`);
+          break;
+
+        case 121: // Power factor B (÷100)
+          this.log(`[PJ1203A] 📈 Power Factor B: ${value / 100}`);
+          break;
+
+        case 129: // Update frequency (seconds)
+          this.log(`[PJ1203A] ⏱️ Update Frequency: ${value} s`);
+          break;
+      }
+      return; // Exit after PJ-1203A handling
+    }
+
+    // ═══════════════════════════════════════════════════════════════════
+    // 3-PHASE METERS (original logic)
+    // ═══════════════════════════════════════════════════════════════════
     switch (dp) {
-      // ═══════════════════════════════════════════════════════════════════
-      // ENERGY (kWh) - Multiple sources depending on meter type
-      // ═══════════════════════════════════════════════════════════════════
-      case 1: // Total energy (kWh * 100) - 3-phase meters
+      case 1: // Total energy (kWh * 100)
         this.setCapabilityValue('meter_power', value / 100).catch(this.error);
         break;
 
-      // ═══════════════════════════════════════════════════════════════════
-      // v5.5.995: PJ-1203A 2-CHANNEL BIDIRECTIONAL METER (blutch32)
-      // ═══════════════════════════════════════════════════════════════════
-      case 6: // AC frequency (Hz * 100)
-        this.log(`[METER] ⚡ AC Frequency: ${value / 100} Hz`);
-        break;
-
-      case 9: // Energy flow A (0=consuming, 1=producing, 2=sign)
-        this._energyFlowA = value;
-        this.log(`[METER] 🔄 Energy Flow A: ${['consuming', 'producing', 'sign'][value] || value}`);
-        break;
-
-      case 10: // Energy flow B
-        this._energyFlowB = value;
-        this.log(`[METER] 🔄 Energy Flow B: ${['consuming', 'producing', 'sign'][value] || value}`);
-        break;
-
-      case 16: // Voltage (V * 10) - PJ-1203A OR Phase 1 power for 3-phase
-        // v5.5.995: Detect if this is voltage or power based on value range
-        if (value > 1000 && value < 3000) {
-          // Likely voltage (100-300V range when * 10)
-          this.setCapabilityValue('measure_voltage', value / 10).catch(this.error);
-        } else if (this.hasCapability('measure_power.phase1')) {
-          // 3-phase meter: Phase 1 power
+      case 16: // Phase 1 power (W)
+        if (this.hasCapability('measure_power.phase1')) {
           this.setCapabilityValue('measure_power.phase1', value).catch(this.error);
           this._updateTotalPower();
         }
         break;
 
-      case 17: // Phase 2 power (W) - 3-phase meters
+      case 17: // Phase 2 power (W)
         if (this.hasCapability('measure_power.phase2')) {
           this.setCapabilityValue('measure_power.phase2', value).catch(this.error);
         }
         this._updateTotalPower();
         break;
 
-      case 18: // Phase 3 power (W) - 3-phase meters
+      case 18: // Phase 3 power (W)
         if (this.hasCapability('measure_power.phase3')) {
           this.setCapabilityValue('measure_power.phase3', value).catch(this.error);
         }
         this._updateTotalPower();
         break;
 
-      case 19: // Voltage (V * 10) - 3-phase meters
+      case 19: // Voltage (V * 10)
         this.setCapabilityValue('measure_voltage', value / 10).catch(this.error);
         break;
 
@@ -157,86 +244,32 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         this.setCapabilityValue('measure_current', (value / 1000) * this._ctRatio).catch(this.error);
         break;
 
-      // ═══════════════════════════════════════════════════════════════════
-      // v5.5.995: PJ-1203A POWER (W) - Channel A/B
-      // ═══════════════════════════════════════════════════════════════════
-      case 101: // Power A (W) - Channel A
-        if (this.hasCapability('measure_power.phase1')) {
-          this.setCapabilityValue('measure_power.phase1', value).catch(this.error);
-        }
-        this.log(`[METER] ⚡ Power A: ${value} W`);
-        this._updateTotalPower();
-        break;
-
-      case 102: // Power B (W) - Channel B OR Total energy for 3-phase
-        if (this.hasCapability('measure_power.phase2')) {
-          this.setCapabilityValue('measure_power.phase2', value).catch(this.error);
-          this.log(`[METER] ⚡ Power B: ${value} W`);
-          this._updateTotalPower();
-        } else {
-          // 3-phase meter: Total energy
-          this.setCapabilityValue('meter_power', value / 100).catch(this.error);
-        }
-        break;
-
-      case 105: // Power AB (W) - Total power for 2-channel
+      case 101: // Total power (W)
         this.setCapabilityValue('measure_power', value).catch(this.error);
-        this.log(`[METER] ⚡ Total Power: ${value} W`);
         break;
 
-      // ═══════════════════════════════════════════════════════════════════
-      // v5.5.995: PJ-1203A ENERGY (kWh) - Channel A/B
-      // ═══════════════════════════════════════════════════════════════════
-      case 111: // Energy A consumed (kWh * 100)
-        this._energyA = value / 100;
-        this.log(`[METER] 📊 Energy A: ${this._energyA} kWh`);
-        this._updateTotalEnergy();
-        break;
-
-      case 112: // Energy B consumed (kWh * 100)
-        this._energyB = value / 100;
-        this.log(`[METER] 📊 Energy B: ${this._energyB} kWh`);
-        this._updateTotalEnergy();
-        break;
-
-      case 115: // Energy produced A (kWh * 100)
-        this._energyProducedA = value / 100;
-        this.log(`[METER] 🔋 Energy Produced A: ${this._energyProducedA} kWh`);
-        break;
-
-      case 116: // Energy produced B (kWh * 100)
-        this._energyProducedB = value / 100;
-        this.log(`[METER] 🔋 Energy Produced B: ${this._energyProducedB} kWh`);
-        break;
-
-      // ═══════════════════════════════════════════════════════════════════
-      // v5.5.995: PJ-1203A CURRENT (A) - Channel A/B
-      // ═══════════════════════════════════════════════════════════════════
-      case 121: // Current A (A * 1000)
-        this.setCapabilityValue('measure_current', (value / 1000) * this._ctRatio).catch(this.error);
-        this.log(`[METER] ⚡ Current A: ${value / 1000} A`);
-        break;
-
-      case 122: // Current B (A * 1000)
-        this.log(`[METER] ⚡ Current B: ${value / 1000} A`);
-        break;
-
-      case 131: // Power factor A (%)
-        this.log(`[METER] 📈 Power Factor A: ${value}%`);
-        break;
-
-      case 132: // Power factor B (%)
-        this.log(`[METER] 📈 Power Factor B: ${value}%`);
+      case 102: // Total energy (kWh * 100)
+        this.setCapabilityValue('meter_power', value / 100).catch(this.error);
         break;
     }
   }
 
   /**
-   * v5.5.995: Update total energy from channel A + B
+   * v5.7.5: Update total power for PJ-1203A (2-channel only)
+   */
+  _updateTotalPowerPJ1203A() {
+    const powerA = this._powerA || 0;
+    const powerB = this._powerB || 0;
+    const total = powerA + powerB;
+    this.setCapabilityValue('measure_power', total).catch(this.error);
+  }
+
+  /**
+   * v5.7.5: Update total energy from channel A + B (PJ-1203A uses forward energy)
    */
   _updateTotalEnergy() {
-    const energyA = this._energyA || 0;
-    const energyB = this._energyB || 0;
+    const energyA = this._energyForwardA || this._energyA || 0;
+    const energyB = this._energyForwardB || this._energyB || 0;
     const total = energyA + energyB;
     this.setCapabilityValue('meter_power', total).catch(this.error);
     this.log(`[METER] 📊 Total Energy: ${total} kWh (A:${energyA} + B:${energyB})`);
