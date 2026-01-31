@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.2** | 🎛️ Generic DIY: Comprehensive flow cards (15 triggers, 6 conditions, 7 actio... |
 | **v5.7.1** | 📚 ZHA Quirks enrichment: Added irrigation valve fingerprints (SASWELL SAS980... |
 | **v5.7.0** | 🔧 NEW: Generic DIY Zigbee Driver - Supports ESP32-C6/H2, PTVO firmware, CC25... |
 | **v5.6.3** | 🔌 USB Dongle: Added exact mixed-case _TZ3000_h1ipgkwn fingerprint (from Z2M ... |
@@ -78,7 +79,6 @@
 | **v5.5.999** | 🔧 FIX: BSEED 4-gang switch (diag c33007b0) - Virtual button toggle for EP2-4... |
 | **v5.5.998** | 🔧 FIX: Longsam _TZE204_xu4a5rhj curtain motor - Position INVERTED (DP2: 100-... |
 | **v5.5.997** | 🔧 FIX: PhysicalButtonMixin - Tuya DP physical button detection for hybrid de... |
-| **v5.5.996** | 🔧 FIX: PhysicalButtonMixin enhanced - ZCL + Tuya DP + Hybrid protocol suppor... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
