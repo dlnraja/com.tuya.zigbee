@@ -1,4 +1,7 @@
 {
+  "5.6.2": {
+    "en": "🔧 FIX: HOBEIAN 10G radar humidity ×10 multiplier (was showing 9% instead of 90%). Forum diagnostic reports processed."
+  },
   "5.6.1": {
     "en": "🔧 FIX: Case-sensitive fingerprints for _TZ3000_b4awzgct (button) and _TZ3000_fllyghyj (climate sensor). 🔌 FIX: _TZ3000_h1ipgkwn correctly identified as USB dongle (not wall switch). GitHub responses posted to #113, #114, #121, #122."
   },
