@@ -1,4 +1,7 @@
 {
+  "5.7.12": {
+    "en": "🔘 BUTTON PATTERN DETECTION: Software triple-click detection (600ms window) for all buttons. Auto hold-release after 2s of long press. Added triple/release flow cards to button_wireless_1/2/3. Works even if device doesn't natively report these patterns."
+  },
   "5.7.11": {
     "en": "🔘 BUTTON SCENARIOS: Added triple-press and hold-release flow cards for MOES 4-button. Fixed smart_knob_rotary specific flow card triggers. Based on Z2M research for complete button action coverage."
   },
