@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.7.11",
+  "version": "5.7.12",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -1004,6 +1004,34 @@
         ]
       },
       {
+        "id": "button_wireless_1_button_1gang_button_1_triple",
+        "title": {
+          "en": "Button 1 triple-pressed",
+          "fr": "Bouton 1 triple-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_1"
+          }
+        ]
+      },
+      {
+        "id": "button_wireless_1_button_1gang_button_1_release",
+        "title": {
+          "en": "Button 1 released (after hold)",
+          "fr": "Bouton 1 relâché (après maintien)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_1"
+          }
+        ]
+      },
+      {
         "id": "button_wireless_1_button_1gang_measure_battery_changed",
         "title": {
           "en": "Battery level changed",
@@ -1228,6 +1256,62 @@
         "title": {
           "en": "Button 2 long-pressed",
           "fr": "Bouton 2 pressé longtemps"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_2"
+          }
+        ]
+      },
+      {
+        "id": "button_wireless_2_button_2gang_button_1_triple",
+        "title": {
+          "en": "Button 1 triple-pressed",
+          "fr": "Bouton 1 triple-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_2"
+          }
+        ]
+      },
+      {
+        "id": "button_wireless_2_button_2gang_button_2_triple",
+        "title": {
+          "en": "Button 2 triple-pressed",
+          "fr": "Bouton 2 triple-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_2"
+          }
+        ]
+      },
+      {
+        "id": "button_wireless_2_button_2gang_button_1_release",
+        "title": {
+          "en": "Button 1 released (after hold)",
+          "fr": "Bouton 1 relâché (après maintien)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_2"
+          }
+        ]
+      },
+      {
+        "id": "button_wireless_2_button_2gang_button_2_release",
+        "title": {
+          "en": "Button 2 released (after hold)",
+          "fr": "Bouton 2 relâché (après maintien)"
         },
         "args": [
           {
@@ -1659,6 +1743,90 @@
           "no": "Knapp 3 langttrykket",
           "es": "Botón 3 presionado largo",
           "da": "Knap 3 langt trykket"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_3"
+          }
+        ]
+      },
+      {
+        "id": "button_wireless_3_button_3gang_button_1_triple",
+        "title": {
+          "en": "Button 1 triple-pressed",
+          "fr": "Bouton 1 triple-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_3"
+          }
+        ]
+      },
+      {
+        "id": "button_wireless_3_button_3gang_button_2_triple",
+        "title": {
+          "en": "Button 2 triple-pressed",
+          "fr": "Bouton 2 triple-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_3"
+          }
+        ]
+      },
+      {
+        "id": "button_wireless_3_button_3gang_button_3_triple",
+        "title": {
+          "en": "Button 3 triple-pressed",
+          "fr": "Bouton 3 triple-cliqué"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_3"
+          }
+        ]
+      },
+      {
+        "id": "button_wireless_3_button_3gang_button_1_release",
+        "title": {
+          "en": "Button 1 released (after hold)",
+          "fr": "Bouton 1 relâché (après maintien)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_3"
+          }
+        ]
+      },
+      {
+        "id": "button_wireless_3_button_3gang_button_2_release",
+        "title": {
+          "en": "Button 2 released (after hold)",
+          "fr": "Bouton 2 relâché (après maintien)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=button_wireless_3"
+          }
+        ]
+      },
+      {
+        "id": "button_wireless_3_button_3gang_button_3_release",
+        "title": {
+          "en": "Button 3 released (after hold)",
+          "fr": "Bouton 3 relâché (après maintien)"
         },
         "args": [
           {

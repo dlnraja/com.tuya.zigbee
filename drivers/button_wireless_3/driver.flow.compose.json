@@ -329,6 +329,54 @@
       "args": []
     },
     {
+      "id": "button_wireless_3_button_3gang_button_1_triple",
+      "title": {
+        "en": "Button 1 triple-pressed",
+        "fr": "Bouton 1 triple-cliqué"
+      },
+      "args": []
+    },
+    {
+      "id": "button_wireless_3_button_3gang_button_2_triple",
+      "title": {
+        "en": "Button 2 triple-pressed",
+        "fr": "Bouton 2 triple-cliqué"
+      },
+      "args": []
+    },
+    {
+      "id": "button_wireless_3_button_3gang_button_3_triple",
+      "title": {
+        "en": "Button 3 triple-pressed",
+        "fr": "Bouton 3 triple-cliqué"
+      },
+      "args": []
+    },
+    {
+      "id": "button_wireless_3_button_3gang_button_1_release",
+      "title": {
+        "en": "Button 1 released (after hold)",
+        "fr": "Bouton 1 relâché (après maintien)"
+      },
+      "args": []
+    },
+    {
+      "id": "button_wireless_3_button_3gang_button_2_release",
+      "title": {
+        "en": "Button 2 released (after hold)",
+        "fr": "Bouton 2 relâché (après maintien)"
+      },
+      "args": []
+    },
+    {
+      "id": "button_wireless_3_button_3gang_button_3_release",
+      "title": {
+        "en": "Button 3 released (after hold)",
+        "fr": "Bouton 3 relâché (après maintien)"
+      },
+      "args": []
+    },
+    {
       "id": "button_wireless_3_button_3gang_measure_battery_changed",
       "title": {
         "en": "Battery level changed",
