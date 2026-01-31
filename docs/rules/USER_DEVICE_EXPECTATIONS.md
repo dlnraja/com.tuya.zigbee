@@ -1,7 +1,10 @@
 # User Device Expectations & Diagnostic Summary
 
 This document summarizes user-reported devices and their expected behavior based on diagnostic logs and community feedback.
-**Last Updated**: 2026-01-27 (v5.5.905)
+**Last Updated**: 2026-01-31 (v5.5.998)
+
+> ⚠️ **CRITICAL RULE**: manufacturerName CAN appear in MULTIPLE drivers - this is NORMAL!
+> Fingerprint = manufacturerName + productId (COMBINED). Only remove if SAME mfr + SAME productId causes WRONG driver match.
 
 > ⚠️ **WORKFLOW**: This document must be updated at each prompt/session in Windsurf AI to stay synchronized with code changes.
 
@@ -44,12 +47,16 @@ This document summarizes user-reported devices and their expected behavior based
 | 24 | Lars-Arne Kvien | Smart Button | unknown | unknown | Pairs as generic zigbee | ⚠️ Need interview | Post interview to forum |
 | 25 | Lars-Arne Kvien | Temp/Humidity | unknown | unknown | Pairs as generic zigbee | ⚠️ Need interview | Post interview to forum |
 
-### 📧 GITHUB PRs PENDING REVIEW
+### 📧 GITHUB PRs & ISSUES (Jan 2026)
 
-| PR | Author | Description | Status |
-|----|--------|-------------|--------|
-| #111 | packetninja | Separate driver for Tuya/Bseed touch dimmer | ⚠️ Review requested |
-| #112 | packetninja | Physical button flows + improved logging | ✅ Closed |
+| # | Type | Author | Description | Status |
+|---|------|--------|-------------|--------|
+| #122 | Issue | elgato7 | Longsam Mini M3 curtain motor _TZE204_xu4a5rhj | ✅ FIXED v5.5.998 - Position inverted |
+| #121 | Issue | DAVID9SE | _TZ3000_an5rjiwd button not working | ⚠️ Moved to 1-button driver |
+| #120 | PR | packetninja | Physical button flow cards - remove manual device selection | ✅ MERGED |
+| #119 | PR | packetninja | Replace ZCL-only with flexible HybridSwitchBase | ✅ MERGED |
+| #111 | PR | packetninja | Separate driver for Tuya/Bseed touch dimmer | ✅ MERGED |
+| #112 | PR | packetninja | Physical button flows + improved logging | ✅ Closed |
 
 ### 💥 APP CRASH REPORTS
 
