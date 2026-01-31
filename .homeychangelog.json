@@ -1,4 +1,7 @@
 {
+  "5.7.4": {
+    "en": "🔧 TRV FIX: AVATTO ME167/TRV06 (_TZE284_o3x45p96) now uses correct DP4 for target_temperature instead of DP2. Fixed parent class listener conflict. (ManuelKugler diagnostic)"
+  },
   "5.7.3": {
     "en": "🌡️ TRV: Added AVATTO TRV fingerprint _TZE284_o3x45p96 (from forum user ManuelKugler)"
   },
