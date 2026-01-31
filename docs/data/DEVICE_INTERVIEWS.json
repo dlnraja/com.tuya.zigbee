@@ -571,26 +571,77 @@
         "deviceName": "HOBEIAN ZG-204ZV 5-in-1 Multisensor",
         "manufacturerName": "HOBEIAN",
         "productId": "ZG-204ZV",
-        "source": "Diagnostic Report 52546992 (Peter_van_Werkhoven)",
+        "source": "Diagnostic Report 52546992 (Peter_van_Werkhoven), Z2M docs, ZHA #4452, #4517",
         "user": "Peter_van_Werkhoven",
         "status": "fixed",
-        "priority": "high",
+        "priority": "critical",
         "inputClusters": [0, 1, 3, 1024, 1280, 61184],
         "dpMap": {
           "DP1": "alarm_motion (presence bool)",
           "DP3": "measure_temperature (÷10)",
-          "DP4": "measure_humidity",
-          "DP9": "measure_luminance (lux)",
+          "DP4": "measure_humidity (RAW, no divisor - v5.5.987 fix)",
+          "DP9": "measure_luminance (lux, 15% smoothing - v5.5.985)",
           "DP10": "measure_battery",
           "DP17/18": "alarm_generic (SOS button)"
         },
-        "symptoms": ["Missing temperature and humidity", "SOS button flow not triggering"],
-        "rootCause": "getSensorConfig() didn't route HOBEIAN+ZG-204ZV modelId to ZG_204ZV_MULTISENSOR config",
+        "symptoms": [
+          "Missing temperature and humidity (v5.5.919)",
+          "Humidity showing 9% instead of 90% (v5.5.953, v5.5.987)",
+          "Lux disco lights from rapid changes (v5.5.985-986)",
+          "Losing temp/battery after updates (v5.5.984)",
+          "SOS button flow not triggering (v5.5.841)"
+        ],
+        "fixHistory": [
+          {"version": "5.5.841", "fix": "Added ZG-204ZV handling in getSensorConfig()"},
+          {"version": "5.5.907", "fix": "Battery capability auto-added"},
+          {"version": "5.5.912", "fix": "ZCL temp/humidity cluster listeners (0x0402/0x0405)"},
+          {"version": "5.5.919", "fix": "Tuya DP capability support for temp/humidity"},
+          {"version": "5.5.930", "fix": "DP polling for temp/humidity/battery"},
+          {"version": "5.5.953", "fix": "Humidity scaling fix (raw values, no divisor)"},
+          {"version": "5.5.984", "fix": "modelId detection from settings/store"},
+          {"version": "5.5.985", "fix": "Lux smoothing (15% threshold)"},
+          {"version": "5.5.986", "fix": "ZCL illuminance throttle (30s)"},
+          {"version": "5.5.987", "fix": "Humidity multiplier (×10)"}
+        ],
+        "crossReference": [
+          "Z2M: https://www.zigbee2mqtt.io/devices/ZG-204ZV.html",
+          "ZHA #4452: ZCL cluster variant support",
+          "ZHA #4517: Sensitivity function request",
+          "ZHA #4268: ZG-204ZG support request"
+        ],
+        "driver": "presence_sensor_radar"
+      },
+      {
+        "id": "INT-144",
+        "deviceName": "HOBEIAN ZG-204ZL PIR Sensor (PIR-only)",
+        "manufacturerName": "_TZE200_3towulqd",
+        "productId": "TS0601",
+        "source": "Z2M #12364, Peter_van_Werkhoven #1225, Blakadder database",
+        "user": "Peter_van_Werkhoven",
+        "status": "fixed",
+        "priority": "high",
+        "dpMap": {
+          "DP1": "alarm_motion (PIR state)",
+          "DP4": "measure_battery",
+          "DP9": "sensitivity (low/medium/high)",
+          "DP10": "keep_time (10s/30s/60s/120s)",
+          "DP12": "measure_luminance (max 1000 lux)"
+        },
+        "symptoms": [
+          "False temp/humidity showing (PIR-only device)",
+          "Wrong classification as ZG-204ZV"
+        ],
+        "rootCause": "Same _TZE200_3towulqd can be ZG-204ZL (PIR-only) OR ZG-204ZV (with temp/humidity) - manufacturer variants",
         "fix": {
           "applied": true,
-          "version": "5.5.841",
-          "description": "Added ZG-204ZV handling in getSensorConfig(), added SOS button DP17/18 mapping"
+          "version": "5.5.920",
+          "description": "Removed false temp/humidity, added battery DP4. Permissive variant mode - dynamic capability detection"
         },
+        "crossReference": [
+          "Z2M #12364: ZG-204ZL support request",
+          "HA Community: Custom ZHA quirk guide",
+          "SmartHomeScene: ZG-204ZM review"
+        ],
         "driver": "presence_sensor_radar"
       },
       {
@@ -666,19 +717,69 @@
     }
   ],
 
+  "recurringPatterns": {
+    "Peter_van_Werkhoven": {
+      "totalFixes": 20,
+      "devices": ["HOBEIAN ZG-204ZV", "HOBEIAN ZG-204ZL", "HOBEIAN ZG-204ZM"],
+      "commonIssues": [
+        "Humidity multiplier (9% vs 90%)",
+        "Lux smoothing/throttling (disco lights)",
+        "PIR-only vs multisensor variant detection",
+        "Distance divisor (cm/dm/m)",
+        "Missing temp/humidity after updates",
+        "Battery capability auto-add"
+      ],
+      "versionRange": "v5.5.841 - v5.5.987"
+    },
+    "Lasse_K": {
+      "totalFixes": 8,
+      "devices": ["Water leak sensor", "Contact sensor", "HOBEIAN ZG-222Z"],
+      "commonIssues": [
+        "Sensor polarity inversion (alarm reversed)",
+        "IAS Zone alarm not triggering",
+        "Contact sensor installed in reverse",
+        "XOR logic for user override"
+      ],
+      "versionRange": "v5.5.645 - v5.5.973"
+    },
+    "Pieter_Pessers": {
+      "totalFixes": 7,
+      "devices": ["BSEED 1/2/3-gang switches"],
+      "commonIssues": [
+        "Unknown zigbee device (fingerprint conflicts)",
+        "Fingerprint in wrong driver",
+        "ZCL-only mode needed (no Tuya DP)"
+      ],
+      "versionRange": "v5.5.811 - v5.5.970"
+    },
+    "packetninja_Attilla": {
+      "totalContributions": 12,
+      "type": "PR contributions",
+      "contributions": [
+        "PR #118: BSEED ZCL-only switch support",
+        "PR #119: HybridSwitchBase refactor",
+        "PR #120: Physical button flow card fix (titleFormatted)",
+        "PhysicalButtonMixin: 2000ms app command window",
+        "Physical button detection via attr.onOff reports"
+      ]
+    }
+  },
+
   "statistics": {
-    "totalDevicesAnalyzed": 35,
+    "totalDevicesAnalyzed": 42,
     "byStatus": {
-      "supported": 25,
-      "fixed": 5,
+      "supported": 28,
+      "fixed": 8,
       "investigating": 3,
       "partial": 1,
       "design_limitation": 1
     },
     "bySource": {
-      "forum": 15,
-      "github_issues": 12,
-      "github_prs": 20
+      "forum": 18,
+      "github_issues": 15,
+      "github_prs": 25,
+      "z2m_docs": 5,
+      "zha_issues": 4
     },
     "byCategory": {
       "presence_sensors": 5,
@@ -692,10 +793,10 @@
       "soil_water_sensors": 2,
       "thermostats": 1,
       "air_quality": 1,
-      "curtains_covers": 1,
+      "curtains_covers": 2,
       "sirens": 1,
       "fingerbot": 1,
-      "radar_sensors": 3,
+      "radar_sensors": 5,
       "led_lights": 1
     }
   }
