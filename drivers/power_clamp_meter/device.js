@@ -4,7 +4,9 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 /**
  * CT Clamp Power Meter Device
- * v5.7.5: FIXED DP mappings for PJ-1203A per Z2M #18419 (blutch32 forum #1011)
+ * v5.7.9: Enhanced zero-current handling + better mfr detection (Z2M #22248)
+ * v5.7.7: Guard undefined values (diagnostic a0f7de6a)
+ * v5.7.5: FIXED DP mappings for PJ-1203A per Z2M #18419
  *
  * Non-invasive current monitoring via CT clamps
  * Supports single-phase, 2-channel (A/B), and 3-phase configurations
@@ -47,14 +49,27 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 class PowerClampMeterDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('CT Clamp Power Meter initializing...');
+    this.log('[METER] v5.7.9 - CT Clamp Power Meter initializing...');
 
+    // v5.7.9: Initialize internal state for PJ-1203A channels
     this._ctRatio = this.getSetting('ct_ratio') || 1;
+    this._powerA = 0;
+    this._powerB = 0;
+    this._directionA = 0; // 0=consuming, 1=producing
+    this._directionB = 0;
+    this._energyForwardA = 0;
+    this._energyForwardB = 0;
+
+    // v5.7.9: Cache manufacturer from zclNode for profile detection
+    this._cachedMfr = zclNode?.manufacturerName ||
+                      this.getSetting('zb_manufacturer_name') ||
+                      this.getStoreValue('manufacturerName') || '';
 
     await this._setupTuyaDP(zclNode);
     await this._setupElectricalMeasurement(zclNode);
 
-    this.log('CT Clamp Power Meter initialized');
+    const profile = this.meterProfile;
+    this.log(`[METER] v5.7.9 ✅ Ready (profile: ${profile}, mfr: ${this._cachedMfr || 'unknown'})`);
   }
 
   async _setupElectricalMeasurement(zclNode) {
@@ -100,10 +115,14 @@ class PowerClampMeterDevice extends ZigBeeDevice {
    * Source: Z2M #18419, #15359, ZHA #3152, #3658
    */
   get meterProfile() {
-    const mfr = this.getSetting('zb_manufacturer_name') || this.getStoreValue('manufacturerName') || '';
-    // PJ-1203A 2-channel bidirectional variants (from Z2M research)
+    // v5.7.9: Use cached mfr first (from zclNode), then settings
+    const mfr = this._cachedMfr ||
+                this.getSetting('zb_manufacturer_name') ||
+                this.getStoreValue('manufacturerName') || '';
+    // PJ-1203A 2-channel bidirectional variants (Z2M #18419, #22248, #25809)
     const pj1203aIds = [
       '_TZE284_81yrt3lo', '_TZE204_81yrt3lo',  // Original PJ-1203A
+      '_TZE200_81yrt3lo',                       // Older variant (Z2M #18432)
       '_TZE204_cjbofhxw', '_TZE284_cjbofhxw'   // Matsee Plus variant (Z2M #15359)
     ];
     return pj1203aIds.some(id => mfr.toLowerCase().includes(id.toLowerCase())) ? 'pj1203a' : '3phase';
