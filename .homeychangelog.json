@@ -1,4 +1,7 @@
 {
+  "5.7.1": {
+    "en": "📚 ZHA Quirks enrichment: Added irrigation valve fingerprints (SASWELL SAS980SWT, NEO NAS-WV03B2). TuyaQuirkBuilder methods documented. Cross-referenced with zigpy discussion #725, Jeedom compatibility database."
+  },
   "5.7.0": {
     "en": "🔧 NEW: Generic DIY Zigbee Driver - Supports ESP32-C6/H2, PTVO firmware, CC2530/31/2652, and custom ZCL devices. Auto-discovers capabilities from ZCL clusters. Perfect for DIY sensors, routers, and custom devices!"
   },

@@ -333,8 +333,66 @@ const ZHA_DOUBLE_DIMMER = [
 
 ---
 
-## 📚 References
+## 🌱 Soil Sensors (from ZHA Issues)
+
+```javascript
+const ZHA_SOIL_SENSORS = [
+  "_TZE200_npj9bug3",   // QT-06S soil sensor
+  "_TZE284_myd45weu",   // QT-07S soil sensor
+  "_TZE200_myd45weu",   // Soil sensor variant
+];
+```
+
+---
+
+## � Irrigation Valves (from ZHA Issues)
+
+```javascript
+const ZHA_IRRIGATION_VALVES = [
+  "_TZE200_akjefhj5",   // SASWELL SAS980SWT-7-Z01
+  "_TZE204_4fblxpma",   // NEO NAS-WV03B2
+];
+```
+
+---
+
+## 🔧 TuyaQuirkBuilder Methods (v2 API)
+
+### Convenience Methods
+
+| Method | DP Usage | Scale | Description |
+|--------|----------|-------|-------------|
+| `.tuya_battery(dp_id)` | dp_id | /2 | Battery % |
+| `.tuya_temperature(dp_id)` | dp_id | /10 | Temperature °C |
+| `.tuya_humidity(dp_id)` | dp_id | /100 | Humidity % |
+| `.tuya_soil_moisture(dp_id)` | dp_id | /100 | Soil moisture % |
+| `.tuya_onoff(dp_id)` | dp_id | - | On/Off switch |
+| `.tuya_metering(dp_id)` | dp_id | - | Water/Energy metering |
+
+### Entity Methods
+
+| Method | Usage | Description |
+|--------|-------|-------------|
+| `.tuya_switch(dp_id)` | Switch entity | Valve, relay |
+| `.tuya_enum(dp_id)` | Enum entity | Mode selection |
+| `.tuya_number(dp_id)` | Number entity | Timer, countdown |
+| `.tuya_binary_sensor(dp_id)` | Binary sensor | Online status |
+| `.tuya_sensor(dp_id)` | Sensor entity | Duration, measurements |
+
+### Base Methods
+
+| Method | Usage | Description |
+|--------|-------|-------------|
+| `.tuya_dp(dp_id)` | DP converter | Raw DP handling |
+| `.tuya_attribute(dp_id)` | Attribute def | Custom attribute |
+| `.tuya_dp_attribute(dp_id)` | DP + Attribute | Combined |
+
+---
+
+## �📚 References
 
 - [ZHA Device Handlers - Tuya](https://github.com/zigpy/zha-device-handlers/tree/dev/zhaquirks/tuya)
+- [ZHA Tuya Documentation](https://github.com/zigpy/zha-device-handlers/blob/dev/tuya.md)
 - [Zigbee2MQTT Tuya Converters](https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts)
-- [Tuya Zigbee Protocol Analysis](https://developer.tuya.com/en/docs/iot/zigbee-protocol)
+- [Jeedom Compatibility Database](https://compatibility.jeedom.com)
+- [zigpy Discussion #725](https://github.com/zigpy/zigpy/discussions/725)
