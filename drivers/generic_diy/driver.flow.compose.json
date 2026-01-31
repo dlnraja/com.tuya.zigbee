@@ -1,0 +1,525 @@
+{
+  "triggers": [
+    {
+      "id": "generic_diy_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "hint": {
+        "en": "When the DIY sensor temperature changes",
+        "fr": "Quand la température du capteur DIY change"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
+          "example": 22.5
+        }
+      ]
+    },
+    {
+      "id": "generic_diy_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "hint": {
+        "en": "When the DIY sensor humidity changes",
+        "fr": "Quand l'humidité du capteur DIY change"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity",
+            "fr": "Humidité"
+          },
+          "example": 65
+        }
+      ]
+    },
+    {
+      "id": "generic_diy_motion_detected",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
+      },
+      "hint": {
+        "en": "When the DIY sensor detects motion",
+        "fr": "Quand le capteur DIY détecte un mouvement"
+      }
+    },
+    {
+      "id": "generic_diy_motion_cleared",
+      "title": {
+        "en": "Motion cleared",
+        "fr": "Mouvement terminé"
+      },
+      "hint": {
+        "en": "When no more motion is detected",
+        "fr": "Quand plus aucun mouvement n'est détecté"
+      }
+    },
+    {
+      "id": "generic_diy_button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton pressé"
+      },
+      "hint": {
+        "en": "When a DIY button is pressed",
+        "fr": "Quand un bouton DIY est pressé"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "number",
+          "title": {
+            "en": "Button number",
+            "fr": "Numéro du bouton"
+          },
+          "example": 1
+        }
+      ]
+    },
+    {
+      "id": "generic_diy_button_double_pressed",
+      "title": {
+        "en": "Button double pressed",
+        "fr": "Bouton double-pressé"
+      },
+      "hint": {
+        "en": "When a DIY button is double pressed",
+        "fr": "Quand un bouton DIY est double-pressé"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "number",
+          "title": {
+            "en": "Button number",
+            "fr": "Numéro du bouton"
+          },
+          "example": 1
+        }
+      ]
+    },
+    {
+      "id": "generic_diy_button_long_pressed",
+      "title": {
+        "en": "Button long pressed",
+        "fr": "Bouton appui long"
+      },
+      "hint": {
+        "en": "When a DIY button is long pressed",
+        "fr": "Quand un bouton DIY est maintenu"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "number",
+          "title": {
+            "en": "Button number",
+            "fr": "Numéro du bouton"
+          },
+          "example": 1
+        }
+      ]
+    },
+    {
+      "id": "generic_diy_switch_turned_on",
+      "title": {
+        "en": "Switch turned on",
+        "fr": "Interrupteur activé"
+      },
+      "hint": {
+        "en": "When a DIY switch is turned on",
+        "fr": "Quand un interrupteur DIY est activé"
+      },
+      "tokens": [
+        {
+          "name": "endpoint",
+          "type": "number",
+          "title": {
+            "en": "Endpoint",
+            "fr": "Point de terminaison"
+          },
+          "example": 1
+        }
+      ]
+    },
+    {
+      "id": "generic_diy_switch_turned_off",
+      "title": {
+        "en": "Switch turned off",
+        "fr": "Interrupteur désactivé"
+      },
+      "hint": {
+        "en": "When a DIY switch is turned off",
+        "fr": "Quand un interrupteur DIY est désactivé"
+      },
+      "tokens": [
+        {
+          "name": "endpoint",
+          "type": "number",
+          "title": {
+            "en": "Endpoint",
+            "fr": "Point de terminaison"
+          },
+          "example": 1
+        }
+      ]
+    },
+    {
+      "id": "generic_diy_contact_opened",
+      "title": {
+        "en": "Contact opened",
+        "fr": "Contact ouvert"
+      },
+      "hint": {
+        "en": "When the DIY contact sensor opens",
+        "fr": "Quand le capteur de contact DIY s'ouvre"
+      }
+    },
+    {
+      "id": "generic_diy_contact_closed",
+      "title": {
+        "en": "Contact closed",
+        "fr": "Contact fermé"
+      },
+      "hint": {
+        "en": "When the DIY contact sensor closes",
+        "fr": "Quand le capteur de contact DIY se ferme"
+      }
+    },
+    {
+      "id": "generic_diy_illuminance_changed",
+      "title": {
+        "en": "Illuminance changed",
+        "fr": "Luminosité changée"
+      },
+      "hint": {
+        "en": "When the DIY light sensor value changes",
+        "fr": "Quand la luminosité du capteur DIY change"
+      },
+      "tokens": [
+        {
+          "name": "lux",
+          "type": "number",
+          "title": {
+            "en": "Illuminance (lux)",
+            "fr": "Luminosité (lux)"
+          },
+          "example": 500
+        }
+      ]
+    },
+    {
+      "id": "generic_diy_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      },
+      "hint": {
+        "en": "When the DIY device battery is low",
+        "fr": "Quand la batterie du dispositif DIY est faible"
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "Battery %",
+            "fr": "Batterie %"
+          },
+          "example": 15
+        }
+      ]
+    },
+    {
+      "id": "generic_diy_pressure_changed",
+      "title": {
+        "en": "Pressure changed",
+        "fr": "Pression changée"
+      },
+      "hint": {
+        "en": "When the DIY pressure sensor value changes",
+        "fr": "Quand la pression du capteur DIY change"
+      },
+      "tokens": [
+        {
+          "name": "pressure",
+          "type": "number",
+          "title": {
+            "en": "Pressure (hPa)",
+            "fr": "Pression (hPa)"
+          },
+          "example": 1013
+        }
+      ]
+    },
+    {
+      "id": "generic_diy_analog_changed",
+      "title": {
+        "en": "Analog value changed",
+        "fr": "Valeur analogique changée"
+      },
+      "hint": {
+        "en": "When a DIY analog input changes",
+        "fr": "Quand une entrée analogique DIY change"
+      },
+      "tokens": [
+        {
+          "name": "value",
+          "type": "number",
+          "title": {
+            "en": "Value",
+            "fr": "Valeur"
+          },
+          "example": 512
+        },
+        {
+          "name": "endpoint",
+          "type": "number",
+          "title": {
+            "en": "Endpoint",
+            "fr": "Point de terminaison"
+          },
+          "example": 1
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "generic_diy_is_on",
+      "title": {
+        "en": "DIY switch is on",
+        "fr": "Interrupteur DIY est activé"
+      },
+      "hint": {
+        "en": "Check if the DIY switch is on",
+        "fr": "Vérifie si l'interrupteur DIY est activé"
+      }
+    },
+    {
+      "id": "generic_diy_motion_active",
+      "title": {
+        "en": "Motion is detected",
+        "fr": "Mouvement détecté"
+      },
+      "hint": {
+        "en": "Check if motion is currently detected",
+        "fr": "Vérifie si un mouvement est actuellement détecté"
+      }
+    },
+    {
+      "id": "generic_diy_contact_open",
+      "title": {
+        "en": "Contact is open",
+        "fr": "Contact est ouvert"
+      },
+      "hint": {
+        "en": "Check if the contact sensor is open",
+        "fr": "Vérifie si le capteur de contact est ouvert"
+      }
+    },
+    {
+      "id": "generic_diy_temperature_above",
+      "title": {
+        "en": "Temperature is above...",
+        "fr": "Température supérieure à..."
+      },
+      "hint": {
+        "en": "Check if temperature is above a value",
+        "fr": "Vérifie si la température est supérieure à une valeur"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "temperature",
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
+          "placeholder": {
+            "en": "25",
+            "fr": "25"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generic_diy_humidity_above",
+      "title": {
+        "en": "Humidity is above...",
+        "fr": "Humidité supérieure à..."
+      },
+      "hint": {
+        "en": "Check if humidity is above a value",
+        "fr": "Vérifie si l'humidité est supérieure à une valeur"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "humidity",
+          "title": {
+            "en": "Humidity",
+            "fr": "Humidité"
+          },
+          "placeholder": {
+            "en": "60",
+            "fr": "60"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generic_diy_battery_below",
+      "title": {
+        "en": "Battery is below...",
+        "fr": "Batterie inférieure à..."
+      },
+      "hint": {
+        "en": "Check if battery is below a percentage",
+        "fr": "Vérifie si la batterie est inférieure à un pourcentage"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "battery",
+          "title": {
+            "en": "Battery %",
+            "fr": "Batterie %"
+          },
+          "placeholder": {
+            "en": "20",
+            "fr": "20"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "generic_diy_turn_on",
+      "title": {
+        "en": "Turn on DIY switch",
+        "fr": "Activer interrupteur DIY"
+      },
+      "hint": {
+        "en": "Turn on the DIY switch",
+        "fr": "Active l'interrupteur DIY"
+      }
+    },
+    {
+      "id": "generic_diy_turn_off",
+      "title": {
+        "en": "Turn off DIY switch",
+        "fr": "Désactiver interrupteur DIY"
+      },
+      "hint": {
+        "en": "Turn off the DIY switch",
+        "fr": "Désactive l'interrupteur DIY"
+      }
+    },
+    {
+      "id": "generic_diy_toggle",
+      "title": {
+        "en": "Toggle DIY switch",
+        "fr": "Basculer interrupteur DIY"
+      },
+      "hint": {
+        "en": "Toggle the DIY switch state",
+        "fr": "Bascule l'état de l'interrupteur DIY"
+      }
+    },
+    {
+      "id": "generic_diy_set_dim",
+      "title": {
+        "en": "Set DIY dimmer level",
+        "fr": "Définir niveau variateur DIY"
+      },
+      "hint": {
+        "en": "Set the brightness level",
+        "fr": "Définit le niveau de luminosité"
+      },
+      "args": [
+        {
+          "type": "range",
+          "name": "level",
+          "title": {
+            "en": "Level",
+            "fr": "Niveau"
+          },
+          "min": 0,
+          "max": 1,
+          "step": 0.01
+        }
+      ]
+    },
+    {
+      "id": "generic_diy_identify",
+      "title": {
+        "en": "Identify DIY device",
+        "fr": "Identifier dispositif DIY"
+      },
+      "hint": {
+        "en": "Make the DIY device blink/beep to identify it",
+        "fr": "Fait clignoter/biper le dispositif DIY pour l'identifier"
+      }
+    },
+    {
+      "id": "generic_diy_turn_on_endpoint",
+      "title": {
+        "en": "Turn on endpoint...",
+        "fr": "Activer endpoint..."
+      },
+      "hint": {
+        "en": "Turn on a specific endpoint (for multi-switch DIY devices)",
+        "fr": "Active un endpoint spécifique (pour dispositifs DIY multi-interrupteurs)"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "endpoint",
+          "title": {
+            "en": "Endpoint",
+            "fr": "Endpoint"
+          },
+          "min": 1,
+          "max": 8
+        }
+      ]
+    },
+    {
+      "id": "generic_diy_turn_off_endpoint",
+      "title": {
+        "en": "Turn off endpoint...",
+        "fr": "Désactiver endpoint..."
+      },
+      "hint": {
+        "en": "Turn off a specific endpoint",
+        "fr": "Désactive un endpoint spécifique"
+      },
+      "args": [
+        {
+          "type": "number",
+          "name": "endpoint",
+          "title": {
+            "en": "Endpoint",
+            "fr": "Endpoint"
+          },
+          "min": 1,
+          "max": 8
+        }
+      ]
+    }
+  ]
+}
