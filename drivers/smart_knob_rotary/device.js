@@ -14,6 +14,11 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     // Initialize brightness simulation state
     this._simulatedBrightness = 0.5;
 
+    // v5.5.990: Track OnOff state to filter heartbeat vs real button press (Ernst02507 fix)
+    this._lastOnOffValue = null;
+    this._lastOnOffTime = 0;
+    this._isTS004F = (this.getSetting('zb_model_id') || '').includes('TS004F');
+
     // Set initial dim value
     if (this.hasCapability('dim')) {
       await this.setCapabilityValue('dim', this._simulatedBrightness).catch(this.error);
@@ -118,9 +123,33 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
       if (zclNode.endpoints[1] && zclNode.endpoints[1].clusters[CLUSTER.ON_OFF.NAME]) {
         const onOffCluster = zclNode.endpoints[1].clusters[CLUSTER.ON_OFF.NAME];
         
-        // Attribute change
+        // v5.5.990: Attribute change - filter heartbeat vs real button press (Ernst02507 fix)
+        // TS004F devices send OnOff heartbeat every ~10min which is NOT a button press
+        // Real button events come via Scenes cluster for TS004F
         onOffCluster.on('attr.onOff', (value) => {
-          this.log('On/Off attr change:', value);
+          const now = Date.now();
+          const timeSinceLast = now - this._lastOnOffTime;
+          const isSameValue = value === this._lastOnOffValue;
+          
+          this.log('[ONOFF] attr.onOff:', value, '| same:', isSameValue, '| delta:', timeSinceLast, 'ms');
+          
+          // For TS004F: Ignore attr reports - real button events come via Scenes cluster
+          // This prevents heartbeat (every 10min) from triggering flows
+          if (this._isTS004F) {
+            this.log('[ONOFF] TS004F: Ignoring attr.onOff (use Scenes cluster for button events)');
+            this._lastOnOffValue = value;
+            this._lastOnOffTime = now;
+            return;
+          }
+          
+          // For non-TS004F: Filter same-value reports within 5 seconds (likely heartbeat)
+          if (isSameValue && timeSinceLast < 5000) {
+            this.log('[ONOFF] Filtered: same value within 5s (likely heartbeat)');
+            return;
+          }
+          
+          this._lastOnOffValue = value;
+          this._lastOnOffTime = now;
           this._triggerButtonPress(value ? 'on' : 'off');
         });
         
@@ -222,17 +251,89 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     }
   }
 
-  // v5.5.976: Scenes cluster for TS004F (Ernst02507)
+  // v5.5.990: Enhanced Scenes cluster for TS004F (Ernst02507 fix)
+  // TS004F sends button events via Scenes cluster, NOT OnOff attr reports
   async _setupScenesCluster(zclNode) {
     try {
       const ep = zclNode.endpoints[1];
-      const sc = ep?.clusters?.scenes || ep?.clusters?.[5];
+      if (!ep) return;
+
+      // Try to get scenes cluster from bindings (output cluster)
+      const sc = ep.clusters?.scenes || ep.clusters?.[5] || 
+                 ep.bindings?.scenes || ep.bindings?.[5];
+      
       if (sc) {
-        sc.on('recall', (p) => { this.log('[SCENES] recall:', p); this._handleSceneCommand(p.sceneId ?? p); });
-        sc.on('recallScene', (p) => { this.log('[SCENES] recallScene:', p); this._handleSceneCommand(p.sceneId ?? p); });
-        if (typeof sc.bind === 'function') await sc.bind().catch(() => {});
+        this.log('[SCENES] Setting up Scenes cluster listeners');
+        
+        // Listen for all possible scene events
+        sc.on('recall', (p) => { 
+          this.log('[SCENES] recall:', JSON.stringify(p)); 
+          this._handleSceneCommand(p?.sceneId ?? p?.groupId ?? p); 
+        });
+        sc.on('recallScene', (p) => { 
+          this.log('[SCENES] recallScene:', JSON.stringify(p)); 
+          this._handleSceneCommand(p?.sceneId ?? p); 
+        });
+        sc.on('storeScene', (p) => { 
+          this.log('[SCENES] storeScene:', JSON.stringify(p)); 
+        });
+        sc.on('addScene', (p) => { 
+          this.log('[SCENES] addScene:', JSON.stringify(p)); 
+          this._handleSceneCommand(p?.sceneId ?? 0); 
+        });
+        
+        // Bind to receive scene commands
+        if (typeof sc.bind === 'function') {
+          await sc.bind().catch(e => this.log('[SCENES] Bind error:', e.message));
+        }
+        
+        this.log('[SCENES] ✅ Scenes cluster listeners configured');
+      } else {
+        this.log('[SCENES] No scenes cluster found');
       }
-    } catch (e) { this.log('[SCENES] Error:', e.message); }
+
+      // v5.5.990: Also listen for raw scene commands via endpoint
+      this._setupRawSceneListener(ep);
+      
+    } catch (e) { 
+      this.log('[SCENES] Setup error:', e.message); 
+    }
+  }
+
+  // v5.5.990: Raw scene command listener for TS004F (Ernst02507)
+  _setupRawSceneListener(endpoint) {
+    try {
+      // Listen for commands on scenes cluster (0x0005 = 5)
+      const originalHandleFrame = endpoint.handleFrame?.bind(endpoint);
+      
+      endpoint.handleFrame = (clusterId, frame, meta) => {
+        // Scenes cluster = 5
+        if (clusterId === 5 || clusterId === 0x0005) {
+          this.log('[SCENES-RAW] Frame on cluster 5:', frame?.toString('hex'), meta);
+          
+          // Parse scene command
+          if (frame && frame.length >= 1) {
+            const cmdId = frame[0];
+            // recallScene = 0x05, addScene = 0x00
+            if (cmdId === 0x05 && frame.length >= 4) {
+              const groupId = frame.readUInt16LE(1);
+              const sceneId = frame[3];
+              this.log('[SCENES-RAW] Recall scene:', sceneId, 'group:', groupId);
+              this._handleSceneCommand(sceneId);
+            }
+          }
+        }
+        
+        // Call original handler
+        if (originalHandleFrame) {
+          return originalHandleFrame(clusterId, frame, meta);
+        }
+      };
+      
+      this.log('[SCENES-RAW] Raw frame interceptor installed');
+    } catch (e) {
+      this.log('[SCENES-RAW] Setup error:', e.message);
+    }
   }
 
   _handleSceneCommand(sceneId) {
