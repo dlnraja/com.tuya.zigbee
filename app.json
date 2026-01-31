@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.7.14",
+  "version": "5.7.15",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -8626,12 +8626,6 @@
           "nl": "Fysiek AAN",
           "de": "Physisch EIN"
         },
-        "titleFormatted": {
-          "en": "[[device]] turned on (physical)",
-          "fr": "[[device]] allumé (physique)",
-          "nl": "[[device]] aan (fysiek)",
-          "de": "[[device]] ein (physisch)"
-        },
         "hint": {
           "en": "Physical button turns ON",
           "fr": "Bouton physique allume",
@@ -8654,12 +8648,6 @@
           "nl": "Fysiek UIT",
           "de": "Physisch AUS"
         },
-        "titleFormatted": {
-          "en": "[[device]] turned off (physical)",
-          "fr": "[[device]] éteint (physique)",
-          "nl": "[[device]] uit (fysiek)",
-          "de": "[[device]] aus (physisch)"
-        },
         "args": [
           {
             "type": "device",
@@ -8675,12 +8663,6 @@
           "fr": "Simple pression",
           "nl": "Enkele druk",
           "de": "Einfacher Druck"
-        },
-        "titleFormatted": {
-          "en": "[[device]] single press (physical)",
-          "fr": "[[device]] simple pression (physique)",
-          "nl": "[[device]] enkele druk (fysiek)",
-          "de": "[[device]] einfacher Druck (physisch)"
         },
         "hint": {
           "en": "Physical button single press",
@@ -8704,12 +8686,6 @@
           "nl": "Dubbele druk",
           "de": "Doppelter Druck"
         },
-        "titleFormatted": {
-          "en": "[[device]] double press (physical)",
-          "fr": "[[device]] double pression (physique)",
-          "nl": "[[device]] dubbele druk (fysiek)",
-          "de": "[[device]] doppelter Druck (physisch)"
-        },
         "hint": {
           "en": "Physical button double press",
           "fr": "Double pression du bouton physique",
@@ -8731,12 +8707,6 @@
           "fr": "Pression longue",
           "nl": "Lange druk",
           "de": "Langer Druck"
-        },
-        "titleFormatted": {
-          "en": "[[device]] long press (physical)",
-          "fr": "[[device]] pression longue (physique)",
-          "nl": "[[device]] lange druk (fysiek)",
-          "de": "[[device]] langer Druck (physisch)"
         },
         "hint": {
           "en": "Physical button held >600ms",
@@ -8769,12 +8739,6 @@
           "fr": "Triple pression",
           "nl": "Drievoudige druk",
           "de": "Dreifacher Druck"
-        },
-        "titleFormatted": {
-          "en": "[[device]] triple press (physical)",
-          "fr": "[[device]] triple pression (physique)",
-          "nl": "[[device]] drievoudige druk (fysiek)",
-          "de": "[[device]] dreifacher Druck (physisch)"
         },
         "hint": {
           "en": "Physical button triple press or more",
@@ -8872,12 +8836,6 @@
           "nl": "Fysieke knop gang 1 AAN",
           "de": "Physische Taste gang 1 EIN"
         },
-        "titleFormatted": {
-          "en": "[[device]] gang 1 turned on (physical)",
-          "fr": "[[device]] gang 1 allumé (physique)",
-          "nl": "[[device]] gang 1 aangezet (fysiek)",
-          "de": "[[device]] gang 1 eingeschaltet (physisch)"
-        },
         "hint": {
           "en": "Triggers only when physical button turns ON gang 1",
           "fr": "Se déclenche uniquement quand le bouton physique allume gang 1",
@@ -8900,12 +8858,6 @@
           "nl": "Fysieke knop gang 1 UIT",
           "de": "Physische Taste gang 1 AUS"
         },
-        "titleFormatted": {
-          "en": "[[device]] gang 1 turned off (physical)",
-          "fr": "[[device]] gang 1 éteint (physique)",
-          "nl": "[[device]] gang 1 uitgezet (fysiek)",
-          "de": "[[device]] gang 1 ausgeschaltet (physisch)"
-        },
         "args": [
           {
             "type": "device",
@@ -8922,12 +8874,6 @@
           "nl": "Fysieke knop gang 2 AAN",
           "de": "Physische Taste gang 2 EIN"
         },
-        "titleFormatted": {
-          "en": "[[device]] gang 2 turned on (physical)",
-          "fr": "[[device]] gang 2 allumé (physique)",
-          "nl": "[[device]] gang 2 aangezet (fysiek)",
-          "de": "[[device]] gang 2 eingeschaltet (physisch)"
-        },
         "args": [
           {
             "type": "device",
@@ -8943,12 +8889,6 @@
           "fr": "Bouton physique gang 2 OFF",
           "nl": "Fysieke knop gang 2 UIT",
           "de": "Physische Taste gang 2 AUS"
-        },
-        "titleFormatted": {
-          "en": "[[device]] gang 2 turned off (physical)",
-          "fr": "[[device]] gang 2 éteint (physique)",
-          "nl": "[[device]] gang 2 uitgezet (fysiek)",
-          "de": "[[device]] gang 2 ausgeschaltet (physisch)"
         },
         "args": [
           {
@@ -9062,12 +9002,6 @@
           "nl": "Fysiek gang 1 AAN",
           "de": "Physisch gang 1 EIN"
         },
-        "titleFormatted": {
-          "en": "[[device]] gang 1 on (physical)",
-          "fr": "[[device]] gang 1 allumé (physique)",
-          "nl": "[[device]] gang 1 aan (fysiek)",
-          "de": "[[device]] gang 1 ein (physisch)"
-        },
         "hint": {
           "en": "Physical button turns ON gang 1",
           "fr": "Bouton physique allume gang 1",
@@ -9090,12 +9024,6 @@
           "nl": "Fysiek gang 1 UIT",
           "de": "Physisch gang 1 AUS"
         },
-        "titleFormatted": {
-          "en": "[[device]] gang 1 off (physical)",
-          "fr": "[[device]] gang 1 éteint (physique)",
-          "nl": "[[device]] gang 1 uit (fysiek)",
-          "de": "[[device]] gang 1 aus (physisch)"
-        },
         "args": [
           {
             "type": "device",
@@ -9111,12 +9039,6 @@
           "fr": "Physique gang 2 ON",
           "nl": "Fysiek gang 2 AAN",
           "de": "Physisch gang 2 EIN"
-        },
-        "titleFormatted": {
-          "en": "[[device]] gang 2 on (physical)",
-          "fr": "[[device]] gang 2 allumé (physique)",
-          "nl": "[[device]] gang 2 aan (fysiek)",
-          "de": "[[device]] gang 2 ein (physisch)"
         },
         "args": [
           {
@@ -9134,12 +9056,6 @@
           "nl": "Fysiek gang 2 UIT",
           "de": "Physisch gang 2 AUS"
         },
-        "titleFormatted": {
-          "en": "[[device]] gang 2 off (physical)",
-          "fr": "[[device]] gang 2 éteint (physique)",
-          "nl": "[[device]] gang 2 uit (fysiek)",
-          "de": "[[device]] gang 2 aus (physisch)"
-        },
         "args": [
           {
             "type": "device",
@@ -9156,12 +9072,6 @@
           "nl": "Fysiek gang 3 AAN",
           "de": "Physisch gang 3 EIN"
         },
-        "titleFormatted": {
-          "en": "[[device]] gang 3 on (physical)",
-          "fr": "[[device]] gang 3 allumé (physique)",
-          "nl": "[[device]] gang 3 aan (fysiek)",
-          "de": "[[device]] gang 3 ein (physisch)"
-        },
         "args": [
           {
             "type": "device",
@@ -9177,12 +9087,6 @@
           "fr": "Physique gang 3 OFF",
           "nl": "Fysiek gang 3 UIT",
           "de": "Physisch gang 3 AUS"
-        },
-        "titleFormatted": {
-          "en": "[[device]] gang 3 off (physical)",
-          "fr": "[[device]] gang 3 éteint (physique)",
-          "nl": "[[device]] gang 3 uit (fysiek)",
-          "de": "[[device]] gang 3 aus (physisch)"
         },
         "args": [
           {
@@ -9328,12 +9232,6 @@
           "nl": "Fysiek gang 1 AAN",
           "de": "Physisch gang 1 EIN"
         },
-        "titleFormatted": {
-          "en": "[[device]] gang 1 on (physical)",
-          "fr": "[[device]] gang 1 allumé (physique)",
-          "nl": "[[device]] gang 1 aan (fysiek)",
-          "de": "[[device]] gang 1 ein (physisch)"
-        },
         "args": [
           {
             "type": "device",
@@ -9349,12 +9247,6 @@
           "fr": "Physique gang 1 OFF",
           "nl": "Fysiek gang 1 UIT",
           "de": "Physisch gang 1 AUS"
-        },
-        "titleFormatted": {
-          "en": "[[device]] gang 1 off (physical)",
-          "fr": "[[device]] gang 1 éteint (physique)",
-          "nl": "[[device]] gang 1 uit (fysiek)",
-          "de": "[[device]] gang 1 aus (physisch)"
         },
         "args": [
           {
@@ -9372,12 +9264,6 @@
           "nl": "Fysiek gang 2 AAN",
           "de": "Physisch gang 2 EIN"
         },
-        "titleFormatted": {
-          "en": "[[device]] gang 2 on (physical)",
-          "fr": "[[device]] gang 2 allumé (physique)",
-          "nl": "[[device]] gang 2 aan (fysiek)",
-          "de": "[[device]] gang 2 ein (physisch)"
-        },
         "args": [
           {
             "type": "device",
@@ -9393,12 +9279,6 @@
           "fr": "Physique gang 2 OFF",
           "nl": "Fysiek gang 2 UIT",
           "de": "Physisch gang 2 AUS"
-        },
-        "titleFormatted": {
-          "en": "[[device]] gang 2 off (physical)",
-          "fr": "[[device]] gang 2 éteint (physique)",
-          "nl": "[[device]] gang 2 uit (fysiek)",
-          "de": "[[device]] gang 2 aus (physisch)"
         },
         "args": [
           {
@@ -9416,12 +9296,6 @@
           "nl": "Fysiek gang 3 AAN",
           "de": "Physisch gang 3 EIN"
         },
-        "titleFormatted": {
-          "en": "[[device]] gang 3 on (physical)",
-          "fr": "[[device]] gang 3 allumé (physique)",
-          "nl": "[[device]] gang 3 aan (fysiek)",
-          "de": "[[device]] gang 3 ein (physisch)"
-        },
         "args": [
           {
             "type": "device",
@@ -9437,12 +9311,6 @@
           "fr": "Physique gang 3 OFF",
           "nl": "Fysiek gang 3 UIT",
           "de": "Physisch gang 3 AUS"
-        },
-        "titleFormatted": {
-          "en": "[[device]] gang 3 off (physical)",
-          "fr": "[[device]] gang 3 éteint (physique)",
-          "nl": "[[device]] gang 3 uit (fysiek)",
-          "de": "[[device]] gang 3 aus (physisch)"
         },
         "args": [
           {
@@ -9460,12 +9328,6 @@
           "nl": "Fysiek gang 4 AAN",
           "de": "Physisch gang 4 EIN"
         },
-        "titleFormatted": {
-          "en": "[[device]] gang 4 on (physical)",
-          "fr": "[[device]] gang 4 allumé (physique)",
-          "nl": "[[device]] gang 4 aan (fysiek)",
-          "de": "[[device]] gang 4 ein (physisch)"
-        },
         "args": [
           {
             "type": "device",
@@ -9481,12 +9343,6 @@
           "fr": "Physique gang 4 OFF",
           "nl": "Fysiek gang 4 UIT",
           "de": "Physisch gang 4 AUS"
-        },
-        "titleFormatted": {
-          "en": "[[device]] gang 4 off (physical)",
-          "fr": "[[device]] gang 4 éteint (physique)",
-          "nl": "[[device]] gang 4 uit (fysiek)",
-          "de": "[[device]] gang 4 aus (physisch)"
         },
         "args": [
           {

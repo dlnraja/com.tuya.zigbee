@@ -68,12 +68,6 @@
         "nl": "Fysiek gang 1 AAN",
         "de": "Physisch gang 1 EIN"
       },
-      "titleFormatted": {
-        "en": "[[device]] gang 1 on (physical)",
-        "fr": "[[device]] gang 1 allumé (physique)",
-        "nl": "[[device]] gang 1 aan (fysiek)",
-        "de": "[[device]] gang 1 ein (physisch)"
-      },
       "hint": {
         "en": "Physical button turns ON gang 1",
         "fr": "Bouton physique allume gang 1",
@@ -90,12 +84,6 @@
         "nl": "Fysiek gang 1 UIT",
         "de": "Physisch gang 1 AUS"
       },
-      "titleFormatted": {
-        "en": "[[device]] gang 1 off (physical)",
-        "fr": "[[device]] gang 1 éteint (physique)",
-        "nl": "[[device]] gang 1 uit (fysiek)",
-        "de": "[[device]] gang 1 aus (physisch)"
-      },
       "args": []
     },
     {
@@ -105,12 +93,6 @@
         "fr": "Physique gang 2 ON",
         "nl": "Fysiek gang 2 AAN",
         "de": "Physisch gang 2 EIN"
-      },
-      "titleFormatted": {
-        "en": "[[device]] gang 2 on (physical)",
-        "fr": "[[device]] gang 2 allumé (physique)",
-        "nl": "[[device]] gang 2 aan (fysiek)",
-        "de": "[[device]] gang 2 ein (physisch)"
       },
       "args": []
     },
@@ -122,12 +104,6 @@
         "nl": "Fysiek gang 2 UIT",
         "de": "Physisch gang 2 AUS"
       },
-      "titleFormatted": {
-        "en": "[[device]] gang 2 off (physical)",
-        "fr": "[[device]] gang 2 éteint (physique)",
-        "nl": "[[device]] gang 2 uit (fysiek)",
-        "de": "[[device]] gang 2 aus (physisch)"
-      },
       "args": []
     },
     {
@@ -138,12 +114,6 @@
         "nl": "Fysiek gang 3 AAN",
         "de": "Physisch gang 3 EIN"
       },
-      "titleFormatted": {
-        "en": "[[device]] gang 3 on (physical)",
-        "fr": "[[device]] gang 3 allumé (physique)",
-        "nl": "[[device]] gang 3 aan (fysiek)",
-        "de": "[[device]] gang 3 ein (physisch)"
-      },
       "args": []
     },
     {
@@ -153,12 +123,6 @@
         "fr": "Physique gang 3 OFF",
         "nl": "Fysiek gang 3 UIT",
         "de": "Physisch gang 3 AUS"
-      },
-      "titleFormatted": {
-        "en": "[[device]] gang 3 off (physical)",
-        "fr": "[[device]] gang 3 éteint (physique)",
-        "nl": "[[device]] gang 3 uit (fysiek)",
-        "de": "[[device]] gang 3 aus (physisch)"
       },
       "args": []
     }
