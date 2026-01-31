@@ -616,8 +616,8 @@
         "deviceName": "HOBEIAN ZG-204ZL PIR Sensor (PIR-only)",
         "manufacturerName": "_TZE200_3towulqd",
         "productId": "TS0601",
-        "source": "Z2M #12364, Peter_van_Werkhoven #1225, Blakadder database",
-        "user": "Peter_van_Werkhoven",
+        "source": "Z2M #12364, Peter_van_Werkhoven #1225, 4x4_Pete #788, #810",
+        "users": ["Peter_van_Werkhoven", "4x4_Pete"],
         "status": "fixed",
         "priority": "high",
         "dpMap": {
@@ -632,15 +632,55 @@
           "Wrong classification as ZG-204ZV"
         ],
         "rootCause": "Same _TZE200_3towulqd can be ZG-204ZL (PIR-only) OR ZG-204ZV (with temp/humidity) - manufacturer variants",
-        "fix": {
-          "applied": true,
-          "version": "5.5.920",
-          "description": "Removed false temp/humidity, added battery DP4. Permissive variant mode - dynamic capability detection"
-        },
+        "fixHistory": [
+          {"version": "5.5.329", "fix": "Remove incorrect temp/humidity (4x4_Pete #788)"},
+          {"version": "5.5.335", "fix": "PIR_ONLY_MANUFACTURERS list (4x4_Pete #810)"},
+          {"version": "5.5.920", "fix": "Battery DP4 + permissive variant mode (Peter_van_Werkhoven #1225)"}
+        ],
         "crossReference": [
           "Z2M #12364: ZG-204ZL support request",
           "HA Community: Custom ZHA quirk guide",
           "SmartHomeScene: ZG-204ZM review"
+        ],
+        "driver": "presence_sensor_radar"
+      },
+      {
+        "id": "INT-145",
+        "deviceName": "HOBEIAN ZG-204ZM PIR+24GHz Radar Sensor",
+        "manufacturerName": "_TZE200_2aaelwxk",
+        "productId": "TS0601",
+        "source": "SmartHomeScene review, 4x4_Pete forum #788-851, Z2M Discussion #28529",
+        "user": "4x4_Pete",
+        "status": "fixed",
+        "priority": "high",
+        "inputClusters": [0, 1, 3, 61184, 1024, 1280],
+        "dpMap": {
+          "DP1": "presence (binary)",
+          "DP2": "motion_state (none/small/large/static)",
+          "DP4": "measure_luminance (lux)",
+          "DP9": "static_detection_distance (0-10m)",
+          "DP10": "static_detection_sensitivity (0-10)",
+          "DP12": "fading_time (0-28800s)",
+          "DP13": "LED indicator (on/off)",
+          "DP15": "measure_battery"
+        },
+        "symptoms": [
+          "Wrong driver pairing (radar vs motion_sensor)",
+          "Battery spam (100% <-> 1-2%)",
+          "Duplicate DP15 reports"
+        ],
+        "fixHistory": [
+          {"version": "5.5.364", "fix": "Removed duplicate productIds from motion_sensor (#848)"},
+          {"version": "5.5.366", "fix": "Battery throttling + PIR_ONLY list (#851)"},
+          {"version": "5.5.394", "fix": "NEW: ZG-204ZM Motion Sensor support"},
+          {"version": "5.5.395", "fix": "ENHANCED: PIR+24GHz Radar with Z2M settings"},
+          {"version": "5.5.511-512", "fix": "ZCL+Tuya hybrid detection + HOBEIAN mfr list"},
+          {"version": "5.5.983", "fix": "Battery spam fix (throttle + remove dup DP15)"}
+        ],
+        "crossReference": [
+          "SmartHomeScene: https://smarthomescene.com/reviews/zigbee-battery-powered-presence-sensor-zg-204zm-review/",
+          "Z2M Discussion #28529: ZG-204ZM not supported",
+          "HA Community: ZG-204ZM issues with Z2M"
         ],
         "driver": "presence_sensor_radar"
       },
@@ -720,16 +760,45 @@
   "recurringPatterns": {
     "Peter_van_Werkhoven": {
       "totalFixes": 20,
-      "devices": ["HOBEIAN ZG-204ZV", "HOBEIAN ZG-204ZL", "HOBEIAN ZG-204ZM"],
+      "devices": ["HOBEIAN ZG-204ZV"],
+      "forumPosts": ["#1203", "#1204", "#1211", "#1225", "#1253", "#1265", "#1282"],
       "commonIssues": [
-        "Humidity multiplier (9% vs 90%)",
-        "Lux smoothing/throttling (disco lights)",
-        "PIR-only vs multisensor variant detection",
-        "Distance divisor (cm/dm/m)",
-        "Missing temp/humidity after updates",
-        "Battery capability auto-add"
+        "Humidity multiplier (9% vs 90%) - v5.5.953, v5.5.987",
+        "Lux smoothing/throttling (disco lights) - v5.5.985-986",
+        "Missing temp/humidity after updates - v5.5.919, v5.5.984",
+        "Distance divisor (cm/dm/m) - v5.5.927-929",
+        "SOS button not triggering - v5.5.841",
+        "Battery capability auto-add - v5.5.907",
+        "ZCL temp/humidity cluster listeners - v5.5.912"
       ],
-      "versionRange": "v5.5.841 - v5.5.987"
+      "versionRange": "v5.5.841 - v5.5.987",
+      "crossReference": [
+        "Z2M: https://www.zigbee2mqtt.io/devices/ZG-204ZV.html",
+        "ZHA #4452, #4517, #4268"
+      ]
+    },
+    "4x4_Pete": {
+      "totalFixes": 10,
+      "devices": ["HOBEIAN ZG-204ZM", "HOBEIAN ZG-204ZL"],
+      "forumPosts": ["#788", "#810", "#848", "#851"],
+      "commonIssues": [
+        "Wrong driver pairing (radar vs motion_sensor) - v5.5.364, v5.5.511-512",
+        "Battery spam (throttling + duplicate DP15) - v5.5.366, v5.5.983",
+        "PIR-only temp/humidity removal - v5.5.329, v5.5.335",
+        "ZCL+Tuya hybrid detection - v5.5.512",
+        "PIR+24GHz Radar settings - v5.5.394-395"
+      ],
+      "versionRange": "v5.5.329 - v5.5.983",
+      "crossReference": [
+        "SmartHomeScene: ZG-204ZM Review",
+        "Z2M Discussion #28529",
+        "HA Community: ZG-204ZM issues"
+      ]
+    },
+    "Peter-Celica": {
+      "totalContributions": 1,
+      "type": "Credited contributor",
+      "versionRange": "v5.5.931"
     },
     "Lasse_K": {
       "totalFixes": 8,
