@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.1** | 📚 ZHA Quirks enrichment: Added irrigation valve fingerprints (SASWELL SAS980... |
 | **v5.7.0** | 🔧 NEW: Generic DIY Zigbee Driver - Supports ESP32-C6/H2, PTVO firmware, CC25... |
 | **v5.6.3** | 🔌 USB Dongle: Added exact mixed-case _TZ3000_h1ipgkwn fingerprint (from Z2M ... |
 | **v5.6.2** | 🔧 FIX: HOBEIAN 10G radar humidity ×10 multiplier (was showing 9% instead of ... |
@@ -78,7 +79,6 @@
 | **v5.5.998** | 🔧 FIX: Longsam _TZE204_xu4a5rhj curtain motor - Position INVERTED (DP2: 100-... |
 | **v5.5.997** | 🔧 FIX: PhysicalButtonMixin - Tuya DP physical button detection for hybrid de... |
 | **v5.5.996** | 🔧 FIX: PhysicalButtonMixin enhanced - ZCL + Tuya DP + Hybrid protocol suppor... |
-| **v5.5.995** | 🔧 FIX: gas_detector duplicate flow card IDs - removed duplicate condition ID... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
