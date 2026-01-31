@@ -38,7 +38,6 @@
       "_TZE204_kds0prmv",
       "_TZE200_fvldku9h",
       "_TZE204_fvldku9h",
-      "_TZE204_lawxy9e2",
       "_TZ3000_hk7wdzrv",
       "_TZ3000_cphmq0q7",
       "_TZ3210_lzqq3u4r",
@@ -261,7 +260,8 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "_TZE204_lawxy9e2"
     ],
     "productId": [
       "TS0601_fanctrl",
@@ -270,7 +270,8 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          61184
         ],
         "bindings": []
       }

@@ -262,19 +262,30 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "_TZE200_U6X1ZYV2",
+      "_tze200_u6x1zyv2",
+      "_TZE204_U6X1ZYV2",
+      "_tze204_u6x1zyv2",
+      "HOBEIAN"
     ],
     "productId": [
       "TS0207_rain",
-      "TS0207",
-      "TS0601"
+      "TS0601",
+      "TS0207"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          1,
+          1280,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          1,
+          1280
+        ]
       }
     }
   },

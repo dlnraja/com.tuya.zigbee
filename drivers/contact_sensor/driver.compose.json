@@ -522,6 +522,7 @@
       "_TZE200_1agwnafq",
       "_TZE200_1ibpyhdc",
       "_TZE200_2hf7x9n3",
+      "_TZE200_3towulqd",
       "_TZE200_44af8ipg",
       "_TZE200_4hbx5cvx",
       "_TZE200_502zx5sl",
@@ -552,7 +553,17 @@
       "_TZE200_d8fp6ivb",
       "_TZE200_dcydapr2",
       "_TZE200_dfry6ylv",
-      "_TZ3000_b7m9qda0"
+      "_TZ3000_b7m9qda0",
+      "eWeLink",
+      "SONOFF",
+      "Eardatek",
+      "EARDATEK",
+      "Linptech",
+      "LINPTECH",
+      "Rehent",
+      "REHENT",
+      "Nous",
+      "NOUS"
     ],
     "productId": [
       "TS0203",
@@ -573,14 +584,21 @@
       "3300-S",
       "3320-L",
       "SNZB-04",
-      "TS0601"
+      "TS0601",
+      "SNZB-04P"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          1,
+          1280,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          1,
+          1280
+        ]
       }
     },
     "learnmode": {
@@ -860,8 +878,7 @@
   ],
   "images": {
     "small": "drivers/contact_sensor/assets/images/small.png",
-    "large": "drivers/contact_sensor/assets/images/large.png",
-    "xlarge": "drivers/contact_sensor/assets/images/xlarge.png"
+    "large": "drivers/contact_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"

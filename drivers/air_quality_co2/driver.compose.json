@@ -238,7 +238,6 @@
       "_TZE200_ryfmq5rl",
       "_TZE200_yvx5lh6k",
       "_TZE200_8ygsuhe1",
-      "_TZE204_laokfqwu",
       "AAQS-S01",
       "lumi.airmonitor.acn01",
       "VINDSTYRKA",
@@ -278,9 +277,13 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          1,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          1
+        ]
       }
     }
   },

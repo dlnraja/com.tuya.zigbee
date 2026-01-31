@@ -88,8 +88,6 @@
       "_TZE204_v9hkz2yn",
       "_TZE200_byzdayie",
       "_TZE284_byzdayie",
-      "_TZE204_81yrt3lo",
-      "_TZE284_81yrt3lo",
       "_TZ3000_qeuvnohg",
       "TOMZN",
       "Tongou",
@@ -303,7 +301,9 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "_TZE204_81yrt3lo",
+      "_TZE284_81yrt3lo"
     ],
     "productId": [
       "TS0601_clamp",
@@ -312,9 +312,20 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          6,
+          2820,
+          1794,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          6,
+          2820,
+          1794
+        ]
       }
     },
     "learnmode": {

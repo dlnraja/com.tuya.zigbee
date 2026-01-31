@@ -341,9 +341,13 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          1,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          1
+        ]
       }
     }
   },
@@ -471,8 +475,7 @@
   ],
   "images": {
     "small": "drivers/soil_sensor/assets/images/small.png",
-    "large": "drivers/soil_sensor/assets/images/large.png",
-    "xlarge": "drivers/soil_sensor/assets/images/xlarge.png"
+    "large": "drivers/soil_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"

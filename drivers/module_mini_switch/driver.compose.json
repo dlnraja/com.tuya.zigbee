@@ -261,24 +261,30 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "SONOFF",
+      "eWeLink"
     ],
     "productId": [
       "ZBMINI",
-      "ZBMINI-L"
+      "ZBMINI-L",
+      "ZBMINIL2",
+      "ZBMINIR2",
+      "01MINIZB"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          6,
+          61184
         ],
-        "bindings": []
-      },
-      "2": {
-        "clusters": [
-          0
-        ],
-        "bindings": []
+        "bindings": [
+          6
+        ]
       }
     },
     "learnmode": {
@@ -551,8 +557,7 @@
   ],
   "images": {
     "small": "drivers/module_mini_switch/assets/images/small.png",
-    "large": "drivers/module_mini_switch/assets/images/large.png",
-    "xlarge": "drivers/module_mini_switch/assets/images/xlarge.png"
+    "large": "drivers/module_mini_switch/assets/images/large.png"
   },
   "platforms": [
     "local"

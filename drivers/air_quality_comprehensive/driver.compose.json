@@ -238,7 +238,6 @@
       "Zen Thermostat",
       "_TZE200_dwcarsat",
       "_TZE200_ryfmq5rl",
-      "_TZE204_laokfqwu",
       "AAQS-S01",
       "lumi.airmonitor.acn01",
       "VINDSTYRKA",
@@ -271,7 +270,8 @@
       "Vision",
       "Monoprice",
       "_TZE204_yvx5lh6k",
-      "_tze204_yvx5lh6k"
+      "_tze204_yvx5lh6k",
+      "_TZE200_8ygsuhe1"
     ],
     "productId": [
       "TS0005",
@@ -281,9 +281,13 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          1,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          1
+        ]
       }
     },
     "learnmode": {
@@ -521,8 +525,7 @@
   ],
   "images": {
     "small": "drivers/air_quality_comprehensive/assets/images/small.png",
-    "large": "drivers/air_quality_comprehensive/assets/images/large.png",
-    "xlarge": "drivers/air_quality_comprehensive/assets/images/xlarge.png"
+    "large": "drivers/air_quality_comprehensive/assets/images/large.png"
   },
   "platforms": [
     "local"

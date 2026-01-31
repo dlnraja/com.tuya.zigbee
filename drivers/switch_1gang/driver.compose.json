@@ -22,9 +22,16 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          6,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          6
+        ]
       }
     },
     "learnmode": {
@@ -34,10 +41,28 @@
       }
     },
     "manufacturerName": [
-      "_TZ3000_BLHVSAQF",
-      "_tz3000_blhvsaqf",
-      "_TZ3000_YSDV91BK",
-      "_tz3000_ysdv91bk",
+      "_TZ3000_npzfdcof",
+      "_tz3000_npzfdcof",
+      "_TZ3000_hktqahrq",
+      "_tz3000_hktqahrq",
+      "_TZ3000_mx3vgyea",
+      "_tz3000_mx3vgyea",
+      "_TZ3000_5ng23zjs",
+      "_tz3000_5ng23zjs",
+      "_TZ3000_rmjr4ufz",
+      "_tz3000_rmjr4ufz",
+      "_TZ3000_v7gnj3ad",
+      "_tz3000_v7gnj3ad",
+      "_TZ3000_qsp2pwtf",
+      "_tz3000_qsp2pwtf",
+      "_TZ3000_ovyaisip",
+      "_tz3000_ovyaisip",
+      "_TZ3000_4rbqgcuv",
+      "_tz3000_4rbqgcuv",
+      "_TZ3000_pk8tgtdb",
+      "_tz3000_pk8tgtdb",
+      "_TZ3000_syoxtjf0",
+      "_tz3000_syoxtjf0",
       "_tyzb01_1xktopx6",
       "_tyzb01_4mdqxxnn",
       "_TYZB01_4qw4rl1u",
@@ -146,6 +171,8 @@
       "_tz3000_b7bxojrg",
       "_TZ3000_BB6XAIHH",
       "_tz3000_bb6xaihh",
+      "_TZ3000_BLHVSAQF",
+      "_tz3000_blhvsaqf",
       "_TZ3000_BPPXJ3SF",
       "_tz3000_bppxj3sf",
       "_TZ3000_BZCZR4E1",
@@ -208,8 +235,6 @@
       "_tz3000_iaxvag8w",
       "_TZ3000_IT1HM1CR",
       "_tz3000_it1hm1cr",
-      "_TZ3000_J9568H44",
-      "_tz3000_j9568h44",
       "_TZ3000_JRPDAUJD",
       "_tz3000_jrpdaujd",
       "_TZ3000_KJ0NWDZ6",
@@ -332,12 +357,12 @@
       "_tz3000_yirp2pgd",
       "_TZ3000_YL3ZUYAW",
       "_tz3000_yl3zuyaw",
+      "_TZ3000_YSDV91BK",
+      "_tz3000_ysdv91bk",
       "_TZ3000_YW5TVZSK",
       "_tz3000_yw5tvzsk",
       "_TZ3000_ZFMXVPRS",
       "_tz3000_zfmxvprs",
-      "_TZ3000_ZMLUNNHY",
-      "_tz3000_zmlunnhy",
       "_TZ3000_zmy4lslw",
       "_tz3000_zmy4lslw",
       "_TZ3000_ZW7YF6YK",
@@ -353,12 +378,6 @@
       "kjintbl",
       "losfena",
       "qnazj70",
-      "_TZ3000_o4cjetlm",
-      "_TZ3000_iedbgyxt",
-      "_TZ3000_h3noz0a5",
-      "_TZ3000_5ucujjts",
-      "_TZ3000_h8ngtlxy",
-      "_TZ3000_w0ypwa1f",
       "_TZ3000_wpueorev",
       "_TZ3000_cmcjbqup",
       "_TZ3000_jcqs2mrv",
@@ -638,8 +657,6 @@
       "_TZ3000_vp6clf9d",
       "_TZ3000_vsasbzkf",
       "_TZ3000_w0qqde0g",
-      "_TZ3000_qkixdnon",
-      "_TZ3000_l9brjwau",
       "Bitron Home",
       "Comap",
       "DIYRUZ",
@@ -750,8 +767,6 @@
       "_TZ3000_4hbrrn7e",
       "_TZ3210_tqlv4ug4",
       "_tz3210_tqlv4ug4",
-      "_TZ3218_7fiyo3kv",
-      "_tz3218_7fiyo3kv",
       "_TZE284_DMCKRSXG",
       "_tze284_dmckrsxg"
     ]

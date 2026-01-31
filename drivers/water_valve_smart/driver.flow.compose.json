@@ -3,76 +3,127 @@
     {
       "id": "water_valve_smart_opened",
       "highlight": true,
-      "title": { "en": "Valve opened", "nl": "Klep geopend" },
-      "hint": { "en": "Triggers when the water valve is opened" },
+      "title": {
+        "en": "Valve opened",
+        "nl": "Klep geopend"
+      },
+      "hint": {
+        "en": "Triggers when the water valve is opened"
+      },
       "args": []
     },
     {
       "id": "water_valve_smart_closed",
-      "title": { "en": "Valve closed", "nl": "Klep gesloten" },
+      "title": {
+        "en": "Valve closed",
+        "nl": "Klep gesloten"
+      },
       "args": []
     },
     {
       "id": "water_valve_smart_leak_detected",
       "highlight": true,
-      "title": { "en": "Water leak detected!", "nl": "Waterlek gedetecteerd!" },
+      "title": {
+        "en": "Water leak detected!",
+        "nl": "Waterlek gedetecteerd!"
+      },
       "args": []
     },
     {
       "id": "water_valve_smart_leak_cleared",
-      "title": { "en": "Water leak cleared", "nl": "Waterlek opgeheven" },
+      "title": {
+        "en": "Water leak cleared",
+        "nl": "Waterlek opgeheven"
+      },
       "args": []
     },
     {
       "id": "water_valve_smart_temperature_changed",
-      "title": { "en": "Temperature changed" },
-      "titleFormatted": { "en": "Temperature changed to [[temperature]]C" },
-      "tokens": [{ "name": "temperature", "type": "number", "title": { "en": "Temperature" } }],
+      "title": {
+        "en": "Temperature changed"
+      },
+      "titleFormatted": {
+        "en": "Temperature changed to [[temperature]]C"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature"
+          }
+        }
+      ],
       "args": []
     },
     {
       "id": "water_valve_smart_frost_warning",
-      "title": { "en": "Frost warning" },
+      "title": {
+        "en": "Frost warning"
+      },
       "args": []
     },
     {
       "id": "water_valve_smart_battery_low",
-      "title": { "en": "Battery is low" },
+      "title": {
+        "en": "Battery is low"
+      },
       "args": []
     }
   ],
   "conditions": [
     {
       "id": "water_valve_smart_is_open",
-      "title": { "en": "Valve !{{is|is not}} open" },
+      "title": {
+        "en": "Valve !{{is|is not}} open"
+      },
       "args": []
     },
     {
       "id": "water_valve_smart_leak_is_detected",
-      "title": { "en": "Water leak !{{is|is not}} detected" },
+      "title": {
+        "en": "Water leak !{{is|is not}} detected"
+      },
       "args": []
     },
     {
       "id": "water_valve_smart_temperature_above",
-      "title": { "en": "Temperature !{{is|is not}} above" },
-      "titleFormatted": { "en": "Temperature !{{is|is not}} above [[temp]]C" },
-      "args": [{ "name": "temp", "type": "number", "min": -20, "max": 60 }]
+      "title": {
+        "en": "Temperature !{{is|is not}} above"
+      },
+      "titleFormatted": {
+        "en": "Temperature !{{is|is not}} above [[temp]]C"
+      },
+      "args": [
+        {
+          "name": "temp",
+          "type": "number",
+          "min": -20,
+          "max": 60
+        }
+      ]
     }
   ],
   "actions": [
     {
       "id": "water_valve_smart_open",
-      "title": { "en": "Open valve" },
+      "title": {
+        "en": "Open valve"
+      },
       "args": []
     },
     {
       "id": "water_valve_smart_close",
-      "title": { "en": "Close valve" },
+      "title": {
+        "en": "Close valve"
+      },
       "args": []
     },
     {
       "id": "water_valve_smart_toggle",
-      "title": { "en": "Toggle valve" },
+      "title": {
+        "en": "Toggle valve"
+      },
       "args": []
     }
   ]

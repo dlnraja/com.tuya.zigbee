@@ -235,16 +235,26 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          6,
+          2820,
+          1794,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          6,
+          2820,
+          1794
+        ]
       }
     }
   },
   "images": {
     "small": "drivers/switch_plug_2/assets/images/small.png",
-    "large": "drivers/switch_plug_2/assets/images/large.png",
-    "xlarge": "drivers/switch_plug_2/assets/images/xlarge.png"
+    "large": "drivers/switch_plug_2/assets/images/large.png"
   },
   "platforms": [
     "local"

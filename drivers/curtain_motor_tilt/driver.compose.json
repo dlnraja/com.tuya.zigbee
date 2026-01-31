@@ -268,16 +268,22 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          258,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          258
+        ]
       }
     }
   },
   "images": {
     "small": "drivers/curtain_motor_tilt/assets/images/small.png",
-    "large": "drivers/curtain_motor_tilt/assets/images/large.png",
-    "xlarge": "drivers/curtain_motor_tilt/assets/images/xlarge.png"
+    "large": "drivers/curtain_motor_tilt/assets/images/large.png"
   },
   "platforms": [
     "local"
