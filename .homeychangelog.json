@@ -1,4 +1,7 @@
 {
+  "5.7.14": {
+    "en": "🔄 BIDIRECTIONAL DEDUP: Virtual button (app/flow) ↔ Physical button (device) deduplication. Prevents double triggers when pressing virtual button in Homey app while device sends physical event, and vice versa. 1.5s dedup window."
+  },
   "5.7.13": {
     "en": "🧠 SMART DEDUPLICATION: Pattern detection now auto-detects if device natively reports triple/release events (Zigbee, Tuya DP, or hybrid). Skips software detection when native support is detected. Prevents double triggers regardless of protocol."
   },
