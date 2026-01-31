@@ -17,12 +17,13 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      4-GANG SWITCH - v5.5.921 + ZCL-Only Mode (packetninja technique)        ║
+ * ║      4-GANG SWITCH - v5.5.999 + ZCL-Only Mode (packetninja technique)        ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  Features:                                                                   ║
  * ║  - 4 endpoints On/Off (EP1-4)                                               ║
  * ║  - Physical button detection via attribute reports                          ║
  * ║  - BSEED/Zemismart ZCL-only mode: _TZ3002_pzao9ls1, etc.                    ║
+ * ║  v5.5.999: Fixed BSEED virtual button toggle for EP2-4 (diag c33007b0)      ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 
@@ -65,8 +66,9 @@ class Switch4GangDevice extends BaseClass {
   }
 
   /**
-   * v5.5.978: ZCL-Only mode for BSEED/Zemismart 4-gang switches
+   * v5.5.999: ZCL-Only mode for BSEED/Zemismart 4-gang switches
    * Fixed: Register capability listeners for ALL gangs first (before cluster check)
+   * Fixed: EP2-4 virtual button toggle (diagnostic c33007b0)
    */
   async _initZclOnlyMode(zclNode) {
     this._zclState = {
@@ -77,33 +79,44 @@ class Switch4GangDevice extends BaseClass {
     this._zclNode = zclNode;
     this._isZclOnlyMode = true; // v5.5.993: Flag for VirtualButtonMixin direct ZCL
 
-    // Helper to get onOff cluster from endpoint
+    // v5.5.999: Helper to get onOff cluster from endpoint with multiple lookup strategies
     const getOnOffCluster = (epNum) => {
       const ep = this._zclNode?.endpoints?.[epNum];
-      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
+      if (!ep?.clusters) return null;
+      return ep.clusters.onOff || ep.clusters.genOnOff || ep.clusters[6] || ep.clusters['6'];
     };
 
-    // v5.5.978: Register capability listeners for ALL gangs FIRST
+    // v5.5.999: Register capability listeners for ALL gangs
+    // These listeners send ZCL commands to control the switch
     for (const epNum of [1, 2, 3, 4]) {
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       
+      // v5.5.999: Use arrow function to capture epNum correctly in closure
+      const gangNum = epNum;
       this.registerCapabilityListener(capName, async (value) => {
-        this.log(`[BSEED-4G] EP${epNum} app cmd: ${value}`);
-        this._zclState.pending[epNum] = true;
-        clearTimeout(this._zclState.timeout[epNum]);
-        this._zclState.timeout[epNum] = setTimeout(() => {
-          this._zclState.pending[epNum] = false;
+        this.log(`[BSEED-4G] EP${gangNum} app cmd: ${value}`);
+        
+        // v5.5.999: Use PhysicalButtonMixin markAppCommand for state tracking (packetninja pattern)
+        this.markAppCommand?.(gangNum, value);
+        
+        this._zclState.pending[gangNum] = true;
+        clearTimeout(this._zclState.timeout[gangNum]);
+        this._zclState.timeout[gangNum] = setTimeout(() => {
+          this._zclState.pending[gangNum] = false;
         }, 2000);
         
-        const onOff = getOnOffCluster(epNum);
-        if (onOff) {
+        // v5.5.999: Try to get cluster at command time (may be available now even if wasn't at init)
+        const onOff = getOnOffCluster(gangNum);
+        if (onOff && typeof onOff[value ? 'setOn' : 'setOff'] === 'function') {
           await onOff[value ? 'setOn' : 'setOff']();
+          this.log(`[BSEED-4G] EP${gangNum} ZCL ${value ? 'ON' : 'OFF'} sent`);
         } else {
-          this.log(`[BSEED-4G] EP${epNum} onOff cluster not found`);
+          this.log(`[BSEED-4G] EP${gangNum} onOff cluster not found - command not sent`);
+          // v5.5.999: Still update capability value for UI consistency
         }
         return true;
       });
-      this.log(`[BSEED-4G] EP${epNum} capability listener registered`);
+      this.log(`[BSEED-4G] EP${epNum} capability listener registered for ${capName}`);
     }
 
     // Setup attribute listeners for available endpoints
@@ -115,28 +128,29 @@ class Switch4GangDevice extends BaseClass {
       }
 
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
+      const gangNum = epNum; // v5.5.999: Capture for closure
       onOff.on('attr.onOff', (value) => {
-        const isPhysical = !this._zclState.pending[epNum];
-        this.log(`[BSEED-4G] EP${epNum} attr: ${value} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
+        const isPhysical = !this._zclState.pending[gangNum];
+        this.log(`[BSEED-4G] EP${gangNum} attr: ${value} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
         
-        if (this._zclState.lastState[epNum] !== value) {
-          this._zclState.lastState[epNum] = value;
+        if (this._zclState.lastState[gangNum] !== value) {
+          this._zclState.lastState[gangNum] = value;
           this.setCapabilityValue(capName, value).catch(() => {});
           
           if (isPhysical) {
-            const flowId = `switch_4gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
+            const flowId = `switch_4gang_physical_gang${gangNum}_${value ? 'on' : 'off'}`;
             this.homey.flow.getDeviceTriggerCard(flowId)
-              .trigger(this, { gang: epNum, state: value }, {})
+              .trigger(this, { gang: gangNum, state: value }, {})
               .catch(() => {});
-            this.log(`[BSEED-4G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+            this.log(`[BSEED-4G] 🔘 Physical G${gangNum} ${value ? 'ON' : 'OFF'}`);
           }
         }
       });
-      this.log(`[BSEED-4G] EP${epNum} attr listener registered`);
+      this.log(`[BSEED-4G] EP${epNum} ZCL onOff + physical detection registered`);
     }
 
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-4G] ✅ BSEED ZCL-only mode ready');
+    this.log('[SWITCH-4G] ✅ BSEED ZCL-only mode ready (packetninja technique)');
   }
 
   /**

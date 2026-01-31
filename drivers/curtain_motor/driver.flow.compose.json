@@ -1,6 +1,56 @@
 {
   "triggers": [
     {
+      "id": "curtain_motor_physical_button_pressed",
+      "title": {
+        "en": "Physical button pressed",
+        "fr": "Bouton physique appuyé",
+        "nl": "Fysieke knop ingedrukt",
+        "de": "Physischer Knopf gedrückt"
+      },
+      "hint": {
+        "en": "Triggers when a physical button on the curtain motor is pressed",
+        "fr": "Se déclenche quand un bouton physique du moteur est appuyé"
+      },
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": { "en": "Action", "fr": "Action" },
+          "example": "open"
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "curtain_motor_physical_open",
+      "title": {
+        "en": "Opened (physical button)",
+        "fr": "Ouvert (bouton physique)",
+        "nl": "Geopend (fysieke knop)",
+        "de": "Geöffnet (physischer Knopf)"
+      },
+      "hint": {
+        "en": "Triggers when opened via physical button or remote",
+        "fr": "Se déclenche lors de l'ouverture via bouton physique"
+      },
+      "args": []
+    },
+    {
+      "id": "curtain_motor_physical_close",
+      "title": {
+        "en": "Closed (physical button)",
+        "fr": "Fermé (bouton physique)",
+        "nl": "Gesloten (fysieke knop)",
+        "de": "Geschlossen (physischer Knopf)"
+      },
+      "hint": {
+        "en": "Triggers when closed via physical button or remote",
+        "fr": "Se déclenche lors de la fermeture via bouton physique"
+      },
+      "args": []
+    },
+    {
       "id": "curtain_motor_windowcoverings_set_changed",
       "title": {
         "en": "Position changed",
@@ -55,6 +105,51 @@
           "example": 75
         }
       ],
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "curtain_motor_position_above",
+      "title": {
+        "en": "Position !{{is|is not}} above",
+        "fr": "Position !{{est|n'est pas}} au-dessus de",
+        "nl": "Positie !{{is|is niet}} boven",
+        "de": "Position !{{ist|ist nicht}} über"
+      },
+      "titleFormatted": {
+        "en": "Position !{{is|is not}} above [[position]]%",
+        "fr": "Position !{{est|n'est pas}} au-dessus de [[position]]%"
+      },
+      "args": [
+        {
+          "name": "position",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": { "en": "50" }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_is_open",
+      "title": {
+        "en": "Curtain !{{is|is not}} fully open",
+        "fr": "Rideau !{{est|n'est pas}} complètement ouvert",
+        "nl": "Gordijn !{{is|is niet}} volledig open",
+        "de": "Vorhang !{{ist|ist nicht}} vollständig geöffnet"
+      },
+      "args": []
+    },
+    {
+      "id": "curtain_motor_is_closed",
+      "title": {
+        "en": "Curtain !{{is|is not}} fully closed",
+        "fr": "Rideau !{{est|n'est pas}} complètement fermé",
+        "nl": "Gordijn !{{is|is niet}} volledig gesloten",
+        "de": "Vorhang !{{ist|ist nicht}} vollständig geschlossen"
+      },
       "args": []
     }
   ],
