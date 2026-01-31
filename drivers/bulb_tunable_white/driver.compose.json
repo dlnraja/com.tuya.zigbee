@@ -30,7 +30,6 @@
       "_TZ3000_9cpuaca6",
       "_TZ3000_psg0zx5j",
       "_TZ3210_agwvapnp",
-      "_TZ3210_ksqwlz9v",
       "Danfoss",
       "DANFOSS",
       "Eurotronic",
@@ -284,7 +283,8 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "_TZ3210_ksqwlz9v"
     ],
     "productId": [
       "TS0502A",
@@ -311,9 +311,19 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
         ],
-        "bindings": []
+        "bindings": [
+          6,
+          8,
+          768
+        ]
       }
     },
     "learnmode": {
@@ -551,8 +561,7 @@
   ],
   "images": {
     "small": "drivers/bulb_tunable_white/assets/images/small.png",
-    "large": "drivers/bulb_tunable_white/assets/images/large.png",
-    "xlarge": "drivers/bulb_tunable_white/assets/images/xlarge.png"
+    "large": "drivers/bulb_tunable_white/assets/images/large.png"
   },
   "platforms": [
     "local"

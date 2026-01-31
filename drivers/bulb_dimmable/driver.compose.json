@@ -13,11 +13,7 @@
     "light_temperature",
     "light_mode",
     "onoff",
-    "measure_battery",
-    "button_toggle",
-    "button_dim_up",
-    "button_dim_down",
-    "button_identify"
+    "measure_battery"
   ],
   "energy": {
     "approximation": {
@@ -305,9 +301,17 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          6,
+          8
         ],
-        "bindings": []
+        "bindings": [
+          6,
+          8
+        ]
       }
     },
     "learnmode": {
@@ -545,8 +549,7 @@
   ],
   "images": {
     "small": "drivers/bulb_dimmable/assets/images/small.png",
-    "large": "drivers/bulb_dimmable/assets/images/large.png",
-    "xlarge": "drivers/bulb_dimmable/assets/images/xlarge.png"
+    "large": "drivers/bulb_dimmable/assets/images/large.png"
   },
   "platforms": [
     "local"

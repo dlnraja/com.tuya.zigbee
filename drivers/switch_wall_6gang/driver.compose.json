@@ -17,14 +17,7 @@
     "onoff.gang3",
     "onoff.gang4",
     "onoff.gang5",
-    "onoff.gang6",
-    "button_toggle_1",
-    "button_toggle_2",
-    "button_toggle_3",
-    "button_toggle_4",
-    "button_toggle_5",
-    "button_toggle_6",
-    "button_identify"
+    "onoff.gang6"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -77,9 +70,6 @@
       "_TZE200_tz32mtza",
       "_TZE204_tz32mtza",
       "_TZE284_tz32mtza",
-      "_TZE284_C8IPBLJQ",
-      "_tze284_c8ipbljq",
-      "_TZ3002_vaq2bfcu",
       "Danfoss",
       "DANFOSS",
       "Eurotronic",
@@ -291,7 +281,16 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "_TZE284_C8IPBLJQ",
+      "_tze284_c8ipbljq",
+      "_TZ3002_vaq2bfcu",
+      "_TZE284_L8XIYYMQ",
+      "_tze284_l8xiyymq",
+      "_TZE204_ZNBL8DJ5",
+      "_tze204_znbl8dj5",
+      "_TZE204_IKVNCLUO",
+      "_tze204_ikvncluo"
     ],
     "productId": [
       "TS0016",
@@ -308,45 +307,22 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          6,
+          61184
         ],
-        "bindings": []
-      },
-      "2": {
-        "clusters": [
+        "bindings": [
           6
-        ],
-        "bindings": []
-      },
-      "3": {
-        "clusters": [
-          6
-        ],
-        "bindings": []
-      },
-      "4": {
-        "clusters": [
-          6
-        ],
-        "bindings": []
-      },
-      "5": {
-        "clusters": [
-          6
-        ],
-        "bindings": []
-      },
-      "6": {
-        "clusters": [
-          6
-        ],
-        "bindings": []
+        ]
       }
     }
   },
   "images": {
     "small": "/drivers/switch_wall_6gang/assets/images/small.png",
-    "large": "/drivers/switch_wall_6gang/assets/images/large.png"
+    "large": "drivers/switch_wall_6gang/assets/images/large.png"
   },
   "platforms": [
     "local"

@@ -156,6 +156,7 @@
       "_TZE284_MRF6VTUA",
       "_tze284_mrf6vtua",
       "Fantem",
+      "HOBEIAN",
       "Perenio",
       "SNZB-03",
       "SNZB-03P",
@@ -524,12 +525,37 @@
       "_TZE200_d8fp6ivb",
       "_TZE200_dcydapr2",
       "_TZE200_dfry6ylv",
-      "_TZE200_crq3r3la",
       "_TZ3000_mcxw5ehu",
       "_TZ3000_6ygjfyll",
       "_TZ3000_nss8amz9",
       "_TZ3000_otvn3lne",
-      "_TZ3000_bsvqrxru"
+      "_TZ3000_bsvqrxru",
+      "ZG-204ZM",
+      "_TZE200_y8jijhba",
+      "eWeLink",
+      "SONOFF",
+      "_TZE200_f1pvdgoh",
+      "_TZE200_ppuj1vem",
+      "_TZE284_yjjdcqsq",
+      "_TZE204_yjjdcqsq",
+      "MultIR",
+      "ZP2-EN",
+      "HK-SENSOR-4IN1-A",
+      "Eardatek",
+      "EARDATEK",
+      "Linptech",
+      "LINPTECH",
+      "Rehent",
+      "REHENT",
+      "RTX",
+      "_TZ3000_6zvpcdny",
+      "_TYZB01_vwqnz1sn",
+      "_TYZB01_jytabjkb",
+      "_TYZB01_5nr7ncpl",
+      "_TZ3040_fwxuzcf4",
+      "_TYZB01_ef5xlc9q",
+      "_TYZB01_zwvaj5wy",
+      "_TYZB01_tv3wxhcz"
     ],
     "productId": [
       "TS0202",
@@ -553,14 +579,25 @@
       "3305-S",
       "3325-S",
       "SNZB-03",
-      "TS0601"
+      "TS0601",
+      "ZG-204ZM",
+      "SNZB-03P"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          1,
+          1024,
+          1280,
+          1030,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          1,
+          1280,
+          1030
+        ]
       }
     },
     "learnmode": {
@@ -798,8 +835,7 @@
   ],
   "images": {
     "small": "drivers/motion_sensor/assets/images/small.png",
-    "large": "drivers/motion_sensor/assets/images/large.png",
-    "xlarge": "drivers/motion_sensor/assets/images/xlarge.png"
+    "large": "drivers/motion_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"

@@ -80,8 +80,9 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_4fjiwweb",
       "_TZ3000_gwkzibhs",
+      "_tz3000_gwkzibhs",
+      "_TZ3000_4fjiwweb",
       "_TZ3000_uri7ongn",
       "_TZ3000_ixla93vd",
       "_TZ3000_qja6nq5z",
@@ -133,6 +134,6 @@
   },
   "images": {
     "small": "/drivers/smart_knob_rotary/assets/images/small.png",
-    "large": "/drivers/smart_knob_rotary/assets/images/large.png"
+    "large": "drivers/smart_knob_rotary/assets/images/large.png"
   }
 }

@@ -27,47 +27,26 @@
   ],
   "images": {
     "small": "/drivers/wall_dimmer_1gang_1way/assets/images/small.png",
-    "large": "/drivers/wall_dimmer_1gang_1way/assets/images/large.png"
+    "large": "drivers/wall_dimmer_1gang_1way/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_4fjiwweb",
-      "_TZE200_3p5ydos3",
-      "_TZE204_n9ctkb6j",
-      "_TZE200_ip2akl4w",
-      "_TZE200_1agwnems",
-      "_TZE200_la2c2uo9",
-      "_TZE200_579lguh2",
-      "_TZE200_vucankjx",
-      "_TZE200_4mh6tyyo",
-      "_TZE204_hlx9tnzb",
-      "_TZE204_9qhuzgo0",
-      "_TZE200_9cxuhakf",
-      "_TZE200_a0syesf5",
-      "_TZE200_swaamsoy",
-      "_TZE200_ojzhk75b",
-      "_TZE200_w4cryh2i",
-      "_TZE200_dfxkcots",
-      "_TZE200_9i9dt8is",
-      "_TZE200_ctq0k47x",
-      "_TZE200_ebwgzdqq",
-      "_TZE204_vevc4c6g",
-      "_TZE200_0nauxa0p",
-      "_TZE200_ykgar0ow",
-      "_TZE200_qzaing2g",
-      "_TZE204_3z6hca0q",
-      "_TZ3000_abrsvsou",
-      "_TZE200_whpb9yts",
-      "_TZE200_y8yjulon",
-      "_TZE204_5cuocqty",
-      "_TZE204_nqqylykc",
-      "_TZE200_p0gzbqct",
-      "_TZE204_dcnsggvz",
-      "_TZE200_6fjev1mn"
+      "_TZB210_g01ie5wu",
+      "_TZB210_3dxbg9ks",
+      "_TZB210_zxbtub8r",
+      "MiBoxer",
+      "Miboxer",
+      "MIBOXER",
+      "Eardatek",
+      "EARDATEK"
     ],
     "productId": [
-      "TS0601",
-      "TS004F"
+      "TS004F",
+      "TS0501B",
+      "TRI-C1ZR",
+      "TRI-K1ZR",
+      "EDM-1ZBA-EU"
     ],
     "endpoints": {
       "1": {
@@ -106,16 +85,13 @@
             "nl": "Minimale Helderheid (%)"
           },
           "hint": {
-            "en": "Set the minimum brightness level (1-100)",
-            "nl": "Stel het minimale helderheidsniveau in (1-100)"
+            "en": "Set the minimum brightness level (1-100). Important for LED compatibility.",
+            "nl": "Stel het minimale helderheidsniveau in (1-100). Belangrijk voor LED-compatibiliteit."
           },
           "value": 1,
           "min": 1,
           "max": 100,
-          "units": {
-            "en": "%",
-            "nl": "%"
-          }
+          "units": "%"
         },
         {
           "id": "power_on_behavior",
@@ -128,7 +104,7 @@
             "en": "Select the behavior when power is restored",
             "nl": "Selecteer het gedrag wanneer de stroom wordt hersteld"
           },
-          "value": "2",
+          "value": "0",
           "values": [
             {
               "id": "0",
@@ -185,6 +161,51 @@
               "label": {
                 "en": "Halogen",
                 "nl": "Halogeen"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "💡 LED Indicator (Backlight)",
+        "nl": "💡 LED-indicator (Achtergrondverlichting)"
+      },
+      "children": [
+        {
+          "id": "backlight_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "LED Indicator Mode",
+            "nl": "LED-indicator Modus"
+          },
+          "hint": {
+            "en": "Control when the LED indicator on the switch is lit",
+            "nl": "Bepaal wanneer de LED-indicator op de schakelaar brandt"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "On when Light ON (Normal)",
+                "nl": "Aan wanneer Licht AAN (Normaal)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "On when Light OFF (Inverted)",
+                "nl": "Aan wanneer Licht UIT (Omgekeerd)"
               }
             }
           ]

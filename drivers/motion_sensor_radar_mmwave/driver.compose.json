@@ -334,9 +334,18 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          1,
+          1024,
+          1280,
+          1030,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          1,
+          1280,
+          1030
+        ]
       }
     },
     "learnmode": {
@@ -708,8 +717,7 @@
   ],
   "images": {
     "small": "drivers/motion_sensor_radar_mmwave/assets/images/small.png",
-    "large": "drivers/motion_sensor_radar_mmwave/assets/images/large.png",
-    "xlarge": "drivers/motion_sensor_radar_mmwave/assets/images/xlarge.png"
+    "large": "drivers/motion_sensor_radar_mmwave/assets/images/large.png"
   },
   "platforms": [
     "local"
