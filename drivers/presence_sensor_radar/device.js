@@ -610,7 +610,13 @@ class IntelligentDPAutoDiscovery {
         value = Math.round(value * 10) / 10;
         break;
       case 'humidity':
-        value = Math.max(0, Math.min(100, rawValue / (info.divisor || 1)));
+        // v5.7.7: Support both divisor AND multiplier (fixes HOBEIAN ZG-227Z)
+        if (info.multiplier) {
+          value = rawValue * info.multiplier;
+        } else {
+          value = rawValue / (info.divisor || 1);
+        }
+        value = Math.max(0, Math.min(100, value));
         break;
     }
 

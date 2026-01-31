@@ -1,4 +1,7 @@
 {
+  "5.7.8": {
+    "en": "🌡️ RADAR FIX: Humidity multiplier support in auto-discovery (fixes HOBEIAN ZG-227Z showing 9% instead of 90%). Diagnostic: 'Humidity factor 10 to low'."
+  },
   "5.7.7": {
     "en": "🐛 FIXES: Power meter crash on undefined DP values (diagnostic a0f7de6a). Switch 4-gang: added missing flow cards for single/double/triple/long press physical buttons (diagnostic c33007b0)."
   },
