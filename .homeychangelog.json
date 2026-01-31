@@ -1,4 +1,7 @@
 {
+  "5.7.13": {
+    "en": "🧠 SMART DEDUPLICATION: Pattern detection now auto-detects if device natively reports triple/release events (Zigbee, Tuya DP, or hybrid). Skips software detection when native support is detected. Prevents double triggers regardless of protocol."
+  },
   "5.7.12": {
     "en": "🔘 BUTTON PATTERN DETECTION: Software triple-click detection (600ms window) for all buttons. Auto hold-release after 2s of long press. Added triple/release flow cards to button_wireless_1/2/3. Works even if device doesn't natively report these patterns."
   },
