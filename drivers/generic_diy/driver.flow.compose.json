@@ -336,6 +336,10 @@
         "en": "Temperature is above...",
         "fr": "Température supérieure à..."
       },
+      "titleFormatted": {
+        "en": "Temperature is above [[temperature]] °C",
+        "fr": "Température supérieure à [[temperature]] °C"
+      },
       "hint": {
         "en": "Check if temperature is above a value",
         "fr": "Vérifie si la température est supérieure à une valeur"
@@ -361,6 +365,10 @@
         "en": "Humidity is above...",
         "fr": "Humidité supérieure à..."
       },
+      "titleFormatted": {
+        "en": "Humidity is above [[humidity]] %",
+        "fr": "Humidité supérieure à [[humidity]] %"
+      },
       "hint": {
         "en": "Check if humidity is above a value",
         "fr": "Vérifie si l'humidité est supérieure à une valeur"
@@ -385,6 +393,10 @@
       "title": {
         "en": "Battery is below...",
         "fr": "Batterie inférieure à..."
+      },
+      "titleFormatted": {
+        "en": "Battery is below [[battery]] %",
+        "fr": "Batterie inférieure à [[battery]] %"
       },
       "hint": {
         "en": "Check if battery is below a percentage",
@@ -446,6 +458,10 @@
         "en": "Set DIY dimmer level",
         "fr": "Définir niveau variateur DIY"
       },
+      "titleFormatted": {
+        "en": "Set brightness to [[level]]",
+        "fr": "Définir luminosité à [[level]]"
+      },
       "hint": {
         "en": "Set the brightness level",
         "fr": "Définit le niveau de luminosité"
@@ -481,6 +497,10 @@
         "en": "Turn on endpoint...",
         "fr": "Activer endpoint..."
       },
+      "titleFormatted": {
+        "en": "Turn on endpoint [[endpoint]]",
+        "fr": "Activer endpoint [[endpoint]]"
+      },
       "hint": {
         "en": "Turn on a specific endpoint (for multi-switch DIY devices)",
         "fr": "Active un endpoint spécifique (pour dispositifs DIY multi-interrupteurs)"
@@ -503,6 +523,10 @@
       "title": {
         "en": "Turn off endpoint...",
         "fr": "Désactiver endpoint..."
+      },
+      "titleFormatted": {
+        "en": "Turn off endpoint [[endpoint]]",
+        "fr": "Désactiver endpoint [[endpoint]]"
       },
       "hint": {
         "en": "Turn off a specific endpoint",
