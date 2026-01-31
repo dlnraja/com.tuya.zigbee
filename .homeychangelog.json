@@ -1,4 +1,7 @@
 {
+  "5.6.3": {
+    "en": "🔌 USB Dongle: Added exact mixed-case _TZ3000_h1ipgkwn fingerprint (from Z2M #23625, Sprut Hub #3517). Research: SLS, Jeedom, Z2M device database cross-referenced."
+  },
   "5.6.2": {
     "en": "🔧 FIX: HOBEIAN 10G radar humidity ×10 multiplier (was showing 9% instead of 90%). Forum diagnostic reports processed."
   },
