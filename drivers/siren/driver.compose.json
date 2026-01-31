@@ -282,7 +282,8 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          61184
         ],
         "bindings": []
       }
@@ -522,8 +523,7 @@
   ],
   "images": {
     "small": "drivers/siren/assets/images/small.png",
-    "large": "drivers/siren/assets/images/large.png",
-    "xlarge": "drivers/siren/assets/images/xlarge.png"
+    "large": "drivers/siren/assets/images/large.png"
   },
   "platforms": [
     "local"

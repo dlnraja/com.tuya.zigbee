@@ -9,11 +9,7 @@
   "capabilities": [
     "dim",
     "onoff",
-    "measure_power",
-    "button_toggle",
-    "button_dim_up",
-    "button_dim_down",
-    "button_identify"
+    "measure_power"
   ],
   "energy": {
     "approximation": {
@@ -518,6 +514,7 @@
       "_TZE200_1agwnafq",
       "_TZE200_1ibpyhdc",
       "_TZE200_2hf7x9n3",
+      "_TZE200_3towulqd",
       "_TZE200_44af8ipg",
       "_TZE200_4hbx5cvx",
       "_TZE200_502zx5sl",
@@ -547,7 +544,21 @@
       "_TZE200_d5p1kr8z",
       "_TZE200_d8fp6ivb",
       "_TZE200_dcydapr2",
-      "_TZE200_dfry6ylv"
+      "_TZE200_dfry6ylv",
+      "_TZE200_3p5ydos3",
+      "_TZE204_n9ctkb6j",
+      "_TZE200_1agwnems",
+      "_TZE200_579lguh2",
+      "_TZE200_vucankjx",
+      "_TZE200_4mh6tyyo",
+      "_TZE200_swaamsoy",
+      "_TZE200_ojzhk75b",
+      "_TZE200_ebwgzdqq",
+      "_TZE200_0nauxa0p",
+      "_TZE200_qzaing2g",
+      "_TZE200_whpb9yts",
+      "_TZE200_y8yjulon",
+      "_TZE200_6fjev1mn"
     ],
     "productId": [
       "TS0601_dim1",
@@ -556,9 +567,18 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          6,
+          8
+        ]
       }
     },
     "learnmode": {
@@ -839,8 +859,7 @@
   ],
   "images": {
     "small": "drivers/dimmer_wall_1gang/assets/images/small.png",
-    "large": "drivers/dimmer_wall_1gang/assets/images/large.png",
-    "xlarge": "drivers/dimmer_wall_1gang/assets/images/xlarge.png"
+    "large": "drivers/dimmer_wall_1gang/assets/images/large.png"
   },
   "platforms": [
     "local"

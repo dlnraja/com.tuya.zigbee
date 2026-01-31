@@ -228,6 +228,11 @@
       "Coswall",
       "Wallpad",
       "Miboxer",
+      "MiBoxer",
+      "MIBOXER",
+      "_TZB210_g01ie5wu",
+      "_TZB210_3dxbg9ks",
+      "_TZB210_zxbtub8r",
       "Zigbee2MQTT",
       "Konyks",
       "Enbrighten",
@@ -242,22 +247,32 @@
       "Monoprice"
     ],
     "productId": [
-      "TS0601_led"
+      "TS0601_led",
+      "TS0501B",
+      "TRI-C1ZR",
+      "TRI-K1ZR"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          6,
+          8
         ],
-        "bindings": []
+        "bindings": [
+          6,
+          8
+        ]
       }
     },
     "subDevices": []
   },
   "images": {
     "small": "/drivers/led_controller_dimmable/assets/images/small.png",
-    "large": "/drivers/led_controller_dimmable/assets/images/large.png",
-    "xlarge": "/drivers/led_controller_dimmable/assets/images/xlarge.png"
+    "large": "drivers/led_controller_dimmable/assets/images/large.png"
   },
   "platforms": [
     "local"

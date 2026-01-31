@@ -479,6 +479,7 @@
       "_TZE200_1agwnafq",
       "_TZE200_1ibpyhdc",
       "_TZE200_2hf7x9n3",
+      "_TZE200_3towulqd",
       "_TZE200_44af8ipg",
       "_TZE200_4hbx5cvx",
       "_TZE200_502zx5sl",
@@ -515,7 +516,17 @@
       "_TZE200_cxakecfo",
       "_tze200_cxakecfo",
       "_TZE204_woww89ip",
-      "_tze204_woww89ip"
+      "_tze204_woww89ip",
+      "_TZE204_locansqn",
+      "_TZE204_pay2byax",
+      "_TZE204_pisltm67",
+      "_TZE204_qdihqf3l",
+      "_TZE204_qoy0ekbd",
+      "_TZE204_sh1btabb",
+      "_TZE204_v6ossqfy",
+      "_TZE204_wgrffniy",
+      "_TZE204_xby0s3ta",
+      "_TZE204_ywdxldoj"
     ],
     "productId": [
       "TV01-ZB",
@@ -538,9 +549,16 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          1,
+          3,
+          513,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          1,
+          513
+        ]
       }
     },
     "learnmode": {
@@ -778,8 +796,7 @@
   ],
   "images": {
     "small": "drivers/radiator_valve/assets/images/small.png",
-    "large": "drivers/radiator_valve/assets/images/large.png",
-    "xlarge": "drivers/radiator_valve/assets/images/xlarge.png"
+    "large": "drivers/radiator_valve/assets/images/large.png"
   },
   "platforms": [
     "local"

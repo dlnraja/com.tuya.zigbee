@@ -59,12 +59,12 @@
       "_tz3000_abrsvsou",
       "_TZ3000_AN5RJIWD",
       "_tz3000_an5rjiwd",
+      "_TZ3000_an5rjiwd",
       "_TZ3000_ARFWFGRE",
       "_tz3000_arfwfgre",
       "_TZ3000_AXPDXQGU",
       "_tz3000_axpdxqgu",
       "_TZ3000_B4AWZGCT",
-      "_TZ3000_b4awzgct",
       "_tz3000_b4awzgct",
       "_TZ3000_BSVQRUX3",
       "_tz3000_bsvqrux3",
@@ -375,9 +375,22 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          18,
+          1280,
+          1281,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          1,
+          5,
+          6
+        ]
       }
     },
     "learnmode": {

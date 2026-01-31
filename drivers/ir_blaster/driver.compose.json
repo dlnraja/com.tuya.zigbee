@@ -271,7 +271,9 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "_TZE284_3MZB0SDZ",
+      "_tze284_3mzb0sdz"
     ],
     "productId": [
       "TS1201",
@@ -280,7 +282,8 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          61184
         ],
         "bindings": []
       }
@@ -288,7 +291,6 @@
   },
   "images": {
     "small": "drivers/ir_blaster/assets/images/small.png",
-    "large": "drivers/ir_blaster/assets/images/large.png",
-    "xlarge": "drivers/ir_blaster/assets/images/xlarge.png"
+    "large": "drivers/ir_blaster/assets/images/large.png"
   }
 }

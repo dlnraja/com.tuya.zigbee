@@ -21,13 +21,16 @@
   ],
   "images": {
     "small": "/drivers/wall_switch_1gang_1way/assets/images/small.png",
-    "large": "/drivers/wall_switch_1gang_1way/assets/images/large.png"
+    "large": "drivers/wall_switch_1gang_1way/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_blhvsaqf",
       "_TZ3000_BLHVSAQF",
-      "_TZ3000_ysdv91bk"
+      "_tz3000_blhvsaqf",
+      "_TZ3000_ysdv91bk",
+      "_TZ3000_YSDV91BK",
+      "_tz3000_ysdv91bk"
     ],
     "productId": [
       "TS0001"
@@ -54,5 +57,52 @@
         "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED knippert, of schakel de schakelaar 3 keer snel aan/uit."
       }
     }
-  }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "💡 LED Indicator (Backlight)",
+        "nl": "💡 LED-indicator (Achtergrondverlichting)"
+      },
+      "children": [
+        {
+          "id": "backlight_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "LED Indicator Mode",
+            "nl": "LED-indicator Modus"
+          },
+          "hint": {
+            "en": "Control when the LED indicator on the switch is lit",
+            "nl": "Bepaal wanneer de LED-indicator op de schakelaar brandt"
+          },
+          "value": "normal",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit"
+              }
+            },
+            {
+              "id": "normal",
+              "label": {
+                "en": "On when Switch ON (Normal)",
+                "nl": "Aan wanneer Schakelaar AAN (Normaal)"
+              }
+            },
+            {
+              "id": "inverted",
+              "label": {
+                "en": "On when Switch OFF (Inverted)",
+                "nl": "Aan wanneer Schakelaar UIT (Omgekeerd)"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

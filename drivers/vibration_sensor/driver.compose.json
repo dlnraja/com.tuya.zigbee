@@ -24,8 +24,6 @@
       "_TYZB01_geigpsy4",
       "_TYZB01_j9xxahcl",
       "ZG-102ZM",
-      "ZG-103ZL",
-      "_TZ3000_ja5osu5g",
       "_TZ3000_BMFW11GS",
       "_tz3000_bmfw11gs",
       "_TZ3000_BMFW9YKL",
@@ -273,27 +271,36 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "ZG-103ZL",
+      "HOBEIAN",
+      "Hobeian"
     ],
     "productId": [
       "TS0209",
       "TS0210",
       "ZG-102ZM",
-      "TS0601"
+      "TS0601",
+      "ZG-103ZL"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          1,
+          1280,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          1,
+          1280
+        ]
       }
     }
   },
   "images": {
     "small": "drivers/vibration_sensor/assets/images/small.png",
-    "large": "drivers/vibration_sensor/assets/images/large.png",
-    "xlarge": "drivers/vibration_sensor/assets/images/xlarge.png"
+    "large": "drivers/vibration_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"

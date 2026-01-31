@@ -13,15 +13,7 @@
     "onoff.gang4",
     "onoff.gang5",
     "onoff.gang6",
-    "onoff.gang7",
-    "button_toggle_1",
-    "button_toggle_2",
-    "button_toggle_3",
-    "button_toggle_4",
-    "button_toggle_5",
-    "button_toggle_6",
-    "button_toggle_7",
-    "button_identify"
+    "onoff.gang7"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -296,27 +288,16 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          6,
+          61184
         ],
-        "bindings": []
-      },
-      "2": {
-        "clusters": []
-      },
-      "3": {
-        "clusters": []
-      },
-      "4": {
-        "clusters": []
-      },
-      "5": {
-        "clusters": []
-      },
-      "6": {
-        "clusters": []
-      },
-      "7": {
-        "clusters": []
+        "bindings": [
+          6
+        ]
       }
     }
   },

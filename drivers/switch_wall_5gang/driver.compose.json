@@ -11,13 +11,7 @@
     "onoff.gang2",
     "onoff.gang3",
     "onoff.gang4",
-    "onoff.gang5",
-    "button_toggle_1",
-    "button_toggle_2",
-    "button_toggle_3",
-    "button_toggle_4",
-    "button_toggle_5",
-    "button_identify"
+    "onoff.gang5"
   ],
   "energy": {
     "approximation": {
@@ -258,33 +252,16 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          6,
+          61184
         ],
-        "bindings": []
-      },
-      "2": {
-        "clusters": [
+        "bindings": [
           6
-        ],
-        "bindings": []
-      },
-      "3": {
-        "clusters": [
-          6
-        ],
-        "bindings": []
-      },
-      "4": {
-        "clusters": [
-          6
-        ],
-        "bindings": []
-      },
-      "5": {
-        "clusters": [
-          6
-        ],
-        "bindings": []
+        ]
       }
     }
   },
@@ -720,8 +697,7 @@
   ],
   "images": {
     "small": "drivers/switch_wall_5gang/assets/images/small.png",
-    "large": "drivers/switch_wall_5gang/assets/images/large.png",
-    "xlarge": "drivers/switch_wall_5gang/assets/images/xlarge.png"
+    "large": "drivers/switch_wall_5gang/assets/images/large.png"
   },
   "platforms": [
     "local"
