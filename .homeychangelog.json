@@ -1,4 +1,7 @@
 {
+  "5.7.2": {
+    "en": "🎛️ Generic DIY: Comprehensive flow cards (15 triggers, 6 conditions, 7 actions). Temperature, humidity, motion, contact, button, switch, illuminance, pressure, battery, analog. Multi-endpoint support for ESP32/PTVO/CC253x devices."
+  },
   "5.7.1": {
     "en": "📚 ZHA Quirks enrichment: Added irrigation valve fingerprints (SASWELL SAS980SWT, NEO NAS-WV03B2). TuyaQuirkBuilder methods documented. Cross-referenced with zigpy discussion #725, Jeedom compatibility database."
   },
