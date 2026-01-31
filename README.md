@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.6.1** | 🔧 FIX: Case-sensitive fingerprints for _TZ3000_b4awzgct (button) and _TZ3000... |
 | **v5.6.0** | 🔧 Major v5.6.0 release: 🎛️ BIDIRECTIONAL BUTTONS - All actuators now have v... |
 | **v5.5.999** | 🔧 FIX: BSEED 4-gang switch (diag c33007b0) - Virtual button toggle for EP2-4... |
 | **v5.5.998** | 🔧 FIX: Longsam _TZE204_xu4a5rhj curtain motor - Position INVERTED (DP2: 100-... |
@@ -78,7 +79,6 @@
 | **v5.5.994** | 🔧 FIX: _TZE200_3towulqd fingerprint collision - ZG-204ZL/ZG-204ZV is PIR sen... |
 | **v5.5.993** | 🔧 FIX: PR #120 pattern applied to switch_1gang, switch_2gang, switch_3gang -... |
 | **v5.5.992** | 📚 DOCS: Centralized version references - app.json is now single source of tr... |
-| **v5.5.991** | ✨ IMPROVE: VirtualButtonMixin ZCL fallback for ZCL-only BSEED devices. Time s... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
