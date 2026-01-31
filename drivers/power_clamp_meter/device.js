@@ -94,13 +94,18 @@ class PowerClampMeterDevice extends ZigBeeDevice {
   }
 
   /**
-   * v5.7.5: Detect meter profile based on manufacturerName
-   * PJ-1203A: _TZE284_81yrt3lo, _TZE204_81yrt3lo (2-channel bidirectional)
+   * v5.7.6: Detect meter profile based on manufacturerName
+   * PJ-1203A variants: _TZE284_81yrt3lo, _TZE204_81yrt3lo, _TZE204_cjbofhxw (Matsee Plus)
    * 3-phase: _TZE200_nslr42tt, _TZE204_nslr42tt
+   * Source: Z2M #18419, #15359, ZHA #3152, #3658
    */
   get meterProfile() {
     const mfr = this.getSetting('zb_manufacturer_name') || this.getStoreValue('manufacturerName') || '';
-    const pj1203aIds = ['_TZE284_81yrt3lo', '_TZE204_81yrt3lo', '_tze284_81yrt3lo', '_tze204_81yrt3lo'];
+    // PJ-1203A 2-channel bidirectional variants (from Z2M research)
+    const pj1203aIds = [
+      '_TZE284_81yrt3lo', '_TZE204_81yrt3lo',  // Original PJ-1203A
+      '_TZE204_cjbofhxw', '_TZE284_cjbofhxw'   // Matsee Plus variant (Z2M #15359)
+    ];
     return pj1203aIds.some(id => mfr.toLowerCase().includes(id.toLowerCase())) ? 'pj1203a' : '3phase';
   }
 
