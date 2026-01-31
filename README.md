@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.8** | 🌡️ RADAR FIX: Humidity multiplier support in auto-discovery (fixes HOBEIAN Z... |
 | **v5.7.7** | 🐛 FIXES: Power meter crash on undefined DP values (diagnostic a0f7de6a). Swi... |
 | **v5.7.6** | 📚 Z2M/ZHA Cross-Reference: Added PJ-1203 Matsee Plus variants (_TZE204_cjbof... |
 | **v5.7.5** | ⚡ POWER METER FIX: PJ-1203A (_TZE284_81yrt3lo) DP mappings corrected per Z2M ... |
@@ -78,7 +79,6 @@
 | **v5.7.1** | 📚 ZHA Quirks enrichment: Added irrigation valve fingerprints (SASWELL SAS980... |
 | **v5.7.0** | 🔧 NEW: Generic DIY Zigbee Driver - Supports ESP32-C6/H2, PTVO firmware, CC25... |
 | **v5.6.3** | 🔌 USB Dongle: Added exact mixed-case _TZ3000_h1ipgkwn fingerprint (from Z2M ... |
-| **v5.6.2** | 🔧 FIX: HOBEIAN 10G radar humidity ×10 multiplier (was showing 9% instead of ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
