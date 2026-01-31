@@ -1,4 +1,16 @@
 {
+  "5.5.998": {
+    "en": "🔧 FIX: Longsam _TZE204_xu4a5rhj curtain motor - Position INVERTED (DP2: 100-value), not control (DP1). Verified with Z2M #26660, #22614, ZHA #3181, 10+ sources. GitHub #122 elgato7."
+  },
+  "5.5.997": {
+    "en": "🔧 FIX: PhysicalButtonMixin - Tuya DP physical button detection for hybrid devices. _setupTuyaDPPhysicalDetection + _handleTuyaDPReport methods."
+  },
+  "5.5.996": {
+    "en": "🔧 FIX: PhysicalButtonMixin enhanced - ZCL + Tuya DP + Hybrid protocol support for physical button detection (single/double/long/triple press)."
+  },
+  "5.5.995": {
+    "en": "🔧 FIX: gas_detector duplicate flow card IDs - removed duplicate condition IDs gas_detector_gas_detected and gas_detector_co_detected."
+  },
   "5.5.994": {
     "en": "🔧 FIX: _TZE200_3towulqd fingerprint collision - ZG-204ZL/ZG-204ZV is PIR sensor, removed from 7 wrong drivers (gas_sensor, co, contact_sensor, curtain_motor, dimmer, plug, TRV). Correct driver: presence_sensor_radar/motion_sensor."
   },
