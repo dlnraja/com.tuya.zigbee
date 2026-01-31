@@ -1,4 +1,7 @@
 {
+  "5.7.7": {
+    "en": "🐛 FIXES: Power meter crash on undefined DP values (diagnostic a0f7de6a). Switch 4-gang: added missing flow cards for single/double/triple/long press physical buttons (diagnostic c33007b0)."
+  },
   "5.7.6": {
     "en": "📚 Z2M/ZHA Cross-Reference: Added PJ-1203 Matsee Plus variants (_TZE204_cjbofhxw, _TZE284_cjbofhxw) to power_clamp_meter. Profile detection enriched per Z2M #15359, #18419, ZHA #3152, #3658."
   },
