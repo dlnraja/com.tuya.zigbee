@@ -1099,6 +1099,95 @@
         "z2mReference": "https://www.zigbee2mqtt.io/devices/ME167.html",
         "userAction": "Check if child_lock is enabled (DP7) - this disables physical knob input",
         "driver": "radiator_valve"
+      },
+      {
+        "id": "INT-150",
+        "deviceName": "Wireless Button 1-Gang",
+        "manufacturerName": "unknown",
+        "productId": "unknown",
+        "source": "Diagnostic c4a25bc8-6df7-4bd9-893d-0ca94e6eb5a8 (Dec 6, 2025)",
+        "status": "fixed",
+        "appVersion": "v5.4.6",
+        "userMessage": "Motion sensors (with lux) no longer working",
+        "symptoms": [
+          "Device shows as 'unknown (unknown)'",
+          "[TUYA] Device: unknown (unknown)",
+          "No profile for unknown/unknown - using generic",
+          "Pairing timeout after 60s in AutoAdaptiveDevice",
+          "IAS-ZONE Could not read zone type: Timeout"
+        ],
+        "rootCause": "Settings keys bug: zb_modelId vs zb_model_id and zb_manufacturerName vs zb_manufacturer_name inconsistency in 5 base classes",
+        "fix": {
+          "applied": true,
+          "version": "5.6.0",
+          "description": "Fixed settings keys in BaseHybridDevice.js, HybridThermostatBase.js, HybridLightBase.js, TuyaHybridDevice.js - now uses zb_model_id and zb_manufacturer_name with fallbacks"
+        },
+        "affectedFiles": ["BaseHybridDevice.js", "HybridThermostatBase.js", "HybridLightBase.js", "TuyaHybridDevice.js"],
+        "driver": "button_wireless_1"
+      },
+      {
+        "id": "INT-151",
+        "deviceName": "MOES Blinds Roller",
+        "manufacturerName": "_TZE200_icka1clh",
+        "productId": "TS0601",
+        "source": "Forum Dec 5, 2025 - Sharif_Kandil",
+        "user": "Sharif_Kandil",
+        "status": "fixed",
+        "symptoms": [
+          "Missing capabilities error",
+          "Tilt capability not working"
+        ],
+        "rootCause": "Version not yet published to Homey Store - tilt support added in v5.5.107, dynamic capability addition in v5.5.118",
+        "fix": {
+          "applied": true,
+          "version": "5.5.118",
+          "description": "HybridCoverBase.js: Added MOES roller blind DPs (101-105), tilt support, and _safeSetCapability for dynamic capability addition"
+        },
+        "dpMappings": {
+          "101": "opening_mode (tilt=0, lift=1)",
+          "102": "backlight_mode",
+          "103": "motor_direction",
+          "105": "motor_speed"
+        },
+        "driver": "curtain_motor"
+      },
+      {
+        "id": "INT-152",
+        "deviceName": "mmWave Radar Presence Sensor",
+        "manufacturerName": "unknown",
+        "productId": "TS0601",
+        "source": "Diagnostic 096349c5-032c-41e1-ab5c-dc8e4d22e0bc (Dec 5, 2025)",
+        "status": "supported",
+        "appVersion": "v5.4.2",
+        "userMessage": "Rapport pour fixer tout les bugs",
+        "symptoms": [
+          "User submitted general bug report",
+          "Logs show illuminance working correctly (247-258 lux readings)",
+          "ZCL illuminanceMeasurement cluster functioning"
+        ],
+        "notes": "Device appears to be working correctly based on logs - no actual bug found",
+        "driver": "motion_sensor_radar_mmwave"
+      },
+      {
+        "id": "INT-153",
+        "deviceName": "Smart Knob Scene Switch (Remote Dimmer)",
+        "manufacturerName": "_TZ3000_gwkzibhs",
+        "productId": "TS004F",
+        "source": "GitHub Issue #113 (Jan 23, 2026)",
+        "user": "Ernst02507",
+        "status": "supported",
+        "symptoms": [
+          "Device recognized as unknown device",
+          "User requesting device support"
+        ],
+        "resolution": {
+          "status": "already_supported",
+          "driver": "smart_knob_rotary",
+          "version": "5.5.800+",
+          "features": ["rotate_left", "rotate_right", "single_press", "double_press", "long_press", "dim", "measure_battery"]
+        },
+        "notes": "Scene mode auto-enabled via attribute 0x8004. User needs to pair with correct driver.",
+        "driver": "smart_knob_rotary"
       }
     ]
   },
@@ -1212,20 +1301,21 @@
   },
 
   "statistics": {
-    "totalDevicesAnalyzed": 60,
+    "totalDevicesAnalyzed": 64,
     "byStatus": {
-      "supported": 30,
-      "fixed": 14,
+      "supported": 32,
+      "fixed": 16,
       "investigating": 13,
       "partial": 1,
       "design_limitation": 1
     },
     "bySource": {
-      "forum": 36,
-      "github_issues": 15,
+      "forum": 37,
+      "github_issues": 16,
       "github_prs": 25,
       "z2m_docs": 5,
-      "zha_issues": 4
+      "zha_issues": 4,
+      "diagnostics_email": 3
     },
     "byCategory": {
       "presence_sensors": 9,
