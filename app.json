@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.7.8",
+  "version": "5.7.10",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -1696,12 +1696,12 @@
       {
         "id": "button_wireless_4_button_4gang_button_pressed",
         "title": {
-          "en": "Button pressed",
-          "fr": "Bouton appuyé"
+          "en": "A button was pressed",
+          "fr": "Un bouton a été appuyé"
         },
-        "titleFormatted": {
-          "en": "Button [[button]] pressed",
-          "fr": "Bouton [[button]] appuyé"
+        "hint": {
+          "en": "Triggers when any button is pressed. Use the button token in your flow.",
+          "fr": "Se déclenche quand un bouton est appuyé. Utilisez le jeton bouton dans votre flow."
         },
         "tokens": [
           {
@@ -1725,12 +1725,12 @@
       {
         "id": "button_wireless_4_button_4gang_button_double_press",
         "title": {
-          "en": "Button double-pressed",
-          "fr": "Bouton double-cliqué"
+          "en": "A button was double-pressed",
+          "fr": "Un bouton a été double-cliqué"
         },
-        "titleFormatted": {
-          "en": "Button [[button]] double-pressed",
-          "fr": "Bouton [[button]] double-cliqué"
+        "hint": {
+          "en": "Triggers when any button is double-pressed.",
+          "fr": "Se déclenche quand un bouton est double-cliqué."
         },
         "tokens": [
           {
@@ -1754,12 +1754,12 @@
       {
         "id": "button_wireless_4_button_4gang_button_long_press",
         "title": {
-          "en": "Button long-pressed",
-          "fr": "Bouton pressé longtemps"
+          "en": "A button was long-pressed",
+          "fr": "Un bouton a été appuyé longtemps"
         },
-        "titleFormatted": {
-          "en": "Button [[button]] long-pressed",
-          "fr": "Bouton [[button]] pressé longtemps"
+        "hint": {
+          "en": "Triggers when any button is long-pressed.",
+          "fr": "Se déclenche quand un bouton est appuyé longtemps."
         },
         "tokens": [
           {
@@ -1783,12 +1783,12 @@
       {
         "id": "button_wireless_4_button_4gang_button_multi_press",
         "title": {
-          "en": "Button multi-pressed",
-          "fr": "Bouton multi-cliqué"
+          "en": "A button was multi-pressed",
+          "fr": "Un bouton a été multi-cliqué"
         },
-        "titleFormatted": {
-          "en": "Button [[button]] pressed [[count]] times",
-          "fr": "Bouton [[button]] appuyé [[count]] fois"
+        "hint": {
+          "en": "Triggers when any button is pressed multiple times.",
+          "fr": "Se déclenche quand un bouton est appuyé plusieurs fois."
         },
         "tokens": [
           {
@@ -4236,6 +4236,406 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=gateway_zigbee_bridge"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée"
+        },
+        "hint": {
+          "en": "When the DIY sensor temperature changes",
+          "fr": "Quand la température du capteur DIY change"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "fr": "Température"
+            },
+            "example": 22.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_humidity_changed",
+        "title": {
+          "en": "Humidity changed",
+          "fr": "Humidité changée"
+        },
+        "hint": {
+          "en": "When the DIY sensor humidity changes",
+          "fr": "Quand l'humidité du capteur DIY change"
+        },
+        "tokens": [
+          {
+            "name": "humidity",
+            "type": "number",
+            "title": {
+              "en": "Humidity",
+              "fr": "Humidité"
+            },
+            "example": 65
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_motion_detected",
+        "title": {
+          "en": "Motion detected",
+          "fr": "Mouvement détecté"
+        },
+        "hint": {
+          "en": "When the DIY sensor detects motion",
+          "fr": "Quand le capteur DIY détecte un mouvement"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_motion_cleared",
+        "title": {
+          "en": "Motion cleared",
+          "fr": "Mouvement terminé"
+        },
+        "hint": {
+          "en": "When no more motion is detected",
+          "fr": "Quand plus aucun mouvement n'est détecté"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_button_pressed",
+        "title": {
+          "en": "Button pressed",
+          "fr": "Bouton pressé"
+        },
+        "hint": {
+          "en": "When a DIY button is pressed",
+          "fr": "Quand un bouton DIY est pressé"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "number",
+            "title": {
+              "en": "Button number",
+              "fr": "Numéro du bouton"
+            },
+            "example": 1
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_button_double_pressed",
+        "title": {
+          "en": "Button double pressed",
+          "fr": "Bouton double-pressé"
+        },
+        "hint": {
+          "en": "When a DIY button is double pressed",
+          "fr": "Quand un bouton DIY est double-pressé"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "number",
+            "title": {
+              "en": "Button number",
+              "fr": "Numéro du bouton"
+            },
+            "example": 1
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_button_long_pressed",
+        "title": {
+          "en": "Button long pressed",
+          "fr": "Bouton appui long"
+        },
+        "hint": {
+          "en": "When a DIY button is long pressed",
+          "fr": "Quand un bouton DIY est maintenu"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "number",
+            "title": {
+              "en": "Button number",
+              "fr": "Numéro du bouton"
+            },
+            "example": 1
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_switch_turned_on",
+        "title": {
+          "en": "Switch turned on",
+          "fr": "Interrupteur activé"
+        },
+        "hint": {
+          "en": "When a DIY switch is turned on",
+          "fr": "Quand un interrupteur DIY est activé"
+        },
+        "tokens": [
+          {
+            "name": "endpoint",
+            "type": "number",
+            "title": {
+              "en": "Endpoint",
+              "fr": "Point de terminaison"
+            },
+            "example": 1
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_switch_turned_off",
+        "title": {
+          "en": "Switch turned off",
+          "fr": "Interrupteur désactivé"
+        },
+        "hint": {
+          "en": "When a DIY switch is turned off",
+          "fr": "Quand un interrupteur DIY est désactivé"
+        },
+        "tokens": [
+          {
+            "name": "endpoint",
+            "type": "number",
+            "title": {
+              "en": "Endpoint",
+              "fr": "Point de terminaison"
+            },
+            "example": 1
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_contact_opened",
+        "title": {
+          "en": "Contact opened",
+          "fr": "Contact ouvert"
+        },
+        "hint": {
+          "en": "When the DIY contact sensor opens",
+          "fr": "Quand le capteur de contact DIY s'ouvre"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_contact_closed",
+        "title": {
+          "en": "Contact closed",
+          "fr": "Contact fermé"
+        },
+        "hint": {
+          "en": "When the DIY contact sensor closes",
+          "fr": "Quand le capteur de contact DIY se ferme"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_illuminance_changed",
+        "title": {
+          "en": "Illuminance changed",
+          "fr": "Luminosité changée"
+        },
+        "hint": {
+          "en": "When the DIY light sensor value changes",
+          "fr": "Quand la luminosité du capteur DIY change"
+        },
+        "tokens": [
+          {
+            "name": "lux",
+            "type": "number",
+            "title": {
+              "en": "Illuminance (lux)",
+              "fr": "Luminosité (lux)"
+            },
+            "example": 500
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible"
+        },
+        "hint": {
+          "en": "When the DIY device battery is low",
+          "fr": "Quand la batterie du dispositif DIY est faible"
+        },
+        "tokens": [
+          {
+            "name": "battery",
+            "type": "number",
+            "title": {
+              "en": "Battery %",
+              "fr": "Batterie %"
+            },
+            "example": 15
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_pressure_changed",
+        "title": {
+          "en": "Pressure changed",
+          "fr": "Pression changée"
+        },
+        "hint": {
+          "en": "When the DIY pressure sensor value changes",
+          "fr": "Quand la pression du capteur DIY change"
+        },
+        "tokens": [
+          {
+            "name": "pressure",
+            "type": "number",
+            "title": {
+              "en": "Pressure (hPa)",
+              "fr": "Pression (hPa)"
+            },
+            "example": 1013
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_analog_changed",
+        "title": {
+          "en": "Analog value changed",
+          "fr": "Valeur analogique changée"
+        },
+        "hint": {
+          "en": "When a DIY analog input changes",
+          "fr": "Quand une entrée analogique DIY change"
+        },
+        "tokens": [
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            },
+            "example": 512
+          },
+          {
+            "name": "endpoint",
+            "type": "number",
+            "title": {
+              "en": "Endpoint",
+              "fr": "Point de terminaison"
+            },
+            "example": 1
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
           }
         ]
       },
@@ -8817,6 +9217,230 @@
         ]
       },
       {
+        "id": "switch_4gang_physical_gang1_single",
+        "title": {
+          "en": "Gang 1 single press (physical)",
+          "fr": "Gang 1 appui simple (physique)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang1_double",
+        "title": {
+          "en": "Gang 1 double press (physical)",
+          "fr": "Gang 1 double appui (physique)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang1_triple",
+        "title": {
+          "en": "Gang 1 triple press (physical)",
+          "fr": "Gang 1 triple appui (physique)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang1_long_press",
+        "title": {
+          "en": "Gang 1 long press (physical)",
+          "fr": "Gang 1 appui long (physique)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang2_single",
+        "title": {
+          "en": "Gang 2 single press (physical)",
+          "fr": "Gang 2 appui simple (physique)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang2_double",
+        "title": {
+          "en": "Gang 2 double press (physical)",
+          "fr": "Gang 2 double appui (physique)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang2_triple",
+        "title": {
+          "en": "Gang 2 triple press (physical)",
+          "fr": "Gang 2 triple appui (physique)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang2_long_press",
+        "title": {
+          "en": "Gang 2 long press (physical)",
+          "fr": "Gang 2 appui long (physique)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang3_single",
+        "title": {
+          "en": "Gang 3 single press (physical)",
+          "fr": "Gang 3 appui simple (physique)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang3_double",
+        "title": {
+          "en": "Gang 3 double press (physical)",
+          "fr": "Gang 3 double appui (physique)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang3_triple",
+        "title": {
+          "en": "Gang 3 triple press (physical)",
+          "fr": "Gang 3 triple appui (physique)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang3_long_press",
+        "title": {
+          "en": "Gang 3 long press (physical)",
+          "fr": "Gang 3 appui long (physique)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang4_single",
+        "title": {
+          "en": "Gang 4 single press (physical)",
+          "fr": "Gang 4 appui simple (physique)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang4_double",
+        "title": {
+          "en": "Gang 4 double press (physical)",
+          "fr": "Gang 4 double appui (physique)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang4_triple",
+        "title": {
+          "en": "Gang 4 triple press (physical)",
+          "fr": "Gang 4 triple appui (physique)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_physical_gang4_long_press",
+        "title": {
+          "en": "Gang 4 long press (physical)",
+          "fr": "Gang 4 appui long (physique)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
         "id": "switch_wall_5gang_gang1_turned_on",
         "title": {
           "en": "Gang 1 turned on",
@@ -11431,6 +12055,162 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=gateway_zigbee_bridge"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_is_on",
+        "title": {
+          "en": "DIY switch is on",
+          "fr": "Interrupteur DIY est activé"
+        },
+        "hint": {
+          "en": "Check if the DIY switch is on",
+          "fr": "Vérifie si l'interrupteur DIY est activé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_motion_active",
+        "title": {
+          "en": "Motion is detected",
+          "fr": "Mouvement détecté"
+        },
+        "hint": {
+          "en": "Check if motion is currently detected",
+          "fr": "Vérifie si un mouvement est actuellement détecté"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_contact_open",
+        "title": {
+          "en": "Contact is open",
+          "fr": "Contact est ouvert"
+        },
+        "hint": {
+          "en": "Check if the contact sensor is open",
+          "fr": "Vérifie si le capteur de contact est ouvert"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_temperature_above",
+        "title": {
+          "en": "Temperature is above...",
+          "fr": "Température supérieure à..."
+        },
+        "titleFormatted": {
+          "en": "Temperature is above [[temperature]] °C",
+          "fr": "Température supérieure à [[temperature]] °C"
+        },
+        "hint": {
+          "en": "Check if temperature is above a value",
+          "fr": "Vérifie si la température est supérieure à une valeur"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          },
+          {
+            "type": "number",
+            "name": "temperature",
+            "title": {
+              "en": "Temperature",
+              "fr": "Température"
+            },
+            "placeholder": {
+              "en": "25",
+              "fr": "25"
+            }
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_humidity_above",
+        "title": {
+          "en": "Humidity is above...",
+          "fr": "Humidité supérieure à..."
+        },
+        "titleFormatted": {
+          "en": "Humidity is above [[humidity]] %",
+          "fr": "Humidité supérieure à [[humidity]] %"
+        },
+        "hint": {
+          "en": "Check if humidity is above a value",
+          "fr": "Vérifie si l'humidité est supérieure à une valeur"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          },
+          {
+            "type": "number",
+            "name": "humidity",
+            "title": {
+              "en": "Humidity",
+              "fr": "Humidité"
+            },
+            "placeholder": {
+              "en": "60",
+              "fr": "60"
+            }
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_battery_below",
+        "title": {
+          "en": "Battery is below...",
+          "fr": "Batterie inférieure à..."
+        },
+        "titleFormatted": {
+          "en": "Battery is below [[battery]] %",
+          "fr": "Batterie inférieure à [[battery]] %"
+        },
+        "hint": {
+          "en": "Check if battery is below a percentage",
+          "fr": "Vérifie si la batterie est inférieure à un pourcentage"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          },
+          {
+            "type": "number",
+            "name": "battery",
+            "title": {
+              "en": "Battery %",
+              "fr": "Batterie %"
+            },
+            "placeholder": {
+              "en": "20",
+              "fr": "20"
+            }
           }
         ]
       },
@@ -14593,6 +15373,175 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=gateway_zigbee_bridge"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_turn_on",
+        "title": {
+          "en": "Turn on DIY switch",
+          "fr": "Activer interrupteur DIY"
+        },
+        "hint": {
+          "en": "Turn on the DIY switch",
+          "fr": "Active l'interrupteur DIY"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_turn_off",
+        "title": {
+          "en": "Turn off DIY switch",
+          "fr": "Désactiver interrupteur DIY"
+        },
+        "hint": {
+          "en": "Turn off the DIY switch",
+          "fr": "Désactive l'interrupteur DIY"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_toggle",
+        "title": {
+          "en": "Toggle DIY switch",
+          "fr": "Basculer interrupteur DIY"
+        },
+        "hint": {
+          "en": "Toggle the DIY switch state",
+          "fr": "Bascule l'état de l'interrupteur DIY"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_set_dim",
+        "title": {
+          "en": "Set DIY dimmer level",
+          "fr": "Définir niveau variateur DIY"
+        },
+        "titleFormatted": {
+          "en": "Set brightness to [[level]]",
+          "fr": "Définir luminosité à [[level]]"
+        },
+        "hint": {
+          "en": "Set the brightness level",
+          "fr": "Définit le niveau de luminosité"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          },
+          {
+            "type": "range",
+            "name": "level",
+            "title": {
+              "en": "Level",
+              "fr": "Niveau"
+            },
+            "min": 0,
+            "max": 1,
+            "step": 0.01
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_identify",
+        "title": {
+          "en": "Identify DIY device",
+          "fr": "Identifier dispositif DIY"
+        },
+        "hint": {
+          "en": "Make the DIY device blink/beep to identify it",
+          "fr": "Fait clignoter/biper le dispositif DIY pour l'identifier"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_turn_on_endpoint",
+        "title": {
+          "en": "Turn on endpoint...",
+          "fr": "Activer endpoint..."
+        },
+        "titleFormatted": {
+          "en": "Turn on endpoint [[endpoint]]",
+          "fr": "Activer endpoint [[endpoint]]"
+        },
+        "hint": {
+          "en": "Turn on a specific endpoint (for multi-switch DIY devices)",
+          "fr": "Active un endpoint spécifique (pour dispositifs DIY multi-interrupteurs)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          },
+          {
+            "type": "number",
+            "name": "endpoint",
+            "title": {
+              "en": "Endpoint",
+              "fr": "Endpoint"
+            },
+            "min": 1,
+            "max": 8
+          }
+        ]
+      },
+      {
+        "id": "generic_diy_turn_off_endpoint",
+        "title": {
+          "en": "Turn off endpoint...",
+          "fr": "Désactiver endpoint..."
+        },
+        "titleFormatted": {
+          "en": "Turn off endpoint [[endpoint]]",
+          "fr": "Désactiver endpoint [[endpoint]]"
+        },
+        "hint": {
+          "en": "Turn off a specific endpoint",
+          "fr": "Désactive un endpoint spécifique"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=generic_diy"
+          },
+          {
+            "type": "number",
+            "name": "endpoint",
+            "title": {
+              "en": "Endpoint",
+              "fr": "Endpoint"
+            },
+            "min": 1,
+            "max": 8
           }
         ]
       },
@@ -20924,6 +21873,287 @@
     ]
   },
   "drivers": [
+    {
+      "name": {
+        "en": "Air Purifier",
+        "fr": "Purificateur d'Air",
+        "nl": "Luchtreiniger",
+        "de": "Luftreiniger",
+        "it": "Purificatore d'Aria",
+        "sv": "Luftrenare",
+        "no": "Luftrenser",
+        "es": "Purificador de Aire",
+        "da": "Luftrenser"
+      },
+      "class": "fan",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_pm25"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "title": {
+            "en": "Fan Speed",
+            "fr": "Vitesse Ventilateur"
+          }
+        },
+        "measure_pm25": {
+          "title": {
+            "en": "PM2.5",
+            "fr": "PM2.5"
+          },
+          "units": "µg/m³"
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_7bztmfm1",
+          "_TZE204_7bztmfm1",
+          "_TZE200_qpn5q17m",
+          "_TZE204_qpn5q17m",
+          "Danfoss",
+          "DANFOSS",
+          "Eurotronic",
+          "EUROTRONIC",
+          "BOSCH",
+          "Paulmann Licht",
+          "Paulmann Licht GmbH",
+          "Müller Licht",
+          "Muller Licht",
+          "GLEDOPTO",
+          "Gledopto",
+          "Dresden Elektronik",
+          "de",
+          "Phoscon",
+          "sengled",
+          "Sengled Inc.",
+          "Jasco",
+          "Jasco Products",
+          "Cree Inc.",
+          "Leviton Manufacturing",
+          "Lutron Electronics",
+          "Eaton",
+          "Eaton Corporation",
+          "Allegion",
+          "Spectrum Brands",
+          "First Alert",
+          "BRK",
+          "Ring LLC",
+          "ZemiSmart",
+          "Lonsonho",
+          "LONSONHO",
+          "BlitzWolf",
+          "BLITZWOLF",
+          "BW-",
+          "Neo",
+          "NAS-",
+          "Neo Coolcam",
+          "IMMAX",
+          "Immax",
+          "KONKE",
+          "Konke",
+          "LIVOLO",
+          "Livolo",
+          "WOOX",
+          "Woox",
+          "Yagusmart",
+          "YAGUSMART",
+          "Yoolax",
+          "YOOLAX",
+          "BSEED",
+          "Bseed",
+          "Girier",
+          "GIRIER",
+          "Aubess",
+          "AUBESS",
+          "Silvercrest",
+          "Livarno",
+          "LIVARNO LUX",
+          "Livarno Lux",
+          "ALDI",
+          "Medion",
+          "MEDION",
+          "Aurora Lighting",
+          "AOne",
+          "Sunricher",
+          "SUNRICHER",
+          "SR-ZG",
+          "iLuminize",
+          "ILUMINIZE",
+          "ilux",
+          "ILUX",
+          "EcoSmart",
+          "ECOSMART",
+          "Feit Electric",
+          "FEIT",
+          "Sengoku",
+          "SENGOKU",
+          "Saswell",
+          "SASWELL",
+          "POPP",
+          "Popp",
+          "Stelpro",
+          "STELPRO",
+          "eCozy",
+          "ECOZY",
+          "Siterwell",
+          "SITERWELL",
+          "AUGUST",
+          "DANALOCK",
+          "NUKI",
+          "Tedee",
+          "TEDEE",
+          "U-tec",
+          "UTEC",
+          "Ultraloq",
+          "SMARTvill",
+          "Smartvill",
+          "Winners",
+          "WINNERS",
+          "Dawon DNS",
+          "DAWON",
+          "Dawon",
+          "KoreaKOSS",
+          "KOSS",
+          "ShinaSystem",
+          "SHINASYSTEM",
+          "Third Reality",
+          "Third Reality, Inc",
+          "3Reality",
+          "CENTRALITE",
+          "Climax",
+          "CLIMAX",
+          "Climax Technology",
+          "Visonic",
+          "VISONIC",
+          "Nortek",
+          "NORTEK",
+          "Sercomm",
+          "SERCOMM",
+          "Securifi",
+          "SECURIFI",
+          "AduroSmart",
+          "ADUROSMART",
+          "ADURO",
+          "Bitron",
+          "BITRON",
+          "Bitron Video",
+          "EDP",
+          "REV",
+          "REvogni",
+          "Salus",
+          "SALUS",
+          "Elko",
+          "Namron",
+          "NAMRON",
+          "Heimgard",
+          "HEIMGARD",
+          "Swann",
+          "SWANN",
+          "Terncy",
+          "TERNCY",
+          "Atsmart",
+          "ATSMART",
+          "Ajax",
+          "AJAX",
+          "Trust",
+          "TRUST",
+          "Trust International",
+          "SmarTech",
+          "SMARTECH",
+          "BUSCH-JAEGER",
+          "GIRA",
+          "JUNG",
+          "MERTEN",
+          "Berker",
+          "BERKER",
+          "Vimar",
+          "VIMAR",
+          "Gewiss",
+          "GEWISS",
+          "HAGER",
+          "Zigbee Alliance",
+          "Connectivity Standards Alliance",
+          "Matter",
+          "Thread",
+          "lk",
+          "Linkind",
+          "LINKIND",
+          "LEEDARSON",
+          "LEEDARSON LIGHTING",
+          "Leedarson",
+          "ROBB",
+          "Robb",
+          "ROB",
+          "Sinope",
+          "SINOPE",
+          "Sinope Technologies",
+          "Keen",
+          "KEEN",
+          "Zen",
+          "ZEN",
+          "Zen Thermostat",
+          "Bitron Home",
+          "Perenio",
+          "Comap",
+          "DIYRUZ",
+          "Finder",
+          "Eltako",
+          "MDT",
+          "Weinzierl",
+          "Bingoelec",
+          "Woolley",
+          "Avatto",
+          "RYRA",
+          "KTNNKG",
+          "Coswall",
+          "Wallpad",
+          "Miboxer",
+          "Zigbee2MQTT",
+          "Konyks",
+          "Enbrighten",
+          "Cooper",
+          "Linear",
+          "GoControl",
+          "NuTone",
+          "Broan",
+          "Ecolink",
+          "Dome",
+          "Vision",
+          "Monoprice"
+        ],
+        "productId": [
+          "TS0601_air_purifier",
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ],
+            "bindings": []
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press and hold the power button for 5 seconds",
+            "fr": "Maintenez le bouton power pendant 5 secondes"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/air_purifier/assets/images/small.png",
+        "large": "drivers/air_purifier/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "id": "air_purifier"
+    },
     {
       "name": {
         "en": "Zigbee Air Quality / CO2 Sensor",
@@ -34870,6 +36100,14 @@
           "_tze204_zpzndjez",
           "_TZE204_ZUQ5XXIB",
           "_tze204_zuq5xxib",
+          "_TZE204_r0jdjrvi",
+          "_tze204_r0jdjrvi",
+          "_TZE204_yrugsphv",
+          "_tze204_yrugsphv",
+          "_TZE200_libht6ua",
+          "_tze200_libht6ua",
+          "_TZE200_yia0p3tr",
+          "_tze200_yia0p3tr",
           "_TZE284_1FUXIHTI",
           "_tze284_1fuxihti",
           "_TZE284_KOXAOPNK",
@@ -40622,13 +41860,13 @@
         "small": "drivers/fingerbot/assets/images/small.png",
         "large": "drivers/fingerbot/assets/images/large.png"
       },
-      "id": "fingerbot",
       "platforms": [
         "local"
       ],
       "connectivity": [
         "zigbee"
-      ]
+      ],
+      "id": "fingerbot"
     },
     {
       "name": {
@@ -43132,6 +44370,219 @@
       ],
       "capabilitiesOptions": {},
       "id": "gateway_zigbee_bridge"
+    },
+    {
+      "name": {
+        "en": "Generic DIY Zigbee Device",
+        "fr": "Appareil Zigbee DIY Générique",
+        "nl": "Generiek DIY Zigbee Apparaat",
+        "de": "Generisches DIY Zigbee Gerät"
+      },
+      "class": "other",
+      "images": {
+        "small": "/drivers/generic_diy/assets/images/small.png",
+        "large": "/drivers/generic_diy/assets/images/large.png",
+        "xlarge": "/drivers/generic_diy/assets/images/xlarge.png"
+      },
+      "capabilities": [],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "AAA",
+          "AA",
+          "OTHER"
+        ],
+        "approximation": {
+          "usageConstant": 1
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "ESP32",
+          "ESP32-C6",
+          "ESP32-H2",
+          "Espressif",
+          "ESPRESSIF",
+          "espressif",
+          "DLN-DIY",
+          "DLNRAJA",
+          "dlnraja",
+          "DLN",
+          "PTVO",
+          "ptvo.info",
+          "ptvo",
+          "zigfred",
+          "zig-a-zig-ah",
+          "DIY",
+          "diy",
+          "OpenSource",
+          "opensource",
+          "Custom",
+          "custom",
+          "Maker",
+          "maker",
+          "DIYRUZ",
+          "diyruz",
+          "efekta",
+          "EFEKTA",
+          "Efekta",
+          "LUMI Router",
+          "lumi.router",
+          "ROUTER",
+          "router",
+          "CC2530",
+          "CC2531",
+          "CC2652",
+          "CC1352",
+          "EFR32",
+          "nRF52",
+          "nrf52",
+          "SonoffZigbee",
+          "Tube's ZB",
+          "zzh",
+          "ZZH",
+          "slzb",
+          "SLZB",
+          "cod.m",
+          "COD.M",
+          "ti.router",
+          "TI Router",
+          "zigstar",
+          "ZIGSTAR",
+          "ZigStar",
+          "modkam",
+          "MODKAM",
+          "xyzroe",
+          "XYZROE"
+        ],
+        "productId": [
+          "DIY",
+          "diy",
+          "ESP32",
+          "esp32",
+          "PTVO",
+          "ptvo",
+          "Router",
+          "router",
+          "ROUTER",
+          "Sensor",
+          "sensor",
+          "Switch",
+          "switch",
+          "Button",
+          "button",
+          "Relay",
+          "relay",
+          "CC2530",
+          "CC2531",
+          "CC2652",
+          "efekta",
+          "EFEKTA",
+          "zigstar",
+          "custom",
+          "CUSTOM",
+          "maker"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ],
+            "bindings": []
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Generic DIY Zigbee device (ESP32, PTVO, CC253x, etc.)\n\n1. Put your DIY device in pairing mode\n2. For ESP32: Press boot button or trigger pairing in firmware\n3. For PTVO: Hold button for 5+ seconds\n4. For CC253x routers: Power cycle or reset\n\nCapabilities will be auto-discovered from ZCL clusters.\n\nSupported: ESP32-C6, ESP32-H2, PTVO, CC2530/31, CC2652, Zigbee routers.",
+            "fr": "Appareil Zigbee DIY générique (ESP32, PTVO, CC253x, etc.)\n\n1. Mettez votre appareil DIY en mode appairage\n2. Pour ESP32: Appuyez sur boot ou déclenchez l'appairage\n3. Pour PTVO: Maintenez le bouton 5+ secondes\n4. Pour CC253x: Redémarrez ou réinitialisez\n\nLes capacités seront auto-découvertes depuis les clusters ZCL.\n\nSupporté: ESP32-C6, ESP32-H2, PTVO, CC2530/31, CC2652, routeurs Zigbee."
+          }
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "🔧 Device Information",
+            "fr": "🔧 Informations Appareil"
+          },
+          "children": [
+            {
+              "id": "diy_manufacturer_name",
+              "type": "label",
+              "label": {
+                "en": "Manufacturer",
+                "fr": "Fabricant"
+              },
+              "value": "DIY"
+            },
+            {
+              "id": "diy_model_id",
+              "type": "label",
+              "label": {
+                "en": "Model ID",
+                "fr": "ID Modèle"
+              },
+              "value": "Unknown"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "📡 Discovered Clusters",
+            "fr": "📡 Clusters Découverts"
+          },
+          "children": [
+            {
+              "id": "discovered_clusters",
+              "type": "label",
+              "label": {
+                "en": "ZCL Clusters",
+                "fr": "Clusters ZCL"
+              },
+              "value": "Scanning..."
+            },
+            {
+              "id": "discovered_capabilities",
+              "type": "label",
+              "label": {
+                "en": "Capabilities Added",
+                "fr": "Capacités Ajoutées"
+              },
+              "value": "None yet"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "⚙️ Advanced",
+            "fr": "⚙️ Avancé"
+          },
+          "children": [
+            {
+              "id": "force_rescan",
+              "type": "checkbox",
+              "label": {
+                "en": "Force Cluster Rescan",
+                "fr": "Forcer Rescan Clusters"
+              },
+              "value": false,
+              "hint": {
+                "en": "Enable to rescan clusters on next init",
+                "fr": "Activer pour rescanner les clusters au prochain démarrage"
+              }
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "id": "generic_diy"
     },
     {
       "name": {
@@ -53651,8 +55102,13 @@
           "Dome",
           "Vision",
           "Monoprice",
+          "_TZE200_81yrt3lo",
           "_TZE204_81yrt3lo",
-          "_TZE284_81yrt3lo"
+          "_TZE284_81yrt3lo",
+          "_TZE204_cjbofhxw",
+          "_TZE284_cjbofhxw",
+          "_tze204_cjbofhxw",
+          "_tze284_cjbofhxw"
         ],
         "productId": [
           "TS0601_clamp",
@@ -66738,6 +68194,191 @@
     },
     {
       "name": {
+        "en": "Switch Touch Dimmer (1 Gang)",
+        "nl": "Switch Touch Dimmer (1 Gang)"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        }
+      },
+      "energy": {
+        "approximation": {
+          "usageConstant": 5
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "/drivers/switch_dimmer_1gang/assets/images/small.png",
+        "large": "/drivers/switch_dimmer_1gang/assets/images/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_3p5ydos3",
+          "_TZE204_n9ctkb6j",
+          "_TZE200_ip2akl4w",
+          "_TZE200_1agwnems",
+          "_TZE200_la2c2uo9",
+          "_TZE200_579lguh2",
+          "_TZE200_vucankjx",
+          "_TZE200_4mh6tyyo",
+          "_TZE204_hlx9tnzb",
+          "_TZE204_9qhuzgo0",
+          "_TZE200_9cxuhakf",
+          "_TZE200_a0syesf5",
+          "_TZE200_swaamsoy",
+          "_TZE200_ojzhk75b",
+          "_TZE200_w4cryh2i",
+          "_TZE200_dfxkcots",
+          "_TZE200_9i9dt8is",
+          "_TZE200_ctq0k47x",
+          "_TZE200_ebwgzdqq",
+          "_TZE204_vevc4c6g",
+          "_TZE200_0nauxa0p",
+          "_TZE200_ykgar0ow",
+          "_TZE200_qzaing2g",
+          "_TZE204_3z6hca0q"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              61184
+            ],
+            "bindings": [
+              25,
+              10
+            ]
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Toggle the switch to start pairing.\n\nIf pairing does not automatically start, try resetting the device by holding the button for 10 seconds until the LED flashes rapidly.",
+            "nl": "Schakel de schakelaar om te beginnen met koppelen.\n\nAls het koppelen niet automatisch start, probeer het apparaat te resetten door de knop 10 seconden ingedrukt te houden totdat de LED snel knippert."
+          }
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Dimmer Settings",
+            "nl": "Dimmer Instellingen"
+          },
+          "children": [
+            {
+              "id": "min_brightness",
+              "type": "number",
+              "label": {
+                "en": "Minimum Brightness (%)",
+                "nl": "Minimale Helderheid (%)"
+              },
+              "hint": {
+                "en": "Set the minimum brightness level (1-100)",
+                "nl": "Stel het minimale helderheidsniveau in (1-100)"
+              },
+              "value": 1,
+              "min": 1,
+              "max": 100,
+              "units": {
+                "en": "%",
+                "nl": "%"
+              }
+            },
+            {
+              "id": "power_on_behavior",
+              "type": "dropdown",
+              "label": {
+                "en": "Power-on Behavior",
+                "nl": "Inschakelen Gedrag"
+              },
+              "hint": {
+                "en": "Select the behavior when power is restored",
+                "nl": "Selecteer het gedrag wanneer de stroom wordt hersteld"
+              },
+              "value": "2",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Off",
+                    "nl": "Uit"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "On",
+                    "nl": "Aan"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Last State",
+                    "nl": "Laatste Status"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "light_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Light Type",
+                "nl": "Lichttype"
+              },
+              "hint": {
+                "en": "Select the type of light connected",
+                "nl": "Selecteer het type aangesloten lamp"
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "LED",
+                    "nl": "LED"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Incandescent",
+                    "nl": "Gloeilamp"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Halogen",
+                    "nl": "Halogeen"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "switch_dimmer_1gang"
+    },
+    {
+      "name": {
         "en": "Smart Plug 1-Gang",
         "fr": "Prise Connectée 1 Gang",
         "nl": "Schakelaardoos 1",
@@ -72420,7 +74061,9 @@
           "_TZE284_xnbkhhdr",
           "_TZE284_pcdmj88b",
           "_TZE204_pcdmj88b",
-          "_TZE284_ogx8u5z6"
+          "_TZE284_ogx8u5z6",
+          "_TZE284_o3x45p96",
+          "_tze284_o3x45p96"
         ],
         "productId": [
           "TS0601_thermo",
@@ -73956,6 +75599,14 @@
         "manufacturerName": [
           "_TYZB01_4tlksk8a",
           "_TYZB01_ymcdbl3u",
+          "_TZE200_akjefhj5",
+          "_tze200_akjefhj5",
+          "_TZE204_4fblxpma",
+          "_tze204_4fblxpma",
+          "_TZE200_81isopgh",
+          "_tze200_81isopgh",
+          "_TZE204_81isopgh",
+          "_tze204_81isopgh",
           "Danfoss",
           "DANFOSS",
           "Eurotronic",
@@ -75099,7 +76750,6 @@
           }
         }
       },
-      "id": "wall_switch_1gang_1way",
       "settings": [
         {
           "type": "group",
@@ -75146,7 +76796,8 @@
             }
           ]
         }
-      ]
+      ],
+      "id": "wall_switch_1gang_1way"
     },
     {
       "name": {
@@ -77201,6 +78852,42 @@
       "setable": false,
       "uiComponent": "sensor"
     },
+    "button_close": {
+      "type": "boolean",
+      "title": {
+        "en": "Close",
+        "fr": "Fermer",
+        "nl": "Sluiten"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
+    },
+    "button_dim_down": {
+      "type": "boolean",
+      "title": {
+        "en": "Dim Down",
+        "fr": "Diminuer",
+        "nl": "Dimmen Omlaag"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
+    },
+    "button_dim_up": {
+      "type": "boolean",
+      "title": {
+        "en": "Dim Up",
+        "fr": "Augmenter",
+        "nl": "Dimmen Omhoog"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
+    },
     "button_identify": {
       "type": "boolean",
       "title": {
@@ -77217,6 +78904,30 @@
       "desc": {
         "en": "Identify device"
       }
+    },
+    "button_open": {
+      "type": "boolean",
+      "title": {
+        "en": "Open",
+        "fr": "Ouvrir",
+        "nl": "Openen"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
+    },
+    "button_stop": {
+      "type": "boolean",
+      "title": {
+        "en": "Stop",
+        "fr": "Arrêter",
+        "nl": "Stoppen"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
     },
     "button_toggle": {
       "type": "boolean",
@@ -77277,7 +78988,9 @@
     },
     "button_toggle_5": {
       "type": "boolean",
-      "title": { "en": "Toggle 5" },
+      "title": {
+        "en": "Toggle 5"
+      },
       "getable": true,
       "setable": true,
       "uiComponent": "button",
@@ -77285,7 +78998,9 @@
     },
     "button_toggle_6": {
       "type": "boolean",
-      "title": { "en": "Toggle 6" },
+      "title": {
+        "en": "Toggle 6"
+      },
       "getable": true,
       "setable": true,
       "uiComponent": "button",
@@ -77293,7 +79008,9 @@
     },
     "button_toggle_7": {
       "type": "boolean",
-      "title": { "en": "Toggle 7" },
+      "title": {
+        "en": "Toggle 7"
+      },
       "getable": true,
       "setable": true,
       "uiComponent": "button",
@@ -77301,47 +79018,9 @@
     },
     "button_toggle_8": {
       "type": "boolean",
-      "title": { "en": "Toggle 8" },
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
-      "insights": false
-    },
-    "button_dim_up": {
-      "type": "boolean",
-      "title": { "en": "Dim Up", "fr": "Augmenter", "nl": "Dimmen Omhoog" },
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
-      "insights": false
-    },
-    "button_dim_down": {
-      "type": "boolean",
-      "title": { "en": "Dim Down", "fr": "Diminuer", "nl": "Dimmen Omlaag" },
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
-      "insights": false
-    },
-    "button_open": {
-      "type": "boolean",
-      "title": { "en": "Open", "fr": "Ouvrir", "nl": "Openen" },
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
-      "insights": false
-    },
-    "button_close": {
-      "type": "boolean",
-      "title": { "en": "Close", "fr": "Fermer", "nl": "Sluiten" },
-      "getable": true,
-      "setable": true,
-      "uiComponent": "button",
-      "insights": false
-    },
-    "button_stop": {
-      "type": "boolean",
-      "title": { "en": "Stop", "fr": "Arrêter", "nl": "Stoppen" },
+      "title": {
+        "en": "Toggle 8"
+      },
       "getable": true,
       "setable": true,
       "uiComponent": "button",

@@ -132,7 +132,7 @@
       },
       "children": [
         {
-          "id": "zb_manufacturer_name",
+          "id": "diy_manufacturer_name",
           "type": "label",
           "label": {
             "en": "Manufacturer",
@@ -141,7 +141,7 @@
           "value": "DIY"
         },
         {
-          "id": "zb_model_id",
+          "id": "diy_model_id",
           "type": "label",
           "label": {
             "en": "Model ID",
