@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.5** | ⚡ POWER METER FIX: PJ-1203A (_TZE284_81yrt3lo) DP mappings corrected per Z2M ... |
 | **v5.7.4** | 🔧 TRV FIX: AVATTO ME167/TRV06 (_TZE284_o3x45p96) now uses correct DP4 for ta... |
 | **v5.7.3** | 🌡️ TRV: Added AVATTO TRV fingerprint _TZE284_o3x45p96 (from forum user Manue... |
 | **v5.7.2** | 🎛️ Generic DIY: Comprehensive flow cards (15 triggers, 6 conditions, 7 actio... |
@@ -78,7 +79,6 @@
 | **v5.6.2** | 🔧 FIX: HOBEIAN 10G radar humidity ×10 multiplier (was showing 9% instead of ... |
 | **v5.6.1** | 🔧 FIX: Case-sensitive fingerprints for _TZ3000_b4awzgct (button) and _TZ3000... |
 | **v5.6.0** | 🔧 Major v5.6.0 release: 🎛️ BIDIRECTIONAL BUTTONS - All actuators now have v... |
-| **v5.5.999** | 🔧 FIX: BSEED 4-gang switch (diag c33007b0) - Virtual button toggle for EP2-4... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
