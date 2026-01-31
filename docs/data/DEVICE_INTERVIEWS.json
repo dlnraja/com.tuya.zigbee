@@ -1,7 +1,7 @@
 {
-  "version": "5.5.841",
-  "lastUpdated": "2026-01-27",
-  "totalInterviews": 56,
+  "version": "5.5.998",
+  "lastUpdated": "2026-01-31",
+  "totalInterviews": 62,
   "sources": [
     "Homey Community Forum (pages 1-56)",
     "GitHub Issues/PRs (JohanBendz & dlnraja)",
@@ -346,10 +346,17 @@
         "deviceName": "BSEED 1 Button Switch",
         "manufacturerName": "_TZ3000_blhvsaqf",
         "productId": "TS0001",
-        "source": "GitHub Issue #104, #1339",
-        "user": "pjmpessers",
+        "source": "GitHub Issue #104, #1339, PR #119, #120",
+        "user": "pjmpessers, packetninja",
         "status": "supported",
-        "driver": "switch_1gang"
+        "driver": "switch_1gang",
+        "protocol": "zcl_only",
+        "clusters": ["0x0006", "0xE000", "0xE001"],
+        "physicalButtonDetection": {
+          "method": "onOff attribute report without app command",
+          "appCommandWindow": 2000,
+          "flowCards": ["physical_gang1_on", "physical_gang1_off", "physical_gang1_single", "physical_gang1_long_press"]
+        }
       },
       {
         "id": "INT-051",
@@ -504,6 +511,32 @@
         "productId": "TS0601",
         "source": "GitHub PR #1194, #1195",
         "status": "supported",
+        "driver": "curtain_motor"
+      },
+      {
+        "id": "INT-111",
+        "deviceName": "Longsam Mini M3 Curtain Motor",
+        "manufacturerName": "_TZE204_xu4a5rhj",
+        "productId": "TS0601",
+        "source": "GitHub Issue #122 (elgato7), Z2M #26660, #22614, ZHA #3181",
+        "user": "elgato7",
+        "status": "fixed",
+        "priority": "high",
+        "diagnosticId": "68fd94c5-5b34-4e62-8ea0-b028b47f33a9",
+        "symptoms": ["Commands sent but motor doesn't respond", "DP values change but no rotation"],
+        "rootCause": "Position (DP2) is INVERTED (100-value), not control (DP1)",
+        "crossReference": [
+          "Z2M #26660: toZigbee percentage inverted",
+          "Z2M #22614: Same device support request",
+          "ZHA #3181: DS82-Tuya quirk request",
+          "Z2M docs: invert_cover option",
+          "Z2M #24800: coverPositionInverted converter"
+        ],
+        "fix": {
+          "applied": true,
+          "version": "5.5.998",
+          "description": "Added invertedPosition flag for _TZE204_ curtains, DP2 now uses (100-value)"
+        },
         "driver": "curtain_motor"
       }
     ],
