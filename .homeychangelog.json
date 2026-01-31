@@ -1,4 +1,7 @@
 {
+  "5.7.15": {
+    "en": "🔧 FIX: Removed titleFormatted with [[device]] from physical button flow cards (switch_1gang, switch_2gang, switch_3gang, switch_4gang). This was causing manual device selection bug in Homey flows (PR #120 pattern fix)."
+  },
   "5.7.14": {
     "en": "🔄 BIDIRECTIONAL DEDUP: Virtual button (app/flow) ↔ Physical button (device) deduplication. Prevents double triggers when pressing virtual button in Homey app while device sends physical event, and vice versa. 1.5s dedup window."
   },

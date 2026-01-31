@@ -28,12 +28,6 @@
         "nl": "Fysiek AAN",
         "de": "Physisch EIN"
       },
-      "titleFormatted": {
-        "en": "[[device]] turned on (physical)",
-        "fr": "[[device]] allumé (physique)",
-        "nl": "[[device]] aan (fysiek)",
-        "de": "[[device]] ein (physisch)"
-      },
       "hint": {
         "en": "Physical button turns ON",
         "fr": "Bouton physique allume",
@@ -50,12 +44,6 @@
         "nl": "Fysiek UIT",
         "de": "Physisch AUS"
       },
-      "titleFormatted": {
-        "en": "[[device]] turned off (physical)",
-        "fr": "[[device]] éteint (physique)",
-        "nl": "[[device]] uit (fysiek)",
-        "de": "[[device]] aus (physisch)"
-      },
       "args": []
     },
     {
@@ -65,12 +53,6 @@
         "fr": "Simple pression",
         "nl": "Enkele druk",
         "de": "Einfacher Druck"
-      },
-      "titleFormatted": {
-        "en": "[[device]] single press (physical)",
-        "fr": "[[device]] simple pression (physique)",
-        "nl": "[[device]] enkele druk (fysiek)",
-        "de": "[[device]] einfacher Druck (physisch)"
       },
       "hint": {
         "en": "Physical button single press",
@@ -88,12 +70,6 @@
         "nl": "Dubbele druk",
         "de": "Doppelter Druck"
       },
-      "titleFormatted": {
-        "en": "[[device]] double press (physical)",
-        "fr": "[[device]] double pression (physique)",
-        "nl": "[[device]] dubbele druk (fysiek)",
-        "de": "[[device]] doppelter Druck (physisch)"
-      },
       "hint": {
         "en": "Physical button double press",
         "fr": "Double pression du bouton physique",
@@ -109,12 +85,6 @@
         "fr": "Pression longue",
         "nl": "Lange druk",
         "de": "Langer Druck"
-      },
-      "titleFormatted": {
-        "en": "[[device]] long press (physical)",
-        "fr": "[[device]] pression longue (physique)",
-        "nl": "[[device]] lange druk (fysiek)",
-        "de": "[[device]] langer Druck (physisch)"
       },
       "hint": {
         "en": "Physical button held >600ms",
@@ -141,12 +111,6 @@
         "fr": "Triple pression",
         "nl": "Drievoudige druk",
         "de": "Dreifacher Druck"
-      },
-      "titleFormatted": {
-        "en": "[[device]] triple press (physical)",
-        "fr": "[[device]] triple pression (physique)",
-        "nl": "[[device]] drievoudige druk (fysiek)",
-        "de": "[[device]] dreifacher Druck (physisch)"
       },
       "hint": {
         "en": "Physical button triple press or more",
