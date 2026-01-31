@@ -1,4 +1,7 @@
 {
+  "5.7.11": {
+    "en": "🔘 BUTTON SCENARIOS: Added triple-press and hold-release flow cards for MOES 4-button. Fixed smart_knob_rotary specific flow card triggers. Based on Z2M research for complete button action coverage."
+  },
   "5.7.10": {
     "en": "🔘 MOES 4-BUTTON FIX (Freddyboy #1321): Fixed flow cards with broken titleFormatted[[button]] placeholders causing flows not to trigger. Added 5 device profiles with E000 support. Per-button triggers (Button 1/2/3/4 pressed) now recommended."
   },
