@@ -1154,7 +1154,7 @@ const SENSOR_CONFIGS = {
       // ═══════════════════════════════════════════════════════════════════
       // ENVIRONMENTAL SENSORS (unique to this radar!)
       // ═══════════════════════════════════════════════════════════════════
-      101: { cap: 'measure_humidity', divisor: 10 },      // Humidity ÷10
+      101: { cap: 'measure_humidity', multiplier: 10 },   // Humidity ×10 (value 9 → 90%)
       106: { cap: 'measure_luminance', type: 'lux_direct' }, // Illuminance
       111: { cap: 'measure_temperature', divisor: 10 },   // Temperature ÷10
     }
