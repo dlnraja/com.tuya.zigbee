@@ -285,49 +285,28 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
   }
 
   /**
-   * v5.5.921: ZCL-Only mode for BSEED 2-gang switches
+   * v5.5.990: ZCL-Only mode for BSEED 2-gang switches
+   * Fixed: Register capability listeners FIRST (before attr listeners)
    * Enhanced with physical button flow triggers (packetninja technique)
-   * Forum: Pieter_Pessers - _TZ3000_l9brjwau TS0003
    */
   async _initZclOnlyMode(zclNode) {
-    // State tracking per endpoint
     this._zclState = {
       lastState: { 1: null, 2: null },
       pending: { 1: false, 2: false },
       timeout: { 1: null, 2: null }
     };
+    this._zclNode = zclNode;
+    this._isZclOnlyMode = true; // v5.5.993: Flag for VirtualButtonMixin direct ZCL
 
-    // Setup both endpoints with physical button detection
+    const getOnOffCluster = (epNum) => {
+      const ep = this._zclNode?.endpoints?.[epNum];
+      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
+    };
+
+    // v5.5.990: Register capability listeners FIRST (packetninja fix)
     for (const epNum of [1, 2]) {
-      const ep = zclNode?.endpoints?.[epNum];
-      const onOff = ep?.clusters?.onOff;
-      if (!onOff) continue;
-
       const capName = epNum === 1 ? 'onoff' : 'onoff.gang2';
       
-      // Listen for attribute reports (physical button presses)
-      if (typeof onOff.on === 'function') {
-        onOff.on('attr.onOff', (value) => {
-          const isPhysical = !this._zclState.pending[epNum];
-          this.log(`[BSEED-2G] EP${epNum} attr: ${value} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
-          
-          if (this._zclState.lastState[epNum] !== value) {
-            this._zclState.lastState[epNum] = value;
-            this.setCapabilityValue(capName, value).catch(() => {});
-            
-            // Trigger flow cards for PHYSICAL button presses only
-            if (isPhysical) {
-              const flowId = `switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-              this.homey.flow.getDeviceTriggerCard(flowId)
-                .trigger(this, { gang: epNum, state: value }, {})
-                .catch(() => {});
-              this.log(`[BSEED-2G] 🔘 Physical button G${epNum} ${value ? 'ON' : 'OFF'}`);
-            }
-          }
-        });
-      }
-
-      // Register capability listener for app commands
       this.registerCapabilityListener(capName, async (value) => {
         this.log(`[BSEED-2G] EP${epNum} app cmd: ${value}`);
         this._zclState.pending[epNum] = true;
@@ -335,19 +314,57 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
         this._zclState.timeout[epNum] = setTimeout(() => {
           this._zclState.pending[epNum] = false;
         }, 2000);
-        await onOff[value ? 'setOn' : 'setOff']();
+        
+        const onOff = getOnOffCluster(epNum);
+        if (onOff) {
+          await onOff[value ? 'setOn' : 'setOff']();
+        } else {
+          this.log(`[BSEED-2G] EP${epNum} onOff cluster not found`);
+        }
         return true;
       });
+      this.log(`[BSEED-2G] EP${epNum} capability listener registered`);
+    }
 
-      this.log(`[BSEED-2G] EP${epNum} ZCL onOff + physical detection registered`);
+    // Setup attribute listeners for physical button detection
+    for (const epNum of [1, 2]) {
+      const onOff = getOnOffCluster(epNum);
+      if (!onOff || typeof onOff.on !== 'function') {
+        this.log(`[BSEED-2G] EP${epNum} no attr listener (cluster not ready)`);
+        continue;
+      }
+
+      const capName = epNum === 1 ? 'onoff' : 'onoff.gang2';
+      onOff.on('attr.onOff', (value) => {
+        const isPhysical = !this._zclState.pending[epNum];
+        this.log(`[BSEED-2G] EP${epNum} attr: ${value} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
+        
+        if (this._zclState.lastState[epNum] !== value) {
+          this._zclState.lastState[epNum] = value;
+          this.setCapabilityValue(capName, value).catch(() => {});
+          
+          if (isPhysical) {
+            const flowId = `switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
+            this.homey.flow.getDeviceTriggerCard(flowId)
+              .trigger(this, { gang: epNum, state: value }, {})
+              .catch(() => {});
+            this.log(`[BSEED-2G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+          }
+        }
+      });
+      this.log(`[BSEED-2G] EP${epNum} attr listener registered`);
     }
 
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-2G] ✅ BSEED ZCL-only mode ready (packetninja technique)');
+    this.log('[SWITCH-2G] ✅ BSEED ZCL-only mode ready (packetninja v990)');
   }
 
   onDeleted() {
-    if (this._zclState?.timeout) clearTimeout(this._zclState.timeout);
+    if (this._zclState?.timeout) {
+      for (const epNum of [1, 2]) {
+        if (this._zclState.timeout[epNum]) clearTimeout(this._zclState.timeout[epNum]);
+      }
+    }
     super.onDeleted?.();
   }
 }

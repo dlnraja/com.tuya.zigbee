@@ -12,7 +12,13 @@
     "onoff.channel2",
     "dim.channel2",
     "onoff.channel3",
-    "dim.channel3"
+    "dim.channel3",
+    "button_toggle_1",
+    "button_toggle_2",
+    "button_toggle_3",
+    "button_dim_up",
+    "button_dim_down",
+    "button_identify"
   ],
   "platforms": [
     "local"
