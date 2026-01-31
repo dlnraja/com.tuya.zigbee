@@ -69,16 +69,16 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.6.0** | 🔧 Major v5.6.0 release: 🎛️ BIDIRECTIONAL BUTTONS - All actuators now have v... |
+| **v5.5.999** | 🔧 FIX: BSEED 4-gang switch (diag c33007b0) - Virtual button toggle for EP2-4... |
+| **v5.5.998** | 🔧 FIX: Longsam _TZE204_xu4a5rhj curtain motor - Position INVERTED (DP2: 100-... |
+| **v5.5.997** | 🔧 FIX: PhysicalButtonMixin - Tuya DP physical button detection for hybrid de... |
+| **v5.5.996** | 🔧 FIX: PhysicalButtonMixin enhanced - ZCL + Tuya DP + Hybrid protocol suppor... |
+| **v5.5.995** | 🔧 FIX: gas_detector duplicate flow card IDs - removed duplicate condition ID... |
 | **v5.5.994** | 🔧 FIX: _TZE200_3towulqd fingerprint collision - ZG-204ZL/ZG-204ZV is PIR sen... |
 | **v5.5.993** | 🔧 FIX: PR #120 pattern applied to switch_1gang, switch_2gang, switch_3gang -... |
 | **v5.5.992** | 📚 DOCS: Centralized version references - app.json is now single source of tr... |
 | **v5.5.991** | ✨ IMPROVE: VirtualButtonMixin ZCL fallback for ZCL-only BSEED devices. Time s... |
-| **v5.5.990** | 🔧 FIX: GitHub #110 - Add _TZ3210_w0qqde0g to ZCL_ELECTRICAL config for energ... |
-| **v5.5.989** | 🔧 FIX: GitHub #121 - Move _TZ3000_an5rjiwd from 4-button to 1-button driver ... |
-| **v5.5.988** | 🔧 FIX: Patrick #1288 - ZCL battery throttle (5min + 5% minChange) to stop ba... |
-| **v5.5.987** | 🔧 FIX: Peter #1265 - HOBEIAN ZG-204ZV humidity multiplier (9% → 90%). Added ... |
-| **v5.5.986** | 🔧 FIX: Peter #1282 - ZCL illuminance throttle (30s + 15% minChange) to stop ... |
-| **v5.5.985** | 🔧 FIX: Peter_van_Werkhoven #1282 - HOBEIAN ZG-204ZV Lux smoothing (15% thres... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
