@@ -64,32 +64,72 @@ This document summarizes user-reported devices and their expected behavior based
 |---------|-------|------------|--------|
 | v5.5.811 | `Could not get device by id` in PlugSmartDriver | Device deleted during flow execution | ✅ FIXED in later versions |
 
+---
+
+## � RECURRING USER PATTERNS (Most Frequent Issues)
+
+### 👤 Peter_van_Werkhoven (20+ fixes, v5.5.841-v5.5.987)
+**Devices**: HOBEIAN ZG-204ZV, ZG-204ZL, ZG-204ZM
+
+| Issue | Root Cause | Fix Version | Solution |
+|-------|------------|-------------|----------|
+| Humidity 9% instead of 90% | Raw value needs ×10 multiplier | v5.5.987 | Added humidity multiplier |
+| Lux disco lights | Rapid illuminance changes trigger flows | v5.5.985-986 | 15% smoothing + 30s throttle |
+| Missing temp/humidity | PIR-only vs multisensor variants | v5.5.919-925 | Permissive variant mode |
+| Distance wrong (8 vs 1.5m) | OEM uses cm/dm/m with same mfr | v5.5.927-929 | Smart divisor auto-detection |
+| SOS button not triggering | DP17/18 not mapped | v5.5.841 | Added SOS button DP mapping |
+
+**Cross-References**: Z2M docs ZG-204ZV, ZHA #4452, #4517, #4268, Z2M #12364
+
+### 👤 Lasse_K (8+ fixes, v5.5.645-v5.5.973)
+**Devices**: Water leak sensor, Contact sensor, HOBEIAN ZG-222Z
+
+| Issue | Root Cause | Fix Version | Solution |
+|-------|------------|-------------|----------|
+| Water alarm always on/off | Sensor polarity inverted | v5.5.713 | invert_alarm setting |
+| Contact shows reversed | IAS Zone default inversion | v5.5.918 | Auto-invert for known mfrs |
+| IAS Zone no alarm | Buffer/object parsing | v5.5.645 | Robust numeric conversion |
+| User can't override | Fixed logic | v5.5.973 | XOR logic for user override |
+
+### 👤 Pieter_Pessers (7+ fixes, v5.5.811-v5.5.970)
+**Devices**: BSEED 1/2/3-gang switches (_TZ3000_l9brjwau, _TZ3000_qkixdnon)
+
+| Issue | Root Cause | Fix Version | Solution |
+|-------|------------|-------------|----------|
+| Unknown zigbee device | Fingerprint conflicts | v5.5.970 | Exclusive driver assignment |
+| Wrong driver | Same mfr in multiple drivers | v5.5.951 | productId-specific routing |
+| No response | Tuya DP sent to ZCL device | v5.5.919 | ZCL-only mode |
+
+### 👤 packetninja/Attilla (12+ PRs)
+**Type**: Code contributor
+
+| PR | Contribution | Impact |
+|----|--------------|--------|
+| #118 | BSEED ZCL-only switch | Pure ZCL, no Tuya DP |
+| #119 | HybridSwitchBase refactor | Cleaner architecture |
+| #120 | Physical button flow fix | Remove titleFormatted [[device]] |
+| - | PhysicalButtonMixin | 2000ms app command window |
+
 ### 🔍 CROSS-REFERENCE VERIFICATION
 
 **Devices confirmed IN CODE but users report not working:**
 
-1. **`_TZ3000_zgyzgdua`** (Freddyboy)
+1. **`_TZ3000_zgyzgdua`** (Freddyboy) - ✅ FIXED v5.5.924
    - Found in: `button_wireless_4/driver.compose.json` ✅
-   - Found in: `button_wireless_4/device.js` ✅
-   - Issue: DP handling for scene commands needs verification
-   - Action: Check DP mappings for scene switch mode vs button mode
+   - Issue: Cluster 0xE000 (57344) instead of standard scenes
+   - Fix: Raw frame interceptor for unknown cluster frames
 
-2. **`_TZ3000_wkai4ga5` / `_TZ3000_5tqxpine`** (Eftychis_Georgilas)
+2. **`_TZ3000_wkai4ga5` / `_TZ3000_5tqxpine`** (Eftychis_Georgilas) - ✅ IN CODE
    - Found in: `button_wireless_4/driver.compose.json` ✅
-   - Found in: `button_wireless_4/device.js` ✅
-   - Issue: Device pairing to wrong driver or no driver
    - Action: Verify productId matching (TS004F)
 
-3. **HOBEIAN ZG-101ZL** (Ronny_M)
-   - Found in: `button_wireless_1/driver.compose.json` ✅
-   - Found in: `button_wireless_1/device.js` ✅
-   - Issue: OnOff cluster events not triggering flows
-   - Action: Check cluster 6 (onOff) command binding
+3. **HOBEIAN ZG-101ZL** (_TZ3000_ja5osu5g) - ✅ FIXED v5.5.926
+   - Removed from wrong drivers (plug, energy_monitor, button_4gang)
+   - Now ONLY in button_wireless_1
 
-4. **`_TZE200_3p5ydos3` / `_TZE204_n9ctkb6j`** (Attilla)
-   - Found in: `dimmer_wall_1gang/driver.compose.json` ✅
-   - Issue: TS0601 touch dimmer pairing as generic since v5.5.690
-   - Action: TS0601 productId restriction may be too aggressive
+4. **`_TZE200_3p5ydos3` / `_TZE204_n9ctkb6j`** (Attilla) - ✅ PR #118 MERGED
+   - Dedicated wall_dimmer_1gang_1way driver
+   - DP36/37 backlight support
 
 ---
 
