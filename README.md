@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.15** | 🔧 FIX: Removed titleFormatted with [[device]] from physical button flow card... |
 | **v5.7.14** | 🔄 BIDIRECTIONAL DEDUP: Virtual button (app/flow) ↔ Physical button (device) ... |
 | **v5.7.13** | 🧠 SMART DEDUPLICATION: Pattern detection now auto-detects if device natively... |
 | **v5.7.12** | 🔘 BUTTON PATTERN DETECTION: Software triple-click detection (600ms window) f... |
@@ -78,7 +79,6 @@
 | **v5.7.8** | 🌡️ RADAR FIX: Humidity multiplier support in auto-discovery (fixes HOBEIAN Z... |
 | **v5.7.7** | 🐛 FIXES: Power meter crash on undefined DP values (diagnostic a0f7de6a). Swi... |
 | **v5.7.6** | 📚 Z2M/ZHA Cross-Reference: Added PJ-1203 Matsee Plus variants (_TZE204_cjbof... |
-| **v5.7.5** | ⚡ POWER METER FIX: PJ-1203A (_TZE284_81yrt3lo) DP mappings corrected per Z2M ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
