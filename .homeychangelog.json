@@ -1,4 +1,7 @@
 {
+  "5.6.1": {
+    "en": "🔧 FIX: Case-sensitive fingerprints for _TZ3000_b4awzgct (button) and _TZ3000_fllyghyj (climate sensor). 🔌 FIX: _TZ3000_h1ipgkwn correctly identified as USB dongle (not wall switch). GitHub responses posted to #113, #114, #121, #122."
+  },
   "5.6.0": {
     "en": "🔧 Major v5.6.0 release: 🎛️ BIDIRECTIONAL BUTTONS - All actuators now have virtual+physical button sync. 🐛 CRITICAL FIX: Settings keys (zb_model_id vs zb_modelId) in 5 base classes. 🌡️ TRV: ME167+BRT100 profiles. 🪟 Longsam M3 INVERTED position. ⚡ NEW: ZHA/Z2M quirks analysis - 3-phase energy meters (SPM02V3), 2-channel power meters (PJ-1203A), DIN rail meters. 📊 25+ new fingerprints from 10 device interviews. 🚨 Peter #1297: ZG-204ZV DISCO LIGHTS FIX - Motion throttle (5s between changes, 3s debounce). 📡 ZCL_ONLY_RADAR: _TZE200_kb5noeto + _TZE204_ztqnh5cg + _TZE200_3towulqd permissive mode (no Tuya DP required). 🔧 Ernst02507 TS004F: OnOff heartbeat filter + Scenes cluster handler. 🔌 USB Dongle: _TZ3000_h1ipgkwn (TS0002) dual USB port repeater with energy monitoring. 🌱 Soil sensors: _TZE284_vvmbj46n, _TZE284_oitavov2. 🔘 4-button: _TZ3000_bczr4e10 (TS0043), _TZ3000_bgtzm4ny (TS0044). 🆘 SOS button: _TZ3000_0dumfk2z (TS0215A)."
   },
