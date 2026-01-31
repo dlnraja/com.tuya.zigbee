@@ -1,4 +1,10 @@
 {
+  "5.6.0": {
+    "en": "🔧 Major v5.6.0 release: 🎛️ BIDIRECTIONAL BUTTONS - All actuators (plug_smart, din_rail_switch, valve_single, curtain_motor, radiator_valve) now have virtual+physical button sync. 🐛 CRITICAL FIX: Settings keys (zb_model_id vs zb_modelId) in 5 base classes - fixes 'unknown/unknown' device recognition. 🌡️ TRV: ME167+BRT100 profiles + physical knob flow triggers. 🪟 Longsam M3 INVERTED position. 📋 Physical button flows for all actuators."
+  },
+  "5.5.999": {
+    "en": "🔧 FIX: BSEED 4-gang switch (diag c33007b0) - Virtual button toggle for EP2-4 in ZCL-only mode. Enhanced state tracking (packetninja pattern): lastOnoffState, lastPhysicalEvent, lastAppEvent, stateHistory per gang in PhysicalButtonMixin + VirtualButtonMixin. All button/actuator devices now track state properly."
+  },
   "5.5.998": {
     "en": "🔧 FIX: Longsam _TZE204_xu4a5rhj curtain motor - Position INVERTED (DP2: 100-value), not control (DP1). Verified with Z2M #26660, #22614, ZHA #3181, 10+ sources. GitHub #122 elgato7."
   },

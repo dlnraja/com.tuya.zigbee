@@ -96,9 +96,57 @@
       "id": "motion_sensor_motion_active",
       "title": {
         "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté"
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{wird|wird nicht}} erkannt"
       },
       "args": []
+    },
+    {
+      "id": "motion_sensor_lux_above",
+      "title": {
+        "en": "Luminance !{{is|is not}} above",
+        "fr": "Luminance !{{est|n'est pas}} au-dessus de",
+        "nl": "Lichtsterkte !{{is|is niet}} boven",
+        "de": "Helligkeit !{{ist|ist nicht}} über"
+      },
+      "titleFormatted": {
+        "en": "Luminance !{{is|is not}} above [[lux]] lux",
+        "fr": "Luminance !{{est|n'est pas}} au-dessus de [[lux]] lux"
+      },
+      "args": [
+        {
+          "name": "lux",
+          "type": "number",
+          "min": 0,
+          "max": 10000,
+          "step": 10,
+          "placeholder": { "en": "100" }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_battery_above",
+      "title": {
+        "en": "Battery !{{is|is not}} above",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de",
+        "nl": "Batterij !{{is|is niet}} boven",
+        "de": "Batterie !{{ist|ist nicht}} über"
+      },
+      "titleFormatted": {
+        "en": "Battery !{{is|is not}} above [[threshold]]%",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%"
+      },
+      "args": [
+        {
+          "name": "threshold",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": { "en": "20" }
+        }
+      ]
     }
   ]
 }

@@ -1,10 +1,56 @@
 {
   "triggers": [
     {
+      "id": "radiator_valve_physical_mode_changed",
+      "title": {
+        "en": "Mode changed (physical knob)",
+        "fr": "Mode changé (bouton physique)",
+        "nl": "Modus veranderd (fysieke knop)",
+        "de": "Modus geändert (physischer Knopf)"
+      },
+      "hint": {
+        "en": "Triggers when mode is changed via physical knob on the TRV",
+        "fr": "Se déclenche quand le mode est changé via le bouton physique"
+      },
+      "tokens": [
+        {
+          "name": "mode",
+          "type": "string",
+          "title": { "en": "Mode", "fr": "Mode" },
+          "example": "heat"
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "radiator_valve_physical_temp_changed",
+      "title": {
+        "en": "Target changed (physical knob)",
+        "fr": "Cible changée (bouton physique)",
+        "nl": "Doel veranderd (fysieke knop)",
+        "de": "Ziel geändert (physischer Knopf)"
+      },
+      "hint": {
+        "en": "Triggers when target temperature is changed via physical knob",
+        "fr": "Se déclenche quand la température cible est changée via le bouton"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": { "en": "Temperature", "fr": "Température" },
+          "example": 21
+        }
+      ],
+      "args": []
+    },
+    {
       "id": "radiator_valve_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
-        "fr": "Température cible changée"
+        "fr": "Température cible changée",
+        "nl": "Doeltemperatuur veranderd",
+        "de": "Zieltemperatur geändert"
       },
       "tokens": [
         {
@@ -23,7 +69,9 @@
       "id": "radiator_valve_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "Température changée",
+        "nl": "Temperatuur veranderd",
+        "de": "Temperatur geändert"
       },
       "tokens": [
         {
@@ -37,6 +85,128 @@
         }
       ],
       "args": []
+    },
+    {
+      "id": "radiator_valve_mode_changed",
+      "title": {
+        "en": "Mode changed",
+        "fr": "Mode changé",
+        "nl": "Modus veranderd",
+        "de": "Modus geändert"
+      },
+      "tokens": [
+        {
+          "name": "mode",
+          "type": "string",
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          },
+          "example": "heat"
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "radiator_valve_valve_position_changed",
+      "title": {
+        "en": "Valve position changed",
+        "fr": "Position vanne changée",
+        "nl": "Klepstand veranderd",
+        "de": "Ventilposition geändert"
+      },
+      "tokens": [
+        {
+          "name": "position",
+          "type": "number",
+          "title": {
+            "en": "Position (%)",
+            "fr": "Position (%)"
+          },
+          "example": 50
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "radiator_valve_battery_low",
+      "title": {
+        "en": "Battery is low",
+        "fr": "Batterie faible",
+        "nl": "Batterij is laag",
+        "de": "Batterie ist schwach"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "radiator_valve_temperature_above",
+      "title": {
+        "en": "Temperature !{{is|is not}} above",
+        "fr": "Température !{{est|n'est pas}} au-dessus de",
+        "nl": "Temperatuur !{{is|is niet}} boven",
+        "de": "Temperatur !{{ist|ist nicht}} über"
+      },
+      "titleFormatted": {
+        "en": "Temperature !{{is|is not}} above [[temperature]]°C",
+        "fr": "Température !{{est|n'est pas}} au-dessus de [[temperature]]°C"
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "min": 0,
+          "max": 40,
+          "step": 0.5,
+          "placeholder": { "en": "20" }
+        }
+      ]
+    },
+    {
+      "id": "radiator_valve_mode_is",
+      "title": {
+        "en": "Mode !{{is|is not}}",
+        "fr": "Mode !{{est|n'est pas}}",
+        "nl": "Modus !{{is|is niet}}",
+        "de": "Modus !{{ist|ist nicht}}"
+      },
+      "titleFormatted": {
+        "en": "Mode !{{is|is not}} [[mode]]",
+        "fr": "Mode !{{est|n'est pas}} [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            { "id": "off", "label": { "en": "Off", "fr": "Arrêt" } },
+            { "id": "heat", "label": { "en": "Heat", "fr": "Chauffage" } },
+            { "id": "auto", "label": { "en": "Auto", "fr": "Auto" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "radiator_valve_valve_above",
+      "title": {
+        "en": "Valve !{{is|is not}} above",
+        "fr": "Vanne !{{est|n'est pas}} au-dessus de"
+      },
+      "titleFormatted": {
+        "en": "Valve position !{{is|is not}} above [[position]]%",
+        "fr": "Position vanne !{{est|n'est pas}} au-dessus de [[position]]%"
+      },
+      "args": [
+        {
+          "name": "position",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": { "en": "50" }
+        }
+      ]
     }
   ],
   "actions": [
@@ -44,7 +214,9 @@
       "id": "radiator_valve_set_target_temperature",
       "title": {
         "en": "Set temperature to...",
-        "fr": "Régler la température à..."
+        "fr": "Régler la température à...",
+        "nl": "Stel temperatuur in op...",
+        "de": "Temperatur einstellen auf..."
       },
       "args": [
         {
@@ -63,6 +235,111 @@
         "en": "Set temperature to [[temperature]]°C",
         "fr": "Régler la température à [[temperature]]°C"
       }
+    },
+    {
+      "id": "radiator_valve_set_mode",
+      "title": {
+        "en": "Set mode to...",
+        "fr": "Régler le mode sur...",
+        "nl": "Stel modus in op...",
+        "de": "Modus einstellen auf..."
+      },
+      "titleFormatted": {
+        "en": "Set mode to [[mode]]",
+        "fr": "Régler le mode sur [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "title": { "en": "Mode", "fr": "Mode" },
+          "values": [
+            { "id": "off", "label": { "en": "Off", "fr": "Arrêt" } },
+            { "id": "heat", "label": { "en": "Heat", "fr": "Chauffage" } },
+            { "id": "auto", "label": { "en": "Auto/Schedule", "fr": "Auto/Programme" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "radiator_valve_increase_temperature",
+      "title": {
+        "en": "Increase temperature by...",
+        "fr": "Augmenter température de..."
+      },
+      "titleFormatted": {
+        "en": "Increase temperature by [[delta]]°C",
+        "fr": "Augmenter température de [[delta]]°C"
+      },
+      "args": [
+        {
+          "name": "delta",
+          "type": "number",
+          "min": 0.5,
+          "max": 5,
+          "step": 0.5,
+          "title": { "en": "Degrees", "fr": "Degrés" }
+        }
+      ]
+    },
+    {
+      "id": "radiator_valve_decrease_temperature",
+      "title": {
+        "en": "Decrease temperature by...",
+        "fr": "Diminuer température de..."
+      },
+      "titleFormatted": {
+        "en": "Decrease temperature by [[delta]]°C",
+        "fr": "Diminuer température de [[delta]]°C"
+      },
+      "args": [
+        {
+          "name": "delta",
+          "type": "number",
+          "min": 0.5,
+          "max": 5,
+          "step": 0.5,
+          "title": { "en": "Degrees", "fr": "Degrés" }
+        }
+      ]
+    },
+    {
+      "id": "radiator_valve_set_child_lock",
+      "title": {
+        "en": "Set child lock",
+        "fr": "Verrouillage enfant",
+        "nl": "Kinderslot instellen",
+        "de": "Kindersicherung einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set child lock [[enabled]]",
+        "fr": "Verrouillage enfant [[enabled]]"
+      },
+      "args": [
+        {
+          "name": "enabled",
+          "type": "dropdown",
+          "title": { "en": "State", "fr": "État" },
+          "values": [
+            { "id": "on", "label": { "en": "On", "fr": "Activé" } },
+            { "id": "off", "label": { "en": "Off", "fr": "Désactivé" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "radiator_valve_boost",
+      "title": {
+        "en": "Activate boost mode",
+        "fr": "Activer mode boost",
+        "nl": "Boost modus activeren",
+        "de": "Boost-Modus aktivieren"
+      },
+      "hint": {
+        "en": "Opens valve fully for quick heating (if supported)",
+        "fr": "Ouvre la vanne complètement pour chauffage rapide"
+      },
+      "args": []
     }
   ]
 }

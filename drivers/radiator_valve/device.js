@@ -1,18 +1,20 @@
 'use strict';
 const HybridThermostatBase = require('../../lib/devices/HybridThermostatBase');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RADIATOR VALVE (TRV) - v5.5.787 FIXED (extends HybridThermostatBase)   ║
+ * ║      RADIATOR VALVE (TRV) - v5.6.0 + Bidirectional Buttons                  ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  HybridThermostatBase handles: target_temperature listener                  ║
  * ║  This class: dpMappings + ZCL thermostat + onoff/mode listeners            ║
  * ║  Profile A (Standard): DPs 1-10,13-15,101-109 - MOES, SEA-ICON             ║
  * ║  Profile B (ME167): DPs 2-5,7,35,36,39,47 - AVATTO ME167/TRV06             ║
- * ║  Auto-detection based on manufacturerName prefix                           ║
+ * ║  v5.6.0: Added bidirectional virtual buttons for mode/boost/child_lock     ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class RadiatorValveDevice extends HybridThermostatBase {
+class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridThermostatBase)) {
 
   get mainsPowered() { return false; }
 
@@ -75,15 +77,26 @@ class RadiatorValveDevice extends HybridThermostatBase {
     };
   }
 
+  get gangCount() { return 1; }
+
   async onNodeInit({ zclNode }) {
+    // v5.6.0: Track state for physical button detection
+    this._lastModeState = null;
+    this._appCommandPending = false;
+    this._appCommandTimeout = null;
+
     await super.onNodeInit({ zclNode });
     const profile = this.dpProfile;
-    this.log(`[TRV] v5.5.788 - Profile: ${profile} | ${profile === 'me167' ? 'ME167 DPs: 2-5,7,35,36,39,47' : 'Standard DPs: 1-10,13-15,101-109'}`);
+    this.log(`[TRV] v5.6.0 - Profile: ${profile} | ${profile === 'me167' ? 'ME167 DPs: 2-5,7,35,36,39,47' : 'Standard DPs: 1-10,13-15,101-109'}`);
 
     // Store manufacturerName for profile detection
     try {
       const mfr = this.getStoreValue('manufacturerName') || zclNode?.endpoints?.[1]?.clusters?.basic?.attributes?.manufacturerName?.value;
-      if (mfr) this.setStoreValue('manufacturerName', mfr).catch(() => {});
+      if (mfr) {
+        this.setStoreValue('manufacturerName', mfr).catch(() => {});
+        // v5.6.0: Also set in settings for recognition
+        this.setSettings({ zb_manufacturer_name: mfr }).catch(() => {});
+      }
     } catch (e) { /* ignore */ }
 
     // Setup ZCL thermostat (parent doesn't do this)
@@ -92,7 +105,46 @@ class RadiatorValveDevice extends HybridThermostatBase {
     // Register onoff/mode listeners (parent only handles target_temperature)
     this._setupTRVListeners();
 
-    this.log(`[TRV] ✅ Ready (${profile} profile)`);
+    // v5.6.0: Initialize bidirectional button support
+    await this.initPhysicalButtonDetection(zclNode);
+    await this.initVirtualButtons();
+    this._setupTRVVirtualActions();
+
+    this.log(`[TRV] v5.6.0 ✅ Ready (${profile} profile) with bidirectional buttons`);
+  }
+
+  /**
+   * v5.6.0: Setup virtual button actions for TRV control
+   */
+  _setupTRVVirtualActions() {
+    // Virtual boost toggle
+    if (this.hasCapability('button_boost')) {
+      this.registerCapabilityListener('button_boost', async () => {
+        this._markAppCommand();
+        const dp = this.dpProfile === 'me167' ? 103 : 103;
+        await this._sendTuyaDP(dp, true, 'bool');
+        this.log('[TRV] Boost mode activated via virtual button');
+      });
+    }
+
+    // Virtual child lock toggle
+    if (this.hasCapability('button_child_lock')) {
+      this.registerCapabilityListener('button_child_lock', async () => {
+        this._markAppCommand();
+        const currentLock = this.getStoreValue('child_lock') || false;
+        await this._sendTuyaDP(7, !currentLock, 'bool');
+        this.setStoreValue('child_lock', !currentLock).catch(() => {});
+        this.log(`[TRV] Child lock ${!currentLock ? 'enabled' : 'disabled'} via virtual button`);
+      });
+    }
+  }
+
+  _markAppCommand() {
+    this._appCommandPending = true;
+    clearTimeout(this._appCommandTimeout);
+    this._appCommandTimeout = setTimeout(() => {
+      this._appCommandPending = false;
+    }, 2000);
   }
 
   async _setupThermostatCluster(zclNode) {

@@ -1,7 +1,7 @@
 {
-  "version": "5.5.998",
+  "version": "5.6.0",
   "lastUpdated": "2026-01-31",
-  "totalInterviews": 62,
+  "totalInterviews": 84,
   "sources": [
     "Homey Community Forum (pages 1-56)",
     "GitHub Issues/PRs (JohanBendz & dlnraja)",
@@ -723,6 +723,383 @@
         "status": "supported",
         "driver": "led_strip"
       }
+    ],
+
+    "forum_jan_2026": [
+      {
+        "id": "INT-150",
+        "deviceName": "Ceiling Presence Sensor",
+        "manufacturerName": "unknown",
+        "productId": "TS0601",
+        "source": "Forum Jan 26 2026 - Ricardo_Lenior",
+        "diagnosticId": "77C4CE16",
+        "user": "Ricardo_Lenior",
+        "status": "investigating",
+        "priority": "medium",
+        "symptoms": [
+          "Shows battery mmwave options for 230V sensor",
+          "Wrong options displayed",
+          "PIR cards shown instead of ceiling sensor cards"
+        ]
+      },
+      {
+        "id": "INT-151",
+        "deviceName": "BSEED 4-Gang TS0726",
+        "manufacturerName": "_TZ3002_pzao9ls1",
+        "productId": "TS0726",
+        "source": "Forum Jan 26-29 2026 - Hartmut_Dunker",
+        "diagnosticId": "112d80f7-d36c-4d27-8ad4-2377089d7fa1",
+        "user": "Hartmut_Dunker",
+        "status": "fixed",
+        "priority": "high",
+        "symptoms": [
+          "Physical buttons not working (v811-v860)",
+          "Works until re-pairing then breaks",
+          "Virtual buttons not working"
+        ],
+        "fix": {
+          "applied": true,
+          "version": "5.6.0",
+          "description": "ZCL-only mode with per-endpoint state tracking, markAppCommand integration"
+        }
+      },
+      {
+        "id": "INT-152",
+        "deviceName": "ZG-103ZL Vibration Sensor",
+        "manufacturerName": "_TZ3000_ja5osu5g",
+        "productId": "ZG-103ZL",
+        "source": "Forum Jan 26 2026 - Mike_Van_A",
+        "user": "Mike_Van_A",
+        "status": "fixed",
+        "priority": "medium",
+        "fix": {
+          "applied": true,
+          "version": "5.6.0",
+          "description": "Added ZG-103ZL + _TZ3000_ja5osu5g fingerprints to vibration_sensor driver"
+        }
+      },
+      {
+        "id": "INT-153",
+        "deviceName": "TS130F Curtain Module",
+        "manufacturerName": "_TZ3000_5iixzdo7",
+        "productId": "TS130F",
+        "source": "Forum Jan 26 2026 - Mitch_Vallinga",
+        "user": "Mitch_Vallinga",
+        "status": "supported",
+        "priority": "medium",
+        "inputClusters": [4, 5, 6, 258, 57345, 0],
+        "notes": "Fingerprint already exists in curtain_motor driver, user needs to re-pair",
+        "driver": "curtain_motor"
+      },
+      {
+        "id": "INT-154",
+        "deviceName": "BSEED Curtain Switch",
+        "manufacturerName": "_TZ3000_bs93npae",
+        "productId": "TS130F",
+        "source": "Forum Jan 26 2026 - Tbao",
+        "user": "Tbao",
+        "status": "supported",
+        "notes": "Fingerprint already exists in curtain_motor driver",
+        "driver": "curtain_motor"
+      },
+      {
+        "id": "INT-155",
+        "deviceName": "BSEED 2-Gang Wall Switch",
+        "manufacturerName": "_TZ3000_l9brjwau",
+        "productId": "TS0003",
+        "source": "Forum Jan 26-28 2026 - Pieter_Pessers",
+        "user": "Pieter_Pessers",
+        "status": "fixed",
+        "priority": "high",
+        "symptoms": [
+          "Seen as unknown zigbee device",
+          "Fingerprint was in BOTH switch_2gang AND switch_3gang"
+        ],
+        "fix": {
+          "applied": true,
+          "version": "5.6.0",
+          "description": "Removed from switch_3gang - now only in switch_2gang"
+        },
+        "driver": "switch_2gang"
+      },
+      {
+        "id": "INT-156",
+        "deviceName": "BSEED 3-Gang Wall Switch",
+        "manufacturerName": "_TZ3000_qkixdnon",
+        "productId": "TS0003",
+        "source": "Forum Jan 26-28 2026 - Pieter_Pessers",
+        "user": "Pieter_Pessers",
+        "status": "fixed",
+        "priority": "high",
+        "symptoms": [
+          "Seen as unknown zigbee device",
+          "Fingerprint was in BOTH switch_2gang AND switch_3gang"
+        ],
+        "fix": {
+          "applied": true,
+          "version": "5.6.0",
+          "description": "Removed from switch_2gang - now only in switch_3gang"
+        },
+        "driver": "switch_3gang"
+      },
+      {
+        "id": "INT-157",
+        "deviceName": "Rain Sensor",
+        "manufacturerName": "TZ3210_p68kms0l",
+        "productId": "TS0207",
+        "source": "Forum Jan 26 2026 - Dominique_C",
+        "user": "Dominique_C",
+        "status": "investigating",
+        "symptoms": ["IAS Zone error"]
+      },
+      {
+        "id": "INT-158",
+        "deviceName": "HOBEIAN ZG-204ZV Multisensor",
+        "manufacturerName": "_TZE200_3towulqd",
+        "productId": "TS0601",
+        "source": "Forum Jan 26-30 2026 - Peter_van_Werkhoven",
+        "diagnosticIds": ["52546992-9767-4557-bc11-aee8ea943b74", "9018c1c9-0c9c-4da4-9a84-ca0d896b34f1", "9b3495bb-16c7-4e90-8ee6-335b0f2fdec6", "fb042598-ef9f-4552-94cf-f4eb23db067b"],
+        "user": "Peter_van_Werkhoven",
+        "status": "fixed",
+        "priority": "critical",
+        "symptoms": [
+          "Humidity 9% instead of 90%",
+          "Temperature invalid readings",
+          "Distance showing wrong (device has no distance sensor)",
+          "Battery not showing in menu",
+          "Data fluctuating causing disco lights"
+        ],
+        "fix": {
+          "applied": true,
+          "version": "5.6.0",
+          "description": "Added multiplyBy10 converter for humidity in EnrichedDPMappings.js ZG_204ZL profile"
+        }
+      },
+      {
+        "id": "INT-159",
+        "deviceName": "Contact Sensor",
+        "manufacturerName": "unknown",
+        "productId": "unknown",
+        "source": "Forum Jan 26 2026 - blutch32",
+        "user": "blutch32",
+        "status": "investigating",
+        "symptoms": [
+          "Detected as unknown zigbee device",
+          "alarm_contact always shows NO"
+        ]
+      },
+      {
+        "id": "INT-160",
+        "deviceName": "Amperemetric Energy Meter",
+        "manufacturerName": "unknown",
+        "productId": "unknown",
+        "source": "Forum Jan 26 2026 - blutch32",
+        "user": "blutch32",
+        "status": "investigating",
+        "symptoms": ["Detected as unknown zigbee device"]
+      },
+      {
+        "id": "INT-161",
+        "deviceName": "MOES 4-Button Scene Switch",
+        "manufacturerName": "_TZ3000_zgyzgdua",
+        "productId": "TS0044",
+        "source": "Forum Jan 28 2026 - Freddyboy",
+        "diagnosticId": "ad2e946e-e40b-477f-912c-7825383619fb",
+        "user": "Freddyboy",
+        "status": "investigating",
+        "priority": "high",
+        "symptoms": [
+          "No response to flows when pressing physical button",
+          "No response when pressing icons"
+        ],
+        "notes": "Cluster 0xE000 raw frame interceptor may need work"
+      },
+      {
+        "id": "INT-162",
+        "deviceName": "Water Sensor",
+        "manufacturerName": "unknown",
+        "productId": "unknown",
+        "source": "Forum Jan 27-31 2026 - Lasse_K",
+        "user": "Lasse_K",
+        "status": "investigating",
+        "symptoms": [
+          "Water sensor inactivated/not responding",
+          "Contact sensor installed in reverse"
+        ]
+      },
+      {
+        "id": "INT-163",
+        "deviceName": "Presence Sensor",
+        "manufacturerName": "_TZE204_ztqnh5cg",
+        "productId": "TS0601",
+        "source": "Forum Jan 30 2026 - tlink",
+        "user": "tlink",
+        "status": "investigating",
+        "symptoms": ["Not being recognized anymore", "Worked in October 2025"]
+      },
+      {
+        "id": "INT-164",
+        "deviceName": "AVATTO ME167 TRV Radiator Valve",
+        "manufacturerName": "_TZE284_o3x45p96",
+        "productId": "TS0601",
+        "source": "Forum Jan 27-30 2026 - ManuelKugler + ZHA #3559 + Z2M #24197",
+        "diagnosticIds": ["f089e2e7-ef9f-465e-8240-7dc3c00d22db", "aba2c0c3-9925-4528-b876-24deb63cf932", "e8f3e458-be41-4532-bdef-548545e1af87"],
+        "user": "ManuelKugler",
+        "status": "fixed",
+        "priority": "high",
+        "symptoms": [
+          "Generic installation error",
+          "Target temp not transferred to device",
+          "No actual temperature displayed"
+        ],
+        "fix": {
+          "applied": true,
+          "version": "5.6.0",
+          "description": "Added ME167 TRV profile to EnrichedDPMappings.js with complete DP mappings (DP2-5,7,35,36,39,47,101-104)"
+        },
+        "dpMappings": {
+          "2": "target_temperature (divideBy10)",
+          "3": "measure_temperature (divideBy10)",
+          "4": "mode (auto/manual/off/on)",
+          "5": "system_mode (off/heat)",
+          "7": "child_lock",
+          "35": "battery_low alarm",
+          "36": "frost_protection",
+          "39": "calibration_temp",
+          "47": "valve_position",
+          "101": "window_detection",
+          "102": "window_open",
+          "103": "boost",
+          "104": "battery"
+        },
+        "relatedFingerprints": ["_TZE200_p3dbf6qs", "_TZE204_p3dbf6qs", "_TZE204_eekpf0ft", "_TZE200_ymldrmzx", "_TZE284_ymldrmzx"],
+        "driver": "radiator_valve"
+      },
+      {
+        "id": "INT-165",
+        "deviceName": "Presence Sensor",
+        "manufacturerName": "unknown",
+        "productId": "TS0601",
+        "source": "Forum Jan 28 2026 - JJ10",
+        "user": "JJ10",
+        "status": "investigating",
+        "symptoms": ["Connected as unknown device"]
+      },
+      {
+        "id": "INT-166",
+        "deviceName": "Radar Presence Sensor",
+        "manufacturerName": "unknown",
+        "productId": "unknown",
+        "source": "Forum Jan 31 2026 - Patrick_Van_Deursen",
+        "diagnosticId": "33677378-eb74-437d-9ab6-35e8e4168a47",
+        "user": "Patrick_Van_Deursen",
+        "status": "investigating",
+        "symptoms": [
+          "Motion works",
+          "Distance not working",
+          "Temperature not working",
+          "Lux not working",
+          "Battery not working or present"
+        ]
+      },
+      {
+        "id": "INT-167",
+        "deviceName": "Temperature Sensor",
+        "manufacturerName": "unknown",
+        "productId": "unknown",
+        "source": "Forum Jan 27 2026 - JohnnyBravo",
+        "user": "JohnnyBravo",
+        "status": "investigating",
+        "symptoms": ["Data measured only once then no updates"]
+      }
+    ],
+
+    "new_diagnostics_2026_01": [
+      {
+        "id": "INT-146",
+        "deviceName": "BSEED 4-Gang Button Switch",
+        "manufacturerName": "_TZ3002_*",
+        "productId": "TS0726",
+        "source": "Diagnostic c33007b0-d28d-4fda-bab8-b5423def961b",
+        "status": "fixed",
+        "appVersion": "v5.5.960",
+        "symptoms": [
+          "Missing Capability Listener: onoff.gang2, gang3, gang4",
+          "Virtual button toggle fails for EP2-4 in ZCL-only mode",
+          "Invalid Flow Card IDs: switch_4gang_physical_gang1_single, long_press"
+        ],
+        "rootCause": "VirtualButtonMixin capability name mapping issue + ZCL cluster lookup for EP2-4",
+        "fix": {
+          "applied": true,
+          "version": "5.5.999",
+          "description": "Fixed VirtualButtonMixin _handleVirtualToggle for gang 1 capability name, improved cluster lookup with multiple strategies, added fallbacks when clusters not ready"
+        },
+        "driver": "switch_4gang"
+      },
+      {
+        "id": "INT-147",
+        "deviceName": "Longsam M3 Curtain Motor",
+        "manufacturerName": "_TZE204_xu4a5rhj",
+        "productId": "TS0601",
+        "source": "Diagnostic a6932404, e1010895 + Z2M #26660, #25428",
+        "status": "fixed",
+        "appVersion": "v5.6.0",
+        "symptoms": [
+          "Commands sent successfully but motor doesn't respond",
+          "Position inverted: set 20% → becomes 80%",
+          "DP2 position values need 100-value inversion"
+        ],
+        "rootCause": "Position values INVERTED - device uses (100-value) for DP2",
+        "fix": {
+          "applied": true,
+          "version": "5.6.0",
+          "description": "Added _TZE204_xu4a5rhj to COVER_DPS.INVERTED profile in EnrichedDPMappings.js - uses positionInvert converter"
+        },
+        "z2mReference": "https://github.com/Koenkk/zigbee2mqtt/issues/26660",
+        "driver": "curtain_motor"
+      },
+      {
+        "id": "INT-148",
+        "deviceName": "Radar Presence Sensor",
+        "manufacturerName": "unknown",
+        "productId": "TS0601",
+        "source": "Diagnostic 33677378-eb74-437d-9ab6-35e8e4168a47",
+        "status": "investigating",
+        "appVersion": "v5.5.994",
+        "symptoms": [
+          "Distance, temperature, battery not working",
+          "Motion detection OK, mmwave seems absent",
+          "Missing: measure_distance after recovery",
+          "Continuous 'No presence update in 60s' spam"
+        ],
+        "rootCause": "Device not receiving DP data for distance/temp/battery - possible manufacturer-specific DP mapping issue",
+        "notes": "Data recovery strategies 1-7 executed but distance still missing",
+        "driver": "presence_sensor_radar"
+      },
+      {
+        "id": "INT-149",
+        "deviceName": "AVATTO ME167 TRV Radiator Valve",
+        "manufacturerName": "_TZE284_o3x45p96",
+        "productId": "TS0601",
+        "source": "Diagnostic e8f3e458 + Z2M ME167 docs",
+        "status": "fixed",
+        "appVersion": "v5.6.0",
+        "userMessage": "Taster geht nicht (Button doesn't work)",
+        "symptoms": [
+          "ME167 profile detected",
+          "Physical button (knob) not responding",
+          "DP4 commands sent but no effect"
+        ],
+        "rootCause": "Child lock (DP7) may be enabled, blocking physical input. Also DP47 controls valve position directly.",
+        "fix": {
+          "applied": true,
+          "version": "5.6.0",
+          "description": "Added complete ME167 profile with DP7 child_lock, DP47 valve_position, DP35 battery_low. User should check child_lock setting."
+        },
+        "z2mReference": "https://www.zigbee2mqtt.io/devices/ME167.html",
+        "userAction": "Check if child_lock is enabled (DP7) - this disables physical knob input",
+        "driver": "radiator_valve"
+      }
     ]
   },
 
@@ -835,38 +1212,39 @@
   },
 
   "statistics": {
-    "totalDevicesAnalyzed": 42,
+    "totalDevicesAnalyzed": 60,
     "byStatus": {
-      "supported": 28,
-      "fixed": 8,
-      "investigating": 3,
+      "supported": 30,
+      "fixed": 14,
+      "investigating": 13,
       "partial": 1,
       "design_limitation": 1
     },
     "bySource": {
-      "forum": 18,
+      "forum": 36,
       "github_issues": 15,
       "github_prs": 25,
       "z2m_docs": 5,
       "zha_issues": 4
     },
     "byCategory": {
-      "presence_sensors": 5,
-      "buttons_scene_switches": 6,
-      "contact_sensors": 3,
-      "climate_sensors": 3,
+      "presence_sensors": 9,
+      "buttons_scene_switches": 8,
+      "contact_sensors": 4,
+      "climate_sensors": 4,
       "motion_sensors": 4,
-      "switches": 5,
-      "plugs_energy": 3,
+      "switches": 8,
+      "plugs_energy": 4,
       "smoke_detectors": 2,
-      "soil_water_sensors": 2,
-      "thermostats": 1,
+      "soil_water_sensors": 3,
+      "thermostats": 2,
       "air_quality": 1,
-      "curtains_covers": 2,
+      "curtains_covers": 4,
       "sirens": 1,
       "fingerbot": 1,
-      "radar_sensors": 5,
-      "led_lights": 1
+      "radar_sensors": 7,
+      "led_lights": 1,
+      "vibration_sensors": 1
     }
   }
 }

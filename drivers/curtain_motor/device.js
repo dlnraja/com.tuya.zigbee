@@ -13,18 +13,19 @@ try {
 }
 
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      CURTAIN / COVER MOTOR - v5.5.992 + Virtual Buttons                     ║
+ * ║      CURTAIN / COVER MOTOR - v5.6.0 + Bidirectional Buttons                 ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  HybridCoverBase handles: all cover listeners (state, set, tilt, dim)       ║
- * ║  v5.5.992: Added virtual open/close/stop buttons                            ║
+ * ║  v5.6.0: Added bidirectional physical/virtual button support                ║
  * ║  DPs: 1-10,12,13,101,102 | ZCL: 258,6,8,EF00                               ║
  * ║  Variants: GIRIER, Lonsonho, Zemismart, MOES                               ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class CurtainMotorDevice extends VirtualButtonMixin(HybridCoverBase) {
+class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCoverBase)) {
 
   // v5.5.322: Auto-detect power source - battery curtain robots use 3xAA
   get mainsPowered() {
@@ -61,10 +62,17 @@ class CurtainMotorDevice extends VirtualButtonMixin(HybridCoverBase) {
     };
   }
 
+  get gangCount() { return 1; }
+
   async onNodeInit({ zclNode }) {
+    // v5.6.0: Track state for physical button detection
+    this._lastCoverState = null;
+    this._appCommandPending = false;
+    this._appCommandTimeout = null;
+
     // Parent handles ALL: cover listeners, Tuya DP, ZCL
     await super.onNodeInit({ zclNode });
-    this.log('[CURTAIN] v5.5.322 - DPs: 1-15,101-105 | ZCL: 258,6,8,EF00');
+    this.log('[CURTAIN] v5.6.0 - DPs: 1-15,101-105 | ZCL: 258,6,8,EF00');
 
     // v5.5.322: Add luminance capability if not present (Eftychis #779)
     if (!this.hasCapability('measure_luminance')) {
@@ -88,10 +96,19 @@ class CurtainMotorDevice extends VirtualButtonMixin(HybridCoverBase) {
     // v5.5.321: Apply calibration settings on init
     await this._applyCalibrationSettings();
 
-    // v5.5.992: Initialize virtual buttons (open/close/stop)
+    // v5.6.0: Initialize bidirectional button support
+    await this.initPhysicalButtonDetection(zclNode);
     await this.initVirtualButtons();
 
-    this.log('[CURTAIN] v5.5.992 ✅ Ready + virtual buttons');
+    this.log('[CURTAIN] v5.6.0 ✅ Ready with bidirectional buttons');
+  }
+
+  _markAppCommand() {
+    this._appCommandPending = true;
+    clearTimeout(this._appCommandTimeout);
+    this._appCommandTimeout = setTimeout(() => {
+      this._appCommandPending = false;
+    }, 2000);
   }
 
   /**
