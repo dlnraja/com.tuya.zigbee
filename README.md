@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.11** | 🔘 BUTTON SCENARIOS: Added triple-press and hold-release flow cards for MOES ... |
 | **v5.7.10** | 🔘 MOES 4-BUTTON FIX (Freddyboy #1321): Fixed flow cards with broken titleFor... |
 | **v5.7.9** | 🪟 CURTAIN MOTOR: Enhanced communication - exponential backoff, wake-up ping,... |
 | **v5.7.8** | 🌡️ RADAR FIX: Humidity multiplier support in auto-discovery (fixes HOBEIAN Z... |
@@ -78,7 +79,6 @@
 | **v5.7.4** | 🔧 TRV FIX: AVATTO ME167/TRV06 (_TZE284_o3x45p96) now uses correct DP4 for ta... |
 | **v5.7.3** | 🌡️ TRV: Added AVATTO TRV fingerprint _TZE284_o3x45p96 (from forum user Manue... |
 | **v5.7.2** | 🎛️ Generic DIY: Comprehensive flow cards (15 triggers, 6 conditions, 7 actio... |
-| **v5.7.1** | 📚 ZHA Quirks enrichment: Added irrigation valve fingerprints (SASWELL SAS980... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
