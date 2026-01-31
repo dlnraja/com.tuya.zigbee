@@ -2,17 +2,28 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
- * DIN Rail Switch Device
- *
- * Smart circuit breaker / DIN rail switch with energy monitoring
- * Supports on/off control and power measurement
+ * ╔══════════════════════════════════════════════════════════════════════════════╗
+ * ║      DIN RAIL SWITCH - v5.6.0 + Bidirectional Buttons                       ║
+ * ╠══════════════════════════════════════════════════════════════════════════════╣
+ * ║  Smart circuit breaker / DIN rail switch with energy monitoring             ║
+ * ║  v5.6.0: Added bidirectional physical/virtual button support                ║
+ * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class DinRailSwitchDevice extends ZigBeeDevice {
+class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeDevice)) {
+
+  get gangCount() { return 1; }
 
   async onNodeInit({ zclNode }) {
-    this.log('DIN Rail Switch initializing...');
+    this.log('DIN Rail Switch v5.6.0 initializing...');
+
+    // v5.6.0: Track state for physical button detection
+    this._lastOnoffState = null;
+    this._appCommandPending = false;
+    this._appCommandTimeout = null;
 
     // Register on/off capability
     if (this.hasCapability('onoff')) {
@@ -25,7 +36,19 @@ class DinRailSwitchDevice extends ZigBeeDevice {
     // Setup Tuya DP cluster for TS0601 devices
     await this._setupTuyaDP(zclNode);
 
-    this.log('DIN Rail Switch initialized');
+    // v5.6.0: Initialize bidirectional button support
+    await this.initPhysicalButtonDetection(zclNode);
+    await this.initVirtualButtons();
+
+    this.log('DIN Rail Switch v5.6.0 initialized with bidirectional buttons');
+  }
+
+  _markAppCommand() {
+    this._appCommandPending = true;
+    clearTimeout(this._appCommandTimeout);
+    this._appCommandTimeout = setTimeout(() => {
+      this._appCommandPending = false;
+    }, 2000);
   }
 
   async _setupElectricalMeasurement(zclNode) {

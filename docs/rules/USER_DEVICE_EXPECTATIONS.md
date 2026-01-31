@@ -1,7 +1,7 @@
 # User Device Expectations & Diagnostic Summary
 
 This document summarizes user-reported devices and their expected behavior based on diagnostic logs and community feedback.
-**Last Updated**: 2026-01-31 (v5.5.998)
+**Last Updated**: 2026-01-31 (v5.5.999)
 
 > ⚠️ **CRITICAL RULE**: manufacturerName CAN appear in MULTIPLE drivers - this is NORMAL!
 > Fingerprint = manufacturerName + productId (COMBINED). Only remove if SAME mfr + SAME productId causes WRONG driver match.
@@ -58,7 +58,17 @@ This document summarizes user-reported devices and their expected behavior based
 | #111 | PR | packetninja | Separate driver for Tuya/Bseed touch dimmer | ✅ MERGED |
 | #112 | PR | packetninja | Physical button flows + improved logging | ✅ Closed |
 
-### 💥 APP CRASH REPORTS
+### � NEW DIAGNOSTICS (Jan 31, 2026)
+
+| Diag ID | Device | ManufacturerID | Issue | Status |
+|---------|--------|----------------|-------|--------|
+| c33007b0 | BSEED 4-Gang Switch | `_TZ3002_*` TS0726 | Missing Capability Listener gang2-4, virtual toggle fails | ✅ FIXED v5.5.999 |
+| a6932404 | Curtain Motor | `_TZE204_xu4a5rhj` | Commands sent but motor doesn't respond | ⚠️ Investigating |
+| e1010895 | Longsam Curtain | `_TZE204_xu4a5rhj` | Same as above, network issue suspected | ⚠️ Investigating |
+| 33677378 | Radar Sensor | unknown | Distance/temp/battery not working, measure_distance missing | ⚠️ Investigating |
+| e8f3e458 | TRV Radiator Valve | `_TZE284_o3x45p96` | "Taster geht nicht" (Button doesn't work) | ⚠️ Investigating |
+
+### �💥 APP CRASH REPORTS
 
 | Version | Error | Root Cause | Status |
 |---------|-------|------------|--------|
