@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.13** | 🧠 SMART DEDUPLICATION: Pattern detection now auto-detects if device natively... |
 | **v5.7.12** | 🔘 BUTTON PATTERN DETECTION: Software triple-click detection (600ms window) f... |
 | **v5.7.11** | 🔘 BUTTON SCENARIOS: Added triple-press and hold-release flow cards for MOES ... |
 | **v5.7.10** | 🔘 MOES 4-BUTTON FIX (Freddyboy #1321): Fixed flow cards with broken titleFor... |
@@ -78,7 +79,6 @@
 | **v5.7.6** | 📚 Z2M/ZHA Cross-Reference: Added PJ-1203 Matsee Plus variants (_TZE204_cjbof... |
 | **v5.7.5** | ⚡ POWER METER FIX: PJ-1203A (_TZE284_81yrt3lo) DP mappings corrected per Z2M ... |
 | **v5.7.4** | 🔧 TRV FIX: AVATTO ME167/TRV06 (_TZE284_o3x45p96) now uses correct DP4 for ta... |
-| **v5.7.3** | 🌡️ TRV: Added AVATTO TRV fingerprint _TZE284_o3x45p96 (from forum user Manue... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
