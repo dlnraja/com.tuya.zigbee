@@ -69,20 +69,41 @@ This document summarizes user-reported devices and their expected behavior based
 ## � RECURRING USER PATTERNS (Most Frequent Issues)
 
 ### 👤 Peter_van_Werkhoven (20+ fixes, v5.5.841-v5.5.987)
-**Devices**: HOBEIAN ZG-204ZV, ZG-204ZL, ZG-204ZM
+**Devices**: HOBEIAN ZG-204ZV (5-in-1 Multisensor)
+**Forum Posts**: #1203, #1204, #1211, #1225, #1253, #1265, #1282
 
 | Issue | Root Cause | Fix Version | Solution |
 |-------|------------|-------------|----------|
-| Humidity 9% instead of 90% | Raw value needs ×10 multiplier | v5.5.987 | Added humidity multiplier |
+| Humidity 9% instead of 90% | Raw value needs ×10 multiplier | v5.5.953, v5.5.987 | Added humidity multiplier |
 | Lux disco lights | Rapid illuminance changes trigger flows | v5.5.985-986 | 15% smoothing + 30s throttle |
-| Missing temp/humidity | PIR-only vs multisensor variants | v5.5.919-925 | Permissive variant mode |
+| Missing temp/humidity | PIR-only vs multisensor variants | v5.5.919, v5.5.984 | Permissive variant mode + modelId fix |
 | Distance wrong (8 vs 1.5m) | OEM uses cm/dm/m with same mfr | v5.5.927-929 | Smart divisor auto-detection |
 | SOS button not triggering | DP17/18 not mapped | v5.5.841 | Added SOS button DP mapping |
+| ZCL temp/humidity | Some variants use ZCL, not Tuya DP | v5.5.912 | Added cluster 0x0402/0x0405 listeners |
+| Battery capability | Not auto-added | v5.5.907 | Auto-add battery from DP mapping |
 
-**Cross-References**: Z2M docs ZG-204ZV, ZHA #4452, #4517, #4268, Z2M #12364
+**Cross-References**: Z2M docs ZG-204ZV, ZHA #4452, #4517, #4268
+
+### 👤 4x4_Pete (10+ fixes, v5.5.329-v5.5.983)
+**Devices**: HOBEIAN ZG-204ZM (PIR+24GHz Radar), ZG-204ZL (PIR-only)
+**Forum Posts**: #788, #810, #848, #851
+
+| Issue | Root Cause | Fix Version | Solution |
+|-------|------------|-------------|----------|
+| Wrong driver pairing | Duplicate productIds in motion_sensor | v5.5.364 | Removed duplicates, radar-only in presence_sensor_radar |
+| Battery spam (100%↔1-2%) | Duplicate DP15 + no throttle | v5.5.366, v5.5.983 | Throttling + removed dup DP15 |
+| False temp/humidity | PIR-only device showing temp/humidity | v5.5.329, v5.5.335 | PIR_ONLY_MANUFACTURERS list |
+| ZCL+Tuya hybrid | Not detected properly | v5.5.511-512 | Hybrid detection + HOBEIAN mfr list |
+| PIR+Radar settings | Missing settings for motion mode | v5.5.394-395 | Full Z2M settings (sensitivity, fading, LED) |
+
+**Cross-References**: SmartHomeScene ZG-204ZM Review, Z2M Discussion #28529, HA Community
+
+### 👤 Peter-Celica (Credited Contributor)
+**Type**: Code contributor credited in v5.5.931
 
 ### 👤 Lasse_K (8+ fixes, v5.5.645-v5.5.973)
-**Devices**: Water leak sensor, Contact sensor, HOBEIAN ZG-222Z
+**Devices**: Water leak sensor, Contact sensor, HOBEIAN ZG-222Z, ZG-102Z
+**Forum Posts**: #800, #1052, #1166, #1274, #1700
 
 | Issue | Root Cause | Fix Version | Solution |
 |-------|------------|-------------|----------|
@@ -90,6 +111,7 @@ This document summarizes user-reported devices and their expected behavior based
 | Contact shows reversed | IAS Zone default inversion | v5.5.918 | Auto-invert for known mfrs |
 | IAS Zone no alarm | Buffer/object parsing | v5.5.645 | Robust numeric conversion |
 | User can't override | Fixed logic | v5.5.973 | XOR logic for user override |
+| Water sensor no alarm | IAS Zone fallback disabled | v5.5.803 | Force initial alarm state read |
 
 ### 👤 Pieter_Pessers (7+ fixes, v5.5.811-v5.5.970)
 **Devices**: BSEED 1/2/3-gang switches (_TZ3000_l9brjwau, _TZ3000_qkixdnon)
