@@ -34,6 +34,38 @@
       "args": []
     },
     {
+      "id": "plug_smart_physical_on",
+      "title": {
+        "en": "Turned on (physical button)",
+        "nl": "Ingeschakeld (fysieke knop)",
+        "fr": "Allumé (bouton physique)",
+        "de": "Eingeschaltet (physischer Knopf)"
+      },
+      "hint": {
+        "en": "Triggers when turned on via physical button on the plug",
+        "nl": "Triggert wanneer ingeschakeld via fysieke knop op de stekker",
+        "fr": "Se déclenche quand allumé via bouton physique",
+        "de": "Wird ausgelöst, wenn über physischen Knopf eingeschaltet"
+      },
+      "args": []
+    },
+    {
+      "id": "plug_smart_physical_off",
+      "title": {
+        "en": "Turned off (physical button)",
+        "nl": "Uitgeschakeld (fysieke knop)",
+        "fr": "Éteint (bouton physique)",
+        "de": "Ausgeschaltet (physischer Knopf)"
+      },
+      "hint": {
+        "en": "Triggers when turned off via physical button on the plug",
+        "nl": "Triggert wanneer uitgeschakeld via fysieke knop op de stekker",
+        "fr": "Se déclenche quand éteint via bouton physique",
+        "de": "Wird ausgelöst, wenn über physischen Knopf ausgeschaltet"
+      },
+      "args": []
+    },
+    {
       "id": "plug_smart_power_restored",
       "title": {
         "en": "Power restored",

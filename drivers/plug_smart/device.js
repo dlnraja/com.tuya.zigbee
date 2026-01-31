@@ -2,18 +2,19 @@
 
 const { HybridPlugBase } = require('../../lib/devices/HybridPlugBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SMART PLUG - v5.5.412 + Virtual Buttons                                ║
+ * ║      SMART PLUG - v5.6.0 + Virtual/Physical Buttons (packetninja pattern)   ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  HybridPlugBase handles: onoff listener, Tuya DP, ZCL On/Off                ║
  * ║  This class ONLY: dpMappings + ZCL energy monitoring listeners              ║
  * ║  DPs: 1,7,9,17-21,101,102 | ZCL: 6,2820,1794,EF00                          ║
- * ║  v5.5.412: Added virtual toggle/identify buttons for remote control        ║
+ * ║  v5.6.0: Added bidirectional physical/virtual button support                ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class SmartPlugDevice extends VirtualButtonMixin(HybridPlugBase) {
+class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugBase)) {
 
   get plugCapabilities() {
     return ['onoff', 'measure_power', 'meter_power', 'measure_voltage', 'measure_current'];
@@ -44,18 +45,59 @@ class SmartPlugDevice extends VirtualButtonMixin(HybridPlugBase) {
     return value;
   }
 
+  get gangCount() { return 1; }
+
   async onNodeInit({ zclNode }) {
+    // v5.6.0: Track state for physical button detection (packetninja pattern)
+    this._lastOnoffState = null;
+    this._appCommandPending = false;
+    this._appCommandTimeout = null;
+
     // Parent handles onoff listener - DO NOT re-register
     await super.onNodeInit({ zclNode });
-    this.log('[PLUG] v5.5.412 - DPs: 1,7,9,17-21,101,102 | ZCL: 6,2820,1794,EF00');
+    this.log('[PLUG] v5.6.0 - DPs: 1,7,9,17-21,101,102 | ZCL: 6,2820,1794,EF00');
 
     // Setup ZCL energy monitoring (parent doesn't do this)
     await this._setupEnergyMonitoring(zclNode);
 
-    // v5.5.412: Initialize virtual buttons for remote control
+    // v5.6.0: Initialize bidirectional button support
+    await this.initPhysicalButtonDetection(zclNode);
     await this.initVirtualButtons();
+    this._setupPhysicalButtonFlowDetection();
 
-    this.log('[PLUG] ✅ Ready');
+    this.log('[PLUG] ✅ Ready with bidirectional button support');
+  }
+
+  /**
+   * v5.6.0: Setup physical button flow detection (packetninja pattern)
+   */
+  _setupPhysicalButtonFlowDetection() {
+    const originalHandler = this._handleTuyaDatapoint?.bind(this);
+    if (originalHandler) {
+      this._handleTuyaDatapoint = (dp, data, reportingEvent = false) => {
+        if (dp === 1) {
+          const state = Boolean(data?.value ?? data);
+          const isPhysical = reportingEvent && !this._appCommandPending;
+          if (this._lastOnoffState !== state) {
+            this._lastOnoffState = state;
+            if (isPhysical) {
+              const flowId = state ? 'plug_smart_physical_on' : 'plug_smart_physical_off';
+              this.homey.flow.getDeviceTriggerCard(flowId)
+                .trigger(this, {}, {}).catch(() => {});
+            }
+          }
+        }
+        return originalHandler(dp, data, reportingEvent);
+      };
+    }
+  }
+
+  _markAppCommand() {
+    this._appCommandPending = true;
+    clearTimeout(this._appCommandTimeout);
+    this._appCommandTimeout = setTimeout(() => {
+      this._appCommandPending = false;
+    }, 2000);
   }
 
   async _setupEnergyMonitoring(zclNode) {
