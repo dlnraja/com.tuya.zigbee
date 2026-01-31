@@ -761,6 +761,10 @@ const SENSOR_CONFIGS = {
     // v5.5.985: Peter #1282 - Lux smoothing to prevent light flickering
     luxSmoothingEnabled: true,
     luxMinChangePercent: 15,       // Ignore changes < 15%
+    // v5.5.991: Peter #1297 - Motion throttle to fix disco lights (random motion triggers)
+    motionThrottleEnabled: true,
+    motionThrottleMs: 5000,        // Minimum 5s between motion state changes
+    motionDebounceMs: 3000,        // 3s debounce for motion=false
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       // v5.5.831: ZG-204ZV specific - DP3=temp(÷10), DP4=humidity(×10)
@@ -1157,16 +1161,44 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
+  // v5.5.990: TYPE G1c: ZCL-ONLY variant for _TZE200_kb5noeto (Patrick_Van_Deursen)
+  // Forum #1297: This device variant has NO Tuya DP cluster (61184)!
+  // Uses pure ZCL: IAS Zone (motion), illuminanceMeasurement (lux), powerConfiguration (battery)
+  // PERMISSIVE MODE: Works with ZCL clusters only, Tuya DP optional
+  // ─────────────────────────────────────────────────────────────────────────────
+  'ZCL_ONLY_RADAR': {
+    sensors: [
+      '_TZE200_kb5noeto',  // v5.5.990: Patrick_Van_Deursen - ZCL-only variant
+      '_TZE204_ztqnh5cg',  // v5.5.990: tlink - ZCL-only variant
+      '_TZE200_3towulqd',  // v5.6.0: Interview - NO cluster 61184! Uses IAS Zone + Illuminance + PowerConfig
+    ],
+    battery: true,
+    useZcl: true,           // v5.5.990: Primary - use ZCL clusters
+    useIasZone: true,       // v5.5.990: Motion via IAS Zone cluster 1280
+    useTuyaDP: false,       // v5.5.990: NO Tuya DP cluster on these variants!
+    permissiveMode: true,   // v5.5.990: Accept whatever clusters are available
+    hasIlluminance: true,   // Via ZCL illuminanceMeasurement cluster 1024
+    noTemperature: true,    // No temperature sensor
+    noHumidity: true,       // No humidity sensor
+    // Fallback DP mappings IF Tuya cluster becomes available at runtime
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_bool', optional: true },
+      106: { cap: 'measure_luminance', type: 'lux_direct', optional: true },
+      121: { cap: 'measure_battery', divisor: 1, optional: true },
+    }
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
   // TYPE G2: ZG-204ZM Pure Tuya DP variants (_TZE200_* manufacturerNames)
   // These use Tuya DP cluster for ALL data including presence/illuminance
   // Source: https://github.com/Koenkk/zigbee2mqtt/issues/21919
   //
-  // WARNING: _TZE200_kb5noeto may get stuck in "presence detected" state
+  // NOTE: _TZE200_kb5noeto moved to ZCL_ONLY_RADAR (some variants have no Tuya DP)
   // ─────────────────────────────────────────────────────────────────────────────
   'ZG_204ZM_RADAR': {
     sensors: [
       '_TZE200_2aaelwxk', '_TZE204_2aaelwxk',
-      '_TZE200_kb5noeto',  // WARNING: May get stuck in presence detected
+      // '_TZE200_kb5noeto' moved to ZCL_ONLY_RADAR - v5.5.990
       '_TZE200_tyffvoij',
     ],
     battery: true,
@@ -2008,6 +2040,13 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       this._detectFirmwareVersion(zclNode);
     }
 
+    // v5.5.990: Permissive mode for ZCL-only variants (Patrick_Van_Deursen #1297)
+    // These devices don't have Tuya DP cluster but work fine with ZCL
+    if (config.permissiveMode) {
+      this.log('[RADAR] 🔓 PERMISSIVE MODE: ZCL-only variant (no Tuya DP required)');
+      this.log('[RADAR] Using ZCL clusters: IAS Zone (motion), illuminanceMeasurement (lux), powerConfiguration (battery)');
+    }
+
     // Battery sensors: minimal init to avoid timeouts
     if (config.battery) {
       this.log('[RADAR] ⚡ BATTERY MODE: Using minimal init (passive listeners only)');
@@ -2020,6 +2059,12 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           await this.addCapability('measure_battery');
           this.log('[RADAR] ✅ Added measure_battery');
         } catch (e) { /* ignore */ }
+      }
+
+      // v5.5.990: For ZCL-only variants, setup ZCL clusters even in battery mode
+      if (config.permissiveMode || config.useZcl) {
+        this.log('[RADAR] 📡 Setting up ZCL clusters for ZCL-only variant');
+        await this._setupZclClusters(zclNode);
       }
 
       // Setup passive listeners only (no queries)
@@ -2692,6 +2737,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
    * - Applies invertPresence transform before debouncing
    * - Fixes "presence flashes for 0.5s" issue with proper inversion
    * v5.5.357: Added motion spam throttle
+   * v5.5.991: Peter #1297 - Added configurable motion throttle for ZG-204ZV disco lights fix
    */
   _handlePresenceWithDebounce(rawPresence, dpId) {
     // v5.5.357: THROTTLE MOTION SPAM FIRST
@@ -2699,13 +2745,27 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     if (throttled === null) return; // Blocked by throttle
 
     const now = Date.now();
-    const DEBOUNCE_MS = 2000; // 2 seconds
-
+    
     // v5.5.318: Apply inversion from user setting OR config
     const config = this._getSensorConfig();
     const settings = this.getSettings() || {};
     const invertPresence = settings.invert_presence ?? config.invertPresence ?? false;
     const configName = config.configName || 'DEFAULT';
+
+    // v5.5.991: Peter #1297 - Configurable debounce from config (disco lights fix)
+    const DEBOUNCE_MS = config.motionDebounceMs || 2000;
+    const THROTTLE_MS = config.motionThrottleMs || 0;
+    const throttleEnabled = config.motionThrottleEnabled || false;
+
+    // v5.5.991: Motion throttle - prevent rapid state changes (disco lights fix)
+    if (throttleEnabled && THROTTLE_MS > 0) {
+      const lastMotionChange = this._lastMotionChangeTime || 0;
+      const timeSinceChange = now - lastMotionChange;
+      if (timeSinceChange < THROTTLE_MS) {
+        this.log(`[RADAR] 🚫 DP${dpId} THROTTLED: motion change blocked (${timeSinceChange}ms < ${THROTTLE_MS}ms throttle)`);
+        return;
+      }
+    }
 
     // Transform the raw presence value with inversion support
     let presence = rawPresence;
@@ -2714,10 +2774,18 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       this.log(`[PRESENCE-FIX] 🔄 INVERTING presence for ${configName}: DP${dpId} ${rawPresence} -> ${presence}`);
     }
 
+    // Get current state to avoid duplicate updates
+    const currentMotion = this.getCapabilityValue('alarm_motion');
+    if (presence === currentMotion) {
+      // Same state - no update needed
+      return;
+    }
+
     // If presence is TRUE, set immediately
     if (presence) {
       this.log(`[RADAR] 🟢 DP${dpId} → PRESENCE DETECTED (processed: ${presence})`);
       this._lastPresenceTrue = now;
+      this._lastMotionChangeTime = now;
       this.setCapabilityValue('alarm_motion', true).catch(() => { });
       if (this.hasCapability('alarm_human')) {
         this.setCapabilityValue('alarm_human', true).catch(() => { });
@@ -2729,14 +2797,15 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       return;
     }
 
-    // If presence is FALSE, debounce (wait 2s before clearing)
+    // If presence is FALSE, debounce (wait before clearing)
     const timeSinceTrue = now - (this._lastPresenceTrue || 0);
     if (timeSinceTrue < DEBOUNCE_MS) {
       this.log(`[RADAR] 🟡 DP${dpId} → presence=false DEBOUNCED (${timeSinceTrue}ms < ${DEBOUNCE_MS}ms)`);
-      return; // Ignore false within 2s of true
+      return; // Ignore false within debounce window
     }
 
     this.log(`[RADAR] 🔴 DP${dpId} → PRESENCE CLEARED (processed: ${presence})`);
+    this._lastMotionChangeTime = now;
     this.setCapabilityValue('alarm_motion', false).catch(() => { });
     if (this.hasCapability('alarm_human')) {
       this.setCapabilityValue('alarm_human', false).catch(() => { });

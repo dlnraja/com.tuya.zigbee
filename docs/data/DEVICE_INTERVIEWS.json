@@ -1,7 +1,7 @@
 {
   "version": "5.6.0",
   "lastUpdated": "2026-01-31",
-  "totalInterviews": 84,
+  "totalInterviews": 94,
   "sources": [
     "Homey Community Forum (pages 1-56)",
     "GitHub Issues/PRs (JohanBendz & dlnraja)",
@@ -1099,11 +1099,605 @@
         "z2mReference": "https://www.zigbee2mqtt.io/devices/ME167.html",
         "userAction": "Check if child_lock is enabled (DP7) - this disables physical knob input",
         "driver": "radiator_valve"
+      },
+      {
+        "id": "INT-150",
+        "deviceName": "Wireless Button 1-Gang",
+        "manufacturerName": "unknown",
+        "productId": "unknown",
+        "source": "Diagnostic c4a25bc8-6df7-4bd9-893d-0ca94e6eb5a8 (Dec 6, 2025)",
+        "status": "fixed",
+        "appVersion": "v5.4.6",
+        "userMessage": "Motion sensors (with lux) no longer working",
+        "symptoms": [
+          "Device shows as 'unknown (unknown)'",
+          "[TUYA] Device: unknown (unknown)",
+          "No profile for unknown/unknown - using generic",
+          "Pairing timeout after 60s in AutoAdaptiveDevice",
+          "IAS-ZONE Could not read zone type: Timeout"
+        ],
+        "rootCause": "Settings keys bug: zb_modelId vs zb_model_id and zb_manufacturerName vs zb_manufacturer_name inconsistency in 5 base classes",
+        "fix": {
+          "applied": true,
+          "version": "5.6.0",
+          "description": "Fixed settings keys in BaseHybridDevice.js, HybridThermostatBase.js, HybridLightBase.js, TuyaHybridDevice.js - now uses zb_model_id and zb_manufacturer_name with fallbacks"
+        },
+        "affectedFiles": ["BaseHybridDevice.js", "HybridThermostatBase.js", "HybridLightBase.js", "TuyaHybridDevice.js"],
+        "driver": "button_wireless_1"
+      },
+      {
+        "id": "INT-151",
+        "deviceName": "MOES Blinds Roller",
+        "manufacturerName": "_TZE200_icka1clh",
+        "productId": "TS0601",
+        "source": "Forum Dec 5, 2025 - Sharif_Kandil",
+        "user": "Sharif_Kandil",
+        "status": "fixed",
+        "symptoms": [
+          "Missing capabilities error",
+          "Tilt capability not working"
+        ],
+        "rootCause": "Version not yet published to Homey Store - tilt support added in v5.5.107, dynamic capability addition in v5.5.118",
+        "fix": {
+          "applied": true,
+          "version": "5.5.118",
+          "description": "HybridCoverBase.js: Added MOES roller blind DPs (101-105), tilt support, and _safeSetCapability for dynamic capability addition"
+        },
+        "dpMappings": {
+          "101": "opening_mode (tilt=0, lift=1)",
+          "102": "backlight_mode",
+          "103": "motor_direction",
+          "105": "motor_speed"
+        },
+        "driver": "curtain_motor"
+      },
+      {
+        "id": "INT-152",
+        "deviceName": "mmWave Radar Presence Sensor",
+        "manufacturerName": "unknown",
+        "productId": "TS0601",
+        "source": "Diagnostic 096349c5-032c-41e1-ab5c-dc8e4d22e0bc (Dec 5, 2025)",
+        "status": "supported",
+        "appVersion": "v5.4.2",
+        "userMessage": "Rapport pour fixer tout les bugs",
+        "symptoms": [
+          "User submitted general bug report",
+          "Logs show illuminance working correctly (247-258 lux readings)",
+          "ZCL illuminanceMeasurement cluster functioning"
+        ],
+        "notes": "Device appears to be working correctly based on logs - no actual bug found",
+        "driver": "motion_sensor_radar_mmwave"
+      },
+      {
+        "id": "INT-153",
+        "deviceName": "Smart Knob Scene Switch (Remote Dimmer)",
+        "manufacturerName": "_TZ3000_gwkzibhs",
+        "productId": "TS004F",
+        "source": "GitHub Issue #113 (Jan 23-31, 2026)",
+        "user": "Ernst02507",
+        "status": "fix_pending_test",
+        "symptoms": [
+          "Device now pairs correctly (v5.5.977+)",
+          "Button press/turn NOT detected by Homey",
+          "OnOff heartbeat (every 10min) triggers flow as button press",
+          "Real button events not captured"
+        ],
+        "resolution": {
+          "status": "fix_applied",
+          "driver": "smart_knob_rotary",
+          "version": "5.5.990",
+          "pairing": "works",
+          "fixes": [
+            "Filter OnOff heartbeat for TS004F (attr.onOff ignored)",
+            "Enhanced Scenes cluster handling",
+            "Raw frame interceptor for scene commands",
+            "Button events via Scenes cluster only"
+          ]
+        },
+        "latestInterview": "Jan 31, 2026 - networkAddress: 40363",
+        "notes": "v5.5.990 fix: TS004F button events come via Scenes cluster, not OnOff attr. OnOff heartbeat now filtered. Awaiting user test.",
+        "driver": "smart_knob_rotary"
+      },
+      {
+        "id": "INT-154",
+        "deviceName": "BSEED 1-Gang Wall Switch",
+        "manufacturerName": "_TZ3000_blhvsaqf",
+        "productId": "TS0001",
+        "source": "Forum Page 59 (Jan 31, 2026)",
+        "user": "Pieter_Pessers",
+        "status": "supported",
+        "symptoms": ["Device seen as unknown"],
+        "resolution": {
+          "status": "already_supported",
+          "driver": "switch_1gang",
+          "version": "5.5.900+",
+          "features": ["onoff", "physical_button_detection"]
+        },
+        "notes": "ZCL-only device with clusters 0xE000/0xE001. Uses PhysicalButtonMixin.",
+        "driver": "switch_1gang"
+      },
+      {
+        "id": "INT-155",
+        "deviceName": "BSEED 2-Gang Wall Switch",
+        "manufacturerName": "_TZ3000_l9brjwau",
+        "productId": "TS0002",
+        "source": "Forum Page 54-59 (Jan 2026)",
+        "user": "Pieter_Pessers",
+        "status": "supported",
+        "symptoms": ["Device seen as unknown"],
+        "resolution": {
+          "status": "already_supported",
+          "driver": "switch_2gang",
+          "version": "5.5.900+",
+          "features": ["onoff_gang1", "onoff_gang2", "physical_button_detection"]
+        },
+        "notes": "ZCL-only device. 2 endpoints with onOff cluster per gang.",
+        "driver": "switch_2gang"
+      },
+      {
+        "id": "INT-156",
+        "deviceName": "BSEED 3-Gang Wall Switch",
+        "manufacturerName": "_TZ3000_qkixdnon",
+        "productId": "TS0003",
+        "source": "Forum Page 54-59 (Jan 2026)",
+        "user": "Pieter_Pessers",
+        "status": "supported",
+        "symptoms": ["Device seen as unknown"],
+        "resolution": {
+          "status": "already_supported",
+          "driver": "switch_3gang",
+          "version": "5.5.900+",
+          "features": ["onoff_gang1", "onoff_gang2", "onoff_gang3", "physical_button_detection"]
+        },
+        "notes": "ZCL-only device. 3 endpoints with onOff cluster per gang. Clusters 57344/57345.",
+        "driver": "switch_3gang"
+      },
+      {
+        "id": "INT-157",
+        "deviceName": "Tuya Temperature/Humidity Sensor",
+        "manufacturerName": "_TZE284_1wnh8bqp",
+        "productId": "TS0601",
+        "source": "Forum Page 58 (Jan 2026)",
+        "user": "LukasT",
+        "status": "investigating",
+        "symptoms": [
+          "Device pairs but no temp/humidity/battery values",
+          "Missing Tuya DP mapping"
+        ],
+        "resolution": {
+          "status": "pending",
+          "suggestedDPs": "DP1=temp/10, DP2=humidity/10, DP3=battery",
+          "z2mRef": "https://github.com/Koenkk/zigbee2mqtt/issues/28172"
+        },
+        "notes": "Needs DP mapping confirmation. Similar to other TS0601 temp sensors.",
+        "driver": "climate_sensor"
+      },
+      {
+        "id": "INT-158",
+        "deviceName": "BSEED Smart Valve",
+        "manufacturerName": "_TZ3000_iedbgyxt",
+        "productId": "TS0001",
+        "source": "Forum Page 58 (Jan 2026)",
+        "user": "Pieter_Pessers",
+        "status": "supported",
+        "symptoms": ["Valve control not working"],
+        "resolution": {
+          "status": "already_supported",
+          "driver": "valve_single",
+          "version": "5.6.0+",
+          "features": ["onoff", "valve_control"]
+        },
+        "notes": "ZCL-only device. Uses onOff cluster for valve control.",
+        "driver": "valve_single"
+      },
+      {
+        "id": "INT-159",
+        "deviceName": "HOBEIAN ZG-102Z Contact Sensor",
+        "manufacturerName": "HOBEIAN",
+        "productId": "ZG-102Z",
+        "source": "Forum #1299 (Jan 31, 2026)",
+        "user": "Lasse_K",
+        "status": "supported",
+        "symptoms": ["Contact sensor interview"],
+        "interviewData": {
+          "clusters": ["basic", "identify", "iasZone", "powerConfiguration", "tuya(61184)"],
+          "zoneType": "contactSwitch",
+          "zoneState": "enrolled",
+          "battery": {"voltage": 30, "percentage": 200}
+        },
+        "resolution": {
+          "status": "already_supported",
+          "driver": "contact_sensor",
+          "version": "5.5.900+",
+          "features": ["alarm_contact", "measure_battery"]
+        },
+        "notes": "IAS Zone contact sensor with Tuya cluster. Uses zoneType=contactSwitch.",
+        "driver": "contact_sensor"
+      },
+      {
+        "id": "INT-160",
+        "deviceName": "HOBEIAN ZG-204ZV Multisensor",
+        "manufacturerName": "HOBEIAN",
+        "productId": "ZG-204ZV",
+        "source": "Forum #1298 (Jan 31, 2026)",
+        "user": "Peter_van_Werkhoven",
+        "status": "supported",
+        "symptoms": ["Updated interview for existing device"],
+        "interviewData": {
+          "clusters": ["basic", "identify", "iasZone", "temperatureMeasurement", "relativeHumidity", "powerConfiguration", "illuminanceMeasurement", "tuya(61184)"],
+          "zoneType": "motionSensor",
+          "temperature": {"measuredValue": 2020, "reportingConfigured": true},
+          "humidity": {"measuredValue": 6920, "reportingConfigured": true},
+          "illuminance": {"measuredValue": 27926, "reportingConfigured": true}
+        },
+        "resolution": {
+          "status": "already_supported",
+          "driver": "presence_sensor_radar",
+          "version": "5.5.987+",
+          "features": ["alarm_motion", "measure_temperature", "measure_humidity", "measure_luminance", "measure_battery"]
+        },
+        "notes": "ZCL clusters for temp/humidity/lux + Tuya DP for presence. Reporting configured.",
+        "driver": "presence_sensor_radar"
+      },
+      {
+        "id": "INT-161",
+        "deviceName": "Tuya Radar Sensor (ZCL-only variant)",
+        "manufacturerName": "_TZE200_kb5noeto",
+        "productId": "TS0601",
+        "source": "Forum #1297 (Jan 31, 2026)",
+        "user": "Patrick_Van_Deursen",
+        "status": "fix_pending_test",
+        "diagnosticId": "33677378-eb74-437d-9ab6-35e8e4168a47",
+        "symptoms": [
+          "Motion detection works",
+          "Distance not working",
+          "Temperature not working",
+          "Lux not working",
+          "Battery not working"
+        ],
+        "interviewData": {
+          "clusters": ["basic", "identify", "iasZone", "powerConfiguration", "illuminanceMeasurement"],
+          "zoneType": "motionSensor",
+          "zoneState": "notEnrolled",
+          "missingCluster": "tuya(61184) - NOT present in inputClusters"
+        },
+        "resolution": {
+          "status": "fix_applied",
+          "version": "5.5.990",
+          "fixes": [
+            "Added ZCL_ONLY_RADAR config for _TZE200_kb5noeto",
+            "Permissive mode enabled - works without Tuya DP cluster",
+            "Uses ZCL: IAS Zone (motion), illuminanceMeasurement (lux), powerConfiguration (battery)",
+            "IAS Zone auto-enrollment for notEnrolled devices"
+          ]
+        },
+        "notes": "v5.5.990: ZCL-only variant detected. Now uses pure ZCL clusters instead of Tuya DP. IAS zone enrollment should fix motion detection.",
+        "driver": "presence_sensor_radar"
+      },
+      {
+        "id": "INT-162",
+        "deviceName": "Unknown TS0601 Device",
+        "manufacturerName": "_TZE284_o3x45p96",
+        "productId": "TS0601",
+        "source": "Forum #1288 (Jan 31, 2026)",
+        "user": "ManuelKugler",
+        "status": "investigating",
+        "diagnosticId": "aba2c0c3-9925-4528-b876-24deb63cf932",
+        "symptoms": ["No change - device not working"],
+        "interviewData": {
+          "clusters": ["groups(4)", "scenes(5)", "tuya(61184)", "basic(0)", "60672"],
+          "applicationDeviceId": 81,
+          "powerSource": "battery"
+        },
+        "resolution": {
+          "status": "investigating",
+          "issue": "Unknown device type - needs DP mapping identification"
+        },
+        "notes": "TS0601 battery device with Tuya cluster. Device ID 81. Needs DP analysis.",
+        "driver": "unknown"
+      },
+      {
+        "id": "INT-163",
+        "deviceName": "Presence Sensor",
+        "manufacturerName": "_TZE204_ztqnh5cg",
+        "productId": "TS0601",
+        "source": "Forum #1289 (Jan 31, 2026)",
+        "user": "tlink",
+        "status": "fix_pending_test",
+        "symptoms": [
+          "Presence sensor not recognized since October",
+          "Worked previously, now broken",
+          "Flows not working"
+        ],
+        "resolution": {
+          "status": "fix_applied",
+          "version": "5.5.990",
+          "fixes": [
+            "Added _TZE204_ztqnh5cg to ZCL_ONLY_RADAR config",
+            "Permissive mode enabled - works without Tuya DP cluster",
+            "Uses ZCL: IAS Zone (motion), illuminanceMeasurement (lux), powerConfiguration (battery)",
+            "IAS Zone auto-enrollment for notEnrolled devices"
+          ],
+          "previousInterview": "Forum #1006"
+        },
+        "notes": "v5.5.990: Added to ZCL_ONLY_RADAR config with permissive mode. Uses pure ZCL clusters instead of Tuya DP.",
+        "driver": "presence_sensor_radar"
+      },
+      {
+        "id": "INT-164",
+        "deviceName": "Contact Sensor (not working)",
+        "manufacturerName": "unknown",
+        "productId": "unknown",
+        "source": "Forum #1290 (Jan 31, 2026)",
+        "user": "blutch32",
+        "status": "investigating",
+        "symptoms": [
+          "Contact alarm always displays 'no'",
+          "Detected but not functioning"
+        ],
+        "resolution": {
+          "status": "awaiting_interview",
+          "issue": "Contact sensor alarm stuck - needs full interview data"
+        },
+        "notes": "User posted video interview. Need to extract fingerprint from video.",
+        "driver": "contact_sensor"
+      },
+      {
+        "id": "INT-165",
+        "deviceName": "Soil Sensor (new device)",
+        "manufacturerName": "unknown",
+        "productId": "unknown",
+        "source": "Forum #1290 (Jan 31, 2026)",
+        "user": "blutch32",
+        "status": "new_device_request",
+        "symptoms": ["Device to be added"],
+        "resolution": {
+          "status": "awaiting_interview",
+          "issue": "New soil sensor - needs full interview data"
+        },
+        "notes": "User posted video interview. Need to extract fingerprint.",
+        "driver": "soil_sensor"
+      },
+      {
+        "id": "INT-166",
+        "deviceName": "Amperemetric Energy Meter",
+        "manufacturerName": "unknown",
+        "productId": "unknown",
+        "source": "Forum #1290 (Jan 31, 2026)",
+        "user": "blutch32",
+        "status": "new_device_request",
+        "symptoms": ["Detected as unknown Zigbee device"],
+        "resolution": {
+          "status": "awaiting_interview",
+          "issue": "New energy meter - needs full interview data"
+        },
+        "notes": "User posted video interview. Need to extract fingerprint.",
+        "driver": "energy_meter"
+      },
+      {
+        "id": "INT-167",
+        "deviceName": "Soil Moisture Sensor",
+        "manufacturerName": "_TZE284_vvmbj46n",
+        "productId": "TS0601",
+        "source": "Desktop Interview Files (Jan 31, 2026)",
+        "status": "supported",
+        "deviceType": "enddevice",
+        "powerSource": "battery",
+        "inputClusters": [4, 5, 61184, 0, 60672],
+        "outputClusters": [25, 10],
+        "protocol": "tuya_dp",
+        "driver": "soil_sensor",
+        "notes": "Battery-powered soil sensor. Uses Tuya DP cluster 61184. Already in soil_sensor fingerprints."
+      },
+      {
+        "id": "INT-168",
+        "deviceName": "Soil Moisture Sensor",
+        "manufacturerName": "_TZE284_oitavov2",
+        "productId": "TS0601",
+        "source": "Desktop Interview Files (Jan 31, 2026)",
+        "status": "supported",
+        "deviceType": "enddevice",
+        "powerSource": "battery",
+        "inputClusters": [4, 5, 61184, 0, 60672],
+        "outputClusters": [25, 10],
+        "protocol": "tuya_dp",
+        "driver": "soil_sensor",
+        "notes": "Battery-powered soil sensor. Uses Tuya DP cluster 61184. Already in soil_sensor fingerprints."
+      },
+      {
+        "id": "INT-169",
+        "deviceName": "HOBEIAN ZG-204ZM Motion Sensor",
+        "manufacturerName": "HOBEIAN",
+        "productId": "ZG-204ZM",
+        "source": "Desktop Interview Files (Jan 31, 2026)",
+        "status": "supported",
+        "deviceType": "enddevice",
+        "powerSource": "battery",
+        "inputClusters": [0, 3, 1280, 61184, 1, 1024],
+        "outputClusters": [],
+        "protocol": "hybrid",
+        "capabilities": ["alarm_motion", "measure_luminance", "measure_battery"],
+        "zclClusters": {
+          "iasZone": {"zoneType": "motionSensor", "zoneState": "enrolled"},
+          "powerConfiguration": {"batteryVoltage": 30, "batteryPercentage": 200},
+          "illuminanceMeasurement": {"measuredValue": 32816, "minInterval": 10, "maxInterval": 300}
+        },
+        "driver": "presence_sensor_radar",
+        "notes": "Hybrid device: IAS Zone 1280 + Tuya DP 61184 + Illuminance 1024 + PowerConfig 1. swBuildId: 0112112025"
+      },
+      {
+        "id": "INT-170",
+        "deviceName": "4-Button Wireless Switch",
+        "manufacturerName": "_TZ3000_bczr4e10",
+        "productId": "TS0043",
+        "source": "Desktop Interview Files (Jan 31, 2026)",
+        "status": "supported",
+        "deviceType": "enddevice",
+        "powerSource": "battery",
+        "endpoints": [1, 2, 3, 4],
+        "inputClusters": [1, 6, 57344, 0],
+        "outputClusters": [25, 10],
+        "protocol": "zcl",
+        "capabilities": ["measure_battery"],
+        "zclClusters": {
+          "powerConfiguration": {"batteryVoltage": 26, "batteryPercentage": 58},
+          "onOff": {"perEndpoint": true}
+        },
+        "driver": "button_wireless_4",
+        "notes": "4 endpoints = 4 buttons. Uses OnOff cluster per endpoint. Cluster 57344 (0xE000) = Tuya custom."
+      },
+      {
+        "id": "INT-171",
+        "deviceName": "2-Gang Switch with Energy Monitoring",
+        "manufacturerName": "_TZ3000_h1ipgkwn",
+        "productId": "TS0002",
+        "source": "Desktop Interview Files (Jan 31, 2026)",
+        "status": "fix_applied",
+        "deviceType": "router",
+        "powerSource": "mains",
+        "endpoints": [1, 2, 242],
+        "inputClusters": [3, 4, 5, 6, 1794, 2820, 57344, 57345, 0],
+        "outputClusters": [25, 10],
+        "protocol": "zcl",
+        "capabilities": ["onoff", "onoff.gang2", "measure_power", "measure_voltage", "measure_current", "meter_power"],
+        "zclClusters": {
+          "metering": {"currentSummationDelivered": 0},
+          "electricalMeasurement": {"rmsVoltage": 0, "rmsCurrent": 0, "activePower": 0}
+        },
+        "fix": {
+          "version": "5.6.0",
+          "description": "Added fingerprint to switch_2gang driver"
+        },
+        "driver": "switch_2gang",
+        "notes": "2-gang switch with full energy monitoring via metering (0x0702) + electricalMeasurement (0x0B04). Router device."
+      },
+      {
+        "id": "INT-172",
+        "deviceName": "Presence Radar Sensor",
+        "manufacturerName": "_TZE284_iadro9bf",
+        "productId": "TS0601",
+        "source": "Desktop Interview Files (Jan 31, 2026)",
+        "status": "supported",
+        "deviceType": "router",
+        "powerSource": "mains",
+        "inputClusters": [4, 5, 61184, 0, 60672],
+        "outputClusters": [25, 10],
+        "protocol": "tuya_dp",
+        "driver": "presence_sensor_radar",
+        "notes": "Mains-powered radar. Already supported in presence_sensor_radar. Z2M issue #26615."
+      },
+      {
+        "id": "INT-173",
+        "deviceName": "Climate/Air Quality Sensor",
+        "manufacturerName": "_TZE204_laokfqwu",
+        "productId": "TS0601",
+        "source": "Desktop Interview Files (Jan 31, 2026)",
+        "status": "supported",
+        "deviceType": "router",
+        "powerSource": "mains",
+        "inputClusters": [4, 5, 61184, 0],
+        "outputClusters": [25, 10],
+        "protocol": "tuya_dp",
+        "driver": "climate_sensor",
+        "notes": "Mains-powered climate sensor. Already in climate_sensor driver fingerprints."
+      },
+      {
+        "id": "INT-174",
+        "deviceName": "4-Button Wireless Switch",
+        "manufacturerName": "_TZ3000_bgtzm4ny",
+        "productId": "TS0044",
+        "source": "Desktop Interview Files (Jan 31, 2026)",
+        "status": "supported",
+        "deviceType": "enddevice",
+        "powerSource": "battery",
+        "endpoints": [1, 2, 3, 4],
+        "inputClusters": [0, 1, 6],
+        "outputClusters": [10, 25],
+        "protocol": "zcl",
+        "capabilities": ["measure_battery"],
+        "zclClusters": {
+          "powerConfiguration": {"batteryVoltage": 30, "batteryPercentage": 200},
+          "onOff": {"perEndpoint": true}
+        },
+        "driver": "button_wireless_4",
+        "notes": "TS0044 4-button. Already in button_wireless_4 fingerprints. swBuildId: 0118092025"
+      },
+      {
+        "id": "INT-175",
+        "deviceName": "SOS Emergency Button",
+        "manufacturerName": "_TZ3000_0dumfk2z",
+        "productId": "TS0215A",
+        "source": "Desktop Interview Files (Jan 31, 2026)",
+        "status": "supported",
+        "deviceType": "enddevice",
+        "powerSource": "battery",
+        "inputClusters": [1, 3, 1280, 0],
+        "outputClusters": [1281, 25, 10],
+        "protocol": "zcl",
+        "capabilities": ["alarm_generic", "measure_battery"],
+        "zclClusters": {
+          "iasZone": {"zoneType": "remoteControl", "zoneState": "notEnrolled"},
+          "powerConfiguration": {"batteryVoltage": 28, "batteryPercentage": 140},
+          "iasACE": {"clusterRevision": 2}
+        },
+        "driver": "button_emergency_sos",
+        "notes": "SOS button via IAS Zone remoteControl. Already in button_emergency_sos fingerprints. Output cluster 1281 = IAS ACE."
+      },
+      {
+        "id": "INT-176",
+        "deviceName": "ZCL-Only Motion Sensor (NO TUYA DP!)",
+        "manufacturerName": "_TZE200_3towulqd",
+        "productId": "TS0601",
+        "source": "Desktop Interview Files (Jan 31, 2026)",
+        "status": "fix_applied",
+        "deviceType": "enddevice",
+        "powerSource": "battery",
+        "inputClusters": [0, 3, 1280, 1, 1024],
+        "outputClusters": [],
+        "protocol": "zcl_only",
+        "capabilities": ["alarm_motion", "measure_luminance", "measure_battery"],
+        "zclClusters": {
+          "iasZone": {"zoneType": "motionSensor", "zoneState": "notEnrolled"},
+          "powerConfiguration": {"batteryVoltage": 30, "batteryPercentage": 200},
+          "illuminanceMeasurement": {"measuredValue": 33280, "maxMeasuredValue": 4000}
+        },
+        "fix": {
+          "version": "5.6.0",
+          "description": "CRITICAL: Added to ZCL_ONLY_RADAR config. This variant has NO cluster 61184 (Tuya DP)!"
+        },
+        "driver": "presence_sensor_radar",
+        "notes": "IMPORTANT: This _TZE200_3towulqd variant has NO Tuya DP cluster 61184! Uses pure ZCL: IAS Zone 1280, PowerConfig 1, Illuminance 1024. swBuildId: 0122052017. Added to ZCL_ONLY_RADAR config with permissiveMode."
       }
     ]
   },
 
   "regressions": [
+    {
+      "version": "5.5.989",
+      "issue": "HOBEIAN ZG-204ZV Motion Sensor Disco Lights Regression",
+      "source": "Forum #1291 (Jan 31, 2026)",
+      "user": "Peter_van_Werkhoven",
+      "diagnosticId": "9b3495bb-16c7-4e90-8ee6-335b0f2fdec6",
+      "symptoms": [
+        "Motion sensor triggering erratically",
+        "Lights going on/off randomly (disco party)",
+        "Was stable in v987"
+      ],
+      "previousWorkingVersion": "5.5.987",
+      "additionalIssues": ["Humidity showing 9% instead of 90%", "No battery menu"],
+      "status": "fix_applied",
+      "resolution": {
+        "version": "5.5.991",
+        "fixes": [
+          "Added motionThrottleEnabled config for ZG_204ZV_MULTISENSOR",
+          "5 second throttle between motion state changes (motionThrottleMs: 5000)",
+          "3 second debounce for motion=false (motionDebounceMs: 3000)",
+          "Duplicate state change prevention (skip if same state)",
+          "Humidity multiplier already fixed in v5.5.987"
+        ],
+        "rootCause": "Rapid motion state changes triggering flows too frequently, causing lights to flicker"
+      }
+    },
     {
       "version": "5.5.752",
       "commit": "68b908001f",
@@ -1136,11 +1730,13 @@
 
   "recurringPatterns": {
     "Peter_van_Werkhoven": {
-      "totalFixes": 20,
+      "totalFixes": 22,
       "devices": ["HOBEIAN ZG-204ZV"],
-      "forumPosts": ["#1203", "#1204", "#1211", "#1225", "#1253", "#1265", "#1282"],
+      "forumPosts": ["#1203", "#1204", "#1211", "#1225", "#1253", "#1265", "#1282", "#1291", "#1297", "#1298"],
       "commonIssues": [
-        "Humidity multiplier (9% vs 90%) - v5.5.953, v5.5.987",
+        "Humidity multiplier (9% vs 90%) - v5.5.953, v5.5.987, v5.5.989",
+        "Motion sensor disco lights regression - v5.5.989 → FIXED v5.5.991",
+        "Motion throttle (5s between changes) - v5.5.991",
         "Lux smoothing/throttling (disco lights) - v5.5.985-986",
         "Missing temp/humidity after updates - v5.5.919, v5.5.984",
         "Distance divisor (cm/dm/m) - v5.5.927-929",
@@ -1148,7 +1744,7 @@
         "Battery capability auto-add - v5.5.907",
         "ZCL temp/humidity cluster listeners - v5.5.912"
       ],
-      "versionRange": "v5.5.841 - v5.5.987",
+      "versionRange": "v5.5.841 - v5.5.991",
       "crossReference": [
         "Z2M: https://www.zigbee2mqtt.io/devices/ZG-204ZV.html",
         "ZHA #4452, #4517, #4268"
@@ -1212,25 +1808,28 @@
   },
 
   "statistics": {
-    "totalDevicesAnalyzed": 60,
+    "totalDevicesAnalyzed": 77,
     "byStatus": {
-      "supported": 30,
-      "fixed": 14,
-      "investigating": 13,
+      "supported": 38,
+      "fixed": 16,
+      "investigating": 18,
       "partial": 1,
-      "design_limitation": 1
+      "design_limitation": 1,
+      "new_device_request": 2,
+      "awaiting_interview": 1
     },
     "bySource": {
-      "forum": 36,
-      "github_issues": 15,
+      "forum": 50,
+      "github_issues": 16,
       "github_prs": 25,
       "z2m_docs": 5,
-      "zha_issues": 4
+      "zha_issues": 4,
+      "diagnostics_email": 3
     },
     "byCategory": {
-      "presence_sensors": 9,
+      "presence_sensors": 11,
       "buttons_scene_switches": 8,
-      "contact_sensors": 4,
+      "contact_sensors": 5,
       "climate_sensors": 4,
       "motion_sensors": 4,
       "switches": 8,
