@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.6.3** | 🔌 USB Dongle: Added exact mixed-case _TZ3000_h1ipgkwn fingerprint (from Z2M ... |
 | **v5.6.2** | 🔧 FIX: HOBEIAN 10G radar humidity ×10 multiplier (was showing 9% instead of ... |
 | **v5.6.1** | 🔧 FIX: Case-sensitive fingerprints for _TZ3000_b4awzgct (button) and _TZ3000... |
 | **v5.6.0** | 🔧 Major v5.6.0 release: 🎛️ BIDIRECTIONAL BUTTONS - All actuators now have v... |
@@ -78,7 +79,6 @@
 | **v5.5.996** | 🔧 FIX: PhysicalButtonMixin enhanced - ZCL + Tuya DP + Hybrid protocol suppor... |
 | **v5.5.995** | 🔧 FIX: gas_detector duplicate flow card IDs - removed duplicate condition ID... |
 | **v5.5.994** | 🔧 FIX: _TZE200_3towulqd fingerprint collision - ZG-204ZL/ZG-204ZV is PIR sen... |
-| **v5.5.993** | 🔧 FIX: PR #120 pattern applied to switch_1gang, switch_2gang, switch_3gang -... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
