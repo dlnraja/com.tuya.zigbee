@@ -110,7 +110,12 @@ class PowerClampMeterDevice extends ZigBeeDevice {
   }
 
   _handleDP(dp, value) {
-    if (dp === undefined) return;
+    // v5.7.7: Guard against undefined/null values (fixes crash from diagnostic report)
+    if (dp === undefined || dp === null) return;
+    if (value === undefined || value === null) {
+      this.log(`[DP${dp}] = undefined (skipped)`);
+      return;
+    }
     const profile = this.meterProfile;
     this.log(`[DP${dp}] = ${value} (profile: ${profile})`);
 
