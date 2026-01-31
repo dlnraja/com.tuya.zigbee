@@ -386,7 +386,16 @@
       "TUYATEC-h4wnrtck",
       "TUYATEC-ktev3uwq",
       "TUYATEC-bduz1xxp",
-      "_TZ3210_p68kms0l"
+      "_TZ3210_p68kms0l",
+      "_TZ3210_tgvtvdoc",
+      "Eardatek",
+      "EARDATEK",
+      "Linptech",
+      "LINPTECH",
+      "Rehent",
+      "REHENT",
+      "Nous",
+      "NOUS"
     ],
     "productId": [
       "TS0207",
@@ -652,12 +661,26 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "invert_alarm",
+      "type": "checkbox",
+      "label": {
+        "en": "🔄 Invert Water Alarm",
+        "fr": "🔄 Inverser Alarme Eau",
+        "nl": "🔄 Inverteer Wateralarm",
+        "de": "🔄 Wasseralarm Invertieren"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable if water detection shows opposite state (wet=dry, dry=wet). Lasse_K forum fix.",
+        "fr": "Activer si la détection d'eau affiche l'état inverse (mouillé=sec, sec=mouillé)"
+      }
     }
   ],
   "images": {
     "small": "drivers/water_leak_sensor/assets/images/small.png",
-    "large": "drivers/water_leak_sensor/assets/images/large.png",
-    "xlarge": "drivers/water_leak_sensor/assets/images/xlarge.png"
+    "large": "drivers/water_leak_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"

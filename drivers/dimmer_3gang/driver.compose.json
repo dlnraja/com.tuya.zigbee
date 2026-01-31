@@ -12,13 +12,7 @@
     "onoff.channel2",
     "dim.channel2",
     "onoff.channel3",
-    "dim.channel3",
-    "button_toggle_1",
-    "button_toggle_2",
-    "button_toggle_3",
-    "button_dim_up",
-    "button_dim_down",
-    "button_identify"
+    "dim.channel3"
   ],
   "platforms": [
     "local"
@@ -252,9 +246,18 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          6,
+          8
+        ]
       }
     }
   },

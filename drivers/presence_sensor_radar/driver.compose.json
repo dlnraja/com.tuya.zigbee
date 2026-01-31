@@ -10,9 +10,7 @@
     "alarm_motion",
     "measure_luminance",
     "measure_battery",
-    "measure_distance",
-    "measure_temperature",
-    "measure_humidity"
+    "measure_distance"
   ],
   "subDevices": [],
   "zigbee": {
@@ -33,8 +31,6 @@
       "_tz321c_4slreunp",
       "_TZE200_2aaelwxk",
       "_tze200_2aaelwxk",
-      "_TZE284_DEBCZECI",
-      "_tze284_debczeci",
       "_TZE200_3TOWULQD",
       "_tze200_3towulqd",
       "_TZE200_7GCLUKJS",
@@ -144,6 +140,14 @@
       "_tze284_yrwmnya3",
       "_TZE284_ZTC6GGYL",
       "_tze284_ztc6ggyl",
+      "_TZE284_o9ofysmo",
+      "_tze284_o9ofysmo",
+      "_TZE284_xc3vwx5a",
+      "_tze284_xc3vwx5a",
+      "_TZE284_yjjdcqsq",
+      "_tze284_yjjdcqsq",
+      "_TZE284_4qznlkbu",
+      "_tze284_4qznlkbu",
       "_TZE200_1ibpyhdc",
       "_tze200_1ibpyhdc",
       "_TZE200_f1pvdgoh",
@@ -382,7 +386,9 @@
       "_TZE200_hyhl5y36",
       "_tze200_hyhl5y36",
       "_TZE204_ztc6ggyl",
-      "_tze204_ztc6ggyl"
+      "_tze204_ztc6ggyl",
+      "_TZE200_laokfqwu",
+      "_TZE204_laokfqwu"
     ],
     "productId": [
       "TS0225",
@@ -392,11 +398,11 @@
       "ZG-204ZK",
       "ZG-204ZM",
       "ZG-205Z",
-      "ZG-227Z",
       "CK-BL702-MWS-01(7016)",
       "CK-BL702-MWS-01",
       "SZLMR10",
-      "TS0601"
+      "TS0601",
+      "ZG-227Z"
     ],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
@@ -408,9 +414,18 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          1,
+          1024,
+          1280,
+          1030,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          1,
+          1280,
+          1030
+        ]
       }
     }
   },
@@ -768,8 +783,7 @@
   ],
   "images": {
     "small": "drivers/presence_sensor_radar/assets/images/small.png",
-    "large": "drivers/presence_sensor_radar/assets/images/large.png",
-    "xlarge": "drivers/presence_sensor_radar/assets/images/xlarge.png"
+    "large": "drivers/presence_sensor_radar/assets/images/large.png"
   },
   "platforms": [
     "local"

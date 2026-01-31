@@ -246,7 +246,9 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          61184
         ],
         "bindings": []
       }
@@ -486,8 +488,7 @@
   ],
   "images": {
     "small": "drivers/gateway_zigbee_bridge/assets/images/small.png",
-    "large": "drivers/gateway_zigbee_bridge/assets/images/large.png",
-    "xlarge": "drivers/gateway_zigbee_bridge/assets/images/xlarge.png"
+    "large": "drivers/gateway_zigbee_bridge/assets/images/large.png"
   },
   "platforms": [
     "local"

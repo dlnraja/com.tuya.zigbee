@@ -1,4 +1,7 @@
 {
+  "5.7.0": {
+    "en": "🔧 NEW: Generic DIY Zigbee Driver - Supports ESP32-C6/H2, PTVO firmware, CC2530/31/2652, and custom ZCL devices. Auto-discovers capabilities from ZCL clusters. Perfect for DIY sensors, routers, and custom devices!"
+  },
   "5.6.3": {
     "en": "🔌 USB Dongle: Added exact mixed-case _TZ3000_h1ipgkwn fingerprint (from Z2M #23625, Sprut Hub #3517). Research: SLS, Jeedom, Z2M device database cross-referenced."
   },

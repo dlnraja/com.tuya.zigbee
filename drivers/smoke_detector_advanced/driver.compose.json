@@ -328,9 +328,15 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          1,
+          1280,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          1,
+          1280
+        ]
       }
     },
     "learnmode": {
@@ -584,8 +590,7 @@
   ],
   "images": {
     "small": "drivers/smoke_detector_advanced/assets/images/small.png",
-    "large": "drivers/smoke_detector_advanced/assets/images/large.png",
-    "xlarge": "drivers/smoke_detector_advanced/assets/images/xlarge.png"
+    "large": "drivers/smoke_detector_advanced/assets/images/large.png"
   },
   "platforms": [
     "local"

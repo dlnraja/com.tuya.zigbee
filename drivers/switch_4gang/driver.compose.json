@@ -24,27 +24,16 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          6,
+          61184
         ],
-        "bindings": []
-      },
-      "2": {
-        "clusters": [
-          0
-        ],
-        "bindings": []
-      },
-      "3": {
-        "clusters": [
-          0
-        ],
-        "bindings": []
-      },
-      "4": {
-        "clusters": [
-          0
-        ],
-        "bindings": []
+        "bindings": [
+          6
+        ]
       }
     },
     "learnmode": {
@@ -60,6 +49,14 @@
       "_tz3002_vaq2bfcu",
       "_TZ3002_zyuajkzz",
       "_tz3002_zyuajkzz",
+      "_TZ3002_6ahhkwyh",
+      "_tz3002_6ahhkwyh",
+      "_TZ3000_kt6xxa4o",
+      "_tz3000_kt6xxa4o",
+      "_TZ3000_u3oupgdy",
+      "_tz3000_u3oupgdy",
+      "_TZ3000_jwoyqycg",
+      "_tz3000_jwoyqycg",
       "_TYZB01_bagt1e4o",
       "_TZ3000_4VOBCWSC",
       "_tz3000_4vobcwsc",
@@ -339,10 +336,6 @@
       "_TZ3000_vp6clf9d",
       "_TZ3000_vsasbzkf",
       "_TZ3000_w0qqde0g",
-      "_TZ3000_ysdv91bk",
-      "_TZ3000_blhvsaqf",
-      "_TZ3000_qkixdnon",
-      "_TZ3000_l9brjwau",
       "Bitron Home",
       "Perenio",
       "Comap",
@@ -454,7 +447,9 @@
       "_TZ3000_iv4eq7eh",
       "_tz3000_iv4eq7eh",
       "_TZ3000_3n2minvf",
-      "_tz3000_3n2minvf"
+      "_tz3000_3n2minvf",
+      "_TZ3000_hdopuwv6",
+      "_TZ3000_aqsjyh1h"
     ]
   },
   "images": {

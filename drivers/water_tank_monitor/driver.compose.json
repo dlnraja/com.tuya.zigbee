@@ -50,8 +50,7 @@
   ],
   "images": {
     "small": "drivers/water_tank_monitor/assets/images/small.png",
-    "large": "drivers/water_tank_monitor/assets/images/large.png",
-    "xlarge": "drivers/water_tank_monitor/assets/images/xlarge.png"
+    "large": "drivers/water_tank_monitor/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
@@ -295,7 +294,8 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          61184
         ],
         "bindings": []
       }

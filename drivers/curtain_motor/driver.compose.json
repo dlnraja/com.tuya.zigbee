@@ -13,11 +13,7 @@
     "measure_battery",
     "measure_luminance",
     "button",
-    "dim",
-    "button_open",
-    "button_close",
-    "button_stop",
-    "button_identify"
+    "dim"
   ],
   "capabilitiesOptions": {
     "windowcoverings_set": {
@@ -560,6 +556,7 @@
       "_TZE200_1agwnafq",
       "_TZE200_1ibpyhdc",
       "_TZE200_2hf7x9n3",
+      "_TZE200_3towulqd",
       "_TZE200_44af8ipg",
       "_TZE200_4hbx5cvx",
       "_TZE200_502zx5sl",
@@ -595,7 +592,9 @@
       "_TZ3210_j4pdtz9v",
       "_tz3210_j4pdtz9v",
       "_TZE284_LIBHT6UA",
-      "_tze284_libht6ua"
+      "_tze284_libht6ua",
+      "_TZE200_j1xl73iw",
+      "_TZE204_7tdtqgwv"
     ],
     "productId": [
       "TS0302",
@@ -617,9 +616,15 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          6,
+          258,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          6,
+          258
+        ]
       }
     },
     "learnmode": {

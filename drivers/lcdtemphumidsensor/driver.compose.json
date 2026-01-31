@@ -246,16 +246,23 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          1,
+          1026,
+          1029,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          1,
+          1026,
+          1029
+        ]
       }
     }
   },
   "images": {
     "small": "drivers/lcdtemphumidsensor/assets/images/small.png",
-    "large": "drivers/lcdtemphumidsensor/assets/images/large.png",
-    "xlarge": "drivers/lcdtemphumidsensor/assets/images/xlarge.png"
+    "large": "drivers/lcdtemphumidsensor/assets/images/large.png"
   },
   "platforms": [
     "local"

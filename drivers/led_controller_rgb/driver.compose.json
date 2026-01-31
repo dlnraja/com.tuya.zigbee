@@ -250,16 +250,25 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
         ],
-        "bindings": []
+        "bindings": [
+          6,
+          8,
+          768
+        ]
       }
     }
   },
   "images": {
     "small": "drivers/led_controller_rgb/assets/images/small.png",
-    "large": "drivers/led_controller_rgb/assets/images/large.png",
-    "xlarge": "drivers/led_controller_rgb/assets/images/xlarge.png"
+    "large": "drivers/led_controller_rgb/assets/images/large.png"
   },
   "platforms": [
     "local"

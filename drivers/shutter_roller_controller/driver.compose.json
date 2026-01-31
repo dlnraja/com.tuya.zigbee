@@ -251,9 +251,16 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          3,
+          4,
+          5,
+          258,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          258
+        ]
       }
     },
     "learnmode": {
@@ -491,8 +498,7 @@
   ],
   "images": {
     "small": "drivers/shutter_roller_controller/assets/images/small.png",
-    "large": "drivers/shutter_roller_controller/assets/images/large.png",
-    "xlarge": "drivers/shutter_roller_controller/assets/images/xlarge.png"
+    "large": "drivers/shutter_roller_controller/assets/images/large.png"
   },
   "platforms": [
     "local"

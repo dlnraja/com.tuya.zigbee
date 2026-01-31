@@ -248,12 +248,23 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "_TZE200_VUWTQX0T",
+      "_tze200_vuwtqx0t",
+      "_TZE284_VUWTQX0T",
+      "_tze284_vuwtqx0t",
+      "_TZE200_FPHXKXUE",
+      "_tze200_fphxkxue",
+      "_TZE200_A7SGHMMS",
+      "_tze200_a7sghmms",
+      "_TZE204_A7SGHMMS",
+      "_tze204_a7sghmms"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          61184
         ],
         "bindings": []
       }
@@ -497,8 +508,7 @@
   ],
   "images": {
     "small": "drivers/water_valve_smart/assets/images/small.png",
-    "large": "drivers/water_valve_smart/assets/images/large.png",
-    "xlarge": "drivers/water_valve_smart/assets/images/xlarge.png"
+    "large": "drivers/water_valve_smart/assets/images/large.png"
   },
   "platforms": [
     "local"

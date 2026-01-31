@@ -264,9 +264,17 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          1,
+          1026,
+          1029,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          1,
+          1026,
+          1029
+        ]
       }
     },
     "learnmode": {
@@ -280,7 +288,6 @@
   },
   "images": {
     "small": "/drivers/switch_temp_sensor/assets/images/small.png",
-    "large": "/drivers/switch_temp_sensor/assets/images/large.png",
-    "xlarge": "/drivers/switch_temp_sensor/assets/images/xlarge.png"
+    "large": "drivers/switch_temp_sensor/assets/images/large.png"
   }
 }

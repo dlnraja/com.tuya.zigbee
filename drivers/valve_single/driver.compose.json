@@ -226,16 +226,48 @@
       "Ecolink",
       "Dome",
       "Vision",
-      "Monoprice"
+      "Monoprice",
+      "_TZ3000_o4cjetlm",
+      "_tz3000_o4cjetlm",
+      "_TZ3000_O4CJETLM",
+      "_TZ3000_iedbgyxt",
+      "_tz3000_iedbgyxt",
+      "_TZ3000_IEDBGYXT",
+      "_TZ3000_h3noz0a5",
+      "_tz3000_h3noz0a5",
+      "_TZ3000_H3NOZ0A5",
+      "_TZ3000_5ucujjts",
+      "_tz3000_5ucujjts",
+      "_TZ3000_5UCUJJTS",
+      "_TZ3000_h8ngtlxy",
+      "_tz3000_h8ngtlxy",
+      "_TZ3000_H8NGTLXY",
+      "_TZ3000_w0ypwa1f",
+      "_tz3000_w0ypwa1f",
+      "_TZ3000_W0YPWA1F",
+      "_TYZB01_4tlksk8a",
+      "_tyzb01_4tlksk8a",
+      "_TYZB01_4TLKSK8A",
+      "_TZ3000_tvuarksa",
+      "_tz3000_tvuarksa",
+      "_TZ3000_TVUARKSA",
+      "_TZ3000_j9568h44",
+      "_tz3000_j9568h44",
+      "_TZ3000_J9568H44",
+      "_TYZB01_ymcdbl3u",
+      "_tyzb01_ymcdbl3u",
+      "_TYZB01_YMCDBL3U"
     ],
     "productId": [
       "TS0601_valve",
-      "TS0601"
+      "TS0601",
+      "TS0001"
     ],
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          61184
         ],
         "bindings": []
       }
@@ -243,8 +275,7 @@
   },
   "images": {
     "small": "drivers/valve_single/assets/images/small.png",
-    "large": "drivers/valve_single/assets/images/large.png",
-    "xlarge": "drivers/valve_single/assets/images/xlarge.png"
+    "large": "drivers/valve_single/assets/images/large.png"
   },
   "platforms": [
     "local"

@@ -250,16 +250,21 @@
     "endpoints": {
       "1": {
         "clusters": [
-          0
+          0,
+          1,
+          1280,
+          61184
         ],
-        "bindings": []
+        "bindings": [
+          1,
+          1280
+        ]
       }
     }
   },
   "images": {
     "small": "drivers/co_sensor/assets/images/small.png",
-    "large": "drivers/co_sensor/assets/images/large.png",
-    "xlarge": "drivers/co_sensor/assets/images/xlarge.png"
+    "large": "drivers/co_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"
