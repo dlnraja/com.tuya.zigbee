@@ -33,49 +33,60 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     this.log('[SWITCH-7G] v5.5.922 ✅ Ready');
   }
 
+  /**
+   * v5.5.990: ZCL-Only mode - capability listeners FIRST (packetninja fix)
+   */
   async _initZclOnlyMode(zclNode) {
     this._zclState = { lastState: {}, pending: {}, timeout: {} };
+    this._zclNode = zclNode;
     for (let i = 1; i <= 7; i++) {
       this._zclState.lastState[i] = null;
       this._zclState.pending[i] = false;
       this._zclState.timeout[i] = null;
     }
 
+    const getOnOffCluster = (epNum) => {
+      const ep = this._zclNode?.endpoints?.[epNum];
+      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
+    };
+
+    // Register capability listeners FIRST
     for (const epNum of [1, 2, 3, 4, 5, 6, 7]) {
-      const ep = zclNode?.endpoints?.[epNum];
-      const onOff = ep?.clusters?.onOff;
-      if (!onOff) continue;
-
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
-      
-      if (typeof onOff.on === 'function') {
-        onOff.on('attr.onOff', (value) => {
-          const isPhysical = !this._zclState.pending[epNum];
-          if (this._zclState.lastState[epNum] !== value) {
-            this._zclState.lastState[epNum] = value;
-            this.setCapabilityValue(capName, value).catch(() => {});
-            if (isPhysical) {
-              const flowId = `switch_wall_7gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-              this.homey.flow.getDeviceTriggerCard(flowId)
-                .trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
-              this.log(`[SWITCH-7G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
-            }
-          }
-        });
-      }
-
       this.registerCapabilityListener(capName, async (value) => {
         this._zclState.pending[epNum] = true;
         clearTimeout(this._zclState.timeout[epNum]);
         this._zclState.timeout[epNum] = setTimeout(() => {
           this._zclState.pending[epNum] = false;
         }, 2000);
-        await onOff[value ? 'setOn' : 'setOff']();
+        const onOff = getOnOffCluster(epNum);
+        if (onOff) await onOff[value ? 'setOn' : 'setOff']();
         return true;
       });
     }
+
+    // Setup attribute listeners for physical button detection
+    for (const epNum of [1, 2, 3, 4, 5, 6, 7]) {
+      const onOff = getOnOffCluster(epNum);
+      if (!onOff || typeof onOff.on !== 'function') continue;
+
+      const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
+      onOff.on('attr.onOff', (value) => {
+        const isPhysical = !this._zclState.pending[epNum];
+        if (this._zclState.lastState[epNum] !== value) {
+          this._zclState.lastState[epNum] = value;
+          this.setCapabilityValue(capName, value).catch(() => {});
+          if (isPhysical) {
+            const flowId = `switch_wall_7gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
+            this.homey.flow.getDeviceTriggerCard(flowId)
+              .trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+            this.log(`[SWITCH-7G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+          }
+        }
+      });
+    }
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-7G] ✅ ZCL-only mode ready');
+    this.log('[SWITCH-7G] ✅ ZCL-only mode ready (packetninja v990)');
   }
 
   onDeleted() {

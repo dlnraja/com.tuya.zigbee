@@ -75,6 +75,7 @@ class Switch4GangDevice extends BaseClass {
       timeout: { 1: null, 2: null, 3: null, 4: null }
     };
     this._zclNode = zclNode;
+    this._isZclOnlyMode = true; // v5.5.993: Flag for VirtualButtonMixin direct ZCL
 
     // Helper to get onOff cluster from endpoint
     const getOnOffCluster = (epNum) => {

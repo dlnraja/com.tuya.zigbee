@@ -100,26 +100,6 @@
   ],
   "conditions": [
     {
-      "id": "gas_detector_gas_detected",
-      "title": {
-        "en": "Gas !{{is|is not}} detected",
-        "nl": "Gas !{{is|is niet}} gedetecteerd",
-        "fr": "Gaz !{{est|n'est pas}} détecté",
-        "de": "Gas !{{ist|ist nicht}} erkannt"
-      },
-      "args": []
-    },
-    {
-      "id": "gas_detector_co_detected",
-      "title": {
-        "en": "CO !{{is|is not}} detected",
-        "nl": "CO !{{is|is niet}} gedetecteerd",
-        "fr": "CO !{{est|n'est pas}} détecté",
-        "de": "CO !{{ist|ist nicht}} erkannt"
-      },
-      "args": []
-    },
-    {
       "id": "gas_detector_gas_is_detected",
       "title": {
         "en": "Gas !{{is|is not}} detected",
