@@ -17,12 +17,12 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      CURTAIN / COVER MOTOR - v5.6.0 + Bidirectional Buttons                 ║
+ * ║      CURTAIN / COVER MOTOR - v5.7.9 Enhanced Communication                  ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  HybridCoverBase handles: all cover listeners (state, set, tilt, dim)       ║
- * ║  v5.6.0: Added bidirectional physical/virtual button support                ║
- * ║  DPs: 1-10,12,13,101,102 | ZCL: 258,6,8,EF00                               ║
- * ║  Variants: GIRIER, Lonsonho, Zemismart, MOES                               ║
+ * ║  v5.7.9: Exponential backoff, wake-up ping, health monitoring              ║
+ * ║  v5.6.0: Bidirectional physical/virtual button support                     ║
+ * ║  DPs: 1-15,101-105 | ZCL: 258,6,8,EF00                                     ║
+ * ║  Variants: GIRIER, Lonsonho, Zemismart, MOES, Longsam                      ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCoverBase)) {
@@ -100,7 +100,48 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
     await this.initPhysicalButtonDetection(zclNode);
     await this.initVirtualButtons();
 
-    this.log('[CURTAIN] v5.6.0 ✅ Ready with bidirectional buttons');
+    // v5.7.9: Start connection health monitor
+    this._startHealthMonitor();
+
+    this.log('[CURTAIN] v5.7.9 ✅ Ready with enhanced communication');
+  }
+
+  /**
+   * v5.7.9: Monitor connection health and auto-recover
+   * Checks every 5 minutes if device is responsive
+   */
+  _startHealthMonitor() {
+    // Clear any existing interval
+    if (this._healthInterval) clearInterval(this._healthInterval);
+
+    this._healthInterval = setInterval(async () => {
+      // Skip if device had recent successful communication
+      if (Date.now() - (this._lastCommSuccess || 0) < 300000) return;
+      
+      // Skip if no failures tracked
+      if (!this._commFailures || this._commFailures < 1) return;
+
+      this.log('[CURTAIN] 🔍 Running health check...');
+      try {
+        await this._wakeUpDevice();
+        // If wake-up succeeds, clear the warning
+        if (this._commFailures > 0) {
+          this._commFailures = 0;
+          this.unsetWarning().catch(() => {});
+          this.log('[CURTAIN] ✅ Health check passed - device responsive');
+        }
+      } catch (e) {
+        this.log('[CURTAIN] ⚠️ Health check failed - device may be offline');
+      }
+    }, 300000); // Every 5 minutes
+  }
+
+  /**
+   * v5.7.9: Cleanup on device removal
+   */
+  async onDeleted() {
+    if (this._healthInterval) clearInterval(this._healthInterval);
+    await super.onDeleted?.();
   }
 
   _markAppCommand() {

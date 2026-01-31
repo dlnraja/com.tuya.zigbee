@@ -3,12 +3,12 @@
     {
       "id": "button_wireless_4_button_4gang_button_pressed",
       "title": {
-        "en": "Button pressed",
-        "fr": "Bouton appuyé"
+        "en": "A button was pressed",
+        "fr": "Un bouton a été appuyé"
       },
-      "titleFormatted": {
-        "en": "Button [[button]] pressed",
-        "fr": "Bouton [[button]] appuyé"
+      "hint": {
+        "en": "Triggers when any button is pressed. Use the button token in your flow.",
+        "fr": "Se déclenche quand un bouton est appuyé. Utilisez le jeton bouton dans votre flow."
       },
       "tokens": [
         {
@@ -26,12 +26,12 @@
     {
       "id": "button_wireless_4_button_4gang_button_double_press",
       "title": {
-        "en": "Button double-pressed",
-        "fr": "Bouton double-cliqué"
+        "en": "A button was double-pressed",
+        "fr": "Un bouton a été double-cliqué"
       },
-      "titleFormatted": {
-        "en": "Button [[button]] double-pressed",
-        "fr": "Bouton [[button]] double-cliqué"
+      "hint": {
+        "en": "Triggers when any button is double-pressed.",
+        "fr": "Se déclenche quand un bouton est double-cliqué."
       },
       "tokens": [
         {
@@ -49,12 +49,12 @@
     {
       "id": "button_wireless_4_button_4gang_button_long_press",
       "title": {
-        "en": "Button long-pressed",
-        "fr": "Bouton pressé longtemps"
+        "en": "A button was long-pressed",
+        "fr": "Un bouton a été appuyé longtemps"
       },
-      "titleFormatted": {
-        "en": "Button [[button]] long-pressed",
-        "fr": "Bouton [[button]] pressé longtemps"
+      "hint": {
+        "en": "Triggers when any button is long-pressed.",
+        "fr": "Se déclenche quand un bouton est appuyé longtemps."
       },
       "tokens": [
         {
@@ -72,12 +72,12 @@
     {
       "id": "button_wireless_4_button_4gang_button_multi_press",
       "title": {
-        "en": "Button multi-pressed",
-        "fr": "Bouton multi-cliqué"
+        "en": "A button was multi-pressed",
+        "fr": "Un bouton a été multi-cliqué"
       },
-      "titleFormatted": {
-        "en": "Button [[button]] pressed [[count]] times",
-        "fr": "Bouton [[button]] appuyé [[count]] fois"
+      "hint": {
+        "en": "Triggers when any button is pressed multiple times.",
+        "fr": "Se déclenche quand un bouton est appuyé plusieurs fois."
       },
       "tokens": [
         {
