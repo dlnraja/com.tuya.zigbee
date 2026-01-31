@@ -12,17 +12,19 @@ try {
   HybridCoverBase = ZigBeeDevice;
 }
 
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      CURTAIN / COVER MOTOR - v5.5.129 FIXED (extends HybridCoverBase)       ║
+ * ║      CURTAIN / COVER MOTOR - v5.5.992 + Virtual Buttons                     ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  HybridCoverBase handles: all cover listeners (state, set, tilt, dim)       ║
- * ║  This class ONLY: dpMappings                                                ║
+ * ║  v5.5.992: Added virtual open/close/stop buttons                            ║
  * ║  DPs: 1-10,12,13,101,102 | ZCL: 258,6,8,EF00                               ║
  * ║  Variants: GIRIER, Lonsonho, Zemismart, MOES                               ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class CurtainMotorDevice extends HybridCoverBase {
+class CurtainMotorDevice extends VirtualButtonMixin(HybridCoverBase) {
 
   // v5.5.322: Auto-detect power source - battery curtain robots use 3xAA
   get mainsPowered() {
@@ -86,7 +88,10 @@ class CurtainMotorDevice extends HybridCoverBase {
     // v5.5.321: Apply calibration settings on init
     await this._applyCalibrationSettings();
 
-    this.log('[CURTAIN] ✅ Ready');
+    // v5.5.992: Initialize virtual buttons (open/close/stop)
+    await this.initVirtualButtons();
+
+    this.log('[CURTAIN] v5.5.992 ✅ Ready + virtual buttons');
   }
 
   /**

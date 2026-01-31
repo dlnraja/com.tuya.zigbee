@@ -9,7 +9,11 @@
   "capabilities": [
     "dim",
     "onoff",
-    "measure_power"
+    "measure_power",
+    "button_toggle",
+    "button_dim_up",
+    "button_dim_down",
+    "button_identify"
   ],
   "energy": {
     "approximation": {

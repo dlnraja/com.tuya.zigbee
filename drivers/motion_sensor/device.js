@@ -116,6 +116,20 @@ class MotionSensorDevice extends HybridSensorBase {
         dp6_divisor: 1,
         dp102: 'measure_luminance',
       },
+      // v5.5.991: HOBEIAN ZG-204ZV Multisensor (Peter_van_Werkhoven forum)
+      // DP1=motion, DP3=temp(/10), DP4=humidity(*10!), DP9=lux, DP12=battery
+      // CRITICAL: Humidity needs *10 multiplier (shows 9% instead of 90%)
+      'ZG204ZV_MULTISENSOR': {
+        patterns: ['_TZE200_rxqls8v0', '_tze200_rxqls8v0', '_TZE204_rxqls8v0'],
+        dp3: 'measure_temperature',
+        dp3_divisor: 10,
+        dp4: 'measure_humidity',
+        dp4_multiplier: 10,  // Humidity needs *10 (raw 9 = 90%)
+        dp9: 'measure_luminance',
+        dp12: 'measure_battery',
+        hasTemp: true,
+        hasHumidity: true,
+      },
       // HOBEIAN ZG-204ZM Radar (mmWave presence)
       // DP4=distance, NOT battery or temp
       'ZG204ZM_RADAR': {
@@ -147,11 +161,44 @@ class MotionSensorDevice extends HybridSensorBase {
 
   /**
    * v5.5.753: Detect manufacturer profile from device data
+   * v5.5.992: PERMISSIVE MODE for variant manufacturers (Peter_van_Werkhoven ZG-204ZV fix)
+   * Problem: _TZE200_3towulqd can be ZG-204ZL (PIR) OR ZG-204ZV (multisensor)
+   * Solution: Return PERMISSIVE profile for variants - let DPs determine capabilities
    */
   _getManufacturerProfile() {
     const mfr = this.getData()?.manufacturerName || 
                 this.getSetting('zb_manufacturer_name') || '';
     const mfrLower = mfr.toLowerCase();
+    
+    // v5.5.992: CRITICAL FIX - Check for VARIANT manufacturers FIRST
+    // These have multiple hardware variants with same manufacturerName
+    // Return PERMISSIVE profile that accepts all DP types
+    const isVariant = MotionSensorDevice.VARIANT_MANUFACTURERS.some(v => 
+      mfrLower.includes(v.toLowerCase())
+    );
+    
+    if (isVariant) {
+      this.log(`[MOTION-DP] 🔀 VARIANT manufacturer detected: ${mfr}`);
+      this.log('[MOTION-DP] Using PERMISSIVE profile - capabilities added from received DPs');
+      // Permissive profile: Accept temp/humidity on DPs 3,4,5,6 and battery on DP12
+      // This handles both ZG-204ZL (PIR) and ZG-204ZV (multisensor) with same mfr
+      return { 
+        name: 'PERMISSIVE_VARIANT',
+        dp3: 'measure_temperature',  // ZG-204ZV: temp on DP3
+        dp3_divisor: 10,
+        dp4: 'measure_humidity',     // ZG-204ZV: humidity on DP4 (*10 multiplier)
+        dp4_multiplier: 10,
+        dp5: 'measure_temperature',  // Fantem: temp on DP5
+        dp5_divisor: 10,
+        dp6: 'measure_humidity',     // Fantem: humidity on DP6
+        dp6_divisor: 1,
+        dp9: 'measure_luminance',    // ZG-204ZV: lux on DP9
+        dp12: 'measure_battery',     // ZG-204ZV: battery on DP12
+        isPermissive: true,
+        hasTemp: true,
+        hasHumidity: true,
+      };
+    }
     
     for (const [profileName, profile] of Object.entries(MotionSensorDevice.MANUFACTURER_DP_PROFILES)) {
       for (const pattern of profile.patterns) {
@@ -276,6 +323,18 @@ class MotionSensorDevice extends HybridSensorBase {
         divisor: profile.dp4_divisor || 10,
         transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10) / 10 : null
       };
+    } else if (profile.dp4 === 'measure_humidity') {
+      // v5.5.991: HOBEIAN ZG-204ZV humidity needs *10 multiplier (Peter_van_Werkhoven)
+      const multiplier = profile.dp4_multiplier || 1;
+      mappings[4] = {
+        capability: 'measure_humidity',
+        divisor: 1,
+        transform: (v) => {
+          device._dynamicCapabilityFromDP?.(4, v, 'measure_humidity');
+          const hum = v * multiplier;
+          return (hum >= 0 && hum <= 100) ? Math.round(hum) : null;
+        }
+      };
     } else if (profile.dp4 === 'measure_battery') {
       mappings[4] = { capability: 'measure_battery', divisor: 1 };
     } else if (profile.dp4 === 'internal_distance') {
@@ -329,6 +388,25 @@ class MotionSensorDevice extends HybridSensorBase {
     } else {
       // Default: Fantem lux
       mappings[102] = { capability: 'measure_luminance', divisor: 1 };
+    }
+
+    // v5.5.991: ZG-204ZV specific DP mappings (Peter_van_Werkhoven forum)
+    if (profile.dp3 === 'measure_temperature') {
+      mappings[3] = {
+        capability: 'measure_temperature',
+        divisor: profile.dp3_divisor || 10,
+        transform: (v) => {
+          device._dynamicCapabilityFromDP?.(3, v, 'measure_temperature');
+          const temp = v / (profile.dp3_divisor || 10);
+          return (temp >= -40 && temp <= 80) ? Math.round(temp * 10) / 10 : null;
+        }
+      };
+    }
+    if (profile.dp9 === 'measure_luminance') {
+      mappings[9] = { capability: 'measure_luminance', divisor: 1 };
+    }
+    if (profile.dp12 === 'measure_battery') {
+      mappings[12] = { capability: 'measure_battery', divisor: 1 };
     }
 
     return mappings;
@@ -639,6 +717,31 @@ class MotionSensorDevice extends HybridSensorBase {
    */
   async _ensureTuyaDPCapabilities() {
     const profile = this._getManufacturerProfile();
+    
+    // v5.5.992: PERMISSIVE_VARIANT profile - add all possible capabilities upfront
+    // This handles ZG-204ZV with temp/humidity vs ZG-204ZL (PIR only)
+    if (profile.isPermissive || profile.name === 'PERMISSIVE_VARIANT') {
+      this.log('[MOTION-DP] 🔀 PERMISSIVE mode - adding all multisensor capabilities');
+      
+      // Add all capabilities that might be present (device will populate from DPs)
+      if (!this.hasCapability('measure_temperature')) {
+        await this.addCapability('measure_temperature').catch(() => {});
+        this.log('[MOTION-DP] ✅ Added measure_temperature (permissive)');
+      }
+      if (!this.hasCapability('measure_humidity')) {
+        await this.addCapability('measure_humidity').catch(() => {});
+        this.log('[MOTION-DP] ✅ Added measure_humidity (permissive)');
+      }
+      if (!this.hasCapability('measure_luminance')) {
+        await this.addCapability('measure_luminance').catch(() => {});
+        this.log('[MOTION-DP] ✅ Added measure_luminance (permissive)');
+      }
+      if (!this.hasCapability('measure_battery')) {
+        await this.addCapability('measure_battery').catch(() => {});
+        this.log('[MOTION-DP] ✅ Added measure_battery (permissive)');
+      }
+      return;
+    }
     
     // v5.5.925: For variant devices, DON'T remove capabilities
     // They will be added dynamically when DPs are received

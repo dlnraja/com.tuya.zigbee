@@ -13,7 +13,11 @@
     "measure_battery",
     "measure_luminance",
     "button",
-    "dim"
+    "dim",
+    "button_open",
+    "button_close",
+    "button_stop",
+    "button_identify"
   ],
   "capabilitiesOptions": {
     "windowcoverings_set": {

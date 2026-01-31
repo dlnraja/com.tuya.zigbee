@@ -522,7 +522,8 @@ class Button4GangDevice extends ButtonDevice {
       // v5.5.967: Log device info for debugging
       this.log(`[BUTTON4-E000] 🔍 Device: mfr=${manufacturerName || 'empty'}, product=${productId || 'empty'}`);
       
-      // v5.5.967: Known devices that use cluster 0xE000 (expanded list)
+      // v5.5.992: Known devices that use cluster 0xE000 (expanded list)
+      // GitHub #121: DAVID9SE _TZ3000_an5rjiwd TS0041 with 4 endpoints + cluster 57344
       const knownE000Devices = [
         '_TZ3000_zgyzgdua',  // Moes XH-SY-04Z 4-button remote
         '_TZ3000_abrsvsou',  // Similar Moes variant
@@ -534,6 +535,7 @@ class Button4GangDevice extends ButtonDevice {
         '_TZ3000_w8jwkczz',  // TS0044 variant
         '_TZ3000_dku2cfsc',  // TS0044 variant
         '_TZ3000_ja5osu5g',  // TS0044 variant
+        '_TZ3000_an5rjiwd',  // GitHub #121: TS0041 with 4 endpoints + E000
       ];
       
       // Check if this is TS0044 product (uses 4 endpoints with cluster 57344)
