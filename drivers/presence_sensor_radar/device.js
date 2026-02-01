@@ -2024,7 +2024,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    const mfr = this.getData()?.manufacturerName || '';
+    // v5.7.34: Use _getManufacturerName() for consistent multi-source retrieval
+    const mfr = this._getManufacturerName();
     const config = this._getSensorConfig();
 
     this.log(`[RADAR] ═══════════════════════════════════════════════════════════`);
@@ -2684,7 +2685,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
    */
   _throttleMotionSpam(presence, dpId) {
     const config = this._getSensorConfig();
-    const mfr = this.getData()?.manufacturerName || '';
+    // v5.7.34: Use _getManufacturerName() for consistent multi-source retrieval
+    const mfr = this._getManufacturerName();
 
     // Only apply to problematic sensors
     if (!mfr.includes('iadro9bf') && !mfr.includes('qasjif9e')) {

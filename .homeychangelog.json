@@ -1,4 +1,7 @@
 {
+  "5.7.34": {
+    "en": "🐛 HOBEIAN FIX: Fixed remaining getData().manufacturerName calls in radar sensor to use multi-source fallback. Ensures HOBEIAN config is used instead of DEFAULT. Forum #1334 Peter_van_Werkhoven."
+  },
   "5.7.33": {
     "en": "➕ NEW DEVICE: AVATTO WT198 Smart Thermostat (_TZE284_xnbkhhdr / TS0601) added to radiator_valve driver. Removed from climate_sensor to prevent pairing conflict. GitHub #1345 Nono-3ric."
   },
