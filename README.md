@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.43** | 🔌 NEW FINGERPRINT: Added _TZ3000_fisb3ajo for 2-gang switch (JohanBendz #122... |
 | **v5.7.42** | 🪟 CURTAIN MOTOR FIX: DP2 position wasn't working because value type sent 1 b... |
 | **v5.7.41** | 📡 RADAR CONFIG FIX: Fixed case-sensitivity bug in sensor config lookup. Devi... |
 | **v5.7.40** | 🔧 POWER CLAMP FIX: Fixed DP parsing for power_clamp_meter - was reading r.va... |
@@ -78,7 +79,6 @@
 | **v5.7.36** | 🚀 PERFORMANCE: Added UniversalThrottleManager - prevents log flooding, dupli... |
 | **v5.7.35** | 🔘 BUTTON FIX: Physical button now works for ALL 4-button devices. E000 clust... |
 | **v5.7.34** | 🐛 HOBEIAN FIX: Fixed remaining getData().manufacturerName calls in radar sen... |
-| **v5.7.33** | ➕ NEW DEVICE: AVATTO WT198 Smart Thermostat (_TZE284_xnbkhhdr / TS0601) added... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
