@@ -1,0 +1,20 @@
+{
+  "id": "INT-044",
+  "deviceName": "HOBEIAN ZG-204ZL Motion Sensor",
+  "manufacturerName": "HOBEIAN",
+  "productId": "ZG-204ZL",
+  "source": "Forum Page 56",
+  "user": "Cam",
+  "status": "fixed",
+  "priority": "high",
+  "driver": "motion_sensor",
+  "deviceType": "enddevice",
+  "powerSource": "battery",
+  "symptoms": ["Motion sensor always shows active in Homey UI", "Never goes inactive even after hour"],
+  "rootCause": "invert_presence setting not applied to IAS Zone and Tuya DP motion handlers",
+  "fix": {
+    "applied": true,
+    "version": "5.5.840",
+    "description": "Added invert_presence check to motion_sensor IAS Zone handlers and HybridSensorBase Tuya DP1 handler"
+  }
+}
