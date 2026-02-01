@@ -41,7 +41,7 @@ class Button4GangDevice extends ButtonDevice {
   async onNodeInit({ zclNode }) {
     this._zclNode = zclNode;
     this.log('═══════════════════════════════════════════════════════════════');
-    this.log('[BUTTON4] 🔘 Button4GangDevice v5.7.17 initializing...');
+    this.log('[BUTTON4] 🔘 Button4GangDevice v5.7.18 initializing...');
     this.log('[BUTTON4] CRITICAL FIX: TS004F Scene Mode + MOES E000 Detection');
     this.log('[BUTTON4] Research: SmartThings, Z2M #7158, ZHA #1372, PR #120');
     this.log('═══════════════════════════════════════════════════════════════');
@@ -95,8 +95,15 @@ class Button4GangDevice extends ButtonDevice {
    * - Duplicate event filtering with debounce
    */
   async _intelligentModeSwitch(zclNode) {
-    const productId = this.getData()?.productId || '';
-    const manufacturerName = this.getData()?.manufacturerName || '';
+    // v5.7.18: Use multiple sources for device info (getData may be empty on init)
+    const productId = this.getData()?.productId 
+      || this.getStoreValue?.('productId')
+      || this.getSetting?.('zb_model_id')
+      || '';
+    const manufacturerName = this.getData()?.manufacturerName 
+      || this.getStoreValue?.('manufacturerName')
+      || this.getSetting?.('zb_manufacturer_name')
+      || '';
 
     // Only TS004F needs mode switching (TS0044 doesn't have this issue)
     const isTS004F = containsCI(productId, 'TS004F');
