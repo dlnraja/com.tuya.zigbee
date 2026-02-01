@@ -65,10 +65,11 @@
 ## 🚀 Latest Updates
 
 <!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### ✨ Recent Changes (Jan 2026)
+### ✨ Recent Changes (Feb 2026)
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.16** | 🔘 CRITICAL VIRTUAL BUTTON FIX: Changed button.X capabilities from setable:fa... |
 | **v5.7.15** | 🔧 FIX: Removed titleFormatted with [[device]] from physical button flow card... |
 | **v5.7.14** | 🔄 BIDIRECTIONAL DEDUP: Virtual button (app/flow) ↔ Physical button (device) ... |
 | **v5.7.13** | 🧠 SMART DEDUPLICATION: Pattern detection now auto-detects if device natively... |
@@ -78,7 +79,6 @@
 | **v5.7.9** | 🪟 CURTAIN MOTOR: Enhanced communication - exponential backoff, wake-up ping,... |
 | **v5.7.8** | 🌡️ RADAR FIX: Humidity multiplier support in auto-discovery (fixes HOBEIAN Z... |
 | **v5.7.7** | 🐛 FIXES: Power meter crash on undefined DP values (diagnostic a0f7de6a). Swi... |
-| **v5.7.6** | 📚 Z2M/ZHA Cross-Reference: Added PJ-1203 Matsee Plus variants (_TZE204_cjbof... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
