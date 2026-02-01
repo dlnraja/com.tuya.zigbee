@@ -1,4 +1,7 @@
 {
+  "5.7.36": {
+    "en": "🚀 PERFORMANCE: Added UniversalThrottleManager - prevents log flooding, duplicate capability updates, and flow trigger spam. Smart per-capability throttling (5s sensors, 60s battery, 300ms switches). Deduplication across all base classes."
+  },
   "5.7.35": {
     "en": "🔘 BUTTON FIX: Physical button now works for ALL 4-button devices. E000 cluster (57344) setup is now universal - no longer requires device to be in known list. Forum #1333 Freddyboy."
   },
