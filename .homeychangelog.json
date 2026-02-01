@@ -1,4 +1,7 @@
 {
+  "5.7.17": {
+    "en": "🔘 MOES SCENE MODE FIX: Added _TZ3000_zgyzgdua to mode switching list. Now attempts scene mode switch for ALL 4-button devices (even TS0044) since some have no LED indicator. Forum fix for Fred's device not sending button events."
+  },
   "5.7.16": {
     "en": "🔘 CRITICAL VIRTUAL BUTTON FIX: Changed button.X capabilities from setable:false to setable:true. This was preventing users from pressing virtual buttons in Homey app! Fixed for ALL button_wireless drivers (1-8 gang). Also added enhanced logging for button detection debugging."
   },
