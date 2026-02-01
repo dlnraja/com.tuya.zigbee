@@ -1,0 +1,14 @@
+{
+  "id": "INT-031",
+  "deviceName": "HOBEIAN ZG-227Z Temperature Sensor",
+  "manufacturerName": "HOBEIAN",
+  "productId": "ZG-227Z",
+  "source": "GitHub Issue #95, PR #1332",
+  "user": "JeffreyOtten1234",
+  "status": "supported",
+  "driver": "climate_sensor",
+  "deviceType": "enddevice",
+  "powerSource": "battery",
+  "inputClusters": [0, 1, 3, 1026, 1029],
+  "capabilities": ["measure_temperature", "measure_humidity", "measure_battery"]
+}
