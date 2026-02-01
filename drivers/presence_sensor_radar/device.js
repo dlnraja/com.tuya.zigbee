@@ -758,6 +758,8 @@ const SENSOR_CONFIGS = {
       '_TZE200_uli8wasj', '_TZE204_uli8wasj',
       '_TZE200_y8jijhba', '_TZE204_y8jijhba',
       'HOBEIAN',  // v5.5.841: Added for direct HOBEIAN ZG-204ZV matching
+      // v5.7.45: Peter #1342 - ZG-204ZV variant reporting as _TZ3000_8bxrzyxz
+      '_TZ3000_8bxrzyxz', '_TZ3000_8BXRZYXZ',
     ],
     modelId: 'ZG-204ZV',  // v5.5.841: Explicit modelId for HOBEIAN routing
     battery: true,
@@ -1245,12 +1247,11 @@ const SENSOR_CONFIGS = {
   // ─────────────────────────────────────────────────────────────────────────────
   // TYPE H: TZ3000 PIR/Ceiling Sensors (hybrid ZCL + Tuya DP)
   // v5.5.499: FORUM FIX - Added DP103 illuminance + settings for ceiling sensors
-  // _TZ3000_8bxrzyxz is a ceiling PIR with Tuya DP illuminance reporting
-  // v5.7.44: Peter_van_Werkhoven #1342 - Some variants may have temp/humidity via ZCL
+  // v5.7.45: MOVED _TZ3000_8bxrzyxz to ZG_204ZV_MULTISENSOR (Peter #1342 confirms it's a ZG-204ZV)
   // ─────────────────────────────────────────────────────────────────────────────
   'TZ3000_PIR': {
     sensors: [
-      '_TZ3000_8bxrzyxz', '_TZ3000_aigddb2b',
+      '_TZ3000_aigddb2b',
       '_TZ3000_ky0fq4ho',
       '_TZ3210_fkzihax8'
     ],
@@ -1258,16 +1259,11 @@ const SENSOR_CONFIGS = {
     useZcl: true,
     useIasZone: true,       // v5.5.519: IAS Zone ONLY for _TZ321C_fkzihax8
     hasIlluminance: true,   // v5.5.499: Has illuminance via Tuya DP103
-    // v5.7.44: Peter #1342 - Removed noTemperature/noHumidity to allow ZCL auto-discovery
-    // Some ZG-204ZV variants report as _TZ3000_8bxrzyxz but have temp/humidity via ZCL clusters
-    permissiveMode: true,   // v5.7.44: Allow auto-discovery of temp/humidity via ZCL
+    noTemperature: true,    // v5.5.372: PIR sensors have NO temp
+    noHumidity: true,       // v5.5.372: PIR sensors have NO humidity
     dpMap: {
       // v5.5.499: Ceiling PIR sensors report illuminance via DP103
       103: { cap: 'measure_luminance', type: 'lux_direct' },
-      // v5.7.44: ZG-204ZV variant DPs (if this is actually a multisensor)
-      3: { cap: 'measure_temperature', divisor: 10 },
-      4: { cap: 'measure_humidity', multiplier: 10 },
-      10: { cap: 'measure_battery', divisor: 1 },
     }
   },
 
