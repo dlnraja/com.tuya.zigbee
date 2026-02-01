@@ -1,4 +1,7 @@
 {
+  "5.7.33": {
+    "en": "➕ NEW DEVICE: AVATTO WT198 Smart Thermostat (_TZE284_xnbkhhdr / TS0601) added to radiator_valve driver. Removed from climate_sensor to prevent pairing conflict. GitHub #1345 Nono-3ric."
+  },
   "5.7.32": {
     "en": "🐛 CRITICAL FIXES: 1) MOES 4-button ghost press - fixed late endpoint initialization triggering false button presses. 2) Radar sensor wrong config - fixed manufacturerName retrieval using multiple fallback sources. Diagnostic reports 735ff32e, e7f41a67, b0492e1e."
   },
