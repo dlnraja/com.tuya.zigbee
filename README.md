@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.33** | ➕ NEW DEVICE: AVATTO WT198 Smart Thermostat (_TZE284_xnbkhhdr / TS0601) added... |
 | **v5.7.32** | 🐛 CRITICAL FIXES: 1) MOES 4-button ghost press - fixed late endpoint initial... |
 | **v5.7.31** | 🔧 FINGERPRINT CLEANUP: Removed _TZE200_3towulqd (ZG-204ZL PIR sensor) from 1... |
 | **v5.7.30** | 📋 COMMUNITY SYNC: Verified 46 fingerprints from GitHub #123. Audited Univers... |
@@ -78,7 +79,6 @@
 | **v5.7.26** | 🔌 NATIVE HOMEY METHODS: UniversalDPSender/Receiver now use native Homey meth... |
 | **v5.7.25** | 📦 COMPLETE DATA FORMAT SUPPORT: UniversalDPSender/Receiver now handle ALL fo... |
 | **v5.7.24** | 🔘 MOES BUTTON FIX: Fixed random/ghost button presses on multi-endpoint butto... |
-| **v5.7.23** | 📡 COMPLETE DP SYSTEM: Added UniversalDPReceiver to complement UniversalDPSen... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
