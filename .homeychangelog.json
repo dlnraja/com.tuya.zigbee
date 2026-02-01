@@ -1,4 +1,7 @@
 {
+  "5.7.46": {
+    "en": "🔄 COMMUNITY SYNC ENHANCED: Monthly fingerprint workflow now extracts productId, device type, vendor, and description from Z2M. Issue #123 verified - all 46 fingerprints integrated (18 curtain, 14 contact, 6 climate, 4 valve, 1 dimmer, 1 vibration, 1 bulb, 1 motion). Added inferDeviceType() for automatic driver mapping."
+  },
   "5.7.45": {
     "en": "📡 ZG-204ZV FIX (Peter #1342): CONFIRMED _TZ3000_8bxrzyxz is a HOBEIAN ZG-204ZV 5-in-1 multisensor! Moved from PIR-only to ZG_204ZV_MULTISENSOR config. Now has: ✅ Motion ✅ Luminance ✅ Temperature (DP3÷10) ✅ Humidity (DP4×10) ✅ Battery (DP10). Includes lux smoothing (15%) and motion throttle (5s)."
   },
