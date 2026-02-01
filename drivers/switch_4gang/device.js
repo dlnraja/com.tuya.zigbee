@@ -119,16 +119,22 @@ class Switch4GangDevice extends BaseClass {
       this.log(`[BSEED-4G] EP${epNum} capability listener registered for ${capName}`);
     }
 
-    // Setup attribute listeners for available endpoints
-    for (const epNum of [1, 2, 3, 4]) {
+    // v5.7.38: Setup attribute listeners for available endpoints
+    // Also setup delayed retry for endpoints where cluster isn't ready yet
+    const setupEndpointListener = (epNum, retryCount = 0) => {
       const onOff = getOnOffCluster(epNum);
       if (!onOff || typeof onOff.on !== 'function') {
-        this.log(`[BSEED-4G] EP${epNum} no attr listener (cluster not ready)`);
-        continue;
+        if (retryCount < 3) {
+          this.log(`[BSEED-4G] EP${epNum} cluster not ready, retry ${retryCount + 1}/3 in 2s`);
+          setTimeout(() => setupEndpointListener(epNum, retryCount + 1), 2000);
+        } else {
+          this.log(`[BSEED-4G] EP${epNum} no attr listener after 3 retries`);
+        }
+        return;
       }
 
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
-      const gangNum = epNum; // v5.5.999: Capture for closure
+      const gangNum = epNum; // Capture for closure
       onOff.on('attr.onOff', (value) => {
         const isPhysical = !this._zclState.pending[gangNum];
         this.log(`[BSEED-4G] EP${gangNum} attr: ${value} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
@@ -147,6 +153,11 @@ class Switch4GangDevice extends BaseClass {
         }
       });
       this.log(`[BSEED-4G] EP${epNum} ZCL onOff + physical detection registered`);
+    };
+
+    // Setup listeners for all endpoints
+    for (const epNum of [1, 2, 3, 4]) {
+      setupEndpointListener(epNum);
     }
 
     await this.initVirtualButtons?.();

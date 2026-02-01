@@ -1,4 +1,7 @@
 {
+  "5.7.38": {
+    "en": "🔧 BSEED 4-GANG FIX: Fixed virtual button toggle for EP2-4 (diagnostic c33007b0). VirtualButtonMixin now tries direct ZCL first before capability listener. Added retry mechanism for EP2-4 cluster initialization. Fixes 'Missing Capability Listener: onoff.gang2' error."
+  },
   "5.7.37": {
     "en": "🔘 PHYSICAL BUTTON FIX: Made ZCL command listeners UNIVERSAL for ALL switches. Root cause: command listeners were only for BSEED devices, causing physical buttons to not trigger flows while virtual buttons worked. Now ALL switches detect physical button presses via commandOn/commandOff/commandToggle. Forum #1333."
   },
