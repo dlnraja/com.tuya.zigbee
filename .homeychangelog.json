@@ -1,4 +1,7 @@
 {
+  "5.7.44": {
+    "en": "📡 MULTISENSOR FIX (Peter #1342): TZ3000_PIR config now enables temperature/humidity auto-discovery via Tuya DPs (DP3/DP4/DP10). Some ZG-204ZV variants report as _TZ3000_8bxrzyxz but have temp/humidity. Added permissiveMode for ZCL cluster detection."
+  },
   "5.7.43": {
     "en": "🔌 NEW FINGERPRINT: Added _TZ3000_fisb3ajo for 2-gang switch (JohanBendz #122). Device was pairing as unknown."
   },
