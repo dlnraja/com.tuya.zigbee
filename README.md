@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.22** | 🧠 SMART DP SENDER: 7-level fallback chain with intelligent caching. Logs onl... |
 | **v5.7.21** | 🔧 UNIFIED DP SENDER: Created UniversalDPSender with complete fallback chain ... |
 | **v5.7.20** | 🔧 CURTAIN MOTOR FIX: Restored v5.5.937 DP format compatibility. Now tries BO... |
 | **v5.7.19** | 🔘 UNIVERSAL SCENE MODE: Moved mode switching (0x8004 attr) to ButtonDevice.j... |
@@ -78,7 +79,6 @@
 | **v5.7.15** | 🔧 FIX: Removed titleFormatted with [[device]] from physical button flow card... |
 | **v5.7.14** | 🔄 BIDIRECTIONAL DEDUP: Virtual button (app/flow) ↔ Physical button (device) ... |
 | **v5.7.13** | 🧠 SMART DEDUPLICATION: Pattern detection now auto-detects if device natively... |
-| **v5.7.12** | 🔘 BUTTON PATTERN DETECTION: Software triple-click detection (600ms window) f... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
