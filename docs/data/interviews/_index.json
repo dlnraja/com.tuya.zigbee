@@ -1,0 +1,34 @@
+{
+  "version": "5.7.20",
+  "lastUpdated": "2026-02-01",
+  "totalInterviews": 12,
+  "files": [
+    "TS0001__TZ3000_blhvsaqf.json",
+    "TS0002__TZ3000_l9brjwau.json",
+    "TS0003__TZ3000_qkixdnon.json",
+    "TS0044__TZ3000_wkai4ga5.json",
+    "TS0044__TZ3000_zgyzgdua.json",
+    "TS0225__TZ321C_fkzihaxe8.json",
+    "TS0601__TZE200_rhgsbacq.json",
+    "TS0601__TZE204_gkfbdvyx.json",
+    "TS0601__TZE204_xu4a5rhj.json",
+    "TS0601__TZE204_ztqnh5cg.json",
+    "TS0601__TZE284_iadro9bf.json",
+    "TS0601__TZE284_xnbkhhdr.json"
+  ],
+  "byStatus": {
+    "fixed": 7,
+    "supported": 2,
+    "new_device_request": 2,
+    "investigating": 1
+  },
+  "byDriver": {
+    "presence_sensor_radar": 4,
+    "button_wireless_4": 2,
+    "curtain_motor": 1,
+    "switch_1gang": 1,
+    "switch_2gang": 1,
+    "switch_3gang": 1,
+    "thermostat_radiator_valve": 1
+  }
+}
