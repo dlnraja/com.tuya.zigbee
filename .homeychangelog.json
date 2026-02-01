@@ -1,4 +1,7 @@
 {
+  "5.7.21": {
+    "en": "🔧 UNIFIED DP SENDER: Created UniversalDPSender with complete fallback chain (TuyaEF00Manager → OLD format → NEW format → setDataValue → sendData). All cover/curtain drivers now use consistent DP communication. Reorganized device interviews into separate files."
+  },
   "5.7.20": {
     "en": "🔧 CURTAIN MOTOR FIX: Restored v5.5.937 DP format compatibility. Now tries BOTH old format {dp,datatype,data} AND new format {data:frame}. Fixes regression where curtain motors stopped responding after v5.5.937 (elgato7 report)."
   },
