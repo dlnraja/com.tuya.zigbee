@@ -103,8 +103,62 @@ class PowerClampMeterDevice extends ZigBeeDevice {
 
     this.log('[TUYA] DP cluster found');
 
-    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value));
-    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value));
+    // v5.7.40: FIX - Parse data buffer correctly from Tuya events
+    // Events have structure: { status, transid, dp, datatype, length, data }
+    // data is a Buffer that needs to be parsed based on datatype
+    const parseValue = (r) => {
+      if (!r || r.dp === undefined) return { dp: undefined, value: undefined };
+      const dp = r.dp;
+      const data = r.data;
+      const datatype = r.datatype;
+      
+      if (data === undefined || data === null) {
+        return { dp, value: undefined };
+      }
+      
+      // Parse based on Tuya datatype
+      let value;
+      const buf = Buffer.isBuffer(data) ? data : (data.data ? Buffer.from(data.data) : null);
+      
+      if (buf && buf.length > 0) {
+        switch (datatype) {
+          case 1: // Bool
+            value = buf[0] === 1;
+            break;
+          case 2: // Value (4-byte big-endian integer)
+            if (buf.length >= 4) {
+              value = buf.readUInt32BE(0);
+            } else if (buf.length === 2) {
+              value = buf.readUInt16BE(0);
+            } else {
+              value = buf[0];
+            }
+            break;
+          case 4: // Enum
+            value = buf[0];
+            break;
+          default:
+            // Try to parse as big-endian integer
+            if (buf.length === 4) value = buf.readUInt32BE(0);
+            else if (buf.length === 2) value = buf.readUInt16BE(0);
+            else if (buf.length === 1) value = buf[0];
+            else value = buf;
+        }
+      } else if (typeof data === 'number') {
+        value = data;
+      }
+      
+      return { dp, value };
+    };
+
+    tuyaCluster.on('response', (r) => {
+      const { dp, value } = parseValue(r);
+      this._handleDP(dp, value);
+    });
+    tuyaCluster.on('reporting', (r) => {
+      const { dp, value } = parseValue(r);
+      this._handleDP(dp, value);
+    });
     tuyaCluster.on('datapoint', (dp, value) => this._handleDP(dp, value));
   }
 

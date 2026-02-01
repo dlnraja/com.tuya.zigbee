@@ -1363,10 +1363,11 @@ const SENSOR_CONFIGS = {
 };
 
 // Build reverse lookup: manufacturerName -> config
+// v5.7.41: Use LOWERCASE keys for case-insensitive matching
 const MANUFACTURER_CONFIG_MAP = {};
 for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
   for (const mfr of config.sensors) {
-    MANUFACTURER_CONFIG_MAP[mfr] = { ...config, configName };
+    MANUFACTURER_CONFIG_MAP[mfr.toLowerCase()] = { ...config, configName };
   }
 }
 
@@ -1410,9 +1411,11 @@ function getSensorConfig(manufacturerName, modelId = null) {
   // v5.5.286: RONNY FIX - Enhanced matching for TZE284/TZE204 series
   // When exact match fails, try pattern matching for known problematic series
 
-  // Try exact match first
-  if (MANUFACTURER_CONFIG_MAP[manufacturerName]) {
-    return MANUFACTURER_CONFIG_MAP[manufacturerName];
+  // Try exact match first (case-insensitive)
+  // v5.7.41: FIX - Device reports _TZ3000_8BXRZYXZ but config has _TZ3000_8bxrzyxz
+  const mfrKey = manufacturerName?.toLowerCase() || '';
+  if (MANUFACTURER_CONFIG_MAP[mfrKey]) {
+    return MANUFACTURER_CONFIG_MAP[mfrKey];
   }
 
   // v5.5.286: Pattern matching for TZE284_iadro9bf variants
