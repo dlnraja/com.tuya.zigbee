@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.28** | 🔄 MAXIMUM FALLBACKS: UniversalDPSender (15 methods) + UniversalDPReceiver (2... |
 | **v5.7.27** | 📦 COMPLETE TYPE SUPPORT: bool, enum, bitmap(1-8bytes+BigInt), value(1-4bytes... |
 | **v5.7.26** | 🔌 NATIVE HOMEY METHODS: UniversalDPSender/Receiver now use native Homey meth... |
 | **v5.7.25** | 📦 COMPLETE DATA FORMAT SUPPORT: UniversalDPSender/Receiver now handle ALL fo... |
@@ -78,7 +79,6 @@
 | **v5.7.21** | 🔧 UNIFIED DP SENDER: Created UniversalDPSender with complete fallback chain ... |
 | **v5.7.20** | 🔧 CURTAIN MOTOR FIX: Restored v5.5.937 DP format compatibility. Now tries BO... |
 | **v5.7.19** | 🔘 UNIVERSAL SCENE MODE: Moved mode switching (0x8004 attr) to ButtonDevice.j... |
-| **v5.7.18** | 🔧 FIX: manufacturerName detection now uses multiple sources (getData, getSto... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
