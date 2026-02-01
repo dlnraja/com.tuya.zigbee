@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.7.15",
+  "version": "5.7.16",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -27438,7 +27438,7 @@
           },
           "maintenanceAction": true,
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "measure_battery": {
           "title": {
@@ -28105,7 +28105,7 @@
             "fr": "Bouton 1"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.2": {
           "title": {
@@ -28113,7 +28113,7 @@
             "fr": "Bouton 2"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "measure_battery": {
           "title": {
@@ -28690,7 +28690,7 @@
             "fr": "Bouton 1"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.2": {
           "title": {
@@ -28698,7 +28698,7 @@
             "fr": "Bouton 2"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.3": {
           "title": {
@@ -28706,7 +28706,7 @@
             "fr": "Bouton 3"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "measure_battery": {
           "title": {
@@ -29367,7 +29367,7 @@
             "fr": "Bouton 1"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.2": {
           "title": {
@@ -29375,7 +29375,7 @@
             "fr": "Bouton 2"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.3": {
           "title": {
@@ -29383,7 +29383,7 @@
             "fr": "Bouton 3"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.4": {
           "title": {
@@ -29391,7 +29391,7 @@
             "fr": "Bouton 4"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "measure_battery": {
           "title": {
@@ -30100,7 +30100,7 @@
             "fr": "Bouton 1"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.2": {
           "title": {
@@ -30108,7 +30108,7 @@
             "fr": "Bouton 2"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.3": {
           "title": {
@@ -30116,7 +30116,7 @@
             "fr": "Bouton 3"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.4": {
           "title": {
@@ -30124,7 +30124,7 @@
             "fr": "Bouton 4"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.5": {
           "title": {
@@ -30132,7 +30132,7 @@
             "fr": "Bouton 5"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.6": {
           "title": {
@@ -30140,7 +30140,7 @@
             "fr": "Bouton 6"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "measure_battery": {
           "title": {
@@ -30769,7 +30769,7 @@
             "fr": "Bouton 1"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.2": {
           "title": {
@@ -30777,7 +30777,7 @@
             "fr": "Bouton 2"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.3": {
           "title": {
@@ -30785,7 +30785,7 @@
             "fr": "Bouton 3"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.4": {
           "title": {
@@ -30793,7 +30793,7 @@
             "fr": "Bouton 4"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.5": {
           "title": {
@@ -30801,7 +30801,7 @@
             "fr": "Bouton 5"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.6": {
           "title": {
@@ -30809,7 +30809,7 @@
             "fr": "Bouton 6"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.7": {
           "title": {
@@ -30817,7 +30817,7 @@
             "fr": "Bouton 7"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "button.8": {
           "title": {
@@ -30825,7 +30825,7 @@
             "fr": "Bouton 8"
           },
           "getable": false,
-          "setable": false
+          "setable": true
         },
         "measure_battery": {
           "title": {
