@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.18** | 🔧 FIX: manufacturerName detection now uses multiple sources (getData, getSto... |
 | **v5.7.17** | 🔘 MOES SCENE MODE FIX: Added _TZ3000_zgyzgdua to mode switching list. Now at... |
 | **v5.7.16** | 🔘 CRITICAL VIRTUAL BUTTON FIX: Changed button.X capabilities from setable:fa... |
 | **v5.7.15** | 🔧 FIX: Removed titleFormatted with [[device]] from physical button flow card... |
@@ -78,7 +79,6 @@
 | **v5.7.11** | 🔘 BUTTON SCENARIOS: Added triple-press and hold-release flow cards for MOES ... |
 | **v5.7.10** | 🔘 MOES 4-BUTTON FIX (Freddyboy #1321): Fixed flow cards with broken titleFor... |
 | **v5.7.9** | 🪟 CURTAIN MOTOR: Enhanced communication - exponential backoff, wake-up ping,... |
-| **v5.7.8** | 🌡️ RADAR FIX: Humidity multiplier support in auto-discovery (fixes HOBEIAN Z... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
