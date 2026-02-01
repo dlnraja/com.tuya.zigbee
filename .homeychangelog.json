@@ -1,4 +1,7 @@
 {
+  "5.7.23": {
+    "en": "📡 COMPLETE DP SYSTEM: Added UniversalDPReceiver to complement UniversalDPSender. Features: multi-format parsing, deduplication (300ms), auto-mapping to capabilities, custom handlers per DP, change detection. Full bidirectional Tuya DP communication."
+  },
   "5.7.22": {
     "en": "🧠 SMART DP SENDER: 7-level fallback chain with intelligent caching. Logs only on success or final failure (no spam). Caches working method per device for faster subsequent calls. Supports: manager, OLD/NEW format, setDataValue, sendData, writeAttributes, command."
   },
