@@ -1,4 +1,7 @@
 {
+  "5.7.27": {
+    "en": "📦 COMPLETE TYPE SUPPORT: bool, enum, bitmap(1-8bytes+BigInt), value(1-4bytes signed/unsigned), string, raw, frame, class. Little/Big endian. Auto-size detection. Object.toBuffer() support. Hex string input. Full Tuya/ZCL/Frame protocol coverage."
+  },
   "5.7.26": {
     "en": "🔌 NATIVE HOMEY METHODS: UniversalDPSender/Receiver now use native Homey methods. SEND: TuyaEF00Manager, cluster.datapoint (OLD/NEW), ZCL writeAttributes/commands. RECEIVE: Tuya dataReport/response, ZCL attr.*, raw frame hooks. Full bidirectional support for Tuya DP + ZCL + custom frames."
   },
