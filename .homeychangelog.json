@@ -1,4 +1,16 @@
 {
+  "5.7.42": {
+    "en": "🪟 CURTAIN MOTOR FIX: DP2 position wasn't working because value type sent 1 byte instead of 4. Tuya datatype 2 (value) ALWAYS requires 4 bytes big-endian. GitHub #122 elgato7. Also includes radar case-sensitivity fix from v5.7.41."
+  },
+  "5.7.41": {
+    "en": "📡 RADAR CONFIG FIX: Fixed case-sensitivity bug in sensor config lookup. Device reports _TZ3000_8BXRZYXZ (uppercase) but config has _TZ3000_8bxrzyxz (lowercase) causing DEFAULT fallback. Now uses case-insensitive matching. Diagnostic 5bf7923d."
+  },
+  "5.7.40": {
+    "en": "🔧 POWER CLAMP FIX: Fixed DP parsing for power_clamp_meter - was reading r.value instead of r.data Buffer. 🌱 SOIL SENSOR FIX: Added missing soil_sensor_moisture_below condition flow card that was causing device init crash. Diagnostic reports e0fcf3c9, stderr."
+  },
+  "5.7.39": {
+    "en": "📡 RADAR SENSOR FIX: Enhanced deduplication and capability throttling for presence_sensor_radar. Fixes fluctuating luminance/motion from hardware issues. Early deduplication before logging reduces noise. Motion throttle 2s, luminance throttle 5s. Diagnostic reports b0492e1e, 53a9688c."
+  },
   "5.7.38": {
     "en": "🔧 BSEED 4-GANG FIX: Fixed virtual button toggle for EP2-4 (diagnostic c33007b0). VirtualButtonMixin now tries direct ZCL first before capability listener. Added retry mechanism for EP2-4 cluster initialization. Fixes 'Missing Capability Listener: onoff.gang2' error."
   },
