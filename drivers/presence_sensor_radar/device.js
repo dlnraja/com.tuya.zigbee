@@ -1947,7 +1947,12 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
    */
   get dpMappings() {
     const config = this._getSensorConfig();
-    const mfr = this.getData()?.manufacturerName || '';
+    // v5.7.32: CRITICAL FIX - Get manufacturerName from multiple sources
+    // getData() can be empty on init, causing DEFAULT config and wrong behavior
+    const mfr = this.getData()?.manufacturerName 
+      || this.getStoreValue?.('manufacturerName')
+      || this.getSetting?.('zb_manufacturer_name')
+      || '';
     const dpMap = config.dpMap || {};
     const mappings = {};
 
