@@ -1,4 +1,7 @@
 {
+  "5.7.26": {
+    "en": "🔌 NATIVE HOMEY METHODS: UniversalDPSender/Receiver now use native Homey methods. SEND: TuyaEF00Manager, cluster.datapoint (OLD/NEW), ZCL writeAttributes/commands. RECEIVE: Tuya dataReport/response, ZCL attr.*, raw frame hooks. Full bidirectional support for Tuya DP + ZCL + custom frames."
+  },
   "5.7.25": {
     "en": "📦 COMPLETE DATA FORMAT SUPPORT: UniversalDPSender/Receiver now handle ALL formats: hex strings, byte arrays, 1-4 byte values, multi-byte bitmaps, objects, streams. Auto-detect frame format (with/without seq). No data loss regardless of input/output format."
   },
