@@ -1,0 +1,20 @@
+{
+  "id": "INT-052-A",
+  "deviceName": "2-Gang Switch with Energy Monitoring",
+  "manufacturerName": "_TZ3000_h1ipgkwn",
+  "productId": "TS0002",
+  "source": "Ian Gibbo Interview (Oct 2025)",
+  "user": "Ian_Gibbo",
+  "status": "supported",
+  "driver": "switch_2gang_ac",
+  "deviceType": "router",
+  "powerSource": "mains",
+  "endpoints": [1, 2],
+  "inputClusters": [0, 6, 1794, 2820],
+  "capabilities": ["onoff.gang1", "onoff.gang2", "measure_power", "meter_power"],
+  "clusterDetails": {
+    "onOff": true,
+    "metering": true,
+    "electricalMeasurement": true
+  }
+}
