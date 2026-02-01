@@ -1,0 +1,25 @@
+{
+  "id": "INT-001",
+  "deviceName": "Presence Radar Sensor",
+  "manufacturerName": "_TZE284_iadro9bf",
+  "productId": "TS0601",
+  "deviceType": "router",
+  "inputClusters": [4, 5, 61184, 0, 60672],
+  "source": "Forum Page 39",
+  "diagnosticId": "d8820bc1-7646-411b-8158-2132ea45a1ac",
+  "status": "fixed",
+  "priority": "high",
+  "driver": "presence_sensor_radar",
+  "symptoms": [
+    "Motion alarm ALWAYS YES",
+    "Updates every 20 seconds even with no movement",
+    "Human presence works correctly",
+    "Illuminance jumps: 30 lux → 1000-1100 lux"
+  ],
+  "rootCause": "ZCL occupancy/IAS handlers not using invertPresence config",
+  "fix": {
+    "applied": true,
+    "version": "5.5.791",
+    "description": "Added _applyPresenceInversion() to all ZCL paths + invert_presence setting"
+  }
+}
