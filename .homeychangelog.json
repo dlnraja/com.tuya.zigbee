@@ -1,4 +1,7 @@
 {
+  "5.7.22": {
+    "en": "🧠 SMART DP SENDER: 7-level fallback chain with intelligent caching. Logs only on success or final failure (no spam). Caches working method per device for faster subsequent calls. Supports: manager, OLD/NEW format, setDataValue, sendData, writeAttributes, command."
+  },
   "5.7.21": {
     "en": "🔧 UNIFIED DP SENDER: Created UniversalDPSender with complete fallback chain (TuyaEF00Manager → OLD format → NEW format → setDataValue → sendData). All cover/curtain drivers now use consistent DP communication. Reorganized device interviews into separate files."
   },
