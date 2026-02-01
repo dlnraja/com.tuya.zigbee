@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.38** | 🔧 BSEED 4-GANG FIX: Fixed virtual button toggle for EP2-4 (diagnostic c33007... |
 | **v5.7.37** | 🔘 PHYSICAL BUTTON FIX: Made ZCL command listeners UNIVERSAL for ALL switches... |
 | **v5.7.36** | 🚀 PERFORMANCE: Added UniversalThrottleManager - prevents log flooding, dupli... |
 | **v5.7.35** | 🔘 BUTTON FIX: Physical button now works for ALL 4-button devices. E000 clust... |
@@ -78,7 +79,6 @@
 | **v5.7.31** | 🔧 FINGERPRINT CLEANUP: Removed _TZE200_3towulqd (ZG-204ZL PIR sensor) from 1... |
 | **v5.7.30** | 📋 COMMUNITY SYNC: Verified 46 fingerprints from GitHub #123. Audited Univers... |
 | **v5.7.29** | 🔍 AUDITED: UniversalDPSender/Receiver fully audited. Added BigInt bitmap sup... |
-| **v5.7.28** | 🔄 MAXIMUM FALLBACKS: UniversalDPSender (15 methods) + UniversalDPReceiver (2... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
