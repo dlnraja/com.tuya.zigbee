@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.25** | 📦 COMPLETE DATA FORMAT SUPPORT: UniversalDPSender/Receiver now handle ALL fo... |
 | **v5.7.24** | 🔘 MOES BUTTON FIX: Fixed random/ghost button presses on multi-endpoint butto... |
 | **v5.7.23** | 📡 COMPLETE DP SYSTEM: Added UniversalDPReceiver to complement UniversalDPSen... |
 | **v5.7.22** | 🧠 SMART DP SENDER: 7-level fallback chain with intelligent caching. Logs onl... |
@@ -78,7 +79,6 @@
 | **v5.7.18** | 🔧 FIX: manufacturerName detection now uses multiple sources (getData, getSto... |
 | **v5.7.17** | 🔘 MOES SCENE MODE FIX: Added _TZ3000_zgyzgdua to mode switching list. Now at... |
 | **v5.7.16** | 🔘 CRITICAL VIRTUAL BUTTON FIX: Changed button.X capabilities from setable:fa... |
-| **v5.7.15** | 🔧 FIX: Removed titleFormatted with [[device]] from physical button flow card... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
