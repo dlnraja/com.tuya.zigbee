@@ -69,16 +69,16 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.52** | 🔧 FORUM FIX #1341: (1) soil_sensor crash fixed - added missing moisture_belo... |
+| **v5.7.51** | 🔧 MANUFACTURER NAME FIX v5.7.51: Robust ManufacturerNameHelper with _g()/_v(... |
+| **v5.7.50** | 🌐 UNIVERSAL PROTOCOL SUPPORT v5.7.50: ManufacturerNameHelper with fallback c... |
+| **v5.7.49** | 🔋⚡ SMART DETECTION SYSTEM: NEW SmartBatteryManager & SmartEnergyManager auto... |
+| **v5.7.48** | 🔧 MULTI-DEVICE FIX: 1) SOIL SENSOR: Fixed crash on init - soil_sensor_moistu... |
+| **v5.7.47** | ⏰ CLIMATE SENSOR TIME SYNC FIX: LCD climate sensors (_TZE284_vvmbj46n, _TZE28... |
 | **v5.7.46** | 🔄 COMMUNITY SYNC ENHANCED: Monthly fingerprint workflow now extracts product... |
 | **v5.7.45** | 📡 ZG-204ZV FIX (Peter #1342): CONFIRMED _TZ3000_8bxrzyxz is a HOBEIAN ZG-204... |
 | **v5.7.44** | 📡 MULTISENSOR FIX (Peter #1342): TZ3000_PIR config now enables temperature/h... |
 | **v5.7.43** | 🔌 NEW FINGERPRINT: Added _TZ3000_fisb3ajo for 2-gang switch (JohanBendz #122... |
-| **v5.7.42** | 🪟 CURTAIN MOTOR FIX: DP2 position wasn't working because value type sent 1 b... |
-| **v5.7.41** | 📡 RADAR CONFIG FIX: Fixed case-sensitivity bug in sensor config lookup. Devi... |
-| **v5.7.40** | 🔧 POWER CLAMP FIX: Fixed DP parsing for power_clamp_meter - was reading r.va... |
-| **v5.7.39** | 📡 RADAR SENSOR FIX: Enhanced deduplication and capability throttling for pre... |
-| **v5.7.38** | 🔧 BSEED 4-GANG FIX: Fixed virtual button toggle for EP2-4 (diagnostic c33007... |
-| **v5.7.37** | 🔘 PHYSICAL BUTTON FIX: Made ZCL command listeners UNIVERSAL for ALL switches... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
