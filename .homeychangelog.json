@@ -1,4 +1,7 @@
 {
+  "5.7.24": {
+    "en": "🔘 MOES BUTTON FIX: Fixed random/ghost button presses on multi-endpoint buttons (button_wireless_4). Root cause: periodic onOff reports on uninitialized endpoints triggered false presses. Fix: shared state tracking across ALL endpoints with global initialization."
+  },
   "5.7.23": {
     "en": "📡 COMPLETE DP SYSTEM: Added UniversalDPReceiver to complement UniversalDPSender. Features: multi-format parsing, deduplication (300ms), auto-mapping to capabilities, custom handlers per DP, change detection. Full bidirectional Tuya DP communication."
   },
