@@ -598,24 +598,43 @@
         "deviceName": "Longsam Mini M3 Curtain Motor",
         "manufacturerName": "_TZE204_xu4a5rhj",
         "productId": "TS0601",
-        "source": "GitHub Issue #122 (elgato7), Z2M #26660, #22614, ZHA #3181",
+        "firmware": "M3TYW-2.0-13",
+        "aliases": ["DS82-Tuya", "LS82-Tuya", "Leisguar LS82"],
+        "source": "GitHub #117, #122 (elgato7), Z2M #25428, #26660, ZHA #3181, #1319, JohanBendz #1070",
         "user": "elgato7",
         "status": "fixed",
         "priority": "high",
         "diagnosticId": "68fd94c5-5b34-4e62-8ea0-b028b47f33a9",
-        "symptoms": ["Commands sent but motor doesn't respond", "DP values change but no rotation"],
-        "rootCause": "Position (DP2) is INVERTED (100-value), not control (DP1)",
+        "inputClusters": [0, 4, 5, 61184],
+        "outputClusters": [10, 25],
+        "symptoms": [
+          "Commands sent but motor doesn't respond",
+          "DP values change but no rotation",
+          "Position percentage inverted (set 20 -> goes to 80)",
+          "Regression after v5.5.937"
+        ],
+        "rootCause": "Two bugs: (1) DP2 position INVERTED (100-value), (2) DP2 needs 4-byte encoding",
+        "dpMappings": {
+          "1": "control (enum: 0=open, 1=stop, 2=close)",
+          "2": "position_set (value: 0-100, MUST be 4 bytes)",
+          "3": "position_state (value: 0-100, read-only)",
+          "5": "direction (enum: 0=forward, 1=reverse)",
+          "7": "work_state (enum: 0=opening, 1=closing, 2=stopped)",
+          "8": "motor_speed (value: 0-255)"
+        },
         "crossReference": [
-          "Z2M #26660: toZigbee percentage inverted",
-          "Z2M #22614: Same device support request",
-          "ZHA #3181: DS82-Tuya quirk request",
-          "Z2M docs: invert_cover option",
-          "Z2M #24800: coverPositionInverted converter"
+          "Z2M #25428: Position inverted bug report",
+          "Z2M #26660: M3TYW-2.0-13 percentage inverted with fix",
+          "ZHA #3181: DS82-Tuya quirk with device signature",
+          "ZHA #1319: Inverted controls debug logs",
+          "JohanBendz #1070: Leisguar LS82 device interview",
+          "Blakadder: zigbee.blakadder.com/Tuya_DS82.html",
+          "Tuya Dev: Serial protocol - value type = 4 bytes"
         ],
         "fix": {
           "applied": true,
-          "version": "5.5.998",
-          "description": "Added invertedPosition flag for _TZE204_ curtains, DP2 now uses (100-value)"
+          "version": "5.7.42",
+          "description": "UniversalDPSender.js: value type ALWAYS 4 bytes big-endian + invert_position setting"
         },
         "driver": "curtain_motor"
       }
