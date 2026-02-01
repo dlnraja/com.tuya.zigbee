@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.19** | 🔘 UNIVERSAL SCENE MODE: Moved mode switching (0x8004 attr) to ButtonDevice.j... |
 | **v5.7.18** | 🔧 FIX: manufacturerName detection now uses multiple sources (getData, getSto... |
 | **v5.7.17** | 🔘 MOES SCENE MODE FIX: Added _TZ3000_zgyzgdua to mode switching list. Now at... |
 | **v5.7.16** | 🔘 CRITICAL VIRTUAL BUTTON FIX: Changed button.X capabilities from setable:fa... |
@@ -78,7 +79,6 @@
 | **v5.7.12** | 🔘 BUTTON PATTERN DETECTION: Software triple-click detection (600ms window) f... |
 | **v5.7.11** | 🔘 BUTTON SCENARIOS: Added triple-press and hold-release flow cards for MOES ... |
 | **v5.7.10** | 🔘 MOES 4-BUTTON FIX (Freddyboy #1321): Fixed flow cards with broken titleFor... |
-| **v5.7.9** | 🪟 CURTAIN MOTOR: Enhanced communication - exponential backoff, wake-up ping,... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
