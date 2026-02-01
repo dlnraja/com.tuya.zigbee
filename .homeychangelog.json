@@ -1,4 +1,7 @@
 {
+  "5.7.18": {
+    "en": "🔧 FIX: manufacturerName detection now uses multiple sources (getData, getStoreValue, getSetting). Fixes issue where mode switching was skipped because getData() returned empty on init. Log now shows correct _TZ3000_zgyzgdua instead of empty."
+  },
   "5.7.17": {
     "en": "🔘 MOES SCENE MODE FIX: Added _TZ3000_zgyzgdua to mode switching list. Now attempts scene mode switch for ALL 4-button devices (even TS0044) since some have no LED indicator. Forum fix for Fred's device not sending button events."
   },
