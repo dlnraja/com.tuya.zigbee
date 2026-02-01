@@ -1,4 +1,7 @@
 {
+  "5.7.35": {
+    "en": "🔘 BUTTON FIX: Physical button now works for ALL 4-button devices. E000 cluster (57344) setup is now universal - no longer requires device to be in known list. Forum #1333 Freddyboy."
+  },
   "5.7.34": {
     "en": "🐛 HOBEIAN FIX: Fixed remaining getData().manufacturerName calls in radar sensor to use multi-source fallback. Ensures HOBEIAN config is used instead of DEFAULT. Forum #1334 Peter_van_Werkhoven."
   },
