@@ -1246,6 +1246,7 @@ const SENSOR_CONFIGS = {
   // TYPE H: TZ3000 PIR/Ceiling Sensors (hybrid ZCL + Tuya DP)
   // v5.5.499: FORUM FIX - Added DP103 illuminance + settings for ceiling sensors
   // _TZ3000_8bxrzyxz is a ceiling PIR with Tuya DP illuminance reporting
+  // v5.7.44: Peter_van_Werkhoven #1342 - Some variants may have temp/humidity via ZCL
   // ─────────────────────────────────────────────────────────────────────────────
   'TZ3000_PIR': {
     sensors: [
@@ -1257,11 +1258,16 @@ const SENSOR_CONFIGS = {
     useZcl: true,
     useIasZone: true,       // v5.5.519: IAS Zone ONLY for _TZ321C_fkzihax8
     hasIlluminance: true,   // v5.5.499: Has illuminance via Tuya DP103
-    noTemperature: true,    // v5.5.372: Forum fix - PIR sensors have NO temp
-    noHumidity: true,       // v5.5.372: Forum fix - PIR sensors have NO humidity
+    // v5.7.44: Peter #1342 - Removed noTemperature/noHumidity to allow ZCL auto-discovery
+    // Some ZG-204ZV variants report as _TZ3000_8bxrzyxz but have temp/humidity via ZCL clusters
+    permissiveMode: true,   // v5.7.44: Allow auto-discovery of temp/humidity via ZCL
     dpMap: {
       // v5.5.499: Ceiling PIR sensors report illuminance via DP103
       103: { cap: 'measure_luminance', type: 'lux_direct' },
+      // v5.7.44: ZG-204ZV variant DPs (if this is actually a multisensor)
+      3: { cap: 'measure_temperature', divisor: 10 },
+      4: { cap: 'measure_humidity', multiplier: 10 },
+      10: { cap: 'measure_battery', divisor: 1 },
     }
   },
 
