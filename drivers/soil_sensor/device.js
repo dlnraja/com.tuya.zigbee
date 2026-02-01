@@ -467,9 +467,22 @@ class SoilSensorDevice extends TuyaHybridDevice {
     this._flowTriggerBatteryLow = this.homey.flow.getDeviceTriggerCard('soil_sensor_battery_low');
 
     // Register condition cards (correct IDs from driver.flow.compose.json)
-    this._conditionMoistureBelow = this.homey.flow.getConditionCard('soil_sensor_moisture_below');
-    this._conditionMoistureAbove = this.homey.flow.getConditionCard('soil_sensor_moisture_above');
-    this._conditionTemperatureAbove = this.homey.flow.getConditionCard('soil_sensor_temperature_above');
+    // v5.7.48: Wrap in try-catch to prevent device init crash if flow cards not available
+    try {
+      this._conditionMoistureBelow = this.homey.flow.getConditionCard('soil_sensor_moisture_below');
+    } catch (e) {
+      this.log('[SOIL] ⚠️ Condition card soil_sensor_moisture_below not available:', e.message);
+    }
+    try {
+      this._conditionMoistureAbove = this.homey.flow.getConditionCard('soil_sensor_moisture_above');
+    } catch (e) {
+      this.log('[SOIL] ⚠️ Condition card soil_sensor_moisture_above not available:', e.message);
+    }
+    try {
+      this._conditionTemperatureAbove = this.homey.flow.getConditionCard('soil_sensor_temperature_above');
+    } catch (e) {
+      this.log('[SOIL] ⚠️ Condition card soil_sensor_temperature_above not available:', e.message);
+    }
 
     // Condition: soil moisture is below threshold
     if (this._conditionMoistureBelow) {

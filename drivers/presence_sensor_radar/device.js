@@ -1833,9 +1833,13 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   /**
    * v5.5.277: Get manufacturerName with multiple fallback methods
    * Ronny fix: this.getData()?.manufacturerName was returning empty!
+   * v5.7.48: Don't cache empty values - retry on each call until we get a valid name
    */
   _getManufacturerName() {
-    if (this._cachedManufacturerName) return this._cachedManufacturerName;
+    // v5.7.48: Only return cache if it's a non-empty valid value
+    if (this._cachedManufacturerName && this._cachedManufacturerName.length > 0) {
+      return this._cachedManufacturerName;
+    }
 
     // Method 1: getData() (Homey standard)
     let mfr = this.getData()?.manufacturerName;
@@ -1861,33 +1865,53 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       }
     }
 
-    this._cachedManufacturerName = mfr || '';
-    return this._cachedManufacturerName;
+    // v5.7.48: Only cache if we found a valid value
+    if (mfr && mfr.length > 0) {
+      this._cachedManufacturerName = mfr;
+    }
+    
+    return mfr || '';
   }
 
   /**
    * v5.5.277: Get sensor configuration based on manufacturerName
    * v5.5.364: Enhanced with auto-discovery for unknown devices
+   * v5.7.48: Don't cache DEFAULT config when mfr is empty - retry later
    */
   _getSensorConfig() {
-    if (!this._sensorConfig) {
-      const mfr = this._getManufacturerName();
-      // v5.5.984: Peter_van_Werkhoven HOBEIAN fix - check multiple sources for modelId
-      const settings = this.getSettings() || {};
-      const modelId = this.getData()?.modelId 
-        || settings.zb_model_id 
-        || settings.zb_modelId 
-        || this.getStoreValue?.('modelId')
-        || null;
-      this._sensorConfig = getSensorConfig(mfr, modelId);
-      this.log(`[RADAR] 🔍 ManufacturerName: "${mfr}", ModelId: "${modelId}" → config: ${this._sensorConfig.configName || 'DEFAULT'}`);
+    const mfr = this._getManufacturerName();
+    
+    // v5.7.48: If we have a cached config, check if it's still valid
+    // If mfr was empty before but now available, re-lookup config
+    if (this._sensorConfig) {
+      const cachedConfigName = this._sensorConfig.configName || 'DEFAULT';
+      // If we have a real mfr now but config is DEFAULT, try to find a better match
+      if (cachedConfigName === 'DEFAULT' && mfr && mfr.length > 0) {
+        this.log(`[RADAR] 🔄 Re-checking config: mfr now available as "${mfr}"`);
+        this._sensorConfig = null; // Force re-lookup
+      } else {
+        return this._sensorConfig;
+      }
+    }
+    
+    // v5.5.984: Peter_van_Werkhoven HOBEIAN fix - check multiple sources for modelId
+    const settings = this.getSettings() || {};
+    const modelId = this.getData()?.modelId 
+      || settings.zb_model_id 
+      || settings.zb_modelId 
+      || this.getStoreValue?.('modelId')
+      || null;
+    this._sensorConfig = getSensorConfig(mfr, modelId);
+    this.log(`[RADAR] 🔍 ManufacturerName: "${mfr}", ModelId: "${modelId}" → config: ${this._sensorConfig.configName || 'DEFAULT'}`);
 
-      // v5.5.364: Initialize auto-discovery for DEFAULT/unknown devices
-      if (this._sensorConfig.configName === 'DEFAULT') {
+    // v5.5.364: Initialize auto-discovery for DEFAULT/unknown devices
+    if (this._sensorConfig.configName === 'DEFAULT') {
+      if (!this._dpAutoDiscovery) {
         this._dpAutoDiscovery = new IntelligentDPAutoDiscovery(this);
         this.log(`[RADAR] 🧠 AUTO-DISCOVERY MODE: Learning DP patterns for unknown device "${mfr}"`);
       }
     }
+    
     return this._sensorConfig;
   }
 
