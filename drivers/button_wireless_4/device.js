@@ -621,6 +621,9 @@ class Button4GangDevice extends ButtonDevice {
 
       // v5.5.758: Also setup onOff command listeners as fallback
       // Some TS0044 variants send commandOn/commandOff/commandToggle on onOff cluster
+      // v5.7.52: CRITICAL FIX - Add deduplication to prevent ghost presses from periodic reports
+      this._e000OnOffDedup = {}; // Track last command time per endpoint
+      
       for (let ep = 1; ep <= 4; ep++) {
         const endpoint = zclNode?.endpoints?.[ep];
         if (!endpoint) continue;
@@ -629,20 +632,25 @@ class Button4GangDevice extends ButtonDevice {
         if (onOffCluster && typeof onOffCluster.on === 'function') {
           this.log(`[BUTTON4-E000] 📡 Setting up onOff command listeners on EP${ep}...`);
 
-          onOffCluster.on('commandOn', async () => {
-            this.log(`[BUTTON4-E000] 🔘 EP${ep} commandOn → Button ${ep} SINGLE`);
-            await this.triggerButtonPress(ep, 'single');
-          });
+          const handleCommand = async (cmdName, pressType) => {
+            const now = Date.now();
+            const dedupKey = `${ep}_${cmdName}`;
+            const lastTime = this._e000OnOffDedup[dedupKey] || 0;
+            
+            // Deduplicate: ignore if same command on same endpoint within 500ms
+            if (now - lastTime < 500) {
+              this.log(`[BUTTON4-E000] ⏭️ Deduplicated ${cmdName} (${now - lastTime}ms)`);
+              return;
+            }
+            this._e000OnOffDedup[dedupKey] = now;
+            
+            this.log(`[BUTTON4-E000] 🔘 EP${ep} ${cmdName} → Button ${ep} ${pressType.toUpperCase()}`);
+            await this.triggerButtonPress(ep, pressType);
+          };
 
-          onOffCluster.on('commandOff', async () => {
-            this.log(`[BUTTON4-E000] 🔘 EP${ep} commandOff → Button ${ep} DOUBLE`);
-            await this.triggerButtonPress(ep, 'double');
-          });
-
-          onOffCluster.on('commandToggle', async () => {
-            this.log(`[BUTTON4-E000] 🔘 EP${ep} commandToggle → Button ${ep} LONG`);
-            await this.triggerButtonPress(ep, 'long');
-          });
+          onOffCluster.on('commandOn', async () => await handleCommand('commandOn', 'single'));
+          onOffCluster.on('commandOff', async () => await handleCommand('commandOff', 'double'));
+          onOffCluster.on('commandToggle', async () => await handleCommand('commandToggle', 'long'));
 
           this.log(`[BUTTON4-E000] ✅ onOff command listeners configured for EP${ep}`);
         }

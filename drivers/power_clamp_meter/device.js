@@ -186,7 +186,14 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     // v5.7.7: Guard against undefined/null values (fixes crash from diagnostic report)
     if (dp === undefined || dp === null) return;
     if (value === undefined || value === null) {
-      this.log(`[DP${dp}] = undefined (skipped)`);
+      // v5.7.52: Throttle undefined logging - only log once per DP per minute
+      const now = Date.now();
+      this._undefinedLogThrottle = this._undefinedLogThrottle || {};
+      const lastLog = this._undefinedLogThrottle[dp] || 0;
+      if (now - lastLog > 60000) { // 1 minute throttle
+        this.log(`[DP${dp}] = undefined (skipped, throttled)`);
+        this._undefinedLogThrottle[dp] = now;
+      }
       return;
     }
     const profile = this.meterProfile;

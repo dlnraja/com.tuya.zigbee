@@ -84,6 +84,66 @@ function scanExistingDrivers() {
 }
 
 /**
+ * v5.7.48: Infer specific driver from manufacturerName + productId
+ * Used for automatic driver mapping when adding new fingerprints
+ */
+function inferDeviceType(mfr, pid) {
+  const m = (mfr || '').toLowerCase();
+  const p = (pid || '').toUpperCase();
+  
+  // TS0601 Tuya DP devices - infer from manufacturerName patterns
+  if (p === 'TS0601') {
+    if (/temp|humid|climate|th0[0-9]|wsd/i.test(m)) return 'climate_sensor';
+    if (/presence|radar|human|pir|mmwave|iadro|qasjif/i.test(m)) return 'presence_sensor_radar';
+    if (/curtain|blind|cover|shade|motor/i.test(m)) return 'curtain_motor';
+    if (/valve|trv|thermo|radiator|bvu/i.test(m)) return 'radiator_valve';
+    if (/smoke|fire/i.test(m)) return 'smoke_detector_advanced';
+    if (/water|leak|flood/i.test(m)) return 'water_leak_sensor';
+    if (/door|contact|magnet|dw2/i.test(m)) return 'contact_sensor';
+    if (/soil/i.test(m)) return 'soil_sensor';
+    if (/air|co2|voc|pm25|aqi/i.test(m)) return 'air_quality_comprehensive';
+    if (/gas/i.test(m)) return 'gas_sensor';
+    if (/dimmer/i.test(m)) return 'dimmer_wall_1gang';
+    if (/vibr/i.test(m)) return 'vibration_sensor';
+    if (/ir.*blast|remote|universal/i.test(m)) return 'ir_blaster';
+    return 'climate_sensor'; // Default for unknown TS0601
+  }
+  
+  // Standard ZCL switches by productId
+  if (p === 'TS0001') return 'switch_1gang';
+  if (p === 'TS0002') return 'switch_2gang';
+  if (p === 'TS0003') return 'switch_3gang';
+  if (p === 'TS0004') return 'switch_4gang';
+  if (p === 'TS0011') return 'switch_1gang';
+  if (p === 'TS0012') return 'switch_2gang';
+  if (p === 'TS0013') return 'switch_3gang';
+  
+  // Plugs/Sockets
+  if (p === 'TS011F' || p === 'TS0121') return 'plug_smart';
+  if (p === 'TS0112') return 'plug_smart';
+  
+  // Buttons/Remotes
+  if (p === 'TS0041') return 'button_wireless_1';
+  if (p === 'TS0042') return 'button_wireless_2';
+  if (p === 'TS0043') return 'button_wireless_3';
+  if (p === 'TS0044') return 'button_wireless_4';
+  if (p === 'TS0046') return 'button_wireless_6';
+  
+  // Dimmers
+  if (/TS02\d{2}/.test(p)) return 'dimmer_wall_1gang';
+  if (p === 'TS0501A' || p === 'TS0501B') return 'dimmer_wall_1gang';
+  if (p === 'TS0502A' || p === 'TS0502B') return 'dimmer_dual_channel';
+  
+  // Sensors
+  if (p === 'TS0202') return 'motion_sensor';
+  if (p === 'TS0203') return 'contact_sensor';
+  if (p === 'TS0207') return 'water_leak_sensor';
+  if (p === 'TS0210') return 'vibration_sensor';
+  
+  return 'unknown';
+}
+
+/**
  * Classify device based on manufacturerName and context
  */
 function classifyDevice(mfr, context = '') {
@@ -101,6 +161,9 @@ function classifyDevice(mfr, context = '') {
   
   return 'unknown';
 }
+
+// Export for use in other scripts
+module.exports = { inferDeviceType, classifyDevice, scanExistingDrivers };
 
 /**
  * Generate monthly report

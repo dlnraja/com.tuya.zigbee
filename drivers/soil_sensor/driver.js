@@ -52,6 +52,20 @@ class SoilSensorDriver extends ZigBeeDriver {
     this._batteryChangedTrigger = safeGetTrigger('soil_sensor_battery_changed');
 
     // Register condition cards with run listeners
+    // v5.7.52: Added soil_sensor_moisture_below (was missing, caused crash)
+    const moistureBelowCondition = safeGetCondition('soil_sensor_moisture_below');
+    if (moistureBelowCondition) {
+      moistureBelowCondition.registerRunListener(async (args) => {
+        if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
+          this.log('[FLOW] Condition: Device not available');
+          return false;
+        }
+        const moisture = args.device.getCapabilityValue('measure_humidity') ?? 
+                         args.device.getCapabilityValue('measure_soil_moisture');
+        return moisture !== null && moisture < args.moisture;
+      });
+    }
+
     const moistureAboveCondition = safeGetCondition('soil_sensor_moisture_above');
     if (moistureAboveCondition) {
       moistureAboveCondition.registerRunListener(async (args) => {
@@ -59,7 +73,8 @@ class SoilSensorDriver extends ZigBeeDriver {
           this.log('[FLOW] Condition: Device not available');
           return false;
         }
-        const moisture = args.device.getCapabilityValue('measure_humidity');
+        const moisture = args.device.getCapabilityValue('measure_humidity') ?? 
+                         args.device.getCapabilityValue('measure_soil_moisture');
         return moisture !== null && moisture > args.moisture;
       });
     }
@@ -101,8 +116,8 @@ class SoilSensorDriver extends ZigBeeDriver {
 
     const triggers = [this._moistureChangedTrigger, this._soilDryTrigger, this._soilWetTrigger,
                       this._tempChangedTrigger, this._batteryLowTrigger].filter(Boolean).length;
-    const conditions = [moistureAboveCondition, tempAboveCondition, needsWaterCondition, 
-                        batteryAboveCondition].filter(Boolean).length;
+    const conditions = [moistureBelowCondition, moistureAboveCondition, tempAboveCondition, 
+                        needsWaterCondition, batteryAboveCondition].filter(Boolean).length;
     this.log(`Soil Sensor ✅ ${triggers} triggers + ${conditions} conditions registered`);
   }
 

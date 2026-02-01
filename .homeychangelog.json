@@ -1,4 +1,19 @@
 {
+  "5.7.51": {
+    "en": "🔧 MANUFACTURER NAME FIX v5.7.51: Robust ManufacturerNameHelper with _g()/_v() safe getters. Each source validated individually (not ||). Added debugManufacturerSources() for diagnostics. readManufacturerFromCluster() async fallback. Integrated in: IntelligentProtocolRouter, HybridSensorBase, ButtonDevice, DeviceDataHelper. No more empty/null manufacturerName!"
+  },
+  "5.7.50": {
+    "en": "🌐 UNIVERSAL PROTOCOL SUPPORT v5.7.50: ManufacturerNameHelper with fallback chain + case-insensitive matching. TIME SYNC: Auto-detects format. OVERLAY DETECTION: 30+ protocols, 300+ manufacturers. CLUSTER DETECTION: Auto-detects proprietary clusters."
+  },
+  "5.7.49": {
+    "en": "🔋⚡ SMART DETECTION SYSTEM: NEW SmartBatteryManager & SmartEnergyManager auto-detect capabilities! 1) BATTERY: Auto-detects from ZCL (cluster 0x0001) OR Tuya DPs (4,10,14,15,100,101,102,104). Smart voltage-to-% conversion for CR2032/AA/Li-ion. Auto-adds measure_battery + alarm_battery. 2) ENERGY: Auto-detects voltage/current/power/energy from ZCL (0x0B04,0x0702) OR Tuya DPs (17-20,101-115,121-122). Smart divisor detection adapts to OEM variants. All drivers now auto-adapt to device capabilities!"
+  },
+  "5.7.48": {
+    "en": "🔧 MULTI-DEVICE FIX: 1) SOIL SENSOR: Fixed crash on init - soil_sensor_moisture_below condition card wrapped in try-catch. 2) MOES 4-BUTTON: Fixed ghost random presses - added duplicate listener guard to prevent multiple onOff handlers with different init times. 3) RADAR SENSOR: Fixed DEFAULT config fallback - no longer caches empty manufacturer name, re-checks config when mfr becomes available. Diagnostic reports: 735ff32e, e7f41a67, b0492e1e, 5bf7923d."
+  },
+  "5.7.47": {
+    "en": "⏰ CLIMATE SENSOR TIME SYNC FIX: LCD climate sensors (_TZE284_vvmbj46n, _TZE284_oitavov2) now display correct time! Root cause: Tuya mcuSyncTime (cmd 0x24) response MUST echo the device's 2-byte sequence number. Previous impl sent 8 bytes [UTC:4][Local:4], now sends correct 10 bytes [seq:2][UTC:4][Local:4]. Protocol verified from Tuya developer docs + Z2M research. Fixes TH05Z/ZG227C LCD showing 00:00."
+  },
   "5.7.46": {
     "en": "🔄 COMMUNITY SYNC ENHANCED: Monthly fingerprint workflow now extracts productId, device type, vendor, and description from Z2M. Issue #123 verified - all 46 fingerprints integrated (18 curtain, 14 contact, 6 climate, 4 valve, 1 dimmer, 1 vibration, 1 bulb, 1 motion). Added inferDeviceType() for automatic driver mapping."
   },
@@ -3564,5 +3579,8 @@
   },
   "5.5.769": {
     "en": "op^timise and fix issues related to optinal referencies "
+  },
+  "5.7.52": {
+    "en": "🔧 FORUM FIX #1341: (1) soil_sensor crash fixed - added missing moisture_below condition to driver.js, (2) presence_sensor_radar empty manufacturer - enhanced fallback methods, (3) button_wireless_4 ghost presses - detect uninitialized state via impossible sinceEvent (>24h). Also: Peter humidity fix for ZG-204ZV."
   }
 }
