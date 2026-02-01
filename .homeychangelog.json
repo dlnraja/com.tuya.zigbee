@@ -1,4 +1,7 @@
 {
+  "5.7.28": {
+    "en": "🔄 MAXIMUM FALLBACKS: UniversalDPSender (15 methods) + UniversalDPReceiver (20+ hooks). Tuya: Manager/datapoint OLD/NEW/setDataValue/command + multi-endpoint. ZCL: attr/report/change events + reportHandler wrap. Frame: handleFrame/on/subscribe. Never fails."
+  },
   "5.7.27": {
     "en": "📦 COMPLETE TYPE SUPPORT: bool, enum, bitmap(1-8bytes+BigInt), value(1-4bytes signed/unsigned), string, raw, frame, class. Little/Big endian. Auto-size detection. Object.toBuffer() support. Hex string input. Full Tuya/ZCL/Frame protocol coverage."
   },
