@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.36** | 🚀 PERFORMANCE: Added UniversalThrottleManager - prevents log flooding, dupli... |
 | **v5.7.35** | 🔘 BUTTON FIX: Physical button now works for ALL 4-button devices. E000 clust... |
 | **v5.7.34** | 🐛 HOBEIAN FIX: Fixed remaining getData().manufacturerName calls in radar sen... |
 | **v5.7.33** | ➕ NEW DEVICE: AVATTO WT198 Smart Thermostat (_TZE284_xnbkhhdr / TS0601) added... |
@@ -78,7 +79,6 @@
 | **v5.7.29** | 🔍 AUDITED: UniversalDPSender/Receiver fully audited. Added BigInt bitmap sup... |
 | **v5.7.28** | 🔄 MAXIMUM FALLBACKS: UniversalDPSender (15 methods) + UniversalDPReceiver (2... |
 | **v5.7.27** | 📦 COMPLETE TYPE SUPPORT: bool, enum, bitmap(1-8bytes+BigInt), value(1-4bytes... |
-| **v5.7.26** | 🔌 NATIVE HOMEY METHODS: UniversalDPSender/Receiver now use native Homey meth... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
