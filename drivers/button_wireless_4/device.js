@@ -41,7 +41,7 @@ class Button4GangDevice extends ButtonDevice {
   async onNodeInit({ zclNode }) {
     this._zclNode = zclNode;
     this.log('═══════════════════════════════════════════════════════════════');
-    this.log('[BUTTON4] 🔘 Button4GangDevice v5.7.16 initializing...');
+    this.log('[BUTTON4] 🔘 Button4GangDevice v5.7.17 initializing...');
     this.log('[BUTTON4] CRITICAL FIX: TS004F Scene Mode + MOES E000 Detection');
     this.log('[BUTTON4] Research: SmartThings, Z2M #7158, ZHA #1372, PR #120');
     this.log('═══════════════════════════════════════════════════════════════');
@@ -106,6 +106,8 @@ class Button4GangDevice extends ButtonDevice {
 
     // Also apply to devices that might be mislabeled or unknown
     // These manufacturers are known to use TS004F-style devices
+    // v5.7.17: Extended list - some TS0044 devices also need mode switching
+    // Forum fix: Fred's _TZ3000_zgyzgdua not sending button events - try mode switch
     const ts004fManufacturers = [
       '_TZ3000_xabckq1v',
       '_TZ3000_czuyt8lz',
@@ -115,14 +117,18 @@ class Button4GangDevice extends ButtonDevice {
       '_TZ3000_ixla93vd',
       '_TZ3000_qzjcsmar',
       '_TZ3000_wkai4ga5',  // v5.5.419: Forum report Eftychis
-      '_TZ3000_5tqxpine'   // v5.5.419: Forum report Eftychis
-      // NOTE: _TZ3000_zgyzgdua is TS0044, NOT TS004F - uses cluster 0xE000, no mode switching needed
+      '_TZ3000_5tqxpine',  // v5.5.419: Forum report Eftychis
+      '_TZ3000_zgyzgdua'   // v5.7.17: Forum report Fred - TS0044 but may need mode switch
     ];
     const needsModeSwitching = isTS004F || includesCI(ts004fManufacturers, manufacturerName);
+    
+    // v5.7.17: Log decision for debugging
+    this.log(`[BUTTON4-MODE] 📋 Needs mode switching: ${needsModeSwitching}`);
 
     if (!needsModeSwitching) {
-      this.log('[BUTTON4-MODE] ℹ️ Device is TS0044-type, no mode switching needed');
-      return;
+      this.log('[BUTTON4-MODE] ℹ️ Device is TS0044-type, attempting mode switch anyway (no LED confirmation)');
+      // v5.7.17: Try mode switch anyway for devices without LED indicator
+      // Some TS0044 devices are stuck in dimmer mode after pairing
     }
 
     try {
