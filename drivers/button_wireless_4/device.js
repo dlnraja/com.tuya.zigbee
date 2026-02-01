@@ -41,9 +41,9 @@ class Button4GangDevice extends ButtonDevice {
   async onNodeInit({ zclNode }) {
     this._zclNode = zclNode;
     this.log('═══════════════════════════════════════════════════════════════');
-    this.log('[BUTTON4] 🔘 Button4GangDevice v5.5.617 initializing...');
-    this.log('[BUTTON4] CRITICAL FIX: TS004F Scene Mode Switching');
-    this.log('[BUTTON4] Research: SmartThings, Z2M #7158, ZHA #1372');
+    this.log('[BUTTON4] 🔘 Button4GangDevice v5.7.16 initializing...');
+    this.log('[BUTTON4] CRITICAL FIX: TS004F Scene Mode + MOES E000 Detection');
+    this.log('[BUTTON4] Research: SmartThings, Z2M #7158, ZHA #1372, PR #120');
     this.log('═══════════════════════════════════════════════════════════════');
 
     // Set button count BEFORE calling super (ButtonDevice uses this)
@@ -70,7 +70,11 @@ class Button4GangDevice extends ButtonDevice {
     // v5.5.260: Setup battery reporting listener
     await this._setupBatteryReporting(zclNode);
 
+    // v5.7.16: Register enhanced virtual button handlers with explicit logging
+    await this._registerEnhancedVirtualButtonHandlers();
+
     this.log('[BUTTON4] ✅ Button4GangDevice initialized - 4 buttons ready');
+    this.log('[BUTTON4] 📋 Detection methods: Scenes, OnOff, MultistateInput, E000, Raw Frame');
     this.log('═══════════════════════════════════════════════════════════════');
   }
 
@@ -1011,6 +1015,39 @@ class Button4GangDevice extends ButtonDevice {
     } catch (err) {
       this.log('[BUTTON4-BATTERY] ⚠️ Tuya DP battery fallback error:', err.message);
     }
+  }
+
+  /**
+   * v5.7.16: Enhanced virtual button handlers with explicit logging
+   * Forum fix: Virtual buttons not triggering flows
+   */
+  async _registerEnhancedVirtualButtonHandlers() {
+    this.log('[BUTTON4-VIRTUAL] 🔧 Setting up enhanced virtual button handlers...');
+    
+    for (let i = 1; i <= 4; i++) {
+      const capId = `button.${i}`;
+      const buttonNum = i;
+      
+      if (this.hasCapability(capId)) {
+        try {
+          // v5.7.16: Use multi-capability listener pattern for reliability
+          this.registerCapabilityListener(capId, async (value) => {
+            this.log(`[BUTTON4-VIRTUAL] 🔘 Button ${buttonNum} VIRTUAL PRESS (value=${value})`);
+            this.log(`[BUTTON4-VIRTUAL] 📱 Triggered from Homey app or flow action`);
+            
+            // Trigger flow cards
+            await this.triggerButtonPress(buttonNum, 'single');
+            
+            return true;
+          });
+          this.log(`[BUTTON4-VIRTUAL] ✅ Button ${buttonNum} handler registered`);
+        } catch (err) {
+          this.log(`[BUTTON4-VIRTUAL] ⚠️ Button ${buttonNum} already has listener: ${err.message}`);
+        }
+      }
+    }
+    
+    this.log('[BUTTON4-VIRTUAL] ✅ Virtual button handlers ready');
   }
 
   async onDeleted() {

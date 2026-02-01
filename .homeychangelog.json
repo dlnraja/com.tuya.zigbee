@@ -1,4 +1,7 @@
 {
+  "5.7.16": {
+    "en": "🔘 CRITICAL VIRTUAL BUTTON FIX: Changed button.X capabilities from setable:false to setable:true. This was preventing users from pressing virtual buttons in Homey app! Fixed for ALL button_wireless drivers (1-8 gang). Also added enhanced logging for button detection debugging."
+  },
   "5.7.15": {
     "en": "🔧 FIX: Removed titleFormatted with [[device]] from physical button flow cards (switch_1gang, switch_2gang, switch_3gang, switch_4gang). This was causing manual device selection bug in Homey flows (PR #120 pattern fix)."
   },
