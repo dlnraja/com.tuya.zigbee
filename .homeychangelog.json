@@ -1,4 +1,7 @@
 {
+  "5.7.45": {
+    "en": "📡 ZG-204ZV FIX (Peter #1342): CONFIRMED _TZ3000_8bxrzyxz is a HOBEIAN ZG-204ZV 5-in-1 multisensor! Moved from PIR-only to ZG_204ZV_MULTISENSOR config. Now has: ✅ Motion ✅ Luminance ✅ Temperature (DP3÷10) ✅ Humidity (DP4×10) ✅ Battery (DP10). Includes lux smoothing (15%) and motion throttle (5s)."
+  },
   "5.7.44": {
     "en": "📡 MULTISENSOR FIX (Peter #1342): TZ3000_PIR config now enables temperature/humidity auto-discovery via Tuya DPs (DP3/DP4/DP10). Some ZG-204ZV variants report as _TZ3000_8bxrzyxz but have temp/humidity. Added permissiveMode for ZCL cluster detection."
   },
