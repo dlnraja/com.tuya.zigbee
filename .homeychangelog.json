@@ -1,4 +1,7 @@
 {
+  "5.7.43": {
+    "en": "🔌 NEW FINGERPRINT: Added _TZ3000_fisb3ajo for 2-gang switch (JohanBendz #122). Device was pairing as unknown."
+  },
   "5.7.42": {
     "en": "🪟 CURTAIN MOTOR FIX: DP2 position wasn't working because value type sent 1 byte instead of 4. Tuya datatype 2 (value) ALWAYS requires 4 bytes big-endian. GitHub #122 elgato7. Also includes radar case-sensitivity fix from v5.7.41."
   },
