@@ -1833,18 +1833,33 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   /**
    * v5.5.277: Get manufacturerName with multiple fallback methods
    * Ronny fix: this.getData()?.manufacturerName was returning empty!
+   * v5.7.48: Don't cache empty values - retry on each call until we get a valid name
    */
   _getManufacturerName() {
-    if (this._cachedManufacturerName) return this._cachedManufacturerName;
+    // v5.7.48: Only return cache if it's a non-empty valid value
+    if (this._cachedManufacturerName && this._cachedManufacturerName.length > 0) {
+      return this._cachedManufacturerName;
+    }
+
+    let mfr = null;
 
     // Method 1: getData() (Homey standard)
-    let mfr = this.getData()?.manufacturerName;
+    mfr = this.getData()?.manufacturerName;
 
-    // Method 2: Settings (stored during pairing)
+    // Method 2: Settings (stored during pairing) - try both methods
     if (!mfr) mfr = this.getSetting('zb_manufacturer_name');
+    
+    // Method 2b: v5.7.52 - Try getSettings() object directly (more reliable)
+    if (!mfr) {
+      try {
+        const settings = this.getSettings();
+        mfr = settings?.zb_manufacturer_name;
+      } catch (e) { /* ignore */ }
+    }
 
     // Method 3: Store data
     if (!mfr) mfr = this.getStoreValue('manufacturerName');
+    if (!mfr) mfr = this.getStoreValue('zb_manufacturer_name');
 
     // Method 4: ZCL node basic cluster (if available)
     if (!mfr && this.zclNode?.endpoints?.[1]?.clusters?.basic) {
@@ -1860,34 +1875,59 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         mfr = manifest.zigbee.manufacturerName[0];
       }
     }
+    
+    // Method 6: v5.7.52 - Try node.manufacturerName directly
+    if (!mfr && this.node?.manufacturerName) {
+      mfr = this.node.manufacturerName;
+    }
 
-    this._cachedManufacturerName = mfr || '';
-    return this._cachedManufacturerName;
+    // v5.7.48: Only cache if we found a valid value
+    if (mfr && mfr.length > 0) {
+      this._cachedManufacturerName = mfr;
+    }
+    
+    return mfr || '';
   }
 
   /**
    * v5.5.277: Get sensor configuration based on manufacturerName
    * v5.5.364: Enhanced with auto-discovery for unknown devices
+   * v5.7.48: Don't cache DEFAULT config when mfr is empty - retry later
    */
   _getSensorConfig() {
-    if (!this._sensorConfig) {
-      const mfr = this._getManufacturerName();
-      // v5.5.984: Peter_van_Werkhoven HOBEIAN fix - check multiple sources for modelId
-      const settings = this.getSettings() || {};
-      const modelId = this.getData()?.modelId 
-        || settings.zb_model_id 
-        || settings.zb_modelId 
-        || this.getStoreValue?.('modelId')
-        || null;
-      this._sensorConfig = getSensorConfig(mfr, modelId);
-      this.log(`[RADAR] 🔍 ManufacturerName: "${mfr}", ModelId: "${modelId}" → config: ${this._sensorConfig.configName || 'DEFAULT'}`);
+    const mfr = this._getManufacturerName();
+    
+    // v5.7.48: If we have a cached config, check if it's still valid
+    // If mfr was empty before but now available, re-lookup config
+    if (this._sensorConfig) {
+      const cachedConfigName = this._sensorConfig.configName || 'DEFAULT';
+      // If we have a real mfr now but config is DEFAULT, try to find a better match
+      if (cachedConfigName === 'DEFAULT' && mfr && mfr.length > 0) {
+        this.log(`[RADAR] 🔄 Re-checking config: mfr now available as "${mfr}"`);
+        this._sensorConfig = null; // Force re-lookup
+      } else {
+        return this._sensorConfig;
+      }
+    }
+    
+    // v5.5.984: Peter_van_Werkhoven HOBEIAN fix - check multiple sources for modelId
+    const settings = this.getSettings() || {};
+    const modelId = this.getData()?.modelId 
+      || settings.zb_model_id 
+      || settings.zb_modelId 
+      || this.getStoreValue?.('modelId')
+      || null;
+    this._sensorConfig = getSensorConfig(mfr, modelId);
+    this.log(`[RADAR] 🔍 ManufacturerName: "${mfr}", ModelId: "${modelId}" → config: ${this._sensorConfig.configName || 'DEFAULT'}`);
 
-      // v5.5.364: Initialize auto-discovery for DEFAULT/unknown devices
-      if (this._sensorConfig.configName === 'DEFAULT') {
+    // v5.5.364: Initialize auto-discovery for DEFAULT/unknown devices
+    if (this._sensorConfig.configName === 'DEFAULT') {
+      if (!this._dpAutoDiscovery) {
         this._dpAutoDiscovery = new IntelligentDPAutoDiscovery(this);
         this.log(`[RADAR] 🧠 AUTO-DISCOVERY MODE: Learning DP patterns for unknown device "${mfr}"`);
       }
     }
+    
     return this._sensorConfig;
   }
 
@@ -1952,16 +1992,17 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
    */
   get dpMappings() {
     const config = this._getSensorConfig();
-    // v5.7.32: CRITICAL FIX - Get manufacturerName from multiple sources
-    // getData() can be empty on init, causing DEFAULT config and wrong behavior
-    const mfr = this.getData()?.manufacturerName 
-      || this.getStoreValue?.('manufacturerName')
-      || this.getSetting?.('zb_manufacturer_name')
-      || '';
+    // v5.7.52: Use _getManufacturerName() for consistent multi-source retrieval
+    // This ensures we get the manufacturer from ANY available source
+    const mfr = this._getManufacturerName();
     const dpMap = config.dpMap || {};
     const mappings = {};
 
-    this.log(`[RADAR] 🧠 Using config: ${config.configName || 'DEFAULT'} for ${mfr}`);
+    // Only log if mfr changed to reduce spam
+    if (this._lastLoggedMfr !== mfr) {
+      this.log(`[RADAR] 🧠 Using config: ${config.configName || 'DEFAULT'} for ${mfr || '(empty mfr)'}`);
+      this._lastLoggedMfr = mfr;
+    }
 
     // v5.5.318: Get invertPresence from user setting OR config
     // User setting takes precedence over config default
@@ -2403,28 +2444,42 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
     const dpId = data.dp || data.dpId || data.datapoint;
 
-    // v5.5.364: AUTO-DISCOVERY - Feed all DPs to learning engine for unknown devices
-    if (this._dpAutoDiscovery) {
-      const rawVal = this._parseBufferValue(data.value || data.data);
-      this._dpAutoDiscovery.analyzeDP(dpId, rawVal);
+    // v5.7.52: CRITICAL FIX - Check static dpMap FIRST before auto-discovery
+    // Peter #1342/#1343: DP4 was being classified as battery by auto-discovery
+    // instead of humidity as specified in ZG_204ZV_MULTISENSOR config
+    const config = this._getSensorConfig();
+    const dpMap = this._getEffectiveDPMap();
+    
+    // If static config explicitly maps this DP to a capability, handle it directly
+    // This prevents auto-discovery from misclassifying known DPs
+    const staticMapping = dpMap[dpId];
+    if (staticMapping?.cap) {
+      // DP has explicit capability mapping - skip auto-discovery, handle below
+      this.log(`[RADAR] 📋 DP${dpId} has static mapping → ${staticMapping.cap}, skipping auto-discovery`);
+    } else {
+      // v5.5.364: AUTO-DISCOVERY - Feed all DPs to learning engine for unknown devices
+      if (this._dpAutoDiscovery) {
+        const rawVal = this._parseBufferValue(data.value || data.data);
+        this._dpAutoDiscovery.analyzeDP(dpId, rawVal);
 
-      // Try to apply auto-discovered mapping
-      const discovered = this._dpAutoDiscovery.applyDiscoveredValue(dpId, rawVal);
-      if (discovered && discovered.confidence >= 70) {
-        this.log(`[AUTO-DISCOVERY] ✨ DP${dpId} → ${discovered.capability} = ${discovered.value} (confidence: ${discovered.confidence}%)`);
+        // Try to apply auto-discovered mapping
+        const discovered = this._dpAutoDiscovery.applyDiscoveredValue(dpId, rawVal);
+        if (discovered && discovered.confidence >= 70) {
+          this.log(`[AUTO-DISCOVERY] ✨ DP${dpId} → ${discovered.capability} = ${discovered.value} (confidence: ${discovered.confidence}%)`);
 
-        // Apply to capability
-        if (this.hasCapability(discovered.capability)) {
-          this.setCapabilityValue(discovered.capability, discovered.value).catch(() => { });
+          // Apply to capability
+          if (this.hasCapability(discovered.capability)) {
+            this.setCapabilityValue(discovered.capability, discovered.value).catch(() => { });
 
-          // Trigger flows for presence
-          if (discovered.capability === 'alarm_motion') {
-            this._triggerPresenceFlows(discovered.value);
-            if (this.hasCapability('alarm_human')) {
-              this.setCapabilityValue('alarm_human', discovered.value).catch(() => { });
+            // Trigger flows for presence
+            if (discovered.capability === 'alarm_motion') {
+              this._triggerPresenceFlows(discovered.value);
+              if (this.hasCapability('alarm_human')) {
+                this.setCapabilityValue('alarm_human', discovered.value).catch(() => { });
+              }
             }
+            return;  // Handled by auto-discovery
           }
-          return;  // Handled by auto-discovery
         }
       }
     }
@@ -2432,8 +2487,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     // v5.5.310: FIXED - Handle DP12 and DP103 locally, NOT via HybridSensorBase!
     // Problem: HybridSensorBase universal profile maps DP103 to temperature, not lux
     // Solution: Handle lux DPs (12, 102, 103, 104) directly here using local dpMap config
-    const config = this._getSensorConfig();
-    const dpMap = this._getEffectiveDPMap();  // v5.5.364: Use effective map (static + discovered)
+    // Note: config and dpMap already declared above for static mapping check
 
     // Check if this DP is a lux DP in our config - handle locally
     if (dpMap[dpId]?.cap === 'measure_luminance') {
@@ -2441,6 +2495,17 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       const mfr = this._getManufacturerName();
       const deviceId = this.getData()?.id;
       let finalLux = transformLux(luxValue, dpMap[dpId].type || 'lux_direct', mfr, deviceId);
+
+      // v5.7.52: CRITICAL FIX - Shared throttle with ZCL to prevent fighting
+      // Track Tuya DP updates and skip if ZCL updated recently
+      const now = Date.now();
+      this._luxLastUpdateSource = this._luxLastUpdateSource || {};
+      
+      // If ZCL updated within last 5s, skip Tuya DP update to prevent fighting
+      if (this._luxLastUpdateSource.zcl && now - this._luxLastUpdateSource.zcl < 5000) {
+        return;
+      }
+      this._luxLastUpdateSource.tuya = now;
 
       // v5.5.985: Peter #1282 - Lux smoothing to prevent light flickering
       if (config.luxSmoothingEnabled) {
@@ -2920,11 +2985,23 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         
         illumCluster.on('attr.measuredValue', (v) => {
           const now = Date.now();
+          
+          // v5.7.52: CRITICAL FIX - Shared throttle with Tuya DP to prevent fighting
+          // ZCL and Tuya DP both send lux values - use whichever comes first, throttle the other
+          this._luxLastUpdateSource = this._luxLastUpdateSource || {};
+          const lastUpdate = this._luxLastUpdateSource.zcl || 0;
+          const timeSinceLastUpdate = now - lastUpdate;
+          
+          // If Tuya DP updated within last 5s, skip ZCL update to prevent fighting
+          if (timeSinceLastUpdate < 5000 && this._luxLastUpdateSource.tuya && now - this._luxLastUpdateSource.tuya < 5000) {
+            return;
+          }
+          
           const lux = Math.pow(10, (v - 1) / 10000);
           const roundedLux = parseFloat(Math.round(lux));
           
           // Throttle: Skip if less than 30s since last update
-          if (now - lastLuxUpdate < MIN_REPORT_INTERVAL_MS) {
+          if (timeSinceLastUpdate < MIN_REPORT_INTERVAL_MS) {
             return;
           }
           
@@ -2936,6 +3013,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
             }
           }
           
+          this._luxLastUpdateSource.zcl = now;
           lastLuxUpdate = now;
           lastLuxValue = roundedLux;
           this.setCapabilityValue('measure_luminance', roundedLux).catch(() => { });
