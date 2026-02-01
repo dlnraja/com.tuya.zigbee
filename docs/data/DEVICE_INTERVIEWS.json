@@ -1,7 +1,7 @@
 {
-  "version": "5.6.0",
-  "lastUpdated": "2026-01-31",
-  "totalInterviews": 94,
+  "version": "5.7.20",
+  "lastUpdated": "2026-02-01",
+  "totalInterviews": 102,
   "sources": [
     "Homey Community Forum (pages 1-56)",
     "GitHub Issues/PRs (JohanBendz & dlnraja)",
@@ -183,9 +183,89 @@
         "deviceName": "MOES Scene Switch 4 gang",
         "manufacturerName": "_TZ3000_zgyzgdua",
         "productId": "TS0044",
-        "source": "GitHub Issue #1327",
+        "source": "JohanBendz #1327, dlnraja Forum (Freddyboy)",
+        "user": "Jesse22homey, Freddyboy",
+        "status": "fixed",
+        "priority": "high",
+        "inputClusters": [1, 6, 57344, 0],
+        "symptoms": [
+          "Physical buttons not triggering flows",
+          "Virtual buttons not clickable (setable:false)",
+          "Device stuck in Dimmer Mode",
+          "manufacturerName shows empty in logs"
+        ],
+        "rootCause": "Multiple issues: setable:false, getData() empty, mode switch skipped",
+        "fix": {
+          "applied": true,
+          "version": "5.7.19",
+          "description": "v5.7.16: setable:true, v5.7.17: added to mode list, v5.7.18: getSetting fallback, v5.7.19: universal scene mode in ButtonDevice.js"
+        },
+        "driver": "button_wireless_4"
+      },
+      {
+        "id": "INT-016",
+        "deviceName": "10G 4 in 1 Human Motion Sensor",
+        "manufacturerName": "_TZE200_rhgsbacq",
+        "productId": "TS0601",
+        "source": "JohanBendz #1343",
+        "user": "cvh1111",
+        "status": "new_device_request",
+        "priority": "medium",
+        "inputClusters": [0, 3, 1280, 61184, 1026, 1029, 1, 1024],
+        "capabilities": ["motion", "temperature", "humidity", "illuminance", "battery"],
+        "notes": "Has IAS Zone, temperature, humidity, illuminance clusters - hybrid ZCL+DP device",
+        "driver": "presence_sensor_radar"
+      },
+      {
+        "id": "INT-017",
+        "deviceName": "AVATTO Smart Thermostat WT198",
+        "manufacturerName": "_TZE284_xnbkhhdr",
+        "productId": "TS0601",
+        "source": "JohanBendz #1345",
+        "user": "Nono-3ric",
+        "status": "new_device_request",
+        "priority": "medium",
+        "inputClusters": [4, 5, 61184, 0, 60672],
+        "powerSource": "battery",
+        "notes": "Battery-powered thermostat for radiator valves",
+        "driver": "thermostat_radiator_valve"
+      },
+      {
+        "id": "INT-018",
+        "deviceName": "BSEED 2-Gang Wall Switch",
+        "manufacturerName": "_TZ3000_l9brjwau",
+        "productId": "TS0002",
+        "source": "JohanBendz #1337, dlnraja #103",
+        "user": "pjmpessers",
+        "status": "fixed",
+        "notes": "ZCL-only device, uses PhysicalButtonMixin for button detection",
+        "fix": {
+          "applied": true,
+          "version": "5.5.896",
+          "description": "PR #120 packetninja - PhysicalButtonMixin with 2000ms timeout"
+        },
+        "driver": "switch_2gang"
+      },
+      {
+        "id": "INT-019",
+        "deviceName": "BSEED 1-Gang Wall Switch",
+        "manufacturerName": "_TZ3000_blhvsaqf",
+        "productId": "TS0001",
+        "source": "JohanBendz #1339, dlnraja #104",
+        "user": "pjmpessers",
+        "status": "fixed",
+        "notes": "ZCL-only device, PR #116 packetninja support",
+        "driver": "switch_1gang"
+      },
+      {
+        "id": "INT-020",
+        "deviceName": "BSEED 3-Gang Wall Switch",
+        "manufacturerName": "_TZ3000_qkixdnon",
+        "productId": "TS0003",
+        "source": "JohanBendz #1338, dlnraja #102",
         "status": "supported",
-        "driver": "scene_switch_4"
+        "notes": "ZCL-only device",
+        "driver": "switch_3gang"
       }
     ],
 
