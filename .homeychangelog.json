@@ -1,4 +1,7 @@
 {
+  "5.7.19": {
+    "en": "🔘 UNIVERSAL SCENE MODE: Moved mode switching (0x8004 attr) to ButtonDevice.js base class. ALL button_wireless drivers (1-8 gang) now automatically switch to scene mode on init. Supports TS004F, TS0041-44, and known manufacturers like _TZ3000_zgyzgdua."
+  },
   "5.7.18": {
     "en": "🔧 FIX: manufacturerName detection now uses multiple sources (getData, getStoreValue, getSetting). Fixes issue where mode switching was skipped because getData() returned empty on init. Log now shows correct _TZ3000_zgyzgdua instead of empty."
   },
