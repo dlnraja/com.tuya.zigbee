@@ -559,20 +559,19 @@ class Button4GangDevice extends ButtonDevice {
       const isTS0044 = productId.includes('TS0044') || productId.includes('TS004F');
       const usesE000ByManufacturer = knownE000Devices.some(id => manufacturerName.includes(id));
 
-      // v5.5.762: ALWAYS setup E000 BoundCluster for 4-button devices
-      // On first init, manufacturerName/productId may be empty - we can't know if device uses E000
-      // Better to setup and not receive anything than to miss button presses
-      // This is a no-op if device doesn't actually use cluster 57344
-      const shouldSetupE000 = usesE000ByManufacturer || isTS0044 || !manufacturerName;
+      // v5.7.35: FREDDYBOY FIX - ALWAYS setup E000 BoundCluster for ALL 4-button devices
+      // Many MOES/Tuya variants use cluster 57344 but aren't in the known list
+      // Setting up E000 is a no-op if device doesn't use it, but missing it breaks physical buttons
+      // Forum #1333: Physical button doesn't trigger flow even though virtual works
+      const shouldSetupE000 = true; // ALWAYS setup for 4-button devices
       
-      if (!shouldSetupE000) {
-        this.log('[BUTTON4-E000] ℹ️ Device is not a known E000 user, skipping BoundCluster setup');
-        return;
-      }
-      
-      // Log why we're setting up
-      if (!manufacturerName) {
-        this.log('[BUTTON4-E000] ⚠️ ManufacturerName empty on first init - setting up E000 as fallback');
+      // Log detection info for debugging
+      if (usesE000ByManufacturer) {
+        this.log('[BUTTON4-E000] ✅ Known E000 device detected');
+      } else if (isTS0044) {
+        this.log('[BUTTON4-E000] ✅ TS0044/TS004F product detected');
+      } else {
+        this.log('[BUTTON4-E000] ℹ️ Unknown device - setting up E000 as universal fallback');
       }
       
       this.log(`[BUTTON4-E000] 🔧 Setting up BoundCluster for cluster 0xE000 (57344)`);
