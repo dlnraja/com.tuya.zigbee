@@ -1,4 +1,7 @@
 {
+  "5.7.29": {
+    "en": "🔍 AUDITED: UniversalDPSender/Receiver fully audited. Added BigInt bitmap support, 3-byte value handling, proper signed/unsigned detection. 15 sender fallbacks + 20 receiver hooks. All data types supported."
+  },
   "5.7.28": {
     "en": "🔄 MAXIMUM FALLBACKS: UniversalDPSender (15 methods) + UniversalDPReceiver (20+ hooks). Tuya: Manager/datapoint OLD/NEW/setDataValue/command + multi-endpoint. ZCL: attr/report/change events + reportHandler wrap. Frame: handleFrame/on/subscribe. Never fails."
   },
