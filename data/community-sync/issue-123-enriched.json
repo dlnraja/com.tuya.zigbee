@@ -1,0 +1,353 @@
+{
+  "issueId": 123,
+  "date": "2026-02-01",
+  "totalFingerprints": 46,
+  "status": "all_integrated",
+  "enrichedData": [
+    {
+      "mfr": "_TZ3000_vd43bbfq",
+      "productId": "TS0302",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_1dd0d5yi",
+      "productId": "TS0302",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_ke7pzj5d",
+      "productId": "TS0302",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_fccpjz5z",
+      "productId": "TS0302",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_4uuaja4a",
+      "productId": "TS0302",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_zirycpws",
+      "productId": "TS0302",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_femsaaua",
+      "productId": "TS0302",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_e3vhyirx",
+      "productId": "TS0302",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_jwv3cwak",
+      "productId": "TS0302",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3210_dwytrmda",
+      "productId": "TS0302",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_eg7awg6a",
+      "productId": "TS0302",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_eafaa66e",
+      "productId": "TS0302",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_j1xl73iw",
+      "productId": "TS0302",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_l6iqph4f",
+      "productId": "TS0203",
+      "driver": "contact_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZE200_5zbp6j0u",
+      "productId": "TS0601",
+      "driver": "curtain_motor",
+      "description": "Zemismart curtain motor",
+      "source": "ZHA #4280",
+      "verified": true
+    },
+    {
+      "mfr": "_TZE200_bjzrowv2",
+      "productId": "TS0601",
+      "driver": "climate_sensor",
+      "description": "Temperature humidity sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZE200_4vobcgd3",
+      "productId": "TS0601",
+      "driver": "climate_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZE200_pk0sfzvr",
+      "productId": "TS0601",
+      "driver": "motion_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZE200_fdtjuw7u",
+      "productId": "TS0601",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZE204_1fuxihti",
+      "productId": "TS0601",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZE200_axgvo9jh",
+      "productId": "TS0601",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZE200_gaj531w3",
+      "productId": "TS0601",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZE200_nw1r9hp6",
+      "productId": "TS0601",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZE200_9p5xmj5r",
+      "productId": "TS0601",
+      "driver": "curtain_motor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3210_invesber",
+      "productId": "TS110E",
+      "driver": "dimmer_wall_1gang",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3210_zdrhqmo0",
+      "productId": "TS0505B",
+      "driver": "bulb_rgb",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_lqmvrwa2",
+      "productId": "TS0203",
+      "driver": "contact_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3210_ncw88jfq",
+      "productId": "TS0201",
+      "driver": "climate_sensor",
+      "description": "Temperature humidity sensor - known humidity scaling issue",
+      "source": "HA Community",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_isw9u95y",
+      "productId": "TS0203",
+      "driver": "contact_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_yupc0pb7",
+      "productId": "TS0203",
+      "driver": "contact_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_qrldbmfn",
+      "productId": "TS0203",
+      "driver": "contact_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_996rpfy6",
+      "productId": "TS0203",
+      "driver": "contact_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_2mbfxlzr",
+      "productId": "TS0203",
+      "driver": "contact_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_n2egfsli",
+      "productId": "TS0203",
+      "driver": "contact_sensor",
+      "description": "Door window sensor - deCONZ confirmed",
+      "source": "deCONZ, Z2M #24668",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_8yhypbo7",
+      "productId": "TS0203",
+      "driver": "contact_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_4ugnzsli",
+      "productId": "TS0203",
+      "driver": "contact_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_udyjylt7",
+      "productId": "TS0203",
+      "driver": "contact_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_v7chgqso",
+      "productId": "TS0203",
+      "driver": "contact_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_timx9ivq",
+      "productId": "TS0210",
+      "driver": "vibration_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_rid8lzvo",
+      "productId": "TS0203",
+      "driver": "contact_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_t3vvhrmh",
+      "productId": "TS0201",
+      "driver": "climate_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_26fmupbb",
+      "productId": "TS0203",
+      "driver": "contact_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZ3000_osu834un",
+      "productId": "TS0203",
+      "driver": "contact_sensor",
+      "source": "Z2M",
+      "verified": true
+    },
+    {
+      "mfr": "_TZE284_vuwtqx0t",
+      "productId": "TS0601",
+      "driver": "water_valve_smart",
+      "description": "Zemismart ultrasonic water meter valve",
+      "source": "ZHA #4280",
+      "verified": true
+    },
+    {
+      "mfr": "_TZE200_vuwtqx0t",
+      "productId": "TS0601",
+      "driver": "water_valve_smart",
+      "description": "Water valve with flow meter",
+      "source": "Z2M #28701",
+      "verified": true
+    },
+    {
+      "mfr": "_TZE284_ajlu4cud",
+      "productId": "TS0601",
+      "driver": "climate_sensor",
+      "source": "Z2M",
+      "verified": true
+    }
+  ],
+  "summary": {
+    "curtain_motor": 18,
+    "contact_sensor": 14,
+    "climate_sensor": 6,
+    "water_valve_smart": 4,
+    "dimmer_wall_1gang": 1,
+    "vibration_sensor": 1,
+    "bulb_rgb": 1,
+    "motion_sensor": 1
+  },
+  "sources": [
+    "Zigbee2MQTT tuya.ts",
+    "ZHA device handlers",
+    "deCONZ REST API docs",
+    "Home Assistant Community",
+    "JohanBendz/com.tuya.zigbee"
+  ]
+}
