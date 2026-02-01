@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.30** | 📋 COMMUNITY SYNC: Verified 46 fingerprints from GitHub #123. Audited Univers... |
 | **v5.7.29** | 🔍 AUDITED: UniversalDPSender/Receiver fully audited. Added BigInt bitmap sup... |
 | **v5.7.28** | 🔄 MAXIMUM FALLBACKS: UniversalDPSender (15 methods) + UniversalDPReceiver (2... |
 | **v5.7.27** | 📦 COMPLETE TYPE SUPPORT: bool, enum, bitmap(1-8bytes+BigInt), value(1-4bytes... |
@@ -78,7 +79,6 @@
 | **v5.7.23** | 📡 COMPLETE DP SYSTEM: Added UniversalDPReceiver to complement UniversalDPSen... |
 | **v5.7.22** | 🧠 SMART DP SENDER: 7-level fallback chain with intelligent caching. Logs onl... |
 | **v5.7.21** | 🔧 UNIFIED DP SENDER: Created UniversalDPSender with complete fallback chain ... |
-| **v5.7.20** | 🔧 CURTAIN MOTOR FIX: Restored v5.5.937 DP format compatibility. Now tries BO... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
