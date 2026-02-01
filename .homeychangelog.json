@@ -1,4 +1,7 @@
 {
+  "5.7.31": {
+    "en": "🔧 FINGERPRINT CLEANUP: Removed _TZE200_3towulqd (ZG-204ZL PIR sensor) from 10 wrong drivers. Was causing pairing conflicts. Now only in motion_sensor + presence_sensor_radar where it belongs."
+  },
   "5.7.30": {
     "en": "📋 COMMUNITY SYNC: Verified 46 fingerprints from GitHub #123. Audited UniversalDPSender/Receiver with BigInt bitmap, 3-byte values, 15 sender + 20 receiver fallbacks. All data types fully supported."
   },
