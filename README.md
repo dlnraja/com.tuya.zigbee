@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.7.31** | 🔧 FINGERPRINT CLEANUP: Removed _TZE200_3towulqd (ZG-204ZL PIR sensor) from 1... |
 | **v5.7.30** | 📋 COMMUNITY SYNC: Verified 46 fingerprints from GitHub #123. Audited Univers... |
 | **v5.7.29** | 🔍 AUDITED: UniversalDPSender/Receiver fully audited. Added BigInt bitmap sup... |
 | **v5.7.28** | 🔄 MAXIMUM FALLBACKS: UniversalDPSender (15 methods) + UniversalDPReceiver (2... |
@@ -78,7 +79,6 @@
 | **v5.7.24** | 🔘 MOES BUTTON FIX: Fixed random/ghost button presses on multi-endpoint butto... |
 | **v5.7.23** | 📡 COMPLETE DP SYSTEM: Added UniversalDPReceiver to complement UniversalDPSen... |
 | **v5.7.22** | 🧠 SMART DP SENDER: 7-level fallback chain with intelligent caching. Logs onl... |
-| **v5.7.21** | 🔧 UNIFIED DP SENDER: Created UniversalDPSender with complete fallback chain ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
