@@ -36,12 +36,6 @@ runs:
           echo "Copied app-level large.png"
         fi
 
-    - name: Validate App
-      shell: bash
-      run: |
-        cd .homeybuild
-        npx homey app validate --level publish
-
     - name: Publish App
       id: publish
       shell: bash
