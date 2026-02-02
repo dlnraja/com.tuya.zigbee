@@ -397,8 +397,8 @@
     }
   ],
   "images": {
-    "small": "drivers/button_emergency_sos/assets/images/small.png",
-    "large": "drivers/button_emergency_sos/assets/images/large.png"
+    "small": "/drivers/button_emergency_sos/assets/images/small.png",
+    "large": "/drivers/button_emergency_sos/assets/images/large.png"
   },
   "platforms": [
     "local"
