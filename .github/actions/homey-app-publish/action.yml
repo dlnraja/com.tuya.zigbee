@@ -43,7 +43,7 @@ runs:
         HOMEY_HEADLESS: "1"
         HOMEY_PAT: ${{ inputs.personal_access_token }}
       run: |
-        cd .homeybuild
+        # Run publish from root - it will use the already built .homeybuild
         npx homey app publish
         APP_ID=$(cat app.json | jq -r .id)
         echo "url=https://tools.developer.homey.app/apps/app/${APP_ID}" >> $GITHUB_OUTPUT
