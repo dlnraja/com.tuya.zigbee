@@ -1,4 +1,7 @@
 {
+  "5.8.3": {
+    "en": "🔧 v5.8.3: FORUM FIXES - 1) _TZE284_debczeci presence sensor config (Diag 7570421d - motion every 5 min). 2) _TZE204_ztqnh5cg duplicate fingerprint fix (Forum #1350 tlink). 3) IR Blaster onoff capability listener fix (Forum #1349 FrankP). 4) GitHub workflow secret fix for publishing."
+  },
   "5.7.51": {
     "en": "🔧 MANUFACTURER NAME FIX v5.7.51: Robust ManufacturerNameHelper with _g()/_v() safe getters. Each source validated individually (not ||). Added debugManufacturerSources() for diagnostics. readManufacturerFromCluster() async fallback. Integrated in: IntelligentProtocolRouter, HybridSensorBase, ButtonDevice, DeviceDataHelper. No more empty/null manufacturerName!"
   },
