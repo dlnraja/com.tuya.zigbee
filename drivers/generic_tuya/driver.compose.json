@@ -8,7 +8,7 @@
   "class": "other",
   "images": {
     "small": "/drivers/generic_tuya/assets/images/small.png",
-    "large": "drivers/generic_tuya/assets/images/large.png"
+    "large": "/drivers/generic_tuya/assets/images/large.png"
   },
   "capabilities": [
     "measure_battery",

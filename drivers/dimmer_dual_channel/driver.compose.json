@@ -261,7 +261,7 @@
     }
   },
   "images": {
-    "large": "drivers/dimmer_dual_channel/assets/images/large.png",
-    "small": "drivers/dimmer_dual_channel/assets/images/small.png"
+    "large": "/drivers/dimmer_dual_channel/assets/images/large.png",
+    "small": "/drivers/dimmer_dual_channel/assets/images/small.png"
   }
 }

@@ -222,8 +222,8 @@
     }
   },
   "images": {
-    "small": "drivers/button_wireless/assets/images/small.png",
-    "large": "drivers/button_wireless/assets/images/large.png"
+    "small": "/drivers/button_wireless/assets/images/small.png",
+    "large": "/drivers/button_wireless/assets/images/large.png"
   },
   "settings": [
     {

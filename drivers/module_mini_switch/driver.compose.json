@@ -493,8 +493,8 @@
     }
   ],
   "images": {
-    "small": "drivers/module_mini_switch/assets/images/small.png",
-    "large": "drivers/module_mini_switch/assets/images/large.png"
+    "small": "/drivers/module_mini_switch/assets/images/small.png",
+    "large": "/drivers/module_mini_switch/assets/images/large.png"
   },
   "platforms": [
     "local"

@@ -412,8 +412,8 @@
     }
   ],
   "images": {
-    "small": "drivers/presence_sensor_ceiling/assets/images/small.png",
-    "large": "drivers/presence_sensor_ceiling/assets/images/large.png"
+    "small": "/drivers/presence_sensor_ceiling/assets/images/small.png",
+    "large": "/drivers/presence_sensor_ceiling/assets/images/large.png"
   },
   "platforms": [
     "local"

@@ -202,8 +202,8 @@
     }
   },
   "images": {
-    "small": "drivers/thermostat_4ch/assets/images/small.png",
-    "large": "drivers/thermostat_4ch/assets/images/large.png"
+    "small": "/drivers/thermostat_4ch/assets/images/small.png",
+    "large": "/drivers/thermostat_4ch/assets/images/large.png"
   },
   "platforms": [
     "local"
