@@ -884,6 +884,7 @@ const SENSOR_CONFIGS = {
       '_TZE284_ztqnh5cg',
       '_TZE204_sbyx0lm6',
       '_TZE284_sbyx0lm6',
+      '_TZE284_debczeci',  // v5.8.3: Diag 7570421d - motion every 5 min
     ],
     battery: false,
     mainsPowered: true,
