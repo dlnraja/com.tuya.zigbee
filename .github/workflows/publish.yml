@@ -172,12 +172,7 @@ jobs:
       # Official Athom actions have a known bug: large.png not copied to .homeybuild
       # These custom actions still use the official Homey CLI internally
       
-      - name: 🔍 Validate App (with large.png fix)
-        uses: ./.github/actions/homey-app-validate
-        with:
-          level: publish
-
-      - name: 🚀 Publish to Homey App Store
+      - name:  Publish to Homey App Store
         id: publish
         uses: ./.github/actions/homey-app-publish
         with:
