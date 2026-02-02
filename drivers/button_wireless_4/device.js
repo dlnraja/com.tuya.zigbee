@@ -586,6 +586,11 @@ class Button4GangDevice extends ButtonDevice {
         return;
       }
 
+      // v5.8.3: CRITICAL FIX - Attempt explicit Zigbee binding for cluster 57344
+      // Forum #1352 Freddyboy: Physical buttons not triggering flows
+      // The device needs to be told to send cluster 57344 frames to Homey's coordinator
+      await this._bindE000ClusterExplicit(zclNode);
+
       // Setup BoundCluster on all 4 endpoints
       for (let ep = 1; ep <= 4; ep++) {
         const endpoint = zclNode?.endpoints?.[ep];
@@ -1068,6 +1073,66 @@ class Button4GangDevice extends ButtonDevice {
     }
     
     this.log('[BUTTON4-VIRTUAL] ✅ Virtual button handlers ready');
+  }
+
+  /**
+   * v5.8.3: CRITICAL FIX - Explicit Zigbee binding for cluster 57344 (0xE000)
+   * Forum #1352 Freddyboy: MOES 4-button physical buttons not triggering flows
+   * 
+   * Issue: Homey SDK discards frames from unknown clusters before they reach our handlers.
+   * Solution: Use ZDO (Zigbee Device Object) to explicitly bind cluster 57344 to coordinator.
+   * This tells the device to send E000 cluster frames to Homey.
+   */
+  async _bindE000ClusterExplicit(zclNode) {
+    try {
+      this.log('[BUTTON4-BIND] 🔧 Attempting explicit Zigbee binding for cluster 57344...');
+      
+      // Get coordinator address from zclNode
+      const coordinatorAddress = zclNode?.coordinatorAddress || this.homey?.zigbee?.coordinatorAddress;
+      
+      if (!coordinatorAddress) {
+        this.log('[BUTTON4-BIND] ⚠️ Coordinator address not available, skipping explicit binding');
+        return;
+      }
+      
+      // Try binding on endpoint 1 (where cluster 57344 is listed)
+      const endpoint = zclNode?.endpoints?.[1];
+      if (!endpoint) {
+        this.log('[BUTTON4-BIND] ⚠️ Endpoint 1 not available');
+        return;
+      }
+      
+      // Check if endpoint has ZDO bind method
+      if (typeof endpoint.bind === 'function') {
+        try {
+          // Try standard bind with cluster ID
+          await endpoint.bind(57344, coordinatorAddress);
+          this.log('[BUTTON4-BIND] ✅ Standard bind succeeded for cluster 57344');
+          return;
+        } catch (bindErr) {
+          this.log(`[BUTTON4-BIND] ℹ️ Standard bind failed (expected for unknown cluster): ${bindErr.message}`);
+        }
+      }
+      
+      // Alternative: Use zclNode's ZDO if available
+      if (zclNode?.zdo && typeof zclNode.zdo.bind === 'function') {
+        try {
+          await zclNode.zdo.bind(1, 57344, coordinatorAddress);
+          this.log('[BUTTON4-BIND] ✅ ZDO bind succeeded for cluster 57344');
+          return;
+        } catch (zdoErr) {
+          this.log(`[BUTTON4-BIND] ℹ️ ZDO bind failed: ${zdoErr.message}`);
+        }
+      }
+      
+      // Last resort: Try configureReporting which implicitly binds
+      // This won't work for E000 but worth trying
+      this.log('[BUTTON4-BIND] ℹ️ Explicit binding not available via standard methods');
+      this.log('[BUTTON4-BIND] 💡 User should re-pair device for proper binding');
+      
+    } catch (err) {
+      this.log(`[BUTTON4-BIND] ⚠️ Binding error: ${err.message}`);
+    }
   }
 
   async onDeleted() {
