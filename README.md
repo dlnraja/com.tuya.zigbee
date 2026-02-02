@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.3** | 🔧 v5.8.3: FORUM FIXES - 1) _TZE284_debczeci presence sensor config (Diag 757... |
 | **v5.7.52** | 🔧 FORUM FIX #1341: (1) soil_sensor crash fixed - added missing moisture_belo... |
 | **v5.7.51** | 🔧 MANUFACTURER NAME FIX v5.7.51: Robust ManufacturerNameHelper with _g()/_v(... |
 | **v5.7.50** | 🌐 UNIVERSAL PROTOCOL SUPPORT v5.7.50: ManufacturerNameHelper with fallback c... |
@@ -78,7 +79,6 @@
 | **v5.7.46** | 🔄 COMMUNITY SYNC ENHANCED: Monthly fingerprint workflow now extracts product... |
 | **v5.7.45** | 📡 ZG-204ZV FIX (Peter #1342): CONFIRMED _TZ3000_8bxrzyxz is a HOBEIAN ZG-204... |
 | **v5.7.44** | 📡 MULTISENSOR FIX (Peter #1342): TZ3000_PIR config now enables temperature/h... |
-| **v5.7.43** | 🔌 NEW FINGERPRINT: Added _TZ3000_fisb3ajo for 2-gang switch (JohanBendz #122... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
