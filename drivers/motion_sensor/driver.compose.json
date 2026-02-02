@@ -488,6 +488,26 @@
   },
   "settings": [
     {
+      "id": "motion_holdoff",
+      "type": "number",
+      "label": {
+        "en": "Motion Holdoff (seconds)",
+        "fr": "Délai Mouvement (secondes)",
+        "nl": "Beweging Holdoff (seconden)",
+        "de": "Bewegung Holdoff (Sekunden)"
+      },
+      "value": 60,
+      "min": 0,
+      "max": 300,
+      "step": 10,
+      "hint": {
+        "en": "Delay before triggering 'no motion' to prevent false triggers in occupied rooms. Set to 0 to disable.",
+        "fr": "Délai avant de déclencher 'pas de mouvement' pour éviter les faux déclenchements dans les pièces occupées. Définir à 0 pour désactiver.",
+        "nl": "Vertraging voordat 'geen beweging' wordt getriggerd om valse triggers in bezette ruimtes te voorkomen. Stel in op 0 om uit te schakelen.",
+        "de": "Verzögerung vor dem Auslösen von 'keine Bewegung', um Fehlalarme in besetzten Räumen zu vermeiden. Auf 0 setzen zum Deaktivieren."
+      }
+    },
+    {
       "id": "power_source",
       "type": "dropdown",
       "label": {
