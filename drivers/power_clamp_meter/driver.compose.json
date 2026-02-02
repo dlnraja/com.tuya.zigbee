@@ -283,8 +283,8 @@
     }
   },
   "images": {
-    "small": "drivers/power_clamp_meter/assets/images/small.png",
-    "large": "drivers/power_clamp_meter/assets/images/large.png"
+    "small": "/drivers/power_clamp_meter/assets/images/small.png",
+    "large": "/drivers/power_clamp_meter/assets/images/large.png"
   },
   "platforms": [
     "local"

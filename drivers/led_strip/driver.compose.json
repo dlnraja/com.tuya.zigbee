@@ -460,8 +460,8 @@
     }
   ],
   "images": {
-    "small": "drivers/led_strip/assets/images/small.png",
-    "large": "drivers/led_strip/assets/images/large.png"
+    "small": "/drivers/led_strip/assets/images/small.png",
+    "large": "/drivers/led_strip/assets/images/large.png"
   },
   "platforms": [
     "local"

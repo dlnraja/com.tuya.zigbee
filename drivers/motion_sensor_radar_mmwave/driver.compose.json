@@ -616,8 +616,8 @@
     }
   ],
   "images": {
-    "small": "drivers/motion_sensor_radar_mmwave/assets/images/small.png",
-    "large": "drivers/motion_sensor_radar_mmwave/assets/images/large.png"
+    "small": "/drivers/motion_sensor_radar_mmwave/assets/images/small.png",
+    "large": "/drivers/motion_sensor_radar_mmwave/assets/images/large.png"
   },
   "platforms": [
     "local"

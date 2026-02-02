@@ -459,8 +459,8 @@
     }
   ],
   "images": {
-    "small": "drivers/gas_detector/assets/images/small.png",
-    "large": "drivers/gas_detector/assets/images/large.png"
+    "small": "/drivers/gas_detector/assets/images/small.png",
+    "large": "/drivers/gas_detector/assets/images/large.png"
   },
   "platforms": [
     "local"

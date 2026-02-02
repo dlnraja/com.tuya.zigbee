@@ -220,8 +220,8 @@
     }
   },
   "images": {
-    "small": "drivers/scene_switch_3/assets/images/small.png",
-    "large": "drivers/scene_switch_3/assets/images/large.png"
+    "small": "/drivers/scene_switch_3/assets/images/small.png",
+    "large": "/drivers/scene_switch_3/assets/images/large.png"
   },
   "platforms": [
     "local"

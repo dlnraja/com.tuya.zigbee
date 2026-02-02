@@ -465,8 +465,8 @@
     }
   ],
   "images": {
-    "small": "drivers/gas_sensor/assets/images/small.png",
-    "large": "drivers/gas_sensor/assets/images/large.png"
+    "small": "/drivers/gas_sensor/assets/images/small.png",
+    "large": "/drivers/gas_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"

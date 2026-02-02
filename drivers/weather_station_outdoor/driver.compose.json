@@ -248,8 +248,8 @@
     }
   ],
   "images": {
-    "small": "drivers/weather_station_outdoor/assets/images/small.png",
-    "large": "drivers/weather_station_outdoor/assets/images/large.png"
+    "small": "/drivers/weather_station_outdoor/assets/images/small.png",
+    "large": "/drivers/weather_station_outdoor/assets/images/large.png"
   },
   "platforms": [
     "local"
