@@ -32,5 +32,6 @@ runs:
     - name: Validate App
       shell: bash
       run: |
-        cd .homeybuild
-        npx homey app validate --level ${{ inputs.level }}
+        # Validate from .homeybuild WITHOUT changing into it
+        # This prevents nested .homeybuild/.homeybuild issue
+        npx homey app validate --level ${{ inputs.level }} --path .homeybuild
