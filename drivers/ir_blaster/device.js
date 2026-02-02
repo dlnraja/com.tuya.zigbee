@@ -223,20 +223,9 @@ class IrBlasterDevice extends ZigBeeDevice {
     // v5.5.356: Setup enhanced IR clusters first
     await this._setupAdvancedIRClusters(zclNode);
 
-    // Setup OnOff cluster for learn mode (fallback)
-    if (zclNode.endpoints[1]?.clusters?.onOff) {
-      this.log('Setting up OnOff cluster for learn mode...');
-
-      zclNode.endpoints[1].clusters.onOff.on('attr.onOff', (value) => {
-        this.log(`Learn mode: ${value ? 'ON' : 'OFF'}`);
-        this._learningState = value ? LEARNING_STATES.LEARNING : LEARNING_STATES.IDLE;
-        this.setCapabilityValue('onoff', value).catch(this.error);
-
-        // v5.5.356: Trigger learning state changed flow
-        this._triggerLearningStateChanged(this._learningState);
-      });
-
-      // Register capability listener
+    // v5.8.2: ALWAYS register onoff capability listener (Forum #1349 FrankP)
+    // Previously only registered if onOff cluster existed, causing "Missing Capability Listener: onoff" error
+    if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (value) => {
         this.log(`Setting learn mode: ${value}`);
         try {
@@ -249,6 +238,21 @@ class IrBlasterDevice extends ZigBeeDevice {
           this.error('Failed to set learn mode:', err);
           throw err;
         }
+      });
+      this.log('[IR-INIT] ✅ onoff capability listener registered');
+    }
+
+    // Setup OnOff cluster for learn mode attribute reports (if available)
+    if (zclNode.endpoints[1]?.clusters?.onOff) {
+      this.log('Setting up OnOff cluster for learn mode...');
+
+      zclNode.endpoints[1].clusters.onOff.on('attr.onOff', (value) => {
+        this.log(`Learn mode: ${value ? 'ON' : 'OFF'}`);
+        this._learningState = value ? LEARNING_STATES.LEARNING : LEARNING_STATES.IDLE;
+        this.setCapabilityValue('onoff', value).catch(this.error);
+
+        // v5.5.356: Trigger learning state changed flow
+        this._triggerLearningStateChanged(this._learningState);
       });
     }
 
