@@ -181,7 +181,7 @@ jobs:
         id: publish
         uses: ./.github/actions/homey-app-publish
         with:
-          personal_access_token: ${{ secrets.HOMEY_API_TOKEN }}
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
 
       - name: ✅ Summary
         run: |
