@@ -399,8 +399,8 @@
     }
   },
   "images": {
-    "large": "drivers/thermostat_tuya_dp/assets/images/large.png",
-    "small": "drivers/thermostat_tuya_dp/assets/images/small.png"
+    "large": "/drivers/thermostat_tuya_dp/assets/images/large.png",
+    "small": "/drivers/thermostat_tuya_dp/assets/images/small.png"
   },
   "energy": {
     "batteries": [

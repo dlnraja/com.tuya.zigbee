@@ -217,8 +217,8 @@
     }
   ],
   "images": {
-    "small": "drivers/formaldehyde_sensor/assets/images/small.png",
-    "large": "drivers/formaldehyde_sensor/assets/images/large.png"
+    "small": "/drivers/formaldehyde_sensor/assets/images/small.png",
+    "large": "/drivers/formaldehyde_sensor/assets/images/large.png"
   },
   "capabilitiesOptions": {},
   "platforms": [

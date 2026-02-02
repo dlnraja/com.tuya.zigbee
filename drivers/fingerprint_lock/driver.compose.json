@@ -213,8 +213,8 @@
     }
   },
   "images": {
-    "small": "drivers/fingerprint_lock/assets/images/small.png",
-    "large": "drivers/fingerprint_lock/assets/images/large.png"
+    "small": "/drivers/fingerprint_lock/assets/images/small.png",
+    "large": "/drivers/fingerprint_lock/assets/images/large.png"
   },
   "platforms": [
     "local"

@@ -1714,8 +1714,8 @@
     }
   ],
   "images": {
-    "small": "drivers/climate_sensor/assets/images/small.png",
-    "large": "drivers/climate_sensor/assets/images/large.png"
+    "small": "/drivers/climate_sensor/assets/images/small.png",
+    "large": "/drivers/climate_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"
