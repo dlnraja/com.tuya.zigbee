@@ -113,6 +113,10 @@
 | weather_station_outdoor | 214 | TS0601_weather, TS0601 | measure_temperature, measure_humidity, measure_pressure... |
 
 ---
-**Total:** 109 drivers, 29472 manufacturer IDs
+**Total:** 111 drivers, 29500+ manufacturer IDs
 
-*Generated: 2026-02-01T03:59:38.795Z*
+*Updated: 2026-02-02 (v5.8.1)*
+
+## Recent Additions (v5.8.x)
+- **illuminance_sensor** - TS0222 light sensor
+- **zigbee_repeater** - TS0207 signal extender

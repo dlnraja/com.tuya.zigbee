@@ -1,5 +1,5 @@
 # ZHA & Z2M Quirks Analysis for Universal Tuya Zigbee
-> Generated: January 31, 2026 | Version: 5.6.0
+> Generated: February 2, 2026 | Version: 5.8.1
 
 ## Sources Analyzed
 - **ZHA**: `zigpy/zha-device-handlers/zhaquirks/tuya/__init__.py`
