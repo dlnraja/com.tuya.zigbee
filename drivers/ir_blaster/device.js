@@ -434,9 +434,22 @@ class IrBlasterDevice extends ZigBeeDevice {
           await zclNode.endpoints[1].clusters.onOff?.setOn();
         }
       } else {
-        // Fallback to OnOff
-        await zclNode.endpoints[1].clusters.onOff?.setOn();
-        this.log('IR learn started via OnOff fallback');
+        // v5.8.1: Try Tuya DP for learn mode if no Zosung cluster
+        const tuyaCluster = zclNode.endpoints[1].clusters.tuya;
+        if (tuyaCluster) {
+          try {
+            // DP1 = learn mode on some Tuya IR blasters
+            await tuyaCluster.datapoint({ dp: 1, datatype: 1, data: Buffer.from([1]) });
+            this.log('IR learn started via Tuya DP1');
+          } catch (tuyaErr) {
+            this.log('Tuya DP1 failed, trying OnOff:', tuyaErr.message);
+            await zclNode.endpoints[1].clusters.onOff?.setOn();
+            this.log('IR learn started via OnOff fallback');
+          }
+        } else {
+          await zclNode.endpoints[1].clusters.onOff?.setOn();
+          this.log('IR learn started via OnOff fallback');
+        }
       }
 
       // Initialize advanced receive listener
@@ -1091,13 +1104,33 @@ class IrBlasterDevice extends ZigBeeDevice {
   }
 
   // Handle Tuya IR datapoint
+  // v5.8.1: Enhanced Tuya DP handling for IR blasters without Zosung clusters
   _handleTuyaIRDatapoint(data) {
-    this.log('Tuya IR datapoint:', data);
+    this.log('[TUYA-IR] Datapoint received:', JSON.stringify({ dp: data.dp, type: data.datatype, len: data.data?.length }));
 
+    // DP 201: IR code received (learning result)
     if (data.dp === 201 && data.datatype === 3) {
-      // IR code received via Tuya DP
       const code = data.data.toString('base64');
+      this.log('[TUYA-IR] ✅ Learned code via DP201:', code.substring(0, 50) + '...');
       this._handleLearnedCode(code);
+    }
+    // DP 202: Learning status (some devices)
+    else if (data.dp === 202) {
+      const status = data.data.readUInt8?.(0) ?? data.data[0];
+      this.log(`[TUYA-IR] Learning status: ${status} (0=idle, 1=learning, 2=success, 3=timeout)`);
+      if (status === 2 && this._learningState === 1) {
+        this.log('[TUYA-IR] ✅ Learning successful, waiting for code...');
+      }
+    }
+    // DP 1: Some IR blasters use DP1 for learn mode toggle
+    else if (data.dp === 1) {
+      const learnOn = data.data.readUInt8?.(0) ?? data.data[0];
+      this.log(`[TUYA-IR] Learn mode: ${learnOn ? 'ON' : 'OFF'}`);
+      this._learningState = learnOn ? 1 : 0;
+    }
+    // DP 2: IR code to send (echo back)
+    else if (data.dp === 2 && data.datatype === 3) {
+      this.log('[TUYA-IR] IR send echo received');
     }
   }
 

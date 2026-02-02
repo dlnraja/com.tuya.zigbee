@@ -31,14 +31,26 @@ class Button3GangDevice extends ButtonDevice {
 
   async _setupE000Detection(zclNode) {
     const mfr = this.getData()?.manufacturerName || this.getSetting?.('zb_manufacturer_name') || '';
-    if (!mfr.toLowerCase().includes('famkxci2')) return;
-
-    this.log('[BUTTON3-E000] 🔧 LoraTap TS0043 E000 setup...');
+    
+    // v5.8.1: Always setup E000 for all 3-button devices (GitHub #98)
+    // LoraTap TS0043 and similar devices use onOff commands or cluster 0xE000
+    this.log('[BUTTON3-E000] 🔧 Setting up button detection for 3-button device...');
+    this.log(`[BUTTON3-E000] 📋 Manufacturer: ${mfr || 'unknown'}`);
     this._e000Dedup = {};
 
+    // Setup onOff command listeners on all 3 endpoints
     for (let ep = 1; ep <= 3; ep++) {
-      const cluster = zclNode?.endpoints?.[ep]?.clusters?.onOff || zclNode?.endpoints?.[ep]?.clusters?.[6];
-      if (!cluster?.on) continue;
+      const endpoint = zclNode?.endpoints?.[ep];
+      if (!endpoint) {
+        this.log(`[BUTTON3-E000] ⚠️ EP${ep} not available`);
+        continue;
+      }
+
+      const cluster = endpoint?.clusters?.onOff || endpoint?.clusters?.[6];
+      if (!cluster) {
+        this.log(`[BUTTON3-E000] ⚠️ EP${ep} no onOff cluster`);
+        continue;
+      }
 
       const handle = async (cmd, type) => {
         const now = Date.now();
@@ -48,10 +60,60 @@ class Button3GangDevice extends ButtonDevice {
         await this.triggerButtonPress(ep, type);
       };
 
-      cluster.on('commandOn', () => handle('on', 'single'));
-      cluster.on('commandOff', () => handle('off', 'double'));
-      cluster.on('commandToggle', () => handle('toggle', 'long'));
+      // Listen for onOff commands (button presses)
+      if (cluster.on) {
+        cluster.on('commandOn', () => handle('on', 'single'));
+        cluster.on('commandOff', () => handle('off', 'double'));
+        cluster.on('commandToggle', () => handle('toggle', 'long'));
+      }
+
+      // v5.8.1: Also listen for attribute reports (some devices use this instead)
+      if (cluster.on) {
+        cluster.on('attr.onOff', (value) => {
+          this.log(`[BUTTON3-E000] 📊 EP${ep} onOff attr: ${value}`);
+          // Attribute change = button press detected
+          handle('attr', 'single');
+        });
+      }
+
       this.log(`[BUTTON3-E000] ✅ EP${ep} listeners ready`);
+    }
+
+    // v5.8.1: Setup BoundCluster for cluster 0xE000 if available
+    await this._setupE000BoundCluster(zclNode);
+  }
+
+  // v5.8.1: Setup BoundCluster for cluster 0xE000 (GitHub #98)
+  async _setupE000BoundCluster(zclNode) {
+    try {
+      let TuyaE000BoundCluster;
+      try {
+        TuyaE000BoundCluster = require('../../lib/clusters/TuyaE000BoundCluster');
+      } catch (e) {
+        this.log('[BUTTON3-E000] ℹ️ TuyaE000BoundCluster not available');
+        return;
+      }
+
+      for (let ep = 1; ep <= 3; ep++) {
+        const endpoint = zclNode?.endpoints?.[ep];
+        if (!endpoint) continue;
+
+        const boundCluster = new TuyaE000BoundCluster({
+          device: this,
+          onButtonPress: async (button, pressType) => {
+            const buttonNum = (button >= 1 && button <= 3) ? button : ep;
+            this.log(`[BUTTON3-E000] 🔘 Button ${buttonNum} ${pressType.toUpperCase()} (BoundCluster EP${ep})`);
+            await this.triggerButtonPress(buttonNum, pressType);
+          }
+        });
+
+        boundCluster.endpoint = ep;
+        if (!endpoint.bindings) endpoint.bindings = {};
+        endpoint.bindings[57344] = boundCluster;
+        this.log(`[BUTTON3-E000] ✅ BoundCluster EP${ep} cluster 57344`);
+      }
+    } catch (err) {
+      this.log('[BUTTON3-E000] ⚠️ BoundCluster setup error:', err.message);
     }
   }
 
