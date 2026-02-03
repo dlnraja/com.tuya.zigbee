@@ -1,4 +1,7 @@
 {
+  "5.8.7": {
+    "en": "🐛 v5.8.7: CRITICAL FIX - Fixed MODULE_NOT_FOUND error for color-space/rgb affecting water_tank_monitor, water_valve_smart, weather_station_outdoor drivers. Pinned color-space to v1.15.0 via npm overrides. (Diag 36a1439f)"
+  },
   "5.8.6": {
     "en": "🔧 v5.8.6: Z2M INTEGRATION - Universal fallback driver now uses DeviceFingerprintDB for automatic DP mapping. Known devices get capabilities and DP converters from Z2M-style config database. Improved auto-detection for unknown Tuya devices."
   },
