@@ -446,8 +446,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/doorbell/assets/images/small.png",
-    "large": "/drivers/doorbell/assets/images/large.png"
+    "small": "drivers/doorbell/assets/images/small.png",
+    "large": "drivers/doorbell/assets/images/large.png"
   },
   "platforms": [
     "local"

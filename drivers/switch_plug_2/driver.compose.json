@@ -197,8 +197,8 @@
     }
   },
   "images": {
-    "small": "/drivers/switch_plug_2/assets/images/small.png",
-    "large": "/drivers/switch_plug_2/assets/images/large.png"
+    "small": "drivers/switch_plug_2/assets/images/small.png",
+    "large": "drivers/switch_plug_2/assets/images/large.png"
   },
   "platforms": [
     "local"

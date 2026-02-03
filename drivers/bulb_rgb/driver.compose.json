@@ -713,8 +713,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/bulb_rgb/assets/images/small.png",
-    "large": "/drivers/bulb_rgb/assets/images/large.png"
+    "small": "drivers/bulb_rgb/assets/images/small.png",
+    "large": "drivers/bulb_rgb/assets/images/large.png"
   },
   "platforms": [
     "local"

@@ -224,8 +224,8 @@
     }
   },
   "images": {
-    "small": "/drivers/vibration_sensor/assets/images/small.png",
-    "large": "/drivers/vibration_sensor/assets/images/large.png"
+    "small": "drivers/vibration_sensor/assets/images/small.png",
+    "large": "drivers/vibration_sensor/assets/images/large.png"
   },
   "platforms": [
     "local"
