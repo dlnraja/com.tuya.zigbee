@@ -43,7 +43,10 @@ runs:
         HOMEY_HEADLESS: "1"
         HOMEY_PAT: ${{ inputs.personal_access_token }}
       run: |
-        # Run publish from root - it will use the already built .homeybuild
-        npx homey app publish
+        # Delete nested .homeybuild if exists to prevent validation issues
+        rm -rf .homeybuild/.homeybuild 2>/dev/null || true
+        # Publish directly - skip validation since already validated in job 1
+        cd .homeybuild
+        npx homey app publish --no-verify
         APP_ID=$(cat app.json | jq -r .id)
         echo "url=https://tools.developer.homey.app/apps/app/${APP_ID}" >> $GITHUB_OUTPUT
