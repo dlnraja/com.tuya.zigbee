@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.6** | 🔧 v5.8.6: Z2M INTEGRATION - Universal fallback driver now uses DeviceFingerp... |
 | **v5.8.5** | 🔧 v5.8.5: CRITICAL FIX - Fingerprint case sensitivity restored. All 4700+ ma... |
 | **v5.8.4** | 🔧 v5.8.4: FORUM FIXES - 1) Motion sensor holdoff timer (Forum #1335 FinnKje)... |
 | **v5.8.3** | 🔧 v5.8.3: FORUM FIXES - 1) _TZE284_debczeci presence sensor config (Diag 757... |
@@ -78,7 +79,6 @@
 | **v5.7.49** | 🔋⚡ SMART DETECTION SYSTEM: NEW SmartBatteryManager & SmartEnergyManager auto... |
 | **v5.7.48** | 🔧 MULTI-DEVICE FIX: 1) SOIL SENSOR: Fixed crash on init - soil_sensor_moistu... |
 | **v5.7.47** | ⏰ CLIMATE SENSOR TIME SYNC FIX: LCD climate sensors (_TZE284_vvmbj46n, _TZE28... |
-| **v5.7.46** | 🔄 COMMUNITY SYNC ENHANCED: Monthly fingerprint workflow now extracts product... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
