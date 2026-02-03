@@ -107,9 +107,11 @@ MANUFACTURER_IDS_AUDIT.json
 # Archive folder
 .archive/
 
-# Large image assets (xlarge and large not needed for runtime - small.png is sufficient)
-**/xlarge.png
-**/large.png
+# NOTE: large.png and xlarge.png are REQUIRED for App Store publishing
+# Do NOT exclude them - Homey App Store guidelines require:
+# - small.png (75x75) - required
+# - large.png (500x500) - required  
+# - xlarge.png (1000x1000) - optional but recommended
 
 # Learnmode SVGs (optional, reduces payload significantly)
 **/learnmode.svg
