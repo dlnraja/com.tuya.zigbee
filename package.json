@@ -67,7 +67,12 @@
     "node": ">=22.0.0"
   },
   "dependencies": {
-    "homey-zigbeedriver": "^2.2.2"
+    "color-space": "1.15.0",
+    "homey-zigbeedriver": "^2.2.2",
+    "zigbee-clusters": "^2.6.0"
+  },
+  "overrides": {
+    "color-space": "1.15.0"
   },
   "devDependencies": {
     "@octokit/rest": "^22.0.1",
