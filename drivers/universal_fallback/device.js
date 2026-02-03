@@ -3,11 +3,13 @@
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 const { syncDeviceTime } = require('../../lib/tuya/TuyaTimeSync');
+const DeviceFingerprintDB = require('../../lib/tuya/DeviceFingerprintDB');
 
 /**
- * UNIVERSAL FALLBACK DEVICE - v5.5.631
+ * UNIVERSAL FALLBACK DEVICE - v5.8.6
  * Intelligent auto-detection for unknown Tuya/Zigbee devices
  * 
+ * v5.8.6: Z2M INTEGRATION - Uses DeviceFingerprintDB for known device configs
  * v5.5.631: SDK3 BEST PRACTICE - Uses registerCapability() from homey-zigbeedriver
  * Source: athombv.github.io/node-homey-zigbeedriver/ZigBeeDevice.html
  */
@@ -33,15 +35,25 @@ class UniversalFallbackDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('[UNIVERSAL] ═══════════════════════════════════════════════════');
-    this.log('[UNIVERSAL] �� Universal Fallback Device v5.5.624');
+    this.log('[UNIVERSAL] 🔧 Universal Fallback Device v5.8.6 (Z2M Enhanced)');
     
     const mfr = this.getSetting('zb_manufacturer_name') || 'Unknown';
-    const model = this.getSetting('zb_modelId') || 'Unknown';
+    const model = this.getSetting('zb_model_id') || this.getSetting('zb_modelId') || 'Unknown';
     this.log('[UNIVERSAL] Device: ' + mfr + ' / ' + model);
 
     this._detectedCaps = [];
     this._dpLog = {};
     this.zclNode = zclNode;
+    this._manufacturerName = mfr;
+    this._modelId = model;
+
+    // v5.8.6: Z2M Integration - Load config from DeviceFingerprintDB
+    this._z2mConfig = DeviceFingerprintDB.getFingerprint(mfr);
+    this._z2mDpMap = DeviceFingerprintDB.getDPMapping(mfr);
+    if (this._z2mConfig) {
+      this.log('[UNIVERSAL] 📚 Z2M Config found: ' + (this._z2mConfig.type || 'unknown'));
+      this.log('[UNIVERSAL] 📚 DP mappings: ' + Object.keys(this._z2mDpMap).length);
+    }
 
     await this._detectCapabilities(zclNode);
     await this._registerSDK3Capabilities(zclNode);  // v5.5.631: SDK3 pattern
@@ -54,6 +66,16 @@ class UniversalFallbackDevice extends ZigBeeDevice {
   }
 
   async _detectCapabilities(zclNode) {
+    // v5.8.6: Z2M - Add capabilities from config first
+    if (this._z2mConfig?.capabilities) {
+      for (const cap of this._z2mConfig.capabilities) {
+        if (!this.hasCapability(cap)) {
+          try { await this.addCapability(cap); this._detectedCaps.push(cap); } catch (e) {}
+        }
+      }
+      this.log('[Z2M] Added caps from config: ' + this._z2mConfig.capabilities.join(', '));
+    }
+    
     this.log('[UNIVERSAL] 🔍 Detecting from clusters...');
     const clusters = [];
     
@@ -219,7 +241,23 @@ class UniversalFallbackDevice extends ZigBeeDevice {
   }
 
   _mapDPToCapability(dp, value, dataType) {
-    // Common DP patterns for Tuya devices
+    // v5.8.6: Z2M Integration - Use config from DeviceFingerprintDB first
+    if (this._z2mDpMap && this._z2mDpMap[dp]) {
+      const capability = this._z2mDpMap[dp];
+      const enrichedDp = this._z2mConfig?.dps?.[dp];
+      let convertedValue = value;
+      
+      // Apply converter if available
+      if (enrichedDp?.converter) {
+        convertedValue = DeviceFingerprintDB.convertDPValue(this._manufacturerName, dp, value);
+      }
+      
+      this.log('[Z2M-DP] DP' + dp + ' → ' + capability + ' = ' + convertedValue);
+      this._setCapSafe(capability, convertedValue);
+      return;
+    }
+    
+    // Fallback: Common DP patterns for Tuya devices
     const dpMaps = {
       // On/Off (DP 1-6 for multi-gang)
       1: () => this._setCapSafe('onoff', value === 1 || value === true),

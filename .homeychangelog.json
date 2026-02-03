@@ -1,4 +1,7 @@
 {
+  "5.8.6": {
+    "en": "🔧 v5.8.6: Z2M INTEGRATION - Universal fallback driver now uses DeviceFingerprintDB for automatic DP mapping. Known devices get capabilities and DP converters from Z2M-style config database. Improved auto-detection for unknown Tuya devices."
+  },
   "5.8.5": {
     "en": "🔧 v5.8.5: CRITICAL FIX - Fingerprint case sensitivity restored. All 4700+ manufacturerName fingerprints now use correct uppercase format (_TZ3000_, _TZE200_, etc). Fixes devices showing as 'Unknown Zigbee device' after v5.8.3 update. (Forum #1356 Patrick_Van_Deursen, Lasse_K, FrankP)"
   },
