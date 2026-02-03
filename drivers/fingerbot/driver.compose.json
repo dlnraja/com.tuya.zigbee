@@ -153,8 +153,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/fingerbot/assets/images/small.png",
-    "large": "/drivers/fingerbot/assets/images/large.png"
+    "small": "drivers/fingerbot/assets/images/small.png",
+    "large": "drivers/fingerbot/assets/images/large.png"
   },
   "platforms": [
     "local"

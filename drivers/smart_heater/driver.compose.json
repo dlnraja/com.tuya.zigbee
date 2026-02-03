@@ -197,8 +197,8 @@
     }
   },
   "images": {
-    "small": "/drivers/smart_heater/assets/images/small.png",
-    "large": "/drivers/smart_heater/assets/images/large.png"
+    "small": "drivers/smart_heater/assets/images/small.png",
+    "large": "drivers/smart_heater/assets/images/large.png"
   },
   "platforms": [
     "local"

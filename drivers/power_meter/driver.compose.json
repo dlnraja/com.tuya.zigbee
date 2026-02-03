@@ -361,8 +361,8 @@
     }
   },
   "images": {
-    "small": "/drivers/power_meter/assets/images/small.png",
-    "large": "/drivers/power_meter/assets/images/large.png"
+    "small": "drivers/power_meter/assets/images/small.png",
+    "large": "drivers/power_meter/assets/images/large.png"
   },
   "platforms": [
     "local"

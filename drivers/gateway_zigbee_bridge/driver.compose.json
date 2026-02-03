@@ -430,8 +430,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/gateway_zigbee_bridge/assets/images/small.png",
-    "large": "/drivers/gateway_zigbee_bridge/assets/images/large.png"
+    "small": "drivers/gateway_zigbee_bridge/assets/images/small.png",
+    "large": "drivers/gateway_zigbee_bridge/assets/images/large.png"
   },
   "platforms": [
     "local"

@@ -263,8 +263,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/usb_dongle_dual_repeater/assets/images/small.png",
-    "large": "/drivers/usb_dongle_dual_repeater/assets/images/large.png"
+    "small": "drivers/usb_dongle_dual_repeater/assets/images/small.png",
+    "large": "drivers/usb_dongle_dual_repeater/assets/images/large.png"
   },
   "platforms": [
     "local"

@@ -632,8 +632,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/plug_energy_monitor/assets/images/small.png",
-    "large": "/drivers/plug_energy_monitor/assets/images/large.png"
+    "small": "drivers/plug_energy_monitor/assets/images/small.png",
+    "large": "drivers/plug_energy_monitor/assets/images/large.png"
   },
   "platforms": [
     "local"

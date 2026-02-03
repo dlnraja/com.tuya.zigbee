@@ -715,8 +715,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/usb_outlet_advanced/assets/images/small.png",
-    "large": "/drivers/usb_outlet_advanced/assets/images/large.png"
+    "small": "drivers/usb_outlet_advanced/assets/images/small.png",
+    "large": "drivers/usb_outlet_advanced/assets/images/large.png"
   },
   "platforms": [
     "local"
