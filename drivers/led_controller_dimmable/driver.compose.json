@@ -213,8 +213,8 @@
     "subDevices": []
   },
   "images": {
-    "small": "/drivers/led_controller_dimmable/assets/images/small.png",
-    "large": "/drivers/led_controller_dimmable/assets/images/large.png"
+    "small": "drivers/led_controller_dimmable/assets/images/small.png",
+    "large": "drivers/led_controller_dimmable/assets/images/large.png"
   },
   "platforms": [
     "local"

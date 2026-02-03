@@ -439,8 +439,8 @@
     }
   ],
   "images": {
-    "small": "/drivers/lock_smart/assets/images/small.png",
-    "large": "/drivers/lock_smart/assets/images/large.png"
+    "small": "drivers/lock_smart/assets/images/small.png",
+    "large": "drivers/lock_smart/assets/images/large.png"
   },
   "platforms": [
     "local"

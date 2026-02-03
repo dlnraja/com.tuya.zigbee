@@ -34,8 +34,8 @@
     }
   },
   "images": {
-    "small": "/drivers/diy_custom_zigbee/assets/images/small.png",
-    "large": "/drivers/diy_custom_zigbee/assets/images/large.png"
+    "small": "drivers/diy_custom_zigbee/assets/images/small.png",
+    "large": "drivers/diy_custom_zigbee/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [

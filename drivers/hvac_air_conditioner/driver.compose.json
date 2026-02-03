@@ -105,8 +105,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "/drivers/hvac_air_conditioner/assets/images/small.png",
-    "large": "/drivers/hvac_air_conditioner/assets/images/large.png"
+    "small": "drivers/hvac_air_conditioner/assets/images/small.png",
+    "large": "drivers/hvac_air_conditioner/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [

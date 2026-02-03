@@ -232,8 +232,8 @@
     }
   },
   "images": {
-    "small": "/drivers/smart_breaker/assets/images/small.png",
-    "large": "/drivers/smart_breaker/assets/images/large.png"
+    "small": "drivers/smart_breaker/assets/images/small.png",
+    "large": "drivers/smart_breaker/assets/images/large.png"
   },
   "platforms": [
     "local"
