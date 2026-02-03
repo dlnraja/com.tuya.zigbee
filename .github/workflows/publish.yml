@@ -168,13 +168,9 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
 
-      # Using custom actions that include large.png fix workaround
-      # Official Athom actions have a known bug: large.png not copied to .homeybuild
-      # These custom actions still use the official Homey CLI internally
-      
-      - name:  Publish to Homey App Store
+      - name: 🚀 Publish to Homey App Store
         id: publish
-        uses: ./.github/actions/homey-app-publish
+        uses: athombv/github-action-homey-app-publish@v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
