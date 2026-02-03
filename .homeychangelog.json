@@ -1,4 +1,7 @@
 {
+  "5.8.5": {
+    "en": "🔧 v5.8.5: CRITICAL FIX - Fingerprint case sensitivity restored. All 4700+ manufacturerName fingerprints now use correct uppercase format (_TZ3000_, _TZE200_, etc). Fixes devices showing as 'Unknown Zigbee device' after v5.8.3 update. (Forum #1356 Patrick_Van_Deursen, Lasse_K, FrankP)"
+  },
   "5.8.4": {
     "en": "🔧 v5.8.4: FORUM FIXES - 1) Motion sensor holdoff timer (Forum #1335 FinnKje) - prevents false 'no motion' triggers from periodic sensor reports. Configurable 0-300s delay (default 60s). 2) MOES 4-button explicit Zigbee binding for cluster 0xE000 (Forum #1352 Freddyboy). 3) Fixed .homeyignore excluding large.png images which broke App Store publishing."
   },
