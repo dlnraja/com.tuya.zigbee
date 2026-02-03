@@ -333,8 +333,8 @@
     }
   },
   "images": {
-    "small": "/drivers/button_wireless_1/assets/images/small.png",
-    "large": "/drivers/button_wireless_1/assets/images/large.png"
+    "small": "drivers/button_wireless_1/assets/images/small.png",
+    "large": "drivers/button_wireless_1/assets/images/large.png"
   },
   "platforms": [
     "local"

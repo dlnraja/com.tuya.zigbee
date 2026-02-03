@@ -211,8 +211,8 @@
     }
   },
   "images": {
-    "small": "/drivers/valve_irrigation/assets/images/small.png",
-    "large": "/drivers/valve_irrigation/assets/images/large.png"
+    "small": "drivers/valve_irrigation/assets/images/small.png",
+    "large": "drivers/valve_irrigation/assets/images/large.png"
   },
   "platforms": [
     "local"
