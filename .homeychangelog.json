@@ -1,4 +1,7 @@
 {
+  "5.8.8": {
+    "en": "🛡️ v5.8.8: CRASH PREVENTION - Added safe flow card wrappers to radiator_controller and fan_controller drivers. Added null checks in enhanced-dp-handler.js for zclNode.endpoints access. Prevents crashes when flow cards are missing or device not fully initialized."
+  },
   "5.8.7": {
     "en": "🐛 v5.8.7: CRITICAL FIX - Fixed MODULE_NOT_FOUND error for color-space/rgb affecting water_tank_monitor, water_valve_smart, weather_station_outdoor drivers. Pinned color-space to v1.15.0 via npm overrides. (Diag 36a1439f)"
   },
