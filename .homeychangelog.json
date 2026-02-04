@@ -1,4 +1,7 @@
 {
+  "5.8.10": {
+    "en": "🔧 v5.8.10: FIX - water_valve_smart: Fixed flow card ID mismatch (leak_detected → leak_is_detected). Updated devDependencies (mocha, nyc)."
+  },
   "5.8.9": {
     "en": "🚨 v5.8.9: CRITICAL FIX - (1) soil_sensor crash fixed: getConditionCard→getDeviceConditionCard (Diag bad44983, 309a0ac2). (2) power_clamp_meter: Added fallback DP handling for PJ-1203A when profile detection fails. (3) button_wireless_4: _TZ3000_zgyzgdua already in mode-switch list. Users: Remove device, update app, re-pair."
   },

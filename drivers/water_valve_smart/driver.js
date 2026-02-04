@@ -26,15 +26,15 @@ class WaterValveSmartDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ water_valve_is_open');
     } catch (err) { this.log(`[FLOW] ⚠️ Invalid Flow Card ID: water_valve_is_open - ${err.message}`); }
 
-    // CONDITION: Leak detected (note: condition ID is water_valve_leak_detected, not leak_is_detected)
+    // CONDITION: Leak is detected (v5.8.10: Fixed ID to match driver.flow.compose.json)
     try {
-      this.homey.flow.getConditionCard('water_valve_smart_leak_detected')
+      this.homey.flow.getConditionCard('water_valve_smart_leak_is_detected')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_water') === true;
         });
-      this.log('[FLOW] ✅ water_valve_leak_detected');
-    } catch (err) { this.log(`[FLOW] ⚠️ Invalid Flow Card ID: water_valve_leak_detected - ${err.message}`); }
+      this.log('[FLOW] ✅ water_valve_leak_is_detected');
+    } catch (err) { this.log(`[FLOW] ⚠️ Invalid Flow Card ID: water_valve_leak_is_detected - ${err.message}`); }
 
     // CONDITION: Temperature above
     try {
