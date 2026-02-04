@@ -69,6 +69,9 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.15** | 🔘 v5.8.15: MOES BUTTON FIX - (1) Registered TuyaE000Cluster (0xE000/57344) w... |
+| **v5.8.14** | 🔄 v5.8.14: Z2M SYNC - Added fingerprints from Zigbee2MQTT changelog: (1) _TZ... |
+| **v5.8.13** | 🔓 v5.8.13: TAMPER FIX - (1) HybridSensorBase: Added alarm_tamper flow card t... |
 | **v5.8.12** | 🔧 v5.8.12: FORUM FIXES - (1) presence_sensor_radar: Fixed _TZE204_gkfbdvyx r... |
 | **v5.8.11** | 🔧 v5.8.11: COMMUNITY SYNC - Added fingerprints from JohanBendz PRs: _TZ3210_... |
 | **v5.8.10** | 🔧 v5.8.10: FIX - water_valve_smart: Fixed flow card ID mismatch (leak_detect... |
@@ -76,9 +79,6 @@
 | **v5.8.8** | 🛡️ v5.8.8: CRASH PREVENTION - Added safe flow card wrappers to radiator_cont... |
 | **v5.8.7** | 🐛 v5.8.7: CRITICAL FIX - Fixed MODULE_NOT_FOUND error for color-space/rgb af... |
 | **v5.8.6** | 🔧 v5.8.6: Z2M INTEGRATION - Universal fallback driver now uses DeviceFingerp... |
-| **v5.8.5** | 🔧 v5.8.5: CRITICAL FIX - Fingerprint case sensitivity restored. All 4700+ ma... |
-| **v5.8.4** | 🔧 v5.8.4: FORUM FIXES - 1) Motion sensor holdoff timer (Forum #1335 FinnKje)... |
-| **v5.8.3** | 🔧 v5.8.3: FORUM FIXES - 1) _TZE284_debczeci presence sensor config (Diag 757... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
