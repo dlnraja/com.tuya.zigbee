@@ -69,16 +69,6 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.8.12** | 🔧 FORUM FIXES - Fixed _TZE204_gkfbdvyx random motion triggers, physical button 10min notification spam |
-| **v5.8.11** | 🔧 COMMUNITY SYNC - Added fingerprints from JohanBendz PRs: _TZ3210_eejm8dcr, HOBEIAN/ZG-227Z |
-| **v5.8.10** | 🔧 FIX - water_valve_smart: Fixed flow card ID mismatch (leak_detected → leak_is_detected) |
-| **v5.8.9** | 🚨 CRITICAL FIX - soil_sensor crash fixed, power_clamp_meter fallback DP handling |
-| **v5.8.8** | 🛡️ CRASH PREVENTION - Safe flow card wrappers for radiator_controller, fan_controller |
-| **v5.8.7** | 🐛 CRITICAL FIX - Fixed MODULE_NOT_FOUND error for color-space/rgb |
-| **v5.8.6** | 🔧 Z2M INTEGRATION - Universal fallback driver with DeviceFingerprintDB |
-| **v5.8.5** | 🔧 CRITICAL FIX - Fingerprint case sensitivity restored (4700+ manufacturer IDs) |
-| **v5.8.4** | 🔧 FORUM FIXES - Motion sensor holdoff timer, presence sensor configs |
-| **v5.8.3** | 🔧 FORUM FIXES - _TZE284_debczeci presence sensor config |
 | **v5.8.12** | 🔧 v5.8.12: FORUM FIXES - (1) presence_sensor_radar: Fixed _TZE204_gkfbdvyx r... |
 | **v5.8.11** | 🔧 v5.8.11: COMMUNITY SYNC - Added fingerprints from JohanBendz PRs: _TZ3210_... |
 | **v5.8.10** | 🔧 v5.8.10: FIX - water_valve_smart: Fixed flow card ID mismatch (leak_detect... |
