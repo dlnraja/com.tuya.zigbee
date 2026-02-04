@@ -88,34 +88,54 @@ class RadiatorControllerDevice extends ZigBeeDevice {
   }
 
   async setupFlowCards() {
+    // Safe flow card getter to prevent crashes on missing cards
+    const safeGetCard = (type, id) => {
+      try {
+        if (type === 'trigger') return this.homey.flow.getDeviceTriggerCard(id);
+        if (type === 'condition') return this.homey.flow.getDeviceConditionCard(id);
+        if (type === 'action') return this.homey.flow.getDeviceActionCard(id);
+      } catch (e) {
+        this.log(`[FLOW] Card '${id}' not available: ${e.message}`);
+      }
+      return null;
+    };
+
     // Flow Triggers
-    this._radiatorModeChangedTrigger = this.homey.flow.getDeviceTriggerCard('radiator_mode_changed');
-    this._pilotSignalSentTrigger = this.homey.flow.getDeviceTriggerCard('pilot_signal_sent');
+    this._radiatorModeChangedTrigger = safeGetCard('trigger', 'radiator_mode_changed');
+    this._pilotSignalSentTrigger = safeGetCard('trigger', 'pilot_signal_sent');
 
     // Flow Conditions
-    this._radiatorIsHeatingCondition = this.homey.flow.getDeviceConditionCard('radiator_is_heating');
-    this._radiatorIsHeatingCondition.registerRunListener(async (args) => {
-      const isOn = this.getCapabilityValue('onoff');
-      const mode = this.getCapabilityValue('thermostat_mode');
-      return isOn && mode !== 'off';
-    });
+    this._radiatorIsHeatingCondition = safeGetCard('condition', 'radiator_is_heating');
+    if (this._radiatorIsHeatingCondition) {
+      this._radiatorIsHeatingCondition.registerRunListener(async (args) => {
+        const isOn = this.getCapabilityValue('onoff');
+        const mode = this.getCapabilityValue('thermostat_mode');
+        return isOn && mode !== 'off';
+      });
+    }
 
-    this._heatingModeIsCondition = this.homey.flow.getDeviceConditionCard('heating_mode_is');
-    this._heatingModeIsCondition.registerRunListener(async (args) => {
-      const currentMode = this.getCapabilityValue('thermostat_mode');
-      return currentMode === args.mode;
-    });
+    this._heatingModeIsCondition = safeGetCard('condition', 'heating_mode_is');
+    if (this._heatingModeIsCondition) {
+      this._heatingModeIsCondition.registerRunListener(async (args) => {
+        const currentMode = this.getCapabilityValue('thermostat_mode');
+        return currentMode === args.mode;
+      });
+    }
 
     // Flow Actions
-    this._setHeatingModeAction = this.homey.flow.getDeviceActionCard('set_heating_mode');
-    this._setHeatingModeAction.registerRunListener(async (args) => {
-      return this._setHeatingMode(args.mode);
-    });
+    this._setHeatingModeAction = safeGetCard('action', 'set_heating_mode');
+    if (this._setHeatingModeAction) {
+      this._setHeatingModeAction.registerRunListener(async (args) => {
+        return this._setHeatingMode(args.mode);
+      });
+    }
 
-    this._sendPilotSignalAction = this.homey.flow.getDeviceActionCard('send_pilot_signal');
-    this._sendPilotSignalAction.registerRunListener(async (args) => {
-      return this._sendPilotWireSignal(args.signal);
-    });
+    this._sendPilotSignalAction = safeGetCard('action', 'send_pilot_signal');
+    if (this._sendPilotSignalAction) {
+      this._sendPilotSignalAction.registerRunListener(async (args) => {
+        return this._sendPilotWireSignal(args.signal);
+      });
+    }
   }
 
   async _setRadiatorPower(value) {
