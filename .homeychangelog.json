@@ -1,4 +1,7 @@
 {
+  "5.8.18": {
+    "en": "🔗 v5.8.18: UNIVERSAL CLUSTER SUPPORT - Dynamic registration of unknown/manufacturer-specific clusters. All drivers now auto-detect and bind to clusters 0xE001, 0xED00, 0xFCC0, 0xFF01, 0xFC00+. Works with Tuya, ZCL, hybrid, Xiaomi/Aqara, and any Zigbee source."
+  },
   "5.8.17": {
     "en": "🔧 v5.8.17: REPEATER FIX - Added _TZ3000_sgpbz53b, _TZ3000_kxlmv9ag to zigbee_repeater driver to prevent TS0207 USB repeaters being wrongly detected as water leak sensors (Z2M #30556, #23458)."
   },
