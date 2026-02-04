@@ -83,6 +83,22 @@
         "de": "Wird ausgelöst, wenn der Batteriestand unter den Schwellenwert fällt"
       },
       "args": []
+    },
+    {
+      "id": "water_leak_sensor_tamper_true",
+      "title": {
+        "en": "Tamper alert",
+        "nl": "Sabotage alarm",
+        "fr": "Alerte sabotage",
+        "de": "Manipulationsalarm"
+      },
+      "hint": {
+        "en": "Triggers when the sensor detects tampering (case opened)",
+        "nl": "Triggert wanneer de sensor sabotage detecteert (behuizing geopend)",
+        "fr": "Se déclenche quand le capteur détecte un sabotage (boîtier ouvert)",
+        "de": "Wird ausgelöst, wenn der Sensor eine Manipulation erkennt (Gehäuse geöffnet)"
+      },
+      "args": []
     }
   ],
   "conditions": [

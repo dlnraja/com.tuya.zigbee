@@ -1,4 +1,13 @@
 {
+  "5.8.15": {
+    "en": "🔘 v5.8.15: MOES BUTTON FIX - (1) Registered TuyaE000Cluster (0xE000/57344) with zigbee-clusters SDK. (2) button_wireless_4: Added tuyaE000 cluster listeners for proper event routing. Fixes _TZ3000_zgyzgdua physical buttons not triggering flows. (GitHub #1327)"
+  },
+  "5.8.14": {
+    "en": "🔄 v5.8.14: Z2M SYNC - Added fingerprints from Zigbee2MQTT changelog: (1) _TZE200_k1tumq4t TV02-Zigbee TRV. (2) SONOFF MG1_5RZ 5.8GHz presence radar. (3) Nedis ZBPB10BK SOS/Panic button."
+  },
+  "5.8.13": {
+    "en": "🔓 v5.8.13: TAMPER FIX - (1) HybridSensorBase: Added alarm_tamper flow card triggering to _triggerCustomFlowsIfNeeded. (2) water_leak_sensor: Added missing tamper flow card. (3) gas_sensor: Added missing tamper flow card. (4) doorbell: Added alarm_tamper capability and DP4 mapping. All tamper-enabled drivers now properly trigger flow cards."
+  },
   "5.8.12": {
     "en": "🔧 v5.8.12: FORUM FIXES - (1) presence_sensor_radar: Fixed _TZE204_gkfbdvyx random motion triggers by ignoring state=2 (radar noise). (2) PhysicalButtonMixin: Fixed 10min notification spam by skipping unchanged state reports."
   },
