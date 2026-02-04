@@ -112,6 +112,26 @@
         "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt - Batterie bald ersetzen!"
       },
       "args": []
+    },
+    {
+      "id": "co_sensor_tamper_true",
+      "title": {
+        "en": "Tamper alarm triggered",
+        "fr": "Alarme anti-sabotage déclenchée",
+        "nl": "Sabotage alarm geactiveerd",
+        "de": "Manipulationsalarm ausgelöst"
+      },
+      "args": []
+    },
+    {
+      "id": "co_sensor_tamper_false",
+      "title": {
+        "en": "Tamper alarm cleared",
+        "fr": "Alarme anti-sabotage terminée",
+        "nl": "Sabotage alarm opgeheven",
+        "de": "Manipulationsalarm beendet"
+      },
+      "args": []
     }
   ],
   "conditions": [

@@ -45,6 +45,26 @@
       "args": []
     },
     {
+      "id": "motion_sensor_tamper_true",
+      "title": {
+        "en": "Tamper alarm triggered",
+        "fr": "Alarme anti-sabotage déclenchée",
+        "nl": "Sabotage alarm geactiveerd",
+        "de": "Manipulationsalarm ausgelöst"
+      },
+      "args": []
+    },
+    {
+      "id": "motion_sensor_tamper_false",
+      "title": {
+        "en": "Tamper alarm cleared",
+        "fr": "Alarme anti-sabotage terminée",
+        "nl": "Sabotage alarm opgeheven",
+        "de": "Manipulationsalarm beendet"
+      },
+      "args": []
+    },
+    {
       "id": "motion_sensor_lux_changed",
       "title": {
         "en": "Luminance changed",
