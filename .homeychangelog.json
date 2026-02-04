@@ -1,4 +1,7 @@
 {
+  "5.8.11": {
+    "en": "🔧 v5.8.11: COMMUNITY SYNC - Added fingerprints from JohanBendz PRs: _TZ3210_eejm8dcr (RGB LED Strip), HOBEIAN/ZG-227Z (temp/humidity sensor). All 30+ open PRs reviewed and integrated."
+  },
   "5.8.10": {
     "en": "🔧 v5.8.10: FIX - water_valve_smart: Fixed flow card ID mismatch (leak_detected → leak_is_detected). Updated devDependencies (mocha, nyc)."
   },
