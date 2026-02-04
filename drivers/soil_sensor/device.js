@@ -472,20 +472,22 @@ class SoilSensorDevice extends TuyaHybridDevice {
     this._conditionMoistureAbove = null;
     this._conditionTemperatureAbove = null;
 
+    // v5.8.9: CRITICAL FIX - Use getDeviceConditionCard instead of getConditionCard
+    // getConditionCard is for app-level cards, getDeviceConditionCard is for driver-level cards
     try {
-      this._conditionMoistureBelow = this.homey.flow.getConditionCard('soil_sensor_moisture_below');
+      this._conditionMoistureBelow = this.homey.flow.getDeviceConditionCard('soil_sensor_moisture_below');
     } catch (e) {
       this.log('[SOIL] ⚠️ Condition card soil_sensor_moisture_below not available:', e.message);
     }
 
     try {
-      this._conditionMoistureAbove = this.homey.flow.getConditionCard('soil_sensor_moisture_above');
+      this._conditionMoistureAbove = this.homey.flow.getDeviceConditionCard('soil_sensor_moisture_above');
     } catch (e) {
       this.log('[SOIL] ⚠️ Condition card soil_sensor_moisture_above not available:', e.message);
     }
 
     try {
-      this._conditionTemperatureAbove = this.homey.flow.getConditionCard('soil_sensor_temperature_above');
+      this._conditionTemperatureAbove = this.homey.flow.getDeviceConditionCard('soil_sensor_temperature_above');
     } catch (e) {
       this.log('[SOIL] ⚠️ Condition card soil_sensor_temperature_above not available:', e.message);
     }
