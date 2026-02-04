@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.8.12",
+  "version": "5.8.15",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -4455,6 +4455,28 @@
             "example": "passed"
           }
         ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gas_sensor"
+          }
+        ]
+      },
+      {
+        "id": "gas_sensor_tamper_true",
+        "title": {
+          "en": "Tamper alert",
+          "nl": "Sabotage alarm",
+          "fr": "Alerte sabotage",
+          "de": "Manipulationsalarm"
+        },
+        "hint": {
+          "en": "Triggers when the sensor detects tampering or fault condition",
+          "nl": "Triggert wanneer de sensor sabotage of een storing detecteert",
+          "fr": "Se déclenche quand le capteur détecte un sabotage ou une défaillance",
+          "de": "Wird ausgelöst, wenn der Sensor eine Manipulation oder einen Fehler erkennt"
+        },
         "args": [
           {
             "type": "device",
@@ -11032,6 +11054,28 @@
           "nl": "Triggert wanneer het batterijniveau onder de drempel zakt",
           "fr": "Se déclenche quand le niveau de batterie passe sous le seuil",
           "de": "Wird ausgelöst, wenn der Batteriestand unter den Schwellenwert fällt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=water_leak_sensor"
+          }
+        ]
+      },
+      {
+        "id": "water_leak_sensor_tamper_true",
+        "title": {
+          "en": "Tamper alert",
+          "nl": "Sabotage alarm",
+          "fr": "Alerte sabotage",
+          "de": "Manipulationsalarm"
+        },
+        "hint": {
+          "en": "Triggers when the sensor detects tampering (case opened)",
+          "nl": "Triggert wanneer de sensor sabotage detecteert (behuizing geopend)",
+          "fr": "Se déclenche quand le capteur détecte un sabotage (boîtier ouvert)",
+          "de": "Wird ausgelöst, wenn der Sensor eine Manipulation erkennt (Gehäuse geöffnet)"
         },
         "args": [
           {
@@ -25993,10 +26037,12 @@
           "_TZE200_kzm5w4iz",
           "_TZE284_3qhgndv6",
           "heiman",
+          "nedis",
           "orvibo",
           "woox"
         ],
         "productId": [
+          "ZBPB10BK",
           "TS0218",
           "TS0601",
           "TS0215",
@@ -37655,7 +37701,8 @@
         "alarm_motion",
         "alarm_contact",
         "measure_battery",
-        "alarm_generic"
+        "alarm_generic",
+        "alarm_tamper"
       ],
       "energy": {
         "batteries": [
@@ -51286,6 +51333,8 @@
           "smartech",
           "smartvill",
           "snzb-06p",
+          "sonoff",
+          "mg1_5rz",
           "spectrum brands",
           "sr-zg",
           "stelpro",
@@ -51325,6 +51374,7 @@
           "zigbee2mqtt"
         ],
         "productId": [
+          "MG1_5RZ",
           "TS0225",
           "ZG-204ZL",
           "ZG-204ZV",
@@ -52617,6 +52667,7 @@
           "_TZE200_i48qyn9s",
           "_TZE200_iyizdvls",
           "_TZE200_jkfbph7l",
+          "_TZE200_k1tumq4t",
           "_TZE200_kds0pmmv",
           "_TZE200_kfvq6avy",
           "_TZE200_kkr3igo4",
