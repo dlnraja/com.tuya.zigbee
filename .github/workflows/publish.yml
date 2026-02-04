@@ -1,3 +1,7 @@
+# Universal Tuya Zigbee - Homey App Publish Workflow
+# v5.8.12 - Updated 2026-02-04
+# Automatically validates and publishes to Homey App Store
+
 name: 🚀 Homey App Publish
 
 on:
@@ -11,6 +15,7 @@ on:
       - 'lib/**'
       - 'drivers/**'
       - 'assets/**'
+      - 'locales/**'
   workflow_dispatch:
     inputs:
       force:
@@ -30,10 +35,12 @@ concurrency:
 
 env:
   NODE_VERSION: "20"
+  APP_VERSION: "5.8.12"
   # Known issues tracked:
   # - Athom CLI validation bug with images (use continue-on-error)
   # - Settings keys: zb_model_id NOT zb_modelId
   # - Flow cards: NO titleFormatted with [[device]] in triggers
+  # - getConditionCard vs getDeviceConditionCard (app-level vs driver-level)
 
 jobs:
   validate:
@@ -98,10 +105,12 @@ jobs:
           NAME=$(node -p "require('./app.json').name.en")
           ID=$(node -p "require('./app.json').id")
           DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          MFRS=$(grep -ohE '"_TZ[^"]+"' drivers/*/driver.compose.json 2>/dev/null | sort -u | wc -l)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "name=$NAME" >> $GITHUB_OUTPUT
           echo "id=$ID" >> $GITHUB_OUTPUT
-          echo "📦 $NAME v$VERSION ($ID) - $DRIVERS drivers"
+          echo "drivers=$DRIVERS" >> $GITHUB_OUTPUT
+          echo "📦 $NAME v$VERSION ($ID) - $DRIVERS drivers, $MFRS manufacturer IDs"
 
       - name: 🔍 Validate (Athom Official)
         id: validate

@@ -1,35 +1,62 @@
-name: Monthly Device Scan
+# Universal Tuya Zigbee - Monthly Device Scan
+# v5.8.12 - Updated 2026-02-04
+# Scans Z2M for new Tuya devices and creates issues for missing fingerprints
+
+name: 📡 Monthly Device Scan
 
 on:
   schedule:
-    - cron: '0 0 1 * *'
+    - cron: '0 0 1 * *'  # 1st of month at midnight UTC
   workflow_dispatch:
+
+env:
+  NODE_VERSION: '20'
+  APP_VERSION: '5.8.12'
 
 jobs:
   scan:
+    name: 🔍 Scan Z2M for New Devices
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       
-      - name: Setup Node
+      - name: 📦 Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: ${{ env.NODE_VERSION }}
       
-      - name: Scan zigbee2mqtt converters
+      - name: 🔍 Scan zigbee2mqtt converters
         run: |
+          echo "## 📡 Z2M Scan Results" >> $GITHUB_STEP_SUMMARY
           echo "Scanning zigbee2mqtt for new Tuya devices..."
           curl -s https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.ts > /tmp/tuya.ts
+          # Match both _TZ3000 and _TZE200/_TZE204/_TZE284 patterns
           grep -oE "_TZ[A-Z0-9]{4}_[a-z0-9]{8}" /tmp/tuya.ts | sort -u > /tmp/z2m_ids.txt
-          echo "Found $(wc -l < /tmp/z2m_ids.txt) manufacturer IDs"
+          Z2M_COUNT=$(wc -l < /tmp/z2m_ids.txt)
+          echo "Found $Z2M_COUNT manufacturer IDs in Z2M"
+          echo "| Source | Count |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Z2M Total | $Z2M_COUNT |" >> $GITHUB_STEP_SUMMARY
       
-      - name: Compare with current DB
+      - name: 📊 Compare with current DB
         run: |
           echo "Comparing with existing manufacturerName entries..."
-          grep -ohE '"_TZ[^"]+"|"_TZE[^"]+"' drivers/*/driver.compose.json | sort -u > /tmp/current_ids.txt
+          grep -ohE '"_TZ[^"]+"' drivers/*/driver.compose.json | tr -d '"' | sort -u > /tmp/current_ids.txt
+          CURRENT_COUNT=$(wc -l < /tmp/current_ids.txt)
           comm -23 /tmp/z2m_ids.txt /tmp/current_ids.txt > /tmp/missing_ids.txt
-          echo "Missing IDs: $(wc -l < /tmp/missing_ids.txt)"
-          cat /tmp/missing_ids.txt
+          MISSING_COUNT=$(wc -l < /tmp/missing_ids.txt)
+          echo "Current IDs: $CURRENT_COUNT"
+          echo "Missing IDs: $MISSING_COUNT"
+          echo "| Current App | $CURRENT_COUNT |" >> $GITHUB_STEP_SUMMARY
+          echo "| Missing | $MISSING_COUNT |" >> $GITHUB_STEP_SUMMARY
+          if [ "$MISSING_COUNT" -gt 0 ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### Missing IDs (first 20)" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            head -20 /tmp/missing_ids.txt >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          fi
       
       - name: Create issue if new devices found
         if: ${{ hashFiles('/tmp/missing_ids.txt') != '' }}

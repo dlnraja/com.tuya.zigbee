@@ -1,3 +1,7 @@
+# Universal Tuya Zigbee - Auto-Respond to Issues/PRs
+# v5.8.12 - Updated 2026-02-04
+# Automatically responds to new issues and PRs with helpful information
+
 name: 🤖 Auto-Respond Issues/PRs
 
 on:
@@ -5,6 +9,10 @@ on:
     types: [opened]
   pull_request:
     types: [opened]
+
+permissions:
+  issues: write
+  pull-requests: write
 
 jobs:
   respond:
@@ -35,8 +43,9 @@ jobs:
               msg += `🔗 [Open Developer Tools](https://tools.developer.homey.app)\n\n`;
               msg += `### 💡 Common Issues:\n`;
               msg += `- **Device shows "unknown"**: Re-pair after app update\n`;
-              msg += `- **Wrong driver**: Check fingerprint conflicts\n`;
-              msg += `- **Buttons not working**: Check TS004F scene mode\n\n`;
+              msg += `- **Wrong driver**: Check fingerprint conflicts (same mfr + different productId is OK)\n`;
+              msg += `- **Buttons not working**: Check TS004F scene mode or physical button flow cards\n`;
+              msg += `- **Random motion triggers**: Update to v5.8.12 (throttling fix)\n\n`;
             }
             
             msg += `*🤖 Auto-response - maintainer will review soon.*`;

@@ -1,8 +1,17 @@
+# Universal Tuya Zigbee - Code Quality Checks
+# v5.8.12 - Updated 2026-02-04
+# Checks for common bugs and code patterns
+
 name: 🔍 Code Quality Check
 
 on:
   pull_request:
     branches: [master, main]
+  push:
+    branches: [master, main]
+    paths:
+      - '**.js'
+      - 'drivers/**/*.json'
   workflow_dispatch:
 
 jobs:
@@ -37,9 +46,24 @@ jobs:
             echo "✅ Imports OK" >> $GITHUB_STEP_SUMMARY
           fi
 
-      - name: 📊 Stats
+      - name: � Check getConditionCard vs getDeviceConditionCard
+        run: |
+          # Check for wrong flow card method usage
+          WRONG_METHOD=$(grep -rn "getConditionCard" drivers/ --include="*.js" 2>/dev/null | grep -v "getDeviceConditionCard" | wc -l)
+          if [ "$WRONG_METHOD" -gt 0 ]; then
+            echo "⚠️ Found $WRONG_METHOD uses of getConditionCard (check if should be getDeviceConditionCard)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ Flow card methods OK" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: �📊 Stats
         run: |
           DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          MFRS=$(grep -ohE '"_TZ[^"]+"' drivers/*/driver.compose.json 2>/dev/null | sort -u | wc -l)
+          FLOWCARDS=$(grep -c '"id":' drivers/*/driver.flow.compose.json 2>/dev/null | awk -F: '{sum+=$2} END {print sum}')
+          echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Metric | Count |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
           echo "| Drivers | $DRIVERS |" >> $GITHUB_STEP_SUMMARY
+          echo "| Manufacturer IDs | $MFRS |" >> $GITHUB_STEP_SUMMARY
+          echo "| Flow Cards | $FLOWCARDS |" >> $GITHUB_STEP_SUMMARY
