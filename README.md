@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.10** | 🔧 v5.8.10: FIX - water_valve_smart: Fixed flow card ID mismatch (leak_detect... |
 | **v5.8.9** | 🚨 v5.8.9: CRITICAL FIX - (1) soil_sensor crash fixed: getConditionCard→getDe... |
 | **v5.8.8** | 🛡️ v5.8.8: CRASH PREVENTION - Added safe flow card wrappers to radiator_cont... |
 | **v5.8.7** | 🐛 v5.8.7: CRITICAL FIX - Fixed MODULE_NOT_FOUND error for color-space/rgb af... |
@@ -78,7 +79,6 @@
 | **v5.8.3** | 🔧 v5.8.3: FORUM FIXES - 1) _TZE284_debczeci presence sensor config (Diag 757... |
 | **v5.7.52** | 🔧 FORUM FIX #1341: (1) soil_sensor crash fixed - added missing moisture_belo... |
 | **v5.7.51** | 🔧 MANUFACTURER NAME FIX v5.7.51: Robust ManufacturerNameHelper with _g()/_v(... |
-| **v5.7.50** | 🌐 UNIVERSAL PROTOCOL SUPPORT v5.7.50: ManufacturerNameHelper with fallback c... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
