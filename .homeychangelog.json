@@ -1,4 +1,7 @@
 {
+  "5.8.12": {
+    "en": "🔧 v5.8.12: FORUM FIXES - (1) presence_sensor_radar: Fixed _TZE204_gkfbdvyx random motion triggers by ignoring state=2 (radar noise). (2) PhysicalButtonMixin: Fixed 10min notification spam by skipping unchanged state reports."
+  },
   "5.8.11": {
     "en": "🔧 v5.8.11: COMMUNITY SYNC - Added fingerprints from JohanBendz PRs: _TZ3210_eejm8dcr (RGB LED Strip), HOBEIAN/ZG-227Z (temp/humidity sensor). All 30+ open PRs reviewed and integrated."
   },
