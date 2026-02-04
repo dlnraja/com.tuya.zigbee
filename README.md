@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.9** | 🚨 v5.8.9: CRITICAL FIX - (1) soil_sensor crash fixed: getConditionCard→getDe... |
 | **v5.8.8** | 🛡️ v5.8.8: CRASH PREVENTION - Added safe flow card wrappers to radiator_cont... |
 | **v5.8.7** | 🐛 v5.8.7: CRITICAL FIX - Fixed MODULE_NOT_FOUND error for color-space/rgb af... |
 | **v5.8.6** | 🔧 v5.8.6: Z2M INTEGRATION - Universal fallback driver now uses DeviceFingerp... |
@@ -78,7 +79,6 @@
 | **v5.7.52** | 🔧 FORUM FIX #1341: (1) soil_sensor crash fixed - added missing moisture_belo... |
 | **v5.7.51** | 🔧 MANUFACTURER NAME FIX v5.7.51: Robust ManufacturerNameHelper with _g()/_v(... |
 | **v5.7.50** | 🌐 UNIVERSAL PROTOCOL SUPPORT v5.7.50: ManufacturerNameHelper with fallback c... |
-| **v5.7.49** | 🔋⚡ SMART DETECTION SYSTEM: NEW SmartBatteryManager & SmartEnergyManager auto... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
