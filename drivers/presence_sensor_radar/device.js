@@ -1149,6 +1149,7 @@ const SENSOR_CONFIGS = {
     sensors: [
       '_TZE200_rhgsbacq',  // HOBEIAN 10G radar multi-sensor
       '_TZE204_rhgsbacq',
+      '_TZE284_ozf4e02o',  // v5.8.13: Merrytek MSA201Z (Z2M #30930)
     ],
     modelId: 'ZG-227Z',  // v5.5.740: From PR #1306
     battery: false,
