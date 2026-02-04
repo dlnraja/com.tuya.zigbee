@@ -1,4 +1,5 @@
-# Monthly Community Sync - Universal Tuya Zigbee
+# Universal Tuya Zigbee - Monthly Community Sync
+# v5.8.12 - Updated 2026-02-04
 # Automatically sources fingerprints from community projects
 # ENRICHMENT ONLY - Never overwrites base code, only adds complementary data
 # Sources: JohanBendz fork, Zigbee2MQTT, ZHA, GitHub Issues/PRs
@@ -22,6 +23,7 @@ permissions:
 
 env:
   NODE_VERSION: '20'
+  APP_VERSION: '5.8.12'
 
 jobs:
   community-sync:
