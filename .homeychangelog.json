@@ -1,4 +1,22 @@
 {
+  "5.8.25": {
+    "en": "🔧 v5.8.25: COLOR-SPACE FIX - Added color-space-shim.js to prevent Homey sandbox require('./rgb') errors. Patches module cache before homey-zigbeedriver loads. BSEED TS0726/_TZ3002_pzao9ls1 confirmed working (Diag edc28fd4, 69a5bad9)."
+  },
+  "5.8.24": {
+    "en": "🔘 v5.8.24: BUTTON FIX - Added TuyaE000 (0xE000) cluster listener to ButtonDevice.js for MOES/Cam button press detection. Fixes _TZ3000_5bpeda8u not registering presses."
+  },
+  "5.8.23": {
+    "en": "🔗 v5.8.23: EXOTIC CLUSTERS - Added TuyaE001Cluster (0xE001, power-on/switch mode), TuyaE002Cluster (0xE002, sensor alarms), TuyaOnOffExtCluster (0x8001 backlight, 0x8002 power-on). Switches now auto-detect ZCL vs Tuya DP for settings. Based on zigpy #823."
+  },
+  "5.8.22": {
+    "en": "🔧 v5.8.22: IAS ZONE FIX - Added explicit IAS Zone binding for TS0203 contact sensors (blutch32 forum #1362). Fixes alarm detection not working on _TZ3000_996rpfy6 and similar pure IAS Zone devices."
+  },
+  "5.8.21": {
+    "en": "🔧 v5.8.21: FINGERPRINT FIX - Added uppercase _TZ3002/_TZ3290/_TZ3040 fingerprints (forum #1361). Fixes BSEED TS0726 and other devices showing as 'unknown'. 10 drivers updated."
+  },
+  "5.8.20": {
+    "en": "🔧 v5.8.20: DRIVER FIX - (1) Fixed MODULE_NOT_FOUND ./rgb in water_tank_monitor, water_valve_smart, weather_station_outdoor. (2) Fixed invalid flow card IDs (send_dp_boolean). (3) Fixed water_valve_smart flow card log messages. (4) Added _TZE204_zpvusbtv fingerprint to switch_2gang (Z2M #28026)."
+  },
   "5.8.19": {
     "en": "🔗 v5.8.19: EXTENDED CLUSTER SUPPORT - Added 0xE002 (sensor alarms), 0xFD02 (switch modules) based on zigpy #823 documentation. Pre-registers 7 manufacturer clusters for full Tuya/Xiaomi compatibility."
   },
