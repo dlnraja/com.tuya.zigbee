@@ -1,4 +1,7 @@
 {
+  "5.8.9": {
+    "en": "🚨 v5.8.9: CRITICAL FIX - (1) soil_sensor crash fixed: getConditionCard→getDeviceConditionCard (Diag bad44983, 309a0ac2). (2) power_clamp_meter: Added fallback DP handling for PJ-1203A when profile detection fails. (3) button_wireless_4: _TZ3000_zgyzgdua already in mode-switch list. Users: Remove device, update app, re-pair."
+  },
   "5.8.8": {
     "en": "🛡️ v5.8.8: CRASH PREVENTION - Added safe flow card wrappers to radiator_controller and fan_controller drivers. Added null checks in enhanced-dp-handler.js for zclNode.endpoints access. Prevents crashes when flow cards are missing or device not fully initialized."
   },
