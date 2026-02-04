@@ -107,6 +107,22 @@
         }
       ],
       "args": []
+    },
+    {
+      "id": "gas_sensor_tamper_true",
+      "title": {
+        "en": "Tamper alert",
+        "nl": "Sabotage alarm",
+        "fr": "Alerte sabotage",
+        "de": "Manipulationsalarm"
+      },
+      "hint": {
+        "en": "Triggers when the sensor detects tampering or fault condition",
+        "nl": "Triggert wanneer de sensor sabotage of een storing detecteert",
+        "fr": "Se déclenche quand le capteur détecte un sabotage ou une défaillance",
+        "de": "Wird ausgelöst, wenn der Sensor eine Manipulation oder einen Fehler erkennt"
+      },
+      "args": []
     }
   ],
   "conditions": [

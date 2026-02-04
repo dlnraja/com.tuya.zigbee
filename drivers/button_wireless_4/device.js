@@ -663,6 +663,49 @@ class Button4GangDevice extends ButtonDevice {
 
       this.log('[BUTTON4-E000] ✅ MOES TS0044 cluster 0xE000 BoundCluster setup complete');
 
+      // v5.8.15: CRITICAL FIX - Use REGISTERED cluster for proper event handling
+      // TuyaE000Cluster is now registered via Cluster.addCluster() in registerClusters.js
+      // This allows SDK to properly route frames to cluster.on() listeners
+      for (let ep = 1; ep <= 4; ep++) {
+        const endpoint = zclNode?.endpoints?.[ep];
+        if (!endpoint) continue;
+
+        // Access the registered cluster by name 'tuyaE000'
+        const e000Cluster = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344];
+        if (e000Cluster && typeof e000Cluster.on === 'function') {
+          this.log(`[BUTTON4-E000] 📡 EP${ep} - Setting up tuyaE000 cluster listeners...`);
+          
+          // Listen for buttonPress command (id: 0x00)
+          e000Cluster.on('buttonPress', async ({ button, pressType }) => {
+            const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
+            const buttonNum = (button >= 1 && button <= 4) ? button : ep;
+            const press = pressTypeMap[pressType] || 'single';
+            this.log(`[BUTTON4-E000] 🔘 tuyaE000.buttonPress: Button ${buttonNum} ${press.toUpperCase()}`);
+            await this.triggerButtonPress(buttonNum, press);
+          });
+
+          // Listen for buttonEvent command (id: 0x01)
+          e000Cluster.on('buttonEvent', async ({ data }) => {
+            this.log(`[BUTTON4-E000] 📥 tuyaE000.buttonEvent: data=${data?.toString?.('hex')}`);
+            this._handleRawE000Frame(ep, { data });
+          });
+
+          // Listen for any command on the cluster
+          e000Cluster.on('command', async (commandName, payload) => {
+            this.log(`[BUTTON4-E000] 📥 tuyaE000.command: ${commandName}`, payload);
+            if (payload?.button !== undefined) {
+              const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
+              const buttonNum = (payload.button >= 1 && payload.button <= 4) ? payload.button : ep;
+              await this.triggerButtonPress(buttonNum, pressTypeMap[payload.pressType] || 'single');
+            }
+          });
+
+          this.log(`[BUTTON4-E000] ✅ tuyaE000 cluster listeners configured for EP${ep}`);
+        } else {
+          this.log(`[BUTTON4-E000] ⚠️ EP${ep} - tuyaE000 cluster not available (will use BoundCluster fallback)`);
+        }
+      }
+
       // v5.5.923: CRITICAL FIX - Add raw frame interceptor for cluster 57344
       // BoundCluster may not receive frames if endpoint doesn't route unknown clusters
       // This intercepts ALL frames at the endpoint level before they're discarded
