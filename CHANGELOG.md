@@ -6,6 +6,54 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.8.12] - 2026-02-04
+
+### 🔧 Forum Fixes
+
+- **_TZE204_gkfbdvyx Random Motion Fix (Ronny Forum)**
+  - Fixed random motion triggers by ignoring state=2 (radar noise from fans, curtains)
+  - Added motion throttling: 10s minimum between state changes
+  - Added motion debounce: 5s for motion=false to prevent flapping
+
+- **Physical Button 10min Notification Fix (Cyril Forum)**
+  - Fixed false physical button triggers from periodic attribute reports
+  - Now skips unchanged state reports (same value = periodic report, not button press)
+
+---
+
+## [5.8.11] - 2026-02-04
+
+### 🔧 Community Sync
+
+- **JohanBendz PR Integration**
+  - Added `_TZ3210_eejm8dcr` to `led_strip_rgbw` driver (PR #1075)
+  - Added `HOBEIAN` and `ZG-227Z` to `temphumidsensor` driver (PR #1332)
+  - Reviewed 30+ open PRs - 95%+ already integrated
+
+---
+
+## [5.8.10] - 2026-02-04
+
+### 🔧 Bug Fixes
+
+- **water_valve_smart Flow Card Fix**
+  - Fixed flow card ID mismatch: `leak_detected` → `leak_is_detected`
+  - Updated devDependencies: mocha ^10.8.2, nyc ^17.1.0
+
+---
+
+## [5.8.9] - 2026-02-03
+
+### 🚨 Critical Fixes
+
+- **soil_sensor Crash Fix**
+  - Fixed `getConditionCard` → `getDeviceConditionCard` (Diag bad44983, 309a0ac2)
+  
+- **power_clamp_meter Fallback DP Handling**
+  - Added fallback DP handling for PJ-1203A when profile detection fails
+
+---
+
 ## [5.5.792] - 2026-01-25
 
 ### 🐛 Bug Fixes

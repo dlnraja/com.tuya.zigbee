@@ -34,11 +34,11 @@
 | **Total Device IDs** | 4,200+ |
 | **Product IDs** | 350+ |
 | **Manufacturer IDs** | 3,800+ |
-| **Drivers** | 86 |
+| **Drivers** | 111 |
 | **SVG Icons** | 86 |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-01-19 |
+| **Last Updated** | 2026-02-04 |
 
 ### 📦 Top 15 Drivers by Device IDs
 
@@ -69,16 +69,16 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.8.11** | 🔧 v5.8.11: COMMUNITY SYNC - Added fingerprints from JohanBendz PRs: _TZ3210_... |
-| **v5.8.10** | 🔧 v5.8.10: FIX - water_valve_smart: Fixed flow card ID mismatch (leak_detect... |
-| **v5.8.9** | 🚨 v5.8.9: CRITICAL FIX - (1) soil_sensor crash fixed: getConditionCard→getDe... |
-| **v5.8.8** | 🛡️ v5.8.8: CRASH PREVENTION - Added safe flow card wrappers to radiator_cont... |
-| **v5.8.7** | 🐛 v5.8.7: CRITICAL FIX - Fixed MODULE_NOT_FOUND error for color-space/rgb af... |
-| **v5.8.6** | 🔧 v5.8.6: Z2M INTEGRATION - Universal fallback driver now uses DeviceFingerp... |
-| **v5.8.5** | 🔧 v5.8.5: CRITICAL FIX - Fingerprint case sensitivity restored. All 4700+ ma... |
-| **v5.8.4** | 🔧 v5.8.4: FORUM FIXES - 1) Motion sensor holdoff timer (Forum #1335 FinnKje)... |
-| **v5.8.3** | 🔧 v5.8.3: FORUM FIXES - 1) _TZE284_debczeci presence sensor config (Diag 757... |
-| **v5.7.52** | 🔧 FORUM FIX #1341: (1) soil_sensor crash fixed - added missing moisture_belo... |
+| **v5.8.12** | 🔧 FORUM FIXES - Fixed _TZE204_gkfbdvyx random motion triggers, physical button 10min notification spam |
+| **v5.8.11** | 🔧 COMMUNITY SYNC - Added fingerprints from JohanBendz PRs: _TZ3210_eejm8dcr, HOBEIAN/ZG-227Z |
+| **v5.8.10** | 🔧 FIX - water_valve_smart: Fixed flow card ID mismatch (leak_detected → leak_is_detected) |
+| **v5.8.9** | 🚨 CRITICAL FIX - soil_sensor crash fixed, power_clamp_meter fallback DP handling |
+| **v5.8.8** | 🛡️ CRASH PREVENTION - Safe flow card wrappers for radiator_controller, fan_controller |
+| **v5.8.7** | 🐛 CRITICAL FIX - Fixed MODULE_NOT_FOUND error for color-space/rgb |
+| **v5.8.6** | 🔧 Z2M INTEGRATION - Universal fallback driver with DeviceFingerprintDB |
+| **v5.8.5** | 🔧 CRITICAL FIX - Fingerprint case sensitivity restored (4700+ manufacturer IDs) |
+| **v5.8.4** | 🔧 FORUM FIXES - Motion sensor holdoff timer, presence sensor configs |
+| **v5.8.3** | 🔧 FORUM FIXES - _TZE284_debczeci presence sensor config |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
