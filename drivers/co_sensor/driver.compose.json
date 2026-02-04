@@ -9,7 +9,8 @@
   "capabilities": [
     "alarm_co",
     "measure_battery",
-    "measure_co"
+    "measure_co",
+    "alarm_tamper"
   ],
   "energy": {
     "batteries": [
