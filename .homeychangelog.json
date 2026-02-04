@@ -1,4 +1,7 @@
 {
+  "5.8.16": {
+    "en": "🔘 v5.8.16: BUTTON & TAMPER ENHANCEMENTS - (1) button_wireless_2/6/8: Added E000 cluster + tuyaE000 support. (2) scene_switch_1-6: Added E000 cluster detection, fixed import. (3) motion/contact/water/co/gas sensors: Added alarm_tamper capability. (4) motion_sensor/co_sensor: Added tamper flow cards."
+  },
   "5.8.15": {
     "en": "🔘 v5.8.15: MOES BUTTON FIX - (1) Registered TuyaE000Cluster (0xE000/57344) with zigbee-clusters SDK. (2) button_wireless_4: Added tuyaE000 cluster listeners for proper event routing. Fixes _TZ3000_zgyzgdua physical buttons not triggering flows. (GitHub #1327)"
   },

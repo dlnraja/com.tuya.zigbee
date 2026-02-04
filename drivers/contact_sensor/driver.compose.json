@@ -8,7 +8,8 @@
   "class": "sensor",
   "capabilities": [
     "alarm_contact",
-    "measure_battery"
+    "measure_battery",
+    "alarm_tamper"
   ],
   "energy": {
     "batteries": [
