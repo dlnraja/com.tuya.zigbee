@@ -1,4 +1,7 @@
 {
+  "5.8.17": {
+    "en": "🔧 v5.8.17: REPEATER FIX - Added _TZ3000_sgpbz53b, _TZ3000_kxlmv9ag to zigbee_repeater driver to prevent TS0207 USB repeaters being wrongly detected as water leak sensors (Z2M #30556, #23458)."
+  },
   "5.8.16": {
     "en": "🔘 v5.8.16: BUTTON & TAMPER ENHANCEMENTS - (1) button_wireless_2/6/8: Added E000 cluster + tuyaE000 support. (2) scene_switch_1-6: Added E000 cluster detection, fixed import. (3) motion/contact/water/co/gas sensors: Added alarm_tamper capability. (4) motion_sensor/co_sensor: Added tamper flow cards."
   },
