@@ -9,7 +9,8 @@
   "capabilities": [
     "alarm_motion",
     "measure_battery",
-    "measure_luminance"
+    "measure_luminance",
+    "alarm_tamper"
   ],
   "energy": {
     "batteries": [

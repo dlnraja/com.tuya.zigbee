@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.8.15",
+  "version": "5.8.16",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -3497,6 +3497,38 @@
         ]
       },
       {
+        "id": "co_sensor_tamper_true",
+        "title": {
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme anti-sabotage déclenchée",
+          "nl": "Sabotage alarm geactiveerd",
+          "de": "Manipulationsalarm ausgelöst"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=co_sensor"
+          }
+        ]
+      },
+      {
+        "id": "co_sensor_tamper_false",
+        "title": {
+          "en": "Tamper alarm cleared",
+          "fr": "Alarme anti-sabotage terminée",
+          "nl": "Sabotage alarm opgeheven",
+          "de": "Manipulationsalarm beendet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=co_sensor"
+          }
+        ]
+      },
+      {
         "id": "contact_sensor_opened",
         "highlight": true,
         "title": {
@@ -5855,6 +5887,38 @@
             "example": 75
           }
         ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=motion_sensor"
+          }
+        ]
+      },
+      {
+        "id": "motion_sensor_tamper_true",
+        "title": {
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme anti-sabotage déclenchée",
+          "nl": "Sabotage alarm geactiveerd",
+          "de": "Manipulationsalarm ausgelöst"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=motion_sensor"
+          }
+        ]
+      },
+      {
+        "id": "motion_sensor_tamper_false",
+        "title": {
+          "en": "Tamper alarm cleared",
+          "fr": "Alarme anti-sabotage terminée",
+          "nl": "Sabotage alarm opgeheven",
+          "de": "Manipulationsalarm beendet"
+        },
         "args": [
           {
             "type": "device",
@@ -32738,7 +32802,8 @@
       "capabilities": [
         "alarm_co",
         "measure_battery",
-        "measure_co"
+        "measure_co",
+        "alarm_tamper"
       ],
       "energy": {
         "batteries": [
@@ -32956,7 +33021,8 @@
       "class": "sensor",
       "capabilities": [
         "alarm_contact",
-        "measure_battery"
+        "measure_battery",
+        "alarm_tamper"
       ],
       "energy": {
         "batteries": [
@@ -39999,7 +40065,8 @@
         "alarm_co2",
         "measure_battery",
         "alarm_contact",
-        "alarm_gas"
+        "alarm_gas",
+        "alarm_tamper"
       ],
       "energy": {
         "batteries": [
@@ -46500,7 +46567,8 @@
       "capabilities": [
         "alarm_motion",
         "measure_battery",
-        "measure_luminance"
+        "measure_luminance",
+        "alarm_tamper"
       ],
       "energy": {
         "batteries": [
@@ -69143,7 +69211,8 @@
       "class": "sensor",
       "capabilities": [
         "alarm_water",
-        "measure_battery"
+        "measure_battery",
+        "alarm_tamper"
       ],
       "capabilitiesOptions": {
         "alarm_water": {
