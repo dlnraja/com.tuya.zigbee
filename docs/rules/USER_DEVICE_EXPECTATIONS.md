@@ -1,7 +1,7 @@
 # User Device Expectations & Diagnostic Summary
 
 This document summarizes user-reported devices and their expected behavior based on diagnostic logs and community feedback.
-**Last Updated**: 2026-01-31 (v5.5.999)
+**Last Updated**: 2026-02-04 (v5.8.25)
 
 > ⚠️ **CRITICAL RULE**: manufacturerName CAN appear in MULTIPLE drivers - this is NORMAL!
 > Fingerprint = manufacturerName + productId (COMBINED). Only remove if SAME mfr + SAME productId causes WRONG driver match.
@@ -10,7 +10,7 @@ This document summarizes user-reported devices and their expected behavior based
 
 ---
 
-## 📊 FORUM ISSUES TRACKER (Pages 53-56, Last 50 Messages)
+## 📊 FORUM ISSUES TRACKER (Pages 42-68, Feb 2026)
 
 ### ✅ FIXED ISSUES
 
@@ -46,8 +46,14 @@ This document summarizes user-reported devices and their expected behavior based
 | 23 | Jolink (PM) | Smoke Detector | unknown | TS0601 | Flow cards don't control device | ✅ IN CODE smoke_detector_advanced | Check sleepy device behavior |
 | 24 | Lars-Arne Kvien | Smart Button | unknown | unknown | Pairs as generic zigbee | ⚠️ Need interview | Post interview to forum |
 | 25 | Lars-Arne Kvien | Temp/Humidity | unknown | unknown | Pairs as generic zigbee | ⚠️ Need interview | Post interview to forum |
+| 26 | Hartmut_Dunker | BSEED 4-gang | `_TZ3002_pzao9ls1` | TS0726 | Unknown device v5.8.12 | ✅ IN CODE switch_4gang | **RE-PAIR REQUIRED** |
+| 27 | blutch32 | Contact Sensor | `_TZ3000_996rpfy6` | TS0203 | Alarm not working | ✅ v5.8.22 IAS bind + invert | **RE-PAIR REQUIRED** |
+| 28 | FrankP | IR Blaster | unknown | TS1201 | Not recognized v5.8.12 | ✅ IN CODE ir_blaster | **RE-PAIR REQUIRED** |
+| 29 | Lasse_K | Contact/Water | various | various | Unknown v5.8.12 | ✅ IN CODE | **RE-PAIR REQUIRED** |
+| 30 | Cam | 1-Button | `_TZ3000_5bpeda8u` | TS0041 | Not registering presses | ✅ IN CODE button_wireless_1 | **RE-PAIR REQUIRED** |
+| 31 | 4x4_Pete | ZG-204ZM | `HOBEIAN` | PIR+Radar | Battery spam, false temp/hum | ✅ v5.5.983 throttle | Check PIR_ONLY setting |
 
-### 📧 GITHUB PRs & ISSUES (Jan 2026)
+### 📧 GITHUB PRs & ISSUES (Jan-Feb 2026)
 
 | # | Type | Author | Description | Status |
 |---|------|--------|-------------|--------|

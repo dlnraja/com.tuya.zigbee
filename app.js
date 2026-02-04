@@ -1,5 +1,15 @@
 'use strict';
 
+// v5.8.25: Patch color-space module to fix Homey sandbox require('./rgb') error
+// Must be BEFORE any homey-zigbeedriver imports
+try {
+  const colorShim = require('./lib/shims/color-space-shim');
+  require.cache[require.resolve('color-space/hsv')] = { exports: colorShim.hsv };
+  require.cache[require.resolve('color-space/rgb')] = { exports: colorShim.rgb };
+  require.cache[require.resolve('color-space/xyz')] = { exports: colorShim.xyz };
+  require.cache[require.resolve('color-space/xyy')] = { exports: colorShim.xyy };
+} catch (e) { /* Shim not critical if color-space works */ }
+
 // v5.3.62: Prevent MaxListenersExceededWarning for apps with many devices
 // This is a global fix that applies to ALL EventEmitters in the app
 const { EventEmitter } = require('events');
@@ -629,9 +639,14 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       }
     */
 
-    // ACTION: Send DP Boolean (wrapped in try-catch v5.5.551)
+    // v5.8.20: Removed invalid flow card registrations (send_dp_boolean, etc.)
+    // Use tuya_dp_send from .homeycompose instead
+    // Registration handled by UniversalFlowCardLoader
+    this.log('ℹ️ Generic DP Flow Cards: use tuya_dp_send action card');
+    /*
+    // DISABLED: These flow cards don't exist - causes "Invalid Flow Card ID" error
     try {
-        this.homey.flow.getActionCard('send_dp_boolean')
+        this.homey.flow.getActionCard('send_dp_boolean_DISABLED')
           .registerRunListener(async (args) => {
             try {
               const device = args.device;
@@ -773,6 +788,8 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         // v5.5.556: Log to stdout only, not stderr
         this.log('⚠️ Error registering DP action flow cards:', err.message);
       }
+    */
+    // END v5.8.20: Disabled invalid flow card registrations
 
     } catch (err) {
       // v5.5.556: Log to stdout only, not stderr
