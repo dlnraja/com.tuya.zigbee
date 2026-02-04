@@ -1,4 +1,7 @@
 {
+  "5.8.19": {
+    "en": "🔗 v5.8.19: EXTENDED CLUSTER SUPPORT - Added 0xE002 (sensor alarms), 0xFD02 (switch modules) based on zigpy #823 documentation. Pre-registers 7 manufacturer clusters for full Tuya/Xiaomi compatibility."
+  },
   "5.8.18": {
     "en": "🔗 v5.8.18: UNIVERSAL CLUSTER SUPPORT - Dynamic registration of unknown/manufacturer-specific clusters. All drivers now auto-detect and bind to clusters 0xE001, 0xED00, 0xFCC0, 0xFF01, 0xFC00+. Works with Tuya, ZCL, hybrid, Xiaomi/Aqara, and any Zigbee source."
   },
