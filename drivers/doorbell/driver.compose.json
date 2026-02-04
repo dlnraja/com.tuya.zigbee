@@ -10,7 +10,8 @@
     "alarm_motion",
     "alarm_contact",
     "measure_battery",
-    "alarm_generic"
+    "alarm_generic",
+    "alarm_tamper"
   ],
   "energy": {
     "batteries": [
