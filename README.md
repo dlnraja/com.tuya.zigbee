@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.7** | 🐛 v5.8.7: CRITICAL FIX - Fixed MODULE_NOT_FOUND error for color-space/rgb af... |
 | **v5.8.6** | 🔧 v5.8.6: Z2M INTEGRATION - Universal fallback driver now uses DeviceFingerp... |
 | **v5.8.5** | 🔧 v5.8.5: CRITICAL FIX - Fingerprint case sensitivity restored. All 4700+ ma... |
 | **v5.8.4** | 🔧 v5.8.4: FORUM FIXES - 1) Motion sensor holdoff timer (Forum #1335 FinnKje)... |
@@ -78,7 +79,6 @@
 | **v5.7.50** | 🌐 UNIVERSAL PROTOCOL SUPPORT v5.7.50: ManufacturerNameHelper with fallback c... |
 | **v5.7.49** | 🔋⚡ SMART DETECTION SYSTEM: NEW SmartBatteryManager & SmartEnergyManager auto... |
 | **v5.7.48** | 🔧 MULTI-DEVICE FIX: 1) SOIL SENSOR: Fixed crash on init - soil_sensor_moistu... |
-| **v5.7.47** | ⏰ CLIMATE SENSOR TIME SYNC FIX: LCD climate sensors (_TZE284_vvmbj46n, _TZE28... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
