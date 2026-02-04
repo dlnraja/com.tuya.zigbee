@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.16** | 🔘 v5.8.16: BUTTON & TAMPER ENHANCEMENTS - (1) button_wireless_2/6/8: Added E... |
 | **v5.8.15** | 🔘 v5.8.15: MOES BUTTON FIX - (1) Registered TuyaE000Cluster (0xE000/57344) w... |
 | **v5.8.14** | 🔄 v5.8.14: Z2M SYNC - Added fingerprints from Zigbee2MQTT changelog: (1) _TZ... |
 | **v5.8.13** | 🔓 v5.8.13: TAMPER FIX - (1) HybridSensorBase: Added alarm_tamper flow card t... |
@@ -78,7 +79,6 @@
 | **v5.8.9** | 🚨 v5.8.9: CRITICAL FIX - (1) soil_sensor crash fixed: getConditionCard→getDe... |
 | **v5.8.8** | 🛡️ v5.8.8: CRASH PREVENTION - Added safe flow card wrappers to radiator_cont... |
 | **v5.8.7** | 🐛 v5.8.7: CRITICAL FIX - Fixed MODULE_NOT_FOUND error for color-space/rgb af... |
-| **v5.8.6** | 🔧 v5.8.6: Z2M INTEGRATION - Universal fallback driver now uses DeviceFingerp... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
