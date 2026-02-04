@@ -712,6 +712,11 @@ const SENSOR_CONFIGS = {
     suppressBatteryCapability: true,  // Never report battery
     invertPresence: false,  // v5.5.325: ZHA confirms NO inversion needed with correct enum handling
     presenceEnumMapping: { 0: false, 1: true, 2: true },  // v5.5.325: Correct enum->boolean mapping
+    // v5.8.12: RONNY FORUM FIX - Motion throttling to prevent random triggers
+    motionThrottleEnabled: true,
+    motionThrottleMs: 10000,       // Minimum 10s between motion state changes (was triggering randomly)
+    motionDebounceMs: 5000,        // 5s debounce for motion=false to prevent flapping
+    ignoreMovementState: true,     // v5.8.12: Ignore state=2 (movement) which causes random triggers
     dpMap: {
       // v5.5.325: PRESENCE - DP1 is ENUM not boolean!
       // 0=none (no presence), 1=presence (detected), 2=move (moving detected)
@@ -1458,16 +1463,16 @@ function transformPresence(value, type, invertPresence = false, configName = '')
     case 'presence_enum_gkfbdvyx':
       // v5.5.325: RONNY #782 - Specific handler for _TZE204_gkfbdvyx
       // ZHA confirmed: 0=none (false), 1=presence (true), 2=move (true)
-      // But value 2 (move) triggers spuriously from radar noise - treat with caution
+      // v5.8.12: RONNY FORUM - state=2 (move) causes random triggers, ignore it
       if (value === 0) {
         result = false;
       } else if (value === 1) {
         result = true;  // Confirmed presence
       } else if (value === 2) {
-        // v5.5.325: "move" state is unreliable - log but still map to true
-        // The debouncing will filter out spurious reports
-        console.log(`[PRESENCE-FIX] 🚶 gkfbdvyx: move state (2) detected - may be radar noise`);
-        result = true;
+        // v5.8.12: IGNORE "move" state completely - it causes random false triggers
+        // This is radar noise from environmental interference (fans, curtains, etc)
+        console.log(`[PRESENCE-FIX] 🚫 gkfbdvyx: IGNORING move state (2) - radar noise`);
+        return null;  // Return null to skip this update entirely
       } else {
         console.log(`[PRESENCE-FIX] ⚠️ gkfbdvyx: unknown enum value ${value}`);
         result = false;
