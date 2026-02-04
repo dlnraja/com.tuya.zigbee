@@ -130,3 +130,20 @@ _TZ3000_abc + TS0012 → dimmer_2gang
 }
 ```
 Device matches if manufacturerName IN list AND productId IN list.
+
+## EXTERNAL SYNC SOURCES
+- Z2M: github.com/Koenkk/zigbee2mqtt/issues (`_TZE284_`)
+- ZHA: github.com/zigpy/zha-device-handlers/issues
+- JohanBendz: github.com/JohanBendz/com.tuya.zigbee/pulls
+
+## VERSION RELEASE
+1. `npx homey app validate` → publish level
+2. Update `.homeycompose/app.json` version
+3. Add to `.homeychangelog.json` (TOP)
+4. `git commit && git push`
+
+## FLOW CARD RULES
+- Trigger: `getDeviceTriggerCard()` with empty args
+- Condition driver-level: `getDeviceConditionCard()`
+- Condition app-level: `getConditionCard()`
+- NO `[[device]]` in titleFormatted for triggers
