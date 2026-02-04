@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.17** | 🔧 v5.8.17: REPEATER FIX - Added _TZ3000_sgpbz53b, _TZ3000_kxlmv9ag to zigbee... |
 | **v5.8.16** | 🔘 v5.8.16: BUTTON & TAMPER ENHANCEMENTS - (1) button_wireless_2/6/8: Added E... |
 | **v5.8.15** | 🔘 v5.8.15: MOES BUTTON FIX - (1) Registered TuyaE000Cluster (0xE000/57344) w... |
 | **v5.8.14** | 🔄 v5.8.14: Z2M SYNC - Added fingerprints from Zigbee2MQTT changelog: (1) _TZ... |
@@ -78,7 +79,6 @@
 | **v5.8.10** | 🔧 v5.8.10: FIX - water_valve_smart: Fixed flow card ID mismatch (leak_detect... |
 | **v5.8.9** | 🚨 v5.8.9: CRITICAL FIX - (1) soil_sensor crash fixed: getConditionCard→getDe... |
 | **v5.8.8** | 🛡️ v5.8.8: CRASH PREVENTION - Added safe flow card wrappers to radiator_cont... |
-| **v5.8.7** | 🐛 v5.8.7: CRITICAL FIX - Fixed MODULE_NOT_FOUND error for color-space/rgb af... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
