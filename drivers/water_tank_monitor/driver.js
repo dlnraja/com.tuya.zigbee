@@ -1,16 +1,16 @@
 'use strict';
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
+const Homey = require('homey');
 
 /**
+ * v5.8.20: FIX MODULE_NOT_FOUND ./rgb - Use Homey.Driver instead of ZigBeeDriver
+ *          The ZigBeeDriver import triggers color-space dependency issue
  * v5.5.587: Added condition run listener for water_level_above
  * v5.5.556: Safe flow card registration - no stderr on missing cards
- * v5.5.534: FIXED to use ZigBeeDriver + await super.onInit()
  */
-class WaterTankMonitorDriver extends ZigBeeDriver {
+class WaterTankMonitorDriver extends Homey.Driver {
 
   async onInit() {
-    await super.onInit();
     this.log('Water Tank Monitor driver v5.5.587 initializing...');
 
     const safeGetTrigger = (id) => {

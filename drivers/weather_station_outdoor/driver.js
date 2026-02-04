@@ -1,11 +1,12 @@
 'use strict';
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
+const Homey = require('homey');
 
 /**
+ * v5.8.20: FIX MODULE_NOT_FOUND ./rgb - Use Homey.Driver instead of ZigBeeDriver
  * v5.5.581: CRITICAL FIX - Flow card run listeners were missing
  */
-class WeatherStationOutdoorDriver extends ZigBeeDriver {
+class WeatherStationOutdoorDriver extends Homey.Driver {
 
   async onInit() {
     this.log('WeatherStationOutdoorDriver v5.5.581 initialized');
