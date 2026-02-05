@@ -2,6 +2,7 @@
 
 const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 const IASAlarmFallback = require('../../lib/IASAlarmFallback');
+const IASZoneManager = require('../../lib/managers/IASZoneManager');
 const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHelper');
 
 /**
@@ -251,6 +252,15 @@ class WaterLeakSensorDevice extends HybridSensorBase {
     this._invertAlarm = this.getSetting('invert_alarm') || false;
 
     await super.onNodeInit({ zclNode });
+
+    // v5.8.28: CRITICAL FIX - IAS Zone enrollment (Lasse_K forum 'inactivated' fix)
+    // IASZoneManager.enrollIASZone() was defined but NEVER called, causing sensors to stay notEnrolled
+    try {
+      const iasManager = new IASZoneManager(this);
+      await iasManager.enrollIASZone();
+    } catch (e) {
+      this.log(`[WATER] ⚠️ IAS enrollment error (non-critical): ${e.message}`);
+    }
 
     // Log device-specific info
     const profile = this._deviceProfile;

@@ -1,6 +1,7 @@
 'use strict';
 
 const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const IASZoneManager = require('../../lib/managers/IASZoneManager');
 const { MotionLuxInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -541,6 +542,14 @@ class MotionSensorDevice extends HybridSensorBase {
     await this._ensureTuyaDPCapabilities();
 
     await super.onNodeInit({ zclNode });
+
+    // v5.8.28: CRITICAL FIX - IAS Zone enrollment (Lasse_K forum 'inactivated' fix)
+    try {
+      const iasManager = new IASZoneManager(this);
+      await iasManager.enrollIASZone();
+    } catch (e) {
+      this.log(`[MOTION] ⚠️ IAS enrollment error (non-critical): ${e.message}`);
+    }
 
     // v5.5.299: Initialize sleepy device state tracking
     this._isDeviceAwake = false;
