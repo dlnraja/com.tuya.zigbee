@@ -1,4 +1,7 @@
 {
+  "5.8.27": {
+    "en": "🔧 v5.8.27: BSEED 4-GANG FIX - EP2/EP3/EP4 now use Tuya DP fallback when ZCL onOff clusters are unavailable. Fixes gangs 2-4 not responding on TS0726 _TZ3002_pzao9ls1 (Hartmut_Dunker diag 83af3e29). Also adds Tuya DP listener for physical button detection on DP-fallback gangs."
+  },
   "5.8.26": {
     "en": "🔧 v5.8.26: BSEED 4-GANG FIX - EP2/EP3/EP4 now use Tuya DP fallback when ZCL onOff clusters are unavailable. Fixes gangs 2-4 not responding on TS0726 _TZ3002_pzao9ls1 (Hartmut_Dunker diag 83af3e29). Also adds Tuya DP listener for physical button detection on DP-fallback gangs."
   },
