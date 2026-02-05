@@ -1,7 +1,7 @@
 # User Device Expectations & Diagnostic Summary
 
 This document summarizes user-reported devices and their expected behavior based on diagnostic logs and community feedback.
-**Last Updated**: 2026-02-05 (v5.8.26)
+**Last Updated**: 2026-02-05 (v5.8.28)
 
 > ⚠️ **CRITICAL RULE**: manufacturerName CAN appear in MULTIPLE drivers - this is NORMAL!
 > Fingerprint = manufacturerName + productId (COMBINED). Only remove if SAME mfr + SAME productId causes WRONG driver match.
