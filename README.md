@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.30** | ⚡ v5.8.30: BATTERY SENSOR FIX - Enhanced passive Tuya DP listeners for batter... |
 | **v5.8.29** | 🌡️ v5.8.29: SENSOR FIXES - (1) Climate sensor: Fixed permissive mode overwri... |
 | **v5.8.28** | 🔒 v5.8.28: IAS ZONE ENROLLMENT FIX - Added IASZoneManager.enrollIASZone() to... |
 | **v5.8.27** | 🔧 v5.8.27: BSEED 4-GANG FIX - EP2/EP3/EP4 now use Tuya DP fallback when ZCL ... |
@@ -78,7 +79,6 @@
 | **v5.8.23** | 🔗 v5.8.23: EXOTIC CLUSTERS - Added TuyaE001Cluster (0xE001, power-on/switch ... |
 | **v5.8.22** | 🔧 v5.8.22: IAS ZONE FIX - Added explicit IAS Zone binding for TS0203 contact... |
 | **v5.8.21** | 🔧 v5.8.21: FINGERPRINT FIX - Added uppercase _TZ3002/_TZ3290/_TZ3040 fingerp... |
-| **v5.8.20** | 🔧 v5.8.20: DRIVER FIX - (1) Fixed MODULE_NOT_FOUND ./rgb in water_tank_monit... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
