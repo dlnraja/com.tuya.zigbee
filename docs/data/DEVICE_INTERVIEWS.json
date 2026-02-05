@@ -1,9 +1,9 @@
 {
-  "version": "5.7.20",
-  "lastUpdated": "2026-02-01",
-  "totalInterviews": 102,
+  "version": "5.8.30",
+  "lastUpdated": "2026-02-05",
+  "totalInterviews": 176,
   "sources": [
-    "Homey Community Forum (pages 1-56)",
+    "Homey Community Forum (pages 1-68)",
     "GitHub Issues/PRs (JohanBendz & dlnraja)",
     "User Diagnostic Reports (Gmail Jan 2026)",
     "Zigbee2MQTT Device Database",
@@ -1005,13 +1005,18 @@
         "source": "Forum Jan 28 2026 - Freddyboy",
         "diagnosticId": "ad2e946e-e40b-477f-912c-7825383619fb",
         "user": "Freddyboy",
-        "status": "investigating",
+        "status": "fixed",
         "priority": "high",
         "symptoms": [
           "No response to flows when pressing physical button",
           "No response when pressing icons"
         ],
-        "notes": "Cluster 0xE000 raw frame interceptor may need work"
+        "fix": {
+          "applied": true,
+          "version": "5.8.24",
+          "description": "TuyaE000 cluster registration + universal button press detection"
+        },
+        "notes": "Fixed via v5.7.35 universal E000 + v5.8.15 cluster registration + v5.8.24 TuyaE000"
       },
       {
         "id": "INT-162",
@@ -1020,11 +1025,16 @@
         "productId": "unknown",
         "source": "Forum Jan 27-31 2026 - Lasse_K",
         "user": "Lasse_K",
-        "status": "investigating",
+        "status": "fixed",
         "symptoms": [
           "Water sensor inactivated/not responding",
           "Contact sensor installed in reverse"
-        ]
+        ],
+        "fix": {
+          "applied": true,
+          "version": "5.8.28",
+          "description": "IAS Zone enrollment + auto-bind for water/contact/motion sensors"
+        }
       },
       {
         "id": "INT-163",
@@ -1033,8 +1043,13 @@
         "productId": "TS0601",
         "source": "Forum Jan 30 2026 - tlink",
         "user": "tlink",
-        "status": "investigating",
-        "symptoms": ["Not being recognized anymore", "Worked in October 2025"]
+        "status": "fixed",
+        "symptoms": ["Not being recognized anymore", "Worked in October 2025"],
+        "fix": {
+          "applied": true,
+          "version": "5.6.0",
+          "description": "Added to ZCL_ONLY_RADAR config with permissive mode"
+        }
       },
       {
         "id": "INT-164",
@@ -1908,6 +1923,7 @@
 
   "statistics": {
     "totalDevicesAnalyzed": 77,
+    "lastCodeVersion": "5.8.30",
     "byStatus": {
       "supported": 38,
       "fixed": 16,
