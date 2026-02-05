@@ -1,4 +1,7 @@
 {
+  "5.8.29": {
+    "en": "🌡️ v5.8.29: SENSOR FIXES - (1) Climate sensor: Fixed permissive mode overwriting temperature/humidity with alarm threshold DPs (Karsten_Hille forum). (2) Presence sensor radar: Fixed null presence being inverted to true, causing false motion triggers every 5min (FinnKje forum diag 7570421d)."
+  },
   "5.8.28": {
     "en": "🔒 v5.8.28: IAS ZONE ENROLLMENT FIX - Added IASZoneManager.enrollIASZone() to water_leak_sensor, contact_sensor, and motion_sensor. Fixes Lasse_K 'inactivated' water/contact sensors where IAS Zone enrollment was defined but never called. Sensors now properly write CIE address and enroll on init."
   },

@@ -1451,9 +1451,11 @@ function transformPresence(value, type, invertPresence = false, configName = '')
   let result;
 
   // v5.5.306: Handle null/undefined FIRST before any processing
+  // v5.8.29: CRITICAL FIX (FinnKje forum) - null/undefined ALWAYS = no motion
+  // Previously invertPresence turned null into true, causing false triggers every 5min
   if (value === null || value === undefined) {
     console.log(`[PRESENCE-FIX] ⚠️ NULL/undefined presence for ${configName}, defaulting to false`);
-    return invertPresence ? true : false;  // If inverted, null means presence
+    return false;
   }
 
   switch (type) {
