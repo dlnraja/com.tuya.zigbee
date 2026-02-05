@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.28** | 🔒 v5.8.28: IAS ZONE ENROLLMENT FIX - Added IASZoneManager.enrollIASZone() to... |
 | **v5.8.27** | 🔧 v5.8.27: BSEED 4-GANG FIX - EP2/EP3/EP4 now use Tuya DP fallback when ZCL ... |
 | **v5.8.26** | 🔧 v5.8.26: BSEED 4-GANG FIX - EP2/EP3/EP4 now use Tuya DP fallback when ZCL ... |
 | **v5.8.25** | 🔧 v5.8.25: COLOR-SPACE FIX - Added color-space-shim.js to prevent Homey sand... |
@@ -78,7 +79,6 @@
 | **v5.8.21** | 🔧 v5.8.21: FINGERPRINT FIX - Added uppercase _TZ3002/_TZ3290/_TZ3040 fingerp... |
 | **v5.8.20** | 🔧 v5.8.20: DRIVER FIX - (1) Fixed MODULE_NOT_FOUND ./rgb in water_tank_monit... |
 | **v5.8.19** | 🔗 v5.8.19: EXTENDED CLUSTER SUPPORT - Added 0xE002 (sensor alarms), 0xFD02 (... |
-| **v5.8.18** | 🔗 v5.8.18: UNIVERSAL CLUSTER SUPPORT - Dynamic registration of unknown/manuf... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
