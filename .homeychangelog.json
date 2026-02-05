@@ -1,4 +1,7 @@
 {
+  "5.8.30": {
+    "en": "⚡ v5.8.30: BATTERY SENSOR FIX - Enhanced passive Tuya DP listeners for battery-powered presence sensors (4x4_Pete ZG-204ZM). Added all event names (dataReport, dataResponse, report, data, set) + node-level command fallback + raw frame parsing. Fixes battery sensors that may not receive DP data."
+  },
   "5.8.29": {
     "en": "🌡️ v5.8.29: SENSOR FIXES - (1) Climate sensor: Fixed permissive mode overwriting temperature/humidity with alarm threshold DPs (Karsten_Hille forum). (2) Presence sensor radar: Fixed null presence being inverted to true, causing false motion triggers every 5min (FinnKje forum diag 7570421d)."
   },

@@ -2298,22 +2298,33 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     if (!ep1) return;
 
     // Listen for Tuya DP reports (cluster 0xEF00)
+    // v5.8.30: Enhanced with ALL event names (4x4_Pete battery sensor fix)
     try {
-      const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
+      const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184] ||
+        ep1.clusters?.['tuya'] || ep1.clusters?.['61184'] || ep1.clusters?.manuSpecificTuya;
       if (tuyaCluster?.on) {
-        tuyaCluster.on('response', (data) => {
-          this.log('[RADAR-BATTERY] Tuya response received');
-          this._handleTuyaResponse(data);
+        const events = ['response', 'reporting', 'datapoint', 'dataReport', 'dataResponse', 'report', 'data', 'set'];
+        for (const event of events) {
+          try {
+            tuyaCluster.on(event, (data) => {
+              this.log(`[RADAR-BATTERY] Tuya ${event} received`);
+              this._handleTuyaResponse(data);
+            });
+          } catch (e) { /* ignore */ }
+        }
+        this.log('[RADAR] ✅ Passive Tuya listener configured (all events)');
+      }
+    } catch (e) { /* ignore */ }
+
+    // v5.8.30: Node-level command listener as fallback (same as mains-powered)
+    try {
+      if (zclNode?.on) {
+        zclNode.on('command', (cmd) => {
+          if (cmd.cluster === 61184 || cmd.cluster === 'tuya') {
+            this.log('[RADAR-BATTERY] Node command received from Tuya cluster');
+            this._handleTuyaResponse(cmd.data || cmd);
+          }
         });
-        tuyaCluster.on('reporting', (data) => {
-          this.log('[RADAR-BATTERY] Tuya reporting received');
-          this._handleTuyaResponse(data);
-        });
-        tuyaCluster.on('datapoint', (data) => {
-          this.log('[RADAR-BATTERY] Tuya datapoint received');
-          this._handleTuyaResponse(data);
-        });
-        this.log('[RADAR] ✅ Passive Tuya listener configured');
       }
     } catch (e) { /* ignore */ }
 
@@ -2451,7 +2462,27 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     // Mark device as available when we receive data
     this.setAvailable().catch(() => { });
 
-    const dpId = data.dp || data.dpId || data.datapoint;
+    let dpId = data.dp || data.dpId || data.datapoint;
+
+    // v5.8.30: Raw Tuya frame parsing fallback (4x4_Pete battery sensor fix)
+    // When data arrives via node-level command listener, it may be a raw Buffer
+    // Format: [seq:2][dp:1][type:1][len:2][data:len]
+    if (dpId === undefined && data.data && (Buffer.isBuffer(data.data) || Array.isArray(data.data))) {
+      const bytes = Buffer.isBuffer(data.data) ? data.data : Buffer.from(data.data);
+      if (bytes.length >= 7) {
+        const dp = bytes[2];
+        const dpType = bytes[3];
+        const dpLen = (bytes[4] << 8) | bytes[5];
+        let value;
+        if (dpType === 1 && dpLen === 1) value = bytes[6]; // Bool
+        else if (dpType === 2 && dpLen === 4) value = bytes.readUInt32BE(6); // Value
+        else if (dpType === 4 && dpLen === 1) value = bytes[6]; // Enum
+        else value = bytes[6];
+        this.log(`[RADAR-BATTERY] 🔧 Parsed raw frame: DP${dp} type=${dpType} len=${dpLen} value=${value}`);
+        dpId = dp;
+        data = { dp, value, dpType, raw: true };
+      }
+    }
 
     // v5.7.52: CRITICAL FIX - Check static dpMap FIRST before auto-discovery
     // Peter #1342/#1343: DP4 was being classified as battery by auto-discovery
