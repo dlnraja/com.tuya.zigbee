@@ -1,7 +1,7 @@
 # User Device Expectations & Diagnostic Summary
 
 This document summarizes user-reported devices and their expected behavior based on diagnostic logs and community feedback.
-**Last Updated**: 2026-02-04 (v5.8.25)
+**Last Updated**: 2026-02-05 (v5.8.26)
 
 > ⚠️ **CRITICAL RULE**: manufacturerName CAN appear in MULTIPLE drivers - this is NORMAL!
 > Fingerprint = manufacturerName + productId (COMBINED). Only remove if SAME mfr + SAME productId causes WRONG driver match.
@@ -52,6 +52,10 @@ This document summarizes user-reported devices and their expected behavior based
 | 29 | Lasse_K | Contact/Water | various | various | Unknown v5.8.12 | ✅ IN CODE | **RE-PAIR REQUIRED** |
 | 30 | Cam | 1-Button | `_TZ3000_5bpeda8u` | TS0041 | Not registering presses | ✅ IN CODE button_wireless_1 | **RE-PAIR REQUIRED** |
 | 31 | 4x4_Pete | ZG-204ZM | `HOBEIAN` | PIR+Radar | Battery spam, false temp/hum | ✅ v5.5.983 throttle | Check PIR_ONLY setting |
+| 32 | Hartmut_Dunker | BSEED 4-gang | `_TZ3002_pzao9ls1` | TS0726 | EP2/3/4 onOff cluster not found | ✅ v5.8.26 Tuya DP fallback | **RE-PAIR REQUIRED** |
+| 33 | DutchDuke | Soil Sensor | `_TZE284_oitavov2` | TS0601 | Added as unknown device | ✅ IN CODE soil_sensor | **RE-PAIR REQUIRED** |
+| 34 | Karsten_Hille | Temp/Hum Sensor | unknown | unknown | Broken by v5.8.x update | ⚠️ NEEDS DIAG | Send diagnostic |
+| 35 | Freddyboy | Moes 4-button | `_TZ3000_zgyzgdua` | TS0044 | Physical buttons not triggering flows v5.7.52 | ⚠️ v5.8.24 E000 fix | **RE-PAIR REQUIRED** |
 
 ### 📧 GITHUB PRs & ISSUES (Jan-Feb 2026)
 
