@@ -69,16 +69,16 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.25** | 🔧 v5.8.25: COLOR-SPACE FIX - Added color-space-shim.js to prevent Homey sand... |
+| **v5.8.24** | 🔘 v5.8.24: BUTTON FIX - Added TuyaE000 (0xE000) cluster listener to ButtonDe... |
+| **v5.8.23** | 🔗 v5.8.23: EXOTIC CLUSTERS - Added TuyaE001Cluster (0xE001, power-on/switch ... |
+| **v5.8.22** | 🔧 v5.8.22: IAS ZONE FIX - Added explicit IAS Zone binding for TS0203 contact... |
+| **v5.8.21** | 🔧 v5.8.21: FINGERPRINT FIX - Added uppercase _TZ3002/_TZ3290/_TZ3040 fingerp... |
+| **v5.8.20** | 🔧 v5.8.20: DRIVER FIX - (1) Fixed MODULE_NOT_FOUND ./rgb in water_tank_monit... |
 | **v5.8.19** | 🔗 v5.8.19: EXTENDED CLUSTER SUPPORT - Added 0xE002 (sensor alarms), 0xFD02 (... |
 | **v5.8.18** | 🔗 v5.8.18: UNIVERSAL CLUSTER SUPPORT - Dynamic registration of unknown/manuf... |
 | **v5.8.17** | 🔧 v5.8.17: REPEATER FIX - Added _TZ3000_sgpbz53b, _TZ3000_kxlmv9ag to zigbee... |
 | **v5.8.16** | 🔘 v5.8.16: BUTTON & TAMPER ENHANCEMENTS - (1) button_wireless_2/6/8: Added E... |
-| **v5.8.15** | 🔘 v5.8.15: MOES BUTTON FIX - (1) Registered TuyaE000Cluster (0xE000/57344) w... |
-| **v5.8.14** | 🔄 v5.8.14: Z2M SYNC - Added fingerprints from Zigbee2MQTT changelog: (1) _TZ... |
-| **v5.8.13** | 🔓 v5.8.13: TAMPER FIX - (1) HybridSensorBase: Added alarm_tamper flow card t... |
-| **v5.8.12** | 🔧 v5.8.12: FORUM FIXES - (1) presence_sensor_radar: Fixed _TZE204_gkfbdvyx r... |
-| **v5.8.11** | 🔧 v5.8.11: COMMUNITY SYNC - Added fingerprints from JohanBendz PRs: _TZ3210_... |
-| **v5.8.10** | 🔧 v5.8.10: FIX - water_valve_smart: Fixed flow card ID mismatch (leak_detect... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
