@@ -86,6 +86,40 @@ class Switch4GangDevice extends BaseClass {
       return ep.clusters.onOff || ep.clusters.genOnOff || ep.clusters[6] || ep.clusters['6'];
     };
 
+    // v5.8.26: Helper to get Tuya cluster on EP1 for DP fallback (BSEED EP2-4 fix)
+    const getTuyaCluster = () => {
+      const ep1 = this._zclNode?.endpoints?.[1];
+      if (!ep1?.clusters) return null;
+      return ep1.clusters.tuya || ep1.clusters.manuSpecificTuya ||
+             ep1.clusters[0xEF00] || ep1.clusters['61184'];
+    };
+
+    // v5.8.26: Send Tuya DP bool command for gangs without ZCL onOff
+    const sendTuyaDPBool = async (dpId, value) => {
+      const tuyaCluster = getTuyaCluster();
+      if (!tuyaCluster) {
+        this.log(`[BSEED-4G] ⚠️ No Tuya cluster on EP1 for DP${dpId}`);
+        return false;
+      }
+      const dataBuffer = Buffer.from([value ? 1 : 0]);
+      try {
+        if (typeof tuyaCluster.datapoint === 'function') {
+          await tuyaCluster.datapoint({ dp: dpId, datatype: 1, data: dataBuffer });
+        } else if (typeof tuyaCluster.sendData === 'function') {
+          await tuyaCluster.sendData({ dp: dpId, value: value ? 1 : 0, dataType: 1 });
+        } else {
+          this.log(`[BSEED-4G] ⚠️ No DP send method on Tuya cluster`);
+          return false;
+        }
+        this.log(`[BSEED-4G] ✅ Tuya DP${dpId} = ${value} sent`);
+        return true;
+      } catch (err) {
+        this.log(`[BSEED-4G] ❌ Tuya DP${dpId} send failed: ${err.message}`);
+        return false;
+      }
+    };
+    this._sendTuyaDPBool = sendTuyaDPBool;
+
     // v5.5.999: Register capability listeners for ALL gangs
     // These listeners send ZCL commands to control the switch
     for (const epNum of [1, 2, 3, 4]) {
@@ -111,8 +145,11 @@ class Switch4GangDevice extends BaseClass {
           await onOff[value ? 'setOn' : 'setOff']();
           this.log(`[BSEED-4G] EP${gangNum} ZCL ${value ? 'ON' : 'OFF'} sent`);
         } else {
-          this.log(`[BSEED-4G] EP${gangNum} onOff cluster not found - command not sent`);
-          // v5.5.999: Still update capability value for UI consistency
+          // v5.8.26: Tuya DP fallback for EP2-4 without onOff clusters
+          const dpSent = await sendTuyaDPBool(gangNum, value);
+          if (!dpSent) {
+            this.log(`[BSEED-4G] EP${gangNum} no ZCL onOff and no Tuya DP - command not sent`);
+          }
         }
         return true;
       });
@@ -128,7 +165,9 @@ class Switch4GangDevice extends BaseClass {
           this.log(`[BSEED-4G] EP${epNum} cluster not ready, retry ${retryCount + 1}/3 in 2s`);
           setTimeout(() => setupEndpointListener(epNum, retryCount + 1), 2000);
         } else {
-          this.log(`[BSEED-4G] EP${epNum} no attr listener after 3 retries`);
+          this.log(`[BSEED-4G] EP${epNum} no ZCL attr listener after 3 retries - using Tuya DP for gang ${epNum}`);
+          this._dpFallbackGangs = this._dpFallbackGangs || new Set();
+          this._dpFallbackGangs.add(epNum);
         }
         return;
       }
@@ -160,8 +199,67 @@ class Switch4GangDevice extends BaseClass {
       setupEndpointListener(epNum);
     }
 
+    // v5.8.26: Setup Tuya DP listener for gangs that fell back to DP mode
+    this._setupTuyaDPListener(zclNode);
+
     await this.initVirtualButtons?.();
     this.log('[SWITCH-4G] ✅ BSEED ZCL-only mode ready (packetninja technique)');
+  }
+
+  /**
+   * v5.8.26: Setup Tuya DP listener on EP1 cluster 0xEF00 for gangs using DP fallback
+   * Handles incoming DP reports for physical button detection on EP2-4
+   */
+  _setupTuyaDPListener(zclNode) {
+    const ep1 = zclNode?.endpoints?.[1];
+    if (!ep1?.clusters) return;
+
+    const tuyaCluster = ep1.clusters.tuya || ep1.clusters.manuSpecificTuya ||
+                        ep1.clusters[0xEF00] || ep1.clusters['61184'];
+    if (!tuyaCluster) {
+      this.log('[BSEED-4G] No Tuya cluster on EP1 for DP listener');
+      return;
+    }
+
+    // Listen for datapoint reports (DP1-4 = gang states)
+    const handleDPReport = (dpId, value) => {
+      if (dpId < 1 || dpId > 4) return;
+      const boolVal = value === 1 || value === true;
+      const capName = dpId === 1 ? 'onoff' : `onoff.gang${dpId}`;
+      const isPhysical = !this._zclState.pending[dpId];
+
+      this.log(`[BSEED-4G] Tuya DP${dpId} report: ${boolVal} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
+
+      if (this._zclState.lastState[dpId] !== boolVal) {
+        this._zclState.lastState[dpId] = boolVal;
+        this.setCapabilityValue(capName, boolVal).catch(() => {});
+
+        if (isPhysical) {
+          const flowId = `switch_4gang_physical_gang${dpId}_${boolVal ? 'on' : 'off'}`;
+          this.homey.flow.getDeviceTriggerCard(flowId)
+            .trigger(this, { gang: dpId, state: boolVal }, {})
+            .catch(() => {});
+          this.log(`[BSEED-4G] 🔘 Physical G${dpId} ${boolVal ? 'ON' : 'OFF'} (via Tuya DP)`);
+        }
+      }
+    };
+
+    // Try multiple listener patterns for Tuya cluster
+    if (typeof tuyaCluster.on === 'function') {
+      tuyaCluster.on('datapoint', (frame) => {
+        if (frame?.dp !== undefined && frame?.data !== undefined) {
+          const val = frame.data.length === 1 ? frame.data[0] : frame.data;
+          handleDPReport(frame.dp, val);
+        }
+      });
+      tuyaCluster.on('response', (frame) => {
+        if (frame?.dp !== undefined && frame?.data !== undefined) {
+          const val = frame.data.length === 1 ? frame.data[0] : frame.data;
+          handleDPReport(frame.dp, val);
+        }
+      });
+      this.log('[BSEED-4G] Tuya DP listener registered on EP1 cluster 0xEF00');
+    }
   }
 
   /**
