@@ -1,4 +1,7 @@
 {
+  "5.8.33": {
+    "en": "🔤 v5.8.33: CASE-INSENSITIVE MATCHING - All manufacturer name and model ID comparisons are now case-insensitive across 16 files. Tuya devices sometimes report _tze200_ instead of _TZE200_, ts0601 instead of TS0601. Fixed: BaseHybridDevice, HybridSwitchBase, HybridThermostatBase, HybridLightBase, HybridCoverBase, HybridPlugBase, HybridSensorBase, TuyaEF00Manager (passive DP lookup + time format), ZigbeeProtocolComplete (protocol + version detection), device_helpers, BatteryRouter, UniversalDriverInit, DeviceDiagnostics, DeviceHintsDatabase, TS0601_EMERGENCY_FIX, driver-switcher, UnifiedBatteryHandler."
+  },
   "5.8.32": {
     "en": "🧠 v5.8.32: ADAPTIVE LEARNING WIRED - Connected IntelligentDeviceAdapter to live data flow. (1) setCapabilityValue override feeds ALL capability updates (ZCL + Tuya DP) into learning engine. (2) Active probes at 1min/5min/10min during 15-minute post-pairing learning window. (3) Active probe during hourly maintenance cycle. (4) Proper cleanup on device deletion (timers + data save). Previously the adapter existed but was disconnected from ZCL data sources."
   },
