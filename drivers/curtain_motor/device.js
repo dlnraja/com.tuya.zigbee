@@ -74,20 +74,30 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
     await super.onNodeInit({ zclNode });
     this.log('[CURTAIN] v5.6.0 - DPs: 1-15,101-105 | ZCL: 258,6,8,EF00');
 
-    // v5.5.322: Add luminance capability if not present (Eftychis #779)
-    if (!this.hasCapability('measure_luminance')) {
-      try {
-        await this.addCapability('measure_luminance');
-        this.log('[CURTAIN] ✅ Added measure_luminance capability');
-      } catch (e) { /* ignore */ }
-    }
-
-    // v5.5.322: Add button capability for physical button (Eftychis #779)
-    if (!this.hasCapability('button')) {
-      try {
-        await this.addCapability('button');
-        this.log('[CURTAIN] ✅ Added button capability');
-      } catch (e) { /* ignore */ }
+    // v5.5.322: Add luminance + button for Tuya DP curtains (Eftychis #779)
+    // v5.8.40: Skip for TS130F ZCL curtains (Tbao forum: _TZ3000_bs93npae)
+    const { protocol } = this._detectProtocol?.() || {};
+    if (protocol !== 'ZCL') {
+      if (!this.hasCapability('measure_luminance')) {
+        try {
+          await this.addCapability('measure_luminance');
+          this.log('[CURTAIN] ✅ Added measure_luminance capability');
+        } catch (e) { /* ignore */ }
+      }
+      if (!this.hasCapability('button')) {
+        try {
+          await this.addCapability('button');
+          this.log('[CURTAIN] ✅ Added button capability');
+        } catch (e) { /* ignore */ }
+      }
+    } else {
+      // v5.8.40: Remove wrong capabilities from TS130F ZCL curtains
+      for (const cap of ['measure_luminance', 'button', 'measure_battery']) {
+        if (this.hasCapability(cap)) {
+          this.removeCapability(cap).catch(() => {});
+          this.log(`[CURTAIN] 🗑️ Removed incorrect ${cap} from ZCL curtain`);
+        }
+      }
     }
 
     // v5.5.322: Setup Tuya DP listener for all DPs
