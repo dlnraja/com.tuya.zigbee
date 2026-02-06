@@ -769,8 +769,6 @@ const SENSOR_CONFIGS = {
     modelId: 'ZG-204ZV',  // v5.5.841: Explicit modelId for HOBEIAN routing
     battery: true,
     hasIlluminance: true,
-    hasTemperature: true,   // v5.8.34: Explicit flag for init
-    hasHumidity: true,      // v5.8.34: Explicit flag for init
     noTemperature: false,   // v5.5.831: ZG-204ZV HAS temperature!
     noHumidity: false,      // v5.5.831: ZG-204ZV HAS humidity!
     // v5.5.985: Peter #1282 - Lux smoothing to prevent light flickering
@@ -780,6 +778,7 @@ const SENSOR_CONFIGS = {
     motionThrottleEnabled: true,
     motionThrottleMs: 5000,        // Minimum 5s between motion state changes
     motionDebounceMs: 3000,        // 3s debounce for motion=false
+    noIasMotion: true,             // v5.8.32: DP1 is authoritative, IAS Zone sends conflicting false
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       // v5.5.831: ZG-204ZV specific - DP3=temp(÷10), DP4=humidity(×10)
@@ -1109,8 +1108,8 @@ const SENSOR_CONFIGS = {
     useIasZone: true,       // v5.5.772: YES - motion via IAS Zone cluster 1280!
     useTuyaDP: true,        // v5.5.772: YES - settings via Tuya DP cluster 61184
     hasIlluminance: true,   // Via ZCL cluster 1024, NOT Tuya DP106!
-    noTemperature: false,   // v5.8.34: Some variants DO have temp - discover at runtime
-    noHumidity: false,      // v5.8.34: Some variants DO have humidity - discover at runtime
+    noTemperature: true,    // NO temperature sensor on this device
+    noHumidity: true,       // NO humidity sensor on this device
     writableDPs: [2, 4, 102, 104, 105, 107, 108, 109],
     dpMap: {
       // ═══════════════════════════════════════════════════════════════════
@@ -1126,15 +1125,6 @@ const SENSOR_CONFIGS = {
       // ═══════════════════════════════════════════════════════════════════
       106: { cap: 'measure_luminance', type: 'lux_direct' },
       
-      // ═══════════════════════════════════════════════════════════════════
-      // v5.8.34: OPTIONAL ENVIRONMENTAL SENSORS (variant-dependent)
-      // Some ZG-204ZM variants have temp+humidity (user confirmed)
-      // Capabilities added DYNAMICALLY at runtime when device reports data
-      // ═══════════════════════════════════════════════════════════════════
-      111: { cap: 'measure_temperature', divisor: 10, optional: true },  // Temperature ÷10 (same as 10G multi)
-      18: { cap: 'measure_temperature', divisor: 10, optional: true },   // Alt temp DP
-      3: { cap: 'measure_temperature', divisor: 10, optional: true },    // Alt temp DP (ZG-204ZV style)
-
       // ═══════════════════════════════════════════════════════════════════
       // SETTINGS (via Tuya DP cluster 61184) - these ARE Tuya DPs
       // ═══════════════════════════════════════════════════════════════════
@@ -1163,26 +1153,30 @@ const SENSOR_CONFIGS = {
       '_TZE284_ozf4e02o',  // v5.8.13: Merrytek MSA201Z (Z2M #30930)
     ],
     modelId: 'ZG-227Z',  // v5.5.740: From PR #1306
-    battery: false,
-    mainsPowered: true,
-    noBatteryCapability: true,
+    battery: true,              // v5.8.32: Device has battery (DP110)
+    mainsPowered: false,        // v5.8.32: Not mains-powered
+    noBatteryCapability: false,  // v5.8.32: Allow battery capability
     hasIlluminance: true,
     hasTemperature: true,   // v5.5.740: UNIQUE - this radar HAS temp sensor!
     hasHumidity: true,      // v5.5.740: UNIQUE - this radar HAS humidity sensor!
     noTemperature: false,   // Override default
     noHumidity: false,      // Override default
+    noIasMotion: true,      // v5.8.32: DP1 is authoritative for motion, IAS Zone sends conflicting false
     dpMap: {
       // ═══════════════════════════════════════════════════════════════════
       // PRESENCE DETECTION
       // ═══════════════════════════════════════════════════════════════════
       1: { cap: 'alarm_motion', type: 'presence_bool' },
+      2: { cap: null, internal: 'sensitivity' },           // v5.8.32: Sensitivity setting
 
       // ═══════════════════════════════════════════════════════════════════
       // ENVIRONMENTAL SENSORS (unique to this radar!)
       // ═══════════════════════════════════════════════════════════════════
-      101: { cap: 'measure_humidity', multiplier: 10 },   // Humidity ×10 (value 9 → 90%)
+      101: { cap: 'measure_humidity', divisor: 10 },       // v5.8.32: Humidity ÷10 (value 450 → 45.0%)
+      102: { cap: null, internal: 'fading_time' },         // v5.8.32: Fading time (motion cooldown)
       106: { cap: 'measure_luminance', type: 'lux_direct' }, // Illuminance
-      111: { cap: 'measure_temperature', divisor: 10 },   // Temperature ÷10
+      110: { cap: 'measure_battery', divisor: 1 },         // v5.8.32: Battery percentage
+      111: { cap: 'measure_temperature', divisor: 10 },    // Temperature ÷10
     }
   },
 
@@ -2164,6 +2158,35 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       // Mark as available immediately
       await this.setAvailable().catch(() => { });
 
+      // v5.8.32: One-time battery + DP refresh after device wakes up
+      setTimeout(async () => {
+        try {
+          const ep1 = zclNode?.endpoints?.[1];
+          // Try ZCL PowerConfiguration read
+          const powerCluster = ep1?.clusters?.genPowerCfg || ep1?.clusters?.powerConfiguration;
+          if (powerCluster?.readAttributes) {
+            const attrs = await powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']);
+            if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
+              const battery = Math.min(100, Math.round(attrs.batteryPercentageRemaining / 2));
+              this.log(`[RADAR] 🔋 Battery read: ${attrs.batteryPercentageRemaining} -> ${battery}%`);
+              this.setCapabilityValue('measure_battery', battery).catch(() => {});
+            } else if (attrs?.batteryVoltage && !this.getCapabilityValue('measure_battery')) {
+              const battery = Math.min(100, Math.max(0, Math.round((attrs.batteryVoltage - 20) * 10)));
+              this.log(`[RADAR] 🔋 Battery voltage: ${attrs.batteryVoltage / 10}V -> ${battery}%`);
+              this.setCapabilityValue('measure_battery', battery).catch(() => {});
+            }
+          }
+          // Also try Tuya dataQuery to get all DPs including DP110
+          const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
+          if (tuyaCluster?.dataQuery) {
+            await tuyaCluster.dataQuery({});
+            this.log('[RADAR] 📡 Battery: Tuya DP query sent');
+          }
+        } catch (e) {
+          this.log('[RADAR] ℹ️ Battery read deferred (device may be asleep)');
+        }
+      }, 5000);
+
       this.log('[RADAR] ✅ Battery sensor ready (passive mode)');
       return;
     }
@@ -2269,13 +2292,13 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
     // v5.5.852: ADD temperature/humidity for sensors that support them (ZG-204ZV fix)
     // Peter_van_Werkhoven forum #1203: ZG-204ZV should have temp+humidity
-    if (config.hasTemperature && !config.noTemperature && !this.hasCapability('measure_temperature')) {
+    if (!config.noTemperature && !this.hasCapability('measure_temperature')) {
       try {
         await this.addCapability('measure_temperature');
         this.log('[RADAR] 🌡️ Added measure_temperature (sensor supports it)');
       } catch (e) { /* ignore */ }
     }
-    if (config.hasHumidity && !config.noHumidity && !this.hasCapability('measure_humidity')) {
+    if (!config.noHumidity && !this.hasCapability('measure_humidity')) {
       try {
         await this.addCapability('measure_humidity');
         this.log('[RADAR] 💧 Added measure_humidity (sensor supports it)');
@@ -2368,13 +2391,19 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     } catch (e) { /* ignore */ }
 
     // v5.8.7: PERMISSIVE IAS Zone listener (HOBEIAN ZG-204ZM uses IAS Zone 1280 for motion)
+    // v5.8.32: Skip IAS motion for sensors where DP is authoritative (noIasMotion flag)
     try {
       const iasZone = ep1.clusters?.iasZone || ep1.clusters?.ssIasZone || ep1.clusters?.[1280];
+      const permissiveConfig = this._getSensorConfig?.() || {};
       if (iasZone?.on) {
         iasZone.on('attr.zoneStatus', (status) => {
           const sn = typeof status === 'number' ? status : (status?.data?.[0] || 0);
           const raw = (sn & 0x03) !== 0;
           const motion = this._applyPresenceInversion(raw);
+          if (permissiveConfig.noIasMotion) {
+            this.log(`[RADAR] IAS zoneStatus: ${sn} → SKIPPED (noIasMotion)`);
+            return;
+          }
           this.log(`[RADAR-BATTERY] IAS zoneStatus: ${sn} → ${motion}`);
           this.setCapabilityValue('alarm_motion', motion).catch(() => {});
           this._triggerPresenceFlows(motion);
@@ -2383,6 +2412,10 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           iasZone.onZoneStatusChangeNotification = (p) => {
             const s = p?.zoneStatus ?? p?.data?.[0] ?? 0;
             const motion = this._applyPresenceInversion((s & 0x03) !== 0);
+            if (permissiveConfig.noIasMotion) {
+              this.log(`[RADAR] IAS notification: ${s} → SKIPPED (noIasMotion)`);
+              return;
+            }
             this.log(`[RADAR-BATTERY] IAS notification: ${s} → ${motion}`);
             this.setCapabilityValue('alarm_motion', motion).catch(() => {});
             this._triggerPresenceFlows(motion);
@@ -2602,20 +2635,6 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         if (discovered && discovered.confidence >= 70) {
           this.log(`[AUTO-DISCOVERY] ✨ DP${dpId} → ${discovered.capability} = ${discovered.value} (confidence: ${discovered.confidence}%)`);
 
-          // v5.8.34: Dynamically add capability if not present (runtime discovery)
-          if (!this.hasCapability(discovered.capability)) {
-            const config = this._getSensorConfig();
-            const blocked = (discovered.capability === 'measure_temperature' && config?.noTemperature) ||
-                            (discovered.capability === 'measure_humidity' && config?.noHumidity);
-            if (!blocked) {
-              this.addCapability(discovered.capability).then(() => {
-                this.log(`[AUTO-DISCOVERY] 🆕 Dynamically added ${discovered.capability} (runtime detection)`);
-                this.setCapabilityValue(discovered.capability, discovered.value).catch(() => {});
-              }).catch(() => {});
-              return;
-            }
-          }
-
           // Apply to capability
           if (this.hasCapability(discovered.capability)) {
             this.setCapabilityValue(discovered.capability, discovered.value).catch(() => { });
@@ -2687,18 +2706,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       const divisor = dpMap[dpId].divisor || 10;
       const temp = Math.round((rawTemp / divisor) * 10) / 10;
       if (temp >= -40 && temp <= 80) {
-        // v5.8.34: Dynamic capability add for optional DP mappings (HOBEIAN ZG-204ZM variants)
-        if (!this.hasCapability('measure_temperature') && dpMap[dpId].optional) {
-          this.addCapability('measure_temperature').then(() => {
-            this.log(`[RADAR] 🌡️🆕 Dynamically added measure_temperature from DP${dpId} (${temp}°C)`);
-            this.setCapabilityValue('measure_temperature', temp).catch(() => {});
-          }).catch(() => {});
-          return;
-        }
-        if (this.hasCapability('measure_temperature')) {
-          this.log(`[RADAR] 🌡️ DP${dpId} → temperature = ${temp}°C (raw: ${rawTemp}, ÷${divisor})`);
-          this.setCapabilityValue('measure_temperature', temp).catch(() => { });
-        }
+        this.log(`[RADAR] 🌡️ DP${dpId} → temperature = ${temp}°C (raw: ${rawTemp}, ÷${divisor})`);
+        this.setCapabilityValue('measure_temperature', temp).catch(() => { });
       } else {
         this.log(`[RADAR] ⚠️ DP${dpId} temperature out of range: ${temp}°C (raw: ${rawTemp})`);
       }
@@ -2712,18 +2721,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       // v5.5.987: Peter #1265 - Support multiplier for humidity (9% → 90%)
       const humidity = Math.round((rawHumid / divisor) * multiplier);
       if (humidity >= 0 && humidity <= 100) {
-        // v5.8.34: Dynamic capability add for optional DP mappings (HOBEIAN ZG-204ZM variants)
-        if (!this.hasCapability('measure_humidity') && dpMap[dpId].optional) {
-          this.addCapability('measure_humidity').then(() => {
-            this.log(`[RADAR] 💧🆕 Dynamically added measure_humidity from DP${dpId} (${humidity}%)`);
-            this.setCapabilityValue('measure_humidity', humidity).catch(() => {});
-          }).catch(() => {});
-          return;
-        }
-        if (this.hasCapability('measure_humidity')) {
-          this.log(`[RADAR] 💧 DP${dpId} → humidity = ${humidity}% (raw: ${rawHumid}, ÷${divisor}, ×${multiplier})`);
-          this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
-        }
+        this.log(`[RADAR] 💧 DP${dpId} → humidity = ${humidity}% (raw: ${rawHumid}, ÷${divisor}, ×${multiplier})`);
+        this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
       } else {
         this.log(`[RADAR] ⚠️ DP${dpId} humidity out of range: ${humidity}% (raw: ${rawHumid})`);
       }
@@ -3399,6 +3398,9 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   async _setupIASZoneListeners(iasZone) {
     if (!iasZone?.on) return;
 
+    // v5.8.32: Skip IAS motion for sensors where DP is authoritative (e.g. HOBEIAN 10G)
+    const config = this._getSensorConfig?.() || {};
+
     // Attribute change listener - v5.5.790: Apply presence inversion
     iasZone.on('attr.zoneStatus', (status) => {
       const statusNum = typeof status === 'object' ? (status?.data?.[0] || 0) : (typeof status === 'number' ? status : 0);
@@ -3406,6 +3408,10 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       const alarm2 = (statusNum & 0x02) !== 0;
       const rawMotion = alarm1 || alarm2;
       const motion = this._applyPresenceInversion(rawMotion);
+      if (config.noIasMotion) {
+        this.log(`[RADAR] IAS zoneStatus attr: ${statusNum} -> raw=${rawMotion} -> SKIPPED (noIasMotion)`);
+        return;
+      }
       this.log(`[RADAR] IAS zoneStatus attr: ${statusNum} -> raw=${rawMotion} -> ${motion}`);
       this.setCapabilityValue('alarm_motion', motion).catch(() => { });
       this._triggerPresenceFlows(motion);
@@ -3416,6 +3422,10 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       const status = payload?.zoneStatus ?? payload?.data?.[0] ?? 0;
       const rawMotion = (status & 0x03) !== 0;
       const motion = this._applyPresenceInversion(rawMotion);
+      if (config.noIasMotion) {
+        this.log(`[RADAR] IAS notification: ${status} -> raw=${rawMotion} -> SKIPPED (noIasMotion)`);
+        return;
+      }
       this.log(`[RADAR] IAS zoneStatusChangeNotification: ${status} -> raw=${rawMotion} -> ${motion}`);
       this.setCapabilityValue('alarm_motion', motion).catch(() => { });
       this._triggerPresenceFlows(motion);
