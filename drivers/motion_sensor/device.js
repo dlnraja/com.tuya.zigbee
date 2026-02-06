@@ -433,6 +433,9 @@ class MotionSensorDevice extends HybridSensorBase {
               this.log(`[ZCL] 🌡️ Temperature: ${temp}°C (raw: ${data.measuredValue})`);
               this._registerZigbeeHit?.();
               this._lastTempSource = 'ZCL';
+              // v5.8.7: Permissive - auto-add capability from ZCL data
+              if (!this.hasCapability('measure_temperature'))
+                this.addCapability('measure_temperature').catch(() => {});
               this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
             } else {
               this.log(`[ZCL] ⚠️ Temperature out of range: ${temp}°C (raw: ${data.measuredValue})`);
@@ -458,6 +461,9 @@ class MotionSensorDevice extends HybridSensorBase {
               this.log(`[ZCL] 💧 Humidity: ${hum}% (raw: ${data.measuredValue})`);
               this._registerZigbeeHit?.();
               this._lastHumSource = 'ZCL';
+              // v5.8.7: Permissive - auto-add capability from ZCL data
+              if (!this.hasCapability('measure_humidity'))
+                this.addCapability('measure_humidity').catch(() => {});
               this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
             } else {
               this.log(`[ZCL] ⚠️ Humidity out of range: ${hum}% (raw: ${data.measuredValue})`);
@@ -475,6 +481,9 @@ class MotionSensorDevice extends HybridSensorBase {
             if (lux >= VALIDATION.LUX_MIN && lux <= VALIDATION.LUX_MAX) {
               this.log(`[ZCL] 💡 Luminance: ${lux} lux`);
               this._registerZigbeeHit?.();
+              // v5.8.7: Permissive - auto-add capability from ZCL data
+              if (!this.hasCapability('measure_luminance'))
+                this.addCapability('measure_luminance').catch(() => {});
               this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
 
               // v5.5.317: Feed lux to motion inference engine
@@ -507,6 +516,9 @@ class MotionSensorDevice extends HybridSensorBase {
             battery = this._batteryInference?.validateBattery(battery) ?? battery;
             this.log(`[ZCL] 🔋 Battery: ${battery}%`);
             this._registerZigbeeHit?.();
+            // v5.8.7: Permissive - auto-add capability from ZCL data
+            if (!this.hasCapability('measure_battery'))
+              this.addCapability('measure_battery').catch(() => {});
             this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
         }
@@ -587,9 +599,23 @@ class MotionSensorDevice extends HybridSensorBase {
     await this._setupTuyaDPPolling(zclNode);
 
     // v5.5.292: Flow triggers now handled by HybridSensorBase._triggerCustomFlowsIfNeeded()
-    this.log('[MOTION] v5.5.930 ✅ Motion sensor ready');
+    // v5.8.8: For ZCL-only variants, bind clusters so device sends reports to Homey
+    if (this._isZclOnlyVariant) {
+      const ep1 = zclNode?.endpoints?.[1];
+      if (ep1) {
+        for (const cName of ['iasZone', 'ssIasZone', 'powerConfiguration', 'genPowerCfg',
+          'illuminanceMeasurement', 'msIlluminanceMeasurement']) {
+          const cl = ep1.clusters?.[cName];
+          if (cl?.bind) { cl.bind().catch(() => {}); }
+        }
+        this.log('[MOTION] 📡 ZCL-only variant: non-blocking cluster binding initiated');
+      }
+    }
+
+    this.log('[MOTION] v5.8.8 ✅ Motion sensor ready');
     this.log('[MOTION] Manufacturer:', this.getSetting('zb_manufacturer_name') || 'unknown');
-    this.log(`[MOTION] Clusters: temp=${this._hasTemperatureCluster}, hum=${this._hasHumidityCluster}`);
+    this.log(`[MOTION] Clusters: temp=${this._hasTemperatureCluster}, hum=${this._hasHumidityCluster}, lux=${this._hasIlluminanceCluster}, batt=${this._hasPowerConfigCluster}`);
+    if (this._isZclOnlyVariant) this.log('[MOTION] ⚡ ZCL-only variant active');
   }
 
   /**
@@ -657,11 +683,20 @@ class MotionSensorDevice extends HybridSensorBase {
 
     // v5.5.925: For variant manufacturers, DON'T remove capabilities
     // Let dynamic DP detection handle it
+    // v5.8.32: BUT only if Tuya DP cluster (0xEF00) exists! Without it, DPs will never arrive
     if (isVariant) {
-      this.log(`[MOTION-CLUSTERS] 🔀 VARIANT device detected: ${manufacturerName}`);
-      this.log('[MOTION-CLUSTERS] Using PERMISSIVE mode - capabilities will be added dynamically from DPs');
-      this._isVariantDevice = true;
-      // Don't remove anything - wait for DP reports
+      const hasTuyaCluster = !!(clusters[61184] || clusters['61184'] || clusters['0xEF00'] || clusters.manuSpecificTuya);
+      if (hasTuyaCluster) {
+        this.log(`[MOTION-CLUSTERS] 🔀 VARIANT device WITH Tuya DP cluster: ${manufacturerName}`);
+        this.log('[MOTION-CLUSTERS] Using PERMISSIVE mode - capabilities will be added dynamically from DPs');
+        this._isVariantDevice = true;
+      } else {
+        this.log(`[MOTION-CLUSTERS] 🔀 VARIANT device WITHOUT Tuya DP cluster: ${manufacturerName}`);
+        this.log('[MOTION-CLUSTERS] ZCL-only variant - using cluster-based detection');
+        this._isVariantDevice = false;
+        this._isZclOnlyVariant = true;
+        // Fall through to normal cluster detection below
+      }
     } else if (isPirOnly) {
       this.log(`[MOTION-CLUSTERS] ⚠️ Confirmed PIR-only device: ${manufacturerName}`);
       this._hasTemperatureCluster = false;
@@ -699,6 +734,24 @@ class MotionSensorDevice extends HybridSensorBase {
       clusters['1029']
     );
 
+    // v5.8.8: Check for illuminance cluster (0x0400 / 1024) - _TZE200_3towulqd ZCL-only variant
+    this._hasIlluminanceCluster = !!(
+      clusters.illuminanceMeasurement ||
+      clusters.msIlluminanceMeasurement ||
+      clusters[0x0400] ||
+      clusters['0x0400'] ||
+      clusters['1024']
+    );
+
+    // v5.8.8: Check for powerConfiguration cluster (0x0001 / 1) for battery
+    this._hasPowerConfigCluster = !!(
+      clusters.powerConfiguration ||
+      clusters.genPowerCfg ||
+      clusters[0x0001] ||
+      clusters['0x0001'] ||
+      clusters['1']
+    );
+
     // v5.5.113: DYNAMICALLY add capabilities ONLY if clusters detected
     // This prevents "incorrect labels" for simple PIR motion sensors
     if (this._hasTemperatureCluster) {
@@ -715,8 +768,42 @@ class MotionSensorDevice extends HybridSensorBase {
       }
     }
 
+    // v5.8.8: Add illuminance capability if cluster detected (ZCL-only variants)
+    if (this._hasIlluminanceCluster) {
+      if (!this.hasCapability('measure_luminance')) {
+        await this.addCapability('measure_luminance').catch(() => { });
+        this.log('[MOTION-CLUSTERS] ✅ Added measure_luminance (illuminanceMeasurement cluster detected)');
+      }
+    }
+
+    // v5.8.8: Add battery capability if powerConfiguration cluster detected
+    if (this._hasPowerConfigCluster) {
+      if (!this.hasCapability('measure_battery')) {
+        await this.addCapability('measure_battery').catch(() => { });
+        this.log('[MOTION-CLUSTERS] ✅ Added measure_battery (powerConfiguration cluster detected)');
+      }
+    }
+
+    // v5.8.32: Remove stale capabilities from previous versions
+    // Only for non-variant devices (variants wait for Tuya DP data)
+    if (!this._isVariantDevice) {
+      if (!this._hasTemperatureCluster && this.hasCapability('measure_temperature')) {
+        await this.removeCapability('measure_temperature').catch(() => {});
+        this.log('[MOTION-CLUSTERS] 🗑️ Removed stale measure_temperature (no cluster, not variant)');
+      }
+      if (!this._hasHumidityCluster && this.hasCapability('measure_humidity')) {
+        await this.removeCapability('measure_humidity').catch(() => {});
+        this.log('[MOTION-CLUSTERS] 🗑️ Removed stale measure_humidity (no cluster, not variant)');
+      }
+    }
+
     this.log(`[MOTION-CLUSTERS] Temperature ZCL: ${this._hasTemperatureCluster}`);
     this.log(`[MOTION-CLUSTERS] Humidity ZCL: ${this._hasHumidityCluster}`);
+    this.log(`[MOTION-CLUSTERS] Illuminance ZCL: ${this._hasIlluminanceCluster}`);
+    this.log(`[MOTION-CLUSTERS] PowerConfig ZCL: ${this._hasPowerConfigCluster}`);
+    if (this._isZclOnlyVariant) {
+      this.log('[MOTION-CLUSTERS] ⚡ ZCL-only variant (no Tuya DP) - using ZCL clusters for all data');
+    }
   }
 
   /**
@@ -749,6 +836,30 @@ class MotionSensorDevice extends HybridSensorBase {
         await this.addCapability('measure_battery').catch(() => {});
         this.log('[MOTION-DP] ✅ Added measure_battery (permissive)');
       }
+
+      // v5.8.32: Delayed cleanup - remove temp/humidity if no DP data received in 5 min
+      // Fixes PIR-only variants (e.g. _TZE200_3towulqd ZG-204ZL) showing bogus values
+      this._permissiveCleanupTimeout = this.homey.setTimeout(async () => {
+        try {
+          if (!this._hasReceivedTempDP && this.hasCapability('measure_temperature')) {
+            const val = this.getCapabilityValue('measure_temperature');
+            if (val === 0 || val === null) {
+              await this.removeCapability('measure_temperature').catch(() => {});
+              this.log('[MOTION-DP] 🗑️ Permissive cleanup: removed measure_temperature (no DP in 5min)');
+            }
+          }
+          if (!this._hasReceivedHumidityDP && this.hasCapability('measure_humidity')) {
+            const val = this.getCapabilityValue('measure_humidity');
+            if (val === 0 || val === null || val === 10) {
+              await this.removeCapability('measure_humidity').catch(() => {});
+              this.log('[MOTION-DP] 🗑️ Permissive cleanup: removed measure_humidity (no DP in 5min)');
+            }
+          }
+        } catch (e) {
+          this.log('[MOTION-DP] ⚠️ Permissive cleanup error:', e.message);
+        }
+      }, 5 * 60 * 1000);
+
       return;
     }
     
@@ -1506,6 +1617,11 @@ class MotionSensorDevice extends HybridSensorBase {
     if (this._sleepTimer) {
       clearTimeout(this._sleepTimer);
       this._sleepTimer = null;
+    }
+    // v5.8.32: Clear permissive cleanup timer
+    if (this._permissiveCleanupTimeout) {
+      this.homey.clearTimeout(this._permissiveCleanupTimeout);
+      this._permissiveCleanupTimeout = null;
     }
     // Clear pending ZCL reads
     if (this._pendingZclReads) {

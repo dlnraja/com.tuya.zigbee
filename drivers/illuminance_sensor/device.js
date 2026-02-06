@@ -1,6 +1,6 @@
 'use strict';
 
-const HybridSensorBase = require('../../lib/devices/HybridSensorBase');
+const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 class IlluminanceSensorDevice extends HybridSensorBase {
   async onNodeInit({ zclNode }) {

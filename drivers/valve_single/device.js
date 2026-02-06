@@ -1,5 +1,5 @@
 'use strict';
-const { HybridPlugBase } = require('../../lib/devices/HybridPlugBase');
+const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 

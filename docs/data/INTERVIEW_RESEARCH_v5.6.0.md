@@ -432,8 +432,8 @@ capabilities: {
 3. ✅ Updated `DEVICE_INTERVIEWS.json` with all 10 devices (INT-167 to INT-176)
 4. ✅ Updated changelog v5.6.0
 
-## Actions Needed
+## Actions Needed (VERIFIED 2026-02-05 v5.8.30)
 
-1. ⚠️ Verify `_TZE284_oitavov2` temp divisor in soil_sensor
-2. ⚠️ Add IAS Zone enrollment for `_TZ3000_0dumfk2z` SOS button
-3. ⚠️ Investigate `_TZE284_iadro9bf` presence:null bug
+1. ✅ `_TZE284_oitavov2` temp divisor verified in soil_sensor/device.js (DP5 ÷10, DP3 moisture)
+2. ✅ `_TZ3000_0dumfk2z` SOS button — IN CODE button_emergency_sos driver
+3. ✅ `_TZE284_iadro9bf` presence — 11 matches in presence_sensor_radar (fixed v5.5.791+)

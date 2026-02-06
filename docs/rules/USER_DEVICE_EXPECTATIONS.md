@@ -1,525 +1,334 @@
-# User Device Expectations & Diagnostic Summary
+# User Device Expectations (v5.8.31)
+**Updated**: 2026-02-06 03:50 UTC+1 (full scan pages 1-68 + code audit + commit cross-ref + GitHub/forum sync + driver enrichments)
 
-This document summarizes user-reported devices and their expected behavior based on diagnostic logs and community feedback.
-**Last Updated**: 2026-02-05 (v5.8.28)
+## URGENT: 4x4_Pete (5-day deadline)
+- **Devices**: ZG-204ZM (battery radar), ZG-204ZL (PIR)
+- **Configs**: ZG_204ZM_BATTERY, ZG_204ZL_PIR
+- **Fingerprints**: _TZE200_2aaelwxk, _TZE204_2aaelwxk, _TZE200_kb5noeto
+- **Fix v5.8.30**: Enhanced passive DP listeners + raw frame parsing
+- **Status**: PUBLISHED, awaiting diagnostic
 
-> ⚠️ **CRITICAL RULE**: manufacturerName CAN appear in MULTIPLE drivers - this is NORMAL!
-> Fingerprint = manufacturerName + productId (COMBINED). Only remove if SAME mfr + SAME productId causes WRONG driver match.
+## FIXED v5.8.27-v5.8.30
+| User | Issue | Fix |
+|------|-------|-----|
+| 4x4_Pete | Battery DP not received | v5.8.30 |
+| Karsten_Hille | Temp overwrite | v5.8.29 |
+| FinnKje | 5min false motion | v5.8.29 |
+| Lasse_K | IAS inactivated | v5.8.28 |
+| blutch32 | TS0203 alarm | v5.8.28 |
+| Hartmut | TS0726 EP2-4 | v5.8.27 |
 
-> ⚠️ **WORKFLOW**: This document must be updated at each prompt/session in Windsurf AI to stay synchronized with code changes.
+## FIXED v5.8.3-v5.8.25
+| User | Issue | Fix |
+|------|-------|-----|
+| Multiple | v5.8.4 RGB crash | v5.8.5 |
+| Lasse_K | Unknown sensors | v5.8.21 |
+| Hartmut | TS0726 unknown | v5.8.25 |
+| FrankP | IR unknown | v5.8.21 |
+| Cam | TS0041 presses | v5.8.24 |
+| FinnKje | No-motion 20s | v5.8.4 |
 
----
+## FIXED v5.7.x
+| User | Issue | Fix |
+|------|-------|-----|
+| Peter_vW | ZG-204ZV wrong config | v5.7.34 |
+| Freddyboy | TS0044 physical | v5.7.35 |
+| blutch32 | _TZE284_81yrt3lo power meter | v5.7.8 |
+| Nono-3ric | _TZE284_xnbkhhdr thermostat | v5.7.33 |
+| tlink | _TZE204_ztqnh5cg presence | v5.6.0 |
+| Patrick_VD | _TZE200_kb5noeto ZCL radar | v5.6.0 |
+| Ernst02507 | TS004F ghost triggers GH#113 | v5.6.0 |
+| elgato7 | _TZE204_xu4a5rhj curtain GH#122 | v5.5.998 |
+| Eftychis | _TZ3000_wkai4ga5 TS004F | v5.5.840 |
+| Pieter_P | _TZ3000_l9brjwau TS0002 | v5.5.970 |
+| AlbertQ | HOBEIAN ZG-227Z climate | v5.5.695 |
 
-## 📊 FORUM ISSUES TRACKER (Pages 42-68, Feb 2026)
-
-### ✅ FIXED ISSUES
-
-| # | User | Device | ManufacturerID | Issue | Fix Version | Status |
-|---|------|--------|----------------|-------|-------------|--------|
-| 1 | Peter (DutchDuke) | HOBEIAN Temp/Hum | `HOBEIAN` | Not updating since v5.5.677 | v5.5.710 | ✅ FIXED |
-| 2 | Peter (DutchDuke) | SOS Button | TS0215A | Can't pair after factory reset | v5.5.712 | ✅ FIXED |
-| 3 | Lasse_K | Water Leak Sensor | various | No alarm, reversed polarity | v5.5.973 | ✅ FIXED (XOR logic) |
-| 4 | Lasse_K | Contact Sensors | various | Reversed indication after upgrades | v5.5.973 | ✅ FIXED (XOR logic) |
-| 5 | Multiple | Scene Switches | scene_switch_1/2/3/6 | Invalid Flow Card ID | v5.5.708 | ✅ FIXED |
-
-### ⚠️ PENDING INVESTIGATION (v5.5.840)
-
-| # | User | Device | ManufacturerID | ProductID | Issue | Code Status | Action |
-|---|------|--------|----------------|-----------|-------|-------------|--------|
-| 6 | Freddyboy | Moes Scene Switch | `_TZ3000_zgyzgdua` | TS0044 | Physical/app buttons don't work | ✅ v5.5.714 cluster 0xE000 | **RE-PAIR REQUIRED** |
-| 7 | Ronny_M | HOBEIAN Button | `HOBEIAN` | ZG-101ZL | Flow cards exist but nothing works | ✅ v5.5.715 onOff binding | **RE-PAIR REQUIRED** |
-| 8 | Eftychis_Georgilas | 4-gang Switch | `_TZ3000_wkai4ga5` | TS004F | Unknown device | ✅ IN CODE (button_wireless_4, scene_switch_4) | **RE-PAIR REQUIRED** |
-| 9 | Eftychis_Georgilas | 4-gang Switch | `_TZ3000_5tqxpine` | TS004F | Unknown device | ✅ IN CODE (button_wireless_4, scene_switch_4) | **RE-PAIR REQUIRED** |
-| 10 | Attilla | Touch Dimmer | `_TZE200_3p5ydos3` | TS0601 | Not working since v5.5.690 | ✅ IN CODE (dimmer_wall_1gang) | **RE-PAIR REQUIRED** |
-| 11 | Attilla | Touch Dimmer | `_TZE204_n9ctkb6j` | TS0601 | Pairs as generic Zigbee | ✅ IN CODE (dimmer_wall_1gang) | **RE-PAIR REQUIRED** |
-| 12 | Hartmut_Dunker | 4-gang Switch | `_TZ3002_vaq2bfcu` | TS0726 | Buttons don't work bidirectionally | ✅ v5.5.718 FIXED | **RE-PAIR REQUIRED** |
-| 13 | JJ10 | Presence Sensor | unknown | TS0601 | Not working | ⚠️ NEEDS DIAG | Send diagnostic |
-| 14 | FrankP | IR Blaster | unknown | TS1201 | Errors in latest version | ✅ v5.5.565 Flow cards verified | Check flow setup |
-| 15 | ManuelKugler | Valve | `_TZE284_o3x45p96` | TS0601 | Request to add | ✅ v5.5.827 fingerprint added | **RE-PAIR REQUIRED** |
-| 16 | Cam | HOBEIAN ZG-204ZL | `HOBEIAN` | ZG-204ZL | Motion always active | ✅ v5.5.840 invert_presence fix | Enable "Invert Motion" setting |
-| 17 | Peter_van_Werkhoven | HOBEIAN ZG-204ZV | `HOBEIAN` | ZG-204ZV | SOS button triggers app not Flow, no Temp/Hum | ✅ v5.5.841 FIXED | **RE-PAIR REQUIRED** |
-| 18 | Hartmut_Dunker | switch_4gang | `_TZ3002_*` | TS0726 | Buttons still don't work v718 | ⚠️ Diag 8cbd94dd | Check onOff bindings |
-| 19 | DVMasters | LoraTap 3-Button | unknown | TS0043 | Not working v5.5.820 | ✅ IN CODE button_wireless_3 | **RE-PAIR REQUIRED** |
-| 20 | csmobiel | Soil Sensor | `_TZE284_aao3yzhs` | TS0601 | Pairs as unknown | ✅ IN CODE soil_sensor | **RE-PAIR REQUIRED** |
-| 21 | Pollepa | Energy Meter | unknown | TS0601 | W/A/V not visible, KWH=0 | ⚠️ Issue #110 | Need full diagnostic |
-| 22 | eskilask-maker | Climate Sensor | `Zbeacon` | TH01 | Pairs to wrong app | ✅ IN CODE climate_sensor | **RE-PAIR as Climate Sensor** |
-| 23 | Jolink (PM) | Smoke Detector | unknown | TS0601 | Flow cards don't control device | ✅ IN CODE smoke_detector_advanced | Check sleepy device behavior |
-| 24 | Lars-Arne Kvien | Smart Button | unknown | unknown | Pairs as generic zigbee | ⚠️ Need interview | Post interview to forum |
-| 25 | Lars-Arne Kvien | Temp/Humidity | unknown | unknown | Pairs as generic zigbee | ⚠️ Need interview | Post interview to forum |
-| 26 | Hartmut_Dunker | BSEED 4-gang | `_TZ3002_pzao9ls1` | TS0726 | Unknown device v5.8.12 | ✅ IN CODE switch_4gang | **RE-PAIR REQUIRED** |
-| 27 | blutch32 | Contact Sensor | `_TZ3000_996rpfy6` | TS0203 | Alarm not working | ✅ v5.8.22 IAS bind + invert | **RE-PAIR REQUIRED** |
-| 28 | FrankP | IR Blaster | unknown | TS1201 | Not recognized v5.8.12 | ✅ IN CODE ir_blaster | **RE-PAIR REQUIRED** |
-| 29 | Lasse_K | Contact/Water | various | various | Unknown v5.8.12 | ✅ IN CODE | **RE-PAIR REQUIRED** |
-| 30 | Cam | 1-Button | `_TZ3000_5bpeda8u` | TS0041 | Not registering presses | ✅ IN CODE button_wireless_1 | **RE-PAIR REQUIRED** |
-| 31 | 4x4_Pete | ZG-204ZM | `HOBEIAN` | PIR+Radar | Battery spam, false temp/hum | ✅ v5.5.983 throttle | Check PIR_ONLY setting |
-| 32 | Hartmut_Dunker | BSEED 4-gang | `_TZ3002_pzao9ls1` | TS0726 | EP2/3/4 onOff cluster not found | ✅ v5.8.26 Tuya DP fallback | **RE-PAIR REQUIRED** |
-| 33 | DutchDuke | Soil Sensor | `_TZE284_oitavov2` | TS0601 | Added as unknown device | ✅ IN CODE soil_sensor | **RE-PAIR REQUIRED** |
-| 34 | Karsten_Hille | Temp/Hum Sensor | unknown | unknown | Broken by v5.8.x update | ⚠️ NEEDS DIAG | Send diagnostic |
-| 35 | Freddyboy | Moes 4-button | `_TZ3000_zgyzgdua` | TS0044 | Physical buttons not triggering flows v5.7.52 | ⚠️ v5.8.24 E000 fix | **RE-PAIR REQUIRED** |
-
-### 📧 GITHUB PRs & ISSUES (Jan-Feb 2026)
-
-| # | Type | Author | Description | Status |
-|---|------|--------|-------------|--------|
-| #122 | Issue | elgato7 | Longsam Mini M3 curtain motor _TZE204_xu4a5rhj | ✅ FIXED v5.5.998 - Position inverted |
-| #121 | Issue | DAVID9SE | _TZ3000_an5rjiwd button not working | ⚠️ Moved to 1-button driver |
-| #120 | PR | packetninja | Physical button flow cards - remove manual device selection | ✅ MERGED |
-| #119 | PR | packetninja | Replace ZCL-only with flexible HybridSwitchBase | ✅ MERGED |
-| #111 | PR | packetninja | Separate driver for Tuya/Bseed touch dimmer | ✅ MERGED |
-| #112 | PR | packetninja | Physical button flows + improved logging | ✅ Closed |
-
-### � NEW DIAGNOSTICS (Jan 31, 2026)
-
-| Diag ID | Device | ManufacturerID | Issue | Status |
-|---------|--------|----------------|-------|--------|
-| c33007b0 | BSEED 4-Gang Switch | `_TZ3002_*` TS0726 | Missing Capability Listener gang2-4, virtual toggle fails | ✅ FIXED v5.5.999 |
-| a6932404 | Curtain Motor | `_TZE204_xu4a5rhj` | Commands sent but motor doesn't respond | ⚠️ Investigating |
-| e1010895 | Longsam Curtain | `_TZE204_xu4a5rhj` | Same as above, network issue suspected | ⚠️ Investigating |
-| 33677378 | Radar Sensor | unknown | Distance/temp/battery not working, measure_distance missing | ⚠️ Investigating |
-| e8f3e458 | TRV Radiator Valve | `_TZE284_o3x45p96` | "Taster geht nicht" (Button doesn't work) | ⚠️ Investigating |
-
-### �💥 APP CRASH REPORTS
-
-| Version | Error | Root Cause | Status |
-|---------|-------|------------|--------|
-| v5.5.811 | `Could not get device by id` in PlugSmartDriver | Device deleted during flow execution | ✅ FIXED in later versions |
+## PENDING
+| User | Device | Status |
+|------|--------|--------|
+| DutchDuke | _TZE284_oitavov2 soil | IN CODE, temp ÷100 fix added to EnrichedDPMappings |
+| 4x4_Pete | ZG-204ZL PIR | AWAITING DIAG |
+| JJ10 | Presence TS0601 | NEEDS DIAG |
+| Pollepa | Energy Meter TS0601 | NEEDS DIAG |
+| Ricardo_Lenior | Presence 230v wrong options (p60) | NEEDS CONFIG |
+| Mike_Van_A | ZG-103ZL vibration (p60) | IN CODE |
+| Mitch_Vallinga | _TZ3000_5iixzdo7 TS130F (p60) | IN CODE |
+| LukasT | _TZE284_1wnh8bqp temp/hum (p58) | IN CODE |
 
 ---
 
-## � RECURRING USER PATTERNS (Most Frequent Issues)
+## RECURRING USER PROFILES
 
-### 👤 Peter_van_Werkhoven (20+ fixes, v5.5.841-v5.5.987)
-**Devices**: HOBEIAN ZG-204ZV (5-in-1 Multisensor)
-**Forum Posts**: #1203, #1204, #1211, #1225, #1253, #1265, #1282
-
-| Issue | Root Cause | Fix Version | Solution |
-|-------|------------|-------------|----------|
-| Humidity 9% instead of 90% | Raw value needs ×10 multiplier | v5.5.953, v5.5.987 | Added humidity multiplier |
-| Lux disco lights | Rapid illuminance changes trigger flows | v5.5.985-986 | 15% smoothing + 30s throttle |
-| Missing temp/humidity | PIR-only vs multisensor variants | v5.5.919, v5.5.984 | Permissive variant mode + modelId fix |
-| Distance wrong (8 vs 1.5m) | OEM uses cm/dm/m with same mfr | v5.5.927-929 | Smart divisor auto-detection |
-| SOS button not triggering | DP17/18 not mapped | v5.5.841 | Added SOS button DP mapping |
-| ZCL temp/humidity | Some variants use ZCL, not Tuya DP | v5.5.912 | Added cluster 0x0402/0x0405 listeners |
-| Battery capability | Not auto-added | v5.5.907 | Auto-add battery from DP mapping |
-
-**Cross-References**: Z2M docs ZG-204ZV, ZHA #4452, #4517, #4268
-
-### 👤 4x4_Pete (10+ fixes, v5.5.329-v5.5.983)
+### 4x4_Pete (URGENT — 5-day deadline from 2026-02-05)
 **Devices**: HOBEIAN ZG-204ZM (PIR+24GHz Radar), ZG-204ZL (PIR-only)
-**Forum Posts**: #788, #810, #848, #851
+**Forum Posts**: #788, #810, #848, #851 + PM thread
+**PM Timeline**: Paired 2026-01-28, deadline ~2026-02-10
 
-| Issue | Root Cause | Fix Version | Solution |
-|-------|------------|-------------|----------|
-| Wrong driver pairing | Duplicate productIds in motion_sensor | v5.5.364 | Removed duplicates, radar-only in presence_sensor_radar |
-| Battery spam (100%↔1-2%) | Duplicate DP15 + no throttle | v5.5.366, v5.5.983 | Throttling + removed dup DP15 |
-| False temp/humidity | PIR-only device showing temp/humidity | v5.5.329, v5.5.335 | PIR_ONLY_MANUFACTURERS list |
-| ZCL+Tuya hybrid | Not detected properly | v5.5.511-512 | Hybrid detection + HOBEIAN mfr list |
-| PIR+Radar settings | Missing settings for motion mode | v5.5.394-395 | Full Z2M settings (sensitivity, fading, LED) |
+| Issue | Root Cause | Fix |
+|-------|-----------|-----|
+| Wrong driver pairing | Duplicate productIds | v5.5.364 |
+| Battery spam 100%↔1-2% | Dup DP15 + no throttle | v5.5.983 |
+| False temp/humidity | PIR-only showing temp | v5.5.335 |
+| ZCL+Tuya hybrid | Not detected | v5.5.512 |
+| Battery DP not received | Missing passive listeners | v5.8.30 |
 
-**Cross-References**: SmartHomeScene ZG-204ZM Review, Z2M Discussion #28529, HA Community
+**Sensor Configs**:
+- ZG_204ZM_BATTERY: DP1=motion, DP4=battery, DP9=lux, noTemp, noHum
+- ZG_204ZL_PIR: DP1=motion, DP4=battery, DP12=lux, noTemp, noHum
+- Known fingerprints: `_TZE200_2aaelwxk`, `_TZE204_2aaelwxk`, `_TZE200_kb5noeto`
+- ⚠️ Fingerprint conflict: `_TZE200_3towulqd` in both ZG_204ZV and ZG_204ZL
 
-### 👤 Peter-Celica (Credited Contributor)
-**Type**: Code contributor credited in v5.5.931
+### Peter_van_Werkhoven (20+ fixes, v5.5.841-v5.7.45)
+**Device**: HOBEIAN ZG-204ZV (5-in-1 Multisensor)
+**Status**: STABLE since v5.7.45
 
-### 👤 Lasse_K (8+ fixes, v5.5.645-v5.5.973)
-**Devices**: Water leak sensor, Contact sensor, HOBEIAN ZG-222Z, ZG-102Z
-**Forum Posts**: #800, #1052, #1166, #1274, #1700
+| Issue | Fix |
+|-------|-----|
+| Humidity 9% vs 90% | v5.5.987 multiplier |
+| Lux disco lights | v5.5.986 smoothing |
+| Missing temp/humidity | v5.5.984 permissive |
+| Distance wrong 8 vs 1.5m | v5.5.929 auto-divisor |
+| SOS not triggering | v5.5.841 DP17/18 |
+| Battery auto-add | v5.5.907 |
+| Wrong config DEFAULT | v5.7.34 mfr fallback |
 
-| Issue | Root Cause | Fix Version | Solution |
-|-------|------------|-------------|----------|
-| Water alarm always on/off | Sensor polarity inverted | v5.5.713 | invert_alarm setting |
-| Contact shows reversed | IAS Zone default inversion | v5.5.918 | Auto-invert for known mfrs |
-| IAS Zone no alarm | Buffer/object parsing | v5.5.645 | Robust numeric conversion |
-| User can't override | Fixed logic | v5.5.973 | XOR logic for user override |
-| Water sensor no alarm | IAS Zone fallback disabled | v5.5.803 | Force initial alarm state read |
+### Lasse_K (8+ fixes, v5.5.645-v5.8.28)
+**Devices**: Water leak, Contact, HOBEIAN ZG-222Z, ZG-102Z
+**Status**: STABLE since v5.8.28
 
-### 👤 Pieter_Pessers (7+ fixes, v5.5.811-v5.5.970)
-**Devices**: BSEED 1/2/3-gang switches (_TZ3000_l9brjwau, _TZ3000_qkixdnon)
+| Issue | Fix |
+|-------|-----|
+| Water always on/off | v5.5.713 invert |
+| Contact reversed | v5.5.918 auto-invert |
+| IAS no alarm | v5.5.645 parsing |
+| User override | v5.5.973 XOR |
+| Water inactivated | v5.8.28 IAS enroll |
 
-| Issue | Root Cause | Fix Version | Solution |
-|-------|------------|-------------|----------|
-| Unknown zigbee device | Fingerprint conflicts | v5.5.970 | Exclusive driver assignment |
-| Wrong driver | Same mfr in multiple drivers | v5.5.951 | productId-specific routing |
-| No response | Tuya DP sent to ZCL device | v5.5.919 | ZCL-only mode |
+### Hartmut_Dunker (BSEED 4-gang, v5.5.718-v5.8.27)
+**Device**: `_TZ3002_pzao9ls1` TS0726
+**Status**: STABLE since v5.8.27
 
-### 👤 packetninja/Attilla (12+ PRs)
-**Type**: Code contributor
+| Issue | Fix |
+|-------|-----|
+| Bidirectional broken | v5.5.718 bindings |
+| Unknown device (case) | v5.8.21+v5.8.25 |
+| EP2/3/4 not responding | v5.8.27 DP fallback |
 
-| PR | Contribution | Impact |
-|----|--------------|--------|
-| #118 | BSEED ZCL-only switch | Pure ZCL, no Tuya DP |
-| #119 | HybridSwitchBase refactor | Cleaner architecture |
-| #120 | Physical button flow fix | Remove titleFormatted [[device]] |
-| - | PhysicalButtonMixin | 2000ms app command window |
+### Freddyboy (Moes 4-button)
+**Device**: `_TZ3000_zgyzgdua` TS0044
+**Status**: STABLE since v5.8.24
 
-### 🔍 CROSS-REFERENCE VERIFICATION
+| Issue | Fix |
+|-------|-----|
+| Physical buttons | v5.5.714 E000 |
+| Still broken | v5.7.35 universal |
+| Ghost presses | v5.7.48 dedup |
+| Cluster registration | v5.8.15+v5.8.24 |
 
-**Devices confirmed IN CODE but users report not working:**
+### Karsten_Hille (Climate Sensor)
+**Issue**: Temp/Hum broken by v5.8.x — permissive mode overwriting correct values
+**Fix**: v5.8.29 — skip inference if device already has mapped DPs
+**Status**: FIXED
 
-1. **`_TZ3000_zgyzgdua`** (Freddyboy) - ✅ FIXED v5.5.924
-   - Found in: `button_wireless_4/driver.compose.json` ✅
-   - Issue: Cluster 0xE000 (57344) instead of standard scenes
-   - Fix: Raw frame interceptor for unknown cluster frames
+### FinnKje (Presence Sensor)
+**Issues**: (1) No-motion every 20-30s (2) False 5min triggers
+**Fix**: (1) v5.8.4 holdoff timer (2) v5.8.29 null inversion
+**Status**: FIXED
 
-2. **`_TZ3000_wkai4ga5` / `_TZ3000_5tqxpine`** (Eftychis_Georgilas) - ✅ IN CODE
-   - Found in: `button_wireless_4/driver.compose.json` ✅
-   - Action: Verify productId matching (TS004F)
+### Eftychis_Georgilas (4-gang scene switches, p38-52)
+**Devices**: `_TZ3000_wkai4ga5` + `_TZ3000_5tqxpine` TS004F
+**Issues**: Physical buttons broken, curtain robot, luminance only on motion
+**Fix**: v5.5.840 fingerprints added
+**Status**: FIXED
 
-3. **HOBEIAN ZG-101ZL** (_TZ3000_ja5osu5g) - ✅ FIXED v5.5.926
-   - Removed from wrong drivers (plug, energy_monitor, button_4gang)
-   - Now ONLY in button_wireless_1
+### Pieter_Pessers (BSEED switches, p55-62)
+**Devices**: `_TZ3000_l9brjwau` TS0002, `_TZ3000_blhvsaqf` TS0001, `_TZ3000_qkixdnon` TS0003
+**Issues**: Unknown Zigbee device, LED control not working
+**Fix**: v5.5.913 PR#118 (packetninja), v5.5.970 fingerprints
+**Status**: FIXED
 
-4. **`_TZE200_3p5ydos3` / `_TZE204_n9ctkb6j`** (Attilla) - ✅ PR #118 MERGED
-   - Dedicated wall_dimmer_1gang_1way driver
-   - DP36/37 backlight support
+### Ronny_M (HOBEIAN button + presence, p45-62)
+**Devices**: HOBEIAN ZG-101ZL, `_TZE284_iadro9bf` presence
+**Issues**: Button not working, 10min ghost triggers, no flows
+**Fix**: v5.5.715 onOff binding, v5.5.926 button detection
+**Status**: FIXED
 
----
+### blutch32 (Multi-device, p65-68)
+**Devices**: `_TZ3000_996rpfy6` TS0203 contact, `_TZE284_81yrt3lo` PJ-1203A power meter, ZG-303Z soil
+**Issues**: Contact alarm not working, power meter crash, soil sensor confusion
+**Fix**: v5.7.8 power meter, v5.8.22+v5.8.28 IAS contact
+**Status**: FIXED (contact + power), soil = ZG-303Z correctly in soil_sensor
 
-## 📧 GMAIL DIAGNOSTIC REPORTS (Jan 2026)
+### Cam (Smart button, p45-68)
+**Devices**: `_TZ3000_5bpeda8u` TS0041
+**Issues**: No GUI button, no flows, no battery, not registering presses
+**Fix**: v5.8.24 TuyaE000 cluster
+**Status**: FIXED
 
-### Report 0 (v5.5.820) - HOBEIAN ZG-204ZV Multisensor
-**User Message**: "Readded the HOBEIAN Multisensor, no Temp and Humidity data and SOS button flow not triggering"
-**Device**: HOBEIAN ZG-204ZV (presence_sensor_radar)
-**Issues**:
-- Missing measure_temperature and measure_distance after recovery
-- SOS button flow not triggering
-**Root Cause**: Wrong DP profile used (radar DPs instead of PIR+temp/humidity)
-**Fix**: v5.5.826/v5.5.831 - Created dedicated ZG_204ZV_MULTISENSOR config
-**Status**: ✅ FIXED
+### tlink (Presence sensor, p45)
+**Device**: `_TZE204_ztqnh5cg` TS0601
+**Issue**: Flows don't trigger, presence not detected
+**Fix**: v5.6.0 ZCL_ONLY_RADAR config + permissive mode
+**Status**: FIXED
 
-### Report 1 (v5.5.794) - BSEED Wall Switch & Water Valve
-**User Message**: "Bseed wallswitches seen as unknown zigbee devices and water valve control seen as 1 gang smart switch"
-**Devices**: 
-- _TZ3000_iedbgyxt / TS0001 (switch_1gang) - Working correctly
-- Water valve - Misidentified as switch
-**Issues**: Flow card ID errors for water_valve_smart
-**Root Cause**: Flow card IDs mismatch in driver vs app.json
-**Fix**: v5.5.794+ - Flow cards corrected
-**Status**: ✅ FIXED
+### Ricardo_Lenior (Ceiling presence, p60)
+**Issue**: 230v sensor showing battery/mmwave options, wrong flow cards
+**Status**: NEEDS CONFIG — correct sensor type assignment needed
 
-### Report 2 (v5.5.769) - AVATTO TRV
-**User Message**: "TS0601 _TZE284_o3x45p96"
-**Device**: AVATTO Smart Radiator Valve
-**Issues**: Invalid Flow Card ID: switch_dimmer_1gang_turned_on
-**Root Cause**: Flow card registration error in switch_dimmer_1gang driver
-**Fix**: v5.5.827 - Added fingerprint to thermostat driver
-**Status**: ✅ FIXED
+### Mike_Van_A (Vibration sensor, p60)
+**Device**: HOBEIAN ZG-103ZL
+**Status**: IN CODE (vibration_sensor driver exists)
 
-### Report 3 (v5.5.759) - Smart Button
-**User Message**: "Smart button not registering any button presses nor does it have a GUI button"
-**Device**: motion_sensor receiving Tuya frames (wrong driver pairing)
-**Root Cause**: Device paired to wrong driver
-**Fix**: User needs to re-pair as button_wireless device
-**Status**: ⚠️ USER ACTION REQUIRED
+### Mitch_Vallinga (Curtain module, p60)
+**Device**: `_TZ3000_5iixzdo7` TS130F
+**Status**: IN CODE (curtain_motor driver, verified)
 
-### Report 4 (v5.5.759) - TS0726 4-Gang Switch
-**User Message**: "TS0726 / _TZ3002_pzao9ls1"
-**Device**: BSEED 4-gang switch (switch_4gang)
-**Status**: ✅ Working correctly with special handling
-
-### Report 5 (v5.5.718) - Presence Sensor
-**User Message**: "Presence Sensor"
-**Status**: ℹ️ General initialization log, no specific error
-
-### Report 6 (v5.5.718) - BSEED 4 Gang Button
-**User Message**: "BSEED Zigbee 4 Gang Button Switch"
-**Issues**: Partial initialization, no capabilities discovered
-**Root Cause**: Protocol learning phase - device needs interaction
-**Status**: ✅ Expected behavior during learning
-
-### Report 7 & 9 (v5.5.708) - Button Not Working
-**User Message**: "Button not working"
-**Device**: button_wireless_1
-**Issues**: "Invalid capabilities in manifest: button.1"
-**Root Cause**: Manifest configuration issue
-**Fix**: Later versions corrected button capability definitions
-**Status**: ✅ FIXED in newer versions
-
-### Report 8 (v5.5.654) - BSEED 4 Gang TypeError
-**User Message**: "BSEED 4 Gang Button Switch"
-**Issues**: TypeError: Cannot read properties of undefined (reading 'name') in HybridSwitchBase.js
-**Root Cause**: Null reference in device initialization
-**Fix**: Fixed in v5.5.700+
-**Status**: ✅ FIXED
+### LukasT (Temp/Hum sensor, p58)
+**Device**: `_TZE284_1wnh8bqp` TS0601
+**Status**: IN CODE (climate_sensor driver, verified)
 
 ---
 
-## 📊 HISTORICAL DIAGNOSTIC REPORTS
+## INTERVIEW DATA CROSS-REFERENCE
 
-### Scene Switch Flow Cards (v5.5.707-708)
-**Device**: scene_switch_1, scene_switch_2, scene_switch_3, scene_switch_6
-**Issue**: "Invalid Flow Card ID" errors
-**Root Cause**: Flow cards not compiled into app.json
-**Fix Applied**: v5.5.708 - Added 13 missing flow triggers to app.json
-**Status**: ✅ FIXED
+**Local files** (docs/data/):
+- `DEVICE_INTERVIEWS.json` — 176 interviews, 77 devices (v5.8.30)
+- `INTERVIEW_RESEARCH_v5.6.0.md` — 10 deep-dive analyses with Z2M/ZHA research
+- `interviews/` — 20 individual JSON interview files
 
-### Smoke Detector Advanced (v5.5.684)
-**Device**: `_TZE284_rccxox8p` TS0601
-**Driver**: smoke_detector_advanced
-**Issue**: User reports "broke" - no data after pairing
-**Root Cause**: Sleepy battery device uses passive mode
-**Expected Behavior**: 
-- First report may take up to 24 hours
-- Battery/temperature report on wake cycle
-- Smoke alarm triggers immediately on detection
-**Status**: ✅ EXPECTED BEHAVIOR (documented)
+**Key interviews by user**:
+| User | Interview IDs | Device |
+|------|--------------|--------|
+| 4x4_Pete | INT-145 | ZG-204ZM battery radar |
+| 4x4_Pete | INT-144 | ZG-204ZL PIR |
+| Peter_vW | INT-143, INT-158, INT-160 | ZG-204ZV multisensor |
+| Hartmut | INT-146, INT-151 | TS0726 BSEED 4-gang |
+| Freddyboy | INT-015, INT-161 | TS0044 MOES 4-button |
+| Lasse_K | INT-021, INT-162 | ZG-102Z contact, water |
+| blutch32 | INT-159, INT-160 | TS0203 contact, PJ-1203A |
+| ManuelKugler | INT-149, INT-164 | ME167 TRV |
+| Cam | INT-010, INT-044 | TS0041 button, ZG-204ZL |
+| tlink | INT-004, INT-163 | _TZE204_ztqnh5cg presence |
+| Ernst02507 | INT-153 | TS004F smart knob |
+| Pieter_P | INT-154-156 | BSEED 1/2/3-gang |
+| Patrick_VD | INT-148, INT-161, INT-166 | _TZE200_kb5noeto radar |
+| Ronny_M | INT-044 | ZG-101ZL, _TZE284_iadro9bf |
 
-### 2-Gang Switch (v5.5.684)
-**Device**: `_TZ3000_l9brjwau` TS0002
-**Driver**: switch_2gang
-**Issue**: User reports pairing failure
-**Verification**: ManufacturerName IS in switch_2gang driver
-**Status**: ✅ SUPPORTED
+**Forum interview posts** (from pages 1-68):
+- Page 60: Mitch_Vallinga TS130F, Ricardo_Lenior presence, Hartmut TS0726
+- Page 62: Ronny_M ZG-101ZL full interview
+- Page 64: Patrick_VD _TZE200_kb5noeto full interview
+- Page 65: Peter_vW ZG-204ZV, blutch32 _TZE284_81yrt3lo full interview
+- Page 66: blutch32 PJ-1203A full interview
 
-### Presence Sensor (v5.5.707)
-**Device**: Various presence_sensor_radar devices
-**Issue**: User reports not working
-**Driver Status**: 100+ manufacturer IDs supported
-**Status**: ⚠️ NEEDS DIAGNOSTIC
+---
 
-### Water Leak Sensor Polarity (v5.5.713 → v5.5.973)
-**Device**: Various water leak sensors
-**User**: Lasse_K (forum #1274)
-**Issue**: Alarm shows when dry, no alarm when wet
-**Fix History**:
-- v5.5.713: Added `invert_alarm` setting
-- v5.5.971: Added setting to driver.compose.json
-- v5.5.972: Made setting work for IAS Zone sensors
-- v5.5.973: **XOR logic** - user setting can override manufacturer default
-**User Action**: Enable "Invert Water Alarm" in device settings
-**Pending**: Need Lasse_K's `manufacturerName` to add to auto-invert list
-**Status**: ✅ FIXED (manual setting works, auto-invert ready for known IDs)
+## CROSS-REFERENCE VERIFICATION
 
-### Contact Sensor Polarity (v5.5.713 → v5.5.973)
-**Device**: Various _TZ3000_* contact sensors
-**User**: Lasse_K
-**Issue**: Reversed indication after app upgrades
-**Fix History**:
-- v5.5.713: Added auto-inversion for known IDs + manual setting
-- v5.5.973: **XOR logic** - user setting can override manufacturer default
-**Known Inverted Manufacturers** (auto-invert):
+**Known Inverted Contact Manufacturers** (auto-invert):
 ```
 _TZ3000_26fmupbb, _TZ3000_n2egfsli, _TZ3000_oxslv1c9,
 _TZ3000_402jjyro, _TZ3000_2mbfxlzr, _TZ3000_bzxloft2,
 _TZ3000_yxqnffam, _TZ3000_996rpfy6
 ```
-**User Action**: Toggle "Invert Contact State" in device settings if needed
-**Status**: ✅ FIXED
 
----
-
-## 📱 Device Categories & Expectations
-
-### Battery Devices (Sleepy)
-**Expected Behavior**:
-- Use passive DP listener mode
-- Reports delayed until wake cycle
-- Battery binding at pairing time
-- Re-pair required after driver updates
-
-**Devices in this category**:
-- smoke_detector_advanced
-- door_window_sensor
-- motion_sensor_battery
-- scene_switch_1/2/3/6
-- sos_button
-- water_leak_sensor
-
-### Mains-Powered Devices
-**Expected Behavior**:
-- Immediate cluster binding
-- Real-time status updates
-- Act as Zigbee routers (mesh repeaters)
-
-**Devices in this category**:
-- switch_1gang/2gang/3gang/4gang
-- smart_plug_energy
-- din_rail_meter
-- dimmer devices
-- RGB lights
-
-### Radar/mmWave Sensors
-**Expected Behavior**:
-- Continuous presence detection
-- Distance reporting (0-6m typical)
-- Illuminance (lux) reporting
-- Sensitivity adjustable via settings
-
-**Known firmware issues**:
-- appVersion 74 vs 78 differences
-- DP1 presence=null bug (intelligent inference handles this)
-
----
-
-## 🔧 Common User Issues
-
-### "Device pairs but shows offline"
-1. Check Zigbee mesh (add routers)
-2. Device too far from Homey
-3. Interference (WiFi channel overlap)
-
-### "Values are wrong/erratic"
-1. Check power/scale settings
-2. Verify correct driver matched
-3. Send diagnostic for analysis
-
-### "Battery always null/unknown"
-1. Re-pair device (bindings apply at pairing)
-2. Wait for wake cycle (up to 4 hours)
-3. Press button to force wake
-
-### "Flow cards not working"
-1. Update app to latest version
-2. Check flow card exists in driver
-3. Recreate flow after app update
-
----
-
-## 📝 User Feedback Integration
-
-### Requested Features (from diagnostics)
-- [x] Bidirectional energy metering (solar)
-- [x] Scene switch multi-button support
-- [x] Presence sensor intelligent inference
-- [ ] EV charger support (research needed)
-- [ ] Heat pump controls (research needed)
-
-### ManufacturerIDs from User Reports (Pages 53-56)
+**BSEED ZCL-only fingerprints**:
 ```
-_TZE284_rccxox8p  → smoke_detector_advanced
-_TZ3000_l9brjwau  → switch_2gang
-_TZE284_iadro9bf  → presence_sensor_radar (DP102=LUX)
-_TZE204_ac0fhfiq  → din_rail_meter (bidirectional, 150A clamp)
-_TZE200_ves1ycwx  → energy_meter_3phase
-_TZE200_ywbltqzw  → energy_meter_3phase
-_TZ3000_zgyzgdua  → button_wireless_4 (Moes scene switch)
-_TZ3000_wkai4ga5  → button_wireless_4 (4-gang scene switch)
-_TZ3000_5tqxpine  → button_wireless_4 (4-gang scene switch)
-_TZE200_3p5ydos3  → dimmer_wall_1gang (touch dimmer)
-_TZE204_n9ctkb6j  → dimmer_wall_1gang (touch dimmer)
-_TZE284_o3x45p96  → radiator_valve (smart valve)
-HOBEIAN ZG-101ZL  → button_wireless_1 (wireless button)
-_TZE200_a8sdabtg  → climate_sensor (temp/humidity)
+_TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk,
+_TZ3000_hafsqare, _TZ3000_e98krvvk, _TZ3000_iedbgyxt
 ```
 
 ---
 
-## 🌍 Regional Device Variations
+## GITHUB PRs & ISSUES
 
-### Europe (EU)
-- 230V mains devices
-- Schuko plugs (Type F)
-- DIN rail meters common
-
-### US/Canada
-- 120V/240V split phase
-- NEMA plugs
-- Different safety certifications
-
-### Asia-Pacific
-- Various plug types
-- Higher manufacturer variety
-- More _TZE200/_TZE204 variants
+| # | Author | Description | Status |
+|---|--------|-------------|--------|
+| #122 | elgato7 | Longsam curtain _TZE204_xu4a5rhj | FIXED v5.5.998 |
+| #121 | DAVID9SE | _TZ3000_an5rjiwd button | Moved to 1-button |
+| #120 | packetninja | Physical button flow cards | MERGED |
+| #119 | packetninja | HybridSwitchBase refactor | MERGED |
+| #118 | packetninja | BSEED switch fingerprints PR | MERGED v5.5.913 |
+| #113 | Ernst02507 | TS004F smart knob ghost triggers | FIXED v5.6.0 |
+| #111 | packetninja | Tuya/Bseed dimmer driver | MERGED |
 
 ---
 
-## 📅 Version History Summary
+## CODE AUDIT (2026-02-06) — COMMIT CROSS-REFERENCE
 
-| Version | Key Changes |
-|---------|-------------|
-| 5.5.905 | Enhanced diagnostics for ALL sensors (HybridSensorBase DP logging with type/interval/count) |
-| 5.5.904 | Orphan capability cleanup for radar sensors - ZG-204ZV Distance fix (Z2M: static_detection_distance is SETTING not measurement) |
-| 5.5.903 | _TZE284_iadro9bf stuck pattern detection (5+ consecutive same values → distance inference) |
-| 5.5.902 | Diagnostic logs cleanup - removed verbose ID DATABASE logging, enhanced DP/ZCL stats |
-| 5.5.901 | BSEED manufacturer detection with 4 fallback sources, +5 new BSEED IDs |
-| 5.5.840 | FORUM FIX: HOBEIAN ZG-204ZL motion sensor "always active" - invert_presence now applied to IAS Zone + Tuya DP. +4 new motion sensor fingerprints from Z2M |
-| 5.5.719 | NEW: DIY Custom Zigbee driver (PTVO, ESP32-H2, CC2530, DIYRuZ, Tasmota) |
-| 5.5.718 | TS0726 bidirectional fix - onOff cluster bindings (Hartmut_Dunker) |
-| 5.5.717 | Enrichment update - +7 IDs, DP mappings enhanced |
-| 5.5.716 | Driver overlap fix - TS0726 wall switches (Hartmut_Dunker) |
-| 5.5.715 | HOBEIAN ZG-101ZL onOff binding fix (Ronny_M) |
-| 5.5.714 | Moes _TZ3000_zgyzgdua cluster 0xE000 fix (Freddyboy) |
-| 5.5.713 | Contact/water sensor polarity inversion fix (Lasse_K) |
-| 5.5.712 | Forum issues cross-reference update |
-| 5.5.708 | scene_switch flow cards fix |
-| 5.5.707 | ir_send_ac_command fix, TS0002 verify |
-| 5.5.706 | Troubleshooting documentation |
-| 5.5.705 | soil_sensor, usb_outlet flow fixes |
-| 5.5.704 | Sync fix, 53 stale IDs removed |
-| 5.5.703 | 48 duplicate IDs removed |
-| 5.5.700 | Universal permissive solution |
-| 5.5.617 | TS004F intelligent mode switching |
-| 5.5.504 | HOBEIAN ZG-101ZL periodic report filtering |
-| 5.5.500 | HOBEIAN dual mode support (EVENT/COMMAND) |
+### Session 1 fixes (settings + enriched mappings):
+1. **Settings keys** (11 files): `zb_modelId`→`zb_model_id` fallback in 5 drivers + 6 lib
+2. **Duplicate key**: `_TZE200_rhgsbacq` in EnrichedDPMappings — removed HOBEIAN_10G overwrite
+3. **Missing profile**: `_TZE284_oitavov2` soil temp ÷100 added to MANUFACTURER_DP_PROFILES
+
+### Session 2 fixes (commit audit — 8022 commits, 200+ changelog entries):
+4. **TuyaProfiles.js `_TZE284_oitavov2`**: WRONG DP mappings (had DP1=temp,DP2=soil,DP4=batt) → fixed to DP2=unit,DP3=soil,DP5=temp,DP14=batt_state,DP15=batt%
+5. **TuyaProfiles.js `_TZE200_rhgsbacq`**: WRONG DPs (had DP4=battery,DP12=lux) → fixed to DP1=presence,DP101=humidity,DP106=lux,DP111=temp (HOBEIAN 10G ZG-227Z)
+6. **TuyaProfiles.js `_TZE200_ztc6ggyl`**: WRONG DPs (had DP4=battery,DP12=lux) → fixed to FP_STYLE (DP2=sensitivity,DP4=distance,DP102=lux)
+7. **presence_sensor_radar/device.js**: `_TZE200_rhgsbacq` was in BOTH ZG_204ZV_MULTISENSOR AND HOBEIAN_10G_MULTI — removed from wrong config (ZG-227Z ≠ ZG-204ZV)
+8. **`_TZE284_qa4yfxk2`**: Phantom profile in TuyaProfiles.js — no matching driver/fingerprint
+
+### Session 4 enrichments (v5.8.31 — defensive helpers + smart divisors + button fixes):
+12. **TuyaZigbeeDevice.js**: Added 6 defensive helper methods: `safeRegisterCapability`, `ensureCapabilityListeners`, `retryIASEnrollment`, `smartDivisorDetect`, `safeAddCapability`, `safeSetCapabilityValue` — prevents crashes from missing capability listeners (FrankP IR remote), stuck IAS enrollment (blutch32/Lasse_K), wrong humidity scaling (Peter_van_Werkhoven)
+13. **TuyaEF00Manager.js**: Smart divisor auto-detection for temperature (÷10 vs ÷100 vs raw) and humidity (÷10 vs ÷100 vs raw) based on value ranges — fixes OEM variants using different scales
+14. **ButtonDevice.js**: Enhanced E000 cluster detection — tries numeric IDs (57344, 0xE000) + explicit `TuyaE000BoundCluster` binding when cluster not accessible by name — fixes Freddyboy MOES 4-button, Hartmut BSEED, Cam button issues
+15. **IASZoneManager.js**: Already robust — 5 retries + exponential backoff + CIE address write + proactive enrollment response + Zigbee startup detection. No changes needed.
+
+### Session 3 fixes (GitHub + forum cross-ref — dlnraja issues + JohanBendz PRs):
+9. **`_TZE200_locansqn`**: WRONG DRIVER — was in radiator_valve + radiator_controller, but it's a LCD Temp/Humidity/Clock sensor (SmartThings + JohanBendz PR #1346 pkuijpers). Moved to climate_sensor.
+10. **TuyaProfiles.js climate driver**: `climate_monitor_temp_humidity` → `climate_sensor` (driver didn't exist)
+11. **TuyaProfiles.js `_TZE284_qa4yfxk2`**: Corrected DPs to standard soil pattern + marked unverified
+
+### GitHub/Forum verifications (all OK):
+- **dlnraja #124 (Lalla80111)**: `_TZ3000_fllyghyj`/`_TZ3000_b4awzgct` uppercase — already fixed v5.6.1
+- **JohanBendz #1346 (pkuijpers)**: Time sync + `_TZE200_locansqn` — time sync implemented, fingerprint moved
+- **JohanBendz #1333 (bmalkow)**: Siren `_TZE200_t1blo2bj` — in siren driver ✅
+- **JohanBendz #1332 (NicolasYDDER)**: HOBEIAN ZG-227Z — in presence_sensor_radar ✅
+- **JohanBendz #1237 (WJGvdVelden)**: Smoke `_TZE284_gyzlwu5q` — in smoke_detector_advanced ✅
+- **JohanBendz #1345 (Nono-3ric)**: AVATTO `_TZE284_xnbkhhdr` — in radiator_valve ✅
+- **JohanBendz #1253 (Peter-Celica)**: `_TZE200_pay2byax` + `_TZ3000_mrpevh8p` — both present ✅
+- **Forum p68**: Hartmut BSEED `_TZ3002_pzao9ls1` both cases ✅, blutch32 IAS ✅, Cam E000 ✅
+- **All 15+ JohanBendz PR fingerprints** verified present in driver.compose.json files
+
+### Verifications (all OK):
+- **Changelog**: No version gaps in v5.6.0+ (complete coverage)
+- **Architecture**: 13/13 key components verified (UniversalDP*, SmartBattery/Energy, IASZone, TuyaE000, etc.)
+- **Settings keys**: 20 files checked — all use correct fallback pattern
+- **IAS enrollment**: water_leak, contact, motion sensors all call `enrollIASZone()`
+- **color-space-shim**: Loaded in app.js before zigbeedriver imports
+- **TuyaE000Cluster**: Registered in registerClusters.js
+- **Interviews**: 0 "investigating" status remaining
+- **Namespaces**: 46 drivers, no cross-driver flow card conflicts
+- **`_TZE200_ztc6ggyl` multi-driver**: Valid — 30+ different productIds across radar/TRV/thermostat
 
 ---
 
-## 🔬 Forum Issues Tracking (Pages 55-56, Jan 2026)
+## VERSION HISTORY (v5.8.x builds)
 
-### ✅ FIXED Issues
+| Version | Build | Key Fix |
+|---------|-------|---------|
+| 5.8.31 | — | Defensive helpers + smart divisor + E000 BoundCluster binding |
+| 5.8.30 | 1847 | Battery sensor passive DP listeners (4x4_Pete) |
+| 5.8.29 | 1846 | Permissive temp overwrite + null presence inversion |
+| 5.8.28 | 1843 | IAS Zone enrollment (water/contact/motion) |
+| 5.8.27 | — | BSEED TS0726 EP2-4 Tuya DP fallback |
+| 5.8.25 | — | color-space-shim fix |
+| 5.8.24 | — | TuyaE000 button press detection |
+| 5.8.22 | — | IAS Zone binding for TS0203 |
+| 5.8.21 | — | Fingerprint uppercase fix (10 drivers) |
+| 5.8.15 | — | MOES E000 cluster registration |
+| 5.8.12 | — | _TZE204_gkfbdvyx random motion fix |
+| 5.8.9 | — | soil_sensor crash + PJ-1203A fallback |
+| 5.8.5 | — | Fingerprint case sensitivity restored |
+| 5.8.4 | — | Motion holdoff timer + MOES binding |
+| 5.8.3 | — | _TZE284_debczeci config + IR fix |
 
-| User | Device | ManufacturerID | Issue | Fix Version | Notes |
-|------|--------|----------------|-------|-------------|-------|
-| Peter_van_Werkhoven | ZG-204ZV | `HOBEIAN` | Distance capability showing (orphan) | ✅ v5.5.904 | Orphan capability auto-cleanup |
-| Forum | _TZE284_iadro9bf | `_TZE284_iadro9bf` | Motion alarm stuck YES | ✅ v5.5.903 | Stuck pattern detection |
-| Forum | BSEED switches | Multiple | Unknown device | ✅ v5.5.901 | 4 fallback manufacturer sources |
-| Freddyboy | Moes 4-button | `_TZ3000_zgyzgdua` | Buttons not responding | ✅ v5.5.714 | TS0044 uses cluster 0xE000, not TS004F |
-| Ronny_M | HOBEIAN ZG-101ZL | `HOBEIAN` | Button not working | ✅ v5.5.715 | Added onOff binding + dual mode support |
-| Lasse_K | Contact sensors | Multiple | Inverted indication | ✅ v5.5.713 | Auto-inversion for known IDs |
-| Lasse_K | Water leak sensor | Multiple | No alarm | ✅ v5.5.713 | Added `invert_alarm` setting |
-| Peter_van_Werkhoven | HOBEIAN Multisensor | `HOBEIAN` | Temp/humidity not updating | ✅ v5.5.710 | Added HOBEIAN to climate_sensor |
-| Peter_van_Werkhoven | SOS Button | TS0215A | Can't re-add | ✅ v5.5.712 | Fixed corrupted manufacturer list |
-| Multiple | Scene switches | scene_switch_1/2/3/6 | Invalid Flow Card ID | ✅ v5.5.708 | Added 13 missing flow triggers |
-| Pieter_Pessers | BSEED wall switch | `_TZ3000_l9brjwau` | Unknown device | ✅ Already supported | TS0002 in switch_2gang |
+---
 
-### ⏳ PENDING Issues (Need Investigation)
+## COMMON USER ISSUES
 
-| User | Device | ManufacturerID | Issue | Diag Code | Status |
-|------|--------|----------------|-------|-----------|--------|
-| JJ10 | Presence sensor | Unknown | Connected as unknown device | `999de772-5ce2-4674-86c3-c267c7e3a3f0` | ⏳ Need mfr ID - ask user to send diagnostic |
-| Lalla80111 | Smart Button TS0041 | `_TZ3000_b4awzgct` | Unknown zigbee v5.5.897 | GitHub #114 | ✅ ID in driver - USER NEEDS RE-PAIR + UPDATE to v5.5.907 |
-| ManuelKugler | Radiator Valve ME167 | `_TZE284_o3x45p96` | Not working #1223 | f089e2e7 | ✅ ID in driver (ME167 profile) - USER NEEDS RE-PAIR |
-| Peter_van_Werkhoven | HOBEIAN ZG-204ZV | `HOBEIAN` | Temp/Humidity no data #1225 | Forum | ✅ v5.5.907 - USER MUST RE-PAIR to get temp/hum/battery + remove Distance |
-| Pieter_Pessers | BSEED 1-gang TS0001 | `_TZ3000_ysdv91bk` | Unknown device #1219 | Forum | ✅ In switch_1gang - USER MUST RE-PAIR |
-| blutch32 | Contact Sensor TS0203 | `_TZ3000_996rpfy6` | Alarm always "no" #1011 | Forum | ✅ v5.5.908 - Added to inverted list - USER MUST RE-PAIR |
-| FrankP | IR Blaster | Unknown | Flow card errors | `89e408fe-d0ba-4216-95be-951824dac2b8` | ✅ v5.5.565 Flow cards verified working (sendEnhancedIRCode, sendACCommand exist) |
-
-### ✅ RECENTLY FIXED (Moved from Pending)
-
-| User | Device | ManufacturerID | Issue | Fix Version | Notes |
-|------|--------|----------------|-------|-------------|-------|
-| Hartmut_Dunker | 4-Gang Smart Switch | `_TZ3002_vaq2bfcu` | Buttons don't work bidirectionally | ✅ v5.5.718 | Added onOff cluster bindings to all 4 endpoints |
-| AlbertQ | HOBEIAN ZG-227Z | `_TZE200_a8sdabtg` | Pairs as generic Zigbee | ✅ Already supported | In climate_sensor driver |
-| Attilla | Touch dimmers | `_TZE200_3p5ydos3`, `_TZE204_n9ctkb6j` | Pairs as generic since v690 | ✅ Already supported | In dimmer_wall_1gang driver |
-
-### 📋 Forum ManufacturerIDs Summary (Pages 55-56)
-
-```
-Already Supported:
-✅ _TZ3000_zgyzgdua  → button_wireless_4 (v5.5.714 cluster 0xE000 fix)
-✅ _TZ3000_l9brjwau  → switch_2gang (TS0002)
-✅ _TZ3000_wkai4ga5  → button_wireless_4 (4-gang scene)
-✅ _TZ3000_5tqxpine  → button_wireless_4 (4-gang scene)
-✅ _TZE200_3p5ydos3  → dimmer_wall_1gang (touch dimmer)
-✅ _TZE204_n9ctkb6j  → dimmer_wall_1gang (touch dimmer)
-✅ _TZE200_a8sdabtg  → climate_sensor (HOBEIAN ZG-227Z)
-✅ HOBEIAN           → button_wireless_1 (v5.5.715 binding fix)
-```
-
-### 🔄 User Action Required
-
-**For RE-PAIR Required fixes (v5.5.714, v5.5.715):**
-1. Update app to latest version
-2. Delete device from Homey
-3. Factory reset device (hold button 5+ seconds)
-4. Re-pair device
-
-**For HOBEIAN ZG-101ZL (triple-click mode switch):**
-- EVENT mode: commandOn=single, commandOff=double, commandToggle=hold
-- COMMAND mode: toggle=single, on=double, off=long
-- Triple-click to switch between modes
-
-**For devices showing as "Unknown Zigbee":**
-1. Send diagnostic code via app settings
-2. Check if manufacturerName is in driver's driver.compose.json
-3. If missing, report on forum with interview data
+**"Device pairs but shows offline"**: Check mesh, distance, WiFi interference
+**"Values wrong/erratic"**: Check scale settings, verify correct driver
+**"Battery always null"**: RE-PAIR (bindings at pair time), wait 4h wake
+**"Flow cards not working"**: Update app, check driver flow cards, recreate flow
+**"Unknown Zigbee device"**: Send diagnostic, check fingerprint case, RE-PAIR

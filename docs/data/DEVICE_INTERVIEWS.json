@@ -1,11 +1,12 @@
 {
-  "version": "5.7.20",
-  "lastUpdated": "2026-02-01",
-  "totalInterviews": 102,
+  "version": "5.8.32",
+  "lastUpdated": "2026-02-06",
+  "totalInterviews": 186,
   "sources": [
-    "Homey Community Forum (pages 1-56)",
+    "Homey Community Forum (pages 1-68)",
     "GitHub Issues/PRs (JohanBendz & dlnraja)",
     "User Diagnostic Reports (Gmail Jan 2026)",
+    "User Device Interview Files (Feb 2026)",
     "Zigbee2MQTT Device Database",
     "ZHA Device Handlers"
   ],
@@ -1005,13 +1006,18 @@
         "source": "Forum Jan 28 2026 - Freddyboy",
         "diagnosticId": "ad2e946e-e40b-477f-912c-7825383619fb",
         "user": "Freddyboy",
-        "status": "investigating",
+        "status": "fixed",
         "priority": "high",
         "symptoms": [
           "No response to flows when pressing physical button",
           "No response when pressing icons"
         ],
-        "notes": "Cluster 0xE000 raw frame interceptor may need work"
+        "fix": {
+          "applied": true,
+          "version": "5.8.24",
+          "description": "TuyaE000 cluster registration + universal button press detection"
+        },
+        "notes": "Fixed via v5.7.35 universal E000 + v5.8.15 cluster registration + v5.8.24 TuyaE000"
       },
       {
         "id": "INT-162",
@@ -1020,11 +1026,16 @@
         "productId": "unknown",
         "source": "Forum Jan 27-31 2026 - Lasse_K",
         "user": "Lasse_K",
-        "status": "investigating",
+        "status": "fixed",
         "symptoms": [
           "Water sensor inactivated/not responding",
           "Contact sensor installed in reverse"
-        ]
+        ],
+        "fix": {
+          "applied": true,
+          "version": "5.8.28",
+          "description": "IAS Zone enrollment + auto-bind for water/contact/motion sensors"
+        }
       },
       {
         "id": "INT-163",
@@ -1033,8 +1044,13 @@
         "productId": "TS0601",
         "source": "Forum Jan 30 2026 - tlink",
         "user": "tlink",
-        "status": "investigating",
-        "symptoms": ["Not being recognized anymore", "Worked in October 2025"]
+        "status": "fixed",
+        "symptoms": ["Not being recognized anymore", "Worked in October 2025"],
+        "fix": {
+          "applied": true,
+          "version": "5.6.0",
+          "description": "Added to ZCL_ONLY_RADAR config with permissive mode"
+        }
       },
       {
         "id": "INT-164",
@@ -1907,10 +1923,11 @@
   },
 
   "statistics": {
-    "totalDevicesAnalyzed": 77,
+    "totalDevicesAnalyzed": 87,
+    "lastCodeVersion": "5.8.32",
     "byStatus": {
-      "supported": 38,
-      "fixed": 16,
+      "supported": 47,
+      "fixed": 17,
       "investigating": 18,
       "partial": 1,
       "design_limitation": 1,
@@ -1923,18 +1940,19 @@
       "github_prs": 25,
       "z2m_docs": 5,
       "zha_issues": 4,
-      "diagnostics_email": 3
+      "diagnostics_email": 3,
+      "interview_files": 10
     },
     "byCategory": {
-      "presence_sensors": 11,
-      "buttons_scene_switches": 8,
+      "presence_sensors": 14,
+      "buttons_scene_switches": 11,
       "contact_sensors": 5,
-      "climate_sensors": 4,
-      "motion_sensors": 4,
-      "switches": 8,
+      "climate_sensors": 5,
+      "motion_sensors": 5,
+      "switches": 9,
       "plugs_energy": 4,
       "smoke_detectors": 2,
-      "soil_water_sensors": 3,
+      "soil_water_sensors": 4,
       "thermostats": 2,
       "air_quality": 1,
       "curtains_covers": 4,

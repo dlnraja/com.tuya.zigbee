@@ -1,7 +1,7 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const HybridSensorBase = require('../../lib/devices/HybridSensorBase');
+const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * Water Tank Level Monitor - ME201WZ Zigbee

@@ -1,5 +1,5 @@
 'use strict';
-const { HybridPlugBase } = require('../../lib/devices/HybridPlugBase');
+const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
