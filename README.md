@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.35** | 📡 v5.8.35: Z2M + ZHA ENRICHMENT - Added 59 new device fingerprints from Zigb... |
 | **v5.8.34** | 🌡️ v5.8.34: HOBEIAN ZG-204ZM DYNAMIC TEMP/HUMIDITY - Some ZG-204ZM variants ... |
 | **v5.8.33** | 🔤 v5.8.33: CASE-INSENSITIVE MATCHING - All manufacturer name and model ID co... |
 | **v5.8.32** | 🧠 v5.8.32: ADAPTIVE LEARNING WIRED - Connected IntelligentDeviceAdapter to l... |
@@ -78,7 +79,6 @@
 | **v5.8.28** | 🔒 v5.8.28: IAS ZONE ENROLLMENT FIX - Added IASZoneManager.enrollIASZone() to... |
 | **v5.8.27** | 🔧 v5.8.27: BSEED 4-GANG FIX - EP2/EP3/EP4 now use Tuya DP fallback when ZCL ... |
 | **v5.8.26** | 🔧 v5.8.26: BSEED 4-GANG FIX - EP2/EP3/EP4 now use Tuya DP fallback when ZCL ... |
-| **v5.8.25** | 🔧 v5.8.25: COLOR-SPACE FIX - Added color-space-shim.js to prevent Homey sand... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
