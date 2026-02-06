@@ -1,4 +1,7 @@
 {
+  "5.8.42": {
+    "en": "🚨 v5.8.42: CRITICAL FINGERPRINT CONFLICT FIX - HOBEIAN ZG-204ZM (Pete's radar sensor) was showing as 'Unknown Zigbee Device' because ZG-204ZM productId was in BOTH motion_sensor AND presence_sensor_radar drivers. Homey couldn't determine which driver to use → fell back to generic device. Fix: Removed ZG-204ZM and TS0225 from motion_sensor productId (these are radar/mmWave sensors belonging exclusively in presence_sensor_radar). Users with affected devices must DELETE and RE-PAIR after updating. Also processed 5 new diagnostic reports: (1) 83af3e29 BSEED 4-gang=fixed v5.8.40 (2) cf2e5ebe soil sensor=known seq issue (3) 9d71284c TS0041 button=fixed v5.8.40 (4) 61cb217f motion sensor=working fine (5) aff49509 HOBEIAN ZG-204ZM=THIS FIX."
+  },
   "5.8.41": {
     "en": "🪟 v5.8.41: FORUM+GITHUB TRIAGE - (1) Tbao TS130F curtain switch (_TZ3000_bs93npae): wrong capabilities (luminance, battery, button) shown on ZCL curtain. Fix: detect ZCL protocol and skip Tuya-DP-only capabilities, remove incorrect ones. (2) Verified: Hartmut BSEED 4-gang, Cam TS0041 button, 3reality presence sensor all fixed in v5.8.40. (3) Verified: Karsten_Hille temp/humidity, DutchDuke soil sensor fixed in v5.8.38. (4) GitHub #124 Lalla80111: fingerprints _TZ3000_fllyghyj/_TZ3000_b4awzgct already have uppercase. (5) blutch32 TS0203 contact sensor: fingerprint+IAS enrollment exist, user should re-pair."
   },
