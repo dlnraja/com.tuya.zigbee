@@ -1,4 +1,7 @@
 {
+  "5.8.32": {
+    "en": "🧠 v5.8.32: ADAPTIVE LEARNING WIRED - Connected IntelligentDeviceAdapter to live data flow. (1) setCapabilityValue override feeds ALL capability updates (ZCL + Tuya DP) into learning engine. (2) Active probes at 1min/5min/10min during 15-minute post-pairing learning window. (3) Active probe during hourly maintenance cycle. (4) Proper cleanup on device deletion (timers + data save). Previously the adapter existed but was disconnected from ZCL data sources."
+  },
   "5.8.31": {
     "en": "🔍 v5.8.31: INTERVIEW AUDIT + ZCL-ONLY FIX - Audited 12 device interviews (8 unique devices) against all drivers. Fixed motion_sensor _TZE200_3towulqd ZCL-only variant: added illuminanceMeasurement (1024) and powerConfiguration (1) cluster detection + capability auto-add + non-blocking cluster binding. Permissive ZCL handlers for presence_sensor_radar HOBEIAN ZG-204ZM. Verified climate_sensor, soil_sensor, switch_2gang, button_wireless_3/4, button_emergency_sos DP mappings and protocols."
   },
