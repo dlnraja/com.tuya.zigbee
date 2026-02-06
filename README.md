@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.42** | 🚨 v5.8.42: CRITICAL FINGERPRINT CONFLICT FIX - HOBEIAN ZG-204ZM (Pete's rada... |
 | **v5.8.41** | 🪟 v5.8.41: FORUM+GITHUB TRIAGE - (1) Tbao TS130F curtain switch (_TZ3000_bs9... |
 | **v5.8.40** | 🔧 v5.8.40: THREE DIAGNOSTIC FIXES - (1) BSEED TS0726 4-gang switch (diag 83a... |
 | **v5.8.39** | 🔘 v5.8.39: FIX TS0043 LORATAP 3-BUTTON REMOTE (Issue #98 DVMasters) - Button... |
@@ -78,7 +79,6 @@
 | **v5.8.35** | 📡 v5.8.35: Z2M + ZHA ENRICHMENT - Added 59 new device fingerprints from Zigb... |
 | **v5.8.34** | 🌡️ v5.8.34: HOBEIAN ZG-204ZM DYNAMIC TEMP/HUMIDITY - Some ZG-204ZM variants ... |
 | **v5.8.33** | 🔤 v5.8.33: CASE-INSENSITIVE MATCHING - All manufacturer name and model ID co... |
-| **v5.8.32** | 🧠 v5.8.32: ADAPTIVE LEARNING WIRED - Connected IntelligentDeviceAdapter to l... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
