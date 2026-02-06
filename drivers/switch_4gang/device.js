@@ -69,6 +69,9 @@ class Switch4GangDevice extends BaseClass {
    * v5.5.999: ZCL-Only mode for BSEED/Zemismart 4-gang switches
    * Fixed: Register capability listeners for ALL gangs first (before cluster check)
    * Fixed: EP2-4 virtual button toggle (diagnostic c33007b0)
+   * v5.8.39: Fix EP2-4 onOff cluster not found (diag 83af3e29)
+   *   Homey interview may not discover onOff on EP2-4.
+   *   Fix: manually instantiate onOff cluster using Cluster.getCluster(6).
    */
   async _initZclOnlyMode(zclNode) {
     this._zclState = {
@@ -78,6 +81,12 @@ class Switch4GangDevice extends BaseClass {
     };
     this._zclNode = zclNode;
     this._isZclOnlyMode = true; // v5.5.993: Flag for VirtualButtonMixin direct ZCL
+
+    // v5.8.39: Ensure onOff cluster exists on EP2-4 even if Homey interview missed it
+    // Root cause: Endpoint constructor only creates clusters from descriptor.inputClusters.
+    // If interview didn't include cluster 6 in EP2-4 descriptors, the cluster is never created.
+    // Fix: Use Cluster.getCluster(6) to get the OnOff class and instantiate it manually.
+    this._ensureOnOffClusters(zclNode);
 
     // v5.5.999: Helper to get onOff cluster from endpoint with multiple lookup strategies
     const getOnOffCluster = (epNum) => {
@@ -315,6 +324,55 @@ class Switch4GangDevice extends BaseClass {
         
         await this._onCapabilityChanged(capability, value, gang);
       }
+    }
+  }
+
+  /**
+   * v5.8.39: Ensure onOff cluster exists on all 4 endpoints.
+   * Root cause (diag 83af3e29): Homey interview may not discover onOff (cluster 6)
+   * on EP2-4 for BSEED TS0726. The Endpoint constructor only creates clusters from
+   * descriptor.inputClusters, so if cluster 6 wasn't in the descriptor, the cluster
+   * object is never created and all commands fail with "onOff cluster not found".
+   *
+   * Fix: Use Cluster.getCluster(6) from zigbee-clusters to get the OnOff class,
+   * then manually instantiate it on endpoints where it's missing.
+   */
+  _ensureOnOffClusters(zclNode) {
+    try {
+      const { Cluster } = require('zigbee-clusters');
+      const OnOffCluster = Cluster.getCluster(6); // onOff = cluster ID 6
+      if (!OnOffCluster) {
+        this.log('[BSEED-4G] ⚠️ OnOff cluster class not found in registry');
+        return;
+      }
+
+      for (const epNum of [1, 2, 3, 4]) {
+        const ep = zclNode?.endpoints?.[epNum];
+        if (!ep) {
+          this.log(`[BSEED-4G] ⚠️ EP${epNum} endpoint does not exist`);
+          continue;
+        }
+        if (!ep.clusters) ep.clusters = {};
+
+        // Check if onOff already exists under any key
+        const existing = ep.clusters.onOff || ep.clusters.genOnOff
+          || ep.clusters[6] || ep.clusters['6'];
+        if (existing) {
+          this.log(`[BSEED-4G] EP${epNum} onOff cluster already present`);
+          continue;
+        }
+
+        // Manually instantiate the onOff cluster on this endpoint
+        try {
+          const clusterInstance = new OnOffCluster(ep);
+          ep.clusters[OnOffCluster.NAME] = clusterInstance;
+          this.log(`[BSEED-4G] ✅ EP${epNum} onOff cluster CREATED manually (interview missed it)`);
+        } catch (err) {
+          this.log(`[BSEED-4G] ⚠️ EP${epNum} manual cluster creation failed: ${err.message}`);
+        }
+      }
+    } catch (err) {
+      this.log(`[BSEED-4G] ⚠️ _ensureOnOffClusters error: ${err.message}`);
     }
   }
 
