@@ -1,4 +1,7 @@
 {
+  "5.8.37": {
+    "en": "🐛 v5.8.37: FIX _TZ321C_fkzihax8 TS0225 PAIRING (Issue #97 NoroddH) - This 5.8G Radar/PIR is a pure IAS Zone device with NO Tuya DP cluster. Root cause: fingerprint was duplicated in both presence_sensor_radar AND motion_sensor drivers, causing Homey to fail pairing ('unknown Zigbee device'). Also TS0225 was missing from motion_sensor productId list. Fix: (1) Removed _tz321c_fkzihax8 from presence_sensor_radar driver (2) Added uppercase _TZ321C_fkzihax8 + TS0225 productId to motion_sensor driver (3) Updated DeviceFingerprintDB to point to motion_sensor. User must DELETE and RE-PAIR device."
+  },
   "5.8.36": {
     "en": "🔌 v5.8.36: CUSTOM CLUSTER DISCOVERY - Homey skips custom/manufacturer-specific clusters during Zigbee interview. New CustomClusterManager now scans ALL endpoints for 0xEF00-0xEFFF (Tuya private on alt EPs) and 0xFC00-0xFFFF (manufacturer-specific like Xiaomi 0xFCC0, Tuya 0xFC11, etc). Auto-binds listeners, smart-maps attributes to capabilities (temperature, humidity, power, etc), and auto-adds missing capabilities at runtime. UniversalClusterBinder now scans all endpoints for standard ZCL clusters too. DynamicCapabilityManager re-enabled and wired to Tuya DP handler for auto-discovery of unknown DPs."
   },
