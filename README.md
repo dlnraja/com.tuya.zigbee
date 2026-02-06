@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.38** | 🚨 v5.8.38: REGRESSION FIX for v5.8.36 - DynamicCapabilityManager was enabled... |
 | **v5.8.37** | 🐛 v5.8.37: FIX _TZ321C_fkzihax8 TS0225 PAIRING (Issue #97 NoroddH) - This 5.... |
 | **v5.8.36** | 🔌 v5.8.36: CUSTOM CLUSTER DISCOVERY - Homey skips custom/manufacturer-specif... |
 | **v5.8.35** | 📡 v5.8.35: Z2M + ZHA ENRICHMENT - Added 59 new device fingerprints from Zigb... |
@@ -78,7 +79,6 @@
 | **v5.8.31** | 🔍 v5.8.31: INTERVIEW AUDIT + ZCL-ONLY FIX - Audited 12 device interviews (8 ... |
 | **v5.8.30** | ⚡ v5.8.30: BATTERY SENSOR FIX - Enhanced passive Tuya DP listeners for batter... |
 | **v5.8.29** | 🌡️ v5.8.29: SENSOR FIXES - (1) Climate sensor: Fixed permissive mode overwri... |
-| **v5.8.28** | 🔒 v5.8.28: IAS ZONE ENROLLMENT FIX - Added IASZoneManager.enrollIASZone() to... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
