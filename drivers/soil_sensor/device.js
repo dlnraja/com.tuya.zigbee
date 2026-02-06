@@ -466,57 +466,8 @@ class SoilSensorDevice extends TuyaHybridDevice {
     this._flowTriggerTemperatureChanged = this.homey.flow.getDeviceTriggerCard('soil_sensor_temperature_changed');
     this._flowTriggerBatteryLow = this.homey.flow.getDeviceTriggerCard('soil_sensor_battery_low');
 
-    // Register condition cards (correct IDs from driver.flow.compose.json)
-    // v5.7.52: Wrap EACH in individual try-catch to prevent device init crash
-    this._conditionMoistureBelow = null;
-    this._conditionMoistureAbove = null;
-    this._conditionTemperatureAbove = null;
-
-    // v5.8.9: CRITICAL FIX - Use getDeviceConditionCard instead of getConditionCard
-    // getConditionCard is for app-level cards, getDeviceConditionCard is for driver-level cards
-    try {
-      this._conditionMoistureBelow = this.homey.flow.getDeviceConditionCard('soil_sensor_moisture_below');
-    } catch (e) {
-      this.log('[SOIL] ⚠️ Condition card soil_sensor_moisture_below not available:', e.message);
-    }
-
-    try {
-      this._conditionMoistureAbove = this.homey.flow.getDeviceConditionCard('soil_sensor_moisture_above');
-    } catch (e) {
-      this.log('[SOIL] ⚠️ Condition card soil_sensor_moisture_above not available:', e.message);
-    }
-
-    try {
-      this._conditionTemperatureAbove = this.homey.flow.getDeviceConditionCard('soil_sensor_temperature_above');
-    } catch (e) {
-      this.log('[SOIL] ⚠️ Condition card soil_sensor_temperature_above not available:', e.message);
-    }
-
-    // Condition: soil moisture is below threshold
-    if (this._conditionMoistureBelow) {
-      this._conditionMoistureBelow.registerRunListener(async (args, state) => {
-        // v5.5.337: Use measure_soil_moisture first, fallback to measure_humidity
-        const moisture = this.getCapabilityValue('measure_soil_moisture') ?? this.getCapabilityValue('measure_humidity');
-        return moisture < args.moisture;
-      });
-    }
-
-    // Condition: soil moisture is above threshold
-    if (this._conditionMoistureAbove) {
-      this._conditionMoistureAbove.registerRunListener(async (args, state) => {
-        // v5.5.337: Use measure_soil_moisture first, fallback to measure_humidity
-        const moisture = this.getCapabilityValue('measure_soil_moisture') ?? this.getCapabilityValue('measure_humidity');
-        return moisture > args.moisture;
-      });
-    }
-
-    // Condition: soil temperature is above threshold
-    if (this._conditionTemperatureAbove) {
-      this._conditionTemperatureAbove.registerRunListener(async (args, state) => {
-        const temp = this.getCapabilityValue('measure_temperature');
-        return temp > args.temp;
-      });
-    }
+    // Condition cards are registered in driver.js with getConditionCard() + registerRunListener()
+    // No need to re-register them here
 
     this.log('[SOIL] Flow triggers initialized');
   }

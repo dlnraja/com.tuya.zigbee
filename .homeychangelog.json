@@ -1,4 +1,7 @@
 {
+  "5.8.31": {
+    "en": "🔍 v5.8.31: INTERVIEW AUDIT + ZCL-ONLY FIX - Audited 12 device interviews (8 unique devices) against all drivers. Fixed motion_sensor _TZE200_3towulqd ZCL-only variant: added illuminanceMeasurement (1024) and powerConfiguration (1) cluster detection + capability auto-add + non-blocking cluster binding. Permissive ZCL handlers for presence_sensor_radar HOBEIAN ZG-204ZM. Verified climate_sensor, soil_sensor, switch_2gang, button_wireless_3/4, button_emergency_sos DP mappings and protocols."
+  },
   "5.8.30": {
     "en": "⚡ v5.8.30: BATTERY SENSOR FIX - Enhanced passive Tuya DP listeners for battery-powered presence sensors (4x4_Pete ZG-204ZM). Added all event names (dataReport, dataResponse, report, data, set) + node-level command fallback + raw frame parsing. Fixes battery sensors that may not receive DP data."
   },

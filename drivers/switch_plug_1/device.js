@@ -1,5 +1,5 @@
 'use strict';
-const { HybridPlugBase } = require('../../lib/devices/HybridPlugBase');
+const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
 
 class SwitchPlug1Device extends HybridPlugBase {
   async onNodeInit({ zclNode }) {

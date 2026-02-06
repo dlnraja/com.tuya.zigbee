@@ -1,5 +1,5 @@
 'use strict';
-const { HybridPlugBase } = require('../../lib/devices/HybridPlugBase');
+const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
 
 /**
  * WaterValveSmartDevice - Tuya Water Valve Controller
@@ -77,8 +77,52 @@ class WaterValveSmartDevice extends HybridPlugBase {
         this.log('[WATER-VALVE] ✅ Added measure_temperature capability');
       } catch (e) { /* ignore */ }
     }
-    
-    this.log('[WATER-VALVE] ✅ Water Valve Smart v5.5.911 Ready');
+
+    this.log('[WATER-VALVE] ✅ Water Valve Smart v5.8.31 Ready');
+  }
+
+  /**
+   * v5.8.31: Override setCapabilityValue to fire flow trigger cards
+   * Fixes: 7 trigger cards defined in compose but never fired
+   * Uses override pattern to avoid conflicting with HybridPlugBase listeners
+   */
+  async setCapabilityValue(capability, value) {
+    const prev = this.getCapabilityValue(capability);
+    await super.setCapabilityValue(capability, value);
+    if (prev === value) return;
+
+    try {
+      switch (capability) {
+        case 'onoff': {
+          const cardId = value ? 'water_valve_smart_opened' : 'water_valve_smart_closed';
+          this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}, {}).catch(() => {});
+          break;
+        }
+        case 'alarm_water': {
+          const cardId = value ? 'water_valve_smart_leak_detected' : 'water_valve_smart_leak_cleared';
+          this.homey.flow.getDeviceTriggerCard(cardId).trigger(this, {}, {}).catch(() => {});
+          break;
+        }
+        case 'measure_temperature': {
+          this.homey.flow.getDeviceTriggerCard('water_valve_smart_temperature_changed')
+            .trigger(this, { temperature: value }, {}).catch(() => {});
+          // Frost warning when crossing ≤2°C threshold
+          if (value <= 2 && (prev === undefined || prev === null || prev > 2)) {
+            this.homey.flow.getDeviceTriggerCard('water_valve_smart_frost_warning')
+              .trigger(this, {}, {}).catch(() => {});
+          }
+          break;
+        }
+        case 'measure_battery': {
+          // Battery low when crossing ≤15% threshold
+          if (value <= 15 && (prev === undefined || prev === null || prev > 15)) {
+            this.homey.flow.getDeviceTriggerCard('water_valve_smart_battery_low')
+              .trigger(this, {}, {}).catch(() => {});
+          }
+          break;
+        }
+      }
+    } catch (e) { /* flow card may not exist */ }
   }
 }
 module.exports = WaterValveSmartDevice;

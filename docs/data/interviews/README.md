@@ -43,12 +43,13 @@ Example: `TS0044__TZ3000_zgyzgdua.json`
 
 ## Sources
 
-- Homey Community Forum (pages 1-56)
+- Homey Community Forum (pages 1-68)
 - GitHub Issues/PRs (JohanBendz & dlnraja repos)
 - User Diagnostic Reports
 - Zigbee2MQTT Device Database
 - ZHA Device Handlers
+- Desktop interview files (10 devices analyzed in INTERVIEW_RESEARCH_v5.6.0.md)
 
 ## Last Updated
 
-2026-02-01 (v5.7.20)
+2026-02-05 (v5.8.30) — full forum scan + code verification

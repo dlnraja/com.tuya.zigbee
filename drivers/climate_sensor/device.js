@@ -477,8 +477,8 @@ class ClimateSensorDevice extends HybridSensorBase {
     // Fallback to settings
     if (mfr === 'unknown') {
       const settings = this.getSettings() || {};
-      mfr = settings.zb_manufacturerName || 'unknown';
-      modelId = settings.zb_modelId || 'unknown';
+      mfr = settings.zb_manufacturer_name || settings.zb_manufacturerName || 'unknown';
+      modelId = settings.zb_model_id || settings.zb_modelId || 'unknown';
     }
 
     this._manufacturerName = mfr;
