@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.33** | 🔤 v5.8.33: CASE-INSENSITIVE MATCHING - All manufacturer name and model ID co... |
 | **v5.8.32** | 🧠 v5.8.32: ADAPTIVE LEARNING WIRED - Connected IntelligentDeviceAdapter to l... |
 | **v5.8.31** | 🔍 v5.8.31: INTERVIEW AUDIT + ZCL-ONLY FIX - Audited 12 device interviews (8 ... |
 | **v5.8.30** | ⚡ v5.8.30: BATTERY SENSOR FIX - Enhanced passive Tuya DP listeners for batter... |
@@ -78,7 +79,6 @@
 | **v5.8.26** | 🔧 v5.8.26: BSEED 4-GANG FIX - EP2/EP3/EP4 now use Tuya DP fallback when ZCL ... |
 | **v5.8.25** | 🔧 v5.8.25: COLOR-SPACE FIX - Added color-space-shim.js to prevent Homey sand... |
 | **v5.8.24** | 🔘 v5.8.24: BUTTON FIX - Added TuyaE000 (0xE000) cluster listener to ButtonDe... |
-| **v5.8.23** | 🔗 v5.8.23: EXOTIC CLUSTERS - Added TuyaE001Cluster (0xE001, power-on/switch ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
