@@ -4,24 +4,56 @@
     "fr": "Capteur de Luminosité"
   },
   "class": "sensor",
-  "capabilities": ["measure_luminance", "measure_battery"],
-  "energy": { "batteries": ["CR2450", "CR2032"] },
+  "capabilities": [
+    "measure_luminance",
+    "measure_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2450",
+      "CR2032"
+    ]
+  },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_8uxxzz4b",
-      "_TZ3000_7kscdesh",
-      "_TZ3000_do6txrcw",
-      "_TZ3000_hy6ncvmw",
+      "_tyzb01_4mdqxxnn",
       "_TYZB01_4mdqxxnn",
+      "_TYZB01_4MDQXXNN",
+      "_tyzb01_m6ec2pgj",
       "_TYZB01_m6ec2pgj",
+      "_TYZB01_M6EC2PGJ",
+      "_tz3000_7kscdesh",
+      "_TZ3000_7kscdesh",
+      "_tz3000_8uxxzz4b",
+      "_TZ3000_8uxxzz4b",
+      "_tz3000_do6txrcw",
+      "_TZ3000_do6txrcw",
+      "_tz3000_hy6ncvmw",
+      "_TZ3000_hy6ncvmw",
+      "moes",
       "MOES"
     ],
-    "productId": ["TS0222"],
+    "productId": [
+      "TS0222"
+    ],
     "endpoints": {
-      "1": { "clusters": [0, 1, 3, 1024], "bindings": [1, 1024] }
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          1024
+        ],
+        "bindings": [
+          1,
+          1024
+        ]
+      }
     },
     "learnmode": {
-      "instruction": { "en": "Hold button 5s until LED flashes." }
+      "instruction": {
+        "en": "Hold button 5s until LED flashes."
+      }
     }
   },
   "icon": "/drivers/illuminance_sensor/assets/icon.svg",

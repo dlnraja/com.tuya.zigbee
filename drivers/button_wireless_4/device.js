@@ -304,6 +304,11 @@ class Button4GangDevice extends ButtonDevice {
           continue;
         }
 
+        // v5.8.6: Bind clusters so sleepy device sends events to Homey
+        for (const cl of [endpoint.clusters?.onOff, endpoint.clusters?.genMultistateInput, endpoint.clusters?.scenes]) {
+          if (cl?.bind) { try { await cl.bind(); } catch (e) { /* non-critical */ } }
+        }
+
         // v5.5.369: FIXED scenes cluster listener - use multiple event patterns
         const scenesCluster = endpoint.clusters?.scenes || endpoint.clusters?.genScenes || endpoint.clusters?.[5];
         if (scenesCluster) {
@@ -1050,8 +1055,8 @@ class Button4GangDevice extends ButtonDevice {
         this.log('[BUTTON4-BATTERY] 🔋 Setting up Tuya DP battery fallback...');
 
         tuyaCluster.on('response', async (data) => {
-          // Battery is commonly on DP 2, 3, 4, or 10 for Tuya buttons
-          const batteryDPs = [2, 3, 4, 10, 15];
+          // Battery is commonly on DP 2, 3, 4, 10, or 101 for Tuya buttons
+          const batteryDPs = [2, 3, 4, 10, 15, 101];
           const dp = data?.dp ?? data?.dataPointId;
           const value = data?.data ?? data?.value ?? data?.raw?.[0];
 

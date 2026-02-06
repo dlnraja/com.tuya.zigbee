@@ -7,25 +7,48 @@
   "capabilities": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_m0vaazwu",
-      "_TZ3000_ufttklsz",
-      "_TZ3000_gdc3biaj",
-      "_TZ3000_hopvlupy",
-      "_TZ3000_rku4cnct",
-      "_TZ3000_amdymr7l",
+      "_tz3000_1mxvlhmq",
       "_TZ3000_1mxvlhmq",
-      "_TZ3000_sgpbz53b",
+      "_tz3000_amdymr7l",
+      "_TZ3000_amdymr7l",
+      "_tz3000_gdc3biaj",
+      "_TZ3000_gdc3biaj",
+      "_tz3000_hopvlupy",
+      "_TZ3000_hopvlupy",
+      "_tz3000_kxlmv9ag",
       "_TZ3000_kxlmv9ag",
-      "SONOFF",
+      "_tz3000_m0vaazwu",
+      "_TZ3000_m0vaazwu",
+      "_tz3000_rku4cnct",
+      "_TZ3000_rku4cnct",
+      "_tz3000_sgpbz53b",
+      "_TZ3000_sgpbz53b",
+      "_tz3000_ufttklsz",
+      "_TZ3000_ufttklsz",
+      "loratap",
       "LoraTap",
-      "MOES"
+      "LORATAP",
+      "moes",
+      "MOES",
+      "sonoff",
+      "SONOFF"
     ],
-    "productId": ["TS0207"],
+    "productId": [
+      "TS0207"
+    ],
     "endpoints": {
-      "1": { "clusters": [0, 3], "bindings": [] }
+      "1": {
+        "clusters": [
+          0,
+          3
+        ],
+        "bindings": []
+      }
     },
     "learnmode": {
-      "instruction": { "en": "Plug in the USB repeater and hold button 5s." }
+      "instruction": {
+        "en": "Plug in the USB repeater and hold button 5s."
+      }
     }
   },
   "icon": "/drivers/zigbee_repeater/assets/icon.svg",

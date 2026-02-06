@@ -758,7 +758,7 @@ const SENSOR_CONFIGS = {
     sensors: [
       '_TZE200_3towulqd', '_TZE204_3towulqd', '_tze200_3towulqd',
       // v5.5.914: shaarkys fork - additional ZG-204ZV fingerprints
-      '_TZE200_rhgsbacq', '_TZE204_rhgsbacq',
+      // NOTE: _TZE200_rhgsbacq/_TZE204_rhgsbacq moved to HOBEIAN_10G_MULTI (ZG-227Z, not ZG-204ZV)
       '_TZE200_grgol3xp', '_TZE204_grgol3xp',
       '_TZE200_uli8wasj', '_TZE204_uli8wasj',
       '_TZE200_y8jijhba', '_TZE204_y8jijhba',
@@ -2128,10 +2128,23 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         } catch (e) { /* ignore */ }
       }
 
-      // v5.5.990: For ZCL-only variants, setup ZCL clusters even in battery mode
-      if (config.permissiveMode || config.useZcl) {
-        this.log('[RADAR] 📡 Setting up ZCL clusters for ZCL-only variant');
-        await this._setupZclClusters(zclNode);
+      // v5.8.7: ALWAYS set up ZCL clusters permissively for battery devices
+      // Regardless of config, try to listen on ALL available ZCL clusters
+      // This handles HOBEIAN variants that may use ZCL, Tuya DP, or both
+      this.log('[RADAR] 📡 Setting up ZCL clusters (permissive - all available)');
+      await this._setupZclClusters(zclNode).catch(e => {
+        this.log('[RADAR] ⚠️ ZCL cluster setup partial failure (non-critical):', e.message);
+      });
+
+      // v5.8.7: Non-blocking cluster binding so sleepy device sends reports to Homey
+      const ep1 = zclNode?.endpoints?.[1];
+      if (ep1) {
+        for (const cName of ['iasZone', 'ssIasZone', 'genPowerCfg', 'powerConfiguration',
+          'msIlluminanceMeasurement', 'msOccupancySensing', 'msTemperatureMeasurement', 'msRelativeHumidity']) {
+          const cl = ep1.clusters?.[cName];
+          if (cl?.bind) { cl.bind().catch(() => {}); }
+        }
+        this.log('[RADAR] 📡 Non-blocking cluster binding initiated');
       }
 
       // Setup passive listeners only (no queries)
@@ -2342,6 +2355,77 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         this.log('[RADAR] ✅ Passive occupancy listener configured');
       }
     } catch (e) { /* ignore */ }
+
+    // v5.8.7: PERMISSIVE IAS Zone listener (HOBEIAN ZG-204ZM uses IAS Zone 1280 for motion)
+    try {
+      const iasZone = ep1.clusters?.iasZone || ep1.clusters?.ssIasZone || ep1.clusters?.[1280];
+      if (iasZone?.on) {
+        iasZone.on('attr.zoneStatus', (status) => {
+          const sn = typeof status === 'number' ? status : (status?.data?.[0] || 0);
+          const raw = (sn & 0x03) !== 0;
+          const motion = this._applyPresenceInversion(raw);
+          this.log(`[RADAR-BATTERY] IAS zoneStatus: ${sn} → ${motion}`);
+          this.setCapabilityValue('alarm_motion', motion).catch(() => {});
+          this._triggerPresenceFlows(motion);
+        });
+        if (!iasZone.onZoneStatusChangeNotification) {
+          iasZone.onZoneStatusChangeNotification = (p) => {
+            const s = p?.zoneStatus ?? p?.data?.[0] ?? 0;
+            const motion = this._applyPresenceInversion((s & 0x03) !== 0);
+            this.log(`[RADAR-BATTERY] IAS notification: ${s} → ${motion}`);
+            this.setCapabilityValue('alarm_motion', motion).catch(() => {});
+            this._triggerPresenceFlows(motion);
+          };
+        }
+        this.log('[RADAR] ✅ Passive IAS Zone listener configured');
+      }
+    } catch (e) { /* ignore */ }
+
+    // v5.8.7: Permissive ZCL listeners - auto-add capabilities from any protocol
+    this._setupPermissiveZclListeners(ep1);
+  }
+
+  /**
+   * v5.8.7: Permissive ZCL listeners for battery devices
+   * Dynamically adds capabilities when ZCL data arrives from any cluster
+   */
+  _setupPermissiveZclListeners(ep1) {
+    if (!ep1) return;
+    const self = this;
+    const listen = (cluster, attr, cb) => {
+      try { if (cluster?.on) cluster.on(attr, cb); } catch (e) { /* ignore */ }
+    };
+
+    listen(ep1.clusters?.msTemperatureMeasurement, 'attr.measuredValue', async (v) => {
+      const t = v / 100;
+      if (t <= -40 || t >= 100) return;
+      if (!self.hasCapability('measure_temperature'))
+        await self.addCapability('measure_temperature').catch(() => {});
+      self.setCapabilityValue('measure_temperature', t).catch(() => {});
+    });
+
+    listen(ep1.clusters?.msRelativeHumidity, 'attr.measuredValue', async (v) => {
+      const h = v / 100;
+      if (h < 0 || h > 100) return;
+      if (!self.hasCapability('measure_humidity'))
+        await self.addCapability('measure_humidity').catch(() => {});
+      self.setCapabilityValue('measure_humidity', h).catch(() => {});
+    });
+
+    listen(ep1.clusters?.msIlluminanceMeasurement, 'attr.measuredValue', async (v) => {
+      const lux = parseFloat(Math.round(Math.pow(10, (v - 1) / 10000)));
+      if (!self.hasCapability('measure_luminance'))
+        await self.addCapability('measure_luminance').catch(() => {});
+      self.setCapabilityValue('measure_luminance', lux).catch(() => {});
+    });
+
+    listen(ep1.clusters?.genPowerCfg || ep1.clusters?.powerConfiguration, 'attr.batteryPercentageRemaining', async (v) => {
+      if (v === undefined || v === 255) return;
+      const b = Math.min(100, Math.round(v / 2));
+      if (!self.hasCapability('measure_battery'))
+        await self.addCapability('measure_battery').catch(() => {});
+      self.setCapabilityValue('measure_battery', b).catch(() => {});
+    });
   }
 
   /**
