@@ -1,4 +1,7 @@
 {
+  "5.8.36": {
+    "en": "🔌 v5.8.36: CUSTOM CLUSTER DISCOVERY - Homey skips custom/manufacturer-specific clusters during Zigbee interview. New CustomClusterManager now scans ALL endpoints for 0xEF00-0xEFFF (Tuya private on alt EPs) and 0xFC00-0xFFFF (manufacturer-specific like Xiaomi 0xFCC0, Tuya 0xFC11, etc). Auto-binds listeners, smart-maps attributes to capabilities (temperature, humidity, power, etc), and auto-adds missing capabilities at runtime. UniversalClusterBinder now scans all endpoints for standard ZCL clusters too. DynamicCapabilityManager re-enabled and wired to Tuya DP handler for auto-discovery of unknown DPs."
+  },
   "5.8.35": {
     "en": "📡 v5.8.35: Z2M + ZHA ENRICHMENT - Added 59 new device fingerprints from Zigbee2MQTT (45) and ZHA quirks (14). New devices: 7 presence radars, 6 climate sensors, 4 motion sensors, 3 dimmers, 3 IR blasters, 3 contact sensors, 2 air quality monitors, 2 radiator valves, 2 smart plugs, 2 smoke detectors, 2 switches, 12 legacy TRVs, and more. All entries include DP mappings for runtime capability detection. DeviceFingerprintDB and EnrichedDPMappings updated with full Z2M/ZHA cross-referenced data."
   },
