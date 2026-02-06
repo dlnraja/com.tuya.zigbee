@@ -1,4 +1,7 @@
 {
+  "5.8.34": {
+    "en": "🌡️ v5.8.34: HOBEIAN ZG-204ZM DYNAMIC TEMP/HUMIDITY - Some ZG-204ZM variants have temperature and humidity sensors. Instead of blocking these capabilities, they are now discovered dynamically at runtime when the device reports data via Tuya DP. Added optional DP111/DP18/DP3 temperature mappings. Auto-discovery engine also dynamically adds capabilities when it detects temp/humidity patterns with high confidence. ZG-204ZV and 10G Multi configs unchanged (still add at init)."
+  },
   "5.8.33": {
     "en": "🔤 v5.8.33: CASE-INSENSITIVE MATCHING - All manufacturer name and model ID comparisons are now case-insensitive across 16 files. Tuya devices sometimes report _tze200_ instead of _TZE200_, ts0601 instead of TS0601. Fixed: BaseHybridDevice, HybridSwitchBase, HybridThermostatBase, HybridLightBase, HybridCoverBase, HybridPlugBase, HybridSensorBase, TuyaEF00Manager (passive DP lookup + time format), ZigbeeProtocolComplete (protocol + version detection), device_helpers, BatteryRouter, UniversalDriverInit, DeviceDiagnostics, DeviceHintsDatabase, TS0601_EMERGENCY_FIX, driver-switcher, UnifiedBatteryHandler."
   },
