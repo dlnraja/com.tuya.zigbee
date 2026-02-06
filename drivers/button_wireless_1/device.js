@@ -511,18 +511,11 @@ class Button1GangDevice extends ButtonDevice {
     const manufacturerName = this.getData()?.manufacturerName || '';
     const modelId = this.getData()?.productId || this.getData()?.modelId || '';
     
-    // v5.5.929: HOBEIAN ZG-101ZL uses manufacturerName _TZ3000_ja5osu5g, NOT "HOBEIAN"
-    // Also check for ZG-101ZL model ID and TS004F with this manufacturer
-    const hobeianManufacturers = ['_TZ3000_ja5osu5g', '_tz3000_ja5osu5g', 'HOBEIAN'];
-    const isHobeian = hobeianManufacturers.some(m => manufacturerName.toLowerCase().includes(m.toLowerCase())) ||
-                      modelId.toUpperCase().includes('ZG-101ZL');
-    
-    if (!isHobeian) {
-      this.log('[BUTTON1-BIND] ℹ️ Not HOBEIAN/ZG-101ZL device, skipping explicit binding');
-      return;
-    }
-
-    this.log(`[BUTTON1-BIND] 🔗 HOBEIAN/ZG-101ZL detected (${manufacturerName}) - setting up onOff binding...`);
+    // v5.8.39: UNIVERSAL for ALL 1-gang buttons (was HOBEIAN-only, caused TS0041 to miss presses)
+    // Root cause: Button devices send onOff COMMANDS (client-to-server). These go to
+    // endpoint.bindings['onOff'] (BoundCluster), NOT endpoint.clusters['onOff'].
+    // Without BoundCluster, frames are silently dropped with 'binding_unavailable'.
+    this.log(`[BUTTON1-BIND] 🔗 Setting up universal onOff binding (${manufacturerName})...`);
 
     try {
       const endpoint = zclNode?.endpoints?.[1];
@@ -583,8 +576,7 @@ class Button1GangDevice extends ButtonDevice {
       // Store for later use
       this._onOffCluster = onOffCluster;
 
-      this.log('[BUTTON1-BIND] ✅ HOBEIAN onOff binding setup complete');
-      this.log('[BUTTON1-BIND] 💡 TIP: Triple-click button to switch between EVENT and COMMAND modes');
+      this.log('[BUTTON1-BIND] ✅ Universal onOff binding setup complete');
 
     } catch (err) {
       this.log('[BUTTON1-BIND] ⚠️ Setup error:', err.message);

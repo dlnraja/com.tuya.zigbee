@@ -2559,6 +2559,30 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
     let dpId = data.dp || data.dpId || data.datapoint;
 
+    // v5.8.39: Handle COMPOUND DP frames (3reality multi-DP-in-one)
+    // When data.length (declared DP size) < actual buffer, slice and parse sub-DPs
+    const rawBuf = data.data || data.value;
+    if (dpId !== undefined && Buffer.isBuffer(rawBuf) && typeof data.length === 'number'
+        && data.length > 0 && rawBuf.length > data.length && rawBuf.length > 4) {
+      this.log(`[RADAR] 🔀 Compound frame: DP${dpId} declared=${data.length}B, buffer=${rawBuf.length}B`);
+      const dpSlice = rawBuf.slice(0, data.length);
+      const remaining = rawBuf.slice(data.length);
+      // Replace data with sliced value for this DP
+      data = { ...data, data: dpSlice, value: dpSlice };
+      // Parse remaining bytes as TLV sub-DPs
+      let off = 0;
+      while (off + 4 <= remaining.length) {
+        const subDp = remaining.readUInt8(off);
+        const subType = remaining.readUInt8(off + 1);
+        const subLen = remaining.readUInt16BE(off + 2);
+        if (subDp === 0 || subDp > 200 || subLen > 64 || off + 4 + subLen > remaining.length) break;
+        const subData = remaining.slice(off + 4, off + 4 + subLen);
+        off += 4 + subLen;
+        this.log(`[RADAR] 🔀 Compound sub-DP${subDp}: type=${subType}, len=${subLen}, hex=${subData.toString('hex')}`);
+        this._handleTuyaResponse({ dp: subDp, datatype: subType, length: subLen, data: subData });
+      }
+    }
+
     // v5.8.30: Raw Tuya frame parsing fallback (4x4_Pete battery sensor fix)
     // When data arrives via node-level command listener, it may be a raw Buffer
     // Format: [seq:2][dp:1][type:1][len:2][data:len]
