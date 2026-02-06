@@ -1,4 +1,7 @@
 {
+  "5.8.35": {
+    "en": "📡 v5.8.35: Z2M + ZHA ENRICHMENT - Added 59 new device fingerprints from Zigbee2MQTT (45) and ZHA quirks (14). New devices: 7 presence radars, 6 climate sensors, 4 motion sensors, 3 dimmers, 3 IR blasters, 3 contact sensors, 2 air quality monitors, 2 radiator valves, 2 smart plugs, 2 smoke detectors, 2 switches, 12 legacy TRVs, and more. All entries include DP mappings for runtime capability detection. DeviceFingerprintDB and EnrichedDPMappings updated with full Z2M/ZHA cross-referenced data."
+  },
   "5.8.34": {
     "en": "🌡️ v5.8.34: HOBEIAN ZG-204ZM DYNAMIC TEMP/HUMIDITY - Some ZG-204ZM variants have temperature and humidity sensors. Instead of blocking these capabilities, they are now discovered dynamically at runtime when the device reports data via Tuya DP. Added optional DP111/DP18/DP3 temperature mappings. Auto-discovery engine also dynamically adds capabilities when it detects temp/humidity patterns with high confidence. ZG-204ZV and 10G Multi configs unchanged (still add at init)."
   },

@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.8.34",
+  "version": "5.8.35",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -23400,7 +23400,9 @@
           "zigbee alliance",
           "ZIGBEE ALLIANCE",
           "zigbee2mqtt",
-          "ZIGBEE2MQTT"
+          "ZIGBEE2MQTT",
+          "_TZE284_8b9zpaav",
+          "_TZE284_it9utkro"
         ],
         "productId": [
           "TS0005",
@@ -27678,7 +27680,8 @@
           "orvibo",
           "ORVIBO",
           "woox",
-          "WOOX"
+          "WOOX",
+          "_TZ3000_8utxxtzr"
         ],
         "productId": [
           "ZBPB10BK",
@@ -36791,7 +36794,13 @@
           "zigbee alliance",
           "ZIGBEE ALLIANCE",
           "zigbee2mqtt",
-          "ZIGBEE2MQTT"
+          "ZIGBEE2MQTT",
+          "_TZE284_9yapgbuv",
+          "_TZE284_hodyryli",
+          "_TZE204_w2vunxzm",
+          "DHT0001",
+          "DHTA001",
+          "NTCHT01"
         ],
         "productId": [
           "TS0201",
@@ -36811,7 +36820,8 @@
           "CK-TLSR8656-SS5-01(7014)",
           "SNZB-02DR2",
           "SNZB-02LD",
-          "SNZB-02WD"
+          "SNZB-02WD",
+          "Excellux"
         ],
         "endpoints": {
           "1": {
@@ -38341,7 +38351,10 @@
           "zigbee2mqtt",
           "ZIGBEE2MQTT",
           "zs110050078",
-          "ZS110050078"
+          "ZS110050078",
+          "_TZE284_2baujqot",
+          "CAT0001",
+          "DSS0010"
         ],
         "productId": [
           "TS0203",
@@ -38363,7 +38376,8 @@
           "3320-L",
           "SNZB-04",
           "TS0601",
-          "SNZB-04P"
+          "SNZB-04P",
+          "Excellux"
         ],
         "endpoints": {
           "1": {
@@ -39507,7 +39521,9 @@
           "zncldj12lm",
           "ZNCLDJ12LM",
           "znjlbl01lm",
-          "ZNJLBL01LM"
+          "ZNJLBL01LM",
+          "_TZE210_inpjmc0h",
+          "_TYST11_wmcdj3aq"
         ],
         "productId": [
           "TS0302",
@@ -39524,7 +39540,8 @@
           "AM02",
           "AM43-0.45/40-ES-EZ",
           "AM43-0.45/40-ES-EB",
-          "TS0601"
+          "TS0601",
+          "TS0301"
         ],
         "endpoints": {
           "1": {
@@ -42015,7 +42032,10 @@
           "zigbee alliance",
           "ZIGBEE ALLIANCE",
           "zigbee2mqtt",
-          "ZIGBEE2MQTT"
+          "ZIGBEE2MQTT",
+          "_TZE284_68utemio",
+          "_TZE200_dcnsggvz",
+          "_TZE200_tgeqdjgk"
         ],
         "productId": [
           "TS0601_dim1",
@@ -46019,7 +46039,8 @@
           "zigbee alliance",
           "ZIGBEE ALLIANCE",
           "zigbee2mqtt",
-          "ZIGBEE2MQTT"
+          "ZIGBEE2MQTT",
+          "_TZE284_ikul00sx"
         ],
         "productId": [
           "TS0601_fanctrl",
@@ -47774,7 +47795,8 @@
           "zigbee alliance",
           "ZIGBEE ALLIANCE",
           "zigbee2mqtt",
-          "ZIGBEE2MQTT"
+          "ZIGBEE2MQTT",
+          "_TZE200_ioxkjvuz"
         ],
         "endpoints": {
           "1": {
@@ -52393,7 +52415,10 @@
           "zigbee alliance",
           "ZIGBEE ALLIANCE",
           "zigbee2mqtt",
-          "ZIGBEE2MQTT"
+          "ZIGBEE2MQTT",
+          "_TZ3290_jxvzqatwgsaqzx1u",
+          "_TZ3290_lypnqvlem5eq1ree",
+          "_TZ3290_nba3knpsarkawgnt"
         ],
         "productId": [
           "TS1201",
@@ -58197,7 +58222,11 @@
           "zp2-en",
           "ZP2-EN",
           "zs1100400-in-v1a02",
-          "ZS1100400-IN-V1A02"
+          "ZS1100400-IN-V1A02",
+          "_TZE204_debczeci",
+          "_TZE284_tre6haif",
+          "PIRIV01",
+          "VABRATE"
         ],
         "productId": [
           "TS0202",
@@ -58223,7 +58252,8 @@
           "SNZB-03",
           "TS0601",
           "ZG-204ZM",
-          "SNZB-03P"
+          "SNZB-03P",
+          "Excellux"
         ],
         "endpoints": {
           "1": {
@@ -61380,7 +61410,9 @@
           "zncz12lm",
           "ZNCZ12LM",
           "zncz15lm",
-          "ZNCZ15LM"
+          "ZNCZ15LM",
+          "_TZ3210_ph1joc22",
+          "_TZ3000_pl5v1yyy"
         ],
         "productId": [
           "TS0111",
@@ -64508,7 +64540,14 @@
           "zigbee alliance",
           "ZIGBEE ALLIANCE",
           "zigbee2mqtt",
-          "ZIGBEE2MQTT"
+          "ZIGBEE2MQTT",
+          "_TZE284_pzm3wab5",
+          "_TZE284_twybxdzl",
+          "_TZE284_hgeqeyuv",
+          "_TZE200_juzago6i",
+          "_TZE284_vceqncho",
+          "_TZE284_who1jxwd",
+          "B3876M9"
         ],
         "productId": [
           "MG1_5RZ",
@@ -64523,7 +64562,8 @@
           "CK-BL702-MWS-01",
           "SZLMR10",
           "TS0601",
-          "ZG-227Z"
+          "ZG-227Z",
+          "ZP-301Z"
         ],
         "learnmode": {
           "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
@@ -66592,7 +66632,21 @@
           "zigbee alliance",
           "ZIGBEE ALLIANCE",
           "zigbee2mqtt",
-          "ZIGBEE2MQTT"
+          "ZIGBEE2MQTT",
+          "_TZE284_noixx2uz",
+          "_TZE204_wc2w9t1s",
+          "_TYST11_jeaxp72v",
+          "_TYST11_kfvq6avy",
+          "_TYST11_zivfvd7h",
+          "_TYST11_hhrtiq0x",
+          "_TYST11_ps5v5jor",
+          "_TYST11_owwdxjbx",
+          "_TYST11_8daqwrsj",
+          "_TYST11_czk78ptr",
+          "_TYST11_ckud7u2l",
+          "_TYST11_ywdxldoj",
+          "_TYST11_cwnjrr72",
+          "_TYST11_2atgpdho"
         ],
         "productId": [
           "TV01-ZB",
@@ -70326,7 +70380,8 @@
           "zigbee alliance",
           "ZIGBEE ALLIANCE",
           "zigbee2mqtt",
-          "ZIGBEE2MQTT"
+          "ZIGBEE2MQTT",
+          "_TYST11_d0yu2xgi"
         ],
         "productId": [
           "TS0216",
@@ -72904,7 +72959,9 @@
           "zigbee alliance",
           "ZIGBEE ALLIANCE",
           "zigbee2mqtt",
-          "ZIGBEE2MQTT"
+          "ZIGBEE2MQTT",
+          "_TZE200_ioxkjvuz",
+          "_TZE204_qaxkdgyt"
         ],
         "endpoints": {
           "1": {
@@ -73629,7 +73686,8 @@
           "zigbee alliance",
           "ZIGBEE ALLIANCE",
           "zigbee2mqtt",
-          "ZIGBEE2MQTT"
+          "ZIGBEE2MQTT",
+          "_TZE284_hdml1aav"
         ],
         "productId": [
           "ZG-303Z",
@@ -74879,7 +74937,9 @@
           "zigbee alliance",
           "ZIGBEE ALLIANCE",
           "zigbee2mqtt",
-          "ZIGBEE2MQTT"
+          "ZIGBEE2MQTT",
+          "_TZ3000_trdx8uxs",
+          "_TZ3000_gdsvhfao"
         ]
       },
       "images": {
@@ -78660,7 +78720,8 @@
           "zigbee alliance",
           "ZIGBEE ALLIANCE",
           "zigbee2mqtt",
-          "ZIGBEE2MQTT"
+          "ZIGBEE2MQTT",
+          "_TZ3000_tyg4yiat"
         ]
       },
       "images": {
@@ -82214,7 +82275,10 @@
           "zigbee alliance",
           "ZIGBEE ALLIANCE",
           "zigbee2mqtt",
-          "ZIGBEE2MQTT"
+          "ZIGBEE2MQTT",
+          "_TZE204_ad2jkxwh",
+          "_TZE204_72bewjky",
+          "TZE204_7sjncirf"
         ],
         "productId": [
           "TS0016",
