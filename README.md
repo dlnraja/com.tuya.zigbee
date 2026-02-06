@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.41** | 🪟 v5.8.41: FORUM+GITHUB TRIAGE - (1) Tbao TS130F curtain switch (_TZ3000_bs9... |
 | **v5.8.40** | 🔧 v5.8.40: THREE DIAGNOSTIC FIXES - (1) BSEED TS0726 4-gang switch (diag 83a... |
 | **v5.8.39** | 🔘 v5.8.39: FIX TS0043 LORATAP 3-BUTTON REMOTE (Issue #98 DVMasters) - Button... |
 | **v5.8.38** | 🚨 v5.8.38: REGRESSION FIX for v5.8.36 - DynamicCapabilityManager was enabled... |
@@ -78,7 +79,6 @@
 | **v5.8.34** | 🌡️ v5.8.34: HOBEIAN ZG-204ZM DYNAMIC TEMP/HUMIDITY - Some ZG-204ZM variants ... |
 | **v5.8.33** | 🔤 v5.8.33: CASE-INSENSITIVE MATCHING - All manufacturer name and model ID co... |
 | **v5.8.32** | 🧠 v5.8.32: ADAPTIVE LEARNING WIRED - Connected IntelligentDeviceAdapter to l... |
-| **v5.8.31** | 🔍 v5.8.31: INTERVIEW AUDIT + ZCL-ONLY FIX - Audited 12 device interviews (8 ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
