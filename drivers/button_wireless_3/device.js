@@ -1,128 +1,216 @@
 'use strict';
-
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
- * Button3GangDevice - v5.7.52
+ * Button3GangDevice - v5.8.39
  *
- * FIX v5.2.92: Was incorrectly extending HybridDevice (detected as SWITCH)
- * FIX v5.5.452: Dynamic capabilities now in ButtonDevice base class
- * FIX v5.7.52: Added cluster 0xE000 support for LoraTap TS0043 (GitHub #98)
+ * FIX v5.8.39: Complete rewrite of button detection (GitHub #98 DVMasters)
+ *   - commandToggle is SINGLE press (was wrongly mapped to long)
+ *   - Added raw frame interceptor for E000 (SDK discards unknown cluster frames)
+ *   - Added explicit onOff binding on all EPs (EP2-3 had no reporting)
+ *   - Removed duplicate attr.onOff listener (base class handles this)
  *
- * Handles single/double/long press for 3 buttons
+ * STRUCTURE TS0043:
+ *   EP1: Button 1 (onOff, powerCfg, E000)
+ *   EP2: Button 2 (onOff, powerCfg)
+ *   EP3: Button 3 (onOff, powerCfg)
  */
 class Button3GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('╔═══════════════════════════════════════════════════════════════════╗');
-    this.log('║           BUTTON 3-GANG v5.7.52 - E000 SUPPORT                    ║');
-    this.log('╚═══════════════════════════════════════════════════════════════════╝');
+    this.log('[BUTTON3] v5.8.39 initializing...');
 
     // Set button count BEFORE calling super (base class uses this!)
     this.buttonCount = 3;
+    this._zclNode = zclNode;
+    this._btnDedup = {};
 
-    // Base class handles dynamic capabilities via _ensureDynamicCapabilities()
-    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+    const eps = Object.keys(zclNode?.endpoints || {});
+    this.log(`[BUTTON3] Endpoints: ${eps.join(', ')}`);
 
-    // v5.7.52: Setup E000 detection for LoraTap TS0043 (GitHub #98)
-    await this._setupE000Detection(zclNode);
-    this.log('[INIT] ✅ Button3GangDevice initialized - 3 buttons ready');
+    // Base class handles dynamic capabilities
+    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT]', err.message));
+
+    // v5.8.39: Comprehensive button detection (GitHub #98)
+    await this._setupOnOffCommands(zclNode);
+    await this._setupE000BoundCluster(zclNode);
+    await this._setupRawFrameInterceptor(zclNode);
+
+    this.log('[BUTTON3] ✅ initialized - OnOff + E000 + Raw interceptor');
   }
 
-  async _setupE000Detection(zclNode) {
-    const mfr = this.getData()?.manufacturerName || this.getSetting?.('zb_manufacturer_name') || '';
-    
-    // v5.8.1: Always setup E000 for all 3-button devices (GitHub #98)
-    // LoraTap TS0043 and similar devices use onOff commands or cluster 0xE000
-    this.log('[BUTTON3-E000] 🔧 Setting up button detection for 3-button device...');
-    this.log(`[BUTTON3-E000] 📋 Manufacturer: ${mfr || 'unknown'}`);
-    this._e000Dedup = {};
+  // Deduplication helper for button presses
+  async _handleButton(ep, cmd, type) {
+    const now = Date.now();
+    const key = `${ep}_${cmd}`;
+    if (now - (this._btnDedup[key] || 0) < 500) return;
+    this._btnDedup[key] = now;
+    this.log(`[BUTTON3] 🔘 EP${ep} ${cmd} → Button ${ep} ${type.toUpperCase()}`);
+    await this.triggerButtonPress(ep, type);
+  }
 
-    // Setup onOff command listeners on all 3 endpoints
+  /**
+   * LAYER 1: onOff command listeners on all 3 endpoints
+   * Z2M TS0043: commandToggle = single press per endpoint
+   * Also binds onOff cluster so sleepy device sends to Homey
+   */
+  async _setupOnOffCommands(zclNode) {
     for (let ep = 1; ep <= 3; ep++) {
-      const endpoint = zclNode?.endpoints?.[ep];
-      if (!endpoint) {
-        this.log(`[BUTTON3-E000] ⚠️ EP${ep} not available`);
-        continue;
-      }
-
-      const cluster = endpoint?.clusters?.onOff || endpoint?.clusters?.[6];
+      const cluster = zclNode?.endpoints?.[ep]?.clusters?.onOff
+        || zclNode?.endpoints?.[ep]?.clusters?.genOnOff
+        || zclNode?.endpoints?.[ep]?.clusters?.[6];
       if (!cluster) {
-        this.log(`[BUTTON3-E000] ⚠️ EP${ep} no onOff cluster`);
+        this.log(`[BUTTON3] ⚠️ EP${ep} no onOff cluster`);
         continue;
       }
 
-      const handle = async (cmd, type) => {
-        const now = Date.now();
-        if (now - (this._e000Dedup[`${ep}_${cmd}`] || 0) < 500) return;
-        this._e000Dedup[`${ep}_${cmd}`] = now;
-        this.log(`[BUTTON3-E000] 🔘 EP${ep} ${cmd} → Button ${ep} ${type}`);
-        await this.triggerButtonPress(ep, type);
-      };
-
-      // Listen for onOff commands (button presses)
-      if (cluster.on) {
-        cluster.on('commandOn', () => handle('on', 'single'));
-        cluster.on('commandOff', () => handle('off', 'double'));
-        cluster.on('commandToggle', () => handle('toggle', 'long'));
+      // Bind so device sends events to Homey coordinator
+      if (typeof cluster.bind === 'function') {
+        try {
+          await cluster.bind();
+          this.log(`[BUTTON3] ✅ OnOff bound EP${ep}`);
+        } catch (err) {
+          this.log(`[BUTTON3] ℹ️ Bind EP${ep}: ${err.message}`);
+        }
       }
 
-      // v5.8.1: Also listen for attribute reports (some devices use this instead)
-      if (cluster.on) {
-        cluster.on('attr.onOff', (value) => {
-          this.log(`[BUTTON3-E000] 📊 EP${ep} onOff attr: ${value}`);
-          // Attribute change = button press detected
-          handle('attr', 'single');
-        });
-      }
+      if (typeof cluster.on !== 'function') continue;
 
-      this.log(`[BUTTON3-E000] ✅ EP${ep} listeners ready`);
+      // CRITICAL: commandToggle = single (Z2M research), NOT long
+      cluster.on('commandToggle', () => this._handleButton(ep, 'toggle', 'single'));
+      cluster.on('commandOn', () => this._handleButton(ep, 'on', 'single'));
+      cluster.on('commandOff', () => this._handleButton(ep, 'off', 'double'));
+
+      // Generic command fallback
+      cluster.on('command', (cmdName) => {
+        const map = { on: 'single', setOn: 'single', off: 'double', setOff: 'double', toggle: 'single' };
+        if (map[cmdName]) this._handleButton(ep, `cmd_${cmdName}`, map[cmdName]);
+      });
+
+      this.log(`[BUTTON3] ✅ EP${ep} onOff listeners ready`);
+    }
+  }
+
+  /**
+   * LAYER 2: E000 BoundCluster for MOES-style button data
+   * Cluster 57344 (0xE000) carries button+pressType in frame payload
+   */
+  async _setupE000BoundCluster(zclNode) {
+    let TuyaE000BoundCluster;
+    try {
+      TuyaE000BoundCluster = require('../../lib/clusters/TuyaE000BoundCluster');
+    } catch (e) {
+      this.log('[BUTTON3-E000] ℹ️ TuyaE000BoundCluster not available');
+      return;
     }
 
-    // v5.8.1: Setup BoundCluster for cluster 0xE000 if available
-    await this._setupE000BoundCluster(zclNode);
+    for (let ep = 1; ep <= 3; ep++) {
+      const endpoint = zclNode?.endpoints?.[ep];
+      if (!endpoint) continue;
+
+      const boundCluster = new TuyaE000BoundCluster({
+        device: this,
+        onButtonPress: async (button, pressType) => {
+          const btn = (button >= 1 && button <= 3) ? button : ep;
+          this.log(`[BUTTON3-E000] 🔘 Button ${btn} ${pressType.toUpperCase()} (EP${ep})`);
+          await this.triggerButtonPress(btn, pressType);
+        }
+      });
+
+      boundCluster.endpoint = ep;
+      if (!endpoint.bindings) endpoint.bindings = {};
+      endpoint.bindings[57344] = boundCluster;
+      this.log(`[BUTTON3-E000] ✅ BoundCluster EP${ep}`);
+    }
   }
 
-  // v5.8.1: Setup BoundCluster for cluster 0xE000 (GitHub #98)
-  async _setupE000BoundCluster(zclNode) {
+  /**
+   * LAYER 3: Raw frame interceptor
+   * Homey SDK discards frames for unknown clusters like 57344.
+   * Hook zclNode.handleFrame to catch them before they are dropped.
+   */
+  async _setupRawFrameInterceptor(zclNode) {
     try {
-      let TuyaE000BoundCluster;
-      try {
-        TuyaE000BoundCluster = require('../../lib/clusters/TuyaE000BoundCluster');
-      } catch (e) {
-        this.log('[BUTTON3-E000] ℹ️ TuyaE000BoundCluster not available');
+      // Hook zclNode-level handleFrame (catches ALL incoming frames)
+      if (zclNode && typeof zclNode.handleFrame === 'function') {
+        const origNodeHandle = zclNode.handleFrame.bind(zclNode);
+        zclNode.handleFrame = async (endpointId, clusterId, frame, meta) => {
+          if (clusterId === 57344 || clusterId === 0xE000) {
+            this.log(`[BUTTON3-RAW] EP${endpointId} cluster 57344 intercepted`);
+            this._parseRawE000Frame(endpointId, frame);
+          }
+          return origNodeHandle(endpointId, clusterId, frame, meta);
+        };
+        this.log('[BUTTON3-RAW] ✅ zclNode.handleFrame hooked');
+      }
+
+      // Hook per-endpoint handleFrame as additional safety net
+      for (let ep = 1; ep <= 3; ep++) {
+        const endpoint = zclNode?.endpoints?.[ep];
+        if (!endpoint || typeof endpoint.handleFrame !== 'function') continue;
+
+        const origEpHandle = endpoint.handleFrame.bind(endpoint);
+        endpoint.handleFrame = async (clusterId, frame, meta) => {
+          if (clusterId === 57344 || clusterId === 0xE000) {
+            this.log(`[BUTTON3-RAW] EP${ep} endpoint-level intercept`);
+            this._parseRawE000Frame(ep, frame);
+          }
+          return origEpHandle(clusterId, frame, meta);
+        };
+      }
+
+      this.log('[BUTTON3-RAW] ✅ Frame interceptors ready');
+    } catch (err) {
+      this.log(`[BUTTON3-RAW] ⚠️ Setup error: ${err.message}`);
+    }
+  }
+
+  /**
+   * Parse raw E000 frame into button press
+   * Multiple strategies: cmdId-as-button, data[0]/data[1], single-byte, fallback
+   */
+  _parseRawE000Frame(ep, frame) {
+    try {
+      const cmdId = frame?.cmdId ?? frame?.commandId;
+      const data = frame?.data;
+      const pressMap = { 0: 'single', 1: 'double', 2: 'long' };
+
+      this.log(`[BUTTON3-RAW] Parsing: cmdId=${cmdId}, data=${data?.toString?.('hex') || 'none'}`);
+
+      // Strategy 1: cmdId is button number (1-3), data[0] is press type
+      if (cmdId >= 1 && cmdId <= 3) {
+        const pressType = pressMap[data?.[0]] || 'single';
+        this.log(`[BUTTON3-RAW] 🔘 Button ${cmdId} ${pressType} (cmdId strategy)`);
+        this.triggerButtonPress(cmdId, pressType);
         return;
       }
 
-      for (let ep = 1; ep <= 3; ep++) {
-        const endpoint = zclNode?.endpoints?.[ep];
-        if (!endpoint) continue;
-
-        const boundCluster = new TuyaE000BoundCluster({
-          device: this,
-          onButtonPress: async (button, pressType) => {
-            const buttonNum = (button >= 1 && button <= 3) ? button : ep;
-            this.log(`[BUTTON3-E000] 🔘 Button ${buttonNum} ${pressType.toUpperCase()} (BoundCluster EP${ep})`);
-            await this.triggerButtonPress(buttonNum, pressType);
-          }
-        });
-
-        boundCluster.endpoint = ep;
-        if (!endpoint.bindings) endpoint.bindings = {};
-        endpoint.bindings[57344] = boundCluster;
-        this.log(`[BUTTON3-E000] ✅ BoundCluster EP${ep} cluster 57344`);
+      // Strategy 2: data[0] = button, data[1] = press type
+      if (data && data.length >= 2 && data[0] >= 1 && data[0] <= 3) {
+        const pressType = pressMap[data[1]] || 'single';
+        this.log(`[BUTTON3-RAW] 🔘 Button ${data[0]} ${pressType} (data strategy)`);
+        this.triggerButtonPress(data[0], pressType);
+        return;
       }
+
+      // Strategy 3: Single byte = press type, use endpoint as button
+      if (data && data.length === 1) {
+        const pressType = pressMap[data[0]] || 'single';
+        this.log(`[BUTTON3-RAW] 🔘 Button ${ep} ${pressType} (single-byte strategy)`);
+        this.triggerButtonPress(ep, pressType);
+        return;
+      }
+
+      // Fallback: endpoint as button, single press
+      this.log(`[BUTTON3-RAW] 🔘 Button ${ep} single (fallback)`);
+      this.triggerButtonPress(ep, 'single');
     } catch (err) {
-      this.log('[BUTTON3-E000] ⚠️ BoundCluster setup error:', err.message);
+      this.log(`[BUTTON3-RAW] ⚠️ Parse error: ${err.message}`);
     }
   }
 
   async onDeleted() {
     this.log('Button3GangDevice deleted');
-    if (this._clickState) {
-      if (this._clickState.clickTimer) clearTimeout(this._clickState.clickTimer);
-      if (this._clickState.longPressTimer) clearTimeout(this._clickState.longPressTimer);
-    }
     if (super.onDeleted) await super.onDeleted();
   }
 }
