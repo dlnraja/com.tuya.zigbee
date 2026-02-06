@@ -1,4 +1,7 @@
 {
+  "5.8.39": {
+    "en": "🔘 v5.8.39: FIX TS0043 LORATAP 3-BUTTON REMOTE (Issue #98 DVMasters) - Buttons not triggering flows. Root causes: (1) commandToggle was wrongly mapped to 'long' press instead of 'single' (2) No raw frame interceptor for cluster 0xE000 - SDK discards unknown cluster frames (3) onOff cluster not bound on EP2-3 so device didn't send events to Homey. Fix: Complete rewrite of button_wireless_3 device with 3-layer detection: onOff commands with correct mappings + E000 BoundCluster + raw frame interceptor. User should DELETE and RE-PAIR device."
+  },
   "5.8.38": {
     "en": "🚨 v5.8.38: REGRESSION FIX for v5.8.36 - DynamicCapabilityManager was enabled globally which broke climate sensors (Karsten_Hille), presence sensors (FinnKje), and soil sensor installs (DutchDuke). Root cause: DP heuristics conflict with existing device handlers (DP1=onoff vs alarm_motion, etc). Fix: (1) DynamicCapabilityManager now ONLY active for universal_fallback/zigbee_universal drivers (2) CustomClusterManager switched to discovery-only mode - logs and emits events but no longer auto-maps attributes or auto-adds capabilities (3) Disabled deferred cluster attribute probing that caused errors on battery devices."
   },
