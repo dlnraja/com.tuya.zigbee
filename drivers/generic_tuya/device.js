@@ -42,8 +42,8 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
 
     // Get device info
     const settings = this.getSettings() || {};
-    const manufacturer = settings.zb_manufacturerName || 'unknown';
-    const model = settings.zb_modelId || 'TS0601';
+    const manufacturer = settings.zb_manufacturer_name || settings.zb_manufacturerName || 'unknown';
+    const model = settings.zb_model_id || settings.zb_modelId || 'TS0601';
 
     this.log(`[GENERIC] Device: ${manufacturer} / ${model}`);
     this.log('[GENERIC] Mode: AUTO-ADAPTIVE + Dynamic Discovery');
