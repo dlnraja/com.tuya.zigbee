@@ -769,6 +769,8 @@ const SENSOR_CONFIGS = {
     modelId: 'ZG-204ZV',  // v5.5.841: Explicit modelId for HOBEIAN routing
     battery: true,
     hasIlluminance: true,
+    hasTemperature: true,   // v5.8.34: Explicit flag for init
+    hasHumidity: true,      // v5.8.34: Explicit flag for init
     noTemperature: false,   // v5.5.831: ZG-204ZV HAS temperature!
     noHumidity: false,      // v5.5.831: ZG-204ZV HAS humidity!
     // v5.5.985: Peter #1282 - Lux smoothing to prevent light flickering
@@ -1107,8 +1109,8 @@ const SENSOR_CONFIGS = {
     useIasZone: true,       // v5.5.772: YES - motion via IAS Zone cluster 1280!
     useTuyaDP: true,        // v5.5.772: YES - settings via Tuya DP cluster 61184
     hasIlluminance: true,   // Via ZCL cluster 1024, NOT Tuya DP106!
-    noTemperature: true,    // NO temperature sensor on this device
-    noHumidity: true,       // NO humidity sensor on this device
+    noTemperature: false,   // v5.8.34: Some variants DO have temp - discover at runtime
+    noHumidity: false,      // v5.8.34: Some variants DO have humidity - discover at runtime
     writableDPs: [2, 4, 102, 104, 105, 107, 108, 109],
     dpMap: {
       // ═══════════════════════════════════════════════════════════════════
@@ -1124,6 +1126,15 @@ const SENSOR_CONFIGS = {
       // ═══════════════════════════════════════════════════════════════════
       106: { cap: 'measure_luminance', type: 'lux_direct' },
       
+      // ═══════════════════════════════════════════════════════════════════
+      // v5.8.34: OPTIONAL ENVIRONMENTAL SENSORS (variant-dependent)
+      // Some ZG-204ZM variants have temp+humidity (user confirmed)
+      // Capabilities added DYNAMICALLY at runtime when device reports data
+      // ═══════════════════════════════════════════════════════════════════
+      111: { cap: 'measure_temperature', divisor: 10, optional: true },  // Temperature ÷10 (same as 10G multi)
+      18: { cap: 'measure_temperature', divisor: 10, optional: true },   // Alt temp DP
+      3: { cap: 'measure_temperature', divisor: 10, optional: true },    // Alt temp DP (ZG-204ZV style)
+
       // ═══════════════════════════════════════════════════════════════════
       // SETTINGS (via Tuya DP cluster 61184) - these ARE Tuya DPs
       // ═══════════════════════════════════════════════════════════════════
@@ -2258,13 +2269,13 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
     // v5.5.852: ADD temperature/humidity for sensors that support them (ZG-204ZV fix)
     // Peter_van_Werkhoven forum #1203: ZG-204ZV should have temp+humidity
-    if (!config.noTemperature && !this.hasCapability('measure_temperature')) {
+    if (config.hasTemperature && !config.noTemperature && !this.hasCapability('measure_temperature')) {
       try {
         await this.addCapability('measure_temperature');
         this.log('[RADAR] 🌡️ Added measure_temperature (sensor supports it)');
       } catch (e) { /* ignore */ }
     }
-    if (!config.noHumidity && !this.hasCapability('measure_humidity')) {
+    if (config.hasHumidity && !config.noHumidity && !this.hasCapability('measure_humidity')) {
       try {
         await this.addCapability('measure_humidity');
         this.log('[RADAR] 💧 Added measure_humidity (sensor supports it)');
@@ -2591,6 +2602,20 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         if (discovered && discovered.confidence >= 70) {
           this.log(`[AUTO-DISCOVERY] ✨ DP${dpId} → ${discovered.capability} = ${discovered.value} (confidence: ${discovered.confidence}%)`);
 
+          // v5.8.34: Dynamically add capability if not present (runtime discovery)
+          if (!this.hasCapability(discovered.capability)) {
+            const config = this._getSensorConfig();
+            const blocked = (discovered.capability === 'measure_temperature' && config?.noTemperature) ||
+                            (discovered.capability === 'measure_humidity' && config?.noHumidity);
+            if (!blocked) {
+              this.addCapability(discovered.capability).then(() => {
+                this.log(`[AUTO-DISCOVERY] 🆕 Dynamically added ${discovered.capability} (runtime detection)`);
+                this.setCapabilityValue(discovered.capability, discovered.value).catch(() => {});
+              }).catch(() => {});
+              return;
+            }
+          }
+
           // Apply to capability
           if (this.hasCapability(discovered.capability)) {
             this.setCapabilityValue(discovered.capability, discovered.value).catch(() => { });
@@ -2662,8 +2687,18 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       const divisor = dpMap[dpId].divisor || 10;
       const temp = Math.round((rawTemp / divisor) * 10) / 10;
       if (temp >= -40 && temp <= 80) {
-        this.log(`[RADAR] 🌡️ DP${dpId} → temperature = ${temp}°C (raw: ${rawTemp}, ÷${divisor})`);
-        this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+        // v5.8.34: Dynamic capability add for optional DP mappings (HOBEIAN ZG-204ZM variants)
+        if (!this.hasCapability('measure_temperature') && dpMap[dpId].optional) {
+          this.addCapability('measure_temperature').then(() => {
+            this.log(`[RADAR] 🌡️🆕 Dynamically added measure_temperature from DP${dpId} (${temp}°C)`);
+            this.setCapabilityValue('measure_temperature', temp).catch(() => {});
+          }).catch(() => {});
+          return;
+        }
+        if (this.hasCapability('measure_temperature')) {
+          this.log(`[RADAR] 🌡️ DP${dpId} → temperature = ${temp}°C (raw: ${rawTemp}, ÷${divisor})`);
+          this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+        }
       } else {
         this.log(`[RADAR] ⚠️ DP${dpId} temperature out of range: ${temp}°C (raw: ${rawTemp})`);
       }
@@ -2677,8 +2712,18 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       // v5.5.987: Peter #1265 - Support multiplier for humidity (9% → 90%)
       const humidity = Math.round((rawHumid / divisor) * multiplier);
       if (humidity >= 0 && humidity <= 100) {
-        this.log(`[RADAR] 💧 DP${dpId} → humidity = ${humidity}% (raw: ${rawHumid}, ÷${divisor}, ×${multiplier})`);
-        this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
+        // v5.8.34: Dynamic capability add for optional DP mappings (HOBEIAN ZG-204ZM variants)
+        if (!this.hasCapability('measure_humidity') && dpMap[dpId].optional) {
+          this.addCapability('measure_humidity').then(() => {
+            this.log(`[RADAR] 💧🆕 Dynamically added measure_humidity from DP${dpId} (${humidity}%)`);
+            this.setCapabilityValue('measure_humidity', humidity).catch(() => {});
+          }).catch(() => {});
+          return;
+        }
+        if (this.hasCapability('measure_humidity')) {
+          this.log(`[RADAR] 💧 DP${dpId} → humidity = ${humidity}% (raw: ${rawHumid}, ÷${divisor}, ×${multiplier})`);
+          this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
+        }
       } else {
         this.log(`[RADAR] ⚠️ DP${dpId} humidity out of range: ${humidity}% (raw: ${rawHumid})`);
       }
