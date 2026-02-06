@@ -69,6 +69,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.39** | 🔘 v5.8.39: FIX TS0043 LORATAP 3-BUTTON REMOTE (Issue #98 DVMasters) - Button... |
 | **v5.8.38** | 🚨 v5.8.38: REGRESSION FIX for v5.8.36 - DynamicCapabilityManager was enabled... |
 | **v5.8.37** | 🐛 v5.8.37: FIX _TZ321C_fkzihax8 TS0225 PAIRING (Issue #97 NoroddH) - This 5.... |
 | **v5.8.36** | 🔌 v5.8.36: CUSTOM CLUSTER DISCOVERY - Homey skips custom/manufacturer-specif... |
@@ -78,7 +79,6 @@
 | **v5.8.32** | 🧠 v5.8.32: ADAPTIVE LEARNING WIRED - Connected IntelligentDeviceAdapter to l... |
 | **v5.8.31** | 🔍 v5.8.31: INTERVIEW AUDIT + ZCL-ONLY FIX - Audited 12 device interviews (8 ... |
 | **v5.8.30** | ⚡ v5.8.30: BATTERY SENSOR FIX - Enhanced passive Tuya DP listeners for batter... |
-| **v5.8.29** | 🌡️ v5.8.29: SENSOR FIXES - (1) Climate sensor: Fixed permissive mode overwri... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
