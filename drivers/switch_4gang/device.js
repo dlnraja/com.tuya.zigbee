@@ -88,6 +88,11 @@ class Switch4GangDevice extends BaseClass {
     // Fix: Use Cluster.getCluster(6) to get the OnOff class and instantiate it manually.
     this._ensureOnOffClusters(zclNode);
 
+    // v5.8.51: Explicit binding for EP1-4 onOff clusters (TS0726 BSEED fix - Hartmut_Dunker)
+    // Root cause: TS0726 doesn't send attr reports for EP2-4 without explicit binding.
+    // The requiresExplicitBinding flag from PhysicalButtonMixin is not checked in ZCL-only path.
+    await this._bindAllEndpoints(zclNode);
+
     // v5.5.999: Helper to get onOff cluster from endpoint with multiple lookup strategies
     const getOnOffCluster = (epNum) => {
       const ep = this._zclNode?.endpoints?.[epNum];
@@ -383,6 +388,28 @@ class Switch4GangDevice extends BaseClass {
       }
     } catch (err) {
       this.log(`[BSEED-4G] ⚠️ _ensureOnOffClusters error: ${err.message}`);
+    }
+  }
+
+  /**
+   * v5.8.51: Explicitly bind onOff cluster on all endpoints (TS0726 BSEED fix)
+   * Without binding, the device won't send attribute reports for EP2-4.
+   */
+  async _bindAllEndpoints(zclNode) {
+    for (const epNum of [1, 2, 3, 4]) {
+      try {
+        const ep = zclNode?.endpoints?.[epNum];
+        if (!ep?.clusters) continue;
+        const onOff = ep.clusters.onOff || ep.clusters.genOnOff || ep.clusters[6] || ep.clusters['6'];
+        if (onOff && typeof onOff.bind === 'function') {
+          await onOff.bind().catch(e => this.log(`[BSEED-4G] EP${epNum} bind warn: ${e.message}`));
+          this.log(`[BSEED-4G] EP${epNum} onOff cluster bound`);
+        } else {
+          this.log(`[BSEED-4G] EP${epNum} no bindable onOff cluster`);
+        }
+      } catch (err) {
+        this.log(`[BSEED-4G] EP${epNum} bind error: ${err.message}`);
+      }
     }
   }
 
