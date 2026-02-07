@@ -199,6 +199,16 @@
         }
       ],
       "args": []
+    },
+    {
+      "id": "button_wireless_2_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": []
     }
   ]
 }

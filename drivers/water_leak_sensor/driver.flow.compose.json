@@ -99,6 +99,26 @@
         "de": "Wird ausgelöst, wenn der Sensor eine Manipulation erkennt (Gehäuse geöffnet)"
       },
       "args": []
+    },
+    {
+      "id": "water_leak_sensor_water_alarm",
+      "title": {
+        "en": "Water alarm",
+        "fr": "Alarme eau",
+        "nl": "Wateralarm",
+        "de": "Wasseralarm"
+      },
+      "args": []
+    },
+    {
+      "id": "water_leak_sensor_tamper_alarm",
+      "title": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -138,6 +158,16 @@
           }
         }
       ]
+    },
+    {
+      "id": "water_leak_sensor_tamper_active",
+      "title": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      },
+      "args": []
     }
   ]
 }

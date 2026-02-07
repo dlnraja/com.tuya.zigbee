@@ -50,6 +50,16 @@
         "fr": "Arrêt mouvement"
       },
       "args": []
+    },
+    {
+      "id": "shutter_roller_controller_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -132,6 +142,32 @@
           "min": 0,
           "max": 100,
           "step": 5
+        }
+      ]
+    },
+    {
+      "id": "shutter_roller_controller_set_brightness",
+      "title": {
+        "en": "Set brightness",
+        "fr": "Régler luminosité",
+        "nl": "Helderheid instellen",
+        "de": "Helligkeit einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set brightness to [[brightness]]%",
+        "fr": "Régler luminosité à [[brightness]]%",
+        "nl": "Helderheid op [[brightness]]%",
+        "de": "Helligkeit auf [[brightness]]%"
+      },
+      "args": [
+        {
+          "name": "brightness",
+          "type": "range",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "%",
+          "labelDecimals": 0
         }
       ]
     }

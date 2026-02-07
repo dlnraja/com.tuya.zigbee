@@ -1,0 +1,9 @@
+{
+  "triggers": [
+    { "id": "illuminance_sensor_lux_changed", "title": { "en": "Luminance changed", "fr": "Luminance changée", "nl": "Lichtsterkte gewijzigd", "de": "Helligkeit geändert" }, "tokens": [{ "name": "lux", "type": "number", "title": { "en": "Luminance (lux)" }, "example": 250 }], "args": [] },
+    { "id": "illuminance_sensor_battery_low", "title": { "en": "Battery low", "fr": "Batterie faible", "nl": "Batterij laag", "de": "Batterie schwach" }, "args": [] }
+  ],
+  "conditions": [
+    { "id": "illuminance_sensor_lux_above", "title": { "en": "Luminance !{{is|is not}} above", "fr": "Luminance !{{est|n'est pas}} au-dessus", "nl": "Lichtsterkte !{{is|is niet}} boven", "de": "Helligkeit !{{ist|ist nicht}} über" }, "titleFormatted": { "en": "Luminance !{{is|is not}} above [[threshold]] lux", "fr": "Luminance !{{est|n'est pas}} au-dessus de [[threshold]] lux", "nl": "Lichtsterkte !{{is|is niet}} boven [[threshold]] lux", "de": "Helligkeit !{{ist|ist nicht}} über [[threshold]] Lux" }, "args": [{ "name": "threshold", "type": "number", "min": 0, "max": 100000, "placeholder": { "en": "200" } }] }
+  ]
+}

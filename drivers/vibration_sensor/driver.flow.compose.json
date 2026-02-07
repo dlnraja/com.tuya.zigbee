@@ -109,6 +109,26 @@
         "de": "Batterie ist schwach"
       },
       "args": []
+    },
+    {
+      "id": "vibration_sensor_vibration_alarm",
+      "title": {
+        "en": "Vibration",
+        "fr": "Vibration",
+        "nl": "Trilling",
+        "de": "Vibration"
+      },
+      "args": []
+    },
+    {
+      "id": "vibration_sensor_tamper_alarm",
+      "title": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -148,6 +168,26 @@
           }
         }
       ]
+    },
+    {
+      "id": "vibration_sensor_vibration_active",
+      "title": {
+        "en": "Vibration !{{is|is not}} detected",
+        "fr": "Vibration !{{est|n'est pas}} détectée",
+        "nl": "Trilling !{{is|is niet}} gedetecteerd",
+        "de": "Vibration !{{ist|ist nicht}} erkannt"
+      },
+      "args": []
+    },
+    {
+      "id": "vibration_sensor_tamper_active",
+      "title": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      },
+      "args": []
     }
   ]
 }

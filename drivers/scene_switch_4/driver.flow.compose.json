@@ -376,6 +376,16 @@
         }
       ],
       "args": []
+    },
+    {
+      "id": "scene_switch_4_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": []
     }
   ]
 }
