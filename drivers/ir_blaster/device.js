@@ -3,13 +3,16 @@
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER, Cluster, ZCLDataTypes } = require('zigbee-clusters');
 
+// v5.8.52: Import Zosung clusters (registered at app startup in registerClusters.js)
+const ZosungIRControlCluster = require('../../lib/clusters/ZosungIRControlCluster');
+const ZosungIRTransmitCluster = require('../../lib/clusters/ZosungIRTransmitCluster');
+
 // IR Blaster cluster IDs
 const ZOSUNG_IR_CONTROL_CLUSTER_ID = 0xE004;    // 57348 - ZosungIRControl
 const ZOSUNG_IR_TRANSMIT_CLUSTER_ID = 0xED00;  // 60672 - ZosungIRTransmit
 
-// ZosungIRControl commands (cluster 0xE004)
-const CMD_IR_LEARN = 0x00;       // Start/stop learn mode
-const CMD_IR_SEND = 0x02;        // Send IR code
+// ZosungIRControl command IDs (for raw frame handling)
+const CMD_IR_LEARN = 0x00;
 
 // ZosungIRTransmit commands (cluster 0xED00)
 const CMD_START_TRANSMIT = 0x00;
@@ -19,133 +22,6 @@ const CMD_CODE_DATA_RESPONSE = 0x03;
 const CMD_DONE_SENDING = 0x04;
 const CMD_DONE_RECEIVING = 0x05;
 const CMD_ACK = 0x0B;
-
-/**
- * v5.5.356: Enhanced ZosungIRControl cluster (0xE004)
- * Based on Zigbee2MQTT/ZHA + research from SDK documentation
- */
-class ZosungIRControlCluster extends Cluster {
-  static get ID() { return ZOSUNG_IR_CONTROL_CLUSTER_ID; }
-  static get NAME() { return 'zosungIRControl'; }
-
-  static get COMMANDS() {
-    return {
-      IRLearn: {
-        id: CMD_IR_LEARN,
-        args: {
-          onoff: ZCLDataTypes.bool
-        }
-      },
-      IRSend: {
-        id: CMD_IR_SEND,
-        args: {
-          code: ZCLDataTypes.string
-        }
-      },
-      // v5.5.356: Additional commands from research
-      IRCodeQuery: {
-        id: 0x03,
-        args: {
-          codeId: ZCLDataTypes.uint8
-        }
-      },
-      IRProtocolSet: {
-        id: 0x04,
-        args: {
-          protocol: ZCLDataTypes.enum8,  // 0=NEC, 1=RC5, 2=Sony, etc.
-          frequency: ZCLDataTypes.uint32
-        }
-      }
-    };
-  }
-
-  static get ATTRIBUTES() {
-    return {
-      lastLearnedIRCode: {
-        id: 0x0000,
-        type: ZCLDataTypes.string
-      },
-      // v5.5.356: Enhanced attributes from SDK research
-      learningStatus: {
-        id: 0x0001,
-        type: ZCLDataTypes.enum8  // 0=idle, 1=learning, 2=success, 3=timeout
-      },
-      supportedProtocols: {
-        id: 0x0002,
-        type: ZCLDataTypes.bitmap8  // Bit mask of supported IR protocols
-      },
-      carrierFrequency: {
-        id: 0x0003,
-        type: ZCLDataTypes.uint32   // Current carrier frequency (Hz)
-      },
-      maxCodeLength: {
-        id: 0x0004,
-        type: ZCLDataTypes.uint16   // Maximum IR code length
-      }
-    };
-  }
-}
-
-/**
- * v5.5.356: Enhanced ZosungIRTransmit cluster (0xED00)
- * Advanced protocol implementation from GitHub sources
- */
-class ZosungIRTransmitCluster extends Cluster {
-  static get ID() { return ZOSUNG_IR_TRANSMIT_CLUSTER_ID; }
-  static get NAME() { return 'zosungIRTransmit'; }
-
-  static get COMMANDS() {
-    return {
-      startTransmit: {
-        id: CMD_START_TRANSMIT,
-        args: {
-          sequenceNumber: ZCLDataTypes.uint8,
-          totalLength: ZCLDataTypes.uint16
-        }
-      },
-      startTransmitAck: {
-        id: CMD_START_TRANSMIT_ACK,
-        args: {
-          sequenceNumber: ZCLDataTypes.uint8,
-          status: ZCLDataTypes.uint8
-        }
-      },
-      codeDataRequest: {
-        id: CMD_CODE_DATA_REQUEST,
-        args: {
-          sequenceNumber: ZCLDataTypes.uint8,
-          position: ZCLDataTypes.uint16,
-          maxLength: ZCLDataTypes.uint8
-        }
-      },
-      codeDataResponse: {
-        id: CMD_CODE_DATA_RESPONSE,
-        args: {
-          sequenceNumber: ZCLDataTypes.uint8,
-          position: ZCLDataTypes.uint16,
-          data: ZCLDataTypes.buffer
-        }
-      },
-      doneSending: {
-        id: CMD_DONE_SENDING,
-        args: {
-          sequenceNumber: ZCLDataTypes.uint8
-        }
-      },
-      doneReceiving: {
-        id: CMD_DONE_RECEIVING,
-        args: {
-          sequenceNumber: ZCLDataTypes.uint8,
-          totalLength: ZCLDataTypes.uint16
-        }
-      }
-    };
-  }
-}
-
-// Register the custom clusters
-Cluster.addCluster(ZosungIRControlCluster);
-Cluster.addCluster(ZosungIRTransmitCluster);
 
 // v5.5.356: IR Protocol constants from research
 const IR_PROTOCOLS = {
