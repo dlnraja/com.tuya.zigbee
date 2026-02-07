@@ -1,4 +1,7 @@
 {
+  "5.8.59": {
+    "en": "🔧 v5.8.59: FIX SCENE SWITCH FLOW CARDS (Freddyboy) - Physical button presses on scene_switch_1/2/3/4/6 drivers were not triggering flows. Root cause: ButtonDevice._triggerButton generated flow card IDs with '_button_Xgang' infix (e.g. scene_switch_4_button_4gang_button_pressed) but scene_switch drivers use simpler IDs (e.g. scene_switch_4_button_pressed). Added fallback flow card ID patterns without the gang infix for single/double/long press. Now ButtonDevice tries both naming conventions, fixing all scene switch drivers."
+  },
   "5.8.58": {
     "en": "🔧 v5.8.58: FORUM REGRESSION FIXES - (1) FIX water sensor no alarm (Lasse_K): IASZoneManager._handleZoneStatusChange now handles alarm_water capability using both alarm1 AND alarm2 bits. Previously only alarm_contact/alarm_motion were handled, water sensors with IAS Zone never triggered. (2) FIX contact sensor double-inversion (blutch32 _TZ3000_996rpfy6): IAS Zone events now bypass manufacturer-specific _invertContact logic. IAS alarm1=true already means 'open/alarm' per ZCL spec - only Tuya DP values need inversion. (3) FIX curtain wrong capabilities (Tbao TS130F): DCM SAFE tier now skips irrelevant caps for dedicated drivers - covers don't get measure_battery/measure_luminance, switches don't get measure_luminance. (4) FIX BSEED TS0726 4-gang EP2-4 (Hartmut_Dunker): Added configureAttributeReporting for onOff on all 4 endpoints after binding - without reporting config, EP2-4 may not send attr.onOff reports."
   },
