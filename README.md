@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.52** | 🔧 v5.8.52: TS130F CURTAIN FIX - Fixed _TZ3000_bs93npae TS130F curtain switch... |
 | **v5.8.51** | 🔧 v5.8.51: CRITICAL FIX - (1) Fixed missing super.onSettings() in 5 base cla... |
 | **v5.8.50** | 🧹 v5.8.50: COMPREHENSIVE CLEANUP & ENRICHMENT - (1) Fingerprint cleanup: Rem... |
 | **v5.8.49** | ⚡ v5.8.49: SDK3 BEST PRACTICES - Applied improvements from analysis of IKEA T... |
@@ -82,7 +83,6 @@
 | **v5.8.45** | 🧹 v5.8.45: FLOW CARD MAJOR CLEANUP - (1) Removed 87 phantom flow card regist... |
 | **v5.8.44** | v5.8.44: SMART FEATURES REWRITE - DynamicCapabilityManager, PeriodicAutoEnric... |
 | **v5.8.43** | 🎯 v5.8.43: PR#125 michelhelsdingen - HOBEIAN 10G RADAR SENSOR FIXES (tested ... |
-| **v5.8.42** | 🚨 v5.8.42: CRITICAL FINGERPRINT CONFLICT FIX - HOBEIAN ZG-204ZM (Pete's rada... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
