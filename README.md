@@ -73,9 +73,9 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.8.58** | 🔧 FORUM REGRESSION FIXES - Water sensor alarm, contact inversion, curtain wrong caps, BSEED 4-gang EP2-4 |
-| **v5.8.57** | 🔧 FIX BLANK MANUFACTURER NAMES - ensureManufacturerSettings() in ALL 10 base classes |
-| **v5.8.56** | 🔧 4x4_PETE 3-DEVICE ENRICHMENT - DP4 PERMISSIVE_VARIANT smart detection fix |
+| **v5.8.58** | 🔧 v5.8.58: FORUM REGRESSION FIXES - (1) FIX water sensor no alarm (Lasse_K):... |
+| **v5.8.57** | 🔧 v5.8.57: FIX BLANK MANUFACTURER NAMES - Added ensureManufacturerSettings()... |
+| **v5.8.56** | 🔧 v5.8.56: 4x4_PETE 3-DEVICE ENRICHMENT - (1) CRITICAL FIX: DP4 PERMISSIVE_V... |
 | **v5.8.55** | 🔧 v5.8.55: ZG-204ZM RADAR SENSOR DEEP SUPPORT (4x4_Pete) - (1) Added missing... |
 | **v5.8.54** | 🔧 v5.8.54: MOES BUTTON + SOIL SENSOR FIX - (1) Fixed Moes 4-button physical ... |
 | **v5.8.53** | 🔧 v5.8.53: HOBEIAN SENSOR FIX - (1) Fixed _TZE200_3towulqd motion sensor usi... |
@@ -83,7 +83,6 @@
 | **v5.8.51** | 🔧 v5.8.51: CRITICAL FIX - (1) Fixed missing super.onSettings() in 5 base cla... |
 | **v5.8.50** | 🧹 v5.8.50: COMPREHENSIVE CLEANUP & ENRICHMENT - (1) Fingerprint cleanup: Rem... |
 | **v5.8.49** | ⚡ v5.8.49: SDK3 BEST PRACTICES - Applied improvements from analysis of IKEA T... |
-| **v5.8.48** | 📋 v5.8.48: FLOW CARD COMPLETENESS - Audited all 111 drivers and added 448 mi... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
