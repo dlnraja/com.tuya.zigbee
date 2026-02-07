@@ -167,8 +167,13 @@ class MotionSensorDevice extends HybridSensorBase {
    * Solution: Return PERMISSIVE profile for variants - let DPs determine capabilities
    */
   _getManufacturerProfile() {
-    const mfr = this.getData()?.manufacturerName || 
-                this.getSetting('zb_manufacturer_name') || '';
+    // v5.8.53: Use comprehensive fallback chain (matching BaseHybridDevice._detectProtocol)
+    // Root cause (diag e2148e06): getData()?.manufacturerName was undefined for _TZE200_3towulqd
+    const mfr = this.getSetting?.('zb_manufacturer_name')
+      || this.getSetting?.('zb_manufacturerName')
+      || this.getStoreValue?.('manufacturerName')
+      || this.getData()?.manufacturerName
+      || '';
     const mfrLower = mfr.toLowerCase();
     
     // v5.5.992: CRITICAL FIX - Check for VARIANT manufacturers FIRST
@@ -194,7 +199,10 @@ class MotionSensorDevice extends HybridSensorBase {
         dp6: 'measure_humidity',     // Fantem: humidity on DP6
         dp6_divisor: 1,
         dp9: 'measure_luminance',    // ZG-204ZV: lux on DP9
-        dp12: 'measure_battery',     // ZG-204ZV: battery on DP12
+        // v5.8.53: DP12 NOT mapped here - ambiguous between variants:
+        //   ZG-204ZL: DP12 = illuminance (e.g. 1999 lux)
+        //   ZG-204ZV: DP12 = battery (0-100%)
+        // Let base class smart detection handle it (diag e2148e06: DP12=1999 was wrongly mapped to battery)
         isPermissive: true,
         hasTemp: true,
         hasHumidity: true,
@@ -658,6 +666,9 @@ class MotionSensorDevice extends HybridSensorBase {
       '_TZE204_3towulqd',
       '_TZE200_1ibpyhdc',  // Has variants
       '_tze200_1ibpyhdc',
+      'HOBEIAN',           // v5.8.53: Brand name used as manufacturerName on some models (ZG-204ZM etc.)
+      'hobeian',
+      'Hobeian',
     ];
   }
 
@@ -675,7 +686,11 @@ class MotionSensorDevice extends HybridSensorBase {
     this.log(`[MOTION-CLUSTERS] Available clusters: ${clusterNames.join(', ')}`);
 
     // v5.5.925: Check if this is a variant manufacturer (may have temp/humidity)
-    const manufacturerName = this.getData()?.manufacturerName || this.getSetting('zb_manufacturer_name') || '';
+    // v5.8.53: Use comprehensive fallback chain (matching _getManufacturerProfile fix)
+    const manufacturerName = this.getSetting?.('zb_manufacturer_name')
+      || this.getSetting?.('zb_manufacturerName')
+      || this.getStoreValue?.('manufacturerName')
+      || this.getData()?.manufacturerName || '';
     const isVariant = MotionSensorDevice.VARIANT_MANUFACTURERS.some(v => 
       manufacturerName.toLowerCase().includes(v.toLowerCase())
     );
@@ -1044,8 +1059,15 @@ class MotionSensorDevice extends HybridSensorBase {
    * ZG-204ZV DPs: DP1=motion, DP3=temp(/10), DP4=humidity, DP9=lux, DP12=battery
    */
   async _setupTuyaDPPolling(zclNode) {
-    const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
-    const modelId = this.getSetting('zb_model_id') || this.getData()?.modelId || '';
+    // v5.8.53: Use comprehensive fallback chain
+    const mfr = this.getSetting?.('zb_manufacturer_name')
+      || this.getSetting?.('zb_manufacturerName')
+      || this.getStoreValue?.('manufacturerName')
+      || this.getData()?.manufacturerName || '';
+    const modelId = this.getSetting?.('zb_model_id')
+      || this.getSetting?.('zb_modelId')
+      || this.getStoreValue?.('modelId')
+      || this.getData()?.modelId || '';
     
     // Only for TS0601 Tuya DP devices (variants that may have temp/humidity)
     const isTuyaDP = modelId === 'TS0601' || mfr.startsWith('_TZE');
