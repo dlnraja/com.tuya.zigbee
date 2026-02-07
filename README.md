@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.57** | 🔧 v5.8.57: FIX BLANK MANUFACTURER NAMES - Added ensureManufacturerSettings()... |
 | **v5.8.56** | 🔧 v5.8.56: 4x4_PETE 3-DEVICE ENRICHMENT - (1) CRITICAL FIX: DP4 PERMISSIVE_V... |
 | **v5.8.55** | 🔧 v5.8.55: ZG-204ZM RADAR SENSOR DEEP SUPPORT (4x4_Pete) - (1) Added missing... |
 | **v5.8.54** | 🔧 v5.8.54: MOES BUTTON + SOIL SENSOR FIX - (1) Fixed Moes 4-button physical ... |
@@ -82,7 +83,6 @@
 | **v5.8.50** | 🧹 v5.8.50: COMPREHENSIVE CLEANUP & ENRICHMENT - (1) Fingerprint cleanup: Rem... |
 | **v5.8.49** | ⚡ v5.8.49: SDK3 BEST PRACTICES - Applied improvements from analysis of IKEA T... |
 | **v5.8.48** | 📋 v5.8.48: FLOW CARD COMPLETENESS - Audited all 111 drivers and added 448 mi... |
-| **v5.8.47** | 🔧 v5.8.47: DIAGNOSTIC DEVICE FIXES - (1) BSEED TS0726 4-gang (_TZ3002_pzao9l... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
