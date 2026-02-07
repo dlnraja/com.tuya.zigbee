@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.49** | ⚡ v5.8.49: SDK3 BEST PRACTICES - Applied improvements from analysis of IKEA T... |
 | **v5.8.48** | 📋 v5.8.48: FLOW CARD COMPLETENESS - Audited all 111 drivers and added 448 mi... |
 | **v5.8.47** | 🔧 v5.8.47: DIAGNOSTIC DEVICE FIXES - (1) BSEED TS0726 4-gang (_TZ3002_pzao9l... |
 | **v5.8.46** | 🔍 v5.8.46: DEVICE VERIFICATION & ENRICHMENT - Cross-referenced all interview... |
@@ -82,7 +83,6 @@
 | **v5.8.42** | 🚨 v5.8.42: CRITICAL FINGERPRINT CONFLICT FIX - HOBEIAN ZG-204ZM (Pete's rada... |
 | **v5.8.41** | 🪟 v5.8.41: FORUM+GITHUB TRIAGE - (1) Tbao TS130F curtain switch (_TZ3000_bs9... |
 | **v5.8.40** | 🔧 v5.8.40: THREE DIAGNOSTIC FIXES - (1) BSEED TS0726 4-gang switch (diag 83a... |
-| **v5.8.39** | 🔘 v5.8.39: FIX TS0043 LORATAP 3-BUTTON REMOTE (Issue #98 DVMasters) - Button... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
