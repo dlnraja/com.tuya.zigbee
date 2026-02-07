@@ -1237,6 +1237,14 @@ const SENSOR_CONFIGS = {
       106: { cap: 'measure_luminance', type: 'lux_direct' }, // Illuminance
       110: { cap: 'measure_battery', divisor: 1 },         // v5.8.43: PR#125 - Battery percentage
       111: { cap: 'measure_temperature', divisor: 10 },    // Temperature ÷10
+
+      // v5.8.61: PIR variant DPs (ZG-204ZL uses DP4/DP9/DP10/DP12 instead of DP101-111)
+      // When this config is used as FALLBACK for unknown HOBEIAN modelId, these ensure
+      // PIR devices still get battery and lux mapped (diag 25cbd6ae)
+      4: { cap: 'measure_battery', divisor: 1 },           // ZG-204ZL: battery %
+      9: { cap: null, internal: 'sensitivity' },            // ZG-204ZL: PIR sensitivity
+      10: { cap: null, internal: 'keep_time' },             // ZG-204ZL: keep time
+      12: { cap: 'measure_luminance', type: 'lux_direct' }, // ZG-204ZL: illuminance
     }
   },
 
@@ -1471,6 +1479,12 @@ function getSensorConfig(manufacturerName, modelId = null) {
       if (modelId === 'ZG-227Z') {
         console.log(`[RADAR] 🔍 HOBEIAN ZG-227Z matched → HOBEIAN_10G_MULTI config (radar + temp/humidity)`);
         return { ...SENSOR_CONFIGS.HOBEIAN_10G_MULTI, configName: 'HOBEIAN_10G_MULTI' };
+      }
+      // v5.8.61: HOBEIAN ZG-204ZL PIR sensor (diag 25cbd6ae)
+      // DP1=motion, DP4=battery, DP9=sensitivity, DP10=keep_time, DP12=lux
+      if (modelId === 'ZG-204ZL') {
+        console.log(`[RADAR] 🔍 HOBEIAN ZG-204ZL matched → ZG_204ZL_PIR config (PIR + lux + battery)`);
+        return { ...SENSOR_CONFIGS.ZG_204ZL_PIR, configName: 'ZG_204ZL_PIR' };
       }
     }
     
