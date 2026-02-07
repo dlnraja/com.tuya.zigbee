@@ -1,5 +1,27 @@
 {
-  "triggers": [],
-  "conditions": [],
+  "triggers": [
+    {
+      "id": "garage_door_contact_alarm",
+      "title": {
+        "en": "Contact changed",
+        "fr": "Contact changé",
+        "nl": "Contact gewijzigd",
+        "de": "Kontakt geändert"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "garage_door_contact_open",
+      "title": {
+        "en": "Contact !{{is|is not}} open",
+        "fr": "Contact !{{est|n'est pas}} ouvert",
+        "nl": "Contact !{{is|is niet}} open",
+        "de": "Kontakt !{{ist|ist nicht}} offen"
+      },
+      "args": []
+    }
+  ],
   "actions": []
 }

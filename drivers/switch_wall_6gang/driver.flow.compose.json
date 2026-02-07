@@ -119,6 +119,26 @@
         "de": "Gang 6 ausgeschaltet"
       },
       "args": []
+    },
+    {
+      "id": "switch_wall_6gang_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_wall_6gang_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -179,6 +199,16 @@
         "fr": "Gang 6 est !{{allumé|éteint}}",
         "nl": "Gang 6 is !{{aan|uit}}",
         "de": "Gang 6 ist !{{ein|aus}}"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_wall_6gang_is_on",
+      "title": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
       },
       "args": []
     }
@@ -551,6 +581,36 @@
           "labelDecimals": 0
         }
       ]
+    },
+    {
+      "id": "switch_wall_6gang_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_wall_6gang_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_wall_6gang_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": []
     }
   ]
 }

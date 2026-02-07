@@ -78,6 +78,16 @@
         "fr": "Humidité trop basse"
       },
       "args": []
+    },
+    {
+      "id": "climate_sensor_temp_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      },
+      "args": []
     }
   ],
   "conditions": [

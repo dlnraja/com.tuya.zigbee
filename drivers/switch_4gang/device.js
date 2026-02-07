@@ -340,7 +340,8 @@ class Switch4GangDevice extends BaseClass {
   _ensureOnOffClusters(zclNode) {
     try {
       const { Cluster } = require('zigbee-clusters');
-      const OnOffCluster = Cluster.getCluster(6); // onOff = cluster ID 6
+      // v5.8.47: Try both string name and numeric ID for maximum compatibility
+      const OnOffCluster = Cluster.getCluster('onOff') || Cluster.getCluster(6);
       if (!OnOffCluster) {
         this.log('[BSEED-4G] ⚠️ OnOff cluster class not found in registry');
         return;
@@ -362,13 +363,22 @@ class Switch4GangDevice extends BaseClass {
           continue;
         }
 
-        // Manually instantiate the onOff cluster on this endpoint
+        // v5.8.47: Manually instantiate onOff cluster - try multiple constructor patterns
+        let clusterInstance = null;
         try {
-          const clusterInstance = new OnOffCluster(ep);
-          ep.clusters[OnOffCluster.NAME] = clusterInstance;
+          clusterInstance = new OnOffCluster(ep);
+        } catch (e1) {
+          try { clusterInstance = new OnOffCluster({ endpoint: ep }); } catch (e2) {
+            this.log(`[BSEED-4G] ⚠️ EP${epNum} cluster construction failed: ${e1.message}`);
+          }
+        }
+        if (clusterInstance) {
+          // v5.8.47: Store under multiple keys for reliable lookup
+          const name = OnOffCluster.NAME || 'onOff';
+          ep.clusters[name] = clusterInstance;
+          if (!ep.clusters[6]) ep.clusters[6] = clusterInstance;
+          if (!ep.clusters['6']) ep.clusters['6'] = clusterInstance;
           this.log(`[BSEED-4G] ✅ EP${epNum} onOff cluster CREATED manually (interview missed it)`);
-        } catch (err) {
-          this.log(`[BSEED-4G] ⚠️ EP${epNum} manual cluster creation failed: ${err.message}`);
         }
       }
     } catch (err) {

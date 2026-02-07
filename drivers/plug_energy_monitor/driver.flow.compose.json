@@ -91,6 +91,26 @@
         }
       ],
       "args": []
+    },
+    {
+      "id": "plug_energy_monitor_power_changed",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
+      },
+      "args": []
+    },
+    {
+      "id": "plug_energy_monitor_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": []
     }
   ],
   "conditions": [

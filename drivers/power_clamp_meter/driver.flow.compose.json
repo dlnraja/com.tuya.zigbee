@@ -1,5 +1,16 @@
 {
-  "triggers": [],
+  "triggers": [
+    {
+      "id": "power_clamp_meter_power_changed",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
+      },
+      "args": []
+    }
+  ],
   "conditions": [],
   "actions": []
 }

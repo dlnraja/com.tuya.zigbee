@@ -303,6 +303,23 @@ _TZ3000_hafsqare, _TZ3000_e98krvvk, _TZ3000_iedbgyxt
 
 ---
 
+## NOT FIXED (v5.8.46 Analysis)
+
+### Soil Sensor: mcuVersionRequest seq + not responding
+- **User**: DutchDuke (`_TZE284_oitavov2`)
+- **Root cause**: CR2032 sleepy device, wakes every 30-60min. Active queries fail when asleep.
+- **mcuVersionRequest**: cmd 0x10 in TuyaSpecificCluster.js has no seq param (`args: {}`). `UniversalTuyaParser.buildMCUVersionRequest(seq)` exists but unused by cluster method. Similar to mcuSyncTime seq fix (v5.7.47) but lower impact — device doesn't need seq echo for version request.
+- **Code status**: CORRECT. All DPs mapped (DP3=moisture, DP5=temp, DP14=batt_state, DP15=batt%). 9 fixes applied (v5.5.155→v5.8.46). Passive reception works.
+- **Verdict**: HARDWARE LIMITATION. Users wait 30-60min for first data.
+
+### Motion Sensor / Water Sensors / 8-gang: Boot logs only
+- **Motion**: WORKING. Fixes: v5.8.4 holdoff, v5.8.12 random motion, v5.8.29 null inversion. FinnKje FIXED.
+- **Water sensors**: WORKING. Fixes: v5.5.713 invert, v5.8.28 IAS enrollment. Lasse_K STABLE.
+- **8-gang**: WORKING. Fixes: v5.5.621 DP101/102 mapping, v5.5.962 physical buttons. No active complaints.
+- **Verdict**: All three working correctly. Only boot logs in diagnostics — no user-reported issues remain.
+
+---
+
 ## VERSION HISTORY (v5.8.x builds)
 
 | Version | Build | Key Fix |

@@ -109,6 +109,16 @@
         }
       ],
       "args": []
+    },
+    {
+      "id": "motion_sensor_tamper_alarm",
+      "title": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -117,6 +127,16 @@
       "title": {
         "en": "Motion !{{is|is not}} detected",
         "fr": "Mouvement !{{est|n'est pas}} détecté"
+      },
+      "args": []
+    },
+    {
+      "id": "motion_sensor_tamper_active",
+      "title": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
       },
       "args": []
     }

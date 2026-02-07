@@ -1,5 +1,73 @@
 {
-  "triggers": [],
+  "triggers": [
+    {
+      "id": "curtain_motor_tilt_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": []
+    }
+  ],
   "conditions": [],
-  "actions": []
+  "actions": [
+    {
+      "id": "curtain_motor_tilt_set_position",
+      "title": {
+        "en": "Set position",
+        "fr": "Régler position",
+        "nl": "Positie instellen",
+        "de": "Position einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set position to [[position]]%",
+        "fr": "Régler position à [[position]]%",
+        "nl": "Positie op [[position]]%",
+        "de": "Position auf [[position]]%"
+      },
+      "args": [
+        {
+          "name": "position",
+          "type": "range",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "%",
+          "labelDecimals": 0
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_tilt_open",
+      "title": {
+        "en": "Open",
+        "fr": "Ouvrir",
+        "nl": "Openen",
+        "de": "Öffnen"
+      },
+      "args": []
+    },
+    {
+      "id": "curtain_motor_tilt_close",
+      "title": {
+        "en": "Close",
+        "fr": "Fermer",
+        "nl": "Sluiten",
+        "de": "Schließen"
+      },
+      "args": []
+    },
+    {
+      "id": "curtain_motor_tilt_stop",
+      "title": {
+        "en": "Stop",
+        "fr": "Arrêter",
+        "nl": "Stoppen",
+        "de": "Stoppen"
+      },
+      "args": []
+    }
+  ]
 }

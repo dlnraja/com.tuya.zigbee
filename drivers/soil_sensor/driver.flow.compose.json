@@ -161,6 +161,36 @@
         "de": "Batterie ist schwach"
       },
       "args": []
+    },
+    {
+      "id": "soil_sensor_temp_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      },
+      "args": []
+    },
+    {
+      "id": "soil_sensor_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      },
+      "args": []
+    },
+    {
+      "id": "soil_sensor_water_alarm",
+      "title": {
+        "en": "Water alarm",
+        "fr": "Alarme eau",
+        "nl": "Wateralarm",
+        "de": "Wasseralarm"
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -281,6 +311,16 @@
           }
         }
       ]
+    },
+    {
+      "id": "soil_sensor_water_detected",
+      "title": {
+        "en": "Water !{{is|is not}} detected",
+        "fr": "Eau !{{est|n'est pas}} détectée",
+        "nl": "Water !{{is|is niet}} gedetecteerd",
+        "de": "Wasser !{{ist|ist nicht}} erkannt"
+      },
+      "args": []
     }
   ]
 }
