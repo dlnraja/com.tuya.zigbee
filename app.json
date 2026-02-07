@@ -57,6 +57,12 @@
           "nl": "Sub-capability gewijzigd",
           "de": "Sub-Fähigkeit geändert"
         },
+        "titleFormatted": {
+          "en": "[[device]] sub-capability [[capability]] changed",
+          "fr": "Sous-capacité [[capability]] de [[device]] changée",
+          "nl": "Sub-capability [[capability]] van [[device]] gewijzigd",
+          "de": "Sub-Fähigkeit [[capability]] von [[device]] geändert"
+        },
         "hint": {
           "en": "Triggers when any sub-capability changes (e.g. onoff.gang2, dim.1)",
           "fr": "Se déclenche quand une sous-capacité change (ex: onoff.gang2, dim.1)"
@@ -109,6 +115,12 @@
           "nl": "Tuya Data Point ontvangen",
           "de": "Tuya Datenpunkt empfangen"
         },
+        "titleFormatted": {
+          "en": "Tuya DP [[dp]] received on [[device]]",
+          "fr": "DP Tuya [[dp]] reçu sur [[device]]",
+          "nl": "Tuya DP [[dp]] ontvangen op [[device]]",
+          "de": "Tuya DP [[dp]] empfangen auf [[device]]"
+        },
         "hint": {
           "en": "Triggers when a raw Tuya DP is received. Use DP 0 to match any DP.",
           "fr": "Se déclenche quand un DP Tuya brut est reçu. Utilisez DP 0 pour tous les DP."
@@ -158,6 +170,12 @@
           "fr": "Seuil DP franchi",
           "nl": "DP drempel overschreden",
           "de": "DP Schwellwert überschritten"
+        },
+        "titleFormatted": {
+          "en": "DP [[dp]] on [[device]] crosses threshold [[threshold]]",
+          "fr": "DP [[dp]] de [[device]] franchit le seuil [[threshold]]",
+          "nl": "DP [[dp]] van [[device]] overschrijdt drempel [[threshold]]",
+          "de": "DP [[dp]] von [[device]] überschreitet Schwellwert [[threshold]]"
         },
         "hint": {
           "en": "Triggers when a numeric DP value crosses a threshold (forum #1016)",
