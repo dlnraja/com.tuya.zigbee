@@ -1,7 +1,9 @@
 {
   "name": {
     "en": "Wall Dimmer 1-Gang 1-Way",
-    "nl": "Muurschakelaar Dimmer 1-Gang 1-Weg"
+    "nl": "Muurschakelaar Dimmer 1-Gang 1-Weg",
+    "fr": "Variateur mural 1 bouton",
+    "de": "Wanddimmer 1-Kanal 1-Weg"
   },
   "class": "socket",
   "capabilities": [
@@ -35,11 +37,7 @@
       "_TZ3000_4fjiwweb",
       "_tzb210_3dxbg9ks",
       "_tzb210_g01ie5wu",
-      "_tzb210_zxbtub8r",
-      "eardatek",
-      "EARDATEK",
-      "miboxer",
-      "MIBOXER"
+      "_tzb210_zxbtub8r"
     ],
     "productId": [
       "TS004F",
