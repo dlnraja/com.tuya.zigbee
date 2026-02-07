@@ -218,6 +218,28 @@ class MotionSensorDevice extends HybridSensorBase {
       }
     }
     
+    // v5.8.61: When mfr is blank/unknown AND device is TS0601 (Tuya DP), use PERMISSIVE
+    // Root cause (diag e2148e06): _TZE200_3towulqd device had blank mfr in all data sources,
+    // fell through to DEFAULT profile, missing temp/humidity/lux capabilities entirely.
+    // PERMISSIVE is safest for unknown Tuya DP motion sensors - accepts all DP types dynamically.
+    if (!mfr || mfr.trim() === '') {
+      const modelId = this.getSetting?.('zb_model_id')
+        || this.getStoreValue?.('modelId')
+        || this.getData()?.modelId || '';
+      if (modelId === 'TS0601' || modelId.startsWith('TS06')) {
+        this.log(`[MOTION-DP] ⚠️ Blank manufacturer name with modelId=${modelId} → using PERMISSIVE_VARIANT`);
+        return { 
+          name: 'PERMISSIVE_VARIANT',
+          dp3: 'measure_temperature', dp3_divisor: 10,
+          dp4: 'measure_humidity', dp4_multiplier: 10,
+          dp5: 'measure_temperature', dp5_divisor: 10,
+          dp6: 'measure_humidity', dp6_divisor: 1,
+          dp9: 'measure_luminance',
+          isPermissive: true, hasTemp: true, hasHumidity: true,
+        };
+      }
+    }
+
     // Default profile
     this.log('[MOTION-DP] ℹ️ Using default DP profile');
     return { name: 'DEFAULT', dp4: 'measure_battery', dp5: 'measure_temperature', 
