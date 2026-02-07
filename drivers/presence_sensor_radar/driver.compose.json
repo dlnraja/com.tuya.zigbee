@@ -536,6 +536,25 @@
       }
     },
     {
+      "id": "static_detection_distance",
+      "type": "number",
+      "label": {
+        "en": "Static Detection Distance",
+        "fr": "Distance Détection Statique",
+        "nl": "Statische Detectie Afstand",
+        "de": "Statische Erkennungsdistanz"
+      },
+      "value": 6,
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "units": "m",
+      "hint": {
+        "en": "ZG-204ZM: Maximum distance for detecting stationary persons (0-6 meters)",
+        "fr": "ZG-204ZM: Distance maximale pour détecter les personnes immobiles (0-6 mètres)"
+      }
+    },
+    {
       "id": "static_detection_sensitivity",
       "type": "number",
       "label": {
