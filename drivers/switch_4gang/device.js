@@ -411,6 +411,21 @@ class Switch4GangDevice extends BaseClass {
         this.log(`[BSEED-4G] EP${epNum} bind error: ${err.message}`);
       }
     }
+
+    // v5.8.58: Configure attribute reporting for EP1-4 (Hartmut_Dunker fix)
+    try {
+      const cfg = [1, 2, 3, 4].map(ep => ({
+        endpointId: ep, cluster: 'onOff',
+        attributeName: 'onOff', minInterval: 0,
+        maxInterval: 300, minChange: 1
+      }));
+      await this.configureAttributeReporting(cfg).catch(e =>
+        this.log(`[BSEED-4G] Report cfg warn: ${e.message}`)
+      );
+      this.log('[BSEED-4G] ✅ Attr reporting configured EP1-4');
+    } catch (err) {
+      this.log(`[BSEED-4G] ⚠️ Report cfg error: ${err.message}`);
+    }
   }
 
   onDeleted() {
