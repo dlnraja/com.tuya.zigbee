@@ -30,10 +30,20 @@ class Button8GangDevice extends ButtonDevice {
       if (!endpoint) continue;
       const e000 = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344];
       if (e000?.on) {
-        e000.on('buttonPress', async ({ button, pressType }) => {
-          const types = { 0: 'single', 1: 'double', 2: 'long' };
-          await this.triggerButtonPress((button >= 1 && button <= 8) ? button : ep, types[pressType] || 'single');
-        });
+        // v5.8.54: Listen for ALL cmd events (cmd0-cmd6, cmdFD/FE/FF)
+        const cmdNames = ['cmd0','cmd1','cmd2','cmd3','cmd4','cmd5','cmd6','cmdFD','cmdFE','cmdFF'];
+        for (const cmdName of cmdNames) {
+          e000.on(cmdName, async ({ data }) => {
+            const types = { 0: 'single', 1: 'double', 2: 'long' };
+            let btn = ep, press = 'single';
+            if (data && data.length >= 2 && data[0] >= 1 && data[0] <= 8) {
+              btn = data[0]; press = types[data[1]] || 'single';
+            } else if (data && data.length >= 1) {
+              press = types[data[0]] || 'single';
+            }
+            await this.triggerButtonPress(btn, press);
+          });
+        }
       }
       const onOff = endpoint.clusters?.onOff || endpoint.clusters?.[6];
       if (onOff?.on) {
