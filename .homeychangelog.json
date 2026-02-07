@@ -1,6 +1,6 @@
 {
   "5.8.52": {
-    "en": "🔧 v5.8.52: TS130F CURTAIN FIX - Fixed _TZ3000_bs93npae TS130F curtain switch sending Tuya DP commands instead of ZCL windowCovering cluster 258. Root cause: ManufacturerVariationManager set _isPureTuyaDP=true for 'mixed' protocol before _detectProtocol() could override. Now HybridCoverBase explicitly sets protocol after detection."
+    "en": "🔧 v5.8.52: (1) TS130F CURTAIN FIX - Fixed _TZ3000_bs93npae TS130F curtain switch sending Tuya DP commands instead of ZCL windowCovering cluster 258. Root cause: ManufacturerVariationManager set _isPureTuyaDP=true for 'mixed' protocol before _detectProtocol() could override. (2) IR BLASTER ZS06 FIX - Fixed Zosung IR clusters (0xE004, 0xED00) not available at runtime. Extracted cluster definitions to lib/clusters/ and registered at app startup in registerClusters.js. Removed 0xED00 from UnknownClusterHandler pre-registration to prevent conflict. Device now correctly detects zosungIRControl + zosungIRTransmit + onOff clusters."
   },
   "5.8.51": {
     "en": "🔧 v5.8.51: CRITICAL FIX - (1) Fixed missing super.onSettings() in 5 base classes (Sensor, Cover, Light, Plug, Switch) - regression from v5.8.49 broke power/battery settings for all devices. (2) TS0726 BSEED 4-gang: added explicit EP1-4 onOff binding in ZCL-only mode - fixes only button 1 working."
