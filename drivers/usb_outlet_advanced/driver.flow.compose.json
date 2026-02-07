@@ -1,6 +1,14 @@
 {
   "triggers": [
     {
+      "id": "usb_outlet_button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton pressé"
+      },
+      "args": []
+    },
+    {
       "id": "usb_outlet_advanced_turned_on",
       "title": {
         "en": "Turned on",
@@ -90,6 +98,16 @@
           "example": 1.5
         }
       ],
+      "args": []
+    },
+    {
+      "id": "usb_outlet_advanced_power_changed",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
+      },
       "args": []
     }
   ],

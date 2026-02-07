@@ -53,6 +53,26 @@
         "fr": "Batterie faible"
       },
       "args": []
+    },
+    {
+      "id": "formaldehyde_sensor_temp_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      },
+      "args": []
+    },
+    {
+      "id": "formaldehyde_sensor_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      },
+      "args": []
     }
   ],
   "conditions": [

@@ -426,10 +426,49 @@ class Button4GangDevice extends ButtonDevice {
             });
           }
         }
+
+        // v5.8.47: MOES TS0044/TS004F dimmer mode fix - levelControl cluster detection
+        // When in dimmer mode (default after battery change), buttons send
+        // moveWithOnOff/stepWithOnOff/stop on levelControl cluster (8) instead of scenes
+        const levelCluster = endpoint.clusters?.levelControl || endpoint.clusters?.genLevelCtrl || endpoint.clusters?.[8];
+        if (levelCluster) {
+          if (typeof levelCluster.on === 'function') {
+            // Bind so sleepy device sends events to Homey
+            if (levelCluster.bind) { try { await levelCluster.bind(); } catch (e) { /* non-critical */ } }
+
+            const handleLevelCommand = async (commandName) => {
+              this.log(`[BUTTON4-LEVEL] 🔘 Button ${ep} SINGLE (levelControl ${commandName})`);
+              await this.triggerButtonPress(ep, 'single');
+            };
+
+            // moveWithOnOff = button press start (single press)
+            levelCluster.on('commandMoveWithOnOff', async (payload) => {
+              this.log(`[BUTTON4-LEVEL] EP${ep} commandMoveWithOnOff:`, payload);
+              await handleLevelCommand('moveWithOnOff');
+            });
+
+            // stepWithOnOff = step command (single press on some FW)
+            levelCluster.on('commandStepWithOnOff', async (payload) => {
+              this.log(`[BUTTON4-LEVEL] EP${ep} commandStepWithOnOff:`, payload);
+              await handleLevelCommand('stepWithOnOff');
+            });
+
+            // Generic command fallback for level cluster
+            levelCluster.on('command', async (commandName, commandPayload) => {
+              this.log(`[BUTTON4-LEVEL] EP${ep} command: ${commandName}`, commandPayload);
+              if (['moveWithOnOff', 'stepWithOnOff', 'move', 'step'].includes(commandName)) {
+                await handleLevelCommand(commandName);
+              }
+              // stop = button release (ignore, don't trigger again)
+            });
+
+            this.log(`[BUTTON4-PHYSICAL] ✅ LevelControl listener configured for EP${ep}`);
+          }
+        }
       }
 
       this.log('[BUTTON4-PHYSICAL] ✅ Enhanced physical button detection configured');
-      this.log('[BUTTON4-PHYSICAL] 🔄 Scenes, MultistateInput, and OnOff listeners active');
+      this.log('[BUTTON4-PHYSICAL] 🔄 Scenes, MultistateInput, OnOff, and LevelControl listeners active');
 
       // v5.5.367: MOES ESW-0ZAA-EU FIX - Setup Tuya DP button detection
       // Some MOES devices use Tuya cluster (0xEF00) for physical button presses

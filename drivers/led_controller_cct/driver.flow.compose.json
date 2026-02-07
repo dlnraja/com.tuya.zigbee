@@ -13,6 +13,86 @@
         "en": "Turn off"
       },
       "args": []
+    },
+    {
+      "id": "led_controller_cct_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "led_controller_cct_set_brightness",
+      "title": {
+        "en": "Set brightness",
+        "fr": "Régler luminosité",
+        "nl": "Helderheid instellen",
+        "de": "Helligkeit einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set brightness to [[brightness]]%",
+        "fr": "Régler luminosité à [[brightness]]%",
+        "nl": "Helderheid op [[brightness]]%",
+        "de": "Helligkeit auf [[brightness]]%"
+      },
+      "args": [
+        {
+          "name": "brightness",
+          "type": "range",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "%",
+          "labelDecimals": 0
+        }
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "id": "led_controller_cct_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      },
+      "args": []
+    },
+    {
+      "id": "led_controller_cct_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      },
+      "args": []
+    },
+    {
+      "id": "led_controller_cct_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "led_controller_cct_is_on",
+      "title": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      },
+      "args": []
     }
   ]
 }

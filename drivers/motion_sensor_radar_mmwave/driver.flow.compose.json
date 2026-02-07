@@ -134,6 +134,36 @@
         }
       ],
       "args": []
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_distance_changed",
+      "title": {
+        "en": "Distance changed",
+        "fr": "Distance changée",
+        "nl": "Afstand gewijzigd",
+        "de": "Entfernung geändert"
+      },
+      "args": []
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_temp_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      },
+      "args": []
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_lux_changed",
+      "title": {
+        "en": "Luminance changed",
+        "fr": "Luminance changée",
+        "nl": "Lichtsterkte gewijzigd",
+        "de": "Helligkeit geändert"
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -240,6 +270,16 @@
           }
         }
       ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_motion_active",
+      "title": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      },
+      "args": []
     }
   ],
   "actions": [

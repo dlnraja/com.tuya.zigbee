@@ -170,11 +170,10 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     // this._setupDiagnosticLogging();
     // DiagnosticAPI and LogBuffer still work via direct calls
 
-    // Register additional global flow cards
-    this.registerFlowCards();
-
-    // Register OTA flow cards
-    this.registerOTAFlowCards();
+    // v5.8.45: Removed registerFlowCards() and registerOTAFlowCards()
+    // All 87+ phantom flow card registrations were never defined in app.json
+    // DP/sub-capability cards → UniversalFlowCardLoader
+    // Switch/plug cards → FlowCardManager
 
     // Initialize Homey Insights
     await this.initializeInsights();
@@ -433,10 +432,17 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   }
 
   /**
-   * Register Homey Native Flow Cards
-   * Implements all native Homey SDK3 flow functionality
+   * @deprecated v5.8.45: All cards were phantom (never defined in app.json). Kept as no-op.
    */
   registerFlowCards() {
+    // v5.8.45: REMOVED - all 9 cards were never defined in app.json
+    return;
+  }
+
+  /**
+   * @deprecated v5.8.45: All cards were phantom. Kept as no-op.
+   */
+  registerFlowCards_REMOVED() {
     this.log('📋 Registering Homey Native Flow Cards...');
 
     try {
@@ -499,11 +505,17 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   }
 
   /**
-   * Register OTA Firmware Update Flow Cards
-   * v5.5.556: Safe registration - all errors go to stdout, not stderr
-   * v5.5.551: Each flow card wrapped in individual try/catch to prevent crashes
+   * @deprecated v5.8.45: All OTA/health cards were phantom. Kept as no-op.
    */
   registerOTAFlowCards() {
+    // v5.8.45: REMOVED - all 9 OTA/health cards were never defined in app.json
+    return;
+  }
+
+  /**
+   * @deprecated v5.8.45: Dead code preserved for reference only
+   */
+  registerOTAFlowCards_REMOVED() {
     this.log('📦 Registering OTA Flow Cards...');
     let registered = 0;
 

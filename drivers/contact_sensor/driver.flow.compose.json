@@ -134,6 +134,26 @@
         }
       ],
       "args": []
+    },
+    {
+      "id": "contact_sensor_contact_alarm",
+      "title": {
+        "en": "Contact changed",
+        "fr": "Contact changé",
+        "nl": "Contact gewijzigd",
+        "de": "Kontakt geändert"
+      },
+      "args": []
+    },
+    {
+      "id": "contact_sensor_tamper_alarm",
+      "title": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -173,6 +193,26 @@
           }
         }
       ]
+    },
+    {
+      "id": "contact_sensor_contact_open",
+      "title": {
+        "en": "Contact !{{is|is not}} open",
+        "fr": "Contact !{{est|n'est pas}} ouvert",
+        "nl": "Contact !{{is|is niet}} open",
+        "de": "Kontakt !{{ist|ist nicht}} offen"
+      },
+      "args": []
+    },
+    {
+      "id": "contact_sensor_tamper_active",
+      "title": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      },
+      "args": []
     }
   ]
 }

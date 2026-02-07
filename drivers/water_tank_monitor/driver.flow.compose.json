@@ -65,6 +65,16 @@
         "de": "Batterie ist schwach"
       },
       "args": []
+    },
+    {
+      "id": "water_tank_monitor_temp_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      },
+      "args": []
     }
   ],
   "conditions": [

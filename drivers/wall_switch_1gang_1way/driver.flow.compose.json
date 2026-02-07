@@ -74,6 +74,48 @@
           ]
         }
       ]
+    },
+    {
+      "id": "wall_switch_1gang_1way_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "wall_switch_1gang_1way_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "wall_switch_1gang_1way_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "wall_switch_1gang_1way_is_on",
+      "title": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      },
+      "args": []
     }
   ]
 }

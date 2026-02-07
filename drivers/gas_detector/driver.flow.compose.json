@@ -96,29 +96,29 @@
         "de": "Batterie ist schwach"
       },
       "args": []
+    },
+    {
+      "id": "gas_detector_co_alarm",
+      "title": {
+        "en": "CO alarm",
+        "fr": "Alarme CO",
+        "nl": "CO alarm",
+        "de": "CO-Alarm"
+      },
+      "args": []
+    },
+    {
+      "id": "gas_detector_gas_alarm",
+      "title": {
+        "en": "Gas alarm",
+        "fr": "Alarme gaz",
+        "nl": "Gasalarm",
+        "de": "Gasalarm"
+      },
+      "args": []
     }
   ],
   "conditions": [
-    {
-      "id": "gas_detector_gas_detected",
-      "title": {
-        "en": "Gas !{{is|is not}} detected",
-        "nl": "Gas !{{is|is niet}} gedetecteerd",
-        "fr": "Gaz !{{est|n'est pas}} détecté",
-        "de": "Gas !{{ist|ist nicht}} erkannt"
-      },
-      "args": []
-    },
-    {
-      "id": "gas_detector_co_detected",
-      "title": {
-        "en": "CO !{{is|is not}} detected",
-        "nl": "CO !{{is|is niet}} gedetecteerd",
-        "fr": "CO !{{est|n'est pas}} détecté",
-        "de": "CO !{{ist|ist nicht}} erkannt"
-      },
-      "args": []
-    },
     {
       "id": "gas_detector_gas_is_detected",
       "title": {
@@ -136,6 +136,26 @@
         "nl": "CO !{{is|is niet}} gedetecteerd",
         "fr": "CO !{{est|n'est pas}} détecté",
         "de": "CO !{{ist|ist nicht}} erkannt"
+      },
+      "args": []
+    },
+    {
+      "id": "gas_detector_co_active",
+      "title": {
+        "en": "CO !{{is|is not}} detected",
+        "fr": "CO !{{est|n'est pas}} détecté",
+        "nl": "CO !{{is|is niet}} gedetecteerd",
+        "de": "CO !{{ist|ist nicht}} erkannt"
+      },
+      "args": []
+    },
+    {
+      "id": "gas_detector_gas_active",
+      "title": {
+        "en": "Gas !{{is|is not}} detected",
+        "fr": "Gaz !{{est|n'est pas}} détecté",
+        "nl": "Gas !{{is|is niet}} gedetecteerd",
+        "de": "Gas !{{ist|ist nicht}} erkannt"
       },
       "args": []
     }
