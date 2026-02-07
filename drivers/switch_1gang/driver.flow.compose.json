@@ -129,6 +129,26 @@
         }
       ],
       "args": []
+    },
+    {
+      "id": "switch_1gang_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_1gang_power_changed",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
+      },
+      "args": []
     }
   ],
   "conditions": [

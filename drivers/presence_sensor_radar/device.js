@@ -1023,12 +1023,12 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // TYPE F: laokfqwu/ztqnh5cg (illuminance focused)
-  // DP1=presence, DP6=fading, DP9=illuminance, DP101=target_distance
+  // TYPE F: WZ-M100 (Z2M verified) + legacy _TZE200_ variants
+  // v5.8.46: FIXED DP mappings from Z2M WZ-M100 converter
   // ─────────────────────────────────────────────────────────────────────────────
   'ILLUMINANCE_FOCUS': {
     sensors: [
-      '_TZE200_laokfqwu', '_TZE204_laokfqwu',
+      '_TZE200_laokfqwu',
       '_TZE200_ztqnh5cg',
       '_tze200_y4mdop0b',
     ],
@@ -1042,6 +1042,57 @@ const SENSOR_CONFIGS = {
       6: { cap: null, internal: 'fading_time' },
       9: { cap: 'measure_luminance', divisor: 1 },
       101: { cap: 'measure_distance', divisor: 100 },
+    }
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // TYPE F1b: WZ-M100 (_TZE204_laokfqwu) - Z2M verified DP layout
+  // v5.8.46: Split from ILLUMINANCE_FOCUS - DP9=distance NOT lux
+  // Source: zigbee-herdsman-converters tuya.ts WZ-M100 definition
+  // ─────────────────────────────────────────────────────────────────────────────
+  'WZ_M100': {
+    sensors: [
+      '_TZE204_laokfqwu',
+    ],
+    battery: false,
+    mainsPowered: true,
+    noBatteryCapability: true,
+    noTemperature: true,
+    noHumidity: true,
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_bool' },
+      2: { cap: null, internal: 'radar_sensitivity' },
+      3: { cap: null, internal: 'min_range', divisor: 100 },
+      4: { cap: null, internal: 'max_range', divisor: 100 },
+      9: { cap: 'measure_distance', divisor: 100 },
+      103: { cap: 'measure_luminance', divisor: 1 },
+      104: { cap: null, internal: 'interval_time' },
+      105: { cap: null, internal: 'detection_delay', divisor: 10 },
+      106: { cap: null, internal: 'fading_time', divisor: 10 },
+    }
+  },
+
+  // ─────────────────────────────────────────────────────────────────────────────
+  // TYPE F1c: Y1_IN (_TZE204_bmdsp6bs) - Z2M verified DP layout
+  // v5.8.46: New fingerprint from Z2M - unique high DP layout with DP182=distance
+  // Source: zigbee-herdsman-converters tuya.ts Y1_IN definition
+  // ─────────────────────────────────────────────────────────────────────────────
+  'Y1_IN': {
+    sensors: [
+      '_TZE204_bmdsp6bs',
+    ],
+    battery: false,
+    mainsPowered: true,
+    noBatteryCapability: true,
+    noTemperature: true,
+    noHumidity: true,
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_bool' },
+      102: { cap: null, internal: 'fading_time' },
+      103: { cap: 'measure_luminance', divisor: 1 },
+      110: { cap: null, internal: 'keep_sensitivity' },
+      114: { cap: null, internal: 'trigger_sensitivity' },
+      182: { cap: 'measure_distance', divisor: 10 },
     }
   },
 

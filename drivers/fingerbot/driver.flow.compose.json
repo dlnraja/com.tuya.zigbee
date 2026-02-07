@@ -1,0 +1,17 @@
+{
+  "triggers": [
+    { "id": "fingerbot_button_pressed", "title": { "en": "Button pressed", "fr": "Bouton pressé", "nl": "Knop ingedrukt", "de": "Taste gedrückt" }, "hint": { "en": "Fingerbot push button activated", "fr": "Bouton Fingerbot activé", "nl": "Fingerbot drukknop geactiveerd", "de": "Fingerbot-Taste aktiviert" }, "args": [] },
+    { "id": "fingerbot_turned_on", "title": { "en": "Turned on", "fr": "Allumé", "nl": "Aangezet", "de": "Eingeschaltet" }, "args": [] },
+    { "id": "fingerbot_turned_off", "title": { "en": "Turned off", "fr": "Éteint", "nl": "Uitgezet", "de": "Ausgeschaltet" }, "args": [] },
+    { "id": "fingerbot_battery_low", "title": { "en": "Battery low", "fr": "Batterie faible", "nl": "Batterij laag", "de": "Batterie schwach" }, "args": [] }
+  ],
+  "conditions": [
+    { "id": "fingerbot_is_on", "title": { "en": "Is !{{on|off}}", "fr": "Est !{{allumé|éteint}}", "nl": "Is !{{aan|uit}}", "de": "Ist !{{ein|aus}}" }, "args": [] }
+  ],
+  "actions": [
+    { "id": "fingerbot_push", "title": { "en": "Push", "fr": "Pousser", "nl": "Drukken", "de": "Drücken" }, "hint": { "en": "Activate the Fingerbot push action", "fr": "Activer l'action de poussée", "nl": "Activeer de drukactie", "de": "Fingerbot-Drückaktion aktivieren" }, "args": [] },
+    { "id": "fingerbot_turn_on", "title": { "en": "Turn on", "fr": "Allumer", "nl": "Aanzetten", "de": "Einschalten" }, "args": [] },
+    { "id": "fingerbot_turn_off", "title": { "en": "Turn off", "fr": "Éteindre", "nl": "Uitzetten", "de": "Ausschalten" }, "args": [] },
+    { "id": "fingerbot_toggle", "title": { "en": "Toggle", "fr": "Basculer", "nl": "Wisselen", "de": "Umschalten" }, "args": [] }
+  ]
+}

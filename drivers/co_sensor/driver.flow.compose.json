@@ -132,6 +132,26 @@
         "de": "Manipulationsalarm beendet"
       },
       "args": []
+    },
+    {
+      "id": "co_sensor_co_alarm",
+      "title": {
+        "en": "CO alarm",
+        "fr": "Alarme CO",
+        "nl": "CO alarm",
+        "de": "CO-Alarm"
+      },
+      "args": []
+    },
+    {
+      "id": "co_sensor_tamper_alarm",
+      "title": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -198,6 +218,26 @@
           }
         }
       ]
+    },
+    {
+      "id": "co_sensor_co_active",
+      "title": {
+        "en": "CO !{{is|is not}} detected",
+        "fr": "CO !{{est|n'est pas}} détecté",
+        "nl": "CO !{{is|is niet}} gedetecteerd",
+        "de": "CO !{{ist|ist nicht}} erkannt"
+      },
+      "args": []
+    },
+    {
+      "id": "co_sensor_tamper_active",
+      "title": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      },
+      "args": []
     }
   ],
   "actions": [

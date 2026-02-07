@@ -1,5 +1,26 @@
 {
-  "triggers": [],
+  "triggers": [
+    {
+      "id": "energy_meter_3phase_power_changed",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
+      },
+      "args": []
+    },
+    {
+      "id": "energy_meter_3phase_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": []
+    }
+  ],
   "conditions": [],
   "actions": []
 }

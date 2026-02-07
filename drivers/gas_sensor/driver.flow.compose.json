@@ -123,6 +123,56 @@
         "de": "Wird ausgelöst, wenn der Sensor eine Manipulation oder einen Fehler erkennt"
       },
       "args": []
+    },
+    {
+      "id": "gas_sensor_co_alarm",
+      "title": {
+        "en": "CO alarm",
+        "fr": "Alarme CO",
+        "nl": "CO alarm",
+        "de": "CO-Alarm"
+      },
+      "args": []
+    },
+    {
+      "id": "gas_sensor_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": []
+    },
+    {
+      "id": "gas_sensor_contact_alarm",
+      "title": {
+        "en": "Contact changed",
+        "fr": "Contact changé",
+        "nl": "Contact gewijzigd",
+        "de": "Kontakt geändert"
+      },
+      "args": []
+    },
+    {
+      "id": "gas_sensor_gas_alarm",
+      "title": {
+        "en": "Gas alarm",
+        "fr": "Alarme gaz",
+        "nl": "Gasalarm",
+        "de": "Gasalarm"
+      },
+      "args": []
+    },
+    {
+      "id": "gas_sensor_tamper_alarm",
+      "title": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -172,6 +222,46 @@
           }
         }
       ]
+    },
+    {
+      "id": "gas_sensor_co_active",
+      "title": {
+        "en": "CO !{{is|is not}} detected",
+        "fr": "CO !{{est|n'est pas}} détecté",
+        "nl": "CO !{{is|is niet}} gedetecteerd",
+        "de": "CO !{{ist|ist nicht}} erkannt"
+      },
+      "args": []
+    },
+    {
+      "id": "gas_sensor_contact_open",
+      "title": {
+        "en": "Contact !{{is|is not}} open",
+        "fr": "Contact !{{est|n'est pas}} ouvert",
+        "nl": "Contact !{{is|is niet}} open",
+        "de": "Kontakt !{{ist|ist nicht}} offen"
+      },
+      "args": []
+    },
+    {
+      "id": "gas_sensor_gas_active",
+      "title": {
+        "en": "Gas !{{is|is not}} detected",
+        "fr": "Gaz !{{est|n'est pas}} détecté",
+        "nl": "Gas !{{is|is niet}} gedetecteerd",
+        "de": "Gas !{{ist|ist nicht}} erkannt"
+      },
+      "args": []
+    },
+    {
+      "id": "gas_sensor_tamper_active",
+      "title": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      },
+      "args": []
     }
   ],
   "actions": [

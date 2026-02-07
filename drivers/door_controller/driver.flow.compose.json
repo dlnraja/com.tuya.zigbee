@@ -52,6 +52,46 @@
         "de": "Tür entriegelt"
       },
       "args": []
+    },
+    {
+      "id": "door_controller_motion_detected",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      },
+      "args": []
+    },
+    {
+      "id": "door_controller_contact_alarm",
+      "title": {
+        "en": "Contact changed",
+        "fr": "Contact changé",
+        "nl": "Contact gewijzigd",
+        "de": "Kontakt geändert"
+      },
+      "args": []
+    },
+    {
+      "id": "door_controller_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": []
+    },
+    {
+      "id": "door_controller_lock_changed",
+      "title": {
+        "en": "Lock changed",
+        "fr": "Serrure changée",
+        "nl": "Slot gewijzigd",
+        "de": "Schloss geändert"
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -72,6 +112,26 @@
         "nl": "Deur !{{is|is niet}} vergrendeld",
         "fr": "Porte !{{est|n'est pas}} verrouillée",
         "de": "Tür !{{ist|ist nicht}} verriegelt"
+      },
+      "args": []
+    },
+    {
+      "id": "door_controller_motion_active",
+      "title": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      },
+      "args": []
+    },
+    {
+      "id": "door_controller_contact_open",
+      "title": {
+        "en": "Contact !{{is|is not}} open",
+        "fr": "Contact !{{est|n'est pas}} ouvert",
+        "nl": "Contact !{{is|is niet}} open",
+        "de": "Kontakt !{{ist|ist nicht}} offen"
       },
       "args": []
     }

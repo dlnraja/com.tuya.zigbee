@@ -142,6 +142,42 @@
         "de": "Lüftergeschwindigkeit verringern"
       },
       "args": []
+    },
+    {
+      "id": "fan_controller_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "fan_controller_set_brightness",
+      "title": {
+        "en": "Set brightness",
+        "fr": "Régler luminosité",
+        "nl": "Helderheid instellen",
+        "de": "Helligkeit einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set brightness to [[brightness]]%",
+        "fr": "Régler luminosité à [[brightness]]%",
+        "nl": "Helderheid op [[brightness]]%",
+        "de": "Helligkeit auf [[brightness]]%"
+      },
+      "args": [
+        {
+          "name": "brightness",
+          "type": "range",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "%",
+          "labelDecimals": 0
+        }
+      ]
     }
   ]
 }

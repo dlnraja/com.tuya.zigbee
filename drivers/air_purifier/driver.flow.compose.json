@@ -1,23 +1,7 @@
 {
   "triggers": [
     {
-      "id": "led_strip_rgbw_led_strip_rgbw_turned_on",
-      "title": {
-        "en": "Turned on",
-        "fr": "Allumé"
-      },
-      "args": []
-    },
-    {
-      "id": "led_strip_rgbw_led_strip_rgbw_turned_off",
-      "title": {
-        "en": "Turned off",
-        "fr": "Éteint"
-      },
-      "args": []
-    },
-    {
-      "id": "led_strip_rgbw_turned_on",
+      "id": "air_purifier_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "Allumé",
@@ -27,7 +11,7 @@
       "args": []
     },
     {
-      "id": "led_strip_rgbw_turned_off",
+      "id": "air_purifier_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Éteint",
@@ -37,31 +21,29 @@
       "args": []
     },
     {
-      "id": "led_strip_rgbw_battery_low",
+      "id": "air_purifier_pm25_changed",
       "title": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
+        "en": "PM2.5 changed",
+        "fr": "PM2.5 changé",
+        "nl": "PM2.5 gewijzigd",
+        "de": "PM2.5 geändert"
       },
+      "tokens": [
+        {
+          "name": "pm25",
+          "type": "number",
+          "title": {
+            "en": "PM2.5 (µg/m³)"
+          },
+          "example": 35
+        }
+      ],
       "args": []
     }
   ],
   "conditions": [
     {
-      "id": "led_strip_rgbw_led_strip_rgbw_is_on",
-      "title": {
-        "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
-      },
-      "titleFormatted": {
-        "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
-      },
-      "args": []
-    },
-    {
-      "id": "led_strip_rgbw_is_on",
+      "id": "air_purifier_is_on",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}",
@@ -73,31 +55,7 @@
   ],
   "actions": [
     {
-      "id": "led_strip_rgbw_led_strip_rgbw_turn_on",
-      "title": {
-        "en": "Turn on",
-        "fr": "Allumer"
-      },
-      "args": []
-    },
-    {
-      "id": "led_strip_rgbw_led_strip_rgbw_turn_off",
-      "title": {
-        "en": "Turn off",
-        "fr": "Éteindre"
-      },
-      "args": []
-    },
-    {
-      "id": "led_strip_rgbw_led_strip_rgbw_toggle",
-      "title": {
-        "en": "Toggle on or off",
-        "fr": "Basculer"
-      },
-      "args": []
-    },
-    {
-      "id": "led_strip_rgbw_turn_on",
+      "id": "air_purifier_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -107,7 +65,7 @@
       "args": []
     },
     {
-      "id": "led_strip_rgbw_turn_off",
+      "id": "air_purifier_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Éteindre",
@@ -117,7 +75,7 @@
       "args": []
     },
     {
-      "id": "led_strip_rgbw_toggle",
+      "id": "air_purifier_toggle",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -127,7 +85,33 @@
       "args": []
     },
     {
-      "id": "led_strip_rgbw_set_brightness",
+      "id": "air_purifier_set_fan_speed",
+      "title": {
+        "en": "Set fan speed",
+        "fr": "Régler vitesse",
+        "nl": "Snelheid instellen",
+        "de": "Geschwindigkeit einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set fan speed to [[speed]]%",
+        "fr": "Régler vitesse à [[speed]]%",
+        "nl": "Snelheid instellen op [[speed]]%",
+        "de": "Geschwindigkeit auf [[speed]]% setzen"
+      },
+      "args": [
+        {
+          "name": "speed",
+          "type": "range",
+          "min": 0,
+          "max": 100,
+          "step": 10,
+          "label": "%",
+          "labelDecimals": 0
+        }
+      ]
+    },
+    {
+      "id": "air_purifier_set_brightness",
       "title": {
         "en": "Set brightness",
         "fr": "Régler luminosité",

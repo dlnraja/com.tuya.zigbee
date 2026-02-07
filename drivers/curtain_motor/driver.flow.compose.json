@@ -1,6 +1,34 @@
 {
   "triggers": [
     {
+      "id": "button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton pressé"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "number",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": 1
+        },
+        {
+          "name": "scene",
+          "type": "string",
+          "title": {
+            "en": "Scene",
+            "fr": "Scène"
+          },
+          "example": "pressed"
+        }
+      ],
+      "args": []
+    },
+    {
       "id": "curtain_motor_windowcoverings_set_changed",
       "title": {
         "en": "Position changed",
@@ -55,6 +83,26 @@
           "example": 75
         }
       ],
+      "args": []
+    },
+    {
+      "id": "curtain_motor_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": []
+    },
+    {
+      "id": "curtain_motor_lux_changed",
+      "title": {
+        "en": "Luminance changed",
+        "fr": "Luminance changée",
+        "nl": "Lichtsterkte gewijzigd",
+        "de": "Helligkeit geändert"
+      },
       "args": []
     }
   ],
@@ -148,6 +196,78 @@
       "hint": {
         "en": "Move to the saved favorite position (if supported)",
         "fr": "Aller à la position favorite enregistrée"
+      },
+      "args": []
+    },
+    {
+      "id": "curtain_motor_set_brightness",
+      "title": {
+        "en": "Set brightness",
+        "fr": "Régler luminosité",
+        "nl": "Helderheid instellen",
+        "de": "Helligkeit einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set brightness to [[brightness]]%",
+        "fr": "Régler luminosité à [[brightness]]%",
+        "nl": "Helderheid op [[brightness]]%",
+        "de": "Helligkeit auf [[brightness]]%"
+      },
+      "args": [
+        {
+          "name": "brightness",
+          "type": "range",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "%",
+          "labelDecimals": 0
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_set_position",
+      "title": {
+        "en": "Set position",
+        "fr": "Régler position",
+        "nl": "Positie instellen",
+        "de": "Position einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set position to [[position]]%",
+        "fr": "Régler position à [[position]]%",
+        "nl": "Positie op [[position]]%",
+        "de": "Position auf [[position]]%"
+      },
+      "args": [
+        {
+          "name": "position",
+          "type": "range",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "%",
+          "labelDecimals": 0
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_open",
+      "title": {
+        "en": "Open",
+        "fr": "Ouvrir",
+        "nl": "Openen",
+        "de": "Öffnen"
+      },
+      "args": []
+    },
+    {
+      "id": "curtain_motor_close",
+      "title": {
+        "en": "Close",
+        "fr": "Fermer",
+        "nl": "Sluiten",
+        "de": "Schließen"
       },
       "args": []
     }

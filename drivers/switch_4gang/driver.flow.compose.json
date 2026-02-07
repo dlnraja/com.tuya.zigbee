@@ -162,82 +162,160 @@
     },
     {
       "id": "switch_4gang_physical_gang1_single",
-      "title": { "en": "Gang 1 single press (physical)", "fr": "Gang 1 appui simple (physique)" },
+      "title": {
+        "en": "Gang 1 single press (physical)",
+        "fr": "Gang 1 appui simple (physique)"
+      },
       "args": []
     },
     {
       "id": "switch_4gang_physical_gang1_double",
-      "title": { "en": "Gang 1 double press (physical)", "fr": "Gang 1 double appui (physique)" },
+      "title": {
+        "en": "Gang 1 double press (physical)",
+        "fr": "Gang 1 double appui (physique)"
+      },
       "args": []
     },
     {
       "id": "switch_4gang_physical_gang1_triple",
-      "title": { "en": "Gang 1 triple press (physical)", "fr": "Gang 1 triple appui (physique)" },
+      "title": {
+        "en": "Gang 1 triple press (physical)",
+        "fr": "Gang 1 triple appui (physique)"
+      },
       "args": []
     },
     {
       "id": "switch_4gang_physical_gang1_long_press",
-      "title": { "en": "Gang 1 long press (physical)", "fr": "Gang 1 appui long (physique)" },
+      "title": {
+        "en": "Gang 1 long press (physical)",
+        "fr": "Gang 1 appui long (physique)"
+      },
       "args": []
     },
     {
       "id": "switch_4gang_physical_gang2_single",
-      "title": { "en": "Gang 2 single press (physical)", "fr": "Gang 2 appui simple (physique)" },
+      "title": {
+        "en": "Gang 2 single press (physical)",
+        "fr": "Gang 2 appui simple (physique)"
+      },
       "args": []
     },
     {
       "id": "switch_4gang_physical_gang2_double",
-      "title": { "en": "Gang 2 double press (physical)", "fr": "Gang 2 double appui (physique)" },
+      "title": {
+        "en": "Gang 2 double press (physical)",
+        "fr": "Gang 2 double appui (physique)"
+      },
       "args": []
     },
     {
       "id": "switch_4gang_physical_gang2_triple",
-      "title": { "en": "Gang 2 triple press (physical)", "fr": "Gang 2 triple appui (physique)" },
+      "title": {
+        "en": "Gang 2 triple press (physical)",
+        "fr": "Gang 2 triple appui (physique)"
+      },
       "args": []
     },
     {
       "id": "switch_4gang_physical_gang2_long_press",
-      "title": { "en": "Gang 2 long press (physical)", "fr": "Gang 2 appui long (physique)" },
+      "title": {
+        "en": "Gang 2 long press (physical)",
+        "fr": "Gang 2 appui long (physique)"
+      },
       "args": []
     },
     {
       "id": "switch_4gang_physical_gang3_single",
-      "title": { "en": "Gang 3 single press (physical)", "fr": "Gang 3 appui simple (physique)" },
+      "title": {
+        "en": "Gang 3 single press (physical)",
+        "fr": "Gang 3 appui simple (physique)"
+      },
       "args": []
     },
     {
       "id": "switch_4gang_physical_gang3_double",
-      "title": { "en": "Gang 3 double press (physical)", "fr": "Gang 3 double appui (physique)" },
+      "title": {
+        "en": "Gang 3 double press (physical)",
+        "fr": "Gang 3 double appui (physique)"
+      },
       "args": []
     },
     {
       "id": "switch_4gang_physical_gang3_triple",
-      "title": { "en": "Gang 3 triple press (physical)", "fr": "Gang 3 triple appui (physique)" },
+      "title": {
+        "en": "Gang 3 triple press (physical)",
+        "fr": "Gang 3 triple appui (physique)"
+      },
       "args": []
     },
     {
       "id": "switch_4gang_physical_gang3_long_press",
-      "title": { "en": "Gang 3 long press (physical)", "fr": "Gang 3 appui long (physique)" },
+      "title": {
+        "en": "Gang 3 long press (physical)",
+        "fr": "Gang 3 appui long (physique)"
+      },
       "args": []
     },
     {
       "id": "switch_4gang_physical_gang4_single",
-      "title": { "en": "Gang 4 single press (physical)", "fr": "Gang 4 appui simple (physique)" },
+      "title": {
+        "en": "Gang 4 single press (physical)",
+        "fr": "Gang 4 appui simple (physique)"
+      },
       "args": []
     },
     {
       "id": "switch_4gang_physical_gang4_double",
-      "title": { "en": "Gang 4 double press (physical)", "fr": "Gang 4 double appui (physique)" },
+      "title": {
+        "en": "Gang 4 double press (physical)",
+        "fr": "Gang 4 double appui (physique)"
+      },
       "args": []
     },
     {
       "id": "switch_4gang_physical_gang4_triple",
-      "title": { "en": "Gang 4 triple press (physical)", "fr": "Gang 4 triple appui (physique)" },
+      "title": {
+        "en": "Gang 4 triple press (physical)",
+        "fr": "Gang 4 triple appui (physique)"
+      },
       "args": []
     },
     {
       "id": "switch_4gang_physical_gang4_long_press",
-      "title": { "en": "Gang 4 long press (physical)", "fr": "Gang 4 appui long (physique)" },
+      "title": {
+        "en": "Gang 4 long press (physical)",
+        "fr": "Gang 4 appui long (physique)"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_power_changed",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
+      },
       "args": []
     }
   ],
@@ -279,6 +357,16 @@
         "fr": "Gang 4 est !{{allumé|éteint}}",
         "nl": "Gang 4 is !{{aan|uit}}",
         "de": "Gang 4 ist !{{ein|aus}}"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_is_on",
+      "title": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
       },
       "args": []
     }
@@ -490,6 +578,36 @@
           }
         }
       ]
+    },
+    {
+      "id": "switch_4gang_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": []
     }
   ]
 }

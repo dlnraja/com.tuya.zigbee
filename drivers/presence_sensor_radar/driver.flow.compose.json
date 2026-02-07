@@ -112,6 +112,26 @@
         }
       ],
       "args": []
+    },
+    {
+      "id": "presence_sensor_radar_lux_changed",
+      "title": {
+        "en": "Luminance changed",
+        "fr": "Luminance changée",
+        "nl": "Lichtsterkte gewijzigd",
+        "de": "Helligkeit geändert"
+      },
+      "args": []
+    },
+    {
+      "id": "presence_sensor_radar_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -178,6 +198,16 @@
           }
         }
       ]
+    },
+    {
+      "id": "presence_sensor_radar_motion_active",
+      "title": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      },
+      "args": []
     }
   ]
 }

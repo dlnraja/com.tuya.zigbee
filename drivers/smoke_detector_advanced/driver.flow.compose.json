@@ -115,6 +115,46 @@
         "de": "Wird ausgelöst, wenn die Testtaste am Melder gedrückt wird"
       },
       "args": []
+    },
+    {
+      "id": "smoke_detector_advanced_smoke_alarm",
+      "title": {
+        "en": "Smoke detected",
+        "fr": "Fumée détectée",
+        "nl": "Rook gedetecteerd",
+        "de": "Rauch erkannt"
+      },
+      "args": []
+    },
+    {
+      "id": "smoke_detector_advanced_temp_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      },
+      "args": []
+    },
+    {
+      "id": "smoke_detector_advanced_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      },
+      "args": []
+    },
+    {
+      "id": "smoke_detector_advanced_tamper_alarm",
+      "title": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      },
+      "args": []
     }
   ],
   "conditions": [
@@ -154,6 +194,26 @@
           }
         }
       ]
+    },
+    {
+      "id": "smoke_detector_advanced_smoke_active",
+      "title": {
+        "en": "Smoke !{{is|is not}} detected",
+        "fr": "Fumée !{{est|n'est pas}} détectée",
+        "nl": "Rook !{{is|is niet}} gedetecteerd",
+        "de": "Rauch !{{ist|ist nicht}} erkannt"
+      },
+      "args": []
+    },
+    {
+      "id": "smoke_detector_advanced_tamper_active",
+      "title": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      },
+      "args": []
     }
   ],
   "actions": [

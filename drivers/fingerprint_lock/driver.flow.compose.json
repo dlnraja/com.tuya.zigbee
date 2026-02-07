@@ -1,5 +1,78 @@
 {
-  "triggers": [],
-  "conditions": [],
-  "actions": []
+  "triggers": [
+    {
+      "id": "fingerprint_lock_lock_changed",
+      "title": {
+        "en": "Lock changed",
+        "fr": "Serrure changée",
+        "nl": "Slot gewijzigd",
+        "de": "Schloss geändert"
+      },
+      "args": []
+    },
+    {
+      "id": "fingerprint_lock_tamper_alarm",
+      "title": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      },
+      "args": []
+    },
+    {
+      "id": "fingerprint_lock_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "fingerprint_lock_is_locked",
+      "title": {
+        "en": "Lock !{{is|is not}} locked",
+        "fr": "Serrure !{{est|n'est pas}} verrouillée",
+        "nl": "Slot !{{is|is niet}} vergrendeld",
+        "de": "Schloss !{{ist|ist nicht}} gesperrt"
+      },
+      "args": []
+    },
+    {
+      "id": "fingerprint_lock_tamper_active",
+      "title": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "fingerprint_lock_lock",
+      "title": {
+        "en": "Lock",
+        "fr": "Verrouiller",
+        "nl": "Vergrendelen",
+        "de": "Sperren"
+      },
+      "args": []
+    },
+    {
+      "id": "fingerprint_lock_unlock",
+      "title": {
+        "en": "Unlock",
+        "fr": "Déverrouiller",
+        "nl": "Ontgrendelen",
+        "de": "Entsperren"
+      },
+      "args": []
+    }
+  ]
 }
