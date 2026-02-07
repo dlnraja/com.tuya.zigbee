@@ -1,36 +1,3 @@
-Universal TUYA Zigbee - Local-First Control
+Control your Tuya-based Zigbee devices locally through Homey Pro. This app supports over 60 device types including switches, dimmers, sensors, thermostats, covers, plugs, buttons, IR blasters and more, with both standard Zigbee (ZCL) and Tuya-specific (DP) protocol handling for maximum compatibility.
 
-This app provides comprehensive support for Tuya-based Zigbee devices on Homey Pro.
-
-FEATURES:
-- 83+ device drivers supporting 2225+ manufacturer IDs
-- Hybrid ZCL + Tuya DP protocol support
-- Physical and virtual button detection
-- Advanced settings: power-on behavior, backlight, child lock
-- Flow cards for all device types
-
-SUPPORTED DEVICES:
-- Switches (1-8 gang, wall, wireless)
-- Dimmers and LED controllers
-- RGB/RGBW bulbs
-- Sensors (motion, contact, temperature, humidity, water leak, smoke, gas)
-- Thermostats and TRVs
-- Covers (blinds, curtains, roller shutters)
-- Plugs and power meters
-- Buttons (wireless scene switches)
-- IR blasters
-- And many more...
-
-REQUIREMENTS:
-- Homey Pro (2023 or earlier)
-- Zigbee-enabled Tuya devices
-
-SUPPORT:
-- GitHub: https://github.com/dlnraja/com.tuya.zigbee
-- Forum: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352
-
-Version 5.8.25 - February 2026
-- Fixed color-space module loading error in Homey sandbox
-- Added TuyaE000 cluster for MOES button press detection
-- Added exotic clusters (TuyaE001, TuyaE002, OnOffExt) for advanced settings
-- Case-insensitive fingerprint matching for BSEED switches
+Pair your devices directly with Homey without needing the Tuya cloud. The app automatically detects the correct protocol for your device and provides flow cards for automation, physical button detection, and advanced settings like power-on behavior, backlight control and child lock.

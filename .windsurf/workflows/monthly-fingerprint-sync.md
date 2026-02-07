@@ -1,99 +1,102 @@
 ---
-description: Monthly workflow to sync new Tuya Zigbee fingerprints from Z2M, GitHub issues, and forum
+description: Monthly comprehensive sync - fingerprints, flows, features, images from ALL sources (Z2M, ZHA, GitHub, forum, Reddit, Blakadder, manufacturer sites, deCONZ, Hubitat)
 ---
 
-# Monthly Fingerprint Sync Workflow
+# Monthly Comprehensive Sync Workflow
 
 ## Overview
-This workflow syncs new manufacturerName/productId fingerprints from community sources into the Universal Tuya Zigbee app.
+Full monthly audit and enrichment pass covering fingerprints, flow cards, driver features, images, languages, and documentation from all available sources.
 
 ## Steps
 
-### 1. Fetch Latest Z2M Fingerprints
+### 1. Run Local Scan
 // turbo
 ```bash
-node scripts/automation/fetch-z2m-fingerprints.js
+node scripts/automation/fetch-z2m-fingerprints.js && node scripts/automation/monthly-scan.js
 ```
 
-### 2. Scan GitHub Issues for New Device Requests
-Check these sources:
-- https://github.com/JohanBendz/com.tuya.zigbee/issues
-- https://github.com/dlnraja/com.tuya.zigbee/issues
-- Homey Forum Tuya threads
+### 2. Research ALL Online Sources for New Fingerprints
+Search each source for Tuya `_TZ*` / `_TZE*` manufacturerName + `TS0*` productId patterns:
 
-Look for patterns:
-- `_TZ*_*` or `_TS*_*` manufacturerName
-- `TS0601`, `TS0001`, etc. productId
-- Device type keywords (sensor, switch, button, etc.)
+**Primary Sources (fingerprints + DP mappings):**
+- Z2M tuya.ts: https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts
+- Z2M latest-dev changelog: https://gist.github.com/Koenkk/bfd4c3d1725a2cccacc11d6ba51008ba
+- Z2M new device issues: https://github.com/Koenkk/zigbee2mqtt/issues?q=label%3A%22new+device+support%22
+- ZHA quirks: https://github.com/zigpy/zha-device-handlers/tree/dev/zhaquirks/tuya
+- Blakadder device DB: https://zigbee.blakadder.com/all.html
 
-### 3. Run Monthly Scan
+**GitHub Forks & PRs (bidirectional, recursive):**
+- JohanBendz issues: https://github.com/JohanBendz/com.tuya.zigbee/issues
+- JohanBendz PRs: https://github.com/JohanBendz/com.tuya.zigbee/pulls
+- JohanBendz forks network: https://github.com/JohanBendz/com.tuya.zigbee/network/members
+- dlnraja issues: https://github.com/dlnraja/com.tuya.zigbee/issues
+- dlnraja forks: https://github.com/dlnraja/com.tuya.zigbee/network/members
+
+**Community Sources:**
+- Homey Forum: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352
+- Reddit r/homeassistant: search "Tuya Zigbee new device"
+- Reddit r/Homey: search "Tuya Zigbee"
+- deCONZ supported: https://github.com/dresden-elektronik/deconz-rest-plugin/wiki/Supported-Devices
+
+**Manufacturer Sites (product catalogs):**
+- Tuya: https://solution.tuya.com/projects/CMa0d0b72ebb72a8
+- Moes: https://www.moeshouse.com/collections/zigbee
+- Zemismart: https://www.zemismart.com/collections/zigbee
+- Lonsonho: AliExpress store
+- BSEED: https://www.bfrankelectricals.co.uk/bseed-zigbee
+- Sonoff: https://sonoff.tech/product-category/gateway-and-sensor/
+- AVATTO: AliExpress store
+
+### 3. Enrich Fingerprints
+For each new fingerprint found in step 2:
+1. Identify driver via `inferDeviceType(mfr, pid)` in monthly-scan.js
+2. Cross-reference Z2M DP mappings + ZHA quirks + Blakadder
+3. Check for collisions (same mfr+pid must NOT be in multiple drivers)
+4. Add to `drivers/{driver}/driver.compose.json` manufacturerName + productId arrays
+5. Add DP config in device.js if TS0601 needs custom mapping
+6. Create new driver folder if needed (nobrand nomenclature)
+
+### 4. Audit Flow Cards
+For every driver: check `driver.flow.compose.json` has cards for all capabilities.
+- Namespaced IDs: `{driver_id}_{action}`
+- NO `titleFormatted` with `[[device]]` in triggers
+- 4 languages: en, fr, nl, de
+- Missing cards for: onoff, alarm_*, measure_*, dim, windowcoverings_*
+
+### 5. Audit Driver Features
+Cross-reference each driver's capabilities with Z2M/ZHA features:
+- Add missing capabilities to driver.compose.json
+- Verify onSettings, configureAttributeReporting, initial state read
+- Check power metering for plugs, battery reporting for sensors
+
+### 6. Audit Images
+Per Homey SDK guidelines:
+- Driver images: 75x75 (small), 500x500 (large), 1000x1000 (xlarge), white bg, .png/.jpg
+- App images: 250x175 (small), 500x350 (large), 1000x700 (xlarge)
+- Icons: .svg, 960x960 canvas, transparent bg, right-side angle
+- Each driver MUST have its own unique image (not reuse app icon)
+
+### 7. Audit Languages
+Check `locales/` for en, fr, nl, de. Update missing translations.
+Check all driver.flow.compose.json have all 4 language titles.
+
+### 8. IR Blaster Check
+- Search Z2M for Tuya IR blaster models (TS1201, ZS06, S16)
+- Check if `ir_blaster` driver exists; if not, create with flow cards for learn/send
+- IR blasters use Tuya DP cluster with raw IR codes
+
+### 9. Validate & Push
 // turbo
 ```bash
-node scripts/automation/monthly-scan.js
+npx homey app validate --level publish
 ```
+- Bump version in `.homeycompose/app.json`
+- Update `.homeychangelog.json` (add entry at TOP)
+- `git add -A && git commit && git push`
 
-### 4. Analyze Pending Devices
-Read the generated files:
-- `docs/MONTHLY_REPORT.md` - Collision report
-- `data/community-sync/pending-fingerprints.json` - New fingerprints to add
-
-### 5. For Each New Fingerprint
-1. **Identify driver** using `inferDeviceType()`:
-   - `_TZE*` → Usually TS0601 sensors (climate_sensor, presence_sensor_radar, etc.)
-   - `_TZ3000_*` with TS0001/2/3/4 → switch_Xgang
-   - `_TZ3000_*` with TS0043/44/45 → button_wireless_X
-
-2. **Check for collisions** - same mfr+pid in multiple drivers
-
-3. **Add to driver.compose.json**:
-   ```json
-   "zigbee": {
-     "manufacturerName": ["_TZE200_newdevice", ...existing...],
-     "productId": ["TS0601", ...existing...]
-   }
-   ```
-
-4. **Add sensor config if needed** (for presence_sensor_radar, climate_sensor):
-   ```javascript
-   '_TZE200_newdevice': {
-     sensors: ['_TZE200_newdevice'],
-     configName: 'NEW_DEVICE_NAME',
-     dpMap: { ... }
-   }
-   ```
-
-### 6. Update Changelog
-Add entry to `.homeychangelog.json`:
-```json
-"X.Y.Z": {
-  "en": "🔌 NEW FINGERPRINTS: Added X new device fingerprints from community (list devices). GitHub #issue."
-}
-```
-
-### 7. Bump Version
-// turbo
-```bash
-npm version patch --no-git-tag-version
-```
-
-### 8. Run Validation
-// turbo
-```bash
-node scripts/automation/monthly-scan.js
-```
-Check that collision count hasn't increased unexpectedly.
-
-## Data Sources
-
-| Source | URL | Update Frequency |
-|--------|-----|------------------|
-| Z2M Supported Devices | https://www.zigbee2mqtt.io/supported-devices/ | Weekly |
-| JohanBendz Issues | https://github.com/JohanBendz/com.tuya.zigbee/issues | As needed |
-| Homey Forum | https://community.homey.app/c/apps/universal-tuya-zigbee | Daily |
-
-## Files Modified
-
-- `drivers/{driver}/driver.compose.json` - Add fingerprints
-- `drivers/{driver}/device.js` - Add sensor configs (if needed)
-- `.homeychangelog.json` - Document changes
-- `app.json` / `.homeycompose/app.json` - Version bump
+## Key Rules
+- Fingerprint = manufacturerName + productId COMBINED
+- Same mfr in multiple drivers is OK if productId differs
+- Settings keys: `zb_model_id` and `zb_manufacturer_name`
+- Flow card IDs: `{driver_id}_{action}` pattern
+- NO `titleFormatted` with `[[device]]` in triggers
