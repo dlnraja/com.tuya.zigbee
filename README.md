@@ -78,9 +78,6 @@
 | **v5.8.46** | 🔍 v5.8.46: DEVICE VERIFICATION & ENRICHMENT - Cross-referenced all interview... |
 | **v5.8.45** | 🧹 v5.8.45: FLOW CARD MAJOR CLEANUP - (1) Removed 87 phantom flow card regist... |
 | **v5.8.44** | v5.8.44: SMART FEATURES REWRITE - DynamicCapabilityManager, PeriodicAutoEnric... |
-| **v5.8.48** | 📋 Flow card completeness - 448 missing cards added across 111 drivers |
-| **v5.8.47** | 🔧 Diagnostic fixes: BSEED 4-gang, MOES 4-button, TS130F curtain motor |
-| **v5.8.46** | 🔍 Device verification & enrichment - WZ-M100, Y1_IN presence sensors |
 | **v5.8.43** | 🎯 v5.8.43: PR#125 michelhelsdingen - HOBEIAN 10G RADAR SENSOR FIXES (tested ... |
 | **v5.8.42** | 🚨 v5.8.42: CRITICAL FINGERPRINT CONFLICT FIX - HOBEIAN ZG-204ZM (Pete's rada... |
 | **v5.8.41** | 🪟 v5.8.41: FORUM+GITHUB TRIAGE - (1) Tbao TS130F curtain switch (_TZ3000_bs9... |
