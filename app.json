@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.8.54",
+  "version": "5.8.55",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -54217,6 +54217,25 @@
           "hint": {
             "en": "ZG-204ZM: PIR/Radar motion sensitivity (0=lowest, 10=highest)",
             "fr": "ZG-204ZM: Sensibilité PIR/Radar (0=minimum, 10=maximum)"
+          }
+        },
+        {
+          "id": "static_detection_distance",
+          "type": "number",
+          "label": {
+            "en": "Static Detection Distance",
+            "fr": "Distance Détection Statique",
+            "nl": "Statische Detectie Afstand",
+            "de": "Statische Erkennungsdistanz"
+          },
+          "value": 6,
+          "min": 0,
+          "max": 6,
+          "step": 1,
+          "units": "m",
+          "hint": {
+            "en": "ZG-204ZM: Maximum distance for detecting stationary persons (0-6 meters)",
+            "fr": "ZG-204ZM: Distance maximale pour détecter les personnes immobiles (0-6 mètres)"
           }
         },
         {

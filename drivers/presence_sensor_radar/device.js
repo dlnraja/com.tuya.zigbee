@@ -1161,32 +1161,41 @@ const SENSOR_CONFIGS = {
     hasIlluminance: true,   // Via ZCL cluster 1024, NOT Tuya DP106!
     noTemperature: true,    // v5.8.43: PR#125 michelhelsdingen - NO temperature sensor on this device
     noHumidity: true,       // v5.8.43: PR#125 michelhelsdingen - NO humidity sensor on this device
-    writableDPs: [2, 4, 102, 104, 105, 107, 108, 109],
+    writableDPs: [2, 4, 102, 104, 105, 107, 108, 109, 122, 123],
     dpMap: {
       // ═══════════════════════════════════════════════════════════════════
-      // PRESENCE: Handled by IAS Zone cluster 1280, NOT Tuya DP!
-      // But we keep DP mappings in case Tuya cluster also reports
+      // PRESENCE: IAS Zone cluster 1280 (PIR) + Tuya DP (radar)
+      // Both sources are valid - IAS for instant PIR, DP1 for radar presence
       // ═══════════════════════════════════════════════════════════════════
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       101: { cap: 'alarm_motion', type: 'motion_state_enum', enumMap: { 0: false, 1: true, 2: true, 3: true } },
       
       // ═══════════════════════════════════════════════════════════════════
-      // ILLUMINANCE: Handled by ZCL cluster 1024, NOT Tuya DP106!
-      // But we keep DP106 mapping as fallback
+      // ILLUMINANCE: ZCL cluster 1024 (primary) + Tuya DP106 (fallback)
       // ═══════════════════════════════════════════════════════════════════
       106: { cap: 'measure_luminance', type: 'lux_direct' },
 
       // ═══════════════════════════════════════════════════════════════════
-      // SETTINGS (via Tuya DP cluster 61184) - these ARE Tuya DPs
+      // BATTERY: ZCL powerConfiguration (primary) + DP121 fallback
+      // v5.8.55: Added DP121 for variants that also report battery via Tuya DP
       // ═══════════════════════════════════════════════════════════════════
-      2: { cap: null, setting: 'large_motion_detection_sensitivity', min: 0, max: 10 },
-      4: { cap: null, setting: 'large_motion_detection_distance', divisor: 100, min: 0, max: 10 },
+      121: { cap: 'measure_battery', divisor: 1 },
+
+      // ═══════════════════════════════════════════════════════════════════
+      // SETTINGS (via Tuya DP cluster 61184) - writable DPs
+      // v5.8.55: Added DP122 (motion_detection_mode) + DP123 (motion_detection_sensitivity)
+      // matching ZG_204ZM_RADAR config, confirmed by Z2M ZG-204ZM page
+      // ═══════════════════════════════════════════════════════════════════
+      2: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
+      4: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 6 },
       102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
-      104: { cap: null, setting: 'medium_motion_detection_distance', divisor: 100 },
-      105: { cap: null, setting: 'medium_motion_detection_sensitivity', min: 0, max: 10 },
+      104: { cap: null, internal: 'medium_motion_detection_distance', divisor: 100 },
+      105: { cap: null, internal: 'medium_motion_detection_sensitivity' },
       107: { cap: null, setting: 'indicator' },
-      108: { cap: null, setting: 'small_detection_distance', divisor: 100 },
-      109: { cap: null, setting: 'small_detection_sensitivity', min: 0, max: 10 },
+      108: { cap: null, internal: 'small_detection_distance', divisor: 100 },
+      109: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 },
+      122: { cap: null, setting: 'motion_detection_mode' },  // 0=only_pir, 1=pir_and_radar, 2=only_radar
+      123: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
     }
   },
 
@@ -3895,6 +3904,53 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
    */
   _updatePresenceTimestamp() {
     this._lastPresenceUpdate = Date.now();
+  }
+
+  /**
+   * v5.8.55: Write settings to device via Tuya DPs
+   * Dynamically reads the sensor config's dpMap entries with 'setting:' property
+   * and sends the corresponding Tuya DP when user changes a device setting.
+   * This is critical for ZG-204ZM settings (motion_detection_mode, fading_time,
+   * indicator, sensitivity) to actually reach the device hardware.
+   */
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    // Call parent onSettings first (handles generic sensor settings)
+    await super.onSettings({ oldSettings, newSettings, changedKeys });
+
+    const config = this._getSensorConfig();
+    const dpMap = config?.dpMap || {};
+
+    // Build reverse map: setting_name → { dp, divisor, type }
+    const settingToDp = {};
+    for (const [dpStr, info] of Object.entries(dpMap)) {
+      if (info.setting) {
+        settingToDp[info.setting] = { dp: Number(dpStr), divisor: info.divisor, min: info.min, max: info.max };
+      }
+    }
+
+    for (const key of changedKeys) {
+      try {
+        const mapping = settingToDp[key];
+        if (mapping && this.tuyaEF00Manager) {
+          let val = newSettings[key];
+          // Convert boolean to 0/1
+          if (typeof val === 'boolean') val = val ? 1 : 0;
+          // Parse string to number
+          val = parseInt(val) || 0;
+          // Apply divisor in reverse (multiply) for distance values stored as meters
+          if (mapping.divisor && mapping.divisor > 1) val = Math.round(val * mapping.divisor);
+          // Clamp to min/max if defined
+          if (mapping.min !== undefined) val = Math.max(mapping.min, val);
+          if (mapping.max !== undefined) val = Math.min(mapping.max, val);
+          await this.tuyaEF00Manager.sendDP(mapping.dp, val, 'value');
+          this.log(`[RADAR] [SETTINGS] ✅ ${key}=${val} → DP${mapping.dp}`);
+        } else if (settingToDp[key] && !this.tuyaEF00Manager) {
+          this.log(`[RADAR] [SETTINGS] ⚠️ ${key}: Tuya manager not available (battery device may be sleeping)`);
+        }
+      } catch (err) {
+        this.log(`[RADAR] [SETTINGS] ❌ ${key}: ${err.message}`);
+      }
+    }
   }
 
   /**
