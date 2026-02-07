@@ -334,11 +334,26 @@ class MotionSensorDevice extends HybridSensorBase {
       };
     } else if (profile.dp4 === 'measure_humidity') {
       // v5.5.991: HOBEIAN ZG-204ZV humidity needs *10 multiplier (Peter_van_Werkhoven)
+      // v5.8.56: SMART DP4 DETECTION for PERMISSIVE mode (fixes ZG-204ZL battery lost)
+      // Problem: ZG-204ZV DP4=humidity (raw 9 * 10 = 90%), ZG-204ZL DP4=battery (raw 75)
+      // Both share _TZE200_3towulqd manufacturerName → PERMISSIVE can't know upfront
+      // Solution: If DP3 (temperature) was received → DP4 is humidity (ZG-204ZV has temp)
+      //           If DP3 was NOT received → DP4 is battery (ZG-204ZL has no temp sensor)
       const multiplier = profile.dp4_multiplier || 1;
+      const isPermissive = profile.isPermissive || profile.name === 'PERMISSIVE_VARIANT';
       mappings[4] = {
         capability: 'measure_humidity',
         divisor: 1,
         transform: (v) => {
+          if (isPermissive && !device._hasReceivedTempDP) {
+            // No temperature received → ZG-204ZL PIR-only → DP4 is battery
+            if (v >= 0 && v <= 100) {
+              device._dynamicCapabilityFromDP?.(4, v, 'measure_battery');
+              device.setCapabilityValue('measure_battery', Math.round(v)).catch(() => {});
+              device.log?.(`[MOTION-DP] 🔋 DP4=${v} → battery (no temp DP3 received, ZG-204ZL pattern)`);
+            }
+            return null; // Not humidity
+          }
           device._dynamicCapabilityFromDP?.(4, v, 'measure_humidity');
           const hum = v * multiplier;
           return (hum >= 0 && hum <= 100) ? Math.round(hum) : null;
