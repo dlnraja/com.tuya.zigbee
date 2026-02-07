@@ -142,6 +142,16 @@
         "de": "Lüftergeschwindigkeit verringern"
       },
       "args": []
+    },
+    {
+      "id": "fan_controller_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": []
     }
   ]
 }

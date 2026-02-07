@@ -11,6 +11,26 @@
         }
       ],
       "args": []
+    },
+    {
+      "id": "module_mini_switch_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      },
+      "args": []
+    },
+    {
+      "id": "module_mini_switch_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      },
+      "args": []
     }
   ],
   "conditions": [

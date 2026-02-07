@@ -161,9 +161,9 @@ class FanControllerDevice extends ZigBeeDevice {
         this.setCapabilityValue('onoff', !!value).catch(this.error);
         // Trigger flow cards
         if (!!value && !wasOn) {
-          this.homey.flow.getDeviceTriggerCard('fan_turned_on').trigger(this).catch(this.error);
+          this.homey.flow.getDeviceTriggerCard('fan_controller_turned_on').trigger(this).catch(this.error);
         } else if (!value && wasOn) {
-          this.homey.flow.getDeviceTriggerCard('fan_turned_off').trigger(this).catch(this.error);
+          this.homey.flow.getDeviceTriggerCard('fan_controller_turned_off').trigger(this).catch(this.error);
         }
         break;
 
@@ -171,7 +171,7 @@ class FanControllerDevice extends ZigBeeDevice {
         const dim = value / 4; // Convert to 0-1 range
         this.setCapabilityValue('dim', dim).catch(this.error);
         // Trigger speed changed flow card
-        this.homey.flow.getDeviceTriggerCard('fan_speed_changed')
+        this.homey.flow.getDeviceTriggerCard('fan_controller_speed_changed')
           .trigger(this, { speed: Math.round(dim * 100) }).catch(this.error);
         break;
 
