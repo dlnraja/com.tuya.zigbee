@@ -1,4 +1,7 @@
 {
+  "5.8.60": {
+    "en": "🔧 v5.8.60: (1) FIX TS130F CURTAIN UP/DOWN (Tbao _TZ3000_bs93npae): ZCL windowCovering commands (upOpen/downClose/stop/goToLiftPercentage) were silently failing because manual cluster.upOpen?.() calls returned undefined. Fix: Use Homey SDK3 registerCapability('closuresWindowCovering') which handles ZCL command mapping automatically. Manual Tuya DP listeners preserved for TS0601 covers. (2) FIX PIR MOTION NOT WORKING (4x4_Pete HOBEIAN _TZE200_3towulqd): DP1 was double-processed — first by _handleCommonDP with holdoff delay (correct), then by dpMappings which immediately set alarm_motion=false (bypassing holdoff). This caused motion to clear in milliseconds, making PIR sensors appear non-functional. Fix: Skip dpMappings processing for DP1→alarm_motion since _handleCommonDP already handles it with holdoff."
+  },
   "5.8.59": {
     "en": "🔧 v5.8.59: FIX SCENE SWITCH FLOW CARDS (Freddyboy) - Physical button presses on scene_switch_1/2/3/4/6 drivers were not triggering flows. Root cause: ButtonDevice._triggerButton generated flow card IDs with '_button_Xgang' infix (e.g. scene_switch_4_button_4gang_button_pressed) but scene_switch drivers use simpler IDs (e.g. scene_switch_4_button_pressed). Added fallback flow card ID patterns without the gang infix for single/double/long press. Now ButtonDevice tries both naming conventions, fixing all scene switch drivers."
   },
