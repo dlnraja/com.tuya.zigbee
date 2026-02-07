@@ -73,10 +73,9 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.61** | 🔧 v5.8.61: (1) FIX HOBEIAN PIR SENSOR IN RADAR DRIVER (diag 25cbd6ae): HOBEI... |
 | **v5.8.60** | 🔧 v5.8.60: (1) FIX TS130F CURTAIN UP/DOWN (Tbao _TZ3000_bs93npae): ZCL windo... |
 | **v5.8.59** | 🔧 v5.8.59: FIX SCENE SWITCH FLOW CARDS (Freddyboy) - Physical button presses... |
-| **v5.8.61** | 🔧 FIX HOBEIAN PIR unmapped DPs in radar driver (diag 25cbd6ae) + FIX motion_sensor blank mfr name → PERMISSIVE_VARIANT (diag e2148e06) |
-| **v5.8.60** | 🔧 FIX TS130F curtain up/down (Tbao) + FIX PIR motion not working (4x4_Pete HOBEIAN) |
 | **v5.8.58** | 🔧 v5.8.58: FORUM REGRESSION FIXES - (1) FIX water sensor no alarm (Lasse_K):... |
 | **v5.8.57** | 🔧 v5.8.57: FIX BLANK MANUFACTURER NAMES - Added ensureManufacturerSettings()... |
 | **v5.8.56** | 🔧 v5.8.56: 4x4_PETE 3-DEVICE ENRICHMENT - (1) CRITICAL FIX: DP4 PERMISSIVE_V... |
@@ -84,7 +83,6 @@
 | **v5.8.54** | 🔧 v5.8.54: MOES BUTTON + SOIL SENSOR FIX - (1) Fixed Moes 4-button physical ... |
 | **v5.8.53** | 🔧 v5.8.53: HOBEIAN SENSOR FIX - (1) Fixed _TZE200_3towulqd motion sensor usi... |
 | **v5.8.52** | 🔧 v5.8.52: (1) TS130F CURTAIN FIX - Fixed _TZ3000_bs93npae TS130F curtain sw... |
-| **v5.8.51** | 🔧 v5.8.51: CRITICAL FIX - (1) Fixed missing super.onSettings() in 5 base cla... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
