@@ -1,4 +1,7 @@
 {
+  "5.8.53": {
+    "en": "🔧 v5.8.53: HOBEIAN SENSOR FIX - (1) Fixed _TZE200_3towulqd motion sensor using 'default DP profile' instead of PERMISSIVE_VARIANT. Root cause: _getManufacturerProfile() was missing getStoreValue() fallback for manufacturer name lookup. (2) Added HOBEIAN brand fingerprint to presence_sensor_radar driver so ZG-204ZM can pair. (3) Added HOBEIAN to motion_sensor driver fingerprints and VARIANT_MANUFACTURERS list. (4) Fixed PERMISSIVE_VARIANT DP12 mapping: removed static dp12=battery (was showing 1999% for ZG-204ZL illuminance values), now handled by smart base class detection."
+  },
   "5.8.52": {
     "en": "🔧 v5.8.52: (1) TS130F CURTAIN FIX - Fixed _TZ3000_bs93npae TS130F curtain switch sending Tuya DP commands instead of ZCL windowCovering cluster 258. Root cause: ManufacturerVariationManager set _isPureTuyaDP=true for 'mixed' protocol before _detectProtocol() could override. (2) IR BLASTER ZS06 FIX - Fixed Zosung IR clusters (0xE004, 0xED00) not available at runtime. Extracted cluster definitions to lib/clusters/ and registered at app startup in registerClusters.js. Removed 0xED00 from UnknownClusterHandler pre-registration to prevent conflict. Device now correctly detects zosungIRControl + zosungIRTransmit + onOff clusters."
   },
