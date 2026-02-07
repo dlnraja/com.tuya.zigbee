@@ -2,8 +2,9 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Devices](https://img.shields.io/badge/devices-4200+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Drivers](https://img.shields.io/badge/drivers-164-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-42%2C500+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Drivers](https://img.shields.io/badge/drivers-111-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Flow Cards](https://img.shields.io/badge/flow%20cards-1%2C457-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
@@ -16,14 +17,15 @@
 | **🧪 Test Version** | [Install Test Version](https://homey.app/a/com.tuya.zigbee/test/) |
 | **📦 GitHub Releases** | [View Releases](https://github.com/dlnraja/com.tuya.zigbee/releases) |
 
-**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 86 drivers and 3998+ manufacturer IDs.**
+**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 111 drivers, 42,500+ device fingerprints, and 1,457 flow cards.**
 
 🏠 **100% Local Control** - No Cloud, No Internet Required
 🔋 **Smart Battery** - Accurate readings with voltage fallback
 ⚡ **Hybrid Mode** - Auto-detect Tuya DP vs Standard ZCL
 🛠️ **SDK3** - Latest Homey Standards
 🌍 **Open Source** - Community-driven development
-📱 **86 Drivers** - Switches, sensors, lights, thermostats & more
+📱 **111 Drivers** - Switches, sensors, lights, thermostats, covers, locks & more
+📋 **1,457 Flow Cards** - Complete triggers, conditions & actions in 4 languages
 
 ---
 
@@ -31,14 +33,16 @@
 
 | Metric | Value |
 |--------|-------|
-| **Total Device IDs** | 4,200+ |
-| **Product IDs** | 350+ |
-| **Manufacturer IDs** | 3,800+ |
+| **Device Fingerprints** | 42,500+ |
+| **Unique Product IDs** | 472 |
 | **Drivers** | 111 |
-| **SVG Icons** | 86 |
+| **Flow Cards** | 1,457 |
+| **Unique Capabilities** | 99 |
+| **SVG Icons** | 197 |
+| **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-02-04 |
+| **Last Updated** | 2026-02-07 |
 
 ### 📦 Top 15 Drivers by Device IDs
 
@@ -74,6 +78,9 @@
 | **v5.8.46** | 🔍 v5.8.46: DEVICE VERIFICATION & ENRICHMENT - Cross-referenced all interview... |
 | **v5.8.45** | 🧹 v5.8.45: FLOW CARD MAJOR CLEANUP - (1) Removed 87 phantom flow card regist... |
 | **v5.8.44** | v5.8.44: SMART FEATURES REWRITE - DynamicCapabilityManager, PeriodicAutoEnric... |
+| **v5.8.48** | 📋 Flow card completeness - 448 missing cards added across 111 drivers |
+| **v5.8.47** | 🔧 Diagnostic fixes: BSEED 4-gang, MOES 4-button, TS130F curtain motor |
+| **v5.8.46** | 🔍 Device verification & enrichment - WZ-M100, Y1_IN presence sensors |
 | **v5.8.43** | 🎯 v5.8.43: PR#125 michelhelsdingen - HOBEIAN 10G RADAR SENSOR FIXES (tested ... |
 | **v5.8.42** | 🚨 v5.8.42: CRITICAL FINGERPRINT CONFLICT FIX - HOBEIAN ZG-204ZM (Pete's rada... |
 | **v5.8.41** | 🪟 v5.8.41: FORUM+GITHUB TRIAGE - (1) Tbao TS130F curtain switch (_TZ3000_bs9... |
@@ -199,7 +206,7 @@ node scripts/deployment/SAFE_PUSH_AND_PUBLISH.js
 
 ```
 tuya_repair/
-├── drivers/           # 83 Zigbee device drivers
+├── drivers/           # 111 Zigbee device drivers
 ├── lib/              # Shared libraries (HybridPlugBase, TuyaHybridDevice)
 ├── .homeycompose/    # Homey compose files (capabilities, flow cards)
 ├── docs/             # Documentation & Device Finder
@@ -408,5 +415,4 @@ If you find it useful and want to support continued development:
 
 **Made with ❤️ by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-01-19*
-# ZCL Time Cluster v5.5.208
+*Last updated: 2026-02-07*
