@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.54** | 🔧 v5.8.54: MOES BUTTON + SOIL SENSOR FIX - (1) Fixed Moes 4-button physical ... |
 | **v5.8.53** | 🔧 v5.8.53: HOBEIAN SENSOR FIX - (1) Fixed _TZE200_3towulqd motion sensor usi... |
 | **v5.8.52** | 🔧 v5.8.52: (1) TS130F CURTAIN FIX - Fixed _TZ3000_bs93npae TS130F curtain sw... |
 | **v5.8.51** | 🔧 v5.8.51: CRITICAL FIX - (1) Fixed missing super.onSettings() in 5 base cla... |
@@ -82,7 +83,6 @@
 | **v5.8.47** | 🔧 v5.8.47: DIAGNOSTIC DEVICE FIXES - (1) BSEED TS0726 4-gang (_TZ3002_pzao9l... |
 | **v5.8.46** | 🔍 v5.8.46: DEVICE VERIFICATION & ENRICHMENT - Cross-referenced all interview... |
 | **v5.8.45** | 🧹 v5.8.45: FLOW CARD MAJOR CLEANUP - (1) Removed 87 phantom flow card regist... |
-| **v5.8.44** | v5.8.44: SMART FEATURES REWRITE - DynamicCapabilityManager, PeriodicAutoEnric... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
