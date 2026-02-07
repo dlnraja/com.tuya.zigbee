@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.51** | 🔧 v5.8.51: CRITICAL FIX - (1) Fixed missing super.onSettings() in 5 base cla... |
 | **v5.8.50** | 🧹 v5.8.50: COMPREHENSIVE CLEANUP & ENRICHMENT - (1) Fingerprint cleanup: Rem... |
 | **v5.8.49** | ⚡ v5.8.49: SDK3 BEST PRACTICES - Applied improvements from analysis of IKEA T... |
 | **v5.8.48** | 📋 v5.8.48: FLOW CARD COMPLETENESS - Audited all 111 drivers and added 448 mi... |
@@ -82,7 +83,6 @@
 | **v5.8.44** | v5.8.44: SMART FEATURES REWRITE - DynamicCapabilityManager, PeriodicAutoEnric... |
 | **v5.8.43** | 🎯 v5.8.43: PR#125 michelhelsdingen - HOBEIAN 10G RADAR SENSOR FIXES (tested ... |
 | **v5.8.42** | 🚨 v5.8.42: CRITICAL FINGERPRINT CONFLICT FIX - HOBEIAN ZG-204ZM (Pete's rada... |
-| **v5.8.41** | 🪟 v5.8.41: FORUM+GITHUB TRIAGE - (1) Tbao TS130F curtain switch (_TZ3000_bs9... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
