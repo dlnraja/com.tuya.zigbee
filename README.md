@@ -73,8 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.8.57** | 🔧 v5.8.57: FIX BLANK MANUFACTURER NAMES - Added ensureManufacturerSettings()... |
-| **v5.8.56** | 🔧 v5.8.56: 4x4_PETE 3-DEVICE ENRICHMENT - (1) CRITICAL FIX: DP4 PERMISSIVE_V... |
+| **v5.8.58** | 🔧 FORUM REGRESSION FIXES - Water sensor alarm, contact inversion, curtain wrong caps, BSEED 4-gang EP2-4 |
 | **v5.8.57** | 🔧 FIX BLANK MANUFACTURER NAMES - ensureManufacturerSettings() in ALL 10 base classes |
 | **v5.8.56** | 🔧 4x4_PETE 3-DEVICE ENRICHMENT - DP4 PERMISSIVE_VARIANT smart detection fix |
 | **v5.8.55** | 🔧 v5.8.55: ZG-204ZM RADAR SENSOR DEEP SUPPORT (4x4_Pete) - (1) Added missing... |

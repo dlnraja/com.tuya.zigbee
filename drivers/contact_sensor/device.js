@@ -226,8 +226,14 @@ class ContactSensorDevice extends HybridSensorBase {
    */
   async setCapabilityValue(capability, value) {
     if (capability === 'alarm_contact') {
-      // Apply invert setting if enabled
-      let finalValue = this._invertContact ? !value : value;
+      // v5.8.58: Skip manufacturer inversion for IAS Zone events
+      // IAS Zone alarm1=true already means "open/alarm" per ZCL spec
+      // Only Tuya DP values need manufacturer-specific inversion
+      const isIAS = this._iasOriginatedAlarm;
+      this._iasOriginatedAlarm = false; // Reset flag
+
+      // Apply invert setting: skip for IAS (already correct), apply for DP
+      let finalValue = (!isIAS && this._invertContact) ? !value : value;
 
       const now = Date.now();
       const state = this._contactState || { lastValue: null, lastChangeTime: 0, timer: null };
