@@ -106,39 +106,75 @@ function inferDeviceType(mfr, pid) {
     if (/dimmer/i.test(m)) return 'dimmer_wall_1gang';
     if (/vibr/i.test(m)) return 'vibration_sensor';
     if (/ir.*blast|remote|universal/i.test(m)) return 'ir_blaster';
-    return 'climate_sensor'; // Default for unknown TS0601
+    if (/siren|alarm/i.test(m)) return 'siren';
+    if (/lock/i.test(m)) return 'lock_smart';
+    if (/pet|feed/i.test(m)) return 'pet_feeder';
+    if (/fan/i.test(m)) return 'fan_controller';
+    if (/pool|pump/i.test(m)) return 'pool_pump';
+    if (/garage/i.test(m)) return 'garage_door';
+    if (/switch|relay|1gang|2gang|3gang|4gang/i.test(m)) return 'switch_1gang';
+    if (/plug|socket|outlet/i.test(m)) return 'plug_smart';
+    if (/energy|meter|power/i.test(m)) return 'energy_meter_3phase';
+    if (/illumin|lux|light.*sens/i.test(m)) return 'illuminance_sensor';
+    if (/rain/i.test(m)) return 'rain_sensor';
+    if (/door.*bell/i.test(m)) return 'doorbell';
+    if (/humidif/i.test(m)) return 'humidifier';
+    return 'unknown'; // Don't assume climate_sensor for unknown TS0601
   }
   
   // Standard ZCL switches by productId
-  if (p === 'TS0001') return 'switch_1gang';
-  if (p === 'TS0002') return 'switch_2gang';
-  if (p === 'TS0003') return 'switch_3gang';
-  if (p === 'TS0004') return 'switch_4gang';
-  if (p === 'TS0011') return 'switch_1gang';
-  if (p === 'TS0012') return 'switch_2gang';
-  if (p === 'TS0013') return 'switch_3gang';
+  if (p === 'TS0001' || p === 'TS0011') return 'switch_1gang';
+  if (p === 'TS0002' || p === 'TS0012') return 'switch_2gang';
+  if (p === 'TS0003' || p === 'TS0013') return 'switch_3gang';
+  if (p === 'TS0004' || p === 'TS0014') return 'switch_4gang';
+  if (p === 'TS0005' || p === 'TS0015') return 'switch_wall_5gang';
+  if (p === 'TS0006') return 'switch_wall_6gang';
   
   // Plugs/Sockets
-  if (p === 'TS011F' || p === 'TS0121') return 'plug_smart';
-  if (p === 'TS0112') return 'plug_smart';
+  if (p === 'TS011F' || p === 'TS0121' || p === 'TS0112') return 'plug_smart';
   
   // Buttons/Remotes
   if (p === 'TS0041') return 'button_wireless_1';
   if (p === 'TS0042') return 'button_wireless_2';
   if (p === 'TS0043') return 'button_wireless_3';
   if (p === 'TS0044') return 'button_wireless_4';
+  if (p === 'TS0045') return 'button_wireless_1';
   if (p === 'TS0046') return 'button_wireless_6';
+  if (p === 'TS0047') return 'button_wireless';
+  if (p === 'TS0048') return 'button_wireless_8';
+  if (p === 'TS004F') return 'button_wireless_4';
   
   // Dimmers
-  if (/TS02\d{2}/.test(p)) return 'dimmer_wall_1gang';
-  if (p === 'TS0501A' || p === 'TS0501B') return 'dimmer_wall_1gang';
-  if (p === 'TS0502A' || p === 'TS0502B') return 'dimmer_dual_channel';
+  if (p === 'TS110E' || p === 'TS110F') return 'dimmer_wall_1gang';
+  
+  // Lights
+  if (p === 'TS0501A' || p === 'TS0501B') return 'bulb_dimmable';
+  if (p === 'TS0502A' || p === 'TS0502B') return 'bulb_tunable_white';
+  if (p === 'TS0503A' || p === 'TS0503B') return 'bulb_rgb';
+  if (p === 'TS0504A' || p === 'TS0504B') return 'bulb_rgbw';
+  if (p === 'TS0505A' || p === 'TS0505B') return 'bulb_rgb';
+  
+  // Covers
+  if (p === 'TS130F' || p === 'TS0302') return 'curtain_motor';
   
   // Sensors
+  if (p === 'TS0201' || p === 'TS0222') return 'climate_sensor';
   if (p === 'TS0202') return 'motion_sensor';
   if (p === 'TS0203') return 'contact_sensor';
+  if (p === 'TS0204') return 'gas_sensor';
+  if (p === 'TS0205') return 'smoke_detector_advanced';
   if (p === 'TS0207') return 'water_leak_sensor';
   if (p === 'TS0210') return 'vibration_sensor';
+  if (p === 'TS0225') return 'presence_sensor_radar';
+  
+  // Repeaters
+  if (p === 'TS0207' && /repeater/i.test(m)) return 'zigbee_repeater';
+  
+  // IR Blaster
+  if (p === 'TS1201') return 'ir_blaster';
+  
+  // Scene switches
+  if (p === 'TS0726') return 'switch_4gang';
   
   return 'unknown';
 }
