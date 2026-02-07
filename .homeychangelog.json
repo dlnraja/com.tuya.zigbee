@@ -1,4 +1,7 @@
 {
+  "5.8.54": {
+    "en": "🔧 v5.8.54: MOES BUTTON + SOIL SENSOR FIX - (1) Fixed Moes 4-button physical press NOT detected (diag e5c0bbf5). Root cause: TuyaE000Cluster defined only cmd 0x00+0x01 with rigid uint8 args - SDK silently dropped frames with other command IDs. Fix: Defined cmd 0x00-0x06 + 0xFD/FE/FF with buffer args so ANY Tuya button frame deserializes. Applied to button_wireless_2/4/6/8 drivers. (2) Fixed soil sensor manufacturer blank (diag cf2e5ebe). Added getStoreValue+getData fallbacks to TuyaHybridDevice manufacturer name resolution. (3) Fixed mcuVersionRequest command args: was empty causing malformed frames on some devices. Now sends proper 2-byte seq payload per Tuya protocol spec."
+  },
   "5.8.53": {
     "en": "🔧 v5.8.53: HOBEIAN SENSOR FIX - (1) Fixed _TZE200_3towulqd motion sensor using 'default DP profile' instead of PERMISSIVE_VARIANT. Root cause: _getManufacturerProfile() was missing getStoreValue() fallback for manufacturer name lookup. (2) Added HOBEIAN brand fingerprint to presence_sensor_radar driver so ZG-204ZM can pair. (3) Added HOBEIAN to motion_sensor driver fingerprints and VARIANT_MANUFACTURERS list. (4) Fixed PERMISSIVE_VARIANT DP12 mapping: removed static dp12=battery (was showing 1999% for ZG-204ZL illuminance values), now handled by smart base class detection."
   },

@@ -36,12 +36,23 @@ class Button2GangDevice extends ButtonDevice {
       const e000Cluster = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344];
       if (e000Cluster && typeof e000Cluster.on === 'function') {
         this.log(`[BUTTON2-E000] 📡 EP${ep} tuyaE000 cluster available`);
-        e000Cluster.on('buttonPress', async ({ button, pressType }) => {
-          const types = { 0: 'single', 1: 'double', 2: 'long' };
-          const btn = (button >= 1 && button <= 2) ? button : ep;
-          this.log(`[BUTTON2-E000] 🔘 Button ${btn} ${types[pressType] || 'single'}`);
-          await this.triggerButtonPress(btn, types[pressType] || 'single');
-        });
+        // v5.8.54: Listen for ALL cmd events (cmd0-cmd6, cmdFD/FE/FF)
+        // Previous buttonPress(0x00) with uint8 args silently dropped other cmd IDs
+        const cmdNames = ['cmd0','cmd1','cmd2','cmd3','cmd4','cmd5','cmd6','cmdFD','cmdFE','cmdFF'];
+        for (const cmdName of cmdNames) {
+          e000Cluster.on(cmdName, async ({ data }) => {
+            this.log(`[BUTTON2-E000] 📥 EP${ep} ${cmdName}: data=${data?.toString?.('hex')}`);
+            const types = { 0: 'single', 1: 'double', 2: 'long' };
+            let btn = ep, press = 'single';
+            if (data && data.length >= 2 && data[0] >= 1 && data[0] <= 2) {
+              btn = data[0]; press = types[data[1]] || 'single';
+            } else if (data && data.length >= 1) {
+              press = types[data[0]] || 'single';
+            }
+            this.log(`[BUTTON2-E000] 🔘 Button ${btn} ${press.toUpperCase()}`);
+            await this.triggerButtonPress(btn, press);
+          });
+        }
       }
 
       // Setup onOff listeners as fallback
