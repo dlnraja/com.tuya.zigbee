@@ -73,7 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.8.52** | 🔧 v5.8.52: TS130F CURTAIN FIX - Fixed _TZ3000_bs93npae TS130F curtain switch... |
+| **v5.8.52** | 🔧 v5.8.52: (1) TS130F CURTAIN FIX - Fixed _TZ3000_bs93npae TS130F curtain sw... |
 | **v5.8.51** | 🔧 v5.8.51: CRITICAL FIX - (1) Fixed missing super.onSettings() in 5 base cla... |
 | **v5.8.50** | 🧹 v5.8.50: COMPREHENSIVE CLEANUP & ENRICHMENT - (1) Fingerprint cleanup: Rem... |
 | **v5.8.49** | ⚡ v5.8.49: SDK3 BEST PRACTICES - Applied improvements from analysis of IKEA T... |
