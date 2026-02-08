@@ -1179,7 +1179,7 @@ const SENSOR_CONFIGS = {
     hasIlluminance: true,   // Via ZCL cluster 1024, NOT Tuya DP106!
     noTemperature: true,    // v5.8.43: PR#125 michelhelsdingen - NO temperature sensor on this device
     noHumidity: true,       // v5.8.43: PR#125 michelhelsdingen - NO humidity sensor on this device
-    writableDPs: [2, 4, 102, 104, 105, 107, 108, 109, 122, 123],
+    writableDPs: [2, 3, 4, 102, 104, 105, 107, 108, 109, 122, 123],
     dpMap: {
       // ═══════════════════════════════════════════════════════════════════
       // PRESENCE: IAS Zone cluster 1280 (PIR) + Tuya DP (radar)
@@ -1205,11 +1205,13 @@ const SENSOR_CONFIGS = {
       // matching ZG_204ZM_RADAR config, confirmed by Z2M ZG-204ZM page
       // ═══════════════════════════════════════════════════════════════════
       // v5.8.63: Fixed labels and ranges per Z2M ZG-204ZM page + issue #21919
-      2: { cap: null, setting: 'large_motion_detection_sensitivity', min: 0, max: 10 },
-      4: { cap: null, setting: 'large_motion_detection_distance', divisor: 100, min: 0, max: 10 },
+      // v5.8.77: Aligned setting keys to match driver.compose.json IDs + added missing DPs
+      2: { cap: null, setting: 'large_motion_sensitivity', min: 0, max: 10 },
+      3: { cap: 'measure_distance', divisor: 100 },  // v5.8.77: target distance in cm→m
+      4: { cap: null, setting: 'large_motion_distance', divisor: 100, min: 0, max: 10 },
       102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
-      104: { cap: null, setting: 'medium_motion_detection_distance', divisor: 100, min: 0, max: 6 },
-      105: { cap: null, setting: 'medium_motion_detection_sensitivity', min: 0, max: 10 },
+      104: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 6 },
+      105: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 },
       107: { cap: null, setting: 'indicator' },
       108: { cap: null, setting: 'small_detection_distance', divisor: 100, min: 0, max: 6 },
       109: { cap: null, setting: 'small_detection_sensitivity', min: 0, max: 10 },
@@ -2008,11 +2010,12 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     
     // v5.7.48: If we have a cached config, check if it's still valid
     // If mfr was empty before but now available, re-lookup config
+    // v5.8.77: Also re-check if config is a FALLBACK (e.g. HOBEIAN_10G_MULTI_FALLBACK)
     if (this._sensorConfig) {
       const cachedConfigName = this._sensorConfig.configName || 'DEFAULT';
-      // If we have a real mfr now but config is DEFAULT, try to find a better match
-      if (cachedConfigName === 'DEFAULT' && mfr && mfr.length > 0) {
-        this.log(`[RADAR] 🔄 Re-checking config: mfr now available as "${mfr}"`);
+      const isFallback = cachedConfigName === 'DEFAULT' || cachedConfigName.endsWith('_FALLBACK');
+      if (isFallback && mfr && mfr.length > 0) {
+        this.log(`[RADAR] 🔄 Re-checking config: mfr="${mfr}", was fallback "${cachedConfigName}"`);
         this._sensorConfig = null; // Force re-lookup
       } else {
         return this._sensorConfig;
@@ -2020,11 +2023,16 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     }
     
     // v5.5.984: Peter_van_Werkhoven HOBEIAN fix - check multiple sources for modelId
+    // v5.8.77: Added zclNode.modelId + _cachedModelId — fixes HOBEIAN ZG-204ZM wrong config
     const settings = this.getSettings() || {};
-    const modelId = this.getData()?.modelId 
-      || settings.zb_model_id 
+    const modelId = settings.zb_model_id 
       || settings.zb_modelId 
+      || this.getData()?.modelId
+      || this.getData()?.productId
       || this.getStoreValue?.('modelId')
+      || this.getStoreValue?.('productId')
+      || this.zclNode?.modelId
+      || this._cachedModelId
       || null;
     this._sensorConfig = getSensorConfig(mfr, modelId);
     this.log(`[RADAR] 🔍 ManufacturerName: "${mfr}", ModelId: "${modelId}" → config: ${this._sensorConfig.configName || 'DEFAULT'}`);
