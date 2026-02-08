@@ -316,7 +316,13 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
     },
     {
       "id": "ir_blaster_turned_off",
@@ -326,7 +332,13 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
     }
   ],
   "conditions": [
@@ -337,7 +349,12 @@
         "nl": "IR leren is actief",
         "de": "IR-Lernen ist aktiv"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "IR learning is active",
+        "nl": "IR leren is actief",
+        "de": "IR-Lernen ist aktiv"
+      }
     },
     {
       "id": "ir_blaster_code_exists",
@@ -458,7 +475,12 @@
         "nl": "IR leren is actief",
         "de": "IR-Lernen ist aktiv"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "IR learning is active",
+        "nl": "IR leren is actief",
+        "de": "IR-Lernen ist aktiv"
+      }
     },
     {
       "id": "ir_blaster_blaster_code_exists",
@@ -580,7 +602,13 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
     }
   ],
   "actions": [
@@ -1456,7 +1484,13 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      }
     },
     {
       "id": "ir_blaster_turn_off",
@@ -1466,7 +1500,13 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      }
     },
     {
       "id": "ir_blaster_toggle",
@@ -1476,7 +1516,13 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
     }
   ]
 }

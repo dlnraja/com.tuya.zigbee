@@ -2,8 +2,8 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
-const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
-const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice');
+const TuyaSpecificCluster = require('../../lib/tuya/TuyaSpecificCluster');
+const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
 
 // Tuya DP IDs for LED dimmers
 const TUYA_DP = {

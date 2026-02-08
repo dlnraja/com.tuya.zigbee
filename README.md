@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.62** | 🔧 v5.8.62: COMPREHENSIVE APP AUDIT — Fix duplicate fingerprints (TS0003, TS0726), fix broken imports (led_controller_dimmable), add titleFormatted to 1218 flow cards across 106 drivers. 0 warnings at publish level. |
 | **v5.8.61** | 🔧 v5.8.61: (1) FIX HOBEIAN PIR SENSOR IN RADAR DRIVER (diag 25cbd6ae): HOBEI... |
 | **v5.8.60** | 🔧 v5.8.60: (1) FIX TS130F CURTAIN UP/DOWN (Tbao _TZ3000_bs93npae): ZCL windo... |
 | **v5.8.59** | 🔧 v5.8.59: FIX SCENE SWITCH FLOW CARDS (Freddyboy) - Physical button presses... |

@@ -37,7 +37,13 @@
         "fr": "Se déclenche quand le capteur ne détecte plus d'eau",
         "de": "Wird ausgelöst, wenn der Sensor kein Wasser mehr erkennt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water leak cleared",
+        "nl": "Waterlek opgeheven",
+        "fr": "Fuite d'eau terminée",
+        "de": "Wasserleck behoben"
+      }
     },
     {
       "id": "water_leak_sensor_measure_battery_changed",
@@ -82,7 +88,13 @@
         "fr": "Se déclenche quand le niveau de batterie passe sous le seuil",
         "de": "Wird ausgelöst, wenn der Batteriestand unter den Schwellenwert fällt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
     },
     {
       "id": "water_leak_sensor_tamper_true",
@@ -98,7 +110,13 @@
         "fr": "Se déclenche quand le capteur détecte un sabotage (boîtier ouvert)",
         "de": "Wird ausgelöst, wenn der Sensor eine Manipulation erkennt (Gehäuse geöffnet)"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alert",
+        "nl": "Sabotage alarm",
+        "fr": "Alerte sabotage",
+        "de": "Manipulationsalarm"
+      }
     },
     {
       "id": "water_leak_sensor_water_alarm",
@@ -108,7 +126,13 @@
         "nl": "Wateralarm",
         "de": "Wasseralarm"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water alarm",
+        "fr": "Alarme eau",
+        "nl": "Wateralarm",
+        "de": "Wasseralarm"
+      }
     },
     {
       "id": "water_leak_sensor_tamper_alarm",
@@ -118,7 +142,13 @@
         "nl": "Sabotagealarm",
         "de": "Manipulationsalarm"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      }
     }
   ],
   "conditions": [
@@ -130,7 +160,13 @@
         "fr": "Eau !{{est|n'est pas}} détectée",
         "de": "Wasser !{{ist|ist nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water !{{is|is not}} detected",
+        "nl": "Water !{{is|is niet}} gedetecteerd",
+        "fr": "Eau !{{est|n'est pas}} détectée",
+        "de": "Wasser !{{ist|ist nicht}} erkannt"
+      }
     },
     {
       "id": "water_leak_sensor_battery_above",
@@ -167,7 +203,13 @@
         "nl": "Sabotage !{{is|is niet}} actief",
         "de": "Manipulation !{{ist|ist nicht}} aktiv"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      }
     }
   ]
 }

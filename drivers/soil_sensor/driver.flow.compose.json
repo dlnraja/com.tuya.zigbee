@@ -73,7 +73,13 @@
         "fr": "Se déclenche quand l'humidité du sol passe sous le seuil de sécheresse",
         "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit unter den Trockenschwellenwert fällt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Soil is dry - needs water",
+        "nl": "Grond is droog - heeft water nodig",
+        "fr": "Sol sec - besoin d'eau",
+        "de": "Boden ist trocken - braucht Wasser"
+      }
     },
     {
       "id": "soil_sensor_soil_wet",
@@ -89,7 +95,13 @@
         "fr": "Se déclenche quand l'humidité du sol dépasse le seuil d'humidité",
         "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit über den Nässeschwellenwert steigt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Soil is wet",
+        "nl": "Grond is nat",
+        "fr": "Sol humide",
+        "de": "Boden ist nass"
+      }
     },
     {
       "id": "soil_sensor_soil_optimal",
@@ -105,7 +117,13 @@
         "fr": "Se déclenche quand l'humidité du sol est dans la plage optimale pour la croissance des plantes",
         "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit im optimalen Bereich für Pflanzenwachstum liegt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Soil moisture is optimal",
+        "nl": "Bodemvochtigheid is optimaal",
+        "fr": "Humidité du sol optimale",
+        "de": "Bodenfeuchtigkeit ist optimal"
+      }
     },
     {
       "id": "soil_sensor_frost_warning",
@@ -121,7 +139,13 @@
         "fr": "Se déclenche quand la température du sol passe sous 2°C - protégez vos plantes !",
         "de": "Wird ausgelöst, wenn die Bodentemperatur unter 2°C fällt - schützen Sie Ihre Pflanzen!"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Frost warning",
+        "nl": "Vorstwaarschwing",
+        "fr": "Alerte gel",
+        "de": "Frostwarnung"
+      }
     },
     {
       "id": "soil_sensor_battery_changed",
@@ -160,7 +184,13 @@
         "fr": "Batterie faible",
         "de": "Batterie ist schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
     },
     {
       "id": "soil_sensor_temp_changed",
@@ -170,7 +200,13 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
     },
     {
       "id": "soil_sensor_humidity_changed",
@@ -180,7 +216,13 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      }
     },
     {
       "id": "soil_sensor_water_alarm",
@@ -190,7 +232,13 @@
         "nl": "Wateralarm",
         "de": "Wasseralarm"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water alarm",
+        "fr": "Alarme eau",
+        "nl": "Wateralarm",
+        "de": "Wasseralarm"
+      }
     }
   ],
   "conditions": [
@@ -283,7 +331,13 @@
         "fr": "Sol !{{a besoin|n'a pas besoin}} d'eau",
         "de": "Boden !{{braucht|braucht kein}} Wasser"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Soil !{{needs|does not need}} water",
+        "nl": "Grond !{{heeft|heeft geen}} water nodig",
+        "fr": "Sol !{{a besoin|n'a pas besoin}} d'eau",
+        "de": "Boden !{{braucht|braucht kein}} Wasser"
+      }
     },
     {
       "id": "soil_sensor_battery_above",
@@ -320,7 +374,13 @@
         "nl": "Water !{{is|is niet}} gedetecteerd",
         "de": "Wasser !{{ist|ist nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water !{{is|is not}} detected",
+        "fr": "Eau !{{est|n'est pas}} détectée",
+        "nl": "Water !{{is|is niet}} gedetecteerd",
+        "de": "Wasser !{{ist|ist nicht}} erkannt"
+      }
     }
   ]
 }

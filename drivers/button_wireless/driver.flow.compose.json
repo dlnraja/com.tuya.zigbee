@@ -17,7 +17,11 @@
           "example": "1"
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      }
     },
     {
       "id": "button_wireless_button_double_pressed",
@@ -36,7 +40,11 @@
           "example": "1"
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button double pressed",
+        "fr": "Double appui bouton"
+      }
     },
     {
       "id": "button_wireless_button_long_pressed",
@@ -55,7 +63,11 @@
           "example": "1"
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button long pressed",
+        "fr": "Appui long bouton"
+      }
     },
     {
       "id": "button_wireless_button_released",
@@ -74,7 +86,11 @@
           "example": "1"
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button released",
+        "fr": "Bouton relâché"
+      }
     },
     {
       "id": "button_wireless_battery_low",
@@ -82,7 +98,11 @@
         "en": "Battery low",
         "fr": "Batterie faible"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
     }
   ],
   "conditions": [
