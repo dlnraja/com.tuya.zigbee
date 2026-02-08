@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.76** | v5.8.76: 4 DIAGNOSTIC FIXES — (1) FIX button_pressed/button_double_press gene... |
 | **v5.8.75** | v5.8.75: PETER'S DEVICES FIX — (1) FIX HOBEIAN ZG-204ZM not recognized (showe... |
 | **v5.8.74** | v5.8.74: CRITICAL TIME SYNC FIX + USB DONGLE TRIPLE — (1) FIX wrong epoch in ... |
 | **v5.8.73** | v5.8.73: PACKETNINJA SUB-DEVICE — NEW wall_switch_2gang_1way + wall_switch_3g... |
@@ -82,7 +83,6 @@
 | **v5.8.69** | v5.8.69: COMPREHENSIVE BATTERY FIX — Fixes '?' battery display across ALL dev... |
 | **v5.8.68** | v5.8.68: FIX _TZ3000_h1ipgkwn + 6 BUGS — (1) Moved from switch_2gang to usb_d... |
 | **v5.8.67** | v5.8.67: BATTERY RECOGNITION FIX — (1) CRITICAL FIX: SmartBatteryManager _vol... |
-| **v5.8.66** | v5.8.66: BUTTON DRIVER ENHANCEMENT + CASE SENSITIVITY FIX — (1) FIX: button_w... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
