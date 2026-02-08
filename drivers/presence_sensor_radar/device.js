@@ -1409,21 +1409,27 @@ const SENSOR_CONFIGS = {
   },
 
   // ─────────────────────────────────────────────────────────────────────────────
-  // TYPE I: TZE200_crq3r3la Presence Sensor (Forum report 0790faa4)
+  // TYPE I: TZE200_crq3r3la Presence Sensor CK-BL702-MWS-01 (Forum report 0790faa4, JJ10)
   // v5.5.503: User reported as "presence sensor" wrongly classified as climate_sensor
-  // DPs: 103=illuminance, 113/119/123/124=settings
+  // v5.8.71: JJ10 fix — IAS Zone sends conflicting false, add noIasMotion. USB powered (not battery).
+  //          Add DP101 (motion_state), DP106 (illuminance alt), DP122 (target_distance).
+  // DPs: 1=presence, 101=motion_state, 103=illuminance, 106=illuminance_alt, 113/119/123/124=settings, 122=distance
   // ─────────────────────────────────────────────────────────────────────────────
   'TZE200_CRQ3R3LA': {
     sensors: ['_TZE200_crq3r3la', '_TZE200_CRQ3R3LA'],
-    battery: true,
+    battery: false,
     hasIlluminance: true,
     noTemperature: true,
     noHumidity: true,
+    noIasMotion: true,
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
+      101: { cap: null, setting: 'motion_state' },
       103: { cap: 'measure_luminance', type: 'lux_direct' },
+      106: { cap: 'measure_luminance', type: 'lux_direct' },
       113: { cap: null, setting: 'mode' },
       119: { cap: null, setting: 'sensitivity' },
+      122: { cap: 'measure_distance', divisor: 100 },
       123: { cap: null, setting: 'detection_delay' },
       124: { cap: null, setting: 'indicator' },
     }
