@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.68** | v5.8.68: FIX _TZ3000_h1ipgkwn WRONG DRIVER — USB Power Switch (2-port, router, energy monitoring) wrongly in switch_2gang. Moved to usb_dongle_dual_repeater. Fixed BatteryManager driver-based detection. |
 | **v5.8.67** | v5.8.67: BATTERY RECOGNITION FIX — (1) CRITICAL FIX: SmartBatteryManager _vol... |
 | **v5.8.66** | v5.8.66: BUTTON DRIVER ENHANCEMENT + CASE SENSITIVITY FIX — (1) FIX: button_w... |
 | **v5.8.65** | v5.8.65: 4x4_PETE DEVICE AUDIT — (1) CRITICAL FIX: _TZE200_3towulqd ZCL-only ... |
