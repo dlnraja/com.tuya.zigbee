@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.8.72",
+  "version": "5.8.73",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -18702,6 +18702,62 @@
         }
       },
       {
+        "id": "wall_switch_2gang_1way_turned_on",
+        "title": {
+          "en": "Turned on (physical button)",
+          "nl": "Aangezet (fysieke knop)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_turned_off",
+        "title": {
+          "en": "Turned off (physical button)",
+          "nl": "Uitgezet (fysieke knop)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_turned_on",
+        "title": {
+          "en": "Turned on (physical button)",
+          "nl": "Aangezet (fysieke knop)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_turned_off",
+        "title": {
+          "en": "Turned off (physical button)",
+          "nl": "Uitgezet (fysieke knop)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
         "id": "water_leak_sensor_alarm_water_true",
         "highlight": true,
         "title": {
@@ -36945,6 +37001,106 @@
           "nl": "Wisselen",
           "de": "Umschalten"
         }
+      },
+      {
+        "id": "wall_switch_2gang_1way_set_backlight",
+        "title": {
+          "en": "Set LED indicator mode",
+          "nl": "Stel LED-indicator modus in"
+        },
+        "titleFormatted": {
+          "en": "[[device]] set LED indicator to [[mode]]",
+          "nl": "[[device]] stel LED-indicator in op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Always Off",
+                  "nl": "Altijd Uit"
+                }
+              },
+              {
+                "id": "normal",
+                "label": {
+                  "en": "On when Switch ON",
+                  "nl": "Aan bij AAN"
+                }
+              },
+              {
+                "id": "inverted",
+                "label": {
+                  "en": "On when Switch OFF",
+                  "nl": "Aan bij UIT"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_set_backlight",
+        "title": {
+          "en": "Set LED indicator mode",
+          "nl": "Stel LED-indicator modus in"
+        },
+        "titleFormatted": {
+          "en": "[[device]] set LED indicator to [[mode]]",
+          "nl": "[[device]] stel LED-indicator in op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Always Off",
+                  "nl": "Altijd Uit"
+                }
+              },
+              {
+                "id": "normal",
+                "label": {
+                  "en": "On when Switch ON",
+                  "nl": "Aan bij AAN"
+                }
+              },
+              {
+                "id": "inverted",
+                "label": {
+                  "en": "On when Switch OFF",
+                  "nl": "Aan bij UIT"
+                }
+              }
+            ]
+          }
+        ]
       },
       {
         "id": "water_valve_smart_open",
@@ -66214,8 +66370,6 @@
           "_TZ3000_kybmsyjz",
           "_tz3000_l6pwxuxm",
           "_TZ3000_l6pwxuxm",
-          "_tz3000_l9brjwau",
-          "_TZ3000_l9brjwau",
           "_tz3000_ld6g3agd",
           "_TZ3000_ld6g3agd",
           "_tz3000_lelb6ejs",
@@ -66344,8 +66498,6 @@
           "_TZ3000_wyhuocal",
           "_tz3000_xabckq1v",
           "_TZ3000_xabckq1v",
-          "_tz3000_xk5udnd6",
-          "_TZ3000_xk5udnd6",
           "_tz3000_xkap8wtb",
           "_TZ3000_xkap8wtb",
           "_tz3000_yw8z2axp",
@@ -67269,8 +67421,6 @@
           "_TZ3000_qeuvnohg",
           "_tz3000_qgwcxxws",
           "_TZ3000_qgwcxxws",
-          "_tz3000_qkixdnon",
-          "_TZ3000_qkixdnon",
           "_tz3000_qlai3277",
           "_TZ3000_qlai3277",
           "_tz3000_qspxxfqf",
@@ -74398,6 +74548,278 @@
         }
       ],
       "id": "wall_switch_1gang_1way"
+    },
+    {
+      "name": {
+        "en": "Wall Switch 2-Gang 1-Way (BSEED)",
+        "nl": "Muurschakelaar 2-Gang 1-Weg (BSEED)"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "energy": {
+        "approximation": {
+          "usageOn": 100,
+          "usageOff": 1
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "drivers/wall_switch_2gang_1way/assets/images/small.png",
+        "large": "drivers/wall_switch_2gang_1way/assets/images/large.png"
+      },
+      "devices": {
+        "secondSwitch": {
+          "class": "socket",
+          "capabilities": [
+            "onoff"
+          ],
+          "name": {
+            "en": "Wall Switch 2-Gang - Gang 2",
+            "nl": "Muurschakelaar 2-Gang - Gang 2"
+          },
+          "images": {
+            "small": "drivers/wall_switch_2gang_1way/assets/images/small.png",
+            "large": "drivers/wall_switch_2gang_1way/assets/images/large.png"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_tz3000_l9brjwau",
+          "_TZ3000_l9brjwau",
+          "_tz3000_xk5udnd6",
+          "_TZ3000_xk5udnd6"
+        ],
+        "productId": [
+          "TS0012"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              57344,
+              57345
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press and hold the reset button for 5 seconds until the LED blinks, or toggle 3 times quickly.",
+            "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED knippert, of schakel 3 keer snel."
+          }
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "LED Indicator",
+            "nl": "LED-indicator"
+          },
+          "children": [
+            {
+              "id": "backlight_mode",
+              "type": "dropdown",
+              "label": {
+                "en": "LED Mode",
+                "nl": "LED Modus"
+              },
+              "value": "normal",
+              "values": [
+                {
+                  "id": "off",
+                  "label": {
+                    "en": "Always Off",
+                    "nl": "Altijd Uit"
+                  }
+                },
+                {
+                  "id": "normal",
+                  "label": {
+                    "en": "On when Switch ON",
+                    "nl": "Aan bij AAN"
+                  }
+                },
+                {
+                  "id": "inverted",
+                  "label": {
+                    "en": "On when Switch OFF",
+                    "nl": "Aan bij UIT"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "wall_switch_2gang_1way"
+    },
+    {
+      "name": {
+        "en": "Wall Switch 3-Gang 1-Way (BSEED)",
+        "nl": "Muurschakelaar 3-Gang 1-Weg (BSEED)"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "energy": {
+        "approximation": {
+          "usageOn": 100,
+          "usageOff": 1
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "drivers/wall_switch_3gang_1way/assets/images/small.png",
+        "large": "drivers/wall_switch_3gang_1way/assets/images/large.png"
+      },
+      "devices": {
+        "secondSwitch": {
+          "class": "socket",
+          "capabilities": [
+            "onoff"
+          ],
+          "name": {
+            "en": "Wall Switch 3-Gang - Gang 2",
+            "nl": "Muurschakelaar 3-Gang - Gang 2"
+          },
+          "images": {
+            "small": "drivers/wall_switch_3gang_1way/assets/images/small.png",
+            "large": "drivers/wall_switch_3gang_1way/assets/images/large.png"
+          }
+        },
+        "thirdSwitch": {
+          "class": "socket",
+          "capabilities": [
+            "onoff"
+          ],
+          "name": {
+            "en": "Wall Switch 3-Gang - Gang 3",
+            "nl": "Muurschakelaar 3-Gang - Gang 3"
+          },
+          "images": {
+            "small": "drivers/wall_switch_3gang_1way/assets/images/small.png",
+            "large": "drivers/wall_switch_3gang_1way/assets/images/large.png"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_tz3000_qkixdnon",
+          "_TZ3000_qkixdnon"
+        ],
+        "productId": [
+          "TS0003",
+          "TS0013"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              57344,
+              57345
+            ]
+          },
+          "2": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          "3": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press and hold the reset button for 5 seconds until the LED blinks, or toggle 3 times quickly.",
+            "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED knippert, of schakel 3 keer snel."
+          }
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "LED Indicator",
+            "nl": "LED-indicator"
+          },
+          "children": [
+            {
+              "id": "backlight_mode",
+              "type": "dropdown",
+              "label": {
+                "en": "LED Mode",
+                "nl": "LED Modus"
+              },
+              "value": "normal",
+              "values": [
+                {
+                  "id": "off",
+                  "label": {
+                    "en": "Always Off",
+                    "nl": "Altijd Uit"
+                  }
+                },
+                {
+                  "id": "normal",
+                  "label": {
+                    "en": "On when Switch ON",
+                    "nl": "Aan bij AAN"
+                  }
+                },
+                {
+                  "id": "inverted",
+                  "label": {
+                    "en": "On when Switch OFF",
+                    "nl": "Aan bij UIT"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "wall_switch_3gang_1way"
     },
     {
       "name": {

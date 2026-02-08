@@ -1,0 +1,87 @@
+'use strict';
+const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+
+class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
+  get gangCount() { return 1; }
+
+  get dpMappings() {
+    const { subDeviceId } = this.getData();
+    const p = Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(this))).dpMappings || {};
+    if (subDeviceId === 'secondSwitch') return { ...p, 2: { capability: 'onoff', transform: (v) => v === 1 || v === true } };
+    return { ...p, 1: { capability: 'onoff', transform: (v) => v === 1 || v === true } };
+  }
+
+  async onNodeInit({ zclNode }) {
+    const { subDeviceId } = this.getData();
+    if (subDeviceId !== undefined) await this._initSubDevice(zclNode);
+    else await this._initPrimaryDevice(zclNode);
+  }
+
+  async _initSubDevice(zclNode) {
+    const gn = 2;
+    this.log('[SUB-DEVICE] Gang 2 initializing...');
+    this._gangNumber = gn;
+    this.zclNode = zclNode;
+    this._zclState = { lastState: null, pending: false, timeout: null };
+    const ep = zclNode?.endpoints?.[gn];
+    const onOff = ep?.clusters?.onOff;
+    if (!onOff) { this.error('[SUB-DEVICE] No onOff on EP2'); return; }
+
+    onOff.on('attr.onOff', (value) => {
+      const isPhys = !this._zclState.pending;
+      this.log('[SUB-DEVICE] EP2 attr=' + value + ' (' + (isPhys ? 'PHYSICAL' : 'APP') + ')');
+      if (this._zclState.lastState !== value) {
+        this._zclState.lastState = value;
+        this.setCapabilityValue('onoff', value).catch(() => {});
+        if (isPhys) {
+          const fid = 'wall_switch_2gang_1way_turned_' + (value ? 'on' : 'off');
+          this.homey.flow.getDeviceTriggerCard(fid).trigger(this, {}, {}).catch(() => {});
+        }
+      }
+    });
+
+    this.registerCapabilityListener('onoff', async (value) => {
+      this.log('[SUB-DEVICE] Gang 2 app cmd: ' + value);
+      this._zclState.pending = true;
+      clearTimeout(this._zclState.timeout);
+      this._zclState.timeout = setTimeout(() => { this._zclState.pending = false; }, 2000);
+      await onOff[value ? 'setOn' : 'setOff']();
+      return true;
+    });
+
+    try {
+      await onOff.configureReporting({ onOff: { minInterval: 0, maxInterval: 300, minChange: 1 } });
+      this.log('[SUB-DEVICE] EP2 reporting configured');
+    } catch (e) { this.log('[SUB-DEVICE] reporting failed: ' + e.message); }
+
+    try {
+      const st = await onOff.readAttributes(['onOff']);
+      if (st.onOff !== undefined) {
+        this._zclState.lastState = st.onOff;
+        await this.setCapabilityValue('onoff', st.onOff).catch(() => {});
+        this.log('[SUB-DEVICE] Initial: ' + (st.onOff ? 'ON' : 'OFF'));
+      }
+    } catch (e) { this.log('[SUB-DEVICE] initial read failed: ' + e.message); }
+    this.log('[SUB-DEVICE] Gang 2 ready');
+  }
+
+  async _initPrimaryDevice(zclNode) {
+    this.log('[PRIMARY] Gang 1 initializing...');
+    if (this.hasCapability('onoff.gang2')) await this.removeCapability('onoff.gang2').catch(() => {});
+    this._lastOnoffState = { gang1: null };
+    this._appCommandPending = { gang1: false };
+    this._appCommandTimeout = { gang1: null };
+    await super.onNodeInit({ zclNode });
+    await this.initPhysicalButtonDetection(zclNode);
+    this.log('[PRIMARY] Gang 1 ready');
+  }
+
+  onDeleted() {
+    if (this._zclState?.timeout) clearTimeout(this._zclState.timeout);
+    super.onDeleted?.();
+  }
+}
+
+module.exports = WallSwitch2Gang1WayDevice;

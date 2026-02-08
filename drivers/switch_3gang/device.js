@@ -109,8 +109,41 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
       this.log(`[BSEED-3G] EP${epNum} attr listener registered`);
     }
 
+    // v5.8.72: PacketNinja pattern — configure onOff reporting per endpoint
+    for (const epNum of [1, 2, 3]) {
+      const onOff = getOnOffCluster(epNum);
+      if (onOff && typeof onOff.configureReporting === 'function') {
+        try {
+          await onOff.configureReporting({
+            onOff: { minInterval: 0, maxInterval: 300, minChange: 1 }
+          });
+          this.log(`[BSEED-3G] ✅ EP${epNum} onOff reporting configured`);
+        } catch (err) {
+          this.log(`[BSEED-3G] EP${epNum} configureReporting failed: ${err.message}`);
+        }
+      }
+    }
+
+    // v5.8.72: PacketNinja pattern — read initial onOff state per endpoint
+    for (const epNum of [1, 2, 3]) {
+      const onOff = getOnOffCluster(epNum);
+      if (onOff && typeof onOff.readAttributes === 'function') {
+        try {
+          const state = await onOff.readAttributes(['onOff']);
+          if (state.onOff !== undefined) {
+            const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
+            this._zclState.lastState[epNum] = state.onOff;
+            await this.setCapabilityValue(capName, state.onOff).catch(() => {});
+            this.log(`[BSEED-3G] EP${epNum} initial state: ${state.onOff ? 'ON' : 'OFF'}`);
+          }
+        } catch (err) {
+          this.log(`[BSEED-3G] EP${epNum} initial state read failed: ${err.message}`);
+        }
+      }
+    }
+
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-3G] ✅ BSEED ZCL-only mode ready (packetninja v990)');
+    this.log('[SWITCH-3G] ✅ BSEED ZCL-only mode ready (packetninja v990+v5.8.72)');
   }
 
   onDeleted() {
