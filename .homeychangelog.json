@@ -1,4 +1,7 @@
 {
+  "5.8.63": {
+    "en": "v5.8.63: HOBEIAN DEVICE AUDIT (4x4_Pete) — Fix critical config map collisions: removed _TZE200_3towulqd from ZCL_ONLY_RADAR (useTuyaDP:false broke DP processing), removed from ZG_204ZL_PIR (overrode ZG_204ZV_MULTISENSOR). Fixed _TZE204_ztqnh5cg collision. Moved _TZE200_y8jijhba to correct config (Z2M #29145: no temp/humidity). Completed all DP maps per Z2M: ZG-204ZM +6 settings DPs, fixed DP2/DP4 labels+ranges. ZG-204ZL +DP102+settings. ZG-204ZV +4 settings DPs. ZG-227Z +calibration DPs."
+  },
   "5.8.62": {
     "en": "🔧 v5.8.62: COMPREHENSIVE APP AUDIT — (1) FIX DUPLICATE FINGERPRINTS: Removed TS0003 from switch_2gang (belongs to switch_3gang only) and TS0726 from switch_wall_6gang (belongs to switch_4gang only). Prevents wrong driver matching. (2) FIX BROKEN IMPORTS: led_controller_dimmable had wrong paths for TuyaSpecificCluster and TuyaSpecificClusterDevice (../../lib/ → ../../lib/tuya/). Would cause MODULE_NOT_FOUND crash on init. (3) ADD titleFormatted TO 1218 FLOW CARDS: All 106 driver flow files now have titleFormatted on every trigger, condition, and action card. Fixes future SDK validation requirements. Repaired 11 corrupted entries in 3 drivers (button_emergency_sos, module_mini_switch, switch_wireless) where plain-string titles caused malformed titleFormatted. (4) VERIFIED: 0 [[device]] in driver-level triggers, 0 duplicate flow card IDs, 0 broken imports across all drivers, all driver.compose.json configs valid, publish-level validation passes with 0 warnings."
   },
