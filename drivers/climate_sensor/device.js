@@ -279,8 +279,11 @@ class ClimateSensorDevice extends HybridSensorBase {
    */
   get needsTuyaEpoch() {
     const mfr = this._manufacturerName || '';
-    // LCD devices need Tuya epoch (year 2000 base) for correct display
-    return mfr.startsWith('_TZE284') ||
+    // v5.8.74: ALL _TZE* devices need Tuya epoch (2000), not just _TZE284
+    // Z2M issue #30054: wrong epoch (1970 vs 2000) causes wrong time on ALL TS0601
+    return mfr.startsWith('_TZE200') ||
+      mfr.startsWith('_TZE204') ||
+      mfr.startsWith('_TZE284') ||
       mfr.includes('vvmbj46n') ||
       mfr.includes('aao6qtcs') ||
       mfr.includes('znph9215') ||
@@ -692,6 +695,10 @@ class ClimateSensorDevice extends HybridSensorBase {
       // Some LCD devices only respond to DP-based time, not EF00 command 0x24
       let success = false;
 
+      // v5.8.74: Hoist to outer scope (was block-scoped in Method 2, referenced in Method 3)
+      const TUYA_EPOCH_FIX = 946684800;
+      const utcSecondsFix = Math.floor(Date.now() / 1000) - TUYA_EPOCH_FIX;
+
       // METHOD 1: EF00 command 0x24 (standard Tuya time sync)
       try {
         const result = await syncDeviceTimeTuya(this, {
@@ -710,8 +717,7 @@ class ClimateSensorDevice extends HybridSensorBase {
       // METHOD 2: DP-based time sync (DP 101/102/103) - CRITICAL for some LCD devices
       // Format: UTC timestamp in seconds (Tuya epoch 2000)
       try {
-        const TUYA_EPOCH = 946684800; // 2000-01-01 00:00:00 UTC
-        const utcSeconds = Math.floor(Date.now() / 1000) - TUYA_EPOCH;
+        const utcSeconds = utcSecondsFix;
 
         this.log(`[CLIMATE] 🔥 Sending DP time sync: ${utcSeconds} (Tuya epoch)`);
 
@@ -735,7 +741,7 @@ class ClimateSensorDevice extends HybridSensorBase {
       if (!success && this.zclNode) {
         try {
           // Calculate local time with timezone offset
-          const localSeconds = utcSeconds + (timezoneMinutes * 60);
+          const localSeconds = utcSecondsFix + (timezoneMinutes * 60);
 
           // v5.5.446: Build raw Tuya mcuSyncTime frame: [seqHi][seqLo][0x24][payloadLen:2][UTC:4][Local:4]
           // Z2M format: UTC FIRST, Local SECOND (see zigbee-herdsman-converters/src/lib/tuya.ts)
@@ -743,10 +749,10 @@ class ClimateSensorDevice extends HybridSensorBase {
           rawFrame.writeUInt16BE(Date.now() % 65535, 0); // Sequence number
           rawFrame.writeUInt8(0x24, 2);                   // Command: mcuSyncTime
           rawFrame.writeUInt16BE(8, 3);                   // Payload length: 8 bytes
-          rawFrame.writeUInt32BE(utcSeconds, 5);          // UTC time FIRST (Z2M format)
+          rawFrame.writeUInt32BE(utcSecondsFix, 5);          // UTC time FIRST (Z2M format)
           rawFrame.writeUInt32BE(localSeconds, 9);        // Local time SECOND
 
-          this.log(`[CLIMATE] 🔧 Raw frame attempt: UTC=${utcSeconds}, Local=${localSeconds}`);
+          this.log(`[CLIMATE] 🔧 Raw frame attempt: UTC=${utcSecondsFix}, Local=${localSeconds}`);
           this.log(`[CLIMATE] 🔧 Frame hex: ${rawFrame.toString('hex')}`);
 
           // Try to send via endpoint
