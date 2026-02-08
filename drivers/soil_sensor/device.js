@@ -458,13 +458,19 @@ class SoilSensorDevice extends TuyaHybridDevice {
    * v5.5.154: Initialize flow triggers for soil sensor
    */
   _initFlowTriggers() {
+    // v5.8.72: Safe flow card getter — prevents onNodeInit crash if card missing
+    const safeGetTrigger = (id) => {
+      try { return this.homey.flow.getDeviceTriggerCard(id); }
+      catch (e) { this.log(`[SOIL] ⚠️ Flow trigger '${id}' not available: ${e.message}`); return null; }
+    };
+
     // Register flow trigger cards
     // v5.5.705: Fixed Flow Card IDs to match driver.flow.compose.json exactly
-    this._flowTriggerMoistureChanged = this.homey.flow.getDeviceTriggerCard('soil_sensor_moisture_changed');
-    this._flowTriggerSoilDry = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_dry');
-    this._flowTriggerSoilWet = this.homey.flow.getDeviceTriggerCard('soil_sensor_soil_wet');
-    this._flowTriggerTemperatureChanged = this.homey.flow.getDeviceTriggerCard('soil_sensor_temperature_changed');
-    this._flowTriggerBatteryLow = this.homey.flow.getDeviceTriggerCard('soil_sensor_battery_low');
+    this._flowTriggerMoistureChanged = safeGetTrigger('soil_sensor_moisture_changed');
+    this._flowTriggerSoilDry = safeGetTrigger('soil_sensor_soil_dry');
+    this._flowTriggerSoilWet = safeGetTrigger('soil_sensor_soil_wet');
+    this._flowTriggerTemperatureChanged = safeGetTrigger('soil_sensor_temperature_changed');
+    this._flowTriggerBatteryLow = safeGetTrigger('soil_sensor_battery_low');
 
     // Condition cards are registered in driver.js with getConditionCard() + registerRunListener()
     // No need to re-register them here
