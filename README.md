@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.72** | v5.8.72: FIX _TZE284_oitavov2 soil sensor install error (DutchDuke forum repo... |
 | **v5.8.71** | v5.8.71: 3 DIAGNOSTIC FIXES — (1) FIX _TZE200_crq3r3la (JJ10 CK-BL702-MWS-01)... |
 | **v5.8.70** | v5.8.70: ANTI-FLOOD — Prevents excessive battery/temperature/humidity status ... |
 | **v5.8.69** | v5.8.69: COMPREHENSIVE BATTERY FIX — Fixes '?' battery display across ALL dev... |
@@ -82,7 +83,6 @@
 | **v5.8.65** | v5.8.65: 4x4_PETE DEVICE AUDIT — (1) CRITICAL FIX: _TZE200_3towulqd ZCL-only ... |
 | **v5.8.64** | v5.8.64: FIX CURTAIN MOTOR CRASH (expected_cluster_id_number) — HybridCoverBa... |
 | **v5.8.63** | v5.8.63: HOBEIAN DEVICE AUDIT (4x4_Pete) — Fix critical config map collisions... |
-| **v5.8.62** | 🔧 v5.8.62: COMPREHENSIVE APP AUDIT — (1) FIX DUPLICATE FINGERPRINTS: Removed... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
