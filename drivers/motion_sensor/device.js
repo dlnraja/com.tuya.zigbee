@@ -298,10 +298,10 @@ class MotionSensorDevice extends HybridSensorBase {
       15: { capability: 'measure_battery', divisor: 1 },
 
       // ═══════════════════════════════════════════════════════════════════
-      // LUMINANCE (universal)
+      // LUMINANCE (universal — DP9 removed: it's sensitivity on ZG-204ZL!)
+      // v5.8.75: DP9 only mapped to luminance via profile-specific override
       // ═══════════════════════════════════════════════════════════════════
       3: { capability: 'measure_luminance', divisor: 1 },
-      9: { capability: 'measure_luminance', divisor: 1 },
       12: { capability: 'measure_luminance', divisor: 1 },
       106: { capability: 'measure_luminance', divisor: 1 },
 
@@ -450,6 +450,24 @@ class MotionSensorDevice extends HybridSensorBase {
     }
     if (profile.dp9 === 'measure_luminance') {
       mappings[9] = { capability: 'measure_luminance', divisor: 1 };
+    } else if (!mappings[9]) {
+      // v5.8.75: DP9 = sensitivity for ZG-204ZL PIR sensors (enum 0=Low,1=Med,2=High)
+      // Log and sync to setting when device reports it
+      mappings[9] = { capability: null, transform: (v) => {
+        const labels = ['Low', 'Medium', 'High'];
+        device.log?.(`[MOTION-DP] 🎯 DP9 sensitivity: ${v} (${labels[v] || 'unknown'})`);
+        device.setSettings?.({ pir_sensitivity: String(v) }).catch(() => {});
+        return null;
+      }};
+    }
+    // v5.8.75: DP10 = keep_time for ZG-204ZL PIR sensors (enum 0=10s,1=30s,2=60s,3=120s)
+    if (!mappings[10]) {
+      mappings[10] = { capability: null, transform: (v) => {
+        const labels = ['10s', '30s', '60s', '120s'];
+        device.log?.(`[MOTION-DP] ⏱️ DP10 keep_time: ${v} (${labels[v] || 'unknown'})`);
+        device.setSettings?.({ pir_keep_time: String(v) }).catch(() => {});
+        return null;
+      }};
     }
     if (profile.dp12 === 'measure_battery') {
       mappings[12] = { capability: 'measure_battery', divisor: 1 };
@@ -1687,6 +1705,50 @@ class MotionSensorDevice extends HybridSensorBase {
       this._pendingZclReads.clear();
     }
     await super.onDeleted?.();
+  }
+
+  /**
+   * v5.8.75: Handle PIR settings changes - write DP9 (sensitivity) and DP10 (keep_time)
+   * For _TZE200_3towulqd (ZG-204ZL) and similar TS0601 PIR sensors
+   * Source: Z2M #12364 — DP9=sensitivity(enum 0/1/2), DP10=keep_time(enum 0/1/2/3)
+   */
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    await super.onSettings({ oldSettings, newSettings, changedKeys });
+
+    const PIR_SETTING_DP_MAP = {
+      pir_sensitivity: { dp: 9, type: 'enum' },
+      pir_keep_time: { dp: 10, type: 'enum' },
+    };
+
+    for (const key of changedKeys) {
+      try {
+        const mapping = PIR_SETTING_DP_MAP[key];
+        if (mapping) {
+          const val = parseInt(newSettings[key]) || 0;
+          this.log(`[MOTION] [SETTINGS] Sending DP${mapping.dp}=${val} (${key})`);
+          if (this.tuyaEF00Manager?.sendDP) {
+            await this.tuyaEF00Manager.sendDP(mapping.dp, val, mapping.type);
+            this.log(`[MOTION] [SETTINGS] ✅ Applied ${key}=${val} via TuyaEF00Manager`);
+          } else {
+            const ep = this.zclNode?.endpoints?.[1];
+            const tuyaCluster = ep?.clusters?.tuya || ep?.clusters?.[61184] || ep?.clusters?.[0xEF00];
+            if (tuyaCluster?.dataRequest) {
+              const dpBuf = Buffer.alloc(5);
+              dpBuf.writeUInt8(mapping.dp, 0);
+              dpBuf.writeUInt8(4, 1);
+              dpBuf.writeUInt16BE(1, 2);
+              dpBuf.writeUInt8(val, 4);
+              await tuyaCluster.dataRequest({ data: dpBuf });
+              this.log(`[MOTION] [SETTINGS] ✅ Applied ${key}=${val} via cluster`);
+            } else {
+              this.log(`[MOTION] [SETTINGS] ⚠️ No Tuya method to send DP${mapping.dp} (sleepy device - will apply on next wake)`);
+            }
+          }
+        }
+      } catch (err) {
+        this.log(`[MOTION] [SETTINGS] Error ${key}: ${err.message}`);
+      }
+    }
   }
 
   /**
