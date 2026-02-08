@@ -6,7 +6,11 @@
         "en": "Rain detected",
         "fr": "Pluie détectée"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Rain detected",
+        "fr": "Pluie détectée"
+      }
     },
     {
       "id": "rain_sensor_rain_stopped",
@@ -14,7 +18,11 @@
         "en": "Rain stopped",
         "fr": "Pluie arrêtée"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Rain stopped",
+        "fr": "Pluie arrêtée"
+      }
     },
     {
       "id": "rain_sensor_rain_intensity_changed",
@@ -33,7 +41,11 @@
           "example": 50
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Rain intensity changed",
+        "fr": "Intensité pluie changée"
+      }
     },
     {
       "id": "rain_sensor_battery_low",
@@ -41,7 +53,11 @@
         "en": "Battery low",
         "fr": "Batterie faible"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
     },
     {
       "id": "rain_sensor_water_alarm",
@@ -51,7 +67,13 @@
         "nl": "Wateralarm",
         "de": "Wasseralarm"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water alarm",
+        "fr": "Alarme eau",
+        "nl": "Wateralarm",
+        "de": "Wasseralarm"
+      }
     },
     {
       "id": "rain_sensor_humidity_changed",
@@ -61,7 +83,13 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      }
     }
   ],
   "conditions": [
@@ -71,7 +99,11 @@
         "en": "It is !{{raining|not raining}}",
         "fr": "Il !{{pleut|ne pleut pas}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "It is !{{raining|not raining}}",
+        "fr": "Il !{{pleut|ne pleut pas}}"
+      }
     },
     {
       "id": "rain_sensor_rain_intensity_above",
@@ -101,7 +133,13 @@
         "nl": "Water !{{is|is niet}} gedetecteerd",
         "de": "Wasser !{{ist|ist nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water !{{is|is not}} detected",
+        "fr": "Eau !{{est|n'est pas}} détectée",
+        "nl": "Water !{{is|is niet}} gedetecteerd",
+        "de": "Wasser !{{ist|ist nicht}} erkannt"
+      }
     }
   ]
 }

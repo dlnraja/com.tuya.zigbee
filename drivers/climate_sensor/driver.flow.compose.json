@@ -18,7 +18,11 @@
           "example": 22.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      }
     },
     {
       "id": "climate_sensor_humidity_changed",
@@ -37,7 +41,11 @@
           "example": 55
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      }
     },
     {
       "id": "climate_sensor_battery_low",
@@ -45,7 +53,11 @@
         "en": "Battery low",
         "fr": "Batterie faible"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
     },
     {
       "id": "climate_sensor_temperature_alarm_high",
@@ -53,7 +65,11 @@
         "en": "Temperature too high",
         "fr": "Température trop haute"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature too high",
+        "fr": "Température trop haute"
+      }
     },
     {
       "id": "climate_sensor_temperature_alarm_low",
@@ -61,7 +77,11 @@
         "en": "Temperature too low",
         "fr": "Température trop basse"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature too low",
+        "fr": "Température trop basse"
+      }
     },
     {
       "id": "climate_sensor_humidity_alarm_high",
@@ -69,7 +89,11 @@
         "en": "Humidity too high",
         "fr": "Humidité trop haute"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity too high",
+        "fr": "Humidité trop haute"
+      }
     },
     {
       "id": "climate_sensor_humidity_alarm_low",
@@ -77,7 +101,11 @@
         "en": "Humidity too low",
         "fr": "Humidité trop basse"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity too low",
+        "fr": "Humidité trop basse"
+      }
     },
     {
       "id": "climate_sensor_temp_changed",
@@ -87,7 +115,13 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
     }
   ],
   "conditions": [

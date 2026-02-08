@@ -19,7 +19,13 @@
           "example": 50
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Fan speed changed",
+        "fr": "Vitesse ventilateur modifiée",
+        "nl": "Ventilatorsnelheid gewijzigd",
+        "de": "Lüftergeschwindigkeit geändert"
+      }
     },
     {
       "id": "fan_controller_turned_on",
@@ -29,7 +35,13 @@
         "nl": "Ventilator ingeschakeld",
         "de": "Lüfter eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Fan turned on",
+        "fr": "Ventilateur allumé",
+        "nl": "Ventilator ingeschakeld",
+        "de": "Lüfter eingeschaltet"
+      }
     },
     {
       "id": "fan_controller_turned_off",
@@ -39,7 +51,13 @@
         "nl": "Ventilator uitgeschakeld",
         "de": "Lüfter ausgeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Fan turned off",
+        "fr": "Ventilateur éteint",
+        "nl": "Ventilator uitgeschakeld",
+        "de": "Lüfter ausgeschaltet"
+      }
     }
   ],
   "conditions": [
@@ -51,7 +69,13 @@
         "nl": "Ventilator is !{{aan|uit}}",
         "de": "Lüfter ist !{{ein|aus}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Fan is !{{on|off}}",
+        "fr": "Ventilateur est !{{allumé|éteint}}",
+        "nl": "Ventilator is !{{aan|uit}}",
+        "de": "Lüfter ist !{{ein|aus}}"
+      }
     },
     {
       "id": "fan_controller_speed_is",
@@ -87,7 +111,13 @@
         "nl": "Inschakelen",
         "de": "Einschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Inschakelen",
+        "de": "Einschalten"
+      }
     },
     {
       "id": "fan_controller_turn_off",
@@ -97,7 +127,13 @@
         "nl": "Uitschakelen",
         "de": "Ausschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitschakelen",
+        "de": "Ausschalten"
+      }
     },
     {
       "id": "fan_controller_set_speed",
@@ -131,7 +167,13 @@
         "nl": "Verhoog ventilatorsnelheid",
         "de": "Lüftergeschwindigkeit erhöhen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Increase fan speed",
+        "fr": "Augmenter vitesse ventilateur",
+        "nl": "Verhoog ventilatorsnelheid",
+        "de": "Lüftergeschwindigkeit erhöhen"
+      }
     },
     {
       "id": "fan_controller_speed_down",
@@ -141,7 +183,13 @@
         "nl": "Verlaag ventilatorsnelheid",
         "de": "Lüftergeschwindigkeit verringern"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Decrease fan speed",
+        "fr": "Diminuer vitesse ventilateur",
+        "nl": "Verlaag ventilatorsnelheid",
+        "de": "Lüftergeschwindigkeit verringern"
+      }
     },
     {
       "id": "fan_controller_toggle",
@@ -151,7 +199,13 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
     },
     {
       "id": "fan_controller_set_brightness",

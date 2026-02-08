@@ -6,7 +6,11 @@
         "en": "Locked",
         "fr": "Verrouillé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Locked",
+        "fr": "Verrouillé"
+      }
     },
     {
       "id": "lock_smart_unlocked",
@@ -14,7 +18,11 @@
         "en": "Unlocked",
         "fr": "Déverrouillé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Unlocked",
+        "fr": "Déverrouillé"
+      }
     },
     {
       "id": "lock_smart_measure_battery_changed",
@@ -33,7 +41,11 @@
           "example": 75
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery level changed",
+        "fr": "Niveau batterie changé"
+      }
     },
     {
       "id": "lock_smart_lock_changed",
@@ -43,7 +55,13 @@
         "nl": "Slot gewijzigd",
         "de": "Schloss geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Lock changed",
+        "fr": "Serrure changée",
+        "nl": "Slot gewijzigd",
+        "de": "Schloss geändert"
+      }
     },
     {
       "id": "lock_smart_battery_low",
@@ -53,7 +71,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     },
     {
       "id": "lock_smart_tamper_alarm",
@@ -63,7 +87,13 @@
         "nl": "Sabotagealarm",
         "de": "Manipulationsalarm"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      }
     }
   ],
   "conditions": [
@@ -87,7 +117,13 @@
         "nl": "Sabotage !{{is|is niet}} actief",
         "de": "Manipulation !{{ist|ist nicht}} aktiv"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      }
     }
   ],
   "actions": [
@@ -97,7 +133,11 @@
         "en": "Lock",
         "fr": "Verrouiller"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Lock",
+        "fr": "Verrouiller"
+      }
     },
     {
       "id": "lock_smart_unlock",
@@ -105,7 +145,11 @@
         "en": "Unlock",
         "fr": "Déverrouiller"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Unlock",
+        "fr": "Déverrouiller"
+      }
     }
   ]
 }

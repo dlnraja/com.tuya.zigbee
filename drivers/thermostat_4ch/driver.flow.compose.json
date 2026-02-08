@@ -5,14 +5,20 @@
       "title": {
         "en": "Turn on"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on"
+      }
     },
     {
       "id": "thermostat_4ch_turn_off",
       "title": {
         "en": "Turn off"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off"
+      }
     },
     {
       "id": "thermostat_4ch_toggle",
@@ -22,7 +28,13 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
     },
     {
       "id": "thermostat_4ch_set_temperature",
@@ -60,7 +72,13 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
     },
     {
       "id": "thermostat_4ch_turned_off",
@@ -70,7 +88,13 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
     },
     {
       "id": "thermostat_4ch_temp_changed",
@@ -80,7 +104,13 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
     }
   ],
   "conditions": [
@@ -92,7 +122,13 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
     }
   ]
 }

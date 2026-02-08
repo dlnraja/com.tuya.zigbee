@@ -17,7 +17,11 @@
           "example": 800
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "CO2 level changed",
+        "fr": "Niveau CO2 changé"
+      }
     },
     {
       "id": "air_quality_co2_co2_alert_on",
@@ -25,7 +29,11 @@
         "en": "CO2 alert triggered",
         "fr": "Alerte CO2 déclenchée"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "CO2 alert triggered",
+        "fr": "Alerte CO2 déclenchée"
+      }
     },
     {
       "id": "air_quality_co2_co2_alert_off",
@@ -33,7 +41,11 @@
         "en": "CO2 returned to normal",
         "fr": "CO2 revenu à la normale"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "CO2 returned to normal",
+        "fr": "CO2 revenu à la normale"
+      }
     },
     {
       "id": "air_quality_co2_air_temperature_changed",
@@ -52,7 +64,11 @@
           "example": 22
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      }
     },
     {
       "id": "air_quality_co2_air_humidity_changed",
@@ -71,7 +87,11 @@
           "example": 50
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      }
     },
     {
       "id": "air_quality_co2_pm25_changed",
@@ -90,7 +110,11 @@
           "example": 25
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "PM2.5 level changed",
+        "fr": "Niveau PM2.5 changé"
+      }
     },
     {
       "id": "air_quality_co2_temp_changed",
@@ -100,7 +124,13 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
     },
     {
       "id": "air_quality_co2_humidity_changed",
@@ -110,7 +140,13 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      }
     },
     {
       "id": "air_quality_co2_battery_low",
@@ -120,7 +156,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [
@@ -168,7 +210,11 @@
         "en": "Air quality is good",
         "fr": "Qualité air bonne"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Air quality is good",
+        "fr": "Qualité air bonne"
+      }
     }
   ]
 }

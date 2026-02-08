@@ -8,7 +8,13 @@
         "nl": "Knop ingedrukt",
         "de": "Taste gedrückt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé",
+        "nl": "Knop ingedrukt",
+        "de": "Taste gedrückt"
+      }
     },
     {
       "id": "scene_switch_1_button_double_press",
@@ -18,7 +24,13 @@
         "nl": "Knop dubbel ingedrukt",
         "de": "Taste doppelt gedrückt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button double-pressed",
+        "fr": "Bouton double-cliqué",
+        "nl": "Knop dubbel ingedrukt",
+        "de": "Taste doppelt gedrückt"
+      }
     },
     {
       "id": "scene_switch_1_button_long_press",
@@ -28,7 +40,13 @@
         "nl": "Knop lang ingedrukt",
         "de": "Taste lang gedrückt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button long-pressed",
+        "fr": "Bouton appui long",
+        "nl": "Knop lang ingedrukt",
+        "de": "Taste lang gedrückt"
+      }
     },
     {
       "id": "scene_switch_1_battery_changed",
@@ -51,7 +69,13 @@
           "example": 80
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery level changed",
+        "fr": "Niveau de batterie changé",
+        "nl": "Batterijniveau gewijzigd",
+        "de": "Batteriestand geändert"
+      }
     },
     {
       "id": "scene_switch_1_battery_low",
@@ -61,7 +85,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ]
 }

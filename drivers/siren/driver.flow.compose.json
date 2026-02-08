@@ -15,7 +15,13 @@
         "fr": "Se déclenche quand la sirène commence à sonner",
         "de": "Wird ausgelöst, wenn die Sirene zu tönen beginnt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Siren started",
+        "nl": "Sirene gestart",
+        "fr": "Sirène démarrée",
+        "de": "Sirene gestartet"
+      }
     },
     {
       "id": "siren_alarm_stopped",
@@ -31,7 +37,13 @@
         "fr": "Se déclenche quand la sirène arrête de sonner",
         "de": "Wird ausgelöst, wenn die Sirene aufhört zu tönen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Siren stopped",
+        "nl": "Sirene gestopt",
+        "fr": "Sirène arrêtée",
+        "de": "Sirene gestoppt"
+      }
     },
     {
       "id": "siren_measure_battery_changed",
@@ -70,7 +82,13 @@
         "fr": "Batterie faible",
         "de": "Batterie ist schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
     },
     {
       "id": "siren_turned_on",
@@ -80,7 +98,13 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
     },
     {
       "id": "siren_turned_off",
@@ -90,7 +114,13 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
     },
     {
       "id": "siren_motion_detected",
@@ -100,7 +130,13 @@
         "nl": "Beweging gedetecteerd",
         "de": "Bewegung erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      }
     }
   ],
   "conditions": [
@@ -112,7 +148,13 @@
         "fr": "Sirène !{{sonne|ne sonne pas}}",
         "de": "Sirene !{{tönt|tönt nicht}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Siren !{{is|is not}} sounding",
+        "nl": "Sirene !{{loeit|loeit niet}}",
+        "fr": "Sirène !{{sonne|ne sonne pas}}",
+        "de": "Sirene !{{tönt|tönt nicht}}"
+      }
     },
     {
       "id": "siren_is_on",
@@ -122,7 +164,13 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
     },
     {
       "id": "siren_motion_active",
@@ -132,7 +180,13 @@
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      }
     }
   ],
   "actions": [
@@ -418,7 +472,13 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
     }
   ]
 }
