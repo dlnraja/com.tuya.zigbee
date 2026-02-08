@@ -761,7 +761,8 @@ const SENSOR_CONFIGS = {
       // NOTE: _TZE200_rhgsbacq/_TZE204_rhgsbacq moved to HOBEIAN_10G_MULTI (ZG-227Z, not ZG-204ZV)
       '_TZE200_grgol3xp', '_TZE204_grgol3xp',
       '_TZE200_uli8wasj', '_TZE204_uli8wasj',
-      '_TZE200_y8jijhba', '_TZE204_y8jijhba',
+      // v5.8.63: REMOVED _TZE200_y8jijhba/_TZE204_y8jijhba - Z2M #29145 confirms NO temp/humidity
+      // These variants should NOT be in multisensor config - they pair as ZG-204ZV but lack sensors
       'HOBEIAN',  // v5.5.841: Added for direct HOBEIAN ZG-204ZV matching
       // v5.7.45: Peter #1342 - ZG-204ZV variant reporting as _TZ3000_8bxrzyxz
       '_TZ3000_8bxrzyxz', '_TZ3000_8BXRZYXZ',
@@ -796,6 +797,12 @@ const SENSOR_CONFIGS = {
       106: { cap: 'measure_luminance', type: 'lux_direct' },
       110: { cap: 'measure_battery', divisor: 1 },
       111: { cap: 'measure_temperature', divisor: 10 },
+      // v5.8.63: Settings DPs per Z2M ZG-204ZV page
+      2: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
+      // v5.8.63: Z2M confirms max sensitivity 19 for ZG-204ZV (NOT 10 like ZG-204ZM)
+      11: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 19 },
+      102: { cap: null, setting: 'illuminance_interval', min: 1, max: 720 },
+      107: { cap: null, setting: 'indicator' },
     }
   },
 
@@ -830,7 +837,9 @@ const SENSOR_CONFIGS = {
   // ─────────────────────────────────────────────────────────────────────────────
   'ZG_204ZM_BATTERY': {
     sensors: [
-      '_TZE200_2aaelwxk', '_TZE204_2aaelwxk',
+      // v5.8.63: REMOVED _TZE200_2aaelwxk/_TZE204_2aaelwxk - duplicate with ZG_204ZM_RADAR (which has complete HIGH-DP layout)
+      // v5.8.63: Added _TZE200_y8jijhba/_TZE204_y8jijhba (removed from ZG_204ZV_MULTISENSOR, Z2M #29145: no temp/humidity)
+      '_TZE200_y8jijhba', '_TZE204_y8jijhba',
       '_TZE200_kb5noeto',
     ],
     battery: true,
@@ -857,7 +866,9 @@ const SENSOR_CONFIGS = {
   // ─────────────────────────────────────────────────────────────────────────────
   'ZG_204ZL_PIR': {
     sensors: [
-      '_TZE200_3towulqd', '_TZE200_1ibpyhdc', '_TZE200_bh3n6gk8',
+      // v5.8.63: REMOVED _TZE200_3towulqd - was overriding ZG_204ZV_MULTISENSOR in config map
+      // _TZE200_3towulqd now resolves to ZG_204ZV_MULTISENSOR (superset), PIR-only handled in motion_sensor
+      '_TZE200_1ibpyhdc', '_TZE200_bh3n6gk8',
     ],
     battery: true,
     hasIlluminance: true,
@@ -866,9 +877,12 @@ const SENSOR_CONFIGS = {
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       4: { cap: 'measure_battery', divisor: 1 },
-      9: { cap: null, internal: 'sensitivity' },        // Low/Medium/High
-      10: { cap: null, internal: 'keep_time' },         // 10/30/60/120s
+      // v5.8.63: Upgraded from internal to settings per Z2M ZG-204ZL page
+      9: { cap: null, setting: 'sensitivity' },         // enum: 0=low, 1=medium, 2=high
+      10: { cap: null, setting: 'keep_time' },           // enum: 0=10s, 1=30s, 2=60s, 3=120s
       12: { cap: 'measure_luminance', type: 'lux_direct' },  // Max 1000 lux
+      // v5.8.63: Added per Z2M - illuminance reporting interval
+      102: { cap: null, setting: 'illuminance_interval', min: 1, max: 720 },  // minutes
     }
   },
 
@@ -1186,14 +1200,15 @@ const SENSOR_CONFIGS = {
       // v5.8.55: Added DP122 (motion_detection_mode) + DP123 (motion_detection_sensitivity)
       // matching ZG_204ZM_RADAR config, confirmed by Z2M ZG-204ZM page
       // ═══════════════════════════════════════════════════════════════════
-      2: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
-      4: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 6 },
+      // v5.8.63: Fixed labels and ranges per Z2M ZG-204ZM page + issue #21919
+      2: { cap: null, setting: 'large_motion_detection_sensitivity', min: 0, max: 10 },
+      4: { cap: null, setting: 'large_motion_detection_distance', divisor: 100, min: 0, max: 10 },
       102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
-      104: { cap: null, internal: 'medium_motion_detection_distance', divisor: 100 },
-      105: { cap: null, internal: 'medium_motion_detection_sensitivity' },
+      104: { cap: null, setting: 'medium_motion_detection_distance', divisor: 100, min: 0, max: 6 },
+      105: { cap: null, setting: 'medium_motion_detection_sensitivity', min: 0, max: 10 },
       107: { cap: null, setting: 'indicator' },
-      108: { cap: null, internal: 'small_detection_distance', divisor: 100 },
-      109: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 },
+      108: { cap: null, setting: 'small_detection_distance', divisor: 100, min: 0, max: 6 },
+      109: { cap: null, setting: 'small_detection_sensitivity', min: 0, max: 10 },
       122: { cap: null, setting: 'motion_detection_mode' },  // 0=only_pir, 1=pir_and_radar, 2=only_radar
       123: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
     }
@@ -1227,23 +1242,25 @@ const SENSOR_CONFIGS = {
       // PRESENCE DETECTION
       // ═══════════════════════════════════════════════════════════════════
       1: { cap: 'alarm_motion', type: 'presence_bool' },
-      2: { cap: null, internal: 'sensitivity' },           // v5.8.43: PR#125 - Sensitivity setting
+      // v5.8.63: Upgraded from internal to setting per Z2M ZG-227Z page
+      2: { cap: null, setting: 'sensitivity', min: 0, max: 10 },
 
-      // ═══════════════════════════════════════════════════════════════════
       // ENVIRONMENTAL SENSORS (unique to this radar!)
-      // ═══════════════════════════════════════════════════════════════════
-      101: { cap: 'measure_humidity', divisor: 10 },       // v5.8.43: PR#125 - Humidity ÷10 (raw 450 → 45.0%)
-      102: { cap: null, internal: 'fading_time' },         // v5.8.43: PR#125 - Fading time (motion cooldown)
-      106: { cap: 'measure_luminance', type: 'lux_direct' }, // Illuminance
-      110: { cap: 'measure_battery', divisor: 1 },         // v5.8.43: PR#125 - Battery percentage
+      101: { cap: 'measure_humidity', divisor: 10 },       // Humidity ÷10 (raw 450 → 45.0%)
+      // v5.8.63: Upgraded from internal to setting per Z2M
+      102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
+      106: { cap: 'measure_luminance', type: 'lux_direct' },
+      110: { cap: 'measure_battery', divisor: 1 },
       111: { cap: 'measure_temperature', divisor: 10 },    // Temperature ÷10
+      // v5.8.63: Added calibration DPs per Z2M ZG-227Z page
+      103: { cap: null, setting: 'temperature_unit' },      // 0=celsius, 1=fahrenheit
+      104: { cap: null, setting: 'temperature_calibration', min: -20, max: 20 },  // ÷10 → -2.0 to +2.0°C
+      105: { cap: null, setting: 'humidity_calibration', min: -30, max: 30 },
 
-      // v5.8.61: PIR variant DPs (ZG-204ZL uses DP4/DP9/DP10/DP12 instead of DP101-111)
-      // When this config is used as FALLBACK for unknown HOBEIAN modelId, these ensure
-      // PIR devices still get battery and lux mapped (diag 25cbd6ae)
+      // v5.8.61: PIR variant DPs (ZG-204ZL fallback when used for unknown HOBEIAN modelId)
       4: { cap: 'measure_battery', divisor: 1 },           // ZG-204ZL: battery %
-      9: { cap: null, internal: 'sensitivity' },            // ZG-204ZL: PIR sensitivity
-      10: { cap: null, internal: 'keep_time' },             // ZG-204ZL: keep time
+      9: { cap: null, setting: 'sensitivity' },             // ZG-204ZL: PIR sensitivity
+      10: { cap: null, setting: 'keep_time' },              // ZG-204ZL: keep time
       12: { cap: 'measure_luminance', type: 'lux_direct' }, // ZG-204ZL: illuminance
     }
   },
@@ -1257,8 +1274,10 @@ const SENSOR_CONFIGS = {
   'ZCL_ONLY_RADAR': {
     sensors: [
       '_TZE200_kb5noeto',  // v5.5.990: Patrick_Van_Deursen - ZCL-only variant
-      '_TZE204_ztqnh5cg',  // v5.5.990: tlink - ZCL-only variant
-      '_TZE200_3towulqd',  // v5.6.0: Interview - NO cluster 61184! Uses IAS Zone + Illuminance + PowerConfig
+      // v5.8.63: REMOVED _TZE204_ztqnh5cg - was OVERRIDING TZE284_IADRO9BF in config map
+      // useTuyaDP:false broke Tuya DP processing. Now resolves to TZE284_IADRO9BF correctly.
+      // v5.8.63: REMOVED _TZE200_3towulqd - was OVERRIDING ZG_204ZV_MULTISENSOR in config map
+      // useTuyaDP:false broke ALL Tuya DP processing for ZG-204ZV/ZL devices!
     ],
     battery: true,
     useZcl: true,           // v5.5.990: Primary - use ZCL clusters
@@ -1296,31 +1315,23 @@ const SENSOR_CONFIGS = {
     // v5.5.983: 4x4_Pete forum fix - suppress battery spam warnings
     suppressBatteryWarnings: true,
     batteryThrottleMs: 3600000,  // Only update battery max every hour
-    writableDPs: [2, 4, 102, 107, 122, 123],
+    writableDPs: [2, 4, 102, 104, 105, 107, 108, 109, 122, 123],
     dpMap: {
-      // ═══════════════════════════════════════════════════════════════════
-      // PRESENCE DETECTION via Tuya DP
-      // ═══════════════════════════════════════════════════════════════════
       1: { cap: 'alarm_motion', type: 'presence_bool' },
-      101: { cap: 'alarm_motion', type: 'motion_state_enum' },  // 0=none, 1=large, 2=small, 3=static
-
-      // ═══════════════════════════════════════════════════════════════════
-      // ILLUMINANCE + BATTERY via Tuya DP
-      // ═══════════════════════════════════════════════════════════════════
+      101: { cap: 'alarm_motion', type: 'motion_state_enum' },
       106: { cap: 'measure_luminance', type: 'lux_direct' },
       121: { cap: 'measure_battery', divisor: 1 },
-
-      // ═══════════════════════════════════════════════════════════════════
-      // SETTINGS
-      // ═══════════════════════════════════════════════════════════════════
-      2: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 },
-      4: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 6 },
+      // v5.8.63: Complete settings per Z2M #21919 + device page
+      2: { cap: null, setting: 'large_motion_detection_sensitivity', min: 0, max: 10 },
+      4: { cap: null, setting: 'large_motion_detection_distance', divisor: 100, min: 0, max: 10 },
       102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
+      104: { cap: null, setting: 'medium_motion_detection_distance', divisor: 100, min: 0, max: 6 },
+      105: { cap: null, setting: 'medium_motion_detection_sensitivity', min: 0, max: 10 },
       107: { cap: null, setting: 'indicator' },
-      122: { cap: null, setting: 'motion_detection_mode' },  // 0=only_pir, 1=pir_and_radar, 2=only_radar
+      108: { cap: null, setting: 'small_detection_distance', divisor: 100, min: 0, max: 6 },
+      109: { cap: null, setting: 'small_detection_sensitivity', min: 0, max: 10 },
+      122: { cap: null, setting: 'motion_detection_mode' },
       123: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
-      108: { cap: null, internal: 'small_detection_distance', divisor: 100 },
-      109: { cap: null, internal: 'small_detection_sensitivity' },
     }
   },
 
