@@ -255,6 +255,566 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang1_on",
+      "title": {
+        "en": "Physical gang 1 ON",
+        "fr": "Physique gang 1 ON",
+        "nl": "Fysiek gang 1 AAN",
+        "de": "Physisch gang 1 EIN"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 1 ON",
+        "fr": "Physique gang 1 ON",
+        "nl": "Fysiek gang 1 AAN",
+        "de": "Physisch gang 1 EIN"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang1_off",
+      "title": {
+        "en": "Physical gang 1 OFF",
+        "fr": "Physique gang 1 OFF",
+        "nl": "Fysiek gang 1 UIT",
+        "de": "Physisch gang 1 AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 1 OFF",
+        "fr": "Physique gang 1 OFF",
+        "nl": "Fysiek gang 1 UIT",
+        "de": "Physisch gang 1 AUS"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang1_single",
+      "title": {
+        "en": "Gang 1 single press (physical)",
+        "fr": "Gang 1 appui simple (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 single press (physical)",
+        "fr": "Gang 1 appui simple (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang1_double",
+      "title": {
+        "en": "Gang 1 double press (physical)",
+        "fr": "Gang 1 double appui (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 double press (physical)",
+        "fr": "Gang 1 double appui (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang1_triple",
+      "title": {
+        "en": "Gang 1 triple press (physical)",
+        "fr": "Gang 1 triple appui (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 triple press (physical)",
+        "fr": "Gang 1 triple appui (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang1_long_press",
+      "title": {
+        "en": "Gang 1 long press (physical)",
+        "fr": "Gang 1 appui long (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 long press (physical)",
+        "fr": "Gang 1 appui long (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang2_on",
+      "title": {
+        "en": "Physical gang 2 ON",
+        "fr": "Physique gang 2 ON",
+        "nl": "Fysiek gang 2 AAN",
+        "de": "Physisch gang 2 EIN"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 2 ON",
+        "fr": "Physique gang 2 ON",
+        "nl": "Fysiek gang 2 AAN",
+        "de": "Physisch gang 2 EIN"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang2_off",
+      "title": {
+        "en": "Physical gang 2 OFF",
+        "fr": "Physique gang 2 OFF",
+        "nl": "Fysiek gang 2 UIT",
+        "de": "Physisch gang 2 AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 2 OFF",
+        "fr": "Physique gang 2 OFF",
+        "nl": "Fysiek gang 2 UIT",
+        "de": "Physisch gang 2 AUS"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang2_single",
+      "title": {
+        "en": "Gang 2 single press (physical)",
+        "fr": "Gang 2 appui simple (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 2 single press (physical)",
+        "fr": "Gang 2 appui simple (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang2_double",
+      "title": {
+        "en": "Gang 2 double press (physical)",
+        "fr": "Gang 2 double appui (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 2 double press (physical)",
+        "fr": "Gang 2 double appui (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang2_triple",
+      "title": {
+        "en": "Gang 2 triple press (physical)",
+        "fr": "Gang 2 triple appui (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 2 triple press (physical)",
+        "fr": "Gang 2 triple appui (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang2_long_press",
+      "title": {
+        "en": "Gang 2 long press (physical)",
+        "fr": "Gang 2 appui long (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 2 long press (physical)",
+        "fr": "Gang 2 appui long (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang3_on",
+      "title": {
+        "en": "Physical gang 3 ON",
+        "fr": "Physique gang 3 ON",
+        "nl": "Fysiek gang 3 AAN",
+        "de": "Physisch gang 3 EIN"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 3 ON",
+        "fr": "Physique gang 3 ON",
+        "nl": "Fysiek gang 3 AAN",
+        "de": "Physisch gang 3 EIN"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang3_off",
+      "title": {
+        "en": "Physical gang 3 OFF",
+        "fr": "Physique gang 3 OFF",
+        "nl": "Fysiek gang 3 UIT",
+        "de": "Physisch gang 3 AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 3 OFF",
+        "fr": "Physique gang 3 OFF",
+        "nl": "Fysiek gang 3 UIT",
+        "de": "Physisch gang 3 AUS"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang3_single",
+      "title": {
+        "en": "Gang 3 single press (physical)",
+        "fr": "Gang 3 appui simple (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 3 single press (physical)",
+        "fr": "Gang 3 appui simple (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang3_double",
+      "title": {
+        "en": "Gang 3 double press (physical)",
+        "fr": "Gang 3 double appui (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 3 double press (physical)",
+        "fr": "Gang 3 double appui (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang3_triple",
+      "title": {
+        "en": "Gang 3 triple press (physical)",
+        "fr": "Gang 3 triple appui (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 3 triple press (physical)",
+        "fr": "Gang 3 triple appui (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang3_long_press",
+      "title": {
+        "en": "Gang 3 long press (physical)",
+        "fr": "Gang 3 appui long (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 3 long press (physical)",
+        "fr": "Gang 3 appui long (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang4_on",
+      "title": {
+        "en": "Physical gang 4 ON",
+        "fr": "Physique gang 4 ON",
+        "nl": "Fysiek gang 4 AAN",
+        "de": "Physisch gang 4 EIN"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 4 ON",
+        "fr": "Physique gang 4 ON",
+        "nl": "Fysiek gang 4 AAN",
+        "de": "Physisch gang 4 EIN"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang4_off",
+      "title": {
+        "en": "Physical gang 4 OFF",
+        "fr": "Physique gang 4 OFF",
+        "nl": "Fysiek gang 4 UIT",
+        "de": "Physisch gang 4 AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 4 OFF",
+        "fr": "Physique gang 4 OFF",
+        "nl": "Fysiek gang 4 UIT",
+        "de": "Physisch gang 4 AUS"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang4_single",
+      "title": {
+        "en": "Gang 4 single press (physical)",
+        "fr": "Gang 4 appui simple (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 4 single press (physical)",
+        "fr": "Gang 4 appui simple (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang4_double",
+      "title": {
+        "en": "Gang 4 double press (physical)",
+        "fr": "Gang 4 double appui (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 4 double press (physical)",
+        "fr": "Gang 4 double appui (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang4_triple",
+      "title": {
+        "en": "Gang 4 triple press (physical)",
+        "fr": "Gang 4 triple appui (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 4 triple press (physical)",
+        "fr": "Gang 4 triple appui (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang4_long_press",
+      "title": {
+        "en": "Gang 4 long press (physical)",
+        "fr": "Gang 4 appui long (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 4 long press (physical)",
+        "fr": "Gang 4 appui long (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang5_on",
+      "title": {
+        "en": "Physical gang 5 ON",
+        "fr": "Physique gang 5 ON",
+        "nl": "Fysiek gang 5 AAN",
+        "de": "Physisch gang 5 EIN"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 5 ON",
+        "fr": "Physique gang 5 ON",
+        "nl": "Fysiek gang 5 AAN",
+        "de": "Physisch gang 5 EIN"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang5_off",
+      "title": {
+        "en": "Physical gang 5 OFF",
+        "fr": "Physique gang 5 OFF",
+        "nl": "Fysiek gang 5 UIT",
+        "de": "Physisch gang 5 AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 5 OFF",
+        "fr": "Physique gang 5 OFF",
+        "nl": "Fysiek gang 5 UIT",
+        "de": "Physisch gang 5 AUS"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang5_single",
+      "title": {
+        "en": "Gang 5 single press (physical)",
+        "fr": "Gang 5 appui simple (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 5 single press (physical)",
+        "fr": "Gang 5 appui simple (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang5_double",
+      "title": {
+        "en": "Gang 5 double press (physical)",
+        "fr": "Gang 5 double appui (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 5 double press (physical)",
+        "fr": "Gang 5 double appui (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang5_triple",
+      "title": {
+        "en": "Gang 5 triple press (physical)",
+        "fr": "Gang 5 triple appui (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 5 triple press (physical)",
+        "fr": "Gang 5 triple appui (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang5_long_press",
+      "title": {
+        "en": "Gang 5 long press (physical)",
+        "fr": "Gang 5 appui long (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 5 long press (physical)",
+        "fr": "Gang 5 appui long (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang6_on",
+      "title": {
+        "en": "Physical gang 6 ON",
+        "fr": "Physique gang 6 ON",
+        "nl": "Fysiek gang 6 AAN",
+        "de": "Physisch gang 6 EIN"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 6 ON",
+        "fr": "Physique gang 6 ON",
+        "nl": "Fysiek gang 6 AAN",
+        "de": "Physisch gang 6 EIN"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang6_off",
+      "title": {
+        "en": "Physical gang 6 OFF",
+        "fr": "Physique gang 6 OFF",
+        "nl": "Fysiek gang 6 UIT",
+        "de": "Physisch gang 6 AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 6 OFF",
+        "fr": "Physique gang 6 OFF",
+        "nl": "Fysiek gang 6 UIT",
+        "de": "Physisch gang 6 AUS"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang6_single",
+      "title": {
+        "en": "Gang 6 single press (physical)",
+        "fr": "Gang 6 appui simple (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 6 single press (physical)",
+        "fr": "Gang 6 appui simple (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang6_double",
+      "title": {
+        "en": "Gang 6 double press (physical)",
+        "fr": "Gang 6 double appui (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 6 double press (physical)",
+        "fr": "Gang 6 double appui (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang6_triple",
+      "title": {
+        "en": "Gang 6 triple press (physical)",
+        "fr": "Gang 6 triple appui (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 6 triple press (physical)",
+        "fr": "Gang 6 triple appui (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang6_long_press",
+      "title": {
+        "en": "Gang 6 long press (physical)",
+        "fr": "Gang 6 appui long (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 6 long press (physical)",
+        "fr": "Gang 6 appui long (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang7_on",
+      "title": {
+        "en": "Physical gang 7 ON",
+        "fr": "Physique gang 7 ON",
+        "nl": "Fysiek gang 7 AAN",
+        "de": "Physisch gang 7 EIN"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 7 ON",
+        "fr": "Physique gang 7 ON",
+        "nl": "Fysiek gang 7 AAN",
+        "de": "Physisch gang 7 EIN"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang7_off",
+      "title": {
+        "en": "Physical gang 7 OFF",
+        "fr": "Physique gang 7 OFF",
+        "nl": "Fysiek gang 7 UIT",
+        "de": "Physisch gang 7 AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical gang 7 OFF",
+        "fr": "Physique gang 7 OFF",
+        "nl": "Fysiek gang 7 UIT",
+        "de": "Physisch gang 7 AUS"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang7_single",
+      "title": {
+        "en": "Gang 7 single press (physical)",
+        "fr": "Gang 7 appui simple (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 7 single press (physical)",
+        "fr": "Gang 7 appui simple (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang7_double",
+      "title": {
+        "en": "Gang 7 double press (physical)",
+        "fr": "Gang 7 double appui (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 7 double press (physical)",
+        "fr": "Gang 7 double appui (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang7_triple",
+      "title": {
+        "en": "Gang 7 triple press (physical)",
+        "fr": "Gang 7 triple appui (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 7 triple press (physical)",
+        "fr": "Gang 7 triple appui (physique)"
+      }
+    },
+    {
+      "id": "switch_wall_7gang_physical_gang7_long_press",
+      "title": {
+        "en": "Gang 7 long press (physical)",
+        "fr": "Gang 7 appui long (physique)"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 7 long press (physical)",
+        "fr": "Gang 7 appui long (physique)"
+      }
     }
   ],
   "conditions": [
