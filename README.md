@@ -73,7 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.8.78** | v5.8.78: PACKETNINJA BSEED FINGERPRINT FIX — Review of all PacketNinja PRs (#... |
+| **v5.8.78** | v5.8.78: PACKETNINJA PR REVIEW + PHYSICAL BUTTON AUDIT — (1) FIX BSEED finger... |
 | **v5.8.77** | v5.8.77: SENSOR & BUTTON FIXES — (1) FIX HOBEIAN ZG-204ZM wrong config: model... |
 | **v5.8.76** | v5.8.76: 4 DIAGNOSTIC FIXES — (1) FIX button_pressed/button_double_press gene... |
 | **v5.8.75** | v5.8.75: PETER'S DEVICES FIX — (1) FIX HOBEIAN ZG-204ZM not recognized (showe... |
