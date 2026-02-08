@@ -8,7 +8,13 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
     },
     {
       "id": "lcdtemphumidsensor_humidity_changed",
@@ -18,7 +24,13 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      }
     },
     {
       "id": "lcdtemphumidsensor_battery_low",
@@ -28,7 +40,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [],

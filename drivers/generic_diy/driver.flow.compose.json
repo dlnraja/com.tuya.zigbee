@@ -20,7 +20,11 @@
           },
           "example": 22.5
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      }
     },
     {
       "id": "generic_diy_humidity_changed",
@@ -42,7 +46,11 @@
           },
           "example": 65
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      }
     },
     {
       "id": "generic_diy_motion_detected",
@@ -53,6 +61,10 @@
       "hint": {
         "en": "When the DIY sensor detects motion",
         "fr": "Quand le capteur DIY détecte un mouvement"
+      },
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté"
       }
     },
     {
@@ -64,6 +76,10 @@
       "hint": {
         "en": "When no more motion is detected",
         "fr": "Quand plus aucun mouvement n'est détecté"
+      },
+      "titleFormatted": {
+        "en": "Motion cleared",
+        "fr": "Mouvement terminé"
       }
     },
     {
@@ -86,7 +102,11 @@
           },
           "example": 1
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button pressed",
+        "fr": "Bouton pressé"
+      }
     },
     {
       "id": "generic_diy_button_double_pressed",
@@ -108,7 +128,11 @@
           },
           "example": 1
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button double pressed",
+        "fr": "Bouton double-pressé"
+      }
     },
     {
       "id": "generic_diy_button_long_pressed",
@@ -130,7 +154,11 @@
           },
           "example": 1
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Button long pressed",
+        "fr": "Bouton appui long"
+      }
     },
     {
       "id": "generic_diy_switch_turned_on",
@@ -152,7 +180,11 @@
           },
           "example": 1
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Switch turned on",
+        "fr": "Interrupteur activé"
+      }
     },
     {
       "id": "generic_diy_switch_turned_off",
@@ -174,7 +206,11 @@
           },
           "example": 1
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Switch turned off",
+        "fr": "Interrupteur désactivé"
+      }
     },
     {
       "id": "generic_diy_contact_opened",
@@ -185,6 +221,10 @@
       "hint": {
         "en": "When the DIY contact sensor opens",
         "fr": "Quand le capteur de contact DIY s'ouvre"
+      },
+      "titleFormatted": {
+        "en": "Contact opened",
+        "fr": "Contact ouvert"
       }
     },
     {
@@ -196,6 +236,10 @@
       "hint": {
         "en": "When the DIY contact sensor closes",
         "fr": "Quand le capteur de contact DIY se ferme"
+      },
+      "titleFormatted": {
+        "en": "Contact closed",
+        "fr": "Contact fermé"
       }
     },
     {
@@ -218,7 +262,11 @@
           },
           "example": 500
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Illuminance changed",
+        "fr": "Luminosité changée"
+      }
     },
     {
       "id": "generic_diy_battery_low",
@@ -240,7 +288,11 @@
           },
           "example": 15
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
     },
     {
       "id": "generic_diy_pressure_changed",
@@ -262,7 +314,11 @@
           },
           "example": 1013
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Pressure changed",
+        "fr": "Pression changée"
+      }
     },
     {
       "id": "generic_diy_analog_changed",
@@ -293,7 +349,11 @@
           },
           "example": 1
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Analog value changed",
+        "fr": "Valeur analogique changée"
+      }
     }
   ],
   "conditions": [
@@ -306,6 +366,10 @@
       "hint": {
         "en": "Check if the DIY switch is on",
         "fr": "Vérifie si l'interrupteur DIY est activé"
+      },
+      "titleFormatted": {
+        "en": "DIY switch is on",
+        "fr": "Interrupteur DIY est activé"
       }
     },
     {
@@ -317,6 +381,10 @@
       "hint": {
         "en": "Check if motion is currently detected",
         "fr": "Vérifie si un mouvement est actuellement détecté"
+      },
+      "titleFormatted": {
+        "en": "Motion is detected",
+        "fr": "Mouvement détecté"
       }
     },
     {
@@ -328,6 +396,10 @@
       "hint": {
         "en": "Check if the contact sensor is open",
         "fr": "Vérifie si le capteur de contact est ouvert"
+      },
+      "titleFormatted": {
+        "en": "Contact is open",
+        "fr": "Contact est ouvert"
       }
     },
     {
@@ -428,6 +500,10 @@
       "hint": {
         "en": "Turn on the DIY switch",
         "fr": "Active l'interrupteur DIY"
+      },
+      "titleFormatted": {
+        "en": "Turn on DIY switch",
+        "fr": "Activer interrupteur DIY"
       }
     },
     {
@@ -439,6 +515,10 @@
       "hint": {
         "en": "Turn off the DIY switch",
         "fr": "Désactive l'interrupteur DIY"
+      },
+      "titleFormatted": {
+        "en": "Turn off DIY switch",
+        "fr": "Désactiver interrupteur DIY"
       }
     },
     {
@@ -450,6 +530,10 @@
       "hint": {
         "en": "Toggle the DIY switch state",
         "fr": "Bascule l'état de l'interrupteur DIY"
+      },
+      "titleFormatted": {
+        "en": "Toggle DIY switch",
+        "fr": "Basculer interrupteur DIY"
       }
     },
     {
@@ -489,6 +573,10 @@
       "hint": {
         "en": "Make the DIY device blink/beep to identify it",
         "fr": "Fait clignoter/biper le dispositif DIY pour l'identifier"
+      },
+      "titleFormatted": {
+        "en": "Identify DIY device",
+        "fr": "Identifier dispositif DIY"
       }
     },
     {

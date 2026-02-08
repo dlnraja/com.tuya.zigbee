@@ -10,7 +10,11 @@
       "hint": {
         "en": "Triggers when the water valve is opened"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Valve opened",
+        "nl": "Klep geopend"
+      }
     },
     {
       "id": "water_valve_smart_closed",
@@ -18,7 +22,11 @@
         "en": "Valve closed",
         "nl": "Klep gesloten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Valve closed",
+        "nl": "Klep gesloten"
+      }
     },
     {
       "id": "water_valve_smart_leak_detected",
@@ -27,7 +35,11 @@
         "en": "Water leak detected!",
         "nl": "Waterlek gedetecteerd!"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water leak detected!",
+        "nl": "Waterlek gedetecteerd!"
+      }
     },
     {
       "id": "water_valve_smart_leak_cleared",
@@ -35,7 +47,11 @@
         "en": "Water leak cleared",
         "nl": "Waterlek opgeheven"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water leak cleared",
+        "nl": "Waterlek opgeheven"
+      }
     },
     {
       "id": "water_valve_smart_temperature_changed",
@@ -61,14 +77,20 @@
       "title": {
         "en": "Frost warning"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Frost warning"
+      }
     },
     {
       "id": "water_valve_smart_battery_low",
       "title": {
         "en": "Battery is low"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low"
+      }
     },
     {
       "id": "water_valve_smart_turned_on",
@@ -78,7 +100,13 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
     },
     {
       "id": "water_valve_smart_turned_off",
@@ -88,7 +116,13 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
     },
     {
       "id": "water_valve_smart_motion_detected",
@@ -98,7 +132,13 @@
         "nl": "Beweging gedetecteerd",
         "de": "Bewegung erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      }
     },
     {
       "id": "water_valve_smart_temp_changed",
@@ -108,7 +148,13 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
     },
     {
       "id": "water_valve_smart_water_alarm",
@@ -118,7 +164,13 @@
         "nl": "Wateralarm",
         "de": "Wasseralarm"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water alarm",
+        "fr": "Alarme eau",
+        "nl": "Wateralarm",
+        "de": "Wasseralarm"
+      }
     }
   ],
   "conditions": [
@@ -127,14 +179,20 @@
       "title": {
         "en": "Valve !{{is|is not}} open"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Valve !{{is|is not}} open"
+      }
     },
     {
       "id": "water_valve_smart_leak_is_detected",
       "title": {
         "en": "Water leak !{{is|is not}} detected"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water leak !{{is|is not}} detected"
+      }
     },
     {
       "id": "water_valve_smart_temperature_above",
@@ -161,7 +219,13 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
     },
     {
       "id": "water_valve_smart_motion_active",
@@ -171,7 +235,13 @@
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      }
     },
     {
       "id": "water_valve_smart_water_detected",
@@ -181,7 +251,13 @@
         "nl": "Water !{{is|is niet}} gedetecteerd",
         "de": "Wasser !{{ist|ist nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water !{{is|is not}} detected",
+        "fr": "Eau !{{est|n'est pas}} détectée",
+        "nl": "Water !{{is|is niet}} gedetecteerd",
+        "de": "Wasser !{{ist|ist nicht}} erkannt"
+      }
     }
   ],
   "actions": [
@@ -190,21 +266,30 @@
       "title": {
         "en": "Open valve"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Open valve"
+      }
     },
     {
       "id": "water_valve_smart_close",
       "title": {
         "en": "Close valve"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Close valve"
+      }
     },
     {
       "id": "water_valve_smart_toggle",
       "title": {
         "en": "Toggle valve"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle valve"
+      }
     },
     {
       "id": "water_valve_smart_turn_on",
@@ -214,7 +299,13 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      }
     },
     {
       "id": "water_valve_smart_turn_off",
@@ -224,7 +315,13 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      }
     }
   ]
 }

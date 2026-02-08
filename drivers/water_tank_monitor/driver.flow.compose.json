@@ -44,7 +44,13 @@
         "fr": "Se déclenche quand le niveau d'eau passe sous le seuil",
         "de": "Wird ausgelöst, wenn der Wasserstand unter den Schwellenwert fällt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water tank is low",
+        "nl": "Watertank is bijna leeg",
+        "fr": "Réservoir d'eau bas",
+        "de": "Wassertank ist niedrig"
+      }
     },
     {
       "id": "water_tank_monitor_full",
@@ -54,7 +60,13 @@
         "fr": "Réservoir d'eau plein",
         "de": "Wassertank ist voll"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water tank is full",
+        "nl": "Watertank is vol",
+        "fr": "Réservoir d'eau plein",
+        "de": "Wassertank ist voll"
+      }
     },
     {
       "id": "water_tank_monitor_battery_low",
@@ -64,7 +76,13 @@
         "fr": "Batterie faible",
         "de": "Batterie ist schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
     },
     {
       "id": "water_tank_monitor_temp_changed",
@@ -74,7 +92,13 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
     }
   ],
   "conditions": [

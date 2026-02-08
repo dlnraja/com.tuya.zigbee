@@ -37,7 +37,13 @@
         "fr": "Se déclenche quand le capteur détecte un changement d'orientation",
         "de": "Wird ausgelöst, wenn der Sensor eine Änderung der Ausrichtung erkennt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tilt detected",
+        "nl": "Kanteling gedetecteerd",
+        "fr": "Inclinaison détectée",
+        "de": "Neigung erkannt"
+      }
     },
     {
       "id": "vibration_sensor_drop_detected",
@@ -53,7 +59,13 @@
         "fr": "Se déclenche quand le capteur détecte une chute libre",
         "de": "Wird ausgelöst, wenn der Sensor einen freien Fall erkennt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Drop detected",
+        "nl": "Val gedetecteerd",
+        "fr": "Chute détectée",
+        "de": "Fall erkannt"
+      }
     },
     {
       "id": "vibration_sensor_tamper_true",
@@ -69,7 +81,13 @@
         "fr": "Se déclenche quand le capteur a été saboté",
         "de": "Wird ausgelöst, wenn der Sensor manipuliert wurde"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alert",
+        "nl": "Sabotage alarm",
+        "fr": "Alerte sabotage",
+        "de": "Manipulationsalarm"
+      }
     },
     {
       "id": "vibration_sensor_battery_changed",
@@ -108,7 +126,13 @@
         "fr": "Batterie faible",
         "de": "Batterie ist schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
     },
     {
       "id": "vibration_sensor_vibration_alarm",
@@ -118,7 +142,13 @@
         "nl": "Trilling",
         "de": "Vibration"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Vibration",
+        "fr": "Vibration",
+        "nl": "Trilling",
+        "de": "Vibration"
+      }
     },
     {
       "id": "vibration_sensor_tamper_alarm",
@@ -128,7 +158,13 @@
         "nl": "Sabotagealarm",
         "de": "Manipulationsalarm"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      }
     }
   ],
   "conditions": [
@@ -140,7 +176,13 @@
         "fr": "Vibration !{{est|n'est pas}} détectée",
         "de": "Vibration !{{wird|wird nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Vibration !{{is|is not}} detected",
+        "nl": "Trillingen !{{worden|worden niet}} gedetecteerd",
+        "fr": "Vibration !{{est|n'est pas}} détectée",
+        "de": "Vibration !{{wird|wird nicht}} erkannt"
+      }
     },
     {
       "id": "vibration_sensor_battery_above",
@@ -177,7 +219,13 @@
         "nl": "Trilling !{{is|is niet}} gedetecteerd",
         "de": "Vibration !{{ist|ist nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Vibration !{{is|is not}} detected",
+        "fr": "Vibration !{{est|n'est pas}} détectée",
+        "nl": "Trilling !{{is|is niet}} gedetecteerd",
+        "de": "Vibration !{{ist|ist nicht}} erkannt"
+      }
     },
     {
       "id": "vibration_sensor_tamper_active",
@@ -187,7 +235,13 @@
         "nl": "Sabotage !{{is|is niet}} actief",
         "de": "Manipulation !{{ist|ist nicht}} aktiv"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      }
     }
   ]
 }
