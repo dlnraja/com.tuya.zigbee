@@ -494,6 +494,95 @@
   },
   "settings": [
     {
+      "id": "pir_sensitivity",
+      "type": "dropdown",
+      "label": {
+        "en": "PIR Sensitivity",
+        "fr": "Sensibilité PIR",
+        "nl": "PIR Gevoeligheid",
+        "de": "PIR Empfindlichkeit"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "Low",
+            "fr": "Basse",
+            "nl": "Laag",
+            "de": "Niedrig"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "Medium",
+            "fr": "Moyenne",
+            "nl": "Gemiddeld",
+            "de": "Mittel"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "High",
+            "fr": "Haute",
+            "nl": "Hoog",
+            "de": "Hoch"
+          }
+        }
+      ],
+      "hint": {
+        "en": "PIR detection sensitivity (ZG-204ZL, TS0601 PIR sensors). Requires device wake-up.",
+        "fr": "Sensibilité de détection PIR (capteurs ZG-204ZL, TS0601 PIR). Nécessite le réveil du périphérique."
+      }
+    },
+    {
+      "id": "pir_keep_time",
+      "type": "dropdown",
+      "label": {
+        "en": "PIR Keep Time",
+        "fr": "Durée Maintien PIR",
+        "nl": "PIR Aanhoudtijd",
+        "de": "PIR Haltezeit"
+      },
+      "value": "0",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "10 seconds",
+            "fr": "10 secondes"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "30 seconds",
+            "fr": "30 secondes"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "60 seconds",
+            "fr": "60 secondes"
+          }
+        },
+        {
+          "id": "3",
+          "label": {
+            "en": "120 seconds",
+            "fr": "120 secondes"
+          }
+        }
+      ],
+      "hint": {
+        "en": "How long presence is maintained after last motion (ZG-204ZL, TS0601 PIR sensors). Requires device wake-up.",
+        "fr": "Durée de maintien de la présence après le dernier mouvement (capteurs ZG-204ZL, TS0601 PIR). Nécessite le réveil du périphérique."
+      }
+    },
+    {
       "id": "motion_holdoff",
       "type": "number",
       "label": {
