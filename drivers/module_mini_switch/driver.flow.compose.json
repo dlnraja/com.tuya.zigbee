@@ -2,7 +2,9 @@
   "triggers": [
     {
       "id": "module_mini_switch_onoff_true",
-      "title": "Turned on",
+      "title": {
+        "en": "Turned on"
+      },
       "tokens": [
         {
           "name": "timestamp",
@@ -10,7 +12,10 @@
           "title": "Timestamp"
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on"
+      }
     },
     {
       "id": "module_mini_switch_turned_on",
@@ -20,7 +25,13 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
     },
     {
       "id": "module_mini_switch_turned_off",
@@ -30,7 +41,13 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
     },
     {
       "id": "module_mini_switch_battery_low",
@@ -40,7 +57,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     },
     {
       "id": "module_mini_switch_power_changed",
@@ -50,31 +73,57 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
+      }
     }
   ],
   "conditions": [
     {
       "id": "module_mini_switch_is_on",
-      "title": "Is !{{on|off}}",
-      "args": []
+      "title": {
+        "en": "Is !{{on|off}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}"
+      }
     }
   ],
   "actions": [
     {
       "id": "module_mini_switch_turn_on",
-      "title": "Turn on",
-      "args": []
+      "title": {
+        "en": "Turn on"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on"
+      }
     },
     {
       "id": "module_mini_switch_turn_off",
-      "title": "Turn off",
-      "args": []
+      "title": {
+        "en": "Turn off"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off"
+      }
     },
     {
       "id": "module_mini_switch_toggle",
-      "title": "Toggle",
-      "args": []
+      "title": {
+        "en": "Toggle"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle"
+      }
     }
   ]
 }

@@ -8,7 +8,13 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
     },
     {
       "id": "switch_1gang_turned_off",
@@ -18,7 +24,13 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
     },
     {
       "id": "switch_1gang_physical_on",
@@ -34,7 +46,13 @@
         "nl": "Fysieke knop schakelt in",
         "de": "Physische Taste schaltet ein"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical ON",
+        "fr": "Physique ON",
+        "nl": "Fysiek AAN",
+        "de": "Physisch EIN"
+      }
     },
     {
       "id": "switch_1gang_physical_off",
@@ -44,7 +62,13 @@
         "nl": "Fysiek UIT",
         "de": "Physisch AUS"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical OFF",
+        "fr": "Physique OFF",
+        "nl": "Fysiek UIT",
+        "de": "Physisch AUS"
+      }
     },
     {
       "id": "switch_1gang_physical_single",
@@ -60,7 +84,13 @@
         "nl": "Enkele druk op fysieke knop",
         "de": "Einfacher Druck auf physische Taste"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Single press",
+        "fr": "Simple pression",
+        "nl": "Enkele druk",
+        "de": "Einfacher Druck"
+      }
     },
     {
       "id": "switch_1gang_physical_double",
@@ -76,7 +106,13 @@
         "nl": "Dubbele druk op fysieke knop",
         "de": "Doppelter Druck auf physische Taste"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Double press",
+        "fr": "Double pression",
+        "nl": "Dubbele druk",
+        "de": "Doppelter Druck"
+      }
     },
     {
       "id": "switch_1gang_physical_long_press",
@@ -102,7 +138,13 @@
           "example": 1200
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Long press",
+        "fr": "Pression longue",
+        "nl": "Lange druk",
+        "de": "Langer Druck"
+      }
     },
     {
       "id": "switch_1gang_physical_triple",
@@ -128,7 +170,13 @@
           "example": 3
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Triple press",
+        "fr": "Triple pression",
+        "nl": "Drievoudige druk",
+        "de": "Dreifacher Druck"
+      }
     },
     {
       "id": "switch_1gang_battery_low",
@@ -138,7 +186,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     },
     {
       "id": "switch_1gang_power_changed",
@@ -148,7 +202,13 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
+      }
     }
   ],
   "conditions": [
@@ -160,7 +220,13 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
     }
   ],
   "actions": [
@@ -172,7 +238,13 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      }
     },
     {
       "id": "switch_1gang_turn_off",
@@ -182,7 +254,13 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      }
     },
     {
       "id": "switch_1gang_toggle",
@@ -198,7 +276,13 @@
         "nl": "Wissel de status (aan→uit, uit→aan)",
         "de": "Status umschalten (ein→aus, aus→ein)"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
     },
     {
       "id": "switch_1gang_set_backlight",

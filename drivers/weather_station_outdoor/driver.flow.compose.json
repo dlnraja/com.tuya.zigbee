@@ -17,7 +17,11 @@
           "example": 15
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Outdoor temperature changed",
+        "fr": "Température extérieure changée"
+      }
     },
     {
       "id": "weather_station_outdoor_outdoor_humidity_changed",
@@ -36,7 +40,11 @@
           "example": 65
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Outdoor humidity changed",
+        "fr": "Humidité extérieure changée"
+      }
     },
     {
       "id": "weather_station_outdoor_pressure_changed",
@@ -55,7 +63,11 @@
           "example": 1013
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Barometric pressure changed",
+        "fr": "Pression atmosphérique changée"
+      }
     },
     {
       "id": "weather_station_outdoor_weather_battery_low",
@@ -63,7 +75,11 @@
         "en": "Battery low",
         "fr": "Batterie faible"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
     },
     {
       "id": "weather_station_outdoor_temp_changed",
@@ -73,7 +89,13 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
     },
     {
       "id": "weather_station_outdoor_humidity_changed",
@@ -83,7 +105,13 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      }
     },
     {
       "id": "weather_station_outdoor_lux_changed",
@@ -93,7 +121,13 @@
         "nl": "Lichtsterkte gewijzigd",
         "de": "Helligkeit geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Luminance changed",
+        "fr": "Luminance changée",
+        "nl": "Lichtsterkte gewijzigd",
+        "de": "Helligkeit geändert"
+      }
     },
     {
       "id": "weather_station_outdoor_battery_low",
@@ -103,7 +137,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [
@@ -151,7 +191,11 @@
         "en": "Pressure is rising (good weather)",
         "fr": "Pression en hausse (beau temps)"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Pressure is rising (good weather)",
+        "fr": "Pression en hausse (beau temps)"
+      }
     },
     {
       "id": "weather_station_outdoor_pressure_falling",
@@ -159,7 +203,11 @@
         "en": "Pressure is falling (bad weather)",
         "fr": "Pression en baisse (mauvais temps)"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Pressure is falling (bad weather)",
+        "fr": "Pression en baisse (mauvais temps)"
+      }
     }
   ]
 }

@@ -17,7 +17,11 @@
           "example": 50
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Position changed",
+        "fr": "Position changée"
+      }
     },
     {
       "id": "shutter_roller_controller_fully_opened",
@@ -25,7 +29,11 @@
         "en": "Fully opened",
         "fr": "Complètement ouvert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Fully opened",
+        "fr": "Complètement ouvert"
+      }
     },
     {
       "id": "shutter_roller_controller_fully_closed",
@@ -33,7 +41,11 @@
         "en": "Fully closed",
         "fr": "Complètement fermé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Fully closed",
+        "fr": "Complètement fermé"
+      }
     },
     {
       "id": "shutter_roller_controller_started_moving",
@@ -41,7 +53,11 @@
         "en": "Started moving",
         "fr": "Démarrage mouvement"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Started moving",
+        "fr": "Démarrage mouvement"
+      }
     },
     {
       "id": "shutter_roller_controller_stopped_moving",
@@ -49,7 +65,11 @@
         "en": "Stopped moving",
         "fr": "Arrêt mouvement"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Stopped moving",
+        "fr": "Arrêt mouvement"
+      }
     },
     {
       "id": "shutter_roller_controller_battery_low",
@@ -59,7 +79,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [
@@ -69,7 +95,11 @@
         "en": "Shutter is !{{open|closed}}",
         "fr": "Volet est !{{ouvert|fermé}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Shutter is !{{open|closed}}",
+        "fr": "Volet est !{{ouvert|fermé}}"
+      }
     },
     {
       "id": "shutter_roller_controller_position_above",
@@ -97,7 +127,11 @@
         "en": "Shutter is !{{moving|stopped}}",
         "fr": "Volet !{{en mouvement|arrêté}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Shutter is !{{moving|stopped}}",
+        "fr": "Volet !{{en mouvement|arrêté}}"
+      }
     }
   ],
   "actions": [
@@ -107,7 +141,11 @@
         "en": "Open",
         "fr": "Ouvrir"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Open",
+        "fr": "Ouvrir"
+      }
     },
     {
       "id": "shutter_roller_controller_close",
@@ -115,7 +153,11 @@
         "en": "Close",
         "fr": "Fermer"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Close",
+        "fr": "Fermer"
+      }
     },
     {
       "id": "shutter_roller_controller_stop",
@@ -123,7 +165,11 @@
         "en": "Stop",
         "fr": "Arrêter"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Stop",
+        "fr": "Arrêter"
+      }
     },
     {
       "id": "shutter_roller_controller_set_position",

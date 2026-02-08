@@ -17,7 +17,11 @@
           "example": 25
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Formaldehyde level changed",
+        "fr": "Niveau formaldéhyde changé"
+      }
     },
     {
       "id": "formaldehyde_sensor_voc_changed",
@@ -36,7 +40,11 @@
           "example": 100
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "VOC level changed",
+        "fr": "Niveau COV changé"
+      }
     },
     {
       "id": "formaldehyde_sensor_air_quality_alert",
@@ -44,7 +52,11 @@
         "en": "Air quality alert",
         "fr": "Alerte qualité air"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Air quality alert",
+        "fr": "Alerte qualité air"
+      }
     },
     {
       "id": "formaldehyde_sensor_battery_low",
@@ -52,7 +64,11 @@
         "en": "Battery low",
         "fr": "Batterie faible"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
     },
     {
       "id": "formaldehyde_sensor_temp_changed",
@@ -62,7 +78,13 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
     },
     {
       "id": "formaldehyde_sensor_humidity_changed",
@@ -72,7 +94,13 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      }
     }
   ],
   "conditions": [
@@ -102,7 +130,11 @@
         "en": "Air quality is !{{good|poor}}",
         "fr": "Qualité air !{{bonne|mauvaise}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Air quality is !{{good|poor}}",
+        "fr": "Qualité air !{{bonne|mauvaise}}"
+      }
     }
   ]
 }

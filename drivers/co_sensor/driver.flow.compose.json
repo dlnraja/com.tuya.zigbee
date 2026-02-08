@@ -37,7 +37,13 @@
         "fr": "Se déclenche quand le monoxyde de carbone n'est plus détecté",
         "de": "Wird ausgelöst, wenn kein Kohlenmonoxid mehr erkannt wird"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "CO cleared",
+        "nl": "CO opgeheven",
+        "fr": "CO dissipé",
+        "de": "CO verschwunden"
+      }
     },
     {
       "id": "co_sensor_measure_co_changed",
@@ -111,7 +117,13 @@
         "fr": "Se déclenche quand la batterie passe sous le seuil - Remplacez la batterie bientôt !",
         "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt - Batterie bald ersetzen!"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
     },
     {
       "id": "co_sensor_tamper_true",
@@ -121,7 +133,13 @@
         "nl": "Sabotage alarm geactiveerd",
         "de": "Manipulationsalarm ausgelöst"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm triggered",
+        "fr": "Alarme anti-sabotage déclenchée",
+        "nl": "Sabotage alarm geactiveerd",
+        "de": "Manipulationsalarm ausgelöst"
+      }
     },
     {
       "id": "co_sensor_tamper_false",
@@ -131,7 +149,13 @@
         "nl": "Sabotage alarm opgeheven",
         "de": "Manipulationsalarm beendet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm cleared",
+        "fr": "Alarme anti-sabotage terminée",
+        "nl": "Sabotage alarm opgeheven",
+        "de": "Manipulationsalarm beendet"
+      }
     },
     {
       "id": "co_sensor_co_alarm",
@@ -141,7 +165,13 @@
         "nl": "CO alarm",
         "de": "CO-Alarm"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "CO alarm",
+        "fr": "Alarme CO",
+        "nl": "CO alarm",
+        "de": "CO-Alarm"
+      }
     },
     {
       "id": "co_sensor_tamper_alarm",
@@ -151,7 +181,13 @@
         "nl": "Sabotagealarm",
         "de": "Manipulationsalarm"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      }
     }
   ],
   "conditions": [
@@ -163,7 +199,13 @@
         "fr": "CO !{{est|n'est pas}} détecté",
         "de": "CO !{{ist|ist nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "CO !{{is|is not}} detected",
+        "nl": "CO !{{is|is niet}} gedetecteerd",
+        "fr": "CO !{{est|n'est pas}} détecté",
+        "de": "CO !{{ist|ist nicht}} erkannt"
+      }
     },
     {
       "id": "co_sensor_co_above",
@@ -227,7 +269,13 @@
         "nl": "CO !{{is|is niet}} gedetecteerd",
         "de": "CO !{{ist|ist nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "CO !{{is|is not}} detected",
+        "fr": "CO !{{est|n'est pas}} détecté",
+        "nl": "CO !{{is|is niet}} gedetecteerd",
+        "de": "CO !{{ist|ist nicht}} erkannt"
+      }
     },
     {
       "id": "co_sensor_tamper_active",
@@ -237,7 +285,13 @@
         "nl": "Sabotage !{{is|is niet}} actief",
         "de": "Manipulation !{{ist|ist nicht}} aktiv"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      }
     }
   ],
   "actions": [
