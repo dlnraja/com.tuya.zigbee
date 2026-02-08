@@ -2672,7 +2672,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     }
 
     // Detect passive reporting issues
-    if (dpConfig && !value && rawValue) {
+    // v5.8.76: Fix false positive — 0 is a valid value (e.g. DP1=0 means no presence)
+    if (dpConfig && (value === null || value === undefined) && rawValue) {
       this.log(`[DIAG] ⚠️ DP${dpId} parsing failed - passive reporting issue? Raw: ${JSON.stringify(rawValue)}`);
     }
 
