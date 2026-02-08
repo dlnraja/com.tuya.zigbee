@@ -934,16 +934,19 @@ const SENSOR_CONFIGS = {
       // v5.5.326: DP1 presence is UNRELIABLE (often null on v78)
       // Use distance-based inference instead
       1: { cap: 'alarm_motion', type: 'presence_bool', useInference: true, unreliable: true },
-      2: { cap: null, internal: 'radar_sensitivity' },
-      3: { cap: null, internal: 'min_range', divisor: 100 },
-      4: { cap: null, internal: 'max_range', divisor: 100, feedInference: true },
+      // v5.8.65: Upgraded from internal to setting per Z2M ZY-M100-S_2 page
+      2: { cap: null, setting: 'radar_sensitivity', min: 0, max: 9 },
+      3: { cap: null, setting: 'min_range', divisor: 100, min: 0, max: 950 },
+      4: { cap: null, setting: 'max_range', divisor: 100, feedInference: true, min: 0, max: 950 },
       6: { cap: null, internal: 'self_test' },
       // v5.5.326: DP9 is KEY for presence inference - distance > 0 = presence
       9: { cap: 'measure_distance', divisor: 100, feedInference: true, primaryInference: true },
       // v5.5.326: Lux DPs - all have oscillation issues, use ultra-smoothing
       12: { cap: 'measure_luminance', type: 'lux_direct', ultraSmooth: true },
-      101: { cap: null, internal: 'detection_delay', divisor: 10 },
-      102: { cap: 'measure_luminance', type: 'lux_direct', ultraSmooth: true },
+      // v5.8.65: Upgraded from internal to setting per Z2M ZY-M100-S_2 page
+      101: { cap: null, setting: 'detection_delay', divisor: 10, min: 0, max: 100 },
+      // v5.8.65: FIX - DP102 is fading_time NOT illuminance! Z2M confirms: DP102=fading_time(÷10)
+      102: { cap: null, setting: 'fading_time', divisor: 10, min: 5, max: 15000 },
       104: { cap: 'measure_luminance', type: 'lux_direct', ultraSmooth: true },
     }
   },
@@ -1075,14 +1078,15 @@ const SENSOR_CONFIGS = {
     noHumidity: true,
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
-      2: { cap: null, internal: 'radar_sensitivity' },
-      3: { cap: null, internal: 'min_range', divisor: 100 },
-      4: { cap: null, internal: 'max_range', divisor: 100 },
+      // v5.8.65: Upgraded from internal to setting per Z2M WZ-M100 definition
+      2: { cap: null, setting: 'radar_sensitivity', min: 0, max: 9 },
+      3: { cap: null, setting: 'min_range', divisor: 100, min: 0, max: 950 },
+      4: { cap: null, setting: 'max_range', divisor: 100, min: 0, max: 950 },
       9: { cap: 'measure_distance', divisor: 100 },
       103: { cap: 'measure_luminance', divisor: 1 },
-      104: { cap: null, internal: 'interval_time' },
-      105: { cap: null, internal: 'detection_delay', divisor: 10 },
-      106: { cap: null, internal: 'fading_time', divisor: 10 },
+      104: { cap: null, setting: 'interval_time', min: 1, max: 720 },
+      105: { cap: null, setting: 'detection_delay', divisor: 10, min: 0, max: 100 },
+      106: { cap: null, setting: 'fading_time', divisor: 10, min: 5, max: 15000 },
     }
   },
 
@@ -2187,6 +2191,18 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     // v5.5.268: Track received DPs for debugging
     this._receivedDPs = new Set();
     this._lastPresenceUpdate = 0;
+
+    // v5.8.65: Detect Tuya DP cluster availability (Pete's _TZE200_3towulqd has NO cluster 61184!)
+    // If no Tuya DP cluster → noIasMotion MUST be overridden, IAS Zone is the ONLY motion source
+    const ep1Check = zclNode?.endpoints?.[1];
+    this._hasTuyaDPCluster = !!(ep1Check?.clusters?.tuya || ep1Check?.clusters?.[61184] ||
+      ep1Check?.clusters?.['tuya'] || ep1Check?.clusters?.['61184'] || ep1Check?.clusters?.manuSpecificTuya);
+    if (!this._hasTuyaDPCluster && config.noIasMotion) {
+      this.log('[RADAR] ⚠️ v5.8.65: Device has NO Tuya DP cluster (61184) but noIasMotion=true!');
+      this.log('[RADAR] ⚠️ Overriding noIasMotion→false: IAS Zone is the ONLY motion source');
+      config.noIasMotion = false;
+    }
+    this.log(`[RADAR] Tuya DP cluster: ${this._hasTuyaDPCluster ? 'YES' : 'NO (ZCL-only)'}`);
 
     // v5.5.315: Initialize Intelligent Presence Inference Engine
     if (config.useIntelligentInference) {
