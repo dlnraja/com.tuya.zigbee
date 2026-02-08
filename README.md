@@ -73,9 +73,8 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.63** | v5.8.63: HOBEIAN DEVICE AUDIT (4x4_Pete) — Fix critical config map collisions... |
 | **v5.8.62** | 🔧 v5.8.62: COMPREHENSIVE APP AUDIT — (1) FIX DUPLICATE FINGERPRINTS: Removed... |
-| **v5.8.63** | 🔧 v5.8.63: HOBEIAN DEVICE AUDIT (4x4_Pete) — Fix critical config map collisions, complete DP maps per Z2M for ZG-204ZM/ZL/ZV/227Z. |
-| **v5.8.62** | 🔧 v5.8.62: COMPREHENSIVE APP AUDIT — Fix duplicate fingerprints (TS0003, TS0726), fix broken imports (led_controller_dimmable), add titleFormatted to 1218 flow cards across 106 drivers. 0 warnings at publish level. |
 | **v5.8.61** | 🔧 v5.8.61: (1) FIX HOBEIAN PIR SENSOR IN RADAR DRIVER (diag 25cbd6ae): HOBEI... |
 | **v5.8.60** | 🔧 v5.8.60: (1) FIX TS130F CURTAIN UP/DOWN (Tbao _TZ3000_bs93npae): ZCL windo... |
 | **v5.8.59** | 🔧 v5.8.59: FIX SCENE SWITCH FLOW CARDS (Freddyboy) - Physical button presses... |
@@ -84,7 +83,6 @@
 | **v5.8.56** | 🔧 v5.8.56: 4x4_PETE 3-DEVICE ENRICHMENT - (1) CRITICAL FIX: DP4 PERMISSIVE_V... |
 | **v5.8.55** | 🔧 v5.8.55: ZG-204ZM RADAR SENSOR DEEP SUPPORT (4x4_Pete) - (1) Added missing... |
 | **v5.8.54** | 🔧 v5.8.54: MOES BUTTON + SOIL SENSOR FIX - (1) Fixed Moes 4-button physical ... |
-| **v5.8.53** | 🔧 v5.8.53: HOBEIAN SENSOR FIX - (1) Fixed _TZE200_3towulqd motion sensor usi... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
