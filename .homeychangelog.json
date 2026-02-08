@@ -1,4 +1,7 @@
 {
+  "5.8.73": {
+    "en": "v5.8.73: PACKETNINJA SUB-DEVICE — NEW wall_switch_2gang_1way + wall_switch_3gang_1way drivers with sub-device support (each gang = separate Homey device card). Enhanced switch_2gang/3gang ZCL-only: per-EP configureReporting + initial state read."
+  },
   "5.8.72": {
     "en": "v5.8.72: FIX _TZE284_oitavov2 soil sensor install error (DutchDuke forum report) — (1) Fixed driver endpoint declaration: removed cluster 1 (powerConfiguration) and its binding — device doesn't have this cluster (actual: [0, 4, 5, 61184, 60672]), causing binding failure during pairing. Battery is via Tuya DP14/DP15, not ZCL. Updated to match actual device clusters [0, 4, 5, 61184]. (2) Made _initFlowTriggers resilient with try-catch wrappers to prevent onNodeInit crash if any flow card is missing or misconfigured."
   },

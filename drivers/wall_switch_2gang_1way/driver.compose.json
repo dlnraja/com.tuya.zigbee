@@ -1,0 +1,62 @@
+{
+  "name": {
+    "en": "Wall Switch 2-Gang 1-Way (BSEED)",
+    "nl": "Muurschakelaar 2-Gang 1-Weg (BSEED)"
+  },
+  "class": "socket",
+  "capabilities": ["onoff"],
+  "energy": { "approximation": { "usageOn": 100, "usageOff": 1 } },
+  "platforms": ["local"],
+  "connectivity": ["zigbee"],
+  "images": {
+    "small": "drivers/wall_switch_2gang_1way/assets/images/small.png",
+    "large": "drivers/wall_switch_2gang_1way/assets/images/large.png"
+  },
+  "devices": {
+    "secondSwitch": {
+      "class": "socket",
+      "capabilities": ["onoff"],
+      "name": { "en": "Wall Switch 2-Gang - Gang 2", "nl": "Muurschakelaar 2-Gang - Gang 2" },
+      "images": {
+        "small": "drivers/wall_switch_2gang_1way/assets/images/small.png",
+        "large": "drivers/wall_switch_2gang_1way/assets/images/large.png"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3000_l9brjwau", "_TZ3000_l9brjwau",
+      "_tz3000_xk5udnd6", "_TZ3000_xk5udnd6"
+    ],
+    "productId": ["TS0012"],
+    "endpoints": {
+      "1": { "clusters": [0, 3, 4, 5, 6, 57344, 57345] },
+      "2": { "clusters": [0, 3, 4, 5, 6] }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the reset button for 5 seconds until the LED blinks, or toggle 3 times quickly.",
+        "nl": "Houd de resetknop 5 seconden ingedrukt totdat de LED knippert, of schakel 3 keer snel."
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": { "en": "LED Indicator", "nl": "LED-indicator" },
+      "children": [
+        {
+          "id": "backlight_mode",
+          "type": "dropdown",
+          "label": { "en": "LED Mode", "nl": "LED Modus" },
+          "value": "normal",
+          "values": [
+            { "id": "off", "label": { "en": "Always Off", "nl": "Altijd Uit" } },
+            { "id": "normal", "label": { "en": "On when Switch ON", "nl": "Aan bij AAN" } },
+            { "id": "inverted", "label": { "en": "On when Switch OFF", "nl": "Aan bij UIT" } }
+          ]
+        }
+      ]
+    }
+  ]
+}
