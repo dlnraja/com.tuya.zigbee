@@ -440,6 +440,11 @@ class Button1GangDevice extends ButtonDevice {
       // v5.5.371: TUYA DP CLUSTER - For Tuya-specific devices
       await this._setupTuyaDPButtonDetection(zclNode);
 
+      // v5.8.66: Cluster 0xE000 (57344) - Tuya/MOES button event cluster
+      // GitHub #121: _TZ3000_an5rjiwd TS0041 uses this cluster for button presses
+      // Already in button_wireless_3 and button_wireless_4, was MISSING from button_wireless_1
+      await this._setupE000ButtonDetection(zclNode);
+
       // v5.5.457: HOBEIAN CLUSTER 57345 (0xE001) - Tuya button-specific cluster
       await this._setupHobeianCluster(zclNode);
 
@@ -495,6 +500,24 @@ class Button1GangDevice extends ButtonDevice {
     } catch (err) {
       this.log('[BUTTON1-HOBEIAN] ⚠️ Setup error:', err.message);
     }
+  }
+
+  // v5.8.66: Cluster 0xE000 (57344) - GitHub #121 _TZ3000_an5rjiwd fix
+  async _setupE000ButtonDetection(zclNode) {
+    try {
+      const E000 = require('../../lib/clusters/TuyaE000BoundCluster');
+      const ep = zclNode?.endpoints?.[1];
+      if (!ep) return;
+      const map = { 0: 'single', 1: 'double', 2: 'long' };
+      const bc = new E000({ device: this, onButtonPress: async (b, p) => {
+        this.log(`[BUTTON1-E000] 🔘 ${map[p]||'single'} (btn=${b})`);
+        await this.triggerButtonPress(1, map[p] || 'single');
+      }});
+      bc.endpoint = 1;
+      if (!ep.bindings) ep.bindings = {};
+      ep.bindings[57344] = bc;
+      this.log('[BUTTON1-E000] ✅ BoundCluster EP1');
+    } catch (e) { this.log('[BUTTON1-E000] ℹ️ skip:', e.message); }
   }
 
   /**
