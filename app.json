@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.8.67",
+  "version": "5.8.68",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -66126,8 +66126,6 @@
           "_TZ3000_gvn91tmx",
           "_tz3000_gznh2xla",
           "_TZ3000_gznh2xla",
-          "_tz3000_h1ipgkwn",
-          "_TZ3000_h1ipgkwn",
           "_tz3000_h1jnz6l9",
           "_TZ3000_h1jnz6l9",
           "_tz3000_h1lpgkwn",
@@ -73076,20 +73074,42 @@
           "_TZ3000_misw04hq",
           "_TZ3000_kxlmv9ag",
           "_TZ3000_5f43h46b",
-          "_TZ3000_cfv2uyxe"
+          "_TZ3000_cfv2uyxe",
+          "_TZ3000_h1ipgkwn",
+          "_tz3000_h1ipgkwn"
         ],
         "productId": [
           "TS0207",
-          "TS0601_repeater"
+          "TS0601_repeater",
+          "TS0002"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
               3,
+              4,
+              5,
+              6,
+              1794,
+              2820,
+              57344,
+              57345,
               61184
             ],
-            "bindings": []
+            "bindings": [
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              4,
+              5,
+              6
+            ],
+            "bindings": [
+              6
+            ]
           }
         },
         "learnmode": {
