@@ -73144,10 +73144,49 @@
               }
             },
             {
+              "id": "toggle",
+              "label": {
+                "en": "Toggle",
+                "fr": "Inverser"
+              }
+            },
+            {
               "id": "previous",
               "label": {
                 "en": "Previous State",
                 "fr": "État précédent"
+              }
+            }
+          ]
+        },
+        {
+          "id": "indicator_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Indicator LED",
+            "fr": "LED indicateur"
+          },
+          "value": "on_off",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Éteint"
+              }
+            },
+            {
+              "id": "on_off",
+              "label": {
+                "en": "On when switch is on",
+                "fr": "Allumé quand interrupteur actif"
+              }
+            },
+            {
+              "id": "inverted",
+              "label": {
+                "en": "On when switch is off",
+                "fr": "Allumé quand interrupteur éteint"
               }
             }
           ]
