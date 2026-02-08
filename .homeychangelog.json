@@ -1,4 +1,7 @@
 {
+  "5.8.64": {
+    "en": "v5.8.64: FIX CURTAIN MOTOR CRASH (expected_cluster_id_number) — HybridCoverBase.registerCapability was declared async, converting synchronous TypeError from assertClusterSpecification into a rejected Promise. The try/catch in _setupZCLMode only catches synchronous throws, so the rejection was unhandled and crashed the app. Fix: removed async keyword (super.registerCapability is synchronous)."
+  },
   "5.8.63": {
     "en": "v5.8.63: HOBEIAN DEVICE AUDIT (4x4_Pete) — Fix critical config map collisions: removed _TZE200_3towulqd from ZCL_ONLY_RADAR (useTuyaDP:false broke DP processing), removed from ZG_204ZL_PIR (overrode ZG_204ZV_MULTISENSOR). Fixed _TZE204_ztqnh5cg collision. Moved _TZE200_y8jijhba to correct config (Z2M #29145: no temp/humidity). Completed all DP maps per Z2M: ZG-204ZM +6 settings DPs, fixed DP2/DP4 labels+ranges. ZG-204ZL +DP102+settings. ZG-204ZV +4 settings DPs. ZG-227Z +calibration DPs."
   },
