@@ -1,4 +1,7 @@
 {
+  "5.8.69": {
+    "en": "v5.8.69: COMPREHENSIVE BATTERY FIX — Fixes '?' battery display across ALL device types. (1) BatteryManager.validateAndCorrectPercentage: fixed wrong check order (<=200 before <=100 made 0-100 branch unreachable). (2) BatterySystem.normalizeBatteryValue: fixed wrong check order (<=100 caught all Zigbee 0-200 values, treating 80 as 80% instead of 40%). (3) BatterySystem.calculatePercentageFromVoltage: replaced broken LINEAR formula with non-linear discharge curves (CR2032/2xAA/Li-ion/AA per Z2M profiles). (4) UnifiedBatteryHandler: added missing DP21/DP100/DP104 + driver-based curve selection for TRV/lock/thermostat. (5) HybridSensorBase: added DP10/DP21/DP102/DP104/DP105 to battery DP list. (6) ButtonDevice: stopped rejecting batteryPercentageRemaining===0 (valid dead battery). (7) BaseHybridDevice: added stored battery restoration for sleeping devices — no more '?' on init failure. Persists battery to store on every report for future restore."
+  },
   "5.8.68": {
     "en": "v5.8.68: FIX _TZ3000_h1ipgkwn + 6 BUGS — (1) Moved from switch_2gang to usb_dongle_dual_repeater (XMSJ USB Power Switch, not wall switch). (2) Fix metering cluster fallbacks (metering/seMetering/0x0702). (3) Fix electricalMeasurement 0x0B04 fallback. (4) Add hasCapability guards for TS0207 compatibility. (5) Add initial onOff state read. (6) Add power-on behavior (off/on/toggle/previous) + indicator LED settings. (7) Add tuyaBacklightSwitch support. Researched 10+ sources: Z2M #23625/#26121/#24039, Sprut Hub #3517, AliExpress XMSJ, interview data."
   },

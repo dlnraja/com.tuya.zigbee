@@ -74,6 +74,8 @@
 | Version | Feature |
 |---------|---------|
 | **v5.8.68** | v5.8.68: FIX _TZ3000_h1ipgkwn + 6 BUGS — (1) Moved from switch_2gang to usb_d... |
+| **v5.8.69** | v5.8.69: COMPREHENSIVE BATTERY FIX — Fixes '?' battery display across ALL device types. 7 bugs fixed in 6 files: wrong normalization, missing DPs, linear curves, sleeping device restore. |
+| **v5.8.68** | v5.8.68: FIX _TZ3000_h1ipgkwn WRONG DRIVER — _TZ3000_h1ipgkwn + TS0002 is a Z... |
 | **v5.8.67** | v5.8.67: BATTERY RECOGNITION FIX — (1) CRITICAL FIX: SmartBatteryManager _vol... |
 | **v5.8.66** | v5.8.66: BUTTON DRIVER ENHANCEMENT + CASE SENSITIVITY FIX — (1) FIX: button_w... |
 | **v5.8.65** | v5.8.65: 4x4_PETE DEVICE AUDIT — (1) CRITICAL FIX: _TZE200_3towulqd ZCL-only ... |
