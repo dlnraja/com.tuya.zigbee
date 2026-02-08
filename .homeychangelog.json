@@ -1,4 +1,7 @@
 {
+  "5.8.74": {
+    "en": "v5.8.74: CRITICAL TIME SYNC FIX + USB DONGLE TRIPLE — (1) FIX wrong epoch in TuyaTimeSyncManager.sendTimeSync(): was using Unix 1970 timestamps but ALL Tuya TS0601 devices expect Tuya 2000 epoch (seconds since 2000-01-01). Caused LCD climate monitors to show wrong time/date/GMT (~25 years off). Confirmed by Z2M issue #30054. (2) FIX syncDeviceTimeTuya() needsTuyaEpoch: was missing _TZE200_ prefix — only checked _TZE284/_TZE204. Now all _TZE* and TS0601 devices use correct epoch. (3) FIX climate_sensor needsTuyaEpoch getter: added _TZE200/_TZE204 prefixes. (4) FIX climate_sensor _sendForcedTimeSync() scoping bug: utcSeconds was block-scoped in Method 2 try block but referenced in Method 3, causing ReferenceError. (5) NEW usb_dongle_triple driver for _TZ3000_mw1pqqqt/TS0003 (3-port USB switch module). Removed from switch_3gang where it was misplaced."
+  },
   "5.8.73": {
     "en": "v5.8.73: PACKETNINJA SUB-DEVICE — NEW wall_switch_2gang_1way + wall_switch_3gang_1way drivers with sub-device support (each gang = separate Homey device card). Enhanced switch_2gang/3gang ZCL-only: per-EP configureReporting + initial state read."
   },
