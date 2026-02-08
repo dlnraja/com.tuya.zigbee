@@ -74,6 +74,8 @@
 | Version | Feature |
 |---------|---------|
 | **v5.8.64** | v5.8.64: FIX CURTAIN MOTOR CRASH (expected_cluster_id_number) — HybridCoverBa... |
+| **v5.8.65** | v5.8.65: 4x4_PETE DEVICE AUDIT — Fix ZCL-only _TZE200_3towulqd motion blocked (noIasMotion+no DP cluster), fix TZE284_IADRO9BF DP102 fading_time mapped as lux, upgrade radar settings to user-configurable for ZY-M100-S_2 and WZ-M100. |
+| **v5.8.64** | v5.8.64: FIX CURTAIN MOTOR CRASH (expected_cluster_id_number) — Remove async from HybridCoverBase.registerCapability. |
 | **v5.8.63** | v5.8.63: HOBEIAN DEVICE AUDIT (4x4_Pete) — Fix critical config map collisions... |
 | **v5.8.62** | 🔧 v5.8.62: COMPREHENSIVE APP AUDIT — (1) FIX DUPLICATE FINGERPRINTS: Removed... |
 | **v5.8.61** | 🔧 v5.8.61: (1) FIX HOBEIAN PIR SENSOR IN RADAR DRIVER (diag 25cbd6ae): HOBEI... |
