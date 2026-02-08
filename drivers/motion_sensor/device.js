@@ -169,10 +169,13 @@ class MotionSensorDevice extends HybridSensorBase {
   _getManufacturerProfile() {
     // v5.8.53: Use comprehensive fallback chain (matching BaseHybridDevice._detectProtocol)
     // Root cause (diag e2148e06): getData()?.manufacturerName was undefined for _TZE200_3towulqd
+    // v5.8.77: Added zclNode + cached sources — fixes DEFAULT profile on first init
     const mfr = this.getSetting?.('zb_manufacturer_name')
       || this.getSetting?.('zb_manufacturerName')
       || this.getStoreValue?.('manufacturerName')
       || this.getData()?.manufacturerName
+      || this.zclNode?.manufacturerName
+      || this._cachedManufacturerName
       || '';
     const mfrLower = mfr.toLowerCase();
     
