@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.75** | v5.8.75: PETER'S DEVICES FIX — (1) FIX HOBEIAN ZG-204ZM not recognized (showe... |
 | **v5.8.74** | v5.8.74: CRITICAL TIME SYNC FIX + USB DONGLE TRIPLE — (1) FIX wrong epoch in ... |
 | **v5.8.73** | v5.8.73: PACKETNINJA SUB-DEVICE — NEW wall_switch_2gang_1way + wall_switch_3g... |
 | **v5.8.72** | v5.8.72: FIX _TZE284_oitavov2 soil sensor install error (DutchDuke forum repo... |
@@ -82,7 +83,6 @@
 | **v5.8.68** | v5.8.68: FIX _TZ3000_h1ipgkwn + 6 BUGS — (1) Moved from switch_2gang to usb_d... |
 | **v5.8.67** | v5.8.67: BATTERY RECOGNITION FIX — (1) CRITICAL FIX: SmartBatteryManager _vol... |
 | **v5.8.66** | v5.8.66: BUTTON DRIVER ENHANCEMENT + CASE SENSITIVITY FIX — (1) FIX: button_w... |
-| **v5.8.65** | v5.8.65: 4x4_PETE DEVICE AUDIT — (1) CRITICAL FIX: _TZE200_3towulqd ZCL-only ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
