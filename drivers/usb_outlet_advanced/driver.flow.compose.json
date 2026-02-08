@@ -6,7 +6,11 @@
         "en": "Button pressed",
         "fr": "Bouton pressé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button pressed",
+        "fr": "Bouton pressé"
+      }
     },
     {
       "id": "usb_outlet_advanced_turned_on",
@@ -14,7 +18,11 @@
         "en": "Turned on",
         "fr": "Allumé"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé"
+      }
     },
     {
       "id": "usb_outlet_advanced_turned_off",
@@ -22,7 +30,11 @@
         "en": "Turned off",
         "fr": "Éteint"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint"
+      }
     },
     {
       "id": "usb_outlet_advanced_measure_power_changed",
@@ -41,7 +53,11 @@
           "example": 100
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed",
+        "fr": "Puissance changée"
+      }
     },
     {
       "id": "usb_outlet_advanced_measure_voltage_changed",
@@ -60,7 +76,11 @@
           "example": 230
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Voltage changed",
+        "fr": "Tension changée"
+      }
     },
     {
       "id": "usb_outlet_advanced_measure_current_changed",
@@ -79,7 +99,11 @@
           "example": 0.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Current changed",
+        "fr": "Courant changé"
+      }
     },
     {
       "id": "usb_outlet_advanced_meter_power_changed",
@@ -98,7 +122,11 @@
           "example": 1.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Energy consumption changed",
+        "fr": "Consommation énergétique changée"
+      }
     },
     {
       "id": "usb_outlet_advanced_power_changed",
@@ -108,7 +136,13 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
+      }
     }
   ],
   "conditions": [
@@ -132,7 +166,11 @@
         "en": "Turn on",
         "fr": "Allumer"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer"
+      }
     },
     {
       "id": "usb_outlet_advanced_turn_off",
@@ -140,7 +178,11 @@
         "en": "Turn off",
         "fr": "Éteindre"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Éteindre"
+      }
     },
     {
       "id": "usb_outlet_advanced_toggle",
@@ -148,7 +190,11 @@
         "en": "Toggle on or off",
         "fr": "Basculer"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle on or off",
+        "fr": "Basculer"
+      }
     }
   ]
 }

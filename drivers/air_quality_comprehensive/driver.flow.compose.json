@@ -17,7 +17,11 @@
           "example": 20.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      }
     },
     {
       "id": "air_quality_comprehensive_comprehensive_air_monitor_measure_humidity_changed",
@@ -36,7 +40,11 @@
           "example": 65
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      }
     },
     {
       "id": "air_quality_comprehensive_comprehensive_air_monitor_measure_battery_changed",
@@ -55,7 +63,11 @@
           "example": 75
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery level changed",
+        "fr": "Niveau batterie changé"
+      }
     },
     {
       "id": "air_quality_comprehensive_temp_changed",
@@ -65,7 +77,13 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
     },
     {
       "id": "air_quality_comprehensive_humidity_changed",
@@ -75,7 +93,13 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      }
     },
     {
       "id": "air_quality_comprehensive_battery_low",
@@ -85,7 +109,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ]
 }

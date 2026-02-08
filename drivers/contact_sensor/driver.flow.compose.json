@@ -37,7 +37,13 @@
         "fr": "Se déclenche quand l'aimant touche le capteur",
         "de": "Wird ausgelöst, wenn der Magnet den Sensor berührt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Door/window closed",
+        "nl": "Deur/raam gesloten",
+        "fr": "Porte/fenêtre fermée",
+        "de": "Tür/Fenster geschlossen"
+      }
     },
     {
       "id": "contact_sensor_tamper_true",
@@ -53,7 +59,13 @@
         "fr": "Se déclenche quand le capteur a été saboté",
         "de": "Wird ausgelöst, wenn der Sensor manipuliert wurde"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alert",
+        "nl": "Sabotage alarm",
+        "fr": "Alerte sabotage",
+        "de": "Manipulationsalarm"
+      }
     },
     {
       "id": "contact_sensor_battery_changed",
@@ -98,7 +110,13 @@
         "fr": "Se déclenche quand la batterie passe sous le seuil",
         "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
     },
     {
       "id": "contact_sensor_left_open",
@@ -143,7 +161,13 @@
         "nl": "Contact gewijzigd",
         "de": "Kontakt geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact changed",
+        "fr": "Contact changé",
+        "nl": "Contact gewijzigd",
+        "de": "Kontakt geändert"
+      }
     },
     {
       "id": "contact_sensor_tamper_alarm",
@@ -153,7 +177,13 @@
         "nl": "Sabotagealarm",
         "de": "Manipulationsalarm"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      }
     }
   ],
   "conditions": [
@@ -165,7 +195,13 @@
         "fr": "Porte/fenêtre !{{est|n'est pas}} ouverte",
         "de": "Tür/Fenster !{{ist|ist nicht}} offen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Door/window !{{is|is not}} open",
+        "nl": "Deur/raam !{{is|is niet}} open",
+        "fr": "Porte/fenêtre !{{est|n'est pas}} ouverte",
+        "de": "Tür/Fenster !{{ist|ist nicht}} offen"
+      }
     },
     {
       "id": "contact_sensor_battery_above",
@@ -202,7 +238,13 @@
         "nl": "Contact !{{is|is niet}} open",
         "de": "Kontakt !{{ist|ist nicht}} offen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact !{{is|is not}} open",
+        "fr": "Contact !{{est|n'est pas}} ouvert",
+        "nl": "Contact !{{is|is niet}} open",
+        "de": "Kontakt !{{ist|ist nicht}} offen"
+      }
     },
     {
       "id": "contact_sensor_tamper_active",
@@ -212,7 +254,13 @@
         "nl": "Sabotage !{{is|is niet}} actief",
         "de": "Manipulation !{{ist|ist nicht}} aktiv"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      }
     }
   ]
 }

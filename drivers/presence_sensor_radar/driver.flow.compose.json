@@ -37,7 +37,13 @@
         "fr": "Se déclenche quand aucune présence humaine n'est détectée pendant le délai configuré",
         "de": "Wird ausgelöst, wenn für die konfigurierte Zeitüberschreitung keine menschliche Anwesenheit erkannt wird"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Presence cleared",
+        "nl": "Aanwezigheid opgeheven",
+        "fr": "Présence terminée",
+        "de": "Anwesenheit beendet"
+      }
     },
     {
       "id": "presence_sensor_radar_motion_detected",
@@ -53,7 +59,13 @@
         "fr": "Se déclenche quand un mouvement actif est détecté (marche, mouvement)",
         "de": "Wird ausgelöst, wenn aktive Bewegung erkannt wird (Gehen, Bewegen)"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "nl": "Beweging gedetecteerd",
+        "fr": "Mouvement détecté",
+        "de": "Bewegung erkannt"
+      }
     },
     {
       "id": "presence_sensor_radar_illuminance_changed",
@@ -121,7 +133,13 @@
         "nl": "Lichtsterkte gewijzigd",
         "de": "Helligkeit geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Luminance changed",
+        "fr": "Luminance changée",
+        "nl": "Lichtsterkte gewijzigd",
+        "de": "Helligkeit geändert"
+      }
     },
     {
       "id": "presence_sensor_radar_battery_low",
@@ -131,7 +149,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [
@@ -143,7 +167,13 @@
         "fr": "Quelqu'un !{{est|n'est pas}} présent",
         "de": "Jemand !{{ist|ist nicht}} anwesend"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Someone !{{is|is not}} present",
+        "nl": "Iemand !{{is|is niet}} aanwezig",
+        "fr": "Quelqu'un !{{est|n'est pas}} présent",
+        "de": "Jemand !{{ist|ist nicht}} anwesend"
+      }
     },
     {
       "id": "presence_sensor_radar_illuminance_above",
@@ -207,7 +237,13 @@
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      }
     }
   ]
 }

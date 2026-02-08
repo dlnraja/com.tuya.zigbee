@@ -8,7 +8,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [],
@@ -47,7 +53,13 @@
         "nl": "Openen",
         "de": "Öffnen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Open",
+        "fr": "Ouvrir",
+        "nl": "Openen",
+        "de": "Öffnen"
+      }
     },
     {
       "id": "curtain_motor_tilt_close",
@@ -57,7 +69,13 @@
         "nl": "Sluiten",
         "de": "Schließen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Close",
+        "fr": "Fermer",
+        "nl": "Sluiten",
+        "de": "Schließen"
+      }
     },
     {
       "id": "curtain_motor_tilt_stop",
@@ -67,7 +85,13 @@
         "nl": "Stoppen",
         "de": "Stoppen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Stop",
+        "fr": "Arrêter",
+        "nl": "Stoppen",
+        "de": "Stoppen"
+      }
     }
   ]
 }

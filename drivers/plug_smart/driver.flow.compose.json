@@ -15,7 +15,13 @@
         "fr": "Se déclenche quand la prise est allumée",
         "de": "Wird ausgelöst, wenn der Stecker eingeschaltet wird"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "nl": "Ingeschakeld",
+        "fr": "Allumé",
+        "de": "Eingeschaltet"
+      }
     },
     {
       "id": "plug_smart_turned_off",
@@ -31,7 +37,13 @@
         "fr": "Se déclenche quand la prise est éteinte",
         "de": "Wird ausgelöst, wenn der Stecker ausgeschaltet wird"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "nl": "Uitgeschakeld",
+        "fr": "Éteint",
+        "de": "Ausgeschaltet"
+      }
     },
     {
       "id": "plug_smart_power_restored",
@@ -47,7 +59,13 @@
         "fr": "Se déclenche quand l'alimentation est rétablie après une coupure",
         "de": "Wird ausgelöst, wenn die Stromversorgung nach einem Ausfall wiederhergestellt wird"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power restored",
+        "nl": "Stroom hersteld",
+        "fr": "Alimentation rétablie",
+        "de": "Stromversorgung wiederhergestellt"
+      }
     },
     {
       "id": "plug_smart_power_changed",
@@ -92,7 +110,13 @@
           "example": 0.65
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power consumption changed",
+        "nl": "Stroomverbruik gewijzigd",
+        "fr": "Consommation changée",
+        "de": "Stromverbrauch geändert"
+      }
     },
     {
       "id": "plug_smart_power_threshold",
@@ -139,7 +163,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ],
   "conditions": [
@@ -151,7 +181,13 @@
         "fr": "Prise !{{est|n'est pas}} allumée",
         "de": "Stecker !{{ist|ist nicht}} an"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Plug !{{is|is not}} on",
+        "nl": "Stekker !{{is|is niet}} aan",
+        "fr": "Prise !{{est|n'est pas}} allumée",
+        "de": "Stecker !{{ist|ist nicht}} an"
+      }
     }
   ],
   "actions": [

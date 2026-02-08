@@ -10,11 +10,21 @@
         "it": "Pulsante SOS premuto",
         "es": "Botón SOS presionado"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "SOS Button pressed",
+        "fr": "Bouton SOS appuyé",
+        "nl": "SOS-knop ingedrukt",
+        "de": "SOS-Taste gedrückt",
+        "it": "Pulsante SOS premuto",
+        "es": "Botón SOS presionado"
+      }
     },
     {
       "id": "button_emergency_sos_measure_battery_changed",
-      "title": "Battery changed",
+      "title": {
+        "en": "Battery changed"
+      },
       "tokens": [
         {
           "name": "battery",
@@ -22,7 +32,10 @@
           "title": "Battery"
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery changed"
+      }
     },
     {
       "id": "button_emergency_sos_battery_low",
@@ -32,7 +45,13 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
     }
   ]
 }
