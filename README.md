@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.71** | v5.8.71: 3 DIAGNOSTIC FIXES — (1) FIX _TZE200_crq3r3la (JJ10 CK-BL702-MWS-01)... |
 | **v5.8.70** | v5.8.70: ANTI-FLOOD — Prevents excessive battery/temperature/humidity status ... |
 | **v5.8.69** | v5.8.69: COMPREHENSIVE BATTERY FIX — Fixes '?' battery display across ALL dev... |
 | **v5.8.68** | v5.8.68: FIX _TZ3000_h1ipgkwn + 6 BUGS — (1) Moved from switch_2gang to usb_d... |
@@ -82,7 +83,6 @@
 | **v5.8.64** | v5.8.64: FIX CURTAIN MOTOR CRASH (expected_cluster_id_number) — HybridCoverBa... |
 | **v5.8.63** | v5.8.63: HOBEIAN DEVICE AUDIT (4x4_Pete) — Fix critical config map collisions... |
 | **v5.8.62** | 🔧 v5.8.62: COMPREHENSIVE APP AUDIT — (1) FIX DUPLICATE FINGERPRINTS: Removed... |
-| **v5.8.61** | 🔧 v5.8.61: (1) FIX HOBEIAN PIR SENSOR IN RADAR DRIVER (diag 25cbd6ae): HOBEI... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
