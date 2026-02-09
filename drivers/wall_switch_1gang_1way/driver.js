@@ -34,6 +34,21 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
       this.error('Failed to register turned_off flow card:', err.message);
     }
 
+    try {
+      this.homey.flow.getDeviceTriggerCard('wall_switch_1gang_1way_gang1_scene');
+      this.log('✅ Flow card registered: wall_switch_1gang_1way_gang1_scene');
+    } catch (err) { this.error('Scene trigger failed:', err.message); }
+
+    try {
+      this.homey.flow.getActionCard('wall_switch_1gang_1way_set_scene_mode')
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.setSceneMode(args.mode);
+          return true;
+        });
+      this.log('✅ Flow card registered: wall_switch_1gang_1way_set_scene_mode');
+    } catch (err) { this.error('Scene mode action failed:', err.message); }
+
     // ACTION: Set backlight mode
     try {
       this.homey.flow.getActionCard('wall_switch_1gang_1way_set_backlight')
