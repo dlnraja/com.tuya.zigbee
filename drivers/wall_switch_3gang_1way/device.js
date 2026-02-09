@@ -6,6 +6,13 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
   get gangCount() { return 1; }
 
+  get sceneMode() { return this.getSetting('scene_mode') || 'auto'; }
+
+  async setSceneMode(mode) {
+    this.log(`[SCENE] Setting scene mode to: ${mode}`);
+    await this.setSettings({ scene_mode: mode }).catch(() => {});
+  }
+
   get dpMappings() {
     const { subDeviceId } = this.getData();
     const p = Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(this))).dpMappings || {};
@@ -35,10 +42,15 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
       this.log('[SUB-DEVICE] EP' + gn + ' attr=' + value + ' (' + (isPhys ? 'PHYSICAL' : 'APP') + ')');
       if (this._zclState.lastState !== value) {
         this._zclState.lastState = value;
-        this.setCapabilityValue('onoff', value).catch(() => {});
-        if (isPhys) {
+        const mode = this.sceneMode;
+        if (mode !== 'magic') this.setCapabilityValue('onoff', value).catch(() => {});
+        if (isPhys && (mode === 'auto' || mode === 'both')) {
           const fid = 'wall_switch_3gang_1way_turned_' + (value ? 'on' : 'off');
           this.homey.flow.getDeviceTriggerCard(fid).trigger(this, {}, {}).catch(() => {});
+        }
+        if (isPhys && (mode === 'magic' || mode === 'both')) {
+          this.homey.flow.getDeviceTriggerCard(`wall_switch_3gang_1way_gang${gn}_scene`)
+            .trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
         }
       }
     });
@@ -77,7 +89,23 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
     this._appCommandTimeout = { gang1: null };
     await super.onNodeInit({ zclNode });
     await this.initPhysicalButtonDetection(zclNode);
+    this._setupGang1SceneDetection(zclNode);
     this.log('[PRIMARY] Gang 1 ready');
+  }
+
+  _setupGang1SceneDetection(zclNode) {
+    const onOff = zclNode?.endpoints?.[1]?.clusters?.onOff;
+    if (!onOff) return;
+    onOff.on('attr.onOff', (value) => {
+      const mode = this.sceneMode;
+      const isPhys = !this._appCommandPending?.gang1;
+      if (isPhys && (mode === 'magic' || mode === 'both')) {
+        this.homey.flow.getDeviceTriggerCard('wall_switch_3gang_1way_gang1_scene')
+          .trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+        this.log(`[SCENE] Gang 1 scene: ${value ? 'on' : 'off'}`);
+      }
+    });
+    this.log(`[SCENE] Gang 1 scene detection setup, mode=${this.sceneMode}`);
   }
 
   onDeleted() {

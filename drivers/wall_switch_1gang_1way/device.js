@@ -23,6 +23,13 @@ class WallSwitch1Gang1WayDevice extends PhysicalButtonMixin(HybridSwitchBase) {
 
   get gangCount() { return 1; }
 
+  get sceneMode() { return this.getSetting('scene_mode') || 'auto'; }
+
+  async setSceneMode(mode) {
+    this.log(`[SCENE] Setting scene mode to: ${mode}`);
+    await this.setSettings({ scene_mode: mode }).catch(() => {});
+  }
+
   /**
    * EXTEND parent dpMappings - Keep it simple for 1-gang switches
    */
@@ -86,12 +93,14 @@ class WallSwitch1Gang1WayDevice extends PhysicalButtonMixin(HybridSwitchBase) {
           if (this._lastOnoffState !== state) {
             this._lastOnoffState = state;
 
-            if (isPhysicalPress) {
-              const flowCardId = state ? 'wall_switch_1gang_1way_turned_on' : 'wall_switch_1gang_1way_turned_off';
-              this.log(`[PHYSICAL-BUTTON] Triggering: ${flowCardId}`);
-              this.homey.flow.getDeviceTriggerCard(flowCardId)
-                .trigger(this, {}, {})
-                .catch(err => this.error(`Flow trigger failed: ${err.message}`));
+            const mode = this.sceneMode;
+            if (isPhysicalPress && (mode === 'auto' || mode === 'both')) {
+              const fid = state ? 'wall_switch_1gang_1way_turned_on' : 'wall_switch_1gang_1way_turned_off';
+              this.homey.flow.getDeviceTriggerCard(fid).trigger(this, {}, {}).catch(() => {});
+            }
+            if (isPhysicalPress && (mode === 'magic' || mode === 'both')) {
+              this.homey.flow.getDeviceTriggerCard('wall_switch_1gang_1way_gang1_scene')
+                .trigger(this, { action: state ? 'on' : 'off' }, {}).catch(() => {});
             }
           }
         }
