@@ -1,5 +1,5 @@
-# User Device Expectations (v5.8.88)
-**Updated**: 2026-02-09 (v5.8.88 full GH+JB cross-ref, 0/12 replied)
+# User Device Expectations (v5.8.91)
+**Updated**: 2026-02-10 (v5.8.91 ZCL metering fix + forum analysis)
 
 ## URGENT: 4x4_Pete (5-day deadline)
 - **HOBEIAN ZG-204ZM**: HYBRID (0xEF00+IAS+ZCL lux+battery) → HOBEIAN_ZG204ZM config ✅
@@ -93,8 +93,12 @@
 | Patrick_Van_Deursen | Device not recognized v5.8.4 (p68) | FIXED v5.8.11 — RGB dep |
 | GH#127 Tauno20 | _TZE204_e5m9c5hl WZ-M100 wrong caps | FP COLLISION FIX v5.8.89 — removed from ceiling+mmwave |
 | GH#126 azkysmarthome | _TZ3000_zutizvyk TS0203 contact | ✅ PRESENT in contact_sensor |
-| GH#124 Lalla80111 | _TZ3000_b4awzgct TS0041 no flow | ✅ PRESENT — needs re-pair + diag on v5.8.89 |
-| GH#98 DVMasters | _TZ3000_famkxci2 TS0043 button no flow | ✅ PRESENT in button_wireless_3 — awaiting re-pair+diag |
+| GH#124 Lalla80111 | _TZ3000_b4awzgct TS0041 no flow | ACTIVE — re-paired v5.8.77 still broken. E000 on EP1 exists. NEEDS DIAG with button presses |
+| GH#98 DVMasters | _TZ3000_famkxci2 TS0043 button no flow | awaiting re-pair+diag |
+| GH#110 Pollepa | TS011F metering empty | FIXED v5.8.91 — added rmsVoltage+rmsCurrent reporting + initial reads |
+| Tividor (p70) | button_wireless_4 double-press | re-pair v5.8.90 |
+| Piotr_Cetler (p70) | TS0002 2-gang both toggle | update+re-pair v5.8.90 |
+| Lasse_K (p70) | Water sensor no alarm v5.8.88 | re-pair + diag needed |
 
 ---
 
@@ -382,6 +386,10 @@ _TZ3000_hafsqare, _TZ3000_e98krvvk, _TZ3000_iedbgyxt
 
 | Version | Build | Key Fix |
 |---------|-------|---------|
+| 5.8.91 | — | GH#110 ZCL metering fix: rmsVoltage+rmsCurrent configureReporting + initial readAttributes |
+| 5.8.90 | — | BSEED FP additions: _TZ3000_qkixdnon→switch_3gang, _TZ3000_blhvsaqf→switch_1gang |
+| 5.8.89 | — | GH#127 FP collision fix: _TZE204_e5m9c5hl removed from ceiling+mmwave |
+| 5.8.88 | — | Curtain fix + IAS fix + Lasse_K + GH#121 FP fix + JB#1345 collision |
 | 5.8.87 | — | TS0726 virtual button fix + Soil sensor temp ÷10 + noIasMotion bug + GH#127 |
 | 5.8.86 | — | CRASH FIX (10 dup caps) + BUTTON SPAM + RADAR ghost temp/hum |
 | 5.8.31 | — | Defensive helpers + smart divisor + E000 BoundCluster binding |
