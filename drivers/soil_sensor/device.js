@@ -49,7 +49,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
 
   /** Capabilities for soil sensors - v5.5.330 Hobeian */
   get sensorCapabilities() {
-    return ['measure_soil_moisture', 'measure_temperature', 'measure_humidity', 'measure_battery', 'alarm_water'];
+    return ['measure_humidity.soil', 'measure_temperature', 'measure_humidity', 'measure_battery', 'alarm_water'];
   }
 
   /**
@@ -93,7 +93,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
       // ═══════════════════════════════════════════════════════════════════
       // SOIL MOISTURE - DP3 (main sensor value) - Hobeian ZG-303Z
       // ═══════════════════════════════════════════════════════════════════
-      3: { capability: 'measure_soil_moisture', divisor: 1 },
+      3: { capability: 'measure_humidity.soil', divisor: 1 },
 
       // ═══════════════════════════════════════════════════════════════════
       // TEMPERATURE - DP5 (soil/ambient temperature)
@@ -146,8 +146,8 @@ class SoilSensorDevice extends TuyaHybridDevice {
       // ═══════════════════════════════════════════════════════════════════
       1: { capability: 'measure_temperature', divisor: 10 },  // Some variants
       4: { capability: 'measure_battery', divisor: 1 },       // Alternative battery DP
-      101: { capability: 'measure_soil_moisture', divisor: 1 },    // Alternative moisture
-      105: { capability: 'measure_soil_moisture', divisor: 1, transform: (v) => v > 100 ? v / 10 : v },
+      101: { capability: 'measure_humidity.soil', divisor: 1 },    // Alternative moisture
+      105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? v / 10 : v },
     };
   }
 
@@ -291,7 +291,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
    * v5.5.334: Update water alarm based on current moisture and threshold (Hobeian PR#6)
    */
   _updateWaterAlarm() {
-    const moisture = this.getCapabilityValue('measure_soil_moisture');
+    const moisture = this.getCapabilityValue('measure_humidity.soil');
     if (moisture !== null && this.hasCapability('alarm_water')) {
       const alarm = moisture < this._soilWarningThreshold;
       this.setCapabilityValue('alarm_water', alarm).catch(() => { });
@@ -353,7 +353,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
     // ═══════════════════════════════════════════════════════════════════════
 
     if (dp === 3) {
-      // DP3 = SOIL MOISTURE (measure_soil_moisture)
+      // DP3 = SOIL MOISTURE (measure_humidity.soil)
       this.log('[SOIL] 🌱 ════════════════════════════════════════════════════');
       this.log(`[SOIL] 🌱 SOIL MOISTURE DP3 = ${parsedValue}%`);
 
@@ -378,12 +378,12 @@ class SoilSensorDevice extends TuyaHybridDevice {
       this.log('[SOIL] 🌱 ════════════════════════════════════════════════════');
 
       // DIRECT SET - bypass parent handler potential issues
-      if (this.hasCapability('measure_soil_moisture')) {
-        this.setCapabilityValue('measure_soil_moisture', parseFloat(validatedMoisture))
-          .then(() => this.log(`[SOIL] ✅ measure_soil_moisture SET to ${validatedMoisture}%`))
-          .catch(err => this.log(`[SOIL] ❌ measure_soil_moisture FAILED: ${err.message}`));
+      if (this.hasCapability('measure_humidity.soil')) {
+        this.setCapabilityValue('measure_humidity.soil', parseFloat(validatedMoisture))
+          .then(() => this.log(`[SOIL] ✅ measure_humidity.soil SET to ${validatedMoisture}%`))
+          .catch(err => this.log(`[SOIL] ❌ measure_humidity.soil FAILED: ${err.message}`));
       } else if (this.hasCapability('measure_humidity')) {
-        // Fallback for devices without measure_soil_moisture
+        // Fallback for devices without measure_humidity.soil
         this.setCapabilityValue('measure_humidity', parseFloat(validatedMoisture))
           .then(() => this.log(`[SOIL] ✅ measure_humidity SET to ${validatedMoisture}%`))
           .catch(err => this.log(`[SOIL] ❌ measure_humidity FAILED: ${err.message}`));
@@ -489,8 +489,8 @@ class SoilSensorDevice extends TuyaHybridDevice {
     await super.setCapabilityValue(capability, value);
 
     // Trigger flows based on capability changes
-    // v5.5.337: Handle both measure_soil_moisture and measure_humidity
-    if (capability === 'measure_soil_moisture' || capability === 'measure_humidity') {
+    // v5.5.337: Handle both measure_humidity.soil and measure_humidity
+    if (capability === 'measure_humidity.soil' || capability === 'measure_humidity') {
       this._triggerMoistureFlows(value);
     } else if (capability === 'measure_temperature') {
       this._triggerTemperatureFlows(value);
