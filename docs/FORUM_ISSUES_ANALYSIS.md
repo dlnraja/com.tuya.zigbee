@@ -1,6 +1,6 @@
 # Forum Issues Analysis - Comprehensive Report
 
-**Analysis Date**: 2026-02-02 (Updated v5.8.1)
+**Analysis Date**: 2026-02-09 (Updated v5.8.88 — see MASTER_REFERENCE.md)
 **Forum Thread**: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352
 **Messages Analyzed**: ~1160-1180 (latest)
 **Git Commits Analyzed**: 2025-01-15 to present
@@ -343,4 +343,9 @@
 **Pattern Detected**: Multiple issues appeared after v5.5.750-759 releases
 **Hypothesis**: Rapid updates may have introduced regressions in core base classes
 **Recommendation**: Comprehensive base class audit before next release
+
+## Forum p68-70 Scan (2026-02-09)
+RESOLVED: DutchDuke soil v5.8.87, Lasse_K water/contact v5.8.85+88, blutch32 v5.8.85, Hartmut v5.8.87, FinnKje v5.8.40, Karsten v5.8.38, Patrick v5.8.11, Tbao v5.8.41, FrankP IR in code.
+PERSISTENT: Freddyboy TS0044 + Cam TS0041 — need diag on v5.8.88.
+NEEDS INFO: Ricardo_Lenior presence wrong caps — needs fingerprint.
 

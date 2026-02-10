@@ -57,6 +57,18 @@
         "nl": "Helderheid gewijzigd",
         "de": "Helligkeit geändert"
       }
+    },
+    {
+      "id": "switch_dimmer_1gang_brightness_increased",
+      "title": { "en": "Brightness increased (physical)" },
+      "tokens": [{ "name": "brightness", "type": "number", "title": { "en": "Brightness" }, "example": 0.75 }],
+      "args": []
+    },
+    {
+      "id": "switch_dimmer_1gang_brightness_decreased",
+      "title": { "en": "Brightness decreased (physical)" },
+      "tokens": [{ "name": "brightness", "type": "number", "title": { "en": "Brightness" }, "example": 0.25 }],
+      "args": []
     }
   ],
   "conditions": [

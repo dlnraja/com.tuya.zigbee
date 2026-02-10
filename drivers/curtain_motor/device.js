@@ -100,11 +100,16 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
       }
     }
 
-    // v5.5.322: Setup Tuya DP listener for all DPs
-    await this._setupTuyaDPListener();
-
-    // v5.5.321: Apply calibration settings on init
-    await this._applyCalibrationSettings();
+    // v5.8.79: Only setup Tuya DP listener and calibration for Tuya DP devices
+    // Root cause (Tbao TS130F): _setupTuyaDPListener on ZCL devices registers
+    // unused listeners and _applyCalibrationSettings sends Tuya DP commands that
+    // fail silently on ZCL devices (TS130F uses windowCovering cluster 258)
+    if (protocol !== 'ZCL') {
+      await this._setupTuyaDPListener();
+      await this._applyCalibrationSettings();
+    } else {
+      this.log('[CURTAIN] ℹ️ ZCL device - skipping Tuya DP listener and calibration');
+    }
 
     // v5.6.0: Initialize bidirectional button support
     await this.initPhysicalButtonDetection(zclNode);

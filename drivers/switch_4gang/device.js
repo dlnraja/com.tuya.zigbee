@@ -144,8 +144,20 @@ class Switch4GangDevice extends BaseClass {
       this.registerCapabilityListener(capName, async (value) => {
         this.log(`[BSEED-4G] EP${gangNum} app cmd: ${value}`);
         
-        // v5.5.999: Use PhysicalButtonMixin markAppCommand for state tracking (packetninja pattern)
-        this.markAppCommand?.(gangNum, value);
+        // v5.8.87: Hartmut fix — TS0726 firmware toggles ALL gangs on single EP cmd
+        // Mark ALL gangs as app-commanded to prevent false physical detection
+        if (this.requiresPerEndpointControl?.()) {
+          this.markAppCommandAll?.();
+          for (const g of [1, 2, 3, 4]) {
+            this._zclState.pending[g] = true;
+            clearTimeout(this._zclState.timeout[g]);
+            this._zclState.timeout[g] = setTimeout(() => {
+              this._zclState.pending[g] = false;
+            }, 2000);
+          }
+        } else {
+          this.markAppCommand?.(gangNum, value);
+        }
         
         this._zclState.pending[gangNum] = true;
         clearTimeout(this._zclState.timeout[gangNum]);
@@ -412,19 +424,27 @@ class Switch4GangDevice extends BaseClass {
       }
     }
 
-    // v5.8.58: Configure attribute reporting for EP1-4 (Hartmut_Dunker fix)
-    try {
-      const cfg = [1, 2, 3, 4].map(ep => ({
-        endpointId: ep, cluster: 'onOff',
-        attributeName: 'onOff', minInterval: 0,
-        maxInterval: 300, minChange: 1
-      }));
-      await this.configureAttributeReporting(cfg).catch(e =>
-        this.log(`[BSEED-4G] Report cfg warn: ${e.message}`)
-      );
-      this.log('[BSEED-4G] ✅ Attr reporting configured EP1-4');
-    } catch (err) {
-      this.log(`[BSEED-4G] ⚠️ Report cfg error: ${err.message}`);
+    // v5.8.79: Configure attribute reporting DIRECTLY on cluster instances
+    // Root cause (Hartmut_Dunker): this.configureAttributeReporting() is a Homey SDK3
+    // high-level method that resolves clusters from endpoint descriptors. If Homey interview
+    // missed onOff on EP2-4, the SDK3 lookup fails with status NOT_FOUND.
+    // Fix: call configureReporting() on each cluster instance directly.
+    for (const epNum of [1, 2, 3, 4]) {
+      try {
+        const ep = zclNode?.endpoints?.[epNum];
+        if (!ep?.clusters) continue;
+        const onOff = ep.clusters.onOff || ep.clusters.genOnOff || ep.clusters[6] || ep.clusters['6'];
+        if (onOff && typeof onOff.configureReporting === 'function') {
+          await onOff.configureReporting({
+            onOff: { minInterval: 0, maxInterval: 300, minChange: 1 }
+          }).catch(e => this.log(`[BSEED-4G] EP${epNum} report cfg warn: ${e.message}`));
+          this.log(`[BSEED-4G] EP${epNum} ✅ Attr reporting configured directly`);
+        } else {
+          this.log(`[BSEED-4G] EP${epNum} ⚠️ No configureReporting method on cluster`);
+        }
+      } catch (err) {
+        this.log(`[BSEED-4G] EP${epNum} ⚠️ Report cfg error: ${err.message}`);
+      }
     }
   }
 
