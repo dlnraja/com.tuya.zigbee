@@ -1,12 +1,12 @@
 # Universal Tuya Zigbee - Project Status
-> Last Updated: February 2, 2026 | Version: 5.8.1
+> Last Updated: February 9, 2026 | Version: 5.8.88
 
 ## 📊 Project Statistics
 
 | Metric | Value |
 |--------|-------|
-| Total Drivers | 109+ |
-| Manufacturer Fingerprints | 193,000+ |
+| Total Drivers | 111+ |
+| Manufacturer Fingerprints | 134,519 |
 | Supported Device Types | 70+ |
 | Base Classes | 8 |
 
