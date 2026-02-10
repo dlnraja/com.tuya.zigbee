@@ -1,4 +1,7 @@
 {
+  "5.8.92": {
+    "en": "v5.8.92: BUTTON WAKE-UP FIX + TS0726 INDIVIDUAL GANG FIX — (1) Battery button double-press fix (diag 4a3b2feb): ButtonDevice.js attr.onOff guards discarded first event from sleeping devices because lastTime=0 made timeSinceLastEvent enormous. Fix: if >30s after init, treat as wake-up button press instead of ignoring. Affects all battery button remotes (TS0041/TS0042/TS0043/TS0044/TS004F). (2) TS0726 virtual toggle all gangs fix (diag be0e798a Hartmut_Dunker): _TZ3002_pzao9ls1 firmware broadcasts ZCL commands to ALL endpoints. Fix: prefer Tuya DP commands (DP1-4) for individual gang control. Physical buttons already worked correctly."
+  },
   "5.8.91": {
     "en": "v5.8.91: ZCL METERING FIX (GH#110 Pollepa) — TS011F energy plugs (_TZ3210_w0qqde0g etc) had empty voltage/current values. Root cause: configureReporting only configured activePower but not rmsVoltage or rmsCurrent. Fix: (1) Added rmsVoltage+rmsCurrent to configureReporting in HybridPlugBase. (2) Added initial readAttributes for all energy values on startup so capabilities show values immediately. Affects all ZCL_ELECTRICAL plug types. Users: remove+re-pair after update."
   },
