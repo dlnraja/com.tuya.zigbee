@@ -133,9 +133,11 @@ class Button4GangDevice extends ButtonDevice {
     this.log(`[BUTTON4-MODE] 📋 Needs mode switching: ${needsModeSwitching}`);
 
     if (!needsModeSwitching) {
-      this.log('[BUTTON4-MODE] ℹ️ Device is TS0044-type, attempting mode switch anyway (no LED confirmation)');
-      // v5.7.17: Try mode switch anyway for devices without LED indicator
-      // Some TS0044 devices are stuck in dimmer mode after pairing
+      this.log('[BUTTON4-MODE] ℹ️ Device is TS0044-type, skipping mode switch (attribute 0x8004 not supported)');
+      // v5.8.85: TS0044 does NOT support attribute 0x8004 - writing it causes
+      // repeated "writeAttributes failed: 32772 is not a valid attribute of onOff" errors
+      this._modeVerified = true; // Prevent _scheduleModeMaintenance from retrying
+      return;
     }
 
     try {
