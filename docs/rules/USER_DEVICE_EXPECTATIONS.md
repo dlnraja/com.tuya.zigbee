@@ -98,7 +98,10 @@
 | GH#110 Pollepa | TS011F metering empty | FIXED v5.8.91 — added rmsVoltage+rmsCurrent reporting + initial reads |
 | Tividor (p70) | button_wireless_4 double-press | re-pair v5.8.90 |
 | Piotr_Cetler (p70) | TS0002 2-gang both toggle | update+re-pair v5.8.90 |
-| Lasse_K (p70) | Water sensor no alarm v5.8.88 | re-pair + diag needed |
+| Lasse_K (p70) | Water sensor: v5.8.43 OK→v5.8.65-78 unknown→v5.8.88 OK no alarm | re-pair v5.8.91+diag |
+| Cam | _TZ3000_5bpeda8u TS0041 no presses v5.8.66 diag 4b2150c6 | ACTIVE — update v5.8.91 re-pair+diag |
+| JJ10 | Presence v5.8.66 motion 1sec lux broken diag 17c03ea7 | FIXED v5.8.77 motion/lux/distance OK |
+| Freddyboy | Moes TS0044 physical no flow v5.8.65 diag 34b9565c | ACTIVE — update v5.8.91 re-pair+diag |
 
 ---
 
