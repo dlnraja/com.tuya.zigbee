@@ -67984,14 +67984,14 @@
       },
       "class": "sensor",
       "capabilities": [
-        "measure_soil_moisture",
+        "measure_humidity.soil",
         "measure_temperature",
         "measure_humidity",
         "measure_battery",
         "alarm_water"
       ],
       "capabilitiesOptions": {
-        "measure_soil_moisture": {
+        "measure_humidity.soil": {
           "title": {
             "en": "Soil Moisture",
             "fr": "Humidité du Sol",
