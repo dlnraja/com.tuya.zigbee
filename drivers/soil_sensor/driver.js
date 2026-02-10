@@ -60,8 +60,8 @@ class SoilSensorDriver extends ZigBeeDriver {
           this.log('[FLOW] Condition: Device not available');
           return false;
         }
-        const moisture = args.device.getCapabilityValue('measure_humidity') ?? 
-                         args.device.getCapabilityValue('measure_soil_moisture');
+        const moisture = args.device.getCapabilityValue('measure_humidity.soil') ?? 
+                         args.device.getCapabilityValue('measure_humidity');
         return moisture !== null && moisture < args.moisture;
       });
     }
@@ -73,8 +73,8 @@ class SoilSensorDriver extends ZigBeeDriver {
           this.log('[FLOW] Condition: Device not available');
           return false;
         }
-        const moisture = args.device.getCapabilityValue('measure_humidity') ?? 
-                         args.device.getCapabilityValue('measure_soil_moisture');
+        const moisture = args.device.getCapabilityValue('measure_humidity.soil') ?? 
+                         args.device.getCapabilityValue('measure_humidity');
         return moisture !== null && moisture > args.moisture;
       });
     }
