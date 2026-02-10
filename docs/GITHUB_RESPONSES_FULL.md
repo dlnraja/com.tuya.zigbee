@@ -122,11 +122,13 @@
 ## blutch32 (p68)
 > _TZ3000_996rpfy6 TS0203 alarm broken. Double-inversion bug fixed v5.8.85. Update+re-pair.
 
-## Freddyboy PERSISTENT
-> TS0044 physical broken v5.5.714→v5.8.65. All layers in code. NEEDS fresh diag on v5.8.88.
+## Freddyboy PERSISTENT (UPDATED Feb 7)
+> v5.8.65: Still no flow with physical buttons. Diag 34b9565c. E000+scenes+multistate all in code.
+> Same pattern as all button devices. NEEDS update to v5.8.91, re-pair, press all buttons, submit diag.
 
-## Cam PERSISTENT
-> TS0041 _TZ3000_5bpeda8u no presses. BoundCluster+E000 added. NEEDS fresh diag on v5.8.88.
+## Cam PERSISTENT (UPDATED Feb 7)
+> v5.8.66: Still no button presses. Diag 4b2150c6. BoundCluster+E000 on EP1 exists since v5.8.66.
+> Same pattern as Lalla80111 (GH#124). NEEDS update to v5.8.91, re-pair, press buttons, submit diag.
 
 ## Ricardo_Lenior (p60)
 > 230v presence wrong caps (battery/mmwave on mains). NEEDS fingerprint. Only has diag 77C4CE16.
@@ -142,6 +144,14 @@
 
 ## GH#110 Pollepa — TS011F metering FIXED v5.8.91
 > ZCL plug _TZ3210_w0qqde0g. Root cause: configureReporting only had activePower, missing rmsVoltage+rmsCurrent. Also no initial readAttributes. Fixed in HybridPlugBase. Update v5.8.91, remove+re-pair.
+
+## FORUM: JJ10 — Presence sensor v5.8.66→v5.8.77
+> v5.8.66: Found correctly, motion 1sec only, lux/distance not updating, battery '?'. Diag 17c03ea7.
+> v5.8.77: Motion/lux/distance WORKING. Temp/hum show but don't change — likely device doesn't support them or ghost caps. No action needed unless user reports again.
+
+## FORUM: Lasse_K — Water sensor TIMELINE
+> v5.8.43: Installed as water sensor ✅ → v5.8.65/66/78: Regressed to unknown ❌ → v5.8.88: Installs OK, no alarm.
+> IAS enrollment improved v5.8.88. Needs re-pair on v5.8.91 + diag if no alarm.
 
 ## FORUM p70: Piotr_Cetler — TS0002 2-gang both toggle
 > _TZ3000_cauq1okq in switch_2gang. Update+re-pair v5.8.90.
