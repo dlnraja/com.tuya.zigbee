@@ -1,4 +1,4 @@
-# GH Full Responses — dlnraja v5.8.88 (12 open, 0 replied)
+# GH Full Responses — dlnraja v5.8.91 (12 open, 0 replied)
 
 ## #127 Tauno20 — WZ-M100 FIXED v5.8.87+88
 > Fingerprint added v5.8.87. Ghost temp/hum fixed v5.8.88. Update, remove+re-pair. Send diag if still issues.
@@ -6,8 +6,11 @@
 ## #126 azkysmarthome — TS0203 SUPPORTED
 > `_TZ3000_zutizvyk` in contact_sensor. Update, remove+re-pair.
 
-## #124 Lalla80111 — uppercase FIXED
-> Both `_TZ3000_fllyghyj` (climate_sensor) and `_TZ3000_b4awzgct` (button_wireless_1) present with correct case. Update+re-pair.
+## #124 Lalla80111 — TS0041 button NO FLOW (ACTIVE — v5.8.77)
+> **Feb 4**: v5.8.12 fixed climate_sensor. Button_wireless_1 (`_TZ3000_b4awzgct` TS0041) doesn't trigger flows. Interview: 4 EPs, cluster 57344 on EP1.
+> **Feb 8**: Re-paired on v5.8.77, buttons pair OK but NO flow works (single or double press).
+> **Analysis**: E000 BoundCluster on EP1 exists since v5.8.66. Device needs diagnostic with button presses to see which detection layer fails.
+> **Action**: Ask user to update to v5.8.90, re-pair, press buttons, then submit diagnostic report within 60s.
 
 ## #123 auto — 46 fps ALL PRESENT
 > All 46 verified. No action needed.
@@ -134,8 +137,17 @@
 ## GH#126 azkysmarthome — _TZ3000_zutizvyk TS0203
 > Already in contact_sensor. Update to v5.8.88, remove+re-pair.
 
-## GH#124 Lalla80111 — _TZ3000_b4awzgct TS0041 button no flow
-> FP present. EP1 has E000 cluster. Update to v5.8.89, remove+re-pair. If still broken, send diagnostic code.
+## GH#124 Lalla80111 — _TZ3000_b4awzgct TS0041 button NO FLOW (ACTIVE)
+> STILL BROKEN v5.8.77. E000 on EP1 exists. Need diag with button presses. Update v5.8.90, re-pair, press buttons, submit diag.
+
+## GH#110 Pollepa — TS011F metering FIXED v5.8.91
+> ZCL plug _TZ3210_w0qqde0g. Root cause: configureReporting only had activePower, missing rmsVoltage+rmsCurrent. Also no initial readAttributes. Fixed in HybridPlugBase. Update v5.8.91, remove+re-pair.
+
+## FORUM p70: Piotr_Cetler — TS0002 2-gang both toggle
+> _TZ3000_cauq1okq in switch_2gang. Update+re-pair v5.8.90.
+
+## FORUM p70: Lasse_K — Water sensor no alarm v5.8.88
+> IAS enrollment improved. Needs re-pair + diag.
 
 ## GH#123 — 46 fingerprints community sync
 > All 46 verified present. Can be closed.
