@@ -109,6 +109,26 @@
           ]
         }
       ]
+    },
+    {
+      "type": "group",
+      "label": { "en": "Scene Mode", "nl": "Scènemodus" },
+      "children": [
+        {
+          "id": "scene_mode", "type": "dropdown",
+          "label": { "en": "Scene Mode", "nl": "Scènemodus" },
+          "hint": {
+            "en": "Auto: Normal switch + physical button flows. Magic: Scene only (load unchanged). Both: Load + scene flows.",
+            "nl": "Auto: Normaal + fysieke knop flows. Magic: Alleen scène (belasting ongewijzigd). Both: Belasting + scène flows."
+          },
+          "value": "auto",
+          "values": [
+            { "id": "auto", "label": { "en": "Auto (Normal + flows)" } },
+            { "id": "magic", "label": { "en": "Magic (Scene only)" } },
+            { "id": "both", "label": { "en": "Both (Load + scene)" } }
+          ]
+        }
+      ]
     }
   ]
 }

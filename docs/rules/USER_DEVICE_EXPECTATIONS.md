@@ -1,12 +1,34 @@
-# User Device Expectations (v5.8.31)
-**Updated**: 2026-02-06 03:50 UTC+1 (full scan pages 1-68 + code audit + commit cross-ref + GitHub/forum sync + driver enrichments)
+# User Device Expectations (v5.8.88)
+**Updated**: 2026-02-09 (v5.8.88 interview analysis fixes)
 
 ## URGENT: 4x4_Pete (5-day deadline)
-- **Devices**: ZG-204ZM (battery radar), ZG-204ZL (PIR)
-- **Configs**: ZG_204ZM_BATTERY, ZG_204ZL_PIR
-- **Fingerprints**: _TZE200_2aaelwxk, _TZE204_2aaelwxk, _TZE200_kb5noeto
-- **Fix v5.8.30**: Enhanced passive DP listeners + raw frame parsing
-- **Status**: PUBLISHED, awaiting diagnostic
+- **HOBEIAN ZG-204ZM**: HYBRID (0xEF00+IAS+ZCL lux+battery) → HOBEIAN_ZG204ZM config ✅
+- **_TZE200_3towulqd TS0601**: ZCL-ONLY (NO 0xEF00!) IAS notEnrolled → 3 bugs fixed v5.8.88
+- **Status**: v5.8.88 READY — awaiting publish + diagnostic
+
+## FIXED v5.8.88
+| User | Issue | Fix |
+|------|-------|-----|
+| 4x4_Pete | _setupIASZoneListeners ignoring noIasMotion override | Instance-level _noIasMotionOverride flag |
+| 4x4_Pete | ZCL-only _TZE200_3towulqd gets wrong noTemp/noHum | Force noTemp=noHum=true when no 0xEF00 |
+| 4x4_Pete | IAS notEnrolled on sleepy battery device | Opportunistic enrollment on wake |
+| Lasse_K | Water sensor + contact sensor = unknown | HOBEIAN missing from fingerprints |
+
+## FIXED v5.8.87
+| User | Issue | Fix |
+|------|-------|-----|
+| Hartmut_Dunker | TS0726 virtual button toggles ALL 4 gangs | perEndpointControl + markAppCommandAll |
+| DutchDuke | Soil sensor temp ÷10 wrong (_TZE284_oitavov2) | Skip division for raw °C manufacturer |
+| 4x4_Pete | noIasMotion skipped IAS for ZCL-only radars | Check _hasTuyaDPCluster before skip |
+| GH#127 | _TZE204_e5m9c5hl WZ-M100 not supported | Added to presence_sensor_radar |
+
+## FIXED v5.8.86
+| User | Issue | Fix |
+|------|-------|-----|
+| JJ10 | Radar ghost temp/humidity tiles | ZCL listeners respect noTemp/noHum |
+| (crash) | 10 duplicate custom capabilities | Removed from app.json |
+| (spam) | TS0044 0x8004 writeAttributes | Skip for non-TS004F |
+| GH#126 | Corrupt zutizvykts0203 entries | Removed from contact_sensor |
 
 ## FIXED v5.8.27-v5.8.30
 | User | Issue | Fix |
@@ -46,14 +68,21 @@
 ## PENDING
 | User | Device | Status |
 |------|--------|--------|
-| DutchDuke | _TZE284_oitavov2 soil | IN CODE, temp ÷100 fix added to EnrichedDPMappings |
-| 4x4_Pete | ZG-204ZL PIR | AWAITING DIAG |
-| JJ10 | Presence TS0601 | NEEDS DIAG |
+| DutchDuke | _TZE284_oitavov2 soil | FIXED v5.8.87 — temp ÷10 + raw °C skip |
+| 4x4_Pete | _TZE200_3towulqd ZCL-only PIR | FIXED v5.8.88 — IAS override + enrollment |
+| 4x4_Pete | HOBEIAN ZG-204ZM hybrid radar | VERIFIED v5.8.88 — config correct |
+| JJ10 | Presence TS0601 | FIXED v5.8.86 |
 | Pollepa | Energy Meter TS0601 | NEEDS DIAG |
 | Ricardo_Lenior | Presence 230v wrong options (p60) | NEEDS CONFIG |
 | Mike_Van_A | ZG-103ZL vibration (p60) | IN CODE |
 | Mitch_Vallinga | _TZ3000_5iixzdo7 TS130F (p60) | IN CODE |
 | LukasT | _TZE284_1wnh8bqp temp/hum (p58) | IN CODE |
+| Lasse_K | Water sensor unknown v5.8.65 (p69) | FIXED v5.8.88 — HOBEIAN added to fingerprints |
+| Cam | TS0041 _TZ3000_5bpeda8u no presses v5.8.66 (p69) | NEEDS DIAG |
+| Freddyboy | TS0044 _TZ3000_zgyzgdua physical no flow v5.8.65 (p69) | NEEDS DIAG |
+| Tbao | _TZ3000_bs93npae TS130F wrong caps (p69) | IN CODE, fixed v5.8.41 |
+| FrankP | _TZ3290_7v1k4vufotpowp9z TS1201 IR (p69) | IN CODE ✅ |
+| GH#123 | 46 new fingerprints community sync | ALL 46 PRESENT ✅ |
 
 ---
 
@@ -76,7 +105,7 @@
 - ZG_204ZM_BATTERY: DP1=motion, DP4=battery, DP9=lux, noTemp, noHum
 - ZG_204ZL_PIR: DP1=motion, DP4=battery, DP12=lux, noTemp, noHum
 - Known fingerprints: `_TZE200_2aaelwxk`, `_TZE204_2aaelwxk`, `_TZE200_kb5noeto`
-- ⚠️ Fingerprint conflict: `_TZE200_3towulqd` in both ZG_204ZV and ZG_204ZL
+- ⚠️ `_TZE200_3towulqd` ZCL-only variant: NO 0xEF00, IAS notEnrolled → fixed v5.8.88
 
 ### Peter_van_Werkhoven (20+ fixes, v5.5.841-v5.7.45)
 **Device**: HOBEIAN ZG-204ZV (5-in-1 Multisensor)
@@ -94,7 +123,7 @@
 
 ### Lasse_K (8+ fixes, v5.5.645-v5.8.28)
 **Devices**: Water leak, Contact, HOBEIAN ZG-222Z, ZG-102Z
-**Status**: STABLE since v5.8.28
+**Status**: FIXED v5.8.88 — HOBEIAN added to water_leak_sensor + contact_sensor fingerprints
 
 | Issue | Fix |
 |-------|-----|
@@ -104,19 +133,20 @@
 | User override | v5.5.973 XOR |
 | Water inactivated | v5.8.28 IAS enroll |
 
-### Hartmut_Dunker (BSEED 4-gang, v5.5.718-v5.8.27)
+### Hartmut_Dunker (BSEED 4-gang, v5.5.718-v5.8.87)
 **Device**: `_TZ3002_pzao9ls1` TS0726
-**Status**: STABLE since v5.8.27
+**Status**: FIXED v5.8.87 — virtual button no longer toggles all gangs
 
 | Issue | Fix |
 |-------|-----|
 | Bidirectional broken | v5.5.718 bindings |
 | Unknown device (case) | v5.8.21+v5.8.25 |
 | EP2/3/4 not responding | v5.8.27 DP fallback |
+| Virtual button toggles ALL 4 gangs | v5.8.87 perEndpointControl + markAppCommandAll |
 
 ### Freddyboy (Moes 4-button)
 **Device**: `_TZ3000_zgyzgdua` TS0044
-**Status**: STABLE since v5.8.24
+**Status**: STILL BROKEN v5.8.65 — physical keys no flow triggers, NEEDS DIAG
 
 | Issue | Fix |
 |-------|-----|
@@ -159,11 +189,11 @@
 **Fix**: v5.7.8 power meter, v5.8.22+v5.8.28 IAS contact
 **Status**: FIXED (contact + power), soil = ZG-303Z correctly in soil_sensor
 
-### Cam (Smart button, p45-68)
+### Cam (Smart button, p45-69)
 **Devices**: `_TZ3000_5bpeda8u` TS0041
 **Issues**: No GUI button, no flows, no battery, not registering presses
-**Fix**: v5.8.24 TuyaE000 cluster
-**Status**: FIXED
+**Fix**: v5.8.24 TuyaE000 + v5.8.66 E000 BoundCluster
+**Status**: STILL BROKEN v5.8.66 — NEEDS DIAG logs to determine which detection layer fails
 
 ### tlink (Presence sensor, p45)
 **Device**: `_TZE204_ztqnh5cg` TS0601
@@ -244,12 +274,20 @@ _TZ3000_hafsqare, _TZ3000_e98krvvk, _TZ3000_iedbgyxt
 
 | # | Author | Description | Status |
 |---|--------|-------------|--------|
-| #122 | elgato7 | Longsam curtain _TZE204_xu4a5rhj | FIXED v5.5.998 |
-| #121 | DAVID9SE | _TZ3000_an5rjiwd button | Moved to 1-button |
+| #127 | Tauno20 | WZ-M100 radar | FIXED v5.8.87 ✅ |
+| #126 | azkysmarthome | TS0203 contact | ✅ PRESENT |
+| #124 | Lalla80111 | uppercase TZ | ✅ PRESENT |
+| #123 | auto | 46 fingerprints | ✅ ALL PRESENT |
+| #122 | elgato7 | Longsam curtain | FIXED v5.8.88 ✅ |
+| #121 | DAVID9SE | button delayed | ✅ moved v5.8.84 |
+| #114 | Lalla80111 | TS0041 button | ✅ PRESENT |
+| #113 | Ernst02507 | TS004F knob | ✅ PRESENT |
+| #110 | Pollepa | TS011F plug | ✅ PRESENT |
+| #98 | DVMasters | TS0043 LoraTap | ✅ PRESENT |
+| #97 | NoroddH | TS0225 radar | ✅ PRESENT |
 | #120 | packetninja | Physical button flow cards | MERGED |
 | #119 | packetninja | HybridSwitchBase refactor | MERGED |
 | #118 | packetninja | BSEED switch fingerprints PR | MERGED v5.5.913 |
-| #113 | Ernst02507 | TS004F smart knob ghost triggers | FIXED v5.6.0 |
 | #111 | packetninja | Tuya/Bseed dimmer driver | MERGED |
 
 ---
@@ -324,6 +362,8 @@ _TZ3000_hafsqare, _TZ3000_e98krvvk, _TZ3000_iedbgyxt
 
 | Version | Build | Key Fix |
 |---------|-------|---------|
+| 5.8.87 | — | TS0726 virtual button fix + Soil sensor temp ÷10 + noIasMotion bug + GH#127 |
+| 5.8.86 | — | CRASH FIX (10 dup caps) + BUTTON SPAM + RADAR ghost temp/hum |
 | 5.8.31 | — | Defensive helpers + smart divisor + E000 BoundCluster binding |
 | 5.8.30 | 1847 | Battery sensor passive DP listeners (4x4_Pete) |
 | 5.8.29 | 1846 | Permissive temp overwrite + null presence inversion |

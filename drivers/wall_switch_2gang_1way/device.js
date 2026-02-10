@@ -4,7 +4,16 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
-  get gangCount() { return 1; }
+  get gangCount() { return 1; } // Each sub-device controls 1 gang
+
+  get sceneMode() {
+    return this.getSetting('scene_mode') || 'auto';
+  }
+
+  async setSceneMode(mode) {
+    this.log(`[SCENE] Setting scene mode to: ${mode}`);
+    await this.setSettings({ scene_mode: mode }).catch(() => {});
+  }
 
   get dpMappings() {
     const { subDeviceId } = this.getData();
@@ -31,14 +40,39 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
 
     onOff.on('attr.onOff', (value) => {
       const isPhys = !this._zclState.pending;
-      this.log('[SUB-DEVICE] EP2 attr=' + value + ' (' + (isPhys ? 'PHYSICAL' : 'APP') + ')');
+      const mode = this.sceneMode;
+      this.log(`[SUB-DEVICE] EP2 attr=${value} (${isPhys ? 'PHYSICAL' : 'APP'}) mode=${mode}`);
       if (this._zclState.lastState !== value) {
         this._zclState.lastState = value;
-        this.setCapabilityValue('onoff', value).catch(() => {});
-        if (isPhys) {
-          const fid = 'wall_switch_2gang_1way_turned_' + (value ? 'on' : 'off');
-          this.homey.flow.getDeviceTriggerCard(fid).trigger(this, {}, {}).catch(() => {});
+        // In magic mode, don't update capability (load stays unchanged)
+        if (mode !== 'magic') {
+          this.setCapabilityValue('onoff', value).catch(() => {});
         }
+        if (isPhys) {
+          // Auto/Both: trigger physical button flow
+          if (mode === 'auto' || mode === 'both') {
+            const fid = 'wall_switch_2gang_1way_turned_' + (value ? 'on' : 'off');
+            this.homey.flow.getDeviceTriggerCard(fid).trigger(this, {}, {}).catch(() => {});
+          }
+          // Magic/Both: trigger scene flow
+          if (mode === 'magic' || mode === 'both') {
+            const action = value ? 'on' : 'off';
+            this.homey.flow.getDeviceTriggerCard('wall_switch_2gang_1way_gang2_scene')
+              .trigger(this, { action }, {}).catch(() => {});
+            this.log(`[SCENE] Gang 2 scene: ${action}`);
+          }
+          // Magic: revert load to previous state
+          if (mode === 'magic' && this._zclState._prevState !== null && this._zclState._prevState !== undefined) {
+            setTimeout(async () => {
+              try {
+                await onOff[this._zclState._prevState ? 'setOn' : 'setOff']();
+                this.log(`[SCENE-MAGIC] Reverted gang 2 to ${this._zclState._prevState}`);
+              } catch (e) { this.log(`[SCENE-MAGIC] Revert failed: ${e.message}`); }
+            }, 100);
+          }
+        }
+        // Track previous state for magic mode revert
+        this._zclState._prevState = this._zclState.lastState;
       }
     });
 
@@ -75,7 +109,45 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
     this._appCommandTimeout = { gang1: null };
     await super.onNodeInit({ zclNode });
     await this.initPhysicalButtonDetection(zclNode);
+    this._setupGang1SceneDetection(zclNode);
     this.log('[PRIMARY] Gang 1 ready');
+  }
+
+  /**
+   * Scene mode detection for Gang 1 (primary device)
+   * Hooks into EP1 onOff reports to trigger scene flows
+   */
+  _setupGang1SceneDetection(zclNode) {
+    const ep1 = zclNode?.endpoints?.[1];
+    const onOff = ep1?.clusters?.onOff;
+    if (!onOff) return;
+
+    // Wrap the existing attr listener to add scene mode support
+    const origHandler = this._handleGang1SceneState?.bind(this);
+    onOff.on('attr.onOff', (value) => {
+      const mode = this.sceneMode;
+      const isPhys = !this._appCommandPending?.gang1;
+      if (isPhys && (mode === 'magic' || mode === 'both')) {
+        const action = value ? 'on' : 'off';
+        this.homey.flow.getDeviceTriggerCard('wall_switch_2gang_1way_gang1_scene')
+          .trigger(this, { action }, {}).catch(() => {});
+        this.log(`[SCENE] Gang 1 scene: ${action}`);
+      }
+      // In magic mode, revert the load state
+      if (isPhys && mode === 'magic') {
+        const currentState = this._lastOnoffState?.gang1;
+        if (currentState !== null && currentState !== undefined) {
+          // Revert to previous state after short delay
+          setTimeout(async () => {
+            try {
+              await onOff[currentState ? 'setOn' : 'setOff']();
+              this.log(`[SCENE-MAGIC] Reverted gang 1 to ${currentState}`);
+            } catch (e) { this.log(`[SCENE-MAGIC] Revert failed: ${e.message}`); }
+          }, 100);
+        }
+      }
+    });
+    this.log(`[SCENE] Gang 1 scene detection setup, mode=${this.sceneMode}`);
   }
 
   onDeleted() {

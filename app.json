@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.8.78",
+  "version": "5.8.87",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -16070,6 +16070,52 @@
         }
       },
       {
+        "id": "switch_dimmer_1gang_brightness_increased",
+        "title": {
+          "en": "Brightness increased (physical)"
+        },
+        "tokens": [
+          {
+            "name": "brightness",
+            "type": "number",
+            "title": {
+              "en": "Brightness"
+            },
+            "example": 0.75
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_dimmer_1gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_dimmer_1gang_brightness_decreased",
+        "title": {
+          "en": "Brightness decreased (physical)"
+        },
+        "tokens": [
+          {
+            "name": "brightness",
+            "type": "number",
+            "title": {
+              "en": "Brightness"
+            },
+            "example": 0.25
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_dimmer_1gang"
+          }
+        ]
+      },
+      {
         "id": "switch_plug_1_turned_on",
         "title": {
           "en": "Turned on",
@@ -21816,10 +21862,40 @@
         }
       },
       {
+        "id": "wall_switch_1gang_1way_gang1_scene",
+        "title": {
+          "en": "Scene triggered",
+          "nl": "Scène geactiveerd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_1gang_1way"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "action",
+            "type": "string",
+            "title": {
+              "en": "Action"
+            },
+            "example": {
+              "en": "on"
+            }
+          }
+        ]
+      },
+      {
         "id": "wall_switch_2gang_1way_turned_on",
         "title": {
           "en": "Turned on (physical button)",
           "nl": "Aangezet (fysieke knop)"
+        },
+        "hint": {
+          "en": "Triggered when turned on by physical button",
+          "nl": "Geactiveerd bij fysieke knop"
         },
         "args": [
           {
@@ -21835,11 +21911,77 @@
           "en": "Turned off (physical button)",
           "nl": "Uitgezet (fysieke knop)"
         },
+        "hint": {
+          "en": "Triggered when turned off by physical button",
+          "nl": "Geactiveerd bij fysieke knop"
+        },
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_gang1_scene",
+        "title": {
+          "en": "Gang 1 scene triggered",
+          "nl": "Gang 1 scène geactiveerd"
+        },
+        "hint": {
+          "en": "Triggered when gang 1 button pressed in scene/magic mode",
+          "nl": "Gang 1 knop in scène/magic modus"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "action",
+            "type": "string",
+            "title": {
+              "en": "Action",
+              "nl": "Actie"
+            },
+            "example": {
+              "en": "on"
+            }
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_gang2_scene",
+        "title": {
+          "en": "Gang 2 scene triggered",
+          "nl": "Gang 2 scène geactiveerd"
+        },
+        "hint": {
+          "en": "Triggered when gang 2 button pressed in scene/magic mode",
+          "nl": "Gang 2 knop in scène/magic modus"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "action",
+            "type": "string",
+            "title": {
+              "en": "Action",
+              "nl": "Actie"
+            },
+            "example": {
+              "en": "on"
+            }
           }
         ]
       },
@@ -21868,6 +22010,84 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_gang1_scene",
+        "title": {
+          "en": "Gang 1 scene triggered",
+          "nl": "Gang 1 scène geactiveerd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "action",
+            "type": "string",
+            "title": {
+              "en": "Action"
+            },
+            "example": {
+              "en": "on"
+            }
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_gang2_scene",
+        "title": {
+          "en": "Gang 2 scene triggered",
+          "nl": "Gang 2 scène geactiveerd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "action",
+            "type": "string",
+            "title": {
+              "en": "Action"
+            },
+            "example": {
+              "en": "on"
+            }
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_gang3_scene",
+        "title": {
+          "en": "Gang 3 scene triggered",
+          "nl": "Gang 3 scène geactiveerd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "action",
+            "type": "string",
+            "title": {
+              "en": "Action"
+            },
+            "example": {
+              "en": "on"
+            }
           }
         ]
       },
@@ -27590,6 +27810,20 @@
           "nl": "Is !{{aan|uit}}",
           "de": "Ist !{{ein|aus}}"
         }
+      },
+      {
+        "id": "wall_switch_2gang_1way_is_on",
+        "title": {
+          "en": "Is !{{on|off}}",
+          "nl": "Is !{{aan|uit}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
       },
       {
         "id": "water_leak_sensor_water_detected",
@@ -40117,14 +40351,61 @@
         }
       },
       {
+        "id": "wall_switch_1gang_1way_set_scene_mode",
+        "title": {
+          "en": "Set scene mode",
+          "nl": "Stel scènemodus in"
+        },
+        "titleFormatted": {
+          "en": "[[device]] set scene mode to [[mode]]",
+          "nl": "[[device]] stel scènemodus in op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_1gang_1way"
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_1gang_1way"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto (Normal + flows)"
+                }
+              },
+              {
+                "id": "magic",
+                "label": {
+                  "en": "Magic (Scene only)"
+                }
+              },
+              {
+                "id": "both",
+                "label": {
+                  "en": "Both (Load + scene)"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "wall_switch_2gang_1way_set_backlight",
         "title": {
           "en": "Set LED indicator mode",
           "nl": "Stel LED-indicator modus in"
         },
         "titleFormatted": {
-          "en": "[[device]] set LED indicator to [[mode]]",
-          "nl": "[[device]] stel LED-indicator in op [[mode]]"
+          "en": "[[device]] set LED to [[mode]]",
+          "nl": "[[device]] stel LED in op [[mode]]"
         },
         "args": [
           {
@@ -40163,6 +40444,98 @@
                 }
               }
             ]
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_set_scene_mode",
+        "title": {
+          "en": "Set scene mode",
+          "nl": "Stel scènemodus in"
+        },
+        "titleFormatted": {
+          "en": "[[device]] set scene mode to [[mode]]",
+          "nl": "[[device]] stel scènemodus in op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto (Normal + flows)",
+                  "nl": "Auto (Normaal + flows)"
+                }
+              },
+              {
+                "id": "magic",
+                "label": {
+                  "en": "Magic (Scene only)",
+                  "nl": "Magic (Alleen scène)"
+                }
+              },
+              {
+                "id": "both",
+                "label": {
+                  "en": "Both (Load + scene)",
+                  "nl": "Both (Belasting + scène)"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_turn_on",
+        "title": {
+          "en": "Turn on",
+          "nl": "Aanzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_turn_off",
+        "title": {
+          "en": "Turn off",
+          "nl": "Uitzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_toggle",
+        "title": {
+          "en": "Toggle",
+          "nl": "Wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
           }
         ]
       },
@@ -40210,6 +40583,56 @@
                 "label": {
                   "en": "On when Switch OFF",
                   "nl": "Aan bij UIT"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_set_scene_mode",
+        "title": {
+          "en": "Set scene mode",
+          "nl": "Stel scènemodus in"
+        },
+        "titleFormatted": {
+          "en": "[[device]] set scene mode to [[mode]]",
+          "nl": "[[device]] stel scènemodus in op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto (Normal + flows)",
+                  "nl": "Auto (Normaal + flows)"
+                }
+              },
+              {
+                "id": "magic",
+                "label": {
+                  "en": "Magic (Scene only)",
+                  "nl": "Magic (Alleen scène)"
+                }
+              },
+              {
+                "id": "both",
+                "label": {
+                  "en": "Both (Load + scene)",
+                  "nl": "Both (Belasting + scène)"
                 }
               }
             ]
@@ -44099,8 +44522,6 @@
           "_TZ3000_abrsvsou",
           "_tz3000_adndolvx",
           "_TZ3000_adndolvx",
-          "_tz3000_an5rjiwd",
-          "_TZ3000_an5rjiwd",
           "_tz3000_arfwfgre",
           "_TZ3000_arfwfgre",
           "_tz3000_axpdxqgu",
@@ -45420,6 +45841,8 @@
           "_TYZB01_QM6DJPTA",
           "_tz3000_11pg3ima",
           "_TZ3000_11pg3ima",
+          "_tz3000_an5rjiwd",
+          "_TZ3000_an5rjiwd",
           "_tz3000_402vrq2i",
           "_TZ3000_402vrq2i",
           "_tz3000_4fjiwweb",
@@ -50194,8 +50617,6 @@
           "_TZ3000_zgrffiwg",
           "_tz3000_zutizvyk",
           "_TZ3000_zutizvyk",
-          "_tz3000_zutizvykts0203",
-          "_TZ3000_zutizvykts0203",
           "_tz3210_0jxeoadc",
           "_TZ3210_0jxeoadc",
           "_tz3210_bfwvfyx1",
@@ -63777,6 +64198,8 @@
           "_TZE204_kyhbrfyl",
           "_tze204_laokfqwu",
           "_TZE204_laokfqwu",
+          "_tze204_e5m9c5hl",
+          "_TZE204_e5m9c5hl",
           "_tze204_lyetpprm",
           "_TZE204_lyetpprm",
           "_tze204_mrf6vtua",
@@ -69483,8 +69906,6 @@
           "_TZ3000_b9vanmes",
           "_tz3000_bi6lpsew",
           "_TZ3000_bi6lpsew",
-          "_tz3000_bseed",
-          "_TZ3000_bseed",
           "_tz3000_bvrlqyj7",
           "_TZ3000_bvrlqyj7",
           "_tz3000_c3g3pupu",
@@ -78038,10 +78459,23 @@
         "manufacturerName": [
           "_tz3000_l9brjwau",
           "_TZ3000_l9brjwau",
+          "_tz3000_blhvsaqf",
+          "_TZ3000_blhvsaqf",
+          "_tz3000_ysdv91bk",
+          "_TZ3000_ysdv91bk",
+          "_tz3000_hafsqare",
+          "_TZ3000_hafsqare",
+          "_tz3000_e98krvvk",
+          "_TZ3000_e98krvvk",
+          "_tz3000_iedbgyxt",
+          "_TZ3000_iedbgyxt",
           "_tz3000_xk5udnd6",
-          "_TZ3000_xk5udnd6"
+          "_TZ3000_xk5udnd6",
+          "_tz3000_bseed",
+          "_TZ3000_bseed"
         ],
         "productId": [
+          "TS0002",
           "TS0012"
         ],
         "endpoints": {
@@ -78077,16 +78511,20 @@
         {
           "type": "group",
           "label": {
-            "en": "LED Indicator",
-            "nl": "LED-indicator"
+            "en": "💡 LED Indicator",
+            "nl": "💡 LED-indicator"
           },
           "children": [
             {
               "id": "backlight_mode",
               "type": "dropdown",
               "label": {
-                "en": "LED Mode",
-                "nl": "LED Modus"
+                "en": "LED Indicator Mode",
+                "nl": "LED-indicator Modus"
+              },
+              "hint": {
+                "en": "Control when the LED indicator is lit",
+                "nl": "Bepaal wanneer de LED brandt"
               },
               "value": "normal",
               "values": [
@@ -78109,6 +78547,51 @@
                   "label": {
                     "en": "On when Switch OFF",
                     "nl": "Aan bij UIT"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "🎭 Scene Mode",
+            "nl": "🎭 Scènemodus"
+          },
+          "children": [
+            {
+              "id": "scene_mode",
+              "type": "dropdown",
+              "label": {
+                "en": "Scene Mode",
+                "nl": "Scènemodus"
+              },
+              "hint": {
+                "en": "Auto: normal switch + triggers flows. Magic: button triggers scene flows only (load unchanged). Both: controls load AND triggers scene flows.",
+                "nl": "Auto: normale schakelaar + flows. Magic: knop triggert alleen scèneflows (belasting ongewijzigd). Both: bestuurt belasting EN triggert scèneflows."
+              },
+              "value": "auto",
+              "values": [
+                {
+                  "id": "auto",
+                  "label": {
+                    "en": "Auto (Normal + flows)",
+                    "nl": "Auto (Normaal + flows)"
+                  }
+                },
+                {
+                  "id": "magic",
+                  "label": {
+                    "en": "Magic (Scene only)",
+                    "nl": "Magic (Alleen scène)"
+                  }
+                },
+                {
+                  "id": "both",
+                  "label": {
+                    "en": "Both (Load + scene)",
+                    "nl": "Both (Belasting + scène)"
                   }
                 }
               ]
@@ -78256,6 +78739,51 @@
                   "label": {
                     "en": "On when Switch OFF",
                     "nl": "Aan bij UIT"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Scene Mode",
+            "nl": "Scènemodus"
+          },
+          "children": [
+            {
+              "id": "scene_mode",
+              "type": "dropdown",
+              "label": {
+                "en": "Scene Mode",
+                "nl": "Scènemodus"
+              },
+              "hint": {
+                "en": "Auto: Normal switch + physical button flows. Magic: Scene only (load unchanged). Both: Load + scene flows.",
+                "nl": "Auto: Normaal + fysieke knop flows. Magic: Alleen scène (belasting ongewijzigd). Both: Belasting + scène flows."
+              },
+              "value": "auto",
+              "values": [
+                {
+                  "id": "auto",
+                  "label": {
+                    "en": "Auto (Normal + flows)",
+                    "nl": "Auto (Normaal + flows)"
+                  }
+                },
+                {
+                  "id": "magic",
+                  "label": {
+                    "en": "Magic (Scene only)",
+                    "nl": "Magic (Alleen scène)"
+                  }
+                },
+                {
+                  "id": "both",
+                  "label": {
+                    "en": "Both (Load + scene)",
+                    "nl": "Both (Belasting + scène)"
                   }
                 }
               ]
@@ -79468,42 +79996,6 @@
     }
   ],
   "capabilities": {
-    "alarm_co": {
-      "type": "boolean",
-      "title": {
-        "en": "CO Alarm"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor"
-    },
-    "alarm_gas": {
-      "type": "boolean",
-      "title": {
-        "en": "Gas Alarm"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor"
-    },
-    "alarm_rain": {
-      "type": "boolean",
-      "title": {
-        "en": "Rain Detected"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor"
-    },
-    "alarm_tank_empty": {
-      "type": "boolean",
-      "title": {
-        "en": "Tank Empty"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor"
-    },
     "alarm_tank_full": {
       "type": "boolean",
       "title": {
@@ -79705,46 +80197,6 @@
       "uiComponent": "button",
       "insights": false
     },
-    "measure_aqi": {
-      "type": "number",
-      "title": {
-        "en": "Air Quality Index"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "insights": true
-    },
-    "measure_co2": {
-      "type": "number",
-      "title": {
-        "en": "CO2"
-      },
-      "units": {
-        "en": "ppm"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "insights": true
-    },
-    "measure_distance": {
-      "type": "number",
-      "title": {
-        "en": "Distance",
-        "fr": "Distance"
-      },
-      "units": {
-        "en": "m"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "insights": true,
-      "min": 0,
-      "max": 100,
-      "decimals": 2
-    },
     "measure_formaldehyde": {
       "type": "number",
       "title": {
@@ -79752,45 +80204,6 @@
       },
       "units": {
         "en": "mg/m³"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "insights": true
-    },
-    "measure_pm25": {
-      "type": "number",
-      "title": {
-        "en": "PM2.5"
-      },
-      "units": {
-        "en": "µg/m³"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "insights": true
-    },
-    "measure_pressure": {
-      "type": "number",
-      "title": {
-        "en": "Pressure"
-      },
-      "units": {
-        "en": "hPa"
-      },
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "insights": true
-    },
-    "measure_rain": {
-      "type": "number",
-      "title": {
-        "en": "Rain"
-      },
-      "units": {
-        "en": "mm"
       },
       "getable": true,
       "setable": false,
