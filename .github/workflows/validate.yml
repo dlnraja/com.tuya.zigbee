@@ -1,5 +1,5 @@
 # Universal Tuya Zigbee - Validation Workflow
-# v5.8.12 - Updated 2026-02-04
+# v5.8.88 - Updated 2026-02-10
 # Runs on pull requests to validate app before merge
 
 name: 🔍 Validate Homey App
@@ -32,7 +32,7 @@ concurrency:
 
 env:
   NODE_VERSION: "20"
-  APP_VERSION: "5.8.12"
+  # APP_VERSION read dynamically from app.json
 
 jobs:
   validate:
