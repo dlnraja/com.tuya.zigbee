@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.89** | v5.8.89: GH#127 FP COLLISION FIX — Tauno20 _TZE204_e5m9c5hl (WZ-M100) was in ... |
 | **v5.8.88** | v5.8.88: CURTAIN FIX + RADAR IAS FIX + LASSE_K FIX + GH#121 FP FIX — (1) GH#1... |
 | **v5.8.87** | v5.8.87: TS0726 4-GANG FIX + SOIL SENSOR FIX + RADAR FIX — (1) FIX TS0726 vir... |
 | **v5.8.86** | v5.8.86: CRITICAL CRASH FIX + BUTTON SPAM FIX + RADAR SENSOR FIX — (1) CRASH ... |
@@ -82,7 +83,6 @@
 | **v5.8.82** | v5.8.82: PACKETNINJA AUDIT + ENRICHMENT — (1) NEW switch_dimmer_1gang device.... |
 | **v5.8.81** | v5.8.81: WALL SWITCH 2-GANG BSEED + SCENE MODE — (1) Moved BSEED fingerprints... |
 | **v5.8.80** | v5.8.80: DEVICE PROFILE REGISTRY — New centralized per-fingerprint configurat... |
-| **v5.8.79** | v5.8.79: FORUM FIXES — (1) FIX TS0726 4-gang EP2-4 not responding (Hartmut_Du... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
