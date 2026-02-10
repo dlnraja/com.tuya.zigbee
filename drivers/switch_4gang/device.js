@@ -33,6 +33,12 @@ const ZCL_ONLY_MANUFACTURERS_4G = [
   '_TZ3000_ysdv91bk', '_TZ3000_hafsqare', '_TZ3000_e98krvvk'
 ];
 
+// v5.8.92: Manufacturers whose firmware broadcasts ZCL to ALL endpoints
+// Fix: Use Tuya DP commands (DP1-4) for individual gang control
+const FORCE_TUYA_DP_4G = [
+  '_TZ3002_pzao9ls1'  // BSEED TS0726 — Hartmut_Dunker diag be0e798a
+];
+
 const BaseClass = typeof HybridSwitchBase === 'function' 
   ? PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) 
   : HybridSwitchBase;
@@ -165,16 +171,19 @@ class Switch4GangDevice extends BaseClass {
           this._zclState.pending[gangNum] = false;
         }, 2000);
         
-        // v5.5.999: Try to get cluster at command time (may be available now even if wasn't at init)
-        const onOff = getOnOffCluster(gangNum);
-        if (onOff && typeof onOff[value ? 'setOn' : 'setOff'] === 'function') {
-          await onOff[value ? 'setOn' : 'setOff']();
-          this.log(`[BSEED-4G] EP${gangNum} ZCL ${value ? 'ON' : 'OFF'} sent`);
+        // v5.8.92: Prefer Tuya DP for FW that broadcasts ZCL to all EPs
+        const mfr = this.getSetting?.('zb_manufacturer_name') || '';
+        const useDP = FORCE_TUYA_DP_4G.some(m => includesCI([m], mfr));
+        if (useDP && await sendTuyaDPBool(gangNum, value)) {
+          this.log(`[BSEED-4G] EP${gangNum} DP${gangNum}=${value} (ZCL broadcast fix)`);
         } else {
-          // v5.8.26: Tuya DP fallback for EP2-4 without onOff clusters
-          const dpSent = await sendTuyaDPBool(gangNum, value);
-          if (!dpSent) {
-            this.log(`[BSEED-4G] EP${gangNum} no ZCL onOff and no Tuya DP - command not sent`);
+          const onOff = getOnOffCluster(gangNum);
+          if (onOff && typeof onOff[value ? 'setOn' : 'setOff'] === 'function') {
+            await onOff[value ? 'setOn' : 'setOff']();
+            this.log(`[BSEED-4G] EP${gangNum} ZCL ${value ? 'ON' : 'OFF'} sent`);
+          } else {
+            const dpSent = await sendTuyaDPBool(gangNum, value);
+            if (!dpSent) this.log(`[BSEED-4G] EP${gangNum} no ZCL/DP - not sent`);
           }
         }
         return true;
