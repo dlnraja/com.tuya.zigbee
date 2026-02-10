@@ -1,4 +1,10 @@
 {
+  "5.8.91": {
+    "en": "v5.8.91: ZCL METERING FIX (GH#110 Pollepa) — TS011F energy plugs (_TZ3210_w0qqde0g etc) had empty voltage/current values. Root cause: configureReporting only configured activePower but not rmsVoltage or rmsCurrent. Fix: (1) Added rmsVoltage+rmsCurrent to configureReporting in HybridPlugBase. (2) Added initial readAttributes for all energy values on startup so capabilities show values immediately. Affects all ZCL_ELECTRICAL plug types. Users: remove+re-pair after update."
+  },
+  "5.8.90": {
+    "en": "v5.8.90: BSEED FINGERPRINT ADDITIONS — (1) JB#1338 pjmpessers: Added _TZ3000_qkixdnon to switch_3gang (BSEED 3-gang wall switch with neutral, was in device.js ZCL-only list but missing from driver.compose.json fingerprints). (2) JB#1339 pjmpessers: Added _TZ3000_blhvsaqf to switch_1gang (BSEED 1-gang wall switch with neutral). Both devices use ZCL-only protocol (no Tuya DP). Users: remove+re-pair after update."
+  },
   "5.8.89": {
     "en": "v5.8.89: GH#127 FP COLLISION FIX — Tauno20 _TZE204_e5m9c5hl (WZ-M100) was in 3 drivers causing wrong driver match. Removed from presence_sensor_ceiling and motion_sensor_radar_mmwave — now only in presence_sensor_radar which has correct WZ_M100 config (noTemp, noHum, DP1=presence, DP9=distance, DP103=lux). Users must remove+re-pair after update."
   },
