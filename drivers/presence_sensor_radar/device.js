@@ -1070,6 +1070,7 @@ const SENSOR_CONFIGS = {
   'WZ_M100': {
     sensors: [
       '_TZE204_laokfqwu',
+      '_TZE204_e5m9c5hl',  // v5.8.87: GH#127 Tauno20 - WZ-M100 variant (Z2M confirmed)
     ],
     battery: false,
     mainsPowered: true,
@@ -2215,6 +2216,14 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       this.log('[RADAR] ⚠️ v5.8.65: Device has NO Tuya DP cluster (61184) but noIasMotion=true!');
       this.log('[RADAR] ⚠️ Overriding noIasMotion→false: IAS Zone is the ONLY motion source');
       config.noIasMotion = false;
+      this._noIasMotionOverride = false;
+      // v5.8.88: ZCL-only variant has no temp/humidity clusters either (Pete's _TZE200_3towulqd interview)
+      // Override multisensor config flags to prevent orphan capabilities
+      if (!config.noTemperature || !config.noHumidity) {
+        this.log('[RADAR] ⚠️ v5.8.88: ZCL-only device → forcing noTemperature=true, noHumidity=true');
+        config.noTemperature = true;
+        config.noHumidity = true;
+      }
     }
     this.log(`[RADAR] Tuya DP cluster: ${this._hasTuyaDPCluster ? 'YES' : 'NO (ZCL-only)'}`);
 
@@ -2515,8 +2524,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           const sn = typeof status === 'number' ? status : (status?.data?.[0] || 0);
           const raw = (sn & 0x03) !== 0;
           const motion = this._applyPresenceInversion(raw);
-          if (permissiveConfig.noIasMotion) {
-            this.log(`[RADAR] IAS zoneStatus: ${sn} → SKIPPED (noIasMotion)`);
+          if (permissiveConfig.noIasMotion && this._hasTuyaDPCluster !== false) {
+            this.log(`[RADAR] IAS zoneStatus: ${sn} → SKIPPED (noIasMotion, has Tuya DP)`);
             return;
           }
           this.log(`[RADAR-BATTERY] IAS zoneStatus: ${sn} → ${motion}`);
@@ -2527,8 +2536,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           iasZone.onZoneStatusChangeNotification = (p) => {
             const s = p?.zoneStatus ?? p?.data?.[0] ?? 0;
             const motion = this._applyPresenceInversion((s & 0x03) !== 0);
-            if (permissiveConfig.noIasMotion) {
-              this.log(`[RADAR] IAS notification: ${s} → SKIPPED (noIasMotion)`);
+            if (permissiveConfig.noIasMotion && this._hasTuyaDPCluster !== false) {
+              this.log(`[RADAR] IAS notification: ${s} → SKIPPED (noIasMotion, has Tuya DP)`);
               return;
             }
             this.log(`[RADAR-BATTERY] IAS notification: ${s} → ${motion}`);
@@ -2551,11 +2560,15 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
   _setupPermissiveZclListeners(ep1) {
     if (!ep1) return;
     const self = this;
+    const config = this._getSensorConfig?.() || {};
     const listen = (cluster, attr, cb) => {
       try { if (cluster?.on) cluster.on(attr, cb); } catch (e) { /* ignore */ }
     };
 
+    // v5.8.86: JJ10 forum fix - respect noTemperature/noHumidity config flags
+    // Previously, ZCL listeners would re-add capabilities that were removed by orphan cleanup
     listen(ep1.clusters?.msTemperatureMeasurement, 'attr.measuredValue', async (v) => {
+      if (config.noTemperature) return;
       const t = v / 100;
       if (t <= -40 || t >= 100) return;
       if (!self.hasCapability('measure_temperature'))
@@ -2564,6 +2577,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     });
 
     listen(ep1.clusters?.msRelativeHumidity, 'attr.measuredValue', async (v) => {
+      if (config.noHumidity) return;
       const h = v / 100;
       if (h < 0 || h > 100) return;
       if (!self.hasCapability('measure_humidity'))
@@ -3540,6 +3554,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
     // v5.8.43: PR#125 michelhelsdingen - Skip IAS motion for sensors where DP is authoritative (e.g. HOBEIAN 10G)
     const config = this._getSensorConfig?.() || {};
+    // v5.8.88: Respect runtime noIasMotion override (set when device has NO Tuya DP cluster)
+    const effectiveNoIasMotion = this._noIasMotionOverride !== undefined ? this._noIasMotionOverride : config.noIasMotion;
 
     // Attribute change listener - v5.5.790: Apply presence inversion
     iasZone.on('attr.zoneStatus', (status) => {
@@ -3548,7 +3564,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       const alarm2 = (statusNum & 0x02) !== 0;
       const rawMotion = alarm1 || alarm2;
       const motion = this._applyPresenceInversion(rawMotion);
-      if (config.noIasMotion) {
+      if (effectiveNoIasMotion) {
         this.log(`[RADAR] IAS zoneStatus attr: ${statusNum} -> raw=${rawMotion} -> SKIPPED (noIasMotion)`);
         return;
       }
@@ -3562,7 +3578,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       const status = payload?.zoneStatus ?? payload?.data?.[0] ?? 0;
       const rawMotion = (status & 0x03) !== 0;
       const motion = this._applyPresenceInversion(rawMotion);
-      if (config.noIasMotion) {
+      if (effectiveNoIasMotion) {
         this.log(`[RADAR] IAS notification: ${status} -> raw=${rawMotion} -> SKIPPED (noIasMotion)`);
         return;
       }
@@ -3570,6 +3586,23 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       this.setCapabilityValue('alarm_motion', motion).catch(() => { });
       this._triggerPresenceFlows(motion);
     };
+
+    // v5.8.88: Opportunistic enrollment for sleepy battery devices
+    let _enrollTried = false;
+    iasZone.on('attr.zoneStatus', () => {
+      if (_enrollTried) return;
+      _enrollTried = true;
+      setTimeout(async () => {
+        try {
+          const a = await iasZone.readAttributes(['zoneState']);
+          if (a?.zoneState === 0 || a?.zoneState === 'notEnrolled') {
+            this.log('[RADAR] v5.8.88: Device awake but notEnrolled — opportunistic enroll');
+            await this._reEnrollIASZone();
+          }
+        } catch (e) { /* device asleep */ }
+        setTimeout(() => { _enrollTried = false; }, 60000);
+      }, 2000);
+    });
 
     // Also listen for attr.zoneState to detect enrollment loss
     iasZone.on('attr.zoneState', async (state) => {

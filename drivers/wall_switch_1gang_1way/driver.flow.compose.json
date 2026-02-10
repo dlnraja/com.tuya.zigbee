@@ -31,6 +31,12 @@
         "en": "Turned off (physical button)",
         "nl": "Uitgezet (fysieke knop)"
       }
+    },
+    {
+      "id": "wall_switch_1gang_1way_gang1_scene",
+      "title": { "en": "Scene triggered", "nl": "Scène geactiveerd" },
+      "args": [],
+      "tokens": [{ "name": "action", "type": "string", "title": { "en": "Action" }, "example": { "en": "on" } }]
     }
   ],
   "actions": [
@@ -130,6 +136,19 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       }
+    },
+    {
+      "id": "wall_switch_1gang_1way_set_scene_mode",
+      "title": { "en": "Set scene mode", "nl": "Stel scènemodus in" },
+      "titleFormatted": { "en": "[[device]] set scene mode to [[mode]]", "nl": "[[device]] stel scènemodus in op [[mode]]" },
+      "args": [
+        { "type": "device", "name": "device", "filter": "driver_id=wall_switch_1gang_1way" },
+        { "name": "mode", "type": "dropdown", "values": [
+          { "id": "auto", "label": { "en": "Auto (Normal + flows)" } },
+          { "id": "magic", "label": { "en": "Magic (Scene only)" } },
+          { "id": "both", "label": { "en": "Both (Load + scene)" } }
+        ]}
+      ]
     }
   ],
   "conditions": [

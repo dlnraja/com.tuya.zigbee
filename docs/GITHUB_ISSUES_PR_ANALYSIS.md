@@ -1,13 +1,13 @@
 # GitHub Issues & PRs Analysis - JohanBendz & dlnraja Forks
 
-*Generated: 2026-01-27*
+*Updated: 2026-02-09 (v5.8.88) — See MASTER_REFERENCE.md for full cross-ref*
 
 ## Summary
 
 | Repository | Open Issues | Open PRs | Forks |
 |------------|-------------|----------|-------|
 | JohanBendz/com.tuya.zigbee | 15+ | 30+ | 164+ |
-| dlnraja/com.tuya.zigbee | 2 | 0 | - |
+| dlnraja/com.tuya.zigbee | 12 | 0 | - |
 
 ---
 
