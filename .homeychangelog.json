@@ -1,4 +1,7 @@
 {
+  "5.8.89": {
+    "en": "v5.8.89: GH#127 FP COLLISION FIX — Tauno20 _TZE204_e5m9c5hl (WZ-M100) was in 3 drivers causing wrong driver match. Removed from presence_sensor_ceiling and motion_sensor_radar_mmwave — now only in presence_sensor_radar which has correct WZ_M100 config (noTemp, noHum, DP1=presence, DP9=distance, DP103=lux). Users must remove+re-pair after update."
+  },
   "5.8.88": {
     "en": "v5.8.88: CURTAIN FIX + RADAR IAS FIX + LASSE_K FIX + GH#121 FP FIX — (1) GH#122 elgato7: Longsam curtain regression — HybridCoverBase._setupTuyaDPMode() silently failed because tuyaEF00Manager was never created (extends ZigBeeDevice, not BaseHybridDevice). Added direct Tuya cluster listener fallback so DP1/DP2 state+position reports are processed. (2) _setupIASZoneListeners ignored noIasMotion override for ZCL-only devices. (3) ZCL-only variants forced noTemp/noHum=true. (4) Opportunistic IAS enrollment for sleepy battery devices. (5) Lasse_K: Added HOBEIAN to water_leak_sensor + contact_sensor fingerprints. (6) GH#121 DAVID9SE: Moved _TZ3000_an5rjiwd from button_wireless_4 (TS0044) to button_wireless_1 (TS0041) — device was in wrong driver. (7) JB#1345 Nono-3ric: Removed _TZE284_xnbkhhdr from radiator_valve — Avatto WT198 is a wall thermostat, not TRV. Was causing driver collision with thermostat_tuya_dp."
   },

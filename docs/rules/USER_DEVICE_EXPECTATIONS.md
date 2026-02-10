@@ -91,6 +91,10 @@
 | FinnKje | Presence on/off every minute (p69) | FIXED v5.8.40 — multi-DP frame parser |
 | Karsten_Hille | Temp/hum sensor broken (p68) | FIXED v5.8.38 |
 | Patrick_Van_Deursen | Device not recognized v5.8.4 (p68) | FIXED v5.8.11 — RGB dep |
+| GH#127 Tauno20 | _TZE204_e5m9c5hl WZ-M100 wrong caps | FP COLLISION FIX v5.8.89 — removed from ceiling+mmwave |
+| GH#126 azkysmarthome | _TZ3000_zutizvyk TS0203 contact | ✅ PRESENT in contact_sensor |
+| GH#124 Lalla80111 | _TZ3000_b4awzgct TS0041 no flow | ✅ PRESENT — needs re-pair + diag on v5.8.89 |
+| GH#98 DVMasters | _TZ3000_famkxci2 TS0043 button no flow | ✅ PRESENT in button_wireless_3 — awaiting re-pair+diag |
 
 ---
 
