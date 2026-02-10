@@ -127,3 +127,15 @@
 
 ## Ricardo_Lenior (p60)
 > 230v presence wrong caps (battery/mmwave on mains). NEEDS fingerprint. Only has diag 77C4CE16.
+
+## GH#127 Tauno20 — _TZE204_e5m9c5hl WZ-M100
+> FP collision fixed: removed from ceiling+mmwave drivers. Now only in presence_sensor_radar with WZ_M100 config. Update to v5.8.89, remove+re-pair.
+
+## GH#126 azkysmarthome — _TZ3000_zutizvyk TS0203
+> Already in contact_sensor. Update to v5.8.88, remove+re-pair.
+
+## GH#124 Lalla80111 — _TZ3000_b4awzgct TS0041 button no flow
+> FP present. EP1 has E000 cluster. Update to v5.8.89, remove+re-pair. If still broken, send diagnostic code.
+
+## GH#123 — 46 fingerprints community sync
+> All 46 verified present. Can be closed.
