@@ -73,6 +73,8 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.91** | v5.8.91: ZCL METERING FIX (GH#110 Pollepa) — TS011F energy plugs (_TZ3210_w0q... |
+| **v5.8.90** | v5.8.90: BSEED FINGERPRINT ADDITIONS — (1) JB#1338 pjmpessers: Added _TZ3000_... |
 | **v5.8.89** | v5.8.89: GH#127 FP COLLISION FIX — Tauno20 _TZE204_e5m9c5hl (WZ-M100) was in ... |
 | **v5.8.88** | v5.8.88: CURTAIN FIX + RADAR IAS FIX + LASSE_K FIX + GH#121 FP FIX — (1) GH#1... |
 | **v5.8.87** | v5.8.87: TS0726 4-GANG FIX + SOIL SENSOR FIX + RADAR FIX — (1) FIX TS0726 vir... |
@@ -81,8 +83,6 @@
 | **v5.8.84** | v5.8.84: FORK AUDIT — Fix _TZ3000_an5rjiwd moved button_wireless_1→button_wir... |
 | **v5.8.83** | v5.8.83: DEEP PR AUDIT — (1) switch_dimmer_1gang REWRITE: Fixed to use TuyaSp... |
 | **v5.8.82** | v5.8.82: PACKETNINJA AUDIT + ENRICHMENT — (1) NEW switch_dimmer_1gang device.... |
-| **v5.8.81** | v5.8.81: WALL SWITCH 2-GANG BSEED + SCENE MODE — (1) Moved BSEED fingerprints... |
-| **v5.8.80** | v5.8.80: DEVICE PROFILE REGISTRY — New centralized per-fingerprint configurat... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
