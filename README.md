@@ -73,16 +73,16 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.8.78** | v5.8.78: PACKETNINJA PR REVIEW + PHYSICAL BUTTON AUDIT — (1) FIX BSEED finger... |
-| **v5.8.77** | v5.8.77: SENSOR & BUTTON FIXES — (1) FIX HOBEIAN ZG-204ZM wrong config: model... |
-| **v5.8.76** | v5.8.76: 4 DIAGNOSTIC FIXES — (1) FIX button_pressed/button_double_press gene... |
-| **v5.8.75** | v5.8.75: PETER'S DEVICES FIX — (1) FIX HOBEIAN ZG-204ZM not recognized (showe... |
-| **v5.8.74** | v5.8.74: CRITICAL TIME SYNC FIX + USB DONGLE TRIPLE — (1) FIX wrong epoch in ... |
-| **v5.8.73** | v5.8.73: PACKETNINJA SUB-DEVICE — NEW wall_switch_2gang_1way + wall_switch_3g... |
-| **v5.8.72** | v5.8.72: FIX _TZE284_oitavov2 soil sensor install error (DutchDuke forum repo... |
-| **v5.8.71** | v5.8.71: 3 DIAGNOSTIC FIXES — (1) FIX _TZE200_crq3r3la (JJ10 CK-BL702-MWS-01)... |
-| **v5.8.70** | v5.8.70: ANTI-FLOOD — Prevents excessive battery/temperature/humidity status ... |
-| **v5.8.69** | v5.8.69: COMPREHENSIVE BATTERY FIX — Fixes '?' battery display across ALL dev... |
+| **v5.8.88** | v5.8.88: CURTAIN FIX + RADAR IAS FIX + LASSE_K FIX + GH#121 FP FIX — (1) GH#1... |
+| **v5.8.87** | v5.8.87: TS0726 4-GANG FIX + SOIL SENSOR FIX + RADAR FIX — (1) FIX TS0726 vir... |
+| **v5.8.86** | v5.8.86: CRITICAL CRASH FIX + BUTTON SPAM FIX + RADAR SENSOR FIX — (1) CRASH ... |
+| **v5.8.85** | v5.8.85: FORUM BUG FIXES — (1) Contact sensor: Fixed double inversion bug in ... |
+| **v5.8.84** | v5.8.84: FORK AUDIT — Fix _TZ3000_an5rjiwd moved button_wireless_1→button_wir... |
+| **v5.8.83** | v5.8.83: DEEP PR AUDIT — (1) switch_dimmer_1gang REWRITE: Fixed to use TuyaSp... |
+| **v5.8.82** | v5.8.82: PACKETNINJA AUDIT + ENRICHMENT — (1) NEW switch_dimmer_1gang device.... |
+| **v5.8.81** | v5.8.81: WALL SWITCH 2-GANG BSEED + SCENE MODE — (1) Moved BSEED fingerprints... |
+| **v5.8.80** | v5.8.80: DEVICE PROFILE REGISTRY — New centralized per-fingerprint configurat... |
+| **v5.8.79** | v5.8.79: FORUM FIXES — (1) FIX TS0726 4-gang EP2-4 not responding (Hartmut_Du... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
