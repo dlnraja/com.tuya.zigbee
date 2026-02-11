@@ -73,16 +73,16 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.98** | v5.8.98: CONTACT SENSOR FIX + NEW FINGERPRINTS + SOIL SENSOR FIX — (1) Forum ... |
+| **v5.8.97** | v5.8.97: SOS + RADAR + DIMMER PHYSICAL BUTTONS — (1) SOS button: fixed false ... |
+| **v5.8.96** | v5.8.96: ZIGBEE FRAME DROP FIX — Added try/catch protection to ALL 6 BoundClu... |
+| **v5.8.95** | v5.8.95: BIDIRECTIONAL BUTTON FIX — Consolidated markAppCommand() into Hybrid... |
 | **v5.8.94** | v5.8.94: FORUM DUAL-DRIVER FIXES — (1) Fixed _TZE204_mvtclclq (BSeed 2-gang U... |
 | **v5.8.93** | v5.8.93: CRITICAL E000 BUTTON FIX (GH#98 DVMasters, GH#124 Lalla80111) — Root... |
 | **v5.8.92** | v5.8.92: BUTTON WAKE-UP FIX + TS0726 INDIVIDUAL GANG FIX — (1) Battery button... |
 | **v5.8.91** | v5.8.91: ZCL METERING FIX (GH#110 Pollepa) — TS011F energy plugs (_TZ3210_w0q... |
 | **v5.8.90** | v5.8.90: BSEED FINGERPRINT ADDITIONS — (1) JB#1338 pjmpessers: Added _TZ3000_... |
 | **v5.8.89** | v5.8.89: GH#127 FP COLLISION FIX — Tauno20 _TZE204_e5m9c5hl (WZ-M100) was in ... |
-| **v5.8.88** | v5.8.88: CURTAIN FIX + RADAR IAS FIX + LASSE_K FIX + GH#121 FP FIX — (1) GH#1... |
-| **v5.8.87** | v5.8.87: TS0726 4-GANG FIX + SOIL SENSOR FIX + RADAR FIX — (1) FIX TS0726 vir... |
-| **v5.8.86** | v5.8.86: CRITICAL CRASH FIX + BUTTON SPAM FIX + RADAR SENSOR FIX — (1) CRASH ... |
-| **v5.8.85** | v5.8.85: FORUM BUG FIXES — (1) Contact sensor: Fixed double inversion bug in ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
