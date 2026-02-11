@@ -38,7 +38,7 @@ const MODEL_CONFIGS = {
       '_TZE204_ijxvkhd0', '_TZE204_qasjif9e', '_TZE204_sxm7l9xa',
       '_TZE284_4qznlkbu', '_TZE284_fwondbzy',
     ],
-    capabilities: ['alarm_motion', 'alarm_human', 'measure_distance', 'measure_presence_time', 'measure_luminance', 'measure_battery'],
+    capabilities: ['alarm_motion', 'alarm_human', 'measure_luminance.distance', 'measure_presence_time', 'measure_luminance', 'measure_battery'],
     dps: [1, 2, 3, 4, 9, 10, 11, 12, 15, 101, 102, 103, 104, 105],
   },
 };
@@ -132,7 +132,7 @@ class MotionSensorRadarDevice extends HybridSensorBase {
       },
       // v5.5.17: DP102 = distance to target in cm
       102: {
-        capability: 'measure_distance',
+        capability: 'measure_luminance.distance',
         divisor: 1
       },
       103: { capability: 'measure_luminance', divisor: 1 },        // Alt illuminance
@@ -533,7 +533,7 @@ class MotionSensorRadarDevice extends HybridSensorBase {
         }
         break;
       case 102: // Distance to target (cm)
-        this.log(`[ZCL-DATA] mmwave.distance raw=${rawValue}cm → measure_distance=${rawValue}`);
+        this.log(`[ZCL-DATA] mmwave.distance raw=${rawValue}cm → measure_luminance.distance=${rawValue}`);
         // v5.5.17: If distance reported, someone is detected
         if (rawValue > 0 && this.hasCapability('alarm_motion')) {
           this.setCapabilityValue('alarm_motion', true).catch(this.error);

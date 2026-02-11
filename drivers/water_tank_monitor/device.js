@@ -136,8 +136,8 @@ class WaterTankMonitorDevice extends HybridSensorBase {
     this.log(`[TANK] 📏 Distance: ${distanceCm}cm, Water Level: ${waterLevel.toFixed(2)}m, Fill: ${fillPercentage.toFixed(0)}%`);
 
     // Update capabilities
-    await this.setCapabilityValue('measure_water_level', parseFloat(Math.round(waterLevel * 100) / 100));
-    await this.setCapabilityValue('measure_water_percentage', parseFloat(Math.round(fillPercentage)));
+    await this.setCapabilityValue('measure_water', parseFloat(Math.round(waterLevel * 100) / 100));
+    await this.setCapabilityValue('measure_water.percentage', parseFloat(Math.round(fillPercentage)));
 
     // Store values for recalculation
     this._lastDistance = distanceCm;
@@ -167,7 +167,7 @@ class WaterTankMonitorDevice extends HybridSensorBase {
    */
   async _handleAlarmStatus(alarmActive) {
     const isAlarm = Boolean(alarmActive);
-    await this.setCapabilityValue('alarm_water_low', isAlarm);
+    await this.setCapabilityValue('alarm_water', isAlarm);
     this.log(`[TANK] 🚨 Device alarm: ${isAlarm ? 'ACTIVE' : 'CLEARED'}`);
 
     if (isAlarm) {
@@ -185,7 +185,7 @@ class WaterTankMonitorDevice extends HybridSensorBase {
    */
   async _handleFillPercentage(percentage) {
     if (typeof percentage === 'number' && percentage >= 0 && percentage <= 100) {
-      await this.setCapabilityValue('measure_water_percentage', parseFloat(percentage));
+      await this.setCapabilityValue('measure_water.percentage', parseFloat(percentage));
       this._lastFillPercentage = percentage;
       this.log(`[TANK] 📊 Fill percentage (direct): ${percentage}%`);
       this._checkLowWaterAlarm();
@@ -199,7 +199,7 @@ class WaterTankMonitorDevice extends HybridSensorBase {
   async _handleLiquidLevel(levelMm) {
     if (typeof levelMm === 'number' && levelMm >= 0) {
       const levelM = levelMm / 1000; // Convert mm to meters
-      await this.setCapabilityValue('measure_water_level', parseFloat(Math.round(levelM * 100) / 100));
+      await this.setCapabilityValue('measure_water', parseFloat(Math.round(levelM * 100) / 100));
       this._lastWaterLevel = levelM;
       this.log(`[TANK] 📏 Liquid level (direct): ${levelMm}mm = ${levelM.toFixed(2)}m`);
     }
@@ -212,10 +212,10 @@ class WaterTankMonitorDevice extends HybridSensorBase {
     const currentPercentage = this._lastFillPercentage;
     if (typeof currentPercentage === 'number') {
       const shouldAlarm = currentPercentage <= this._lowWaterThreshold;
-      const currentAlarm = this.getCapabilityValue('alarm_water_low');
+      const currentAlarm = this.getCapabilityValue('alarm_water');
 
       if (shouldAlarm !== currentAlarm) {
-        this.setCapabilityValue('alarm_water_low', shouldAlarm).catch(() => { });
+        this.setCapabilityValue('alarm_water', shouldAlarm).catch(() => { });
         this.log(`[TANK] 🚨 Low water alarm ${shouldAlarm ? 'TRIGGERED' : 'CLEARED'} at ${currentPercentage}%`);
 
         if (shouldAlarm) {
@@ -248,7 +248,7 @@ class WaterTankMonitorDevice extends HybridSensorBase {
       tankHeight: this._tankHeight,
       sensorOffset: this._sensorOffset,
       lowWaterThreshold: this._lowWaterThreshold,
-      isLowWater: this.getCapabilityValue('alarm_water_low') || false
+      isLowWater: this.getCapabilityValue('alarm_water') || false
     };
   }
 

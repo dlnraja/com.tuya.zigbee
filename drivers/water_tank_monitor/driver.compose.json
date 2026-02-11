@@ -7,14 +7,14 @@
   },
   "class": "sensor",
   "capabilities": [
-    "measure_water_level",
-    "measure_water_percentage",
-    "alarm_water_low",
+    "measure_water",
+    "measure_water.percentage",
+    "alarm_water",
     "measure_battery",
     "measure_temperature"
   ],
   "capabilitiesOptions": {
-    "measure_water_level": {
+    "measure_water": {
       "title": {
         "en": "Water Level",
         "fr": "Niveau d'Eau",
@@ -24,7 +24,7 @@
       "units": "m",
       "decimals": 2
     },
-    "measure_water_percentage": {
+    "measure_water.percentage": {
       "title": {
         "en": "Tank Fill Level",
         "fr": "Niveau de Remplissage",
@@ -33,7 +33,7 @@
       },
       "units": "%"
     },
-    "alarm_water_low": {
+    "alarm_water": {
       "title": {
         "en": "Low Water Alert",
         "fr": "Alerte Eau Faible",

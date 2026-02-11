@@ -15,7 +15,7 @@
     "onoff",
     "dim",
     "measure_humidity",
-    "target_humidity"
+    "dim.humidity"
   ],
   "capabilitiesOptions": {
     "dim": {
@@ -27,7 +27,7 @@
       "max": 1,
       "step": 0.33
     },
-    "target_humidity": {
+    "dim.humidity": {
       "title": {
         "en": "Target Humidity",
         "fr": "Humidité Cible"
