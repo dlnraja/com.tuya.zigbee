@@ -1,4 +1,7 @@
 {
+  "5.8.95": {
+    "en": "v5.8.95: BIDIRECTIONAL BUTTON FIX — Consolidated markAppCommand() into HybridSwitchBase._setGangOnOff() so ALL wall switch drivers (1-8 gang) correctly distinguish physical button presses from app commands. Previously only switch_1gang, switch_4gang, and wall_switch_1gang_1way had local markAppCommand — but switch_1gang and wall_switch_1gang_1way implementations were broken (wrapped non-existent _handleTuyaDatapoint method). switch_2gang, switch_3gang, and 5-8gang had NO markAppCommand at all, causing PhysicalButtonMixin to treat ALL state changes as physical. Also: Added VirtualButtonMixin to wall_switch_1gang_1way for full bidirectional support. Added PhysicalButtonMixin-matching flow card IDs to wall_switch_1gang_1way (physical_on/off/single/double/long_press/triple)."
+  },
   "5.8.94": {
     "en": "v5.8.94: FORUM DUAL-DRIVER FIXES — (1) Fixed _TZE204_mvtclclq (BSeed 2-gang UK wall socket, David_Piper) was in BOTH climate_sensor AND usb_outlet_advanced, causing wrong driver match. Removed from climate_sensor. (2) Fixed _TZE204_yojqa8xn (gas sensor, ugrbnk) was in climate_sensor instead of gas_sensor. Moved to correct driver. Users with these devices: remove + re-pair after update."
   },

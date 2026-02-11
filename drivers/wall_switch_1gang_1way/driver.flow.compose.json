@@ -34,9 +34,89 @@
     },
     {
       "id": "wall_switch_1gang_1way_gang1_scene",
-      "title": { "en": "Scene triggered", "nl": "Scène geactiveerd" },
+      "title": {
+        "en": "Scene triggered",
+        "nl": "Scène geactiveerd"
+      },
       "args": [],
-      "tokens": [{ "name": "action", "type": "string", "title": { "en": "Action" }, "example": { "en": "on" } }]
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wall_switch_1gang_1way_physical_on",
+      "args": [],
+      "title": {
+        "nl": "Fysiek AAN",
+        "en": "Physical ON"
+      }
+    },
+    {
+      "id": "wall_switch_1gang_1way_physical_off",
+      "args": [],
+      "title": {
+        "nl": "Fysiek UIT",
+        "en": "Physical OFF"
+      }
+    },
+    {
+      "id": "wall_switch_1gang_1way_physical_single",
+      "args": [],
+      "title": {
+        "nl": "Enkele druk",
+        "en": "Single press"
+      }
+    },
+    {
+      "id": "wall_switch_1gang_1way_physical_double",
+      "args": [],
+      "title": {
+        "nl": "Dubbele druk",
+        "en": "Double press"
+      }
+    },
+    {
+      "id": "wall_switch_1gang_1way_physical_long_press",
+      "args": [],
+      "title": {
+        "nl": "Lange druk",
+        "en": "Long press"
+      },
+      "tokens": [
+        {
+          "name": "duration",
+          "title": {
+            "en": "Duration (ms)"
+          },
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "id": "wall_switch_1gang_1way_physical_triple",
+      "args": [],
+      "title": {
+        "nl": "Drievoudige druk",
+        "en": "Triple press"
+      },
+      "tokens": [
+        {
+          "name": "clicks",
+          "title": {
+            "en": "Click count"
+          },
+          "type": "number"
+        }
+      ]
     }
   ],
   "actions": [
@@ -139,15 +219,44 @@
     },
     {
       "id": "wall_switch_1gang_1way_set_scene_mode",
-      "title": { "en": "Set scene mode", "nl": "Stel scènemodus in" },
-      "titleFormatted": { "en": "[[device]] set scene mode to [[mode]]", "nl": "[[device]] stel scènemodus in op [[mode]]" },
+      "title": {
+        "en": "Set scene mode",
+        "nl": "Stel scènemodus in"
+      },
+      "titleFormatted": {
+        "en": "[[device]] set scene mode to [[mode]]",
+        "nl": "[[device]] stel scènemodus in op [[mode]]"
+      },
       "args": [
-        { "type": "device", "name": "device", "filter": "driver_id=wall_switch_1gang_1way" },
-        { "name": "mode", "type": "dropdown", "values": [
-          { "id": "auto", "label": { "en": "Auto (Normal + flows)" } },
-          { "id": "magic", "label": { "en": "Magic (Scene only)" } },
-          { "id": "both", "label": { "en": "Both (Load + scene)" } }
-        ]}
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=wall_switch_1gang_1way"
+        },
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto (Normal + flows)"
+              }
+            },
+            {
+              "id": "magic",
+              "label": {
+                "en": "Magic (Scene only)"
+              }
+            },
+            {
+              "id": "both",
+              "label": {
+                "en": "Both (Load + scene)"
+              }
+            }
+          ]
+        }
       ]
     }
   ],
