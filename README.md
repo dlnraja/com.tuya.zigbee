@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.9.0** | v5.9.0: CRITICAL CRASH FIX — (1) Fixed SyntaxError in ProductValueValidator.j... |
 | **v5.8.99** | v5.8.99: BUTTON BATTERY FIX — Fixed _readBatteryOnButtonPress crash (method n... |
 | **v5.8.98** | v5.8.98: CONTACT SENSOR FIX + NEW FINGERPRINTS + SOIL SENSOR FIX — (1) Forum ... |
 | **v5.8.97** | v5.8.97: SOS + RADAR + DIMMER PHYSICAL BUTTONS — (1) SOS button: fixed false ... |
@@ -82,7 +83,6 @@
 | **v5.8.93** | v5.8.93: CRITICAL E000 BUTTON FIX (GH#98 DVMasters, GH#124 Lalla80111) — Root... |
 | **v5.8.92** | v5.8.92: BUTTON WAKE-UP FIX + TS0726 INDIVIDUAL GANG FIX — (1) Battery button... |
 | **v5.8.91** | v5.8.91: ZCL METERING FIX (GH#110 Pollepa) — TS011F energy plugs (_TZ3210_w0q... |
-| **v5.8.90** | v5.8.90: BSEED FINGERPRINT ADDITIONS — (1) JB#1338 pjmpessers: Added _TZ3000_... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
