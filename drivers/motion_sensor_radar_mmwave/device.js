@@ -34,7 +34,7 @@ const MODEL_CONFIGS = {
   // ADVANCED radars - full features
   ADVANCED: {
     models: [
-      '_TZE200_2aaelwxk', '_TZE200_3towulqd', '_TZE204_e5m9c5hl',
+      '_TZE200_2aaelwxk', '_TZE200_3towulqd',
       '_TZE204_ijxvkhd0', '_TZE204_qasjif9e', '_TZE204_sxm7l9xa',
       '_TZE284_4qznlkbu', '_TZE284_fwondbzy',
     ],
