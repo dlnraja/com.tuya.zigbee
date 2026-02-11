@@ -1,4 +1,7 @@
 {
+  "5.8.94": {
+    "en": "v5.8.94: FORUM DUAL-DRIVER FIXES — (1) Fixed _TZE204_mvtclclq (BSeed 2-gang UK wall socket, David_Piper) was in BOTH climate_sensor AND usb_outlet_advanced, causing wrong driver match. Removed from climate_sensor. (2) Fixed _TZE204_yojqa8xn (gas sensor, ugrbnk) was in climate_sensor instead of gas_sensor. Moved to correct driver. Users with these devices: remove + re-pair after update."
+  },
   "5.8.93": {
     "en": "v5.8.93: CRITICAL E000 BUTTON FIX (GH#98 DVMasters, GH#124 Lalla80111) — Root cause: TuyaE000BoundCluster only defined handleFrame() which is NOT called by zigbee-clusters SDK. The SDK dispatches incoming commands to named methods matching TuyaE000Cluster.COMMANDS (cmd0, cmd1, etc). Without these methods, ALL cluster 0xE000 button frames were silently dropped. Fix: Added cmd0-cmd6 + cmdFD/FE/FF handler methods. Affects ALL TS0041/TS0042/TS0043/TS0044 wireless buttons using E000 cluster (MOES, LoraTap, Lonsonho, etc). Also: Fixed _TZE204_e5m9c5hl (GH#127 Tauno20 WZ-M100) dual-config conflict in presence_sensor_radar. Users: remove + re-pair after update."
   },
