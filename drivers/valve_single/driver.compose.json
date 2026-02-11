@@ -8,7 +8,7 @@
   "class": "thermostat",
   "capabilities": [
     "onoff",
-    "valve_position",
+    "dim.valve",
     "measure_battery"
   ],
   "zigbee": {

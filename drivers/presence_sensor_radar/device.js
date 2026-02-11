@@ -406,7 +406,7 @@ class IntelligentDPAutoDiscovery {
       let divisor = 100;
 
       dpInfo.inferredType = 'distance';
-      dpInfo.inferredCapability = 'measure_distance';
+      dpInfo.inferredCapability = 'measure_luminance.distance';
       dpInfo.divisor = divisor;
       dpInfo.confidence = 85;
       this.device?.log?.(`[AUTO-DISCOVERY] 📏 DP${dpId} → DISTANCE (divisor: ${divisor})`);
@@ -666,7 +666,7 @@ const SENSOR_CONFIGS = {
       2: { cap: null, internal: 'sensitivity' },
       3: { cap: null, internal: 'near_distance' },             // cm
       4: { cap: null, internal: 'far_distance' },              // cm
-      9: { cap: 'measure_distance', divisor: 100 },            // cm -> m
+      9: { cap: 'measure_luminance.distance', divisor: 100 },            // cm -> m
       12: { cap: 'measure_luminance', type: 'lux_direct' },    // v5.5.273: Some variants use DP12 for illuminance
       101: { cap: null, internal: 'static_sensitivity' },
       102: { cap: null, internal: 'motion_sensitivity' },
@@ -729,7 +729,7 @@ const SENSOR_CONFIGS = {
 
       // v5.5.927: DISTANCE - DP9, ×0.01 = cm to meters (Hubitat research confirms scale: 100)
       // v5.5.325 used divisor 10 but Hubitat deviceProfilesV4 shows scale: 100 for most sensors
-      9: { cap: 'measure_distance', divisor: 100 },
+      9: { cap: 'measure_luminance.distance', divisor: 100 },
 
       // v5.5.325: MORE SETTINGS
       101: { cap: null, internal: 'distance_tracking' },     // switch
@@ -940,7 +940,7 @@ const SENSOR_CONFIGS = {
       4: { cap: null, setting: 'max_range', divisor: 100, feedInference: true, min: 0, max: 950 },
       6: { cap: null, internal: 'self_test' },
       // v5.5.326: DP9 is KEY for presence inference - distance > 0 = presence
-      9: { cap: 'measure_distance', divisor: 100, feedInference: true, primaryInference: true },
+      9: { cap: 'measure_luminance.distance', divisor: 100, feedInference: true, primaryInference: true },
       // v5.5.326: Lux DPs - all have oscillation issues, use ultra-smoothing
       12: { cap: 'measure_luminance', type: 'lux_direct', ultraSmooth: true },
       // v5.8.65: Upgraded from internal to setting per Z2M ZY-M100-S_2 page
@@ -980,7 +980,7 @@ const SENSOR_CONFIGS = {
       106: { cap: null, internal: 'motion_sensitivity' },
       107: { cap: null, internal: 'max_range', divisor: 100 },
       108: { cap: null, internal: 'min_range', divisor: 100 },
-      109: { cap: 'measure_distance', divisor: 100 },
+      109: { cap: 'measure_luminance.distance', divisor: 100 },
       110: { cap: null, internal: 'fading_time', divisor: 10 },
       111: { cap: null, internal: 'detection_delay', divisor: 10 },
       112: { cap: 'alarm_motion', type: 'presence_bool' },
@@ -1011,7 +1011,7 @@ const SENSOR_CONFIGS = {
       106: { cap: null, internal: 'radar_sensitivity' },
       107: { cap: null, internal: 'max_range', divisor: 100 },
       108: { cap: null, internal: 'min_range', divisor: 100 },
-      109: { cap: 'measure_distance', divisor: 100 },
+      109: { cap: 'measure_luminance.distance', divisor: 100 },
       110: { cap: null, internal: 'fading_time', divisor: 10 },
       111: { cap: null, internal: 'detection_delay', divisor: 10 },
     }
@@ -1033,7 +1033,7 @@ const SENSOR_CONFIGS = {
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_enum' },
       2: { cap: null, internal: 'sensitivity' },
-      101: { cap: 'measure_distance', divisor: 100 },
+      101: { cap: 'measure_luminance.distance', divisor: 100 },
       102: { cap: 'measure_luminance', divisor: 1 },
       112: { cap: 'alarm_motion', type: 'presence_enum' },
     }
@@ -1058,7 +1058,7 @@ const SENSOR_CONFIGS = {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       6: { cap: null, internal: 'fading_time' },
       9: { cap: 'measure_luminance', divisor: 1 },
-      101: { cap: 'measure_distance', divisor: 100 },
+      101: { cap: 'measure_luminance.distance', divisor: 100 },
     }
   },
 
@@ -1083,7 +1083,7 @@ const SENSOR_CONFIGS = {
       2: { cap: null, setting: 'radar_sensitivity', min: 0, max: 9 },
       3: { cap: null, setting: 'min_range', divisor: 100, min: 0, max: 950 },
       4: { cap: null, setting: 'max_range', divisor: 100, min: 0, max: 950 },
-      9: { cap: 'measure_distance', divisor: 100 },
+      9: { cap: 'measure_luminance.distance', divisor: 100 },
       103: { cap: 'measure_luminance', divisor: 1 },
       104: { cap: null, setting: 'interval_time', min: 1, max: 720 },
       105: { cap: null, setting: 'detection_delay', divisor: 10, min: 0, max: 100 },
@@ -1111,7 +1111,7 @@ const SENSOR_CONFIGS = {
       103: { cap: 'measure_luminance', divisor: 1 },
       110: { cap: null, internal: 'keep_sensitivity' },
       114: { cap: null, internal: 'trigger_sensitivity' },
-      182: { cap: 'measure_distance', divisor: 10 },
+      182: { cap: 'measure_luminance.distance', divisor: 10 },
     }
   },
 
@@ -1134,7 +1134,7 @@ const SENSOR_CONFIGS = {
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_enum' },
       104: { cap: 'measure_luminance', type: 'lux_direct' },
-      109: { cap: 'measure_distance', divisor: 100 },
+      109: { cap: 'measure_luminance.distance', divisor: 100 },
     }
   },
 
@@ -1208,7 +1208,7 @@ const SENSOR_CONFIGS = {
       // v5.8.63: Fixed labels and ranges per Z2M ZG-204ZM page + issue #21919
       // v5.8.77: Aligned setting keys to match driver.compose.json IDs + added missing DPs
       2: { cap: null, setting: 'large_motion_sensitivity', min: 0, max: 10 },
-      3: { cap: 'measure_distance', divisor: 100 },  // v5.8.77: target distance in cm→m
+      3: { cap: 'measure_luminance.distance', divisor: 100 },  // v5.8.77: target distance in cm→m
       4: { cap: null, setting: 'large_motion_distance', divisor: 100, min: 0, max: 10 },
       102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
       104: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 6 },
@@ -1389,8 +1389,8 @@ const SENSOR_CONFIGS = {
       // RADAR DATA via Tuya DPs (Source: Z2M converter)
       // ═══════════════════════════════════════════════════════════════════
       107: { cap: 'measure_luminance', divisor: 10, type: 'lux_direct' },
-      109: { cap: 'measure_distance', divisor: 100 },      // debug_distance (real-time)
-      119: { cap: 'measure_distance', divisor: 100 },      // target_distance
+      109: { cap: 'measure_luminance.distance', divisor: 100 },      // debug_distance (real-time)
+      119: { cap: 'measure_luminance.distance', divisor: 100 },      // target_distance
       // ═══════════════════════════════════════════════════════════════════
       // SETTINGS via Tuya DPs
       // ═══════════════════════════════════════════════════════════════════
@@ -1432,7 +1432,7 @@ const SENSOR_CONFIGS = {
       106: { cap: 'measure_luminance', type: 'lux_direct' },
       113: { cap: null, setting: 'mode' },
       119: { cap: null, setting: 'sensitivity' },
-      122: { cap: 'measure_distance', divisor: 100 },
+      122: { cap: 'measure_luminance.distance', divisor: 100 },
       123: { cap: null, setting: 'detection_delay' },
       124: { cap: null, setting: 'indicator' },
     }
@@ -1455,12 +1455,12 @@ const SENSOR_CONFIGS = {
       // Try all common presence DPs
       1: { cap: 'alarm_motion', type: 'presence_enum' },
       // Low DPs (ZY-M100 standard)
-      9: { cap: 'measure_distance', divisor: 100 },
+      9: { cap: 'measure_luminance.distance', divisor: 100 },
       12: { cap: 'measure_luminance', type: 'lux_direct' },
       // High DPs (TZE284 series)
       104: { cap: 'measure_luminance', type: 'lux_direct' },
       105: { cap: 'alarm_motion', type: 'presence_enum' },
-      109: { cap: 'measure_distance', divisor: 100 },
+      109: { cap: 'measure_luminance.distance', divisor: 100 },
       112: { cap: 'alarm_motion', type: 'presence_bool' },
       // v5.5.554: DP119 presence detection (diagnostic report 725b1c78)
       119: { cap: 'alarm_motion', type: 'presence_bool' },
@@ -2150,7 +2150,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           capability: dpConfig.cap,
           transform: (v) => transformLux(v, dpConfig.type || 'lux_direct', mfr, this.getData()?.id),
         };
-      } else if (dpConfig.cap === 'measure_distance') {
+      } else if (dpConfig.cap === 'measure_luminance.distance') {
         // v5.5.929: Distance DP - use smart transform with auto-divisor detection
         const deviceId = this.getData()?.id || '';
         mappings[dp] = {
@@ -2386,8 +2386,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     }
 
     // v5.5.903: CAPABILITY MANAGEMENT - Add/remove based on device config
-    // Z2M research: ZG-204ZV does NOT have measure_distance (static_detection_distance is a SETTING, not measurement)
-    const hasDistanceDP = config.dpMap && Object.values(config.dpMap).some(dp => dp.cap === 'measure_distance');
+    // Z2M research: ZG-204ZV does NOT have measure_luminance.distance (static_detection_distance is a SETTING, not measurement)
+    const hasDistanceDP = config.dpMap && Object.values(config.dpMap).some(dp => dp.cap === 'measure_luminance.distance');
     const hasLuxDP = config.hasIlluminance || (config.dpMap && Object.values(config.dpMap).some(dp => dp.cap === 'measure_luminance'));
     
     // Add capabilities that ARE supported
@@ -2398,19 +2398,19 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       } catch (e) { /* ignore */ }
     }
     
-    if (hasDistanceDP && !this.hasCapability('measure_distance')) {
+    if (hasDistanceDP && !this.hasCapability('measure_luminance.distance')) {
       try {
-        await this.addCapability('measure_distance');
-        this.log('[RADAR] ✅ Added measure_distance (config supports it)');
+        await this.addCapability('measure_luminance.distance');
+        this.log('[RADAR] ✅ Added measure_luminance.distance (config supports it)');
       } catch (e) { /* ignore */ }
     }
     
     // v5.5.903: REMOVE orphan capabilities that are NOT supported by this device
     // Fixes Peter's ZG-204ZV showing "Distance" from previous pairing
-    if (!hasDistanceDP && this.hasCapability('measure_distance')) {
+    if (!hasDistanceDP && this.hasCapability('measure_luminance.distance')) {
       try {
-        await this.removeCapability('measure_distance');
-        this.log('[RADAR] 🧹 Removed orphan measure_distance (not supported by this sensor)');
+        await this.removeCapability('measure_luminance.distance');
+        this.log('[RADAR] 🧹 Removed orphan measure_luminance.distance (not supported by this sensor)');
       } catch (e) { /* ignore */ }
     }
 
@@ -3001,7 +3001,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     // Always update distance capability
     const divisor = config.dpMap?.[9]?.divisor || 100;
     const distanceMeters = rawDistance / divisor;
-    this.setCapabilityValue('measure_distance', parseFloat(distanceMeters)).catch(() => { });
+    this.setCapabilityValue('measure_luminance.distance', parseFloat(distanceMeters)).catch(() => { });
     this.log(`[RADAR] 📏 Distance: ${distanceMeters}m (raw: ${rawDistance})`);
 
     // v5.5.315: Feed distance to intelligent inference engine

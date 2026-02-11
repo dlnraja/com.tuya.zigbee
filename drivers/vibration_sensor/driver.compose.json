@@ -7,7 +7,7 @@
   },
   "class": "sensor",
   "capabilities": [
-    "alarm_vibration",
+    "alarm_generic.vibration",
     "measure_battery",
     "alarm_tamper"
   ],

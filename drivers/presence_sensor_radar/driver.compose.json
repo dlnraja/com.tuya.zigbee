@@ -10,7 +10,7 @@
     "alarm_motion",
     "measure_luminance",
     "measure_battery",
-    "measure_distance"
+    "measure_luminance.distance"
   ],
   "subDevices": [],
   "zigbee": {
