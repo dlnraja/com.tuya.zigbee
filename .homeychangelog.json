@@ -1,4 +1,7 @@
 {
+  "5.9.0": {
+    "en": "v5.9.0: CRITICAL CRASH FIX — (1) Fixed SyntaxError in ProductValueValidator.js that crashed 6 drivers on startup (climate_sensor, presence_sensor_radar, rain_sensor, smoke_detector_advanced, water_leak_sensor). Unquoted measure_luminance.distance key caused JS parse failure. (2) Fixed destructured import bug in 12 light drivers (bulb_rgbw, bulb_rgb, bulb_white, bulb_tunable_white, bulb_dimmable, led_strip, led_strip_rgbw, led_strip_advanced, led_controller_rgb, led_controller_cct, dimmer_wall_1gang, ceiling_fan) — HybridLightBase uses direct export not named export. Diag: _TZ3000_zutizvyk contact sensor Unknown = user on v5.8.93, fingerprint added in v5.8.98, needs app update."
+  },
   "5.8.99": {
     "en": "v5.8.99: BUTTON BATTERY FIX — Fixed _readBatteryOnButtonPress crash (method not found) in ButtonDevice.js that caused battery to show '?' on all wireless button remotes (TS0041/TS0042/TS0043/TS0044/TS004F) until first button press. Diag analysis: GH#98 _TZ3000_famkxci2 TS0043 and Cam _TZ3000_5bpeda8u TS0041 button issues are resolved by v5.8.93 E000 fix — users must update and re-pair. _TZE200_crq3r3la radar IAS conflict resolved by v5.8.88 noIasMotion fix."
   },
