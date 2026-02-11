@@ -1,6 +1,54 @@
 {
   "triggers": [
     {
+      "id": "dimmer_wall_1gang_physical_on",
+      "args": [],
+      "title": {
+        "en": "Turned on (physical button)"
+      }
+    },
+    {
+      "id": "dimmer_wall_1gang_physical_off",
+      "args": [],
+      "title": {
+        "en": "Turned off (physical button)"
+      }
+    },
+    {
+      "id": "dimmer_wall_1gang_physical_brightness_up",
+      "args": [],
+      "title": {
+        "en": "Brightness increased (physical)"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "example": 75,
+          "title": {
+            "en": "Brightness (%)"
+          },
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "id": "dimmer_wall_1gang_physical_brightness_down",
+      "args": [],
+      "title": {
+        "en": "Brightness decreased (physical)"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "example": 25,
+          "title": {
+            "en": "Brightness (%)"
+          },
+          "type": "number"
+        }
+      ]
+    },
+    {
       "id": "dimmer_wall_1gang_dimmer_1gang_turned_on",
       "title": {
         "en": "Turned on",

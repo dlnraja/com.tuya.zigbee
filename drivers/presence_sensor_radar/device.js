@@ -963,6 +963,7 @@ const SENSOR_CONFIGS = {
       '_TZE284_xsm7l9xa', '_TZE284_yrwmnya3',
       // TZE204 variants with HIGH DP layout
       '_TZE204_ijxvkhd0',
+      '_TZE204_e5m9c5hl',  // v5.8.97: GH#127 Tauno20 — moved from WZ_M100 (wrong DPs)
       '_TZE204_kyhbrfyl', '_TZE204_ex3rcdha',
     ],
     battery: false,
@@ -1070,7 +1071,7 @@ const SENSOR_CONFIGS = {
   'WZ_M100': {
     sensors: [
       '_TZE204_laokfqwu',
-      '_TZE204_e5m9c5hl',  // v5.8.87: GH#127 Tauno20 - WZ-M100 variant (Z2M confirmed)
+      // v5.8.97: _TZE204_e5m9c5hl REMOVED — uses different DPs (see WZ_M100_V2 below)
     ],
     battery: false,
     mainsPowered: true,
@@ -1091,6 +1092,8 @@ const SENSOR_CONFIGS = {
     }
   },
 
+
+  // v5.8.97: WZ_M100_V2 removed — _TZE204_e5m9c5hl moved to TZE284_SERIES_HIGH_DP (same DPs)
   // ─────────────────────────────────────────────────────────────────────────────
   // TYPE F1c: Y1_IN (_TZE204_bmdsp6bs) - Z2M verified DP layout
   // v5.8.46: New fingerprint from Z2M - unique high DP layout with DP182=distance
