@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.94** | v5.8.94: FORUM DUAL-DRIVER FIXES — (1) Fixed _TZE204_mvtclclq (BSeed 2-gang U... |
 | **v5.8.93** | v5.8.93: CRITICAL E000 BUTTON FIX (GH#98 DVMasters, GH#124 Lalla80111) — Root... |
 | **v5.8.92** | v5.8.92: BUTTON WAKE-UP FIX + TS0726 INDIVIDUAL GANG FIX — (1) Battery button... |
 | **v5.8.91** | v5.8.91: ZCL METERING FIX (GH#110 Pollepa) — TS011F energy plugs (_TZ3210_w0q... |
@@ -82,7 +83,6 @@
 | **v5.8.87** | v5.8.87: TS0726 4-GANG FIX + SOIL SENSOR FIX + RADAR FIX — (1) FIX TS0726 vir... |
 | **v5.8.86** | v5.8.86: CRITICAL CRASH FIX + BUTTON SPAM FIX + RADAR SENSOR FIX — (1) CRASH ... |
 | **v5.8.85** | v5.8.85: FORUM BUG FIXES — (1) Contact sensor: Fixed double inversion bug in ... |
-| **v5.8.84** | v5.8.84: FORK AUDIT — Fix _TZ3000_an5rjiwd moved button_wireless_1→button_wir... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
