@@ -1,4 +1,7 @@
 {
+  "5.9.1": {
+    "en": "v5.9.1: CRASH FIX + FINGERPRINT EXPANSION — (1) Fixed 2 more SyntaxError crashes from unquoted dotted object keys in UniversalThrottleManager.js (measure_luminance.distance) and TuyaDPFlowCardManager.js (dim.speed) — these caused runtime parse failures in any driver loading these modules. (2) Added 56 missing case-variant fingerprints across 30+ drivers — devices reporting uppercase manufacturerName (e.g. _TZE284_xxx) now also match lowercase and vice versa. (3) Added _TZ3000_rylaozuc (Lidl ceiling light TS0502A) to bulb_tunable_white. (4) Fixed missing lowercase variant for _TZ3000_8utxxtzr in button_emergency_sos."
+  },
   "5.9.0": {
     "en": "v5.9.0: CRITICAL CRASH FIX — (1) Fixed SyntaxError in ProductValueValidator.js that crashed 6 drivers on startup (climate_sensor, presence_sensor_radar, rain_sensor, smoke_detector_advanced, water_leak_sensor). Unquoted measure_luminance.distance key caused JS parse failure. (2) Fixed destructured import bug in 12 light drivers (bulb_rgbw, bulb_rgb, bulb_white, bulb_tunable_white, bulb_dimmable, led_strip, led_strip_rgbw, led_strip_advanced, led_controller_rgb, led_controller_cct, dimmer_wall_1gang, ceiling_fan) — HybridLightBase uses direct export not named export. Diag: _TZ3000_zutizvyk contact sensor Unknown = user on v5.8.93, fingerprint added in v5.8.98, needs app update."
   },
