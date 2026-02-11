@@ -7,7 +7,7 @@
   },
   "class": "fan",
   "capabilities": [
-    "target_humidity",
+    "dim.humidity",
     "measure_humidity",
     "measure_temperature",
     "measure_power",
@@ -15,7 +15,7 @@
     "measure_battery",
     "onoff",
     "target_temperature",
-    "fan_speed"
+    "dim.speed"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -26,7 +26,7 @@
         "de": "Strom"
       }
     },
-    "target_humidity": {
+    "dim.humidity": {
       "title": {
         "en": "Target humidity",
         "fr": "Humidité cible",

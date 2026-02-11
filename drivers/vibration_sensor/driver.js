@@ -18,7 +18,7 @@ class VibrationSensorDriver extends ZigBeeDriver {
       this.homey.flow.getConditionCard('vibration_sensor_is_vibrating')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          return args.device.getCapabilityValue('alarm_vibration') === true;
+          return args.device.getCapabilityValue('alarm_generic.vibration') === true;
         });
       this.log('[FLOW] ✅ vibration_sensor_is_vibrating');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }

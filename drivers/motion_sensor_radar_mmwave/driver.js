@@ -61,7 +61,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
       this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_target_distance_less_than')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          const distance = args.device.getCapabilityValue('measure_distance') || 0;
+          const distance = args.device.getCapabilityValue('measure_luminance.distance') || 0;
           return distance < (args.distance || 3);
         });
       this.log('[FLOW] ✅ motion_sensor_radar_mmwave_target_distance_less_than');

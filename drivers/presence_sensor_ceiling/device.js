@@ -51,7 +51,7 @@ class CeilingPresenceSensorDevice extends ZigBeeDevice {
     }
 
     // Add optional capabilities if not present
-    const optionalCaps = ['measure_luminance', 'measure_distance'];
+    const optionalCaps = ['measure_luminance', 'measure_luminance.distance'];
     for (const cap of optionalCaps) {
       if (!this.hasCapability(cap)) {
         await this.addCapability(cap).catch(() => {});
@@ -150,8 +150,8 @@ class CeilingPresenceSensorDevice extends ZigBeeDevice {
       case TUYA_DP.TARGET_DISTANCE:
         // Target distance
         let distance = typeof value === 'number' ? value / 100 : 0; // Convert cm to m
-        if (this.hasCapability('measure_distance')) {
-          await this.setCapabilityValue('measure_distance', distance).catch(this.error);
+        if (this.hasCapability('measure_luminance.distance')) {
+          await this.setCapabilityValue('measure_luminance.distance', distance).catch(this.error);
           this.log(`[CEILING] Distance: ${distance}m`);
         }
         break;
