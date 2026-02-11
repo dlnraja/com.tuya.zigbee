@@ -83,8 +83,8 @@
 | Tbao | _TZ3000_bs93npae TS130F wrong caps (p69) | IN CODE, fixed v5.8.41 |
 | FrankP | _TZ3290_7v1k4vufotpowp9z TS1201 IR (p69) | IN CODE ✅ |
 | GH#123 | 46 new fingerprints community sync | ALL 46 PRESENT ✅ |
-| Lasse_K | Contact reversed v5.8.43 (p69) | FIXED v5.8.85 — double-inversion bug fix |
-| Lasse_K | Water no alarm v5.8.43 (p69) | FIXED v5.8.88 — IAS enrollment improved |
+| Lasse_K | Contact reversed v5.8.43 (p69) | FIXED v5.8.98 — IAS events now respect user invert_contact/reverse_alarm settings |
+| Lasse_K | Water no alarm v5.8.43 (p69) | FIXED v5.8.88 — IAS enrollment improved, needs re-pair |
 | blutch32 | _TZ3000_996rpfy6 TS0203 alarm broken (p68) | FIXED v5.8.85 — double-inversion bug |
 | Hartmut_Dunker | TS0726 virtual toggles all 4 (p70) | FIXED v5.8.87 — EP isolation fix |
 | DutchDuke | Soil temp ÷10 (1.8 vs 18) (p70) | FIXED v5.8.87 — raw °C skip |
