@@ -7,10 +7,10 @@
   },
   "class": "thermostat",
   "capabilities": [
-    "valve_position.1",
-    "valve_position.2",
-    "valve_position.3",
-    "valve_position.4",
+    "dim.valve_1",
+    "dim.valve_2",
+    "dim.valve_3",
+    "dim.valve_4",
     "measure_battery",
     "onoff"
   ],

@@ -39,7 +39,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
       this.homey.flow.getConditionCard('presence_sensor_radar_distance_within')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          const distance = args.device.getCapabilityValue('measure_distance') || 0;
+          const distance = args.device.getCapabilityValue('measure_luminance.distance') || 0;
           return distance <= (args.distance || 300);
         });
       this.log('[FLOW] ✅ presence_sensor_radar_distance_within');

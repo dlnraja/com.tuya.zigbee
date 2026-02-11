@@ -41,8 +41,8 @@ class HumidifierDevice extends ZigBeeDevice {
       await tuyaCluster.datapoint({ dp: 5, datatype: 4, value: level });
     });
 
-    if (this.hasCapability('target_humidity')) {
-      this.registerCapabilityListener('target_humidity', async (value) => {
+    if (this.hasCapability('dim.humidity')) {
+      this.registerCapabilityListener('dim.humidity', async (value) => {
         await tuyaCluster.datapoint({ dp: 2, datatype: 2, value: Math.round(value) });
       });
     }
@@ -62,8 +62,8 @@ class HumidifierDevice extends ZigBeeDevice {
         break;
 
       case 2: // Target humidity
-        if (this.hasCapability('target_humidity')) {
-          this.setCapabilityValue('target_humidity', value).catch(this.error);
+        if (this.hasCapability('dim.humidity')) {
+          this.setCapabilityValue('dim.humidity', value).catch(this.error);
         }
         break;
 
