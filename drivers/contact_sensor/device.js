@@ -137,7 +137,11 @@ class ContactSensorDevice extends HybridSensorBase {
 
     // v5.5.344: Check for invert setting and debounce time
     // v5.5.793: Use constants for defaults
-    this._invertContact = this.getSetting('invert_contact') || false;
+    // v5.8.98: Wire up reverse_alarm (was dead) + track user-explicit invert
+    const userInvert = this.getSetting('invert_contact') || false;
+    const userReverse = this.getSetting('reverse_alarm') || false;
+    this._invertContact = userInvert || userReverse;
+    this._userExplicitInvert = this._invertContact;
     this._debounceMs = (this.getSetting('debounce_time') || DEBOUNCE.DEFAULT_MS / 1000) * 1000;
     this._lastBatteryReportTime = 0; // v5.5.793: Battery throttling
 
@@ -195,10 +199,14 @@ class ContactSensorDevice extends HybridSensorBase {
    * v5.5.344: Handle settings changes
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    if (changedKeys.includes('invert_contact')) {
-      this._invertContact = newSettings.invert_contact;
-      this.log(`[CONTACT] Invert setting changed to: ${this._invertContact}`);
-      // Toggle current state if inverted
+    // v5.8.98: Handle both invert_contact and reverse_alarm (were separate, now unified)
+    if (changedKeys.includes('invert_contact') || changedKeys.includes('reverse_alarm')) {
+      const inv = changedKeys.includes('invert_contact') ? newSettings.invert_contact : (this.getSetting('invert_contact') || false);
+      const rev = changedKeys.includes('reverse_alarm') ? newSettings.reverse_alarm : (this.getSetting('reverse_alarm') || false);
+      this._invertContact = inv || rev;
+      this._userExplicitInvert = this._invertContact;
+      this.log(`[CONTACT] Invert setting changed to: ${this._invertContact} (invert=${inv}, reverse=${rev})`);
+      // Toggle current state
       const current = this.getCapabilityValue('alarm_contact');
       if (current !== null) {
         await this.setCapabilityValue('alarm_contact', !current).catch(() => { });
@@ -226,14 +234,16 @@ class ContactSensorDevice extends HybridSensorBase {
    */
   async setCapabilityValue(capability, value) {
     if (capability === 'alarm_contact') {
-      // v5.8.58: Skip manufacturer inversion for IAS Zone events
+      // v5.8.98: Lasse_K fix — user-explicit inversion applies to ALL events (IAS + DP)
+      // Auto-detected inversion (invertedByDefault) only applies to DP events
       // IAS Zone alarm1=true already means "open/alarm" per ZCL spec
-      // Only Tuya DP values need manufacturer-specific inversion
       const isIAS = this._iasOriginatedAlarm;
       this._iasOriginatedAlarm = false; // Reset flag
 
-      // Apply invert setting: skip for IAS (already correct), apply for DP
-      let finalValue = (!isIAS && this._invertContact) ? !value : value;
+      // User-explicit invert: always apply (user toggled invert_contact or reverse_alarm)
+      // Auto-detected invert: skip for IAS (IAS follows ZCL spec, only DP is inverted)
+      const shouldInvert = this._userExplicitInvert || (!isIAS && this._invertContact);
+      let finalValue = shouldInvert ? !value : value;
 
       const now = Date.now();
       const state = this._contactState || { lastValue: null, lastChangeTime: 0, timer: null };

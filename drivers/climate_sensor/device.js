@@ -1363,6 +1363,29 @@ class ClimateSensorDevice extends HybridSensorBase {
       this._sendTimeSync().catch(() => { });
     }
 
+    // v5.8.98: Soil sensor profile override (ZHA #4282, Z2M #27501)
+    // DP5=temperature(÷10), DP3=soil_moisture(%), DP15=battery(%)
+    if (this._isSoilSensor()) {
+      if (dp === 5) {
+        const temp = this._applyTempOffset(value / 10);
+        this.log(`[SOIL] DP5 temperature raw=${value} → ${temp}°C`);
+        await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => {});
+        return;
+      }
+      if (dp === 3) {
+        const moisture = value > 100 ? Math.round(value / 10) : value;
+        this.log(`[SOIL] DP3 soil_moisture raw=${value} → ${moisture}%`);
+        await this.setCapabilityValue('measure_humidity', moisture).catch(() => {});
+        return;
+      }
+      if (dp === 15) {
+        const bat = Math.min(value, 100);
+        this.log(`[SOIL] DP15 battery raw=${value} → ${bat}%`);
+        await this.setCapabilityValue('measure_battery', bat).catch(() => {});
+        return;
+      }
+    }
+
     // Apply calibration offsets before passing to parent
     let processedValue = value;
 
@@ -1379,6 +1402,14 @@ class ClimateSensorDevice extends HybridSensorBase {
     if (super._handleDP) {
       return super._handleDP(dp, processedValue, dataType);
     }
+  }
+
+  // v5.8.98: Soil sensor profile (ZHA #4282, Z2M #27501)
+  _isSoilSensor() {
+    const mfr = this._manufacturerName || '';
+    return ['_TZE284_oitavov2', '_TZE200_myd45weu', '_TZE200_ga1maeof',
+      '_TZE200_9cqcpkgb', '_TZE204_myd45weu', '_TZE284_myd45weu',
+      '_TZE200_2se8efxh'].some(s => mfr.includes(s));
   }
 
   /**
