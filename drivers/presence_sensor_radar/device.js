@@ -962,7 +962,7 @@ const SENSOR_CONFIGS = {
       '_TZE284_ijxvkhd0', '_TZE284_sxm7l9xa',
       '_TZE284_xsm7l9xa', '_TZE284_yrwmnya3',
       // TZE204 variants with HIGH DP layout
-      '_TZE204_ijxvkhd0', '_TZE204_e5m9c5hl',
+      '_TZE204_ijxvkhd0',
       '_TZE204_kyhbrfyl', '_TZE204_ex3rcdha',
     ],
     battery: false,
