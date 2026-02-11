@@ -179,8 +179,21 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
 
-      - name: � Build app
+      - name: 🔨 Build app
         run: npx homey app build || echo "⚠️ Build validation warnings - continuing"
+
+      - name: 🔍 Debug - Check capabilities
+        run: |
+          echo "=== Homey CLI version ==="
+          npx homey --version
+          echo "=== Node version ==="
+          node --version
+          echo "=== Custom capabilities in app.json ==="
+          node -e "const a=require('./app.json'); console.log('Has capabilities:', !!a.capabilities); if(a.capabilities) console.log(Object.keys(a.capabilities).join(', '))"
+          echo "=== Compose capability files ==="
+          ls -la .homeycompose/capabilities/ | head -20
+          echo "=== Validate at publish level ==="
+          npx homey app validate --level publish 2>&1 | tail -5 || true
 
       - name: 🚀 Publish to Homey App Store
         id: publish
