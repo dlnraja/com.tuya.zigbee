@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.8.93** | v5.8.93: CRITICAL E000 BUTTON FIX (GH#98 DVMasters, GH#124 Lalla80111) — Root... |
 | **v5.8.92** | v5.8.92: BUTTON WAKE-UP FIX + TS0726 INDIVIDUAL GANG FIX — (1) Battery button... |
 | **v5.8.91** | v5.8.91: ZCL METERING FIX (GH#110 Pollepa) — TS011F energy plugs (_TZ3210_w0q... |
 | **v5.8.90** | v5.8.90: BSEED FINGERPRINT ADDITIONS — (1) JB#1338 pjmpessers: Added _TZ3000_... |
@@ -82,7 +83,6 @@
 | **v5.8.86** | v5.8.86: CRITICAL CRASH FIX + BUTTON SPAM FIX + RADAR SENSOR FIX — (1) CRASH ... |
 | **v5.8.85** | v5.8.85: FORUM BUG FIXES — (1) Contact sensor: Fixed double inversion bug in ... |
 | **v5.8.84** | v5.8.84: FORK AUDIT — Fix _TZ3000_an5rjiwd moved button_wireless_1→button_wir... |
-| **v5.8.83** | v5.8.83: DEEP PR AUDIT — (1) switch_dimmer_1gang REWRITE: Fixed to use TuyaSp... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
