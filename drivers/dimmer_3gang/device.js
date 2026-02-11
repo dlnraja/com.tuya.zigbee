@@ -109,10 +109,44 @@ class Dimmer3GangDevice extends ZigBeeDevice {
           this.setCapabilityValue(mapping.capability, transformedValue).catch(err => {
             this.error(`[DIMMER-3G] Error setting ${mapping.capability}:`, err.message);
           });
+
+          // v5.8.97: Physical button flow triggers (inspired by PR #112 packetninja)
+          if (isPhysical) {
+            this._triggerPhysicalFlow(dp, transformedValue, lastValue);
+          }
         }
       }
     } catch (err) {
       this.error('[DIMMER-3G] Error handling Tuya response:', err.message);
+    }
+  }
+
+  // v5.8.97: Trigger physical button flow cards (PR #112 pattern)
+  _triggerPhysicalFlow(dp, value, lastValue) {
+    try {
+      // On/Off DPs: 1 (gang1), 7 (gang2), 15 (gang3)
+      const onOffMap = { 1: '1', 7: '2', 15: '3' };
+      // Dim DPs: 2 (gang1), 8 (gang2), 16 (gang3)
+      const dimMap = { 2: '1', 8: '2', 16: '3' };
+
+      if (onOffMap[dp]) {
+        const gang = onOffMap[dp];
+        const id = value
+          ? `dimmer_3gang_physical_gang${gang}_on`
+          : `dimmer_3gang_physical_gang${gang}_off`;
+        this.homey.flow.getDeviceTriggerCard(id)
+          .trigger(this, {}, {}).catch(() => {});
+      } else if (dimMap[dp]) {
+        const gang = dimMap[dp];
+        const up = lastValue !== undefined && value > lastValue;
+        const id = up
+          ? `dimmer_3gang_physical_gang${gang}_brightness_increased`
+          : `dimmer_3gang_physical_gang${gang}_brightness_decreased`;
+        this.homey.flow.getDeviceTriggerCard(id)
+          .trigger(this, { brightness: Math.round(value * 100) }, {}).catch(() => {});
+      }
+    } catch (err) {
+      this.error('[DIMMER-3G] Flow trigger error:', err.message);
     }
   }
 
@@ -209,6 +243,12 @@ class Dimmer3GangDevice extends ZigBeeDevice {
     } catch (err) {
       this.error('[DIMMER-3G] Error sending DP:', err.message);
     }
+  }
+
+  // v5.8.97: Cleanup timeout on delete (PR #116 pattern)
+  onDeleted() {
+    if (this._appCommandTimeout) clearTimeout(this._appCommandTimeout);
+    super.onDeleted?.();
   }
 }
 

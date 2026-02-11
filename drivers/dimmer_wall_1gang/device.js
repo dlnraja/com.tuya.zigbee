@@ -13,6 +13,12 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
  */
 class DimmerWall1GangDevice extends VirtualButtonMixin(HybridLightBase) {
 
+  // v5.8.97: Physical button detection state (PR #112 packetninja pattern)
+  _appCommandPending = false;
+  _appCommandTimeout = null;
+  _lastOnoffState = null;
+  _lastDimValue = null;
+
   get lightCapabilities() { return ['onoff', 'dim']; }
 
   get dpMappings() {
@@ -35,8 +41,44 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(HybridLightBase) {
     await super.onNodeInit({ zclNode });
     // v5.5.412: Initialize virtual buttons
     await this.initVirtualButtons();
-    this.log('[DIMMER-1G] v5.5.412 ✅ Ready + virtual buttons');
+    this.log('[DIMMER-1G] v5.8.97 ✅ Ready + physical detection');
   }
+
+  _markAppCommand() {
+    this._appCommandPending = true;
+    clearTimeout(this._appCommandTimeout);
+    this._appCommandTimeout = setTimeout(() => { this._appCommandPending = false; }, 2000);
+  }
+
+  async _setOnOff(value) { this._markAppCommand(); return super._setOnOff(value); }
+  async _setDim(value) { this._markAppCommand(); return super._setDim(value); }
+
+  _handleDP(dpId, rawValue) {
+    const oldOnoff = this._lastOnoffState;
+    const oldDim = this._lastDimValue;
+    super._handleDP(dpId, rawValue);
+    const isPhysical = !this._appCommandPending;
+    if (dpId === 1) {
+      const v = rawValue === 1 || rawValue === true;
+      if (this._lastOnoffState === v) return;
+      this._lastOnoffState = v;
+      if (isPhysical) {
+        const id = v ? 'dimmer_wall_1gang_physical_on' : 'dimmer_wall_1gang_physical_off';
+        this.homey.flow.getDeviceTriggerCard(id).trigger(this, {}, {}).catch(() => {});
+      }
+    } else if (dpId === 2 || dpId === 101) {
+      const dim = this.getCapabilityValue('dim');
+      if (this._lastDimValue === dim) return;
+      const increased = oldDim !== null && dim > oldDim;
+      this._lastDimValue = dim;
+      if (isPhysical && oldDim !== null) {
+        const id = increased ? 'dimmer_wall_1gang_physical_brightness_up' : 'dimmer_wall_1gang_physical_brightness_down';
+        this.homey.flow.getDeviceTriggerCard(id).trigger(this, { brightness: Math.round(dim * 100) }, {}).catch(() => {});
+      }
+    }
+  }
+
+  onDeleted() { clearTimeout(this._appCommandTimeout); super.onDeleted?.(); }
 }
 
 module.exports = DimmerWall1GangDevice;

@@ -820,10 +820,11 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
     this.log('[SOS] 🔋 Setting up battery listeners (Tuya 4h heartbeat)...');
 
-    // Helper to update battery
+    // Helper to update battery — v5.8.97: Smart auto-detection of 0-200 vs 0-100 range
     const updateBattery = (value, source) => {
       if (value === undefined || value === null || value === 255 || value === 0xff) return false;
-      const percent = Math.round(value / 2);
+      // Smart range detection: ZCL standard is 0-200, but some Tuya devices report 0-100
+      const percent = value > 100 ? Math.round(value / 2) : Math.round(value);
       if (percent < 0 || percent > 100) return false;
       this.log(`[SOS] 🔋 Battery ${source}: ${percent}%`);
       this.setCapabilityValue('measure_battery', parseFloat(percent)).catch(() => { });
@@ -924,7 +925,8 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       if (result?.batteryPercentageRemaining !== undefined &&
         result.batteryPercentageRemaining !== 255 &&
         result.batteryPercentageRemaining !== 0xff) {
-        const percent = Math.round(result.batteryPercentageRemaining / 2);
+        const raw = result.batteryPercentageRemaining;
+        const percent = raw > 100 ? Math.round(raw / 2) : Math.round(raw);
         if (percent >= 0 && percent <= 100) {
           this.log(`[SOS] 🔋 Battery: ${percent}%`);
           await this.setCapabilityValue('measure_battery', parseFloat(percent)).catch(() => { });
@@ -1162,7 +1164,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
           // v5.5.137: Handle battery attributes from ANY cluster
           if (attrName === 'batteryPercentageRemaining' && value !== 255 && value !== null) {
-            const percent = Math.round(value / 2);
+            const percent = value > 100 ? Math.round(value / 2) : Math.round(value);
             if (percent >= 0 && percent <= 100) {
               this.log(`[SOS] 🔋 GLOBAL Battery: ${percent}%`);
               this.setCapabilityValue('measure_battery', parseFloat(percent)).catch(() => { });
@@ -1178,15 +1180,21 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
             return; // Don't trigger alarm for battery reports
           }
 
-          // Trigger alarm for non-battery attributes (like zone status)
-          this._handleAlarm({ source: 'global-attr', cluster: clusterName, attr: attrName, value });
+          // v5.8.97: Only trigger alarm from alarm-related clusters, NOT from basic/identify/temperature/etc.
+          // Previously this triggered _handleAlarm for EVERY attribute change, causing false alarms
+          // and blocking real SOS presses via the 2s debounce window.
+          const alarmClusters = ['iaszone', 'iasace', 'ssiazone', 'ssIasace', '1280', '1281'];
+          if (alarmClusters.some(c => clusterName.toLowerCase().includes(c))) {
+            this._handleAlarm({ source: 'global-attr', cluster: clusterName, attr: attrName, value });
+          }
         });
 
         // Listen for report events (4-hour heartbeat)
         cluster.on('report', (attrs) => {
           this.log(`[SOS-GLOBAL] 📡 EP${epId}.${clusterName} REPORT:`, JSON.stringify(attrs));
           if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
-            const percent = Math.round(attrs.batteryPercentageRemaining / 2);
+            const v = attrs.batteryPercentageRemaining;
+            const percent = v > 100 ? Math.round(v / 2) : Math.round(v);
             if (percent >= 0 && percent <= 100) {
               this.log(`[SOS] 🔋 HEARTBEAT Battery: ${percent}%`);
               this.setCapabilityValue('measure_battery', parseFloat(percent)).catch(() => { });
@@ -1194,7 +1202,6 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
           }
           if (attrs?.batteryVoltage !== undefined && attrs.batteryVoltage > 0) {
             const voltage = attrs.batteryVoltage / 10;
-            // CR2032: Map 2.0V-3.0V to 0-100%
             const percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) / 1.0 * 100)));
             this.log(`[SOS] 🔋 HEARTBEAT Battery (${voltage}V): ${percent}%`);
             this.setCapabilityValue('measure_battery', parseFloat(percent)).catch(() => { });
@@ -1203,7 +1210,11 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
         cluster.on('command', (cmd, payload) => {
           this.log(`[SOS-GLOBAL] 📡 EP${epId}.${clusterName} CMD: ${cmd}`, JSON.stringify(payload));
-          this._handleAlarm({ source: 'global-cmd', cluster: clusterName, command: cmd, ...payload });
+          // v5.8.97: Only trigger alarm from alarm-related clusters
+          const cmdAlarmClusters = ['iaszone', 'iasace', 'ssiazone', 'ssIasace', '1280', '1281'];
+          if (cmdAlarmClusters.some(c => clusterName.toLowerCase().includes(c))) {
+            this._handleAlarm({ source: 'global-cmd', cluster: clusterName, command: cmd, ...payload });
+          }
         });
 
         // Tuya cluster special handling
