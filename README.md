@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.9.3** | v5.9.3: BUTTON DRIVER AUDIT — (1) Fixed flow card ID mismatch in button_wirel... |
 | **v5.9.2** | v5.9.2: NEW DEVICE — Added _TZE204_dwcarsat (Air Monitor / SOS TS0601) to cli... |
 | **v5.9.1** | v5.9.1: CRASH FIX + FINGERPRINT EXPANSION — (1) Fixed 2 more SyntaxError cras... |
 | **v5.9.0** | v5.9.0: CRITICAL CRASH FIX — (1) Fixed SyntaxError in ProductValueValidator.j... |
@@ -82,7 +83,6 @@
 | **v5.8.96** | v5.8.96: ZIGBEE FRAME DROP FIX — Added try/catch protection to ALL 6 BoundClu... |
 | **v5.8.95** | v5.8.95: BIDIRECTIONAL BUTTON FIX — Consolidated markAppCommand() into Hybrid... |
 | **v5.8.94** | v5.8.94: FORUM DUAL-DRIVER FIXES — (1) Fixed _TZE204_mvtclclq (BSeed 2-gang U... |
-| **v5.8.93** | v5.8.93: CRITICAL E000 BUTTON FIX (GH#98 DVMasters, GH#124 Lalla80111) — Root... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
