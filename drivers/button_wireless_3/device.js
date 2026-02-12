@@ -119,7 +119,7 @@ class Button3GangDevice extends ButtonDevice {
 
       boundCluster.endpoint = ep;
       if (!endpoint.bindings) endpoint.bindings = {};
-      endpoint.bindings[57344] = boundCluster;
+      endpoint.bindings['tuyaE000'] = boundCluster;
       this.log(`[BUTTON3-E000] ✅ BoundCluster EP${ep}`);
     }
   }

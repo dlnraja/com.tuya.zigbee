@@ -285,10 +285,13 @@ class Button1GangDevice extends ButtonDevice {
           this.log(`[BUTTON1-ONOFF] attr.onOff: ${value} (last=${this._lastOnOffState}, sinceEvent=${timeSinceLastEvent}ms)`);
 
           // v5.5.504: IGNORE PERIODIC REPORTS - same value after >5 seconds = status report, NOT button press
-          if (this._lastOnOffState !== null && value === this._lastOnOffState && timeSinceLastEvent > 5000) {
-            this.log(`[BUTTON1-ONOFF] ⏭️ Ignored: periodic report (same value after ${Math.round(timeSinceLastEvent / 1000)}s)`);
-            this._lastOnOffTime = now;
-            return;
+          if (this._lastOnOffState !== null && value === this._lastOnOffState && timeSinceLastEvent > 60000) {
+            const secs = timeSinceLastEvent / 1000;
+            if ([300,600,900,1800,3600].some(i => Math.abs(secs-i) < i*0.1)) {
+              this.log(`[BUTTON1-ONOFF] ⏭️ Ignored: periodic (~${Math.round(secs)}s)`);
+              this._lastOnOffTime = now;
+              return;
+            }
           }
 
           // Ignore initial state report within first 3 seconds of init
@@ -318,10 +321,13 @@ class Button1GangDevice extends ButtonDevice {
             const timeSinceLastEvent = now - this._lastOnOffTime;
 
             // v5.5.504: IGNORE PERIODIC REPORTS
-            if (this._lastOnOffState !== null && attributes.onOff === this._lastOnOffState && timeSinceLastEvent > 5000) {
-              this.log(`[BUTTON1-ONOFF] ⏭️ Ignored report: periodic (same value after ${Math.round(timeSinceLastEvent / 1000)}s)`);
-              this._lastOnOffTime = now;
-              return;
+            if (this._lastOnOffState !== null && attributes.onOff === this._lastOnOffState && timeSinceLastEvent > 60000) {
+              const secs = timeSinceLastEvent / 1000;
+              if ([300,600,900,1800,3600].some(i => Math.abs(secs-i) < i*0.1)) {
+                this.log(`[BUTTON1-ONOFF] ⏭️ Ignored report: periodic (~${Math.round(secs)}s)`);
+                this._lastOnOffTime = now;
+                return;
+              }
             }
 
             if (this._lastOnOffState === attributes.onOff && timeSinceLastEvent < 100) {
@@ -515,7 +521,7 @@ class Button1GangDevice extends ButtonDevice {
       }});
       bc.endpoint = 1;
       if (!ep.bindings) ep.bindings = {};
-      ep.bindings[57344] = bc;
+      ep.bindings['tuyaE000'] = bc;
       this.log('[BUTTON1-E000] ✅ BoundCluster EP1');
     } catch (e) { this.log('[BUTTON1-E000] ℹ️ skip:', e.message); }
   }

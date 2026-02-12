@@ -1,4 +1,7 @@
 {
+  "5.9.5": {
+    "en": "v5.9.5: CRITICAL E000 FIX — (1) TuyaE000Cluster was never loaded (require missing) → SDK silently dropped ALL E000 button frames. (2) Wrong binding key: all 13 button/scene drivers used bindings[57344] (number) but SDK dispatches to bindings['tuyaE000'] (name) → BoundCluster never received events. (3) Fixed 5s periodic report filter in button_wireless_1 to smart ZCL interval matching. Fixes _TZ3000_b4awzgct/TS0041 (GH#124) and ALL E000-based remotes: button_wireless_1-8, scene_switch_1-6, smart_knob_rotary."
+  },
   "5.9.4": {
     "en": "v5.9.4: DIAGNOSTICS FIX — (1) Fixed button press dead zone: smart ZCL interval filter replaces 5s threshold that blocked same-value presses >2s apart (fixes _TZ3000_famkxci2/TS0043 LoraTap). (2) Skip scene mode 0x8004 for E000 devices — saves 5 retries on battery remotes. (3) Verified _TZ3000_zutizvyk/TS0203 fixes already present since v5.9.0."
   },

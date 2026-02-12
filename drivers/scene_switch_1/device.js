@@ -44,7 +44,7 @@ class SceneSwitch1Device extends ButtonDevice {
       });
       bc.endpoint = 1;
       if (!endpoint.bindings) endpoint.bindings = {};
-      endpoint.bindings[57344] = bc;
+      endpoint.bindings['tuyaE000'] = bc;
     } catch (e) { /* ok */ }
   }
 }
