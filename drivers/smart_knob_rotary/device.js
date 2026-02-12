@@ -485,7 +485,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
       try {
         const BC = require('../../lib/clusters/TuyaE000BoundCluster');
         const bc = new BC({ device: this, onButtonPress: async (b, t) => this._triggerButtonPress(t) });
-        bc.endpoint = 1; if (!ep.bindings) ep.bindings = {}; ep.bindings[57344] = bc;
+        bc.endpoint = 1; if (!ep.bindings) ep.bindings = {}; ep.bindings['tuyaE000'] = bc;
       } catch (e) { /* ok */ }
     } catch (e) { this.log('[E000] Error:', e.message); }
   }
