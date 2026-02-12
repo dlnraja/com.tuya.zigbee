@@ -1,4 +1,7 @@
 {
+  "5.9.6": {
+    "en": "v5.9.6: BUTTON OPTIMIZATION — (1) Removed redundant 300ms global debounce in triggerButtonPress (500ms minInterval already covers it). (2) Fixed parseInt inconsistency: long/multi press used parseInt(button)||button which could return strings — now uses Number(button)||1 consistently across all press types. (3) Fixed shadowed 'now' variable redeclaration inside try block. (4) Massive log noise reduction: consolidated 8-line header into 1, 4-line error into 1, refactored all 5 press types (single/double/long/multi/release) to use new _tryCard helper that only logs successes silently."
+  },
   "5.9.5": {
     "en": "v5.9.5: CRITICAL E000 FIX — (1) TuyaE000Cluster was never loaded (require missing) → SDK silently dropped ALL E000 button frames. (2) Wrong binding key: all 13 button/scene drivers used bindings[57344] (number) but SDK dispatches to bindings['tuyaE000'] (name) → BoundCluster never received events. (3) Fixed 5s periodic report filter in button_wireless_1 to smart ZCL interval matching. Fixes _TZ3000_b4awzgct/TS0041 (GH#124) and ALL E000-based remotes: button_wireless_1-8, scene_switch_1-6, smart_knob_rotary."
   },
