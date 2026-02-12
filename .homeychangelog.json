@@ -1,4 +1,7 @@
 {
+  "5.9.2": {
+    "en": "v5.9.2: NEW DEVICE — Added _TZE204_dwcarsat (Air Monitor / SOS TS0601) to climate_sensor driver. Community support: responded to 11 JohanBendz upstream issues confirming device support in Universal Tuya Zigbee."
+  },
   "5.9.1": {
     "en": "v5.9.1: CRASH FIX + FINGERPRINT EXPANSION — (1) Fixed 2 more SyntaxError crashes from unquoted dotted object keys in UniversalThrottleManager.js (measure_luminance.distance) and TuyaDPFlowCardManager.js (dim.speed) — these caused runtime parse failures in any driver loading these modules. (2) Added 56 missing case-variant fingerprints across 30+ drivers — devices reporting uppercase manufacturerName (e.g. _TZE284_xxx) now also match lowercase and vice versa. (3) Added _TZ3000_rylaozuc (Lidl ceiling light TS0502A) to bulb_tunable_white. (4) Fixed missing lowercase variant for _TZ3000_8utxxtzr in button_emergency_sos."
   },
