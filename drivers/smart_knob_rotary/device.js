@@ -33,6 +33,10 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     // Setup button/knob event handling
     await this._setupKnobEventHandling(zclNode);
 
+    // v5.9.3: E000 + Tuya DP detection layers
+    await this._setupE000Detection(zclNode);
+    await this._setupTuyaDPDetection(zclNode);
+
     this.log('Smart Knob Rotary initialization complete');
   }
 
@@ -465,6 +469,35 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
         this.log(`[FLOW] ✅ Triggered ${specificCardId}`);
       } catch (e) { /* ignore */ }
     }
+  }
+
+  async _setupE000Detection(zclNode) {
+    try {
+      const ep = zclNode?.endpoints?.[1]; if (!ep) return;
+      const e = ep.clusters?.tuyaE000 || ep.clusters?.[57344];
+      if (e?.on) {
+        const pm = { 0: 'single', 1: 'double', 2: 'long' };
+        e.on('buttonPress', async (d) => { this._triggerButtonPress(pm[d?.pressType] || 'single'); });
+        for (const c of ['cmd0','cmd1','cmd2','cmdFD','cmdFE','cmdFF']) {
+          e.on(c, async ({ data }) => { this._triggerButtonPress(data?.length >= 1 ? (pm[data[0]] || 'single') : 'single'); });
+        }
+      }
+      try {
+        const BC = require('../../lib/clusters/TuyaE000BoundCluster');
+        const bc = new BC({ device: this, onButtonPress: async (b, t) => this._triggerButtonPress(t) });
+        bc.endpoint = 1; if (!ep.bindings) ep.bindings = {}; ep.bindings[57344] = bc;
+      } catch (e) { /* ok */ }
+    } catch (e) { this.log('[E000] Error:', e.message); }
+  }
+
+  async _setupTuyaDPDetection(zclNode) {
+    try {
+      const tc = zclNode?.endpoints?.[1]?.clusters?.tuya || zclNode?.endpoints?.[1]?.clusters?.[61184];
+      if (!tc?.on) return;
+      const pm = { 0: 'single', 1: 'double', 2: 'long' };
+      tc.on('response', async (d) => { const v = d?.data ?? d?.value ?? 0; this._triggerButtonPress(pm[v] || 'single'); });
+      tc.on('datapoint', async (d) => { const v = d?.data?.[0] ?? 0; this._triggerButtonPress(pm[v] || 'single'); });
+    } catch (e) { this.log('[TUYA-DP] Error:', e.message); }
   }
 
   onDeleted() {
