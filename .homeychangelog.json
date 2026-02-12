@@ -1,4 +1,7 @@
 {
+  "5.9.3": {
+    "en": "v5.9.3: BUTTON DRIVER AUDIT — (1) Fixed flow card ID mismatch in button_wireless driver — double_pressed/long_pressed never triggered because ButtonDevice generates double_press/long_press IDs. (2) Enriched button_wireless_2/6/8 with missing detection layers: Scenes cluster, MultistateInput, Tuya DP, battery reporting. (3) Rebuilt scene_switch_4 with full E000 + OnOff command detection (was completely empty). (4) Added E000 BoundCluster + Tuya DP detection to smart_knob_rotary. (5) Added release event fallback in ButtonDevice for drivers without gangCount infix. (6) Added 9 missing JohanBendz fingerprints: button_wireless_2 (+6 TS0042), button_wireless_3 (+2 TS0043), button_wireless_4 (+1 TS0044)."
+  },
   "5.9.2": {
     "en": "v5.9.2: NEW DEVICE — Added _TZE204_dwcarsat (Air Monitor / SOS TS0601) to climate_sensor driver. Community support: responded to 11 JohanBendz upstream issues confirming device support in Universal Tuya Zigbee."
   },
