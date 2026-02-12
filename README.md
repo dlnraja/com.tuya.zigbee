@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.9.6** | v5.9.6: BUTTON OPTIMIZATION — (1) Removed redundant 300ms global debounce in ... |
 | **v5.9.5** | v5.9.5: CRITICAL E000 FIX — (1) TuyaE000Cluster was never loaded (require mis... |
 | **v5.9.4** | v5.9.4: DIAGNOSTICS FIX — (1) Fixed button press dead zone: smart ZCL interva... |
 | **v5.9.3** | v5.9.3: BUTTON DRIVER AUDIT — (1) Fixed flow card ID mismatch in button_wirel... |
@@ -82,7 +83,6 @@
 | **v5.8.99** | v5.8.99: BUTTON BATTERY FIX — Fixed _readBatteryOnButtonPress crash (method n... |
 | **v5.8.98** | v5.8.98: CONTACT SENSOR FIX + NEW FINGERPRINTS + SOIL SENSOR FIX — (1) Forum ... |
 | **v5.8.97** | v5.8.97: SOS + RADAR + DIMMER PHYSICAL BUTTONS — (1) SOS button: fixed false ... |
-| **v5.8.96** | v5.8.96: ZIGBEE FRAME DROP FIX — Added try/catch protection to ALL 6 BoundClu... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
