@@ -128,7 +128,7 @@ class Button2GangDevice extends ButtonDevice {
         });
         bc.endpoint = ep;
         if (!endpoint.bindings) endpoint.bindings = {};
-        endpoint.bindings[57344] = bc;
+        endpoint.bindings['tuyaE000'] = bc;
         this.log(`[BUTTON2-E000] ✅ BoundCluster EP${ep} ready`);
       }
     } catch (e) {

@@ -665,7 +665,7 @@ class Button4GangDevice extends ButtonDevice {
         if (!endpoint.bindings) {
           endpoint.bindings = {};
         }
-        endpoint.bindings[57344] = boundCluster;
+        endpoint.bindings['tuyaE000'] = boundCluster;
         
         this.log(`[BUTTON4-E000] ✅ BoundCluster registered for EP${ep} cluster 57344`);
       }
