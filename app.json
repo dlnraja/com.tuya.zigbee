@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.9.2",
+  "version": "5.9.3",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -49,6 +49,202 @@
   "brandColor": "#00E6A0",
   "flow": {
     "triggers": [
+      {
+        "id": "sub_capability_changed",
+        "title": {
+          "en": "Sub-capability changed",
+          "fr": "Sous-capacité changée",
+          "nl": "Sub-capability gewijzigd",
+          "de": "Sub-Fähigkeit geändert"
+        },
+        "titleFormatted": {
+          "en": "[[device]] sub-capability [[capability]] changed",
+          "fr": "Sous-capacité [[capability]] de [[device]] changée",
+          "nl": "Sub-capability [[capability]] van [[device]] gewijzigd",
+          "de": "Sub-Fähigkeit [[capability]] von [[device]] geändert"
+        },
+        "hint": {
+          "en": "Triggers when any sub-capability changes (e.g. onoff.gang2, dim.1)",
+          "fr": "Se déclenche quand une sous-capacité change (ex: onoff.gang2, dim.1)"
+        },
+        "tokens": [
+          {
+            "name": "capability",
+            "type": "string",
+            "title": {
+              "en": "Capability",
+              "fr": "Capacité"
+            },
+            "example": "onoff.gang2"
+          },
+          {
+            "name": "value",
+            "type": "string",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            },
+            "example": "true"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=onoff"
+          },
+          {
+            "name": "capability",
+            "type": "text",
+            "title": {
+              "en": "Capability (empty=any)",
+              "fr": "Capacité (vide=toutes)"
+            },
+            "placeholder": {
+              "en": "onoff.gang2",
+              "fr": "onoff.gang2"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tuya_dp_received",
+        "title": {
+          "en": "Tuya Data Point received",
+          "fr": "Data Point Tuya reçu",
+          "nl": "Tuya Data Point ontvangen",
+          "de": "Tuya Datenpunkt empfangen"
+        },
+        "titleFormatted": {
+          "en": "Tuya DP [[dp]] received on [[device]]",
+          "fr": "DP Tuya [[dp]] reçu sur [[device]]",
+          "nl": "Tuya DP [[dp]] ontvangen op [[device]]",
+          "de": "Tuya DP [[dp]] empfangen auf [[device]]"
+        },
+        "hint": {
+          "en": "Triggers when a raw Tuya DP is received. Use DP 0 to match any DP.",
+          "fr": "Se déclenche quand un DP Tuya brut est reçu. Utilisez DP 0 pour tous les DP."
+        },
+        "tokens": [
+          {
+            "name": "dp",
+            "type": "number",
+            "title": {
+              "en": "DP Number",
+              "fr": "Numéro DP"
+            },
+            "example": 1
+          },
+          {
+            "name": "value",
+            "type": "string",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            },
+            "example": "true"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=tuya_data_report|onoff"
+          },
+          {
+            "name": "dp",
+            "type": "number",
+            "title": {
+              "en": "DP Number (0=any)",
+              "fr": "Numéro DP (0=tous)"
+            },
+            "min": 0,
+            "max": 255
+          }
+        ]
+      },
+      {
+        "id": "tuya_dp_threshold_crossed",
+        "title": {
+          "en": "DP threshold crossed",
+          "fr": "Seuil DP franchi",
+          "nl": "DP drempel overschreden",
+          "de": "DP Schwellwert überschritten"
+        },
+        "titleFormatted": {
+          "en": "DP [[dp]] on [[device]] crosses threshold [[threshold]]",
+          "fr": "DP [[dp]] de [[device]] franchit le seuil [[threshold]]",
+          "nl": "DP [[dp]] van [[device]] overschrijdt drempel [[threshold]]",
+          "de": "DP [[dp]] von [[device]] überschreitet Schwellwert [[threshold]]"
+        },
+        "hint": {
+          "en": "Triggers when a numeric DP value crosses a threshold (forum #1016)",
+          "fr": "Se déclenche quand une valeur DP numérique franchit un seuil"
+        },
+        "tokens": [
+          {
+            "name": "dp",
+            "type": "number",
+            "title": {
+              "en": "DP Number",
+              "fr": "Numéro DP"
+            },
+            "example": 1
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Current Value",
+              "fr": "Valeur actuelle"
+            },
+            "example": 25
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold",
+              "fr": "Seuil"
+            },
+            "example": 30
+          },
+          {
+            "name": "direction",
+            "type": "string",
+            "title": {
+              "en": "Direction",
+              "fr": "Direction"
+            },
+            "example": "above"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=tuya_data_report|onoff|measure_temperature"
+          },
+          {
+            "name": "dp",
+            "type": "number",
+            "title": {
+              "en": "DP Number",
+              "fr": "Numéro DP"
+            },
+            "min": 1,
+            "max": 255
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "title": {
+              "en": "Threshold Value",
+              "fr": "Valeur seuil"
+            }
+          }
+        ]
+      },
       {
         "id": "air_purifier_turned_on",
         "title": {
@@ -1223,7 +1419,7 @@
         }
       },
       {
-        "id": "button_wireless_button_double_pressed",
+        "id": "button_wireless_button_double_press",
         "title": {
           "en": "Button double pressed",
           "fr": "Double appui bouton"
@@ -1252,7 +1448,7 @@
         }
       },
       {
-        "id": "button_wireless_button_long_pressed",
+        "id": "button_wireless_button_long_press",
         "title": {
           "en": "Button long pressed",
           "fr": "Appui long bouton"
@@ -1281,7 +1477,7 @@
         }
       },
       {
-        "id": "button_wireless_button_released",
+        "id": "button_wireless_button_release",
         "title": {
           "en": "Button released",
           "fr": "Bouton relâché"
@@ -23047,6 +23243,80 @@
     ],
     "conditions": [
       {
+        "id": "sub_capability_is",
+        "title": {
+          "en": "Sub-capability [[capability]] is on",
+          "fr": "Sous-capacité [[capability]] est active"
+        },
+        "titleFormatted": {
+          "en": "[[capability]] is !{{on|off}} on [[device]]",
+          "fr": "[[capability]] est !{{actif|inactif}} sur [[device]]"
+        },
+        "hint": {
+          "en": "Check if a sub-capability is on (e.g. onoff.gang2)",
+          "fr": "Vérifie si une sous-capacité est active (ex: onoff.gang2)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=onoff"
+          },
+          {
+            "name": "capability",
+            "type": "text",
+            "title": {
+              "en": "Capability",
+              "fr": "Capacité"
+            },
+            "placeholder": {
+              "en": "onoff.gang2",
+              "fr": "onoff.gang2"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tuya_dp_equals",
+        "title": {
+          "en": "Tuya DP [[dp]] equals [[value]]",
+          "fr": "DP Tuya [[dp]] égal à [[value]]"
+        },
+        "titleFormatted": {
+          "en": "Tuya DP [[dp]] equals [[value]] on [[device]]",
+          "fr": "DP Tuya [[dp]] égal à [[value]] sur [[device]]"
+        },
+        "hint": {
+          "en": "Check if a raw Tuya datapoint has a specific value",
+          "fr": "Vérifie si un datapoint Tuya brut a une valeur spécifique"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=tuya_data_report|onoff"
+          },
+          {
+            "name": "dp",
+            "type": "number",
+            "title": {
+              "en": "DP Number",
+              "fr": "Numéro DP"
+            },
+            "min": 1,
+            "max": 255
+          },
+          {
+            "name": "value",
+            "type": "text",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            }
+          }
+        ]
+      },
+      {
         "id": "air_purifier_is_on",
         "title": {
           "en": "Is !{{on|off}}",
@@ -28259,6 +28529,92 @@
       }
     ],
     "actions": [
+      {
+        "id": "sub_capability_set",
+        "title": {
+          "en": "Set sub-capability",
+          "fr": "Définir sous-capacité",
+          "nl": "Sub-capability instellen",
+          "de": "Sub-Fähigkeit setzen"
+        },
+        "titleFormatted": {
+          "en": "Set [[capability]] to [[value]] on [[device]]",
+          "fr": "Définir [[capability]] à [[value]] sur [[device]]"
+        },
+        "hint": {
+          "en": "Set a sub-capability value (e.g. onoff.gang2)",
+          "fr": "Définit une valeur de sous-capacité (ex: onoff.gang2)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=onoff"
+          },
+          {
+            "name": "capability",
+            "type": "text",
+            "title": {
+              "en": "Capability",
+              "fr": "Capacité"
+            },
+            "placeholder": {
+              "en": "onoff.gang2",
+              "fr": "onoff.gang2"
+            }
+          },
+          {
+            "name": "value",
+            "type": "checkbox",
+            "title": {
+              "en": "On/Off",
+              "fr": "Marche/Arrêt"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tuya_dp_send",
+        "title": {
+          "en": "Send Tuya DP",
+          "fr": "Envoyer DP Tuya",
+          "nl": "Tuya DP verzenden",
+          "de": "Tuya DP senden"
+        },
+        "titleFormatted": {
+          "en": "Send DP [[dp]] with value [[value]] to [[device]]",
+          "fr": "Envoyer DP [[dp]] avec valeur [[value]] à [[device]]"
+        },
+        "hint": {
+          "en": "Send a raw Tuya datapoint value to the device",
+          "fr": "Envoie une valeur brute de datapoint Tuya à l'appareil"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=tuya_data_report|onoff"
+          },
+          {
+            "name": "dp",
+            "type": "number",
+            "title": {
+              "en": "DP Number",
+              "fr": "Numéro DP"
+            },
+            "min": 1,
+            "max": 255
+          },
+          {
+            "name": "value",
+            "type": "text",
+            "title": {
+              "en": "Value",
+              "fr": "Valeur"
+            }
+          }
+        ]
+      },
       {
         "id": "air_purifier_turn_on",
         "title": {
@@ -45025,7 +45381,19 @@
           "_tz3000_qous95zh",
           "_TZ3000_qous95zh",
           "_tz3000_xr7itfxq",
-          "_TZ3000_xr7itfxq"
+          "_TZ3000_xr7itfxq",
+          "_tz3000_owgcnkrh",
+          "_TZ3000_owgcnkrh",
+          "_tz3000_5e235jpa",
+          "_TZ3000_5e235jpa",
+          "_tz3000_fkvaniuu",
+          "_TZ3000_fkvaniuu",
+          "_tz3000_h1c2eamp",
+          "_TZ3000_h1c2eamp",
+          "_tz3000_oikiyf3b",
+          "_TZ3000_oikiyf3b",
+          "_tz3400_keyjhapk",
+          "_TZ3400_keyjhapk"
         ],
         "productId": [
           "TS0042"
@@ -45430,7 +45798,11 @@
           "_tz3000_w3c7ouru",
           "_TZ3000_w3c7ouru",
           "_tz3000_w8jwkczz",
-          "_TZ3000_w8jwkczz"
+          "_TZ3000_w8jwkczz",
+          "_tz3000_sj7jbgks",
+          "_TZ3000_sj7jbgks",
+          "_tz3000_yw5tvzsk",
+          "_TZ3000_yw5tvzsk"
         ],
         "productId": [
           "TS0043"
@@ -45979,7 +46351,9 @@
           "_tz3290_nkpxapoz",
           "_TZ3290_nkpxapoz",
           "_tz3290_yyax9ajf",
-          "_TZ3290_yyax9ajf"
+          "_TZ3290_yyax9ajf",
+          "_tz3000_jcspr0tp",
+          "_TZ3000_jcspr0tp"
         ],
         "productId": [
           "TS0044",
@@ -80097,5 +80471,288 @@
       },
       "id": "zigbee_repeater"
     }
-  ]
+  ],
+  "capabilities": {
+    "alarm_tank_full": {
+      "type": "boolean",
+      "title": {
+        "en": "Tank Full"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "alarm_water_high": {
+      "type": "boolean",
+      "title": {
+        "en": "Water High"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "alarm_water_low": {
+      "type": "boolean",
+      "title": {
+        "en": "Water Low"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "button_close": {
+      "type": "boolean",
+      "title": {
+        "en": "Close",
+        "fr": "Fermer",
+        "nl": "Sluiten"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
+    },
+    "button_dim_down": {
+      "type": "boolean",
+      "title": {
+        "en": "Dim Down",
+        "fr": "Diminuer",
+        "nl": "Dimmen Omlaag"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
+    },
+    "button_dim_up": {
+      "type": "boolean",
+      "title": {
+        "en": "Dim Up",
+        "fr": "Augmenter",
+        "nl": "Dimmen Omhoog"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
+    },
+    "button_identify": {
+      "type": "boolean",
+      "title": {
+        "en": "Identify",
+        "nl": "Identificeren",
+        "de": "Identifizieren",
+        "fr": "Identifier"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/capabilities/button_identify.svg",
+      "insights": false,
+      "desc": {
+        "en": "Identify device"
+      }
+    },
+    "button_open": {
+      "type": "boolean",
+      "title": {
+        "en": "Open",
+        "fr": "Ouvrir",
+        "nl": "Openen"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
+    },
+    "button_stop": {
+      "type": "boolean",
+      "title": {
+        "en": "Stop",
+        "fr": "Arrêter",
+        "nl": "Stoppen"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
+    },
+    "button_toggle": {
+      "type": "boolean",
+      "title": {
+        "en": "Toggle",
+        "nl": "Schakelen",
+        "de": "Umschalten",
+        "fr": "Basculer"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "icon": "/assets/capabilities/button_toggle.svg",
+      "insights": false,
+      "desc": {
+        "en": "Toggle button"
+      }
+    },
+    "button_toggle_1": {
+      "type": "boolean",
+      "title": {
+        "en": "Toggle 1"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
+    },
+    "button_toggle_2": {
+      "type": "boolean",
+      "title": {
+        "en": "Toggle 2"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
+    },
+    "button_toggle_3": {
+      "type": "boolean",
+      "title": {
+        "en": "Toggle 3"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
+    },
+    "button_toggle_4": {
+      "type": "boolean",
+      "title": {
+        "en": "Toggle 4"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
+    },
+    "button_toggle_5": {
+      "type": "boolean",
+      "title": {
+        "en": "Toggle 5"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
+    },
+    "button_toggle_6": {
+      "type": "boolean",
+      "title": {
+        "en": "Toggle 6"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
+    },
+    "button_toggle_7": {
+      "type": "boolean",
+      "title": {
+        "en": "Toggle 7"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
+    },
+    "button_toggle_8": {
+      "type": "boolean",
+      "title": {
+        "en": "Toggle 8"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "button",
+      "insights": false
+    },
+    "measure_formaldehyde": {
+      "type": "number",
+      "title": {
+        "en": "Formaldehyde"
+      },
+      "units": {
+        "en": "mg/m³"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "insights": true
+    },
+    "measure_soil_moisture": {
+      "type": "number",
+      "title": {
+        "en": "Soil Moisture",
+        "nl": "Bodemvocht",
+        "de": "Bodenfeuchtigkeit",
+        "fr": "Humidité du Sol"
+      },
+      "units": {
+        "en": "%"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/measure_soil_moisture.svg",
+      "insights": true,
+      "desc": {
+        "en": "Soil moisture percentage"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1
+    },
+    "measure_voc": {
+      "type": "number",
+      "title": {
+        "en": "VOC"
+      },
+      "units": {
+        "en": "ppb"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "insights": true
+    },
+    "measure_water_level": {
+      "type": "number",
+      "title": {
+        "en": "Water Level",
+        "fr": "Niveau d'eau"
+      },
+      "units": {
+        "en": "%"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "insights": true,
+      "min": 0,
+      "max": 100
+    },
+    "measure_water_percentage": {
+      "type": "number",
+      "title": {
+        "en": "Water Percentage"
+      },
+      "units": {
+        "en": "%"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "insights": true,
+      "min": 0,
+      "max": 100
+    }
+  }
 }

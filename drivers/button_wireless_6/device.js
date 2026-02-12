@@ -20,7 +20,23 @@ class Button6GangDevice extends ButtonDevice {
     this.buttonCount = 6;
     await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
     await this._setupE000Detection(zclNode);
+    await this._setupExtraDetection(zclNode);
     this.log('[INIT] ✅ Button6GangDevice initialized - 6 buttons ready');
+  }
+
+  async _setupExtraDetection(zclNode) {
+    const pm = { 0: 'single', 1: 'double', 2: 'long' };
+    for (let ep = 1; ep <= 6; ep++) {
+      const e = zclNode?.endpoints?.[ep]; if (!e) continue;
+      const sc = e.clusters?.scenes || e.clusters?.[5];
+      if (sc?.on) { sc.on('recall', async (p) => { await this.triggerButtonPress(ep, pm[p?.sceneId ?? 0] || 'single'); }); }
+      const ms = e.clusters?.multistateInput || e.clusters?.[18];
+      if (ms?.on) { ms.on('attr.presentValue', async (v) => { await this.triggerButtonPress(ep, pm[v] || 'single'); }); }
+    }
+    try {
+      const tc = zclNode?.endpoints?.[1]?.clusters?.tuya || zclNode?.endpoints?.[1]?.clusters?.[61184];
+      if (tc?.on) { tc.on('response', async (d) => { const dp = d?.dp ?? d?.dpId; const v = d?.data ?? d?.value ?? 0; if (dp >= 1 && dp <= 6) await this.triggerButtonPress(dp, pm[v] || 'single'); }); }
+    } catch (e) { /* ok */ }
   }
 
   async _setupE000Detection(zclNode) {
