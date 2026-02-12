@@ -20,7 +20,43 @@ class Button2GangDevice extends ButtonDevice {
     this.buttonCount = 2;
     await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
     await this._setupE000Detection(zclNode);
+    await this._setupExtraDetection(zclNode);
     this.log('[INIT] ✅ Button2GangDevice initialized - 2 buttons ready');
+  }
+
+  async _setupExtraDetection(zclNode) {
+    const pressMap = { 0: 'single', 1: 'double', 2: 'long' };
+    for (let ep = 1; ep <= 2; ep++) {
+      const endpoint = zclNode?.endpoints?.[ep];
+      if (!endpoint) continue;
+      const sc = endpoint.clusters?.scenes || endpoint.clusters?.[5];
+      if (sc?.on) {
+        sc.on('recall', async (p) => {
+          const t = pressMap[p?.sceneId ?? 0] || 'single';
+          await this.triggerButtonPress(ep, t);
+        });
+        sc.on('recallScene', async (p) => {
+          const t = pressMap[p?.sceneId ?? 0] || 'single';
+          await this.triggerButtonPress(ep, t);
+        });
+      }
+      const ms = endpoint.clusters?.multistateInput || endpoint.clusters?.[18];
+      if (ms?.on) {
+        ms.on('attr.presentValue', async (v) => {
+          await this.triggerButtonPress(ep, pressMap[v] || 'single');
+        });
+      }
+    }
+    try {
+      const tc = zclNode?.endpoints?.[1]?.clusters?.tuya || zclNode?.endpoints?.[1]?.clusters?.[61184];
+      if (tc?.on) {
+        tc.on('response', async (d) => {
+          const dp = d?.dp ?? d?.dpId;
+          const v = d?.data ?? d?.value ?? 0;
+          if (dp >= 1 && dp <= 2) await this.triggerButtonPress(dp, pressMap[v] || 'single');
+        });
+      }
+    } catch (e) { /* ok */ }
   }
 
   async _setupE000Detection(zclNode) {
