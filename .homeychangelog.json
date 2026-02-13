@@ -1,4 +1,10 @@
 {
+  "5.9.8": {
+    "en": "v5.9.8: BUTTON FIX + STABILITY — (1) Added raw frame interceptor to button_wireless_1 and button_wireless_2: SDK silently drops E000 (57344) frames for unknown clusters — interceptor catches them before discard, fixing _TZ3000_b4awzgct/TS0041 buttons not triggering flows (GH#124 Lalla80111). (2) Fixed duplicate onoff capability listener warning in HybridSwitchBase with registration guard. (3) All 4 button drivers now have consistent E000 detection: BoundCluster + raw frame interceptor."
+  },
+  "5.9.7": {
+    "en": "v5.9.7: CONTACT SENSOR FIX + ENERGY MONITOR + FINGERPRINT — (1) Fixed contact sensor double-inversion bug: _iasOriginatedAlarm flag was never set to true, causing IAS Zone events to be inverted twice for sensors in invertedByDefault list (Lasse_K forum regression). (2) Fixed plug_energy_monitor watchdog incorrectly removing measure_power/measure_current/meter_power capabilities when value=0 (valid for no-load). (3) Added 60s periodic energy poll fallback for ZCL plugs that don't support configureReporting. (4) Fixed soil sensor _TZE284_oitavov2 temperature case-sensitive check — rawCelsius bypass now works regardless of manufacturer name casing (DutchDuke forum). (5) Added TS0225 productId to motion_sensor for _TZ321C_fkzihax8 presence sensor (GH#97 NoroddH)."
+  },
   "5.9.6": {
     "en": "v5.9.6: BUTTON OPTIMIZATION — (1) Removed redundant 300ms global debounce in triggerButtonPress (500ms minInterval already covers it). (2) Fixed parseInt inconsistency: long/multi press used parseInt(button)||button which could return strings — now uses Number(button)||1 consistently across all press types. (3) Fixed shadowed 'now' variable redeclaration inside try block. (4) Massive log noise reduction: consolidated 8-line header into 1, 4-line error into 1, refactored all 5 press types (single/double/long/multi/release) to use new _tryCard helper that only logs successes silently."
   },

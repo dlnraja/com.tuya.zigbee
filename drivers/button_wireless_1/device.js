@@ -83,6 +83,10 @@ class Button1GangDevice extends ButtonDevice {
     // v5.5.371: Setup battery reporting listener
     await this._setupBatteryReporting(zclNode);
 
+    // v5.9.8: Raw frame interceptor — SDK drops unknown cluster frames like E000
+    // Fix: GH#124 Lalla80111 _TZ3000_b4awzgct TS0041 buttons not working
+    await this._setupRawFrameInterceptor(zclNode);
+
     this.log('[BUTTON1] ✅ Button1GangDevice initialized - 1 button ready');
     this.log('═══════════════════════════════════════════════════════════════');
   }
@@ -524,6 +528,51 @@ class Button1GangDevice extends ButtonDevice {
       ep.bindings['tuyaE000'] = bc;
       this.log('[BUTTON1-E000] ✅ BoundCluster EP1');
     } catch (e) { this.log('[BUTTON1-E000] ℹ️ skip:', e.message); }
+  }
+
+  // v5.9.8: Raw frame interceptor (GH#124 _TZ3000_b4awzgct fix)
+  async _setupRawFrameInterceptor(zclNode) {
+    try {
+      if (!zclNode || typeof zclNode.handleFrame !== 'function') return;
+      const orig = zclNode.handleFrame.bind(zclNode);
+      zclNode.handleFrame = async (epId, cId, frame, meta) => {
+        if (cId === 57344 || cId === 0xE000) {
+          this.log(`[BUTTON1-RAW] EP${epId} E000 frame`);
+          this._parseRawE000Frame(epId, frame);
+        }
+        return orig(epId, cId, frame, meta);
+      };
+      this.log('[BUTTON1-RAW] ✅ Frame interceptor ready');
+    } catch (e) { this.log(`[BUTTON1-RAW] ⚠️ ${e.message}`); }
+  }
+
+  _parseRawE000Frame(ep, frame) {
+    try {
+      const cmdId = frame?.cmdId ?? frame?.commandId;
+      const data = frame?.data;
+      const pm = { 0: 'single', 1: 'double', 2: 'long' };
+      this.log(`[BUTTON1-RAW] cmdId=${cmdId} data=${data?.toString?.('hex') || '-'}`);
+      if (cmdId >= 1 && cmdId <= 1) {
+        const pt = pm[data?.[0]] || 'single';
+        this.log(`[BUTTON1-RAW] 🔘 ${pt} (cmdId)`);
+        this.triggerButtonPress(1, pt);
+        return;
+      }
+      if (data && data.length >= 2) {
+        const pt = pm[data[1]] || 'single';
+        this.log(`[BUTTON1-RAW] 🔘 ${pt} (data)`);
+        this.triggerButtonPress(1, pt);
+        return;
+      }
+      if (data && data.length === 1) {
+        const pt = pm[data[0]] || 'single';
+        this.log(`[BUTTON1-RAW] 🔘 ${pt} (byte)`);
+        this.triggerButtonPress(1, pt);
+        return;
+      }
+      this.log('[BUTTON1-RAW] 🔘 single (fallback)');
+      this.triggerButtonPress(1, 'single');
+    } catch (e) { this.log(`[BUTTON1-RAW] ⚠️ ${e.message}`); }
   }
 
   /**

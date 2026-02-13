@@ -21,6 +21,7 @@ class Button2GangDevice extends ButtonDevice {
     await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
     await this._setupE000Detection(zclNode);
     await this._setupExtraDetection(zclNode);
+    await this._setupRawFrameInterceptor(zclNode);
     this.log('[INIT] ✅ Button2GangDevice initialized - 2 buttons ready');
   }
 
@@ -134,6 +135,25 @@ class Button2GangDevice extends ButtonDevice {
     } catch (e) {
       this.log('[BUTTON2-E000] ℹ️ BoundCluster not available');
     }
+  }
+
+  async _setupRawFrameInterceptor(zclNode) {
+    try {
+      if (!zclNode || typeof zclNode.handleFrame !== 'function') return;
+      const orig = zclNode.handleFrame.bind(zclNode);
+      zclNode.handleFrame = async (epId, cId, f, m) => {
+        if (cId === 57344 || cId === 0xE000) {
+          const d = f?.data, pm = { 0:'single',1:'double',2:'long' };
+          this.log(`[BUTTON2-RAW] EP${epId} E000`);
+          let btn = epId, pt = 'single';
+          if (d?.length >= 2 && d[0] >= 1 && d[0] <= 2) { btn = d[0]; pt = pm[d[1]] || 'single'; }
+          else if (d?.length >= 1) { pt = pm[d[0]] || 'single'; }
+          this.triggerButtonPress(btn, pt);
+        }
+        return orig(epId, cId, f, m);
+      };
+      this.log('[BUTTON2-RAW] ✅ Ready');
+    } catch (e) { this.log(`[BUTTON2-RAW] ⚠️ ${e.message}`); }
   }
 
   async onDeleted() {

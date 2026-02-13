@@ -408,7 +408,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
       let temp = parsedValue;
       const mfr = this.getSetting?.('zb_manufacturer_name') || '';
       // v5.8.87: DutchDuke fix — QT-07S sends raw °C (18→18°C, not 1.8°C)
-      const rawCelsius = mfr.includes('_TZE284_oitavov2');
+      const rawCelsius = mfr.toLowerCase().includes('_tze284_oitavov2');
       if (rawCelsius) { /* already °C */ }
       else if (temp > 1000) temp = temp / 100;
       else if (temp > 100) temp = temp / 10;
