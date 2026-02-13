@@ -1486,7 +1486,7 @@ function getSensorConfig(manufacturerName, modelId = null) {
   // v5.5.803: HOBEIAN special handling - match by manufacturerName + modelId
   // HOBEIAN makes multiple products, need modelId to distinguish
   // v5.5.803 FIX: Handle "null" string and actual null values - use DEFAULT config for auto-discovery
-  if (manufacturerName === 'HOBEIAN') {
+  if ((manufacturerName || '').toUpperCase() === 'HOBEIAN') {
     // Check for valid modelId (not null, not "null" string, not empty)
     const validModelId = modelId && modelId !== 'null' && modelId.trim() !== '';
     
@@ -1620,7 +1620,7 @@ function transformPresence(value, type, invertPresence = false, configName = '')
 // Solution: Require 3 consecutive same-state reports AND minimum time gap
 // Also add hysteresis: harder to turn ON than to turn OFF
 function debouncePresence(presence, manufacturerName, deviceId) {
-  if (!deviceId || !manufacturerName.includes('gkfbdvyx')) {
+  if (!deviceId || !(manufacturerName || '').toLowerCase().includes('gkfbdvyx')) {
     return presence;  // No debouncing for other devices
   }
 
@@ -1784,10 +1784,11 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   let maxLux = 10000;  // Default high limit - don't clamp unless really needed
 
   // v5.5.316: Only apply strict 2000 limit for KNOWN ZY-M100 series sensors
-  const isZYM100Series = manufacturerName.includes('iadro9bf') ||
-    manufacturerName.includes('gkfbdvyx') ||
-    manufacturerName.includes('qasjif9e') ||
-    manufacturerName.includes('sxm7l9xa');
+  const mfrLower = (manufacturerName || '').toLowerCase();
+  const isZYM100Series = mfrLower.includes('iadro9bf') ||
+    mfrLower.includes('gkfbdvyx') ||
+    mfrLower.includes('qasjif9e') ||
+    mfrLower.includes('sxm7l9xa');
   if (isZYM100Series) {
     maxLux = 2000;  // ZY-M100 confirmed 0-2000 lux range
   }
@@ -1848,7 +1849,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
 
         if (state.extremeCount >= 1) {
           // v5.5.326: RONNY #760 - Ultra-aggressive lock for iadro9bf (2 minutes)
-          const isIadro9bf = manufacturerName.includes('iadro9bf');
+          const isIadro9bf = (manufacturerName || '').toLowerCase().includes('iadro9bf');
           const lockDuration = isIadro9bf ? 120000 : 60000;  // 2min for iadro9bf, 1min for others
           state.stableLux = Math.min(state.lastLux, lux);
           state.lockedUntil = now + lockDuration;
@@ -3083,8 +3084,9 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     // v5.7.34: Use _getManufacturerName() for consistent multi-source retrieval
     const mfr = this._getManufacturerName();
 
-    // Only apply to problematic sensors
-    if (!mfr.includes('iadro9bf') && !mfr.includes('qasjif9e')) {
+    // Only apply to problematic sensors (case-insensitive)
+    const mfrLower = (mfr || '').toLowerCase();
+    if (!mfrLower.includes('iadro9bf') && !mfrLower.includes('qasjif9e')) {
       return presence;
     }
 

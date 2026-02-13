@@ -48,5 +48,12 @@
   "images": {
     "small": "drivers/zigbee_repeater/assets/images/small.png",
     "large": "drivers/zigbee_repeater/assets/images/large.png"
-  }
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 1
+    }
+  },
+  "platforms": ["local"],
+  "connectivity": ["zigbee"]
 }

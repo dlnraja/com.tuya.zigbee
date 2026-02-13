@@ -58,5 +58,7 @@
   "images": {
     "small": "drivers/illuminance_sensor/assets/images/small.png",
     "large": "drivers/illuminance_sensor/assets/images/large.png"
-  }
+  },
+  "platforms": ["local"],
+  "connectivity": ["zigbee"]
 }

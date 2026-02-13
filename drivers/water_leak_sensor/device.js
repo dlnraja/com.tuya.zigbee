@@ -184,8 +184,8 @@ class WaterLeakSensorDevice extends HybridSensorBase {
       }
     }
 
-    // Try partial match for _TZ3000_* pattern
-    if (mfr.startsWith('_TZ3000_') || mfr.startsWith('_tz3000_')) {
+    // Try partial match for _TZ3000_* pattern (case-insensitive)
+    if (mfr.toLowerCase().startsWith('_tz3000_')) {
       return {
         ...WATER_SENSOR_PROFILES['default'],
         type: 'ias_zone',
@@ -194,8 +194,8 @@ class WaterLeakSensorDevice extends HybridSensorBase {
       };
     }
 
-    // Try partial match for _TZE* pattern (Tuya DP)
-    if (mfr.startsWith('_TZE') || mfr.startsWith('_tze')) {
+    // Try partial match for _TZE* pattern (Tuya DP, case-insensitive)
+    if (mfr.toLowerCase().startsWith('_tze')) {
       return {
         ...WATER_SENSOR_PROFILES['default'],
         type: 'tuya_dp',

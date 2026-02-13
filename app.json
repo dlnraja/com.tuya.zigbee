@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.9.6",
+  "version": "5.9.9",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -1723,8 +1723,8 @@
       {
         "id": "button_wireless_1_button_1gang_button_1_release",
         "title": {
-          "en": "Button 1 released (after hold)",
-          "fr": "Bouton 1 relâché (après maintien)"
+          "en": "Button 1 released - after hold",
+          "fr": "Bouton 1 relâché - après maintien"
         },
         "args": [
           {
@@ -2061,8 +2061,8 @@
       {
         "id": "button_wireless_2_button_2gang_button_1_release",
         "title": {
-          "en": "Button 1 released (after hold)",
-          "fr": "Bouton 1 relâché (après maintien)"
+          "en": "Button 1 released - after hold",
+          "fr": "Bouton 1 relâché - après maintien"
         },
         "args": [
           {
@@ -2079,8 +2079,8 @@
       {
         "id": "button_wireless_2_button_2gang_button_2_release",
         "title": {
-          "en": "Button 2 released (after hold)",
-          "fr": "Bouton 2 relâché (après maintien)"
+          "en": "Button 2 released - after hold",
+          "fr": "Bouton 2 relâché - après maintien"
         },
         "args": [
           {
@@ -2707,8 +2707,8 @@
       {
         "id": "button_wireless_3_button_3gang_button_1_release",
         "title": {
-          "en": "Button 1 released (after hold)",
-          "fr": "Bouton 1 relâché (après maintien)"
+          "en": "Button 1 released - after hold",
+          "fr": "Bouton 1 relâché - après maintien"
         },
         "args": [
           {
@@ -2725,8 +2725,8 @@
       {
         "id": "button_wireless_3_button_3gang_button_2_release",
         "title": {
-          "en": "Button 2 released (after hold)",
-          "fr": "Bouton 2 relâché (après maintien)"
+          "en": "Button 2 released - after hold",
+          "fr": "Bouton 2 relâché - après maintien"
         },
         "args": [
           {
@@ -2743,8 +2743,8 @@
       {
         "id": "button_wireless_3_button_3gang_button_3_release",
         "title": {
-          "en": "Button 3 released (after hold)",
-          "fr": "Bouton 3 relâché (après maintien)"
+          "en": "Button 3 released - after hold",
+          "fr": "Bouton 3 relâché - après maintien"
         },
         "args": [
           {
@@ -3241,8 +3241,8 @@
       {
         "id": "button_wireless_4_button_4gang_button_1_release",
         "title": {
-          "en": "Button 1 released (after hold)",
-          "fr": "Bouton 1 relâché (après maintien)"
+          "en": "Button 1 released - after hold",
+          "fr": "Bouton 1 relâché - après maintien"
         },
         "args": [
           {
@@ -3259,8 +3259,8 @@
       {
         "id": "button_wireless_4_button_4gang_button_2_release",
         "title": {
-          "en": "Button 2 released (after hold)",
-          "fr": "Bouton 2 relâché (après maintien)"
+          "en": "Button 2 released - after hold",
+          "fr": "Bouton 2 relâché - après maintien"
         },
         "args": [
           {
@@ -3277,8 +3277,8 @@
       {
         "id": "button_wireless_4_button_4gang_button_3_release",
         "title": {
-          "en": "Button 3 released (after hold)",
-          "fr": "Bouton 3 relâché (après maintien)"
+          "en": "Button 3 released - after hold",
+          "fr": "Bouton 3 relâché - après maintien"
         },
         "args": [
           {
@@ -3295,8 +3295,8 @@
       {
         "id": "button_wireless_4_button_4gang_button_4_release",
         "title": {
-          "en": "Button 4 released (after hold)",
-          "fr": "Bouton 4 relâché (après maintien)"
+          "en": "Button 4 released - after hold",
+          "fr": "Bouton 4 relâché - après maintien"
         },
         "args": [
           {
@@ -5404,7 +5404,7 @@
           }
         ],
         "title": {
-          "en": "Gang 1 on (physical)"
+          "en": "Gang 1 on - physical"
         }
       },
       {
@@ -5417,7 +5417,7 @@
           }
         ],
         "title": {
-          "en": "Gang 1 off (physical)"
+          "en": "Gang 1 off - physical"
         }
       },
       {
@@ -5430,7 +5430,7 @@
           }
         ],
         "title": {
-          "en": "Gang 1 brightness up (physical)"
+          "en": "Gang 1 brightness up - physical"
         },
         "tokens": [
           {
@@ -5453,7 +5453,7 @@
           }
         ],
         "title": {
-          "en": "Gang 1 brightness down (physical)"
+          "en": "Gang 1 brightness down - physical"
         },
         "tokens": [
           {
@@ -5476,7 +5476,7 @@
           }
         ],
         "title": {
-          "en": "Gang 2 on (physical)"
+          "en": "Gang 2 on - physical"
         }
       },
       {
@@ -5489,7 +5489,7 @@
           }
         ],
         "title": {
-          "en": "Gang 2 off (physical)"
+          "en": "Gang 2 off - physical"
         }
       },
       {
@@ -5502,7 +5502,7 @@
           }
         ],
         "title": {
-          "en": "Gang 2 brightness up (physical)"
+          "en": "Gang 2 brightness up - physical"
         },
         "tokens": [
           {
@@ -5525,7 +5525,7 @@
           }
         ],
         "title": {
-          "en": "Gang 2 brightness down (physical)"
+          "en": "Gang 2 brightness down - physical"
         },
         "tokens": [
           {
@@ -5548,7 +5548,7 @@
           }
         ],
         "title": {
-          "en": "Gang 3 on (physical)"
+          "en": "Gang 3 on - physical"
         }
       },
       {
@@ -5561,7 +5561,7 @@
           }
         ],
         "title": {
-          "en": "Gang 3 off (physical)"
+          "en": "Gang 3 off - physical"
         }
       },
       {
@@ -5574,7 +5574,7 @@
           }
         ],
         "title": {
-          "en": "Gang 3 brightness up (physical)"
+          "en": "Gang 3 brightness up - physical"
         },
         "tokens": [
           {
@@ -5597,7 +5597,7 @@
           }
         ],
         "title": {
-          "en": "Gang 3 brightness down (physical)"
+          "en": "Gang 3 brightness down - physical"
         },
         "tokens": [
           {
@@ -5729,7 +5729,7 @@
           }
         ],
         "title": {
-          "en": "Turned on (physical button)"
+          "en": "Turned on - physical button"
         }
       },
       {
@@ -5742,7 +5742,7 @@
           }
         ],
         "title": {
-          "en": "Turned off (physical button)"
+          "en": "Turned off - physical button"
         }
       },
       {
@@ -5755,7 +5755,7 @@
           }
         ],
         "title": {
-          "en": "Brightness increased (physical)"
+          "en": "Brightness increased - physical"
         },
         "tokens": [
           {
@@ -5778,7 +5778,7 @@
           }
         ],
         "title": {
-          "en": "Brightness decreased (physical)"
+          "en": "Brightness decreased - physical"
         },
         "tokens": [
           {
@@ -5991,10 +5991,10 @@
       {
         "id": "din_rail_switch_physical_on",
         "title": {
-          "en": "Turned on (physical button)",
-          "fr": "Allumé (bouton physique)",
-          "nl": "Aangezet (fysieke knop)",
-          "de": "Eingeschaltet (physische Taste)"
+          "en": "Turned on - physical button",
+          "fr": "Allumé - bouton physique",
+          "nl": "Aangezet - fysieke knop",
+          "de": "Eingeschaltet - physische Taste"
         },
         "args": [
           {
@@ -6013,10 +6013,10 @@
       {
         "id": "din_rail_switch_physical_off",
         "title": {
-          "en": "Turned off (physical button)",
-          "fr": "Éteint (bouton physique)",
-          "nl": "Uitgezet (fysieke knop)",
-          "de": "Ausgeschaltet (physische Taste)"
+          "en": "Turned off - physical button",
+          "fr": "Éteint - bouton physique",
+          "nl": "Uitgezet - fysieke knop",
+          "de": "Ausgeschaltet - physische Taste"
         },
         "args": [
           {
@@ -6035,8 +6035,8 @@
       {
         "id": "din_rail_switch_physical_single",
         "title": {
-          "en": "Single press (physical)",
-          "fr": "Appui simple (physique)"
+          "en": "Single press - physical",
+          "fr": "Appui simple - physique"
         },
         "args": [
           {
@@ -6053,8 +6053,8 @@
       {
         "id": "din_rail_switch_physical_double",
         "title": {
-          "en": "Double press (physical)",
-          "fr": "Double appui (physique)"
+          "en": "Double press - physical",
+          "fr": "Double appui - physique"
         },
         "args": [
           {
@@ -6071,8 +6071,8 @@
       {
         "id": "din_rail_switch_physical_long_press",
         "title": {
-          "en": "Long press (physical)",
-          "fr": "Appui long (physique)"
+          "en": "Long press - physical",
+          "fr": "Appui long - physique"
         },
         "args": [
           {
@@ -15930,8 +15930,8 @@
       {
         "id": "switch_4gang_physical_gang1_single",
         "title": {
-          "en": "Gang 1 single press (physical)",
-          "fr": "Gang 1 appui simple (physique)"
+          "en": "Gang 1 single press - physical",
+          "fr": "Gang 1 appui simple - physique"
         },
         "args": [
           {
@@ -15948,8 +15948,8 @@
       {
         "id": "switch_4gang_physical_gang1_double",
         "title": {
-          "en": "Gang 1 double press (physical)",
-          "fr": "Gang 1 double appui (physique)"
+          "en": "Gang 1 double press - physical",
+          "fr": "Gang 1 double appui - physique"
         },
         "args": [
           {
@@ -15966,8 +15966,8 @@
       {
         "id": "switch_4gang_physical_gang1_triple",
         "title": {
-          "en": "Gang 1 triple press (physical)",
-          "fr": "Gang 1 triple appui (physique)"
+          "en": "Gang 1 triple press - physical",
+          "fr": "Gang 1 triple appui - physique"
         },
         "args": [
           {
@@ -15984,8 +15984,8 @@
       {
         "id": "switch_4gang_physical_gang1_long_press",
         "title": {
-          "en": "Gang 1 long press (physical)",
-          "fr": "Gang 1 appui long (physique)"
+          "en": "Gang 1 long press - physical",
+          "fr": "Gang 1 appui long - physique"
         },
         "args": [
           {
@@ -16002,8 +16002,8 @@
       {
         "id": "switch_4gang_physical_gang2_single",
         "title": {
-          "en": "Gang 2 single press (physical)",
-          "fr": "Gang 2 appui simple (physique)"
+          "en": "Gang 2 single press - physical",
+          "fr": "Gang 2 appui simple - physique"
         },
         "args": [
           {
@@ -16020,8 +16020,8 @@
       {
         "id": "switch_4gang_physical_gang2_double",
         "title": {
-          "en": "Gang 2 double press (physical)",
-          "fr": "Gang 2 double appui (physique)"
+          "en": "Gang 2 double press - physical",
+          "fr": "Gang 2 double appui - physique"
         },
         "args": [
           {
@@ -16038,8 +16038,8 @@
       {
         "id": "switch_4gang_physical_gang2_triple",
         "title": {
-          "en": "Gang 2 triple press (physical)",
-          "fr": "Gang 2 triple appui (physique)"
+          "en": "Gang 2 triple press - physical",
+          "fr": "Gang 2 triple appui - physique"
         },
         "args": [
           {
@@ -16056,8 +16056,8 @@
       {
         "id": "switch_4gang_physical_gang2_long_press",
         "title": {
-          "en": "Gang 2 long press (physical)",
-          "fr": "Gang 2 appui long (physique)"
+          "en": "Gang 2 long press - physical",
+          "fr": "Gang 2 appui long - physique"
         },
         "args": [
           {
@@ -16074,8 +16074,8 @@
       {
         "id": "switch_4gang_physical_gang3_single",
         "title": {
-          "en": "Gang 3 single press (physical)",
-          "fr": "Gang 3 appui simple (physique)"
+          "en": "Gang 3 single press - physical",
+          "fr": "Gang 3 appui simple - physique"
         },
         "args": [
           {
@@ -16092,8 +16092,8 @@
       {
         "id": "switch_4gang_physical_gang3_double",
         "title": {
-          "en": "Gang 3 double press (physical)",
-          "fr": "Gang 3 double appui (physique)"
+          "en": "Gang 3 double press - physical",
+          "fr": "Gang 3 double appui - physique"
         },
         "args": [
           {
@@ -16110,8 +16110,8 @@
       {
         "id": "switch_4gang_physical_gang3_triple",
         "title": {
-          "en": "Gang 3 triple press (physical)",
-          "fr": "Gang 3 triple appui (physique)"
+          "en": "Gang 3 triple press - physical",
+          "fr": "Gang 3 triple appui - physique"
         },
         "args": [
           {
@@ -16128,8 +16128,8 @@
       {
         "id": "switch_4gang_physical_gang3_long_press",
         "title": {
-          "en": "Gang 3 long press (physical)",
-          "fr": "Gang 3 appui long (physique)"
+          "en": "Gang 3 long press - physical",
+          "fr": "Gang 3 appui long - physique"
         },
         "args": [
           {
@@ -16146,8 +16146,8 @@
       {
         "id": "switch_4gang_physical_gang4_single",
         "title": {
-          "en": "Gang 4 single press (physical)",
-          "fr": "Gang 4 appui simple (physique)"
+          "en": "Gang 4 single press - physical",
+          "fr": "Gang 4 appui simple - physique"
         },
         "args": [
           {
@@ -16164,8 +16164,8 @@
       {
         "id": "switch_4gang_physical_gang4_double",
         "title": {
-          "en": "Gang 4 double press (physical)",
-          "fr": "Gang 4 double appui (physique)"
+          "en": "Gang 4 double press - physical",
+          "fr": "Gang 4 double appui - physique"
         },
         "args": [
           {
@@ -16182,8 +16182,8 @@
       {
         "id": "switch_4gang_physical_gang4_triple",
         "title": {
-          "en": "Gang 4 triple press (physical)",
-          "fr": "Gang 4 triple appui (physique)"
+          "en": "Gang 4 triple press - physical",
+          "fr": "Gang 4 triple appui - physique"
         },
         "args": [
           {
@@ -16200,8 +16200,8 @@
       {
         "id": "switch_4gang_physical_gang4_long_press",
         "title": {
-          "en": "Gang 4 long press (physical)",
-          "fr": "Gang 4 appui long (physique)"
+          "en": "Gang 4 long press - physical",
+          "fr": "Gang 4 appui long - physique"
         },
         "args": [
           {
@@ -16360,7 +16360,7 @@
       {
         "id": "switch_dimmer_1gang_brightness_increased",
         "title": {
-          "en": "Brightness increased (physical)"
+          "en": "Brightness increased - physical"
         },
         "tokens": [
           {
@@ -16383,7 +16383,7 @@
       {
         "id": "switch_dimmer_1gang_brightness_decreased",
         "title": {
-          "en": "Brightness decreased (physical)"
+          "en": "Brightness decreased - physical"
         },
         "tokens": [
           {
@@ -16956,8 +16956,8 @@
       {
         "id": "switch_wall_5gang_physical_gang1_single",
         "title": {
-          "en": "Gang 1 single press (physical)",
-          "fr": "Gang 1 appui simple (physique)"
+          "en": "Gang 1 single press - physical",
+          "fr": "Gang 1 appui simple - physique"
         },
         "args": [
           {
@@ -16974,8 +16974,8 @@
       {
         "id": "switch_wall_5gang_physical_gang1_double",
         "title": {
-          "en": "Gang 1 double press (physical)",
-          "fr": "Gang 1 double appui (physique)"
+          "en": "Gang 1 double press - physical",
+          "fr": "Gang 1 double appui - physique"
         },
         "args": [
           {
@@ -16992,8 +16992,8 @@
       {
         "id": "switch_wall_5gang_physical_gang1_triple",
         "title": {
-          "en": "Gang 1 triple press (physical)",
-          "fr": "Gang 1 triple appui (physique)"
+          "en": "Gang 1 triple press - physical",
+          "fr": "Gang 1 triple appui - physique"
         },
         "args": [
           {
@@ -17010,8 +17010,8 @@
       {
         "id": "switch_wall_5gang_physical_gang1_long_press",
         "title": {
-          "en": "Gang 1 long press (physical)",
-          "fr": "Gang 1 appui long (physique)"
+          "en": "Gang 1 long press - physical",
+          "fr": "Gang 1 appui long - physique"
         },
         "args": [
           {
@@ -17072,8 +17072,8 @@
       {
         "id": "switch_wall_5gang_physical_gang2_single",
         "title": {
-          "en": "Gang 2 single press (physical)",
-          "fr": "Gang 2 appui simple (physique)"
+          "en": "Gang 2 single press - physical",
+          "fr": "Gang 2 appui simple - physique"
         },
         "args": [
           {
@@ -17090,8 +17090,8 @@
       {
         "id": "switch_wall_5gang_physical_gang2_double",
         "title": {
-          "en": "Gang 2 double press (physical)",
-          "fr": "Gang 2 double appui (physique)"
+          "en": "Gang 2 double press - physical",
+          "fr": "Gang 2 double appui - physique"
         },
         "args": [
           {
@@ -17108,8 +17108,8 @@
       {
         "id": "switch_wall_5gang_physical_gang2_triple",
         "title": {
-          "en": "Gang 2 triple press (physical)",
-          "fr": "Gang 2 triple appui (physique)"
+          "en": "Gang 2 triple press - physical",
+          "fr": "Gang 2 triple appui - physique"
         },
         "args": [
           {
@@ -17126,8 +17126,8 @@
       {
         "id": "switch_wall_5gang_physical_gang2_long_press",
         "title": {
-          "en": "Gang 2 long press (physical)",
-          "fr": "Gang 2 appui long (physique)"
+          "en": "Gang 2 long press - physical",
+          "fr": "Gang 2 appui long - physique"
         },
         "args": [
           {
@@ -17188,8 +17188,8 @@
       {
         "id": "switch_wall_5gang_physical_gang3_single",
         "title": {
-          "en": "Gang 3 single press (physical)",
-          "fr": "Gang 3 appui simple (physique)"
+          "en": "Gang 3 single press - physical",
+          "fr": "Gang 3 appui simple - physique"
         },
         "args": [
           {
@@ -17206,8 +17206,8 @@
       {
         "id": "switch_wall_5gang_physical_gang3_double",
         "title": {
-          "en": "Gang 3 double press (physical)",
-          "fr": "Gang 3 double appui (physique)"
+          "en": "Gang 3 double press - physical",
+          "fr": "Gang 3 double appui - physique"
         },
         "args": [
           {
@@ -17224,8 +17224,8 @@
       {
         "id": "switch_wall_5gang_physical_gang3_triple",
         "title": {
-          "en": "Gang 3 triple press (physical)",
-          "fr": "Gang 3 triple appui (physique)"
+          "en": "Gang 3 triple press - physical",
+          "fr": "Gang 3 triple appui - physique"
         },
         "args": [
           {
@@ -17242,8 +17242,8 @@
       {
         "id": "switch_wall_5gang_physical_gang3_long_press",
         "title": {
-          "en": "Gang 3 long press (physical)",
-          "fr": "Gang 3 appui long (physique)"
+          "en": "Gang 3 long press - physical",
+          "fr": "Gang 3 appui long - physique"
         },
         "args": [
           {
@@ -17304,8 +17304,8 @@
       {
         "id": "switch_wall_5gang_physical_gang4_single",
         "title": {
-          "en": "Gang 4 single press (physical)",
-          "fr": "Gang 4 appui simple (physique)"
+          "en": "Gang 4 single press - physical",
+          "fr": "Gang 4 appui simple - physique"
         },
         "args": [
           {
@@ -17322,8 +17322,8 @@
       {
         "id": "switch_wall_5gang_physical_gang4_double",
         "title": {
-          "en": "Gang 4 double press (physical)",
-          "fr": "Gang 4 double appui (physique)"
+          "en": "Gang 4 double press - physical",
+          "fr": "Gang 4 double appui - physique"
         },
         "args": [
           {
@@ -17340,8 +17340,8 @@
       {
         "id": "switch_wall_5gang_physical_gang4_triple",
         "title": {
-          "en": "Gang 4 triple press (physical)",
-          "fr": "Gang 4 triple appui (physique)"
+          "en": "Gang 4 triple press - physical",
+          "fr": "Gang 4 triple appui - physique"
         },
         "args": [
           {
@@ -17358,8 +17358,8 @@
       {
         "id": "switch_wall_5gang_physical_gang4_long_press",
         "title": {
-          "en": "Gang 4 long press (physical)",
-          "fr": "Gang 4 appui long (physique)"
+          "en": "Gang 4 long press - physical",
+          "fr": "Gang 4 appui long - physique"
         },
         "args": [
           {
@@ -17420,8 +17420,8 @@
       {
         "id": "switch_wall_5gang_physical_gang5_single",
         "title": {
-          "en": "Gang 5 single press (physical)",
-          "fr": "Gang 5 appui simple (physique)"
+          "en": "Gang 5 single press - physical",
+          "fr": "Gang 5 appui simple - physique"
         },
         "args": [
           {
@@ -17438,8 +17438,8 @@
       {
         "id": "switch_wall_5gang_physical_gang5_double",
         "title": {
-          "en": "Gang 5 double press (physical)",
-          "fr": "Gang 5 double appui (physique)"
+          "en": "Gang 5 double press - physical",
+          "fr": "Gang 5 double appui - physique"
         },
         "args": [
           {
@@ -17456,8 +17456,8 @@
       {
         "id": "switch_wall_5gang_physical_gang5_triple",
         "title": {
-          "en": "Gang 5 triple press (physical)",
-          "fr": "Gang 5 triple appui (physique)"
+          "en": "Gang 5 triple press - physical",
+          "fr": "Gang 5 triple appui - physique"
         },
         "args": [
           {
@@ -17474,8 +17474,8 @@
       {
         "id": "switch_wall_5gang_physical_gang5_long_press",
         "title": {
-          "en": "Gang 5 long press (physical)",
-          "fr": "Gang 5 appui long (physique)"
+          "en": "Gang 5 long press - physical",
+          "fr": "Gang 5 appui long - physique"
         },
         "args": [
           {
@@ -17844,8 +17844,8 @@
       {
         "id": "switch_wall_6gang_physical_gang1_single",
         "title": {
-          "en": "Gang 1 single press (physical)",
-          "fr": "Gang 1 appui simple (physique)"
+          "en": "Gang 1 single press - physical",
+          "fr": "Gang 1 appui simple - physique"
         },
         "args": [
           {
@@ -17862,8 +17862,8 @@
       {
         "id": "switch_wall_6gang_physical_gang1_double",
         "title": {
-          "en": "Gang 1 double press (physical)",
-          "fr": "Gang 1 double appui (physique)"
+          "en": "Gang 1 double press - physical",
+          "fr": "Gang 1 double appui - physique"
         },
         "args": [
           {
@@ -17880,8 +17880,8 @@
       {
         "id": "switch_wall_6gang_physical_gang1_triple",
         "title": {
-          "en": "Gang 1 triple press (physical)",
-          "fr": "Gang 1 triple appui (physique)"
+          "en": "Gang 1 triple press - physical",
+          "fr": "Gang 1 triple appui - physique"
         },
         "args": [
           {
@@ -17898,8 +17898,8 @@
       {
         "id": "switch_wall_6gang_physical_gang1_long_press",
         "title": {
-          "en": "Gang 1 long press (physical)",
-          "fr": "Gang 1 appui long (physique)"
+          "en": "Gang 1 long press - physical",
+          "fr": "Gang 1 appui long - physique"
         },
         "args": [
           {
@@ -17960,8 +17960,8 @@
       {
         "id": "switch_wall_6gang_physical_gang2_single",
         "title": {
-          "en": "Gang 2 single press (physical)",
-          "fr": "Gang 2 appui simple (physique)"
+          "en": "Gang 2 single press - physical",
+          "fr": "Gang 2 appui simple - physique"
         },
         "args": [
           {
@@ -17978,8 +17978,8 @@
       {
         "id": "switch_wall_6gang_physical_gang2_double",
         "title": {
-          "en": "Gang 2 double press (physical)",
-          "fr": "Gang 2 double appui (physique)"
+          "en": "Gang 2 double press - physical",
+          "fr": "Gang 2 double appui - physique"
         },
         "args": [
           {
@@ -17996,8 +17996,8 @@
       {
         "id": "switch_wall_6gang_physical_gang2_triple",
         "title": {
-          "en": "Gang 2 triple press (physical)",
-          "fr": "Gang 2 triple appui (physique)"
+          "en": "Gang 2 triple press - physical",
+          "fr": "Gang 2 triple appui - physique"
         },
         "args": [
           {
@@ -18014,8 +18014,8 @@
       {
         "id": "switch_wall_6gang_physical_gang2_long_press",
         "title": {
-          "en": "Gang 2 long press (physical)",
-          "fr": "Gang 2 appui long (physique)"
+          "en": "Gang 2 long press - physical",
+          "fr": "Gang 2 appui long - physique"
         },
         "args": [
           {
@@ -18076,8 +18076,8 @@
       {
         "id": "switch_wall_6gang_physical_gang3_single",
         "title": {
-          "en": "Gang 3 single press (physical)",
-          "fr": "Gang 3 appui simple (physique)"
+          "en": "Gang 3 single press - physical",
+          "fr": "Gang 3 appui simple - physique"
         },
         "args": [
           {
@@ -18094,8 +18094,8 @@
       {
         "id": "switch_wall_6gang_physical_gang3_double",
         "title": {
-          "en": "Gang 3 double press (physical)",
-          "fr": "Gang 3 double appui (physique)"
+          "en": "Gang 3 double press - physical",
+          "fr": "Gang 3 double appui - physique"
         },
         "args": [
           {
@@ -18112,8 +18112,8 @@
       {
         "id": "switch_wall_6gang_physical_gang3_triple",
         "title": {
-          "en": "Gang 3 triple press (physical)",
-          "fr": "Gang 3 triple appui (physique)"
+          "en": "Gang 3 triple press - physical",
+          "fr": "Gang 3 triple appui - physique"
         },
         "args": [
           {
@@ -18130,8 +18130,8 @@
       {
         "id": "switch_wall_6gang_physical_gang3_long_press",
         "title": {
-          "en": "Gang 3 long press (physical)",
-          "fr": "Gang 3 appui long (physique)"
+          "en": "Gang 3 long press - physical",
+          "fr": "Gang 3 appui long - physique"
         },
         "args": [
           {
@@ -18192,8 +18192,8 @@
       {
         "id": "switch_wall_6gang_physical_gang4_single",
         "title": {
-          "en": "Gang 4 single press (physical)",
-          "fr": "Gang 4 appui simple (physique)"
+          "en": "Gang 4 single press - physical",
+          "fr": "Gang 4 appui simple - physique"
         },
         "args": [
           {
@@ -18210,8 +18210,8 @@
       {
         "id": "switch_wall_6gang_physical_gang4_double",
         "title": {
-          "en": "Gang 4 double press (physical)",
-          "fr": "Gang 4 double appui (physique)"
+          "en": "Gang 4 double press - physical",
+          "fr": "Gang 4 double appui - physique"
         },
         "args": [
           {
@@ -18228,8 +18228,8 @@
       {
         "id": "switch_wall_6gang_physical_gang4_triple",
         "title": {
-          "en": "Gang 4 triple press (physical)",
-          "fr": "Gang 4 triple appui (physique)"
+          "en": "Gang 4 triple press - physical",
+          "fr": "Gang 4 triple appui - physique"
         },
         "args": [
           {
@@ -18246,8 +18246,8 @@
       {
         "id": "switch_wall_6gang_physical_gang4_long_press",
         "title": {
-          "en": "Gang 4 long press (physical)",
-          "fr": "Gang 4 appui long (physique)"
+          "en": "Gang 4 long press - physical",
+          "fr": "Gang 4 appui long - physique"
         },
         "args": [
           {
@@ -18308,8 +18308,8 @@
       {
         "id": "switch_wall_6gang_physical_gang5_single",
         "title": {
-          "en": "Gang 5 single press (physical)",
-          "fr": "Gang 5 appui simple (physique)"
+          "en": "Gang 5 single press - physical",
+          "fr": "Gang 5 appui simple - physique"
         },
         "args": [
           {
@@ -18326,8 +18326,8 @@
       {
         "id": "switch_wall_6gang_physical_gang5_double",
         "title": {
-          "en": "Gang 5 double press (physical)",
-          "fr": "Gang 5 double appui (physique)"
+          "en": "Gang 5 double press - physical",
+          "fr": "Gang 5 double appui - physique"
         },
         "args": [
           {
@@ -18344,8 +18344,8 @@
       {
         "id": "switch_wall_6gang_physical_gang5_triple",
         "title": {
-          "en": "Gang 5 triple press (physical)",
-          "fr": "Gang 5 triple appui (physique)"
+          "en": "Gang 5 triple press - physical",
+          "fr": "Gang 5 triple appui - physique"
         },
         "args": [
           {
@@ -18362,8 +18362,8 @@
       {
         "id": "switch_wall_6gang_physical_gang5_long_press",
         "title": {
-          "en": "Gang 5 long press (physical)",
-          "fr": "Gang 5 appui long (physique)"
+          "en": "Gang 5 long press - physical",
+          "fr": "Gang 5 appui long - physique"
         },
         "args": [
           {
@@ -18424,8 +18424,8 @@
       {
         "id": "switch_wall_6gang_physical_gang6_single",
         "title": {
-          "en": "Gang 6 single press (physical)",
-          "fr": "Gang 6 appui simple (physique)"
+          "en": "Gang 6 single press - physical",
+          "fr": "Gang 6 appui simple - physique"
         },
         "args": [
           {
@@ -18442,8 +18442,8 @@
       {
         "id": "switch_wall_6gang_physical_gang6_double",
         "title": {
-          "en": "Gang 6 double press (physical)",
-          "fr": "Gang 6 double appui (physique)"
+          "en": "Gang 6 double press - physical",
+          "fr": "Gang 6 double appui - physique"
         },
         "args": [
           {
@@ -18460,8 +18460,8 @@
       {
         "id": "switch_wall_6gang_physical_gang6_triple",
         "title": {
-          "en": "Gang 6 triple press (physical)",
-          "fr": "Gang 6 triple appui (physique)"
+          "en": "Gang 6 triple press - physical",
+          "fr": "Gang 6 triple appui - physique"
         },
         "args": [
           {
@@ -18478,8 +18478,8 @@
       {
         "id": "switch_wall_6gang_physical_gang6_long_press",
         "title": {
-          "en": "Gang 6 long press (physical)",
-          "fr": "Gang 6 appui long (physique)"
+          "en": "Gang 6 long press - physical",
+          "fr": "Gang 6 appui long - physique"
         },
         "args": [
           {
@@ -18892,8 +18892,8 @@
       {
         "id": "switch_wall_7gang_physical_gang1_single",
         "title": {
-          "en": "Gang 1 single press (physical)",
-          "fr": "Gang 1 appui simple (physique)"
+          "en": "Gang 1 single press - physical",
+          "fr": "Gang 1 appui simple - physique"
         },
         "args": [
           {
@@ -18910,8 +18910,8 @@
       {
         "id": "switch_wall_7gang_physical_gang1_double",
         "title": {
-          "en": "Gang 1 double press (physical)",
-          "fr": "Gang 1 double appui (physique)"
+          "en": "Gang 1 double press - physical",
+          "fr": "Gang 1 double appui - physique"
         },
         "args": [
           {
@@ -18928,8 +18928,8 @@
       {
         "id": "switch_wall_7gang_physical_gang1_triple",
         "title": {
-          "en": "Gang 1 triple press (physical)",
-          "fr": "Gang 1 triple appui (physique)"
+          "en": "Gang 1 triple press - physical",
+          "fr": "Gang 1 triple appui - physique"
         },
         "args": [
           {
@@ -18946,8 +18946,8 @@
       {
         "id": "switch_wall_7gang_physical_gang1_long_press",
         "title": {
-          "en": "Gang 1 long press (physical)",
-          "fr": "Gang 1 appui long (physique)"
+          "en": "Gang 1 long press - physical",
+          "fr": "Gang 1 appui long - physique"
         },
         "args": [
           {
@@ -19008,8 +19008,8 @@
       {
         "id": "switch_wall_7gang_physical_gang2_single",
         "title": {
-          "en": "Gang 2 single press (physical)",
-          "fr": "Gang 2 appui simple (physique)"
+          "en": "Gang 2 single press - physical",
+          "fr": "Gang 2 appui simple - physique"
         },
         "args": [
           {
@@ -19026,8 +19026,8 @@
       {
         "id": "switch_wall_7gang_physical_gang2_double",
         "title": {
-          "en": "Gang 2 double press (physical)",
-          "fr": "Gang 2 double appui (physique)"
+          "en": "Gang 2 double press - physical",
+          "fr": "Gang 2 double appui - physique"
         },
         "args": [
           {
@@ -19044,8 +19044,8 @@
       {
         "id": "switch_wall_7gang_physical_gang2_triple",
         "title": {
-          "en": "Gang 2 triple press (physical)",
-          "fr": "Gang 2 triple appui (physique)"
+          "en": "Gang 2 triple press - physical",
+          "fr": "Gang 2 triple appui - physique"
         },
         "args": [
           {
@@ -19062,8 +19062,8 @@
       {
         "id": "switch_wall_7gang_physical_gang2_long_press",
         "title": {
-          "en": "Gang 2 long press (physical)",
-          "fr": "Gang 2 appui long (physique)"
+          "en": "Gang 2 long press - physical",
+          "fr": "Gang 2 appui long - physique"
         },
         "args": [
           {
@@ -19124,8 +19124,8 @@
       {
         "id": "switch_wall_7gang_physical_gang3_single",
         "title": {
-          "en": "Gang 3 single press (physical)",
-          "fr": "Gang 3 appui simple (physique)"
+          "en": "Gang 3 single press - physical",
+          "fr": "Gang 3 appui simple - physique"
         },
         "args": [
           {
@@ -19142,8 +19142,8 @@
       {
         "id": "switch_wall_7gang_physical_gang3_double",
         "title": {
-          "en": "Gang 3 double press (physical)",
-          "fr": "Gang 3 double appui (physique)"
+          "en": "Gang 3 double press - physical",
+          "fr": "Gang 3 double appui - physique"
         },
         "args": [
           {
@@ -19160,8 +19160,8 @@
       {
         "id": "switch_wall_7gang_physical_gang3_triple",
         "title": {
-          "en": "Gang 3 triple press (physical)",
-          "fr": "Gang 3 triple appui (physique)"
+          "en": "Gang 3 triple press - physical",
+          "fr": "Gang 3 triple appui - physique"
         },
         "args": [
           {
@@ -19178,8 +19178,8 @@
       {
         "id": "switch_wall_7gang_physical_gang3_long_press",
         "title": {
-          "en": "Gang 3 long press (physical)",
-          "fr": "Gang 3 appui long (physique)"
+          "en": "Gang 3 long press - physical",
+          "fr": "Gang 3 appui long - physique"
         },
         "args": [
           {
@@ -19240,8 +19240,8 @@
       {
         "id": "switch_wall_7gang_physical_gang4_single",
         "title": {
-          "en": "Gang 4 single press (physical)",
-          "fr": "Gang 4 appui simple (physique)"
+          "en": "Gang 4 single press - physical",
+          "fr": "Gang 4 appui simple - physique"
         },
         "args": [
           {
@@ -19258,8 +19258,8 @@
       {
         "id": "switch_wall_7gang_physical_gang4_double",
         "title": {
-          "en": "Gang 4 double press (physical)",
-          "fr": "Gang 4 double appui (physique)"
+          "en": "Gang 4 double press - physical",
+          "fr": "Gang 4 double appui - physique"
         },
         "args": [
           {
@@ -19276,8 +19276,8 @@
       {
         "id": "switch_wall_7gang_physical_gang4_triple",
         "title": {
-          "en": "Gang 4 triple press (physical)",
-          "fr": "Gang 4 triple appui (physique)"
+          "en": "Gang 4 triple press - physical",
+          "fr": "Gang 4 triple appui - physique"
         },
         "args": [
           {
@@ -19294,8 +19294,8 @@
       {
         "id": "switch_wall_7gang_physical_gang4_long_press",
         "title": {
-          "en": "Gang 4 long press (physical)",
-          "fr": "Gang 4 appui long (physique)"
+          "en": "Gang 4 long press - physical",
+          "fr": "Gang 4 appui long - physique"
         },
         "args": [
           {
@@ -19356,8 +19356,8 @@
       {
         "id": "switch_wall_7gang_physical_gang5_single",
         "title": {
-          "en": "Gang 5 single press (physical)",
-          "fr": "Gang 5 appui simple (physique)"
+          "en": "Gang 5 single press - physical",
+          "fr": "Gang 5 appui simple - physique"
         },
         "args": [
           {
@@ -19374,8 +19374,8 @@
       {
         "id": "switch_wall_7gang_physical_gang5_double",
         "title": {
-          "en": "Gang 5 double press (physical)",
-          "fr": "Gang 5 double appui (physique)"
+          "en": "Gang 5 double press - physical",
+          "fr": "Gang 5 double appui - physique"
         },
         "args": [
           {
@@ -19392,8 +19392,8 @@
       {
         "id": "switch_wall_7gang_physical_gang5_triple",
         "title": {
-          "en": "Gang 5 triple press (physical)",
-          "fr": "Gang 5 triple appui (physique)"
+          "en": "Gang 5 triple press - physical",
+          "fr": "Gang 5 triple appui - physique"
         },
         "args": [
           {
@@ -19410,8 +19410,8 @@
       {
         "id": "switch_wall_7gang_physical_gang5_long_press",
         "title": {
-          "en": "Gang 5 long press (physical)",
-          "fr": "Gang 5 appui long (physique)"
+          "en": "Gang 5 long press - physical",
+          "fr": "Gang 5 appui long - physique"
         },
         "args": [
           {
@@ -19472,8 +19472,8 @@
       {
         "id": "switch_wall_7gang_physical_gang6_single",
         "title": {
-          "en": "Gang 6 single press (physical)",
-          "fr": "Gang 6 appui simple (physique)"
+          "en": "Gang 6 single press - physical",
+          "fr": "Gang 6 appui simple - physique"
         },
         "args": [
           {
@@ -19490,8 +19490,8 @@
       {
         "id": "switch_wall_7gang_physical_gang6_double",
         "title": {
-          "en": "Gang 6 double press (physical)",
-          "fr": "Gang 6 double appui (physique)"
+          "en": "Gang 6 double press - physical",
+          "fr": "Gang 6 double appui - physique"
         },
         "args": [
           {
@@ -19508,8 +19508,8 @@
       {
         "id": "switch_wall_7gang_physical_gang6_triple",
         "title": {
-          "en": "Gang 6 triple press (physical)",
-          "fr": "Gang 6 triple appui (physique)"
+          "en": "Gang 6 triple press - physical",
+          "fr": "Gang 6 triple appui - physique"
         },
         "args": [
           {
@@ -19526,8 +19526,8 @@
       {
         "id": "switch_wall_7gang_physical_gang6_long_press",
         "title": {
-          "en": "Gang 6 long press (physical)",
-          "fr": "Gang 6 appui long (physique)"
+          "en": "Gang 6 long press - physical",
+          "fr": "Gang 6 appui long - physique"
         },
         "args": [
           {
@@ -19588,8 +19588,8 @@
       {
         "id": "switch_wall_7gang_physical_gang7_single",
         "title": {
-          "en": "Gang 7 single press (physical)",
-          "fr": "Gang 7 appui simple (physique)"
+          "en": "Gang 7 single press - physical",
+          "fr": "Gang 7 appui simple - physique"
         },
         "args": [
           {
@@ -19606,8 +19606,8 @@
       {
         "id": "switch_wall_7gang_physical_gang7_double",
         "title": {
-          "en": "Gang 7 double press (physical)",
-          "fr": "Gang 7 double appui (physique)"
+          "en": "Gang 7 double press - physical",
+          "fr": "Gang 7 double appui - physique"
         },
         "args": [
           {
@@ -19624,8 +19624,8 @@
       {
         "id": "switch_wall_7gang_physical_gang7_triple",
         "title": {
-          "en": "Gang 7 triple press (physical)",
-          "fr": "Gang 7 triple appui (physique)"
+          "en": "Gang 7 triple press - physical",
+          "fr": "Gang 7 triple appui - physique"
         },
         "args": [
           {
@@ -19642,8 +19642,8 @@
       {
         "id": "switch_wall_7gang_physical_gang7_long_press",
         "title": {
-          "en": "Gang 7 long press (physical)",
-          "fr": "Gang 7 appui long (physique)"
+          "en": "Gang 7 long press - physical",
+          "fr": "Gang 7 appui long - physique"
         },
         "args": [
           {
@@ -20100,8 +20100,8 @@
       {
         "id": "switch_wall_8gang_physical_gang1_single",
         "title": {
-          "en": "Gang 1 single press (physical)",
-          "fr": "Gang 1 appui simple (physique)"
+          "en": "Gang 1 single press - physical",
+          "fr": "Gang 1 appui simple - physique"
         },
         "args": [
           {
@@ -20118,8 +20118,8 @@
       {
         "id": "switch_wall_8gang_physical_gang1_double",
         "title": {
-          "en": "Gang 1 double press (physical)",
-          "fr": "Gang 1 double appui (physique)"
+          "en": "Gang 1 double press - physical",
+          "fr": "Gang 1 double appui - physique"
         },
         "args": [
           {
@@ -20136,8 +20136,8 @@
       {
         "id": "switch_wall_8gang_physical_gang1_triple",
         "title": {
-          "en": "Gang 1 triple press (physical)",
-          "fr": "Gang 1 triple appui (physique)"
+          "en": "Gang 1 triple press - physical",
+          "fr": "Gang 1 triple appui - physique"
         },
         "args": [
           {
@@ -20154,8 +20154,8 @@
       {
         "id": "switch_wall_8gang_physical_gang1_long_press",
         "title": {
-          "en": "Gang 1 long press (physical)",
-          "fr": "Gang 1 appui long (physique)"
+          "en": "Gang 1 long press - physical",
+          "fr": "Gang 1 appui long - physique"
         },
         "args": [
           {
@@ -20216,8 +20216,8 @@
       {
         "id": "switch_wall_8gang_physical_gang2_single",
         "title": {
-          "en": "Gang 2 single press (physical)",
-          "fr": "Gang 2 appui simple (physique)"
+          "en": "Gang 2 single press - physical",
+          "fr": "Gang 2 appui simple - physique"
         },
         "args": [
           {
@@ -20234,8 +20234,8 @@
       {
         "id": "switch_wall_8gang_physical_gang2_double",
         "title": {
-          "en": "Gang 2 double press (physical)",
-          "fr": "Gang 2 double appui (physique)"
+          "en": "Gang 2 double press - physical",
+          "fr": "Gang 2 double appui - physique"
         },
         "args": [
           {
@@ -20252,8 +20252,8 @@
       {
         "id": "switch_wall_8gang_physical_gang2_triple",
         "title": {
-          "en": "Gang 2 triple press (physical)",
-          "fr": "Gang 2 triple appui (physique)"
+          "en": "Gang 2 triple press - physical",
+          "fr": "Gang 2 triple appui - physique"
         },
         "args": [
           {
@@ -20270,8 +20270,8 @@
       {
         "id": "switch_wall_8gang_physical_gang2_long_press",
         "title": {
-          "en": "Gang 2 long press (physical)",
-          "fr": "Gang 2 appui long (physique)"
+          "en": "Gang 2 long press - physical",
+          "fr": "Gang 2 appui long - physique"
         },
         "args": [
           {
@@ -20332,8 +20332,8 @@
       {
         "id": "switch_wall_8gang_physical_gang3_single",
         "title": {
-          "en": "Gang 3 single press (physical)",
-          "fr": "Gang 3 appui simple (physique)"
+          "en": "Gang 3 single press - physical",
+          "fr": "Gang 3 appui simple - physique"
         },
         "args": [
           {
@@ -20350,8 +20350,8 @@
       {
         "id": "switch_wall_8gang_physical_gang3_double",
         "title": {
-          "en": "Gang 3 double press (physical)",
-          "fr": "Gang 3 double appui (physique)"
+          "en": "Gang 3 double press - physical",
+          "fr": "Gang 3 double appui - physique"
         },
         "args": [
           {
@@ -20368,8 +20368,8 @@
       {
         "id": "switch_wall_8gang_physical_gang3_triple",
         "title": {
-          "en": "Gang 3 triple press (physical)",
-          "fr": "Gang 3 triple appui (physique)"
+          "en": "Gang 3 triple press - physical",
+          "fr": "Gang 3 triple appui - physique"
         },
         "args": [
           {
@@ -20386,8 +20386,8 @@
       {
         "id": "switch_wall_8gang_physical_gang3_long_press",
         "title": {
-          "en": "Gang 3 long press (physical)",
-          "fr": "Gang 3 appui long (physique)"
+          "en": "Gang 3 long press - physical",
+          "fr": "Gang 3 appui long - physique"
         },
         "args": [
           {
@@ -20448,8 +20448,8 @@
       {
         "id": "switch_wall_8gang_physical_gang4_single",
         "title": {
-          "en": "Gang 4 single press (physical)",
-          "fr": "Gang 4 appui simple (physique)"
+          "en": "Gang 4 single press - physical",
+          "fr": "Gang 4 appui simple - physique"
         },
         "args": [
           {
@@ -20466,8 +20466,8 @@
       {
         "id": "switch_wall_8gang_physical_gang4_double",
         "title": {
-          "en": "Gang 4 double press (physical)",
-          "fr": "Gang 4 double appui (physique)"
+          "en": "Gang 4 double press - physical",
+          "fr": "Gang 4 double appui - physique"
         },
         "args": [
           {
@@ -20484,8 +20484,8 @@
       {
         "id": "switch_wall_8gang_physical_gang4_triple",
         "title": {
-          "en": "Gang 4 triple press (physical)",
-          "fr": "Gang 4 triple appui (physique)"
+          "en": "Gang 4 triple press - physical",
+          "fr": "Gang 4 triple appui - physique"
         },
         "args": [
           {
@@ -20502,8 +20502,8 @@
       {
         "id": "switch_wall_8gang_physical_gang4_long_press",
         "title": {
-          "en": "Gang 4 long press (physical)",
-          "fr": "Gang 4 appui long (physique)"
+          "en": "Gang 4 long press - physical",
+          "fr": "Gang 4 appui long - physique"
         },
         "args": [
           {
@@ -20564,8 +20564,8 @@
       {
         "id": "switch_wall_8gang_physical_gang5_single",
         "title": {
-          "en": "Gang 5 single press (physical)",
-          "fr": "Gang 5 appui simple (physique)"
+          "en": "Gang 5 single press - physical",
+          "fr": "Gang 5 appui simple - physique"
         },
         "args": [
           {
@@ -20582,8 +20582,8 @@
       {
         "id": "switch_wall_8gang_physical_gang5_double",
         "title": {
-          "en": "Gang 5 double press (physical)",
-          "fr": "Gang 5 double appui (physique)"
+          "en": "Gang 5 double press - physical",
+          "fr": "Gang 5 double appui - physique"
         },
         "args": [
           {
@@ -20600,8 +20600,8 @@
       {
         "id": "switch_wall_8gang_physical_gang5_triple",
         "title": {
-          "en": "Gang 5 triple press (physical)",
-          "fr": "Gang 5 triple appui (physique)"
+          "en": "Gang 5 triple press - physical",
+          "fr": "Gang 5 triple appui - physique"
         },
         "args": [
           {
@@ -20618,8 +20618,8 @@
       {
         "id": "switch_wall_8gang_physical_gang5_long_press",
         "title": {
-          "en": "Gang 5 long press (physical)",
-          "fr": "Gang 5 appui long (physique)"
+          "en": "Gang 5 long press - physical",
+          "fr": "Gang 5 appui long - physique"
         },
         "args": [
           {
@@ -20680,8 +20680,8 @@
       {
         "id": "switch_wall_8gang_physical_gang6_single",
         "title": {
-          "en": "Gang 6 single press (physical)",
-          "fr": "Gang 6 appui simple (physique)"
+          "en": "Gang 6 single press - physical",
+          "fr": "Gang 6 appui simple - physique"
         },
         "args": [
           {
@@ -20698,8 +20698,8 @@
       {
         "id": "switch_wall_8gang_physical_gang6_double",
         "title": {
-          "en": "Gang 6 double press (physical)",
-          "fr": "Gang 6 double appui (physique)"
+          "en": "Gang 6 double press - physical",
+          "fr": "Gang 6 double appui - physique"
         },
         "args": [
           {
@@ -20716,8 +20716,8 @@
       {
         "id": "switch_wall_8gang_physical_gang6_triple",
         "title": {
-          "en": "Gang 6 triple press (physical)",
-          "fr": "Gang 6 triple appui (physique)"
+          "en": "Gang 6 triple press - physical",
+          "fr": "Gang 6 triple appui - physique"
         },
         "args": [
           {
@@ -20734,8 +20734,8 @@
       {
         "id": "switch_wall_8gang_physical_gang6_long_press",
         "title": {
-          "en": "Gang 6 long press (physical)",
-          "fr": "Gang 6 appui long (physique)"
+          "en": "Gang 6 long press - physical",
+          "fr": "Gang 6 appui long - physique"
         },
         "args": [
           {
@@ -20796,8 +20796,8 @@
       {
         "id": "switch_wall_8gang_physical_gang7_single",
         "title": {
-          "en": "Gang 7 single press (physical)",
-          "fr": "Gang 7 appui simple (physique)"
+          "en": "Gang 7 single press - physical",
+          "fr": "Gang 7 appui simple - physique"
         },
         "args": [
           {
@@ -20814,8 +20814,8 @@
       {
         "id": "switch_wall_8gang_physical_gang7_double",
         "title": {
-          "en": "Gang 7 double press (physical)",
-          "fr": "Gang 7 double appui (physique)"
+          "en": "Gang 7 double press - physical",
+          "fr": "Gang 7 double appui - physique"
         },
         "args": [
           {
@@ -20832,8 +20832,8 @@
       {
         "id": "switch_wall_8gang_physical_gang7_triple",
         "title": {
-          "en": "Gang 7 triple press (physical)",
-          "fr": "Gang 7 triple appui (physique)"
+          "en": "Gang 7 triple press - physical",
+          "fr": "Gang 7 triple appui - physique"
         },
         "args": [
           {
@@ -20850,8 +20850,8 @@
       {
         "id": "switch_wall_8gang_physical_gang7_long_press",
         "title": {
-          "en": "Gang 7 long press (physical)",
-          "fr": "Gang 7 appui long (physique)"
+          "en": "Gang 7 long press - physical",
+          "fr": "Gang 7 appui long - physique"
         },
         "args": [
           {
@@ -20912,8 +20912,8 @@
       {
         "id": "switch_wall_8gang_physical_gang8_single",
         "title": {
-          "en": "Gang 8 single press (physical)",
-          "fr": "Gang 8 appui simple (physique)"
+          "en": "Gang 8 single press - physical",
+          "fr": "Gang 8 appui simple - physique"
         },
         "args": [
           {
@@ -20930,8 +20930,8 @@
       {
         "id": "switch_wall_8gang_physical_gang8_double",
         "title": {
-          "en": "Gang 8 double press (physical)",
-          "fr": "Gang 8 double appui (physique)"
+          "en": "Gang 8 double press - physical",
+          "fr": "Gang 8 double appui - physique"
         },
         "args": [
           {
@@ -20948,8 +20948,8 @@
       {
         "id": "switch_wall_8gang_physical_gang8_triple",
         "title": {
-          "en": "Gang 8 triple press (physical)",
-          "fr": "Gang 8 triple appui (physique)"
+          "en": "Gang 8 triple press - physical",
+          "fr": "Gang 8 triple appui - physique"
         },
         "args": [
           {
@@ -20966,8 +20966,8 @@
       {
         "id": "switch_wall_8gang_physical_gang8_long_press",
         "title": {
-          "en": "Gang 8 long press (physical)",
-          "fr": "Gang 8 appui long (physique)"
+          "en": "Gang 8 long press - physical",
+          "fr": "Gang 8 appui long - physique"
         },
         "args": [
           {
@@ -21998,8 +21998,8 @@
       {
         "id": "wall_dimmer_1gang_1way_turned_on",
         "title": {
-          "en": "Turned on (physical button)",
-          "nl": "Aangezet (fysieke knop)"
+          "en": "Turned on - physical button",
+          "nl": "Aangezet - fysieke knop"
         },
         "hint": {
           "en": "Triggered when the switch is turned on using the physical button",
@@ -22020,8 +22020,8 @@
       {
         "id": "wall_dimmer_1gang_1way_turned_off",
         "title": {
-          "en": "Turned off (physical button)",
-          "nl": "Uitgezet (fysieke knop)"
+          "en": "Turned off - physical button",
+          "nl": "Uitgezet - fysieke knop"
         },
         "hint": {
           "en": "Triggered when the switch is turned off using the physical button",
@@ -22042,8 +22042,8 @@
       {
         "id": "wall_dimmer_1gang_1way_brightness_increased",
         "title": {
-          "en": "Brightness increased (physical button)",
-          "nl": "Helderheid verhoogd (fysieke knop)"
+          "en": "Brightness increased - physical button",
+          "nl": "Helderheid verhoogd - fysieke knop"
         },
         "hint": {
           "en": "Triggered when brightness is increased using the physical button",
@@ -22075,8 +22075,8 @@
       {
         "id": "wall_dimmer_1gang_1way_brightness_decreased",
         "title": {
-          "en": "Brightness decreased (physical button)",
-          "nl": "Helderheid verlaagd (fysieke knop)"
+          "en": "Brightness decreased - physical button",
+          "nl": "Helderheid verlaagd - fysieke knop"
         },
         "hint": {
           "en": "Triggered when brightness is decreased using the physical button",
@@ -22108,8 +22108,8 @@
       {
         "id": "wall_switch_1gang_1way_turned_on",
         "title": {
-          "en": "Turned on (physical button)",
-          "nl": "Aangezet (fysieke knop)"
+          "en": "Turned on - physical button",
+          "nl": "Aangezet - fysieke knop"
         },
         "hint": {
           "en": "Triggered when the switch is turned on using the physical button",
@@ -22130,8 +22130,8 @@
       {
         "id": "wall_switch_1gang_1way_turned_off",
         "title": {
-          "en": "Turned off (physical button)",
-          "nl": "Uitgezet (fysieke knop)"
+          "en": "Turned off - physical button",
+          "nl": "Uitgezet - fysieke knop"
         },
         "hint": {
           "en": "Triggered when the switch is turned off using the physical button",
@@ -22280,8 +22280,8 @@
       {
         "id": "wall_switch_2gang_1way_turned_on",
         "title": {
-          "en": "Turned on (physical button)",
-          "nl": "Aangezet (fysieke knop)"
+          "en": "Turned on - physical button",
+          "nl": "Aangezet - fysieke knop"
         },
         "hint": {
           "en": "Triggered when turned on by physical button",
@@ -22298,8 +22298,8 @@
       {
         "id": "wall_switch_2gang_1way_turned_off",
         "title": {
-          "en": "Turned off (physical button)",
-          "nl": "Uitgezet (fysieke knop)"
+          "en": "Turned off - physical button",
+          "nl": "Uitgezet - fysieke knop"
         },
         "hint": {
           "en": "Triggered when turned off by physical button",
@@ -22378,8 +22378,8 @@
       {
         "id": "wall_switch_3gang_1way_turned_on",
         "title": {
-          "en": "Turned on (physical button)",
-          "nl": "Aangezet (fysieke knop)"
+          "en": "Turned on - physical button",
+          "nl": "Aangezet - fysieke knop"
         },
         "args": [
           {
@@ -22392,8 +22392,8 @@
       {
         "id": "wall_switch_3gang_1way_turned_off",
         "title": {
-          "en": "Turned off (physical button)",
-          "nl": "Uitgezet (fysieke knop)"
+          "en": "Turned off - physical button",
+          "nl": "Uitgezet - fysieke knop"
         },
         "args": [
           {
@@ -28494,8 +28494,8 @@
       {
         "id": "weather_station_outdoor_pressure_rising",
         "title": {
-          "en": "Pressure is rising (good weather)",
-          "fr": "Pression en hausse (beau temps)"
+          "en": "Pressure is rising - good weather",
+          "fr": "Pression en hausse - beau temps"
         },
         "args": [
           {
@@ -28512,8 +28512,8 @@
       {
         "id": "weather_station_outdoor_pressure_falling",
         "title": {
-          "en": "Pressure is falling (bad weather)",
-          "fr": "Pression en baisse (mauvais temps)"
+          "en": "Pressure is falling - bad weather",
+          "fr": "Pression en baisse - mauvais temps"
         },
         "args": [
           {
@@ -41197,6 +41197,12 @@
       "connectivity": [
         "zigbee"
       ],
+      "energy": {
+        "approximation": {
+          "usageOn": 50,
+          "usageOff": 1
+        }
+      },
       "id": "air_purifier"
     },
     {
@@ -52646,6 +52652,12 @@
         "small": "drivers/dimmer_3gang/assets/images/small.png",
         "large": "drivers/dimmer_3gang/assets/images/large.png"
       },
+      "energy": {
+        "approximation": {
+          "usageOn": 60,
+          "usageOff": 0.5
+        }
+      },
       "id": "dimmer_3gang"
     },
     {
@@ -52793,6 +52805,12 @@
       "images": {
         "large": "drivers/dimmer_dual_channel/assets/images/large.png",
         "small": "drivers/dimmer_dual_channel/assets/images/small.png"
+      },
+      "energy": {
+        "approximation": {
+          "usageOn": 60,
+          "usageOff": 0.5
+        }
       },
       "id": "dimmer_dual_channel"
     },
@@ -53959,6 +53977,12 @@
       "connectivity": [
         "zigbee"
       ],
+      "energy": {
+        "approximation": {
+          "usageOn": 0,
+          "usageOff": 0
+        }
+      },
       "id": "din_rail_switch"
     },
     {
@@ -55416,6 +55440,12 @@
       "connectivity": [
         "zigbee"
       ],
+      "energy": {
+        "approximation": {
+          "usageOn": 50,
+          "usageOff": 1
+        }
+      },
       "id": "fan_controller"
     },
     {
@@ -57688,6 +57718,12 @@
       "connectivity": [
         "zigbee"
       ],
+      "energy": {
+        "approximation": {
+          "usageOn": 30,
+          "usageOff": 1
+        }
+      },
       "id": "humidifier"
     },
     {
@@ -58529,6 +58565,12 @@
         "small": "drivers/illuminance_sensor/assets/images/small.png",
         "large": "drivers/illuminance_sensor/assets/images/large.png"
       },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
       "id": "illuminance_sensor"
     },
     {
@@ -58645,6 +58687,11 @@
       "images": {
         "small": "drivers/ir_blaster/assets/images/small.png",
         "large": "drivers/ir_blaster/assets/images/large.png"
+      },
+      "energy": {
+        "approximation": {
+          "usageConstant": 2
+        }
       },
       "id": "ir_blaster"
     },
@@ -58868,6 +58915,12 @@
       "connectivity": [
         "zigbee"
       ],
+      "energy": {
+        "approximation": {
+          "usageOn": 60,
+          "usageOff": 0.5
+        }
+      },
       "id": "led_controller_dimmable"
     },
     {
@@ -61155,6 +61208,7 @@
         ],
         "productId": [
           "TS0202",
+          "TS0225",
           "ZG-204Z",
           "MS01",
           "RH3040",
@@ -63847,6 +63901,12 @@
       "connectivity": [
         "zigbee"
       ],
+      "energy": {
+        "approximation": {
+          "usageOn": 0,
+          "usageOff": 0
+        }
+      },
       "id": "pool_pump"
     },
     {
@@ -64516,6 +64576,11 @@
           "template": "add_devices"
         }
       ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 1
+        }
+      },
       "id": "presence_sensor_ceiling"
     },
     {
@@ -67898,6 +67963,12 @@
       "connectivity": [
         "zigbee"
       ],
+      "energy": {
+        "approximation": {
+          "usageOn": 0,
+          "usageOff": 0
+        }
+      },
       "id": "smart_breaker"
     },
     {
@@ -80469,6 +80540,17 @@
         "small": "drivers/zigbee_repeater/assets/images/small.png",
         "large": "drivers/zigbee_repeater/assets/images/large.png"
       },
+      "energy": {
+        "approximation": {
+          "usageConstant": 1
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
       "id": "zigbee_repeater"
     }
   ],
