@@ -1,4 +1,10 @@
 {
+  "5.9.19": {
+    "en": "v5.9.19: TS0044 MULTI-PRESS FIX — Reverted v5.9.9 1-indexed press mapping for _TZ3000_bgtzm4ny (Tividor #1408). Z2M confirms Tuya cmd 0xFD uses 0-indexed (0=single,1=double,2=hold). Fixed child onOff mappings per Z2M convention. Full 280-commit audit."
+  },
+  "5.9.18": {
+    "en": "v5.9.18: Deep DP audit for Peter 4x4 presence sensors — ZG_204ZV: +DP103/104/105. ZG_204ZM_RADAR: +DP3/103/110-113. HOBEIAN_ZG204ZM: +DP103/110/111."
+  },
   "5.9.17": {
     "en": "v5.9.17: Water deep sync + E000 cmdId fix + Unknown DP diagnostics — (1) water_leak_sensor: removed 2 repeater fps, added _TZ3000_amis43tj. (2) water_valve_smart: added _TZE284 variant DP2/3/21. (3) Fixed cmdId>=0 in E000 bound cluster + button_wireless_3/4. (4) NEW: UnknownDPLogger — all unmapped DPs and ZCL attrs now logged with type inference, suggested capability, manufacturer info, and 5-min periodic summary for debug analysis."
   },
