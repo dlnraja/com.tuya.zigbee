@@ -1,5 +1,16 @@
-# User Device Expectations (v5.9.9)
-**Updated**: 2026-02-13 (v5.9.9 F1-F5 forum fixes + case-insensitive audit)
+# User Device Expectations (v5.9.18)
+**Updated**: 2026-02-15 (v5.9.18 deep DP audit for Peter 4x4 variants)
+
+## v5.9.18: Deep DP Audit — Peter 4x4 Presence Sensor Variants
+Sources: Z2M ZG-204ZM/ZV/ZL/ZH/227Z pages, Z2M #21919 #29024 #28529, ZHA #4184 #4452 #4517, Hubitat kkossev, Blakadder, SmartHomeScene, Reddit
+
+| Config | DPs Added | Source |
+|--------|-----------|--------|
+| ZG_204ZV_MULTISENSOR | DP103 temp_unit, DP104 temp_cal, DP105 hum_cal | Z2M ZG-204ZV page |
+| ZG_204ZM_RADAR | DP3 mov_min_dist, DP103 motion_false_det, DP110-113 | Z2M #21919 |
+| HOBEIAN_ZG204ZM | DP103 motion_false_det, DP110-113 | Z2M #21919 |
+
+Bugs researched (no code bugs): Z2M #29024 presence-always-true (noIasMotion avoids), _TZE200_kb5noeto stuck (isolated in ZCL_ONLY_RADAR), battery type issue (hardware-only)
 
 ## URGENT: 4x4_Pete (5-day deadline)
 - **HOBEIAN ZG-204ZM**: HYBRID (0xEF00+IAS+ZCL lux+battery) → HOBEIAN_ZG204ZM config ✅
