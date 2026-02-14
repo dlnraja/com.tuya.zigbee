@@ -258,13 +258,13 @@ class ClimateSensorDevice extends HybridSensorBase {
    * Determines best protocol based on manufacturerName
    */
   get deviceProtocol() {
-    const mfr = this._manufacturerName || '';
+    const mfr = (this._manufacturerName || '').toLowerCase();
 
-    if (mfr.startsWith('_TZE284')) return 'TUYA_DP_LCD';      // LCD with Tuya epoch
-    if (mfr.startsWith('_TZE200')) return 'TUYA_DP';          // Standard Tuya DP
-    if (mfr.startsWith('_TZE204')) return 'TUYA_DP_ENHANCED'; // Enhanced Tuya DP
-    if (mfr.startsWith('_TZ3000')) return 'ZCL_STANDARD';     // Pure ZCL
-    if (mfr.startsWith('_TZ3210')) return 'ZCL_STANDARD';     // Pure ZCL
+    if (mfr.startsWith('_tze284')) return 'TUYA_DP_LCD';      // LCD with Tuya epoch
+    if (mfr.startsWith('_tze200')) return 'TUYA_DP';          // Standard Tuya DP
+    if (mfr.startsWith('_tze204')) return 'TUYA_DP_ENHANCED'; // Enhanced Tuya DP
+    if (mfr.startsWith('_tz3000')) return 'ZCL_STANDARD';     // Pure ZCL
+    if (mfr.startsWith('_tz3210')) return 'ZCL_STANDARD';     // Pure ZCL
 
     // Check modelId for protocol hints
     const modelId = this._modelId || '';
@@ -278,12 +278,12 @@ class ClimateSensorDevice extends HybridSensorBase {
    * v5.5.190: Check if device needs Tuya epoch (2000) for time sync
    */
   get needsTuyaEpoch() {
-    const mfr = this._manufacturerName || '';
+    const mfr = (this._manufacturerName || '').toLowerCase();
     // v5.8.74: ALL _TZE* devices need Tuya epoch (2000), not just _TZE284
     // Z2M issue #30054: wrong epoch (1970 vs 2000) causes wrong time on ALL TS0601
-    return mfr.startsWith('_TZE200') ||
-      mfr.startsWith('_TZE204') ||
-      mfr.startsWith('_TZE284') ||
+    return mfr.startsWith('_tze200') ||
+      mfr.startsWith('_tze204') ||
+      mfr.startsWith('_tze284') ||
       mfr.includes('vvmbj46n') ||
       mfr.includes('aao6qtcs') ||
       mfr.includes('znph9215') ||
@@ -295,19 +295,19 @@ class ClimateSensorDevice extends HybridSensorBase {
    * These devices are PASSIVE and will never display time unless we push sync
    */
   isLCDClimateDevice() {
-    const mfr = this._manufacturerName || '';
+    const mfr = (this._manufacturerName || '').toLowerCase();
     const modelId = this._modelId || '';
 
     // _TZE284_ series are LCD climate sensors with RTC displays
-    if (mfr.startsWith('_TZE284_')) return true;
+    if (mfr.startsWith('_tze284_')) return true;
 
     // Known LCD climate sensor manufacturer IDs
     const lcdManufacturers = [
-      '_TZE284_vvmbj46n',  // TH05Z LCD climate sensor (MAIN TARGET)
-      '_TZE284_aao6qtcs',  // Similar LCD model
-      '_TZE284_znph9215',  // Another LCD variant
-      '_TZE284_qoy0ekbd',  // LCD climate sensor
-      '_TZE200_vvmbj46n',  // Some TZE200 also have LCD
+      '_tze284_vvmbj46n',  // TH05Z LCD climate sensor (MAIN TARGET)
+      '_tze284_aao6qtcs',  // Similar LCD model
+      '_tze284_znph9215',  // Another LCD variant
+      '_tze284_qoy0ekbd',  // LCD climate sensor
+      '_tze200_vvmbj46n',  // Some TZE200 also have LCD
     ];
 
     // Check if manufacturer matches known LCD devices
@@ -316,7 +316,7 @@ class ClimateSensorDevice extends HybridSensorBase {
     }
 
     // TS0601 with LCD indicators (some have LCD displays)
-    if (modelId === 'TS0601' && mfr.startsWith('_TZE284_')) return true;
+    if (modelId === 'TS0601' && mfr.startsWith('_tze284_')) return true;
 
     return false;
   }
@@ -325,9 +325,9 @@ class ClimateSensorDevice extends HybridSensorBase {
    * v5.5.190: Check if device uses battery_state enum (DP3) vs battery% (DP4)
    */
   get usesBatteryStateEnum() {
-    const mfr = this._manufacturerName || '';
+    const mfr = (this._manufacturerName || '').toLowerCase();
     // Some _TZE200 devices use DP3 with enum (low/medium/high)
-    return mfr.includes('_TZE200_vvmbj46n'); // TH05Z original uses DP3
+    return mfr.includes('_tze200_vvmbj46n'); // TH05Z original uses DP3
   }
 
   /**
@@ -1359,7 +1359,7 @@ class ClimateSensorDevice extends HybridSensorBase {
    */
   async _handleDP(dp, value, dataType) {
     // Device is awake! Trigger time sync for LCD displays
-    if (this._manufacturerName?.includes('_TZE284')) {
+    if ((this._manufacturerName || '').toLowerCase().includes('_tze284')) {
       this._sendTimeSync().catch(() => { });
     }
 
@@ -1406,10 +1406,10 @@ class ClimateSensorDevice extends HybridSensorBase {
 
   // v5.8.98: Soil sensor profile (ZHA #4282, Z2M #27501)
   _isSoilSensor() {
-    const mfr = this._manufacturerName || '';
-    return ['_TZE284_oitavov2', '_TZE200_myd45weu', '_TZE200_ga1maeof',
-      '_TZE200_9cqcpkgb', '_TZE204_myd45weu', '_TZE284_myd45weu',
-      '_TZE200_2se8efxh'].some(s => mfr.includes(s));
+    const mfr = (this._manufacturerName || '').toLowerCase();
+    return ['_tze284_oitavov2', '_tze200_myd45weu', '_tze200_ga1maeof',
+      '_tze200_9cqcpkgb', '_tze204_myd45weu', '_tze284_myd45weu',
+      '_tze200_2se8efxh'].some(s => mfr.includes(s));
   }
 
   /**

@@ -125,7 +125,8 @@ class Button4GangDevice extends ButtonDevice {
       '_TZ3000_qzjcsmar',
       '_TZ3000_wkai4ga5',  // v5.5.419: Forum report Eftychis
       '_TZ3000_5tqxpine',  // v5.5.419: Forum report Eftychis
-      '_TZ3000_zgyzgdua'   // v5.7.17: Forum report Fred - TS0044 but may need mode switch
+      // v5.9.14: REMOVED _TZ3000_zgyzgdua — TS0044 does NOT support attr 0x8004,
+      // mode switch causes repeated errors and may block E000 button detection (Freddyboy)
     ];
     const needsModeSwitching = isTS004F || includesCI(ts004fManufacturers, manufacturerName);
     
@@ -602,8 +603,10 @@ class Button4GangDevice extends ButtonDevice {
       ];
       
       // Check if this is TS0044 product (uses 4 endpoints with cluster 57344)
-      const isTS0044 = productId.includes('TS0044') || productId.includes('TS004F');
-      const usesE000ByManufacturer = knownE000Devices.some(id => manufacturerName.includes(id));
+      const pidLower = (productId || '').toLowerCase();
+      const mfrLower = (manufacturerName || '').toLowerCase();
+      const isTS0044 = pidLower.includes('ts0044') || pidLower.includes('ts004f');
+      const usesE000ByManufacturer = knownE000Devices.some(id => mfrLower.includes(id.toLowerCase()));
 
       // v5.7.35: FREDDYBOY FIX - ALWAYS setup E000 BoundCluster for ALL 4-button devices
       // Many MOES/Tuya variants use cluster 57344 but aren't in the known list
