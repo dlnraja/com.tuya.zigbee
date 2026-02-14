@@ -24,6 +24,8 @@ class WaterValveSmartDevice extends HybridPlugBase {
     }
     return {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+      2: { capability: null, internal: 'month_consumption' },
+      3: { capability: null, internal: 'daily_consumption' },
       5: { capability: 'meter_water', divisor: 1000 },
       6: { capability: null, internal: 'month_consumption' },
       7: { capability: null, internal: 'daily_consumption' },
@@ -35,6 +37,7 @@ class WaterValveSmartDevice extends HybridPlugBase {
         return Math.round(((v - 2700) / 300) * 100);
       }},
       15: { capability: null, setting: 'auto_clean' },
+      21: { capability: null, internal: 'flow_rate' },
     };
   }
 
@@ -50,7 +53,7 @@ class WaterValveSmartDevice extends HybridPlugBase {
     if (this.hasCapability('alarm_motion')) {
       try { await this.removeCapability('alarm_motion'); } catch (e) { /* */ }
     }
-    this.log('[WATER-VALVE] v5.9.16 Ready (' + (this.isGardenTimer ? 'GARDEN' : 'METERED') + ')');
+    this.log('[WATER-VALVE] v5.9.17 Ready (' + (this.isGardenTimer ? 'GARDEN' : 'METERED') + ')');
   }
 
   async setCapabilityValue(capability, value) {
