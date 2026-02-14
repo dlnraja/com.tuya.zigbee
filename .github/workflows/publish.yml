@@ -1,6 +1,6 @@
 # Universal Tuya Zigbee - Homey App Publish Workflow
-# v5.8.88 - Updated 2026-02-10
-# Automatically validates and publishes to Homey App Store
+# v5.9.17 - Updated 2026-02-14
+# Uses official Athom SDK3 GitHub Actions for validate + publish
 
 name: 🚀 Homey App Publish
 
@@ -179,25 +179,11 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
 
-      - name: 🔨 Build app
-        run: npx homey app build || echo "⚠️ Build validation warnings - continuing"
-
-      - name: 🔍 Debug - Check capabilities
-        run: |
-          echo "=== Homey CLI version ==="
-          npx homey --version
-          echo "=== Node version ==="
-          node --version
-          echo "=== Custom capabilities in app.json ==="
-          node -e "const a=require('./app.json'); console.log('Has capabilities:', !!a.capabilities); if(a.capabilities) console.log(Object.keys(a.capabilities).join(', '))"
-          echo "=== Compose capability files ==="
-          ls -la .homeycompose/capabilities/ | head -20
-          echo "=== Validate at publish level ==="
-          npx homey app validate --level publish 2>&1 | tail -5 || true
-
-      - name: 🚀 Publish to Homey App Store
+      - name:  Publish to Homey App Store (Athom SDK3)
+        uses: athombv/github-action-homey-app-publish@v1
         id: publish
-        run: HOMEY_HEADLESS="1" HOMEY_PAT="${{ secrets.HOMEY_PAT }}" npx homey app publish
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
 
       - name: ✅ Summary
         run: |
