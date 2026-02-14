@@ -1,0 +1,58 @@
+{
+  "id": "sub_capability_changed",
+  "title": {
+    "en": "Sub-capability changed",
+    "fr": "Sous-capacité changée",
+    "nl": "Sub-capability gewijzigd",
+    "de": "Sub-Fähigkeit geändert"
+  },
+  "titleFormatted": {
+    "en": "[[device]] sub-capability [[capability]] changed",
+    "fr": "Sous-capacité [[capability]] de [[device]] changée",
+    "nl": "Sub-capability [[capability]] van [[device]] gewijzigd",
+    "de": "Sub-Fähigkeit [[capability]] von [[device]] geändert"
+  },
+  "hint": {
+    "en": "Triggers when any sub-capability changes (e.g. onoff.gang2, dim.1)",
+    "fr": "Se déclenche quand une sous-capacité change (ex: onoff.gang2, dim.1)"
+  },
+  "tokens": [
+    {
+      "name": "capability",
+      "type": "string",
+      "title": {
+        "en": "Capability",
+        "fr": "Capacité"
+      },
+      "example": "onoff.gang2"
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur"
+      },
+      "example": "true"
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=onoff"
+    },
+    {
+      "name": "capability",
+      "type": "text",
+      "title": {
+        "en": "Capability (empty=any)",
+        "fr": "Capacité (vide=toutes)"
+      },
+      "placeholder": {
+        "en": "onoff.gang2",
+        "fr": "onoff.gang2"
+      }
+    }
+  ]
+}

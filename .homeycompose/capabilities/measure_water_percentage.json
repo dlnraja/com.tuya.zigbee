@@ -1,0 +1,18 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Fill Level",
+    "fr": "Niveau Remplissage",
+    "nl": "Vulniveau",
+    "de": "Füllstand"
+  },
+  "units": {
+    "en": "%"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "insights": true,
+  "min": 0,
+  "max": 100
+}
