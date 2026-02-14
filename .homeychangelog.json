@@ -1,4 +1,7 @@
 {
+  "5.9.20": {
+    "en": "v5.9.20: TS0044 MULTI-PRESS FIX (Tividor #1408) — Root cause: Tuya cmd 0xFD on genOnOff was silently dropped because no OnOffBoundCluster was bound. Standard OnOff cluster doesn't define cmd 0xFD, so SDK never dispatched it. Fix: Bind OnOffBoundCluster per endpoint in button_wireless_4 — handleFrame catch-all now intercepts cmd 0xFD and extracts press type (0=single, 1=double, 2=hold). Double press, long press now working."
+  },
   "5.9.19": {
     "en": "v5.9.19: TS0044 MULTI-PRESS FIX — Reverted v5.9.9 1-indexed press mapping for _TZ3000_bgtzm4ny (Tividor #1408). Z2M confirms Tuya cmd 0xFD uses 0-indexed (0=single,1=double,2=hold). Fixed child onOff mappings per Z2M convention. Full 280-commit audit."
   },
