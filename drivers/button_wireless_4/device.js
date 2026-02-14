@@ -869,8 +869,8 @@ class Button4GangDevice extends ButtonDevice {
       const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
       
       // Strategy 1: cmdId as button number (1-4), data[0] as press type
-      if (cmdId >= 1 && cmdId <= 4) {
-        const button = cmdId;
+      if (cmdId >= 0 && cmdId <= 4) {
+        const button = cmdId === 0 ? 1 : cmdId;
         const pressType = pressTypeMap[data?.[0]] || 'single';
         this.log(`[BUTTON4-RAW] 🔘 Button ${button} ${pressType.toUpperCase()} (cmdId strategy)`);
         this.triggerButtonPress(button, pressType);

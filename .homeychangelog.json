@@ -1,6 +1,6 @@
 {
   "5.9.17": {
-    "en": "v5.9.17: Water driver deep sync — (1) water_leak_sensor: removed 2 Z2M-confirmed repeater fingerprints (_TZ3000_5k5vh43t, _TZ3000_nkkl7uzv — these are TS0207 USB repeaters, not water sensors), added _TZ3000_amis43tj water sensor. (2) water_valve_smart: added _TZE284_vuwtqx0t variant DP mapping (DP2=month, DP3=daily, DP21=flow — different from standard DP6/7/9). Both variants now handled in single metered mapping."
+    "en": "v5.9.17: Water deep sync + E000 cmdId fix — (1) water_leak_sensor: removed 2 Z2M-confirmed repeater fingerprints (_TZ3000_5k5vh43t, _TZ3000_nkkl7uzv), added _TZ3000_amis43tj. (2) water_valve_smart: added _TZE284_vuwtqx0t variant DP mapping (DP2/3/21). (3) CRITICAL: Fixed cmdId>=1 → cmdId>=0 in TuyaE000BoundCluster, button_wireless_3, button_wireless_4 — cmd0 is valid button press, was silently dropped."
   },
   "5.9.16": {
     "en": "v5.9.16: Water driver audit — (1) water_valve_smart: fixed class thermostat→other, removed bogus alarm_motion, added meter_water to compose, removed duplicate _TZE204_81isopgh fingerprint, removed motion template leftovers from flow cards, added garden timer variant DP detection (sh1btabb/fphxkxue use DP7=battery% not daily consumption), added water_consumed trigger, registered missing water_detected condition. (2) water_tank_monitor: verified Z2M TLC2206 DP mapping correct. (3) water_leak_sensor: verified solid — no changes needed."

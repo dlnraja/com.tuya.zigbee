@@ -178,10 +178,11 @@ class Button3GangDevice extends ButtonDevice {
       this.log(`[BUTTON3-RAW] Parsing: cmdId=${cmdId}, data=${data?.toString?.('hex') || 'none'}`);
 
       // Strategy 1: cmdId is button number (1-3), data[0] is press type
-      if (cmdId >= 1 && cmdId <= 3) {
+      if (cmdId >= 0 && cmdId <= 3) {
+        const mappedBtn = cmdId === 0 ? 1 : cmdId;
         const pressType = pressMap[data?.[0]] || 'single';
-        this.log(`[BUTTON3-RAW] 🔘 Button ${cmdId} ${pressType} (cmdId strategy)`);
-        this.triggerButtonPress(cmdId, pressType);
+        this.log(`[BUTTON3-RAW] 🔘 Button ${mappedBtn} ${pressType} (cmdId=${cmdId})`);
+        this.triggerButtonPress(mappedBtn, pressType);
         return;
       }
 
