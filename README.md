@@ -73,6 +73,9 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.9.20** | v5.9.20: MULTI-PRESS FIX ALL BUTTON DRIVERS (Tividor #1408) — Root cause: Tuy... |
+| **v5.9.19** | v5.9.19: TS0044 MULTI-PRESS FIX — Reverted v5.9.9 1-indexed press mapping for... |
+| **v5.9.18** | v5.9.18: Deep DP audit for Peter 4x4 presence sensors — ZG_204ZV: +DP103/104/... |
 | **v5.9.17** | v5.9.17: Water deep sync + E000 cmdId fix + Unknown DP diagnostics — (1) wate... |
 | **v5.9.16** | v5.9.16: Water driver audit — (1) water_valve_smart: fixed class thermostat→o... |
 | **v5.9.15** | v5.9.15: BSEED TS0726 heartbeat fix (Hartmut) — Fixed 5-min periodic attr rep... |
@@ -80,9 +83,6 @@
 | **v5.9.13** | v5.9.13: IAS SENSOR + BUTTON FIX — (1) Fixed Buffer zoneStatus bug in IASAlar... |
 | **v5.9.12** | v5.9.12: LIQUID LEVEL SENSOR REWRITE — Complete rewrite of water_tank_monitor... |
 | **v5.9.11** | v5.9.11: FRAME DROP PREVENTION — (1) Expanded UnknownClusterHandler.scanAndBi... |
-| **v5.9.10** | v5.9.10: CASE-INSENSITIVE AUDIT — Full app-wide audit ensuring all manufactur... |
-| **v5.9.9** | v5.9.9: SENSOR & BUTTON FIX — (1) Fixed contact sensor dual IAS handler bypas... |
-| **v5.9.8** | v5.9.8: BUTTON FIX + SDK COMPLIANCE — (1) Added raw frame interceptor to butt... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
