@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.9.15** | v5.9.15: BSEED TS0726 heartbeat fix (Hartmut) — Fixed 5-min periodic attr rep... |
 | **v5.9.14** | v5.9.14: (1) BSEED 4-gang TS0726 virtual buttons fixed — removed Tuya DP over... |
 | **v5.9.13** | v5.9.13: IAS SENSOR + BUTTON FIX — (1) Fixed Buffer zoneStatus bug in IASAlar... |
 | **v5.9.12** | v5.9.12: LIQUID LEVEL SENSOR REWRITE — Complete rewrite of water_tank_monitor... |
@@ -82,7 +83,6 @@
 | **v5.9.8** | v5.9.8: BUTTON FIX + SDK COMPLIANCE — (1) Added raw frame interceptor to butt... |
 | **v5.9.7** | v5.9.7: CONTACT SENSOR FIX + ENERGY MONITOR + FINGERPRINT — (1) Fixed contact... |
 | **v5.9.6** | v5.9.6: BUTTON OPTIMIZATION — (1) Removed redundant 300ms global debounce in ... |
-| **v5.9.5** | v5.9.5: CRITICAL E000 FIX — (1) TuyaE000Cluster was never loaded (require mis... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
