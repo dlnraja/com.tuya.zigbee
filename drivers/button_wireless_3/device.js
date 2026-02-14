@@ -5,7 +5,7 @@ const ButtonDevice = require('../../lib/devices/ButtonDevice');
  * Button3GangDevice - v5.8.39
  *
  * FIX v5.8.39: Complete rewrite of button detection (GitHub #98 DVMasters)
- *   - commandToggle is SINGLE press (was wrongly mapped to long)
+ *   - v5.9.20: Z2M EVENT mode: commandOn=single, commandOff=double, commandToggle=long
  *   - Added raw frame interceptor for E000 (SDK discards unknown cluster frames)
  *   - Added explicit onOff binding on all EPs (EP2-3 had no reporting)
  *   - Removed duplicate attr.onOff listener (base class handles this)
@@ -51,7 +51,7 @@ class Button3GangDevice extends ButtonDevice {
 
   /**
    * LAYER 1: onOff command listeners on all 3 endpoints
-   * Z2M TS0043: commandToggle = single press per endpoint
+   * Z2M TS0043 EVENT mode: commandOn=single, commandOff=double, commandToggle=long
    * Also binds onOff cluster so sleepy device sends to Homey
    */
   async _setupOnOffCommands(zclNode) {
@@ -76,14 +76,14 @@ class Button3GangDevice extends ButtonDevice {
 
       if (typeof cluster.on !== 'function') continue;
 
-      // CRITICAL: commandToggle = single (Z2M research), NOT long
-      cluster.on('commandToggle', () => this._handleButton(ep, 'toggle', 'single'));
+      // v5.9.20: Z2M EVENT mode: commandOn=single, commandOff=double, commandToggle=long
       cluster.on('commandOn', () => this._handleButton(ep, 'on', 'single'));
       cluster.on('commandOff', () => this._handleButton(ep, 'off', 'double'));
+      cluster.on('commandToggle', () => this._handleButton(ep, 'toggle', 'long'));
 
       // Generic command fallback
       cluster.on('command', (cmdName) => {
-        const map = { on: 'single', setOn: 'single', off: 'double', setOff: 'double', toggle: 'single' };
+        const map = { on: 'single', setOn: 'single', off: 'double', setOff: 'double', toggle: 'long' };
         if (map[cmdName]) this._handleButton(ep, `cmd_${cmdName}`, map[cmdName]);
       });
 
