@@ -414,11 +414,11 @@ class Button4GangDevice extends ButtonDevice {
 
               // Map onOff commands to press types
               const commandMap = {
-                'on': 'single',
-                'setOn': 'single',
-                'off': 'double',
-                'setOff': 'double',
-                'toggle': 'long'
+                'toggle': 'single',
+                'on': 'double',
+                'setOn': 'double',
+                'off': 'long',
+                'setOff': 'long'
               };
 
               const pressType = commandMap[commandName];
@@ -702,9 +702,10 @@ class Button4GangDevice extends ButtonDevice {
             await this.triggerButtonPress(ep, pressType);
           };
 
-          onOffCluster.on('commandOn', async () => await handleCommand('commandOn', 'single'));
-          onOffCluster.on('commandOff', async () => await handleCommand('commandOff', 'double'));
-          onOffCluster.on('commandToggle', async () => await handleCommand('commandToggle', 'long'));
+          // v5.9.19: Z2M convention — toggle=single, on=double, off=hold
+          onOffCluster.on('commandToggle', async () => await handleCommand('commandToggle', 'single'));
+          onOffCluster.on('commandOn', async () => await handleCommand('commandOn', 'double'));
+          onOffCluster.on('commandOff', async () => await handleCommand('commandOff', 'long'));
 
           this.log(`[BUTTON4-E000] ✅ onOff command listeners configured for EP${ep}`);
         }
