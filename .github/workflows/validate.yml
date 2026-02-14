@@ -31,7 +31,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  NODE_VERSION: "20"
+  NODE_VERSION: "22"
   # APP_VERSION read dynamically from app.json
 
 jobs:
