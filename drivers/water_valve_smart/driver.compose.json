@@ -5,14 +5,23 @@
     "nl": "Slimme Waterkraan",
     "de": "Smart Wasserventil"
   },
-  "class": "thermostat",
+  "class": "other",
   "capabilities": [
-    "alarm_motion",
+    "onoff",
+    "meter_water",
     "measure_temperature",
     "alarm_water",
-    "measure_battery",
-    "onoff"
+    "measure_battery"
   ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": { "en": "Valve", "fr": "Vanne", "nl": "Klep", "de": "Ventil" }
+    },
+    "meter_water": {
+      "title": { "en": "Total Water", "fr": "Eau Totale", "nl": "Totaal Water", "de": "Gesamtwasser" },
+      "units": { "en": "m\u00b3" }
+    }
+  },
   "energy": {
     "batteries": [
       "AA"
@@ -35,8 +44,6 @@
       "_TZE200_vrjkcam9",
       "_tze200_vuwtqx0t",
       "_TZE200_vuwtqx0t",
-      "_tze204_81isopgh",
-      "_TZE204_81isopgh",
       "_tze204_a7sghmms",
       "_TZE204_a7sghmms",
       "_tze204_wt66haax",
@@ -320,6 +327,5 @@
       "id": "add_devices",
       "template": "add_devices"
     }
-  ],
-  "capabilitiesOptions": {}
+  ]
 }

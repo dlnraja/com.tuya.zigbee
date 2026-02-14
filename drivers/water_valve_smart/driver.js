@@ -9,7 +9,7 @@ const Homey = require('homey');
 class WaterValveSmartDriver extends Homey.Driver {
 
   async onInit() {
-    this.log('WaterValveSmartDriver v5.5.808 initialized');
+    this.log('WaterValveSmartDriver v5.9.16 initialized');
     this._registerFlowCards();
   }
 
@@ -78,12 +78,21 @@ class WaterValveSmartDriver extends Homey.Driver {
           await args.device.setCapabilityValue('onoff', !current);
           return true;
         });
-      this.log('[FLOW] ✅ water_valve_smart_toggle');
-    } catch (err) { this.log(`[FLOW] ⚠️ water_valve_smart_toggle: ${err.message}`); }
+      this.log('[FLOW] ✅ water_valve_toggle');
+    } catch (err) { this.log(`[FLOW] ⚠️ water_valve_toggle: ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Water valve flow cards registered');
+    // CONDITION: Water is/is not detected
+    try {
+      this.homey.flow.getConditionCard('water_valve_smart_water_detected')
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('alarm_water') === true;
+        });
+      this.log('[FLOW] ✅ water_valve_smart_water_detected');
+    } catch (err) { this.log(`[FLOW] ⚠️ water_valve_smart_water_detected: ${err.message}`); }
+
+    this.log('[FLOW] \uD83C\uDF89 Water valve flow cards registered');
   }
 }
 
 module.exports = WaterValveSmartDriver;
-
