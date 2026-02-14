@@ -80,10 +80,14 @@ class Switch4GangDevice extends BaseClass {
    *   Fix: manually instantiate onOff cluster using Cluster.getCluster(6).
    */
   async _initZclOnlyMode(zclNode) {
+    // v5.9.15: Init lastState from capabilities (not null) — prevents first
+    // periodic heartbeat report from triggering false physical flow cards
+    const cs = (ep) => { try { return this.getCapabilityValue(ep === 1 ? 'onoff' : `onoff.gang${ep}`); } catch { return null; } };
     this._zclState = {
-      lastState: { 1: null, 2: null, 3: null, 4: null },
+      lastState: { 1: cs(1), 2: cs(2), 3: cs(3), 4: cs(4) },
       pending: { 1: false, 2: false, 3: false, 4: false },
-      timeout: { 1: null, 2: null, 3: null, 4: null }
+      timeout: { 1: null, 2: null, 3: null, 4: null },
+      lastReport: { 1: 0, 2: 0, 3: 0, 4: 0 }
     };
     this._zclNode = zclNode;
     this._isZclOnlyMode = true; // v5.5.993: Flag for VirtualButtonMixin direct ZCL
@@ -210,20 +214,27 @@ class Switch4GangDevice extends BaseClass {
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       const gangNum = epNum; // Capture for closure
       onOff.on('attr.onOff', (value) => {
+        // v5.9.15: Skip periodic heartbeat reports (value unchanged = not a press)
+        // BSEED TS0726 sends attr reports every 5 min confirming current state
+        if (this._zclState.lastState[gangNum] === value) return;
+
+        // v5.9.15: Dedup rapid duplicate reports (< 1s apart, same gang)
+        const now = Date.now();
+        if (now - (this._zclState.lastReport[gangNum] || 0) < 1000) return;
+        this._zclState.lastReport[gangNum] = now;
+
         const isPhysical = !this._zclState.pending[gangNum];
         this.log(`[BSEED-4G] EP${gangNum} attr: ${value} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
-        
-        if (this._zclState.lastState[gangNum] !== value) {
-          this._zclState.lastState[gangNum] = value;
-          this.setCapabilityValue(capName, value).catch(() => {});
-          
-          if (isPhysical) {
-            const flowId = `switch_4gang_physical_gang${gangNum}_${value ? 'on' : 'off'}`;
-            this.homey.flow.getDeviceTriggerCard(flowId)
-              .trigger(this, { gang: gangNum, state: value }, {})
-              .catch(() => {});
-            this.log(`[BSEED-4G] 🔘 Physical G${gangNum} ${value ? 'ON' : 'OFF'}`);
-          }
+
+        this._zclState.lastState[gangNum] = value;
+        this.setCapabilityValue(capName, value).catch(() => {});
+
+        if (isPhysical) {
+          const flowId = `switch_4gang_physical_gang${gangNum}_${value ? 'on' : 'off'}`;
+          this.homey.flow.getDeviceTriggerCard(flowId)
+            .trigger(this, { gang: gangNum, state: value }, {})
+            .catch(() => {});
+          this.log(`[BSEED-4G] 🔘 Physical G${gangNum} ${value ? 'ON' : 'OFF'}`);
         }
       });
       this.log(`[BSEED-4G] EP${epNum} ZCL onOff + physical detection registered`);
@@ -260,22 +271,25 @@ class Switch4GangDevice extends BaseClass {
     const handleDPReport = (dpId, value) => {
       if (dpId < 1 || dpId > 4) return;
       const boolVal = value === 1 || value === true;
+      // v5.9.15: Skip heartbeat reports (unchanged state)
+      if (this._zclState.lastState[dpId] === boolVal) return;
+      const now = Date.now();
+      if (now - (this._zclState.lastReport[dpId] || 0) < 1000) return;
+      this._zclState.lastReport[dpId] = now;
+
       const capName = dpId === 1 ? 'onoff' : `onoff.gang${dpId}`;
       const isPhysical = !this._zclState.pending[dpId];
-
       this.log(`[BSEED-4G] Tuya DP${dpId} report: ${boolVal} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
 
-      if (this._zclState.lastState[dpId] !== boolVal) {
-        this._zclState.lastState[dpId] = boolVal;
-        this.setCapabilityValue(capName, boolVal).catch(() => {});
+      this._zclState.lastState[dpId] = boolVal;
+      this.setCapabilityValue(capName, boolVal).catch(() => {});
 
-        if (isPhysical) {
-          const flowId = `switch_4gang_physical_gang${dpId}_${boolVal ? 'on' : 'off'}`;
-          this.homey.flow.getDeviceTriggerCard(flowId)
-            .trigger(this, { gang: dpId, state: boolVal }, {})
-            .catch(() => {});
-          this.log(`[BSEED-4G] 🔘 Physical G${dpId} ${boolVal ? 'ON' : 'OFF'} (via Tuya DP)`);
-        }
+      if (isPhysical) {
+        const flowId = `switch_4gang_physical_gang${dpId}_${boolVal ? 'on' : 'off'}`;
+        this.homey.flow.getDeviceTriggerCard(flowId)
+          .trigger(this, { gang: dpId, state: boolVal }, {})
+          .catch(() => {});
+        this.log(`[BSEED-4G] 🔘 Physical G${dpId} ${boolVal ? 'ON' : 'OFF'} (via Tuya DP)`);
       }
     };
 

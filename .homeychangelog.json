@@ -1,4 +1,7 @@
 {
+  "5.9.15": {
+    "en": "v5.9.15: BSEED TS0726 heartbeat fix (Hartmut) — Fixed 5-min periodic attr reports misdetected as physical presses. Init gang state from caps on boot. Added 1s dedup. CI fix: unignored .homeycompose/."
+  },
   "5.9.14": {
     "en": "v5.9.14: (1) BSEED 4-gang TS0726 virtual buttons fixed — removed Tuya DP override, restored ZCL per-endpoint (Hartmut). (2) Button 1-gang: fixed E000 raw frame cmdId bug (was missing cmdId 0), added _TZ3000_mrpevh8p fingerprint (Cam). (3) Button 4-gang: removed broken mode switch for _TZ3000_zgyzgdua TS0044, added _TZ3000_w8jwkczz/_TZ3000_uri7ez8u fingerprints (Freddyboy). (4) IR blaster Z2M protocol rewrite (F7). (5) Presence sensor fix (F8)."
   },
