@@ -1,0 +1,42 @@
+{
+  "id": "tuya_dp_send",
+  "title": {
+    "en": "Send Tuya DP",
+    "fr": "Envoyer DP Tuya",
+    "nl": "Tuya DP verzenden",
+    "de": "Tuya DP senden"
+  },
+  "titleFormatted": {
+    "en": "Send DP [[dp]] with value [[value]] to [[device]]",
+    "fr": "Envoyer DP [[dp]] avec valeur [[value]] à [[device]]"
+  },
+  "hint": {
+    "en": "Send a raw Tuya datapoint value to the device",
+    "fr": "Envoie une valeur brute de datapoint Tuya à l'appareil"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=tuya_data_report|onoff"
+    },
+    {
+      "name": "dp",
+      "type": "number",
+      "title": {
+        "en": "DP Number",
+        "fr": "Numéro DP"
+      },
+      "min": 1,
+      "max": 255
+    },
+    {
+      "name": "value",
+      "type": "text",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur"
+      }
+    }
+  ]
+}

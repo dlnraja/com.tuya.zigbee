@@ -1,0 +1,44 @@
+{
+  "id": "sub_capability_set",
+  "title": {
+    "en": "Set sub-capability",
+    "fr": "Définir sous-capacité",
+    "nl": "Sub-capability instellen",
+    "de": "Sub-Fähigkeit setzen"
+  },
+  "titleFormatted": {
+    "en": "Set [[capability]] to [[value]] on [[device]]",
+    "fr": "Définir [[capability]] à [[value]] sur [[device]]"
+  },
+  "hint": {
+    "en": "Set a sub-capability value (e.g. onoff.gang2)",
+    "fr": "Définit une valeur de sous-capacité (ex: onoff.gang2)"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=onoff"
+    },
+    {
+      "name": "capability",
+      "type": "text",
+      "title": {
+        "en": "Capability",
+        "fr": "Capacité"
+      },
+      "placeholder": {
+        "en": "onoff.gang2",
+        "fr": "onoff.gang2"
+      }
+    },
+    {
+      "name": "value",
+      "type": "checkbox",
+      "title": {
+        "en": "On/Off",
+        "fr": "Marche/Arrêt"
+      }
+    }
+  ]
+}
