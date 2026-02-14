@@ -1,5 +1,5 @@
-# User Device Expectations (v5.8.91)
-**Updated**: 2026-02-10 (v5.8.91 ZCL metering fix + forum analysis)
+# User Device Expectations (v5.9.9)
+**Updated**: 2026-02-13 (v5.9.9 F1-F5 forum fixes + case-insensitive audit)
 
 ## URGENT: 4x4_Pete (5-day deadline)
 - **HOBEIAN ZG-204ZM**: HYBRID (0xEF00+IAS+ZCL lux+battery) → HOBEIAN_ZG204ZM config ✅
@@ -83,10 +83,10 @@
 | Tbao | _TZ3000_bs93npae TS130F wrong caps (p69) | IN CODE, fixed v5.8.41 |
 | FrankP | _TZ3290_7v1k4vufotpowp9z TS1201 IR (p69) | IN CODE ✅ |
 | GH#123 | 46 new fingerprints community sync | ALL 46 PRESENT ✅ |
-| Lasse_K | Contact reversed v5.8.43 (p69) | FIXED v5.8.98 — IAS events now respect user invert_contact/reverse_alarm settings |
+| Lasse_K | Contact reversed v5.8.43 (p69) | FIXED v5.9.9 — F1: _iasOriginatedAlarm fix |
 | Lasse_K | Water no alarm v5.8.43 (p69) | FIXED v5.8.88 — IAS enrollment improved, needs re-pair |
 | blutch32 | _TZ3000_996rpfy6 TS0203 alarm broken (p68) | FIXED v5.8.85 — double-inversion bug |
-| Hartmut_Dunker | TS0726 virtual toggles all 4 (p70) | FIXED v5.8.87 — EP isolation fix |
+| Hartmut_Dunker | TS0726 virtual toggles all 4 (p70) | FIXED v5.9.9 — F2: Tuya DP per-gang routing |
 | DutchDuke | Soil temp ÷10 (1.8 vs 18) (p70) | FIXED v5.8.87 — raw °C skip |
 | FinnKje | Presence on/off every minute (p69) | FIXED v5.8.40 — multi-DP frame parser |
 | Karsten_Hille | Temp/hum sensor broken (p68) | FIXED v5.8.38 |
@@ -96,12 +96,12 @@
 | GH#124 Lalla80111 | _TZ3000_b4awzgct TS0041 no flow | ACTIVE — re-paired v5.8.77 still broken. E000 on EP1 exists. NEEDS DIAG with button presses |
 | GH#98 DVMasters | _TZ3000_famkxci2 TS0043 button no flow | awaiting re-pair+diag |
 | GH#110 Pollepa | TS011F metering empty | FIXED v5.8.91 — added rmsVoltage+rmsCurrent reporting + initial reads |
-| Tividor (p70) | button_wireless_4 double-press | re-pair v5.8.90 |
-| Piotr_Cetler (p70) | TS0002 2-gang both toggle | update+re-pair v5.8.90 |
-| Lasse_K (p70) | Water sensor: v5.8.43 OK→v5.8.65-78 unknown→v5.8.88 OK no alarm | re-pair v5.8.91+diag |
-| Cam | _TZ3000_5bpeda8u TS0041 no presses v5.8.66 diag 4b2150c6 | ACTIVE — update v5.8.91 re-pair+diag |
+| Tividor (p70) | button_wireless_4 double-press | FIXED v5.9.9 — F5: 1-indexed press mapping |
+| Piotr_Cetler (p70) | TS0002 2-gang both toggle | DEVICE FIRMWARE — Z2M #14750 confirms dual-toggle is hardware behavior |
+| Lasse_K (p70) | Water sensor no alarm (p70) | FIXED v5.9.9 — F4: numeric cluster 0x0500 lookup |
+| Cam | _TZ3000_5bpeda8u TS0041 no presses v5.8.66 diag 4b2150c6 | ACTIVE — update v5.9.9 re-pair+diag |
 | JJ10 | Presence v5.8.66 motion 1sec lux broken diag 17c03ea7 | FIXED v5.8.77 motion/lux/distance OK |
-| Freddyboy | Moes TS0044 physical no flow v5.8.65 diag 34b9565c | ACTIVE — update v5.8.91 re-pair+diag |
+| Freddyboy | Moes TS0044 physical no flow v5.8.65 diag 34b9565c | ACTIVE — update v5.9.9 re-pair+diag |
 
 ---
 
@@ -389,6 +389,7 @@ _TZ3000_hafsqare, _TZ3000_e98krvvk, _TZ3000_iedbgyxt
 
 | Version | Build | Key Fix |
 |---------|-------|---------|
+| 5.9.9 | — | F1-F5 forum fixes + case-insensitive mfr audit (15 files) |
 | 5.8.91 | — | GH#110 ZCL metering fix: rmsVoltage+rmsCurrent configureReporting + initial readAttributes |
 | 5.8.90 | — | BSEED FP additions: _TZ3000_qkixdnon→switch_3gang, _TZ3000_blhvsaqf→switch_1gang |
 | 5.8.89 | — | GH#127 FP collision fix: _TZE204_e5m9c5hl removed from ceiling+mmwave |

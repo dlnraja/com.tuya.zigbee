@@ -2,62 +2,168 @@
   "triggers": [
     {
       "id": "wall_switch_3gang_1way_turned_on",
-      "title": { "en": "Turned on (physical button)", "nl": "Aangezet (fysieke knop)" },
+      "title": {
+        "en": "Turned on - physical button",
+        "nl": "Aangezet - fysieke knop"
+      },
       "args": []
     },
     {
       "id": "wall_switch_3gang_1way_turned_off",
-      "title": { "en": "Turned off (physical button)", "nl": "Uitgezet (fysieke knop)" },
+      "title": {
+        "en": "Turned off - physical button",
+        "nl": "Uitgezet - fysieke knop"
+      },
       "args": []
     },
     {
       "id": "wall_switch_3gang_1way_gang1_scene",
-      "title": { "en": "Gang 1 scene triggered", "nl": "Gang 1 scène geactiveerd" },
+      "title": {
+        "en": "Gang 1 scene triggered",
+        "nl": "Gang 1 scène geactiveerd"
+      },
       "args": [],
-      "tokens": [{ "name": "action", "type": "string", "title": { "en": "Action" }, "example": { "en": "on" } }]
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ]
     },
     {
       "id": "wall_switch_3gang_1way_gang2_scene",
-      "title": { "en": "Gang 2 scene triggered", "nl": "Gang 2 scène geactiveerd" },
+      "title": {
+        "en": "Gang 2 scene triggered",
+        "nl": "Gang 2 scène geactiveerd"
+      },
       "args": [],
-      "tokens": [{ "name": "action", "type": "string", "title": { "en": "Action" }, "example": { "en": "on" } }]
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ]
     },
     {
       "id": "wall_switch_3gang_1way_gang3_scene",
-      "title": { "en": "Gang 3 scene triggered", "nl": "Gang 3 scène geactiveerd" },
+      "title": {
+        "en": "Gang 3 scene triggered",
+        "nl": "Gang 3 scène geactiveerd"
+      },
       "args": [],
-      "tokens": [{ "name": "action", "type": "string", "title": { "en": "Action" }, "example": { "en": "on" } }]
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ]
     }
   ],
   "actions": [
     {
       "id": "wall_switch_3gang_1way_set_backlight",
-      "title": { "en": "Set LED indicator mode", "nl": "Stel LED-indicator modus in" },
-      "titleFormatted": { "en": "[[device]] set LED indicator to [[mode]]", "nl": "[[device]] stel LED-indicator in op [[mode]]" },
+      "title": {
+        "en": "Set LED indicator mode",
+        "nl": "Stel LED-indicator modus in"
+      },
+      "titleFormatted": {
+        "en": "[[device]] set LED indicator to [[mode]]",
+        "nl": "[[device]] stel LED-indicator in op [[mode]]"
+      },
       "args": [
-        { "type": "device", "name": "device", "filter": "driver_id=wall_switch_3gang_1way" },
         {
-          "name": "mode", "type": "dropdown",
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=wall_switch_3gang_1way"
+        },
+        {
+          "name": "mode",
+          "type": "dropdown",
           "values": [
-            { "id": "off", "label": { "en": "Always Off", "nl": "Altijd Uit" } },
-            { "id": "normal", "label": { "en": "On when Switch ON", "nl": "Aan bij AAN" } },
-            { "id": "inverted", "label": { "en": "On when Switch OFF", "nl": "Aan bij UIT" } }
+            {
+              "id": "off",
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit"
+              }
+            },
+            {
+              "id": "normal",
+              "label": {
+                "en": "On when Switch ON",
+                "nl": "Aan bij AAN"
+              }
+            },
+            {
+              "id": "inverted",
+              "label": {
+                "en": "On when Switch OFF",
+                "nl": "Aan bij UIT"
+              }
+            }
           ]
         }
       ]
     },
     {
       "id": "wall_switch_3gang_1way_set_scene_mode",
-      "title": { "en": "Set scene mode", "nl": "Stel scènemodus in" },
-      "titleFormatted": { "en": "[[device]] set scene mode to [[mode]]", "nl": "[[device]] stel scènemodus in op [[mode]]" },
+      "title": {
+        "en": "Set scene mode",
+        "nl": "Stel scènemodus in"
+      },
+      "titleFormatted": {
+        "en": "[[device]] set scene mode to [[mode]]",
+        "nl": "[[device]] stel scènemodus in op [[mode]]"
+      },
       "args": [
-        { "type": "device", "name": "device", "filter": "driver_id=wall_switch_3gang_1way" },
         {
-          "name": "mode", "type": "dropdown",
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=wall_switch_3gang_1way"
+        },
+        {
+          "name": "mode",
+          "type": "dropdown",
           "values": [
-            { "id": "auto", "label": { "en": "Auto (Normal + flows)", "nl": "Auto (Normaal + flows)" } },
-            { "id": "magic", "label": { "en": "Magic (Scene only)", "nl": "Magic (Alleen scène)" } },
-            { "id": "both", "label": { "en": "Both (Load + scene)", "nl": "Both (Belasting + scène)" } }
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto (Normal + flows)",
+                "nl": "Auto (Normaal + flows)"
+              }
+            },
+            {
+              "id": "magic",
+              "label": {
+                "en": "Magic (Scene only)",
+                "nl": "Magic (Alleen scène)"
+              }
+            },
+            {
+              "id": "both",
+              "label": {
+                "en": "Both (Load + scene)",
+                "nl": "Both (Belasting + scène)"
+              }
+            }
           ]
         }
       ]
