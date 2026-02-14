@@ -1,0 +1,12 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Dim Up",
+    "fr": "Augmenter",
+    "nl": "Dimmen Omhoog"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "button",
+  "insights": false
+}
