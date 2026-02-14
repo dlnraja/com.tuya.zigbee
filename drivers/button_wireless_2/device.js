@@ -105,6 +105,19 @@ class Button2GangDevice extends ButtonDevice {
         onOff.on('commandOn', () => handle('on', 'single'));
         onOff.on('commandOff', () => handle('off', 'double'));
         onOff.on('commandToggle', () => handle('toggle', 'long'));
+        // v5.9.20: OnOffBoundCluster for Tuya cmd 0xFD multi-press
+        try {
+          const OBC = require('../../lib/clusters/OnOffBoundCluster');
+          const PM = {0:'single',1:'double',2:'long'};
+          const ce = ep;
+          if (endpoint) {
+            endpoint.bind('onOff', new OBC({onSetOn:(p)=>{
+              if(p?.cmdId!==0xFD)return;
+              this.triggerButtonPress(ce, PM[p.scene??0]||'single');
+            }}));
+          }
+        } catch(e) { this.log(`[BUTTON2-0xFD] ${e.message}`); }
+
         this.log(`[BUTTON2-E000] ✅ EP${ep} onOff listeners ready`);
       }
     }

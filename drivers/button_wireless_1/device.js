@@ -610,7 +610,15 @@ class Button1GangDevice extends ButtonDevice {
           this.log('[BUTTON1-BIND] 🔗 Installing OnOffBoundCluster to receive commands...');
           
           const boundCluster = new OnOffBoundCluster({
-            onSetOn: () => {
+            onSetOn: (p) => {
+              // v5.9.20: Handle Tuya cmd 0xFD multi-press
+              if (p?.cmdId === 0xFD) {
+                const PM = {0:'single',1:'double',2:'long'};
+                const action = PM[p.scene ?? 0] || 'single';
+                this.log(`[BUTTON1-0xFD] pressType=${p.scene} → ${action}`);
+                this.triggerButtonPress(1, action);
+                return;
+              }
               this.log('[BUTTON1-BOUND] 🔘 ON command received (EVENT MODE: single)');
               this.triggerButtonPress(1, 'single');
             },
