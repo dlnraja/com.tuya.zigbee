@@ -1,4 +1,7 @@
 {
+  "5.9.16": {
+    "en": "v5.9.16: Water driver audit — (1) water_valve_smart: fixed class thermostat→other, removed bogus alarm_motion, added meter_water to compose, removed duplicate _TZE204_81isopgh fingerprint, removed motion template leftovers from flow cards, added garden timer variant DP detection (sh1btabb/fphxkxue use DP7=battery% not daily consumption), added water_consumed trigger, registered missing water_detected condition. (2) water_tank_monitor: verified Z2M TLC2206 DP mapping correct. (3) water_leak_sensor: verified solid — no changes needed."
+  },
   "5.9.15": {
     "en": "v5.9.15: BSEED TS0726 heartbeat fix (Hartmut) — Fixed 5-min periodic attr reports misdetected as physical presses. Init gang state from caps on boot. Added 1s dedup. CI fix: unignored .homeycompose/."
   },
