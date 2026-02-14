@@ -802,6 +802,10 @@ const SENSOR_CONFIGS = {
       // v5.8.63: Z2M confirms max sensitivity 19 for ZG-204ZV (NOT 10 like ZG-204ZM)
       11: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 19 },
       102: { cap: null, setting: 'illuminance_interval', min: 1, max: 720 },
+      // v5.9.18: Z2M ZG-204ZV page confirms calibration DPs (also in HOBEIAN_10G_MULTI)
+      103: { cap: null, setting: 'temperature_unit' },               // 0=celsius, 1=fahrenheit
+      104: { cap: null, setting: 'temperature_calibration', min: -20, max: 20 },  // ÷10 → -2.0 to +2.0°C
+      105: { cap: null, setting: 'humidity_calibration', min: -30, max: 30 },
       107: { cap: null, setting: 'indicator' },
     }
   },
@@ -1183,7 +1187,7 @@ const SENSOR_CONFIGS = {
     hasIlluminance: true,   // Via ZCL cluster 1024, NOT Tuya DP106!
     noTemperature: true,    // v5.8.43: PR#125 michelhelsdingen - NO temperature sensor on this device
     noHumidity: true,       // v5.8.43: PR#125 michelhelsdingen - NO humidity sensor on this device
-    writableDPs: [2, 3, 4, 102, 104, 105, 107, 108, 109, 122, 123],
+    writableDPs: [2, 3, 4, 102, 103, 104, 105, 107, 108, 109, 110, 111, 122, 123],
     dpMap: {
       // ═══════════════════════════════════════════════════════════════════
       // PRESENCE: IAS Zone cluster 1280 (PIR) + Tuya DP (radar)
@@ -1219,6 +1223,11 @@ const SENSOR_CONFIGS = {
       107: { cap: null, setting: 'indicator' },
       108: { cap: null, setting: 'small_detection_distance', divisor: 100, min: 0, max: 6 },
       109: { cap: null, setting: 'small_detection_sensitivity', min: 0, max: 10 },
+      103: { cap: null, setting: 'motion_false_detection' },
+      110: { cap: null, setting: 'micro_minimum_distance', divisor: 100 },
+      111: { cap: null, setting: 'motionless_minimum_distance', divisor: 100 },
+      112: { cap: null, internal: 'reset_setting' },
+      113: { cap: null, setting: 'breathe_false_detection' },
       122: { cap: null, setting: 'motion_detection_mode' },  // 0=only_pir, 1=pir_and_radar, 2=only_radar
       123: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
     }
@@ -1325,7 +1334,7 @@ const SENSOR_CONFIGS = {
     // v5.5.983: 4x4_Pete forum fix - suppress battery spam warnings
     suppressBatteryWarnings: true,
     batteryThrottleMs: 3600000,  // Only update battery max every hour
-    writableDPs: [2, 4, 102, 104, 105, 107, 108, 109, 122, 123],
+    writableDPs: [2, 3, 4, 102, 103, 104, 105, 107, 108, 109, 110, 111, 122, 123],
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       101: { cap: 'alarm_motion', type: 'motion_state_enum' },
@@ -1333,13 +1342,20 @@ const SENSOR_CONFIGS = {
       121: { cap: 'measure_battery', divisor: 1 },
       // v5.8.63: Complete settings per Z2M #21919 + device page
       2: { cap: null, setting: 'large_motion_detection_sensitivity', min: 0, max: 10 },
+      3: { cap: null, setting: 'mov_minimum_distance', divisor: 100 },
       4: { cap: null, setting: 'large_motion_detection_distance', divisor: 100, min: 0, max: 10 },
       102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
+      103: { cap: null, setting: 'motion_false_detection' },
       104: { cap: null, setting: 'medium_motion_detection_distance', divisor: 100, min: 0, max: 6 },
       105: { cap: null, setting: 'medium_motion_detection_sensitivity', min: 0, max: 10 },
       107: { cap: null, setting: 'indicator' },
       108: { cap: null, setting: 'small_detection_distance', divisor: 100, min: 0, max: 6 },
       109: { cap: null, setting: 'small_detection_sensitivity', min: 0, max: 10 },
+      // v5.9.18: Z2M #21919 additional settings (commented as untested in Z2M converter)
+      110: { cap: null, setting: 'micro_minimum_distance', divisor: 100 },
+      111: { cap: null, setting: 'motionless_minimum_distance', divisor: 100 },
+      112: { cap: null, internal: 'reset_setting' },
+      113: { cap: null, setting: 'breathe_false_detection' },
       122: { cap: null, setting: 'motion_detection_mode' },
       123: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
     }
