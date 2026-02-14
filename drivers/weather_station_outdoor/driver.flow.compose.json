@@ -188,8 +188,8 @@
     {
       "id": "weather_station_outdoor_pressure_rising",
       "title": {
-        "en": "Pressure is rising (good weather)",
-        "fr": "Pression en hausse (beau temps)"
+        "en": "Pressure is rising - good weather",
+        "fr": "Pression en hausse - beau temps"
       },
       "args": [],
       "titleFormatted": {
@@ -200,8 +200,8 @@
     {
       "id": "weather_station_outdoor_pressure_falling",
       "title": {
-        "en": "Pressure is falling (bad weather)",
-        "fr": "Pression en baisse (mauvais temps)"
+        "en": "Pressure is falling - bad weather",
+        "fr": "Pression en baisse - mauvais temps"
       },
       "args": [],
       "titleFormatted": {

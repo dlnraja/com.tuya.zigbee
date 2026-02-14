@@ -184,8 +184,8 @@ class WaterLeakSensorDevice extends HybridSensorBase {
       }
     }
 
-    // Try partial match for _TZ3000_* pattern
-    if (mfr.startsWith('_TZ3000_') || mfr.startsWith('_tz3000_')) {
+    // Try partial match for _TZ3000_* pattern (case-insensitive)
+    if (mfr.toLowerCase().startsWith('_tz3000_')) {
       return {
         ...WATER_SENSOR_PROFILES['default'],
         type: 'ias_zone',
@@ -194,8 +194,8 @@ class WaterLeakSensorDevice extends HybridSensorBase {
       };
     }
 
-    // Try partial match for _TZE* pattern (Tuya DP)
-    if (mfr.startsWith('_TZE') || mfr.startsWith('_tze')) {
+    // Try partial match for _TZE* pattern (Tuya DP, case-insensitive)
+    if (mfr.toLowerCase().startsWith('_tze')) {
       return {
         ...WATER_SENSOR_PROFILES['default'],
         type: 'tuya_dp',
@@ -343,7 +343,18 @@ class WaterLeakSensorDevice extends HybridSensorBase {
           this.log('[WATER] 📖 Initial IAS read:', JSON.stringify(attrs));
           
           if (attrs?.zoneStatus !== undefined) {
-            const status = typeof attrs.zoneStatus === 'number' ? attrs.zoneStatus : 0;
+            // v5.9.13: Parse Buffer/Bitmap zoneStatus to number (HOBEIAN ZG-222Z fix)
+            let status = 0;
+            if (typeof attrs.zoneStatus === 'number') {
+              status = attrs.zoneStatus;
+            } else if (Buffer.isBuffer(attrs.zoneStatus)) {
+              status = attrs.zoneStatus.length >= 2 ? attrs.zoneStatus.readUInt16LE(0) : (attrs.zoneStatus[0] || 0);
+            } else if (attrs.zoneStatus?.type === 'Buffer' && Array.isArray(attrs.zoneStatus.data)) {
+              const buf = Buffer.from(attrs.zoneStatus.data);
+              status = buf.length >= 2 ? buf.readUInt16LE(0) : (buf[0] || 0);
+            } else if (typeof attrs.zoneStatus === 'object') {
+              status = (attrs.zoneStatus.alarm1 ? 1 : 0) | (attrs.zoneStatus.alarm2 ? 2 : 0);
+            }
             const alarm1 = (status & 0x01) > 0;
             const alarm2 = (status & 0x02) > 0;
             const waterDetected = alarm1 || alarm2;

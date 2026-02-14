@@ -68,5 +68,11 @@
   ],
   "connectivity": [
     "zigbee"
-  ]
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 60,
+      "usageOff": 0.5
+    }
+  }
 }

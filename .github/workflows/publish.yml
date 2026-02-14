@@ -119,7 +119,7 @@ jobs:
         uses: athombv/github-action-homey-app-validate@v1
         continue-on-error: true
         with:
-          level: appstore
+          level: publish
 
       - name: � Code Quality Checks
         run: |

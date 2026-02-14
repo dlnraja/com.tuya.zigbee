@@ -1,4 +1,28 @@
 {
+  "5.9.14": {
+    "en": "v5.9.14: (1) BSEED 4-gang TS0726 virtual buttons fixed — removed Tuya DP override, restored ZCL per-endpoint (Hartmut). (2) Button 1-gang: fixed E000 raw frame cmdId bug (was missing cmdId 0), added _TZ3000_mrpevh8p fingerprint (Cam). (3) Button 4-gang: removed broken mode switch for _TZ3000_zgyzgdua TS0044, added _TZ3000_w8jwkczz/_TZ3000_uri7ez8u fingerprints (Freddyboy). (4) IR blaster Z2M protocol rewrite (F7). (5) Presence sensor fix (F8)."
+  },
+  "5.9.13": {
+    "en": "v5.9.13: IAS SENSOR + BUTTON FIX — (1) Fixed Buffer zoneStatus bug in IASAlarmFallback, IASZoneManager, water_leak_sensor (HOBEIAN ZG-222Z alarm fix). (2) Removed HOBEIAN from contact inversion lists (follows ZCL standard). (3) Added TS0041 to button_wireless_4 productId (Moes _TZ3000_zgyzgdua 4-button fix). (4) Moved _TZ3000_an5rjiwd from button_wireless_1 to button_wireless_4."
+  },
+  "5.9.12": {
+    "en": "v5.9.12: LIQUID LEVEL SENSOR REWRITE — Complete rewrite of water_tank_monitor driver to match Z2M TLC2206 verified DP mapping. (1) Fixed DP mapping: DP1=liquid_state (enum: normal/low/high), DP2=liquid_depth (cm), DP22=liquid_level_percent. (2) Added writable settings: installation_height (DP19), liquid_depth_max (DP21), max_set (DP7), min_set (DP8). (3) New capabilities: measure_water_level (cm), measure_water_percentage (%), alarm_water_low, alarm_water_high. (4) New flow cards: state changed, level changed, low/high level triggers, state condition, fill level condition. (5) Added fingerprints: _TZE204_81isopgh, _TZE284_lvkk0hdg. Sources: Z2M #21015, #22543, zigpy/zha-device-handlers#3397."
+  },
+  "5.9.11": {
+    "en": "v5.9.11: FRAME DROP PREVENTION — (1) Expanded UnknownClusterHandler.scanAndBind() filter from narrow whitelist to >= 0xE000, catching ALL manufacturer-specific clusters including 0xE002-0xEDFF range previously missed. (2) Fixed CustomClusterManager filter same issue. (3) Added handleFrame catch-all to OnOffBoundCluster for Tuya custom cmd 0xFC (rotate/knob) and 0xFD (scene/button press). (4) Added handleFrame catch-all to LevelControlBoundCluster for Tuya custom cmd 0xF0 (level 0-1000). (5) Added handleFrame catch-all to ScenesBoundCluster and IasAceBoundCluster. (6) Registered GreenPower cluster (0x0021) in registerClusters.js. (7) Pre-registered 5 additional exotic clusters: 0x1888, 0xE003, 0xFC11, 0xFC57, 0xFF66. Research: zigpy#823, ZHA tuya/__init__.py."
+  },
+  "5.9.10": {
+    "en": "v5.9.10: CASE-INSENSITIVE AUDIT — Full app-wide audit ensuring all manufacturerName and productId comparisons are case-insensitive. Fixed 15 files across lib/ and drivers/ where startsWith(), includes(), or === comparisons could fail if device reports unexpected casing. Cross-referenced with Z2M: confirmed Piotr 2-gang dual-toggle is device firmware behavior (Z2M #14750), all new Z2M fingerprints already present."
+  },
+  "5.9.9": {
+    "en": "v5.9.9: SENSOR & BUTTON FIX — (1) Fixed contact sensor dual IAS handler bypassing inversion for HOBEIAN (F1 Lasse_K). (2) Fixed virtual button toggling ALL gangs on Tuya DP multi-gang switches (F2 Hartmut/Piotr). (3) Fixed soil sensor temp ÷10 by adding getData() fallback for _TZE284_oitavov2 (F3 DutchDuke). (4) Fixed water sensor IAS Zone lookup with numeric cluster ID 0x0500 (F4 Lasse_K). (5) Fixed _TZ3000_bgtzm4ny TS0044 single-press mapped as double — added 1-indexed press type detection (F5 Tividor)."
+  },
+  "5.9.8": {
+    "en": "v5.9.8: BUTTON FIX + SDK COMPLIANCE — (1) Added raw frame interceptor to button_wireless_1 and button_wireless_2 fixing _TZ3000_b4awzgct/TS0041 buttons not triggering flows (GH#124 Lalla80111). (2) Fixed duplicate onoff capability listener warning in HybridSwitchBase. (3) SDK compliance audit: added energy.approximation to 11 drivers missing Homey Energy config (air_purifier, dimmer_3gang, dimmer_dual_channel, din_rail_switch, fan_controller, humidifier, ir_blaster, led_controller_dimmable, pool_pump, presence_sensor_ceiling, smart_breaker, zigbee_repeater). (4) Added missing connectivity and platforms properties to illuminance_sensor and zigbee_repeater. (5) Fixed parentheses in flow card titles across 18 drivers per Homey App Store guidelines. (6) Fixed lib/version.js ESM export syntax to CommonJS."
+  },
+  "5.9.7": {
+    "en": "v5.9.7: CONTACT SENSOR FIX + ENERGY MONITOR + FINGERPRINT — (1) Fixed contact sensor double-inversion bug: _iasOriginatedAlarm flag was never set to true, causing IAS Zone events to be inverted twice for sensors in invertedByDefault list (Lasse_K forum regression). (2) Fixed plug_energy_monitor watchdog incorrectly removing measure_power/measure_current/meter_power capabilities when value=0 (valid for no-load). (3) Added 60s periodic energy poll fallback for ZCL plugs that don't support configureReporting. (4) Fixed soil sensor _TZE284_oitavov2 temperature case-sensitive check — rawCelsius bypass now works regardless of manufacturer name casing (DutchDuke forum). (5) Added TS0225 productId to motion_sensor for _TZ321C_fkzihax8 presence sensor (GH#97 NoroddH)."
+  },
   "5.9.6": {
     "en": "v5.9.6: BUTTON OPTIMIZATION — (1) Removed redundant 300ms global debounce in triggerButtonPress (500ms minInterval already covers it). (2) Fixed parseInt inconsistency: long/multi press used parseInt(button)||button which could return strings — now uses Number(button)||1 consistently across all press types. (3) Fixed shadowed 'now' variable redeclaration inside try block. (4) Massive log noise reduction: consolidated 8-line header into 1, 4-line error into 1, refactored all 5 press types (single/double/long/multi/release) to use new _tryCard helper that only logs successes silently."
   },

@@ -3,8 +3,8 @@
     {
       "id": "wall_dimmer_1gang_1way_turned_on",
       "title": {
-        "en": "Turned on (physical button)",
-        "nl": "Aangezet (fysieke knop)"
+        "en": "Turned on - physical button",
+        "nl": "Aangezet - fysieke knop"
       },
       "hint": {
         "en": "Triggered when the switch is turned on using the physical button",
@@ -19,8 +19,8 @@
     {
       "id": "wall_dimmer_1gang_1way_turned_off",
       "title": {
-        "en": "Turned off (physical button)",
-        "nl": "Uitgezet (fysieke knop)"
+        "en": "Turned off - physical button",
+        "nl": "Uitgezet - fysieke knop"
       },
       "hint": {
         "en": "Triggered when the switch is turned off using the physical button",
@@ -35,8 +35,8 @@
     {
       "id": "wall_dimmer_1gang_1way_brightness_increased",
       "title": {
-        "en": "Brightness increased (physical button)",
-        "nl": "Helderheid verhoogd (fysieke knop)"
+        "en": "Brightness increased - physical button",
+        "nl": "Helderheid verhoogd - fysieke knop"
       },
       "hint": {
         "en": "Triggered when brightness is increased using the physical button",
@@ -62,8 +62,8 @@
     {
       "id": "wall_dimmer_1gang_1way_brightness_decreased",
       "title": {
-        "en": "Brightness decreased (physical button)",
-        "nl": "Helderheid verlaagd (fysieke knop)"
+        "en": "Brightness decreased - physical button",
+        "nl": "Helderheid verlaagd - fysieke knop"
       },
       "hint": {
         "en": "Triggered when brightness is decreased using the physical button",
