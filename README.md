@@ -73,7 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.9.17** | v5.9.17: Water deep sync + E000 cmdId fix — (1) water_leak_sensor: removed 2 ... |
+| **v5.9.17** | v5.9.17: Water deep sync + E000 cmdId fix + Unknown DP diagnostics — (1) wate... |
 | **v5.9.16** | v5.9.16: Water driver audit — (1) water_valve_smart: fixed class thermostat→o... |
 | **v5.9.15** | v5.9.15: BSEED TS0726 heartbeat fix (Hartmut) — Fixed 5-min periodic attr rep... |
 | **v5.9.14** | v5.9.14: (1) BSEED 4-gang TS0726 virtual buttons fixed — removed Tuya DP over... |
