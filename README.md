@@ -73,16 +73,16 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.9.14** | v5.9.14: (1) BSEED 4-gang TS0726 virtual buttons fixed — removed Tuya DP over... |
+| **v5.9.13** | v5.9.13: IAS SENSOR + BUTTON FIX — (1) Fixed Buffer zoneStatus bug in IASAlar... |
+| **v5.9.12** | v5.9.12: LIQUID LEVEL SENSOR REWRITE — Complete rewrite of water_tank_monitor... |
+| **v5.9.11** | v5.9.11: FRAME DROP PREVENTION — (1) Expanded UnknownClusterHandler.scanAndBi... |
+| **v5.9.10** | v5.9.10: CASE-INSENSITIVE AUDIT — Full app-wide audit ensuring all manufactur... |
+| **v5.9.9** | v5.9.9: SENSOR & BUTTON FIX — (1) Fixed contact sensor dual IAS handler bypas... |
+| **v5.9.8** | v5.9.8: BUTTON FIX + SDK COMPLIANCE — (1) Added raw frame interceptor to butt... |
+| **v5.9.7** | v5.9.7: CONTACT SENSOR FIX + ENERGY MONITOR + FINGERPRINT — (1) Fixed contact... |
 | **v5.9.6** | v5.9.6: BUTTON OPTIMIZATION — (1) Removed redundant 300ms global debounce in ... |
 | **v5.9.5** | v5.9.5: CRITICAL E000 FIX — (1) TuyaE000Cluster was never loaded (require mis... |
-| **v5.9.4** | v5.9.4: DIAGNOSTICS FIX — (1) Fixed button press dead zone: smart ZCL interva... |
-| **v5.9.3** | v5.9.3: BUTTON DRIVER AUDIT — (1) Fixed flow card ID mismatch in button_wirel... |
-| **v5.9.2** | v5.9.2: NEW DEVICE — Added _TZE204_dwcarsat (Air Monitor / SOS TS0601) to cli... |
-| **v5.9.1** | v5.9.1: CRASH FIX + FINGERPRINT EXPANSION — (1) Fixed 2 more SyntaxError cras... |
-| **v5.9.0** | v5.9.0: CRITICAL CRASH FIX — (1) Fixed SyntaxError in ProductValueValidator.j... |
-| **v5.8.99** | v5.8.99: BUTTON BATTERY FIX — Fixed _readBatteryOnButtonPress crash (method n... |
-| **v5.8.98** | v5.8.98: CONTACT SENSOR FIX + NEW FINGERPRINTS + SOIL SENSOR FIX — (1) Forum ... |
-| **v5.8.97** | v5.8.97: SOS + RADAR + DIMMER PHYSICAL BUTTONS — (1) SOS button: fixed false ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
