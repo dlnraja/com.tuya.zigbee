@@ -90,5 +90,11 @@
   "images": {
     "small": "drivers/dimmer_3gang/assets/images/small.png",
     "large": "drivers/dimmer_3gang/assets/images/large.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 60,
+      "usageOff": 0.5
+    }
   }
 }

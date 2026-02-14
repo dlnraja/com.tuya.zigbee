@@ -1128,7 +1128,7 @@ class MotionSensorDevice extends HybridSensorBase {
       || this.getData()?.modelId || '';
     
     // Only for TS0601 Tuya DP devices (variants that may have temp/humidity)
-    const isTuyaDP = modelId === 'TS0601' || mfr.startsWith('_TZE');
+    const isTuyaDP = modelId === 'TS0601' || mfr.toLowerCase().startsWith('_tze');
     if (!isTuyaDP) {
       this.log('[MOTION-DP] Not a Tuya DP device, skipping DP polling');
       return;

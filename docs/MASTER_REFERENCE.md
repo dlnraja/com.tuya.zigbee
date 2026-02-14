@@ -1,5 +1,5 @@
 # MASTER REFERENCE — Universal Tuya Zigbee
-**v5.8.88** | **2026-02-09** | com.dlnraja.tuya.zigbee
+**v5.9.9** | **2026-02-13** | com.dlnraja.tuya.zigbee
 
 ---
 
@@ -83,12 +83,21 @@ Classic Outlook .ost at AppData/Local/Microsoft/Outlook/ (binary, not readable).
 
 ## 7. PENDING ACTIONS
 
-- Cam TS0041: NEEDS DIAG
-- Freddyboy TS0044: NEEDS DIAG
+- Cam TS0041: NEEDS DIAG (update v5.9.9 + re-pair + diag)
+- Freddyboy TS0044: NEEDS DIAG (update v5.9.9 + re-pair + diag)
+- Ricardo_Lenior: NEEDS FINGERPRINT (diag only)
+- Piotr 2-gang `_TZ3000_cauq1okq`: DEVICE FIRMWARE issue (Z2M #14750 confirms dual toggle)
+- F7 FrankP IR blaster ZS06: FEATURE (Zosung commands — deferred)
+- F8 JJ10 presence stale temp/humidity: DEFERRED
 - GH responses: Draft ready, post to GitHub
 - Collisions: 2194 remaining (monthly report)
 
-## 8. CROSS-REF RESULTS (2026-02-09)
+## 8. v5.9.9 (2026-02-13)
+
+- F1-F5 forum fixes + 15-file case-insensitive audit
+- Z2M confirms Piotr 2-gang = device firmware (#14750)
+
+## 9. CROSS-REF RESULTS (2026-02-09)
 
 - GH: 12 issues audited, all fps present, GH#122 FIXED
 - Forum: 15 users, 13 FIXED, 2 NEEDS DIAG
@@ -96,7 +105,7 @@ Classic Outlook .ost at AppData/Local/Microsoft/Outlook/ (binary, not readable).
 - Email: Outlook cloud-only, user must paste
 - Stale docs updated: PROJECT_STATUS, GITHUB_ISSUES_PR, FORUM_ISSUES
 
-## 9. SESSION 2026-02-09b — DEEP TREATMENT
+## 10. SESSION 2026-02-09b — DEEP TREATMENT
 
 ### dlnraja GitHub (12 open, 0 replied)
 - ALL 10 unique fingerprints verified in correct drivers

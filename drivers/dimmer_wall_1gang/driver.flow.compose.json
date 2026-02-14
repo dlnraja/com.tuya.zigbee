@@ -4,21 +4,21 @@
       "id": "dimmer_wall_1gang_physical_on",
       "args": [],
       "title": {
-        "en": "Turned on (physical button)"
+        "en": "Turned on - physical button"
       }
     },
     {
       "id": "dimmer_wall_1gang_physical_off",
       "args": [],
       "title": {
-        "en": "Turned off (physical button)"
+        "en": "Turned off - physical button"
       }
     },
     {
       "id": "dimmer_wall_1gang_physical_brightness_up",
       "args": [],
       "title": {
-        "en": "Brightness increased (physical)"
+        "en": "Brightness increased - physical"
       },
       "tokens": [
         {
@@ -35,7 +35,7 @@
       "id": "dimmer_wall_1gang_physical_brightness_down",
       "args": [],
       "title": {
-        "en": "Brightness decreased (physical)"
+        "en": "Brightness decreased - physical"
       },
       "tokens": [
         {

@@ -406,9 +406,10 @@ class SoilSensorDevice extends TuyaHybridDevice {
     if (dp === 5) {
       // DP5 = TEMPERATURE (divide by 10)
       let temp = parsedValue;
-      const mfr = this.getSetting?.('zb_manufacturer_name') || '';
-      // v5.8.87: DutchDuke fix — QT-07S sends raw °C (18→18°C, not 1.8°C)
-      const rawCelsius = mfr.includes('_TZE284_oitavov2');
+      const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName || this.getStore?.()?.manufacturerName || '';
+      // v5.9.9: DutchDuke F3 fix — QT-07S sends raw °C (18→18°C, not 1.8°C)
+      // Added getData()/getStore() fallback — getSetting may be empty at init
+      const rawCelsius = mfr.toLowerCase().includes('_tze284_oitavov2') || mfr.toLowerCase().includes('_tze200_oitavov2');
       if (rawCelsius) { /* already °C */ }
       else if (temp > 1000) temp = temp / 100;
       else if (temp > 100) temp = temp / 10;

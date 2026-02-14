@@ -35,9 +35,9 @@ const ZCL_ONLY_MANUFACTURERS_4G = [
 
 // v5.8.92: Manufacturers whose firmware broadcasts ZCL to ALL endpoints
 // Fix: Use Tuya DP commands (DP1-4) for individual gang control
-const FORCE_TUYA_DP_4G = [
-  '_TZ3002_pzao9ls1'  // BSEED TS0726 — Hartmut_Dunker diag be0e798a
-];
+// v5.9.14: REMOVED _TZ3002_pzao9ls1 — diag 1c9a24c2 proves per-EP ZCL works fine,
+// Tuya DP was ignored (device is ZCL-only), breaking virtual buttons completely
+const FORCE_TUYA_DP_4G = [];
 
 const BaseClass = typeof HybridSwitchBase === 'function' 
   ? PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) 

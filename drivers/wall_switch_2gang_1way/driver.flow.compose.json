@@ -2,41 +2,75 @@
   "triggers": [
     {
       "id": "wall_switch_2gang_1way_turned_on",
-      "title": { "en": "Turned on (physical button)", "nl": "Aangezet (fysieke knop)" },
-      "hint": { "en": "Triggered when turned on by physical button", "nl": "Geactiveerd bij fysieke knop" },
+      "title": {
+        "en": "Turned on - physical button",
+        "nl": "Aangezet - fysieke knop"
+      },
+      "hint": {
+        "en": "Triggered when turned on by physical button",
+        "nl": "Geactiveerd bij fysieke knop"
+      },
       "args": []
     },
     {
       "id": "wall_switch_2gang_1way_turned_off",
-      "title": { "en": "Turned off (physical button)", "nl": "Uitgezet (fysieke knop)" },
-      "hint": { "en": "Triggered when turned off by physical button", "nl": "Geactiveerd bij fysieke knop" },
+      "title": {
+        "en": "Turned off - physical button",
+        "nl": "Uitgezet - fysieke knop"
+      },
+      "hint": {
+        "en": "Triggered when turned off by physical button",
+        "nl": "Geactiveerd bij fysieke knop"
+      },
       "args": []
     },
     {
       "id": "wall_switch_2gang_1way_gang1_scene",
-      "title": { "en": "Gang 1 scene triggered", "nl": "Gang 1 scène geactiveerd" },
-      "hint": { "en": "Triggered when gang 1 button pressed in scene/magic mode", "nl": "Gang 1 knop in scène/magic modus" },
+      "title": {
+        "en": "Gang 1 scene triggered",
+        "nl": "Gang 1 scène geactiveerd"
+      },
+      "hint": {
+        "en": "Triggered when gang 1 button pressed in scene/magic mode",
+        "nl": "Gang 1 knop in scène/magic modus"
+      },
       "args": [],
       "tokens": [
         {
           "name": "action",
           "type": "string",
-          "title": { "en": "Action", "nl": "Actie" },
-          "example": { "en": "on" }
+          "title": {
+            "en": "Action",
+            "nl": "Actie"
+          },
+          "example": {
+            "en": "on"
+          }
         }
       ]
     },
     {
       "id": "wall_switch_2gang_1way_gang2_scene",
-      "title": { "en": "Gang 2 scene triggered", "nl": "Gang 2 scène geactiveerd" },
-      "hint": { "en": "Triggered when gang 2 button pressed in scene/magic mode", "nl": "Gang 2 knop in scène/magic modus" },
+      "title": {
+        "en": "Gang 2 scene triggered",
+        "nl": "Gang 2 scène geactiveerd"
+      },
+      "hint": {
+        "en": "Triggered when gang 2 button pressed in scene/magic mode",
+        "nl": "Gang 2 knop in scène/magic modus"
+      },
       "args": [],
       "tokens": [
         {
           "name": "action",
           "type": "string",
-          "title": { "en": "Action", "nl": "Actie" },
-          "example": { "en": "on" }
+          "title": {
+            "en": "Action",
+            "nl": "Actie"
+          },
+          "example": {
+            "en": "on"
+          }
         }
       ]
     }
@@ -44,58 +78,126 @@
   "actions": [
     {
       "id": "wall_switch_2gang_1way_set_backlight",
-      "title": { "en": "Set LED indicator mode", "nl": "Stel LED-indicator modus in" },
-      "titleFormatted": { "en": "[[device]] set LED to [[mode]]", "nl": "[[device]] stel LED in op [[mode]]" },
+      "title": {
+        "en": "Set LED indicator mode",
+        "nl": "Stel LED-indicator modus in"
+      },
+      "titleFormatted": {
+        "en": "[[device]] set LED to [[mode]]",
+        "nl": "[[device]] stel LED in op [[mode]]"
+      },
       "args": [
-        { "type": "device", "name": "device", "filter": "driver_id=wall_switch_2gang_1way" },
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=wall_switch_2gang_1way"
+        },
         {
           "name": "mode",
           "type": "dropdown",
           "values": [
-            { "id": "off", "label": { "en": "Always Off", "nl": "Altijd Uit" } },
-            { "id": "normal", "label": { "en": "On when Switch ON", "nl": "Aan bij AAN" } },
-            { "id": "inverted", "label": { "en": "On when Switch OFF", "nl": "Aan bij UIT" } }
+            {
+              "id": "off",
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit"
+              }
+            },
+            {
+              "id": "normal",
+              "label": {
+                "en": "On when Switch ON",
+                "nl": "Aan bij AAN"
+              }
+            },
+            {
+              "id": "inverted",
+              "label": {
+                "en": "On when Switch OFF",
+                "nl": "Aan bij UIT"
+              }
+            }
           ]
         }
       ]
     },
     {
       "id": "wall_switch_2gang_1way_set_scene_mode",
-      "title": { "en": "Set scene mode", "nl": "Stel scènemodus in" },
-      "titleFormatted": { "en": "[[device]] set scene mode to [[mode]]", "nl": "[[device]] stel scènemodus in op [[mode]]" },
+      "title": {
+        "en": "Set scene mode",
+        "nl": "Stel scènemodus in"
+      },
+      "titleFormatted": {
+        "en": "[[device]] set scene mode to [[mode]]",
+        "nl": "[[device]] stel scènemodus in op [[mode]]"
+      },
       "args": [
-        { "type": "device", "name": "device", "filter": "driver_id=wall_switch_2gang_1way" },
+        {
+          "type": "device",
+          "name": "device",
+          "filter": "driver_id=wall_switch_2gang_1way"
+        },
         {
           "name": "mode",
           "type": "dropdown",
           "values": [
-            { "id": "auto", "label": { "en": "Auto (Normal + flows)", "nl": "Auto (Normaal + flows)" } },
-            { "id": "magic", "label": { "en": "Magic (Scene only)", "nl": "Magic (Alleen scène)" } },
-            { "id": "both", "label": { "en": "Both (Load + scene)", "nl": "Both (Belasting + scène)" } }
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto (Normal + flows)",
+                "nl": "Auto (Normaal + flows)"
+              }
+            },
+            {
+              "id": "magic",
+              "label": {
+                "en": "Magic (Scene only)",
+                "nl": "Magic (Alleen scène)"
+              }
+            },
+            {
+              "id": "both",
+              "label": {
+                "en": "Both (Load + scene)",
+                "nl": "Both (Belasting + scène)"
+              }
+            }
           ]
         }
       ]
     },
     {
       "id": "wall_switch_2gang_1way_turn_on",
-      "title": { "en": "Turn on", "nl": "Aanzetten" },
+      "title": {
+        "en": "Turn on",
+        "nl": "Aanzetten"
+      },
       "args": []
     },
     {
       "id": "wall_switch_2gang_1way_turn_off",
-      "title": { "en": "Turn off", "nl": "Uitzetten" },
+      "title": {
+        "en": "Turn off",
+        "nl": "Uitzetten"
+      },
       "args": []
     },
     {
       "id": "wall_switch_2gang_1way_toggle",
-      "title": { "en": "Toggle", "nl": "Wisselen" },
+      "title": {
+        "en": "Toggle",
+        "nl": "Wisselen"
+      },
       "args": []
     }
   ],
   "conditions": [
     {
       "id": "wall_switch_2gang_1way_is_on",
-      "title": { "en": "Is !{{on|off}}", "nl": "Is !{{aan|uit}}" },
+      "title": {
+        "en": "Is !{{on|off}}",
+        "nl": "Is !{{aan|uit}}"
+      },
       "args": []
     }
   ]
