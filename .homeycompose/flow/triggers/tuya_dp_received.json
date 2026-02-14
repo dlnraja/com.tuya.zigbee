@@ -1,0 +1,56 @@
+{
+  "id": "tuya_dp_received",
+  "title": {
+    "en": "Tuya Data Point received",
+    "fr": "Data Point Tuya reçu",
+    "nl": "Tuya Data Point ontvangen",
+    "de": "Tuya Datenpunkt empfangen"
+  },
+  "titleFormatted": {
+    "en": "Tuya DP [[dp]] received on [[device]]",
+    "fr": "DP Tuya [[dp]] reçu sur [[device]]",
+    "nl": "Tuya DP [[dp]] ontvangen op [[device]]",
+    "de": "Tuya DP [[dp]] empfangen auf [[device]]"
+  },
+  "hint": {
+    "en": "Triggers when a raw Tuya DP is received. Use DP 0 to match any DP.",
+    "fr": "Se déclenche quand un DP Tuya brut est reçu. Utilisez DP 0 pour tous les DP."
+  },
+  "tokens": [
+    {
+      "name": "dp",
+      "type": "number",
+      "title": {
+        "en": "DP Number",
+        "fr": "Numéro DP"
+      },
+      "example": 1
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "title": {
+        "en": "Value",
+        "fr": "Valeur"
+      },
+      "example": "true"
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=tuya_data_report|onoff"
+    },
+    {
+      "name": "dp",
+      "type": "number",
+      "title": {
+        "en": "DP Number (0=any)",
+        "fr": "Numéro DP (0=tous)"
+      },
+      "min": 0,
+      "max": 255
+    }
+  ]
+}

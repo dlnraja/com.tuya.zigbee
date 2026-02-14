@@ -1,6 +1,7 @@
-# Homey build - GENERATED AT BUILD TIME, NEVER COMMIT
+# Homey build output - GENERATED AT BUILD TIME, NEVER COMMIT
 .homeybuild/
-.homeycompose/
+# NOTE: .homeycompose/ is the SOURCE directory — it MUST be committed!
+# It contains app.json, capabilities/, and driver compose files.
 env.json
 node_modules/
 

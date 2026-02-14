@@ -1,0 +1,82 @@
+{
+  "id": "tuya_dp_threshold_crossed",
+  "title": {
+    "en": "DP threshold crossed",
+    "fr": "Seuil DP franchi",
+    "nl": "DP drempel overschreden",
+    "de": "DP Schwellwert überschritten"
+  },
+  "titleFormatted": {
+    "en": "DP [[dp]] on [[device]] crosses threshold [[threshold]]",
+    "fr": "DP [[dp]] de [[device]] franchit le seuil [[threshold]]",
+    "nl": "DP [[dp]] van [[device]] overschrijdt drempel [[threshold]]",
+    "de": "DP [[dp]] von [[device]] überschreitet Schwellwert [[threshold]]"
+  },
+  "hint": {
+    "en": "Triggers when a numeric DP value crosses a threshold (forum #1016)",
+    "fr": "Se déclenche quand une valeur DP numérique franchit un seuil"
+  },
+  "tokens": [
+    {
+      "name": "dp",
+      "type": "number",
+      "title": {
+        "en": "DP Number",
+        "fr": "Numéro DP"
+      },
+      "example": 1
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "title": {
+        "en": "Current Value",
+        "fr": "Valeur actuelle"
+      },
+      "example": 25
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "title": {
+        "en": "Threshold",
+        "fr": "Seuil"
+      },
+      "example": 30
+    },
+    {
+      "name": "direction",
+      "type": "string",
+      "title": {
+        "en": "Direction",
+        "fr": "Direction"
+      },
+      "example": "above"
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=tuya_data_report|onoff|measure_temperature"
+    },
+    {
+      "name": "dp",
+      "type": "number",
+      "title": {
+        "en": "DP Number",
+        "fr": "Numéro DP"
+      },
+      "min": 1,
+      "max": 255
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "title": {
+        "en": "Threshold Value",
+        "fr": "Valeur seuil"
+      }
+    }
+  ]
+}
