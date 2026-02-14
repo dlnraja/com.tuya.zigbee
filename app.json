@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.9.15",
+  "version": "5.9.16",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -22772,11 +22772,7 @@
         "id": "water_valve_smart_opened",
         "highlight": true,
         "title": {
-          "en": "Valve opened",
-          "nl": "Klep geopend"
-        },
-        "hint": {
-          "en": "Triggers when the water valve is opened"
+          "en": "Valve opened"
         },
         "args": [
           {
@@ -22784,17 +22780,12 @@
             "name": "device",
             "filter": "driver_id=water_valve_smart"
           }
-        ],
-        "titleFormatted": {
-          "en": "Valve opened",
-          "nl": "Klep geopend"
-        }
+        ]
       },
       {
         "id": "water_valve_smart_closed",
         "title": {
-          "en": "Valve closed",
-          "nl": "Klep gesloten"
+          "en": "Valve closed"
         },
         "args": [
           {
@@ -22802,18 +22793,13 @@
             "name": "device",
             "filter": "driver_id=water_valve_smart"
           }
-        ],
-        "titleFormatted": {
-          "en": "Valve closed",
-          "nl": "Klep gesloten"
-        }
+        ]
       },
       {
         "id": "water_valve_smart_leak_detected",
         "highlight": true,
         "title": {
-          "en": "Water leak detected!",
-          "nl": "Waterlek gedetecteerd!"
+          "en": "Water leak detected!"
         },
         "args": [
           {
@@ -22821,17 +22807,12 @@
             "name": "device",
             "filter": "driver_id=water_valve_smart"
           }
-        ],
-        "titleFormatted": {
-          "en": "Water leak detected!",
-          "nl": "Waterlek gedetecteerd!"
-        }
+        ]
       },
       {
         "id": "water_valve_smart_leak_cleared",
         "title": {
-          "en": "Water leak cleared",
-          "nl": "Waterlek opgeheven"
+          "en": "Water leak cleared"
         },
         "args": [
           {
@@ -22839,11 +22820,7 @@
             "name": "device",
             "filter": "driver_id=water_valve_smart"
           }
-        ],
-        "titleFormatted": {
-          "en": "Water leak cleared",
-          "nl": "Waterlek opgeheven"
-        }
+        ]
       },
       {
         "id": "water_valve_smart_temperature_changed",
@@ -22872,6 +22849,7 @@
       },
       {
         "id": "water_valve_smart_frost_warning",
+        "highlight": true,
         "title": {
           "en": "Frost warning"
         },
@@ -22881,10 +22859,7 @@
             "name": "device",
             "filter": "driver_id=water_valve_smart"
           }
-        ],
-        "titleFormatted": {
-          "en": "Frost warning"
-        }
+        ]
       },
       {
         "id": "water_valve_smart_battery_low",
@@ -22897,120 +22872,32 @@
             "name": "device",
             "filter": "driver_id=water_valve_smart"
           }
-        ],
-        "titleFormatted": {
-          "en": "Battery is low"
-        }
+        ]
       },
       {
-        "id": "water_valve_smart_turned_on",
+        "id": "water_valve_smart_water_consumed",
         "title": {
-          "en": "Turned on",
-          "fr": "Allumé",
-          "nl": "Aangezet",
-          "de": "Eingeschaltet"
+          "en": "Water consumption updated"
         },
+        "titleFormatted": {
+          "en": "Water consumption: [[liters]] m3"
+        },
+        "tokens": [
+          {
+            "name": "liters",
+            "type": "number",
+            "title": {
+              "en": "Total (m3)"
+            }
+          }
+        ],
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=water_valve_smart"
           }
-        ],
-        "titleFormatted": {
-          "en": "Turned on",
-          "fr": "Allumé",
-          "nl": "Aangezet",
-          "de": "Eingeschaltet"
-        }
-      },
-      {
-        "id": "water_valve_smart_turned_off",
-        "title": {
-          "en": "Turned off",
-          "fr": "Éteint",
-          "nl": "Uitgezet",
-          "de": "Ausgeschaltet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Turned off",
-          "fr": "Éteint",
-          "nl": "Uitgezet",
-          "de": "Ausgeschaltet"
-        }
-      },
-      {
-        "id": "water_valve_smart_motion_detected",
-        "title": {
-          "en": "Motion detected",
-          "fr": "Mouvement détecté",
-          "nl": "Beweging gedetecteerd",
-          "de": "Bewegung erkannt"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Motion detected",
-          "fr": "Mouvement détecté",
-          "nl": "Beweging gedetecteerd",
-          "de": "Bewegung erkannt"
-        }
-      },
-      {
-        "id": "water_valve_smart_temp_changed",
-        "title": {
-          "en": "Temperature changed",
-          "fr": "Température changée",
-          "nl": "Temperatuur gewijzigd",
-          "de": "Temperatur geändert"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Temperature changed",
-          "fr": "Température changée",
-          "nl": "Temperatuur gewijzigd",
-          "de": "Temperatur geändert"
-        }
-      },
-      {
-        "id": "water_valve_smart_water_alarm",
-        "title": {
-          "en": "Water alarm",
-          "fr": "Alarme eau",
-          "nl": "Wateralarm",
-          "de": "Wasseralarm"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Water alarm",
-          "fr": "Alarme eau",
-          "nl": "Wateralarm",
-          "de": "Wasseralarm"
-        }
+        ]
       },
       {
         "id": "weather_station_outdoor_outdoor_temperature_changed",
@@ -28345,10 +28232,7 @@
             "name": "device",
             "filter": "driver_id=water_valve_smart"
           }
-        ],
-        "titleFormatted": {
-          "en": "Valve !{{is|is not}} open"
-        }
+        ]
       },
       {
         "id": "water_valve_smart_leak_is_detected",
@@ -28361,10 +28245,7 @@
             "name": "device",
             "filter": "driver_id=water_valve_smart"
           }
-        ],
-        "titleFormatted": {
-          "en": "Water leak !{{is|is not}} detected"
-        }
+        ]
       },
       {
         "id": "water_valve_smart_temperature_above",
@@ -28389,56 +28270,9 @@
         ]
       },
       {
-        "id": "water_valve_smart_is_on",
-        "title": {
-          "en": "Is !{{on|off}}",
-          "fr": "Est !{{allumé|éteint}}",
-          "nl": "Is !{{aan|uit}}",
-          "de": "Ist !{{ein|aus}}"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Is !{{on|off}}",
-          "fr": "Est !{{allumé|éteint}}",
-          "nl": "Is !{{aan|uit}}",
-          "de": "Ist !{{ein|aus}}"
-        }
-      },
-      {
-        "id": "water_valve_smart_motion_active",
-        "title": {
-          "en": "Motion !{{is|is not}} detected",
-          "fr": "Mouvement !{{est|n'est pas}} détecté",
-          "nl": "Beweging !{{is|is niet}} gedetecteerd",
-          "de": "Bewegung !{{ist|ist nicht}} erkannt"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Motion !{{is|is not}} detected",
-          "fr": "Mouvement !{{est|n'est pas}} détecté",
-          "nl": "Beweging !{{is|is niet}} gedetecteerd",
-          "de": "Bewegung !{{ist|ist nicht}} erkannt"
-        }
-      },
-      {
         "id": "water_valve_smart_water_detected",
         "title": {
-          "en": "Water !{{is|is not}} detected",
-          "fr": "Eau !{{est|n'est pas}} détectée",
-          "nl": "Water !{{is|is niet}} gedetecteerd",
-          "de": "Wasser !{{ist|ist nicht}} erkannt"
+          "en": "Water !{{is|is not}} detected"
         },
         "args": [
           {
@@ -28446,13 +28280,7 @@
             "name": "device",
             "filter": "driver_id=water_valve_smart"
           }
-        ],
-        "titleFormatted": {
-          "en": "Water !{{is|is not}} detected",
-          "fr": "Eau !{{est|n'est pas}} détectée",
-          "nl": "Water !{{is|is niet}} gedetecteerd",
-          "de": "Wasser !{{ist|ist nicht}} erkannt"
-        }
+        ]
       },
       {
         "id": "weather_station_outdoor_outdoor_temp_above",
@@ -41051,10 +40879,7 @@
             "name": "device",
             "filter": "driver_id=water_valve_smart"
           }
-        ],
-        "titleFormatted": {
-          "en": "Open valve"
-        }
+        ]
       },
       {
         "id": "water_valve_smart_close",
@@ -41067,10 +40892,7 @@
             "name": "device",
             "filter": "driver_id=water_valve_smart"
           }
-        ],
-        "titleFormatted": {
-          "en": "Close valve"
-        }
+        ]
       },
       {
         "id": "water_valve_smart_toggle",
@@ -41083,54 +40905,7 @@
             "name": "device",
             "filter": "driver_id=water_valve_smart"
           }
-        ],
-        "titleFormatted": {
-          "en": "Toggle valve"
-        }
-      },
-      {
-        "id": "water_valve_smart_turn_on",
-        "title": {
-          "en": "Turn on",
-          "fr": "Allumer",
-          "nl": "Aanzetten",
-          "de": "Einschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Turn on",
-          "fr": "Allumer",
-          "nl": "Aanzetten",
-          "de": "Einschalten"
-        }
-      },
-      {
-        "id": "water_valve_smart_turn_off",
-        "title": {
-          "en": "Turn off",
-          "fr": "Éteindre",
-          "nl": "Uitzetten",
-          "de": "Ausschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=water_valve_smart"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Turn off",
-          "fr": "Éteindre",
-          "nl": "Uitzetten",
-          "de": "Ausschalten"
-        }
+        ]
       }
     ]
   },
@@ -80099,14 +79874,35 @@
         "nl": "Slimme Waterkraan",
         "de": "Smart Wasserventil"
       },
-      "class": "thermostat",
+      "class": "other",
       "capabilities": [
-        "alarm_motion",
+        "onoff",
+        "meter_water",
         "measure_temperature",
         "alarm_water",
-        "measure_battery",
-        "onoff"
+        "measure_battery"
       ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Valve",
+            "fr": "Vanne",
+            "nl": "Klep",
+            "de": "Ventil"
+          }
+        },
+        "meter_water": {
+          "title": {
+            "en": "Total Water",
+            "fr": "Eau Totale",
+            "nl": "Totaal Water",
+            "de": "Gesamtwasser"
+          },
+          "units": {
+            "en": "m³"
+          }
+        }
+      },
       "energy": {
         "batteries": [
           "AA"
@@ -80129,8 +79925,6 @@
           "_TZE200_vrjkcam9",
           "_tze200_vuwtqx0t",
           "_TZE200_vuwtqx0t",
-          "_tze204_81isopgh",
-          "_TZE204_81isopgh",
           "_tze204_a7sghmms",
           "_TZE204_a7sghmms",
           "_tze204_wt66haax",
@@ -80415,7 +80209,6 @@
           "template": "add_devices"
         }
       ],
-      "capabilitiesOptions": {},
       "id": "water_valve_smart"
     },
     {
