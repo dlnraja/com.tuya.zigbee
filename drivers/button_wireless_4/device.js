@@ -708,6 +708,25 @@ class Button4GangDevice extends ButtonDevice {
           onOffCluster.on('commandOff', async () => await handleCommand('commandOff', 'long'));
 
           this.log(`[BUTTON4-E000] ✅ onOff command listeners configured for EP${ep}`);
+
+          // v5.9.20: Bind OnOffBoundCluster to catch Tuya cmd 0xFD (multi-press)
+          try {
+            const OnOffBC = require('../../lib/clusters/OnOffBoundCluster');
+            const PRESS_MAP = { 0: 'single', 1: 'double', 2: 'long' };
+            const curEp = ep;
+            const bc = new OnOffBC({
+              onSetOn: (p) => {
+                if (p?.cmdId !== 0xFD) return;
+                const action = PRESS_MAP[p.scene ?? 0] || 'single';
+                this.log(`[BUTTON4-0xFD] EP${curEp} pressType=${p.scene} → ${action}`);
+                this.triggerButtonPress(curEp, action);
+              },
+            });
+            endpoint.bind('onOff', bc);
+            this.log(`[BUTTON4-0xFD] ✅ OnOff BoundCluster bound on EP${ep}`);
+          } catch (e) {
+            this.log(`[BUTTON4-0xFD] ⚠️ EP${ep}: ${e.message}`);
+          }
         }
       }
 
