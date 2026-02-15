@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.9.21** | v5.9.21: NEW DRIVER water_valve_garden — TS0049 garden water valve using ZCL ... |
 | **v5.9.20** | v5.9.20: MULTI-PRESS FIX ALL BUTTON DRIVERS (Tividor #1408) — Root cause: Tuy... |
 | **v5.9.19** | v5.9.19: TS0044 MULTI-PRESS FIX — Reverted v5.9.9 1-indexed press mapping for... |
 | **v5.9.18** | v5.9.18: Deep DP audit for Peter 4x4 presence sensors — ZG_204ZV: +DP103/104/... |
@@ -82,7 +83,6 @@
 | **v5.9.14** | v5.9.14: (1) BSEED 4-gang TS0726 virtual buttons fixed — removed Tuya DP over... |
 | **v5.9.13** | v5.9.13: IAS SENSOR + BUTTON FIX — (1) Fixed Buffer zoneStatus bug in IASAlar... |
 | **v5.9.12** | v5.9.12: LIQUID LEVEL SENSOR REWRITE — Complete rewrite of water_tank_monitor... |
-| **v5.9.11** | v5.9.11: FRAME DROP PREVENTION — (1) Expanded UnknownClusterHandler.scanAndBi... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
