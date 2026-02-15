@@ -73,6 +73,9 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.10.0** | v5.10.0: Tuya Local WiFi (LAN) support. Zero cloud dependency. New drivers: w... |
+| **v5.9.23** | v5.9.23: BSEED GROUP TOGGLE FIX for ALL multi-gang ZCL-only switches (2G/3G/4... |
+| **v5.9.22** | v5.9.22: (1) BUTTON 0-INDEX SAFETY GUARD — Created centralized TuyaPressTypeM... |
 | **v5.9.21** | v5.9.21: NEW DRIVER water_valve_garden — TS0049 garden water valve using ZCL ... |
 | **v5.9.20** | v5.9.20: MULTI-PRESS FIX ALL BUTTON DRIVERS (Tividor #1408) — Root cause: Tuy... |
 | **v5.9.19** | v5.9.19: TS0044 MULTI-PRESS FIX — Reverted v5.9.9 1-indexed press mapping for... |
@@ -80,9 +83,6 @@
 | **v5.9.17** | v5.9.17: Water deep sync + E000 cmdId fix + Unknown DP diagnostics — (1) wate... |
 | **v5.9.16** | v5.9.16: Water driver audit — (1) water_valve_smart: fixed class thermostat→o... |
 | **v5.9.15** | v5.9.15: BSEED TS0726 heartbeat fix (Hartmut) — Fixed 5-min periodic attr rep... |
-| **v5.9.14** | v5.9.14: (1) BSEED 4-gang TS0726 virtual buttons fixed — removed Tuya DP over... |
-| **v5.9.13** | v5.9.13: IAS SENSOR + BUTTON FIX — (1) Fixed Buffer zoneStatus bug in IASAlar... |
-| **v5.9.12** | v5.9.12: LIQUID LEVEL SENSOR REWRITE — Complete rewrite of water_tank_monitor... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
