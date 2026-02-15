@@ -36,6 +36,7 @@ const EmergencyDeviceFix = require('./lib/emergency/EmergencyDeviceFix'); // �
 // NOTE: Database updates are handled by GitHub Actions ONLY, NOT at runtime
 // See: .github/workflows/MASTER-intelligent-enrichment.yml
 const SourceCredits = require('./lib/data/SourceCredits'); // 📜 Source attributions
+const TuyaUDPDiscovery = require('./lib/tuya-local/TuyaUDPDiscovery');
 
 class UniversalTuyaZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
@@ -52,6 +53,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   suggestionEngine = null; // 🤖 Non-destructive Smart-Adapt
   otaManager = null; // 📦 OTA Firmware Update Manager
   quirksDatabase = null; // 🔧 Device Quirks Database
+  _tuyaUDPDiscovery = null; // 📡 Tuya WiFi UDP Discovery
   // NOTE: Database updates handled by GitHub Actions, not at runtime
   developerDebugMode = false; // 🔍 AUDIT V2: Contrôle verbosity logs
   experimentalSmartAdapt = false; // ⚠️ AUDIT V2: Modifications capabilities opt-in
@@ -165,6 +167,15 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     // 🔧 Initialize Quirks Database
     this.quirksDatabase = QuirksDatabase;
     this.log('✅ Quirks Database initialized');
+
+    // 📡 Initialize Tuya WiFi UDP Discovery
+    try {
+      this._tuyaUDPDiscovery = new TuyaUDPDiscovery({ log: this.log.bind(this) });
+      await this._tuyaUDPDiscovery.start();
+      this.log('✅ Tuya WiFi UDP Discovery started (ports 6666/6667)');
+    } catch (err) {
+      this.log('⚠️ Tuya UDP Discovery failed (non-critical):', err.message);
+    }
 
     // DISABLED: SDK3 doesn't allow overriding this.log (read-only property)
     // this._setupDiagnosticLogging();

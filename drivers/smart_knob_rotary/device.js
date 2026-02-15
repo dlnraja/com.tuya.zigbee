@@ -2,6 +2,7 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
+const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap');
 
 class SmartKnobRotaryDevice extends ZigBeeDevice {
 
@@ -476,10 +477,9 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
       const ep = zclNode?.endpoints?.[1]; if (!ep) return;
       const e = ep.clusters?.tuyaE000 || ep.clusters?.[57344];
       if (e?.on) {
-        const pm = { 0: 'single', 1: 'double', 2: 'long' };
-        e.on('buttonPress', async (d) => { this._triggerButtonPress(pm[d?.pressType] || 'single'); });
+        e.on('buttonPress', async (d) => { this._triggerButtonPress(resolvePressType(d?.pressType, 'KNOB-E000')); });
         for (const c of ['cmd0','cmd1','cmd2','cmdFD','cmdFE','cmdFF']) {
-          e.on(c, async ({ data }) => { this._triggerButtonPress(data?.length >= 1 ? (pm[data[0]] || 'single') : 'single'); });
+          e.on(c, async ({ data }) => { this._triggerButtonPress(data?.length >= 1 ? resolvePressType(data[0], 'KNOB-E000') : 'single'); });
         }
       }
       try {
@@ -494,9 +494,8 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     try {
       const tc = zclNode?.endpoints?.[1]?.clusters?.tuya || zclNode?.endpoints?.[1]?.clusters?.[61184];
       if (!tc?.on) return;
-      const pm = { 0: 'single', 1: 'double', 2: 'long' };
-      tc.on('response', async (d) => { const v = d?.data ?? d?.value ?? 0; this._triggerButtonPress(pm[v] || 'single'); });
-      tc.on('datapoint', async (d) => { const v = d?.data?.[0] ?? 0; this._triggerButtonPress(pm[v] || 'single'); });
+      tc.on('response', async (d) => { const v = d?.data ?? d?.value ?? 0; this._triggerButtonPress(resolvePressType(v, 'KNOB-DP')); });
+      tc.on('datapoint', async (d) => { const v = d?.data?.[0] ?? 0; this._triggerButtonPress(resolvePressType(v, 'KNOB-DP')); });
     } catch (e) { this.log('[TUYA-DP] Error:', e.message); }
   }
 

@@ -5,9 +5,10 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
- * 3-GANG SWITCH - v5.5.919 + ZCL-Only Mode (BSEED)
+ * 3-GANG SWITCH - v5.9.23 + ZCL-Only Mode (BSEED)
  * Physical button detection: single/double/long/triple per gang
  * BSEED ZCL-only mode: _TZ3000_qkixdnon (Pieter_Pessers forum)
+ * v5.9.23: GROUP ISOLATION FIX — remove group memberships + broadcast filter
  */
 
 // ZCL-Only manufacturers (no Tuya DP) - forum: Pieter_Pessers BSEED 3-gang
@@ -52,6 +53,13 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     this._zclNode = zclNode;
     this._isZclOnlyMode = true; // v5.5.993: Flag for VirtualButtonMixin direct ZCL
 
+    // v5.9.23: GROUP ISOLATION — remove all Zigbee group memberships per EP
+    await this._removeGroupMemberships(zclNode);
+
+    // v5.9.23: Track which gang was last commanded by the app
+    this._lastCommandedGang = null;
+    this._lastCommandTime = 0;
+
     const getOnOffCluster = (epNum) => {
       const ep = this._zclNode?.endpoints?.[epNum];
       return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
@@ -63,6 +71,9 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
       
       this.registerCapabilityListener(capName, async (value) => {
         this.log(`[BSEED-3G] EP${epNum} app cmd: ${value}`);
+        // v5.9.23: Track which gang the user actually commanded
+        this._lastCommandedGang = epNum;
+        this._lastCommandTime = Date.now();
         this._zclState.pending[epNum] = true;
         clearTimeout(this._zclState.timeout[epNum]);
         this._zclState.timeout[epNum] = setTimeout(() => {
@@ -90,7 +101,17 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
 
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       onOff.on('attr.onOff', (value) => {
+        const now = Date.now();
         const isPhysical = !this._zclState.pending[epNum];
+
+        // v5.9.23: Filter broadcast reports for non-commanded gangs
+        const isBroadcast = !isPhysical && this._lastCommandedGang
+          && epNum !== this._lastCommandedGang
+          && (now - this._lastCommandTime) < 2000;
+        if (isBroadcast) {
+          this.log(`[BSEED-3G] EP${epNum} attr: ${value} FILTERED (broadcast from G${this._lastCommandedGang})`);
+          return;
+        }
         this.log(`[BSEED-3G] EP${epNum} attr: ${value} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
         
         if (this._zclState.lastState[epNum] !== value) {
@@ -144,6 +165,27 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
 
     await this.initVirtualButtons?.();
     this.log('[SWITCH-3G] ✅ BSEED ZCL-only mode ready (packetninja v990+v5.8.72)');
+  }
+
+  /**
+   * v5.9.23: Remove Zigbee group memberships to fix BSEED broadcast bug.
+   */
+  async _removeGroupMemberships(zclNode) {
+    for (const epNum of [1, 2, 3]) {
+      try {
+        const ep = zclNode?.endpoints?.[epNum];
+        if (!ep?.clusters) continue;
+        const g = ep.clusters.groups || ep.clusters.genGroups || ep.clusters[4] || ep.clusters['4'];
+        if (!g) { this.log(`[BSEED-3G] EP${epNum} no groups cluster`); continue; }
+        const fn = g.removeAll || g.removeAllGroups;
+        if (typeof fn === 'function') {
+          await fn.call(g).catch(e => this.log(`[BSEED-3G] EP${epNum} removeAll warn: ${e.message}`));
+          this.log(`[BSEED-3G] EP${epNum} group memberships removed`);
+        } else {
+          this.log(`[BSEED-3G] EP${epNum} no removeAll on groups`);
+        }
+      } catch (err) { this.log(`[BSEED-3G] EP${epNum} group err: ${err.message}`); }
+    }
   }
 
   onDeleted() {
