@@ -1,4 +1,7 @@
 {
+  "5.10.2": {
+    "en": "v5.10.2: Tuya 0xEF00 frame handling overhaul — (1) MCU Version Response (cmd 0x11) now properly parsed and decoded (xx.yy.zzzz binary format), stored in device settings. (2) ZCL Default Response (cmd 0x0B) recognized and logged instead of causing parse errors. (3) Time sync request detection fixed to use ZCL command ID instead of fragile hex scan. (4) DP parser now starts after 3-byte ZCL header instead of byte 0, preventing false DP matches. (5) mcuVersionResponse command added to TuyaSpecificCluster, enabling TuyaTimeSyncManager heartbeat detection. (6) Added _TZ3000_an5rjiwd fingerprint (smart button TS0041)."
+  },
   "5.10.1": {
     "en": "v5.10.1: Diagnostic bug fixes — (1) Mains-powered radar sensors no longer spam 'Device assumed sleeping' logs (ZigbeeDataQuery). (2) Sub-capabilities like measure_luminance.distance excluded from recovery missing checks. (3) 5-byte non-DP frames (mcuVersionResponse) silently skipped instead of logged as errors. (4) AUTO-OPT: sleepy battery devices with 0 data in 15min now get a single compact log line instead of 25+ line verbose banner."
   },
