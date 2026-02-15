@@ -32,6 +32,10 @@ const { SoilMoistureInference, BatteryInference } = require('../../lib/Intellige
  * ║  - DP5: temperature ÷10                                                      ║
  * ║  - DP14: battery_state enum (0=low, 1=med, 2=high)                           ║
  * ║  - DP15: battery_percent %                                                   ║
+ * ║  - DP101: ambient_humidity % (Z2M #28270: o9ofysmo/xc3vwx5a)                 ║
+ * ║  - DP102: illuminance lux (Z2M #28270: o9ofysmo/xc3vwx5a)                    ║
+ * ║  - DP103: humidity_calibration (-30 to +30)                                   ║
+ * ║  - DP104: report_interval (30-1200s)                                          ║
  * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
@@ -49,7 +53,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
 
   /** Capabilities for soil sensors - v5.5.330 Hobeian */
   get sensorCapabilities() {
-    return ['measure_humidity.soil', 'measure_temperature', 'measure_humidity', 'measure_battery', 'alarm_water'];
+    return ['measure_humidity.soil', 'measure_temperature', 'measure_humidity', 'measure_luminance', 'measure_battery', 'alarm_water'];
   }
 
   /**
@@ -138,7 +142,11 @@ class SoilSensorDevice extends TuyaHybridDevice {
       // v5.5.406: RESEARCH-BASED DPs from Z2M issue #23260, #27501
       // _TZE284_sgabhwa6, _TZE284_oitavov2 variants
       // ═══════════════════════════════════════════════════════════════════
-      102: { capability: 'measure_battery', transform: (v) => ({ 0: 10, 1: 50, 2: 100 }[v] ?? v) }, // battery_state enum
+      // v5.9.22: Z2M #28270 - DP102=illuminance for _TZE284_o9ofysmo/_TZE284_xc3vwx5a
+      102: { capability: 'measure_luminance', divisor: 1 },
+      // v5.9.22: Z2M #28270 - DP103=humidity_calibration, DP104=report_interval (settings)
+      103: { capability: null, setting: 'humidity_calibration', min: -30, max: 30 },
+      104: { capability: null, setting: 'report_interval', min: 30, max: 1200 },
       110: { capability: 'measure_battery', transform: (v) => v > 100 ? v / 10 : v }, // battery ÷10
 
       // ═══════════════════════════════════════════════════════════════════
@@ -146,7 +154,9 @@ class SoilSensorDevice extends TuyaHybridDevice {
       // ═══════════════════════════════════════════════════════════════════
       1: { capability: 'measure_temperature', divisor: 10 },  // Some variants
       4: { capability: 'measure_battery', divisor: 1 },       // Alternative battery DP
-      101: { capability: 'measure_humidity.soil', divisor: 1 },    // Alternative moisture
+      // v5.9.22: Z2M #28270 - DP101=ambient_humidity for _TZE284_o9ofysmo/_TZE284_xc3vwx5a
+      // HOBEIAN ZG-303Z uses DP109 for air humidity instead
+      101: { capability: 'measure_humidity', divisor: 1 },
       105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? v / 10 : v },
     };
   }
@@ -218,7 +228,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
     this.log('[SOIL] ════════════════════════════════════════════════════════════');
     this.log('[SOIL] ⚠️ BATTERY DEVICE - Data comes when device wakes up');
     this.log('[SOIL] ℹ️ First data may take 10-60 minutes after pairing');
-    this.log('[SOIL] 📋 DP Mappings: DP3=humidity, DP5=temp, DP14=battery_state, DP15=battery%');
+    this.log('[SOIL] 📋 DP Mappings: DP3=soil_moisture, DP5=temp, DP14=battery_state, DP15=battery%, DP101=air_humidity, DP102=lux');
     this.log('[SOIL] 🔧 forceActiveTuyaMode:', this.forceActiveTuyaMode);
     this.log('[SOIL] 🔧 hybridModeEnabled:', this.hybridModeEnabled);
 
