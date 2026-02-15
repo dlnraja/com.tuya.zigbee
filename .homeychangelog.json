@@ -1,4 +1,7 @@
 {
+  "5.10.1": {
+    "en": "v5.10.1: Diagnostic bug fixes — (1) Mains-powered radar sensors no longer spam 'Device assumed sleeping' logs (ZigbeeDataQuery). (2) Sub-capabilities like measure_luminance.distance excluded from recovery missing checks. (3) 5-byte non-DP frames (mcuVersionResponse) silently skipped instead of logged as errors. (4) AUTO-OPT: sleepy battery devices with 0 data in 15min now get a single compact log line instead of 25+ line verbose banner."
+  },
   "5.10.0": {
     "en": "v5.10.0: Tuya Local WiFi (LAN) support. Zero cloud dependency. New drivers: wifi_heater, wifi_generic. Protocol 3.1-3.5 via tuyapi. 3 capabilities, 7 flow cards."
   },
