@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.10.4** | v5.10.4: Manufacturer-aware time sync epoch — centralized EPOCH_2000_MFRS lis... |
 | **v5.10.3** | v5.10.3: Tuya time sync overhaul — (1) CRITICAL: Removed manufacturerSpecific... |
 | **v5.10.2** | v5.10.2: Tuya 0xEF00 frame handling overhaul — (1) MCU Version Response (cmd ... |
 | **v5.10.1** | v5.10.1: Diagnostic bug fixes — (1) Mains-powered radar sensors no longer spa... |
@@ -82,7 +83,6 @@
 | **v5.9.21** | v5.9.21: NEW DRIVER water_valve_garden — TS0049 garden water valve using ZCL ... |
 | **v5.9.20** | v5.9.20: MULTI-PRESS FIX ALL BUTTON DRIVERS (Tividor #1408) — Root cause: Tuy... |
 | **v5.9.19** | v5.9.19: TS0044 MULTI-PRESS FIX — Reverted v5.9.9 1-indexed press mapping for... |
-| **v5.9.18** | v5.9.18: Deep DP audit for Peter 4x4 presence sensors — ZG_204ZV: +DP103/104/... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
