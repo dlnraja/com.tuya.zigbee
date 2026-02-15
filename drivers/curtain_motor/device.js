@@ -276,11 +276,15 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
    * v5.5.321: Handle settings changes
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    await super.onSettings?.({ oldSettings, newSettings, changedKeys });
+    try {
+      await super.onSettings?.({ oldSettings, newSettings, changedKeys });
 
-    if (changedKeys.includes('open_time') || changedKeys.includes('close_time') || changedKeys.includes('reverse_direction')) {
-      this.log('[CURTAIN] Calibration settings changed, applying...');
-      await this._applyCalibrationSettings();
+      if (changedKeys.includes('open_time') || changedKeys.includes('close_time') || changedKeys.includes('reverse_direction')) {
+        this.log('[CURTAIN] Calibration settings changed, applying...');
+        await this._applyCalibrationSettings();
+      }
+    } catch (err) {
+      this.error('[CURTAIN] Failed to apply settings:', err.message);
     }
   }
 

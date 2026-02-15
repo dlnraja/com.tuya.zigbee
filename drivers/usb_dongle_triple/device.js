@@ -64,15 +64,19 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     const ep1 = this.zclNode?.endpoints?.[1];
-    if (changedKeys.includes('power_on_behavior')) {
-      const map = { off: 0, on: 1, toggle: 3, previous: 2 };
-      const val = map[newSettings.power_on_behavior] ?? 2;
-      if (ep1?.clusters?.onOff) await ep1.clusters.onOff.writeAttributes({ moesStartUpOnOff: val });
-    }
-    if (changedKeys.includes('indicator_mode')) {
-      const map = { off: 0, on_off: 1, inverted: 2 };
-      const val = map[newSettings.indicator_mode] ?? 1;
-      if (ep1?.clusters?.onOff) await ep1.clusters.onOff.writeAttributes({ tuyaBacklightSwitch: val });
+    try {
+      if (changedKeys.includes('power_on_behavior')) {
+        const map = { off: 0, on: 1, toggle: 3, previous: 2 };
+        const val = map[newSettings.power_on_behavior] ?? 2;
+        if (ep1?.clusters?.onOff) await ep1.clusters.onOff.writeAttributes({ moesStartUpOnOff: val });
+      }
+      if (changedKeys.includes('indicator_mode')) {
+        const map = { off: 0, on_off: 1, inverted: 2 };
+        const val = map[newSettings.indicator_mode] ?? 1;
+        if (ep1?.clusters?.onOff) await ep1.clusters.onOff.writeAttributes({ tuyaBacklightSwitch: val });
+      }
+    } catch (err) {
+      this.error('[USB_TRIPLE] Failed to apply settings:', err.message);
     }
   }
 

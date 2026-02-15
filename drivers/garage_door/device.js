@@ -37,7 +37,7 @@ class GarageDoorDevice extends ZigBeeDevice {
   }
 
   async _triggerDoor(open) {
-    const ep1 = this.zclNode.endpoints[1];
+    const ep1 = this.zclNode?.endpoints?.[1];
 
     // Try Tuya DP first
     const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];

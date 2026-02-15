@@ -96,11 +96,15 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     this.log('[BUTTON-WIRELESS] Settings changed:', changedKeys);
 
-    if (changedKeys.includes('button_count')) {
-      this.buttonCount = newSettings.button_count === 'auto'
-        ? await this._detectButtonCount(this.zclNode)
-        : parseInt(newSettings.button_count);
-      this.log(`[BUTTON-WIRELESS] Button count updated to: ${this.buttonCount}`);
+    try {
+      if (changedKeys.includes('button_count')) {
+        this.buttonCount = newSettings.button_count === 'auto'
+          ? await this._detectButtonCount(this.zclNode)
+          : parseInt(newSettings.button_count);
+        this.log(`[BUTTON-WIRELESS] Button count updated to: ${this.buttonCount}`);
+      }
+    } catch (err) {
+      this.error('[BUTTON-WIRELESS] Failed to apply settings:', err.message);
     }
   }
 
