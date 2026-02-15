@@ -1,4 +1,7 @@
 {
+  "5.10.3": {
+    "en": "v5.10.3: Tuya time sync overhaul — (1) CRITICAL: Removed manufacturerSpecific:true from timeResponse command (ZHA PR #3652 + Z2M confirm must be false). (2) CRITICAL: Fixed epoch from Tuya 2000 back to Unix 1970 per official Tuya UART docs (developer.tuya.com). (3) Time sync response now uses 10-byte payload with sequence number echoed back. (4) Fixed in TuyaTimeSyncManager, HybridSensorBase, TuyaTimeSync. (5) ZCL Time cluster (0x000A) correctly keeps 2000 epoch separately."
+  },
   "5.10.2": {
     "en": "v5.10.2: Tuya 0xEF00 frame handling overhaul — (1) MCU Version Response (cmd 0x11) now properly parsed and decoded (xx.yy.zzzz binary format), stored in device settings. (2) ZCL Default Response (cmd 0x0B) recognized and logged instead of causing parse errors. (3) Time sync request detection fixed to use ZCL command ID instead of fragile hex scan. (4) DP parser now starts after 3-byte ZCL header instead of byte 0, preventing false DP matches. (5) mcuVersionResponse command added to TuyaSpecificCluster, enabling TuyaTimeSyncManager heartbeat detection. (6) Added _TZ3000_an5rjiwd fingerprint (smart button TS0041)."
   },
