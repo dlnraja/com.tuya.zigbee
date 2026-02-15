@@ -1,6 +1,7 @@
 'use strict';
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap');
 
 /**
  * Button6GangDevice - v5.8.16 Enhanced
@@ -25,17 +26,17 @@ class Button6GangDevice extends ButtonDevice {
   }
 
   async _setupExtraDetection(zclNode) {
-    const pm = { 0: 'single', 1: 'double', 2: 'long' };
+    // v5.9.22: Use centralized resolvePressType (prevents 0-index regression)
     for (let ep = 1; ep <= 6; ep++) {
       const e = zclNode?.endpoints?.[ep]; if (!e) continue;
       const sc = e.clusters?.scenes || e.clusters?.[5];
-      if (sc?.on) { sc.on('recall', async (p) => { await this.triggerButtonPress(ep, pm[p?.sceneId ?? 0] || 'single'); }); }
+      if (sc?.on) { sc.on('recall', async (p) => { await this.triggerButtonPress(ep, resolvePressType(p?.sceneId ?? 0, 'BTN6-scene')); }); }
       const ms = e.clusters?.multistateInput || e.clusters?.[18];
-      if (ms?.on) { ms.on('attr.presentValue', async (v) => { await this.triggerButtonPress(ep, pm[v] || 'single'); }); }
+      if (ms?.on) { ms.on('attr.presentValue', async (v) => { await this.triggerButtonPress(ep, resolvePressType(v, 'BTN6-multi')); }); }
     }
     try {
       const tc = zclNode?.endpoints?.[1]?.clusters?.tuya || zclNode?.endpoints?.[1]?.clusters?.[61184];
-      if (tc?.on) { tc.on('response', async (d) => { const dp = d?.dp ?? d?.dpId; const v = d?.data ?? d?.value ?? 0; if (dp >= 1 && dp <= 6) await this.triggerButtonPress(dp, pm[v] || 'single'); }); }
+      if (tc?.on) { tc.on('response', async (d) => { const dp = d?.dp ?? d?.dpId; const v = d?.data ?? d?.value ?? 0; if (dp >= 1 && dp <= 6) await this.triggerButtonPress(dp, resolvePressType(v, 'BTN6-DP')); }); }
     } catch (e) { /* ok */ }
   }
 
@@ -56,12 +57,11 @@ class Button6GangDevice extends ButtonDevice {
         for (const cmdName of cmdNames) {
           e000Cluster.on(cmdName, async ({ data }) => {
             this.log(`[BUTTON6-E000] 📥 EP${ep} ${cmdName}: data=${data?.toString?.('hex')}`);
-            const types = { 0: 'single', 1: 'double', 2: 'long' };
             let btn = ep, press = 'single';
             if (data && data.length >= 2 && data[0] >= 1 && data[0] <= 6) {
-              btn = data[0]; press = types[data[1]] || 'single';
+              btn = data[0]; press = resolvePressType(data[1], 'BTN6-E000');
             } else if (data && data.length >= 1) {
-              press = types[data[0]] || 'single';
+              press = resolvePressType(data[0], 'BTN6-E000');
             }
             await this.triggerButtonPress(btn, press);
           });

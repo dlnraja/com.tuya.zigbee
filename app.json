@@ -1,14 +1,14 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.9.21",
+  "version": "5.10.0",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
     "local"
   ],
   "name": {
-    "en": "Universal Tuya Zigbee"
+    "en": "Universal Tuya Zigbee + WiFi"
   },
   "description": {
     "en": "Control your Tuya Zigbee devices locally without cloud! 111 drivers, 42,500+ device fingerprints, 1,457 flow cards. Switches, sensors, lights, thermostats, covers, locks & more. 100% local, hybrid Tuya DP + ZCL.",
@@ -23131,6 +23131,66 @@
           "nl": "Batterij laag",
           "de": "Batterie schwach"
         }
+      },
+      {
+        "id": "wifi_heater_mode_changed",
+        "title": {
+          "en": "Heater mode changed",
+          "fr": "Mode chauffage modifié",
+          "nl": "Verwarmingsmodus gewijzigd",
+          "de": "Heizmodus geändert"
+        },
+        "tokens": [
+          {
+            "name": "mode",
+            "type": "string",
+            "title": {
+              "en": "Mode",
+              "fr": "Mode",
+              "nl": "Modus",
+              "de": "Modus"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_heater"
+          }
+        ]
+      },
+      {
+        "id": "wifi_heater_turned_on",
+        "title": {
+          "en": "Heater turned on",
+          "fr": "Radiateur allumé",
+          "nl": "Verwarming ingeschakeld",
+          "de": "Heizung eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_heater"
+          }
+        ]
+      },
+      {
+        "id": "wifi_heater_turned_off",
+        "title": {
+          "en": "Heater turned off",
+          "fr": "Radiateur éteint",
+          "nl": "Verwarming uitgeschakeld",
+          "de": "Heizung ausgeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_heater"
+          }
+        ]
       }
     ],
     "conditions": [
@@ -28418,6 +28478,68 @@
           "en": "Pressure is falling (bad weather)",
           "fr": "Pression en baisse (mauvais temps)"
         }
+      },
+      {
+        "id": "wifi_heater_is_heating",
+        "title": {
+          "en": "Heater is on",
+          "fr": "Radiateur est allumé",
+          "nl": "Verwarming is aan",
+          "de": "Heizung ist an"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_heater"
+          }
+        ]
+      },
+      {
+        "id": "wifi_heater_mode_is",
+        "title": {
+          "en": "Heater mode is...",
+          "fr": "Mode chauffage est...",
+          "nl": "Verwarmingsmodus is...",
+          "de": "Heizmodus ist..."
+        },
+        "titleFormatted": {
+          "en": "Heater mode is [[mode]]",
+          "fr": "Mode chauffage est [[mode]]",
+          "nl": "Verwarmingsmodus is [[mode]]",
+          "de": "Heizmodus ist [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_heater"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "manual",
+                "label": {
+                  "en": "Manual"
+                }
+              },
+              {
+                "id": "program",
+                "label": {
+                  "en": "Program"
+                }
+              },
+              {
+                "id": "eco",
+                "label": {
+                  "en": "Eco"
+                }
+              }
+            ]
+          }
+        ]
       }
     ],
     "actions": [
@@ -40998,6 +41120,81 @@
             "filter": "driver_id=water_valve_smart"
           }
         ]
+      },
+      {
+        "id": "wifi_heater_set_mode",
+        "title": {
+          "en": "Set heater mode",
+          "fr": "Définir mode chauffage",
+          "nl": "Stel verwarmingsmodus in",
+          "de": "Heizmodus einstellen"
+        },
+        "titleFormatted": {
+          "en": "Set heater mode to [[mode]]",
+          "fr": "Définir mode chauffage à [[mode]]",
+          "nl": "Stel verwarmingsmodus in op [[mode]]",
+          "de": "Heizmodus auf [[mode]] einstellen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_heater"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "manual",
+                "label": {
+                  "en": "Manual"
+                }
+              },
+              {
+                "id": "program",
+                "label": {
+                  "en": "Program"
+                }
+              },
+              {
+                "id": "eco",
+                "label": {
+                  "en": "Eco"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wifi_heater_set_temperature",
+        "title": {
+          "en": "Set target temperature",
+          "fr": "Définir température cible",
+          "nl": "Stel doeltemperatuur in",
+          "de": "Zieltemperatur einstellen"
+        },
+        "titleFormatted": {
+          "en": "Set target temperature to [[temperature]] °C",
+          "fr": "Définir température cible à [[temperature]] °C"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_heater"
+          },
+          {
+            "name": "temperature",
+            "type": "range",
+            "min": 5,
+            "max": 35,
+            "step": 1,
+            "label": "°C",
+            "labelDecimals": 0
+          }
+        ]
       }
     ]
   },
@@ -50179,9 +50376,7 @@
           "_TZE284_hodyryli",
           "_tze204_w2vunxzm",
           "_TZE204_w2vunxzm",
-          "_TZ3000_fllyghyj",
-          "_tze284_oitavov2",
-          "_TZE284_oitavov2"
+          "_TZ3000_fllyghyj"
         ],
         "productId": [
           "TS0201",
@@ -68751,6 +68946,7 @@
         "measure_humidity.soil",
         "measure_temperature",
         "measure_humidity",
+        "measure_luminance",
         "measure_battery",
         "alarm_water"
       ],
@@ -68810,8 +69006,6 @@
           "_TZE200_myd45weu",
           "_tze200_npj9bug3",
           "_TZE200_npj9bug3",
-          "_tze200_vvmbj46n",
-          "_TZE200_vvmbj46n",
           "_tze200_wqashyqo",
           "_TZE200_wqashyqo",
           "_tze204_4xsypney",
@@ -80487,6 +80681,280 @@
     },
     {
       "name": {
+        "en": "WiFi Device (Tuya Local)",
+        "fr": "Appareil WiFi (Tuya Local)",
+        "nl": "WiFi Apparaat (Tuya Lokaal)",
+        "de": "WiFi Gerät (Tuya Lokal)"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff"
+      ],
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Tuya Local Connection"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "hint": {
+                "en": "Tuya device ID (from Tuya IoT platform)"
+              },
+              "value": ""
+            },
+            {
+              "id": "local_key",
+              "type": "text",
+              "label": {
+                "en": "Local Key"
+              },
+              "hint": {
+                "en": "AES local key (from Tuya IoT platform)"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "hint": {
+                "en": "Device LAN IP (optional)"
+              },
+              "value": ""
+            },
+            {
+              "id": "protocol_version",
+              "type": "dropdown",
+              "label": {
+                "en": "Protocol Version"
+              },
+              "value": "3.3",
+              "values": [
+                {
+                  "id": "3.1",
+                  "label": {
+                    "en": "3.1"
+                  }
+                },
+                {
+                  "id": "3.3",
+                  "label": {
+                    "en": "3.3 (most common)"
+                  }
+                },
+                {
+                  "id": "3.4",
+                  "label": {
+                    "en": "3.4"
+                  }
+                },
+                {
+                  "id": "3.5",
+                  "label": {
+                    "en": "3.5"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "discovered_dps",
+              "type": "text",
+              "label": {
+                "en": "Discovered DPs (auto)"
+              },
+              "hint": {
+                "en": "Raw data points received from device"
+              },
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/wifi_generic/assets/images/small.png",
+        "large": "drivers/wifi_generic/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "id": "wifi_generic"
+    },
+    {
+      "name": {
+        "en": "WiFi Heater (Tuya Local)",
+        "fr": "Radiateur WiFi (Tuya Local)",
+        "nl": "WiFi Verwarming (Tuya Lokaal)",
+        "de": "WiFi Heizung (Tuya Lokal)"
+      },
+      "class": "heater",
+      "capabilities": [
+        "onoff",
+        "target_temperature",
+        "measure_temperature",
+        "wifi_heater_mode",
+        "child_lock",
+        "eco_mode"
+      ],
+      "capabilitiesOptions": {
+        "target_temperature": {
+          "min": 5,
+          "max": 35,
+          "step": 1
+        }
+      },
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Tuya Local Connection"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "hint": {
+                "en": "Tuya device ID (from Tuya IoT platform)"
+              },
+              "value": ""
+            },
+            {
+              "id": "local_key",
+              "type": "text",
+              "label": {
+                "en": "Local Key"
+              },
+              "hint": {
+                "en": "AES local key (from Tuya IoT platform)"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "hint": {
+                "en": "Device LAN IP (optional, auto-discovered if empty)"
+              },
+              "value": ""
+            },
+            {
+              "id": "protocol_version",
+              "type": "dropdown",
+              "label": {
+                "en": "Protocol Version"
+              },
+              "hint": {
+                "en": "Tuya protocol version"
+              },
+              "value": "3.3",
+              "values": [
+                {
+                  "id": "3.1",
+                  "label": {
+                    "en": "3.1"
+                  }
+                },
+                {
+                  "id": "3.3",
+                  "label": {
+                    "en": "3.3 (most common)"
+                  }
+                },
+                {
+                  "id": "3.4",
+                  "label": {
+                    "en": "3.4"
+                  }
+                },
+                {
+                  "id": "3.5",
+                  "label": {
+                    "en": "3.5"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/wifi_heater/assets/images/small.png",
+        "large": "drivers/wifi_heater/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "id": "wifi_heater"
+    },
+    {
+      "name": {
         "en": "Zigbee Signal Repeater",
         "fr": "Répéteur de Signal Zigbee"
       },
@@ -80752,6 +81220,32 @@
       "uiComponent": "button",
       "insights": false
     },
+    "child_lock": {
+      "type": "boolean",
+      "title": {
+        "en": "Child Lock",
+        "fr": "Verrouillage Enfant",
+        "nl": "Kinderslot",
+        "de": "Kindersicherung"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "insights": false
+    },
+    "eco_mode": {
+      "type": "boolean",
+      "title": {
+        "en": "Eco Mode",
+        "fr": "Mode Éco",
+        "nl": "Eco Modus",
+        "de": "Eco Modus"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "insights": true
+    },
     "measure_formaldehyde": {
       "type": "number",
       "title": {
@@ -80837,6 +81331,48 @@
       "insights": true,
       "min": 0,
       "max": 100
+    },
+    "wifi_heater_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Heater Mode",
+        "fr": "Mode Chauffage",
+        "nl": "Verwarmingsmodus",
+        "de": "Heizmodus"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "manual",
+          "title": {
+            "en": "Manual",
+            "fr": "Manuel",
+            "nl": "Handmatig",
+            "de": "Manuell"
+          }
+        },
+        {
+          "id": "program",
+          "title": {
+            "en": "Program",
+            "fr": "Programme",
+            "nl": "Programma",
+            "de": "Programm"
+          }
+        },
+        {
+          "id": "eco",
+          "title": {
+            "en": "Eco",
+            "fr": "Éco",
+            "nl": "Eco",
+            "de": "Eco"
+          }
+        }
+      ],
+      "insights": true
     }
   }
 }

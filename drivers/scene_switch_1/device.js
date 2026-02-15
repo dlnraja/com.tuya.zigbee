@@ -2,6 +2,7 @@
 
 // v5.8.16: Enhanced with E000 cluster support
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap');
 
 class SceneSwitch1Device extends ButtonDevice {
   get buttonCount() { return 1; }
@@ -20,8 +21,7 @@ class SceneSwitch1Device extends ButtonDevice {
     const e000 = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344];
     if (e000?.on) {
       e000.on('buttonPress', async ({ button, pressType }) => {
-        const types = { 0: 'single', 1: 'double', 2: 'long' };
-        await this.triggerButtonPress(1, types[pressType] || 'single');
+        await this.triggerButtonPress(1, resolvePressType(pressType, 'SCENE1'));
       });
     }
     const onOff = endpoint.clusters?.onOff || endpoint.clusters?.[6];

@@ -1,6 +1,7 @@
 'use strict';
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap');
 
 /**
  * Button2GangDevice - v5.8.16 Enhanced
@@ -26,25 +27,23 @@ class Button2GangDevice extends ButtonDevice {
   }
 
   async _setupExtraDetection(zclNode) {
-    const pressMap = { 0: 'single', 1: 'double', 2: 'long' };
+    // v5.9.22: Use centralized resolvePressType (prevents 0-index regression)
     for (let ep = 1; ep <= 2; ep++) {
       const endpoint = zclNode?.endpoints?.[ep];
       if (!endpoint) continue;
       const sc = endpoint.clusters?.scenes || endpoint.clusters?.[5];
       if (sc?.on) {
         sc.on('recall', async (p) => {
-          const t = pressMap[p?.sceneId ?? 0] || 'single';
-          await this.triggerButtonPress(ep, t);
+          await this.triggerButtonPress(ep, resolvePressType(p?.sceneId ?? 0, 'BTN2-scene'));
         });
         sc.on('recallScene', async (p) => {
-          const t = pressMap[p?.sceneId ?? 0] || 'single';
-          await this.triggerButtonPress(ep, t);
+          await this.triggerButtonPress(ep, resolvePressType(p?.sceneId ?? 0, 'BTN2-scene'));
         });
       }
       const ms = endpoint.clusters?.multistateInput || endpoint.clusters?.[18];
       if (ms?.on) {
         ms.on('attr.presentValue', async (v) => {
-          await this.triggerButtonPress(ep, pressMap[v] || 'single');
+          await this.triggerButtonPress(ep, resolvePressType(v, 'BTN2-multi'));
         });
       }
     }
@@ -54,7 +53,7 @@ class Button2GangDevice extends ButtonDevice {
         tc.on('response', async (d) => {
           const dp = d?.dp ?? d?.dpId;
           const v = d?.data ?? d?.value ?? 0;
-          if (dp >= 1 && dp <= 2) await this.triggerButtonPress(dp, pressMap[v] || 'single');
+          if (dp >= 1 && dp <= 2) await this.triggerButtonPress(dp, resolvePressType(v, 'BTN2-DP'));
         });
       }
     } catch (e) { /* ok */ }
@@ -79,12 +78,11 @@ class Button2GangDevice extends ButtonDevice {
         for (const cmdName of cmdNames) {
           e000Cluster.on(cmdName, async ({ data }) => {
             this.log(`[BUTTON2-E000] 📥 EP${ep} ${cmdName}: data=${data?.toString?.('hex')}`);
-            const types = { 0: 'single', 1: 'double', 2: 'long' };
             let btn = ep, press = 'single';
             if (data && data.length >= 2 && data[0] >= 1 && data[0] <= 2) {
-              btn = data[0]; press = types[data[1]] || 'single';
+              btn = data[0]; press = resolvePressType(data[1], 'BTN2-E000');
             } else if (data && data.length >= 1) {
-              press = types[data[0]] || 'single';
+              press = resolvePressType(data[0], 'BTN2-E000');
             }
             this.log(`[BUTTON2-E000] 🔘 Button ${btn} ${press.toUpperCase()}`);
             await this.triggerButtonPress(btn, press);
@@ -108,12 +106,11 @@ class Button2GangDevice extends ButtonDevice {
         // v5.9.20: OnOffBoundCluster for Tuya cmd 0xFD multi-press
         try {
           const OBC = require('../../lib/clusters/OnOffBoundCluster');
-          const PM = {0:'single',1:'double',2:'long'};
           const ce = ep;
           if (endpoint) {
             endpoint.bind('onOff', new OBC({onSetOn:(p)=>{
               if(p?.cmdId!==0xFD)return;
-              this.triggerButtonPress(ce, PM[p.scene??0]||'single');
+              this.triggerButtonPress(ce, resolvePressType(p.scene??0, 'BTN2-0xFD'));
             }}));
           }
         } catch(e) { this.log(`[BUTTON2-0xFD] ${e.message}`); }
@@ -156,11 +153,11 @@ class Button2GangDevice extends ButtonDevice {
       const orig = zclNode.handleFrame.bind(zclNode);
       zclNode.handleFrame = async (epId, cId, f, m) => {
         if (cId === 57344 || cId === 0xE000) {
-          const d = f?.data, pm = { 0:'single',1:'double',2:'long' };
+          const d = f?.data;
           this.log(`[BUTTON2-RAW] EP${epId} E000`);
           let btn = epId, pt = 'single';
-          if (d?.length >= 2 && d[0] >= 1 && d[0] <= 2) { btn = d[0]; pt = pm[d[1]] || 'single'; }
-          else if (d?.length >= 1) { pt = pm[d[0]] || 'single'; }
+          if (d?.length >= 2 && d[0] >= 1 && d[0] <= 2) { btn = d[0]; pt = resolvePressType(d[1], 'BTN2-RAW'); }
+          else if (d?.length >= 1) { pt = resolvePressType(d[0], 'BTN2-RAW'); }
           this.triggerButtonPress(btn, pt);
         }
         return orig(epId, cId, f, m);

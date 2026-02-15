@@ -17,13 +17,16 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      4-GANG SWITCH - v5.5.999 + ZCL-Only Mode (packetninja technique)        ║
+ * ║      4-GANG SWITCH - v5.9.23 + ZCL-Only Mode (packetninja technique)        ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  Features:                                                                   ║
  * ║  - 4 endpoints On/Off (EP1-4)                                               ║
  * ║  - Physical button detection via attribute reports                          ║
  * ║  - BSEED/Zemismart ZCL-only mode: _TZ3002_pzao9ls1, etc.                    ║
  * ║  v5.5.999: Fixed BSEED virtual button toggle for EP2-4 (diag c33007b0)      ║
+ * ║  v5.9.23: GROUP ISOLATION FIX (diag 945448b9 / Hartmut_Dunker)            ║
+ * ║    TS0726 FW broadcasts ZCL to all EPs (confirmed Z2M #27167, ZHA #2443)  ║
+ * ║    Fix: remove group memberships + filter non-commanded gang reports       ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 
@@ -98,6 +101,18 @@ class Switch4GangDevice extends BaseClass {
     // Fix: Use Cluster.getCluster(6) to get the OnOff class and instantiate it manually.
     this._ensureOnOffClusters(zclNode);
 
+    // v5.9.23: GROUP ISOLATION — remove all Zigbee group memberships from each EP
+    // Root cause (diag 945448b9, Z2M #27167, ZHA #2443): TS0726 firmware broadcasts
+    // ZCL onOff commands to ALL endpoints. If endpoints share a Zigbee group, the device
+    // routes commands through that group internally. Removing group memberships forces
+    // per-endpoint command routing.
+    await this._removeGroupMemberships(zclNode);
+
+    // v5.9.23: Track which gang was last commanded by the app
+    // Used to filter broadcast reports for non-commanded gangs
+    this._lastCommandedGang = null;
+    this._lastCommandTime = 0;
+
     // v5.8.51: Explicit binding for EP1-4 onOff clusters (TS0726 BSEED fix - Hartmut_Dunker)
     // Root cause: TS0726 doesn't send attr reports for EP2-4 without explicit binding.
     // The requiresExplicitBinding flag from PhysicalButtonMixin is not checked in ZCL-only path.
@@ -153,6 +168,10 @@ class Switch4GangDevice extends BaseClass {
       const gangNum = epNum;
       this.registerCapabilityListener(capName, async (value) => {
         this.log(`[BSEED-4G] EP${gangNum} app cmd: ${value}`);
+        
+        // v5.9.23: Track which gang the user actually commanded
+        this._lastCommandedGang = gangNum;
+        this._lastCommandTime = Date.now();
         
         // v5.8.87: Hartmut fix — TS0726 firmware toggles ALL gangs on single EP cmd
         // Mark ALL gangs as app-commanded to prevent false physical detection
@@ -224,6 +243,14 @@ class Switch4GangDevice extends BaseClass {
         this._zclState.lastReport[gangNum] = now;
 
         const isPhysical = !this._zclState.pending[gangNum];
+        // v5.9.23: Filter broadcast reports for non-commanded gangs
+        const isBroadcast = !isPhysical && this._lastCommandedGang
+          && gangNum !== this._lastCommandedGang
+          && (now - this._lastCommandTime) < 2000;
+        if (isBroadcast) {
+          this.log(`[BSEED-4G] EP${gangNum} attr: ${value} FILTERED (broadcast from G${this._lastCommandedGang})`);
+          return;
+        }
         this.log(`[BSEED-4G] EP${gangNum} attr: ${value} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
 
         this._zclState.lastState[gangNum] = value;
@@ -279,6 +306,14 @@ class Switch4GangDevice extends BaseClass {
 
       const capName = dpId === 1 ? 'onoff' : `onoff.gang${dpId}`;
       const isPhysical = !this._zclState.pending[dpId];
+      // v5.9.23: Broadcast filter for Tuya DP path
+      const isBroadcast = !isPhysical && this._lastCommandedGang
+        && dpId !== this._lastCommandedGang
+        && (now - this._lastCommandTime) < 2000;
+      if (isBroadcast) {
+        this.log(`[BSEED-4G] DP${dpId}: ${boolVal} FILTERED (broadcast from G${this._lastCommandedGang})`);
+        return;
+      }
       this.log(`[BSEED-4G] Tuya DP${dpId} report: ${boolVal} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
 
       this._zclState.lastState[dpId] = boolVal;
@@ -423,6 +458,27 @@ class Switch4GangDevice extends BaseClass {
       }
     } catch (err) {
       this.log(`[BSEED-4G] ⚠️ _ensureOnOffClusters error: ${err.message}`);
+    }
+  }
+
+  /**
+   * v5.9.23: Remove Zigbee group memberships to fix TS0726 broadcast bug.
+   */
+  async _removeGroupMemberships(zclNode) {
+    for (const epNum of [1, 2, 3, 4]) {
+      try {
+        const ep = zclNode?.endpoints?.[epNum];
+        if (!ep?.clusters) continue;
+        const g = ep.clusters.groups || ep.clusters.genGroups || ep.clusters[4] || ep.clusters['4'];
+        if (!g) { this.log(`[BSEED-4G] EP${epNum} no groups cluster`); continue; }
+        const fn = g.removeAll || g.removeAllGroups;
+        if (typeof fn === 'function') {
+          await fn.call(g).catch(e => this.log(`[BSEED-4G] EP${epNum} removeAll warn: ${e.message}`));
+          this.log(`[BSEED-4G] EP${epNum} ✅ Group memberships removed`);
+        } else {
+          this.log(`[BSEED-4G] EP${epNum} ⚠️ No removeAll on groups`);
+        }
+      } catch (err) { this.log(`[BSEED-4G] EP${epNum} group err: ${err.message}`); }
     }
   }
 
