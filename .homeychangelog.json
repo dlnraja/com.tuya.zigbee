@@ -1,4 +1,7 @@
 {
+  "5.10.5": {
+    "en": "v5.10.5: Comprehensive Tuya EF00 frame drop prevention — Added 5 missing ZCL commands: sendData (0x04), statusReport (0x05), sceneQuery (0x09), sceneWakeup (0x0A), mcuVersionResponse (0x11) to both TuyaSpecificCluster and TuyaBoundCluster. Added FAULT DP type alias (ZHA compatibility). Research from Z2M, ZHA, Domoticz, Tasmota, Hubitat, official Tuya UART docs. Frames for these commands were previously silently dropped by Homey SDK3."
+  },
   "5.10.4": {
     "en": "v5.10.4: Manufacturer-aware time sync epoch — centralized EPOCH_2000_MFRS list in TuyaSpecificCluster. Both Unix 1970 and Tuya 2000 epochs supported per manufacturer (Z2M #30054). Fixed all 9 time sync paths."
   },
