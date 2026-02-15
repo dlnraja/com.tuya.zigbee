@@ -29,7 +29,7 @@ class PetFeederDevice extends ZigBeeDevice {
   }
 
   async _triggerFeed() {
-    const ep1 = this.zclNode.endpoints[1];
+    const ep1 = this.zclNode?.endpoints?.[1];
     const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
 
     if (tuyaCluster) {

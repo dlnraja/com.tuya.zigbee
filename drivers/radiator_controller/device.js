@@ -64,7 +64,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
       });
 
       // Température initiale 20°C
-      await this.setCapabilityValue('target_temperature', 20);
+      await this.setCapabilityValue('target_temperature', 20).catch(() => {});
     }
 
     // Capability thermostat_mode - modes fil pilote
@@ -74,7 +74,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
       });
 
       // Mode initial depuis settings
-      await this.setCapabilityValue('thermostat_mode', this.currentMode);
+      await this.setCapabilityValue('thermostat_mode', this.currentMode).catch(() => {});
     }
 
     // Désactiver energy monitoring si configuré
@@ -211,7 +211,9 @@ class RadiatorControllerDevice extends ZigBeeDevice {
       this.currentMode = mode;
 
       // Trigger flow card
-      await this._radiatorModeChangedTrigger.trigger(this, { mode });
+      if (this._radiatorModeChangedTrigger) {
+        await this._radiatorModeChangedTrigger.trigger(this, { mode }).catch(e => this.log('[FLOW] mode trigger error:', e.message));
+      }
 
       return true;
     } catch (error) {
@@ -259,9 +261,11 @@ class RadiatorControllerDevice extends ZigBeeDevice {
       }
 
       // Trigger flow card
-      await this._pilotSignalSentTrigger.trigger(this, {
-        signal_type: signalType
-      });
+      if (this._pilotSignalSentTrigger) {
+        await this._pilotSignalSentTrigger.trigger(this, {
+          signal_type: signalType
+        }).catch(e => this.log('[FLOW] pilot signal trigger error:', e.message));
+      }
 
       // Debug logging si activé
       if (this.getSetting('debug_logging')) {
@@ -367,17 +371,17 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     if (changedKeys.includes('disable_power_monitoring')) {
       if (newSettings.disable_power_monitoring) {
         if (this.hasCapability('measure_power')) {
-          await this.removeCapability('measure_power');
+          await this.removeCapability('measure_power').catch(() => {});
         }
         if (this.hasCapability('meter_power')) {
-          await this.removeCapability('meter_power');
+          await this.removeCapability('meter_power').catch(() => {});
         }
       } else {
         if (!this.hasCapability('measure_power')) {
-          await this.addCapability('measure_power');
+          await this.addCapability('measure_power').catch(() => {});
         }
         if (!this.hasCapability('meter_power')) {
-          await this.addCapability('meter_power');
+          await this.addCapability('meter_power').catch(() => {});
         }
       }
     }
