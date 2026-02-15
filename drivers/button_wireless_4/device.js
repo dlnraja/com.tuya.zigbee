@@ -2,6 +2,7 @@
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 const { includesCI, containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { resolve: resolvePressType, PRESS_MAP } = require('../../lib/utils/TuyaPressTypeMap');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -317,18 +318,9 @@ class Button4GangDevice extends ButtonDevice {
         if (scenesCluster) {
           this.log(`[BUTTON4-PHYSICAL] 📡 Setting up scene listener on EP${ep}...`);
 
-          // Map scene ID to press type based on research
-          const pressTypeMap = {
-            0: 'single',    // Scene 0 = single press
-            1: 'double',    // Scene 1 = double press
-            2: 'long',      // Scene 2 = long/hold press
-            3: 'single',    // Some variants use 3 for single
-            4: 'double',    // Some variants use 4 for double
-            5: 'long'       // Some variants use 5 for long
-          };
-
+          // v5.9.22: Use centralized PRESS_MAP (prevents 0-index regression)
           const handleSceneRecall = async (sceneId) => {
-            const pressType = pressTypeMap[sceneId] || 'single';
+            const pressType = resolvePressType(sceneId, 'BTN4-scene');
             this.log(`[BUTTON4-SCENE] 🔘 Physical Button ${ep} ${pressType.toUpperCase()} (scene ${sceneId})`);
             await this.triggerButtonPress(ep, pressType);
           };
@@ -368,11 +360,9 @@ class Button4GangDevice extends ButtonDevice {
         if (multistateCluster) {
           this.log(`[BUTTON4-PHYSICAL] 📡 Setting up multistateInput listener on EP${ep}...`);
 
-          // Map multistate values to press types (0=single, 1=double, 2=long)
-          const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
-
+          // v5.9.22: Use centralized resolvePressType (prevents 0-index regression)
           const handleMultistate = async (value) => {
-            const pressType = pressTypeMap[value] || 'single';
+            const pressType = resolvePressType(value, 'BTN4-multi');
             this.log(`[BUTTON4-MULTISTATE] 🔘 Button ${ep} ${pressType.toUpperCase()} (multistate ${value})`);
             await this.triggerButtonPress(ep, pressType);
           };
@@ -522,8 +512,7 @@ class Button4GangDevice extends ButtonDevice {
           // DP 1-4 typically map to buttons 1-4
           if (dp >= 1 && dp <= 4) {
             const buttonNumber = dp;
-            const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
-            const pressType = pressTypeMap[value] || 'single';
+            const pressType = resolvePressType(value, 'BTN4-DP');
 
             this.log(`[BUTTON4-TUYA-DP] 🔘 Button ${buttonNumber} ${pressType.toUpperCase()} (DP${dp}=${value})`);
             await this.triggerButtonPress(buttonNumber, pressType);
@@ -532,8 +521,7 @@ class Button4GangDevice extends ButtonDevice {
           // Some devices use DP 101-104 for buttons
           if (dp >= 101 && dp <= 104) {
             const buttonNumber = dp - 100;
-            const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
-            const pressType = pressTypeMap[value] || 'single';
+            const pressType = resolvePressType(value, 'BTN4-DP101');
 
             this.log(`[BUTTON4-TUYA-DP] 🔘 Button ${buttonNumber} ${pressType.toUpperCase()} (DP${dp}=${value})`);
             await this.triggerButtonPress(buttonNumber, pressType);
@@ -547,8 +535,7 @@ class Button4GangDevice extends ButtonDevice {
           const dp = data?.dp ?? data?.dataPointId ?? data?.dpId;
           const value = data?.data ?? data?.value ?? 0;
           if (dp >= 1 && dp <= 4) {
-            const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
-            await this.triggerButtonPress(dp, pressTypeMap[value] || 'single');
+            await this.triggerButtonPress(dp, resolvePressType(value, 'BTN4-DP-rpt'));
           }
         });
 
@@ -713,12 +700,11 @@ class Button4GangDevice extends ButtonDevice {
           // v5.9.20: Bind OnOffBoundCluster to catch Tuya cmd 0xFD (multi-press)
           try {
             const OnOffBC = require('../../lib/clusters/OnOffBoundCluster');
-            const PRESS_MAP = { 0: 'single', 1: 'double', 2: 'long' };
             const curEp = ep;
             const bc = new OnOffBC({
               onSetOn: (p) => {
                 if (p?.cmdId !== 0xFD) return;
-                const action = PRESS_MAP[p.scene ?? 0] || 'single';
+                const action = resolvePressType(p.scene ?? 0, 'BTN4-0xFD');
                 this.log(`[BUTTON4-0xFD] EP${curEp} pressType=${p.scene} → ${action}`);
                 this.triggerButtonPress(curEp, action);
               },
@@ -886,13 +872,12 @@ class Button4GangDevice extends ButtonDevice {
       
       this.log(`[BUTTON4-RAW] 🔍 Parsing frame: cmdId=${cmdId}, data=${data?.toString?.('hex')}`);
       
-      // Press type mapping
-      const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
+      // v5.9.22: Use centralized resolvePressType (prevents 0-index regression)
       
       // Strategy 1: cmdId as button number (1-4), data[0] as press type
       if (cmdId >= 0 && cmdId <= 4) {
         const button = cmdId === 0 ? 1 : cmdId;
-        const pressType = pressTypeMap[data?.[0]] || 'single';
+        const pressType = resolvePressType(data?.[0], 'BTN4-RAW-cmd');
         this.log(`[BUTTON4-RAW] 🔘 Button ${button} ${pressType.toUpperCase()} (cmdId strategy)`);
         this.triggerButtonPress(button, pressType);
         return;
@@ -901,7 +886,7 @@ class Button4GangDevice extends ButtonDevice {
       // Strategy 2: data[0] as button, data[1] as press type
       if (data && data.length >= 2) {
         const button = data[0];
-        const pressType = pressTypeMap[data[1]] || 'single';
+        const pressType = resolvePressType(data[1], 'BTN4-RAW-data');
         if (button >= 1 && button <= 4) {
           this.log(`[BUTTON4-RAW] 🔘 Button ${button} ${pressType.toUpperCase()} (data strategy)`);
           this.triggerButtonPress(button, pressType);
@@ -912,7 +897,7 @@ class Button4GangDevice extends ButtonDevice {
       // Strategy 3: Single byte - endpoint as button, value as press type
       if (data && data.length === 1) {
         const button = ep;
-        const pressType = pressTypeMap[data[0]] || 'single';
+        const pressType = resolvePressType(data[0], 'BTN4-RAW-byte');
         this.log(`[BUTTON4-RAW] 🔘 Button ${button} ${pressType.toUpperCase()} (single byte strategy)`);
         this.triggerButtonPress(button, pressType);
         return;
@@ -934,12 +919,10 @@ class Button4GangDevice extends ButtonDevice {
     try {
       this.log(`[BUTTON4-RAW] 🔍 Command: id=${commandId}, payload=`, payload);
       
-      const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
-      
       // Command ID might be button number
       if (commandId >= 1 && commandId <= 4) {
         const button = commandId;
-        const pressType = pressTypeMap[payload?.[0] ?? payload?.data?.[0]] || 'single';
+        const pressType = resolvePressType(payload?.[0] ?? payload?.data?.[0], 'BTN4-RAW-cmd2');
         this.log(`[BUTTON4-RAW] 🔘 Button ${button} ${pressType.toUpperCase()} (command strategy)`);
         this.triggerButtonPress(button, pressType);
       } else {

@@ -1,4 +1,4 @@
-# GH Full Responses — dlnraja v5.8.91 (12 open, 0 replied)
+# GH Full Responses — dlnraja v5.9.23 (12 open, 0 replied)
 
 ## #127 Tauno20 — WZ-M100 FIXED v5.8.87+88
 > Fingerprint added v5.8.87. Ghost temp/hum fixed v5.8.88. Update, remove+re-pair. Send diag if still issues.
@@ -10,7 +10,7 @@
 > **Feb 4**: v5.8.12 fixed climate_sensor. Button_wireless_1 (`_TZ3000_b4awzgct` TS0041) doesn't trigger flows. Interview: 4 EPs, cluster 57344 on EP1.
 > **Feb 8**: Re-paired on v5.8.77, buttons pair OK but NO flow works (single or double press).
 > **Analysis**: E000 BoundCluster on EP1 exists since v5.8.66. Device needs diagnostic with button presses to see which detection layer fails.
-> **Action**: Ask user to update to v5.8.90, re-pair, press buttons, then submit diagnostic report within 60s.
+> **Action**: Ask user to update to v5.9.23, re-pair, press buttons, then submit diagnostic report within 60s. (v5.9.20 added OnOffBoundCluster bind for multi-press)
 
 ## #123 auto — 46 fps ALL PRESENT
 > All 46 verified. No action needed.
@@ -122,13 +122,15 @@
 ## blutch32 (p68)
 > _TZ3000_996rpfy6 TS0203 alarm broken. Double-inversion bug fixed v5.8.85. Update+re-pair.
 
-## Freddyboy PERSISTENT (UPDATED Feb 7)
+## Freddyboy PERSISTENT (UPDATED Jun 2026)
 > v5.8.65: Still no flow with physical buttons. Diag 34b9565c. E000+scenes+multistate all in code.
-> Same pattern as all button devices. NEEDS update to v5.8.91, re-pair, press all buttons, submit diag.
+> v5.9.20: OnOffBoundCluster bind per EP + cmd 0xFD intercept. v5.9.22: TuyaPressTypeMap safety guard.
+> NEEDS update to v5.9.23, re-pair, press all buttons, submit diag.
 
-## Cam PERSISTENT (UPDATED Feb 7)
+## Cam PERSISTENT (UPDATED Jun 2026)
 > v5.8.66: Still no button presses. Diag 4b2150c6. BoundCluster+E000 on EP1 exists since v5.8.66.
-> Same pattern as Lalla80111 (GH#124). NEEDS update to v5.8.91, re-pair, press buttons, submit diag.
+> Same pattern as Lalla80111 (GH#124). v5.9.20: OnOffBoundCluster bind per EP + cmd 0xFD intercept.
+> NEEDS update to v5.9.23, re-pair, press buttons, submit diag.
 
 ## Ricardo_Lenior (p60)
 > 230v presence wrong caps (battery/mmwave on mains). NEEDS fingerprint. Only has diag 77C4CE16.
@@ -140,7 +142,8 @@
 > Already in contact_sensor. Update to v5.8.88, remove+re-pair.
 
 ## GH#124 Lalla80111 — _TZ3000_b4awzgct TS0041 button NO FLOW (ACTIVE)
-> STILL BROKEN v5.8.77. E000 on EP1 exists. Need diag with button presses. Update v5.8.90, re-pair, press buttons, submit diag.
+> STILL BROKEN v5.8.77. E000 on EP1 exists. v5.9.20: OnOffBoundCluster bind + cmd 0xFD intercept.
+> Update v5.9.23, re-pair, press buttons, submit diag.
 
 ## GH#110 Pollepa — TS011F metering FIXED v5.8.91
 > ZCL plug _TZ3210_w0qqde0g. Root cause: configureReporting only had activePower, missing rmsVoltage+rmsCurrent. Also no initial readAttributes. Fixed in HybridPlugBase. Update v5.8.91, remove+re-pair.
