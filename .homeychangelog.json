@@ -1,4 +1,7 @@
 {
+  "5.9.21": {
+    "en": "v5.9.21: NEW DRIVER water_valve_garden — TS0049 garden water valve using ZCL onOff (not Tuya DP). Fingerprints: _TZ3000_cjfmu5he (Moes), _TZ3000_kz1anoi8 (Haozee), _TZ3290_ixd9mvv4 (rain sensor). Removed these from wrong drivers (button_wireless_4, contact_sensor, climate_sensor). Z2M refs: #21788, #22950, #28060."
+  },
   "5.9.20": {
     "en": "v5.9.20: MULTI-PRESS FIX ALL BUTTON DRIVERS (Tividor #1408) — Root cause: Tuya cmd 0xFD on genOnOff silently dropped — no OnOffBoundCluster bound. Fix: Bind OnOffBoundCluster per endpoint in button_wireless_1/2/3/4 — handleFrame catch-all intercepts cmd 0xFD, extracts press type (0=single, 1=double, 2=hold). TS0041/TS0042/TS0043/TS0044 double press + long press now working."
   },
