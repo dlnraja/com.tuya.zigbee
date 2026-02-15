@@ -1,4 +1,7 @@
 {
+  "5.10.4": {
+    "en": "v5.10.4: Manufacturer-aware time sync epoch — centralized EPOCH_2000_MFRS list in TuyaSpecificCluster. Both Unix 1970 and Tuya 2000 epochs supported per manufacturer (Z2M #30054). Fixed all 9 time sync paths."
+  },
   "5.10.3": {
     "en": "v5.10.3: Tuya time sync overhaul — (1) CRITICAL: Removed manufacturerSpecific:true from timeResponse command (ZHA PR #3652 + Z2M confirm must be false). (2) CRITICAL: Fixed epoch from Tuya 2000 back to Unix 1970 per official Tuya UART docs (developer.tuya.com). (3) Time sync response now uses 10-byte payload with sequence number echoed back. (4) Fixed in TuyaTimeSyncManager, HybridSensorBase, TuyaTimeSync. (5) ZCL Time cluster (0x000A) correctly keeps 2000 epoch separately."
   },
