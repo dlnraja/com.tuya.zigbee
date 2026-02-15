@@ -1,5 +1,5 @@
 # Universal Tuya Zigbee - Project Status
-> Last Updated: February 9, 2026 | Version: 5.8.88
+> Last Updated: June 2026 | Version: 5.9.23
 
 ## 📊 Project Statistics
 

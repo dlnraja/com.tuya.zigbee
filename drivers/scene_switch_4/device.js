@@ -5,6 +5,7 @@
 // Eftychis report: "4 gang switches work only via iconic buttons. The real buttons do not react"
 // v5.9.3: Added E000 + onOff command detection (was completely missing)
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap');
 
 class SceneSwitch4Device extends ButtonDevice {
   get buttonCount() { return 4; }
@@ -24,8 +25,7 @@ class SceneSwitch4Device extends ButtonDevice {
       const e000 = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344];
       if (e000?.on) {
         e000.on('buttonPress', async ({ button, pressType }) => {
-          const types = { 0: 'single', 1: 'double', 2: 'long' };
-          await this.triggerButtonPress((button >= 1 && button <= 4) ? button : ep, types[pressType] || 'single');
+          await this.triggerButtonPress((button >= 1 && button <= 4) ? button : ep, resolvePressType(pressType, 'SCENE4'));
         });
       }
       const onOff = endpoint.clusters?.onOff || endpoint.clusters?.[6];

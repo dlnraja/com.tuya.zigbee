@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.9.21",
+  "version": "5.9.23",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -50179,9 +50179,7 @@
           "_TZE284_hodyryli",
           "_tze204_w2vunxzm",
           "_TZE204_w2vunxzm",
-          "_TZ3000_fllyghyj",
-          "_tze284_oitavov2",
-          "_TZE284_oitavov2"
+          "_TZ3000_fllyghyj"
         ],
         "productId": [
           "TS0201",
@@ -68751,6 +68749,7 @@
         "measure_humidity.soil",
         "measure_temperature",
         "measure_humidity",
+        "measure_luminance",
         "measure_battery",
         "alarm_water"
       ],
@@ -68810,8 +68809,6 @@
           "_TZE200_myd45weu",
           "_tze200_npj9bug3",
           "_TZE200_npj9bug3",
-          "_tze200_vvmbj46n",
-          "_TZE200_vvmbj46n",
           "_tze200_wqashyqo",
           "_TZE200_wqashyqo",
           "_tze204_4xsypney",

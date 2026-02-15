@@ -1,5 +1,5 @@
 # MASTER REFERENCE — Universal Tuya Zigbee
-**v5.9.9** | **2026-02-13** | com.dlnraja.tuya.zigbee
+**v5.9.23** | **2026-06** | com.dlnraja.tuya.zigbee
 
 ---
 
@@ -62,7 +62,7 @@ Classic Outlook .ost at AppData/Local/Microsoft/Outlook/ (binary, not readable).
 | 4x4_Pete | HOBEIAN ZG-204ZM/ZL | FIXED | 5.8.88 |
 | Peter_vW | HOBEIAN ZG-204ZV | STABLE | 5.7.45 |
 | Lasse_K | Water+Contact HOBEIAN | FIXED | 5.8.88 |
-| Hartmut_D | TS0726 BSEED 4gang | FIXED | 5.8.87 |
+| Hartmut_D | TS0726 BSEED 4gang | FIXED | 5.9.23 |
 | DutchDuke | soil _TZE284_oitavov2 | FIXED | 5.8.87 |
 | JJ10 | Radar ghost tiles | FIXED | 5.8.86 |
 | Karsten_H | Climate temp overwrite | FIXED | 5.8.29 |
@@ -83,19 +83,22 @@ Classic Outlook .ost at AppData/Local/Microsoft/Outlook/ (binary, not readable).
 
 ## 7. PENDING ACTIONS
 
-- Cam TS0041: NEEDS DIAG (update v5.9.9 + re-pair + diag)
-- Freddyboy TS0044: NEEDS DIAG (update v5.9.9 + re-pair + diag)
+- Cam TS0041: NEEDS DIAG (update v5.9.23 + re-pair + diag)
+- Freddyboy TS0044: NEEDS DIAG (update v5.9.23 + re-pair + diag)
 - Ricardo_Lenior: NEEDS FINGERPRINT (diag only)
 - Piotr 2-gang `_TZ3000_cauq1okq`: DEVICE FIRMWARE issue (Z2M #14750 confirms dual toggle)
 - F7 FrankP IR blaster ZS06: FEATURE (Zosung commands — deferred)
 - F8 JJ10 presence stale temp/humidity: DEFERRED
-- GH responses: Draft ready, post to GitHub
+- GH responses: Draft ready in GITHUB_RESPONSES_FULL.md, post to GitHub
 - Collisions: 2194 remaining (monthly report)
 
-## 8. v5.9.9 (2026-02-13)
+## 8. VERSION HISTORY (v5.9.9 → v5.9.23)
 
-- F1-F5 forum fixes + 15-file case-insensitive audit
-- Z2M confirms Piotr 2-gang = device firmware (#14750)
+- **v5.9.9**: F1-F5 forum fixes + 15-file case-insensitive audit
+- **v5.9.20**: Multi-press fix all button drivers (Tividor #1408) — OnOffBoundCluster bind
+- **v5.9.21**: NEW water_valve_garden driver (TS0049 ZCL onOff)
+- **v5.9.22**: Button 0-index safety guard (TuyaPressTypeMap) + soil sensor enrichment
+- **v5.9.23**: BSEED GROUP TOGGLE FIX — group isolation + broadcast filter for switch_2gang/3gang/4gang (Z2M #27167, ZHA #2443, Hartmut_Dunker diag 945448b9)
 
 ## 9. CROSS-REF RESULTS (2026-02-09)
 

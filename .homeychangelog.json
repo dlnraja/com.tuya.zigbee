@@ -1,4 +1,10 @@
 {
+  "5.9.23": {
+    "en": "v5.9.23: BSEED GROUP TOGGLE FIX for ALL multi-gang ZCL-only switches (2G/3G/4G). Root cause: BSEED firmware broadcasts ZCL onOff to ALL endpoints when any single EP is commanded (confirmed Z2M #27167, ZHA #2443, Hartmut_Dunker diag 945448b9). Fix: (1) GROUP ISOLATION — remove all Zigbee group memberships per EP during init to prevent internal broadcast routing. (2) BROADCAST FILTER — track last commanded gang, filter attribute reports from non-commanded gangs during 2s window. Applied to switch_2gang, switch_3gang, switch_4gang for all BSEED ZCL-only fingerprints."
+  },
+  "5.9.22": {
+    "en": "v5.9.22: (1) BUTTON 0-INDEX SAFETY GUARD — Created centralized TuyaPressTypeMap utility (Object.freeze, validation, warning logs). Replaced 30+ inline press type maps across 14 files (button_wireless_1/2/3/4/6/8, scene_switch_1/2/3/4/6, smart_knob_rotary, TuyaE000BoundCluster, ButtonDevice base). Prevents v5.9.19 regression where 1-indexed mapping broke double/hold on TS0044. (2) Peter 4x4 sensor audit — FINGERPRINT FIX: removed _TZE284_oitavov2 from climate_sensor, removed _TZE200_vvmbj46n from soil_sensor. SOIL SENSOR ENRICHMENT: added measure_luminance, DP102=illuminance, DP101=ambient_humidity, DP103=humidity_calibration, DP104=report_interval. Sources: Z2M #28270, ZHA #4282."
+  },
   "5.9.21": {
     "en": "v5.9.21: NEW DRIVER water_valve_garden — TS0049 garden water valve using ZCL onOff (not Tuya DP). Fingerprints: _TZ3000_cjfmu5he (Moes), _TZ3000_kz1anoi8 (Haozee), _TZ3290_ixd9mvv4 (rain sensor). Removed these from wrong drivers (button_wireless_4, contact_sensor, climate_sensor). Z2M refs: #21788, #22950, #28060."
   },

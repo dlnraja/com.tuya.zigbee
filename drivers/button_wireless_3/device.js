@@ -1,5 +1,6 @@
 'use strict';
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap');
 
 /**
  * Button3GangDevice - v5.8.39
@@ -90,13 +91,12 @@ class Button3GangDevice extends ButtonDevice {
       // v5.9.20: OnOffBoundCluster for Tuya cmd 0xFD multi-press
       try {
         const OBC = require('../../lib/clusters/OnOffBoundCluster');
-        const PM = {0:'single',1:'double',2:'long'};
         const ce = ep;
         const epo = zclNode?.endpoints?.[ep];
         if (epo) {
           epo.bind('onOff', new OBC({onSetOn:(p)=>{
             if(p?.cmdId!==0xFD)return;
-            this.triggerButtonPress(ce, PM[p.scene??0]||'single');
+            this.triggerButtonPress(ce, resolvePressType(p.scene??0, 'BTN3-0xFD'));
           }}));
         }
       } catch(e) { this.log(`[BUTTON3-0xFD] ${e.message}`); }
@@ -187,14 +187,12 @@ class Button3GangDevice extends ButtonDevice {
     try {
       const cmdId = frame?.cmdId ?? frame?.commandId;
       const data = frame?.data;
-      const pressMap = { 0: 'single', 1: 'double', 2: 'long' };
-
       this.log(`[BUTTON3-RAW] Parsing: cmdId=${cmdId}, data=${data?.toString?.('hex') || 'none'}`);
 
       // Strategy 1: cmdId is button number (1-3), data[0] is press type
       if (cmdId >= 0 && cmdId <= 3) {
         const mappedBtn = cmdId === 0 ? 1 : cmdId;
-        const pressType = pressMap[data?.[0]] || 'single';
+        const pressType = resolvePressType(data?.[0], 'BTN3-RAW-cmd');
         this.log(`[BUTTON3-RAW] 🔘 Button ${mappedBtn} ${pressType} (cmdId=${cmdId})`);
         this.triggerButtonPress(mappedBtn, pressType);
         return;
@@ -202,7 +200,7 @@ class Button3GangDevice extends ButtonDevice {
 
       // Strategy 2: data[0] = button, data[1] = press type
       if (data && data.length >= 2 && data[0] >= 1 && data[0] <= 3) {
-        const pressType = pressMap[data[1]] || 'single';
+        const pressType = resolvePressType(data[1], 'BTN3-RAW-data');
         this.log(`[BUTTON3-RAW] 🔘 Button ${data[0]} ${pressType} (data strategy)`);
         this.triggerButtonPress(data[0], pressType);
         return;
@@ -210,7 +208,7 @@ class Button3GangDevice extends ButtonDevice {
 
       // Strategy 3: Single byte = press type, use endpoint as button
       if (data && data.length === 1) {
-        const pressType = pressMap[data[0]] || 'single';
+        const pressType = resolvePressType(data[0], 'BTN3-RAW-byte');
         this.log(`[BUTTON3-RAW] 🔘 Button ${ep} ${pressType} (single-byte strategy)`);
         this.triggerButtonPress(ep, pressType);
         return;

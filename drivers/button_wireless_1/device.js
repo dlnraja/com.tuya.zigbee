@@ -1,6 +1,7 @@
 'use strict';
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { resolve: resolvePressType, PRESS_MAP } = require('../../lib/utils/TuyaPressTypeMap');
 
 // v5.5.733: HOBEIAN ZG-101ZL FIX - Import OnOffBoundCluster for outputCluster command reception
 let OnOffBoundCluster = null;
@@ -114,15 +115,8 @@ class Button1GangDevice extends ButtonDevice {
         return;
       }
 
-      // Map press values to types
-      const pressTypeMap = {
-        0: 'single',
-        1: 'double',
-        2: 'long',
-        3: 'single',
-        4: 'double',
-        5: 'long'
-      };
+      // v5.9.22: Use centralized PRESS_MAP (prevents 0-index regression)
+      const pressTypeMap = PRESS_MAP;
 
       // v5.5.371: SCENES CLUSTER - Multiple event patterns
       const scenesCluster = endpoint.clusters?.scenes || endpoint.clusters?.genScenes || endpoint.clusters?.[5];
@@ -480,21 +474,17 @@ class Button1GangDevice extends ButtonDevice {
       if (hobeianCluster && typeof hobeianCluster.on === 'function') {
         this.log('[BUTTON1-HOBEIAN] 📡 Setting up HOBEIAN cluster 0xE001 listeners...');
 
-        const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
-
         // Listen for any events from this cluster
         hobeianCluster.on('report', async (data) => {
           this.log('[BUTTON1-HOBEIAN] 📡 Report:', data);
           const value = data?.value ?? data?.[0] ?? 0;
-          const pressType = pressTypeMap[value] || 'single';
-          await this.triggerButtonPress(1, pressType);
+          await this.triggerButtonPress(1, resolvePressType(value, 'HOBEIAN-report'));
         });
 
         hobeianCluster.on('response', async (data) => {
           this.log('[BUTTON1-HOBEIAN] 📡 Response:', data);
           const value = data?.value ?? data?.data ?? 0;
-          const pressType = pressTypeMap[value] || 'single';
-          await this.triggerButtonPress(1, pressType);
+          await this.triggerButtonPress(1, resolvePressType(value, 'HOBEIAN-response'));
         });
 
         // Generic command listener
@@ -518,10 +508,10 @@ class Button1GangDevice extends ButtonDevice {
       const E000 = require('../../lib/clusters/TuyaE000BoundCluster');
       const ep = zclNode?.endpoints?.[1];
       if (!ep) return;
-      const map = { 0: 'single', 1: 'double', 2: 'long' };
       const bc = new E000({ device: this, onButtonPress: async (b, p) => {
-        this.log(`[BUTTON1-E000] 🔘 ${map[p]||'single'} (btn=${b})`);
-        await this.triggerButtonPress(1, map[p] || 'single');
+        const pt = resolvePressType(p, 'BUTTON1-E000');
+        this.log(`[BUTTON1-E000] 🔘 ${pt} (btn=${b})`);
+        await this.triggerButtonPress(1, pt);
       }});
       bc.endpoint = 1;
       if (!ep.bindings) ep.bindings = {};
@@ -550,22 +540,21 @@ class Button1GangDevice extends ButtonDevice {
     try {
       const cmdId = frame?.cmdId ?? frame?.commandId;
       const data = frame?.data;
-      const pm = { 0: 'single', 1: 'double', 2: 'long' };
       this.log(`[BUTTON1-RAW] cmdId=${cmdId} data=${data?.toString?.('hex') || '-'}`);
       if (cmdId >= 0 && cmdId <= 5) {
-        const pt = pm[data?.[0]] || 'single';
+        const pt = resolvePressType(data?.[0], 'BUTTON1-RAW-cmd');
         this.log(`[BUTTON1-RAW] 🔘 ${pt} (cmdId)`);
         this.triggerButtonPress(1, pt);
         return;
       }
       if (data && data.length >= 2) {
-        const pt = pm[data[1]] || 'single';
+        const pt = resolvePressType(data[1], 'BUTTON1-RAW-data');
         this.log(`[BUTTON1-RAW] 🔘 ${pt} (data)`);
         this.triggerButtonPress(1, pt);
         return;
       }
       if (data && data.length === 1) {
-        const pt = pm[data[0]] || 'single';
+        const pt = resolvePressType(data[0], 'BUTTON1-RAW-byte');
         this.log(`[BUTTON1-RAW] 🔘 ${pt} (byte)`);
         this.triggerButtonPress(1, pt);
         return;
@@ -613,8 +602,7 @@ class Button1GangDevice extends ButtonDevice {
             onSetOn: (p) => {
               // v5.9.20: Handle Tuya cmd 0xFD multi-press
               if (p?.cmdId === 0xFD) {
-                const PM = {0:'single',1:'double',2:'long'};
-                const action = PM[p.scene ?? 0] || 'single';
+                const action = resolvePressType(p.scene ?? 0, 'BUTTON1-0xFD');
                 this.log(`[BUTTON1-0xFD] pressType=${p.scene} → ${action}`);
                 this.triggerButtonPress(1, action);
                 return;
@@ -702,8 +690,6 @@ class Button1GangDevice extends ButtonDevice {
       this.log('[BUTTON1-TUYA-DP] 🔧 Setting up Tuya DP button detection...');
 
       if (typeof tuyaCluster.on === 'function') {
-        const pressTypeMap = { 0: 'single', 1: 'double', 2: 'long' };
-
         tuyaCluster.on('response', async (data) => {
           const dp = data?.dp ?? data?.dataPointId ?? data?.dpId;
           const value = data?.data ?? data?.value ?? data?.raw?.[0] ?? 0;
@@ -712,7 +698,7 @@ class Button1GangDevice extends ButtonDevice {
 
           // DP 1 typically is button 1 press
           if (dp === 1) {
-            const pressType = pressTypeMap[value] || 'single';
+            const pressType = resolvePressType(value, 'BUTTON1-DP');
             this.log(`[BUTTON1-TUYA-DP] 🔘 Button 1 ${pressType.toUpperCase()} (DP${dp}=${value})`);
             await this.triggerButtonPress(1, pressType);
           }
@@ -723,17 +709,15 @@ class Button1GangDevice extends ButtonDevice {
           const dp = data?.dp ?? data?.dataPointId ?? data?.dpId;
           const value = data?.data ?? data?.value ?? 0;
           if (dp === 1) {
-            const pressType = pressTypeMap[value] || 'single';
-            await this.triggerButtonPress(1, pressType);
+            await this.triggerButtonPress(1, resolvePressType(value, 'BUTTON1-DP-rpt'));
           }
         });
 
-        tuyaCluster.on('dataReport', async (data) => {
-          this.log('[BUTTON1-TUYA-DP] 📡 dataReport event:', data);
+        tuyaCluster.on('datapoint', async (data) => {
           const dp = data?.dp ?? data?.datapoint ?? data?.dpId;
           const value = data?.data?.[0] ?? data?.value ?? 0;
           if (dp === 1) {
-            const pressType = pressTypeMap[value] || 'single';
+            const pressType = resolvePressType(value, 'BUTTON1-DP-dp');
             await this.triggerButtonPress(1, pressType);
           }
         });

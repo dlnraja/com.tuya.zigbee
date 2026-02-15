@@ -1,5 +1,5 @@
-# User Device Expectations (v5.9.18)
-**Updated**: 2026-02-15 (v5.9.18 deep DP audit for Peter 4x4 variants)
+# User Device Expectations (v5.9.23)
+**Updated**: 2026-06 (v5.9.23 BSEED group isolation fix for all multi-gang ZCL-only switches)
 
 ## v5.9.18: Deep DP Audit — Peter 4x4 Presence Sensor Variants
 Sources: Z2M ZG-204ZM/ZV/ZL/ZH/227Z pages, Z2M #21919 #29024 #28529, ZHA #4184 #4452 #4517, Hubitat kkossev, Blakadder, SmartHomeScene, Reddit
@@ -97,7 +97,7 @@ Bugs researched (no code bugs): Z2M #29024 presence-always-true (noIasMotion avo
 | Lasse_K | Contact reversed v5.8.43 (p69) | FIXED v5.9.9 — F1: _iasOriginatedAlarm fix |
 | Lasse_K | Water no alarm v5.8.43 (p69) | FIXED v5.8.88 — IAS enrollment improved, needs re-pair |
 | blutch32 | _TZ3000_996rpfy6 TS0203 alarm broken (p68) | FIXED v5.8.85 — double-inversion bug |
-| Hartmut_Dunker | TS0726 virtual toggles all 4 (p70) | FIXED v5.9.9 — F2: Tuya DP per-gang routing |
+| Hartmut_Dunker | TS0726 virtual toggles all 4 (p70) | FIXED v5.9.23 — GROUP ISOLATION: remove group memberships + broadcast filter (Z2M #27167, ZHA #2443) |
 | DutchDuke | Soil temp ÷10 (1.8 vs 18) (p70) | FIXED v5.8.87 — raw °C skip |
 | FinnKje | Presence on/off every minute (p69) | FIXED v5.8.40 — multi-DP frame parser |
 | Karsten_Hille | Temp/hum sensor broken (p68) | FIXED v5.8.38 |
@@ -107,12 +107,12 @@ Bugs researched (no code bugs): Z2M #29024 presence-always-true (noIasMotion avo
 | GH#124 Lalla80111 | _TZ3000_b4awzgct TS0041 no flow | ACTIVE — re-paired v5.8.77 still broken. E000 on EP1 exists. NEEDS DIAG with button presses |
 | GH#98 DVMasters | _TZ3000_famkxci2 TS0043 button no flow | awaiting re-pair+diag |
 | GH#110 Pollepa | TS011F metering empty | FIXED v5.8.91 — added rmsVoltage+rmsCurrent reporting + initial reads |
-| Tividor (p70) | button_wireless_4 double-press | FIXED v5.9.9 — F5: 1-indexed press mapping |
+| Tividor (p70) | button_wireless_4 double-press | FIXED v5.9.20 — OnOffBoundCluster bind per EP + cmd 0xFD intercept + v5.9.22 TuyaPressTypeMap safety |
 | Piotr_Cetler (p70) | TS0002 2-gang both toggle | DEVICE FIRMWARE — Z2M #14750 confirms dual-toggle is hardware behavior |
 | Lasse_K (p70) | Water sensor no alarm (p70) | FIXED v5.9.9 — F4: numeric cluster 0x0500 lookup |
-| Cam | _TZ3000_5bpeda8u TS0041 no presses v5.8.66 diag 4b2150c6 | ACTIVE — update v5.9.9 re-pair+diag |
+| Cam | _TZ3000_5bpeda8u TS0041 no presses v5.8.66 diag 4b2150c6 | ACTIVE — update v5.9.23 re-pair+diag (v5.9.20 added OnOffBoundCluster bind) |
 | JJ10 | Presence v5.8.66 motion 1sec lux broken diag 17c03ea7 | FIXED v5.8.77 motion/lux/distance OK |
-| Freddyboy | Moes TS0044 physical no flow v5.8.65 diag 34b9565c | ACTIVE — update v5.9.9 re-pair+diag |
+| Freddyboy | Moes TS0044 physical no flow v5.8.65 diag 34b9565c | ACTIVE — update v5.9.23 re-pair+diag (v5.9.20 multi-press fix + v5.9.22 safety guard) |
 
 ---
 
