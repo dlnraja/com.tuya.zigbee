@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.10.1** | v5.10.1: Diagnostic bug fixes — (1) Mains-powered radar sensors no longer spa... |
 | **v5.10.0** | v5.10.0: Tuya Local WiFi (LAN) support. Zero cloud dependency. New drivers: w... |
 | **v5.9.23** | v5.9.23: BSEED GROUP TOGGLE FIX for ALL multi-gang ZCL-only switches (2G/3G/4... |
 | **v5.9.22** | v5.9.22: (1) BUTTON 0-INDEX SAFETY GUARD — Created centralized TuyaPressTypeM... |
@@ -82,7 +83,6 @@
 | **v5.9.18** | v5.9.18: Deep DP audit for Peter 4x4 presence sensors — ZG_204ZV: +DP103/104/... |
 | **v5.9.17** | v5.9.17: Water deep sync + E000 cmdId fix + Unknown DP diagnostics — (1) wate... |
 | **v5.9.16** | v5.9.16: Water driver audit — (1) water_valve_smart: fixed class thermostat→o... |
-| **v5.9.15** | v5.9.15: BSEED TS0726 heartbeat fix (Hartmut) — Fixed 5-min periodic attr rep... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
