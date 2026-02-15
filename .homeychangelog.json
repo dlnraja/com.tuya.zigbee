@@ -1,4 +1,7 @@
 {
+  "5.10.6": {
+    "en": "v5.10.6: Exception hardening — Fixed null reference crashes in pet_feeder, garage_door (zclNode guard), radiator_controller (null flow card triggers, missing .catch()). Added try/catch to onSettings in fingerbot, bulb_rgb, usb_dongle_dual_repeater, usb_dongle_triple, button_wireless, curtain_motor. Fixed BaseHybridDevice catch-block crash (optional chaining). Guarded contact_sensor super.onSettings. All addCapability/removeCapability/setCapabilityValue calls verified safe."
+  },
   "5.10.5": {
     "en": "v5.10.5: Comprehensive Tuya EF00 frame drop prevention — Added 5 missing ZCL commands: sendData (0x04), statusReport (0x05), sceneQuery (0x09), sceneWakeup (0x0A), mcuVersionResponse (0x11) to both TuyaSpecificCluster and TuyaBoundCluster. Added FAULT DP type alias (ZHA compatibility). Research from Z2M, ZHA, Domoticz, Tasmota, Hubitat, official Tuya UART docs. Frames for these commands were previously silently dropped by Homey SDK3."
   },

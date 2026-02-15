@@ -212,23 +212,27 @@ class FingerbotDevice extends TuyaZigbeeDevice {
     this.log('[Fingerbot] Settings changed:', changedKeys);
 
     for (const key of changedKeys) {
-      switch (key) {
-        case 'fingerbot_mode':
-          const modeValue = { click: 0, switch: 1, program: 2 }[newSettings.fingerbot_mode] || 0;
-          await this.sendTuyaDP(DP_MODE, 'enum', modeValue);
-          break;
-        case 'lower_limit':
-          await this.sendTuyaDP(DP_LOWER, 'value', newSettings.lower_limit);
-          break;
-        case 'upper_limit':
-          await this.sendTuyaDP(DP_UPPER, 'value', newSettings.upper_limit);
-          break;
-        case 'sustain_time':
-          await this.sendTuyaDP(DP_DELAY, 'value', newSettings.sustain_time);
-          break;
-        case 'reverse_direction':
-          await this.sendTuyaDP(DP_REVERSE, 'bool', newSettings.reverse_direction);
-          break;
+      try {
+        switch (key) {
+          case 'fingerbot_mode':
+            const modeValue = { click: 0, switch: 1, program: 2 }[newSettings.fingerbot_mode] || 0;
+            await this.sendTuyaDP(DP_MODE, 'enum', modeValue);
+            break;
+          case 'lower_limit':
+            await this.sendTuyaDP(DP_LOWER, 'value', newSettings.lower_limit);
+            break;
+          case 'upper_limit':
+            await this.sendTuyaDP(DP_UPPER, 'value', newSettings.upper_limit);
+            break;
+          case 'sustain_time':
+            await this.sendTuyaDP(DP_DELAY, 'value', newSettings.sustain_time);
+            break;
+          case 'reverse_direction':
+            await this.sendTuyaDP(DP_REVERSE, 'bool', newSettings.reverse_direction);
+            break;
+        }
+      } catch (err) {
+        this.error(`[Fingerbot] Failed to apply setting ${key}:`, err.message);
       }
     }
   }

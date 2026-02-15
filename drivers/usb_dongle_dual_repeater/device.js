@@ -89,24 +89,28 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     const ep1 = this.zclNode?.endpoints?.[1];
 
-    if (changedKeys.includes('power_on_behavior')) {
-      const val = newSettings.power_on_behavior;
-      const map = { off: 0, on: 1, toggle: 3, previous: 2 };
-      const numVal = map[val] ?? 2;
-      this.log('[USB_DONGLE] Setting power_on_behavior →', val, '(', numVal, ')');
-      if (ep1?.clusters?.onOff) {
-        await ep1.clusters.onOff.writeAttributes({ moesStartUpOnOff: numVal });
+    try {
+      if (changedKeys.includes('power_on_behavior')) {
+        const val = newSettings.power_on_behavior;
+        const map = { off: 0, on: 1, toggle: 3, previous: 2 };
+        const numVal = map[val] ?? 2;
+        this.log('[USB_DONGLE] Setting power_on_behavior →', val, '(', numVal, ')');
+        if (ep1?.clusters?.onOff) {
+          await ep1.clusters.onOff.writeAttributes({ moesStartUpOnOff: numVal });
+        }
       }
-    }
 
-    if (changedKeys.includes('indicator_mode')) {
-      const val = newSettings.indicator_mode;
-      const map = { off: 0, on_off: 1, inverted: 2 };
-      const numVal = map[val] ?? 1;
-      this.log('[USB_DONGLE] Setting indicator_mode →', val, '(', numVal, ')');
-      if (ep1?.clusters?.onOff) {
-        await ep1.clusters.onOff.writeAttributes({ tuyaBacklightSwitch: numVal });
+      if (changedKeys.includes('indicator_mode')) {
+        const val = newSettings.indicator_mode;
+        const map = { off: 0, on_off: 1, inverted: 2 };
+        const numVal = map[val] ?? 1;
+        this.log('[USB_DONGLE] Setting indicator_mode →', val, '(', numVal, ')');
+        if (ep1?.clusters?.onOff) {
+          await ep1.clusters.onOff.writeAttributes({ tuyaBacklightSwitch: numVal });
+        }
       }
+    } catch (err) {
+      this.error('[USB_DONGLE] Failed to apply settings:', err.message);
     }
   }
 
