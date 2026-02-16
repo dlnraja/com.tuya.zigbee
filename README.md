@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.11.5** | v5.11.5: Settings freeze fix — (1) Water leak sensor: super.onSettings missin... |
 | **v5.11.4** | v5.11.4: Presence sensor radar fixes — (1) GH#127 Tauno20: WZ-M100 (_TZE204_e... |
 | **v5.11.3** | v5.11.3: (1) Presence sensor _TZE200_crq3r3la fix — Z2M #22833: removed non-e... |
 | **v5.11.2** | v5.11.2: Button 3-gang fix — _TZ3000_famkxci2 TS0043 not responding (diag rep... |
@@ -82,7 +83,6 @@
 | **v5.10.5** | v5.10.5: Comprehensive Tuya EF00 frame drop prevention — Added 5 missing ZCL ... |
 | **v5.10.4** | v5.10.4: Manufacturer-aware time sync epoch — centralized EPOCH_2000_MFRS lis... |
 | **v5.10.3** | v5.10.3: Tuya time sync overhaul — (1) CRITICAL: Removed manufacturerSpecific... |
-| **v5.10.2** | v5.10.2: Tuya 0xEF00 frame handling overhaul — (1) MCU Version Response (cmd ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
