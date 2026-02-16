@@ -1434,24 +1434,23 @@ const SENSOR_CONFIGS = {
   // TYPE I: TZE200_crq3r3la Presence Sensor CK-BL702-MWS-01 (Forum report 0790faa4, JJ10)
   // v5.5.503: User reported as "presence sensor" wrongly classified as climate_sensor
   // v5.8.71: JJ10 fix — IAS Zone sends conflicting false, add noIasMotion. USB powered (not battery).
-  //          Add DP101 (motion_state), DP106 (illuminance alt), DP122 (target_distance).
-  // DPs: 1=presence, 101=motion_state, 103=illuminance, 106=illuminance_alt, 113/119/123/124=settings, 122=distance
+  // v5.11.3: Z2M #22833 — uses ZCL occupancy. Removed DP103/106/122 (never reported). Added mainsPowered.
+  // DPs: 1=presence(bool), 101=motion_state(setting), 113/119/123/124=settings
   // ─────────────────────────────────────────────────────────────────────────────
   'TZE200_CRQ3R3LA': {
     sensors: ['_TZE200_crq3r3la', '_TZE200_CRQ3R3LA'],
     battery: false,
-    hasIlluminance: true,
+    mainsPowered: true,
+    noBatteryCapability: true,
+    hasIlluminance: false,
     noTemperature: true,
     noHumidity: true,
     noIasMotion: true,
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       101: { cap: null, setting: 'motion_state' },
-      103: { cap: 'measure_luminance', type: 'lux_direct' },
-      106: { cap: 'measure_luminance', type: 'lux_direct' },
       113: { cap: null, setting: 'mode' },
       119: { cap: null, setting: 'sensitivity' },
-      122: { cap: 'measure_luminance.distance', divisor: 100 },
       123: { cap: null, setting: 'detection_delay' },
       124: { cap: null, setting: 'indicator' },
     }
@@ -2431,6 +2430,14 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       try {
         await this.removeCapability('measure_luminance.distance');
         this.log('[RADAR] 🧹 Removed orphan measure_luminance.distance (not supported by this sensor)');
+      } catch (e) { /* ignore */ }
+    }
+
+    // v5.11.3: Remove orphan measure_luminance if not supported (e.g. _TZE200_crq3r3la)
+    if (!hasLuxDP && this.hasCapability('measure_luminance')) {
+      try {
+        await this.removeCapability('measure_luminance');
+        this.log('[RADAR] 🧹 Removed orphan measure_luminance (not supported by this sensor)');
       } catch (e) { /* ignore */ }
     }
 
