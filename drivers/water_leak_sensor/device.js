@@ -403,7 +403,7 @@ class WaterLeakSensorDevice extends HybridSensorBase {
       }
     }
     if (super.onSettings) {
-      await super.onSettings({ oldSettings, newSettings, changedKeys });
+      await super.onSettings({ oldSettings, newSettings, changedKeys }).catch(e => this.error('[WATER] super.onSettings error:', e.message));
     }
   }
 
