@@ -411,10 +411,16 @@ class WaterLeakSensorDevice extends HybridSensorBase {
    * v5.5.713: Override setCapabilityValue to apply inversion for alarm_water (Lasse_K forum fix)
    */
   async setCapabilityValue(capability, value) {
-    if (capability === 'alarm_water' && this._invertAlarm) {
-      const invertedValue = !value;
-      this.log(`[WATER] 🔄 Inverting alarm: ${value} → ${invertedValue}`);
-      return super.setCapabilityValue(capability, invertedValue);
+    if (capability === 'alarm_water') {
+      // v5.11.5: Skip inversion for IAS events — HybridSensorBase already applied it
+      // Prevents double-inversion bug (Lasse_K forum)
+      const isIAS = this._iasOriginatedWaterAlarm;
+      this._iasOriginatedWaterAlarm = false;
+      if (this._invertAlarm && !isIAS) {
+        const invertedValue = !value;
+        this.log(`[WATER] 🔄 Inverting alarm: ${value} → ${invertedValue}`);
+        return super.setCapabilityValue(capability, invertedValue);
+      }
     }
     return super.setCapabilityValue(capability, value);
   }
