@@ -37,13 +37,13 @@
   },
   "settings": [
     {
-      "id": "zb_model_id",
+      "id": "zigbee_model_id",
       "type": "label",
       "label": { "en": "Zigbee Model ID" },
       "value": ""
     },
     {
-      "id": "zb_manufacturer_name",
+      "id": "zigbee_manufacturer_name",
       "type": "label",
       "label": { "en": "Zigbee Manufacturer" },
       "value": ""
