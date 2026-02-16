@@ -1300,6 +1300,8 @@ const SENSOR_CONFIGS = {
       // useTuyaDP:false broke ALL Tuya DP processing for ZG-204ZV/ZL devices!
     ],
     battery: true,
+    suppressBatteryWarnings: true,   // v5.11.3: Patrick_Van_Deursen battery 100%↔1% fix
+    batteryThrottleMs: 3600000,      // v5.11.3: Throttle battery updates to 1/hour
     useZcl: true,           // v5.5.990: Primary - use ZCL clusters
     useIasZone: true,       // v5.5.990: Motion via IAS Zone cluster 1280
     useTuyaDP: false,       // v5.5.990: NO Tuya DP cluster on these variants!
@@ -2620,9 +2622,21 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       self.setCapabilityValue('measure_luminance', lux).catch(() => {});
     });
 
+    // v5.11.3: Add throttle to prevent duplicate unthrottled battery updates
+    // Root cause of Patrick_Van_Deursen battery oscillation (100%↔1%):
+    // _setupZclClusters registers a throttled listener, but this permissive one
+    // was firing unthrottled on every attr report, bypassing the throttle.
+    let lastPermBattUpdate = 0;
+    let lastPermBattValue = null;
+    const battThrottleMs = config.batteryThrottleMs || 300000;
     listen(ep1.clusters?.genPowerCfg || ep1.clusters?.powerConfiguration, 'attr.batteryPercentageRemaining', async (v) => {
       if (v === undefined || v === 255) return;
       const b = Math.min(100, Math.round(v / 2));
+      const now = Date.now();
+      if (now - lastPermBattUpdate < battThrottleMs) return;
+      if (lastPermBattValue !== null && Math.abs(b - lastPermBattValue) < 5) return;
+      lastPermBattUpdate = now;
+      lastPermBattValue = b;
       if (!self.hasCapability('measure_battery'))
         await self.addCapability('measure_battery').catch(() => {});
       self.setCapabilityValue('measure_battery', b).catch(() => {});
