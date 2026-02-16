@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.11.1** | v5.11.1: Forum fixes — (1) Soil sensor _TZE284_oitavov2 temperature fix: raw ... |
 | **v5.11.0** | v5.11.0: Tuya WiFi Local Integration — Added 20 new WiFi local drivers: switc... |
 | **v5.10.6** | v5.10.6: Exception hardening — Fixed null reference crashes in pet_feeder, ga... |
 | **v5.10.5** | v5.10.5: Comprehensive Tuya EF00 frame drop prevention — Added 5 missing ZCL ... |
@@ -82,7 +83,6 @@
 | **v5.10.1** | v5.10.1: Diagnostic bug fixes — (1) Mains-powered radar sensors no longer spa... |
 | **v5.10.0** | v5.10.0: Tuya Local WiFi (LAN) support. Zero cloud dependency. New drivers: w... |
 | **v5.9.23** | v5.9.23: BSEED GROUP TOGGLE FIX for ALL multi-gang ZCL-only switches (2G/3G/4... |
-| **v5.9.22** | v5.9.22: (1) BUTTON 0-INDEX SAFETY GUARD — Created centralized TuyaPressTypeM... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
