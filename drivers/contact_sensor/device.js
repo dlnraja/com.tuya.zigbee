@@ -234,15 +234,13 @@ class ContactSensorDevice extends HybridSensorBase {
    */
   async setCapabilityValue(capability, value) {
     if (capability === 'alarm_contact') {
-      // v5.8.98: Lasse_K fix — user-explicit inversion applies to ALL events (IAS + DP)
-      // Auto-detected inversion (invertedByDefault) only applies to DP events
-      // IAS Zone alarm1=true already means "open/alarm" per ZCL spec
+      // v5.11.5: For IAS events, HybridSensorBase already applied correct inversion
+      // (manufacturer defaults XOR user settings including reverse_alarm)
+      // Only apply device-level inversion for non-IAS events (Tuya DP)
       const isIAS = this._iasOriginatedAlarm;
       this._iasOriginatedAlarm = false; // Reset flag
 
-      // User-explicit invert: always apply (user toggled invert_contact or reverse_alarm)
-      // Auto-detected invert: skip for IAS (IAS follows ZCL spec, only DP is inverted)
-      const shouldInvert = this._userExplicitInvert || (!isIAS && this._invertContact);
+      const shouldInvert = isIAS ? false : (this._userExplicitInvert || this._invertContact);
       let finalValue = shouldInvert ? !value : value;
 
       const now = Date.now();

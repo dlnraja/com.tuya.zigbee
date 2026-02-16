@@ -1,6 +1,6 @@
 {
   "5.11.5": {
-    "en": "v5.11.5: Settings freeze fix — (1) Water leak sensor: super.onSettings missing .catch() caused settings page freeze on sleepy devices (Lasse_K forum). (2) Same fix applied to motion_sensor and presence_sensor_radar. (3) All 4 sensor drivers now have consistent error handling on onSettings."
+    "en": "v5.11.5: Lasse_K forum fixes — (1) Water sensor double-inversion bug: IAS events were inverted by HybridSensorBase AND water sensor override, canceling out when invert_alarm enabled. Added _iasOriginatedWaterAlarm flag. (2) Contact sensor same bug: invert_contact on IAS events was applied twice. HybridSensorBase now checks both invert_contact and reverse_alarm; contact sensor skips inversion for IAS. (3) Settings freeze: water_leak_sensor, motion_sensor, presence_sensor_radar super.onSettings missing .catch()."
   },
   "5.11.4": {
     "en": "v5.11.4: Presence sensor radar fixes — (1) GH#127 Tauno20: WZ-M100 (_TZE204_e5m9c5hl) settings now exposed — radar sensitivity, min/max detection range, detection delay, fading time are now adjustable in device settings (were internal-only). (2) Same fix for ZY-M100-S1 side wall variant. (3) Fixed noisy 'unknown DP' log for DPs already handled by dpMap (e.g. DP106 on HOBEIAN ZG-204ZM). (4) Fixed parseInt→parseFloat in onSettings for decimal range values (e.g. 6.5m). (5) Added 4 new settings definitions to presence_sensor_radar driver.compose.json."
