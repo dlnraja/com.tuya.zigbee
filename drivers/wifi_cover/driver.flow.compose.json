@@ -1,0 +1,37 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_cover_opened",
+      "title": {
+        "en": "Opened"
+      }
+    },
+    {
+      "id": "wifi_cover_closed",
+      "title": {
+        "en": "Closed"
+      }
+    }
+  ],
+  "conditions": [],
+  "actions": [
+    {
+      "id": "wifi_cover_open",
+      "title": {
+        "en": "Open"
+      }
+    },
+    {
+      "id": "wifi_cover_close",
+      "title": {
+        "en": "Close"
+      }
+    },
+    {
+      "id": "wifi_cover_stop",
+      "title": {
+        "en": "Stop"
+      }
+    }
+  ]
+}
