@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.3",
+  "version": "5.11.4",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -65831,6 +65831,73 @@
           }
         },
         {
+          "id": "radar_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Radar Sensitivity",
+            "fr": "Sensibilité Radar"
+          },
+          "value": 5,
+          "min": 1,
+          "max": 9,
+          "step": 1,
+          "hint": {
+            "en": "Radar detection sensitivity (1=lowest, 9=highest)",
+            "fr": "Sensibilité radar (1=min, 9=max)"
+          }
+        },
+        {
+          "id": "min_range",
+          "type": "number",
+          "label": {
+            "en": "Minimum Detection Range",
+            "fr": "Portée Minimale"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "units": "m",
+          "hint": {
+            "en": "Minimum detection range (0-10m)",
+            "fr": "Portée minimale de détection (0-10m)"
+          }
+        },
+        {
+          "id": "max_range",
+          "type": "number",
+          "label": {
+            "en": "Maximum Detection Range",
+            "fr": "Portée Maximale"
+          },
+          "value": 6,
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "units": "m",
+          "hint": {
+            "en": "Maximum detection range (0-10m)",
+            "fr": "Portée maximale de détection (0-10m)"
+          }
+        },
+        {
+          "id": "detection_delay",
+          "type": "number",
+          "label": {
+            "en": "Detection Delay",
+            "fr": "Délai de Détection"
+          },
+          "value": 1,
+          "min": 0,
+          "max": 10,
+          "step": 0.1,
+          "units": "s",
+          "hint": {
+            "en": "Delay before presence is reported (0-10s)",
+            "fr": "Délai avant signalement de présence (0-10s)"
+          }
+        },
+        {
           "id": "indicator",
           "type": "checkbox",
           "label": {
@@ -65841,8 +65908,8 @@
           },
           "value": true,
           "hint": {
-            "en": "ZG-204ZM: Enable/disable the LED indicator on the sensor",
-            "fr": "ZG-204ZM: Activer/désactiver l'indicateur LED sur le capteur"
+            "en": "Enable/disable the LED indicator on the sensor",
+            "fr": "Activer/désactiver l'indicateur LED"
           }
         }
       ],

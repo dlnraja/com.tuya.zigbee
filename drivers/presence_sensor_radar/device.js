@@ -983,12 +983,12 @@ const SENSOR_CONFIGS = {
       1: { cap: 'alarm_motion', type: 'presence_enum', fallback: true },
       104: { cap: 'measure_luminance', type: 'lux_direct' },
       105: { cap: 'alarm_motion', type: 'presence_enum' },
-      106: { cap: null, internal: 'motion_sensitivity' },
-      107: { cap: null, internal: 'max_range', divisor: 100 },
-      108: { cap: null, internal: 'min_range', divisor: 100 },
+      106: { cap: null, setting: 'radar_sensitivity', min: 1, max: 9 },
+      107: { cap: null, setting: 'max_range', divisor: 100, min: 0, max: 1000 },
+      108: { cap: null, setting: 'min_range', divisor: 100, min: 0, max: 1000 },
       109: { cap: 'measure_luminance.distance', divisor: 100 },
-      110: { cap: null, internal: 'fading_time', divisor: 10 },
-      111: { cap: null, internal: 'detection_delay', divisor: 10 },
+      110: { cap: null, setting: 'fading_time', divisor: 10, min: 50, max: 15000 },
+      111: { cap: null, setting: 'detection_delay', divisor: 10, min: 0, max: 100 },
       112: { cap: 'alarm_motion', type: 'presence_bool' },
     }
   },
@@ -1014,12 +1014,12 @@ const SENSOR_CONFIGS = {
     dpMap: {
       104: { cap: 'measure_luminance', type: 'lux_direct' },
       105: { cap: 'alarm_motion', type: 'presence_bool' },  // trueFalse1 in Z2M
-      106: { cap: null, internal: 'radar_sensitivity' },
-      107: { cap: null, internal: 'max_range', divisor: 100 },
-      108: { cap: null, internal: 'min_range', divisor: 100 },
+      106: { cap: null, setting: 'radar_sensitivity', min: 1, max: 9 },
+      107: { cap: null, setting: 'max_range', divisor: 100, min: 0, max: 1000 },
+      108: { cap: null, setting: 'min_range', divisor: 100, min: 0, max: 1000 },
       109: { cap: 'measure_luminance.distance', divisor: 100 },
-      110: { cap: null, internal: 'fading_time', divisor: 10 },
-      111: { cap: null, internal: 'detection_delay', divisor: 10 },
+      110: { cap: null, setting: 'fading_time', divisor: 10, min: 50, max: 15000 },
+      111: { cap: null, setting: 'detection_delay', divisor: 10, min: 0, max: 100 },
     }
   },
 
@@ -3002,8 +3002,11 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       }
     }
 
-    // Log other unmapped DPs for diagnostic purposes only
-    this.log(`[RADAR] 📡 DP${dpId} = ${value} (unknown DP, please report to developer)`);
+    // v5.11.4: Only log "unknown DP" if dpMap doesn't already handle it
+    // Fixes noisy DP106 logs for HOBEIAN_ZG204ZM and other configs where dpMap handles lux/settings
+    if (!dpMap[dpId]) {
+      this.log(`[RADAR] 📡 DP${dpId} = ${value} (unknown DP, please report to developer)`);
+    }
   }
 
   /**
@@ -4081,8 +4084,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           let val = newSettings[key];
           // Convert boolean to 0/1
           if (typeof val === 'boolean') val = val ? 1 : 0;
-          // Parse string to number
-          val = parseInt(val) || 0;
+          // Parse string to number (parseFloat to preserve decimal steps like 0.5m)
+          val = parseFloat(val) || 0;
           // Apply divisor in reverse (multiply) for distance values stored as meters
           if (mapping.divisor && mapping.divisor > 1) val = Math.round(val * mapping.divisor);
           // Clamp to min/max if defined
