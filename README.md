@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.11.3** | v5.11.3: Presence sensor _TZE200_crq3r3la CK-BL702-MWS-01 fix (diag report). ... |
 | **v5.11.2** | v5.11.2: Button 3-gang fix — _TZ3000_famkxci2 TS0043 not responding (diag rep... |
 | **v5.11.1** | v5.11.1: Forum fixes — (1) Soil sensor _TZE284_oitavov2 temperature fix: raw ... |
 | **v5.11.0** | v5.11.0: Tuya WiFi Local Integration — Added 20 new WiFi local drivers: switc... |
@@ -82,7 +83,6 @@
 | **v5.10.3** | v5.10.3: Tuya time sync overhaul — (1) CRITICAL: Removed manufacturerSpecific... |
 | **v5.10.2** | v5.10.2: Tuya 0xEF00 frame handling overhaul — (1) MCU Version Response (cmd ... |
 | **v5.10.1** | v5.10.1: Diagnostic bug fixes — (1) Mains-powered radar sensors no longer spa... |
-| **v5.10.0** | v5.10.0: Tuya Local WiFi (LAN) support. Zero cloud dependency. New drivers: w... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
