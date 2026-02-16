@@ -309,7 +309,7 @@ class Button4GangDevice extends ButtonDevice {
         }
 
         // v5.8.6: Bind clusters so sleepy device sends events to Homey
-        for (const cl of [endpoint.clusters?.onOff, endpoint.clusters?.genMultistateInput, endpoint.clusters?.scenes]) {
+        for (const cl of [endpoint.clusters?.onOff, endpoint.clusters?.multistateInput || endpoint.clusters?.genMultistateInput, endpoint.clusters?.scenes]) {
           if (cl?.bind) { try { await cl.bind(); } catch (e) { /* non-critical */ } }
         }
 
