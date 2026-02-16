@@ -4,7 +4,8 @@
   },
   "class": "other",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "measure_battery"
   ],
   "pair": [
     {
@@ -107,5 +108,8 @@
   ],
   "connectivity": [
     "lan"
-  ]
+  ],
+  "energy": {
+    "batteries": ["INTERNAL"]
+  }
 }
