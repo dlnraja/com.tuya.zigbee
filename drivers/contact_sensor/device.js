@@ -206,10 +206,10 @@ class ContactSensorDevice extends HybridSensorBase {
       this._invertContact = inv || rev;
       this._userExplicitInvert = this._invertContact;
       this.log(`[CONTACT] Invert setting changed to: ${this._invertContact} (invert=${inv}, reverse=${rev})`);
-      // Toggle current state
+      // Toggle current displayed state — use super to bypass invert override
       const current = this.getCapabilityValue('alarm_contact');
       if (current !== null) {
-        await this.setCapabilityValue('alarm_contact', !current).catch(() => { });
+        await super.setCapabilityValue('alarm_contact', !current).catch(() => { });
       }
     }
     if (super.onSettings) {

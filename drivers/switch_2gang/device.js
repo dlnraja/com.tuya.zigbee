@@ -22,7 +22,8 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 // ZCL-Only manufacturers (no Tuya DP) - forum: Pieter_Pessers BSEED 2-gang
 const ZCL_ONLY_MANUFACTURERS_2G = [
   '_TZ3000_l9brjwau', '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk',
-  '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt'
+  '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt',
+  '_TZ3000_cauq1okq'  // v5.11.1: Piotr_Cetler forum - both gangs switch together
 ];
 
 class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
