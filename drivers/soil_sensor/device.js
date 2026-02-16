@@ -106,10 +106,10 @@ class SoilSensorDevice extends TuyaHybridDevice {
       5: {
         capability: 'measure_temperature',
         transform: (v) => {
-          // Auto-detect scale: if value > 1000, it's ÷100, else ÷10
-          if (v > 1000) return v / 100;
-          if (v > 100) return v / 10;
-          return v / 10; // Default ÷10
+          // Auto-detect scale: >1000=÷100, 100-1000=÷10, ≤100=raw °C
+          if (Math.abs(v) > 1000) return v / 100;
+          if (Math.abs(v) > 100) return v / 10;
+          return v; // Already in °C (_TZE284_oitavov2 QT-07S)
         }
       },
 

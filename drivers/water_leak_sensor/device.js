@@ -396,10 +396,10 @@ class WaterLeakSensorDevice extends HybridSensorBase {
     if (changedKeys.includes('invert_alarm')) {
       this._invertAlarm = newSettings.invert_alarm;
       this.log(`[WATER] Invert setting changed to: ${this._invertAlarm}`);
-      // Toggle current state if inverted
+      // Toggle current displayed state — use super to bypass invert override
       const current = this.getCapabilityValue('alarm_water');
       if (current !== null) {
-        await this.setCapabilityValue('alarm_water', !current).catch(() => { });
+        await super.setCapabilityValue('alarm_water', !current).catch(() => { });
       }
     }
     if (super.onSettings) {
