@@ -5,7 +5,10 @@
   "class": "other",
   "capabilities": [
     "onoff",
-    "alarm_generic"
+    "alarm_generic",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
   ],
   "pair": [
     {
@@ -108,5 +111,8 @@
   ],
   "connectivity": [
     "lan"
-  ]
+  ],
+  "energy": {
+    "batteries": ["INTERNAL"]
+  }
 }

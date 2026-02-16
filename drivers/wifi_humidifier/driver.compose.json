@@ -5,7 +5,9 @@
   "class": "other",
   "capabilities": [
     "onoff",
-    "measure_humidity"
+    "measure_humidity",
+    "measure_temperature",
+    "alarm_water"
   ],
   "pair": [
     {

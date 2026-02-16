@@ -81189,7 +81189,11 @@
       },
       "class": "other",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "dim",
+        "measure_pm25",
+        "measure_temperature",
+        "measure_humidity"
       ],
       "pair": [
         {
@@ -81528,7 +81532,9 @@
       "class": "lock",
       "capabilities": [
         "locked",
-        "measure_battery"
+        "measure_battery",
+        "alarm_generic",
+        "alarm_contact"
       ],
       "pair": [
         {
@@ -81758,7 +81764,8 @@
       },
       "class": "garagedoor",
       "capabilities": [
-        "garagedoor_closed"
+        "garagedoor_closed",
+        "alarm_contact"
       ],
       "pair": [
         {
@@ -82145,7 +82152,9 @@
       "class": "other",
       "capabilities": [
         "onoff",
-        "measure_humidity"
+        "measure_humidity",
+        "measure_temperature",
+        "alarm_water"
       ],
       "pair": [
         {
@@ -82486,7 +82495,8 @@
       },
       "class": "other",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "measure_battery"
       ],
       "pair": [
         {
@@ -82590,6 +82600,11 @@
       "connectivity": [
         "lan"
       ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
       "id": "wifi_pet_feeder"
     },
     {
@@ -82600,7 +82615,9 @@
       "capabilities": [
         "onoff",
         "measure_power",
-        "meter_power"
+        "meter_power",
+        "measure_current",
+        "measure_voltage"
       ],
       "pair": [
         {
@@ -82713,7 +82730,8 @@
       "class": "vacuumcleaner",
       "capabilities": [
         "onoff",
-        "vacuumcleaner_state"
+        "vacuumcleaner_state",
+        "measure_battery"
       ],
       "pair": [
         {
@@ -82817,6 +82835,11 @@
       "connectivity": [
         "lan"
       ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
       "id": "wifi_robot_vacuum"
     },
     {
@@ -82827,7 +82850,8 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "pair": [
         {
@@ -82945,7 +82969,10 @@
       "class": "other",
       "capabilities": [
         "onoff",
-        "alarm_generic"
+        "alarm_generic",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_battery"
       ],
       "pair": [
         {
@@ -83049,6 +83076,11 @@
       "connectivity": [
         "lan"
       ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
       "id": "wifi_siren"
     },
     {
@@ -83564,7 +83596,8 @@
       "capabilities": [
         "onoff",
         "target_temperature",
-        "measure_temperature"
+        "measure_temperature",
+        "measure_humidity"
       ],
       "pair": [
         {
@@ -83676,7 +83709,8 @@
       },
       "class": "other",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "measure_battery"
       ],
       "pair": [
         {
@@ -83780,6 +83814,11 @@
       "connectivity": [
         "lan"
       ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
       "id": "wifi_water_valve"
     },
     {

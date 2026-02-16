@@ -5,7 +5,9 @@
   "class": "lock",
   "capabilities": [
     "locked",
-    "measure_battery"
+    "measure_battery",
+    "alarm_generic",
+    "alarm_contact"
   ],
   "pair": [
     {

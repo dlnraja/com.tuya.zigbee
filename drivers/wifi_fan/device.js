@@ -1,8 +1,28 @@
 'use strict';
-const TuyaLocalDevice=require('../../lib/tuya-local/TuyaLocalDevice');
-class D extends TuyaLocalDevice{
-get dpMappings(){return{
-'1':{capability:'onoff',writable:true,transform:v=>!!v,reverseTransform:v=>!!v},
-'3':{capability:'dim',writable:true,transform:v=>v/100,reverseTransform:v=>Math.round(v*100)},
-}}}
-module.exports=D;
+const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
+
+class WiFiFanDevice extends TuyaLocalDevice {
+  get dpMappings() {
+    return {
+      '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
+      '2':  { capability: null },
+      '3':  { capability: 'dim', writable: true,
+        transform: (v) => Math.max(0, Math.min(1, v / 100)),
+        reverseTransform: (v) => Math.round(v * 100) },
+      '4':  { capability: null },
+      '6':  { capability: null },
+      '8':  { capability: null },
+      '9':  { capability: 'onoff.light', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
+      '10': { capability: null },
+      '11': { capability: null },
+      '12': { capability: null },
+    };
+  }
+
+  async onInit() {
+    await super.onInit();
+    this.log('[WIFI-FAN] Ready');
+  }
+}
+
+module.exports = WiFiFanDevice;
