@@ -1,0 +1,37 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_thermostat_temp_changed",
+      "title": {
+        "en": "Temperature changed"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature"
+          }
+        }
+      ]
+    }
+  ],
+  "conditions": [],
+  "actions": [
+    {
+      "id": "wifi_thermostat_set_temp",
+      "title": {
+        "en": "Set temperature"
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "range",
+          "min": 5,
+          "max": 35,
+          "step": 0.5
+        }
+      ]
+    }
+  ]
+}

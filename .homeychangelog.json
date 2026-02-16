@@ -1,4 +1,7 @@
 {
+  "5.11.0": {
+    "en": "v5.11.0: Tuya WiFi Local Integration — Added 20 new WiFi local drivers: switch (1-4 gang), smart plug (energy monitoring), dimmer, RGBCW light, curtain motor, thermostat, fan, humidifier, siren, garage door, temp/humidity sensor, water valve, air purifier, IR remote, pet feeder, door lock, robot vacuum. Enhanced TuyaLocalClient with protocol auto-detection (v3.1/3.3/3.4/3.5 fallback), concurrent connect guard, better error classification. Fixed TuyaLocalDevice onInit/onSettings try/catch, null guard on capability listeners. Fixed TuyaCloudAPI error codes for token refresh. Fixed water_valve_garden zb_ prefix validation. All devices use tuyapi local LAN control — no cloud needed."
+  },
   "5.10.6": {
     "en": "v5.10.6: Exception hardening — Fixed null reference crashes in pet_feeder, garage_door (zclNode guard), radiator_controller (null flow card triggers, missing .catch()). Added try/catch to onSettings in fingerbot, bulb_rgb, usb_dongle_dual_repeater, usb_dongle_triple, button_wireless, curtain_motor. Fixed BaseHybridDevice catch-block crash (optional chaining). Guarded contact_sensor super.onSettings. All addCapability/removeCapability/setCapabilityValue calls verified safe."
   },
