@@ -4064,7 +4064,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     // Call parent onSettings first (handles generic sensor settings)
-    await super.onSettings({ oldSettings, newSettings, changedKeys });
+    await super.onSettings({ oldSettings, newSettings, changedKeys }).catch(e => this.error('[RADAR] super.onSettings error:', e.message));
 
     const config = this._getSensorConfig();
     const dpMap = config?.dpMap || {};

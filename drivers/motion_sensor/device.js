@@ -1716,7 +1716,7 @@ class MotionSensorDevice extends HybridSensorBase {
    * Source: Z2M #12364 — DP9=sensitivity(enum 0/1/2), DP10=keep_time(enum 0/1/2/3)
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    await super.onSettings({ oldSettings, newSettings, changedKeys });
+    await super.onSettings({ oldSettings, newSettings, changedKeys }).catch(e => this.error('[MOTION] super.onSettings error:', e.message));
 
     const PIR_SETTING_DP_MAP = {
       pir_sensitivity: { dp: 9, type: 'enum' },
