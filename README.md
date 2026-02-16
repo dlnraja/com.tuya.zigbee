@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.11.0** | v5.11.0: Tuya WiFi Local Integration — Added 20 new WiFi local drivers: switc... |
 | **v5.10.6** | v5.10.6: Exception hardening — Fixed null reference crashes in pet_feeder, ga... |
 | **v5.10.5** | v5.10.5: Comprehensive Tuya EF00 frame drop prevention — Added 5 missing ZCL ... |
 | **v5.10.4** | v5.10.4: Manufacturer-aware time sync epoch — centralized EPOCH_2000_MFRS lis... |
@@ -82,7 +83,6 @@
 | **v5.10.0** | v5.10.0: Tuya Local WiFi (LAN) support. Zero cloud dependency. New drivers: w... |
 | **v5.9.23** | v5.9.23: BSEED GROUP TOGGLE FIX for ALL multi-gang ZCL-only switches (2G/3G/4... |
 | **v5.9.22** | v5.9.22: (1) BUTTON 0-INDEX SAFETY GUARD — Created centralized TuyaPressTypeM... |
-| **v5.9.21** | v5.9.21: NEW DRIVER water_valve_garden — TS0049 garden water valve using ZCL ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
