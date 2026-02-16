@@ -34,10 +34,11 @@ class Button3GangDevice extends ButtonDevice {
 
     // v5.8.39: Comprehensive button detection (GitHub #98)
     await this._setupOnOffCommands(zclNode);
+    await this._setupMultistateInput(zclNode);
     await this._setupE000BoundCluster(zclNode);
     await this._setupRawFrameInterceptor(zclNode);
 
-    this.log('[BUTTON3] ✅ initialized - OnOff + E000 + Raw interceptor');
+    this.log('[BUTTON3] ✅ initialized - OnOff + MultiState + E000 + Raw interceptor');
   }
 
   // Deduplication helper for button presses
@@ -102,6 +103,20 @@ class Button3GangDevice extends ButtonDevice {
       } catch(e) { this.log(`[BUTTON3-0xFD] ${e.message}`); }
 
       this.log(`[BUTTON3] ✅ EP${ep} onOff listeners ready`);
+    }
+  }
+
+  async _setupMultistateInput(zclNode) {
+    for (let ep = 1; ep <= 3; ep++) {
+      const c = zclNode?.endpoints?.[ep]?.clusters?.multistateInput
+        || zclNode?.endpoints?.[ep]?.clusters?.genMultistateInput
+        || zclNode?.endpoints?.[ep]?.clusters?.[0x0012];
+      if (!c || typeof c.on !== 'function') continue;
+      c.on('attr.presentValue', async (v) => {
+        const m = { 0: 'long', 1: 'single', 2: 'double', 3: 'multi' };
+        await this._handleButton(ep, `ms_${v}`, m[v] || 'single');
+      });
+      this.log(`[BUTTON3] ✅ EP${ep} multistateInput ready`);
     }
   }
 

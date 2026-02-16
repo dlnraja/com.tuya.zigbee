@@ -1,4 +1,7 @@
 {
+  "5.11.2": {
+    "en": "v5.11.2: Button 3-gang fix — _TZ3000_famkxci2 TS0043 not responding (diag report). Root cause: multistateInput cluster name mismatch in Homey SDK3 (genMultistateInput vs multistateInput). Added dedicated multistateInput listener to button_wireless_3. Fixed same lookup in ButtonDevice base class (affects all button drivers). Fixed genMultistateInput binding in button_wireless_4."
+  },
   "5.11.1": {
     "en": "v5.11.1: Forum fixes — (1) Soil sensor _TZE284_oitavov2 temperature fix: raw values ≤100 no longer divided by 10 (DutchDuke). (2) Contact sensor: fixed settings freeze when toggling invert_contact/reverse_alarm (Lasse_K). (3) Water leak sensor: fixed same settings freeze on invert_alarm toggle (Lasse_K). (4) Switch 2-gang: added _TZ3000_cauq1okq to ZCL-only list for group isolation — fixes both gangs switching together (Piotr_Cetler). (5) WiFi driver images: replaced all 22 generic placeholders with real device images from matching Zigbee drivers. (6) WiFi driver classes: humidifier→fan, siren→speaker, air_purifier→fan."
   },
