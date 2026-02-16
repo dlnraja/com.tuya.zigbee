@@ -81187,7 +81187,7 @@
       "name": {
         "en": "WiFi Air Purifier (Tuya Local)"
       },
-      "class": "other",
+      "class": "fan",
       "capabilities": [
         "onoff",
         "dim",
@@ -82149,7 +82149,7 @@
       "name": {
         "en": "WiFi Humidifier (Tuya Local)"
       },
-      "class": "other",
+      "class": "fan",
       "capabilities": [
         "onoff",
         "measure_humidity",
@@ -82966,7 +82966,7 @@
       "name": {
         "en": "WiFi Siren (Tuya Local)"
       },
-      "class": "other",
+      "class": "speaker",
       "capabilities": [
         "onoff",
         "alarm_generic",

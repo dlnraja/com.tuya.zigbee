@@ -2,7 +2,7 @@
   "name": {
     "en": "WiFi Humidifier (Tuya Local)"
   },
-  "class": "other",
+  "class": "fan",
   "capabilities": [
     "onoff",
     "measure_humidity",
