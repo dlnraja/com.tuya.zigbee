@@ -756,7 +756,7 @@ const SENSOR_CONFIGS = {
   // DP mappings confirmed from motion_sensor device.js ZG204ZV profile
   'ZG_204ZV_MULTISENSOR': {
     sensors: [
-      '_TZE200_3towulqd', '_TZE204_3towulqd', '_tze200_3towulqd',
+      // v5.11.3: MOVED _TZE200_3towulqd to ZG_204ZL_PIR (Z2M #12364: PIR-only, DPs incompatible)
       // v5.5.914: shaarkys fork - additional ZG-204ZV fingerprints
       // NOTE: _TZE200_rhgsbacq/_TZE204_rhgsbacq moved to HOBEIAN_10G_MULTI (ZG-227Z, not ZG-204ZV)
       '_TZE200_grgol3xp', '_TZE204_grgol3xp',
@@ -814,7 +814,7 @@ const SENSOR_CONFIGS = {
   'ZY_M100_SIMPLE': {
     sensors: [
       '_TZE200_0u3bj3rc', '_TZE200_mx6u6l4y', '_TZE200_v6ossqfy',
-      // v5.5.281: Added from Z2M research (removed _TZE200_3towulqd - now in ZG_204ZV_MULTISENSOR)
+      // v5.5.281: Added from Z2M research (removed _TZE200_3towulqd - now in ZG_204ZL_PIR)
       '_TZE200_1ibpyhdc', '_TZE204_1ibpyhdc',
       // v5.5.509: Additional mains-powered ceiling sensors
       '_TZE200_auin8mzr', '_TZE204_auin8mzr',
@@ -870,8 +870,9 @@ const SENSOR_CONFIGS = {
   // ─────────────────────────────────────────────────────────────────────────────
   'ZG_204ZL_PIR': {
     sensors: [
-      // v5.8.63: REMOVED _TZE200_3towulqd - was overriding ZG_204ZV_MULTISENSOR in config map
-      // _TZE200_3towulqd now resolves to ZG_204ZV_MULTISENSOR (superset), PIR-only handled in motion_sensor
+      // v5.11.3: RESTORED _TZE200_3towulqd here (Z2M #12364: PIR+lux only, DPs 1/4/9/10/12)
+      // Was wrongly in ZG_204ZV_MULTISENSOR since v5.8.63 causing DP4=battery→humidity, DP9=sensitivity→lux
+      '_TZE200_3towulqd', '_TZE204_3towulqd', '_tze200_3towulqd',
       '_TZE200_1ibpyhdc', '_TZE200_bh3n6gk8',
     ],
     battery: true,
@@ -1295,7 +1296,7 @@ const SENSOR_CONFIGS = {
       '_TZE200_kb5noeto',  // v5.5.990: Patrick_Van_Deursen - ZCL-only variant
       // v5.8.63: REMOVED _TZE204_ztqnh5cg - was OVERRIDING TZE284_IADRO9BF in config map
       // useTuyaDP:false broke Tuya DP processing. Now resolves to TZE284_IADRO9BF correctly.
-      // v5.8.63: REMOVED _TZE200_3towulqd - was OVERRIDING ZG_204ZV_MULTISENSOR in config map
+      // v5.8.63: REMOVED _TZE200_3towulqd - now in ZG_204ZL_PIR (Z2M #12364: correct DPs)
       // useTuyaDP:false broke ALL Tuya DP processing for ZG-204ZV/ZL devices!
     ],
     battery: true,
