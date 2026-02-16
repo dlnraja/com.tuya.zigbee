@@ -4,7 +4,8 @@
   },
   "class": "garagedoor",
   "capabilities": [
-    "garagedoor_closed"
+    "garagedoor_closed",
+    "alarm_contact"
   ],
   "pair": [
     {

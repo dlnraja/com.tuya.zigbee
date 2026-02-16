@@ -5,7 +5,8 @@
   "class": "vacuumcleaner",
   "capabilities": [
     "onoff",
-    "vacuumcleaner_state"
+    "vacuumcleaner_state",
+    "measure_battery"
   ],
   "pair": [
     {
@@ -108,5 +109,8 @@
   ],
   "connectivity": [
     "lan"
-  ]
+  ],
+  "energy": {
+    "batteries": ["INTERNAL"]
+  }
 }
