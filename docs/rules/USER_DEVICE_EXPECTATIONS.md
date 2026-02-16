@@ -1,5 +1,5 @@
-# User Device Expectations (v5.9.23)
-**Updated**: 2026-06 (v5.9.23 BSEED group isolation fix for all multi-gang ZCL-only switches)
+# User Device Expectations (v5.11.3)
+**Updated**: 2026-02-16 (v5.11.3 cross-reference audit: Lasse_K ✅, Peter_vW ✅, 4x4_Pete _TZE200_3towulqd DP fix)
 
 ## v5.9.18: Deep DP Audit — Peter 4x4 Presence Sensor Variants
 Sources: Z2M ZG-204ZM/ZV/ZL/ZH/227Z pages, Z2M #21919 #29024 #28529, ZHA #4184 #4452 #4517, Hubitat kkossev, Blakadder, SmartHomeScene, Reddit
