@@ -41683,6 +41683,9 @@
         "title": {
           "en": "Set temperature"
         },
+        "titleFormatted": {
+          "en": "Set temperature to [[temperature]]°C"
+        },
         "args": [
           {
             "type": "device",
