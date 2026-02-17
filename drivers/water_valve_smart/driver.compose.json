@@ -15,11 +15,23 @@
   ],
   "capabilitiesOptions": {
     "onoff": {
-      "title": { "en": "Valve", "fr": "Vanne", "nl": "Klep", "de": "Ventil" }
+      "title": {
+        "en": "Valve",
+        "fr": "Vanne",
+        "nl": "Klep",
+        "de": "Ventil"
+      }
     },
     "meter_water": {
-      "title": { "en": "Total Water", "fr": "Eau Totale", "nl": "Totaal Water", "de": "Gesamtwasser" },
-      "units": { "en": "m\u00b3" }
+      "title": {
+        "en": "Total Water",
+        "fr": "Eau Totale",
+        "nl": "Totaal Water",
+        "de": "Gesamtwasser"
+      },
+      "units": {
+        "en": "m³"
+      }
     }
   },
   "energy": {
@@ -33,25 +45,15 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_yz38gdra",
-      "_TZ3000_yz38gdra",
       "_tze200_a7sghmms",
-      "_TZE200_a7sghmms",
       "_tze200_fphxkxue",
-      "_TZE200_fphxkxue",
       "_tze200_sh1btabb",
-      "_TZE200_sh1btabb",
       "_tze200_vrjkcam9",
-      "_TZE200_vrjkcam9",
       "_tze200_vuwtqx0t",
-      "_TZE200_vuwtqx0t",
       "_tze204_a7sghmms",
-      "_TZE204_a7sghmms",
       "_tze204_wt66haax",
-      "_TZE204_wt66haax",
       "_tze284_vuwtqx0t",
-      "_TZE284_vuwtqx0t",
-      "_tze284_wt66haax",
-      "_TZE284_wt66haax"
+      "_tze284_wt66haax"
     ],
     "endpoints": {
       "1": {

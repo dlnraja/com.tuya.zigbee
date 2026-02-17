@@ -15,92 +15,202 @@
   ],
   "capabilitiesOptions": {
     "measure_water_level": {
-      "title": { "en": "Liquid Depth", "fr": "Profondeur Liquide", "nl": "Vloeistofdiepte", "de": "Flussigkeitstiefe" }
+      "title": {
+        "en": "Liquid Depth",
+        "fr": "Profondeur Liquide",
+        "nl": "Vloeistofdiepte",
+        "de": "Flussigkeitstiefe"
+      }
     },
     "measure_water_percentage": {
-      "title": { "en": "Fill Level", "fr": "Niveau Remplissage", "nl": "Vulniveau", "de": "Fullstand" }
+      "title": {
+        "en": "Fill Level",
+        "fr": "Niveau Remplissage",
+        "nl": "Vulniveau",
+        "de": "Fullstand"
+      }
     },
     "alarm_water_low": {
-      "title": { "en": "Low Level Alert", "fr": "Alerte Niveau Bas", "nl": "Laag Niveau Alarm", "de": "Niedrigstand Alarm" }
+      "title": {
+        "en": "Low Level Alert",
+        "fr": "Alerte Niveau Bas",
+        "nl": "Laag Niveau Alarm",
+        "de": "Niedrigstand Alarm"
+      }
     },
     "alarm_water_high": {
-      "title": { "en": "High Level Alert", "fr": "Alerte Niveau Haut", "nl": "Hoog Niveau Alarm", "de": "Hochstand Alarm" }
+      "title": {
+        "en": "High Level Alert",
+        "fr": "Alerte Niveau Haut",
+        "nl": "Hoog Niveau Alarm",
+        "de": "Hochstand Alarm"
+      }
     },
     "alarm_water": {
-      "title": { "en": "Level Alert", "fr": "Alerte Niveau", "nl": "Niveau Alarm", "de": "Standmeldung" }
+      "title": {
+        "en": "Level Alert",
+        "fr": "Alerte Niveau",
+        "nl": "Niveau Alarm",
+        "de": "Standmeldung"
+      }
     }
   },
-  "platforms": ["local"],
-  "connectivity": ["zigbee"],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "images": {
     "small": "drivers/water_tank_monitor/assets/images/small.png",
     "large": "drivers/water_tank_monitor/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_81isopgh", "_tze200_81isopgh",
-      "_TZE200_8ygqkfpo", "_tze200_8ygqkfpo",
-      "_TZE200_do4ckv7k", "_tze200_do4ckv7k",
-      "_TZE200_htnnfasr", "_tze200_htnnfasr",
-      "_TZE200_lvkk0hdg", "_tze200_lvkk0hdg",
-      "_TZE200_ojzhk75b", "_tze200_ojzhk75b",
-      "_TZE200_rgfzq1fl", "_tze200_rgfzq1fl",
-      "_TZE200_wcnjrsjf", "_tze200_wcnjrsjf",
-      "_TZE204_htnnfasr", "_tze204_htnnfasr",
-      "_TZE204_lvkk0hdg", "_tze204_lvkk0hdg",
-      "_TZE204_81isopgh", "_tze204_81isopgh",
-      "_TZE284_lvkk0hdg", "_tze284_lvkk0hdg",
-      "_TZE284_mxujdmxo", "_tze284_mxujdmxo"
+      "_TZE200_81isopgh",
+      "_TZE200_8ygqkfpo",
+      "_TZE200_do4ckv7k",
+      "_TZE200_htnnfasr",
+      "_TZE200_lvkk0hdg",
+      "_TZE200_ojzhk75b",
+      "_TZE200_rgfzq1fl",
+      "_TZE200_wcnjrsjf",
+      "_TZE204_htnnfasr",
+      "_TZE204_lvkk0hdg",
+      "_TZE204_81isopgh",
+      "_TZE284_lvkk0hdg",
+      "_TZE284_mxujdmxo"
     ],
-    "productId": ["TS0601", "TS0601_tank"],
+    "productId": [
+      "TS0601",
+      "TS0601_tank"
+    ],
     "endpoints": {
-      "1": { "clusters": [0, 61184], "bindings": [] }
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ],
+        "bindings": []
+      }
     }
   },
   "energy": {
-    "batteries": ["AAA", "AA", "CR123A"]
+    "batteries": [
+      "AAA",
+      "AA",
+      "CR123A"
+    ]
   },
   "settings": [
     {
       "type": "group",
-      "label": { "en": "Tank Configuration", "fr": "Configuration Reservoir", "nl": "Tank Configuratie", "de": "Tank Konfiguration" },
+      "label": {
+        "en": "Tank Configuration",
+        "fr": "Configuration Reservoir",
+        "nl": "Tank Configuratie",
+        "de": "Tank Konfiguration"
+      },
       "children": [
         {
           "id": "installation_height",
           "type": "number",
-          "label": { "en": "Installation Height (mm)", "fr": "Hauteur Installation (mm)", "nl": "Installatiehoogte (mm)", "de": "Installationshohe (mm)" },
-          "hint": { "en": "Distance from sensor to tank bottom in mm (DP19, 10-4000)" },
-          "value": 2000, "min": 10, "max": 4000, "step": 1, "units": "mm"
+          "label": {
+            "en": "Installation Height (mm)",
+            "fr": "Hauteur Installation (mm)",
+            "nl": "Installatiehoogte (mm)",
+            "de": "Installationshohe (mm)"
+          },
+          "hint": {
+            "en": "Distance from sensor to tank bottom in mm (DP19, 10-4000)"
+          },
+          "value": 2000,
+          "min": 10,
+          "max": 4000,
+          "step": 1,
+          "units": "mm"
         },
         {
           "id": "liquid_depth_max",
           "type": "number",
-          "label": { "en": "Sensor to Full Line (mm)", "fr": "Capteur a Ligne Pleine (mm)", "nl": "Sensor naar Vol Lijn (mm)", "de": "Sensor bis Volllinie (mm)" },
-          "hint": { "en": "Height from sensor to liquid surface when full (DP21, 10-4000)" },
-          "value": 200, "min": 10, "max": 4000, "step": 1, "units": "mm"
+          "label": {
+            "en": "Sensor to Full Line (mm)",
+            "fr": "Capteur a Ligne Pleine (mm)",
+            "nl": "Sensor naar Vol Lijn (mm)",
+            "de": "Sensor bis Volllinie (mm)"
+          },
+          "hint": {
+            "en": "Height from sensor to liquid surface when full (DP21, 10-4000)"
+          },
+          "value": 200,
+          "min": 10,
+          "max": 4000,
+          "step": 1,
+          "units": "mm"
         },
         {
           "id": "max_set",
           "type": "number",
-          "label": { "en": "Max Alarm Level (%)", "fr": "Niveau Alarme Max (%)", "nl": "Max Alarm Niveau (%)", "de": "Max Alarm Niveau (%)" },
-          "hint": { "en": "High level alarm threshold percentage (DP7, 0-100)" },
-          "value": 100, "min": 0, "max": 100, "step": 1, "units": "%"
+          "label": {
+            "en": "Max Alarm Level (%)",
+            "fr": "Niveau Alarme Max (%)",
+            "nl": "Max Alarm Niveau (%)",
+            "de": "Max Alarm Niveau (%)"
+          },
+          "hint": {
+            "en": "High level alarm threshold percentage (DP7, 0-100)"
+          },
+          "value": 100,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "units": "%"
         },
         {
           "id": "min_set",
           "type": "number",
-          "label": { "en": "Min Alarm Level (%)", "fr": "Niveau Alarme Min (%)", "nl": "Min Alarm Niveau (%)", "de": "Min Alarm Niveau (%)" },
-          "hint": { "en": "Low level alarm threshold percentage (DP8, 0-100)" },
-          "value": 0, "min": 0, "max": 100, "step": 1, "units": "%"
+          "label": {
+            "en": "Min Alarm Level (%)",
+            "fr": "Niveau Alarme Min (%)",
+            "nl": "Min Alarm Niveau (%)",
+            "de": "Min Alarm Niveau (%)"
+          },
+          "hint": {
+            "en": "Low level alarm threshold percentage (DP8, 0-100)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "units": "%"
         }
       ]
     },
     {
       "type": "group",
-      "label": { "en": "Device Information", "fr": "Informations Appareil", "nl": "Apparaat Informatie", "de": "Gerateinformation" },
+      "label": {
+        "en": "Device Information",
+        "fr": "Informations Appareil",
+        "nl": "Apparaat Informatie",
+        "de": "Gerateinformation"
+      },
       "children": [
-        { "id": "device_model_id", "type": "label", "label": { "en": "Zigbee Model" }, "value": "" },
-        { "id": "device_manufacturer", "type": "label", "label": { "en": "Manufacturer" }, "value": "" }
+        {
+          "id": "device_model_id",
+          "type": "label",
+          "label": {
+            "en": "Zigbee Model"
+          },
+          "value": ""
+        },
+        {
+          "id": "device_manufacturer",
+          "type": "label",
+          "label": {
+            "en": "Manufacturer"
+          },
+          "value": ""
+        }
       ]
     }
   ]
