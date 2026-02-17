@@ -9,12 +9,12 @@ class WiFiGenericDevice extends TuyaLocalDevice {
   async onInit() {
     await super.onInit();
     this.log('[WIFI-GENERIC] Generic Tuya WiFi device ready');
-    if (this._client) {
-      this._client.on('dp-update', (dps) => {
-        this.log('[WIFI-GENERIC] Raw DPs:', JSON.stringify(dps));
-        this.setSettings({ discovered_dps: JSON.stringify(dps) }).catch(() => {});
-      });
-    }
+  }
+
+  _processDPUpdate(dps) {
+    super._processDPUpdate(dps);
+    this.log('[WIFI-GENERIC] Raw DPs:', JSON.stringify(dps));
+    this.setSettings({ discovered_dps: JSON.stringify(dps) }).catch(() => {});
   }
 }
 module.exports = WiFiGenericDevice;

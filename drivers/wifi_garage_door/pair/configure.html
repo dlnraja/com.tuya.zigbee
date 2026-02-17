@@ -144,7 +144,7 @@ function onHomeyReady(Homey){
     hide('man-err');
     if(!did||!lk){show('man-err','Device ID and Local Key required');return}
     if(lk.length<16){show('man-err','Local Key must be at least 16 characters');return}
-    H.emit('configure',{device_id:did,local_key:lk,ip:document.getElementById('m_ip').value.trim(),name:document.getElementById('m_name').value.trim(),protocol_version:document.getElementById('m_pv').value});
+    H.emit('configure',{device_id:did,local_key:lk,ip:document.getElementById('m_ip').value.trim(),name:document.getElementById('m_name').value.trim(),protocol_version:document.getElementById('m_pv').value},function(err){if(err){show('man-err',err.message||String(err))}else{done=true}});
   });
 }
 </script>
