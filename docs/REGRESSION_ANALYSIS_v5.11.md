@@ -1,0 +1,46 @@
+# Regression Analysis — v5.11.x Series
+
+**Date**: 2026-02-17 | **Versions**: v5.11.5 — v5.11.11
+
+## 1. Case-Duplicate Manufacturer Names (Fixed v5.11.11)
+- **Severity**: Medium | **Scope**: 113 drivers, 5,450 duplicates removed
+- **Cause**: Both `_TZ3000_abc` and `_tz3000_abc` in same driver
+- **Fix**: Global case-insensitive dedup
+
+## 2. plug_energy_monitor vs plug_smart TS011F Collision (Fixed v5.11.11)
+- **Severity**: High (duplicate pairing)
+- **Cause**: 41 mfrs in BOTH drivers with shared PID TS011F
+- **Fix**: Removed 82 overlapping mfrs from plug_smart (energy variants stay in plug_energy_monitor)
+
+## 3. BSEED switch_3gang vs wall_switch_3gang_1way Collision (Fixed v5.11.11)
+- **Severity**: High (wrong driver match for BSEED ZCL-only devices)
+- **Cause**: `_TZ3000_qkixdnon` in both drivers with shared TS0003/TS0013
+- **Fix**: Removed BSEED ZCL-only mfrs from switch_3gang, deduped wall_switch_3gang_1way (16->8)
+
+## 4. Excellux PID Collision (Fixed v5.11.11)
+- **Severity**: Critical (129 mfrs colliding across 3 drivers)
+- **Cause**: "Excellux" brand name added as PID to contact_sensor, motion_sensor, AND climate_sensor
+- **Fix**: Removed "Excellux" PID from all 3 drivers — devices still match via standard PIDs (TS0201/TS0202/TS0203)
+
+## 5. button_wireless_4 Wrong PID TS0041 (Fixed v5.11.11)
+- **Severity**: High (6 mfrs showing as 4-button when they're 1-button)
+- **Cause**: TS0041 (1-button PID) incorrectly in button_wireless_4 driver
+- **Fix**: Removed TS0041 from button_wireless_4 PIDs + removed 6 mfrs that are 1-button-only
+
+## 6. v5.11.10 Fingerprint Additions — No Regressions
+- Added 117 mfrs + 4 PIDs across 19 drivers
+- **Collision check**: 0 new cross-driver collisions
+- Reclassified 5 mismatched fingerprints before adding
+- Skipped 1 misclassified (TS0505B as contact_sensor)
+
+## 7. Pre-existing Collisions (Acceptable — 13 groups, 74 mfrs)
+These are by-design or low-risk:
+- motion_sensor vs presence_sensor_radar (TS0225) — multi-sensor devices
+- rain_sensor vs water_leak_sensor (TS0207) — similar device types
+- valve_irrigation vs water_tank_monitor (TS0601) — TS0601 expected overlap
+- diy_custom_zigbee vs generic_diy — intentional overlap
+
+## 8. Documentation Gaps (Fixed v5.11.11)
+- GITHUB_ISSUES_PR_ANALYSIS.md was outdated (v5.8.88 era)
+- FORUM_ISSUES_CONSOLIDATED.md was at v5.5.780
+- Both updated with current status

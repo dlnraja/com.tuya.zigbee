@@ -1,8 +1,8 @@
 # 📋 Forum Issues Consolidated - Master Reference
 
-**Version**: 5.5.780
-**Last Updated**: 2026-01-24
-**Sources**: Homey Community Forum, GitHub Issues/PRs, User Diagnostics
+**Version**: 5.11.11
+**Last Updated**: 2026-02-17
+**Sources**: Homey Community Forum, GitHub Issues/PRs, User Diagnostics, Z2M/ZHA/Blakadder/deCONZ sync
 
 ---
 
@@ -219,6 +219,6 @@
 
 ---
 
-*Universal Tuya Zigbee App v5.5.780*
-*164 drivers | 4200+ devices supported*
+*Universal Tuya Zigbee App v5.11.11*
+*116 drivers | 5,586 fingerprints (deduped)*
 *Repository: https://github.com/dlnraja/com.tuya.zigbee*
