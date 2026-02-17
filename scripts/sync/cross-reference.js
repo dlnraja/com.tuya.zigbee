@@ -19,7 +19,7 @@ function crossReference() {
 
   // Load crawled data
   const sources = {};
-  for (const name of ["z2m", "zha"]) {
+  for (const name of ["z2m", "zha", "blakadder", "deconz"]) {
     const fp = path.join(DATA, name + ".json");
     if (fs.existsSync(fp)) {
       sources[name] = JSON.parse(fs.readFileSync(fp, "utf8"));

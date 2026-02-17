@@ -12,11 +12,18 @@
   ],
   "capabilitiesOptions": {
     "onoff": {
-      "title": { "en": "Valve", "fr": "Vanne", "nl": "Klep", "de": "Ventil" }
+      "title": {
+        "en": "Valve",
+        "fr": "Vanne",
+        "nl": "Klep",
+        "de": "Ventil"
+      }
     }
   },
   "energy": {
-    "batteries": [ "AA" ]
+    "batteries": [
+      "AA"
+    ]
   },
   "zigbee": {
     "manufacturerName": [
@@ -25,13 +32,23 @@
       "_tz3000_kz1anoi8",
       "_TZ3000_kz1anoi8",
       "_tz3290_ixd9mvv4",
-      "_TZ3290_ixd9mvv4"
+      "_TZ3290_ixd9mvv4",
+      "_TZ3000_ogjpfoyn"
     ],
-    "productId": [ "TS0049" ],
+    "productId": [
+      "TS0049"
+    ],
     "endpoints": {
       "1": {
-        "clusters": [ 0, 1, 6 ],
-        "bindings": [ 1, 6 ]
+        "clusters": [
+          0,
+          1,
+          6
+        ],
+        "bindings": [
+          1,
+          6
+        ]
       }
     }
   },
@@ -39,13 +56,17 @@
     {
       "id": "zigbee_model_id",
       "type": "label",
-      "label": { "en": "Zigbee Model ID" },
+      "label": {
+        "en": "Zigbee Model ID"
+      },
       "value": ""
     },
     {
       "id": "zigbee_manufacturer_name",
       "type": "label",
-      "label": { "en": "Zigbee Manufacturer" },
+      "label": {
+        "en": "Zigbee Manufacturer"
+      },
       "value": ""
     }
   ],
@@ -53,6 +74,10 @@
     "small": "drivers/water_valve_garden/assets/images/small.png",
     "large": "drivers/water_valve_garden/assets/images/large.png"
   },
-  "platforms": [ "local" ],
-  "connectivity": [ "zigbee" ]
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }
