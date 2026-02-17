@@ -2508,7 +2508,6 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         for (const event of events) {
           try {
             tuyaCluster.on(event, (data) => {
-              this.log(`[RADAR-BATTERY] Tuya ${event} received`);
               this._handleTuyaResponse(data);
             });
           } catch (e) { /* ignore */ }
@@ -2522,7 +2521,6 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       if (zclNode?.on) {
         zclNode.on('command', (cmd) => {
           if (cmd.cluster === 61184 || cmd.cluster === 'tuya') {
-            this.log('[RADAR-BATTERY] Node command received from Tuya cluster');
             this._handleTuyaResponse(cmd.data || cmd);
           }
         });
@@ -2536,7 +2534,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         occCluster.on('attr.occupancy', (v) => {
           const rawOccupied = (v & 0x01) !== 0;
           const occupied = this._applyPresenceInversion(rawOccupied);
-          this.log(`[RADAR-BATTERY] Occupancy: raw=${rawOccupied} → ${occupied}`);
+          this.log(`[RADAR] Occupancy: raw=${rawOccupied} → ${occupied}`);
           this.setCapabilityValue('alarm_motion', occupied).catch(() => { });
           this._triggerPresenceFlows(occupied);
         });
@@ -2558,7 +2556,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
             this.log(`[RADAR] IAS zoneStatus: ${sn} → SKIPPED (noIasMotion, has Tuya DP)`);
             return;
           }
-          this.log(`[RADAR-BATTERY] IAS zoneStatus: ${sn} → ${motion}`);
+          this.log(`[RADAR] IAS zoneStatus: ${sn} → ${motion}`);
           this.setCapabilityValue('alarm_motion', motion).catch(() => {});
           this._triggerPresenceFlows(motion);
         });
@@ -2570,7 +2568,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
               this.log(`[RADAR] IAS notification: ${s} → SKIPPED (noIasMotion, has Tuya DP)`);
               return;
             }
-            this.log(`[RADAR-BATTERY] IAS notification: ${s} → ${motion}`);
+            this.log(`[RADAR] IAS notification: ${s} → ${motion}`);
             this.setCapabilityValue('alarm_motion', motion).catch(() => {});
             this._triggerPresenceFlows(motion);
           };
@@ -2802,7 +2800,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         else if (dpType === 2 && dpLen === 4) value = bytes.readUInt32BE(6); // Value
         else if (dpType === 4 && dpLen === 1) value = bytes[6]; // Enum
         else value = bytes[6];
-        this.log(`[RADAR-BATTERY] 🔧 Parsed raw frame: DP${dp} type=${dpType} len=${dpLen} value=${value}`);
+        this.log(`[RADAR] 🔧 Parsed raw frame: DP${dp} type=${dpType} len=${dpLen} value=${value}`);
         dpId = dp;
         data = { dp, value, dpType, raw: true };
       }
@@ -2819,7 +2817,12 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     const staticMapping = dpMap[dpId];
     if (staticMapping?.cap) {
       // DP has explicit capability mapping - skip auto-discovery, handle below
-      this.log(`[RADAR] 📋 DP${dpId} has static mapping → ${staticMapping.cap}, skipping auto-discovery`);
+      // v5.11.12: Only log first occurrence per DP to prevent spam
+      this._loggedStaticDps = this._loggedStaticDps || {};
+      if (!this._loggedStaticDps[dpId]) {
+        this._loggedStaticDps[dpId] = true;
+        this.log(`[RADAR] 📋 DP${dpId} has static mapping → ${staticMapping.cap}, skipping auto-discovery`);
+      }
     } else {
       // v5.5.364: AUTO-DISCOVERY - Feed all DPs to learning engine for unknown devices
       if (this._dpAutoDiscovery) {
@@ -2871,19 +2874,23 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       }
       this._luxLastUpdateSource.tuya = now;
 
+      // v5.11.12: Same-value dedup — skip if lux hasn't changed
+      const currentLux = this.getCapabilityValue('measure_luminance') || 0;
+      if (finalLux === currentLux) return;
+
       // v5.5.985: Peter #1282 - Lux smoothing to prevent light flickering
       if (config.luxSmoothingEnabled) {
-        const currentLux = this.getCapabilityValue('measure_luminance') || 0;
         const minChange = config.luxMinChangePercent || 10;
-        const changePercent = currentLux > 0 ? Math.abs(finalLux - currentLux) / currentLux * 100 : 100;
+        // v5.11.12: Fix change calc when currentLux=0 (was always returning 100%)
+        const changePercent = currentLux > 0 ? Math.abs(finalLux - currentLux) / currentLux * 100 : (finalLux > 0 ? 100 : 0);
         
-        if (changePercent < minChange && currentLux > 0) {
+        if (changePercent < minChange) {
           // Ignore small changes to prevent flow triggers
           return;
         }
         this.log(`[RADAR-LUX] ☀️ DP${dpId} → ${finalLux} lux (change: ${changePercent.toFixed(1)}%)`);
       } else {
-        this.log(`[RADAR-LUX] ☀️ DP${dpId} → measure_luminance = ${finalLux} lux (local config)`);
+        this.log(`[RADAR-LUX] ☀️ DP${dpId} → ${finalLux} lux`);
       }
       
       this.setCapabilityValue('measure_luminance', parseFloat(finalLux)).catch(() => { });
