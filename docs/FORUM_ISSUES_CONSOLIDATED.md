@@ -1,6 +1,6 @@
 # 📋 Forum Issues Consolidated - Master Reference
 
-**Version**: 5.11.11
+**Version**: 5.11.13
 **Last Updated**: 2026-02-17
 **Sources**: Homey Community Forum, GitHub Issues/PRs, User Diagnostics, Z2M/ZHA/Blakadder/deCONZ sync
 
@@ -219,6 +219,17 @@
 
 ---
 
-*Universal Tuya Zigbee App v5.11.11*
-*116 drivers | 5,586 fingerprints (deduped)*
+## Forum p70-72 (2026-02-17)
+
+- Cam: Button 1-gang OK v5.9.14 ✅
+- Hartmut: TS0726 4-gang virtual=all toggle. Diag:945448b9
+- Lasse_K: Contact no react v5.9.2-6. Regression from v5.8.43
+- Tividor: TS0044 single OK, double/long NOT. Diag:4a3b2feb
+- Piotr: TS0002 _TZ3000_cauq1okq 2-gang=1 switch
+- lemon: TS0203 _TZ3000_okohwwap+Zbeacon=generic
+- JJ10: Presence distance=humidity; WiFi settings blank. Diag:32709eaf
+- H_van_Barneveld: WiFi liquid level sensor request
+
+*Universal Tuya Zigbee + WiFi App v5.11.13*
+*138 drivers | 5,579 fingerprints (deduped)*
 *Repository: https://github.com/dlnraja/com.tuya.zigbee*
