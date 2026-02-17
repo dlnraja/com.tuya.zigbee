@@ -51,9 +51,10 @@ Certains firmwares Tuya limitent les fonctions locales (Time Sync).
 ```
 Merci pour votre retour ! 🧡
 
-✅ Universal TUYA Zigbee est en développement actif (v5.5.x).
-📌 4200+ devices supportés
+✅ Universal TUYA Zigbee + WiFi est en développement actif (v5.11.x).
+📌 138 drivers, 5,579 fingerprints
 📌 100% local, sans cloud
+📌 WiFi Tuya local (expérimental)
 
 Vos retours nous aident à améliorer le support ! 🚀
 ```
