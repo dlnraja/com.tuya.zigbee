@@ -1,6 +1,6 @@
 # GitHub Issues & PRs Analysis - JohanBendz & dlnraja Forks
 
-*Updated: 2026-02-09 (v5.8.88) — See MASTER_REFERENCE.md for full cross-ref*
+*Updated: 2026-02-17 (v5.11.11) — See MASTER_REFERENCE.md for full cross-ref*
 
 ## Summary
 
@@ -100,12 +100,12 @@ Notable forks with recent activity:
 
 ## Conclusion
 
-**✅ Most requested devices are already supported in dlnraja fork v5.5.684**
+**✅ Most requested devices are already supported in dlnraja fork v5.11.11**
 
 The dlnraja fork has integrated most of the device requests and PR contributions from the JohanBendz repository. The current Universal Tuya Zigbee app supports:
 
-- 164+ drivers
-- 4200+ manufacturer IDs
+- 116 Zigbee drivers
+- 5,586 manufacturer fingerprints (deduped)
 - All BSEED switches (TS0001, TS0002, TS0003)
 - All common sensors (motion, climate, soil, water leak)
 - Radar/presence sensors
@@ -129,4 +129,5 @@ The dlnraja fork has integrated most of the device requests and PR contributions
 ---
 
 *This analysis is part of the Universal Tuya Zigbee documentation.*
+*Universal Tuya Zigbee App v5.11.11 — 116 drivers | 5,586 fingerprints*
 *Repository: https://github.com/dlnraja/com.tuya.zigbee*
