@@ -1,6 +1,6 @@
 # Regression Analysis — v5.11.x Series
 
-**Date**: 2026-02-17 | **Versions**: v5.11.5 — v5.11.12
+**Date**: 2026-02-17 | **Versions**: v5.11.5 — v5.11.13
 
 ## 1. Case-Duplicate Manufacturer Names (Fixed v5.11.11)
 - **Severity**: Medium | **Scope**: 113 drivers, 5,450 duplicates removed
@@ -59,3 +59,10 @@ These are by-design or low-risk:
 - **Bug 2**: onSettings client leak → null client after destroy
 - **Bug 3**: UDP discovery race → late device-found listener
 - **Bug 4**: configure.html missing error callback in manual mode → all 22 drivers fixed
+
+## 12. presence_sensor_radar Log Spam — ~52K lines/day (Fixed v5.11.13)
+- **Severity**: High (fills Homey log buffer, masks real events)
+- **Cause**: DP106 lux fires every 5s → 3 log lines each: (a) `[RADAR-BATTERY] Tuya response received`, (b) `static mapping` log, (c) `[RADAR-LUX] 0 lux (change: 100.0%)`
+- **Root causes**: (1) No same-value dedup — 0→0 always processed, (2) Change calc `currentLux > 0 ? ... : 100` returns 100% when both are 0, (3) Static mapping logged on every DP, (4) Per-event Tuya listener log
+- **Fix**: Same-value dedup, fix change formula `(finalLux > 0 ? 100 : 0)`, throttle static log to first occurrence, remove per-event log
+- **Diagnostic**: hcaron@synchrone.fr, Log ID 32709eaf
