@@ -155,6 +155,9 @@ create_final_report.py
 extract_device_info.py
 extract_dp_mappings.py
 
+# Sync pipeline generated data
+scripts/sync/data/
+
 # Claude Code session files
 .claude/
 nul
