@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.11.11** | v5.11.11: Fingerprint regression fixes — (1) Removed 5,450 case-duplicate mfr... |
 | **v5.11.10** | v5.11.10: Full Zigbee DB sync — crawled Z2M (365 files), ZHA (all quirks), Bl... |
 | **v5.11.9** | v5.11.9: Live DB sync — Z2M+ZHA+deCONZ crawl. +2 water_leak_sensor (TS0207), ... |
 | **v5.11.8** | v5.11.8: Z2M fingerprint sync — Added 18 new device fingerprints. climate_sen... |
@@ -82,7 +83,6 @@
 | **v5.11.4** | v5.11.4: Presence sensor radar fixes — (1) GH#127 Tauno20: WZ-M100 (_TZE204_e... |
 | **v5.11.3** | v5.11.3: (1) Presence sensor _TZE200_crq3r3la fix — Z2M #22833: removed non-e... |
 | **v5.11.2** | v5.11.2: Button 3-gang fix — _TZ3000_famkxci2 TS0043 not responding (diag rep... |
-| **v5.11.1** | v5.11.1: Forum fixes — (1) Soil sensor _TZE284_oitavov2 temperature fix: raw ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
