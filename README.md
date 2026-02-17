@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.11.8** | v5.11.8: Z2M fingerprint sync — Added 18 new device fingerprints. climate_sen... |
 | **v5.11.7** | v5.11.7: New driver — Wall Switch 4-Gang 1-Way (BSEED). Adds support for BSEE... |
 | **v5.11.6** | v5.11.6: BSEED glass switch & scene switch fingerprint fixes — (1) Removed BS... |
 | **v5.11.5** | v5.11.5: Lasse_K forum fixes — (1) ROOT CAUSE 'no alarm': Anti-flood throttle... |
@@ -82,7 +83,6 @@
 | **v5.11.1** | v5.11.1: Forum fixes — (1) Soil sensor _TZE284_oitavov2 temperature fix: raw ... |
 | **v5.11.0** | v5.11.0: Tuya WiFi Local Integration — Added 20 new WiFi local drivers: switc... |
 | **v5.10.6** | v5.10.6: Exception hardening — Fixed null reference crashes in pet_feeder, ga... |
-| **v5.10.5** | v5.10.5: Comprehensive Tuya EF00 frame drop prevention — Added 5 missing ZCL ... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
