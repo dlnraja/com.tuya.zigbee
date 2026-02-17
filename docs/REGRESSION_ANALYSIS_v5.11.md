@@ -1,6 +1,6 @@
 # Regression Analysis — v5.11.x Series
 
-**Date**: 2026-02-17 | **Versions**: v5.11.5 — v5.11.11
+**Date**: 2026-02-17 | **Versions**: v5.11.5 — v5.11.12
 
 ## 1. Case-Duplicate Manufacturer Names (Fixed v5.11.11)
 - **Severity**: Medium | **Scope**: 113 drivers, 5,450 duplicates removed
@@ -44,3 +44,18 @@ These are by-design or low-risk:
 - GITHUB_ISSUES_PR_ANALYSIS.md was outdated (v5.8.88 era)
 - FORUM_ISSUES_CONSOLIDATED.md was at v5.5.780
 - Both updated with current status
+
+## 9. Lowercase Manufacturer Names — CRITICAL (Fixed v5.11.12)
+- **Severity**: Critical | **Scope**: 5,004 fingerprints, 111 drivers
+- **Cause**: v5.11.11 dedup kept lowercase `_tz3000_*`, removed uppercase; Homey matching is case-sensitive
+- **Fix**: All prefixes uppercased: `_tz`→`_TZ` (4906), `_tyzb`→`_TYZB` (90), `_tyst`→`_TYST` (8)
+
+## 10. _TZE200_t1blo2bj Misclassification (Fixed v5.11.12)
+- **Severity**: Medium | Siren in thermostat_tuya_dp (JohanBendz PR#1333)
+- **Fix**: Removed from thermostat_tuya_dp (already in siren)
+
+## 11. WiFi Tuya Local Bugs (Fixed v5.11.12)
+- **Bug 1**: wifi_generic double dp-update listener → use _processDPUpdate override
+- **Bug 2**: onSettings client leak → null client after destroy
+- **Bug 3**: UDP discovery race → late device-found listener
+- **Bug 4**: configure.html missing error callback in manual mode → all 22 drivers fixed
