@@ -1,4 +1,7 @@
 {
+  "5.11.9": {
+    "en": "v5.11.9: Live DB sync — Z2M+ZHA+deCONZ crawl. +2 water_leak_sensor (TS0207), +6 radiator_valve TRVs (_TYST11_)."
+  },
   "5.11.8": {
     "en": "v5.11.8: Z2M fingerprint sync — Added 18 new device fingerprints. climate_sensor: +5 (_TZE204_3q3maeoo, _TZE204_6vwfjkcj, _TZE204_tuhfx7tf, _TZE284_q22avxbv, _TZE284_roujjevx). switch_4gang: +4 TS0726 (_TZ300A_ohjmifiz, _TZ300A_rncj86af, _TZ300A_vkflnsl0, _TZ300A_vqrs45nj). water_tank_monitor: +1 (_TZE284_mxujdmxo). plug_smart: +1 (_TZ3210_sgb0xhwn). JohanBendz forks crawled — no additional fingerprints found beyond upstream."
   },
