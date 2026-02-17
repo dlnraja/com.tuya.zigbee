@@ -1,4 +1,7 @@
 {
+  "5.11.7": {
+    "en": "v5.11.7: New driver — Wall Switch 4-Gang 1-Way (BSEED). Adds support for BSEED 4-gang ZCL glass touch switches (TS0004/TS0014). Sub-device architecture: each gang = separate Homey device card. Includes scene mode (auto/magic/both), LED indicator control, and physical button flow triggers for all 4 gangs."
+  },
   "5.11.6": {
     "en": "v5.11.6: BSEED glass switch & scene switch fingerprint fixes — (1) Removed BSEED ZCL-only fingerprint _TZ3000_blhvsaqf from DP-based switch_1gang driver — caused wrong driver match showing duplicate pairing options. (2) Removed _TZ3000_vp6clf9d (TS0044 4-button scene switch) from switch_1gang/2gang/3gang/4gang — only belongs in button_wireless_4. (3) Added 7 BSEED ZCL fingerprints to wall_switch_3gang_1way (TS0003) for proper 3-gang glass switch support."
   },
