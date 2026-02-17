@@ -7,6 +7,8 @@
  */
 const crawlZ2M = require("./crawl-z2m");
 const crawlZHA = require("./crawl-zha");
+const crawlBlakadder = require("./crawl-blakadder");
+const crawlDeCONZ = require("./crawl-deconz");
 const crossReference = require("./cross-reference");
 
 async function run() {

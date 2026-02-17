@@ -1,99 +1,103 @@
 #!/usr/bin/env node
 /**
- * Live ZHA Tuya Quirks Crawler
- * Fetches ALL Tuya quirk files from zhaquirks/tuya/ on GitHub
- * Extracts manufacturerName fingerprints from class-based quirks
+ * Live ZHA FULL Quirks Crawler
+ * Scans ALL quirks directories (not just tuya/) for Tuya fingerprints
  * Run: node scripts/sync/crawl-zha.js
  */
 const { fetch, fetchJSON } = require("./lib/fetch");
 const fs = require("fs");
 const path = require("path");
 
-const API = "https://api.github.com/repos/zigpy/zha-device-handlers/contents/zhaquirks/tuya";
-const RAW = "https://raw.githubusercontent.com/zigpy/zha-device-handlers/dev/zhaquirks/tuya/";
+const API_BASE = "https://api.github.com/repos/zigpy/zha-device-handlers/contents/zhaquirks";
+const RAW_BASE = "https://raw.githubusercontent.com/zigpy/zha-device-handlers/dev/zhaquirks/";
 const OUT = path.join(__dirname, "data");
 
-// Parse Python quirks file for manufacturer fingerprints
-function parseQuirksFile(src, filename) {
+const TUYA_MFR = /(_TZ[A-Z0-9]{1,5}_[a-zA-Z0-9]+|_TYST1[12]_[a-zA-Z0-9]+|TUYATEC[a-zA-Z0-9_-]+)/;
+
+function parseQuirksFile(src, filepath) {
   const fps = [];
-  // Pattern 1: MODELS_INFO = [("mfr", "pid"), ...]
-  const modelsInfo = [...src.matchAll(/\(\s*["']([^"']+)["']\s*,\s*["']([^"']+)["']\s*\)/g)];
-  for (const m of modelsInfo) {
-    const mfr = m[1], pid = m[2];
-    if (mfr.startsWith("_T") || mfr.startsWith("TUYATEC")) {
-      fps.push({ mfr, productId: pid, file: filename, source: "zha" });
-    }
+  // P1: MODELS_INFO tuples ("mfr", "pid")
+  const tuples = [...src.matchAll(/\(\s*["']([^"']+)["']\s*,\s*["']([^"']+)["']\s*\)/g)];
+  for (const m of tuples) {
+    if (TUYA_MFR.test(m[1])) fps.push({ mfr: m[1], productId: m[2], file: filepath, source: "zha" });
   }
-  // Pattern 2: manufacturer = "xxx" / model = "xxx"
+  // P2: manufacturer = / model =
   const mfrLines = [...src.matchAll(/manufacturer\s*[:=]\s*["']([^"']+)["']/g)];
-  const modelLines = [...src.matchAll(/model\s*[:=]\s*["']([^"']+)["']/g)];
   for (const m of mfrLines) {
-    if (m[1].startsWith("_T") || m[1].startsWith("TUYATEC")) {
-      const existing = fps.find(f => f.mfr === m[1]);
-      if (!existing) fps.push({ mfr: m[1], productId: null, file: filename, source: "zha" });
+    if (TUYA_MFR.test(m[1]) && !fps.find(f => f.mfr === m[1])) {
+      fps.push({ mfr: m[1], productId: null, file: filepath, source: "zha" });
     }
   }
-  // Pattern 3: QuirkBuilder style .applies_to("mfr", "pid")
+  // P3: .applies_to("mfr", "pid")
   const applies = [...src.matchAll(/\.applies_to\s*\(\s*["']([^"']+)["']\s*,\s*["']([^"']+)["']\s*\)/g)];
   for (const m of applies) {
-    if (m[1].startsWith("_T") || m[1].startsWith("TUYATEC")) {
-      fps.push({ mfr: m[1], productId: m[2], file: filename, source: "zha" });
-    }
+    if (TUYA_MFR.test(m[1])) fps.push({ mfr: m[1], productId: m[2], file: filepath, source: "zha" });
+  }
+  // P4: standalone Tuya mfr strings
+  const standalone = [...src.matchAll(/["'](_TZ[A-Z0-9]{1,5}_[a-zA-Z0-9]+|_TYST1[12]_[a-zA-Z0-9]+|TUYATEC[a-zA-Z0-9_-]+)["']/g)];
+  for (const m of standalone) {
+    if (!fps.find(f => f.mfr === m[1])) fps.push({ mfr: m[1], productId: null, file: filepath, source: "zha" });
   }
   return fps;
 }
 
-async function crawlZHA() {
-  console.log("[ZHA] Listing quirk files...");
-  let files;
+async function listAllPyFiles() {
+  console.log("[ZHA] Listing ALL quirk directories...");
+  let topDirs;
   try {
-    files = await fetchJSON(API + "?ref=dev");
+    topDirs = await fetchJSON(API_BASE + "?ref=dev");
   } catch (e) {
-    // Fallback: fetch known files list
-    console.log("[ZHA] API failed, using known file list...");
-    files = [];
+    console.log("[ZHA] API failed:", e.message);
+    return [];
   }
-  const pyFiles = files.filter(f => f.name.endsWith(".py") && f.name !== "__init__.py");
-  // Also check subdirectories
-  const dirs = files.filter(f => f.type === "dir");
+  const dirs = topDirs.filter(f => f.type === "dir");
+  const pyFiles = [];
+  // Also get top-level .py files
+  pyFiles.push(...topDirs.filter(f => f.name.endsWith(".py") && f.name !== "__init__.py"));
+  console.log("[ZHA] " + dirs.length + " subdirectories to scan...");
   for (const dir of dirs) {
     try {
-      const subFiles = await fetchJSON(dir.url + "?ref=dev");
-      pyFiles.push(...subFiles.filter(f => f.name.endsWith(".py") && f.name !== "__init__.py"));
+      const contents = await fetchJSON(dir.url + "?ref=dev");
+      const pys = contents.filter(f => f.name.endsWith(".py") && f.name !== "__init__.py");
+      for (const p of pys) { p._dir = dir.name; }
+      pyFiles.push(...pys);
     } catch (e) { /* skip */ }
   }
-  console.log("[ZHA] Found " + pyFiles.length + " quirk files, fetching...");
+  return pyFiles;
+}
+
+async function crawlZHA() {
+  const pyFiles = await listAllPyFiles();
+  console.log("[ZHA] " + pyFiles.length + " quirk files to scan");
   const allFps = [];
   let fetched = 0;
-  for (const f of pyFiles) {
-    try {
-      const rawUrl = f.download_url || (RAW + f.name);
-      const src = await fetch(rawUrl);
-      const fps = parseQuirksFile(src, f.name);
-      allFps.push(...fps);
-      fetched++;
-      if (fetched % 10 === 0) console.log("[ZHA]   " + fetched + "/" + pyFiles.length + " files...");
-    } catch (e) { console.log("[ZHA]   Skip " + f.name + ": " + e.message); }
+  for (let i = 0; i < pyFiles.length; i += 5) {
+    const batch = pyFiles.slice(i, i + 5);
+    const results = await Promise.allSettled(batch.map(async f => {
+      const dirPart = f._dir ? (f._dir + "/") : "";
+      const url = f.download_url || (RAW_BASE + dirPart + f.name);
+      const src = await fetch(url);
+      return parseQuirksFile(src, dirPart + f.name);
+    }));
+    for (const r of results) {
+      if (r.status === "fulfilled") { allFps.push(...r.value); fetched++; }
+    }
+    if ((i + 5) % 50 === 0 || i + 5 >= pyFiles.length) {
+      console.log("[ZHA]   " + Math.min(i+5, pyFiles.length) + "/" + pyFiles.length + " files...");
+    }
   }
-  // Dedupe by mfr (lowercase)
+  // Dedupe
   const seen = new Set();
   const unique = allFps.filter(fp => {
-    const key = fp.mfr.toLowerCase();
-    if (seen.has(key)) return false;
-    seen.add(key);
+    const k = fp.mfr.toLowerCase();
+    if (seen.has(k)) return false;
+    seen.add(k);
     return true;
   });
   fs.mkdirSync(OUT, { recursive: true });
-  const result = {
-    date: new Date().toISOString(),
-    source: "zha-device-handlers/zhaquirks/tuya",
-    filesFetched: fetched,
-    totalRaw: allFps.length,
-    uniqueFingerprints: unique.length,
-    fingerprints: unique,
-  };
+  const result = { date: new Date().toISOString(), source: "zha-device-handlers (ALL dirs)", filesFetched: fetched, totalRaw: allFps.length, uniqueFingerprints: unique.length, fingerprints: unique };
   fs.writeFileSync(path.join(OUT, "zha.json"), JSON.stringify(result, null, 2));
-  console.log("[ZHA] " + fetched + " files, " + unique.length + " unique fingerprints");
+  console.log("[ZHA] " + fetched + " files, " + unique.length + " unique Tuya fingerprints");
   return result;
 }
 
