@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.11.9** | v5.11.9: Live DB sync — Z2M+ZHA+deCONZ crawl. +2 water_leak_sensor (TS0207), ... |
 | **v5.11.8** | v5.11.8: Z2M fingerprint sync — Added 18 new device fingerprints. climate_sen... |
 | **v5.11.7** | v5.11.7: New driver — Wall Switch 4-Gang 1-Way (BSEED). Adds support for BSEE... |
 | **v5.11.6** | v5.11.6: BSEED glass switch & scene switch fingerprint fixes — (1) Removed BS... |
@@ -82,7 +83,6 @@
 | **v5.11.2** | v5.11.2: Button 3-gang fix — _TZ3000_famkxci2 TS0043 not responding (diag rep... |
 | **v5.11.1** | v5.11.1: Forum fixes — (1) Soil sensor _TZE284_oitavov2 temperature fix: raw ... |
 | **v5.11.0** | v5.11.0: Tuya WiFi Local Integration — Added 20 new WiFi local drivers: switc... |
-| **v5.10.6** | v5.10.6: Exception hardening — Fixed null reference crashes in pet_feeder, ga... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
