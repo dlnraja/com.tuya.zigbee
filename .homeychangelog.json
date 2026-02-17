@@ -1,4 +1,7 @@
 {
+  "5.11.10": {
+    "en": "v5.11.10: Full Zigbee DB sync — crawled Z2M (365 files), ZHA (all quirks), Blakadder, deCONZ. +117 new fingerprints across 19 drivers: switch_1gang +20, bulb_rgbw +13, plug_smart +11, dimmer_wall_1gang +11, climate_sensor +11, radiator_valve +8, presence_sensor_radar +7, bulb_dimmable +5, switch_3gang +5, water_leak_sensor +5, lock_smart +4, switch_2gang +4, contact_sensor +2, switch_4gang +3, motion_sensor +3, energy_meter_3phase +2, ir_blaster +1, siren +1, water_valve_garden +1. New PIDs: TS000F, TS1002, FE-GU10-5W, SMD9300."
+  },
   "5.11.9": {
     "en": "v5.11.9: Live DB sync — Z2M+ZHA+deCONZ crawl. +2 water_leak_sensor (TS0207), +6 radiator_valve TRVs (_TYST11_)."
   },
