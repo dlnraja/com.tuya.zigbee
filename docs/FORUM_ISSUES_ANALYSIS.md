@@ -1,8 +1,8 @@
 # Forum Issues Analysis - Comprehensive Report
 
-**Analysis Date**: 2026-06 (Updated v5.9.23 — see MASTER_REFERENCE.md)
+**Analysis Date**: 2026-02-17 (Updated v5.11.13)
 **Forum Thread**: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352
-**Messages Analyzed**: ~1160-1180 (latest)
+**Messages Analyzed**: p1-72 (latest scan: p70-72 on 2026-02-17)
 **Git Commits Analyzed**: 2025-01-15 to present
 
 ---
@@ -349,3 +349,13 @@ RESOLVED: DutchDuke soil v5.8.87, Lasse_K water/contact v5.8.85+88, blutch32 v5.
 PERSISTENT: Freddyboy TS0044 + Cam TS0041 — need diag on v5.8.88.
 NEEDS INFO: Ricardo_Lenior presence wrong caps — needs fingerprint.
 
+## Forum p70-72 Scan (2026-02-17)
+RESOLVED: Cam button OK v5.9.14. Tividor TS0044 single OK.
+PERSISTENT: Hartmut TS0726 4-gang virtual=all. Lasse_K contact regression v5.9.x.
+NEW: Tividor double/long press NOT working. Piotr TS0002 _TZ3000_cauq1okq 2-gang=1. lemon TS0203 _TZ3000_okohwwap+Zbeacon=generic. JJ10 presence distance=humidity + WiFi settings blank (diag:32709eaf, log spam fixed v5.11.13). H_van_Barneveld WiFi liquid level request.
+
+## GitHub Issues (2026-02-17)
+GH#124: _TZ3000_fllyghyj+b4awzgct case — ALREADY FIXED.
+GH#126: _TZ3000_zutizvyk TS0203 — ALREADY in contact_sensor (v5.9.4).
+GH#127: _TZE204_e5m9c5hl radar — FIXED v5.8.97.
+JohanBendz PRs: #1346 time sync LCD, #1333 siren, #1332 HOBEIAN — all already integrated.
