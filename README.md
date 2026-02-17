@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.11.13** | v5.11.13: Fix presence_sensor_radar log spam (~52K lines/day). (1) Same-value... |
 | **v5.11.12** | v5.11.12: Critical case-sensitivity fix + WiFi bugs. (1) Fixed 5,004 lowercas... |
 | **v5.11.11** | v5.11.11: Fingerprint regression fixes — (1) Removed 5,450 case-duplicate mfr... |
 | **v5.11.10** | v5.11.10: Full Zigbee DB sync — crawled Z2M (365 files), ZHA (all quirks), Bl... |
@@ -82,7 +83,6 @@
 | **v5.11.6** | v5.11.6: BSEED glass switch & scene switch fingerprint fixes — (1) Removed BS... |
 | **v5.11.5** | v5.11.5: Lasse_K forum fixes — (1) ROOT CAUSE 'no alarm': Anti-flood throttle... |
 | **v5.11.4** | v5.11.4: Presence sensor radar fixes — (1) GH#127 Tauno20: WZ-M100 (_TZE204_e... |
-| **v5.11.3** | v5.11.3: (1) Presence sensor _TZE200_crq3r3la fix — Z2M #22833: removed non-e... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
