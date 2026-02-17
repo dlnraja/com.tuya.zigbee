@@ -1,56 +1,8 @@
 {
   "total": 340,
-  "existing": 313,
-  "missing": 27,
+  "existing": 325,
+  "missing": 15,
   "details": [
-    {
-      "mfr": "_TYST11_jeaxp72v",
-      "file": "ts0601_trv.py"
-    },
-    {
-      "mfr": "_TYST11_kfvq6avy",
-      "file": "ts0601_trv.py"
-    },
-    {
-      "mfr": "_TYST11_zivfvd7h",
-      "file": "ts0601_trv.py"
-    },
-    {
-      "mfr": "_TYST11_hhrtiq0x",
-      "file": "ts0601_trv.py"
-    },
-    {
-      "mfr": "_TYST11_ps5v5jor",
-      "file": "ts0601_trv.py"
-    },
-    {
-      "mfr": "_TYST11_owwdxjbx",
-      "file": "ts0601_trv.py"
-    },
-    {
-      "mfr": "_TYST11_8daqwrsj",
-      "file": "ts0601_trv.py"
-    },
-    {
-      "mfr": "_TYST11_czk78ptr",
-      "file": "ts0601_trv.py"
-    },
-    {
-      "mfr": "_TYST11_ckud7u2l",
-      "file": "ts0601_trv.py"
-    },
-    {
-      "mfr": "_TYST11_ywdxldoj",
-      "file": "ts0601_trv.py"
-    },
-    {
-      "mfr": "_TYST11_cwnjrr72",
-      "file": "ts0601_trv.py"
-    },
-    {
-      "mfr": "_TYST11_2atgpdho",
-      "file": "ts0601_trv.py"
-    },
     {
       "mfr": "eaxp72v",
       "file": "ts0601_trv.py"
@@ -104,12 +56,12 @@
       "file": "ts0601_trv.py"
     },
     {
-      "mfr": "_TYST11_wmcdj3aq",
+      "mfr": "mcdj3aq",
       "file": "ts0601_cover.py"
     },
     {
-      "mfr": "_TYST11_d0yu2xgi",
-      "file": "tuya_siren.py"
+      "mfr": "TS011F",
+      "file": "ts011f_plug.py"
     }
   ]
 }

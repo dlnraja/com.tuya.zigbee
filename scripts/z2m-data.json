@@ -1,5 +1,5 @@
 {
-  "date": "2026-02-06T15:51:44.118Z",
+  "date": "2026-02-17T10:27:30.375Z",
   "fps": [
     {
       "m": "TS0601",
@@ -302,7 +302,8 @@
         "_TZ3000_iy2c3n6p",
         "_TZ3000_qlmnxmac",
         "_TZ3000_sgb0xhwn",
-        "_TZ3210_ph1joc22"
+        "_TZ3210_ph1joc22",
+        "_TZ3210_sgb0xhwn"
       ]
     },
     {
@@ -579,6 +580,7 @@
     {
       "m": "TS0601",
       "f": [
+        "_TZE200_bxoo2swd",
         "_TZE204_bxoo2swd",
         "_TZE200_tsxpl0d0"
       ]
@@ -2920,7 +2922,8 @@
       "f": [
         "_TZE204_fhvdgeuh",
         "_TZE200_abatw3kj",
-        "_TZE204_4bjixefp"
+        "_TZE204_4bjixefp",
+        "_TZE284_5m4nchbm"
       ]
     },
     {
@@ -3003,7 +3006,8 @@
     {
       "m": "TS0601",
       "f": [
-        "_TZE204_d6i25bwg"
+        "_TZE204_d6i25bwg",
+        "_TZE204_3q3maeoo"
       ]
     },
     {
@@ -3059,7 +3063,8 @@
       "m": "TS0726",
       "f": [
         "_TZ3000_5kxl9esg",
-        "_TZ3002_jn2x20tg"
+        "_TZ3002_jn2x20tg",
+        "_TZ300A_rncj86af"
       ]
     },
     {
@@ -3069,7 +3074,8 @@
         "_TZ3002_ymv5vytn",
         "_TZ3002_6ahhkwyh",
         "_TZ3002_zjuvw9zf",
-        "_TZ3002_a4kvf6zd"
+        "_TZ3002_a4kvf6zd",
+        "_TZ300A_ohjmifiz"
       ]
     },
     {
@@ -3079,7 +3085,8 @@
         "_TZ3002_rbnycsav",
         "_TZ3002_kq3kqwjt",
         "_TZ3002_ybtqbyk3",
-        "_TZ3002_iedhxgyi"
+        "_TZ3002_iedhxgyi",
+        "_TZ300A_vqrs45nj"
       ]
     },
     {
@@ -3088,7 +3095,8 @@
         "_TZ3000_rsylfthg",
         "_TZ3002_umdkr64x",
         "_TZ3002_hkaktryd",
-        "_TZ3002_pzao9ls1"
+        "_TZ3002_pzao9ls1",
+        "_TZ300A_vkflnsl0"
       ]
     },
     {
@@ -3220,7 +3228,8 @@
       "m": "TS0601",
       "f": [
         "_TZE204_3regm3h6",
-        "_TZE204_0hcjew5p"
+        "_TZE204_0hcjew5p",
+        "_TZE204_6vwfjkcj"
       ]
     },
     {
@@ -3388,6 +3397,12 @@
     {
       "m": "Excellux",
       "f": [
+        "DHTA001"
+      ]
+    },
+    {
+      "m": "Excellux",
+      "f": [
         "NTCHT01"
       ]
     },
@@ -3536,7 +3551,7 @@
         },
         {
           "d": 5,
-          "n": "fault"
+          "n": "faults"
         },
         {
           "d": 16,
@@ -3552,7 +3567,7 @@
         },
         {
           "d": 26,
-          "n": "voltage"
+          "n": "battery_voltage"
         }
       ]
     },
@@ -7447,6 +7462,63 @@
         {
           "d": 103,
           "n": "backlight_brightness"
+        }
+      ]
+    },
+    "_TZE200_bxoo2swd": {
+      "model": "TS0601",
+      "dps": [
+        {
+          "d": 1,
+          "n": "state_l1"
+        },
+        {
+          "d": 2,
+          "n": "brightness_l1"
+        },
+        {
+          "d": 3,
+          "n": "min_brightness_l1"
+        },
+        {
+          "d": 4,
+          "n": "light_type_l1"
+        },
+        {
+          "d": 5,
+          "n": "max_brightness_l1"
+        },
+        {
+          "d": 6,
+          "n": "countdown_l1"
+        },
+        {
+          "d": 7,
+          "n": "state_l2"
+        },
+        {
+          "d": 8,
+          "n": "brightness_l2"
+        },
+        {
+          "d": 9,
+          "n": "min_brightness_l2"
+        },
+        {
+          "d": 10,
+          "n": "light_type_l2"
+        },
+        {
+          "d": 11,
+          "n": "max_brightness_l2"
+        },
+        {
+          "d": 12,
+          "n": "countdown_l2"
+        },
+        {
+          "d": 14,
+          "n": "power_on_behavior"
         }
       ]
     },
@@ -22331,6 +22403,27 @@
         }
       ]
     },
+    "_TZE284_5m4nchbm": {
+      "model": "TS0601",
+      "dps": [
+        {
+          "d": 16,
+          "n": "state"
+        },
+        {
+          "d": 1,
+          "n": "energy"
+        },
+        {
+          "d": 15,
+          "n": "leakage"
+        },
+        {
+          "d": 103,
+          "n": "temperature"
+        }
+      ]
+    },
     "_TZE204_hcxvyxa5": {
       "model": "TS0601",
       "dps": [
@@ -25892,59 +25985,6 @@
         }
       ]
     },
-    "DHT0001": {
-      "model": "Excellux",
-      "dps": [
-        {
-          "d": 4,
-          "n": "battery"
-        },
-        {
-          "d": 5,
-          "n": "temperature"
-        },
-        {
-          "d": 101,
-          "n": "sampling_interval"
-        },
-        {
-          "d": 114,
-          "n": "temperature_calibration"
-        },
-        {
-          "d": 115,
-          "n": "temperature_v0_set"
-        },
-        {
-          "d": 116,
-          "n": "temperature_v1_set"
-        },
-        {
-          "d": 117,
-          "n": "temperature_warning"
-        },
-        {
-          "d": 118,
-          "n": "humidity"
-        },
-        {
-          "d": 119,
-          "n": "humidity_calibration"
-        },
-        {
-          "d": 120,
-          "n": "humidity_v0_set"
-        },
-        {
-          "d": 121,
-          "n": "humidity_v1_set"
-        },
-        {
-          "d": 122,
-          "n": "humidity_warning"
-        }
-      ]
-    },
     "DHTA001": {
       "model": "Excellux",
       "dps": [
@@ -26007,7 +26047,7 @@
         },
         {
           "d": 1,
-          "n": "presence_state"
+          "n": "presence"
         },
         {
           "d": 3,
@@ -26198,8 +26238,8 @@
     }
   },
   "stats": {
-    "devBlocks": 437,
-    "mfrs": 1241,
-    "dpProfiles": 547
+    "devBlocks": 438,
+    "mfrs": 1251,
+    "dpProfiles": 548
   }
 }
