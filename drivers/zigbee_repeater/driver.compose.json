@@ -8,23 +8,14 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_1mxvlhmq",
-      "_TZ3000_1mxvlhmq",
       "_tz3000_amdymr7l",
-      "_TZ3000_amdymr7l",
       "_tz3000_gdc3biaj",
-      "_TZ3000_gdc3biaj",
       "_tz3000_hopvlupy",
-      "_TZ3000_hopvlupy",
       "_tz3000_kxlmv9ag",
-      "_TZ3000_kxlmv9ag",
       "_tz3000_m0vaazwu",
-      "_TZ3000_m0vaazwu",
       "_tz3000_rku4cnct",
-      "_TZ3000_rku4cnct",
       "_tz3000_sgpbz53b",
-      "_TZ3000_sgpbz53b",
-      "_tz3000_ufttklsz",
-      "_TZ3000_ufttklsz"
+      "_tz3000_ufttklsz"
     ],
     "productId": [
       "TS0207"
@@ -54,6 +45,10 @@
       "usageConstant": 1
     }
   },
-  "platforms": ["local"],
-  "connectivity": ["zigbee"]
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
 }
