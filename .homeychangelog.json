@@ -1,4 +1,7 @@
 {
+  "5.11.8": {
+    "en": "v5.11.8: Z2M fingerprint sync — Added 18 new device fingerprints. climate_sensor: +5 (_TZE204_3q3maeoo, _TZE204_6vwfjkcj, _TZE204_tuhfx7tf, _TZE284_q22avxbv, _TZE284_roujjevx). switch_4gang: +4 TS0726 (_TZ300A_ohjmifiz, _TZ300A_rncj86af, _TZ300A_vkflnsl0, _TZ300A_vqrs45nj). water_tank_monitor: +1 (_TZE284_mxujdmxo). plug_smart: +1 (_TZ3210_sgb0xhwn). JohanBendz forks crawled — no additional fingerprints found beyond upstream."
+  },
   "5.11.7": {
     "en": "v5.11.7: New driver — Wall Switch 4-Gang 1-Way (BSEED). Adds support for BSEED 4-gang ZCL glass touch switches (TS0004/TS0014). Sub-device architecture: each gang = separate Homey device card. Includes scene mode (auto/magic/both), LED indicator control, and physical button flow triggers for all 4 gangs."
   },
