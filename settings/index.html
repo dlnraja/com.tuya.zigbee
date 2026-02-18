@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html><head><style>
-body{font-family:sans-serif;padding:16px;color:#333}
-h1{font-size:18px}
-.s{background:#f5f5f5;border-radius:8px;padding:12px;margin:8px 0}
-a{color:#007aff}
-</style></head><body>
-<h1>Universal Tuya Zigbee</h1>
-<p>100% Local Zigbee Control for Tuya Devices</p>
-<div class="s"><b>111</b> drivers | <b>42,500+</b> fingerprints | <b>1,457+</b> flow cards</div>
-<div class="s"><b>Links</b><br>
-<a href="https://github.com/dlnraja/com.tuya.zigbee/issues" target="_blank">Report Issue (GitHub)</a><br>
-<a href="https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352" target="_blank">Forum Thread</a></div>
-<div class="s"><b>Tip:</b> If a device doesn't work, remove it, factory reset (hold button 5-10s), then re-pair close to Homey.</div>
-</body></html>
+<html><head><style>body{font-family:sans-serif;padding:16px;color:#333;font-size:13px}h1{font-size:18px}.card{background:#f5f5f5;border-radius:8px;padding:12px;margin:8px 0}a{color:#00a870}.fg{margin-bottom:8px}label{font-weight:600;font-size:12px;display:block;margin-bottom:2px}input,select{width:100%;padding:7px;border:1px solid #ccc;border-radius:5px;font-size:12px}.btn{padding:8px 14px;border:none;border-radius:5px;font-size:12px;font-weight:600;cursor:pointer;background:#00a870;color:#fff}.row{display:flex;gap:8px}.row>*{flex:1}.msg{font-size:11px;margin-top:5px;padding:5px;border-radius:4px;display:none}.ok{color:#00a870;background:#f0faf5}.err{color:#e74c3c;background:#fef2f2}</style></head><body>
+<h1>Universal Tuya Zigbee + WiFi</h1>
+<p>100% Local Control | 138 drivers | 5,579 fingerprints</p>
+<div class="card"><b>Links</b><br><a href="https://github.com/dlnraja/com.tuya.zigbee/issues" target="_blank">Report Issue</a> | <a href="https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352" target="_blank">Forum</a></div>
+<div class="card"><h3>WiFi Cloud Credentials</h3><p style="font-size:11px;color:#666">Save your Tuya IoT credentials here. They will be pre-filled when pairing WiFi devices.</p>
+<div class="row"><div class="fg"><label>Access ID</label><input id="aid" placeholder="from iot.tuya.com"/></div><div class="fg"><label>Access Secret</label><input id="as" type="password" placeholder="from iot.tuya.com"/></div></div>
+<div class="fg"><label>Region</label><select id="reg"><option value="eu">Europe</option><option value="us">Americas</option><option value="cn">China</option><option value="in">India</option></select></div>
+<button class="btn" onclick="saveCreds()">Save Credentials</button> <button class="btn" style="background:#ddd;color:#333" onclick="clearCreds()">Clear</button>
+<div class="msg ok" id="ok-msg"></div><div class="msg err" id="err-msg"></div></div>
+<div class="card"><b>Tip:</b> If a device doesn't work, remove it, factory reset (hold button 5-10s), then re-pair close to Homey.</div>
+<script>
+function show(id,t){var e=document.getElementById(id);e.textContent=t;e.style.display='block';setTimeout(function(){e.style.display='none'},4000)}
+function saveCreds(){var a=document.getElementById('aid').value.trim(),s=document.getElementById('as').value.trim(),r=document.getElementById('reg').value;if(!a||!s){show('err-msg','Access ID and Secret required');return}Homey.set('tuya_cloud_access_id',a);Homey.set('tuya_cloud_access_secret',s);Homey.set('tuya_cloud_region',r);show('ok-msg','Credentials saved!')}
+function clearCreds(){Homey.unset('tuya_cloud_access_id');Homey.unset('tuya_cloud_access_secret');Homey.unset('tuya_cloud_region');document.getElementById('aid').value='';document.getElementById('as').value='';show('ok-msg','Credentials cleared')}
+function onHomeyReady(h){Homey=h;Homey.ready();Homey.get('tuya_cloud_access_id',function(e,v){if(v)document.getElementById('aid').value=v});Homey.get('tuya_cloud_region',function(e,v){if(v)document.getElementById('reg').value=v})}
+var Homey;
+</script></body></html>
