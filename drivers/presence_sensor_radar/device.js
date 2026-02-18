@@ -509,8 +509,9 @@ class IntelligentDPAutoDiscovery {
       // DP4 could be humidity OR battery - check context
       const hasMotionDP = this.discoveredDPs.has(1);
       const hasTempDP = this.discoveredDPs.has(3) || this.discoveredDPs.has(111);
+      const hasRadarDPs = this.discoveredDPs.has(2) && (this.discoveredDPs.has(3) || this.discoveredDPs.has(9));
       
-      if (hasTempDP && dpId === 4) {
+      if (hasTempDP && dpId === 4 && !hasRadarDPs) {
         // If we have temp, DP4 is likely humidity (multi-sensor)
         dpInfo.inferredType = 'humidity';
         dpInfo.inferredCapability = 'measure_humidity';
