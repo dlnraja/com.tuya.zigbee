@@ -25,22 +25,49 @@ details{margin-bottom:8px;font-size:11px}details summary{cursor:pointer;font-wei
 <h2>Tuya WiFi Setup</h2>
 <p class="sub">100% local control after initial key retrieval</p>
 <div class="tabs">
-<div class="tab active" data-t="sl">Smart Life Login</div>
+<div class="tab active" data-t="ez">Easy Login</div>
+<div class="tab" data-t="sl">Smart Life Login</div>
 <div class="tab" data-t="iot">IoT Platform</div>
 <div class="tab" data-t="man">Manual</div>
 </div>
 
-<!-- TAB 1: Smart Life Login -->
-<div id="p-sl" class="pnl active">
+<!-- TAB 0: Easy Login (email+password only, uses saved creds) -->
+<div id="p-ez" class="pnl active">
 <div class="box">
-<b>Easiest method</b> — Log in with your Smart Life / Tuya Smart credentials.<br>
-Requires a free Tuya IoT project to relay the request (one-time 5min setup).
+<b>Easiest method</b> - Just enter your Smart Life / Tuya Smart email and password.<br>
+Requires IoT credentials saved in <b>App Settings</b> (one-time setup).
+<details><summary>First time? Save credentials in App Settings</summary>
+<ol>
+<li>Go to <b>iot.tuya.com</b> and create a free account</li>
+<li>Cloud > Create Cloud Project > select <b>Smart Home</b></li>
+<li>Subscribe to <b>IoT Core</b> + <b>Authorization</b> APIs</li>
+<li>Devices > <b>Link App Account</b> > scan QR with Smart Life app</li>
+<li>Copy <b>Access ID</b> + <b>Access Secret</b> from Overview tab</li>
+<li>Go to this app's <b>Settings page</b> and save them there</li>
+</ol>
+After this one-time setup, you only need email + password to pair devices.
+</details>
+</div>
+<div class="fg"><label>Smart Life Email</label><input type="email" id="ez_email" placeholder="your@email.com"/></div>
+<div class="fg"><label>Password</label><input type="password" id="ez_pw" placeholder="Smart Life / Tuya Smart password"/></div>
+<div class="row">
+<div class="fg"><label>Country Code</label><input type="text" id="ez_cc" value="33" placeholder="33"/><div class="hint">33=FR, 1=US, 44=UK, 49=DE, 31=NL</div></div>
+<div class="fg"><label>App</label><select id="ez_schema"><option value="smartlife">Smart Life</option><option value="tuyaSmart">Tuya Smart</option></select></div>
+</div>
+<button class="btn btn-p" id="btn-ez" onclick="doEasy()">Log in & scan devices</button>
+<div class="err" id="ez-err"></div><div class="ok" id="ez-ok"></div>
+</div>
+
+<!-- TAB 1: Smart Life Login -->
+<div id="p-sl" class="pnl">
+<div class="box">
+<b>Full login</b> - Enter IoT credentials + Smart Life email/password.
 <details><summary>How to get Access ID/Secret (free, 5 min)</summary>
 <ol>
-<li>Go to <b>iot.tuya.com</b> → create free account</li>
-<li>Cloud → Create Cloud Project → select <b>Smart Home</b></li>
+<li>Go to <b>iot.tuya.com</b> and create a free account</li>
+<li>Cloud > Create Cloud Project > select <b>Smart Home</b></li>
 <li>Subscribe to <b>IoT Core</b> + <b>Authorization</b> APIs</li>
-<li>Devices → <b>Link App Account</b> → scan QR with Smart Life app</li>
+<li>Devices > <b>Link App Account</b> > scan QR with Smart Life app</li>
 <li>Copy <b>Access ID</b> + <b>Access Secret</b> from Overview tab</li>
 </ol>
 Credentials saved locally. Cloud only used once for key retrieval.
@@ -59,14 +86,14 @@ Credentials saved locally. Cloud only used once for key retrieval.
 <div class="fg"><label>Region</label><select id="sl_reg"><option value="eu">Europe</option><option value="us">Americas</option><option value="cn">China</option><option value="in">India</option></select></div>
 <div class="fg"><label>App</label><select id="sl_schema"><option value="smartlife">Smart Life</option><option value="tuyaSmart">Tuya Smart</option></select></div>
 </div>
-<button class="btn btn-p" id="btn-sl" onclick="doSmartLife()">Log in &amp; scan devices</button>
+<button class="btn btn-p" id="btn-sl" onclick="doSmartLife()">Log in & scan devices</button>
 <div class="err" id="sl-err"></div><div class="ok" id="sl-ok"></div>
 </div>
 
 <!-- TAB 2: IoT Platform -->
 <div id="p-iot" class="pnl">
 <div class="box">
-<b>IoT Platform direct</b> — Uses your Tuya IoT project credentials to fetch all linked devices + local keys automatically.
+<b>IoT Platform direct</b> - Uses your Tuya IoT project credentials to fetch all linked devices + local keys automatically.
 Same setup as above but without email/password (uses linked account).
 </div>
 <div class="fg"><label>Access ID</label><input type="text" id="iot_aid" placeholder="from iot.tuya.com"/></div>
@@ -79,7 +106,7 @@ Same setup as above but without email/password (uses linked account).
 <!-- TAB 3: Manual -->
 <div id="p-man" class="pnl">
 <div class="box2">
-<b>Manual entry</b> — Enter Device ID and Local Key directly.
+<b>Manual entry</b> - Enter Device ID and Local Key directly.
 Get these from <b>tinytuya wizard</b>, browser extension, or iot.tuya.com API Explorer.
 </div>
 <div class="fg"><label>Device ID *</label><input type="text" id="m_did" placeholder="e.g. bf1234abcdef567890"/></div>
@@ -97,6 +124,19 @@ function hide(id){document.getElementById(id).style.display='none'}
 function show(id,msg){var e=document.getElementById(id);e.textContent=msg;e.style.display='block'}
 function spin(id){var b=document.getElementById(id);b.disabled=true;b.dataset.orig=b.innerHTML;b.innerHTML='<span class="sp"></span>Scanning...'}
 function unspin(id){var b=document.getElementById(id);b.disabled=false;b.innerHTML=b.dataset.orig||'Scan'}
+
+function doEasy(){
+  var em=document.getElementById('ez_email').value.trim(),pw=document.getElementById('ez_pw').value.trim();
+  var cc=document.getElementById('ez_cc').value.trim(),schema=document.getElementById('ez_schema').value;
+  hide('ez-err');hide('ez-ok');
+  if(!em||!pw){show('ez-err','Email and password required');return}
+  spin('btn-ez');
+  H.emit('login',{mode:'simple',email:em,password:pw,countryCode:cc,schema:schema},function(err,r){
+    unspin('btn-ez');
+    if(err){show('ez-err',err.message||String(err));return}
+    done=true;show('ez-ok',r.count+' devices found! Click Next to select.');
+  });
+}
 
 function doSmartLife(){
   var aid=document.getElementById('sl_aid').value.trim(),as=document.getElementById('sl_as').value.trim();

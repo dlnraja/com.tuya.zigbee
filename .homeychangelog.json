@@ -1,4 +1,7 @@
 {
+  "5.11.14": {
+    "en": "v5.11.14: WiFi overhaul + bug fixes. (1) Fix settings blank spinner (Homey.ready). (2) New Easy Login: email+password only WiFi pairing. (3) Redesigned 4-tab configure.html for all 22 WiFi drivers. (4) Fix TS0002 _TZ3000_cauq1okq 2-gang=1. (5) Fix TS0203 _TZ3000_okohwwap → contact_sensor. (6) Fix radar DP4 distance/humidity confusion. (7) TuyaCloudAPI improvements."
+  },
   "5.11.13": {
     "en": "v5.11.13: Fix presence_sensor_radar log spam (~52K lines/day). (1) Same-value dedup for lux — skip when value unchanged (was logging 0→0 every 5s). (2) Fix lux change calc when currentLux=0: was always returning 100% change, bypassing smoothing filter. (3) Throttle 'static mapping' log to first occurrence per DP. (4) Remove verbose per-event [RADAR-BATTERY] log from Tuya DP listener. Diagnostic report: hcaron@synchrone.fr v5.11.5."
   },
