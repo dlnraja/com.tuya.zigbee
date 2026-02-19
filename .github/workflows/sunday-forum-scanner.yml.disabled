@@ -1,0 +1,60 @@
+# Universal Tuya Zigbee - Sunday Forum Scanner
+# Scans Homey community forum for new posts with device requests
+# and creates GitHub issues for unsupported devices
+
+name: "Sunday Forum Scanner"
+
+on:
+  schedule:
+    - cron: '0 10 * * 0'
+  workflow_dispatch:
+
+concurrency:
+  group: sunday-forum
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  scan-forum:
+    name: "Scan Forum for Device Requests"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Restore last scan state
+        uses: actions/cache@v4
+        with:
+          path: /tmp/last_forum_post.txt
+          key: forum-scan-${{ github.run_number }}
+          restore-keys: forum-scan-
+
+      - name: Scan forum posts
+        env:
+          LAST_POST_FILE: /tmp/last_forum_post.txt
+        run: node .github/scripts/scan-forum.js
+
+      - name: Create issues for unsupported devices
+        if: hashFiles('/tmp/forum_issues.json') != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const issues = JSON.parse(fs.readFileSync('/tmp/forum_issues.json','utf8'));
+            if (!issues.length) return;
+            const rows = issues.map(i =>
+              `| ${i.user} | ${i.date} | #${i.postNum} | \`${i.missing.join('`, `')}\` |`
+            ).join('\n');
+            const body = `## Forum device requests\n\n| User | Date | Post | Missing FPs |\n|------|------|------|-------------|\n${rows}\n\nFrom [test forum topic](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352).`;
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `[Forum] ${issues.length} unsupported device request(s)`,
+              body,
+              labels: ['enhancement','forum-request']
+            });

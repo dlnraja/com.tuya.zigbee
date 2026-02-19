@@ -1,58 +1,91 @@
-# Universal Tuya Zigbee - Auto-Respond to Issues/PRs
-# v5.8.12 - Updated 2026-02-04
-# Automatically responds to new issues and PRs with helpful information
+# Universal Tuya Zigbee - Auto PR/Issue Responder
+# Triggers on new issues/PRs opened on dlnraja repo
+# Immediately checks fingerprints and posts a response
 
-name: 🤖 Auto-Respond Issues/PRs
+name: "Auto Issue/PR Responder"
 
 on:
   issues:
     types: [opened]
-  pull_request:
+  pull_request_target:
     types: [opened]
 
-permissions:
-  issues: write
-  pull-requests: write
+concurrency:
+  group: auto-respond-${{ github.event.number }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
 
 jobs:
   respond:
+    name: "Auto-Respond"
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/github-script@v7
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Check fingerprints and respond
+        uses: actions/github-script@v7
         with:
           script: |
-            const author = context.payload.issue?.user?.login || context.payload.pull_request?.user?.login;
-            const isIssue = !!context.payload.issue;
-            const number = context.issue.number;
-            const title = context.payload.issue?.title || context.payload.pull_request?.title || '';
+            const fs = require('fs');
+            const path = require('path');
             
-            // Check if it's a device request
-            const isDeviceRequest = /fingerprint|device|sensor|switch|button|not work|pair/i.test(title);
-            
-            let msg = `Hi @${author}! 👋\n\n`;
-            msg += `Thanks for your ${isIssue ? 'issue' : 'PR'}!\n\n`;
-            
-            if (isDeviceRequest) {
-              msg += `## 📋 Device Information Needed\n\n`;
-              msg += `Please provide from **Homey Developer Tools** → Zigbee → Your Device:\n\n`;
-              msg += `| Info | How to Get |\n`;
-              msg += `|------|------------|\n`;
-              msg += `| \`manufacturerName\` | Settings → zb_manufacturer_name |\n`;
-              msg += `| \`modelId\` | Settings → zb_model_id |\n`;
-              msg += `| Interview JSON | Click "Interview" button |\n\n`;
-              msg += `🔗 [Open Developer Tools](https://tools.developer.homey.app)\n\n`;
-              msg += `### 💡 Common Issues:\n`;
-              msg += `- **Device shows "unknown"**: Re-pair after app update\n`;
-              msg += `- **Wrong driver**: Check fingerprint conflicts (same mfr + different productId is OK)\n`;
-              msg += `- **Buttons not working**: Check TS004F scene mode or physical button flow cards\n`;
-              msg += `- **Random motion triggers**: Update to v5.8.12 (throttling fix)\n\n`;
+            // Load all fingerprints
+            const fps = new Set();
+            const driverMap = new Map();
+            const driversDir = path.join(process.env.GITHUB_WORKSPACE, 'drivers');
+            for (const d of fs.readdirSync(driversDir)) {
+              const cf = path.join(driversDir, d, 'driver.compose.json');
+              if (!fs.existsSync(cf)) continue;
+              const matches = fs.readFileSync(cf,'utf8').match(/"_T[A-Za-z0-9_]+"/g) || [];
+              for (const m of matches) {
+                const fp = m.replace(/"/g,'');
+                fps.add(fp);
+                if (!driverMap.has(fp)) driverMap.set(fp, []);
+                driverMap.get(fp).push(d);
+              }
             }
             
-            msg += `*🤖 Auto-response - maintainer will review soon.*`;
+            // Extract fingerprints from issue/PR body
+            const body = context.payload.issue?.body || context.payload.pull_request?.body || '';
+            const title = context.payload.issue?.title || context.payload.pull_request?.title || '';
+            const text = title + ' ' + body;
+            const re = /_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g;
+            const mfrs = [...new Set(text.match(re) || [])];
+            
+            if (!mfrs.length) {
+              console.log('No fingerprints found in text');
+              return;
+            }
+            
+            const found = mfrs.filter(m => fps.has(m));
+            const missing = mfrs.filter(m => !fps.has(m));
+            const version = require(path.join(process.env.GITHUB_WORKSPACE,'app.json')).version;
+            const num = context.issue?.number || context.payload.pull_request?.number;
+            
+            let msg = '<!-- tuya-triage-bot -->\n';
+            if (found.length) {
+              const lines = found.map(m => {
+                const drivers = driverMap.get(m) || ['unknown'];
+                return `- \`${m}\` → **${drivers.join('**, **')}**${drivers.length>1?' (multi-productId)':''}`;
+              }).join('\n');
+              msg += `**Already supported** in v${version}:\n${lines}\n\n`;
+            }
+            if (missing.length) {
+              msg += `**Not yet supported:** \`${missing.join('`, `')}\`\nLogged for next release. Please provide a device interview from https://tools.developer.homey.app to help us add support.\n\n`;
+            }
+            msg += `**Install test version:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n`;
+            msg += `**Forum:** https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352`;
             
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: number,
+              issue_number: num,
               body: msg
             });
+            console.log(`Responded to #${num} with ${found.length} found, ${missing.length} missing`);

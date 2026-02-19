@@ -1,0 +1,72 @@
+name: Auto-Publish on Push
+
+on:
+  push:
+    branches: [master, main]
+    paths:
+      - "drivers/**"
+      - "lib/**"
+      - "app.js"
+      - "app.json"
+      - ".homeycompose/**"
+      - "locales/**"
+      - "assets/images/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    name: Validate & Publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: App info
+        id: info
+        run: |
+          V=$(node -p "require('./app.json').version")
+          echo "version=$V" >> $GITHUB_OUTPUT
+          echo "App v$V"
+
+      - name: Validate
+        uses: athombv/github-action-homey-app-validate@v1
+        with:
+          level: publish
+
+      - name: Check HOMEY_PAT
+        id: check_pat
+        run: |
+          if [ -n "${{ secrets.HOMEY_PAT }}" ]; then
+            echo "has_pat=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_pat=false" >> $GITHUB_OUTPUT
+            echo "::warning::HOMEY_PAT not configured - skipping publish"
+          fi
+
+      - name: Publish
+        if: steps.check_pat.outputs.has_pat == 'true'
+        uses: athombv/github-action-homey-app-publish@v1
+        id: pub
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## v${{ steps.info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.check_pat.outputs.has_pat }}" == "true" ]; then
+            echo "Published to Homey App Store" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "Validated only (HOMEY_PAT not set)" >> $GITHUB_STEP_SUMMARY
+            echo "Add HOMEY_PAT secret from https://tools.developer.homey.app/me" >> $GITHUB_STEP_SUMMARY
+          fi
