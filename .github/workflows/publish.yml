@@ -1,205 +1,88 @@
-# Universal Tuya Zigbee - Homey App Publish Workflow
-# v5.9.17 - Updated 2026-02-14
-# Uses official Athom SDK3 GitHub Actions for validate + publish
-
-name: 🚀 Homey App Publish
-
-on:
+# Auto Publish - Official Athom Actions (NO CLI)
+# Required secret: HOMEY_PAT (from https://tools.developer.homey.app/me)
+name: Auto Publish
+"on":
   push:
-    branches:
-      - master
-      - main
+    branches: [master, main]
     paths:
-      - 'app.json'
-      - '.homeycompose/**'
-      - 'lib/**'
-      - 'drivers/**'
-      - 'assets/**'
-      - 'locales/**'
-      - 'package.json'
-      # Note: paths filter already excludes docs/md — no paths-ignore needed
+      - "app.json"
+      - ".homeycompose/**"
+      - "lib/**"
+      - "drivers/**"
+      - "assets/**"
+      - "locales/**"
+      - "package.json"
   workflow_dispatch:
     inputs:
-      force:
-        description: "Force publish even if validation warnings"
+      version:
+        type: choice
+        options: [patch, minor, major]
+        default: patch
+      changelog:
+        type: string
         required: false
-        type: boolean
-        default: false
-      skip_validation:
-        description: "Skip Athom validation (known CLI bug workaround)"
-        required: false
-        type: boolean
-        default: false
-
+permissions:
+  contents: write
 concurrency:
-  group: publish-${{ github.ref }}
+  group: publish
   cancel-in-progress: true
-
-env:
-  NODE_VERSION: "22"
-  # APP_VERSION read dynamically from app.json
-  # Known issues tracked:
-  # - Athom CLI validation bug with images (use continue-on-error)
-  # - Settings keys: zb_model_id NOT zb_modelId
-  # - Flow cards: NO titleFormatted with [[device]] in triggers
-  # - getConditionCard vs getDeviceConditionCard (app-level vs driver-level)
 
 jobs:
   validate:
-    name: 🔍 Validate & Sync
+    name: Validate
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-    outputs:
-      version: ${{ steps.info.outputs.version }}
-      name: ${{ steps.info.outputs.name }}
-      id: ${{ steps.info.outputs.id }}
-      changed: ${{ steps.sync.outputs.changed }}
+    timeout-minutes: 10
     steps:
-      - name: 📥 Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: 📦 Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: "22"
           cache: npm
-
-      - name: 📦 Install dependencies
-        run: npm ci --prefer-offline --no-audit || npm install
-
-      - name: 🔄 Full sync from .homeycompose
-        id: sync
-        run: |
-          echo "📦 Regenerating app.json from .homeycompose..."
-          npx homey app build 2>&1 | tail -5
-          
-          echo "🔄 Running sync script..."
-          node scripts/maintenance/sync-app-json.js
-          
-          # Check for any changes
-          if git diff --quiet app.json .homeycompose/ drivers/*/driver.compose.json 2>/dev/null; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-            echo "✅ No changes detected"
-          else
-            echo "changed=true" >> $GITHUB_OUTPUT
-            echo "📝 Changes detected, will commit"
-          fi
-
-      - name: 📝 Commit sync changes
-        if: steps.sync.outputs.changed == 'true'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add app.json .homeycompose/ drivers/*/driver.compose.json 2>/dev/null || true
-          git commit -m "🔄 Auto-sync app.json and compose files [skip ci]" || true
-          git push || true
-
-      - name: 🔨 Build app
-        run: npx homey app build || echo "⚠️ Build validation warnings (custom capabilities) - continuing"
-
-      - name: 📦 Get App Info
-        id: info
-        run: |
-          VERSION=$(node -p "require('./app.json').version")
-          NAME=$(node -p "require('./app.json').name.en")
-          ID=$(node -p "require('./app.json').id")
-          DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l)
-          MFRS=$(grep -ohE '"_TZ[^"]+"' drivers/*/driver.compose.json 2>/dev/null | sort -u | wc -l)
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "name=$NAME" >> $GITHUB_OUTPUT
-          echo "id=$ID" >> $GITHUB_OUTPUT
-          echo "drivers=$DRIVERS" >> $GITHUB_OUTPUT
-          echo "📦 $NAME v$VERSION ($ID) - $DRIVERS drivers, $MFRS manufacturer IDs"
-
-      - name: 🔍 Validate (Athom Official)
-        id: validate
-        uses: athombv/github-action-homey-app-validate@v1
-        continue-on-error: true
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Athom Validate
+        uses: athombv/github-action-homey-app-validate@master
         with:
           level: publish
-
-      - name: � Code Quality Checks
-        run: |
-          echo "## 🔧 Code Quality Checks" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          
-          # Check for wrong settings keys (common bug)
-          WRONG_KEYS=$(grep -r "zb_modelId\|zb_manufacturerName" lib/ drivers/ --include="*.js" 2>/dev/null | wc -l || echo 0)
-          if [ "$WRONG_KEYS" -gt 0 ]; then
-            echo "⚠️ Found $WRONG_KEYS files with wrong settings keys (use zb_model_id, zb_manufacturer_name)" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "✅ Settings keys correct" >> $GITHUB_STEP_SUMMARY
-          fi
-          
-          # Check for titleFormatted with [[device]] bug
-          TITLE_BUG=$(grep -r "titleFormatted.*\[\[device\]\]" drivers/ --include="*.json" 2>/dev/null | wc -l || echo 0)
-          if [ "$TITLE_BUG" -gt 0 ]; then
-            echo "⚠️ Found $TITLE_BUG flow cards with titleFormatted [[device]] bug" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "✅ Flow cards OK" >> $GITHUB_STEP_SUMMARY
-          fi
-          
-          # Check for TuyaZigbeeDriver wrong import
-          WRONG_IMPORT=$(grep -r "require.*TuyaZigbeeDriver" drivers/ --include="*.js" 2>/dev/null | wc -l || echo 0)
-          if [ "$WRONG_IMPORT" -gt 0 ]; then
-            echo "⚠️ Found $WRONG_IMPORT files with wrong TuyaZigbeeDriver import" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "✅ Imports OK" >> $GITHUB_STEP_SUMMARY
-          fi
-
-      - name: �📊 Validation Summary
-        run: |
-          echo "## 🔍 Validation Report" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Property | Value |" >> $GITHUB_STEP_SUMMARY
-          echo "|----------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| App | ${{ steps.info.outputs.name }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Version | ${{ steps.info.outputs.version }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Drivers | $(ls -d drivers/*/ | wc -l) |" >> $GITHUB_STEP_SUMMARY
-          echo "| Sync Changes | ${{ steps.sync.outputs.changed }} |" >> $GITHUB_STEP_SUMMARY
-
-  publish:
-    name: 🚀 Publish
-    runs-on: ubuntu-latest
+  version-and-publish:
     needs: validate
-    timeout-minutes: 15
-    if: needs.validate.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - name: 📥 Checkout
-        uses: actions/checkout@v4
-
-      - name: 📦 Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: 📦 Install dependencies
-        run: npm ci --prefer-offline --no-audit || npm install
-
-      - name:  Publish to Homey App Store (Athom SDK3)
-        uses: athombv/github-action-homey-app-publish@v1
-        id: publish
+          node-version: "22"
+          cache: npm
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Changelog
+        id: cl
+        shell: bash
+        run: |
+          CL="${{ inputs.changelog }}"
+          if [ -z "$CL" ]; then
+            CL="Auto-publish via GitHub Actions"
+          fi
+          echo "text=$CL" >> $GITHUB_OUTPUT
+      - name: Bump
+        id: bump
+        uses: athombv/github-action-homey-app-version@master
+        with:
+          version: ${{ inputs.version || 'patch' }}
+          changelog: ${{ steps.cl.outputs.text }}
+      - name: Push
+        shell: bash
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "v${{ steps.bump.outputs.version }} [skip ci]"
+          git tag "v${{ steps.bump.outputs.version }}"
+          git push origin HEAD --tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish
+        id: pub
+        uses: athombv/github-action-homey-app-publish@master
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
-
-      - name: ✅ Summary
-        run: |
-          DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l)
-          MFRS=$(grep -ohE '"_[Tt][Zz][^"]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l)
-          echo "## 🎉 ${{ needs.validate.outputs.name }} v${{ needs.validate.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "✅ **Published to Homey App Store!**" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "🔗 [Manage Build](https://developer.homey.app/apps/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### 📋 Details" >> $GITHUB_STEP_SUMMARY
-          echo "- **App ID**: ${{ needs.validate.outputs.id }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Drivers**: $DRIVERS" >> $GITHUB_STEP_SUMMARY
-          echo "- **Fingerprints**: $MFRS unique manufacturer IDs" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### 🎯 Next Steps:" >> $GITHUB_STEP_SUMMARY
-          echo "1. Go to https://developer.homey.app/apps/com.dlnraja.tuya.zigbee" >> $GITHUB_STEP_SUMMARY
-          echo "2. Click on the build → **Promote to Live**" >> $GITHUB_STEP_SUMMARY
+      - run: echo "Published v${{ steps.bump.outputs.version }} - ${{ steps.pub.outputs.url }}" >> $GITHUB_STEP_SUMMARY

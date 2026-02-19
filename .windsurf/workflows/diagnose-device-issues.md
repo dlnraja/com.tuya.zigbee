@@ -22,6 +22,10 @@ Look for these key patterns in stderr/logs:
 | `Using config: DEFAULT for` | Empty mfr name | Device's `_getManufacturerName()` |
 | `mcuSyncTime` / `0x24` | Time not syncing | `lib/tuya/TuyaTimeSyncManager.js` |
 | `Could not get device` | Device init crash | Wrap in try-catch |
+| `temp 0.2°C` (wrong values) | Double-division bug | `lib/tuya/TuyaEF00Manager.js` |
+| `Low battery` on mains device | Missing mainsPowered getter | `drivers/{type}/device.js` |
+| Missing VOC/HCHO values | DPs not in dpMappings | `drivers/{type}/device.js` |
+| CO2 rejected (value=0-299) | Validator min too strict | `lib/ProductValueValidator.js` |
 
 ## Step 2: Identify Root Cause
 
@@ -38,6 +42,13 @@ Check `sinceEvent` value:
 - Ghost: > 1000000ms (timestamp corruption)
 
 Root cause: Duplicate listener registration or `lastTime: 0` default
+
+### Double-Division in Sensor Values
+- Symptom: raw 206 → 0.21 instead of 20.6
+- Fix: TuyaEF00Manager.js skips auto-convert when dpMappings divisor !== 1
+
+### False Battery on Mains Devices
+- Add `get mainsPowered() { return true; }` + remove measure_battery in onNodeInit
 
 ### DEFAULT Config Fallback
 Check in order:

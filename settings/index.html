@@ -1,18 +1,80 @@
 <!DOCTYPE html>
-<html><head><style>body{font-family:sans-serif;padding:16px;color:#333;font-size:13px}h1{font-size:18px}.card{background:#f5f5f5;border-radius:8px;padding:12px;margin:8px 0}a{color:#00a870}.fg{margin-bottom:8px}label{font-weight:600;font-size:12px;display:block;margin-bottom:2px}input,select{width:100%;padding:7px;border:1px solid #ccc;border-radius:5px;font-size:12px}.btn{padding:8px 14px;border:none;border-radius:5px;font-size:12px;font-weight:600;cursor:pointer;background:#00a870;color:#fff}.row{display:flex;gap:8px}.row>*{flex:1}.msg{font-size:11px;margin-top:5px;padding:5px;border-radius:4px;display:none}.ok{color:#00a870;background:#f0faf5}.err{color:#e74c3c;background:#fef2f2}</style></head><body>
+<html><head><style>
+body{font-family:sans-serif;padding:16px;color:#333;font-size:13px}
+h1{font-size:18px}.card{background:#f5f5f5;border-radius:8px;padding:12px;margin:8px 0}
+a{color:#00a870}.fg{margin-bottom:8px}
+label{font-weight:600;font-size:12px;display:block;margin-bottom:2px}
+input,select{width:100%;padding:7px;border:1px solid #ccc;border-radius:5px;font-size:12px;box-sizing:border-box}
+.btn{padding:8px 14px;border:none;border-radius:5px;font-size:12px;font-weight:600;cursor:pointer;background:#00a870;color:#fff}
+.btn:disabled{opacity:.5;cursor:not-allowed}.btn-c{background:#ddd;color:#333}
+.row{display:flex;gap:8px}.row>*{flex:1}
+.msg{font-size:11px;margin-top:5px;padding:5px;border-radius:4px;display:none}
+.ok{color:#00a870;background:#f0faf5}.err{color:#e74c3c;background:#fef2f2}
+.tr{display:flex;align-items:center;justify-content:space-between;padding:6px 0}
+.sw{position:relative;width:40px;height:22px;flex-shrink:0}
+.sw input{opacity:0;width:0;height:0}
+.sl{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#ccc;border-radius:22px;transition:.3s}
+.sl:before{position:absolute;content:"";height:16px;width:16px;left:3px;bottom:3px;background:#fff;border-radius:50%;transition:.3s}
+.sw input:checked+.sl{background:#00a870}
+.sw input:checked+.sl:before{transform:translateX(18px)}
+.ss{font-size:10px;color:#999;margin-top:2px}.ss.on{color:#00a870}
+</style></head><body>
 <h1>Universal Tuya Zigbee + WiFi</h1>
 <p>100% Local Control | 138 drivers | 5,579 fingerprints</p>
-<div class="card"><b>Links</b><br><a href="https://github.com/dlnraja/com.tuya.zigbee/issues" target="_blank">Report Issue</a> | <a href="https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352" target="_blank">Forum</a></div>
-<div class="card"><h3>WiFi Cloud Credentials</h3><p style="font-size:11px;color:#666">Save your Tuya IoT credentials here. They will be pre-filled when pairing WiFi devices.</p>
-<div class="row"><div class="fg"><label>Access ID</label><input id="aid" placeholder="from iot.tuya.com"/></div><div class="fg"><label>Access Secret</label><input id="as" type="password" placeholder="from iot.tuya.com"/></div></div>
+<div class="card"><b>Links</b><br>
+<a href="https://github.com/dlnraja/com.tuya.zigbee/issues" target="_blank">Report Issue</a> |
+<a href="https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352" target="_blank">Forum</a></div>
+<div class="card"><h3>WiFi Cloud Credentials</h3>
+<p style="font-size:11px;color:#666">Save your Tuya IoT credentials here. They will be pre-filled when pairing WiFi devices.</p>
+<div class="row"><div class="fg"><label>Access ID</label><input id="aid" placeholder="from iot.tuya.com"/></div>
+<div class="fg"><label>Access Secret</label><input id="as" type="password" placeholder="from iot.tuya.com"/>
+<div class="ss" id="sec-status"></div></div></div>
 <div class="fg"><label>Region</label><select id="reg"><option value="eu">Europe</option><option value="us">Americas</option><option value="cn">China</option><option value="in">India</option></select></div>
-<button class="btn" onclick="saveCreds()">Save Credentials</button> <button class="btn" style="background:#ddd;color:#333" onclick="clearCreds()">Clear</button>
+<button class="btn" id="btn-save" disabled onclick="saveCreds()">Save Credentials</button>
+<button class="btn btn-c" id="btn-clear" disabled onclick="clearCreds()">Clear</button>
 <div class="msg ok" id="ok-msg"></div><div class="msg err" id="err-msg"></div></div>
+<div class="card"><h3>Developer Settings</h3>
+<div class="tr"><div><b>Debug Mode</b><br><span style="font-size:11px;color:#666">Verbose logging for troubleshooting</span></div>
+<label class="sw"><input type="checkbox" id="dbg" onchange="setToggle('developer_debug_mode',this.checked)"><span class="sl"></span></label></div>
+<div class="tr"><div><b>Experimental Smart-Adapt</b><br><span style="font-size:11px;color:#666">Auto-modify capabilities (use with caution)</span></div>
+<label class="sw"><input type="checkbox" id="sa" onchange="setToggle('experimental_smart_adapt',this.checked)"><span class="sl"></span></label></div></div>
 <div class="card"><b>Tip:</b> If a device doesn't work, remove it, factory reset (hold button 5-10s), then re-pair close to Homey.</div>
 <script>
+var Homey=null;
 function show(id,t){var e=document.getElementById(id);e.textContent=t;e.style.display='block';setTimeout(function(){e.style.display='none'},4000)}
-function saveCreds(){var a=document.getElementById('aid').value.trim(),s=document.getElementById('as').value.trim(),r=document.getElementById('reg').value;if(!a||!s){show('err-msg','Access ID and Secret required');return}Homey.set('tuya_cloud_access_id',a);Homey.set('tuya_cloud_access_secret',s);Homey.set('tuya_cloud_region',r);show('ok-msg','Credentials saved!')}
-function clearCreds(){Homey.unset('tuya_cloud_access_id');Homey.unset('tuya_cloud_access_secret');Homey.unset('tuya_cloud_region');document.getElementById('aid').value='';document.getElementById('as').value='';show('ok-msg','Credentials cleared')}
-function onHomeyReady(h){Homey=h;Homey.ready();Homey.get('tuya_cloud_access_id',function(e,v){if(v)document.getElementById('aid').value=v});Homey.get('tuya_cloud_region',function(e,v){if(v)document.getElementById('reg').value=v})}
-var Homey;
+function saveCreds(){
+if(!Homey){show('err-msg','App not ready yet');return}
+var a=document.getElementById('aid').value.trim(),s=document.getElementById('as').value.trim(),r=document.getElementById('reg').value;
+if(!a||!s){show('err-msg','Access ID and Secret required');return}
+Homey.set('tuya_cloud_access_id',a,function(e){if(e){show('err-msg','Save failed: '+e.message);return}
+Homey.set('tuya_cloud_access_secret',s,function(e2){if(e2){show('err-msg','Save failed: '+e2.message);return}
+Homey.set('tuya_cloud_region',r,function(e3){if(e3){show('err-msg','Save failed: '+e3.message);return}
+show('ok-msg','Credentials saved!');updateSecretStatus(true)})})})
+}
+function clearCreds(){
+if(!Homey){show('err-msg','App not ready yet');return}
+Homey.unset('tuya_cloud_access_id');Homey.unset('tuya_cloud_access_secret');Homey.unset('tuya_cloud_region');
+document.getElementById('aid').value='';document.getElementById('as').value='';
+document.getElementById('reg').value='eu';
+updateSecretStatus(false);show('ok-msg','Credentials cleared')
+}
+function setToggle(key,val){
+if(!Homey){return}
+Homey.set(key,val,function(e){if(e){show('err-msg','Failed: '+e.message)}})
+}
+function updateSecretStatus(has){
+var el=document.getElementById('sec-status');
+if(has){el.textContent='Secret is configured';el.className='ss on'}
+else{el.textContent='No secret saved';el.className='ss'}
+}
+function onHomeyReady(homey){
+Homey=homey;Homey.ready();
+document.getElementById('btn-save').disabled=false;
+document.getElementById('btn-clear').disabled=false;
+Homey.get('tuya_cloud_access_id',function(e,v){if(v)document.getElementById('aid').value=v});
+Homey.get('tuya_cloud_access_secret',function(e,v){updateSecretStatus(!!v)});
+Homey.get('tuya_cloud_region',function(e,v){if(v)document.getElementById('reg').value=v});
+Homey.get('developer_debug_mode',function(e,v){document.getElementById('dbg').checked=!!v});
+Homey.get('experimental_smart_adapt',function(e,v){document.getElementById('sa').checked=!!v});
+}
 </script></body></html>
