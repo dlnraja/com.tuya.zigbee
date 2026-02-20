@@ -2,29 +2,47 @@
 'use strict';
 const https=require('https'),fs=require('fs'),path=require('path');
 const HOST='community.homey.app',TOPIC=140352;
-const USER=process.env.DISCOURSE_USERNAME||'dlnraja';
-const KEY=process.env.DISCOURSE_API_KEY||'';
+const EMAIL=process.env.HOMEY_EMAIL||'';
+const PASS=process.env.HOMEY_PASSWORD||'';
 const SUM=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
 
-function post(tid,raw){
+async function getCookie(){
+  const d=JSON.stringify({login:EMAIL,password:PASS});
+  return new Promise((ok,fail)=>{
+    const req=https.request({hostname:HOST,port:443,path:'/session',method:'POST',
+      headers:{'Content-Type':'application/json','Content-Length':Buffer.byteLength(d)}
+    },r=>{
+      let b='';r.on('data',c=>b+=c);
+      r.on('end',()=>{
+        if(r.statusCode>=300)return fail(new Error('Login '+r.statusCode));
+        const cookies=(r.headers['set-cookie']||[]).map(c=>c.split(';')[0]).join('; ');
+        ok(cookies);
+      });
+    });
+    req.on('error',fail);req.write(d);req.end();
+  });
+}
+
+function post(tid,raw,cookie){
   return new Promise((ok,fail)=>{
     const d=JSON.stringify({topic_id:tid,raw});
     const req=https.request({hostname:HOST,port:443,path:'/posts.json',method:'POST',
-      headers:{'Content-Type':'application/json','Api-Key':KEY,'Api-Username':USER,'Content-Length':Buffer.byteLength(d)}
+      headers:{'Content-Type':'application/json','Cookie':cookie,'X-Requested-With':'XMLHttpRequest','Content-Length':Buffer.byteLength(d)}
     },r=>{let b='';r.on('data',c=>b+=c);r.on('end',()=>r.statusCode<300?ok(b):fail(new Error(r.statusCode+': '+b.slice(0,200))));});
     req.on('error',fail);req.write(d);req.end();
   });
 }
 
 async function main(){
-  if(!KEY){console.log('DISCOURSE_API_KEY not set — skip');fs.appendFileSync(SUM,'Forum post skipped (no DISCOURSE_API_KEY)\n');return;}
+  if(!EMAIL||!PASS){console.log('HOMEY_EMAIL/HOMEY_PASSWORD not set - skip');fs.appendFileSync(SUM,'Forum post skipped (no credentials)\n');return;}
+  const cookie=await getCookie();
   const ver=process.env.APP_VERSION||require(path.join(process.cwd(),'app.json')).version;
   const cl=process.env.CHANGELOG||'Auto-publish via GitHub Actions';
   const url=process.env.PUBLISH_URL||'https://homey.app/a/com.dlnraja.tuya.zigbee/test/';
-  const raw=`## v${ver} Published\n\n**Changelog:** ${cl}\n\n**Install:** [Test version](${url})\n\n> After updating, remove and re-pair devices that had issues.\n\n*Auto-posted by GitHub Actions*`;
+  const raw='## v'+ver+' Published\n\n**Changelog:** '+cl+'\n\n**Install:** [Test version]('+url+')\n\n> After updating, remove and re-pair devices that had issues.\n\n*Auto-posted by GitHub Actions*';
   console.log('Posting to forum topic',TOPIC);
-  const r=await post(TOPIC,raw);
+  const r=await post(TOPIC,raw,cookie);
   console.log('Posted:',r.slice(0,100));
-  fs.appendFileSync(SUM,`Forum: posted v${ver} update to topic ${TOPIC}\n`);
+  fs.appendFileSync(SUM,'Forum: posted v'+ver+' update to topic '+TOPIC+'\n');
 }
 main().catch(e=>{console.error('Forum post failed:',e.message);process.exit(0);});

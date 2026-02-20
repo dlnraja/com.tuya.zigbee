@@ -10,8 +10,7 @@ on:
   workflow_dispatch:
 
 env:
-  NODE_VERSION: '20'
-  APP_VERSION: '5.8.12'
+  NODE_VERSION: '22'
 
 jobs:
   scan:
@@ -20,12 +19,12 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: 📦 Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-      
+
       - name: 🔍 Scan zigbee2mqtt converters
         run: |
           echo "## 📡 Z2M Scan Results" >> $GITHUB_STEP_SUMMARY
@@ -38,7 +37,7 @@ jobs:
           echo "| Source | Count |" >> $GITHUB_STEP_SUMMARY
           echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
           echo "| Z2M Total | $Z2M_COUNT |" >> $GITHUB_STEP_SUMMARY
-      
+
       - name: 📊 Compare with current DB
         run: |
           echo "Comparing with existing manufacturerName entries..."
@@ -57,7 +56,7 @@ jobs:
             head -20 /tmp/missing_ids.txt >> $GITHUB_STEP_SUMMARY
             echo '```' >> $GITHUB_STEP_SUMMARY
           fi
-      
+
       - name: Create issue if new devices found
         if: ${{ hashFiles('/tmp/missing_ids.txt') != '' }}
         uses: actions/github-script@v7

@@ -2,7 +2,7 @@ name: Auto-Publish on Push
 
 on:
   workflow_dispatch:
-  # push trigger DISABLED — consolidated into publish.yml
+  # push trigger DISABLED - consolidated into publish.yml
 
 permissions:
   contents: write
@@ -28,6 +28,19 @@ jobs:
           V=$(node -p "require('./app.json').version")
           echo "version=$V" >> $GITHUB_OUTPUT
           echo "App v$V"
+
+      - name: Extract Changelog
+        id: cl
+        shell: bash
+        run: |
+          VER=$(node -p "require('./app.json').version")
+          CL=$(node -e "
+            const cl=require('./.homeychangelog.json');
+            const v=process.argv[1];
+            if(cl[v]&&cl[v].en)process.stdout.write(cl[v].en);
+            else{const keys=Object.keys(cl).sort().reverse();if(keys[0]&&cl[keys[0]].en)process.stdout.write(cl[keys[0]].en);else process.stdout.write('Bug fixes and improvements');}
+          " "$VER" 2>/dev/null || echo "Bug fixes and improvements")
+          echo "text=$CL" >> $GITHUB_OUTPUT
 
       - name: Validate
         uses: athombv/github-action-homey-app-validate@v1
@@ -55,6 +68,7 @@ jobs:
         if: always()
         run: |
           echo "## v${{ steps.info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Changelog:** ${{ steps.cl.outputs.text }}" >> $GITHUB_STEP_SUMMARY
           if [ "${{ steps.check_pat.outputs.has_pat }}" == "true" ]; then
             echo "Published to Homey App Store" >> $GITHUB_STEP_SUMMARY
           else
