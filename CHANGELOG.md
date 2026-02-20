@@ -6,6 +6,16 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.11.17] - 2026-02-20
+
+### 🤖 Nightly Auto-Processor
+- New `nightly-auto-process.yml` — daily at 2 AM UTC
+- Auto-processes forum + GitHub with AI + template fallback
+- Updates 5 docs automatically each run
+- Integrated into `tuya-automation-hub.yml`
+
+---
+
 ## [5.8.12] - 2026-02-04
 
 ### 🔧 Forum Fixes
