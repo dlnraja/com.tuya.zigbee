@@ -1,7 +1,7 @@
 {
   "_comment": "Source file. The root app.json is generated from this file by homeycompose.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.16",
+  "version": "5.11.17",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -53033,7 +53033,6 @@
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_ycdqsmpd",
-          "_TZE204_nklqjk62",
           "_TZE204_nklqjk97"
         ],
         "productId": [
