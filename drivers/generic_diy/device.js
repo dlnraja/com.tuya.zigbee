@@ -2,10 +2,14 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
+let ZigbeeProtocolPatchManager;
+try { ZigbeeProtocolPatchManager = require('../../lib/zigbee/ZigbeeProtocolPatchManager'); }
+catch (e) { ZigbeeProtocolPatchManager = null; }
+
 /**
- * GENERIC DIY ZIGBEE DEVICE - v5.7.2
- * Universal driver for ESP32-C6/H2, PTVO, CC253x, custom ZCL
- * With comprehensive flow card support
+ * GENERIC DIY / UNIVERSAL ZCL DEVICE - v5.7.3
+ * Universal driver for ESP32, PTVO, Sonoff, Danfoss, Legrand, Schneider, Bosch, Niko
+ * With comprehensive flow card support + ecosystem bug patches
  */
 
 const CLUSTER_MAP = {
@@ -18,7 +22,10 @@ const CLUSTER_MAP = {
   0x0001: { cap: 'measure_battery', attr: 'batteryPercentageRemaining', div: 2, type: 'battery' },
   0x0500: { cap: 'alarm_contact', attr: 'zoneStatus', type: 'contact' },
   0x0403: { cap: 'measure_pressure', attr: 'measuredValue', div: 10, type: 'sensor' },
-  0x000C: { cap: 'measure_generic', attr: 'presentValue', type: 'analog' }
+  0x000C: { cap: 'measure_generic', attr: 'presentValue', type: 'analog' },
+  0x0201: { cap: 'target_temperature', attr: 'occupiedHeatingSetpoint', div: 100, type: 'thermostat' },
+  0x0702: { cap: 'meter_power', attr: 'currentSummationDelivered', type: 'metering' },
+  0x0B04: { cap: 'measure_power', attr: 'activePower', div: 10, type: 'electrical' }
 };
 
 // Button press types
@@ -36,6 +43,14 @@ class GenericDIYDevice extends ZigBeeDevice {
     this.zclNode = zclNode;
     this._caps = [];
     this._lastValues = {};
+
+    // v5.7.3: Apply ecosystem-specific bug patches
+    if (ZigbeeProtocolPatchManager) {
+      try {
+        this._patchMgr = new ZigbeeProtocolPatchManager(this);
+        await this._patchMgr.applyPatches();
+      } catch (e) { this.log('[DIY] Patch error:', e.message); }
+    }
 
     // Scan endpoints
     for (const [epId, ep] of Object.entries(zclNode.endpoints || {})) {
@@ -281,6 +296,18 @@ class GenericDIYDevice extends ZigBeeDevice {
         cluster.on(`attr.${map.attr}`, (v) => {
           this.setCapabilityValue(cap, v).catch(() => {});
           this._triggerAnalog(epId, v);
+        });
+      }
+      // Thermostat (Danfoss, etc.) - needs write capability
+      else if (clusterId === 0x0201) {
+        this.registerCapabilityListener(cap, async (v) => {
+          await cluster.write({ occupiedHeatingSetpoint: Math.round(v * 100) });
+        });
+        cluster.on('attr.occupiedHeatingSetpoint', (v) => {
+          this.setCapabilityValue(cap, v / 100).catch(() => {});
+        });
+        cluster.on('attr.localTemperature', (v) => {
+          if (v !== -32768) this.setCapabilityValue('measure_temperature', v / 100).catch(() => {});
         });
       }
       // Other measurement clusters

@@ -637,14 +637,12 @@ class Button1GangDevice extends ButtonDevice {
 
       // Fallback: Try regular cluster binding
       const onOffCluster = endpoint.clusters?.onOff || endpoint.clusters?.genOnOff || endpoint.clusters?.[6];
+      // v5.11.16: Fire-and-forget bind (don't block init on sleepy battery buttons — SkiMattie #1446)
       if (onOffCluster && typeof onOffCluster.bind === 'function') {
-        try {
-          await onOffCluster.bind();
+        onOffCluster.bind().then(() => {
           this._onOffBound = true;
           this.log('[BUTTON1-BIND] ✅ OnOff cluster bound (fallback method)');
-        } catch (bindErr) {
-          this.log(`[BUTTON1-BIND] ⚠️ Bind failed (expected for sleepy): ${bindErr.message}`);
-        }
+        }).catch(() => {});
       }
 
       // Store for later use

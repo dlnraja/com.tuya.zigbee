@@ -57,22 +57,16 @@ class Button4GangDevice extends ButtonDevice {
     // Initialize base (power detection + button detection)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
 
-    // v5.5.617: INTELLIGENT Mode Switch with retry + verification
-    // Research: Z2M #7158, SmartThings - mode must be set during pairing window
-    await this._intelligentModeSwitch(zclNode);
-
-    // v5.5.617: Schedule periodic mode re-check (cold boot recovery)
-    this._scheduleModeMaintenance();
-
-    // v5.5.295: FORUM FIX - Enhanced physical button detection
-    // Based on research from Zigbee2MQTT, ZHA, SmartThings patterns
+    // v5.11.16: Setup listeners first (no Zigbee I/O), defer heavy ops
     await this._setupEnhancedPhysicalButtonDetection(zclNode);
-
-    // v5.5.260: Setup battery reporting listener
-    await this._setupBatteryReporting(zclNode);
-
-    // v5.7.16: Register enhanced virtual button handlers with explicit logging
     await this._registerEnhancedVirtualButtonHandlers();
+
+    // v5.11.16: Defer mode switch + battery (require awake device) to prevent pairing timeout
+    this.homey.setTimeout(async () => {
+      await this._intelligentModeSwitch(zclNode).catch(e => this.log('[BUTTON4] mode switch deferred err:', e.message));
+      this._scheduleModeMaintenance();
+      await this._setupBatteryReporting(zclNode).catch(e => this.log('[BUTTON4] battery deferred err:', e.message));
+    }, 200);
 
     this.log('[BUTTON4] ✅ Button4GangDevice initialized - 4 buttons ready');
     this.log('[BUTTON4] 📋 Detection methods: Scenes, OnOff, MultistateInput, E000, Raw Frame');
@@ -308,9 +302,9 @@ class Button4GangDevice extends ButtonDevice {
           continue;
         }
 
-        // v5.8.6: Bind clusters so sleepy device sends events to Homey
+        // v5.11.16: Fire-and-forget bind (don't block init on sleepy battery buttons)
         for (const cl of [endpoint.clusters?.onOff, endpoint.clusters?.multistateInput || endpoint.clusters?.genMultistateInput, endpoint.clusters?.scenes]) {
-          if (cl?.bind) { try { await cl.bind(); } catch (e) { /* non-critical */ } }
+          if (cl?.bind) { cl.bind().catch(() => {}); }
         }
 
         // v5.5.369: FIXED scenes cluster listener - use multiple event patterns
@@ -427,8 +421,8 @@ class Button4GangDevice extends ButtonDevice {
         const levelCluster = endpoint.clusters?.levelControl || endpoint.clusters?.genLevelCtrl || endpoint.clusters?.[8];
         if (levelCluster) {
           if (typeof levelCluster.on === 'function') {
-            // Bind so sleepy device sends events to Homey
-            if (levelCluster.bind) { try { await levelCluster.bind(); } catch (e) { /* non-critical */ } }
+            // v5.11.16: Fire-and-forget bind (don't block init on sleepy buttons)
+            if (levelCluster.bind) { levelCluster.bind().catch(() => {}); }
 
             const handleLevelCommand = async (commandName) => {
               this.log(`[BUTTON4-LEVEL] 🔘 Button ${ep} SINGLE (levelControl ${commandName})`);

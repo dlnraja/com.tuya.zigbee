@@ -1,6 +1,6 @@
 # GitHub Issues & PRs Analysis - JohanBendz & dlnraja Forks
 
-*Updated: 2026-02-17 (v5.11.11) — See MASTER_REFERENCE.md for full cross-ref*
+*Updated: 2026-02-19 (v5.11.15) — See MASTER_REFERENCE.md for full cross-ref*
 
 ## Summary
 
@@ -19,6 +19,8 @@
 | 114 | Smart Button TS0041 | `_TZ3000_b4awzgct` | TS0041 | ✅ In button_wireless_1 - USER RE-PAIR |
 
 ---
+
+## Triaged 2026-02-19: #1228-1246 all supported. Fixed: #1229 #1239 #1244
 
 ## JohanBendz Open Issues (Device Requests)
 

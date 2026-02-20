@@ -461,7 +461,7 @@
       }
     },
     {
-      "id": "power_scale",
+      "id": "meter_power_scale",
       "type": "dropdown",
       "label": {
         "en": "Energy Measurement Scale",
@@ -606,42 +606,6 @@
               "label": {
                 "en": "×1",
                 "nl": "×1"
-              }
-            }
-          ]
-        },
-        {
-          "id": "power_scale",
-          "type": "dropdown",
-          "label": {
-            "en": "Power scaling",
-            "nl": "Vermogen schaling"
-          },
-          "hint": {
-            "en": "Adjust if power readings are incorrect",
-            "nl": "Aanpassen indien vermogen niet klopt"
-          },
-          "value": "0.1",
-          "values": [
-            {
-              "id": "0.1",
-              "label": {
-                "en": "÷10 (default)",
-                "nl": "÷10 (standaard)"
-              }
-            },
-            {
-              "id": "1",
-              "label": {
-                "en": "×1",
-                "nl": "×1"
-              }
-            },
-            {
-              "id": "10",
-              "label": {
-                "en": "×10",
-                "nl": "×10"
               }
             }
           ]

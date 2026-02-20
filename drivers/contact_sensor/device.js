@@ -209,7 +209,16 @@ class ContactSensorDevice extends HybridSensorBase {
       // Toggle current displayed state — use super to bypass invert override
       const current = this.getCapabilityValue('alarm_contact');
       if (current !== null) {
-        await super.setCapabilityValue('alarm_contact', !current).catch(() => { });
+        const newValue = !current;
+        await super.setCapabilityValue('alarm_contact', newValue).catch(() => { });
+        // v5.11.16: CRITICAL FIX (Lasse_K #1401-1403/#1426 "stops responding")
+        // Reset confirmedValue to match new capability state, otherwise the
+        // setCapabilityValue override's duplicate filter blocks next IAS event
+        if (this._contactState) {
+          this._contactState.confirmedValue = newValue;
+          this._contactState.lastValue = newValue;
+          this._contactState.lastChangeTime = Date.now();
+        }
       }
     }
     if (super.onSettings) {

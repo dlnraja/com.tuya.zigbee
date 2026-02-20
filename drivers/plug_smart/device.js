@@ -38,7 +38,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugB
   // v5.5.422: Apply user-defined scale to power/energy readings
   _applyScale(value, capability) {
     const powerScale = parseFloat(this.getSetting('power_scale')) || 1;
-    const energyScale = parseFloat(this.getSetting('energy_scale')) || 1;
+    const energyScale = parseFloat(this.getSetting('meter_power_scale')) || parseFloat(this.getSetting('energy_scale')) || 1;
 
     if (capability === 'measure_power') return value * powerScale;
     if (capability === 'meter_power') return value * energyScale;

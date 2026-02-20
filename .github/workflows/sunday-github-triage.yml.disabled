@@ -1,0 +1,77 @@
+# Universal Tuya Zigbee - Sunday GitHub Triage
+# Runs every Sunday 08:00 UTC - auto-responds to all open issues/PRs
+# on JohanBendz and dlnraja repos, checks fingerprint support status
+
+name: "Sunday GitHub Triage"
+
+on:
+  schedule:
+    - cron: '0 8 * * 0'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (no comments posted)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: sunday-triage
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  triage-upstream:
+    name: "Triage JohanBendz Issues/PRs"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Get app stats
+        id: stats
+        run: |
+          echo "version=$(node -p "require('./app.json').version")" >> $GITHUB_OUTPUT
+          echo "drivers=$(ls -d drivers/*/ | wc -l)" >> $GITHUB_OUTPUT
+          echo "fps=$(grep -ohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json | sort -uf | wc -l)" >> $GITHUB_OUTPUT
+
+      - name: Triage JohanBendz issues and PRs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_REPO: JohanBendz/com.tuya.zigbee
+          APP_VERSION: ${{ steps.stats.outputs.version }}
+          DRIVER_COUNT: ${{ steps.stats.outputs.drivers }}
+          FP_COUNT: ${{ steps.stats.outputs.fps }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/triage-run.js
+
+  triage-fork:
+    name: "Triage dlnraja Issues/PRs"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Get app stats
+        id: stats
+        run: |
+          echo "version=$(node -p "require('./app.json').version")" >> $GITHUB_OUTPUT
+          echo "drivers=$(ls -d drivers/*/ | wc -l)" >> $GITHUB_OUTPUT
+          echo "fps=$(grep -ohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json | sort -uf | wc -l)" >> $GITHUB_OUTPUT
+
+      - name: Triage dlnraja issues and PRs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_REPO: dlnraja/com.tuya.zigbee
+          APP_VERSION: ${{ steps.stats.outputs.version }}
+          DRIVER_COUNT: ${{ steps.stats.outputs.drivers }}
+          FP_COUNT: ${{ steps.stats.outputs.fps }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/triage-run.js
