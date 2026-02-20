@@ -82,7 +82,7 @@ async function postReply(topicId,replyTo,content,auth){
   return d;
 }
 
-const MODELS=['gemini-2.0-flash','gemini-1.5-flash','gemini-2.0-flash-lite'];
+const MODELS=['gemini-2.0-flash','gemini-2.0-flash-lite','gemini-1.5-flash-latest'];
 
 async function callGemini(model,sys,usr,key){
   const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent?key='+key,{
@@ -102,7 +102,7 @@ function templateFallback(post,results,appVersion){
   let msg='';
   if(found.length){
     msg+='Your device fingerprint(s) are **already supported** in v'+appVersion+':\n\n';
-    for(const[fp,v]of found)msg+='- '+fp+' -> **'+v.drivers.join(', ')+'**\n';
+    for(const[fp,v]of found){const dl=v.drivers.length>5?v.drivers.slice(0,5).join(', ')+' (+'+( v.drivers.length-5)+' more)':v.drivers.join(', ');msg+='- `'+fp+'` -> **'+dl+'**\n';}
     msg+='\nPlease **remove and re-pair** your device, selecting the correct device type above.\n';
   }
   if(missing.length){
