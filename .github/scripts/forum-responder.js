@@ -173,15 +173,14 @@ async function main(){
 
     let maxP=last;
     for(const p of posts){
-      maxP=Math.max(maxP,p.post_number);
-      if(SKIP.includes(p.username)){console.log(' #'+p.post_number,'by',p.username,'-> SKIP owner');continue}
+      if(SKIP.includes(p.username)){maxP=Math.max(maxP,p.post_number);console.log(' #'+p.post_number,'by',p.username,'-> SKIP owner');continue}
       console.log(' #'+p.post_number,'by',p.username);
       totalP++;
 
       const text=strip(p.cooked);
       const fp=extractFP(text);
       const isDevice=fp.mfr.length>0||fp.pid.length>0||/device|sensor|switch|button|pair|recogni|unknown|diag|interview|manufacturer|driver|zigbee|tuya/i.test(text);
-      if(!isDevice){console.log('   -> not device-related');continue}
+      if(!isDevice){maxP=Math.max(maxP,p.post_number);console.log('   -> not device-related');continue}
 
       const res={};
       for(const m of fp.mfr){const d=idx.get(m)||[];res[m]={found:d.length>0,drivers:d};console.log('  ',m,'->',d.length?d.join(','):'NOT FOUND')}
@@ -190,7 +189,7 @@ async function main(){
       let reply;
       try{console.log('   Gemini...');reply=await analyzeWithGemini(p,res,appVersion)}
       catch(e){console.error('   Gemini error:',e.message);continue}
-      if(!reply){console.log('   -> no response needed');continue}
+      if(!reply){maxP=Math.max(maxP,p.post_number);console.log('   -> no response needed');continue}
 
       console.log('   Response:',reply.length,'chars');
       if(totalR>=MAX_REPLIES){console.log('   -> MAX_REPLIES reached');continue}
@@ -198,12 +197,14 @@ async function main(){
       if(dryRun){
         console.log('   [DRY] Would post:\n---\n'+reply+'\n---');
         summary.push({n:p.post_number,u:p.username,a:'dry_reply'});
+        maxP=Math.max(maxP,p.post_number);
       }else{
         try{
           const r=await postReply(tid,p.post_number,reply,auth);
           console.log('   Posted id:',r.id);
           summary.push({n:p.post_number,u:p.username,a:'replied',id:r.id});
           totalR++;
+          maxP=Math.max(maxP,p.post_number);
           await sleep(DELAY);
         }catch(e){
           console.error('   Post error:',e.message);
