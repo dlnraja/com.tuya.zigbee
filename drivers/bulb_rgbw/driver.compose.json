@@ -25,6 +25,8 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "eWeLink",
+      "SONOFF",
       "_TZ3000_49qchf10",
       "_TZ3000_9cpuaca6",
       "_TZ3000_as7eqiri",
@@ -115,7 +117,8 @@
       "GL-B-008Z",
       "TS1002",
       "FE-GU10-5W",
-      "SMD9300"
+      "SMD9300",
+      "CK-BL702-AL-01(7009_Z102LG03-1)"
     ],
     "endpoints": {
       "1": {

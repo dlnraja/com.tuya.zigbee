@@ -24,6 +24,8 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "eWeLink",
+      "SONOFF",
       "_TYZB01_iuepbmpv",
       "_TZ3000_0zfrhq4i",
       "_TZ3000_1h2x4akh",
@@ -71,6 +73,7 @@
       "_TZ3000_kx0pris5",
       "_TZ3000_lelb6ejs",
       "_TZ3000_lepzuhto",
+      "_TZ3000_lqb7lcq9",
       "_TZ3000_mraovvmm",
       "_TZ3000_mvn6jl7x",
       "_TZ3000_nedis",
@@ -104,6 +107,7 @@
       "_TZ3000_waho4ber",
       "_TZ3000_waho4jtj",
       "_TZ3000_wamqdr3f",
+      "_TZ3000_ww6drja5",
       "_TZ3000_wxtp7c5y",
       "_TZ3000_xkap8wtb",
       "_TZ3000_y4ona9me",
@@ -114,6 +118,7 @@
       "_TZ3210_4ux0ondb",
       "_TZ3210_cehuw1lw",
       "_TZ3210_w0qqde0g",
+      "_TZ3210_xzhnra8x",
       "_TZE200_2usb_socket",
       "_TZE200_ac0fhfiq",
       "_TZE200_bkkmqmyo",
@@ -162,7 +167,12 @@
       "E1603/E1702/E1708",
       "TRADFRI control outlet",
       "TS0601",
-      "CK-BL702-SWP-01(7020)"
+      "CK-BL702-SWP-01(7020)",
+      "S40LITE",
+      "SA-029-1",
+      "SA-028-1",
+      "Z111PL0H-1JX",
+      "SNZB-06P"
     ],
     "endpoints": {
       "1": {

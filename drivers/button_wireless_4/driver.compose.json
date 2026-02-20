@@ -159,33 +159,39 @@
         "clusters": [
           0,
           6,
-          18
+          18,
+          57344
         ],
         "bindings": [
           6,
-          18
+          18,
+          57344
         ]
       },
       "3": {
         "clusters": [
           0,
           6,
-          18
+          18,
+          57344
         ],
         "bindings": [
           6,
-          18
+          18,
+          57344
         ]
       },
       "4": {
         "clusters": [
           0,
           6,
-          18
+          18,
+          57344
         ],
         "bindings": [
           6,
-          18
+          18,
+          57344
         ]
       }
     }
@@ -464,12 +470,6 @@
     {
       "id": "list_devices",
       "template": "list_devices",
-      "navigation": {
-        "next": "select_driver"
-      }
-    },
-    {
-      "id": "select_driver",
       "navigation": {
         "next": "add_devices"
       }

@@ -12,6 +12,19 @@
     "measure_battery",
     "measure_luminance.distance"
   ],
+  "capabilitiesOptions": {
+    "measure_luminance.distance": {
+      "title": {
+        "en": "Detection Distance",
+        "fr": "Distance de Détection",
+        "nl": "Detectieafstand",
+        "de": "Erkennungsdistanz"
+      },
+      "units": {
+        "en": "m"
+      }
+    }
+  },
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
@@ -72,6 +85,7 @@
       "_TZE204_mtoaryre",
       "_TZE204_nbkshs6k",
       "_TZE204_no6qtgtl",
+      "_TZE204_sbkgeilo",
       "_TZE204_pnyz5qpy",
       "_TZE204_qasjif9e",
       "_TZE204_qomxlryd",
