@@ -179,8 +179,12 @@ jobs:
       - name: Auto-respond to device requests
         continue-on-error: true
         env:
-          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
-          DISCOURSE_USERNAME: dlnraja
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          APIFREELLM_KEY: ${{ secrets.APIFREELLM_KEY }}
           LAST_RESPOND_FILE: /tmp/last_forum_respond.txt
         run: node .github/scripts/forum-respond-requests.js
 
