@@ -4011,5 +4011,8 @@
   },
   "5.7.52": {
     "en": "🔧 FORUM FIX #1341: (1) soil_sensor crash fixed - added missing moisture_below condition to driver.js, (2) presence_sensor_radar empty manufacturer - enhanced fallback methods, (3) button_wireless_4 ghost presses - detect uninitialized state via impossible sinceEvent (>24h). Also: Peter humidity fix for ZG-204ZV."
+  },
+  "5.11.15": {
+    "en": "Auto-publish via GitHub Actions"
   }
 }
