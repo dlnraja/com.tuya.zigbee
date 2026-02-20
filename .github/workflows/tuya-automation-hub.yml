@@ -16,6 +16,7 @@ on:
           - github-only
           - enrichment-only
           - forum-update-only
+          - nightly-process
       dry_run:
         description: 'Dry run (no posts)'
         type: boolean
