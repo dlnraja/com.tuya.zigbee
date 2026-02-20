@@ -1,0 +1,55 @@
+name: Forum Auto-Responder
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run mode (no forum posts)'
+        type: boolean
+        default: true
+      topics:
+        description: 'Forum topic IDs (comma-separated)'
+        type: string
+        default: '140352'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forum-responder
+  cancel-in-progress: true
+
+jobs:
+  respond:
+    name: Scan & Respond
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run Forum Responder
+        id: responder
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
+          FORUM_TOPICS: ${{ inputs.topics || '140352' }}
+        run: node .github/scripts/forum-responder.js
+
+      - name: Commit updated state
+        if: always()
+        run: |
+          git config user.name "forum-bot"
+          git config user.email "bot@dlnraja.github.io"
+          git add .github/state/forum-state.json
+          git diff --cached --quiet || git commit -m "chore: update forum state [skip ci]"
+          git push || echo "Nothing to push"
