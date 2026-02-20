@@ -164,3 +164,29 @@
 
 ## GH#123 — 46 fingerprints community sync
 > All 46 verified present. Can be closed.
+
+
+## Nightly Auto-Responses (2026-02-20 v5.11.17)
+- **dlnraja/com.tuya.zigbee#128** @Wuma68: `_TZE204_nklqjk62` (template)
+- **dlnraja/com.tuya.zigbee#132** @dlnraja: `_TZ3000_tzvbimpq`, `_TZ3000_zgyzgdua`, `_TZE204_9mjy74mp`, `_TZ3002_pzao9ls1` (template)
+- **dlnraja/com.tuya.zigbee#131** @dlnraja: `_TZ3002_pzao9ls1`, `_TZ3000_5iixzdo7`, `_TZE204_nklqjk62`, `_TZ3210_xzhnra8x`, `_TZE284_6ycgarab`, `_TZE200_u6x1zyv2`, `_TZE204_gkfbdvyx`, `_TZE204_dwcarsat`, `_TZ3000_zutizvyk`, `_TZE284_xnbkhhdr`, `_TZE200_rhgsbacq`, `_TZE284_aao3yzhs`, `_TZE284_aa03yzhs` (template)
+- **dlnraja/com.tuya.zigbee#130** @dlnraja: `_TZ3000_tzvbimpq`, `_TZ3000_zgyzgdua`, `_TZ3000_ja5osu5g` (template)
+- **JohanBendz/com.tuya.zigbee#839** @bbrodnik: `_TZE200_znbl8dj5` (template)
+- **JohanBendz/com.tuya.zigbee#1331** @MF-ITuser: `_TZ3290_ot6ewjvmejq5ekhl` (template)
+- **JohanBendz/com.tuya.zigbee#1065** @slicke: `_TZ3210_j4pdtz9v` (template)
+- **JohanBendz/com.tuya.zigbee#1075** @mech78: `_TZ3210_eejm8dcr` (template)
+- **JohanBendz/com.tuya.zigbee#1106** @mkoslacz: `_TZ3002_vaq2bfcu` (template)
+- **JohanBendz/com.tuya.zigbee#1118** @pbruining: `_TZ3000_ww6drja5` (template)
+- **JohanBendz/com.tuya.zigbee#1122** @mikberg: `_TZE200_kb5noeto` (template)
+- **JohanBendz/com.tuya.zigbee#1137** @antonhagg: `_TZ3000_c8zfad4a` (template)
+- **JohanBendz/com.tuya.zigbee#1166** @chernals: `_TZ3000_c8ozah8n` (template)
+- **JohanBendz/com.tuya.zigbee#1195** @YuriEstevan: `_TZE204_bjzrowv2` (template)
+- **JohanBendz/com.tuya.zigbee#1209** @crimson7O: `_TZ3000_kfu8zapd` (template)
+- **JohanBendz/com.tuya.zigbee#1210** @TKGHill: `_TZE204_lawxy9e2`, `_TZE204_nklqjk62` (template)
+- **JohanBendz/com.tuya.zigbee#1218** @Melectro1: `_TZE204_dapwryy7` (template)
+- **JohanBendz/com.tuya.zigbee#1219** @Melectro1: `_TZ3000_gjrubzje` (template)
+- **JohanBendz/com.tuya.zigbee#1237** @WJGvdVelden: `_TZE284_gyzlwu5q` (template)
+- **JohanBendz/com.tuya.zigbee#1253** @Peter-Celica: `_TZE200_pay2byax`, `_TZ3000_mrpevh8p` (template)
+- **JohanBendz/com.tuya.zigbee#1346** @pkuijpers: `_TZE200_locansqn` (template)
+- **JohanBendz/com.tuya.zigbee#724** @MihaiINW: `_TZE200_3towulqd` (template)
+- **JohanBendz/com.tuya.zigbee#740** @maccyber: `_TZE200_3towulqd` (template)
