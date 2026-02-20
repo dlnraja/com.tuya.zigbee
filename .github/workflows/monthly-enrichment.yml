@@ -24,51 +24,51 @@ jobs:
   monthly-scan:
     name: Monthly Intelligence Scan
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
-          
+
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Run collision lint
         id: lint
         run: |
           echo "## Collision Analysis" >> $GITHUB_STEP_SUMMARY
           node scripts/automation/lint-collisions.js 2>&1 | tee lint-output.txt || true
           cat lint-output.txt >> $GITHUB_STEP_SUMMARY
-          
+
       - name: Generate device matrix
         run: |
           echo "## Device Matrix" >> $GITHUB_STEP_SUMMARY
           node scripts/automation/generate-matrix.js
-          
+
       - name: Run monthly scan
         run: |
           echo "## Monthly Scan" >> $GITHUB_STEP_SUMMARY
           node scripts/automation/monthly-scan.js
-          
+
       - name: Validate YAML-JS consistency
         run: |
           echo "## Driver Validation" >> $GITHUB_STEP_SUMMARY
           node scripts/automation/validate-drivers.js 2>&1 | tee validation.txt || true
           cat validation.txt >> $GITHUB_STEP_SUMMARY
-          
+
       - name: Audit Flow Cards
         run: |
           echo "## Flow Card Audit" >> $GITHUB_STEP_SUMMARY
           node scripts/automation/audit-flowcards.js 2>&1 | tee flowcards.txt || true
           cat flowcards.txt >> $GITHUB_STEP_SUMMARY
-          
+
       - name: 🌐 Run Community Sync
         run: |
           echo "## Community Sync" >> $GITHUB_STEP_SUMMARY

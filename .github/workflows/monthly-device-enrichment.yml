@@ -13,14 +13,14 @@ on:
         default: false
 
 env:
-  NODE_VERSION: '20'
+  NODE_VERSION: '22'
 
 jobs:
   scrape-and-enrich:
     name: 🔍 Scrape Forums & Enrich
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    
+
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@v4
@@ -44,22 +44,22 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "Date: $(date -u)" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          
+
           # Count current manufacturer IDs
           CURRENT_COUNT=$(grep -rh "manufacturerName" drivers/*/driver.compose.json | wc -l)
           echo "Current manufacturer entries: $CURRENT_COUNT" >> $GITHUB_STEP_SUMMARY
-          
+
           # Count drivers
           DRIVER_COUNT=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           echo "Total drivers: $DRIVER_COUNT" >> $GITHUB_STEP_SUMMARY
-          
+
           echo "manufacturer_count=$CURRENT_COUNT" >> $GITHUB_OUTPUT
           echo "driver_count=$DRIVER_COUNT" >> $GITHUB_OUTPUT
 
       - name: 📊 Generate enrichment report
         run: |
           mkdir -p reports
-          
+
           # Create monthly report
           cat > reports/monthly-$(date +%Y%m).json << EOF
           {
@@ -79,7 +79,7 @@ jobs:
             "status": "completed"
           }
           EOF
-          
+
           echo "### 📊 Report Generated" >> $GITHUB_STEP_SUMMARY
           cat reports/monthly-$(date +%Y%m).json >> $GITHUB_STEP_SUMMARY
 
@@ -91,7 +91,7 @@ jobs:
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
-          
+
           # Check for changes
           if git diff --quiet && git diff --staged --quiet; then
             echo "No changes to commit"
