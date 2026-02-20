@@ -98,11 +98,22 @@ jobs:
         uses: athombv/github-action-homey-app-publish@master
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
+      - name: Post to Forum
+        if: steps.pat.outputs.ok == 'true'
+        continue-on-error: true
+        env:
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          DISCOURSE_USERNAME: dlnraja
+          APP_VERSION: ${{ steps.bump.outputs.version }}
+          CHANGELOG: ${{ steps.cl.outputs.text }}
+          PUBLISH_URL: ${{ steps.pub.outputs.url || 'https://homey.app/a/com.dlnraja.tuya.zigbee/test/' }}
+        run: node .github/scripts/post-forum-update.js
       - name: Summary
         if: always()
         run: |
           if [ "${{ steps.pat.outputs.ok }}" == "true" ]; then
             echo "## Published v${{ steps.bump.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+            echo "Manage: ${{ steps.pub.outputs.url }}" >> $GITHUB_STEP_SUMMARY
           else
             echo "## Validated only (HOMEY_PAT not set)" >> $GITHUB_STEP_SUMMARY
             echo "Add secret from https://tools.developer.homey.app/me" >> $GITHUB_STEP_SUMMARY

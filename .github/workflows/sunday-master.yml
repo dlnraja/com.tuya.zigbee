@@ -160,9 +160,33 @@ jobs:
               labels:['enhancement','forum-request']
             });
 
+  forum-respond:
+    name: "Forum Auto-Respond"
+    needs: [scan-forum]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - uses: actions/cache@v4
+        with:
+          path: /tmp/last_forum_respond.txt
+          key: forum-respond-${{ github.run_number }}
+          restore-keys: forum-respond-
+      - name: Auto-respond to device requests
+        continue-on-error: true
+        env:
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          DISCOURSE_USERNAME: dlnraja
+          LAST_RESPOND_FILE: /tmp/last_forum_respond.txt
+        run: node .github/scripts/forum-respond-requests.js
+
   summary:
     name: "Weekly Summary"
-    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum]
+    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, forum-respond]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -173,3 +197,4 @@ jobs:
           echo "- Fork scan: ${{ needs.scan-forks.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Cross-driver gaps: ${{ needs.cross-driver-gaps.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Forum scan: ${{ needs.scan-forum.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Forum respond: ${{ needs.forum-respond.result }}" >> $GITHUB_STEP_SUMMARY
