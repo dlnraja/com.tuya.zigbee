@@ -1,7 +1,28 @@
 ﻿/**
- * Project Rules - Condensed context for AI automation
- * Sources: CRITICAL_MISTAKES.md, DEVELOPMENT_RULES.md, UNSUPPORTED_DEVICES.md, Windsurf workflows, memory rules
+ * Project Rules + Architecture - Condensed context for AI automation
+ * Sources: ARCHITECTURE.md, CRITICAL_MISTAKES.md, DEVELOPMENT_RULES.md, Windsurf workflows, memory rules
  */
+const fs = require('fs');
+const path = require('path');
+
+// Load architecture doc (truncated to key sections for token efficiency)
+let ARCHITECTURE_SUMMARY = '';
+try {
+  const archPath = path.join(__dirname, '../../docs/ARCHITECTURE.md');
+  const full = fs.readFileSync(archPath, 'utf8');
+  // Extract sections 1-5 + 19-20 (most useful for AI: app entry, drivers, hierarchy, protocol, mixins, automation, patterns)
+  const sections = [];
+  const lines = full.split('\n');
+  let capture = false;
+  let sectionNum = 0;
+  for (const line of lines) {
+    const m = line.match(/^## (\d+)\./);
+    if (m) { sectionNum = parseInt(m[1]); capture = [1,2,3,4,5,19,20].includes(sectionNum); }
+    if (capture) sections.push(line);
+  }
+  ARCHITECTURE_SUMMARY = sections.join('\n');
+} catch (e) { /* Architecture doc not available in CI - that's OK */ }
+
 const PROJECT_RULES = [
 '## Universal Tuya Zigbee - Project Rules for AI',
 '',
@@ -59,4 +80,4 @@ const PROJECT_RULES = [
 '- Issues: https://github.com/dlnraja/com.tuya.zigbee/issues',
 ].join('\n');
 
-module.exports = { PROJECT_RULES };
+module.exports = { PROJECT_RULES, ARCHITECTURE_SUMMARY };
