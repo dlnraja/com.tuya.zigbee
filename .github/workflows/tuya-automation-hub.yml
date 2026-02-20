@@ -1,0 +1,141 @@
+name: Tuya Automation Hub
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # Forum responder every 6h
+    - cron: '0 3 * * 1,4'   # GitHub + enrichment Mon/Thu 3AM
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Which scanners to run'
+        type: choice
+        default: 'all'
+        options:
+          - all
+          - forum-only
+          - github-only
+          - enrichment-only
+          - forum-update-only
+      dry_run:
+        description: 'Dry run (no posts)'
+        type: boolean
+        default: true
+      topics:
+        description: 'Forum topic IDs'
+        type: string
+        default: '140352'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: tuya-automation
+  cancel-in-progress: true
+
+jobs:
+  forum-responder:
+    name: Forum Responder
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: >-
+      ${{ github.event_name == 'schedule' && github.event.schedule == '0 */6 * * *' ||
+           github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'forum-only') }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { token: ${{ secrets.GITHUB_TOKEN }} }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - name: Run Forum Responder
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
+          FORUM_TOPICS: ${{ inputs.topics || '140352' }}
+        run: node .github/scripts/forum-responder.js
+      - name: Commit state
+        if: always()
+        run: |
+          git config user.name "tuya-bot"
+          git config user.email "bot@dlnraja.github.io"
+          git add .github/state/
+          git diff --cached --quiet || git commit -m "chore: forum state [skip ci]"
+          git push || true
+
+  github-scanner:
+    name: GitHub Scanner
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: >-
+      ${{ github.event_name == 'schedule' && github.event.schedule == '0 3 * * 1,4' ||
+           github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'github-only') }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { token: ${{ secrets.GITHUB_TOKEN }} }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - name: Run GitHub Scanner
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          DRY_RUN: ${{ inputs.dry_run || 'true' }}
+        run: node .github/scripts/github-scanner.js
+      - name: Commit state
+        if: always()
+        run: |
+          git config user.name "tuya-bot"
+          git config user.email "bot@dlnraja.github.io"
+          git add .github/state/
+          git diff --cached --quiet || git commit -m "chore: github scan state [skip ci]"
+          git push || true
+
+  enrichment-scanner:
+    name: Enrichment Scanner
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: >-
+      ${{ github.event_name == 'schedule' && github.event.schedule == '0 3 * * 1,4' ||
+           github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'enrichment-only') }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { token: ${{ secrets.GITHUB_TOKEN }} }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - name: Run Enrichment Scanner
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/enrichment-scanner.js
+      - name: Commit state
+        if: always()
+        run: |
+          git config user.name "tuya-bot"
+          git config user.email "bot@dlnraja.github.io"
+          git add .github/state/
+          git diff --cached --quiet || git commit -m "chore: enrichment state [skip ci]"
+          git push || true
+
+  forum-update:
+    name: Forum Status Update
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [github-scanner, enrichment-scanner]
+    if: >-
+      ${{ always() && (
+           github.event_name == 'schedule' && github.event.schedule == '0 3 * * 1,4' ||
+           github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'forum-update-only')
+      ) }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { token: ${{ secrets.GITHUB_TOKEN }}, ref: master }
+      - run: git pull origin master || true
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - name: Post Forum Summary
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
+        run: node .github/scripts/forum-updater.js
