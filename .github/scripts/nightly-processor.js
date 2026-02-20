@@ -5,6 +5,7 @@ const GH='https://api.github.com';
 const REPOS=['dlnraja/com.tuya.zigbee','JohanBendz/com.tuya.zigbee'];
 const TOPICS=[140352,26439];
 const SKIP=['dlnraja','system','discobot'];
+const MAX_REPLIES=8;
 const ROOT=path.join(__dirname,'..','..'),DDIR=path.join(ROOT,'drivers');
 const STATE=path.join(__dirname,'..','state','nightly-state.json');
 const DOCS=path.join(ROOT,'docs');
