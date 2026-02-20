@@ -1,0 +1,195 @@
+const fs=require('fs'),path=require('path');
+const FORUM='https://community.homey.app';
+const MODEL='gemini-2.0-flash';
+const SKIP=['dlnraja','system','discobot'];
+const MAX_REPLIES=5,DELAY=15000;
+const STATE=path.join(__dirname,'..','state','forum-state.json');
+const DDIR=path.join(__dirname,'..','..','drivers');
+
+const loadState=()=>{try{return JSON.parse(fs.readFileSync(STATE,'utf8'))}catch{return{topics:{}}}};
+const saveState=s=>{fs.mkdirSync(path.dirname(STATE),{recursive:true});fs.writeFileSync(STATE,JSON.stringify(s,null,2)+'\n')};
+const strip=h=>(h||'').replace(/<br\s*\/?>/gi,'\n').replace(/<\/p>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").trim();
+const extractFP=t=>({mfr:[...new Set(t.match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])],pid:[...new Set(t.match(/\bTS[0-9]{4}[A-Z]?\b/g)||[])]});
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+
+function buildIndex(){
+  const idx=new Map(),pidx=new Map();
+  if(!fs.existsSync(DDIR))return{idx,pidx};
+  for(const d of fs.readdirSync(DDIR)){
+    const f=path.join(DDIR,d,'driver.compose.json');
+    if(!fs.existsSync(f))continue;
+    const c=fs.readFileSync(f,'utf8');
+    for(const m of(c.match(/"_T[A-Za-z0-9_]+"/g)||[]))
+      {const k=m.replace(/"/g,'');if(!idx.has(k))idx.set(k,[]);if(!idx.get(k).includes(d))idx.get(k).push(d)}
+    for(const m of(c.match(/"TS[0-9]{4}[A-Z]?"/g)||[]))
+      {const k=m.replace(/"/g,'');if(!pidx.has(k))pidx.set(k,[]);if(!pidx.get(k).includes(d))pidx.get(k).push(d)}
+  }
+  return{idx,pidx};
+}
+
+function extractCookies(res){
+  const c={};
+  const headers=typeof res.headers.getSetCookie==='function'?res.headers.getSetCookie():
+    (res.headers.get('set-cookie')||'').split(/,(?=[^ ])/);
+  for(const h of headers){
+    const i=h.indexOf('='),s=h.indexOf(';');
+    if(i>0)c[h.substring(0,i).trim()]=h.substring(i+1,s>0?s:undefined).trim();
+  }
+  return c;
+}
+function fmtCookies(c){return Object.entries(c).map(([k,v])=>k+'='+v).join('; ')}
+
+async function discourseLogin(email,password){
+  const r1=await fetch(FORUM+'/session/csrf',{headers:{'X-Requested-With':'XMLHttpRequest',Accept:'application/json'}});
+  if(!r1.ok)throw new Error('CSRF failed: '+r1.status);
+  const csrf=(await r1.json()).csrf;
+  const ck1=extractCookies(r1);
+  const r2=await fetch(FORUM+'/session',{method:'POST',redirect:'manual',
+    headers:{'Content-Type':'application/x-www-form-urlencoded','X-CSRF-Token':csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCookies(ck1)},
+    body:'login='+encodeURIComponent(email)+'&password='+encodeURIComponent(password)});
+  if(!r2.ok&&r2.status!==302)throw new Error('Login failed: '+r2.status);
+  const ck2={...ck1,...extractCookies(r2)};
+  if(!ck2._t)throw new Error('No session cookie after login');
+  return{csrf,cookies:ck2};
+}
+
+async function fetchNewPosts(topicId,since){
+  const r=await fetch(FORUM+'/t/'+topicId+'.json');
+  if(!r.ok)throw new Error('Topic fetch failed: '+r.status);
+  const d=await r.json();
+  const highest=d.highest_post_number;
+  if(highest<=since)return[];
+  const r2=await fetch(FORUM+'/t/'+topicId+'/'+(since+1)+'.json');
+  if(!r2.ok)throw new Error('Posts fetch failed: '+r2.status);
+  const d2=await r2.json();
+  const posts=(d2.post_stream?.posts||[]).filter(p=>p.post_number>since);
+  if(posts.length&&Math.max(...posts.map(p=>p.post_number))<highest){
+    const r3=await fetch(FORUM+'/t/'+topicId+'/'+(Math.max(...posts.map(p=>p.post_number))+1)+'.json');
+    if(r3.ok){const d3=await r3.json();
+      for(const p of(d3.post_stream?.posts||[]).filter(p=>p.post_number>since))
+        if(!posts.find(e=>e.post_number===p.post_number))posts.push(p);
+    }
+  }
+  return posts.sort((a,b)=>a.post_number-b.post_number);
+}
+
+async function postReply(topicId,replyTo,content,auth){
+  const r=await fetch(FORUM+'/posts',{method:'POST',
+    headers:{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCookies(auth.cookies)},
+    body:JSON.stringify({topic_id:topicId,raw:content,reply_to_post_number:replyTo})});
+  const d=await r.json().catch(()=>({}));
+  if(!r.ok)throw new Error('Post failed: '+r.status+' '+JSON.stringify(d).substring(0,200));
+  return d;
+}
+
+async function analyzeWithGemini(post,results,appVersion){
+  const key=process.env.GOOGLE_API_KEY;
+  if(!key)throw new Error('GOOGLE_API_KEY not set');
+  const text=strip(post.cooked);
+  const sys=fs.readFileSync(path.join(__dirname,'system-prompt.txt'),'utf8').replace(/\{\{VERSION\}\}/g,appVersion);
+
+  const usr='Post #'+post.post_number+' by @'+post.username+':\n'+text+'\n\nFingerprint results:\n'+JSON.stringify(results,null,2)+'\n\nGenerate reply or NULL:';
+  const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+MODEL+':generateContent?key='+key,{
+    method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({systemInstruction:{parts:[{text:sys}]},contents:[{parts:[{text:usr}]}],
+      generationConfig:{temperature:0.2,maxOutputTokens:1024,topP:0.8}})});
+  if(!r.ok){const e=await r.text().catch(()=>'');throw new Error('Gemini failed: '+r.status+' '+e.substring(0,200))}
+  const d=await r.json();
+  const out=d.candidates?.[0]?.content?.parts?.[0]?.text;
+  if(!out||out.trim().toUpperCase()==='NULL')return null;
+  return out.trim();
+}
+
+async function main(){
+  const dryRun=process.env.DRY_RUN!=='false';
+  const topicIds=(process.env.FORUM_TOPICS||'140352').split(',').map(Number);
+  let appVersion='unknown';
+  try{appVersion=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
+  console.log('=== Forum Auto-Responder ===');
+  console.log('Mode:',dryRun?'DRY RUN':'LIVE','| Topics:',topicIds.join(','),'| App: v'+appVersion);
+
+  const{idx,pidx}=buildIndex();
+  console.log('Index:',idx.size,'manufacturers,',pidx.size,'productIds');
+
+  const state=loadState();
+  let auth=null;
+  if(!dryRun){
+    const em=process.env.HOMEY_EMAIL,pw=process.env.HOMEY_PASSWORD;
+    if(!em||!pw){console.error('HOMEY_EMAIL/HOMEY_PASSWORD required');process.exit(1)}
+    console.log('Logging in to forum...');
+    auth=await discourseLogin(em,pw);
+    console.log('Login OK');
+  }
+
+  let totalP=0,totalR=0;const summary=[];
+
+  for(const tid of topicIds){
+    const ts=state.topics[tid]||{lastProcessed:0};
+    const last=ts.lastProcessed;
+    console.log('\n-- Topic',tid,'(last: #'+last+') --');
+
+    let posts;
+    try{posts=await fetchNewPosts(tid,last)}
+    catch(e){console.error('Fetch error:',e.message);continue}
+    console.log('New posts:',posts.length);
+    if(!posts.length){state.topics[tid]={...ts,lastRun:new Date().toISOString()};continue}
+
+    let maxP=last;
+    for(const p of posts){
+      maxP=Math.max(maxP,p.post_number);
+      if(SKIP.includes(p.username)){console.log(' #'+p.post_number,'by',p.username,'-> SKIP owner');continue}
+      console.log(' #'+p.post_number,'by',p.username);
+      totalP++;
+
+      const text=strip(p.cooked);
+      const fp=extractFP(text);
+      const isDevice=fp.mfr.length>0||fp.pid.length>0||/device|sensor|switch|button|pair|recogni|unknown|diag|interview|manufacturer|driver|zigbee|tuya/i.test(text);
+      if(!isDevice){console.log('   -> not device-related');continue}
+
+      const res={};
+      for(const m of fp.mfr){const d=idx.get(m)||[];res[m]={found:d.length>0,drivers:d};console.log('  ',m,'->',d.length?d.join(','):'NOT FOUND')}
+      for(const p2 of fp.pid){const d=pidx.get(p2)||[];res[p2]={found:d.length>0,drivers:d,type:'productId'}}
+
+      let reply;
+      try{console.log('   Gemini...');reply=await analyzeWithGemini(p,res,appVersion)}
+      catch(e){console.error('   Gemini error:',e.message);continue}
+      if(!reply){console.log('   -> no response needed');continue}
+
+      console.log('   Response:',reply.length,'chars');
+      if(totalR>=MAX_REPLIES){console.log('   -> MAX_REPLIES reached');continue}
+
+      if(dryRun){
+        console.log('   [DRY] Would post:\n---\n'+reply+'\n---');
+        summary.push({n:p.post_number,u:p.username,a:'dry_reply'});
+      }else{
+        try{
+          const r=await postReply(tid,p.post_number,reply,auth);
+          console.log('   Posted id:',r.id);
+          summary.push({n:p.post_number,u:p.username,a:'replied',id:r.id});
+          totalR++;
+          await sleep(DELAY);
+        }catch(e){
+          console.error('   Post error:',e.message);
+          summary.push({n:p.post_number,u:p.username,a:'failed',err:e.message});
+        }
+      }
+    }
+    state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};
+  }
+
+  saveState(state);
+  console.log('\n=== Done: processed',totalP,', replied',totalR,'===');
+  if(summary.length)for(const s of summary)console.log(' #'+s.n,'@'+s.u,s.a,s.id?'id:'+s.id:'',s.err||'');
+
+  if(process.env.GITHUB_OUTPUT){
+    fs.appendFileSync(process.env.GITHUB_OUTPUT,'processed='+totalP+'\nresponded='+totalR+'\n');
+  }
+  if(process.env.GITHUB_STEP_SUMMARY){
+    let md='## Forum Auto-Responder\n| Metric | Value |\n|---|---|\n| Processed | '+totalP+' |\n| Replied | '+totalR+' |\n| Mode | '+(dryRun?'Dry Run':'Live')+' |\n';
+    if(summary.length){md+='\n### Actions\n| Post | User | Action |\n|---|---|---|\n';
+      for(const s of summary)md+='| #'+s.n+' | @'+s.u+' | '+s.a+' |\n'}
+    fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,md);
+  }
+}
+
+main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});
