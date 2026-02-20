@@ -24,21 +24,21 @@ jobs:
       - name: 🔍 Check Common Bugs
         run: |
           echo "## 🔍 Code Quality" >> $GITHUB_STEP_SUMMARY
-          
+
           # Settings keys bug
           if grep -rq "zb_modelId\|zb_manufacturerName" lib/ drivers/ --include="*.js" 2>/dev/null; then
             echo "❌ Wrong settings keys (use zb_model_id)" >> $GITHUB_STEP_SUMMARY
           else
             echo "✅ Settings keys OK" >> $GITHUB_STEP_SUMMARY
           fi
-          
+
           # Flow card bug
           if grep -rq "titleFormatted.*\[\[device\]\]" drivers/ --include="*.json" 2>/dev/null; then
             echo "❌ titleFormatted [[device]] bug" >> $GITHUB_STEP_SUMMARY
           else
             echo "✅ Flow cards OK" >> $GITHUB_STEP_SUMMARY
           fi
-          
+
           # Import bug
           if grep -rq "require.*TuyaZigbeeDriver" drivers/ --include="*.js" 2>/dev/null; then
             echo "❌ Wrong TuyaZigbeeDriver import" >> $GITHUB_STEP_SUMMARY
@@ -46,7 +46,7 @@ jobs:
             echo "✅ Imports OK" >> $GITHUB_STEP_SUMMARY
           fi
 
-      - name: � Check getConditionCard vs getDeviceConditionCard
+      - name: 🔍 Check getConditionCard vs getDeviceConditionCard
         run: |
           # Check for wrong flow card method usage
           WRONG_METHOD=$(grep -rn "getConditionCard" drivers/ --include="*.js" 2>/dev/null | grep -v "getDeviceConditionCard" | wc -l)
@@ -56,7 +56,7 @@ jobs:
             echo "✅ Flow card methods OK" >> $GITHUB_STEP_SUMMARY
           fi
 
-      - name: �📊 Stats
+      - name: 📊 Stats
         run: |
           DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           MFRS=$(grep -ohE '"_TZ[^"]+"' drivers/*/driver.compose.json 2>/dev/null | sort -u | wc -l)
