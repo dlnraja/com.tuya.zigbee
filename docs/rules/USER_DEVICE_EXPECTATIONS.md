@@ -1,5 +1,39 @@
-# User Device Expectations (v5.11.16)
-**Updated**: 2026-02-19 (v5.11.16: Lasse_K IASAlarmFallback fix, GitHub triage #1341-#1348)
+# User Device Expectations (v5.11.17)
+**Updated**: 2026-02-20 (v5.11.17: nightly auto-scan)
+
+
+## Nightly Auto-Scan (2026-02-20)
+| User | Fingerprint(s) | Source | Date |
+|------|---------------|--------|------|
+| Hartmut_Dunker | `_TZ3002_pzao9ls1` | Forum #140352 post #1450 | Auto-scanned 2026-02-20 |
+| SkiMattie | `_TZ3000_mrpevh8p`, `_TZE204_9mjy74mp` | Forum #140352 post #1462 | Auto-scanned 2026-02-20 |
+| Trey_Rogerson | `_TZE284_c8ipbljq` | Forum #26439 post #5388 | Auto-scanned 2026-02-20 |
+| Willy | `_TZ3000_pjb1ua0m` | Forum #26439 post #5389 | Auto-scanned 2026-02-20 |
+| Ons | `_TZ3000_ww6drja5` | Forum #26439 post #5391 | Auto-scanned 2026-02-20 |
+| Hogar_Otal_Scridon | `_TZE284_tgeqdjgk` | Forum #26439 post #5396 | Auto-scanned 2026-02-20 |
+| Wuma68 | `_TZE204_nklqjk62` | dlnraja/com.tuya.zigbee#128 | Auto-scanned 2026-02-20 |
+| dlnraja | `_TZ3000_tzvbimpq`, `_TZ3000_zgyzgdua`, `_TZE204_9mjy74mp`, `_TZ3002_pzao9ls1` | dlnraja/com.tuya.zigbee#132 | Auto-scanned 2026-02-20 |
+| dlnraja | `_TZ3002_pzao9ls1`, `_TZ3000_5iixzdo7`, `_TZE204_nklqjk62`, `_TZ3210_xzhnra8x`, `_TZE284_6ycgarab`, `_TZE200_u6x1zyv2`, `_TZE204_gkfbdvyx`, `_TZE204_dwcarsat`, `_TZ3000_zutizvyk`, `_TZE284_xnbkhhdr`, `_TZE200_rhgsbacq`, `_TZE284_aao3yzhs`, `_TZE284_aa03yzhs` | dlnraja/com.tuya.zigbee#131 | Auto-scanned 2026-02-20 |
+| dlnraja | `_TZ3000_tzvbimpq`, `_TZ3000_zgyzgdua`, `_TZ3000_ja5osu5g` | dlnraja/com.tuya.zigbee#130 | Auto-scanned 2026-02-20 |
+| bbrodnik | `_TZE200_znbl8dj5` | JohanBendz/com.tuya.zigbee#839 | Auto-scanned 2026-02-20 |
+| MF-ITuser | `_TZ3290_ot6ewjvmejq5ekhl` | JohanBendz/com.tuya.zigbee#1331 | Auto-scanned 2026-02-20 |
+| slicke | `_TZ3210_j4pdtz9v` | JohanBendz/com.tuya.zigbee#1065 | Auto-scanned 2026-02-20 |
+| mech78 | `_TZ3210_eejm8dcr` | JohanBendz/com.tuya.zigbee#1075 | Auto-scanned 2026-02-20 |
+| mkoslacz | `_TZ3002_vaq2bfcu` | JohanBendz/com.tuya.zigbee#1106 | Auto-scanned 2026-02-20 |
+| pbruining | `_TZ3000_ww6drja5` | JohanBendz/com.tuya.zigbee#1118 | Auto-scanned 2026-02-20 |
+| mikberg | `_TZE200_kb5noeto` | JohanBendz/com.tuya.zigbee#1122 | Auto-scanned 2026-02-20 |
+| antonhagg | `_TZ3000_c8zfad4a` | JohanBendz/com.tuya.zigbee#1137 | Auto-scanned 2026-02-20 |
+| chernals | `_TZ3000_c8ozah8n` | JohanBendz/com.tuya.zigbee#1166 | Auto-scanned 2026-02-20 |
+| YuriEstevan | `_TZE204_bjzrowv2` | JohanBendz/com.tuya.zigbee#1195 | Auto-scanned 2026-02-20 |
+| crimson7O | `_TZ3000_kfu8zapd` | JohanBendz/com.tuya.zigbee#1209 | Auto-scanned 2026-02-20 |
+| TKGHill | `_TZE204_lawxy9e2`, `_TZE204_nklqjk62` | JohanBendz/com.tuya.zigbee#1210 | Auto-scanned 2026-02-20 |
+| Melectro1 | `_TZE204_dapwryy7` | JohanBendz/com.tuya.zigbee#1218 | Auto-scanned 2026-02-20 |
+| Melectro1 | `_TZ3000_gjrubzje` | JohanBendz/com.tuya.zigbee#1219 | Auto-scanned 2026-02-20 |
+| WJGvdVelden | `_TZE284_gyzlwu5q` | JohanBendz/com.tuya.zigbee#1237 | Auto-scanned 2026-02-20 |
+| Peter-Celica | `_TZE200_pay2byax`, `_TZ3000_mrpevh8p` | JohanBendz/com.tuya.zigbee#1253 | Auto-scanned 2026-02-20 |
+| pkuijpers | `_TZE200_locansqn` | JohanBendz/com.tuya.zigbee#1346 | Auto-scanned 2026-02-20 |
+| MihaiINW | `_TZE200_3towulqd` | JohanBendz/com.tuya.zigbee#724 | Auto-scanned 2026-02-20 |
+| maccyber | `_TZE200_3towulqd` | JohanBendz/com.tuya.zigbee#740 | Auto-scanned 2026-02-20 |
 
 ## v5.9.18: Deep DP Audit — Peter 4x4 Presence Sensor Variants
 Sources: Z2M ZG-204ZM/ZV/ZL/ZH/227Z pages, Z2M #21919 #29024 #28529, ZHA #4184 #4452 #4517, Hubitat kkossev, Blakadder, SmartHomeScene, Reddit
