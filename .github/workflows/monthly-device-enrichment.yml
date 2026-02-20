@@ -70,6 +70,9 @@ jobs:
             },
             "sources": [
               "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352",
+              "https://community.homey.app/t/app-pro-tuya-zigbee-app/26439",
+              "https://community.homey.app/t/app-tuya-smart-life-smart-living/146735",
+              "https://community.homey.app/t/app-pro-tuya-zigbee-app-device-request-archive/89271",
               "https://github.com/Koenkk/zigbee2mqtt/issues",
               "https://github.com/zigpy/zha-device-handlers"
             ],
