@@ -1,7 +1,7 @@
 {
   "_comment": "Source file. The root app.json is generated from this file by homeycompose.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.14",
+  "version": "5.11.15",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -43506,6 +43506,8 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "eWeLink",
+          "SONOFF",
           "_TZ3000_49qchf10",
           "_TZ3000_9cpuaca6",
           "_TZ3000_as7eqiri",
@@ -43596,7 +43598,8 @@
           "GL-B-008Z",
           "TS1002",
           "FE-GU10-5W",
-          "SMD9300"
+          "SMD9300",
+          "CK-BL702-AL-01(7009_Z102LG03-1)"
         ],
         "endpoints": {
           "1": {
@@ -45045,6 +45048,8 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "eWeLink",
+          "SONOFF",
           "_TZ3000_arfwfgoa",
           "_TZ3000_lq01",
           "_TZ3000_wqxwpita",
@@ -45052,7 +45057,11 @@
           "_TZ3400_keyjhapk"
         ],
         "productId": [
-          "TS0040"
+          "TS0040",
+          "SNZB-01",
+          "SNZB-01P",
+          "SNZB-01M",
+          "WB01"
         ],
         "endpoints": {
           "1": {
@@ -48419,6 +48428,8 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
+          "eWeLink",
+          "SONOFF",
           "_TYST11_2dpplnsn",
           "_TYST11_fzo2pocs",
           "_TYST11_pisltm67",
@@ -49993,6 +50004,8 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
+          "eWeLink",
+          "SONOFF",
           "hobeian",
           "_TYZB01_ncdapbwy",
           "_TZ1800_ejwkn2h2",
@@ -50233,7 +50246,8 @@
           "3320-L",
           "SNZB-04",
           "TS0601",
-          "SNZB-04P"
+          "SNZB-04P",
+          "SNZB-04PR2"
         ],
         "endpoints": {
           "1": {
@@ -50609,6 +50623,8 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "eWeLink",
+          "SONOFF",
           "_TZ3000_1dd0d5yi",
           "_TZ3000_42ha4rsc",
           "_TZ3000_4uuaja4a",
@@ -50851,7 +50867,8 @@
           "AM43-0.45/40-ES-EZ",
           "AM43-0.45/40-ES-EB",
           "TS0601",
-          "TS0301"
+          "TS0301",
+          "ZBCurtain"
         ],
         "endpoints": {
           "1": {
@@ -55196,6 +55213,8 @@
           "esp32-c6",
           "esp32-h2",
           "espressif",
+          "Legrand",
+          " Legrand",
           "lumi router",
           "lumi.router",
           "maker",
@@ -55206,7 +55225,24 @@
           "ptvo.info",
           "router",
           "slzb",
+          "SONOFF",
+          "eWeLink",
+          "EWELINK",
           "sonoffzigbee",
+          "Schneider Electric",
+          "Schneider",
+          "SE",
+          "Wiser",
+          "Danfoss",
+          "DANFOSS",
+          "BOSCH",
+          "Bosch",
+          "RBSH",
+          "Niko",
+          "NIKO",
+          "NIKO NV",
+          "D5X84YU",
+          "Netatmo",
           "ti router",
           "ti.router",
           "tube's zb",
@@ -55231,6 +55267,33 @@
           "ROUTER",
           "SENSOR",
           "SWITCH",
+          "SNZB-01",
+          "SNZB-02",
+          "SNZB-03",
+          "SNZB-04",
+          "SNZB-01P",
+          "SNZB-02P",
+          "SNZB-03P",
+          "SNZB-04P",
+          "SNZB-06P",
+          "S26R2ZB",
+          "S31ZB",
+          "S40ZBTPB",
+          "ZBMINI",
+          "ZBMINIL2",
+          "BASICZBR3",
+          "eTRV0100",
+          "eTRV0101",
+          "eTRV0103",
+          "eT093WRO",
+          "eT093WRG",
+          "TRV001",
+          "TRV003",
+          "0x8040",
+          "BSP-FZ2",
+          "BSP-EZ2",
+          "Battery switch, 1 button",
+          "Battery switch, 2 buttons",
           "ZIGSTAR"
         ],
         "endpoints": {
@@ -55243,7 +55306,7 @@
         },
         "learnmode": {
           "instruction": {
-            "en": "Generic DIY Zigbee device (ESP32, PTVO, CC253x, etc.)\n\n1. Put your DIY device in pairing mode\n2. For ESP32: Press boot button or trigger pairing in firmware\n3. For PTVO: Hold button for 5+ seconds\n4. For CC253x routers: Power cycle or reset\n\nCapabilities will be auto-discovered from ZCL clusters.\n\nSupported: ESP32-C6, ESP32-H2, PTVO, CC2530/31, CC2652, Zigbee routers.",
+            "en": "Universal Zigbee Device (DIY + Standard ZCL)\n\n1. Put your device in pairing mode\n2. For Sonoff: Hold button 5+ seconds\n3. For ESP32/PTVO: Press boot button\n4. For Danfoss/Legrand/Schneider: Follow manufacturer pairing\n\nCapabilities auto-discovered from ZCL clusters.\n\nSupported: Sonoff, eWeLink, Danfoss, Legrand, Schneider, Bosch, Niko, ESP32, PTVO, CC2652, routers.",
             "fr": "Appareil Zigbee DIY générique (ESP32, PTVO, CC253x, etc.)\n\n1. Mettez votre appareil DIY en mode appairage\n2. Pour ESP32: Appuyez sur boot ou déclenchez l'appairage\n3. Pour PTVO: Maintenez le bouton 5+ secondes\n4. Pour CC253x: Redémarrez ou réinitialisez\n\nLes capacités seront auto-découvertes depuis les clusters ZCL.\n\nSupporté: ESP32-C6, ESP32-H2, PTVO, CC2530/31, CC2652, routeurs Zigbee."
           }
         }
@@ -58681,6 +58744,8 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
+          "eWeLink",
+          "SONOFF",
           "_TYST11_7hfcudw5",
           "_TYST11_i5j6ifxj",
           "_TYZB01_5nr7ncpl",
@@ -58919,7 +58984,9 @@
           "3325-S",
           "SNZB-03",
           "TS0601",
-          "SNZB-03P"
+          "SNZB-03P",
+          "MSO1",
+          "CK-TLSR8656-SS5-01(7002)"
         ],
         "endpoints": {
           "1": {
@@ -59942,6 +60009,8 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "eWeLink",
+          "SONOFF",
           "_TYZB01_iuepbmpv",
           "_TZ3000_0zfrhq4i",
           "_TZ3000_1h2x4akh",
@@ -60083,7 +60152,12 @@
           "E1603/E1702/E1708",
           "TRADFRI control outlet",
           "TS0601",
-          "CK-BL702-SWP-01(7020)"
+          "CK-BL702-SWP-01(7020)",
+          "S40LITE",
+          "SA-029-1",
+          "SA-028-1",
+          "Z111PL0H-1JX",
+          "SNZB-06P"
         ],
         "endpoints": {
           "1": {
@@ -61887,6 +61961,19 @@
         "measure_battery",
         "measure_luminance.distance"
       ],
+      "capabilitiesOptions": {
+        "measure_luminance.distance": {
+          "title": {
+            "en": "Detection Distance",
+            "fr": "Distance de Détection",
+            "nl": "Detectieafstand",
+            "de": "Erkennungsdistanz"
+          },
+          "units": {
+            "en": "m"
+          }
+        }
+      },
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
@@ -66051,7 +66138,12 @@
           "TS0001_switch",
           "TS0001_switch_module",
           "TS0601",
-          "TS000F"
+          "TS000F",
+          "ZBMINI",
+          "ZBMINIL2",
+          "BASICZBR3",
+          "S31ZB",
+          "S26R2ZB"
         ],
         "endpoints": {
           "1": {
@@ -66075,6 +66167,8 @@
           }
         },
         "manufacturerName": [
+          "eWeLink",
+          "SONOFF",
           "_TYZB01_1xktopx6",
           "_TYZB01_4mdqxxnn",
           "_TYZB01_4qw4rl1u",
