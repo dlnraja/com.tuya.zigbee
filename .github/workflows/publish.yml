@@ -114,6 +114,10 @@ jobs:
           if [ "${{ steps.pat.outputs.ok }}" == "true" ]; then
             echo "## Published v${{ steps.bump.outputs.version }}" >> $GITHUB_STEP_SUMMARY
             echo "Manage: ${{ steps.pub.outputs.url }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### Forum Post (copy to https://community.homey.app/t/140352)" >> $GITHUB_STEP_SUMMARY
+            echo "v${{ steps.bump.outputs.version }} — ${{ steps.cl.outputs.text }}" >> $GITHUB_STEP_SUMMARY
+            echo "[Install test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)" >> $GITHUB_STEP_SUMMARY
           else
             echo "## Validated only (HOMEY_PAT not set)" >> $GITHUB_STEP_SUMMARY
             echo "Add secret from https://tools.developer.homey.app/me" >> $GITHUB_STEP_SUMMARY
