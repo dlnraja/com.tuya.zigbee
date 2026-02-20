@@ -3,12 +3,13 @@
  * Chain: Gemini → OpenAI → Groq → IBM Granite (HF) → Mistral → OpenRouter → ApiFreeLLM
  */
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const{PROJECT_RULES}=require('./project-rules');
+const{PROJECT_RULES,ARCHITECTURE_SUMMARY}=require('./project-rules');
 
 async function callAI(text,sysPrompt,opts={}){
   const maxTokens=opts.maxTokens||2048;
-  // Inject project rules into system prompt
-  const fullSysPrompt=PROJECT_RULES+'\n\n'+sysPrompt;
+  // Inject project rules + architecture into system prompt
+  const archContext=ARCHITECTURE_SUMMARY?'\n\n---\n'+ARCHITECTURE_SUMMARY:'';
+  const fullSysPrompt=PROJECT_RULES+archContext+'\n\n'+sysPrompt;
   // Try Gemini first (free)
   const gemKey=process.env.GOOGLE_API_KEY;
   if(gemKey){
