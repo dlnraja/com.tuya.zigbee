@@ -82,20 +82,30 @@
       "_TZE284_oitavov2",
       "_TZE284_sgabhwa6",
       "_TZE284_xc3vwx5a",
-      "_TZE284_hdml1aav"
+      "_TZE284_hdml1aav",
+      "A89G12C"
     ],
     "productId": [
       "ZG-303Z",
       "CS-201Z",
-      "TS0601"
+      "TS0601",
+      "Arteco"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
+          1,
           4,
           5,
+          1026,
+          1029,
           61184
+        ],
+        "bindings": [
+          1,
+          1026,
+          1029
         ]
       }
     }

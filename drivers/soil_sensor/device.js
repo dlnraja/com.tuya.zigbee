@@ -147,7 +147,8 @@ class SoilSensorDevice extends TuyaHybridDevice {
       // v5.9.22: Z2M #28270 - DP103=humidity_calibration, DP104=report_interval (settings)
       103: { capability: null, setting: 'humidity_calibration', min: -30, max: 30 },
       104: { capability: null, setting: 'report_interval', min: 30, max: 1200 },
-      110: { capability: 'measure_battery', transform: (v) => v > 100 ? v / 10 : v }, // battery ÷10
+      110: { capability: null, setting: 'soil_warning', min: 0, max: 100 }, // Z2M: soil water shortage threshold %
+      111: { capability: 'alarm_water', transform: (v) => v === 1 }, // Z2M: water_warning 0=none, 1=alarm
 
       // ═══════════════════════════════════════════════════════════════════
       // FALLBACK DPs for other soil sensor variants
@@ -199,7 +200,10 @@ class SoilSensorDevice extends TuyaHybridDevice {
             const humidity = data.measuredValue / 100;
             this.log(`[ZCL] 💧 Humidity/Moisture: ${humidity}%`);
             this._registerZigbeeHit?.();
-            this.setCapabilityValue('measure_humidity', parseFloat(humidity)).catch(() => { });
+            // v5.11.16: ZCL humidity = AIR humidity. Soil moisture comes via Tuya DP3.
+            if (this.hasCapability('measure_humidity')) {
+              this.setCapabilityValue('measure_humidity', parseFloat(humidity)).catch(() => { });
+            }
           }
         }
       },

@@ -52,6 +52,8 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "eWeLink",
+      "SONOFF",
       "_TZ3000_1dd0d5yi",
       "_TZ3000_42ha4rsc",
       "_TZ3000_4uuaja4a",
@@ -294,7 +296,8 @@
       "AM43-0.45/40-ES-EZ",
       "AM43-0.45/40-ES-EB",
       "TS0601",
-      "TS0301"
+      "TS0301",
+      "ZBCurtain"
     ],
     "endpoints": {
       "1": {

@@ -24,6 +24,20 @@ const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
 // WRONG: const TuyaZigbeeDriver = require('../../lib/TuyaZigbeeDriver');
 ```
 
+### Double-Division Bug (FIXED v5.11.15):
+- TuyaEF00Manager auto-converts via AdaptiveDataParser (e.g. /100 for temp)
+- Then dpMappings divisor divides again → wrong values
+- FIX: TuyaEF00Manager.js:1912 skips auto-conversion when dpMappings has divisor !== 1
+
+### Mains-Powered Sensor Devices:
+- Devices with `get mainsPowered() { return true; }` must NOT have measure_battery
+- Remove in onNodeInit: `await this.removeCapability('measure_battery').catch(() => {})`
+- Example: _TZE200_8ygsuhe1 Smart Airbox = USB-powered
+
+### ProductValueValidator:
+- CO2 min changed from 300 to 0 (allows warmup/calibration values)
+- Location: lib/ProductValueValidator.js
+
 ## PATTERNS
 
 ### Mixin Order:
@@ -65,13 +79,21 @@ if (isPhysical) {
 - DP1-8: gang states | DP14: power-on | DP15: backlight | DP101: child_lock
 - Types: 0=Raw, 1=Bool, 2=Value, 3=String, 4=Enum, 5=Bitmap
 
+### Air Quality DPs (_TZE200_8ygsuhe1):
+- DP2: CO2 (ppm, div 1) | DP18: Temp (div 10) | DP19: Humidity (div 10)
+- DP20: PM2.5 (div 1) | DP21: VOC (ppb, div 1) | DP22: HCHO (mg/m3, div 100)
+
 ## FILES STRUCTURE
 - `lib/devices/HybridSwitchBase.js` - Base class for switches
+- `lib/devices/HybridSensorBase.js` - Base class for sensors (handles dpMappings divisor)
 - `lib/mixins/PhysicalButtonMixin.js` - Physical button detection
 - `lib/mixins/VirtualButtonMixin.js` - Virtual button support
 - `lib/tuya/TuyaZigbeeDevice.js` - Base Tuya device class
+- `lib/tuya/TuyaEF00Manager.js` - Tuya DP report handling + AdaptiveDataParser
+- `lib/ProductValueValidator.js` - Sensor value validation ranges
 - `drivers/{type}/device.js` - Device implementation
 - `drivers/{type}/driver.flow.compose.json` - Flow cards definition
+- `.homeycompose/capabilities/` - Custom capability definitions (measure_voc, measure_formaldehyde, etc.)
 
 ## COMMON DIAGNOSTIC ISSUES
 
@@ -98,6 +120,17 @@ const TuyaZigbeeDevice = require('../../lib/TuyaZigbeeDevice');
 ### Device Shows as "unknown/unknown"
 - Check settings keys: `zb_model_id`, `zb_manufacturer_name`
 - Verify fingerprints in driver.compose.json
+
+### Double-Division in Sensor Values
+- Symptom: temp 0.2°C instead of 20.6°C
+- Fix: TuyaEF00Manager skips auto-convert when dpMappings divisor !== 1
+
+### False Battery Alerts on Mains Devices
+- Set `get mainsPowered() { return true; }` in device.js
+- Remove measure_battery in onNodeInit
+
+### Sensor Value Rejected by Validator
+- Check ProductValueValidator.js min/max ranges
 
 ## CRITICAL: Fingerprint Matching Rules
 
@@ -134,7 +167,13 @@ Device matches if manufacturerName IN list AND productId IN list.
 ## EXTERNAL SYNC SOURCES
 - Z2M: github.com/Koenkk/zigbee2mqtt/issues (`_TZE284_`)
 - ZHA: github.com/zigpy/zha-device-handlers/issues
-- JohanBendz: github.com/JohanBendz/com.tuya.zigbee/pulls
+- JohanBendz: github.com/JohanBendz/com.tuya.zigbee/pulls (redirect users to dlnraja fork)
+
+## GITHUB ISSUE RESPONSE PATTERN
+1. Check if fingerprint already in dlnraja fork
+2. Post: "Supported in dlnraja/com.tuya.zigbee v{version}"
+3. Ask for diagnostic report + interview if needed
+4. After fix: update comment with fix details
 
 ## VERSION RELEASE
 1. `npx homey app validate` → publish level

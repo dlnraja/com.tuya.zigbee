@@ -2,7 +2,7 @@
 
 ## ✅ Workflow Actif
 
-**Fichier:** `homey-official-publish-api.yml`
+**Fichier:** `publish.yml`
 
 Ce workflow utilise **100% les actions GitHub officielles d'Athom** sans Homey CLI:
 

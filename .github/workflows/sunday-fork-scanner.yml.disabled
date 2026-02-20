@@ -1,0 +1,53 @@
+# Universal Tuya Zigbee - Sunday Fork Scanner
+# Scans all forks of JohanBendz/com.tuya.zigbee recursively
+# for new fingerprints not in our database
+
+name: "Sunday Fork Scanner"
+
+on:
+  schedule:
+    - cron: '0 9 * * 0'
+  workflow_dispatch:
+
+concurrency:
+  group: sunday-forks
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  scan-forks:
+    name: "Scan All Forks for New Fingerprints"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Scan all upstream forks
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/scan-forks.js
+
+      - name: Create issue if new fingerprints found
+        if: hashFiles('/tmp/new_fork_fps.json') != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const data = JSON.parse(fs.readFileSync('/tmp/new_fork_fps.json','utf8'));
+            if (!data.length) return;
+            const rows = data.map(([fp,{fork,driver}]) =>
+              `| \`${fp}\` | ${fork} | ${driver} |`
+            ).join('\n');
+            const body = `## New fingerprints from forks\n\n| Fingerprint | Fork | Driver |\n|-------------|------|--------|\n${rows}\n\nFound ${data.length} new fingerprint(s) not in our database.`;
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `[Auto] ${data.length} new fingerprints from fork scan`,
+              body,
+              labels: ['enhancement','auto-scan']
+            });

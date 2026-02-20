@@ -25,6 +25,8 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "eWeLink",
+      "SONOFF",
       "_TZ3000_arfwfgoa",
       "_TZ3000_lq01",
       "_TZ3000_wqxwpita",
@@ -32,7 +34,11 @@
       "_TZ3400_keyjhapk"
     ],
     "productId": [
-      "TS0040"
+      "TS0040",
+      "SNZB-01",
+      "SNZB-01P",
+      "SNZB-01M",
+      "WB01"
     ],
     "endpoints": {
       "1": {
