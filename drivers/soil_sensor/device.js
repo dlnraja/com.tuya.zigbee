@@ -367,6 +367,13 @@ class SoilSensorDevice extends TuyaHybridDevice {
     // ═══════════════════════════════════════════════════════════════════════
 
     if (dp === 3) {
+      // v5.11.18: Guard against compound frame mis-parse (peter_kawa report)
+      // When compound frames arrive, first parse reads full buffer as single uint32
+      // giving absurd values like 67109120 instead of actual moisture 0-100%
+      if (parsedValue > 100 && !Buffer.isBuffer(value)) {
+        this.log(`[SOIL] ⚠️ DP3 value ${parsedValue} > 100% — compound frame artifact, skipping`);
+        return;
+      }
       // DP3 = SOIL MOISTURE (measure_humidity.soil)
       this.log('[SOIL] 🌱 ════════════════════════════════════════════════════');
       this.log(`[SOIL] 🌱 SOIL MOISTURE DP3 = ${parsedValue}%`);
