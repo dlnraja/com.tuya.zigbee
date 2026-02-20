@@ -82,22 +82,59 @@ async function postReply(topicId,replyTo,content,auth){
   return d;
 }
 
-async function analyzeWithGemini(post,results,appVersion){
-  const key=process.env.GOOGLE_API_KEY;
-  if(!key)throw new Error('GOOGLE_API_KEY not set');
-  const text=strip(post.cooked);
-  const sys=fs.readFileSync(path.join(__dirname,'system-prompt.txt'),'utf8').replace(/\{\{VERSION\}\}/g,appVersion);
+const MODELS=['gemini-2.0-flash','gemini-1.5-flash','gemini-2.0-flash-lite'];
 
-  const usr='Post #'+post.post_number+' by @'+post.username+':\n'+text+'\n\nFingerprint results:\n'+JSON.stringify(results,null,2)+'\n\nGenerate reply or NULL:';
-  const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+MODEL+':generateContent?key='+key,{
+async function callGemini(model,sys,usr,key){
+  const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent?key='+key,{
     method:'POST',headers:{'Content-Type':'application/json'},
     body:JSON.stringify({systemInstruction:{parts:[{text:sys}]},contents:[{parts:[{text:usr}]}],
       generationConfig:{temperature:0.2,maxOutputTokens:1024,topP:0.8}})});
-  if(!r.ok){const e=await r.text().catch(()=>'');throw new Error('Gemini failed: '+r.status+' '+e.substring(0,200))}
+  if(!r.ok){const e=await r.text().catch(()=>'');return{ok:false,status:r.status,err:e.substring(0,200)}}
   const d=await r.json();
   const out=d.candidates?.[0]?.content?.parts?.[0]?.text;
-  if(!out||out.trim().toUpperCase()==='NULL')return null;
-  return out.trim();
+  return{ok:true,text:out};
+}
+
+function templateFallback(post,results,appVersion){
+  const found=Object.entries(results).filter(([,v])=>v.found);
+  const missing=Object.entries(results).filter(([,v])=>!v.found);
+  if(!found.length&&!missing.length)return null;
+  let msg='';
+  if(found.length){
+    msg+='Your device fingerprint(s) are **already supported** in v'+appVersion+':\n\n';
+    for(const[fp,v]of found)msg+='- '+fp+' -> **'+v.drivers.join(', ')+'**\n';
+    msg+='\nPlease **remove and re-pair** your device, selecting the correct device type above.\n';
+  }
+  if(missing.length){
+    msg+='The following fingerprint(s) are **not yet supported**: '+missing.map(([fp])=>''+fp+'').join(', ')+'\n\n';
+    msg+='Please provide a **device interview** from [Developer Tools](https://tools.developer.homey.app) and open a [GitHub issue](https://github.com/dlnraja/com.tuya.zigbee/issues).\n';
+  }
+  msg+='\n---\n*Bot Universal Tuya Zigbee (v'+appVersion+') - [Install test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [GitHub](https://github.com/dlnraja/com.tuya.zigbee/issues)*';
+  return msg;
+}
+
+async function analyzeWithGemini(post,results,appVersion){
+  const key=process.env.GOOGLE_API_KEY;
+  if(!key){console.log('   No GOOGLE_API_KEY, using template');return templateFallback(post,results,appVersion)}
+  const text=strip(post.cooked);
+  const sys=fs.readFileSync(path.join(__dirname,'system-prompt.txt'),'utf8').replace(/\{\{VERSION\}\}/g,appVersion);
+  const usr='Post #'+post.post_number+' by @'+post.username+':\n'+text+'\n\nFingerprint results:\n'+JSON.stringify(results,null,2)+'\n\nGenerate reply or NULL:';
+  for(const model of MODELS){
+    for(let retry=0;retry<2;retry++){
+      if(retry>0)await sleep(5000*(retry+1));
+      console.log('   Trying '+model+(retry?' retry '+retry:'')+'...');
+      const res=await callGemini(model,sys,usr,key);
+      if(res.ok){
+        if(!res.text||res.text.trim().toUpperCase()==='NULL')return null;
+        return res.text.trim();
+      }
+      if(res.status===429){console.log('   429 rate limit, waiting...');continue}
+      console.log('   '+model+' failed: '+res.status+' '+res.err);
+      break;
+    }
+  }
+  console.log('   All models failed, using template fallback');
+  return templateFallback(post,results,appVersion);
 }
 
 async function main(){
