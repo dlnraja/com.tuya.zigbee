@@ -359,3 +359,12 @@ GH#124: _TZ3000_fllyghyj+b4awzgct case — ALREADY FIXED.
 GH#126: _TZ3000_zutizvyk TS0203 — ALREADY in contact_sensor (v5.9.4).
 GH#127: _TZE204_e5m9c5hl radar — FIXED v5.8.97.
 JohanBendz PRs: #1346 time sync LCD, #1333 siren, #1332 HOBEIAN — all already integrated.
+
+
+## Nightly Forum Scan (2026-02-20 v5.11.17)
+- **Topic 140352 #1450** @Hartmut_Dunker: `_TZ3002_pzao9ls1` (template)
+- **Topic 140352 #1462** @SkiMattie: `_TZ3000_mrpevh8p`, `_TZE204_9mjy74mp` (template)
+- **Topic 26439 #5388** @Trey_Rogerson: `_TZE284_c8ipbljq` (template)
+- **Topic 26439 #5389** @Willy: `_TZ3000_pjb1ua0m` (template)
+- **Topic 26439 #5391** @Ons: `_TZ3000_ww6drja5` (template)
+- **Topic 26439 #5396** @Hogar_Otal_Scridon: `_TZE284_tgeqdjgk` (template)
