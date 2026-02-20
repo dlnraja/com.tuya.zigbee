@@ -7,7 +7,7 @@ description: Sunday automation - triage GitHub, scan forks, scan forum
 2. Triage dlnraja issues/PRs
 3. Scan all forks for new fingerprints
 4. Cross-driver gap detection (sensors, switches - flags FPs in 2+ drivers but missing from sibling)
-5. Scan forum for device requests (topics: 140352 dlnraja test + 26439 JohanBendz main)
+5. Scan forum for device requests (topics: 140352 dlnraja test, 26439 JohanBendz main, 146735 Tuya Smart Life, 89271 Device Request Archive)
 ## Auto-respond on new issues/PRs via auto-respond.yml
 ## Key rule: same manufacturerName can appear in multiple drivers (different productIds)
 ## Manual: Actions tab > Sunday Master Automation > Run workflow

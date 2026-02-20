@@ -4,7 +4,13 @@ const https=require('https');
 const fs=require('fs');
 const {loadFingerprints,findDriver,extractMfrFromText}=require('./load-fingerprints');
 
-const TOPICS=[140352, 26439];
+// v5.11.16: All Homey Community forum threads to scan for device requests
+const TOPICS=[
+  140352,  // dlnraja: [APP][Pro] Universal TUYA Zigbee Device App - test
+  26439,   // JohanBendz: [APP][Pro] Tuya Zigbee App
+  146735,  // [APP] Tuya - Smart Life. Smart Living
+  89271,   // [APP][Pro] Tuya Zigbee App - Device Request Archive
+];
 const BASE='https://community.homey.app';
 const os=require('os');
 const SUMMARY=process.env.GITHUB_STEP_SUMMARY||(process.platform==='win32'?'NUL':'/dev/null');
