@@ -82,18 +82,7 @@ async function postReply(topicId,replyTo,content,auth){
   return d;
 }
 
-const MODELS=['gemini-2.0-flash','gemini-2.0-flash-lite','gemini-1.5-flash-latest'];
-
-async function callGemini(model,sys,usr,key){
-  const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent?key='+key,{
-    method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({systemInstruction:{parts:[{text:sys}]},contents:[{parts:[{text:usr}]}],
-      generationConfig:{temperature:0.2,maxOutputTokens:1024,topP:0.8}})});
-  if(!r.ok){const e=await r.text().catch(()=>'');return{ok:false,status:r.status,err:e.substring(0,200)}}
-  const d=await r.json();
-  const out=d.candidates?.[0]?.content?.parts?.[0]?.text;
-  return{ok:true,text:out};
-}
+const{callAI}=require('./ai-helper');
 
 function templateFallback(post,results,appVersion){
   const found=Object.entries(results).filter(([,v])=>v.found);
@@ -114,38 +103,15 @@ function templateFallback(post,results,appVersion){
 }
 
 async function analyzeWithGemini(post,results,appVersion){
-  const key=process.env.GOOGLE_API_KEY;
-  if(!key){console.log('   No GOOGLE_API_KEY, using template');return templateFallback(post,results,appVersion)}
   const text=strip(post.cooked);
-  const sys=fs.readFileSync(path.join(__dirname,'system-prompt.txt'),'utf8').replace(/\{\{VERSION\}\}/g,appVersion);
+  let sys='';
+  try{sys=fs.readFileSync(path.join(__dirname,'system-prompt.txt'),'utf8').replace(/\{\{VERSION\}\}/g,appVersion)}catch{}
   const usr='Post #'+post.post_number+' by @'+post.username+':\n'+text+'\n\nFingerprint results:\n'+JSON.stringify(results,null,2)+'\n\nGenerate reply or NULL:';
-  for(const model of MODELS){
-    for(let retry=0;retry<2;retry++){
-      if(retry>0)await sleep(5000*(retry+1));
-      console.log('   Trying '+model+(retry?' retry '+retry:'')+'...');
-      const res=await callGemini(model,sys,usr,key);
-      if(res.ok){
-        if(!res.text||res.text.trim().toUpperCase()==='NULL')return null;
-        return res.text.trim();
-      }
-      if(res.status===429){console.log('   429 rate limit, waiting...');continue}
-      console.log('   '+model+' failed: '+res.status+' '+res.err);
-      break;
-    }
-  }
-  // OpenAI fallback
-  const oaiKey=process.env.OPENAI_API_KEY;
-  if(oaiKey){
-    console.log('   Trying OpenAI gpt-4o-mini...');
-    try{
-      const r=await fetch('https://api.openai.com/v1/chat/completions',{
-        method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+oaiKey},
-        body:JSON.stringify({model:'gpt-4o-mini',messages:[{role:'system',content:sys},{role:'user',content:usr}],max_tokens:1024,temperature:0.2})});
-      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;
-        if(t&&t.trim().toUpperCase()!=='NULL')return t.trim();
-        if(t&&t.trim().toUpperCase()==='NULL')return null;
-      }else{console.log('   OpenAI failed:',r.status)}
-    }catch(e){console.log('   OpenAI error:',e.message)}
+  const res=await callAI(usr,sys,{maxTokens:1024});
+  if(res){
+    console.log('   AI response via '+res.model);
+    if(res.text.toUpperCase()==='NULL')return null;
+    return res.text;
   }
   console.log('   All AI failed, using template fallback');
   return templateFallback(post,results,appVersion);
