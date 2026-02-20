@@ -94,12 +94,14 @@ async function processForumPosts(state,idx,pidx,auth,appVersion,dryRun){
   const results=[];
   let replied=0;
   for(const tid of TOPICS){
-    const since=state.forum[tid]||0;
+    let since=state.forum[tid]||0;
+    // Auto-init: on first run, skip to recent posts only
+    const r0=await fetch(FORUM+'/t/'+tid+'.json');
+    if(!r0.ok){console.log('    Fetch failed:',r0.status);continue}
+    const d0=await r0.json();
+    if(since===0){since=Math.max(0,d0.highest_post_number-15);state.forum[tid]=since;console.log('    Init state to #'+since)}
     console.log('  Topic '+tid+' since post #'+since);
-    const r=await fetch(FORUM+'/t/'+tid+'.json');
-    if(!r.ok){console.log('    Fetch failed:',r.status);continue}
-    const d=await r.json();
-    const highest=d.highest_post_number;
+    const highest=d0.highest_post_number;
     if(highest<=since){console.log('    No new posts');continue}
     // Fetch all new posts in batches
     const posts=[];
