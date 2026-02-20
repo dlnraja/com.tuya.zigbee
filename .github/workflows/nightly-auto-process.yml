@@ -1,0 +1,63 @@
+name: Nightly Auto-Process
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (no posts/comments)'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: nightly-process
+  cancel-in-progress: false
+
+jobs:
+  nightly:
+    name: Process New Messages
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run Nightly Processor
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
+        run: node .github/scripts/nightly-processor.js
+
+      - name: Commit state and docs
+        if: always()
+        run: |
+          git config user.name "tuya-bot"
+          git config user.email "bot@dlnraja.github.io"
+          git add .github/state/ docs/
+          git diff --cached --quiet || git commit -m "chore: nightly auto-process [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
+
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nightly-report
+          path: .github/state/nightly-report.json
+          retention-days: 30
