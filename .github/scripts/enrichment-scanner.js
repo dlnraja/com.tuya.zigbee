@@ -1,0 +1,166 @@
+/**
+ * Enrichment Scanner - Cross-references Z2M, ZHA, Blakadder for new fingerprints
+ * Finds new Tuya devices not yet in dlnraja's app and generates integration plan
+ */
+const fs=require('fs'),path=require('path');
+const DDIR=path.join(__dirname,'..','..','drivers');
+const STATE=path.join(__dirname,'..','state','enrichment-state.json');
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+
+function loadState(){try{return JSON.parse(fs.readFileSync(STATE,'utf8'))}catch{return{lastRun:null,knownNew:[]}}}
+function saveState(s){fs.mkdirSync(path.dirname(STATE),{recursive:true});fs.writeFileSync(STATE,JSON.stringify(s,null,2)+'\n')}
+
+function buildIndex(){
+  const idx=new Set();
+  if(!fs.existsSync(DDIR))return idx;
+  for(const d of fs.readdirSync(DDIR)){
+    const f=path.join(DDIR,d,'driver.compose.json');
+    if(!fs.existsSync(f))continue;
+    for(const m of(fs.readFileSync(f,'utf8').match(/"_T[A-Za-z0-9_]+"/g)||[]))idx.add(m.replace(/"/g,''));
+  }
+  return idx;
+}
+
+async function fetchJSON(url){
+  try{const r=await fetch(url,{headers:{'User-Agent':'tuya-enrichment-bot'}});if(!r.ok)return null;return r.json()}
+  catch{return null}
+}
+
+async function scanZ2MDevices(){
+  console.log('  Fetching Z2M device list...');
+  const data=await fetchJSON('https://raw.githubusercontent.com/Koenkk/zigbee2mqtt/master/npm/devices.js');
+  if(!data)return[];
+  // Z2M exposes devices via their repo - parse Tuya fingerprints
+  const raw=typeof data==='string'?data:JSON.stringify(data);
+  const fps=[...new Set((raw.match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[]))];
+  return fps;
+}
+
+async function scanZ2MIssues(token){
+  console.log('  Fetching Z2M Tuya issues...');
+  const url='https://api.github.com/search/issues?q=repo:Koenkk/zigbee2mqtt+_TZE284+state:open&per_page=20&sort=created&order=desc';
+  const h={Accept:'application/vnd.github+json','User-Agent':'tuya-bot'};
+  if(token)h.Authorization='Bearer '+token;
+  const r=await fetch(url,{headers:h});
+  if(!r.ok)return[];
+  const d=await r.json();
+  const fps=[];
+  for(const iss of(d.items||[])){
+    const found=[...new Set(((iss.title||'')+' '+(iss.body||'')).match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])];
+    if(found.length)fps.push(...found.map(fp=>({fp,source:'z2m-issue',issue:iss.number,title:iss.title?.substring(0,80),url:iss.html_url})));
+  }
+  return fps;
+}
+
+async function scanZHAIssues(token){
+  console.log('  Fetching ZHA Tuya issues...');
+  const url='https://api.github.com/search/issues?q=repo:zigpy/zha-device-handlers+tuya+state:open&per_page=20&sort=created&order=desc';
+  const h={Accept:'application/vnd.github+json','User-Agent':'tuya-bot'};
+  if(token)h.Authorization='Bearer '+token;
+  const r=await fetch(url,{headers:h});
+  if(!r.ok)return[];
+  const d=await r.json();
+  const fps=[];
+  for(const iss of(d.items||[])){
+    const found=[...new Set(((iss.title||'')+' '+(iss.body||'')).match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])];
+    if(found.length)fps.push(...found.map(fp=>({fp,source:'zha-issue',issue:iss.number,title:iss.title?.substring(0,80),url:iss.html_url})));
+  }
+  return fps;
+}
+
+async function scanBlakadder(){
+  console.log('  Fetching Blakadder Zigbee DB...');
+  const data=await fetchJSON('https://zigbee.blakadder.com/assets/js/zigbee.json');
+  if(!data||!Array.isArray(data))return[];
+  const fps=[];
+  for(const dev of data){
+    if(!dev.zigbeeModel||!dev.manufacturerName)continue;
+    if(dev.manufacturerName.startsWith('_T'))fps.push(dev.manufacturerName);
+  }
+  return[...new Set(fps)];
+}
+
+
+async function callGemini(text,sysPrompt){
+  const key=process.env.GOOGLE_API_KEY;
+  if(!key)return null;
+  const models=['gemini-2.0-flash','gemini-2.0-flash-lite'];
+  for(const model of models){
+    for(let retry=0;retry<2;retry++){
+      if(retry>0)await sleep(5000);
+      const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent?key='+key,{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({systemInstruction:{parts:[{text:sysPrompt}]},contents:[{parts:[{text}]}],
+          generationConfig:{temperature:0.2,maxOutputTokens:2048}})});
+      if(r.ok){const d=await r.json();const t=d.candidates?.[0]?.content?.parts?.[0]?.text;if(t)return t.trim()}
+      if(r.status===429)continue;
+      break;
+    }
+  }
+  return null;
+}
+
+async function main(){
+  const token=process.env.GITHUB_TOKEN||process.env.GH_PAT;
+  const state=loadState();
+  const idx=buildIndex();
+  console.log('=== Enrichment Scanner ===');
+  console.log('Known fingerprints:',idx.size);
+
+  const allNew=[];
+
+  // 1. Z2M issues (_TZE284 etc)
+  const z2mIssues=await scanZ2MIssues(token);
+  const z2mNew=z2mIssues.filter(f=>!idx.has(f.fp));
+  console.log('Z2M issues: found',z2mIssues.length,'fps,',z2mNew.length,'new');
+  allNew.push(...z2mNew);
+  await sleep(2000);
+
+  // 2. ZHA issues
+  const zhaIssues=await scanZHAIssues(token);
+  const zhaNew=zhaIssues.filter(f=>!idx.has(f.fp));
+  console.log('ZHA issues: found',zhaIssues.length,'fps,',zhaNew.length,'new');
+  allNew.push(...zhaNew);
+  await sleep(2000);
+
+  // 3. Blakadder
+  const blakadder=await scanBlakadder();
+  const blakNew=blakadder.filter(fp=>!idx.has(fp));
+  console.log('Blakadder: found',blakadder.length,'fps,',blakNew.length,'new');
+  for(const fp of blakNew)allNew.push({fp,source:'blakadder'});
+
+  // Deduplicate
+  const deduped=new Map();
+  for(const item of allNew){
+    if(!deduped.has(item.fp))deduped.set(item.fp,item);
+  }
+  const uniqueNew=[...deduped.values()];
+  console.log('\nTotal unique NEW fingerprints:',uniqueNew.length);
+
+  // 4. AI analysis
+  let aiPlan=null;
+  if(uniqueNew.length>0){
+    const sysPrompt='You are an expert on Tuya Zigbee devices. Given new fingerprints found from Z2M/ZHA/Blakadder that are NOT in the Universal Tuya Zigbee app, classify each by likely device type (switch, sensor, thermostat, cover, etc) and suggest which existing driver to add them to. Be concise. Output a Markdown table: | Fingerprint | Source | Likely Type | Suggested Driver |';
+    aiPlan=await callGemini(JSON.stringify(uniqueNew.slice(0,30),null,2),sysPrompt);
+    if(aiPlan)console.log('AI plan generated:',aiPlan.length,'chars');
+  }
+
+  // 5. Save report
+  const report={timestamp:new Date().toISOString(),totalNew:uniqueNew.length,newFingerprints:uniqueNew.slice(0,50),aiPlan};
+  const reportPath=path.join(__dirname,'..','state','enrichment-report.json');
+  fs.writeFileSync(reportPath,JSON.stringify(report,null,2)+'\n');
+  saveState({lastRun:new Date().toISOString(),knownNew:uniqueNew.map(f=>f.fp).slice(0,100)});
+
+  console.log('\n=== Done ===');
+  if(process.env.GITHUB_STEP_SUMMARY){
+    let md='## Enrichment Scanner\n| Source | Total | New |\n|---|---|---|\n';
+    md+='| Z2M Issues | '+z2mIssues.length+' | '+z2mNew.length+' |\n';
+    md+='| ZHA Issues | '+zhaIssues.length+' | '+zhaNew.length+' |\n';
+    md+='| Blakadder | '+blakadder.length+' | '+blakNew.length+' |\n';
+    md+='| **Total unique** | | **'+uniqueNew.length+'** |\n';
+    if(aiPlan)md+='\n### Integration Plan\n'+aiPlan+'\n';
+    fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,md);
+  }
+}
+
+main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});
