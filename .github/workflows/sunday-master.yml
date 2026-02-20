@@ -1,0 +1,175 @@
+# Universal Tuya Zigbee - Sunday Master Automation
+# Orchestrates all Sunday jobs: triage, fork scan, forum scan
+# Runs every Sunday at 07:00 UTC, triggers child workflows
+
+name: "Sunday Master Automation"
+
+on:
+  schedule:
+    - cron: '0 7 * * 0'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (no comments/issues created)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: sunday-master
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  stats:
+    name: "Collect App Stats"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      version: ${{ steps.s.outputs.version }}
+      drivers: ${{ steps.s.outputs.drivers }}
+      fps: ${{ steps.s.outputs.fps }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: s
+        run: |
+          V=$(node -p "require('./app.json').version")
+          D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          F=$(grep -ohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json | sort -uf | wc -l)
+          echo "version=$V" >> $GITHUB_OUTPUT
+          echo "drivers=$D" >> $GITHUB_OUTPUT
+          echo "fps=$F" >> $GITHUB_OUTPUT
+          echo "## App Stats" >> $GITHUB_STEP_SUMMARY
+          echo "- Version: $V" >> $GITHUB_STEP_SUMMARY
+          echo "- Drivers: $D" >> $GITHUB_STEP_SUMMARY
+          echo "- Fingerprints: $F" >> $GITHUB_STEP_SUMMARY
+
+  triage-johanbendz:
+    name: "Triage JohanBendz"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Run triage
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_REPO: JohanBendz/com.tuya.zigbee
+          APP_VERSION: ${{ needs.stats.outputs.version }}
+          DRIVER_COUNT: ${{ needs.stats.outputs.drivers }}
+          FP_COUNT: ${{ needs.stats.outputs.fps }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/triage-run.js
+
+  triage-dlnraja:
+    name: "Triage dlnraja"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Run triage
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_REPO: dlnraja/com.tuya.zigbee
+          APP_VERSION: ${{ needs.stats.outputs.version }}
+          DRIVER_COUNT: ${{ needs.stats.outputs.drivers }}
+          FP_COUNT: ${{ needs.stats.outputs.fps }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/triage-run.js
+
+  scan-forks:
+    name: "Scan Forks"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Run fork scan
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/scan-forks.js
+      - if: hashFiles('/tmp/new_fork_fps.json') != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs=require('fs');
+            const data=JSON.parse(fs.readFileSync('/tmp/new_fork_fps.json','utf8'));
+            if(!data.length)return;
+            const rows=data.slice(0,50).map(([fp,{fork,driver}])=>
+              `| \`${fp}\` | ${fork} | ${driver} |`).join('\n');
+            await github.rest.issues.create({
+              owner:context.repo.owner,repo:context.repo.repo,
+              title:`[Auto] ${data.length} new fingerprints from forks`,
+              body:`## New fingerprints\n| FP | Fork | Driver |\n|---|---|---|\n${rows}`,
+              labels:['enhancement','auto-scan']
+            });
+
+  cross-driver-gaps:
+    name: "Cross-Driver Gap Check"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run gap detection
+        run: node .github/scripts/cross-driver-gap.js
+
+  scan-forum:
+    name: "Scan Forum"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - uses: actions/cache@v4
+        with:
+          path: /tmp/last_forum_post.txt
+          key: forum-${{ github.run_number }}
+          restore-keys: forum-
+      - name: Run forum scan
+        env:
+          LAST_POST_FILE: /tmp/last_forum_post.txt
+        run: node .github/scripts/scan-forum.js
+      - if: hashFiles('/tmp/forum_issues.json') != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs=require('fs');
+            const issues=JSON.parse(fs.readFileSync('/tmp/forum_issues.json','utf8'));
+            if(!issues.length)return;
+            const rows=issues.map(i=>
+              `| ${i.user} | ${i.date} | #${i.postNum} | \`${i.missing.join('`,`')}\` |`).join('\n');
+            await github.rest.issues.create({
+              owner:context.repo.owner,repo:context.repo.repo,
+              title:`[Forum] ${issues.length} device request(s) from forum`,
+              body:`## Forum requests\n| User | Date | Post | Missing |\n|---|---|---|---|\n${rows}`,
+              labels:['enhancement','forum-request']
+            });
+
+  summary:
+    name: "Weekly Summary"
+    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "## Sunday Automation Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- JohanBendz triage: ${{ needs.triage-johanbendz.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- dlnraja triage: ${{ needs.triage-dlnraja.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Fork scan: ${{ needs.scan-forks.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Cross-driver gaps: ${{ needs.cross-driver-gaps.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Forum scan: ${{ needs.scan-forum.result }}" >> $GITHUB_STEP_SUMMARY

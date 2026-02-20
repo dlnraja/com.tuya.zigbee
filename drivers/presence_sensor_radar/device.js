@@ -953,7 +953,7 @@ const SENSOR_CONFIGS = {
       101: { cap: null, setting: 'detection_delay', divisor: 10, min: 0, max: 100 },
       // v5.8.65: FIX - DP102 is fading_time NOT illuminance! Z2M confirms: DP102=fading_time(÷10)
       102: { cap: null, setting: 'fading_time', divisor: 10, min: 5, max: 15000 },
-      104: { cap: 'measure_luminance', type: 'lux_direct', ultraSmooth: true },
+      104: { cap: null, internal: 'motion_state' },  // v5.11.16: NOT lux! motion_state enum (0/1/2)
     }
   },
 

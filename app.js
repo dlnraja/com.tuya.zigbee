@@ -95,8 +95,12 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     // 🤖 Initialize Intelligent Device Identification Database
     // Scans ALL drivers and builds comprehensive ID database
     this.identificationDatabase = new DeviceIdentificationDatabase(this.homey);
-    await this.identificationDatabase.buildDatabase();
-    this.log('✅ Intelligent Device Identification Database built');
+    try {
+      await this.identificationDatabase.buildDatabase();
+      this.log('✅ Intelligent Device Identification Database built');
+    } catch (err) {
+      this.error('⚠️ Device ID Database build failed (non-critical):', err.message);
+    }
 
     // CRITICAL: Register custom Zigbee clusters FIRST
     // This must happen before any devices initialize
@@ -108,65 +112,99 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     }
 
     // Register ALL flow cards (+33 nouveaux!)
-    this.flowCardManager = new FlowCardManager(this.homey);
-    this.flowCardManager.registerAll();
-    this.log('✅ Flow cards registered (+33 nouveaux)');
+    try {
+      this.flowCardManager = new FlowCardManager(this.homey);
+      this.flowCardManager.registerAll();
+      this.log('✅ Flow cards registered (+33 nouveaux)');
+    } catch (err) {
+      this.error('⚠️ FlowCardManager failed (non-critical):', err.message);
+    }
 
     // v5.5.597: Universal Flow Card Loader for sub-capabilities and generic DP
-    this.universalFlowLoader = new UniversalFlowCardLoader(this.homey);
-    await this.universalFlowLoader.initialize();
-    this.log('✅ Universal Flow Card Loader initialized (sub-capabilities + DP)');
+    try {
+      this.universalFlowLoader = new UniversalFlowCardLoader(this.homey);
+      await this.universalFlowLoader.initialize();
+      this.log('✅ Universal Flow Card Loader initialized (sub-capabilities + DP)');
+    } catch (err) {
+      this.error('⚠️ Universal Flow Loader failed (non-critical):', err.message);
+    }
 
     // Initialize Advanced Analytics
-    this.analytics = new AdvancedAnalytics(this.homey);
-    await this.analytics.initialize();
-    this.log('✅ Advanced Analytics initialized');
+    try {
+      this.analytics = new AdvancedAnalytics(this.homey);
+      await this.analytics.initialize();
+      this.log('✅ Advanced Analytics initialized');
+    } catch (err) {
+      this.error('⚠️ Analytics failed (non-critical):', err.message);
+    }
 
     // Initialize Smart Device Discovery
-    this.discovery = new SmartDeviceDiscovery(this.homey);
-    await this.discovery.initialize();
-    this.log('✅ Smart Device Discovery initialized');
+    try {
+      this.discovery = new SmartDeviceDiscovery(this.homey);
+      await this.discovery.initialize();
+      this.log('✅ Smart Device Discovery initialized');
+    } catch (err) {
+      this.error('⚠️ Discovery failed (non-critical):', err.message);
+    }
 
     // Initialize Performance Optimizer
-    this.optimizer = new PerformanceOptimizer({
-      maxCacheSize: 1000,
-      maxCacheMemory: 10 * 1024 * 1024 // 10 MB
-    });
-    this.log('✅ Performance Optimizer initialized');
+    try {
+      this.optimizer = new PerformanceOptimizer({
+        maxCacheSize: 1000,
+        maxCacheMemory: 10 * 1024 * 1024 // 10 MB
+      });
+      this.log('✅ Performance Optimizer initialized');
+    } catch (err) { this.error('⚠️ Optimizer failed:', err.message); }
 
     // Initialize Unknown Device Handler
-    this.unknownHandler = new UnknownDeviceHandler(this.homey);
-    this.log('✅ Unknown Device Handler initialized');
+    try {
+      this.unknownHandler = new UnknownDeviceHandler(this.homey);
+      this.log('✅ Unknown Device Handler initialized');
+    } catch (err) { this.error('⚠️ UnknownHandler failed:', err.message); }
 
     // Initialize System Logs Collector for Diagnostics
-    this.systemLogsCollector = new SystemLogsCollector(this.homey);
-    this.log('✅ System Logs Collector initialized');
+    try {
+      this.systemLogsCollector = new SystemLogsCollector(this.homey);
+      this.log('✅ System Logs Collector initialized');
+    } catch (err) { this.error('⚠️ SystemLogs failed:', err.message); }
 
     // 🔬 Initialize Diagnostic API for MCP/AI integration
-    this.diagnosticAPI = new DiagnosticAPI(this);
-    this.log('✅ Diagnostic API initialized (MCP-ready)');
+    try {
+      this.diagnosticAPI = new DiagnosticAPI(this);
+      this.log('✅ Diagnostic API initialized (MCP-ready)');
+    } catch (err) { this.error('⚠️ DiagnosticAPI failed:', err.message); }
 
     // 📝 Initialize LogBuffer for MCP-accessible logs
-    this.logBuffer = new LogBuffer(this.homey);
-    this.log('✅ LogBuffer initialized (accessible via ManagerSettings)');
+    try {
+      this.logBuffer = new LogBuffer(this.homey);
+      this.log('✅ LogBuffer initialized (accessible via ManagerSettings)');
+    } catch (err) { this.error('⚠️ LogBuffer failed:', err.message); }
 
     // 🤖 Initialize SuggestionEngine for non-destructive Smart-Adapt
-    this.suggestionEngine = new SuggestionEngine(this.homey, this.logBuffer);
-    this.log('✅ SuggestionEngine initialized (non-destructive mode)');
+    try {
+      this.suggestionEngine = new SuggestionEngine(this.homey, this.logBuffer);
+      this.log('✅ SuggestionEngine initialized (non-destructive mode)');
+    } catch (err) { this.error('⚠️ SuggestionEngine failed:', err.message); }
 
     // 📦 Initialize OTA Firmware Update Manager
-    this.otaManager = new OTAUpdateManager(this.homey);
-    this.log('✅ OTA Update Manager initialized');
+    try {
+      this.otaManager = new OTAUpdateManager(this.homey);
+      this.log('✅ OTA Update Manager initialized');
+    } catch (err) { this.error('⚠️ OTA Manager failed:', err.message); }
 
     // 📜 Database updates handled by GitHub Actions ONLY (not at runtime)
     // See: .github/workflows/MASTER-intelligent-enrichment.yml (weekly)
     // See: .github/workflows/AUTO-discover-new-devices.yml (daily)
-    this.log(`📜 Data sources: ${SourceCredits.getAllSources().length} contributors credited`);
+    try {
+      this.log(`📜 Data sources: ${SourceCredits.getAllSources().length} contributors credited`);
+    } catch (err) { this.error('⚠️ SourceCredits failed:', err.message); }
     this.log('ℹ️ Database updates: GitHub Actions only (no runtime fetches)');
 
     // 🔧 Initialize Quirks Database
-    this.quirksDatabase = QuirksDatabase;
-    this.log('✅ Quirks Database initialized');
+    try {
+      this.quirksDatabase = QuirksDatabase;
+      this.log('✅ Quirks Database initialized');
+    } catch (err) { this.error('⚠️ Quirks failed:', err.message); }
 
     // 📡 Initialize Tuya WiFi UDP Discovery
     try {
@@ -187,14 +225,18 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     // Switch/plug cards → FlowCardManager
 
     // Initialize Homey Insights
-    await this.initializeInsights();
+    try {
+      await this.initializeInsights();
+    } catch (err) { this.error('⚠️ Insights failed:', err.message); }
 
     this.log('✅ Universal Tuya Zigbee App has been initialized');
     this.log('🚀 Advanced systems: Analytics, Discovery, Performance, OTA, Quirks, System Logs, Intelligent ID Database');
 
     // Log capability stats
-    const stats = this.capabilityManager.getStats();
-    this.log(`📊 Capabilities managed: ${stats.created}`);
+    try {
+      const stats = this.capabilityManager?.getStats() || {};
+      this.log(`📊 Capabilities managed: ${stats.created || 0}`);
+    } catch (err) { /* non-critical */ }
 
     // v5.3.63: Scan for phantom sub-devices and mark them unavailable
     this._scanForPhantomDevices();

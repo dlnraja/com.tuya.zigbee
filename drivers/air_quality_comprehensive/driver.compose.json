@@ -12,6 +12,8 @@
     "measure_pm10",
     "measure_temperature",
     "measure_humidity",
+    "measure_voc",
+    "measure_formaldehyde",
     "measure_battery",
     "alarm_generic"
   ],

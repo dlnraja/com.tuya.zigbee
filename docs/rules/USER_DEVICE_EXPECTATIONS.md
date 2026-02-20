@@ -1,5 +1,5 @@
-# User Device Expectations (v5.11.3)
-**Updated**: 2026-02-16 (v5.11.3 audit: Lasse_K ✅, Peter_vW ✅, 4x4_Pete DP fix, Patrick ZCL battery throttle fix)
+# User Device Expectations (v5.11.16)
+**Updated**: 2026-02-19 (v5.11.16: Lasse_K IASAlarmFallback fix, GitHub triage #1341-#1348)
 
 ## v5.9.18: Deep DP Audit — Peter 4x4 Presence Sensor Variants
 Sources: Z2M ZG-204ZM/ZV/ZL/ZH/227Z pages, Z2M #21919 #29024 #28529, ZHA #4184 #4452 #4517, Hubitat kkossev, Blakadder, SmartHomeScene, Reddit
@@ -151,9 +151,9 @@ Bugs researched (no code bugs): Z2M #29024 presence-always-true (noIasMotion avo
 | Battery auto-add | v5.5.907 |
 | Wrong config DEFAULT | v5.7.34 mfr fallback |
 
-### Lasse_K (8+ fixes, v5.5.645-v5.8.28)
+### Lasse_K (9+ fixes, v5.5.645-v5.11.16)
 **Devices**: Water leak, Contact, HOBEIAN ZG-222Z, ZG-102Z
-**Status**: FIXED v5.8.88 — HOBEIAN added to water_leak_sensor + contact_sensor fingerprints
+**Status**: FIXED v5.11.16 — IASAlarmFallback bypass causing re-inversion
 
 | Issue | Fix |
 |-------|-----|
@@ -162,6 +162,7 @@ Bugs researched (no code bugs): Z2M #29024 presence-always-true (noIasMotion avo
 | IAS no alarm | v5.5.645 parsing |
 | User override | v5.5.973 XOR |
 | Water inactivated | v5.8.28 IAS enroll |
+| Water/Contact STILL broken | v5.11.16 IASAlarmFallback bypass — ROOT CAUSE: fallback listeners duplicated HybridSensorBase handlers but bypassed XOR inversion logic + missing `_iasOriginatedWaterAlarm`/`_iasOriginatedAlarm` flags caused device override to re-invert. FIX: all 4 IASAlarmFallback paths (attr, notification, poll, initialRead) now route through `_handleIASZoneStatus`; `_updateAlarm` sets origin flags before `setCapabilityValue`; `water_leak_sensor._forceInitialAlarmRead` also routes through handler. |
 
 ### Hartmut_Dunker (BSEED 4-gang, v5.5.718-v5.8.87)
 **Device**: `_TZ3002_pzao9ls1` TS0726

@@ -126,11 +126,18 @@ class IrBlasterDevice extends ZigBeeDevice {
       this.log('Setting up OnOff cluster for learn mode...');
 
       zclNode.endpoints[1].clusters.onOff.on('attr.onOff', (value) => {
-        this.log(`Learn mode: ${value ? 'ON' : 'OFF'}`);
+        // v5.11.16: FIX (FrankP #1443) - Guard against device sending onOff=false
+        // immediately after IRLearn command, which kills learn mode prematurely
+        if (!value && this._learnModeActive) {
+          const elapsed = Date.now() - (this._learnModeStartTime || 0);
+          if (elapsed < 5000) {
+            this.log(`[IR] ⚠️ Ignoring onOff=false during learn mode (${elapsed}ms after start)`);
+            return;
+          }
+        }
+        this.log(`Learn mode attr: ${value ? 'ON' : 'OFF'}`);
         this._learningState = value ? LEARNING_STATES.LEARNING : LEARNING_STATES.IDLE;
         this.setCapabilityValue('onoff', value).catch(this.error);
-
-        // v5.5.356: Trigger learning state changed flow
         this._triggerLearningStateChanged(this._learningState);
       });
     }
@@ -298,6 +305,8 @@ class IrBlasterDevice extends ZigBeeDevice {
 
     try {
       this._learningState = LEARNING_STATES.LEARNING;
+      this._learnModeActive = true;
+      this._learnModeStartTime = Date.now();
       this._pendingLearnOptions = options;
 
       // v5.5.357: FORUM FIX - Persist button state ON
@@ -306,6 +315,7 @@ class IrBlasterDevice extends ZigBeeDevice {
       }
 
       // v5.5.356: Enhanced protocol setup
+      this.log(`[IR-LEARN] EP1 clusters: ${Object.keys(zclNode.endpoints[1].clusters || {}).join(', ')}`);
       const irControlCluster = zclNode.endpoints[1].clusters.zosungIRControl;
       if (irControlCluster) {
         try {
@@ -375,6 +385,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
     } catch (err) {
       this._learningState = LEARNING_STATES.ERROR;
+      this._learnModeActive = false;
       this.error('Failed to enable advanced learn mode:', err);
       throw err;
     }
@@ -454,6 +465,9 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
 
     try {
+      // v5.11.16: Clear learn mode guard
+      this._learnModeActive = false;
+
       // Clear timeout
       if (this._learnTimeout) {
         this.homey.clearTimeout(this._learnTimeout);
