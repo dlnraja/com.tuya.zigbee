@@ -2203,6 +2203,15 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           writable: true,
           divisor: dpConfig.divisor || 1,
         };
+      } else if (dpConfig.setting) {
+        // v5.11.18: Handle setting-type DPs (e.g. DP122=motion_detection_mode)
+        // These were silently dropped, causing "unmapped DP" warnings
+        mappings[dp] = {
+          capability: null,
+          internal: dpConfig.setting,
+          writable: true,
+          divisor: dpConfig.divisor || 1,
+        };
       }
     }
 
