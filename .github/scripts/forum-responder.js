@@ -133,7 +133,21 @@ async function analyzeWithGemini(post,results,appVersion){
       break;
     }
   }
-  console.log('   All models failed, using template fallback');
+  // OpenAI fallback
+  const oaiKey=process.env.OPENAI_API_KEY;
+  if(oaiKey){
+    console.log('   Trying OpenAI gpt-4o-mini...');
+    try{
+      const r=await fetch('https://api.openai.com/v1/chat/completions',{
+        method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+oaiKey},
+        body:JSON.stringify({model:'gpt-4o-mini',messages:[{role:'system',content:sys},{role:'user',content:usr}],max_tokens:1024,temperature:0.2})});
+      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;
+        if(t&&t.trim().toUpperCase()!=='NULL')return t.trim();
+        if(t&&t.trim().toUpperCase()==='NULL')return null;
+      }else{console.log('   OpenAI failed:',r.status)}
+    }catch(e){console.log('   OpenAI error:',e.message)}
+  }
+  console.log('   All AI failed, using template fallback');
   return templateFallback(post,results,appVersion);
 }
 
