@@ -116,6 +116,13 @@ Comprehensive flow cards for all major drivers:
 - ✅ Tuya Developer Portal
 - ✅ Complete DP Database (255 DPs documented)
 
+### 🤖 Automation Workflows
+- **Nightly Auto-Process** — Daily 2 AM UTC: forum + GitHub auto-response with AI
+- **Forum Responder** — Every 6h: monitors topics 140352, 26439
+- **GitHub Scanner** — Mon/Thu: issues, PRs, forks analysis
+- **Enrichment Scanner** — Mon/Thu: Z2M, ZHA, deCONZ, Blakadder sync
+- **Monthly Comprehensive** — 1st of month: full deep scan all sources
+
 ### 🔧 Technical Highlights
 - **Dual Protocol Support** - Tuya DP (0xEF00) + Standard ZCL
 - **Auto-Detection** - Protocol after 15 min observation
