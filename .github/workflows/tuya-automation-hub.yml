@@ -2,8 +2,8 @@ name: Tuya Automation Hub
 
 on:
   schedule:
-    - cron: '0 */6 * * *'   # Forum responder every 6h
-    - cron: '0 3 * * 1,4'   # GitHub + enrichment Mon/Thu 3AM
+    - cron: '0 */6 * * *'
+    - cron: '0 3 * * 1,4'
   workflow_dispatch:
     inputs:
       mode:
@@ -38,14 +38,14 @@ jobs:
     name: Forum Responder
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    if: >-
-      ${{ github.event_name == 'schedule' && github.event.schedule == '0 */6 * * *' ||
-           github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'forum-only') }}
+    if: |
+      github.event_name == 'schedule' && github.event.schedule == '0 */6 * * *' ||
+      github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'forum-only')
     steps:
       - uses: actions/checkout@v4
-        with: { token: ${{ secrets.GITHUB_TOKEN }} }
       - uses: actions/setup-node@v4
-        with: { node-version: '22' }
+        with:
+          node-version: '22'
       - name: Run Forum Responder
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
@@ -67,14 +67,14 @@ jobs:
     name: GitHub Scanner
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    if: >-
-      ${{ github.event_name == 'schedule' && github.event.schedule == '0 3 * * 1,4' ||
-           github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'github-only') }}
+    if: |
+      github.event_name == 'schedule' && github.event.schedule == '0 3 * * 1,4' ||
+      github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'github-only')
     steps:
       - uses: actions/checkout@v4
-        with: { token: ${{ secrets.GITHUB_TOKEN }} }
       - uses: actions/setup-node@v4
-        with: { node-version: '22' }
+        with:
+          node-version: '22'
       - name: Run GitHub Scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -94,14 +94,14 @@ jobs:
     name: Enrichment Scanner
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    if: >-
-      ${{ github.event_name == 'schedule' && github.event.schedule == '0 3 * * 1,4' ||
-           github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'enrichment-only') }}
+    if: |
+      github.event_name == 'schedule' && github.event.schedule == '0 3 * * 1,4' ||
+      github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'enrichment-only')
     steps:
       - uses: actions/checkout@v4
-        with: { token: ${{ secrets.GITHUB_TOKEN }} }
       - uses: actions/setup-node@v4
-        with: { node-version: '22' }
+        with:
+          node-version: '22'
       - name: Run Enrichment Scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -121,17 +121,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     needs: [github-scanner, enrichment-scanner]
-    if: >-
-      ${{ always() && (
-           github.event_name == 'schedule' && github.event.schedule == '0 3 * * 1,4' ||
-           github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'forum-update-only')
-      ) }}
+    if: |
+      always() && (
+        github.event_name == 'schedule' && github.event.schedule == '0 3 * * 1,4' ||
+        github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'forum-update-only')
+      )
     steps:
       - uses: actions/checkout@v4
-        with: { token: ${{ secrets.GITHUB_TOKEN }}, ref: master }
       - run: git pull origin master || true
       - uses: actions/setup-node@v4
-        with: { node-version: '22' }
+        with:
+          node-version: '22'
       - name: Post Forum Summary
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
