@@ -417,7 +417,9 @@ class IntelligentDPAutoDiscovery {
     // PATTERN 3: ILLUMINANCE/LUX (0-2000+ range, can fluctuate)
     // ─────────────────────────────────────────────────────────────────────────
     const isLuxPattern =
-      (dpId === 12 || dpId === 102 || dpId === 103 || dpId === 104) &&
+      // v5.11.16: Removed DP104 — it's motion_state enum, not lux (Z2M confirms)
+      // Configs using DP104 as lux (ZY_M100_S1_SIDEALL) have explicit dpMap entries
+      (dpId === 12 || dpId === 102 || dpId === 103) &&
       avgValue >= 0 && avgValue <= 10000;
 
     if (isLuxPattern && dpInfo.inferredCapability !== 'alarm_motion') {
@@ -953,7 +955,9 @@ const SENSOR_CONFIGS = {
       101: { cap: null, setting: 'detection_delay', divisor: 10, min: 0, max: 100 },
       // v5.8.65: FIX - DP102 is fading_time NOT illuminance! Z2M confirms: DP102=fading_time(÷10)
       102: { cap: null, setting: 'fading_time', divisor: 10, min: 5, max: 15000 },
-      104: { cap: null, internal: 'motion_state' },  // v5.11.16: NOT lux! motion_state enum (0/1/2)
+      // v5.11.16: FIX - DP104 is motion_state enum (0=none,1=presence,2=move), NOT lux!
+      // Z2M confirms: no DP104 illuminance for this family. Was misclassified by auto-discovery.
+      104: { cap: 'alarm_motion', type: 'presence_enum', enumMap: { 0: false, 1: true, 2: true } },
     }
   },
 
@@ -2854,7 +2858,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
     // v5.5.310: FIXED - Handle DP12 and DP103 locally, NOT via HybridSensorBase!
     // Problem: HybridSensorBase universal profile maps DP103 to temperature, not lux
-    // Solution: Handle lux DPs (12, 102, 103, 104) directly here using local dpMap config
+    // Solution: Handle lux DPs (12, 102, 103) directly here using local dpMap config
     // Note: config and dpMap already declared above for static mapping check
 
     // Check if this DP is a lux DP in our config - handle locally
