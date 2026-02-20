@@ -66,25 +66,7 @@ async function scanForkForFingerprints(fork,token,idx){
   return newFPs;
 }
 
-async function callGemini(text,sysPrompt){
-  const key=process.env.GOOGLE_API_KEY;
-  if(!key)return null;
-  const models=['gemini-2.0-flash','gemini-2.0-flash-lite'];
-  for(const model of models){
-    for(let retry=0;retry<2;retry++){
-      if(retry>0)await sleep(5000);
-      const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent?key='+key,{
-        method:'POST',headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({systemInstruction:{parts:[{text:sysPrompt}]},contents:[{parts:[{text}]}],
-          generationConfig:{temperature:0.2,maxOutputTokens:2048}})});
-      if(r.ok){const d=await r.json();const t=d.candidates?.[0]?.content?.parts?.[0]?.text;if(t)return t.trim()}
-      if(r.status===429){continue}
-      break;
-    }
-  }
-  return null;
-}
-
+const{callAI}=require('./ai-helper');
 
 async function main(){
   const token=process.env.GITHUB_TOKEN||process.env.GH_PAT;
@@ -161,7 +143,8 @@ async function main(){
   let summary=null;
   if(findings.issues.length||findings.forkFPs.length||findings.prs.length){
     console.log('\n-- Generating AI summary --');
-    summary=await callGemini(JSON.stringify(findings,null,2),sysPrompt);
+    const aiRes=await callAI(JSON.stringify(findings,null,2),sysPrompt);
+    summary=aiRes?aiRes.text:null;
     if(summary)console.log('AI summary:',summary.length,'chars');
   }
 

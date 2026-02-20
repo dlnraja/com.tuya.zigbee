@@ -40,22 +40,7 @@ async function postToForum(content,auth){
   return d;
 }
 
-async function callGemini(text,sysPrompt){
-  const key=process.env.GOOGLE_API_KEY;if(!key)return null;
-  const models=['gemini-2.0-flash','gemini-2.0-flash-lite'];
-  for(const model of models){
-    for(let retry=0;retry<2;retry++){
-      if(retry>0)await sleep(5000);
-      const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent?key='+key,{
-        method:'POST',headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({systemInstruction:{parts:[{text:sysPrompt}]},contents:[{parts:[{text}]}],
-          generationConfig:{temperature:0.3,maxOutputTokens:2048}})});
-      if(r.ok){const d=await r.json();const t=d.candidates?.[0]?.content?.parts?.[0]?.text;if(t)return t.trim()}
-      if(r.status===429)continue;break;
-    }
-  }
-  return null;
-}
+const{callAI}=require('./ai-helper');
 
 async function main(){
   const dryRun=process.env.DRY_RUN!=='false';
@@ -76,7 +61,8 @@ async function main(){
 
   // Generate forum post with Gemini
   const sysPrompt='You are posting a status update on the Homey Community forum topic #140352 for the Universal Tuya Zigbee app (v'+appVersion+'). Write a coherent, professional forum post summarizing the latest automated scan results. Include: new fingerprints found from Z2M/ZHA/forks, GitHub activity summary, and any devices that need community help (interviews/diagnostics). Use Discourse markdown. Keep it under 400 words. End with the bot signature. Write in English.';
-  const aiPost=await callGemini(JSON.stringify(reports,null,2),sysPrompt);
+  const aiRes=await callAI(JSON.stringify(reports,null,2),sysPrompt);
+  const aiPost=aiRes?aiRes.text:null;
 
   const fallback='## Automated Scan Report (v'+appVersion+')\n\n'+
     (reports['github-scan-report']?'**GitHub Activity**: '+
