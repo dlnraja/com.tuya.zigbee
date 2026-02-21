@@ -1,295 +1,30 @@
 {
-  "timestamp": "2026-02-20T18:28:35.735Z",
-  "appVersion": "5.11.17",
-  "forum": 6,
-  "github": 23,
+  "timestamp": "2026-02-21T02:58:16.275Z",
+  "appVersion": "5.11.19",
+  "forum": 1,
+  "github": 1,
   "forumDetails": [
     {
       "topic": 140352,
-      "post": 1450,
-      "user": "Hartmut_Dunker",
+      "post": 1465,
+      "user": "ManuelKugler",
       "fps": [
-        "_TZ3002_pzao9ls1"
+        "_TZE284_aao3yzhs"
       ],
-      "reply": "**Fingerprint check** (v5.11.17):\n✅ Supported: `_TZ3002_pzao9ls1` → **switch_4gang**\n\n---\n*Bot Universal Tuya Zigbee v5.11.17*",
-      "model": "template"
-    },
-    {
-      "topic": 140352,
-      "post": 1462,
-      "user": "SkiMattie",
-      "fps": [
-        "_TZ3000_mrpevh8p",
-        "_TZE204_9mjy74mp"
-      ],
-      "reply": "**Fingerprint check** (v5.11.17):\n✅ Supported: `_TZ3000_mrpevh8p` → **button_wireless_1, climate_sensor**, `_TZE204_9mjy74mp` → **thermostat_tuya_dp**, `TS0041` → **button_wireless_1, universal_fallba",
-      "model": "template"
-    },
-    {
-      "topic": 26439,
-      "post": 5388,
-      "user": "Trey_Rogerson",
-      "fps": [
-        "_TZE284_c8ipbljq"
-      ],
-      "reply": "**Fingerprint check** (v5.11.17):\n✅ Supported: `_TZE284_c8ipbljq` → **switch_3gang, switch_wall_6gang**, `TS0601` → **air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, bu",
-      "model": "template"
-    },
-    {
-      "topic": 26439,
-      "post": 5389,
-      "user": "Willy",
-      "fps": [
-        "_TZ3000_pjb1ua0m"
-      ],
-      "reply": "**Fingerprint check** (v5.11.17):\n✅ Supported: `_TZ3000_pjb1ua0m` → **climate_sensor, contact_sensor, motion_sensor**, `TS0203` → **contact_sensor, universal_fallback**\n\n---\n*Bot Universal Tuya Zigbee",
-      "model": "template"
-    },
-    {
-      "topic": 26439,
-      "post": 5391,
-      "user": "Ons",
-      "fps": [
-        "_TZ3000_ww6drja5"
-      ],
-      "reply": "**Fingerprint check** (v5.11.17):\n✅ Supported: `_TZ3000_ww6drja5` → **plug_energy_monitor, plug_smart**\n\n---\n*Bot Universal Tuya Zigbee v5.11.17*",
-      "model": "template"
-    },
-    {
-      "topic": 26439,
-      "post": 5396,
-      "user": "Hogar_Otal_Scridon",
-      "fps": [
-        "_TZE284_tgeqdjgk"
-      ],
-      "reply": "**Fingerprint check** (v5.11.17):\n✅ Supported: `_TZE284_tgeqdjgk` → **climate_sensor**, `TS0601` → **air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, button_wireless_6, ",
+      "reply": "**Fingerprint check** (v5.11.19):\n✅ Supported: `_TZE284_aao3yzhs` → **soil_sensor**, `TS0601` → **air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, button_wireless_6, cei",
       "model": "template"
     }
   ],
   "githubDetails": [
     {
-      "repo": "dlnraja/com.tuya.zigbee",
-      "number": 128,
-      "user": "Wuma68",
-      "fps": [
-        "_TZE204_nklqjk62"
-      ],
-      "title": "Garagedoor controller",
-      "response": "## Fingerprint Check (v5.11.17)\n**Supported:** `_TZE204_nklqjk62` → **garage_door**, `TS0601` → **air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, button_wireless_6, ceiling_fan, climate_sensor, co_sensor, contact_sensor, curtain_motor, curtain_motor_tilt, dimmer_3gang",
-      "model": "template"
-    },
-    {
-      "repo": "dlnraja/com.tuya.zigbee",
-      "number": 132,
-      "user": "dlnraja",
-      "fps": [
-        "_TZ3000_tzvbimpq",
-        "_TZ3000_zgyzgdua",
-        "_TZE204_9mjy74mp",
-        "_TZ3002_pzao9ls1"
-      ],
-      "title": "Forum Triage: Posts #1442-#1461 (Feb 18-20, 2026)",
-      "response": "## Fingerprint Check (v5.11.17)\n**Supported:** `_TZ3000_tzvbimpq` → **button_wireless_2**, `_TZ3000_zgyzgdua` → **button_wireless_4, scene_switch_4**, `_TZE204_9mjy74mp` → **thermostat_tuya_dp**, `_TZ3002_pzao9ls1` → **switch_4gang**, `TS0042` → **button_wireless_2, universal_fallback**, `TS0041` → ",
-      "model": "template"
-    },
-    {
-      "repo": "dlnraja/com.tuya.zigbee",
-      "number": 131,
-      "user": "dlnraja",
-      "fps": [
-        "_TZ3002_pzao9ls1",
-        "_TZ3000_5iixzdo7",
-        "_TZE204_nklqjk62",
-        "_TZ3210_xzhnra8x",
-        "_TZE284_6ycgarab",
-        "_TZE200_u6x1zyv2",
-        "_TZE204_gkfbdvyx",
-        "_TZE204_dwcarsat",
-        "_TZ3000_zutizvyk",
-        "_TZE284_xnbkhhdr",
-        "_TZE200_rhgsbacq",
-        "_TZE284_aao3yzhs",
-        "_TZE284_aa03yzhs"
-      ],
-      "title": "[Triage] Forum #1448-#1454 + GitHub activity Feb 2025",
-      "response": "## Fingerprint Check (v5.11.17)\n**Supported:** `_TZ3002_pzao9ls1` → **switch_4gang**, `_TZ3000_5iixzdo7` → **curtain_motor**, `_TZE204_nklqjk62` → **garage_door**, `_TZ3210_xzhnra8x` → **plug_energy_monitor**, `_TZE284_6ycgarab` → **smoke_detector_advanced**, `_TZE200_u6x1zyv2` → **climate_sensor, r",
-      "model": "template"
-    },
-    {
-      "repo": "dlnraja/com.tuya.zigbee",
-      "number": 130,
-      "user": "dlnraja",
-      "fps": [
-        "_TZ3000_tzvbimpq",
-        "_TZ3000_zgyzgdua",
-        "_TZ3000_ja5osu5g"
-      ],
-      "title": "[Forum] Responses for posts #1443-#1447",
-      "response": "## Fingerprint Check (v5.11.17)\n**Supported:** `_TZ3000_tzvbimpq` → **button_wireless_2**, `_TZ3000_zgyzgdua` → **button_wireless_4, scene_switch_4**, `_TZ3000_ja5osu5g` → **button_wireless_1**, `TS0042` → **button_wireless_2, universal_fallback**, `TS0041` → **button_wireless_1, universal_fallback*",
-      "model": "template"
-    },
-    {
       "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 839,
-      "user": "bbrodnik",
+      "number": 1229,
+      "user": "eeckelaertyannick",
       "fps": [
-        "_TZE200_znbl8dj5"
+        "_TZE200_8ygsuhe1"
       ],
-      "title": "Device Request - [LCD Temperature and Humidity Sensor] - [_TZE200_znbl8dj5] / [TS0601]",
-      "response": "## Fingerprint Check (v5.11.17)\n**Supported:** `_TZE200_znbl8dj5` → **climate_sensor, radiator_valve, thermostat_tuya_dp**, `TS0601` → **air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, button_wireless_6, ceiling_fan, climate_sensor, co_sensor, contact_sensor, curtain_",
-      "model": "template"
-    },
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1331,
-      "user": "MF-ITuser",
-      "fps": [
-        "_TZ3290_ot6ewjvmejq5ekhl"
-      ],
-      "title": "Device Request - [UFO-R11] - [Moes] / [modelId]",
-      "response": "## Fingerprint Check (v5.11.17)\n**Supported:** `_TZ3290_ot6ewjvmejq5ekhl` → **ir_blaster**, `TS1201` → **ir_blaster**\n\n---\n*Bot Universal Tuya Zigbee v5.11.17*",
-      "model": "template"
-    },
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1065,
-      "type": "pr",
-      "user": "slicke",
-      "fps": [
-        "_TZ3210_j4pdtz9v"
-      ],
-      "model": "template"
-    },
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1075,
-      "type": "pr",
-      "user": "mech78",
-      "fps": [
-        "_TZ3210_eejm8dcr"
-      ],
-      "model": "template"
-    },
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1106,
-      "type": "pr",
-      "user": "mkoslacz",
-      "fps": [
-        "_TZ3002_vaq2bfcu"
-      ],
-      "model": "template"
-    },
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1118,
-      "type": "pr",
-      "user": "pbruining",
-      "fps": [
-        "_TZ3000_ww6drja5"
-      ],
-      "model": "template"
-    },
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1122,
-      "type": "pr",
-      "user": "mikberg",
-      "fps": [
-        "_TZE200_kb5noeto"
-      ],
-      "model": "template"
-    },
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1137,
-      "type": "pr",
-      "user": "antonhagg",
-      "fps": [
-        "_TZ3000_c8zfad4a"
-      ],
-      "model": "template"
-    },
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1166,
-      "type": "pr",
-      "user": "chernals",
-      "fps": [
-        "_TZ3000_c8ozah8n"
-      ],
-      "model": "template"
-    },
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1195,
-      "type": "pr",
-      "user": "YuriEstevan",
-      "fps": [
-        "_TZE204_bjzrowv2"
-      ],
-      "model": "template"
-    },
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1209,
-      "type": "pr",
-      "user": "crimson7O",
-      "fps": [
-        "_TZ3000_kfu8zapd"
-      ],
-      "model": "template"
-    },
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1210,
-      "type": "pr",
-      "user": "TKGHill",
-      "fps": [
-        "_TZE204_lawxy9e2",
-        "_TZE204_nklqjk62"
-      ],
-      "model": "template"
-    },
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1218,
-      "type": "pr",
-      "user": "Melectro1",
-      "fps": [
-        "_TZE204_dapwryy7"
-      ],
-      "model": "template"
-    },
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1219,
-      "type": "pr",
-      "user": "Melectro1",
-      "fps": [
-        "_TZ3000_gjrubzje"
-      ],
-      "model": "template"
-    },
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1237,
-      "type": "pr",
-      "user": "WJGvdVelden",
-      "fps": [
-        "_TZE284_gyzlwu5q"
-      ],
-      "model": "template"
-    },
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1253,
-      "type": "pr",
-      "user": "Peter-Celica",
-      "fps": [
-        "_TZE200_pay2byax",
-        "_TZ3000_mrpevh8p"
-      ],
+      "title": "Smart Airbox no data",
+      "response": "## Fingerprint Check (v5.11.19)\n**Supported:** `_TZE200_8ygsuhe1` → **air_quality_co2, air_quality_comprehensive, climate_sensor**, `TS0601` → **air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, button_wireless_6, ceiling_fan, climate_sensor, co_sensor, contact_sensor, ",
       "model": "template"
     }
   ]
