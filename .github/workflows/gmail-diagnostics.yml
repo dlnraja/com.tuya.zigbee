@@ -1,0 +1,55 @@
+name: Gmail Diagnostics Auto-Analysis
+on:
+  schedule:
+    - cron: '0 8,14,20 * * *'  # 3x daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: gmail-diagnostics
+  cancel-in-progress: true
+
+jobs:
+  fetch-diagnostics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch Gmail diagnostics + Gemini analysis
+        env:
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: node .github/scripts/fetch-gmail-diagnostics.js
+      - name: Commit state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/state/diagnostics-state.json .github/state/diagnostics-report.json
+          git diff --staged --quiet || git commit -m "[Auto] Gmail diagnostics analysis $(date -u +%Y-%m-%d)"
+          git push || true
+      - name: Create issues for critical diagnostics
+        if: always()
+        run: |
+          if [ -f .github/state/diagnostics-report.json ]; then
+            COUNT=$(jq '.count' .github/state/diagnostics-report.json)
+            if [ "$COUNT" -gt "0" ]; then
+              echo "::notice::$COUNT new diagnostic reports processed"
+            fi
+          fi
+      - name: Upload diagnostics report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnostics-report
+          path: .github/state/diagnostics-report.json
+          retention-days: 30

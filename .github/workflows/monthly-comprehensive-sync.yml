@@ -2,7 +2,7 @@ name: Monthly Comprehensive Sync
 
 on:
   schedule:
-    - cron: '0 2 1 * *'
+    - cron: '0 1 1 * *'  # 1AM UTC, before nightly (2AM)
   workflow_dispatch:
     inputs:
       dry_run:
@@ -55,8 +55,8 @@ jobs:
       - name: Commit state and reports
         if: always()
         run: |
-          git config user.name "tuya-bot"
-          git config user.email "bot@dlnraja.github.io"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .github/state/
           git diff --cached --quiet || git commit -m "chore: monthly scan state [skip ci]"
           git push || true

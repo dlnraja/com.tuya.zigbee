@@ -6,6 +6,22 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## [5.11.19] - 2026-02-21
+
+### Bug Fixes
+- **soil_sensor DP5** — compound frame guard (671091.2°C blocked)
+- **soil_sensor DP14** — battery enum guard (compound artifact → 1%)
+- **curtain_motor** — false→false physical button spam fix in PhysicalButtonMixin
+- **presence_sensor_radar DP122** — confirmed mapped as setting
+
+### CI/CD Overhaul
+- Added missing permissions, concurrency, timeout-minutes to 8 workflows
+- Staggered monthly crons to avoid conflicts
+- Standardized git user to github-actions[bot] across all workflows
+- Auto-publish draft via HOMEY_PAT after publish
+
+---
+
 ## [5.11.17] - 2026-02-20
 
 ### 🤖 Nightly Auto-Processor

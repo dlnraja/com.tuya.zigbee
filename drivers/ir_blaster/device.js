@@ -758,11 +758,26 @@ class IrBlasterDevice extends ZigBeeDevice {
    */
   async deleteStoredCode(name) {
     delete this._learnedCodes[name];
+    delete this._codeMetadata[name];
     this._codeNames = Object.keys(this._learnedCodes);
+
+    // Clean up category references
+    if (this._codeCategories) {
+      for (const cat of Object.keys(this._codeCategories)) {
+        if (this._codeCategories[cat]) {
+          delete this._codeCategories[cat][name];
+          if (Object.keys(this._codeCategories[cat]).length === 0) {
+            delete this._codeCategories[cat];
+          }
+        }
+      }
+    }
 
     try {
       await this.setStoreValue('learned_codes', this._learnedCodes);
-      this.log(`Deleted IR code "${name}"`);
+      await this.setStoreValue('code_metadata', this._codeMetadata);
+      await this.setStoreValue('code_categories', this._codeCategories);
+      this.log(`Deleted IR code "${name}" + metadata`);
     } catch (err) {
       this.error('Failed to delete stored code:', err);
     }

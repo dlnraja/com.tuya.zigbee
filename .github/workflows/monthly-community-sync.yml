@@ -82,8 +82,8 @@ jobs:
       - name: 📝 Commit Reports
         if: ${{ !inputs.dry_run }}
         run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/community-sync/*.json || true
           git diff --staged --quiet || git commit -m "🌐 Monthly community sync $(date +%Y-%m)"
           git push || true

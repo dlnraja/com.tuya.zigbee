@@ -1,6 +1,8 @@
 'use strict';
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
+let IRCodeLibrary;
+try { IRCodeLibrary = require('../../lib/ir/IRCodeLibrary'); } catch (e) { IRCodeLibrary = null; }
 
 /**
  * v5.5.565: Enhanced IR Blaster Driver - FIXED flow cards to return gracefully
@@ -136,6 +138,114 @@ class IrBlasterDriver extends ZigBeeDriver {
       this.log('✅ ir_blaster_send_ac_command registered');
     } catch (err) {
       this.log('⚠️ ir_blaster_send_ac_command not available:', err.message);
+    }
+
+    // v5.12: Send by brand (IRDB)
+    if (IRCodeLibrary) {
+      try {
+        const card = this.homey.flow.getActionCard('ir_blaster_send_by_brand');
+        card.registerRunListener(async (args) => {
+          const dev = args.device;
+          if (!dev) return false;
+          const b = args.brand?.name || args.brand;
+          const t = args.device_type?.name || args.device_type;
+          const f = args.function_name?.name || args.function_name;
+          const c = IRCodeLibrary.getCode(b, t, f);
+          if (!c?.code) { this.log('[IRDB] No code:', b, t, f); return false; }
+          await dev.sendIRCode(c.code);
+          return true;
+        });
+        card.registerArgumentAutocompleteListener('brand', async (q) =>
+          IRCodeLibrary.getBrands().filter(b => b.toLowerCase().includes(q.toLowerCase())).slice(0, 20).map(b => ({ name: b })));
+        card.registerArgumentAutocompleteListener('device_type', async (q, a) =>
+          IRCodeLibrary.getCategories(a.brand?.name || '').filter(c => c.toLowerCase().includes(q.toLowerCase())).map(c => ({ name: c })));
+        card.registerArgumentAutocompleteListener('function_name', async (q, a) =>
+          IRCodeLibrary.getFunctions(a.brand?.name || '', a.device_type?.name || '').filter(f => f.toLowerCase().includes(q.toLowerCase())).slice(0, 30).map(f => ({ name: f })));
+        this.log('✅ ir_blaster_send_by_brand registered');
+      } catch (e) { this.log('⚠️ ir_blaster_send_by_brand:', e.message); }
+    }
+
+    // v5.12: Send Learned Command (autocomplete)
+    try {
+      const slc = this.homey.flow.getActionCard('ir_blaster_send_learned');
+      slc.registerRunListener(async (args) => {
+        const d = args.device;
+        if (!d || !d._learnedCodes) return false;
+        const n = args.code_name?.name || args.code_name;
+        const c = d._learnedCodes[n];
+        if (!c) { this.log('[FLOW] Code not found:', n); return false; }
+        await d.sendIRCode(c);
+        return true;
+      });
+      slc.registerArgumentAutocompleteListener('code_name', async (q, a) => {
+        const d = a.device;
+        if (!d || !d._learnedCodes) return [];
+        return Object.keys(d._learnedCodes)
+          .filter(n => n.toLowerCase().includes(q.toLowerCase()))
+          .map(n => ({ name: n }));
+      });
+      this.log('✅ ir_blaster_send_learned registered');
+    } catch (e) { this.log('⚠️ ir_blaster_send_learned:', e.message); }
+
+    // v5.12: Delete Stored IR Code (autocomplete)
+    try {
+      const dc = this.homey.flow.getActionCard('ir_blaster_delete_code');
+      dc.registerRunListener(async (args) => {
+        const d = args.device;
+        if (!d || typeof d.deleteStoredCode !== 'function') return false;
+        const n = args.code_name?.name || args.code_name;
+        await d.deleteStoredCode(n);
+        return true;
+      });
+      dc.registerArgumentAutocompleteListener('code_name', async (q, a) => {
+        const d = a.device;
+        if (!d || !d._learnedCodes) return [];
+        return Object.keys(d._learnedCodes)
+          .filter(n => n.toLowerCase().includes(q.toLowerCase()))
+          .map(n => ({ name: n }));
+      });
+      this.log('✅ ir_blaster_delete_code registered');
+    } catch (e) { this.log('⚠️ ir_blaster_delete_code:', e.message); }
+
+    // v5.12: Send Raw IR Code (Pronto Hex / Base64)
+    try {
+      const sr = this.homey.flow.getActionCard('ir_blaster_send_raw');
+      sr.registerRunListener(async (args) => {
+        const d = args.device;
+        if (!d || typeof d.sendEnhancedIRCode !== 'function') return false;
+        await d.sendEnhancedIRCode(args.raw_code, {
+          frequency: args.frequency || null,
+          repeat: args.repeat || 1
+        });
+        return true;
+      });
+      this.log('✅ ir_blaster_send_raw registered');
+    } catch (e) { this.log('⚠️ ir_blaster_send_raw:', e.message); }
+
+    // v5.12: TV/Media virtual buttons - each sends a learned code by function name
+    const tvButtons = [
+      'tv_power', 'tv_vol_up', 'tv_vol_down', 'tv_mute',
+      'tv_ch_up', 'tv_ch_down', 'tv_input', 'tv_menu',
+      'tv_ok', 'tv_back', 'tv_play'
+    ];
+    for (const btn of tvButtons) {
+      try {
+        const card = this.homey.flow.getActionCard(`ir_blaster_${btn}`);
+        card.registerRunListener(async (args) => {
+          const d = args.device;
+          if (!d || !d._learnedCodes) return false;
+          const code = d._learnedCodes[btn];
+          if (!code) {
+            this.log(`[TV] No learned code for "${btn}" - teach it first`);
+            return false;
+          }
+          await d.sendIRCode(code);
+          return true;
+        });
+        this.log(`✅ ir_blaster_${btn} registered`);
+      } catch (e) {
+        this.log(`⚠️ ir_blaster_${btn}:`, e.message);
+      }
     }
 
     this.log('Action registration complete');

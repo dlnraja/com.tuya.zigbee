@@ -9,6 +9,14 @@ on:
     - cron: '0 0 1 * *'  # 1st of month at midnight UTC
   workflow_dispatch:
 
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: monthly-scan
+  cancel-in-progress: true
+
 env:
   NODE_VERSION: '22'
 
