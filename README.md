@@ -73,9 +73,11 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.11.19** | Diagnostic bug fixes: soil_sensor compound frame guards, curtain_motor false physical button spam, CI overhaul (19 workflows) |
-| **v5.11.17** | Nightly auto-processor: daily AI-driven forum + GitHub processing |
-| **v5.11.15** | Double-division fix: TuyaEF00Manager skips auto-convert when dpMappings divisor != 1 |
+| **v5.11.19** | Auto-publish via GitHub Actions |
+| **v5.11.18** | Auto-publish via GitHub Actions |
+| **v5.11.17** | Auto-publish via GitHub Actions |
+| **v5.11.16** | Auto-publish via GitHub Actions |
+| **v5.11.15** | Auto-publish via GitHub Actions |
 | **v5.11.14** | v5.11.14: WiFi overhaul + bug fixes. (1) Fix settings blank spinner (Homey.re... |
 | **v5.11.13** | v5.11.13: Fix presence_sensor_radar log spam (~52K lines/day). (1) Same-value... |
 | **v5.11.12** | v5.11.12: Critical case-sensitivity fix + WiFi bugs. (1) Fixed 5,004 lowercas... |
