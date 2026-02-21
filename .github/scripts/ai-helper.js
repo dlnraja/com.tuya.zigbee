@@ -1,6 +1,6 @@
 /**
  * AI Helper - Multi-provider with project rules injection
- * Chain: Gemini → OpenAI → Groq → IBM Granite (HF) → Mistral → OpenRouter → ApiFreeLLM
+ * Chain: Gemini → GitHub Models → OpenAI → Groq → IBM Granite (HF) → Mistral → OpenRouter → ApiFreeLLM
  */
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const{PROJECT_RULES,ARCHITECTURE_SUMMARY}=require('./project-rules');
@@ -27,6 +27,21 @@ async function callAI(text,sysPrompt,opts={}){
           break;
         }catch(e){break}
       }
+    }
+  }
+  // GitHub Models (free via GITHUB_TOKEN - models.inference.ai.azure.com)
+  const ghToken=process.env.GITHUB_TOKEN||process.env.GH_PAT;
+  if(ghToken){
+    const ghModels=['gpt-4o-mini','Mistral-small','Meta-Llama-3.1-8B-Instruct'];
+    for(const model of ghModels){
+      try{
+        console.log('  Trying GitHub Models ('+model+')...');
+        const r=await fetch('https://models.inference.ai.azure.com/chat/completions',{
+          method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+ghToken},
+          body:JSON.stringify({model,messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})});
+        if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'gh-'+model}}
+        else{const e=await r.text().catch(()=>'');console.log('  GitHub Models '+model+' failed:',r.status,e.substring(0,150))}
+      }catch(e){console.log('  GitHub Models '+model+' error:',e.message)}
     }
   }
   // Fallback to OpenAI
