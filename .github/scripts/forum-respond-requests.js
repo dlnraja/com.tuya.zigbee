@@ -23,12 +23,12 @@ function fmtCookies(c){return Object.entries(c).map(([k,v])=>k+'='+v).join('; ')
 async function discourseLogin(){
   const email=process.env.HOMEY_EMAIL,pw=process.env.HOMEY_PASSWORD;
   if(!email||!pw)throw new Error('No HOMEY_EMAIL/HOMEY_PASSWORD');
-  const r1=await fetch(FORUM+'/session/csrf',{headers:{'X-Requested-With':'XMLHttpRequest',Accept:'application/json'}});
+  const r1=await fetch(FORUM+'/session/csrf',{headers:{'X-Requested-With':'XMLHttpRequest',Accept:'application/json','User-Agent':'Mozilla/5.0 (compatible; TuyaZigbeeBot/1.0)'}});
   if(!r1.ok)throw new Error('CSRF failed: '+r1.status);
   const csrf=(await r1.json()).csrf;
   const ck1=extractCookies(r1);
   const r2=await fetch(FORUM+'/session',{method:'POST',redirect:'manual',
-    headers:{'Content-Type':'application/x-www-form-urlencoded','X-CSRF-Token':csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCookies(ck1)},
+    headers:{'Content-Type':'application/x-www-form-urlencoded','X-CSRF-Token':csrf,'X-Requested-With':'XMLHttpRequest','User-Agent':'Mozilla/5.0 (compatible; TuyaZigbeeBot/1.0)',Cookie:fmtCookies(ck1)},
     body:'login='+encodeURIComponent(email)+'&password='+encodeURIComponent(pw)});
   if(!r2.ok&&r2.status!==302)throw new Error('Login failed: '+r2.status);
   const ck2={...ck1,...extractCookies(r2)};
