@@ -6,23 +6,29 @@ const SUM=process.env.GITHUB_STEP_SUMMARY||null;
 const AI_RE=/\b(llm|gpt|chat|inference|nlp|neural|completion)/i;
 const IOT_RE=/\b(iot|smart.home|zigbee|mqtt|home.auto|tuya|sensor)/i;
 async function main(){
-  console.log('Fetching public-apis list...');
-  const r=await fetch('https://raw.githubusercontent.com/public-apis/public-apis/master/README.md');
-  if(!r.ok)throw new Error('Fetch failed: '+r.status);
-  const md=await r.text();
-  const entries=[];let cat=null;
-  for(const line of md.split('\n')){
-    const cm=line.match(/^###\s+(.+)/);
-    if(cm){cat=cm[1].trim();continue}
-    const rm=line.match(/^\|\s*\[([^\]]+)\]\(([^)]+)\)\s*\|\s*([^|]*)\|\s*([^|]*)\|\s*([^|]*)\|\s*([^|]*)\|/);
-    if(rm&&cat)entries.push({name:rm[1].trim(),url:rm[2].trim(),desc:rm[3].trim(),auth:rm[4].trim().replace(/`/g,''),https:rm[5].trim(),cors:rm[6].trim(),category:cat});
+  let entries=[];
+  // Primary: davemachado/public-api
+  try{
+    console.log('Trying api.publicapis.org...');
+    const r=await fetch('https://api.publicapis.org/entries',{headers:{'User-Agent':'TuyaZigbeeBot/1.0'},signal:AbortSignal.timeout(10000)});
+    if(r.ok){const d=await r.json();entries=(d.entries||[]).map(e=>({name:e.API,url:e.Link,desc:e.Description,auth:e.Auth||'',category:e.Category}));}
+  }catch(e){console.log('API down: '+e.message)}
+  // Fallback: GitHub README
+  if(!entries.length){
+    console.log('Fallback: GitHub README...');
+    const r2=await fetch('https://raw.githubusercontent.com/public-apis/public-apis/master/README.md');
+    if(!r2.ok)throw new Error('Fetch failed: '+r2.status);
+    const md=await r2.text();let cat=null;
+    for(const l of md.split('\n')){const cm=l.match(/^###\s+(.+)/);if(cm){cat=cm[1].trim();continue}
+      const rm=l.match(/^\|\s*\[([^\]]+)\]\(([^)]+)\)\s*\|\s*([^|]*)\|\s*([^|]*)\|/);
+      if(rm&&cat)entries.push({name:rm[1].trim(),url:rm[2].trim(),desc:rm[3].trim(),auth:rm[4].trim().replace(/`/g,''),category:cat});}
   }
-  console.log('Parsed '+entries.length+' total APIs');
+  console.log('Total: '+entries.length+' APIs');
   const ai=entries.filter(e=>e.category==='Machine Learning'||AI_RE.test(e.name+' '+e.desc));
   const iot=entries.filter(e=>IOT_RE.test(e.name+' '+e.desc));
   const free_ai=ai.filter(e=>!e.auth||e.auth==='No');
   const dev=entries.filter(e=>['Machine Learning','Open Source Projects','Development'].includes(e.category));
-  const rpt={timestamp:new Date().toISOString(),total:entries.length,ai:ai.map(e=>({name:e.name,url:e.url,desc:e.desc,auth:e.auth})),iot:iot.map(e=>({name:e.name,url:e.url,desc:e.desc,auth:e.auth})),free_ai:free_ai.map(e=>({name:e.name,url:e.url,desc:e.desc})),dev_count:dev.length};
+  const rpt={source:'davemachado/public-api',timestamp:new Date().toISOString(),total:entries.length,ai:ai.map(e=>({name:e.name,url:e.url,desc:e.desc,auth:e.auth})),iot:iot.map(e=>({name:e.name,url:e.url,desc:e.desc,auth:e.auth})),free_ai:free_ai.map(e=>({name:e.name,url:e.url,desc:e.desc})),dev_count:dev.length};
   fs.mkdirSync(path.dirname(STATE),{recursive:true});
   fs.writeFileSync(STATE,JSON.stringify(rpt,null,2)+'\n');
   console.log('AI:'+ai.length+' IoT:'+iot.length+' FreeAI:'+free_ai.length+' Dev:'+dev.length);
