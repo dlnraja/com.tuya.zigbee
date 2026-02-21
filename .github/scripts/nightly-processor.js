@@ -406,6 +406,12 @@ async function main(){
   const ghResults=await processGitHub(state,idx,pidx,appVersion,dryRun);
   console.log('GitHub: '+ghResults.length+' responses');
 
+  // 2b. Ingest Gmail diagnostics
+  let diagCount=0;
+  try{const df=path.join(__dirname,'..','state','diagnostics-report.json');
+  if(fs.existsSync(df)){diagCount=(JSON.parse(fs.readFileSync(df,'utf8'))).count||0;
+  if(diagCount)console.log('  Diagnostics:',diagCount,'reports')}}catch{}
+
   // 3. Update docs
   console.log('\n== 3. Update Docs ==');
   if(forumResults.length||ghResults.length){
@@ -421,17 +427,18 @@ async function main(){
   // 4. Save state + report
   state.lastRun=new Date().toISOString();
   saveState(state);
-  const report={timestamp:state.lastRun,appVersion,forum:forumResults.length,github:ghResults.length,
+  const report={timestamp:state.lastRun,appVersion,forum:forumResults.length,github:ghResults.length,diagnostics:diagCount,
     forumDetails:forumResults.slice(0,20),githubDetails:ghResults.slice(0,20)};
   fs.writeFileSync(path.join(__dirname,'..','state','nightly-report.json'),JSON.stringify(report,null,2)+'\n');
 
   console.log('\n=== Nightly Complete ===');
-  console.log('Forum replies:',forumResults.length,'| GitHub responses:',ghResults.length);
+  console.log('Forum replies:',forumResults.length,'| GitHub responses:',ghResults.length,'| Diagnostics:',diagCount);
 
   if(process.env.GITHUB_STEP_SUMMARY){
     let md='## Nightly Processor\n| Metric | Count |\n|---|---|\n';
     md+='| Forum replies | '+forumResults.length+' |\n';
     md+='| GitHub responses | '+ghResults.length+' |\n';
+    md+='| Gmail diagnostics | '+diagCount+' |\n';
     if(forumResults.length){
       md+='\n### Forum\n';
       for(const r of forumResults.slice(0,10))md+='- Topic '+r.topic+' #'+r.post+' @'+r.user+'\n';

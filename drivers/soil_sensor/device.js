@@ -425,6 +425,13 @@ class SoilSensorDevice extends TuyaHybridDevice {
     }
 
     if (dp === 5) {
+      // v5.11.19: Guard against compound frame mis-parse (same pattern as DP3)
+      // Compound frames cause parsedValue=67109120 → 671091.2°C after /100
+      // Max raw temp: 80°C × 100 = 8000, so >10000 is always compound artifact
+      if (parsedValue > 10000 && !Buffer.isBuffer(value)) {
+        this.log(`[SOIL] ⚠️ DP5 value ${parsedValue} > 10000 — compound frame artifact, skipping`);
+        return;
+      }
       // DP5 = TEMPERATURE (divide by 10)
       let temp = parsedValue;
       const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName || this.getStore?.()?.manufacturerName || '';
@@ -450,6 +457,11 @@ class SoilSensorDevice extends TuyaHybridDevice {
     }
 
     if (dp === 14) {
+      // v5.11.19: Guard against compound frame mis-parse
+      if (parsedValue > 2 && !Buffer.isBuffer(value)) {
+        this.log(`[SOIL] ⚠️ DP14 value ${parsedValue} > 2 — not a valid battery_state enum, skipping`);
+        return;
+      }
       // DP14 = BATTERY STATE (enum: 0=low, 1=med, 2=high)
       const batteryMap = { 0: 10, 1: 50, 2: 100 };
       const battery = batteryMap[parsedValue] ?? parsedValue;

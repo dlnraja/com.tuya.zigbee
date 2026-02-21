@@ -1,6 +1,6 @@
 {
   "5.11.19": {
-    "en": "v5.11.19: Workflow overhaul + bug fixes. (1) Fix curtain_motor false physical button triggers. (2) Fix soil_sensor compound frame DP3 mis-parse (67109120%). (3) Fix presence_sensor_radar unmapped DP122 setting. (4) Add ARCHITECTURE.md for AI-assisted development. (5) Overhaul all 17 GitHub Actions workflows: CSRF-based forum auth, changelog auto-extraction from .homeychangelog.json, Node 22, yamllint clean. (6) Add Groq/Mistral/OpenRouter to AI fallback chain."
+    "en": "v5.11.19: Diagnostic bug fixes + CI overhaul. (1) Fix soil_sensor DP5 compound frame — 671091.2C temp blocked. (2) Fix soil_sensor DP14 battery enum guard — prevents 1% from compound artifact. (3) Fix curtain_motor false-to-false physical button spam in PhysicalButtonMixin. (4) Fix presence_sensor_radar DP122 setting-type DP mapping. (5) Fix motion_sensor log spam — profile detection now logs once per device. (6) Fix HOBEIAN ZG-204ZM fingerprint case mismatch. (7) Overhaul all 19 GitHub Actions workflows: add missing permissions, concurrency, timeout-minutes, stagger monthly crons, standardize git user. (8) Update README stats, CHANGELOG, SECRETS.md."
   },
   "5.11.14": {
     "en": "v5.11.14: WiFi overhaul + bug fixes. (1) Fix settings blank spinner (Homey.ready). (2) New Easy Login: email+password only WiFi pairing. (3) Redesigned 4-tab configure.html for all 22 WiFi drivers. (4) Fix TS0002 _TZ3000_cauq1okq 2-gang=1. (5) Fix TS0203 _TZ3000_okohwwap → contact_sensor. (6) Fix radar DP4 distance/humidity confusion. (7) TuyaCloudAPI improvements."
