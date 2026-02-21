@@ -190,3 +190,7 @@
 - **JohanBendz/com.tuya.zigbee#1346** @pkuijpers: `_TZE200_locansqn` (template)
 - **JohanBendz/com.tuya.zigbee#724** @MihaiINW: `_TZE200_3towulqd` (template)
 - **JohanBendz/com.tuya.zigbee#740** @maccyber: `_TZE200_3towulqd` (template)
+
+
+## Nightly Auto-Responses (2026-02-21 v5.11.19)
+- **JohanBendz/com.tuya.zigbee#1229** @eeckelaertyannick: `_TZE200_8ygsuhe1` (template)

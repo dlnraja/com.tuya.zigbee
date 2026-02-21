@@ -368,3 +368,7 @@ JohanBendz PRs: #1346 time sync LCD, #1333 siren, #1332 HOBEIAN — all already 
 - **Topic 26439 #5389** @Willy: `_TZ3000_pjb1ua0m` (template)
 - **Topic 26439 #5391** @Ons: `_TZ3000_ww6drja5` (template)
 - **Topic 26439 #5396** @Hogar_Otal_Scridon: `_TZE284_tgeqdjgk` (template)
+
+
+## Nightly Forum Scan (2026-02-21 v5.11.19)
+- **Topic 140352 #1465** @ManuelKugler: `_TZE284_aao3yzhs` (template)
