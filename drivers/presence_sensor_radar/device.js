@@ -653,13 +653,13 @@ const SENSOR_CONFIGS = {
       '_TZE200_xpq2rber', '_TZE204_xpq2rber',
       '_TZE200_ybwa4x5a', '_TZE204_ybwa4x5a',
       '_TZE204_mrf6vtua', '_TZE204_mtoaryre',
-      '_TZE204_r0jdjrvi', '_TZE204_rhgsbacq',
+      '_TZE204_r0jdjrvi',
       '_TZE204_sfiy5tfs', '_TZE204_wukb7rhc',
-      '_TZE204_auin8mzr', '_TZE204_iaeejhvf',
+      '_TZE204_iaeejhvf',
       '_TZE204_ikvncluo', '_TZE204_jva8ink8',
       '_TZE204_lyetpprm', '_TZE204_no6qtgtl',
       // v5.5.363: GitHub Issue #97 - NoroddH Wenzhi TS0225 radar
-      '_TZ321C_fkzihaxe8', '_TZ3210_fkzihaxe8',
+      '_TZ3210_fkzihaxe8',
     ],
     battery: false,
     noTemperature: true,    // v5.5.372: Forum fix - radar sensors have NO temp
@@ -847,7 +847,7 @@ const SENSOR_CONFIGS = {
       // v5.8.63: REMOVED _TZE200_2aaelwxk/_TZE204_2aaelwxk - duplicate with ZG_204ZM_RADAR (which has complete HIGH-DP layout)
       // v5.8.63: Added _TZE200_y8jijhba/_TZE204_y8jijhba (removed from ZG_204ZV_MULTISENSOR, Z2M #29145: no temp/humidity)
       '_TZE200_y8jijhba', '_TZE204_y8jijhba',
-      '_TZE200_kb5noeto',
+      // v5.12: REMOVED _TZE200_kb5noeto - kept in ZCL_ONLY_RADAR (v5.5.990)
     ],
     battery: true,
     noTemperature: true,    // v5.5.368: 4x4_Pete fix - device has NO temp sensor
@@ -876,7 +876,9 @@ const SENSOR_CONFIGS = {
       // v5.11.3: RESTORED _TZE200_3towulqd here (Z2M #12364: PIR+lux only, DPs 1/4/9/10/12)
       // Was wrongly in ZG_204ZV_MULTISENSOR since v5.8.63 causing DP4=battery→humidity, DP9=sensitivity→lux
       '_TZE200_3towulqd', '_TZE204_3towulqd', '_tze200_3towulqd',
-      '_TZE200_1ibpyhdc', '_TZE200_bh3n6gk8',
+      // v5.12: REMOVED _TZE200_1ibpyhdc - kept in ZY_M100_SIMPLE (mains ceiling)
+      '_TZE200_bh3n6gk8',
+      '_TZE200_ppuj1vem',  // v5.12: Hubitat TS0601_2IN1_MYQ_ZMS03 - PIR + lux (DP1/4/9/12)
     ],
     battery: true,
     hasIlluminance: true,
@@ -913,6 +915,20 @@ const SENSOR_CONFIGS = {
       '_TZE204_sbyx0lm6',
       '_TZE284_sbyx0lm6',
       '_TZE284_debczeci',  // v5.8.3: Diag 7570421d - motion every 5 min
+      '_TZE284_4qznlkbu', '_TZE284_ar5przmw', '_TZE284_o9ofysmo',
+      '_TZE284_rlytpmij', '_TZE284_xc3vwx5a', '_TZE284_pzm3wab5',
+      '_TZE284_twybxdzl', '_TZE284_hgeqeyuv', '_TZE284_vceqncho',
+      '_TZE284_who1jxwd', '_TZE284_9ovska9w', '_TZE284_bquwrqh1',
+      '_TZE284_gw05grph', '_TZE284_chcnj5st',
+      // v5.12: TZE200/TZE204 variants with same low-DP layout
+      '_TZE200_qasjif9e',   // Z2M #21730 - ZY-M100 presence sensor
+      '_TZE200_ya4ft0w4', '_TZE204_ya4ft0w4',  // ZHA #3359 - same DP layout
+      '_TZE200_sgfmfpiy', '_TZE204_sgfmfpiy',
+      '_TZE200_ikvncluo', '_TZE200_nbkshs6k', '_TZE204_nbkshs6k',
+      '_TZE204_bvfld3xc', '_TZE204_sbkgeilo',
+      '_TZE200_f1pvdgoh', '_TZE200_hyhl5y36',
+      '_TZE204_b8vxct9l', '_TZE204_hyt4iucb',
+      '_TZE200_juzago6i', '_TZ3218_ewrxirng',
     ],
     battery: false,
     mainsPowered: true,
@@ -921,7 +937,7 @@ const SENSOR_CONFIGS = {
     noTemperature: true,    // v5.5.377: mmWave radar has NO temp sensor (Z2M #27212, #30326)
     noHumidity: true,       // v5.5.377: mmWave radar has NO humidity sensor
     needsPolling: false,  // v5.5.326: Disable polling - rely on inference only
-    invertPresence: true,   // v5.5.775: FORUM FIX - Ronny #1160+ reports motion stuck YES, test inversion
+    invertPresence: false,  // v5.12: FIXED - Z2M #27212/#30326 confirm DP1=null (not inverted). v5.8.29 null→false fix handles this. Inversion was breaking valid DP104 enum data.
     // v5.5.326: RONNY #760 - Enhanced intelligent inference
     useIntelligentInference: true,
     useDistanceInference: true,
@@ -975,6 +991,9 @@ const SENSOR_CONFIGS = {
       '_TZE204_ijxvkhd0',
       '_TZE204_e5m9c5hl',  // v5.8.97: GH#127 Tauno20 — moved from WZ_M100 (wrong DPs)
       '_TZE204_kyhbrfyl', '_TZE204_ex3rcdha',
+      // v5.12: Add TZE200/TZE204 variants of existing TZE284 fingerprints
+      '_TZE200_ztc6ggyl', '_TZE204_ztc6ggyl',  // Z2M #14823
+      '_TZE204_sxm7l9xa',  // Z2M #17483 - same as _TZE284_sxm7l9xa
     ],
     battery: false,
     mainsPowered: true,

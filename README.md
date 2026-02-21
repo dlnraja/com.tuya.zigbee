@@ -2,8 +2,8 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-42%2C500+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Drivers](https://img.shields.io/badge/drivers-111-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-5%2C579+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Drivers](https://img.shields.io/badge/drivers-138-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-1%2C457-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
@@ -17,14 +17,14 @@
 | **🧪 Test Version** | [Install Test Version](https://homey.app/a/com.tuya.zigbee/test/) |
 | **📦 GitHub Releases** | [View Releases](https://github.com/dlnraja/com.tuya.zigbee/releases) |
 
-**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 111 drivers, 42,500+ device fingerprints, and 1,457 flow cards.**
+**Control your Tuya Zigbee devices locally without cloud! The most comprehensive Tuya Zigbee app for Homey with 138 drivers, 5,579+ device fingerprints, and 1,457+ flow cards.**
 
 🏠 **100% Local Control** - No Cloud, No Internet Required
 🔋 **Smart Battery** - Accurate readings with voltage fallback
 ⚡ **Hybrid Mode** - Auto-detect Tuya DP vs Standard ZCL
 🛠️ **SDK3** - Latest Homey Standards
 🌍 **Open Source** - Community-driven development
-📱 **111 Drivers** - Switches, sensors, lights, thermostats, covers, locks & more
+📱 **138 Drivers** - Switches, sensors, lights, thermostats, covers, locks & more
 📋 **1,457 Flow Cards** - Complete triggers, conditions & actions in 4 languages
 
 ---
@@ -33,16 +33,16 @@
 
 | Metric | Value |
 |--------|-------|
-| **Device Fingerprints** | 42,500+ |
+| **Device Fingerprints** | 5,579+ |
 | **Unique Product IDs** | 472 |
-| **Drivers** | 111 |
+| **Drivers** | 138 |
 | **Flow Cards** | 1,457 |
 | **Unique Capabilities** | 99 |
 | **SVG Icons** | 197 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-02-07 |
+| **Last Updated** | 2026-02-21 |
 
 ### 📦 Top 15 Drivers by Device IDs
 
@@ -73,11 +73,9 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.11.19** | Auto-publish via GitHub Actions |
-| **v5.11.18** | Auto-publish via GitHub Actions |
-| **v5.11.17** | Auto-publish via GitHub Actions |
-| **v5.11.16** | Auto-publish via GitHub Actions |
-| **v5.11.15** | Auto-publish via GitHub Actions |
+| **v5.11.19** | Diagnostic bug fixes: soil_sensor compound frame guards, curtain_motor false physical button spam, CI overhaul (19 workflows) |
+| **v5.11.17** | Nightly auto-processor: daily AI-driven forum + GitHub processing |
+| **v5.11.15** | Double-division fix: TuyaEF00Manager skips auto-convert when dpMappings divisor != 1 |
 | **v5.11.14** | v5.11.14: WiFi overhaul + bug fixes. (1) Fix settings blank spinner (Homey.re... |
 | **v5.11.13** | v5.11.13: Fix presence_sensor_radar log spam (~52K lines/day). (1) Same-value... |
 | **v5.11.12** | v5.11.12: Critical case-sensitivity fix + WiFi bugs. (1) Fixed 5,004 lowercas... |

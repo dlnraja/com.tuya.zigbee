@@ -118,6 +118,14 @@ jobs:
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
+      - name: Auto-Publish Draft to Test
+        if: steps.pat.outputs.ok == 'true'
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          DRY_RUN: 'false'
+        run: node .github/scripts/auto-publish-draft.js
+
       - name: Post to Forum
         if: steps.pat.outputs.ok == 'true'
         continue-on-error: true
