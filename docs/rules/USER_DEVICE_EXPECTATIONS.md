@@ -1,6 +1,13 @@
-# User Device Expectations (v5.11.17)
-**Updated**: 2026-02-20 (v5.11.17: nightly auto-scan)
+# User Device Expectations (v5.11.19)
+**Updated**: 2026-02-21 (v5.11.19: nightly auto-scan)
 
+
+
+## Nightly Auto-Scan (2026-02-21)
+| User | Fingerprint(s) | Source | Date |
+|------|---------------|--------|------|
+| ManuelKugler | `_TZE284_aao3yzhs` | Forum #140352 post #1465 | Auto-scanned 2026-02-21 |
+| eeckelaertyannick | `_TZE200_8ygsuhe1` | JohanBendz/com.tuya.zigbee#1229 | Auto-scanned 2026-02-21 |
 
 ## Nightly Auto-Scan (2026-02-20)
 | User | Fingerprint(s) | Source | Date |
