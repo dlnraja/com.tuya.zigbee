@@ -128,7 +128,7 @@ jobs:
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: node .github/scripts/enrichment-scanner.js
-      - name: Scan Public APIs (davmachado/public-apis)
+      - name: Scan Public APIs (davemachado/public-api)
         continue-on-error: true
         run: node .github/scripts/scan-public-apis.js
       - name: Commit state

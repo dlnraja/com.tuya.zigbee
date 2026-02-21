@@ -75,7 +75,7 @@ jobs:
           node scripts/community-sync/sync-all.js 2>&1 | tee community-sync.txt || true
           node scripts/community-sync/generate-report.js >> $GITHUB_STEP_SUMMARY || true
 
-      - name: 🔌 Scan Public APIs (davmachado/public-apis)
+      - name: 🔌 Scan Public APIs (davemachado/public-api)
         run: node .github/scripts/scan-public-apis.js
 
       - name: Commit reports
