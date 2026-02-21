@@ -187,8 +187,11 @@ class MotionSensorDevice extends HybridSensorBase {
     );
     
     if (isVariant) {
-      this.log(`[MOTION-DP] 🔀 VARIANT manufacturer detected: ${mfr}`);
-      this.log('[MOTION-DP] Using PERMISSIVE profile - capabilities added from received DPs');
+      if (!this._variantProfileLogged) {
+        this.log(`[MOTION-DP] 🔀 VARIANT manufacturer detected: ${mfr}`);
+        this.log('[MOTION-DP] Using PERMISSIVE profile - capabilities added from received DPs');
+        this._variantProfileLogged = true;
+      }
       // Permissive profile: Accept temp/humidity on DPs 3,4,5,6 and battery on DP12
       // This handles both ZG-204ZL (PIR) and ZG-204ZV (multisensor) with same mfr
       return { 
@@ -215,7 +218,10 @@ class MotionSensorDevice extends HybridSensorBase {
     for (const [profileName, profile] of Object.entries(MotionSensorDevice.MANUFACTURER_DP_PROFILES)) {
       for (const pattern of profile.patterns) {
         if (mfrLower.includes(pattern.toLowerCase()) || mfr.includes(pattern)) {
-          this.log(`[MOTION-DP] 🎯 Matched profile: ${profileName} (pattern: ${pattern})`);
+          if (!this._profileMatchLogged) {
+            this.log(`[MOTION-DP] 🎯 Matched profile: ${profileName} (pattern: ${pattern})`);
+            this._profileMatchLogged = true;
+          }
           return { name: profileName, ...profile };
         }
       }
@@ -230,7 +236,10 @@ class MotionSensorDevice extends HybridSensorBase {
         || this.getStoreValue?.('modelId')
         || this.getData()?.modelId || '';
       if (modelId === 'TS0601' || modelId.startsWith('TS06')) {
-        this.log(`[MOTION-DP] ⚠️ Blank manufacturer name with modelId=${modelId} → using PERMISSIVE_VARIANT`);
+        if (!this._variantProfileLogged) {
+          this.log(`[MOTION-DP] ⚠️ Blank manufacturer name with modelId=${modelId} → using PERMISSIVE_VARIANT`);
+          this._variantProfileLogged = true;
+        }
         return { 
           name: 'PERMISSIVE_VARIANT',
           dp3: 'measure_temperature', dp3_divisor: 10,
@@ -244,7 +253,10 @@ class MotionSensorDevice extends HybridSensorBase {
     }
 
     // Default profile
-    this.log('[MOTION-DP] ℹ️ Using default DP profile');
+    if (!this._defaultProfileLogged) {
+      this.log('[MOTION-DP] ℹ️ Using default DP profile');
+      this._defaultProfileLogged = true;
+    }
     return { name: 'DEFAULT', dp4: 'measure_battery', dp5: 'measure_temperature', 
              dp6: 'measure_humidity', dp5_divisor: 10, dp6_divisor: 1 };
   }
