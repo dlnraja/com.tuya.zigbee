@@ -73,16 +73,16 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.11.19** | Auto-publish via GitHub Actions |
+| **v5.11.18** | Auto-publish via GitHub Actions |
+| **v5.11.17** | Auto-publish via GitHub Actions |
+| **v5.11.16** | Auto-publish via GitHub Actions |
+| **v5.11.15** | Auto-publish via GitHub Actions |
 | **v5.11.14** | v5.11.14: WiFi overhaul + bug fixes. (1) Fix settings blank spinner (Homey.re... |
 | **v5.11.13** | v5.11.13: Fix presence_sensor_radar log spam (~52K lines/day). (1) Same-value... |
 | **v5.11.12** | v5.11.12: Critical case-sensitivity fix + WiFi bugs. (1) Fixed 5,004 lowercas... |
 | **v5.11.11** | v5.11.11: Fingerprint regression fixes — (1) Removed 5,450 case-duplicate mfr... |
 | **v5.11.10** | v5.11.10: Full Zigbee DB sync — crawled Z2M (365 files), ZHA (all quirks), Bl... |
-| **v5.11.9** | v5.11.9: Live DB sync — Z2M+ZHA+deCONZ crawl. +2 water_leak_sensor (TS0207), ... |
-| **v5.11.8** | v5.11.8: Z2M fingerprint sync — Added 18 new device fingerprints. climate_sen... |
-| **v5.11.7** | v5.11.7: New driver — Wall Switch 4-Gang 1-Way (BSEED). Adds support for BSEE... |
-| **v5.11.6** | v5.11.6: BSEED glass switch & scene switch fingerprint fixes — (1) Removed BS... |
-| **v5.11.5** | v5.11.5: Lasse_K forum fixes — (1) ROOT CAUSE 'no alarm': Anti-flood throttle... |
 <!-- CHANGELOG_END -->
 
 ### 🎯 Flow Enrichment v5.5.159-162
