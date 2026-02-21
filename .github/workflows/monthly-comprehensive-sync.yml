@@ -48,6 +48,10 @@ jobs:
           DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
         run: node .github/scripts/monthly-comprehensive.js
 
+      - name: Scan Public APIs (davmachado/public-apis)
+        continue-on-error: true
+        run: node .github/scripts/scan-public-apis.js
+
       - name: Commit state and reports
         if: always()
         run: |
