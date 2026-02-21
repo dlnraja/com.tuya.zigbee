@@ -40,14 +40,16 @@ function extractCookies(res){
 function fmtCookies(c){return Object.entries(c).map(([k,v])=>k+'='+v).join('; ')}
 
 async function discourseLogin(email,password){
-  const r1=await fetch(FORUM+'/session/csrf',{headers:{'X-Requested-With':'XMLHttpRequest',Accept:'application/json'}});
+  const UA='Mozilla/5.0 (compatible; TuyaZigbeeBot/1.0; +https://github.com/dlnraja/com.tuya.zigbee)';
+  const r1=await fetch(FORUM+'/session/csrf',{headers:{'X-Requested-With':'XMLHttpRequest',Accept:'application/json','User-Agent':UA}});
   if(!r1.ok)throw new Error('CSRF failed: '+r1.status);
   const csrf=(await r1.json()).csrf;
   const ck1=extractCookies(r1);
+  console.log('CSRF OK, cookies:',Object.keys(ck1).join(','));
   const r2=await fetch(FORUM+'/session',{method:'POST',redirect:'manual',
-    headers:{'Content-Type':'application/x-www-form-urlencoded','X-CSRF-Token':csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCookies(ck1)},
+    headers:{'Content-Type':'application/x-www-form-urlencoded','X-CSRF-Token':csrf,'X-Requested-With':'XMLHttpRequest','User-Agent':UA,Cookie:fmtCookies(ck1)},
     body:'login='+encodeURIComponent(email)+'&password='+encodeURIComponent(password)});
-  if(!r2.ok&&r2.status!==302)throw new Error('Login failed: '+r2.status);
+  if(!r2.ok&&r2.status!==302){const b=await r2.text().catch(()=>'');console.error('Login body:',b.slice(0,300));throw new Error('Login failed: '+r2.status);}
   const ck2={...ck1,...extractCookies(r2)};
   if(!ck2._t)throw new Error('No session cookie after login');
   return{csrf,cookies:ck2};
