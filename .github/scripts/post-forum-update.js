@@ -65,9 +65,11 @@ async function main(){
   const auth=await discourseLogin();
   console.log('Login OK');
   const ver=process.env.APP_VERSION||require(path.join(process.cwd(),'app.json')).version;
-  const cl=process.env.CHANGELOG||'Auto-publish via GitHub Actions';
+  let cl=process.env.CHANGELOG||'';
+  if(!cl){try{const cj=JSON.parse(fs.readFileSync(path.join(process.cwd(),'.homeychangelog.json'),'utf8'));if(cj[ver]&&cj[ver].en)cl=cj[ver].en;else{const k=Object.keys(cj).sort((a,b)=>b.localeCompare(a,undefined,{numeric:true}));if(k[0]&&cj[k[0]].en)cl=cj[k[0]].en;}}catch(e){}}
+  if(!cl)cl='v'+ver+' - See changelog for details';
   const url=process.env.PUBLISH_URL||'https://homey.app/a/com.dlnraja.tuya.zigbee/test/';
-  const raw='## v'+ver+' Published\n\n**Changelog:** '+cl+'\n\n**Install:** [Test version]('+url+')\n\n> After updating, remove and re-pair devices that had issues.\n\n*Auto-posted by GitHub Actions*';
+  const raw='## 🔄 Universal Tuya Zigbee v'+ver+'\n\n'+cl+'\n\n**📥 Install:** [Test version]('+url+')\n\n> After updating, remove and re-pair devices that had issues.\n> Report bugs: [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues)';
   console.log('Posting to forum topic',TOPIC);
   const r=await postReply(TOPIC,raw,auth);
   console.log('Posted:',r.slice(0,100));
