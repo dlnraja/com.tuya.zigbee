@@ -25,8 +25,8 @@ function postComment(num,body){
   if(DRY){console.log(`[DRY] #${num}: ${body.slice(0,100)}...`);return;}
   const tmpFile=path.join(os.tmpdir(),'_triage_msg.md');
   fs.writeFileSync(tmpFile,`${TAG}\n${body}`);
-  gh(`issue comment ${num} -R ${REPO} -F "${tmpFile}"`);
-  console.log(`Commented on ${REPO}#${num}`);
+  try{gh(`issue comment ${num} -R ${REPO} -F "${tmpFile}"`);console.log(`Commented on ${REPO}#${num}`);}
+  catch(e){console.log(`Skip comment ${REPO}#${num}: ${e.message.slice(0,80)}`);}
 }
 
 function buildSupportedMsg(found){
