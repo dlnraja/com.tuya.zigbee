@@ -81,8 +81,8 @@ jobs:
               const cl=require('./.homeychangelog.json');
               const v=process.argv[1];
               if(cl[v]&&cl[v].en)process.stdout.write(cl[v].en);
-              else{const keys=Object.keys(cl).sort().reverse();if(keys[0]&&cl[keys[0]].en)process.stdout.write(cl[keys[0]].en);else process.stdout.write('Bug fixes and improvements');}
-            " "$VER" 2>/dev/null || echo "Bug fixes and improvements")
+              else{const keys=Object.keys(cl).sort().reverse();if(keys[0]&&cl[keys[0]].en)process.stdout.write(cl[keys[0]].en);else{const d=require('fs').readdirSync('drivers').length;const f=require('child_process').execSync('grep -rohE \"_T[A-Za-z0-9_]+\" drivers/*/driver.compose.json|sort -uf|wc -l').toString().trim();process.stdout.write('v'+v+': '+d+' drivers, '+f+' fingerprints. See .homeychangelog.json');}
+            " "$VER" 2>/dev/null || echo "See .homeychangelog.json for details")
           fi
           # Escape newlines for GitHub output
           CL="${CL//'%'/'%25'}"
