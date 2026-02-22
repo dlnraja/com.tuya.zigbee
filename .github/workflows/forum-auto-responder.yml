@@ -60,5 +60,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .github/state/forum-state.json
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
-          git diff --cached --quiet || git commit -m "Forum responder v${VER}: scanned 5 topics (dlnraja+JohanBendz+SmartLife+Archive+WiFi) [skip ci]"
+          TOPICS=$(node -p "try{Object.keys(JSON.parse(require('fs').readFileSync('.github/state/forum-state.json')).topics).length}catch(e){0}")
+          git diff --cached --quiet || git commit -m "Forum responder v${VER}: scanned ${TOPICS} topics, state updated [skip ci]"
           git push || echo "Nothing to push"
