@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-02-22T14:04:59.960Z",
+  "timestamp": "2026-02-22T14:54:06.901Z",
   "count": 2,
   "byType": {
-    "diagnostic": 0,
+    "diagnostic": 2,
     "bug_report": 0,
-    "github": 2,
+    "github": 0,
     "changelog": 0,
     "device_issue": 0,
     "general": 0
@@ -12,53 +12,11 @@
   "newFingerprints": [],
   "diagnostics": [
     {
-      "id": "19c85a6ff0992722",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - 4 Gang Wall Switch - _TZE200_dq8bu0pt / TS0601 (Issue #1297)",
-      "from": "shikilee <notifications@github.com>",
-      "date": "Sun, 22 Feb 2026 06:00:37 -0800",
-      "fps": {
-        "mfr": [
-          "_TZE200_dq8bu0pt"
-        ],
-        "pid": [
-          "TS0601"
-        ]
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [
-        {
-          "fingerprint": "_TZE200_dq8bu0pt",
-          "supported": true,
-          "drivers": [
-            "curtain_motor"
-          ]
-        }
-      ],
-      "ghInfo": {
-        "issueNum": "1297",
-        "action": "commented",
-        "fps": {
-          "mfr": [
-            "_TZE200_dq8bu0pt"
-          ],
-          "pid": [
-            "TS0601"
-          ]
-        },
-        "isNew": false
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "19c85a6fd5e657e2",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - 4 Gang Wall Switch - _TZE200_dq8bu0pt / TS0601 (Issue #1297)",
-      "from": "shikilee <notifications@github.com>",
-      "date": "Sun, 22 Feb 2026 06:00:36 -0800",
+      "id": "19c85d44f258fd7f",
+      "type": "diagnostic",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "Frank <notifications@athom.discoursemail.com>",
+      "date": "Sun, 22 Feb 2026 14:50:08 +0000",
       "fps": {
         "mfr": [],
         "pid": []
@@ -66,15 +24,25 @@
       "errs": [],
       "devices": [],
       "xref": [],
-      "ghInfo": {
-        "issueNum": "1297",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c85c85487c3ab2",
+      "type": "diagnostic",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Sun, 22 Feb 2026 14:37:04 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
       },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null
