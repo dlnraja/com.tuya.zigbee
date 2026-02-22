@@ -194,3 +194,8 @@
 
 ## Nightly Auto-Responses (2026-02-21 v5.11.19)
 - **JohanBendz/com.tuya.zigbee#1229** @eeckelaertyannick: `_TZE200_8ygsuhe1` (template)
+
+
+## Nightly Auto-Responses (2026-02-22 v5.11.19)
+- **JohanBendz/com.tuya.zigbee#1327** @Jesse22homey: `_TZ3000_zgyzgdua` (template)
+- **JohanBendz/com.tuya.zigbee#1330** @PhilbyD: `_TYZB01_4lwqwyqn` (template)
