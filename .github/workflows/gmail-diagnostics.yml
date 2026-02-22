@@ -38,6 +38,17 @@ jobs:
           COUNT=$(node -p "try{JSON.parse(require('fs').readFileSync('.github/state/diagnostics-report.json')).emails?.length||0}catch(e){0}")
           git diff --staged --quiet || git commit -m "Gmail diagnostics $(date -u +%Y-%m-%d): ${COUNT} emails analyzed [skip ci]"
           git push || true
+      - name: Auto-rotate refresh token if renewed
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          TOKEN_FILE=".github/state/_new_refresh_token.txt"
+          if [ -f "$TOKEN_FILE" ]; then
+            echo "New refresh token detected - rotating GitHub secret..."
+            cat "$TOKEN_FILE" | gh secret set GMAIL_REFRESH_TOKEN
+            rm -f "$TOKEN_FILE"
+            echo "::notice::Gmail refresh token auto-rotated"
+          fi
       - name: Create issues for critical diagnostics
         if: always()
         run: |

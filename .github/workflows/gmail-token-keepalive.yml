@@ -1,0 +1,41 @@
+name: Gmail Token Keepalive
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gmail-keepalive
+  cancel-in-progress: true
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Refresh Gmail token
+        env:
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+        run: node .github/scripts/gmail-token-keepalive.js
+      - name: Auto-rotate if new token
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          TOKEN_FILE=".github/state/_new_refresh_token.txt"
+          if [ -f "$TOKEN_FILE" ]; then
+            echo "Rotating refresh token..."
+            cat "$TOKEN_FILE" | gh secret set GMAIL_REFRESH_TOKEN
+            rm -f "$TOKEN_FILE"
+            echo "::notice::Gmail refresh token auto-rotated"
+          else
+            echo "Token still valid - no rotation needed"
+          fi
