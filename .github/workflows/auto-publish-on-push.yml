@@ -64,6 +64,24 @@ jobs:
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
+      - name: Auto-Publish Draft to Test
+        if: steps.check_pat.outputs.has_pat == 'true'
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          DRY_RUN: 'false'
+        run: node .github/scripts/auto-publish-draft.js
+
+      - name: Post to Forum
+        if: steps.check_pat.outputs.has_pat == 'true'
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          APP_VERSION: ${{ steps.info.outputs.version }}
+          CHANGELOG: ${{ steps.cl.outputs.text }}
+        run: node .github/scripts/post-forum-update.js
+
       - name: Summary
         if: always()
         run: |
@@ -71,6 +89,7 @@ jobs:
           echo "**Changelog:** ${{ steps.cl.outputs.text }}" >> $GITHUB_STEP_SUMMARY
           if [ "${{ steps.check_pat.outputs.has_pat }}" == "true" ]; then
             echo "Published to Homey App Store" >> $GITHUB_STEP_SUMMARY
+            echo "[Install test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)" >> $GITHUB_STEP_SUMMARY
           else
             echo "Validated only (HOMEY_PAT not set)" >> $GITHUB_STEP_SUMMARY
             echo "Add HOMEY_PAT secret from https://tools.developer.homey.app/me" >> $GITHUB_STEP_SUMMARY
