@@ -58,6 +58,7 @@ jobs:
       - name: Run triage
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           TARGET_REPO: JohanBendz/com.tuya.zigbee
           APP_VERSION: ${{ needs.stats.outputs.version }}
           DRIVER_COUNT: ${{ needs.stats.outputs.drivers }}
@@ -78,6 +79,7 @@ jobs:
       - name: Run triage
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           TARGET_REPO: dlnraja/com.tuya.zigbee
           APP_VERSION: ${{ needs.stats.outputs.version }}
           DRIVER_COUNT: ${{ needs.stats.outputs.drivers }}

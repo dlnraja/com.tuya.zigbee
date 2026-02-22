@@ -89,7 +89,7 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: weekly fingerprint sync from Z2M"
+          commit-message: "Weekly fingerprint sync: auto-added safe Tuya patterns from Z2M/ZHA"
           title: "Weekly Fingerprint Sync (${{ steps.changes.outputs.lines_added }} new lines)"
           body: |
             ## Automated Weekly Fingerprint Sync
