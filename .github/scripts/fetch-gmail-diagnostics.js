@@ -35,7 +35,7 @@ async function getToken(){
   const res=await fetch('https://oauth2.googleapis.com/token',{method:'POST',
     headers:{'Content-Type':'application/x-www-form-urlencoded'},
     body:'client_id='+id+'&client_secret='+s+'&refresh_token='+r+'&grant_type=refresh_token'});
-  if(!res.ok){const e=await res.text();console.error('Token refresh failed:',res.status,e);if(e.includes('invalid_grant'))console.error('EXPIRED! Publish OAuth consent screen or re-generate refresh token');return null;}
+  if(!res.ok){const e=await res.text();console.error('Token refresh failed:',res.status,e);if(e.includes('invalid_grant')){console.error('TOKEN EXPIRED (Testing mode 7-day limit). Re-generate at https://developers.google.com/oauthplayground');console.log('::warning::Gmail token expired. Diagnostics skipped this run.');}return null;}
   const j=await res.json();
   if(j.refresh_token_expires_in)console.log('Refresh token expires in '+Math.round(j.refresh_token_expires_in/3600)+'h (Testing mode)');
   if(j.refresh_token){console.log('New refresh token received - writing for auto-rotation');fs.writeFileSync(path.join(SD,'_new_refresh_token.txt'),j.refresh_token);}
