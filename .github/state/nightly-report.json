@@ -1,28 +1,32 @@
 {
-  "timestamp": "2026-02-22T16:14:23.636Z",
+  "timestamp": "2026-02-22T18:01:07.090Z",
   "appVersion": "5.11.19",
-  "forum": 2,
-  "github": 0,
+  "forum": 0,
+  "github": 2,
   "diagnostics": 2,
-  "forumDetails": [
+  "forumDetails": [],
+  "githubDetails": [
     {
-      "topic": 140352,
-      "post": 1470,
-      "user": "Shiki",
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 456,
+      "user": "martinl88",
       "fps": [
-        "_TZ3000_dd8wwzcy"
+        "_TZE204_81yrt3lo"
       ],
-      "reply": "**Fingerprint check** (v5.11.19):\n✅ Supported: `_TZ3000_dd8wwzcy` → **climate_sensor**\n\n---\n*Bot Universal Tuya Zigbee v5.11.19*",
-      "model": "template"
+      "title": "Device Request - 2 Channel Intelligent Energy Meter - _TZE204_81yrt3lo / TS0601",
+      "response": "### Issue #456 Response\n\nHello @martinl88,\n\nThank you for your request regarding the **2 Channel Intelligent Energy Meter** with the fingerprint `_TZE204_81yrt3lo / TS0601`. \n\n#### Supported Drivers\nThis device is supported by the following drivers:\n- **din_rail_meter**\n- **plug_energy_monitor**\n- *",
+      "model": "gh-gpt-4o-mini"
     },
     {
-      "topic": 140352,
-      "post": 1471,
-      "user": "FrankP",
-      "fps": [],
-      "reply": "**Fingerprint check** (v5.11.19):\n✅ Supported: `TS0042` → **button_wireless_2, universal_fallback**\n\n---\n*Bot Universal Tuya Zigbee v5.11.19*",
-      "model": "template"
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 468,
+      "user": "martinl88",
+      "fps": [
+        "_TZE200_bcusnqt8"
+      ],
+      "title": "Device Request - >Smart Energy Sensor - _TZE200_bcusnqt8 / TS0601",
+      "response": "Hello @martinl88,\n\nThank you for your request regarding the Smart Energy Sensor with the fingerprint `_TZE200_bcusnqt8` and model ID `TS0601`. \n\n### Supported Drivers\nThe device fingerprint indicates that it is supported by the following driver:\n- **Driver**: `energy_meter_3phase`\n\n### Pairing Instr",
+      "model": "gh-gpt-4o-mini"
     }
-  ],
-  "githubDetails": []
+  ]
 }
