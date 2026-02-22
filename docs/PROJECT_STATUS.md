@@ -5,8 +5,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Total Drivers | 111+ |
-| Manufacturer Fingerprints | 134,519 |
+| Total Drivers | 138 |
+| Manufacturer Fingerprints | 3,009 |
 | Supported Device Types | 70+ |
 | Base Classes | 8 |
 
