@@ -1,129 +1,14 @@
 {
-  "timestamp": "2026-02-22T20:01:22.048Z",
-  "count": 5,
+  "timestamp": "2026-02-22T20:56:57.580Z",
+  "count": 0,
   "byType": {
-    "diagnostic": 1,
+    "diagnostic": 0,
     "bug_report": 0,
-    "github": 3,
+    "github": 0,
     "changelog": 0,
-    "device_issue": 1,
+    "device_issue": 0,
     "general": 0
   },
   "newFingerprints": [],
-  "diagnostics": [
-    {
-      "id": "19c86b0c4bac7bc1",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - Aubess Tuya 1-gang ZigBee 3.0 Mini Smart Switch - _TZ3000_fdxihpp7 / TS0001 (Issue #963)",
-      "from": "eeckelaertyannick <notifications@github.com>",
-      "date": "Sun, 22 Feb 2026 10:50:54 -0800",
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "963",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "19c86b046632d8c0",
-      "type": "diagnostic",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
-      "from": "Homey <noreply@homey.app>",
-      "date": "Sun, 22 Feb 2026 18:50:24 +0000",
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "19c8623dc37639a7",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - 2 Channel Intelligent Energy Meter - _TZE204_81yrt3lo / TS0601 (Issue #456)",
-      "from": "Martin <notifications@github.com>",
-      "date": "Sun, 22 Feb 2026 08:17:00 -0800",
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "456",
-        "action": null,
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "19c86223756cd9f5",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - >Smart Energy Sensor - _TZE200_bcusnqt8 / TS0601 (Issue #468)",
-      "from": "Martin <notifications@github.com>",
-      "date": "Sun, 22 Feb 2026 08:15:12 -0800",
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "468",
-        "action": null,
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "19c85f6f9d933536",
-      "type": "device_issue",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "Lasse K <notifications@athom.discoursemail.com>",
-      "date": "Sun, 22 Feb 2026 15:28:00 +0000",
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    }
-  ]
+  "diagnostics": []
 }
