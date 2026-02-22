@@ -376,3 +376,24 @@ JohanBendz PRs: #1346 time sync LCD, #1333 siren, #1332 HOBEIAN — all already 
 
 ## Nightly Forum Scan (2026-02-22 v5.11.19)
 - **Topic 140352 #1467** @Slawek_Pe: `_TZ3210_xzhnra8x` (template)
+
+## JohanBendz Issues Triage (2026-02-22)
+
+All 12 fingerprints from 20 open issues **already supported** in v5.11.19:
+
+| # | Fingerprint | Driver(s) |
+|---|------------|-----------|
+| 1345 | _TZE284_xnbkhhdr | thermostat_tuya_dp |
+| 1344 | _TZ3000_bgsigers | climate_sensor |
+| 1343 | _TZE200_rhgsbacq | presence_sensor_radar |
+| 1341 | _TZE284_aao3yzhs | soil_sensor |
+| 1339 | _TZ3000_blhvsaqf | wall_switch_1-4gang |
+| 1338 | _TZ3000_qkixdnon | wall_switch_3-4gang |
+| 1337 | _TZ3000_l9brjwau | wall_switch_2gang |
+| 1336 | _TZE284_aa03yzhs | soil_sensor |
+| 1328 | _TZE284_9ern5sfh | climate_sensor |
+| 1327 | _TZ3000_zgyzgdua | button_wireless_4 |
+| 1326 | _TZ3210_4ux0ondb | plug_energy_monitor |
+| 1325 | _TZ3210_s8lvbbu | bulb_rgbw |
+
+**Forum topics now scanned**: 140352, 26439, 146735, 89271, 54018
