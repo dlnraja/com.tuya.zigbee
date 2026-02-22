@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-02-22T12:43:31.330Z",
-  "count": 3,
+  "timestamp": "2026-02-22T13:16:44.035Z",
+  "count": 1,
   "byType": {
     "diagnostic": 0,
     "bug_report": 0,
-    "github": 2,
+    "github": 0,
     "changelog": 0,
     "device_issue": 1,
     "general": 0
@@ -12,68 +12,11 @@
   "newFingerprints": [],
   "diagnostics": [
     {
-      "id": "19c854a639a65613",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [MOES Scene Switch 4 gang] - [MOES] / [_TZ3000_zgyzgdua\"] (Issue #1327)",
-      "from": "Kokosnootmelk <notifications@github.com>",
-      "date": "Sun, 22 Feb 2026 04:19:27 -0800",
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [
-        "Interview"
-      ],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1327",
-        "action": null,
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "19c84b58759e56d4",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [Device name] - [manufacturerName] / [modelId] (Issue #1330)",
-      "from": "PhilbyD <notifications@github.com>",
-      "date": "Sun, 22 Feb 2026 01:36:52 -0800",
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [
-        "pairs",
-        "with"
-      ],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1330",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "19c84aeab2a4827f",
+      "id": "19c8579aaf52e28e",
       "type": "device_issue",
       "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "Lasse K <notifications@athom.discoursemail.com>",
-      "date": "Sun, 22 Feb 2026 09:29:24 +0000",
+      "from": "Manuel Kugler <notifications@athom.discoursemail.com>",
+      "date": "Sun, 22 Feb 2026 13:11:08 +0000",
       "fps": {
         "mfr": [],
         "pid": []
