@@ -35,14 +35,20 @@ async function getToken(){
   const res=await fetch('https://oauth2.googleapis.com/token',{method:'POST',
     headers:{'Content-Type':'application/x-www-form-urlencoded'},
     body:'client_id='+id+'&client_secret='+s+'&refresh_token='+r+'&grant_type=refresh_token'});
-  if(!res.ok){console.error('Token refresh failed:',res.status);return null;}
+  if(!res.ok){const e=await res.text();console.error('Token refresh failed:',res.status,e);if(e.includes('invalid_grant'))console.error('EXPIRED! Publish OAuth consent screen or re-generate refresh token');return null;}
   return(await res.json()).access_token;
 }
 
-async function gapi(tk,ep){
-  const r=await fetch('https://gmail.googleapis.com/gmail/v1/users/me/'+ep,
-    {headers:{Authorization:'Bearer '+tk}});
-  return r.ok?r.json():null;
+async function gapi(tk,ep,retries=2){
+  for(let i=0;i<=retries;i++){
+    const r=await fetch('https://gmail.googleapis.com/gmail/v1/users/me/'+ep,
+      {headers:{Authorization:'Bearer '+tk}});
+    if(r.ok)return r.json();
+    if(r.status===429||r.status>=500){await new Promise(ok=>setTimeout(ok,1000*(i+1)));continue;}
+    if(i===retries)console.error('Gmail API error:',r.status,ep.substring(0,40));
+    return null;
+  }
+  return null;
 }
 
 // Multi-query Gmail search: diagnostics, Homey logs, GitHub, changelogs
