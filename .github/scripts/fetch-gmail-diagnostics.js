@@ -174,7 +174,7 @@ async function aiAnalyze(diag,subj,type,xref){
 
 // Create GitHub issue for critical findings
 async function mkIssue(title,body){
-  const tk=process.env.GITHUB_TOKEN||process.env.GH_PAT;if(!tk)return null;
+  const tk=process.env.GH_PAT||process.env.GITHUB_TOKEN;if(!tk)return null;
   const r=await fetch('https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues',{
     method:'POST',headers:{Authorization:'Bearer '+tk,Accept:'application/vnd.github+json','Content-Type':'application/json'},
     body:JSON.stringify({title:'[Diag] '+title.substring(0,80),body,labels:['diagnostic','auto-detected']})});

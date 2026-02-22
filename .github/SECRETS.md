@@ -42,9 +42,10 @@ Used by: tuya-automation-hub.yml, sunday-master.yml, nightly-auto-process.yml, m
 ## 5. GitHub Access
 | Secret | Purpose |
 |--------|---------|
-| GH_PAT | Cross-repo access (forks, triage) |
-| TRIAGE_PAT | Issue triage operations |
-| GITHUB_TOKEN | Auto-provided by GitHub Actions |
+| GH_PAT | Cross-repo access (forks, triage). Scopes: `repo`, `read:org` |
+| GITHUB_TOKEN | Auto-provided — **current repo only** ([#46566](https://github.com/orgs/community/discussions/46566)) |
+
+> **Warning:** `GITHUB_TOKEN` cannot access other repos. `GH_PAT` is required for JohanBendz triage, fork scanning, and cross-repo issue comments.
 
 Used by: tuya-automation-hub.yml, sunday-master.yml, nightly-auto-process.yml, upstream-auto-triage.yml
 
