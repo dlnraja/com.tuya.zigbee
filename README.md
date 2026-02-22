@@ -73,9 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.11.19** | Auto-publish via GitHub Actions |
-| **v5.11.18** | Auto-publish via GitHub Actions |
-| **v5.11.17** | Auto-publish via GitHub Actions |
+| **v5.11.19** | Multi-topic forum scanning + scan-only mode for external threads |
 | **v5.11.16** | Auto-publish via GitHub Actions |
 | **v5.11.15** | Auto-publish via GitHub Actions |
 | **v5.11.14** | v5.11.14: WiFi overhaul + bug fixes. (1) Fix settings blank spinner (Homey.re... |

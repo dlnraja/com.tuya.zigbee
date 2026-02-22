@@ -57,7 +57,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
       - name: Run triage
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           TARGET_REPO: JohanBendz/com.tuya.zigbee
           APP_VERSION: ${{ needs.stats.outputs.version }}
@@ -99,7 +99,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
       - name: Run fork scan
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: node .github/scripts/scan-forks.js
       - if: hashFiles('/tmp/new_fork_fps.json') != ''
         uses: actions/github-script@v7
