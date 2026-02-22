@@ -1,32 +1,28 @@
 {
-  "timestamp": "2026-02-22T13:18:13.611Z",
+  "timestamp": "2026-02-22T16:14:23.636Z",
   "appVersion": "5.11.19",
-  "forum": 0,
-  "github": 2,
-  "diagnostics": 1,
-  "forumDetails": [],
-  "githubDetails": [
+  "forum": 2,
+  "github": 0,
+  "diagnostics": 2,
+  "forumDetails": [
     {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1327,
-      "user": "Jesse22homey",
+      "topic": 140352,
+      "post": 1470,
+      "user": "Shiki",
       "fps": [
-        "_TZ3000_zgyzgdua"
+        "_TZ3000_dd8wwzcy"
       ],
-      "title": "Device Request - [MOES Scene Switch 4 gang] - [MOES] / [_TZ3000_zgyzgdua\"]",
-      "response": "## Fingerprint Check (v5.11.19)\n**Supported:** `_TZ3000_zgyzgdua` → **button_wireless_4, scene_switch_4**, `TS0044` → **button_wireless_4, universal_fallback**\n\n---\n*Bot Universal Tuya Zigbee v5.11.19*",
+      "reply": "**Fingerprint check** (v5.11.19):\n✅ Supported: `_TZ3000_dd8wwzcy` → **climate_sensor**\n\n---\n*Bot Universal Tuya Zigbee v5.11.19*",
       "model": "template"
     },
     {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1330,
-      "user": "PhilbyD",
-      "fps": [
-        "_TYZB01_4lwqwyqn"
-      ],
-      "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
-      "response": "## Fingerprint Check (v5.11.19)\n**Supported:** `_TYZB01_4lwqwyqn` → **switch_3gang**, `TS0013` → **switch_3gang, universal_fallback, wall_switch_3gang_1way**\n\n---\n*Bot Universal Tuya Zigbee v5.11.19*",
+      "topic": 140352,
+      "post": 1471,
+      "user": "FrankP",
+      "fps": [],
+      "reply": "**Fingerprint check** (v5.11.19):\n✅ Supported: `TS0042` → **button_wireless_2, universal_fallback**\n\n---\n*Bot Universal Tuya Zigbee v5.11.19*",
       "model": "template"
     }
-  ]
+  ],
+  "githubDetails": []
 }
