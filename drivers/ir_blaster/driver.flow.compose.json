@@ -955,10 +955,10 @@
         "en": "Send a raw IR code in Pronto Hex or Base64 format directly."
       },
       "titleFormatted": {
-        "en": "Send raw IR code [[raw_code]] at [[frequency]]Hz",
-        "fr": "Envoyer code IR brut [[raw_code]] à [[frequency]]Hz",
-        "nl": "Verstuur raw IR code [[raw_code]] bij [[frequency]]Hz",
-        "de": "Raw IR-Code [[raw_code]] bei [[frequency]]Hz senden"
+        "en": "Send raw IR code [[raw_code]] at [[frequency]]Hz ×[[repeat]]",
+        "fr": "Envoyer code IR brut [[raw_code]] à [[frequency]]Hz ×[[repeat]]",
+        "nl": "Verstuur raw IR code [[raw_code]] bij [[frequency]]Hz ×[[repeat]]",
+        "de": "Raw IR-Code [[raw_code]] bei [[frequency]]Hz ×[[repeat]] senden"
       },
       "args": [
         {
