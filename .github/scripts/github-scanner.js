@@ -69,7 +69,7 @@ async function scanForkForFingerprints(fork,token,idx){
 const{callAI}=require('./ai-helper');
 
 async function main(){
-  const token=process.env.GITHUB_TOKEN||process.env.GH_PAT;
+  const token=process.env.GH_PAT||process.env.GITHUB_TOKEN;
   const dryRun=process.env.DRY_RUN!=='false';
   const state=loadState();
   const idx=buildIndex();

@@ -30,7 +30,7 @@ async function callAI(text,sysPrompt,opts={}){
     }
   }
   // GitHub Models (free via GITHUB_TOKEN - models.inference.ai.azure.com)
-  const ghToken=process.env.GITHUB_TOKEN||process.env.GH_PAT;
+  const ghToken=process.env.GH_PAT||process.env.GITHUB_TOKEN;
   if(ghToken){
     const ghModels=['gpt-4o-mini','Mistral-small','Meta-Llama-3.1-8B-Instruct'];
     for(const model of ghModels){

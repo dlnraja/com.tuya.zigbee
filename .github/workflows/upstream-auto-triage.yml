@@ -53,7 +53,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
       - name: Triage issues and PRs
         env:
-          GH_TOKEN: ${{ secrets.TRIAGE_PAT || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           TARGET_REPO: JohanBendz/com.tuya.zigbee
           APP_VERSION: ${{ needs.stats.outputs.version }}
