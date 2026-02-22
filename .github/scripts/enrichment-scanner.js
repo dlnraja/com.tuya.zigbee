@@ -84,7 +84,7 @@ async function scanBlakadder(){
 const{callAI}=require('./ai-helper');
 
 async function main(){
-  const token=process.env.GITHUB_TOKEN||process.env.GH_PAT;
+  const token=process.env.GH_PAT||process.env.GITHUB_TOKEN;
   const state=loadState();
   const idx=buildIndex();
   console.log('=== Enrichment Scanner ===');
