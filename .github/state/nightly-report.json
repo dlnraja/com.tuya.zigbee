@@ -1,31 +1,20 @@
 {
-  "timestamp": "2026-02-21T02:58:16.275Z",
+  "timestamp": "2026-02-22T03:05:28.161Z",
   "appVersion": "5.11.19",
   "forum": 1,
-  "github": 1,
+  "github": 0,
+  "diagnostics": 0,
   "forumDetails": [
     {
       "topic": 140352,
-      "post": 1465,
-      "user": "ManuelKugler",
+      "post": 1467,
+      "user": "Slawek_Pe",
       "fps": [
-        "_TZE284_aao3yzhs"
+        "_TZ3210_xzhnra8x"
       ],
-      "reply": "**Fingerprint check** (v5.11.19):\n✅ Supported: `_TZE284_aao3yzhs` → **soil_sensor**, `TS0601` → **air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, button_wireless_6, cei",
+      "reply": "**Fingerprint check** (v5.11.19):\n✅ Supported: `_TZ3210_xzhnra8x` → **plug_energy_monitor**\n\n---\n*Bot Universal Tuya Zigbee v5.11.19*",
       "model": "template"
     }
   ],
-  "githubDetails": [
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1229,
-      "user": "eeckelaertyannick",
-      "fps": [
-        "_TZE200_8ygsuhe1"
-      ],
-      "title": "Smart Airbox no data",
-      "response": "## Fingerprint Check (v5.11.19)\n**Supported:** `_TZE200_8ygsuhe1` → **air_quality_co2, air_quality_comprehensive, climate_sensor**, `TS0601` → **air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, button_wireless_6, ceiling_fan, climate_sensor, co_sensor, contact_sensor, ",
-      "model": "template"
-    }
-  ]
+  "githubDetails": []
 }
