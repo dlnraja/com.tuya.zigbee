@@ -63,6 +63,12 @@ Used by: tuya-automation-hub.yml, sunday-master.yml, nightly-auto-process.yml, u
 7. Add to GitHub Secrets: `GMAIL_CLIENT_ID`, `GMAIL_CLIENT_SECRET`, `GMAIL_REFRESH_TOKEN`
 8. **CRITICAL**: Publish OAuth consent screen (not Testing) → refresh tokens expire after 7 days in Testing mode!
 
+### Auto-Renewal (built-in)
+- **gmail-token-keepalive.yml** runs daily at 6AM UTC — refreshes token to prevent expiry
+- **gmail-diagnostics.yml** runs 3x/day — also refreshes token + auto-rotates if Google issues a new one
+- If Google returns a new refresh_token, it's automatically saved to `GMAIL_REFRESH_TOKEN` secret via `gh secret set`
+- Even in Testing mode (7-day expiry), daily keepalive prevents expiration
+
 ## Priority Setup Order
 1. HOMEY_PAT - required for publishing
 2. GOOGLE_API_KEY - used by most AI workflows + Gmail analysis
