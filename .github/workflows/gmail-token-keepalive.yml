@@ -1,11 +1,12 @@
 name: Gmail Token Keepalive
 on:
   schedule:
-    - cron: '0 6,18 * * *'
+    - cron: '0 6,14,22 * * *'
   workflow_dispatch:
 
 permissions:
   contents: read
+  issues: write
 
 concurrency:
   group: gmail-keepalive
@@ -38,4 +39,19 @@ jobs:
             echo "::notice::Gmail refresh token auto-rotated"
           else
             echo "Token still valid - no rotation needed"
+          fi
+      - name: Alert if token expired or expiring
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f ".github/state/_token_expired_alert.txt" ]; then
+            gh issue create --title "[Alert] Gmail token EXPIRED" \
+              --body "$(cat .github/state/_token_expired_alert.txt)" \
+              --label "automation" 2>/dev/null || true
+            rm -f .github/state/_token_expired_alert.txt
+          fi
+          if [ -f ".github/state/_token_expiring_alert.txt" ]; then
+            echo "::warning::$(cat .github/state/_token_expiring_alert.txt)"
+            rm -f .github/state/_token_expiring_alert.txt
           fi
