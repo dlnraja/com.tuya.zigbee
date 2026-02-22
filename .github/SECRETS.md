@@ -52,7 +52,7 @@ Used by: tuya-automation-hub.yml, sunday-master.yml, nightly-auto-process.yml, u
 
 1. [Google Cloud Console](https://console.cloud.google.com/) → Create project
 2. Enable **Gmail API** (APIs & Services > Library)
-3. Create OAuth client ID (Desktop app type)
+3. Create OAuth client ID (Web application type, redirect URI: `https://developers.google.com/oauthplayground`)
 4. Note `client_id` and `client_secret`
 5. Add scope `gmail.readonly` + your email as test user
 6. Get refresh token via [OAuth Playground](https://developers.google.com/oauthplayground/):
@@ -61,6 +61,7 @@ Used by: tuya-automation-hub.yml, sunday-master.yml, nightly-auto-process.yml, u
    - Click **Authorize APIs** → Sign in → Allow
    - Click **Exchange authorization code for tokens** → Copy **Refresh token**
 7. Add to GitHub Secrets: `GMAIL_CLIENT_ID`, `GMAIL_CLIENT_SECRET`, `GMAIL_REFRESH_TOKEN`
+8. **CRITICAL**: Publish OAuth consent screen (not Testing) → refresh tokens expire after 7 days in Testing mode!
 
 ## Priority Setup Order
 1. HOMEY_PAT - required for publishing
