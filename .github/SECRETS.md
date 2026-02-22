@@ -55,10 +55,11 @@ Used by: tuya-automation-hub.yml, sunday-master.yml, nightly-auto-process.yml, u
 3. Create OAuth client ID (Desktop app type)
 4. Note `client_id` and `client_secret`
 5. Add scope `gmail.readonly` + your email as test user
-6. Get refresh token locally (one-time):
-   - Use Google OAuth Playground or `googleapis` npm
-   - Authorize with `gmail.readonly` scope
-   - Copy the refresh token
+6. Get refresh token via [OAuth Playground](https://developers.google.com/oauthplayground/):
+   - ⚙️ Settings → Check **Use your own OAuth credentials** → Paste Client ID + Secret
+   - Left panel → **Gmail API v1** → Select `gmail.readonly`
+   - Click **Authorize APIs** → Sign in → Allow
+   - Click **Exchange authorization code for tokens** → Copy **Refresh token**
 7. Add to GitHub Secrets: `GMAIL_CLIENT_ID`, `GMAIL_CLIENT_SECRET`, `GMAIL_REFRESH_TOKEN`
 
 ## Priority Setup Order
