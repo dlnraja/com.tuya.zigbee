@@ -86,5 +86,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/community-sync/*.json || true
           NEW=$(node -p "try{JSON.parse(require('fs').readFileSync('data/community-sync/new-fingerprints.json')).length}catch(e){0}")
-          git diff --staged --quiet || git commit -m "Community sync $(date +%Y-%m): ${NEW} new fingerprints from Z2M/ZHA/forum [skip ci]"
+          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
+          git diff --staged --quiet || git commit -m "Community sync v${VER} $(date +%Y-%m): ${NEW} new FPs from Z2M/ZHA/forum/JohanBendz [skip ci]"
           git push || true
