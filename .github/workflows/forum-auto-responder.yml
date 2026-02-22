@@ -12,7 +12,7 @@ on:
       topics:
         description: 'Forum topic IDs (comma-separated)'
         type: string
-        default: '140352,26439'
+        default: '140352,26439,146735,89271,54018'
 
 permissions:
   contents: write
@@ -49,7 +49,8 @@ jobs:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
-          FORUM_TOPICS: ${{ inputs.topics || '140352,26439' }}
+          FORUM_TOPICS: ${{ inputs.topics || '140352,26439,146735,89271,54018' }}
+          REPLY_TOPICS: '140352'
         run: node .github/scripts/forum-responder.js
 
       - name: Commit updated state
@@ -59,5 +60,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .github/state/forum-state.json
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
-          git diff --cached --quiet || git commit -m "Forum responder v${VER}: scanned topics 140352+26439 [skip ci]"
+          git diff --cached --quiet || git commit -m "Forum responder v${VER}: scanned 5 topics (dlnraja+JohanBendz+SmartLife+Archive+WiFi) [skip ci]"
           git push || echo "Nothing to push"
