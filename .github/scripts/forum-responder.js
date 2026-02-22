@@ -122,6 +122,7 @@ async function analyzeWithGemini(post,results,appVersion){
 async function main(){
   const dryRun=process.env.DRY_RUN!=='false';
   const topicIds=(process.env.FORUM_TOPICS||'140352').split(',').map(Number);
+  const replyTopics=new Set((process.env.REPLY_TOPICS||'140352').split(',').map(Number));
   let appVersion='unknown';
   try{appVersion=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
   console.log('=== Forum Auto-Responder ===');
@@ -174,6 +175,7 @@ async function main(){
       if(!reply){maxP=Math.max(maxP,p.post_number);console.log('   -> no response needed');continue}
 
       console.log('   Response:',reply.length,'chars');
+      if(!replyTopics.has(tid)){console.log('   -> scan-only topic, no reply');summary.push({n:p.post_number,u:p.username,a:'scan_only'});maxP=Math.max(maxP,p.post_number);continue}
       if(totalR>=MAX_REPLIES){console.log('   -> MAX_REPLIES reached');continue}
 
       if(dryRun){

@@ -10,6 +10,7 @@ const TOPICS=[
   26439,   // JohanBendz: [APP][Pro] Tuya Zigbee App
   146735,  // [APP] Tuya - Smart Life. Smart Living
   89271,   // [APP][Pro] Tuya Zigbee App - Device Request Archive
+  54018,   // Tuya WiFi devices
 ];
 const BASE='https://community.homey.app';
 const os=require('os');
