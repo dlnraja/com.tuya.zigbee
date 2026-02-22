@@ -319,17 +319,17 @@
 
 ---
 
-## 🎯 ACTION PLAN
+## ACTION PLAN
 
 ### Priority 1 - Critical Fixes:
-- [ ] Fix smart button flow triggers (Cam issue)
-- [ ] Fix contact sensor response (Lasse_K issue)
-- [ ] Fix scene switch button selection (Eftychis issue)
+- [x] Fix smart button flow triggers (Cam) → Fixed v5.9.14
+- [x] Fix contact sensor response (Lasse_K) → Fixed v5.8.85
+- [x] Fix scene switch button selection → Documented as design
 
 ### Priority 2 - Device-Specific:
-- [ ] Fix _TZE284_iadro9bf motion alarm stuck
-- [ ] Add eWeLink CK-TLSR8656-SS5-01(7014) support
-- [ ] Verify _TZE204_gkfbdvyx fixes
+- [x] Fix _TZE284_iadro9bf motion alarm stuck → Throttle+lux smoothing
+- [x] Add eWeLink CK-TLSR8656-SS5-01(7014) → Added to climate_sensor
+- [x] Verify _TZE204_gkfbdvyx fixes → Working per user report
 
 ### Priority 3 - Research & Prevention:
 - [ ] Review all recent regressions

@@ -5,14 +5,16 @@
 
 ---
 
-## 📊 Quick Stats (Updated: 2026-01-24)
+## 📊 Quick Stats (Updated: 2026-02-21)
 
 | Metric | Value |
 |--------|-------|
-| App Version | 5.5.770 |
-| Total Drivers | 105 |
-| Known Issues | 8 |
-| Fixed This Session | 4 |
+| App Version | 5.11.19 |
+| Total Drivers | 138 |
+| Manufacturer Fingerprints | 3,009 |
+| Product IDs | 74 |
+| Known Issues | 3 |
+| Fixed Since v5.5.x | 50+ |
 
 ---
 
@@ -22,7 +24,7 @@
 - **Affected Drivers**: `button_wireless_4`, `button_wireless_1/2/3/6/8`, `button_emergency_sos`
 - **Root Cause**: Cluster bindings only applied during pairing
 - **Solution**: Users must **RE-PAIR** devices after updating
-- **Status**: ✅ Fixed in v5.5.763+ (documentation added)
+- **Status**: ✅ Fixed in v5.5.763+ → confirmed working v5.9.14 (Cam)
 - **Forum Reports**: Cam (Jan 2026), multiple users
 
 ### 2. SOS Button "No IAS Zone cluster found"
@@ -81,7 +83,10 @@
 
 | Version | Driver | Issue | Fix |
 |---------|--------|-------|-----|
-| 5.5.769 | All | Published | Optimizations and fixes |
+| 5.11.19 | motion_sensor | Log spam | Cache profile detection logs |
+| 5.11.19 | presence_sensor_radar | HOBEIAN case | Added uppercase variants |
+| 5.9.23 | switch_2/3/4gang | Group crosstalk | Broadcast filter |
+| 5.8.88 | soil_sensor | DP5 compound | Fixed temp parse |
 | 5.5.768 | DriverMappingLoader | stderr spam | Removed error log for optional file |
 | 5.5.767 | button_emergency_sos | No IAS Zone cluster | Added cluster bindings |
 | 5.5.766 | switch_dimmer_1gang | Missing from app.json | Added to manifest |
