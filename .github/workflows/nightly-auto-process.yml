@@ -66,7 +66,9 @@ jobs:
           git add .github/state/ docs/
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           FILES=$(git diff --cached --name-only | wc -l)
-          git diff --cached --quiet || git commit -m "Nightly v${VER}: processed forum+GitHub, ${FILES} file(s) [skip ci]"
+          D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l)
+          git diff --cached --quiet || git commit -m "Nightly v${VER}: ${D} drivers, ${F} FPs — processed forum+GitHub, ${FILES} file(s) [skip ci]"
           git pull --rebase origin master || true
           git push || true
 
