@@ -22,8 +22,8 @@ function post(n,body){
   if(DRY){console.log(`[DRY] #${n}: ${body.slice(0,120)}...`);return;}
   const f=path.join(os.tmpdir(),'_triage.md');
   fs.writeFileSync(f,`${TAG}\n${body}`);
-  gh(`issue comment ${n} -R ${REPO} -F "${f}"`);
-  console.log(`Commented on ${REPO}#${n}`);
+  try{gh(`issue comment ${n} -R ${REPO} -F "${f}"`);console.log(`Commented on ${REPO}#${n}`);}
+  catch(e){console.log(`Skip comment ${REPO}#${n}: ${e.message.slice(0,80)}`);}
 }
 
 function supportedMsg(found){
