@@ -66,7 +66,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .github/state/
-          git diff --cached --quiet || git commit -m "chore: monthly scan state [skip ci]"
+          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
+          git diff --cached --quiet || git commit -m "Monthly sync v${VER} $(date +%Y-%m): deep scan complete [skip ci]"
           git push || true
 
       - name: Upload report
