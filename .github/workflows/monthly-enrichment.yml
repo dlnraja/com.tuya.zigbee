@@ -88,5 +88,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/*.md data/*.json data/community-sync/*.json .github/state/*.json || true
-          git diff --staged --quiet || git commit -m "chore: Monthly enrichment report $(date +%Y-%m)"
+          D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          git diff --staged --quiet || git commit -m "Monthly enrichment $(date +%Y-%m): ${D} drivers validated, reports updated [skip ci]"
           git push || true

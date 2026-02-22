@@ -67,7 +67,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .github/state/
-          git diff --cached --quiet || git commit -m "chore: forum state [skip ci]"
+          FILES=$(git diff --cached --name-only | wc -l)
+          git diff --cached --quiet || git commit -m "🤖 Forum responder: scanned topics 140352+26439, ${FILES} file(s) updated [skip ci]"
           git push || true
 
   github-scanner:
@@ -101,7 +102,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .github/state/
-          git diff --cached --quiet || git commit -m "chore: github scan state [skip ci]"
+          FILES=$(git diff --cached --name-only | wc -l)
+          git diff --cached --quiet || git commit -m "🔍 GitHub scanner: triaged issues/PRs from dlnraja+JohanBendz, ${FILES} file(s) updated [skip ci]"
           git push || true
 
   enrichment-scanner:
@@ -137,7 +139,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .github/state/
-          git diff --cached --quiet || git commit -m "chore: enrichment state [skip ci]"
+          FILES=$(git diff --cached --name-only | wc -l)
+          git diff --cached --quiet || git commit -m "🧠 Enrichment scanner: cross-referenced Z2M/ZHA/forum sources, ${FILES} file(s) updated [skip ci]"
           git push || true
 
   forum-update:

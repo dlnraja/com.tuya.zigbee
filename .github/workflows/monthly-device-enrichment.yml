@@ -105,7 +105,9 @@ jobs:
             echo "### ℹ️ No new devices found this month" >> $GITHUB_STEP_SUMMARY
           else
             git add -A
-            git commit -m "📅 Monthly enrichment $(date +%Y-%m): Device scan complete" || true
+            D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+            F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json | sort -uf | wc -l)
+            git commit -m "Monthly device enrichment $(date +%Y-%m): ${D} drivers, ${F} fingerprints scanned" || true
             git push || true
             echo "### ✅ Changes committed" >> $GITHUB_STEP_SUMMARY
           fi

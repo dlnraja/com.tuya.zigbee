@@ -64,7 +64,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .github/state/ docs/
-          git diff --cached --quiet || git commit -m "chore: nightly auto-process [skip ci]"
+          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
+          FILES=$(git diff --cached --name-only | wc -l)
+          git diff --cached --quiet || git commit -m "Nightly v${VER}: processed forum+GitHub, ${FILES} file(s) [skip ci]"
           git pull --rebase origin master || true
           git push || true
 
