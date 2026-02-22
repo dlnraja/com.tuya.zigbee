@@ -1,7 +1,7 @@
 name: Gmail Diagnostics Auto-Analysis
 on:
   schedule:
-    - cron: '0 8,14,20 * * *'  # 3x daily
+    - cron: '0 8 * * *'  # 1x daily — saves Gmail quota + GH Actions minutes
   workflow_dispatch:
 
 permissions:

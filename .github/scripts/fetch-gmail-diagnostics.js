@@ -147,9 +147,15 @@ function parseGitHub(em){
   return{issueNum,action,fps,isNew:!!action&&action.toLowerCase()==='opened'};
 }
 
+// Rate limiter: 4s between Gemini calls (max 15 RPM), cap 10/run (safe for 1500 RPD)
+let _aiCalls=0;const AI_MAX=10;
+const delay=ms=>new Promise(r=>setTimeout(r,ms));
+
 // Gemini AI analysis
 async function aiAnalyze(diag,subj,type,xref){
   const gk=process.env.GOOGLE_API_KEY;if(!gk)return null;
+  if(++_aiCalls>AI_MAX){console.log('AI quota guard: skip ('+_aiCalls+'/'+AI_MAX+')');return null;}
+  if(_aiCalls>1)await delay(4000);
   const prompt='Analyze this Homey Zigbee email (type: '+type+').\n'+
     'Subject: '+subj+'\n'+
     'Fingerprints found: '+JSON.stringify(diag.fps)+'\n'+
