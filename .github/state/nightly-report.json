@@ -1,31 +1,20 @@
 {
-  "timestamp": "2026-02-22T18:01:07.090Z",
+  "timestamp": "2026-02-22T19:06:58.657Z",
   "appVersion": "5.11.19",
   "forum": 0,
-  "github": 2,
+  "github": 1,
   "diagnostics": 2,
   "forumDetails": [],
   "githubDetails": [
     {
       "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 456,
-      "user": "martinl88",
+      "number": 963,
+      "user": "erlandjack",
       "fps": [
-        "_TZE204_81yrt3lo"
+        "_TZ3000_fdxihpp7"
       ],
-      "title": "Device Request - 2 Channel Intelligent Energy Meter - _TZE204_81yrt3lo / TS0601",
-      "response": "### Issue #456 Response\n\nHello @martinl88,\n\nThank you for your request regarding the **2 Channel Intelligent Energy Meter** with the fingerprint `_TZE204_81yrt3lo / TS0601`. \n\n#### Supported Drivers\nThis device is supported by the following drivers:\n- **din_rail_meter**\n- **plug_energy_monitor**\n- *",
-      "model": "gh-gpt-4o-mini"
-    },
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 468,
-      "user": "martinl88",
-      "fps": [
-        "_TZE200_bcusnqt8"
-      ],
-      "title": "Device Request - >Smart Energy Sensor - _TZE200_bcusnqt8 / TS0601",
-      "response": "Hello @martinl88,\n\nThank you for your request regarding the Smart Energy Sensor with the fingerprint `_TZE200_bcusnqt8` and model ID `TS0601`. \n\n### Supported Drivers\nThe device fingerprint indicates that it is supported by the following driver:\n- **Driver**: `energy_meter_3phase`\n\n### Pairing Instr",
+      "title": "Device Request - Aubess Tuya 1-gang ZigBee 3.0 Mini Smart Switch - _TZ3000_fdxihpp7 / TS0001",
+      "response": "### Device Request Response for Aubess Tuya 1-gang ZigBee 3.0 Mini Smart Switch\n\nThank you for providing the detailed information and device interview for the Aubess Tuya 1-gang ZigBee 3.0 Mini Smart Switch (_TZ3000_fdxihpp7 / TS0001). \n\n#### Supported Fingerprint\nThe fingerprint `_TZ3000_fdxihpp7` ",
       "model": "gh-gpt-4o-mini"
     }
   ]
