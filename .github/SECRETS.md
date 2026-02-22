@@ -7,7 +7,7 @@
 |--------|--------|
 | HOMEY_PAT | https://tools.developer.homey.app/me |
 
-Used by: publish.yml, auto-publish-on-push.yml
+Used by: publish.yml, auto-publish-on-push.yml, nightly-auto-process.yml, monthly-comprehensive-sync.yml (auto-publish-draft.js)
 
 ## 2. Homey Forum
 | Secret | Purpose |
