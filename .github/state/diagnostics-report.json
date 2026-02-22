@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-02-22T13:16:44.035Z",
-  "count": 1,
+  "timestamp": "2026-02-22T13:57:13.574Z",
+  "count": 2,
   "byType": {
     "diagnostic": 0,
-    "bug_report": 0,
+    "bug_report": 1,
     "github": 0,
     "changelog": 0,
     "device_issue": 1,
@@ -12,17 +12,47 @@
   "newFingerprints": [],
   "diagnostics": [
     {
-      "id": "19c8579aaf52e28e",
-      "type": "device_issue",
+      "id": "19c8597f0a05c68c",
+      "type": "bug_report",
       "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "Manuel Kugler <notifications@athom.discoursemail.com>",
-      "date": "Sun, 22 Feb 2026 13:11:08 +0000",
+      "from": "Shiki Lee <notifications@athom.discoursemail.com>",
+      "date": "Sun, 22 Feb 2026 13:44:12 +0000",
+      "fps": {
+        "mfr": [
+          "_TZ3000_dd8wwzcy"
+        ],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [
+        {
+          "fingerprint": "_TZ3000_dd8wwzcy",
+          "supported": true,
+          "drivers": [
+            "climate_sensor"
+          ]
+        }
+      ],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c85938b37455fa",
+      "type": "device_issue",
+      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [MOES Scene Switch 4 gang] - [MOES] / [_TZ3000_zgyzgdua\"] (Issue #1327)",
+      "from": "Dylan RAJASEKARAM <dylan.rajasekaram@gmail.com>",
+      "date": "Sun, 22 Feb 2026 14:39:26 +0100",
       "fps": {
         "mfr": [],
         "pid": []
       },
       "errs": [],
-      "devices": [],
+      "devices": [
+        "Interview"
+      ],
       "xref": [],
       "ghInfo": null,
       "ai": null,
