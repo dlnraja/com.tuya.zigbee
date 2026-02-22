@@ -35,7 +35,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .github/state/diagnostics-state.json .github/state/diagnostics-report.json
-          git diff --staged --quiet || git commit -m "[Auto] Gmail diagnostics analysis $(date -u +%Y-%m-%d)"
+          COUNT=$(node -p "try{JSON.parse(require('fs').readFileSync('.github/state/diagnostics-report.json')).emails?.length||0}catch(e){0}")
+          git diff --staged --quiet || git commit -m "Gmail diagnostics $(date -u +%Y-%m-%d): ${COUNT} emails analyzed [skip ci]"
           git push || true
       - name: Create issues for critical diagnostics
         if: always()
