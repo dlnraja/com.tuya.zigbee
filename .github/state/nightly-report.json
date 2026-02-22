@@ -1,34 +1,9 @@
 {
-  "timestamp": "2026-02-22T21:55:04.363Z",
+  "timestamp": "2026-02-22T22:05:16.627Z",
   "appVersion": "5.11.20",
   "forum": 0,
-  "github": 1,
+  "github": 0,
   "diagnostics": 0,
   "forumDetails": [],
-  "githubDetails": [
-    {
-      "repo": "dlnraja/com.tuya.zigbee",
-      "number": 133,
-      "user": "github-actions[bot]",
-      "fps": [
-        "_TZE284_g1enhdsi",
-        "_TZ3000_f2bw0b6k",
-        "_TZ3000_qamj2vnn",
-        "_TZ3000_avotanj3",
-        "_TZ3290_7v1k4vuf",
-        "_TZ3290_rlkmy85q",
-        "_TZ3290_jxvzqatw",
-        "_TZ3290_lypnqvle",
-        "_TZ3290_nba3knps",
-        "_TZ3290_yac64inu",
-        "_TZE204_2jnoy8dj",
-        "_TZ3210_iymfxdis",
-        "_TZ3002_xkxgfxsg",
-        "_TZ3002_tlsvxhxc"
-      ],
-      "title": "[Auto] 14 new fingerprints from community (2026-02)",
-      "response": "Hello @github-actions[bot],\n\nThank you for the monthly community sync report. Unfortunately, none of the fingerprints listed in your submission are currently supported in the Universal Tuya Zigbee app. Each of the provided manufacturer IDs (_TZE284_g1enhdsi, _TZ3000_f2bw0b6k, etc.) does not match an",
-      "model": "gh-gpt-4o-mini"
-    }
-  ]
+  "githubDetails": []
 }
