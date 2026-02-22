@@ -194,9 +194,25 @@ jobs:
           LAST_RESPOND_FILE: /tmp/last_forum_respond.txt
         run: node .github/scripts/forum-respond-requests.js
 
+  device-diagnostics:
+    name: "Homey Device Diagnostics"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Run device diagnostics
+        continue-on-error: true
+        env:
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+        run: node .github/scripts/homey-device-diagnostics.js
+
   summary:
     name: "Weekly Summary"
-    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, forum-respond]
+    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, forum-respond, device-diagnostics]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -208,3 +224,4 @@ jobs:
           echo "- Cross-driver gaps: ${{ needs.cross-driver-gaps.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Forum scan: ${{ needs.scan-forum.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Forum respond: ${{ needs.forum-respond.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Device diagnostics: ${{ needs.device-diagnostics.result }}" >> $GITHUB_STEP_SUMMARY
