@@ -58,14 +58,14 @@ Used by: homey-device-diagnostics.js (NEW)
 |----------|-------------|
 | publish.yml | HOMEY_PAT |
 | auto-publish-on-push.yml | HOMEY_EMAIL, HOMEY_PASSWORD |
-| nightly-auto-process.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HF_TOKEN, APIFREELLM_KEY, HOMEY_PAT, HOMEY_PAT_API, HOMEY_EMAIL, HOMEY_PASSWORD, GH_PAT |
-| sunday-master.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HF_TOKEN, APIFREELLM_KEY, HOMEY_PAT_API, HOMEY_EMAIL, HOMEY_PASSWORD |
-| tuya-automation-hub.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HF_TOKEN, APIFREELLM_KEY, GROQ_API_KEY, MISTRAL_API_KEY, OPENROUTER_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
+| nightly-auto-process.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, HOMEY_EMAIL, HOMEY_PASSWORD, GH_PAT |
+| sunday-master.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT_API, HOMEY_EMAIL, HOMEY_PASSWORD |
+| tuya-automation-hub.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
 | upstream-auto-triage.yml | GH_PAT, GOOGLE_API_KEY |
-| forum-auto-responder.yml | GOOGLE_API_KEY, OPENAI_API_KEY, GROQ_API_KEY, MISTRAL_API_KEY, OPENROUTER_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
+| forum-auto-responder.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
 | gmail-diagnostics.yml | GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN, GOOGLE_API_KEY, GH_PAT |
 | gmail-token-keepalive.yml | GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN, GH_PAT |
-| monthly-comprehensive-sync.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HF_TOKEN, APIFREELLM_KEY, HOMEY_PAT, HOMEY_PAT_API, GH_PAT |
+| monthly-comprehensive-sync.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, GH_PAT |
 | weekly-fingerprint-sync.yml | GITHUB_TOKEN |
 | validate.yml | GITHUB_TOKEN |
 | code-quality.yml | GITHUB_TOKEN |
@@ -80,7 +80,8 @@ Used by: homey-device-diagnostics.js (NEW)
 5. Add secrets: GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN
 6. CRITICAL: Publish OAuth consent screen (Testing mode = 7-day token expiry)
 
-Auto-renewal: gmail-token-keepalive.yml runs daily at 6AM UTC.
+Auto-renewal: gmail-token-keepalive.yml runs 3x/day (6h, 14h, 22h UTC).
+Testing mode: token expires every 7 days. Keepalive creates GitHub issue alert when expired.
 
 ## Priority Setup Order
 
