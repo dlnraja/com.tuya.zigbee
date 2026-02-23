@@ -1,5 +1,5 @@
 # MASTER REFERENCE — Universal Tuya Zigbee
-**v5.11.20** | **2026-02-22** | com.dlnraja.tuya.zigbee
+**v5.11.22** | **2026-02-23** | com.dlnraja.tuya.zigbee
 
 ---
 
