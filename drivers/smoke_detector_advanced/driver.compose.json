@@ -25,7 +25,10 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
+      "_TYZB01_0aps0h1r",
       "_TYZB01_dsjszp0x",
+      "_TYZB01_o7m83470",
+      "_TYZB01_tob46aoq",
       "_TZ3000_0fkmfxwg",
       "_TZ3000_4fqstsnh",
       "_TZ3000_hhiodade",
@@ -41,6 +44,7 @@
       "_TZE200_0zaf1cr8",
       "_TZE200_aycxwiau",
       "_TZE200_dq1mfjug",
+      "_TZE200_ioxkjvuz",
       "_TZE200_kb5noeto",
       "_TZE200_m8iikwas",
       "_TZE200_m9skfctm",
@@ -57,15 +61,14 @@
       "_TZE204_kgaxpvxr",
       "_TZE204_lhx6wprc",
       "_TZE204_ntcy3xu1",
+      "_TZE204_qaxkdgyt",
       "_TZE204_rccxox8p",
       "_TZE204_vafd6gkz",
       "_TZE284_0zaf1cr8",
       "_TZE284_6ycgarab",
       "_TZE284_gyzlwu5q",
       "_TZE284_n4ttsck2",
-      "_TZE284_rccxox8p",
-      "_TZE200_ioxkjvuz",
-      "_TZE204_qaxkdgyt"
+      "_TZE284_rccxox8p"
     ],
     "endpoints": {
       "1": {

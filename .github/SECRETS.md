@@ -57,8 +57,8 @@ Used by: homey-device-diagnostics.js (NEW)
 
 | Workflow | Secrets Used |
 |----------|-------------|
-| publish.yml | HOMEY_PAT, DISCOURSE_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
-| auto-publish-on-push.yml | HOMEY_EMAIL, HOMEY_PASSWORD |
+| publish.yml | HOMEY_PAT, GOOGLE_API_KEY, GH_PAT, DISCOURSE_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
+| auto-publish-on-push.yml | HOMEY_PAT, GOOGLE_API_KEY, GH_PAT, DISCOURSE_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
 | nightly-auto-process.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, HOMEY_EMAIL, HOMEY_PASSWORD, GH_PAT, DISCOURSE_API_KEY, GMAIL_* |
 | sunday-master.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, HOMEY_EMAIL, HOMEY_PASSWORD, DISCOURSE_API_KEY, GMAIL_* |
 | tuya-automation-hub.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD, DISCOURSE_API_KEY |
@@ -68,8 +68,11 @@ Used by: homey-device-diagnostics.js (NEW)
 | gmail-token-keepalive.yml | GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN, GH_PAT |
 | monthly-comprehensive-sync.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, GH_PAT |
 | weekly-fingerprint-sync.yml | GITHUB_TOKEN |
+| daily-everything.yml | GH_PAT, GOOGLE_API_KEY, HOMEY_PAT, HOMEY_EMAIL, HOMEY_PASSWORD, DISCOURSE_API_KEY, GMAIL_* |
+| github-auto-manage.yml | GH_PAT, GOOGLE_API_KEY, HOMEY_PAT |
 | validate.yml | GITHUB_TOKEN |
 | code-quality.yml | GITHUB_TOKEN |
+| dependabot-auto-merge.yml | GH_PAT, GITHUB_TOKEN |
 | monthly-enrichment.yml | HOMEY_PAT_API |
 
 ## Gmail OAuth Setup
