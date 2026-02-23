@@ -1,22 +1,25 @@
 {
-  "timestamp": "2026-02-23T03:06:18.106Z",
-  "count": 4,
+  "timestamp": "2026-02-23T08:19:37.612Z",
+  "count": 2,
   "byType": {
+    "forum_message": 0,
+    "homey_system": 0,
+    "interview": 0,
     "diagnostic": 0,
     "bug_report": 0,
-    "github": 0,
+    "github": 2,
     "changelog": 0,
-    "device_issue": 1,
-    "general": 3
+    "device_issue": 0,
+    "general": 0
   },
   "newFingerprints": [],
   "diagnostics": [
     {
-      "id": "19c884f6668e0ba2",
-      "type": "device_issue",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "\"🇳🇱 NL\" <notifications@athom.discoursemail.com>",
-      "date": "Mon, 23 Feb 2026 02:23:50 +0000",
+      "id": "19c89297d7a04af8",
+      "type": "github",
+      "subj": "[dlnraja/com.tuya.zigbee] Weekly Fingerprint Sync (7 new lines) (PR #134)",
+      "from": "\"github-actions[bot]\" <notifications@github.com>",
+      "date": "Sun, 22 Feb 2026 22:22:01 -0800",
       "fps": {
         "mfr": [],
         "pid": []
@@ -24,17 +27,25 @@
       "errs": [],
       "devices": [],
       "xref": [],
-      "ghInfo": null,
+      "ghInfo": {
+        "issueNum": "134",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false
+      },
       "ai": null,
       "homeyVersion": null,
       "appVersion": null
     },
     {
-      "id": "19c87977f7bac51b",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #1952 is now testing",
-      "from": "Homey <noreply@homey.app>",
-      "date": "Sun, 22 Feb 2026 23:02:57 +0000",
+      "id": "19c8929794839eb8",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Weekly Fingerprint Sync (7 new lines) (PR #134)",
+      "from": "\"github-actions[bot]\" <notifications@github.com>",
+      "date": "Sun, 22 Feb 2026 22:22:00 -0800",
       "fps": {
         "mfr": [],
         "pid": []
@@ -42,43 +53,15 @@
       "errs": [],
       "devices": [],
       "xref": [],
-      "ghInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "19c8769f1ef07a73",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
-      "from": "Homey <noreply@homey.app>",
-      "date": "Sun, 22 Feb 2026 22:13:12 +0000",
-      "fps": {
-        "mfr": [],
-        "pid": []
+      "ghInfo": {
+        "issueNum": "134",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false
       },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "19c8769c1ed30859",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #1952 has been created",
-      "from": "Homey <noreply@homey.app>",
-      "date": "Sun, 22 Feb 2026 22:13:00 +0000",
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null
