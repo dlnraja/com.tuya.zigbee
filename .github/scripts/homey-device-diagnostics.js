@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 'use strict';
 const fs=require('fs'),path=require('path');
-const PAT=process.env.HOMEY_PAT_API||process.env.HOMEY_PAT;
+const TOKENS=[process.env.HOMEY_PAT_API,process.env.HOMEY_PAT].filter(Boolean);
+let PAT=null;
 const SUM=process.env.GITHUB_STEP_SUMMARY||null;
 const STATE=path.join(__dirname,'..','state');
 const REPORT=path.join(STATE,'homey-device-report.json');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const APP='com.dlnraja.tuya.zigbee';
-if(!PAT){console.log('HOMEY_PAT_API/HOMEY_PAT not set - skip');process.exit(0);}
+if(!TOKENS.length){console.log('HOMEY_PAT_API/HOMEY_PAT not set - skip');process.exit(0);}
 function log(t){console.log(t);if(SUM)fs.appendFileSync(SUM,t+'\n');}
 async function api(url){
   const r=await fetch(url,{headers:{'Authorization':'Bearer '+PAT}});
@@ -27,7 +28,12 @@ function getLocalFPs(){
 }
 async function main(){
   log('## Homey Device Diagnostics');
-  const me=await api('https://api.athom.com/user/me');
+  let me=null;
+  for(const t of TOKENS){
+    PAT=t;
+    try{me=await api('https://api.athom.com/user/me');log('Auth OK (token '+t.slice(0,8)+'...)');break;}catch(e){log('Token '+t.slice(0,8)+'... failed: '+e.message);}
+  }
+  if(!me){log('::error::All tokens failed for api.athom.com');process.exit(1);}
   log('User: '+(me.firstname||'')+' '+(me.lastname||''));
   const homeys=await api('https://api.athom.com/user/me/homey');
   if(!homeys||!homeys.length){log('No Homeys found');return;}
