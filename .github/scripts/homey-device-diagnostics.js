@@ -35,8 +35,9 @@ async function main(){
   }
   if(!me){log('::error::All tokens failed for api.athom.com');process.exit(1);}
   log('User: '+(me.firstname||'')+' '+(me.lastname||''));
-  const homeys=await api('https://api.athom.com/user/me/homey');
-  if(!homeys||!homeys.length){log('No Homeys found');return;}
+  let homeys=[];
+  try{homeys=await api('https://api.athom.com/user/me/homey');}catch(e){log('::warning::Cannot list Homeys: '+e.message+' (PAT scope may be limited)');}
+  if(!homeys||!homeys.length){log('No Homeys found (try a full-scope OAuth token)');return;}
   log('Found '+homeys.length+' Homey(s)');
   const localFPs=getLocalFPs();
   log('Local fingerprints: '+localFPs.size);
