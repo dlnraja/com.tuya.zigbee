@@ -95,8 +95,8 @@ async function analyzeWithGemini(post,results,appVersion){
 
 async function main(){
   let dryRun=process.env.DRY_RUN!=='false';
-  const topicIds=(process.env.FORUM_TOPICS||'140352').split(',').map(Number);
-  const replyTopics=new Set((process.env.REPLY_TOPICS||'140352').split(',').map(Number));
+  const topicIds=(process.env.FORUM_TOPICS||'140352,26439,146735,89271,54018,12758,85498').split(',').map(Number);
+  const replyTopics=new Set((process.env.REPLY_TOPICS||'140352,26439').split(',').map(Number));
   let appVersion='unknown';
   try{appVersion=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
   console.log('=== Forum Auto-Responder ===');
