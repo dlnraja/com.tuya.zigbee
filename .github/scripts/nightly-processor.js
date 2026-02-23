@@ -1,9 +1,9 @@
 const fs=require('fs'),path=require('path');
 const{callAI,analyzeImage,sleep}=require('./ai-helper');
-const FORUM='https://community.homey.app';
+const{getForumAuth,fmtCk,FORUM}=require('./forum-auth');
 const GH='https://api.github.com';
 const REPOS=['dlnraja/com.tuya.zigbee','JohanBendz/com.tuya.zigbee'];
-const TOPICS=[140352,26439];
+const TOPICS=[140352,26439,146735,89271,54018,12758,85498];
 const SKIP=['dlnraja','system','discobot'];
 const MAX_REPLIES=8;
 const ROOT=path.join(__dirname,'..','..'),DDIR=path.join(ROOT,'drivers');
@@ -38,37 +38,14 @@ function lookupFPs(fps,idx,pidx){
   return results;
 }
 
-function extractCookies(res){
-  const c={};
-  const headers=typeof res.headers.getSetCookie==='function'?res.headers.getSetCookie():
-    (res.headers.get('set-cookie')||'').split(/,(?=[^ ])/);
-  for(const h of headers){const i=h.indexOf('='),s=h.indexOf(';');
-    if(i>0)c[h.substring(0,i).trim()]=h.substring(i+1,s>0?s:undefined).trim()}
-  return c;
-}
-function fmtCookies(c){return Object.entries(c).map(([k,v])=>k+'='+v).join('; ')}
-
-async function discourseLogin(){
-  const email=process.env.HOMEY_EMAIL,pw=process.env.HOMEY_PASSWORD;
-  if(!email||!pw){console.log('No HOMEY_EMAIL/PASSWORD');return null}
-  const r1=await fetch(FORUM+'/session/csrf',{headers:{'X-Requested-With':'XMLHttpRequest',Accept:'application/json','User-Agent':'Mozilla/5.0 (compatible; TuyaZigbeeBot/1.0)'}});
-  if(!r1.ok)return null;
-  const csrf=(await r1.json()).csrf;const ck1=extractCookies(r1);
-  const r2=await fetch(FORUM+'/session',{method:'POST',redirect:'manual',
-    headers:{'Content-Type':'application/x-www-form-urlencoded','X-CSRF-Token':csrf,'X-Requested-With':'XMLHttpRequest','User-Agent':'Mozilla/5.0 (compatible; TuyaZigbeeBot/1.0)',Cookie:fmtCookies(ck1)},
-    body:'login='+encodeURIComponent(email)+'&password='+encodeURIComponent(pw)});
-  if(!r2.ok&&r2.status!==302)return null;
-  const ck2={...ck1,...extractCookies(r2)};
-  if(!ck2._t)return null;
-  return{csrf,cookies:ck2};
-}
 
 async function postForum(topicId,content,replyTo,auth){
   const body={topic_id:topicId,raw:content};
   if(replyTo)body.reply_to_post_number=replyTo;
-  const r=await fetch(FORUM+'/posts',{method:'POST',
-    headers:{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCookies(auth.cookies)},
-    body:JSON.stringify(body)});
+  const h=auth.type==='apikey'
+    ?{'Content-Type':'application/json','User-Api-Key':auth.key}
+    :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
+  const r=await fetch(FORUM+'/posts',{method:'POST',headers:h,body:JSON.stringify(body)});
   return r.ok?(await r.json()):null;
 }
 
@@ -397,7 +374,7 @@ async function main(){
   // 1. Forum
   console.log('\n== 1. Forum Processing ==');
   let auth=null;
-  if(!dryRun)auth=await discourseLogin();
+  if(!dryRun)auth=await getForumAuth();
   const forumResults=await processForumPosts(state,idx,pidx,auth,appVersion,dryRun);
   console.log('Forum: '+forumResults.length+' replies');
 

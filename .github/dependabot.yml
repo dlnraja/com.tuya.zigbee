@@ -1,22 +1,77 @@
 version: 2
 updates:
-  - "package-ecosystem": npm
+  - package-ecosystem: npm
     directory: /
     schedule:
       interval: weekly
-    "open-pull-requests-limit": 5
+      day: monday
+      time: "04:00"
+      timezone: Europe/Paris
+    open-pull-requests-limit: 10
     reviewers:
-      - @your-username
+      - dlnraja
     assignees:
-      - @your-username
-    "commit_message":
-      prefix: chore
-      "prefix-development": chore
+      - dlnraja
+    commit-message:
+      prefix: "chore(deps)"
+      prefix-development: "chore(dev-deps)"
       include: scope
+    labels:
+      - dependencies
+      - automated
+    groups:
+      production:
+        patterns:
+          - "homey-zigbeedriver"
+          - "zigbee-clusters"
+          - "tuyapi"
+          - "color-space"
+      dev-tools:
+        patterns:
+          - "eslint*"
+          - "mocha"
+          - "nyc"
+          - "chai"
+        update-types:
+          - minor
+          - patch
+      dev-other:
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "homey-zigbeedriver"
+          - "zigbee-clusters"
+          - "tuyapi"
+          - "color-space"
+          - "eslint*"
+          - "mocha"
+          - "nyc"
+          - "chai"
+        update-types:
+          - minor
+          - patch
 
-  - "package-ecosystem": github-actions
+  - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
-    "open-pull-requests-limit": 3
-
+      day: monday
+      time: "04:30"
+      timezone: Europe/Paris
+    open-pull-requests-limit: 5
+    reviewers:
+      - dlnraja
+    assignees:
+      - dlnraja
+    commit-message:
+      prefix: "ci(actions)"
+      include: scope
+    labels:
+      - dependencies
+      - github-actions
+      - automated
+    groups:
+      github-actions:
+        patterns:
+          - "actions/*"
+          - "athombv/*"

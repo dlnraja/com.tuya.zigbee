@@ -2,8 +2,8 @@ name: Tuya Automation Hub
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
-    - cron: '0 3 * * 1,4'
+    - cron: '0 1,7,13,19 * * *'  # Offset from daily-everything (02,08,14,20)
+    - cron: '0 4 * * 1,4'  # Mon/Thu deep scan
   workflow_dispatch:
     inputs:
       mode:
@@ -40,13 +40,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     if: |
-      github.event_name == 'schedule' && github.event.schedule == '0 */6 * * *' ||
+      github.event_name == 'schedule' && github.event.schedule == '0 1,7,13,19 * * *' ||
       github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'forum-only')
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: npm ci --prefer-offline --no-audit || npm install
       - name: Run Forum Responder
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
@@ -68,6 +71,7 @@ jobs:
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           TOPICS=$(node -p "try{Object.keys(JSON.parse(require('fs').readFileSync('.github/state/forum-state.json')).topics).length}catch(e){0}")
           git diff --cached --quiet || git commit -m "Forum responder v${VER}: scanned ${TOPICS} topics, ${FILES} file(s) updated [skip ci]"
+          git pull --rebase origin master || true
           git push || true
 
   github-scanner:
@@ -75,13 +79,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     if: |
-      github.event_name == 'schedule' && github.event.schedule == '0 3 * * 1,4' ||
+      github.event_name == 'schedule' && github.event.schedule == '0 4 * * 1,4' ||
       github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'github-only')
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: npm ci --prefer-offline --no-audit || npm install
       - name: Run GitHub Scanner
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -99,6 +106,7 @@ jobs:
           FILES=$(git diff --cached --name-only | wc -l)
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           git diff --cached --quiet || git commit -m "GitHub scanner v${VER}: triaged issues/PRs from dlnraja+JohanBendz, ${FILES} file(s) [skip ci]"
+          git pull --rebase origin master || true
           git push || true
 
   enrichment-scanner:
@@ -106,13 +114,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     if: |
-      github.event_name == 'schedule' && github.event.schedule == '0 3 * * 1,4' ||
+      github.event_name == 'schedule' && github.event.schedule == '0 4 * * 1,4' ||
       github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'enrichment-only')
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: npm ci --prefer-offline --no-audit || npm install
       - name: Run Enrichment Scanner
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -133,6 +144,7 @@ jobs:
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l)
           git diff --cached --quiet || git commit -m "Enrichment v${VER}: ${F} FPs cross-referenced Z2M/ZHA/forum, ${FILES} file(s) [skip ci]"
+          git pull --rebase origin master || true
           git push || true
 
   forum-update:
@@ -142,7 +154,7 @@ jobs:
     needs: [github-scanner, enrichment-scanner]
     if: |
       always() && (
-        github.event_name == 'schedule' && github.event.schedule == '0 3 * * 1,4' ||
+        github.event_name == 'schedule' && github.event.schedule == '0 4 * * 1,4' ||
         github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'forum-update-only')
       )
     steps:
@@ -159,3 +171,11 @@ jobs:
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
         run: node .github/scripts/forum-updater.js
+
+      - name: Auto-Publish Draft to Test
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          if [ -z "$HOMEY_PAT" ]; then exit 0; fi
+          node .github/scripts/auto-publish-draft.js || true
