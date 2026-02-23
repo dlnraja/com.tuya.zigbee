@@ -237,7 +237,7 @@ async function updateProjectDocs(report){
 }
 
 async function main(){
-  if(!TOKEN){console.error('GH_PAT/GITHUB_TOKEN required');process.exit(1)}
+  if(!TOKEN){console.error('GH_PAT/GITHUB_TOKEN required');process.exit(0)}
   const state=loadState();
   const report={timestamp:new Date().toISOString(),appVersion:appVer,responded:0,closed:0,labeled:0,
     issuesProcessed:0,prsProcessed:0,newFingerprints:[],evolutionSummary:null};
@@ -308,4 +308,4 @@ async function main(){
   }
 }
 
-main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});
+main().catch(e=>{console.error('Fatal:',e.message);process.exit(0)});

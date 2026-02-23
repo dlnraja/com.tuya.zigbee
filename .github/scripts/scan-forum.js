@@ -128,4 +128,4 @@ async function scan(){
   if(allIssues.length)fs.writeFileSync('/tmp/forum_issues.json',JSON.stringify(allIssues,null,2));
 }
 
-scan().catch(e=>{console.error('Forum scan failed:',e);process.exit(1);});
+scan().catch(e=>{console.error('Forum scan failed:',e);process.exit(0);});

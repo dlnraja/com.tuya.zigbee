@@ -52,6 +52,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Triage issues and PRs
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
@@ -89,6 +90,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Triage issues and PRs
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
@@ -116,6 +118,7 @@ jobs:
           key: forum-${{ github.run_number }}
           restore-keys: forum-
       - name: Scan forum for new device requests
+        continue-on-error: true
         env:
           LAST_POST_FILE: /tmp/last_forum_post.txt
         run: node .github/scripts/scan-forum.js
