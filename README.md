@@ -42,7 +42,7 @@
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-02-21 |
+| **Last Updated** | 2026-02-23 |
 
 ### 📦 Top 138 drivers by Device IDs
 
@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.11.22** | v5.11.22: 138 drivers, 5190 fingerprints, enhanced automation and device discovery. |
 | **v5.11.19** | Multi-topic forum scanning + scan-only mode for external threads |
 | **v5.11.16** | Auto-publish via GitHub Actions |
 | **v5.11.15** | Auto-publish via GitHub Actions |
