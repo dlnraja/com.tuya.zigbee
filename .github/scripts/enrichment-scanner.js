@@ -112,6 +112,31 @@ async function main(){
   console.log('Blakadder: found',blakadder.length,'fps,',blakNew.length,'new');
   for(const fp of blakNew)allNew.push({fp,source:'blakadder'});
 
+  // 4. Gmail diagnostics (new fingerprints from user emails)
+  try{const df=path.join(__dirname,'..','state','diagnostics-report.json');
+    if(fs.existsSync(df)){const dr=JSON.parse(fs.readFileSync(df,'utf8'));
+      const gmailFPs=(dr.newFingerprints||[]).filter(fp=>!idx.has(fp));
+      console.log('Gmail diagnostics:',gmailFPs.length,'new FPs');
+      for(const fp of gmailFPs)allNew.push({fp,source:'gmail-diag'});
+    }}catch(e){console.log('Gmail skip:',e.message)}
+
+  // 5. Forum scan results (device requests with missing fingerprints)
+  try{const ff='/tmp/forum_issues.json';
+    if(fs.existsSync(ff)){const fr=JSON.parse(fs.readFileSync(ff,'utf8'));
+      let fc=0;for(const iss of fr){for(const fp of(iss.missing||[])){
+        if(!idx.has(fp)){allNew.push({fp,source:'forum-request',user:iss.user,post:iss.postNum});fc++;}}}
+      console.log('Forum requests:',fc,'new FPs');
+    }}catch(e){console.log('Forum skip:',e.message)}
+
+  // 6. Device interviews
+  try{const di=path.join(__dirname,'..','..','docs','data','DEVICE_INTERVIEWS.json');
+    if(fs.existsSync(di)){const iv=JSON.parse(fs.readFileSync(di,'utf8'));
+      const arr=Array.isArray(iv)?iv:Object.values(iv);let ic=0;
+      for(const d of arr){const fp=d.manufacturerName||d.mfr;
+        if(fp&&fp.startsWith('_T')&&!idx.has(fp)){allNew.push({fp,source:'interview',pid:d.productId||d.pid});ic++;}}
+      console.log('Device interviews:',ic,'new FPs');
+    }}catch(e){console.log('Interview skip:',e.message)}
+
   // Deduplicate
   const deduped=new Map();
   for(const item of allNew){
@@ -141,6 +166,9 @@ async function main(){
     md+='| Z2M Issues | '+z2mIssues.length+' | '+z2mNew.length+' |\n';
     md+='| ZHA Issues | '+zhaIssues.length+' | '+zhaNew.length+' |\n';
     md+='| Blakadder | '+blakadder.length+' | '+blakNew.length+' |\n';
+    md+='| Gmail Diagnostics | — | '+uniqueNew.filter(f=>f.source==='gmail-diag').length+' |\n';
+    md+='| Forum Requests | — | '+uniqueNew.filter(f=>f.source==='forum-request').length+' |\n';
+    md+='| Device Interviews | — | '+uniqueNew.filter(f=>f.source==='interview').length+' |\n';
     md+='| **Total unique** | | **'+uniqueNew.length+'** |\n';
     if(aiPlan)md+='\n### Integration Plan\n'+aiPlan+'\n';
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,md);

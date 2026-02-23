@@ -1,0 +1,279 @@
+name: "Daily Everything Pipeline"
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+    - cron: '0 8 * * *'
+    - cron: '0 14 * * *'
+    - cron: '0 20 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: daily-everything
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  everything:
+    name: "Forum + GitHub + Gmail + ExtSources + Triage + Respond + Fix + Publish"
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: App stats
+        id: stats
+        run: |
+          V=$(node -p "require('./app.json').version")
+          D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l)
+          echo "version=$V" >> $GITHUB_OUTPUT
+          echo "drivers=$D" >> $GITHUB_OUTPUT
+          echo "fps=$F" >> $GITHUB_OUTPUT
+          echo "App v$V | $D drivers | $F FPs"
+
+      # ===== 1. FORUM: Scan + Respond =====
+      - name: "1. Forum Scan"
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: |
+          echo "=== Forum Scan ==="
+          node .github/scripts/scan-forum.js || true
+          echo "=== Forum Respond ==="
+          node .github/scripts/forum-responder.js || true
+          echo "=== Forum Respond Requests ==="
+          node .github/scripts/forum-respond-requests.js || true
+
+      # ===== 2. GITHUB: Triage + Respond + Close =====
+      - name: "2. GitHub Issues & PRs Manager"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          STALE_DAYS: "30"
+          REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
+        run: node .github/scripts/github-issue-manager.js
+
+      # ===== 3. GITHUB: Upstream Triage (JohanBendz + forks) =====
+      - name: "3. Upstream Triage"
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          TARGET_REPO: JohanBendz/com.tuya.zigbee
+          APP_VERSION: ${{ steps.stats.outputs.version }}
+          DRIVER_COUNT: ${{ steps.stats.outputs.drivers }}
+          FP_COUNT: ${{ steps.stats.outputs.fps }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          SCAN_FORKS: "true"
+        run: node .github/scripts/triage-upstream-enhanced.js
+
+      # ===== 4. GITHUB: Scanner (both repos, AI summary) =====
+      - name: "4. GitHub Activity Scanner"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/github-scanner.js
+
+      # ===== 5. GMAIL: Diagnostics (1x/day at 8AM run) =====
+      - name: "5. Gmail Diagnostics"
+        continue-on-error: true
+        env:
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          HOUR=$(date -u +%H)
+          if [ "$HOUR" = "08" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "=== Running Gmail Diagnostics ==="
+            node .github/scripts/fetch-gmail-diagnostics.js || true
+          else
+            echo "Skipping Gmail (only runs at 08:00 UTC)"
+          fi
+
+      # ===== 6. NIGHTLY: Process forum+GitHub data =====
+      - name: "6. Nightly Processor"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/nightly-processor.js
+
+      # ===== 7. FORUM ACTIVITY: Scrape ALL account activity =====
+      - name: "7. Forum Activity Scraper"
+        continue-on-error: true
+        env:
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          FORUM_USERNAME: dlnraja
+        run: node .github/scripts/forum-activity-scraper.js
+
+      # ===== 8. EXTERNAL SOURCES: Z2M+ZHA+Blakadder+deCONZ+Hubitat =====
+      - name: "8. External Sources Scanner"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/external-sources-scanner.js
+
+      # ===== 9. ENRICHMENT: Cross-reference all sources =====
+      - name: "9. Enrichment Scanner"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/enrichment-scanner.js
+
+      # ===== 10. AI CHANGELOG: Generate from all findings =====
+      - name: "10. AI Changelog"
+        continue-on-error: true
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/generate-ai-changelog.js
+
+      # ===== 11. COMMIT: All state + docs + changelogs =====
+      - name: "11. Commit all changes"
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
+          D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l)
+          FILES=$(git diff --cached --name-only | wc -l)
+          git diff --cached --quiet || git commit -m "Daily v${VER}: ${D} drivers, ${F} FPs — forum+github+gmail+triage, ${FILES} file(s) [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
+
+      # ===== 12. VALIDATE + PUBLISH =====
+      - name: "12. Validate"
+        if: always()
+        continue-on-error: true
+        uses: athombv/github-action-homey-app-validate@v1
+        with:
+          level: publish
+
+      - name: "12b. Publish to Homey"
+        if: always()
+        continue-on-error: true
+        id: pub
+        uses: athombv/github-action-homey-app-publish@master
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+
+      # ===== 13. DRAFT → TEST =====
+      - name: "13a. Draft to Test (Node)"
+        if: always()
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/auto-publish-draft.js
+
+      - name: "13b. Draft to Test (curl)"
+        if: always()
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          APP=com.dlnraja.tuya.zigbee
+          VER=$(node -p "require('./app.json').version")
+          AUTH="Authorization: Bearer $HOMEY_PAT"
+          CT="Content-Type: application/json"
+          for BASE in https://apps-sdk-v3.athom.com https://api.athom.com; do
+            for EP in "/api/app/$APP/version/$VER/test" "/app/$APP/version/$VER/test"; do
+              CODE=$(curl -s -o /tmp/resp.txt -w "%{http_code}" -X PUT -H "$AUTH" -H "$CT" "$BASE$EP")
+              echo "PUT $BASE$EP => $CODE"
+              [ "$CODE" = "200" ] || [ "$CODE" = "201" ] || [ "$CODE" = "204" ] && echo "SUCCESS" && exit 0
+            done
+            for EP in "/api/app/$APP/version/$VER/publish" "/app/$APP/version/$VER/publish"; do
+              for M in PUT POST; do
+                CODE=$(curl -s -o /tmp/resp.txt -w "%{http_code}" -X $M -H "$AUTH" -H "$CT" -d '{"channel":"test"}' "$BASE$EP")
+                echo "$M $BASE$EP => $CODE"
+                [ "$CODE" = "200" ] || [ "$CODE" = "201" ] || [ "$CODE" = "204" ] && echo "SUCCESS" && exit 0
+              done
+            done
+          done
+          echo "::warning::Manual promote: https://tools.developer.homey.app/apps/app/$APP/versions"
+
+      # ===== 14. FORUM POST: Update with latest version =====
+      - name: "14. Forum Update"
+        if: always()
+        continue-on-error: true
+        env:
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          APP_VERSION: ${{ steps.stats.outputs.version }}
+          CHANGELOG: "Daily auto-update v${{ steps.stats.outputs.version }}"
+        run: node .github/scripts/post-forum-update.js || true
+
+      # ===== SUMMARY =====
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Daily Everything Pipeline" >> $GITHUB_STEP_SUMMARY
+          echo "**App:** v${{ steps.stats.outputs.version }} | ${{ steps.stats.outputs.drivers }} drivers | ${{ steps.stats.outputs.fps }} FPs" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Step | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| 1. Forum Scan+Respond | Done |" >> $GITHUB_STEP_SUMMARY
+          echo "| 2. GitHub Issues/PRs | Done |" >> $GITHUB_STEP_SUMMARY
+          echo "| 3. Upstream Triage | Done |" >> $GITHUB_STEP_SUMMARY
+          echo "| 4. GitHub Scanner | Done |" >> $GITHUB_STEP_SUMMARY
+          echo "| 5. Gmail Diagnostics | Done |" >> $GITHUB_STEP_SUMMARY
+          echo "| 6. Nightly Processor | Done |" >> $GITHUB_STEP_SUMMARY
+          echo "| 7. Forum Activity Scraper | Done |" >> $GITHUB_STEP_SUMMARY
+          echo "| 8. External Sources (Z2M+ZHA+Blakadder+deCONZ+Hubitat) | Done |" >> $GITHUB_STEP_SUMMARY
+          echo "| 9. Enrichment | Done |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10. AI Changelog | Done |" >> $GITHUB_STEP_SUMMARY
+          echo "| 11-14. Commit+Validate+Publish+Draft→Test+Forum | Done |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "[Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: daily-reports-${{ github.run_number }}
+          path: |
+            .github/state/*.json
+            docs/rules/*.md
+          retention-days: 14

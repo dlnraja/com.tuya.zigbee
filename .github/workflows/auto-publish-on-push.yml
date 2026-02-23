@@ -2,7 +2,9 @@ name: Auto-Publish on Push
 
 on:
   workflow_dispatch:
-  # push trigger DISABLED - consolidated into publish.yml
+  workflow_run:
+    workflows: ["Nightly Auto-Process", "Sunday Master Automation"]
+    types: [completed]
 
 permissions:
   contents: write
@@ -13,14 +15,18 @@ concurrency:
 
 jobs:
   publish:
-    name: Validate & Publish
+    name: Validate & Auto-Publish to Test
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - run: npm ci --prefer-offline --no-audit || npm install
 
       - name: App info
         id: info
@@ -28,6 +34,20 @@ jobs:
           V=$(node -p "require('./app.json').version")
           echo "version=$V" >> $GITHUB_OUTPUT
           echo "App v$V"
+
+      - name: Generate AI Changelog
+        continue-on-error: true
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node .github/scripts/generate-ai-changelog.js || echo "AI changelog skipped"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md README.md .homeychangelog.json
+          git diff --cached --quiet || git commit -m "docs: AI changelog update [skip ci]"
+          git push || true
 
       - name: Extract Changelog
         id: cl
@@ -38,7 +58,7 @@ jobs:
             const cl=require('./.homeychangelog.json');
             const v=process.argv[1];
             if(cl[v]&&cl[v].en)process.stdout.write(cl[v].en);
-            else{const keys=Object.keys(cl).sort().reverse();if(keys[0]&&cl[keys[0]].en)process.stdout.write(cl[keys[0]].en);else{const d=require('fs').readdirSync('drivers').length;process.stdout.write('v'+v+': '+d+' drivers. See .homeychangelog.json');};}
+            else{const k=Object.keys(cl).sort().reverse();if(k[0]&&cl[k[0]].en)process.stdout.write(cl[k[0]].en);else{const d=require('fs').readdirSync('drivers').length;process.stdout.write('v'+v+': '+d+' drivers. See .homeychangelog.json');}}
           " "$VER" 2>/dev/null || echo "See .homeychangelog.json for details")
           echo "text=$CL" >> $GITHUB_OUTPUT
 
@@ -64,7 +84,7 @@ jobs:
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
-      - name: Auto-Publish Draft to Test
+      - name: Auto-Publish Draft to Test (Node)
         if: steps.check_pat.outputs.has_pat == 'true'
         continue-on-error: true
         env:
@@ -72,10 +92,37 @@ jobs:
           DRY_RUN: 'false'
         run: node .github/scripts/auto-publish-draft.js
 
+      - name: Draft to Test (curl fallback)
+        if: steps.check_pat.outputs.has_pat == 'true'
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          APP=com.dlnraja.tuya.zigbee
+          VER=${{ steps.info.outputs.version }}
+          AUTH="Authorization: Bearer $HOMEY_PAT"
+          CT="Content-Type: application/json"
+          for BASE in https://apps-sdk-v3.athom.com https://api.athom.com; do
+            for EP in "/api/app/$APP/version/$VER/test" "/app/$APP/version/$VER/test"; do
+              CODE=$(curl -s -o /tmp/resp.txt -w "%{http_code}" -X PUT -H "$AUTH" -H "$CT" "$BASE$EP")
+              echo "PUT $BASE$EP => $CODE"
+              [ "$CODE" = "200" ] || [ "$CODE" = "201" ] || [ "$CODE" = "204" ] && echo "SUCCESS" && exit 0
+            done
+            for EP in "/api/app/$APP/version/$VER/publish" "/app/$APP/version/$VER/publish"; do
+              for M in PUT POST; do
+                CODE=$(curl -s -o /tmp/resp.txt -w "%{http_code}" -X $M -H "$AUTH" -H "$CT" -d '{"channel":"test"}' "$BASE$EP")
+                echo "$M $BASE$EP => $CODE"
+                [ "$CODE" = "200" ] || [ "$CODE" = "201" ] || [ "$CODE" = "204" ] && echo "SUCCESS" && exit 0
+              done
+            done
+          done
+          echo "::warning::Manual promote needed: https://tools.developer.homey.app/apps/app/$APP/versions"
+
       - name: Post to Forum
         if: steps.check_pat.outputs.has_pat == 'true'
         continue-on-error: true
         env:
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           APP_VERSION: ${{ steps.info.outputs.version }}
@@ -88,9 +135,8 @@ jobs:
           echo "## v${{ steps.info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
           echo "**Changelog:** ${{ steps.cl.outputs.text }}" >> $GITHUB_STEP_SUMMARY
           if [ "${{ steps.check_pat.outputs.has_pat }}" == "true" ]; then
-            echo "Published to Homey App Store" >> $GITHUB_STEP_SUMMARY
+            echo "Published to Homey App Store (Test channel)" >> $GITHUB_STEP_SUMMARY
             echo "[Install test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)" >> $GITHUB_STEP_SUMMARY
           else
             echo "Validated only (HOMEY_PAT not set)" >> $GITHUB_STEP_SUMMARY
-            echo "Add HOMEY_PAT secret from https://tools.developer.homey.app/me" >> $GITHUB_STEP_SUMMARY
           fi
