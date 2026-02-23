@@ -5,6 +5,8 @@
 name: 🔍 Code Quality Check
 
 on:
+  schedule:
+    - cron: '0 3 * * 3'  # Weekly Wednesday 03:00 UTC — periodic quality check
   pull_request:
     branches: [master, main]
   push:
