@@ -268,9 +268,29 @@ jobs:
           git pull --rebase origin master || true
           git push || true
 
+  update-forum-thread:
+    name: "Update Forum First Post"
+    needs: [generate-changelog]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Update first post of forum thread
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/update-forum-first-post.js
   summary:
     name: "Weekly Summary"
-    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, forum-respond, gmail-diagnostics, device-diagnostics, generate-changelog]
+    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, forum-respond, gmail-diagnostics, device-diagnostics, generate-changelog, update-forum-thread]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -285,6 +305,7 @@ jobs:
           echo "- Gmail diagnostics: ${{ needs.gmail-diagnostics.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Device diagnostics: ${{ needs.device-diagnostics.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- AI Changelog: ${{ needs.generate-changelog.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Forum first post: ${{ needs.update-forum-thread.result }}" >> $GITHUB_STEP_SUMMARY
 
       - name: Auto-Publish Draft to Test
         continue-on-error: true
