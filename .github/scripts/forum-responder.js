@@ -55,6 +55,14 @@ async function discourseLogin(email,password){
   return{csrf,cookies:ck2};
 }
 
+async function getForumAuth(){
+  const ak=process.env.DISCOURSE_API_KEY;
+  if(ak){console.log('Auth: Discourse API key');return{type:'apikey',key:ak};}
+  const em=process.env.HOMEY_EMAIL,pw=process.env.HOMEY_PASSWORD;
+  if(em&&pw){try{const a=await discourseLogin(em,pw);console.log('Auth: session login OK');return{type:'session',...a};}catch(e){console.warn('Session login failed:',e.message);}}
+  console.log('No forum auth - scan-only mode');return null;
+}
+
 async function fetchNewPosts(topicId,since){
   const r=await fetch(FORUM+'/t/'+topicId+'.json');
   if(!r.ok)throw new Error('Topic fetch failed: '+r.status);
@@ -76,8 +84,10 @@ async function fetchNewPosts(topicId,since){
 }
 
 async function postReply(topicId,replyTo,content,auth){
-  const r=await fetch(FORUM+'/posts',{method:'POST',
-    headers:{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCookies(auth.cookies)},
+  const h=auth.type==='apikey'
+    ?{'Content-Type':'application/json','User-Api-Key':auth.key}
+    :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCookies(auth.cookies)};
+  const r=await fetch(FORUM+'/posts',{method:'POST',headers:h,
     body:JSON.stringify({topic_id:topicId,raw:content,reply_to_post_number:replyTo})});
   const d=await r.json().catch(()=>({}));
   if(!r.ok)throw new Error('Post failed: '+r.status+' '+JSON.stringify(d).substring(0,200));
@@ -120,7 +130,7 @@ async function analyzeWithGemini(post,results,appVersion){
 }
 
 async function main(){
-  const dryRun=process.env.DRY_RUN!=='false';
+  let dryRun=process.env.DRY_RUN!=='false';
   const topicIds=(process.env.FORUM_TOPICS||'140352').split(',').map(Number);
   const replyTopics=new Set((process.env.REPLY_TOPICS||'140352').split(',').map(Number));
   let appVersion='unknown';
@@ -134,11 +144,9 @@ async function main(){
   const state=loadState();
   let auth=null;
   if(!dryRun){
-    const em=process.env.HOMEY_EMAIL,pw=process.env.HOMEY_PASSWORD;
-    if(!em||!pw){console.error('HOMEY_EMAIL/HOMEY_PASSWORD required');process.exit(1)}
-    console.log('Logging in to forum...');
-    auth=await discourseLogin(em,pw);
-    console.log('Login OK');
+    console.log('Getting forum auth...');
+    auth=await getForumAuth();
+    if(!auth){console.log('::warning::No forum auth - running scan-only (no replies)');dryRun=true;}
   }
 
   let totalP=0,totalR=0;const summary=[];

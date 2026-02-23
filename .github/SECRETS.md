@@ -15,8 +15,9 @@
 | GMAIL_CLIENT_ID | Gmail OAuth | Read diagnostic emails |
 | GMAIL_CLIENT_SECRET | Gmail OAuth | Read diagnostic emails |
 | GMAIL_REFRESH_TOKEN | Gmail OAuth | Auto-renewed daily by keepalive workflow |
+| DISCOURSE_API_KEY | Homey Forum | Discourse User API key for forum posting (preferred over session login) |
 
-## Not Yet Configured (referenced in workflows)
+## Not Yet Configured (optional)
 
 | Secret | Provider | Free tier |
 |--------|----------|-----------|
@@ -56,13 +57,13 @@ Used by: homey-device-diagnostics.js (NEW)
 
 | Workflow | Secrets Used |
 |----------|-------------|
-| publish.yml | HOMEY_PAT |
+| publish.yml | HOMEY_PAT, DISCOURSE_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
 | auto-publish-on-push.yml | HOMEY_EMAIL, HOMEY_PASSWORD |
-| nightly-auto-process.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, HOMEY_EMAIL, HOMEY_PASSWORD, GH_PAT |
-| sunday-master.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT_API, HOMEY_EMAIL, HOMEY_PASSWORD |
-| tuya-automation-hub.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
+| nightly-auto-process.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, HOMEY_EMAIL, HOMEY_PASSWORD, GH_PAT, DISCOURSE_API_KEY, GMAIL_* |
+| sunday-master.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, HOMEY_EMAIL, HOMEY_PASSWORD, DISCOURSE_API_KEY, GMAIL_* |
+| tuya-automation-hub.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD, DISCOURSE_API_KEY |
 | upstream-auto-triage.yml | GH_PAT, GOOGLE_API_KEY |
-| forum-auto-responder.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
+| forum-auto-responder.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD, DISCOURSE_API_KEY |
 | gmail-diagnostics.yml | GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN, GOOGLE_API_KEY, GH_PAT |
 | gmail-token-keepalive.yml | GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN, GH_PAT |
 | monthly-comprehensive-sync.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, GH_PAT |
@@ -82,6 +83,15 @@ Used by: homey-device-diagnostics.js (NEW)
 
 Auto-renewal: gmail-token-keepalive.yml runs 3x/day (6h, 14h, 22h UTC).
 Testing mode: token expires every 7 days. Keepalive creates GitHub issue alert when expired.
+
+## Discourse API Key Setup
+
+1. Run: `node .github/scripts/generate-discourse-key.js`
+2. This opens a browser to `community.homey.app` to authorize a User API Key
+3. After authorizing, the script captures the key and prints it
+4. Add it as GitHub secret: `DISCOURSE_API_KEY`
+5. This key is preferred over session login (HOMEY_EMAIL/PASSWORD) — no 403 errors
+6. All forum scripts gracefully fall back: API key → session login → scan-only mode
 
 ## Priority Setup Order
 
