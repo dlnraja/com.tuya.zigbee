@@ -73,7 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.11.22** | v5.11.22: 138 drivers, 5190 fingerprints, enhanced automation and device discovery. |
+| **v5.11.22** | v5.11.22: 138 drivers, 5644 fingerprints, enhanced automation and device discovery. |
 | **v5.11.19** | Multi-topic forum scanning + scan-only mode for external threads |
 | **v5.11.16** | Auto-publish via GitHub Actions |
 | **v5.11.15** | Auto-publish via GitHub Actions |
