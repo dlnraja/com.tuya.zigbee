@@ -54,7 +54,7 @@ async function reply(tid,raw,auth){
 
 async function main(){
   const auth=await getForumAuth();
-  if(!auth){console.log('::warning::No forum auth (no DISCOURSE_API_KEY or HOMEY_EMAIL) - skipping respond');return;}
+  if(!auth){console.log('::warning::No forum auth - need DISCOURSE_API_KEY (run: node .github/scripts/generate-discourse-key.js)');return;}
   const fps=loadFingerprints();const ver=require(path.join(process.cwd(),'app.json')).version;
   let lastId=0;if(fs.existsSync(LF))lastId=parseInt(fs.readFileSync(LF,'utf8').trim())||0;
   let ct=0;
