@@ -24,7 +24,7 @@
 ⚡ **Hybrid Mode** - Auto-detect Tuya DP vs Standard ZCL
 🛠️ **SDK3** - Latest Homey Standards
 🌍 **Open Source** - Community-driven development
-📱 **138 Drivers** - Switches, sensors, lights, thermostats, covers, locks & more
+📱 **138 drivers** - Switches, sensors, lights, thermostats, covers, locks & more
 📋 **1,457 Flow Cards** - Complete triggers, conditions & actions in 4 languages
 
 ---
@@ -44,7 +44,7 @@
 | **Homey Compatibility** | >=12.2.0 |
 | **Last Updated** | 2026-02-21 |
 
-### 📦 Top 15 Drivers by Device IDs
+### 📦 Top 138 drivers by Device IDs
 
 | # | Driver | Total IDs |
 |---|--------|-----------|

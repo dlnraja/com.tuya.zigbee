@@ -1,0 +1,94 @@
+name: "GitHub Auto-Manage Issues & PRs"
+
+on:
+  schedule:
+    - cron: '30 9 * * *'  # 1x daily backup, main coverage by daily-everything
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run"
+        type: boolean
+        default: false
+      stale_days:
+        description: "Stale days"
+        type: number
+        default: 30
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: github-manage
+  cancel-in-progress: true
+
+jobs:
+  manage:
+    name: "Triage, Respond & Close"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: App stats
+        id: stats
+        run: |
+          V=$(node -p "require('./app.json').version")
+          D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json | sort -uf | wc -l)
+          echo "version=$V drivers=$D fps=$F" 
+          echo "version=$V" >> $GITHUB_OUTPUT
+
+      - name: Manage Issues & PRs
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          STALE_DAYS: ${{ inputs.stale_days || '30' }}
+          REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
+        run: node .github/scripts/github-issue-manager.js
+
+      - name: Commit state & docs
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/state/ docs/
+          git diff --cached --quiet || git commit -m "chore: GitHub auto-manage state update [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
+
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: issue-manager-report
+          path: .github/state/issue-manager-report.json
+          retention-days: 30
+
+      - name: Auto-Publish Draft to Test
+        if: always()
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          if [ -z "$HOMEY_PAT" ]; then exit 0; fi
+          node .github/scripts/auto-publish-draft.js || true
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## GitHub Auto-Manage" >> $GITHUB_STEP_SUMMARY
+          echo "App v${{ steps.stats.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          if [ -f .github/state/issue-manager-report.json ]; then
+            node -e "const r=require('./.github/state/issue-manager-report.json');console.log('- Responded:',r.responded);console.log('- Closed:',r.closed);console.log('- New FPs:',r.newFingerprints?.length||0);if(r.evolutionSummary)console.log('\n### Evolution\n'+r.evolutionSummary)" >> $GITHUB_STEP_SUMMARY
+          fi

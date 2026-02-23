@@ -1,0 +1,67 @@
+name: "Bug Report Auto-PR"
+
+on:
+  issues:
+    types: [opened, labeled]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: "Issue number to process"
+        type: number
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: bug-pr-${{ github.event.issue.number || inputs.issue_number }}
+  cancel-in-progress: true
+
+jobs:
+  process-bug:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.action == 'labeled' && github.event.label.name == 'auto-fix') ||
+      (github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'bug'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Process Bug Report
+        id: bug
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
+        run: node .github/scripts/bug-report-processor.js
+
+      - name: Create Fix Branch and PR
+        if: steps.bug.outputs.has_fix == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE=${{ github.event.issue.number || inputs.issue_number }}
+          BRANCH="fix/issue-${ISSUE}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add -A
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "fix: auto-fix for #${ISSUE} — ${{ steps.bug.outputs.summary }}"
+          git push origin "$BRANCH"
+          gh pr create \
+            --title "fix: #${ISSUE} — ${{ steps.bug.outputs.summary }}" \
+            --body "Auto-generated fix for #${ISSUE}\n\n${{ steps.bug.outputs.details }}\n\nCloses #${ISSUE}" \
+            --base master \
+            --head "$BRANCH" \
+            --label "auto-fix,bug"
