@@ -6,7 +6,35 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
-## [5.11.19] - 2026-02-21
+## v5.11.22 (2026-02-23)
+
+Universal Tuya Zigbee v5.11.22 introduces 8 new fingerprints, enhances automation scripts, and improves device discovery functionality.
+
+---
+
+## [5.11.22] - 2026-02-23
+
+### New Features
+- Added 8 new fingerprints from JohanBendz scan to enhance device compatibility.
+- Introduced Device Finder functionality to streamline the identification of new devices.
+- Enhanced automation scripts for better performance and reliability.
+
+### Improvements
+- Workflow improvements for more efficient processing of forum and GitHub data.
+- Comprehensive Gmail and forum scanning across the entire forum to improve response accuracy.
+- Improved forum authentication with actionable instructions for users encountering issues.
+
+### Bug Fixes
+- Fixed handling of 404 errors on user profile requests to ensure graceful degradation.
+- Enhanced diagnostics to try multiple tokens sequentially, improving 401 error handling.
+- Resolved issues with DISCOURSE_API_KEY authentication and HOMEY_PAT fallback mechanisms.
+
+### CI/CD
+- Updated various scripts for better automation and maintenance, including device finder and forum activity scraper scripts.
+- Improved documentation and state management for diagnostics and enrichment processes.
+---
+
+ [5.11.19] - 2026-02-21
 
 ### Bug Fixes
 - **soil_sensor DP5** — compound frame guard (671091.2°C blocked)
