@@ -20,9 +20,7 @@ function extractCookies(res){
 }
 function fmtCookies(c){return Object.entries(c).map(([k,v])=>k+'='+v).join('; ')}
 
-async function discourseLogin(){
-  const email=process.env.HOMEY_EMAIL,pw=process.env.HOMEY_PASSWORD;
-  if(!email||!pw)throw new Error('No HOMEY_EMAIL/HOMEY_PASSWORD');
+async function discourseLogin(email,pw){
   const r1=await fetch(FORUM+'/session/csrf',{headers:{'X-Requested-With':'XMLHttpRequest',Accept:'application/json','User-Agent':'Mozilla/5.0 (compatible; TuyaZigbeeBot/1.0)'}});
   if(!r1.ok)throw new Error('CSRF failed: '+r1.status);
   const csrf=(await r1.json()).csrf;
@@ -36,19 +34,27 @@ async function discourseLogin(){
   return{csrf,cookies:ck2};
 }
 
+async function getForumAuth(){
+  const ak=process.env.DISCOURSE_API_KEY;
+  if(ak){console.log('Auth: Discourse API key');return{type:'apikey',key:ak};}
+  const em=process.env.HOMEY_EMAIL,pw=process.env.HOMEY_PASSWORD;
+  if(em&&pw){try{const a=await discourseLogin(em,pw);console.log('Auth: session OK');return{type:'session',...a};}catch(e){console.warn('Session login failed:',e.message);}}
+  return null;
+}
+
 async function reply(tid,raw,auth){
-  const r=await fetch(FORUM+'/posts',{method:'POST',
-    headers:{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCookies(auth.cookies)},
+  const h=auth.type==='apikey'
+    ?{'Content-Type':'application/json','User-Api-Key':auth.key}
+    :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCookies(auth.cookies)};
+  const r=await fetch(FORUM+'/posts',{method:'POST',headers:h,
     body:JSON.stringify({topic_id:tid,raw})});
   if(!r.ok)throw new Error('Post failed: '+r.status);
   return r.json();
 }
 
 async function main(){
-  const email=process.env.HOMEY_EMAIL;
-  if(!email){console.log('No HOMEY_EMAIL - skipping forum respond');return;}
-  const auth=await discourseLogin();
-  console.log('Forum login OK');
+  const auth=await getForumAuth();
+  if(!auth){console.log('::warning::No forum auth (no DISCOURSE_API_KEY or HOMEY_EMAIL) - skipping respond');return;}
   const fps=loadFingerprints();const ver=require(path.join(process.cwd(),'app.json')).version;
   let lastId=0;if(fs.existsSync(LF))lastId=parseInt(fs.readFileSync(LF,'utf8').trim())||0;
   let ct=0;

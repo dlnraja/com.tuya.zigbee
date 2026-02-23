@@ -132,6 +132,7 @@ jobs:
         if: steps.pat.outputs.ok == 'true'
         continue-on-error: true
         env:
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           APP_VERSION: ${{ steps.bump.outputs.version }}

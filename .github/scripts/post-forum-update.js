@@ -49,21 +49,28 @@ async function discourseLogin(){
   return{csrf,cookies:ck2};
 }
 
+async function getForumAuth(){
+  const ak=process.env.DISCOURSE_API_KEY;
+  if(ak){console.log('Auth: API key');return{type:'apikey',key:ak};}
+  if(EMAIL&&PASS){try{const a=await discourseLogin();return{type:'session',...a};}catch(e){console.warn('Login failed:',e.message);}}
+  return null;
+}
+
 async function postReply(tid,raw,auth){
   const d=JSON.stringify({topic_id:tid,raw});
-  const r=await httpsReq({hostname:HOST,port:443,path:'/posts.json',method:'POST',
-    headers:{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,
-      'Cookie':fmtCookies(auth.cookies),'X-Requested-With':'XMLHttpRequest',
-      'Content-Length':Buffer.byteLength(d)}},d);
+  const h=auth.type==='apikey'
+    ?{'Content-Type':'application/json','User-Api-Key':auth.key,'Content-Length':Buffer.byteLength(d)}
+    :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'Cookie':fmtCookies(auth.cookies),'X-Requested-With':'XMLHttpRequest','Content-Length':Buffer.byteLength(d)};
+  const r=await httpsReq({hostname:HOST,port:443,path:'/posts.json',method:'POST',headers:h},d);
   if(r.status>=300)throw new Error('Post failed: '+r.status+': '+r.body.slice(0,200));
   return r.body;
 }
 
 async function main(){
-  if(!EMAIL||!PASS){console.log('HOMEY_EMAIL/HOMEY_PASSWORD not set - skip');fs.appendFileSync(SUM,'Forum post skipped (no credentials)\n');return;}
-  console.log('Logging in to forum...');
-  const auth=await discourseLogin();
-  console.log('Login OK');
+  console.log('Getting forum auth...');
+  const auth=await getForumAuth();
+  if(!auth){console.log('Forum post skipped (no auth)');fs.appendFileSync(SUM,'Forum post skipped (no DISCOURSE_API_KEY or credentials)\n');return;}
+  console.log('Auth OK');
   const ver=process.env.APP_VERSION||require(path.join(process.cwd(),'app.json')).version;
   let cl=process.env.CHANGELOG||'';
   if(!cl){try{const cj=JSON.parse(fs.readFileSync(path.join(process.cwd(),'.homeychangelog.json'),'utf8'));if(cj[ver]&&cj[ver].en)cl=cj[ver].en;else{const k=Object.keys(cj).sort((a,b)=>b.localeCompare(a,undefined,{numeric:true}));if(k[0]&&cj[k[0]].en)cl=cj[k[0]].en;}}catch(e){}}
