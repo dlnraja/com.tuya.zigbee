@@ -397,3 +397,19 @@ All 12 fingerprints from 20 open issues **already supported** in v5.11.19:
 | 1325 | _TZ3210_s8lvbbu | bulb_rgbw |
 
 **Forum topics now scanned**: 140352, 26439, 146735, 89271, 54018
+
+
+## Nightly Forum Scan (2026-02-23 v5.11.22)
+- **Topic 89271 #659** @Marcel_Visser: `_TZE204_sxm7l9xa` (gh-gpt-4o-mini)
+- **Topic 89271 #660** @Ferenc_Szasz: `_TZE200_3p5ydos3` (gh-gpt-4o-mini)
+- **Topic 89271 #661** @Anders_Lim: `_TZE204_hlx9tnzb` (gh-gpt-4o-mini)
+- **Topic 89271 #662** @radiothieves: `_TZB210_rkgngb5o` (gh-gpt-4o-mini)
+- **Topic 89271 #663** @Janderek: `_TZE200_3towulqd` (gh-Meta-Llama-3.1-8B-Instruct)
+- **Topic 89271 #664** @MBrandt: `_TZ3210_iystcadi` (gh-Meta-Llama-3.1-8B-Instruct)
+- **Topic 89271 #665** @Johan_Rossouw: `_TYZB01_6g8b7at8` (gh-Meta-Llama-3.1-8B-Instruct)
+- **Topic 89271 #666** @RezaRose: `_TZ3210_0zabbfax` (gh-Meta-Llama-3.1-8B-Instruct)
+- **Topic 89271 #667** @late4marshmellow: `_TZ3210_3lbtuxgp` (gh-Meta-Llama-3.1-8B-Instruct)
+- **Topic 89271 #668** @Peter_N: `_TZE200_myd45weu` (gh-gpt-4o-mini)
+- **Topic 89271 #669** @Erwin3: `_TZ3000_qeuvnohg` (gh-gpt-4o-mini)
+- **Topic 89271 #670** @Trond_Sandland: `_TZ3000_wkr3jqmr` (gh-gpt-4o-mini)
+- **Topic 89271 #671** @Henk_de_Boom: `_TZE200_p0gzbqct` (gh-gpt-4o-mini)

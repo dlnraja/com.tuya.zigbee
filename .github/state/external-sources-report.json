@@ -1,0 +1,104 @@
+{
+  "timestamp": "2026-02-23T20:37:11.258Z",
+  "totalExternal": 1604,
+  "supported": 1590,
+  "unsupported": 14,
+  "variantCount": 13,
+  "bugCount": 0,
+  "sources": {
+    "z2mConv": 1488,
+    "z2mIssues": 0,
+    "zhaQuirks": 129,
+    "zhaIssues": 0,
+    "blakadder": 0,
+    "deconz": 186,
+    "hubitat": 0
+  },
+  "topUnsupported": [
+    {
+      "fp": "_TZE200_jt50ea5d",
+      "sources": [
+        "z2m-converter"
+      ]
+    },
+    {
+      "fp": "_TZ3210_jaap6jeb",
+      "sources": [
+        "z2m-converter"
+      ]
+    },
+    {
+      "fp": "_TZE284_g1enhdsi",
+      "sources": [
+        "z2m-converter"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qamj2vnn",
+      "sources": [
+        "z2m-converter"
+      ]
+    },
+    {
+      "fp": "_TZ3000_avotanj3",
+      "sources": [
+        "z2m-converter"
+      ]
+    },
+    {
+      "fp": "_TZE204_2jnoy8dj",
+      "sources": [
+        "z2m-converter"
+      ]
+    },
+    {
+      "fp": "_TZ3210_iymfxdis",
+      "sources": [
+        "z2m-converter"
+      ]
+    },
+    {
+      "fp": "_TZ3002_xkxgfxsg",
+      "sources": [
+        "z2m-converter"
+      ]
+    },
+    {
+      "fp": "_TZ3002_tlsvxhxc",
+      "sources": [
+        "z2m-converter"
+      ]
+    },
+    {
+      "fp": "_TS004F_smart",
+      "sources": [
+        "deconz"
+      ]
+    },
+    {
+      "fp": "_TZ3000_imdfhhud",
+      "sources": [
+        "deconz"
+      ]
+    },
+    {
+      "fp": "_TZ3210_amleyeej",
+      "sources": [
+        "deconz"
+      ]
+    },
+    {
+      "fp": "_TZ3000_mnlsbthu",
+      "sources": [
+        "deconz"
+      ]
+    },
+    {
+      "fp": "_TZB000_yqjaollc",
+      "sources": [
+        "deconz"
+      ]
+    }
+  ],
+  "aiAnalysis": "Based on the recent scan of external Zigbee sources for the Universal Tuya Zigbee app, here are the new devices identified, prioritized by popularity and user demand. Each device is linked to its corresponding driver suggestion.\n\n| Fingerprint         | Source        | Suggested Driver               |\n|---------------------|---------------|--------------------------------|\n| _TZE200_jt50ea5d    | z2m-converter | HybridSwitchBase               |\n| _TZ3210_jaap6jeb    | z2m-converter | HybridSensorBase               |\n| _TZE284_g1enhdsi    | z2m-converter | HybridLightBase                |\n| _TZ3000_qamj2vnn    | z2m-converter | HybridPlugBase                 |\n| _TZ3000_avotanj3    | z2m-converter | HybridLightBase                |\n| _TZE204_2jnoy8dj    | z2m-converter | HybridSensorBase               |\n| _TZ3210_iymfxdis    | z2m-converter | HybridSensorBase               |\n| _TZ3002_xkxgfxsg    | z2m-converter | HybridSwitchBase               |\n| _TZ3002_tlsvxhxc    | z2m-converter | HybridSwitchBase               |\n| _TS004F_smart       | deconz        | ButtonDevice                   |\n| _TZ3000_imdfhhud    | deconz        | HybridLightBase                |\n| _TZ3210_amleyeej    | deconz        | HybridSensorBase               |\n| _TZ3000_mnlsbthu    | deconz        | HybridPlugBase                 |\n| _TZB000_yqjaollc    | deconz        | HybridSensorBase               |\n\n### Action Items:\n1. **Driver Development**: Begin developing drivers for the suggested devices based on their fingerprints.\n2. **User Demand Monitoring**: Track user feedback and demand for these devices to prioritize further enhancements.\n3. **Source Validation**: Confirm the reliability of the sources (z2m-converter and deconz) for ongoing updates.\n4. **Community Engagement**: Engage with the community for insights on specific features or issues related to these new devices.\n5. **Testing**: Set up a testing environment for each driver to ensure compatibility and functionality before release. \n\nThis approach will help in efficiently integrating new devices into the Universal Tuya Zigbee app, enhancing user experience and expanding device compatibility."
+}

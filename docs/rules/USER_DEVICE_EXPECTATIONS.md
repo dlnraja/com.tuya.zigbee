@@ -1,8 +1,26 @@
-# User Device Expectations (v5.11.19)
-**Updated**: 2026-02-22 (v5.11.19: nightly auto-scan)
+# User Device Expectations (v5.11.22)
+**Updated**: 2026-02-23 (v5.11.22: nightly auto-scan)
 
 
 
+
+
+## Nightly Auto-Scan (2026-02-23)
+| User | Fingerprint(s) | Source | Date |
+|------|---------------|--------|------|
+| Marcel_Visser | `_TZE204_sxm7l9xa` | Forum #89271 post #659 | Auto-scanned 2026-02-23 |
+| Ferenc_Szasz | `_TZE200_3p5ydos3` | Forum #89271 post #660 | Auto-scanned 2026-02-23 |
+| Anders_Lim | `_TZE204_hlx9tnzb` | Forum #89271 post #661 | Auto-scanned 2026-02-23 |
+| radiothieves | `_TZB210_rkgngb5o` | Forum #89271 post #662 | Auto-scanned 2026-02-23 |
+| Janderek | `_TZE200_3towulqd` | Forum #89271 post #663 | Auto-scanned 2026-02-23 |
+| MBrandt | `_TZ3210_iystcadi` | Forum #89271 post #664 | Auto-scanned 2026-02-23 |
+| Johan_Rossouw | `_TYZB01_6g8b7at8` | Forum #89271 post #665 | Auto-scanned 2026-02-23 |
+| RezaRose | `_TZ3210_0zabbfax` | Forum #89271 post #666 | Auto-scanned 2026-02-23 |
+| late4marshmellow | `_TZ3210_3lbtuxgp` | Forum #89271 post #667 | Auto-scanned 2026-02-23 |
+| Peter_N | `_TZE200_myd45weu` | Forum #89271 post #668 | Auto-scanned 2026-02-23 |
+| Erwin3 | `_TZ3000_qeuvnohg` | Forum #89271 post #669 | Auto-scanned 2026-02-23 |
+| Trond_Sandland | `_TZ3000_wkr3jqmr` | Forum #89271 post #670 | Auto-scanned 2026-02-23 |
+| Henk_de_Boom | `_TZE200_p0gzbqct` | Forum #89271 post #671 | Auto-scanned 2026-02-23 |
 
 ## Nightly Auto-Scan (2026-02-22)
 | User | Fingerprint(s) | Source | Date |
@@ -480,3 +498,22 @@ _TZ3000_hafsqare, _TZ3000_e98krvvk, _TZ3000_iedbgyxt
 **"Battery always null"**: RE-PAIR (bindings at pair time), wait 4h wake
 **"Flow cards not working"**: Update app, check driver flow cards, recreate flow
 **"Unknown Zigbee device"**: Send diagnostic, check fingerprint case, RE-PAIR
+
+
+## Auto-discovered from GitHub (2026-02-23)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZE284_g1enhdsi | dlnraja/com.tuya.zigbee#133 | device_request |
+| _TZ3000_qamj2vnn | dlnraja/com.tuya.zigbee#133 | device_request |
+| _TZ3000_avotanj3 | dlnraja/com.tuya.zigbee#133 | device_request |
+| _TZ3290_7v1k4vuf | dlnraja/com.tuya.zigbee#133 | device_request |
+| _TZ3290_rlkmy85q | dlnraja/com.tuya.zigbee#133 | device_request |
+| _TZ3290_jxvzqatw | dlnraja/com.tuya.zigbee#133 | device_request |
+| _TZ3290_lypnqvle | dlnraja/com.tuya.zigbee#133 | device_request |
+| _TZ3290_nba3knps | dlnraja/com.tuya.zigbee#133 | device_request |
+| _TZ3290_yac64inu | dlnraja/com.tuya.zigbee#133 | device_request |
+| _TZE204_2jnoy8dj | dlnraja/com.tuya.zigbee#133 | device_request |
+| _TZ3210_iymfxdis | dlnraja/com.tuya.zigbee#133 | device_request |
+| _TZ3002_xkxgfxsg | dlnraja/com.tuya.zigbee#133 | device_request |
+| _TZ3002_tlsvxhxc | dlnraja/com.tuya.zigbee#133 | device_request |
