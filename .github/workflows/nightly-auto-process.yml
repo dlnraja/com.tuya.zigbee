@@ -35,6 +35,7 @@ jobs:
       - run: npm ci --prefer-offline --no-audit || npm install
 
       - name: Run Nightly Processor
+        continue-on-error: true
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

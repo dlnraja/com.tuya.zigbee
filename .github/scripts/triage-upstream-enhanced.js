@@ -87,6 +87,8 @@ function prMsg(found,missing){
 }
 
 // Main
+try { _main(); } catch(e) { console.error('Triage error:',e.message); process.exit(0); }
+function _main(){
 const fps=loadFingerprints();
 console.log(`Loaded ${fps.size} fingerprints. Scanning ${REPO}...`);
 let iTriaged=0,iCommented=0,pTriaged=0,pCommented=0;
@@ -171,3 +173,4 @@ const report=[
 ].join('\n');
 console.log(report);
 fs.appendFileSync(SF,report+'\n');
+} // end _main
