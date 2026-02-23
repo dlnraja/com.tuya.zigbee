@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 'use strict';
 const fs=require('fs'),path=require('path');
-const PAT=process.env.HOMEY_PAT_API;
+const PAT=process.env.HOMEY_PAT_API||process.env.HOMEY_PAT;
 const SUM=process.env.GITHUB_STEP_SUMMARY||null;
 const STATE=path.join(__dirname,'..','state');
 const REPORT=path.join(STATE,'homey-device-report.json');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const APP='com.dlnraja.tuya.zigbee';
-if(!PAT){console.log('HOMEY_PAT_API not set - skip');process.exit(0);}
+if(!PAT){console.log('HOMEY_PAT_API/HOMEY_PAT not set - skip');process.exit(0);}
 function log(t){console.log(t);if(SUM)fs.appendFileSync(SUM,t+'\n');}
 async function api(url){
   const r=await fetch(url,{headers:{'Authorization':'Bearer '+PAT}});

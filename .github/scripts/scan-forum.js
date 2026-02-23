@@ -11,6 +11,8 @@ const TOPICS=[
   146735,  // [APP] Tuya - Smart Life. Smart Living
   89271,   // [APP][Pro] Tuya Zigbee App - Device Request Archive
   54018,   // Tuya WiFi devices
+  12758,   // Zigbee devices general
+  85498,   // Zigbee2MQTT vs native
 ];
 const BASE='https://community.homey.app';
 const os=require('os');
@@ -42,7 +44,7 @@ async function scan(){
   console.log(`Scanning topic ${TOPIC_ID}...`);
   const data=await fetch(`${BASE}/t/${TOPIC_ID}/posts.json?post_number=999999`);
   const stream=data.post_stream||{};
-  const postIds=(stream.stream||[]).slice(-50);
+  const postIds=(stream.stream||[]).slice(-100);
   
   const posts=[];
   // Fetch in chunks of 20
