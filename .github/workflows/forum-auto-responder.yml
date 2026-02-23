@@ -2,7 +2,7 @@ name: Forum Auto-Responder
 
 on:
   schedule:
-    - cron: '0 3,9,15,21 * * *'  # Interleaved with tuya-automation-hub (0,6,12,18)
+    - cron: '0 5,11,17,23 * * *'  # Offset from daily-everything (02,08,14,20)
   workflow_dispatch:
     inputs:
       dry_run:
@@ -29,11 +29,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: npm ci --prefer-offline --no-audit || npm install
 
       - name: Run Forum Responder
         id: responder
@@ -58,4 +59,5 @@ jobs:
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           TOPICS=$(node -p "try{Object.keys(JSON.parse(require('fs').readFileSync('.github/state/forum-state.json')).topics).length}catch(e){0}")
           git diff --cached --quiet || git commit -m "Forum responder v${VER}: scanned ${TOPICS} topics, state updated [skip ci]"
+          git pull --rebase origin master || true
           git push || echo "Nothing to push"

@@ -1,0 +1,52 @@
+name: "Deploy Device Finder to GitHub Pages"
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Daily Everything Pipeline"]
+    types: [completed]
+  push:
+    branches: [master, main]
+    paths:
+      - 'drivers/*/driver.compose.json'
+      - '.github/scripts/generate-device-finder.js'
+      - '.github/scripts/device-finder-*.js'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Generate Device Finder
+        run: node .github/scripts/generate-device-finder.js
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .github/pages-build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

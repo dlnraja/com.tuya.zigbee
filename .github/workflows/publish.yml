@@ -14,6 +14,8 @@ name: Auto Publish
       - "assets/**"
       - "locales/**"
       - "package.json"
+      - ".homeychangelog.json"
+      - "CHANGELOG.md"
   workflow_dispatch:
     inputs:
       version:
@@ -43,16 +45,19 @@ jobs:
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Athom Validate
-        uses: athombv/github-action-homey-app-validate@master
+        uses: athombv/github-action-homey-app-validate@v1
         with:
           level: publish
 
   version-and-publish:
     needs: validate
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
@@ -69,20 +74,31 @@ jobs:
             echo "::warning::HOMEY_PAT not set - add from https://tools.developer.homey.app/me"
           fi
 
+      - name: Generate AI Changelog
+        id: ai_cl
+        continue-on-error: true
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node .github/scripts/generate-ai-changelog.js || echo "AI fallback"
+          VER=$(node -p "require('./app.json').version")
+          CL=$(node -e "const cl=require('./.homeychangelog.json');const v=process.argv[1];if(cl[v]&&cl[v].en)process.stdout.write(cl[v].en);else{const k=Object.keys(cl).sort().reverse();if(k[0]&&cl[k[0]].en)process.stdout.write(cl[k[0]].en);}" "$VER" 2>/dev/null || echo "")
+          echo "ai_text=$CL" >> $GITHUB_OUTPUT
+
       - name: Extract Changelog
         id: cl
         shell: bash
         run: |
           CL="${{ inputs.changelog }}"
+          # Prefer: manual input > AI-generated > .homeychangelog.json
+          if [ -z "$CL" ] && [ -n "${{ steps.ai_cl.outputs.ai_text }}" ]; then
+            CL="${{ steps.ai_cl.outputs.ai_text }}"
+          fi
           if [ -z "$CL" ]; then
-            # Auto-extract from .homeychangelog.json for current version
             VER=$(node -p "require('./app.json').version")
-            CL=$(node -e "
-              const cl=require('./.homeychangelog.json');
-              const v=process.argv[1];
-              if(cl[v]&&cl[v].en)process.stdout.write(cl[v].en);
-              else{const keys=Object.keys(cl).sort().reverse();if(keys[0]&&cl[keys[0]].en)process.stdout.write(cl[keys[0]].en);else{const d=require('fs').readdirSync('drivers').length;const f=require('child_process').execSync('grep -rohE \"_T[A-Za-z0-9_]+\" drivers/*/driver.compose.json|sort -uf|wc -l').toString().trim();process.stdout.write('v'+v+': '+d+' drivers, '+f+' fingerprints. See .homeychangelog.json');}
-            " "$VER" 2>/dev/null || echo "See .homeychangelog.json for details")
+            CL=$(node -e "const r=JSON.parse(require('child_process').execSync('node .github/scripts/extract-changelog.js '+process.argv[1],{encoding:'utf8'}).trim());process.stdout.write(r.homeyText)" "$VER" 2>/dev/null || echo "v${VER}: Bug fixes and improvements")
           fi
           # Escape newlines for GitHub output
           CL="${CL//'%'/'%25'}"
@@ -93,10 +109,40 @@ jobs:
       - name: Bump
         if: steps.pat.outputs.ok == 'true'
         id: bump
-        uses: athombv/github-action-homey-app-version@master
+        uses: athombv/github-action-homey-app-version@v1
         with:
           version: ${{ inputs.version || 'patch' }}
           changelog: ${{ steps.cl.outputs.text }}
+
+      - name: Update Changelogs for New Version
+        if: steps.pat.outputs.ok == 'true'
+        continue-on-error: true
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          NEW_VER="${{ steps.bump.outputs.version }}"
+          CL_TEXT="${{ steps.cl.outputs.text }}"
+          # Update .homeychangelog.json with new version entry
+          node -e "
+            const fs=require('fs');
+            const cl=JSON.parse(fs.readFileSync('.homeychangelog.json','utf8'));
+            const v=process.argv[1], t=process.argv[2];
+            if(v && t && !cl[v]){cl[v]={en:t};fs.writeFileSync('.homeychangelog.json',JSON.stringify(cl,null,2)+'\n');}
+          " "$NEW_VER" "$CL_TEXT"
+          # Update CHANGELOG.md with new version header
+          if [ -f CHANGELOG.md ]; then
+            HEADER="## v${NEW_VER} ($(date +%Y-%m-%d))"
+            if ! grep -q "v${NEW_VER}" CHANGELOG.md; then
+              sed -i "0,/^## /{s/^## /${HEADER}\n\n${CL_TEXT}\n\n---\n\n## /}" CHANGELOG.md
+            fi
+          fi
+          # Update README.md last-updated date
+          if [ -f README.md ]; then
+            sed -i "s/Last Updated|[0-9-]*/Last Updated|$(date +%Y-%m-%d)/" README.md
+          fi
+          echo "Changelogs updated for v${NEW_VER}"
 
       - name: Push
         if: steps.pat.outputs.ok == 'true'
@@ -107,26 +153,73 @@ jobs:
           git add -A
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json | sort -uf | wc -l)
-          git commit -m "v${{ steps.bump.outputs.version }}: ${D} drivers, ${F} fingerprints [skip ci]"
-          git tag "v${{ steps.bump.outputs.version }}"
-          git push origin HEAD --tags
+          git diff --cached --quiet || git commit -m "v${{ steps.bump.outputs.version }}: ${D} drivers, ${F} fingerprints [skip ci]"
+          git tag -f "v${{ steps.bump.outputs.version }}"
+          git push origin HEAD --tags --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish
         if: steps.pat.outputs.ok == 'true'
         id: pub
-        uses: athombv/github-action-homey-app-publish@master
+        uses: athombv/github-action-homey-app-publish@v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
-      - name: Auto-Publish Draft to Test
+      - name: Create GitHub Release
+        if: steps.pat.outputs.ok == 'true'
+        continue-on-error: true
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.bump.outputs.version }}
+          name: v${{ steps.bump.outputs.version }}
+          body: ${{ steps.cl.outputs.text }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Auto-Publish Draft to Test (Node)
         if: steps.pat.outputs.ok == 'true'
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           DRY_RUN: 'false'
         run: node .github/scripts/auto-publish-draft.js
+
+      - name: Draft to Test (curl fallback)
+        if: steps.pat.outputs.ok == 'true'
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          APP=com.dlnraja.tuya.zigbee
+          VER=${{ steps.bump.outputs.version }}
+          AUTH="Authorization: Bearer $HOMEY_PAT"
+          CT="Content-Type: application/json"
+          for BASE in https://apps-sdk-v3.athom.com https://api.athom.com; do
+            for EP in "/api/app/$APP/version/$VER/test" "/app/$APP/version/$VER/test"; do
+              echo "Trying: PUT $BASE$EP"
+              CODE=$(curl -s -o /tmp/resp.txt -w "%{http_code}" -X PUT -H "$AUTH" -H "$CT" "$BASE$EP")
+              echo "  HTTP $CODE: $(cat /tmp/resp.txt | head -c 200)"
+              if [ "$CODE" = "200" ] || [ "$CODE" = "201" ] || [ "$CODE" = "204" ]; then
+                echo "SUCCESS: v$VER promoted to Test!"
+                exit 0
+              fi
+            done
+            for EP in "/api/app/$APP/version/$VER/publish" "/app/$APP/version/$VER/publish"; do
+              for METHOD in PUT POST; do
+                echo "Trying: $METHOD $BASE$EP"
+                CODE=$(curl -s -o /tmp/resp.txt -w "%{http_code}" -X $METHOD -H "$AUTH" -H "$CT" -d '{"channel":"test"}' "$BASE$EP")
+                echo "  HTTP $CODE: $(cat /tmp/resp.txt | head -c 200)"
+                if [ "$CODE" = "200" ] || [ "$CODE" = "201" ] || [ "$CODE" = "204" ]; then
+                  echo "SUCCESS: v$VER promoted to Test!"
+                  exit 0
+                fi
+              done
+            done
+          done
+          echo "::warning::Could not auto-promote draft to test. Go to https://tools.developer.homey.app/apps/app/$APP/versions"
 
       - name: Post to Forum
         if: steps.pat.outputs.ok == 'true'

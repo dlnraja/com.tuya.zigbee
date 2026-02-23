@@ -172,7 +172,18 @@ class IrBlasterDevice extends ZigBeeDevice {
 
     try {
       // Setup ZosungIRControl cluster (0xE004)
-      const irControlCluster = endpoint.clusters.zosungIRControl;
+      let irControlCluster = endpoint.clusters.zosungIRControl;
+      if (!irControlCluster) {
+        // v5.11.17: Device paired before cluster registration — manually instantiate
+        this.log('[IR-SETUP] ⚠️ ZosungIRControl not in simple descriptor — creating manual instance');
+        try {
+          irControlCluster = new ZosungIRControlCluster({ clusterEndpoint: endpoint });
+          this.log('[IR-SETUP] ✅ Manual ZosungIRControl instance created');
+        } catch (e) {
+          this.log('[IR-SETUP] ❌ Manual ZosungIRControl failed:', e.message);
+        }
+      }
+      this._irControlCluster = irControlCluster || null;
       if (irControlCluster) {
         this.log('[IR-SETUP] ✅ ZosungIRControl cluster (0xE004) available');
 
@@ -201,7 +212,17 @@ class IrBlasterDevice extends ZigBeeDevice {
       }
 
       // Setup ZosungIRTransmit cluster (0xED00)
-      const irTransmitCluster = endpoint.clusters.zosungIRTransmit;
+      let irTransmitCluster = endpoint.clusters.zosungIRTransmit;
+      if (!irTransmitCluster) {
+        // v5.11.17: Manual instantiation fallback
+        this.log('[IR-SETUP] ⚠️ ZosungIRTransmit not in simple descriptor — creating manual instance');
+        try {
+          irTransmitCluster = new ZosungIRTransmitCluster({ clusterEndpoint: endpoint });
+          this.log('[IR-SETUP] ✅ Manual ZosungIRTransmit instance created');
+        } catch (e) {
+          this.log('[IR-SETUP] ❌ Manual ZosungIRTransmit failed:', e.message);
+        }
+      }
       if (irTransmitCluster) {
         this.log('[IR-SETUP] ✅ ZosungIRTransmit cluster (0xED00) available');
         this._irTransmitCluster = irTransmitCluster;
@@ -314,9 +335,9 @@ class IrBlasterDevice extends ZigBeeDevice {
         await this.setCapabilityValue('button.learn_ir', true).catch(() => { });
       }
 
-      // v5.5.356: Enhanced protocol setup
+      // v5.11.17: Use stored cluster instances (includes manual fallback from _setupAdvancedIRClusters)
       this.log(`[IR-LEARN] EP1 clusters: ${Object.keys(zclNode.endpoints[1].clusters || {}).join(', ')}`);
-      const irControlCluster = zclNode.endpoints[1].clusters.zosungIRControl;
+      const irControlCluster = this._irControlCluster;
       if (irControlCluster) {
         try {
           // Set protocol if specified
@@ -405,8 +426,8 @@ class IrBlasterDevice extends ZigBeeDevice {
     try {
       this.log('Sending IR learn command to cluster 0xE004...');
 
-      // v5.5.311: Use proper ZosungIRControl cluster command
-      const irControlCluster = zclNode.endpoints[1].clusters.zosungIRControl;
+      // v5.11.17: Use stored cluster instance (includes manual fallback)
+      const irControlCluster = this._irControlCluster;
       if (irControlCluster) {
         try {
           await irControlCluster.IRLearn({ data: Buffer.from(JSON.stringify({ study: 0 })) });
@@ -479,8 +500,8 @@ class IrBlasterDevice extends ZigBeeDevice {
         await this.setCapabilityValue('button.learn_ir', false).catch(() => { });
       }
 
-      // v5.5.311: Use proper ZosungIRControl cluster command
-      const irControlCluster = zclNode.endpoints[1].clusters.zosungIRControl;
+      // v5.11.17: Use stored cluster instance (includes manual fallback)
+      const irControlCluster = this._irControlCluster;
       if (irControlCluster) {
         try {
           // v5.9.14: Z2M sends {"study":1} to stop learning
@@ -542,8 +563,8 @@ class IrBlasterDevice extends ZigBeeDevice {
         }
       });
 
-      // Try chunked transmission first (most reliable for large codes)
-      const irTransmitCluster = zclNode.endpoints[1].clusters.zosungIRTransmit;
+      // v5.11.17: Use stored cluster instances
+      const irTransmitCluster = this._irTransmitCluster;
       if (irTransmitCluster && irCode.length > 100) {
         try {
           await this._sendChunkedIRCode(irMessage, irTransmitCluster);
@@ -554,8 +575,8 @@ class IrBlasterDevice extends ZigBeeDevice {
         }
       }
 
-      // v5.5.311: Use ZosungIRControl.IRSend command directly
-      const irControlCluster = zclNode.endpoints[1].clusters.zosungIRControl;
+      // v5.11.17: Use stored cluster instance
+      const irControlCluster = this._irControlCluster;
       if (irControlCluster) {
         try {
           await irControlCluster.IRSend({ code: irCode });
@@ -648,7 +669,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
 
     try {
-      const irControlCluster = zclNode.endpoints[1].clusters.zosungIRControl;
+      const irControlCluster = this._irControlCluster;
       if (irControlCluster) {
         const result = await irControlCluster.readAttributes(['lastLearnedIRCode']);
         if (result?.lastLearnedIRCode) {
@@ -1147,7 +1168,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     const zclNode = this._zclNode;
     if (!zclNode?.endpoints?.[1]) return;
 
-    const irControlCluster = zclNode.endpoints[1].clusters.zosungIRControl;
+    const irControlCluster = this._irControlCluster;
     if (irControlCluster && IR_PROTOCOLS[protocol.toUpperCase()]) {
       try {
         await irControlCluster.IRProtocolSet({
@@ -1170,7 +1191,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     const zclNode = this._zclNode;
     if (!zclNode?.endpoints?.[1]) return;
 
-    const irControlCluster = zclNode.endpoints[1].clusters.zosungIRControl;
+    const irControlCluster = this._irControlCluster;
     if (irControlCluster) {
       try {
         await irControlCluster.IRProtocolSet({
