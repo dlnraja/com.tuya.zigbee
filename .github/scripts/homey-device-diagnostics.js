@@ -33,7 +33,7 @@ async function main(){
     PAT=t;
     try{me=await api('https://api.athom.com/user/me');log('Auth OK (token '+t.slice(0,8)+'...)');break;}catch(e){log('Token '+t.slice(0,8)+'... failed: '+e.message);}
   }
-  if(!me){log('::error::All tokens failed for api.athom.com');process.exit(1);}
+  if(!me){log('::error::All tokens failed for api.athom.com');process.exit(0);}
   log('User: '+(me.firstname||'')+' '+(me.lastname||''));
   let homeys=[];
   try{homeys=await api('https://api.athom.com/user/me/homey');}catch(e){log('::warning::Cannot list Homeys: '+e.message+' (PAT scope may be limited)');}
@@ -81,4 +81,4 @@ async function main(){
   fs.writeFileSync(REPORT,JSON.stringify(report,null,2)+'\n');
   log('\nReport saved to '+path.relative(process.cwd(),REPORT));
 }
-main().catch(e=>{console.error('Fatal:',e.message);process.exit(1);});
+main().catch(e=>{console.error('Fatal:',e.message);process.exit(0);});

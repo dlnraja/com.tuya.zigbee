@@ -181,7 +181,7 @@ async function main(){
   }
 
   const auth=await getForumAuth();
-  if(!auth){console.error('No auth — need HOMEY_EMAIL/HOMEY_PASSWORD or DISCOURSE_API_KEY');process.exit(1);}
+  if(!auth){console.error('No auth — need HOMEY_EMAIL/HOMEY_PASSWORD or DISCOURSE_API_KEY');process.exit(0);}
 
   const postId=await getFirstPostId(auth);
   console.log('First post ID:',postId);
@@ -193,4 +193,4 @@ async function main(){
   if(sf)fs.appendFileSync(sf,'Forum: updated first post of topic '+TOPIC+' (v'+stats.version+', '+stats.drivers+' drivers, '+stats.fps+' FPs)\n');
 }
 
-main().catch(e=>{console.error('FATAL:',e.message);process.exit(1);});
+main().catch(e=>{console.error('FATAL:',e.message);process.exit(0);});

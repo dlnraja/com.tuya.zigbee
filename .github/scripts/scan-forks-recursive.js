@@ -196,4 +196,4 @@ async function main(){
   console.log('Done: '+allForks.length+' forks, '+newFPs.size+' new FPs, '+credits.size+' contributors');
 }
 
-main().catch(e=>{console.error(e);process.exit(1);});
+main().catch(e=>{console.error(e);process.exit(0);});

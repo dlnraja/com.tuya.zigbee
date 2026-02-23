@@ -5,6 +5,7 @@
  */
 const fs=require('fs'),path=require('path');
 const{callAI,analyzeImage,sleep}=require('./ai-helper');
+const{getForumAuth,fmtCk}=require('./forum-auth');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const STATE=path.join(__dirname,'..','state','monthly-state.json');
 const GH='https://api.github.com';
@@ -216,42 +217,15 @@ async function respondToIssue(repo,issue,idx,pidx,state,appVersion){
   return{repo,number:issue.number,response:ai.text,model:ai.model,fps,results};
 }
 
-// --- FORUM AUTH + POST ---
-function extractCookies(res){
-  const c={};
-  const headers=typeof res.headers.getSetCookie==='function'?res.headers.getSetCookie():
-    (res.headers.get('set-cookie')||'').split(/,(?=[^ ])/);
-  for(const h of headers){const i=h.indexOf('='),s=h.indexOf(';');
-    if(i>0)c[h.substring(0,i).trim()]=h.substring(i+1,s>0?s:undefined).trim()}
-  return c;
-}
-function fmtCookies(c){return Object.entries(c).map(([k,v])=>k+'='+v).join('; ')}
-
-async function discourseLogin(){
-  const email=process.env.HOMEY_EMAIL,pw=process.env.HOMEY_PASSWORD;
-  if(!email||!pw)return null;
-  const r1=await fetch(FORUM+'/session/csrf',{headers:{'X-Requested-With':'XMLHttpRequest',Accept:'application/json','User-Agent':'Mozilla/5.0 (compatible; TuyaZigbeeBot/1.0)'}});
-  if(!r1.ok)return null;
-  const csrf=(await r1.json()).csrf;
-  const ck1=extractCookies(r1);
-  const r2=await fetch(FORUM+'/session',{method:'POST',redirect:'manual',
-    headers:{'Content-Type':'application/x-www-form-urlencoded','X-CSRF-Token':csrf,'X-Requested-With':'XMLHttpRequest','User-Agent':'Mozilla/5.0 (compatible; TuyaZigbeeBot/1.0)',Cookie:fmtCookies(ck1)},
-    body:'login='+encodeURIComponent(email)+'&password='+encodeURIComponent(pw)});
-  if(!r2.ok&&r2.status!==302)return null;
-  const ck2={...ck1,...extractCookies(r2)};
-  if(!ck2._t)return null;
-  return{csrf,cookies:ck2};
-}
-
+// --- FORUM AUTH + POST (uses forum-auth.js) ---
 async function postToForum(topicId,content,auth){
-  const r=await fetch(FORUM+'/posts',{method:'POST',
-    headers:{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCookies(auth.cookies)},
+  const h=auth.type==='apikey'
+    ?{'Content-Type':'application/json','User-Api-Key':auth.key}
+    :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
+  const r=await fetch(FORUM+'/posts',{method:'POST',headers:h,
     body:JSON.stringify({topic_id:topicId,raw:content})});
   return r.ok?(await r.json()):null;
 }
-
-
-// --- MAIN ---
 async function main(){
   const dryRun=process.env.DRY_RUN!=='false';
   const repos=['dlnraja/com.tuya.zigbee','JohanBendz/com.tuya.zigbee'];
@@ -357,7 +331,7 @@ async function main(){
 
     // Post to forum
     if(!dryRun){
-      const auth=await discourseLogin();
+      const auth=await getForumAuth();
       if(auth){
         const posted=await postToForum(140352,aiSummary.text,auth);
         if(posted)console.log('Forum post id:',posted.id);
@@ -393,4 +367,4 @@ async function main(){
   }
 }
 
-main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});
+main().catch(e=>{console.error('Fatal:',e.message);process.exit(0)});

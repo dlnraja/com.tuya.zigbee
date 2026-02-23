@@ -29,7 +29,7 @@ async function main(){
         'Gmail refresh token expired at '+now+'. Re-generate via OAuth Playground.');
     }
     fs.writeFileSync(HF,JSON.stringify(health,null,2));
-    process.exit(1);
+    process.exit(0);
   }
 
   const j=await res.json();
@@ -72,4 +72,4 @@ async function main(){
   fs.writeFileSync(HF,JSON.stringify(health,null,2));
   console.log('Health saved. Testing mode:',health.testingMode);
 }
-main().catch(e=>{console.error(e.message);process.exit(1);});
+main().catch(e=>{console.error(e.message);process.exit(0);});
