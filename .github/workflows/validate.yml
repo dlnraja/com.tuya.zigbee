@@ -5,6 +5,8 @@
 name: 🔍 Validate Homey App
 
 on:
+  schedule:
+    - cron: '0 12 * * *'  # Daily 12:00 UTC — validation sanity check
   pull_request:
     branches:
       - master
