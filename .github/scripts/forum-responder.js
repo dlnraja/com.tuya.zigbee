@@ -1,5 +1,5 @@
 const fs=require('fs'),path=require('path');
-const FORUM='https://community.homey.app';
+const {getForumAuth,fmtCk,FORUM}=require('./forum-auth');
 const MODEL='gemini-2.0-flash';
 const SKIP=['dlnraja','system','discobot'];
 const MAX_REPLIES=5,DELAY=15000;
@@ -27,42 +27,6 @@ function buildIndex(){
   return{idx,pidx};
 }
 
-function extractCookies(res){
-  const c={};
-  const headers=typeof res.headers.getSetCookie==='function'?res.headers.getSetCookie():
-    (res.headers.get('set-cookie')||'').split(/,(?=[^ ])/);
-  for(const h of headers){
-    const i=h.indexOf('='),s=h.indexOf(';');
-    if(i>0)c[h.substring(0,i).trim()]=h.substring(i+1,s>0?s:undefined).trim();
-  }
-  return c;
-}
-function fmtCookies(c){return Object.entries(c).map(([k,v])=>k+'='+v).join('; ')}
-
-async function discourseLogin(email,password){
-  const UA='Mozilla/5.0 (compatible; TuyaZigbeeBot/1.0; +https://github.com/dlnraja/com.tuya.zigbee)';
-  const r1=await fetch(FORUM+'/session/csrf',{headers:{'X-Requested-With':'XMLHttpRequest',Accept:'application/json','User-Agent':UA}});
-  if(!r1.ok)throw new Error('CSRF failed: '+r1.status);
-  const csrf=(await r1.json()).csrf;
-  const ck1=extractCookies(r1);
-  console.log('CSRF OK, cookies:',Object.keys(ck1).join(','));
-  const r2=await fetch(FORUM+'/session',{method:'POST',redirect:'manual',
-    headers:{'Content-Type':'application/x-www-form-urlencoded','X-CSRF-Token':csrf,'X-Requested-With':'XMLHttpRequest','User-Agent':UA,Cookie:fmtCookies(ck1)},
-    body:'login='+encodeURIComponent(email)+'&password='+encodeURIComponent(password)});
-  if(!r2.ok&&r2.status!==302){const b=await r2.text().catch(()=>'');console.error('Login body:',b.slice(0,300));throw new Error('Login failed: '+r2.status);}
-  const ck2={...ck1,...extractCookies(r2)};
-  if(!ck2._t)throw new Error('No session cookie after login');
-  return{csrf,cookies:ck2};
-}
-
-async function getForumAuth(){
-  const ak=process.env.DISCOURSE_API_KEY;
-  if(ak){console.log('Auth: Discourse API key');return{type:'apikey',key:ak};}
-  const em=process.env.HOMEY_EMAIL,pw=process.env.HOMEY_PASSWORD;
-  if(em&&pw){try{const a=await discourseLogin(em,pw);console.log('Auth: session login OK');return{type:'session',...a};}catch(e){console.warn('Session login failed:',e.message);}}
-  console.log('No forum auth - scan-only mode');return null;
-}
-
 async function fetchNewPosts(topicId,since){
   const r=await fetch(FORUM+'/t/'+topicId+'.json');
   if(!r.ok)throw new Error('Topic fetch failed: '+r.status);
@@ -86,7 +50,7 @@ async function fetchNewPosts(topicId,since){
 async function postReply(topicId,replyTo,content,auth){
   const h=auth.type==='apikey'
     ?{'Content-Type':'application/json','User-Api-Key':auth.key}
-    :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCookies(auth.cookies)};
+    :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
   const r=await fetch(FORUM+'/posts',{method:'POST',headers:h,
     body:JSON.stringify({topic_id:topicId,raw:content,reply_to_post_number:replyTo})});
   const d=await r.json().catch(()=>({}));
