@@ -1,5 +1,23 @@
 {
+  "5.11.21": {
+    "en": "v5.11.21: IR Blaster learning fix, energy divisors, soil moisture fix. (1) IR Blaster ZS06 manual cluster fallback for learning mode. (2) TS011F _TZ3210_xzhnra8x configurable ZCL energy divisors. (3) _TZ3000_dd8wwzcy added. (4) Soil sensor moisture fix in AdaptiveDataParser. (5) TuyaEF00Manager skip auto-convert for divisor:1 DPs."
+  },
+  "5.11.20": {
+    "en": "See .homeychangelog.json for details"
+  },
   "5.11.19": {
+    "en": "v5.11.19: Soil sensor compound frame guards, curtain motor physical button fix, CI/CD overhaul with auto-publish."
+  },
+  "5.11.18": {
+    "en": "Auto-publish via GitHub Actions"
+  },
+  "5.11.17": {
+    "en": "Auto-publish via GitHub Actions"
+  },
+  "5.11.16": {
+    "en": "Auto-publish via GitHub Actions"
+  },
+  "5.11.15": {
     "en": "Auto-publish via GitHub Actions"
   },
   "5.11.14": {
@@ -430,6 +448,9 @@
   },
   "5.8.3": {
     "en": "🔧 v5.8.3: FORUM FIXES - 1) _TZE284_debczeci presence sensor config (Diag 7570421d - motion every 5 min). 2) _TZE204_ztqnh5cg duplicate fingerprint fix (Forum #1350 tlink). 3) IR Blaster onoff capability listener fix (Forum #1349 FrankP). 4) GitHub workflow secret fix for publishing."
+  },
+  "5.7.52": {
+    "en": "🔧 FORUM FIX #1341: (1) soil_sensor crash fixed - added missing moisture_below condition to driver.js, (2) presence_sensor_radar empty manufacturer - enhanced fallback methods, (3) button_wireless_4 ghost presses - detect uninitialized state via impossible sinceEvent (>24h). Also: Peter humidity fix for ZG-204ZV."
   },
   "5.7.51": {
     "en": "🔧 MANUFACTURER NAME FIX v5.7.51: Robust ManufacturerNameHelper with _g()/_v() safe getters. Each source validated individually (not ||). Added debugManufacturerSources() for diagnostics. readManufacturerFromCluster() async fallback. Integrated in: IntelligentProtocolRouter, HybridSensorBase, ButtonDevice, DeviceDataHelper. No more empty/null manufacturerName!"
@@ -1217,6 +1238,9 @@
   "5.5.789": {
     "en": "🔧 BUG FIXES: Fixed switch_dimmer_1gang 'Invalid Flow Card ID' error + AVATTO ME167/TRV06 thermostat DP profile support (_TZE284_o3x45p96). RE-PAIR thermostats after update."
   },
+  "5.5.769": {
+    "en": "op^timise and fix issues related to optinal referencies "
+  },
   "5.5.759": {
     "en": "📦 Publish Release: MOES button BoundCluster fix (cluster 0xE000/57344), SOS button IAS Zone logging fix, all GitHub issues #101-#110 resolved. RE-PAIR REQUIRED for MOES buttons."
   },
@@ -1357,6 +1381,9 @@
   },
   "5.5.681": {
     "en": "🕐 TIME SYNC v4: zigbee-herdsman format (8-byte UTC+Local). TuyaTimeSync module integration. Epoch 2000 auto-detect for LCD devices (_TZE284/_TZE204)."
+  },
+  "5.5.680": {
+    "en": "📋 +38 driver.flow.compose.json files. 102 drivers with flow cards. Publish validation passed."
   },
   "5.5.679": {
     "en": "🕐 TIME SYNC v2: Full Tuya mcuSyncTime + ZCL Time cluster. +17 manufacturerName prefixes (MOES, eWeLink, SONOFF, LIDL). +26 productIds. 102 drivers audit-safe."
@@ -3348,6 +3375,96 @@
     "nl": "🔧 Eftychis Apparaten (#712): Verkeerd geïdentificeerde apparaten verwijderd uit climate_sensor. Juiste apparaatclassificatie.",
     "de": "🔧 Eftychis Geräte (#712): Falsch identifizierte Geräte aus climate_sensor entfernt. Korrekte Geräteklassifizierung."
   },
+  "5.5.264": {
+    "en": "FIX Ronny #706-708: _TZE204_gkfbdvyx has NO illuminance sensor, _TZE284_iadro9bf lux RAW conversion fixed",
+    "fr": "FIX Ronny #706-708: _TZE204_gkfbdvyx sans capteur lux, conversion lux RAW corrigee"
+  },
+  "5.5.263": {
+    "en": "FIX #709: Filter periodic onOff reports vs real button presses - no more false positives every 10mn",
+    "fr": "FIX #709: Filtre rapports onOff periodiques vs vrais appuis - plus de faux positifs"
+  },
+  "5.5.262": {
+    "en": "FIX button_wireless: Added scenes/onOff clusters to all endpoints for proper button detection",
+    "fr": "FIX button_wireless: Ajout clusters scenes/onOff a tous les endpoints"
+  },
+  "5.5.261": {
+    "en": "FIX Moes scene button: Detect ANY onOff change as button press (not just true). Debounce rapid events.",
+    "fr": "FIX Moes scene button: Detecter TOUT changement onOff comme pression bouton. Anti-rebond."
+  },
+  "5.5.260": {
+    "en": "FIX #699 Cyril: 4-button controller physical buttons not working + battery not updating. Added 4 endpoints for TS0044.",
+    "fr": "FIX #699 Cyril: Boutons physiques 4-boutons non fonctionnels + batterie. Ajouté 4 endpoints pour TS0044."
+  },
+  "5.5.259": {
+    "en": "ENRICHED: +11 TZE284 temp/humid/soil IDs from Z2M #26162 + ZHA quirks. README direct links added. Issue #94 closed.",
+    "fr": "ENRICHI: +11 IDs TZE284 temp/humid/sol de Z2M #26162 + ZHA. Liens directs README. Issue #94 fermée."
+  },
+  "5.5.258": {
+    "en": "ENRICHED ZY-M100 presence sensors: Sanity checks for lux (0-2000 max), distance (0-10m), TZE284 DP104-112 mappings. NOTE: These sensors have NO temperature sensor!",
+    "fr": "ENRICHI ZY-M100: Limites lux (0-2000), distance (0-10m), TZE284 DP104-112. NOTE: Pas de capteur température!",
+    "nl": "VERRIJKT ZY-M100: Lux limieten (0-2000), afstand (0-10m), TZE284 DP104-112",
+    "de": "ERWEITERT ZY-M100: Lux Grenzen (0-2000), Distanz (0-10m), TZE284 DP104-112"
+  },
+  "5.5.257": {
+    "en": "FIXED _TZE284_iadro9bf ZY-M100-S_2 DP mappings (Ronny #696): DP104=lux, DP105=presence, DP109=distance, DP112=occupancy. Correct DP104-112 range for TZE284 series.",
+    "fr": "CORRIGE _TZE284_iadro9bf ZY-M100-S_2 mappings DP (Ronny #696): DP104=lux, DP105=presence, DP109=distance, DP112=occupancy",
+    "nl": "FIXED _TZE284_iadro9bf ZY-M100-S_2 DP mappings: DP104=lux, DP105=presence, DP109=distance",
+    "de": "FIXED _TZE284_iadro9bf ZY-M100-S_2 DP Mappings: DP104=Lux, DP105=Anwesenheit, DP109=Distanz"
+  },
+  "5.5.256": {
+    "en": "Added MOES TS0044 4-scene button _TZ3000_zgyzgdua (Cyril report #693)",
+    "fr": "Ajout bouton MOES TS0044 4 scenes _TZ3000_zgyzgdua (rapport Cyril #693)",
+    "nl": "MOES TS0044 4-scene knop _TZ3000_zgyzgdua toegevoegd",
+    "de": "MOES TS0044 4-Szenen-Taste _TZ3000_zgyzgdua hinzugefuegt"
+  },
+  "5.5.255": {
+    "en": "Intelligent Device Config System: Central config database for all device types. Energy monitor with 6 profiles (ZCL/Tuya/Silvercrest/BlitzWolf/3Phase). Presence radar with 7 profiles. Auto-detect protocol and divisors per manufacturerName.",
+    "fr": "Systeme Config Intelligent: Base de donnees centrale pour tous types appareils. Energy monitor 6 profils. Presence radar 7 profils. Detection auto protocole et diviseurs.",
+    "nl": "Intelligent Config Systeem: Centrale database voor alle apparaattypes. Energy monitor 6 profielen. Presence radar 7 profielen.",
+    "de": "Intelligentes Config System: Zentrale Datenbank fuer alle Geraetetypen. Energy Monitor 6 Profile. Presence Radar 7 Profile."
+  },
+  "5.5.254": {
+    "en": "Intelligent DP Mappings: Auto-detects sensor type per manufacturerName. Supports 7 sensor config profiles (ZY-M100, ZG-204ZM, TZE284, PIR, etc). Dynamic capabilities and presence transform.",
+    "fr": "Mappings DP Intelligents: Detection auto du type capteur par manufacturerName. 7 profils de config (ZY-M100, ZG-204ZM, TZE284, PIR, etc).",
+    "nl": "Intelligente DP Mappings: Automatische sensortype detectie per manufacturerName. 7 configuratieprofielen ondersteund.",
+    "de": "Intelligente DP Mappings: Automatische Sensortypeerkennung pro manufacturerName. 7 Konfigurationsprofile unterstuetzt."
+  },
+  "5.5.253": {
+    "en": "Radar sensors fix: Fixed DP mappings for _TZE200_gkfbdvyx, _TZE204_gkfbdvyx, _TZE284_iadro9bf. Fixed DP4 conflict. Improved presence detection (0=none, 1=motion, 2=stationary).",
+    "fr": "Correctif capteurs radar: Mappings DP corriges pour _TZE200_gkfbdvyx, _TZE204_gkfbdvyx, _TZE284_iadro9bf. Conflit DP4 corrige.",
+    "nl": "Radar sensoren fix: DP mappings gerepareerd voor _TZE200_gkfbdvyx, _TZE204_gkfbdvyx, _TZE284_iadro9bf.",
+    "de": "Radar Sensoren Fix: DP Mappings fuer _TZE200_gkfbdvyx, _TZE204_gkfbdvyx, _TZE284_iadro9bf repariert."
+  },
+  "5.5.252": {
+    "en": "ZG-204ZM Fix v2: Minimal init for battery sensors to avoid pairing timeout. Device stays available after pairing.",
+    "fr": "ZG-204ZM Fix v2: Init minimal pour capteurs batterie. Appareil reste disponible apres appairage.",
+    "nl": "ZG-204ZM Fix v2: Minimale init voor batterijsensoren. Apparaat blijft beschikbaar na koppelen.",
+    "de": "ZG-204ZM Fix v2: Minimale Init fuer Batteriesensoren. Geraet bleibt nach Pairing verfuegbar."
+  },
+  "5.5.251": {
+    "en": "ZG-204ZM Stability Fix: Battery-powered presence sensors now properly detected as sleepy EndDevices. Fixes unavailable after seconds issue.",
+    "fr": "Correctif Stabilite ZG-204ZM: Capteurs presence batterie detectes comme EndDevices dormants.",
+    "nl": "ZG-204ZM Stabiliteit Fix: Batterij aanwezigheidssensoren correct gedetecteerd als slapende EndDevices.",
+    "de": "ZG-204ZM Stabilitaets-Fix: Batteriebetriebene Prasenzsensoren als schlafende EndDevices erkannt."
+  },
+  "5.5.250": {
+    "en": "🔧 User Report Fix: Added ZG-204ZM presence sensor support (_TZE200_2aaelwxk). Total: 3988 IDs.",
+    "fr": "🔧 Correctif Rapport Utilisateur: Ajout support capteur présence ZG-204ZM (_TZE200_2aaelwxk). Total: 3988 IDs.",
+    "nl": "🔧 Gebruikersrapport Fix: ZG-204ZM aanwezigheidssensor ondersteuning toegevoegd. Totaal: 3988 IDs.",
+    "de": "🔧 Benutzerbericht Fix: ZG-204ZM Präsenzsensor Unterstützung hinzugefügt. Gesamt: 3988 IDs."
+  },
+  "5.5.249": {
+    "en": "🌐 Social Media Search: +2 manufacturerNames from Reddit, Hubitat, SmartThings, SmartHomeScene. Added Zemismart ZMS-206US-4 switches (_TZE204/_TZE284_xibaabmu). Total: 3987 IDs.",
+    "fr": "🌐 Recherche Réseaux Sociaux: +2 manufacturerNames depuis Reddit, Hubitat, SmartThings. Ajouté switches Zemismart ZMS-206US-4. Total: 3987 IDs.",
+    "nl": "🌐 Social Media Zoeken: +2 manufacturerNames van Reddit, Hubitat, SmartThings. Zemismart ZMS-206US-4 schakelaars toegevoegd. Totaal: 3987 IDs.",
+    "de": "🌐 Social Media Suche: +2 manufacturerNames von Reddit, Hubitat, SmartThings. Zemismart ZMS-206US-4 Schalter hinzugefügt. Gesamt: 3987 IDs."
+  },
+  "5.5.248": {
+    "en": "🌐 Internet Search Enrichment: +24 new manufacturerNames from Z2M issues, ZHA handlers, Hubitat, Blakadder. Added: thermostats, energy meters, radar sensors, LED controllers, curtain motors. Total: 3985 IDs.",
+    "fr": "🌐 Enrichissement Internet: +24 nouveaux manufacturerNames depuis Z2M, ZHA, Hubitat, Blakadder. Ajouté: thermostats, compteurs énergie, capteurs radar, LED, moteurs rideaux. Total: 3985 IDs.",
+    "nl": "🌐 Internet Verrijking: +24 nieuwe manufacturerNames van Z2M, ZHA, Hubitat, Blakadder. Toegevoegd: thermostaten, energiemeters, radarsensoren, LED, gordijnmotoren. Totaal: 3985 IDs.",
+    "de": "🌐 Internet-Anreicherung: +24 neue manufacturerNames von Z2M, ZHA, Hubitat, Blakadder. Hinzugefügt: Thermostate, Energiezähler, Radarsensoren, LED, Vorhangmotoren. Gesamt: 3985 IDs."
+  },
   "5.5.247": {
     "en": "🔄 Legacy Recovery: Analyzed 3 historical versions (v5.3.84, v5.2.99, v34.0.1). Recovered +44 validated manufacturerNames from legacy drivers. Total: 3961 IDs.",
     "fr": "🔄 Récupération Legacy: Analysé 3 versions historiques. Récupéré +44 manufacturerNames validés. Total: 3961 IDs.",
@@ -3455,6 +3572,42 @@
     "fr": "🔧 Corrections bugs forum: Correction TZ3210_s8lvbbuc/TS0505B détecté incorrectement comme capteur climat (maintenant ampoule RGB). Amélioration ZS06 IR Blaster avec mode apprentissage et cartes de flux.",
     "nl": "🔧 Forum Bug Fixes: TZ3210_s8lvbbuc/TS0505B verkeerd gedetecteerd als klimaatsensor opgelost (nu RGB lamp). ZS06 IR Blaster verbeterd met leermodus en flow kaarten.",
     "de": "🔧 Forum Fehlerbehebungen: TZ3210_s8lvbbuc/TS0505B falsch als Klimasensor erkannt behoben (jetzt RGB-Lampe). ZS06 IR Blaster mit Lernmodus und Flow-Karten verbessert."
+  },
+  "5.5.227": {
+    "en": "🔧 Fix: LCD climate sensor dual time sync (ZCL + Tuya EF00)",
+    "fr": "🔧 Fix: Double sync heure LCD capteur climatique (ZCL + Tuya EF00)",
+    "nl": "🔧 Fix: LCD klimaatsensor dubbele tijdsync (ZCL + Tuya EF00)",
+    "de": "🔧 Fix: LCD Klimasensor duale Zeitsynchronisierung (ZCL + Tuya EF00)"
+  },
+  "5.5.226": {
+    "en": "🔧 Fix: mmWave radar DP106 no longer incorrectly detected as button press",
+    "fr": "🔧 Fix: Radar mmWave DP106 plus détecté comme pression de bouton",
+    "nl": "🔧 Fix: mmWave radar DP106 niet meer verkeerd gedetecteerd als knopdruk",
+    "de": "🔧 Fix: mmWave Radar DP106 nicht mehr fälschlicherweise als Tastendruck erkannt"
+  },
+  "5.5.225": {
+    "en": "🔋 Fix: Battery reading restored for 4-gang buttons (regression from v5.5.21)",
+    "fr": "🔋 Fix: Lecture batterie restaurée pour boutons 4-gang (régression v5.5.21)",
+    "nl": "🔋 Fix: Batterij uitlezen hersteld voor 4-gang knoppen",
+    "de": "🔋 Fix: Batterieablesung für 4-Gang-Tasten wiederhergestellt"
+  },
+  "5.5.224": {
+    "en": "🔧 Fix: Button capability listeners for 4-button controller - fixes missing battery info",
+    "fr": "🔧 Fix: Listeners pour contrôleur 4 boutons - corrige batterie manquante",
+    "nl": "🔧 Fix: Button capability listeners voor 4-button controller",
+    "de": "🔧 Fix: Button capability listeners für 4-Tasten Controller"
+  },
+  "5.5.223": {
+    "en": "🔧 Fix: TypeError in climate_sensor driver + New switch_temp_sensor driver for TYZGTH1CH-D1RF",
+    "fr": "🔧 Fix: TypeError dans climate_sensor + Nouveau driver switch_temp_sensor pour TYZGTH1CH-D1RF",
+    "nl": "🔧 Fix: TypeError in climate_sensor + Nieuwe switch_temp_sensor driver voor TYZGTH1CH-D1RF",
+    "de": "🔧 Fix: TypeError in climate_sensor + Neuer switch_temp_sensor Treiber für TYZGTH1CH-D1RF"
+  },
+  "5.5.222": {
+    "en": "🚀 MEGA Enrichment: 3745 manufacturer IDs (+1128 from v5.5.221). Intelligent assignment corrections based on forum/GitHub feedback.",
+    "fr": "🚀 MEGA Enrichment: 3745 IDs fabricants (+1128 depuis v5.5.221). Corrections intelligentes basées sur retours forum/GitHub.",
+    "nl": "🚀 MEGA Enrichment: 3745 fabrikant-IDs (+1128 vanaf v5.5.221). Intelligente toewijzingscorrecties.",
+    "de": "🚀 MEGA Enrichment: 3745 Hersteller-IDs (+1128 von v5.5.221). Intelligente Zuweisungskorrekturen."
   },
   "5.5.221": {
     "en": "📋 FORUM REQUESTS: Added HOBEIAN ZG-204ZV to motion_sensor, _TZ3000_wkai4ga5 (TS0044) to button_wireless_4, _TZ3000_dfgbtub0 (TS0042) to button_wireless_2. All community forum device requests now properly supported.",
@@ -3879,158 +4032,5 @@
   },
   "5.5.87": {
     "en": "Multisensor 4-in-1 temperature/humidity support"
-  },
-  "5.5.222": {
-    "en": "🚀 MEGA Enrichment: 3745 manufacturer IDs (+1128 from v5.5.221). Intelligent assignment corrections based on forum/GitHub feedback.",
-    "fr": "🚀 MEGA Enrichment: 3745 IDs fabricants (+1128 depuis v5.5.221). Corrections intelligentes basées sur retours forum/GitHub.",
-    "nl": "🚀 MEGA Enrichment: 3745 fabrikant-IDs (+1128 vanaf v5.5.221). Intelligente toewijzingscorrecties.",
-    "de": "🚀 MEGA Enrichment: 3745 Hersteller-IDs (+1128 von v5.5.221). Intelligente Zuweisungskorrekturen."
-  },
-  "5.5.223": {
-    "en": "🔧 Fix: TypeError in climate_sensor driver + New switch_temp_sensor driver for TYZGTH1CH-D1RF",
-    "fr": "🔧 Fix: TypeError dans climate_sensor + Nouveau driver switch_temp_sensor pour TYZGTH1CH-D1RF",
-    "nl": "🔧 Fix: TypeError in climate_sensor + Nieuwe switch_temp_sensor driver voor TYZGTH1CH-D1RF",
-    "de": "🔧 Fix: TypeError in climate_sensor + Neuer switch_temp_sensor Treiber für TYZGTH1CH-D1RF"
-  },
-  "5.5.224": {
-    "en": "🔧 Fix: Button capability listeners for 4-button controller - fixes missing battery info",
-    "fr": "🔧 Fix: Listeners pour contrôleur 4 boutons - corrige batterie manquante",
-    "nl": "🔧 Fix: Button capability listeners voor 4-button controller",
-    "de": "🔧 Fix: Button capability listeners für 4-Tasten Controller"
-  },
-  "5.5.225": {
-    "en": "🔋 Fix: Battery reading restored for 4-gang buttons (regression from v5.5.21)",
-    "fr": "🔋 Fix: Lecture batterie restaurée pour boutons 4-gang (régression v5.5.21)",
-    "nl": "🔋 Fix: Batterij uitlezen hersteld voor 4-gang knoppen",
-    "de": "🔋 Fix: Batterieablesung für 4-Gang-Tasten wiederhergestellt"
-  },
-  "5.5.226": {
-    "en": "🔧 Fix: mmWave radar DP106 no longer incorrectly detected as button press",
-    "fr": "🔧 Fix: Radar mmWave DP106 plus détecté comme pression de bouton",
-    "nl": "🔧 Fix: mmWave radar DP106 niet meer verkeerd gedetecteerd als knopdruk",
-    "de": "🔧 Fix: mmWave Radar DP106 nicht mehr fälschlicherweise als Tastendruck erkannt"
-  },
-  "5.5.227": {
-    "en": "🔧 Fix: LCD climate sensor dual time sync (ZCL + Tuya EF00)",
-    "fr": "🔧 Fix: Double sync heure LCD capteur climatique (ZCL + Tuya EF00)",
-    "nl": "🔧 Fix: LCD klimaatsensor dubbele tijdsync (ZCL + Tuya EF00)",
-    "de": "🔧 Fix: LCD Klimasensor duale Zeitsynchronisierung (ZCL + Tuya EF00)"
-  },
-  "5.5.248": {
-    "en": "🌐 Internet Search Enrichment: +24 new manufacturerNames from Z2M issues, ZHA handlers, Hubitat, Blakadder. Added: thermostats, energy meters, radar sensors, LED controllers, curtain motors. Total: 3985 IDs.",
-    "fr": "🌐 Enrichissement Internet: +24 nouveaux manufacturerNames depuis Z2M, ZHA, Hubitat, Blakadder. Ajouté: thermostats, compteurs énergie, capteurs radar, LED, moteurs rideaux. Total: 3985 IDs.",
-    "nl": "🌐 Internet Verrijking: +24 nieuwe manufacturerNames van Z2M, ZHA, Hubitat, Blakadder. Toegevoegd: thermostaten, energiemeters, radarsensoren, LED, gordijnmotoren. Totaal: 3985 IDs.",
-    "de": "🌐 Internet-Anreicherung: +24 neue manufacturerNames von Z2M, ZHA, Hubitat, Blakadder. Hinzugefügt: Thermostate, Energiezähler, Radarsensoren, LED, Vorhangmotoren. Gesamt: 3985 IDs."
-  },
-  "5.5.249": {
-    "en": "🌐 Social Media Search: +2 manufacturerNames from Reddit, Hubitat, SmartThings, SmartHomeScene. Added Zemismart ZMS-206US-4 switches (_TZE204/_TZE284_xibaabmu). Total: 3987 IDs.",
-    "fr": "🌐 Recherche Réseaux Sociaux: +2 manufacturerNames depuis Reddit, Hubitat, SmartThings. Ajouté switches Zemismart ZMS-206US-4. Total: 3987 IDs.",
-    "nl": "🌐 Social Media Zoeken: +2 manufacturerNames van Reddit, Hubitat, SmartThings. Zemismart ZMS-206US-4 schakelaars toegevoegd. Totaal: 3987 IDs.",
-    "de": "🌐 Social Media Suche: +2 manufacturerNames von Reddit, Hubitat, SmartThings. Zemismart ZMS-206US-4 Schalter hinzugefügt. Gesamt: 3987 IDs."
-  },
-  "5.5.250": {
-    "en": "🔧 User Report Fix: Added ZG-204ZM presence sensor support (_TZE200_2aaelwxk). Total: 3988 IDs.",
-    "fr": "🔧 Correctif Rapport Utilisateur: Ajout support capteur présence ZG-204ZM (_TZE200_2aaelwxk). Total: 3988 IDs.",
-    "nl": "🔧 Gebruikersrapport Fix: ZG-204ZM aanwezigheidssensor ondersteuning toegevoegd. Totaal: 3988 IDs.",
-    "de": "🔧 Benutzerbericht Fix: ZG-204ZM Präsenzsensor Unterstützung hinzugefügt. Gesamt: 3988 IDs."
-  },
-  "5.5.251": {
-    "en": "ZG-204ZM Stability Fix: Battery-powered presence sensors now properly detected as sleepy EndDevices. Fixes unavailable after seconds issue.",
-    "fr": "Correctif Stabilite ZG-204ZM: Capteurs presence batterie detectes comme EndDevices dormants.",
-    "nl": "ZG-204ZM Stabiliteit Fix: Batterij aanwezigheidssensoren correct gedetecteerd als slapende EndDevices.",
-    "de": "ZG-204ZM Stabilitaets-Fix: Batteriebetriebene Prasenzsensoren als schlafende EndDevices erkannt."
-  },
-  "5.5.252": {
-    "en": "ZG-204ZM Fix v2: Minimal init for battery sensors to avoid pairing timeout. Device stays available after pairing.",
-    "fr": "ZG-204ZM Fix v2: Init minimal pour capteurs batterie. Appareil reste disponible apres appairage.",
-    "nl": "ZG-204ZM Fix v2: Minimale init voor batterijsensoren. Apparaat blijft beschikbaar na koppelen.",
-    "de": "ZG-204ZM Fix v2: Minimale Init fuer Batteriesensoren. Geraet bleibt nach Pairing verfuegbar."
-  },
-  "5.5.253": {
-    "en": "Radar sensors fix: Fixed DP mappings for _TZE200_gkfbdvyx, _TZE204_gkfbdvyx, _TZE284_iadro9bf. Fixed DP4 conflict. Improved presence detection (0=none, 1=motion, 2=stationary).",
-    "fr": "Correctif capteurs radar: Mappings DP corriges pour _TZE200_gkfbdvyx, _TZE204_gkfbdvyx, _TZE284_iadro9bf. Conflit DP4 corrige.",
-    "nl": "Radar sensoren fix: DP mappings gerepareerd voor _TZE200_gkfbdvyx, _TZE204_gkfbdvyx, _TZE284_iadro9bf.",
-    "de": "Radar Sensoren Fix: DP Mappings fuer _TZE200_gkfbdvyx, _TZE204_gkfbdvyx, _TZE284_iadro9bf repariert."
-  },
-  "5.5.254": {
-    "en": "Intelligent DP Mappings: Auto-detects sensor type per manufacturerName. Supports 7 sensor config profiles (ZY-M100, ZG-204ZM, TZE284, PIR, etc). Dynamic capabilities and presence transform.",
-    "fr": "Mappings DP Intelligents: Detection auto du type capteur par manufacturerName. 7 profils de config (ZY-M100, ZG-204ZM, TZE284, PIR, etc).",
-    "nl": "Intelligente DP Mappings: Automatische sensortype detectie per manufacturerName. 7 configuratieprofielen ondersteund.",
-    "de": "Intelligente DP Mappings: Automatische Sensortypeerkennung pro manufacturerName. 7 Konfigurationsprofile unterstuetzt."
-  },
-  "5.5.255": {
-    "en": "Intelligent Device Config System: Central config database for all device types. Energy monitor with 6 profiles (ZCL/Tuya/Silvercrest/BlitzWolf/3Phase). Presence radar with 7 profiles. Auto-detect protocol and divisors per manufacturerName.",
-    "fr": "Systeme Config Intelligent: Base de donnees centrale pour tous types appareils. Energy monitor 6 profils. Presence radar 7 profils. Detection auto protocole et diviseurs.",
-    "nl": "Intelligent Config Systeem: Centrale database voor alle apparaattypes. Energy monitor 6 profielen. Presence radar 7 profielen.",
-    "de": "Intelligentes Config System: Zentrale Datenbank fuer alle Geraetetypen. Energy Monitor 6 Profile. Presence Radar 7 Profile."
-  },
-  "5.5.256": {
-    "en": "Added MOES TS0044 4-scene button _TZ3000_zgyzgdua (Cyril report #693)",
-    "fr": "Ajout bouton MOES TS0044 4 scenes _TZ3000_zgyzgdua (rapport Cyril #693)",
-    "nl": "MOES TS0044 4-scene knop _TZ3000_zgyzgdua toegevoegd",
-    "de": "MOES TS0044 4-Szenen-Taste _TZ3000_zgyzgdua hinzugefuegt"
-  },
-  "5.5.257": {
-    "en": "FIXED _TZE284_iadro9bf ZY-M100-S_2 DP mappings (Ronny #696): DP104=lux, DP105=presence, DP109=distance, DP112=occupancy. Correct DP104-112 range for TZE284 series.",
-    "fr": "CORRIGE _TZE284_iadro9bf ZY-M100-S_2 mappings DP (Ronny #696): DP104=lux, DP105=presence, DP109=distance, DP112=occupancy",
-    "nl": "FIXED _TZE284_iadro9bf ZY-M100-S_2 DP mappings: DP104=lux, DP105=presence, DP109=distance",
-    "de": "FIXED _TZE284_iadro9bf ZY-M100-S_2 DP Mappings: DP104=Lux, DP105=Anwesenheit, DP109=Distanz"
-  },
-  "5.5.258": {
-    "en": "ENRICHED ZY-M100 presence sensors: Sanity checks for lux (0-2000 max), distance (0-10m), TZE284 DP104-112 mappings. NOTE: These sensors have NO temperature sensor!",
-    "fr": "ENRICHI ZY-M100: Limites lux (0-2000), distance (0-10m), TZE284 DP104-112. NOTE: Pas de capteur température!",
-    "nl": "VERRIJKT ZY-M100: Lux limieten (0-2000), afstand (0-10m), TZE284 DP104-112",
-    "de": "ERWEITERT ZY-M100: Lux Grenzen (0-2000), Distanz (0-10m), TZE284 DP104-112"
-  },
-  "5.5.259": {
-    "en": "ENRICHED: +11 TZE284 temp/humid/soil IDs from Z2M #26162 + ZHA quirks. README direct links added. Issue #94 closed.",
-    "fr": "ENRICHI: +11 IDs TZE284 temp/humid/sol de Z2M #26162 + ZHA. Liens directs README. Issue #94 fermée."
-  },
-  "5.5.260": {
-    "en": "FIX #699 Cyril: 4-button controller physical buttons not working + battery not updating. Added 4 endpoints for TS0044.",
-    "fr": "FIX #699 Cyril: Boutons physiques 4-boutons non fonctionnels + batterie. Ajouté 4 endpoints pour TS0044."
-  },
-  "5.5.261": {
-    "en": "FIX Moes scene button: Detect ANY onOff change as button press (not just true). Debounce rapid events.",
-    "fr": "FIX Moes scene button: Detecter TOUT changement onOff comme pression bouton. Anti-rebond."
-  },
-  "5.5.262": {
-    "en": "FIX button_wireless: Added scenes/onOff clusters to all endpoints for proper button detection",
-    "fr": "FIX button_wireless: Ajout clusters scenes/onOff a tous les endpoints"
-  },
-  "5.5.263": {
-    "en": "FIX #709: Filter periodic onOff reports vs real button presses - no more false positives every 10mn",
-    "fr": "FIX #709: Filtre rapports onOff periodiques vs vrais appuis - plus de faux positifs"
-  },
-  "5.5.264": {
-    "en": "FIX Ronny #706-708: _TZE204_gkfbdvyx has NO illuminance sensor, _TZE284_iadro9bf lux RAW conversion fixed",
-    "fr": "FIX Ronny #706-708: _TZE204_gkfbdvyx sans capteur lux, conversion lux RAW corrigee"
-  },
-  "5.5.680": {
-    "en": "📋 +38 driver.flow.compose.json files. 102 drivers with flow cards. Publish validation passed."
-  },
-  "5.5.769": {
-    "en": "op^timise and fix issues related to optinal referencies "
-  },
-  "5.7.52": {
-    "en": "🔧 FORUM FIX #1341: (1) soil_sensor crash fixed - added missing moisture_below condition to driver.js, (2) presence_sensor_radar empty manufacturer - enhanced fallback methods, (3) button_wireless_4 ghost presses - detect uninitialized state via impossible sinceEvent (>24h). Also: Peter humidity fix for ZG-204ZV."
-  },
-  "5.11.15": {
-    "en": "Auto-publish via GitHub Actions"
-  },
-  "5.11.16": {
-    "en": "Auto-publish via GitHub Actions"
-  },
-  "5.11.17": {
-    "en": "Auto-publish via GitHub Actions"
-  },
-  "5.11.18": {
-    "en": "Auto-publish via GitHub Actions"
-  },
-  "5.11.20": {
-    "en": "See .homeychangelog.json for details"
-  },
-  "5.11.21": {
-    "en": "See .homeychangelog.json for details"
   }
 }

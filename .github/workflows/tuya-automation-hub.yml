@@ -2,8 +2,8 @@ name: Tuya Automation Hub
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
-    - cron: '0 3 * * 1,4'
+    - cron: '0 1,7,13,19 * * *'  # Offset from daily-everything (02,08,14,20)
+    - cron: '0 4 * * 1,4'  # Mon/Thu deep scan
   workflow_dispatch:
     inputs:
       mode:
@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     if: |
-      github.event_name == 'schedule' && github.event.schedule == '0 */6 * * *' ||
+      github.event_name == 'schedule' && github.event.schedule == '0 1,7,13,19 * * *' ||
       github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'forum-only')
     steps:
       - uses: actions/checkout@v4
@@ -142,7 +142,7 @@ jobs:
     needs: [github-scanner, enrichment-scanner]
     if: |
       always() && (
-        github.event_name == 'schedule' && github.event.schedule == '0 3 * * 1,4' ||
+        github.event_name == 'schedule' && github.event.schedule == '0 4 * * 1,4' ||
         github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'forum-update-only')
       )
     steps:
@@ -159,3 +159,11 @@ jobs:
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
         run: node .github/scripts/forum-updater.js
+
+      - name: Auto-Publish Draft to Test
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          if [ -z "$HOMEY_PAT" ]; then exit 0; fi
+          node .github/scripts/auto-publish-draft.js || true

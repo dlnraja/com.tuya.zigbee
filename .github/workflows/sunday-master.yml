@@ -100,19 +100,23 @@ jobs:
       - name: Run fork scan
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-        run: node .github/scripts/scan-forks.js
+        run: node .github/scripts/scan-forks-recursive.js
       - if: hashFiles('/tmp/new_fork_fps.json') != ''
         uses: actions/github-script@v7
         with:
           script: |
             const fs=require('fs');
-            const data=JSON.parse(fs.readFileSync('/tmp/new_fork_fps.json','utf8'));
-            if(!data.length)return;
-            const rows=data.slice(0,50).map(([fp,{fork,driver}])=>
-              `| \`${fp}\` | ${fork} | ${driver} |`).join('\n');
+            const raw=JSON.parse(fs.readFileSync('/tmp/new_fork_fps.json','utf8'));
+            const entries=Array.isArray(raw)?raw:Object.entries(raw);
+            if(!entries.length)return;
+            const rows=entries.slice(0,50).map(([fp,info])=>{
+              const fork=info.fork||info[1]?.fork||'?';
+              const driver=info.driver||info[1]?.driver||'?';
+              return `| \`${fp}\` | ${fork} | ${driver} |`;
+            }).join('\n');
             await github.rest.issues.create({
               owner:context.repo.owner,repo:context.repo.repo,
-              title:`[Auto] ${data.length} new fingerprints from forks`,
+              title:`[Auto] ${entries.length} new fingerprints from forks`,
               body:`## New fingerprints\n| FP | Fork | Driver |\n|---|---|---|\n${rows}`,
               labels:['enhancement','auto-scan']
             });
@@ -227,9 +231,39 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/homey-device-diagnostics.js
 
+  generate-changelog:
+    name: "AI Changelog Generation"
+    needs: [scan-forum, gmail-diagnostics, device-diagnostics]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Generate AI Changelog
+        continue-on-error: true
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/generate-ai-changelog.js
+      - name: Commit changelog updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md README.md .homeychangelog.json
+          git diff --cached --quiet || git commit -m "docs: AI changelog update [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
+
   summary:
     name: "Weekly Summary"
-    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, forum-respond, gmail-diagnostics, device-diagnostics]
+    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, forum-respond, gmail-diagnostics, device-diagnostics, generate-changelog]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -243,3 +277,12 @@ jobs:
           echo "- Forum respond: ${{ needs.forum-respond.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Gmail diagnostics: ${{ needs.gmail-diagnostics.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Device diagnostics: ${{ needs.device-diagnostics.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- AI Changelog: ${{ needs.generate-changelog.result }}" >> $GITHUB_STEP_SUMMARY
+
+      - name: Auto-Publish Draft to Test
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          if [ -z "$HOMEY_PAT" ]; then exit 0; fi
+          node .github/scripts/auto-publish-draft.js || true

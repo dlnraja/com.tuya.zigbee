@@ -1,7 +1,7 @@
 name: Gmail Diagnostics Auto-Analysis
 on:
   schedule:
-    - cron: '0 8 * * *'  # 1x daily — saves Gmail quota + GH Actions minutes
+    - cron: '30 10 * * *'  # 1x daily backup, main coverage by daily-everything 08:00 run
   workflow_dispatch:
 
 permissions:
@@ -18,9 +18,12 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: npm ci --prefer-offline --no-audit || npm install
       - name: Fetch Gmail diagnostics + Gemini analysis
         env:
           GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
@@ -38,6 +41,7 @@ jobs:
           COUNT=$(node -p "try{JSON.parse(require('fs').readFileSync('.github/state/diagnostics-report.json')).emails?.length||0}catch(e){0}")
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           git diff --staged --quiet || git commit -m "Gmail diagnostics v${VER} $(date -u +%Y-%m-%d): ${COUNT} emails analyzed [skip ci]"
+          git pull --rebase origin master || true
           git push || true
       - name: Auto-rotate refresh token if renewed
         env:

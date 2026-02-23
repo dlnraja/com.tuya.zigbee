@@ -2,7 +2,7 @@ name: "Upstream Auto-Triage & Redirect"
 
 on:
   schedule:
-    - cron: '30 */4 * * *'
+    - cron: '30 6,18 * * *'  # 2x daily, offset from daily-everything
   workflow_dispatch:
     inputs:
       dry_run:
