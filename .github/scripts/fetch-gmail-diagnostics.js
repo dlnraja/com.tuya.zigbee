@@ -54,31 +54,39 @@ async function gapi(tk,ep,retries=2){
   return null;
 }
 
-// Multi-query Gmail search: diagnostics, Homey logs, GitHub, changelogs
+// Multi-query Gmail search: ALL Homey-related emails
 const SEARCH_QUERIES=[
-  // 1. Homey diagnostic reports and logs
-  '(homey AND (diagnostic OR "diag report" OR "debug log" OR "crash" OR "app log"))',
-  // 2. Tuya/Zigbee device issues from users
-  '(tuya AND (zigbee OR device OR switch OR sensor OR thermostat OR "not working" OR "not pairing"))',
-  // 3. GitHub notifications for the repo
-  '(from:notifications@github.com AND (com.tuya.zigbee OR dlnraja OR "universal tuya"))',
-  // 4. Fingerprint patterns in emails (device reports)
+  // 1. Forum notifications (private + public messages)
+  '(from:community.homey.app)',
+  // 2. Homey system notifications (crash reports, diagnostics)
+  '(from:noreply@athom.com OR from:homey.app)',
+  // 3. Homey diagnostic reports, crash logs, interviews
+  '(homey AND (diagnostic OR crash OR "app log" OR interview OR "debug log" OR "diag report"))',
+  // 4. Tuya/Zigbee device issues from users
+  '(tuya AND (zigbee OR wifi OR device OR switch OR sensor OR "not working" OR "not pairing"))',
+  // 5. GitHub notifications (issues, PRs, actions)
+  '(from:notifications@github.com AND (com.tuya.zigbee OR dlnraja OR "universal tuya" OR JohanBendz))',
+  // 6. Fingerprint patterns in emails (device reports)
   '("_TZE200" OR "_TZE204" OR "_TZE284" OR "_TZ3000" OR "_TZ3210" OR "TS0601" OR "TS0001" OR "TS0002")',
-  // 5. Homey community / app store
+  // 7. Homey community / app store
   '(homey AND (changelog OR "new version" OR update OR "app store" OR "test version"))',
-  // 6. Homey device-specific terms
-  '(homey AND (zigbee OR "z-wave" OR "device offline" OR "interview" OR "pair" OR "re-pair"))',
+  // 8. Homey device-specific terms
+  '(homey AND (zigbee OR "device offline" OR interview OR pair OR "re-pair" OR "device report"))',
+  // 9. Athom account / Homey app emails
+  '(from:athom.com OR subject:homey OR subject:athom)',
+  // 10. Tuya WiFi specific
+  '("tuya wifi" OR "smart life" OR "tuya smart" OR "tuya cloud")',
 ];
 
 async function searchAll(tk,after){
   const seen=new Set(),all=[];
   for(const q of SEARCH_QUERIES){
     const full=encodeURIComponent(q+' after:'+after);
-    const msgs=(await gapi(tk,'messages?q='+full+'&maxResults=15'))?.messages||[];
+    const msgs=(await gapi(tk,'messages?q='+full+'&maxResults=25'))?.messages||[];
     for(const m of msgs){if(!seen.has(m.id)){seen.add(m.id);all.push(m)}}
   }
   console.log('Found '+all.length+' unique emails across '+SEARCH_QUERIES.length+' queries');
-  return all.slice(0,50); // cap at 50
+  return all.slice(0,100); // cap at 100
 }
 
 async function getEmail(tk,id){
@@ -103,6 +111,9 @@ async function getEmail(tk,id){
 function classify(em){
   const t=(em.subj+' '+em.body).toLowerCase();
   if(em.from.includes('notifications@github.com'))return'github';
+  if(em.from.includes('community.homey.app'))return'forum_message';
+  if(em.from.includes('athom.com'))return'homey_system';
+  if(t.includes('interview'))return'interview';
   if(t.includes('diagnostic')||t.includes('diag report')||t.includes('debug log'))return'diagnostic';
   if(t.includes('crash')||t.includes('error')||t.includes('not working'))return'bug_report';
   if(t.includes('changelog')||t.includes('new version')||t.includes('update'))return'changelog';
@@ -230,7 +241,10 @@ async function main(){
   st.processed=[...done].slice(-500);
   save(st);
   fs.writeFileSync(RF,JSON.stringify({timestamp:st.lastCheck,count:res.length,
-    byType:{diagnostic:res.filter(r=>r.type==='diagnostic').length,
+    byType:{forum_message:res.filter(r=>r.type==='forum_message').length,
+      homey_system:res.filter(r=>r.type==='homey_system').length,
+      interview:res.filter(r=>r.type==='interview').length,
+      diagnostic:res.filter(r=>r.type==='diagnostic').length,
       bug_report:res.filter(r=>r.type==='bug_report').length,
       github:res.filter(r=>r.type==='github').length,
       changelog:res.filter(r=>r.type==='changelog').length,
@@ -239,6 +253,7 @@ async function main(){
     newFingerprints:res.flatMap(r=>(r.xref||[]).filter(x=>!x.supported).map(x=>x.fingerprint)).filter((v,i,a)=>a.indexOf(v)===i),
     diagnostics:res},null,2));
   console.log('Done:',res.length,'emails processed');
-  console.log('By type:',JSON.stringify({diag:res.filter(r=>r.type==='diagnostic').length,bug:res.filter(r=>r.type==='bug_report').length,gh:res.filter(r=>r.type==='github').length}));
+  const bt={};for(const r of res)bt[r.type]=(bt[r.type]||0)+1;
+  console.log('By type:',JSON.stringify(bt));
 }
 main().catch(e=>{console.error(e.message);process.exit(1)});

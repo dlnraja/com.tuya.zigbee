@@ -6,7 +6,7 @@ const {getForumAuth,fmtCk,FORUM}=require('./forum-auth');
 const U='dlnraja';
 const S=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
 const LF=process.env.LAST_RESPOND_FILE||'/tmp/last_forum_respond.txt';
-const TOPICS=[140352,26439,146735,89271];
+const TOPICS=[140352,26439,146735,89271,54018,12758,85498];
 const APP='https://homey.app/a/com.dlnraja.tuya.zigbee/test/';
 
 async function reply(tid,raw,auth){
