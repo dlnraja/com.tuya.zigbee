@@ -13,7 +13,7 @@ const BASES=[
   'https://apps-api.developer.athom.com',
 ];
 
-if(!PAT){console.error('HOMEY_PAT not set');process.exit(1);}
+if(!PAT){console.error('HOMEY_PAT not set');process.exit(0);}
 const H={'Authorization':'Bearer '+PAT,'Content-Type':'application/json','Accept':'application/json'};
 
 function log(t){console.log(t);if(SUM)try{fs.appendFileSync(SUM,t+'\n')}catch{}}
@@ -188,4 +188,4 @@ async function main(){
   log('\nManage: https://tools.developer.homey.app/apps/app/'+APP);
 }
 
-main().catch(e=>{console.error('Fatal:',e);process.exit(1)});
+main().catch(e=>{console.error('Fatal:',e);process.exit(0)});

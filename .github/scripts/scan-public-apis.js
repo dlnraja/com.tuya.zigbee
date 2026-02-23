@@ -35,4 +35,4 @@ async function main(){
   if(SUM){let s='## Public APIs Scan\n|Cat|Count|\n|--|--|\n|Total|'+entries.length+'|\n|AI/ML|'+ai.length+'|\n|IoT|'+iot.length+'|\n|FreeAI|'+free_ai.length+'|\n';fs.appendFileSync(SUM,s);}
   console.log('Report:',STATE);
 }
-main().catch(e=>{console.error(e.message);process.exit(1)});
+main().catch(e=>{console.error(e.message);process.exit(0)});

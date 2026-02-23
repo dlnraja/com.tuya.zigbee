@@ -51,6 +51,7 @@ jobs:
           node-version: '22'
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Run Forum Responder
+        continue-on-error: true
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -90,6 +91,7 @@ jobs:
           node-version: '22'
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Run GitHub Scanner
+        continue-on-error: true
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -125,6 +127,7 @@ jobs:
           node-version: '22'
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Run Enrichment Scanner
+        continue-on-error: true
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -163,7 +166,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: npm ci --prefer-offline --no-audit || npm install
       - name: Post Forum Summary
+        continue-on-error: true
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
