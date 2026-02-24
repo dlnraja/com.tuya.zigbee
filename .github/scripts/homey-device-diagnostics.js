@@ -81,4 +81,4 @@ async function main(){
   fs.writeFileSync(REPORT,JSON.stringify(report,null,2)+'\n');
   log('\nReport saved to '+path.relative(process.cwd(),REPORT));
 }
-main().catch(e=>{console.error('Fatal:',e.message);process.exit(0);});
+main().catch(e=>{console.error('Fatal:',e.message);process.exit(1);});

@@ -2,6 +2,8 @@ name: Auto-Publish on Push
 
 on:
   workflow_dispatch:
+  push:
+    branches: [master, main]
   workflow_run:
     workflows: ["Nightly Auto-Process", "Sunday Master Automation"]
     types: [completed]
@@ -92,17 +94,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
-      - name: Auto-Publish Draft to Test (Node)
+      - name: Promote Draft to Test (Node)
         if: steps.check_pat.outputs.has_pat == 'true'
+        id: promote_node
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: 'false'
         run: node .github/scripts/auto-publish-draft.js
 
-      - name: Draft to Test (curl fallback)
-        if: steps.check_pat.outputs.has_pat == 'true'
-        continue-on-error: true
+      - name: Promote Draft to Test (curl fallback)
+        if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_node.outcome != 'success'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
@@ -125,6 +129,16 @@ jobs:
             done
           done
           echo "::warning::Manual promote needed: https://tools.developer.homey.app/apps/app/$APP/versions"
+
+      - name: Verify Test Channel
+        if: steps.check_pat.outputs.has_pat == 'true'
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: |
+          sleep 20
+          node .github/scripts/auto-publish-draft.js
 
       - name: Post to Forum
         if: steps.check_pat.outputs.has_pat == 'true'

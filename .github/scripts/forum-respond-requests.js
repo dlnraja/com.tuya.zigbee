@@ -55,4 +55,4 @@ async function main(){
   if(lastId>0)fs.writeFileSync(LF,String(lastId));
   fs.appendFileSync(S,'Forum: responded to '+ct+' posts\n');
 }
-main().catch(e=>{console.error(e.message);process.exit(0);});
+main().catch(e=>{console.error(e.message);process.exit(1);});

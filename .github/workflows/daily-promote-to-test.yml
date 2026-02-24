@@ -1,0 +1,74 @@
+name: Daily Draft to Test
+on:
+  schedule:
+    - cron: '30 3 * * *'
+    - cron: '30 9 * * *'
+    - cron: '30 15 * * *'
+    - cron: '30 21 * * *'
+  workflow_dispatch:
+  workflow_run:
+    workflows: [Auto Publish, Auto-Publish on Push, Daily Everything Pipeline]
+    types: [completed]
+permissions:
+  contents: read
+concurrency:
+  group: promote-to-test
+  cancel-in-progress: true
+jobs:
+  promote:
+    name: Promote draft to test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Promote Node
+        id: node
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: node .github/scripts/auto-publish-draft.js
+      - name: Promote curl
+        if: steps.node.outcome != 'success'
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          APP=com.dlnraja.tuya.zigbee
+          VER=$(node -p "require('./app.json').version")
+          AUTH="Authorization: Bearer $HOMEY_PAT"
+          CT="Content-Type: application/json"
+          for BASE in https://apps-sdk-v3.athom.com https://api.athom.com; do
+            for EP in "/api/app/$APP/version/$VER/test" "/app/$APP/version/$VER/test"; do
+              CODE=$(curl -s -o /tmp/r.txt -w "%{http_code}" -X PUT -H "$AUTH" -H "$CT" "$BASE$EP")
+              echo "PUT $BASE$EP => $CODE"
+              [ "$CODE" = "200" ] || [ "$CODE" = "201" ] || [ "$CODE" = "204" ] && exit 0
+            done
+            for EP in "/api/app/$APP/version/$VER/publish" "/app/$APP/version/$VER/publish"; do
+              for M in PUT POST; do
+                CODE=$(curl -s -o /tmp/r.txt -w "%{http_code}" -X $M -H "$AUTH" -H "$CT" -d '{"channel":"test"}' "$BASE$EP")
+                echo "$M $BASE$EP => $CODE"
+                [ "$CODE" = "200" ] || [ "$CODE" = "201" ] || [ "$CODE" = "204" ] && exit 0
+              done
+            done
+          done
+          echo "::warning::Manual promote: https://tools.developer.homey.app/apps/app/$APP/versions"
+      - name: Verify retry
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: |
+          sleep 20
+          node .github/scripts/auto-publish-draft.js
+      - name: Summary
+        if: always()
+        run: |
+          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
+          echo "## Draft to Test" >> $GITHUB_STEP_SUMMARY
+          echo "v$VER promote: node=${{ steps.node.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "[Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY

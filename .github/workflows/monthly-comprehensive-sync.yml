@@ -31,6 +31,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: npm ci --prefer-offline --no-audit || npm install
 
       - name: Run Monthly Comprehensive Scanner
         env:
@@ -48,6 +49,8 @@ jobs:
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
         run: node .github/scripts/auto-publish-draft.js
 
@@ -57,7 +60,28 @@ jobs:
           HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
         run: node .github/scripts/homey-device-diagnostics.js
 
-      - name: Scan Public APIs (davemachado/public-api)
+      - name: External Sources Scanner
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/external-sources-scanner.js
+
+      - name: Enrichment Scanner
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/enrichment-scanner.js
+
+      - name: Recursive Fork Scanner
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          FORK_DEPTH: "3"
+        run: node .github/scripts/scan-forks-recursive.js
+
+      - name: Scan Public APIs
         continue-on-error: true
         run: node .github/scripts/scan-public-apis.js
 

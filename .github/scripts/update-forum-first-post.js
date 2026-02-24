@@ -193,4 +193,4 @@ async function main(){
   if(sf)fs.appendFileSync(sf,'Forum: updated first post of topic '+TOPIC+' (v'+stats.version+', '+stats.drivers+' drivers, '+stats.fps+' FPs)\n');
 }
 
-main().catch(e=>{console.error('FATAL:',e.message);process.exit(0);});
+main().catch(e=>{console.error('FATAL:',e.message);process.exit(1);});

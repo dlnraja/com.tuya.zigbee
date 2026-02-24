@@ -10,6 +10,8 @@ const loadState=()=>{try{return JSON.parse(fs.readFileSync(STATE,'utf8'))}catch{
 const saveState=s=>{fs.mkdirSync(path.dirname(STATE),{recursive:true});fs.writeFileSync(STATE,JSON.stringify(s,null,2)+'\n')};
 const strip=h=>(h||'').replace(/<br\s*\/?>/gi,'\n').replace(/<\/p>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").trim();
 const extractFP=t=>({mfr:[...new Set(t.match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])],pid:[...new Set(t.match(/\bTS[0-9]{4}[A-Z]?\b/g)||[])]});
+const exImgs=h=>{const u=[];const re=/<img[^>]+src="([^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
+const exLinks=h=>{const u=[];const re=/href="(https?:\/\/[^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 
 function buildIndex(){
@@ -58,7 +60,7 @@ async function postReply(topicId,replyTo,content,auth){
   return d;
 }
 
-const{callAI}=require('./ai-helper');
+const{callAI,analyzeImage}=require('./ai-helper');
 
 function templateFallback(post,results,appVersion){
   const found=Object.entries(results).filter(([,v])=>v.found);
@@ -141,6 +143,13 @@ async function main(){
       for(const m of fp.mfr){const d=idx.get(m)||[];res[m]={found:d.length>0,drivers:d};console.log('  ',m,'->',d.length?d.join(','):'NOT FOUND')}
       for(const p2 of fp.pid){const d=pidx.get(p2)||[];res[p2]={found:d.length>0,drivers:d,type:'productId'}}
 
+      // Analyze images and links
+      const imgs=exImgs(p.cooked);let imgCtx=null;
+      if(imgs.length){const iu=imgs[0].startsWith('/')?FORUM+imgs[0]:imgs[0];try{imgCtx=await analyzeImage(iu,'Extract Tuya fingerprints from image. JSON or NULL.')}catch{}}
+      const links=exLinks(p.cooked).filter(l=>l.includes('github.com')||l.includes('zigbee2mqtt')||l.includes('blakadder'));
+      if(imgCtx)res._imageAnalysis=imgCtx;
+      if(links.length)res._externalLinks=links.slice(0,3);
+
       let reply;
       try{console.log('   Gemini...');reply=await analyzeWithGemini(p,res,appVersion)}
       catch(e){console.error('   Gemini error:',e.message);continue}
@@ -155,17 +164,20 @@ async function main(){
         summary.push({n:p.post_number,u:p.username,a:'dry_reply'});
         maxP=Math.max(maxP,p.post_number);
       }else{
-        try{
-          const r=await postReply(tid,p.post_number,reply,auth);
-          console.log('   Posted id:',r.id);
-          summary.push({n:p.post_number,u:p.username,a:'replied',id:r.id});
-          totalR++;
-          maxP=Math.max(maxP,p.post_number);
-          await sleep(DELAY);
-        }catch(e){
-          console.error('   Post error:',e.message);
-          summary.push({n:p.post_number,u:p.username,a:'failed',err:e.message});
+        let posted=false;
+        for(let ri=0;ri<3;ri++){
+          try{
+            const r=await postReply(tid,p.post_number,reply,auth);
+            console.log('   Posted id:',r.id);
+            summary.push({n:p.post_number,u:p.username,a:'replied',id:r.id});
+            totalR++;maxP=Math.max(maxP,p.post_number);posted=true;
+            await sleep(DELAY);break;
+          }catch(e){
+            console.warn('   Post try '+(ri+1)+':',e.message);
+            if(ri<2)await sleep(5000*(ri+1));
+          }
         }
+        if(!posted)summary.push({n:p.post_number,u:p.username,a:'failed'});
       }
     }
     state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};
@@ -186,4 +198,4 @@ async function main(){
   }
 }
 
-main().catch(e=>{console.error('Fatal:',e.message);process.exit(0)});
+main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});
