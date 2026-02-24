@@ -1,30 +1,19 @@
 #!/usr/bin/env node
 'use strict';
-const https=require('https'),fs=require('fs'),path=require('path');
+const fs=require('fs'),path=require('path');
+const{fetchWithRetry}=require('./retry-helper');
 const {getForumAuth,fmtCk,FORUM}=require('./forum-auth');
-const HOST='community.homey.app',TOPIC=140352;
+const TOPIC=140352;
 const SUM=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
 
-function httpsReq(opts,body){
-  return new Promise((ok,fail)=>{
-    const req=https.request(opts,r=>{
-      let b='';r.on('data',c=>b+=c);
-      r.on('end',()=>ok({status:r.statusCode,headers:r.headers,body:b}));
-    });
-    req.on('error',fail);
-    if(body)req.write(body);
-    req.end();
-  });
-}
-
 async function postReply(tid,raw,auth){
-  const d=JSON.stringify({topic_id:tid,raw});
   const h=auth.type==='apikey'
-    ?{'Content-Type':'application/json','User-Api-Key':auth.key,'Content-Length':Buffer.byteLength(d)}
-    :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'Cookie':fmtCk(auth.cookies),'X-Requested-With':'XMLHttpRequest','Content-Length':Buffer.byteLength(d)};
-  const r=await httpsReq({hostname:HOST,port:443,path:'/posts.json',method:'POST',headers:h},d);
-  if(r.status>=300)throw new Error('Post failed: '+r.status+': '+r.body.slice(0,200));
-  return r.body;
+    ?{'Content-Type':'application/json','User-Api-Key':auth.key}
+    :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'Cookie':fmtCk(auth.cookies),'X-Requested-With':'XMLHttpRequest'};
+  const r=await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:h,body:JSON.stringify({topic_id:tid,raw})},{retries:3,label:'forumPost'});
+  const d=await r.json().catch(()=>({}));
+  if(!r.ok)throw new Error('Post failed: '+r.status+' '+JSON.stringify(d).slice(0,200));
+  return JSON.stringify(d);
 }
 
 async function main(){
@@ -39,12 +28,7 @@ async function main(){
   const url=process.env.PUBLISH_URL||'https://homey.app/a/com.dlnraja.tuya.zigbee/test/';
   const raw='## Universal Tuya Zigbee v'+ver+'\n\n'+cl+'\n\n**Install:** [Test version]('+url+')\n\n> After updating, remove and re-pair devices that had issues.\n> Report bugs: [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues)';
   console.log('Posting to forum topic',TOPIC);
-  let r,posted=false;
-  for(let i=0;i<3;i++){
-    try{r=await postReply(TOPIC,raw,auth);posted=true;break;}
-    catch(e){console.warn('Post try '+(i+1)+':',e.message);if(i<2)await new Promise(z=>setTimeout(z,5000*(i+1)));}
-  }
-  if(!posted){console.error('All post attempts failed');process.exitCode=1;return;}
+  const r=await postReply(TOPIC,raw,auth);
   console.log('Posted:',r.slice(0,100));
   fs.appendFileSync(SUM,'Forum: posted v'+ver+' update to topic '+TOPIC+'\n');
 }

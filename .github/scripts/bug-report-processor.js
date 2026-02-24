@@ -3,6 +3,7 @@
 const fs=require('fs'),path=require('path');
 const{callAI}=require('./ai-helper');
 const{loadFingerprints,findAllDrivers}=require('./load-fingerprints');
+const{fetchWithRetry}=require('./retry-helper');
 const ROOT=path.join(__dirname,'..','..');
 const DDIR=path.join(ROOT,'drivers');
 const GH='https://api.github.com';
@@ -12,7 +13,7 @@ const REPO=process.env.GITHUB_REPOSITORY||'dlnraja/com.tuya.zigbee';
 const SUMMARY=process.env.GITHUB_OUTPUT||'/dev/null';
 
 async function ghGet(ep){
-  const r=await fetch(GH+ep,{headers:{Accept:'application/vnd.github+json','User-Agent':'tuya-bot',Authorization:'Bearer '+TOKEN}});
+  const r=await fetchWithRetry(GH+ep,{headers:{Accept:'application/vnd.github+json','User-Agent':'tuya-bot',Authorization:'Bearer '+TOKEN}},{retries:3,label:'ghAPI'});
   return r.ok?r.json():null;
 }
 

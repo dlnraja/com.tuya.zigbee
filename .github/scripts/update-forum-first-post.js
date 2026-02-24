@@ -2,6 +2,7 @@
 'use strict';
 const fs=require('fs'),path=require('path');
 const {getForumAuth,fmtCk,FORUM}=require('./forum-auth');
+const{fetchWithRetry}=require('./retry-helper');
 const TOPIC=140352,ROOT=path.join(__dirname,'..','..');
 const DRY=process.env.DRY_RUN!=='false';
 
@@ -135,7 +136,7 @@ async function getFirstPostId(auth){
   const h=auth.type==='apikey'
     ?{'Accept':'application/json','User-Api-Key':auth.key}
     :{'Accept':'application/json','X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
-  const r=await fetch(FORUM+'/t/'+TOPIC+'.json',{headers:h});
+  const r=await fetchWithRetry(FORUM+'/t/'+TOPIC+'.json',{headers:h},{retries:3,label:'getFirstPost'});
   if(!r.ok)throw new Error('Failed to fetch topic: '+r.status);
   const d=await r.json();
   const firstPost=d.post_stream?.posts?.[0];
@@ -148,7 +149,7 @@ async function editPost(postId,raw,auth){
   const h=auth.type==='apikey'
     ?{'Content-Type':'application/json','User-Api-Key':auth.key}
     :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
-  const r=await fetch(FORUM+'/posts/'+postId+'.json',{method:'PUT',headers:h,body});
+  const r=await fetchWithRetry(FORUM+'/posts/'+postId+'.json',{method:'PUT',headers:h,body},{retries:3,label:'editPost'});
   if(!r.ok){
     const txt=await r.text().catch(()=>'');
     throw new Error('Edit failed: '+r.status+' '+txt.slice(0,200));
