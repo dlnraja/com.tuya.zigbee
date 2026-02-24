@@ -109,4 +109,4 @@ async function main(){
   console.log('Done. hasFix='+hasFix);
 }
 
-main().catch(e=>{console.error(e);process.exit(0);});
+main().catch(e=>{console.error(e);process.exit(1);});

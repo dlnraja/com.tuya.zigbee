@@ -1,5 +1,4 @@
 {
-  "_comment": "Source file. The root app.json is generated from this file by homeycompose.",
   "id": "com.dlnraja.tuya.zigbee",
   "version": "5.11.22",
   "compatibility": ">=12.2.0",
@@ -8,23 +7,33 @@
     "local"
   ],
   "name": {
-    "en": "Universal Tuya Zigbee + WiFi"
+    "en": "Universal Tuya",
+    "nl": "Universal Tuya",
+    "de": "Universal Tuya",
+    "fr": "Universal Tuya"
   },
   "description": {
-    "en": "Control your Tuya Zigbee + WiFi devices locally! 138 drivers, 5,579 device fingerprints, 1,457+ flow cards. Switches, sensors, lights, thermostats, covers, locks & more. 100% local, hybrid Tuya DP + ZCL.",
-    "nl": "Bedien je Tuya Zigbee + WiFi apparaten lokaal! 138 drivers, 5.579 apparaatvingerafdrukken, 1.457+ flowkaarten. Schakelaars, sensoren, lampen, thermostaten, rolluiken, sloten en meer. 100% lokaal.",
-    "de": "Steuern Sie Ihre Tuya Zigbee + WiFi-Geräte lokal! 138 Treiber, 5.579 Geräte-Fingerprints, 1.457+ Flow-Karten. Schalter, Sensoren, Lampen, Thermostate, Rollläden, Schlösser und mehr. 100% lokal.",
-    "fr": "Contrôlez vos appareils Tuya Zigbee + WiFi localement ! 138 drivers, 5 579 empreintes d'appareils, 1 457+ cartes de flux. Interrupteurs, capteurs, lumières, thermostats, volets, serrures et plus. 100% local."
+    "en": "Every Tuya device under one roof, 100% local",
+    "nl": "Elk Tuya-apparaat onder één dak, 100% lokaal",
+    "de": "Jedes Tuya-Gerät unter einem Dach, 100% lokal",
+    "fr": "Chaque appareil Tuya sous un même toit, 100% local"
+  },
+  "tags": {
+    "en": ["tuya", "smart home", "switch", "sensor", "thermostat", "light", "cover", "plug", "lock", "dimmer"],
+    "nl": ["tuya", "schakelaar", "sensor", "thermostaat", "lamp", "rolluik", "stekker", "slot", "dimmer"],
+    "de": ["tuya", "schalter", "sensor", "thermostat", "licht", "rollladen", "steckdose", "schloss", "dimmer"],
+    "fr": ["tuya", "interrupteur", "capteur", "thermostat", "lumière", "volet", "prise", "serrure", "variateur"]
   },
   "category": "appliances",
   "permissions": [],
   "images": {
-    "small": "assets/images/small.png",
-    "large": "assets/images/large.png",
-    "xlarge": "assets/images/xlarge.png"
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
   },
   "author": {
-    "name": "Dylan Rajasekaram"
+    "name": "Dylan Rajasekaram",
+    "email": "dlnraja@gmail.com"
   },
   "contributors": {
     "developers": [
@@ -46,5 +55,7 @@
   "bugs": {
     "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
   },
-  "brandColor": "#00E6A0"
+  "brandColor": "#00E6A0",
+  "homeyCommunityTopicId": 140352,
+  "source": "https://github.com/dlnraja/com.tuya.zigbee"
 }

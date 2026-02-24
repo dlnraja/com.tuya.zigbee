@@ -79,6 +79,39 @@ jobs:
           echo "drivers=$DRIVERS" >> $GITHUB_OUTPUT
           echo "📦 $NAME v$VERSION - $DRIVERS drivers"
 
+      - name: 🔍 JS Syntax Check
+        run: |
+          FAIL=0
+          for f in $(find lib drivers -name "*.js" 2>/dev/null); do
+            if ! node -c "$f" 2>/dev/null; then
+              echo "❌ Syntax error: $f"
+              FAIL=1
+            fi
+          done
+          echo "JS syntax: $([[ $FAIL -eq 0 ]] && echo OK || echo FAILED)"
+
+      - name: 🔍 Fingerprint Collision Check
+        run: |
+          node -e "
+            const fs=require('fs'),path=require('path');
+            const dirs=fs.readdirSync('drivers').filter(d=>fs.statSync(path.join('drivers',d)).isDirectory());
+            const map=new Map();
+            for(const d of dirs){
+              const f=path.join('drivers',d,'driver.compose.json');
+              if(!fs.existsSync(f))continue;
+              const j=JSON.parse(fs.readFileSync(f,'utf8'));
+              const z=j.zigbee||[];
+              for(const e of z){
+                const key=e.manufacturerName+'|'+e.productId;
+                if(!map.has(key))map.set(key,[]);
+                map.get(key).push(d);
+              }
+            }
+            let col=0;
+            for(const [k,v] of map){if(v.length>1){console.log('⚠️ Collision:',k,'in',v.join(', '));col++;}}
+            console.log(col?col+' collision(s) found':'No fingerprint collisions');
+          "
+
       - name: 🔍 Validate (Athom Official)
         uses: athombv/github-action-homey-app-validate@v1
         with:

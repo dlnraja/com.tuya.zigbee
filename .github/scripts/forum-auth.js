@@ -20,7 +20,12 @@ async function getForumAuth(){
   const ak=process.env.DISCOURSE_API_KEY;
   if(ak){console.log('Auth: API key');return{type:'apikey',key:ak};}
   const em=process.env.HOMEY_EMAIL,pw=process.env.HOMEY_PASSWORD;
-  if(em&&pw){try{const a=await ssoLogin(em,pw);console.log('Auth: Athom SSO OK');return{type:'session',...a};}catch(e){console.warn('SSO login failed:',e.message);}}
+  if(em&&pw){
+    for(let i=0;i<3;i++){
+      try{const a=await ssoLogin(em,pw);console.log('Auth: SSO OK');return{type:'session',...a};}
+      catch(e){console.warn('SSO try '+(i+1)+':',e.message);if(i<2)await new Promise(r=>setTimeout(r,3000*(i+1)));}
+    }
+  }
   return null;
 }
 module.exports={getForumAuth,fmtCk,exCk,FORUM};

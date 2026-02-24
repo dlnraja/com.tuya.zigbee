@@ -115,4 +115,14 @@ jobs:
               issue_number: num,
               body: msg
             });
-            console.log(`Responded to #${num} with ${found.length} found, ${missing.length} missing`);
+            // Auto-label
+            const labels = [];
+            if (missing.length) labels.push('new-device');
+            if (found.length && !missing.length) labels.push('already-supported');
+            if (labels.length) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: num, labels
+              });
+            }
+            console.log(`Responded to #${num}: ${found.length} found, ${missing.length} missing`);
