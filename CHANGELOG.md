@@ -6,7 +6,35 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
-## v5.11.22 (2026-02-23)
+## v5.11.23 (2026-02-24)
+
+Universal Tuya Zigbee v5.11.23 enhances forum and GitHub messaging, improves workflow resilience, and updates diagnostics. Now with 138 drivers and 5182 fingerprints.
+
+---
+
+## [5.11.23] - 2026-02-24
+
+### Bug Fixes
+- Improved robustness of forum and GitHub messaging systems.
+- Replaced `https.request` with `fetchWithRetry` in `post-forum-update.js`.
+- Fixed Api-Key header handling in `forum-activity-scraper.js`.
+- Added deduplication detection and dry run feature in `forum-respond-requests.js`.
+
+### New Features
+- Enhanced workflow resilience with circuit breakers, retries, and dashboard fallback.
+- Implemented RawClusterFallback and improved UniversalTuyaParser functionality.
+- Weekly auto-update for the first post in forum topic 140352 via `sunday-master` workflow.
+
+### Improvements
+- Added missing credentials for OPENAI_API_KEY, DISCOURSE_API_KEY, and HOMEY in several workflow steps.
+- Updated Gmail diagnostics to analyze more emails and improve reporting.
+
+### CI/CD
+- Added scheduled automation to all workflows for daily deployments, weekly code quality checks, and daily validation.
+- Enhanced GitHub auto-management state updates for better tracking.
+---
+
+ v5.11.22 (2026-02-23)
 
 Universal Tuya Zigbee v5.11.22 introduces 8 new fingerprints, enhances automation scripts, and improves device discovery functionality.
 
