@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-02-24T08:28:11.979Z",
+  "timestamp": "2026-02-24T14:33:57.202Z",
   "username": "dlnraja",
   "summary": {
     "postCount": 546,
     "topicCount": 1,
     "likes": 64,
-    "likesReceived": 193,
+    "likesReceived": 194,
     "topTopics": [
       {
         "id": 140352,
         "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "posts": 1464
+        "posts": 1466
       },
       {
         "id": 26439,
@@ -49,13 +49,40 @@
     {
       "id": 140352,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "posts": 1464,
-      "views": 13380,
-      "lastPosted": "2026-02-23T09:56:27.904Z",
+      "posts": 1466,
+      "views": 13399,
+      "lastPosted": "2026-02-24T09:13:54.947Z",
       "slug": "app-pro-universal-tuya-zigbee-device-app-test"
     }
   ],
   "activity": [
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1478,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Hi, thanks for this App! Now my mmWave Sensors work with Homey. \nUnfortunately the Door and Window Sensors are added as an unknown Device. After repairing as a socket. \n\n\n\n\nzb_product_id\n“ZG-102Z”\n\n\n\n\n\n\n\nzb_manufacturer_name\n“HOBEIAN”\n\n\n\nI tried to add them as a Contact Sensor. Is there any workarou&hellip;",
+      "createdAt": "2026-02-24T09:13:55.052Z",
+      "username": "Nordmann"
+    },
+    {
+      "type": 2,
+      "topicId": 140352,
+      "postNum": 263,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Hello everyone, \nI have completed a comprehensive investigation and resolution for all reported issues. Version 2.1.45 is now available with critical fixes and strict nomenclature compliance. \n================================================================================ CRITICAL FIX - HOBEIAN DRI&hellip;",
+      "createdAt": "2026-02-24T08:54:56.389Z",
+      "username": "Nordmann"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1477,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Hi dylan, \nThe _TZ3000_itb0omhv (TS0041) is covered in your app as a climate sensor, but it’s actually a 1 gang wall remote. \nInfo is covered here:",
+      "createdAt": "2026-02-24T08:35:00.366Z",
+      "username": "FrankP"
+    },
     {
       "type": 6,
       "topicId": 140352,
@@ -2728,33 +2755,6 @@
       "excerpt": "Hi Dylan Good morning  \nThanks for fixing the SOS button they are both okay now flow is working also again  \nThe Motion sensor still missing Temperature and Humidity data and the not supported Distance is still there  \nI’m on ver 847 now. \nHave a nice day and best regards Peter.",
       "createdAt": "2026-01-27T08:59:05.183Z",
       "username": "Peter_van_Werkhoven"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1203,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Hi Dylan installed your new update, now I was finally be able to re-add the SOS button again and they are triggering the app but noth the Flow so you are getting there with this one again, nearly there again. \nThe HOBEIAN ZG-204ZV Multisensor is readded also but only data from Motion, Luminance and &hellip;",
-      "createdAt": "2026-01-26T22:05:09.184Z",
-      "username": "Peter_van_Werkhoven"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1202,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "TZ3210_p68kms0l / TS0207 \nThis rain sensor is showing the IAS Zone error, could you add support for this device?",
-      "createdAt": "2026-01-26T20:49:50.433Z",
-      "username": "Dominique_C"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1201,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "And not working with V5.5.820. \n92e144d3-277a-4d09-8692-aa689b82bab5",
-      "createdAt": "2026-01-26T20:27:44.813Z",
-      "username": "Pieter_Pessers"
     }
   ],
   "pms": [],
@@ -2765,15 +2765,31 @@
       "postNum": 1476,
       "data": {
         "topic_title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "original_post_id": 713443,
+        "original_post_id": 713810,
         "original_post_type": 1,
-        "original_username": "Lasse_K",
+        "original_username": "Nordmann",
         "revision_number": null,
-        "display_username": "Lasse_K",
+        "display_username": "3 replies",
         "display_name": "Lasse K"
       },
       "read": false,
-      "createdAt": "2026-02-23T09:56:28.029Z"
+      "createdAt": "2026-02-24T09:13:55.060Z"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 263,
+      "data": {
+        "topic_title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+        "original_post_id": 662314,
+        "original_post_type": 1,
+        "original_username": "Nordmann",
+        "revision_number": null,
+        "display_username": "Nordmann",
+        "display_name": "Dylan Rajasekaram"
+      },
+      "read": false,
+      "createdAt": "2026-02-24T08:54:56.448Z"
     },
     {
       "type": 1,
@@ -3700,22 +3716,6 @@
       },
       "read": true,
       "createdAt": "2026-01-28T08:47:59.512Z"
-    },
-    {
-      "type": 1,
-      "topicId": 140352,
-      "postNum": 1231,
-      "data": {
-        "topic_title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "original_post_id": 703663,
-        "original_post_type": 1,
-        "original_username": "Attilla",
-        "revision_number": null,
-        "display_username": "Attilla",
-        "display_name": "Attilla de Groot"
-      },
-      "read": true,
-      "createdAt": "2026-01-27T21:05:33.040Z"
     }
   ],
   "bookmarks": [],
@@ -14413,6 +14413,20 @@
           "user": "Lasse_K",
           "text": "Ver.5.11.21. Contact sensor still not installing. Unknown Zigbee.",
           "date": "2026-02-23T09:56:27.904Z",
+          "replyTo": null
+        },
+        {
+          "num": 1477,
+          "user": "FrankP",
+          "text": "Hi dylan,\n\nThe _TZ3000_itb0omhv (TS0041) is covered in your app as a climate sensor, but it’s actually a 1 gang wall remote.\n\nInfo is covered here:\n\n\n  \n\n      github.com/JohanBendz/com.tuya.zigbee\n  \n\n  \n    \n  \n\t  \n  \n\n  \n    \n      Device Request - [1 Gang Wall Switch (Remote)] - [_TZ3000_itb0omhv] / [TS0041]\n    \n\n    \n      \n        opened 10:28AM - 22 Feb 24 UTC\n      \n\n        \n          closed 07:31PM - 11 Sep 24 UTC\n        \n\n      \n        \n          \n          Hugustus\n        \n      \n    \n\n    \n        \n          New Device\n        \n    \n  \n\n\n  \n    - Device Name: `1 Gang Wall Switch (Remote)`\n- Device Model: `_TZ3000_itb0omhv …/ TS0041`\n- Device Description: `Hello Johan :) This is a simple remote wall switch with one button, we can normally activate the button once, twice or hold it for 5 seconds to run differents actions, thank you so much for your help on the Homey community !`\n- Link to device image: https://ibb.co/Kx91Yb6\n\n### Device Interview\n\n```json\n{\n    \n  \"ids\": {\n    \"modelId\": \"TS0041\",\n    \"manufacturerName\": \"_TZ3000_itb0omhv\"\n  },\n  \"endpoints\": {\n    \"endpointDescriptors\": [\n      {\n        \"endpointId\": 1,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 0,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          1,\n          6,\n          57344,\n          0\n        ],\n        \"outputClusters\": [\n          25,\n          10\n        ]\n      },\n      {\n        \"endpointId\": 2,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 0,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          6,\n          1,\n          6\n        ],\n        \"outputClusters\": []\n      },\n      {\n        \"endpointId\": 3,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 0,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          6,\n          1,\n          6\n        ],\n        \"outputClusters\": []\n      },\n      {\n        \"endpointId\": 4,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 0,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          6,\n          1,\n          6\n        ],\n        \"outputClusters\": []\n      }\n    ],\n    \"endpoints\": {\n      \"1\": {\n        \"clusters\": {\n          \"powerConfiguration\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 32,\n                \"name\": \"batteryVoltage\",\n                \"value\": 30,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 33,\n                \"name\": \"batteryPercentageRemaining\",\n                \"value\": 200,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 1,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ]\n          },\n          \"onOff\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"onOff\",\n                \"value\": false,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ]\n          },\n          \"basic\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"zclVersion\",\n                \"value\": 3\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 1,\n                \"name\": \"appVersion\",\n                \"value\": 67\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 2,\n                \"name\": \"stackVersion\",\n                \"value\": 0\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 3,\n                \"name\": \"hwVersion\",\n                \"value\": 1\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 4,\n                \"name\": \"manufacturerName\",\n                \"value\": \"_TZ3000_itb0omhv\"\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 5,\n                \"name\": \"modelId\",\n                \"value\": \"TS0041\"\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 6,\n                \"name\": \"dateCode\",\n                \"value\": \"\"\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 7,\n                \"name\": \"powerSource\",\n                \"value\": \"battery\"\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 65502\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65534,\n                \"name\": \"attributeReportingStatus\",\n                \"value\": \"PENDING\"\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65506\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65507\n              }\n            ]\n          }\n        },\n        \"bindings\": {\n          \"ota\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\"\n                ],\n                \"id\": 0\n              },\n              {\n                \"acl\": [\n                  \"readable\"\n                ],\n                \"id\": 1\n              },\n              {\n                \"acl\": [\n                  \"readable\"\n                ],\n                \"id\": 2\n              },\n              {\n                \"acl\": [\n                  \"readable\"\n                ],\n                \"id\": 3\n              },\n              {\n                \"acl\": [\n                  \"readable\"\n                ],\n                \"id\": 4\n              },\n              {\n                \"acl\": [\n                  \"readable\"\n                ],\n                \"id\": 5\n              },\n              {\n                \"acl\": [\n                  \"readable\"\n                ],\n                \"id\": 6\n              },\n              {\n                \"acl\": [\n                  \"readable\"\n                ],\n                \"id\": 7\n              },\n              {\n                \"acl\": [\n                  \"readable\"\n                ],\n                \"id\": 8\n              },\n              {\n                \"acl\": [\n                  \"readable\"\n                ],\n                \"id\": 9\n              },\n              {\n                \"acl\": [\n                  \"readable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 1\n              }\n            ]\n          },\n          \"time\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 1\n              }\n            ]\n          }\n        }\n      },\n      \"2\": {\n        \"clusters\": {\n          \"onOff\": {\n            \"attributes\": [\n              {\n                \"acl\": [],\n                \"id\": 0,\n                \"name\": \"onOff\"\n              }\n            ]\n          },\n          \"powerConfiguration\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [],\n                \"id\": 12248\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 33,\n                \"name\": \"batteryPercentageRemaining\",\n                \"value\": 253,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [],\n                \"id\": 12948\n              }\n            ]\n          }\n        },\n        \"bindings\": {}\n      },\n      \"3\": {\n        \"clusters\": {\n          \"onOff\": {\n            \"attributes\": [\n              {\n                \"acl\": [],\n                \"id\": 0,\n                \"name\": \"onOff\"\n              }\n            ]\n          },\n          \"powerConfiguration\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [],\n                \"id\": 13364\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 33,\n                \"name\": \"batteryPercentageRemaining\",\n                \"value\": 253,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [],\n                \"id\": 14064\n              }\n            ]\n          }\n        },\n        \"bindings\": {}\n      },\n      \"4\": {\n        \"clusters\": {\n          \"onOff\": {\n            \"attributes\": [\n              {\n                \"acl\": [],\n                \"id\": 0,\n                \"name\": \"onOff\"\n              }\n            ]\n          },\n          \"powerConfiguration\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [],\n                \"id\": 14480\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 33,\n                \"name\": \"batteryPercentageRemaining\",\n                \"value\": 253,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [],\n                \"id\": 15180\n              }\n            ]\n          }\n        },\n        \"bindings\": {}\n      }\n    }\n  }\n```",
+          "date": "2026-02-24T08:34:57.805Z",
+          "replyTo": null
+        },
+        {
+          "num": 1478,
+          "user": "Nordmann",
+          "text": "Hi, thanks for this App! Now my mmWave Sensors work with Homey.\n\nUnfortunately the Door and Window Sensors are added as an unknown Device. After repairing as a socket.\n\n\n\n\n\nzb_product_id\n“ZG-102Z”\n\n\n\n\n\n\n\nzb_manufacturer_name\n“HOBEIAN”\n\n\n\nI tried to add them as a Contact Sensor. Is there any workaround that this devices will be recognised as a Door Sensor? I followed the hints shown above but with no success. Thx",
+          "date": "2026-02-24T09:13:54.947Z",
           "replyTo": null
         }
       ],
@@ -66571,6 +66585,7 @@
   ],
   "deviceInfo": {
     "allFPs": [
+      "_TZ3000_itb0omhv",
       "_TZ3000_dd8wwzcy",
       "_TZ3210_xzhnra8x",
       "_TZ3000_mrpevh8p",
@@ -67054,7 +67069,6 @@
       "_TZ3000_pzui3skt",
       "_TZ3000_f97vq5mn",
       "_TZ3000_fa9mlvja",
-      "_TZ3000_itb0omhv",
       "_TZ3000_8rppvwda",
       "_TZ3000_4upl1fcj",
       "_TYZB02_keyjhapk",
@@ -67295,6 +67309,7 @@
       "_TZE200_r731zlxk"
     ],
     "supported": [
+      "_TZ3000_itb0omhv",
       "_TZ3000_dd8wwzcy",
       "_TZ3210_xzhnra8x",
       "_TZ3000_mrpevh8p",
@@ -67765,7 +67780,6 @@
       "_TZ3000_pzui3skt",
       "_TZ3000_f97vq5mn",
       "_TZ3000_fa9mlvja",
-      "_TZ3000_itb0omhv",
       "_TZ3000_8rppvwda",
       "_TZ3000_4upl1fcj",
       "_TYZB02_keyjhapk",
@@ -68021,5 +68035,5 @@
       "_TZ3210_leyz4rju"
     ]
   },
-  "aiAnalysis": null
+  "aiAnalysis": "Fingerprints found: `_TZ3000_zgyzgd`, `_TZE204_ztqnh5c`, `_TZ3000_xxxxxxxx`, `_TZ3000_ztc6ggyl`, `_TZ3000_7dbxxwkt`, `_TZ3000_xabck15b`, `_TZ3000_akwixq9i`, `_TZ3000_xxbxx`, `_TZ3000_hiqrjkxx`, `_TZ3000_zzzz`, `_TZ3000_xxxxx`, `_TZE200_xxxxx`, `_TZ3000_cehuw1l2`, `_TZ3000_dfgbtub`, `_TZ3000_dfgbub0`, `_TYZB01_bngwdjsr`, `_TZ3000_ecgiiid3`, `_TZ3000_tvuarska`, `_TZ3000_uyjmm0et`, `_TZ3000_xabckqv1`, `_TZ3000_itb0omhv`, `_TZ3000_dd8wwzcy`, `_TZ3210_xzhnra8x`\nProduct IDs: `TS0041`"
 }

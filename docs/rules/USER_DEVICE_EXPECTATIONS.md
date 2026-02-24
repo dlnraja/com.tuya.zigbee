@@ -1,9 +1,16 @@
 # User Device Expectations (v5.11.22)
-**Updated**: 2026-02-23 (v5.11.22: nightly auto-scan)
+**Updated**: 2026-02-24 (v5.11.22: nightly auto-scan)
 
 
 
 
+
+
+## Nightly Auto-Scan (2026-02-24)
+| User | Fingerprint(s) | Source | Date |
+|------|---------------|--------|------|
+| FrankP | `_TZ3000_itb0omhv` | Forum #140352 post #1477 | Auto-scanned 2026-02-24 |
+| Domingoso | `_TZE200_xlppj4f5` | dlnraja/com.tuya.zigbee#135 | Auto-scanned 2026-02-24 |
 
 ## Nightly Auto-Scan (2026-02-23)
 | User | Fingerprint(s) | Source | Date |
