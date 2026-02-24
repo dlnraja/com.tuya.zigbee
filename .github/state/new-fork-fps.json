@@ -5159,5 +5159,24 @@
     "driver": "wall_switch_3_gang",
     "depth": 0,
     "branch": "add-brazil-devices"
+  },
+  "_TZ3000_bwjstafw": {
+    "fork": "rvproductions/com.tuya.zigbee",
+    "owner": "rvproductions",
+    "driver": "doorwindowsensor_3",
+    "depth": 0
+  },
+  "_TZ3210_y5rtzkmc": {
+    "fork": "rvproductions/com.tuya.zigbee",
+    "owner": "rvproductions",
+    "driver": "rgb_led_strip_controller",
+    "depth": 0
+  },
+  "_TZB210_nfzrlz29": {
+    "fork": "jeroenvanagt/com.tuya.zigbee",
+    "owner": "jeroenvanagt",
+    "driver": "dimmable_recessed_led",
+    "depth": 0,
+    "branch": "development"
   }
 }

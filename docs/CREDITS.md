@@ -1,7 +1,7 @@
 # Credits & Contributors
 
 > Auto-generated from fork scanning and PR analysis.
-> Last updated: 2026-02-23
+> Last updated: 2026-02-24
 
 | Contributor | Fingerprints | PRs | Source |
 |------------|-------------|-----|--------|
@@ -9,8 +9,10 @@
 | [@mayconbordin](https://github.com/mayconbordin) | 5 | 0 | [mayconbordin/com.tuya.zigbee](https://github.com/mayconbordin/com.tuya.zigbee) |
 | [@kodalissri](https://github.com/kodalissri) | 3 | 0 | [kodalissri/com.tuya.zigbee](https://github.com/kodalissri/com.tuya.zigbee) |
 | [@IsaacNZ2](https://github.com/IsaacNZ2) | 3 | 0 | [IsaacNZ2/com.tuya.zigbee](https://github.com/IsaacNZ2/com.tuya.zigbee) |
+| [@rvproductions](https://github.com/rvproductions) | 2 | 0 | [rvproductions/com.tuya.zigbee](https://github.com/rvproductions/com.tuya.zigbee) |
 | [@pkuijpers](https://github.com/pkuijpers) | 1 | 0 | [pkuijpers/com.tuya.zigbee](https://github.com/pkuijpers/com.tuya.zigbee) |
 | [@willarentz](https://github.com/willarentz) | 1 | 0 | [willarentz/com.tuya.zigbee](https://github.com/willarentz/com.tuya.zigbee) |
+| [@jeroenvanagt](https://github.com/jeroenvanagt) | 1 | 0 | [jeroenvanagt/com.tuya.zigbee](https://github.com/jeroenvanagt/com.tuya.zigbee) |
 
 ## New Fingerprints by Contributor
 
@@ -758,9 +760,16 @@
 - `_TZ3000_ugaem1nb`
 - `_TZ3000_snq47izk`
 
+### @rvproductions
+- `_TZ3000_bwjstafw`
+- `_TZ3210_y5rtzkmc`
+
 ### @pkuijpers
 - `_TZE20X_xxxxxxxx`
 
 ### @willarentz
 - `_TZ3000_otwpdq1d`
+
+### @jeroenvanagt
+- `_TZB210_nfzrlz29`
 

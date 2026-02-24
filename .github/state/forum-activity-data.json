@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-23T20:31:37.672Z",
+  "timestamp": "2026-02-24T03:07:44.728Z",
   "username": "dlnraja",
   "summary": {
     "postCount": 546,
@@ -50,7 +50,7 @@
       "id": 140352,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
       "posts": 1464,
-      "views": 13364,
+      "views": 13367,
       "lastPosted": "2026-02-23T09:56:27.904Z",
       "slug": "app-pro-universal-tuya-zigbee-device-app-test"
     }
@@ -23394,6 +23394,13 @@
           "user": "JJ10",
           "text": "Multiple (WiFi) devices are not supported yet, if they can be added, that would be great \n\nb86e0ac5-b807-4ce8-8fa0-21442fd889a4",
           "date": "2026-02-20T11:30:17.330Z",
+          "replyTo": null
+        },
+        {
+          "num": 181,
+          "user": "Eric_van_Rossen",
+          "text": "Looking at adding my heat pump to Homey. Looks like it is not implemented yet but on the requested list. (Power World DC Air/Water Heatpump)\n\nIs there anything I can expect when it will be implemented other than “soon”?",
+          "date": "2026-02-23T21:21:17.321Z",
           "replyTo": null
         }
       ],
@@ -65773,6 +65780,13 @@
           "text": "It doesn’t work like that . Just kindly request for support for your new device with your preferred Sonoff app.\n\nLinks can be found on the app page at the homey.app store",
           "date": "2026-02-22T10:35:43.921Z",
           "replyTo": 478
+        },
+        {
+          "num": 480,
+          "user": "Only_Lilly",
+          "text": "I’ve sent a message to the developers, hope they answer quickly, because without a zigbee hub the senseguard dw 2 will not work",
+          "date": "2026-02-23T20:44:33.535Z",
+          "replyTo": null
         }
       ],
       "category": 7
