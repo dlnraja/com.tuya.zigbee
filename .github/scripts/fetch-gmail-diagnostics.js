@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const fs=require('fs'),path=require('path');
+const{fetchWithRetry}=require('./retry-helper');
 const SD=path.join(__dirname,'..','state');
 const SF=path.join(SD,'diagnostics-state.json');
 const RF=path.join(SD,'diagnostics-report.json');
@@ -32,9 +33,9 @@ function buildIndex(){
 async function getToken(){
   const{GMAIL_CLIENT_ID:id,GMAIL_CLIENT_SECRET:s,GMAIL_REFRESH_TOKEN:r}=process.env;
   if(!id||!s||!r){console.log('Gmail credentials missing: need GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN');return null;}
-  const res=await fetch('https://oauth2.googleapis.com/token',{method:'POST',
+  const res=await fetchWithRetry('https://oauth2.googleapis.com/token',{method:'POST',
     headers:{'Content-Type':'application/x-www-form-urlencoded'},
-    body:'client_id='+id+'&client_secret='+s+'&refresh_token='+r+'&grant_type=refresh_token'});
+    body:'client_id='+id+'&client_secret='+s+'&refresh_token='+r+'&grant_type=refresh_token'},{retries:3,label:'gmailToken'});
   if(!res.ok){const e=await res.text();console.error('Token refresh failed:',res.status,e);if(e.includes('invalid_grant')){console.error('TOKEN EXPIRED (Testing mode 7-day limit). Re-generate at https://developers.google.com/oauthplayground');console.log('::warning::Gmail token expired. Diagnostics skipped this run.');}return null;}
   const j=await res.json();
   if(j.refresh_token_expires_in)console.log('Refresh token expires in '+Math.round(j.refresh_token_expires_in/3600)+'h (Testing mode)');
@@ -44,8 +45,8 @@ async function getToken(){
 
 async function gapi(tk,ep,retries=2){
   for(let i=0;i<=retries;i++){
-    const r=await fetch('https://gmail.googleapis.com/gmail/v1/users/me/'+ep,
-      {headers:{Authorization:'Bearer '+tk}});
+    const r=await fetchWithRetry('https://gmail.googleapis.com/gmail/v1/users/me/'+ep,
+      {headers:{Authorization:'Bearer '+tk}},{retries:0,label:'gmailAPI'});
     if(r.ok)return r.json();
     if(r.status===429||r.status>=500){await new Promise(ok=>setTimeout(ok,1000*(i+1)));continue;}
     if(i===retries)console.error('Gmail API error:',r.status,ep.substring(0,40));
@@ -178,10 +179,10 @@ async function aiAnalyze(diag,subj,type,xref){
     'Return JSON: {severity:"critical"|"high"|"medium"|"low",summary:string,'+
     'deviceType:string,rootCause:string,fixSuggestion:string,needsNewDriver:boolean}';
   try{
-    const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+gk,{
+    const r=await fetchWithRetry('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+gk,{
       method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({contents:[{parts:[{text:prompt}]}],
-        generationConfig:{temperature:0.1,maxOutputTokens:600}})});
+        generationConfig:{temperature:0.1,maxOutputTokens:600}})},{retries:2,label:'geminiAI'});
     if(!r.ok)return null;
     const d=await r.json();const t=d.candidates?.[0]?.content?.parts?.[0]?.text;
     if(!t)return null;const j=t.match(/\{[\s\S]*\}/);
@@ -192,9 +193,9 @@ async function aiAnalyze(diag,subj,type,xref){
 // Create GitHub issue for critical findings
 async function mkIssue(title,body){
   const tk=process.env.GH_PAT||process.env.GITHUB_TOKEN;if(!tk)return null;
-  const r=await fetch('https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues',{
+  const r=await fetchWithRetry('https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues',{
     method:'POST',headers:{Authorization:'Bearer '+tk,Accept:'application/vnd.github+json','Content-Type':'application/json'},
-    body:JSON.stringify({title:'[Diag] '+title.substring(0,80),body,labels:['diagnostic','auto-detected']})});
+    body:JSON.stringify({title:'[Diag] '+title.substring(0,80),body,labels:['diagnostic','auto-detected']})},{retries:2,label:'ghIssue'});
   return r.ok?r.json():null;
 }
 

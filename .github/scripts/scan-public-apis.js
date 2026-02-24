@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const fs=require('fs'),path=require('path');
+const{fetchWithRetry}=require('./retry-helper');
 const STATE=path.join(__dirname,'..','state','public-apis-report.json');
 const SUM=process.env.GITHUB_STEP_SUMMARY||null;
 const AI_RE=/\b(llm|gpt|chat|inference|nlp|neural|completion)/i;
@@ -10,13 +11,13 @@ async function main(){
   // Primary: davemachado/public-api
   try{
     console.log('Trying api.publicapis.org...');
-    const r=await fetch('https://api.publicapis.org/entries',{headers:{'User-Agent':'TuyaZigbeeBot/1.0'},signal:AbortSignal.timeout(10000)});
+    const r=await fetchWithRetry('https://api.publicapis.org/entries',{headers:{'User-Agent':'TuyaZigbeeBot/1.0'}},{retries:2,timeout:10000,label:'publicAPIs'});
     if(r.ok){const d=await r.json();entries=(d.entries||[]).map(e=>({name:e.API,url:e.Link,desc:e.Description,auth:e.Auth||'',category:e.Category}));}
   }catch(e){console.log('API down: '+e.message)}
   // Fallback: GitHub README
   if(!entries.length){
     console.log('Fallback: GitHub README...');
-    const r2=await fetch('https://raw.githubusercontent.com/public-apis/public-apis/master/README.md');
+    const r2=await fetchWithRetry('https://raw.githubusercontent.com/public-apis/public-apis/master/README.md',{},{retries:3,label:'publicApisFallback'});
     if(!r2.ok)throw new Error('Fetch failed: '+r2.status);
     const md=await r2.text();let cat=null;
     for(const l of md.split('\n')){const cm=l.match(/^###\s+(.+)/);if(cm){cat=cm[1].trim();continue}

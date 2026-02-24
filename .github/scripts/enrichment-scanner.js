@@ -5,6 +5,7 @@
 const fs=require('fs'),path=require('path');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const STATE=path.join(__dirname,'..','state','enrichment-state.json');
+const{fetchWithRetry}=require('./retry-helper');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 
 function loadState(){try{return JSON.parse(fs.readFileSync(STATE,'utf8'))}catch{return{lastRun:null,knownNew:[]}}}
@@ -22,7 +23,7 @@ function buildIndex(){
 }
 
 async function fetchJSON(url){
-  try{const r=await fetch(url,{headers:{'User-Agent':'tuya-enrichment-bot'}});if(!r.ok)return null;return r.json()}
+  try{const r=await fetchWithRetry(url,{headers:{'User-Agent':'tuya-enrichment-bot'}},{retries:3,label:'fetchJSON'});if(!r.ok)return null;return r.json()}
   catch{return null}
 }
 
@@ -41,7 +42,7 @@ async function scanZ2MIssues(token){
   const url='https://api.github.com/search/issues?q=repo:Koenkk/zigbee2mqtt+_TZE284+state:open&per_page=20&sort=created&order=desc';
   const h={Accept:'application/vnd.github+json','User-Agent':'tuya-bot'};
   if(token)h.Authorization='Bearer '+token;
-  const r=await fetch(url,{headers:h});
+  const r=await fetchWithRetry(url,{headers:h},{retries:3,label:'z2mIssues'});
   if(!r.ok)return[];
   const d=await r.json();
   const fps=[];
@@ -57,7 +58,7 @@ async function scanZHAIssues(token){
   const url='https://api.github.com/search/issues?q=repo:zigpy/zha-device-handlers+tuya+state:open&per_page=20&sort=created&order=desc';
   const h={Accept:'application/vnd.github+json','User-Agent':'tuya-bot'};
   if(token)h.Authorization='Bearer '+token;
-  const r=await fetch(url,{headers:h});
+  const r=await fetchWithRetry(url,{headers:h},{retries:3,label:'zhaIssues'});
   if(!r.ok)return[];
   const d=await r.json();
   const fps=[];
