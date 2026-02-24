@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-24T14:33:57.202Z",
+  "timestamp": "2026-02-24T20:13:00.852Z",
   "username": "dlnraja",
   "summary": {
     "postCount": 546,
@@ -50,7 +50,7 @@
       "id": 140352,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
       "posts": 1466,
-      "views": 13399,
+      "views": 13420,
       "lastPosted": "2026-02-24T09:13:54.947Z",
       "slug": "app-pro-universal-tuya-zigbee-device-app-test"
     }
@@ -136,15 +136,6 @@
       "excerpt": "Thnx again for all the hard work @dlnraja . \nTested the IR remote again, but the learning button won’t stay on. It turns off immediately after turning on. Sending an ir command with a universal remote isn’t picked up. Made a diagnostic report as asked: b6635c8c-afb1-440b-8d19-95f8fd7c3f70 \nThe 2 gan&hellip;",
       "createdAt": "2026-02-22T14:40:08.434Z",
       "username": "FrankP"
-    },
-    {
-      "type": 7,
-      "topicId": 140352,
-      "postNum": 1470,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "@dlnraja \nTuya Zigbee double Wall Socket & USB Charger - _TZ3000_dd8wwzcy/TS011F \nstill not working, currently running Universal Tuya Zigbee+ Wifi app v5.11.19 \nDiag id: 02EFECFF \nInterview: \n\n“ids”: { \n“modelId”: “TS011F”, \n“manufacturerName”: “_TZ3000_dd8wwzcy” \n}, \n“endpoints”: { \n“ieeeAddress”: &hellip;",
-      "createdAt": "2026-02-22T13:34:08.703Z",
-      "username": "Shiki"
     },
     {
       "type": 6,
@@ -2755,6 +2746,15 @@
       "excerpt": "Hi Dylan Good morning  \nThanks for fixing the SOS button they are both okay now flow is working also again  \nThe Motion sensor still missing Temperature and Humidity data and the not supported Distance is still there  \nI’m on ver 847 now. \nHave a nice day and best regards Peter.",
       "createdAt": "2026-01-27T08:59:05.183Z",
       "username": "Peter_van_Werkhoven"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1203,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Hi Dylan installed your new update, now I was finally be able to re-add the SOS button again and they are triggering the app but noth the Flow so you are getting there with this one again, nearly there again. \nThe HOBEIAN ZG-204ZV Multisensor is readded also but only data from Motion, Luminance and &hellip;",
+      "createdAt": "2026-01-26T22:05:09.184Z",
+      "username": "Peter_van_Werkhoven"
     }
   ],
   "pms": [],
@@ -2772,7 +2772,7 @@
         "display_username": "3 replies",
         "display_name": "Lasse K"
       },
-      "read": false,
+      "read": true,
       "createdAt": "2026-02-24T09:13:55.060Z"
     },
     {
@@ -4153,13 +4153,6 @@
       "user": "Jim_McAtear",
       "excerpt": "Try and get one sthat are Tuya compatible, then you could use the Tuya ZigBee app. ( I use the test version) There's a whole lot products already supported, you can check that out on forum for the app. If your device is not supported you can request it from the developer. BTW there is also a Tuya...",
       "date": "2024-03-25T08:53:47.552Z"
-    },
-    {
-      "topicId": 74718,
-      "postNum": 4,
-      "user": "robertklep",
-      "excerpt": "Capetrip: (Test version only) So are you running the test version of the app?",
-      "date": "2023-01-07T17:40:14.019Z"
     }
   ],
   "fullThreads": [
@@ -14369,7 +14362,7 @@
         {
           "num": 1470,
           "user": "Shiki",
-          "text": "@dlnraja\n\nTuya Zigbee double Wall Socket & USB Charger - _TZ3000_dd8wwzcy/TS011F\n\nstill not working, currently running Universal Tuya Zigbee+ Wifi app v5.11.19\n\nDiag id: 02EFECFF\n\nInterview:\n\n\n“ids”: {\n\n“modelId”: “TS011F”,\n\n“manufacturerName”: “_TZ3000_dd8wwzcy”\n\n},\n\n“endpoints”: {\n\n“ieeeAddress”: “a4:c1:38:0d:0c:b9:da:50”,\n\n“networkAddress”: 43959,\n\n“modelId”: “TS011F”,\n\n“manufacturerName”: “_TZ3000_dd8wwzcy”,\n\n“endpointDescriptors”: [\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 43959,\n\n“_reserved”: 26,\n\n“endpointId”: 1,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 81,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n4,\n\n5,\n\n6,\n\n1794,\n\n2820,\n\n57345,\n\n0\n\n],\n\n“outputClusters”: [\n\n25,\n\n10\n\n]\n\n},\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 43959,\n\n“_reserved”: 14,\n\n“endpointId”: 2,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 81,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n4,\n\n5,\n\n6\n\n],\n\n“outputClusters”: []\n\n},\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 43959,\n\n“_reserved”: 10,\n\n“endpointId”: 242,\n\n“applicationProfileId”: 41440,\n\n“applicationDeviceId”: 97,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 0,\n\n“inputClusters”: [],\n\n“outputClusters”: [\n\n33\n\n]\n\n}\n\n],\n\n“deviceType”: “router”,\n\n“receiveWhenIdle”: true,\n\n“capabilities”: {\n\n“alternatePANCoordinator”: false,\n\n“deviceType”: true,\n\n“powerSourceMains”: true,\n\n“receiveWhenIdle”: true,\n\n“security”: false,\n\n“allocateAddress”: true\n\n},\n\n“extendedEndpointDescriptors”: {\n\n“1”: {\n\n“clusters”: {\n\n“groups”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “nameSupport”,\n\n“value”: {\n\n“type”: “Buffer”,\n\n“data”: [\n\n0\n\n]\n\n},\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n]\n\n},\n\n“scenes”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 3,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 4,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n]\n\n},\n\n“onOff”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “onOff”,\n\n“value”: false,\n\n“reportingConfiguration”: {\n\n“direction”: “reported”,\n\n“attributeDataType”: 16,\n\n“minInterval”: 60,\n\n“maxInterval”: 600,\n\n“status”: “SUCCESS”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”,\n\n“reportable”\n\n],\n\n“id”: 16385,\n\n“name”: “onTime”,\n\n“value”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”,\n\n“reportable”\n\n],\n\n“id”: 16386,\n\n“name”: “offWaitTime”,\n\n“value”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n]\n\n},\n\n“metering”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “currentSummationDelivered”,\n\n“value”: 3,\n\n“reportingConfiguration”: {\n\n“direction”: “reported”,\n\n“attributeDataType”: 37,\n\n“minInterval”: 60,\n\n“maxInterval”: 600,\n\n“minChange”: 1,\n\n“status”: “SUCCESS”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 512,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 768,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 771,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 774,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n]\n\n},\n\n“electricalMeasurement”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1285,\n\n“name”: “rmsVoltage”,\n\n“value”: 218,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1288,\n\n“name”: “rmsCurrent”,\n\n“value”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1291,\n\n“name”: “activePower”,\n\n“value”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n]\n\n},\n\n“basic”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “zclVersion”,\n\n“value”: 3\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1,\n\n“name”: “appVersion”,\n\n“value”: 67\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 2,\n\n“name”: “stackVersion”,\n\n“value”: 0\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 3,\n\n“name”: “hwVersion”,\n\n“value”: 1\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 4,\n\n“name”: “manufacturerName”,\n\n“value”: “_TZ3000_dd8wwzcy”\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 5,\n\n“name”: “modelId”,\n\n“value”: “TS011F”\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 6,\n\n“name”: “dateCode”,\n\n“value”: “”\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 7,\n\n“name”: “powerSource”,\n\n“value”: “mains”\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”,\n\n“reportable”\n\n],\n\n“id”: 65502\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 2\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65534,\n\n“name”: “attributeReportingStatus”,\n\n“value”: “PENDING”\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65506\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65507\n\n}\n\n]\n\n}\n\n},\n\n“bindings”: {\n\n“ota”: {},\n\n“time”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n]\n\n}\n\n}\n\n},\n\n“2”: {\n\n“clusters”: {\n\n“groups”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “nameSupport”,\n\n“value”: {\n\n“type”: “Buffer”,\n\n“data”: [\n\n0\n\n]\n\n},\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n]\n\n},\n\n“scenes”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 3,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 4,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n]\n\n},\n\n“onOff”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “onOff”,\n\n“value”: true,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”,\n\n“reportable”\n\n],\n\n“id”: 16385,\n\n“name”: “onTime”,\n\n“value”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”,\n\n“reportable”\n\n],\n\n“id”: 16386,\n\n“name”: “offWaitTime”,\n\n“value”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n]\n\n}\n\n},\n\n“bindings”: {}\n\n},\n\n“242”: {\n\n“clusters”: {},\n\n“bindings”: {}\n\n}\n\n}\n\n}",
+          "text": "This post was flagged by the community and is temporarily hidden.",
           "date": "2026-02-22T13:34:08.478Z",
           "replyTo": null
         },
@@ -31536,6 +31529,13 @@
           "text": "Peter_Kawa:\n\nthese sensors don’t measure the soil moisture\n\n\n\nMy ZG-303Z shows soil moisture using the Hobeian app (mentioned a few posts above).\n\nScreenshot 2026-02-24 at 15.01.29714×780 35.4 KB\n\nBut the one in your link doesn’t look like ZG-303Z(?) which looks like this this one and doesn’t have soil quality sensor https://www.aliexpress.com/item/1005009760936017.html",
           "date": "2026-02-24T04:13:16.914Z",
           "replyTo": 23
+        },
+        {
+          "num": 25,
+          "user": "Peter_Kawa",
+          "text": "My bad Alex, I meant to write soil nutrition (also called ‘fertility’).\n\nThe one shown here doesn’t seem to have that specific sensor\n\n\n\n\n Michael_Edholm:\n\nWhen looking at zigbee2mtt homepage the device is there an a spec can be found for attributes (which does not seem to show up on the interview) HOBEIAN ZG-303Z control via MQTT | Zigbee2MQTT\n\n\n\n.\n\n\n\n\n Alex_R:\n\nBut the one in your link doesn’t look like ZG-303Z(?)\n\n\n\nCorrect, it is no Hobeian device:\n\n\n\n\n[APP][Pro] Universal TUYA Zigbee Device App - test\n\n  \"ids\": {\n    \"modelId\": \"Arteco\",\n    \"manufacturerName\": \"A89G12C\"\n\n\n\nSee\n\nhttps://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/1439?u=peter_kawa",
+          "date": "2026-02-24T19:00:57.201Z",
+          "replyTo": 24
         }
       ],
       "category": 10
@@ -66586,7 +66586,6 @@
   "deviceInfo": {
     "allFPs": [
       "_TZ3000_itb0omhv",
-      "_TZ3000_dd8wwzcy",
       "_TZ3210_xzhnra8x",
       "_TZ3000_mrpevh8p",
       "_TZE204_ztqnh5cg",
@@ -67310,7 +67309,6 @@
     ],
     "supported": [
       "_TZ3000_itb0omhv",
-      "_TZ3000_dd8wwzcy",
       "_TZ3210_xzhnra8x",
       "_TZ3000_mrpevh8p",
       "_TZE204_ztqnh5cg",
@@ -68035,5 +68033,5 @@
       "_TZ3210_leyz4rju"
     ]
   },
-  "aiAnalysis": "Fingerprints found: `_TZ3000_zgyzgd`, `_TZE204_ztqnh5c`, `_TZ3000_xxxxxxxx`, `_TZ3000_ztc6ggyl`, `_TZ3000_7dbxxwkt`, `_TZ3000_xabck15b`, `_TZ3000_akwixq9i`, `_TZ3000_xxbxx`, `_TZ3000_hiqrjkxx`, `_TZ3000_zzzz`, `_TZ3000_xxxxx`, `_TZE200_xxxxx`, `_TZ3000_cehuw1l2`, `_TZ3000_dfgbtub`, `_TZ3000_dfgbub0`, `_TYZB01_bngwdjsr`, `_TZ3000_ecgiiid3`, `_TZ3000_tvuarska`, `_TZ3000_uyjmm0et`, `_TZ3000_xabckqv1`, `_TZ3000_itb0omhv`, `_TZ3000_dd8wwzcy`, `_TZ3210_xzhnra8x`\nProduct IDs: `TS0041`"
+  "aiAnalysis": "Fingerprints found: `_TZ3000_zgyzgd`, `_TZE204_ztqnh5c`, `_TZ3000_xxxxxxxx`, `_TZ3000_ztc6ggyl`, `_TZ3000_7dbxxwkt`, `_TZ3000_xabck15b`, `_TZ3000_akwixq9i`, `_TZ3000_xxbxx`, `_TZ3000_hiqrjkxx`, `_TZ3000_zzzz`, `_TZ3000_xxxxx`, `_TZE200_xxxxx`, `_TZ3000_cehuw1l2`, `_TZ3000_dfgbtub`, `_TZ3000_dfgbub0`, `_TYZB01_bngwdjsr`, `_TZ3000_ecgiiid3`, `_TZ3000_tvuarska`, `_TZ3000_uyjmm0et`, `_TZ3000_xabckqv1`, `_TZ3000_itb0omhv`, `_TZ3210_xzhnra8x`\nProduct IDs: `TS0041`"
 }

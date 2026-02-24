@@ -1,32 +1,9 @@
 {
-  "timestamp": "2026-02-24T14:33:54.344Z",
+  "timestamp": "2026-02-24T20:12:57.998Z",
   "appVersion": "5.11.22",
-  "forum": 1,
-  "github": 1,
+  "forum": 0,
+  "github": 0,
   "diagnostics": 2,
-  "forumDetails": [
-    {
-      "topic": 140352,
-      "post": 1477,
-      "user": "FrankP",
-      "fps": [
-        "_TZ3000_itb0omhv"
-      ],
-      "reply": "Hi @FrankP,\n\nThank you for your detailed post regarding the device `_TZ3000_itb0omhv` (TS0041). Based on the fingerprint lookup, I can confirm that the manufacturer `_TZ3000_itb0omhv` is currently ass",
-      "model": "gh-gpt-4o-mini"
-    }
-  ],
-  "githubDetails": [
-    {
-      "repo": "dlnraja/com.tuya.zigbee",
-      "number": 135,
-      "user": "Domingoso",
-      "fps": [
-        "_TZE200_xlppj4f5"
-      ],
-      "title": "Device Request - _TZE200_xlppj4f5- TS0601 - Immax Neo smart water timer",
-      "response": "# Issue #135 Response\n\nHello @Domingoso,\n\nThank you for providing the detailed information regarding your Immax NEO Smart Water Timer (_TZE200_xlppj4f5, TS0601). Based on the fingerprint data and device interview you provided, it appears that the device is currently recognized as a **climate sensor*",
-      "model": "gh-gpt-4o-mini"
-    }
-  ]
+  "forumDetails": [],
+  "githubDetails": []
 }

@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-02-24T14:40:06.006Z",
-  "totalExternal": 1604,
+  "timestamp": "2026-02-24T20:18:54.850Z",
+  "totalExternal": 1606,
   "supported": 1590,
-  "unsupported": 14,
-  "variantCount": 13,
+  "unsupported": 16,
+  "variantCount": 15,
   "bugCount": 0,
   "sources": {
-    "z2mConv": 1488,
+    "z2mConv": 1490,
     "z2mIssues": 0,
     "zhaQuirks": 129,
     "zhaIssues": 0,
@@ -35,6 +35,12 @@
     },
     {
       "fp": "_TZ3000_qamj2vnn",
+      "sources": [
+        "z2m-converter"
+      ]
+    },
+    {
+      "fp": "_TZ3000_tw4ztbp4",
       "sources": [
         "z2m-converter"
       ]
@@ -70,6 +76,12 @@
       ]
     },
     {
+      "fp": "_TZE200_seq9cm6u",
+      "sources": [
+        "z2m-converter"
+      ]
+    },
+    {
       "fp": "_TS004F_smart",
       "sources": [
         "deconz"
@@ -100,5 +112,5 @@
       ]
     }
   ],
-  "aiAnalysis": "Based on the recent scan of external Zigbee sources, here are the new devices identified for the Universal Tuya Zigbee app. The devices are prioritized by their popularity across multiple sources and user demand.\n\n| Fingerprint         | Source        | Suggested Driver                |\n|---------------------|---------------|---------------------------------|\n| _TZE200_jt50ea5d    | z2m-converter | HybridSwitchBase                |\n| _TZ3210_jaap6jeb    | z2m-converter | HybridSensorBase                |\n| _TZE284_g1enhdsi    | z2m-converter | HybridLightBase                 |\n| _TZ3000_qamj2vnn    | z2m-converter | HybridPlugBase                  |\n| _TZ3000_avotanj3    | z2m-converter | HybridCoverBase                 |\n| _TZE204_2jnoy8dj    | z2m-converter | HybridSensorBase                |\n| _TZ3210_iymfxdis    | z2m-converter | ButtonDevice                    |\n| _TZ3002_xkxgfxsg    | z2m-converter | HybridLightBase                 |\n| _TZ3002_tlsvxhxc    | z2m-converter | HybridSwitchBase                |\n| _TS004F_smart       | deconz        | HybridSwitchBase                |\n| _TZ3000_imdfhhud    | deconz        | HybridSensorBase                |\n| _TZ3210_amleyeej    | deconz        | ButtonDevice                    |\n| _TZ3000_mnlsbthu    | deconz        | HybridPlugBase                  |\n| _TZB000_yqjaollc    | deconz        | HybridSensorBase                |\n\n### Action Items:\n1. **Device Interviews**: Request interviews for the new fingerprints from tools.developer.homey.app/tools/zigbee to gather detailed capabilities and DP mappings.\n2. **Driver Development**: Start developing drivers for the suggested categories based on the fingerprints and their expected functionalities.\n3. **Community Engagement**: Post updates on the Homey forum to gauge user interest and demand for these new devices.\n4. **Testing**: Prepare for testing the new drivers in the Homey environment to ensure compatibility and functionality.\n5. **Documentation**: Update the app documentation to include the new devices and their respective drivers once they are developed and tested. \n\nThis approach will help in efficiently integrating popular and demanded devices into the Universal Tuya Zigbee app."
+  "aiAnalysis": "Based on the recent scan of external Zigbee sources for the Universal Tuya Zigbee app, here are the new devices identified, prioritized by popularity and user demand. Each device is linked to its corresponding driver suggestion.\n\n| Fingerprint         | Source        | Suggested Driver                |\n|---------------------|---------------|---------------------------------|\n| _TZE200_jt50ea5d    | z2m-converter | HybridSwitchBase                |\n| _TZ3210_jaap6jeb    | z2m-converter | HybridSensorBase                |\n| _TZE284_g1enhdsi    | z2m-converter | HybridLightBase                 |\n| _TZ3000_qamj2vnn    | z2m-converter | HybridPlugBase                  |\n| _TZ3000_tw4ztbp4    | z2m-converter | HybridCoverBase                 |\n| _TZ3000_avotanj3    | z2m-converter | HybridSwitchBase                |\n| _TZE204_2jnoy8dj    | z2m-converter | HybridSensorBase                |\n| _TZ3210_iymfxdis    | z2m-converter | ButtonDevice                    |\n| _TZ3002_xkxgfxsg    | z2m-converter | HybridLightBase                 |\n| _TZ3002_tlsvxhxc    | z2m-converter | HybridSwitchBase                |\n| _TZE200_seq9cm6u    | z2m-converter | HybridSwitchBase                |\n| _TS004F_smart       | deconz        | ButtonDevice                    |\n| _TZ3000_imdfhhud    | deconz        | HybridSensorBase                |\n| _TZ3210_amleyeej    | deconz        | HybridLightBase                 |\n| _TZ3000_mnlsbthu    | deconz        | HybridPlugBase                  |\n\n### Action Items:\n1. **Driver Development**: Begin developing drivers for the suggested devices, focusing on those with multiple sources first.\n2. **User Interviews**: Conduct user interviews to gather feedback on the demand for specific devices.\n3. **Documentation**: Update the documentation for each driver to include pairing instructions and device capabilities.\n4. **Testing**: Set up a testing environment for each driver to ensure compatibility and functionality before release.\n5. **Community Engagement**: Post updates on the Homey forum to inform users about upcoming support for these devices and gather further interest.\n\nBy prioritizing these actions, we can enhance the Universal Tuya Zigbee app's device compatibility and user satisfaction."
 }
