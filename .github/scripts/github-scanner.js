@@ -4,6 +4,7 @@
  * Uses Gemini AI for analysis, posts findings to forum + GitHub
  */
 const fs=require('fs'),path=require('path');
+const{fetchWithRetry}=require('./retry-helper');
 const STATE=path.join(__dirname,'..','state','github-state.json');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const GH='https://api.github.com';
@@ -31,7 +32,7 @@ const extractImgs=t=>{const u=[];const re=/!\[[^\]]*\]\(([^)]+)\)/g;let m;while(
 async function ghFetch(url,token){
   const h={Accept:'application/vnd.github+json','User-Agent':'tuya-bot'};
   if(token)h.Authorization='Bearer '+token;
-  const r=await fetch(url,{headers:h});
+  const r=await fetchWithRetry(url,{headers:h},{retries:3,label:'ghFetch'});
   if(!r.ok){console.log('  GH API '+r.status+' for '+url);return null}
   return r.json();
 }

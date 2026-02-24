@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 'use strict';
-const https=require('https');
 const fs=require('fs');
 const {loadFingerprints,findDriver,extractMfrFromText}=require('./load-fingerprints');
+const{fetchWithRetry}=require('./retry-helper');
 
 // Seed topics (always scanned)
 const SEED_TOPICS=[
@@ -31,14 +31,10 @@ const SUMMARY=process.env.GITHUB_STEP_SUMMARY||(process.platform==='win32'?'NUL'
 const LAST_FILE=process.env.LAST_POST_FILE||'/tmp/last_forum_post.txt';
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 
-function get(url){
-  return new Promise((res,rej)=>{
-    https.get(url,{headers:{Accept:'application/json'}},r=>{
-      let d='';r.on('data',c=>d+=c);r.on('end',()=>{
-        try{res(JSON.parse(d));}catch{rej(new Error('Parse fail: '+url));}
-      });
-    }).on('error',rej);
-  });
+async function get(url){
+  const r=await fetchWithRetry(url,{headers:{Accept:'application/json'}},{retries:2,label:'forumGet'});
+  if(!r.ok)throw new Error('HTTP '+r.status+': '+url);
+  return r.json();
 }
 
 // Discover topics via Discourse search API
