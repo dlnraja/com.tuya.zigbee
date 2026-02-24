@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.22",
+  "version": "5.11.23",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -19,10 +19,51 @@
     "fr": "Chaque appareil Tuya sous un même toit, 100% local"
   },
   "tags": {
-    "en": ["tuya", "smart home", "switch", "sensor", "thermostat", "light", "cover", "plug", "lock", "dimmer"],
-    "nl": ["tuya", "schakelaar", "sensor", "thermostaat", "lamp", "rolluik", "stekker", "slot", "dimmer"],
-    "de": ["tuya", "schalter", "sensor", "thermostat", "licht", "rollladen", "steckdose", "schloss", "dimmer"],
-    "fr": ["tuya", "interrupteur", "capteur", "thermostat", "lumière", "volet", "prise", "serrure", "variateur"]
+    "en": [
+      "tuya",
+      "smart home",
+      "switch",
+      "sensor",
+      "thermostat",
+      "light",
+      "cover",
+      "plug",
+      "lock",
+      "dimmer"
+    ],
+    "nl": [
+      "tuya",
+      "schakelaar",
+      "sensor",
+      "thermostaat",
+      "lamp",
+      "rolluik",
+      "stekker",
+      "slot",
+      "dimmer"
+    ],
+    "de": [
+      "tuya",
+      "schalter",
+      "sensor",
+      "thermostat",
+      "licht",
+      "rollladen",
+      "steckdose",
+      "schloss",
+      "dimmer"
+    ],
+    "fr": [
+      "tuya",
+      "interrupteur",
+      "capteur",
+      "thermostat",
+      "lumière",
+      "volet",
+      "prise",
+      "serrure",
+      "variateur"
+    ]
   },
   "category": "appliances",
   "permissions": [],
