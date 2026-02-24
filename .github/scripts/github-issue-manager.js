@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const fs=require('fs'),path=require('path');
-const{callAI}=require('./ai-helper');
+const{callAI,analyzeImage}=require('./ai-helper');
 const{loadFingerprints,findAllDrivers,extractMfrFromText}=require('./load-fingerprints');
 const REPOS=(process.env.REPOS||'dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee').split(',').map(s=>s.trim());
 const OWN=REPOS[0];
@@ -59,6 +59,8 @@ async function ghPatch(ep,body){
 }
 
 function extractFP(t){return[...new Set((t||'').match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])]}
+function extractImages(t){const u=[];const re=/!\[[^\]]*\]\(([^)]+)\)/g;let m;while((m=re.exec(t||''))!==null)u.push(m[1]);return u}
+function extractLinks(t){return(t||'').match(/https?:\/\/[^\s)>"]+/g)||[]}
 function daysSince(d){return Math.floor((Date.now()-new Date(d).getTime())/86400000)}
 function wasProcessed(state,repo,num){return state.processed.includes(repo+'#'+num)}
 function markProcessed(state,repo,num){if(!state.processed.includes(repo+'#'+num))state.processed.push(repo+'#'+num)}
@@ -73,13 +75,15 @@ async function classifyIssue(issue,fpResults){
 }
 
 // Generate personalized AI response (with variants + bugs)
-async function generateResponse(issue,fpResults,classification,variants,bugs){
+async function generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks){
   const ctx={appVersion:appVer,totalFPs:fps.size,driverCount:fs.readdirSync(path.join(__dirname,'..','..','drivers')).length,
     installUrl:'https://homey.app/a/com.dlnraja.tuya.zigbee/test/',
     forumUrl:'https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352',
     devTools:'https://tools.developer.homey.app',githubUrl:'https://github.com/dlnraja/com.tuya.zigbee'};
   const prompt='You are the Universal Tuya Zigbee bot (v'+appVer+'). Write a personalized GitHub comment for this issue. Be helpful, technical, concise. Use GitHub markdown. Include relevant links. If device is supported, show which driver. If not, ask for interview from developer tools. If bug, acknowledge and explain fix status. IMPORTANT: if variants exist, mention them so user knows related models. If bugs found in Z2M/ZHA, reference them. End with ---\\n*Universal Tuya Zigbee v'+appVer+' — '+ctx.driverCount+' drivers, '+fps.size+'+ fingerprints*\\nContext: '+JSON.stringify(ctx);
-  const text='Issue: '+issue.title+'\nBy: @'+(issue.user?.login||'?')+'\nBody: '+(issue.body||'').slice(0,2000)+'\nFP results: '+JSON.stringify(fpResults)+'\nClassification: '+JSON.stringify(classification)+'\nVariants from Z2M/ZHA/Blakadder: '+JSON.stringify(variants||[])+'\nAssociated bugs: '+JSON.stringify(bugs||[]);
+  let text='Issue: '+issue.title+'\nBy: @'+(issue.user?.login||'?')+'\nBody: '+(issue.body||'').slice(0,2000)+'\nFP results: '+JSON.stringify(fpResults)+'\nClassification: '+JSON.stringify(classification)+'\nVariants from Z2M/ZHA/Blakadder: '+JSON.stringify(variants||[])+'\nAssociated bugs: '+JSON.stringify(bugs||[]);
+  if(imageCtx)text+='\nImage analysis: '+imageCtx;
+  if(bodyLinks&&bodyLinks.length)text+='\nExternal refs: '+bodyLinks.join(', ');
   const ai=await callAI(text,prompt,{maxTokens:1024});
   return ai?TAG+'\n'+ai.text:null;
 }
@@ -129,13 +133,28 @@ async function processIssue(repo,issue,state,report,extData){
     }
   }
 
-  // Check if already has our bot comment
+  // Analyze images in issue body
+  const bodyImgs=extractImages(issue.body||'');
+  let imageCtx='';
+  if(bodyImgs.length){
+    console.log('    Images:',bodyImgs.length);
+    const ia=await analyzeImage(bodyImgs[0],'Extract Tuya fingerprints, device type, clusters from this image. Return JSON or NULL.');
+    if(ia){imageCtx=ia;console.log('    Image:',ia.substring(0,80))}
+  }
+  // Analyze external links
+  const bodyLinks=extractLinks(issue.body||'').filter(l=>l.includes('zigbee2mqtt')||l.includes('blakadder')||l.includes('zigpy'));
+  // Check comments for extra FPs and images
   const comments=await ghGet('/repos/'+repo+'/issues/'+issue.number+'/comments?per_page=30');
   const hasBot=comments&&comments.some(c=>(c.body||'').includes(TAG));
+  if(comments&&Array.isArray(comments))for(const c of comments){
+    if((c.body||'').includes(TAG))continue;
+    for(const fp of extractFP(c.body||''))if(!allFPs.includes(fp)){allFPs.push(fp);const d=findAllDrivers(fp);fpResults.push({fp,supported:d.length>0,drivers:d})}
+    if(!imageCtx){const ci=extractImages(c.body||'');if(ci.length){imageCtx=await analyzeImage(ci[0],'Extract Tuya fingerprints from image. JSON or NULL.')||''}}
+  }
 
   // Respond if not already responded
   if(!hasBot){
-    const response=await generateResponse(issue,fpResults,classification,variants,bugs);
+    const response=await generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks);
     if(response){
       const posted=await ghPost('/repos/'+repo+'/issues/'+issue.number+'/comments',{body:response});
       if(posted){
@@ -308,4 +327,4 @@ async function main(){
   }
 }
 
-main().catch(e=>{console.error('Fatal:',e.message);process.exit(0)});
+main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});

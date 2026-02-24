@@ -256,4 +256,4 @@ async function main(){
   const bt={};for(const r of res)bt[r.type]=(bt[r.type]||0)+1;
   console.log('By type:',JSON.stringify(bt));
 }
-main().catch(e=>{console.error(e.message);process.exit(0)});
+main().catch(e=>{console.error(e.message);process.exit(1)});

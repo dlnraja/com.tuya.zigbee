@@ -26,6 +26,7 @@ function buildIndex(){
 }
 
 const extractFP=t=>([...new Set((t||'').match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])]);
+const extractImgs=t=>{const u=[];const re=/!\[[^\]]*\]\(([^)]+)\)/g;let m;while((m=re.exec(t||''))!==null)u.push(m[1]);return u};
 
 async function ghFetch(url,token){
   const h={Accept:'application/vnd.github+json','User-Agent':'tuya-bot'};
@@ -66,7 +67,7 @@ async function scanForkForFingerprints(fork,token,idx){
   return newFPs;
 }
 
-const{callAI}=require('./ai-helper');
+const{callAI,analyzeImage}=require('./ai-helper');
 
 async function main(){
   const token=process.env.GH_PAT||process.env.GITHUB_TOKEN;
@@ -93,12 +94,17 @@ async function main(){
       if(iss.pull_request)continue;
       const fps=extractFP((iss.title||'')+' '+(iss.body||''));
       if(!fps.length)continue;
+      try{const cm=await ghFetch(GH+'/repos/'+repo+'/issues/'+iss.number+'/comments?per_page=10',token);if(cm)for(const c of cm)for(const f of extractFP(c.body||''))if(!fps.includes(f))fps.push(f)}catch{}
       const newOnes=fps.filter(fp=>!idx.has(fp));
       const existing=fps.filter(fp=>idx.has(fp));
+      // Analyze images in issue body
+      const imgs=extractImgs(iss.body||'');
+      let imgCtx=null;
+      if(imgs.length){try{imgCtx=await analyzeImage(imgs[0],'Extract Tuya fingerprints from image. JSON or NULL.')}catch{}}
       if(newOnes.length||existing.length){
         findings.issues.push({repo,number:iss.number,title:iss.title,user:iss.user?.login,
           newFPs:newOnes,existingFPs:existing.map(fp=>({fp,drivers:idx.get(fp)})),
-          url:iss.html_url,state:iss.state});
+          url:iss.html_url,state:iss.state,imageAnalysis:imgCtx});
         console.log('  #'+iss.number,iss.title?.substring(0,60),'new:',newOnes.length,'existing:',existing.length);
       }
       if(!maxDate||iss.updated_at>maxDate)maxDate=iss.updated_at;
@@ -173,4 +179,4 @@ async function main(){
   }
 }
 
-main().catch(e=>{console.error('Fatal:',e.message);process.exit(0)});
+main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});

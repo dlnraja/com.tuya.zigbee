@@ -34,6 +34,10 @@ jobs:
           node-version: "22"
       - run: npm ci --prefer-offline --no-audit || npm install
 
+      - name: Collect Device Data
+        continue-on-error: true
+        run: node .github/scripts/device-finder-collect.js
+
       - name: Generate Device Finder
         run: node .github/scripts/generate-device-finder.js
 

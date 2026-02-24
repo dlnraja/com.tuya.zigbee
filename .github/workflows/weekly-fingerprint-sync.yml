@@ -46,6 +46,13 @@ jobs:
       - name: Fetch Z2M fingerprints
         run: node scripts/automation/fetch-z2m-fingerprints.js
 
+      - name: Scan JohanBendz full repo
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/scan-johan-full.js
+
       # Step 2: Auto-add safe Tuya patterns
       - name: Auto-add safe fingerprints
         if: ${{ github.event.inputs.dry_run != 'true' }}

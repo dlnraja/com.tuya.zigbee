@@ -5,6 +5,15 @@
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const{PROJECT_RULES,ARCHITECTURE_SUMMARY}=require('./project-rules');
 
+// Circuit breaker: skip providers down recently
+const _cb={};
+function cbOk(n){const e=_cb[n];if(!e)return true;if(Date.now()-e.t>e.c){delete _cb[n];return true;}return false;}
+function cbFail(n,ms){_cb[n]={t:Date.now(),c:ms||300000};}
+// Fetch with timeout
+function fetchT(url,opts,ms){ms=ms||30000;const ac=new AbortController();const tid=setTimeout(()=>ac.abort(),ms);opts=Object.assign({},opts,{signal:ac.signal});return fetch(url,opts).finally(()=>clearTimeout(tid));}
+// Backoff with jitter
+function backoff(attempt){return Math.min(2000*Math.pow(2,attempt)+Math.random()*1000,60000);}
+
 async function callAI(text,sysPrompt,opts={}){
   const maxTokens=opts.maxTokens||2048;
   // Inject project rules + architecture into system prompt
@@ -15,17 +24,19 @@ async function callAI(text,sysPrompt,opts={}){
   if(gemKey){
     const models=['gemini-2.0-flash','gemini-2.0-flash-lite'];
     for(const model of models){
-      for(let retry=0;retry<2;retry++){
-        if(retry>0)await sleep(5000);
+      if(!cbOk('gemini-'+model))continue;
+      for(let retry=0;retry<3;retry++){
+        if(retry>0)await sleep(backoff(retry));
         try{
-          const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent?key='+gemKey,{
+          const r=await fetchT('https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent?key='+gemKey,{
             method:'POST',headers:{'Content-Type':'application/json'},
             body:JSON.stringify({systemInstruction:{parts:[{text:fullSysPrompt}]},contents:[{parts:[{text}]}],
               generationConfig:{temperature:0.2,maxOutputTokens:maxTokens}})});
           if(r.ok){const d=await r.json();const t=d.candidates?.[0]?.content?.parts?.[0]?.text;if(t)return{text:t.trim(),model}}
-          if(r.status===429){console.log('  Gemini '+model+' 429, retrying...');continue}
+          if(r.status===429){console.log('  Gemini '+model+' 429, backoff...');if(retry>=2)cbFail('gemini-'+model,120000);continue}
+          if(r.status>=500){cbFail('gemini-'+model,60000);break}
           break;
-        }catch(e){break}
+        }catch(e){if(e.name==='AbortError')console.log('  Gemini '+model+' timeout');cbFail('gemini-'+model,60000);break}
       }
     }
   }
@@ -34,6 +45,7 @@ async function callAI(text,sysPrompt,opts={}){
   if(ghToken){
     const ghModels=['gpt-4o-mini','Mistral-small','Meta-Llama-3.1-8B-Instruct'];
     for(const model of ghModels){
+      if(!cbOk('gh-'+model))continue;
       try{
         console.log('  Trying GitHub Models ('+model+')...');
         const r=await fetch('https://models.inference.ai.azure.com/chat/completions',{
@@ -41,7 +53,7 @@ async function callAI(text,sysPrompt,opts={}){
           body:JSON.stringify({model,messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})});
         if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'gh-'+model}}
         else{const e=await r.text().catch(()=>'');console.log('  GitHub Models '+model+' failed:',r.status,e.substring(0,150))}
-      }catch(e){console.log('  GitHub Models '+model+' error:',e.message)}
+      }catch(e){console.log('  GitHub Models '+model+' error:',e.message);cbFail('gh-'+model,60000)}
     }
   }
   // Fallback to OpenAI
@@ -117,20 +129,33 @@ async function callAI(text,sysPrompt,opts={}){
       else{console.log('  ApiFreeLLM failed:',r.status)}
     }catch(e){console.log('  ApiFreeLLM error:',e.message)}
   }
-  return null;
+  console.log('  All AI failed, using local regex fallback');
+  return localFallback(text);
+}
+
+function localFallback(text){
+  const m=text.match(/_T[A-Z]\w{3,5}_[a-z0-9]{4,16}/g)||[];
+  const p=text.match(/\bTS[0-9]{4}[A-Z]?\b/g)||[];
+  if(!m.length&&!p.length)return null;
+  const fps=[...new Set(m)].map(f=>'`'+f+'`').join(', ');
+  const pids=[...new Set(p)].map(f=>'`'+f+'`').join(', ');
+  let r='Fingerprints found: '+(fps||'none');
+  if(pids)r+='\nProduct IDs: '+pids;
+  return{text:r,model:'local-regex'};
 }
 
 async function analyzeImage(imageUrl,prompt){
+  let b64;try{b64=await fetchImageBase64(imageUrl)}catch(e){console.log('  Img fetch fail:',e.message);return null}
   // Gemini Vision
   const gemKey=process.env.GOOGLE_API_KEY;
-  if(gemKey){
-    try{
+  if(gemKey&&cbOk('gemini-vision')){
+    for(let i=0;i<2;i++){if(i)await sleep(backoff(i));try{
       const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+gemKey,{
         method:'POST',headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({contents:[{parts:[{text:prompt},{inlineData:{mimeType:'image/jpeg',data:await fetchImageBase64(imageUrl)}}]}],
+        body:JSON.stringify({contents:[{parts:[{text:prompt},{inlineData:{mimeType:'image/jpeg',data:b64}}]}],
           generationConfig:{temperature:0.2,maxOutputTokens:1024}})});
       if(r.ok){const d=await r.json();return d.candidates?.[0]?.content?.parts?.[0]?.text?.trim()||null}
-    }catch{}
+    }catch{}}
   }
   // OpenAI Vision fallback
   const oaiKey=process.env.OPENAI_API_KEY;
@@ -143,11 +168,23 @@ async function analyzeImage(imageUrl,prompt){
       if(r.ok){const d=await r.json();return d.choices?.[0]?.message?.content?.trim()||null}
     }catch{}
   }
+  // GitHub Models Vision fallback
+  const ght=process.env.GH_PAT||process.env.GITHUB_TOKEN;
+  if(ght&&cbOk('gh-vision')){
+    try{
+      const r=await fetchT('https://models.inference.ai.azure.com/chat/completions',{
+        method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+ght},
+        body:JSON.stringify({model:'gpt-4o-mini',messages:[{role:'user',content:[{type:'text',text:prompt},{type:'image_url',image_url:{url:imageUrl}}]}],max_tokens:1024})});
+      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content?.trim();if(t)return t}
+      else cbFail('gh-vision',120000);
+    }catch{cbFail('gh-vision',60000)}
+  }
   return null;
 }
 
 async function fetchImageBase64(url){
-  const r=await fetch(url);const buf=await r.arrayBuffer();return Buffer.from(buf).toString('base64');
+  const r=await fetchT(url,{},15000);if(!r.ok)throw new Error('HTTP '+r.status);
+  const buf=await r.arrayBuffer();return Buffer.from(buf).toString('base64');
 }
 
-module.exports={callAI,analyzeImage,sleep};
+module.exports={callAI,analyzeImage,sleep,localFallback};

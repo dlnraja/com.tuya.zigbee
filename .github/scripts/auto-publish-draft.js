@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const fs=require('fs'),path=require('path');
+const{dashboardFallback}=require('./dashboard-fallback');
 const APP='com.dlnraja.tuya.zigbee';
 const PAT=process.env.HOMEY_PAT;
 const DRY=process.env.DRY_RUN==='true';
@@ -172,20 +173,29 @@ async function main(){
 
   if(DRY){log('\nDRY RUN — would promote: '+drafts.join(', '));return;}
 
-  // Step 3: Promote each draft
+  // Step 3: Promote each draft (with retry)
   let promoted=0;
   for(const v of drafts){
-    const ok=await promoteToTest(v);
+    let ok=await promoteToTest(v);
+    if(!ok){
+      log('\nRetrying v'+v+' in 15s...');
+      await new Promise(r=>setTimeout(r,15000));
+      ok=await promoteToTest(v);
+    }
     if(ok)promoted++;
   }
 
   log('\n### Result: '+promoted+'/'+drafts.length+' promoted to Test');
   if(promoted===0){
-    log('\n⚠️ Could not auto-promote via API.');
-    log('Manual action needed at: https://tools.developer.homey.app/apps/app/'+APP+'/versions');
-    log('Steps: Click version → "Publish to Test"');
+    log('\nTrying dashboard login simulation...');
+    promoted=(await dashboardFallback(drafts[0],log))?1:0;
+  }
+  if(promoted===0){
+    log('\n⚠️ Could not auto-promote via API or dashboard.');
+    log('Manual: https://tools.developer.homey.app/apps/app/'+APP+'/versions');
+    process.exitCode=1;
   }
   log('\nManage: https://tools.developer.homey.app/apps/app/'+APP);
 }
 
-main().catch(e=>{console.error('Fatal:',e);process.exit(0)});
+main().catch(e=>{console.error('Fatal:',e);process.exit(1)});

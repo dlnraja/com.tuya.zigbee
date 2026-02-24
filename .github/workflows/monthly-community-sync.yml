@@ -53,7 +53,21 @@ jobs:
       - name: 📊 Generate Summary Report
         run: node scripts/community-sync/generate-report.js >> $GITHUB_STEP_SUMMARY
 
-      - name: 📋 Create Issue for New Fingerprints
+      - name: � External Sources (Z2M+ZHA+Blakadder)
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/external-sources-scanner.js
+
+      - name: 🔍 Enrichment Scanner
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/enrichment-scanner.js
+
+      - name: �📋 Create Issue for New Fingerprints
         uses: actions/github-script@v7
         with:
           script: |

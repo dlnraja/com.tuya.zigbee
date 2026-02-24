@@ -39,8 +39,13 @@ async function main(){
   const url=process.env.PUBLISH_URL||'https://homey.app/a/com.dlnraja.tuya.zigbee/test/';
   const raw='## Universal Tuya Zigbee v'+ver+'\n\n'+cl+'\n\n**Install:** [Test version]('+url+')\n\n> After updating, remove and re-pair devices that had issues.\n> Report bugs: [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues)';
   console.log('Posting to forum topic',TOPIC);
-  const r=await postReply(TOPIC,raw,auth);
+  let r,posted=false;
+  for(let i=0;i<3;i++){
+    try{r=await postReply(TOPIC,raw,auth);posted=true;break;}
+    catch(e){console.warn('Post try '+(i+1)+':',e.message);if(i<2)await new Promise(z=>setTimeout(z,5000*(i+1)));}
+  }
+  if(!posted){console.error('All post attempts failed');process.exitCode=1;return;}
   console.log('Posted:',r.slice(0,100));
   fs.appendFileSync(SUM,'Forum: posted v'+ver+' update to topic '+TOPIC+'\n');
 }
-main().catch(e=>{console.error('Forum post failed:',e.message);process.exit(0);});
+main().catch(e=>{console.error('Forum post failed:',e.message);process.exit(1);});
