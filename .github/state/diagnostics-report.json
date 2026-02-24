@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-24T08:28:04.436Z",
-  "count": 0,
+  "timestamp": "2026-02-24T10:45:41.678Z",
+  "count": 2,
   "byType": {
     "forum_message": 0,
     "homey_system": 0,
@@ -9,9 +9,58 @@
     "bug_report": 0,
     "github": 0,
     "changelog": 0,
-    "device_issue": 0,
+    "device_issue": 2,
     "general": 0
   },
   "newFingerprints": [],
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "id": "19c8ef668f8e5f62",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "Nordmann <notifications@athom.discoursemail.com>",
+      "date": "Tue, 24 Feb 2026 09:23:58 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c8ed2c325b3e47",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "Frank <notifications@athom.discoursemail.com>",
+      "date": "Tue, 24 Feb 2026 08:45:02 +0000",
+      "fps": {
+        "mfr": [
+          "_TZ3000_itb0omhv"
+        ],
+        "pid": [
+          "TS0041"
+        ]
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [
+        {
+          "fingerprint": "_TZ3000_itb0omhv",
+          "supported": true,
+          "drivers": [
+            "climate_sensor"
+          ]
+        }
+      ],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    }
+  ]
 }
