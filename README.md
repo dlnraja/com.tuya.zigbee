@@ -42,7 +42,7 @@
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-02-23 |
+| **Last Updated** | 2026-02-24 |
 
 ### 📦 Top 138 drivers by Device IDs
 

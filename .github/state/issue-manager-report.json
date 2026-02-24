@@ -1,78 +1,11 @@
 {
-  "timestamp": "2026-02-23T20:14:05.726Z",
+  "timestamp": "2026-02-24T03:06:28.732Z",
   "appVersion": "5.11.22",
-  "responded": 21,
+  "responded": 0,
   "closed": 0,
   "labeled": 0,
   "issuesProcessed": 25,
   "prsProcessed": 16,
-  "newFingerprints": [
-    {
-      "fp": "_TZE284_g1enhdsi",
-      "source": "dlnraja/com.tuya.zigbee#133",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3000_qamj2vnn",
-      "source": "dlnraja/com.tuya.zigbee#133",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3000_avotanj3",
-      "source": "dlnraja/com.tuya.zigbee#133",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3290_7v1k4vuf",
-      "source": "dlnraja/com.tuya.zigbee#133",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3290_rlkmy85q",
-      "source": "dlnraja/com.tuya.zigbee#133",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3290_jxvzqatw",
-      "source": "dlnraja/com.tuya.zigbee#133",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3290_lypnqvle",
-      "source": "dlnraja/com.tuya.zigbee#133",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3290_nba3knps",
-      "source": "dlnraja/com.tuya.zigbee#133",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3290_yac64inu",
-      "source": "dlnraja/com.tuya.zigbee#133",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE204_2jnoy8dj",
-      "source": "dlnraja/com.tuya.zigbee#133",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3210_iymfxdis",
-      "source": "dlnraja/com.tuya.zigbee#133",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3002_xkxgfxsg",
-      "source": "dlnraja/com.tuya.zigbee#133",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3002_tlsvxhxc",
-      "source": "dlnraja/com.tuya.zigbee#133",
-      "type": "device_request"
-    }
-  ],
-  "evolutionSummary": "In the recent project evolution, a total of 21 responses were made to device requests, with 13 new fingerprints (FPs) identified. Notable new FPs include _TZE284_g1enhdsi, _TZ3000_qamj2vnn, and multiple entries from the _TZ3290 series, all sourced from issue #133. \n\nDespite the active engagement, no issues were closed during this period, indicating ongoing challenges that require attention. A total of 25 issues and 16 pull requests were processed, reflecting a robust effort in managing community contributions and device integration requests.\n\nAction items moving forward include addressing the unresolved issues and continuing to enhance device support based on the newly discovered fingerprints. This proactive approach will ensure the app remains up-to-date with the latest Tuya Zigbee devices and user needs.",
-  "crossPosts": 5
+  "newFingerprints": [],
+  "evolutionSummary": null
 }
