@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-24T03:07:44.728Z",
+  "timestamp": "2026-02-24T08:28:11.979Z",
   "username": "dlnraja",
   "summary": {
     "postCount": 546,
@@ -50,7 +50,7 @@
       "id": 140352,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
       "posts": 1464,
-      "views": 13367,
+      "views": 13380,
       "lastPosted": "2026-02-23T09:56:27.904Z",
       "slug": "app-pro-universal-tuya-zigbee-device-app-test"
     }
@@ -31515,6 +31515,13 @@
           "text": "One downside, at least to me, these sensors don’t measure the soil moisture and nutrition levels.\n\nI found and purchased these @ Ali (€10),\n\nhttps://nl.aliexpress.com/item/1005010793321103.html\n\nScreenshot_20260218_062630_Ecosia937×960 86 KB\n\nthey’re supported by zigbee2mqtt.\n\nIf you like I can pass a zigbee device interview to Dylan\n\n(universal Tuya Zigbee app).\n\nOr maybe Twan is interested adding it to his app?\n\nUpdate:\n\nIt’s now supported per universal Tuya zigbee app:\n\nhttps://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352",
           "date": "2026-02-18T19:08:16.629Z",
           "replyTo": 22
+        },
+        {
+          "num": 24,
+          "user": "Alex_R",
+          "text": "Peter_Kawa:\n\nthese sensors don’t measure the soil moisture\n\n\n\nMy ZG-303Z shows soil moisture using the Hobeian app (mentioned a few posts above).\n\nScreenshot 2026-02-24 at 15.01.29714×780 35.4 KB\n\nBut the one in your link doesn’t look like ZG-303Z(?) which looks like this this one and doesn’t have soil quality sensor https://www.aliexpress.com/item/1005009760936017.html",
+          "date": "2026-02-24T04:13:16.914Z",
+          "replyTo": 23
         }
       ],
       "category": 10
