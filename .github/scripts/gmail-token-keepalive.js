@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const fs=require('fs'),path=require('path');
+const{fetchWithRetry}=require('./retry-helper');
 const SD=path.join(__dirname,'..','state');
 const HF=path.join(SD,'gmail-token-health.json');
 
@@ -11,9 +12,9 @@ async function main(){
   let health;try{health=JSON.parse(fs.readFileSync(HF,'utf8'))}catch{health={checks:[],lastOk:null}}
 
   console.log('Refreshing Gmail token...');
-  const res=await fetch('https://oauth2.googleapis.com/token',{method:'POST',
+  const res=await fetchWithRetry('https://oauth2.googleapis.com/token',{method:'POST',
     headers:{'Content-Type':'application/x-www-form-urlencoded'},
-    body:'client_id='+id+'&client_secret='+s+'&refresh_token='+r+'&grant_type=refresh_token'});
+    body:'client_id='+id+'&client_secret='+s+'&refresh_token='+r+'&grant_type=refresh_token'},{retries:3,label:'gmailToken'});
   const now=new Date().toISOString();
 
   if(!res.ok){
@@ -60,8 +61,8 @@ async function main(){
 
   // Verify token with lightweight Gmail API call
   try{
-    const v=await fetch('https://gmail.googleapis.com/gmail/v1/users/me/profile',
-      {headers:{Authorization:'Bearer '+j.access_token}});
+    const v=await fetchWithRetry('https://gmail.googleapis.com/gmail/v1/users/me/profile',
+      {headers:{Authorization:'Bearer '+j.access_token}},{retries:2,label:'gmailVerify'});
     if(v.ok){const p=await v.json();console.log('Verified:',p.emailAddress,'('+p.messagesTotal+' msgs)');}
     else console.warn('Gmail verify failed:',v.status);
   }catch(e){console.warn('Gmail verify error:',e.message);}

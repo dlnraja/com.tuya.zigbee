@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const fs=require('fs'),path=require('path');
+const{fetchWithRetry}=require('./retry-helper');
 const TOKENS=[process.env.HOMEY_PAT_API,process.env.HOMEY_PAT].filter(Boolean);
 let PAT=null;
 const SUM=process.env.GITHUB_STEP_SUMMARY||null;
@@ -11,7 +12,7 @@ const APP='com.dlnraja.tuya.zigbee';
 if(!TOKENS.length){console.log('HOMEY_PAT_API/HOMEY_PAT not set - skip');process.exit(0);}
 function log(t){console.log(t);if(SUM)fs.appendFileSync(SUM,t+'\n');}
 async function api(url){
-  const r=await fetch(url,{headers:{'Authorization':'Bearer '+PAT}});
+  const r=await fetchWithRetry(url,{headers:{'Authorization':'Bearer '+PAT}},{retries:3,label:'homeyAPI'});
   if(!r.ok)throw new Error(r.status+' '+url);
   return r.json();
 }

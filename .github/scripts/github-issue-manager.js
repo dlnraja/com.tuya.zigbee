@@ -12,6 +12,7 @@ const STALE_DAYS=parseInt(process.env.STALE_DAYS||'30');
 const STATE_F=path.join(__dirname,'..','state','issue-manager-state.json');
 const REPORT_F=path.join(__dirname,'..','state','issue-manager-report.json');
 const TAG='<!-- tuya-issue-manager -->';
+const{fetchWithRetry}=require('./retry-helper');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 let appVer='?';try{appVer=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
 const fps=loadFingerprints();
@@ -28,7 +29,7 @@ async function crossPostForum(msg){
   try{const{getForumAuth,fmtCk,FORUM}=require('./forum-auth');const auth=await getForumAuth();if(!auth)return;
     const h=auth.type==='apikey'?{'Content-Type':'application/json','User-Api-Key':auth.key}:{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
     if(DRY){console.log('[DRY] Forum post:',msg.slice(0,80));return}
-    await fetch(FORUM+'/posts',{method:'POST',headers:h,body:JSON.stringify({topic_id:140352,raw:msg})});
+    await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:h,body:JSON.stringify({topic_id:140352,raw:msg})},{retries:3,label:'forumCrossPost'});
     console.log('    Cross-posted to forum');
   }catch(e){console.log('    Forum cross-post skip:',e.message)}
 }
@@ -46,16 +47,16 @@ function loadState(){try{return JSON.parse(fs.readFileSync(STATE_F,'utf8'))}catc
 function saveState(s){fs.mkdirSync(path.dirname(STATE_F),{recursive:true});fs.writeFileSync(STATE_F,JSON.stringify(s,null,2)+'\n')}
 
 async function ghGet(ep){
-  try{const r=await fetch(GH+ep,{headers:hdrs(TOKEN)});if(!r.ok)return null;return r.json()}catch{return null}
+  try{const r=await fetchWithRetry(GH+ep,{headers:hdrs(TOKEN)},{retries:3,label:'ghGet'});if(!r.ok)return null;return r.json()}catch{return null}
 }
 async function ghPost(ep,body){
   if(DRY){console.log('[DRY] POST',ep,JSON.stringify(body).slice(0,120));return{id:'dry'}}
-  try{const r=await fetch(GH+ep,{method:'POST',headers:hdrs(TOKEN),body:JSON.stringify(body)});
+  try{const r=await fetchWithRetry(GH+ep,{method:'POST',headers:hdrs(TOKEN),body:JSON.stringify(body)},{retries:3,label:'ghPost'});
     return r.ok?r.json():null}catch{return null}
 }
 async function ghPatch(ep,body){
   if(DRY){console.log('[DRY] PATCH',ep,JSON.stringify(body).slice(0,120));return true}
-  try{const r=await fetch(GH+ep,{method:'PATCH',headers:hdrs(TOKEN),body:JSON.stringify(body)});return r.ok}catch{return false}
+  try{const r=await fetchWithRetry(GH+ep,{method:'PATCH',headers:hdrs(TOKEN),body:JSON.stringify(body)},{retries:3,label:'ghPatch'});return r.ok}catch{return false}
 }
 
 function extractFP(t){return[...new Set((t||'').match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])]}

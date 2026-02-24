@@ -4,14 +4,15 @@
  */
 const fs=require('fs'),path=require('path');
 const {getForumAuth,fmtCk,FORUM}=require('./forum-auth');
+const{fetchWithRetry}=require('./retry-helper');
 const TOPIC=140352;
 
 async function postToForum(content,auth){
   const h=auth.type==='apikey'
     ?{'Content-Type':'application/json','User-Api-Key':auth.key}
     :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
-  const r=await fetch(FORUM+'/posts',{method:'POST',headers:h,
-    body:JSON.stringify({topic_id:TOPIC,raw:content})});
+  const r=await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:h,
+    body:JSON.stringify({topic_id:TOPIC,raw:content})},{retries:3,label:'forumPost'});
   const d=await r.json().catch(()=>({}));
   if(!r.ok)throw new Error('Post failed: '+r.status+' '+JSON.stringify(d).substring(0,200));
   return d;

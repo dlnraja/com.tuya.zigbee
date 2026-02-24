@@ -1,5 +1,6 @@
 const fs=require('fs'),path=require('path');
 const {getForumAuth,fmtCk,FORUM}=require('./forum-auth');
+const{fetchWithRetry}=require('./retry-helper');
 const MODEL='gemini-2.0-flash';
 const SKIP=['dlnraja','system','discobot'];
 const MAX_REPLIES=5,DELAY=15000;
@@ -30,17 +31,17 @@ function buildIndex(){
 }
 
 async function fetchNewPosts(topicId,since){
-  const r=await fetch(FORUM+'/t/'+topicId+'.json');
+  const r=await fetchWithRetry(FORUM+'/t/'+topicId+'.json',{},{retries:3,label:'forumTopic'});
   if(!r.ok)throw new Error('Topic fetch failed: '+r.status);
   const d=await r.json();
   const highest=d.highest_post_number;
   if(highest<=since)return[];
-  const r2=await fetch(FORUM+'/t/'+topicId+'/'+(since+1)+'.json');
+  const r2=await fetchWithRetry(FORUM+'/t/'+topicId+'/'+(since+1)+'.json',{},{retries:2,label:'forumPosts'});
   if(!r2.ok)throw new Error('Posts fetch failed: '+r2.status);
   const d2=await r2.json();
   const posts=(d2.post_stream?.posts||[]).filter(p=>p.post_number>since);
   if(posts.length&&Math.max(...posts.map(p=>p.post_number))<highest){
-    const r3=await fetch(FORUM+'/t/'+topicId+'/'+(Math.max(...posts.map(p=>p.post_number))+1)+'.json');
+    const r3=await fetchWithRetry(FORUM+'/t/'+topicId+'/'+(Math.max(...posts.map(p=>p.post_number))+1)+'.json',{},{retries:2,label:'forumMore'});
     if(r3.ok){const d3=await r3.json();
       for(const p of(d3.post_stream?.posts||[]).filter(p=>p.post_number>since))
         if(!posts.find(e=>e.post_number===p.post_number))posts.push(p);
@@ -53,8 +54,8 @@ async function postReply(topicId,replyTo,content,auth){
   const h=auth.type==='apikey'
     ?{'Content-Type':'application/json','User-Api-Key':auth.key}
     :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
-  const r=await fetch(FORUM+'/posts',{method:'POST',headers:h,
-    body:JSON.stringify({topic_id:topicId,raw:content,reply_to_post_number:replyTo})});
+  const r=await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:h,
+    body:JSON.stringify({topic_id:topicId,raw:content,reply_to_post_number:replyTo})},{retries:3,label:'forumReply'});
   const d=await r.json().catch(()=>({}));
   if(!r.ok)throw new Error('Post failed: '+r.status+' '+JSON.stringify(d).substring(0,200));
   return d;

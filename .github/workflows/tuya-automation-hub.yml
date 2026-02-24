@@ -172,6 +172,7 @@ jobs:
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}

@@ -13,6 +13,7 @@
 const fs=require('fs'),path=require('path');
 const{callAI}=require('./ai-helper');
 const{loadFingerprints,findAllDrivers,extractMfrFromText}=require('./load-fingerprints');
+const{fetchWithRetry}=require('./retry-helper');
 
 const GH='https://api.github.com';
 const TOKEN=process.env.GH_PAT||process.env.GITHUB_TOKEN;
@@ -27,8 +28,8 @@ const hdrs=t=>({Accept:'application/vnd.github+json','User-Agent':'tuya-ext-scan
 
 function loadState(){try{return JSON.parse(fs.readFileSync(STATE_F,'utf8'))}catch{return{lastRun:null,knownDevices:{}}}}
 function saveState(s){fs.mkdirSync(path.dirname(STATE_F),{recursive:true});fs.writeFileSync(STATE_F,JSON.stringify(s,null,2)+'\n')}
-async function fetchJSON(url,h){try{const r=await fetch(url,{headers:h||{'User-Agent':'tuya-bot'}});if(!r.ok)return null;return r.json()}catch{return null}}
-async function fetchText(url){try{const r=await fetch(url,{headers:{'User-Agent':'tuya-bot'}});if(!r.ok)return null;return r.text()}catch{return null}}
+async function fetchJSON(url,h){try{const r=await fetchWithRetry(url,{headers:h||{'User-Agent':'tuya-bot'}},{retries:3,label:'extJSON'});if(!r.ok)return null;return r.json()}catch{return null}}
+async function fetchText(url){try{const r=await fetchWithRetry(url,{headers:{'User-Agent':'tuya-bot'}},{retries:3,label:'extText'});if(!r.ok)return null;return r.text()}catch{return null}}
 
 // ====== Z2M: Full converter database ======
 async function scanZ2MConverters(){

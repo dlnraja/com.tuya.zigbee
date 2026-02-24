@@ -12,6 +12,7 @@ const fs=require('fs'),path=require('path');
 const{getForumAuth,fmtCk,FORUM}=require('./forum-auth');
 const{callAI}=require('./ai-helper');
 const{loadFingerprints,extractMfrFromText}=require('./load-fingerprints');
+const{fetchWithRetry}=require('./retry-helper');
 
 const USERNAME=process.env.FORUM_USERNAME||'dlnraja';
 const STATE_F=path.join(__dirname,'..','state','forum-activity-state.json');
@@ -28,9 +29,9 @@ function saveState(s){fs.mkdirSync(path.dirname(STATE_F),{recursive:true});fs.wr
 
 async function forumGet(ep,auth){
   const h={'Accept':'application/json','User-Agent':'tuya-forum-bot'};
-  if(auth?.type==='apikey'){h['Api-Key']=auth.key;h['Api-Username']=USERNAME}
+  if(auth?.type==='apikey'){h['User-Api-Key']=auth.key}
   else if(auth?.type==='session'){h['Cookie']=fmtCk(auth.cookies);h['X-CSRF-Token']=auth.csrf;h['X-Requested-With']='XMLHttpRequest'}
-  try{const r=await fetch(FORUM+ep,{headers:h});if(!r.ok){console.log('  GET',ep,r.status);return null}return r.json()}catch(e){console.log('  GET',ep,'error:',e.message);return null}
+  try{const r=await fetchWithRetry(FORUM+ep,{headers:h},{retries:3,label:'forumGet'});if(!r.ok){console.log('  GET',ep,r.status);return null}return r.json()}catch(e){console.log('  GET',ep,'error:',e.message);return null}
 }
 
 // 1. Get user profile summary

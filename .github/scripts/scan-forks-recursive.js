@@ -2,6 +2,7 @@
 'use strict';
 const fs=require('fs'),path=require('path');
 const{loadFingerprints}=require('./load-fingerprints');
+const{fetchWithRetry}=require('./retry-helper');
 const ROOT=path.join(__dirname,'..','..');
 const GH='https://api.github.com';
 const TOKEN=process.env.GH_PAT||process.env.GH_TOKEN||process.env.GITHUB_TOKEN;
@@ -15,7 +16,7 @@ const hdrs={Accept:'application/vnd.github+json','User-Agent':'tuya-fork-scanner
 if(TOKEN)hdrs.Authorization='Bearer '+TOKEN;
 
 async function ghGet(url){
-  try{const r=await fetch(GH+url,{headers:hdrs});
+  try{const r=await fetchWithRetry(GH+url,{headers:hdrs},{retries:3,label:'ghFork'});
     if(!r.ok){console.log('  GH '+r.status+': '+url.substring(0,60));return null;}
     return r.json();
   }catch{return null;}
