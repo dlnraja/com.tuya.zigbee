@@ -1,25 +1,25 @@
 {
-  "timestamp": "2026-02-23T08:19:37.612Z",
-  "count": 2,
+  "timestamp": "2026-02-24T04:16:02.567Z",
+  "count": 10,
   "byType": {
     "forum_message": 0,
     "homey_system": 0,
-    "interview": 0,
+    "interview": 1,
     "diagnostic": 0,
     "bug_report": 0,
-    "github": 2,
+    "github": 1,
     "changelog": 0,
-    "device_issue": 0,
-    "general": 0
+    "device_issue": 1,
+    "general": 7
   },
   "newFingerprints": [],
   "diagnostics": [
     {
-      "id": "19c89297d7a04af8",
-      "type": "github",
-      "subj": "[dlnraja/com.tuya.zigbee] Weekly Fingerprint Sync (7 new lines) (PR #134)",
-      "from": "\"github-actions[bot]\" <notifications@github.com>",
-      "date": "Sun, 22 Feb 2026 22:22:01 -0800",
+      "id": "19c8d139b9411cb1",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #1955 is now testing",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Tue, 24 Feb 2026 00:36:37 +0000",
       "fps": {
         "mfr": [],
         "pid": []
@@ -27,9 +27,157 @@
       "errs": [],
       "devices": [],
       "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c8c42665d2f878",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Mon, 23 Feb 2026 20:48:07 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c8c4234b7092c0",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #1955 has been created",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Mon, 23 Feb 2026 20:47:54 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c8b8e8d03ce1df",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Mon, 23 Feb 2026 17:31:40 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c8b8df0c7e514d",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #1954 has been created",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Mon, 23 Feb 2026 17:31:00 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c8b83d97d1106f",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Mon, 23 Feb 2026 17:19:59 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c8b83adfa7cca8",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #1953 has been created",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Mon, 23 Feb 2026 17:19:47 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c89cc3edf24594",
+      "type": "interview",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "Mattie <notifications@athom.discoursemail.com>",
+      "date": "Mon, 23 Feb 2026 09:19:49 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "s. Thinking that my buttons are crooked.."
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c8c2e6ff0d6646",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Garagedoor controller (Issue #128)",
+      "from": "Wuma68 <notifications@github.com>",
+      "date": "Mon, 23 Feb 2026 12:26:16 -0800",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "when trying to close the garage door, and it don't react on magnet switch!"
+      ],
+      "devices": [],
+      "xref": [],
       "ghInfo": {
-        "issueNum": "134",
-        "action": null,
+        "issueNum": "128",
+        "action": "commented",
         "fps": {
           "mfr": [],
           "pid": []
@@ -41,11 +189,11 @@
       "appVersion": null
     },
     {
-      "id": "19c8929794839eb8",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] Weekly Fingerprint Sync (7 new lines) (PR #134)",
-      "from": "\"github-actions[bot]\" <notifications@github.com>",
-      "date": "Sun, 22 Feb 2026 22:22:00 -0800",
+      "id": "19c89f709ce3e748",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "Lasse K <notifications@athom.discoursemail.com>",
+      "date": "Mon, 23 Feb 2026 10:06:33 +0000",
       "fps": {
         "mfr": [],
         "pid": []
@@ -53,15 +201,7 @@
       "errs": [],
       "devices": [],
       "xref": [],
-      "ghInfo": {
-        "issueNum": "134",
-        "action": null,
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false
-      },
+      "ghInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null
