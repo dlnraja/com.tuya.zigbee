@@ -1,6 +1,6 @@
 {
   "5.11.22": {
-    "en": "Universal Tuya Zigbee app v5.11.22 introduces enhanced forum automation, improved workflow resilience, and updates to 138 drivers with 5182 fingerprints."
+    "en": "Universal Tuya Zigbee app v5.11.22 includes daily updates with 138 drivers and 5182 fingerprints, ensuring enhanced compatibility and performance."
   },
   "5.11.21": {
     "en": "v5.11.21: IR Blaster learning fix, energy divisors, soil moisture fix. (1) IR Blaster ZS06 manual cluster fallback for learning mode. (2) TS011F _TZ3210_xzhnra8x configurable ZCL energy divisors. (3) _TZ3000_dd8wwzcy added. (4) Soil sensor moisture fix in AdaptiveDataParser. (5) TuyaEF00Manager skip auto-convert for divisor:1 DPs."
