@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-24T14:32:59.067Z",
+  "timestamp": "2026-02-24T20:12:53.285Z",
   "appVersion": "5.11.22",
   "findings": {
     "issues": [
@@ -99,24 +99,6 @@
         "imageAnalysis": null
       },
       {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 128,
-        "title": "Garagedoor controller",
-        "user": "Wuma68",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZE204_nklqjk62",
-            "drivers": [
-              "garage_door"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/128",
-        "state": "open",
-        "imageAnalysis": null
-      },
-      {
         "repo": "JohanBendz/com.tuya.zigbee",
         "number": 963,
         "title": "Device Request - Aubess Tuya 1-gang ZigBee 3.0 Mini Smart Switch - _TZ3000_fdxihpp7 / TS0001",
@@ -143,7 +125,7 @@
         ],
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/963",
         "state": "open",
-        "imageAnalysis": "```json\n{\n  \"name\": \"Mini Smart Switch\",\n  \"wireless_type\": \"Zigbee 3.0\",\n  \"input\": \"AC 100-240V 50/60Hz 16A Max\",\n  \"output\": \"AC 100-240V 50/60Hz 16A Max\",\n  \"certifications\": [\n    \"CE\",\n    \"FCC\",\n    \"RoHS\"\n  ],\n  \"terminals\": {\n    \"L-out\": true,\n    \"L-in\": true,\n    \"N-in\": true,\n    \"N-out\": true,\n    \"S1\": true,\n    \"S2\": true\n  }\n}\n```"
+        "imageAnalysis": "```json\n{\n  \"name\": \"Mini Smart Switch\",\n  \"wireless_type\": \"Zigbee 3.0\",\n  \"input\": {\n    \"voltage\": \"AC 100-240V\",\n    \"frequency\": \"50/60Hz\",\n    \"current\": \"16A Max\"\n  },\n  \"output\": {\n    \"voltage\": \"AC 100-240V\",\n    \"frequency\": \"50/60Hz\",\n    \"current\": \"16A Max\"\n  }\n}\n```"
       }
     ],
     "prs": [
@@ -333,5 +315,5 @@
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "### GitHub Activity Summary for Universal Tuya Zigbee\n\n#### New Device Requests\n1. **Immax Neo Smart Water Timer**  \n   - **Fingerprint:** _TZE200_xlppj4f5  \n   - **Existing Fingerprints:**  \n     - _TZE200_xlppj4f5 (climate_sensor)  \n     - _TZ3210_0jxeoadc (contact_sensor, valve_irrigation)  \n     - _TZE200_5zbp6j0u (curtain_motor)  \n     - Additional fingerprints related to curtain motors and climate sensors.  \n   - **Issue Link:** [#135](https://github.com/dlnraja/com.tuya.zigbee/issues/135)  \n\n2. **Garage Door Controller**  \n   - **Fingerprint:** _TZE204_nklqjk62  \n   - **Existing Fingerprints:**  \n     - _TZE204_nklqjk62 (garage_door)  \n   - **Issue Link:** [#128](https://github.com/dlnraja/com.tuya.zigbee/issues/128)  \n\n3. **Aubess Tuya 1-Gang ZigBee 3.0 Mini Smart Switch**  \n   - **Fingerprint:** _TZ3000_fdxihpp7  \n   - **Existing Fingerprints:**  \n     - _TZ3000_fdxihpp7 (climate_sensor, plug_energy_monitor, switch_1gang, etc.)  \n   - **Issue Link:** [#963](https://github.com/JohanBendz/com.tuya.zigbee/issues/963)  \n\n#### Supported Fingerprints\n- **Existing Fingerprints in Drivers:**\n  - _TZE200_xlppj4f5 (climate_sensor)\n  - _TZ3210_0jxeoadc (contact_sensor, valve_irrigation)\n  - _TZE200_5zbp6j0u (curtain_motor)\n  - _TZE204_nklqjk62 (garage_door)\n  - _TZ3000_fdxihpp7 (multiple switch types)\n\n#### Forked Fingerprints to Integrate\n- No new fingerprints from forks were identified in this review.\n\n#### Pull Requests with Useful Changes\n1. **Fix for HOBEIAN 10G Radar Sensor**  \n   - **Title:** Fix HOBEIAN 10G radar sensor: IAS motion conflict, battery read, DP corrections  \n   - **Fingerprint:** _TZE200_rhgsbacq  \n   - **PR Link:** [#125](https://github.com/dlnraja/com.tuya.zigbee/pull/125)  \n\n2. **Support for _TZ3000_ysdv91bk**  \n   - **PR Link:** [#118](https://github.com/dlnraja/com.tuya.zigbee/pull/118)  \n\n3. **Bseed 1-Gang Switch with Physical Button Detection**  \n   - **Fingerprint:** _TZ3000_blhvsaqf  \n   - **PR Link:** [#116](https://github.com/dlnraja/com.tuya.zigbee/pull/116)  \n\n4. **Separate Driver for Tuya/Bseed Touch Dimmer**  \n   - **Fingerprints:** _TZE200_3p5ydos3, _TZE204_n9ctkb6j  \n   - **PR Link:** [#111](https://github.com/dlnraja/com.tuya.zigbee/pull/111)  \n\n5. **Added Support for GIRIER Contact Sensor & Benexmart 12V RGBCW Dimmable Spotlight**  \n   - **Fingerprint:** _TZ3000_c8zfad4a  \n   - **PR Link:** [#1137](https://github.com/JohanBendz/com.tuya.zigbee/pull/1137)  \n\n#### Conclusion\nThe current activity highlights several new device requests and existing fingerprints that are already supported. Additionally, there are several pull requests that could enhance device compatibility and functionality. Further integration of forks and new fingerprints will continue to be monitored."
+  "aiSummary": "### GitHub Activity Summary for Universal Tuya Zigbee\n\n#### New Device Requests\n1. **Immax Neo Smart Water Timer**\n   - **Fingerprint**: `_TZE200_xlppj4f5`\n   - **Requestor**: Domingoso\n   - **Issue Link**: [#135](https://github.com/dlnraja/com.tuya.zigbee/issues/135)\n   - **Existing Fingerprints**:\n     - `_TZE200_xlppj4f5` - Supported by `climate_sensor`\n     - Other relevant fingerprints include various curtain motors and climate sensors.\n\n2. **Aubess Tuya 1-gang ZigBee 3.0 Mini Smart Switch**\n   - **Fingerprint**: `_TZ3000_fdxihpp7`\n   - **Requestor**: erlandjack\n   - **Issue Link**: [#963](https://github.com/JohanBendz/com.tuya.zigbee/issues/963)\n   - **Existing Fingerprints**:\n     - `_TZ3000_fdxihpp7` - Supported by multiple switch drivers.\n     - `_TZ3000_skueekg3` - Supported by `climate_sensor`.\n\n#### Supported Fingerprints\n- **Existing Fingerprints**:\n  - `_TZE200_xlppj4f5` - `climate_sensor`\n  - `_TZ3210_0jxeoadc` - `contact_sensor`, `valve_irrigation`\n  - `_TZE200_5zbp6j0u` - `curtain_motor`\n  - Multiple other curtain motor-related fingerprints.\n\n#### Forked Fingerprints to Integrate\n- No new fingerprints from forks were identified in this cycle.\n\n#### Pull Requests with Useful Changes\n1. **Fix HOBEIAN 10G Radar Sensor**\n   - **Fingerprint**: `_TZE200_rhgsbacq`\n   - **PR Link**: [#125](https://github.com/dlnraja/com.tuya.zigbee/pull/125)\n   - **Status**: Closed, not merged.\n\n2. **Support for _TZ3000_ysdv91bk**\n   - **PR Link**: [#118](https://github.com/dlnraja/com.tuya.zigbee/pull/118)\n   - **Status**: Closed, not merged.\n\n3. **Bseed 1-Gang Switch with Physical Button Detection**\n   - **Fingerprint**: `_TZ3000_blhvsaqf`\n   - **PR Link**: [#116](https://github.com/dlnraja/com.tuya.zigbee/pull/116)\n   - **Status**: Closed, not merged.\n\n4. **Separate Driver for Tuya/Bseed Touch Dimmer**\n   - **Fingerprints**: `_TZE200_3p5ydos3`, `_TZE204_n9ctkb6j`\n   - **PR Link**: [#111](https://github.com/dlnraja/com.tuya.zigbee/pull/111)\n   - **Status**: Merged.\n\n5. **Added Support for GIRIER Contact Sensor**\n   - **Fingerprint**: `_TZ3000_c8zfad4a`\n   - **PR Link**: [#1137](https://github.com/JohanBendz/com.tuya.zigbee/pull/1137)\n   - **Status**: Open.\n\n6. **Add Support for Tuya PIR Sensor TS0202**\n   - **Fingerprint**: `_TZ3000_c8ozah8n`\n   - **PR Link**: [#1166](https://github.com/JohanBendz/com.tuya.zigbee/pull/1166)\n   - **Status**: Open.\n\nThis summary captures the latest developments in device requests, supported fingerprints, and relevant pull requests. For further details, please refer to the respective links."
 }
