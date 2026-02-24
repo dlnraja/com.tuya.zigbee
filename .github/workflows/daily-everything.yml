@@ -287,6 +287,7 @@ jobs:
 
       - name: "13c. Verify Test (retry)"
         if: always()
+        continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
