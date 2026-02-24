@@ -84,6 +84,7 @@ jobs:
         continue-on-error: true
         env:
           HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/homey-device-diagnostics.js
 
       - name: 🔌 Scan Public APIs (davemachado/public-api)

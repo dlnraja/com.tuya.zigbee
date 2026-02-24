@@ -1,6 +1,7 @@
 const fs=require('fs'),path=require('path');
 const{callAI,analyzeImage,sleep}=require('./ai-helper');
 const{getForumAuth,fmtCk,FORUM}=require('./forum-auth');
+const{fetchWithRetry}=require('./retry-helper');
 const GH='https://api.github.com';
 const REPOS=['dlnraja/com.tuya.zigbee','JohanBendz/com.tuya.zigbee'];
 const TOPICS=[140352,26439,146735,89271,54018,12758,85498];
@@ -45,7 +46,7 @@ async function postForum(topicId,content,replyTo,auth){
   const h=auth.type==='apikey'
     ?{'Content-Type':'application/json','User-Api-Key':auth.key}
     :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
-  const r=await fetch(FORUM+'/posts',{method:'POST',headers:h,body:JSON.stringify(body)});
+  const r=await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:h,body:JSON.stringify(body)},{retries:3,label:'forumPost'});
   return r.ok?(await r.json()):null;
 }
 
@@ -53,7 +54,7 @@ async function ghFetch(url){
   const token=process.env.GH_PAT||process.env.GITHUB_TOKEN;
   const h={Accept:'application/vnd.github+json','User-Agent':'tuya-nightly'};
   if(token)h.Authorization='Bearer '+token;
-  const r=await fetch(url,{headers:h});
+  const r=await fetchWithRetry(url,{headers:h},{retries:3,label:'ghFetch'});
   if(!r.ok){console.log('  GH '+r.status+': '+url.substring(0,80));return null}
   return r.json();
 }
@@ -62,7 +63,7 @@ async function ghPost(url,body){
   const token=process.env.GH_PAT||process.env.GITHUB_TOKEN;
   const h={Accept:'application/vnd.github+json','User-Agent':'tuya-nightly','Content-Type':'application/json'};
   if(token)h.Authorization='Bearer '+token;
-  const r=await fetch(url,{method:'POST',headers:h,body:JSON.stringify(body)});
+  const r=await fetchWithRetry(url,{method:'POST',headers:h,body:JSON.stringify(body)},{retries:3,label:'ghPost'});
   return r.ok?(await r.json()):null;
 }
 
@@ -73,7 +74,7 @@ async function processForumPosts(state,idx,pidx,auth,appVersion,dryRun){
   for(const tid of TOPICS){
     let since=state.forum[tid]||0;
     // Auto-init: on first run, skip to recent posts only
-    const r0=await fetch(FORUM+'/t/'+tid+'.json');
+    const r0=await fetchWithRetry(FORUM+'/t/'+tid+'.json',{},{retries:2,label:'forumTopic'});
     if(!r0.ok){console.log('    Fetch failed:',r0.status);continue}
     const d0=await r0.json();
     if(since===0){since=Math.max(0,d0.highest_post_number-15);state.forum[tid]=since;console.log('    Init state to #'+since)}
@@ -83,7 +84,7 @@ async function processForumPosts(state,idx,pidx,auth,appVersion,dryRun){
     // Fetch all new posts in batches
     const posts=[];
     for(let from=since+1;from<=highest;from+=20){
-      const r2=await fetch(FORUM+'/t/'+tid+'/'+from+'.json');
+      const r2=await fetchWithRetry(FORUM+'/t/'+tid+'/'+from+'.json',{},{retries:2,label:'forumBatch'});
       if(!r2.ok)break;
       const d2=await r2.json();
       for(const p of(d2.post_stream?.posts||[]))

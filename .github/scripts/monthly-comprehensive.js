@@ -6,6 +6,7 @@
 const fs=require('fs'),path=require('path');
 const{callAI,analyzeImage,sleep}=require('./ai-helper');
 const{getForumAuth,fmtCk}=require('./forum-auth');
+const{fetchWithRetry}=require('./retry-helper');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const STATE=path.join(__dirname,'..','state','monthly-state.json');
 const GH='https://api.github.com';
@@ -36,7 +37,7 @@ async function ghFetch(url){
   const token=process.env.GH_PAT||process.env.GITHUB_TOKEN;
   const h={Accept:'application/vnd.github+json','User-Agent':'tuya-monthly-bot'};
   if(token)h.Authorization='Bearer '+token;
-  const r=await fetch(url,{headers:h});
+  const r=await fetchWithRetry(url,{headers:h},{retries:3,label:'ghFetch'});
   if(!r.ok){console.log('  GH '+r.status+': '+url.substring(0,80));return null}
   return r.json();
 }
@@ -46,7 +47,7 @@ async function ghPost(url,body){
   const token=process.env.GH_PAT||process.env.GITHUB_TOKEN;
   const h={Accept:'application/vnd.github+json','User-Agent':'tuya-monthly-bot','Content-Type':'application/json'};
   if(token)h.Authorization='Bearer '+token;
-  const r=await fetch(url,{method:'POST',headers:h,body:JSON.stringify(body)});
+  const r=await fetchWithRetry(url,{method:'POST',headers:h,body:JSON.stringify(body)},{retries:3,label:'ghPost'});
   if(!r.ok){const e=await r.text().catch(()=>'');console.log('  GH POST '+r.status+': '+e.substring(0,150));return null}
   return r.json();
 }
@@ -155,7 +156,7 @@ async function crawlDeconz(){
 async function crawlBlakadder(){
   console.log('  Crawling Blakadder...');
   try{
-    const r=await fetch('https://zigbee.blakadder.com/assets/js/zigbee.json',{headers:{'User-Agent':'tuya-bot'}});
+    const r=await fetchWithRetry('https://zigbee.blakadder.com/assets/js/zigbee.json',{headers:{'User-Agent':'tuya-bot'}},{retries:3,label:'blakadder'});
     if(!r.ok)return[];
     const data=await r.json();
     if(!Array.isArray(data))return[];
@@ -169,7 +170,7 @@ async function crawlBlakadder(){
 async function scanForumTopic(topicId,maxPages){
   console.log('  Forum topic:',topicId);
   const posts=[];
-  const r=await fetch(FORUM+'/t/'+topicId+'.json');
+  const r=await fetchWithRetry(FORUM+'/t/'+topicId+'.json',{},{retries:3,label:'forumTopic'});
   if(!r.ok)return posts;
   const d=await r.json();
   const highest=d.highest_post_number;
@@ -177,7 +178,7 @@ async function scanForumTopic(topicId,maxPages){
   const startFrom=Math.max(1,highest-(maxPages*20));
   for(let from=startFrom;from<=highest;from+=20){
     try{
-      const r2=await fetch(FORUM+'/t/'+topicId+'/'+from+'.json');
+      const r2=await fetchWithRetry(FORUM+'/t/'+topicId+'/'+from+'.json',{},{retries:2,label:'forumPage'});
       if(!r2.ok)break;
       const d2=await r2.json();
       posts.push(...(d2.post_stream?.posts||[]));
@@ -222,8 +223,8 @@ async function postToForum(topicId,content,auth){
   const h=auth.type==='apikey'
     ?{'Content-Type':'application/json','User-Api-Key':auth.key}
     :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
-  const r=await fetch(FORUM+'/posts',{method:'POST',headers:h,
-    body:JSON.stringify({topic_id:topicId,raw:content})});
+  const r=await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:h,
+    body:JSON.stringify({topic_id:topicId,raw:content})},{retries:3,label:'forumPost'});
   return r.ok?(await r.json()):null;
 }
 async function main(){
