@@ -73,6 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
+| **v5.11.23** | Updated to v5.11.23 with 138 drivers and 5182 fingerprints. |
 | **v5.11.22** | Universal Tuya Zigbee app v5.11.22 introduces improved forum responsiveness, ... |
 | **v5.11.21** | v5.11.21: IR Blaster learning fix, energy divisors, soil moisture fix. (1) IR... |
 | **v5.11.20** | See .homeychangelog.json for details |
