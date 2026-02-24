@@ -194,4 +194,4 @@ async function main(){
   fs.appendFileSync(SUM,summary);
   console.log('\n=== Done ===');
 }
-main().catch(e=>{console.error(e.message);process.exit(0);});
+main().catch(e=>{console.error(e.message);process.exit(1);});

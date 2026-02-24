@@ -158,6 +158,14 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: node .github/scripts/enrichment-scanner.js
 
+      # ===== 9b. JOHANBENDZ: Full scanner =====
+      - name: "9b. JohanBendz Full Scanner"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/scan-johan-full.js
+
       # ===== 10. AI CHANGELOG: Generate from all findings =====
       - name: "10. AI Changelog"
         continue-on-error: true
@@ -230,15 +238,17 @@ jobs:
       # ===== 13. DRAFT → TEST =====
       - name: "13a. Draft to Test (Node)"
         if: always()
+        id: promote_node
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/auto-publish-draft.js
 
-      - name: "13b. Draft to Test (curl)"
-        if: always()
-        continue-on-error: true
+      - name: "13b. Draft to Test (curl fallback)"
+        if: always() && steps.promote_node.outcome != 'success'
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
@@ -261,6 +271,16 @@ jobs:
             done
           done
           echo "::warning::Manual promote: https://tools.developer.homey.app/apps/app/$APP/versions"
+
+      - name: "13c. Verify Test (retry)"
+        if: always()
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: |
+          sleep 20
+          node .github/scripts/auto-publish-draft.js
 
       # ===== 14. FORUM POST: Update with latest version =====
       - name: "14. Forum Update"

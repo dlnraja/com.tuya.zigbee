@@ -168,4 +168,4 @@ async function main(){
   console.log('\nReport saved: '+OUT);
 }
 
-main().catch(e=>{console.error(e);process.exit(0);});
+main().catch(e=>{console.error(e);process.exit(1);});

@@ -63,7 +63,32 @@ jobs:
           echo "manufacturer_count=$CURRENT_COUNT" >> $GITHUB_OUTPUT
           echo "driver_count=$DRIVER_COUNT" >> $GITHUB_OUTPUT
 
-      - name: 📊 Generate enrichment report
+      - name: � External Sources (Z2M+ZHA+Blakadder)
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/external-sources-scanner.js
+
+      - name: 🔍 Enrichment Scanner
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/enrichment-scanner.js
+
+      - name: 🔍 Cross-Driver Gap Check
+        continue-on-error: true
+        run: node .github/scripts/cross-driver-gap.js
+
+      - name: 🔍 Recursive Fork Scanner
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          FORK_DEPTH: "3"
+        run: node .github/scripts/scan-forks-recursive.js
+
+      - name: �📊 Generate enrichment report
         run: |
           mkdir -p reports
 

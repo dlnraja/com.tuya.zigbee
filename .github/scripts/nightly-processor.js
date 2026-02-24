@@ -428,4 +428,4 @@ async function main(){
   }
 }
 
-main().catch(e=>{console.error('Fatal:',e.message);process.exit(0)});
+main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});
