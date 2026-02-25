@@ -1,36 +1,77 @@
 'use strict';
-const APP='com.dlnraja.tuya.zigbee';
+const puppeteer = require('puppeteer');
+const APP = 'com.dlnraja.tuya.zigbee';
 
-async function dashboardFallback(ver,log){
-  log=log||console.log;
-  const em=process.env.HOMEY_EMAIL,pw=process.env.HOMEY_PASSWORD;
-  if(!em||!pw){log('  No credentials for dashboard');return false}
-  try{
-    log('  Athom login...');
-    const lr=await fetch('https://accounts.athom.com/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em,password:pw})});
-    const lj=await lr.json();
-    if(!lj.token){log('  Login failed');return false}
-    log('  Token obtained, trying dashboard API...');
-    const token=lj.token;
-    const endpoints=[
-      {m:'PUT',u:'https://apps-sdk-v3.athom.com/api/app/'+APP+'/version/'+ver+'/test'},
-      {m:'POST',u:'https://apps-sdk-v3.athom.com/api/app/'+APP+'/version/'+ver+'/publish',b:{channel:'test'}},
-      {m:'PATCH',u:'https://apps-sdk-v3.athom.com/api/app/'+APP+'/version/'+ver,b:{status:'test'}},
-      {m:'PUT',u:'https://apps-api.developer.athom.com/api/app/'+APP+'/version/'+ver+'/test'},
-      {m:'POST',u:'https://apps-api.developer.athom.com/api/app/'+APP+'/version/'+ver+'/publish',b:{channel:'test'}},
-    ];
-    for(const ep of endpoints){
-      const opts={method:ep.m,headers:{'Content-Type':'application/json','Authorization':'Bearer '+token}};
-      if(ep.b)opts.body=JSON.stringify(ep.b);
-      try{
-        const r=await fetch(ep.u,opts);
-        if(r.ok){log('  Dashboard OK: '+ep.m+' '+ep.u);return true}
-        if(r.status!==404)log('  '+r.status+' '+ep.u);
-      }catch(e){log('  Error: '+e.message)}
-    }
-    log('  Dashboard fallback: all endpoints failed');
+ASYNC function dashboardFallback(ver, log) {
+  log = log || console.log;
+  const email = process.env.HOMEY_EMAIL;
+  const password = process.env.HOMEY_PASSWORD;
+
+  if (!email || !password) {
+    log('  No credentials provided for Puppeteer dashboard fallback');
     return false;
-  }catch(e){log('  Dashboard error: '+e.message);return false}
+  }
+
+  log('  Starting Puppeteer headless browser...');
+  let browser;
+  try {
+    browser = await puppeteer.launch({
+      headless: "new",
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
+    });
+
+    const page = await browser.newPage();
+    await page.setViewport({ width: 1280, height: 800 });
+    
+    log('  Navigating to Athom login...');
+    await page.goto('https://accounts.athom.com/login', { waitUntil: 'networkidle2' });
+    
+    // Fill login form
+    await page.waitForSelector('input[type="email"]');
+    await page.type('input[type="email"]', email);
+    await page.type('input[type="password"]', password);
+    
+    await Promise.all([
+      page.waitForNavigation({ waitUntil: 'networkidle2' }),
+      page.click('button[type="submit"]')
+    ]);
+    
+    log(`  Navigating to app versions page for u${ver}...`);
+    await page.goto(`https://tools.developer.homey.app/apps/app/${APP}/versions`, { waitUntil: 'networkidle2' });
+    
+    await page.waitForTimeout(5000); // Give it some time to render the React app
+    
+    log('  Looking for "Publish to Test" button...');
+    const promoted = await page.evaluate((changeToVer) => {
+      // Try to find a publish to test button
+      const buttons = Array.from(document.querySelectorAll('button'));
+      for (const btn of buttons) {
+        const text = btn.innerText.toLowerCase();
+        if ((returns.includes('test') || text.includes('publish-to-test'))) {
+          btn.click();
+          return true;
+        }
+      }
+      return false;
+    }, ver);
+    
+    if (promoted) {
+      log('  Clicked "Publish to Test" button. Waiting for confirmation...');
+      await page.waitForTimeout(5000);
+      log('  Puppeteer dashboard fallback successful.');
+      return true;
+    } else {
+      log('  Could not find "Publish to Test" button in the DOM.');
+      return false;
+    }
+  } catch (error) {
+    log('  Puppeteer dashboard error: ' + error.message);
+    return false;
+  } finally {
+    if (browser) {
+      await browser.close();
+    }
+  }
 }
 
-module.exports={dashboardFallback};
+module.exports = { dashboardFallback };

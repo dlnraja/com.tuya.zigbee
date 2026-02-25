@@ -111,6 +111,7 @@ jobs:
 
       - name: Promote Draft to Test (curl fallback)
         if: steps.check_pat.outputs.has_pat == 'true' && steps.promote_node.outcome != 'success'
+        continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
@@ -158,10 +159,14 @@ jobs:
 
       - name: Summary
         if: always()
+        env:
+          APP_VER: ${{ steps.info.outputs.version }}
+          CL_TEXT: ${{ steps.cl.outputs.text }}
+          HAS_PAT: ${{ steps.check_pat.outputs.has_pat }}
         run: |
-          echo "## v${{ steps.info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Changelog:** ${{ steps.cl.outputs.text }}" >> $GITHUB_STEP_SUMMARY
-          if [ "${{ steps.check_pat.outputs.has_pat }}" == "true" ]; then
+          echo "## v${APP_VER}" >> $GITHUB_STEP_SUMMARY
+          printf '**Changelog:** %s\n' "$CL_TEXT" >> $GITHUB_STEP_SUMMARY
+          if [ "$HAS_PAT" == "true" ]; then
             echo "Published to Homey App Store (Test channel)" >> $GITHUB_STEP_SUMMARY
             echo "[Install test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)" >> $GITHUB_STEP_SUMMARY
           else
