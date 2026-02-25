@@ -52,7 +52,7 @@
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 1,157 |
+| 1 | `climate_sensor` | 1,156 |
 | 2 | `switch_1gang` | 369 |
 | 3 | `dimmer_wall_1gang` | 242 |
 | 4 | `radiator_valve` | 237 |
@@ -102,8 +102,8 @@
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.25** | Fix #137 plug energy monitor wrong voltage (_TZ3210_w0qqde0g). RawClusterFallback rewrite with proper ZCL bind/configureReporting. Dashboard-fallback Puppeteer automation. Fix #135 water timer moved to valve_irrigation. |
-| **v5.11.24** | Universal Tuya Zigbee app v5.11.24 introduces workflow improvements, enhanced diagnostics, and updated forum response... |
+| **v5.11.25** | Universal Tuya Zigbee v5.11.25 introduces voltage divisor fixes, dashboard fallback improvements, and core automation... |
+| **v5.11.24** | Universal Tuya Zigbee v5.11.24 introduces core fixes, enhanced automation, and updated device fingerprints, ensuring ... |
 | **v5.11.23** | Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum responsiveness, ensuri... |
 | **v5.11.22** | Universal Tuya Zigbee v5.11.22 introduces enhanced forum responsiveness, improved workflow resilience, and updates to... |
 | **v5.11.21** | v5.11.21: IR Blaster learning fix, energy divisors, soil moisture fix. (1) IR Blaster ZS06 manual cluster fallback fo... |
@@ -117,7 +117,6 @@
 | **v5.11.13** | v5.11.13: Fix presence_sensor_radar log spam (~52K lines/day). (1) Same-value dedup for lux — skip when value unchang... |
 | **v5.11.12** | v5.11.12: Critical case-sensitivity fix + WiFi bugs. (1) Fixed 5,004 lowercase manufacturer names (_tz3000_ -> _TZ300... |
 | **v5.11.11** | v5.11.11: Fingerprint regression fixes — (1) Removed 5,450 case-duplicate mfrs across 113 drivers. (2) Fixed plug_sma... |
-| **v5.11.10** | v5.11.10: Full Zigbee DB sync — crawled Z2M (365 files), ZHA (all quirks), Blakadder, deCONZ. +117 new fingerprints a... |
 
 <!-- CHANGELOG_END -->
 
