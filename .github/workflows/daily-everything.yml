@@ -222,6 +222,11 @@ jobs:
         continue-on-error: true
         run: node .github/scripts/generate-readme.js
 
+      - name: "10f. Generate User Expectations"
+        id: gen_expectations
+        continue-on-error: true
+        run: node .github/scripts/generate-user-expectations.js
+
       # ===== 11. COMMIT: All state + docs + changelogs =====
       - name: "11. Commit all changes"
         id: commit
