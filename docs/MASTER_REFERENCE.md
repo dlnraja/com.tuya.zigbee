@@ -1,9 +1,9 @@
 # MASTER REFERENCE — Universal Tuya Zigbee
-**v5.11.24** | **2026-02-25** | com.dlnraja.tuya.zigbee
+**v5.11.25** | **2026-02-25** | com.dlnraja.tuya.zigbee
 
 ---
 
-## 1. PROJECT: 111 drivers, 134K mfr IDs, SDK3
+## 1. PROJECT: 138 drivers, 5646 fingerprints, 1725 flow cards, SDK3
 
 ## 2. DATA SOURCES
 
@@ -81,16 +81,19 @@ Classic Outlook .ost at AppData/Local/Microsoft/Outlook/ (binary, not readable).
 - **IAS**: noIasMotion override + enrollment + ZCL-only noTemp/noHum
 - **HOBEIAN**: Added to water_leak + contact fingerprints
 
-## 7. PENDING ACTIONS
+## 7. PENDING ACTIONS (updated v5.11.25)
 
-- Cam TS0041: NEEDS DIAG (update v5.9.23 + re-pair + diag)
-- Freddyboy TS0044: NEEDS DIAG (update v5.9.23 + re-pair + diag)
+- Cam TS0041: NEEDS DIAG (update v5.11.25 + re-pair + diag)
+- Freddyboy TS0044: NEEDS DIAG (update v5.11.25 + re-pair + diag)
 - Ricardo_Lenior: NEEDS FINGERPRINT (diag only)
-- Piotr 2-gang `_TZ3000_cauq1okq`: DEVICE FIRMWARE issue (Z2M #14750 confirms dual toggle)
-- F7 FrankP IR blaster ZS06: FEATURE (Zosung commands — deferred)
-- F8 JJ10 presence stale temp/humidity: DEFERRED
-- GH responses: Draft ready in GITHUB_RESPONSES_FULL.md, post to GitHub
-- Collisions: 2194 remaining (monthly report)
+- Piotr 2-gang `_TZ3000_cauq1okq`: DEVICE FIRMWARE issue (Z2M #14750 confirms dual toggle — unfixable)
+- GH#136/#133: 11 new community fingerprints — need device interviews (not in Z2M yet)
+- GH#135: _TZE200_xlppj4f5 moved to valve_irrigation v5.11.25 — FIXED
+- GH#137: _TZ3210_w0qqde0g voltage divisor — FIXED v5.11.25
+- GH#128: _TZE204_nklqjk62 garage door — FP already exists
+- Forum #1479 Jocke_Wallen: _TZ3000_u3nv1jwk TS0044 buttons not responding — FP exists in button_wireless_4, likely sleepy-device first-press (H4)
+- Forum #1480 Lasse_K: ZG-102Z contact sensor "Unknown Zigbee" on v5.11.23 — FP exists (HOBEIAN+ZG-102Z), NEEDS fresh interview to see actual reported mfr
+- Forum #1481 JJ10: Radar sensor lux/distance/temp incorrect — DEFERRED (needs manufacturer-specific DP mapping)
 
 ## 8. VERSION HISTORY (v5.9.9 → v5.9.23)
 
