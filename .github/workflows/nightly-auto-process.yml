@@ -67,9 +67,10 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: node .github/scripts/fetch-gmail-diagnostics.js
 
-      - name: External Sources Scanner
+      - name: "Smart Device Scanner (10 sources, fp|pid composite key)"
         if: always()
         continue-on-error: true
+        timeout-minutes: 15
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
@@ -87,9 +88,10 @@ jobs:
           FORUM_USERNAME: dlnraja
         run: node .github/scripts/forum-activity-scraper.js
 
-      - name: Enrichment Scanner
+      - name: "Smart Enrichment (DP-aware, fp|pid profiles)"
         if: always()
         continue-on-error: true
+        timeout-minutes: 10
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}

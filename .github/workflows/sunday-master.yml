@@ -243,17 +243,17 @@ jobs:
         run: node .github/scripts/homey-device-diagnostics.js
 
   external-sources:
-    name: "External Sources (Z2M+ZHA+Blakadder)"
+    name: "Smart Device Scanner (10 sources)"
     needs: stats
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: Scan external sources
+      - name: "10-source scan (Z2M+ZHA+Blakadder+deCONZ+Hubitat+SmartThings+HA Forum+Local)"
         continue-on-error: true
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -347,7 +347,7 @@ jobs:
         run: node .github/scripts/scan-johan-full.js
 
   enrichment:
-    name: "Cross-Reference Enrichment"
+    name: "Smart Enrichment (DP-aware)"
     needs: [scan-forum, external-sources, github-scanner]
     if: always()
     runs-on: ubuntu-latest
@@ -358,7 +358,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: Run enrichment
+      - name: "DP-aware enrichment with device functionality profiles"
         continue-on-error: true
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
