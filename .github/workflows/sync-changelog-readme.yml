@@ -52,4 +52,5 @@ jobs:
           git add README.md
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           git commit -m "Changelog sync v${VER}: updated README with latest release notes [skip ci]"
-          git push
+          git pull --rebase origin master || true
+          git push || true

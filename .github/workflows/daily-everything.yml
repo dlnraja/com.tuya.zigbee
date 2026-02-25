@@ -260,7 +260,7 @@ jobs:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
       - name: "12c. Create GitHub Release"
-        if: always()
+        if: steps.commit.outcome == 'success'
         continue-on-error: true
         uses: softprops/action-gh-release@v2
         with:
@@ -330,8 +330,10 @@ jobs:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           APP_VERSION: ${{ steps.stats.outputs.version }}
-          CHANGELOG: "Daily auto-update v${{ steps.stats.outputs.version }}"
-        run: node .github/scripts/post-forum-update.js || true
+          CHANGELOG: ${{ steps.ai_changelog.outcome == 'success' && '' || '' }}
+        run: |
+          # post-forum-update.js reads changelog from .homeychangelog.json if CHANGELOG env is empty
+          node .github/scripts/post-forum-update.js || true
 
       # ===== SUMMARY =====
       - name: Summary
@@ -355,6 +357,8 @@ jobs:
           echo "| Fork Scanner | ${{ steps.fork_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Device Finder | ${{ steps.dev_finder.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Auto Docs | ${{ steps.auto_docs.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| README | ${{ steps.gen_readme.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| User Expectations | ${{ steps.gen_expectations.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Commit | ${{ steps.commit.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Publish | ${{ steps.pub.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Promote | ${{ steps.promote_node.outcome }} |" >> $GITHUB_STEP_SUMMARY

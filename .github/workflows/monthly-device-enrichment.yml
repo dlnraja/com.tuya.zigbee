@@ -134,6 +134,7 @@ jobs:
             F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json | sort -uf | wc -l)
             VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
             git commit -m "Device enrichment v${VER} $(date +%Y-%m): ${D} drivers, ${F} FPs scanned [skip ci]" || true
+            git pull --rebase origin master || true
             git push || true
             echo "### ✅ Changes committed" >> $GITHUB_STEP_SUMMARY
           fi
