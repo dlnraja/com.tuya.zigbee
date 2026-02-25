@@ -6,7 +6,24 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
-## [5.11.24] - 2026-02-25
+## [5.11.25] - 2026-02-25
+
+### Bug Fixes
+- Fixed voltage divisor issue in driver #137, improving accuracy of voltage readings.
+- Rewrote dashboard fallback logic to enhance reliability during device state reporting.
+
+### Improvements
+- Implemented ultimate automation and core fixes to enhance overall app performance and stability.
+
+### CI/CD
+- Updated various workflows for better management and efficiency, including improvements to GitHub state management and diagnostics reporting.
+- Enhanced forum and GitHub activity tracking to ensure timely responses to community feedback.
+
+### General
+- Continued support for 138 drivers and 5182 fingerprints, ensuring broad compatibility with Tuya Zigbee devices.
+---
+
+ [5.11.24] - 2026-02-25
 
 ### Bug Fixes
 - Resolved issues with workflow triggers and security measures to enhance app stability.
