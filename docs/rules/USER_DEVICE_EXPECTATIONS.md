@@ -1,5 +1,5 @@
-# User Device Expectations (v5.11.24)
-**Updated**: 2026-02-25 (v5.11.24: nightly auto-scan)
+# User Device Expectations (v5.11.25)
+**Updated**: 2026-02-25 (v5.11.25: manual session + nightly auto-scan)
 
 
 
