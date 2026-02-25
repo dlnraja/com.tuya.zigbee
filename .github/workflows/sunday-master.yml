@@ -135,6 +135,10 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
       - name: Run gap detection
         run: node .github/scripts/cross-driver-gap.js
 

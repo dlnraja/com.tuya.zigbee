@@ -2,7 +2,7 @@
 # Required secrets: HOMEY_PAT (from https://tools.developer.homey.app/me)
 # Optional: HOMEY_EMAIL + HOMEY_PASSWORD (for forum posting via cookie auth)
 name: Auto Publish
-"on":
+on:
   workflow_dispatch:
     inputs:
       version:
