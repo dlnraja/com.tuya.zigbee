@@ -270,34 +270,38 @@ async function updateUserExpectations(forumResults,ghResults,appVersion){
   const uePath=path.join(DOCS,'rules','USER_DEVICE_EXPECTATIONS.md');
   if(!fs.existsSync(uePath)){console.log('  USER_DEVICE_EXPECTATIONS.md not found');return}
   let content=fs.readFileSync(uePath,'utf8');
-  // Update version in header
   const today=new Date().toISOString().split('T')[0];
-  content=content.replace(/^# User Device Expectations \(v[^)]+\)/,'# User Device Expectations (v'+appVersion+')');
-  content=content.replace(/\*\*Updated\*\*: [^\n]+/,'**Updated**: '+today+' (v'+appVersion+': nightly auto-scan)');
-  // Append new entries from forum
+  // Build new entries from forum + GitHub
   const newEntries=[];
   for(const r of forumResults){
     if(r.fps&&r.fps.length>0){
       newEntries.push('| '+r.user+' | `'+r.fps.join('`, `')+'` | Forum #'+r.topic+' post #'+r.post+' | Auto-scanned '+today+' |');
     }
   }
-  // Append new entries from GitHub
   for(const r of ghResults){
     if(r.fps&&r.fps.length>0){
       newEntries.push('| '+(r.user||'?')+' | `'+r.fps.join('`, `')+'` | '+r.repo+'#'+r.number+' | Auto-scanned '+today+' |');
     }
   }
   if(newEntries.length>0){
-    const section='\n\n## Nightly Auto-Scan ('+today+')\n| User | Fingerprint(s) | Source | Date |\n|------|---------------|--------|------|\n'+newEntries.join('\n')+'\n';
-    // Insert before first ## section or append
+    const section='\n## Nightly Auto-Scan ('+today+')\n| User | Fingerprint(s) | Source | Date |\n|------|---------------|--------|------|\n'+newEntries.join('\n')+'\n\n';
     if(content.includes('## Nightly Auto-Scan ('+today+')')){
-      // Already has today's section, skip
       console.log('  UDE already has today\'s section');
     }else{
-      // Insert after header
-      const firstH2=content.indexOf('\n## ',10);
-      if(firstH2>0)content=content.substring(0,firstH2)+section+content.substring(firstH2);
-      else content+=section;
+      // Insert after NIGHTLY_START marker (new format) or fallback to old header insert
+      const markerStart='<!-- NIGHTLY_START';
+      const markerIdx=content.indexOf(markerStart);
+      if(markerIdx>=0){
+        const afterMarker=content.indexOf('\n',markerIdx);
+        if(afterMarker>=0){
+          content=content.substring(0,afterMarker+1)+section+content.substring(afterMarker+1);
+        }
+      }else{
+        // Legacy: insert after first header
+        const firstH2=content.indexOf('\n## ',10);
+        if(firstH2>0)content=content.substring(0,firstH2)+'\n'+section+content.substring(firstH2);
+        else content+=section;
+      }
       fs.writeFileSync(uePath,content);
       console.log('  Updated USER_DEVICE_EXPECTATIONS.md: +'+newEntries.length+' entries');
     }
