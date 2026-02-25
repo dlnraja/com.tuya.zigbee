@@ -5,6 +5,8 @@ on:
     - cron: '45 9 * * *'
     - cron: '30 15 * * *'
     - cron: '30 21 * * *'
+  push:
+    branches: [master, main]
   workflow_dispatch:
   workflow_run:
     workflows: [Auto Publish, Auto-Publish on Push, Daily Everything Pipeline]

@@ -8,7 +8,29 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ## v5.11.24 (2026-02-25)
 
-Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum responsiveness, ensuring a more reliable smart home experience.
+Universal Tuya Zigbee v5.11.24 brings major enhancements to Tuya WiFi local control with SmartLife authentication, a complete rewrite of the Raw Cluster Fallback system for better stability, and a modern redesign of the Device Finder.
+
+### 🚀 New Features
+- **Tuya WiFi SmartLife Integration**:
+  - Added SmartLife/Tuya App authentication settings to all WiFi drivers (`wifi_plug`, `wifi_switch`, `wifi_dimmer`, etc.).
+  - Implemented auto-discovery of local keys and IP addresses using cloud credentials.
+  - Supports multiple regions (EU, US, CN, AS, WE).
+- **Device Finder Redesign**:
+  - Completely revamped the Device Finder HTML generator with a modern dark theme (Tailwind CSS).
+  - Added responsive grid layout, improved filtering, and detailed device cards.
+- **RawClusterFallback v5.13.0**:
+  - Rewritten from scratch to address stability issues (including `lasse_k` report).
+  - Implemented correct ZCL binding before listening.
+  - Added deferred reporting configuration and proactive attribute reading.
+
+### 🔧 Improvements
+- **Workflow Automation**:
+  - Updated `daily-promote-to-test.yml` to trigger on every push, ensuring immediate availability of test versions.
+- **Documentation**:
+  - Enhanced `README.md` with improved aesthetics, badges, and feature highlights.
+
+### 🐛 Bug Fixes
+- Fixed potential stability issues with unknown Zigbee clusters by properly handling bindings and event listeners in `RawClusterFallback`.
 
 ---
 

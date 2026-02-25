@@ -39,6 +39,87 @@
     {
       "type": "group",
       "label": {
+        "en": "SmartLife Authentication"
+      },
+      "children": [
+        {
+          "id": "smartlife_username",
+          "type": "text",
+          "label": {
+            "en": "SmartLife Username"
+          },
+          "hint": {
+            "en": "Your SmartLife/Tuya app email or phone number"
+          },
+          "value": ""
+        },
+        {
+          "id": "smartlife_password",
+          "type": "password",
+          "label": {
+            "en": "SmartLife Password"
+          },
+          "hint": {
+            "en": "Your SmartLife/Tuya app password"
+          },
+          "value": ""
+        },
+        {
+          "id": "region",
+          "type": "dropdown",
+          "label": {
+            "en": "Region"
+          },
+          "value": "EU",
+          "values": [
+            {
+              "id": "EU",
+              "label": {
+                "en": "Europe"
+              }
+            },
+            {
+              "id": "US",
+              "label": {
+                "en": "United States"
+              }
+            },
+            {
+              "id": "CN",
+              "label": {
+                "en": "China"
+              }
+            },
+            {
+              "id": "AS",
+              "label": {
+                "en": "Asia"
+              }
+            },
+            {
+              "id": "WE",
+              "label": {
+                "en": "Western Europe"
+              }
+            }
+          ]
+        },
+        {
+          "id": "auto_discover",
+          "type": "checkbox",
+          "label": {
+            "en": "Auto Discover Devices"
+          },
+          "hint": {
+            "en": "Automatically fetch device ID, local key, and IP from SmartLife"
+          },
+          "value": true
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
         "en": "Tuya Local"
       },
       "children": [

@@ -9,21 +9,26 @@
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-> **Control your Tuya Zigbee devices locally without cloud!** The most comprehensive Tuya Zigbee app for Homey with **138 drivers**, **5,644+ device fingerprints**, and **1,725+ flow cards**.
+> **🔒 Control your Tuya Zigbee devices locally without cloud!** The most comprehensive Tuya Zigbee app for Homey with **138 drivers**, **5,644+ device fingerprints**, and **1,725+ flow cards**.
 
-| | |
-|---|---|
-| **100% Local Control** | No Cloud, No Internet Required |
-| **Smart Battery** | Accurate readings with voltage fallback |
-| **Hybrid Mode** | Auto-detect Tuya DP vs Standard ZCL |
-| **SDK3** | Latest Homey Standards |
-| **Open Source** | Community-driven development |
-| **138 Drivers** | Switches, sensors, lights, thermostats, covers, locks & more |
-| **1,725 Flow Cards** | Complete triggers, conditions & actions in 4 languages |
+## ✨ Key Features
+
+| 🚀 Feature | Description |
+|------------|-------------|
+| **🏠 100% Local Control** | No Cloud, No Internet Required - Full privacy |
+| **🔋 Smart Battery Management** | Accurate readings with voltage fallback curves |
+| **🔄 Hybrid Mode** | Auto-detect Tuya DP vs Standard ZCL protocols |
+| **📱 SDK3 Compatible** | Latest Homey Standards with modern UI |
+| **🌍 Open Source** | Community-driven development with full transparency |
+| **⚡ 138 Drivers** | Switches, sensors, lights, thermostats, covers, locks & more |
+| **🎛️ 1,725 Flow Cards** | Complete triggers, conditions & actions in 4 languages |
+| **🔍 Device Finder** | Web-based tool to identify your devices |
+| **📊 Energy Monitoring** | Real-time power, voltage, current tracking |
+| **🌡️ Advanced Sensors** | Radar presence, air quality, soil moisture, etc. |
 
 ---
 
-## Installation
+## 📦 Installation
 
 | Method | Link |
 |--------|------|
