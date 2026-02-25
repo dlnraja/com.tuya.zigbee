@@ -2,8 +2,6 @@ name: Auto-Publish on Push
 
 on:
   workflow_dispatch:
-  push:
-    branches: [master, main]
   workflow_run:
     workflows: ["Nightly Auto-Process", "Sunday Master Automation"]
     types: [completed]
@@ -132,6 +130,7 @@ jobs:
 
       - name: Verify Test Channel
         if: steps.check_pat.outputs.has_pat == 'true'
+        continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}

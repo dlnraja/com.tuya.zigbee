@@ -102,10 +102,7 @@
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.23** | Updated to v5.11.23 with 138 drivers and 5644 fingerprints. |
-| **v5.11.22** | Universal Tuya Zigbee app v5.11.22 introduces improved forum responsiveness, ... |
-| **v5.11.21** | v5.11.21: IR Blaster learning fix, energy divisors, soil moisture fix. (1) IR... |
-| **v5.11.23** | Universal Tuya Zigbee v5.11.23 enhances forum and GitHub messaging, improves workflow resilience, and updates diagnos... |
+| **v5.11.23** | Universal Tuya Zigbee app v5.11.23 includes improvements to forum response handling and CI/CD pipeline stability. |
 | **v5.11.22** | Universal Tuya Zigbee v5.11.22 introduces enhanced forum responsiveness, improved workflow resilience, and updates to... |
 | **v5.11.21** | v5.11.21: IR Blaster learning fix, energy divisors, soil moisture fix. (1) IR Blaster ZS06 manual cluster fallback fo... |
 | **v5.11.20** | See .homeychangelog.json for details |

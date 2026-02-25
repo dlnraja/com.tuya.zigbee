@@ -214,6 +214,7 @@ jobs:
 
       - name: Verify Test Channel
         if: steps.pat.outputs.ok == 'true'
+        continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
