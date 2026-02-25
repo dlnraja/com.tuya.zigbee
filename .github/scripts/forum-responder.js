@@ -97,7 +97,7 @@ async function analyzeWithGemini(post,results,appVersion){
 }
 
 async function main(){
-  let dryRun=process.env.DRY_RUN!=='false';
+  let dryRun=process.env.DRY_RUN==='true';
   const topicIds=(process.env.FORUM_TOPICS||'140352,26439,146735,89271,54018,12758,85498').split(',').map(Number);
   const replyTopics=new Set((process.env.REPLY_TOPICS||'140352,26439').split(',').map(Number));
   let appVersion='unknown';

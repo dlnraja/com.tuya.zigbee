@@ -53,6 +53,7 @@ jobs:
 
       # ===== 1. FORUM: Scan + Respond =====
       - name: "1. Forum Scan"
+        id: forum_scan
         continue-on-error: true
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
@@ -71,6 +72,7 @@ jobs:
 
       # ===== 2. GITHUB: Triage + Respond + Close =====
       - name: "2. GitHub Issues & PRs Manager"
+        id: github_mgr
         continue-on-error: true
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -87,6 +89,7 @@ jobs:
 
       # ===== 3. GITHUB: Upstream Triage (JohanBendz + forks) =====
       - name: "3. Upstream Triage"
+        id: upstream
         continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
@@ -101,6 +104,7 @@ jobs:
 
       # ===== 4. GITHUB: Scanner (both repos, AI summary) =====
       - name: "4. GitHub Activity Scanner"
+        id: gh_scanner
         continue-on-error: true
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -112,6 +116,7 @@ jobs:
 
       # ===== 5. GMAIL: Diagnostics (1x/day at 8AM run) =====
       - name: "5. Gmail Diagnostics"
+        id: gmail
         continue-on-error: true
         env:
           GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
@@ -130,6 +135,7 @@ jobs:
 
       # ===== 6. NIGHTLY: Process forum+GitHub data =====
       - name: "6. Nightly Processor"
+        id: nightly
         continue-on-error: true
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -144,6 +150,7 @@ jobs:
 
       # ===== 7. FORUM ACTIVITY: Scrape ALL account activity =====
       - name: "7. Forum Activity Scraper"
+        id: forum_activity
         continue-on-error: true
         env:
           DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
@@ -156,6 +163,7 @@ jobs:
 
       # ===== 8. EXTERNAL SOURCES: Z2M+ZHA+Blakadder+deCONZ+Hubitat =====
       - name: "8. External Sources Scanner"
+        id: ext_sources
         continue-on-error: true
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -164,6 +172,7 @@ jobs:
 
       # ===== 9. ENRICHMENT: Cross-reference all sources =====
       - name: "9. Enrichment Scanner"
+        id: enrichment
         continue-on-error: true
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -172,6 +181,7 @@ jobs:
 
       # ===== 9b. JOHANBENDZ: Full scanner =====
       - name: "9b. JohanBendz Full Scanner"
+        id: johan_scan
         continue-on-error: true
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -180,6 +190,7 @@ jobs:
 
       # ===== 10. AI CHANGELOG: Generate from all findings =====
       - name: "10. AI Changelog"
+        id: ai_changelog
         continue-on-error: true
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
@@ -189,6 +200,7 @@ jobs:
         run: node .github/scripts/generate-ai-changelog.js
 
       - name: "10b. Recursive Fork Scanner"
+        id: fork_scan
         continue-on-error: true
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -196,15 +208,23 @@ jobs:
         run: node .github/scripts/scan-forks-recursive.js
 
       - name: "10c. Device Finder"
+        id: dev_finder
         continue-on-error: true
         run: node .github/scripts/generate-device-finder.js
 
       - name: "10d. Auto-Update Docs"
+        id: auto_docs
         continue-on-error: true
         run: node .github/scripts/auto-update-docs.js
 
+      - name: "10e. Generate README"
+        id: gen_readme
+        continue-on-error: true
+        run: node .github/scripts/generate-readme.js
+
       # ===== 11. COMMIT: All state + docs + changelogs =====
       - name: "11. Commit all changes"
+        id: commit
         if: always()
         run: |
           git config user.name "github-actions[bot]"
