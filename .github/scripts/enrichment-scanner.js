@@ -146,17 +146,40 @@ async function main(){
   const uniqueNew=[...deduped.values()];
   console.log('\nTotal unique NEW fingerprints:',uniqueNew.length);
 
-  // 4. AI analysis
-  let aiPlan=null;
-  if(uniqueNew.length>0){
-    const sysPrompt='You are an expert on Tuya Zigbee devices. Given new fingerprints found from Z2M/ZHA/Blakadder that are NOT in the Universal Tuya Zigbee app, classify each by likely device type (switch, sensor, thermostat, cover, etc) and suggest which existing driver to add them to. Be concise. Output a Markdown table: | Fingerprint | Source | Likely Type | Suggested Driver |';
-    const aiRes=await callAI(JSON.stringify(uniqueNew.slice(0,30),null,2),sysPrompt);
-    aiPlan=aiRes?aiRes.text:null;
-    if(aiPlan)console.log('AI plan generated:',aiPlan.length,'chars');
+  // 4. Load device functionality profiles (DPs, caps, quirks from 10 sources)
+  let funcData=null;
+  try{const ff=path.join(__dirname,'..','state','device-functionality.json');
+    if(fs.existsSync(ff)){funcData=JSON.parse(fs.readFileSync(ff,'utf8'));
+      console.log('Loaded device functionality:',funcData.total,'devices,',funcData.withDPs,'with DPs')}}catch{}
+  // Merge DP/cap data into new FPs
+  if(funcData?.profiles){
+    const profMap=new Map(funcData.profiles.map(p=>[p.fp,p]));
+    for(const item of uniqueNew){
+      const prof=profMap.get(item.fp);
+      if(prof){item.dps=prof.dps;item.caps=prof.caps;item.bugs=prof.bugs;item.sources=prof.src}
+    }
   }
 
-  // 5. Save report
-  const report={timestamp:new Date().toISOString(),totalNew:uniqueNew.length,newFingerprints:uniqueNew.slice(0,50),aiPlan};
+  // 5. Smart AI analysis with DP→capability mappings
+  let aiPlan=null;
+  if(uniqueNew.length>0){
+    const withDPs=uniqueNew.filter(f=>f.dps?.length>0);
+    const sysPrompt='Tuya Zigbee expert for Universal Tuya Zigbee Homey app. For each new device:\n'+
+      '1. Classify device type (switch, sensor, thermostat, cover, dimmer, etc.)\n'+
+      '2. Suggest existing Homey driver to add fingerprint to\n'+
+      '3. If DPs available: map each DP to Homey capability (e.g. DP1→onoff, DP2→measure_temperature/10, DP3→target_temperature)\n'+
+      '4. Note any quirks, inversions, or special handling needed\n'+
+      'Output markdown table: | FP | Type | Driver | DPs→Capabilities | Quirks |';
+    const input=uniqueNew.slice(0,25).map(f=>({fp:f.fp,source:f.source,dps:f.dps||[],caps:f.caps||[]}));
+    const aiRes=await callAI(JSON.stringify(input,null,2),sysPrompt,{maxTokens:1500});
+    aiPlan=aiRes?aiRes.text:null;
+    if(aiPlan)console.log('Smart AI plan:',aiPlan.length,'chars (with',withDPs.length,'DP-enriched devices)');
+  }
+
+  // 6. Save report
+  const report={timestamp:new Date().toISOString(),totalNew:uniqueNew.length,
+    withDPs:uniqueNew.filter(f=>f.dps?.length).length,
+    newFingerprints:uniqueNew.slice(0,50),aiPlan};
   const reportPath=path.join(__dirname,'..','state','enrichment-report.json');
   fs.writeFileSync(reportPath,JSON.stringify(report,null,2)+'\n');
   saveState({lastRun:new Date().toISOString(),knownNew:uniqueNew.map(f=>f.fp).slice(0,100)});
