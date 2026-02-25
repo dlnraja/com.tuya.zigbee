@@ -36,10 +36,23 @@ const MODEL_CONFIGS = {
     models: [
       '_TZE200_2aaelwxk', '_TZE200_3towulqd',
       '_TZE204_ijxvkhd0', '_TZE204_qasjif9e', '_TZE204_sxm7l9xa',
-      '_TZE284_4qznlkbu', '_TZE284_fwondbzy',
+      '_TZE284_fwondbzy',
     ],
     capabilities: ['alarm_motion', 'alarm_human', 'measure_luminance.distance', 'measure_presence_time', 'measure_luminance', 'measure_battery'],
     dps: [1, 2, 3, 4, 9, 10, 11, 12, 15, 101, 102, 103, 104, 105],
+  },
+  // RELAY radars - MTG/Wenzhi presence sensors with relay output
+  // Z2M: MTG075-ZB-RL, MTG235-ZB-RL, MTG275-ZB-RL, MTG035-ZB-RL
+  // Source: Z2M tuya.ts tuyaDatapoints for MTG075-ZB-RL
+  RELAY: {
+    models: [
+      '_TZE204_clrdrnya', '_TZE200_clrdrnya', '_TZE204_sbyx0lm6', '_TZE200_sbyx0lm6',
+      '_TZE204_dtzziy1e', '_TZE204_mtoaryre', '_TZE200_mp902om5', '_TZE204_pfayrzcw',
+      '_TZE284_4qznlkbu',
+    ],
+    capabilities: ['alarm_motion', 'onoff', 'measure_luminance.distance', 'measure_luminance'],
+    mainsPowered: true,
+    dps: [1, 2, 3, 4, 6, 9, 104, 107, 108, 109, 110],
   },
 };
 
@@ -54,8 +67,11 @@ function getModelConfig(manufacturerName) {
 }
 class MotionSensorRadarDevice extends HybridSensorBase {
 
-  // v5.5.69: These radar sensors are battery-powered (user confirmed)
-  get mainsPowered() { return false; }
+  // v5.5.69: Most radars are battery-powered, but RELAY models are mains-powered
+  get mainsPowered() {
+    const config = this._getModelConfig();
+    return config.mainsPowered === true;
+  }
 
   // v5.5.26: Offline check timeout (60 min for mmWave - Hubitat recommendation)
   static OFFLINE_CHECK_MS = 60 * 60 * 1000;
@@ -84,69 +100,69 @@ class MotionSensorRadarDevice extends HybridSensorBase {
 
   /**
    * v5.3.97: COMPLETE DP mappings from Z2M
+   * v5.12.0: Model-aware — RELAY models use MTG075-ZB-RL DPs
    */
   get dpMappings() {
+    const config = this._getModelConfig();
+    if (config.type === 'RELAY') return this._relayDpMappings;
+    return this._defaultDpMappings;
+  }
+
+  // Default HOBEIAN/ZG-204Z DP mappings
+  get _defaultDpMappings() {
     return {
-      // ═══════════════════════════════════════════════════════════════════
-      // PRESENCE / MOTION (DP 1) - v5.5.170: Also sets alarm_human
-      // ═══════════════════════════════════════════════════════════════════
       1: {
         capability: 'alarm_motion',
         transform: (v) => v === 1 || v === true,
         alsoSets: { 'alarm_human': (v) => v === 1 || v === true }
       },
-
-      // ═══════════════════════════════════════════════════════════════════
-      // ENVIRONMENTAL (some radars have temp/humidity)
-      // ═══════════════════════════════════════════════════════════════════
       2: { capability: 'measure_humidity', divisor: 1 },
       3: { capability: 'measure_temperature', divisor: 10 },
-
-      // ═══════════════════════════════════════════════════════════════════
-      // BATTERY (DP 4, 15)
-      // ═══════════════════════════════════════════════════════════════════
       4: { capability: 'measure_battery', divisor: 1 },
       15: { capability: 'measure_battery', divisor: 1 },
-
-      // ═══════════════════════════════════════════════════════════════════
-      // RADAR SETTINGS (from Z2M)
-      // ═══════════════════════════════════════════════════════════════════
-      9: { capability: null, setting: 'radar_sensitivity' },       // Sensitivity 0-9
-      10: { capability: null, setting: 'minimum_range' },          // Min range (m)
-      11: { capability: null, setting: 'maximum_range' },          // Max range (m)
-      12: { capability: 'measure_luminance', divisor: 1 },         // Illuminance (lux)
-
-      // ═══════════════════════════════════════════════════════════════════
-      // ADVANCED RADAR SETTINGS
-      // v5.4.3: DP101 FIX - presence_time is TIME in seconds, NOT boolean!
-      // v5.5.17: presence_time > 0 means someone IS present!
-      // Forum: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/290
-      // ═══════════════════════════════════════════════════════════════════
-      // v5.5.17: DP101 = presence_time in seconds
-      // - Updates measure_presence_time capability
-      // - Also sets alarm_motion = true if > 0
+      9: { capability: null, setting: 'radar_sensitivity' },
+      10: { capability: null, setting: 'minimum_range' },
+      11: { capability: null, setting: 'maximum_range' },
+      12: { capability: 'measure_luminance', divisor: 1 },
       101: {
         capability: 'measure_presence_time',
         divisor: 1,
-        alsoSetsMotion: true  // Custom flag for intelligent detection
+        alsoSetsMotion: true
       },
-      // v5.5.17: DP102 = distance to target in cm
       102: {
         capability: 'measure_luminance.distance',
         divisor: 1
       },
-      103: { capability: 'measure_luminance', divisor: 1 },        // Alt illuminance
-      104: { capability: null, setting: 'fading_time' },           // Fading time (s)
-      105: { capability: null, setting: 'detection_delay' },       // Detection delay (s)
+      103: { capability: 'measure_luminance', divisor: 1 },
+      104: { capability: null, setting: 'fading_time' },
+      105: { capability: null, setting: 'detection_delay' },
+      106: { capability: 'measure_luminance', divisor: 1 },
+      107: { capability: null, setting: 'indicator' },
+      108: { capability: null, setting: 'small_detection_distance' },
+      109: { capability: null, setting: 'small_detection_sensitivity' },
+    };
+  }
 
-      // v5.5.139: ZG-204ZM - DP106 = illuminance (NOT self_test!)
-      // Source: https://github.com/Koenkk/zigbee2mqtt/issues/21919
-      106: { capability: 'measure_luminance', divisor: 1 },        // ZG-204ZM illuminance (lux)
-
-      // v5.5.26: Additional settings from Z2M HOBEIAN_RADAR profile
-      107: { capability: null, setting: 'indicator' },             // LED indicator on/off
-      108: { capability: null, setting: 'small_detection_distance' }, // v5.5.139: ZG-204ZM
-      109: { capability: null, setting: 'small_detection_sensitivity' }, // v5.5.139: ZG-204ZM
+  // MTG/Wenzhi RELAY radar DP mappings (Z2M: MTG075-ZB-RL)
+  get _relayDpMappings() {
+    return {
+      1: {
+        capability: 'alarm_motion',
+        transform: (v) => v === 1 || v === true
+      },
+      2: { capability: null, setting: 'radar_sensitivity' },       // 0-9
+      3: { capability: null, setting: 'shield_range' },            // Min range (/100 = m)
+      4: { capability: null, setting: 'detection_range' },         // Max range (/100 = m)
+      6: { capability: null, internal: 'equipment_status' },
+      9: { capability: 'measure_luminance.distance', divisor: 100 }, // Target distance (cm→m)
+      104: { capability: 'measure_luminance', divisor: 10 },       // Illuminance (/10 = lux)
+      107: { capability: null, setting: 'breaker_mode' },          // 0=standard, 1=local
+      108: {
+        capability: 'onoff',
+        transform: (v) => v === 1 || v === true
+      },
+      109: { capability: null, setting: 'status_indication' },     // LED indicator
+      110: { capability: null, setting: 'illuminance_threshold' },  // /10 = lux
     };
   }
 
@@ -157,10 +173,42 @@ class MotionSensorRadarDevice extends HybridSensorBase {
       this.log('[MMWAVE] ⚠️ Removed incorrect alarm_contact capability');
     }
 
+    // v5.12.0: RELAY model capability management
+    const config = this._getModelConfig();
+    if (config.type === 'RELAY') {
+      // Add onoff for relay control
+      if (!this.hasCapability('onoff')) {
+        await this.addCapability('onoff').catch(() => {});
+        this.log('[MMWAVE] ➕ Added onoff capability for relay');
+      }
+      // Remove measure_battery (mains-powered device)
+      await this.removeCapability('measure_battery').catch(() => {});
+      // Remove wrong capabilities that don't apply to RELAY models
+      for (const cap of ['measure_temperature', 'measure_humidity', 'alarm_human', 'measure_presence_time']) {
+        if (this.hasCapability(cap)) {
+          await this.removeCapability(cap).catch(() => {});
+          this.log(`[MMWAVE] ➖ Removed incorrect ${cap} for RELAY model`);
+        }
+      }
+    }
+
     await super.onNodeInit({ zclNode });
 
     this.log('[MMWAVE] ✅ mmWave radar presence sensor ready');
+    this.log('[MMWAVE] Model type:', config.type);
     this.log('[MMWAVE] Capabilities:', this.getCapabilities().join(', '));
+
+    // v5.12.0: Register onoff listener for RELAY models (DP108 = breaker_status)
+    if (config.type === 'RELAY' && this.hasCapability('onoff')) {
+      this.registerCapabilityListener('onoff', async (value) => {
+        this.log(`[MMWAVE] 🔌 Relay control: ${value ? 'ON' : 'OFF'} (DP108)`);
+        const tuya = zclNode?.endpoints?.[1]?.clusters?.tuya;
+        if (tuya?.datapoint) {
+          await tuya.datapoint({ dp: 108, value: value ? 1 : 0, type: 'enum' });
+        }
+      });
+      this.log('[MMWAVE] 🔌 Relay onoff listener registered (DP108)');
+    }
 
     // v5.5.17: Add occupancy cluster listener for radar sensors
     // Some radars use occupancySensing cluster instead of Tuya DP
