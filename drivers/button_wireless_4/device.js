@@ -691,22 +691,41 @@ class Button4GangDevice extends ButtonDevice {
 
           this.log(`[BUTTON4-E000] ✅ onOff command listeners configured for EP${ep}`);
 
-          // v5.9.20: Bind OnOffBoundCluster to catch Tuya cmd 0xFD (multi-press)
+          // v5.12.1: FIX _TZ3000_u3nv1jwk TS0044 buttons not recognized
+          // BoundCluster intercepts frames BEFORE cluster.on('commandOn') fires,
+          // so we MUST handle standard setOn/setOff/toggle here (not just 0xFD).
+          // Z2M: TS0044 sends setOn=single, setOff=double, toggle=long per endpoint.
           try {
             const OnOffBC = require('../../lib/clusters/OnOffBoundCluster');
             const curEp = ep;
+            const dedupOnOff = this._e000OnOffDedup;
+            const safeHandle = async (cmdName, pressType, p) => {
+              const now = Date.now();
+              const key = `${curEp}_bc_${cmdName}`;
+              if (now - (dedupOnOff[key] || 0) < 500) return;
+              dedupOnOff[key] = now;
+              this.log(`[BUTTON4-BC] 🔘 EP${curEp} ${cmdName} → Button ${curEp} ${pressType.toUpperCase()}`);
+              await this.triggerButtonPress(curEp, pressType);
+            };
             const bc = new OnOffBC({
               onSetOn: (p) => {
-                if (p?.cmdId !== 0xFD) return;
-                const action = resolvePressType(p.scene ?? 0, 'BTN4-0xFD');
-                this.log(`[BUTTON4-0xFD] EP${curEp} pressType=${p.scene} → ${action}`);
-                this.triggerButtonPress(curEp, action);
+                // Tuya custom 0xFD = scene press type in payload
+                if (p?.cmdId === 0xFD) {
+                  const action = resolvePressType(p.scene ?? 0, 'BTN4-0xFD');
+                  this.log(`[BUTTON4-0xFD] EP${curEp} pressType=${p.scene} → ${action}`);
+                  this.triggerButtonPress(curEp, action);
+                  return;
+                }
+                // Standard ON = single press
+                safeHandle('setOn', 'single', p);
               },
+              onSetOff: (p) => safeHandle('setOff', 'double', p),
+              onToggle: (p) => safeHandle('toggle', 'long', p),
             });
             endpoint.bind('onOff', bc);
-            this.log(`[BUTTON4-0xFD] ✅ OnOff BoundCluster bound on EP${ep}`);
+            this.log(`[BUTTON4-BC] ✅ OnOff BoundCluster bound on EP${ep} (single/double/long + 0xFD)`);
           } catch (e) {
-            this.log(`[BUTTON4-0xFD] ⚠️ EP${ep}: ${e.message}`);
+            this.log(`[BUTTON4-BC] ⚠️ EP${ep}: ${e.message}`);
           }
         }
       }
