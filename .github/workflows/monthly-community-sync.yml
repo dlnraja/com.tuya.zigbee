@@ -102,4 +102,5 @@ jobs:
           NEW=$(node -p "try{JSON.parse(require('fs').readFileSync('data/community-sync/new-fingerprints.json')).length}catch(e){0}")
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           git diff --staged --quiet || git commit -m "Community sync v${VER} $(date +%Y-%m): ${NEW} new FPs from Z2M/ZHA/forum/JohanBendz [skip ci]"
+          git pull --rebase origin master || true
           git push || true
