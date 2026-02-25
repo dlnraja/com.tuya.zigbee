@@ -6,7 +6,25 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
-## v5.11.24 (2026-02-25)
+## [5.11.24] - 2026-02-25
+
+### Bug Fixes
+- Resolved issues with workflow triggers and security measures to enhance app stability.
+
+### Improvements
+- Updated forum responder to scan and update states for 5 topics, improving community engagement.
+- Enhanced Gmail diagnostics with updated state management, although no new emails were analyzed this release.
+- Improved diagnostics reporting with updates to various state files, ensuring accurate tracking of app performance and issues.
+
+### CI/CD
+- Adjusted GitHub workflows for better auto-management and state updates, streamlining the development process.
+- Minor changes to the auto-publish and daily workflows to optimize performance.
+
+### Community Contributions
+- Engaged with the community through forum replies and updates on new fingerprints, enhancing device compatibility with 17 new fingerprints added from community contributions.
+---
+
+ v5.11.24 (2026-02-25)
 
 Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum responsiveness, ensuring a more reliable smart home experience.
 

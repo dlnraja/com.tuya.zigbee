@@ -1,9 +1,48 @@
 {
-  "timestamp": "2026-02-25T03:10:51.439Z",
-  "appVersion": "5.11.23",
-  "forum": 0,
-  "github": 0,
-  "diagnostics": 2,
-  "forumDetails": [],
-  "githubDetails": []
+  "timestamp": "2026-02-25T14:34:02.957Z",
+  "appVersion": "5.11.24",
+  "forum": 1,
+  "github": 1,
+  "diagnostics": 7,
+  "forumDetails": [
+    {
+      "topic": 140352,
+      "post": 1479,
+      "user": "Jocke_Wallen",
+      "fps": [
+        "_TZ3000_u3nv1jwk"
+      ],
+      "reply": "Hi @Jocke_Wallen,\n\nThank you for providing the details about your 4-button remote controller. Based on the fingerprint lookup, we have identified that your device is recognized with the following deta",
+      "model": "gh-gpt-4o-mini"
+    }
+  ],
+  "githubDetails": [
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "number": 136,
+      "user": "github-actions[bot]",
+      "fps": [
+        "_TZE200_jt50ea5d",
+        "_TZ3210_jaap6jeb",
+        "_TZE284_g1enhdsi",
+        "_TZ3000_qamj2vnn",
+        "_TZ3000_tw4ztbp4",
+        "_TZ3000_avotanj3",
+        "_TZ3290_7v1k4vuf",
+        "_TZ3290_rlkmy85q",
+        "_TZ3290_jxvzqatw",
+        "_TZ3290_lypnqvle",
+        "_TZ3290_nba3knps",
+        "_TZ3290_yac64inu",
+        "_TZE204_2jnoy8dj",
+        "_TZ3210_iymfxdis",
+        "_TZ3002_xkxgfxsg",
+        "_TZ3002_tlsvxhxc",
+        "_TZE200_seq9cm6u"
+      ],
+      "title": "[Auto] 17 new fingerprints from community (2026-02)",
+      "response": "### Issue #136 Response\n\nThank you for your submission regarding the new fingerprints found in the community sync. Unfortunately, none of the fingerprints listed in your issue are currently supported by our drivers. \n\nTo assist us in identifying the devices and potentially adding support, we require",
+      "model": "gh-gpt-4o-mini"
+    }
+  ]
 }
