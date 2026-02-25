@@ -1,6 +1,6 @@
 {
   "5.11.23": {
-    "en": "Universal Tuya Zigbee v5.11.23 introduces 17 new fingerprints, enhances diagnostics, and improves CI/CD workflows."
+    "en": "Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum responsiveness, ensuring a more reliable smart home experience."
   },
   "5.11.22": {
     "en": "Universal Tuya Zigbee v5.11.22 introduces enhanced forum responsiveness, improved workflow resilience, and updates to diagnostics and automation processes."
@@ -58,5 +58,8 @@
   },
   "5.11.4": {
     "en": "v5.11.4: Presence sensor radar fixes — (1) GH#127 Tauno20: WZ-M100 (_TZE204_e5m9c5hl) settings now exposed — radar sensitivity, min/max detection range, detection delay, fading time are now adjustable in device settings (were internal-only). (2) Same fix for ZY-M100-S1 side wall variant. (3) Fixed noisy 'unknown DP' log for DPs already handled by dpMap (e.g. DP106 on HOBEIAN ZG-204ZM). (4) Fixed parseInt→parseFloat in onSettings for decimal range values (e.g. 6.5m). (5) Added 4 new settings definitions to presence_sensor_radar driver.compose.json."
+  },
+  "5.11.24": {
+    "en": "Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum responsiveness, ensuring a more reliable smart home experience."
   }
 }
