@@ -211,19 +211,21 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/forum-pm-scanner.js || true
 
-      # ===== 8. EXTERNAL SOURCES: Z2M+ZHA+Blakadder+deCONZ+Hubitat =====
-      - name: "8. External Sources Scanner"
+      # ===== 8. SMART DEVICE SCAN: 10-source (Z2M+ZHA+Blakadder+deCONZ+Hubitat+SmartThings+HA Forum+Local) =====
+      - name: "8. Smart Device Functionality Scanner (10 sources)"
         id: ext_sources
         continue-on-error: true
+        timeout-minutes: 15
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: node .github/scripts/external-sources-scanner.js
 
-      # ===== 9. ENRICHMENT: Cross-reference all sources =====
-      - name: "9. Enrichment Scanner"
+      # ===== 9. ENRICHMENT: Cross-reference with device functionality data =====
+      - name: "9. Smart Enrichment Scanner (DP-aware)"
         id: enrichment
         continue-on-error: true
+        timeout-minutes: 10
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
