@@ -102,6 +102,7 @@
 
 | Version | Changes |
 |---------|---------|
+| **v5.11.25** | Fix #137 plug energy monitor wrong voltage (_TZ3210_w0qqde0g). RawClusterFallback rewrite with proper ZCL bind/configureReporting. Dashboard-fallback Puppeteer automation. Fix #135 water timer moved to valve_irrigation. |
 | **v5.11.24** | Universal Tuya Zigbee app v5.11.24 introduces workflow improvements, enhanced diagnostics, and updated forum response... |
 | **v5.11.23** | Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum responsiveness, ensuri... |
 | **v5.11.22** | Universal Tuya Zigbee v5.11.22 introduces enhanced forum responsiveness, improved workflow resilience, and updates to... |
