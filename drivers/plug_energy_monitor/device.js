@@ -150,11 +150,13 @@ function getEnergyConfig(manufacturerName) {
 
 class EnergyMonitorPlugDevice extends HybridPlugBase {
 
-  // v5.11.17: Override ZCL energy divisors for devices that report in actual units
+  // v5.11.25: Override ZCL energy divisors for devices that report in actual units
   get zclEnergyDivisors() {
     const mfr = this.getData()?.manufacturerName || '';
-    // _TZ3210_xzhnra8x reports activePower in Watts, rmsVoltage in Volts (not deci-)
-    if (mfr === '_TZ3210_xzhnra8x') {
+    // _TZ3210_* variants report activePower in Watts, rmsVoltage in Volts (not deci-)
+    // Fix #137: _TZ3210_w0qqde0g showed 23.5V instead of 235V (was using divisor 10)
+    const directUnitMfrs = ['_TZ3210_xzhnra8x', '_TZ3210_w0qqde0g'];
+    if (directUnitMfrs.includes(mfr)) {
       return { power: 1, voltage: 1, current: 1000 };
     }
     return super.zclEnergyDivisors;
