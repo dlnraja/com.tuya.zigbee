@@ -1,10 +1,10 @@
 # Z2M Fingerprint Sync Report
 
-**Date:** 2026-02-19T22:53:04.242Z
+**Date:** 2026-02-25T04:18:19.870Z
 
 | Metric | Local | Z2M | Missing |
 |---|---|---|---|
-| Manufacturer Names | 3392 | 25 | 4 |
+| Manufacturer Names | 3402 | 25 | 4 |
 | Product IDs | 500 | 1639 | 1479 |
 
 ## Missing Manufacturer Names
