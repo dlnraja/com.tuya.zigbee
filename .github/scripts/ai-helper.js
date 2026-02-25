@@ -117,6 +117,30 @@ async function callAI(text,sysPrompt,opts={}){
       else console.log('  OpenRouter failed:',r.status);
     }catch(e){console.log('  OpenRouter error:',e.message)}
   }
+  // Fallback to Cerebras (free, fast inference)
+  const cerebrasKey=process.env.CEREBRAS_API_KEY;
+  if(cerebrasKey&&cbOk('cerebras')){
+    console.log('  Falling back to Cerebras...');
+    try{
+      const r=await fetchT('https://api.cerebras.ai/v1/chat/completions',{
+        method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+cerebrasKey},
+        body:JSON.stringify({model:'llama-3.3-70b',messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})});
+      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'cerebras-llama70b'}}
+      else{console.log('  Cerebras failed:',r.status);cbFail('cerebras',120000)}
+    }catch(e){console.log('  Cerebras error:',e.message);cbFail('cerebras',60000)}
+  }
+  // Fallback to Together.ai (free tier)
+  const togetherKey=process.env.TOGETHER_API_KEY;
+  if(togetherKey&&cbOk('together')){
+    console.log('  Falling back to Together.ai...');
+    try{
+      const r=await fetchT('https://api.together.xyz/v1/chat/completions',{
+        method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+togetherKey},
+        body:JSON.stringify({model:'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free',messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})});
+      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'together-llama70b'}}
+      else{console.log('  Together failed:',r.status);cbFail('together',120000)}
+    }catch(e){console.log('  Together error:',e.message);cbFail('together',60000)}
+  }
   // Fallback to ApiFreeLLM (free, unlimited)
   const aflKey=process.env.APIFREELLM_KEY;
   if(aflKey){
