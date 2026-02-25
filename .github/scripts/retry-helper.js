@@ -7,7 +7,9 @@ async function fetchWithRetry(url,opts={},ro={}){
       const ac=new AbortController(),t=setTimeout(()=>ac.abort(),timeout);
       const r=await fetch(url,{...opts,signal:ac.signal});
       clearTimeout(t);
-      if(r.ok||r.status===404||r.status===403||r.status===422)return r;
+      if(r.ok||r.status===404||r.status===422)return r;
+      if(r.status===403){const ra=r.headers.get('retry-after');if(!ra)return r;
+        if(i<retries){const w=Math.min((parseInt(ra,10)||60)*1000,120000);console.log('  [retry'+(label?' '+label:'')+'] 403 rate-limit wait '+w+'ms');await sleep(w);continue;}return r;}
       if(i<retries&&(r.status===429||r.status>=500)){
         const d=baseDelay*2**i+Math.random()*500;
         console.log('  [retry'+(label?' '+label:'')+'] HTTP '+r.status+' wait '+Math.round(d)+'ms ('+(i+1)+'/'+retries+')');
