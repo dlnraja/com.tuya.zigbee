@@ -81,19 +81,24 @@ Classic Outlook .ost at AppData/Local/Microsoft/Outlook/ (binary, not readable).
 - **IAS**: noIasMotion override + enrollment + ZCL-only noTemp/noHum
 - **HOBEIAN**: Added to water_leak + contact fingerprints
 
-## 7. PENDING ACTIONS (updated v5.11.25)
+## 7. PENDING ACTIONS (updated v5.11.25 — forum scan to #1482)
 
 - Cam TS0041: NEEDS DIAG (update v5.11.25 + re-pair + diag)
 - Freddyboy TS0044: NEEDS DIAG (update v5.11.25 + re-pair + diag)
+- Lasse_K ZG-102Z contact: **PERSISTENT** — still Unknown Zigbee on v5.11.21 (#1463,#1468,#1472,#1476), needs fresh interview
+- FrankP IR remote: **NEW BUG** — learning button turns off immediately (diag b6635c8c) #1471
+- Peter_Kawa soil sensor: **ENHANCEMENT** — change measure_humidity.soil → measure_moisture (standard cap) #1473
+- 7Hills `_TZE200_vvmbj46n` TS0601: **NEW** — full interview + diag 822fcb89 posted #1482
 - Ricardo_Lenior: NEEDS FINGERPRINT (diag only)
 - Piotr 2-gang `_TZ3000_cauq1okq`: DEVICE FIRMWARE issue (Z2M #14750 confirms dual toggle — unfixable)
-- GH#136/#133: 11 new community fingerprints — need device interviews (not in Z2M yet)
+- GH#136/#133: 17+13 new community fingerprints — need device interviews (not in Z2M yet)
 - GH#135: _TZE200_xlppj4f5 moved to valve_irrigation v5.11.25 — FIXED
 - GH#137: _TZ3210_w0qqde0g voltage divisor — FIXED v5.11.25
 - GH#128: _TZE204_nklqjk62 garage door — FP already exists
-- Forum #1479 Jocke_Wallen: _TZ3000_u3nv1jwk TS0044 buttons not responding — FP exists in button_wireless_4, likely sleepy-device first-press (H4)
-- Forum #1480 Lasse_K: ZG-102Z contact sensor "Unknown Zigbee" on v5.11.23 — FP exists (HOBEIAN+ZG-102Z), NEEDS fresh interview to see actual reported mfr
-- Forum #1481 JJ10: Radar sensor lux/distance/temp incorrect — DEFERRED (needs manufacturer-specific DP mapping)
+- ManuelKugler _TZE284_aao3yzhs soil: 100% moisture bug — **FIXED** (confirmed #1469)
+- Slawek_Pe _TZ3210_xzhnra8x: voltage/power 10x low — **FIXED v5.11.25**
+- Forum #1479 Jocke_Wallen: _TZ3000_u3nv1jwk TS0044 — FP exists, likely sleepy-device first-press
+- SkiMattie #1475: button can't pair — likely hardware issue
 
 ## 8. VERSION HISTORY (v5.9.9 → v5.9.23)
 
