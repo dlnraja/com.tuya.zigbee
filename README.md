@@ -2,14 +2,14 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-5,644+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-5,646+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-138-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-1,725-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-> **Control your Tuya Zigbee devices locally without cloud!** The most comprehensive Tuya Zigbee app for Homey with **138 drivers**, **5,644+ device fingerprints**, and **1,725+ flow cards**.
+> **Control your Tuya Zigbee devices locally without cloud!** The most comprehensive Tuya Zigbee app for Homey with **138 drivers**, **5,646+ device fingerprints**, and **1,725+ flow cards**.
 
 | | |
 |---|---|
@@ -37,7 +37,7 @@
 
 | Metric | Value |
 |--------|-------|
-| **Device Fingerprints** | 5,644+ |
+| **Device Fingerprints** | 5,646+ |
 | **Unique Product IDs** | 500 |
 | **Drivers** | 138 (116 Zigbee + 22 WiFi) |
 | **Flow Cards** | 1,725 |
@@ -57,8 +57,8 @@
 | 3 | `dimmer_wall_1gang` | 242 |
 | 4 | `radiator_valve` | 237 |
 | 5 | `curtain_motor` | 227 |
-| 6 | `switch_2gang` | 222 |
-| 7 | `contact_sensor` | 221 |
+| 6 | `contact_sensor` | 222 |
+| 7 | `switch_2gang` | 222 |
 | 8 | `motion_sensor` | 218 |
 | 9 | `generic_tuya` | 207 |
 | 10 | `switch_4gang` | 194 |
@@ -69,7 +69,7 @@
 | 15 | `plug_smart` | 113 |
 | 16 | `diy_custom_zigbee` | 103 |
 | 17 | `presence_sensor_radar` | 103 |
-| 18 | `water_leak_sensor` | 87 |
+| 18 | `water_leak_sensor` | 88 |
 | 19 | `bulb_rgbw` | 79 |
 | 20 | `generic_diy` | 55 |
 
@@ -102,7 +102,8 @@
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.23** | Universal Tuya Zigbee app v5.11.23 includes improvements to forum response handling and CI/CD pipeline stability. |
+| **v5.11.24** | Universal Tuya Zigbee app v5.11.24 introduces workflow improvements, enhanced diagnostics, and updated forum response... |
+| **v5.11.23** | Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum responsiveness, ensuri... |
 | **v5.11.22** | Universal Tuya Zigbee v5.11.22 introduces enhanced forum responsiveness, improved workflow resilience, and updates to... |
 | **v5.11.21** | v5.11.21: IR Blaster learning fix, energy divisors, soil moisture fix. (1) IR Blaster ZS06 manual cluster fallback fo... |
 | **v5.11.20** | See .homeychangelog.json for details |
@@ -116,7 +117,6 @@
 | **v5.11.12** | v5.11.12: Critical case-sensitivity fix + WiFi bugs. (1) Fixed 5,004 lowercase manufacturer names (_tz3000_ -> _TZ300... |
 | **v5.11.11** | v5.11.11: Fingerprint regression fixes — (1) Removed 5,450 case-duplicate mfrs across 113 drivers. (2) Fixed plug_sma... |
 | **v5.11.10** | v5.11.10: Full Zigbee DB sync — crawled Z2M (365 files), ZHA (all quirks), Blakadder, deCONZ. +117 new fingerprints a... |
-| **v5.11.9** | v5.11.9: Live DB sync — Z2M+ZHA+deCONZ crawl. +2 water_leak_sensor (TS0207), +6 radiator_valve TRVs (_TYST11_). |
 
 <!-- CHANGELOG_END -->
 
