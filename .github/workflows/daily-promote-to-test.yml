@@ -17,6 +17,7 @@ concurrency:
 jobs:
   promote:
     name: Promote draft to test
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
