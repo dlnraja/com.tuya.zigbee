@@ -36,6 +36,7 @@ jobs:
         run: node .github/scripts/auto-publish-draft.js
       - name: Promote curl
         if: steps.node.outcome != 'success'
+        continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
