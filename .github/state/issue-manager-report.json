@@ -1,97 +1,11 @@
 {
-  "timestamp": "2026-02-25T09:48:38.481Z",
+  "timestamp": "2026-02-25T14:31:26.094Z",
   "appVersion": "5.11.24",
   "responded": 0,
   "closed": 0,
   "labeled": 0,
   "issuesProcessed": 27,
   "prsProcessed": 16,
-  "newFingerprints": [
-    {
-      "fp": "_TZE200_jt50ea5d",
-      "source": "dlnraja/com.tuya.zigbee#136",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3210_jaap6jeb",
-      "source": "dlnraja/com.tuya.zigbee#136",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE284_g1enhdsi",
-      "source": "dlnraja/com.tuya.zigbee#136",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3000_qamj2vnn",
-      "source": "dlnraja/com.tuya.zigbee#136",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3000_tw4ztbp4",
-      "source": "dlnraja/com.tuya.zigbee#136",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3000_avotanj3",
-      "source": "dlnraja/com.tuya.zigbee#136",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3290_7v1k4vuf",
-      "source": "dlnraja/com.tuya.zigbee#136",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3290_rlkmy85q",
-      "source": "dlnraja/com.tuya.zigbee#136",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3290_jxvzqatw",
-      "source": "dlnraja/com.tuya.zigbee#136",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3290_lypnqvle",
-      "source": "dlnraja/com.tuya.zigbee#136",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3290_nba3knps",
-      "source": "dlnraja/com.tuya.zigbee#136",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3290_yac64inu",
-      "source": "dlnraja/com.tuya.zigbee#136",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE204_2jnoy8dj",
-      "source": "dlnraja/com.tuya.zigbee#136",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3210_iymfxdis",
-      "source": "dlnraja/com.tuya.zigbee#136",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3002_xkxgfxsg",
-      "source": "dlnraja/com.tuya.zigbee#136",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3002_tlsvxhxc",
-      "source": "dlnraja/com.tuya.zigbee#136",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE200_seq9cm6u",
-      "source": "dlnraja/com.tuya.zigbee#136",
-      "type": "device_request"
-    }
-  ],
-  "evolutionSummary": "In the latest project evolution, 17 new device fingerprints were discovered, significantly enhancing the compatibility of the Universal Tuya Zigbee app. Notable fingerprints include _TZE200_jt50ea5d and _TZ3210_jaap6jeb, both sourced from issue #136. This issue has been pivotal in identifying various device requests, contributing to a broader range of supported devices.\n\nThroughout this period, 27 issues and 16 pull requests were processed, indicating active engagement in resolving existing challenges and improving the app's functionality. Despite no issues being closed or responded to, the focus on new device integration reflects a commitment to expanding the app's capabilities.\n\nAction items moving forward include addressing the outstanding issues and integrating the newly discovered fingerprints into the app to enhance user experience and device compatibility. This proactive approach ensures that the Universal Tuya Zigbee app remains up-to-date with the latest device offerings in the market."
+  "newFingerprints": [],
+  "evolutionSummary": null
 }

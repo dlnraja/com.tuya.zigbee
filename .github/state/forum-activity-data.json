@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-25T03:10:54.771Z",
+  "timestamp": "2026-02-25T14:34:05.854Z",
   "username": "dlnraja",
   "summary": {
     "postCount": 546,
@@ -10,7 +10,7 @@
       {
         "id": 140352,
         "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "posts": 1466
+        "posts": 1468
       },
       {
         "id": 26439,
@@ -49,13 +49,31 @@
     {
       "id": 140352,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "posts": 1466,
-      "views": 13427,
-      "lastPosted": "2026-02-24T09:13:54.947Z",
+      "posts": 1468,
+      "views": 13461,
+      "lastPosted": "2026-02-25T10:44:04.454Z",
       "slug": "app-pro-universal-tuya-zigbee-device-app-test"
     }
   ],
   "activity": [
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1480,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Ver.5.11.23. Contact sensor still not installing. Unknown Zigbee. ZG-102Z. Interview & Diag above.",
+      "createdAt": "2026-02-25T10:44:04.549Z",
+      "username": "Lasse_K"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1479,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "4 button remote controller is detected but doesn’t recognize any buttons pressed. \nManufacturer ID: _TZ3000_u3nv1jwk \nProduct ID: TS0044 \nUnit ID: 70:c5:9c:ff:fe:26:56:dd \nType: Enddevice \nI’ll try to interview later today.",
+      "createdAt": "2026-02-25T09:14:40.405Z",
+      "username": "Jocke_Wallen"
+    },
     {
       "type": 6,
       "topicId": 140352,
@@ -2737,24 +2755,6 @@
       "excerpt": "@dlnraja Thanks for the commit. I just pulled it and now the flows work as they supposed to with the physical button vs. app.",
       "createdAt": "2026-01-27T10:13:01.576Z",
       "username": "Attilla"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1204,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Hi Dylan Good morning  \nThanks for fixing the SOS button they are both okay now flow is working also again  \nThe Motion sensor still missing Temperature and Humidity data and the not supported Distance is still there  \nI’m on ver 847 now. \nHave a nice day and best regards Peter.",
-      "createdAt": "2026-01-27T08:59:05.183Z",
-      "username": "Peter_van_Werkhoven"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1203,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Hi Dylan installed your new update, now I was finally be able to re-add the SOS button again and they are triggering the app but noth the Flow so you are getting there with this one again, nearly there again. \nThe HOBEIAN ZG-204ZV Multisensor is readded also but only data from Motion, Luminance and &hellip;",
-      "createdAt": "2026-01-26T22:05:09.184Z",
-      "username": "Peter_van_Werkhoven"
     }
   ],
   "pms": [],
@@ -2762,18 +2762,18 @@
     {
       "type": 2,
       "topicId": 140352,
-      "postNum": 1476,
+      "postNum": 1479,
       "data": {
         "topic_title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "original_post_id": 713810,
+        "original_post_id": 714199,
         "original_post_type": 1,
-        "original_username": "Nordmann",
+        "original_username": "Lasse_K",
         "revision_number": null,
-        "display_username": "3 replies",
-        "display_name": "Lasse K"
+        "display_username": "2 replies",
+        "display_name": "Jocke Wallén"
       },
-      "read": true,
-      "createdAt": "2026-02-24T09:13:55.060Z"
+      "read": false,
+      "createdAt": "2026-02-25T10:44:04.553Z"
     },
     {
       "type": 5,
@@ -14420,6 +14420,20 @@
           "user": "Nordmann",
           "text": "Hi, thanks for this App! Now my mmWave Sensors work with Homey.\n\nUnfortunately the Door and Window Sensors are added as an unknown Device. After repairing as a socket.\n\n\n\n\n\nzb_product_id\n“ZG-102Z”\n\n\n\n\n\n\n\nzb_manufacturer_name\n“HOBEIAN”\n\n\n\nI tried to add them as a Contact Sensor. Is there any workaround that this devices will be recognised as a Door Sensor? I followed the hints shown above but with no success. Thx",
           "date": "2026-02-24T09:13:54.947Z",
+          "replyTo": null
+        },
+        {
+          "num": 1479,
+          "user": "Jocke_Wallen",
+          "text": "4 button remote controller is detected but doesn’t recognize any buttons pressed.\n\nManufacturer ID: _TZ3000_u3nv1jwk\n\nProduct ID: TS0044\n\nUnit ID: 70:c5:9c:ff:fe:26:56:dd\n\nType: Enddevice\n\nI’ll try to interview later today.",
+          "date": "2026-02-25T09:14:40.290Z",
+          "replyTo": null
+        },
+        {
+          "num": 1480,
+          "user": "Lasse_K",
+          "text": "Ver.5.11.23. Contact sensor still not installing. Unknown Zigbee. ZG-102Z. Interview & Diag above.",
+          "date": "2026-02-25T10:44:04.454Z",
           "replyTo": null
         }
       ],
@@ -66585,6 +66599,7 @@
   ],
   "deviceInfo": {
     "allFPs": [
+      "_TZ3000_u3nv1jwk",
       "_TZ3000_itb0omhv",
       "_TZ3210_xzhnra8x",
       "_TZ3000_mrpevh8p",
@@ -66669,7 +66684,6 @@
       "_TZE204_qasjif9e",
       "_TZ3000_ja5osu5g",
       "_TZ3000_1o6x1bl0",
-      "_TZ3000_u3nv1jwk",
       "_TZE200_9yapgbuv",
       "_TZE200_hvaxb2tc",
       "_TZE200_uj3f4wr5",
@@ -67308,6 +67322,7 @@
       "_TZE200_r731zlxk"
     ],
     "supported": [
+      "_TZ3000_u3nv1jwk",
       "_TZ3000_itb0omhv",
       "_TZ3210_xzhnra8x",
       "_TZ3000_mrpevh8p",
@@ -67382,7 +67397,6 @@
       "_TZE204_qasjif9e",
       "_TZ3000_ja5osu5g",
       "_TZ3000_1o6x1bl0",
-      "_TZ3000_u3nv1jwk",
       "_TZE200_9yapgbuv",
       "_TZE200_hvaxb2tc",
       "_TZE200_uj3f4wr5",

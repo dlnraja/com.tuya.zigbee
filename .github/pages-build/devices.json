@@ -2913,6 +2913,7 @@
       "eWeLink",
       "SONOFF",
       "hobeian",
+      "HOBEIAN",
       "_TYZB01_ncdapbwy",
       "_TZ1800_ejwkn2h2",
       "_TZ3000_0gkrb5py",
@@ -3161,7 +3162,7 @@
       "alarm_tamper"
     ],
     "proto": "EF00",
-    "fpCount": 221
+    "fpCount": 222
   },
   {
     "id": "curtain_motor",
@@ -8053,6 +8054,7 @@
     "class": "sensor",
     "mfrs": [
       "hobeian",
+      "HOBEIAN",
       "_TYST11_qq9mpfhw",
       "_TYZB01_o63ssaah",
       "_TZ3000_0s9gukzt",
@@ -8165,7 +8167,7 @@
       "alarm_tamper"
     ],
     "proto": "EF00",
-    "fpCount": 87
+    "fpCount": 88
   },
   {
     "id": "water_valve_smart",

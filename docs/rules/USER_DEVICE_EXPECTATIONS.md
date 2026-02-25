@@ -1,10 +1,17 @@
-# User Device Expectations (v5.11.22)
-**Updated**: 2026-02-24 (v5.11.22: nightly auto-scan)
+# User Device Expectations (v5.11.24)
+**Updated**: 2026-02-25 (v5.11.24: nightly auto-scan)
 
 
 
 
 
+
+
+## Nightly Auto-Scan (2026-02-25)
+| User | Fingerprint(s) | Source | Date |
+|------|---------------|--------|------|
+| Jocke_Wallen | `_TZ3000_u3nv1jwk` | Forum #140352 post #1479 | Auto-scanned 2026-02-25 |
+| github-actions[bot] | `_TZE200_jt50ea5d`, `_TZ3210_jaap6jeb`, `_TZE284_g1enhdsi`, `_TZ3000_qamj2vnn`, `_TZ3000_tw4ztbp4`, `_TZ3000_avotanj3`, `_TZ3290_7v1k4vuf`, `_TZ3290_rlkmy85q`, `_TZ3290_jxvzqatw`, `_TZ3290_lypnqvle`, `_TZ3290_nba3knps`, `_TZ3290_yac64inu`, `_TZE204_2jnoy8dj`, `_TZ3210_iymfxdis`, `_TZ3002_xkxgfxsg`, `_TZ3002_tlsvxhxc`, `_TZE200_seq9cm6u` | dlnraja/com.tuya.zigbee#136 | Auto-scanned 2026-02-25 |
 
 ## Nightly Auto-Scan (2026-02-24)
 | User | Fingerprint(s) | Source | Date |
