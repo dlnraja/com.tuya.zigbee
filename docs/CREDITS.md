@@ -5,7 +5,7 @@
 
 | Contributor | Fingerprints | PRs | Source |
 |------------|-------------|-----|--------|
-| [@dlnraja](https://github.com/dlnraja) | 725 | 0 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
+| [@dlnraja](https://github.com/dlnraja) | 723 | 0 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
 | [@mayconbordin](https://github.com/mayconbordin) | 5 | 0 | [mayconbordin/com.tuya.zigbee](https://github.com/mayconbordin/com.tuya.zigbee) |
 | [@kodalissri](https://github.com/kodalissri) | 3 | 0 | [kodalissri/com.tuya.zigbee](https://github.com/kodalissri/com.tuya.zigbee) |
 | [@IsaacNZ2](https://github.com/IsaacNZ2) | 3 | 0 | [IsaacNZ2/com.tuya.zigbee](https://github.com/IsaacNZ2/com.tuya.zigbee) |
@@ -738,8 +738,6 @@
 - `_TZe284_lbhh5o6z`
 - `_TZe284_tdhnhhiy`
 - `_TZe284_znvwzxkq`
-- `_TZ3000_v8gtiaed`
-- `_TZ3400_tk3s5tyg`
 
 ### @mayconbordin
 - `_TZ3210_hqunee3s`
