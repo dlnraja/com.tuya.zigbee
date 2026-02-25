@@ -80,12 +80,8 @@ jobs:
       - name: "1. Forum Scan"
         id: forum_scan
         continue-on-error: true
+        timeout-minutes: 10
         env:
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: |
           echo "=== Forum Scan ==="
@@ -99,14 +95,8 @@ jobs:
       - name: "2. GitHub Issues & PRs Manager"
         id: github_mgr
         continue-on-error: true
+        timeout-minutes: 15
         env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           STALE_DAYS: "30"
           REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
@@ -116,9 +106,9 @@ jobs:
       - name: "3. Upstream Triage"
         id: upstream
         continue-on-error: true
+        timeout-minutes: 15
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           TARGET_REPO: JohanBendz/com.tuya.zigbee
           APP_VERSION: ${{ steps.stats.outputs.version }}
           DRIVER_COUNT: ${{ steps.stats.outputs.drivers }}
@@ -131,11 +121,8 @@ jobs:
       - name: "4. GitHub Activity Scanner"
         id: gh_scanner
         continue-on-error: true
+        timeout-minutes: 10
         env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/github-scanner.js
 
@@ -143,12 +130,7 @@ jobs:
       - name: "5. Gmail Diagnostics"
         id: gmail
         continue-on-error: true
-        env:
-          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
-          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
-          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          GH_PAT: ${{ secrets.GH_PAT }}
+        timeout-minutes: 10
         run: |
           HOUR=$(date -u +%H)
           if [ "$HOUR" = "08" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
@@ -162,14 +144,8 @@ jobs:
       - name: "6. Nightly Processor"
         id: nightly
         continue-on-error: true
+        timeout-minutes: 10
         env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/nightly-processor.js
 
@@ -177,12 +153,8 @@ jobs:
       - name: "7. Forum Activity Scraper"
         id: forum_activity
         continue-on-error: true
+        timeout-minutes: 10
         env:
-          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FORUM_USERNAME: dlnraja
         run: node .github/scripts/forum-activity-scraper.js
 
@@ -190,10 +162,8 @@ jobs:
       - name: "7b. Forum First Post Update"
         id: forum_first_post
         continue-on-error: true
+        timeout-minutes: 5
         env:
-          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/update-forum-first-post.js
 
@@ -201,12 +171,8 @@ jobs:
       - name: "7c. Forum Private Messages"
         id: forum_pm
         continue-on-error: true
+        timeout-minutes: 5
         env:
-          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          GH_PAT: ${{ secrets.GH_PAT }}
           FORUM_USERNAME: dlnraja
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/forum-pm-scanner.js || true
@@ -216,9 +182,6 @@ jobs:
         id: ext_sources
         continue-on-error: true
         timeout-minutes: 15
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: node .github/scripts/external-sources-scanner.js
 
       # ===== 9. ENRICHMENT: Cross-reference with device functionality data =====
@@ -226,100 +189,81 @@ jobs:
         id: enrichment
         continue-on-error: true
         timeout-minutes: 10
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: node .github/scripts/enrichment-scanner.js
 
       # ===== 9b. JOHANBENDZ: Full scanner =====
       - name: "9b. JohanBendz Full Scanner"
         id: johan_scan
         continue-on-error: true
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        timeout-minutes: 10
         run: node .github/scripts/scan-johan-full.js
 
       # ===== 9c. Cross-Driver Gap Analysis =====
       - name: "9c. Cross-Driver Gap"
         id: cross_gap
         continue-on-error: true
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        timeout-minutes: 5
         run: node .github/scripts/cross-driver-gap.js || true
 
       # ===== 9d. Scan Public APIs (Z2M/ZHA/Blakadder live) =====
       - name: "9d. Scan Public APIs"
         id: public_apis
         continue-on-error: true
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
+        timeout-minutes: 5
         run: node .github/scripts/scan-public-apis.js || true
 
       # ===== 10. AI CHANGELOG: Generate from all findings =====
       - name: "10. AI Changelog"
         id: ai_changelog
         continue-on-error: true
-        env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        timeout-minutes: 10
         run: node .github/scripts/generate-ai-changelog.js
 
       - name: "10b. Recursive Fork Scanner"
         id: fork_scan
         continue-on-error: true
+        timeout-minutes: 10
         env:
-          GH_PAT: ${{ secrets.GH_PAT }}
           FORK_DEPTH: "3"
         run: node .github/scripts/scan-forks-recursive.js
 
       - name: "10c. Device Finder"
         id: dev_finder
         continue-on-error: true
+        timeout-minutes: 5
         run: node .github/scripts/generate-device-finder.js
 
       - name: "10d. Auto-Update Docs"
         id: auto_docs
         continue-on-error: true
+        timeout-minutes: 5
         run: node .github/scripts/auto-update-docs.js
 
       - name: "10e. Generate README"
         id: gen_readme
         continue-on-error: true
+        timeout-minutes: 5
         run: node .github/scripts/generate-readme.js
 
       - name: "10f. Generate User Expectations"
         id: gen_expectations
         continue-on-error: true
+        timeout-minutes: 5
         run: node .github/scripts/generate-user-expectations.js
 
       # ===== 10g. Homey Device Diagnostics (live Homey data) =====
       - name: "10g. Homey Device Diagnostics"
         id: homey_diag
         continue-on-error: true
-        env:
-          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        timeout-minutes: 10
         run: node .github/scripts/homey-device-diagnostics.js || true
 
       # ===== 10h. Interview & Crash Log Recovery =====
       - name: "10h. Interview & Diagnostic Recovery"
         id: interview_recovery
         continue-on-error: true
+        timeout-minutes: 10
         env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
-          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
-          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/interview-recovery.js || true
 
@@ -327,12 +271,7 @@ jobs:
       - name: "10i. Monthly Comprehensive Sync"
         id: monthly_comp
         continue-on-error: true
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        timeout-minutes: 15
         run: |
           HOUR=$(date -u +%H)
           if [ "$HOUR" = "02" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
