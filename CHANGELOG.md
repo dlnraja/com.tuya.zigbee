@@ -6,6 +6,12 @@ All notable changes to the Universal Tuya Zigbee app.
 
 ---
 
+## v5.11.24 (2026-02-25)
+
+Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum responsiveness, ensuring a more reliable smart home experience.
+
+---
+
 ## v5.11.23 (2026-02-24)
 
 Universal Tuya Zigbee v5.11.23 enhances forum and GitHub messaging, improves workflow resilience, and updates diagnostics. Now with 138 drivers and 5182 fingerprints.
