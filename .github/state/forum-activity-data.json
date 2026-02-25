@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-24T20:13:00.852Z",
+  "timestamp": "2026-02-25T03:10:54.771Z",
   "username": "dlnraja",
   "summary": {
     "postCount": 546,
@@ -50,7 +50,7 @@
       "id": 140352,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
       "posts": 1466,
-      "views": 13420,
+      "views": 13427,
       "lastPosted": "2026-02-24T09:13:54.947Z",
       "slug": "app-pro-universal-tuya-zigbee-device-app-test"
     }
@@ -31533,7 +31533,7 @@
         {
           "num": 25,
           "user": "Peter_Kawa",
-          "text": "My bad Alex, I meant to write soil nutrition (also called ‘fertility’).\n\nThe one shown here doesn’t seem to have that specific sensor\n\n\n\n\n Michael_Edholm:\n\nWhen looking at zigbee2mtt homepage the device is there an a spec can be found for attributes (which does not seem to show up on the interview) HOBEIAN ZG-303Z control via MQTT | Zigbee2MQTT\n\n\n\n.\n\n\n\n\n Alex_R:\n\nBut the one in your link doesn’t look like ZG-303Z(?)\n\n\n\nCorrect, it is no Hobeian device:\n\n\n\n\n[APP][Pro] Universal TUYA Zigbee Device App - test\n\n  \"ids\": {\n    \"modelId\": \"Arteco\",\n    \"manufacturerName\": \"A89G12C\"\n\n\n\nSee\n\nhttps://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/1439?u=peter_kawa",
+          "text": "My bad Alex, I meant to write soil nutrition (also called ‘fertility’).\n\nThe one shown here doesn’t seem to have that specific sensor\n\n\n\n\n Michael_Edholm:\n\nWhen looking at zigbee2mtt homepage the device is there an a spec can be found for attributes (which does not seem to show up on the interview) HOBEIAN ZG-303Z control via MQTT | Zigbee2MQTT\n\n\n\n.\n\n\n\n\n Alex_R:\n\nBut the one in your link doesn’t look like ZG-303Z(?)\n\n\n\nCorrect, it is no Hobeian device:\n\nZS-SF00\n\n\n\n\n[APP][Pro] Universal TUYA Zigbee Device App - test\n\n  \"ids\": {\n    \"modelId\": \"Arteco\",\n    \"manufacturerName\": \"A89G12C\"\n\n\n\nSee\n\nhttps://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/1439?u=peter_kawa",
           "date": "2026-02-24T19:00:57.201Z",
           "replyTo": 24
         }
