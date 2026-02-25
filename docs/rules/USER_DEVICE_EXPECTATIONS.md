@@ -524,3 +524,26 @@ _TZ3000_hafsqare, _TZ3000_e98krvvk, _TZ3000_iedbgyxt
 | _TZ3210_iymfxdis | dlnraja/com.tuya.zigbee#133 | device_request |
 | _TZ3002_xkxgfxsg | dlnraja/com.tuya.zigbee#133 | device_request |
 | _TZ3002_tlsvxhxc | dlnraja/com.tuya.zigbee#133 | device_request |
+
+
+## Auto-discovered from GitHub (2026-02-25)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZE200_jt50ea5d | dlnraja/com.tuya.zigbee#136 | device_request |
+| _TZ3210_jaap6jeb | dlnraja/com.tuya.zigbee#136 | device_request |
+| _TZE284_g1enhdsi | dlnraja/com.tuya.zigbee#136 | device_request |
+| _TZ3000_qamj2vnn | dlnraja/com.tuya.zigbee#136 | device_request |
+| _TZ3000_tw4ztbp4 | dlnraja/com.tuya.zigbee#136 | device_request |
+| _TZ3000_avotanj3 | dlnraja/com.tuya.zigbee#136 | device_request |
+| _TZ3290_7v1k4vuf | dlnraja/com.tuya.zigbee#136 | device_request |
+| _TZ3290_rlkmy85q | dlnraja/com.tuya.zigbee#136 | device_request |
+| _TZ3290_jxvzqatw | dlnraja/com.tuya.zigbee#136 | device_request |
+| _TZ3290_lypnqvle | dlnraja/com.tuya.zigbee#136 | device_request |
+| _TZ3290_nba3knps | dlnraja/com.tuya.zigbee#136 | device_request |
+| _TZ3290_yac64inu | dlnraja/com.tuya.zigbee#136 | device_request |
+| _TZE204_2jnoy8dj | dlnraja/com.tuya.zigbee#136 | device_request |
+| _TZ3210_iymfxdis | dlnraja/com.tuya.zigbee#136 | device_request |
+| _TZ3002_xkxgfxsg | dlnraja/com.tuya.zigbee#136 | device_request |
+| _TZ3002_tlsvxhxc | dlnraja/com.tuya.zigbee#136 | device_request |
+| _TZE200_seq9cm6u | dlnraja/com.tuya.zigbee#136 | device_request |
