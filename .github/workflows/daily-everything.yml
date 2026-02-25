@@ -27,9 +27,34 @@ env:
 
 jobs:
   everything:
-    name: "Forum + GitHub + Gmail + ExtSources + Triage + Respond + Fix + Publish"
+    name: "MEGA Pipeline — 28 steps"
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
+    env:
+      # === AI providers (10-provider chain, all free tier) ===
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+      TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
+      APIFREELLM_KEY: ${{ secrets.APIFREELLM_KEY }}
+      # === GitHub ===
+      GH_PAT: ${{ secrets.GH_PAT }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # === Forum ===
+      DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+      HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+      HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+      # === Gmail ===
+      GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+      GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+      GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+      # === Homey ===
+      HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+      HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -161,6 +186,31 @@ jobs:
           FORUM_USERNAME: dlnraja
         run: node .github/scripts/forum-activity-scraper.js
 
+      # ===== 7b. FORUM: Update First Post with Changelogs =====
+      - name: "7b. Forum First Post Update"
+        id: forum_first_post
+        continue-on-error: true
+        env:
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/update-forum-first-post.js
+
+      # ===== 7c. FORUM: Private Messages (inbox scan) =====
+      - name: "7c. Forum Private Messages"
+        id: forum_pm
+        continue-on-error: true
+        env:
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          FORUM_USERNAME: dlnraja
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/forum-pm-scanner.js || true
+
       # ===== 8. EXTERNAL SOURCES: Z2M+ZHA+Blakadder+deCONZ+Hubitat =====
       - name: "8. External Sources Scanner"
         id: ext_sources
@@ -187,6 +237,23 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: node .github/scripts/scan-johan-full.js
+
+      # ===== 9c. Cross-Driver Gap Analysis =====
+      - name: "9c. Cross-Driver Gap"
+        id: cross_gap
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/cross-driver-gap.js || true
+
+      # ===== 9d. Scan Public APIs (Z2M/ZHA/Blakadder live) =====
+      - name: "9d. Scan Public APIs"
+        id: public_apis
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: node .github/scripts/scan-public-apis.js || true
 
       # ===== 10. AI CHANGELOG: Generate from all findings =====
       - name: "10. AI Changelog"
@@ -226,6 +293,52 @@ jobs:
         id: gen_expectations
         continue-on-error: true
         run: node .github/scripts/generate-user-expectations.js
+
+      # ===== 10g. Homey Device Diagnostics (live Homey data) =====
+      - name: "10g. Homey Device Diagnostics"
+        id: homey_diag
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/homey-device-diagnostics.js || true
+
+      # ===== 10h. Interview & Crash Log Recovery =====
+      - name: "10h. Interview & Diagnostic Recovery"
+        id: interview_recovery
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/interview-recovery.js || true
+
+      # ===== 10i. Monthly Comprehensive (inline, 1x/day at 02:00) =====
+      - name: "10i. Monthly Comprehensive Sync"
+        id: monthly_comp
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: |
+          HOUR=$(date -u +%H)
+          if [ "$HOUR" = "02" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "=== Running Monthly Comprehensive Sync ==="
+            node .github/scripts/monthly-comprehensive.js || true
+          else
+            echo "Skipping monthly sync (only at 02:00 UTC)"
+          fi
 
       # ===== 11. COMMIT: All state + docs + changelogs =====
       - name: "11. Commit all changes"
@@ -334,35 +447,55 @@ jobs:
           # CHANGELOG env intentionally empty — post-forum-update.js reads from .homeychangelog.json
           node .github/scripts/post-forum-update.js || true
 
+      # ===== 14b. Deploy Device Finder (GitHub Pages) =====
+      - name: "14b. Deploy Device Finder"
+        if: always()
+        continue-on-error: true
+        run: |
+          if [ -f ".github/pages-build/index.html" ]; then
+            echo "Device Finder pages exist, commit handles deploy via deploy-pages workflow"
+          fi
+          # Regenerate if needed
+          node .github/scripts/device-finder-html.js 2>/dev/null || true
+
       # ===== SUMMARY =====
       - name: Summary
         if: always()
         run: |
-          echo "## Daily Everything Pipeline" >> $GITHUB_STEP_SUMMARY
+          echo "## 🚀 Daily Everything Pipeline — MEGA" >> $GITHUB_STEP_SUMMARY
           echo "**App:** v${{ steps.stats.outputs.version }} | ${{ steps.stats.outputs.drivers }} drivers | ${{ steps.stats.outputs.fps }} FPs" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Step | Status |" >> $GITHUB_STEP_SUMMARY
-          echo "|------|--------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Forum | ${{ steps.forum_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| GitHub Issues | ${{ steps.github_mgr.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Upstream | ${{ steps.upstream.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Scanner | ${{ steps.gh_scanner.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Gmail | ${{ steps.gmail.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Nightly | ${{ steps.nightly.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Forum Activity | ${{ steps.forum_activity.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| External Sources | ${{ steps.ext_sources.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Enrichment | ${{ steps.enrichment.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| AI Changelog | ${{ steps.ai_changelog.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Fork Scanner | ${{ steps.fork_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Device Finder | ${{ steps.dev_finder.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Auto Docs | ${{ steps.auto_docs.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| README | ${{ steps.gen_readme.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| User Expectations | ${{ steps.gen_expectations.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Commit | ${{ steps.commit.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Publish | ${{ steps.pub.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Promote | ${{ steps.promote_node.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| # | Step | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| 1 | Forum Scan + Respond | ${{ steps.forum_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 2 | GitHub Issues & PRs | ${{ steps.github_mgr.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 3 | Upstream Triage | ${{ steps.upstream.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 4 | GitHub Scanner | ${{ steps.gh_scanner.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 5 | Gmail Diagnostics | ${{ steps.gmail.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 6 | Nightly Processor | ${{ steps.nightly.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 7 | Forum Activity | ${{ steps.forum_activity.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 7b | Forum First Post | ${{ steps.forum_first_post.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 7c | Forum Private Messages | ${{ steps.forum_pm.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 8 | External Sources | ${{ steps.ext_sources.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 9 | Enrichment | ${{ steps.enrichment.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 9b | JohanBendz Scanner | ${{ steps.johan_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 9c | Cross-Driver Gap | ${{ steps.cross_gap.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 9d | Public APIs | ${{ steps.public_apis.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10 | AI Changelog | ${{ steps.ai_changelog.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10b | Fork Scanner | ${{ steps.fork_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10c | Device Finder | ${{ steps.dev_finder.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10d | Auto Docs | ${{ steps.auto_docs.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10e | README | ${{ steps.gen_readme.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10f | User Expectations | ${{ steps.gen_expectations.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10g | Homey Diagnostics | ${{ steps.homey_diag.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10h | Interview Recovery | ${{ steps.interview_recovery.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10i | Monthly Comprehensive | ${{ steps.monthly_comp.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 11 | Commit | ${{ steps.commit.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 12 | Validate + Publish | ${{ steps.pub.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 13 | Promote to Test | ${{ steps.promote_node.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 14 | Forum Update | — |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "[Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
+          echo "**Total: 28 automation steps** | [Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee) | [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload reports
         uses: actions/upload-artifact@v4
