@@ -1,9 +1,11 @@
 name: Auto-Publish on Push
 
 on:
+  push:
+    branches: [master, main]
   workflow_dispatch:
   workflow_run:
-    workflows: ["Nightly Auto-Process", "Sunday Master Automation"]
+    workflows: ["Nightly Auto-Process", "Sunday Master Automation", "Daily Everything Pipeline"]
     types: [completed]
 
 permissions:
@@ -16,6 +18,7 @@ concurrency:
 jobs:
   publish:
     name: Validate & Auto-Publish to Test
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -64,8 +67,10 @@ jobs:
 
       - name: Check HOMEY_PAT
         id: check_pat
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: |
-          if [ -n "${{ secrets.HOMEY_PAT }}" ]; then
+          if [ -n "$HOMEY_PAT" ]; then
             echo "has_pat=true" >> $GITHUB_OUTPUT
           else
             echo "has_pat=false" >> $GITHUB_OUTPUT
@@ -76,6 +81,7 @@ jobs:
         if: steps.check_pat.outputs.has_pat == 'true'
         uses: athombv/github-action-homey-app-publish@v1
         id: pub
+        continue-on-error: true
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
