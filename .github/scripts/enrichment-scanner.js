@@ -151,12 +151,13 @@ async function main(){
   try{const ff=path.join(__dirname,'..','state','device-functionality.json');
     if(fs.existsSync(ff)){funcData=JSON.parse(fs.readFileSync(ff,'utf8'));
       console.log('Loaded device functionality:',funcData.total,'devices,',funcData.withDPs,'with DPs')}}catch{}
-  // Merge DP/cap data into new FPs
+  // Merge DP/cap data — use composite key fp|pid (same mfr can have different DPs per productId!)
   if(funcData?.profiles){
-    const profMap=new Map(funcData.profiles.map(p=>[p.fp,p]));
+    const profMap=new Map();
+    for(const p of funcData.profiles){profMap.set(p.fp+'|'+(p.pid||'?'),p);if(!profMap.has(p.fp))profMap.set(p.fp,p)}
     for(const item of uniqueNew){
-      const prof=profMap.get(item.fp);
-      if(prof){item.dps=prof.dps;item.caps=prof.caps;item.bugs=prof.bugs;item.sources=prof.src}
+      const prof=profMap.get(item.fp+'|'+(item.pid||'?'))||profMap.get(item.fp);
+      if(prof){item.dps=prof.dps;item.caps=prof.caps;item.bugs=prof.bugs;item.sources=prof.src;item.pid=item.pid||prof.pid}
     }
   }
 
