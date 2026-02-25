@@ -330,9 +330,8 @@ jobs:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           APP_VERSION: ${{ steps.stats.outputs.version }}
-          CHANGELOG: ${{ steps.ai_changelog.outcome == 'success' && '' || '' }}
         run: |
-          # post-forum-update.js reads changelog from .homeychangelog.json if CHANGELOG env is empty
+          # CHANGELOG env intentionally empty — post-forum-update.js reads from .homeychangelog.json
           node .github/scripts/post-forum-update.js || true
 
       # ===== SUMMARY =====
