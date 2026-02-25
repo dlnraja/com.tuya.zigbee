@@ -85,7 +85,9 @@ return '<div class="card" data-d="'+d.id+'" data-c="'+d.class+'" data-s="'+[d.id
 +'<br><b>Capabilities:</b> '+d.caps.join(', ')
 +'<br><b>Protocol:</b> '+d.proto
 +'<br><b>Driver ID:</b> <code>'+d.id+'</code>'
-+'<br><br><a class="btn btn-info" href="https://www.aliexpress.com/w/wholesale-tuya+zigbee+'+encodeURIComponent(d.name.replace(/[_()]/g,' '))+'.html?aff_short_key=dlnraja" target="_blank" rel="noopener">🛒 Find on AliExpress</a>'
++'<br><br><a class="btn btn-info" href="https://www.zigbee2mqtt.io/search.html?q='+encodeURIComponent(d.mfrs[0]||d.name)+'" target="_blank" rel="noopener">📡 Z2M</a> '
++'<a class="btn btn-info" href="https://zigbee.blakadder.com/'+encodeURIComponent((d.pids[0]||'').replace(/[^a-zA-Z0-9]/g,''))+'.html" target="_blank" rel="noopener">📋 Blakadder</a> '
++'<a class="btn btn-info" href="https://www.aliexpress.com/w/wholesale-tuya+zigbee+'+encodeURIComponent(d.name.replace(/[_()]/g,' '))+'.html" target="_blank" rel="noopener">🛒 AliExpress</a>'
 +'</div></div>';
 }
 function js(){return`
@@ -115,4 +117,15 @@ c.style.display=matchClass&&matchSearch?'':'none';
 });
 }
 window.toggleDetail=function(btn){btn.closest('.card').querySelector('.detail').classList.toggle('open');btn.textContent=btn.textContent.includes('Details')?'▲ Hide':'ℹ Details';};
+// URL hash search support
+if(location.hash){const h=decodeURIComponent(location.hash.slice(1));if(h){search.value=h;filterCards();}}
+search.addEventListener('input',()=>{history.replaceState(null,'','#'+encodeURIComponent(search.value));});
+// Keyboard shortcut: / to focus search
+document.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement!==search){e.preventDefault();search.focus();}if(e.key==='Escape'){search.value='';filterCards();search.blur();}});
+// Show visible count
+const counter=document.createElement('div');counter.style.cssText='text-align:center;color:var(--muted);padding:.5rem;font-size:.875rem';
+grid.parentNode.insertBefore(counter,grid);
+const origFilter=filterCards;
+filterCards=function(){origFilter();const vis=cards.filter(c=>c.style.display!=='none').length;counter.textContent=vis+' of '+cards.length+' devices shown';};
+filterCards();
 `;}
