@@ -1,0 +1,43 @@
+name: "Stale Issues & PRs"
+
+on:
+  schedule:
+    - cron: '0 5 * * 1'  # Weekly Monday 05:00 UTC
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: stale
+  cancel-in-progress: true
+
+jobs:
+  stale:
+    name: "Close Stale Issues & PRs"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/stale@v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-stale: 60
+          days-before-close: 14
+          stale-issue-message: >
+            This issue has been automatically marked as stale because it has not had
+            recent activity. It will be closed in 14 days if no further activity occurs.
+            If your device is still not working, please update to the latest test version
+            and share a new diagnostic report on the
+            [forum](https://community.homey.app/t/140352).
+          stale-pr-message: >
+            This PR has been automatically marked as stale because it has not had
+            recent activity. It will be closed in 14 days if no further activity occurs.
+          stale-issue-label: stale
+          stale-pr-label: stale
+          close-issue-label: closed-stale
+          close-pr-label: closed-stale
+          exempt-issue-labels: "pinned,security,enhancement,auto-fix,community-sync"
+          exempt-pr-labels: "pinned,security,auto-fix"
+          exempt-all-assignees: true
+          operations-per-run: 50
