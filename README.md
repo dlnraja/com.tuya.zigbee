@@ -42,7 +42,7 @@
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-02-24 |
+| **Last Updated** | 2026-02-25 |
 
 ### 📦 Top 138 drivers by Device IDs
 
@@ -73,7 +73,7 @@
 
 | Version | Feature |
 |---------|---------|
-| **v5.11.23** | Updated to v5.11.23 with 138 drivers and 5182 fingerprints. |
+| **v5.11.23** | Updated to v5.11.23 with 138 drivers and 5644 fingerprints. |
 | **v5.11.22** | Universal Tuya Zigbee app v5.11.22 introduces improved forum responsiveness, ... |
 | **v5.11.21** | v5.11.21: IR Blaster learning fix, energy divisors, soil moisture fix. (1) IR... |
 | **v5.11.20** | See .homeychangelog.json for details |
