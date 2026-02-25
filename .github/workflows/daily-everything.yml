@@ -205,6 +205,13 @@ jobs:
         timeout-minutes: 5
         run: node .github/scripts/cross-driver-gap.js || true
 
+      # ===== 9c2. Fingerprint Conflict Check =====
+      - name: "9c2. Fingerprint Conflict Check"
+        id: fp_conflicts
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node scripts/automation/fix-fingerprint-conflicts.js --report-only
+
       # ===== 9d. Scan Public APIs (Z2M/ZHA/Blakadder live) =====
       - name: "9d. Scan Public APIs"
         id: public_apis
@@ -421,6 +428,7 @@ jobs:
           echo "| 9 | Enrichment | ${{ steps.enrichment.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9b | JohanBendz Scanner | ${{ steps.johan_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9c | Cross-Driver Gap | ${{ steps.cross_gap.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 9c2 | FP Conflict Check | ${{ steps.fp_conflicts.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9d | Public APIs | ${{ steps.public_apis.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10 | AI Changelog | ${{ steps.ai_changelog.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10b | Fork Scanner | ${{ steps.fork_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
