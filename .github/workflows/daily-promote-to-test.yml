@@ -1,8 +1,8 @@
 name: Daily Draft to Test
 on:
   schedule:
-    - cron: '30 3 * * *'
-    - cron: '30 9 * * *'
+    - cron: '45 3 * * *'
+    - cron: '45 9 * * *'
     - cron: '30 15 * * *'
     - cron: '30 21 * * *'
   workflow_dispatch:
@@ -58,6 +58,7 @@ jobs:
           done
           echo "::warning::Manual promote: https://tools.developer.homey.app/apps/app/$APP/versions"
       - name: Verify retry
+        continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}

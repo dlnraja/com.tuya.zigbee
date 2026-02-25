@@ -62,7 +62,7 @@ jobs:
             echo "✅ Flow card methods OK" >> $GITHUB_STEP_SUMMARY
           fi
 
-      - name: � Deep Bug Checks
+      - name: 🔍 Deep Bug Checks
         run: |
           echo "### Deep Checks" >> $GITHUB_STEP_SUMMARY
           BAD=$(grep -rl "require.*lib/TuyaZigbeeDevice'" drivers/ --include="*.js" 2>/dev/null | wc -l)
@@ -70,7 +70,7 @@ jobs:
           DUP=$(grep -rohE '"_T[^"]+"' drivers/*/driver.compose.json 2>/dev/null | sort | uniq -d | wc -l)
           [ "$DUP" -gt 0 ] && echo "⚠️ $DUP duplicate fingerprints across drivers" >> $GITHUB_STEP_SUMMARY || echo "✅ No duplicate FPs" >> $GITHUB_STEP_SUMMARY
 
-      - name: �📊 Stats
+      - name: 📊 Stats
         run: |
           DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           MFRS=$(grep -ohE '"_TZ[^"]+"' drivers/*/driver.compose.json 2>/dev/null | sort -u | wc -l)

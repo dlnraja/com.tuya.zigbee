@@ -273,6 +273,7 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: node .github/scripts/github-scanner.js
 
   github-issue-manager:
@@ -292,6 +293,10 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           STALE_DAYS: "30"
           REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
@@ -315,6 +320,7 @@ jobs:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FORUM_USERNAME: dlnraja
         run: node .github/scripts/forum-activity-scraper.js
 
@@ -398,6 +404,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
       - name: Update first post of forum thread
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
