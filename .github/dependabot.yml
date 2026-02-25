@@ -71,7 +71,13 @@ updates:
       - github-actions
       - automated
     groups:
-      github-actions:
+      core-actions:
         patterns:
           - "actions/*"
+      homey-actions:
+        patterns:
           - "athombv/*"
+      third-party-actions:
+        patterns:
+          - "softprops/*"
+          - "dependabot/*"

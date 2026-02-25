@@ -62,15 +62,17 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/homey-device-diagnostics.js
 
-      - name: External Sources Scanner
+      - name: "Smart Device Scanner (10 sources, fp|pid composite key)"
         continue-on-error: true
+        timeout-minutes: 15
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: node .github/scripts/external-sources-scanner.js
 
-      - name: Enrichment Scanner
+      - name: "Smart Enrichment (DP-aware, fp|pid profiles)"
         continue-on-error: true
+        timeout-minutes: 10
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
