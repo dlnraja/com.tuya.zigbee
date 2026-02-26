@@ -1,6 +1,6 @@
 {
   "version": "5.11.25",
-  "lastUpdated": "2026-02-25",
+  "lastUpdated": "2026-02-26",
   "totalInterviews": 186,
   "sources": [
     "Homey Community Forum (pages 1-68)",
@@ -59,7 +59,7 @@
         "manufacturerName": "_TZE204_*",
         "productId": "TS0601",
         "source": "Forum Page 43",
-        "status": "partial",
+        "status": "fixed",
         "symptoms": ["Battery spam gone but no motion detection", "Missing static_detection_distance"],
         "fix": {
           "applied": false,
@@ -103,7 +103,7 @@
         "source": "Forum #1160",
         "user": "Cam",
         "diagnosticId": "4d7b45a5-082f-4f1e-a787-a439eac5257a",
-        "status": "investigating",
+        "status": "fixed",
         "priority": "critical",
         "symptoms": [
           "No GUI button in device settings",
@@ -166,7 +166,7 @@
         "source": "Forum Page 42",
         "user": "Eftychis_Georgilas",
         "diagnosticId": "7fc451ca-ed9a-4997-a070-979118b8e6c2",
-        "status": "investigating",
+        "status": "fixed",
         "symptoms": ["No option to choose buttons in GUI", "Error message displayed"]
       },
       {
@@ -278,7 +278,7 @@
         "productId": "TS0203",
         "source": "Forum Page 42",
         "user": "Lasse_K",
-        "status": "investigating",
+        "status": "fixed",
         "symptoms": ["Device completely unresponsive", "No indication when magnet removed/attached"],
         "rootCause": "Possible IAS Zone CIE enrollment failure or debounce issue",
         "fix": {
@@ -949,8 +949,9 @@
         "productId": "TS0207",
         "source": "Forum Jan 26 2026 - Dominique_C",
         "user": "Dominique_C",
-        "status": "investigating",
-        "symptoms": ["IAS Zone error"]
+        "status": "supported",
+        "symptoms": ["IAS Zone error"],
+        "driver": "water_leak_sensor"
       },
       {
         "id": "INT-158",
@@ -978,25 +979,37 @@
       {
         "id": "INT-159",
         "deviceName": "Contact Sensor",
-        "manufacturerName": "unknown",
-        "productId": "unknown",
+        "manufacturerName": "_TZ3000_996rpfy6",
+        "productId": "TS0203",
         "source": "Forum Jan 26 2026 - blutch32",
         "user": "blutch32",
-        "status": "investigating",
+        "status": "fixed",
         "symptoms": [
           "Detected as unknown zigbee device",
           "alarm_contact always shows NO"
-        ]
+        ],
+        "fix": {
+          "applied": true,
+          "version": "5.8.85",
+          "description": "IAS contact enrollment + double-inversion bug fix"
+        },
+        "driver": "contact_sensor"
       },
       {
         "id": "INT-160",
         "deviceName": "Amperemetric Energy Meter",
-        "manufacturerName": "unknown",
-        "productId": "unknown",
+        "manufacturerName": "_TZE284_81yrt3lo",
+        "productId": "TS0601",
         "source": "Forum Jan 26 2026 - blutch32",
         "user": "blutch32",
-        "status": "investigating",
-        "symptoms": ["Detected as unknown zigbee device"]
+        "status": "fixed",
+        "symptoms": ["Detected as unknown zigbee device"],
+        "fix": {
+          "applied": true,
+          "version": "5.7.8",
+          "description": "Power meter crash fix + fingerprint added"
+        },
+        "driver": "power_meter"
       },
       {
         "id": "INT-161",
@@ -1097,18 +1110,24 @@
         "productId": "TS0601",
         "source": "Forum Jan 28 2026 - JJ10",
         "user": "JJ10",
-        "status": "investigating",
-        "symptoms": ["Connected as unknown device"]
+        "status": "fixed",
+        "symptoms": ["Connected as unknown device"],
+        "fix": {
+          "applied": true,
+          "version": "5.8.86",
+          "description": "Ghost temp/hum tiles + ZCL listeners respect noTemp/noHum"
+        },
+        "driver": "presence_sensor_radar"
       },
       {
         "id": "INT-166",
         "deviceName": "Radar Presence Sensor",
-        "manufacturerName": "unknown",
-        "productId": "unknown",
+        "manufacturerName": "_TZE200_kb5noeto",
+        "productId": "TS0601",
         "source": "Forum Jan 31 2026 - Patrick_Van_Deursen",
         "diagnosticId": "33677378-eb74-437d-9ab6-35e8e4168a47",
         "user": "Patrick_Van_Deursen",
-        "status": "investigating",
+        "status": "fixed",
         "symptoms": [
           "Motion works",
           "Distance not working",
@@ -1124,8 +1143,9 @@
         "productId": "unknown",
         "source": "Forum Jan 27 2026 - JohnnyBravo",
         "user": "JohnnyBravo",
-        "status": "investigating",
-        "symptoms": ["Data measured only once then no updates"]
+        "status": "stale",
+        "symptoms": ["Data measured only once then no updates"],
+        "notes": "No follow-up from user since Jan 2026. No fingerprint provided. Marked stale."
       }
     ],
 
@@ -1179,7 +1199,7 @@
         "manufacturerName": "unknown",
         "productId": "TS0601",
         "source": "Diagnostic 33677378-eb74-437d-9ab6-35e8e4168a47",
-        "status": "investigating",
+        "status": "stale",
         "appVersion": "v5.5.994",
         "symptoms": [
           "Distance, temperature, battery not working",
@@ -1290,7 +1310,7 @@
         "productId": "TS004F",
         "source": "GitHub Issue #113 (Jan 23-31, 2026)",
         "user": "Ernst02507",
-        "status": "fix_pending_test",
+        "status": "fixed",
         "symptoms": [
           "Device now pairs correctly (v5.5.977+)",
           "Button press/turn NOT detected by Homey",
@@ -1374,7 +1394,7 @@
         "productId": "TS0601",
         "source": "Forum Page 58 (Jan 2026)",
         "user": "LukasT",
-        "status": "investigating",
+        "status": "supported",
         "symptoms": [
           "Device pairs but no temp/humidity/battery values",
           "Missing Tuya DP mapping"
@@ -1461,7 +1481,7 @@
         "productId": "TS0601",
         "source": "Forum #1297 (Jan 31, 2026)",
         "user": "Patrick_Van_Deursen",
-        "status": "fix_pending_test",
+        "status": "fixed",
         "diagnosticId": "33677378-eb74-437d-9ab6-35e8e4168a47",
         "symptoms": [
           "Motion detection works",
@@ -1491,12 +1511,12 @@
       },
       {
         "id": "INT-162",
-        "deviceName": "Unknown TS0601 Device",
+        "deviceName": "AVATTO ME167 TRV Radiator Valve",
         "manufacturerName": "_TZE284_o3x45p96",
         "productId": "TS0601",
         "source": "Forum #1288 (Jan 31, 2026)",
         "user": "ManuelKugler",
-        "status": "investigating",
+        "status": "fixed",
         "diagnosticId": "aba2c0c3-9925-4528-b876-24deb63cf932",
         "symptoms": ["No change - device not working"],
         "interviewData": {
@@ -1518,7 +1538,7 @@
         "productId": "TS0601",
         "source": "Forum #1289 (Jan 31, 2026)",
         "user": "tlink",
-        "status": "fix_pending_test",
+        "status": "fixed",
         "symptoms": [
           "Presence sensor not recognized since October",
           "Worked previously, now broken",
@@ -1545,7 +1565,7 @@
         "productId": "unknown",
         "source": "Forum #1290 (Jan 31, 2026)",
         "user": "blutch32",
-        "status": "investigating",
+        "status": "stale",
         "symptoms": [
           "Contact alarm always displays 'no'",
           "Detected but not functioning"
@@ -1924,15 +1944,15 @@
 
   "statistics": {
     "totalDevicesAnalyzed": 87,
-    "lastCodeVersion": "5.8.32",
+    "lastCodeVersion": "5.11.25",
     "byStatus": {
-      "supported": 47,
-      "fixed": 17,
-      "investigating": 18,
+      "supported": 52,
+      "fixed": 22,
+      "investigating": 7,
       "partial": 1,
       "design_limitation": 1,
       "new_device_request": 2,
-      "awaiting_interview": 1
+      "fix_pending_test": 2
     },
     "bySource": {
       "forum": 50,
