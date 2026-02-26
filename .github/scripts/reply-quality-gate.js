@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 'use strict';
-// v5.11.27: Reply Quality Gate — validates bot replies before posting
-// Prevents the HOBEIAN bug: bot saying "not found" for devices that ARE in the DB
+// v5.11.28: Reply Quality Gate — validates bot replies before posting
+// Prevents: HOBEIAN bug (not found for supported), wrong driver names, missed FPs, truncated FP misses
 const fs=require('fs'),path=require('path');
-const{buildFullIndex,extractAllFP}=require('./load-fingerprints');
+const{buildFullIndex,extractAllFP,fuzzyMatchFPs}=require('./load-fingerprints');
 const DDIR=path.join(__dirname,'..','..','drivers');
 
 /**
@@ -59,16 +59,58 @@ function validateReply(replyText, originalPostText) {
     }
   }
 
-  // 4. Auto-correct if warnings found
+  // 4. Fuzzy match check: if reply says "not found" but a close FP exists
+  const notFoundFPs = [];
+  for (const m of [...postFPs.mfr, ...replyFPs.mfr]) {
+    if (!mfrIdx.has(m)) notFoundFPs.push(m);
+  }
+  if (notFoundFPs.length) {
+    const fuzzy = fuzzyMatchFPs(notFoundFPs, allMfrs);
+    for (const {original, match} of fuzzy) {
+      const drivers = mfrIdx.get(match) || [];
+      if (drivers.length) {
+        warnings.push(`FUZZY: \`${original}\` looks like \`${match}\` (supported in ${drivers.join(',')})`);
+      }
+    }
+  }
+
+  // 5. Cross-reference with external DBs if available
+  try {
+    const extData = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'state', 'external-sources-data.json'), 'utf8'));
+    if (extData && extData.allDevices) {
+      const extSet = new Set(extData.allDevices.map(d => d.fp));
+      for (const m of notFoundFPs) {
+        if (extSet.has(m)) {
+          warnings.push(`EXTERNAL: \`${m}\` found in Z2M/ZHA/deCONZ — reply should mention it's on the radar`);
+        }
+      }
+    }
+  } catch {}
+
+  // 6. Auto-correct if warnings found
   if (warnings.length) {
     const supported = [];
+    const fuzzySupported = [];
     for (const m of [...postFPs.mfr, ...postFPs.pid]) {
       const d = mfrIdx.get(m) || pidIdx.get(m);
       if (d) supported.push({fp: m, drivers: d});
     }
-    if (supported.length) {
-      corrected = 'Your device fingerprint(s) are **supported**:\n\n';
-      for (const s of supported) corrected += `- \`${s.fp}\` → **${s.drivers.join(', ')}**\n`;
+    // Also add fuzzy matches
+    const fuzzy = fuzzyMatchFPs(notFoundFPs, allMfrs);
+    for (const {original, match} of fuzzy) {
+      const d = mfrIdx.get(match);
+      if (d) fuzzySupported.push({fp: match, from: original, drivers: d});
+    }
+    if (supported.length || fuzzySupported.length) {
+      corrected = '';
+      if (supported.length) {
+        corrected += 'Your device fingerprint(s) are **supported**:\n\n';
+        for (const s of supported) corrected += `- \`${s.fp}\` → **${s.drivers.join(', ')}**\n`;
+      }
+      if (fuzzySupported.length) {
+        corrected += '\n**Close matches found** (possible typo in fingerprint):\n';
+        for (const s of fuzzySupported) corrected += `- \`${s.from}\` → likely \`${s.fp}\` (**${s.drivers.join(', ')}**)\n`;
+      }
       corrected += '\nPlease **remove and re-pair**, selecting the correct type.\n';
     }
   }
