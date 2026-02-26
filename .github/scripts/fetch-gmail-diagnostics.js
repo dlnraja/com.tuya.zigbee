@@ -77,17 +77,25 @@ const SEARCH_QUERIES=[
   '(from:athom.com OR subject:homey OR subject:athom)',
   // 10. Tuya WiFi specific
   '("tuya wifi" OR "smart life" OR "tuya smart" OR "tuya cloud")',
+  // 11. Private messages from forum users (direct notifications)
+  '(from:community.homey.app AND ("private message" OR "direct message" OR "mentioned you"))',
+  // 12. Homey device reports and re-pair requests
+  '(homey AND ("device report" OR "re-pair" OR repaired OR "added device" OR "removed device"))',
+  // 13. App crash and error notifications
+  '(homey AND ("app crashed" OR "app error" OR "uncaught" OR "stack trace" OR "ENOMEM"))',
+  // 14. Zigbee2MQTT and ZHA cross-reference (alternative platforms)
+  '("zigbee2mqtt" OR "z2m" OR "ZHA" OR "deconz" AND (tuya OR "_TZ" OR "_TZE"))',
 ];
 
 async function searchAll(tk,after){
   const seen=new Set(),all=[];
   for(const q of SEARCH_QUERIES){
     const full=encodeURIComponent(q+' after:'+after);
-    const msgs=(await gapi(tk,'messages?q='+full+'&maxResults=25'))?.messages||[];
+    const msgs=(await gapi(tk,'messages?q='+full+'&maxResults=50'))?.messages||[];
     for(const m of msgs){if(!seen.has(m.id)){seen.add(m.id);all.push(m)}}
   }
   console.log('Found '+all.length+' unique emails across '+SEARCH_QUERIES.length+' queries');
-  return all.slice(0,100); // cap at 100
+  return all.slice(0,200); // cap at 200 for comprehensive analysis
 }
 
 async function getEmail(tk,id){
@@ -203,7 +211,7 @@ async function main(){
   const tk=await getToken();
   if(!tk){console.log('No Gmail token - set GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN');process.exit(0)}
   const st=load(),idx=buildIndex(),res=[];
-  const after=st.lastCheck?Math.floor(new Date(st.lastCheck).getTime()/1000):Math.floor(Date.now()/1000)-86400*3;
+  const after=st.lastCheck?Math.floor(new Date(st.lastCheck).getTime()/1000):Math.floor(Date.now()/1000)-86400*7;
   const done=new Set(st.processed||[]);
 
   console.log('Driver index:',idx.size,'fingerprints across',new Set([...idx.values()].flat()).size,'drivers');
