@@ -1614,37 +1614,49 @@
         "deviceName": "Soil Moisture Sensor",
         "manufacturerName": "_TZE284_vvmbj46n",
         "productId": "TS0601",
-        "source": "Desktop Interview Files (Jan 31, 2026)",
+        "source": "Desktop Interview Files (Jan 31, 2026), enriched 2026-02-25",
         "status": "supported",
         "deviceType": "enddevice",
         "powerSource": "battery",
+        "ieeeAddress": "a4:c1:38:ac:ed:30:d7:a5",
+        "applicationDeviceId": 81,
         "inputClusters": [4, 5, 61184, 0, 60672],
         "outputClusters": [25, 10],
         "protocol": "tuya_dp",
-        "driver": "soil_sensor",
-        "notes": "Battery-powered soil sensor. Uses Tuya DP cluster 61184. Already in soil_sensor fingerprints."
+        "zclClusters": {
+          "basic": {"zclVersion": 3, "appVersion": 77, "hwVersion": 1, "powerSource": "battery"}
+        },
+        "driver": "climate_sensor",
+        "driverNote": "Fingerprint verified in climate_sensor (not soil_sensor). TS0601 in productId list.",
+        "notes": "Battery-powered soil/moisture sensor. Uses Tuya DP cluster 61184. Fingerprint in climate_sensor driver."
       },
       {
         "id": "INT-168",
         "deviceName": "Soil Moisture Sensor",
         "manufacturerName": "_TZE284_oitavov2",
         "productId": "TS0601",
-        "source": "Desktop Interview Files (Jan 31, 2026)",
+        "source": "Desktop Interview Files (Jan 31, 2026), enriched 2026-02-25",
         "status": "supported",
         "deviceType": "enddevice",
         "powerSource": "battery",
+        "ieeeAddress": "a4:c1:38:1f:36:99:34:ed",
+        "applicationDeviceId": 81,
         "inputClusters": [4, 5, 61184, 0, 60672],
         "outputClusters": [25, 10],
         "protocol": "tuya_dp",
+        "zclClusters": {
+          "basic": {"zclVersion": 3, "appVersion": 80, "hwVersion": 1, "powerSource": "battery"}
+        },
         "driver": "soil_sensor",
-        "notes": "Battery-powered soil sensor. Uses Tuya DP cluster 61184. Already in soil_sensor fingerprints."
+        "notes": "Battery-powered soil/moisture sensor. Uses Tuya DP cluster 61184. Fingerprint in soil_sensor driver."
       },
       {
         "id": "INT-169",
         "deviceName": "HOBEIAN ZG-204ZM Motion Sensor",
         "manufacturerName": "HOBEIAN",
         "productId": "ZG-204ZM",
-        "source": "Desktop Interview Files (Jan 31, 2026)",
+        "source": "Desktop Interview Files (Jan 31, 2026), enriched 2026-02-25",
+        "ieeeAddress": "a4:c1:38:69:e9:5c:47:12",
         "status": "supported",
         "deviceType": "enddevice",
         "powerSource": "battery",
@@ -1678,33 +1690,35 @@
           "powerConfiguration": {"batteryVoltage": 26, "batteryPercentage": 58},
           "onOff": {"perEndpoint": true}
         },
-        "driver": "button_wireless_4",
-        "notes": "4 endpoints = 4 buttons. Uses OnOff cluster per endpoint. Cluster 57344 (0xE000) = Tuya custom."
+        "driver": "button_wireless_3",
+        "driverNote": "Fingerprint verified in button_wireless_3 (TS0043). 4 endpoints but mapped to 3-button driver.",
+        "ieeeAddress": "a4:c1:38:0d:00:dc:44:8c",
+        "notes": "TS0043 with 4 endpoints. Uses OnOff cluster per endpoint. Cluster 57344 (0xE000) = Tuya custom. Battery 2.6V/29%."
       },
       {
         "id": "INT-171",
         "deviceName": "2-Gang Switch with Energy Monitoring",
         "manufacturerName": "_TZ3000_h1ipgkwn",
         "productId": "TS0002",
-        "source": "Desktop Interview Files (Jan 31, 2026)",
-        "status": "fix_applied",
+        "source": "Desktop Interview Files (Jan 31, 2026), enriched 2026-02-25",
+        "status": "supported",
         "deviceType": "router",
         "powerSource": "mains",
+        "ieeeAddress": "a4:c1:38:7b:94:f2:18:46",
+        "applicationDeviceId": 256,
         "endpoints": [1, 2, 242],
         "inputClusters": [3, 4, 5, 6, 1794, 2820, 57344, 57345, 0],
         "outputClusters": [25, 10],
         "protocol": "zcl",
         "capabilities": ["onoff", "onoff.gang2", "measure_power", "measure_voltage", "measure_current", "meter_power"],
         "zclClusters": {
-          "metering": {"currentSummationDelivered": 0},
-          "electricalMeasurement": {"rmsVoltage": 0, "rmsCurrent": 0, "activePower": 0}
+          "metering": {"currentSummationDelivered": 0, "instantaneousDemand": -1, "multiplier": 1, "divisor": 100, "unitOfMeasure": "kW"},
+          "electricalMeasurement": {"rmsVoltage": 2354, "rmsCurrent": 0, "activePower": -1, "acCurrentDivisor": 1000, "acPowerDivisor": 10},
+          "basic": {"zclVersion": 3, "appVersion": 69, "hwVersion": 1, "powerSource": "mains"}
         },
-        "fix": {
-          "version": "5.6.0",
-          "description": "Added fingerprint to switch_2gang driver"
-        },
-        "driver": "switch_2gang",
-        "notes": "2-gang switch with full energy monitoring via metering (0x0702) + electricalMeasurement (0x0B04). Router device."
+        "driver": "usb_dongle_dual_repeater",
+        "driverNote": "Fingerprint verified in usb_dongle_dual_repeater (has TS0002 in productId list). Interview shows 2-gang switch with energy monitoring.",
+        "notes": "2-gang switch with full energy monitoring via metering (0x0702) + electricalMeasurement (0x0B04). Router device. rmsVoltage=235.4V."
       },
       {
         "id": "INT-172",
@@ -1723,25 +1737,32 @@
       },
       {
         "id": "INT-173",
-        "deviceName": "Climate/Air Quality Sensor",
+        "deviceName": "Presence/Climate Sensor",
         "manufacturerName": "_TZE204_laokfqwu",
         "productId": "TS0601",
-        "source": "Desktop Interview Files (Jan 31, 2026)",
+        "source": "Desktop Interview Files (Jan 31, 2026), enriched 2026-02-25",
         "status": "supported",
         "deviceType": "router",
         "powerSource": "mains",
+        "ieeeAddress": "a4:c1:38:ce:29:4d:2e:d7",
+        "applicationDeviceId": 81,
         "inputClusters": [4, 5, 61184, 0],
         "outputClusters": [25, 10],
         "protocol": "tuya_dp",
-        "driver": "climate_sensor",
-        "notes": "Mains-powered climate sensor. Already in climate_sensor driver fingerprints."
+        "zclClusters": {
+          "basic": {"zclVersion": 3, "appVersion": 74, "hwVersion": 1, "powerSource": "dc"}
+        },
+        "driver": "presence_sensor_radar",
+        "driverNote": "Fingerprint verified in presence_sensor_radar (not climate_sensor). TS0601 in productId list.",
+        "notes": "Mains-powered TS0601 with Tuya DP. Router device. powerSource=dc. Fingerprint in presence_sensor_radar driver."
       },
       {
         "id": "INT-174",
         "deviceName": "4-Button Wireless Switch",
         "manufacturerName": "_TZ3000_bgtzm4ny",
         "productId": "TS0044",
-        "source": "Desktop Interview Files (Jan 31, 2026)",
+        "source": "Desktop Interview Files (Jan 31, 2026), enriched 2026-02-25",
+        "ieeeAddress": "a4:c1:38:41:9a:f1:e0:50",
         "status": "supported",
         "deviceType": "enddevice",
         "powerSource": "battery",
@@ -1762,7 +1783,8 @@
         "deviceName": "SOS Emergency Button",
         "manufacturerName": "_TZ3000_0dumfk2z",
         "productId": "TS0215A",
-        "source": "Desktop Interview Files (Jan 31, 2026)",
+        "source": "Desktop Interview Files (Jan 31, 2026), enriched 2026-02-25",
+        "ieeeAddress": "a4:c1:38:85:a8:b5:4c:d1",
         "status": "supported",
         "deviceType": "enddevice",
         "powerSource": "battery",
@@ -1783,7 +1805,9 @@
         "deviceName": "ZCL-Only Motion Sensor (NO TUYA DP!)",
         "manufacturerName": "_TZE200_3towulqd",
         "productId": "TS0601",
-        "source": "Desktop Interview Files (Jan 31, 2026)",
+        "source": "Desktop Interview Files (Jan 31, 2026), enriched 2026-02-25 (files 11, 12, 13)",
+        "ieeeAddress": "a4:c1:38:51:fe:ec:0e:f3",
+        "swBuildId": "0122052017",
         "status": "fix_applied",
         "deviceType": "enddevice",
         "powerSource": "battery",
