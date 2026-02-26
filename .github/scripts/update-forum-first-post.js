@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const fs=require('fs'),path=require('path');
-const {getForumAuth,fmtCk,FORUM}=require('./forum-auth');
+const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const TOPIC=140352,ROOT=path.join(__dirname,'..','..');
 const DRY=process.env.DRY_RUN==='true';
@@ -187,6 +187,7 @@ async function main(){
   const postId=await getFirstPostId(auth);
   console.log('First post ID:',postId);
 
+  if(auth.type==='session')await refreshCsrf(auth);
   const result=await editPost(postId,content,auth);
   console.log('Updated post',postId,'successfully');
 
