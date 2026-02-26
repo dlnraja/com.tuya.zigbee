@@ -178,12 +178,22 @@ jobs:
           DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
         run: node .github/scripts/forum-updater.js
 
-      - name: Auto-Publish Draft to Test
+      # ===== DRAFT → TEST (Puppeteer + API fallback) =====
+      - name: Install Puppeteer
+        run: npm install puppeteer --no-save
+      - name: "Tier 1: Promote via Browser (Puppeteer)"
+        id: promote_puppeteer
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: node .github/scripts/auto-promote-puppeteer.js
+      - name: "Tier 2: Promote via API (fallback)"
+        if: steps.promote_puppeteer.outcome != 'success'
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
         run: |
           if [ -z "$HOMEY_PAT" ]; then exit 0; fi
           node .github/scripts/auto-publish-draft.js || true

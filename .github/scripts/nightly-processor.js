@@ -388,11 +388,33 @@ async function main(){
   const ghResults=await processGitHub(state,idx,pidx,appVersion,dryRun);
   console.log('GitHub: '+ghResults.length+' responses');
 
-  // 2b. Ingest Gmail diagnostics
-  let diagCount=0;
+  // 2b. Ingest Gmail diagnostics + cross-reference with forum & GitHub
+  let diagCount=0,diagFPs=[],diagCritical=0;
   try{const df=path.join(__dirname,'..','state','diagnostics-report.json');
-  if(fs.existsSync(df)){diagCount=(JSON.parse(fs.readFileSync(df,'utf8'))).count||0;
-  if(diagCount)console.log('  Diagnostics:',diagCount,'reports')}}catch{}
+  if(fs.existsSync(df)){const dj=JSON.parse(fs.readFileSync(df,'utf8'));
+    diagCount=dj.count||0;
+    diagFPs=dj.newFingerprints||[];
+    // Count critical/high severity from AI analysis
+    const diags=dj.diagnostics||[];
+    diagCritical=diags.filter(d=>d.ai&&(d.ai.severity==='critical'||d.ai.severity==='high')).length;
+    if(diagCount)console.log('  Diagnostics:',diagCount,'reports |',diagFPs.length,'new FPs |',diagCritical,'critical');
+    // Cross-reference: find forum topics mentioning same fingerprints as Gmail diagnostics
+    if(diagFPs.length&&forumResults.length){
+      const overlap=forumResults.filter(fr=>{
+        const frText=JSON.stringify(fr).toLowerCase();
+        return diagFPs.some(fp=>frText.includes(fp.toLowerCase()));
+      });
+      if(overlap.length)console.log('  Cross-ref: '+overlap.length+' forum topics match Gmail diagnostic FPs');
+    }
+    // Cross-reference: find GitHub issues mentioning same fingerprints
+    if(diagFPs.length&&ghResults.length){
+      const ghOverlap=ghResults.filter(gr=>{
+        const grText=JSON.stringify(gr).toLowerCase();
+        return diagFPs.some(fp=>grText.includes(fp.toLowerCase()));
+      });
+      if(ghOverlap.length)console.log('  Cross-ref: '+ghOverlap.length+' GitHub issues match Gmail diagnostic FPs');
+    }
+  }}catch(e){console.log('  Diagnostics load error:',e.message)}
 
   // 3. Update docs
   console.log('\n== 3. Update Docs ==');
@@ -409,7 +431,8 @@ async function main(){
   // 4. Save state + report
   state.lastRun=new Date().toISOString();
   saveState(state);
-  const report={timestamp:state.lastRun,appVersion,forum:forumResults.length,github:ghResults.length,diagnostics:diagCount,
+  const report={timestamp:state.lastRun,appVersion,forum:forumResults.length,github:ghResults.length,
+    diagnostics:diagCount,diagNewFPs:diagFPs.length,diagCritical,
     forumDetails:forumResults.slice(0,20),githubDetails:ghResults.slice(0,20)};
   fs.writeFileSync(path.join(__dirname,'..','state','nightly-report.json'),JSON.stringify(report,null,2)+'\n');
 
@@ -421,6 +444,8 @@ async function main(){
     md+='| Forum replies | '+forumResults.length+' |\n';
     md+='| GitHub responses | '+ghResults.length+' |\n';
     md+='| Gmail diagnostics | '+diagCount+' |\n';
+    md+='| New fingerprints (Gmail) | '+diagFPs.length+' |\n';
+    md+='| Critical diagnostics | '+diagCritical+' |\n';
     if(forumResults.length){
       md+='\n### Forum\n';
       for(const r of forumResults.slice(0,10))md+='- Topic '+r.topic+' #'+r.post+' @'+r.user+'\n';
