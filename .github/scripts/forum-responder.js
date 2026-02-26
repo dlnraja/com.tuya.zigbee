@@ -3,7 +3,7 @@ const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const MODEL='gemini-2.0-flash';
 const SKIP=['dlnraja','system','discobot'];
-const MAX_REPLIES=15,DELAY=15000;
+const MAX_REPLIES=5,DELAY=30000;
 const STATE=path.join(__dirname,'..','state','forum-state.json');
 const DDIR=path.join(__dirname,'..','..','drivers');
 
@@ -130,9 +130,10 @@ async function main(){
     if(!auth){console.log('::warning::No forum auth - running scan-only (no replies)');dryRun=true;}
   }
 
-  let totalP=0,totalR=0;const summary=[];
+  let totalP=0,totalR=0,globalBlock=false;const summary=[];
 
   for(const tid of topicIds){
+    if(globalBlock){console.log('\n-- Topic',tid,'-> SKIP (global posting block)');continue}
     const ts=state.topics[tid]||{lastProcessed:0};
     const last=ts.lastProcessed;
     console.log('\n-- Topic',tid,'(last: #'+last+') --');
@@ -192,10 +193,12 @@ async function main(){
             await sleep(DELAY);break;
           }catch(e){
             console.warn('   Post try '+(ri+1)+':',e.message);
-            // Detect Discourse consecutive reply limit (422)
-            if(e.message&&e.message.includes('consecutive')){
-              console.warn('   -> Consecutive reply limit hit, skipping rest of topic');
-              topicBlocked=true;maxP=Math.max(maxP,p.post_number);break;
+            // Detect Discourse posting blocks (422)
+            if(e.message&&(e.message.includes('consecutive')||e.message.includes('closed or deleted')||e.message.includes('gone wrong'))){
+              const isGlobal=e.message.includes('gone wrong')||e.message.includes('closed or deleted');
+              console.warn('   -> Posting blocked'+(isGlobal?' (global - spam protection)':' (consecutive limit)')+', skipping');
+              topicBlocked=true;if(isGlobal)globalBlock=true;
+              maxP=Math.max(maxP,p.post_number);break;
             }
             if(ri<2)await sleep(5000*(ri+1));
           }
