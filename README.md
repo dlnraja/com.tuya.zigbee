@@ -2,14 +2,14 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,592+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,593+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-138-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-1,725-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-> **Control your Tuya Zigbee devices locally without cloud!** The most comprehensive Tuya Zigbee app for Homey with **138 drivers**, **4,592+ device fingerprints**, and **1,725+ flow cards**.
+> **Control your Tuya Zigbee devices locally without cloud!** The most comprehensive Tuya Zigbee app for Homey with **138 drivers**, **4,593+ device fingerprints**, and **1,725+ flow cards**.
 
 | | |
 |---|---|
@@ -37,7 +37,7 @@
 
 | Metric | Value |
 |--------|-------|
-| **Device Fingerprints** | 4,592+ |
+| **Device Fingerprints** | 4,593+ |
 | **Unique Product IDs** | 500 |
 | **Drivers** | 138 (116 Zigbee + 22 WiFi) |
 | **Flow Cards** | 1,725 |
@@ -59,7 +59,7 @@
 | 5 | `generic_tuya` | 207 |
 | 6 | `thermostat_tuya_dp` | 185 |
 | 7 | `dimmer_wall_1gang` | 155 |
-| 8 | `contact_sensor` | 134 |
+| 8 | `contact_sensor` | 135 |
 | 9 | `motion_sensor` | 122 |
 | 10 | `bulb_rgb` | 114 |
 | 11 | `plug_energy_monitor` | 106 |
@@ -102,7 +102,7 @@
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.25** | Universal Tuya Zigbee v5.11.25 introduces enhanced forum scanning, improved fingerprint conflict resolution, and new ... |
+| **v5.11.25** | v5.11.25: Fixed voltage divisor issue in driver #137, improving accuracy of voltage readings., Rewrote dashboard fall... |
 | **v5.11.24** | Universal Tuya Zigbee v5.11.24 introduces core fixes, enhanced automation, and updated device fingerprints, ensuring ... |
 | **v5.11.23** | Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum responsiveness, ensuri... |
 | **v5.11.22** | Universal Tuya Zigbee v5.11.22 introduces enhanced forum responsiveness, improved workflow resilience, and updates to... |
@@ -182,7 +182,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 138 Drivers ─ 4,592+ fingerprints
+       └─ 138 Drivers ─ 4,593+ fingerprints
 ```
 
 ---

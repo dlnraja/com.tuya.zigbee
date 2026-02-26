@@ -1,16 +1,17 @@
 {
-  "timestamp": "2026-02-26T08:37:54.395Z",
+  "timestamp": "2026-02-26T20:25:42.194Z",
   "username": "dlnraja",
   "topicCount": 1,
   "activityCount": 300,
   "pmCount": 0,
-  "refCount": 62,
+  "refCount": 61,
   "bookmarkCount": 0,
   "fullThreads": 30,
-  "totalFPs": 723,
+  "totalFPs": 727,
   "unsupportedFPs": [
     "_TZ3000_zgyzgd",
     "_TZE204_ztqnh5c",
+    "_TZxxxx_xxxxx",
     "_TZ3000_xxxxxxxx",
     "_TZ3000_ztc6ggyl",
     "_TZ3000_7dbxxwkt",
@@ -35,5 +36,5 @@
     "_TZ2000_lxvycln5",
     "_TZ3210_leyz4rju"
   ],
-  "aiAnalysis": "### Summary of Homey Community Forum Activity for Universal Tuya Zigbee App\n\n1. **Key User Requests:**\n   - Users are seeking support for various devices, particularly presence sensors and contact sensors that are not installing correctly.\n   - There are requests for better compatibility with button devices, as users report issues with button recognition.\n   - Users appreciate updates that enhance functionality, such as mmWave sensor support.\n\n2. **Devices People Need:**\n   - Specific requests for support include:\n     - Wenzhi Smart Human Presence Sensor (WZ-235-ZB)\n     - Contact sensors (e.g., ZG-102Z)\n     - Various button remotes and climate sensors (e.g., TS0041).\n   - Unsupported fingerprints include multiple _TZ3000 and _TZE200 models, indicating a need for broader device support.\n\n3. **Issues to Fix:**\n   - Persistent installation issues with contact sensors and unknown Zigbee devices.\n   - Button presses not being recognized on detected remote controllers.\n   - Several unsupported fingerprints that need addressing to improve device compatibility.\n\n4. **Action Items:**\n   - Investigate and resolve installation issues for contact sensors and other reported devices.\n   - Enhance support for button devices to ensure proper recognition of button presses.\n   - Review and potentially add support for the unsupported fingerprints listed, focusing on the most commonly requested devices.\n   - Continue to monitor user feedback and update the app to improve overall compatibility and functionality. \n\nThis summary highlights actionable insights to enhance user satisfaction and expand device support within the Universal Tuya Zigbee app."
+  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are seeking improved compatibility and support for a wider range of devices, particularly those that are currently unsupported.\n   - There is a demand for better functionality of virtual buttons and remote controls within the app.\n   - Users are requesting clearer communication regarding device compatibility and troubleshooting steps.\n\n2. **Devices People Need:**\n   - Specific requests for support include devices with manufacturer names like \"HOBEIAN\" and models such as \"ZG-102Z\".\n   - A list of unsupported device fingerprints indicates a need for integration of devices like \"_TZ3000_zgyzgd\", \"_TZE204_ztqnh5c\", and others.\n\n3. **Issues to Fix:**\n   - Users report issues with devices not functioning as intended, such as contact sensors being misidentified.\n   - There are ongoing problems with virtual buttons not responding correctly.\n   - Users have expressed confusion regarding installation and setup processes, indicating a need for clearer instructions.\n\n4. **Action Items:**\n   - Prioritize adding support for the unsupported device fingerprints listed by users.\n   - Investigate and resolve the issues related to virtual buttons and contact sensor misidentification.\n   - Enhance user documentation and troubleshooting guides to address common installation and setup issues.\n   - Consider implementing a feedback mechanism to gather user experiences and suggestions for future updates. \n\nBy addressing these actionable insights, the maintainer can improve user satisfaction and expand the app's compatibility with a broader range of devices."
 }

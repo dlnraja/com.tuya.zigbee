@@ -1,6 +1,6 @@
 {
   "5.11.25": {
-    "en": "Universal Tuya Zigbee v5.11.25 introduces enhanced forum scanning, improved CSRF handling, and various bug fixes, ensuring better device support and user experience."
+    "en": "v5.11.25: Fixed voltage divisor issue in driver #137, improving accuracy of voltage readings., Rewrote dashboard fallback logic to enhance reliability during device state reporting., Implemented ultimate automation and core fixes to enhance overall app performance and stability., Updated various workflows for better management and efficiency, including improvements to GitHub state management and d"
   },
   "5.11.24": {
     "en": "Universal Tuya Zigbee v5.11.24 introduces core fixes, enhanced automation, and updated device fingerprints, ensuring improved performance and reliability."
