@@ -4,8 +4,14 @@
   "manufacturerName": "_TZE284_iadro9bf",
   "productId": "TS0601",
   "deviceType": "router",
+  "powerSource": "mains",
+  "ieeeAddress": "a4:c1:38:e2:83:7f:43:e5",
+  "networkAddress": 15620,
+  "applicationDeviceId": 81,
   "inputClusters": [4, 5, 61184, 0, 60672],
-  "source": "Forum Page 39",
+  "outputClusters": [25, 10],
+  "protocol": "tuya_dp",
+  "source": "Forum Page 39, enriched from Desktop interview file (2026-02-25)",
   "diagnosticId": "d8820bc1-7646-411b-8158-2132ea45a1ac",
   "status": "fixed",
   "priority": "high",
@@ -21,5 +27,25 @@
     "applied": true,
     "version": "5.5.791",
     "description": "Added _applyPresenceInversion() to all ZCL paths + invert_presence setting"
+  },
+  "clusters": {
+    "groups": { "clusterRevision": 2 },
+    "scenes": { "clusterRevision": 2 },
+    "basic": {
+      "zclVersion": 3,
+      "appVersion": 74,
+      "stackVersion": 0,
+      "hwVersion": 1,
+      "powerSource": "dc",
+      "attributeReportingStatus": "PENDING"
+    }
+  },
+  "bindings": ["ota", "time"],
+  "analysis": {
+    "hasTuyaDP": true,
+    "hasIasZone": false,
+    "hasEnergyMonitoring": false,
+    "isRouter": true,
+    "isSleepy": false
   }
 }
