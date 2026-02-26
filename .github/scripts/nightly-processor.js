@@ -131,13 +131,8 @@ async function processForumPosts(state,idx,pidx,auth,appVersion,dryRun){
       }
       if(!reply){maxP=Math.max(maxP,post.post_number);continue}
       results.push({topic:tid,post:post.post_number,user:post.username,fps:fps.mfr,reply:reply.substring(0,200),model});
-      if(!dryRun&&auth){
-        const posted=await postForum(tid,reply,post.post_number,auth);
-        if(posted){console.log('    Posted reply to #'+post.post_number+' ('+model+')');replied++}
-        await sleep(15000);
-      }else{
-        console.log('    [DRY] Reply to #'+post.post_number+' ('+model+'): '+reply.substring(0,100)+'...');
-      }
+      // v5.11.27: Nightly does DATA COLLECTION only. Forum posting handled by forum-responder.js (anti-spam)
+      console.log('    [SCAN] #'+post.post_number+' ('+model+'): '+reply.substring(0,100)+'...');
       maxP=Math.max(maxP,post.post_number);
     }
     state.forum[tid]=maxP;

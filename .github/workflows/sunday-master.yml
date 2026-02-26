@@ -41,7 +41,7 @@ jobs:
         run: |
           V=$(node -p "require('./app.json').version")
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
-          F=$(grep -ohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json | sort -uf | wc -l)
+          F=$(node -e "const g=require('path').join('.','drivers');const fs=require('fs');let c=0;for(const d of fs.readdirSync(g)){try{const j=JSON.parse(fs.readFileSync(g+'/'+d+'/driver.compose.json','utf8'));c+=(j.zigbee?.manufacturerName?.length||0)}catch{}}console.log(c)" 2>/dev/null || echo '?')
           echo "version=$V" >> $GITHUB_OUTPUT
           echo "drivers=$D" >> $GITHUB_OUTPUT
           echo "fps=$F" >> $GITHUB_OUTPUT
