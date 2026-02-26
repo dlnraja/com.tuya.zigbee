@@ -203,7 +203,9 @@ jobs:
           path: /tmp/last_forum_respond.txt
           key: forum-respond-${{ github.run_number }}
           restore-keys: forum-respond-
-      - name: Auto-respond to device requests
+      # NOTE: forum-respond-requests.js REMOVED — caused per-post spam.
+      # All forum replies now go through forum-responder.js (batched ONE reply/topic).
+      - name: "Forum Respond (batched)"
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -212,8 +214,10 @@ jobs:
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          LAST_RESPOND_FILE: /tmp/last_forum_respond.txt
-        run: node .github/scripts/forum-respond-requests.js
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+        run: node .github/scripts/forum-responder.js
 
   gmail-diagnostics:
     name: "Gmail Diagnostics"
