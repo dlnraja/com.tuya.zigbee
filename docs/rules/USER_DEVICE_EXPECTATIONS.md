@@ -5,19 +5,18 @@
 
 [![Version](https://img.shields.io/badge/version-v5.11.25-blue)]()
 [![Drivers](https://img.shields.io/badge/drivers-138-brightgreen)]()
-[![Fingerprints](https://img.shields.io/badge/fingerprints-5,646+-green)]()
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,592+-green)]()
 [![Users Tracked](https://img.shields.io/badge/users%20tracked-27+-purple)]()
-[![Last Updated](https://img.shields.io/badge/updated-2026-02-25-lightgrey)]()
+[![Last Updated](https://img.shields.io/badge/updated-2026-02-26-lightgrey)]()
 
-> **v5.11.25** | **5,646+ fingerprints** | **138 drivers** | **1,725 flow cards** | Updated 2026-02-25
+> **v5.11.25** | **4,592+ fingerprints** | **138 drivers** | **1,725 flow cards** | Updated 2026-02-26
 
 ---
 
 ## Fingerprint Verification
 
-**Verified**: 71 fingerprints from user reports found in drivers (re-verified 2026-02-25)
-**Missing** (1): `_TZE200_seq9cm6u` (Z2M source only, no productId available — cannot map to driver)
-**Previously listed as missing but NOW FOUND** (16): `_TZE200_jt50ea5d` (valve_irrigation), `_TZ3210_jaap6jeb` (bulb_rgbw), `_TZE284_g1enhdsi` (switch_wall_6gang), `_TZ3000_qamj2vnn` (switch_1gang), `_TZ3000_tw4ztbp4` (switch_1gang), `_TZ3000_avotanj3` (switch_3gang), `_TZ3290_7v1k4vuf` (ir_blaster), `_TZ3290_rlkmy85q` (ir_blaster), `_TZ3290_jxvzqatw` (ir_blaster), `_TZ3290_lypnqvle` (ir_blaster), `_TZ3290_nba3knps` (ir_blaster), `_TZ3290_yac64inu` (ir_blaster), `_TZE204_2jnoy8dj` (fan_controller), `_TZ3210_iymfxdis` (switch_4gang), `_TZ3002_xkxgfxsg` (switch_1gang), `_TZ3002_tlsvxhxc` (switch_2gang)
+**Verified**: 74 fingerprints from user reports found in drivers
+**Missing** (1): `_TZE200_seq9cm6u`
 
 ---
 
@@ -155,7 +154,7 @@
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.25** | Universal Tuya Zigbee v5.11.25 fixes a valve driver issue and updates the README. |
+| **v5.11.25** | Universal Tuya Zigbee v5.11.25 introduces enhanced automation workflows, improved forum scanning,... |
 | **v5.11.24** | Universal Tuya Zigbee v5.11.24 introduces core fixes, enhanced automation, and updated device fin... |
 | **v5.11.23** | Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum re... |
 | **v5.11.22** | Universal Tuya Zigbee v5.11.22 introduces enhanced forum responsiveness, improved workflow resili... |
@@ -172,6 +171,15 @@
 
 <!-- NIGHTLY_START — Preserved from nightly-processor.js -->
 
+## Nightly Auto-Scan (2026-02-26)
+| User | Fingerprint(s) | Source | Date |
+|------|---------------|--------|------|
+| JJ10 | `_TZE200_crq3r3la`, `_TZE200_gkfbdvyx` | Forum #140352 post #1481 | Auto-scanned 2026-02-26 |
+| 7Hills | `_TZE204_clrdrnya` | Forum #140352 post #1482 | Auto-scanned 2026-02-26 |
+| dmz-86 | `_TZE204_clrdrnya` | JohanBendz/com.tuya.zigbee#1142 | Auto-scanned 2026-02-26 |
+
+
+
 ## Nightly Auto-Scan (2026-02-25)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
@@ -181,11 +189,13 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-24)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | FrankP | `_TZ3000_itb0omhv` | Forum #140352 post #1477 | Auto-scanned 2026-02-24 |
 | Domingoso | `_TZE200_xlppj4f5` | dlnraja/com.tuya.zigbee#135 | Auto-scanned 2026-02-24 |
+
 
 
 
@@ -210,10 +220,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-22)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Slawek_Pe | `_TZ3210_xzhnra8x` | Forum #140352 post #1467 | Auto-scanned 2026-02-22 |
+
 
 
 
@@ -223,6 +235,7 @@
 |------|---------------|--------|------|
 | ManuelKugler | `_TZE284_aao3yzhs` | Forum #140352 post #1465 | Auto-scanned 2026-02-21 |
 | eeckelaertyannick | `_TZE200_8ygsuhe1` | JohanBendz/com.tuya.zigbee#1229 | Auto-scanned 2026-02-21 |
+
 
 
 
@@ -263,6 +276,9 @@
 
 <!-- NIGHTLY_END -->
 
+
+<!-- NIGHTLY_END -->
+
 ---
 
 ## Auto-Discovered Fingerprints
@@ -291,6 +307,7 @@
 
 
 
+
 ## Auto-discovered from GitHub (2026-02-25)
 
 | Fingerprint | Source | Type |
@@ -312,6 +329,9 @@
 | _TZ3002_xkxgfxsg | dlnraja/com.tuya.zigbee#136 | device_request |
 | _TZ3002_tlsvxhxc | dlnraja/com.tuya.zigbee#136 | device_request |
 | _TZE200_seq9cm6u | dlnraja/com.tuya.zigbee#136 | device_request |
+
+<!-- AUTODISCOVERED_END -->
+
 
 <!-- AUTODISCOVERED_END -->
 
@@ -343,4 +363,4 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 
 ---
 
-*Auto-generated on 2026-02-25 from v5.11.25 — 5,646+ fingerprints across 138 drivers*
+*Auto-generated on 2026-02-26 from v5.11.25 — 4,592+ fingerprints across 138 drivers*

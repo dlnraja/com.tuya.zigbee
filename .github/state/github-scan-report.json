@@ -1,33 +1,131 @@
 {
-  "timestamp": "2026-02-25T14:32:57.781Z",
-  "appVersion": "5.11.24",
+  "timestamp": "2026-02-26T03:15:29.310Z",
+  "appVersion": "5.11.25",
   "findings": {
     "issues": [
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 137,
+        "title": "Plug Energy Monitor, wrong voltage",
+        "user": "Lalla80111",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3210_w0qqde0g",
+            "drivers": [
+              "plug_energy_monitor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/137",
+        "state": "closed",
+        "imageAnalysis": null
+      },
       {
         "repo": "dlnraja/com.tuya.zigbee",
         "number": 136,
         "title": "[Auto] 17 new fingerprints from community (2026-02)",
         "user": "github-actions[bot]",
         "newFPs": [
-          "_TZE200_jt50ea5d",
-          "_TZ3210_jaap6jeb",
-          "_TZE284_g1enhdsi",
-          "_TZ3000_qamj2vnn",
-          "_TZ3000_tw4ztbp4",
-          "_TZ3000_avotanj3",
-          "_TZ3290_7v1k4vuf",
-          "_TZ3290_rlkmy85q",
-          "_TZ3290_jxvzqatw",
-          "_TZ3290_lypnqvle",
-          "_TZ3290_nba3knps",
-          "_TZ3290_yac64inu",
-          "_TZE204_2jnoy8dj",
-          "_TZ3210_iymfxdis",
-          "_TZ3002_xkxgfxsg",
-          "_TZ3002_tlsvxhxc",
           "_TZE200_seq9cm6u"
         ],
         "existingFPs": [
+          {
+            "fp": "_TZE200_jt50ea5d",
+            "drivers": [
+              "valve_irrigation"
+            ]
+          },
+          {
+            "fp": "_TZ3210_jaap6jeb",
+            "drivers": [
+              "bulb_rgbw"
+            ]
+          },
+          {
+            "fp": "_TZE284_g1enhdsi",
+            "drivers": [
+              "switch_wall_6gang"
+            ]
+          },
+          {
+            "fp": "_TZ3000_qamj2vnn",
+            "drivers": [
+              "switch_1gang"
+            ]
+          },
+          {
+            "fp": "_TZ3000_tw4ztbp4",
+            "drivers": [
+              "switch_1gang"
+            ]
+          },
+          {
+            "fp": "_TZ3000_avotanj3",
+            "drivers": [
+              "switch_3gang"
+            ]
+          },
+          {
+            "fp": "_TZ3290_7v1k4vuf",
+            "drivers": [
+              "ir_blaster"
+            ]
+          },
+          {
+            "fp": "_TZ3290_rlkmy85q",
+            "drivers": [
+              "ir_blaster"
+            ]
+          },
+          {
+            "fp": "_TZ3290_jxvzqatw",
+            "drivers": [
+              "ir_blaster"
+            ]
+          },
+          {
+            "fp": "_TZ3290_lypnqvle",
+            "drivers": [
+              "ir_blaster"
+            ]
+          },
+          {
+            "fp": "_TZ3290_nba3knps",
+            "drivers": [
+              "ir_blaster"
+            ]
+          },
+          {
+            "fp": "_TZ3290_yac64inu",
+            "drivers": [
+              "ir_blaster"
+            ]
+          },
+          {
+            "fp": "_TZE204_2jnoy8dj",
+            "drivers": [
+              "fan_controller"
+            ]
+          },
+          {
+            "fp": "_TZ3210_iymfxdis",
+            "drivers": [
+              "switch_4gang"
+            ]
+          },
+          {
+            "fp": "_TZ3002_xkxgfxsg",
+            "drivers": [
+              "switch_1gang"
+            ]
+          },
+          {
+            "fp": "_TZ3002_tlsvxhxc",
+            "drivers": [
+              "switch_2gang"
+            ]
+          },
           {
             "fp": "_TZE200_5zbp6j0u",
             "drivers": [
@@ -51,14 +149,12 @@
           {
             "fp": "_TZE200_4vobcgd3",
             "drivers": [
-              "climate_sensor",
               "curtain_motor"
             ]
           },
           {
             "fp": "_TZE200_nogaemzt",
             "drivers": [
-              "climate_sensor",
               "curtain_motor",
               "curtain_motor_tilt"
             ]
@@ -73,7 +169,6 @@
           {
             "fp": "_TZE200_pk0sfzvr",
             "drivers": [
-              "climate_sensor",
               "curtain_motor"
             ]
           },
@@ -212,7 +307,6 @@
           {
             "fp": "_TZE284_vuwtqx0t",
             "drivers": [
-              "climate_sensor",
               "water_valve_smart"
             ]
           },
@@ -228,10 +322,6 @@
               "climate_sensor",
               "contact_sensor",
               "motion_sensor",
-              "switch_1gang",
-              "switch_2gang",
-              "switch_3gang",
-              "switch_4gang",
               "water_leak_sensor"
             ]
           },
@@ -250,32 +340,25 @@
           {
             "fp": "_TZ3000_npzfdcof",
             "drivers": [
-              "climate_sensor",
-              "switch_1gang"
+              "climate_sensor"
             ]
           },
           {
             "fp": "_TZ3000_5ng23zjs",
             "drivers": [
-              "climate_sensor",
-              "switch_1gang"
+              "climate_sensor"
             ]
           },
           {
             "fp": "_TZ3000_rmjr4ufz",
             "drivers": [
-              "climate_sensor",
-              "switch_1gang"
+              "climate_sensor"
             ]
           },
           {
             "fp": "_TZ3000_v7gnj3ad",
             "drivers": [
-              "climate_sensor",
-              "switch_1gang",
-              "switch_2gang",
-              "switch_3gang",
-              "switch_4gang"
+              "climate_sensor"
             ]
           },
           {
@@ -293,8 +376,7 @@
           {
             "fp": "_TZ3000_mx3vgyea",
             "drivers": [
-              "climate_sensor",
-              "switch_1gang"
+              "climate_sensor"
             ]
           },
           {
@@ -368,7 +450,6 @@
           {
             "fp": "_TZE204_1fuxihti",
             "drivers": [
-              "climate_sensor",
               "curtain_motor"
             ]
           },
@@ -405,7 +486,6 @@
           {
             "fp": "_TZE204_yrugsphv",
             "drivers": [
-              "climate_sensor",
               "curtain_motor"
             ]
           },
@@ -487,97 +567,20 @@
         "imageAnalysis": null
       },
       {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 135,
-        "title": "Device Request - _TZE200_xlppj4f5- TS0601 - Immax Neo smart water timer",
-        "user": "Domingoso",
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1142,
+        "title": "Device Request - Wenzhi Smart Human Presence Sensor & Relay  - _TZE204_clrdrnya / WZ-235-ZB-RL TS0601",
+        "user": "dmz-86",
         "newFPs": [],
         "existingFPs": [
           {
-            "fp": "_TZE200_xlppj4f5",
+            "fp": "_TZE204_clrdrnya",
             "drivers": [
-              "climate_sensor"
-            ]
-          },
-          {
-            "fp": "_TZ3210_0jxeoadc",
-            "drivers": [
-              "contact_sensor",
-              "valve_irrigation"
-            ]
-          },
-          {
-            "fp": "_TZE200_5zbp6j0u",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_nkoabg8w",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_xuzcvlku",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_4vobcgd3",
-            "drivers": [
-              "climate_sensor",
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_nogaemzt",
-            "drivers": [
-              "climate_sensor",
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_r0jdjrvi",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_pk0sfzvr",
-            "drivers": [
-              "climate_sensor",
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_fdtjuw7u",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_zpzndjez",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_wmcdj3aq",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt",
-              "shutter_roller_controller"
+              "motion_sensor_radar_mmwave"
             ]
           }
         ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/135",
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1142",
         "state": "open",
         "imageAnalysis": null
       },
@@ -592,11 +595,7 @@
             "fp": "_TZ3000_fdxihpp7",
             "drivers": [
               "climate_sensor",
-              "plug_energy_monitor",
-              "switch_1gang",
-              "switch_2gang",
-              "switch_3gang",
-              "switch_4gang"
+              "plug_energy_monitor"
             ]
           },
           {
@@ -608,7 +607,7 @@
         ],
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/963",
         "state": "open",
-        "imageAnalysis": "```json\n{\n  \"name\": \"Mini Smart Switch\",\n  \"wireless_type\": \"Zigbee 3.0\",\n  \"input\": {\n    \"voltage\": \"AC 100-240V\",\n    \"frequency\": \"50/60Hz\",\n    \"current\": \"16A Max\"\n  },\n  \"output\": {\n    \"voltage\": \"AC 100-240V\",\n    \"frequency\": \"50/60Hz\",\n    \"current\": \"16A Max\"\n  },\n  \"certifications\": [\n    \"CE\",\n    \"FCC\",\n    \"RoHS\"\n  ],\n  \"terminals\": {\n    \"L-out\": \"\",\n    \"L-in\": \"\",\n    \"N-in\": \"\",\n    \"N-out\": \"\",\n    \"S1\": \"\",\n    \"S2\": \"\"\n  }\n}\n```"
+        "imageAnalysis": "```json\n{\n  \"name\": \"Mini Smart Switch\",\n  \"wireless_type\": \"Zigbee 3.0\",\n  \"input\": \"AC 100-240V 50/60Hz 16A Max\",\n  \"output\": \"AC 100-240V 50/60Hz 16A Max\",\n  \"certifications\": [\"CE\", \"FCC\", \"RoHS\"],\n  \"terminals\": {\n    \"l_out\": true,\n    \"l_in\": true,\n    \"n_in\": true,\n    \"n_out\": true,\n    \"s1\": true,\n    \"s2\": true\n  }\n}\n```"
       }
     ],
     "prs": [
@@ -798,5 +797,5 @@
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "Fingerprints found: `_TZE200_jt50ea5d`, `_TZ3210_jaap6jeb`, `_TZE284_g1enhdsi`, `_TZ3000_qamj2vnn`, `_TZ3000_tw4ztbp4`, `_TZ3000_avotanj3`, `_TZ3290_7v1k4vuf`, `_TZ3290_rlkmy85q`, `_TZ3290_jxvzqatw`, `_TZ3290_lypnqvle`, `_TZ3290_nba3knps`, `_TZ3290_yac64inu`, `_TZE204_2jnoy8dj`, `_TZ3210_iymfxdis`, `_TZ3002_xkxgfxsg`, `_TZ3002_tlsvxhxc`, `_TZE200_seq9cm6u`, `_TZE200_5zbp6j0u`, `_TZE200_nkoabg8w`, `_TZE200_xuzcvlku`, `_TZE200_4vobcgd3`, `_TZE200_nogaemzt`, `_TZE200_r0jdjrvi`, `_TZE200_pk0sfzvr`, `_TZE200_fdtjuw7u`, `_TZE200_zpzndjez`, `_TZE200_wmcdj3aq`, `_TZ3210_emqmwtym`, `_TZ3210_ncw88jfq`, `_TZ3210_up3pngle`, `_TZ3210_jowhpxop`, `_TZ3210_3ulg9kpo`, `_TZ3210_ph1joc22`, `_TZ3210_sgb0xhwn`, `_TZ3210_r0xgkft5`, `_TZ3210_umi6vbsz`, `_TZ3210_p9ao60da`, `_TZE284_bjzrowv2`, `_TZE284_gaj531w3`, `_TZE284_udank5zs`, `_TZE284_b7kbnl6q`, `_TZE284_6ocnqlhn`, `_TZE284_0ints6wl`, `_TZE284_yzr43ayq`, `_TZE284_8se38w3c`, `_TZE284_vuwtqx0t`, `_TZE284_ajlu4cud`, `_TZ3000_hktqahrq`, `_TZ3000_q6a3tepg`, `_TZ3000_skueekg3`, `_TZ3000_npzfdcof`, `_TZ3000_5ng23zjs`, `_TZ3000_rmjr4ufz`, `_TZ3000_v7gnj3ad`, `_TZ3000_3a9beq8a`, `_TZ3000_ark8nv4y`, `_TZ3000_mx3vgyea`, `_TZ3290_7v1k4vufotpowp9z`, `_TZ3290_rlkmy85q4pzoxobl`, `_TZ3290_jxvzqatwgsaqzx1u`, `_TZ3290_lypnqvlem5eq1ree`, `_TZ3290_uc8lwbi2`, `_TZ3290_nba3knpsarkawgnt`, `_TZ3290_8xzb2ghn`, `_TZ3290_s6ezpa3j`, `_TZ3290_yac64inudpovoaba`, `_TZ3290_ixd9mvv4`, `_TZE204_guvc7pdy`, `_TZE204_1fuxihti`, `_TZE204_57hjqelq`, `_TZE204_vvvtcehj`, `_TZE204_m1wl5fvq`, `_TZE204_dpqsvdbi`, `_TZE204_bjzrowv2`, `_TZE204_yrugsphv`, `_TZE204_nladmfvf`, `_TZE204_lh3arisb`, `_TZ3002_l8bfzlcd`, `_TZ3002_1s0vfmtv`, `_TZ3002_gdwja9a7`, `_TZ3002_u7d3nes3`, `_TZ3002_9vcekkp1`, `_TZ3002_m3pafcnk`, `_TZ3002_aewsvjcu`, `_TZ3002_phu8ygaw`, `_TZ3002_uu4uircb`, `_TZ3002_yptomml1`, `_TZE200_xlppj4f5`, `_TZ3210_0jxeoadc`, `_TZ3000_fdxihpp7`, `_TZE200_rhgsbacq`, `_TZ3000_ysdv91bk`, `_TZ3000_blhvsaqf`, `_TZE200_3p5ydos3`, `_TZE204_n9ctkb6j`, `_TZ3210_j4pdtz9v`, `_TZ3210_eejm8dcr`, `_TZ3002_vaq2bfcu`, `_TZ3000_ww6drja5`, `_TZE200_kb5noeto`, `_TZ3000_c8zfad4a`, `_TZ3000_c8ozah8n`, `_TZ3000_kfu8zapd`, `_TZE204_lawxy9e2`, `_TZE204_nklqjk62`\nProduct IDs: `TS0601`, `TS0001`, `TS0505B`, `TS0202`"
+  "aiSummary": "Fingerprints found: `_TZ3210_w0qqde0g`, `_TZE200_seq9cm6u`, `_TZE200_jt50ea5d`, `_TZ3210_jaap6jeb`, `_TZE284_g1enhdsi`, `_TZ3000_qamj2vnn`, `_TZ3000_tw4ztbp4`, `_TZ3000_avotanj3`, `_TZ3290_7v1k4vuf`, `_TZ3290_rlkmy85q`, `_TZ3290_jxvzqatw`, `_TZ3290_lypnqvle`, `_TZ3290_nba3knps`, `_TZ3290_yac64inu`, `_TZE204_2jnoy8dj`, `_TZ3210_iymfxdis`, `_TZ3002_xkxgfxsg`, `_TZ3002_tlsvxhxc`, `_TZE200_5zbp6j0u`, `_TZE200_nkoabg8w`, `_TZE200_xuzcvlku`, `_TZE200_4vobcgd3`, `_TZE200_nogaemzt`, `_TZE200_r0jdjrvi`, `_TZE200_pk0sfzvr`, `_TZE200_fdtjuw7u`, `_TZE200_zpzndjez`, `_TZE200_wmcdj3aq`, `_TZ3210_emqmwtym`, `_TZ3210_ncw88jfq`, `_TZ3210_up3pngle`, `_TZ3210_jowhpxop`, `_TZ3210_3ulg9kpo`, `_TZ3210_ph1joc22`, `_TZ3210_sgb0xhwn`, `_TZ3210_r0xgkft5`, `_TZ3210_umi6vbsz`, `_TZ3210_p9ao60da`, `_TZE284_bjzrowv2`, `_TZE284_gaj531w3`, `_TZE284_udank5zs`, `_TZE284_b7kbnl6q`, `_TZE284_6ocnqlhn`, `_TZE284_0ints6wl`, `_TZE284_yzr43ayq`, `_TZE284_8se38w3c`, `_TZE284_vuwtqx0t`, `_TZE284_ajlu4cud`, `_TZ3000_hktqahrq`, `_TZ3000_q6a3tepg`, `_TZ3000_skueekg3`, `_TZ3000_npzfdcof`, `_TZ3000_5ng23zjs`, `_TZ3000_rmjr4ufz`, `_TZ3000_v7gnj3ad`, `_TZ3000_3a9beq8a`, `_TZ3000_ark8nv4y`, `_TZ3000_mx3vgyea`, `_TZ3290_7v1k4vufotpowp9z`, `_TZ3290_rlkmy85q4pzoxobl`, `_TZ3290_jxvzqatwgsaqzx1u`, `_TZ3290_lypnqvlem5eq1ree`, `_TZ3290_uc8lwbi2`, `_TZ3290_nba3knpsarkawgnt`, `_TZ3290_8xzb2ghn`, `_TZ3290_s6ezpa3j`, `_TZ3290_yac64inudpovoaba`, `_TZ3290_ixd9mvv4`, `_TZE204_guvc7pdy`, `_TZE204_1fuxihti`, `_TZE204_57hjqelq`, `_TZE204_vvvtcehj`, `_TZE204_m1wl5fvq`, `_TZE204_dpqsvdbi`, `_TZE204_bjzrowv2`, `_TZE204_yrugsphv`, `_TZE204_nladmfvf`, `_TZE204_lh3arisb`, `_TZ3002_l8bfzlcd`, `_TZ3002_1s0vfmtv`, `_TZ3002_gdwja9a7`, `_TZ3002_u7d3nes3`, `_TZ3002_9vcekkp1`, `_TZ3002_m3pafcnk`, `_TZ3002_aewsvjcu`, `_TZ3002_phu8ygaw`, `_TZ3002_uu4uircb`, `_TZ3002_yptomml1`, `_TZE204_clrdrnya`, `_TZ3000_fdxihpp7`, `_TZE200_rhgsbacq`, `_TZ3000_ysdv91bk`, `_TZ3000_blhvsaqf`, `_TZE200_3p5ydos3`, `_TZE204_n9ctkb6j`, `_TZ3210_j4pdtz9v`, `_TZ3210_eejm8dcr`, `_TZ3002_vaq2bfcu`, `_TZ3000_ww6drja5`, `_TZE200_kb5noeto`, `_TZ3000_c8zfad4a`, `_TZ3000_c8ozah8n`, `_TZ3000_kfu8zapd`, `_TZE204_lawxy9e2`, `_TZE204_nklqjk62`\nProduct IDs: `TS0601`, `TS0001`, `TS0505B`, `TS0202`"
 }

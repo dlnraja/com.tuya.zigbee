@@ -1,47 +1,42 @@
 {
-  "timestamp": "2026-02-25T14:34:02.957Z",
-  "appVersion": "5.11.24",
-  "forum": 1,
+  "timestamp": "2026-02-26T03:16:57.645Z",
+  "appVersion": "5.11.25",
+  "forum": 2,
   "github": 1,
   "diagnostics": 7,
   "forumDetails": [
     {
       "topic": 140352,
-      "post": 1479,
-      "user": "Jocke_Wallen",
+      "post": 1481,
+      "user": "JJ10",
       "fps": [
-        "_TZ3000_u3nv1jwk"
+        "_TZE200_crq3r3la",
+        "_TZE200_gkfbdvyx"
       ],
-      "reply": "Hi @Jocke_Wallen,\n\nThank you for providing the details about your 4-button remote controller. Based on the fingerprint lookup, we have identified that your device is recognized with the following deta",
+      "reply": "Hello @JJ10,\n\nThank you for sharing the details of your presence sensors. Based on the fingerprints found, both sensors are supported by the **presence_sensor_radar** driver. Here’s a breakdown of the",
+      "model": "gh-gpt-4o-mini"
+    },
+    {
+      "topic": 140352,
+      "post": 1482,
+      "user": "7Hills",
+      "fps": [
+        "_TZE204_clrdrnya"
+      ],
+      "reply": "Hello @7Hills,\n\nThank you for your detailed report regarding the Wenzhi Smart Human Presence Sensor (Model: WZ-235-ZB-RL). Based on the fingerprint data you provided, your device is identified with th",
       "model": "gh-gpt-4o-mini"
     }
   ],
   "githubDetails": [
     {
-      "repo": "dlnraja/com.tuya.zigbee",
-      "number": 136,
-      "user": "github-actions[bot]",
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1142,
+      "user": "dmz-86",
       "fps": [
-        "_TZE200_jt50ea5d",
-        "_TZ3210_jaap6jeb",
-        "_TZE284_g1enhdsi",
-        "_TZ3000_qamj2vnn",
-        "_TZ3000_tw4ztbp4",
-        "_TZ3000_avotanj3",
-        "_TZ3290_7v1k4vuf",
-        "_TZ3290_rlkmy85q",
-        "_TZ3290_jxvzqatw",
-        "_TZ3290_lypnqvle",
-        "_TZ3290_nba3knps",
-        "_TZ3290_yac64inu",
-        "_TZE204_2jnoy8dj",
-        "_TZ3210_iymfxdis",
-        "_TZ3002_xkxgfxsg",
-        "_TZ3002_tlsvxhxc",
-        "_TZE200_seq9cm6u"
+        "_TZE204_clrdrnya"
       ],
-      "title": "[Auto] 17 new fingerprints from community (2026-02)",
-      "response": "### Issue #136 Response\n\nThank you for your submission regarding the new fingerprints found in the community sync. Unfortunately, none of the fingerprints listed in your issue are currently supported by our drivers. \n\nTo assist us in identifying the devices and potentially adding support, we require",
+      "title": "Device Request - Wenzhi Smart Human Presence Sensor & Relay  - _TZE204_clrdrnya / WZ-235-ZB-RL TS0601",
+      "response": "Hello @dmz-86,\n\nThank you for your request regarding the **Wenzhi Smart Human Presence Sensor & Relay** (_TZE204_clrdrnya / WZ-235-ZB-RL, TS0601). Based on the provided fingerprint data, this device is supported by the **motion_sensor_radar_mmwave** driver.\n\n### Pairing Instructions\nTo pair your dev",
       "model": "gh-gpt-4o-mini"
     }
   ]

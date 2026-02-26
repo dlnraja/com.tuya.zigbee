@@ -102,7 +102,7 @@
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.25** | Universal Tuya Zigbee app v5.11.25 introduces enhanced device support with 10 new device interviews, resolves 531 fin... |
+| **v5.11.25** | Universal Tuya Zigbee v5.11.25 introduces enhanced automation workflows, improved forum scanning, and resolves finger... |
 | **v5.11.24** | Universal Tuya Zigbee v5.11.24 introduces core fixes, enhanced automation, and updated device fingerprints, ensuring ... |
 | **v5.11.23** | Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum responsiveness, ensuri... |
 | **v5.11.22** | Universal Tuya Zigbee v5.11.22 introduces enhanced forum responsiveness, improved workflow resilience, and updates to... |
