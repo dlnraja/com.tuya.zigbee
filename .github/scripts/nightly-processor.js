@@ -105,7 +105,7 @@ async function processForumPosts(state,idx,pidx,auth,appVersion,dryRun){
       // Build context for AI
       const hasFPs=fps.mfr.length>0||fps.pid.length>0;
       const hasImages=imgs.length>0;
-      const sysPrompt='You are the bot for Universal Tuya Zigbee v'+appVersion+' (com.dlnraja.tuya.zigbee) on Homey Community forum. Analyze this forum post and write a helpful, detailed reply. Include:\n- If fingerprints found: check support status and explain which driver\n- If images: incorporate image analysis\n- If links to Z2M/ZHA/GitHub: cross-reference\n- If device interview: analyze clusters and suggest driver\n- If question/bug report: provide troubleshooting steps\n- If not device-related or just a thank you: return NULL\nUse Discourse markdown. Max 400 words. End with:\n---\n*Bot Universal Tuya Zigbee v'+appVersion+' — [Install test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [GitHub](https://github.com/dlnraja/com.tuya.zigbee/issues)*';
+      const sysPrompt='You are the maintainer of Universal Tuya Zigbee v'+appVersion+' (com.dlnraja.tuya.zigbee) on Homey. Write as a developer helping users. Include:\n- If fingerprints found: check support status and explain which driver\n- If images: incorporate image analysis\n- If links to Z2M/ZHA/GitHub: cross-reference\n- If device interview: analyze clusters and suggest driver\n- If question/bug report: provide troubleshooting steps\n- If not device-related or just a thank you: return NULL\nUse Discourse markdown. Max 400 words. NEVER mention bot/automated. No signature or footer.';
       const userMsg='Post #'+post.post_number+' by @'+post.username+':\n'+text+(imageAnalysis?'\n\nImage analysis: '+imageAnalysis:'')+(linkContext?'\n'+linkContext:'')+'\n\nFingerprint lookup:\n'+JSON.stringify(fpResults,null,2)+'\n\nGenerate reply or NULL:';
       let reply=null,model='template';
       if(hasFPs){
@@ -119,12 +119,11 @@ async function processForumPosts(state,idx,pidx,auth,appVersion,dryRun){
           reply='**Fingerprint check** (v'+appVersion+'):\n';
           if(sup.length)reply+='✅ Supported: '+sup.join(', ')+'\n';
           if(mis.length)reply+='❓ Not found: '+mis.join(', ')+' — please share a [device interview](https://tools.developer.homey.app/tools/zigbee).\n';
-          reply+='\n---\n*Bot Universal Tuya Zigbee v'+appVersion+'*';
         }
       }
       if(!reply){maxP=Math.max(maxP,post.post_number);continue}
       results.push({topic:tid,post:post.post_number,user:post.username,fps:fps.mfr,reply:reply.substring(0,200),model});
-      // v5.11.27: Nightly does DATA COLLECTION only. Forum posting handled by forum-responder.js (anti-spam)
+      // v5.11.28: Nightly does DATA COLLECTION only. Forum posting handled by forum-responder.js
       console.log('    [SCAN] #'+post.post_number+' ('+model+'): '+reply.substring(0,100)+'...');
       maxP=Math.max(maxP,post.post_number);
     }
@@ -168,7 +167,7 @@ async function processGitHub(state,idx,pidx,appVersion,dryRun){
       }
       // Check for interview data in body
       const hasInterview=(iss.body||'').includes('zclNode')||(iss.body||'').includes('clusters')||(iss.body||'').includes('endpoint');
-      const sysPrompt='You are the maintainer bot for Universal Tuya Zigbee v'+appVersion+'. Respond to this GitHub issue with a detailed, technical explanation:\n- If fingerprint supported: tell exactly which driver handles it, how to pair\n- If not supported: explain what info is needed (device interview from tools.developer.homey.app)\n- If interview data present: analyze clusters, endpoints, identify device type and suggest driver\n- If image present: incorporate image analysis\n- Cross-reference with Z2M/ZHA if links provided\nUse GitHub markdown. Max 400 words. End with:\n---\n*Bot Universal Tuya Zigbee v'+appVersion+'*';
+      const sysPrompt='You are the maintainer of Universal Tuya Zigbee v'+appVersion+'. Respond to this GitHub issue with a detailed, technical explanation:\n- If fingerprint supported: tell exactly which driver handles it, how to pair\n- If not supported: explain what info is needed (device interview from tools.developer.homey.app)\n- If interview data present: analyze clusters, endpoints, identify device type and suggest driver\n- If image present: incorporate image analysis\n- Cross-reference with Z2M/ZHA if links provided\nUse GitHub markdown. Max 400 words. NEVER mention bot/automated. No signature or footer.';
       const userMsg='Issue #'+iss.number+' by @'+(iss.user?.login||'?')+':\n'+text+imageInfo+linkInfo+(hasInterview?'\n[Contains device interview data]':'')+'\n\nFingerprint lookup:\n'+JSON.stringify(fpResults,null,2);
       let reply=null,model='template';
       const ai=await callAI(userMsg,sysPrompt);
@@ -180,7 +179,6 @@ async function processGitHub(state,idx,pidx,appVersion,dryRun){
           reply='## Fingerprint Check (v'+appVersion+')\n';
           if(sup.length)reply+='**Supported:** '+sup.join(', ')+'\n';
           if(mis.length)reply+='**Not found:** '+mis.join(', ')+' — please provide a [device interview](https://tools.developer.homey.app/tools/zigbee).\n';
-          reply+='\n---\n*Bot Universal Tuya Zigbee v'+appVersion+'*';
         }
       }
       if(!reply)continue;
@@ -223,7 +221,6 @@ async function processGitHub(state,idx,pidx,appVersion,dryRun){
           prReply='## PR Fingerprint Review (v'+appVersion+')\n';
           if(sup.length)prReply+='✅ Known: '+sup.join(', ')+'\n';
           if(mis.length)prReply+='❓ Unknown: '+mis.join(', ')+'\n';
-          prReply+='\n---\n*Bot Universal Tuya Zigbee v'+appVersion+'*';
         }
       }
       if(!prReply){processed.add(key);continue}

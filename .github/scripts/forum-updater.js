@@ -36,7 +36,7 @@ async function main(){
 
   if(!Object.keys(reports).length){console.log('No scanner reports found, nothing to post');return}
 
-  const sysPrompt='You are posting a status update on the Homey Community forum topic #140352 for the Universal Tuya Zigbee app (v'+appVersion+'). Write a coherent, professional forum post summarizing the latest automated scan results. Include: new fingerprints found from Z2M/ZHA/forks, GitHub activity summary, and any devices that need community help (interviews/diagnostics). Use Discourse markdown. Keep it under 400 words. End with the bot signature. Write in English.';
+  const sysPrompt='You are the maintainer of Universal Tuya Zigbee (v'+appVersion+') posting a status update on the Homey Community forum. Write a conversational, developer-style update summarizing scan results. Include: new fingerprints found, GitHub activity, and devices needing community help. Use Discourse markdown. Keep under 400 words. NEVER mention bot/automated. No signature/footer. Write in English.';
   const aiRes=await callAI(JSON.stringify(reports,null,2),sysPrompt);
   const aiPost=aiRes?aiRes.text:null;
 
@@ -46,7 +46,7 @@ async function main(){
       (reports['github-scan-report'].findings?.forkFPs?.length||0)+' new FPs from forks\n\n':'')+
     (reports['enrichment-report']?'**Enrichment**: '+
       (reports['enrichment-report'].totalNew||0)+' new fingerprints found from Z2M/ZHA/Blakadder\n\n':'')+
-    '---\n*Bot Universal Tuya Zigbee (v'+appVersion+') - [Install test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [GitHub](https://github.com/dlnraja/com.tuya.zigbee/issues)*';
+    'Let me know if you have questions about any of these changes.';
 
   const content=aiPost||fallback;
   console.log('Post content:',content.length,'chars');
