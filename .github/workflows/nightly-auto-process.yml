@@ -106,43 +106,49 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node .github/scripts/generate-ai-changelog.js
 
-      - name: Auto-Publish Draft to Test (Node)
+      # ===== DRAFT → TEST (Puppeteer + API fallback) =====
+      - name: Install Puppeteer
+        if: always()
+        run: npm install puppeteer --no-save
+
+      - name: "Tier 1: Promote via Browser (Puppeteer)"
+        id: puppeteer
         if: always()
         continue-on-error: true
+        timeout-minutes: 5
         env:
-          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
-        run: node .github/scripts/auto-publish-draft.js
+        run: node .github/scripts/auto-promote-puppeteer.js
 
-      - name: Draft to Test (curl fallback)
-        if: always()
+      - name: "Tier 2: Promote via API (fallback)"
+        id: api
+        if: always() && steps.puppeteer.outcome != 'success'
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/auto-publish-draft.js
+
+      - name: "Tier 3: Verify retry (Puppeteer)"
+        if: always() && steps.puppeteer.outcome != 'success' && steps.api.outcome != 'success'
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
         run: |
-          APP=com.dlnraja.tuya.zigbee
-          VER=$(node -p "require('./app.json').version")
-          # Get delegation token
-          DELEG=$(curl -s -X POST -H "Authorization: Bearer $HOMEY_PAT" -H "Content-Type: application/json" \
-            -d '{"audience":"apps"}' https://api.athom.com/delegation/token)
-          TOKEN=$(echo "$DELEG" | node -p "try{JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')).token}catch{''}" 2>/dev/null || echo "")
-          [ -z "$TOKEN" ] && TOKEN="$HOMEY_PAT"
-          # List builds and find draft
-          BUILDS=$(curl -s -H "Authorization: Bearer $TOKEN" "https://apps-api.athom.com/api/v1/app/$APP/build")
-          BUILD_ID=$(echo "$BUILDS" | node -p "try{const b=JSON.parse(require('fs').readFileSync('/dev/stdin','utf8'));const d=(Array.isArray(b)?b:b.builds||b.data||[]).filter(x=>!x.channel||x.channel==='draft').find(x=>x.version==='$VER'||true);d?.id||d?._id||''}catch{''}" 2>/dev/null || echo "")
-          if [ -z "$BUILD_ID" ]; then
-            echo "::warning::No draft build found. Manual: https://tools.developer.homey.app/apps/app/$APP/versions"
-            exit 0
-          fi
-          # Promote
-          CODE=$(curl -s -o /tmp/resp.txt -w "%{http_code}" -X POST \
-            -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
-            -d '{"channel":"test"}' "https://apps-api.athom.com/api/v1/app/$APP/build/$BUILD_ID/channel")
-          echo "Promote $BUILD_ID => HTTP $CODE"
-          [ "$CODE" = "200" ] || [ "$CODE" = "201" ] || [ "$CODE" = "204" ] && echo "SUCCESS" && exit 0
-          echo "::warning::Manual promote needed: https://tools.developer.homey.app/apps/app/$APP/versions"
+          sleep 30
+          node .github/scripts/auto-promote-puppeteer.js
+
+      - name: Upload promote screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightly-promote-screenshots
+          path: screenshots/
+          retention-days: 7
+          if-no-files-found: ignore
 
       - name: Commit state and docs
         if: always()
