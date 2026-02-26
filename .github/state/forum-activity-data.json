@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-02-26T08:37:54.395Z",
+  "timestamp": "2026-02-26T20:25:42.194Z",
   "username": "dlnraja",
   "summary": {
-    "postCount": 546,
+    "postCount": 579,
     "topicCount": 1,
     "likes": 64,
-    "likesReceived": 194,
+    "likesReceived": 195,
     "topTopics": [
       {
         "id": 140352,
         "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "posts": 1470
+        "posts": 1509
       },
       {
         "id": 26439,
         "title": "[APP][Pro] Tuya Zigbee App",
-        "posts": 1099
+        "posts": 1102
       }
     ],
     "topReplies": [
@@ -49,13 +49,427 @@
     {
       "id": 140352,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "posts": 1470,
-      "views": 13508,
-      "lastPosted": "2026-02-25T16:08:35.708Z",
+      "posts": 1509,
+      "views": 13557,
+      "lastPosted": "2026-02-26T20:20:53.995Z",
       "slug": "app-pro-universal-tuya-zigbee-device-app-test"
     }
   ],
   "activity": [
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1521,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "@Hartmut_Dunker, thanks for your detailed report regarding the BSEED Zigbee 4 Gang Button Switch (TS0726/_TZ3002_pzao9ls1). I see that the device is currently matched to the switch_4gang driver, which is why you’re experiencing the issue where all four physical buttons toggle together. \nYour suggest&hellip;",
+      "createdAt": "2026-02-26T20:20:53.995Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1520,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Hi Dylan, \nthe virtual buttons from my device (BSEED Zigbee 4 Gang Button Switch - TS0726/_TZ3002_pzao9ls1) still don’t work properly. When I press any one of the virtual buttons all four physical buttons turn on or off. I just checked again with v5.11.25. \nDiag: 9803c61a-aa73-4e3c-99ed-30a5d0c43973 &hellip;",
+      "createdAt": "2026-02-26T19:35:44.602Z",
+      "username": "Hartmut_Dunker"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1519,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Yes I’m trying as experimental because I will have less time for this projet right now.",
+      "createdAt": "2026-02-26T19:01:16.401Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1518,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Ok, them bots ain’t that smart, yet. \nThanks",
+      "createdAt": "2026-02-26T17:16:14.299Z",
+      "username": "Lasse_K"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1517,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "It still doesn’t work.",
+      "createdAt": "2026-02-26T17:00:19.424Z",
+      "username": "7Hills"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1516,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Sorry it’s my bot it reply you \nI will check manually, this night.",
+      "createdAt": "2026-02-26T16:58:00.020Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1515,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Now I’m even more confused. The interview is in the post above this. How come it’s installing as contact sensor if it’s not in your database?",
+      "createdAt": "2026-02-26T16:35:58.317Z",
+      "username": "Lasse_K"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1514,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "It seems that your device with manufacturerName “HOBEIAN” and modelId “ZG-102Z” is not found in our current drivers. To assist you better, please perform a device interview at tools.developer.homey.app and select your device. \nIf you continue to experience issues, consider opening a GitHub issue at g&hellip;",
+      "createdAt": "2026-02-26T16:17:33.794Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1513,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Now I’m confused. In version 5.11.25 it installs as a contact sensor which is fine.  Up to 5.45 everything was working fine, but after that it always installs in reverse. I also have provided interview twice and the last one is a few installments above. Or here’: \n▶ \nSummary",
+      "createdAt": "2026-02-26T15:13:09.581Z",
+      "username": "Lasse_K"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1512,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Update — Universal Tuya Zigbee v5.11.25\nA new update is available on the Test channel. This version brings improvements, bug fixes, and enhanced device support based on community feedback. \n What’s New: \nUniversal Tuya Zigbee v5.11.25 introduces enhanced forum scanning, improved automation workflow&hellip;",
+      "createdAt": "2026-02-26T15:04:42.647Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1511,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Got the remote working: \nUn-installed app, restarted Homey, re-installed and “Voilà” it works!!  \nBig thanks and really good work!!",
+      "createdAt": "2026-02-26T14:59:55.214Z",
+      "username": "Jocke_Wallen"
+    },
+    {
+      "type": 2,
+      "topicId": 140352,
+      "postNum": 1510,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "It seems that your button is not responding to any presses. To assist you better, could you please provide the manufacturerName of the device? This information will help us determine if it is supported by our app. \nAdditionally, please ensure that you are using the latest version of the Universal Tu&hellip;",
+      "createdAt": "2026-02-26T14:58:58.251Z",
+      "username": "Jocke_Wallen"
+    },
+    {
+      "type": 5,
+      "topicId": 146735,
+      "postNum": 184,
+      "title": "[APP] Tuya - Smart Life. Smart Living",
+      "excerpt": "It seems that your devices are not recognized in our driver database. To assist you better, please perform a device interview by visiting tools.developer.homey.app and selecting your device under Zigbee. This will help us gather more information about your devices. \nIf you continue to experience iss&hellip;",
+      "createdAt": "2026-02-26T14:44:23.910Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 146735,
+      "postNum": 183,
+      "title": "[APP] Tuya - Smart Life. Smart Living",
+      "excerpt": "It seems that your device’s fingerprint was not found in our drivers. To assist you better, please perform a device interview by visiting tools.developer.homey.app, selecting your device under Zigbee, and providing the results here. \nIf the issue persists, consider opening a GitHub issue at github.c&hellip;",
+      "createdAt": "2026-02-26T14:43:55.418Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 146735,
+      "postNum": 182,
+      "title": "[APP] Tuya - Smart Life. Smart Living",
+      "excerpt": "It seems that your device fingerprint was not found in our drivers. To assist you better, please perform a device interview at tools.developer.homey.app by selecting your device under Zigbee. This will help us gather more information about your device. \nIf the issue persists, I recommend opening a G&hellip;",
+      "createdAt": "2026-02-26T14:43:35.038Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1510,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "It seems that your button is not responding to any presses. To assist you better, could you please provide the manufacturerName of the device? This information will help us determine if it is supported by our app. \nAdditionally, please ensure that you are using the latest version of the Universal Tu&hellip;",
+      "createdAt": "2026-02-26T14:39:30.883Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 26439,
+      "postNum": 5405,
+      "title": "[APP][Pro] Tuya Zigbee App",
+      "excerpt": "It seems that your Zigbee door sensor from manufacturer _TZ3000_n2egfsli is indeed supported as a “contact_sensor”. To resolve the issue, please try the following steps: \n\nRemove the device from Homey.\nFactory reset the door sensor according to its manual.\nPair the device again, ensuring you select &hellip;",
+      "createdAt": "2026-02-26T14:39:13.891Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1509,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Fingerprints found: _TZ3000_u3nv1jwk \nProduct IDs: TS0044",
+      "createdAt": "2026-02-26T14:39:03.360Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 26439,
+      "postNum": 5404,
+      "title": "[APP][Pro] Tuya Zigbee App",
+      "excerpt": "Hi @darckrie! \nThe device you mentioned is recognized as a Soil Sensor. To pair it correctly, please ensure you select the “Soil Sensor” device type during the pairing process. If you are experiencing issues, try removing the device, performing a factory reset, and then re-pairing it close to Homey. &hellip;",
+      "createdAt": "2026-02-26T14:38:53.976Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1508,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "It seems that your contact sensor is not recognized by our app, as indicated by the empty fingerprint results. To assist you further, please perform a device interview at tools.developer.homey.app and select your device. This will help us gather the necessary information about the clusters and endpo&hellip;",
+      "createdAt": "2026-02-26T14:38:47.446Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1507,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "It appears that your Wenzhi Smart Human Presence Sensor & Relay (model WZ-235-ZB-RL) is paired with the wrong driver. The correct driver for your device, based on the fingerprint, is motion_sensor_radar_mmwave. \nTo resolve the issue with incorrect capabilities being reported, please follow these ste&hellip;",
+      "createdAt": "2026-02-26T14:38:27.046Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 26439,
+      "postNum": 5403,
+      "title": "[APP][Pro] Tuya Zigbee App",
+      "excerpt": "Hi @Sondre_Bakkevold! \nThe device you mentioned, with manufacturer name _TZB210_ngnt8kni and product ID TS0501B, is recognized in our drivers. You should pair it as a “led_controller_dimmable” for proper functionality. \nIf you are experiencing issues, I recommend removing the device from Homey and r&hellip;",
+      "createdAt": "2026-02-26T14:38:13.497Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1506,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "It appears that both of your presence sensors are supported by the app. \n\n\nFor the first sensor with manufacturer name _TZE200_crq3r3la and model ID CK-BL702-MWS-01(7016), please pair it as a “Presence Sensor Radar”. \n\n\nFor the second sensor with manufacturer name _TZE200_gkfbdvyx and model ID TS060&hellip;",
+      "createdAt": "2026-02-26T14:38:05.691Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1505,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "It seems that your button is not responding to any presses. To assist you better, could you please provide a diagnostic report ID along with the manufacturerName of your device? This information will help us identify the issue more accurately. \nIn the meantime, ensure that the device is properly pai&hellip;",
+      "createdAt": "2026-02-26T14:28:09.236Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1504,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Fingerprints found: _TZ3000_u3nv1jwk \nProduct IDs: TS0044",
+      "createdAt": "2026-02-26T14:27:42.116Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1503,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "It seems that your contact sensor is not recognized in our driver database, as indicated by the empty fingerprint results. To assist you better, please perform a device interview by visiting tools.developer.homey.app, select your device, and provide the interview data. \nOnce you have the interview d&hellip;",
+      "createdAt": "2026-02-26T14:27:26.195Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1502,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "It appears that your Wenzhi Smart Human Presence Sensor & Relay (model WZ-235-ZB-RL) is currently paired with the wrong driver. Based on the fingerprint results, the correct driver for your device is motion_sensor_radar_mmwave. \nTo resolve the issue with incorrect reported capabilities, I recommend &hellip;",
+      "createdAt": "2026-02-26T14:27:06.401Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1501,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "It appears that both of your presence sensors are supported by the app. You should pair both devices as “Presence Sensor Radar”. If they are not functioning correctly, I recommend removing them from your Homey and re-pairing them close to the Homey device to ensure a strong connection. \nFor the firs&hellip;",
+      "createdAt": "2026-02-26T14:26:43.978Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1500,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Fingerprints found: _TZ3000_u3nv1jwk \nProduct IDs: TS0044",
+      "createdAt": "2026-02-26T14:17:19.606Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1499,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Fingerprints found: _TZ3000_itb0omhv \nProduct IDs: TS0041",
+      "createdAt": "2026-02-26T14:17:03.965Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1498,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Fingerprints found: none \nProduct IDs: TS0042",
+      "createdAt": "2026-02-26T14:16:04.235Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1497,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Fingerprints found: _TZ3210_xzhnra8x",
+      "createdAt": "2026-02-26T14:15:48.587Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1496,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Fingerprints found: _TZE284_aao3yzhs \nProduct IDs: TS0601",
+      "createdAt": "2026-02-26T14:15:27.445Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1495,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Fingerprints found: _TZ3000_mrpevh8p, _TZE204_9mjy74mp \nProduct IDs: TS0041, TS0601",
+      "createdAt": "2026-02-26T14:15:06.695Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1494,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Un-installed app, restarted Homey, re-installed and “Voilà” it works!!  \nBig thanks and really good work!!",
+      "createdAt": "2026-02-26T14:01:18.805Z",
+      "username": "Jocke_Wallen"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1493,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Update — Universal Tuya Zigbee v5.11.25\nA new update is available on the Test channel. This version brings improvements, bug fixes, and enhanced device support based on community feedback. \n What’s New: \n\nv5.11.25 — Various improvements and bug fixes\nSee GitHub releases for details\n\n Project Status&hellip;",
+      "createdAt": "2026-02-26T13:39:43.372Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1492,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Running “Universal Tuya”, “v5.11.25”, “Test” already. \nAnything else to test?",
+      "createdAt": "2026-02-26T11:00:24.979Z",
+      "username": "Jocke_Wallen"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1491,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Already supported in v5.11.25: _TZE204_clrdrnya \nInstall test version \nAuto-response by dlnraja bot",
+      "createdAt": "2026-02-26T10:55:02.453Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1490,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Already supported in v5.11.25: _TZE200_crq3r3la, _TZE200_gkfbdvyx \nInstall test version \nAuto-response by dlnraja bot",
+      "createdAt": "2026-02-26T10:54:53.427Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1489,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Already supported in v5.11.25: _TZ3000_u3nv1jwk \nInstall test version \nAuto-response by dlnraja bot",
+      "createdAt": "2026-02-26T10:54:44.532Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1488,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Already supported in v5.11.25: _TZ3000_itb0omhv \nInstall test version \nAuto-response by dlnraja bot",
+      "createdAt": "2026-02-26T10:54:35.787Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1487,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Update — Universal Tuya Zigbee v5.11.25\nA new update is available on the Test channel. This version brings improvements, bug fixes, and enhanced device support based on community feedback. \n What’s New: \n\nv5.11.25 — Various improvements and bug fixes\nSee GitHub releases for details\n\n Project Status&hellip;",
+      "createdAt": "2026-02-26T10:49:38.955Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1486,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Well the button doesn’t respond at all. \nTested click, dbl click and long-press. \nNo reaction",
+      "createdAt": "2026-02-26T10:47:25.891Z",
+      "username": "Jocke_Wallen"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1485,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Fingerprints found: _TZ3000_u3nv1jwk \nProduct IDs: TS0044",
+      "createdAt": "2026-02-26T10:40:21.735Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1484,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "4 button remote detected but doesn’t recognize nor respond to buttons pressed. \n\n_TZ3000_u3nv1jwk \nTS0044 \nenddevice \n70:c5:9c:ff:fe:26:56:dd \n\nInterview: \n▶ \nSummary\nInterview2: \n▶ \nSummary",
+      "createdAt": "2026-02-26T10:35:58.475Z",
+      "username": "Jocke_Wallen"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1483,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Ver.5.11.25. Contact sensor installs correct. Except for reverse indication.",
+      "createdAt": "2026-02-26T09:30:51.540Z",
+      "username": "Lasse_K"
+    },
     {
       "type": 6,
       "topicId": 140352,
@@ -2341,439 +2755,57 @@
       "excerpt": "The LED backlight functionality is already properly implemented in HybridSwitchBase.js with backlight_mode setting that uses DP15 with values: off=0, normal=1, inverted=2 (Z2M compatible). All switch drivers (1-4 gang) have this setting in their driver.compose.json files. \nOn the next version",
       "createdAt": "2026-01-28T08:10:33.193Z",
       "username": "dlnraja"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1249,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Exactly. I would prefer more if the led could switch to red and blue, like my old neo coolcam wall switches, so you could really see when on or off. Some of them don’t switch lights, but are more some kind of remotes. \nGood job, by the way. Thank you.",
-      "createdAt": "2026-01-28T01:54:21.235Z",
-      "username": "Pieter_Pessers"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1248,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Your words, not mine. I didn’t know they had that feature. Let me see what I can do with that. Seems good, because I have a few in the hallway where I’d like them on, but not in e.g the bedroom at night.",
-      "createdAt": "2026-01-28T01:40:38.625Z",
-      "username": "Attilla"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1247,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Yess. I made it maybe to difficult to explain.",
-      "createdAt": "2026-01-28T01:29:12.051Z",
-      "username": "Pieter_Pessers"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1246,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Ok, so it controls the led of the panel based on the state of the light.",
-      "createdAt": "2026-01-28T01:27:45.298Z",
-      "username": "Attilla"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1245,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "It is difficult to explain. Maybe this screenshot could help you. But not important.  You see it by configuration. \n [Schermafbeelding 2026-01-28 022203]",
-      "createdAt": "2026-01-28T01:23:53.302Z",
-      "username": "Pieter_Pessers"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1244,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Sorry, what is a background led mode?",
-      "createdAt": "2026-01-28T01:08:48.442Z",
-      "username": "Attilla"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1243,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "I got it installed with NPM (Now installed your’s with V5.5.859 development) and i can say that both the BSEED 1 button wall switch is recognized. Perfect and thanks. Is it also possible to include backgroundlightmodus for the blue led? Sorry for asking much. \nThe others are still not known and seen&hellip;",
-      "createdAt": "2026-01-27T23:37:51.856Z",
-      "username": "Pieter_Pessers"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1242,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "HOBEIAN ZG-101ZL button still not working when pressing 1, 2 or long. \nUpdate 5.5.915 diag: 093bfeb8-4a84-4f38-a63f-8f333d0d2949 \n▶ \nInterview",
-      "createdAt": "2026-01-27T23:10:12.072Z",
-      "username": "Ronny_M"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1241,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Just wanted to let you know that both 1 button BSEED wall switches is still seen as unknow zigbee devices with V5.5.915",
-      "createdAt": "2026-01-27T22:39:34.082Z",
-      "username": "Pieter_Pessers"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1240,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Thanks both Dylan and Attilla. But this goes right over my head. I will wait for just a update. I understand a little bit of node.js, but something is changed in the approach for homey. Installed docker desktop, but i’m completly lost in that program. I will just wait until it is implented in the un&hellip;",
-      "createdAt": "2026-01-27T22:00:13.243Z",
-      "username": "Pieter_Pessers"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 1239,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "stand alone docker yoiu also need to unstall homey wirh npm install -g homry ( g for global ) \n@packetninja (Attilla), \nThank you for this excellent PR!  \nYour BSEED switch implementation with physical button detection via attribute reports has been MERGED into v5.5.913. \nThe code was already integr&hellip;",
-      "createdAt": "2026-01-27T21:48:38.442Z",
-      "username": "dlnraja"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1238,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Thank you Dylan. Can i install docker by node.js and how or is it a stand alone docker?",
-      "createdAt": "2026-01-27T21:40:24.368Z",
-      "username": "Pieter_Pessers"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 1237,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Yes you need npm and docker",
-      "createdAt": "2026-01-27T21:38:24.521Z",
-      "username": "dlnraja"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1236,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Thank you so much for your help. But i get this: \n✓ Pre-processing app… \n× Command failed: npm ls --parseable --all --only=prod \nnpm warn config only Use --omit=dev to omit dev dependencies from the install. \nnpm error code ELSPROBLEMS \nnpm error missing: @octokit/rest@^22.0.1, required by com.dlnra&hellip;",
-      "createdAt": "2026-01-27T21:38:06.473Z",
-      "username": "Pieter_Pessers"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1235,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "It is indeed. You can use the homey cli for that. \n\nclone the repo: git clone \nin the directory do an “npm install”\nThen a homey app install (or run if you want to see logs)",
-      "createdAt": "2026-01-27T21:26:21.712Z",
-      "username": "Attilla"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1234,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Thank you, Atilla. \nI hope i found out how to install a fork. Is that with NPM homey?",
-      "createdAt": "2026-01-27T21:23:40.607Z",
-      "username": "Pieter_Pessers"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1233,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "I just added ysdv91bk to my fork and made a PR. I’m pretty sure that will make both 1 button versions work for you. \nIf you feel to experiment, feel free to install my fork until Dylan has time to include the PR. The forum somehow doesn’t allow me to link to a git repo, so I sent it to you in a Slac&hellip;",
-      "createdAt": "2026-01-27T21:21:47.691Z",
-      "username": "Attilla"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1232,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Could you help Dylan if i give you a interview of my BSEED wallswitches?",
-      "createdAt": "2026-01-27T21:08:16.312Z",
-      "username": "Pieter_Pessers"
-    },
-    {
-      "type": 7,
-      "topicId": 140352,
-      "postNum": 1231,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "@dlnraja I believe that @Pieter_Pessers ysdv91bk button will work if you add it to my PR. The blhvsaqf is the same as I have, so that should work when the PR is included. \nI have a 2 button (2gang) wall switch as well, but didn’t get a chance to install that yet. I will try that this week and make a&hellip;",
-      "createdAt": "2026-01-27T21:05:33.035Z",
-      "username": "Attilla"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1230,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Removed and reconnected. V5.5.907",
-      "createdAt": "2026-01-27T20:48:00.151Z",
-      "username": "Pieter_Pessers"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1229,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "I have the: \nBSEED 1 button wallswitch zigbee with neutral. _TZ3000_ysdv91bk TS0001 \nBSEED 1 button wallswitch zigbee with neutral. _TZ3000_blhvsaqf TS0001 \nBSEED 2 button wallswitch zigbee with nuetral _TZ3000_l9brjwau TS0003 \nBSEED 3 button wallswitch zigbee with neutral _TZ3000_qkixdnon TS0003",
-      "createdAt": "2026-01-27T20:47:43.999Z",
-      "username": "Pieter_Pessers"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 1228,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "version updated , device  re paired ?",
-      "createdAt": "2026-01-27T20:35:54.750Z",
-      "username": "dlnraja"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1227,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Which wallswitch do you have?",
-      "createdAt": "2026-01-27T20:23:17.783Z",
-      "username": "Attilla"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1226,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Hello Dylan. \nSorry to disturb you again. Just wanted to let you know BSEED wallswitches and the water valve control is still not working. \nSee      2a176cd4-b4d4-4472-b7dc-4facec0873f7 \nBest regards: Pieter.",
-      "createdAt": "2026-01-27T20:02:10.614Z",
-      "username": "Pieter_Pessers"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1225,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Hi Dylan here an update again about behavior Multisensor HOBEIAN ZG-204ZV. \nThe fluctuating stopped  Motion and Luminance are working fine now, Temperature and Humidity no data from sensor. \nAnd still false option Distance in app. \nAlso no Battery options. \n [1000021394] \nGood luck and many thanks P&hellip;",
-      "createdAt": "2026-01-27T18:16:54.846Z",
-      "username": "Peter_van_Werkhoven"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1224,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Works perfectly on version 5.5.890, thanks",
-      "createdAt": "2026-01-27T18:06:05.039Z",
-      "username": "Dominique_C"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1223,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Unfortunately it does not work. \n[image] \nf089e2e7-ef9f-465e-8240-7dc3c00d22db \n\n“ids”: {\n“modelId”: “TS0601”,\n“manufacturerName”: “_TZE284_o3x45p96”\n},\n“endpoints”: {\n“ieeeAddress”: “a4:c1:38:5d:15:01:6a:9a”,\n“networkAddress”: 43702,\n“modelId”: “TS0601”,\n“manufacturerName”: “_TZE284_o3x45p96”,\n“end&hellip;",
-      "createdAt": "2026-01-27T17:53:58.006Z",
-      "username": "ManuelKugler"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1222,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "I couldn’t care less about a name, so having it unbranded is fine to me. \nHowever, I would suggest (or rather we must) then align it with the type of device. A built-in module is different from an actual switch with integrated zigbee module. Just because of the cluster-id’s, but also from a function&hellip;",
-      "createdAt": "2026-01-27T17:34:40.745Z",
-      "username": "Attilla"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1221,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Ver.894. Water sensor installs, but no alarm. Contact sensors still install in reverse.",
-      "createdAt": "2026-01-27T15:44:41.567Z",
-      "username": "Lasse_K"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1220,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Hello Dylan. \nThanks for your work. I saw this: “5.5.891”: { \n“en”: “ Bseed Switch: Added _TZ3000_ysdv91bk variant (Pieter_Pessers forum). PR #116 closed with thanks to packetninja.” \nI installed V5.5.894, but it is still seen as zigbee unknow device.",
-      "createdAt": "2026-01-27T15:30:42.518Z",
-      "username": "Pieter_Pessers"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1219,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Installed V5.5.890 where the PR from packetninja is included. Sadly all the bseed (even both 1 gang switch _TZ3000_ysdv91bk TS0001 and _TZ3000_blhvsaqf TS0001 is still installed as zigbee unknown devices. \n15869329-ad28-4691-8449-1cf7f8b58331",
-      "createdAt": "2026-01-27T14:18:31.110Z",
-      "username": "Pieter_Pessers"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1218,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Interviews are in this post : [APP][Pro] Universal TUYA Zigbee Device App - test - #1011 by blutch32 \nIf you need something more please let me know",
-      "createdAt": "2026-01-27T14:18:02.305Z",
-      "username": "blutch32"
-    },
-    {
-      "type": 1,
-      "topicId": 140352,
-      "postNum": 1213,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Never mind I think for me it’s working now. New data is coming in with v5.5.862  \nThank you again for your great support. It’s not easy!",
-      "createdAt": "2026-01-27T14:05:03.782Z",
-      "username": "dlnraja"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 1217,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "@blutch32  : Contact sensors as unknown - need device interview data to add support and more deails about your device please.",
-      "createdAt": "2026-01-27T14:03:23.190Z",
-      "username": "dlnraja"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 1216,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "i keep the idea for X gang in virtual and physics way.",
-      "createdAt": "2026-01-27T13:58:07.523Z",
-      "username": "dlnraja"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 1215,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "i will try to support every case relater to 1 gang  , it’s better to have unbranded drivers , it’s related to harmonisum related to other drievrs .",
-      "createdAt": "2026-01-27T13:52:18.758Z",
-      "username": "dlnraja"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 1214,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "yes i have updated the app ( publishing soon ) \nwith all your pr infos  \nthx a lot \ndrivers/switch_1gang_bseed/assets/images/large.png | Bin 0 → 58917 bytes \ndrivers/switch_1gang_bseed/assets/images/small.png | Bin 0 → 4072 bytes \n…/switch_1gang_bseed/assets/images/xlarge.png    | Bin 0 → 58917 byte&hellip;",
-      "createdAt": "2026-01-27T13:50:36.091Z",
-      "username": "dlnraja"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1213,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Never mind I think for me it’s working now. New data is coming in with v5.5.862  \nThank you again for your great support. It’s not easy!",
-      "createdAt": "2026-01-27T13:40:52.671Z",
-      "username": "JohnnyBravo"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1212,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Hi, I now can add the temperature sensor again without the ‘unknown Zigbee device’ error, so thanks for that  but only problem is that the data is 1 time measured and then there is no new data. \n [IMG_5251.PNG]",
-      "createdAt": "2026-01-27T13:35:15.604Z",
-      "username": "JohnnyBravo"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1211,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Hi Dylan the Distance measuring is not implemented into this device at all, so it shouldn’t be in the app at all, only Pir, Lum, Temp & Hum in this Device, so I don’t know why the Distance is showing up into my app screen. \nBest regards Peter.",
-      "createdAt": "2026-01-27T13:27:36.880Z",
-      "username": "Peter_van_Werkhoven"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1210,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "In general though it seems that Bseed devices use different cluster_ids than other Tuya devices, which makes it not possible to integrate it into a single driver. Also the physical button part is not applicable to a built-in module of course. \nWhat would you like to do with naming for these drivers?&hellip;",
-      "createdAt": "2026-01-27T12:46:05.792Z",
-      "username": "Attilla"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1209,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Me too, now I could sync the fork and give you another PR for a Bseed switch. I believe someone else was asking for that device here as well, but I can’t find the message about that. \nIt is a simple 1-gang touch switch, but I did include physical button support since I have the requirement myself fo&hellip;",
-      "createdAt": "2026-01-27T12:39:11.944Z",
-      "username": "Attilla"
-    },
-    {
-      "type": 1,
-      "topicId": 140352,
-      "postNum": 1205,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "@dlnraja Thanks for the commit. I just pulled it and now the flows work as they supposed to with the physical button vs. app.",
-      "createdAt": "2026-01-27T12:31:37.780Z",
-      "username": "dlnraja"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 1208,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Okay I check perhaps an issue with us and Europe value ( inch and metters  )",
-      "createdAt": "2026-01-27T12:31:31.534Z",
-      "username": "dlnraja"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1207,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Hi Dylan, installed the new version 862 but no Temperature in the app at all anymore and data is fluctuating the whole time so that I paused the flow’s because lights and alarms going off continuesly. \n [1000021379] \n[1000021380] \nAnd it’s giving Distance data what’s not included in this sensor. 8.8&hellip;",
-      "createdAt": "2026-01-27T11:22:57.619Z",
-      "username": "Peter_van_Werkhoven"
-    },
-    {
-      "type": 17,
-      "topicId": 150144,
-      "postNum": 3,
-      "title": "Problem connecting first Zigbee device",
-      "excerpt": "The tuya-zigbee app you used is not maintained for the last year., \nYou could try the test-version of the app: \n\n\nYou could also try these apps: \nOfficial homey/tuya app, need to connect by tuya bridge. \n\n\nThen there is a new Universal zigbee Tuya app which is in a test-state: \n\n\nThe last 2 apps hav&hellip;",
-      "createdAt": "2026-01-27T10:55:49.440Z",
-      "username": "Thunder"
     }
   ],
   "pms": [],
   "notifications": [
     {
-      "type": 2,
-      "topicId": 140352,
-      "postNum": 1479,
+      "type": 6,
+      "topicId": 151737,
+      "postNum": 1,
       "data": {
-        "topic_title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "original_post_id": 714275,
+        "topic_title": "Post hidden by community flags",
+        "original_post_id": 714711,
         "original_post_type": 1,
-        "original_username": "7Hills",
+        "original_username": "system",
         "revision_number": null,
-        "display_username": "4 replies",
-        "display_name": "Jocke Wallén"
+        "display_username": "system",
+        "display_name": "system"
       },
       "read": false,
-      "createdAt": "2026-02-25T16:08:35.906Z"
+      "createdAt": "2026-02-26T18:41:45.464Z"
+    },
+    {
+      "type": 2,
+      "topicId": 140352,
+      "postNum": 1520,
+      "data": {
+        "topic_title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+        "original_post_id": 714743,
+        "original_post_type": 1,
+        "original_username": "Hartmut_Dunker",
+        "revision_number": null,
+        "display_username": "Hartmut_Dunker",
+        "display_name": "Hartmut Dunker"
+      },
+      "read": false,
+      "createdAt": "2026-02-26T19:35:44.608Z"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1510,
+      "data": {
+        "topic_title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+        "original_post_id": 714605,
+        "original_post_type": 1,
+        "original_username": "Jocke_Wallen",
+        "revision_number": null,
+        "display_username": "Jocke_Wallen",
+        "display_name": "Dylan Rajasekaram"
+      },
+      "read": true,
+      "createdAt": "2026-02-26T14:58:58.312Z"
     },
     {
       "type": 5,
@@ -3684,38 +3716,6 @@
       },
       "read": true,
       "createdAt": "2026-01-28T15:25:37.020Z"
-    },
-    {
-      "type": 5,
-      "topicId": 148760,
-      "postNum": 27,
-      "data": {
-        "topic_title": "RE: [APP][Pro] Universal TUYA Zigbee Device App - test",
-        "original_post_id": 703774,
-        "original_post_type": 1,
-        "original_username": "4x4_Pete",
-        "revision_number": null,
-        "display_username": "4x4_Pete",
-        "display_name": "Dylan Rajasekaram"
-      },
-      "read": true,
-      "createdAt": "2026-01-28T09:44:49.958Z"
-    },
-    {
-      "type": 1,
-      "topicId": 140352,
-      "postNum": 1252,
-      "data": {
-        "topic_title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "original_post_id": 703770,
-        "original_post_type": 1,
-        "original_username": "Attilla",
-        "revision_number": null,
-        "display_username": "Attilla",
-        "display_name": "Attilla de Groot"
-      },
-      "read": true,
-      "createdAt": "2026-01-28T08:47:59.512Z"
     }
   ],
   "bookmarks": [],
@@ -3724,7 +3724,7 @@
       "topicId": 140352,
       "postNum": 1,
       "user": "dlnraja",
-      "excerpt": "[APP][Pro] Universal TUYA Zigbee - Local-First Control GitHub: https://github.com/dlnraja/com.tuya.zigbee dlnraja/com.tuya.zigbee Test App: https://homey.app/fr-fr/app/com.dlnraja.tuya.zigbee/Universal-Tuya-Zigbee/test/ Universal Tuya Zigb...",
+      "excerpt": "...sive Tuya Zigbee app for Homey — supporting 138 device types with 4592+ manufacturer fingerprints . :package: Install Stable: https://homey.app/a/com.dlnraja.tuya.zigbee/ Homey App Store Test (latest): https://homey.app/a/com.dlnraja.tuya.zigbee/test/ Test Channel Source: https://github.com/dlnraja/com.tuy...",
       "date": "2025-07-25T01:07:08.539Z"
     },
     {
@@ -4146,13 +4146,6 @@
       "user": "Peter_Kawa",
       "excerpt": "Hello Frico, I remembered you requested it a few days ago: https://community.homey.app/t/app-pro-sonoff-zigbee/36418/427 [APP][Pro] SONOFF Zigbee /c/apps/7 Talk about all Homey Apps in this category. Apps Subject: Request to add support for Zigbee Motion Sensor ZG-204Z Hello, I have a Zigbee Moti...",
       "date": "2025-08-25T20:06:34.003Z"
-    },
-    {
-      "topicId": 107013,
-      "postNum": 4,
-      "user": "Jim_McAtear",
-      "excerpt": "Try and get one sthat are Tuya compatible, then you could use the Tuya ZigBee app. ( I use the test version) There's a whole lot products already supported, you can check that out on forum for the app. If your device is not supported you can request it from the developer. BTW there is also a Tuya...",
-      "date": "2024-03-25T08:53:47.552Z"
     }
   ],
   "fullThreads": [
@@ -4163,7 +4156,7 @@
         {
           "num": 1,
           "user": "dlnraja",
-          "text": "[APP][Pro] Universal TUYA Zigbee - Local-First Control\nGitHub: dlnraja/com.tuya.zigbee\n\nTest App: Universal Tuya Zigbee | Homey\n\nDevice Finder: Smart Device Finder\n\nVersion: 5.5.168\n\nStatus: Active Development | Test Phase\n\nDrivers: 83 | Manufacturer IDs: 2225+\n\n\n Introduction\nWelcome to Universal TUYA Zigbee — a community-driven project focused on bringing reliable, local Zigbee control to Tuya devices (and compatible brands) on Homey Pro.\n\nWhy This App?\n\n 100% Local — No cloud dependency\n Hybrid Protocol — Tuya DP + ZCL support\n 4200+ Devices — Switches, sensors, lights, thermostats, and more\n Active Development — Regular updates and bug fixes\n\n\n Recent Changelog Highlights\nv5.5.168 (Current)\n\n Motion Sensor: Removed duplicate triggers (cleaner flow selection)\n\nv5.5.167\n\n MAJOR CLEANUP: Removed 10 duplicate flow cards\n\nv5.5.165\n\n SOS Button: Fixed confusing ‘contactalarm’ triggers\n\nv5.5.164\n\n HOBEIAN ZG-303Z soil sensor now correctly recognized\n\nv5.5.163\n\n SMART CLEANUP: Energy capabilities auto-removed after 15min if no data\n\nv5.5.159-162\n\n FLOW ENRICHMENT: Added 50+ flow triggers/conditions/actions for sensors, plugs, thermostats, sirens, switches\n\nv5.5.138\n\n SOS Button battery reporting fix (bind + configure on wake)\n\nv5.5.100+\n\n Protocol Optimizer: Auto-detect best protocol (Tuya DP vs ZCL)\n HybridPlugBase: Universal smart plug support with energy monitoring\n\nFull Changelog on GitHub\n\n\n Completed Features\n\n SDK3 migration\n IAS Zone critical fix (motion, SOS buttons)\n TS0601 DP engine (thermostats, covers, sensors)\n CI/CD pipeline (auto-publish on push)\n Fingerprint validation (no conflicts)\n Flow enrichment (50+ custom flow cards)\n Energy capability watchdog (auto-cleanup)\n Protocol optimizer (auto-detect best mode)\n\n\n Supported Devices (83 Drivers)\n\n\n\n\nCategory\nExamples\n\n\n\n\nSwitches & Plugs\nTS0001-TS0004 (1-4 gang), TS011F, TS0121, USB outlets\n\n\nLights & Dimmers\nTS110F, LED strips, RGB/CCT bulbs\n\n\nSensors\nMotion (PIR, radar), contact, water leak, smoke, gas, CO2\n\n\nClimate\nThermostats, TRV valves, temp/humidity, soil moisture\n\n\nCovers\nCurtain motors, blinds, tilt control\n\n\nSafety\nSOS buttons, sirens, alarms\n\n\nButtons\nScene switches, wireless buttons, rotary knobs\n\n\n\n\n Installation\nOption 1: Homey App Store (Recommended)\n\nInstall Test Version\n\nOption 2: GitHub (Developers)\n\ngit clone https://github.com/dlnraja/com.tuya.zigbee.git\ncd com.tuya.zigbee\nhomey app install\n\n\n Important Links\n\n\n\n\nResource\nLink\n\n\n\n\nGitHub\ndlnraja/com.tuya.zigbee\n\n\nIssues\nReport Bug\n\n\nDevice Finder\nFind Your Device\n\n\nCI/CD\nGitHub Actions\n\n\n\n\n Support This Project\nThis app is developed in my free time.\n\nIf you find it useful:\n\n\nPayPal: @dlnraja\nRevolut: Revolut.Me\n\n100% optional — your feedback and bug reports are equally valuable!\n\n\n Acknowledgments\n\nJohan Bendz — for the original Tuya Zigbee foundation\nHomey Community — for testing and patience\nContributors — for bug reports and suggestions",
+          "text": "Universal Tuya Zigbee App v5.11.25\n\nLast auto-update: 2026-02-26 | Drivers: 138 | Fingerprints: 4592\n\n\nThe most comprehensive Tuya Zigbee app for Homey — supporting 138 device types with 4592+ manufacturer fingerprints.\n\n Install\n\nStable: Homey App Store\nTest (latest): Test Channel\nSource: GitHub\n\n Latest Changes (v5.11.25)\nUniversal Tuya Zigbee v5.11.25 introduces enhanced forum scanning, improved CSRF handling, and various bug fixes, ensuring better device support and user experience.\n\n GitHub Activity\n\nIssues scanned: 1162\nPRs scanned: 180\nIssues with FPs: 925\n\n Supported Device Types\n Socket (30 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\n1-Gang Smart Switch\n231\n\n\n2-Gang Smart Switch\n101\n\n\n3-Gang Smart Switch\n70\n\n\n4-Gang Smart Switch\n75\n\n\n6-Gang Wall Switch\n8\n\n\nDIN Rail Switch\n19\n\n\nMini Switch\n8\n\n\nMulti-Gang USB Socket\n15\n\n\nPlug Energy Monitor\n106\n\n\nPool/Spa Pump Controller\n6\n\n\nSmart Circuit Breaker\n13\n\n\nSmart Plug 1-Gang\n1\n\n\nSmart Plug 2-Gang\n2\n\n\nSmart Plug with Energy Monitoring\n36\n\n\nSmart Switch with Temperature Sensor\n1\n\n\nUSB Dongle Dual Repeater\n6\n\n\nUSB Dongle Triple (3-Port)\n1\n\n\nWall Dimmer 1-Gang 1-Way\n3\n\n\nWall Switch 1-Gang 1-Way\n5\n\n\nWall Switch 2-Gang 1-Way (BSEED)\n8\n\n\nWall Switch 3-Gang 1-Way (BSEED)\n8\n\n\nWall Switch 4-Gang 1-Way (BSEED)\n8\n\n\nWall Switch 5gang\n2\n\n\nWall Switch 7-Gang\n2\n\n\nWall Switch 8-Gang\n5\n\n\nWiFi 2-Gang Switch\n0\n\n\nWiFi 3-Gang Switch\n0\n\n\nWiFi 4-Gang Switch\n0\n\n\nWiFi Smart Plug (Tuya Local)\n0\n\n\nWiFi Switch (Tuya Local)\n0\n\n\n\n Light (17 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\n2-Channel Dimmer Module\n34\n\n\n3-Gang Dimmer Module\n3\n\n\nBulb Tunable\n49\n\n\nDimmer 1gang\n155\n\n\nLED Controller CCT\n9\n\n\nLED Controller Dimmable\n8\n\n\nLED Controller RGB\n5\n\n\nLed Strip Advanced\n6\n\n\nLED Strip Led Strip\n15\n\n\nLed Strip Rgbw\n13\n\n\nSmart Bulb Dimmer\n52\n\n\nSmart Bulb Rgb\n114\n\n\nSmart Bulb White\n3\n\n\nSmart RGB/RGBW Bulb\n80\n\n\nSwitch Touch Dimmer (1 Gang)\n21\n\n\nWiFi Dimmer (Tuya Local)\n0\n\n\nWiFi Light RGBCW (Tuya Local)\n0\n\n\n\n Sensor (41 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\n1-Buttons Wireless Controller\n43\n\n\n2-Buttons Wireless Controller\n16\n\n\n3-Button Wireless Controller\n15\n\n\n4-Buttons Wireless Controller\n45\n\n\n6-Buttons Wireless Controller\n3\n\n\n8-Buttons Wireless Controller\n1\n\n\nCeiling Presence Sensor (230V)\n9\n\n\nClimate Sensor\n1011\n\n\nCO Sensor\n4\n\n\nComprehensive Air Monitor\n11\n\n\nContact Sensor\n134\n\n\nCT Clamp Power Meter\n16\n\n\nDIN Rail Energy Meter\n33\n\n\nEnergy Meter 3-Phase\n15\n\n\nGas Detector\n10\n\n\nGas Sensor Ts0601\n27\n\n\nIlluminance Sensor\n6\n\n\nLCD Temperature & Humidity Sensor\n7\n\n\nLiquid Level Sensor\n13\n\n\nMotion Sensor\n122\n\n\nPower Meter\n3\n\n\nPresence Sensor (Radar)\n41\n\n\nPresence Sensor Radar\n103\n\n\nScene Switch 1-Gang\n3\n\n\nScene Switch 2-Gang\n2\n\n\nScene Switch 3-Gang\n2\n\n\nScene Switch 4-Gang\n8\n\n\nScene Switch 6-Gang\n2\n\n\nSmart Knob / Scene Switch\n14\n\n\nSmart Smoke Detector Advanced\n44\n\n\nSoil Moisture Sensor\n32\n\n\nSos Emergency Button\n33\n\n\nTUYATEC Temperature & Humidity Sensor\n12\n\n\nVibration Sensor\n21\n\n\nWater Leak Sensor\n86\n\n\nWiFi Sensor (Tuya Local)\n0\n\n\nWireless Switch\n2\n\n\nZigbee Air Quality / CO2 Sensor\n6\n\n\nZigbee Formaldehyde/VOC Sensor\n2\n\n\nZigbee Rain Sensor\n10\n\n\nZigbee Weather Station (Outdoor)\n2\n\n\n\n Thermostat (7 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nAir Conditioner (Smart)\n4\n\n\nRadiator Valve\n237\n\n\nSmart Valve 1-Way\n11\n\n\nSmart Valve 4-Way\n24\n\n\nThermostat / TRV\n185\n\n\nThermostat 4-Channel\n1\n\n\nWiFi Thermostat (Tuya Local)\n0\n\n\n\n Windowcoverings (3 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nCover Controller\n227\n\n\nCurtain Motor with Tilt\n32\n\n\nRoller Shutter Controller\n3\n\n\n\n Lock (4 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nDoor Controller\n2\n\n\nFingerprint Smart Lock\n11\n\n\nLock Smart\n13\n\n\nWiFi Door Lock (Tuya Local)\n0\n\n\n\n Fan (8 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nAir Purifier\n4\n\n\nCeiling Fan\n2\n\n\nDehumidifier (Smart)\n9\n\n\nFan Speed Controller\n21\n\n\nSmart Humidifier\n10\n\n\nWiFi Air Purifier (Tuya Local)\n0\n\n\nWiFi Fan (Tuya Local)\n0\n\n\nWiFi Humidifier (Tuya Local)\n0\n\n\n\n Speaker (1 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nWiFi Siren (Tuya Local)\n0\n\n\n\n Doorbell (1 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nDoorbell Doorbell\n10\n\n\n\n Remote (2 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nIR Blaster Remote\n37\n\n\nWiFi IR Remote (Tuya Local)\n0\n\n\n\n Button (2 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nFingerbot Button Pusher\n4\n\n\nWireless Button (Universal)\n5\n\n\n\n Heater (4 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nElectric Radiator Controller (Pilot Wire)\n10\n\n\nSmart Heater\n3\n\n\nSmart Heater Controller\n6\n\n\nWiFi Heater (Tuya Local)\n0\n\n\n\n Vacuumcleaner (1 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nWiFi Robot Vacuum (Tuya Local)\n0\n\n\n\n Other (14 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nDIY Custom Zigbee Device\n103\n\n\nGarden Water Valve\n4\n\n\nGeneric DIY Zigbee Device\n28\n\n\nGeneric Tuya Device (TS0601)\n207\n\n\nSiren Siren\n21\n\n\nSmart Pet Feeder\n6\n\n\nSmart RCBO\n2\n\n\nUniversal Zigbee/Tuya Device\n46\n\n\nWater Valve Smart\n10\n\n\nWiFi Device (Tuya Local)\n0\n\n\nWiFi Pet Feeder (Tuya Local)\n0\n\n\nWiFi Water Valve (Tuya Local)\n0\n\n\nZbbridge\n1\n\n\nZigbee Signal Repeater\n9\n\n\n\n Garagedoor (2 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nGarage Door Controller\n8\n\n\nWiFi Garage Door (Tuya Local)\n0\n\n\n\n Curtain (1 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nWiFi Curtain Motor (Tuya Local)\n0\n\n\n\n Features\n\nTuya DP Protocol — Full support for cluster 0xEF00 devices (TS0601)\nStandard ZCL — TS0001-TS0008, TS011F, TS0201-TS0207, etc.\nBSEED/Zemismart ZCL-only mode — PacketNinja technique for multi-gang switches\nPhysical button detection — Flow triggers for wall switch presses\nVirtual buttons — Remote toggle any gang from flows\nEnergy monitoring — Power, voltage, current for smart plugs\nAir quality sensors — CO2, VOC, PM2.5, formaldehyde, temp, humidity\nCover/curtain motors — Position control with tilt support\nLED backlight control — Off / Normal / Inverted modes\n\n Report Issues\n\nGitHub Issues\nInclude your device fingerprint (_TZxxxx_xxxxx) and Zigbee model ID (TSxxxx)\nUse Homey Developer Tools > Zigbee to find your device info\n\n Device Finder\nCheck if your device is supported: Device Finder\n\n\nAuto-updated by Universal Tuya Zigbee bot on 2026-02-26",
           "date": "2025-07-25T01:07:08.539Z",
           "replyTo": null
         },
@@ -14449,6 +14442,279 @@
           "text": "Device Name: Wenzhi Smart Human Presence Sensor & Relay\n\nDevice Model: WZ-235-ZB-RL\n\nDevice Description: 24G Human presence sensor with relay\n\nThe device connects, but the reported capabilities are not correct.\n\nThe app currently shows:\n\nMotion alarm\n\nTemperature\n\nHumidity\n\nLuminance, twice\n\nBattery status\n\nThis device does not support temperature or humidity. Both luminance values are incorrect as well. In addition, this is a 230V powered ceiling built-in mmWave sensor, not a battery device. The battery capability cannot be disabled, so Homey continuously reports battery status changes, low or OK, which is incorrect.\n\nWhat should actually be exposed:\n\nMotion alarm\n\nHuman presence\n\nDistance\n\nLuminance\n\nIt looks like the device is paired with the wrong fingerprint or driver profile.\n\n\n\nInterview\n“ids”: {\n\n“modelId”: “TS0601”,\n\n“manufacturerName”: “_TZE204_clrdrnya”\n\n},\n\n“endpoints”: {\n\n“ieeeAddress”: “7c:c6:b6:ff:fe:a4:4f:70”,\n\n“networkAddress”: 23708,\n\n“modelId”: “TS0601”,\n\n“manufacturerName”: “_TZE204_clrdrnya”,\n\n“endpointDescriptors”: [\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 23708,\n\n“_reserved”: 20,\n\n“endpointId”: 1,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 81,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n0,\n\n4,\n\n5,\n\n61184\n\n],\n\n“outputClusters”: [\n\n25,\n\n10\n\n]\n\n}\n\n],\n\n“deviceType”: “router”,\n\n“receiveWhenIdle”: true,\n\n“capabilities”: {\n\n“alternatePANCoordinator”: false,\n\n“deviceType”: true,\n\n“powerSourceMains”: true,\n\n“receiveWhenIdle”: true,\n\n“security”: false,\n\n“allocateAddress”: true\n\n},\n\n“extendedEndpointDescriptors”: {\n\n“1”: {\n\n“clusters”: {\n\n“basic”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “zclVersion”,\n\n“value”: 3,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1,\n\n“name”: “appVersion”,\n\n“value”: 70,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 2,\n\n“name”: “stackVersion”,\n\n“value”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 3,\n\n“name”: “hwVersion”,\n\n“value”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 4,\n\n“name”: “manufacturerName”,\n\n“value”: “_TZE204_clrdrnya”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 5,\n\n“name”: “modelId”,\n\n“value”: “TS0601”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 6,\n\n“name”: “dateCode”,\n\n“value”: “”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 7,\n\n“name”: “powerSource”,\n\n“value”: “mains”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”,\n\n“reportable”\n\n],\n\n“id”: 65502,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65534,\n\n“name”: “attributeReportingStatus”,\n\n“value”: “PENDING”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65504,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65505,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65506,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65507,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“groups”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “nameSupport”,\n\n“value”: {\n\n“type”: “Buffer”,\n\n“data”: [\n\n0\n\n]\n\n},\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“scenes”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 3,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 4,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n},\n\n“bindings”: {\n\n“ota”: {},\n\n“time”: {\n\n“attributes”: ,\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n}\n\n}\n\n}\n\n}\n\n\nDiagnostic report ID: 822fcb89-a1ba-43c0-b876-ef626163f7fb",
           "date": "2026-02-25T16:08:35.708Z",
           "replyTo": null
+        },
+        {
+          "num": 1483,
+          "user": "Lasse_K",
+          "text": "Ver.5.11.25. Contact sensor installs correct. Except for reverse indication.",
+          "date": "2026-02-26T09:30:51.275Z",
+          "replyTo": null
+        },
+        {
+          "num": 1484,
+          "user": "Jocke_Wallen",
+          "text": "4 button remote detected but doesn’t recognize nor respond to buttons pressed.\n\n\n_TZ3000_u3nv1jwk\n\nTS0044\n\nenddevice\n\n70:c5:9c:ff:fe:26:56:dd\n\n\nInterview:\n\n\n\nSummary\n“ids”: {\n\n“modelId”: “TS0044”,\n\n“manufacturerName”: “_TZ3000_u3nv1jwk”\n\n},\n\n“endpoints”: {\n\n“ieeeAddress”: “70:c5:9c:ff:fe:26:56:dd”,\n\n“networkAddress”: 23396,\n\n“modelId”: “TS0044”,\n\n“manufacturerName”: “_TZ3000_u3nv1jwk”,\n\n“endpointDescriptors”: [\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 23396,\n\n“_reserved”: 18,\n\n“endpointId”: 1,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 0,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n0,\n\n1,\n\n6\n\n],\n\n“outputClusters”: [\n\n25,\n\n10\n\n]\n\n},\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 23396,\n\n“_reserved”: 12,\n\n“endpointId”: 2,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 0,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n1,\n\n6\n\n],\n\n“outputClusters”: []\n\n},\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 23396,\n\n“_reserved”: 12,\n\n“endpointId”: 3,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 0,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n1,\n\n6\n\n],\n\n“outputClusters”: []\n\n},\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 23396,\n\n“_reserved”: 12,\n\n“endpointId”: 4,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 0,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n1,\n\n6\n\n],\n\n“outputClusters”: []\n\n}\n\n],\n\n“deviceType”: “enddevice”,\n\n“receiveWhenIdle”: false,\n\n“capabilities”: {\n\n“alternatePANCoordinator”: false,\n\n“deviceType”: false,\n\n“powerSourceMains”: false,\n\n“receiveWhenIdle”: false,\n\n“security”: false,\n\n“allocateAddress”: true\n\n},\n\n“extendedEndpointDescriptors”: {\n\n“1”: {\n\n“clusters”: {\n\n“basic”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “zclVersion”,\n\n“value”: 3,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1,\n\n“name”: “appVersion”,\n\n“value”: 66,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 2,\n\n“name”: “stackVersion”,\n\n“value”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 3,\n\n“name”: “hwVersion”,\n\n“value”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 4,\n\n“name”: “manufacturerName”,\n\n“value”: “_TZ3000_u3nv1jwk”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 5,\n\n“name”: “modelId”,\n\n“value”: “TS0044”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 6,\n\n“name”: “dateCode”,\n\n“value”: “”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 7,\n\n“name”: “powerSource”,\n\n“value”: “battery”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”,\n\n“reportable”\n\n],\n\n“id”: 65502,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65534,\n\n“name”: “attributeReportingStatus”,\n\n“value”: “PENDING”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65504,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65505,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65506,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65507,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“powerConfiguration”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 32,\n\n“name”: “batteryVoltage”,\n\n“value”: 28,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 33,\n\n“name”: “batteryPercentageRemaining”,\n\n“value”: 156,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“onOff”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “onOff”,\n\n“value”: false,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n},\n\n“bindings”: {\n\n“ota”: {},\n\n“time”: {\n\n“attributes”: [],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n}\n\n},\n\n“2”: {\n\n“clusters”: {\n\n“powerConfiguration”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 32,\n\n“name”: “batteryVoltage”,\n\n“value”: 28,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 33,\n\n“name”: “batteryPercentageRemaining”,\n\n“value”: 156,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“onOff”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “onOff”,\n\n“value”: false,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n},\n\n“bindings”: {}\n\n},\n\n“3”: {\n\n“clusters”: {\n\n“powerConfiguration”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 32,\n\n“name”: “batteryVoltage”,\n\n“value”: 28,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 33,\n\n“name”: “batteryPercentageRemaining”,\n\n“value”: 156,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“onOff”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “onOff”,\n\n“value”: false,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n},\n\n“bindings”: {}\n\n},\n\n“4”: {\n\n“clusters”: {\n\n“powerConfiguration”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 32,\n\n“name”: “batteryVoltage”,\n\n“value”: 28,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 33,\n\n“name”: “batteryPercentageRemaining”,\n\n“value”: 156,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“onOff”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “onOff”,\n\n“value”: false,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n},\n\n“bindings”: {}\n\n}\n\n}\n\n}\n\n\nInterview2:\n\n\n\nSummary\n“ids”: {\n\n“modelId”: “TS0044”,\n\n“manufacturerName”: “_TZ3000_u3nv1jwk”\n\n},\n\n“endpoints”: {\n\n“ieeeAddress”: “70:c5:9c:ff:fe:26:56:dd”,\n\n“networkAddress”: 60362,\n\n“modelId”: “TS0044”,\n\n“manufacturerName”: “_TZ3000_u3nv1jwk”,\n\n“endpointDescriptors”: [\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 60362,\n\n“_reserved”: 18,\n\n“endpointId”: 1,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 0,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n0,\n\n1,\n\n6\n\n],\n\n“outputClusters”: [\n\n25,\n\n10\n\n]\n\n},\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 60362,\n\n“_reserved”: 12,\n\n“endpointId”: 2,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 0,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n1,\n\n6\n\n],\n\n“outputClusters”: []\n\n},\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 60362,\n\n“_reserved”: 12,\n\n“endpointId”: 3,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 0,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n1,\n\n6\n\n],\n\n“outputClusters”: []\n\n},\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 60362,\n\n“_reserved”: 12,\n\n“endpointId”: 4,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 0,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n1,\n\n6\n\n],\n\n“outputClusters”: []\n\n}\n\n],\n\n“deviceType”: “enddevice”,\n\n“receiveWhenIdle”: false,\n\n“capabilities”: {\n\n“alternatePANCoordinator”: false,\n\n“deviceType”: false,\n\n“powerSourceMains”: false,\n\n“receiveWhenIdle”: false,\n\n“security”: false,\n\n“allocateAddress”: true\n\n},\n\n“extendedEndpointDescriptors”: {\n\n“1”: {\n\n“clusters”: {\n\n“basic”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “zclVersion”,\n\n“value”: 3,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1,\n\n“name”: “appVersion”,\n\n“value”: 66,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 2,\n\n“name”: “stackVersion”,\n\n“value”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 3,\n\n“name”: “hwVersion”,\n\n“value”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 4,\n\n“name”: “manufacturerName”,\n\n“value”: “_TZ3000_u3nv1jwk”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 5,\n\n“name”: “modelId”,\n\n“value”: “TS0044”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 6,\n\n“name”: “dateCode”,\n\n“value”: “”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 7,\n\n“name”: “powerSource”,\n\n“value”: “battery”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”,\n\n“reportable”\n\n],\n\n“id”: 65502,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65534,\n\n“name”: “attributeReportingStatus”,\n\n“value”: “PENDING”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65504,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65505,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65506,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65507,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“powerConfiguration”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 32,\n\n“name”: “batteryVoltage”,\n\n“value”: 28,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 33,\n\n“name”: “batteryPercentageRemaining”,\n\n“value”: 156,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“onOff”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “onOff”,\n\n“value”: false,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n},\n\n“bindings”: {\n\n“ota”: {},\n\n“time”: {\n\n“attributes”: [],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n}\n\n},\n\n“2”: {\n\n“clusters”: {\n\n“powerConfiguration”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 32,\n\n“name”: “batteryVoltage”,\n\n“value”: 28,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 33,\n\n“name”: “batteryPercentageRemaining”,\n\n“value”: 156,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“onOff”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “onOff”,\n\n“value”: false,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n},\n\n“bindings”: {}\n\n},\n\n“3”: {\n\n“clusters”: {\n\n“powerConfiguration”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 32,\n\n“name”: “batteryVoltage”,\n\n“value”: 28,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 33,\n\n“name”: “batteryPercentageRemaining”,\n\n“value”: 156,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“onOff”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “onOff”,\n\n“value”: false,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n},\n\n“bindings”: {}\n\n},\n\n“4”: {\n\n“clusters”: {\n\n“powerConfiguration”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 32,\n\n“name”: “batteryVoltage”,\n\n“value”: 28,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 33,\n\n“name”: “batteryPercentageRemaining”,\n\n“value”: 156,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“onOff”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “onOff”,\n\n“value”: false,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n},\n\n“bindings”: {}\n\n}\n\n}\n\n}",
+          "date": "2026-02-26T10:35:58.282Z",
+          "replyTo": 1479
+        },
+        {
+          "num": 1485,
+          "user": "dlnraja",
+          "text": "Fingerprints found: _TZ3000_u3nv1jwk\n\nProduct IDs: TS0044",
+          "date": "2026-02-26T10:40:21.735Z",
+          "replyTo": 1484
+        },
+        {
+          "num": 1486,
+          "user": "Jocke_Wallen",
+          "text": "Well the button doesn’t respond at all.\n\nTested click, dbl click and long-press.\n\nNo reaction",
+          "date": "2026-02-26T10:47:25.698Z",
+          "replyTo": 1485
+        },
+        {
+          "num": 1487,
+          "user": "dlnraja",
+          "text": "Update — Universal Tuya Zigbee v5.11.25\nA new update is available on the Test channel. This version brings improvements, bug fixes, and enhanced device support based on community feedback.\n\n What’s New:\n\n\nv5.11.25 — Various improvements and bug fixes\nSee GitHub releases for details\n\n Project Status:\n\n\n\n\n\n\n\n\n\n\n\nVersion\nv5.11.25\n\n\nDrivers\n138 (Zigbee & WiFi)\n\n\nFingerprints\n4,592+\n\n\nFlow Cards\n1,725\n\n\nSync\nLive sync with Zigbee2MQTT & ZHA\n\n\n\n Links:\n\n\n Install test version: Universal Tuya Zigbee - Test\n Device Finder: Check if your device is supported\n Report a bug: GitHub Issues\n\n\n Tip: If a device was stuck or showing wrong values before this update, please remove it and re-pair for a clean start.\n\n\nThank you all for your continuous feedback and diagnostic reports!",
+          "date": "2026-02-26T10:49:38.955Z",
+          "replyTo": null
+        },
+        {
+          "num": 1488,
+          "user": "dlnraja",
+          "text": "Already supported in v5.11.25: _TZ3000_itb0omhv\n\nInstall test version\n\nAuto-response by dlnraja bot",
+          "date": "2026-02-26T10:54:35.787Z",
+          "replyTo": null
+        },
+        {
+          "num": 1489,
+          "user": "dlnraja",
+          "text": "Already supported in v5.11.25: _TZ3000_u3nv1jwk\n\nInstall test version\n\nAuto-response by dlnraja bot",
+          "date": "2026-02-26T10:54:44.532Z",
+          "replyTo": null
+        },
+        {
+          "num": 1490,
+          "user": "dlnraja",
+          "text": "Already supported in v5.11.25: _TZE200_crq3r3la, _TZE200_gkfbdvyx\n\nInstall test version\n\nAuto-response by dlnraja bot",
+          "date": "2026-02-26T10:54:53.427Z",
+          "replyTo": null
+        },
+        {
+          "num": 1491,
+          "user": "dlnraja",
+          "text": "Already supported in v5.11.25: _TZE204_clrdrnya\n\nInstall test version\n\nAuto-response by dlnraja bot",
+          "date": "2026-02-26T10:55:02.453Z",
+          "replyTo": null
+        },
+        {
+          "num": 1492,
+          "user": "Jocke_Wallen",
+          "text": "Running “Universal Tuya”, “v5.11.25”, “Test” already.\n\nAnything else to test?",
+          "date": "2026-02-26T11:00:24.837Z",
+          "replyTo": 1489
+        },
+        {
+          "num": 1493,
+          "user": "dlnraja",
+          "text": "Update — Universal Tuya Zigbee v5.11.25\nA new update is available on the Test channel. This version brings improvements, bug fixes, and enhanced device support based on community feedback.\n\n What’s New:\n\n\nv5.11.25 — Various improvements and bug fixes\nSee GitHub releases for details\n\n Project Status:\n\n\n\n\n\n\n\n\n\n\n\nVersion\nv5.11.25\n\n\nDrivers\n138 (Zigbee & WiFi)\n\n\nFingerprints\n4,592+\n\n\nFlow Cards\n1,725\n\n\nSync\nLive sync with Zigbee2MQTT & ZHA\n\n\n\n Links:\n\n\n Install test version: Universal Tuya Zigbee - Test\n Device Finder: Check if your device is supported\n Report a bug: GitHub Issues\n\n\n Tip: If a device was stuck or showing wrong values before this update, please remove it and re-pair for a clean start.\n\n\nThank you all for your continuous feedback and diagnostic reports!",
+          "date": "2026-02-26T13:39:43.372Z",
+          "replyTo": null
+        },
+        {
+          "num": 1494,
+          "user": "Jocke_Wallen",
+          "text": "Un-installed app, restarted Homey, re-installed and “Voilà” it works!! \n\nBig thanks and really good work!!",
+          "date": "2026-02-26T14:01:18.663Z",
+          "replyTo": null
+        },
+        {
+          "num": 1495,
+          "user": "dlnraja",
+          "text": "Fingerprints found: _TZ3000_mrpevh8p, _TZE204_9mjy74mp\n\nProduct IDs: TS0041, TS0601",
+          "date": "2026-02-26T14:15:06.695Z",
+          "replyTo": 1462
+        },
+        {
+          "num": 1496,
+          "user": "dlnraja",
+          "text": "Fingerprints found: _TZE284_aao3yzhs\n\nProduct IDs: TS0601",
+          "date": "2026-02-26T14:15:27.445Z",
+          "replyTo": 1465
+        },
+        {
+          "num": 1497,
+          "user": "dlnraja",
+          "text": "Fingerprints found: _TZ3210_xzhnra8x",
+          "date": "2026-02-26T14:15:48.587Z",
+          "replyTo": 1467
+        },
+        {
+          "num": 1498,
+          "user": "dlnraja",
+          "text": "Fingerprints found: none\n\nProduct IDs: TS0042",
+          "date": "2026-02-26T14:16:04.235Z",
+          "replyTo": 1471
+        },
+        {
+          "num": 1499,
+          "user": "dlnraja",
+          "text": "Fingerprints found: _TZ3000_itb0omhv\n\nProduct IDs: TS0041",
+          "date": "2026-02-26T14:17:03.965Z",
+          "replyTo": 1477
+        },
+        {
+          "num": 1500,
+          "user": "dlnraja",
+          "text": "Fingerprints found: _TZ3000_u3nv1jwk\n\nProduct IDs: TS0044",
+          "date": "2026-02-26T14:17:19.606Z",
+          "replyTo": 1479
+        },
+        {
+          "num": 1501,
+          "user": "dlnraja",
+          "text": "It appears that both of your presence sensors are supported by the app. You should pair both devices as “Presence Sensor Radar”. If they are not functioning correctly, I recommend removing them from your Homey and re-pairing them close to the Homey device to ensure a strong connection.\n\nFor the first sensor (_TZE200_crq3r3la), it should work as expected. For the second sensor (TS0601), please ensure that you are selecting the correct device type during pairing.\n\nIf issues persist, please provide a diagnostic report ID (5a38ea0b-b225-4312-ba04-6dc7b4960339) for further investigation.\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
+          "date": "2026-02-26T14:26:43.978Z",
+          "replyTo": 1481
+        },
+        {
+          "num": 1502,
+          "user": "dlnraja",
+          "text": "It appears that your Wenzhi Smart Human Presence Sensor & Relay (model WZ-235-ZB-RL) is currently paired with the wrong driver. Based on the fingerprint results, the correct driver for your device is motion_sensor_radar_mmwave.\n\nTo resolve the issue with incorrect reported capabilities, I recommend the following steps:\n\n\nRemove the device from Homey.\nFactory reset the device to ensure it starts fresh.\nRe-pair the device as a “Motion Sensor Radar”.\n\nThis should help expose the correct capabilities: Motion alarm, Human presence, Distance, and Luminance.\n\nIf you continue to experience issues, please provide the diagnostic report ID (822fcb89-a1ba-43c0-b876-ef626163f7fb) for further assistance.\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
+          "date": "2026-02-26T14:27:06.401Z",
+          "replyTo": 1482
+        },
+        {
+          "num": 1503,
+          "user": "dlnraja",
+          "text": "It seems that your contact sensor is not recognized in our driver database, as indicated by the empty fingerprint results. To assist you better, please perform a device interview by visiting tools.developer.homey.app, select your device, and provide the interview data.\n\nOnce you have the interview data, you can open an issue on our GitHub page at github.com/dlnraja/com.tuya.zigbee/issues for further assistance.\n\nThank you for your understanding!\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
+          "date": "2026-02-26T14:27:26.195Z",
+          "replyTo": 1483
+        },
+        {
+          "num": 1504,
+          "user": "dlnraja",
+          "text": "Fingerprints found: _TZ3000_u3nv1jwk\n\nProduct IDs: TS0044",
+          "date": "2026-02-26T14:27:42.116Z",
+          "replyTo": 1484
+        },
+        {
+          "num": 1505,
+          "user": "dlnraja",
+          "text": "It seems that your button is not responding to any presses. To assist you better, could you please provide a diagnostic report ID along with the manufacturerName of your device? This information will help us identify the issue more accurately.\n\nIn the meantime, ensure that the device is properly paired with Homey. If you haven’t already, try performing a factory reset on the button and then re-pair it close to the Homey hub. Also, make sure you are selecting the correct device type during the pairing process.\n\nLooking forward to your response!\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
+          "date": "2026-02-26T14:28:09.236Z",
+          "replyTo": 1486
+        },
+        {
+          "num": 1506,
+          "user": "dlnraja",
+          "text": "It appears that both of your presence sensors are supported by the app.\n\n\n\nFor the first sensor with manufacturer name _TZE200_crq3r3la and model ID CK-BL702-MWS-01(7016), please pair it as a “Presence Sensor Radar”.\n\n\n\nFor the second sensor with manufacturer name _TZE200_gkfbdvyx and model ID TS0601, it should also be paired as a “Presence Sensor Radar”.\n\n\n\nIf you’re experiencing issues with movement detection, LUX readings, and incorrect humidity/temperature displays, I recommend removing both devices from Homey and re-pairing them close to the hub. Ensure you select the correct device type during the pairing process.\n\nIf problems persist, please provide a diagnostic report ID for further assistance.\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
+          "date": "2026-02-26T14:38:05.691Z",
+          "replyTo": 1481
+        },
+        {
+          "num": 1507,
+          "user": "dlnraja",
+          "text": "It appears that your Wenzhi Smart Human Presence Sensor & Relay (model WZ-235-ZB-RL) is paired with the wrong driver. The correct driver for your device, based on the fingerprint, is motion_sensor_radar_mmwave.\n\nTo resolve the issue with incorrect capabilities being reported, please follow these steps:\n\n\nRemove the device from Homey.\nFactory reset the device to ensure it starts fresh.\nRe-pair the device, making sure to select the “Motion Sensor Radar mmWave” type during the pairing process.\n\nThis should help expose the correct capabilities: Motion alarm, Human presence, Distance, and Luminance.\n\nIf you continue to experience issues, please provide the diagnostic report ID (822fcb89-a1ba-43c0-b876-ef626163f7fb) for further assistance.\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
+          "date": "2026-02-26T14:38:27.046Z",
+          "replyTo": 1482
+        },
+        {
+          "num": 1508,
+          "user": "dlnraja",
+          "text": "It seems that your contact sensor is not recognized by our app, as indicated by the empty fingerprint results. To assist you further, please perform a device interview at tools.developer.homey.app and select your device. This will help us gather the necessary information about the clusters and endpoints.\n\nOnce you have the interview data, please share it here or consider opening an issue on our GitHub repository at github.com/dlnraja/com.tuya.zigbee/issues for further assistance.\n\nThank you for your understanding!\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
+          "date": "2026-02-26T14:38:47.446Z",
+          "replyTo": 1483
+        },
+        {
+          "num": 1509,
+          "user": "dlnraja",
+          "text": "Fingerprints found: _TZ3000_u3nv1jwk\n\nProduct IDs: TS0044",
+          "date": "2026-02-26T14:39:03.360Z",
+          "replyTo": 1484
+        },
+        {
+          "num": 1510,
+          "user": "dlnraja",
+          "text": "It seems that your button is not responding to any presses. To assist you better, could you please provide the manufacturerName of the device? This information will help us determine if it is supported by our app.\n\nAdditionally, please ensure that you are using the latest version of the Universal Tuya Zigbee app. If the issue persists, I recommend performing a factory reset on the device and trying to pair it again close to your Homey, ensuring you select the correct device type during pairing.\n\nIf you continue to experience issues, please provide a diagnostic report ID along with the manufacturerName for further investigation.\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
+          "date": "2026-02-26T14:39:30.883Z",
+          "replyTo": 1486
+        },
+        {
+          "num": 1511,
+          "user": "Jocke_Wallen",
+          "text": "Got the remote working:\n\nUn-installed app, restarted Homey, re-installed and “Voilà” it works!! \n\nBig thanks and really good work!!",
+          "date": "2026-02-26T14:59:55.045Z",
+          "replyTo": 1510
+        },
+        {
+          "num": 1512,
+          "user": "dlnraja",
+          "text": "Update — Universal Tuya Zigbee v5.11.25\nA new update is available on the Test channel. This version brings improvements, bug fixes, and enhanced device support based on community feedback.\n\n What’s New:\n\nUniversal Tuya Zigbee v5.11.25 introduces enhanced forum scanning, improved automation workflows, and fixes for fingerprint conflicts, ensuring better device support and user experience.\n\n Project Status:\n\n\n\n\n\n\n\n\n\n\n\nVersion\nv5.11.25\n\n\nDrivers\n138 (Zigbee & WiFi)\n\n\nFingerprints\n4,592+\n\n\nFlow Cards\n1,725\n\n\nSync\nLive sync with Zigbee2MQTT & ZHA\n\n\n\n Links:\n\n\n Install test version: Universal Tuya Zigbee - Test\n Device Finder: Check if your device is supported\n Report a bug: GitHub Issues\n\n\n Tip: If a device was stuck or showing wrong values before this update, please remove it and re-pair for a clean start.\n\n\nThank you all for your continuous feedback and diagnostic reports!",
+          "date": "2026-02-26T15:04:42.647Z",
+          "replyTo": null
+        },
+        {
+          "num": 1513,
+          "user": "Lasse_K",
+          "text": "Now I’m confused. In version 5.11.25 it installs as a contact sensor which is fine.  Up to 5.45 everything was working fine, but after that it always installs in reverse. I also have provided interview twice and the last one is a few installments above. Or here’:\n\n\n\nSummary\n“ids”: {\n\n“modelId”: “ZG-102Z”,\n\n“manufacturerName”: “HOBEIAN”\n\n},\n\n“endpoints”: {\n\n“ieeeAddress”: “a4:c1:38:a4:ac:29:7c:5f”,\n\n“networkAddress”: 9311,\n\n“modelId”: “ZG-102Z”,\n\n“manufacturerName”: “HOBEIAN”,\n\n“endpointDescriptors”: [\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 9311,\n\n“_reserved”: 18,\n\n“endpointId”: 1,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 1026,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n0,\n\n3,\n\n1280,\n\n61184,\n\n1\n\n],\n\n“outputClusters”: []\n\n}\n\n],\n\n“deviceType”: “enddevice”,\n\n“receiveWhenIdle”: false,\n\n“swBuildId”: “0122052017”,\n\n“capabilities”: {\n\n“alternatePANCoordinator”: false,\n\n“deviceType”: false,\n\n“powerSourceMains”: false,\n\n“receiveWhenIdle”: false,\n\n“security”: false,\n\n“allocateAddress”: true\n\n},\n\n“extendedEndpointDescriptors”: {\n\n“1”: {\n\n“clusters”: {\n\n“basic”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 0,\n\n“name”: “zclVersion”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 1,\n\n“name”: “appVersion”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 2,\n\n“name”: “stackVersion”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 3,\n\n“name”: “hwVersion”\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 4,\n\n“name”: “manufacturerName”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 5,\n\n“name”: “modelId”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 7,\n\n“name”: “powerSource”\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”\n\n],\n\n“id”: 18,\n\n“name”: “deviceEnabled”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 16384,\n\n“name”: “swBuildId”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 6,\n\n“name”: “dateCode”\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“identify”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”\n\n],\n\n“id”: 0,\n\n“name”: “identifyTime”,\n\n“value”: 0\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“iasZone”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 0,\n\n“name”: “zoneState”,\n\n“value”: “enrolled”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 1,\n\n“name”: “zoneType”,\n\n“value”: “contactSwitch”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 2,\n\n“name”: “zoneStatus”,\n\n“value”: {\n\n“type”: “Buffer”,\n\n“data”: [\n\n1,\n\n0\n\n]\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”\n\n],\n\n“id”: 16,\n\n“name”: “iasCIEAddress”,\n\n“value”: “3c:2e:f5:ff:fe:5c:b1:37”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 17,\n\n“name”: “zoneId”,\n\n“value”: 0\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”,\n\n“reportable”\n\n],\n\n“id”: 61441,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”,\n\n“reportable”\n\n],\n\n“id”: 19,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“powerConfiguration”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 32,\n\n“name”: “batteryVoltage”,\n\n“value”: 30,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 33,\n\n“name”: “batteryPercentageRemaining”,\n\n“value”: 200,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n},\n\n“bindings”: {}\n\n}\n\n}\n\n}",
+          "date": "2026-02-26T15:13:09.474Z",
+          "replyTo": 1508
+        },
+        {
+          "num": 1514,
+          "user": "dlnraja",
+          "text": "It seems that your device with manufacturerName “HOBEIAN” and modelId “ZG-102Z” is not found in our current drivers. To assist you better, please perform a device interview at tools.developer.homey.app and select your device.\n\nIf you continue to experience issues, consider opening a GitHub issue at github.com/dlnraja/com.tuya.zigbee/issues with the details from the interview. This will help us investigate further.\n\nIn the meantime, ensure you are using the latest version of the app and verify that you are pairing the device correctly.\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
+          "date": "2026-02-26T16:17:33.794Z",
+          "replyTo": 1513
+        },
+        {
+          "num": 1515,
+          "user": "Lasse_K",
+          "text": "Now I’m even more confused. The interview is in the post above this. How come it’s installing as contact sensor if it’s not in your database?",
+          "date": "2026-02-26T16:35:58.196Z",
+          "replyTo": null
+        },
+        {
+          "num": 1516,
+          "user": "dlnraja",
+          "text": "Sorry it’s my bot it reply you\n\nI will check manually, this night.",
+          "date": "2026-02-26T16:58:00.020Z",
+          "replyTo": 1515
+        },
+        {
+          "num": 1517,
+          "user": "7Hills",
+          "text": "It still doesn’t work.",
+          "date": "2026-02-26T17:00:19.328Z",
+          "replyTo": 1507
+        },
+        {
+          "num": 1518,
+          "user": "Lasse_K",
+          "text": "Ok, them bots ain’t that smart, yet.\n\nThanks",
+          "date": "2026-02-26T17:16:14.184Z",
+          "replyTo": 1516
+        },
+        {
+          "num": 1519,
+          "user": "dlnraja",
+          "text": "Yes I’m trying as experimental because I will have less time for this projet right now.",
+          "date": "2026-02-26T19:01:16.401Z",
+          "replyTo": 1518
+        },
+        {
+          "num": 1520,
+          "user": "Hartmut_Dunker",
+          "text": "Hi Dylan,\n\nthe virtual buttons from my device (BSEED Zigbee 4 Gang Button Switch - TS0726/_TZ3002_pzao9ls1) still don’t work properly. When I press any one of the virtual buttons all four physical buttons turn on or off. I just checked again with v5.11.25.\n\nDiag: 9803c61a-aa73-4e3c-99ed-30a5d0c43973\n\nAs I wrote 7 days ago, I think the better driver is wall_switch_4gang_1way than switch_4gang because the part “inputClusters” of driver wall_switch_4gang_1way match as opposed to switch_4gang.\n\nDo you think there is a chance to get the switch work?\n\nBest regards, Hartmut",
+          "date": "2026-02-26T19:35:44.431Z",
+          "replyTo": null
+        },
+        {
+          "num": 1521,
+          "user": "dlnraja",
+          "text": "@Hartmut_Dunker, thanks for your detailed report regarding the BSEED Zigbee 4 Gang Button Switch (TS0726/_TZ3002_pzao9ls1). I see that the device is currently matched to the switch_4gang driver, which is why you’re experiencing the issue where all four physical buttons toggle together.\n\nYour suggestion to use the wall_switch_4gang_1way driver is insightful, as it appears to have a more appropriate configuration for your device. I will look into this further and see if we can implement the necessary changes to improve the functionality.\n\nIn the meantime, I recommend checking if there are any firmware updates available for your device, as sometimes manufacturers release updates that can resolve such issues. Additionally, if you haven’t already, please try removing and re-pairing the device after selecting the correct driver type to see if that helps.\n\nOn another note, I wanted to share some exciting news from our recent scans. We’ve identified several new devices in the Zigbee2MQTT ecosystem, including _TZE200_jt50ea5d, _TZ3210_jaap6jeb, and _TZE284_g1enhdsi. These devices are on our radar for future integration, so stay tuned for updates!\n\nAlso, there are several open PRs that might interest you, including one for a similar button device that could enhance our support for multi-gang switches. Specifically, PR #1065 aims to improve functionality for the fingerbot, which might provide insights into better handling of button presses.\n\nIf you continue to experience issues with your device, please let me know, and I can assist further. Your diagnostic report ID (9803c61a-aa73-4e3c-99ed-30a5d0c43973) will also help us track down the problem more effectively.\n\nLooking forward to resolving this for you!",
+          "date": "2026-02-26T20:20:53.995Z",
+          "replyTo": 1520
         }
       ],
       "category": 7
@@ -22212,6 +22478,27 @@
           "text": "I’m using that app, but see now that I have posted in the wrong thread. Sorry about that.",
           "date": "2026-02-13T08:34:48.104Z",
           "replyTo": 5401
+        },
+        {
+          "num": 5403,
+          "user": "dlnraja",
+          "text": "Your post was flagged by the community. Please see your messages.",
+          "date": "2026-02-26T14:38:13.497Z",
+          "replyTo": 5373
+        },
+        {
+          "num": 5404,
+          "user": "dlnraja",
+          "text": "Hi @darckrie!\n\nThe device you mentioned is recognized as a Soil Sensor. To pair it correctly, please ensure you select the “Soil Sensor” device type during the pairing process. If you are experiencing issues, try removing the device, performing a factory reset, and then re-pairing it close to Homey.\n\nIf you continue to have problems, please conduct a device interview at tools.developer.homey.app > Zigbee > select your device, and share the results. This will help us further investigate the issue.\n\nIf the device still shows as unknown, consider opening an issue on our GitHub page with the details.\n\nThank you!\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
+          "date": "2026-02-26T14:38:53.976Z",
+          "replyTo": 5375
+        },
+        {
+          "num": 5405,
+          "user": "dlnraja",
+          "text": "It seems that your Zigbee door sensor from manufacturer _TZ3000_n2egfsli is indeed supported as a “contact_sensor”. To resolve the issue, please try the following steps:\n\n\nRemove the device from Homey.\nFactory reset the door sensor according to its manual.\nPair the device again, ensuring you select “contact_sensor” as the device type during the pairing process.\nMake sure to pair the device close to Homey for better connectivity.\n\nIf you continue to experience issues, please perform a device interview at tools.developer.homey.app and select your device. This will help gather more information about the device.\n\nIf the problem persists, consider opening an issue on our GitHub page with the details.\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
+          "date": "2026-02-26T14:39:13.891Z",
+          "replyTo": 5377
         }
       ],
       "category": 7
@@ -23437,6 +23724,27 @@
           "text": "Looking at adding my heat pump to Homey. Looks like it is not implemented yet but on the requested list. (Power World DC Air/Water Heatpump)\n\nIs there anything I can expect when it will be implemented other than “soon”?",
           "date": "2026-02-23T21:21:17.321Z",
           "replyTo": null
+        },
+        {
+          "num": 182,
+          "user": "dlnraja",
+          "text": "It seems that your device fingerprint was not found in our drivers. To assist you better, please perform a device interview at tools.developer.homey.app by selecting your device under Zigbee. This will help us gather more information about your device.\n\nIf the issue persists, I recommend opening a GitHub issue at github.com/dlnraja/com.tuya.zigbee/issues with the details from the device interview.\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
+          "date": "2026-02-26T14:43:35.038Z",
+          "replyTo": 161
+        },
+        {
+          "num": 183,
+          "user": "dlnraja",
+          "text": "It seems that your device’s fingerprint was not found in our drivers. To assist you better, please perform a device interview by visiting tools.developer.homey.app, selecting your device under Zigbee, and providing the results here.\n\nIf the issue persists, consider opening a GitHub issue at github.com/dlnraja/com.tuya.zigbee/issues with the details from the device interview.\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
+          "date": "2026-02-26T14:43:55.418Z",
+          "replyTo": 165
+        },
+        {
+          "num": 184,
+          "user": "dlnraja",
+          "text": "It seems that your devices are not recognized in our driver database. To assist you better, please perform a device interview by visiting tools.developer.homey.app and selecting your device under Zigbee. This will help us gather more information about your devices.\n\nIf you continue to experience issues, I recommend opening a GitHub issue at github.com/dlnraja/com.tuya.zigbee/issues with the details from the device interview. This will allow us to investigate further.\n\nIn the meantime, ensure that your app is updated to the latest version and verify the manufacturer name of your devices.\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
+          "date": "2026-02-26T14:44:23.910Z",
+          "replyTo": 171
         }
       ],
       "category": 7
@@ -66613,12 +66921,19 @@
   ],
   "deviceInfo": {
     "allFPs": [
+      "_TZ3002_pzao9ls1",
+      "_TZ3000_n2egfsli",
       "_TZ3000_u3nv1jwk",
+      "_TZB210_ngnt8kni",
+      "_TZE200_crq3r3la",
+      "_TZE200_gkfbdvyx",
       "_TZ3000_itb0omhv",
       "_TZ3210_xzhnra8x",
+      "_TZE284_aao3yzhs",
       "_TZ3000_mrpevh8p",
+      "_TZE204_9mjy74mp",
+      "_TZE204_clrdrnya",
       "_TZE204_ztqnh5cg",
-      "_TZ3002_pzao9ls1",
       "_TZ3000_zgyzgdua",
       "_TZ3000_tzvbimpq",
       "_TZ3000_okohwwap",
@@ -66639,10 +66954,9 @@
       "_TZE204_chbyv06",
       "_TZE204_chbyv06x",
       "_TZ3000_yj6k7vfo",
-      "_TZ3000_l9brjwau",
-      "_TZ3000_qkixdnon",
       "_TZ3210_dwytrmda",
       "_TZ3210_ol1uhvza",
+      "_TZxxxx_xxxxx",
       "_TZ3000_xxxxxxxx",
       "_TZ3000_4fjiwweb",
       "_TZ3000_ztc6ggyl",
@@ -66703,7 +67017,6 @@
       "_TZE200_uj3f4wr5",
       "_TZ3000_7ysdnebc",
       "_TZE284_n4ttsck2",
-      "_TZB210_ngnt8kni",
       "_TZE200_icka1clh",
       "_TZE204_gkfbdvyx",
       "_TZE284_iadro9bf",
@@ -66724,9 +67037,10 @@
       "_TZ3000_4ux0ondb",
       "_TZ3000_5ct6e7ye",
       "_TZ3000_qgwcxxws",
-      "_TZE200_crq3r3la",
       "_TZ3210_p68kms0l",
       "_TZE204_n9ctkb6j",
+      "_TZ3000_qkixdnon",
+      "_TZ3000_l9brjwau",
       "_TZE200_3p5ydos3",
       "_TZE200_a8sdabtg",
       "_TZE284_rccxox8p",
@@ -66773,10 +67087,9 @@
       "_TZE204_xu4a5rhj",
       "_TZ3000_w8jwkczz",
       "_TZ3000_uri7ez8u",
-      "_TZE204_9mjy74mp",
-      "_TZE284_aao3yzhs",
-      "_TZE200_gkfbdvyx",
-      "_TZE204_clrdrnya",
+      "_TZE200_jt50ea5d",
+      "_TZ3210_jaap6jeb",
+      "_TZE284_g1enhdsi",
       "_TZE200_9xfjixap",
       "_TZ3000_i8jfiezr",
       "_TZ3000_bguser20",
@@ -66836,7 +67149,6 @@
       "_TZ3000_bzxloft",
       "_TZ3000_7tbsruql",
       "_TZ3000_osu834un",
-      "_TZ3000_n2egfsli",
       "_TZ3000_7d8yme6f",
       "_TZ3000_rgchmad8",
       "_TZ3000_au1rjicn",
@@ -67338,12 +67650,19 @@
       "_TZE200_r731zlxk"
     ],
     "supported": [
+      "_TZ3002_pzao9ls1",
+      "_TZ3000_n2egfsli",
       "_TZ3000_u3nv1jwk",
+      "_TZB210_ngnt8kni",
+      "_TZE200_crq3r3la",
+      "_TZE200_gkfbdvyx",
       "_TZ3000_itb0omhv",
       "_TZ3210_xzhnra8x",
+      "_TZE284_aao3yzhs",
       "_TZ3000_mrpevh8p",
+      "_TZE204_9mjy74mp",
+      "_TZE204_clrdrnya",
       "_TZE204_ztqnh5cg",
-      "_TZ3002_pzao9ls1",
       "_TZ3000_zgyzgdua",
       "_TZ3000_tzvbimpq",
       "_TZ3000_okohwwap",
@@ -67362,8 +67681,6 @@
       "_TZE204_chbyv06",
       "_TZE204_chbyv06x",
       "_TZ3000_yj6k7vfo",
-      "_TZ3000_l9brjwau",
-      "_TZ3000_qkixdnon",
       "_TZ3210_dwytrmda",
       "_TZ3210_ol1uhvza",
       "_TZ3000_4fjiwweb",
@@ -67418,7 +67735,6 @@
       "_TZE200_uj3f4wr5",
       "_TZ3000_7ysdnebc",
       "_TZE284_n4ttsck2",
-      "_TZB210_ngnt8kni",
       "_TZE200_icka1clh",
       "_TZE204_gkfbdvyx",
       "_TZE284_iadro9bf",
@@ -67437,9 +67753,10 @@
       "_TZ3000_4ux0ondb",
       "_TZ3000_5ct6e7ye",
       "_TZ3000_qgwcxxws",
-      "_TZE200_crq3r3la",
       "_TZ3210_p68kms0l",
       "_TZE204_n9ctkb6j",
+      "_TZ3000_qkixdnon",
+      "_TZ3000_l9brjwau",
       "_TZE200_3p5ydos3",
       "_TZE200_a8sdabtg",
       "_TZE284_rccxox8p",
@@ -67486,10 +67803,9 @@
       "_TZE204_xu4a5rhj",
       "_TZ3000_w8jwkczz",
       "_TZ3000_uri7ez8u",
-      "_TZE204_9mjy74mp",
-      "_TZE284_aao3yzhs",
-      "_TZE200_gkfbdvyx",
-      "_TZE204_clrdrnya",
+      "_TZE200_jt50ea5d",
+      "_TZ3210_jaap6jeb",
+      "_TZE284_g1enhdsi",
       "_TZE200_9xfjixap",
       "_TZ3000_i8jfiezr",
       "_TZ3000_bguser20",
@@ -67549,7 +67865,6 @@
       "_TZ3000_bzxloft",
       "_TZ3000_7tbsruql",
       "_TZ3000_osu834un",
-      "_TZ3000_n2egfsli",
       "_TZ3000_7d8yme6f",
       "_TZ3000_rgchmad8",
       "_TZ3000_au1rjicn",
@@ -68040,6 +68355,7 @@
     "unsupported": [
       "_TZ3000_zgyzgd",
       "_TZE204_ztqnh5c",
+      "_TZxxxx_xxxxx",
       "_TZ3000_xxxxxxxx",
       "_TZ3000_ztc6ggyl",
       "_TZ3000_7dbxxwkt",
@@ -68065,5 +68381,5 @@
       "_TZ3210_leyz4rju"
     ]
   },
-  "aiAnalysis": "### Summary of Homey Community Forum Activity for Universal Tuya Zigbee App\n\n1. **Key User Requests:**\n   - Users are seeking support for various devices, particularly presence sensors and contact sensors that are not installing correctly.\n   - There are requests for better compatibility with button devices, as users report issues with button recognition.\n   - Users appreciate updates that enhance functionality, such as mmWave sensor support.\n\n2. **Devices People Need:**\n   - Specific requests for support include:\n     - Wenzhi Smart Human Presence Sensor (WZ-235-ZB)\n     - Contact sensors (e.g., ZG-102Z)\n     - Various button remotes and climate sensors (e.g., TS0041).\n   - Unsupported fingerprints include multiple _TZ3000 and _TZE200 models, indicating a need for broader device support.\n\n3. **Issues to Fix:**\n   - Persistent installation issues with contact sensors and unknown Zigbee devices.\n   - Button presses not being recognized on detected remote controllers.\n   - Several unsupported fingerprints that need addressing to improve device compatibility.\n\n4. **Action Items:**\n   - Investigate and resolve installation issues for contact sensors and other reported devices.\n   - Enhance support for button devices to ensure proper recognition of button presses.\n   - Review and potentially add support for the unsupported fingerprints listed, focusing on the most commonly requested devices.\n   - Continue to monitor user feedback and update the app to improve overall compatibility and functionality. \n\nThis summary highlights actionable insights to enhance user satisfaction and expand device support within the Universal Tuya Zigbee app."
+  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are seeking improved compatibility and support for a wider range of devices, particularly those that are currently unsupported.\n   - There is a demand for better functionality of virtual buttons and remote controls within the app.\n   - Users are requesting clearer communication regarding device compatibility and troubleshooting steps.\n\n2. **Devices People Need:**\n   - Specific requests for support include devices with manufacturer names like \"HOBEIAN\" and models such as \"ZG-102Z\".\n   - A list of unsupported device fingerprints indicates a need for integration of devices like \"_TZ3000_zgyzgd\", \"_TZE204_ztqnh5c\", and others.\n\n3. **Issues to Fix:**\n   - Users report issues with devices not functioning as intended, such as contact sensors being misidentified.\n   - There are ongoing problems with virtual buttons not responding correctly.\n   - Users have expressed confusion regarding installation and setup processes, indicating a need for clearer instructions.\n\n4. **Action Items:**\n   - Prioritize adding support for the unsupported device fingerprints listed by users.\n   - Investigate and resolve the issues related to virtual buttons and contact sensor misidentification.\n   - Enhance user documentation and troubleshooting guides to address common installation and setup issues.\n   - Consider implementing a feedback mechanism to gather user experiences and suggestions for future updates. \n\nBy addressing these actionable insights, the maintainer can improve user satisfaction and expand the app's compatibility with a broader range of devices."
 }

@@ -5,11 +5,11 @@
 
 [![Version](https://img.shields.io/badge/version-v5.11.25-blue)]()
 [![Drivers](https://img.shields.io/badge/drivers-138-brightgreen)]()
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,592+-green)]()
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,593+-green)]()
 [![Users Tracked](https://img.shields.io/badge/users%20tracked-27+-purple)]()
 [![Last Updated](https://img.shields.io/badge/updated-2026-02-26-lightgrey)]()
 
-> **v5.11.25** | **4,592+ fingerprints** | **138 drivers** | **1,725 flow cards** | Updated 2026-02-26
+> **v5.11.25** | **4,593+ fingerprints** | **138 drivers** | **1,725 flow cards** | Updated 2026-02-26
 
 ---
 
@@ -154,7 +154,7 @@
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.25** | Universal Tuya Zigbee v5.11.25 introduces enhanced forum scanning, improved fingerprint conflict ... |
+| **v5.11.25** | v5.11.25: Fixed voltage divisor issue in driver #137, improving accuracy of voltage readings., Re... |
 | **v5.11.24** | Universal Tuya Zigbee v5.11.24 introduces core fixes, enhanced automation, and updated device fin... |
 | **v5.11.23** | Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum re... |
 | **v5.11.22** | Universal Tuya Zigbee v5.11.22 introduces enhanced forum responsiveness, improved workflow resili... |
@@ -181,6 +181,7 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-25)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
@@ -192,11 +193,13 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-24)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | FrankP | `_TZ3000_itb0omhv` | Forum #140352 post #1477 | Auto-scanned 2026-02-24 |
 | Domingoso | `_TZE200_xlppj4f5` | dlnraja/com.tuya.zigbee#135 | Auto-scanned 2026-02-24 |
+
 
 
 
@@ -225,10 +228,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-22)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Slawek_Pe | `_TZ3210_xzhnra8x` | Forum #140352 post #1467 | Auto-scanned 2026-02-22 |
+
 
 
 
@@ -240,6 +245,7 @@
 |------|---------------|--------|------|
 | ManuelKugler | `_TZE284_aao3yzhs` | Forum #140352 post #1465 | Auto-scanned 2026-02-21 |
 | eeckelaertyannick | `_TZE200_8ygsuhe1` | JohanBendz/com.tuya.zigbee#1229 | Auto-scanned 2026-02-21 |
+
 
 
 
@@ -288,6 +294,9 @@
 
 <!-- NIGHTLY_END -->
 
+
+<!-- NIGHTLY_END -->
+
 ---
 
 ## Auto-Discovered Fingerprints
@@ -311,6 +320,7 @@
 | _TZ3210_iymfxdis | dlnraja/com.tuya.zigbee#133 | device_request |
 | _TZ3002_xkxgfxsg | dlnraja/com.tuya.zigbee#133 | device_request |
 | _TZ3002_tlsvxhxc | dlnraja/com.tuya.zigbee#133 | device_request |
+
 
 
 
@@ -348,6 +358,64 @@
 
 <!-- AUTODISCOVERED_END -->
 
+
+## Auto-discovered from GitHub (2026-02-26)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZE20X_xxxxxxxx | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZ3000_ww6drja5ts011f | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZ3000_zutizvykts0203 | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZ3000_vjhcxjqb | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZ3000_otwpdq1d | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_01fvxamo | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_0hg58wyk | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_0j5jma9b | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_0u3bj3rc | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_1agwnems | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_1drr8tab | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_1ibpyhdc | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_2aaelwxk | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_2atgpdho | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_2ekuz3dz | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_2hf7x9n3 | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_2imwyigp | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_2m38mh6k | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_2pddnnrk | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_2se8efxh | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_2vfxweng | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_3ejwxpmu | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_3p5ydos3 | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_3t91nb6k | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_3towulqd | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_3xfjp0ag | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_44af8vyi | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_4eeyebrt | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_579lguh2 | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_5d3vhjro | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_6wi2mope | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_78ioiaml | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_7bztmfm1 | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_7deq70b8 | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_7fqkphoq | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_7sjncirf | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_86nbew0j | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_8eazvzo6 | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_8ply8mjj | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_8thwkzxl | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_8whxpsiw | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_8ygsuhe1 | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_9cqcpkgb | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_9i9dt8is | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_9p5xmj5r | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_9sfg7gm0 | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_9yapgbuv | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_a4bpgplm | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_a8sdabtg | dlnraja/com.tuya.zigbee#140 | feature |
+| _TZe200_a8z0g46u | dlnraja/com.tuya.zigbee#140 | feature |
+
+<!-- AUTODISCOVERED_END -->
+
 ---
 
 ## Reference Data
@@ -376,4 +444,4 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 
 ---
 
-*Auto-generated on 2026-02-26 from v5.11.25 — 4,592+ fingerprints across 138 drivers*
+*Auto-generated on 2026-02-26 from v5.11.25 — 4,593+ fingerprints across 138 drivers*
