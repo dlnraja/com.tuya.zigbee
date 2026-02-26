@@ -207,3 +207,7 @@
 
 ## Nightly Auto-Responses (2026-02-25 v5.11.24)
 - **dlnraja/com.tuya.zigbee#136** @github-actions[bot]: `_TZE200_jt50ea5d`, `_TZ3210_jaap6jeb`, `_TZE284_g1enhdsi`, `_TZ3000_qamj2vnn`, `_TZ3000_tw4ztbp4`, `_TZ3000_avotanj3`, `_TZ3290_7v1k4vuf`, `_TZ3290_rlkmy85q`, `_TZ3290_jxvzqatw`, `_TZ3290_lypnqvle`, `_TZ3290_nba3knps`, `_TZ3290_yac64inu`, `_TZE204_2jnoy8dj`, `_TZ3210_iymfxdis`, `_TZ3002_xkxgfxsg`, `_TZ3002_tlsvxhxc`, `_TZE200_seq9cm6u` (gh-gpt-4o-mini)
+
+
+## Nightly Auto-Responses (2026-02-26 v5.11.25)
+- **JohanBendz/com.tuya.zigbee#1142** @dmz-86: `_TZE204_clrdrnya` (gh-gpt-4o-mini)
