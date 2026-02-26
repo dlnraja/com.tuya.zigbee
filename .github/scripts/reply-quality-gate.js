@@ -1,0 +1,111 @@
+#!/usr/bin/env node
+'use strict';
+// v5.11.27: Reply Quality Gate — validates bot replies before posting
+// Prevents the HOBEIAN bug: bot saying "not found" for devices that ARE in the DB
+const fs=require('fs'),path=require('path');
+const{buildFullIndex,extractAllFP}=require('./load-fingerprints');
+const DDIR=path.join(__dirname,'..','..','drivers');
+
+/**
+ * Validate a draft reply against actual driver database.
+ * Returns {valid:bool, warnings:string[], corrected:string|null}
+ */
+function validateReply(replyText, originalPostText) {
+  const {mfrIdx, pidIdx, allMfrs, allPids} = buildFullIndex(DDIR);
+  const warnings = [];
+  let corrected = null;
+
+  // 1. Check for "not found"/"not supported" claims
+  const notFoundClaims = replyText.match(/not (?:yet )?(?:found|supported|recognized|implemented|available)/gi) || [];
+  if (notFoundClaims.length) {
+    // Extract FPs mentioned in the reply as "not found"
+    const replyFPs = extractAllFP(replyText, allMfrs, allPids);
+    const postFPs = extractAllFP(originalPostText, allMfrs, allPids);
+    const allMentioned = [...new Set([...replyFPs.mfr, ...replyFPs.pid, ...postFPs.mfr, ...postFPs.pid])];
+
+    for (const fp of allMentioned) {
+      const inMfr = mfrIdx.has(fp);
+      const inPid = pidIdx.has(fp);
+      if (inMfr || inPid) {
+        const drivers = inMfr ? mfrIdx.get(fp) : pidIdx.get(fp);
+        warnings.push(`WRONG: Reply says "not found" but \`${fp}\` IS supported in: ${drivers.join(', ')}`);
+      }
+    }
+  }
+
+  // 2. Check for invented driver names
+  const driverMentions = replyText.match(/(?:pair as|select|driver|type)[:\s]*["'`]*([a-z_]+(?:_\d+)?gang|[a-z_]+_sensor|[a-z_]+_dimmer|[a-z_]+thermostat)/gi) || [];
+  const validDrivers = new Set(fs.readdirSync(DDIR).filter(d => fs.existsSync(path.join(DDIR, d, 'driver.compose.json'))));
+  for (const match of driverMentions) {
+    const name = match.replace(/.*["'`]/, '').replace(/["'`].*/, '').trim().toLowerCase();
+    // Fuzzy check — allow partial matches
+    const found = [...validDrivers].some(d => d.includes(name) || name.includes(d));
+    if (!found && name.length > 3) {
+      warnings.push(`SUSPICIOUS: Mentioned driver "${name}" not found in ${validDrivers.size} drivers`);
+    }
+  }
+
+  // 3. Check for FPs in original post that reply completely ignores
+  const postFPs = extractAllFP(originalPostText, allMfrs, allPids);
+  const replyFPs = extractAllFP(replyText, allMfrs, allPids);
+  for (const m of postFPs.mfr) {
+    if (!replyText.includes(m) && mfrIdx.has(m)) {
+      warnings.push(`MISSED: Post contains \`${m}\` (supported in ${mfrIdx.get(m).join(',')}) but reply doesn't mention it`);
+    }
+  }
+  for (const p of postFPs.pid) {
+    if (!replyText.includes(p) && pidIdx.has(p)) {
+      warnings.push(`MISSED: Post contains \`${p}\` (supported in ${pidIdx.get(p).join(',')}) but reply doesn't mention it`);
+    }
+  }
+
+  // 4. Auto-correct if warnings found
+  if (warnings.length) {
+    const supported = [];
+    for (const m of [...postFPs.mfr, ...postFPs.pid]) {
+      const d = mfrIdx.get(m) || pidIdx.get(m);
+      if (d) supported.push({fp: m, drivers: d});
+    }
+    if (supported.length) {
+      corrected = 'Your device fingerprint(s) are **supported**:\n\n';
+      for (const s of supported) corrected += `- \`${s.fp}\` → **${s.drivers.join(', ')}**\n`;
+      corrected += '\nPlease **remove and re-pair**, selecting the correct type.\n';
+    }
+  }
+
+  return {
+    valid: warnings.length === 0,
+    warnings,
+    corrected,
+    stats: {mfrs: mfrIdx.size, pids: pidIdx.size}
+  };
+}
+
+// CLI mode: validate a reply file or stdin
+if (require.main === module) {
+  const args = process.argv.slice(2);
+  const replyFile = args[0];
+  const postFile = args[1];
+  if (!replyFile) {
+    console.log('Usage: reply-quality-gate.js <reply.txt> [original-post.txt]');
+    process.exit(0);
+  }
+  const reply = fs.readFileSync(replyFile, 'utf8');
+  const post = postFile ? fs.readFileSync(postFile, 'utf8') : '';
+  const result = validateReply(reply, post);
+  console.log('=== Reply Quality Gate ===');
+  console.log('Valid:', result.valid);
+  console.log('Index:', result.stats.mfrs, 'mfrs,', result.stats.pids, 'pids');
+  if (result.warnings.length) {
+    console.log('\nWarnings:');
+    for (const w of result.warnings) console.log('  ⚠', w);
+  }
+  if (result.corrected) {
+    console.log('\nSuggested correction:\n---');
+    console.log(result.corrected);
+    console.log('---');
+  }
+  process.exit(result.valid ? 0 : 1);
+}
+
+module.exports = {validateReply};

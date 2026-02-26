@@ -401,12 +401,28 @@ jobs:
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/smart-device-processor.js
-      - name: Commit smart processor changes
+      - name: "Auto-Learn Fingerprints"
+        continue-on-error: true
+        timeout-minutes: 3
+        run: node .github/scripts/auto-learn-fingerprints.js
+      - name: "Pattern Detector"
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/pattern-detector.js
+      - name: "Bot Self-Audit"
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          DISCOURSE_API_USERNAME: ${{ secrets.DISCOURSE_API_USERNAME || 'dlnraja' }}
+          DISCOURSE_URL: ${{ secrets.DISCOURSE_URL || 'https://community.homey.app' }}
+        run: node .github/scripts/bot-self-audit.js
+      - name: Commit smart processor + intelligence changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git diff --cached --quiet || git commit -m "smart-processor: auto-add fingerprints [skip ci]"
+          git diff --cached --quiet || git commit -m "smart-processor + intelligence: auto-learn, patterns, audit [skip ci]"
           git pull --rebase origin master || true
           git push || true
 
