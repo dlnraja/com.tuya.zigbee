@@ -25,11 +25,11 @@ function scanDrivers(){
 
       for(const m of mfrs){
         if(/^_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}$/.test(m)) tuyaMfrs.add(m);
-        else nonTuyaMfrs.add(m);
+        else if(m.length >= 4 && !/^[a-z]{2,5}$/i.test(m)) nonTuyaMfrs.add(m); // Skip short common words
       }
       for(const p of pids){
         if(/^TS[0-9]{4}[A-Z]?$/.test(p)) tsPids.add(p);
-        else nonTsPids.add(p);
+        else if(p.length >= 4 && !/^[a-z]{2,5}$/i.test(p)) nonTsPids.add(p);
       }
     }catch(e){console.warn('  Parse error:',d,e.message)}
   }
