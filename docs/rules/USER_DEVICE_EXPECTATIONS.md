@@ -154,7 +154,7 @@
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.25** | Universal Tuya Zigbee v5.11.25 introduces enhanced automation workflows, improved forum scanning,... |
+| **v5.11.25** | Universal Tuya Zigbee v5.11.25 introduces enhanced forum scanning, improved fingerprint conflict ... |
 | **v5.11.24** | Universal Tuya Zigbee v5.11.24 introduces core fixes, enhanced automation, and updated device fin... |
 | **v5.11.23** | Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum re... |
 | **v5.11.22** | Universal Tuya Zigbee v5.11.22 introduces enhanced forum responsiveness, improved workflow resili... |
@@ -180,6 +180,7 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-25)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
@@ -190,11 +191,13 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-24)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | FrankP | `_TZ3000_itb0omhv` | Forum #140352 post #1477 | Auto-scanned 2026-02-24 |
 | Domingoso | `_TZE200_xlppj4f5` | dlnraja/com.tuya.zigbee#135 | Auto-scanned 2026-02-24 |
+
 
 
 
@@ -221,10 +224,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-22)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Slawek_Pe | `_TZ3210_xzhnra8x` | Forum #140352 post #1467 | Auto-scanned 2026-02-22 |
+
 
 
 
@@ -235,6 +240,7 @@
 |------|---------------|--------|------|
 | ManuelKugler | `_TZE284_aao3yzhs` | Forum #140352 post #1465 | Auto-scanned 2026-02-21 |
 | eeckelaertyannick | `_TZE200_8ygsuhe1` | JohanBendz/com.tuya.zigbee#1229 | Auto-scanned 2026-02-21 |
+
 
 
 
@@ -279,6 +285,9 @@
 
 <!-- NIGHTLY_END -->
 
+
+<!-- NIGHTLY_END -->
+
 ---
 
 ## Auto-Discovered Fingerprints
@@ -308,6 +317,7 @@
 
 
 
+
 ## Auto-discovered from GitHub (2026-02-25)
 
 | Fingerprint | Source | Type |
@@ -329,6 +339,9 @@
 | _TZ3002_xkxgfxsg | dlnraja/com.tuya.zigbee#136 | device_request |
 | _TZ3002_tlsvxhxc | dlnraja/com.tuya.zigbee#136 | device_request |
 | _TZE200_seq9cm6u | dlnraja/com.tuya.zigbee#136 | device_request |
+
+<!-- AUTODISCOVERED_END -->
+
 
 <!-- AUTODISCOVERED_END -->
 
