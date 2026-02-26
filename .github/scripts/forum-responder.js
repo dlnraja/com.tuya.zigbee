@@ -53,7 +53,7 @@ function batchedFallback(postInfos,ver){
   if(!found.size&&!miss.size)return null;
   const users=[...new Set(postInfos.map(p=>p.post.username))];
   let m=users.length?'Hi '+users.map(u=>'@'+u).join(', ')+',\n\n':'';
-  if(found.size){m+='**Supported** in v'+ver+':\n';for(const[fp,d]of found){const fz=fuzzyInfo.get(fp);m+='- `'+fp+'`'+(fz?' (matched from `'+fz+'`)':'')+' → **'+d.slice(0,4).join(', ')+'**\n';}m+='\nRemove and re-pair, select correct type.\n\n';}
+  if(found.size){m+='These fingerprints are supported in v'+ver+':\n';for(const[fp,d]of found){const fz=fuzzyInfo.get(fp);m+='- `'+fp+'`'+(fz?' (matched from `'+fz+'`)':'')+' → **'+d.slice(0,4).join(', ')+'**\n';}m+='\nYou\'ll need to remove and re-pair, making sure to select the correct device type.\n\n';}
   if(miss.size){
     // Check if unsupported FPs are known in external DBs
     let extInfo='';
@@ -63,18 +63,9 @@ function batchedFallback(postInfos,ver){
       const inExt=[...miss.keys()].filter(k=>extFPs.has(k));
       if(inExt.length)extInfo=' ('+inExt.map(f=>'`'+f+'`').join(', ')+' known in Z2M/ZHA — on our radar)';
     }catch{}
-    m+='**Not yet supported**: '+[...miss.keys()].map(k=>'`'+k+'`').join(', ')+extInfo+'\nShare a [device interview](https://tools.developer.homey.app/tools/zigbee) + [GitHub issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new).\n\n';
+    m+='Not yet supported: '+[...miss.keys()].map(k=>'`'+k+'`').join(', ')+extInfo+'\nIf you can share a [device interview](https://tools.developer.homey.app/tools/zigbee), I can look into adding support.\n\n';
   }
-  // Add community update snippet
-  try{
-    const ctx=gatherAll();
-    const updates=[];
-    if(ctx.externalSources)updates.push(ctx.externalSources.total+' devices scanned across Z2M/ZHA/deCONZ');
-    if(ctx.github?.openPRs?.length)updates.push(ctx.github.openPRs.length+' community PRs under review');
-    if(ctx.interviews)updates.push(ctx.interviews.total+' device interviews processed');
-    if(updates.length)m+='📡 **Community Update**: '+updates.join(' | ')+'\n\n';
-  }catch{}
-  m+='---\n*Bot Universal Tuya Zigbee (v'+ver+') — [Install test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [GitHub](https://github.com/dlnraja/com.tuya.zigbee/issues)*';
+  // No promotional footer — keep it natural
   return m;
 }
 
@@ -104,9 +95,9 @@ async function batchAI(postInfos,ver){
   }
   ctx+='\n---\nWrite ONE comprehensive reply (max 500 words). Include:\n';
   ctx+='1. Direct answers to user questions (FP status, device support)\n';
-  ctx+='2. Relevant community updates (new devices from Z2M/deCONZ, open PRs, fork findings)\n';
+  ctx+='2. Relevant community info woven naturally (new devices from Z2M/deCONZ, open PRs)\n';
   ctx+='3. Known issues/patterns if relevant (inversion, battery, double-division)\n';
-  ctx+='4. Links: test version, GitHub issues, developer tools\n';
+  ctx+='4. NO signature, NO footer, NO promotional links — just end naturally\n';
   ctx+='Reply or NULL if no device-related content:';
 
   const r=await callAI(ctx,sys,{maxTokens:2000});
@@ -119,7 +110,7 @@ async function main(){
   const tids=(process.env.FORUM_TOPICS||'140352,26439,146735,89271,54018,12758,85498').split(',').map(Number);
   const replyTids=new Set((process.env.REPLY_TOPICS||'140352,26439,146735,89271').split(',').map(Number));
   let ver='?';try{ver=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
-  console.log('=== Forum Responder v5.11.27 (1 reply/topic) ===');
+  console.log('=== Forum Responder v5.11.28 (1 reply/topic) ===');
   console.log(dry?'DRY':'LIVE','| v'+ver);
   const{idx,pidx,allMfrs,allPids}=buildIndex();
   console.log('Index:',idx.size,'mfrs,',pidx.size,'pids');
