@@ -121,6 +121,15 @@ jobs:
             const raw=JSON.parse(fs.readFileSync('/tmp/new_fork_fps.json','utf8'));
             const entries=Array.isArray(raw)?raw:Object.entries(raw);
             if(!entries.length)return;
+            // Dedup: check for existing open issue with same title pattern
+            const {data:existing}=await github.rest.issues.listForRepo({
+              owner:context.repo.owner,repo:context.repo.repo,
+              state:'open',labels:'auto-scan',per_page:10
+            });
+            const dupTitle=`[Auto] ${entries.length} new fingerprints from forks`;
+            if(existing.some(i=>i.title===dupTitle)){
+              console.log('Issue already exists:',dupTitle);return;
+            }
             const rows=entries.slice(0,50).map(([fp,info])=>{
               const fork=info.fork||info[1]?.fork||'?';
               const driver=info.driver||info[1]?.driver||'?';
@@ -128,7 +137,7 @@ jobs:
             }).join('\n');
             await github.rest.issues.create({
               owner:context.repo.owner,repo:context.repo.repo,
-              title:`[Auto] ${entries.length} new fingerprints from forks`,
+              title:dupTitle,
               body:`## New fingerprints\n| FP | Fork | Driver |\n|---|---|---|\n${rows}`,
               labels:['enhancement','auto-scan']
             });
