@@ -46,7 +46,7 @@
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-02-25 |
+| **Last Updated** | 2026-02-26 |
 
 ### Top 20 Drivers by Fingerprint Count
 
