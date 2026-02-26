@@ -2,19 +2,43 @@
 const FORUM='https://community.homey.app';
 function exCk(r){const c={};const h=typeof r.headers.getSetCookie==='function'?r.headers.getSetCookie():(r.headers.get('set-cookie')||'').split(/,(?=[^ ])/);for(const x of h){const i=x.indexOf('='),s=x.indexOf(';');if(i>0)c[x.substring(0,i).trim()]=x.substring(i+1,s>0?s:undefined).trim();}return c;}
 function fmtCk(c){return Object.entries(c).map(([k,v])=>k+'='+v).join('; ');}
+
+async function refreshCsrf(auth){
+  if(!auth||auth.type==='apikey')return auth;
+  try{
+    const cr=await fetch(FORUM+'/session/csrf',{headers:{'X-Requested-With':'XMLHttpRequest',Accept:'application/json',Cookie:fmtCk(auth.cookies)}});
+    if(cr.ok){const d=await cr.json();if(d.csrf){auth.csrf=d.csrf;console.log('CSRF refreshed');}}
+    // Also collect any new cookies
+    Object.assign(auth.cookies,exCk(cr));
+  }catch(e){console.warn('CSRF refresh failed:',e.message);}
+  return auth;
+}
+
 async function ssoLogin(em,pw){
   const j=await(await fetch('https://accounts.athom.com/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em,password:pw})})).json();
   if(!j.token)throw new Error('Athom login failed');
   const r1=await fetch(FORUM+'/auth/oauth2_basic',{redirect:'manual'});
   const fc=exCk(r1);let loc=r1.headers.get('location');
-  let r=await fetch(loc,{redirect:'manual'});loc=r.headers.get('location');
-  r=await fetch(loc,{redirect:'manual',headers:{Authorization:'Bearer '+j.token}});loc=r.headers.get('location');
-  if(!loc)throw new Error('SSO failed');
-  r=await fetch(loc,{redirect:'manual',headers:{Cookie:fmtCk(fc)}});
+  // Follow OAuth redirects, collecting cookies at each step
+  let r=await fetch(loc,{redirect:'manual'});
   Object.assign(fc,exCk(r));
-  if(!fc._t)throw new Error('No session');
+  loc=r.headers.get('location');
+  r=await fetch(loc,{redirect:'manual',headers:{Authorization:'Bearer '+j.token}});
+  Object.assign(fc,exCk(r));
+  loc=r.headers.get('location');
+  if(!loc)throw new Error('SSO failed - no redirect after auth');
+  // Follow remaining redirects (Discourse may have multiple)
+  for(let i=0;i<5&&loc;i++){
+    r=await fetch(loc,{redirect:'manual',headers:{Cookie:fmtCk(fc)}});
+    Object.assign(fc,exCk(r));
+    loc=r.headers.get('location');
+  }
+  if(!fc._t)throw new Error('No session cookie (_t)');
+  // Fetch CSRF
   const cr=await fetch(FORUM+'/session/csrf',{headers:{'X-Requested-With':'XMLHttpRequest',Accept:'application/json',Cookie:fmtCk(fc)}});
-  return{csrf:(await cr.json()).csrf,cookies:fc};
+  const cd=await cr.json();
+  if(!cd.csrf)throw new Error('No CSRF token received');
+  return{csrf:cd.csrf,cookies:fc};
 }
 async function getForumAuth(){
   const ak=process.env.DISCOURSE_API_KEY;
@@ -28,4 +52,4 @@ async function getForumAuth(){
   }
   return null;
 }
-module.exports={getForumAuth,fmtCk,exCk,FORUM};
+module.exports={getForumAuth,refreshCsrf,fmtCk,exCk,FORUM};

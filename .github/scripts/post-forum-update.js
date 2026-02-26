@@ -2,7 +2,7 @@
 'use strict';
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
-const {getForumAuth,fmtCk,FORUM}=require('./forum-auth');
+const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 // All relevant forum topics to post updates to
 const TOPICS=(process.env.FORUM_TOPICS||'140352,26439,146735').split(',').map(Number);
 const SUM=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
@@ -140,6 +140,7 @@ async function main(){
   for(const tid of TOPICS){
     try{
       console.log('Posting to topic',tid,'...');
+      if(auth.type==='session')await refreshCsrf(auth);
       const r=await postReply(tid,raw,auth);
       console.log('  Posted:',r.slice(0,100));
       posted++;
