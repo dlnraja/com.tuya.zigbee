@@ -13,23 +13,15 @@ const DOCS=path.join(ROOT,'docs');
 const loadState=()=>{try{return JSON.parse(fs.readFileSync(STATE,'utf8'))}catch{return{forum:{},github:{},lastRun:null}}};
 const saveState=s=>{fs.mkdirSync(path.dirname(STATE),{recursive:true});fs.writeFileSync(STATE,JSON.stringify(s,null,2)+'\n')};
 const strip=h=>(h||'').replace(/<[^>]*>/g,' ').replace(/&\w+;/g,' ').replace(/\s+/g,' ').trim();
-const exFP=t=>({mfr:[...new Set((t||'').match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])],pid:[...new Set((t||'').match(/\bTS[0-9]{4}[A-Z]?\b/g)||[])]});
+const{buildFullIndex,extractAllFP}=require('./load-fingerprints');
+const exFP_old=t=>({mfr:[...new Set((t||'').match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])],pid:[...new Set((t||'').match(/\bTS[0-9]{4}[A-Z]?\b/g)||[])]});
 const exImgs=h=>{const u=[];const re=/<img[^>]+src="([^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
 const exLinks=h=>{const u=[];const re=/href="(https?:\/\/[^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
 
+// v5.11.26: Use buildFullIndex to detect ALL manufacturers (not just _T*)
 function buildIndex(){
-  const idx=new Map(),pidx=new Map();
-  if(!fs.existsSync(DDIR))return{idx,pidx};
-  for(const d of fs.readdirSync(DDIR)){
-    const f=path.join(DDIR,d,'driver.compose.json');
-    if(!fs.existsSync(f))continue;
-    const c=fs.readFileSync(f,'utf8');
-    for(const m of(c.match(/"_T[A-Za-z0-9_]+"/g)||[]))
-      {const k=m.replace(/"/g,'');if(!idx.has(k))idx.set(k,[]);if(!idx.get(k).includes(d))idx.get(k).push(d)}
-    for(const m of(c.match(/"TS[0-9]{4}[A-Z]?"/g)||[]))
-      {const k=m.replace(/"/g,'');if(!pidx.has(k))pidx.set(k,[]);if(!pidx.get(k).includes(d))pidx.get(k).push(d)}
-  }
-  return{idx,pidx};
+  const{mfrIdx,pidIdx,allMfrs,allPids}=buildFullIndex(DDIR);
+  return{idx:mfrIdx,pidx:pidIdx,allMfrs,allPids};
 }
 
 function lookupFPs(fps,idx,pidx){
@@ -98,7 +90,7 @@ async function processForumPosts(state,idx,pidx,auth,appVersion,dryRun){
       if(SKIP.includes(post.username)){maxP=Math.max(maxP,post.post_number);continue}
       if(replied>=MAX_REPLIES){console.log('    Max replies reached');break}
       const text=strip(post.cooked);
-      const fps=exFP(text);
+      const fps=extractAllFP(text,global._nightlyAllMfrs,global._nightlyAllPids);
       const imgs=exImgs(post.cooked);
       const links=exLinks(post.cooked);
       const fpResults=lookupFPs(fps,idx,pidx);
@@ -169,7 +161,7 @@ async function processGitHub(state,idx,pidx,appVersion,dryRun){
       const key=repo+'#'+iss.number;
       if(processed.has(key))continue;
       const text=(iss.title||'')+'\n'+(iss.body||'');
-      const fps=exFP(text);
+      const fps=extractAllFP(text,global._nightlyAllMfrs,global._nightlyAllPids);
       if(!fps.mfr.length&&!fps.pid.length)continue;
       const fpResults=lookupFPs(fps,idx,pidx);
       // Extract images from body
@@ -221,7 +213,7 @@ async function processGitHub(state,idx,pidx,appVersion,dryRun){
       const key=repo+'#PR'+pr.number;
       if(processed.has(key))continue;
       const text=(pr.title||'')+'\n'+(pr.body||'');
-      const fps=exFP(text);
+      const fps=extractAllFP(text,global._nightlyAllMfrs,global._nightlyAllPids);
       if(!fps.mfr.length)continue;
       const fpResults=lookupFPs(fps,idx,pidx);
       // Get PR diff for code review
@@ -371,7 +363,9 @@ async function main(){
   let appVersion='unknown';
   try{appVersion=JSON.parse(fs.readFileSync(path.join(ROOT,'app.json'),'utf8')).version}catch{}
   const state=loadState();
-  const{idx,pidx}=buildIndex();
+  const{idx,pidx,allMfrs,allPids}=buildIndex();
+  // v5.11.26: Make available to processForumPosts/processGitHub via module scope
+  global._nightlyAllMfrs=allMfrs;global._nightlyAllPids=allPids;
 
   console.log('=== Nightly Processor ===');
   console.log('Mode:',dryRun?'DRY RUN':'LIVE','| App: v'+appVersion,'| Index:',idx.size,'mfrs');
