@@ -3,7 +3,8 @@
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
 const {getForumAuth,fmtCk,FORUM}=require('./forum-auth');
-const TOPIC=140352;
+// All relevant forum topics to post updates to
+const TOPICS=(process.env.FORUM_TOPICS||'140352,26439,146735').split(',').map(Number);
 const SUM=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
 
 async function postReply(tid,raw,auth){
@@ -134,9 +135,17 @@ async function main(){
   const url=process.env.PUBLISH_URL||'https://homey.app/a/com.dlnraja.tuya.zigbee/test/';
   const stats=gatherStats();
   const raw=buildForumPost(ver,cl,stats,url);
-  console.log('Posting to forum topic',TOPIC,'(',raw.length,'chars)');
-  const r=await postReply(TOPIC,raw,auth);
-  console.log('Posted:',r.slice(0,100));
-  fs.appendFileSync(SUM,'Forum: posted v'+ver+' update to topic '+TOPIC+'\n');
+  console.log('Posting to',TOPICS.length,'forum topics (',raw.length,'chars)');
+  let posted=0;
+  for(const tid of TOPICS){
+    try{
+      console.log('Posting to topic',tid,'...');
+      const r=await postReply(tid,raw,auth);
+      console.log('  Posted:',r.slice(0,100));
+      posted++;
+      if(TOPICS.indexOf(tid)<TOPICS.length-1)await new Promise(r=>setTimeout(r,10000));
+    }catch(e){console.error('  Failed topic',tid+':',e.message);}
+  }
+  fs.appendFileSync(SUM,'Forum: posted v'+ver+' update to '+posted+'/'+TOPICS.length+' topics\n');
 }
 main().catch(e=>{console.error('Forum post failed:',e.message);process.exit(1);});
