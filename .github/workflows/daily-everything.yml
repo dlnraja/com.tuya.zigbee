@@ -198,6 +198,15 @@ jobs:
         timeout-minutes: 10
         run: node .github/scripts/scan-johan-full.js
 
+      # ===== 9b2. SMART DEVICE PROCESSOR: AI cross-reference + complete implementation =====
+      - name: "9b2. Smart Device Processor (AI Brain)"
+        id: smart_proc
+        continue-on-error: true
+        timeout-minutes: 15
+        env:
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/smart-device-processor.js
+
       # ===== 9c. Cross-Driver Gap Analysis =====
       - name: "9c. Cross-Driver Gap"
         id: cross_gap
