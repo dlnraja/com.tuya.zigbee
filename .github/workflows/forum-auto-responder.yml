@@ -8,7 +8,7 @@ on:
       dry_run:
         description: 'Dry run mode (no forum posts)'
         type: boolean
-        default: true
+        default: false
       topics:
         description: 'Forum topic IDs (comma-separated)'
         type: string
