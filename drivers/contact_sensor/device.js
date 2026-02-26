@@ -160,7 +160,8 @@ class ContactSensorDevice extends HybridSensorBase {
     // These sensors report closed=alarm, open=no alarm (inverted from standard)
     // v5.5.908: Added _TZ3000_996rpfy6 (blutch32 forum #1011 - always shows "no")
     const invertedByDefault = [
-      // v5.9.13: REMOVED HOBEIAN — follows ZCL standard (alarm1=true=open). No inversion needed.
+      // v5.11.26: RE-ADDED HOBEIAN — Lasse_K forum #1513/#1515 confirms ZG-102Z IAS alarm1 inverted
+      'HOBEIAN',
       '_TZ3000_26fmupbb',  // Known inverted
       '_TZ3000_n2egfsli',  // Known inverted
       '_TZ3000_oxslv1c9',  // Known inverted
