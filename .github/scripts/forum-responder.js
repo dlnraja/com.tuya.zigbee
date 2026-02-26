@@ -64,9 +64,8 @@ async function postReply(topicId,replyTo,content,auth){
 const{callAI,analyzeImage}=require('./ai-helper');
 
 function templateFallback(post,results,appVersion){
-  const found=Object.entries(results).filter(([,v])=>v.found);
-  const missing=Object.entries(results).filter(([,v])=>!v.found);
-  if(!found.length&&!missing.length)return null;
+  const found=Object.entries(results).filter(([k,v])=>v.found&&k[0]!=='_');
+  const missing=Object.entries(results).filter(([k,v])=>!v.found&&k[0]!=='_');
   let msg='';
   if(found.length){
     msg+='Your device fingerprint(s) are **already supported** in v'+appVersion+':\n\n';
@@ -74,8 +73,23 @@ function templateFallback(post,results,appVersion){
     msg+='\nPlease **remove and re-pair** your device, selecting the correct device type above.\n';
   }
   if(missing.length){
-    msg+='The following fingerprint(s) are **not yet supported**: '+missing.map(([fp])=>''+fp+'').join(', ')+'\n\n';
+    msg+='The following fingerprint(s) are **not yet supported**: '+missing.map(([fp])=>'`'+fp+'`').join(', ')+'\n\n';
     msg+='Please provide a **device interview** from [Developer Tools](https://tools.developer.homey.app) and open a [GitHub issue](https://github.com/dlnraja/com.tuya.zigbee/issues).\n';
+  }
+  if(!found.length&&!missing.length){
+    const text=strip(post.cooked).toLowerCase();
+    if(/pair|recogni|unknown|not found|won.t add|can.t find|not detect/i.test(text)){
+      msg+='If your Tuya/Zigbee device is not recognized, please:\n\n';
+      msg+='1. Open [Developer Tools](https://tools.developer.homey.app) → Zigbee → select your device\n';
+      msg+='2. Run a **device interview** and copy the JSON\n';
+      msg+='3. Open a [GitHub issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new) with the interview data\n\n';
+      msg+='We\'ll add support for your device in the next release!\n';
+    } else if(/interview|diagnostic|json|cluster|endpoint/i.test(text)){
+      msg+='Thanks for sharing your device info! We\'ll review it and add support if possible.\n\n';
+      msg+='Please open a [GitHub issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new) so we can track it.\n';
+    } else {
+      return null;
+    }
   }
   msg+='\n---\n*Bot Universal Tuya Zigbee (v'+appVersion+') - [Install test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [GitHub](https://github.com/dlnraja/com.tuya.zigbee/issues)*';
   return msg;
