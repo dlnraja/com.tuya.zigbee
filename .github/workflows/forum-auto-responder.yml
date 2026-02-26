@@ -48,7 +48,7 @@ jobs:
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
           FORUM_TOPICS: ${{ inputs.topics || '140352,26439,146735,89271,54018' }}
-          REPLY_TOPICS: '140352'
+          REPLY_TOPICS: '140352,26439,146735,89271'
         run: node .github/scripts/forum-responder.js
 
       - name: Commit updated state

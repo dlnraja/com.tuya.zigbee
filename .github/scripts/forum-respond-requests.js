@@ -2,7 +2,7 @@
 'use strict';
 const fs=require('fs'),path=require('path');
 const {loadFingerprints,extractMfrFromText}=require('./load-fingerprints');
-const {getForumAuth,fmtCk,FORUM}=require('./forum-auth');
+const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const U='dlnraja';
 const BOT_TAG='dlnraja bot';
@@ -55,7 +55,7 @@ async function main(){
           if(missing.length)msg+='**Not yet supported:** '+missing.join(', ')+'\nLogged for next release.\n\n';
           msg+='[Install test version]('+APP+')\n\n*Auto-response by dlnraja bot*';
           if(DRY){console.log('[DRY] Would reply to #'+p.post_number+' in topic '+T);ct++;}
-          else{try{await reply(T,msg,auth);ct++;console.log('Replied to post',p.post_number,'in topic',T);}catch(e){console.error('Reply fail:',e.message);}}
+          else{try{if(auth.type==='session')await refreshCsrf(auth);await reply(T,msg,auth);ct++;console.log('Replied to post',p.post_number,'in topic',T);}catch(e){console.error('Reply fail:',e.message);}}
           if(p.id>lastId)lastId=p.id;
         }
       }
