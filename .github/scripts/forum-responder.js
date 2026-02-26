@@ -9,6 +9,7 @@ const loadState=()=>{try{return JSON.parse(fs.readFileSync(STATE,'utf8'))}catch{
 const saveState=s=>{fs.mkdirSync(path.dirname(STATE),{recursive:true});fs.writeFileSync(STATE,JSON.stringify(s,null,2)+'\n')};
 const{buildFullIndex,extractAllFP}=require('./load-fingerprints');
 const{validateReply}=require('./reply-quality-gate');
+const{gatherAll,formatForAI}=require('./gather-intelligence');
 const strip=h=>(h||'').replace(/<br\s*\/?>/gi,'\n').replace(/<\/p>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").trim();
 const exImgs=h=>{const u=[];const re=/<img[^>]+src="([^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -41,7 +42,7 @@ async function postReply(tid,replyTo,content,auth){
   return d;
 }
 
-// v5.11.27: Batched fallback — merge all FP results into ONE reply
+// v5.11.28: Batched fallback — merge FP results + intelligence into ONE reply
 function batchedFallback(postInfos,ver){
   const found=new Map(),miss=new Map(),fuzzyInfo=new Map();
   for(const pi of postInfos)for(const[fp,v]of Object.entries(pi.fpResults)){
@@ -53,22 +54,62 @@ function batchedFallback(postInfos,ver){
   const users=[...new Set(postInfos.map(p=>p.post.username))];
   let m=users.length?'Hi '+users.map(u=>'@'+u).join(', ')+',\n\n':'';
   if(found.size){m+='**Supported** in v'+ver+':\n';for(const[fp,d]of found){const fz=fuzzyInfo.get(fp);m+='- `'+fp+'`'+(fz?' (matched from `'+fz+'`)':'')+' → **'+d.slice(0,4).join(', ')+'**\n';}m+='\nRemove and re-pair, select correct type.\n\n';}
-  if(miss.size){m+='**Not yet supported**: '+[...miss.keys()].map(k=>'`'+k+'`').join(', ')+'\nShare a [device interview](https://tools.developer.homey.app/tools/zigbee) + [GitHub issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new).\n\n';}
+  if(miss.size){
+    // Check if unsupported FPs are known in external DBs
+    let extInfo='';
+    try{
+      const ctx=gatherAll();
+      const extFPs=new Set((ctx.externalSources?.topUnsupported||[]).map(u=>u.fp));
+      const inExt=[...miss.keys()].filter(k=>extFPs.has(k));
+      if(inExt.length)extInfo=' ('+inExt.map(f=>'`'+f+'`').join(', ')+' known in Z2M/ZHA — on our radar)';
+    }catch{}
+    m+='**Not yet supported**: '+[...miss.keys()].map(k=>'`'+k+'`').join(', ')+extInfo+'\nShare a [device interview](https://tools.developer.homey.app/tools/zigbee) + [GitHub issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new).\n\n';
+  }
+  // Add community update snippet
+  try{
+    const ctx=gatherAll();
+    const updates=[];
+    if(ctx.externalSources)updates.push(ctx.externalSources.total+' devices scanned across Z2M/ZHA/deCONZ');
+    if(ctx.github?.openPRs?.length)updates.push(ctx.github.openPRs.length+' community PRs under review');
+    if(ctx.interviews)updates.push(ctx.interviews.total+' device interviews processed');
+    if(updates.length)m+='📡 **Community Update**: '+updates.join(' | ')+'\n\n';
+  }catch{}
   m+='---\n*Bot Universal Tuya Zigbee (v'+ver+') — [Install test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [GitHub](https://github.com/dlnraja/com.tuya.zigbee/issues)*';
   return m;
 }
 
-// v5.11.27: Batched AI — ALL posts → ONE reply (anti-spam)
+// v5.11.28: Batched AI — ALL posts + full intelligence → ONE rich reply
 async function batchAI(postInfos,ver){
   let sys='';try{sys=fs.readFileSync(path.join(__dirname,'system-prompt.txt'),'utf8').replace(/\{\{VERSION\}\}/g,ver)}catch{}
-  let ctx='ALL new posts in this topic. Write ONE combined reply. Use @mentions. Skip thank-you posts.\n\n';
+
+  // Gather intelligence from ALL automated scans
+  let intel='';
+  try{const ctx=gatherAll();intel=formatForAI(ctx);console.log('Intel context:',intel.length,'chars')}catch(e){console.warn('Intel gather:',e.message)}
+
+  let ctx='Write ONE combined forum reply. Use @mentions. Skip thank-you posts.\n';
+  ctx+='Include relevant info from the INTELLIGENCE section: new devices found in Z2M/ZHA/deCONZ, ';
+  ctx+='open PRs from JohanBendz/community, fork findings, recurring issue patterns, ';
+  ctx+='and any community updates. If a user\'s device is mentioned in external DBs or PRs, say so.\n';
+  ctx+='For unsupported devices, check if Z2M/ZHA/deCONZ has them — if yes, mention it\'s on the radar.\n\n';
+
+  // Add intelligence context
+  if(intel)ctx+=intel+'\n';
+
+  // Add user posts
+  ctx+='## NEW FORUM POSTS\n\n';
   for(const pi of postInfos){
     ctx+='---\n#'+pi.post.post_number+' @'+pi.post.username+':\n'+pi.text+'\n';
-    if(Object.keys(pi.fpResults).length)ctx+='FP: '+JSON.stringify(pi.fpResults)+'\n';
-    if(pi.imgCtx)ctx+='Img: '+pi.imgCtx+'\n';
+    if(Object.keys(pi.fpResults).length)ctx+='FP DB results: '+JSON.stringify(pi.fpResults)+'\n';
+    if(pi.imgCtx)ctx+='Image analysis: '+pi.imgCtx+'\n';
   }
-  ctx+='\n---\nONE reply (max 400 words) or NULL:';
-  const r=await callAI(ctx,sys,{maxTokens:1500});
+  ctx+='\n---\nWrite ONE comprehensive reply (max 500 words). Include:\n';
+  ctx+='1. Direct answers to user questions (FP status, device support)\n';
+  ctx+='2. Relevant community updates (new devices from Z2M/deCONZ, open PRs, fork findings)\n';
+  ctx+='3. Known issues/patterns if relevant (inversion, battery, double-division)\n';
+  ctx+='4. Links: test version, GitHub issues, developer tools\n';
+  ctx+='Reply or NULL if no device-related content:';
+
+  const r=await callAI(ctx,sys,{maxTokens:2000});
   if(r&&r.text.trim().toUpperCase()!=='NULL')return r.text.trim();
   return batchedFallback(postInfos,ver);
 }
