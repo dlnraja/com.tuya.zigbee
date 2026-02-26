@@ -43,7 +43,7 @@ async function callAI(text,sysPrompt,opts={}){
   // GitHub Models (free via GITHUB_TOKEN - models.inference.ai.azure.com)
   const ghToken=process.env.GH_PAT||process.env.GITHUB_TOKEN;
   if(ghToken){
-    const ghModels=['gpt-4o-mini','Mistral-small','Meta-Llama-3.1-8B-Instruct'];
+    const ghModels=['gpt-4o-mini','Mistral-small-2503','Meta-Llama-3.1-8B-Instruct'];
     // Truncate system prompt for GitHub Models (8k token limit ~24k chars)
     const ghSys=fullSysPrompt.length>6000?sysPrompt.substring(0,5000)+'...(truncated)':fullSysPrompt;
     const ghText=text.length>12000?text.substring(0,12000)+'...(truncated)':text;
