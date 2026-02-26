@@ -2,14 +2,14 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-5,646+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,592+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-138-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-1,725-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-> **Control your Tuya Zigbee devices locally without cloud!** The most comprehensive Tuya Zigbee app for Homey with **138 drivers**, **5,646+ device fingerprints**, and **1,725+ flow cards**.
+> **Control your Tuya Zigbee devices locally without cloud!** The most comprehensive Tuya Zigbee app for Homey with **138 drivers**, **4,592+ device fingerprints**, and **1,725+ flow cards**.
 
 | | |
 |---|---|
@@ -37,7 +37,7 @@
 
 | Metric | Value |
 |--------|-------|
-| **Device Fingerprints** | 5,646+ |
+| **Device Fingerprints** | 4,592+ |
 | **Unique Product IDs** | 500 |
 | **Drivers** | 138 (116 Zigbee + 22 WiFi) |
 | **Flow Cards** | 1,725 |
@@ -52,26 +52,26 @@
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 1,156 |
-| 2 | `switch_1gang` | 369 |
-| 3 | `dimmer_wall_1gang` | 242 |
-| 4 | `radiator_valve` | 237 |
-| 5 | `curtain_motor` | 227 |
-| 6 | `contact_sensor` | 222 |
-| 7 | `switch_2gang` | 222 |
-| 8 | `motion_sensor` | 218 |
-| 9 | `generic_tuya` | 207 |
-| 10 | `switch_4gang` | 194 |
-| 11 | `switch_3gang` | 190 |
-| 12 | `thermostat_tuya_dp` | 185 |
-| 13 | `plug_energy_monitor` | 115 |
-| 14 | `bulb_rgb` | 114 |
-| 15 | `plug_smart` | 113 |
-| 16 | `diy_custom_zigbee` | 103 |
-| 17 | `presence_sensor_radar` | 103 |
-| 18 | `water_leak_sensor` | 88 |
-| 19 | `bulb_rgbw` | 79 |
-| 20 | `generic_diy` | 55 |
+| 1 | `climate_sensor` | 1,011 |
+| 2 | `radiator_valve` | 237 |
+| 3 | `switch_1gang` | 231 |
+| 4 | `curtain_motor` | 227 |
+| 5 | `generic_tuya` | 207 |
+| 6 | `thermostat_tuya_dp` | 185 |
+| 7 | `dimmer_wall_1gang` | 155 |
+| 8 | `contact_sensor` | 134 |
+| 9 | `motion_sensor` | 122 |
+| 10 | `bulb_rgb` | 114 |
+| 11 | `plug_energy_monitor` | 106 |
+| 12 | `diy_custom_zigbee` | 103 |
+| 13 | `presence_sensor_radar` | 103 |
+| 14 | `switch_2gang` | 101 |
+| 15 | `water_leak_sensor` | 86 |
+| 16 | `bulb_rgbw` | 80 |
+| 17 | `switch_4gang` | 75 |
+| 18 | `switch_3gang` | 70 |
+| 19 | `bulb_dimmable` | 52 |
+| 20 | `bulb_tunable_white` | 49 |
 
 ### Drivers by Device Class
 
@@ -102,7 +102,7 @@
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.25** | Universal Tuya Zigbee v5.11.25 introduces voltage divisor fixes, dashboard fallback improvements, and core automation... |
+| **v5.11.25** | Universal Tuya Zigbee app v5.11.25 introduces enhanced device support with 10 new device interviews, resolves 531 fin... |
 | **v5.11.24** | Universal Tuya Zigbee v5.11.24 introduces core fixes, enhanced automation, and updated device fingerprints, ensuring ... |
 | **v5.11.23** | Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum responsiveness, ensuri... |
 | **v5.11.22** | Universal Tuya Zigbee v5.11.22 introduces enhanced forum responsiveness, improved workflow resilience, and updates to... |
@@ -143,6 +143,47 @@
 - 2000ms timeout-based detection
 - Flow triggers for physical button presses per gang
 - Deduplication to prevent duplicate triggers
+
+---
+
+## Supported Device Categories
+
+| Category | Examples | Protocol |
+|----------|---------|----------|
+| **Switches** (1-8 gang) | Wall switches, smart relays, BSEED, Zemismart | ZCL + Tuya DP |
+| **Dimmers** | Wall dimmers, LED dimmers, rotary knobs | ZCL + Tuya DP |
+| **Lights** | RGB, RGBW, CCT bulbs, LED strips | ZCL |
+| **Plugs & Sockets** | Smart plugs, energy monitors, power strips | ZCL + Tuya DP |
+| **Sensors** | Temp/humidity, motion, contact, water leak, smoke, air quality | ZCL + Tuya DP |
+| **Presence Radars** | mmWave, PIR+radar hybrid, HOBEIAN ZG-204ZM | ZCL + Tuya DP |
+| **Thermostats & TRVs** | Radiator valves, floor heating, AVATTO, Moes | Tuya DP |
+| **Covers** | Curtain motors, roller blinds, garage doors | Tuya DP + ZCL |
+| **Buttons & Remotes** | Scene switches (1-4 button), SOS buttons, rotary | ZCL |
+| **Locks** | Smart door locks, fingerprint locks | Tuya DP |
+| **Climate** | Air purifiers, fans, IR blasters, humidifiers | Tuya DP |
+| **Water** | Valves, tank monitors, garden timers | Tuya DP |
+| **WiFi Devices** | Tuya WiFi switches, plugs, sensors (via cloud API) | WiFi/Cloud |
+
+### Supported Brands
+
+> BSEED, Zemismart, Moes, AVATTO, Lonsonho, HOBEIAN, Lidl/Silvercrest, eWeLink/SONOFF, Girier, Benexmart, Owon, and **hundreds more** via Tuya OEM fingerprints.
+
+---
+
+## Architecture
+
+```
+Homey Pro
+  └─ Universal Tuya Zigbee App (SDK3)
+       ├─ Hybrid Protocol Engine
+       │    ├─ Tuya DP (Cluster 0xEF00) ─ DP1-DP255 data points
+       │    └─ Standard ZCL ─ onOff, levelControl, colorControl, etc.
+       ├─ DeviceProfileRegistry (149 profiles)
+       │    └─ Per-fingerprint: DP mappings, quirks, timing
+       ├─ BatteryManager (8 chemistries, voltage fallback)
+       ├─ PhysicalButtonMixin (2000ms detection)
+       └─ 138 Drivers ─ 4,592+ fingerprints
+```
 
 ---
 
@@ -221,30 +262,58 @@ homey app run
 
 ---
 
-## Contributing
+## FAQ
 
-1. Fork the repository
-2. Create a feature branch
-3. Run validation: `homey app validate`
-4. Submit a pull request
+<details>
+<summary><strong>My device shows as "unknown Zigbee device"</strong></summary>
 
-### Report a Device
-1. Get device interview from Homey Developer Tools
-2. Check [Zigbee2MQTT](https://www.zigbee2mqtt.io/supported-devices/) for DP mappings
-3. Open an issue with manufacturerName, modelId, and interview
+Your device's fingerprint (manufacturerName + productId) is not yet in the app. Open a GitHub issue with your device interview from [Homey Developer Tools](https://tools.developer.homey.app/tools/zigbee).
+</details>
+
+<details>
+<summary><strong>Device paired but doesn't respond to commands</strong></summary>
+
+1. Try re-pairing the device (remove and add again)
+2. Check if it's a Tuya DP device (TS0601) — these need specific DP mappings
+3. For BSEED/Zemismart: these are ZCL-only, ensure explicit binding is working
+</details>
+
+<details>
+<summary><strong>Battery always shows 0%</strong></summary>
+
+Some devices (e.g., TS0044 _TZ3000_wkai4ga5) have a firmware bug that always reports 0%. The app uses voltage-based fallback when available, but some devices don't report voltage either.
+</details>
+
+<details>
+<summary><strong>Temperature/humidity values are wrong (divided by 10 or 100)</strong></summary>
+
+This is usually a double-division bug. The app auto-detects divisors from Tuya DP values. If values are still wrong after re-pairing, open an issue with your exact manufacturerName.
+</details>
+
+<details>
+<summary><strong>How to get the test version?</strong></summary>
+
+Install from: [Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) — this is auto-promoted from draft builds daily.
+</details>
 
 ---
 
-## Report Issues / Send Diagnostics
+## Contributing
 
-### From Homey App
-1. Go to **Settings > Apps > Universal Tuya Zigbee**
-2. Click **Send Diagnostics Report**
-3. Add a description of your issue
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feat/my-device`)
+3. **Validate**: `homey app validate --level publish`
+4. **Submit** a pull request with description
 
-### GitHub Issues
-1. Go to [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues)
-2. Include: Device model, manufacturerName, error messages
+### Report a New Device
+1. Get a **device interview** from [Homey Developer Tools](https://tools.developer.homey.app/tools/zigbee)
+2. Check [Zigbee2MQTT](https://www.zigbee2mqtt.io/supported-devices/) for DP mappings
+3. Check [Blakadder](https://zigbee.blakadder.com) for cross-references
+4. Open an [issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=01_device_request.yml) with: **manufacturerName**, **modelId**, and **interview data**
+
+### Report a Bug
+1. Go to **Settings > Apps > Universal Tuya Zigbee > Send Diagnostics**
+2. Open a [bug report](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=02_bug_report.yml) with: device model, error messages, and diagnostics code
 
 ---
 
@@ -287,4 +356,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-02-25*
+*Last updated: 2026-02-26*
