@@ -13,17 +13,40 @@ const SEED_TOPICS=[
   54018,   // Tuya WiFi devices
   12758,   // Zigbee devices general
   85498,   // Zigbee2MQTT vs native
+  7386,    // [APP] Tuya Cloud
+  93716,   // Zigbee pairing issues
+  4498,    // Zigbee range / mesh
+  145893,  // Smart home sensors general
+  82165,   // Zigbee 3.0 devices
 ];
 
 // Search terms to discover ALL related topics across the entire forum
+// Covers: Tuya Zigbee, Tuya WiFi, Tuya Smart Life, generic Zigbee, device types
 const SEARCH_TERMS=[
-  'tuya zigbee','tuya wifi','tuya smart life',
-  'zigbee device','zigbee pairing','zigbee interview',
-  'tuya device request','tuya fingerprint',
-  '_TZE200','_TZE204','_TZ3000','TS0601',
-  'universal tuya','tuya app homey',
-  'zigbee switch tuya','zigbee sensor tuya',
-  'tuya thermostat','tuya dimmer','tuya cover',
+  // Core Tuya terms
+  'tuya zigbee','tuya wifi','tuya smart life','tuya cloud',
+  'tuya device request','tuya fingerprint','tuya app homey',
+  'universal tuya','tuya unknown device','tuya not pairing',
+  // Tuya WiFi specific
+  'tuya wifi switch','tuya wifi plug','tuya wifi thermostat',
+  'smart life wifi','smart life app homey','tuya local control',
+  // Zigbee generic
+  'zigbee device','zigbee pairing','zigbee interview','zigbee unknown',
+  'zigbee switch','zigbee sensor','zigbee thermostat','zigbee dimmer',
+  'zigbee cover','zigbee blind','zigbee curtain','zigbee valve',
+  'zigbee button','zigbee remote','zigbee plug','zigbee light',
+  'zigbee lock','zigbee siren','zigbee garage','zigbee fan',
+  // Manufacturer fingerprints
+  '_TZE200','_TZE204','_TZE284','_TZ3000','_TZ3210','_TZ3002',
+  'TS0601','TS0001','TS0002','TS0003','TS0004','TS011F','TS0044',
+  'TS0215A','TS0043','TS0601 interview',
+  // Brands & models
+  'BSEED zigbee','Zemismart','Moes zigbee','AVATTO','Lonsonho',
+  'HOBEIAN','Lidl zigbee','Silvercrest zigbee','eWeLink zigbee',
+  // Problem patterns
+  'unknown zigbee device homey','device not recognized','manufacturerName',
+  'zigbee re-pair','zigbee mesh problem','zigbee interview homey',
+  'homey pro zigbee','zigbee2mqtt homey',
 ];
 
 const BASE='https://community.homey.app';

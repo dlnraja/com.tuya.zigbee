@@ -1,8 +1,8 @@
 # Changelog
 
-All notable changes to the Universal Tuya Zigbee app.
+All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
-> ⚠️ **WORKFLOW**: This changelog must be updated at each prompt/session in Windsurf AI.
+> Format follows [Keep a Changelog](https://keepachangelog.com/). Auto-updated by GitHub Actions.
 
 ---
 
@@ -20,36 +20,23 @@ All notable changes to the Universal Tuya Zigbee app.
 - Enhanced forum and GitHub activity tracking to ensure timely responses to community feedback.
 
 ### General
-- Continued support for 138 drivers and 5182 fingerprints, ensuring broad compatibility with Tuya Zigbee devices.
+- 138 drivers, 5182+ fingerprints, 17 new fingerprints from community contributions.
+
 ---
 
- [5.11.24] - 2026-02-25
+## [5.11.24] - 2026-02-25
 
 ### Bug Fixes
-- Resolved issues with workflow triggers and security measures to enhance app stability.
+- Resolved issues with workflow triggers and security measures.
 
 ### Improvements
-- Updated forum responder to scan and update states for 5 topics, improving community engagement.
-- Enhanced Gmail diagnostics with updated state management, although no new emails were analyzed this release.
-- Improved diagnostics reporting with updates to various state files, ensuring accurate tracking of app performance and issues.
+- Updated forum responder to scan 12 topics with Discourse search API discovery.
+- Enhanced Gmail diagnostics with updated state management.
+- Improved diagnostics reporting with better state file tracking.
 
 ### CI/CD
-- Adjusted GitHub workflows for better auto-management and state updates, streamlining the development process.
-- Minor changes to the auto-publish and daily workflows to optimize performance.
-
-### Community Contributions
-- Engaged with the community through forum replies and updates on new fingerprints, enhancing device compatibility with 17 new fingerprints added from community contributions.
----
-
- v5.11.24 (2026-02-25)
-
-Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum responsiveness, ensuring a more reliable smart home experience.
-
----
-
-## v5.11.23 (2026-02-24)
-
-Universal Tuya Zigbee v5.11.23 enhances forum and GitHub messaging, improves workflow resilience, and updates diagnostics. Now with 138 drivers and 5182 fingerprints.
+- Adjusted GitHub workflows for auto-management and state updates.
+- Auto-publish and daily workflow optimizations.
 
 ---
 
@@ -75,12 +62,6 @@ Universal Tuya Zigbee v5.11.23 enhances forum and GitHub messaging, improves wor
 - Enhanced GitHub auto-management state updates for better tracking.
 ---
 
- v5.11.22 (2026-02-23)
-
-Universal Tuya Zigbee v5.11.22 introduces 8 new fingerprints, enhances automation scripts, and improves device discovery functionality.
-
----
-
 ## [5.11.22] - 2026-02-23
 
 ### New Features
@@ -103,7 +84,7 @@ Universal Tuya Zigbee v5.11.22 introduces 8 new fingerprints, enhances automatio
 - Improved documentation and state management for diagnostics and enrichment processes.
 ---
 
- [5.11.19] - 2026-02-21
+## [5.11.19] - 2026-02-21
 
 ### Bug Fixes
 - **soil_sensor DP5** — compound frame guard (671091.2°C blocked)
@@ -119,13 +100,127 @@ Universal Tuya Zigbee v5.11.22 introduces 8 new fingerprints, enhances automatio
 
 ---
 
+## [5.11.18] - 2026-02-20
+
+### CI/CD
+- Auto-publish via GitHub Actions pipeline integration.
+
+---
+
 ## [5.11.17] - 2026-02-20
 
-### 🤖 Nightly Auto-Processor
+### Nightly Auto-Processor
 - New `nightly-auto-process.yml` — daily at 2 AM UTC
 - Auto-processes forum + GitHub with AI + template fallback
 - Updates 5 docs automatically each run
 - Integrated into `tuya-automation-hub.yml`
+
+---
+
+## [5.11.16] - 2026-02-19
+
+### CI/CD
+- Auto-publish via GitHub Actions pipeline.
+
+---
+
+## [5.11.15] - 2026-02-18
+
+### Bug Fixes
+- **Double-Division Bug**: TuyaEF00Manager now skips auto-conversion when dpMappings has divisor !== 1.
+- Prevents double-division of sensor values (e.g., temp 0.2°C instead of 20.6°C).
+
+---
+
+## [5.11.14] - 2026-02-17
+
+### New Features
+- **WiFi Overhaul**: New Easy Login (email+password only) for all 22 WiFi drivers.
+- Redesigned 4-tab `configure.html` for WiFi device management.
+
+### Bug Fixes
+- Fixed settings blank spinner (`Homey.ready` call).
+- Fixed TS0002 `_TZ3000_cauq1okq` 2-gang mapping.
+- Fixed TS0203 `_TZ3000_okohwwap` → contact_sensor.
+- Fixed radar DP4 distance/humidity confusion.
+- TuyaCloudAPI improvements.
+
+---
+
+## [5.11.13] - 2026-02-16
+
+### Bug Fixes
+- **Radar log spam fix**: ~52K lines/day reduced via same-value dedup for lux.
+- Fixed lux change calc when currentLux=0 (was always 100% change).
+- Throttle 'static mapping' log to first occurrence per DP.
+- Removed verbose per-event [RADAR-BATTERY] log.
+
+---
+
+## [5.11.12] - 2026-02-15
+
+### Critical Fixes
+- **Case-sensitivity fix**: Fixed 5,004 lowercase manufacturer names (`_tz3000_` → `_TZ3000_`).
+- Fixed `_TZE200_t1blo2bj` misclassified as thermostat instead of siren.
+
+### WiFi Fixes
+- Fixed double DP listener in `wifi_generic`.
+- Fixed memory leak on settings change.
+- Fixed UDP discovery race condition.
+- Fixed manual pairing error callback in all 22 WiFi drivers.
+
+---
+
+## [5.11.11] - 2026-02-14
+
+### Fingerprint Regression Fixes
+- Removed 5,450 case-duplicate mfrs across 113 drivers.
+- Fixed `plug_smart` vs `plug_energy_monitor` TS011F collision (82 overlapping mfrs).
+- Fixed BSEED `switch_3gang` vs `wall_switch_3gang_1way` collision.
+- Fixed Excellux PID collision across contact/motion/climate sensors.
+- Fixed `button_wireless_4` wrong PID TS0041.
+- Cross-driver collisions reduced from 200+ to 74 (all acceptable).
+
+---
+
+## [5.11.10] - 2026-02-13
+
+### Device Support
+- **Full Zigbee DB sync**: Z2M (365 files), ZHA (all quirks), Blakadder, deCONZ.
+- +117 new fingerprints across 19 drivers.
+- New PIDs: TS000F, TS1002, FE-GU10-5W, SMD9300.
+
+---
+
+## [5.11.9] - 2026-02-12
+
+### Device Support
+- Z2M+ZHA+deCONZ live sync: +2 water_leak_sensor (TS0207), +6 radiator_valve TRVs.
+
+---
+
+## [5.11.8] - 2026-02-11
+
+### Device Support
+- Z2M fingerprint sync: +18 new fingerprints (climate_sensor +5, switch_4gang +4, water_tank_monitor +1, plug_smart +1).
+
+---
+
+## [5.11.7] - 2026-02-10
+
+### New Driver
+- **Wall Switch 4-Gang 1-Way** (BSEED): TS0004/TS0014 ZCL glass touch switches.
+- Sub-device architecture: each gang = separate Homey device card.
+- Scene mode (auto/magic/both), LED indicator, physical button triggers.
+
+---
+
+## [5.11.6] - 2026-02-09
+
+### Bug Fixes
+- Removed BSEED ZCL-only `_TZ3000_blhvsaqf` from DP-based switch_1gang (wrong driver match).
+- Removed `_TZ3000_vp6clf9d` (TS0044 scene switch) from switch drivers → only in `button_wireless_4`.
+- Added 7 BSEED ZCL fingerprints to `wall_switch_3gang_1way` (TS0003).
 
 ---
 

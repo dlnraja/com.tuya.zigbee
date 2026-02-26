@@ -4,7 +4,7 @@ const{getForumAuth,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const GH='https://api.github.com';
 const REPOS=['dlnraja/com.tuya.zigbee','JohanBendz/com.tuya.zigbee'];
-const TOPICS=[140352,26439,146735,89271,54018,12758,85498];
+const TOPICS=[140352,26439,146735,89271,54018,12758,85498,7386,93716,4498,145893,82165];
 const SKIP=['dlnraja','system','discobot'];
 const MAX_REPLIES=8;
 const ROOT=path.join(__dirname,'..','..'),DDIR=path.join(ROOT,'drivers');
