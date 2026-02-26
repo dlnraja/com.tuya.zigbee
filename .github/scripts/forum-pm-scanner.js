@@ -42,7 +42,7 @@ async function main(){
           let msg='Hi '+p.username+',\n\n';
           if(found.length)msg+='**Supported** in v'+ver+': '+found.join(', ')+'\n\n';
           if(miss.length)msg+='**Not yet supported:** '+miss.join(', ')+'\nLogged for next release.\n\n';
-          msg+='[Install test version]('+APP+')\n\n*Auto-response by dlnraja bot*';
+          msg+='If you need more help, feel free to open a [GitHub issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new).';
           if(!DRY&&auth){
             const rh=auth.type==='apikey'?{'Content-Type':'application/json','User-Api-Key':auth.key}:{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
             await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:rh,body:JSON.stringify({topic_id:t.id,raw:msg})},{retries:2,label:'pmReply'}).catch(e=>console.log('Reply err:',e.message));

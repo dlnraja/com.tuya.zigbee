@@ -23,8 +23,8 @@ async function fetchBotReplies(topicIds){
       const data=await r.json();
       const posts=data.post_stream?.posts||[];
       for(const p of posts){
-        // Find bot replies (from dlnraja or containing bot signature)
-        if(p.username==='dlnraja'||/Bot Universal Tuya Zigbee/i.test(p.cooked)){
+        // Find our replies (from dlnraja or containing old bot signature)
+        if(p.username==='dlnraja'||/Bot Universal Tuya Zigbee|Universal Tuya Zigbee v/i.test(p.cooked)){
           // Find the post it was replying to
           const replyTo=posts.find(rp=>rp.post_number===p.reply_to_post_number);
           replies.push({
