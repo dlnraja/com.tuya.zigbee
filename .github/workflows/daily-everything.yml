@@ -76,8 +76,8 @@ jobs:
           echo "fps=$F" >> $GITHUB_OUTPUT
           echo "App v$V | $D drivers | $F FPs"
 
-      # ===== 1. FORUM: Scan + Respond =====
-      - name: "1. Forum Scan"
+      # ===== 1. FORUM: Scan + Respond (ONE reply per topic via forum-responder.js) =====
+      - name: "1. Forum Scan + Respond"
         id: forum_scan
         continue-on-error: true
         timeout-minutes: 10
@@ -86,10 +86,10 @@ jobs:
         run: |
           echo "=== Forum Scan ==="
           node .github/scripts/scan-forum.js || true
-          echo "=== Forum Respond ==="
+          echo "=== Forum Respond (batched ONE reply/topic) ==="
           node .github/scripts/forum-responder.js || true
-          echo "=== Forum Respond Requests ==="
-          node .github/scripts/forum-respond-requests.js || true
+          # NOTE: forum-respond-requests.js REMOVED — it posted individual per-post replies causing spam.
+          # All forum replies now go through forum-responder.js which batches into ONE reply per topic.
 
       # ===== 2. GITHUB: Triage + Respond + Close =====
       - name: "2. GitHub Issues & PRs Manager"
