@@ -44,13 +44,16 @@ async function callAI(text,sysPrompt,opts={}){
   const ghToken=process.env.GH_PAT||process.env.GITHUB_TOKEN;
   if(ghToken){
     const ghModels=['gpt-4o-mini','Mistral-small','Meta-Llama-3.1-8B-Instruct'];
+    // Truncate system prompt for GitHub Models (8k token limit ~24k chars)
+    const ghSys=fullSysPrompt.length>6000?sysPrompt.substring(0,5000)+'...(truncated)':fullSysPrompt;
+    const ghText=text.length>12000?text.substring(0,12000)+'...(truncated)':text;
     for(const model of ghModels){
       if(!cbOk('gh-'+model))continue;
       try{
         console.log('  Trying GitHub Models ('+model+')...');
         const r=await fetch('https://models.inference.ai.azure.com/chat/completions',{
           method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+ghToken},
-          body:JSON.stringify({model,messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})});
+          body:JSON.stringify({model,messages:[{role:'system',content:ghSys},{role:'user',content:ghText}],max_tokens:maxTokens,temperature:0.2})});
         if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'gh-'+model}}
         else{const e=await r.text().catch(()=>'');console.log('  GitHub Models '+model+' failed:',r.status,e.substring(0,150))}
       }catch(e){console.log('  GitHub Models '+model+' error:',e.message);cbFail('gh-'+model,60000)}
