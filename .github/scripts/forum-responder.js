@@ -8,6 +8,7 @@ const DDIR=path.join(__dirname,'..','..','drivers');
 const loadState=()=>{try{return JSON.parse(fs.readFileSync(STATE,'utf8'))}catch{return{topics:{}}}};
 const saveState=s=>{fs.mkdirSync(path.dirname(STATE),{recursive:true});fs.writeFileSync(STATE,JSON.stringify(s,null,2)+'\n')};
 const{buildFullIndex,extractAllFP}=require('./load-fingerprints');
+const{validateReply}=require('./reply-quality-gate');
 const strip=h=>(h||'').replace(/<br\s*\/?>/gi,'\n').replace(/<\/p>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").trim();
 const exImgs=h=>{const u=[];const re=/<img[^>]+src="([^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -117,6 +118,14 @@ async function main(){
     let reply=null;
     try{reply=await batchAI(devPosts,ver)}catch(e){console.error('AI:',e.message)}
     if(!reply){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
+    // Phase 2b: Quality gate — validate reply against driver DB before posting
+    const allOrigText=devPosts.map(d=>d.text).join(' ');
+    const qg=validateReply(reply,allOrigText);
+    if(!qg.valid){
+      console.log('  QualityGate:',qg.warnings.length,'warnings');
+      for(const w of qg.warnings)console.log('    ⚠',w);
+      if(qg.corrected){reply=qg.corrected;console.log('  Using corrected reply')}
+    }
     console.log('  Reply:',reply.length,'ch for',devPosts.length,'posts');
     const lastP=devPosts[devPosts.length-1].post;
     const uList=devPosts.map(d=>d.post.username).join(',');

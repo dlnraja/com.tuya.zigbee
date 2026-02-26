@@ -297,6 +297,27 @@ jobs:
             echo "Skipping monthly sync (only at 02:00 UTC)"
           fi
 
+      # ===== 10j. AUTO-LEARN: Discover non-Tuya fingerprints from driver DB =====
+      - name: "10j. Auto-Learn Fingerprints"
+        id: auto_learn
+        continue-on-error: true
+        timeout-minutes: 3
+        run: node .github/scripts/auto-learn-fingerprints.js
+
+      # ===== 10k. PATTERN DETECTOR: Recurring issue detection =====
+      - name: "10k. Pattern Detector"
+        id: patterns
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/pattern-detector.js
+
+      # ===== 10l. BOT SELF-AUDIT: Validate past bot replies =====
+      - name: "10l. Bot Self-Audit"
+        id: bot_audit
+        continue-on-error: true
+        timeout-minutes: 10
+        run: node .github/scripts/bot-self-audit.js
+
       # ===== 11. COMMIT: All state + docs + changelogs =====
       - name: "11. Commit all changes"
         id: commit
