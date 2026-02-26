@@ -416,9 +416,78 @@ jobs:
           DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/update-forum-first-post.js
+  promote-to-test:
+    name: "Promote Draft to Test"
+    needs: [generate-changelog, update-forum-thread]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: "Draft to Test (Node)"
+        id: promote_node
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: |
+          if [ -z "$HOMEY_PAT" ]; then
+            echo "::warning::HOMEY_PAT not set — skipping promote"
+            exit 0
+          fi
+          node .github/scripts/auto-publish-draft.js
+
+      - name: "Draft to Test (curl fallback)"
+        if: steps.promote_node.outcome != 'success'
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          if [ -z "$HOMEY_PAT" ]; then exit 0; fi
+          APP=com.dlnraja.tuya.zigbee
+          VER=$(node -p "require('./app.json').version")
+          # Get delegation token
+          DELEG=$(curl -s -X POST -H "Authorization: Bearer $HOMEY_PAT" -H "Content-Type: application/json" \
+            -d '{"audience":"apps"}' https://api.athom.com/delegation/token)
+          TOKEN=$(echo "$DELEG" | node -p "try{JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')).token}catch{''}" 2>/dev/null || echo "")
+          [ -z "$TOKEN" ] && TOKEN="$HOMEY_PAT"
+          # List builds and find latest draft
+          BUILDS=$(curl -s -H "Authorization: Bearer $TOKEN" "https://apps-api.athom.com/api/v1/app/$APP/build")
+          BUILD_ID=$(echo "$BUILDS" | node -p "try{const b=JSON.parse(require('fs').readFileSync('/dev/stdin','utf8'));const arr=Array.isArray(b)?b:b.builds||b.data||[];const drafts=arr.filter(x=>!x.channel||x.channel==='draft');const match=drafts.find(x=>x.version==='$VER')||drafts[0];match?.id||match?._id||''}catch{''}" 2>/dev/null || echo "")
+          if [ -z "$BUILD_ID" ]; then
+            echo "::warning::No draft build found. Manual: https://tools.developer.homey.app/apps/app/$APP/versions"
+            exit 0
+          fi
+          echo "Found draft build: $BUILD_ID"
+          # Promote to test
+          CODE=$(curl -s -o /tmp/resp.txt -w "%{http_code}" -X POST \
+            -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
+            -d '{"channel":"test"}' "https://apps-api.athom.com/api/v1/app/$APP/build/$BUILD_ID/channel")
+          echo "Promote $BUILD_ID => HTTP $CODE: $(cat /tmp/resp.txt | head -c 200)"
+          [ "$CODE" = "200" ] || [ "$CODE" = "201" ] || [ "$CODE" = "204" ] && echo "SUCCESS: promoted to test!" && exit 0
+          echo "::warning::Manual promote needed: https://tools.developer.homey.app/apps/app/$APP/versions"
+
+      - name: "Verify Test (retry after 20s)"
+        if: always()
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: |
+          if [ -z "$HOMEY_PAT" ]; then exit 0; fi
+          sleep 20
+          node .github/scripts/auto-publish-draft.js
+
   summary:
     name: "Weekly Summary"
-    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, forum-respond, gmail-diagnostics, device-diagnostics, external-sources, github-scanner, github-issue-manager, forum-activity, johanbendz-full, enrichment, generate-changelog, update-forum-thread]
+    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, forum-respond, gmail-diagnostics, device-diagnostics, external-sources, github-scanner, github-issue-manager, forum-activity, johanbendz-full, enrichment, generate-changelog, update-forum-thread, promote-to-test]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -440,13 +509,6 @@ jobs:
           echo "- Forum activity: ${{ needs.forum-activity.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- JohanBendz full: ${{ needs.johanbendz-full.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Forum first post: ${{ needs.update-forum-thread.result }}" >> $GITHUB_STEP_SUMMARY
-
-      - name: Auto-Publish Draft to Test
-        continue-on-error: true
-        env:
-          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-        run: |
-          if [ -z "$HOMEY_PAT" ]; then exit 0; fi
-          node .github/scripts/auto-publish-draft.js || true
+          echo "- **Promote to Test: ${{ needs.promote-to-test.result }}**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "[Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
