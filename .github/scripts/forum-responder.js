@@ -43,15 +43,16 @@ async function postReply(tid,replyTo,content,auth){
 
 // v5.11.27: Batched fallback — merge all FP results into ONE reply
 function batchedFallback(postInfos,ver){
-  const found=new Map(),miss=new Map();
+  const found=new Map(),miss=new Map(),fuzzyInfo=new Map();
   for(const pi of postInfos)for(const[fp,v]of Object.entries(pi.fpResults)){
     if(fp.startsWith('_')&&!fp.startsWith('_T'))continue;
     if(v.found)found.set(fp,v.drivers);else miss.set(fp,true);
+    if(v.fuzzyFrom)fuzzyInfo.set(fp,v.fuzzyFrom);
   }
   if(!found.size&&!miss.size)return null;
   const users=[...new Set(postInfos.map(p=>p.post.username))];
   let m=users.length?'Hi '+users.map(u=>'@'+u).join(', ')+',\n\n':'';
-  if(found.size){m+='**Supported** in v'+ver+':\n';for(const[fp,d]of found)m+='- `'+fp+'` → **'+d.slice(0,4).join(', ')+'**\n';m+='\nRemove and re-pair, select correct type.\n\n';}
+  if(found.size){m+='**Supported** in v'+ver+':\n';for(const[fp,d]of found){const fz=fuzzyInfo.get(fp);m+='- `'+fp+'`'+(fz?' (matched from `'+fz+'`)':'')+' → **'+d.slice(0,4).join(', ')+'**\n';}m+='\nRemove and re-pair, select correct type.\n\n';}
   if(miss.size){m+='**Not yet supported**: '+[...miss.keys()].map(k=>'`'+k+'`').join(', ')+'\nShare a [device interview](https://tools.developer.homey.app/tools/zigbee) + [GitHub issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new).\n\n';}
   m+='---\n*Bot Universal Tuya Zigbee (v'+ver+') — [Install test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [GitHub](https://github.com/dlnraja/com.tuya.zigbee/issues)*';
   return m;
@@ -105,7 +106,7 @@ async function main(){
       const isDev=fp.mfr.length>0||fp.pid.length>0||/device|sensor|switch|pair|recogni|unknown|diag|interview|zigbee|tuya|invert|battery/i.test(text);
       if(!isDev){console.log(' #'+p.post_number,p.username,'chat');continue}
       const fpR={};
-      for(const m of fp.mfr){const d=idx.get(m)||[];fpR[m]={found:d.length>0,drivers:d};console.log('  ',m,d.length?d.join(','):'?')}
+      for(const m of fp.mfr){const d=idx.get(m)||[];const fuzzyFrom=fp.mfr._fuzzy?.[m];fpR[m]={found:d.length>0,drivers:d,fuzzyFrom};if(fuzzyFrom)console.log('  ~',fuzzyFrom,'->',m,d.length?d.join(','):'?');else console.log('  ',m,d.length?d.join(','):'?')}
       for(const pid of fp.pid){const d=pidx.get(pid)||[];fpR[pid]={found:d.length>0,drivers:d,type:'productId'}}
       let imgCtx=null;
       const imgs=exImgs(p.cooked);
