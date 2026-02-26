@@ -1,5 +1,5 @@
 const fs=require('fs'),path=require('path');
-const {getForumAuth,fmtCk,FORUM}=require('./forum-auth');
+const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const MODEL='gemini-2.0-flash';
 const SKIP=['dlnraja','system','discobot'];
@@ -168,6 +168,8 @@ async function main(){
         let posted=false;
         for(let ri=0;ri<3;ri++){
           try{
+            // Refresh CSRF before each attempt (fixes 403 BAD CSRF)
+            if(auth.type==='session')await refreshCsrf(auth);
             const r=await postReply(tid,p.post_number,reply,auth);
             console.log('   Posted id:',r.id);
             summary.push({n:p.post_number,u:p.username,a:'replied',id:r.id});
