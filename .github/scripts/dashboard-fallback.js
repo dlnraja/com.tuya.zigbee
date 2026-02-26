@@ -104,25 +104,38 @@ async function _getAthomToken(em, pw, log) {
 }
 
 async function _tryApiPromote(token, ver, log) {
-  const endpoints = [
-    { m: 'PUT', u: `https://apps-sdk-v3.athom.com/api/app/${APP}/version/${ver}/test` },
-    { m: 'POST', u: `https://apps-sdk-v3.athom.com/api/app/${APP}/version/${ver}/publish`, b: { channel: 'test' } },
-    { m: 'PATCH', u: `https://apps-sdk-v3.athom.com/api/app/${APP}/version/${ver}`, b: { status: 'test' } },
-    { m: 'PUT', u: `https://apps-api.developer.athom.com/api/app/${APP}/version/${ver}/test` },
-    { m: 'POST', u: `https://apps-api.developer.athom.com/api/app/${APP}/version/${ver}/publish`, b: { channel: 'test' } },
-  ];
-  for (const ep of endpoints) {
-    try {
-      log(`  API try: ${ep.m} ${ep.u.split('/api/')[1] || ep.u}`);
-      const r = await fetch(ep.u, {
-        method: ep.m,
-        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-        body: ep.b ? JSON.stringify(ep.b) : undefined
-      });
-      if (r.ok || r.status === 204) { log('  API promote OK!'); return true; }
-      log(`  API ${r.status}`);
-    } catch (e) { log(`  API error: ${e.message}`); }
-  }
+  const BASE = 'https://apps-api.athom.com/api/v1';
+  const h = { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' };
+
+  // Step 1: Exchange token for delegation token (audience: apps)
+  try {
+    log('  Getting delegation token...');
+    const dr = await fetch('https://api.athom.com/delegation/token', {
+      method: 'POST', headers: h, body: JSON.stringify({ audience: 'apps' })
+    });
+    const dd = await dr.json();
+    if (dd.token) { h.Authorization = `Bearer ${dd.token}`; log('  Delegation token OK'); }
+  } catch (e) { log(`  Delegation failed: ${e.message}, continuing with original token`); }
+
+  // Step 2: List builds and find draft matching version
+  try {
+    log(`  Listing builds for ${APP}...`);
+    const br = await fetch(`${BASE}/app/${APP}/build`, { headers: h });
+    const builds = await br.json();
+    const list = Array.isArray(builds) ? builds : builds.builds || builds.data || [];
+    const draft = list.find(b => (!b.channel || b.channel === 'draft') && b.version === ver)
+      || list.find(b => !b.channel || b.channel === 'draft');
+    if (!draft) { log('  No draft build found'); return false; }
+    const buildId = draft.id || draft._id;
+    log(`  Found draft build ${buildId} v${draft.version}`);
+
+    // Step 3: Promote
+    const pr = await fetch(`${BASE}/app/${APP}/build/${buildId}/channel`, {
+      method: 'POST', headers: h, body: JSON.stringify({ channel: 'test' })
+    });
+    if (pr.ok || pr.status === 204) { log('  API promote OK!'); return true; }
+    log(`  Promote failed: ${pr.status}`);
+  } catch (e) { log(`  API error: ${e.message}`); }
   return false;
 }
 

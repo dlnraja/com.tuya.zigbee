@@ -124,22 +124,24 @@ jobs:
         run: |
           APP=com.dlnraja.tuya.zigbee
           VER=$(node -p "require('./app.json').version")
-          AUTH="Authorization: Bearer $HOMEY_PAT"
-          CT="Content-Type: application/json"
-          for BASE in https://apps-sdk-v3.athom.com https://api.athom.com; do
-            for EP in "/api/app/$APP/version/$VER/test" "/app/$APP/version/$VER/test"; do
-              CODE=$(curl -s -o /tmp/resp.txt -w "%{http_code}" -X PUT -H "$AUTH" -H "$CT" "$BASE$EP")
-              echo "PUT $BASE$EP => $CODE"
-              [ "$CODE" = "200" ] || [ "$CODE" = "201" ] || [ "$CODE" = "204" ] && echo "SUCCESS" && exit 0
-            done
-            for EP in "/api/app/$APP/version/$VER/publish" "/app/$APP/version/$VER/publish"; do
-              for M in PUT POST; do
-                CODE=$(curl -s -o /tmp/resp.txt -w "%{http_code}" -X $M -H "$AUTH" -H "$CT" -d '{"channel":"test"}' "$BASE$EP")
-                echo "$M $BASE$EP => $CODE"
-                [ "$CODE" = "200" ] || [ "$CODE" = "201" ] || [ "$CODE" = "204" ] && echo "SUCCESS" && exit 0
-              done
-            done
-          done
+          # Get delegation token
+          DELEG=$(curl -s -X POST -H "Authorization: Bearer $HOMEY_PAT" -H "Content-Type: application/json" \
+            -d '{"audience":"apps"}' https://api.athom.com/delegation/token)
+          TOKEN=$(echo "$DELEG" | node -p "try{JSON.parse(require('fs').readFileSync('/dev/stdin','utf8')).token}catch{''}" 2>/dev/null || echo "")
+          [ -z "$TOKEN" ] && TOKEN="$HOMEY_PAT"
+          # List builds and find draft
+          BUILDS=$(curl -s -H "Authorization: Bearer $TOKEN" "https://apps-api.athom.com/api/v1/app/$APP/build")
+          BUILD_ID=$(echo "$BUILDS" | node -p "try{const b=JSON.parse(require('fs').readFileSync('/dev/stdin','utf8'));const d=(Array.isArray(b)?b:b.builds||b.data||[]).filter(x=>!x.channel||x.channel==='draft').find(x=>x.version==='$VER'||true);d?.id||d?._id||''}catch{''}" 2>/dev/null || echo "")
+          if [ -z "$BUILD_ID" ]; then
+            echo "::warning::No draft build found. Manual: https://tools.developer.homey.app/apps/app/$APP/versions"
+            exit 0
+          fi
+          # Promote
+          CODE=$(curl -s -o /tmp/resp.txt -w "%{http_code}" -X POST \
+            -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
+            -d '{"channel":"test"}' "https://apps-api.athom.com/api/v1/app/$APP/build/$BUILD_ID/channel")
+          echo "Promote $BUILD_ID => HTTP $CODE"
+          [ "$CODE" = "200" ] || [ "$CODE" = "201" ] || [ "$CODE" = "204" ] && echo "SUCCESS" && exit 0
           echo "::warning::Manual promote needed: https://tools.developer.homey.app/apps/app/$APP/versions"
 
       - name: Commit state and docs
