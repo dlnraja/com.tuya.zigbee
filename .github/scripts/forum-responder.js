@@ -3,7 +3,7 @@ const {getForumAuth,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const MODEL='gemini-2.0-flash';
 const SKIP=['dlnraja','system','discobot'];
-const MAX_REPLIES=5,DELAY=15000;
+const MAX_REPLIES=15,DELAY=15000;
 const STATE=path.join(__dirname,'..','state','forum-state.json');
 const DDIR=path.join(__dirname,'..','..','drivers');
 
@@ -99,7 +99,7 @@ async function analyzeWithGemini(post,results,appVersion){
 async function main(){
   let dryRun=process.env.DRY_RUN==='true';
   const topicIds=(process.env.FORUM_TOPICS||'140352,26439,146735,89271,54018,12758,85498').split(',').map(Number);
-  const replyTopics=new Set((process.env.REPLY_TOPICS||'140352,26439').split(',').map(Number));
+  const replyTopics=new Set((process.env.REPLY_TOPICS||'140352,26439,146735,89271').split(',').map(Number));
   let appVersion='unknown';
   try{appVersion=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
   console.log('=== Forum Auto-Responder ===');
