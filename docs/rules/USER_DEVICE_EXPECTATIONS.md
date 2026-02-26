@@ -15,8 +15,9 @@
 
 ## Fingerprint Verification
 
-**Verified**: 55 fingerprints from user reports found in drivers
-**Missing** (17): `_TZE200_jt50ea5d`, `_TZ3210_jaap6jeb`, `_TZE284_g1enhdsi`, `_TZ3000_qamj2vnn`, `_TZ3000_tw4ztbp4`, `_TZ3000_avotanj3`, `_TZ3290_7v1k4vuf`, `_TZ3290_rlkmy85q`, `_TZ3290_jxvzqatw`, `_TZ3290_lypnqvle`, `_TZ3290_nba3knps`, `_TZ3290_yac64inu`, `_TZE204_2jnoy8dj`, `_TZ3210_iymfxdis`, `_TZ3002_xkxgfxsg`, `_TZ3002_tlsvxhxc`, `_TZE200_seq9cm6u`
+**Verified**: 71 fingerprints from user reports found in drivers (re-verified 2026-02-25)
+**Missing** (1): `_TZE200_seq9cm6u` (Z2M source only, no productId available — cannot map to driver)
+**Previously listed as missing but NOW FOUND** (16): `_TZE200_jt50ea5d` (valve_irrigation), `_TZ3210_jaap6jeb` (bulb_rgbw), `_TZE284_g1enhdsi` (switch_wall_6gang), `_TZ3000_qamj2vnn` (switch_1gang), `_TZ3000_tw4ztbp4` (switch_1gang), `_TZ3000_avotanj3` (switch_3gang), `_TZ3290_7v1k4vuf` (ir_blaster), `_TZ3290_rlkmy85q` (ir_blaster), `_TZ3290_jxvzqatw` (ir_blaster), `_TZ3290_lypnqvle` (ir_blaster), `_TZ3290_nba3knps` (ir_blaster), `_TZ3290_yac64inu` (ir_blaster), `_TZE204_2jnoy8dj` (fan_controller), `_TZ3210_iymfxdis` (switch_4gang), `_TZ3002_xkxgfxsg` (switch_1gang), `_TZ3002_tlsvxhxc` (switch_2gang)
 
 ---
 
@@ -262,12 +263,6 @@
 
 <!-- NIGHTLY_END -->
 
-
-<!-- NIGHTLY_END -->
-
-
-<!-- NIGHTLY_END -->
-
 ---
 
 ## Auto-Discovered Fingerprints
@@ -317,12 +312,6 @@
 | _TZ3002_xkxgfxsg | dlnraja/com.tuya.zigbee#136 | device_request |
 | _TZ3002_tlsvxhxc | dlnraja/com.tuya.zigbee#136 | device_request |
 | _TZE200_seq9cm6u | dlnraja/com.tuya.zigbee#136 | device_request |
-
-<!-- AUTODISCOVERED_END -->
-
-
-<!-- AUTODISCOVERED_END -->
-
 
 <!-- AUTODISCOVERED_END -->
 
