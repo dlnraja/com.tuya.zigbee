@@ -78,3 +78,21 @@ Do NOT remove just because mfr appears in another driver with different productI
 - `_TZ3000_*` - Makes 1-gang, 2-gang, 3-gang variants
 - `_TZE200_*` / `_TZE204_*` - Tuya DP across sensors, TRVs, covers
 - Same OEM = different productIds for different device types
+
+## GITHUB ACTIONS / YML WORKFLOW RULES
+
+> Full reference: `.github/WORKFLOW_GUIDELINES.md` and `.github/SECRETS.md`
+
+### Before editing ANY `.github/workflows/*.yml`:
+1. Read `.github/WORKFLOW_GUIDELINES.md` first
+2. Every job running `node` scripts MUST have: checkout → setup-node → npm ci
+3. Always set `timeout-minutes` on jobs
+4. Always set `permissions:` and `concurrency:` at top level
+5. Use `continue-on-error: true` for optional-secret steps
+6. Use `[skip ci]` in auto-commit messages to prevent infinite loops
+7. Stagger cron schedules by 30+ min to avoid git push conflicts
+8. Draft→test promotion: 3 tiers (Node → curl fallback → verify retry)
+9. `DISCOURSE_API_KEY` lint warnings = false positives (secret exists)
+10. `GITHUB_TOKEN` auto-provided; `GH_PAT` for cross-repo access
+11. Guard missing secrets: `if [ -z "$SECRET" ]; then exit 0; fi`
+12. Git commits: always `git pull --rebase origin master || true` before push
