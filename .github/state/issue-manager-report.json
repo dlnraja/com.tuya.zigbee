@@ -1,11 +1,517 @@
 {
-  "timestamp": "2026-02-26T09:49:10.646Z",
+  "timestamp": "2026-02-26T20:21:25.098Z",
   "appVersion": "5.11.25",
   "responded": 0,
   "closed": 0,
   "labeled": 0,
-  "issuesProcessed": 27,
+  "issuesProcessed": 30,
   "prsProcessed": 16,
-  "newFingerprints": [],
-  "evolutionSummary": null
+  "newFingerprints": [
+    {
+      "fp": "_TZE20X_xxxxxxxx",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZ3000_ww6drja5ts011f",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZ3000_zutizvykts0203",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZ3000_vjhcxjqb",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZ3000_otwpdq1d",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_01fvxamo",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_0hg58wyk",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_0j5jma9b",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_0u3bj3rc",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_1agwnems",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_1drr8tab",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_1ibpyhdc",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2aaelwxk",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2atgpdho",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2ekuz3dz",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2hf7x9n3",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2imwyigp",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2m38mh6k",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2pddnnrk",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2se8efxh",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2vfxweng",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_3ejwxpmu",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_3p5ydos3",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_3t91nb6k",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_3towulqd",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_3xfjp0ag",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_44af8vyi",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_4eeyebrt",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_579lguh2",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_5d3vhjro",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_6wi2mope",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_78ioiaml",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_7bztmfm1",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_7deq70b8",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_7fqkphoq",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_7sjncirf",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_86nbew0j",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_8eazvzo6",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_8ply8mjj",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_8thwkzxl",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_8whxpsiw",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_8ygsuhe1",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_9cqcpkgb",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_9i9dt8is",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_9p5xmj5r",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_9sfg7gm0",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_9yapgbuv",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_a4bpgplm",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_a8sdabtg",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_a8z0g46u",
+      "source": "dlnraja/com.tuya.zigbee#140",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZE20X_xxxxxxxx",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZ3000_ww6drja5ts011f",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZ3000_zutizvykts0203",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZ3000_vjhcxjqb",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZ3000_otwpdq1d",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_01fvxamo",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_0hg58wyk",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_0j5jma9b",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_0u3bj3rc",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_1agwnems",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_1drr8tab",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_1ibpyhdc",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2aaelwxk",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2atgpdho",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2ekuz3dz",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2hf7x9n3",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2imwyigp",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2m38mh6k",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2pddnnrk",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2se8efxh",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_2vfxweng",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_3ejwxpmu",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_3p5ydos3",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_3t91nb6k",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_3towulqd",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_3xfjp0ag",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_44af8vyi",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_4eeyebrt",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_579lguh2",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_5d3vhjro",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_6wi2mope",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_78ioiaml",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_7bztmfm1",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_7deq70b8",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_7fqkphoq",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_7sjncirf",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_86nbew0j",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_8eazvzo6",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_8ply8mjj",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_8thwkzxl",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_8whxpsiw",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_8ygsuhe1",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_9cqcpkgb",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_9i9dt8is",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_9p5xmj5r",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_9sfg7gm0",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_9yapgbuv",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_a4bpgplm",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_a8sdabtg",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZe200_a8z0g46u",
+      "source": "dlnraja/com.tuya.zigbee#138",
+      "type": "feature"
+    },
+    {
+      "fp": "_TZE20X_xxxxxxxx",
+      "source": "dlnraja/com.tuya.zigbee#139",
+      "type": "feature"
+    }
+  ],
+  "evolutionSummary": "In the latest project evolution, we have successfully identified 101 new feature profiles (FPs) related to Zigbee devices, primarily sourced from the issue dlnraja/com.tuya.zigbee#140. Notable new devices include several from the _TZE20X and _TZ3000 series, enhancing our device compatibility and functionality.\n\nThroughout this period, we processed a total of 30 issues and 16 pull requests (PRs), indicating a robust engagement with the community and a commitment to resolving outstanding concerns. While no issues or PRs were closed, the active processing demonstrates ongoing efforts to refine and enhance the project.\n\nAction items moving forward include prioritizing the integration of the newly discovered devices into our system and addressing any outstanding issues that may arise from user feedback. Continued collaboration and monitoring will be essential to ensure the project's success and responsiveness to user needs."
 }
