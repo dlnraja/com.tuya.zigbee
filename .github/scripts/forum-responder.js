@@ -1,222 +1,151 @@
 const fs=require('fs'),path=require('path');
 const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
-const MODEL='gemini-2.0-flash';
 const SKIP=['dlnraja','system','discobot'];
-const MAX_REPLIES=5,DELAY=30000;
+const MAX_REPLIES_TOTAL=2,DELAY=30000;
 const STATE=path.join(__dirname,'..','state','forum-state.json');
 const DDIR=path.join(__dirname,'..','..','drivers');
-
 const loadState=()=>{try{return JSON.parse(fs.readFileSync(STATE,'utf8'))}catch{return{topics:{}}}};
 const saveState=s=>{fs.mkdirSync(path.dirname(STATE),{recursive:true});fs.writeFileSync(STATE,JSON.stringify(s,null,2)+'\n')};
 const{buildFullIndex,extractAllFP}=require('./load-fingerprints');
 const strip=h=>(h||'').replace(/<br\s*\/?>/gi,'\n').replace(/<\/p>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").trim();
 const exImgs=h=>{const u=[];const re=/<img[^>]+src="([^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
-const exLinks=h=>{const u=[];const re=/href="(https?:\/\/[^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const{callAI,analyzeImage}=require('./ai-helper');
 
-// v5.11.26: Use buildFullIndex to detect ALL manufacturers (not just _T*)
 function buildIndex(){
   const{mfrIdx,pidIdx,allMfrs,allPids}=buildFullIndex(DDIR);
   return{idx:mfrIdx,pidx:pidIdx,allMfrs,allPids};
 }
 
-async function fetchNewPosts(topicId,since){
-  const r=await fetchWithRetry(FORUM+'/t/'+topicId+'.json',{},{retries:3,label:'forumTopic'});
-  if(!r.ok)throw new Error('Topic fetch failed: '+r.status);
+async function fetchNewPosts(tid,since){
+  const r=await fetchWithRetry(FORUM+'/t/'+tid+'.json',{},{retries:3,label:'topic'});
+  if(!r.ok)throw new Error('Fetch:'+r.status);
   const d=await r.json();
-  if(d.closed||d.archived){console.log('  Topic is'+(d.closed?' CLOSED':'')+(d.archived?' ARCHIVED':''));return{posts:[],closed:true}}
-  const highest=d.highest_post_number;
-  if(highest<=since)return{posts:[],closed:false};
-  const r2=await fetchWithRetry(FORUM+'/t/'+topicId+'/'+(since+1)+'.json',{},{retries:2,label:'forumPosts'});
-  if(!r2.ok)throw new Error('Posts fetch failed: '+r2.status);
-  const d2=await r2.json();
-  const posts=(d2.post_stream?.posts||[]).filter(p=>p.post_number>since);
-  if(posts.length&&Math.max(...posts.map(p=>p.post_number))<highest){
-    const r3=await fetchWithRetry(FORUM+'/t/'+topicId+'/'+(Math.max(...posts.map(p=>p.post_number))+1)+'.json',{},{retries:2,label:'forumMore'});
-    if(r3.ok){const d3=await r3.json();
-      for(const p of(d3.post_stream?.posts||[]).filter(p=>p.post_number>since))
-        if(!posts.find(e=>e.post_number===p.post_number))posts.push(p);
-    }
-  }
+  if(d.closed||d.archived)return{posts:[],closed:true};
+  if(d.highest_post_number<=since)return{posts:[],closed:false};
+  const r2=await fetchWithRetry(FORUM+'/t/'+tid+'/'+(since+1)+'.json',{},{retries:2,label:'posts'});
+  if(!r2.ok)throw new Error('Posts:'+r2.status);
+  const posts=(await r2.json()).post_stream?.posts?.filter(p=>p.post_number>since)||[];
   return{posts:posts.sort((a,b)=>a.post_number-b.post_number),closed:false};
 }
 
-async function postReply(topicId,replyTo,content,auth){
-  const h=auth.type==='apikey'
-    ?{'Content-Type':'application/json','User-Api-Key':auth.key}
+async function postReply(tid,replyTo,content,auth){
+  const h=auth.type==='apikey'?{'Content-Type':'application/json','User-Api-Key':auth.key}
     :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
   const r=await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:h,
-    body:JSON.stringify({topic_id:topicId,raw:content,reply_to_post_number:replyTo})},{retries:3,label:'forumReply'});
+    body:JSON.stringify({topic_id:tid,raw:content,reply_to_post_number:replyTo})},{retries:3,label:'reply'});
   const d=await r.json().catch(()=>({}));
-  if(!r.ok)throw new Error('Post failed: '+r.status+' '+JSON.stringify(d).substring(0,200));
+  if(!r.ok)throw new Error('Post:'+r.status+' '+JSON.stringify(d).substring(0,200));
   return d;
 }
 
-const{callAI,analyzeImage}=require('./ai-helper');
-
-function templateFallback(post,results,appVersion){
-  const found=Object.entries(results).filter(([k,v])=>v.found&&k[0]!=='_');
-  const missing=Object.entries(results).filter(([k,v])=>!v.found&&k[0]!=='_');
-  let msg='';
-  if(found.length){
-    msg+='Your device fingerprint(s) are **already supported** in v'+appVersion+':\n\n';
-    for(const[fp,v]of found){const dl=v.drivers.length>5?v.drivers.slice(0,5).join(', ')+' (+'+( v.drivers.length-5)+' more)':v.drivers.join(', ');msg+='- `'+fp+'` -> **'+dl+'**\n';}
-    msg+='\nPlease **remove and re-pair** your device, selecting the correct device type above.\n';
+// v5.11.27: Batched fallback — merge all FP results into ONE reply
+function batchedFallback(postInfos,ver){
+  const found=new Map(),miss=new Map();
+  for(const pi of postInfos)for(const[fp,v]of Object.entries(pi.fpResults)){
+    if(fp.startsWith('_')&&!fp.startsWith('_T'))continue;
+    if(v.found)found.set(fp,v.drivers);else miss.set(fp,true);
   }
-  if(missing.length){
-    msg+='The following fingerprint(s) are **not yet supported**: '+missing.map(([fp])=>'`'+fp+'`').join(', ')+'\n\n';
-    msg+='Please provide a **device interview** from [Developer Tools](https://tools.developer.homey.app) and open a [GitHub issue](https://github.com/dlnraja/com.tuya.zigbee/issues).\n';
-  }
-  if(!found.length&&!missing.length){
-    const text=strip(post.cooked).toLowerCase();
-    if(/pair|recogni|unknown|not found|won.t add|can.t find|not detect/i.test(text)){
-      msg+='If your Tuya/Zigbee device is not recognized, please:\n\n';
-      msg+='1. Open [Developer Tools](https://tools.developer.homey.app) → Zigbee → select your device\n';
-      msg+='2. Run a **device interview** and copy the JSON\n';
-      msg+='3. Open a [GitHub issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new) with the interview data\n\n';
-      msg+='We\'ll add support for your device in the next release!\n';
-    } else if(/interview|diagnostic|json|cluster|endpoint/i.test(text)){
-      msg+='Thanks for sharing your device info! We\'ll review it and add support if possible.\n\n';
-      msg+='Please open a [GitHub issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new) so we can track it.\n';
-    } else {
-      return null;
-    }
-  }
-  msg+='\n---\n*Bot Universal Tuya Zigbee (v'+appVersion+') - [Install test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [GitHub](https://github.com/dlnraja/com.tuya.zigbee/issues)*';
-  return msg;
+  if(!found.size&&!miss.size)return null;
+  const users=[...new Set(postInfos.map(p=>p.post.username))];
+  let m=users.length?'Hi '+users.map(u=>'@'+u).join(', ')+',\n\n':'';
+  if(found.size){m+='**Supported** in v'+ver+':\n';for(const[fp,d]of found)m+='- `'+fp+'` → **'+d.slice(0,4).join(', ')+'**\n';m+='\nRemove and re-pair, select correct type.\n\n';}
+  if(miss.size){m+='**Not yet supported**: '+[...miss.keys()].map(k=>'`'+k+'`').join(', ')+'\nShare a [device interview](https://tools.developer.homey.app/tools/zigbee) + [GitHub issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new).\n\n';}
+  m+='---\n*Bot Universal Tuya Zigbee (v'+ver+') — [Install test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [GitHub](https://github.com/dlnraja/com.tuya.zigbee/issues)*';
+  return m;
 }
 
-async function analyzeWithGemini(post,results,appVersion){
-  const text=strip(post.cooked);
-  let sys='';
-  try{sys=fs.readFileSync(path.join(__dirname,'system-prompt.txt'),'utf8').replace(/\{\{VERSION\}\}/g,appVersion)}catch{}
-  const usr='Post #'+post.post_number+' by @'+post.username+':\n'+text+'\n\nFingerprint results:\n'+JSON.stringify(results,null,2)+'\n\nGenerate reply or NULL:';
-  const res=await callAI(usr,sys,{maxTokens:1024});
-  if(res){
-    console.log('   AI response via '+res.model);
-    if(res.text.toUpperCase()==='NULL')return null;
-    return res.text;
+// v5.11.27: Batched AI — ALL posts → ONE reply (anti-spam)
+async function batchAI(postInfos,ver){
+  let sys='';try{sys=fs.readFileSync(path.join(__dirname,'system-prompt.txt'),'utf8').replace(/\{\{VERSION\}\}/g,ver)}catch{}
+  let ctx='ALL new posts in this topic. Write ONE combined reply. Use @mentions. Skip thank-you posts.\n\n';
+  for(const pi of postInfos){
+    ctx+='---\n#'+pi.post.post_number+' @'+pi.post.username+':\n'+pi.text+'\n';
+    if(Object.keys(pi.fpResults).length)ctx+='FP: '+JSON.stringify(pi.fpResults)+'\n';
+    if(pi.imgCtx)ctx+='Img: '+pi.imgCtx+'\n';
   }
-  console.log('   All AI failed, using template fallback');
-  return templateFallback(post,results,appVersion);
+  ctx+='\n---\nONE reply (max 400 words) or NULL:';
+  const r=await callAI(ctx,sys,{maxTokens:1500});
+  if(r&&r.text.trim().toUpperCase()!=='NULL')return r.text.trim();
+  return batchedFallback(postInfos,ver);
 }
 
 async function main(){
-  let dryRun=process.env.DRY_RUN==='true';
-  const topicIds=(process.env.FORUM_TOPICS||'140352,26439,146735,89271,54018,12758,85498').split(',').map(Number);
-  const replyTopics=new Set((process.env.REPLY_TOPICS||'140352,26439,146735,89271').split(',').map(Number));
-  let appVersion='unknown';
-  try{appVersion=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
-  console.log('=== Forum Auto-Responder ===');
-  console.log('Mode:',dryRun?'DRY RUN':'LIVE','| Topics:',topicIds.join(','),'| App: v'+appVersion);
-
+  let dry=process.env.DRY_RUN==='true';
+  const tids=(process.env.FORUM_TOPICS||'140352,26439,146735,89271,54018,12758,85498').split(',').map(Number);
+  const replyTids=new Set((process.env.REPLY_TOPICS||'140352,26439,146735,89271').split(',').map(Number));
+  let ver='?';try{ver=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
+  console.log('=== Forum Responder v5.11.27 (1 reply/topic) ===');
+  console.log(dry?'DRY':'LIVE','| v'+ver);
   const{idx,pidx,allMfrs,allPids}=buildIndex();
-  console.log('Index:',idx.size,'manufacturers,',pidx.size,'productIds');
-
+  console.log('Index:',idx.size,'mfrs,',pidx.size,'pids');
   const state=loadState();
   let auth=null;
-  if(!dryRun){
-    console.log('Getting forum auth...');
-    auth=await getForumAuth();
-    if(!auth){console.log('::warning::No forum auth - running scan-only (no replies)');dryRun=true;}
-  }
+  if(!dry){auth=await getForumAuth();if(!auth){console.log('::warning::No auth');dry=true;}}
+  let totalP=0,totalR=0;const summary=[];
 
-  let totalP=0,totalR=0,globalBlock=false;const summary=[];
-
-  for(const tid of topicIds){
-    if(globalBlock){console.log('\n-- Topic',tid,'-> SKIP (global posting block)');continue}
+  for(const tid of tids){
+    if(totalR>=MAX_REPLIES_TOTAL)break;
     const ts=state.topics[tid]||{lastProcessed:0};
     const last=ts.lastProcessed;
-    console.log('\n-- Topic',tid,'(last: #'+last+') --');
-
-    let fetchResult;
-    try{fetchResult=await fetchNewPosts(tid,last)}
-    catch(e){console.error('Fetch error:',e.message);continue}
-    const posts=fetchResult.posts;
-    console.log('New posts:',posts.length,fetchResult.closed?'(CLOSED - scan only)':'');
-    if(!posts.length){state.topics[tid]={...ts,lastRun:new Date().toISOString()};continue}
-    if(fetchResult.closed)replyTopics.delete(tid);
-
-    let maxP=last;let topicBlocked=false;
-    for(const p of posts){
-      if(SKIP.includes(p.username)){maxP=Math.max(maxP,p.post_number);console.log(' #'+p.post_number,'by',p.username,'-> SKIP owner');continue}
-      console.log(' #'+p.post_number,'by',p.username);
+    console.log('\n-- T'+tid+' (last:#'+last+') --');
+    let fr;try{fr=await fetchNewPosts(tid,last)}catch(e){console.error(e.message);continue}
+    if(!fr.posts.length){state.topics[tid]={...ts,lastRun:new Date().toISOString()};continue}
+    if(fr.closed)replyTids.delete(tid);
+    // Phase 1: Collect device-related posts
+    let maxP=last;const devPosts=[];
+    for(const p of fr.posts){
+      maxP=Math.max(maxP,p.post_number);
+      if(SKIP.includes(p.username)){console.log(' #'+p.post_number,p.username,'skip');continue}
       totalP++;
-
       const text=strip(p.cooked);
       const fp=extractAllFP(text,allMfrs,allPids);
-      const isDevice=fp.mfr.length>0||fp.pid.length>0||/device|sensor|switch|button|pair|recogni|unknown|diag|interview|manufacturer|driver|zigbee|tuya/i.test(text);
-      if(!isDevice){maxP=Math.max(maxP,p.post_number);console.log('   -> not device-related');continue}
-
-      const res={};
-      for(const m of fp.mfr){const d=idx.get(m)||[];res[m]={found:d.length>0,drivers:d};console.log('  ',m,'->',d.length?d.join(','):'NOT FOUND')}
-      for(const p2 of fp.pid){const d=pidx.get(p2)||[];res[p2]={found:d.length>0,drivers:d,type:'productId'}}
-
-      // Analyze images and links
-      const imgs=exImgs(p.cooked);let imgCtx=null;
-      if(imgs.length){const iu=imgs[0].startsWith('/')?FORUM+imgs[0]:imgs[0];try{imgCtx=await analyzeImage(iu,'Extract Tuya fingerprints from image. JSON or NULL.')}catch{}}
-      const links=exLinks(p.cooked).filter(l=>l.includes('github.com')||l.includes('zigbee2mqtt')||l.includes('blakadder'));
-      if(imgCtx)res._imageAnalysis=imgCtx;
-      if(links.length)res._externalLinks=links.slice(0,3);
-
-      let reply;
-      try{console.log('   Gemini...');reply=await analyzeWithGemini(p,res,appVersion)}
-      catch(e){console.error('   Gemini error:',e.message);continue}
-      if(!reply){maxP=Math.max(maxP,p.post_number);console.log('   -> no response needed');continue}
-
-      console.log('   Response:',reply.length,'chars');
-      if(!replyTopics.has(tid)){console.log('   -> scan-only topic, no reply');summary.push({n:p.post_number,u:p.username,a:'scan_only'});maxP=Math.max(maxP,p.post_number);continue}
-      if(totalR>=MAX_REPLIES){console.log('   -> MAX_REPLIES reached');maxP=Math.max(maxP,p.post_number);continue}
-      if(topicBlocked){console.log('   -> topic blocked (consecutive limit)');maxP=Math.max(maxP,p.post_number);continue}
-
-      if(dryRun){
-        console.log('   [DRY] Would post:\n---\n'+reply+'\n---');
-        summary.push({n:p.post_number,u:p.username,a:'dry_reply'});
-        maxP=Math.max(maxP,p.post_number);
-      }else{
-        let posted=false;
-        for(let ri=0;ri<3;ri++){
-          try{
-            // Refresh CSRF before each attempt (fixes 403 BAD CSRF)
-            if(auth.type==='session')await refreshCsrf(auth);
-            const r=await postReply(tid,p.post_number,reply,auth);
-            console.log('   Posted id:',r.id);
-            summary.push({n:p.post_number,u:p.username,a:'replied',id:r.id});
-            totalR++;maxP=Math.max(maxP,p.post_number);posted=true;
-            await sleep(DELAY);break;
-          }catch(e){
-            console.warn('   Post try '+(ri+1)+':',e.message);
-            // Detect Discourse posting blocks (422)
-            if(e.message&&(e.message.includes('consecutive')||e.message.includes('closed or deleted')||e.message.includes('gone wrong'))){
-              const isGlobal=e.message.includes('gone wrong')||e.message.includes('closed or deleted');
-              console.warn('   -> Posting blocked'+(isGlobal?' (global - spam protection)':' (consecutive limit)')+', skipping');
-              topicBlocked=true;if(isGlobal)globalBlock=true;
-              maxP=Math.max(maxP,p.post_number);break;
-            }
-            if(ri<2)await sleep(5000*(ri+1));
-          }
+      const isDev=fp.mfr.length>0||fp.pid.length>0||/device|sensor|switch|pair|recogni|unknown|diag|interview|zigbee|tuya|invert|battery/i.test(text);
+      if(!isDev){console.log(' #'+p.post_number,p.username,'chat');continue}
+      const fpR={};
+      for(const m of fp.mfr){const d=idx.get(m)||[];fpR[m]={found:d.length>0,drivers:d};console.log('  ',m,d.length?d.join(','):'?')}
+      for(const pid of fp.pid){const d=pidx.get(pid)||[];fpR[pid]={found:d.length>0,drivers:d,type:'productId'}}
+      let imgCtx=null;
+      const imgs=exImgs(p.cooked);
+      if(imgs.length){try{imgCtx=await analyzeImage(imgs[0].startsWith('/')?FORUM+imgs[0]:imgs[0],'Extract Tuya fingerprints. JSON or NULL.')}catch{}}
+      devPosts.push({post:p,text,fp,fpResults:fpR,imgCtx});
+    }
+    console.log('  Device:',devPosts.length,'/',fr.posts.length);
+    if(!devPosts.length){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
+    // Phase 2: ONE batched reply
+    let reply=null;
+    try{reply=await batchAI(devPosts,ver)}catch(e){console.error('AI:',e.message)}
+    if(!reply){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
+    console.log('  Reply:',reply.length,'ch for',devPosts.length,'posts');
+    const lastP=devPosts[devPosts.length-1].post;
+    const uList=devPosts.map(d=>d.post.username).join(',');
+    if(!replyTids.has(tid)){summary.push({t:tid,u:uList,a:'scan'});}
+    else if(dry){console.log('[DRY]\n'+reply.substring(0,300));summary.push({t:tid,u:uList,a:'dry'});}
+    else{
+      let ok=false;
+      for(let i=0;i<3;i++){
+        try{
+          if(auth.type==='session')await refreshCsrf(auth);
+          const r=await postReply(tid,lastP.post_number,reply,auth);
+          console.log('  Posted:',r.id);summary.push({t:tid,u:uList,a:'replied',id:r.id});totalR++;ok=true;await sleep(DELAY);break;
+        }catch(e){
+          console.warn('  Try'+(i+1)+':',e.message);
+          if(/consecutive|closed|gone wrong/.test(e.message)){console.warn('  Block');break;}
+          if(i<2)await sleep(5000*(i+1));
         }
-        if(!posted&&!topicBlocked)summary.push({n:p.post_number,u:p.username,a:'failed'});
-        if(topicBlocked){maxP=Math.max(maxP,p.post_number);break}
       }
+      if(!ok)summary.push({t:tid,u:uList,a:'failed'});
     }
     state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};
   }
-
   saveState(state);
-  console.log('\n=== Done: processed',totalP,', replied',totalR,'===');
-  if(summary.length)for(const s of summary)console.log(' #'+s.n,'@'+s.u,s.a,s.id?'id:'+s.id:'',s.err||'');
-
-  if(process.env.GITHUB_OUTPUT){
-    fs.appendFileSync(process.env.GITHUB_OUTPUT,'processed='+totalP+'\nresponded='+totalR+'\n');
-  }
+  console.log('\n=== Done: scanned',totalP,', replied',totalR,'===');
+  for(const s of summary)console.log(' T'+s.t,'@'+s.u,s.a);
+  if(process.env.GITHUB_OUTPUT)fs.appendFileSync(process.env.GITHUB_OUTPUT,'processed='+totalP+'\nresponded='+totalR+'\n');
   if(process.env.GITHUB_STEP_SUMMARY){
-    let md='## Forum Auto-Responder\n| Metric | Value |\n|---|---|\n| Processed | '+totalP+' |\n| Replied | '+totalR+' |\n| Mode | '+(dryRun?'Dry Run':'Live')+' |\n';
-    if(summary.length){md+='\n### Actions\n| Post | User | Action |\n|---|---|---|\n';
-      for(const s of summary)md+='| #'+s.n+' | @'+s.u+' | '+s.a+' |\n'}
+    let md='## Forum Responder\n| Metric | Value |\n|---|---|\n| Scanned | '+totalP+' |\n| Replied | '+totalR+' |\n| Mode | '+(dry?'Dry':'Live')+' |\n';
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,md);
   }
 }
-
 main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});
