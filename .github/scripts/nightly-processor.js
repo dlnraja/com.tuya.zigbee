@@ -32,15 +32,8 @@ function lookupFPs(fps,idx,pidx){
 }
 
 
-async function postForum(topicId,content,replyTo,auth){
-  const body={topic_id:topicId,raw:content};
-  if(replyTo)body.reply_to_post_number=replyTo;
-  const h=auth.type==='apikey'
-    ?{'Content-Type':'application/json','User-Api-Key':auth.key}
-    :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
-  const r=await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:h,body:JSON.stringify(body)},{retries:3,label:'forumPost'});
-  return r.ok?(await r.json()):null;
-}
+// v5.11.28: postForum REMOVED — all forum posting now centralized in forum-responder.js (anti-spam)
+// This script is DATA COLLECTION only.
 
 async function ghFetch(url){
   const token=process.env.GH_PAT||process.env.GITHUB_TOKEN;
