@@ -81,10 +81,17 @@ jobs:
             const fs=require('fs');
             const data=JSON.parse(fs.readFileSync('/tmp/upstream_new_fps.json','utf8'));
             if(!data.length)return;
+            // Dedup: check for existing open issue with same title
+            const dupTitle=`[Auto] ${data.length} new fingerprint(s) from upstream`;
+            const {data:existing}=await github.rest.issues.listForRepo({
+              owner:context.repo.owner,repo:context.repo.repo,
+              state:'open',labels:'auto-triage',per_page:10
+            });
+            if(existing.some(i=>i.title===dupTitle)){console.log('Issue exists:',dupTitle);return;}
             const rows=data.slice(0,50).map(d=>`| \`${d.fp}\` | ${d.source} | ${d.type} |`).join('\n');
             await github.rest.issues.create({
               owner:context.repo.owner,repo:context.repo.repo,
-              title:`[Auto] ${data.length} new fingerprint(s) from upstream`,
+              title:dupTitle,
               body:`## New fingerprints from upstream triage\n\n| Fingerprint | Source | Type |\n|---|---|---|\n${rows}\n\nPlease add these to the appropriate driver.compose.json.`,
               labels:['enhancement','auto-triage']
             });
