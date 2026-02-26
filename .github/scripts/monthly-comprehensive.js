@@ -209,7 +209,7 @@ async function respondToIssue(repo,issue,idx,pidx,state,appVersion){
   for(const fp of fps){const d=idx.get(fp)||[];results[fp]={found:d.length>0,drivers:d}}
   for(const pid of pids){const d=pidx.get(pid)||[];results[pid]={found:d.length>0,drivers:d,type:'productId'}}
 
-  const sysPrompt='You are the maintainer bot for Universal Tuya Zigbee (v'+appVersion+'). Respond to this GitHub issue with technical details. If fingerprint is supported, tell which driver. If not, ask for device interview from tools.developer.homey.app. Be concise, use GitHub markdown. Max 300 words. End with: ---\n*Bot Universal Tuya Zigbee v'+appVersion+'*';
+  const sysPrompt='You are the maintainer of Universal Tuya Zigbee (v'+appVersion+'). Respond to this GitHub issue with technical details. If fingerprint is supported, tell which driver. If not, ask for device interview from tools.developer.homey.app. Be concise, use GitHub markdown. Max 300 words. NEVER mention bot/automated. No signature or footer.';
   const ai=await callAI('Issue #'+issue.number+' by @'+issue.user?.login+':\n'+text+'\n\nFingerprint results:\n'+JSON.stringify(results,null,2),sysPrompt);
   if(!ai)return null;
   if(ai.text.toUpperCase()==='NULL')return null;
