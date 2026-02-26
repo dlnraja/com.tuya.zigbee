@@ -9,25 +9,16 @@ const DDIR=path.join(__dirname,'..','..','drivers');
 
 const loadState=()=>{try{return JSON.parse(fs.readFileSync(STATE,'utf8'))}catch{return{topics:{}}}};
 const saveState=s=>{fs.mkdirSync(path.dirname(STATE),{recursive:true});fs.writeFileSync(STATE,JSON.stringify(s,null,2)+'\n')};
+const{buildFullIndex,extractAllFP}=require('./load-fingerprints');
 const strip=h=>(h||'').replace(/<br\s*\/?>/gi,'\n').replace(/<\/p>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").trim();
-const extractFP=t=>({mfr:[...new Set(t.match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])],pid:[...new Set(t.match(/\bTS[0-9]{4}[A-Z]?\b/g)||[])]});
 const exImgs=h=>{const u=[];const re=/<img[^>]+src="([^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
 const exLinks=h=>{const u=[];const re=/href="(https?:\/\/[^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 
+// v5.11.26: Use buildFullIndex to detect ALL manufacturers (not just _T*)
 function buildIndex(){
-  const idx=new Map(),pidx=new Map();
-  if(!fs.existsSync(DDIR))return{idx,pidx};
-  for(const d of fs.readdirSync(DDIR)){
-    const f=path.join(DDIR,d,'driver.compose.json');
-    if(!fs.existsSync(f))continue;
-    const c=fs.readFileSync(f,'utf8');
-    for(const m of(c.match(/"_T[A-Za-z0-9_]+"/g)||[]))
-      {const k=m.replace(/"/g,'');if(!idx.has(k))idx.set(k,[]);if(!idx.get(k).includes(d))idx.get(k).push(d)}
-    for(const m of(c.match(/"TS[0-9]{4}[A-Z]?"/g)||[]))
-      {const k=m.replace(/"/g,'');if(!pidx.has(k))pidx.set(k,[]);if(!pidx.get(k).includes(d))pidx.get(k).push(d)}
-  }
-  return{idx,pidx};
+  const{mfrIdx,pidIdx,allMfrs,allPids}=buildFullIndex(DDIR);
+  return{idx:mfrIdx,pidx:pidIdx,allMfrs,allPids};
 }
 
 async function fetchNewPosts(topicId,since){
@@ -120,7 +111,7 @@ async function main(){
   console.log('=== Forum Auto-Responder ===');
   console.log('Mode:',dryRun?'DRY RUN':'LIVE','| Topics:',topicIds.join(','),'| App: v'+appVersion);
 
-  const{idx,pidx}=buildIndex();
+  const{idx,pidx,allMfrs,allPids}=buildIndex();
   console.log('Index:',idx.size,'manufacturers,',pidx.size,'productIds');
 
   const state=loadState();
@@ -154,7 +145,7 @@ async function main(){
       totalP++;
 
       const text=strip(p.cooked);
-      const fp=extractFP(text);
+      const fp=extractAllFP(text,allMfrs,allPids);
       const isDevice=fp.mfr.length>0||fp.pid.length>0||/device|sensor|switch|button|pair|recogni|unknown|diag|interview|manufacturer|driver|zigbee|tuya/i.test(text);
       if(!isDevice){maxP=Math.max(maxP,p.post_number);console.log('   -> not device-related');continue}
 
