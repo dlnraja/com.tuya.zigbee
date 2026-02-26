@@ -375,9 +375,44 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: node .github/scripts/enrichment-scanner.js
 
+  smart-processor:
+    name: "Smart Device Processor (AI Brain)"
+    needs: [enrichment, scan-forks, gmail-diagnostics, github-issue-manager, forum-activity]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "Cross-reference ALL sources + AI device implementation"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/smart-device-processor.js
+      - name: Commit smart processor changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "smart-processor: auto-add fingerprints [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
+
   generate-changelog:
     name: "AI Changelog Generation"
-    needs: [scan-forum, gmail-diagnostics, device-diagnostics, enrichment]
+    needs: [scan-forum, gmail-diagnostics, device-diagnostics, enrichment, smart-processor]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -485,7 +520,7 @@ jobs:
 
   summary:
     name: "Weekly Summary"
-    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, forum-respond, gmail-diagnostics, device-diagnostics, external-sources, github-scanner, github-issue-manager, forum-activity, johanbendz-full, enrichment, generate-changelog, update-forum-thread, promote-to-test]
+    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, forum-respond, gmail-diagnostics, device-diagnostics, external-sources, github-scanner, github-issue-manager, forum-activity, johanbendz-full, enrichment, smart-processor, generate-changelog, update-forum-thread, promote-to-test]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -501,6 +536,7 @@ jobs:
           echo "- Device diagnostics: ${{ needs.device-diagnostics.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- External sources: ${{ needs.external-sources.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Enrichment: ${{ needs.enrichment.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Smart Processor: ${{ needs.smart-processor.result }}**" >> $GITHUB_STEP_SUMMARY
           echo "- AI Changelog: ${{ needs.generate-changelog.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- GitHub scanner: ${{ needs.github-scanner.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- GitHub issue manager: ${{ needs.github-issue-manager.result }}" >> $GITHUB_STEP_SUMMARY
