@@ -34,8 +34,9 @@ async function fetchNewPosts(topicId,since){
   const r=await fetchWithRetry(FORUM+'/t/'+topicId+'.json',{},{retries:3,label:'forumTopic'});
   if(!r.ok)throw new Error('Topic fetch failed: '+r.status);
   const d=await r.json();
+  if(d.closed||d.archived){console.log('  Topic is'+(d.closed?' CLOSED':'')+(d.archived?' ARCHIVED':''));return{posts:[],closed:true}}
   const highest=d.highest_post_number;
-  if(highest<=since)return[];
+  if(highest<=since)return{posts:[],closed:false};
   const r2=await fetchWithRetry(FORUM+'/t/'+topicId+'/'+(since+1)+'.json',{},{retries:2,label:'forumPosts'});
   if(!r2.ok)throw new Error('Posts fetch failed: '+r2.status);
   const d2=await r2.json();
@@ -47,7 +48,7 @@ async function fetchNewPosts(topicId,since){
         if(!posts.find(e=>e.post_number===p.post_number))posts.push(p);
     }
   }
-  return posts.sort((a,b)=>a.post_number-b.post_number);
+  return{posts:posts.sort((a,b)=>a.post_number-b.post_number),closed:false};
 }
 
 async function postReply(topicId,replyTo,content,auth){
@@ -138,11 +139,13 @@ async function main(){
     const last=ts.lastProcessed;
     console.log('\n-- Topic',tid,'(last: #'+last+') --');
 
-    let posts;
-    try{posts=await fetchNewPosts(tid,last)}
+    let fetchResult;
+    try{fetchResult=await fetchNewPosts(tid,last)}
     catch(e){console.error('Fetch error:',e.message);continue}
-    console.log('New posts:',posts.length);
+    const posts=fetchResult.posts;
+    console.log('New posts:',posts.length,fetchResult.closed?'(CLOSED - scan only)':'');
     if(!posts.length){state.topics[tid]={...ts,lastRun:new Date().toISOString()};continue}
+    if(fetchResult.closed)replyTopics.delete(tid);
 
     let maxP=last;let topicBlocked=false;
     for(const p of posts){
