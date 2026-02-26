@@ -1,43 +1,9 @@
 {
-  "timestamp": "2026-02-26T03:16:57.645Z",
+  "timestamp": "2026-02-26T04:15:34.302Z",
   "appVersion": "5.11.25",
-  "forum": 2,
-  "github": 1,
+  "forum": 0,
+  "github": 0,
   "diagnostics": 7,
-  "forumDetails": [
-    {
-      "topic": 140352,
-      "post": 1481,
-      "user": "JJ10",
-      "fps": [
-        "_TZE200_crq3r3la",
-        "_TZE200_gkfbdvyx"
-      ],
-      "reply": "Hello @JJ10,\n\nThank you for sharing the details of your presence sensors. Based on the fingerprints found, both sensors are supported by the **presence_sensor_radar** driver. Here’s a breakdown of the",
-      "model": "gh-gpt-4o-mini"
-    },
-    {
-      "topic": 140352,
-      "post": 1482,
-      "user": "7Hills",
-      "fps": [
-        "_TZE204_clrdrnya"
-      ],
-      "reply": "Hello @7Hills,\n\nThank you for your detailed report regarding the Wenzhi Smart Human Presence Sensor (Model: WZ-235-ZB-RL). Based on the fingerprint data you provided, your device is identified with th",
-      "model": "gh-gpt-4o-mini"
-    }
-  ],
-  "githubDetails": [
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1142,
-      "user": "dmz-86",
-      "fps": [
-        "_TZE204_clrdrnya"
-      ],
-      "title": "Device Request - Wenzhi Smart Human Presence Sensor & Relay  - _TZE204_clrdrnya / WZ-235-ZB-RL TS0601",
-      "response": "Hello @dmz-86,\n\nThank you for your request regarding the **Wenzhi Smart Human Presence Sensor & Relay** (_TZE204_clrdrnya / WZ-235-ZB-RL, TS0601). Based on the provided fingerprint data, this device is supported by the **motion_sensor_radar_mmwave** driver.\n\n### Pairing Instructions\nTo pair your dev",
-      "model": "gh-gpt-4o-mini"
-    }
-  ]
+  "forumDetails": [],
+  "githubDetails": []
 }
