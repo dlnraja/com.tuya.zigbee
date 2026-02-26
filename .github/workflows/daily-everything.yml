@@ -70,7 +70,7 @@ jobs:
         run: |
           V=$(node -p "require('./app.json').version")
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
-          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l)
+          F=$(node -e "const g=require('path').join('.','drivers');const fs=require('fs');let c=0;for(const d of fs.readdirSync(g)){try{const j=JSON.parse(fs.readFileSync(g+'/'+d+'/driver.compose.json','utf8'));c+=(j.zigbee?.manufacturerName?.length||0)}catch{}}console.log(c)" 2>/dev/null || grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l)
           echo "version=$V" >> $GITHUB_OUTPUT
           echo "drivers=$D" >> $GITHUB_OUTPUT
           echo "fps=$F" >> $GITHUB_OUTPUT
@@ -140,13 +140,13 @@ jobs:
             echo "Skipping Gmail (only runs at 08:00 UTC)"
           fi
 
-      # ===== 6. NIGHTLY: Process forum+GitHub data =====
-      - name: "6. Nightly Processor"
+      # ===== 6. NIGHTLY: Scan forum+GitHub data (no replies — forum-responder handles that) =====
+      - name: "6. Nightly Processor (scan-only)"
         id: nightly
         continue-on-error: true
         timeout-minutes: 10
         env:
-          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          DRY_RUN: 'true'
         run: node .github/scripts/nightly-processor.js
 
       # ===== 7. FORUM ACTIVITY: Scrape ALL account activity =====
@@ -307,7 +307,7 @@ jobs:
           git add -A
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
-          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l)
+          F=$(node -e "const g=require('path').join('.','drivers');const fs=require('fs');let c=0;for(const d of fs.readdirSync(g)){try{const j=JSON.parse(fs.readFileSync(g+'/'+d+'/driver.compose.json','utf8'));c+=(j.zigbee?.manufacturerName?.length||0)}catch{}}console.log(c)" 2>/dev/null || echo '?')
           FILES=$(git diff --cached --name-only | wc -l)
           git diff --cached --quiet || git commit -m "Daily v${VER}: ${D} drivers, ${F} FPs — forum+github+gmail+triage, ${FILES} file(s) [skip ci]"
           git pull --rebase origin master || true
