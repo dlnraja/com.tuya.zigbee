@@ -143,7 +143,7 @@ async function main(){
     console.log('New posts:',posts.length);
     if(!posts.length){state.topics[tid]={...ts,lastRun:new Date().toISOString()};continue}
 
-    let maxP=last;
+    let maxP=last;let topicBlocked=false;
     for(const p of posts){
       if(SKIP.includes(p.username)){maxP=Math.max(maxP,p.post_number);console.log(' #'+p.post_number,'by',p.username,'-> SKIP owner');continue}
       console.log(' #'+p.post_number,'by',p.username);
@@ -172,7 +172,8 @@ async function main(){
 
       console.log('   Response:',reply.length,'chars');
       if(!replyTopics.has(tid)){console.log('   -> scan-only topic, no reply');summary.push({n:p.post_number,u:p.username,a:'scan_only'});maxP=Math.max(maxP,p.post_number);continue}
-      if(totalR>=MAX_REPLIES){console.log('   -> MAX_REPLIES reached');continue}
+      if(totalR>=MAX_REPLIES){console.log('   -> MAX_REPLIES reached');maxP=Math.max(maxP,p.post_number);continue}
+      if(topicBlocked){console.log('   -> topic blocked (consecutive limit)');maxP=Math.max(maxP,p.post_number);continue}
 
       if(dryRun){
         console.log('   [DRY] Would post:\n---\n'+reply+'\n---');
@@ -191,10 +192,16 @@ async function main(){
             await sleep(DELAY);break;
           }catch(e){
             console.warn('   Post try '+(ri+1)+':',e.message);
+            // Detect Discourse consecutive reply limit (422)
+            if(e.message&&e.message.includes('consecutive')){
+              console.warn('   -> Consecutive reply limit hit, skipping rest of topic');
+              topicBlocked=true;maxP=Math.max(maxP,p.post_number);break;
+            }
             if(ri<2)await sleep(5000*(ri+1));
           }
         }
-        if(!posted)summary.push({n:p.post_number,u:p.username,a:'failed'});
+        if(!posted&&!topicBlocked)summary.push({n:p.post_number,u:p.username,a:'failed'});
+        if(topicBlocked){maxP=Math.max(maxP,p.post_number);break}
       }
     }
     state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};
