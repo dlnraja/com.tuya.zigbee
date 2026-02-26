@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-25T14:34:05.854Z",
+  "timestamp": "2026-02-26T03:17:00.321Z",
   "username": "dlnraja",
   "summary": {
     "postCount": 546,
@@ -10,7 +10,7 @@
       {
         "id": 140352,
         "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "posts": 1468
+        "posts": 1470
       },
       {
         "id": 26439,
@@ -49,13 +49,31 @@
     {
       "id": 140352,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "posts": 1468,
-      "views": 13461,
-      "lastPosted": "2026-02-25T10:44:04.454Z",
+      "posts": 1470,
+      "views": 13496,
+      "lastPosted": "2026-02-25T16:08:35.708Z",
       "slug": "app-pro-universal-tuya-zigbee-device-app-test"
     }
   ],
   "activity": [
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1482,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Device Name: Wenzhi Smart Human Presence Sensor & Relay \nDevice Model: WZ-235-ZB-RL \nDevice Description: 24G Human presence sensor with relay \nThe device connects, but the reported capabilities are not correct. \nThe app currently shows: \nMotion alarm \nTemperature \nHumidity \nLuminance, twice \nBattery&hellip;",
+      "createdAt": "2026-02-25T16:08:35.901Z",
+      "username": "7Hills"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1481,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "I bought a second presence sensor, different manufacture & model ID, both are still not working. Interview 1 should already be supported, Interview 2 is the new one. Both have the same behivour at this moment: Movement is detected, but LUX are off, distance is not calculated and incorrect display of&hellip;",
+      "createdAt": "2026-02-25T15:46:56.641Z",
+      "username": "JJ10"
+    },
     {
       "type": 6,
       "topicId": 140352,
@@ -2737,24 +2755,6 @@
       "excerpt": "The tuya-zigbee app you used is not maintained for the last year., \nYou could try the test-version of the app: \n\n\nYou could also try these apps: \nOfficial homey/tuya app, need to connect by tuya bridge. \n\n\nThen there is a new Universal zigbee Tuya app which is in a test-state: \n\n\nThe last 2 apps hav&hellip;",
       "createdAt": "2026-01-27T10:55:49.440Z",
       "username": "Thunder"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 1206,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Happy to ear it.",
-      "createdAt": "2026-01-27T10:30:23.000Z",
-      "username": "dlnraja"
-    },
-    {
-      "type": 7,
-      "topicId": 140352,
-      "postNum": 1205,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "@dlnraja Thanks for the commit. I just pulled it and now the flows work as they supposed to with the physical button vs. app.",
-      "createdAt": "2026-01-27T10:13:01.576Z",
-      "username": "Attilla"
     }
   ],
   "pms": [],
@@ -2765,15 +2765,15 @@
       "postNum": 1479,
       "data": {
         "topic_title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "original_post_id": 714199,
+        "original_post_id": 714275,
         "original_post_type": 1,
-        "original_username": "Lasse_K",
+        "original_username": "7Hills",
         "revision_number": null,
-        "display_username": "2 replies",
+        "display_username": "4 replies",
         "display_name": "Jocke Wallén"
       },
       "read": false,
-      "createdAt": "2026-02-25T10:44:04.553Z"
+      "createdAt": "2026-02-25T16:08:35.906Z"
     },
     {
       "type": 5,
@@ -14434,6 +14434,20 @@
           "user": "Lasse_K",
           "text": "Ver.5.11.23. Contact sensor still not installing. Unknown Zigbee. ZG-102Z. Interview & Diag above.",
           "date": "2026-02-25T10:44:04.454Z",
+          "replyTo": null
+        },
+        {
+          "num": 1481,
+          "user": "JJ10",
+          "text": "I bought a second presence sensor, different manufacture & model ID, both are still not working. Interview 1 should already be supported, Interview 2 is the new one. Both have the same behivour at this moment: Movement is detected, but LUX are off, distance is not calculated and incorrect display of humidity and temperature:\n\n\n\nInterview 1\n“ids”: {\n\n“modelId”: “CK-BL702-MWS-01(7016)”,\n\n“manufacturerName”: “_TZE200_crq3r3la”\n\n},\n\n“endpoints”: {\n\n“ieeeAddress”: “a4:c1:38:a6:61:39:57:2b”,\n\n“networkAddress”: 47636,\n\n“modelId”: “CK-BL702-MWS-01(7016)”,\n\n“manufacturerName”: “_TZE200_crq3r3la”,\n\n“endpointDescriptors”: [\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 47636,\n\n“_reserved”: 34,\n\n“endpointId”: 1,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 1026,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n0,\n\n3,\n\n4,\n\n5,\n\n1280,\n\n4096,\n\n57346,\n\n61184,\n\n60928,\n\n57344,\n\n1024\n\n],\n\n“outputClusters”: [\n\n10,\n\n25\n\n]\n\n}\n\n],\n\n“deviceType”: “router”,\n\n“receiveWhenIdle”: true,\n\n“swBuildId”: “0122052017”,\n\n“capabilities”: {\n\n“alternatePANCoordinator”: false,\n\n“deviceType”: true,\n\n“powerSourceMains”: true,\n\n“receiveWhenIdle”: true,\n\n“security”: false,\n\n“allocateAddress”: true\n\n},\n\n“extendedEndpointDescriptors”: {\n\n“1”: {\n\n“clusters”: {\n\n“basic”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 0,\n\n“name”: “zclVersion”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 1,\n\n“name”: “appVersion”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 2,\n\n“name”: “stackVersion”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 3,\n\n“name”: “hwVersion”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 4,\n\n“name”: “manufacturerName”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 5,\n\n“name”: “modelId”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 7,\n\n“name”: “powerSource”\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”\n\n],\n\n“id”: 18,\n\n“name”: “deviceEnabled”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 16384,\n\n“name”: “swBuildId”\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”\n\n],\n\n“id”: 65502\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 6,\n\n“name”: “dateCode”\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“identify”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”\n\n],\n\n“id”: 0,\n\n“name”: “identifyTime”,\n\n“value”: 0\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“groups”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 0,\n\n“name”: “nameSupport”,\n\n“value”: {\n\n“type”: “Buffer”,\n\n“data”: [\n\n0\n\n]\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“scenes”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 0\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 1\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 2\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 3\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 4\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“iasZone”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 0,\n\n“name”: “zoneState”,\n\n“value”: “enrolled”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 1,\n\n“name”: “zoneType”,\n\n“value”: “motionSensor”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 2,\n\n“name”: “zoneStatus”,\n\n“value”: {\n\n“type”: “Buffer”,\n\n“data”: [\n\n1,\n\n0\n\n]\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”\n\n],\n\n“id”: 16,\n\n“name”: “iasCIEAddress”,\n\n“value”: “98:0c:33:ff:fe:49:d7:8f”\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 17,\n\n“name”: “zoneId”,\n\n“value”: 6\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“touchlink”: {\n\n“attributes”: [],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“illuminanceMeasurement”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “measuredValue”,\n\n“value”: 25315,\n\n“reportingConfiguration”: {\n\n“direction”: “reported”,\n\n“attributeDataType”: 33,\n\n“minInterval”: 10,\n\n“maxInterval”: 300,\n\n“minChange”: 1,\n\n“status”: “SUCCESS”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 1,\n\n“name”: “minMeasuredValue”,\n\n“value”: 0\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 2,\n\n“name”: “maxMeasuredValue”,\n\n“value”: 4000\n\n},\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n},\n\n“bindings”: {\n\n“time”: {\n\n“attributes”: [],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“ota”: {}\n\n}\n\n}\n\n}\n\n}\n\n\n\n\nInterview 2\n“ids”: {\n\n“modelId”: “TS0601”,\n\n“manufacturerName”: “_TZE200_gkfbdvyx”\n\n},\n\n“endpoints”: {\n\n“ieeeAddress”: “0c:43:14:ff:fe:54:b2:ab”,\n\n“networkAddress”: 22683,\n\n“modelId”: “TS0601”,\n\n“manufacturerName”: “_TZE200_gkfbdvyx”,\n\n“endpointDescriptors”: [\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 22683,\n\n“_reserved”: 16,\n\n“endpointId”: 1,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 256,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n0,\n\n4,\n\n5,\n\n61184\n\n],\n\n“outputClusters”: []\n\n}\n\n],\n\n“deviceType”: “router”,\n\n“receiveWhenIdle”: true,\n\n“swBuildId”: “500+TZZUT11HH103”,\n\n“capabilities”: {\n\n“alternatePANCoordinator”: false,\n\n“deviceType”: true,\n\n“powerSourceMains”: true,\n\n“receiveWhenIdle”: true,\n\n“security”: false,\n\n“allocateAddress”: true\n\n},\n\n“extendedEndpointDescriptors”: {\n\n“1”: {\n\n“clusters”: {\n\n“basic”: {\n\n“attributes”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“groups”: {\n\n“attributes”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“scenes”: {\n\n“attributes”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n},\n\n“bindings”: {}\n\n}\n\n}\n\n}\n\n\nI also think that the router functionality is not working (even its marked as router in Developer Tools) i placed the sensor on the spot of my Zigbee repeater but then the device behind it (3 meters) will not connect anymore to the Zigbee network (sensor is connected to the network)\n\nSee also: 5a38ea0b-b225-4312-ba04-6dc7b4960339",
+          "date": "2026-02-25T15:46:56.454Z",
+          "replyTo": null
+        },
+        {
+          "num": 1482,
+          "user": "7Hills",
+          "text": "Device Name: Wenzhi Smart Human Presence Sensor & Relay\n\nDevice Model: WZ-235-ZB-RL\n\nDevice Description: 24G Human presence sensor with relay\n\nThe device connects, but the reported capabilities are not correct.\n\nThe app currently shows:\n\nMotion alarm\n\nTemperature\n\nHumidity\n\nLuminance, twice\n\nBattery status\n\nThis device does not support temperature or humidity. Both luminance values are incorrect as well. In addition, this is a 230V powered ceiling built-in mmWave sensor, not a battery device. The battery capability cannot be disabled, so Homey continuously reports battery status changes, low or OK, which is incorrect.\n\nWhat should actually be exposed:\n\nMotion alarm\n\nHuman presence\n\nDistance\n\nLuminance\n\nIt looks like the device is paired with the wrong fingerprint or driver profile.\n\n\n\nInterview\n“ids”: {\n\n“modelId”: “TS0601”,\n\n“manufacturerName”: “_TZE204_clrdrnya”\n\n},\n\n“endpoints”: {\n\n“ieeeAddress”: “7c:c6:b6:ff:fe:a4:4f:70”,\n\n“networkAddress”: 23708,\n\n“modelId”: “TS0601”,\n\n“manufacturerName”: “_TZE204_clrdrnya”,\n\n“endpointDescriptors”: [\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 23708,\n\n“_reserved”: 20,\n\n“endpointId”: 1,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 81,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n0,\n\n4,\n\n5,\n\n61184\n\n],\n\n“outputClusters”: [\n\n25,\n\n10\n\n]\n\n}\n\n],\n\n“deviceType”: “router”,\n\n“receiveWhenIdle”: true,\n\n“capabilities”: {\n\n“alternatePANCoordinator”: false,\n\n“deviceType”: true,\n\n“powerSourceMains”: true,\n\n“receiveWhenIdle”: true,\n\n“security”: false,\n\n“allocateAddress”: true\n\n},\n\n“extendedEndpointDescriptors”: {\n\n“1”: {\n\n“clusters”: {\n\n“basic”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “zclVersion”,\n\n“value”: 3,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1,\n\n“name”: “appVersion”,\n\n“value”: 70,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 2,\n\n“name”: “stackVersion”,\n\n“value”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 3,\n\n“name”: “hwVersion”,\n\n“value”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 4,\n\n“name”: “manufacturerName”,\n\n“value”: “_TZE204_clrdrnya”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 5,\n\n“name”: “modelId”,\n\n“value”: “TS0601”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 6,\n\n“name”: “dateCode”,\n\n“value”: “”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 7,\n\n“name”: “powerSource”,\n\n“value”: “mains”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”,\n\n“reportable”\n\n],\n\n“id”: 65502,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65534,\n\n“name”: “attributeReportingStatus”,\n\n“value”: “PENDING”,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65504,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65505,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65506,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65507,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“groups”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “nameSupport”,\n\n“value”: {\n\n“type”: “Buffer”,\n\n“data”: [\n\n0\n\n]\n\n},\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“scenes”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 3,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 4,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n},\n\n“bindings”: {\n\n“ota”: {},\n\n“time”: {\n\n“attributes”: ,\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n}\n\n}\n\n}\n\n}\n\n\nDiagnostic report ID: 822fcb89-a1ba-43c0-b876-ef626163f7fb",
+          "date": "2026-02-25T16:08:35.708Z",
           "replyTo": null
         }
       ],
@@ -66761,6 +66775,8 @@
       "_TZ3000_uri7ez8u",
       "_TZE204_9mjy74mp",
       "_TZE284_aao3yzhs",
+      "_TZE200_gkfbdvyx",
+      "_TZE204_clrdrnya",
       "_TZE200_9xfjixap",
       "_TZ3000_i8jfiezr",
       "_TZ3000_bguser20",
@@ -67472,6 +67488,8 @@
       "_TZ3000_uri7ez8u",
       "_TZE204_9mjy74mp",
       "_TZE284_aao3yzhs",
+      "_TZE200_gkfbdvyx",
+      "_TZE204_clrdrnya",
       "_TZE200_9xfjixap",
       "_TZ3000_i8jfiezr",
       "_TZ3000_bguser20",
@@ -68047,5 +68065,5 @@
       "_TZ3210_leyz4rju"
     ]
   },
-  "aiAnalysis": "Fingerprints found: `_TZ3000_zgyzgd`, `_TZE204_ztqnh5c`, `_TZ3000_xxxxxxxx`, `_TZ3000_ztc6ggyl`, `_TZ3000_7dbxxwkt`, `_TZ3000_xabck15b`, `_TZ3000_akwixq9i`, `_TZ3000_xxbxx`, `_TZ3000_hiqrjkxx`, `_TZ3000_zzzz`, `_TZ3000_xxxxx`, `_TZE200_xxxxx`, `_TZ3000_cehuw1l2`, `_TZ3000_dfgbtub`, `_TZ3000_dfgbub0`, `_TYZB01_bngwdjsr`, `_TZ3000_ecgiiid3`, `_TZ3000_tvuarska`, `_TZ3000_uyjmm0et`, `_TZ3000_xabckqv1`, `_TZ3000_itb0omhv`, `_TZ3210_xzhnra8x`\nProduct IDs: `TS0041`"
+  "aiAnalysis": "### Summary of Homey Community Forum Activity for Universal Tuya Zigbee App\n\n1. **Key User Requests:**\n   - Users are seeking support for various devices, particularly presence sensors and contact sensors that are not installing correctly.\n   - There are requests for improved compatibility with different manufacturers and models, especially for button remotes and climate sensors.\n\n2. **Devices People Need:**\n   - Notable unsupported fingerprints include multiple models from the _TZ3000 and _TZE200 series, indicating a demand for drivers for these devices.\n   - Specific devices mentioned include the Wenzhi Smart Human Presence Sensor (WZ-235-ZB) and various contact sensors (e.g., ZG-102Z).\n\n3. **Issues to Fix:**\n   - Persistent installation issues with contact sensors and unknown Zigbee devices.\n   - Button remotes are detected but fail to recognize button presses, indicating a need for troubleshooting or driver updates.\n   - Users report that some devices work intermittently or require additional configuration.\n\n4. **Action Items:**\n   - Investigate and address the installation issues for unsupported devices, particularly the contact sensors and presence sensors.\n   - Enhance driver compatibility for the unsupported fingerprints listed, focusing on the most frequently mentioned devices.\n   - Consider user feedback on button remote functionality and implement necessary updates to improve responsiveness.\n   - Regularly monitor forum activity to identify emerging issues and prioritize fixes based on user impact. \n\nThis summary highlights actionable insights to enhance user experience and expand device compatibility for the Universal Tuya Zigbee app."
 }

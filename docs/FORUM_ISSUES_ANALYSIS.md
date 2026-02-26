@@ -421,3 +421,8 @@ All 12 fingerprints from 20 open issues **already supported** in v5.11.19:
 
 ## Nightly Forum Scan (2026-02-25 v5.11.24)
 - **Topic 140352 #1479** @Jocke_Wallen: `_TZ3000_u3nv1jwk` (gh-gpt-4o-mini)
+
+
+## Nightly Forum Scan (2026-02-26 v5.11.25)
+- **Topic 140352 #1481** @JJ10: `_TZE200_crq3r3la`, `_TZE200_gkfbdvyx` (gh-gpt-4o-mini)
+- **Topic 140352 #1482** @7Hills: `_TZE204_clrdrnya` (gh-gpt-4o-mini)
