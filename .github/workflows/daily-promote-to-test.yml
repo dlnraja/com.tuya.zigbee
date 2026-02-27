@@ -14,6 +14,10 @@ permissions:
 concurrency:
   group: promote-to-test
   cancel-in-progress: true
+defaults:
+  run:
+    shell: bash
+
 jobs:
   promote:
     name: Promote draft to test

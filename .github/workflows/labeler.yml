@@ -12,6 +12,10 @@ concurrency:
   group: labeler-${{ github.event.number }}
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   label:
     name: "Auto-Label PR"

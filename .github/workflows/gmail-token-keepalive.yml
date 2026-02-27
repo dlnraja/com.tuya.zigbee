@@ -12,6 +12,10 @@ concurrency:
   group: gmail-keepalive
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   keepalive:
     runs-on: ubuntu-latest

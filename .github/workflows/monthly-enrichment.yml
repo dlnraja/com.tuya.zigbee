@@ -24,6 +24,10 @@ concurrency:
   group: monthly-enrichment
   cancel-in-progress: false
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   monthly-scan:
     name: Monthly Intelligence Scan

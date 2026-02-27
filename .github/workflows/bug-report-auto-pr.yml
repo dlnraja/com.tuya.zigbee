@@ -18,6 +18,10 @@ concurrency:
   group: bug-pr-${{ github.event.issue.number || inputs.issue_number }}
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   process-bug:
     if: >-

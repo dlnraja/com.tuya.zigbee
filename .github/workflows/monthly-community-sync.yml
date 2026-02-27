@@ -22,6 +22,10 @@ permissions:
   issues: write
   pull-requests: read
 
+defaults:
+  run:
+    shell: bash
+
 env:
   NODE_VERSION: '22'
 

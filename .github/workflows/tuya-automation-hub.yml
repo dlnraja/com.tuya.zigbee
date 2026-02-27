@@ -34,6 +34,10 @@ concurrency:
   group: tuya-automation
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   forum-responder:
     name: Forum Responder
