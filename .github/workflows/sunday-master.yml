@@ -187,17 +187,26 @@ jobs:
             const fs=require('fs');
             const issues=JSON.parse(fs.readFileSync('/tmp/forum_issues.json','utf8'));
             if(!issues.length)return;
+            // Dedup: check for existing open issue with same title pattern
+            const dupTitle=`[Forum] ${issues.length} device request(s) from forum`;
+            const {data:existing}=await github.rest.issues.listForRepo({
+              owner:context.repo.owner,repo:context.repo.repo,
+              state:'open',labels:'forum-request',per_page:10
+            });
+            if(existing.some(i=>i.title===dupTitle)){
+              console.log('Issue already exists:',dupTitle);return;
+            }
             const rows=issues.map(i=>
               `| ${i.user} | ${i.date} | #${i.postNum} | \`${i.missing.join('`,`')}\` |`).join('\n');
             await github.rest.issues.create({
               owner:context.repo.owner,repo:context.repo.repo,
-              title:`[Forum] ${issues.length} device request(s) from forum`,
+              title:dupTitle,
               body:`## Forum requests\n| User | Date | Post | Missing |\n|---|---|---|---|\n${rows}`,
               labels:['enhancement','forum-request']
             });
 
   forum-respond:
-    name: "Forum Auto-Respond"
+    name: "Forum Respond (batched, anti-spam)"
     needs: [scan-forum]
     if: always()
     runs-on: ubuntu-latest
@@ -207,14 +216,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - uses: actions/cache@v4
-        with:
-          path: /tmp/last_forum_respond.txt
-          key: forum-respond-${{ github.run_number }}
-          restore-keys: forum-respond-
-      # NOTE: forum-respond-requests.js REMOVED — caused per-post spam.
-      # All forum replies now go through forum-responder.js (batched ONE reply/topic).
-      - name: "Forum Respond (batched)"
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "Forum Respond"
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -422,7 +425,7 @@ jobs:
         continue-on-error: true
         timeout-minutes: 5
         run: node .github/scripts/pattern-detector.js
-      - name: "Bot Self-Audit"
+      - name: "Reply Self-Audit"
         continue-on-error: true
         timeout-minutes: 10
         env:
