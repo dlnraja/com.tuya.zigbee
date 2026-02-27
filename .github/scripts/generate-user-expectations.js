@@ -243,13 +243,19 @@ const userProfiles = [
 const pending = [
   { user: 'Cam', device: '`_TZ3000_5bpeda8u` TS0041', status: 'NEEDS DIAG', note: 'Update v5.11.25 + re-pair + diag' },
   { user: 'Freddyboy', device: '`_TZ3000_zgyzgdua` TS0044', status: 'NEEDS DIAG', note: 'Update v5.11.25 + re-pair + diag' },
-  { user: 'Lasse_K', device: 'ZG-102Z contact', status: 'PERSISTENT', note: 'Still Unknown Zigbee on v5.11.21 (#1463,#1468,#1472,#1476) — FP exists but mfr mismatch, needs interview' },
+  { user: 'Lasse_K', device: 'ZG-102Z contact', status: 'FIXED v5.11.26', note: 'HOBEIAN re-added to invertedByDefault (#1513/#1515). User needs to re-pair.' },
   { user: 'FrankP', device: 'IR remote learning mode', status: 'NEW BUG', note: 'Learning button turns off immediately (diag b6635c8c) — #1471' },
   { user: 'Peter_Kawa', device: 'Soil sensor capability', status: 'ENHANCEMENT', note: 'Change measure_humidity.soil → measure_moisture (standard cap) — #1473' },
-  { user: '7Hills', device: '`_TZE200_vvmbj46n` TS0601', status: 'NEW', note: 'Full interview + diag 822fcb89 posted #1482' },
+  { user: '7Hills', device: '`_TZE204_clrdrnya` WZ-235-ZB-RL RELAY', status: 'FIXED v5.12.0', note: 'RELAY model config removes battery/temp/humidity, adds relay onoff. User needs to re-pair. #1482/#1517' },
+  { user: 'Domingoso', device: '`_TZE200_xlppj4f5` Immax water timer', status: 'FIXED', note: 'FP exists in valve_irrigation. Paired as climate_sensor before FP added. Re-pair fixes. GH#135' },
+  { user: 'Hartmut_Dunker', device: 'BSEED TS0726 4-gang', status: 'FIXED v5.11.29', note: 'writeAttributes per-EP fix. Diag: 9803c61a. User needs to re-pair. #1520/#1523' },
   { user: 'JJ10', device: 'Radar sensor', status: 'DEFERRED', note: 'Lux/distance/temp incorrect — needs OEM-specific DP mapping' },
   { user: 'Piotr', device: '`_TZ3000_cauq1okq` TS0002', status: 'UNFIXABLE', note: 'Device firmware dual-toggle (Z2M #14750)' },
   { user: 'Ricardo_Lenior', device: 'Ceiling presence 230v', status: 'NEEDS FP', note: 'Only has diag ID, no fingerprint' },
+  { user: 'G4nd41f', device: '`_TZE204_qasjif9e` TS0601 radar', status: 'SUPPORTED', note: 'ADVANCED model config. T89271#654' },
+  { user: 'Mr_D_Forrest', device: '`_TZ3000_xr3htd96` TS0201 temp/hum', status: 'SUPPORTED', note: 'In climate_sensor. T89271#656' },
+  { user: 'Vincent_Lim', device: '`_TZ3000_decxrtwa` door/window', status: 'SUPPORTED', note: 'In contact_sensor. T89271#657' },
+  { user: 'Ferenc_Szasz', device: '`_TZE200_3p5ydos3` dimmer', status: 'NEEDS DIAG', note: 'Dimmer errors on control. T89271#660. Need diag log.' },
 ];
 
 // --- Build GitHub issues table ---
@@ -301,6 +307,14 @@ const decisions = [
     wrongDriver: 'N/A', reason: 'Check if device is ZCL-only or Tuya DP — use interview to determine protocol',
     research: 'BSEED/Zemismart are ZCL-only despite TS0601 modelId, Tuya DP ignored',
     ver: '5.9.14' },
+  { device: 'Immax NEO Smart Water Timer (_TZE200_xlppj4f5)', driver: 'valve_irrigation',
+    wrongDriver: 'climate_sensor', reason: 'Both have TS0601 productId — but FP only in valve_irrigation. Re-pair fixes.',
+    research: 'GH#135 Domingoso — paired before FP was added to correct driver',
+    ver: '5.11.25' },
+  { device: 'WZ-235-ZB-RL Wenzhi mmWave + Relay (_TZE204_clrdrnya)', driver: 'motion_sensor_radar_mmwave (RELAY)',
+    wrongDriver: 'N/A', reason: '230V mains-powered, no battery/temp/humidity. RELAY config removes wrong caps + adds onoff relay.',
+    research: '7Hills #1482 — powerSource=mains, DP108=relay, DP104=lux, DP9=distance',
+    ver: '5.12.0' },
 ];
 
 // --- Build recent changelog ---

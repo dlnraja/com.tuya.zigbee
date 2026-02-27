@@ -6,10 +6,10 @@
 [![Version](https://img.shields.io/badge/version-v5.11.25-blue)]()
 [![Drivers](https://img.shields.io/badge/drivers-138-brightgreen)]()
 [![Fingerprints](https://img.shields.io/badge/fingerprints-4,593+-green)]()
-[![Users Tracked](https://img.shields.io/badge/users%20tracked-27+-purple)]()
-[![Last Updated](https://img.shields.io/badge/updated-2026-02-26-lightgrey)]()
+[![Users Tracked](https://img.shields.io/badge/users%20tracked-33+-purple)]()
+[![Last Updated](https://img.shields.io/badge/updated-2026-02-27-lightgrey)]()
 
-> **v5.11.25** | **4,593+ fingerprints** | **138 drivers** | **1,725 flow cards** | Updated 2026-02-26
+> **v5.11.25** | **4,593+ fingerprints** | **138 drivers** | **1,725 flow cards** | Updated 2026-02-27
 
 ---
 
@@ -26,13 +26,19 @@
 |------|--------|--------|-----------------|
 | Cam | `_TZ3000_5bpeda8u` TS0041 | **NEEDS DIAG** | Update v5.11.25 + re-pair + diag |
 | Freddyboy | `_TZ3000_zgyzgdua` TS0044 | **NEEDS DIAG** | Update v5.11.25 + re-pair + diag |
-| Lasse_K | ZG-102Z contact | **PERSISTENT** | Still Unknown Zigbee on v5.11.21 (#1463,#1468,#1472,#1476) — FP exists but mfr mismatch, needs interview |
+| Lasse_K | ZG-102Z contact | **FIXED v5.11.26** | HOBEIAN re-added to invertedByDefault (#1513/#1515). User needs to re-pair. |
 | FrankP | IR remote learning mode | **NEW BUG** | Learning button turns off immediately (diag b6635c8c) — #1471 |
 | Peter_Kawa | Soil sensor capability | **ENHANCEMENT** | Change measure_humidity.soil → measure_moisture (standard cap) — #1473 |
-| 7Hills | `_TZE200_vvmbj46n` TS0601 | **NEW** | Full interview + diag 822fcb89 posted #1482 |
+| 7Hills | `_TZE204_clrdrnya` WZ-235-ZB-RL RELAY | **FIXED v5.12.0** | RELAY model config removes battery/temp/humidity, adds relay onoff. User needs to re-pair. #1482/#1517 |
+| Domingoso | `_TZE200_xlppj4f5` Immax water timer | **FIXED** | FP exists in valve_irrigation. Paired as climate_sensor before FP added. Re-pair fixes. GH#135 |
+| Hartmut_Dunker | BSEED TS0726 4-gang | **FIXED v5.11.29** | writeAttributes per-EP fix. Diag: 9803c61a. User needs to re-pair. #1520/#1523 |
 | JJ10 | Radar sensor | **DEFERRED** | Lux/distance/temp incorrect — needs OEM-specific DP mapping |
 | Piotr | `_TZ3000_cauq1okq` TS0002 | **UNFIXABLE** | Device firmware dual-toggle (Z2M #14750) |
 | Ricardo_Lenior | Ceiling presence 230v | **NEEDS FP** | Only has diag ID, no fingerprint |
+| G4nd41f | `_TZE204_qasjif9e` TS0601 radar | **SUPPORTED** | ADVANCED model config. T89271#654 |
+| Mr_D_Forrest | `_TZ3000_xr3htd96` TS0201 temp/hum | **SUPPORTED** | In climate_sensor. T89271#656 |
+| Vincent_Lim | `_TZ3000_decxrtwa` door/window | **SUPPORTED** | In contact_sensor. T89271#657 |
+| Ferenc_Szasz | `_TZE200_3p5ydos3` dimmer | **NEEDS DIAG** | Dimmer errors on control. T89271#660. Need diag log. |
 
 ---
 
@@ -53,10 +59,10 @@
 **Status**: FIXED v5.8.88
 **Timeline**: v5.5.364: Duplicate productId → v5.5.983: Battery DP throttle → v5.8.30: Passive DP listeners → v5.8.87: noIasMotion ZCL check → v5.8.88: IAS enrollment + ZCL-only override
 
-### Hartmut_Dunker (4 fixes)
+### Hartmut_Dunker (5 fixes)
 **Devices**: BSEED TS0726 4-gang `_TZ3002_pzao9ls1`
-**Status**: FIXED v5.9.23
-**Timeline**: v5.5.718: Bidirectional bindings → v5.8.25: Case-sensitivity fix → v5.8.27: EP2-4 DP fallback → v5.9.23: GROUP ISOLATION (Z2M #27167)
+**Status**: FIXED v5.11.29
+**Timeline**: v5.5.718: Bidirectional bindings → v5.8.25: Case-sensitivity fix → v5.8.27: EP2-4 DP fallback → v5.9.23: GROUP ISOLATION (Z2M #27167) → v5.11.29: writeAttributes per-EP fix (Z2M #27167, ZHA #2443, ZHA #1580)
 
 ### Pieter_Pessers (2 fixes)
 **Devices**: BSEED 1/2/3-gang `_TZ3000_l9brjwau` `_TZ3000_blhvsaqf` `_TZ3000_qkixdnon`
@@ -182,6 +188,7 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-25)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
@@ -194,11 +201,13 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-24)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | FrankP | `_TZ3000_itb0omhv` | Forum #140352 post #1477 | Auto-scanned 2026-02-24 |
 | Domingoso | `_TZE200_xlppj4f5` | dlnraja/com.tuya.zigbee#135 | Auto-scanned 2026-02-24 |
+
 
 
 
@@ -229,10 +238,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-22)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Slawek_Pe | `_TZ3210_xzhnra8x` | Forum #140352 post #1467 | Auto-scanned 2026-02-22 |
+
 
 
 
@@ -245,6 +256,7 @@
 |------|---------------|--------|------|
 | ManuelKugler | `_TZE284_aao3yzhs` | Forum #140352 post #1465 | Auto-scanned 2026-02-21 |
 | eeckelaertyannick | `_TZE200_8ygsuhe1` | JohanBendz/com.tuya.zigbee#1229 | Auto-scanned 2026-02-21 |
+
 
 
 
@@ -297,6 +309,9 @@
 
 <!-- NIGHTLY_END -->
 
+
+<!-- NIGHTLY_END -->
+
 ---
 
 ## Auto-Discovered Fingerprints
@@ -320,6 +335,7 @@
 | _TZ3210_iymfxdis | dlnraja/com.tuya.zigbee#133 | device_request |
 | _TZ3002_xkxgfxsg | dlnraja/com.tuya.zigbee#133 | device_request |
 | _TZ3002_tlsvxhxc | dlnraja/com.tuya.zigbee#133 | device_request |
+
 
 
 
@@ -357,6 +373,7 @@
 
 
 <!-- AUTODISCOVERED_END -->
+
 
 
 ## Auto-discovered from GitHub (2026-02-26)
@@ -416,6 +433,47 @@
 
 <!-- AUTODISCOVERED_END -->
 
+
+<!-- AUTODISCOVERED_END -->
+
+---
+
+## Decision Reference (Avoid Repeating Mistakes)
+
+<!-- CRITICAL: Consult this before implementing new drivers or changing device assignments -->
+
+| Device | Correct Driver | Wrong Driver | Reason | Research |
+|--------|---------------|--------------|--------|----------|
+| USB Zigbee Dongle (USB-powered relay) | **usb_outlet_advanced** | switch_2gang | USB-powered device, not a wall switch — needs mainsPowered=true, no battery cap | Confirmed via Z2M, device interview shows USB power source, not battery/mains switch |
+| BSEED TS0726 4-gang (_TZ3002_pzao9ls1) | **switch_4gang (ZCL-only)** | wall_switch_4gang_1way | FW broadcasts ZCL cmds to all EPs; fix: writeAttributes per-EP | Z2M #27167, ZHA #2443, ZHA #1580 — confirmed across 3 platforms |
+| HOBEIAN ZG-102Z Contact Sensor | **contact_sensor** | N/A | Mfr name mismatch — device reports different mfr than expected, needs interview | Lasse_K persistent issue #1463-#1476, FP exists but device sends different mfr |
+| Mains-powered sensors (_TZE200_8ygsuhe1 Smart Airbox) | **air_quality_sensor** | N/A | USB-powered but has measure_battery — remove battery cap, set mainsPowered=true | ProductValueValidator CO2 min changed from 300 to 0 for warmup values |
+| TS0601 Tuya DP multi-gang switches | **switch_Ngang** | N/A | Check if device is ZCL-only or Tuya DP — use interview to determine protocol | BSEED/Zemismart are ZCL-only despite TS0601 modelId, Tuya DP ignored |
+| Immax NEO Smart Water Timer (_TZE200_xlppj4f5) | **valve_irrigation** | climate_sensor | Both have TS0601 productId — but FP only in valve_irrigation. Re-pair fixes. | GH#135 Domingoso — paired before FP was added to correct driver |
+| WZ-235-ZB-RL Wenzhi mmWave + Relay (_TZE204_clrdrnya) | **motion_sensor_radar_mmwave (RELAY)** | N/A | 230V mains-powered, no battery/temp/humidity. RELAY config removes wrong caps + adds onoff relay. | 7Hills #1482 — powerSource=mains, DP108=relay, DP104=lux, DP9=distance |
+
+---
+
+## Recurring Patterns (Auto-detected)
+
+_No patterns detected yet — run pattern-detector.js_
+
+---
+
+## Interview Repository
+
+- **Total interviews recovered**: 26
+- **Unique fingerprints**: 34
+- **Sources**: {"github":26,"forum":0,"gmail":0,"forum-pm":0}
+
+---
+
+## Forum Activity Tracking
+
+- **Topics monitored**: 5
+- **Recent replies**: 0
+- **Last reply**: N/A
+
 ---
 
 ## Reference Data
@@ -444,4 +502,4 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 
 ---
 
-*Auto-generated on 2026-02-26 from v5.11.25 — 4,593+ fingerprints across 138 drivers*
+*Auto-generated on 2026-02-27 from v5.11.25 — 4,593+ fingerprints across 138 drivers*
