@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 'use strict';
-// v5.11.27: Bot Self-Audit — checks past bot replies for accuracy against current driver DB
+// v5.11.29: Reply Self-Audit — checks past replies for accuracy against current driver DB
 // Detects: "not found" for now-supported devices, wrong driver suggestions, stale info
+// Also detects: hidden/flagged posts, consecutive messages, bot signatures
 const fs=require('fs'),path=require('path');
 const{buildFullIndex,extractAllFP}=require('./load-fingerprints');
 const{validateReply}=require('./reply-quality-gate');
@@ -13,7 +14,10 @@ async function fetchBotReplies(topicIds){
   const apiKey=process.env.DISCOURSE_API_KEY;
   const apiUser=process.env.DISCOURSE_API_USERNAME||'dlnraja';
   const replies=[];
-  if(!apiKey){console.log('No DISCOURSE_API_KEY, using cached data');return loadCachedReplies();}
+  const hiddenPosts=[];
+  const consecutivePosts=[];
+  const botSignaturePosts=[];
+  if(!apiKey){console.log('No DISCOURSE_API_KEY, using cached data');return{replies:loadCachedReplies(),hiddenPosts:[],consecutivePosts:[],botSignaturePosts:[]};}
 
   for(const tid of topicIds){
     try{
@@ -22,10 +26,25 @@ async function fetchBotReplies(topicIds){
       if(!r.ok)continue;
       const data=await r.json();
       const posts=data.post_stream?.posts||[];
+      let prevUser=null;
       for(const p of posts){
-        // Find our replies (from dlnraja or containing old bot signature)
+        // Detect hidden/flagged posts
+        if(p.hidden&&p.username==='dlnraja'){
+          hiddenPosts.push({topic:tid,post:p.post_number,id:p.id,date:p.created_at,
+            reason:p.hidden_reason_id||'unknown'});
+          console.log('  \u26a0 HIDDEN T'+tid+' #'+p.post_number+' (id='+p.id+')');
+        }
+        // Detect consecutive dlnraja posts (spam risk)
+        if(p.username==='dlnraja'&&prevUser==='dlnraja'){
+          consecutivePosts.push({topic:tid,post:p.post_number,id:p.id,date:p.created_at});
+        }
+        // Detect old bot signatures still present
+        if(p.username==='dlnraja'&&/Auto-response by dlnraja|Bot Universal Tuya|Install test version\s*$/i.test(stripHtml(p.cooked))){
+          botSignaturePosts.push({topic:tid,post:p.post_number,id:p.id,date:p.created_at});
+        }
+        prevUser=p.username;
+        // Find our replies
         if(p.username==='dlnraja'||/Bot Universal Tuya Zigbee|Universal Tuya Zigbee v/i.test(p.cooked)){
-          // Find the post it was replying to
           const replyTo=posts.find(rp=>rp.post_number===p.reply_to_post_number);
           replies.push({
             topic:tid,
@@ -33,13 +52,14 @@ async function fetchBotReplies(topicIds){
             replyText:stripHtml(p.cooked),
             originalText:replyTo?stripHtml(replyTo.cooked):'',
             originalUser:replyTo?.username||'',
-            date:p.created_at
+            date:p.created_at,
+            hidden:!!p.hidden
           });
         }
       }
     }catch(e){console.warn('Fetch T'+tid+':',e.message)}
   }
-  return replies;
+  return{replies,hiddenPosts,consecutivePosts,botSignaturePosts};
 }
 
 function loadCachedReplies(){
@@ -116,8 +136,10 @@ async function main(){
   const topicIds=(process.env.FORUM_TOPICS||process.env.AUDIT_TOPICS||'140352,26439,146735,89271,54018,12758,85498').split(',').map(Number);
   console.log('Auditing',topicIds.length,'topics...');
 
-  const replies=await fetchBotReplies(topicIds);
-  console.log('Found',replies.length,'bot replies');
+  const result=await fetchBotReplies(topicIds);
+  const{replies,hiddenPosts,consecutivePosts,botSignaturePosts}=result;
+  console.log('Found',replies.length,'replies,',hiddenPosts.length,'hidden,',
+    consecutivePosts.length,'consecutive,',botSignaturePosts.length,'with bot sigs');
 
   // Cache replies for offline use
   const cacheFile=path.join(STATE_DIR,'bot-replies-cache.json');
@@ -125,6 +147,18 @@ async function main(){
   if(replies.length)fs.writeFileSync(cacheFile,JSON.stringify(replies,null,2));
 
   const issues=auditReplies(replies);
+  // Add hidden/consecutive/botSig issues
+  for(const h of hiddenPosts)issues.push({topic:h.topic,post:h.post,user:'dlnraja',date:h.date,
+    warnings:['POST HIDDEN by community (spam flag) — id='+h.id],corrected:null});
+  for(const c of consecutivePosts)issues.push({topic:c.topic,post:c.post,user:'dlnraja',date:c.date,
+    warnings:['CONSECUTIVE dlnraja post — should edit previous instead'],corrected:null});
+  for(const b of botSignaturePosts)issues.push({topic:b.topic,post:b.post,user:'dlnraja',date:b.date,
+    warnings:['OLD BOT SIGNATURE still present — edit to remove'],corrected:null});
+  // Save hidden posts state for cleanup
+  if(hiddenPosts.length||consecutivePosts.length||botSignaturePosts.length){
+    const auditState={date:new Date().toISOString(),hiddenPosts,consecutivePosts,botSignaturePosts};
+    fs.writeFileSync(path.join(STATE_DIR,'audit-flagged.json'),JSON.stringify(auditState,null,2));
+  }
   console.log('Issues:',issues.length,'/',replies.length,'replies');
 
   for(const i of issues){

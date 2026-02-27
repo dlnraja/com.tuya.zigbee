@@ -273,12 +273,6 @@ jobs:
         timeout-minutes: 5
         run: node .github/scripts/generate-readme.js
 
-      - name: "10f. Generate User Expectations"
-        id: gen_expectations
-        continue-on-error: true
-        timeout-minutes: 5
-        run: node .github/scripts/generate-user-expectations.js
-
       # ===== 10g. Homey Device Diagnostics (live Homey data) =====
       - name: "10g. Homey Device Diagnostics"
         id: homey_diag
@@ -329,6 +323,14 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: node .github/scripts/bot-self-audit.js
+
+      # ===== 10m. USER EXPECTATIONS: Generate tracking + decision reference =====
+      # Runs LAST so it has all data from pattern-detector, interview-recovery, reply-audit
+      - name: "10m. Generate User Expectations + Decision Ref"
+        id: gen_expectations
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/generate-user-expectations.js
 
       # ===== 11. COMMIT: All state + docs + changelogs =====
       - name: "11. Commit all changes"
