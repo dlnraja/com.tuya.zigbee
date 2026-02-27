@@ -101,6 +101,7 @@ jobs:
         timeout-minutes: 10
         env:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          REPLY_TOPICS: "140352"
         run: |
           echo "=== Forum Scan ==="
           node .github/scripts/scan-forum.js || true
