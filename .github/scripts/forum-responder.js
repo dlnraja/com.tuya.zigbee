@@ -62,14 +62,51 @@ function textSimilarity(a,b){
   return inter/(wa.size+wb.size-inter);
 }
 
+function getHeaders(auth,json){
+  const h=auth.type==='apikey'?{'User-Api-Key':auth.key}
+    :{'X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
+  if(json)h['Content-Type']='application/json';
+  return h;
+}
+
 async function postReply(tid,replyTo,content,auth){
-  const h=auth.type==='apikey'?{'Content-Type':'application/json','User-Api-Key':auth.key}
-    :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
-  const r=await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:h,
+  const r=await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:getHeaders(auth,true),
     body:JSON.stringify({topic_id:tid,raw:content,reply_to_post_number:replyTo})},{retries:3,label:'reply'});
   const d=await r.json().catch(()=>({}));
   if(!r.ok)throw new Error('Post:'+r.status+' '+JSON.stringify(d).substring(0,200));
   return d;
+}
+
+// EDIT existing post instead of creating new one (prevents consecutive messages)
+async function editPost(postId,newContent,auth){
+  const r=await fetchWithRetry(FORUM+'/posts/'+postId,{method:'PUT',headers:getHeaders(auth,true),
+    body:JSON.stringify({post:{raw:newContent}})},{retries:3,label:'editPost'});
+  const d=await r.json().catch(()=>({}));
+  if(!r.ok)throw new Error('Edit:'+r.status+' '+JSON.stringify(d).substring(0,200));
+  return d;
+}
+
+// Find the last post by dlnraja in a topic to decide: edit vs new post
+async function getLastOwnPost(tid){
+  try{
+    const r=await fetchWithRetry(FORUM+'/t/'+tid+'.json',{},{retries:2,label:'lastOwn'});
+    if(!r.ok)return null;
+    const d=await r.json();
+    const highest=d.highest_post_number;
+    if(!highest)return null;
+    // Fetch last few posts
+    const from=Math.max(1,highest-5);
+    const r2=await fetchWithRetry(FORUM+'/t/'+tid+'/'+from+'.json',{},{retries:2,label:'lastOwnPosts'});
+    if(!r2.ok)return null;
+    const posts=(await r2.json()).post_stream?.posts||[];
+    // Check if the VERY LAST post is from dlnraja
+    const sorted=posts.sort((a,b)=>b.post_number-a.post_number);
+    if(sorted[0]?.username==='dlnraja'){
+      return{id:sorted[0].id,postNumber:sorted[0].post_number,
+        raw:sorted[0].raw||strip(sorted[0].cooked||'')};
+    }
+    return null;
+  }catch{return null}
 }
 
 // v5.11.28: Batched fallback — merge FP results + intelligence into ONE reply
@@ -140,7 +177,7 @@ async function main(){
   const tids=(process.env.FORUM_TOPICS||'140352,26439,146735,89271,54018,12758,85498').split(',').map(Number);
   const replyTids=new Set((process.env.REPLY_TOPICS||'140352,26439,146735,89271').split(',').map(Number));
   let ver='?';try{ver=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
-  console.log('=== Forum Responder v5.11.28 (1 reply/topic) ===');
+  console.log('=== Forum Responder v5.11.29 (edit-or-reply, anti-spam) ===');
   console.log(dry?'DRY':'LIVE','| v'+ver);
   const{idx,pidx,allMfrs,allPids}=buildIndex();
   console.log('Index:',idx.size,'mfrs,',pidx.size,'pids');
@@ -200,11 +237,21 @@ async function main(){
     else if(dry){console.log('[DRY]\n'+reply.substring(0,300));summary.push({t:tid,u:uList,a:'dry'});}
     else{
       let ok=false;
+      // Check if last post in topic is already from dlnraja — EDIT instead of new post
+      const lastOwn=await getLastOwnPost(tid);
       for(let i=0;i<3;i++){
         try{
           if(auth.type==='session')await refreshCsrf(auth);
-          const r=await postReply(tid,lastP.post_number,reply,auth);
-          console.log('  Posted:',r.id);summary.push({t:tid,u:uList,a:'replied',id:r.id});logReply(state,tid,r.id);totalR++;ok=true;await sleep(DELAY);break;
+          if(lastOwn){
+            // EDIT existing post: append new content with separator
+            const merged=lastOwn.raw+'\n\n---\n\n'+reply;
+            const r=await editPost(lastOwn.id,merged,auth);
+            console.log('  Edited #'+lastOwn.postNumber+' (appended '+reply.length+'ch)');
+            summary.push({t:tid,u:uList,a:'edited',id:lastOwn.id});logReply(state,tid,lastOwn.id);totalR++;ok=true;break;
+          }else{
+            const r=await postReply(tid,lastP.post_number,reply,auth);
+            console.log('  Posted:',r.id);summary.push({t:tid,u:uList,a:'replied',id:r.id});logReply(state,tid,r.id);totalR++;ok=true;await sleep(DELAY);break;
+          }
         }catch(e){
           console.warn('  Try'+(i+1)+':',e.message);
           if(/consecutive|closed|gone wrong/.test(e.message)){console.warn('  Block');break;}
