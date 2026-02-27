@@ -2,14 +2,14 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-5,353+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-5,356+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-143-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-1,810-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **143 drivers** and **5,353+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **143 drivers** and **5,356+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -34,8 +34,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Metric | Value |
 |--------|-------|
-| **Device Fingerprints** | 5,353+ |
-| **Unique Product IDs** | 500 |
+| **Device Fingerprints** | 5,356+ |
+| **Unique Product IDs** | 502 |
 | **Drivers** | 143 (116 Zigbee + 27 WiFi) |
 | **Flow Cards** | 1,810 |
 | **Unique Capabilities** | 112 |
@@ -49,7 +49,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 1,578 |
+| 1 | `climate_sensor` | 1,576 |
 | 2 | `radiator_valve` | 277 |
 | 3 | `generic_tuya` | 263 |
 | 4 | `switch_1gang` | 259 |
@@ -63,7 +63,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | 12 | `diy_custom_zigbee` | 103 |
 | 13 | `presence_sensor_radar` | 103 |
 | 14 | `switch_2gang` | 103 |
-| 15 | `water_leak_sensor` | 87 |
+| 15 | `water_leak_sensor` | 88 |
 | 16 | `bulb_rgbw` | 80 |
 | 17 | `switch_4gang` | 75 |
 | 18 | `switch_3gang` | 71 |
@@ -100,9 +100,9 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | Version | Changes |
 |---------|---------|
 | **v5.11.25** | v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboar... |
-| **v5.11.24** | Universal Tuya Zigbee v5.11.24 introduces core fixes, enhanced automation, and updated device fingerprints, ensuring ... |
-| **v5.11.23** | Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum responsiveness, ensuri... |
-| **v5.11.22** | Universal Tuya Zigbee v5.11.22 introduces enhanced forum responsiveness, improved workflow resilience, and updates to... |
+| **v5.11.24** | v5.11.24: Fixed a workflow trigger race condition. Forum scanner now covers 12 topics. Better diagnostics tracking be... |
+| **v5.11.23** | v5.11.23: Switched post-forum-update to fetchWithRetry (fixes random post failures). RawClusterFallback for non-Tuya-... |
+| **v5.11.22** | v5.11.22: 8 new fingerprints from JohanBendz scan. Device Finder tool. Forum auth now handles 404/401 gracefully. |
 | **v5.11.21** | v5.11.21: IR Blaster learning fix, energy divisors, soil moisture fix. (1) IR Blaster ZS06 manual cluster fallback fo... |
 | **v5.11.20** | See .homeychangelog.json for details |
 | **v5.11.19** | v5.11.19: Soil sensor compound frame guards, curtain motor physical button fix, CI/CD overhaul with auto-publish. |
@@ -179,7 +179,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 143 Drivers ─ 5,353+ fingerprints
+       └─ 143 Drivers ─ 5,356+ fingerprints
 ```
 
 ---

@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-02-27T20:40:58.361Z",
+  "timestamp": "2026-02-27T23:05:57.526Z",
   "username": "dlnraja",
   "summary": {
-    "postCount": 573,
+    "postCount": 574,
     "topicCount": 1,
     "likes": 65,
     "likesReceived": 197,
@@ -10,7 +10,7 @@
       {
         "id": 140352,
         "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "posts": 1525
+        "posts": 1526
       },
       {
         "id": 26439,
@@ -49,19 +49,28 @@
     {
       "id": 140352,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "posts": 1525,
-      "views": 13635,
-      "lastPosted": "2026-02-27T19:17:07.296Z",
+      "posts": 1526,
+      "views": 13645,
+      "lastPosted": "2026-02-27T21:13:47.170Z",
       "slug": "app-pro-universal-tuya-zigbee-device-app-test"
     }
   ],
   "activity": [
     {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1538,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "v5.11.25 just went up on the test channel. \nv5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributio&hellip;",
+      "createdAt": "2026-02-27T21:13:47.170Z",
+      "username": "dlnraja"
+    },
+    {
       "type": 17,
       "topicId": 151778,
       "postNum": 2,
       "title": "Tuya Zigbee app and Smart Click+Zigbee Sockets",
-      "excerpt": "I think you refer to this device \n\nThis shop doesn’t mention anything about Homey. \nHowever, it can work with Homey if there’s an app supporting it. \nBest chance is the Universal Tuya zigbee app: \nhttps://homey.app/a/com.dlnraja.tuya.zigbee/test/ \nIf it turn out to be not supported, \nbest chance is &hellip;",
+      "excerpt": "I think you refer to this device \n\nThis shop doesn’t mention anything about Homey. \nHowever, it can work with Homey if there’s an app supporting it. \nBest chance is the Universal Tuya zigbee app: \nhttps://homey.app/a/com.dlnraja.tuya.zigbee/test/ \nIf it turns out to be unsupported, \nbest chance is t&hellip;",
       "createdAt": "2026-02-27T20:17:17.441Z",
       "username": "Peter_Kawa"
     },
@@ -70,7 +79,7 @@
       "topicId": 151778,
       "postNum": 2,
       "title": "Tuya Zigbee app and Smart Click+Zigbee Sockets",
-      "excerpt": "I think you refer to this device \n\nThis shop doesn’t mention anything about Homey. \nHowever, it can work with Homey if there’s an app supporting it. \nBest chance is the Universal Tuya zigbee app: \nhttps://homey.app/a/com.dlnraja.tuya.zigbee/test/ \nIf it turn out to be not supported, \nbest chance is &hellip;",
+      "excerpt": "I think you refer to this device \n\nThis shop doesn’t mention anything about Homey. \nHowever, it can work with Homey if there’s an app supporting it. \nBest chance is the Universal Tuya zigbee app: \nhttps://homey.app/a/com.dlnraja.tuya.zigbee/test/ \nIf it turns out to be unsupported, \nbest chance is t&hellip;",
       "createdAt": "2026-02-27T20:15:44.260Z",
       "username": "Peter_Kawa"
     },
@@ -2746,15 +2755,6 @@
       "excerpt": "Hi @dlnraja \nThanks for all your work for this app, good to see that this app improves everyday. \nFor the presence sensor i still have the same issue, connected as unknown device. \nPlease let me know if you need a new interview or report. \nThanks JJ",
       "createdAt": "2026-01-28T17:05:36.155Z",
       "username": "JJ10"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1261,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Hello Dylan. \nSadly all BSEED wall switches still seen as unknown zigbee device on V5.5.932. \nad00e674-dbdc-47cd-bd56-8638fbe3f12c \nBest regards: Pieter.",
-      "createdAt": "2026-01-28T16:22:56.494Z",
-      "username": "Pieter_Pessers"
     }
   ],
   "pms": [],
@@ -3787,7 +3787,7 @@
       "topicId": 151778,
       "postNum": 2,
       "user": "Peter_Kawa",
-      "excerpt": "...hed Socket Outlet This shop doesn't mention anything about Homey. However, it can work with Homey if there's an app supporting it. Best chance is the Universal Tuya zigbee app: https://homey.app/a/com.dlnraja.tuya.zigbee/test/ If it turn out to be not supported, best chance is to ask for support here: https://community....",
+      "excerpt": "...hed Socket Outlet This shop doesn't mention anything about Homey. However, it can work with Homey if there's an app supporting it. Best chance is the Universal Tuya zigbee app: https://homey.app/a/com.dlnraja.tuya.zigbee/test/ If it turns out to be unsupported, best chance is to ask for support here: https://community.h...",
       "date": "2026-02-27T20:15:43.838Z"
     },
     {
@@ -3831,6 +3831,13 @@
       "user": "robertklep",
       "excerpt": "I'm fairly sure that the https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352 Universal TUYA Zigbee app is, at least in part, based on Z2M code (however, that app is being vibe-coded and I don't get the impression that it's exactly stable). But Z2M...",
       "date": "2026-02-03T06:09:33.367Z"
+    },
+    {
+      "topicId": 151799,
+      "postNum": 1,
+      "user": "Gareth_Roberts",
+      "excerpt": "Has anyone had success in adding this device to a homey pro? When pairing Homey seems to recognises its a zigbee wall socket stating there will be 2 elements (presumably L & R sockets) but when completing the install says it doesn't recognise the device a just installs a generic Tuya tile with no...",
+      "date": "2026-02-27T20:52:17.597Z"
     },
     {
       "topicId": 149796,
@@ -14834,6 +14841,13 @@
           "text": "Hi Dylan, I have a new moisture sensor that can also measure fertilizer levels.\n\nCan the fertilizer level be added to the readings?\n\nThanks in advance!\n\nTS0601\n\n_TZE284_hdml1aav\n\n29bb591c-366f-4b7c-bd7e-490c2032d740\n\nScreenshot_2026-02-27-19-56-48-500_com.tuya.smart1440×3200 354 KB\n\nScreenshot_2026-02-27-19-57-18-928_com.tuya.smart1440×3200 289 KB\n\nScreenshot_2026-02-27-19-57-22-927_com.tuya.smart1440×3200 307 KB\n\nScreenshot_2026-02-27-19-59-37-365_com.alibaba.aliexpresshd1440×3200 361 KB\n\nhttps://a.aliexpress.com/_ExvTWpE\n\n\n\nSummary\n“ids”: {\n\n“modelId”: “TS0601”,\n\n“manufacturerName”: “_TZE284_hdml1aav”\n\n},\n\n“endpoints”: {\n\n“ieeeAddress”: “a4:c1:38:39:d7:02:17:55”,\n\n“networkAddress”: 36185,\n\n“modelId”: “TS0601”,\n\n“manufacturerName”: “_TZE284_hdml1aav”,\n\n“endpointDescriptors”: [\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 36185,\n\n“_reserved”: 22,\n\n“endpointId”: 1,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 81,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n4,\n\n5,\n\n61184,\n\n0,\n\n60672\n\n],\n\n“outputClusters”: [\n\n25,\n\n10\n\n]\n\n}\n\n],\n\n“deviceType”: “enddevice”,\n\n“receiveWhenIdle”: false,\n\n“capabilities”: {\n\n“alternatePANCoordinator”: false,\n\n“deviceType”: false,\n\n“powerSourceMains”: false,\n\n“receiveWhenIdle”: false,\n\n“security”: false,\n\n“allocateAddress”: true\n\n},\n\n“extendedEndpointDescriptors”: {\n\n“1”: {\n\n“clusters”: {\n\n“groups”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“name”: “nameSupport”,\n\n“value”: {\n\n“type”: “Buffer”,\n\n“data”: [\n\n0\n\n]\n\n},\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n]\n\n},\n\n“scenes”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 3,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 4,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n]\n\n},\n\n“basic”: {}\n\n},\n\n“bindings”: {\n\n“ota”: {},\n\n“time”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n]\n\n}\n\n}\n\n}\n\n}\n\n}\n\n\nimage262×395 16.8 KB",
           "date": "2026-02-27T19:17:07.296Z",
           "replyTo": null
+        },
+        {
+          "num": 1538,
+          "user": "dlnraja",
+          "text": "v5.11.25 just went up on the test channel.\n\nv5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts.\n\nCurrently at 143 drivers and 5,353+ fingerprints. Install the test version if you want to try it out.\n\nIf something feels off after updating, try removing the device and re-pairing. Let me know if you run into anything.",
+          "date": "2026-02-27T21:13:47.170Z",
+          "replyTo": null
         }
       ],
       "category": 7
@@ -23857,6 +23871,48 @@
           "text": "I’ve got this device\n\n183671920×2560 959 KB\n\n183661920×2560 1.16 MB\n\nI see that the app support presence sensor, but I’ve been trying to add this device with this app and it can’t find it.\n\nIs there only a specific version supported?\n\nThanks",
           "date": "2026-02-27T20:41:37.707Z",
           "replyTo": null
+        },
+        {
+          "num": 191,
+          "user": "smarthomesven",
+          "text": "Do you have a Tuya ZigBee or MultiMode gateway? That gateway is required to use the device with this app.",
+          "date": "2026-02-27T21:14:13.033Z",
+          "replyTo": 190
+        },
+        {
+          "num": 192,
+          "user": "Ricardo_Nunes",
+          "text": "I do, but this device is Wi-Fi\n\nThe ZigBee ones work with homey with this tuya app?",
+          "date": "2026-02-27T21:30:42.722Z",
+          "replyTo": 191
+        },
+        {
+          "num": 193,
+          "user": "smarthomesven",
+          "text": "Ricardo_Nunes:\n\nI do, but this device is Wi-Fi\n\n\n\nYou can also add it as an Unknown device. Then you can use the “Parameter gets a new value” trigger Flow cards to receive the data.\n\n\n\n\n Ricardo_Nunes:\n\nThe ZigBee ones work with homey with this tuya app?\n\n\n\nYes, as long as you have them connected to a Tuya Zigbee or MultiMode gateway.",
+          "date": "2026-02-27T22:05:22.717Z",
+          "replyTo": 192
+        },
+        {
+          "num": 194,
+          "user": "Ricardo_Nunes",
+          "text": "And you can also see luminance values on homey?\n\nWould you be able to tell me the specific model you’ve got?",
+          "date": "2026-02-27T22:17:20.546Z",
+          "replyTo": 193
+        },
+        {
+          "num": 195,
+          "user": "smarthomesven",
+          "text": "I don’t have that specific device, but almost anything should be supported using these Flow cards:\n\nimage862×429 39.8 KB",
+          "date": "2026-02-27T22:20:40.243Z",
+          "replyTo": 194
+        },
+        {
+          "num": 196,
+          "user": "Ricardo_Nunes",
+          "text": "Ok, thank you for your help",
+          "date": "2026-02-27T22:56:17.228Z",
+          "replyTo": 195
         }
       ],
       "category": 7
@@ -32002,8 +32058,22 @@
         {
           "num": 2,
           "user": "Peter_Kawa",
-          "text": "I think you refer to this device\n\n  \n      \n\n      scolmore.com\n  \n\n  \n    \n\nCMA30036 - 13A 2 Gang Zigbee Smart Switched Socket Outlet\n\n  The complete range of electrical accessories. Click is one of the leading UK manufacturers and a proudly run British-based family business. | CMA30036 - 13A 2 Gang Zigbee Smart Switched Socket Outlet\n\n\n\n  \n\n  \n    \n    \n  \n\n  \n\n\nThis shop doesn’t mention anything about Homey.\n\nHowever, it can work with Homey if there’s an app supporting it.\n\nBest chance is the Universal Tuya zigbee app:\n\nhttps://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\nIf it turn out to be not supported,\n\nbest chance is to ask for support here:\n\nhttps://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352\n\n\n\n\n[APP][Pro] Universal TUYA Zigbee Device App - test\n\n\nInclude your device fingerprint (_TZxxxx_xxxxx) and Zigbee model ID (TSxxxx)\nUse Homey Developer Tools > Zigbee https://tools.developer.homey.app/tools/zigbee to find your device info\n\n\n\n.\n\n\n\n\n Gareth_Roberts:\n\nInternet says\n\n\n\nTrue, internet says many things but not necessarily accurate.\n\nCan you share where you’ve found the information about Homey and this smart socket?",
+          "text": "I think you refer to this device\n\n  \n      \n\n      scolmore.com\n  \n\n  \n    \n\nCMA30036 - 13A 2 Gang Zigbee Smart Switched Socket Outlet\n\n  The complete range of electrical accessories. Click is one of the leading UK manufacturers and a proudly run British-based family business. | CMA30036 - 13A 2 Gang Zigbee Smart Switched Socket Outlet\n\n\n\n  \n\n  \n    \n    \n  \n\n  \n\n\nThis shop doesn’t mention anything about Homey.\n\nHowever, it can work with Homey if there’s an app supporting it.\n\nBest chance is the Universal Tuya zigbee app:\n\nhttps://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\nIf it turns out to be unsupported,\n\nbest chance is to ask for support here:\n\nhttps://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352\n\n\n\n\n[APP][Pro] Universal TUYA Zigbee Device App - test\n\n\nInclude your device fingerprint (_TZxxxx_xxxxx) and Zigbee model ID (TSxxxx)\nUse Homey Developer Tools > Zigbee https://tools.developer.homey.app/tools/zigbee to find your device info\n\n\n\n.\n\n\n\n\n Gareth_Roberts:\n\nInternet says\n\n\n\nTrue, internet says many things but not necessarily accurate.\n\nCan you share where you’ve found the information about Homey and this smart socket?",
           "date": "2026-02-27T20:15:43.838Z",
+          "replyTo": null
+        },
+        {
+          "num": 3,
+          "user": "Gareth_Roberts",
+          "text": "Thanks Peter. So far haven’t been able to find any app that has this device. Posted a message on the community as suggested but am not confident. Back to finding one that is definitely compatible.\n\nThanks\n\nGareth",
+          "date": "2026-02-27T21:13:35.000Z",
+          "replyTo": 2
+        },
+        {
+          "num": 4,
+          "user": "Welshsmarthome",
+          "text": "As per other post.\n\nUse this. I know this works as I have loads. However the newer one suggested by Sven may also work.\n\nAs you have probably found they do pair to Homey but only one side will work without the app\n\n\n  \n      \n\n      homey.app\n  \n\n  \n    \n\nTuya Zigbee | Homey\n\n  Control your white label Zigbee devices made by Tuya",
+          "date": "2026-02-27T22:06:25.011Z",
           "replyTo": null
         }
       ],
@@ -51568,6 +51638,76 @@
       "category": 122
     },
     {
+      "id": 151799,
+      "title": "Clicksmart+ - CMA30036 - 13A 2 gang zigbee smart switched socket outlet",
+      "posts": [
+        {
+          "num": 1,
+          "user": "Gareth_Roberts",
+          "text": "Has anyone had success in adding this device to a homey pro? When pairing Homey seems to recognises its a zigbee wall socket stating there will be 2 elements (presumably L & R sockets) but when completing the install says it doesn’t recognise the device a just installs a generic Tuya tile with no actual connection to the socket.\n\nHave tried installing via Zigbee, apps Tuya Zigbee and Universal Tuya.\n\nThanks\n\nGareth",
+          "date": "2026-02-27T20:52:17.597Z",
+          "replyTo": null
+        },
+        {
+          "num": 2,
+          "user": "Peter_Kawa",
+          "text": "Please don’t double post\n\n@moderators\n\n  \n    \n    \n    \n      Tuya Zigbee app and Smart Click+Zigbee Sockets Devices\n    \n  \n  \n    Internet says that the Smart Click + (30036)  2 gang zigbee wall socket is compatible with Homey and that users have used the Tuya zigbee app. \nTried that this afternoon and all I can get to pair is a generic Tuya tile. No option of L + R sockets. \nI am obviously not doing something right but any ideas what? \nThanks \nGareth",
+          "date": "2026-02-27T21:17:39.937Z",
+          "replyTo": null
+        },
+        {
+          "num": 3,
+          "user": "smarthomesven",
+          "text": "Gareth_Roberts:\n\nHave tried installing via Zigbee, apps Tuya Zigbee and Universal Tuya\n\n\n\nYou can use the official Tuya app in combination with a Tuya MultiMode or ZigBee gateway.",
+          "date": "2026-02-27T21:21:03.527Z",
+          "replyTo": null
+        },
+        {
+          "num": 4,
+          "user": "Gareth_Roberts",
+          "text": "Thanks, still can’t get it to work\n\nGareth",
+          "date": "2026-02-27T21:41:16.000Z",
+          "replyTo": 3
+        },
+        {
+          "num": 5,
+          "user": "smarthomesven",
+          "text": "You can use commands to control it. Add it as an Unknown device in the Tuya app.\n\n\n\nYou can then use these cards to interface with the device.",
+          "date": "2026-02-27T22:00:57.701Z",
+          "replyTo": 4
+        },
+        {
+          "num": 6,
+          "user": "Welshsmarthome",
+          "text": "I have loads of these. They dont work with the official tuya app but they do work with the experimental one\n\nBut. This is an experimental app. So as Sven says, it may be worth getting a Tuya Hub and then use the other app.\n\nHopefully someone can bring them into the official tuya app because they are great\n\n\n  \n      \n\n      homey.app\n  \n\n  \n    \n\nTuya Zigbee | Homey\n\n  Control your white label Zigbee devices made by Tuya",
+          "date": "2026-02-27T22:04:00.847Z",
+          "replyTo": null
+        },
+        {
+          "num": 7,
+          "user": "Gareth_Roberts",
+          "text": "Finally got it to work with the experimental app. Many thanks to everyone for your help.",
+          "date": "2026-02-27T22:35:22.957Z",
+          "replyTo": 6
+        },
+        {
+          "num": 8,
+          "user": "Welshsmarthome",
+          "text": "Which version?\n\nBe good to have a backup",
+          "date": "2026-02-27T22:36:15.422Z",
+          "replyTo": 7
+        },
+        {
+          "num": 9,
+          "user": "Gareth_Roberts",
+          "text": "It’s v5.11.25",
+          "date": "2026-02-27T22:53:35.000Z",
+          "replyTo": 8
+        }
+      ],
+      "category": 8
+    },
+    {
       "id": 149796,
       "title": "Honeywell Valve",
       "posts": [
@@ -66490,545 +66630,6 @@
         }
       ],
       "category": 6
-    },
-    {
-      "id": 37771,
-      "title": "Lidl device Zigbee",
-      "posts": [
-        {
-          "num": 1,
-          "user": "Mark1541",
-          "text": "Hello\n\nLidl has new smartphone products\n\nLights sensors and more and is available in Holland on 27/11\n\nCan someone make an app or try it will work on tuya ikea oaram Philips apps\n\nIt’s Zigbee\n\nSee link here\n\n\n  \n      \n      www.lidl.nl\n  \n  \n    \n\nSmart home",
-          "date": "2020-11-22T21:07:54.970Z",
-          "replyTo": null
-        },
-        {
-          "num": 2,
-          "user": "PetervdK",
-          "text": "You’d better post your request here: Homey Community App Requests",
-          "date": "2020-11-22T22:21:15.823Z",
-          "replyTo": null
-        },
-        {
-          "num": 3,
-          "user": "Max_Menther",
-          "text": "That app should work with LIDL devices:\n\n\n  \n      \n\n      homey.app\n  \n\n  \n    \n\nTuya Zigbee\n\n  Control your white label Zigbee devices made by Tuya\n\n\n\n  \n\n  \n    \n    \n  \n\n  \n\n\nAs far I know it‘s just rebranded Tuya stuff.",
-          "date": "2020-11-22T22:44:44.565Z",
-          "replyTo": null
-        },
-        {
-          "num": 4,
-          "user": "Mark1541",
-          "text": "But then I need to upgrade to V5 I think\n\nHope someone will test it",
-          "date": "2020-11-23T08:25:07.903Z",
-          "replyTo": 3
-        },
-        {
-          "num": 5,
-          "user": "johan_bendz",
-          "text": "As Max says those are Tuya devices and will fit right into my Tuya Zigbee app. They will only work on firmware 5 as the Zigbee stack in firmware 4 is not able to manage them.\n\nIf anyone have these devices please head over to Tuya Zigbee topic and send me info as requested in top post.",
-          "date": "2020-11-23T08:36:37.417Z",
-          "replyTo": 4
-        },
-        {
-          "num": 6,
-          "user": "Arnd_Koch",
-          "text": "Today tested the silvercrest door en movement sensor ,  the both kan connect to de zigbee app hue and tuya  but it  wil be instalt as a unknown device …  ( there is no app found on homey )",
-          "date": "2020-11-27T08:21:34.246Z",
-          "replyTo": 5
-        },
-        {
-          "num": 7,
-          "user": "Peter_dV",
-          "text": "@johan_bendz I’ve bought quite some Lidl Zigbee device and posted manufacturer and product ID’s in your topic on the Tuya Zigbee app. Let me know if I can help in any other way.\n\nhttps://community.homey.app/t/app-tuya-zigbee-app/26439/277?u=peter_dv",
-          "date": "2020-11-27T14:59:40.750Z",
-          "replyTo": null
-        },
-        {
-          "num": 8,
-          "user": "Peter_dV",
-          "text": "Can’t reply too many times in one thread, so I’ll also post the 3-socket strip interview here.\n\nPS - awesome work you’re doing!\n\nLIDL 3 socket strip interview:\n\n  \"ids\": {\n    \"modelId\": \"TS011F\",\n    \"manufacturerName\": \"_TZ3000_1obwwnmq\"\n  },\n  \"endpoints\": {\n    \"endpointDescriptors\": [\n      {\n        \"endpointId\": 1,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 266,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          0,\n          3,\n          4,\n          5,\n          6\n        ],\n        \"outputClusters\": [\n          25,\n          10\n        ]\n      },\n      {\n        \"endpointId\": 2,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 266,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          3,\n          4,\n          5,\n          6\n        ],\n        \"outputClusters\": []\n      },\n      {\n        \"endpointId\": 3,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 266,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          3,\n          4,\n          5,\n          6\n        ],\n        \"outputClusters\": []\n      },\n      {\n        \"endpointId\": 242,\n        \"applicationProfileId\": 41440,\n        \"applicationDeviceId\": 97,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 0,\n        \"inputClusters\": [],\n        \"outputClusters\": [\n          33\n        ]\n      }\n    ],\n    \"endpoints\": {\n      \"1\": {\n        \"clusters\": {\n          \"basic\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"zclVersion\",\n                \"value\": 3,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 1,\n                \"name\": \"appVersion\",\n                \"value\": 69,\n                \"reportingConfiguration\": {\n                  \"direction\": \"reported\",\n                  \"attributeDataType\": 32,\n                  \"minInterval\": 1,\n                  \"maxInterval\": 150,\n                  \"minChange\": 0,\n                  \"status\": \"SUCCESS\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 2,\n                \"name\": \"stackVersion\",\n                \"value\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 3,\n                \"name\": \"hwVersion\",\n                \"value\": 1,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 4,\n                \"name\": \"manufacturerName\",\n                \"value\": \"_TZ3000_1obwwnmq\",\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 5,\n                \"name\": \"modelId\",\n                \"value\": \"TS011F\",\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 6,\n                \"name\": \"dateCode\",\n                \"value\": \"\",\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 7,\n                \"name\": \"powerSource\",\n                \"value\": \"mains\",\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 65502,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65534,\n                \"name\": \"attributeReportingStatus\",\n                \"value\": \"PENDING\",\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65504,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65505,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65506,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65507,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"identify\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 1,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"groups\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"nameSupport\",\n                \"value\": {\n                  \"type\": \"Buffer\",\n                  \"data\": [\n                    0\n                  ]\n                },\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"scenes\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 1,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 3,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 4,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"onOff\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"onOff\",\n                \"value\": true,\n                \"reportingConfiguration\": {\n                  \"direction\": \"reported\",\n                  \"attributeDataType\": 16,\n                  \"minInterval\": 1,\n                  \"maxInterval\": 65534,\n                  \"status\": \"SUCCESS\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 16385,\n                \"name\": \"onTime\",\n                \"value\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 16386,\n                \"name\": \"offWaitTime\",\n                \"value\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 32769,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 32770,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          }\n        },\n        \"bindings\": {\n          \"ota\": {\n            \"attributes\": [],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"time\": {\n            \"attributes\": [],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          }\n        }\n      },\n      \"2\": {\n        \"clusters\": {\n          \"identify\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 1,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"groups\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"nameSupport\",\n                \"value\": {\n                  \"type\": \"Buffer\",\n                  \"data\": [\n                    0\n                  ]\n                },\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"scenes\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 1,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 3,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 4,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"onOff\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"onOff\",\n                \"value\": false,\n                \"reportingConfiguration\": {\n                  \"direction\": \"reported\",\n                  \"attributeDataType\": 16,\n                  \"minInterval\": 1,\n                  \"maxInterval\": 65534,\n                  \"status\": \"SUCCESS\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 16385,\n                \"name\": \"onTime\",\n                \"value\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 16386,\n                \"name\": \"offWaitTime\",\n                \"value\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 32769,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 32770,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          }\n        },\n        \"bindings\": {}\n      },\n      \"3\": {\n        \"clusters\": {\n          \"identify\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 1,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"groups\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"nameSupport\",\n                \"value\": {\n                  \"type\": \"Buffer\",\n                  \"data\": [\n                    0\n                  ]\n                },\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"scenes\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 1,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 3,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 4,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"onOff\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"onOff\",\n                \"value\": false,\n                \"reportingConfiguration\": {\n                  \"direction\": \"reported\",\n                  \"attributeDataType\": 16,\n                  \"minInterval\": 1,\n                  \"maxInterval\": 65534,\n                  \"status\": \"SUCCESS\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 16385,\n                \"name\": \"onTime\",\n                \"value\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 16386,\n                \"name\": \"offWaitTime\",\n                \"value\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 32769,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 32770,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          }\n        },\n        \"bindings\": {}\n      },\n      \"242\": {\n        \"clusters\": {},\n        \"bindings\": {}\n      }\n    }\n  }",
-          "date": "2020-11-27T15:25:36.052Z",
-          "replyTo": null
-        },
-        {
-          "num": 9,
-          "user": "johan_bendz",
-          "text": "Hi @Arnd_Koch. If you are running on Firmware 5 you can add the device as generic and interview it according to the top post in the Tuya Zigbee topic. With that information I will be able to add support for it.",
-          "date": "2020-11-27T15:42:11.558Z",
-          "replyTo": 6
-        },
-        {
-          "num": 10,
-          "user": "Arnd_Koch",
-          "text": "Hello Johan\n\nJust upgraded to firmware 5\n\nDo you still need the interview of the doorsensor and movement sensor ?\n\nor do you have it already …\n\nIf no  , where/how can i interview this ?\n\ngreets Arnd",
-          "date": "2020-11-29T12:03:41.945Z",
-          "replyTo": 9
-        },
-        {
-          "num": 11,
-          "user": "JPe4619",
-          "text": "@Arnd_Koch\n\n\n\n\n johan_bendz:\n\ninterview it according to the top post in the Tuya Zigbee topic.\n\n\n\nThere  is the answer!",
-          "date": "2020-11-29T12:21:27.174Z",
-          "replyTo": 9
-        },
-        {
-          "num": 12,
-          "user": "Arnd_Koch",
-          "text": "Hello Johan\n\nThe inteview of both sensors  add to Tuya Zigbee Topic …\n\nHope you can make it work \n\nGreetings Arnd",
-          "date": "2020-11-29T14:06:08.279Z",
-          "replyTo": 9
-        },
-        {
-          "num": 13,
-          "user": "johan_bendz",
-          "text": "Thanks @Arnd_Koch for the Door/Window Sensor interview! Helps alot! \n\n(I got the motion sensor yesterday but it’s a hard time to keep up with all the informations in the Tuya thread… I’ll try to keep the top post updated so all can see whats missing.)",
-          "date": "2020-11-29T15:52:26.300Z",
-          "replyTo": 12
-        },
-        {
-          "num": 14,
-          "user": "arvi",
-          "text": "Hi. I have comments/questions concerning 2 Lidl devices:\n\nMotion sensor - I can add this as PIR sensor, it connects as unknow device and only 2 events are shown in flow (On and Off), which don’t seem to be hooked to the movement. Is this in development?\n\nRGB Spot GU10 - successfuly  added, but when I tried to control color and select one of RGBs, I am unable to select pure white from the app. The bulb itself has RGB diodes in outer circle and big white diode in the middle. And once the outer RGB circle is actived, the app can not make the bulb to go back to the intensive white one. The only way to get back to this white is to delete the device and pair again. It is possible to play with the light intensity, but not change color without sacrifising of getting back to the white one. Am I missing something or is this not supported?\n\nThanks for the hard work!",
-          "date": "2020-12-12T20:53:47.242Z",
-          "replyTo": null
-        },
-        {
-          "num": 15,
-          "user": "johan_bendz",
-          "text": "Hi @arvi. Motion Sensor is not yet supported. The GU10 and all other light devices have an known issue with the colors/ambiance that I work on fixing. The Tuya/Lidl devices are discussed here: [APP] Tuya Zigbee App",
-          "date": "2020-12-14T23:07:03.782Z",
-          "replyTo": 14
-        },
-        {
-          "num": 16,
-          "user": "Tsarina_Champagne",
-          "text": "Did someone manage to install the powerstrip?",
-          "date": "2020-12-21T19:28:35.935Z",
-          "replyTo": null
-        },
-        {
-          "num": 17,
-          "user": "robertklep",
-          "text": "They are supported in the test version of the Tuya Zigbee app.",
-          "date": "2020-12-21T19:38:35.546Z",
-          "replyTo": 16
-        },
-        {
-          "num": 18,
-          "user": "Tsarina_Champagne",
-          "text": "I only see two options:: temperature and humadity",
-          "date": "2020-12-21T20:53:47.249Z",
-          "replyTo": 17
-        },
-        {
-          "num": 20,
-          "user": "robertklep",
-          "text": "You don’t mean this one?",
-          "date": "2020-12-22T06:51:17.489Z",
-          "replyTo": 18
-        },
-        {
-          "num": 21,
-          "user": "Peter_dV",
-          "text": "Just to make this topic a bit more complete: The Lidl Smart Home app for Homey is here, which incorporates the Lidl Zigbee devices.\n\n\n  \n      \n\n      homey.app\n  \n\n  \n    \n\nLidl Smart Home\n\n  Discover the benefits\n\n\n\n  \n\n  \n    \n    \n  \n\n  \n\n\nKudos not to me, but to @johan_bendz, creator of the app!",
-          "date": "2021-01-05T15:50:37.957Z",
-          "replyTo": 20
-        },
-        {
-          "num": 22,
-          "user": "Matej_Kapusta",
-          "text": "Some Lidl new products available here in Slovakia. Wall lamp: LIVARNOLUX® LED nástenná lampa Zigbee Smart Home Best - Lidl-Shop.sk\n\nLED bar: LIVARNOLUX® Svetelná lišta s LED diódami Zigbee Smart Home - Lidl-Shop.sk\n\nDecorative LED lamp: LIVARNOLUX® LED dekoratívne svietidlo Zigbee Smart Home - Lidl-Shop.sk\n\nWall lamp: LIVARNOLUX® LED závesné svietidlo Zigbee Smart Home - Lidl-Shop.sk\n\nWall lamp: LIVARNOLUX® Stropné LED svietidlo Zigbee Smart Home - Lidl-Shop.sk\n\nBell button: SILVERCREST® Bezkáblový zvonček na dvere Zigbee Smart Home 1 - Lidl-Shop.sk",
-          "date": "2021-01-10T13:42:35.894Z",
-          "replyTo": null
-        },
-        {
-          "num": 23,
-          "user": "Franko_Bajlo",
-          "text": "Just updated to V5 firmware and cannot install Lidl app, says incompatible app version. Anyone can help?",
-          "date": "2021-01-11T16:36:07.323Z",
-          "replyTo": null
-        },
-        {
-          "num": 25,
-          "user": "Franko_Bajlo",
-          "text": "Switched to Tuya app and Lidl devices work ok. Now I have to create a flow in order to make Lidl motion sensor switch on the light for 2 minutes",
-          "date": "2021-01-11T17:20:46.887Z",
-          "replyTo": null
-        },
-        {
-          "num": 26,
-          "user": "Piil",
-          "text": "Great latest update, I can now change the light temprature on one bulb Lidl E27, but i have one more witch is is not working. and 3 GU10 not working. only cool ligt tempratur. i don´t get any failure notice when change in homey app. Have tried disconnet bulb and installed again, no solution. also disconnect from power.",
-          "date": "2021-02-18T18:16:17.068Z",
-          "replyTo": null
-        },
-        {
-          "num": 27,
-          "user": "Drips",
-          "text": "I’m currently trying to add the RGB lightstrip to the app but it keeps telling me to power on the device for it to go into pairing mode. It doesn’t seem to be doing so. Anyone having the same issues?",
-          "date": "2021-02-25T10:14:07.884Z",
-          "replyTo": null
-        },
-        {
-          "num": 28,
-          "user": "Jakob_Kowalski",
-          "text": "Do you need Homey pro in order to gt this to work?",
-          "date": "2021-03-22T12:36:31.909Z",
-          "replyTo": 17
-        },
-        {
-          "num": 29,
-          "user": "robertklep",
-          "text": "No.",
-          "date": "2021-03-22T12:36:56.704Z",
-          "replyTo": 28
-        },
-        {
-          "num": 30,
-          "user": "talpazzo",
-          "text": "I’m new to Homey and I’m still trying to understand things.\n\nIf I buy the Lidl products do I need to buy also the Lidl hub and then connect the hub to Homey or they will just work because Homey supports ZigBee?\n\nThank you for your answer.",
-          "date": "2021-03-26T03:35:58.714Z",
-          "replyTo": null
-        },
-        {
-          "num": 32,
-          "user": "talpazzo",
-          "text": "Thank you RoyWissenburg for the kind answer.",
-          "date": "2021-03-26T12:59:40.842Z",
-          "replyTo": 31
-        },
-        {
-          "num": 33,
-          "user": "swenik",
-          "text": "@johan_bendz\n\nJust bought a Lidl bulb. It is supposed to be RGB but nothing execpt on/off work with Homey. Tiresome… any chance for support for this one:\n\n  \"ids\": {\n    \"modelId\": \"TS0505A\",\n    \"manufacturerName\": \"_TZ3000_dbou1ap4\"\n  },\n  \"endpoints\": {\n    \"endpointDescriptors\": [\n      {\n        \"endpointId\": 1,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 269,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          0,\n          3,\n          4,\n          5,\n          6,\n          8,\n          768,\n          4096\n        ],\n        \"outputClusters\": [\n          25,\n          10\n        ]\n      },\n      {\n        \"endpointId\": 242,\n        \"applicationProfileId\": 41440,\n        \"applicationDeviceId\": 97,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 0,\n        \"inputClusters\": [],\n        \"outputClusters\": [\n          33\n        ]\n      }\n    ],\n    \"endpoints\": {\n      \"1\": {\n        \"clusters\": {\n          \"basic\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"zclVersion\",\n                \"value\": 3,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 1,\n                \"name\": \"appVersion\",\n                \"value\": 80,\n                \"reportingConfiguration\": {\n                  \"direction\": \"reported\",\n                  \"attributeDataType\": 32,\n                  \"minInterval\": 1,\n                  \"maxInterval\": 150,\n                  \"minChange\": 0,\n                  \"status\": \"SUCCESS\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 2,\n                \"name\": \"stackVersion\",\n                \"value\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 3,\n                \"name\": \"hwVersion\",\n                \"value\": 1,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 4,\n                \"name\": \"manufacturerName\",\n                \"value\": \"_TZ3000_dbou1ap4\",\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 5,\n                \"name\": \"modelId\",\n                \"value\": \"TS0505A\",\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 6,\n                \"name\": \"dateCode\",\n                \"value\": \"\",\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 7,\n                \"name\": \"powerSource\",\n                \"value\": \"mains\",\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 65502,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65534,\n                \"name\": \"attributeReportingStatus\",\n                \"value\": \"PENDING\",\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65504,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65505,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65506,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65507,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"identify\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 1,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"groups\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"nameSupport\",\n                \"value\": {\n                  \"type\": \"Buffer\",\n                  \"data\": [\n                    0\n                  ]\n                },\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"scenes\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 1,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 3,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 4,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"onOff\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"onOff\",\n                \"value\": true,\n                \"reportingConfiguration\": {\n                  \"direction\": \"reported\",\n                  \"attributeDataType\": 16,\n                  \"minInterval\": 1,\n                  \"maxInterval\": 65534,\n                  \"status\": \"SUCCESS\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"levelControl\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"currentLevel\",\n                \"value\": 255,\n                \"reportingConfiguration\": {\n                  \"direction\": \"reported\",\n                  \"attributeDataType\": 32,\n                  \"minInterval\": 1,\n                  \"maxInterval\": 65534,\n                  \"minChange\": 0,\n                  \"status\": \"SUCCESS\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 1,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 15,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"colorControl\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"currentHue\",\n                \"value\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 1,\n                \"name\": \"currentSaturation\",\n                \"value\": 254,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 3,\n                \"name\": \"currentX\",\n                \"value\": 45874,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 4,\n                \"name\": \"currentY\",\n                \"value\": 19660,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 7,\n                \"name\": \"colorTemperatureMireds\",\n                \"value\": 153,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 8,\n                \"name\": \"colorMode\",\n                \"value\": \"colorTemperatureMireds\",\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 15,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 61440,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 61441,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 61442,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 61443,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 61444,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"touchlink\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          }\n        },\n        \"bindings\": {\n          \"ota\": {\n            \"attributes\": [],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"time\": {\n            \"attributes\": [],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          }\n        }\n      },\n      \"242\": {\n        \"clusters\": {},\n        \"bindings\": {}\n      }\n    }\n  }",
-          "date": "2021-04-12T13:04:00.639Z",
-          "replyTo": null
-        },
-        {
-          "num": 34,
-          "user": "swenik",
-          "text": "After the bulb has been powered on for several hours, it just works. I remember this was the case with the lightstrip as well. Very strange, but it works.",
-          "date": "2021-04-12T13:53:59.706Z",
-          "replyTo": null
-        },
-        {
-          "num": 35,
-          "user": "Alessandro_Rossi",
-          "text": "I have 2 Lidl bulbs, they worked since the beginnig once installed, just pressing the INTERVIEW button in Homey Developer->Tools->Zigbee",
-          "date": "2021-04-12T15:44:04.703Z",
-          "replyTo": null
-        },
-        {
-          "num": 36,
-          "user": "K_S",
-          "text": "Will the irrigation computer work with this app?\n\n\n  \n      \n\n      lidl.de\n  \n\n  \n    \n\nPARKSIDE® Smarter Bewässerungscomputer, »Zigbee Smart …\n\n  PARKSIDE® Smarter Bewässerungscomputer, »Zigbee Smart Home« im LIDL Online-Shop kaufen. Ihre Vorteile: 90 Tage Rückgaberecht ✓ Schneller Versand ✓",
-          "date": "2021-08-08T14:42:51.087Z",
-          "replyTo": null
-        },
-        {
-          "num": 37,
-          "user": "Hugo27th",
-          "text": "Is it still not working?",
-          "date": "2021-08-08T21:05:50.797Z",
-          "replyTo": 36
-        },
-        {
-          "num": 38,
-          "user": "PetervdK",
-          "text": "Is WHAT still not working?",
-          "date": "2021-08-08T21:13:45.484Z",
-          "replyTo": 37
-        },
-        {
-          "num": 39,
-          "user": "Hugo27th",
-          "text": "The Lidl water system",
-          "date": "2021-08-08T21:54:10.146Z",
-          "replyTo": 38
-        },
-        {
-          "num": 40,
-          "user": "Danny_Bartel",
-          "text": "Please be aware that the water computer is defaulted to switch off, after 1 minute.\n\nIf you want to change this, you need to connect it to the Lidl Hub, and change the defaulted switch off, to another value. Then you can discard the Lidl Hub again…",
-          "date": "2021-08-25T19:08:29.884Z",
-          "replyTo": 39
-        },
-        {
-          "num": 41,
-          "user": "Lojki",
-          "text": "Hi, I just bought Lidl Livarno Lux RGBW LED stripe. I am not able to change colors. Only on/off/dimm is working. Tried apps Lidl Smart Home, Tuya ZigBee and generic ZigBee device under homey app, but it assign device under Lidl Smart Home app.\n\nDo you face the same problem? Any suggestions please?\n\nThank you.",
-          "date": "2021-11-09T19:43:43.876Z",
-          "replyTo": null
-        },
-        {
-          "num": 42,
-          "user": "Andax",
-          "text": "I have the same problem with the Lidl products not responding to anything except on/off and dimming. Honestly I’m getting really fed up with the instability of the ZigBee implementation in Homey.",
-          "date": "2021-11-23T15:38:49.808Z",
-          "replyTo": null
-        },
-        {
-          "num": 43,
-          "user": "robertklep",
-          "text": "Sounds like you added the device as a generic Zigbee device and not a specific Lidl device.",
-          "date": "2021-11-23T15:44:48.733Z",
-          "replyTo": 42
-        },
-        {
-          "num": 44,
-          "user": "Andax",
-          "text": "No. I used the Lidl Smart Home App by Johan Bendz and connected it as a RGBW E27 bulb (which is what it is). Can turn it on and off and dim but when I try the color wheel I get a “Connection Timed Out in 3000ms” or something like that.",
-          "date": "2021-11-23T15:49:12.287Z",
-          "replyTo": 43
-        },
-        {
-          "num": 45,
-          "user": "Andax",
-          "text": "I’ll take that back. Now it doesn’t respond at all.",
-          "date": "2021-11-23T15:51:38.953Z",
-          "replyTo": null
-        },
-        {
-          "num": 46,
-          "user": "robertklep",
-          "text": "Time for deCONZ.",
-          "date": "2021-11-23T15:54:04.324Z",
-          "replyTo": 45
-        },
-        {
-          "num": 47,
-          "user": "Andax",
-          "text": "Why? Homey is marketed as the “Sphere to rule them all”. If I have to buy additional hardware and dive down another rabbit hole of endless tinkering I might just get the respective brand gateways and connect it all through Google Home or Homekit instead. Hence the statement of getting fed up with this. I expect things to work when it is marketed that way.\n\nNot trying to be rude here and I appreciate you trying to help, but it’s been too many times over the time I’ve had my Homey now (6-7 years) that I’ve run into problems and had to troubleshoot and go through all sorts of laborious workarounds, resets and reboots.",
-          "date": "2021-11-23T16:08:13.169Z",
-          "replyTo": 46
-        },
-        {
-          "num": 48,
-          "user": "robertklep",
-          "text": "You can spend more years waiting for solutions that may never happen, or just give up and move to something else. I did, and I’m very happy with it.",
-          "date": "2021-11-23T16:09:41.213Z",
-          "replyTo": 47
-        },
-        {
-          "num": 49,
-          "user": "Danny_Bartel",
-          "text": "If the modelnumber for the RGB light strip is HG06104A, and you cant see/manipulate the colors, I have a solution for you:\n\nhttps://tools.developer.homey.app/tools/zigbee\n\nChoose the line with the device and press button ‘Interview’.\n\nWait a few seconds. Now you get a popup with some code (result from interview)\n\nJust close the window\n\nNOW your device works!!\n\nBTW: The suggestion to use Deconz, will fail. Here the colors dont work at all…\n\nAt least for the model number I mentioned…",
-          "date": "2021-11-24T22:51:42.918Z",
-          "replyTo": 41
-        },
-        {
-          "num": 50,
-          "user": "Lojki",
-          "text": "Thank you so much. It is working now.",
-          "date": "2021-11-26T17:38:52.108Z",
-          "replyTo": 49
-        },
-        {
-          "num": 51,
-          "user": "Fabian_Annequin",
-          "text": "Anyone the power strip working? When I ad it through the lidl app or tuua ZigBee. Even as generic zigbee, the power strips tend to group. So they’re no longer individual switchable.",
-          "date": "2021-12-06T05:57:27.351Z",
-          "replyTo": 20
-        },
-        {
-          "num": 52,
-          "user": "Thunder",
-          "text": "You’d better ask the question in this thread: https://community.homey.app/t/app-pro-tuya-zigbee-app/26439\n\nAfter reading the startpost you can ask the developer to add any Tuya-based products.",
-          "date": "2021-12-06T12:12:47.599Z",
-          "replyTo": 51
-        },
-        {
-          "num": 53,
-          "user": "Skal",
-          "text": "Hi @johan_bendz could you add a new device to your lidl list\n\nI can tell you that I’m using the first on top lamp of this image\n\n\nimage-455-768x576768×576 157 KB\n\n\nthe infos I can repair from homey are the following\n\n\nphoto_5998863874562045783_y576×1280 36.6 KB\n\n\n\nimmagine674×772 24.1 KB\n\n\nHere you can find some more infos about the device\n\nhttps://evergreenproductinfo.com/2021/01/23/livarno-lux-led-outdoor-wall-light-zigbee-smart-homepower-consumption-10-wlidl-smart-home-automated-lighting-system-with-zigbee-3-0-wireless-technology/\n\nIt is a lamp that works on rbg colors\n\nIf you need any other test or infos, feel free to write me in pm",
-          "date": "2022-08-01T13:58:25.945Z",
-          "replyTo": null
-        },
-        {
-          "num": 54,
-          "user": "Martin_Ricl",
-          "text": "Dear all,\n\nI have Lidl lights. Some RGB bulbs E27 work well with Lidl Zigbee gate as well as Homey Pro. Some bulbs dont change the colour with Homey Pro. I have two RGB led strips from LIDL. One work, one doesnt change the colour, but paired to Lidl gate it does. Please help.",
-          "date": "2022-08-10T07:11:41.050Z",
-          "replyTo": null
-        },
-        {
-          "num": 55,
-          "user": "Peter_Kawa",
-          "text": "Sometimes interviewing a zigbee device can “unlock” certain functionality.",
-          "date": "2022-08-11T00:07:40.083Z",
-          "replyTo": 54
-        },
-        {
-          "num": 56,
-          "user": "Paowtrick",
-          "text": "Peter_Kawa:\n\nSometimes interviewing a zigbee device can “unlock” certain functionality.\n\n\n\nWorked for me! Thanks!",
-          "date": "2022-10-28T08:56:27.705Z",
-          "replyTo": 55
-        },
-        {
-          "num": 57,
-          "user": "Harrr",
-          "text": "Wonderful Danny, my product ID is TS0505A, your solution works her also. It is also a bit strange that the connection between de regulator and the ledstrip is the other way round as written in de manual. I must connect the other end of the strip to the regulator, to make it work.\n\nThanks,\n\nHarrr\n\nPS I have also bought the Lidl christmas tree led lights and they worked correct without any problem.",
-          "date": "2022-11-21T10:26:30.539Z",
-          "replyTo": 49
-        },
-        {
-          "num": 58,
-          "user": "Yann_Yann",
-          "text": "The tip Works  , thank you!!",
-          "date": "2023-02-02T15:04:22.414Z",
-          "replyTo": 41
-        },
-        {
-          "num": 59,
-          "user": "Christ0ffer",
-          "text": "Thanks for this suggestion Danny. Just got this strip and had this issue, and your advice solved it for me.",
-          "date": "2024-01-30T11:49:10.214Z",
-          "replyTo": 49
-        },
-        {
-          "num": 60,
-          "user": "Christ0ffer",
-          "text": "Hi,\n\nI have purchased several LIDL smart bulbs and light strips. The light strip shows up as a light strip with an icon in Homey, but the bulbs just shows up as generic Zigbee devices. I can still control them but I would love to have them categorized as lamps. Anyone have a solution?\n\nThanks!",
-          "date": "2024-01-30T16:49:12.157Z",
-          "replyTo": null
-        },
-        {
-          "num": 61,
-          "user": "FKey",
-          "text": "You should request the creator of the app to add the device.\n\n1 Search the forum for the app topic\n\n2 check the app topic to make sure it is not requested yet\n\n3 if its not requested yet, “interview” your device and provide the response in the request",
-          "date": "2024-01-30T17:29:36.415Z",
-          "replyTo": 60
-        },
-        {
-          "num": 62,
-          "user": "Christ0ffer",
-          "text": "The weird part is that I can find the bulb in the LIDL app if I’m not mistaken. So I believe it already exists.\n\nAttaching an image of the icon in the app and the one I purchased.\n\n10000159151080×1220 86.5 KB\n\n10000159191848×4000 499 KB\n\n10000159181080×1374 128 KB",
-          "date": "2024-01-30T19:01:55.685Z",
-          "replyTo": 61
-        },
-        {
-          "num": 63,
-          "user": "FKey",
-          "text": "Well, somtimes the producer makes a change to a device and that also changes the productcode in the firmware.\n\nThat causes the app to no longer recognize that type.\n\nIt needs to be added",
-          "date": "2024-01-30T20:26:12.012Z",
-          "replyTo": 62
-        },
-        {
-          "num": 64,
-          "user": "Peter_Kawa",
-          "text": "There’s nothing wrong with the Homey zigbee driver, except it’s pretty basic.\n\nBut OnOff, Dim and some color settings should work.",
-          "date": "2024-01-31T00:48:18.314Z",
-          "replyTo": 62
-        },
-        {
-          "num": 65,
-          "user": "swenik",
-          "text": "What’s the thing with the Lidl/Livarno app? It is listed as official but hasn’t been updated with new devices for years. Developer does not reply. What makes it “official”?\n\nI’ve several RGB-able devices which are pretty unusable in “zigbee on/off/white light”. Yeah, yeah, some $70 down the drain and a waste for the environment.",
-          "date": "2024-11-29T20:16:06.962Z",
-          "replyTo": 64
-        },
-        {
-          "num": 66,
-          "user": "FKey",
-          "text": "Using the interview function in the developer tools often makes more functions available.\n\n(Choose zigbee, find your device and press interview)\n\nFor me that worked on the lidl multicolor beamers.\n\nI can also dim and change colors",
-          "date": "2024-11-29T22:33:03.744Z",
-          "replyTo": 65
-        },
-        {
-          "num": 67,
-          "user": "robertklep",
-          "text": "swenik:\n\nWhat makes it “official”?\n\n\n\nThat it’s created by Athom",
-          "date": "2024-11-30T05:57:10.153Z",
-          "replyTo": 65
-        },
-        {
-          "num": 68,
-          "user": "swenik",
-          "text": "It appears not to be created by Athom. homey@bortbytt.se “Bortbytt Software” located in Sweden where I live. They do not respond to e-mail.\n\nThe interview function made my Livarno RGB Bulb (E27) work somewhat, but if I increase brightness from 1 % to something else it changes colour and 2 % brightness compared to 1 % is perhaps 40% IRL.\n\nMy expensive floorlight from Lidl only does white, not RGB and brightness doesn’t seem to be correct. An interview goes like below, but the device is still just “Zigbee device” with on/off and brightness.\n\nI was just curios, and “official” app makes me buy stuff and trust that some skilled programmer can fix support  I was wrong \n\n(sorry for the extremely long post from interview)\n\n  \"ids\": {\n    \"modelId\": \"TS0502A\",\n    \"manufacturerName\": \"_TZ3000_8uaoilu9\"\n  },\n  \"endpoints\": {\n    \"ieeeAddress\": \"00:3c:84:ff:fe:d6:fc:ca\",\n    \"networkAddress\": 25999,\n    \"modelId\": \"TS0502A\",\n    \"manufacturerName\": \"_TZ3000_8uaoilu9\",\n    \"endpointDescriptors\": [\n      {\n        \"status\": \"SUCCESS\",\n        \"nwkAddrOfInterest\": 25999,\n        \"_reserved\": 28,\n        \"endpointId\": 1,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 268,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 1,\n        \"inputClusters\": [\n          0,\n          3,\n          4,\n          5,\n          6,\n          8,\n          768,\n          4096\n        ],\n        \"outputClusters\": [\n          25,\n          10\n        ]\n      },\n      {\n        \"status\": \"SUCCESS\",\n        \"nwkAddrOfInterest\": 25999,\n        \"_reserved\": 10,\n        \"endpointId\": 242,\n        \"applicationProfileId\": 41440,\n        \"applicationDeviceId\": 97,\n        \"applicationDeviceVersion\": 0,\n        \"_reserved1\": 0,\n        \"inputClusters\": [],\n        \"outputClusters\": [\n          33\n        ]\n      }\n    ],\n    \"deviceType\": \"router\",\n    \"receiveWhenIdle\": true,\n    \"capabilities\": {\n      \"alternatePANCoordinator\": false,\n      \"deviceType\": true,\n      \"powerSourceMains\": true,\n      \"receiveWhenIdle\": true,\n      \"security\": false,\n      \"allocateAddress\": true\n    },\n    \"extendedEndpointDescriptors\": {\n      \"1\": {\n        \"clusters\": {\n          \"basic\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"zclVersion\",\n                \"value\": 3,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 1,\n                \"name\": \"appVersion\",\n                \"value\": 80,\n                \"reportingConfiguration\": {\n                  \"direction\": \"reported\",\n                  \"attributeDataType\": 32,\n                  \"minInterval\": 1,\n                  \"maxInterval\": 150,\n                  \"minChange\": 0,\n                  \"status\": \"SUCCESS\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 2,\n                \"name\": \"stackVersion\",\n                \"value\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 3,\n                \"name\": \"hwVersion\",\n                \"value\": 1,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 4,\n                \"name\": \"manufacturerName\",\n                \"value\": \"_TZ3000_8uaoilu9\",\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 5,\n                \"name\": \"modelId\",\n                \"value\": \"TS0502A\",\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 6,\n                \"name\": \"dateCode\",\n                \"value\": \"\",\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 7,\n                \"name\": \"powerSource\",\n                \"value\": \"mains\",\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 65502,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65534,\n                \"name\": \"attributeReportingStatus\",\n                \"value\": \"PENDING\",\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65504,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65505,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65506,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65507,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"identify\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"identifyTime\",\n                \"value\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 1,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"groups\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"nameSupport\",\n                \"value\": {\n                  \"type\": \"Buffer\",\n                  \"data\": [\n                    0\n                  ]\n                },\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"scenes\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 1,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 3,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 4,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"onOff\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"onOff\",\n                \"value\": true,\n                \"reportingConfiguration\": {\n                  \"direction\": \"reported\",\n                  \"attributeDataType\": 16,\n                  \"minInterval\": 60,\n                  \"maxInterval\": 600,\n                  \"status\": \"SUCCESS\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"levelControl\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"currentLevel\",\n                \"value\": 1,\n                \"reportingConfiguration\": {\n                  \"direction\": \"reported\",\n                  \"attributeDataType\": 32,\n                  \"minInterval\": 60,\n                  \"maxInterval\": 600,\n                  \"minChange\": 1,\n                  \"status\": \"SUCCESS\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 1,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 15,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"colorControl\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 0,\n                \"name\": \"currentHue\",\n                \"value\": 0,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 1,\n                \"name\": \"currentSaturation\",\n                \"value\": 254,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 3,\n                \"name\": \"currentX\",\n                \"value\": 45874,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 4,\n                \"name\": \"currentY\",\n                \"value\": 19660,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 7,\n                \"name\": \"colorTemperatureMireds\",\n                \"value\": 153,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 8,\n                \"name\": \"colorMode\",\n                \"value\": \"colorTemperatureMireds\",\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"writable\",\n                  \"reportable\"\n                ],\n                \"id\": 15,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 61440,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 61441,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 61442,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 61443,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              },\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 61444,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          },\n          \"touchlink\": {\n            \"attributes\": [\n              {\n                \"acl\": [\n                  \"readable\",\n                  \"reportable\"\n                ],\n                \"id\": 65533,\n                \"name\": \"clusterRevision\",\n                \"value\": 2,\n                \"reportingConfiguration\": {\n                  \"status\": \"NOT_FOUND\",\n                  \"direction\": \"reported\"\n                }\n              }\n            ],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          }\n        },\n        \"bindings\": {\n          \"ota\": {},\n          \"time\": {\n            \"attributes\": [],\n            \"commandsGenerated\": \"UNSUP_GENERAL_COMMAND\",\n            \"commandsReceived\": \"UNSUP_GENERAL_COMMAND\"\n          }\n        }\n      },\n      \"242\": {\n        \"clusters\": {},\n        \"bindings\": {}\n      }\n    }\n  }",
-          "date": "2024-11-30T16:08:37.878Z",
-          "replyTo": 67
-        },
-        {
-          "num": 69,
-          "user": "robertklep",
-          "text": "swenik:\n\nIt appears not to be created by Athom. homey@bortbytt.se “Bortbytt Software” located in Sweden where I live.\n\n\n\nIn that case, “the app was created by or on behalf of the brand itself”, although I’m doubtful that it actually is. But I guess you could try contacting LIDL customer support about this.",
-          "date": "2024-11-30T16:20:09.140Z",
-          "replyTo": 68
-        },
-        {
-          "num": 70,
-          "user": "swenik",
-          "text": "LIDL will never support Homey since they sell their own bridge, where all devices most likely work as intended.\n\nLidl/Livarno has as lot of Zigbee stuff from time to time so I’m sad to see the app is old and a lot of devices unspported. I myself don’t have programming skills…",
-          "date": "2024-11-30T16:41:13.186Z",
-          "replyTo": null
-        },
-        {
-          "num": 71,
-          "user": "Peter_Kawa",
-          "text": "The app is built by Johan Bendz, who also built the Tuya Zigbee app; all supported Lidl devices are also available from the Tuya Zigbee app.\n\n(Lidl smart devices use Tuya technology)\n\n\n\n\n swenik:\n\nLIDL will never support Homey since they sell their own bridge\n\n\n\nIn most cases ‘official’ brand apps were or are created by community developers.\n\nI think there are not many companies atm, which publish in-house created Homey apps (initiated by themselves).\n\nThe label ‘official’ is not related to the quality, possibilities, stability & level of support of Homey apps imho.",
-          "date": "2024-11-30T17:19:27.622Z",
-          "replyTo": 70
-        },
-        {
-          "num": 72,
-          "user": "Thunder",
-          "text": "The Lidl app is maintained by Johan Bendz, isn’t it? It is a light version of the Tuya Zigbee app, also by Johan. All the Lidl-devices in the Lidl-app are also in the Tuya Zigbee app, altough you might have to install the test-version of that app to make use of all currently implemented devices. The ‘live’-app isn’t updated for a long time.",
-          "date": "2024-12-03T10:43:26.543Z",
-          "replyTo": 67
-        },
-        {
-          "num": 73,
-          "user": "robertklep",
-          "text": "Thunder:\n\nThe Lidl app is maintained by Johan Bendz, isn’t it?\n\n\n\nInitially it was, but not anymore. See this post and my response.",
-          "date": "2024-12-03T12:17:06.982Z",
-          "replyTo": 72
-        },
-        {
-          "num": 74,
-          "user": "Peter_Kawa",
-          "text": "Robert, afaik “Bortbytt Software” = Johan Bendz.\n\nTo be allowed to publish apps at Homey cloud, you should present yourself as a business (and donate 100 coins).\n\nAt least, those were the rules.",
-          "date": "2024-12-03T13:21:23.567Z",
-          "replyTo": 73
-        },
-        {
-          "num": 75,
-          "user": "robertklep",
-          "text": "Peter_Kawa:\n\nRobert, afaik “Bortbytt Software” = Johan Bendz.\n\n\n\nAh okay \n\n\n\n\n Peter_Kawa:\n\nTo be allowed to publish apps at Homey cloud, you should present yourself as a business (and donate 100 coins).\n\nAt least, those were the rules.\n\n\n\nAnd, like I said, the app should either be created by, or on behalf of, the brand. Otherwise it wouldn’t have gotten an “official” badge (…right?).",
-          "date": "2024-12-03T13:27:47.883Z",
-          "replyTo": 74
-        },
-        {
-          "num": 76,
-          "user": "Peter_Kawa",
-          "text": "I really do think Lidl is not involved.\n\nAdrian Rockall used the same construction for Somfy Tahoma and LinkTap:\n\nRockSoft Solutions",
-          "date": "2024-12-03T13:35:06.823Z",
-          "replyTo": 75
-        },
-        {
-          "num": 77,
-          "user": "robertklep",
-          "text": "Peter_Kawa:\n\nI really do think Lidl is not involved.\n\n\n\nBut … that would mean Athom is breaking their own rules!",
-          "date": "2024-12-03T14:02:17.054Z",
-          "replyTo": 76
-        },
-        {
-          "num": 78,
-          "user": "Thunder",
-          "text": "I remember Johan Bendz writing something about this in the thread about the Tuya Zibee app. Athom asked him, probably on behalf of Lidl, to make a separate app for the Lidl products. Because he did this for Athom (and probably getting paid by them or Lidl), he used his company for that.",
-          "date": "2024-12-03T14:41:39.633Z",
-          "replyTo": 76
-        },
-        {
-          "num": 79,
-          "user": "Thunder",
-          "text": "I don’t think Lidl has the capabilities to program their own app. It was probably cheaper to use the already programmed integration of the devices by Johan.",
-          "date": "2024-12-03T14:43:43.075Z",
-          "replyTo": 77
-        }
-      ],
-      "category": 6
     }
   ],
   "deviceInfo": {
@@ -68461,5 +68062,5 @@
       "_TZ3210_leyz4rju"
     ]
   },
-  "aiAnalysis": "### Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer\n\n**1) Key User Requests:**\n- Users frequently request support for new devices, particularly moisture sensors, fertilizer level sensors, and vibration sensors.\n- There is a need for better documentation and descriptions of supported devices.\n- Users want clearer communication about app updates and supported devices.\n\n**2) Devices People Need:**\n- Moisture sensors (including those that measure fertilizer levels).\n- Vibration sensors.\n- Leak sensors (e.g., model \"CK-TLSR8656-SS5-01(7019)\").\n- Smart Click+Zigbee Sockets.\n- Various unsupported devices listed in the \"unsupportedFPs\" section.\n\n**3) Issues to Fix:**\n- Several devices are not recognized by the app (e.g., \"_TZ3000_itb0omhv\" in version 5.11.25).\n- Clarification is needed on whether the app supports eWeLink ZigBee sensors or only Tuya ZigBee devices.\n- Off-topic messages need to be removed from the forum.\n- Diagnostic reports need to be reviewed and addressed.\n\n**4) Action Items:**\n- Update the app to support the listed unsupported devices.\n- Provide detailed documentation for all supported devices.\n- Clarify the app's compatibility with eWeLink ZigBee sensors.\n- Remove off-topic messages from the forum.\n- Review and address diagnostic reports submitted by users.\n- Communicate app updates and supported devices more clearly to users."
+  "aiAnalysis": "### Summary of Homey Community Forum Activity for Universal Tuya Zigbee App\n\n#### 1) Key User Requests:\n- **Device Support**: Users frequently request support for new and specific Tuya Zigbee devices, such as moisture sensors, fertilizer level sensors, and leak sensors.\n- **Compatibility**: There is a need for better compatibility with a wide range of Tuya Zigbee devices, including those from eWeLink.\n- **Documentation**: Users ask for clearer documentation and descriptions of supported devices.\n\n#### 2) Devices People Need:\n- **Moisture Sensors**: Devices that can measure moisture and fertilizer levels.\n- **Leak Sensors**: Specific models like \"CK-TLSR8656-SS5-01(7019)\".\n- **Smart Click+Zigbee Sockets**: Users are looking for support for these sockets.\n- **Unsupported Devices**: A list of unsupported fingerprint IDs indicates a need for support for devices like \"_TZ3000_zgyzgd\", \"_TZE204_ztqnh5c\", and others.\n\n#### 3) Issues to Fix:\n- **Device Recognition**: Some devices, like \"_TZ3000_itb0omhv\", are not recognized in the latest version (5.11.25).\n- **Voltage Divisor**: There was a mention of a fixed voltage divisor in the latest update, suggesting previous issues with voltage readings.\n- **Off-Topic Messages**: Moderators have had to delete off-topic messages, indicating a need for better forum moderation or clearer guidelines.\n\n#### 4) Action Items:\n- **Update Device Support**: Prioritize adding support for the requested devices, especially moisture and leak sensors.\n- **Improve Documentation**: Provide clearer and more comprehensive documentation for supported devices.\n- **Fix Recognition Issues**: Address the recognition problems for specific devices like \"_TZ3000_itb0omhv\".\n- **Moderate Forum**: Ensure that the forum remains on-topic and useful for users by enforcing guidelines and removing off-topic messages.\n- **Communicate Updates**: Clearly communicate updates and changes in the app, such as the voltage divisor fix in v5.11.25."
 }
