@@ -131,7 +131,7 @@ async function scanForHiddenPosts(){
       if(!r.ok){console.log(`    Skip T${tid}: ${r.status}`);continue;}
       const d=await r.json();const stream=d.post_stream?.stream||[];
       for(let i=0;i<stream.length;i+=20){
-        const chunk=stream.slice(i,i+20);await sleep(500);
+        const chunk=stream.slice(i,i+20);await sleep(2000);
         const r2=await fetchWithRetry(FORUM+'/t/'+tid+'/posts.json?'+chunk.map(id=>'post_ids[]='+id).join('&'),
           {headers:getHeaders(authRef.auth)},{retries:2,label:'posts'});
         if(!r2.ok)continue;
@@ -181,7 +181,7 @@ async function main() {
     console.log(`DEL ${p.num} (id=${p.id}): ${p.reason}`);
     if (await deletePost(p.id)) { console.log('  ✓ Deleted'); return 'ok'; }
     console.log('  ✗ Delete failed'); return 'ok';
-  }, { spacing: 35000, label: 'delete', maxRetries: 2, rateLimitPause: 60000 });
+  }, { spacing: 60000, label: 'delete', maxRetries: 2, rateLimitPause: 180000 });
 
   console.log('\n=== Done ===');
   console.log(`Edited: ${editResult.ok}/${TO_EDIT.length} | Deleted: ${delResult.ok}/${TO_DELETE.length}`);
