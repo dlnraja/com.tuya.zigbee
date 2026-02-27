@@ -3,7 +3,7 @@
  * Uses forum-auth.js for Athom SSO authentication
  */
 const fs=require('fs'),path=require('path');
-const {getForumAuth,fmtCk,FORUM}=require('./forum-auth');
+const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const TOPIC=140352;
 
@@ -56,6 +56,7 @@ async function main(){
   }else{
     console.log('Getting forum auth...');
     const auth=await getForumAuth();
+    if(auth&&auth.type==='session')auth=await refreshCsrf(auth);
     if(!auth){console.error('::warning::No forum auth available');process.exit(0)}
     console.log('Posting to forum...');
     const result=await postToForum(content,auth);

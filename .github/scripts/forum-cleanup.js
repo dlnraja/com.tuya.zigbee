@@ -2,7 +2,7 @@
 'use strict';
 // v5.11.29: Comprehensive forum cleanup — delete spam, edit bot signatures, merge consecutive posts
 // Run with: DISCOURSE_API_KEY=xxx node .github/scripts/forum-cleanup.js
-const {getForumAuth,fmtCk,FORUM}=require('./forum-auth');
+const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const {fetchWithRetry}=require('./retry-helper');
 
 const DRY=process.env.DRY_RUN==='true';
@@ -101,6 +101,7 @@ async function main(){
   if(!DRY){
     auth=await getForumAuth();
     if(!auth){console.error('No forum auth');process.exit(1);}
+    if(auth.type==='session')auth=await refreshCsrf(auth);
   }
 
   // Phase 1: Edit posts FIRST (before deleting merged content)

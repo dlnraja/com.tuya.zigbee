@@ -26,7 +26,8 @@ function findBugs(fp,ext){if(!ext||!ext.bugs)return[];return ext.bugs.filter(b=>
 
 // Cross-post to forum
 async function crossPostForum(msg){
-  try{const{getForumAuth,fmtCk,FORUM}=require('./forum-auth');const auth=await getForumAuth();if(!auth)return;
+  try{const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');const auth=await getForumAuth();
+    if(auth&&auth.type==='session')auth=await refreshCsrf(auth);if(!auth)return;
     const h=auth.type==='apikey'?{'Content-Type':'application/json','User-Api-Key':auth.key}:{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
     if(DRY){console.log('[DRY] Forum post:',msg.slice(0,80));return}
     await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:h,body:JSON.stringify({topic_id:140352,raw:msg})},{retries:3,label:'forumCrossPost'});
