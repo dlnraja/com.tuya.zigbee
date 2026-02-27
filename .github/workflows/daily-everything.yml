@@ -255,6 +255,18 @@ jobs:
           FORK_DEPTH: "3"
         run: node .github/scripts/scan-forks-recursive.js
 
+      - name: "10b2. Implement Fork FPs"
+        id: impl_fork_fps
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/implement-fork-fps.js
+
+      - name: "10b3. Forum Spam Scan"
+        id: spam_scan
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/forum-scan-spam.js
+
       - name: "10c. Device Finder"
         id: dev_finder
         continue-on-error: true
