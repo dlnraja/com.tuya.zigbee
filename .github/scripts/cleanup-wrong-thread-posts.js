@@ -9,7 +9,7 @@ const{fetchWithRetry,sleep}=require('./retry-helper');
 const TOPICS=[26439,146735,89271];
 const USER='dlnraja';
 const DRY=process.env.DRY_RUN!=='false';
-const EDIT_SPACING=20000;
+const EDIT_SPACING=60000;
 
 function hdr(a,j){
   const h=a.type==='apikey'
@@ -52,7 +52,7 @@ async function main(){
     for(const p of posts){
       console.log(`  T${tid}#${p.num} id=${p.id} "${p.preview}"`);
       if(DRY){console.log('    [DRY] would blank');continue;}
-      if(batch>=3){console.log('    --- pause 5min ---');batch=0;await sleep(300000);}
+      if(batch>=2){console.log('    --- pause 10min ---');batch=0;await sleep(600000);}
       try{
         if(auth.type==='session')await refreshCsrf(auth);
         await sleep(EDIT_SPACING);
