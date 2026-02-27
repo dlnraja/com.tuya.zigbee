@@ -81,7 +81,9 @@ function getHeaders(auth,json){
   return h;
 }
 
+const ALLOWED_POST_TOPICS=new Set([140352]);
 async function postReply(tid,replyTo,content,auth){
+  if(!ALLOWED_POST_TOPICS.has(tid)){console.error('BLOCKED: refusing to post on T'+tid+' (not in whitelist)');return{id:null,blocked:true}}
   const r=await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:getHeaders(auth,true),
     body:JSON.stringify({topic_id:tid,raw:content,reply_to_post_number:replyTo})},{retries:3,label:'reply'});
   const d=await r.json().catch(()=>({}));
