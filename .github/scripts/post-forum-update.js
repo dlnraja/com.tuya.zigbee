@@ -3,8 +3,8 @@
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
 const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
-// All relevant forum topics to post updates to
-const TOPICS=(process.env.FORUM_TOPICS||'140352,26439,146735').split(',').map(Number);
+// IMPORTANT: Only post updates to OUR OWN thread (T140352). NEVER post on other people's threads!
+const TOPICS=(process.env.FORUM_TOPICS||'140352').split(',').map(Number).filter(t=>t===140352);
 const SUM=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
 
 async function postReply(tid,raw,auth){
