@@ -120,20 +120,14 @@ jobs:
             if (found.length) {
               const lines = found.map(m => {
                 const drivers = driverMap.get(m) || ['unknown'];
-                return `| \`${m}\` | **${drivers.join('**, **')}** |`;
+                return `- \`${m}\` → **${drivers.join('**, **')}**`;
               }).join('\n');
-              msg += `### ✅ Already supported in v${version}\n\n`;
-              msg += `| Fingerprint | Driver(s) |\n|---|---|\n${lines}\n\n`;
+              msg += `These are already supported in v${version}:\n\n${lines}\n\n`;
             }
 
             if (missing.length) {
-              msg += `### 🔍 Not yet supported\n\n`;
-              msg += `\`${missing.join('\`, \`')}\`\n\n`;
-              msg += `Logged for integration in next release.\n\n`;
-              msg += `**To speed up support, please provide:**\n`;
-              msg += `1. 📋 **Device Interview**: [Developer Tools](${DEV}) → select device → Interview\n`;
-              msg += `2. 🔗 **Zigbee2MQTT** device page (if available)\n`;
-              msg += `3. 🛒 **Product link** (AliExpress, Amazon, manufacturer)\n\n`;
+              msg += `Not yet supported: \`${missing.join('\`, \`')}\`\n\n`;
+              msg += `I've logged these for the next release. If you can share a device interview from [Developer Tools](${DEV}) and a Z2M link (if it exists), that helps a lot.\n\n`;
             }
 
             if (isPR) {
@@ -142,18 +136,13 @@ jobs:
             }
 
             if (allSupported) {
-              msg += `> 💡 **All fingerprints are already supported.** Please install the `;
-              msg += `[test version](${APP}), **remove and re-pair** your device.\n\n`;
+              msg += `All fingerprints are already supported — install the [test version](${APP}), remove the device, and re-pair it.\n\n`;
             }
 
-            msg += `| | |\n|---|---|\n`;
-            msg += `| 📦 Install | **[Test version](${APP})** |\n`;
-            msg += `| 💬 Forum | **[Community](${FORUM})** |\n`;
-            msg += `| 🔧 Diagnostics | **[Developer Tools](${DEV})** |\n\n`;
             if (isWiFi) {
-              msg += `> 📡 **WiFi local control supported!** This app includes ${wifiDriverCount} WiFi device types with local LAN control (no cloud needed).\n\n`;
+              msg += `This app also has ${wifiDriverCount} WiFi device types with local LAN control (no cloud).\n\n`;
             }
-            msg += `---\n*Universal Tuya Zigbee v${version} — ${driverCount} drivers (${wifiDriverCount} WiFi), ${fps.size}+ fingerprints*`;
+            msg += `[Test version](${APP}) · [Forum thread](${FORUM}) · [Developer Tools](${DEV})`;
 
             // Post or update comment
             if (existingBot && action !== 'opened') {
