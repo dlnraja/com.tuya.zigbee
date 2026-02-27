@@ -2,6 +2,7 @@
 'use strict';
 const {execSync}=require('child_process');
 const {loadFingerprints}=require('./load-fingerprints');
+const {sleep}=require('./retry-helper');
 const fs=require('fs');
 
 const UPSTREAM='JohanBendz/com.tuya.zigbee';
@@ -10,7 +11,7 @@ const SUMMARY=process.env.GITHUB_STEP_SUMMARY||(process.platform==='win32'?'NUL'
 
 function gh(c){return execSync(`gh ${c}`,{encoding:'utf8',timeout:60000,maxBuffer:50*1024*1024}).trim();}
 
-function scanForks(){
+async function scanForks(){
   const fps=loadFingerprints();
   console.log(`Our DB: ${fps.size} fingerprints`);
   
@@ -25,12 +26,14 @@ function scanForks(){
   
   for(const fork of forks){
     try{
+      await sleep(500); // Rate-limit: 0.5s between fork scans
       // Get driver.compose.json files from default branch
       const tree=gh(`api repos/${fork}/git/trees/HEAD?recursive=1 --jq '.tree[].path'`);
       const composeFiles=tree.split('\n').filter(f=>f.match(/drivers\/.*\/driver\.compose\.json/));
       
       for(const cf of composeFiles){
         try{
+          await sleep(300); // Rate-limit: 0.3s between file fetches
           const raw=gh(`api repos/${fork}/contents/${cf} --jq '.content'`);
           const decoded=Buffer.from(raw,'base64').toString('utf8');
           const matches=decoded.match(/"_T[A-Za-z0-9_]+"/g)||[];
@@ -72,4 +75,4 @@ function scanForks(){
   }
 }
 
-scanForks();
+scanForks().catch(e=>{console.error(e.message);process.exit(1)});
