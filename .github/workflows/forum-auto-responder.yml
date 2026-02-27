@@ -21,6 +21,10 @@ concurrency:
   group: forum-responder
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   respond:
     name: Scan & Respond

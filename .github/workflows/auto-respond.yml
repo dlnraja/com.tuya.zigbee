@@ -19,6 +19,10 @@ concurrency:
   group: auto-respond-${{ github.event.number }}
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 env:
   NODE_VERSION: "22"
 

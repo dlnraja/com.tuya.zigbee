@@ -19,6 +19,10 @@ concurrency:
   group: monthly-sync
   cancel-in-progress: false
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   comprehensive-scan:
     name: Monthly Deep Scan
