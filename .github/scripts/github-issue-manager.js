@@ -149,7 +149,7 @@ async function processIssue(repo,issue,state,report,extData){
   const bodyLinks=extractLinks(issue.body||'').filter(l=>l.includes('zigbee2mqtt')||l.includes('blakadder')||l.includes('zigpy'));
   // Check comments for extra FPs and images
   const comments=await ghGet('/repos/'+repo+'/issues/'+issue.number+'/comments?per_page=30');
-  const hasBot=comments&&comments.some(c=>(c.body||'').includes(TAG));
+  const hasBot=comments&&comments.some(c=>(c.body||'').includes(TAG)||c.user?.login==='dlnraja');
   if(comments&&Array.isArray(comments))for(const c of comments){
     if((c.body||'').includes(TAG))continue;
     for(const fp of extractFP(c.body||''))if(!allFPs.includes(fp)){allFPs.push(fp);const d=findAllDrivers(fp);fpResults.push({fp,supported:d.length>0,drivers:d})}
