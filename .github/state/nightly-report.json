@@ -1,21 +1,85 @@
 {
-  "timestamp": "2026-02-27T04:15:29.934Z",
+  "timestamp": "2026-02-27T15:09:32.670Z",
   "appVersion": "5.11.25",
-  "forum": 1,
+  "forum": 7,
   "github": 0,
-  "diagnostics": 1,
+  "diagnostics": 5,
   "diagNewFPs": 0,
   "diagCritical": 0,
   "forumDetails": [
     {
       "topic": 140352,
-      "post": 1520,
+      "post": 1526,
       "user": "Hartmut_Dunker",
       "fps": [
-        "_TZ3002_pzao9ls1"
+        "_TZ3002_pzao9ls1",
+        "router",
+        "vision"
       ],
-      "reply": "Hi Hartmut,\n\nThank you for your patience and for providing the detailed information. I appreciate your effort in diagnosing the issue.\n\n### Troubleshooting Steps\n\n1. **Driver Selection**:\n   - The fin",
+      "reply": "### Troubleshooting Your BSEED Zigbee 4 Gang Button Switch\n\nLet's analyze the device interview data you provided to determine the best driver for your BSEED Zigbee 4 Gang Button Switch.\n\n#### Device I",
       "model": "gh-Mistral-small-2503"
+    },
+    {
+      "topic": 140352,
+      "post": 1527,
+      "user": "JJ10",
+      "fps": [
+        "dlnraja"
+      ],
+      "reply": "Hi JJ,\n\nThank you for your patience and for providing detailed feedback. Let's address your concerns step by step.\n\n### Device Fingerprint\nThe fingerprint lookup indicates that the device is recognize",
+      "model": "gh-Mistral-small-2503"
+    },
+    {
+      "topic": 140352,
+      "post": 1529,
+      "user": "Nicolas",
+      "fps": [
+        "HOBEIAN",
+        "dlnraja",
+        "vision"
+      ],
+      "reply": "Hi @Nicolas,\n\nThank you for providing the detailed information about your vibration sensor. Based on the data you've shared, here's how you can proceed:\n\n### Fingerprint Analysis\nThe fingerprint looku",
+      "model": "gh-Mistral-small-2503"
+    },
+    {
+      "topic": 140352,
+      "post": 1530,
+      "user": "Nicolas",
+      "fps": [
+        "eWeLink"
+      ],
+      "reply": "Hello @Nicolas,\n\nThank you for providing the detailed information about your leak sensor. Let's break down the steps to get this device working with the Universal Tuya Zigbee app on Homey.\n\n### Finger",
+      "model": "gh-Mistral-small-2503"
+    },
+    {
+      "topic": 140352,
+      "post": 1531,
+      "user": "smarthomesven",
+      "fps": [
+        "eWeLink"
+      ],
+      "reply": "@smarthomesven, thank you for reaching out and providing the fingerprint details. Based on the information you've shared, the device is recognized as an eWeLink ZigBee sensor, not a Tuya device. Here’",
+      "model": "gh-Mistral-small-2503"
+    },
+    {
+      "topic": 140352,
+      "post": 1534,
+      "user": "Nicolas",
+      "fps": [
+        "test"
+      ],
+      "reply": "**Fingerprint check** (v5.11.25):\n✅ Supported: `test` → **diy_custom_zigbee**\n",
+      "model": "template"
+    },
+    {
+      "topic": 146735,
+      "post": 189,
+      "user": "OH2TH",
+      "fps": [
+        "dlnraja"
+      ],
+      "reply": "**Fingerprint check** (v5.11.25):\n✅ Supported: `dlnraja` → **generic_diy**\n",
+      "model": "template"
     }
   ],
   "githubDetails": []

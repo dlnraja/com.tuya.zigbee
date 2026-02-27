@@ -1,8 +1,8 @@
 {
-  "date": "2026-02-27T05:35:46.782Z",
+  "date": "2026-02-27T15:06:34.730Z",
   "local": {
-    "drivers": 138,
-    "fps": 4176
+    "drivers": 143,
+    "fps": 4178
   },
   "JohanBendz/com.tuya.zigbee": {
     "prs": [
@@ -20766,9 +20766,7 @@
           "_TZE200_seq9cm6u"
         ],
         "pids": [],
-        "newFPs": [
-          "_TZE200_seq9cm6u"
-        ],
+        "newFPs": [],
         "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/136"
       },
       {
@@ -22645,11 +22643,6 @@
         "mfr": "_TZ3000_zutizvykts0203",
         "source": "Issue #138",
         "title": "[Auto] 736 new fingerprints from forks"
-      },
-      {
-        "mfr": "_TZE200_seq9cm6u",
-        "source": "Issue #136",
-        "title": "[Auto] 17 new fingerprints from community (2026-02)"
       },
       {
         "mfr": "_tz3000_fllyghyj",
