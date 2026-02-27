@@ -8,6 +8,7 @@ const{fetchWithRetry}=require('./retry-helper');
 const TOPIC=140352;
 
 async function postToForum(content,auth){
+  if(TOPIC!==140352){console.error('BLOCKED: refusing to post on T'+TOPIC);return{}}
   const h=auth.type==='apikey'
     ?{'Content-Type':'application/json','User-Api-Key':auth.key}
     :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
