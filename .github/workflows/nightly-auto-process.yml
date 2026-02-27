@@ -101,7 +101,13 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: node .github/scripts/enrichment-scanner.js
 
-      - name: Forum Responder (batched, anti-spam)
+      - name: Forum Intel Processor (scan-only, no reply)
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/forum-intel-processor.js || true
+
+      - name: Forum Responder (T140352 only, anti-spam)
         if: always()
         continue-on-error: true
         timeout-minutes: 10

@@ -19,6 +19,11 @@ function loadExpectationsRef(){
   try{return JSON.parse(fs.readFileSync(path.join(SD,'expectations-ref.json'),'utf8'))}
   catch{return null}
 }
+// v5.12.15: Load forum intel (common issues from ALL threads, read-only)
+function loadForumIntel(){
+  try{return JSON.parse(fs.readFileSync(path.join(SD,'forum-intel-report.json'),'utf8'))}
+  catch{return null}
+}
 const strip=h=>(h||'').replace(/<br\s*\/?>/gi,'\n').replace(/<\/p>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").trim();
 const exImgs=h=>{const u=[];const re=/<img[^>]+src="([^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -172,6 +177,16 @@ async function batchAI(postInfos,ver){
       ctx+='Pending user issues:\n';
       for(const p of expRef.pending)ctx+='- @'+p.user+': '+p.device+' ('+p.status+')\n';
     }
+    ctx+='\n';
+  }
+
+  // v5.12.15: Add forum intel (common issues from other threads, read-only)
+  const forumIntel=loadForumIntel();
+  if(forumIntel){
+    ctx+='## COMMUNITY INTEL (from scanning other forum threads)\n';
+    if(forumIntel.topPainPoints?.length)ctx+='Top issues users face: '+forumIntel.topPainPoints.join(', ')+'\n';
+    if(forumIntel.wifiRequestCount)ctx+='WiFi device requests: '+forumIntel.wifiRequestCount+'\n';
+    if(forumIntel.pairingIssueCount)ctx+='Pairing issues reported: '+forumIntel.pairingIssueCount+'\n';
     ctx+='\n';
   }
 
