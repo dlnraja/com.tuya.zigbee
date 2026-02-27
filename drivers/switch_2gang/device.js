@@ -326,8 +326,20 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           this._zclState.pending[epNum] = false;
         }, 2000);
         
+        // v5.11.29: Use writeAttributes instead of setOn/setOff (Z2M #27167, ZHA #2443)
+        // TS0726 FW broadcasts ZCL commands to all EPs but routes attr writes per-EP
         const onOff = getOnOffCluster(epNum);
-        if (onOff) {
+        if (onOff && typeof onOff.writeAttributes === 'function') {
+          try {
+            await onOff.writeAttributes({ onOff: value ? true : false });
+            this.log(`[BSEED-2G] EP${epNum} writeAttr onOff=${value} (per-EP fix)`);
+          } catch (e) {
+            this.log(`[BSEED-2G] EP${epNum} writeAttr failed: ${e.message}, fallback`);
+            if (typeof onOff[value ? 'setOn' : 'setOff'] === 'function') {
+              await onOff[value ? 'setOn' : 'setOff']();
+            }
+          }
+        } else if (onOff) {
           await onOff[value ? 'setOn' : 'setOff']();
         } else {
           this.log(`[BSEED-2G] EP${epNum} onOff cluster not found`);

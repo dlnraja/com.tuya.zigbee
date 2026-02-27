@@ -27,6 +27,10 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  * ║  v5.9.23: GROUP ISOLATION FIX (diag 945448b9 / Hartmut_Dunker)            ║
  * ║    TS0726 FW broadcasts ZCL to all EPs (confirmed Z2M #27167, ZHA #2443)  ║
  * ║    Fix: remove group memberships + filter non-commanded gang reports       ║
+ * ║  v5.11.29: ATTRIBUTE WRITE FIX (Z2M #27167, ZHA #2443, ZHA #1580)        ║
+ * ║    Root cause: FW broadcasts ZCL on/off COMMANDS to all EPs internally    ║
+ * ║    But routes ATTRIBUTE WRITES per-EP correctly                            ║
+ * ║    Fix: writeAttributes({onOff:val}) instead of setOn()/setOff()          ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 
@@ -194,20 +198,29 @@ class Switch4GangDevice extends BaseClass {
           this._zclState.pending[gangNum] = false;
         }, 2000);
         
-        // v5.8.92: Prefer Tuya DP for FW that broadcasts ZCL to all EPs
-        const mfr = this.getSetting?.('zb_manufacturer_name') || '';
-        const useDP = FORCE_TUYA_DP_4G.some(m => includesCI([m], mfr));
-        if (useDP && await sendTuyaDPBool(gangNum, value)) {
-          this.log(`[BSEED-4G] EP${gangNum} DP${gangNum}=${value} (ZCL broadcast fix)`);
-        } else {
-          const onOff = getOnOffCluster(gangNum);
-          if (onOff && typeof onOff[value ? 'setOn' : 'setOff'] === 'function') {
-            await onOff[value ? 'setOn' : 'setOff']();
-            this.log(`[BSEED-4G] EP${gangNum} ZCL ${value ? 'ON' : 'OFF'} sent`);
-          } else {
-            const dpSent = await sendTuyaDPBool(gangNum, value);
-            if (!dpSent) this.log(`[BSEED-4G] EP${gangNum} no ZCL/DP - not sent`);
+        // v5.11.29: ATTRIBUTE WRITE FIX (Z2M #27167, ZHA #2443, ZHA #1580)
+        // TS0726 firmware broadcasts ZCL on/off COMMANDS (setOn/setOff) to ALL EPs.
+        // But routes ATTRIBUTE WRITES (writeAttributes) per-EP correctly.
+        // This is the same fix ZHA uses via TuyaZBOnOffAttributeCluster.
+        const onOff = getOnOffCluster(gangNum);
+        if (onOff && typeof onOff.writeAttributes === 'function') {
+          try {
+            await onOff.writeAttributes({ onOff: value ? true : false });
+            this.log(`[BSEED-4G] EP${gangNum} writeAttr onOff=${value} (per-EP fix)`);
+          } catch (attrErr) {
+            // Fallback to standard command if writeAttributes fails
+            this.log(`[BSEED-4G] EP${gangNum} writeAttr failed: ${attrErr.message}, trying cmd`);
+            if (typeof onOff[value ? 'setOn' : 'setOff'] === 'function') {
+              await onOff[value ? 'setOn' : 'setOff']();
+              this.log(`[BSEED-4G] EP${gangNum} ZCL cmd ${value ? 'ON' : 'OFF'} sent (fallback)`);
+            }
           }
+        } else if (onOff && typeof onOff[value ? 'setOn' : 'setOff'] === 'function') {
+          await onOff[value ? 'setOn' : 'setOff']();
+          this.log(`[BSEED-4G] EP${gangNum} ZCL cmd ${value ? 'ON' : 'OFF'} sent`);
+        } else {
+          const dpSent = await sendTuyaDPBool(gangNum, value);
+          if (!dpSent) this.log(`[BSEED-4G] EP${gangNum} no ZCL/DP - not sent`);
         }
         return true;
       });
