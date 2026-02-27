@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 'use strict';
-// generate-user-expectations.js - Auto-generate docs/rules/USER_DEVICE_EXPECTATIONS.md
-// Reads: drivers, .homeychangelog.json, app.json, DEVICE_INTERVIEWS.json, _stats.json
+// v5.11.29: generate-user-expectations.js — Dynamic user/device tracking + decision reference
+// Reads: drivers, .homeychangelog.json, app.json, all .github/state/*.json, interviews
+// Outputs: docs/rules/USER_DEVICE_EXPECTATIONS.md + .github/state/expectations-ref.json
+// Other scripts CONSULT expectations-ref.json before making driver/device decisions
 // Run: node .github/scripts/generate-user-expectations.js
 
 const fs = require('fs');
@@ -10,6 +12,8 @@ const ROOT = path.join(__dirname, '..', '..');
 const DDIR = path.join(ROOT, 'drivers');
 const DOCS = path.join(ROOT, 'docs', 'rules');
 const UDE_PATH = path.join(DOCS, 'USER_DEVICE_EXPECTATIONS.md');
+const SD = path.join(ROOT, '.github', 'state');
+const REF_JSON = path.join(SD, 'expectations-ref.json');
 
 // --- Load data ---
 const app = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
@@ -116,12 +120,13 @@ const userProfiles = [
   },
   {
     name: 'Hartmut_Dunker', devices: 'BSEED TS0726 4-gang `_TZ3002_pzao9ls1`',
-    status: 'FIXED v5.9.23', fixes: 4,
+    status: 'FIXED v5.11.29', fixes: 5,
     timeline: [
       { ver: '5.5.718', fix: 'Bidirectional bindings' },
       { ver: '5.8.25', fix: 'Case-sensitivity fix' },
       { ver: '5.8.27', fix: 'EP2-4 DP fallback' },
       { ver: '5.9.23', fix: 'GROUP ISOLATION (Z2M #27167)' },
+      { ver: '5.11.29', fix: 'writeAttributes per-EP fix (Z2M #27167, ZHA #2443, ZHA #1580)' },
     ]
   },
   {
@@ -264,6 +269,40 @@ const ghIssues = [
   { num: 110, author: 'Pollepa', desc: 'TS011F metering empty', status: 'FIXED v5.8.91' },
 ];
 
+// --- Dynamic: Load pattern data, interview summary, forum state ---
+let patternData = { suggestions: [] };
+try { patternData = JSON.parse(fs.readFileSync(path.join(SD, 'pattern-data.json'), 'utf8')); } catch {}
+
+let interviewSummary = { totalInterviews: 0, uniqueFingerprints: [] };
+try { interviewSummary = JSON.parse(fs.readFileSync(path.join(SD, 'interview-summary.json'), 'utf8')); } catch {}
+
+let forumState = { topics: {}, replyLog: [] };
+try { forumState = JSON.parse(fs.readFileSync(path.join(SD, 'forum-state.json'), 'utf8')); } catch {}
+
+// --- Decision Reference: Best implementation choices (avoid repeating mistakes) ---
+const decisions = [
+  { device: 'USB Zigbee Dongle (USB-powered relay)', driver: 'usb_outlet_advanced',
+    wrongDriver: 'switch_2gang', reason: 'USB-powered device, not a wall switch — needs mainsPowered=true, no battery cap',
+    research: 'Confirmed via Z2M, device interview shows USB power source, not battery/mains switch',
+    ver: '5.11.25' },
+  { device: 'BSEED TS0726 4-gang (_TZ3002_pzao9ls1)', driver: 'switch_4gang (ZCL-only)',
+    wrongDriver: 'wall_switch_4gang_1way', reason: 'FW broadcasts ZCL cmds to all EPs; fix: writeAttributes per-EP',
+    research: 'Z2M #27167, ZHA #2443, ZHA #1580 — confirmed across 3 platforms',
+    ver: '5.11.29' },
+  { device: 'HOBEIAN ZG-102Z Contact Sensor', driver: 'contact_sensor',
+    wrongDriver: 'N/A', reason: 'Mfr name mismatch — device reports different mfr than expected, needs interview',
+    research: 'Lasse_K persistent issue #1463-#1476, FP exists but device sends different mfr',
+    ver: '5.11.16' },
+  { device: 'Mains-powered sensors (_TZE200_8ygsuhe1 Smart Airbox)', driver: 'air_quality_sensor',
+    wrongDriver: 'N/A', reason: 'USB-powered but has measure_battery — remove battery cap, set mainsPowered=true',
+    research: 'ProductValueValidator CO2 min changed from 300 to 0 for warmup values',
+    ver: '5.11.15' },
+  { device: 'TS0601 Tuya DP multi-gang switches', driver: 'switch_Ngang',
+    wrongDriver: 'N/A', reason: 'Check if device is ZCL-only or Tuya DP — use interview to determine protocol',
+    research: 'BSEED/Zemismart are ZCL-only despite TS0601 modelId, Tuya DP ignored',
+    ver: '5.9.14' },
+];
+
 // --- Build recent changelog ---
 const clKeys = Object.keys(cl).sort((a, b) => b.localeCompare(a, undefined, { numeric: true }));
 const recentCL = clKeys.slice(0, 10).map(v => {
@@ -364,6 +403,38 @@ ${autoDiscovered || '_No auto-discovered fingerprints yet._'}
 
 ---
 
+## Decision Reference (Avoid Repeating Mistakes)
+
+<!-- CRITICAL: Consult this before implementing new drivers or changing device assignments -->
+
+| Device | Correct Driver | Wrong Driver | Reason | Research |
+|--------|---------------|--------------|--------|----------|
+${decisions.map(d => `| ${d.device} | **${d.driver}** | ${d.wrongDriver} | ${d.reason} | ${d.research} |`).join('\n')}
+
+---
+
+## Recurring Patterns (Auto-detected)
+
+${patternData.suggestions?.length ? patternData.suggestions.map(s => `- **${s.pattern}** (${s.count} reports, ${s.priority} priority): ${s.fix}`).join('\n') : '_No patterns detected yet — run pattern-detector.js_'}
+
+---
+
+## Interview Repository
+
+- **Total interviews recovered**: ${interviewSummary.totalInterviews || 0}
+- **Unique fingerprints**: ${interviewSummary.uniqueFingerprints?.length || 0}
+- **Sources**: ${JSON.stringify(interviewSummary.sources || {})}
+
+---
+
+## Forum Activity Tracking
+
+- **Topics monitored**: ${Object.keys(forumState.topics || {}).length}
+- **Recent replies**: ${(forumState.replyLog || []).length}
+- **Last reply**: ${(forumState.replyLog || []).slice(-1)[0]?.ts || 'N/A'}
+
+---
+
 ## Reference Data
 
 ### Known Inverted Contact Manufacturers
@@ -393,7 +464,21 @@ ${bseedZCL.join(', ')}
 *Auto-generated on ${date} from v${ver} — ${fmt(stats.fps || allFPs.size)}+ fingerprints across ${stats.drivers || dirs.length} drivers*
 `;
 
-// --- Write file ---
+// --- Write MD file ---
 fs.mkdirSync(DOCS, { recursive: true });
 fs.writeFileSync(UDE_PATH, md);
-console.log(`Generated USER_DEVICE_EXPECTATIONS.md: v${ver}, ${verifiedFPs.length} verified FPs, ${missingFPs.length} missing`);
+
+// --- Write structured JSON reference for other scripts to consult ---
+const ref = {
+  version: ver, date, drivers: stats.drivers || dirs.length,
+  fingerprints: stats.fps || allFPs.size,
+  decisions: decisions.map(d => ({ device: d.device, driver: d.driver, wrongDriver: d.wrongDriver, reason: d.reason })),
+  userProfiles: userProfiles.map(p => ({ name: p.name, devices: p.devices, status: p.status, latestFix: p.timeline[p.timeline.length - 1] })),
+  pending: pending.map(p => ({ user: p.user, device: p.device, status: p.status, note: p.note })),
+  patterns: (patternData.suggestions || []).map(s => ({ id: s.id, pattern: s.pattern, count: s.count, priority: s.priority })),
+  interviews: { total: interviewSummary.totalInterviews || 0, fps: interviewSummary.uniqueFingerprints?.length || 0 },
+  invertedMfrs, bseedZCL,
+};
+fs.mkdirSync(SD, { recursive: true });
+fs.writeFileSync(REF_JSON, JSON.stringify(ref, null, 2));
+console.log(`Generated USER_DEVICE_EXPECTATIONS.md + expectations-ref.json: v${ver}, ${verifiedFPs.length} verified FPs, ${missingFPs.length} missing`);

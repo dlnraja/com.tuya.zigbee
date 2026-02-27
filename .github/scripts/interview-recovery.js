@@ -1,21 +1,25 @@
 #!/usr/bin/env node
 'use strict';
 /**
- * Interview & Diagnostic Recovery — collects device interviews, crash logs,
- * diagnostic reports from GitHub issues, forum posts, Gmail, and PM data.
- * Consolidates into .github/state/interviews/ for enrichment pipeline.
+ * v5.11.29: Interview & Diagnostic Recovery — collects device interviews, crash logs,
+ * diagnostic reports from ALL sources: GitHub issues, forum posts (direct API), Gmail, PMs.
+ * Consolidates into .github/state/interviews/ + docs/data/interviews/ (project resources).
+ * Also detects hidden/flagged posts and cross-references expectations-ref.json.
  */
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
-const{loadFingerprints,extractMfrFromText}=require('./load-fingerprints');
+const{extractMfrFromText}=require('./load-fingerprints');
 const{callAI}=require('./ai-helper');
 const GH='https://api.github.com';
+const FORUM='https://community.homey.app';
 const TOKEN=process.env.GH_PAT||process.env.GITHUB_TOKEN;
 const DRY=process.env.DRY_RUN==='true';
 const SD=path.join(__dirname,'..','state');
 const ID=path.join(SD,'interviews');
+const RESOURCE_DIR=path.join(__dirname,'..','..','docs','data','interviews');
 const SF=path.join(SD,'interview-recovery-state.json');
 const REPOS=['dlnraja/com.tuya.zigbee','JohanBendz/com.tuya.zigbee'];
+const FORUM_TOPICS=[140352,26439,146735,89271,54018,12758,85498];
 const hdrs=t=>({Accept:'application/vnd.github+json','User-Agent':'tuya-bot',...(t?{Authorization:'Bearer '+t}:{})});
 function loadState(){try{return JSON.parse(fs.readFileSync(SF,'utf8'))}catch{return{lastRun:null,processed:[],total:0}}}
 function saveState(s){fs.mkdirSync(SD,{recursive:true});fs.writeFileSync(SF,JSON.stringify(s,null,2))}
@@ -81,28 +85,81 @@ async function scanGitHubIssues(){
 }
 
 async function scanForumDiagnostics(){
-  console.log('=== Forum Diagnostic Recovery ===');
-  // Read previously saved forum activity data
+  console.log('=== Forum Diagnostic Recovery (direct API) ===');
+  let found=0,hidden=0;
+  for(const tid of FORUM_TOPICS){
+    try{
+      const r=await fetchWithRetry(FORUM+'/t/'+tid+'.json',{},{retries:2,label:'forum-t'+tid});
+      if(!r.ok)continue;
+      const d=await r.json();
+      const highest=d.highest_post_number||0;
+      // Scan last 50 posts for interview data
+      const from=Math.max(1,highest-50);
+      const r2=await fetchWithRetry(FORUM+'/t/'+tid+'/'+from+'.json',{},{retries:2,label:'forum-posts'});
+      if(!r2.ok)continue;
+      const posts=(await r2.json()).post_stream?.posts||[];
+      for(const p of posts){
+        // Track hidden posts
+        if(p.hidden){
+          console.log('  HIDDEN: T'+tid+' #'+p.post_number+' @'+p.username+' (id='+p.id+')');
+          hidden++;
+        }
+        const txt=stripHtml(p.cooked||'');
+        if(!hasDiagData(txt))continue;
+        const mfrs=extractMfrFromText(txt);
+        const key='forum_'+tid+'_'+p.id;
+        const outF=path.join(ID,key+'.json');
+        if(fs.existsSync(outF))continue;
+        const data={source:'forum',topicId:tid,postId:p.id,postNumber:p.post_number,
+          user:p.username,date:p.created_at,fingerprints:mfrs,hidden:!!p.hidden,
+          excerpt:txt.slice(0,5000)};
+        fs.mkdirSync(ID,{recursive:true});
+        fs.writeFileSync(outF,JSON.stringify(data,null,2));
+        // Also save as project resource
+        saveAsResource(key,data);
+        found++;
+      }
+    }catch(e){console.log('Forum T'+tid+' err:',e.message)}
+  }
+  // Also read cached forum activity data
   const faFile=path.join(SD,'forum-activity-data.json');
-  if(!fs.existsSync(faFile)){console.log('No forum activity data');return 0}
-  let found=0;
-  try{
-    const fa=JSON.parse(fs.readFileSync(faFile,'utf8'));
-    const posts=fa.recentPosts||fa.posts||[];
-    for(const p of posts){
-      const txt=typeof p==='string'?p:(p.text||p.cooked||p.raw||'');
-      if(!hasDiagData(txt))continue;
-      const mfrs=extractMfrFromText(txt);
-      const key='forum_'+(p.topic_id||p.id||Date.now());
-      const outF=path.join(ID,key+'.json');
-      if(fs.existsSync(outF))continue;
-      fs.mkdirSync(ID,{recursive:true});
-      fs.writeFileSync(outF,JSON.stringify({source:'forum',topicId:p.topic_id,postId:p.id,
-        user:p.username,date:p.created_at,fingerprints:mfrs,excerpt:txt.slice(0,5000)},null,2));
-      found++;
-    }
-  }catch(e){console.log('Forum scan err:',e.message)}
+  if(fs.existsSync(faFile)){
+    try{
+      const fa=JSON.parse(fs.readFileSync(faFile,'utf8'));
+      const posts=fa.recentPosts||fa.posts||[];
+      for(const p of posts){
+        const txt=typeof p==='string'?p:(p.text||p.cooked||p.raw||'');
+        if(!hasDiagData(txt))continue;
+        const mfrs=extractMfrFromText(txt);
+        const key='forum_cached_'+(p.topic_id||p.id||Date.now());
+        const outF=path.join(ID,key+'.json');
+        if(fs.existsSync(outF))continue;
+        fs.mkdirSync(ID,{recursive:true});
+        fs.writeFileSync(outF,JSON.stringify({source:'forum',topicId:p.topic_id,postId:p.id,
+          user:p.username,date:p.created_at,fingerprints:mfrs,excerpt:txt.slice(0,5000)},null,2));
+        found++;
+      }
+    }catch(e){console.log('Cached forum scan err:',e.message)}
+  }
+  if(hidden)console.log('  ⚠ Found '+hidden+' hidden posts across topics');
   return found;
+}
+
+function stripHtml(html){
+  return(html||'').replace(/<[^>]+>/g,' ').replace(/&amp;/g,'&').replace(/&lt;/g,'<')
+    .replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/\s+/g,' ').trim();
+}
+
+// Save interview as a project resource file
+function saveAsResource(key,data){
+  try{
+    fs.mkdirSync(RESOURCE_DIR,{recursive:true});
+    const resFile=path.join(RESOURCE_DIR,key+'.json');
+    if(!fs.existsSync(resFile)){
+      fs.writeFileSync(resFile,JSON.stringify(data,null,2));
+      console.log('  Resource:',key);
+    }
+  }catch{}
 }
 
 async function scanGmailDiagnostics(){
@@ -173,6 +230,15 @@ async function main(){
   const gmail=await scanGmailDiagnostics();
   const pm=await scanPMDiagnostics();
   await generateSummary();
+  // Cross-reference with expectations-ref.json if available
+  try{
+    const refFile=path.join(SD,'expectations-ref.json');
+    if(fs.existsSync(refFile)){
+      const ref=JSON.parse(fs.readFileSync(refFile,'utf8'));
+      console.log('Cross-ref: expectations-ref.json loaded ('+ref.version+', '+
+        (ref.pending||[]).length+' pending, '+(ref.decisions||[]).length+' decisions)');
+    }
+  }catch{}
   st.lastRun=new Date().toISOString();st.total=(st.total||0)+gh+forum+gmail+pm;
   st.lastCounts={github:gh,forum,gmail,pm};
   saveState(st);
