@@ -3,13 +3,13 @@
     "en": "v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts."
   },
   "5.11.24": {
-    "en": "Universal Tuya Zigbee v5.11.24 introduces core fixes, enhanced automation, and updated device fingerprints, ensuring improved performance and reliability."
+    "en": "v5.11.24: Fixed a workflow trigger race condition. Forum scanner now covers 12 topics. Better diagnostics tracking between runs."
   },
   "5.11.23": {
-    "en": "Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum responsiveness, ensuring a more reliable smart home experience."
+    "en": "v5.11.23: Switched post-forum-update to fetchWithRetry (fixes random post failures). RawClusterFallback for non-Tuya-DP devices. Forum deduplication so the same post doesn't get answered twice."
   },
   "5.11.22": {
-    "en": "Universal Tuya Zigbee v5.11.22 introduces enhanced forum responsiveness, improved workflow resilience, and updates to diagnostics and automation processes."
+    "en": "v5.11.22: 8 new fingerprints from JohanBendz scan. Device Finder tool. Forum auth now handles 404/401 gracefully."
   },
   "5.11.21": {
     "en": "v5.11.21: IR Blaster learning fix, energy divisors, soil moisture fix. (1) IR Blaster ZS06 manual cluster fallback for learning mode. (2) TS011F _TZ3210_xzhnra8x configurable ZCL energy divisors. (3) _TZ3000_dd8wwzcy added. (4) Soil sensor moisture fix in AdaptiveDataParser. (5) TuyaEF00Manager skip auto-convert for divisor:1 DPs."
