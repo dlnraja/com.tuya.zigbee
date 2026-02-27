@@ -99,6 +99,62 @@ jobs:
         continue-on-error: true
         run: node .github/scripts/scan-public-apis.js
 
+      - name: Comprehensive GitHub Scan
+        continue-on-error: true
+        timeout-minutes: 15
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: node .github/scripts/comprehensive-github-scan.js
+
+      - name: PR/Issue Fingerprint Scan
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: node .github/scripts/scan-prs-issues.js
+
+      - name: JohanBendz Full Scanner
+        continue-on-error: true
+        timeout-minutes: 15
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: node .github/scripts/scan-johan-full.js
+
+      - name: GitHub Issue Manager (deep)
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          STALE_DAYS: "14"
+          MAX_ITEMS: "200"
+          INCLUDE_CLOSED: "true"
+          REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
+        run: node .github/scripts/github-issue-manager.js
+
+      - name: Forum Spam Scan
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: node .github/scripts/forum-scan-spam.js
+
+      - name: Auto-Learn Fingerprints
+        continue-on-error: true
+        timeout-minutes: 3
+        run: node .github/scripts/auto-learn-fingerprints.js
+
+      - name: Pattern Detector
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/pattern-detector.js
+
       - name: Commit state and reports
         if: always()
         run: |
@@ -109,6 +165,7 @@ jobs:
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l)
           git diff --cached --quiet || git commit -m "Monthly sync v${VER} $(date +%Y-%m): ${D} drivers, ${F} FPs deep-scanned [skip ci]"
+          git pull --rebase origin master || true
           git push || true
 
       - name: Upload report

@@ -111,6 +111,7 @@ jobs:
         env:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           STALE_DAYS: "30"
+          MAX_ITEMS: "100"
           REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
         run: node .github/scripts/github-issue-manager.js
 
@@ -128,6 +129,20 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           SCAN_FORKS: "true"
         run: node .github/scripts/triage-upstream-enhanced.js
+
+      # ===== 3b. GITHUB: Comprehensive scan (forks+PRs+issues) =====
+      - name: "3b. Comprehensive GitHub Scan"
+        id: comp_gh_scan
+        continue-on-error: true
+        timeout-minutes: 15
+        run: node .github/scripts/comprehensive-github-scan.js
+
+      # ===== 3c. GITHUB: PR/Issue FP Scan =====
+      - name: "3c. PR/Issue Fingerprint Scan"
+        id: pr_issue_scan
+        continue-on-error: true
+        timeout-minutes: 10
+        run: node .github/scripts/scan-prs-issues.js
 
       # ===== 4. GITHUB: Scanner (both repos, AI summary) =====
       - name: "4. GitHub Activity Scanner"
@@ -266,6 +281,14 @@ jobs:
         continue-on-error: true
         timeout-minutes: 5
         run: node .github/scripts/forum-scan-spam.js
+
+      - name: "10b4. Forum Cleanup (edit-based)"
+        id: forum_cleanup_edit
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/forum-cleanup-edit.js || true
 
       - name: "10c. Device Finder"
         id: dev_finder
@@ -459,6 +482,8 @@ jobs:
           echo "| 1 | Forum Scan + Respond | ${{ steps.forum_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 2 | GitHub Issues & PRs | ${{ steps.github_mgr.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 3 | Upstream Triage | ${{ steps.upstream.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 3b | Comprehensive GH Scan | ${{ steps.comp_gh_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 3c | PR/Issue FP Scan | ${{ steps.pr_issue_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 4 | GitHub Scanner | ${{ steps.gh_scanner.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 5 | Gmail Diagnostics | ${{ steps.gmail.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 6 | Nightly Processor | ${{ steps.nightly.outcome }} |" >> $GITHUB_STEP_SUMMARY
@@ -490,7 +515,8 @@ jobs:
           echo "| 13 | Promote to Test | ${{ steps.promote_node.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 14 | Forum Update | — |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Total: 29 automation steps** | [Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee) | [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
+          echo "| 10b4 | Forum Cleanup Edit | ${{ steps.forum_cleanup_edit.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "**Total: 33 automation steps** | [Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee) | [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload reports
         uses: actions/upload-artifact@v4
