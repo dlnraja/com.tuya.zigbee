@@ -3,9 +3,11 @@ const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const SKIP=['dlnraja','system','discobot'];
 const MAX_REPLIES_TOTAL=2,DELAY=30000;
+const REPLY_COOLDOWN_MS=3600000; // 1h min between replies to same topic
+const SIMILARITY_THRESHOLD=0.6; // block if reply >60% similar to recent post
 const STATE=path.join(__dirname,'..','state','forum-state.json');
 const DDIR=path.join(__dirname,'..','..','drivers');
-const loadState=()=>{try{return JSON.parse(fs.readFileSync(STATE,'utf8'))}catch{return{topics:{}}}};
+const loadState=()=>{try{return JSON.parse(fs.readFileSync(STATE,'utf8'))}catch{return{topics:{},replyLog:[]}}};
 const saveState=s=>{fs.mkdirSync(path.dirname(STATE),{recursive:true});fs.writeFileSync(STATE,JSON.stringify(s,null,2)+'\n')};
 const{buildFullIndex,extractAllFP}=require('./load-fingerprints');
 const{validateReply}=require('./reply-quality-gate');
@@ -30,6 +32,34 @@ async function fetchNewPosts(tid,since){
   if(!r2.ok)throw new Error('Posts:'+r2.status);
   const posts=(await r2.json()).post_stream?.posts?.filter(p=>p.post_number>since)||[];
   return{posts:posts.sort((a,b)=>a.post_number-b.post_number),closed:false};
+}
+
+// Anti-spam: check if we already replied recently in this topic
+function checkCooldown(state,tid){
+  const log=state.replyLog||[];
+  const recent=log.filter(e=>e.tid===tid&&Date.now()-new Date(e.ts).getTime()<REPLY_COOLDOWN_MS);
+  if(recent.length){
+    console.log('  ⏳ Cooldown: replied to T'+tid+' '+Math.round((Date.now()-new Date(recent[0].ts).getTime())/60000)+'m ago');
+    return false;
+  }
+  return true;
+}
+function logReply(state,tid,postId){
+  if(!state.replyLog)state.replyLog=[];
+  state.replyLog.push({tid,postId,ts:new Date().toISOString()});
+  // Keep only last 50 entries
+  if(state.replyLog.length>50)state.replyLog=state.replyLog.slice(-50);
+}
+// Anti-spam: check if topic already has a recent dlnraja reply in fetched posts
+function hasRecentOwnReply(posts){
+  return posts.some(p=>p.username==='dlnraja');
+}
+// Anti-spam: simple similarity check (Jaccard on words)
+function textSimilarity(a,b){
+  const wa=new Set((a||'').toLowerCase().split(/\s+/)),wb=new Set((b||'').toLowerCase().split(/\s+/));
+  if(!wa.size||!wb.size)return 0;
+  let inter=0;for(const w of wa)if(wb.has(w))inter++;
+  return inter/(wa.size+wb.size-inter);
 }
 
 async function postReply(tid,replyTo,content,auth){
@@ -147,6 +177,10 @@ async function main(){
     }
     console.log('  Device:',devPosts.length,'/',fr.posts.length);
     if(!devPosts.length){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
+    // Anti-spam: skip if we already replied recently
+    if(!checkCooldown(state,tid)){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
+    // Anti-spam: skip if our own reply already exists in the fetched batch
+    if(hasRecentOwnReply(fr.posts)){console.log('  ⏳ Already replied in this batch, skipping');state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
     // Phase 2: ONE batched reply
     let reply=null;
     try{reply=await batchAI(devPosts,ver)}catch(e){console.error('AI:',e.message)}
@@ -170,7 +204,7 @@ async function main(){
         try{
           if(auth.type==='session')await refreshCsrf(auth);
           const r=await postReply(tid,lastP.post_number,reply,auth);
-          console.log('  Posted:',r.id);summary.push({t:tid,u:uList,a:'replied',id:r.id});totalR++;ok=true;await sleep(DELAY);break;
+          console.log('  Posted:',r.id);summary.push({t:tid,u:uList,a:'replied',id:r.id});logReply(state,tid,r.id);totalR++;ok=true;await sleep(DELAY);break;
         }catch(e){
           console.warn('  Try'+(i+1)+':',e.message);
           if(/consecutive|closed|gone wrong/.test(e.message)){console.warn('  Block');break;}
