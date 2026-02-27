@@ -119,7 +119,7 @@ async function editPost(postId, newRaw) {
 
 const SCAN_TOPICS=[140352,26439,146735,89271,54018,12758,85498];
 const BOT_USER='dlnraja';
-const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+// sleep imported from retry-helper above
 
 async function scanForHiddenPosts(){
   const found=[];
