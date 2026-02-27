@@ -112,7 +112,7 @@ for(const it of issues){
   if(msg){post(it.number,msg);iCommented++;}
   // Auto-close if ALL FPs supported
   if(found.length&&!missing.length&&!DRY){
-    try{gh(`issue close ${it.number} -R ${REPO} -r "not planned" -c "All fingerprints are already supported in Universal Tuya Zigbee v${VER}. Closing as resolved."`);iClosed++;console.log(`  Closed #${it.number} (all FPs supported)`);}catch(e){console.log(`  Close skip #${it.number}: ${e.message.slice(0,60)}`);}
+    try{gh(`issue close ${it.number} -R ${REPO} -r "not planned" -c "All FPs here are already in v${VER} — closing. Install the test version and re-pair if needed."`);iClosed++;console.log(`  Closed #${it.number} (all FPs supported)`);}catch(e){console.log(`  Close skip #${it.number}: ${e.message.slice(0,60)}`);}
   }
 }
 
@@ -129,7 +129,7 @@ for(const pr of prs){
   if(found.length||missing.length){post(pr.number,prMsg(found,missing));pCommented++;}
   // Auto-close PR if ALL FPs supported
   if(found.length&&!missing.length&&!DRY){
-    try{gh(`pr close ${pr.number} -R ${REPO} -c "All fingerprints in this PR are already integrated in Universal Tuya Zigbee v${VER}. Closing as resolved."`);pClosed++;console.log(`  Closed PR #${pr.number} (all FPs supported)`);}catch(e){console.log(`  Close skip PR #${pr.number}: ${e.message.slice(0,60)}`);}
+    try{gh(`pr close ${pr.number} -R ${REPO} -c "All FPs in this PR are already in v${VER} — closing as resolved. Thanks!"`);pClosed++;console.log(`  Closed PR #${pr.number} (all FPs supported)`);}catch(e){console.log(`  Close skip PR #${pr.number}: ${e.message.slice(0,60)}`);}
   }
 }
 
