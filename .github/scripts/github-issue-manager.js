@@ -180,7 +180,7 @@ async function processIssue(repo,issue,state,report,extData){
     const age=daysSince(issue.updated_at);
     if(age>=STALE_DAYS||classification.type==='resolved'||classification.type==='duplicate'){
       const reason=classification.closeReason||'Auto-closed: '+(age>=STALE_DAYS?'inactive >'+STALE_DAYS+' days':classification.type);
-      await ghPost('/repos/'+repo+'/issues/'+issue.number+'/comments',{body:TAG+'\n'+reason+'\n\nIf this is still relevant, please reopen with updated info.\n\n---\n*Auto-managed by Universal Tuya Zigbee v'+appVer+'*'});
+      await ghPost('/repos/'+repo+'/issues/'+issue.number+'/comments',{body:TAG+'\n'+reason+'\n\nFeel free to reopen if this is still relevant.'});
       await ghPatch('/repos/'+repo+'/issues/'+issue.number,{state:'closed',state_reason:'not_planned'});
       state.closed.push(key);
       report.closed++;
