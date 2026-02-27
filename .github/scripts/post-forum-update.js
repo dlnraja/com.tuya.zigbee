@@ -63,53 +63,25 @@ function parseChangelog(cl){
 
 function buildForumPost(ver,cl,stats,url){
   const items=parseChangelog(cl);
-  const hasBullets=items.length>1;
+  const hasBullets=items.length>1; // used below
   const fmt=n=>typeof n==='number'?n.toLocaleString('en-US'):n;
 
   const lines=[
-    `## :rocket: Update — Universal Tuya Zigbee v${ver}`,
-    '',
-    `A new update is available on the **Test channel**. This version brings improvements, bug fixes, and enhanced device support based on community feedback.`,
+    `**v${ver}** just went up on the test channel.`,
     '',
   ];
 
-  // Highlights section
   if(hasBullets){
-    lines.push(':wrench: **What\'s New:**');
-    for(const item of items){
-      lines.push(`* ${item}`);
-    }
+    lines.push('What changed:');
+    for(const item of items) lines.push(`- ${item}`);
   }else{
-    lines.push(':wrench: **What\'s New:**');
     lines.push(cl);
   }
   lines.push('');
 
-  // Stats table
-  lines.push(':bar_chart: **Project Status:**');
+  lines.push(`Currently at ${stats.driverCount} drivers and ${fmt(stats.totalFp)}+ fingerprints. [Install the test version](${url}) if you want to try it out.`);
   lines.push('');
-  lines.push('| | |');
-  lines.push('|---|---|');
-  lines.push(`| **Version** | v${ver} |`);
-  lines.push(`| **Drivers** | ${stats.driverCount} (Zigbee & WiFi) |`);
-  lines.push(`| **Fingerprints** | ${fmt(stats.totalFp)}+ |`);
-  if(stats.flowCards)lines.push(`| **Flow Cards** | ${fmt(stats.flowCards)} |`);
-  lines.push(`| **Sync** | Live sync with Zigbee2MQTT & ZHA |`);
-  lines.push('');
-
-  // Links
-  lines.push(':link: **Links:**');
-  lines.push(`* :arrow_down: **Install test version:** [Universal Tuya Zigbee - Test](${url})`);
-  lines.push('* :mag: **Device Finder:** [Check if your device is supported](https://dlnraja.github.io/com.tuya.zigbee/)');
-  lines.push('* :beetle: **Report a bug:** [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues)');
-  lines.push('');
-
-  // Tip
-  lines.push('> :information_source: **Tip:** If a device was stuck or showing wrong values before this update, please remove it and re-pair for a clean start.');
-  lines.push('');
-
-  // Closing
-  lines.push('Thank you all for your continuous feedback and diagnostic reports! :heart:');
+  lines.push('If something feels off after updating, try removing the device and re-pairing. Let me know if you run into anything.');
 
   return lines.join('\n');
 }
