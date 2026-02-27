@@ -1,8 +1,8 @@
 {
-  "date": "2026-02-27T20:37:04.986Z",
+  "date": "2026-02-27T22:50:15.758Z",
   "local": {
     "drivers": 143,
-    "fps": 4178
+    "fps": 4175
   },
   "JohanBendz/com.tuya.zigbee": {
     "prs": [
@@ -20552,7 +20552,7 @@
       {
         "number": 140,
         "title": "[Auto] 736 new fingerprints from forks",
-        "state": "open",
+        "state": "closed",
         "user": "github-actions[bot]",
         "labels": [
           "enhancement",
@@ -20625,7 +20625,7 @@
       {
         "number": 139,
         "title": "[Auto] 1 new fingerprints from forks",
-        "state": "open",
+        "state": "closed",
         "user": "github-actions[bot]",
         "labels": [
           "enhancement",
@@ -20644,7 +20644,7 @@
       {
         "number": 138,
         "title": "[Auto] 736 new fingerprints from forks",
-        "state": "open",
+        "state": "closed",
         "user": "github-actions[bot]",
         "labels": [
           "enhancement",
@@ -20735,7 +20735,7 @@
       {
         "number": 136,
         "title": "[Auto] 17 new fingerprints from community (2026-02)",
-        "state": "open",
+        "state": "closed",
         "user": "github-actions[bot]",
         "labels": [
           "enhancement",
@@ -20779,7 +20779,8 @@
           "device-request",
           "device_request",
           "TS0601",
-          "Immax"
+          "Immax",
+          "reopened-by-user"
         ],
         "fps": [
           "_TZE200_xlppj4f5"
@@ -20793,7 +20794,7 @@
       {
         "number": 133,
         "title": "[Auto] 14 new fingerprints from community (2026-02)",
-        "state": "open",
+        "state": "closed",
         "user": "github-actions[bot]",
         "labels": [
           "enhancement",
@@ -20827,7 +20828,7 @@
       {
         "number": 132,
         "title": "Forum Triage: Posts #1442-#1461 (Feb 18-20, 2026)",
-        "state": "open",
+        "state": "closed",
         "user": "dlnraja",
         "labels": [
           "device-request",
@@ -20854,7 +20855,7 @@
       {
         "number": 131,
         "title": "[Triage] Forum #1448-#1454 + GitHub activity Feb 2025",
-        "state": "open",
+        "state": "closed",
         "user": "dlnraja",
         "labels": [
           "triage",
@@ -20886,7 +20887,7 @@
       {
         "number": 130,
         "title": "[Forum] Responses for posts #1443-#1447",
-        "state": "open",
+        "state": "closed",
         "user": "dlnraja",
         "labels": [
           "device-request",
@@ -20934,7 +20935,8 @@
           "device-request",
           "garage_door",
           "Tuya",
-          "feature_request"
+          "feature_request",
+          "reopened-by-user"
         ],
         "fps": [
           "_TZE204_nklqjk62"

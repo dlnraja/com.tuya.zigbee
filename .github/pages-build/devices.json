@@ -1697,7 +1697,6 @@
       "_TZE200_hmqzfqml",
       "_TZE200_hojryzzd",
       "_TZE200_hr0tdd47",
-      "_TZE200_iba1ckek",
       "_TZE200_ijey4q29",
       "_TZE200_io0zdqh1",
       "_TZE200_iq4ygaai",
@@ -1706,7 +1705,6 @@
       "_TZE200_iwn0gpzz",
       "_TZE200_j7sgd8po",
       "_TZE200_jeaxp72v",
-      "_TZE200_jfw0a4aa",
       "_TZE200_ji1gn7rw",
       "_TZE200_jkbljri7",
       "_TZE200_js3mgbjb",
@@ -1842,7 +1840,6 @@
       "_TZE200_wv90ladg",
       "_TZE200_wv9ukqca",
       "_TZE200_wvovwe9h",
-      "_TZE200_wzk0x7fq",
       "_TZE200_x8fp01wi",
       "_TZE200_xlnzk169",
       "_TZE200_xpvamyfz",
@@ -2323,7 +2320,6 @@
       "_TZe200_holel4dk",
       "_TZe200_hue3yfsn",
       "_TZe200_husqqvux",
-      "_TZe200_iba1ckek",
       "_TZe200_ijey4q29",
       "_TZe200_ikvncluo",
       "_TZe200_io0zdqh1",
@@ -2332,7 +2328,6 @@
       "_TZe200_iuk8kupi",
       "_TZe200_iwn0gpzz",
       "_TZe200_j7sgd8po",
-      "_TZe200_jfw0a4aa",
       "_TZe200_ji1gn7rw",
       "_TZe200_jkbljri7",
       "_TZe200_js3mgbjb",
@@ -2475,7 +2470,6 @@
       "_TZe200_wukb7rhc",
       "_TZe200_wunufsil",
       "_TZe200_wvovwe9h",
-      "_TZe200_wzk0x7fq",
       "_TZe200_x8fp01wi",
       "_TZe200_xby0s3ta",
       "_TZe200_xlnzk169",
@@ -2768,7 +2762,11 @@
       "_TZe284_znlqjmih",
       "_TZe284_zpvusbtv",
       "_TZe284_zqq3cipq",
-      "_TZE200_seq9cm6u"
+      "_TZE200_seq9cm6u",
+      "_TYZB01_zqvwka4k",
+      "_TZe200_iba1ckek",
+      "_TZe200_jfw0a4aa",
+      "_TZe200_wzk0x7fq"
     ],
     "pids": [
       "TS0201",
@@ -2780,6 +2778,7 @@
       "lumi.sensor_ht",
       "lumi.sensor_ht.agl02",
       "lumi.weather",
+      "SM0201",
       "SNZB-02",
       "SNZB-02D",
       "SNZB-02P",
@@ -2799,7 +2798,7 @@
       "measure_battery"
     ],
     "proto": "EF00",
-    "fpCount": 1578
+    "fpCount": 1576
   },
   {
     "id": "co_sensor",
@@ -7553,7 +7552,11 @@
       "_TZE200_gnpn9hxb",
       "_TZE200_vq5u79u3",
       "_TZE204_cscppkxz",
-      "_TZE284_cscppkxz"
+      "_TZE284_cscppkxz",
+      "_TZE200_wzk0x7fq",
+      "_TZE200_jfw0a4aa",
+      "_TZE200_iba1ckek",
+      "HOBEIAN"
     ],
     "pids": [
       "TS0209",
@@ -7568,7 +7571,7 @@
       "alarm_tamper"
     ],
     "proto": "ZCL",
-    "fpCount": 21
+    "fpCount": 25
   },
   {
     "id": "wall_dimmer_1gang_1way",
@@ -7852,7 +7855,8 @@
       "_TZE284_2qx7sivb",
       "_TZE284_8sejxcue",
       "_TZ3000_c8bqthpo",
-      "TUYATEC-3tipnsrx"
+      "TUYATEC-3tipnsrx",
+      "eWeLink"
     ],
     "pids": [
       "TS0207",
@@ -7871,7 +7875,8 @@
       "SNZB-05",
       "3315-S",
       "3315-Seu",
-      "TS0601"
+      "TS0601",
+      "SQ510A"
     ],
     "caps": [
       "alarm_water",
@@ -7879,7 +7884,7 @@
       "alarm_tamper"
     ],
     "proto": "EF00",
-    "fpCount": 87
+    "fpCount": 88
   },
   {
     "id": "water_valve_smart",
