@@ -35,6 +35,10 @@ concurrency:
   group: batch-close-respond
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 env:
   NODE_VERSION: "22"
 

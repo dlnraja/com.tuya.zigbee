@@ -13,6 +13,10 @@ concurrency:
   group: stale
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   stale:
     name: "Close Stale Issues & PRs"

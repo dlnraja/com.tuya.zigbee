@@ -22,6 +22,10 @@ concurrency:
   group: daily-everything
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 env:
   NODE_VERSION: "22"
 

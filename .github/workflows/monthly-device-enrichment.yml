@@ -19,6 +19,10 @@ concurrency:
   group: monthly-device-enrichment
   cancel-in-progress: false
 
+defaults:
+  run:
+    shell: bash
+
 env:
   NODE_VERSION: '22'
 
