@@ -58,6 +58,8 @@ jobs:
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           STALE_DAYS: ${{ inputs.stale_days || '30' }}
+          MAX_ITEMS: "100"
+          INCLUDE_CLOSED: "false"
           REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
         run: node .github/scripts/github-issue-manager.js
 
