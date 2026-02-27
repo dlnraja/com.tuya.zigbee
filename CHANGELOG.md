@@ -9,79 +9,54 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ## [5.11.25] - 2026-02-25
 
 ### Bug Fixes
-- Fixed voltage divisor issue in driver #137, improving accuracy of voltage readings.
-- Rewrote dashboard fallback logic to enhance reliability during device state reporting.
+- Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants.
+- Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops.
 
 ### Improvements
-- Implemented ultimate automation and core fixes to enhance overall app performance and stability.
-
-### CI/CD
-- Updated various workflows for better management and efficiency, including improvements to GitHub state management and diagnostics reporting.
-- Enhanced forum and GitHub activity tracking to ensure timely responses to community feedback.
-
-### General
-- 138 drivers, 5182+ fingerprints, 17 new fingerprints from community contributions.
+- 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs).
+- Internal cleanup across several workflow scripts.
 
 ---
 
 ## [5.11.24] - 2026-02-25
 
 ### Bug Fixes
-- Resolved issues with workflow triggers and security measures.
+- Fixed a workflow trigger race condition that could skip builds.
 
 ### Improvements
-- Updated forum responder to scan 12 topics with Discourse search API discovery.
-- Enhanced Gmail diagnostics with updated state management.
-- Improved diagnostics reporting with better state file tracking.
-
-### CI/CD
-- Adjusted GitHub workflows for auto-management and state updates.
-- Auto-publish and daily workflow optimizations.
+- Forum scanner now covers 12 topics to catch device requests faster.
+- Better diagnostics state tracking so reports don't get lost between runs.
 
 ---
 
 ## [5.11.23] - 2026-02-24
 
 ### Bug Fixes
-- Improved robustness of forum and GitHub messaging systems.
-- Replaced `https.request` with `fetchWithRetry` in `post-forum-update.js`.
-- Fixed Api-Key header handling in `forum-activity-scraper.js`.
-- Added deduplication detection and dry run feature in `forum-respond-requests.js`.
+- Switched `post-forum-update.js` from raw `https.request` to `fetchWithRetry` — fixes random post failures.
+- Fixed Api-Key header in `forum-activity-scraper.js` (was silently failing).
+- Forum responder now deduplicates replies so it won't answer the same post twice.
 
 ### New Features
-- Enhanced workflow resilience with circuit breakers, retries, and dashboard fallback.
-- Implemented RawClusterFallback and improved UniversalTuyaParser functionality.
-- Weekly auto-update for the first post in forum topic 140352 via `sunday-master` workflow.
+- RawClusterFallback — devices that don't speak Tuya DP now get a last-resort ZCL parser.
+- Weekly auto-refresh of the main forum thread first-post with latest stats.
 
 ### Improvements
-- Added missing credentials for OPENAI_API_KEY, DISCOURSE_API_KEY, and HOMEY in several workflow steps.
-- Updated Gmail diagnostics to analyze more emails and improve reporting.
-
-### CI/CD
-- Added scheduled automation to all workflows for daily deployments, weekly code quality checks, and daily validation.
-- Enhanced GitHub auto-management state updates for better tracking.
+- Dashboard fallback with circuit breaker logic for flaky device connections.
+- Broader Gmail scanning for diagnostic emails.
 ---
 
 ## [5.11.22] - 2026-02-23
 
 ### New Features
-- Added 8 new fingerprints from JohanBendz scan to enhance device compatibility.
-- Introduced Device Finder functionality to streamline the identification of new devices.
-- Enhanced automation scripts for better performance and reliability.
-
-### Improvements
-- Workflow improvements for more efficient processing of forum and GitHub data.
-- Comprehensive Gmail and forum scanning across the entire forum to improve response accuracy.
-- Improved forum authentication with actionable instructions for users encountering issues.
+- 8 new fingerprints merged from JohanBendz upstream scan.
+- Device Finder tool — quickly look up whether a manufacturer/model combo is already supported.
 
 ### Bug Fixes
-- Fixed handling of 404 errors on user profile requests to ensure graceful degradation.
-- Enhanced diagnostics to try multiple tokens sequentially, improving 401 error handling.
-- Resolved issues with DISCOURSE_API_KEY authentication and HOMEY_PAT fallback mechanisms.
+- Forum auth now gracefully handles 404/401 instead of crashing the whole workflow.
+- Diagnostics token rotation — tries multiple tokens before giving up.
 
-### CI/CD
-- Updated various scripts for better automation and maintenance, including device finder and forum activity scraper scripts.
-- Improved documentation and state management for diagnostics and enrichment processes.
+### Improvements
+- Full-forum Gmail + Discourse scanning for missed device requests.
 ---
 
 ## [5.11.19] - 2026-02-21
