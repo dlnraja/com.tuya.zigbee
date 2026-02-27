@@ -210,10 +210,10 @@ async function processPR(repo,pr,state,report,extData){
   const hasBot=comments&&comments.some(c=>(c.body||'').includes(TAG));
 
   if(!hasBot){
-    let msg=TAG+'\nThanks for this PR! Tracked in [Universal Tuya Zigbee](https://github.com/dlnraja/com.tuya.zigbee) v'+appVer+'.\n\n';
-    if(fpResults.filter(f=>f.supported).length)msg+='**Already supported:**\n'+fpResults.filter(f=>f.supported).map(f=>'- '+f.fp+' → **'+f.drivers.join(', ')+'**').join('\n')+'\n\n';
-    if(newFPs.length)msg+='**New FPs to integrate:**\n'+newFPs.map(fp=>'- '+fp+'').join('\n')+'\n\n';
-    msg+='[Install test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Forum](https://community.homey.app/t/140352)\n\n---\n*Universal Tuya Zigbee v'+appVer+'*';
+    let msg=TAG+'\nThanks for the PR!\n\n';
+    if(fpResults.filter(f=>f.supported).length)msg+='Already in v'+appVer+':\n'+fpResults.filter(f=>f.supported).map(f=>'- `'+f.fp+'` → **'+f.drivers.join(', ')+'**').join('\n')+'\n\n';
+    if(newFPs.length)msg+='New — will integrate:\n'+newFPs.map(fp=>'- `'+fp+'`').join('\n')+'\n\n';
+    msg+='[Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · [Forum](https://community.homey.app/t/140352)';
     await ghPost('/repos/'+repo+'/issues/'+pr.number+'/comments',{body:msg});
     report.responded++;
     console.log('    Responded to PR');
@@ -221,7 +221,7 @@ async function processPR(repo,pr,state,report,extData){
 
   // Close old PRs on JohanBendz that are fully supported
   if(repo!==OWN&&pr.state==='open'&&allFPs.length&&!newFPs.length&&daysSince(pr.updated_at)>14){
-    await ghPost('/repos/'+repo+'/issues/'+pr.number+'/comments',{body:TAG+'\nAll fingerprints in this PR are already supported in [Universal Tuya Zigbee](https://github.com/dlnraja/com.tuya.zigbee) v'+appVer+'. Closing as resolved.\n\n---\n*Auto-managed*'});
+    await ghPost('/repos/'+repo+'/issues/'+pr.number+'/comments',{body:TAG+'\nAll FPs in this PR are already in v'+appVer+' — closing as resolved. Thanks!'});
     await ghPatch('/repos/'+repo+'/pulls/'+pr.number,{state:'closed'});
     state.closed.push(key);report.closed++;
     console.log('    CLOSED PR (all FPs supported)');
