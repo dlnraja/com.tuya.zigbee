@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const fs=require('fs'),path=require('path'),{execSync}=require('child_process');
+const{sleep}=require('./retry-helper');
 const ROOT=path.join(__dirname,'..','..');
 const REPO='JohanBendz/com.tuya.zigbee';
 const OWN='dlnraja/com.tuya.zigbee';
@@ -39,6 +40,7 @@ async function main(){
   let page=1,allIssues=[];
   while(page<=20){
     console.log('  Issues page '+page+'...');
+    await sleep(500); // Rate-limit: 0.5s between pages
     const raw=gh('api "/repos/'+REPO+'/issues?state=all&per_page=100&page='+page+'&sort=updated&direction=desc" --paginate=false');
     if(!raw)break;
     try{
@@ -76,6 +78,7 @@ async function main(){
   page=1;let allPRs=[];
   while(page<=20){
     console.log('  PRs page '+page+'...');
+    await sleep(500); // Rate-limit: 0.5s between pages
     const raw=gh('api "/repos/'+REPO+'/pulls?state=all&per_page=100&page='+page+'&sort=updated&direction=desc" --paginate=false');
     if(!raw)break;
     try{
@@ -111,6 +114,7 @@ async function main(){
   const recentIssues=allIssues.filter(i=>new Date(i.updated_at)>new Date(Date.now()-90*86400000)).slice(0,30);
   for(const issue of recentIssues){
     try{
+      await sleep(400); // Rate-limit: 0.4s between comment fetches
       const raw=gh('api "/repos/'+REPO+'/issues/'+issue.number+'/comments?per_page=50" --paginate=false');
       if(!raw)continue;
       const comments=JSON.parse(raw);

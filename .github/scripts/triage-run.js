@@ -2,6 +2,7 @@
 'use strict';
 const {execSync}=require('child_process');
 const {loadFingerprints,findDriver,findAllDrivers,extractMfrFromText}=require('./load-fingerprints');
+const {sleep}=require('./retry-helper');
 const fs=require('fs');
 const path=require('path');
 
@@ -56,14 +57,16 @@ function buildPRMsg(found,missing){
 }
 
 // Main
+async function main(){
 const fps=loadFingerprints();
 console.log(`Loaded ${fps.size} fingerprints. Scanning ${REPO}...`);
 const summary=[];
 
 // Issues
 const issues=JSON.parse(gh(`issue list -R ${REPO} -s open -L 50 --json number,title,body`));
-let iTriaged=0,iCommented=0;
+let iTriaged=0,iCommented=0,iClosed=0;
 for(const it of issues){
+  await sleep(400); // Rate-limit: 0.4s between API calls
   if(wasTriaged(it.number)){iTriaged++;continue;}
   const mfrs=extractMfrFromText(`${it.title||''} ${it.body||''}`);
   if(!mfrs.length)continue;
@@ -76,12 +79,17 @@ for(const it of issues){
     msg=buildSupportedMsg(found)+`\n\n---\n**Not yet supported:** \`${missing.join('`, `')}\` - logged for next release.`;
   }
   if(msg){postComment(it.number,msg);iCommented++;}
+  // Auto-close if ALL FPs supported
+  if(found.length&&!missing.length&&!DRY){
+    try{gh(`issue close ${it.number} -R ${REPO} -r "not planned" -c "All fingerprints already supported in v${VER}."`);iClosed++;console.log(`  Closed #${it.number}`);}catch{}
+  }
 }
 
 // PRs
 const prs=JSON.parse(gh(`pr list -R ${REPO} -s open -L 30 --json number,title,body`));
-let pTriaged=0,pCommented=0;
+let pTriaged=0,pCommented=0,pClosed=0;
 for(const pr of prs){
+  await sleep(400); // Rate-limit: 0.4s between API calls
   if(wasTriaged(pr.number)){pTriaged++;continue;}
   const mfrs=extractMfrFromText(`${pr.title||''} ${pr.body||''}`);
   if(!mfrs.length)continue;
@@ -91,8 +99,14 @@ for(const pr of prs){
     postComment(pr.number,buildPRMsg(found,missing));
     pCommented++;
   }
+  // Auto-close PR if ALL FPs supported
+  if(found.length&&!missing.length&&!DRY){
+    try{gh(`pr close ${pr.number} -R ${REPO} -c "All fingerprints already integrated in v${VER}."`);pClosed++;console.log(`  Closed PR #${pr.number}`);}catch{}
+  }
 }
 
-const report=`## ${REPO} Triage\n| Metric | Count |\n|--------|-------|\n| Open Issues | ${issues.length} |\n| Already triaged | ${iTriaged} |\n| New comments | ${iCommented} |\n| Open PRs | ${prs.length} |\n| PR comments | ${pCommented} |`;
+const report=`## ${REPO} Triage\n| Metric | Count |\n|--------|-------|\n| Open Issues | ${issues.length} |\n| Already triaged | ${iTriaged} |\n| New comments | ${iCommented} |\n| Issues closed | ${iClosed} |\n| Open PRs | ${prs.length} |\n| PR comments | ${pCommented} |\n| PRs closed | ${pClosed} |`;
 console.log(report);
 fs.appendFileSync(SUMMARY,report+'\n');
+}
+main().catch(e=>{console.error(e.message);process.exit(0)});
