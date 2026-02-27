@@ -30,10 +30,7 @@ We have just:
 3. **Remove and re-pair** the ZG-102Z
 4. If still inverted → device **Settings → Invert Contact State** → toggle it
 
-Sorry for the back-and-forth on this one!
-
----
-*Universal Tuya Zigbee — [Install test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [GitHub](https://github.com/dlnraja/com.tuya.zigbee/issues)*`;
+Sorry for the back-and-forth on this one!`;
 
 (async()=>{
   try{

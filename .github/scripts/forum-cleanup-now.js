@@ -117,14 +117,55 @@ async function editPost(postId, newRaw) {
   return r.ok;
 }
 
+const SCAN_TOPICS=[140352,26439,146735,89271,54018,12758,85498];
+const BOT_USER='dlnraja';
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+
+async function scanForHiddenPosts(){
+  const found=[];
+  const knownIds=new Set(TO_DELETE.map(p=>p.id));
+  for(const tid of SCAN_TOPICS){
+    try{
+      console.log(`  Scanning T${tid}...`);
+      const r=await fetchWithRetry(FORUM+'/t/'+tid+'.json',{headers:getHeaders(authRef.auth)},{retries:2,label:'scan'});
+      if(!r.ok){console.log(`    Skip T${tid}: ${r.status}`);continue;}
+      const d=await r.json();const stream=d.post_stream?.stream||[];
+      for(let i=0;i<stream.length;i+=20){
+        const chunk=stream.slice(i,i+20);await sleep(500);
+        const r2=await fetchWithRetry(FORUM+'/t/'+tid+'/posts.json?'+chunk.map(id=>'post_ids[]='+id).join('&'),
+          {headers:getHeaders(authRef.auth)},{retries:2,label:'posts'});
+        if(!r2.ok)continue;
+        const posts=(await r2.json()).post_stream?.posts||[];
+        for(const p of posts){
+          if(p.username!==BOT_USER)continue;
+          if(knownIds.has(p.id))continue;
+          if(p.hidden||p.user_deleted){
+            found.push({id:p.id,num:tid+'#'+p.post_number,reason:'HIDDEN/flagged (dynamic scan)'});
+            console.log(`    FOUND hidden: T${tid}#${p.post_number} id=${p.id}`);
+          }
+        }
+      }
+    }catch(e){console.log(`    Scan T${tid} error: ${e.message}`);}
+  }
+  return found;
+}
+
 async function main() {
-  console.log('=== Forum Cleanup v5.12.0 ===');
-  console.log(`Delete: ${TO_DELETE.length} posts | Edit: ${TO_EDIT.length} posts`);
+  console.log('=== Forum Cleanup v5.12.1 (with dynamic scan) ===');
+  console.log(`Hardcoded: Delete ${TO_DELETE.length} | Edit ${TO_EDIT.length}`);
 
   authRef.auth = await getForumAuth();
   if (!authRef.auth) { console.error('❌ No forum auth'); process.exit(1); }
   if (authRef.auth.type !== 'apikey') authRef.auth = await refreshCsrf(authRef.auth);
   console.log('✅ Auth:', authRef.auth.type);
+
+  // Phase 0: Dynamic scan for hidden/flagged posts
+  console.log('\n--- Phase 0: SCAN for hidden posts ---');
+  const dynamicPosts=await scanForHiddenPosts();
+  if(dynamicPosts.length){
+    console.log(`  Found ${dynamicPosts.length} NEW hidden posts (adding to delete list)`);
+    TO_DELETE.push(...dynamicPosts);
+  }else{console.log('  No additional hidden posts found');}
 
   // Phase 1: Edit posts (3s spacing, auto-retry on 429)
   console.log('\n--- Phase 1: EDIT ---');

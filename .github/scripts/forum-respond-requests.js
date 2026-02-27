@@ -14,7 +14,9 @@ const SCAN_TOPICS=[140352,26439,146735,89271,54018,12758,85498];
 const REPLY_TOPIC=parseInt(process.env.REPLY_TOPIC||'140352',10);
 const APP='https://homey.app/a/com.dlnraja.tuya.zigbee/test/';
 
+const ALLOWED_POST_TOPICS=new Set([140352]);
 async function reply(tid,raw,auth){
+  if(!ALLOWED_POST_TOPICS.has(tid)){console.error('BLOCKED: refusing to post on T'+tid+' (not in whitelist)');return{blocked:true}}
   const h=auth.type==='apikey'
     ?{'Content-Type':'application/json','User-Api-Key':auth.key}
     :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};

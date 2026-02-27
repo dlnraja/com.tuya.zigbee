@@ -8,6 +8,7 @@ const TOPICS=(process.env.FORUM_TOPICS||'140352').split(',').map(Number).filter(
 const SUM=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
 
 async function postReply(tid,raw,auth){
+  if(tid!==140352){console.error('BLOCKED: refusing to post on T'+tid);return'{}'}
   const h=auth.type==='apikey'
     ?{'Content-Type':'application/json','User-Api-Key':auth.key}
     :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'Cookie':fmtCk(auth.cookies),'X-Requested-With':'XMLHttpRequest'};
