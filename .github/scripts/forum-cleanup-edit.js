@@ -15,7 +15,7 @@ if (fs.existsSync(envFile)) {
 }
 
 const { getForumAuth, refreshCsrf, fmtCk, FORUM } = require('./forum-auth');
-const sleep = ms => new Promise(r => setTimeout(r, ms));
+const { fetchWithRetry, processBatch, sleep } = require('./retry-helper');
 
 // Posts that failed DELETE due to rate limiting — EDIT them instead
 const TO_EDIT = [
@@ -58,40 +58,24 @@ async function main() {
   console.log(`=== Forum Cleanup via EDIT v5.12.0 ===`);
   console.log(`Posts to edit: ${TO_EDIT.length}`);
 
-  let auth = await getForumAuth();
-  if (!auth) { console.error('No auth'); process.exit(1); }
-  if (auth.type !== 'apikey') auth = await refreshCsrf(auth);
-  console.log('Auth:', auth.type);
+  const authRef = { auth: await getForumAuth() };
+  if (!authRef.auth) { console.error('No auth'); process.exit(1); }
+  if (authRef.auth.type !== 'apikey') authRef.auth = await refreshCsrf(authRef.auth);
+  console.log('Auth:', authRef.auth.type);
 
-  let ok = 0, fail = 0, skip = 0;
-  for (const p of TO_EDIT) {
+  const result = await processBatch(TO_EDIT, async (p) => {
     console.log(`EDIT ${p.num} (id=${p.id}): ${p.reason}`);
-    try {
-      const r = await fetch(FORUM + '/posts/' + p.id, {
-        method: 'PUT',
-        headers: getHeaders(auth, true),
-        body: JSON.stringify({ post: { raw: CLEAN_TEXT } })
-      });
-      if (r.ok) { ok++; console.log('  ✓ Cleaned'); }
-      else if (r.status === 404 || r.status === 403) { skip++; console.log(`  ○ Already gone (${r.status})`); }
-      else if (r.status === 429) {
-        console.log('  ⏳ Rate limited — waiting 60s...');
-        await sleep(60000);
-        if (auth.type !== 'apikey') auth = await refreshCsrf(auth);
-        const r2 = await fetch(FORUM + '/posts/' + p.id, {
-          method: 'PUT',
-          headers: getHeaders(auth, true),
-          body: JSON.stringify({ post: { raw: CLEAN_TEXT } })
-        });
-        if (r2.ok) { ok++; console.log('  ✓ Cleaned (retry)'); }
-        else { fail++; console.log(`  ✗ Failed: ${r2.status}`); }
-      }
-      else { fail++; console.log(`  ✗ Failed: ${r.status}`); }
-    } catch (e) { fail++; console.log('  ✗ Error:', e.message); }
-    await sleep(3000);
-  }
+    const r = await fetchWithRetry(FORUM + '/posts/' + p.id, {
+      method: 'PUT',
+      headers: getHeaders(authRef.auth, true),
+      body: JSON.stringify({ post: { raw: CLEAN_TEXT } })
+    }, { retries: 3, label: 'edit', csrfRefresh: refreshCsrf, authRef });
+    if (r.ok) { console.log('  ✓ Cleaned'); return 'ok'; }
+    if (r.status === 404) { console.log('  ○ Already gone'); return 'skip'; }
+    console.log(`  ✗ Failed: ${r.status}`); return 'ok';
+  }, { spacing: 3000, label: 'cleanup-edit', maxRetries: 2, rateLimitPause: 60000 });
 
-  console.log(`\n=== Done: ${ok} cleaned, ${skip} already gone, ${fail} failed ===`);
+  console.log(`\n=== Done: ${result.ok} cleaned, ${result.skip} skipped, ${result.fail} failed ===`);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });

@@ -23,7 +23,7 @@ const { getForumAuth, refreshCsrf, fmtCk, FORUM } = require('./forum-auth');
 const STATE_DIR = path.join(__dirname, '..', 'state');
 const TOPICS = [140352, 26439, 89271, 146735, 54018];
 const USERNAME = 'dlnraja';
-const sleep = ms => new Promise(r => setTimeout(r, ms));
+const { fetchWithRetry, sleep } = require('./retry-helper');
 
 // Patterns that indicate bot/auto-generated content
 const BOT_PATTERNS = [
@@ -62,7 +62,7 @@ async function fetchAllPosts(topicId, auth) {
   // First fetch gets topic info + first posts
   const url = `${FORUM}/t/${topicId}.json?print=true`;
   try {
-    const r = await fetch(url, { headers: getHeaders(auth) });
+    const r = await fetchWithRetry(url, { headers: getHeaders(auth) }, { retries: 2, label: 'topic' });
     if (!r.ok) {
       console.log(`  ✗ T${topicId}: HTTP ${r.status}`);
       return posts;
@@ -83,7 +83,7 @@ async function fetchAllPosts(topicId, auth) {
       const chunkUrl = `${FORUM}/t/${topicId}/posts.json?post_ids[]=${chunk.join('&post_ids[]=')}`;
       try {
         await sleep(1000);
-        const cr = await fetch(chunkUrl, { headers: getHeaders(auth) });
+        const cr = await fetchWithRetry(chunkUrl, { headers: getHeaders(auth) }, { retries: 2, label: 'chunk' });
         if (cr.ok) {
           const cd = await cr.json();
           if (cd.post_stream?.posts) posts.push(...cd.post_stream.posts);

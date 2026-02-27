@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 'use strict';
+const { fetchWithRetry } = require('./retry-helper');
 const APP = 'com.dlnraja.tuya.zigbee';
 
 async function dashboardFallback(ver, log) {
@@ -92,7 +93,7 @@ async function dashboardFallback(ver, log) {
 
 async function _getAthomToken(em, pw, log) {
   try {
-    const r = await fetch('https://accounts.athom.com/login', {
+    const r = await fetchWithRetry('https://accounts.athom.com/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: em, password: pw })
@@ -110,7 +111,7 @@ async function _tryApiPromote(token, ver, log) {
   // Step 1: Exchange token for delegation token (audience: apps)
   try {
     log('  Getting delegation token...');
-    const dr = await fetch('https://api.athom.com/delegation/token', {
+    const dr = await fetchWithRetry('https://api.athom.com/delegation/token', {
       method: 'POST', headers: h, body: JSON.stringify({ audience: 'apps' })
     });
     const dd = await dr.json();
@@ -120,7 +121,7 @@ async function _tryApiPromote(token, ver, log) {
   // Step 2: List builds and find draft matching version
   try {
     log(`  Listing builds for ${APP}...`);
-    const br = await fetch(`${BASE}/app/${APP}/build`, { headers: h });
+    const br = await fetchWithRetry(`${BASE}/app/${APP}/build`, { headers: h }, { retries: 2, label: 'athom' });
     const builds = await br.json();
     const list = Array.isArray(builds) ? builds : builds.builds || builds.data || [];
     const draft = list.find(b => (!b.channel || b.channel === 'draft') && b.version === ver)
@@ -130,7 +131,7 @@ async function _tryApiPromote(token, ver, log) {
     log(`  Found draft build ${buildId} v${draft.version}`);
 
     // Step 3: Promote
-    const pr = await fetch(`${BASE}/app/${APP}/build/${buildId}/channel`, {
+    const pr = await fetchWithRetry(`${BASE}/app/${APP}/build/${buildId}/channel`, {
       method: 'POST', headers: h, body: JSON.stringify({ channel: 'test' })
     });
     if (pr.ok || pr.status === 204) { log('  API promote OK!'); return true; }

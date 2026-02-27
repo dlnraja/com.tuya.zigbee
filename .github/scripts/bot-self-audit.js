@@ -6,6 +6,7 @@
 const fs=require('fs'),path=require('path');
 const{buildFullIndex,extractAllFP}=require('./load-fingerprints');
 const{validateReply}=require('./reply-quality-gate');
+const{fetchWithRetry}=require('./retry-helper');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const STATE_DIR=path.join(__dirname,'..','state');
 const FORUM=process.env.DISCOURSE_URL||'https://community.homey.app';
@@ -21,8 +22,8 @@ async function fetchBotReplies(topicIds){
 
   for(const tid of topicIds){
     try{
-      const r=await fetch(FORUM+'/t/'+tid+'.json?print=true',{
-        headers:{'Api-Key':apiKey,'Api-Username':apiUser}});
+      const r=await fetchWithRetry(FORUM+'/t/'+tid+'.json?print=true',{
+        headers:{'Api-Key':apiKey,'Api-Username':apiUser}},{retries:2,label:'audit'});
       if(!r.ok)continue;
       const data=await r.json();
       const posts=data.post_stream?.posts||[];
