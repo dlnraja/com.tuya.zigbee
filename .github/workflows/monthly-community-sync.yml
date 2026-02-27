@@ -22,6 +22,10 @@ permissions:
   issues: write
   pull-requests: read
 
+concurrency:
+  group: monthly-community-sync
+  cancel-in-progress: true
+
 defaults:
   run:
     shell: bash

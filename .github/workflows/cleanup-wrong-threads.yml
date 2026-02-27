@@ -7,6 +7,10 @@ on:
         type: boolean
         default: true
 
+concurrency:
+  group: cleanup-wrong-threads
+  cancel-in-progress: true
+
 defaults:
   run:
     shell: bash
