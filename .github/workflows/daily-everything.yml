@@ -76,7 +76,21 @@ jobs:
           echo "fps=$F" >> $GITHUB_OUTPUT
           echo "App v$V | $D drivers | $F FPs"
 
-      # ===== 1. FORUM: Scan + Respond (ONE reply per topic via forum-responder.js) =====
+      # ===== 0. ONE-TIME: Delete duplicate/spam forum posts =====
+      - name: "0. Forum Cleanup (one-time)"
+        id: forum_cleanup
+        continue-on-error: true
+        timeout-minutes: 3
+        run: |
+          if [ ! -f .github/state/cleanup-done.flag ]; then
+            echo "=== Deleting 17 duplicate/spam posts ==="
+            node .github/scripts/forum-cleanup.js || true
+            mkdir -p .github/state && touch .github/state/cleanup-done.flag
+          else
+            echo "Cleanup already done"
+          fi
+
+      # ===== 1. FORUM: Scan + Respond (ONE reply per topic, anti-spam guard) =====
       - name: "1. Forum Scan + Respond"
         id: forum_scan
         continue-on-error: true
@@ -86,10 +100,8 @@ jobs:
         run: |
           echo "=== Forum Scan ==="
           node .github/scripts/scan-forum.js || true
-          echo "=== Forum Respond (batched ONE reply/topic) ==="
+          echo "=== Forum Respond (batched, anti-spam) ==="
           node .github/scripts/forum-responder.js || true
-          # NOTE: forum-respond-requests.js REMOVED — it posted individual per-post replies causing spam.
-          # All forum replies now go through forum-responder.js which batches into ONE reply per topic.
 
       # ===== 2. GITHUB: Triage + Respond + Close =====
       - name: "2. GitHub Issues & PRs Manager"
@@ -311,8 +323,8 @@ jobs:
         timeout-minutes: 5
         run: node .github/scripts/pattern-detector.js
 
-      # ===== 10l. BOT SELF-AUDIT: Validate past bot replies =====
-      - name: "10l. Bot Self-Audit"
+      # ===== 10l. REPLY SELF-AUDIT: Validate past replies =====
+      - name: "10l. Reply Self-Audit"
         id: bot_audit
         continue-on-error: true
         timeout-minutes: 10
@@ -457,13 +469,14 @@ jobs:
           echo "| 10i | Monthly Comprehensive | ${{ steps.monthly_comp.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10j | Auto-Learn FPs | ${{ steps.auto_learn.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10k | Pattern Detector | ${{ steps.patterns.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 10l | Bot Self-Audit | ${{ steps.bot_audit.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 0 | Forum Cleanup | ${{ steps.forum_cleanup.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10l | Reply Self-Audit | ${{ steps.bot_audit.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 11 | Commit | ${{ steps.commit.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 12 | Validate + Publish | ${{ steps.pub.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 13 | Promote to Test | ${{ steps.promote_node.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 14 | Forum Update | — |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Total: 28 automation steps** | [Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee) | [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
+          echo "**Total: 29 automation steps** | [Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee) | [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload reports
         uses: actions/upload-artifact@v4
