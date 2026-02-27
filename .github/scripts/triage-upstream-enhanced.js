@@ -2,6 +2,7 @@
 'use strict';
 const{execSync}=require('child_process');
 const{loadFingerprints,findAllDrivers,extractMfrFromText}=require('./load-fingerprints');
+const{sleep}=require('./retry-helper');
 const fs=require('fs'),path=require('path'),os=require('os');
 const DRY=process.env.DRY_RUN==='true';
 const REPO=process.env.TARGET_REPO||'JohanBendz/com.tuya.zigbee';
@@ -87,8 +88,8 @@ function prMsg(found,missing){
 }
 
 // Main
-try { _main(); } catch(e) { console.error('Triage error:',e.message); process.exit(0); }
-function _main(){
+_main().catch(e=>{console.error('Triage error:',e.message);process.exit(0)});
+async function _main(){
 const fps=loadFingerprints();
 console.log(`Loaded ${fps.size} fingerprints. Scanning ${REPO}...`);
 let iTriaged=0,iCommented=0,iClosed=0,pTriaged=0,pCommented=0,pClosed=0;
@@ -97,6 +98,7 @@ const newFps=[];
 // Issues
 const issues=JSON.parse(gh(`issue list -R ${REPO} -s open -L 50 --json number,title,body`));
 for(const it of issues){
+  await sleep(400); // Rate-limit: 0.4s between API calls
   if(wasTriaged(it.number)){iTriaged++;continue;}
   const mfrs=extractMfrFromText(`${it.title||''} ${it.body||''}`);
   if(!mfrs.length)continue;
@@ -117,6 +119,7 @@ for(const it of issues){
 // PRs
 const prs=JSON.parse(gh(`pr list -R ${REPO} -s open -L 30 --json number,title,body`));
 for(const pr of prs){
+  await sleep(400); // Rate-limit: 0.4s between API calls
   if(wasTriaged(pr.number)){pTriaged++;continue;}
   const mfrs=extractMfrFromText(`${pr.title||''} ${pr.body||''}`);
   if(!mfrs.length)continue;
@@ -137,6 +140,7 @@ if(SCAN_FORKS){
   try{forks=JSON.parse(gh(`api repos/${REPO}/forks --paginate --jq "[.[].full_name]"`));}catch(e){console.error('Forks:',e.message);}
   for(const fork of forks.slice(0,30)){
     try{
+      await sleep(500); // Rate-limit: 0.5s between fork scans
       const fi=JSON.parse(gh(`issue list -R ${fork} -s open -L 10 --json number,title,body`));
       for(const it of fi){
         const mfrs=extractMfrFromText(`${it.title||''} ${it.body||''}`);

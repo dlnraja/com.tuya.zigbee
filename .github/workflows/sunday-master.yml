@@ -104,6 +104,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
       - name: Run fork scan
         id: fork_scan
         env:
@@ -329,6 +330,8 @@ jobs:
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           STALE_DAYS: "30"
+          MAX_ITEMS: "100"
+          INCLUDE_CLOSED: "true"
           REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
         run: node .github/scripts/github-issue-manager.js
 
@@ -371,6 +374,55 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: node .github/scripts/scan-johan-full.js
+
+  comprehensive-scan:
+    name: "Comprehensive GitHub Scan"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Comprehensive scan (forks+PRs+issues)
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: node .github/scripts/comprehensive-github-scan.js
+      - name: PR/Issue FP Scan
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: node .github/scripts/scan-prs-issues.js
+
+  forum-cleanup:
+    name: "Forum Spam Scan + Cleanup"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Spam scan
+        continue-on-error: true
+        env:
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: node .github/scripts/forum-scan-spam.js
+      - name: Cleanup (edit-based)
+        continue-on-error: true
+        env:
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/forum-cleanup-edit.js || true
 
   enrichment:
     name: "Smart Enrichment (DP-aware)"
@@ -552,7 +604,7 @@ jobs:
 
   summary:
     name: "Weekly Summary"
-    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, forum-respond, gmail-diagnostics, device-diagnostics, external-sources, github-scanner, github-issue-manager, forum-activity, johanbendz-full, enrichment, smart-processor, generate-changelog, update-forum-thread, promote-to-test]
+    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, forum-respond, gmail-diagnostics, device-diagnostics, external-sources, github-scanner, github-issue-manager, forum-activity, johanbendz-full, comprehensive-scan, forum-cleanup, enrichment, smart-processor, generate-changelog, update-forum-thread, promote-to-test]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -575,6 +627,8 @@ jobs:
           echo "- Forum activity: ${{ needs.forum-activity.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- JohanBendz full: ${{ needs.johanbendz-full.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Forum first post: ${{ needs.update-forum-thread.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Comprehensive scan: ${{ needs.comprehensive-scan.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Forum cleanup: ${{ needs.forum-cleanup.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Promote to Test: ${{ needs.promote-to-test.result }}**" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "[Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
