@@ -211,3 +211,12 @@
 
 ## Nightly Auto-Responses (2026-02-26 v5.11.25)
 - **JohanBendz/com.tuya.zigbee#1142** @dmz-86: `_TZE204_clrdrnya` (gh-gpt-4o-mini)
+
+
+## Nightly Auto-Responses (2026-02-27 v5.11.25)
+- **dlnraja/com.tuya.zigbee#110** @Pollepa: `_TZ3210_w0qqde0g`, `vision`, `debug`, `test` (gh-Mistral-small-2503)
+- **JohanBendz/com.tuya.zigbee#1343** @cvh1111: `_TZE200_rhgsbacq`, `example`, `vision`, `lumi` (gh-Mistral-small-2503)
+- **JohanBendz/com.tuya.zigbee#1345** @Nono-3ric: `_TZE284_xnbkhhdr`, `example`, `vision` (gh-Mistral-small-2503)
+- **JohanBendz/com.tuya.zigbee#1347** @azkysmarthome: `_TZE284_6ycgarab`, `_TZE200_u6x1zyv2`, `_TZE204_gkfb`, `_TZE204_dwcarsat`, `_TZE200_vrcfo4i0`, `_TZ3000_zutizvyk`, `HOBEIAN`, `test`, `_TZE204_gkfbdvyx` (gh-Mistral-small-2503)
+- **JohanBendz/com.tuya.zigbee#1344** @fjvs1467: `_TZ3000_bgsigers`, `test` (gh-Mistral-small-2503)
+- **JohanBendz/com.tuya.zigbee#1328** @AGabriel: `_TZE284_9ern5sfh`, `example`, `vision` (gh-Mistral-small-2503)
