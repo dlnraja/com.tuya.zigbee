@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-const fs=require('fs');
+const fs=require('fs'),path=require('path');
 const {loadFingerprints,findDriver,extractMfrFromText}=require('./load-fingerprints');
 const{fetchWithRetry}=require('./retry-helper');
 
@@ -108,15 +108,24 @@ async function scan(){
       if(newPosts.length>0)console.log('Topic '+TOPIC_ID+': '+newPosts.length+' new posts');
       topicsScanned++;
 
+      const IP=[
+        {id:'pairing',rx:/not pairing|pair(ing)? fail|won'?t pair|can'?t add|interview fail/i},
+        {id:'disconnect',rx:/disconnect|offline|unavailable|keeps dropping|not responding/i},
+        {id:'wrong_values',rx:/wrong (value|temp|humidity|power)|incorrect|shows 0|inverted/i},
+        {id:'wifi_request',rx:/wifi|wi-fi|smart\s*life|local\s*key|tuya\s*cloud|lidl|meross|avatto/i},
+        {id:'battery',rx:/battery (drain|issue|wrong|0%)|false battery/i},
+        {id:'unknown_device',rx:/unknown device|not recognized|unsupported|generic zigbee/i},
+      ];
       for(const p of newPosts){
         const text=(p.cooked||'').replace(/<[^>]+>/g,' ');
         const mfrs=extractMfrFromText(text);
-        if(!mfrs.length)continue;
         const found=mfrs.filter(m=>fps.has(m));
         const missing=mfrs.filter(m=>!fps.has(m));
-        if(missing.length){
+        const issues=IP.filter(pat=>pat.rx.test(text)).map(pat=>pat.id);
+        if(missing.length||issues.length){
           allIssues.push({user:p.username||'unknown',date:p.created_at?.slice(0,10)||'',
-            topicId:TOPIC_ID,postNum:p.post_number,missing,found,text:text.slice(0,200)});
+            topicId:TOPIC_ID,postNum:p.post_number,postId:p.id,
+            missing,found,issues,text:text.slice(0,300)});
         }
       }
       if(posts.length){const mx=Math.max(...posts.map(p=>p.id));if(mx>lastId)lastId=mx;}
@@ -124,27 +133,48 @@ async function scan(){
     }catch(e){/* skip topic errors silently */}
   }
 
-  let report='## Forum Scanner\n';
+  // Aggregate issue categories
+  const cats={};
+  for(const i of allIssues)for(const c of(i.issues||[]))cats[c]=(cats[c]||0)+1;
+
+  let report='## Forum Scanner (intel mode)\n';
   report+='| Metric | Value |\n|--------|-------|\n';
   report+='| Seed topics | '+SEED_TOPICS.length+' |\n';
   report+='| Discovered topics | '+allTopics.length+' |\n';
   report+='| Topics scanned | '+topicsScanned+' |\n';
-  report+='| Device requests found | '+allIssues.length+' |\n\n';
+  report+='| Posts with intel | '+allIssues.length+' |\n';
+  for(const[c,n]of Object.entries(cats).sort((a,b)=>b[1]-a[1]))report+='| '+c+' | '+n+' |\n';
+  report+='\n';
 
-  if(allIssues.length){
-    report+='### Posts with unsupported devices\n';
-    report+='| User | Date | Post# | Missing FPs | Already Supported |\n';
-    report+='|------|------|-------|-------------|-------------------|\n';
-    for(const i of allIssues.slice(0,50)){
-      report+='| '+i.user+' | '+i.date+' | [#'+i.postNum+']('+BASE+'/t/'+i.topicId+'/'+i.postNum+') | '+i.missing.join(',')+' | '+i.found.length+' |\n';
+  if(allIssues.filter(i=>i.missing.length).length){
+    report+='### Unsupported devices\n';
+    report+='| User | Date | Post | Missing FPs | Issues |\n';
+    report+='|------|------|------|-------------|--------|\n';
+    for(const i of allIssues.filter(i=>i.missing.length).slice(0,50)){
+      report+='| '+i.user+' | '+i.date+' | [T'+i.topicId+'#'+i.postNum+']('+BASE+'/t/'+i.topicId+'/'+i.postNum+') | '+i.missing.join(',')+' | '+(i.issues||[]).join(',')+' |\n';
     }
-    if(allIssues.length>50)report+='\n_...and '+(allIssues.length-50)+' more_\n';
   }
+
+  // Structured intel output (scan-only, never posts)
+  const intel={
+    timestamp:new Date().toISOString(),
+    topicsScanned,totalPosts:allIssues.length,
+    categories:cats,
+    missingFPs:[...new Set(allIssues.flatMap(i=>i.missing))],
+    wifiRequests:allIssues.filter(i=>(i.issues||[]).includes('wifi_request')).slice(0,30),
+    pairingIssues:allIssues.filter(i=>(i.issues||[]).includes('pairing')).slice(0,30),
+    unknownDevices:allIssues.filter(i=>(i.issues||[]).includes('unknown_device')).slice(0,30),
+    wrongValues:allIssues.filter(i=>(i.issues||[]).includes('wrong_values')).slice(0,20),
+    allIssues:allIssues.slice(0,200),
+  };
+  const SD=process.env.STATE_DIR||path.join(__dirname,'..','state');
+  fs.mkdirSync(SD,{recursive:true});
+  fs.writeFileSync(path.join(SD,'forum-intel.json'),JSON.stringify(intel,null,2));
+  console.log('Forum intel: '+intel.missingFPs.length+' missing FPs, '+Object.keys(cats).length+' issue categories');
 
   if(lastId>0)fs.writeFileSync(LAST_FILE,String(lastId));
   console.log(report);
   fs.appendFileSync(SUMMARY,report+'\n');
-  if(allIssues.length)fs.writeFileSync('/tmp/forum_issues.json',JSON.stringify(allIssues,null,2));
 }
 
 scan().catch(e=>{console.error('Forum scan failed:',e);process.exit(1);});

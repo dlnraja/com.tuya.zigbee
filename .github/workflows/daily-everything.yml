@@ -94,8 +94,8 @@ jobs:
             echo "Cleanup already done"
           fi
 
-      # ===== 1. FORUM: Scan + Respond (ONE reply per topic, anti-spam guard) =====
-      - name: "1. Forum Scan + Respond"
+      # ===== 1. FORUM: Scan + Intel + Respond (ONE reply on T140352 only) =====
+      - name: "1. Forum Scan + Intel + Respond"
         id: forum_scan
         continue-on-error: true
         timeout-minutes: 10
@@ -103,9 +103,11 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           REPLY_TOPICS: "140352"
         run: |
-          echo "=== Forum Scan ==="
+          echo "=== Forum Scan (all threads, read-only intel) ==="
           node .github/scripts/scan-forum.js || true
-          echo "=== Forum Respond (batched, anti-spam) ==="
+          echo "=== Forum Intel Processor (auto-add FPs, detect issues) ==="
+          node .github/scripts/forum-intel-processor.js || true
+          echo "=== Forum Respond (T140352 only, anti-spam) ==="
           node .github/scripts/forum-responder.js || true
 
       # ===== 2. GITHUB: Triage + Respond + Close =====
