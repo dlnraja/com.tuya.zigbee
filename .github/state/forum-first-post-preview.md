@@ -1,8 +1,8 @@
-# 🏠 Universal Tuya Zigbee App v5.11.22
+# 🏠 Universal Tuya Zigbee App v5.11.25
 
-> **Last auto-update:** 2026-02-23 | **Drivers:** 138 | **Fingerprints:** 5644
+> **Last auto-update:** 2026-02-27 | **Drivers:** 143 | **Fingerprints:** 5353
 
-The most comprehensive Tuya Zigbee app for Homey — supporting **138 device types** with **5644+ manufacturer fingerprints**.
+The most comprehensive Tuya Zigbee app for Homey — supporting **143 device types** with **5353+ manufacturer fingerprints**.
 
 ## 📦 Install
 
@@ -10,98 +10,99 @@ The most comprehensive Tuya Zigbee app for Homey — supporting **138 device typ
 - **Test (latest):** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)
 - **Source:** [GitHub](https://github.com/dlnraja/com.tuya.zigbee)
 
-## 🆕 Latest Changes (v5.11.22)
+## 🆕 Latest Changes (v5.11.25)
 
-Universal Tuya Zigbee v5.11.22 introduces 8 new fingerprints, enhances automation scripts, and improves device discovery functionality.
+v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts.
 
 ## 📊 GitHub Activity
 
-- **Issues scanned:** 1162
-- **PRs scanned:** 180
-- **Issues with FPs:** 925
+- **Issues scanned:** 1126
+- **Issues with FPs:** 898
 
 
 ## 📋 Supported Device Types
 
-### 🔌 Socket (30 drivers)
+### 🔌 Socket (31 drivers)
 | Driver | Fingerprints |
 |---|---|
-| 1-Gang Smart Switch | 369 |
-| 2-Gang Smart Switch | 222 |
-| 3-Gang Smart Switch | 190 |
-| 4-Gang Smart Switch | 194 |
-| 6-Gang Wall Switch | 10 |
+| 1-Gang Smart Switch | 259 |
+| 2-Gang Smart Switch | 103 |
+| 3-Gang Smart Switch | 71 |
+| 4-Gang Smart Switch | 75 |
+| 6-Gang Wall Switch | 8 |
 | DIN Rail Switch | 19 |
-| Mini Switch | 9 |
+| Mini Switch | 8 |
 | Multi-Gang USB Socket | 15 |
-| Plug Energy Monitor | 115 |
+| Plug Energy Monitor | 106 |
 | Pool/Spa Pump Controller | 6 |
-| Smart Circuit Breaker | 16 |
+| Smart Circuit Breaker | 13 |
 | Smart Plug 1-Gang | 1 |
 | Smart Plug 2-Gang | 2 |
-| Smart Plug with Energy Monitoring | 113 |
+| Smart Plug with Energy Monitoring | 36 |
 | Smart Switch with Temperature Sensor | 1 |
 | USB Dongle Dual Repeater | 6 |
 | USB Dongle Triple (3-Port) | 1 |
-| Wall Dimmer 1-Gang 1-Way | 4 |
-| Wall Switch 1-Gang 1-Way | 5 |
-| Wall Switch 2-Gang 1-Way (BSEED) | 8 |
-| Wall Switch 3-Gang 1-Way (BSEED) | 8 |
+| Wall Dimmer 1-Gang 1-Way | 3 |
+| Wall Switch 1-Gang 1-Way | 6 |
+| Wall Switch 2-Gang 1-Way (BSEED) | 9 |
+| Wall Switch 3-Gang 1-Way (BSEED) | 9 |
 | Wall Switch 4-Gang 1-Way (BSEED) | 8 |
 | Wall Switch 5gang | 2 |
 | Wall Switch 7-Gang | 2 |
-| Wall Switch 8-Gang | 7 |
+| Wall Switch 8-Gang | 5 |
 | WiFi 2-Gang Switch | 0 |
 | WiFi 3-Gang Switch | 0 |
 | WiFi 4-Gang Switch | 0 |
+| WiFi Power Strip (Tuya Local) | 0 |
 | WiFi Smart Plug (Tuya Local) | 0 |
 | WiFi Switch (Tuya Local) | 0 |
 
-### 💡 Light (17 drivers)
+### 💡 Light (18 drivers)
 | Driver | Fingerprints |
 |---|---|
-| 2-Channel Dimmer Module | 35 |
+| 2-Channel Dimmer Module | 41 |
 | 3-Gang Dimmer Module | 3 |
 | Bulb Tunable | 49 |
-| Dimmer 1gang | 242 |
-| LED Controller CCT | 9 |
+| Dimmer 1gang | 155 |
+| LED Controller CCT | 10 |
 | LED Controller Dimmable | 8 |
 | LED Controller RGB | 5 |
 | Led Strip Advanced | 6 |
 | LED Strip Led Strip | 15 |
 | Led Strip Rgbw | 13 |
 | Smart Bulb Dimmer | 52 |
-| Smart Bulb Rgb | 114 |
+| Smart Bulb Rgb | 115 |
 | Smart Bulb White | 3 |
-| Smart RGB/RGBW Bulb | 79 |
-| Switch Touch Dimmer (1 Gang) | 24 |
+| Smart RGB/RGBW Bulb | 80 |
+| Switch Touch Dimmer (1 Gang) | 21 |
 | WiFi Dimmer (Tuya Local) | 0 |
+| WiFi LED Strip RGBCW (Tuya Local) | 0 |
 | WiFi Light RGBCW (Tuya Local) | 0 |
 
-### 📡 Sensor (41 drivers)
+### 📡 Sensor (42 drivers)
 | Driver | Fingerprints |
 |---|---|
-| 1-Buttons Wireless Controller | 42 |
+| 1-Buttons Wireless Controller | 43 |
 | 2-Buttons Wireless Controller | 16 |
 | 3-Button Wireless Controller | 15 |
 | 4-Buttons Wireless Controller | 45 |
-| 6-Buttons Wireless Controller | 7 |
+| 6-Buttons Wireless Controller | 3 |
 | 8-Buttons Wireless Controller | 1 |
 | Ceiling Presence Sensor (230V) | 9 |
-| Climate Sensor | 1157 |
-| CO Sensor | 4 |
-| Comprehensive Air Monitor | 13 |
-| Contact Sensor | 221 |
-| CT Clamp Power Meter | 18 |
-| DIN Rail Energy Meter | 35 |
+| Climate Sensor | 1573 |
+| CO Sensor | 6 |
+| Comprehensive Air Monitor | 11 |
+| Contact Sensor | 151 |
+| CT Clamp Power Meter | 16 |
+| DIN Rail Energy Meter | 33 |
 | Energy Meter 3-Phase | 15 |
-| Gas Detector | 10 |
+| Gas Detector | 12 |
 | Gas Sensor Ts0601 | 27 |
 | Illuminance Sensor | 6 |
 | LCD Temperature & Humidity Sensor | 7 |
 | Liquid Level Sensor | 13 |
-| Motion Sensor | 218 |
-| Power Meter | 4 |
+| Motion Sensor | 134 |
+| Power Meter | 3 |
 | Presence Sensor (Radar) | 41 |
 | Presence Sensor Radar | 103 |
 | Scene Switch 1-Gang | 3 |
@@ -110,26 +111,27 @@ Universal Tuya Zigbee v5.11.22 introduces 8 new fingerprints, enhances automatio
 | Scene Switch 4-Gang | 8 |
 | Scene Switch 6-Gang | 2 |
 | Smart Knob / Scene Switch | 14 |
-| Smart Smoke Detector Advanced | 44 |
-| Soil Moisture Sensor | 34 |
+| Smart Smoke Detector Advanced | 45 |
+| Soil Moisture Sensor | 32 |
 | Sos Emergency Button | 33 |
-| TUYATEC Temperature & Humidity Sensor | 12 |
-| Vibration Sensor | 21 |
-| Water Leak Sensor | 87 |
+| TUYATEC Temperature & Humidity Sensor | 13 |
+| Vibration Sensor | 25 |
+| Water Leak Sensor | 88 |
+| WiFi Air Quality Monitor (Tuya Local) | 0 |
 | WiFi Sensor (Tuya Local) | 0 |
 | Wireless Switch | 2 |
-| Zigbee Air Quality / CO2 Sensor | 8 |
+| Zigbee Air Quality / CO2 Sensor | 6 |
 | Zigbee Formaldehyde/VOC Sensor | 2 |
-| Zigbee Rain Sensor | 10 |
+| Zigbee Rain Sensor | 11 |
 | Zigbee Weather Station (Outdoor) | 2 |
 
 ### 🌡️ Thermostat (7 drivers)
 | Driver | Fingerprints |
 |---|---|
 | Air Conditioner (Smart) | 4 |
-| Radiator Valve | 237 |
+| Radiator Valve | 277 |
 | Smart Valve 1-Way | 11 |
-| Smart Valve 4-Way | 22 |
+| Smart Valve 4-Way | 24 |
 | Thermostat / TRV | 185 |
 | Thermostat 4-Channel | 1 |
 | WiFi Thermostat (Tuya Local) | 0 |
@@ -137,7 +139,7 @@ Universal Tuya Zigbee v5.11.22 introduces 8 new fingerprints, enhances automatio
 ### 🪟 Windowcoverings (3 drivers)
 | Driver | Fingerprints |
 |---|---|
-| Cover Controller | 227 |
+| Cover Controller | 240 |
 | Curtain Motor with Tilt | 32 |
 | Roller Shutter Controller | 3 |
 
@@ -146,10 +148,10 @@ Universal Tuya Zigbee v5.11.22 introduces 8 new fingerprints, enhances automatio
 |---|---|
 | Door Controller | 2 |
 | Fingerprint Smart Lock | 11 |
-| Lock Smart | 17 |
+| Lock Smart | 13 |
 | WiFi Door Lock (Tuya Local) | 0 |
 
-### 🌀 Fan (8 drivers)
+### 🌀 Fan (9 drivers)
 | Driver | Fingerprints |
 |---|---|
 | Air Purifier | 4 |
@@ -158,6 +160,7 @@ Universal Tuya Zigbee v5.11.22 introduces 8 new fingerprints, enhances automatio
 | Fan Speed Controller | 21 |
 | Smart Humidifier | 10 |
 | WiFi Air Purifier (Tuya Local) | 0 |
+| WiFi Dehumidifier (Tuya Local) | 0 |
 | WiFi Fan (Tuya Local) | 0 |
 | WiFi Humidifier (Tuya Local) | 0 |
 
@@ -166,22 +169,23 @@ Universal Tuya Zigbee v5.11.22 introduces 8 new fingerprints, enhances automatio
 |---|---|
 | WiFi Siren (Tuya Local) | 0 |
 
-### 🔔 Doorbell (1 drivers)
+### 🔔 Doorbell (2 drivers)
 | Driver | Fingerprints |
 |---|---|
 | Doorbell Doorbell | 10 |
+| WiFi Doorbell / Camera (Tuya Local) | 0 |
 
 ### 🎮 Remote (2 drivers)
 | Driver | Fingerprints |
 |---|---|
-| IR Blaster Remote | 31 |
+| IR Blaster Remote | 37 |
 | WiFi IR Remote (Tuya Local) | 0 |
 
 ### 🔘 Button (2 drivers)
 | Driver | Fingerprints |
 |---|---|
 | Fingerbot Button Pusher | 4 |
-| Wireless Button (Universal) | 7 |
+| Wireless Button (Universal) | 5 |
 
 ### 🔥 Heater (4 drivers)
 | Driver | Fingerprints |
@@ -201,9 +205,9 @@ Universal Tuya Zigbee v5.11.22 introduces 8 new fingerprints, enhances automatio
 |---|---|
 | DIY Custom Zigbee Device | 103 |
 | Garden Water Valve | 4 |
-| Generic DIY Zigbee Device | 55 |
-| Generic Tuya Device (TS0601) | 207 |
-| Siren Siren | 21 |
+| Generic DIY Zigbee Device | 28 |
+| Generic Tuya Device (TS0601) | 263 |
+| Siren Siren | 26 |
 | Smart Pet Feeder | 6 |
 | Smart RCBO | 2 |
 | Universal Zigbee/Tuya Device | 46 |
@@ -248,4 +252,4 @@ Universal Tuya Zigbee v5.11.22 introduces 8 new fingerprints, enhances automatio
 Check if your device is supported: [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)
 
 ---
-*Auto-updated by Universal Tuya Zigbee bot on 2026-02-23*
+*Auto-updated by Universal Tuya Zigbee bot on 2026-02-27*

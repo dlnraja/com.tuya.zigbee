@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-02-27T20:40:58.361Z",
+  "timestamp": "2026-02-27T23:05:57.526Z",
   "username": "dlnraja",
   "topicCount": 1,
   "activityCount": 300,
   "pmCount": 0,
-  "refCount": 62,
+  "refCount": 63,
   "bookmarkCount": 0,
   "fullThreads": 30,
   "totalFPs": 711,
@@ -35,5 +35,5 @@
     "_TZ2000_lxvycln5",
     "_TZ3210_leyz4rju"
   ],
-  "aiAnalysis": "### Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer\n\n**1) Key User Requests:**\n- Users frequently request support for new devices, particularly moisture sensors, fertilizer level sensors, and vibration sensors.\n- There is a need for better documentation and descriptions of supported devices.\n- Users want clearer communication about app updates and supported devices.\n\n**2) Devices People Need:**\n- Moisture sensors (including those that measure fertilizer levels).\n- Vibration sensors.\n- Leak sensors (e.g., model \"CK-TLSR8656-SS5-01(7019)\").\n- Smart Click+Zigbee Sockets.\n- Various unsupported devices listed in the \"unsupportedFPs\" section.\n\n**3) Issues to Fix:**\n- Several devices are not recognized by the app (e.g., \"_TZ3000_itb0omhv\" in version 5.11.25).\n- Clarification is needed on whether the app supports eWeLink ZigBee sensors or only Tuya ZigBee devices.\n- Off-topic messages need to be removed from the forum.\n- Diagnostic reports need to be reviewed and addressed.\n\n**4) Action Items:**\n- Update the app to support the listed unsupported devices.\n- Provide detailed documentation for all supported devices.\n- Clarify the app's compatibility with eWeLink ZigBee sensors.\n- Remove off-topic messages from the forum.\n- Review and address diagnostic reports submitted by users.\n- Communicate app updates and supported devices more clearly to users."
+  "aiAnalysis": "### Summary of Homey Community Forum Activity for Universal Tuya Zigbee App\n\n#### 1) Key User Requests:\n- **Device Support**: Users frequently request support for new and specific Tuya Zigbee devices, such as moisture sensors, fertilizer level sensors, and leak sensors.\n- **Compatibility**: There is a need for better compatibility with a wide range of Tuya Zigbee devices, including those from eWeLink.\n- **Documentation**: Users ask for clearer documentation and descriptions of supported devices.\n\n#### 2) Devices People Need:\n- **Moisture Sensors**: Devices that can measure moisture and fertilizer levels.\n- **Leak Sensors**: Specific models like \"CK-TLSR8656-SS5-01(7019)\".\n- **Smart Click+Zigbee Sockets**: Users are looking for support for these sockets.\n- **Unsupported Devices**: A list of unsupported fingerprint IDs indicates a need for support for devices like \"_TZ3000_zgyzgd\", \"_TZE204_ztqnh5c\", and others.\n\n#### 3) Issues to Fix:\n- **Device Recognition**: Some devices, like \"_TZ3000_itb0omhv\", are not recognized in the latest version (5.11.25).\n- **Voltage Divisor**: There was a mention of a fixed voltage divisor in the latest update, suggesting previous issues with voltage readings.\n- **Off-Topic Messages**: Moderators have had to delete off-topic messages, indicating a need for better forum moderation or clearer guidelines.\n\n#### 4) Action Items:\n- **Update Device Support**: Prioritize adding support for the requested devices, especially moisture and leak sensors.\n- **Improve Documentation**: Provide clearer and more comprehensive documentation for supported devices.\n- **Fix Recognition Issues**: Address the recognition problems for specific devices like \"_TZ3000_itb0omhv\".\n- **Moderate Forum**: Ensure that the forum remains on-topic and useful for users by enforcing guidelines and removing off-topic messages.\n- **Communicate Updates**: Clearly communicate updates and changes in the app, such as the voltage divisor fix in v5.11.25."
 }
