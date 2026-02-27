@@ -30,7 +30,7 @@ defaults:
   run:
     shell: bash
 ```
-**WHY**: Prevents PowerShell from blocking on `>>` and `<<` operators. All 31 workflows have this.
+**WHY**: Prevents PowerShell from blocking on `>>` and `<<` operators. All 32 workflows have this.
 
 ### Every job running scripts MUST have:
 ```yaml
@@ -70,7 +70,8 @@ git push || true
 ```
 
 ### 2. Cron Conflicts
-Stagger by 30+ min: daily-everything 02:00, nightly 03:30, hub 06:00, sunday 07:00.
+Stagger by 30+ min. Verified no conflicts exist.
+Key schedule: daily-everything 02/08/14/20, nightly 03:30, auto-close 04:15, hub 01/07/13/19, sunday 07:00.
 
 ### 3. `needs:` + failed jobs
 Jobs with `needs:` skip if parent failed. **Fix**: add `if: always()`.
@@ -94,7 +95,16 @@ After `getForumAuth()`, ALWAYS call `refreshCsrf()` or all POST/PUT/DELETE get 4
 ### 9. Large state files
 `comprehensive-scan.json` (~22MB) is in `.gitignore`. Always `git reset HEAD` if staged.
 
-### 10. Auto-reopen chain
+### 10. REPLY_TOPICS — CRITICAL
+**Bot must ONLY reply on T140352** (our own thread). NEVER post on other people's threads.
+```yaml
+env:
+  REPLY_TOPICS: "140352"
+```
+Enforced in: `forum-responder.js` (default='140352'), `forum-respond-requests.js` (REPLY_TOPIC guard).
+All 5 YML workflows that call forum-responder explicitly set `REPLY_TOPICS: "140352"`.
+
+### 11. Auto-reopen chain
 When user comments on closed issue/PR → `auto-reopen-on-comment.yml` reopens it →
 `auto-respond.yml` triggers on `reopened` event → daily/nightly re-process in next cycle.
 
@@ -132,6 +142,9 @@ Key: `[skip ci]` prevents infinite workflow loops.
 
 All scripts using `gh` CLI or `fetch()` MUST have throttling:
 
+### For `forum-auth.js` (SSO login):
+All 7 fetch calls use `fetchTO()` with 15s timeout to prevent hangs during OAuth redirects.
+
 ### For `gh` CLI scripts (execSync):
 ```javascript
 const { sleep } = require('./retry-helper');
@@ -155,14 +168,14 @@ env:
 
 ---
 
-## G. Workflow Inventory (31 workflows)
+## G. Workflow Inventory (32 workflows)
 
 | Workflow | Schedule | Steps | Key Secrets |
 |----------|----------|-------|-------------|
 | daily-everything | 4x/day (2,8,14,20 UTC) | 33 | ALL |
 | sunday-master | Sun 07:00 | 20 jobs | ALL |
 | nightly-auto-process | 03:30 daily | 15+ | ALL |
-| auto-close-supported | 03:45 daily + Sun 15:00 | batch close | GH_PAT |
+| auto-close-supported | 04:15 daily + Sun 15:00 | batch close | GH_PAT |
 | upstream-auto-triage | Mon 05:00 | triage both repos | GH_PAT |
 | weekly-fingerprint-sync | Mon 06:00 | Z2M/ZHA sync | GH_PAT |
 | monthly-comprehensive-sync | 1st 01:00 | deep scan | ALL |
@@ -173,5 +186,10 @@ env:
 | auto-publish-on-push | on workflow complete | publish+promote | HOMEY_PAT |
 | gmail-token-keepalive | 3x/day (6,15,22 UTC) | token refresh | GMAIL_* |
 | deploy-pages | on push + daily | Device Finder | GITHUB_TOKEN |
+| tuya-automation-hub | 4x/day (1,7,13,19) + Mon/Thu | forum+github | ALL |
+| forum-auto-responder | 4x/day (5,11,17,23) | forum respond | DISCOURSE_API_KEY |
+| cleanup-wrong-threads | manual | cleanup bot posts | DISCOURSE_API_KEY |
+| code-quality | Wed 03:00 + on push | quality checks | — |
+| dependabot-auto-merge | on PR | auto-merge deps | GH_PAT |
 
 See `.github/SECRETS.md` for full secret reference.
