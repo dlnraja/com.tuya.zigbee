@@ -263,15 +263,27 @@ class Button4GangDevice extends ButtonDevice {
    * v5.5.617: Handle device wake (cold boot recovery via onEndDeviceAnnounce)
    */
   async onEndDeviceAnnounce() {
-    this.log('[BUTTON4-MODE] 📡 Device announced (wake/rejoin) - re-applying mode...');
+    this.log('[BUTTON4-MODE] 📡 Device announced (wake/rejoin) - re-applying mode + re-binding...');
     this._modeVerified = false;
 
-    // Re-apply mode on wake with short delay
+    // Re-bind clusters on wake (sleepy TS0044 may have missed initial binds)
     this.homey.setTimeout(async () => {
       if (this._zclNode) {
+        for (let ep = 1; ep <= 4; ep++) {
+          const endpoint = this._zclNode?.endpoints?.[ep];
+          if (!endpoint) continue;
+          const onOff = endpoint.clusters?.onOff || endpoint.clusters?.genOnOff || endpoint.clusters?.[6];
+          if (onOff?.bind) {
+            onOff.bind().then(() => this.log(`[BUTTON4-REBIND] ✅ OnOff bound EP${ep}`)).catch(() => {});
+          }
+          const scenes = endpoint.clusters?.scenes || endpoint.clusters?.genScenes || endpoint.clusters?.[5];
+          if (scenes?.bind) {
+            scenes.bind().then(() => this.log(`[BUTTON4-REBIND] ✅ Scenes bound EP${ep}`)).catch(() => {});
+          }
+        }
         await this._intelligentModeSwitch(this._zclNode);
       }
-    }, 500);
+    }, 300);
   }
 
   /**
