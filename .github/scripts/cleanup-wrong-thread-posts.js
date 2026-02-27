@@ -50,16 +50,10 @@ async function main(){
       if(DRY){console.log('    [DRY] would delete');continue;}
       try{
         if(auth.type==='session')await refreshCsrf(auth);
-        await sleep(4000);
-        const r=await fetchWithRetry(`${FORUM}/posts/${p.id}`,{method:'DELETE',headers:hdr(auth,false)},{retries:3,label:'del'});
-        if(r.ok||r.status===200||r.status===204){console.log('    DELETED');deleted++;}
-        else{
-          // Fallback: edit to blank if delete not allowed
-          console.log('    Delete returned '+r.status+', trying edit...');
-          const r2=await fetchWithRetry(`${FORUM}/posts/${p.id}`,{method:'PUT',headers:hdr(auth,true),body:JSON.stringify({post:{raw:'_(message removed)_'}})},{retries:2,label:'edit'});
-          if(r2.ok){console.log('    BLANKED');deleted++;}
-          else console.log('    FAIL:',r2.status);
-        }
+        await sleep(3000);
+        const r=await fetchWithRetry(`${FORUM}/posts/${p.id}`,{method:'PUT',headers:hdr(auth,true),body:JSON.stringify({post:{raw:'_(message removed)_'}})},{retries:2,label:'edit'});
+        if(r.ok){console.log('    BLANKED');deleted++;}
+        else console.log('    FAIL:',r.status);
       }catch(e){console.log('    ERR:',e.message);}
     }
   }
