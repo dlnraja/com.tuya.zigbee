@@ -197,7 +197,8 @@ async function batchAI(postInfos,ver){
 async function main(){
   let dry=process.env.DRY_RUN==='true';
   const tids=(process.env.FORUM_TOPICS||'140352,26439,146735,89271,54018,12758,85498').split(',').map(Number);
-  const replyTids=new Set((process.env.REPLY_TOPICS||'140352,26439,146735,89271').split(',').map(Number));
+  // IMPORTANT: Only reply on OUR OWN thread (140352). Never post on other people's threads!
+  const replyTids=new Set((process.env.REPLY_TOPICS||'140352').split(',').map(Number));
   let ver='?';try{ver=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
   console.log('=== Forum Responder v5.11.29 (edit-or-reply, anti-spam) ===');
   console.log(dry?'DRY':'LIVE','| v'+ver);
