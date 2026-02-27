@@ -709,6 +709,36 @@
       }
     },
     {
+      "id": "switch_4gang_toggle_gang1",
+      "title": { "en": "Toggle gang 1", "nl": "Gang 1 wisselen" },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_toggle_gang2",
+      "title": { "en": "Toggle gang 2", "nl": "Gang 2 wisselen" },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_toggle_gang3",
+      "title": { "en": "Toggle gang 3", "nl": "Gang 3 wisselen" },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_toggle_gang4",
+      "title": { "en": "Toggle gang 4", "nl": "Gang 4 wisselen" },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_turn_on_all",
+      "title": { "en": "Turn on all gangs", "nl": "Alle gangs aanzetten" },
+      "args": []
+    },
+    {
+      "id": "switch_4gang_turn_off_all",
+      "title": { "en": "Turn off all gangs", "nl": "Alle gangs uitzetten" },
+      "args": []
+    },
+    {
       "id": "switch_4gang_set_backlight",
       "title": {
         "en": "Set LED backlight mode",

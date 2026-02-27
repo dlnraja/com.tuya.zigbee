@@ -149,7 +149,38 @@ class Switch4GangDriver extends ZigBeeDriver {
         this.log('[FLOW] ✅ switch_4gang_set_backlight_brightness');
       } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
 
-      this.log('4-Gang Switch Driver v5.5.930 ✅ Flow cards registered');
+      // v5.12.0: Toggle per gang + all on/off
+      const caps = ['onoff', 'onoff.gang2', 'onoff.gang3', 'onoff.gang4'];
+      ['gang1', 'gang2', 'gang3', 'gang4'].forEach((gang, idx) => {
+        try {
+          this.homey.flow.getActionCard(`switch_4gang_toggle_${gang}`)
+            .registerRunListener(this._safeAction(async (args) => {
+              const cap = caps[idx];
+              const v = args.device.getCapabilityValue(cap);
+              await args.device.triggerCapabilityListener(cap, !v);
+            }));
+        } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
+      });
+
+      try {
+        this.homey.flow.getActionCard('switch_4gang_turn_on_all')
+          .registerRunListener(this._safeAction(async (args) => {
+            for (const cap of caps) {
+              if (args.device.hasCapability(cap)) await args.device.triggerCapabilityListener(cap, true);
+            }
+          }));
+      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
+
+      try {
+        this.homey.flow.getActionCard('switch_4gang_turn_off_all')
+          .registerRunListener(this._safeAction(async (args) => {
+            for (const cap of caps) {
+              if (args.device.hasCapability(cap)) await args.device.triggerCapabilityListener(cap, false);
+            }
+          }));
+      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
+
+      this.log('4-Gang Switch Driver v5.12.0 ✅ Flow cards registered');
     } catch (err) {
       this.error('4-Gang Switch Driver flow card registration failed:', err.message);
     }
