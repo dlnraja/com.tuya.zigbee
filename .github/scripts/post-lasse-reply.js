@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 'use strict';
 // One-shot script to post corrective reply to Lasse_K forum #1515
-const{getForumAuth,fmtCk,FORUM}=require('./forum-auth');
-const{refreshCsrf}=require('./forum-auth');
+const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
+const{fetchWithRetry}=require('./retry-helper');
 
 const reply=`Hi @Lasse_K,
 
@@ -43,7 +43,7 @@ Sorry for the back-and-forth on this one!
     const h=auth.type==='apikey'
       ?{'Content-Type':'application/json','User-Api-Key':auth.key}
       :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
-    const r=await fetch(FORUM+'/posts',{method:'POST',headers:h,body:JSON.stringify({topic_id:140352,raw:reply,reply_to_post_number:1515})});
+    const authRef={auth};const r=await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:h,body:JSON.stringify({topic_id:140352,raw:reply,reply_to_post_number:1515})},{retries:3,label:'post',csrfRefresh:refreshCsrf,authRef});
     const d=await r.json();
     if(r.ok&&d.id){console.log('Posted reply id:',d.id)}
     else{console.error('Post failed:',r.status,d.errors||d)}

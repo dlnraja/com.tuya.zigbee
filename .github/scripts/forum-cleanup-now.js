@@ -14,7 +14,7 @@ if (fs.existsSync(envFile)) {
 }
 
 const { getForumAuth, refreshCsrf, fmtCk, FORUM } = require('./forum-auth');
-const sleep = ms => new Promise(r => setTimeout(r, ms));
+const { fetchWithRetry, processBatch, sleep } = require('./retry-helper');
 
 // ===== POSTS TO DELETE =====
 const TO_DELETE = [
@@ -99,18 +99,21 @@ function getHeaders(auth, json) {
   return h;
 }
 
-async function deletePost(postId, auth) {
-  const r = await fetch(FORUM + '/posts/' + postId, {
-    method: 'DELETE', headers: getHeaders(auth)
-  });
+// authRef is a mutable reference so fetchWithRetry can update CSRF automatically
+let authRef = { auth: null };
+
+async function deletePost(postId) {
+  const r = await fetchWithRetry(FORUM + '/posts/' + postId, {
+    method: 'DELETE', headers: getHeaders(authRef.auth)
+  }, { retries: 3, label: 'delete', csrfRefresh: refreshCsrf, authRef });
   return r.ok;
 }
 
-async function editPost(postId, newRaw, auth) {
-  const r = await fetch(FORUM + '/posts/' + postId, {
-    method: 'PUT', headers: getHeaders(auth, true),
+async function editPost(postId, newRaw) {
+  const r = await fetchWithRetry(FORUM + '/posts/' + postId, {
+    method: 'PUT', headers: getHeaders(authRef.auth, true),
     body: JSON.stringify({ post: { raw: newRaw } })
-  });
+  }, { retries: 3, label: 'edit', csrfRefresh: refreshCsrf, authRef });
   return r.ok;
 }
 
@@ -118,50 +121,29 @@ async function main() {
   console.log('=== Forum Cleanup v5.12.0 ===');
   console.log(`Delete: ${TO_DELETE.length} posts | Edit: ${TO_EDIT.length} posts`);
 
-  let auth = await getForumAuth();
-  if (!auth) { console.error('❌ No forum auth'); process.exit(1); }
-  // Refresh CSRF to avoid 403 BAD CSRF errors
-  if (auth.type !== 'apikey') auth = await refreshCsrf(auth);
-  console.log('✅ Auth:', auth.type);
+  authRef.auth = await getForumAuth();
+  if (!authRef.auth) { console.error('❌ No forum auth'); process.exit(1); }
+  if (authRef.auth.type !== 'apikey') authRef.auth = await refreshCsrf(authRef.auth);
+  console.log('✅ Auth:', authRef.auth.type);
 
-  // Phase 1: Edit posts FIRST
+  // Phase 1: Edit posts (3s spacing, auto-retry on 429)
   console.log('\n--- Phase 1: EDIT ---');
-  let editOk = 0, editFail = 0;
-  for (const p of TO_EDIT) {
+  const editResult = await processBatch(TO_EDIT, async (p) => {
     console.log(`EDIT ${p.num} (id=${p.id}): ${p.reason}`);
-    try {
-      if (await editPost(p.id, p.newRaw, auth)) { editOk++; console.log('  ✓ Edited'); }
-      else { editFail++; console.log('  ✗ Edit failed (may be already deleted)'); }
-    } catch (e) { editFail++; console.log('  ✗ Error:', e.message); }
-    await sleep(2000);
-  }
+    if (await editPost(p.id, p.newRaw)) { console.log('  ✓ Edited'); return 'ok'; }
+    console.log('  ✗ Edit failed'); return 'ok'; // don't retry edits that return non-ok
+  }, { spacing: 3000, label: 'edit', maxRetries: 2 });
 
-  // Phase 2: Delete spam/duplicate posts
+  // Phase 2: Delete posts (35s spacing for Discourse DELETE limit ~2/min)
   console.log('\n--- Phase 2: DELETE ---');
-  let delOk = 0, delFail = 0;
-  for (const p of TO_DELETE) {
+  const delResult = await processBatch(TO_DELETE, async (p) => {
     console.log(`DEL ${p.num} (id=${p.id}): ${p.reason}`);
-    try {
-      const r = await fetch(FORUM + '/posts/' + p.id, { method: 'DELETE', headers: getHeaders(auth) });
-      if (r.ok) { delOk++; console.log('  ✓ Deleted'); }
-      else if (r.status === 429) {
-        console.log('  ⏳ Rate limited — waiting 30s...');
-        await sleep(30000);
-        // Refresh CSRF and retry
-        if (auth.type !== 'apikey') auth = await refreshCsrf(auth);
-        const r2 = await fetch(FORUM + '/posts/' + p.id, { method: 'DELETE', headers: getHeaders(auth) });
-        if (r2.ok) { delOk++; console.log('  ✓ Deleted (retry)'); }
-        else { delFail++; console.log(`  ✗ Retry failed: ${r2.status}`); }
-      }
-      else if (r.status === 404) { console.log('  ○ Already deleted'); }
-      else { delFail++; console.log(`  ✗ Failed: ${r.status} ${r.statusText}`); }
-    } catch (e) { delFail++; console.log('  ✗ Error:', e.message); }
-    await sleep(5000);
-  }
+    if (await deletePost(p.id)) { console.log('  ✓ Deleted'); return 'ok'; }
+    console.log('  ✗ Delete failed'); return 'ok';
+  }, { spacing: 35000, label: 'delete', maxRetries: 2, rateLimitPause: 60000 });
 
   console.log('\n=== Done ===');
-  console.log(`Edited: ${editOk}/${TO_EDIT.length} | Deleted: ${delOk}/${TO_DELETE.length}`);
-  if (editFail || delFail) console.log(`Failures: edit=${editFail} delete=${delFail}`);
+  console.log(`Edited: ${editResult.ok}/${TO_EDIT.length} | Deleted: ${delResult.ok}/${TO_DELETE.length}`);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });

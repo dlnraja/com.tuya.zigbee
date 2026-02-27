@@ -9,6 +9,7 @@
  */
 'use strict';
 const fs = require('fs'), path = require('path');
+const { fetchWithRetry } = require('./retry-helper');
 const APP = 'com.dlnraja.tuya.zigbee';
 const PAT = process.env.HOMEY_PAT;
 const DRY = process.env.DRY_RUN === 'true';
@@ -25,7 +26,7 @@ async function apiFetch(url, method, headers, body) {
   const opts = { method, headers: { ...headers } };
   if (body) opts.body = JSON.stringify(body);
   try {
-    const r = await fetch(url, opts);
+    const r = await fetchWithRetry(url, opts, { retries: 3, label: 'athom' });
     const t = await r.text();
     let d; try { d = JSON.parse(t); } catch { d = t; }
     return { ok: r.ok, status: r.status, data: d };
