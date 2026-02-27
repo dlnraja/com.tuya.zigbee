@@ -2,8 +2,8 @@ const fs=require('fs'),path=require('path');
 const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const SKIP=['dlnraja','system','discobot'];
-const MAX_REPLIES_TOTAL=2,DELAY=30000;
-const REPLY_COOLDOWN_MS=3600000; // 1h min between replies to same topic
+const MAX_REPLIES_TOTAL=1,DELAY=30000;
+const REPLY_COOLDOWN_MS=14400000; // 4h min between replies to same topic
 const SIMILARITY_THRESHOLD=0.6; // block if reply >60% similar to recent post
 const STATE=path.join(__dirname,'..','state','forum-state.json');
 const DDIR=path.join(__dirname,'..','..','drivers');
