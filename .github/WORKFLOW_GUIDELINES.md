@@ -95,14 +95,27 @@ After `getForumAuth()`, ALWAYS call `refreshCsrf()` or all POST/PUT/DELETE get 4
 ### 9. Large state files
 `comprehensive-scan.json` (~22MB) is in `.gitignore`. Always `git reset HEAD` if staged.
 
-### 10. REPLY_TOPICS — CRITICAL
-**Bot must ONLY reply on T140352** (our own thread). NEVER post on other people's threads.
+### 10. REPLY_TOPICS — CRITICAL (updated v5.12.14)
+**Bot must ONLY post on T140352** (our own thread). NEVER post on other people's threads.
 ```yaml
 env:
   REPLY_TOPICS: "140352"
 ```
-Enforced in: `forum-responder.js` (default='140352'), `forum-respond-requests.js` (REPLY_TOPIC guard).
-All 5 YML workflows that call forum-responder explicitly set `REPLY_TOPICS: "140352"`.
+**ALL scripts that post to forum — verified T140352 only:**
+| Script | Guard |
+|--------|-------|
+| `forum-responder.js` | `REPLY_TOPICS` env (default='140352') |
+| `forum-respond-requests.js` | `REPLY_TOPIC` env + skip guard |
+| `post-forum-update.js` | `.filter(t=>t===140352)` hardcode |
+| `post-lasse-reply.js` | `topic_id:140352` hardcode |
+| `update-forum-first-post.js` | `TOPIC=140352` hardcode |
+| `forum-updater.js` | `TOPIC=140352` hardcode |
+| `monthly-comprehensive.js` | `postToForum(140352,...)` |
+| `github-issue-manager.js` | `topic_id:140352` hardcode |
+
+**BUG FIXED v5.12.14:** `post-forum-update.js` had default `FORUM_TOPICS='140352,26439,146735'`
+which caused bot to post release updates on OTHER people's threads (T26439, T146735).
+Fix: hardcoded `.filter(t=>t===140352)` safety net — even if env overridden, only T140352 is used.
 
 ### 11. Auto-reopen chain
 When user comments on closed issue/PR → `auto-reopen-on-comment.yml` reopens it →
