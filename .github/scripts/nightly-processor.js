@@ -6,7 +6,7 @@ const GH='https://api.github.com';
 const REPOS=['dlnraja/com.tuya.zigbee','JohanBendz/com.tuya.zigbee'];
 const TOPICS=[140352,26439,146735,89271,54018,12758,85498,7386,93716,4498,145893,82165];
 const SKIP=['dlnraja','system','discobot'];
-const MAX_REPLIES=8;
+const MAX_REPLIES=3;
 const ROOT=path.join(__dirname,'..','..'),DDIR=path.join(ROOT,'drivers');
 const STATE=path.join(__dirname,'..','state','nightly-state.json');
 const DOCS=path.join(ROOT,'docs');
@@ -182,6 +182,10 @@ async function processGitHub(state,idx,pidx,appVersion,dryRun){
         }
       }
       if(!reply)continue;
+      // Dedup: check if dlnraja already commented on this issue
+      const existingComments=await ghFetch(GH+'/repos/'+repo+'/issues/'+iss.number+'/comments?per_page=50');
+      const alreadyCommented=existingComments&&existingComments.some(c=>c.user?.login==='dlnraja');
+      if(alreadyCommented){console.log('    Skipping '+key+' (already commented)');processed.add(key);continue;}
       results.push({repo,number:iss.number,user:iss.user?.login,fps:fps.mfr,title:iss.title,response:reply.substring(0,300),model});
       if(!dryRun){
         const posted=await ghPost(GH+'/repos/'+repo+'/issues/'+iss.number+'/comments',{body:reply});
