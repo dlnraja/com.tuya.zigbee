@@ -519,8 +519,10 @@ jobs:
           echo "| 12 | Validate + Publish | ${{ steps.pub.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 13 | Promote to Test | ${{ steps.promote_node.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 14 | Forum Update | — |" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| 10b2 | Implement Fork FPs | ${{ steps.impl_fork_fps.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10b3 | Forum Spam Scan | ${{ steps.spam_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10b4 | Forum Cleanup Edit | ${{ steps.forum_cleanup_edit.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Total: 33 automation steps** | [Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee) | [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload reports

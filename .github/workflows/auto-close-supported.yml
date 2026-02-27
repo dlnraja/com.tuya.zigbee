@@ -9,7 +9,7 @@ name: "Batch Close & Respond All"
 
 on:
   schedule:
-    - cron: '45 3 * * *'    # Daily 03:45 UTC
+    - cron: '15 4 * * *'    # Daily 04:15 UTC (was 03:45, conflicted with daily-promote-to-test)
     - cron: '0 15 * * 0'    # Sunday 15:00 UTC (weekly deep scan)
   workflow_dispatch:
     inputs:
