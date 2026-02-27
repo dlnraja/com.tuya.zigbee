@@ -1,55 +1,25 @@
 {
-  "timestamp": "2026-02-27T10:51:02.663Z",
-  "count": 5,
+  "timestamp": "2026-02-27T19:24:33.401Z",
+  "count": 8,
   "byType": {
     "forum_message": 0,
     "homey_system": 0,
-    "interview": 1,
-    "diagnostic": 0,
+    "interview": 0,
+    "diagnostic": 3,
     "bug_report": 0,
     "github": 1,
     "changelog": 0,
-    "device_issue": 2,
+    "device_issue": 3,
     "general": 1
   },
   "newFingerprints": [],
   "diagnostics": [
     {
-      "id": "19c9e0b7318e134c",
-      "type": "interview",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "Hartmut Dunker <notifications@athom.discoursemail.com>",
-      "date": "Fri, 27 Feb 2026 07:41:15 +0000",
-      "fps": {
-        "mfr": [
-          "_TZ3002_pzao9ls1"
-        ],
-        "pid": [
-          "TS0726"
-        ]
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [
-        {
-          "fingerprint": "_TZ3002_pzao9ls1",
-          "supported": true,
-          "drivers": [
-            "switch_4gang"
-          ]
-        }
-      ],
-      "ghInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "19c9eb0ef631900b",
-      "type": "device_issue",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "Nicolas <notifications@athom.discoursemail.com>",
-      "date": "Fri, 27 Feb 2026 10:42:01 +0000",
+      "id": "19ca080681b211b6",
+      "type": "diagnostic",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Fri, 27 Feb 2026 19:08:15 +0000",
       "fps": {
         "mfr": [],
         "pid": []
@@ -63,11 +33,11 @@
       "appVersion": null
     },
     {
-      "id": "19c9ea5c10c5a04e",
-      "type": "device_issue",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "Nicolas <notifications@athom.discoursemail.com>",
-      "date": "Fri, 27 Feb 2026 10:29:48 +0000",
+      "id": "19ca07dfba71f6d1",
+      "type": "diagnostic",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Fri, 27 Feb 2026 19:05:36 +0000",
       "fps": {
         "mfr": [],
         "pid": []
@@ -81,46 +51,42 @@
       "appVersion": null
     },
     {
-      "id": "19c9e5c89abdb906",
+      "id": "19c9fbcf75d63dde",
+      "type": "diagnostic",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Fri, 27 Feb 2026 15:34:46 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c9fc57b3cf92eb",
       "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] Device Request - _TZE200_xlppj4f5- TS0601 - Immax Neo smart water timer (Issue #135)",
-      "from": "Domingoso <notifications@github.com>",
-      "date": "Fri, 27 Feb 2026 01:09:47 -0800",
+      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [RSH-HS03] - _TZE284_9ern5sfh | TS0601 (Issue #1328)",
+      "from": "AGabriel <notifications@github.com>",
+      "date": "Fri, 27 Feb 2026 07:44:01 -0800",
       "fps": {
-        "mfr": [
-          "_TZE200_xlppj4f5"
-        ],
-        "pid": [
-          "TS0601"
-        ]
+        "mfr": [],
+        "pid": []
       },
-      "errs": [
-        "in library TuyaSpecificClusterDevice.js where is missing writeInteger function i"
-      ],
-      "devices": [
-        "for",
-        "had",
-        "again"
-      ],
-      "xref": [
-        {
-          "fingerprint": "_TZE200_xlppj4f5",
-          "supported": true,
-          "drivers": [
-            "valve_irrigation"
-          ]
-        }
-      ],
+      "errs": [],
+      "devices": [],
+      "xref": [],
       "ghInfo": {
-        "issueNum": "135",
+        "issueNum": "1328",
         "action": "commented",
         "fps": {
-          "mfr": [
-            "_TZE200_xlppj4f5"
-          ],
-          "pid": [
-            "TS0601"
-          ]
+          "mfr": [],
+          "pid": []
         },
         "isNew": false
       },
@@ -129,11 +95,65 @@
       "appVersion": null
     },
     {
-      "id": "19c9dbbd9933f8dd",
+      "id": "19c9f71b1ea26261",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "Nicolas <notifications@athom.discoursemail.com>",
+      "date": "Fri, 27 Feb 2026 14:12:33 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c9f23b4761d8c1",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "Nicolas <notifications@athom.discoursemail.com>",
+      "date": "Fri, 27 Feb 2026 12:47:23 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c9ee9d9065f5b5",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "Sven <notifications@athom.discoursemail.com>",
+      "date": "Fri, 27 Feb 2026 11:44:10 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c9ebc7998b56e9",
       "type": "general",
       "subj": "[Homey Community Forum] [Apps] [APP] Tuya - Smart Life. Smart Living",
-      "from": "Robert Klep <notifications@athom.discoursemail.com>",
-      "date": "Fri, 27 Feb 2026 06:14:19 +0000",
+      "from": "Tapio Heiskanen <notifications@athom.discoursemail.com>",
+      "date": "Fri, 27 Feb 2026 10:54:37 +0000",
       "fps": {
         "mfr": [],
         "pid": []
