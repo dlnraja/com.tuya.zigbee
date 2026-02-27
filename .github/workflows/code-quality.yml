@@ -73,9 +73,9 @@ jobs:
       - name: 🔍 Deep Bug Checks
         run: |
           echo "### Deep Checks" >> $GITHUB_STEP_SUMMARY
-          BAD=$(grep -rl "require.*lib/TuyaZigbeeDevice'" drivers/ --include="*.js" 2>/dev/null | wc -l)
+          BAD=$(grep -rl "require.*lib/TuyaZigbeeDevice'" drivers/ --include="*.js" 2>/dev/null | wc -l || true)
           [ "$BAD" -gt 0 ] && echo "❌ Wrong TuyaZigbeeDevice path ($BAD files)" >> $GITHUB_STEP_SUMMARY || echo "✅ Import paths OK" >> $GITHUB_STEP_SUMMARY
-          DUP=$(grep -rohE '"_T[^"]+"' drivers/*/driver.compose.json 2>/dev/null | sort | uniq -d | wc -l)
+          DUP=$(grep -rohE '"_T[^"]+"' drivers/*/driver.compose.json 2>/dev/null | sort | uniq -d | wc -l || true)
           [ "$DUP" -gt 0 ] && echo "⚠️ $DUP duplicate fingerprints across drivers" >> $GITHUB_STEP_SUMMARY || echo "✅ No duplicate FPs" >> $GITHUB_STEP_SUMMARY
 
       - name: 📊 Stats
