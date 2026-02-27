@@ -9,7 +9,9 @@ const BOT_TAG='dlnraja bot';
 const DRY=process.env.DRY_RUN==='true';
 const S=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
 const LF=process.env.LAST_RESPOND_FILE||'/tmp/last_forum_respond.txt';
-const TOPICS=[140352,26439,146735,89271,54018,12758,85498];
+const SCAN_TOPICS=[140352,26439,146735,89271,54018,12758,85498];
+// IMPORTANT: Only reply on OUR OWN thread (140352). Never post on other people's threads!
+const REPLY_TOPIC=parseInt(process.env.REPLY_TOPIC||'140352',10);
 const APP='https://homey.app/a/com.dlnraja.tuya.zigbee/test/';
 
 async function reply(tid,raw,auth){
@@ -29,7 +31,7 @@ async function main(){
   const fps=loadFingerprints();const ver=require(path.join(process.cwd(),'app.json')).version;
   let lastId=0;if(fs.existsSync(LF))lastId=parseInt(fs.readFileSync(LF,'utf8').trim())||0;
   let ct=0;
-  for(const T of TOPICS){
+  for(const T of SCAN_TOPICS){
     try{
       const r0=await fetchWithRetry(FORUM+'/t/'+T+'.json',{},{retries:3,label:'forumTopic'});
       if(!r0.ok)continue;
@@ -54,6 +56,7 @@ async function main(){
           if(found.length)msg+='**Already supported** in v'+ver+': '+found.join(', ')+'\n\n';
           if(missing.length)msg+='**Not yet supported:** '+missing.join(', ')+'\nLogged for next release.\n\n';
           msg+='[Install test version]('+APP+')\n\n*Auto-response by dlnraja bot*';
+          if(T!==REPLY_TOPIC){console.log('  [SCAN-ONLY] T'+T+' #'+p.post_number+' found FPs but not our thread, skipping reply');continue;}
           if(DRY){console.log('[DRY] Would reply to #'+p.post_number+' in topic '+T);ct++;}
           else{try{if(auth.type==='session')await refreshCsrf(auth);await reply(T,msg,auth);ct++;console.log('Replied to post',p.post_number,'in topic',T);}catch(e){console.error('Reply fail:',e.message);}}
           if(p.id>lastId)lastId=p.id;
