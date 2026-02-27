@@ -33,8 +33,8 @@ async function scan(tid){
     const pp=(await r2.json()).post_stream?.posts||[];
     for(const p of pp){
       if(p.username!==USER)continue;
-      const raw=(p.raw||'').trim();
-      if(raw===BLANK){console.log('  #'+p.post_number+' already blanked, skip');continue;}
+      const text=(p.cooked||'').replace(/<[^>]+>/g,'').trim();
+      if(text==='(message removed)'||text==='_(message removed)_'){console.log('  #'+p.post_number+' already blanked, skip');continue;}
       found.push({id:p.id,num:p.post_number,preview:(p.cooked||'').replace(/<[^>]+>/g,' ').trim().substring(0,80)});
     }
   }
@@ -46,17 +46,19 @@ async function main(){
   console.log(`=== DELETE All Posts on Wrong Threads === ${DRY?'DRY':'LIVE'}`);
   let auth=null;
   if(!DRY){auth=await getForumAuth();if(!auth){console.error('No auth');process.exit(1);}}
-  let deleted=0;
+  let deleted=0,batch=0;
   for(const tid of TOPICS){
     const posts=await scan(tid);
     for(const p of posts){
       console.log(`  T${tid}#${p.num} id=${p.id} "${p.preview}"`);
-      if(DRY){console.log('    [DRY] would delete');continue;}
+      if(DRY){console.log('    [DRY] would blank');continue;}
+      if(batch>=3){console.log('    --- pause 5min ---');batch=0;await sleep(300000);}
       try{
         if(auth.type==='session')await refreshCsrf(auth);
         await sleep(EDIT_SPACING);
-        const r=await fetchWithRetry(`${FORUM}/posts/${p.id}`,{method:'PUT',headers:hdr(auth,true),body:JSON.stringify({post:{raw:BLANK}})},{retries:1,maxDelay:30000,label:'edit'});
-        if(r.ok){console.log('    BLANKED');deleted++;}
+        const r=await fetch(`${FORUM}/posts/${p.id}`,{method:'PUT',headers:hdr(auth,true),body:JSON.stringify({post:{raw:BLANK}})});
+        if(r.ok){console.log('    BLANKED');deleted++;batch++;}
+        else if(r.status===429){console.log('    429 pause 5min');await sleep(300000);batch=0;}
         else console.log('    FAIL:',r.status);
       }catch(e){console.log('    ERR:',e.message);}
     }
