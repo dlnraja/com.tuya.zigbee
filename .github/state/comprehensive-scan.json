@@ -1,12 +1,12 @@
 {
-  "date": "2026-02-27T15:27:46.377Z",
+  "date": "2026-02-27T20:56:06.390Z",
   "local": {
     "drivers": 143,
     "fps": 4178
   },
   "forkScan": {
-    "filesScanned": 4721,
-    "newFPs": 142132
+    "filesScanned": 4746,
+    "newFPs": 142142
   },
   "upstream": {
     "prs": 0,
@@ -852806,6 +852806,66 @@
     {
       "mfr": "_TZ3000_*",
       "driver": "switch_wall_7gang",
+      "fork": "rsalinger/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
+      "mfr": "_TZ3000_*",
+      "driver": "switch_wall_8gang",
+      "fork": "rsalinger/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
+      "mfr": "lumi.ctrl_ln1",
+      "driver": "switch_wall_8gang_smart",
+      "fork": "rsalinger/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
+      "mfr": "lumi.ctrl_ln1",
+      "driver": "switch_wireless",
+      "fork": "rsalinger/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
+      "mfr": "lumi.ctrl_ln1",
+      "driver": "switch_wireless_1gang",
+      "fork": "rsalinger/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
+      "mfr": "lumi.ctrl_ln1",
+      "driver": "switch_wireless_2gang",
+      "fork": "rsalinger/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
+      "mfr": "lumi.ctrl_ln1",
+      "driver": "switch_wireless_4button_alt",
+      "fork": "rsalinger/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
+      "mfr": "lumi.ctrl_ln1",
+      "driver": "switch_wireless_4gang",
+      "fork": "rsalinger/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
+      "mfr": "lumi.ctrl_ln1",
+      "driver": "switch_wireless_5button",
+      "fork": "rsalinger/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
+      "mfr": "lumi.ctrl_ln1",
+      "driver": "switch_wireless_6gang",
+      "fork": "rsalinger/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
+      "mfr": "_TYST11_KGbxAXL2",
+      "driver": "thermostat_trv_advanced",
       "fork": "rsalinger/com.tuya.zigbee",
       "branch": "master"
     }

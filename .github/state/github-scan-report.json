@@ -1,8 +1,57 @@
 {
-  "timestamp": "2026-02-27T15:07:30.356Z",
+  "timestamp": "2026-02-27T20:38:23.359Z",
   "appVersion": "5.11.25",
   "findings": {
     "issues": [
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 128,
+        "title": "Garagedoor controller",
+        "user": "Wuma68",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE204_nklqjk62",
+            "drivers": [
+              "garage_door"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/128",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 110,
+        "title": "unknown zigbee-device",
+        "user": "Pollepa",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3210_w0qqde0g",
+            "drivers": [
+              "plug_energy_monitor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_w0qqde0g",
+            "drivers": [
+              "plug_energy_monitor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_gjnozsaz",
+            "drivers": [
+              "button_emergency_sos",
+              "plug_energy_monitor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/110",
+        "state": "open",
+        "imageAnalysis": null
+      },
       {
         "repo": "dlnraja/com.tuya.zigbee",
         "number": 135,
@@ -95,15 +144,125 @@
         "imageAnalysis": null
       },
       {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 139,
-        "title": "[Auto] 1 new fingerprints from forks",
-        "user": "github-actions[bot]",
-        "newFPs": [
-          "_TZE20X_xxxxxxxx"
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1343,
+        "title": "Device Request - 10G 4 in 1 human motionsensor  - _TZE200_rhgsbacq / TS0601",
+        "user": "cvh1111",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE200_rhgsbacq",
+            "drivers": [
+              "presence_sensor_radar"
+            ]
+          }
         ],
-        "existingFPs": [],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/139",
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1343",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1345,
+        "title": "Device Request - AVATTO Smart thermostat WT198 - _TZE284_xnbkhhdr / TS0601",
+        "user": "Nono-3ric",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE284_xnbkhhdr",
+            "drivers": [
+              "thermostat_tuya_dp"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1345",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1347,
+        "title": "Support request for multiple Tuya sensors (Smoke, Water, Rain, Radar, SOS)",
+        "user": "azkysmarthome",
+        "newFPs": [
+          "_TZE204_gkfb"
+        ],
+        "existingFPs": [
+          {
+            "fp": "_TZE284_6ycgarab",
+            "drivers": [
+              "smoke_detector_advanced"
+            ]
+          },
+          {
+            "fp": "_TZE200_u6x1zyv2",
+            "drivers": [
+              "climate_sensor",
+              "rain_sensor"
+            ]
+          },
+          {
+            "fp": "_TZE204_dwcarsat",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZE200_vrcfo4i0",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_zutizvyk",
+            "drivers": [
+              "contact_sensor"
+            ]
+          },
+          {
+            "fp": "_TZE204_gkfbdvyx",
+            "drivers": [
+              "presence_sensor_radar"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1347",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1344,
+        "title": "Bug report - [Short description] _TZ3000_bgsigers - TS0201 sensors stopped working",
+        "user": "fjvs1467",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_bgsigers",
+            "drivers": [
+              "climate_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1344",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1328,
+        "title": "Device Request - [RSH-HS03] - _TZE284_9ern5sfh | TS0601",
+        "user": "AGabriel",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE284_9ern5sfh",
+            "drivers": [
+              "climate_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1328",
         "state": "open",
         "imageAnalysis": null
       },
@@ -313,5 +472,5 @@
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\n\n1. **Immax Neo Smart Water Timer** (_TZE200_xlppj4f5_):\n   - **Request by**: Domingoso\n   - **Status**: Open\n   - **URL**: [Issue #135](https://github.com/dlnraja/com.tuya.zigbee/issues/135)\n\n2. **Wenzhi Smart Human Presence Sensor & Relay** (_TZE204_clrdrnya_):\n   - **Request by**: dmz-86\n   - **Status**: Open\n   - **URL**: [Issue #1142](https://github.com/JohanBendz/com.tuya.zigbee/issues/1142)\n\n## Fingerprints Already Supported\n\nThe following fingerprints are already supported by existing drivers:\n\n- **Valve Irrigation**: `_TZE200_xlppj4f5`, `_TZ3210_0jxeoadc`\n- **Curtain Motor**: `_TZE200_5zbp6j0u`, `_TZE200_nkoabg8w`, `_TZE200_xuzcvlku`, `_TZE200_4vobcgd3`, `_TZE200_nogaemzt`, `_TZE200_r0jdjrvi`, `_TZE200_pk0sfzvr`, `_TZE200_fdtjuw7u`, `_TZE200_zpzndjez`, `_TZE200_wmcdj3aq`\n- **Curtain Motor Tilt**: `_TZE200_nkoabg8w`, `_TZE200_xuzcvlku`, `_TZE200_nogaemzt`, `_TZE200_r0jdjrvi`, `_TZE200_zpzndjez`, `_TZE200_wmcdj3aq`\n- **Shutter Roller Controller**: `_TZE200_wmcdj3aq`\n- **Motion Sensor Radar MMWave**: `_TZE204_clrdrnya`\n\n## Fingerprints from Forks to Integrate\n\n1. **New Fingerprint from Forks**:\n   - **Fingerprint**: `_TZE20X_xxxxxxxx`\n   - **Status**: Open\n   - **URL**: [Issue #139](https://github.com/dlnraja/com.tuya.zigbee/issues/139)\n\n## PRs with Useful Changes\n\n1. **Fix HOBEIAN 10G Radar Sensor**:\n   - **Fingerprint**: `_TZE200_rhgsbacq`\n   - **Changes**: IAS motion conflict fix, battery read, DP corrections\n   - **Status**: Closed (not merged)\n   - **URL**: [PR #125](https://github.com/dlnraja/com.tuya.zigbee/pull/125)\n\n2. **Support for _TZ3000_ysdv91bk**:\n   - **Fingerprint**: `_TZ3000_ysdv91bk`\n   - **Status**: Closed (not merged)\n   - **URL**: [PR #118](https://github.com/dlnraja/com.tuya.zigbee/pull/118)\n\n3. **Bseed 1-Gang Switch with Physical Button Detection**:\n   - **Fingerprint**: `_TZ3000_blhvsaqf`\n   - **Status**: Closed (not merged)\n   - **URL**: [PR #116](https://github.com/dlnraja/com.tuya.zigbee/pull/116)\n\n4. **Separate Driver for Tuya/Bseed Touch Dimmer**:\n   - **Fingerprints**: `_TZE200_3p5ydos3`, `_TZE204_n9ctkb6j`\n   - **Status**: Merged\n   - **URL**: [PR #111](https://github.com/dlnraja/com.tuya.zigbee/pull/111)\n\n5. **Added _TZE204_n9ctkb6j, Lower/Upper Case ID**:\n   - **Fingerprint**: `_TZE204_n9ctkb6j`\n   - **Status**: Merged\n   - **URL**: [PR #106](https://github.com/dlnraja/com.tuya.zigbee/pull/106)\n\n6. **Make Fingerbot (_TZ3210_j4pdtz9v) Work**:\n   - **Fingerprint**: `_TZ3210_j4pdtz9v`\n   - **Status**: Open\n   - **URL**: [PR #1065](https://github.com/JohanBendz/com.tuya.zigbee/pull/1065)\n\n7. **RGB LED Strip Controller, _TZ3210_eejm8dcr / TS0505B**:\n   - **Fingerprint**: `_TZ3210_eejm8dcr`\n   - **Status**: Open\n   - **URL**: [PR #1075](https://github.com/JohanBendz/com.tuya.zigbee/pull/1075)\n\n8. **MOES 6 Gang Scene+Switch Driver**:\n   - **Fingerprint**: `_TZ3002_vaq2bfcu`\n   - **Status**: Open\n   - **URL**: [PR #1106](https://github.com/JohanBendz/com.tuya.zigbee/pull/1106)\n\n9. **Smartplug _TZ3000_ww6drja5**:\n   - **Fingerprint**: `_TZ3000_ww6drja5`\n   - **Status**: Open\n   - **URL**: [PR #1118](https://github.com/JohanBendz/com.tuya.zigbee/pull/1118)\n\n10. **PIR 24GHz Radar**:\n    - **Fingerprint**: `_TZE200_kb5noeto`\n    - **Status**: Open\n    - **URL**: [PR #1122](https://github.com/JohanBendz/com.tuya.zigbee/pull/1122)\n\n11. **GIRIER Contact Sensor & Benexmart 12V RGBCW Dimmable Spotlight**:\n    - **Fingerprint**: `_TZ3000_c8zfad4a`\n    - **Status**: Open\n    - **URL**: [PR #1137](https://github.com/JohanBendz/com.tuya.zigbee/pull/1137)\n\n12. **Tuya PIR Sensor TS0202**:\n    - **Fingerprint**: `_TZ3000_c8ozah8n`\n    - **Status**: Open\n    - **URL**: [PR #1166](https://github.com/JohanBendz/com.tuya.zigbee/pull/1166)\n\n13. **Add _TZE204_bjzrowv2**:\n    - **Fingerprint**: `_TZE204_bjzrowv2`\n    - **Status**: Open\n    - **URL**: [PR #1195](https://github.com/JohanBendz/com.tuya.zigbee/pull/1195)\n\n14. **Add _TZ3000_kfu8zapd**:\n    - **Fingerprint**: `_TZ3000_kfu8zapd`\n    - **Status**: Open\n    - **URL**: [PR #1209](https://github.com/JohanBendz/com.tuya.zigbee/pull/1209)\n\n15. **Garage Door Controller and Combined Fan/Light Drivers**:\n    - **Fingerprints**: `_TZE204_lawxy9e2`, `_TZE204_nklqjk62`\n    - **Status**: Open\n    - **URL**: [PR #1210](https://github.com/JohanBendz/com.tuya.zigbee/pull/1210)\n\nThis summary provides a concise overview of the recent GitHub activity for the Universal Tuya Zigbee app, highlighting new device requests, supported fingerprints, fingerprints from forks, and useful PRs."
+  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests Found\n\n1. **Garage Door Controller** (Issue #128 by Wuma68)\n   - Fingerprint: `_TZE204_nklqjk62`\n   - Driver: `garage_door`\n\n2. **Unknown Zigbee Device** (Issue #110 by Pollepa)\n   - Fingerprints: `_TZ3210_w0qqde0g`, `_TZ3000_w0qqde0g`, `_TZ3000_gjnozsaz`\n   - Drivers: `plug_energy_monitor`, `button_emergency_sos`\n\n3. **Immax Neo Smart Water Timer** (Issue #135 by Domingoso)\n   - Fingerprint: `_TZE200_xlppj4f5`\n   - Drivers: `valve_irrigation`\n\n4. **10G 4 in 1 Human Motion Sensor** (Issue #1343 by cvh1111)\n   - Fingerprint: `_TZE200_rhgsbacq`\n   - Driver: `presence_sensor_radar`\n\n5. **AVATTO Smart Thermostat WT198** (Issue #1345 by Nono-3ric)\n   - Fingerprint: `_TZE284_xnbkhhdr`\n   - Driver: `thermostat_tuya_dp`\n\n6. **Multiple Tuya Sensors** (Issue #1347 by azkysmarthome)\n   - New Fingerprint: `_TZE204_gkfb`\n   - Existing Fingerprints: `_TZE284_6ycgarab`, `_TZE200_u6x1zyv2`, `_TZE204_dwcarsat`, `_TZE200_vrcfo4i0`, `_TZ3000_zutizvyk`, `_TZE204_gkfbdvyx`\n   - Drivers: `smoke_detector_advanced`, `climate_sensor`, `rain_sensor`, `contact_sensor`, `presence_sensor_radar`\n\n7. **RSH-HS03** (Issue #1328 by AGabriel)\n   - Fingerprint: `_TZE284_9ern5sfh`\n   - Driver: `climate_sensor`\n\n8. **Wenzhi Smart Human Presence Sensor & Relay** (Issue #1142 by dmz-86)\n   - Fingerprint: `_TZE204_clrdrnya`\n   - Driver: `motion_sensor_radar_mmwave`\n\n## Fingerprints Already Supported\n\n- **Garage Door Controller**: `_TZE204_nklqjk62`\n- **Unknown Zigbee Device**: `_TZ3210_w0qqde0g`, `_TZ3000_w0qqde0g`, `_TZ3000_gjnozsaz`\n- **Immax Neo Smart Water Timer**: `_TZE200_xlppj4f5`\n- **10G 4 in 1 Human Motion Sensor**: `_TZE200_rhgsbacq`\n- **AVATTO Smart Thermostat WT198**: `_TZE284_xnbkhhdr`\n- **Multiple Tuya Sensors**: `_TZE284_6ycgarab`, `_TZE200_u6x1zyv2`, `_TZE204_dwcarsat`, `_TZE200_vrcfo4i0`, `_TZ3000_zutizvyk`, `_TZE204_gkfbdvyx`\n- **RSH-HS03**: `_TZE284_9ern5sfh`\n- **Wenzhi Smart Human Presence Sensor & Relay**: `_TZE204_clrdrnya`\n\n## Fingerprints from Forks to Integrate\n\n1. **HOBEIAN 10G Radar Sensor** (PR #125 by michelhelsdingen)\n   - Fingerprint: `_TZE200_rhgsbacq`\n\n2. **Bseed 1-Gang Switch** (PR #116 by packetninja)\n   - Fingerprint: `_TZ3000_blhvsaqf`\n\n3. **Tuya/Bseed Touch Dimmer** (PR #111 by packetninja)\n   - Fingerprints: `_TZE200_3p5ydos3`, `_TZE204_n9ctkb6j`\n\n4. **Fingerbot** (PR #1065 by slicke)\n   - Fingerprint: `_TZ3210_j4pdtz9v`\n\n5. **RGB LED Strip Controller** (PR #1075 by mech78)\n   - Fingerprint: `_TZ3210_eejm8dcr`\n\n6. **MOES 6 Gang Scene+Switch** (PR #1106 by mkoslacz)\n   - Fingerprint: `_TZ3002_vaq2bfcu`\n\n7. **Smartplug** (PR #1118 by pbruining)\n   - Fingerprint: `_TZ3000_ww6drja5`\n\n8. **Motion Sensor 2 (PIR 24GHz Radar)** (PR #1122 by mikberg)\n   - Fingerprint: `_TZE200_kb5noeto`\n\n9. **GIRIER Contact Sensor & Benexmart Spotlight** (PR #1137 by antonhagg)\n   - Fingerprint: `_TZ3000_c8zfad4a`\n\n10. **Tuya PIR Sensor TS0202** (PR #1166 by chernals)\n    - Fingerprint: `_TZ3000_c8ozah8n`\n\n11. **Tuya Device** (PR #1195 by YuriEstevan)\n    - Fingerprint: `_TZE204_bjzrowv2`\n\n12. **Tuya Device** (PR #1209 by crimson7O)\n    - Fingerprint: `_TZ3000_kfu8zapd`\n\n## PRs with Useful Changes\n\n1. **Fix HOBEIAN 10G Radar Sensor** (PR #125 by michelhelsdingen)\n   - Fixes: IAS motion conflict, battery read, DP corrections.\n\n2. **Support for _TZ3000_ysdv91bk** (PR #118 by packetninja)\n   - Adds support for a specific fingerprint.\n\n3. **Add Support for Bseed 1-Gang Switch** (PR #116 by packetninja)\n   - Adds support with physical button detection.\n\n4. **Separate Driver for Tuya/Bseed Touch Dimmer** (PR #111 by packetninja)\n   - Adds a separate driver for the touch dimmer.\n\n5. **Add _TZE204_n9ctkb6j** (PR #106 by packetninja)\n   - Adds support for a specific fingerprint with lower/upper case ID.\n\n6. **Make Fingerbot Work** (PR #1065 by slicke)\n   - Fixes for the fingerbot device.\n\n7. **RGB LED Strip Controller** (PR #1075 by mech78)\n   - Fixes for the RGB LED strip controller.\n\n8. **MOES 6 Gang Scene+Switch Driver** (PR #1106 by mkoslacz)\n   - Initial version of the driver.\n\n9. **Smartplug Support** (PR #1118 by pbruining)\n   - Adds support for a specific smartplug.\n\n10. **Motion Sensor 2 (PIR 24GHz Radar)** (PR #1122 by mikberg)\n    - Adds support for the motion sensor.\n\n11. **GIRIER Contact Sensor & Benexmart Spotlight** (PR #1137 by antonhagg)\n    - Adds support for the contact sensor and spotlight.\n\n12. **Tuya PIR Sensor TS0202** (PR #1166 by chernals)\n    - Adds support for the Tuya PIR sensor.\n\n13. **Add _TZE204_bjzrowv2** (PR #1195 by YuriEstevan)\n    - Adds support for a specific fingerprint.\n\n14. **Add _TZ3000_kfu8zapd** (PR #1209 by crimson7O)\n    - Adds support for a specific fingerprint.\n\nThis summary provides a concise overview of the recent GitHub activity for the Universal Tuya Zigbee app, highlighting new device requests, supported fingerprints, fingerprints from forks to integrate, and useful PRs."
 }

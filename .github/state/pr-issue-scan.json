@@ -1,5 +1,5 @@
 {
-  "date": "2026-02-27T15:06:34.730Z",
+  "date": "2026-02-27T20:37:04.986Z",
   "local": {
     "drivers": 143,
     "fps": 4178
@@ -21173,10 +21173,11 @@
       {
         "number": 110,
         "title": "unknown zigbee-device",
-        "state": "closed",
+        "state": "open",
         "user": "Pollepa",
         "labels": [
-          "device-request"
+          "device-request",
+          "reopened-by-user"
         ],
         "fps": [
           "_TZ3210_w0qqde0g"

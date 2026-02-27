@@ -99,7 +99,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.25** | v5.11.25: Fixed voltage divisor issue in driver #137, improving accuracy of voltage readings., Rewrote dashboard fall... |
+| **v5.11.25** | v5.11.25: Fixed voltage divisor in driver #137 â€” readings were off by a factor of 10 on some plug variants., Dashboar... |
 | **v5.11.24** | Universal Tuya Zigbee v5.11.24 introduces core fixes, enhanced automation, and updated device fingerprints, ensuring ... |
 | **v5.11.23** | Universal Tuya Zigbee v5.11.23 introduces bug fixes, workflow improvements, and enhanced forum responsiveness, ensuri... |
 | **v5.11.22** | Universal Tuya Zigbee v5.11.22 introduces enhanced forum responsiveness, improved workflow resilience, and updates to... |
