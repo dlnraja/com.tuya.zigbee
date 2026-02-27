@@ -51,10 +51,11 @@ async function callAI(text,sysPrompt,opts={}){
       if(!cbOk('gh-'+model))continue;
       try{
         console.log('  Trying GitHub Models ('+model+')...');
-        const r=await fetch('https://models.inference.ai.azure.com/chat/completions',{
+        const r=await fetchT('https://models.inference.ai.azure.com/chat/completions',{
           method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+ghToken},
           body:JSON.stringify({model,messages:[{role:'system',content:ghSys},{role:'user',content:ghText}],max_tokens:maxTokens,temperature:0.2})});
         if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'gh-'+model}}
+        if(r.status===429){console.log('  GitHub Models '+model+' 429, backoff...');await sleep(backoff(1));continue}
         else{const e=await r.text().catch(()=>'');console.log('  GitHub Models '+model+' failed:',r.status,e.substring(0,150))}
       }catch(e){console.log('  GitHub Models '+model+' error:',e.message);cbFail('gh-'+model,60000)}
     }
@@ -64,12 +65,12 @@ async function callAI(text,sysPrompt,opts={}){
   if(oaiKey){
     console.log('  Falling back to OpenAI...');
     try{
-      const r=await fetch('https://api.openai.com/v1/chat/completions',{
+      const r=await fetchT('https://api.openai.com/v1/chat/completions',{
         method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+oaiKey},
         body:JSON.stringify({model:'gpt-4o-mini',messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],
           max_tokens:maxTokens,temperature:0.2})});
       if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'gpt-4o-mini'}}
-      else{const e=await r.text().catch(()=>'');console.log('  OpenAI failed:',r.status,e.substring(0,150))}
+      if(r.status===429){console.log('  OpenAI 429, skipping');} else{const e=await r.text().catch(()=>'');console.log('  OpenAI failed:',r.status,e.substring(0,150))}
     }catch(e){console.log('  OpenAI error:',e.message)}
   }
   // Fallback to Groq (free, fast inference)
@@ -77,7 +78,7 @@ async function callAI(text,sysPrompt,opts={}){
   if(groqKey){
     console.log('  Falling back to Groq...');
     try{
-      const r=await fetch('https://api.groq.com/openai/v1/chat/completions',{
+      const r=await fetchT('https://api.groq.com/openai/v1/chat/completions',{
         method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+groqKey},
         body:JSON.stringify({model:'llama-3.3-70b-versatile',messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})});
       if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'llama-3.3-70b-groq'}}
@@ -89,7 +90,7 @@ async function callAI(text,sysPrompt,opts={}){
   if(hfKey){
     console.log('  Falling back to IBM Granite (HuggingFace)...');
     try{
-      const r=await fetch('https://router.huggingface.co/v1/chat/completions',{
+      const r=await fetchT('https://router.huggingface.co/v1/chat/completions',{
         method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+hfKey},
         body:JSON.stringify({model:'ibm-granite/granite-3.3-8b-instruct',messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})});
       if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'granite-3.3-8b'}}
@@ -101,7 +102,7 @@ async function callAI(text,sysPrompt,opts={}){
   if(mistralKey){
     console.log('  Falling back to Mistral...');
     try{
-      const r=await fetch('https://api.mistral.ai/v1/chat/completions',{
+      const r=await fetchT('https://api.mistral.ai/v1/chat/completions',{
         method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+mistralKey},
         body:JSON.stringify({model:'mistral-small-latest',messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})});
       if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'mistral-small'}}
@@ -113,7 +114,7 @@ async function callAI(text,sysPrompt,opts={}){
   if(orKey){
     console.log('  Falling back to OpenRouter...');
     try{
-      const r=await fetch('https://openrouter.ai/api/v1/chat/completions',{
+      const r=await fetchT('https://openrouter.ai/api/v1/chat/completions',{
         method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+orKey},
         body:JSON.stringify({model:'meta-llama/llama-3.3-8b-instruct:free',messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})});
       if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'openrouter-free'}}
@@ -149,7 +150,7 @@ async function callAI(text,sysPrompt,opts={}){
   if(aflKey){
     console.log('  Falling back to ApiFreeLLM...');
     try{
-      const r=await fetch('https://apifreellm.com/api/v1/chat',{
+      const r=await fetchT('https://apifreellm.com/api/v1/chat',{
         method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+aflKey},
         body:JSON.stringify({message:fullSysPrompt+'\n\n---\nUser message:\n'+text})});
       if(r.ok){const d=await r.json();if(d.success&&d.response)return{text:d.response.trim(),model:'apifreellm'}}
@@ -177,7 +178,7 @@ async function analyzeImage(imageUrl,prompt){
   const gemKey=process.env.GOOGLE_API_KEY;
   if(gemKey&&cbOk('gemini-vision')){
     for(let i=0;i<2;i++){if(i)await sleep(backoff(i));try{
-      const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+gemKey,{
+      const r=await fetchT('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+gemKey,{
         method:'POST',headers:{'Content-Type':'application/json'},
         body:JSON.stringify({contents:[{parts:[{text:prompt},{inlineData:{mimeType:'image/jpeg',data:b64}}]}],
           generationConfig:{temperature:0.2,maxOutputTokens:1024}})});
@@ -188,7 +189,7 @@ async function analyzeImage(imageUrl,prompt){
   const oaiKey=process.env.OPENAI_API_KEY;
   if(oaiKey){
     try{
-      const r=await fetch('https://api.openai.com/v1/chat/completions',{
+      const r=await fetchT('https://api.openai.com/v1/chat/completions',{
         method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+oaiKey},
         body:JSON.stringify({model:'gpt-4o-mini',messages:[{role:'user',content:[{type:'text',text:prompt},{type:'image_url',image_url:{url:imageUrl}}]}],
           max_tokens:1024})});

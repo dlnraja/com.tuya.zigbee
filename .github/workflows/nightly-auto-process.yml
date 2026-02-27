@@ -112,6 +112,7 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
+          REPLY_TOPICS: "140352"
         run: node .github/scripts/forum-responder.js
 
       - name: Forum Spam Scan

@@ -235,6 +235,7 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          REPLY_TOPICS: "140352"
         run: node .github/scripts/forum-responder.js
 
   gmail-diagnostics:
