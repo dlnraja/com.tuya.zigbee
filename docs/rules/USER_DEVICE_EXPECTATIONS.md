@@ -177,6 +177,12 @@
 
 <!-- NIGHTLY_START — Preserved from nightly-processor.js -->
 
+## Nightly Auto-Scan (2026-02-27)
+| User | Fingerprint(s) | Source | Date |
+|------|---------------|--------|------|
+| Hartmut_Dunker | `_TZ3002_pzao9ls1` | Forum #140352 post #1520 | Auto-scanned 2026-02-27 |
+
+
 ## Nightly Auto-Scan (2026-02-26)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|

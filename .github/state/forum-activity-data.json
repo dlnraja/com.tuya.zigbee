@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-02-26T20:25:42.194Z",
+  "timestamp": "2026-02-27T04:15:52.304Z",
   "username": "dlnraja",
   "summary": {
-    "postCount": 579,
+    "postCount": 581,
     "topicCount": 1,
     "likes": 64,
     "likesReceived": 195,
@@ -10,7 +10,7 @@
       {
         "id": 140352,
         "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "posts": 1509
+        "posts": 1513
       },
       {
         "id": 26439,
@@ -49,13 +49,67 @@
     {
       "id": 140352,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "posts": 1509,
-      "views": 13557,
-      "lastPosted": "2026-02-26T20:20:53.995Z",
+      "posts": 1513,
+      "views": 13568,
+      "lastPosted": "2026-02-27T03:27:05.296Z",
       "slug": "app-pro-universal-tuya-zigbee-device-app-test"
     }
   ],
   "activity": [
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1525,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Update — Universal Tuya Zigbee v5.11.25\nA new update is available on the Test channel. This version brings improvements, bug fixes, and enhanced device support based on community feedback. \n What’s New: \nUniversal Tuya Zigbee app v5.11.25 introduces enhanced forum interaction, improved fingerprint &hellip;",
+      "createdAt": "2026-02-27T03:27:05.296Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 146735,
+      "postNum": 186,
+      "title": "[APP] Tuya - Smart Life. Smart Living",
+      "excerpt": "@Wemo_Wemo, it sounds like you’re experiencing issues with your Tuya devices, specifically switches and fans. While I can’t assist with Tuya WiFi devices directly, I can help with Zigbee-related concerns. \nRegarding your Zigbee devices, if you have specific models in mind, please provide their manuf&hellip;",
+      "createdAt": "2026-02-26T23:07:46.522Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1524,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "@Hartmut_Dunker, I appreciate your patience as we work through the issues with your BSEED device. Since you’ve been re-pairing with each app update, it sounds like you’ve been diligent in troubleshooting. Unfortunately, without firmware updates from BSEED, we may be limited in what we can do on our &hellip;",
+      "createdAt": "2026-02-26T23:07:11.487Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 6,
+      "topicId": 146735,
+      "postNum": 185,
+      "title": "[APP] Tuya - Smart Life. Smart Living",
+      "excerpt": "Hi \nI am not having issues with Zigbee. Having issues with other Tuya devices such as switches and fans. \nThanks.",
+      "createdAt": "2026-02-26T21:21:23.063Z",
+      "username": "Wemo_Wemo"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1523,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Hi dylan, \nthank you for the really fast response! Unfortunately there seem to be no firmware updates from BSEED. With each update of your app I removed and re-paired the device to see if the issue is still present. \nThank’s a lot for your work! \nBest regards, Hartmut",
+      "createdAt": "2026-02-26T20:57:48.172Z",
+      "username": "Hartmut_Dunker"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1522,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Update — Universal Tuya Zigbee v5.11.25\nA new update is available on the Test channel. This version brings improvements, bug fixes, and enhanced device support based on community feedback. \n What’s New: \nv5.11.25: Fixed voltage divisor issue in driver #137, improving accuracy of voltage readings., &hellip;",
+      "createdAt": "2026-02-26T20:44:31.502Z",
+      "username": "dlnraja"
+    },
     {
       "type": 5,
       "topicId": 140352,
@@ -198,15 +252,6 @@
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
       "excerpt": "It seems that your button is not responding to any presses. To assist you better, could you please provide the manufacturerName of the device? This information will help us determine if it is supported by our app. \nAdditionally, please ensure that you are using the latest version of the Universal Tu&hellip;",
       "createdAt": "2026-02-26T14:39:30.883Z",
-      "username": "dlnraja"
-    },
-    {
-      "type": 5,
-      "topicId": 26439,
-      "postNum": 5405,
-      "title": "[APP][Pro] Tuya Zigbee App",
-      "excerpt": "It seems that your Zigbee door sensor from manufacturer _TZ3000_n2egfsli is indeed supported as a “contact_sensor”. To resolve the issue, please try the following steps: \n\nRemove the device from Homey.\nFactory reset the door sensor according to its manual.\nPair the device again, ensuring you select &hellip;",
-      "createdAt": "2026-02-26T14:39:13.891Z",
       "username": "dlnraja"
     },
     {
@@ -2710,55 +2755,42 @@
       "excerpt": "@dlnraja I see that you merged the last PR of the bseed panel with the “switch_1gang” driver. I completely understand keeping things unbranded (e.g Livolo and Aubess make similar panels). However, I’d like to propose a naming scheme based on electrical industry standards: \n\nwall_switch_1gang_1way - &hellip;",
       "createdAt": "2026-01-28T09:54:19.077Z",
       "username": "dlnraja"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 1254,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "gread idea, i will try to implement this standard on the the next version",
-      "createdAt": "2026-01-28T09:52:00.745Z",
-      "username": "dlnraja"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1253,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Hi Dylan Good morning , \nI’m @ version 915 now and readded my HOBEIAN Multisensor again finally no Distance anymore on the screen  but still no Battery, Temperature & Humidity data. \nDiagnostic code: add1366d-9538-4f8c-9ba4-1252034e5ce4 \n [1000021404] \nGood luck with fixing it and have a nice day, \n&hellip;",
-      "createdAt": "2026-01-28T09:28:00.223Z",
-      "username": "Peter_van_Werkhoven"
-    },
-    {
-      "type": 7,
-      "topicId": 140352,
-      "postNum": 1252,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "@dlnraja I see that you merged the last PR of the bseed panel with the “switch_1gang” driver. I completely understand keeping things unbranded (e.g Livolo and Aubess make similar panels). However, I’d like to propose a naming scheme based on electrical industry standards: \n\nwall_switch_1gang_1way - &hellip;",
-      "createdAt": "2026-01-28T08:47:59.508Z",
-      "username": "Attilla"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1251,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Ver.915. Watersensor installs but alarm still inactivated. Contact sensors still in reverse.",
-      "createdAt": "2026-01-28T08:24:26.434Z",
-      "username": "Lasse_K"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 1250,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "The LED backlight functionality is already properly implemented in HybridSwitchBase.js with backlight_mode setting that uses DP15 with values: off=0, normal=1, inverted=2 (Z2M compatible). All switch drivers (1-4 gang) have this setting in their driver.compose.json files. \nOn the next version",
-      "createdAt": "2026-01-28T08:10:33.193Z",
-      "username": "dlnraja"
     }
   ],
   "pms": [],
   "notifications": [
+    {
+      "type": 6,
+      "topicId": 151747,
+      "postNum": 1,
+      "data": {
+        "topic_title": "Post hidden by community flags",
+        "original_post_id": 714769,
+        "original_post_type": 1,
+        "original_username": "system",
+        "revision_number": null,
+        "display_username": "system",
+        "display_name": "system"
+      },
+      "read": false,
+      "createdAt": "2026-02-26T20:31:57.563Z"
+    },
+    {
+      "type": 6,
+      "topicId": 151746,
+      "postNum": 1,
+      "data": {
+        "topic_title": "Post hidden by community flags",
+        "original_post_id": 714768,
+        "original_post_type": 1,
+        "original_username": "system",
+        "revision_number": null,
+        "display_username": "system",
+        "display_name": "system"
+      },
+      "read": false,
+      "createdAt": "2026-02-26T20:31:32.947Z"
+    },
     {
       "type": 6,
       "topicId": 151737,
@@ -2777,19 +2809,35 @@
     },
     {
       "type": 2,
+      "topicId": 146735,
+      "postNum": 185,
+      "data": {
+        "topic_title": "[APP] Tuya - Smart Life. Smart Living",
+        "original_post_id": 714798,
+        "original_post_type": 1,
+        "original_username": "Wemo_Wemo",
+        "revision_number": null,
+        "display_username": "Wemo_Wemo",
+        "display_name": "Wemo Wemo"
+      },
+      "read": true,
+      "createdAt": "2026-02-26T21:21:23.070Z"
+    },
+    {
+      "type": 2,
       "topicId": 140352,
-      "postNum": 1520,
+      "postNum": 1523,
       "data": {
         "topic_title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "original_post_id": 714743,
+        "original_post_id": 714789,
         "original_post_type": 1,
         "original_username": "Hartmut_Dunker",
         "revision_number": null,
         "display_username": "Hartmut_Dunker",
         "display_name": "Hartmut Dunker"
       },
-      "read": false,
-      "createdAt": "2026-02-26T19:35:44.608Z"
+      "read": true,
+      "createdAt": "2026-02-26T20:57:48.195Z"
     },
     {
       "type": 5,
@@ -3668,54 +3716,6 @@
       },
       "read": true,
       "createdAt": "2026-01-28T21:19:06.458Z"
-    },
-    {
-      "type": 1,
-      "topicId": 140352,
-      "postNum": 1263,
-      "data": {
-        "topic_title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "original_post_id": 704032,
-        "original_post_type": 1,
-        "original_username": "Freddyboy",
-        "revision_number": null,
-        "display_username": "Freddyboy",
-        "display_name": ""
-      },
-      "read": true,
-      "createdAt": "2026-01-28T19:34:22.879Z"
-    },
-    {
-      "type": 1,
-      "topicId": 140352,
-      "postNum": 1262,
-      "data": {
-        "topic_title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "original_post_id": 703978,
-        "original_post_type": 1,
-        "original_username": "JJ10",
-        "revision_number": null,
-        "display_username": "JJ10",
-        "display_name": ""
-      },
-      "read": true,
-      "createdAt": "2026-01-28T17:05:36.161Z"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 713,
-      "data": {
-        "topic_title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "original_post_id": 687737,
-        "original_post_type": 1,
-        "original_username": "Vitalii",
-        "revision_number": null,
-        "display_username": "Vitalii",
-        "display_name": "Dylan Rajasekaram"
-      },
-      "read": true,
-      "createdAt": "2026-01-28T15:25:37.020Z"
     }
   ],
   "bookmarks": [],
@@ -3724,7 +3724,7 @@
       "topicId": 140352,
       "postNum": 1,
       "user": "dlnraja",
-      "excerpt": "...sive Tuya Zigbee app for Homey — supporting 138 device types with 4592+ manufacturer fingerprints . :package: Install Stable: https://homey.app/a/com.dlnraja.tuya.zigbee/ Homey App Store Test (latest): https://homey.app/a/com.dlnraja.tuya.zigbee/test/ Test Channel Source: https://github.com/dlnraja/com.tuy...",
+      "excerpt": "...sive Tuya Zigbee app for Homey — supporting 138 device types with 4593+ manufacturer fingerprints . :package: Install Stable: https://homey.app/a/com.dlnraja.tuya.zigbee/ Homey App Store Test (latest): https://homey.app/a/com.dlnraja.tuya.zigbee/test/ Test Channel Source: https://github.com/dlnraja/com.tuy...",
       "date": "2025-07-25T01:07:08.539Z"
     },
     {
@@ -4156,7 +4156,7 @@
         {
           "num": 1,
           "user": "dlnraja",
-          "text": "Universal Tuya Zigbee App v5.11.25\n\nLast auto-update: 2026-02-26 | Drivers: 138 | Fingerprints: 4592\n\n\nThe most comprehensive Tuya Zigbee app for Homey — supporting 138 device types with 4592+ manufacturer fingerprints.\n\n Install\n\nStable: Homey App Store\nTest (latest): Test Channel\nSource: GitHub\n\n Latest Changes (v5.11.25)\nUniversal Tuya Zigbee v5.11.25 introduces enhanced forum scanning, improved CSRF handling, and various bug fixes, ensuring better device support and user experience.\n\n GitHub Activity\n\nIssues scanned: 1162\nPRs scanned: 180\nIssues with FPs: 925\n\n Supported Device Types\n Socket (30 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\n1-Gang Smart Switch\n231\n\n\n2-Gang Smart Switch\n101\n\n\n3-Gang Smart Switch\n70\n\n\n4-Gang Smart Switch\n75\n\n\n6-Gang Wall Switch\n8\n\n\nDIN Rail Switch\n19\n\n\nMini Switch\n8\n\n\nMulti-Gang USB Socket\n15\n\n\nPlug Energy Monitor\n106\n\n\nPool/Spa Pump Controller\n6\n\n\nSmart Circuit Breaker\n13\n\n\nSmart Plug 1-Gang\n1\n\n\nSmart Plug 2-Gang\n2\n\n\nSmart Plug with Energy Monitoring\n36\n\n\nSmart Switch with Temperature Sensor\n1\n\n\nUSB Dongle Dual Repeater\n6\n\n\nUSB Dongle Triple (3-Port)\n1\n\n\nWall Dimmer 1-Gang 1-Way\n3\n\n\nWall Switch 1-Gang 1-Way\n5\n\n\nWall Switch 2-Gang 1-Way (BSEED)\n8\n\n\nWall Switch 3-Gang 1-Way (BSEED)\n8\n\n\nWall Switch 4-Gang 1-Way (BSEED)\n8\n\n\nWall Switch 5gang\n2\n\n\nWall Switch 7-Gang\n2\n\n\nWall Switch 8-Gang\n5\n\n\nWiFi 2-Gang Switch\n0\n\n\nWiFi 3-Gang Switch\n0\n\n\nWiFi 4-Gang Switch\n0\n\n\nWiFi Smart Plug (Tuya Local)\n0\n\n\nWiFi Switch (Tuya Local)\n0\n\n\n\n Light (17 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\n2-Channel Dimmer Module\n34\n\n\n3-Gang Dimmer Module\n3\n\n\nBulb Tunable\n49\n\n\nDimmer 1gang\n155\n\n\nLED Controller CCT\n9\n\n\nLED Controller Dimmable\n8\n\n\nLED Controller RGB\n5\n\n\nLed Strip Advanced\n6\n\n\nLED Strip Led Strip\n15\n\n\nLed Strip Rgbw\n13\n\n\nSmart Bulb Dimmer\n52\n\n\nSmart Bulb Rgb\n114\n\n\nSmart Bulb White\n3\n\n\nSmart RGB/RGBW Bulb\n80\n\n\nSwitch Touch Dimmer (1 Gang)\n21\n\n\nWiFi Dimmer (Tuya Local)\n0\n\n\nWiFi Light RGBCW (Tuya Local)\n0\n\n\n\n Sensor (41 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\n1-Buttons Wireless Controller\n43\n\n\n2-Buttons Wireless Controller\n16\n\n\n3-Button Wireless Controller\n15\n\n\n4-Buttons Wireless Controller\n45\n\n\n6-Buttons Wireless Controller\n3\n\n\n8-Buttons Wireless Controller\n1\n\n\nCeiling Presence Sensor (230V)\n9\n\n\nClimate Sensor\n1011\n\n\nCO Sensor\n4\n\n\nComprehensive Air Monitor\n11\n\n\nContact Sensor\n134\n\n\nCT Clamp Power Meter\n16\n\n\nDIN Rail Energy Meter\n33\n\n\nEnergy Meter 3-Phase\n15\n\n\nGas Detector\n10\n\n\nGas Sensor Ts0601\n27\n\n\nIlluminance Sensor\n6\n\n\nLCD Temperature & Humidity Sensor\n7\n\n\nLiquid Level Sensor\n13\n\n\nMotion Sensor\n122\n\n\nPower Meter\n3\n\n\nPresence Sensor (Radar)\n41\n\n\nPresence Sensor Radar\n103\n\n\nScene Switch 1-Gang\n3\n\n\nScene Switch 2-Gang\n2\n\n\nScene Switch 3-Gang\n2\n\n\nScene Switch 4-Gang\n8\n\n\nScene Switch 6-Gang\n2\n\n\nSmart Knob / Scene Switch\n14\n\n\nSmart Smoke Detector Advanced\n44\n\n\nSoil Moisture Sensor\n32\n\n\nSos Emergency Button\n33\n\n\nTUYATEC Temperature & Humidity Sensor\n12\n\n\nVibration Sensor\n21\n\n\nWater Leak Sensor\n86\n\n\nWiFi Sensor (Tuya Local)\n0\n\n\nWireless Switch\n2\n\n\nZigbee Air Quality / CO2 Sensor\n6\n\n\nZigbee Formaldehyde/VOC Sensor\n2\n\n\nZigbee Rain Sensor\n10\n\n\nZigbee Weather Station (Outdoor)\n2\n\n\n\n Thermostat (7 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nAir Conditioner (Smart)\n4\n\n\nRadiator Valve\n237\n\n\nSmart Valve 1-Way\n11\n\n\nSmart Valve 4-Way\n24\n\n\nThermostat / TRV\n185\n\n\nThermostat 4-Channel\n1\n\n\nWiFi Thermostat (Tuya Local)\n0\n\n\n\n Windowcoverings (3 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nCover Controller\n227\n\n\nCurtain Motor with Tilt\n32\n\n\nRoller Shutter Controller\n3\n\n\n\n Lock (4 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nDoor Controller\n2\n\n\nFingerprint Smart Lock\n11\n\n\nLock Smart\n13\n\n\nWiFi Door Lock (Tuya Local)\n0\n\n\n\n Fan (8 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nAir Purifier\n4\n\n\nCeiling Fan\n2\n\n\nDehumidifier (Smart)\n9\n\n\nFan Speed Controller\n21\n\n\nSmart Humidifier\n10\n\n\nWiFi Air Purifier (Tuya Local)\n0\n\n\nWiFi Fan (Tuya Local)\n0\n\n\nWiFi Humidifier (Tuya Local)\n0\n\n\n\n Speaker (1 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nWiFi Siren (Tuya Local)\n0\n\n\n\n Doorbell (1 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nDoorbell Doorbell\n10\n\n\n\n Remote (2 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nIR Blaster Remote\n37\n\n\nWiFi IR Remote (Tuya Local)\n0\n\n\n\n Button (2 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nFingerbot Button Pusher\n4\n\n\nWireless Button (Universal)\n5\n\n\n\n Heater (4 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nElectric Radiator Controller (Pilot Wire)\n10\n\n\nSmart Heater\n3\n\n\nSmart Heater Controller\n6\n\n\nWiFi Heater (Tuya Local)\n0\n\n\n\n Vacuumcleaner (1 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nWiFi Robot Vacuum (Tuya Local)\n0\n\n\n\n Other (14 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nDIY Custom Zigbee Device\n103\n\n\nGarden Water Valve\n4\n\n\nGeneric DIY Zigbee Device\n28\n\n\nGeneric Tuya Device (TS0601)\n207\n\n\nSiren Siren\n21\n\n\nSmart Pet Feeder\n6\n\n\nSmart RCBO\n2\n\n\nUniversal Zigbee/Tuya Device\n46\n\n\nWater Valve Smart\n10\n\n\nWiFi Device (Tuya Local)\n0\n\n\nWiFi Pet Feeder (Tuya Local)\n0\n\n\nWiFi Water Valve (Tuya Local)\n0\n\n\nZbbridge\n1\n\n\nZigbee Signal Repeater\n9\n\n\n\n Garagedoor (2 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nGarage Door Controller\n8\n\n\nWiFi Garage Door (Tuya Local)\n0\n\n\n\n Curtain (1 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nWiFi Curtain Motor (Tuya Local)\n0\n\n\n\n Features\n\nTuya DP Protocol — Full support for cluster 0xEF00 devices (TS0601)\nStandard ZCL — TS0001-TS0008, TS011F, TS0201-TS0207, etc.\nBSEED/Zemismart ZCL-only mode — PacketNinja technique for multi-gang switches\nPhysical button detection — Flow triggers for wall switch presses\nVirtual buttons — Remote toggle any gang from flows\nEnergy monitoring — Power, voltage, current for smart plugs\nAir quality sensors — CO2, VOC, PM2.5, formaldehyde, temp, humidity\nCover/curtain motors — Position control with tilt support\nLED backlight control — Off / Normal / Inverted modes\n\n Report Issues\n\nGitHub Issues\nInclude your device fingerprint (_TZxxxx_xxxxx) and Zigbee model ID (TSxxxx)\nUse Homey Developer Tools > Zigbee to find your device info\n\n Device Finder\nCheck if your device is supported: Device Finder\n\n\nAuto-updated by Universal Tuya Zigbee bot on 2026-02-26",
+          "text": "Universal Tuya Zigbee App v5.11.25\n\nLast auto-update: 2026-02-27 | Drivers: 138 | Fingerprints: 4593\n\n\nThe most comprehensive Tuya Zigbee app for Homey — supporting 138 device types with 4593+ manufacturer fingerprints.\n\n Install\n\nStable: Homey App Store\nTest (latest): Test Channel\nSource: GitHub\n\n Latest Changes (v5.11.25)\nv5.11.25: Fixed voltage divisor issue in driver #137, improving accuracy of voltage readings., Rewrote dashboard fallback logic to enhance reliability during device state reporting., Implemented ultimate automation and core fixes to enhance overall app performance and stability., Updated various workflows for better management and efficiency, including improvements to GitHub state management and d\n\n GitHub Activity\n\nIssues scanned: 1162\nPRs scanned: 180\nIssues with FPs: 925\n\n Supported Device Types\n Socket (30 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\n1-Gang Smart Switch\n231\n\n\n2-Gang Smart Switch\n101\n\n\n3-Gang Smart Switch\n70\n\n\n4-Gang Smart Switch\n75\n\n\n6-Gang Wall Switch\n8\n\n\nDIN Rail Switch\n19\n\n\nMini Switch\n8\n\n\nMulti-Gang USB Socket\n15\n\n\nPlug Energy Monitor\n106\n\n\nPool/Spa Pump Controller\n6\n\n\nSmart Circuit Breaker\n13\n\n\nSmart Plug 1-Gang\n1\n\n\nSmart Plug 2-Gang\n2\n\n\nSmart Plug with Energy Monitoring\n36\n\n\nSmart Switch with Temperature Sensor\n1\n\n\nUSB Dongle Dual Repeater\n6\n\n\nUSB Dongle Triple (3-Port)\n1\n\n\nWall Dimmer 1-Gang 1-Way\n3\n\n\nWall Switch 1-Gang 1-Way\n5\n\n\nWall Switch 2-Gang 1-Way (BSEED)\n8\n\n\nWall Switch 3-Gang 1-Way (BSEED)\n8\n\n\nWall Switch 4-Gang 1-Way (BSEED)\n8\n\n\nWall Switch 5gang\n2\n\n\nWall Switch 7-Gang\n2\n\n\nWall Switch 8-Gang\n5\n\n\nWiFi 2-Gang Switch\n0\n\n\nWiFi 3-Gang Switch\n0\n\n\nWiFi 4-Gang Switch\n0\n\n\nWiFi Smart Plug (Tuya Local)\n0\n\n\nWiFi Switch (Tuya Local)\n0\n\n\n\n Light (17 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\n2-Channel Dimmer Module\n34\n\n\n3-Gang Dimmer Module\n3\n\n\nBulb Tunable\n49\n\n\nDimmer 1gang\n155\n\n\nLED Controller CCT\n9\n\n\nLED Controller Dimmable\n8\n\n\nLED Controller RGB\n5\n\n\nLed Strip Advanced\n6\n\n\nLED Strip Led Strip\n15\n\n\nLed Strip Rgbw\n13\n\n\nSmart Bulb Dimmer\n52\n\n\nSmart Bulb Rgb\n114\n\n\nSmart Bulb White\n3\n\n\nSmart RGB/RGBW Bulb\n80\n\n\nSwitch Touch Dimmer (1 Gang)\n21\n\n\nWiFi Dimmer (Tuya Local)\n0\n\n\nWiFi Light RGBCW (Tuya Local)\n0\n\n\n\n Sensor (41 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\n1-Buttons Wireless Controller\n43\n\n\n2-Buttons Wireless Controller\n16\n\n\n3-Button Wireless Controller\n15\n\n\n4-Buttons Wireless Controller\n45\n\n\n6-Buttons Wireless Controller\n3\n\n\n8-Buttons Wireless Controller\n1\n\n\nCeiling Presence Sensor (230V)\n9\n\n\nClimate Sensor\n1011\n\n\nCO Sensor\n4\n\n\nComprehensive Air Monitor\n11\n\n\nContact Sensor\n135\n\n\nCT Clamp Power Meter\n16\n\n\nDIN Rail Energy Meter\n33\n\n\nEnergy Meter 3-Phase\n15\n\n\nGas Detector\n10\n\n\nGas Sensor Ts0601\n27\n\n\nIlluminance Sensor\n6\n\n\nLCD Temperature & Humidity Sensor\n7\n\n\nLiquid Level Sensor\n13\n\n\nMotion Sensor\n122\n\n\nPower Meter\n3\n\n\nPresence Sensor (Radar)\n41\n\n\nPresence Sensor Radar\n103\n\n\nScene Switch 1-Gang\n3\n\n\nScene Switch 2-Gang\n2\n\n\nScene Switch 3-Gang\n2\n\n\nScene Switch 4-Gang\n8\n\n\nScene Switch 6-Gang\n2\n\n\nSmart Knob / Scene Switch\n14\n\n\nSmart Smoke Detector Advanced\n44\n\n\nSoil Moisture Sensor\n32\n\n\nSos Emergency Button\n33\n\n\nTUYATEC Temperature & Humidity Sensor\n12\n\n\nVibration Sensor\n21\n\n\nWater Leak Sensor\n86\n\n\nWiFi Sensor (Tuya Local)\n0\n\n\nWireless Switch\n2\n\n\nZigbee Air Quality / CO2 Sensor\n6\n\n\nZigbee Formaldehyde/VOC Sensor\n2\n\n\nZigbee Rain Sensor\n10\n\n\nZigbee Weather Station (Outdoor)\n2\n\n\n\n Thermostat (7 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nAir Conditioner (Smart)\n4\n\n\nRadiator Valve\n237\n\n\nSmart Valve 1-Way\n11\n\n\nSmart Valve 4-Way\n24\n\n\nThermostat / TRV\n185\n\n\nThermostat 4-Channel\n1\n\n\nWiFi Thermostat (Tuya Local)\n0\n\n\n\n Windowcoverings (3 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nCover Controller\n227\n\n\nCurtain Motor with Tilt\n32\n\n\nRoller Shutter Controller\n3\n\n\n\n Lock (4 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nDoor Controller\n2\n\n\nFingerprint Smart Lock\n11\n\n\nLock Smart\n13\n\n\nWiFi Door Lock (Tuya Local)\n0\n\n\n\n Fan (8 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nAir Purifier\n4\n\n\nCeiling Fan\n2\n\n\nDehumidifier (Smart)\n9\n\n\nFan Speed Controller\n21\n\n\nSmart Humidifier\n10\n\n\nWiFi Air Purifier (Tuya Local)\n0\n\n\nWiFi Fan (Tuya Local)\n0\n\n\nWiFi Humidifier (Tuya Local)\n0\n\n\n\n Speaker (1 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nWiFi Siren (Tuya Local)\n0\n\n\n\n Doorbell (1 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nDoorbell Doorbell\n10\n\n\n\n Remote (2 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nIR Blaster Remote\n37\n\n\nWiFi IR Remote (Tuya Local)\n0\n\n\n\n Button (2 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nFingerbot Button Pusher\n4\n\n\nWireless Button (Universal)\n5\n\n\n\n Heater (4 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nElectric Radiator Controller (Pilot Wire)\n10\n\n\nSmart Heater\n3\n\n\nSmart Heater Controller\n6\n\n\nWiFi Heater (Tuya Local)\n0\n\n\n\n Vacuumcleaner (1 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nWiFi Robot Vacuum (Tuya Local)\n0\n\n\n\n Other (14 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nDIY Custom Zigbee Device\n103\n\n\nGarden Water Valve\n4\n\n\nGeneric DIY Zigbee Device\n28\n\n\nGeneric Tuya Device (TS0601)\n207\n\n\nSiren Siren\n21\n\n\nSmart Pet Feeder\n6\n\n\nSmart RCBO\n2\n\n\nUniversal Zigbee/Tuya Device\n46\n\n\nWater Valve Smart\n10\n\n\nWiFi Device (Tuya Local)\n0\n\n\nWiFi Pet Feeder (Tuya Local)\n0\n\n\nWiFi Water Valve (Tuya Local)\n0\n\n\nZbbridge\n1\n\n\nZigbee Signal Repeater\n9\n\n\n\n Garagedoor (2 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nGarage Door Controller\n8\n\n\nWiFi Garage Door (Tuya Local)\n0\n\n\n\n Curtain (1 drivers)\n\n\n\n\nDriver\nFingerprints\n\n\n\n\nWiFi Curtain Motor (Tuya Local)\n0\n\n\n\n Features\n\nTuya DP Protocol — Full support for cluster 0xEF00 devices (TS0601)\nStandard ZCL — TS0001-TS0008, TS011F, TS0201-TS0207, etc.\nBSEED/Zemismart ZCL-only mode — PacketNinja technique for multi-gang switches\nPhysical button detection — Flow triggers for wall switch presses\nVirtual buttons — Remote toggle any gang from flows\nEnergy monitoring — Power, voltage, current for smart plugs\nAir quality sensors — CO2, VOC, PM2.5, formaldehyde, temp, humidity\nCover/curtain motors — Position control with tilt support\nLED backlight control — Off / Normal / Inverted modes\n\n Report Issues\n\nGitHub Issues\nInclude your device fingerprint (_TZxxxx_xxxxx) and Zigbee model ID (TSxxxx)\nUse Homey Developer Tools > Zigbee to find your device info\n\n Device Finder\nCheck if your device is supported: Device Finder\n\n\nAuto-updated by Universal Tuya Zigbee bot on 2026-02-27",
           "date": "2025-07-25T01:07:08.539Z",
           "replyTo": null
         },
@@ -13165,7 +13165,7 @@
         {
           "num": 1300,
           "user": "dlnraja",
-          "text": "User Response - v5.6.0\nGitHub Issues\nIssue #113 - Ernst02507 (TS004F Smart Knob)\n\n@Ernst02507\n\n**v5.6.0 Fix Applied** for your TS004F Smart Knob (`_TZ3000_gwkzibhs`):\n\n✅ **Changes made:**\n\n1. OnOff cluster heartbeat reports are now **filtered** for TS004F (no more false button triggers every 10min)\n\n2. Enhanced **Scenes cluster** handling to capture real button events\n\n3. Raw frame interceptor for scene commands\n\n**Please test and confirm:**\n\n- [ ] Does the device still trigger flows randomly every 10 minutes?\n\n- [ ] Do button presses (single/double/hold) trigger correctly now?\n\n- [ ] Any errors in Homey developer logs?\n\nTo test: Update to v5.6.0, re-pair the device if needed, and create a simple flow with \"When button pressed\" trigger.\n\nThanks for your patience! 🙏\n\n\n\nIssue #121 - DAVID9SE (Button _TZ3000_an5rjiwd)\n\n@DAVID9SE\n\nYour button issue was fixed in v5.5.989 - the `_TZ3000_an5rjiwd` fingerprint was moved to the correct driver (button_wireless_1 instead of button_wireless_4).\n\n**Please confirm:**\n\n- [ ] Does the button pair correctly now?\n\n- [ ] Do all button actions (single/double/long press) trigger flows?\n\nIf still having issues, please provide:\n\n1. Homey Developer Tools > Zigbee interview (text, not screenshot)\n\n2. Which button actions are not working\n\nThanks!\n\n\n\nIssue #122 - elgato7 (Longsam Curtain _TZE204_xu4a5rhj)\n\n@elgato7\n\n**v5.5.998 Fix Applied** for Longsam Mini M3 curtain motor (`_TZE204_xu4a5rhj`):\n\n✅ Position is now **INVERTED** correctly (DP2: 100-value)\n\n**Please test:**\n\n- [ ] Does 0% = fully closed and 100% = fully open?\n\n- [ ] Does the position slider work correctly?\n\n- [ ] Any issues with open/close commands?\n\nIf position is still inverted, let me know the exact behavior you observe.\n\n\n\nForum Responses\nForum #1297 - Peter_van_Werkhoven (ZG-204ZV Disco Lights)\n\n@Peter_van_Werkhoven\n\n**v5.6.0 Fix for Disco Lights** on your HOBEIAN ZG-204ZV:\n\n✅ **Added motion throttle:**\n\n- 5 second minimum between motion state changes\n\n- 3 second debounce before clearing motion\n\n- Prevents rapid on/off triggering your lights\n\n**Please test:**\n\n1. Update to v5.6.0\n\n2. Monitor for 24h - do lights still go \"disco\"?\n\n3. Check humidity reading - should show 90% not 9%\n\n**Diagnostic ID for reference:** `9b3495bb-16c7-4e90-8ee6-335b0f2fdec6`\n\nLet me know the results! 🙏\n\n\n\nForum #1289 - tlink (_TZE204_ztqnh5cg Presence Sensor)\n\n@tlink\n\n**v5.6.0 Fix Applied** for your presence sensor (`_TZE204_ztqnh5cg`):\n\n✅ Added to **ZCL_ONLY_RADAR** config with permissive mode:\n\n- Uses IAS Zone for motion (not Tuya DP)\n\n- Uses ZCL illuminance cluster for lux\n\n- Uses ZCL power config for battery\n\n**Please test:**\n\n1. Update to v5.6.0\n\n2. Remove and re-pair the device\n\n3. Check if presence detection works\n\n4. Check if flows trigger correctly\n\n**Need from you if still not working:**\n\n- Full Zigbee interview (Homey Developer Tools > Devices > Your device > Zigbee tab)\n\n- Copy the TEXT, not screenshot\n\nThanks!\n\n\n\nForum #1297 - Patrick_Van_Deursen (_TZE200_kb5noeto Radar)\n\n@Patrick_Van_Deursen\n\n**v5.6.0 Fix Applied** for your radar sensor (`_TZE200_kb5noeto`):\n\n✅ This is a **ZCL-only variant** (no Tuya DP cluster 61184) - now supported!\n\n**Added ZCL_ONLY_RADAR config:**\n\n- Motion via IAS Zone cluster 1280\n\n- Lux via illuminanceMeasurement cluster 1024\n\n- Battery via powerConfiguration cluster 1\n\n- Permissive mode enabled\n\n**Please test:**\n\n1. Update to v5.6.0\n\n2. Remove and re-pair the device\n\n3. Check: Motion, Lux, Battery - do they work?\n\n**Your diagnostic ID:** `33677378-eb74-437d-9ab6-35e8e4168a47`\n\nLet me know results!\n\n\n\nForum #1290 - blutch32 (Contact Sensor, Soil Sensor, Energy Meter)\n\n@blutch32\n\nJ'ai besoin des **fingerprints texte** de vos appareils pour les supporter:\n\n**Comment obtenir les fingerprints:**\n\n1. Ouvrir Homey Developer Tools: https://developer.athom.com/tools/\n\n2. Aller dans \"Devices\"\n\n3. Trouver votre appareil\n\n4. Cliquer sur l'onglet \"Zigbee\"\n\n5. **Copier le texte** (pas screenshot!) avec:\n\n- `manufacturerName`\n\n- `productId` (ou `modelId`)\n\n- Liste des clusters\n\n**Appareils nécessaires:**\n\n- [ ] Contact Sensor (alarm toujours \"no\")\n\n- [ ] Soil Sensor (nouveau)\n\n- [ ] Energy Meter (nouveau)\n\nLes drivers existent déjà (`contact_sensor`, `soil_sensor`, `power_meter`) - j'ai juste besoin des fingerprints pour les ajouter!\n\nMerci! 🙏\n\n\n\nQuick Copy Templates\nRequest Zigbee Interview\n\nPlease provide your Zigbee interview data:\n\n1. Go to https://developer.athom.com/tools/\n\n2. Find your device under \"Devices\"\n\n3. Click the \"Zigbee\" tab\n\n4. Copy and paste the TEXT here (not screenshot)\n\nI need: manufacturerName, productId, and cluster list.\n\n\nConfirm Fix Working\n\nFix applied in v5.6.0. Please:\n\n1. Update the app\n\n2. Re-pair device if needed\n\n3. Test and confirm:\n\n- [ ] Device pairs correctly\n\n- [ ] Functions work as expected\n\n- [ ] Flows trigger properly\n\n```[",
+          "text": "This fingerprint is already supported. Please remove and re-pair the device to get the correct driver.",
           "date": "2026-01-31T14:46:39.656Z",
           "replyTo": null
         },
@@ -14481,7 +14481,7 @@
         {
           "num": 1488,
           "user": "dlnraja",
-          "text": "Already supported in v5.11.25: _TZ3000_itb0omhv\n\nInstall test version\n\nAuto-response by dlnraja bot",
+          "text": "These fingerprints are already supported in v5.11.25:\n\n\n_TZ3000_itb0omhv → switch_1gang\n_TZ3000_u3nv1jwk → switch_4gang\n_TZE200_crq3r3la, _TZE200_gkfbdvyx → thermostat_radiator\n_TZE204_clrdrnya → thermostat_radiator\n\nYou’ll need to remove and re-pair your device, making sure to select the correct device type during pairing.",
           "date": "2026-02-26T10:54:35.787Z",
           "replyTo": null
         },
@@ -14677,7 +14677,7 @@
         {
           "num": 1516,
           "user": "dlnraja",
-          "text": "Sorry it’s my bot it reply you\n\nI will check manually, this night.",
+          "text": "Sorry for the duplicate replies earlier — there was an issue with the automated system.\n\nI’ll check your device manually.",
           "date": "2026-02-26T16:58:00.020Z",
           "replyTo": 1515
         },
@@ -14715,6 +14715,34 @@
           "text": "@Hartmut_Dunker, thanks for your detailed report regarding the BSEED Zigbee 4 Gang Button Switch (TS0726/_TZ3002_pzao9ls1). I see that the device is currently matched to the switch_4gang driver, which is why you’re experiencing the issue where all four physical buttons toggle together.\n\nYour suggestion to use the wall_switch_4gang_1way driver is insightful, as it appears to have a more appropriate configuration for your device. I will look into this further and see if we can implement the necessary changes to improve the functionality.\n\nIn the meantime, I recommend checking if there are any firmware updates available for your device, as sometimes manufacturers release updates that can resolve such issues. Additionally, if you haven’t already, please try removing and re-pairing the device after selecting the correct driver type to see if that helps.\n\nOn another note, I wanted to share some exciting news from our recent scans. We’ve identified several new devices in the Zigbee2MQTT ecosystem, including _TZE200_jt50ea5d, _TZ3210_jaap6jeb, and _TZE284_g1enhdsi. These devices are on our radar for future integration, so stay tuned for updates!\n\nAlso, there are several open PRs that might interest you, including one for a similar button device that could enhance our support for multi-gang switches. Specifically, PR #1065 aims to improve functionality for the fingerbot, which might provide insights into better handling of button presses.\n\nIf you continue to experience issues with your device, please let me know, and I can assist further. Your diagnostic report ID (9803c61a-aa73-4e3c-99ed-30a5d0c43973) will also help us track down the problem more effectively.\n\nLooking forward to resolving this for you!",
           "date": "2026-02-26T20:20:53.995Z",
           "replyTo": 1520
+        },
+        {
+          "num": 1522,
+          "user": "dlnraja",
+          "text": "Update — Universal Tuya Zigbee v5.11.25\nA new update is available on the Test channel. This version brings improvements, bug fixes, and enhanced device support based on community feedback.\n\n What’s New:\n\nv5.11.25: Fixed voltage divisor issue in driver #137, improving accuracy of voltage readings., Rewrote dashboard fallback logic to enhance reliability during device state reporting., Implemented ultimate automation and core fixes to enhance overall app performance and stability., Updated various workflows for better management and efficiency, including improvements to GitHub state management and d\n\n Project Status:\n\n\n\n\n\n\n\n\n\n\n\nVersion\nv5.11.25\n\n\nDrivers\n138 (Zigbee & WiFi)\n\n\nFingerprints\n4,593+\n\n\nFlow Cards\n1,725\n\n\nSync\nLive sync with Zigbee2MQTT & ZHA\n\n\n\n Links:\n\n\n Install test version: Universal Tuya Zigbee - Test\n Device Finder: Check if your device is supported\n Report a bug: GitHub Issues\n\n\n Tip: If a device was stuck or showing wrong values before this update, please remove it and re-pair for a clean start.\n\n\nThank you all for your continuous feedback and diagnostic reports!",
+          "date": "2026-02-26T20:44:31.502Z",
+          "replyTo": null
+        },
+        {
+          "num": 1523,
+          "user": "Hartmut_Dunker",
+          "text": "Hi dylan,\n\nthank you for the really fast response! Unfortunately there seem to be no firmware updates from BSEED. With each update of your app I removed and re-paired the device to see if the issue is still present.\n\nThank’s a lot for your work!\n\nBest regards, Hartmut",
+          "date": "2026-02-26T20:57:48.038Z",
+          "replyTo": 1521
+        },
+        {
+          "num": 1524,
+          "user": "dlnraja",
+          "text": "@Hartmut_Dunker, I appreciate your patience as we work through the issues with your BSEED device. Since you’ve been re-pairing with each app update, it sounds like you’ve been diligent in troubleshooting. Unfortunately, without firmware updates from BSEED, we may be limited in what we can do on our end.\n\nRegarding the device’s fingerprint, I couldn’t find a match in our current database. However, I noticed that BSEED devices have been known to exhibit some recurring issues, particularly with inverted states. If you haven’t already, please check the device settings for an “Invert Contact State” option, as this can sometimes resolve the issue without needing to re-pair.\n\nOn a broader note, we recently scanned our external databases and found several new devices that have been added to Z2M, including _TZE200_jt50ea5d, _TZ3210_jaap6jeb, and others. While these specific models may not relate directly to your device, it’s encouraging to see ongoing support and updates in the Zigbee ecosystem.\n\nAdditionally, there are several open PRs that might be of interest, including one for a new fingerbot model and another for a RGB LED Strip Controller. These contributions from the community help enhance our app’s compatibility and functionality.\n\nIf you continue to experience issues, I recommend submitting a device interview through the developer tools at tools.developer.homey.app. This can provide us with more detailed information about your device’s behavior and help us identify any potential fixes or workarounds.\n\nPlease keep me updated on your progress, and let me know if you need further assistance!",
+          "date": "2026-02-26T23:07:11.487Z",
+          "replyTo": 1523
+        },
+        {
+          "num": 1525,
+          "user": "dlnraja",
+          "text": "Update — Universal Tuya Zigbee v5.11.25\nA new update is available on the Test channel. This version brings improvements, bug fixes, and enhanced device support based on community feedback.\n\n What’s New:\n\nUniversal Tuya Zigbee app v5.11.25 introduces enhanced forum interaction, improved fingerprint matching, and fixes for various device drivers, ensuring better performance and user experience.\n\n Project Status:\n\n\n\n\n\n\n\n\n\n\n\nVersion\nv5.11.25\n\n\nDrivers\n138 (Zigbee & WiFi)\n\n\nFingerprints\n4,593+\n\n\nFlow Cards\n1,725\n\n\nSync\nLive sync with Zigbee2MQTT & ZHA\n\n\n\n Links:\n\n\n Install test version: Universal Tuya Zigbee - Test\n Device Finder: Check if your device is supported\n Report a bug: GitHub Issues\n\n\n Tip: If a device was stuck or showing wrong values before this update, please remove it and re-pair for a clean start.\n\n\nThank you all for your continuous feedback and diagnostic reports!",
+          "date": "2026-02-27T03:27:05.296Z",
+          "replyTo": null
         }
       ],
       "category": 7
@@ -22489,14 +22517,14 @@
         {
           "num": 5404,
           "user": "dlnraja",
-          "text": "Hi @darckrie!\n\nThe device you mentioned is recognized as a Soil Sensor. To pair it correctly, please ensure you select the “Soil Sensor” device type during the pairing process. If you are experiencing issues, try removing the device, performing a factory reset, and then re-pairing it close to Homey.\n\nIf you continue to have problems, please conduct a device interview at tools.developer.homey.app > Zigbee > select your device, and share the results. This will help us further investigate the issue.\n\nIf the device still shows as unknown, consider opening an issue on our GitHub page with the details.\n\nThank you!\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
+          "text": "Your post was flagged by the community. Please see your messages.",
           "date": "2026-02-26T14:38:53.976Z",
           "replyTo": 5375
         },
         {
           "num": 5405,
           "user": "dlnraja",
-          "text": "It seems that your Zigbee door sensor from manufacturer _TZ3000_n2egfsli is indeed supported as a “contact_sensor”. To resolve the issue, please try the following steps:\n\n\nRemove the device from Homey.\nFactory reset the door sensor according to its manual.\nPair the device again, ensuring you select “contact_sensor” as the device type during the pairing process.\nMake sure to pair the device close to Homey for better connectivity.\n\nIf you continue to experience issues, please perform a device interview at tools.developer.homey.app and select your device. This will help gather more information about the device.\n\nIf the problem persists, consider opening an issue on our GitHub page with the details.\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
+          "text": "Your post was flagged by the community. Please see your messages.",
           "date": "2026-02-26T14:39:13.891Z",
           "replyTo": 5377
         }
@@ -23728,7 +23756,7 @@
         {
           "num": 182,
           "user": "dlnraja",
-          "text": "It seems that your device fingerprint was not found in our drivers. To assist you better, please perform a device interview at tools.developer.homey.app by selecting your device under Zigbee. This will help us gather more information about your device.\n\nIf the issue persists, I recommend opening a GitHub issue at github.com/dlnraja/com.tuya.zigbee/issues with the details from the device interview.\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
+          "text": "Hi,\n\nIt looks like some of the device fingerprints mentioned aren’t in our driver database yet. To help add support, could you please perform a device interview for each unrecognized device?\n\nSelect your device under Zigbee and share the results here — this gives us the cluster and endpoint data needed to create a proper driver.\n\nIf you’re seeing “unknown” after pairing, try removing the device and re-pairing it.",
           "date": "2026-02-26T14:43:35.038Z",
           "replyTo": 161
         },
@@ -23745,6 +23773,20 @@
           "text": "It seems that your devices are not recognized in our driver database. To assist you better, please perform a device interview by visiting tools.developer.homey.app and selecting your device under Zigbee. This will help us gather more information about your devices.\n\nIf you continue to experience issues, I recommend opening a GitHub issue at github.com/dlnraja/com.tuya.zigbee/issues with the details from the device interview. This will allow us to investigate further.\n\nIn the meantime, ensure that your app is updated to the latest version and verify the manufacturer name of your devices.\n\n\nBot Universal Tuya Zigbee (v5.11.25) - Install test | GitHub",
           "date": "2026-02-26T14:44:23.910Z",
           "replyTo": 171
+        },
+        {
+          "num": 185,
+          "user": "Wemo_Wemo",
+          "text": "Hi\n\nI am not having issues with Zigbee. Having issues with other Tuya devices such as switches and fans.\n\nThanks.",
+          "date": "2026-02-26T21:21:04.000Z",
+          "replyTo": 184
+        },
+        {
+          "num": 186,
+          "user": "dlnraja",
+          "text": "@Wemo_Wemo, it sounds like you’re experiencing issues with your Tuya devices, specifically switches and fans. While I can’t assist with Tuya WiFi devices directly, I can help with Zigbee-related concerns.\n\nRegarding your Zigbee devices, if you have specific models in mind, please provide their manufacturer name and product ID. This will help me check if they are supported or if they match any fingerprints in our database.\n\nIn the latest scans, we’ve identified several new devices in the Zigbee ecosystem, including _TZE200_jt50ea5d, _TZ3210_jaap6jeb, and _TZE284_g1enhdsi, which are now supported in Zigbee2MQTT. If any of these are among your devices, it’s good news as they are on our radar for integration.\n\nAdditionally, there are several open PRs that might interest you, such as the one for the RGB LED Strip Controller and another for the Smartplug _TZ3000_ww6drja5. These updates could enhance compatibility and performance for devices similar to yours.\n\nIf you’re facing issues like inverted states or battery reporting, please check the device settings for options like “Invert Contact State.” This is a common fix for certain devices, especially those from brands like HOBEIAN and Zbeacon. If your battery status shows “?”, it might be due to the device being in sleep mode; try re-pairing it if the issue persists.\n\nFor any pairing issues, ensure that you are selecting the correct device type during the pairing process and that the device is close to Homey. If you continue to have problems, a factory reset of the device can often help.\n\nIf you have specific fingerprints or models that are unsupported, let me know, and I can check if they are listed in external databases like Z2M or ZHA. Your feedback is valuable, and we aim to improve support for more devices continuously.",
+          "date": "2026-02-26T23:07:46.522Z",
+          "replyTo": 185
         }
       ],
       "category": 7
@@ -66922,7 +66964,6 @@
   "deviceInfo": {
     "allFPs": [
       "_TZ3002_pzao9ls1",
-      "_TZ3000_n2egfsli",
       "_TZ3000_u3nv1jwk",
       "_TZB210_ngnt8kni",
       "_TZE200_crq3r3la",
@@ -67083,8 +67124,6 @@
       "_TZ3000_iedbgyxt",
       "_TZE284_1wnh8bqp",
       "_TZ3000_5iixzdo7",
-      "_TZ3000_an5rjiwd",
-      "_TZE204_xu4a5rhj",
       "_TZ3000_w8jwkczz",
       "_TZ3000_uri7ez8u",
       "_TZE200_jt50ea5d",
@@ -67149,6 +67188,7 @@
       "_TZ3000_bzxloft",
       "_TZ3000_7tbsruql",
       "_TZ3000_osu834un",
+      "_TZ3000_n2egfsli",
       "_TZ3000_7d8yme6f",
       "_TZ3000_rgchmad8",
       "_TZ3000_au1rjicn",
@@ -67651,7 +67691,6 @@
     ],
     "supported": [
       "_TZ3002_pzao9ls1",
-      "_TZ3000_n2egfsli",
       "_TZ3000_u3nv1jwk",
       "_TZB210_ngnt8kni",
       "_TZE200_crq3r3la",
@@ -67799,8 +67838,6 @@
       "_TZ3000_iedbgyxt",
       "_TZE284_1wnh8bqp",
       "_TZ3000_5iixzdo7",
-      "_TZ3000_an5rjiwd",
-      "_TZE204_xu4a5rhj",
       "_TZ3000_w8jwkczz",
       "_TZ3000_uri7ez8u",
       "_TZE200_jt50ea5d",
@@ -67865,6 +67902,7 @@
       "_TZ3000_bzxloft",
       "_TZ3000_7tbsruql",
       "_TZ3000_osu834un",
+      "_TZ3000_n2egfsli",
       "_TZ3000_7d8yme6f",
       "_TZ3000_rgchmad8",
       "_TZ3000_au1rjicn",
@@ -68381,5 +68419,5 @@
       "_TZ3210_leyz4rju"
     ]
   },
-  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are seeking improved compatibility and support for a wider range of devices, particularly those that are currently unsupported.\n   - There is a demand for better functionality of virtual buttons and remote controls within the app.\n   - Users are requesting clearer communication regarding device compatibility and troubleshooting steps.\n\n2. **Devices People Need:**\n   - Specific requests for support include devices with manufacturer names like \"HOBEIAN\" and models such as \"ZG-102Z\".\n   - A list of unsupported device fingerprints indicates a need for integration of devices like \"_TZ3000_zgyzgd\", \"_TZE204_ztqnh5c\", and others.\n\n3. **Issues to Fix:**\n   - Users report issues with devices not functioning as intended, such as contact sensors being misidentified.\n   - There are ongoing problems with virtual buttons not responding correctly.\n   - Users have expressed confusion regarding installation and setup processes, indicating a need for clearer instructions.\n\n4. **Action Items:**\n   - Prioritize adding support for the unsupported device fingerprints listed by users.\n   - Investigate and resolve the issues related to virtual buttons and contact sensor misidentification.\n   - Enhance user documentation and troubleshooting guides to address common installation and setup issues.\n   - Consider implementing a feedback mechanism to gather user experiences and suggestions for future updates. \n\nBy addressing these actionable insights, the maintainer can improve user satisfaction and expand the app's compatibility with a broader range of devices."
+  "aiAnalysis": "Fingerprints found: `_TZ3000_zgyzgd`, `_TZE204_ztqnh5c`, `_TZxxxx_xxxxx`, `_TZ3000_xxxxxxxx`, `_TZ3000_ztc6ggyl`, `_TZ3000_7dbxxwkt`, `_TZ3000_xabck15b`, `_TZ3000_akwixq9i`, `_TZ3000_xxbxx`, `_TZ3000_hiqrjkxx`, `_TZ3000_zzzz`, `_TZ3000_xxxxx`, `_TZE200_xxxxx`, `_TZ3000_cehuw1l2`, `_TZ3000_dfgbtub`, `_TZ3000_dfgbub0`, `_TYZB01_bngwdjsr`, `_TZ3000_ecgiiid3`, `_TZ3000_tvuarska`, `_TZ3000_uyjmm0et`"
 }

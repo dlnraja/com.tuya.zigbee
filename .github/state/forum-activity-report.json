@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-26T20:25:42.194Z",
+  "timestamp": "2026-02-27T04:15:52.304Z",
   "username": "dlnraja",
   "topicCount": 1,
   "activityCount": 300,
@@ -7,7 +7,7 @@
   "refCount": 61,
   "bookmarkCount": 0,
   "fullThreads": 30,
-  "totalFPs": 727,
+  "totalFPs": 725,
   "unsupportedFPs": [
     "_TZ3000_zgyzgd",
     "_TZE204_ztqnh5c",
@@ -36,5 +36,5 @@
     "_TZ2000_lxvycln5",
     "_TZ3210_leyz4rju"
   ],
-  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are seeking improved compatibility and support for a wider range of devices, particularly those that are currently unsupported.\n   - There is a demand for better functionality of virtual buttons and remote controls within the app.\n   - Users are requesting clearer communication regarding device compatibility and troubleshooting steps.\n\n2. **Devices People Need:**\n   - Specific requests for support include devices with manufacturer names like \"HOBEIAN\" and models such as \"ZG-102Z\".\n   - A list of unsupported device fingerprints indicates a need for integration of devices like \"_TZ3000_zgyzgd\", \"_TZE204_ztqnh5c\", and others.\n\n3. **Issues to Fix:**\n   - Users report issues with devices not functioning as intended, such as contact sensors being misidentified.\n   - There are ongoing problems with virtual buttons not responding correctly.\n   - Users have expressed confusion regarding installation and setup processes, indicating a need for clearer instructions.\n\n4. **Action Items:**\n   - Prioritize adding support for the unsupported device fingerprints listed by users.\n   - Investigate and resolve the issues related to virtual buttons and contact sensor misidentification.\n   - Enhance user documentation and troubleshooting guides to address common installation and setup issues.\n   - Consider implementing a feedback mechanism to gather user experiences and suggestions for future updates. \n\nBy addressing these actionable insights, the maintainer can improve user satisfaction and expand the app's compatibility with a broader range of devices."
+  "aiAnalysis": "Fingerprints found: `_TZ3000_zgyzgd`, `_TZE204_ztqnh5c`, `_TZxxxx_xxxxx`, `_TZ3000_xxxxxxxx`, `_TZ3000_ztc6ggyl`, `_TZ3000_7dbxxwkt`, `_TZ3000_xabck15b`, `_TZ3000_akwixq9i`, `_TZ3000_xxbxx`, `_TZ3000_hiqrjkxx`, `_TZ3000_zzzz`, `_TZ3000_xxxxx`, `_TZE200_xxxxx`, `_TZ3000_cehuw1l2`, `_TZ3000_dfgbtub`, `_TZ3000_dfgbub0`, `_TYZB01_bngwdjsr`, `_TZ3000_ecgiiid3`, `_TZ3000_tvuarska`, `_TZ3000_uyjmm0et`"
 }
