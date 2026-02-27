@@ -33,6 +33,10 @@
       ]
     }
   ],
+  "images": {
+    "small": "drivers/wifi_air_quality/assets/images/small.png",
+    "large": "drivers/wifi_air_quality/assets/images/large.png"
+  },
   "platforms": ["local"],
   "connectivity": ["lan"]
 }
