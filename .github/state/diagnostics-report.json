@@ -1,25 +1,688 @@
 {
-  "timestamp": "2026-02-26T10:45:31.217Z",
-  "count": 1,
+  "timestamp": "2026-02-27T04:15:48.873Z",
+  "count": 14,
   "byType": {
     "forum_message": 0,
     "homey_system": 0,
-    "interview": 0,
-    "diagnostic": 0,
+    "interview": 2,
+    "diagnostic": 1,
     "bug_report": 0,
-    "github": 0,
-    "changelog": 0,
-    "device_issue": 1,
-    "general": 0
+    "github": 1,
+    "changelog": 1,
+    "device_issue": 6,
+    "general": 3
   },
-  "newFingerprints": [],
+  "newFingerprints": [
+    "_TZE20X_xxxxxxxx",
+    "_TZ3000_ww6drja5ts011f",
+    "_TZ3000_zutizvykts0203",
+    "_TZ3000_vjhcxjqb",
+    "_TZ3000_otwpdq1d",
+    "_TZe200_01fvxamo",
+    "_TZe200_0hg58wyk",
+    "_TZe200_0j5jma9b",
+    "_TZe200_0u3bj3rc",
+    "_TZe200_1agwnems",
+    "_TZe200_1drr8tab",
+    "_TZe200_1ibpyhdc",
+    "_TZe200_2aaelwxk",
+    "_TZe200_2atgpdho",
+    "_TZe200_2ekuz3dz",
+    "_TZe200_2hf7x9n3",
+    "_TZe200_2imwyigp",
+    "_TZe200_2m38mh6k",
+    "_TZe200_2pddnnrk",
+    "_TZe200_2se8efxh",
+    "_TZe200_2vfxweng",
+    "_TZe200_3ejwxpmu",
+    "_TZe200_3p5ydos3",
+    "_TZe200_3t91nb6k",
+    "_TZe200_3towulqd",
+    "_TZe200_3xfjp0ag",
+    "_TZe200_44af8vyi",
+    "_TZe200_4eeyebrt",
+    "_TZe200_579lguh2",
+    "_TZe200_5d3vhjro",
+    "_TZe200_6wi2mope",
+    "_TZe200_78ioiaml",
+    "_TZe200_7bztmfm1",
+    "_TZe200_7deq70b8",
+    "_TZe200_7fqkphoq",
+    "_TZe200_7sjncirf",
+    "_TZe200_86nbew0j",
+    "_TZe200_8eazvzo6",
+    "_TZe200_8ply8mjj",
+    "_TZe200_8thwkzxl",
+    "_TZe200_8whxpsiw",
+    "_TZe200_8ygsuhe1",
+    "_TZe200_9cqcpkgb",
+    "_TZe200_9i9dt8is",
+    "_TZe200_9p5xmj5r",
+    "_TZe200_9sfg7gm0",
+    "_TZe200_9yapgbuv",
+    "_TZe200_a4bpgplm",
+    "_TZe200_a8sdabtg",
+    "_TZe200_a8z0g46u"
+  ],
   "diagnostics": [
     {
-      "id": "19c9952a0ddbaa1a",
+      "id": "19c9b6d2166e2194",
+      "type": "diagnostic",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Thu, 26 Feb 2026 19:29:06 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c9ad3a5f650c70",
       "type": "device_issue",
+      "subj": "💻 New ways to control your Homey Pro",
+      "from": "Homey <info@homey.app>",
+      "date": "Thu, 26 Feb 2026 16:40:12 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c9ad7d507c9ff5",
+      "type": "interview",
       "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
       "from": "Lasse K <notifications@athom.discoursemail.com>",
-      "date": "Thu, 26 Feb 2026 09:40:54 +0000",
+      "date": "Thu, 26 Feb 2026 16:46:01 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c9a8c3c228a3e3",
+      "type": "interview",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "Lasse K <notifications@athom.discoursemail.com>",
+      "date": "Thu, 26 Feb 2026 15:23:27 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c9bdd3a32ebee8",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP] Tuya - Smart Life. Smart Living",
+      "from": "Wemo Wemo <notifications@athom.discoursemail.com>",
+      "date": "Thu, 26 Feb 2026 21:31:32 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c9bc794f683e70",
+      "type": "changelog",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "Hartmut Dunker <notifications@athom.discoursemail.com>",
+      "date": "Thu, 26 Feb 2026 21:07:53 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c9ba7279cc29ba",
+      "type": "general",
+      "subj": "[Homey Community Forum] [PM] Post hidden by community flags",
+      "from": "system <notifications@athom.discoursemail.com>",
+      "date": "Thu, 26 Feb 2026 20:32:28 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c9ba6ac4c5ce6c",
+      "type": "general",
+      "subj": "[Homey Community Forum] [PM] Post hidden by community flags",
+      "from": "system <notifications@athom.discoursemail.com>",
+      "date": "Thu, 26 Feb 2026 20:31:57 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c9b7c75040da18",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "Hartmut Dunker <notifications@athom.discoursemail.com>",
+      "date": "Thu, 26 Feb 2026 19:45:50 +0000",
+      "fps": {
+        "mfr": [
+          "_TZ3002_pzao9ls1"
+        ],
+        "pid": [
+          "TS0726"
+        ]
+      },
+      "errs": [],
+      "devices": [
+        "wall_switch_4gang_1way"
+      ],
+      "xref": [
+        {
+          "fingerprint": "_TZ3002_pzao9ls1",
+          "supported": true,
+          "drivers": [
+            "switch_4gang"
+          ]
+        }
+      ],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c9b482b793b8ec",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [Auto] 736 new fingerprints from forks (Issue #140)",
+      "from": "\"github-actions[bot]\" <notifications@github.com>",
+      "date": "Thu, 26 Feb 2026 10:48:41 -0800",
+      "fps": {
+        "mfr": [
+          "_TZE20X_xxxxxxxx",
+          "_TZ3000_ww6drja5ts011f",
+          "_TZ3000_zutizvykts0203",
+          "_TZ3000_vjhcxjqb",
+          "_TZ3000_otwpdq1d",
+          "_TZe200_01fvxamo",
+          "_TZe200_0hg58wyk",
+          "_TZe200_0j5jma9b",
+          "_TZe200_0u3bj3rc",
+          "_TZe200_1agwnems",
+          "_TZe200_1drr8tab",
+          "_TZe200_1ibpyhdc",
+          "_TZe200_2aaelwxk",
+          "_TZe200_2atgpdho",
+          "_TZe200_2ekuz3dz",
+          "_TZe200_2hf7x9n3",
+          "_TZe200_2imwyigp",
+          "_TZe200_2m38mh6k",
+          "_TZe200_2pddnnrk",
+          "_TZe200_2se8efxh",
+          "_TZe200_2vfxweng",
+          "_TZe200_3ejwxpmu",
+          "_TZe200_3p5ydos3",
+          "_TZe200_3t91nb6k",
+          "_TZe200_3towulqd",
+          "_TZe200_3xfjp0ag",
+          "_TZe200_44af8vyi",
+          "_TZe200_4eeyebrt",
+          "_TZe200_579lguh2",
+          "_TZe200_5d3vhjro",
+          "_TZe200_6wi2mope",
+          "_TZe200_78ioiaml",
+          "_TZe200_7bztmfm1",
+          "_TZe200_7deq70b8",
+          "_TZe200_7fqkphoq",
+          "_TZe200_7sjncirf",
+          "_TZe200_86nbew0j",
+          "_TZe200_8eazvzo6",
+          "_TZe200_8ply8mjj",
+          "_TZe200_8thwkzxl",
+          "_TZe200_8whxpsiw",
+          "_TZe200_8ygsuhe1",
+          "_TZe200_9cqcpkgb",
+          "_TZe200_9i9dt8is",
+          "_TZe200_9p5xmj5r",
+          "_TZe200_9sfg7gm0",
+          "_TZe200_9yapgbuv",
+          "_TZe200_a4bpgplm",
+          "_TZe200_a8sdabtg",
+          "_TZe200_a8z0g46u"
+        ],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "Interview",
+        "page"
+      ],
+      "xref": [
+        {
+          "fingerprint": "_TZE20X_xxxxxxxx",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZ3000_ww6drja5ts011f",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZ3000_zutizvykts0203",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZ3000_vjhcxjqb",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZ3000_otwpdq1d",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_01fvxamo",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_0hg58wyk",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_0j5jma9b",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_0u3bj3rc",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_1agwnems",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_1drr8tab",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_1ibpyhdc",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_2aaelwxk",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_2atgpdho",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_2ekuz3dz",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_2hf7x9n3",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_2imwyigp",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_2m38mh6k",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_2pddnnrk",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_2se8efxh",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_2vfxweng",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_3ejwxpmu",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_3p5ydos3",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_3t91nb6k",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_3towulqd",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_3xfjp0ag",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_44af8vyi",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_4eeyebrt",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_579lguh2",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_5d3vhjro",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_6wi2mope",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_78ioiaml",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_7bztmfm1",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_7deq70b8",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_7fqkphoq",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_7sjncirf",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_86nbew0j",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_8eazvzo6",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_8ply8mjj",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_8thwkzxl",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_8whxpsiw",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_8ygsuhe1",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_9cqcpkgb",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_9i9dt8is",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_9p5xmj5r",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_9sfg7gm0",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_9yapgbuv",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_a4bpgplm",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_a8sdabtg",
+          "supported": false,
+          "drivers": []
+        },
+        {
+          "fingerprint": "_TZe200_a8z0g46u",
+          "supported": false,
+          "drivers": []
+        }
+      ],
+      "ghInfo": {
+        "issueNum": "140",
+        "action": "commented",
+        "fps": {
+          "mfr": [
+            "_TZE20X_xxxxxxxx",
+            "_TZ3000_ww6drja5ts011f",
+            "_TZ3000_zutizvykts0203",
+            "_TZ3000_vjhcxjqb",
+            "_TZ3000_otwpdq1d",
+            "_TZe200_01fvxamo",
+            "_TZe200_0hg58wyk",
+            "_TZe200_0j5jma9b",
+            "_TZe200_0u3bj3rc",
+            "_TZe200_1agwnems",
+            "_TZe200_1drr8tab",
+            "_TZe200_1ibpyhdc",
+            "_TZe200_2aaelwxk",
+            "_TZe200_2atgpdho",
+            "_TZe200_2ekuz3dz",
+            "_TZe200_2hf7x9n3",
+            "_TZe200_2imwyigp",
+            "_TZe200_2m38mh6k",
+            "_TZe200_2pddnnrk",
+            "_TZe200_2se8efxh",
+            "_TZe200_2vfxweng",
+            "_TZe200_3ejwxpmu",
+            "_TZe200_3p5ydos3",
+            "_TZe200_3t91nb6k",
+            "_TZe200_3towulqd",
+            "_TZe200_3xfjp0ag",
+            "_TZe200_44af8vyi",
+            "_TZe200_4eeyebrt",
+            "_TZe200_579lguh2",
+            "_TZe200_5d3vhjro",
+            "_TZe200_6wi2mope",
+            "_TZe200_78ioiaml",
+            "_TZe200_7bztmfm1",
+            "_TZe200_7deq70b8",
+            "_TZe200_7fqkphoq",
+            "_TZe200_7sjncirf",
+            "_TZe200_86nbew0j",
+            "_TZe200_8eazvzo6",
+            "_TZe200_8ply8mjj",
+            "_TZe200_8thwkzxl",
+            "_TZe200_8whxpsiw",
+            "_TZe200_8ygsuhe1",
+            "_TZe200_9cqcpkgb",
+            "_TZe200_9i9dt8is",
+            "_TZe200_9p5xmj5r",
+            "_TZe200_9sfg7gm0",
+            "_TZe200_9yapgbuv",
+            "_TZe200_a4bpgplm",
+            "_TZe200_a8sdabtg",
+            "_TZe200_a8z0g46u"
+          ],
+          "pid": []
+        },
+        "isNew": false
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c9b421b1895cf2",
+      "type": "general",
+      "subj": "[Homey Community Forum] [PM] Post hidden by community flags",
+      "from": "system <notifications@athom.discoursemail.com>",
+      "date": "Thu, 26 Feb 2026 18:42:06 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c9aee20c1bd279",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "7Hills <notifications@athom.discoursemail.com>",
+      "date": "Thu, 26 Feb 2026 17:10:22 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c9a4a38a108f78",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "\"Jocke Wallén\" <notifications@athom.discoursemail.com>",
+      "date": "Thu, 26 Feb 2026 14:11:21 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19c99a49f0f3ae96",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "\"Jocke Wallén\" <notifications@athom.discoursemail.com>",
+      "date": "Thu, 26 Feb 2026 11:10:28 +0000",
       "fps": {
         "mfr": [],
         "pid": []
