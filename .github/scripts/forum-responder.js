@@ -131,8 +131,8 @@ function batchedFallback(postInfos,ver){
   }
   if(!found.size&&!miss.size)return null;
   const users=[...new Set(postInfos.map(p=>p.post.username))];
-  let m=users.length?'Hi '+users.map(u=>'@'+u).join(', ')+',\n\n':'';
-  if(found.size){m+='These fingerprints are supported in v'+ver+':\n';for(const[fp,d]of found){const fz=fuzzyInfo.get(fp);m+='- `'+fp+'`'+(fz?' (matched from `'+fz+'`)':'')+' → **'+d.slice(0,4).join(', ')+'**\n';}m+='\nYou\'ll need to remove and re-pair, making sure to select the correct device type.\n\n';}
+  let m=users.length>1?users.map(u=>'@'+u).join(' ')+' — ':'@'+users[0]+' ';
+  if(found.size){m+='good news, '+([...found.keys()].length===1?'that device is':'those devices are')+' already in v'+ver+':\n';for(const[fp,d]of found){const fz=fuzzyInfo.get(fp);m+='- `'+fp+'`'+(fz?' (close match from `'+fz+'`)':'')+' — pair as **'+d[0]+'**\n';}m+='\nJust remove and re-pair, pick the right device type during setup.\n\n';}
   if(miss.size){
     // Check if unsupported FPs are known in external DBs
     let extInfo='';
@@ -142,7 +142,7 @@ function batchedFallback(postInfos,ver){
       const inExt=[...miss.keys()].filter(k=>extFPs.has(k));
       if(inExt.length)extInfo=' ('+inExt.map(f=>'`'+f+'`').join(', ')+' known in Z2M/ZHA — on our radar)';
     }catch{}
-    m+='Not yet supported: '+[...miss.keys()].map(k=>'`'+k+'`').join(', ')+extInfo+'\nIf you can share a [device interview](https://tools.developer.homey.app/tools/zigbee), I can look into adding support.\n\n';
+    m+='I don\'t have '+[...miss.keys()].map(k=>'`'+k+'`').join(', ')+' yet'+extInfo+'. Could you grab a device interview from the [dev tools](https://tools.developer.homey.app/tools/zigbee)? That\'ll help me add it.\n\n';
   }
   // No promotional footer — keep it natural
   return m;
@@ -156,11 +156,10 @@ async function batchAI(postInfos,ver){
   let intel='';
   try{const ctx=gatherAll();intel=formatForAI(ctx);console.log('Intel context:',intel.length,'chars')}catch(e){console.warn('Intel gather:',e.message)}
 
-  let ctx='Write ONE combined forum reply. Use @mentions. Skip thank-you posts.\n';
-  ctx+='Include relevant info from the INTELLIGENCE section: new devices found in Z2M/ZHA/deCONZ, ';
-  ctx+='open PRs from JohanBendz/community, fork findings, recurring issue patterns, ';
-  ctx+='and any community updates. If a user\'s device is mentioned in external DBs or PRs, say so.\n';
-  ctx+='For unsupported devices, check if Z2M/ZHA/deCONZ has them — if yes, mention it\'s on the radar.\n\n';
+  let ctx='Write ONE forum reply as the app developer. Sound like a real person typing casually, NOT a bot.\n';
+  ctx+='Use @mentions. Skip thank-you posts. Use contractions. Vary sentence length.\n';
+  ctx+='Weave in intel naturally (Z2M/ZHA support, open PRs, known issues) — don\'t list them mechanically.\n';
+  ctx+='BANNED phrases: "Hi @user,", "These fingerprints are supported", "You\'ll need to", "If you can share a device interview".\n\n';
 
   // Add intelligence context
   if(intel)ctx+=intel+'\n';
@@ -197,12 +196,10 @@ async function batchAI(postInfos,ver){
     if(Object.keys(pi.fpResults).length)ctx+='FP DB results: '+JSON.stringify(pi.fpResults)+'\n';
     if(pi.imgCtx)ctx+='Image analysis: '+pi.imgCtx+'\n';
   }
-  ctx+='\n---\nWrite ONE comprehensive reply (max 500 words). Include:\n';
-  ctx+='1. Direct answers to user questions (FP status, device support)\n';
-  ctx+='2. Relevant community info woven naturally (new devices from Z2M/deCONZ, open PRs)\n';
-  ctx+='3. Known issues/patterns if relevant (inversion, battery, double-division)\n';
-  ctx+='4. NO signature, NO footer, NO promotional links — just end naturally\n';
-  ctx+='Reply or NULL if no device-related content:';
+  ctx+='\n---\nWrite ONE reply (max 500 words). Sound like a real developer chatting on a forum.\n';
+  ctx+='Answer their questions directly, mention relevant intel if it fits naturally.\n';
+  ctx+='NO signature, NO footer, NO links at the end. Just stop when you\'re done talking.\n';
+  ctx+='Reply or NULL if nothing device-related:';
 
   const r=await callAI(ctx,sys,{maxTokens:2000});
   if(r&&r.text.trim().toUpperCase()!=='NULL')return r.text.trim();
