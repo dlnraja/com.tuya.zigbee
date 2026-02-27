@@ -23,6 +23,10 @@ concurrency:
   group: github-manage
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   manage:
     name: "Triage, Respond & Close"

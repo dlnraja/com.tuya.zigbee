@@ -17,6 +17,10 @@ concurrency:
   group: monthly-scan
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 env:
   NODE_VERSION: '22'
 

@@ -19,6 +19,10 @@ concurrency:
   group: nightly-process
   cancel-in-progress: false
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   nightly:
     name: Process New Messages

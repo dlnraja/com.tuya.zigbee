@@ -12,6 +12,10 @@ concurrency:
   group: gmail-diagnostics
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   fetch-diagnostics:
     runs-on: ubuntu-latest

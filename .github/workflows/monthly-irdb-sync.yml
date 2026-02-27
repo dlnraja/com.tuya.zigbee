@@ -12,6 +12,10 @@ concurrency:
   group: irdb-sync
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   sync-irdb:
     name: "Fetch IR Codes"

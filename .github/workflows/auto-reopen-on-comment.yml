@@ -17,6 +17,10 @@ concurrency:
   group: auto-reopen-${{ github.event.issue.number }}
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   reopen:
     name: "Reopen if closed"

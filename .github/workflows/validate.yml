@@ -32,6 +32,10 @@ concurrency:
   group: validate-${{ github.ref }}
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 env:
   NODE_VERSION: "22"
   # APP_VERSION read dynamically from app.json
