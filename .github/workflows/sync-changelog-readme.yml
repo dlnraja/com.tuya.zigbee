@@ -35,6 +35,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - run: npm ci --prefer-offline --no-audit || npm install
 
       - name: Update README with changelog
         run: node scripts/automation/sync-changelog-readme.js

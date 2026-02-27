@@ -24,6 +24,14 @@
 
 ## B. YML Structure Rules
 
+### Every workflow MUST have `defaults: run: shell: bash`:
+```yaml
+defaults:
+  run:
+    shell: bash
+```
+**WHY**: Prevents PowerShell from blocking on `>>` and `<<` operators. All 31 workflows have this.
+
 ### Every job running scripts MUST have:
 ```yaml
 - uses: actions/checkout@v4
@@ -32,12 +40,14 @@
     node-version: '22'
 - run: npm ci --prefer-offline --no-audit || npm install
 ```
-**TRAP**: Job without checkout will silently fail on `node` scripts!
+**TRAP**: Job without `npm ci` will crash on `require('./retry-helper')` imports!
 
 ### Always include:
 ```yaml
 permissions:
   contents: write
+  issues: write
+  pull-requests: write
 concurrency:
   group: workflow-name
   cancel-in-progress: true
@@ -45,7 +55,7 @@ concurrency:
 
 ### Always set timeout:
 ```yaml
-timeout-minutes: 30
+timeout-minutes: 30  # Increase for multi-step jobs (60 for nightly, 90 for daily)
 ```
 
 ---
@@ -70,20 +80,35 @@ Use `id: my_step` (snake_case). Reference: `steps.my_step.outcome`.
 
 ### 5. Shell = bash on Ubuntu
 No PowerShell syntax. Use `${VAR}` not `$env:VAR`.
+All workflows have `defaults: run: shell: bash` to enforce this.
 
 ### 6. DISCOURSE_API_KEY lint warnings
 False positive — secret exists but linter doesn't know. Safe to ignore.
+
+### 7. Discourse CSRF
+After `getForumAuth()`, ALWAYS call `refreshCsrf()` or all POST/PUT/DELETE get 403 BAD CSRF.
+
+### 8. Discourse DELETE rate limit
+~2/min. Use EDIT to replace spam content instead (no rate limit on edits).
+
+### 9. Large state files
+`comprehensive-scan.json` (~22MB) is in `.gitignore`. Always `git reset HEAD` if staged.
+
+### 10. Auto-reopen chain
+When user comments on closed issue/PR → `auto-reopen-on-comment.yml` reopens it →
+`auto-respond.yml` triggers on `reopened` event → daily/nightly re-process in next cycle.
 
 ---
 
 ## D. Draft → Test Promotion
 
-Standard 3-tier pattern (ALL workflows must use):
-1. **Node script**: `node .github/scripts/auto-publish-draft.js`
-2. **Curl fallback**: delegation token + REST API call
-3. **Verify retry**: sleep 20s then re-run Node script
+Standard 3-tier Puppeteer pattern (ALL workflows must use):
+1. **Tier 1**: `npm install puppeteer --no-save` + `node .github/scripts/auto-promote-puppeteer.js`
+2. **Tier 2**: `node .github/scripts/auto-publish-draft.js` (API fallback)
+3. **Tier 3**: sleep 30s then re-run Puppeteer script
 
 **TRAP**: Promote step MUST be in job with checkout + node + npm. A bare summary job will silently fail!
+**TRAP**: Puppeteer needs `npm install puppeteer --no-save` before running.
 
 ---
 
@@ -103,15 +128,50 @@ Key: `[skip ci]` prevents infinite workflow loops.
 
 ---
 
-## F. Workflow Inventory
+## F. Rate-Limit Protection
 
-| Workflow | Schedule | Key Secrets |
-|----------|----------|-------------|
-| daily-everything | 4x/day (2,8,14,20 UTC) | ALL |
-| sunday-master | Sun 07:00 | ALL |
-| nightly-auto-process | 03:30 daily | HOMEY_PAT, GH_PAT, GOOGLE |
-| publish | manual | HOMEY_PAT |
-| auto-publish-on-push | on push master | HOMEY_PAT |
-| daily-promote-to-test | daily | HOMEY_PAT |
+All scripts using `gh` CLI or `fetch()` MUST have throttling:
+
+### For `gh` CLI scripts (execSync):
+```javascript
+const { sleep } = require('./retry-helper');
+await sleep(400); // 0.4s between API calls
+```
+Scripts with throttling: `triage-run.js`, `triage-upstream-enhanced.js`, `scan-forks.js`, `scan-johan-full.js`
+
+### For fetch-based scripts:
+```javascript
+const { fetchWithRetry } = require('./retry-helper');
+// Auto-handles: 429 backoff, GitHub X-RateLimit headers, Discourse spacing, CSRF refresh
+```
+
+### GitHub Issue Manager:
+Always set `MAX_ITEMS` env to prevent unbounded API calls:
+```yaml
+env:
+  MAX_ITEMS: "100"       # daily
+  INCLUDE_CLOSED: "true" # for deep scans (sunday/monthly)
+```
+
+---
+
+## G. Workflow Inventory (31 workflows)
+
+| Workflow | Schedule | Steps | Key Secrets |
+|----------|----------|-------|-------------|
+| daily-everything | 4x/day (2,8,14,20 UTC) | 33 | ALL |
+| sunday-master | Sun 07:00 | 20 jobs | ALL |
+| nightly-auto-process | 03:30 daily | 15+ | ALL |
+| auto-close-supported | 03:45 daily + Sun 15:00 | batch close | GH_PAT |
+| upstream-auto-triage | Mon 05:00 | triage both repos | GH_PAT |
+| weekly-fingerprint-sync | Mon 06:00 | Z2M/ZHA sync | GH_PAT |
+| monthly-comprehensive-sync | 1st 01:00 | deep scan | ALL |
+| auto-respond | on issue/PR open | FP check | GITHUB_TOKEN |
+| auto-reopen-on-comment | on comment | reopen closed | GITHUB_TOKEN |
+| stale | daily | mark+close inactive | GITHUB_TOKEN |
+| publish | manual | Homey publish | HOMEY_PAT |
+| auto-publish-on-push | on workflow complete | publish+promote | HOMEY_PAT |
+| gmail-token-keepalive | 3x/day (6,15,22 UTC) | token refresh | GMAIL_* |
+| deploy-pages | on push + daily | Device Finder | GITHUB_TOKEN |
 
 See `.github/SECRETS.md` for full secret reference.

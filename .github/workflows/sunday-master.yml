@@ -171,6 +171,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
       - uses: actions/cache@v4
         with:
           path: /tmp/last_forum_post.txt
@@ -246,6 +247,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
       - name: Run Gmail diagnostics
         continue-on-error: true
         env:
@@ -266,6 +268,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
       - name: Run device diagnostics
         continue-on-error: true
         env:
@@ -512,6 +515,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
       - name: Generate AI Changelog
         continue-on-error: true
         env:
@@ -611,6 +615,7 @@ jobs:
     needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, forum-respond, gmail-diagnostics, device-diagnostics, external-sources, github-scanner, github-issue-manager, forum-activity, johanbendz-full, comprehensive-scan, forum-cleanup, enrichment, smart-processor, generate-changelog, update-forum-thread, promote-to-test]
     if: always()
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - run: |
           echo "## Sunday Automation Complete" >> $GITHUB_STEP_SUMMARY
