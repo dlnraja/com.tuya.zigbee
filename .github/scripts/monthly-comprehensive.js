@@ -5,7 +5,7 @@
  */
 const fs=require('fs'),path=require('path');
 const{callAI,analyzeImage,sleep}=require('./ai-helper');
-const{getForumAuth,fmtCk}=require('./forum-auth');
+const{getForumAuth,refreshCsrf,fmtCk}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const STATE=path.join(__dirname,'..','state','monthly-state.json');
@@ -333,6 +333,7 @@ async function main(){
     // Post to forum
     if(!dryRun){
       const auth=await getForumAuth();
+    if(auth&&auth.type==='session')auth=await refreshCsrf(auth);
       if(auth){
         const posted=await postToForum(140352,aiSummary.text,auth);
         if(posted)console.log('Forum post id:',posted.id);

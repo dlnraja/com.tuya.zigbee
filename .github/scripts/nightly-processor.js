@@ -1,6 +1,6 @@
 const fs=require('fs'),path=require('path');
 const{callAI,analyzeImage,sleep}=require('./ai-helper');
-const{getForumAuth,fmtCk,FORUM}=require('./forum-auth');
+const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const GH='https://api.github.com';
 const REPOS=['dlnraja/com.tuya.zigbee','JohanBendz/com.tuya.zigbee'];
@@ -359,6 +359,7 @@ async function main(){
   console.log('\n== 1. Forum Processing ==');
   let auth=null;
   if(!dryRun)auth=await getForumAuth();
+    if(auth&&auth.type==='session')auth=await refreshCsrf(auth);
   const forumResults=await processForumPosts(state,idx,pidx,auth,appVersion,dryRun);
   console.log('Forum: '+forumResults.length+' replies');
 
