@@ -60,6 +60,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
       - name: Triage issues and PRs
         id: triage_run
         continue-on-error: true
@@ -110,6 +111,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
       - name: Triage issues and PRs
         continue-on-error: true
         env:
@@ -133,6 +135,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
       - uses: actions/cache@v4
         with:
           path: /tmp/last_forum_post.txt
@@ -170,6 +173,7 @@ jobs:
     needs: [triage-upstream, triage-dlnraja, scan-forum]
     if: always()
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - run: |
           echo "## Upstream Auto-Triage Complete" >> "$GITHUB_STEP_SUMMARY"

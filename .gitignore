@@ -158,6 +158,9 @@ extract_dp_mappings.py
 # Sync pipeline generated data
 scripts/sync/data/
 
+# Large auto-generated state files (too big for git)
+.github/state/comprehensive-scan.json
+
 # Claude Code session files
 .claude/
 nul
