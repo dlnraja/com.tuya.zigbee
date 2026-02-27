@@ -45,6 +45,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
 
       # Step 1: Fetch fingerprints from Z2M sources
       - name: Fetch Z2M fingerprints
