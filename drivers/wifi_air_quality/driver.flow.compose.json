@@ -1,0 +1,14 @@
+{
+  "triggers": [
+    { "id": "wifi_air_quality_co2_high", "title": { "en": "CO2 level is high" },
+      "tokens": [
+        { "name": "co2", "type": "number", "title": { "en": "CO2 (ppm)" } }
+      ]
+    },
+    { "id": "wifi_air_quality_pm25_high", "title": { "en": "PM2.5 level is high" },
+      "tokens": [
+        { "name": "pm25", "type": "number", "title": { "en": "PM2.5" } }
+      ]
+    }
+  ]
+}

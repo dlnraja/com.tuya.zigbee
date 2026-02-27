@@ -1,7 +1,7 @@
 'use strict';
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
-class WiFiLightDevice extends TuyaLocalDevice {
+class WiFiLedStripDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '20': { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
@@ -15,15 +15,21 @@ class WiFiLightDevice extends TuyaLocalDevice {
         transform: (v) => v / 1000,
         reverseTransform: (v) => Math.round(v * 1000) },
       '24': { capability: '_dp24_color_hsv', writable: true },
-      '25': { capability: null },
-      '26': { capability: null },
-      '32': { capability: null },
+      '25': { capability: null }, // scene_data
+      '26': { capability: null }, // countdown
+      '28': { capability: null }, // music_data
+      '29': { capability: null }, // control_data
+      '30': { capability: null }, // sleep_mode
+      '31': { capability: null }, // wakeup_mode
+      '32': { capability: null }, // power_memory
+      '33': { capability: null }, // do_not_disturb
+      '34': { capability: null }, // mic_music_data
+      '36': { capability: null }, // rhythm_mode
     };
   }
 
   _registerCapabilityListeners() {
     super._registerCapabilityListeners();
-    // HSV color: Tuya format = "HHHHSSSSVVVV" (hex, H=0-360, S=0-1000, V=0-1000)
     for (const cap of ['light_hue', 'light_saturation']) {
       if (this.hasCapability(cap)) {
         this.registerCapabilityListener(cap, async () => {
@@ -39,12 +45,11 @@ class WiFiLightDevice extends TuyaLocalDevice {
     const v = Math.round((this.getCapabilityValue('dim') || 1) * 1000);
     const hsv = h.toString(16).padStart(4, '0') + s.toString(16).padStart(4, '0') + v.toString(16).padStart(4, '0');
     if (!this._client || !this._client.connected) throw new Error('Not connected');
-    this.log('[WIFI-LIGHT] Set color HSV:', h, s, v, '->', hsv);
+    this.log('[WIFI-LED] Set color HSV:', h, s, v, '->', hsv);
     await this._client.setDPs({ '21': 'colour', '24': hsv });
   }
 
   _processDPUpdate(dps) {
-    // Parse DP24 color HSV before standard processing
     if (dps['24'] && typeof dps['24'] === 'string' && dps['24'].length >= 12) {
       try {
         const hex = dps['24'];
@@ -54,17 +59,17 @@ class WiFiLightDevice extends TuyaLocalDevice {
         if (h >= 0 && h <= 360 && s >= 0 && s <= 1000 && v >= 0 && v <= 1000) {
           this.setCapabilityValue('light_hue', h / 360).catch(this.error);
           this.setCapabilityValue('light_saturation', s / 1000).catch(this.error);
-          this.log('[WIFI-LIGHT] DP24 color H=' + h + ' S=' + s + ' V=' + v);
+          this.log('[WIFI-LED] DP24 color H=' + h + ' S=' + s + ' V=' + v);
         }
-      } catch (e) { /* ignore malformed */ }
+      } catch (e) { /* ignore */ }
     }
     super._processDPUpdate(dps);
   }
 
   async onInit() {
     await super.onInit();
-    this.log('[WIFI-LIGHT] Ready (RGBCW with HSV color)');
+    this.log('[WIFI-LED-STRIP] Ready (RGBCW + music + scenes)');
   }
 }
 
-module.exports = WiFiLightDevice;
+module.exports = WiFiLedStripDevice;

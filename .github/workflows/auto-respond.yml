@@ -84,13 +84,19 @@ jobs:
             const nonTuya = [...new Set((text.match(/\b[A-Z][A-Z0-9]{5,15}\b/g) || []).filter(m => fps.has(m)))];
             const allMfrs = [...new Set([...mfrs, ...nonTuya])];
 
+            // Detect WiFi device requests (Tuya WiFi / Smart Life / Lidl Home / Meross / Avatto)
+            const isWiFi = /wifi|wi-fi|smart\s*life|tuya\s*cloud|local\s*key|lidl\s*home|meross|avatto|silvercrest|nedis|local\s*control/i.test(text);
+            const wifiDriverCount = fs.readdirSync(driversDir).filter(d => d.startsWith('wifi_')).length;
+
             if (!allMfrs.length && !pids.length) {
               console.log('No fingerprints found — skipping');
               // Still label if it looks like a device request
-              if (isIssue && action === 'opened' && /device|support|add|request/i.test(title)) {
+              const labels = ['device-request', 'needs-info'];
+              if (isWiFi) labels.push('wifi');
+              if (isIssue && action === 'opened' && /device|support|add|request|wifi|smart.?life/i.test(title)) {
                 await github.rest.issues.addLabels({
                   owner: context.repo.owner, repo: context.repo.repo,
-                  issue_number: num, labels: ['device-request', 'needs-info']
+                  issue_number: num, labels
                 });
               }
               return;
@@ -144,7 +150,10 @@ jobs:
             msg += `| 📦 Install | **[Test version](${APP})** |\n`;
             msg += `| 💬 Forum | **[Community](${FORUM})** |\n`;
             msg += `| 🔧 Diagnostics | **[Developer Tools](${DEV})** |\n\n`;
-            msg += `---\n*Universal Tuya Zigbee v${version} — ${driverCount} drivers, ${fps.size}+ fingerprints*`;
+            if (isWiFi) {
+              msg += `> 📡 **WiFi local control supported!** This app includes ${wifiDriverCount} WiFi device types with local LAN control (no cloud needed).\n\n`;
+            }
+            msg += `---\n*Universal Tuya Zigbee v${version} — ${driverCount} drivers (${wifiDriverCount} WiFi), ${fps.size}+ fingerprints*`;
 
             // Post or update comment
             if (existingBot && action !== 'opened') {
