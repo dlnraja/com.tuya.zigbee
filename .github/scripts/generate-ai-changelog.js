@@ -79,7 +79,7 @@ async function generateChangelog(ctx){
     '  "appDescription": "Updated app.json description in English (max 200 chars, include driver/FP counts)"\n'+
     '}';
 
-  const sysPrompt='You are a changelog generator for a Homey Zigbee smart home app. Generate professional, accurate changelogs based on git commits and cross-referenced data from forum, GitHub, Gmail, and device interviews. Focus on user-visible changes. Never invent features not in the commits. Be concise but informative.';
+  const sysPrompt='You write changelogs for a Homey Zigbee app. Write like a real developer — short, specific, no corporate fluff. Say what actually changed. NEVER use filler like "enhance overall performance", "improve stability", "streamline", "optimize". Just state the fix or feature plainly. Focus on user-visible changes. Never invent features not in the commits.';
   const ai=await callAI(prompt,sysPrompt,{maxTokens:2048});
   if(!ai)return null;
   try{const j=ai.text.match(/\{[\s\S]*\}/);return j?JSON.parse(j[0]):null;}
@@ -106,8 +106,8 @@ function templateChangelog(ctx){
   const summary=ctx.commits.slice(0,3).map(c=>c.msg.substring(0,80)).join('. ');
   return{
     homeyChangelog:'v'+ctx.version+': '+summary.substring(0,380),
-    changelogMd:md||'- Performance and stability improvements\n',
-    readmeUpdate:summary.substring(0,100)||'Performance improvements',
+    changelogMd:md||'- Minor fixes and internal cleanup\n',
+    readmeUpdate:summary.substring(0,100)||'Bug fixes and maintenance',
     appDescription:'Control your Tuya Zigbee + WiFi devices locally! '+ctx.driverCount+' drivers, '+(ctx.fpCount||'5500+')+' fingerprints, 1,457+ flow cards.'
   };
 }
