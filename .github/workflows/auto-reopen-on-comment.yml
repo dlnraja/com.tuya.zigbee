@@ -1,0 +1,132 @@
+# Universal Tuya Zigbee - Auto-Reopen on User Comment
+# When a real user comments on a closed issue or PR, reopen it automatically
+# so that daily/nightly/upstream workflows re-process it.
+# The auto-respond.yml workflow will then trigger on the 'reopened' event.
+
+name: "Auto-Reopen on Comment"
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: auto-reopen-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  reopen:
+    name: "Reopen if closed"
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    # Only run if:
+    # 1. The issue/PR is closed
+    # 2. The commenter is NOT a bot
+    # 3. The commenter is NOT github-actions
+    if: >-
+      github.event.issue.state == 'closed' &&
+      github.event.comment.user.login != 'github-actions[bot]' &&
+      github.event.comment.user.login != 'dependabot[bot]' &&
+      github.event.comment.user.type != 'Bot'
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const comment = context.payload.comment;
+            const num = issue.number;
+            const user = comment.user.login;
+            const body = comment.body || '';
+            const isPR = !!issue.pull_request;
+            const type = isPR ? 'PR' : 'issue';
+
+            // Skip if comment is empty or very short (likely accidental)
+            if (body.trim().length < 5) {
+              console.log(`Skipping: comment too short (${body.length} chars)`);
+              return;
+            }
+
+            // Skip if commenter is the repo owner (they can reopen manually)
+            if (user === context.repo.owner) {
+              console.log(`Skipping: comment from repo owner ${user}`);
+              // Still reopen — owner commenting means they want to act on it
+            }
+
+            // Skip if the issue was closed very recently (< 2 min ago)
+            // This prevents reopening issues that were JUST auto-closed
+            const closedAt = new Date(issue.closed_at);
+            const commentedAt = new Date(comment.created_at);
+            const diffMs = commentedAt - closedAt;
+            if (diffMs < 120000) { // 2 minutes
+              console.log(`Skipping: closed ${Math.round(diffMs/1000)}s ago (too recent, likely auto-closed)`);
+              return;
+            }
+
+            // Skip "thank you" / "ok" / "got it" type comments that don't need reopening
+            const thankPattern = /^(thanks?|thank\s*you|ok|okay|got\s*it|merci|noted|👍|✅|🙏)\s*[.!]?\s*$/i;
+            if (thankPattern.test(body.trim())) {
+              console.log(`Skipping: "${body.trim()}" looks like acknowledgment, not a request`);
+              return;
+            }
+
+            console.log(`Reopening ${type} #${num} — new comment from @${user}`);
+            console.log(`Comment: ${body.slice(0, 150)}...`);
+
+            // Reopen the issue/PR
+            if (isPR) {
+              await github.rest.pulls.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: num,
+                state: 'open'
+              });
+            } else {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: num,
+                state: 'open'
+              });
+            }
+
+            // Remove stale/closed labels if present
+            const labelsToRemove = ['stale', 'closed-stale', 'already-supported'];
+            for (const label of labelsToRemove) {
+              try {
+                await github.rest.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: num,
+                  name: label
+                });
+              } catch {} // Label may not exist
+            }
+
+            // Add label to track reopened items
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: num,
+              labels: ['reopened-by-user']
+            });
+
+            // Post a brief acknowledgment
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: num,
+              body: [
+                `<!-- tuya-reopen-bot -->`,
+                `This ${type} has been **automatically reopened** because @${user} posted a new comment.`,
+                `It will be reviewed in the next automation cycle.`,
+                ``,
+                `> If your device is still not working, please share:`,
+                `> 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)`,
+                `> 2. **Diagnostic Report ID** from device settings`,
+              ].join('\n')
+            });
+
+            console.log(`✅ ${type} #${num} reopened, labeled, and acknowledged`);
