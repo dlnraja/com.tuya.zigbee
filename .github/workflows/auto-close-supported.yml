@@ -1,0 +1,144 @@
+# Universal Tuya Zigbee - Batch Close & Respond ALL Issues/PRs
+# Processes ALL open issues & PRs on dlnraja + JohanBendz repos
+# - Responds with FP status to unresponded issues/PRs
+# - Auto-closes issues/PRs where ALL fingerprints are already supported
+# - Auto-closes stale PRs on JohanBendz with FPs already integrated
+# - Labels everything for tracking
+
+name: "Batch Close & Respond All"
+
+on:
+  schedule:
+    - cron: '45 3 * * *'    # Daily 03:45 UTC
+    - cron: '0 15 * * 0'    # Sunday 15:00 UTC (weekly deep scan)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (no comments/closes)"
+        type: boolean
+        default: false
+      max_items:
+        description: "Max items per repo (0=all)"
+        type: number
+        default: 100
+      include_closed:
+        description: "Also scan recently closed items"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: batch-close-respond
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  process-all:
+    name: "Process All Issues & PRs"
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: App stats
+        id: stats
+        run: |
+          V=$(node -p "require('./app.json').version")
+          D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json | sort -uf | wc -l)
+          echo "version=$V" >> $GITHUB_OUTPUT
+          echo "drivers=$D" >> $GITHUB_OUTPUT
+          echo "fps=$F" >> $GITHUB_OUTPUT
+          echo "App v$V — $D drivers — $F fingerprints"
+
+      - name: "Process dlnraja issues & PRs"
+        id: own_repo
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          STALE_DAYS: "30"
+          MAX_ITEMS: ${{ inputs.max_items || '100' }}
+          INCLUDE_CLOSED: ${{ inputs.include_closed || 'false' }}
+          REPOS: "dlnraja/com.tuya.zigbee"
+        run: node .github/scripts/github-issue-manager.js
+
+      - name: "Process JohanBendz issues & PRs"
+        id: upstream_repo
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          STALE_DAYS: "14"
+          MAX_ITEMS: ${{ inputs.max_items || '100' }}
+          INCLUDE_CLOSED: ${{ inputs.include_closed || 'false' }}
+          REPOS: "JohanBendz/com.tuya.zigbee"
+        run: node .github/scripts/github-issue-manager.js
+
+      - name: Commit state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/state/ docs/
+          git diff --cached --quiet || git commit -m "auto: batch close/respond state update [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: batch-close-reports
+          path: |
+            .github/state/issue-manager-report.json
+            .github/state/issue-manager-state.json
+          retention-days: 30
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Batch Close & Respond All" >> $GITHUB_STEP_SUMMARY
+          echo "App v${{ steps.stats.outputs.version }} — ${{ steps.stats.outputs.drivers }} drivers — ${{ steps.stats.outputs.fps }} FPs" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Repo | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| dlnraja | ${{ steps.own_repo.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| JohanBendz | ${{ steps.upstream_repo.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          if [ -f .github/state/issue-manager-report.json ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            node -e "
+              const r=require('./.github/state/issue-manager-report.json');
+              console.log('### Results');
+              console.log('- Issues processed: '+(r.issuesProcessed||0));
+              console.log('- PRs processed: '+(r.prsProcessed||0));
+              console.log('- Responded: '+(r.responded||0));
+              console.log('- Closed: '+(r.closed||0));
+              console.log('- New FPs: '+(r.newFingerprints?.length||0));
+              if(r.evolutionSummary)console.log('\n### Evolution\n'+r.evolutionSummary);
+            " >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
+          fi

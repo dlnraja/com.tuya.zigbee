@@ -91,7 +91,7 @@ try { _main(); } catch(e) { console.error('Triage error:',e.message); process.ex
 function _main(){
 const fps=loadFingerprints();
 console.log(`Loaded ${fps.size} fingerprints. Scanning ${REPO}...`);
-let iTriaged=0,iCommented=0,pTriaged=0,pCommented=0;
+let iTriaged=0,iCommented=0,iClosed=0,pTriaged=0,pCommented=0,pClosed=0;
 const newFps=[];
 
 // Issues
@@ -108,6 +108,10 @@ for(const it of issues){
   else if(missing.length&&!found.length) msg=unsupportedMsg(missing);
   else if(found.length&&missing.length) msg=supportedMsg(found)+'\n\n---\n\n'+unsupportedMsg(missing);
   if(msg){post(it.number,msg);iCommented++;}
+  // Auto-close if ALL FPs supported
+  if(found.length&&!missing.length&&!DRY){
+    try{gh(`issue close ${it.number} -R ${REPO} -r "not planned" -c "All fingerprints are already supported in Universal Tuya Zigbee v${VER}. Closing as resolved."`);iClosed++;console.log(`  Closed #${it.number} (all FPs supported)`);}catch(e){console.log(`  Close skip #${it.number}: ${e.message.slice(0,60)}`);}
+  }
 }
 
 // PRs
@@ -120,6 +124,10 @@ for(const pr of prs){
   const missing=mfrs.filter(m=>!fps.has(m));
   missing.forEach(m=>newFps.push({fp:m,source:`${REPO}#${pr.number}`,type:'pr'}));
   if(found.length||missing.length){post(pr.number,prMsg(found,missing));pCommented++;}
+  // Auto-close PR if ALL FPs supported
+  if(found.length&&!missing.length&&!DRY){
+    try{gh(`pr close ${pr.number} -R ${REPO} -c "All fingerprints in this PR are already integrated in Universal Tuya Zigbee v${VER}. Closing as resolved."`);pClosed++;console.log(`  Closed PR #${pr.number} (all FPs supported)`);}catch(e){console.log(`  Close skip PR #${pr.number}: ${e.message.slice(0,60)}`);}
+  }
 }
 
 // Scan forks if enabled
@@ -169,6 +177,8 @@ const report=[
   `| New issue comments | ${iCommented} |`,
   `| Open PRs | ${prs.length} |`,
   `| PR comments | ${pCommented} |`,
+  `| Issues closed (all supported) | ${iClosed} |`,
+  `| PRs closed (all supported) | ${pClosed} |`,
   `| New fingerprints found | ${newFps.length} |`,
 ].join('\n');
 console.log(report);
