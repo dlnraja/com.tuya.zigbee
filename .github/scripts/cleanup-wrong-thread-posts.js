@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// DELETE all dlnraja posts on OTHER people's threads (not T140352)
+// BLANK all dlnraja posts on OTHER threads — v2: 20s spacing, skip blanked
 const fs=require('fs'),path=require('path');
 const envFile=path.join(__dirname,'..','..', '.env');
 if(fs.existsSync(envFile)){for(const l of fs.readFileSync(envFile,'utf8').split('\n')){const m=l.match(/^\s*([A-Z_]+)\s*=\s*(.+)\s*$/);if(m&&m[2]&&!m[2].startsWith('#'))process.env[m[1]]=m[2];}}
@@ -9,6 +9,8 @@ const{fetchWithRetry,sleep}=require('./retry-helper');
 const TOPICS=[26439,146735,89271];
 const USER='dlnraja';
 const DRY=process.env.DRY_RUN!=='false';
+const BLANK='_(message removed)_';
+const EDIT_SPACING=20000;
 
 function hdr(a,j){
   const h=a.type==='apikey'
@@ -31,6 +33,8 @@ async function scan(tid){
     const pp=(await r2.json()).post_stream?.posts||[];
     for(const p of pp){
       if(p.username!==USER)continue;
+      const raw=(p.raw||'').trim();
+      if(raw===BLANK){console.log('  #'+p.post_number+' already blanked, skip');continue;}
       found.push({id:p.id,num:p.post_number,preview:(p.cooked||'').replace(/<[^>]+>/g,' ').trim().substring(0,80)});
     }
   }
@@ -50,8 +54,8 @@ async function main(){
       if(DRY){console.log('    [DRY] would delete');continue;}
       try{
         if(auth.type==='session')await refreshCsrf(auth);
-        await sleep(3000);
-        const r=await fetchWithRetry(`${FORUM}/posts/${p.id}`,{method:'PUT',headers:hdr(auth,true),body:JSON.stringify({post:{raw:'_(message removed)_'}})},{retries:2,label:'edit'});
+        await sleep(EDIT_SPACING);
+        const r=await fetchWithRetry(`${FORUM}/posts/${p.id}`,{method:'PUT',headers:hdr(auth,true),body:JSON.stringify({post:{raw:BLANK}})},{retries:1,maxDelay:30000,label:'edit'});
         if(r.ok){console.log('    BLANKED');deleted++;}
         else console.log('    FAIL:',r.status);
       }catch(e){console.log('    ERR:',e.message);}
