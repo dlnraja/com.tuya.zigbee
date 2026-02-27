@@ -82,7 +82,45 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ switch_3gang_set_backlight_brightness');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 3-Gang switch flow cards registered (v5.5.930)');
+    // v5.12.0: Toggle per gang + all on/off
+    ['gang1', 'gang2', 'gang3'].forEach((gang, idx) => {
+      try {
+        this.homey.flow.getActionCard(`switch_3gang_toggle_${gang}`)
+          .registerRunListener(async (args) => {
+            if (!args.device) return false;
+            const cap = idx === 0 ? 'onoff' : `onoff.${idx + 1}`;
+            const v = args.device.getCapabilityValue(cap);
+            await args.device.setCapabilityValue(cap, !v);
+            return true;
+          });
+      } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+    });
+
+    try {
+      this.homey.flow.getActionCard('switch_3gang_turn_on_all')
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.setCapabilityValue('onoff', true);
+          for (let i = 2; i <= 3; i++) {
+            if (args.device.hasCapability(`onoff.${i}`)) await args.device.setCapabilityValue(`onoff.${i}`, true);
+          }
+          return true;
+        });
+    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+
+    try {
+      this.homey.flow.getActionCard('switch_3gang_turn_off_all')
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.setCapabilityValue('onoff', false);
+          for (let i = 2; i <= 3; i++) {
+            if (args.device.hasCapability(`onoff.${i}`)) await args.device.setCapabilityValue(`onoff.${i}`, false);
+          }
+          return true;
+        });
+    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+
+    this.log('[FLOW] 🎉 3-Gang switch flow cards registered (v5.12.0)');
   }
 }
 

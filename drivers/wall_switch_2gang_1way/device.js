@@ -49,10 +49,12 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
           this.setCapabilityValue('onoff', value).catch(() => {});
         }
         if (isPhys) {
-          // Auto/Both: trigger physical button flow
+          // Auto/Both: trigger physical button flow (general + per-gang)
           if (mode === 'auto' || mode === 'both') {
             const fid = 'wall_switch_2gang_1way_turned_' + (value ? 'on' : 'off');
             this.homey.flow.getDeviceTriggerCard(fid).trigger(this, {}, {}).catch(() => {});
+            const pgid = 'wall_switch_2gang_1way_physical_gang2_' + (value ? 'on' : 'off');
+            this.homey.flow.getDeviceTriggerCard(pgid).trigger(this, {}, {}).catch(() => {});
           }
           // Magic/Both: trigger scene flow
           if (mode === 'magic' || mode === 'both') {
@@ -127,6 +129,10 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
     onOff.on('attr.onOff', (value) => {
       const mode = this.sceneMode;
       const isPhys = !this._appCommandPending?.gang1;
+      if (isPhys && (mode === 'auto' || mode === 'both')) {
+        const pgid = 'wall_switch_2gang_1way_physical_gang1_' + (value ? 'on' : 'off');
+        this.homey.flow.getDeviceTriggerCard(pgid).trigger(this, {}, {}).catch(() => {});
+      }
       if (isPhys && (mode === 'magic' || mode === 'both')) {
         const action = value ? 'on' : 'off';
         this.homey.flow.getDeviceTriggerCard('wall_switch_2gang_1way_gang1_scene')
