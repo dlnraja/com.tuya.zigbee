@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const fs=require('fs'),path=require('path');
-const{getForumAuth,fmtCk,FORUM}=require('./forum-auth');
+const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const{loadFingerprints,extractMfrFromText}=require('./load-fingerprints');
 const{callAI}=require('./ai-helper');

@@ -1,0 +1,183 @@
+{
+  "date": "2026-02-27T04:47:24.869Z",
+  "local": {
+    "drivers": 138,
+    "fps": 3418
+  },
+  "forkScan": {
+    "filesScanned": 56,
+    "newFPs": 26
+  },
+  "upstream": {
+    "prs": 0,
+    "issues": 0
+  },
+  "own": {
+    "prs": 0,
+    "issues": 0
+  },
+  "newFPsFromForks": [
+    {
+      "mfr": "TUYATEC-g3gl6cgy",
+      "driver": "doorwindowsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-Bfq2i2Sy",
+      "driver": "doorwindowsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-abkehqus",
+      "driver": "doorwindowsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-sb6t7ett",
+      "driver": "doorwindowsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-rkqiqvcs",
+      "driver": "doorwindowsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-crr8qb0p",
+      "driver": "doorwindowsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-kbqf60nt",
+      "driver": "doorwindowsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-r9hgssol",
+      "driver": "doorwindowsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-trhrga6p",
+      "driver": "doorwindowsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-ip9ganvw",
+      "driver": "doorwindowsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-7qunn4gq",
+      "driver": "doorwindowsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-0l6xaqmi",
+      "driver": "doorwindowsensor_2",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "Immax",
+      "driver": "doorwindowsensor_2",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "Visonic",
+      "driver": "doorwindowsensor_2",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-3tipnsrx",
+      "driver": "flood_sensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-bd5faf9p",
+      "driver": "motion_sensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-zw6hxafz",
+      "driver": "motion_sensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-lha8pbwd",
+      "driver": "pirsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-zn9wyqtr",
+      "driver": "pirsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-53o41joc",
+      "driver": "pirsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-deetibst",
+      "driver": "pirsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-dgtxmihe",
+      "driver": "pirsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-b5g40alm",
+      "driver": "pirsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-dxnohkpd",
+      "driver": "pirsensor",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "eWeLight",
+      "driver": "rgb_bulb_E27",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    }
+  ],
+  "newFPsFromPRs": [],
+  "newFPsFromIssues": [],
+  "allUpstreamPRs": [],
+  "allUpstreamIssues": [],
+  "allOwnPRs": [],
+  "allOwnIssues": []
+}

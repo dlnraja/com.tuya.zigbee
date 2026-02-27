@@ -9,7 +9,7 @@
  * - Extracts fingerprints, device info from everything
  */
 const fs=require('fs'),path=require('path');
-const{getForumAuth,fmtCk,FORUM}=require('./forum-auth');
+const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{callAI}=require('./ai-helper');
 const{loadFingerprints,extractMfrFromText}=require('./load-fingerprints');
 const{fetchWithRetry}=require('./retry-helper');
