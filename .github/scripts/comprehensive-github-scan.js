@@ -7,10 +7,10 @@ const path = require('path');
 
 const DDIR = path.join(__dirname, '..', '..', 'drivers');
 const STATE_DIR = path.join(__dirname, '..', 'state');
+const { fetchWithRetry, sleep, setThrottle } = require('./retry-helper');
 const UPSTREAM = 'JohanBendz/com.tuya.zigbee';
 const OWN_REPO = 'dlnraja/com.tuya.zigbee';
 const API = 'https://api.github.com';
-const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 // Build our current fingerprint index
 function buildLocalIndex() {
@@ -32,25 +32,17 @@ function buildLocalIndex() {
   return { mfrs, pids, driverMap, driverCount: dirs.length };
 }
 
+// GitHub API spacing: 300ms between requests (authenticated)
+setThrottle('github', 300);
+
 async function ghFetch(url) {
   const headers = { 'Accept': 'application/vnd.github.v3+json', 'User-Agent': 'tuya-zigbee-scanner' };
-  const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+  const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || process.env.GH_PAT;
   if (token) headers['Authorization'] = `token ${token}`;
-  const r = await fetch(url, { headers });
-  if (r.status === 403) {
-    const reset = r.headers.get('x-ratelimit-reset');
-    if (reset) {
-      const wait = Math.max(0, parseInt(reset) * 1000 - Date.now()) + 1000;
-      if (wait < 300000) { // wait up to 5 min
-        console.log(`  Rate limited, waiting ${Math.round(wait/1000)}s...`);
-        await sleep(wait);
-        return ghFetch(url);
-      }
-    }
-    console.log('  Rate limited, skipping');
-    return null;
-  }
-  if (!r.ok) return null;
+  const r = await fetchWithRetry(url, { headers }, {
+    retries: 3, label: 'gh', queue: 'github', maxDelay: 300000
+  });
+  if (!r || !r.ok) return null;
   return r.json();
 }
 

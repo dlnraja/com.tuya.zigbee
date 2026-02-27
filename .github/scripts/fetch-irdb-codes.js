@@ -5,6 +5,7 @@
 // Sources: irdb (GitHub), LIRC remotes, Tuya IR blaster DP codes
 const fs = require('fs');
 const path = require('path');
+const { fetchWithRetry } = require('./retry-helper');
 
 const STATE_DIR = path.join(__dirname, '..', 'state');
 const IRDB_REPO = 'probonopd/irdb';
@@ -18,7 +19,7 @@ async function fetchIRDB() {
   let irdbCount = 0;
   try {
     const url = 'https://api.github.com/repos/' + IRDB_REPO + '/git/trees/master?recursive=1';
-    const res = await fetch(url, { headers });
+    const res = await fetchWithRetry(url, { headers }, { retries: 2, label: 'irdb' });
     if (res.ok) {
       const data = await res.json();
       const csvFiles = (data.tree || []).filter(t => t.path.endsWith('.csv') && t.path.includes('codes/'));
@@ -50,7 +51,7 @@ async function fetchIRDB() {
   // Scan Z2M for IR blaster references
   try {
     const z2mUrl = 'https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.ts';
-    const res = await fetch(z2mUrl, { headers: { 'User-Agent': 'tuya-zigbee-bot' } });
+    const res = await fetchWithRetry(z2mUrl, { headers: { 'User-Agent': 'tuya-zigbee-bot' } }, { retries: 2, label: 'z2m' });
     if (res.ok) {
       const text = await res.text();
       const irMatches = text.match(/TS1201|TS0601.*ir|ir.*blaster|ir.*remote|ZS06/gi) || [];
