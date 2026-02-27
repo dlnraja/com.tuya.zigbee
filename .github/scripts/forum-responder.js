@@ -7,11 +7,18 @@ const REPLY_COOLDOWN_MS=3600000; // 1h min between replies to same topic
 const SIMILARITY_THRESHOLD=0.6; // block if reply >60% similar to recent post
 const STATE=path.join(__dirname,'..','state','forum-state.json');
 const DDIR=path.join(__dirname,'..','..','drivers');
+const SD=path.join(__dirname,'..','state');
 const loadState=()=>{try{return JSON.parse(fs.readFileSync(STATE,'utf8'))}catch{return{topics:{},replyLog:[]}}};
 const saveState=s=>{fs.mkdirSync(path.dirname(STATE),{recursive:true});fs.writeFileSync(STATE,JSON.stringify(s,null,2)+'\n')};
 const{buildFullIndex,extractAllFP}=require('./load-fingerprints');
 const{validateReply}=require('./reply-quality-gate');
 const{gatherAll,formatForAI}=require('./gather-intelligence');
+
+// v5.11.29: Load expectations reference for decision-making
+function loadExpectationsRef(){
+  try{return JSON.parse(fs.readFileSync(path.join(SD,'expectations-ref.json'),'utf8'))}
+  catch{return null}
+}
 const strip=h=>(h||'').replace(/<br\s*\/?>/gi,'\n').replace(/<\/p>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").trim();
 const exImgs=h=>{const u=[];const re=/<img[^>]+src="([^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -152,6 +159,21 @@ async function batchAI(postInfos,ver){
 
   // Add intelligence context
   if(intel)ctx+=intel+'\n';
+
+  // v5.11.29: Add expectations reference for informed decisions
+  const expRef=loadExpectationsRef();
+  if(expRef){
+    ctx+='## DECISION REFERENCE (consult before replying)\n';
+    if(expRef.decisions?.length){
+      ctx+='Known correct implementations:\n';
+      for(const d of expRef.decisions)ctx+='- '+d.device+' → **'+d.driver+'** (NOT '+d.wrongDriver+'): '+d.reason+'\n';
+    }
+    if(expRef.pending?.length){
+      ctx+='Pending user issues:\n';
+      for(const p of expRef.pending)ctx+='- @'+p.user+': '+p.device+' ('+p.status+')\n';
+    }
+    ctx+='\n';
+  }
 
   // Add user posts
   ctx+='## NEW FORUM POSTS\n\n';
