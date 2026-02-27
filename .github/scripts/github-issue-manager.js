@@ -9,6 +9,8 @@ const DRY=process.env.DRY_RUN==='true';
 const GH='https://api.github.com';
 const TOKEN=process.env.GH_PAT||process.env.GITHUB_TOKEN;
 const STALE_DAYS=parseInt(process.env.STALE_DAYS||'30');
+const MAX_ITEMS=parseInt(process.env.MAX_ITEMS||'100');
+const INCLUDE_CLOSED=process.env.INCLUDE_CLOSED==='true';
 const STATE_F=path.join(__dirname,'..','state','issue-manager-state.json');
 const REPORT_F=path.join(__dirname,'..','state','issue-manager-report.json');
 const TAG='<!-- tuya-issue-manager -->';
@@ -266,30 +268,62 @@ async function main(){
   console.log('=== GitHub Issue & PR Manager ===');
   const extData=loadExtData();
   const forumData=loadForumData();
-  console.log('Mode:',DRY?'DRY RUN':'LIVE','| Repos:',REPOS.join(', '),'| FPs:',fps.size,'| Stale:',STALE_DAYS+'d');
+  console.log('Mode:',DRY?'DRY RUN':'LIVE','| Repos:',REPOS.join(', '),'| FPs:',fps.size,'| Stale:',STALE_DAYS+'d','| Max:',MAX_ITEMS,'| Closed:',INCLUDE_CLOSED);
   console.log('ExtData:',extData?'loaded ('+((extData.allDevices||[]).length)+' devices)':'none','| ForumData:',forumData?'loaded':'none');
 
   for(const repo of REPOS){
     console.log('\n== '+repo+' ==');
 
-    // Fetch open issues
-    const issues=await ghGet('/repos/'+repo+'/issues?state=open&sort=updated&direction=desc&per_page=50');
-    if(!issues){console.log('  Failed to fetch issues');continue}
-    const realIssues=issues.filter(i=>!i.pull_request);
-    console.log('Open issues:',realIssues.length);
+    // Fetch ALL open issues (paginated)
+    let allIssues=[];
+    for(let page=1;page<=10;page++){
+      const batch=await ghGet('/repos/'+repo+'/issues?state=open&sort=updated&direction=desc&per_page=100&page='+page);
+      if(!batch||!batch.length)break;
+      allIssues.push(...batch);
+      if(batch.length<100)break;
+      await sleep(500);
+    }
+    // Also fetch recently closed if requested
+    if(INCLUDE_CLOSED){
+      for(let page=1;page<=3;page++){
+        const batch=await ghGet('/repos/'+repo+'/issues?state=closed&sort=updated&direction=desc&per_page=100&page='+page);
+        if(!batch||!batch.length)break;
+        allIssues.push(...batch);
+        if(batch.length<100)break;
+        await sleep(500);
+      }
+    }
+    const realIssues=allIssues.filter(i=>!i.pull_request);
+    console.log('Issues found:',realIssues.length,'(processing up to',MAX_ITEMS+')');
 
-    for(const iss of realIssues.slice(0,20)){
+    for(const iss of realIssues.slice(0,MAX_ITEMS)){
       await processIssue(repo,iss,state,report,extData);
       report.issuesProcessed++;
     }
     await sleep(2000);
 
-    // Fetch open PRs
-    const prs=await ghGet('/repos/'+repo+'/pulls?state=open&sort=updated&direction=desc&per_page=30');
-    if(!prs){console.log('  Failed to fetch PRs');continue}
-    console.log('Open PRs:',prs.length);
+    // Fetch ALL open PRs (paginated)
+    let allPRs=[];
+    for(let page=1;page<=5;page++){
+      const batch=await ghGet('/repos/'+repo+'/pulls?state=open&sort=updated&direction=desc&per_page=100&page='+page);
+      if(!batch||!batch.length)break;
+      allPRs.push(...batch);
+      if(batch.length<100)break;
+      await sleep(500);
+    }
+    // Also fetch recently closed PRs if requested
+    if(INCLUDE_CLOSED){
+      for(let page=1;page<=2;page++){
+        const batch=await ghGet('/repos/'+repo+'/pulls?state=closed&sort=updated&direction=desc&per_page=100&page='+page);
+        if(!batch||!batch.length)break;
+        allPRs.push(...batch);
+        if(batch.length<100)break;
+        await sleep(500);
+      }
+    }
+    console.log('PRs found:',allPRs.length,'(processing up to',Math.min(allPRs.length,MAX_ITEMS)+')');
 
-    for(const pr of prs.slice(0,15)){
+    for(const pr of allPRs.slice(0,MAX_ITEMS)){
       await processPR(repo,pr,state,report,extData);
       report.prsProcessed++;
     }
