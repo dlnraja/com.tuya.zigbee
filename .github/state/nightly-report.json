@@ -1,86 +1,120 @@
 {
-  "timestamp": "2026-02-27T15:09:32.670Z",
+  "timestamp": "2026-02-27T20:40:51.636Z",
   "appVersion": "5.11.25",
-  "forum": 7,
-  "github": 0,
-  "diagnostics": 5,
+  "forum": 2,
+  "github": 6,
+  "diagnostics": 8,
   "diagNewFPs": 0,
   "diagCritical": 0,
   "forumDetails": [
     {
       "topic": 140352,
-      "post": 1526,
-      "user": "Hartmut_Dunker",
+      "post": 1535,
+      "user": "FrankP",
       "fps": [
-        "_TZ3002_pzao9ls1",
-        "router",
-        "vision"
+        "_TZ3000_itb0omhv"
       ],
-      "reply": "### Troubleshooting Your BSEED Zigbee 4 Gang Button Switch\n\nLet's analyze the device interview data you provided to determine the best driver for your BSEED Zigbee 4 Gang Button Switch.\n\n#### Device I",
+      "reply": "@FrankP, thank you for submitting the diagnostic report. I've checked the fingerprint for your device `_TZ3000_itb0omhv`, and it appears that the device is recognized by the app. The fingerprint match",
       "model": "gh-Mistral-small-2503"
     },
     {
       "topic": 140352,
-      "post": 1527,
-      "user": "JJ10",
+      "post": 1537,
+      "user": "ManuelKugler",
       "fps": [
-        "dlnraja"
+        "_TZE284_hdml1aav",
+        "vision",
+        "tuya"
       ],
-      "reply": "Hi JJ,\n\nThank you for your patience and for providing detailed feedback. Let's address your concerns step by step.\n\n### Device Fingerprint\nThe fingerprint lookup indicates that the device is recognize",
+      "reply": "Hi Manuel,\n\nThank you for reaching out and providing detailed information about your new moisture sensor. Let's break down the steps to add the fertilizer level readings to your device.\n\n### Fingerpri",
       "model": "gh-Mistral-small-2503"
-    },
-    {
-      "topic": 140352,
-      "post": 1529,
-      "user": "Nicolas",
-      "fps": [
-        "HOBEIAN",
-        "dlnraja",
-        "vision"
-      ],
-      "reply": "Hi @Nicolas,\n\nThank you for providing the detailed information about your vibration sensor. Based on the data you've shared, here's how you can proceed:\n\n### Fingerprint Analysis\nThe fingerprint looku",
-      "model": "gh-Mistral-small-2503"
-    },
-    {
-      "topic": 140352,
-      "post": 1530,
-      "user": "Nicolas",
-      "fps": [
-        "eWeLink"
-      ],
-      "reply": "Hello @Nicolas,\n\nThank you for providing the detailed information about your leak sensor. Let's break down the steps to get this device working with the Universal Tuya Zigbee app on Homey.\n\n### Finger",
-      "model": "gh-Mistral-small-2503"
-    },
-    {
-      "topic": 140352,
-      "post": 1531,
-      "user": "smarthomesven",
-      "fps": [
-        "eWeLink"
-      ],
-      "reply": "@smarthomesven, thank you for reaching out and providing the fingerprint details. Based on the information you've shared, the device is recognized as an eWeLink ZigBee sensor, not a Tuya device. Here’",
-      "model": "gh-Mistral-small-2503"
-    },
-    {
-      "topic": 140352,
-      "post": 1534,
-      "user": "Nicolas",
-      "fps": [
-        "test"
-      ],
-      "reply": "**Fingerprint check** (v5.11.25):\n✅ Supported: `test` → **diy_custom_zigbee**\n",
-      "model": "template"
-    },
-    {
-      "topic": 146735,
-      "post": 189,
-      "user": "OH2TH",
-      "fps": [
-        "dlnraja"
-      ],
-      "reply": "**Fingerprint check** (v5.11.25):\n✅ Supported: `dlnraja` → **generic_diy**\n",
-      "model": "template"
     }
   ],
-  "githubDetails": []
+  "githubDetails": [
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "number": 110,
+      "user": "Pollepa",
+      "fps": [
+        "_TZ3210_w0qqde0g",
+        "vision",
+        "debug",
+        "test"
+      ],
+      "title": "unknown zigbee-device",
+      "response": "### Device Support Analysis\n\nThe provided device, an EU 16A Tuya Zigbee Smart Home Energy Metering device with model ID `TS011F` and manufacturer ID `_TZ3210_w0qqde0g`, is not currently supported by the Universal Tuya Zigbee driver v5.11.25. However, we can analyze the provided interview data to sug",
+      "model": "gh-Mistral-small-2503"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1343,
+      "user": "cvh1111",
+      "fps": [
+        "_TZE200_rhgsbacq",
+        "example",
+        "vision",
+        "lumi"
+      ],
+      "title": "Device Request - 10G 4 in 1 human motionsensor  - _TZE200_rhgsbacq / TS0601",
+      "response": "### Device Request - 10G 4 in 1 Human Motion Sensor\n\n#### Fingerprint Support\n\nThe fingerprint for the device `TS0601` with manufacturer `_TZE200_rhgsbacq` is not currently supported by Universal Tuya Zigbee v5.11.25.\n\n#### Device Analysis\n\nThe provided device interview data gives us a clear picture",
+      "model": "gh-Mistral-small-2503"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1345,
+      "user": "Nono-3ric",
+      "fps": [
+        "_TZE284_xnbkhhdr",
+        "example",
+        "vision"
+      ],
+      "title": "Device Request - AVATTO Smart thermostat WT198 - _TZE284_xnbkhhdr / TS0601",
+      "response": "### Device Request - AVATTO Smart Thermostat WT198\n\n#### Fingerprint Support\n\nThe fingerprint `_TZE284_xnbkhhdr` is supported by the `thermostat_tuya_dp` driver. The model ID `TS0601` is associated with multiple drivers, but `thermostat_tuya_dp` is the most relevant based on the device description.\n",
+      "model": "gh-Mistral-small-2503"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1347,
+      "user": "azkysmarthome",
+      "fps": [
+        "_TZE284_6ycgarab",
+        "_TZE200_u6x1zyv2",
+        "_TZE204_gkfb",
+        "_TZE204_dwcarsat",
+        "_TZE200_vrcfo4i0",
+        "_TZ3000_zutizvyk",
+        "HOBEIAN",
+        "test",
+        "_TZE204_gkfbdvyx"
+      ],
+      "title": "Support request for multiple Tuya sensors (Smoke, Water, Rain, Radar, SOS)",
+      "response": "### Support Request for Multiple Tuya Sensors\n\n#### Supported Devices\n\n1. **Smoke & Gas Sensor (_TZE284_6ycgarab)**\n   - **Driver**: `smoke_detector_advanced`\n   - **Pairing**: Follow the standard pairing procedure for Zigbee devices. Ensure the device is in pairing mode by pressing the reset button",
+      "model": "gh-Mistral-small-2503"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1344,
+      "user": "fjvs1467",
+      "fps": [
+        "_TZ3000_bgsigers",
+        "test"
+      ],
+      "title": "Bug report - [Short description] _TZ3000_bgsigers - TS0201 sensors stopped working",
+      "response": "### Issue Analysis and Resolution Steps\n\n#### Device Fingerprint\nThe fingerprint for your device `_TZ3000_bgsigers` with PID `TS0201` is supported by the `climate_sensor` driver. This driver is designed to handle temperature and humidity sensors, which matches the description of your devices.\n\n#### ",
+      "model": "gh-Mistral-small-2503"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1328,
+      "user": "AGabriel",
+      "fps": [
+        "_TZE284_9ern5sfh",
+        "example",
+        "vision"
+      ],
+      "title": "Device Request - [RSH-HS03] - _TZE284_9ern5sfh | TS0601",
+      "response": "### Device Request - [RSH-HS03] - _TZE284_9ern5sfh | TS0601\n\n#### Supported Fingerprint\n\nThe fingerprint `_TZE284_9ern5sfh` is supported by the `climate_sensor` driver. The model ID `TS0601` is a generic Tuya PID that matches multiple device types, but given the device description and the clusters p",
+      "model": "gh-Mistral-small-2503"
+    }
+  ]
 }
