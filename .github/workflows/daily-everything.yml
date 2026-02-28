@@ -110,6 +110,9 @@ jobs:
           echo "=== Forum Respond (T140352 only, anti-spam) ==="
           node .github/scripts/forum-responder.js || true
 
+      - name: "Sleep 30s between AI steps"
+        run: sleep 30
+
       # ===== 2. GITHUB: Triage + Respond + Close =====
       - name: "2. GitHub Issues & PRs Manager"
         id: github_mgr
@@ -123,6 +126,9 @@ jobs:
           GEMINI_MAX_TIER: "1"
           RATE_LIMIT_SLEEP: "5000"
         run: node .github/scripts/github-issue-manager.js
+
+      - name: "Sleep 30s before triage"
+        run: sleep 30
 
       # ===== 3. GITHUB: Upstream Triage (JohanBendz + forks) =====
       - name: "3. Upstream Triage"
@@ -154,6 +160,9 @@ jobs:
         timeout-minutes: 10
         run: node .github/scripts/scan-prs-issues.js
 
+      - name: "Sleep 20s before scanner"
+        run: sleep 20
+
       # ===== 4. GITHUB: Scanner (both repos, AI summary) =====
       - name: "4. GitHub Activity Scanner"
         id: gh_scanner
@@ -161,6 +170,7 @@ jobs:
         timeout-minutes: 10
         env:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          GEMINI_MAX_TIER: "1"
         run: node .github/scripts/github-scanner.js
 
       # ===== 5. GMAIL: Diagnostics (1x/day at 8AM run) =====
