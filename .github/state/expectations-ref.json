@@ -35,6 +35,12 @@
       "reason": "Check if device is ZCL-only or Tuya DP — use interview to determine protocol"
     },
     {
+      "device": "Soil+fertilizer sensor (_TZE284_hdml1aav)",
+      "driver": "soil_sensor",
+      "wrongDriver": "N/A",
+      "reason": "FP exists. Standard DPs (3,5,14,15) work. Fertilizer/EC DP unknown — need user logs to discover DP number."
+    },
+    {
       "device": "Immax NEO Smart Water Timer (_TZE200_xlppj4f5)",
       "driver": "valve_irrigation",
       "wrongDriver": "climate_sensor",
@@ -301,6 +307,30 @@
       "device": "`_TZE200_3p5ydos3` dimmer",
       "status": "NEEDS DIAG",
       "note": "Dimmer errors on control. T89271#660. Need diag log."
+    },
+    {
+      "user": "ManuelKugler",
+      "device": "`_TZE284_hdml1aav` TS0601 soil+fertilizer sensor",
+      "status": "NO FERTILIZER DP",
+      "note": "Diag 29bb591c: compound frame has ONLY DPs 3,5,9,14,15. No fertilizer DP via Zigbee. Likely cloud-only."
+    },
+    {
+      "user": "FrankP",
+      "device": "`_TZ3000_itb0omhv` TS0041 wireless button",
+      "status": "USER ACTION NEEDED",
+      "note": "FP+PID confirmed in button_wireless_1. Diag e0104992 shows device NOT paired to this Homey. User must re-pair."
+    },
+    {
+      "user": "diag_5a38ea0b",
+      "device": "`_TZ3000_8bxrzyxz` ZG-204ZV presence sensor",
+      "status": "FIXED v5.11.26",
+      "note": "DP4=7000% humidity bug fixed (auto-scale fallback). DPs 113,119,122,123,124 mapped as internal/radar. DP122=radar energy."
+    },
+    {
+      "user": "diag_822fcb89",
+      "device": "fingerbot crash TypeError read-only log",
+      "status": "FIXED v5.11.26",
+      "note": "DiagnosticLogsCollector.js used direct assignment to read-only log property. Fixed with Object.defineProperty."
     }
   ],
   "patterns": [],

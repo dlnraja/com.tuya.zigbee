@@ -18,7 +18,7 @@ class AirQualityCO2Device extends HybridSensorBase {
   get mainsPowered() { return false; }
 
   get sensorCapabilities() {
-    return ['measure_co2', 'measure_temperature', 'measure_humidity', 'measure_battery'];
+    return ['measure_co2', 'measure_temperature', 'measure_humidity', 'measure_pm25', 'measure_voc', 'measure_formaldehyde', 'measure_battery'];
   }
 
   get dpMappings() {
@@ -29,24 +29,19 @@ class AirQualityCO2Device extends HybridSensorBase {
         divisor: 1,
         transform: (v) => this._validateCO2(v)
       },
+      // v5.11.26: DP20=PM2.5 (Z2M _TZE200_8ygsuhe1, #1229 eeckelaertyannick fix)
+      20: { capability: 'measure_pm25', divisor: 1 },
+      // v5.11.26: DP21=VOC per Z2M (was incorrectly mapped to CO2)
       21: {
-        capability: 'measure_co2',
+        capability: 'measure_voc',
         divisor: 1,
-        transform: (v) => this._validateCO2(v)
+        transform: (v) => this._trackVOC(v)
       },
       18: { capability: 'measure_temperature', divisor: 10 },
       19: { capability: 'measure_humidity', divisor: 10 },
       // v5.5.317: VOC with inference tracking
-      22: {
-        capability: 'measure_voc',
-        divisor: 100,
-        transform: (v) => this._trackVOC(v)
-      },
-      23: {
-        capability: 'measure_voc',
-        divisor: 100,
-        transform: (v) => this._trackVOC(v)
-      },
+      // v5.11.26: DP22=HCHO per Z2M (was incorrectly mapped to VOC)
+      22: { capability: 'measure_formaldehyde', divisor: 100 },
       14: { capability: 'measure_battery', divisor: 1 },
       15: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' },
       1: { capability: 'alarm_generic', transform: (v) => v === true || v === 1 }
