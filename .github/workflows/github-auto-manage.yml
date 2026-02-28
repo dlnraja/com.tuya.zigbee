@@ -65,6 +65,8 @@ jobs:
           MAX_ITEMS: "100"
           INCLUDE_CLOSED: "false"
           REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
+          GEMINI_MAX_TIER: "1"
+          RATE_LIMIT_SLEEP: "5000"
         run: node .github/scripts/github-issue-manager.js
 
       - name: Commit state & docs
