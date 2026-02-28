@@ -1,6 +1,6 @@
 {
   "5.11.25": {
-    "en": "Universal Tuya Zigbee app v5.11.25 adds support for 143 drivers and 5356 fingerprints."
+    "en": "v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts."
   },
   "5.11.24": {
     "en": "v5.11.24: Fixed a workflow trigger race condition. Forum scanner now covers 12 topics. Better diagnostics tracking between runs."
