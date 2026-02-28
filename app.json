@@ -22235,12 +22235,8 @@
       {
         "id": "wall_switch_2gang_1way_turned_on",
         "title": {
-          "en": "Turned on - physical button",
-          "nl": "Aangezet - fysieke knop"
-        },
-        "hint": {
-          "en": "Triggered when turned on by physical button",
-          "nl": "Geactiveerd bij fysieke knop"
+          "en": "Turned on",
+          "nl": "Aangezet"
         },
         "args": [
           {
@@ -22253,12 +22249,64 @@
       {
         "id": "wall_switch_2gang_1way_turned_off",
         "title": {
-          "en": "Turned off - physical button",
-          "nl": "Uitgezet - fysieke knop"
+          "en": "Turned off",
+          "nl": "Uitgezet"
         },
-        "hint": {
-          "en": "Triggered when turned off by physical button",
-          "nl": "Geactiveerd bij fysieke knop"
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_physical_gang1_on",
+        "title": {
+          "en": "Gang 1 physical ON",
+          "nl": "Gang 1 fysiek AAN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_physical_gang1_off",
+        "title": {
+          "en": "Gang 1 physical OFF",
+          "nl": "Gang 1 fysiek UIT"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_physical_gang2_on",
+        "title": {
+          "en": "Gang 2 physical ON",
+          "nl": "Gang 2 fysiek AAN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_physical_gang2_off",
+        "title": {
+          "en": "Gang 2 physical OFF",
+          "nl": "Gang 2 fysiek UIT"
         },
         "args": [
           {
@@ -22274,10 +22322,6 @@
           "en": "Gang 1 scene triggered",
           "nl": "Gang 1 scène geactiveerd"
         },
-        "hint": {
-          "en": "Triggered when gang 1 button pressed in scene/magic mode",
-          "nl": "Gang 1 knop in scène/magic modus"
-        },
         "args": [
           {
             "type": "device",
@@ -22290,8 +22334,7 @@
             "name": "action",
             "type": "string",
             "title": {
-              "en": "Action",
-              "nl": "Actie"
+              "en": "Action"
             },
             "example": {
               "en": "on"
@@ -22305,10 +22348,6 @@
           "en": "Gang 2 scene triggered",
           "nl": "Gang 2 scène geactiveerd"
         },
-        "hint": {
-          "en": "Triggered when gang 2 button pressed in scene/magic mode",
-          "nl": "Gang 2 knop in scène/magic modus"
-        },
         "args": [
           {
             "type": "device",
@@ -22321,8 +22360,7 @@
             "name": "action",
             "type": "string",
             "title": {
-              "en": "Action",
-              "nl": "Actie"
+              "en": "Action"
             },
             "example": {
               "en": "on"
@@ -22333,8 +22371,8 @@
       {
         "id": "wall_switch_3gang_1way_turned_on",
         "title": {
-          "en": "Turned on - physical button",
-          "nl": "Aangezet - fysieke knop"
+          "en": "Turned on",
+          "nl": "Aangezet"
         },
         "args": [
           {
@@ -22347,8 +22385,92 @@
       {
         "id": "wall_switch_3gang_1way_turned_off",
         "title": {
-          "en": "Turned off - physical button",
-          "nl": "Uitgezet - fysieke knop"
+          "en": "Turned off",
+          "nl": "Uitgezet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_physical_gang1_on",
+        "title": {
+          "en": "Gang 1 physical ON",
+          "nl": "Gang 1 fysiek AAN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_physical_gang1_off",
+        "title": {
+          "en": "Gang 1 physical OFF",
+          "nl": "Gang 1 fysiek UIT"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_physical_gang2_on",
+        "title": {
+          "en": "Gang 2 physical ON",
+          "nl": "Gang 2 fysiek AAN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_physical_gang2_off",
+        "title": {
+          "en": "Gang 2 physical OFF",
+          "nl": "Gang 2 fysiek UIT"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_physical_gang3_on",
+        "title": {
+          "en": "Gang 3 physical ON",
+          "nl": "Gang 3 fysiek AAN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_physical_gang3_off",
+        "title": {
+          "en": "Gang 3 physical OFF",
+          "nl": "Gang 3 fysiek UIT"
         },
         "args": [
           {
@@ -22439,8 +22561,8 @@
       {
         "id": "wall_switch_4gang_1way_turned_on",
         "title": {
-          "en": "Turned on - physical button",
-          "nl": "Aangezet - fysieke knop"
+          "en": "Turned on",
+          "nl": "Aangezet"
         },
         "args": [
           {
@@ -22453,8 +22575,120 @@
       {
         "id": "wall_switch_4gang_1way_turned_off",
         "title": {
-          "en": "Turned off - physical button",
-          "nl": "Uitgezet - fysieke knop"
+          "en": "Turned off",
+          "nl": "Uitgezet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_physical_gang1_on",
+        "title": {
+          "en": "Gang 1 physical ON",
+          "nl": "Gang 1 fysiek AAN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_physical_gang1_off",
+        "title": {
+          "en": "Gang 1 physical OFF",
+          "nl": "Gang 1 fysiek UIT"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_physical_gang2_on",
+        "title": {
+          "en": "Gang 2 physical ON",
+          "nl": "Gang 2 fysiek AAN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_physical_gang2_off",
+        "title": {
+          "en": "Gang 2 physical OFF",
+          "nl": "Gang 2 fysiek UIT"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_physical_gang3_on",
+        "title": {
+          "en": "Gang 3 physical ON",
+          "nl": "Gang 3 fysiek AAN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_physical_gang3_off",
+        "title": {
+          "en": "Gang 3 physical OFF",
+          "nl": "Gang 3 fysiek UIT"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_physical_gang4_on",
+        "title": {
+          "en": "Gang 4 physical ON",
+          "nl": "Gang 4 fysiek AAN"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_physical_gang4_off",
+        "title": {
+          "en": "Gang 4 physical OFF",
+          "nl": "Gang 4 fysiek UIT"
         },
         "args": [
           {
@@ -23220,6 +23454,50 @@
         }
       },
       {
+        "id": "wifi_air_quality_co2_high",
+        "title": {
+          "en": "CO2 level is high"
+        },
+        "tokens": [
+          {
+            "name": "co2",
+            "type": "number",
+            "title": {
+              "en": "CO2 (ppm)"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_air_quality"
+          }
+        ]
+      },
+      {
+        "id": "wifi_air_quality_pm25_high",
+        "title": {
+          "en": "PM2.5 level is high"
+        },
+        "tokens": [
+          {
+            "name": "pm25",
+            "type": "number",
+            "title": {
+              "en": "PM2.5"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_air_quality"
+          }
+        ]
+      },
+      {
         "id": "wifi_cover_opened",
         "title": {
           "en": "Opened"
@@ -23242,6 +23520,45 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=wifi_cover"
+          }
+        ]
+      },
+      {
+        "id": "wifi_dehumidifier_water_full",
+        "title": {
+          "en": "Water tank is full"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_dehumidifier"
+          }
+        ]
+      },
+      {
+        "id": "wifi_dehumidifier_turned_on",
+        "title": {
+          "en": "Dehumidifier turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_dehumidifier"
+          }
+        ]
+      },
+      {
+        "id": "wifi_dehumidifier_turned_off",
+        "title": {
+          "en": "Dehumidifier turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_dehumidifier"
           }
         ]
       },
@@ -23298,6 +23615,32 @@
         ]
       },
       {
+        "id": "wifi_doorbell_ring",
+        "title": {
+          "en": "Doorbell pressed"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_doorbell"
+          }
+        ]
+      },
+      {
+        "id": "wifi_doorbell_motion",
+        "title": {
+          "en": "Motion detected"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_doorbell"
+          }
+        ]
+      },
+      {
         "id": "wifi_garage_opened",
         "title": {
           "en": "Garage opened"
@@ -23320,6 +23663,35 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=wifi_garage_door"
+          }
+        ]
+      },
+      {
+        "id": "wifi_generic_dp_changed",
+        "title": {
+          "en": "A DP value changed"
+        },
+        "tokens": [
+          {
+            "name": "dp",
+            "type": "string",
+            "title": {
+              "en": "DP number"
+            }
+          },
+          {
+            "name": "value",
+            "type": "string",
+            "title": {
+              "en": "Value"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_generic"
           }
         ]
       },
@@ -23384,6 +23756,32 @@
         ]
       },
       {
+        "id": "wifi_led_strip_turned_on",
+        "title": {
+          "en": "Light turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_led_strip"
+          }
+        ]
+      },
+      {
+        "id": "wifi_led_strip_turned_off",
+        "title": {
+          "en": "Light turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_led_strip"
+          }
+        ]
+      },
+      {
         "id": "wifi_light_turned_on",
         "title": {
           "en": "Turned on"
@@ -23432,6 +23830,32 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=wifi_plug"
+          }
+        ]
+      },
+      {
+        "id": "wifi_power_strip_socket1_on",
+        "title": {
+          "en": "Socket 1 turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_power_strip"
+          }
+        ]
+      },
+      {
+        "id": "wifi_power_strip_socket1_off",
+        "title": {
+          "en": "Socket 1 turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_power_strip"
           }
         ]
       },
@@ -28441,6 +28865,34 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_is_on",
+        "title": {
+          "en": "Is !{{on|off}}",
+          "nl": "Is !{{aan|uit}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_is_on",
+        "title": {
+          "en": "Is !{{on|off}}",
+          "nl": "Is !{{aan|uit}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
           }
         ]
       },
@@ -36324,6 +36776,76 @@
         }
       },
       {
+        "id": "switch_3gang_toggle_gang1",
+        "title": {
+          "en": "Toggle gang 1",
+          "nl": "Gang 1 wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_3gang_toggle_gang2",
+        "title": {
+          "en": "Toggle gang 2",
+          "nl": "Gang 2 wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_3gang_toggle_gang3",
+        "title": {
+          "en": "Toggle gang 3",
+          "nl": "Gang 3 wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_3gang_turn_on_all",
+        "title": {
+          "en": "Turn on all gangs",
+          "nl": "Alle gangs aanzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_3gang_turn_off_all",
+        "title": {
+          "en": "Turn off all gangs",
+          "nl": "Alle gangs uitzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_3gang"
+          }
+        ]
+      },
+      {
         "id": "switch_3gang_set_backlight",
         "title": {
           "en": "Set LED backlight mode",
@@ -36706,6 +37228,90 @@
           "nl": "Gang 4 uitzetten",
           "de": "Gang 4 ausschalten"
         }
+      },
+      {
+        "id": "switch_4gang_toggle_gang1",
+        "title": {
+          "en": "Toggle gang 1",
+          "nl": "Gang 1 wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_toggle_gang2",
+        "title": {
+          "en": "Toggle gang 2",
+          "nl": "Gang 2 wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_toggle_gang3",
+        "title": {
+          "en": "Toggle gang 3",
+          "nl": "Gang 3 wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_toggle_gang4",
+        "title": {
+          "en": "Toggle gang 4",
+          "nl": "Gang 4 wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_turn_on_all",
+        "title": {
+          "en": "Turn on all gangs",
+          "nl": "Alle gangs aanzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "switch_4gang_turn_off_all",
+        "title": {
+          "en": "Turn off all gangs",
+          "nl": "Alle gangs uitzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_4gang"
+          }
+        ]
       },
       {
         "id": "switch_4gang_set_backlight",
@@ -41182,22 +41788,19 @@
               {
                 "id": "auto",
                 "label": {
-                  "en": "Auto (Normal + flows)",
-                  "nl": "Auto (Normaal + flows)"
+                  "en": "Auto (Normal + flows)"
                 }
               },
               {
                 "id": "magic",
                 "label": {
-                  "en": "Magic (Scene only)",
-                  "nl": "Magic (Alleen scène)"
+                  "en": "Magic (Scene only)"
                 }
               },
               {
                 "id": "both",
                 "label": {
-                  "en": "Both (Load + scene)",
-                  "nl": "Both (Belasting + scène)"
+                  "en": "Both (Load + scene)"
                 }
               }
             ]
@@ -41247,14 +41850,126 @@
         ]
       },
       {
+        "id": "wall_switch_2gang_1way_turn_on_gang1",
+        "title": {
+          "en": "Turn on gang 1",
+          "nl": "Gang 1 aanzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_turn_off_gang1",
+        "title": {
+          "en": "Turn off gang 1",
+          "nl": "Gang 1 uitzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_toggle_gang1",
+        "title": {
+          "en": "Toggle gang 1",
+          "nl": "Gang 1 wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_turn_on_gang2",
+        "title": {
+          "en": "Turn on gang 2",
+          "nl": "Gang 2 aanzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_turn_off_gang2",
+        "title": {
+          "en": "Turn off gang 2",
+          "nl": "Gang 2 uitzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_toggle_gang2",
+        "title": {
+          "en": "Toggle gang 2",
+          "nl": "Gang 2 wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_turn_on_all",
+        "title": {
+          "en": "Turn on all gangs",
+          "nl": "Alle gangs aanzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_turn_off_all",
+        "title": {
+          "en": "Turn off all gangs",
+          "nl": "Alle gangs uitzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          }
+        ]
+      },
+      {
         "id": "wall_switch_3gang_1way_set_backlight",
         "title": {
           "en": "Set LED indicator mode",
           "nl": "Stel LED-indicator modus in"
         },
         "titleFormatted": {
-          "en": "[[device]] set LED indicator to [[mode]]",
-          "nl": "[[device]] stel LED-indicator in op [[mode]]"
+          "en": "[[device]] set LED to [[mode]]",
+          "nl": "[[device]] stel LED in op [[mode]]"
         },
         "args": [
           {
@@ -41324,25 +42039,218 @@
               {
                 "id": "auto",
                 "label": {
-                  "en": "Auto (Normal + flows)",
-                  "nl": "Auto (Normaal + flows)"
+                  "en": "Auto (Normal + flows)"
                 }
               },
               {
                 "id": "magic",
                 "label": {
-                  "en": "Magic (Scene only)",
-                  "nl": "Magic (Alleen scène)"
+                  "en": "Magic (Scene only)"
                 }
               },
               {
                 "id": "both",
                 "label": {
-                  "en": "Both (Load + scene)",
-                  "nl": "Both (Belasting + scène)"
+                  "en": "Both (Load + scene)"
                 }
               }
             ]
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_turn_on",
+        "title": {
+          "en": "Turn on",
+          "nl": "Aanzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_turn_off",
+        "title": {
+          "en": "Turn off",
+          "nl": "Uitzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_toggle",
+        "title": {
+          "en": "Toggle",
+          "nl": "Wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_turn_on_gang1",
+        "title": {
+          "en": "Turn on gang 1",
+          "nl": "Gang 1 aanzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_turn_off_gang1",
+        "title": {
+          "en": "Turn off gang 1",
+          "nl": "Gang 1 uitzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_toggle_gang1",
+        "title": {
+          "en": "Toggle gang 1",
+          "nl": "Gang 1 wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_turn_on_gang2",
+        "title": {
+          "en": "Turn on gang 2",
+          "nl": "Gang 2 aanzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_turn_off_gang2",
+        "title": {
+          "en": "Turn off gang 2",
+          "nl": "Gang 2 uitzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_toggle_gang2",
+        "title": {
+          "en": "Toggle gang 2",
+          "nl": "Gang 2 wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_turn_on_gang3",
+        "title": {
+          "en": "Turn on gang 3",
+          "nl": "Gang 3 aanzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_turn_off_gang3",
+        "title": {
+          "en": "Turn off gang 3",
+          "nl": "Gang 3 uitzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_toggle_gang3",
+        "title": {
+          "en": "Toggle gang 3",
+          "nl": "Gang 3 wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_turn_on_all",
+        "title": {
+          "en": "Turn on all gangs",
+          "nl": "Alle gangs aanzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_turn_off_all",
+        "title": {
+          "en": "Turn off all gangs",
+          "nl": "Alle gangs uitzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
           }
         ]
       },
@@ -41353,8 +42261,8 @@
           "nl": "Stel LED-indicator modus in"
         },
         "titleFormatted": {
-          "en": "[[device]] set LED indicator to [[mode]]",
-          "nl": "[[device]] stel LED-indicator in op [[mode]]"
+          "en": "[[device]] set LED to [[mode]]",
+          "nl": "[[device]] stel LED in op [[mode]]"
         },
         "args": [
           {
@@ -41424,25 +42332,260 @@
               {
                 "id": "auto",
                 "label": {
-                  "en": "Auto (Normal + flows)",
-                  "nl": "Auto (Normaal + flows)"
+                  "en": "Auto (Normal + flows)"
                 }
               },
               {
                 "id": "magic",
                 "label": {
-                  "en": "Magic (Scene only)",
-                  "nl": "Magic (Alleen scène)"
+                  "en": "Magic (Scene only)"
                 }
               },
               {
                 "id": "both",
                 "label": {
-                  "en": "Both (Load + scene)",
-                  "nl": "Both (Belasting + scène)"
+                  "en": "Both (Load + scene)"
                 }
               }
             ]
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_turn_on",
+        "title": {
+          "en": "Turn on",
+          "nl": "Aanzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_turn_off",
+        "title": {
+          "en": "Turn off",
+          "nl": "Uitzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_toggle",
+        "title": {
+          "en": "Toggle",
+          "nl": "Wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_turn_on_gang1",
+        "title": {
+          "en": "Turn on gang 1",
+          "nl": "Gang 1 aanzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_turn_off_gang1",
+        "title": {
+          "en": "Turn off gang 1",
+          "nl": "Gang 1 uitzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_toggle_gang1",
+        "title": {
+          "en": "Toggle gang 1",
+          "nl": "Gang 1 wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_turn_on_gang2",
+        "title": {
+          "en": "Turn on gang 2",
+          "nl": "Gang 2 aanzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_turn_off_gang2",
+        "title": {
+          "en": "Turn off gang 2",
+          "nl": "Gang 2 uitzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_toggle_gang2",
+        "title": {
+          "en": "Toggle gang 2",
+          "nl": "Gang 2 wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_turn_on_gang3",
+        "title": {
+          "en": "Turn on gang 3",
+          "nl": "Gang 3 aanzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_turn_off_gang3",
+        "title": {
+          "en": "Turn off gang 3",
+          "nl": "Gang 3 uitzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_toggle_gang3",
+        "title": {
+          "en": "Toggle gang 3",
+          "nl": "Gang 3 wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_turn_on_gang4",
+        "title": {
+          "en": "Turn on gang 4",
+          "nl": "Gang 4 aanzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_turn_off_gang4",
+        "title": {
+          "en": "Turn off gang 4",
+          "nl": "Gang 4 uitzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_toggle_gang4",
+        "title": {
+          "en": "Toggle gang 4",
+          "nl": "Gang 4 wisselen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_turn_on_all",
+        "title": {
+          "en": "Turn on all gangs",
+          "nl": "Alle gangs aanzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_turn_off_all",
+        "title": {
+          "en": "Turn off all gangs",
+          "nl": "Alle gangs uitzetten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
           }
         ]
       },
@@ -41564,6 +42707,60 @@
         ]
       },
       {
+        "id": "wifi_generic_set_dp",
+        "title": {
+          "en": "Set a DP value"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_generic"
+          },
+          {
+            "name": "dp",
+            "type": "text",
+            "title": {
+              "en": "DP number"
+            }
+          },
+          {
+            "name": "value",
+            "type": "text",
+            "title": {
+              "en": "Value"
+            }
+          },
+          {
+            "name": "type",
+            "type": "dropdown",
+            "title": {
+              "en": "Type"
+            },
+            "values": [
+              {
+                "id": "bool",
+                "label": {
+                  "en": "Boolean"
+                }
+              },
+              {
+                "id": "number",
+                "label": {
+                  "en": "Number"
+                }
+              },
+              {
+                "id": "string",
+                "label": {
+                  "en": "String"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "wifi_heater_set_mode",
         "title": {
           "en": "Set heater mode",
@@ -41635,6 +42832,102 @@
             "step": 1,
             "label": "°C",
             "labelDecimals": 0
+          }
+        ]
+      },
+      {
+        "id": "wifi_led_strip_set_color",
+        "title": {
+          "en": "Set color"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_led_strip"
+          },
+          {
+            "name": "color",
+            "type": "color"
+          }
+        ]
+      },
+      {
+        "id": "wifi_power_strip_set_socket",
+        "title": {
+          "en": "Set socket on/off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_power_strip"
+          },
+          {
+            "name": "socket",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "Socket 1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "Socket 2"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "Socket 3"
+                }
+              },
+              {
+                "id": "4",
+                "label": {
+                  "en": "Socket 4"
+                }
+              },
+              {
+                "id": "5",
+                "label": {
+                  "en": "Socket 5"
+                }
+              },
+              {
+                "id": "6",
+                "label": {
+                  "en": "Socket 6"
+                }
+              },
+              {
+                "id": "usb",
+                "label": {
+                  "en": "USB"
+                }
+              }
+            ]
+          },
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off"
+                }
+              }
+            ]
           }
         ]
       },
@@ -41823,8 +43116,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZE200_8ygsuhe1",
-          "_TZE200_9cxuhakf",
           "_TZE200_ryfmq5rl",
           "_TZE200_yvx5lh6k",
           "_TZE200_ywagc4rj",
@@ -41989,13 +43280,11 @@
           "_TZ2000_hjsgdkfl",
           "_TZ3000_0ht8dnxj",
           "_TZ3000_8gs8h2e4",
-          "_TZE200_8ygsuhe1",
           "_TZE200_dwcarsat",
           "_TZE200_nnrfa68v",
           "_TZE200_ryfmq5rl",
           "_TZE200_yvx5lh6k",
           "_TZE204_nnrfa68v",
-          "_TZE204_yvx5lh6k",
           "_TZE284_8b9zpaav",
           "_TZE284_it9utkro"
         ],
@@ -42807,7 +44096,8 @@
           "_TZB210_wy1pyu1q",
           "_TZB210_yatkpuha",
           "_TZB210_zmppwawa",
-          "_TZ3210_s8lvbbuc"
+          "_TZ3210_s8lvbbuc",
+          "eWeLight"
         ],
         "endpoints": {
           "1": {
@@ -44816,8 +46106,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "eWeLink",
-          "SONOFF",
           "_TZ3000_arfwfgoa",
           "_TZ3000_lq01",
           "_TZ3000_wqxwpita",
@@ -46974,11 +48262,7 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_bi6lpsew",
           "_TZ3000_iszegwpd",
-          "_TZ3000_nrfkrgf4",
-          "_TZE200_2m38mh6k",
-          "_TZE200_zqtiam4u",
           "_TZE200_zxx7mi77",
           "_TZE204_zxx7mi77"
         ],
@@ -48198,7 +49482,6 @@
       "zigbee": {
         "manufacturerName": [
           "OWON",
-          "SONOFF",
           "_TYST11_2dpplnsn",
           "_TYST11_fzo2pocs",
           "_TYST11_pisltm67",
@@ -48264,7 +49547,6 @@
           "_TZ3000_a33rw7ou",
           "_TZ3000_aa5t61rh",
           "_TZ3000_aaifmpuq",
-          "_TZ3000_abci1hiu",
           "_TZ3000_afgzktgb",
           "_TZ3000_aknpkt02",
           "_TZ3000_akqdg6g7",
@@ -48275,7 +49557,6 @@
           "_TZ3000_au2o5e6q",
           "_TZ3000_avky2mvc",
           "_TZ3000_b1q8kwmh",
-          "_TZ3000_b28wrpvx",
           "_TZ3000_bgsigers",
           "_TZ3000_bguser20",
           "_TZ3000_bhcpnvud",
@@ -48286,36 +49567,24 @@
           "_TZ3000_bmqxalil",
           "_TZ3000_bpkijo14",
           "_TZ3000_bvij6kod",
-          "_TZ3000_bvrlqyj7",
           "_TZ3000_bzzgvet0",
-          "_TZ3000_c3g3pupu",
           "_TZ3000_c8zfad4a",
-          "_TZ3000_cduqh1l0",
           "_TZ3000_ceplrhnu",
           "_TZ3000_cet6ch1r",
-          "_TZ3000_cfnprab5",
-          "_TZ3000_ckq7u3r4",
-          "_TZ3000_cphmq0q7",
           "_TZ3000_cpozgbrx",
           "_TZ3000_cqlnswn0",
           "_TZ3000_criiahcg",
           "_TZ3000_ctftgjwb",
           "_TZ3000_cvis4qmw",
-          "_TZ3000_cxkjlbxx",
           "_TZ3000_cygcaxvv",
           "_TZ3000_dd8wwzcy",
           "_TZ3000_decxrtwa",
-          "_TZ3000_dffvflui",
-          "_TZ3000_dksbtrzs",
           "_TZ3000_dlhhrhs8",
           "_TZ3000_dlug3kbc",
           "_TZ3000_dowj6gyi",
           "_TZ3000_drc9tuqb",
           "_TZ3000_dvqt7qrw",
           "_TZ3000_dyzkbcip",
-          "_TZ3000_e3vhyrdz",
-          "_TZ3000_eei0ubpy",
-          "_TZ3000_egfdwm0f",
           "_TZ3000_egq7y6pr",
           "_TZ3000_egvb1p2g",
           "_TZ3000_eit6l5",
@@ -48325,23 +49594,17 @@
           "_TZ3000_esynmmox",
           "_TZ3000_etufnltx",
           "_TZ3000_exc99dvw",
-          "_TZ3000_exni6swi",
           "_TZ3000_ezqbvrqz",
           "_TZ3000_f09j9qjb",
-          "_TZ3000_f1bapcit",
           "_TZ3000_f2bw0b6k",
           "_TZ3000_fa9mlvja",
           "_TZ3000_fawk5xjv",
-          "_TZ3000_fbjdkph9",
           "_TZ3000_fdxihpp7",
-          "_TZ3000_femsrftq",
-          "_TZ3000_fgwhjm9j",
           "_TZ3000_fie1dpkm",
           "_TZ3000_fisb3ajo",
           "_TZ3000_fkxmyics",
           "_TZ3000_fllyghyj",
           "_TZ3000_fukaa7nc",
-          "_TZ3000_g1glzzfk",
           "_TZ3000_g8n1n7lg",
           "_TZ3000_g92baclx",
           "_TZ3000_g9chy2ib",
@@ -48353,33 +49616,24 @@
           "_TZ3000_geyh5rfs",
           "_TZ3000_gjrubzje",
           "_TZ3000_gntwytxo",
-          "_TZ3000_gp7p1xsn",
           "_TZ3000_gszjt2xx",
-          "_TZ3000_gznh2xla",
           "_TZ3000_gzvniqjb",
-          "_TZ3000_h1jnz6l9",
           "_TZ3000_h4wnrtck",
           "_TZ3000_hbic3ka3",
-          "_TZ3000_hdc8bbhc",
           "_TZ3000_hexqj6ls",
           "_TZ3000_hgm6k8ku",
-          "_TZ3000_hgpnzgac",
           "_TZ3000_hgu1dlak",
           "_TZ3000_hktqahrq",
-          "_TZ3000_hmitslt3",
           "_TZ3000_hojntt34",
           "_TZ3000_huvxrx4i",
           "_TZ3000_hy6ncvmw",
           "_TZ3000_hyfvrar3",
           "_TZ3000_hzlsaltw",
-          "_TZ3000_i1rw7p4p",
           "_TZ3000_i9oy2rdq",
           "_TZ3000_i9w5mehz",
-          "_TZ3000_idrffznf",
           "_TZ3000_idrxiajl",
           "_TZ3000_iiacqpdz",
           "_TZ3000_ikuxinvo",
-          "_TZ3000_imaccztn",
           "_TZ3000_in5qxhtt",
           "_TZ3000_in5s3wn1",
           "_TZ3000_irrmjcgi",
@@ -48387,51 +49641,32 @@
           "_TZ3000_isw9u95y",
           "_TZ3000_itnrsufe",
           "_TZ3000_iugnaasp",
-          "_TZ3000_iv2hvncp",
           "_TZ3000_iv6ph5tr",
           "_TZ3000_iymfxdis",
-          "_TZ3000_j34bmidp",
           "_TZ3000_j6adk9id",
-          "_TZ3000_jabbwuie",
           "_TZ3000_jak16dll",
-          "_TZ3000_jbjz13kn",
-          "_TZ3000_jeanjpmj",
-          "_TZ3000_jimbwdxd",
-          "_TZ3000_jkbrnvhr",
           "_TZ3000_jl7qyupf",
-          "_TZ3000_jnihvwo1",
           "_TZ3000_jsfzkftc",
           "_TZ3000_ju82pu2b",
           "_TZ3000_juq7i1fr",
-          "_TZ3000_jvvhvqjk",
           "_TZ3000_jwcixnrz",
           "_TZ3000_k4ej3ww2",
-          "_TZ3000_k6fvknrr",
           "_TZ3000_kaflzta4",
-          "_TZ3000_kas5qbpq",
           "_TZ3000_kdi2o9m6",
           "_TZ3000_kfkqkjqe",
-          "_TZ3000_kgvnspdl",
           "_TZ3000_kkerjand",
-          "_TZ3000_kksch6ep",
           "_TZ3000_kky16aay",
-          "_TZ3000_klch39xt",
           "_TZ3000_kmh5qpmb",
           "_TZ3000_kmsbwdol",
-          "_TZ3000_kmuxjukf",
           "_TZ3000_kpatq5pq",
           "_TZ3000_krwtzhfd",
-          "_TZ3000_kud7u2l1",
-          "_TZ3000_kvwjujy9",
           "_TZ3000_kvwrdf47",
           "_TZ3000_kxlmv9ag",
           "_TZ3000_kyb656no",
           "_TZ3000_kycczpw8",
-          "_TZ3000_l6pwxuxm",
           "_TZ3000_l6rsaipj",
           "_TZ3000_l8fsgo6p",
           "_TZ3000_lcjsewlo",
-          "_TZ3000_ld6g3agd",
           "_TZ3000_lepzuhto",
           "_TZ3000_liygxtcq",
           "_TZ3000_ljhbw1c9",
@@ -48627,126 +49862,82 @@
           "_TZ6210_duv6fhwt",
           "_TZE200_01fvxamo",
           "_TZE200_04yfvweb",
-          "_TZE200_0j5jma9b",
           "_TZE200_0nauxa0p",
           "_TZE200_0u3bj3rc",
           "_TZE200_127x7wnl",
-          "_TZE200_1agwnafq",
           "_TZE200_1agwnems",
           "_TZE200_1drr8tab",
           "_TZE200_1fuxihti",
           "_TZE200_1n2kyphz",
-          "_TZE200_1n2zev06",
           "_TZE200_1ozguk6x",
           "_TZE200_1vxgqfba",
           "_TZE200_2cs6g9i7",
           "_TZE200_2dpplnsn",
-          "_TZE200_2hf7x9n3",
           "_TZE200_2imwyigp",
           "_TZE200_2m38mh6k",
           "_TZE200_2odrmqwq",
           "_TZE200_2pddnnrk",
           "_TZE200_2vfxweng",
-          "_TZE200_2wg5qrjy",
           "_TZE200_3ejwxpmu",
-          "_TZE200_3i3exuay",
           "_TZE200_3xfjp0ag",
           "_TZE200_3ylew7b4",
-          "_TZE200_3yp57tby",
-          "_TZE200_44af8ipg",
           "_TZE200_44af8vyi",
           "_TZE200_4aijvczq",
           "_TZE200_4eeyebrt",
-          "_TZE200_4hbx5cvx",
           "_TZE200_4pm4pekt",
-          "_TZE200_4vobcgd3",
-          "_TZE200_502zx5sl",
-          "_TZE200_56bdwt92",
           "_TZE200_579lguh2",
-          "_TZE200_5bdnqwnx",
           "_TZE200_5d3vhjro",
-          "_TZE200_5tgzpccv",
           "_TZE200_6fjev1mn",
-          "_TZE200_6mafo2gv",
           "_TZE200_6wi2mope",
           "_TZE200_6y7kyjga",
           "_TZE200_78ioiaml",
           "_TZE200_7deq70b8",
-          "_TZE200_7eue9vhc",
           "_TZE200_7fqkphoq",
           "_TZE200_7p8ugv8d",
           "_TZE200_7shyddj3",
-          "_TZE200_7sjncirf",
-          "_TZE200_7tdtqgwv",
-          "_TZE200_7ytb3h8u",
           "_TZE200_86nbew0j",
           "_TZE200_8daqwrsj",
           "_TZE200_8eazvzo6",
           "_TZE200_8isdky6j",
-          "_TZE200_8k8k3t3j",
           "_TZE200_8ply8mjj",
           "_TZE200_8thwkzxl",
           "_TZE200_8vxj8khv",
-          "_TZE200_8whxpsiw",
-          "_TZE200_8xtk0cjs",
           "_TZE200_8ygsuhe1",
-          "_TZE200_9cxuhakf",
           "_TZE200_9dhenr94",
-          "_TZE200_9kqxlpby",
           "_TZE200_9m4kmbfu",
-          "_TZE200_9mahtqtg",
-          "_TZE200_9p5xmj5r",
           "_TZE200_9yapgbuv",
           "_TZE200_a0gvbdgv",
           "_TZE200_a1ovdobn",
-          "_TZE200_a4bpgplm",
-          "_TZE200_a4cjpzdi",
           "_TZE200_a8sdabtg",
           "_TZE200_a8z0g46u",
           "_TZE200_aao6qtcs",
           "_TZE200_abatw3kj",
           "_TZE200_afycb3cg",
-          "_TZE200_ahl6l9k5",
           "_TZE200_ahpcyzth",
           "_TZE200_aj0oxo1i",
-          "_TZE200_akjefhj5",
-          "_TZE200_amp6tsvy",
-          "_TZE200_anv5ujhv",
-          "_TZE200_ar0slwnd",
-          "_TZE200_atpwqgml",
           "_TZE200_ax8a8ahx",
-          "_TZE200_axbpz5wm",
           "_TZE200_b2u1drdv",
-          "_TZE200_b8x72kmy",
           "_TZE200_ba69l9ol",
           "_TZE200_bcusnqt8",
           "_TZE200_bfmfhxra",
           "_TZE200_bjawzodf",
           "_TZE200_blfcpsxz",
-          "_TZE200_bq5c8xfe",
           "_TZE200_bv1jcqqu",
           "_TZE200_bxdyeaa9",
           "_TZE200_bynnczcb",
-          "_TZE200_c2fmom5z",
           "_TZE200_c7emyjom",
           "_TZE200_cduqh1l0",
-          "_TZE200_cf1sl3tj",
           "_TZE200_cirvgep4",
           "_TZE200_clm4gdw4",
-          "_TZE200_cpmgn2cf",
           "_TZE200_cq8lu23i",
           "_TZE200_cqtamhh5",
           "_TZE200_ctq0k47x",
           "_TZE200_cxu0jkjk",
           "_TZE200_czk78ptr",
-          "_TZE200_d5p1kr8z",
           "_TZE200_d7lpruvi",
-          "_TZE200_d8fp6ivb",
           "_TZE200_d9mzkhoq",
           "_TZE200_dcnsggv",
-          "_TZE200_dcydapr2",
           "_TZE200_df04ghrb",
-          "_TZE200_dfry6ylv",
           "_TZE200_dhdstcqc",
           "_TZE200_dhke3p9w",
           "_TZE200_di3tfv5b",
@@ -48766,28 +49957,23 @@
           "_TZE200_emxxanvi",
           "_TZE200_en3wvcbx",
           "_TZE200_eo6xhfbo",
-          "_TZE200_ergbiejo",
           "_TZE200_ewxhg6o9",
           "_TZE200_exfrnlow",
           "_TZE200_ezqy5pvh",
           "_TZE200_feolm6rk",
           "_TZE200_fjjbhx9d",
           "_TZE200_fodv6bkr",
-          "_TZE200_fphxkxue",
           "_TZE200_fsb6zw01",
           "_TZE200_ft523twt",
           "_TZE200_fwoorn8y",
           "_TZE200_g1ib5ldv",
           "_TZE200_g5wdnuow",
           "_TZE200_g5xqosu7",
-          "_TZE200_gd4rvykv",
-          "_TZE200_ggev5fsl",
           "_TZE200_gjldowol",
           "_TZE200_gnw1rril",
           "_TZE200_go3tvswy",
           "_TZE200_gomuk3dc",
           "_TZE200_grgol3xp",
-          "_TZE200_gubdgai2",
           "_TZE200_gwkapsoq",
           "_TZE200_h2rctifa",
           "_TZE200_h4cgnbzg",
@@ -48801,8 +49987,6 @@
           "_TZE200_hmqzfqml",
           "_TZE200_hojryzzd",
           "_TZE200_hr0tdd47",
-          "_TZE200_hsgrhjpf",
-          "_TZE200_iba1ckek",
           "_TZE200_ijey4q29",
           "_TZE200_io0zdqh1",
           "_TZE200_iq4ygaai",
@@ -48811,7 +49995,6 @@
           "_TZE200_iwn0gpzz",
           "_TZE200_j7sgd8po",
           "_TZE200_jeaxp72v",
-          "_TZE200_jfw0a4aa",
           "_TZE200_ji1gn7rw",
           "_TZE200_jkbljri7",
           "_TZE200_js3mgbjb",
@@ -48833,11 +50016,9 @@
           "_TZE200_lawxy9e2",
           "_TZE200_leaqthqq",
           "_TZE200_lhqtjwax",
-          "_TZE200_libht6ua",
           "_TZE200_llm0epxg",
           "_TZE200_llvwkkde",
           "_TZE200_locansqn",
-          "_TZE200_lpwgshtl",
           "_TZE200_lsanae15",
           "_TZE200_lve3dvpy",
           "_TZE200_mby4kbtq",
@@ -48858,9 +50039,7 @@
           "_TZE200_nh9m9emk",
           "_TZE200_nhyj64w2",
           "_TZE200_nkjintbl",
-          "_TZE200_nogaemzt",
           "_TZE200_nojsjtj2",
-          "_TZE200_nueqqe6k",
           "_TZE200_nus5kk3n",
           "_TZE200_nvodulvi",
           "_TZE200_nvups4nh",
@@ -48878,16 +50057,11 @@
           "_TZE200_p6fuhvez",
           "_TZE200_p9zbdqgs",
           "_TZE200_pbo8cj0z",
-          "_TZE200_pcdmj88b",
-          "_TZE200_pisltm67",
-          "_TZE200_pk0sfzvr",
           "_TZE200_pl31aqf5",
           "_TZE200_ps5v5jor",
           "_TZE200_qanl25yu",
           "_TZE200_qhlxve78",
           "_TZE200_qjp4ynvi",
-          "_TZE200_qoy0ekbd",
-          "_TZE200_qq9mpfhw",
           "_TZE200_qrztc3ev",
           "_TZE200_qsoecqlk",
           "_TZE200_qxyh4r7g",
@@ -48895,19 +50069,16 @@
           "_TZE200_qyss8gjy",
           "_TZE200_qzaing2g",
           "_TZE200_r5ksy7qo",
-          "_TZE200_r731zlxk",
           "_TZE200_raz9qavg",
           "_TZE200_rbbx5mfq",
           "_TZE200_rd8cdssd",
           "_TZE200_rhblgy0z",
           "_TZE200_rjxqso4a",
           "_TZE200_rlqamjhp",
-          "_TZE200_rmymn92d",
           "_TZE200_rsj5pu8y",
           "_TZE200_rtrmfadk",
           "_TZE200_s1xgth2u",
           "_TZE200_s7rsrtbg",
-          "_TZE200_s8gkrkxk",
           "_TZE200_sbyx0lm6",
           "_TZE200_sfqyhvpv",
           "_TZE200_snfdqllf",
@@ -48931,11 +50102,9 @@
           "_TZE200_uiyqstza",
           "_TZE200_uli8wasj",
           "_TZE200_upagmta9",
-          "_TZE200_utkemkbs",
           "_TZE200_ux5v4dbd",
           "_TZE200_ux5v4tgb",
           "_TZE200_v1jqz5cy",
-          "_TZE200_v6ossqfy",
           "_TZE200_vdiuwbkq",
           "_TZE200_vhy3iakz",
           "_TZE200_vizxbhco",
@@ -48946,7 +50115,6 @@
           "_TZE200_vs0skpuc",
           "_TZE200_vucankjx",
           "_TZE200_vuqzj1ej",
-          "_TZE200_vuwtqx0t",
           "_TZE200_vzqtvljm",
           "_TZE200_w6n8jeuu",
           "_TZE200_wdfurkoa",
@@ -48962,10 +50130,7 @@
           "_TZE200_wv90ladg",
           "_TZE200_wv9ukqca",
           "_TZE200_wvovwe9h",
-          "_TZE200_wzk0x7fq",
           "_TZE200_x8fp01wi",
-          "_TZE200_xaabybja",
-          "_TZE200_xby0s3ta",
           "_TZE200_xlnzk169",
           "_TZE200_xpvamyfz",
           "_TZE200_xtrnjaoz",
@@ -48979,11 +50144,9 @@
           "_TZE200_yenbr4om",
           "_TZE200_yflzeeqj",
           "_TZE200_yi4jtqq1",
-          "_TZE200_yia0p3tr",
           "_TZE200_yjjdcqsq",
           "_TZE200_yjryxpot",
           "_TZE200_ykglasuj",
-          "_TZE200_yojqa8xn",
           "_TZE200_ypprdwsl",
           "_TZE200_yrugsphv",
           "_TZE200_ysm4dsb1",
@@ -48996,8 +50159,6 @@
           "_TZE200_zivfvd7h",
           "_TZE200_zl1kmjqx",
           "_TZE200_zlwr0raf",
-          "_TZE200_znbl8dj5",
-          "_TZE200_znlqjmih",
           "_TZE200_znph9215",
           "_TZE200_znzs7yaw",
           "_TZE200_zo0cfekv",
@@ -49007,7 +50168,6 @@
           "_TZE200_zuz7f94z",
           "_TZE200_zvo63cmo",
           "_TZE200_zyrdrmno",
-          "_TZE204_1fuxihti",
           "_TZE204_1n2kyphz",
           "_TZE204_1wnh8bqp",
           "_TZE204_1youk3hj",
@@ -49016,26 +50176,22 @@
           "_TZE204_3ctwoaip",
           "_TZE204_3ejwxpmu",
           "_TZE204_3q3maeoo",
-          "_TZE204_3regm3h6",
           "_TZE204_432zhuwe",
           "_TZE204_4bjixefp",
           "_TZE204_58of2pfn",
           "_TZE204_5slehgeo",
-          "_TZE204_5toc8efa",
           "_TZE204_6a4vxfnv",
           "_TZE204_6fk3gewc",
           "_TZE204_6kijc7nd",
           "_TZE204_6vwfjkcj",
           "_TZE204_6wi2mope",
           "_TZE204_78ioiaml",
-          "_TZE204_7ytb3h8u",
           "_TZE204_7ytnacie",
           "_TZE204_7yyuo8sr",
           "_TZE204_9mahtqtg",
           "_TZE204_9qhuzgo0",
           "_TZE204_9yapgbuv",
           "_TZE204_a2jcoyuk",
-          "_TZE204_a7sghmms",
           "_TZE204_a8z0g46u",
           "_TZE204_a9ojznj8",
           "_TZE204_aagrxlbd",
@@ -49044,12 +50200,10 @@
           "_TZE204_ahwvlkpy",
           "_TZE204_atdqo4nj",
           "_TZE204_atpwqgml",
-          "_TZE204_bmdsp6bs",
           "_TZE204_bql5khqx",
           "_TZE204_c2fmom5z",
           "_TZE204_c7emyjom",
           "_TZE204_cirvgep4",
-          "_TZE204_cvub6xbb",
           "_TZE204_d6i25bwg",
           "_TZE204_d7lpruvi",
           "_TZE204_dapwryy7",
@@ -49115,7 +50269,6 @@
           "_TZE204_mul9abs3",
           "_TZE204_muvkrjr5",
           "_TZE204_mwomyz5n",
-          "_TZE204_nbkshs6k",
           "_TZE204_ncti2pro",
           "_TZE204_nh9m9emk",
           "_TZE204_nladmfvf",
@@ -49124,12 +50277,9 @@
           "_TZE204_o9gyszw2",
           "_TZE204_odlldrxx",
           "_TZE204_ogkdpgy2",
-          "_TZE204_ogx8u5z6",
           "_TZE204_oh8y8pv8",
           "_TZE204_oqtpvx51",
           "_TZE204_p1qrtljn",
-          "_TZE204_p3lqqy2r",
-          "_TZE204_pcdmj88b",
           "_TZE204_ptaqh9tk",
           "_TZE204_q12rv9gj",
           "_TZE204_q22avxbv",
@@ -49180,10 +50330,8 @@
           "_TZE204_xpq2rzhq",
           "_TZE204_xtrnjaoz",
           "_TZE204_y4jqpry8",
-          "_TZE204_ya4ft0w4",
           "_TZE204_ye5jkfsb",
           "_TZE204_yjjdcqsq",
-          "_TZE204_yrugsphv",
           "_TZE204_yvjc5cjn",
           "_TZE204_yvx5lh6k",
           "_TZE204_z7a2jmyy",
@@ -49196,6 +50344,7 @@
           "_TZE283_rccxox8p",
           "_TZE284_0dvm9mva",
           "_TZE284_0ints6wl",
+          "_TZE284_16m4bgsv",
           "_TZE284_1di7ujzp",
           "_TZE284_1emhi5mm",
           "_TZE284_1lvln0x6",
@@ -49220,9 +50369,7 @@
           "_TZE284_6ocnqlhn",
           "_TZE284_6teua268",
           "_TZE284_78ioiaml",
-          "_TZE284_7ytb3h8u",
           "_TZE284_7zazvlyn",
-          "_TZE284_8zizsafo",
           "_TZE284_9ern5sfh",
           "_TZE284_9m4kmbfu",
           "_TZE284_9xstqowh",
@@ -49243,7 +50390,6 @@
           "_TZE284_awepdiwi",
           "_TZE284_b7kbnl6q",
           "_TZE284_chbyv06x",
-          "_TZE284_cvub6xbb",
           "_TZE284_cwyqwqbf",
           "_TZE284_d0ypnbvn",
           "_TZE284_d4h8j2n6",
@@ -49254,7 +50400,6 @@
           "_TZE284_dvosyycn",
           "_TZE284_e2bedvo9",
           "_TZE284_e4pf6l87",
-          "_TZE284_eaet5qt5",
           "_TZE284_eekpf0ft",
           "_TZE284_f5efvtbv",
           "_TZE284_fncxk3ob",
@@ -49286,10 +50431,7 @@
           "_TZE284_nnhwcvbk",
           "_TZE284_nt4pquef",
           "_TZE284_ny94onlb",
-          "_TZE284_o9ofysmo",
-          "_TZE284_ogx8u5z6",
           "_TZE284_p3dbf6qs",
-          "_TZE284_pcdmj88b",
           "_TZE284_pglpvdar",
           "_TZE284_q22avxbv",
           "_TZE284_qhlxve78",
@@ -49319,14 +50461,12 @@
           "_TZE284_vizxbhco",
           "_TZE284_vjpaih9f",
           "_TZE284_vmcgja59",
-          "_TZE284_vuwtqx0t",
           "_TZE284_vvmbj46n",
           "_TZE284_wbhaespm",
           "_TZE284_wckqztdq",
           "_TZE284_wdfurkoa",
           "_TZE284_wtikaxzs",
           "_TZE284_wwaeqnrf",
-          "_TZE284_xc3vwx5a",
           "_TZE284_xnwxmj8z",
           "_TZE284_xpvamyfz",
           "_TZE284_xvywzhmi",
@@ -49342,7 +50482,6 @@
           "_TZE284_zjhoqbrd",
           "_TZE284_zm8zpwas",
           "_TZE284_znbl8dj5",
-          "_TZE284_znlqjmih",
           "_TZE284_znph9215",
           "_TZE284_zpvusbtv",
           "_TZE284_zqq3cipq",
@@ -49351,8 +50490,575 @@
           "_TZE608_fmemczv1",
           "_TZE608_lapuuoke",
           "_TZE608_xkr8gep3",
-          "eWeLink",
-          "HOBEIAN"
+          "_TZ3000_ww6drja5ts011f",
+          "_TZe200_01fvxamo",
+          "_TZe200_0hg58wyk",
+          "_TZe200_0j5jma9b",
+          "_TZe200_0u3bj3rc",
+          "_TZe200_1agwnems",
+          "_TZe200_1drr8tab",
+          "_TZe200_1ibpyhdc",
+          "_TZe200_2aaelwxk",
+          "_TZe200_2atgpdho",
+          "_TZe200_2ekuz3dz",
+          "_TZe200_2hf7x9n3",
+          "_TZe200_2imwyigp",
+          "_TZe200_2m38mh6k",
+          "_TZe200_2pddnnrk",
+          "_TZe200_2se8efxh",
+          "_TZe200_2vfxweng",
+          "_TZe200_3ejwxpmu",
+          "_TZe200_3p5ydos3",
+          "_TZe200_3t91nb6k",
+          "_TZe200_3towulqd",
+          "_TZe200_3xfjp0ag",
+          "_TZe200_44af8vyi",
+          "_TZe200_4eeyebrt",
+          "_TZe200_579lguh2",
+          "_TZe200_5d3vhjro",
+          "_TZe200_6wi2mope",
+          "_TZe200_78ioiaml",
+          "_TZe200_7bztmfm1",
+          "_TZe200_7deq70b8",
+          "_TZe200_7fqkphoq",
+          "_TZe200_7sjncirf",
+          "_TZe200_86nbew0j",
+          "_TZe200_8eazvzo6",
+          "_TZe200_8ply8mjj",
+          "_TZe200_8thwkzxl",
+          "_TZe200_8whxpsiw",
+          "_TZe200_8ygsuhe1",
+          "_TZe200_9cqcpkgb",
+          "_TZe200_9i9dt8is",
+          "_TZe200_9p5xmj5r",
+          "_TZe200_9sfg7gm0",
+          "_TZe200_9yapgbuv",
+          "_TZe200_a4bpgplm",
+          "_TZe200_a8sdabtg",
+          "_TZe200_a8z0g46u",
+          "_TZe200_afycb3cg",
+          "_TZe200_ahpcyzth",
+          "_TZe200_aqnazj70",
+          "_TZe200_atpwqgml",
+          "_TZe200_auin8mzr",
+          "_TZe200_ax8a8ahx",
+          "_TZe200_ba69l9ol",
+          "_TZe200_bcusnqt8",
+          "_TZe200_bfmfhxra",
+          "_TZe200_bh3n6gk8",
+          "_TZe200_bjawzodf",
+          "_TZe200_blfcpsxz",
+          "_TZe200_bq5c8xfe",
+          "_TZe200_bynnczcb",
+          "_TZe200_byzdayie",
+          "_TZe200_c2fmom5z",
+          "_TZe200_cduqh1l0",
+          "_TZe200_cirvgep4",
+          "_TZe200_ckud7u2l",
+          "_TZe200_clm4gdw4",
+          "_TZe200_cpmgn2cf",
+          "_TZe200_cqtamhh5",
+          "_TZe200_ctq0k47x",
+          "_TZe200_cwnjrr72",
+          "_TZe200_d7lpruvi",
+          "_TZe200_d9mzkhoq",
+          "_TZe200_df04ghrb",
+          "_TZe200_dfxkcots",
+          "_TZe200_dhke3p9w",
+          "_TZe200_di3tfv5b",
+          "_TZe200_dikb3dp6",
+          "_TZe200_dikkika5",
+          "_TZe200_dnz6yvl2",
+          "_TZe200_do5qy8zo",
+          "_TZe200_dq1mfjug",
+          "_TZe200_drs6j6m5",
+          "_TZe200_dv8abrrz",
+          "_TZe200_dwcarsat",
+          "_TZe200_e2bedvo9",
+          "_TZe200_e3oitdyu",
+          "_TZe200_eaac7dkw",
+          "_TZe200_ebwgzdqq",
+          "_TZe200_edl8pz1k",
+          "_TZe200_eevqq1uv",
+          "_TZe200_ehhrv2e3",
+          "_TZe200_emxxanvi",
+          "_TZe200_eo6xhfbo",
+          "_TZe200_ewxhg6o9",
+          "_TZe200_fjjbhx9d",
+          "_TZe200_fodv6bkr",
+          "_TZe200_fsb6zw01",
+          "_TZe200_fsow0qsk",
+          "_TZe200_fwoorn8y",
+          "_TZe200_g5xqosu7",
+          "_TZe200_g9a3awaj",
+          "_TZe200_ga1maeof",
+          "_TZe200_gbagoilo",
+          "_TZe200_ggev5fsl",
+          "_TZe200_gjldowol",
+          "_TZe200_gkfbdvyx",
+          "_TZe200_gnw1rril",
+          "_TZe200_go3tvswy",
+          "_TZe200_gomuk3dc",
+          "_TZe200_grgol3xp",
+          "_TZe200_gubdgai2",
+          "_TZe200_gwkapsoq",
+          "_TZe200_h2rctifa",
+          "_TZe200_ha0vwoew",
+          "_TZe200_hdih4foa",
+          "_TZe200_hggxgsjj",
+          "_TZe200_hkdl5fmv",
+          "_TZe200_hmqzfqml",
+          "_TZe200_holel4dk",
+          "_TZe200_hue3yfsn",
+          "_TZe200_husqqvux",
+          "_TZe200_ijey4q29",
+          "_TZe200_ikvncluo",
+          "_TZe200_io0zdqh1",
+          "_TZe200_ip2akl4w",
+          "_TZe200_iq4ygaai",
+          "_TZe200_iuk8kupi",
+          "_TZe200_iwn0gpzz",
+          "_TZe200_j7sgd8po",
+          "_TZe200_ji1gn7rw",
+          "_TZe200_jkbljri7",
+          "_TZe200_js3mgbjb",
+          "_TZe200_jsaqgakf",
+          "_TZe200_jthf7vb6",
+          "_TZe200_jva8ink8",
+          "_TZe200_jwsjbxjs",
+          "_TZe200_jxyhl4eq",
+          "_TZe200_k6jhsr0q",
+          "_TZe200_ka8l86iu",
+          "_TZe200_kb5noeto",
+          "_TZe200_kccdzaeo",
+          "_TZe200_kds0pmmv",
+          "_TZe200_kf2hbko4",
+          "_TZe200_khx7nnka",
+          "_TZe200_khzbklyh",
+          "_TZe200_kijxnb8q",
+          "_TZe200_kltffuzl",
+          "_TZe200_kvpwq8z7",
+          "_TZe200_kyfqmmyl",
+          "_TZe200_kzm5w4iz",
+          "_TZe200_lawxy9e2",
+          "_TZe200_leaqthqq",
+          "_TZe200_lhqtjwax",
+          "_TZe200_libht6ua",
+          "_TZe200_lllliz3p",
+          "_TZe200_llvwkkde",
+          "_TZe200_lnbfnyxd",
+          "_TZe200_lpwgshtl",
+          "_TZe200_lsanae15",
+          "_TZe200_lu01t0zl",
+          "_TZe200_lyetpprm",
+          "_TZe200_m9skfctm",
+          "_TZe200_mby4kbtq",
+          "_TZe200_mexisfik",
+          "_TZe200_mfamvsdb",
+          "_TZe200_mgxy2d9f",
+          "_TZe200_mja3fuja",
+          "_TZe200_mp902om5",
+          "_TZe200_mudxchsu",
+          "_TZe200_mwvfvw8g",
+          "_TZe200_mx6u6l4y",
+          "_TZe200_myd45weu",
+          "_TZe200_n8dljorx",
+          "_TZe200_na5qlzow",
+          "_TZe200_nh9m9emk",
+          "_TZe200_nkjintbl",
+          "_TZe200_nklqjk62",
+          "_TZe200_nojsjtj2",
+          "_TZe200_npj9bug3",
+          "_TZe200_nslr42tt",
+          "_TZe200_ntcy3xu1",
+          "_TZe200_nus5kk3n",
+          "_TZe200_nvodulvi",
+          "_TZe200_nvups4nh",
+          "_TZe200_ny94onlb",
+          "_TZe200_oc7xqqbs",
+          "_TZe200_ogkdpgy2",
+          "_TZe200_oisqyl4o",
+          "_TZe200_ojtqawav",
+          "_TZe200_ojzhk75b",
+          "_TZe200_oyti2ums",
+          "_TZe200_p0gzbqct",
+          "_TZe200_p2qzzazi",
+          "_TZe200_p9zbdqgs",
+          "_TZe200_pay2byax",
+          "_TZe200_pbo8cj0z",
+          "_TZe200_pl31aqf5",
+          "_TZe200_ppuj1vem",
+          "_TZe200_pvvbommb",
+          "_TZe200_qanl25yu",
+          "_TZe200_qhlxve78",
+          "_TZe200_qjp4ynvi",
+          "_TZe200_qoy0ekbd",
+          "_TZe200_qq9mpfhw",
+          "_TZe200_qxyh4r7g",
+          "_TZe200_qyflbnbj",
+          "_TZe200_qyss8gjy",
+          "_TZe200_qzaing2g",
+          "_TZe200_r32ctezx",
+          "_TZe200_raz9qavg",
+          "_TZe200_rbbx5mfq",
+          "_TZe200_rccxox8p",
+          "_TZe200_rhblgy0z",
+          "_TZe200_rhgsbacq",
+          "_TZe200_rks0sgb7",
+          "_TZe200_rtrmfadk",
+          "_TZe200_ryfmq5rl",
+          "_TZe200_s1xgth2u",
+          "_TZe200_s7rsrtbg",
+          "_TZe200_sbyx0lm6",
+          "_TZe200_sgpeacqp",
+          "_TZe200_snfdqllf",
+          "_TZe200_sur6q7ko",
+          "_TZe200_swaamsoy",
+          "_TZe200_t3xd7l44",
+          "_TZe200_t5p1vj8r",
+          "_TZe200_tbgecldg",
+          "_TZe200_tmszbtzq",
+          "_TZe200_toeldckg",
+          "_TZe200_ttcovulf",
+          "_TZe200_tyffvoij",
+          "_TZe200_u319yc66",
+          "_TZe200_u6x1zyv2",
+          "_TZe200_uebojraa",
+          "_TZe200_ugekduaj",
+          "_TZe200_uli8wasj",
+          "_TZe200_upagmta9",
+          "_TZe200_utkemkbs",
+          "_TZe200_ux5v4dbd",
+          "_TZe200_v1jqz5cy",
+          "_TZe200_v6ossqfy",
+          "_TZe200_v9hkz2yn",
+          "_TZe200_vdiuwbkq",
+          "_TZe200_ves1ycwx",
+          "_TZe200_vhy3iakz",
+          "_TZe200_viy9ihs7",
+          "_TZe200_vizxbhco",
+          "_TZe200_vm1gyrso",
+          "_TZe200_vmcgja59",
+          "_TZe200_vrcfo4i0",
+          "_TZe200_vrfecyku",
+          "_TZe200_vs0skpuc",
+          "_TZe200_vucankjx",
+          "_TZe200_vuqzj1ej",
+          "_TZe200_vuwtqx0t",
+          "_TZe200_vvmbj46n",
+          "_TZe200_vzekyi4c",
+          "_TZe200_vzqtvljm",
+          "_TZe200_w4cryh2i",
+          "_TZe200_w6n8jeuu",
+          "_TZe200_wbhaespm",
+          "_TZe200_wem3gxyx",
+          "_TZe200_wfxuhoea",
+          "_TZe200_whkgqxse",
+          "_TZe200_whpb9yts",
+          "_TZe200_wktrysab",
+          "_TZe200_wqashyqo",
+          "_TZe200_wrmhp6b3",
+          "_TZe200_wukb7rhc",
+          "_TZe200_wunufsil",
+          "_TZe200_wvovwe9h",
+          "_TZe200_x8fp01wi",
+          "_TZe200_xby0s3ta",
+          "_TZe200_xlnzk169",
+          "_TZe200_xpq2rzhq",
+          "_TZe200_xpvamyfz",
+          "_TZe200_y8jijhba",
+          "_TZe200_ya4ft0w4",
+          "_TZe200_yflzeeqj",
+          "_TZe200_yh7aoahi",
+          "_TZe200_yi4jtqq1",
+          "_TZe200_yjjdcqsq",
+          "_TZe200_yjryxpot",
+          "_TZe200_ykglasuj",
+          "_TZe200_yojqa8xn",
+          "_TZe200_ypprdwsl",
+          "_TZe200_ysm4dsb1",
+          "_TZe200_ytibqbra",
+          "_TZe200_yvx5lh6k",
+          "_TZe200_ywdxldoj",
+          "_TZe200_ywe90lt0",
+          "_TZe200_zbfmvj13",
+          "_TZe200_zl1kmjqx",
+          "_TZe200_znbl8dj5",
+          "_TZe200_znlqjmih",
+          "_TZe200_znzs7yaw",
+          "_TZe200_ztc6ggyl",
+          "_TZe200_zvo63cmo",
+          "_TZe200_zyrdrmno",
+          "_TZe204_1wnh8bqp",
+          "_TZe204_2imwyigp",
+          "_TZe204_2rvvqjoa",
+          "_TZe204_3ejwxpmu",
+          "_TZe204_3regm3h6",
+          "_TZe204_3t91nb6k",
+          "_TZe204_432zhuwe",
+          "_TZe204_4bjixefp",
+          "_TZe204_6a4vxfnv",
+          "_TZe204_6kijc7nd",
+          "_TZe204_6wi2mope",
+          "_TZe204_78ioiaml",
+          "_TZe204_7bztmfm1",
+          "_TZe204_7gclukjs",
+          "_TZe204_7ytnacie",
+          "_TZe204_81yrt3lo",
+          "_TZe204_9qhuzgo0",
+          "_TZe204_9yapgbuv",
+          "_TZe204_a8z0g46u",
+          "_TZe204_aagrxlbd",
+          "_TZe204_aai5grix",
+          "_TZe204_ac0fhfiq",
+          "_TZe204_adlblwab",
+          "_TZe204_atdqo4nj",
+          "_TZe204_atpwqgml",
+          "_TZe204_bmdsp6bs",
+          "_TZe204_c2fmom5z",
+          "_TZe204_chbyv06x",
+          "_TZe204_cirvgep4",
+          "_TZe204_cjbofhxw",
+          "_TZe204_cvub6xbb",
+          "_TZe204_d6i25bwg",
+          "_TZe204_d7lpruvi",
+          "_TZe204_dapwryy7",
+          "_TZe204_dcnsggvz",
+          "_TZe204_debczeci",
+          "_TZe204_dhotiauw",
+          "_TZe204_dikb3dp6",
+          "_TZe204_dqolcpcp",
+          "_TZe204_drs6j6m5",
+          "_TZe204_dsagrkvg",
+          "_TZe204_dvosyycn",
+          "_TZe204_dwcarsat",
+          "_TZe204_dzuqwsyg",
+          "_TZe204_e9ajs4ft",
+          "_TZe204_eaulras5",
+          "_TZe204_edl8pz1k",
+          "_TZe204_eekpf0ft",
+          "_TZe204_ejh6owwz",
+          "_TZe204_ex3rcdha",
+          "_TZe204_fhvdgeuh",
+          "_TZe204_fncxk3ob",
+          "_TZe204_g2ki0ejr",
+          "_TZe204_g4au0afs",
+          "_TZe204_g5xqosu7",
+          "_TZe204_gbagoilo",
+          "_TZe204_gkfbdvyx",
+          "_TZe204_gomuk3dc",
+          "_TZe204_hcxvyxa5",
+          "_TZe204_hiith90n",
+          "_TZe204_iadro9bf",
+          "_TZe204_iaeejhvf",
+          "_TZe204_ijxvkhd0",
+          "_TZe204_ilzkxrav",
+          "_TZe204_iuk8kupi",
+          "_TZe204_iwn0gpzz",
+          "_TZe204_jcwbwckh",
+          "_TZe204_jygvp6fk",
+          "_TZe204_k7mfgaen",
+          "_TZe204_khx7nnka",
+          "_TZe204_kobbcyum",
+          "_TZe204_ksz749x8",
+          "_TZe204_kvpwq8z7",
+          "_TZe204_kyhbrfyl",
+          "_TZe204_l6llgoxq",
+          "_TZe204_l8xiyymq",
+          "_TZe204_laokfqwu",
+          "_TZe204_lawxy9e2",
+          "_TZe204_loejka0i",
+          "_TZe204_lsanae15",
+          "_TZe204_ltwbm23f",
+          "_TZe204_lzriup1j",
+          "_TZe204_m64smti7",
+          "_TZe204_mby4kbtq",
+          "_TZe204_mhxn2jso",
+          "_TZe204_mpbki2zm",
+          "_TZe204_mrffaamu",
+          "_TZe204_mtoaryre",
+          "_TZe204_mul9abs3",
+          "_TZe204_muvkrjr5",
+          "_TZe204_mvtclclq",
+          "_TZe204_mwomyz5n",
+          "_TZe204_myd45weu",
+          "_TZe204_n9ctkb6j",
+          "_TZe204_nbkshs6k",
+          "_TZe204_ncti2pro",
+          "_TZe204_no6qtgtl",
+          "_TZe204_ntcy3xu1",
+          "_TZe204_ny94onlb",
+          "_TZe204_ogkdpgy2",
+          "_TZe204_ogx8u5z6",
+          "_TZe204_oh8y8pv8",
+          "_TZe204_oqtpvx51",
+          "_TZe204_pcdmj88b",
+          "_TZe204_ptaqh9tk",
+          "_TZe204_q12rv9gj",
+          "_TZe204_q22avxbv",
+          "_TZe204_q9xty0ad",
+          "_TZe204_qasjif9e",
+          "_TZe204_qhlxve78",
+          "_TZe204_qyflbnbj",
+          "_TZe204_r32ctezx",
+          "_TZe204_rbbx5mfq",
+          "_TZe204_rhblgy0z",
+          "_TZe204_rkbxtclc",
+          "_TZe204_sbyx0lm6",
+          "_TZe204_sooucan5",
+          "_TZe204_sxm7l9xa",
+          "_TZe204_tagezcph",
+          "_TZe204_tbgecldg",
+          "_TZe204_tdhnhhiy",
+          "_TZe204_tzreobvu",
+          "_TZe204_ugekduaj",
+          "_TZe204_unsxl4ir",
+          "_TZe204_uo8qcagc",
+          "_TZe204_upagmta9",
+          "_TZe204_utkemkbs",
+          "_TZe204_uxllnywp",
+          "_TZe204_v6iczj35",
+          "_TZe204_v9hkz2yn",
+          "_TZe204_ves1ycwx",
+          "_TZe204_vevc4c6g",
+          "_TZe204_vjpaih9f",
+          "_TZe204_vmcgja59",
+          "_TZe204_w1wwxoja",
+          "_TZe204_wbhaespm",
+          "_TZe204_wfxuhoea",
+          "_TZe204_wktrysab",
+          "_TZe204_wvovwe9h",
+          "_TZe204_x8fp01wi",
+          "_TZe204_xalsoe3m",
+          "_TZe204_xnbkhhdr",
+          "_TZe204_xpq2rzhq",
+          "_TZe204_xsm7l9xa",
+          "_TZe204_xu4a5rhj",
+          "_TZe204_ya4ft0w4",
+          "_TZe204_yjjdcqsq",
+          "_TZe204_yojqa8xn",
+          "_TZe204_yvx5lh6k",
+          "_TZe204_zjhoqbrd",
+          "_TZe204_zougpkpy",
+          "_TZe204_zqq3cipq",
+          "_TZe204_ztc6ggyl",
+          "_TZe21c_dohbhb5k",
+          "_TZe284_0ints6wl",
+          "_TZe284_16m4bgsv",
+          "_TZe284_1lvln0x6",
+          "_TZe284_1wnh8bqp",
+          "_TZe284_2gi1hy8s",
+          "_TZe284_2se8efxh",
+          "_TZe284_33bwcga2",
+          "_TZe284_3urschql",
+          "_TZe284_432zhuwe",
+          "_TZe284_4cqhd2ha",
+          "_TZe284_4hdbt6rn",
+          "_TZe284_5ys44kzo",
+          "_TZe284_65gzcss7",
+          "_TZe284_6kijc7nd",
+          "_TZe284_6teua268",
+          "_TZe284_6ycgarab",
+          "_TZe284_78ioiaml",
+          "_TZe284_7zazvlyn",
+          "_TZe284_81yrt3lo",
+          "_TZe284_8zizsafo",
+          "_TZe284_9ern5sfh",
+          "_TZe284_9xstqowh",
+          "_TZe284_a14rjslz",
+          "_TZe284_aaeaifez",
+          "_TZe284_aai5grix",
+          "_TZe284_aao3yzhs",
+          "_TZe284_ac0fhfiq",
+          "_TZe284_agcxaw3f",
+          "_TZe284_ai4rqhky",
+          "_TZe284_ajlu4cud",
+          "_TZe284_ap9owrsa",
+          "_TZe284_atuj3i0w",
+          "_TZe284_awepdiwi",
+          "_TZe284_chbyv06x",
+          "_TZe284_cjbofhxw",
+          "_TZe284_cvub6xbb",
+          "_TZe284_cwyqwqbf",
+          "_TZe284_d7lpruvi",
+          "_TZe284_debczeci",
+          "_TZe284_dhke3p9w",
+          "_TZe284_dikb3dp6",
+          "_TZe284_dqolcpcp",
+          "_TZe284_dvosyycn",
+          "_TZe284_e2bedvo9",
+          "_TZe284_eaet5qt5",
+          "_TZe284_eekpf0ft",
+          "_TZe284_fhvpaltk",
+          "_TZe284_fncxk3ob",
+          "_TZe284_fzo2pocs",
+          "_TZe284_g2e6cpnw",
+          "_TZe284_gomuk3dc",
+          "_TZe284_gyzlwu5q",
+          "_TZe284_hdyjyqjm",
+          "_TZe284_hecsejsb",
+          "_TZe284_iadro9bf",
+          "_TZe284_idn2htgu",
+          "_TZe284_iwn0gpzz",
+          "_TZe284_iwyqtclw",
+          "_TZe284_k7p2q5d9",
+          "_TZe284_khah2lkr",
+          "_TZe284_kobbcyum",
+          "_TZe284_kyyu8rbj",
+          "_TZe284_l8xiyymq",
+          "_TZe284_libht6ua",
+          "_TZe284_loejka0i",
+          "_TZe284_m1cvyneb",
+          "_TZe284_madl8ejv",
+          "_TZe284_mrffaamu",
+          "_TZe284_myd45weu",
+          "_TZe284_nhgdf6qr",
+          "_TZe284_nt4pquef",
+          "_TZe284_ny94onlb",
+          "_TZe284_o9ofysmo",
+          "_TZe284_ogx8u5z6",
+          "_TZe284_oitavov2",
+          "_TZe284_p3dbf6qs",
+          "_TZe284_pcdmj88b",
+          "_TZe284_pglpvdar",
+          "_TZe284_qhlxve78",
+          "_TZe284_qyflbnbj",
+          "_TZe284_r3szw0xr",
+          "_TZe284_rccxox8p",
+          "_TZe284_s5vuaadg",
+          "_TZe284_sgabhwa6",
+          "_TZe284_tbgecldg",
+          "_TZe284_tgeqdjgk",
+          "_TZe284_tuhfx7tf",
+          "_TZe284_tzreobvu",
+          "_TZe284_upagmta9",
+          "_TZe284_utkemkbs",
+          "_TZe284_v9hkz2yn",
+          "_TZe284_ves1ycwx",
+          "_TZe284_vjpaih9f",
+          "_TZe284_vmcgja59",
+          "_TZe284_vuwtqx0t",
+          "_TZe284_vvmbj46n",
+          "_TZe284_wbhaespm",
+          "_TZe284_wckqztdq",
+          "_TZe284_xc3vwx5a",
+          "_TZe284_xnbkhhdr",
+          "_TZe284_xpvamyfz",
+          "_TZe284_yjjdcqsq",
+          "_TZe284_ymldrmzx",
+          "_TZe284_yzr43ayq",
+          "_TZe284_z5jz7wpo",
+          "_TZe284_zeldawjv",
+          "_TZe284_zjhoqbrd",
+          "_TZe284_zm8zpwas",
+          "_TZe284_znlqjmih",
+          "_TZe284_zpvusbtv",
+          "_TZe284_zqq3cipq",
+          "_TZE200_seq9cm6u",
+          "_TYZB01_zqvwka4k",
+          "_TZe200_iba1ckek",
+          "_TZe200_jfw0a4aa",
+          "_TZe200_wzk0x7fq"
         ],
         "productId": [
           "TS0201",
@@ -49364,6 +51070,7 @@
           "lumi.sensor_ht",
           "lumi.sensor_ht.agl02",
           "lumi.weather",
+          "SM0201",
           "SNZB-02",
           "SNZB-02D",
           "SNZB-02P",
@@ -49716,7 +51423,9 @@
           "_TZ3000_nbm3pjii",
           "_TZE200_aycxwiau",
           "_TZE200_m9skfctm",
-          "_TZE204_cjbofhxw"
+          "_TZE204_cjbofhxw",
+          "_TZE200_pbdlrmfb",
+          "_TZE204_pbdlrmfb"
         ],
         "productId": [
           "TS0601_co",
@@ -49775,10 +51484,6 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
-          "eWeLink",
-          "SONOFF",
-          "hobeian",
-          "HOBEIAN",
           "_TYZB01_ncdapbwy",
           "_TZ1800_ejwkn2h2",
           "_TZ3000_0gkrb5py",
@@ -49797,94 +51502,45 @@
           "_TZ3000_8yhypbo7",
           "_TZ3000_996rpfy6",
           "_TZ3000_9eeavbk5",
-          "_TZ3000_abci1hiu",
           "_TZ3000_aqqcrptj",
           "_TZ3000_au1rjicn",
-          "_TZ3000_b28wrpvx",
           "_TZ3000_b7m9qda0",
           "_TZ3000_bmg14ax2",
           "_TZ3000_bpkijo14",
           "_TZ3000_br3laukf",
-          "_TZ3000_bvrlqyj7",
           "_TZ3000_bwlvyjwk",
           "_TZ3000_bzxloft",
           "_TZ3000_bzxloft2",
           "_TZ3000_bzxlofth",
-          "_TZ3000_c3g3pupu",
           "_TZ3000_c8zfad4a",
-          "_TZ3000_cduqh1l0",
           "_TZ3000_cea5xugq",
-          "_TZ3000_cfnprab5",
           "_TZ3000_cjrngdr3",
-          "_TZ3000_ckq7u3r4",
           "_TZ3000_cn58yln1",
-          "_TZ3000_cphmq0q7",
-          "_TZ3000_cxkjlbxx",
           "_TZ3000_decxrtwa",
-          "_TZ3000_dffvflui",
-          "_TZ3000_dksbtrzs",
           "_TZ3000_do6txrcw",
           "_TZ3000_dowj6gyi",
-          "_TZ3000_e3vhyrdz",
-          "_TZ3000_eafaa66e",
           "_TZ3000_ebar6ljy",
-          "_TZ3000_eei0ubpy",
-          "_TZ3000_egfdwm0f",
           "_TZ3000_eit6l5",
           "_TZ3000_exc99dvw",
-          "_TZ3000_exni6swi",
-          "_TZ3000_f1bapcit",
           "_TZ3000_f1hmoyj4",
           "_TZ3000_fa9mlvja",
-          "_TZ3000_fbjdkph9",
-          "_TZ3000_femsrftq",
-          "_TZ3000_fgwhjm9j",
           "_TZ3000_fku2h3gw",
           "_TZ3000_fkxmyics",
-          "_TZ3000_g1glzzfk",
           "_TZ3000_geyh5rfs",
           "_TZ3000_gntwytxo",
-          "_TZ3000_gp7p1xsn",
-          "_TZ3000_gznh2xla",
-          "_TZ3000_h1jnz6l9",
           "_TZ3000_h4wnrtck",
-          "_TZ3000_hdc8bbhc",
-          "_TZ3000_hgpnzgac",
           "_TZ3000_hgu1dlak",
           "_TZ3000_hkcpblrs",
           "_TZ3000_hktqahrq",
-          "_TZ3000_hmitslt3",
           "_TZ3000_hy6ncvmw",
-          "_TZ3000_i1rw7p4p",
-          "_TZ3000_idrffznf",
-          "_TZ3000_imaccztn",
           "_TZ3000_iugnaasp",
-          "_TZ3000_iv2hvncp",
           "_TZ3000_j2w1dw29",
-          "_TZ3000_j34bmidp",
-          "_TZ3000_jabbwuie",
-          "_TZ3000_jbjz13kn",
-          "_TZ3000_jeanjpmj",
-          "_TZ3000_jimbwdxd",
-          "_TZ3000_jkbrnvhr",
-          "_TZ3000_jnihvwo1",
           "_TZ3000_jqge2fjx",
-          "_TZ3000_jvvhvqjk",
           "_TZ3000_k4ej3ww2",
-          "_TZ3000_k6fvknrr",
-          "_TZ3000_kas5qbpq",
           "_TZ3000_kdi2o9m6",
           "_TZ3000_keayt8ol",
-          "_TZ3000_kgvnspdl",
-          "_TZ3000_kksch6ep",
-          "_TZ3000_klch39xt",
           "_TZ3000_kmh5qpmb",
-          "_TZ3000_kmuxjukf",
-          "_TZ3000_kud7u2l1",
           "_TZ3000_kyb656no",
-          "_TZ3000_kvwjujy9",
-          "_TZ3000_l6pwxuxm",
-          "_TZ3000_ld6g3agd",
           "_TZ3000_lepzuhto",
           "_TZ3000_mcxw5ehu",
           "_TZ3000_msl2rxjn",
@@ -49938,46 +51594,11 @@
           "_TZ3000_zf1lxtlj",
           "_TZ3000_zgrffiwg",
           "_TZ3000_zutizvyk",
-          "_TZ3210_0jxeoadc",
           "_TZ3210_bfwvfyx1",
           "_TZ3210_umi6vbsz",
           "_TZ3210_zbabx9wh",
           "_TZ3210_zmppwawa",
           "_TZB210_zmppwawa",
-          "_TZE200_0j5jma9b",
-          "_TZE200_1agwnafq",
-          "_TZE200_1ibpyhdc",
-          "_TZE200_2hf7x9n3",
-          "_TZE200_44af8ipg",
-          "_TZE200_4hbx5cvx",
-          "_TZE200_502zx5sl",
-          "_TZE200_56bdwt92",
-          "_TZE200_5bdnqwnx",
-          "_TZE200_5tgzpccv",
-          "_TZE200_6mafo2gv",
-          "_TZE200_7tdtqgwv",
-          "_TZE200_8k8k3t3j",
-          "_TZE200_8xtk0cjs",
-          "_TZE200_9cxuhakf",
-          "_TZE200_9kqxlpby",
-          "_TZE200_9mahtqtg",
-          "_TZE200_a4cjpzdi",
-          "_TZE200_ahl6l9k5",
-          "_TZE200_akjefhj5",
-          "_TZE200_amp6tsvy",
-          "_TZE200_anv5ujhv",
-          "_TZE200_ar0slwnd",
-          "_TZE200_atpwqgml",
-          "_TZE200_axbpz5wm",
-          "_TZE200_b8x72kmy",
-          "_TZE200_bq5c8xfe",
-          "_TZE200_c2fmom5z",
-          "_TZE200_cf1sl3tj",
-          "_TZE200_cpmgn2cf",
-          "_TZE200_d5p1kr8z",
-          "_TZE200_d8fp6ivb",
-          "_TZE200_dcydapr2",
-          "_TZE200_dfry6ylv",
           "_TZE204_jktmrpoj",
           "_TZE284_nklqjk62",
           "tuyatec-0l6xaqmi",
@@ -49996,7 +51617,24 @@
           "TUYATEC-ktge2vqt",
           "_TZ3000_okohwwap",
           "_TZ3000_wbrlnkm9",
-          "Zbeacon"
+          "HOBEIAN",
+          "Zbeacon",
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-abkehqus",
+          "TUYATEC-sb6t7ett",
+          "TUYATEC-rkqiqvcs",
+          "TUYATEC-crr8qb0p",
+          "TUYATEC-kbqf60nt",
+          "TUYATEC-r9hgssol",
+          "TUYATEC-trhrga6p",
+          "TUYATEC-ip9ganvw",
+          "TUYATEC-7qunn4gq",
+          "TUYATEC-0l6xaqmi",
+          "Immax",
+          "Visonic",
+          "zbeacon",
+          "_TZ3000_itgngnqz"
         ],
         "productId": [
           "TS0203",
@@ -50617,11 +52255,25 @@
           "_TZE284_koxaopnk",
           "_TZE284_libht6ua",
           "_TZE284_uqfph8ah",
+          "_TZE284_lnyz4a6v",
           "_TZE284_waa352qv",
           "_TZE600_ogyg1y6b",
           "_TZE210_inpjmc0h",
           "_TYST11_wmcdj3aq",
-          "_TZ3000_eafaa66e"
+          "_TZ3000_eafaa66e",
+          "_TZb210_0bkzabht",
+          "_TZb210_3zfp8mki",
+          "_TZb210_417ikxay",
+          "_TZb210_ayx58ft5",
+          "_TZb210_eiwanbeb",
+          "_TZb210_gj0ccsar",
+          "_TZb210_lmqquxus",
+          "_TZb210_rs0ufzwg",
+          "_TZb210_ue01a0s2",
+          "_TZb210_w9hcix2r",
+          "_TZb210_wxazcmsh",
+          "_TZb210_wy1pyu1q",
+          "_TZb210_yatkpuha"
         ],
         "productId": [
           "TS0302",
@@ -51294,14 +52946,20 @@
           "_TZ3210_weaqkhab",
           "_TZ3210_wkkn1t0z",
           "_TZ3210_wv2myxv4",
-          "_TZ3210_xbpt8ewc",
           "_TZ3210_zlnbjiaw",
           "_TZB210_rkgngb5o",
           "_TZE200_bxoo2swd",
           "_TZE200_e3oitdyu",
           "_TZE200_zenj4lxv",
           "_TZE204_bxoo2swd",
-          "_TZE204_zenj4lxv"
+          "_TZE204_zenj4lxv",
+          "_TZb210_rkgngb5o",
+          "_TZe200_0hb4rdnp",
+          "_TZe200_4mh6tyyo",
+          "_TZe200_a0syesf5",
+          "_TZe200_gne0e6mk",
+          "_TZe200_la2c2uo9",
+          "_TZe200_ykgar0ow"
         ],
         "productId": [
           "TS1101",
@@ -51390,59 +53048,11 @@
           "_TZ3000_49qchf10",
           "_TZ3000_7ed9cqgi",
           "_TZ3000_7ysdnebc",
-          "_TZ3000_abci1hiu",
-          "_TZ3000_b28wrpvx",
-          "_TZ3000_bvrlqyj7",
-          "_TZ3000_c3g3pupu",
-          "_TZ3000_cduqh1l0",
-          "_TZ3000_cfnprab5",
-          "_TZ3000_ckq7u3r4",
-          "_TZ3000_cphmq0q7",
-          "_TZ3000_cxkjlbxx",
-          "_TZ3000_dffvflui",
-          "_TZ3000_dksbtrzs",
-          "_TZ3000_e3vhyrdz",
-          "_TZ3000_eei0ubpy",
-          "_TZ3000_egfdwm0f",
-          "_TZ3000_exni6swi",
-          "_TZ3000_f1bapcit",
           "_TZ3000_f3xka28j",
-          "_TZ3000_fbjdkph9",
-          "_TZ3000_femsrftq",
-          "_TZ3000_fgwhjm9j",
           "_TZ3000_fjgwfl3z",
           "_TZ3000_fvh3pjaz",
-          "_TZ3000_g1glzzfk",
-          "_TZ3000_gp7p1xsn",
-          "_TZ3000_gznh2xla",
-          "_TZ3000_h1jnz6l9",
-          "_TZ3000_hdc8bbhc",
-          "_TZ3000_hgpnzgac",
-          "_TZ3000_hmitslt3",
-          "_TZ3000_i1rw7p4p",
-          "_TZ3000_idrffznf",
-          "_TZ3000_imaccztn",
-          "_TZ3000_iv2hvncp",
-          "_TZ3000_j34bmidp",
-          "_TZ3000_jabbwuie",
-          "_TZ3000_jbjz13kn",
-          "_TZ3000_jeanjpmj",
-          "_TZ3000_jimbwdxd",
-          "_TZ3000_jkbrnvhr",
-          "_TZ3000_jnihvwo1",
-          "_TZ3000_jvvhvqjk",
-          "_TZ3000_k6fvknrr",
-          "_TZ3000_kas5qbpq",
           "_TZ3000_kdi2o9m6",
-          "_TZ3000_kgvnspdl",
-          "_TZ3000_kksch6ep",
-          "_TZ3000_klch39xt",
-          "_TZ3000_kmuxjukf",
           "_TZ3000_ktuoyvt5",
-          "_TZ3000_kud7u2l1",
-          "_TZ3000_kvwjujy9",
-          "_TZ3000_l6pwxuxm",
-          "_TZ3000_ld6g3agd",
           "_TZ3000_oborybow",
           "_TZ3000_rrjr1q0u",
           "_TZ3000_sdklhkrs",
@@ -51471,7 +53081,6 @@
           "_TZ3210_ddigca5n",
           "_TZ3210_dfe8hwlq",
           "_TZ3210_dn5higyl",
-          "_TZ3210_dse8ogfy",
           "_TZ3210_dwzfzfjc",
           "_TZ3210_e5t9bfdv",
           "_TZ3210_eejm8dcr",
@@ -51500,7 +53109,6 @@
           "_TZ3210_k1pe6ibm",
           "_TZ3210_kvnbgrrj",
           "_TZ3210_ljoasixl",
-          "_TZ3210_lzqq3u4r",
           "_TZ3210_mgqzzwxi",
           "_TZ3210_mja6r5ix",
           "_TZ3210_mt5xjoy6",
@@ -51530,7 +53138,6 @@
           "_TZ3210_wv2myxv4",
           "_TZ3210_wxa85bwk",
           "_TZ3210_x13bu7za",
-          "_TZ3210_xbpt8ewc",
           "_TZ3210_ysfo0wla",
           "_TZ3210_z1vlyufu",
           "_TZ3210_zdrhqmo0",
@@ -51542,49 +53149,14 @@
           "_TZB210_3owg3kkv",
           "_TZB210_wjz9epjd",
           "_TZE200_0hb4rdnp",
-          "_TZE200_0j5jma9b",
           "_TZE200_0nauxa0p",
-          "_TZE200_1agwnafq",
           "_TZE200_1agwnems",
-          "_TZE200_1ibpyhdc",
-          "_TZE200_2hf7x9n3",
           "_TZE200_3p5ydos3",
-          "_TZE200_44af8ipg",
-          "_TZE200_4hbx5cvx",
           "_TZE200_4mh6tyyo",
-          "_TZE200_502zx5sl",
-          "_TZE200_56bdwt92",
           "_TZE200_579lguh2",
-          "_TZE200_5bdnqwnx",
-          "_TZE200_5tgzpccv",
           "_TZE200_6fjev1mn",
-          "_TZE200_6mafo2gv",
-          "_TZE200_7tdtqgwv",
-          "_TZE200_8k8k3t3j",
-          "_TZE200_8xtk0cjs",
-          "_TZE200_9cxuhakf",
           "_TZE200_9i9dt8is",
-          "_TZE200_9kqxlpby",
-          "_TZE200_9mahtqtg",
-          "_TZE200_a0syesf5",
-          "_TZE200_a4cjpzdi",
-          "_TZE200_ahl6l9k5",
-          "_TZE200_akjefhj5",
-          "_TZE200_amp6tsvy",
-          "_TZE200_anv5ujhv",
-          "_TZE200_ar0slwnd",
-          "_TZE200_atpwqgml",
-          "_TZE200_axbpz5wm",
-          "_TZE200_b8x72kmy",
-          "_TZE200_bq5c8xfe",
-          "_TZE200_c2fmom5z",
-          "_TZE200_cf1sl3tj",
-          "_TZE200_cpmgn2cf",
           "_TZE200_ctq0k47x",
-          "_TZE200_d5p1kr8z",
-          "_TZE200_d8fp6ivb",
-          "_TZE200_dcydapr2",
-          "_TZE200_dfry6ylv",
           "_TZE200_dfxkcots",
           "_TZE200_e3oitdyu",
           "_TZE200_ebwgzdqq",
@@ -51593,7 +53165,6 @@
           "_TZE200_ip2akl9w",
           "_TZE200_la2c2uo9",
           "_TZE200_mvtclclq",
-          "_TZE200_ojzhk75b",
           "_TZE200_qzaing2g",
           "_TZE200_swaamsoy",
           "_TZE200_tsxpl0d0",
@@ -52100,13 +53671,11 @@
           "_TZE204_81yrt3lo",
           "_TZE204_ac0fhfiq",
           "_TZE204_byzdayie",
-          "_TZE204_cjbofhxw",
           "_TZE204_davzgqq0",
           "_TZE204_eaac7dkw",
           "_TZE204_fsb6zw01",
           "_TZE204_ipxszdhv",
           "_TZE204_lsanae15",
-          "_TZE204_lzriup1j",
           "_TZE204_nslr42tt",
           "_TZE204_shkxsgis",
           "_TZE204_ves1ycwx",
@@ -53518,7 +55087,6 @@
         "manufacturerName": [
           "_TZ3000_1h2x4akh",
           "_TZ3000_9hv6kpds",
-          "_TZ3000_cphmq0q7",
           "_TZ3000_cpyisd3c",
           "_TZ3000_hk7bcqhu",
           "_TZ3000_hk7wdzrv",
@@ -54011,7 +55579,9 @@
           "_TZE204_chbyv06",
           "_TZE204_chbyv06x",
           "_TZE284_aao6qtcs",
-          "_TZE200_ioxkjvuz"
+          "_TZE200_ioxkjvuz",
+          "_TZE204_rjxqso4a",
+          "_TZ3000_8nysnv3b"
         ],
         "endpoints": {
           "1": {
@@ -54968,37 +56538,14 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "cc1352",
-          "cc2530",
-          "cc2531",
-          "cc2652",
-          "cod.m",
-          "custom",
-          "diy",
-          "diyruz",
           "dln",
           "dln-diy",
           "dlnraja",
           "efekta",
-          "efr32",
-          "esp32",
-          "esp32-c6",
-          "esp32-h2",
-          "espressif",
           "Legrand",
           " Legrand",
           "lumi router",
-          "lumi.router",
-          "maker",
-          "modkam",
-          "nrf52",
-          "opensource",
-          "ptvo",
-          "ptvo.info",
-          "router",
           "slzb",
-          "SONOFF",
-          "eWeLink",
           "EWELINK",
           "sonoffzigbee",
           "Schneider Electric",
@@ -55017,12 +56564,8 @@
           "Netatmo",
           "ti router",
           "ti.router",
-          "tube's zb",
-          "xyzroe",
           "zig-a-zig-ah",
-          "zigfred",
-          "zigstar",
-          "zzh"
+          "zigfred"
         ],
         "productId": [
           "BUTTON",
@@ -55066,7 +56609,13 @@
           "BSP-EZ2",
           "Battery switch, 1 button",
           "Battery switch, 2 buttons",
-          "ZIGSTAR"
+          "ZIGSTAR",
+          "TS0041A",
+          "TS0026",
+          "TS0052",
+          "TS0224",
+          "TS0105",
+          "TS0901"
         ],
         "endpoints": {
           "1": {
@@ -55418,7 +56967,63 @@
           "zen",
           "zen thermostat",
           "zigbee alliance",
-          "zigbee2mqtt"
+          "zigbee2mqtt",
+          "_TZ321c_4slreunp",
+          "_TZ321c_fkzihax8",
+          "_TZb000_42ha4rsc",
+          "_TZb210_6eed09b9",
+          "_TZb210_g01ie5wu",
+          "_TZb210_lnnkh3f9",
+          "_TZb210_rwy5hexp",
+          "_TZb210_zmppwawa",
+          "_TZe200_0zaf1cr8",
+          "_TZe200_5nldle7w",
+          "_TZe200_68nvbi09",
+          "_TZe200_68nvbio9",
+          "_TZe200_9caxna4s",
+          "_TZe200_9vpe3fl1",
+          "_TZe200_axgvo9jh",
+          "_TZe200_bqcqqjpb",
+          "_TZe200_cf1sl3tj",
+          "_TZe200_clrdrnya",
+          "_TZe200_cpbo62rn",
+          "_TZe200_eegnwoyw",
+          "_TZe200_gaj531w3",
+          "_TZe200_icka1clh",
+          "_TZe200_jhkttplm",
+          "_TZe200_nw1r9hp6",
+          "_TZe200_p6vz3wzt",
+          "_TZe200_pw7mji0l",
+          "_TZe200_zah67ekd",
+          "_TZe200_zxxfv8wi",
+          "_TZe204_57hjqelq",
+          "_TZe204_clrdrnya",
+          "_TZe204_dtzziy1e",
+          "_TZe204_e5m9c5hl",
+          "_TZe204_fwondbzy",
+          "_TZe204_guvc7pdy",
+          "_TZe204_jktmrpoj",
+          "_TZe204_lbbg34rj",
+          "_TZe204_lh3arisb",
+          "_TZe204_nklqjk62",
+          "_TZe204_pfayrzcw",
+          "_TZe204_r0jdjrvi",
+          "_TZe204_vvvtcehj",
+          "_TZe204_ycke4deo",
+          "_TZe204_ztqnh5cg",
+          "_TZe204_zuq5xxib",
+          "_TZe284_0zaf1cr8",
+          "_TZe284_4qznlkbu",
+          "_TZe284_fwondbzy",
+          "_TZe284_iilebqoo",
+          "_TZe284_koxaopnk",
+          "_TZe284_nklqjk62",
+          "_TZe284_uqfph8ah",
+          "_TZe600_ogyg1y6b",
+          "_TZe608_c75zqghm",
+          "_TZe608_fmemczv1",
+          "_TZe608_lapuuoke",
+          "_TZe608_xkr8gep3"
         ],
         "productId": [
           "TS0601_generic"
@@ -56603,7 +58208,8 @@
           "_TZ3210_p9ao60da",
           "_TZ3210_r0xgkft5",
           "_TZB210_endmggws",
-          "_TZB210_ngnt8kni"
+          "_TZB210_ngnt8kni",
+          "_TZb210_endmggws"
         ],
         "productId": [
           "TS0502"
@@ -57845,14 +59451,10 @@
           "_TZ3000_femsaiy7",
           "_TZ3000_gdkes7es",
           "_TZ3000_r9e2w7dn",
-          "_TZE200_3t91nb6k",
           "_TZE200_bmzphld8",
-          "_TZE200_bse1xpui",
           "_TZE200_g2kiyjvf",
           "_TZE200_ne4s6z47",
-          "_TZE200_vu0jdqnm",
           "_TZE204_rrbcyh1f",
-          "_TZE204_vu0jdqnm",
           "_TZE284_mgstdyz3",
           "_TZE200_lgstepha",
           "_TZE200_kagkgk0i",
@@ -58169,7 +59771,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_46t1rvdu",
           "_TZ3000_cymsnfvf",
           "_TZ3000_dkgxjjn1",
           "_TZ3000_hswqnljz",
@@ -58528,9 +60129,6 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
-          "HOBEIAN",
-          "Hobeian",
-          "SONOFF",
           "TUYATEC-smmlguju",
           "_TYST11_7hfcudw5",
           "_TYST11_i5j6ifxj",
@@ -58551,80 +60149,32 @@
           "_TZ3000_6zvpcdny",
           "_TZ3000_7d8yme6f",
           "_TZ3000_85czd6fy",
-          "_TZ3000_abci1hiu",
           "_TZ3000_aqqcrptj",
           "_TZ3000_awvmkayh",
-          "_TZ3000_b28wrpvx",
           "_TZ3000_bmg14ax7",
           "_TZ3000_bpkijo14",
           "_TZ3000_bsvqrk3b",
           "_TZ3000_bsvqrxru",
-          "_TZ3000_bvrlqyj7",
-          "_TZ3000_c3g3pupu",
           "_TZ3000_c8ozah8n",
           "_TZ3000_c8zfad4a",
-          "_TZ3000_cduqh1l0",
-          "_TZ3000_cfnprab5",
-          "_TZ3000_ckq7u3r4",
-          "_TZ3000_cphmq0q7",
-          "_TZ3000_cxkjlbxx",
           "_TZ3000_decxrtwa",
-          "_TZ3000_dffvflui",
-          "_TZ3000_dksbtrzs",
           "_TZ3000_dowj6gyi",
-          "_TZ3000_e3vhyrdz",
-          "_TZ3000_eei0ubpy",
-          "_TZ3000_egfdwm0f",
           "_TZ3000_eit6l5",
           "_TZ3000_exc99dvw",
-          "_TZ3000_exni6swi",
-          "_TZ3000_f1bapcit",
           "_TZ3000_fa9mlvja",
-          "_TZ3000_fbjdkph9",
-          "_TZ3000_femsrftq",
-          "_TZ3000_fgwhjm9j",
           "_TZ3000_fkxmyics",
-          "_TZ3000_g1glzzfk",
           "_TZ3000_geyh5rfs",
           "_TZ3000_gntwytxo",
-          "_TZ3000_gp7p1xsn",
-          "_TZ3000_gznh2xla",
-          "_TZ3000_h1jnz6l9",
           "_TZ3000_h4wnrtck",
-          "_TZ3000_hdc8bbhc",
-          "_TZ3000_hgpnzgac",
           "_TZ3000_hgu1dlak",
           "_TZ3000_hktqahrq",
-          "_TZ3000_hmitslt3",
           "_TZ3000_hy6ncvmw",
-          "_TZ3000_i1rw7p4p",
-          "_TZ3000_idrffznf",
-          "_TZ3000_imaccztn",
           "_TZ3000_iugnaasp",
-          "_TZ3000_iv2hvncp",
-          "_TZ3000_j34bmidp",
-          "_TZ3000_jabbwuie",
-          "_TZ3000_jbjz13kn",
-          "_TZ3000_jeanjpmj",
-          "_TZ3000_jimbwdxd",
-          "_TZ3000_jkbrnvhr",
           "_TZ3000_jmrgyl7o",
-          "_TZ3000_jnihvwo1",
-          "_TZ3000_jvvhvqjk",
           "_TZ3000_k4ej3ww2",
-          "_TZ3000_k6fvknrr",
-          "_TZ3000_kas5qbpq",
           "_TZ3000_kdi2o9m6",
-          "_TZ3000_kgvnspdl",
-          "_TZ3000_kksch6ep",
-          "_TZ3000_klch39xt",
           "_TZ3000_kmh5qpmb",
-          "_TZ3000_kmuxjukf",
-          "_TZ3000_kud7u2l1",
-          "_TZ3000_kvwjujy9",
           "_TZ3000_kyb656no",
-          "_TZ3000_l6pwxuxm",
-          "_TZ3000_ld6g3agd",
           "_TZ3000_lepzuhto",
           "_TZ3000_lf56vpxj",
           "_TZ3000_lltemgsf",
@@ -58669,62 +60219,19 @@
           "_TZ3210_cwamkvua",
           "_TZ3210_jijr1sss",
           "_TZ321C_fkzihax8",
-          "_TZE200_0j5jma9b",
-          "_TZE200_1agwnafq",
-          "_TZE200_1ibpyhdc",
-          "_TZE200_2hf7x9n3",
-          "_TZE200_3towulqd",
-          "_TZE200_44af8ipg",
-          "_TZE200_4hbx5cvx",
           "_TZE200_4mh6tyyo",
-          "_TZE200_502zx5sl",
-          "_TZE200_56bdwt92",
-          "_TZE200_5bdnqwnx",
-          "_TZE200_5tgzpccv",
-          "_TZE200_68nvbio9",
           "_TZE200_6kijc7nd",
-          "_TZE200_6mafo2gv",
           "_TZE200_7hfcudw5",
-          "_TZE200_7tdtqgwv",
-          "_TZE200_8k8k3t3j",
           "_TZE200_8viydiwr",
-          "_TZE200_8xtk0cjs",
-          "_TZE200_9cxuhakf",
-          "_TZE200_9kqxlpby",
-          "_TZE200_9mahtqtg",
-          "_TZE200_a4cjpzdi",
-          "_TZE200_a7sghmms",
-          "_TZE200_ahl6l9k5",
-          "_TZE200_akjefhj5",
-          "_TZE200_amp6tsvy",
-          "_TZE200_anv5ujhv",
-          "_TZE200_ar0slwnd",
           "_TZE200_arge1ptm",
-          "_TZE200_atpwqgml",
-          "_TZE200_axbpz5wm",
-          "_TZE200_b8x72kmy",
           "_TZE200_bh4n9cluk",
-          "_TZE200_bjzrowv2",
-          "_TZE200_bq5c8xfe",
-          "_TZE200_c2fmom5z",
-          "_TZE200_cf1sl3tj",
-          "_TZE200_cpbo62rn",
-          "_TZE200_cpmgn2cf",
-          "_TZE200_d5p1kr8z",
-          "_TZE200_d8fp6ivb",
           "_TZE200_dcrrztpa",
-          "_TZE200_dcydapr2",
-          "_TZE200_dfry6ylv",
-          "_TZE200_f1pvdgoh",
           "_TZE200_ghynnvos",
-          "_TZE200_kb5noeto",
           "_TZE200_mchxve9o",
           "_TZE200_me6wtiqs",
           "_TZE200_nhk3bpxq",
-          "_TZE200_ppuj1vem",
           "_TZE200_s6hzw8g2",
           "_TZE200_xq4hgafz",
-          "_TZE200_y8jijhba",
           "_TZE204_bjf8qum1",
           "_TZE204_debczeci",
           "_TZE204_mchxve9o",
@@ -58735,8 +60242,6 @@
           "_TZE284_mrf6vtua",
           "_TZE284_tre6haif",
           "_TZE284_yjjdcqsq",
-          "eWeLink",
-          "hobeian",
           "tuyatec-53o41joc",
           "tuyatec-b5g40alm",
           "tuyatec-bd5faf9p",
@@ -58745,7 +60250,19 @@
           "tuyatec-dxnohkpd",
           "tuyatec-lha8pbwd",
           "tuyatec-zn9wyqtr",
-          "tuyatec-zw6hxafz"
+          "tuyatec-zw6hxafz",
+          "TUYATEC-bd5faf9p",
+          "TUYATEC-zw6hxafz",
+          "TUYATEC-lha8pbwd",
+          "TUYATEC-zn9wyqtr",
+          "TUYATEC-53o41joc",
+          "TUYATEC-deetibst",
+          "TUYATEC-dgtxmihe",
+          "TUYATEC-b5g40alm",
+          "TUYATEC-dxnohkpd",
+          "_TZe200_ghynnvos",
+          "_TZe200_me6wtiqs",
+          "_TZe200_s6hzw8g2"
         ],
         "productId": [
           "TS0202",
@@ -59796,8 +61313,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "eWeLink",
-          "SONOFF",
           "_TYZB01_iuepbmpv",
           "_TZ3000_0zfrhq4i",
           "_TZ3000_1h2x4akh",
@@ -59814,13 +61329,10 @@
           "_TZ3000_92qd4sqa",
           "_TZ3000_amdymr71",
           "_TZ3000_amdymr7l",
-          "_TZ3000_b28wrpvx",
           "_TZ3000_bep7ccew",
           "_TZ3000_bfn1w0mm",
           "_TZ3000_cehuw1lw",
-          "_TZ3000_cphmq0q7",
           "_TZ3000_dd8wwzcy",
-          "_TZ3000_dksbtrzs",
           "_TZ3000_dpo1ysak",
           "_TZ3000_ew3ldmgx",
           "_TZ3000_eyzb8yg3",
@@ -59830,7 +61342,6 @@
           "_TZ3000_gjnozsaz",
           "_TZ3000_gnjozsaz",
           "_TZ3000_gvn91tmx",
-          "_TZ3000_gznh2xla",
           "_TZ3000_hdopuwv6",
           "_TZ3000_helyqdvs",
           "_TZ3000_hhiodez3",
@@ -59840,7 +61351,6 @@
           "_TZ3000_iksasdbv",
           "_TZ3000_j1v25l17",
           "_TZ3000_jvzvulen",
-          "_TZ3000_k6fvknrr",
           "_TZ3000_kdi2o9m6",
           "_TZ3000_ksw8qtmt",
           "_TZ3000_kx0pris5",
@@ -59860,12 +61370,10 @@
           "_TZ3000_pvlvoxvt",
           "_TZ3000_qeuvnohg",
           "_TZ3000_qlmnxmac",
-          "_TZ3000_qystbcjg",
           "_TZ3000_r6buo8ba",
           "_TZ3000_raviyuvk",
           "_TZ3000_rdtixbnu",
           "_TZ3000_ss98ec5d",
-          "_TZ3000_tvuarksa",
           "_TZ3000_typdpbpg",
           "_TZ3000_typdpdpg",
           "_TZ3000_u1rkajsr",
@@ -60322,52 +61830,9 @@
           "_TZ3000_3ias4w4o",
           "_TZ3000_5f43h46r",
           "_TZ3000_9hpxg80k",
-          "_TZ3000_abci1hiu",
-          "_TZ3000_bvrlqyj7",
-          "_TZ3000_c3g3pupu",
-          "_TZ3000_cduqh1l0",
-          "_TZ3000_cfnprab5",
           "_TZ3000_cicwjqth",
-          "_TZ3000_ckq7u3r4",
-          "_TZ3000_cxkjlbxx",
-          "_TZ3000_dffvflui",
-          "_TZ3000_e3vhyrdz",
-          "_TZ3000_eei0ubpy",
-          "_TZ3000_egfdwm0f",
-          "_TZ3000_exni6swi",
-          "_TZ3000_f1bapcit",
-          "_TZ3000_fbjdkph9",
-          "_TZ3000_femsrftq",
-          "_TZ3000_fgwhjm9j",
-          "_TZ3000_g1glzzfk",
           "_TZ3000_g1pzicmq",
-          "_TZ3000_gp7p1xsn",
-          "_TZ3000_h1jnz6l9",
-          "_TZ3000_hdc8bbhc",
-          "_TZ3000_hgpnzgac",
-          "_TZ3000_hmitslt3",
-          "_TZ3000_i1rw7p4p",
-          "_TZ3000_idrffznf",
-          "_TZ3000_imaccztn",
-          "_TZ3000_iv2hvncp",
-          "_TZ3000_j34bmidp",
-          "_TZ3000_jabbwuie",
-          "_TZ3000_jbjz13kn",
-          "_TZ3000_jeanjpmj",
-          "_TZ3000_jimbwdxd",
-          "_TZ3000_jkbrnvhr",
-          "_TZ3000_jnihvwo1",
-          "_TZ3000_jvvhvqjk",
-          "_TZ3000_kas5qbpq",
           "_TZ3000_kfu8zapd",
-          "_TZ3000_kgvnspdl",
-          "_TZ3000_kksch6ep",
-          "_TZ3000_klch39xt",
-          "_TZ3000_kmuxjukf",
-          "_TZ3000_kud7u2l1",
-          "_TZ3000_kvwjujy9",
-          "_TZ3000_l6pwxuxm",
-          "_TZ3000_ld6g3agd",
           "_TZ3000_mvvw8wnx",
           "_TZ3000_pfc7i3kt",
           "_TZ3000_plyvnuf5",
@@ -60379,40 +61844,6 @@
           "_TZ3210_2ac",
           "_TZ3210_7jnk7l3k",
           "_TZ3210_nhqka112",
-          "_TZE200_0j5jma9b",
-          "_TZE200_1agwnafq",
-          "_TZE200_1ibpyhdc",
-          "_TZE200_2hf7x9n3",
-          "_TZE200_44af8ipg",
-          "_TZE200_4hbx5cvx",
-          "_TZE200_502zx5sl",
-          "_TZE200_56bdwt92",
-          "_TZE200_5bdnqwnx",
-          "_TZE200_5tgzpccv",
-          "_TZE200_6mafo2gv",
-          "_TZE200_7tdtqgwv",
-          "_TZE200_8k8k3t3j",
-          "_TZE200_8xtk0cjs",
-          "_TZE200_9cxuhakf",
-          "_TZE200_9kqxlpby",
-          "_TZE200_9mahtqtg",
-          "_TZE200_a4cjpzdi",
-          "_TZE200_ahl6l9k5",
-          "_TZE200_akjefhj5",
-          "_TZE200_amp6tsvy",
-          "_TZE200_anv5ujhv",
-          "_TZE200_ar0slwnd",
-          "_TZE200_atpwqgml",
-          "_TZE200_axbpz5wm",
-          "_TZE200_b8x72kmy",
-          "_TZE200_bq5c8xfe",
-          "_TZE200_c2fmom5z",
-          "_TZE200_cf1sl3tj",
-          "_TZE200_cpmgn2cf",
-          "_TZE200_d5p1kr8z",
-          "_TZE200_d8fp6ivb",
-          "_TZE200_dcydapr2",
-          "_TZE200_dfry6ylv",
           "_TZ3210_ph1joc22",
           "_TZ3210_sgb0xhwn",
           "_TZ3000_pl5v1yyy",
@@ -61174,13 +62605,11 @@
           "_TZE200_81yrt3lo",
           "_TZE200_bkkmqmyo",
           "_TZE200_byzdayie",
-          "_TZE200_d0ypnbvn",
           "_TZE200_nslr42tt",
           "_TZE200_sur36rju",
           "_TZE200_v9hkz2yn",
           "_TZE204_81yrt3lo",
           "_TZE204_bkkmqmyo",
-          "_TZE204_cjbofhxw",
           "_TZE204_d0ypnbvn",
           "_TZE204_nslr42tt",
           "_TZE204_sur36rju",
@@ -61408,7 +62837,6 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_8bxrzyxz",
           "_TZ3000_byfdwktr",
           "_TZ3000_vsn4qal7",
           "_TZE204_81yrt3lo"
@@ -63276,7 +64704,47 @@
           "_TZE204_glk6viwg",
           "_TZE204_ca3i8m8p",
           "_TZE200_awnadkan",
-          "_TZE204_cg8hdnjv"
+          "_TZE204_cg8hdnjv",
+          "_TZe200_4utwoz2",
+          "_TZe200_4utwozi2",
+          "_TZe200_6rdj8dzm",
+          "_TZe200_7yoranx2",
+          "_TZe200_9mjy74mp",
+          "_TZe200_9xfjixap",
+          "_TZe200_bvrlmajk",
+          "_TZe200_bvu2wnxz",
+          "_TZe200_d3z1ukqw",
+          "_TZe200_dzuqwsyg",
+          "_TZe200_e9ba97vf",
+          "_TZe200_hvaxb2tc",
+          "_TZe200_jkfbph7l",
+          "_TZe200_lhzapfg9",
+          "_TZe200_ow09xlxm",
+          "_TZe200_p3dbf6qs",
+          "_TZe200_py4cm3he",
+          "_TZe200_rk1wojce",
+          "_TZe200_rndg81sf",
+          "_TZe200_rufdtfyv",
+          "_TZe200_rv6iuyxb",
+          "_TZe200_rxntag7i",
+          "_TZe200_rxq4iti9",
+          "_TZe200_suxywabt",
+          "_TZe200_wsbfwodu",
+          "_TZe200_x9axofse",
+          "_TZe200_yqgbrdyo",
+          "_TZe200_z1tyspqw",
+          "_TZe204_0hcjew5p",
+          "_TZe204_9mjy74mp",
+          "_TZe204_cvcu2p6e",
+          "_TZe204_gops3slb",
+          "_TZe204_o3x45p96",
+          "_TZe204_qyr2m29i",
+          "_TZe204_rtrmfadk",
+          "_TZe284_c6wv4xyo",
+          "_TZe284_gops3slb",
+          "_TZe284_ltwbm23f",
+          "_TZe284_o3x45p96",
+          "_TZe284_rv6iuyxb"
         ],
         "productId": [
           "TV01-ZB",
@@ -63620,7 +65088,8 @@
           "_TZ3210_tgvtvdoc",
           "_TZE200_u6x1zyv2",
           "_TZE204_u6x1zyv2",
-          "_TZE284_iilebqoo"
+          "_TZE284_iilebqoo",
+          "_TZ3000_otwpdq1d"
         ],
         "productId": [
           "TS0207_rain",
@@ -64422,10 +65891,10 @@
     },
     {
       "name": {
-        "en": "Siren Siren",
-        "fr": "Siren Siren",
-        "nl": "Sirene",
-        "de": "Sirene"
+        "en": "Siren / Alarm",
+        "fr": "Sirène / Alarme",
+        "nl": "Sirene / Alarm",
+        "de": "Sirene / Alarm"
       },
       "class": "other",
       "capabilities": [
@@ -64465,11 +65934,24 @@
           "_TZE200_wnvhlcgl",
           "_TZE204_nlrfgpny",
           "_TZE204_t1blo2bj",
-          "_TZE284_nlrfgpny"
+          "_TZE284_nlrfgpny",
+          "_TZ3000_fabws1w2",
+          "_TZ3000_fwfwifin",
+          "_TZ3000_8r5u7wkh",
+          "_TZ3000_hv9cqcci",
+          "_TZE204_5sbebbzs",
+          "_TZE204_hcxvyxa5",
+          "_TZE204_q76rtoa9",
+          "_TYZB01_fbo1dpof",
+          "_TYZB01_8scntis1",
+          "_TZ3000_c2yscrj8",
+          "_TYZB01_ynsiasng",
+          "_TYZB01_0wcfvptl"
         ],
         "productId": [
           "TS0216",
           "TS0219",
+          "TS0224",
           "TS0601"
         ],
         "endpoints": {
@@ -64779,15 +66261,12 @@
         "manufacturerName": [
           "_TZ3000_cayepv1a",
           "_TZ3000_ji4araar",
-          "_TZE200_68nvbio9",
-          "_TZE200_aoclfnxz",
           "_TZE200_aqnazj70",
           "_TZE200_byzdayie",
           "_TZE200_fjb98hbq",
           "_TZE200_hkdl5fmv",
           "_TZE200_wbhaespm",
           "_TZE204_68nvbio9",
-          "_TZE204_aoclfnxz",
           "_TZE204_aqnazj70",
           "_TZE204_byzdayie",
           "_TZE204_fjb98hbq",
@@ -65374,7 +66853,8 @@
           "_TZE284_6ycgarab",
           "_TZE284_gyzlwu5q",
           "_TZE284_n4ttsck2",
-          "_TZE284_rccxox8p"
+          "_TZE284_rccxox8p",
+          "_TZ3000_ytf0x5wm"
         ],
         "endpoints": {
           "1": {
@@ -65745,10 +67225,8 @@
           "_TZE284_ip2akl4w",
           "_TZE284_myd45weu",
           "_TZE284_npj9bug3",
-          "_TZE284_o9ofysmo",
           "_TZE284_oitavov2",
           "_TZE284_sgabhwa6",
-          "_TZE284_xc3vwx5a",
           "_TZE284_hdml1aav",
           "A89G12C"
         ],
@@ -65936,8 +67414,7 @@
           "ZBMINIL2",
           "BASICZBR3",
           "S31ZB",
-          "S26R2ZB",
-          "TS0726"
+          "S26R2ZB"
         ],
         "endpoints": {
           "1": {
@@ -65961,25 +67438,19 @@
           }
         },
         "manufacturerName": [
-          "SONOFF",
           "_TYZB01_1xktopx6",
           "_TYZB01_4mdqxxnn",
           "_TYZB01_4qw4rl1u",
-          "_TYZB01_4tlksk8a",
-          "_TYZB01_5nr7ncpl",
           "_TYZB01_7yidyqxd",
           "_TYZB01_821siati",
           "_TYZB01_aneiicmq",
           "_TYZB01_cbiezpds",
           "_TYZB01_digziiav",
-          "_TYZB01_dl7cejts",
           "_TYZB01_dr6sduka",
           "_TYZB01_ftdkanlj",
           "_TYZB01_gr6rozze",
           "_TYZB01_hlla45kx",
           "_TYZB01_ijihzffk",
-          "_TYZB01_iuepbmpv",
-          "_TYZB01_jytabjkb",
           "_TYZB01_kvwjujy9",
           "_TYZB01_m6ec2pgj",
           "_TYZB01_mtunwanm",
@@ -65995,11 +67466,9 @@
           "_TYZB01_u9kkqh5o",
           "_TYZB01_uqkphoed",
           "_TYZB01_v8gtiaed",
-          "_TYZB01_vwqnz1sn",
           "_TYZB01_wqcac7lo",
           "_TYZB01_xfpdrwvc",
           "_TYZB01_xph99wvr",
-          "_TYZB01_ymcdbl3u",
           "_TYZB01_yr95mpib",
           "_TYZB01_z2umiwvq",
           "_TYZB01_zqvwka4k",
@@ -66016,15 +67485,10 @@
           "_TZ3000_46t1rvdu",
           "_TZ3000_4hbrrn7e",
           "_TZ3000_4js9lo5d",
-          "_TZ3000_4rbqgcuv",
           "_TZ3000_4uf3d0ax",
-          "_TZ3000_4ux0ondb",
           "_TZ3000_4whigl8i",
           "_TZ3000_56bdyj21",
-          "_TZ3000_5ajpkyq6",
           "_TZ3000_5e5ptb24",
-          "_TZ3000_5ity3zyu",
-          "_TZ3000_5ng23zjs",
           "_TZ3000_5nrcorgu",
           "_TZ3000_5vujyute",
           "_TZ3000_6axxqqi2",
@@ -66035,164 +67499,90 @@
           "_TZ3000_8rppvwda",
           "_TZ3000_9djocypn",
           "_TZ3000_9evm3otq",
-          "_TZ3000_9hpxg80k",
           "_TZ3000_abc123",
-          "_TZ3000_abci1hiu",
           "_TZ3000_adkvzooy",
           "_TZ3000_aezbqpcu",
           "_TZ3000_ajkq2isy",
           "_TZ3000_amal63is",
-          "_TZ3000_amdymr71",
-          "_TZ3000_amis43tj",
           "_TZ3000_arw23zcs",
-          "_TZ3000_b28wrpvx",
           "_TZ3000_b7bxojrg",
           "_TZ3000_b9vanmes",
           "_TZ3000_bb6xaihh",
           "_TZ3000_bezfthwc",
           "_TZ3000_bppxj3sf",
-          "_TZ3000_bvrlqyj7",
           "_TZ3000_bzczr4e1",
-          "_TZ3000_c3g3pupu",
           "_TZ3000_c7nc9w3c",
           "_TZ3000_cdamjqm9",
-          "_TZ3000_cduqh1l0",
-          "_TZ3000_cfnprab5",
           "_TZ3000_cipibmnp",
-          "_TZ3000_ckq7u3r4",
           "_TZ3000_cmcjbqup",
-          "_TZ3000_cphmq0q7",
-          "_TZ3000_cxkjlbxx",
           "_TZ3000_czuyt8lz",
           "_TZ3000_d16y6col",
-          "_TZ3000_dffvflui",
-          "_TZ3000_dksbtrzs",
           "_TZ3000_dku2cfsc",
           "_TZ3000_dov0a3p1",
-          "_TZ3000_e3vhyrdz",
           "_TZ3000_e8cquwdk",
-          "_TZ3000_ebar6ljy",
-          "_TZ3000_eei0ubpy",
-          "_TZ3000_egfdwm0f",
           "_TZ3000_ejwkn2h2",
           "_TZ3000_ena8vgqb",
           "_TZ3000_etx8inrk",
           "_TZ3000_ew31dmgx",
-          "_TZ3000_exni6swi",
-          "_TZ3000_eyzb8yg3",
-          "_TZ3000_f1bapcit",
           "_TZ3000_f8tmviy0",
-          "_TZ3000_fbjdkph9",
-          "_TZ3000_fdxihpp7",
-          "_TZ3000_femsrftq",
-          "_TZ3000_fgwhjm9j",
-          "_TZ3000_fisb3ajo",
           "_TZ3000_fjt5218m",
           "_TZ3000_fvh3pjaz",
           "_TZ3000_g",
-          "_TZ3000_g1glzzfk",
-          "_TZ3000_g5xawfcq",
           "_TZ3000_gbm10jnj",
           "_TZ3000_gdsvhfao",
           "_TZ3000_ghi789",
           "_TZ3000_gidy6sjs",
-          "_TZ3000_gp7p1xsn",
           "_TZ3000_gtdswg8k",
-          "_TZ3000_gvn91tmx",
-          "_TZ3000_gznh2xla",
           "_TZ3000_h1c2eamp",
           "_TZ3000_h1jnz6l8",
-          "_TZ3000_h1jnz6l9",
-          "_TZ3000_h3noz0a5",
           "_TZ3000_hauznfgh",
           "_TZ3000_hbdzfqjl",
           "_TZ3000_hbxsdd6k",
-          "_TZ3000_hdc8bbhc",
           "_TZ3000_hdlpifbk",
-          "_TZ3000_hgpnzgac",
           "_TZ3000_hjhbbyxt",
           "_TZ3000_hkkkuk7k",
-          "_TZ3000_hktqahrq",
           "_TZ3000_hlwm8e96",
-          "_TZ3000_hmitslt3",
           "_TZ3000_ho0cjoi2",
-          "_TZ3000_i1rw7p4p",
           "_TZ3000_i3k4zrp0",
           "_TZ3000_i3rjdrwu",
           "_TZ3000_i8jfiezr",
           "_TZ3000_iaxvag8w",
           "_TZ3000_ibpqrvcy",
-          "_TZ3000_idrffznf",
-          "_TZ3000_imaccztn",
           "_TZ3000_it1hm1cr",
-          "_TZ3000_iv2hvncp",
           "_TZ3000_iwhuhzdo",
-          "_TZ3000_j34bmidp",
-          "_TZ3000_jabbwuie",
-          "_TZ3000_jbjz13kn",
           "_TZ3000_jcqs2mrv",
           "_TZ3000_jd4qb8ux",
-          "_TZ3000_jeanjpmj",
           "_TZ3000_jihobqcz",
-          "_TZ3000_jimbwdxd",
-          "_TZ3000_jkbrnvhr",
-          "_TZ3000_jnihvwo1",
           "_TZ3000_jrpdaujd",
-          "_TZ3000_jvvhvqjk",
-          "_TZ3000_k6fvknrr",
-          "_TZ3000_kas5qbpq",
-          "_TZ3000_kdi2o9m6",
           "_TZ3000_keabpigb",
-          "_TZ3000_kgvnspdl",
           "_TZ3000_kj0nwdz6",
-          "_TZ3000_kksch6ep",
-          "_TZ3000_klch39xt",
-          "_TZ3000_kmuxjukf",
-          "_TZ3000_ksw8qtmt",
           "_TZ3000_ktxqiyra",
-          "_TZ3000_kud7u2l1",
-          "_TZ3000_kvwjujy9",
           "_TZ3000_kybmsyjz",
-          "_TZ3000_l6pwxuxm",
           "_TZ3000_lbtpiody",
-          "_TZ3000_ld6g3agd",
-          "_TZ3000_lelb6ejs",
           "_TZ3000_lfa05ajd",
           "_TZ3000_llfaquvp",
           "_TZ3000_lrgccsxm",
-          "_TZ3000_lsunm46z",
           "_TZ3000_lupfd8bq",
           "_TZ3000_lupfd8zu",
           "_TZ3000_lwlhprgx",
           "_TZ3000_lxw3zcdk",
           "_TZ3000_majwnphg",
-          "_TZ3000_mgusv51k",
-          "_TZ3000_mraovvmm",
           "_TZ3000_mtmtljo4",
-          "_TZ3000_mx3vgyea",
           "_TZ3000_nahxzcpz",
           "_TZ3000_neo2aqj4",
           "_TZ3000_njintbl6",
-          "_TZ3000_npgipl5d",
-          "_TZ3000_npzfdcof",
           "_TZ3000_npzfdzhq",
           "_TZ3000_nrfkrgf4",
           "_TZ3000_nta0gb8h",
           "_TZ3000_nz98vdvj",
-          "_TZ3000_o005nuxx",
           "_TZ3000_oaq83gqc",
           "_TZ3000_odzoiovu",
           "_TZ3000_oex7egmt",
           "_TZ3000_oikiyf3b",
-          "_TZ3000_okaz9tjs",
-          "_TZ3000_ovyaisip",
-          "_TZ3000_oxslv1c9",
           "_TZ3000_oz4zgdny",
           "_TZ3000_oznonj5q",
           "_TZ3000_pccqzgdc",
           "_TZ3000_pdevogdj",
-          "_TZ3000_pfc7i3kt",
-          "_TZ3000_pk8tgtdb",
           "_TZ3000_pkeqinnt",
           "_TZ3000_pmvbt5hh",
           "_TZ3000_pmz6mjyu",
@@ -66201,22 +67591,15 @@
           "_TZ3000_prits6g4",
           "_TZ3000_ptjcjise",
           "_TZ3000_q68478x7",
-          "_TZ3000_qaaysllp",
-          "_TZ3000_qeuvnohg",
           "_TZ3000_qewo8dlz",
           "_TZ3000_qgwcxxws",
           "_TZ3000_qh6qjuan",
-          "_TZ3000_qlai3277",
-          "_TZ3000_qsp2pwtf",
           "_TZ3000_qspxxfqf",
           "_TZ3000_r0pmi2p3",
           "_TZ3000_rae2pvwy",
           "_TZ3000_rco7azbz",
-          "_TZ3000_rcuqxkq0",
           "_TZ3000_rdfh8cfs",
-          "_TZ3000_rdtixbnu",
           "_TZ3000_rfctjdxr",
-          "_TZ3000_rmjr4ufz",
           "_TZ3000_rxisxokz",
           "_TZ3000_s0i14ubi",
           "_TZ3000_sfc7y1t8",
@@ -66232,35 +67615,23 @@
           "_TZ3000_tk3s5tya",
           "_TZ3000_tkusjmue",
           "_TZ3000_tqlv4ez4",
-          "_TZ3000_tqlv4ug4",
           "_TZ3000_trdx8uxs",
           "_TZ3000_ts004f",
           "_TZ3000_txpirhfq",
           "_TZ3000_txpitre5",
           "_TZ3000_tygpud44",
-          "_TZ3000_typdpbpg",
-          "_TZ3000_u3oupgdy",
-          "_TZ3000_uim07oem",
-          "_TZ3000_upjrsxh1",
           "_TZ3000_uxuxkcvd",
           "_TZ3000_v7fkcekx",
-          "_TZ3000_v7gnj3ad",
           "_TZ3000_v7sopte0",
           "_TZ3000_vjhcenzw",
-          "_TZ3000_vsasbzkf",
-          "_TZ3000_vtscrpmx",
           "_TZ3000_vvlivusi",
-          "_TZ3000_w0qqde0g",
           "_TZ3000_w3c7ouru",
-          "_TZ3000_wamqdr3f",
           "_TZ3000_wbfgbpxq",
           "_TZ3000_wkr3jqmr",
           "_TZ3000_wpueorev",
           "_TZ3000_wqcbzbae",
           "_TZ3000_wrhhi5h2",
-          "_TZ3000_wyhuocal",
           "_TZ3000_wzauvbcs",
-          "_TZ3000_xabckq1v",
           "_TZ3000_xiuox57i",
           "_TZ3000_xrqsdxq6",
           "_TZ3000_xwuveizv",
@@ -66277,41 +67648,7 @@
           "_TZ3002_vaq2bfcu",
           "_TZ3210_a2erlvb8",
           "_TZ3210_tqlv4ug4",
-          "_TZE200_0j5jma9b",
-          "_TZE200_1agwnafq",
-          "_TZE200_1ibpyhdc",
-          "_TZE200_2hf7x9n3",
-          "_TZE200_44af8ipg",
-          "_TZE200_4hbx5cvx",
-          "_TZE200_502zx5sl",
-          "_TZE200_56bdwt92",
-          "_TZE200_5bdnqwnx",
-          "_TZE200_5tgzpccv",
-          "_TZE200_6mafo2gv",
           "_TZE200_7a5ob7xq",
-          "_TZE200_7tdtqgwv",
-          "_TZE200_8k8k3t3j",
-          "_TZE200_8xtk0cjs",
-          "_TZE200_9cxuhakf",
-          "_TZE200_9kqxlpby",
-          "_TZE200_9mahtqtg",
-          "_TZE200_a4cjpzdi",
-          "_TZE200_ahl6l9k5",
-          "_TZE200_akjefhj5",
-          "_TZE200_amp6tsvy",
-          "_TZE200_anv5ujhv",
-          "_TZE200_ar0slwnd",
-          "_TZE200_atpwqgml",
-          "_TZE200_axbpz5wm",
-          "_TZE200_b8x72kmy",
-          "_TZE200_bq5c8xfe",
-          "_TZE200_c2fmom5z",
-          "_TZE200_cf1sl3tj",
-          "_TZE200_cpmgn2cf",
-          "_TZE200_d5p1kr8z",
-          "_TZE200_d8fp6ivb",
-          "_TZE200_dcydapr2",
-          "_TZE200_dfry6ylv",
           "_TZE200_gbagoilo",
           "_TZE200_htj3hcpl",
           "_TZE200_pcg0rykt",
@@ -66329,10 +67666,38 @@
           "_TZE284_ms97nkyy",
           "_TZE284_n9ctkb6j",
           "_TZE284_pgxndxp4",
-          "eWeLink",
           "_TZ3000_qamj2vnn",
           "_TZ3000_tw4ztbp4",
-          "_TZ3002_xkxgfxsg"
+          "_TZ3002_xkxgfxsg",
+          "_TZe200_0nauxa0p",
+          "_TZe200_9cxuhakf",
+          "_TZe200_abatw3kj",
+          "_TZe200_bkkmqmyo",
+          "_TZe200_hewlydpz",
+          "_TZe200_tsxpl0d0",
+          "_TZe200_wnp4d4va",
+          "_TZe204_1v1dxkck",
+          "_TZe204_68utemio",
+          "_TZe204_bkkmqmyo",
+          "_TZe204_bxoo2swd",
+          "_TZe204_f5efvtbv",
+          "_TZe204_gxbdnfrh",
+          "_TZe204_hlx9tnzb",
+          "_TZe204_iik0pquw",
+          "_TZe204_lbhh5o6z",
+          "_TZe204_lmgrbuwf",
+          "_TZe204_mexisfik",
+          "_TZe204_nvxorhcj",
+          "_TZe204_ojtqawav",
+          "_TZe204_wskr3up8",
+          "_TZe204_zenj4lxv",
+          "_TZe204_znvwzxkq",
+          "_TZe284_f5efvtbv",
+          "_TZe284_lbhh5o6z",
+          "_TZe284_tdhnhhiy",
+          "_TZe284_znvwzxkq",
+          "_TZ3000_bmzfjnbp",
+          "_TZ3000_skueekg3"
         ]
       },
       "images": {
@@ -66856,8 +68221,7 @@
           "TS0012",
           "TS0002_power",
           "TS0002_switch_module",
-          "TS0601",
-          "TS0726"
+          "TS0601"
         ],
         "learnmode": {
           "image": "/drivers/switch_2gang/assets/learnmode.svg",
@@ -66877,132 +68241,56 @@
           "_TZ3000_18ejxno0",
           "_TZ3000_46t1rvdu",
           "_TZ3000_4js6g1cw",
-          "_TZ3000_4ux0ondb",
           "_TZ3000_4zf0crgo",
-          "_TZ3000_5ajpkyq6",
           "_TZ3000_5e235jpa",
-          "_TZ3000_5gey1ohx",
           "_TZ3000_7vcdo2vn",
-          "_TZ3000_9hpxg80k",
-          "_TZ3000_abci1hiu",
           "_TZ3000_adkvzooy",
           "_TZ3000_atp7xmd9",
-          "_TZ3000_b28wrpvx",
           "_TZ3000_b9vanmes",
           "_TZ3000_bi6lpsew",
-          "_TZ3000_bvrlqyj7",
-          "_TZ3000_c3g3pupu",
           "_TZ3000_cauq1okq",
-          "_TZ3000_cduqh1l0",
-          "_TZ3000_cfnprab5",
-          "_TZ3000_ckq7u3r4",
-          "_TZ3000_cphmq0q7",
-          "_TZ3000_cxkjlbxx",
           "_TZ3000_czuyt8lz",
-          "_TZ3000_dffvflui",
-          "_TZ3000_dksbtrzs",
           "_TZ3000_dku2cfsc",
-          "_TZ3000_e3vhyrdz",
-          "_TZ3000_ebar6ljy",
-          "_TZ3000_eei0ubpy",
-          "_TZ3000_egfdwm0f",
-          "_TZ3000_exni6swi",
-          "_TZ3000_f1bapcit",
-          "_TZ3000_fbjdkph9",
-          "_TZ3000_fdxihpp7",
-          "_TZ3000_femsrftq",
-          "_TZ3000_fgwhjm9j",
-          "_TZ3000_fisb3ajo",
           "_TZ3000_fvh3pjaz",
-          "_TZ3000_g1glzzfk",
-          "_TZ3000_g5xawfcq",
-          "_TZ3000_gp7p1xsn",
-          "_TZ3000_gvn91tmx",
-          "_TZ3000_gznh2xla",
-          "_TZ3000_h1jnz6l9",
           "_TZ3000_h1lpgkwn",
-          "_TZ3000_h3noz0a5",
           "_TZ3000_hauznfgh",
           "_TZ3000_hbdzfqjl",
-          "_TZ3000_hdc8bbhc",
-          "_TZ3000_hgpnzgac",
           "_TZ3000_hjhbbyxt",
-          "_TZ3000_hktqahrq",
-          "_TZ3000_hmitslt3",
           "_TZ3000_hznzbl0x",
-          "_TZ3000_i1rw7p4p",
           "_TZ3000_i3k4zrp0",
           "_TZ3000_ibpqrvcy",
-          "_TZ3000_idrffznf",
-          "_TZ3000_imaccztn",
-          "_TZ3000_iv2hvncp",
+          "_TZ3000_itgngnqz",
           "_TZ3000_iwhuhzdo",
-          "_TZ3000_j34bmidp",
-          "_TZ3000_jabbwuie",
-          "_TZ3000_jbjz13kn",
           "_TZ3000_jcfje0kb",
           "_TZ3000_jcspr0tp",
           "_TZ3000_jd4qb8ux",
-          "_TZ3000_jeanjpmj",
           "_TZ3000_jihobqcz",
-          "_TZ3000_jimbwdxd",
-          "_TZ3000_jkbrnvhr",
-          "_TZ3000_jnihvwo1",
-          "_TZ3000_jvvhvqjk",
-          "_TZ3000_k6fvknrr",
-          "_TZ3000_kas5qbpq",
-          "_TZ3000_kdi2o9m6",
           "_TZ3000_keabpigb",
-          "_TZ3000_kgvnspdl",
           "_TZ3000_kgxej1dv",
-          "_TZ3000_kksch6ep",
-          "_TZ3000_klch39xt",
-          "_TZ3000_kmuxjukf",
-          "_TZ3000_ksw8qtmt",
           "_TZ3000_ktxqiyra",
-          "_TZ3000_kud7u2l1",
-          "_TZ3000_kvwjujy9",
           "_TZ3000_kybmsyjz",
-          "_TZ3000_l6pwxuxm",
-          "_TZ3000_ld6g3agd",
-          "_TZ3000_lelb6ejs",
-          "_TZ3000_lsunm46z",
           "_TZ3000_lupfd8zu",
-          "_TZ3000_mgusv51k",
           "_TZ3000_mklgayek",
-          "_TZ3000_mraovvmm",
           "_TZ3000_mrqea2uu",
           "_TZ3000_mtmtljo4",
-          "_TZ3000_mtnpt6ws",
           "_TZ3000_nahxzcpz",
           "_TZ3000_njintbl6",
-          "_TZ3000_npgipl5d",
           "_TZ3000_npzfykbs",
           "_TZ3000_nz98vdvj",
-          "_TZ3000_o005nuxx",
           "_TZ3000_odzoiovu",
-          "_TZ3000_okaz9tjs",
-          "_TZ3000_oxslv1c9",
           "_TZ3000_oz4zgdny",
           "_TZ3000_pccqzgdc",
-          "_TZ3000_pfc7i3kt",
           "_TZ3000_pgcclddi",
           "_TZ3000_pmz6mjyu",
           "_TZ3000_ptjcjise",
           "_TZ3000_pxfjrzyj",
-          "_TZ3000_qaa59zqd",
-          "_TZ3000_qaaysllp",
           "_TZ3000_qcgw8qfa",
-          "_TZ3000_qeuvnohg",
           "_TZ3000_qgwcxxws",
-          "_TZ3000_qlai3277",
           "_TZ3000_qn8qvk9y",
           "_TZ3000_qspxxfqf",
           "_TZ3000_r0pmi2p3",
           "_TZ3000_rae2pvwy",
           "_TZ3000_rco7azbz",
-          "_TZ3000_rcuqxkq0",
-          "_TZ3000_rdtixbnu",
           "_TZ3000_rfctjdxr",
           "_TZ3000_rmiew70n",
           "_TZ3000_ruldv5dt",
@@ -67015,19 +68303,8 @@
           "_TZ3000_tqlv4ez4",
           "_TZ3000_tribakzk",
           "_TZ3000_txpirhfq",
-          "_TZ3000_typdpbpg",
-          "_TZ3000_u3oupgdy",
-          "_TZ3000_uim07oem",
-          "_TZ3000_v7gnj3ad",
-          "_TZ3000_vsasbzkf",
-          "_TZ3000_w0qqde0g",
-          "_TZ3000_wamqdr3f",
           "_TZ3000_wkr3jqmr",
-          "_TZ3000_wyhuocal",
-          "_TZ3000_xabckq1v",
-          "_TZ3000_xkap8wtb",
           "_TZ3000_yw8z2axp",
-          "_TZ3000_ywubfuvt",
           "_TZ3000_zmlunnhy",
           "_TZ3000_zmy4lslw",
           "_TZ3000_zxrfobzw",
@@ -67047,40 +68324,6 @@
           "_TZ3002_ymcctknk",
           "_TZ3002_ymv5vytn",
           "_TZ3002_zjuvw9zf",
-          "_TZE200_0j5jma9b",
-          "_TZE200_1agwnafq",
-          "_TZE200_1ibpyhdc",
-          "_TZE200_2hf7x9n3",
-          "_TZE200_44af8ipg",
-          "_TZE200_4hbx5cvx",
-          "_TZE200_502zx5sl",
-          "_TZE200_56bdwt92",
-          "_TZE200_5bdnqwnx",
-          "_TZE200_5tgzpccv",
-          "_TZE200_6mafo2gv",
-          "_TZE200_7tdtqgwv",
-          "_TZE200_8k8k3t3j",
-          "_TZE200_8xtk0cjs",
-          "_TZE200_9cxuhakf",
-          "_TZE200_9kqxlpby",
-          "_TZE200_9mahtqtg",
-          "_TZE200_a4cjpzdi",
-          "_TZE200_ahl6l9k5",
-          "_TZE200_akjefhj5",
-          "_TZE200_amp6tsvy",
-          "_TZE200_anv5ujhv",
-          "_TZE200_ar0slwnd",
-          "_TZE200_atpwqgml",
-          "_TZE200_axbpz5wm",
-          "_TZE200_b8x72kmy",
-          "_TZE200_bq5c8xfe",
-          "_TZE200_c2fmom5z",
-          "_TZE200_cf1sl3tj",
-          "_TZE200_cpmgn2cf",
-          "_TZE200_d5p1kr8z",
-          "_TZE200_d8fp6ivb",
-          "_TZE200_dcydapr2",
-          "_TZE200_dfry6ylv",
           "_TZE204_zpvusbtv",
           "tuyatec-nzrrvgco",
           "tuyatec-o6sncwd6",
@@ -67088,7 +68331,9 @@
           "_TZ3210_pdnwpnz5",
           "_TZ3000_yxmafzmd",
           "_TZ3000_gkesadus",
-          "_TZ3002_tlsvxhxc"
+          "_TZ3002_tlsvxhxc",
+          "_TZ3000_vjhcxjqb",
+          "_TZ3000_ugaem1nb"
         ],
         "endpoints": {
           "1": {
@@ -67681,119 +68926,42 @@
           "_TZ3000_34zbimxh",
           "_TZ3000_46t1rvdu",
           "_TZ3000_4o16jdca",
-          "_TZ3000_4ux0ondb",
-          "_TZ3000_5ajpkyq6",
-          "_TZ3000_9hpxg80k",
-          "_TZ3000_abci1hiu",
           "_TZ3000_adkvzooy",
-          "_TZ3000_b28wrpvx",
           "_TZ3000_b9vanmes",
-          "_TZ3000_bvrlqyj7",
           "_TZ3000_c0wbnbbf",
-          "_TZ3000_c3g3pupu",
           "_TZ3000_cahkwezx",
-          "_TZ3000_cduqh1l0",
-          "_TZ3000_cfnprab5",
-          "_TZ3000_ckq7u3r4",
-          "_TZ3000_cphmq0q7",
-          "_TZ3000_cxkjlbxx",
           "_TZ3000_czuyt8lz",
-          "_TZ3000_dffvflui",
-          "_TZ3000_dksbtrzs",
           "_TZ3000_dku2cfsc",
-          "_TZ3000_e3vhyrdz",
-          "_TZ3000_ebar6ljy",
-          "_TZ3000_eei0ubpy",
-          "_TZ3000_egfdwm0f",
-          "_TZ3000_exni6swi",
-          "_TZ3000_f1bapcit",
-          "_TZ3000_fawk5xjv",
-          "_TZ3000_fbjdkph9",
-          "_TZ3000_fdxihpp7",
-          "_TZ3000_femsrftq",
-          "_TZ3000_fgwhjm9j",
-          "_TZ3000_fisb3ajo",
           "_TZ3000_fvh3pjaz",
-          "_TZ3000_g1glzzfk",
-          "_TZ3000_g5xawfcq",
-          "_TZ3000_gp7p1xsn",
-          "_TZ3000_gvn91tmx",
-          "_TZ3000_gznh2xla",
-          "_TZ3000_h1jnz6l9",
-          "_TZ3000_h3noz0a5",
           "_TZ3000_hauznfgh",
           "_TZ3000_hbdzfqjl",
-          "_TZ3000_hdc8bbhc",
-          "_TZ3000_hgpnzgac",
           "_TZ3000_hjhbbyxt",
-          "_TZ3000_hktqahrq",
-          "_TZ3000_hmitslt3",
-          "_TZ3000_i1rw7p4p",
           "_TZ3000_i3k4zrp0",
           "_TZ3000_ibpqrvcy",
-          "_TZ3000_idrffznf",
-          "_TZ3000_imaccztn",
-          "_TZ3000_iv2hvncp",
           "_TZ3000_iwhuhzdo",
-          "_TZ3000_j34bmidp",
-          "_TZ3000_jabbwuie",
-          "_TZ3000_jbjz13kn",
           "_TZ3000_jd4qb8ux",
-          "_TZ3000_jeanjpmj",
           "_TZ3000_jihobqcz",
-          "_TZ3000_jimbwdxd",
-          "_TZ3000_jkbrnvhr",
-          "_TZ3000_jnihvwo1",
-          "_TZ3000_jvvhvqjk",
-          "_TZ3000_k6fvknrr",
-          "_TZ3000_kas5qbpq",
-          "_TZ3000_kdi2o9m6",
           "_TZ3000_keabpigb",
-          "_TZ3000_kgvnspdl",
-          "_TZ3000_kksch6ep",
-          "_TZ3000_klch39xt",
-          "_TZ3000_kmuxjukf",
-          "_TZ3000_ksw8qtmt",
           "_TZ3000_ktxqiyra",
-          "_TZ3000_kud7u2l1",
-          "_TZ3000_kvwjujy9",
           "_TZ3000_kybmsyjz",
-          "_TZ3000_l6pwxuxm",
-          "_TZ3000_ld6g3agd",
-          "_TZ3000_lelb6ejs",
-          "_TZ3000_lsunm46z",
           "_TZ3000_lupfd8zu",
           "_TZ3000_lvhy15ix",
           "_TZ3000_ly9apzky",
-          "_TZ3000_mgusv51k",
-          "_TZ3000_mraovvmm",
           "_TZ3000_mtmtljo4",
           "_TZ3000_nahxzcpz",
           "_TZ3000_nhhklsxw",
           "_TZ3000_njintbl6",
-          "_TZ3000_nnwehhst",
-          "_TZ3000_npgipl5d",
           "_TZ3000_nz98vdvj",
-          "_TZ3000_o005nuxx",
           "_TZ3000_odzoiovu",
-          "_TZ3000_okaz9tjs",
-          "_TZ3000_oxslv1c9",
           "_TZ3000_oz4zgdny",
           "_TZ3000_pccqzgdc",
-          "_TZ3000_pfc7i3kt",
           "_TZ3000_pmz6mjyu",
           "_TZ3000_ptjcjise",
-          "_TZ3000_qaaysllp",
-          "_TZ3000_qeuvnohg",
           "_TZ3000_qgwcxxws",
-          "_TZ3000_qlai3277",
           "_TZ3000_qspxxfqf",
-          "_TZ3000_qxcnwv26",
           "_TZ3000_r0pmi2p3",
           "_TZ3000_rae2pvwy",
           "_TZ3000_rco7azbz",
-          "_TZ3000_rcuqxkq0",
-          "_TZ3000_rdtixbnu",
           "_TZ3000_rfctjdxr",
           "_TZ3000_rxisxokz",
           "_TZ3000_sfc7y1t8",
@@ -67804,57 +68972,13 @@
           "_TZ3000_tkusjmue",
           "_TZ3000_tqlv4ez4",
           "_TZ3000_txpirhfq",
-          "_TZ3000_typdpbpg",
-          "_TZ3000_u3oupgdy",
           "_TZ3000_udtmrasg",
-          "_TZ3000_uim07oem",
-          "_TZ3000_v7gnj3ad",
-          "_TZ3000_vjhcenzo",
           "_TZ3000_vjhcxjeb",
-          "_TZ3000_vsasbzkf",
-          "_TZ3000_w0qqde0g",
-          "_TZ3000_wamqdr3f",
           "_TZ3000_wkr3jqmr",
           "_TZ3000_wqfdvxen",
-          "_TZ3000_wyhuocal",
-          "_TZ3000_xabckq1v",
           "_TZ3000_zmy4lslw",
           "_TZ3002_6ahhkwyh",
           "_TZ3002_vaq2bfcu",
-          "_TZE200_0j5jma9b",
-          "_TZE200_1agwnafq",
-          "_TZE200_1ibpyhdc",
-          "_TZE200_2hf7x9n3",
-          "_TZE200_44af8ipg",
-          "_TZE200_4hbx5cvx",
-          "_TZE200_502zx5sl",
-          "_TZE200_56bdwt92",
-          "_TZE200_5bdnqwnx",
-          "_TZE200_5tgzpccv",
-          "_TZE200_6mafo2gv",
-          "_TZE200_7tdtqgwv",
-          "_TZE200_8k8k3t3j",
-          "_TZE200_8xtk0cjs",
-          "_TZE200_9cxuhakf",
-          "_TZE200_9kqxlpby",
-          "_TZE200_9mahtqtg",
-          "_TZE200_a4cjpzdi",
-          "_TZE200_ahl6l9k5",
-          "_TZE200_akjefhj5",
-          "_TZE200_amp6tsvy",
-          "_TZE200_anv5ujhv",
-          "_TZE200_ar0slwnd",
-          "_TZE200_atpwqgml",
-          "_TZE200_axbpz5wm",
-          "_TZE200_b8x72kmy",
-          "_TZE200_bq5c8xfe",
-          "_TZE200_c2fmom5z",
-          "_TZE200_cf1sl3tj",
-          "_TZE200_cpmgn2cf",
-          "_TZE200_d5p1kr8z",
-          "_TZE200_d8fp6ivb",
-          "_TZE200_dcydapr2",
-          "_TZE200_dfry6ylv",
           "_TZE204_e1hutaaj",
           "_TZE284_c8ipbljq",
           "_TZ3000_khtlvdfc",
@@ -67862,7 +68986,8 @@
           "_TZ33000_d9yfgzur",
           "_TZ3000_pmsxmttq",
           "_TZ3000_0q5fjqgw",
-          "_TZ3000_avotanj3"
+          "_TZ3000_avotanj3",
+          "_TZ3000_snq47izk"
         ]
       },
       "images": {
@@ -68452,124 +69577,48 @@
           "_TYZB01_zsl6z0pw",
           "_TZ3000_3n2minvf",
           "_TZ3000_46t1rvdu",
-          "_TZ3000_4ux0ondb",
           "_TZ3000_4vobcwsc",
-          "_TZ3000_5ajpkyq6",
-          "_TZ3000_9hpxg80k",
           "_TZ3000_a37eix1s",
-          "_TZ3000_abci1hiu",
           "_TZ3000_adkvzooy",
           "_TZ3000_aqsjyh1h",
-          "_TZ3000_b28wrpvx",
           "_TZ3000_b9vanmes",
-          "_TZ3000_bvrlqyj7",
-          "_TZ3000_c3g3pupu",
-          "_TZ3000_cayepv1a",
-          "_TZ3000_cduqh1l0",
-          "_TZ3000_cfnprab5",
-          "_TZ3000_ckq7u3r4",
-          "_TZ3000_cphmq0q7",
-          "_TZ3000_cxkjlbxx",
           "_TZ3000_czuyt8lz",
-          "_TZ3000_dffvflui",
-          "_TZ3000_dksbtrzs",
           "_TZ3000_dku2cfsc",
-          "_TZ3000_e3vhyrdz",
-          "_TZ3000_ebar6ljy",
-          "_TZ3000_eei0ubpy",
-          "_TZ3000_egfdwm0f",
           "_TZ3000_excgg5kb",
-          "_TZ3000_exni6swi",
           "_TZ3000_eyzpwhtc",
-          "_TZ3000_f1bapcit",
-          "_TZ3000_fbjdkph9",
-          "_TZ3000_fdxihpp7",
-          "_TZ3000_femsrftq",
-          "_TZ3000_fgwhjm9j",
-          "_TZ3000_fisb3ajo",
           "_TZ3000_fvh3pjaz",
-          "_TZ3000_g1glzzfk",
-          "_TZ3000_g5xawfcq",
-          "_TZ3000_gp7p1xsn",
-          "_TZ3000_gvn91tmx",
-          "_TZ3000_gznh2xla",
-          "_TZ3000_h1jnz6l9",
-          "_TZ3000_h3noz0a5",
           "_TZ3000_hauznfgh",
           "_TZ3000_hbdzfqjl",
-          "_TZ3000_hdc8bbhc",
-          "_TZ3000_hdopuwv6",
-          "_TZ3000_hgpnzgac",
           "_TZ3000_hjhbbyxt",
-          "_TZ3000_hktqahrq",
-          "_TZ3000_hmitslt3",
-          "_TZ3000_i1rw7p4p",
           "_TZ3000_i3k4zrp0",
           "_TZ3000_ibpqrvcy",
-          "_TZ3000_idrffznf",
-          "_TZ3000_imaccztn",
-          "_TZ3000_iv2hvncp",
           "_TZ3000_iv4eq7eh",
           "_TZ3000_iwhuhzdo",
-          "_TZ3000_j34bmidp",
-          "_TZ3000_jabbwuie",
-          "_TZ3000_jbjz13kn",
           "_TZ3000_jd4qb8ux",
-          "_TZ3000_jeanjpmj",
           "_TZ3000_jihobqcz",
-          "_TZ3000_jimbwdxd",
-          "_TZ3000_jkbrnvhr",
-          "_TZ3000_jnihvwo1",
-          "_TZ3000_jvvhvqjk",
           "_TZ3000_jwoyqycg",
-          "_TZ3000_k6fvknrr",
-          "_TZ3000_kas5qbpq",
-          "_TZ3000_kdi2o9m6",
           "_TZ3000_keabpigb",
-          "_TZ3000_kgvnspdl",
-          "_TZ3000_kksch6ep",
-          "_TZ3000_klch39xt",
-          "_TZ3000_kmuxjukf",
           "_TZ3000_knoj8lpk",
-          "_TZ3000_ksw8qtmt",
           "_TZ3000_kt6xxa4o",
           "_TZ3000_ktxqiyra",
-          "_TZ3000_kud7u2l1",
-          "_TZ3000_kvwjujy9",
           "_TZ3000_kybmsyjz",
-          "_TZ3000_l6pwxuxm",
-          "_TZ3000_ld6g3agd",
-          "_TZ3000_lelb6ejs",
-          "_TZ3000_lsunm46z",
           "_TZ3000_lupfd8zu",
-          "_TZ3000_mgusv51k",
-          "_TZ3000_mraovvmm",
           "_TZ3000_mrduubod",
           "_TZ3000_mtmtljo4",
           "_TZ3000_nahxzcpz",
           "_TZ3000_njintbl6",
-          "_TZ3000_npgipl5d",
           "_TZ3000_nz98vdvj",
-          "_TZ3000_o005nuxx",
           "_TZ3000_odzoiovu",
-          "_TZ3000_okaz9tjs",
-          "_TZ3000_oxslv1c9",
           "_TZ3000_oz4zgdny",
           "_TZ3000_pccqzgdc",
           "_TZ3000_pdvkkcuc",
-          "_TZ3000_pfc7i3kt",
           "_TZ3000_pmz6mjyu",
           "_TZ3000_ptjcjise",
-          "_TZ3000_qaaysllp",
-          "_TZ3000_qeuvnohg",
           "_TZ3000_qgwcxxws",
-          "_TZ3000_qlai3277",
           "_TZ3000_qspxxfqf",
           "_TZ3000_r0pmi2p3",
           "_TZ3000_rae2pvwy",
           "_TZ3000_rco7azbz",
-          "_TZ3000_rcuqxkq0",
-          "_TZ3000_rdtixbnu",
           "_TZ3000_rfctjdxr",
           "_TZ3000_rxisxokz",
           "_TZ3000_s6ma1nh4",
@@ -68582,19 +69631,10 @@
           "_TZ3000_tqlv4ez4",
           "_TZ3000_txpirhfq",
           "_TZ3000_tyg4yiat",
-          "_TZ3000_typdpbpg",
-          "_TZ3000_u3oupgdy",
-          "_TZ3000_uim07oem",
           "_TZ3000_uz6ibhib",
-          "_TZ3000_v7gnj3ad",
-          "_TZ3000_vsasbzkf",
-          "_TZ3000_w0qqde0g",
-          "_TZ3000_wamqdr3f",
           "_TZ3000_wkr3jqmr",
           "_TZ3000_wopf2sox",
           "_TZ3000_wwtnshol",
-          "_TZ3000_wyhuocal",
-          "_TZ3000_xabckq1v",
           "_TZ3000_zmy4lslw",
           "_TZ3002_6ahhkwyh",
           "_TZ3002_pzao9ls1",
@@ -68604,41 +69644,6 @@
           "_TZ300A_rncj86af",
           "_TZ300A_vkflnsl0",
           "_TZ300A_vqrs45nj",
-          "_TZE200_0j5jma9b",
-          "_TZE200_1agwnafq",
-          "_TZE200_1ibpyhdc",
-          "_TZE200_2hf7x9n3",
-          "_TZE200_44af8ipg",
-          "_TZE200_4hbx5cvx",
-          "_TZE200_502zx5sl",
-          "_TZE200_56bdwt92",
-          "_TZE200_5bdnqwnx",
-          "_TZE200_5tgzpccv",
-          "_TZE200_6mafo2gv",
-          "_TZE200_7tdtqgwv",
-          "_TZE200_8k8k3t3j",
-          "_TZE200_8xtk0cjs",
-          "_TZE200_9cxuhakf",
-          "_TZE200_9kqxlpby",
-          "_TZE200_9mahtqtg",
-          "_TZE200_a4cjpzdi",
-          "_TZE200_ahl6l9k5",
-          "_TZE200_akjefhj5",
-          "_TZE200_amp6tsvy",
-          "_TZE200_anv5ujhv",
-          "_TZE200_ar0slwnd",
-          "_TZE200_atpwqgml",
-          "_TZE200_axbpz5wm",
-          "_TZE200_b8x72kmy",
-          "_TZE200_bq5c8xfe",
-          "_TZE200_c2fmom5z",
-          "_TZE200_cf1sl3tj",
-          "_TZE200_cpmgn2cf",
-          "_TZE200_d5p1kr8z",
-          "_TZE200_d8fp6ivb",
-          "_TZE200_dcydapr2",
-          "_TZE200_dfry6ylv",
-          "_TZE204_aoclfnxz",
           "_TZE204_xibaabmu",
           "_TZE284_xibaabmu",
           "_TZ3210_iymfxdis"
@@ -69202,15 +70207,12 @@
           "_TZE200_3p5ydos3",
           "_TZE200_4mh6tyyo",
           "_TZE200_579lguh2",
-          "_TZE200_9cxuhakf",
           "_TZE200_9i9dt8is",
-          "_TZE200_a0syesf5",
           "_TZE200_ctq0k47x",
           "_TZE200_dfxkcots",
           "_TZE200_ebwgzdqq",
           "_TZE200_ip2akl4w",
           "_TZE200_la2c2uo9",
-          "_TZE200_ojzhk75b",
           "_TZE200_qzaing2g",
           "_TZE200_swaamsoy",
           "_TZE200_vucankjx",
@@ -70595,11 +71597,8 @@
         "manufacturerName": [
           "_TZ3002_vaq2bfcu",
           "_TZE200_tz32mtza",
-          "_TZE204_ikvncluo",
           "_TZE204_tz32mtza",
-          "_TZE204_znbl8dj5",
           "_TZE284_c8ipbljq",
-          "_TZE284_l8xiyymq",
           "_TZE284_tz32mtza",
           "_TZE204_ad2jkxwh",
           "_TZE204_72bewjky",
@@ -71537,8 +72536,6 @@
           "_TZE200_nvxorhcj",
           "_TZE200_ws8g8u0b",
           "_TZE204_8gang001",
-          "_TZE204_nvxorhcj",
-          "_TZE204_r32ctezx",
           "_TZE204_ws8g8u0b"
         ],
         "productId": [
@@ -72327,7 +73324,8 @@
           "tuyatec-riuj5xzs",
           "tuyatec-v3uxbuxy",
           "tuyatec-vmgh3fxd",
-          "tuyatec-yg5dcbfu"
+          "tuyatec-yg5dcbfu",
+          "_TZ3000_jnhu1llv"
         ],
         "productId": [
           "TY0201",
@@ -74127,7 +75125,11 @@
           "_TZE200_gnpn9hxb",
           "_TZE200_vq5u79u3",
           "_TZE204_cscppkxz",
-          "_TZE284_cscppkxz"
+          "_TZE284_cscppkxz",
+          "_TZE200_wzk0x7fq",
+          "_TZE200_jfw0a4aa",
+          "_TZE200_iba1ckek",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0209",
@@ -74199,7 +75201,6 @@
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_4fjiwweb",
-          "_TZB210_3dxbg9ks",
           "_TZB210_g01ie5wu",
           "_TZB210_zxbtub8r"
         ],
@@ -74410,7 +75411,8 @@
           "_TZ3000_ysdv91bk",
           "_TZ3000_hafsqare",
           "_TZ3000_e98krvvk",
-          "_TZ3000_iedbgyxt"
+          "_TZ3000_iedbgyxt",
+          "_TZ3000_vw40zqp4"
         ],
         "productId": [
           "TS0001"
@@ -74537,7 +75539,8 @@
           "_TZ3000_e98krvvk",
           "_TZ3000_iedbgyxt",
           "_TZ3000_xk5udnd6",
-          "_TZ3000_bseed"
+          "_TZ3000_bseed",
+          "_TZ3000_z1uezkpi"
         ],
         "productId": [
           "TS0002",
@@ -74730,7 +75733,8 @@
           "_TZ3000_e98krvvk",
           "_TZ3000_iedbgyxt",
           "_TZ3000_xk5udnd6",
-          "_TZ3000_bseed"
+          "_TZ3000_bseed",
+          "_TZ3000_1lom3myx"
         ],
         "productId": [
           "TS0003",
@@ -75119,8 +76123,6 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
-          "hobeian",
-          "HOBEIAN",
           "_TYST11_qq9mpfhw",
           "_TYZB01_o63ssaah",
           "_TZ3000_0s9gukzt",
@@ -75206,7 +76208,9 @@
           "_TZE284_aghfucwi",
           "_TZE284_2qx7sivb",
           "_TZE284_8sejxcue",
-          "_TZ3000_c8bqthpo"
+          "_TZ3000_c8bqthpo",
+          "TUYATEC-3tipnsrx",
+          "eWeLink"
         ],
         "productId": [
           "TS0207",
@@ -75225,7 +76229,8 @@
           "SNZB-05",
           "3315-S",
           "3315-Seu",
-          "TS0601"
+          "TS0601",
+          "SQ510A"
         ],
         "endpoints": {
           "1": {
@@ -76376,6 +77381,121 @@
     },
     {
       "name": {
+        "en": "WiFi Air Quality Monitor (Tuya Local)"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_co2",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_pm25"
+      ],
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Tuya Local"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "local_key",
+              "type": "text",
+              "label": {
+                "en": "Local Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP"
+              },
+              "value": ""
+            },
+            {
+              "id": "protocol_version",
+              "type": "dropdown",
+              "label": {
+                "en": "Protocol"
+              },
+              "value": "3.3",
+              "values": [
+                {
+                  "id": "3.1",
+                  "label": {
+                    "en": "3.1"
+                  }
+                },
+                {
+                  "id": "3.3",
+                  "label": {
+                    "en": "3.3"
+                  }
+                },
+                {
+                  "id": "3.4",
+                  "label": {
+                    "en": "3.4"
+                  }
+                },
+                {
+                  "id": "3.5",
+                  "label": {
+                    "en": "3.5"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/wifi_air_quality/assets/images/small.png",
+        "large": "drivers/wifi_air_quality/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "id": "wifi_air_quality"
+    },
+    {
+      "name": {
         "en": "WiFi Curtain Motor (Tuya Local)"
       },
       "class": "curtain",
@@ -76486,6 +77606,122 @@
         "lan"
       ],
       "id": "wifi_cover"
+    },
+    {
+      "name": {
+        "en": "WiFi Dehumidifier (Tuya Local)"
+      },
+      "class": "fan",
+      "capabilities": [
+        "onoff",
+        "measure_humidity",
+        "measure_temperature",
+        "target_humidity",
+        "alarm_water"
+      ],
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Tuya Local"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "local_key",
+              "type": "text",
+              "label": {
+                "en": "Local Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP"
+              },
+              "value": ""
+            },
+            {
+              "id": "protocol_version",
+              "type": "dropdown",
+              "label": {
+                "en": "Protocol"
+              },
+              "value": "3.3",
+              "values": [
+                {
+                  "id": "3.1",
+                  "label": {
+                    "en": "3.1"
+                  }
+                },
+                {
+                  "id": "3.3",
+                  "label": {
+                    "en": "3.3"
+                  }
+                },
+                {
+                  "id": "3.4",
+                  "label": {
+                    "en": "3.4"
+                  }
+                },
+                {
+                  "id": "3.5",
+                  "label": {
+                    "en": "3.5"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "drivers/wifi_dehumidifier/assets/images/small.png",
+        "large": "drivers/wifi_dehumidifier/assets/images/large.png"
+      },
+      "id": "wifi_dehumidifier"
     },
     {
       "name": {
@@ -76719,6 +77955,119 @@
         ]
       },
       "id": "wifi_door_lock"
+    },
+    {
+      "name": {
+        "en": "WiFi Doorbell / Camera (Tuya Local)"
+      },
+      "class": "doorbell",
+      "capabilities": [
+        "alarm_generic",
+        "alarm_motion"
+      ],
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Tuya Local"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "local_key",
+              "type": "text",
+              "label": {
+                "en": "Local Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP"
+              },
+              "value": ""
+            },
+            {
+              "id": "protocol_version",
+              "type": "dropdown",
+              "label": {
+                "en": "Protocol"
+              },
+              "value": "3.3",
+              "values": [
+                {
+                  "id": "3.1",
+                  "label": {
+                    "en": "3.1"
+                  }
+                },
+                {
+                  "id": "3.3",
+                  "label": {
+                    "en": "3.3"
+                  }
+                },
+                {
+                  "id": "3.4",
+                  "label": {
+                    "en": "3.4"
+                  }
+                },
+                {
+                  "id": "3.5",
+                  "label": {
+                    "en": "3.5"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "drivers/wifi_doorbell/assets/images/small.png",
+        "large": "drivers/wifi_doorbell/assets/images/large.png"
+      },
+      "id": "wifi_doorbell"
     },
     {
       "name": {
@@ -77449,6 +78798,123 @@
     },
     {
       "name": {
+        "en": "WiFi LED Strip RGBCW (Tuya Local)"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Tuya Local"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "local_key",
+              "type": "text",
+              "label": {
+                "en": "Local Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP"
+              },
+              "value": ""
+            },
+            {
+              "id": "protocol_version",
+              "type": "dropdown",
+              "label": {
+                "en": "Protocol"
+              },
+              "value": "3.3",
+              "values": [
+                {
+                  "id": "3.1",
+                  "label": {
+                    "en": "3.1"
+                  }
+                },
+                {
+                  "id": "3.3",
+                  "label": {
+                    "en": "3.3"
+                  }
+                },
+                {
+                  "id": "3.4",
+                  "label": {
+                    "en": "3.4"
+                  }
+                },
+                {
+                  "id": "3.5",
+                  "label": {
+                    "en": "3.5"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "drivers/wifi_led_strip/assets/images/small.png",
+        "large": "drivers/wifi_led_strip/assets/images/large.png"
+      },
+      "id": "wifi_led_strip"
+    },
+    {
+      "name": {
         "en": "WiFi Light RGBCW (Tuya Local)"
       },
       "class": "light",
@@ -77797,6 +79263,145 @@
         "lan"
       ],
       "id": "wifi_plug"
+    },
+    {
+      "name": {
+        "en": "WiFi Power Strip (Tuya Local)"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.socket2",
+        "onoff.socket3",
+        "onoff.socket4",
+        "measure_power",
+        "meter_power"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Socket 1"
+          }
+        },
+        "onoff.socket2": {
+          "title": {
+            "en": "Socket 2"
+          }
+        },
+        "onoff.socket3": {
+          "title": {
+            "en": "Socket 3"
+          }
+        },
+        "onoff.socket4": {
+          "title": {
+            "en": "Socket 4"
+          }
+        }
+      },
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Tuya Local"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "local_key",
+              "type": "text",
+              "label": {
+                "en": "Local Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP"
+              },
+              "value": ""
+            },
+            {
+              "id": "protocol_version",
+              "type": "dropdown",
+              "label": {
+                "en": "Protocol"
+              },
+              "value": "3.3",
+              "values": [
+                {
+                  "id": "3.1",
+                  "label": {
+                    "en": "3.1"
+                  }
+                },
+                {
+                  "id": "3.3",
+                  "label": {
+                    "en": "3.3"
+                  }
+                },
+                {
+                  "id": "3.4",
+                  "label": {
+                    "en": "3.4"
+                  }
+                },
+                {
+                  "id": "3.5",
+                  "label": {
+                    "en": "3.5"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "drivers/wifi_power_strip/assets/images/small.png",
+        "large": "drivers/wifi_power_strip/assets/images/large.png"
+      },
+      "id": "wifi_power_strip"
     },
     {
       "name": {
@@ -79187,6 +80792,19 @@
       },
       "units": {
         "en": "mg/m³"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "insights": true
+    },
+    "measure_pm25": {
+      "type": "number",
+      "title": {
+        "en": "PM2.5"
+      },
+      "units": {
+        "en": "µg/m³"
       },
       "getable": true,
       "setable": false,
