@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-02-27T23:05:57.526Z",
+  "timestamp": "2026-02-28T03:23:51.691Z",
   "username": "dlnraja",
   "summary": {
-    "postCount": 574,
+    "postCount": 577,
     "topicCount": 1,
     "likes": 65,
     "likesReceived": 197,
@@ -10,7 +10,7 @@
       {
         "id": 140352,
         "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "posts": 1526
+        "posts": 1529
       },
       {
         "id": 26439,
@@ -49,13 +49,40 @@
     {
       "id": 140352,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "posts": 1526,
-      "views": 13645,
-      "lastPosted": "2026-02-27T21:13:47.170Z",
+      "posts": 1529,
+      "views": 13649,
+      "lastPosted": "2026-02-28T00:47:31.998Z",
       "slug": "app-pro-universal-tuya-zigbee-device-app-test"
     }
   ],
   "activity": [
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1541,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "v5.11.25 just went up on the test channel. \nv5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributio&hellip;",
+      "createdAt": "2026-02-28T00:47:31.998Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1540,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "v5.11.25 just went up on the test channel. \nv5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributio&hellip;",
+      "createdAt": "2026-02-28T00:09:37.655Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1539,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "v5.11.25 just went up on the test channel. \nv5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributio&hellip;",
+      "createdAt": "2026-02-27T23:45:29.494Z",
+      "username": "dlnraja"
+    },
     {
       "type": 5,
       "topicId": 140352,
@@ -2728,33 +2755,6 @@
       "excerpt": "Hi Dylan you nearly fixed it again  \nThe readings are all there including the Battery again, the only thing is the Humidity that’s maybe need a multiplayer of 10 because it should be around 90% outside now instead of 9%. \n [1000021420] \nGreat job again, so many many thanks for that​ \nBest regards Pe&hellip;",
       "createdAt": "2026-01-28T22:00:08.202Z",
       "username": "Peter_van_Werkhoven"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1264,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Yessss. Where getting somewhere. I sideloaded (node.js cli) V5.5.941 and the BSEED wall switches with 1 button are recognized. \nThank you Dylan and ofcourse @Attilla . \nRecognized: \nBSEED 1 button wall switch zigbee with neutral. _TZ3000_ysdv91bk TS0001 \nBSEED 1 button wall switch zigbee with neutra&hellip;",
-      "createdAt": "2026-01-28T21:02:07.282Z",
-      "username": "Pieter_Pessers"
-    },
-    {
-      "type": 7,
-      "topicId": 140352,
-      "postNum": 1263,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Hi @dlnraja \nI am still unable to use my Moes 4 button wireless scene switch. _TZ3000_zgyzgdua. No response to flows when pressing physical button or icons. Version 934. \nHere is the diagnostic log. \nad2e946e-e40b-477f-912c-7825383619fb \nThanks for the amazing work. \nFred",
-      "createdAt": "2026-01-28T19:34:22.874Z",
-      "username": "Freddyboy"
-    },
-    {
-      "type": 7,
-      "topicId": 140352,
-      "postNum": 1262,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Hi @dlnraja \nThanks for all your work for this app, good to see that this app improves everyday. \nFor the presence sensor i still have the same issue, connected as unknown device. \nPlease let me know if you need a new interview or report. \nThanks JJ",
-      "createdAt": "2026-01-28T17:05:36.155Z",
-      "username": "JJ10"
     }
   ],
   "pms": [],
@@ -2806,20 +2806,6 @@
       },
       "read": false,
       "createdAt": "2026-02-27T19:17:07.480Z"
-    },
-    {
-      "type": 12,
-      "topicId": null,
-      "postNum": null,
-      "data": {
-        "badge_id": 24,
-        "badge_name": "Anniversary",
-        "badge_slug": "anniversary",
-        "badge_title": false,
-        "username": "dlnraja"
-      },
-      "read": false,
-      "createdAt": "2026-02-27T17:58:50.357Z"
     },
     {
       "type": 5,
@@ -3716,6 +3702,22 @@
       },
       "read": true,
       "createdAt": "2026-01-30T17:33:55.976Z"
+    },
+    {
+      "type": 1,
+      "topicId": 140352,
+      "postNum": 1291,
+      "data": {
+        "topic_title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+        "original_post_id": 704598,
+        "original_post_type": 1,
+        "original_username": "tlink",
+        "revision_number": null,
+        "display_username": "tlink",
+        "display_name": "Thomas Link"
+      },
+      "read": true,
+      "createdAt": "2026-01-30T15:50:24.365Z"
     }
   ],
   "bookmarks": [],
@@ -14847,6 +14849,27 @@
           "user": "dlnraja",
           "text": "v5.11.25 just went up on the test channel.\n\nv5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts.\n\nCurrently at 143 drivers and 5,353+ fingerprints. Install the test version if you want to try it out.\n\nIf something feels off after updating, try removing the device and re-pairing. Let me know if you run into anything.",
           "date": "2026-02-27T21:13:47.170Z",
+          "replyTo": null
+        },
+        {
+          "num": 1539,
+          "user": "dlnraja",
+          "text": "v5.11.25 just went up on the test channel.\n\nv5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts.\n\nCurrently at 143 drivers and 5,356+ fingerprints. Install the test version if you want to try it out.\n\nIf something feels off after updating, try removing the device and re-pairing. Let me know if you run into anything.",
+          "date": "2026-02-27T23:45:29.494Z",
+          "replyTo": null
+        },
+        {
+          "num": 1540,
+          "user": "dlnraja",
+          "text": "v5.11.25 just went up on the test channel.\n\nv5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts.\n\nCurrently at 143 drivers and 5,356+ fingerprints. Install the test version if you want to try it out.\n\nIf something feels off after updating, try removing the device and re-pairing. Let me know if you run into anything.",
+          "date": "2026-02-28T00:09:37.655Z",
+          "replyTo": null
+        },
+        {
+          "num": 1541,
+          "user": "dlnraja",
+          "text": "v5.11.25 just went up on the test channel.\n\nv5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts.\n\nCurrently at 143 drivers and 5,356+ fingerprints. Install the test version if you want to try it out.\n\nIf something feels off after updating, try removing the device and re-pairing. Let me know if you run into anything.",
+          "date": "2026-02-28T00:47:31.998Z",
           "replyTo": null
         }
       ],
@@ -68062,5 +68085,5 @@
       "_TZ3210_leyz4rju"
     ]
   },
-  "aiAnalysis": "### Summary of Homey Community Forum Activity for Universal Tuya Zigbee App\n\n#### 1) Key User Requests:\n- **Device Support**: Users frequently request support for new and specific Tuya Zigbee devices, such as moisture sensors, fertilizer level sensors, and leak sensors.\n- **Compatibility**: There is a need for better compatibility with a wide range of Tuya Zigbee devices, including those from eWeLink.\n- **Documentation**: Users ask for clearer documentation and descriptions of supported devices.\n\n#### 2) Devices People Need:\n- **Moisture Sensors**: Devices that can measure moisture and fertilizer levels.\n- **Leak Sensors**: Specific models like \"CK-TLSR8656-SS5-01(7019)\".\n- **Smart Click+Zigbee Sockets**: Users are looking for support for these sockets.\n- **Unsupported Devices**: A list of unsupported fingerprint IDs indicates a need for support for devices like \"_TZ3000_zgyzgd\", \"_TZE204_ztqnh5c\", and others.\n\n#### 3) Issues to Fix:\n- **Device Recognition**: Some devices, like \"_TZ3000_itb0omhv\", are not recognized in the latest version (5.11.25).\n- **Voltage Divisor**: There was a mention of a fixed voltage divisor in the latest update, suggesting previous issues with voltage readings.\n- **Off-Topic Messages**: Moderators have had to delete off-topic messages, indicating a need for better forum moderation or clearer guidelines.\n\n#### 4) Action Items:\n- **Update Device Support**: Prioritize adding support for the requested devices, especially moisture and leak sensors.\n- **Improve Documentation**: Provide clearer and more comprehensive documentation for supported devices.\n- **Fix Recognition Issues**: Address the recognition problems for specific devices like \"_TZ3000_itb0omhv\".\n- **Moderate Forum**: Ensure that the forum remains on-topic and useful for users by enforcing guidelines and removing off-topic messages.\n- **Communicate Updates**: Clearly communicate updates and changes in the app, such as the voltage divisor fix in v5.11.25."
+  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are actively seeking support for a wider range of Zigbee devices, particularly those that are currently unsupported.\n   - There is a demand for improved compatibility with various device types, including moisture sensors and smart sockets.\n\n2. **Devices People Need:**\n   - Users have mentioned specific unsupported devices such as:\n     - _TZ3000_zgyzgd\n     - _TZE204_ztqnh5c\n     - _TYZB01_bngwdjsr\n   - Interest in moisture sensors that can measure fertilizer levels has also been expressed.\n\n3. **Issues to Fix:**\n   - Users reported that several devices, including _TZ3000_itb0omhv, are not recognized in the latest app version (5.11.25).\n   - There are ongoing discussions about the app's compatibility with eWeLink ZigBee devices, indicating confusion that needs clarification.\n\n4. **Action Items:**\n   - Prioritize adding support for the listed unsupported devices to enhance user satisfaction and broaden the app's functionality.\n   - Address the recognition issue for devices in the latest version and communicate any fixes or updates to users promptly.\n   - Clarify the app’s compatibility with eWeLink devices to prevent further confusion and ensure users understand the app's limitations.\n   - Consider user feedback for future updates to improve device integration and overall app performance. \n\nBy focusing on these actionable insights, the maintainer can enhance user experience and expand the app's capabilities effectively."
 }
