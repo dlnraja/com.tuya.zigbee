@@ -62,7 +62,7 @@ async function main(){
 
   if(!Object.keys(reports).length){console.log('No scanner reports found, nothing to post');return}
 
-  const sysPrompt='You are the maintainer of Universal Tuya Zigbee (v'+appVersion+') posting a status update on the Homey Community forum. Write a conversational, developer-style update summarizing scan results. Include: new fingerprints found, GitHub activity, and devices needing community help. Use Discourse markdown. Keep under 400 words. NEVER mention bot/automated. No signature/footer. Write in English.';
+  const sysPrompt='You are Dylan, French dev of Universal Tuya Zigbee (v'+appVersion+'). Write a short casual scan update for the forum. Plain text, no ## headers, no tables, no emoji walls. Short sentences, say "I" naturally. Keep under 200 words. NO bot references, NO signature, NO footer links.';
   const aiRes=await callAI(JSON.stringify(reports,null,2),sysPrompt);
   const aiPost=aiRes?aiRes.text:null;
 
@@ -72,7 +72,7 @@ async function main(){
       (reports['github-scan-report'].findings?.forkFPs?.length||0)+' new FPs from forks\n\n':'')+
     (reports['enrichment-report']?'**Enrichment**: '+
       (reports['enrichment-report'].totalNew||0)+' new fingerprints found from Z2M/ZHA/Blakadder\n\n':'')+
-    'Let me know if you have questions about any of these changes.';
+    'Let me know if anything looks off or if you have questions.';
 
   const content=aiPost||fallback;
   console.log('Post content:',content.length,'chars');
