@@ -81,12 +81,15 @@ async function classifyIssue(issue,fpResults){
 }
 
 // Generate personalized AI response (with variants + bugs)
-async function generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks){
+async function generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks,repo){
   const ctx={appVersion:appVer,totalFPs:fps.size,driverCount:fs.readdirSync(path.join(__dirname,'..','..','drivers')).length,
     installUrl:'https://homey.app/a/com.dlnraja.tuya.zigbee/test/',
     forumUrl:'https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352',
     devTools:'https://tools.developer.homey.app',githubUrl:'https://github.com/dlnraja/com.tuya.zigbee'};
-  const prompt='You are the developer of Universal Tuya Zigbee (v'+appVer+', '+ctx.driverCount+' drivers, '+fps.size+'+ FPs). Write a GitHub comment responding to this issue. Be helpful and concise — write like a real person, not a bot. Use GitHub markdown. If device is supported, say which driver to pair as and link the test version. If not supported, ask for a device interview from developer tools. If bug, acknowledge it and explain status. If Z2M/ZHA variants or known bugs exist, mention them naturally. If a sensor has missing readings (fertilizer, EC, VOC, formaldehyde, conductivity), explain that we need app logs showing DP numbers (Settings > Apps > Tuya > View Log) to map the unknown data points. NEVER say "bot" or "automated". NEVER add a signature footer or version line at the end. Just end naturally.\\nContext: '+JSON.stringify(ctx);
+  const isUpstream=repo&&repo!==OWN;
+  let prompt='You are the developer of Universal Tuya Zigbee (v'+appVer+', '+ctx.driverCount+' drivers, '+fps.size+'+ FPs). Write a GitHub comment responding to this issue. Be helpful and concise — write like a real person, not a bot. Use GitHub markdown. If device is supported, say which driver to pair as and link the test version. If not supported, ask for a device interview from developer tools. If bug, acknowledge it and explain status. If Z2M/ZHA variants or known bugs exist, mention them naturally. If a sensor has missing readings (fertilizer, EC, VOC, formaldehyde, conductivity), explain that we need app logs showing DP numbers (Settings > Apps > Tuya > View Log) to map the unknown data points. NEVER say "bot" or "automated". NEVER add a signature footer or version line at the end. Just end naturally.';
+  if(isUpstream)prompt+='\nCRITICAL: This issue is on the JohanBendz/com.tuya.zigbee upstream repo. You MUST clearly redirect the user to our actively maintained fork at [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee). Explain this fork has '+ctx.driverCount+' drivers and '+fps.size+'+ fingerprints, far more than upstream. ALWAYS include the test install link: '+ctx.installUrl+' and community forum: '+ctx.forumUrl+'. Tell the user to install, then remove and re-pair their device. Report any issues on the forum thread or the dlnraja GitHub repo.';
+  prompt+='\\nContext: '+JSON.stringify(ctx);
   let text='Issue: '+issue.title+'\nBy: @'+(issue.user?.login||'?')+'\nBody: '+(issue.body||'').slice(0,2000)+'\nFP results: '+JSON.stringify(fpResults)+'\nClassification: '+JSON.stringify(classification)+'\nVariants from Z2M/ZHA/Blakadder: '+JSON.stringify(variants||[])+'\nAssociated bugs: '+JSON.stringify(bugs||[]);
   if(imageCtx)text+='\nImage analysis: '+imageCtx;
   if(bodyLinks&&bodyLinks.length)text+='\nExternal refs: '+bodyLinks.join(', ');
@@ -160,7 +163,7 @@ async function processIssue(repo,issue,state,report,extData){
 
   // Respond if not already responded
   if(!hasBot){
-    const response=await generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks);
+    const response=await generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks,repo);
     if(response){
       const posted=await ghPost('/repos/'+repo+'/issues/'+issue.number+'/comments',{body:response});
       if(posted){
