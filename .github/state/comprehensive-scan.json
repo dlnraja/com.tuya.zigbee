@@ -1,12 +1,12 @@
 {
-  "date": "2026-02-27T23:08:35.959Z",
+  "date": "2026-02-28T03:40:15.680Z",
   "local": {
     "drivers": 143,
-    "fps": 4175
+    "fps": 4178
   },
   "forkScan": {
-    "filesScanned": 4749,
-    "newFPs": 142160
+    "filesScanned": 4721,
+    "newFPs": 142132
   },
   "upstream": {
     "prs": 0,
@@ -6276,24 +6276,6 @@
       "branch": "feat/add-woodupp-create-led"
     },
     {
-      "mfr": "_TZe200_iba1ckek",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
-      "mfr": "_TZe200_jfw0a4aa",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
-      "mfr": "_TZe200_wzk0x7fq",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
       "mfr": "_tz1800_ladpngdx",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -11604,24 +11586,6 @@
       "branch": "feat/add-woodupp-create-led"
     },
     {
-      "mfr": "_TZe200_iba1ckek",
-      "driver": "soil_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
-      "mfr": "_TZe200_jfw0a4aa",
-      "driver": "soil_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
-      "mfr": "_TZe200_wzk0x7fq",
-      "driver": "soil_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
       "mfr": "_tz3000_0ausfos0",
       "driver": "switch_1gang",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -14066,24 +14030,6 @@
     {
       "mfr": "ClimaxTechnology",
       "driver": "water_leak_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
-      "mfr": "_TZe200_iba1ckek",
-      "driver": "weather_station_outdoor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
-      "mfr": "_TZe200_jfw0a4aa",
-      "driver": "weather_station_outdoor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
-      "mfr": "_TZe200_wzk0x7fq",
-      "driver": "weather_station_outdoor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "feat/add-woodupp-create-led"
     },
@@ -55344,24 +55290,6 @@
       "branch": "feat/add-woodupp-create-led"
     },
     {
-      "mfr": "_TZe200_iba1ckek",
-      "driver": "climate_sensor",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
-      "mfr": "_TZe200_jfw0a4aa",
-      "driver": "climate_sensor",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
-      "mfr": "_TZe200_wzk0x7fq",
-      "driver": "climate_sensor",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
       "mfr": "_tz1800_ladpngdx",
       "driver": "climate_sensor",
       "fork": "michelhelsdingen/com.tuya.zigbee",
@@ -60672,24 +60600,6 @@
       "branch": "feat/add-woodupp-create-led"
     },
     {
-      "mfr": "_TZe200_iba1ckek",
-      "driver": "soil_sensor",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
-      "mfr": "_TZe200_jfw0a4aa",
-      "driver": "soil_sensor",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
-      "mfr": "_TZe200_wzk0x7fq",
-      "driver": "soil_sensor",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
       "mfr": "_tz3000_0ausfos0",
       "driver": "switch_1gang",
       "fork": "michelhelsdingen/com.tuya.zigbee",
@@ -63134,24 +63044,6 @@
     {
       "mfr": "ClimaxTechnology",
       "driver": "water_leak_sensor",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
-      "mfr": "_TZe200_iba1ckek",
-      "driver": "weather_station_outdoor",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
-      "mfr": "_TZe200_jfw0a4aa",
-      "driver": "weather_station_outdoor",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "feat/add-woodupp-create-led"
-    },
-    {
-      "mfr": "_TZe200_wzk0x7fq",
-      "driver": "weather_station_outdoor",
       "fork": "michelhelsdingen/com.tuya.zigbee",
       "branch": "feat/add-woodupp-create-led"
     },
@@ -852914,66 +852806,6 @@
     {
       "mfr": "_TZ3000_*",
       "driver": "switch_wall_7gang",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "_TZ3000_*",
-      "driver": "switch_wall_8gang",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "lumi.ctrl_ln1",
-      "driver": "switch_wall_8gang_smart",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "lumi.ctrl_ln1",
-      "driver": "switch_wireless",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "lumi.ctrl_ln1",
-      "driver": "switch_wireless_1gang",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "lumi.ctrl_ln1",
-      "driver": "switch_wireless_2gang",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "lumi.ctrl_ln1",
-      "driver": "switch_wireless_4button_alt",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "lumi.ctrl_ln1",
-      "driver": "switch_wireless_4gang",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "lumi.ctrl_ln1",
-      "driver": "switch_wireless_5button",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "lumi.ctrl_ln1",
-      "driver": "switch_wireless_6gang",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "_TYST11_KGbxAXL2",
-      "driver": "thermostat_trv_advanced",
       "fork": "rsalinger/com.tuya.zigbee",
       "branch": "master"
     }
