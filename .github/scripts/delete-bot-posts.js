@@ -27,7 +27,7 @@ async function main(){
       const r=await fetch(FORUM+'/posts/'+id,{method:'DELETE',headers:h});
       console.log('  Delete',id,':',r.status,r.ok?'OK':'FAIL');
       if(r.ok)ok++;else fail++;
-      await sleep(5000);
+      await sleep(90000);
     }catch(e){console.error('  Delete',id,'error:',e.message);fail++}
   }
   console.log('Done:',ok,'deleted,',fail,'failed');
