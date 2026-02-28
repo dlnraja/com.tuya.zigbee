@@ -160,7 +160,7 @@
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.26** | Added support for a new Tuya 2-gang switch (_TZ3000_itgngnqz). Improved messaging for users migra... |
+| **v5.11.26** | v5.11.26:  |
 | **v5.11.25** | v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug... |
 | **v5.11.24** | v5.11.24: Fixed a workflow trigger race condition. Forum scanner now covers 12 topics. Better dia... |
 | **v5.11.23** | v5.11.23: Switched post-forum-update to fetchWithRetry (fixes random post failures). RawClusterFa... |
@@ -184,10 +184,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-27)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Hartmut_Dunker | `_TZ3002_pzao9ls1` | Forum #140352 post #1520 | Auto-scanned 2026-02-27 |
+
 
 
 
@@ -201,6 +203,7 @@
 | JJ10 | `_TZE200_crq3r3la`, `_TZE200_gkfbdvyx` | Forum #140352 post #1481 | Auto-scanned 2026-02-26 |
 | 7Hills | `_TZE204_clrdrnya` | Forum #140352 post #1482 | Auto-scanned 2026-02-26 |
 | dmz-86 | `_TZE204_clrdrnya` | JohanBendz/com.tuya.zigbee#1142 | Auto-scanned 2026-02-26 |
+
 
 
 
@@ -230,11 +233,13 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-24)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | FrankP | `_TZ3000_itb0omhv` | Forum #140352 post #1477 | Auto-scanned 2026-02-24 |
 | Domingoso | `_TZE200_xlppj4f5` | dlnraja/com.tuya.zigbee#135 | Auto-scanned 2026-02-24 |
+
 
 
 
@@ -277,10 +282,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-22)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Slawek_Pe | `_TZ3210_xzhnra8x` | Forum #140352 post #1467 | Auto-scanned 2026-02-22 |
+
 
 
 
@@ -299,6 +306,7 @@
 |------|---------------|--------|------|
 | ManuelKugler | `_TZE284_aao3yzhs` | Forum #140352 post #1465 | Auto-scanned 2026-02-21 |
 | eeckelaertyannick | `_TZE200_8ygsuhe1` | JohanBendz/com.tuya.zigbee#1229 | Auto-scanned 2026-02-21 |
+
 
 
 
@@ -375,6 +383,9 @@
 
 <!-- NIGHTLY_END -->
 
+
+<!-- NIGHTLY_END -->
+
 ---
 
 ## Auto-Discovered Fingerprints
@@ -398,6 +409,7 @@
 | _TZ3210_iymfxdis | dlnraja/com.tuya.zigbee#133 | device_request |
 | _TZ3002_xkxgfxsg | dlnraja/com.tuya.zigbee#133 | device_request |
 | _TZ3002_tlsvxhxc | dlnraja/com.tuya.zigbee#133 | device_request |
+
 
 
 
@@ -441,6 +453,7 @@
 
 
 <!-- AUTODISCOVERED_END -->
+
 
 
 
@@ -503,6 +516,9 @@
 | _TZe200_a4bpgplm | dlnraja/com.tuya.zigbee#140 | feature |
 | _TZe200_a8sdabtg | dlnraja/com.tuya.zigbee#140 | feature |
 | _TZe200_a8z0g46u | dlnraja/com.tuya.zigbee#140 | feature |
+
+<!-- AUTODISCOVERED_END -->
+
 
 <!-- AUTODISCOVERED_END -->
 
