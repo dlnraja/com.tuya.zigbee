@@ -1,5 +1,12 @@
 #!/usr/bin/env node
 'use strict';
+// DEPRECATED: Use forum-responder.js instead (has edit-instead-of-post, anti-spam, AI batching)
+console.log('⚠️  forum-respond-requests.js is DEPRECATED. Use forum-responder.js instead.');
+console.log('   This script creates new posts without checking for duplicates.');
+console.log('   Exiting without action.');
+process.exit(0);
+
+// --- Legacy code below (kept for reference) ---
 const fs=require('fs'),path=require('path');
 const {loadFingerprints,extractMfrFromText}=require('./load-fingerprints');
 const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
@@ -10,7 +17,6 @@ const DRY=process.env.DRY_RUN==='true';
 const S=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
 const LF=process.env.LAST_RESPOND_FILE||'/tmp/last_forum_respond.txt';
 const SCAN_TOPICS=[140352,26439,146735,89271,54018,12758,85498];
-// IMPORTANT: Only reply on OUR OWN thread (140352). Never post on other people's threads!
 const REPLY_TOPIC=parseInt(process.env.REPLY_TOPIC||'140352',10);
 const APP='https://homey.app/a/com.dlnraja.tuya.zigbee/test/';
 

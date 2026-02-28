@@ -133,20 +133,19 @@ function batchedFallback(postInfos,ver){
   }
   if(!found.size&&!miss.size)return null;
   const users=[...new Set(postInfos.map(p=>p.post.username))];
-  let m=users.length>1?users.map(u=>'@'+u).join(' ')+' — ':'@'+users[0]+' ';
-  if(found.size){m+='good news, '+([...found.keys()].length===1?'that device is':'those devices are')+' already in v'+ver+':\n';for(const[fp,d]of found){const fz=fuzzyInfo.get(fp);m+='- `'+fp+'`'+(fz?' (close match from `'+fz+'`)':'')+' — pair as **'+d[0]+'**\n';}m+='\nJust remove and re-pair, pick the right device type during setup.\n\n';}
-  if(miss.size){
-    // Check if unsupported FPs are known in external DBs
-    let extInfo='';
-    try{
-      const ctx=gatherAll();
-      const extFPs=new Set((ctx.externalSources?.topUnsupported||[]).map(u=>u.fp));
-      const inExt=[...miss.keys()].filter(k=>extFPs.has(k));
-      if(inExt.length)extInfo=' ('+inExt.map(f=>'`'+f+'`').join(', ')+' known in Z2M/ZHA — on our radar)';
-    }catch{}
-    m+='I don\'t have '+[...miss.keys()].map(k=>'`'+k+'`').join(', ')+' yet'+extInfo+'. Could you grab a device interview from the [dev tools](https://tools.developer.homey.app/tools/zigbee)? That\'ll help me add it.\n\n';
+  let m=users.map(u=>'@'+u).join(' ')+' ';
+  if(found.size){
+    const fps=[...found.entries()];
+    if(fps.length===1)m+=fps[0][0]+' is already in v'+ver+' under **'+fps[0][1][0]+'**. ';
+    else{m+='these are already in v'+ver+': ';for(const[fp,d]of fps)m+=fp+' ('+d[0]+'), ';m=m.replace(/, $/,'. ')}
+    m+='Try removing and re-pairing — should pick it up.\n\n';
   }
-  // No promotional footer — keep it natural
+  if(miss.size){
+    let extInfo='';
+    try{const ctx=gatherAll();const extFPs=new Set((ctx.externalSources?.topUnsupported||[]).map(u=>u.fp));const inExt=[...miss.keys()].filter(k=>extFPs.has(k));if(inExt.length)extInfo=' — I see '+(inExt.length===1?'it':'them')+' in Z2M/ZHA so shouldn\'t be hard to add'}catch{}
+    const mks=[...miss.keys()];
+    m+=(mks.length===1?mks[0]+' isn\'t':mks.join(', ')+' aren\'t')+' in there yet'+extInfo+'. If you can grab a [device interview](https://tools.developer.homey.app/tools/zigbee) I\'ll get it sorted.\n\n';
+  }
   return m;
 }
 

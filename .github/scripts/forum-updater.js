@@ -6,6 +6,31 @@ const fs=require('fs'),path=require('path');
 const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const TOPIC=140352;
+const strip=h=>(h||'').replace(/<[^>]+>/g,'').trim();
+
+function getH(auth,json){
+  const h=auth.type==='apikey'?{'User-Api-Key':auth.key}:{'X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
+  if(json)h['Content-Type']='application/json';return h;
+}
+async function getLastOwnPost(){
+  try{
+    const r=await fetchWithRetry(FORUM+'/t/'+TOPIC+'.json',{},{retries:2,label:'lastOwn'});
+    if(!r.ok)return null;
+    const d=await r.json();const highest=d.highest_post_number;if(!highest)return null;
+    const r2=await fetchWithRetry(FORUM+'/t/'+TOPIC+'/'+Math.max(1,highest-5)+'.json',{},{retries:2,label:'lastOwnP'});
+    if(!r2.ok)return null;
+    const posts=(await r2.json()).post_stream?.posts||[];
+    const sorted=posts.sort((a,b)=>b.post_number-a.post_number);
+    if(sorted[0]?.username==='dlnraja')return{id:sorted[0].id,postNumber:sorted[0].post_number,raw:sorted[0].raw||strip(sorted[0].cooked||'')};
+    return null;
+  }catch{return null}
+}
+async function editPost(postId,content,auth){
+  const r=await fetchWithRetry(FORUM+'/posts/'+postId,{method:'PUT',headers:getH(auth,true),
+    body:JSON.stringify({post:{raw:content}})},{retries:3,label:'editPost'});
+  if(!r.ok)throw new Error('Edit:'+r.status);
+  return r.json();
+}
 
 async function postToForum(content,auth){
   if(TOPIC!==140352){console.error('BLOCKED: refusing to post on T'+TOPIC);return{}}
@@ -41,7 +66,7 @@ async function main(){
   const aiRes=await callAI(JSON.stringify(reports,null,2),sysPrompt);
   const aiPost=aiRes?aiRes.text:null;
 
-  const fallback='## Automated Scan Report (v'+appVersion+')\n\n'+
+  const fallback='Quick scan update for v'+appVersion+':\n\n'+
     (reports['github-scan-report']?'**GitHub Activity**: '+
       (reports['github-scan-report'].findings?.issues?.length||0)+' issues with fingerprints, '+
       (reports['github-scan-report'].findings?.forkFPs?.length||0)+' new FPs from forks\n\n':'')+
@@ -59,9 +84,15 @@ async function main(){
     const auth=await getForumAuth();
     if(auth&&auth.type==='session')auth=await refreshCsrf(auth);
     if(!auth){console.error('::warning::No forum auth available');process.exit(0)}
-    console.log('Posting to forum...');
-    const result=await postToForum(content,auth);
-    console.log('Posted id:',result.id);
+    const lastOwn=await getLastOwnPost();
+    if(lastOwn){
+      const merged=lastOwn.raw+'\n\n---\n\n'+content;
+      await editPost(lastOwn.id,merged,auth);
+      console.log('Edited #'+lastOwn.postNumber);
+    }else{
+      const result=await postToForum(content,auth);
+      console.log('Posted id:',result.id);
+    }
   }
 }
 
