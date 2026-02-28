@@ -47,6 +47,7 @@ class SirenDevice extends HybridPlugBase {
       // ═══════════════════════════════════════════════════════════════════
       // ENVIRONMENTAL (some sirens have T/H sensors)
       // ═══════════════════════════════════════════════════════════════════
+      104: { capability: 'onoff', transform: (v) => !!v },
       101: { capability: 'measure_temperature', divisor: 10 },
       102: { capability: 'measure_humidity', divisor: 1 },
 
@@ -62,7 +63,7 @@ class SirenDevice extends HybridPlugBase {
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
-    this.log('[SIREN] v5.5.129 - DPs: 1,5,7,13-15,21,101,102 | ZCL: 6,1282,EF00');
+    this.log('[SIREN] v5.11.27 - DP13=alarm,DP5=vol,DP7=dur,DP21=melody | ZCL: IAS-WD,EF00');
 
     // Setup IAS WD cluster (parent doesn't have this)
     await this._setupIasWD(zclNode);
@@ -95,7 +96,9 @@ class SirenDevice extends HybridPlugBase {
   async _setOnOff(value) {
     this.log(`[SIREN] 🔔 Alarm: ${value ? 'ON' : 'OFF'}`);
 
-    // Call parent implementation for Tuya DP / ZCL On/Off
+    // v5.11.27: TS0601=DP13, NEO=DP104, TS0216=DP1
+    try { await this._sendTuyaDP(13, !!value, 'bool'); } catch (e) {}
+    try { await this._sendTuyaDP(104, !!value, 'bool'); } catch (e) {}
     await super._setOnOff?.(value);
 
     // Also trigger IAS WD if available
@@ -112,8 +115,18 @@ class SirenDevice extends HybridPlugBase {
   }
 
   async _sendTuyaDP(dp, value, type) {
+    // v5.11.27: Use _tuyaEF00Manager from base class (the ONLY working API for EF00 cluster)
+    if (this._tuyaEF00Manager?.sendDatapoint) {
+      await this._tuyaEF00Manager.sendDatapoint(dp, value, type);
+      return;
+    }
+    // Fallback: direct cluster write
     const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-    if (tuya?.datapoint) await tuya.datapoint({ dp, value, type });
+    if (tuya?.datapoint) {
+      await tuya.datapoint({ dp, value, type });
+    } else {
+      this.log(`[SIREN] ⚠️ No Tuya DP transport for DP${dp}`);
+    }
   }
 
   /**

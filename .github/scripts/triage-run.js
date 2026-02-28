@@ -8,6 +8,7 @@ const path=require('path');
 
 const DRY=process.env.DRY_RUN==='true';
 const REPO=process.env.TARGET_REPO||'JohanBendz/com.tuya.zigbee';
+const CAN_CLOSE=REPO.startsWith('dlnraja/');
 const VER=process.env.APP_VERSION||'latest';
 const DRVC=process.env.DRIVER_COUNT||'138';
 const FPC=process.env.FP_COUNT||'5579';
@@ -79,8 +80,8 @@ for(const it of issues){
     msg=buildSupportedMsg(found)+`\n\n---\n**Not yet supported:** \`${missing.join('`, `')}\` - logged for next release.`;
   }
   if(msg){postComment(it.number,msg);iCommented++;}
-  // Auto-close if ALL FPs supported
-  if(found.length&&!missing.length&&!DRY){
+  // Auto-close if ALL FPs supported (only on own repo)
+  if(found.length&&!missing.length&&!DRY&&CAN_CLOSE){
     try{gh(`issue close ${it.number} -R ${REPO} -r "not planned" -c "All fingerprints already supported in v${VER}."`);iClosed++;console.log(`  Closed #${it.number}`);}catch{}
   }
 }
@@ -99,8 +100,8 @@ for(const pr of prs){
     postComment(pr.number,buildPRMsg(found,missing));
     pCommented++;
   }
-  // Auto-close PR if ALL FPs supported
-  if(found.length&&!missing.length&&!DRY){
+  // Auto-close PR if ALL FPs supported (only on own repo)
+  if(found.length&&!missing.length&&!DRY&&CAN_CLOSE){
     try{gh(`pr close ${pr.number} -R ${REPO} -c "All fingerprints already integrated in v${VER}."`);pClosed++;console.log(`  Closed PR #${pr.number}`);}catch{}
   }
 }

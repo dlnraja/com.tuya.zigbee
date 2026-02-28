@@ -7,6 +7,8 @@ let investigateBug;try{investigateBug=require('./bug-investigator').investigate}
 const fs=require('fs'),path=require('path'),os=require('os');
 const DRY=process.env.DRY_RUN==='true';
 const REPO=process.env.TARGET_REPO||'JohanBendz/com.tuya.zigbee';
+const CAN_CLOSE=REPO.startsWith('dlnraja/');
+if(!CAN_CLOSE)console.log('NOTE: Close disabled for upstream repo '+REPO);
 const VER=process.env.APP_VERSION||'latest';
 const DRVC=process.env.DRIVER_COUNT||'138';
 const FPC=process.env.FP_COUNT||'5500';
@@ -119,8 +121,8 @@ for(const it of issues){
   else if(missing.length&&!found.length) msg=unsupportedMsg(missing);
   else if(found.length&&missing.length) msg=supportedMsg(found)+bugInfo+'\n\n---\n\n'+unsupportedMsg(missing);
   if(msg){post(it.number,msg);iCommented++;}
-  // Auto-close if ALL FPs supported
-  if(found.length&&!missing.length&&!DRY){
+  // Auto-close if ALL FPs supported (only on own repo)
+  if(found.length&&!missing.length&&!DRY&&CAN_CLOSE){
     try{gh(`issue close ${it.number} -R ${REPO} -r "not planned" -c "All FPs here are already in v${VER} — closing. Install the test version and re-pair if needed."`);iClosed++;console.log(`  Closed #${it.number} (all FPs supported)`);}catch(e){console.log(`  Close skip #${it.number}: ${e.message.slice(0,60)}`);}
   }
 }
@@ -136,8 +138,8 @@ for(const pr of prs){
   const missing=mfrs.filter(m=>!fps.has(m));
   missing.forEach(m=>newFps.push({fp:m,source:`${REPO}#${pr.number}`,type:'pr'}));
   if(found.length||missing.length){post(pr.number,prMsg(found,missing));pCommented++;}
-  // Auto-close PR if ALL FPs supported
-  if(found.length&&!missing.length&&!DRY){
+  // Auto-close PR if ALL FPs supported (only on own repo)
+  if(found.length&&!missing.length&&!DRY&&CAN_CLOSE){
     try{gh(`pr close ${pr.number} -R ${REPO} -c "All FPs in this PR are already in v${VER} — closing as resolved. Thanks!"`);pClosed++;console.log(`  Closed PR #${pr.number} (all FPs supported)`);}catch(e){console.log(`  Close skip PR #${pr.number}: ${e.message.slice(0,60)}`);}
   }
 }
