@@ -1,6 +1,6 @@
 {
   "5.11.26": {
-    "en": "Fixed siren alarm sound and resolved double-divisor bug for energy monitoring. Added new device support."
+    "en": "v5.11.26: "
   },
   "5.11.25": {
     "en": "v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts."
