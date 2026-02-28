@@ -2,124 +2,124 @@
 'use strict';
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
-const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
-// IMPORTANT: Only post updates to OUR OWN thread (T140352). NEVER post on other people's threads!
-const TOPICS=(process.env.FORUM_TOPICS||'140352').split(',').map(Number).filter(t=>t===140352);
+const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
+const TID=140352;
 const SUM=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
+const STATE_FILE=path.join(__dirname,'..','state','forum-update-state.json');
+const strip=h=>(h||'').replace(/<[^>]+>/g,'').trim();
+function loadState(){try{return JSON.parse(fs.readFileSync(STATE_FILE,'utf8'))}catch{return{}}}
+function saveState(s){fs.mkdirSync(path.dirname(STATE_FILE),{recursive:true});fs.writeFileSync(STATE_FILE,JSON.stringify(s,null,2)+'\n')}
+function getHeaders(auth,json){
+  const h=auth.type==='apikey'?{'User-Api-Key':auth.key}:{'X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
+  if(json)h['Content-Type']='application/json';return h;
+}
 
+async function getLastOwnPost(tid){
+  try{
+    const r=await fetchWithRetry(FORUM+'/t/'+tid+'.json',{},{retries:2,label:'lastOwn'});
+    if(!r.ok)return null;
+    const d=await r.json();const highest=d.highest_post_number;if(!highest)return null;
+    const from=Math.max(1,highest-5);
+    const r2=await fetchWithRetry(FORUM+'/t/'+tid+'/'+from+'.json',{},{retries:2,label:'lastOwnPosts'});
+    if(!r2.ok)return null;
+    const posts=(await r2.json()).post_stream?.posts||[];
+    const sorted=posts.sort((a,b)=>b.post_number-a.post_number);
+    if(sorted[0]?.username==='dlnraja')return{id:sorted[0].id,postNumber:sorted[0].post_number,raw:sorted[0].raw||strip(sorted[0].cooked||'')};
+    return null;
+  }catch{return null}
+}
+async function editPost(postId,content,auth){
+  const r=await fetchWithRetry(FORUM+'/posts/'+postId,{method:'PUT',headers:getHeaders(auth,true),
+    body:JSON.stringify({post:{raw:content}})},{retries:3,label:'editPost'});
+  if(!r.ok){const d=await r.json().catch(()=>({}));throw new Error('Edit:'+r.status+' '+JSON.stringify(d).substring(0,200))}
+  return r.json();
+}
 async function postReply(tid,raw,auth){
-  if(tid!==140352){console.error('BLOCKED: refusing to post on T'+tid);return'{}'}
-  const h=auth.type==='apikey'
-    ?{'Content-Type':'application/json','User-Api-Key':auth.key}
-    :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'Cookie':fmtCk(auth.cookies),'X-Requested-With':'XMLHttpRequest'};
-  const r=await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:h,body:JSON.stringify({topic_id:tid,raw})},{retries:3,label:'forumPost'});
-  const d=await r.json().catch(()=>({}));
-  if(!r.ok)throw new Error('Post failed: '+r.status+' '+JSON.stringify(d).slice(0,200));
-  return JSON.stringify(d);
+  if(tid!==TID){console.error('BLOCKED: refusing to post on T'+tid);return null}
+  const r=await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:getHeaders(auth,true),
+    body:JSON.stringify({topic_id:tid,raw})},{retries:3,label:'forumPost'});
+  if(!r.ok){const d=await r.json().catch(()=>({}));throw new Error('Post:'+r.status+' '+JSON.stringify(d).substring(0,200))}
+  return r.json();
 }
 
 function gatherStats(){
-  const ROOT=process.cwd();
-  const DDIR=path.join(ROOT,'drivers');
+  const ROOT=process.cwd();const DDIR=path.join(ROOT,'drivers');
   let driverCount=0,totalFp=0,flowCards=0;
   try{
     const dirs=fs.readdirSync(DDIR).filter(d=>fs.existsSync(path.join(DDIR,d,'driver.compose.json')));
     driverCount=dirs.length;
     for(const d of dirs){
-      try{
-        const c=JSON.parse(fs.readFileSync(path.join(DDIR,d,'driver.compose.json'),'utf8'));
-        totalFp+=((c.zigbee&&c.zigbee.manufacturerName)||[]).length;
-      }catch(e){}
-      try{
-        const ff=path.join(DDIR,d,'driver.flow.compose.json');
-        if(fs.existsSync(ff)){
-          const fc=JSON.parse(fs.readFileSync(ff,'utf8'));
-          flowCards+=(fc.triggers||[]).length+(fc.conditions||[]).length+(fc.actions||[]).length;
-        }
-      }catch(e){}
+      try{const c=JSON.parse(fs.readFileSync(path.join(DDIR,d,'driver.compose.json'),'utf8'));totalFp+=((c.zigbee&&c.zigbee.manufacturerName)||[]).length}catch(e){}
+      try{const ff=path.join(DDIR,d,'driver.flow.compose.json');if(fs.existsSync(ff)){const fc=JSON.parse(fs.readFileSync(ff,'utf8'));flowCards+=(fc.triggers||[]).length+(fc.conditions||[]).length+(fc.actions||[]).length}}catch(e){}
     }
   }catch(e){}
-  // Also try _stats.json for more accurate counts
-  try{
-    const st=JSON.parse(fs.readFileSync(path.join(ROOT,'.github','scripts','_stats.json'),'utf8'));
-    if(st.fps&&st.fps>totalFp)totalFp=st.fps;
-    if(st.flow&&st.flow>flowCards)flowCards=st.flow;
-    if(st.drivers&&st.drivers>driverCount)driverCount=st.drivers;
-  }catch(e){}
+  try{const st=JSON.parse(fs.readFileSync(path.join(ROOT,'.github','scripts','_stats.json'),'utf8'));if(st.fps&&st.fps>totalFp)totalFp=st.fps;if(st.flow&&st.flow>flowCards)flowCards=st.flow;if(st.drivers&&st.drivers>driverCount)driverCount=st.drivers}catch(e){}
   return{driverCount,totalFp,flowCards};
 }
-
 function parseChangelog(cl){
-  // Extract numbered items like (1) ... (2) ... or bullet-like segments
   const numbered=cl.match(/\(\d+\)\s*[^(]+/g);
-  if(numbered&&numbered.length>1){
-    return numbered.map(s=>s.replace(/^\(\d+\)\s*/,'').trim()).filter(Boolean);
-  }
-  // Try splitting on ". " for sentence-based changelogs
+  if(numbered&&numbered.length>1)return numbered.map(s=>s.replace(/^\(\d+\)\s*/,'').trim()).filter(Boolean);
   const sentences=cl.split(/\.\s+/).map(s=>s.trim().replace(/\.$/,'')).filter(s=>s.length>15);
   if(sentences.length>1)return sentences;
-  // Single-line changelog
   return[cl.trim()];
 }
 
 function buildForumPost(ver,cl,stats,url){
   const items=parseChangelog(cl);
-  const hasBullets=items.length>1; // used below
+  const hasBullets=items.length>1;
   const fmt=n=>typeof n==='number'?n.toLocaleString('en-US'):n;
-
-  const lines=[
-    `**v${ver}** just went up on the test channel.`,
-    '',
-  ];
-
-  if(hasBullets){
-    lines.push('What changed:');
-    for(const item of items) lines.push(`- ${item}`);
-  }else{
-    lines.push(cl);
-  }
+  const lines=[];
+  lines.push('v'+ver+' is up on the [test channel]('+url+').');
   lines.push('');
-
-  lines.push(`Currently at ${stats.driverCount} drivers and ${fmt(stats.totalFp)}+ fingerprints. [Install the test version](${url}) if you want to try it out.`);
+  if(hasBullets){lines.push('Changes:');for(const item of items)lines.push('- '+item)}
+  else lines.push(cl);
   lines.push('');
-  lines.push('If something feels off after updating, try removing the device and re-pairing. Let me know if you run into anything.');
-
+  lines.push(fmt(stats.driverCount)+' drivers, '+fmt(stats.totalFp)+'+ fingerprints so far.');
+  lines.push('');
+  lines.push('As always, remove and re-pair if something acts up after updating.');
   return lines.join('\n');
 }
 
 async function main(){
+  const state=loadState();
+  const ver=process.env.APP_VERSION||require(path.join(process.cwd(),'app.json')).version;
+  // Version dedup: skip if we already posted this exact version
+  if(state.lastVersion===ver&&!process.env.FORCE_POST){
+    console.log('Already posted v'+ver+', skipping (set FORCE_POST=true to override)');
+    fs.appendFileSync(SUM,'Forum update skipped (v'+ver+' already posted)\n');
+    return;
+  }
   console.log('Getting forum auth...');
   const auth=await getForumAuth();
-  if(!auth){console.log('Forum post skipped (no auth)');fs.appendFileSync(SUM,'Forum post skipped (no HOMEY_EMAIL/HOMEY_PASSWORD or DISCOURSE_API_KEY)\n');return;}
+  if(!auth){console.log('Forum post skipped (no auth)');fs.appendFileSync(SUM,'Forum post skipped (no auth)\n');return}
   console.log('Auth OK');
-  const ver=process.env.APP_VERSION||require(path.join(process.cwd(),'app.json')).version;
   let cl=process.env.CHANGELOG||'';
   if(!cl){
-    try{
-      const cj=JSON.parse(fs.readFileSync(path.join(process.cwd(),'.homeychangelog.json'),'utf8'));
+    try{const cj=JSON.parse(fs.readFileSync(path.join(process.cwd(),'.homeychangelog.json'),'utf8'));
       if(cj[ver]&&cj[ver].en)cl=cj[ver].en;
-      else{
-        const k=Object.keys(cj).sort((a,b)=>b.localeCompare(a,undefined,{numeric:true}));
-        if(k[0]&&cj[k[0]]&&cj[k[0]].en)cl=cj[k[0]].en;
-      }
+      else{const k=Object.keys(cj).sort((a,b)=>b.localeCompare(a,undefined,{numeric:true}));if(k[0]&&cj[k[0]]&&cj[k[0]].en)cl=cj[k[0]].en}
     }catch(e){}
   }
-  if(!cl)cl='v'+ver+' — Various improvements and bug fixes. See GitHub releases for details.';
+  if(!cl)cl='Various improvements and bug fixes.';
   const url=process.env.PUBLISH_URL||'https://homey.app/a/com.dlnraja.tuya.zigbee/test/';
   const stats=gatherStats();
   const raw=buildForumPost(ver,cl,stats,url);
-  console.log('Posting to',TOPICS.length,'forum topics (',raw.length,'chars)');
-  let posted=0;
-  for(const tid of TOPICS){
-    try{
-      console.log('Posting to topic',tid,'...');
-      if(auth.type==='session')await refreshCsrf(auth);
-      const r=await postReply(tid,raw,auth);
-      console.log('  Posted:',r.slice(0,100));
-      posted++;
-      if(TOPICS.indexOf(tid)<TOPICS.length-1)await new Promise(r=>setTimeout(r,10000));
-    }catch(e){console.error('  Failed topic',tid+':',e.message);}
-  }
-  fs.appendFileSync(SUM,'Forum: posted v'+ver+' update to '+posted+'/'+TOPICS.length+' topics\n');
+  console.log('Update content ('+raw.length+'ch):\n'+raw.substring(0,200));
+  try{
+    if(auth.type==='session')await refreshCsrf(auth);
+    const lastOwn=await getLastOwnPost(TID);
+    if(lastOwn){
+      // EDIT existing post: append update with separator
+      const merged=lastOwn.raw+'\n\n---\n\n'+raw;
+      await editPost(lastOwn.id,merged,auth);
+      console.log('Edited post #'+lastOwn.postNumber+' (appended '+raw.length+'ch)');
+    }else{
+      await postReply(TID,raw,auth);
+      console.log('Posted new reply');
+    }
+    state.lastVersion=ver;state.lastPosted=new Date().toISOString();
+    saveState(state);
+    fs.appendFileSync(SUM,'Forum: posted v'+ver+' update'+(lastOwn?' (edited #'+lastOwn.postNumber+')':' (new reply)')+'\n');
+  }catch(e){console.error('Failed:',e.message);fs.appendFileSync(SUM,'Forum update failed: '+e.message+'\n')}
 }
-main().catch(e=>{console.error('Forum post failed:',e.message);process.exit(1);});
+main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});
