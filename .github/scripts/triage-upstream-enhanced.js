@@ -3,6 +3,7 @@
 const{execSync}=require('child_process');
 const{loadFingerprints,findAllDrivers,extractMfrFromText}=require('./load-fingerprints');
 const{sleep}=require('./retry-helper');
+let investigateBug;try{investigateBug=require('./bug-investigator').investigate}catch{investigateBug=()=>null}
 const fs=require('fs'),path=require('path'),os=require('os');
 const DRY=process.env.DRY_RUN==='true';
 const REPO=process.env.TARGET_REPO||'JohanBendz/com.tuya.zigbee';
@@ -105,10 +106,18 @@ for(const it of issues){
   const found=mfrs.filter(m=>fps.has(m)).map(m=>[m,findAllDrivers(m)]);
   const missing=mfrs.filter(m=>!fps.has(m));
   missing.forEach(m=>newFps.push({fp:m,source:`${REPO}#${it.number}`,type:'issue'}));
+  // v5.11.26: Bug investigation for supported FPs with bug-like keywords
+  let bugInfo='';
+  const itText=`${it.title||''} ${it.body||''}`.toLowerCase();
+  if(found.length&&itText.match(/bug|wrong|error|not work|broken|value|scaling|divisor|energy|battery/)){
+    for(const[m]of found){
+      try{const inv=investigateBug(m,itText);if(inv&&inv.findings.length){bugInfo+=`\n\n**Code investigation for \`${m}\`** (${inv.driver}):\n`+inv.findings.map(f=>'- '+f).join('\n');}}catch{}
+    }
+  }
   let msg='';
-  if(found.length&&!missing.length) msg=supportedMsg(found);
+  if(found.length&&!missing.length) msg=supportedMsg(found)+bugInfo;
   else if(missing.length&&!found.length) msg=unsupportedMsg(missing);
-  else if(found.length&&missing.length) msg=supportedMsg(found)+'\n\n---\n\n'+unsupportedMsg(missing);
+  else if(found.length&&missing.length) msg=supportedMsg(found)+bugInfo+'\n\n---\n\n'+unsupportedMsg(missing);
   if(msg){post(it.number,msg);iCommented++;}
   // Auto-close if ALL FPs supported
   if(found.length&&!missing.length&&!DRY){
