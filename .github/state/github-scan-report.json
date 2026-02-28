@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-28T03:23:32.072Z",
-  "appVersion": "5.11.25",
+  "timestamp": "2026-02-28T08:46:02.523Z",
+  "appVersion": "5.11.26",
   "findings": {
     "issues": [
       {
@@ -35,115 +35,6 @@
         "imageAnalysis": null
       },
       {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 128,
-        "title": "Garagedoor controller",
-        "user": "Wuma68",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZE204_nklqjk62",
-            "drivers": [
-              "garage_door"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/128",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 135,
-        "title": "Device Request - _TZE200_xlppj4f5- TS0601 - Immax Neo smart water timer",
-        "user": "Domingoso",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZE200_xlppj4f5",
-            "drivers": [
-              "valve_irrigation"
-            ]
-          },
-          {
-            "fp": "_TZ3210_0jxeoadc",
-            "drivers": [
-              "valve_irrigation"
-            ]
-          },
-          {
-            "fp": "_TZE200_5zbp6j0u",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_nkoabg8w",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_xuzcvlku",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_4vobcgd3",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_nogaemzt",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_r0jdjrvi",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_pk0sfzvr",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_fdtjuw7u",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_zpzndjez",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_wmcdj3aq",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt",
-              "shutter_roller_controller"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/135",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
         "repo": "JohanBendz/com.tuya.zigbee",
         "number": 1348,
         "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
@@ -163,23 +54,83 @@
       },
       {
         "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1331,
-        "title": "Device Request - [UFO-R11] - [Moes] / [modelId]",
-        "user": "MF-ITuser",
-        "newFPs": [
-          "_TZ3290_ot6ewjvmej"
-        ],
+        "number": 1142,
+        "title": "Device Request - Wenzhi Smart Human Presence Sensor & Relay  - _TZE204_clrdrnya / WZ-235-ZB-RL TS0601",
+        "user": "dmz-86",
+        "newFPs": [],
         "existingFPs": [
           {
-            "fp": "_TZ3290_ot6ewjvmejq5ekhl",
+            "fp": "_TZE204_clrdrnya",
             "drivers": [
-              "ir_blaster"
+              "motion_sensor_radar_mmwave"
             ]
           }
         ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1331",
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1142",
         "state": "open",
-        "imageAnalysis": "```json\n{\n  \"Tuya\": {\n    \"gateway_required\": \"Wired Version Gateway\",\n    \"compatible_hubs\": [\n      \"Tuya ZigBee wired hub\",\n      \"Tuya wired multi-mode hub\"\n    ],\n    \"incompatibility\": \"Wireless version not functional\",\n    \"features\": [\n      \"App Control\",\n      \"Voice Control\"\n    ],\n    \"support\": {\n      \"wired_hub\": \"Supported\",\n      \"wireless_hub\": \"Not Supported\"\n    }\n  }\n}\n```"
+        "imageAnalysis": null
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1328,
+        "title": "Device Request - [RSH-HS03] - _TZE284_9ern5sfh | TS0601",
+        "user": "AGabriel",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE284_9ern5sfh",
+            "drivers": [
+              "climate_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1328",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1229,
+        "title": "Smart Airbox no data",
+        "user": "eeckelaertyannick",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE200_8ygsuhe1",
+            "drivers": [
+              "climate_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1229",
+        "state": "open",
+        "imageAnalysis": "```json\n{\n  \"device_name\": \"Smart Air Detection Box Keuken\",\n  \"device_category_inferred\": \"Air Quality Monitor / Smart Sensor\","
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 963,
+        "title": "Device Request - Aubess Tuya 1-gang ZigBee 3.0 Mini Smart Switch - _TZ3000_fdxihpp7 / TS0001",
+        "user": "erlandjack",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_fdxihpp7",
+            "drivers": [
+              "climate_sensor",
+              "plug_energy_monitor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_skueekg3",
+            "drivers": [
+              "climate_sensor",
+              "switch_1gang"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/963",
+        "state": "open",
+        "imageAnalysis": "NULL"
       }
     ],
     "prs": [
@@ -334,5 +285,5 @@
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\n- **Issue #1348**: Device request for an unspecified device with fingerprint `_TZ3210_xzhnra8x` (open). [Link](https://github.com/JohanBendz/com.tuya.zigbee/issues/1348)\n- **Issue #1331**: Device request for Moes UFO-R11 with new fingerprint `_TZ3290_ot6ewjvmej` (open). [Link](https://github.com/JohanBendz/com.tuya.zigbee/issues/1331)\n\n## Existing Fingerprints Supported\n- **Issue #110**: \n  - `_TZ3210_w0qqde0g` - Supported by `plug_energy_monitor`\n  - `_TZ3000_w0qqde0g` - Supported by `plug_energy_monitor`\n  - `_TZ3000_gjnozsaz` - Supported by `button_emergency_sos`, `plug_energy_monitor`\n  \n- **Issue #128**: \n  - `_TZE204_nklqjk62` - Supported by `garage_door`\n  \n- **Issue #135**: \n  - Multiple fingerprints for curtain motors and irrigation valves, including:\n    - `_TZE200_xlppj4f5` - Supported by `valve_irrigation`\n    - `_TZ3210_0jxeoadc` - Supported by `valve_irrigation`\n    - Various curtain motor fingerprints supporting `curtain_motor` and `curtain_motor_tilt`.\n\n## Fingerprints from Forks to Integrate\n- No new fingerprints from forks were identified in the current analysis.\n\n## Pull Requests with Useful Changes\n- **PR #125**: Fix for HOBEIAN 10G radar sensor, addressing IAS motion conflict and battery read issues. [Link](https://github.com/dlnraja/com.tuya.zigbee/pull/125)\n- **PR #118**: Support for fingerprint `_TZ3000_ysdv91bk`. [Link](https://github.com/dlnraja/com.tuya.zigbee/pull/118)\n- **PR #116**: Added support for Bseed 1-Gang Switch with physical button detection. [Link](https://github.com/dlnraja/com.tuya.zigbee/pull/116)\n- **PR #111**: Separate driver for Tuya/Bseed touch dimmer (merged). [Link](https://github.com/dlnraja/com.tuya.zigbee/pull/111)\n- **PR #106**: Added fingerprint `_TZE204_n9ctkb6j`, addressing case sensitivity (merged). [Link](https://github.com/dlnraja/com.tuya.zigbee/pull/106)\n- **PR #1210**: Addition of Garage Door Controller and combined Fan drivers. [Link](https://github.com/JohanBendz/com.tuya.zigbee/pull/1210)\n- **PR #1253**: Added three new devices. [Link](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253)\n- **PR #1292**: Added radar and illuminance sensor. [Link](https://github.com/JohanBendz/com.tuya.zigbee/pull/1292)\n\nThis summary encapsulates the latest developments in the Universal Tuya Zigbee project, highlighting new device requests, existing fingerprint support, and significant pull requests that enhance functionality. For further details, please refer to the linked issues and pull requests."
+  "aiSummary": "Hello everyone,\n\nHere's a concise update on the recent GitHub activity for the Universal Tuya Zigbee app (com.dlnraja.tuya.zigbee), summarizing new device requests, supported fingerprints, and potential integrations.\n\n### GitHub Activity Summary\n\nWe've processed several issues and pull requests across both the main `dlnraja/com.tuya.zig"
 }
