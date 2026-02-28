@@ -293,6 +293,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GEMINI_MAX_TIER: "1"
         run: node .github/scripts/external-sources-scanner.js
 
   github-scanner:
@@ -449,6 +450,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GEMINI_MAX_TIER: "1"
         run: node .github/scripts/enrichment-scanner.js
 
   smart-processor:

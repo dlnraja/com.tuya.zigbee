@@ -49,6 +49,7 @@ jobs:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          GEMINI_MAX_TIER: "2"
           DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
         run: node .github/scripts/nightly-processor.js
 
@@ -78,6 +79,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GEMINI_MAX_TIER: "1"
         run: node .github/scripts/external-sources-scanner.js
 
       - name: Forum Activity Scraper
@@ -99,6 +101,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GEMINI_MAX_TIER: "1"
         run: node .github/scripts/enrichment-scanner.js
 
       - name: Forum Intel Processor (scan-only, no reply)
