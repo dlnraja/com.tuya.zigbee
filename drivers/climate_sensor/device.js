@@ -1394,8 +1394,10 @@ class ClimateSensorDevice extends HybridSensorBase {
       const rawTemp = value / 10;
       processedValue = this._applyTempOffset(rawTemp) * 10; // Scale back for parent processing
     } else if (dp === 2 || dp === 7 || dp === 103) {
-      // Humidity DPs - apply offset
-      processedValue = this._applyHumOffset(value);
+      // v5.11.26: FIX #1328 - auto-divisor before offset (raw value may be >100 e.g. 435=43.5%)
+      let hum = value;
+      if (hum > 100) hum = Math.round(hum / 10);
+      processedValue = this._applyHumOffset(hum);
     }
 
     // Call parent handler
@@ -1448,12 +1450,14 @@ class ClimateSensorDevice extends HybridSensorBase {
         this.log(`[CLIMATE-DP] DP${dp} temperature_alt raw=${rawValue} → ${tempAlt}°C`);
         break;
       case 2: // Humidity (standard)
-        const hum2 = this._applyHumOffset(rawValue);
+        const hum2raw = rawValue > 100 ? Math.round(rawValue / 10) : rawValue;
+        const hum2 = this._applyHumOffset(hum2raw);
         this.log(`[CLIMATE-DP] DP2 humidity raw=${rawValue} → ${hum2}%`);
         break;
       case 7: // Humidity (some _TZE204 models)
       case 103: // Humidity (alt)
-        const humAlt = this._applyHumOffset(rawValue);
+        const humAltRaw = rawValue > 100 ? Math.round(rawValue / 10) : rawValue;
+        const humAlt = this._applyHumOffset(humAltRaw);
         this.log(`[CLIMATE-DP] DP${dp} humidity_alt raw=${rawValue} → ${humAlt}%`);
         break;
       case 3: // Battery state enum (some _TZE200 devices)
