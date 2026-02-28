@@ -21,6 +21,10 @@ function _rtLoad(){try{const j=JSON.parse(fs.readFileSync(_rtF,'utf8'));const td
 function _rtSave(){try{_rt.dd=new Date().toISOString().slice(0,10);fs.mkdirSync(path.dirname(_rtF),{recursive:true});fs.writeFileSync(_rtF,JSON.stringify(_rt))}catch{}}
 function _rtTrack(id){const n=Date.now(),td=new Date().toISOString().slice(0,10);if(n-_rt.mt>60000){_rt.m={};_rt.mt=n}if(_rt.dd!==td){_rt.d={};_rt.dd=td}_rt.m[id]=(_rt.m[id]||0)+1;_rt.d[id]=(_rt.d[id]||0)+1;_rtSave()}
 function _rtOk(t){const n=Date.now(),td=new Date().toISOString().slice(0,10);if(n-_rt.mt>60000)_rt.m={};if(_rt.dd!==td)_rt.d={};return(_rt.m[t[0]]||0)<t[3]-1&&(_rt.d[t[0]]||0)<Math.floor(t[4]*0.8)}
+// RPM enforcement: wait if at limit instead of skipping
+async function _rtWait(t){const id=t[0],rpm=t[3];const n=Date.now();if(n-_rt.mt>60000){_rt.m={};_rt.mt=n}const used=_rt.m[id]||0;if(used>=rpm-1){const wait=60000-(n-_rt.mt)+500;if(wait>0){console.log('  [RPM] '+id+' at '+used+'/'+rpm+' — waiting '+Math.round(wait/1000)+'s');await sleep(wait);_rt.m={};_rt.mt=Date.now()}}}
+// Budget summary for end-of-run logging
+function _rtBudget(){const lines=[];for(const t of GTIERS){const d=_rt.d[t[0]]||0;const pct=Math.round(d/t[4]*100);lines.push(t[0]+': '+d+'/'+t[4]+' ('+pct+'%)')}return lines.join(' | ')}
 function _estCx(text,sys,o){if(o.complexity!==undefined){const m={trivial:0,low:1,medium:2,high:3};return typeof o.complexity==='string'?(m[o.complexity]??1):o.complexity}const len=(text||'').length+(sys||'').length;const mt=o.maxTokens||2048;const lc=((text||'')+' '+(sys||'')).toLowerCase();if(mt>1500||len>6000)return 3;if(mt>768||len>3000||lc.includes('write a github comment'))return 2;if(mt>256||len>1000)return 1;return 0}
 function _pickModels(cx){const cap=parseInt(process.env.GEMINI_MAX_TIER)||3;return GTIERS.filter(t=>t[2]<=cap&&_rtOk(t)&&cbOk('gemini-'+t[1])).sort((a,b)=>{const da=Math.abs(a[2]-cx),db=Math.abs(b[2]-cx);return da!==db?da-db:a[2]-b[2]})}
 
@@ -36,6 +40,7 @@ async function callAI(text,sysPrompt,opts={}){
     if(tiers.length)console.log('  [AI] cx='+cx+' try=['+tiers.map(t=>t[0]).join(',')+']');
     for(const tier of tiers){
       const model=tier[1];
+      await _rtWait(tier);
       for(let retry=0;retry<3;retry++){
         if(retry>0)await sleep(backoff(retry));
         try{
@@ -229,4 +234,4 @@ async function fetchImageBase64(url){
   const buf=await r.arrayBuffer();return Buffer.from(buf).toString('base64');
 }
 
-module.exports={callAI,analyzeImage,sleep,localFallback};
+module.exports={callAI,analyzeImage,sleep,localFallback,getAIBudget:_rtBudget};

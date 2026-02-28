@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const fs=require('fs'),path=require('path');
-const{callAI,analyzeImage}=require('./ai-helper');
+const{callAI,analyzeImage,getAIBudget}=require('./ai-helper');
 const{loadFingerprints,findAllDrivers,extractMfrFromText}=require('./load-fingerprints');
 const REPOS=(process.env.REPOS||'dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee').split(',').map(s=>s.trim());
 const OWN=REPOS[0];
@@ -101,7 +101,7 @@ async function generateResponse(issue,fpResults,classification,variants,bugs,ima
 // Process a single issue
 async function processIssue(repo,issue,state,report,extData){
   const key=repo+'#'+issue.number;
-  if(wasProcessed(state,repo,issue.number))return;
+  if(wasProcessed(state,repo,issue.number)){report.skipped++;return}
   const text=(issue.title||'')+' '+(issue.body||'');
   const foundFPs=extractFP(text);
   const mfrs=extractMfrFromText(text);
@@ -316,7 +316,7 @@ async function main(){
   if(!TOKEN){console.error('GH_PAT/GITHUB_TOKEN required');process.exit(0)}
   const state=loadState();
   const report={timestamp:new Date().toISOString(),appVersion:appVer,responded:0,closed:0,labeled:0,
-    issuesProcessed:0,prsProcessed:0,newFingerprints:[],evolutionSummary:null};
+    issuesProcessed:0,prsProcessed:0,skipped:0,newFingerprints:[],evolutionSummary:null};
 
   console.log('=== GitHub Issue & PR Manager ===');
   const extData=loadExtData();
@@ -407,9 +407,11 @@ async function main(){
   console.log('\n=== Results ===');
   console.log('Issues processed:',report.issuesProcessed);
   console.log('PRs processed:',report.prsProcessed);
+  console.log('Skipped (already done):',report.skipped);
   console.log('Responded:',report.responded);
   console.log('Closed:',report.closed);
   console.log('New FPs found:',report.newFingerprints.length);
+  try{console.log('AI Budget:',getAIBudget())}catch{}
 
   if(process.env.GITHUB_STEP_SUMMARY){
     let md='## GitHub Issue & PR Manager\n| Metric | Count |\n|---|---|\n';

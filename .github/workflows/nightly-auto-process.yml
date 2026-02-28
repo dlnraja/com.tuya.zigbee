@@ -150,6 +150,10 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: node .github/scripts/scan-prs-issues.js
 
+      - name: Sleep 30s before Issue Manager
+        if: always()
+        run: sleep 30
+
       - name: GitHub Issue Manager
         if: always()
         continue-on-error: true
@@ -196,6 +200,7 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GEMINI_MAX_TIER: "1"
         run: node .github/scripts/generate-ai-changelog.js
 
       # ===== DRAFT → TEST (Puppeteer + API fallback) =====
