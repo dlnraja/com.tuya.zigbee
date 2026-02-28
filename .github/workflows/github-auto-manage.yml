@@ -116,5 +116,5 @@ jobs:
           echo "## GitHub Auto-Manage" >> $GITHUB_STEP_SUMMARY
           echo "App v${{ steps.stats.outputs.version }}" >> $GITHUB_STEP_SUMMARY
           if [ -f .github/state/issue-manager-report.json ]; then
-            node -e "const r=require('./.github/state/issue-manager-report.json');console.log('- Responded:',r.responded);console.log('- Closed:',r.closed);console.log('- New FPs:',r.newFingerprints?.length||0);if(r.evolutionSummary)console.log('\n### Evolution\n'+r.evolutionSummary)" >> $GITHUB_STEP_SUMMARY
+            node -e "const r=require('./.github/state/issue-manager-report.json');console.log('- Responded:',r.responded);console.log('- Closed:',r.closed);console.log('- New FPs:',r.newFingerprints?.length||0);console.log('- Bug investigations:',r.bugInvestigations||0);if(r.evolutionSummary)console.log('\n### Evolution\n'+r.evolutionSummary)" >> $GITHUB_STEP_SUMMARY
           fi
