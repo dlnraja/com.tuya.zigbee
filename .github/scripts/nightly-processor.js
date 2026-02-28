@@ -113,12 +113,12 @@ async function processForumPosts(state,idx,pidx,auth,appVersion,dryRun){
         if(ai&&ai.text&&ai.text.trim().toUpperCase()!=='NULL'){reply=ai.text.trim();model=ai.model}
       }
       if(!reply&&hasFPs){
-        const sup=Object.entries(fpResults).filter(([,v])=>v.found).map(([k,v])=>'`'+k+'` → **'+v.drivers.join(', ')+'**');
+        const sup=Object.entries(fpResults).filter(([,v])=>v.found).map(([k,v])=>'`'+k+'` ('+v.drivers.join(', ')+')');
         const mis=Object.entries(fpResults).filter(([,v])=>!v.found).map(([k])=>'`'+k+'`');
         if(sup.length||mis.length){
-          reply='**Fingerprint check** (v'+appVersion+'):\n';
-          if(sup.length)reply+='✅ Supported: '+sup.join(', ')+'\n';
-          if(mis.length)reply+='❓ Not found: '+mis.join(', ')+' — please share a [device interview](https://tools.developer.homey.app/tools/zigbee).\n';
+          reply='';
+          if(sup.length)reply+='I checked — '+sup.join(', ')+' '+(sup.length===1?'is':'are')+' already supported in v'+appVersion+'. Remove and re-pair to pick it up.\n';
+          if(mis.length)reply+=(sup.length?'\n':'')+(mis.length===1?mis[0]+' isn\'t':mis.join(', ')+' aren\'t')+' in there yet. If you can grab a [device interview](https://tools.developer.homey.app/tools/zigbee) I\'ll get it sorted.';
         }
       }
       if(!reply){maxP=Math.max(maxP,post.post_number);continue}
@@ -173,12 +173,12 @@ async function processGitHub(state,idx,pidx,appVersion,dryRun){
       const ai=await callAI(userMsg,sysPrompt);
       if(ai&&ai.text&&ai.text.trim().toUpperCase()!=='NULL'){reply=ai.text.trim();model=ai.model}
       if(!reply){
-        const sup=Object.entries(fpResults).filter(([,v])=>v.found).map(([k,v])=>'`'+k+'` → **'+v.drivers.join(', ')+'**');
+        const sup=Object.entries(fpResults).filter(([,v])=>v.found).map(([k,v])=>'`'+k+'` ('+v.drivers.join(', ')+')');
         const mis=Object.entries(fpResults).filter(([,v])=>!v.found).map(([k])=>'`'+k+'`');
         if(sup.length||mis.length){
-          reply='## Fingerprint Check (v'+appVersion+')\n';
-          if(sup.length)reply+='**Supported:** '+sup.join(', ')+'\n';
-          if(mis.length)reply+='**Not found:** '+mis.join(', ')+' — please provide a [device interview](https://tools.developer.homey.app/tools/zigbee).\n';
+          reply='';
+          if(sup.length)reply+='I checked — '+sup.join(', ')+' '+(sup.length===1?'is':'are')+' already supported in v'+appVersion+'. Remove and re-pair to pick it up.\n';
+          if(mis.length)reply+=(sup.length?'\n':'')+(mis.length===1?mis[0]+' isn\'t':mis.join(', ')+' aren\'t')+' in there yet. If you can share a [device interview](https://tools.developer.homey.app/tools/zigbee) I\'ll add it.';
         }
       }
       if(!reply)continue;

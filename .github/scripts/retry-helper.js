@@ -37,7 +37,7 @@ const DISCOURSE_SPACING = {
   GET: 500,       // 0.5s between reads
   POST: 3000,     // 3s between posts
   PUT: 3000,      // 3s between edits
-  DELETE: 35000,  // 35s between deletes (Discourse hard limit ~2/min)
+  DELETE: 90000,  // 90s between deletes (Discourse rate-limits aggressively)
 };
 
 // ===== GITHUB RATE LIMITS =====
@@ -112,7 +112,7 @@ async function fetchWithRetry(url, opts = {}, ro = {}) {
       }
 
       // === 429: Rate Limited ===
-      if (r.status === 429) {
+      if (r.status === 429 || r.status === 409) {
         if (i >= retries) return r;
         // Parse wait time from headers or body
         let waitMs = 0;
@@ -120,14 +120,17 @@ async function fetchWithRetry(url, opts = {}, ro = {}) {
         if (retryAfter) {
           waitMs = parseInt(retryAfter, 10) * 1000;
         } else {
-          // Discourse sends {extras:{wait_seconds:N}} in JSON body
+          // Discourse sends {extras:{wait_seconds:N}} or "too many" in body
           try {
             const j = await r.json();
-            waitMs = ((j.extras?.wait_seconds) || 60) * 1000;
-          } catch { waitMs = 60000; }
+            const ws = j.extras?.wait_seconds || j.wait_seconds;
+            if (ws) waitMs = ws * 1000;
+            else if (JSON.stringify(j).toLowerCase().includes('too many')) waitMs = 120000;
+            else waitMs = 60000;
+          } catch { waitMs = 90000; }
         }
-        // Add jitter + ensure minimum
-        waitMs = Math.max(waitMs, 30000) + Math.random() * 5000;
+        // Add jitter + ensure minimum 60s
+        waitMs = Math.max(waitMs, 60000) + Math.random() * 10000;
         waitMs = Math.min(waitMs, maxDelay);
         console.log('  [' + (label || 'retry') + '] 429 rate-limited, wait ' + Math.round(waitMs / 1000) + 's (' + (i + 1) + '/' + retries + ')');
         // Also increase spacing for this queue to avoid hitting limit again
