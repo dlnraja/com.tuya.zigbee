@@ -27,7 +27,7 @@ function loadForumIntel(){
 const strip=h=>(h||'').replace(/<br\s*\/?>/gi,'\n').replace(/<\/p>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").trim();
 const exImgs=h=>{const u=[];const re=/<img[^>]+src="([^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const{callAI,analyzeImage}=require('./ai-helper');
+const{callAI,analyzeImage,getAIBudget}=require('./ai-helper');
 
 function buildIndex(){
   const{mfrIdx,pidIdx,allMfrs,allPids}=buildFullIndex(DDIR);
@@ -300,6 +300,7 @@ async function main(){
     state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};
   }
   saveState(state);
+  try{console.log('AI Budget:',getAIBudget())}catch{}
   console.log('\n=== Done: scanned',totalP,', replied',totalR,'===');
   for(const s of summary)console.log(' T'+s.t,'@'+s.u,s.a);
   if(process.env.GITHUB_OUTPUT)fs.appendFileSync(process.env.GITHUB_OUTPUT,'processed='+totalP+'\nresponded='+totalR+'\n');
