@@ -353,4 +353,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-02-27*
+*Last updated: 2026-02-28*
