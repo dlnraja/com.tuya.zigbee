@@ -149,7 +149,7 @@ jobs:
           git add .github/state/
           FILES=$(git diff --cached --name-only | wc -l)
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
-          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l)
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
           git diff --cached --quiet || git commit -m "Enrichment v${VER}: ${F} FPs cross-referenced Z2M/ZHA/forum, ${FILES} file(s) [skip ci]"
           git pull --rebase origin master || true
           git push || true
@@ -184,6 +184,7 @@ jobs:
 
       # ===== DRAFT → TEST (Puppeteer + API fallback) =====
       - name: Install Puppeteer
+        continue-on-error: true
         run: npm install puppeteer --no-save
       - name: "Tier 1: Promote via Browser (Puppeteer)"
         id: promote_puppeteer

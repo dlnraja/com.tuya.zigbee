@@ -47,7 +47,7 @@ jobs:
         run: |
           V=$(node -p "require('./app.json').version")
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
-          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json | sort -uf | wc -l)
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
           echo "version=$V drivers=$D fps=$F" 
           echo "version=$V" >> $GITHUB_OUTPUT
 
@@ -88,6 +88,7 @@ jobs:
       # ===== DRAFT → TEST (Puppeteer + API fallback) =====
       - name: Install Puppeteer
         if: always()
+        continue-on-error: true
         run: npm install puppeteer --no-save
       - name: "Tier 1: Promote via Browser (Puppeteer)"
         if: always()
