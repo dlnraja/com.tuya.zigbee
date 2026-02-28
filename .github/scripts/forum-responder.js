@@ -200,6 +200,7 @@ async function batchAI(postInfos,ver){
   }
   ctx+='\n---\nWrite ONE reply (max 500 words). Sound like a real developer chatting on a forum.\n';
   ctx+='Answer their questions directly, mention relevant intel if it fits naturally.\n';
+  ctx+='If a user mentions missing sensor readings (fertilizer, EC, VOC, conductivity, formaldehyde), ask for app logs showing DP numbers (Settings > Apps > Tuya > View Log) so we can map the unknown data points.\n';
   ctx+='NO signature, NO footer, NO links at the end. Just stop when you\'re done talking.\n';
   ctx+='Reply or NULL if nothing device-related:';
 
@@ -239,7 +240,7 @@ async function main(){
       totalP++;
       const text=strip(p.cooked);
       const fp=extractAllFP(text,allMfrs,allPids);
-      const isDev=fp.mfr.length>0||fp.pid.length>0||/device|sensor|switch|pair|recogni|unknown|diag|interview|zigbee|tuya|invert|battery/i.test(text);
+      const isDev=fp.mfr.length>0||fp.pid.length>0||/device|sensor|switch|pair|recogni|unknown|diag|interview|zigbee|tuya|invert|battery|fertilizer|conductivity|\bEC\b|\bDP\d|soil|moisture|air.?quality|VOC|formaldehyde/i.test(text);
       if(!isDev){console.log(' #'+p.post_number,p.username,'chat');continue}
       const fpR={};
       for(const m of fp.mfr){const d=idx.get(m)||[];const fuzzyFrom=fp.mfr._fuzzy?.[m];fpR[m]={found:d.length>0,drivers:d,fuzzyFrom};if(fuzzyFrom)console.log('  ~',fuzzyFrom,'->',m,d.length?d.join(','):'?');else console.log('  ',m,d.length?d.join(','):'?')}

@@ -11,9 +11,11 @@ const TOKEN=process.env.GH_PAT||process.env.GITHUB_TOKEN;
 const STALE_DAYS=parseInt(process.env.STALE_DAYS||'30');
 const MAX_ITEMS=parseInt(process.env.MAX_ITEMS||'100');
 const INCLUDE_CLOSED=process.env.INCLUDE_CLOSED==='true';
+const FORCE_REPROCESS=process.env.FORCE_REPROCESS==='true';
 const STATE_F=path.join(__dirname,'..','state','issue-manager-state.json');
 const REPORT_F=path.join(__dirname,'..','state','issue-manager-report.json');
 const TAG='<!-- tuya-issue-manager -->';
+const OWNER_USERS=new Set(['dlnraja','github-actions[bot]','dependabot[bot]','tuya-triage-bot']);
 const{fetchWithRetry}=require('./retry-helper');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 let appVer='?';try{appVer=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
@@ -66,7 +68,7 @@ function extractFP(t){return[...new Set((t||'').match(/_T[A-Z][A-Za-z0-9]{3,5}_[
 function extractImages(t){const u=[];const re=/!\[[^\]]*\]\(([^)]+)\)/g;let m;while((m=re.exec(t||''))!==null)u.push(m[1]);return u}
 function extractLinks(t){return(t||'').match(/https?:\/\/[^\s)>"]+/g)||[]}
 function daysSince(d){return Math.floor((Date.now()-new Date(d).getTime())/86400000)}
-function wasProcessed(state,repo,num){return state.processed.includes(repo+'#'+num)}
+function wasProcessed(state,repo,num){if(FORCE_REPROCESS)return false;return state.processed.includes(repo+'#'+num)}
 function markProcessed(state,repo,num){if(!state.processed.includes(repo+'#'+num))state.processed.push(repo+'#'+num)}
 
 // Classify issue with AI
@@ -84,7 +86,7 @@ async function generateResponse(issue,fpResults,classification,variants,bugs,ima
     installUrl:'https://homey.app/a/com.dlnraja.tuya.zigbee/test/',
     forumUrl:'https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352',
     devTools:'https://tools.developer.homey.app',githubUrl:'https://github.com/dlnraja/com.tuya.zigbee'};
-  const prompt='You are the developer of Universal Tuya Zigbee (v'+appVer+', '+ctx.driverCount+' drivers, '+fps.size+'+ FPs). Write a GitHub comment responding to this issue. Be helpful and concise — write like a real person, not a bot. Use GitHub markdown. If device is supported, say which driver to pair as and link the test version. If not supported, ask for a device interview from developer tools. If bug, acknowledge it and explain status. If Z2M/ZHA variants or known bugs exist, mention them naturally. NEVER say "bot" or "automated". NEVER add a signature footer or version line at the end. Just end naturally.\\nContext: '+JSON.stringify(ctx);
+  const prompt='You are the developer of Universal Tuya Zigbee (v'+appVer+', '+ctx.driverCount+' drivers, '+fps.size+'+ FPs). Write a GitHub comment responding to this issue. Be helpful and concise — write like a real person, not a bot. Use GitHub markdown. If device is supported, say which driver to pair as and link the test version. If not supported, ask for a device interview from developer tools. If bug, acknowledge it and explain status. If Z2M/ZHA variants or known bugs exist, mention them naturally. If a sensor has missing readings (fertilizer, EC, VOC, formaldehyde, conductivity), explain that we need app logs showing DP numbers (Settings > Apps > Tuya > View Log) to map the unknown data points. NEVER say "bot" or "automated". NEVER add a signature footer or version line at the end. Just end naturally.\\nContext: '+JSON.stringify(ctx);
   let text='Issue: '+issue.title+'\nBy: @'+(issue.user?.login||'?')+'\nBody: '+(issue.body||'').slice(0,2000)+'\nFP results: '+JSON.stringify(fpResults)+'\nClassification: '+JSON.stringify(classification)+'\nVariants from Z2M/ZHA/Blakadder: '+JSON.stringify(variants||[])+'\nAssociated bugs: '+JSON.stringify(bugs||[]);
   if(imageCtx)text+='\nImage analysis: '+imageCtx;
   if(bodyLinks&&bodyLinks.length)text+='\nExternal refs: '+bodyLinks.join(', ');
@@ -181,10 +183,25 @@ async function processIssue(repo,issue,state,report,extData){
     if(age>=STALE_DAYS||classification.type==='resolved'||classification.type==='duplicate'){
       const reason=classification.closeReason||'Auto-closed: '+(age>=STALE_DAYS?'inactive >'+STALE_DAYS+' days':classification.type);
       await ghPost('/repos/'+repo+'/issues/'+issue.number+'/comments',{body:TAG+'\n'+reason+'\n\nFeel free to reopen if this is still relevant.'});
-      await ghPatch('/repos/'+repo+'/issues/'+issue.number,{state:'closed',state_reason:'not_planned'});
-      state.closed.push(key);
-      report.closed++;
-      console.log('    CLOSED:',reason);
+      const ok=await ghPatch('/repos/'+repo+'/issues/'+issue.number,{state:'closed',state_reason:'not_planned'});
+      if(ok){state.closed.push(key);report.closed++;console.log('    CLOSED:',reason)}
+      else console.log('    CLOSE FAILED (no write access?):',reason);
+    }
+  }
+
+  // v5.11.26: Auto-close if last comment is from owner/bots (already triaged)
+  if(issue.state==='open'&&!state.closed.includes(key)&&comments&&Array.isArray(comments)&&comments.length){
+    const last=comments[comments.length-1];
+    const lastUser=last?.user?.login||'';
+    const lastBody=(last?.body||'').toLowerCase();
+    const isOwner=OWNER_USERS.has(lastUser);
+    const allSupp=allFPs.length>0&&!newFPs.length;
+    const hasClose=lastBody.includes('closing')||lastBody.includes('already supported')||lastBody.includes('install test')||lastBody.includes('all fp');
+    if(isOwner&&(allSupp||hasClose)){
+      const reason='Triaged by '+lastUser+(allSupp?' — all FPs supported in v'+appVer:' — addressed');
+      const ok=await ghPatch('/repos/'+repo+'/issues/'+issue.number,{state:'closed',state_reason:'completed'});
+      if(ok){state.closed.push(key);report.closed++;console.log('    AUTO-CLOSED (owner last):',reason)}
+      else console.log('    AUTO-CLOSE SKIP (no perms):',reason);
     }
   }
 
@@ -222,9 +239,24 @@ async function processPR(repo,pr,state,report,extData){
   // Close old PRs on JohanBendz that are fully supported
   if(repo!==OWN&&pr.state==='open'&&allFPs.length&&!newFPs.length&&daysSince(pr.updated_at)>14){
     await ghPost('/repos/'+repo+'/issues/'+pr.number+'/comments',{body:TAG+'\nAll FPs in this PR are already in v'+appVer+' — closing as resolved. Thanks!'});
-    await ghPatch('/repos/'+repo+'/pulls/'+pr.number,{state:'closed'});
-    state.closed.push(key);report.closed++;
-    console.log('    CLOSED PR (all FPs supported)');
+    const ok=await ghPatch('/repos/'+repo+'/pulls/'+pr.number,{state:'closed'});
+    if(ok){state.closed.push(key);report.closed++;console.log('    CLOSED PR (all FPs supported)')}
+    else console.log('    PR CLOSE FAILED (no perms)');
+  }
+
+  // v5.11.26: Auto-close PR if last comment is from owner/bots
+  if(pr.state==='open'&&!state.closed.includes(key)&&comments&&Array.isArray(comments)&&comments.length){
+    const last=comments[comments.length-1];
+    const lastUser=last?.user?.login||'';
+    const lastBody=(last?.body||'').toLowerCase();
+    const isOwner=OWNER_USERS.has(lastUser);
+    const allSupp=allFPs.length>0&&!newFPs.length;
+    const hasClose=lastBody.includes('closing')||lastBody.includes('already supported')||lastBody.includes('already in v')||lastBody.includes('all fp');
+    if(isOwner&&(allSupp||hasClose)){
+      const ok=await ghPatch('/repos/'+repo+'/pulls/'+pr.number,{state:'closed'});
+      if(ok){state.closed.push(key);report.closed++;console.log('    AUTO-CLOSED PR (owner last): '+lastUser)}
+      else console.log('    PR AUTO-CLOSE SKIP (no perms): '+lastUser);
+    }
   }
 
   markProcessed(state,repo,'PR'+pr.number);

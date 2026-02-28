@@ -89,6 +89,17 @@ DP 3 = temperature
 
 ---
 
+## 🌡️ Sensor Capability Gaps (if device pairs but readings are missing)
+
+If your sensor pairs but is **missing a reading** (e.g., fertilizer, EC, VOC, formaldehyde):
+- **Diagnostic report ID**: (Settings → Homey → Send diagnostic report)
+- **App logs**: (Settings → Apps → Universal Tuya Zigbee → View Log)
+  - Look for lines like `[SOIL] DP105 received` — these show unknown data points
+- **Which readings are missing**: 
+- **Which readings work**: 
+
+---
+
 ## 📋 Additional Context
 
 - **Diagnostic Code** (if device paired): Homey App → Device → Settings → Diagnostics

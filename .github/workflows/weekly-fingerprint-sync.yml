@@ -121,6 +121,7 @@ jobs:
             - [ ] Check new fingerprints are in the correct drivers
             - [ ] Verify no duplicate entries
             - [ ] Validate app with npx homey app validate
+            - [ ] Check soil_sensor for new _TZE284/_TZE200 variants with extra DPs (fertilizer/EC)
           branch: auto/weekly-fingerprint-sync
           labels: fingerprints,automated
           delete-branch: true
