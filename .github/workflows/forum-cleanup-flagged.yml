@@ -39,3 +39,5 @@ jobs:
           node .github/scripts/cleanup-wrong-thread-posts.js || true
           echo "=== Phase 3: Delete specific bot duplicate posts ==="
           node .github/scripts/delete-bot-posts.js || true
+          echo "=== Phase 4: Merge last 3 posts into 1 humanized post ==="
+          node .github/scripts/merge-last-posts.js || true
