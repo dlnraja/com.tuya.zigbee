@@ -29,7 +29,7 @@ for(const p of mine){
 console.log('Raw lengths:',raws.map(r=>r.length));
 const combined=raws.join('\n\n---\n\n');
 // Humanize with AI
-const prompt='You are Dylan, dev of Universal Tuya Zigbee app on Homey. Rewrite this forum content into ONE cohesive update post. Remove duplicates, merge info naturally. Sound like a real person, casual but informative. Use Discourse markdown. Max 600 words. NO bot references, NO signature.';
+const prompt='You are Dylan, a French dev of Universal Tuya Zigbee on Homey. Rewrite this into ONE short update. Remove duplicates, merge naturally. Write casual plain text — NO ## headers, NO tables, NO emoji walls, NO bullet-point lists. Short sentences, say "I" naturally. Max 300 words. NO bot references, NO signature, NO footer links.';
 const ai=await callAI(combined,prompt,{maxTokens:2048,complexity:'medium'});
 const final=ai?ai.text:combined;
 console.log('Merged content:',final.length,'chars (model:',ai?.model||'none',')');

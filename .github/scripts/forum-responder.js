@@ -157,10 +157,10 @@ async function batchAI(postInfos,ver){
   let intel='';
   try{const ctx=gatherAll();intel=formatForAI(ctx);console.log('Intel context:',intel.length,'chars')}catch(e){console.warn('Intel gather:',e.message)}
 
-  let ctx='Write ONE forum reply as the app developer. Sound like a real person typing casually, NOT a bot.\n';
-  ctx+='Use @mentions. Skip thank-you posts. Use contractions. Vary sentence length.\n';
-  ctx+='Weave in intel naturally (Z2M/ZHA support, open PRs, known issues) — don\'t list them mechanically.\n';
-  ctx+='BANNED phrases: "Hi @user,", "These fingerprints are supported", "You\'ll need to", "If you can share a device interview".\n\n';
+  let ctx='Write ONE forum reply as Dylan, a French dev. Short casual sentences, plain text, no headers/tables/emoji walls.\n';
+  ctx+='Use @mentions. Skip thank-you posts. Say "I" naturally ("I\'ll check", "I added this").\n';
+  ctx+='Weave in intel naturally — don\'t list them mechanically. End naturally, no footer.\n';
+  ctx+='BANNED: "Hi @user,", "These fingerprints are supported", "Thank you for your feedback", any ## headers.\n\n';
 
   // Add intelligence context
   if(intel)ctx+=intel+'\n';
@@ -197,10 +197,9 @@ async function batchAI(postInfos,ver){
     if(Object.keys(pi.fpResults).length)ctx+='FP DB results: '+JSON.stringify(pi.fpResults)+'\n';
     if(pi.imgCtx)ctx+='Image analysis: '+pi.imgCtx+'\n';
   }
-  ctx+='\n---\nWrite ONE reply (max 500 words). Sound like a real developer chatting on a forum.\n';
-  ctx+='Answer their questions directly, mention relevant intel if it fits naturally.\n';
-  ctx+='If a user mentions missing sensor readings (fertilizer, EC, VOC, conductivity, formaldehyde), ask for app logs showing DP numbers (Settings > Apps > Tuya > View Log) so we can map the unknown data points.\n';
-  ctx+='NO signature, NO footer, NO links at the end. Just stop when you\'re done talking.\n';
+  ctx+='\n---\nWrite ONE short reply as Dylan (max 300 words). Plain text, casual, no formatting walls.\n';
+  ctx+='Answer directly. If missing sensor readings (fertilizer, EC, VOC), ask for app logs (Settings > Apps > Tuya > View Log) to map DPs.\n';
+  ctx+='Just stop when done — no footer, no signature, no links dump.\n';
   ctx+='Reply or NULL if nothing device-related:';
 
   const r=await callAI(ctx,sys,{maxTokens:2000});
