@@ -424,6 +424,7 @@ jobs:
       # Athom has no public API for draft→test. Only the web UI works.
       - name: "13a. Install Puppeteer"
         if: always()
+        continue-on-error: true
         run: npm install puppeteer --no-save
 
       - name: "13b. Promote via Browser (Puppeteer)"
