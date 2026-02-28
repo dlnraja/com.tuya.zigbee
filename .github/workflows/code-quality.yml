@@ -78,10 +78,19 @@ jobs:
           DUP=$(grep -rohE '"_T[^"]+"' drivers/*/driver.compose.json 2>/dev/null | sort | uniq -d | wc -l || true)
           [ "$DUP" -gt 0 ] && echo "⚠️ $DUP duplicate fingerprints across drivers" >> $GITHUB_STEP_SUMMARY || echo "✅ No duplicate FPs" >> $GITHUB_STEP_SUMMARY
 
+      - name: 🌡️ Sensor Checks
+        run: |
+          echo "### Sensor Checks" >> $GITHUB_STEP_SUMMARY
+          for d in soil_sensor air_quality temp_hum_sensor; do
+            [ -f "drivers/$d/device.js" ] && grep -q "_handleDP" "drivers/$d/device.js" 2>/dev/null \
+              && echo "✅ $d DP OK" >> $GITHUB_STEP_SUMMARY \
+              || echo "⚠️ $d no DP" >> $GITHUB_STEP_SUMMARY
+          done
+
       - name: 📊 Stats
         run: |
           DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l)
-          MFRS=$(grep -ohE '"_TZ[^"]+"' drivers/*/driver.compose.json 2>/dev/null | sort -u | wc -l || true)
+          MFRS=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
           FLOWCARDS=$(grep -c '"id":' drivers/*/driver.flow.compose.json 2>/dev/null | awk -F: '{sum+=$2} END {print sum}' || true)
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Metric | Count |" >> $GITHUB_STEP_SUMMARY

@@ -25,6 +25,10 @@ on:
         description: "Also scan recently closed items"
         type: boolean
         default: false
+      force_reprocess:
+        description: "Re-evaluate already processed items (for new close rules)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -85,6 +89,7 @@ jobs:
           STALE_DAYS: "30"
           MAX_ITEMS: ${{ inputs.max_items || '100' }}
           INCLUDE_CLOSED: ${{ inputs.include_closed || 'false' }}
+          FORCE_REPROCESS: ${{ inputs.force_reprocess || 'false' }}
           REPOS: "dlnraja/com.tuya.zigbee"
         run: node .github/scripts/github-issue-manager.js
 
@@ -98,8 +103,9 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           STALE_DAYS: "14"
-          MAX_ITEMS: ${{ inputs.max_items || '100' }}
+          MAX_ITEMS: ${{ inputs.max_items || '200' }}
           INCLUDE_CLOSED: ${{ inputs.include_closed || 'false' }}
+          FORCE_REPROCESS: ${{ inputs.force_reprocess || 'false' }}
           REPOS: "JohanBendz/com.tuya.zigbee"
         run: node .github/scripts/github-issue-manager.js
 

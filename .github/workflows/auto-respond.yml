@@ -86,6 +86,8 @@ jobs:
 
             // Detect WiFi device requests (Tuya WiFi / Smart Life / Lidl Home / Meross / Avatto)
             const isWiFi = /wifi|wi-fi|smart\s*life|tuya\s*cloud|local\s*key|lidl\s*home|meross|avatto|silvercrest|nedis|local\s*control/i.test(text);
+            // Detect sensor capability requests (fertilizer, EC, VOC, formaldehyde, etc.)
+            const isSensorGap = /fertilizer|conductivity|\bEC\b|measure_ec|soil.*fertil|missing.*reading|missing.*capability|new.*capability|add.*sensor/i.test(text);
             const wifiDriverCount = fs.readdirSync(driversDir).filter(d => d.startsWith('wifi_')).length;
 
             if (!allMfrs.length && !pids.length) {
@@ -141,6 +143,9 @@ jobs:
 
             if (isWiFi) {
               msg += `This app also has ${wifiDriverCount} WiFi device types with local LAN control (no cloud).\n\n`;
+            }
+            if (isSensorGap) {
+              msg += `For missing sensor readings (fertilizer, EC, VOC, etc.): please share **app logs** (Settings → Apps → Tuya → View Log) showing DP numbers — this helps us map unknown data points.\n\n`;
             }
             msg += `[Test version](${APP}) · [Forum thread](${FORUM}) · [Developer Tools](${DEV})`;
 
