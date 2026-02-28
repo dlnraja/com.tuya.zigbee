@@ -105,6 +105,7 @@ jobs:
       # ===== DRAFT → TEST (Puppeteer + API fallback) =====
       - name: Install Puppeteer
         if: steps.check_pat.outputs.has_pat == 'true'
+        continue-on-error: true
         run: npm install puppeteer --no-save
 
       - name: "Tier 1: Promote via Browser (Puppeteer)"
