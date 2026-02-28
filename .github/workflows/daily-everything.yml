@@ -254,6 +254,13 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/smart-device-processor.js
 
+      # ===== 9b3. Image Pipeline Audit =====
+      - name: "9b3. Image Pipeline Audit"
+        id: image_audit
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/image-pipeline.js --report
+
       # ===== 9c. Cross-Driver Gap Analysis =====
       - name: "9c. Cross-Driver Gap"
         id: cross_gap
@@ -508,6 +515,7 @@ jobs:
           echo "| 9c2 | FP Conflict Check | ${{ steps.fp_conflicts.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9d | Public APIs | ${{ steps.public_apis.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9b2 | Smart Device Processor | ${{ steps.smart_proc.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 9b3 | Image Pipeline Audit | ${{ steps.image_audit.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10 | AI Changelog | ${{ steps.ai_changelog.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10b | Fork Scanner | ${{ steps.fork_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10c | Device Finder | ${{ steps.dev_finder.outcome }} |" >> $GITHUB_STEP_SUMMARY

@@ -181,7 +181,7 @@ async function main() {
     console.log(`DEL ${p.num} (id=${p.id}): ${p.reason}`);
     if (await deletePost(p.id)) { console.log('  ✓ Deleted'); return 'ok'; }
     console.log('  ✗ Delete failed'); return 'ok';
-  }, { spacing: 60000, label: 'delete', maxRetries: 2, rateLimitPause: 180000 });
+  }, { spacing: 90000, label: 'delete', maxRetries: 2, rateLimitPause: 300000 });
 
   console.log('\n=== Done ===');
   console.log(`Edited: ${editResult.ok}/${TO_EDIT.length} | Deleted: ${delResult.ok}/${TO_DELETE.length}`);

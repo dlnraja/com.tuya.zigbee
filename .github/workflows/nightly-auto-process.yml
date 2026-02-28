@@ -104,6 +104,12 @@ jobs:
           GEMINI_MAX_TIER: "1"
         run: node .github/scripts/enrichment-scanner.js
 
+      - name: Image Pipeline Audit
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/image-pipeline.js --report
+
       - name: Forum Intel Processor (scan-only, no reply)
         if: always()
         continue-on-error: true
