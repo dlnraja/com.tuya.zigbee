@@ -1,8 +1,8 @@
 {
-  "date": "2026-02-27T22:50:15.758Z",
+  "date": "2026-02-28T03:22:36.187Z",
   "local": {
     "drivers": 143,
-    "fps": 4175
+    "fps": 4178
   },
   "JohanBendz/com.tuya.zigbee": {
     "prs": [
@@ -20269,7 +20269,7 @@
       {
         "number": 134,
         "title": "Weekly Fingerprint Sync (7 new lines)",
-        "state": "open",
+        "state": "closed",
         "user": "github-actions[bot]",
         "merged": false,
         "fps": [],
@@ -20772,7 +20772,7 @@
       {
         "number": 135,
         "title": "Device Request - _TZE200_xlppj4f5- TS0601 - Immax Neo smart water timer",
-        "state": "open",
+        "state": "closed",
         "user": "Domingoso",
         "labels": [
           "enhancement",
@@ -20928,7 +20928,7 @@
       {
         "number": 128,
         "title": "Garagedoor controller",
-        "state": "open",
+        "state": "closed",
         "user": "Wuma68",
         "labels": [
           "enhancement",
@@ -21175,7 +21175,7 @@
       {
         "number": 110,
         "title": "unknown zigbee-device",
-        "state": "open",
+        "state": "closed",
         "user": "Pollepa",
         "labels": [
           "device-request",
