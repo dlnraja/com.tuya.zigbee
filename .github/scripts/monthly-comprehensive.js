@@ -218,6 +218,30 @@ async function respondToIssue(repo,issue,idx,pidx,state,appVersion){
   return{repo,number:issue.number,response:ai.text,model:ai.model,fps,results};
 }
 
+// --- FORUM: edit-instead-of-post helpers ---
+async function getLastOwnPost(tid,auth){
+  try{
+    const r=await fetchWithRetry(FORUM+'/t/'+tid+'.json',{},{retries:2,label:'lastOwn'});
+    if(!r.ok)return null;
+    const d=await r.json();const highest=d.highest_post_number;if(!highest)return null;
+    const from=Math.max(1,highest-5);
+    const r2=await fetchWithRetry(FORUM+'/t/'+tid+'/'+from+'.json',{},{retries:2,label:'lastOwnPosts'});
+    if(!r2.ok)return null;
+    const posts=(await r2.json()).post_stream?.posts||[];
+    const sorted=posts.sort((a,b)=>b.post_number-a.post_number);
+    if(sorted[0]?.username==='dlnraja')return{id:sorted[0].id,postNumber:sorted[0].post_number,raw:sorted[0].raw||(sorted[0].cooked||'').replace(/<[^>]+>/g,'').trim()};
+    return null;
+  }catch{return null}
+}
+async function editForumPost(postId,content,auth){
+  const h=auth.type==='apikey'
+    ?{'Content-Type':'application/json','User-Api-Key':auth.key}
+    :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
+  const r=await fetchWithRetry(FORUM+'/posts/'+postId,{method:'PUT',headers:h,
+    body:JSON.stringify({post:{raw:content}})},{retries:3,label:'editPost'});
+  return r.ok?(await r.json()):null;
+}
+
 // --- FORUM AUTH + POST (uses forum-auth.js) ---
 async function postToForum(topicId,content,auth){
   const h=auth.type==='apikey'
@@ -323,20 +347,27 @@ async function main(){
   const allNewFPs=[...uniqueNewFork,...uniqueNewEnrich];
   const summaryData={report,newFingerprints:allNewFPs.slice(0,30),topIssues:issuesWithFP.slice(0,10).map(i=>({repo:i._repo,number:i.number,title:i.title,user:i.user?.login}))};
 
-  const sysPrompt='You are posting a monthly status update on the Homey Community forum #140352 for Universal Tuya Zigbee app (v'+appVersion+'). Write a comprehensive, professional post covering: 1) GitHub activity summary 2) New fingerprints found from forks/Z2M/ZHA/deCONZ/Blakadder 3) Issues responded to 4) Devices needing community help. Use Discourse markdown. Max 600 words. End with bot signature.';
+  const sysPrompt='You are Dylan, the developer of Universal Tuya Zigbee app (v'+appVersion+') on Homey. Write a casual monthly update for the community forum. Cover what\'s new: devices added, bugs fixed, what you need help testing. Sound like a real person, NOT a bot. Use Discourse markdown. Max 400 words. NO signature, NO footer, NO "bot" references.';
   const aiSummary=await callAI(JSON.stringify(summaryData,null,2),sysPrompt,{complexity:'high'});
 
   if(aiSummary){
     console.log('AI Summary (',aiSummary.model,'):',aiSummary.text.length,'chars');
     report.aiSummary=aiSummary.text;
 
-    // Post to forum
+    // Post to forum (edit-instead-of-post if last message is ours)
     if(!dryRun){
-      const auth=await getForumAuth();
-    if(auth&&auth.type==='session')auth=await refreshCsrf(auth);
+      let auth=await getForumAuth();
+      if(auth&&auth.type==='session')auth=await refreshCsrf(auth);
       if(auth){
-        const posted=await postToForum(140352,aiSummary.text,auth);
-        if(posted)console.log('Forum post id:',posted.id);
+        const lastOwn=await getLastOwnPost(140352,auth);
+        if(lastOwn){
+          const merged=lastOwn.raw+'\n\n---\n\n'+aiSummary.text;
+          const edited=await editForumPost(lastOwn.id,merged,auth);
+          if(edited)console.log('Edited post #'+lastOwn.postNumber+' (appended monthly summary)');
+        }else{
+          const posted=await postToForum(140352,aiSummary.text,auth);
+          if(posted)console.log('Forum post id:',posted.id);
+        }
       }
     }else{
       console.log('[DRY] Would post to forum:\n---\n'+aiSummary.text.substring(0,300)+'...\n---');
