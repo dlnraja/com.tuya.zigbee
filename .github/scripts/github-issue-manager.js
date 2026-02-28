@@ -75,7 +75,7 @@ function markProcessed(state,repo,num){if(!state.processed.includes(repo+'#'+num
 async function classifyIssue(issue,fpResults){
   const prompt='Classify this GitHub issue for a Zigbee device app. Return ONLY a JSON object: {"type":"device_request|bug_report|feature|question|duplicate|stale|resolved","priority":"high|medium|low","shouldClose":true/false,"closeReason":"string or null","labels":["label1"],"summary":"one line"}';
   const text='Issue #'+issue.number+' by @'+(issue.user?.login||'?')+':\nTitle: '+issue.title+'\nBody: '+(issue.body||'').slice(0,1500)+'\nFingerprints: '+JSON.stringify(fpResults)+'\nDays since update: '+daysSince(issue.updated_at)+'\nState: '+issue.state;
-  const ai=await callAI(text,prompt,{maxTokens:512});
+  const ai=await callAI(text,prompt,{maxTokens:512,complexity:'low'});
   if(!ai)return null;
   try{const m=ai.text.match(/\{[\s\S]*\}/);return m?JSON.parse(m[0]):null}catch{return null}
 }
@@ -93,7 +93,7 @@ async function generateResponse(issue,fpResults,classification,variants,bugs,ima
   let text='Issue: '+issue.title+'\nBy: @'+(issue.user?.login||'?')+'\nBody: '+(issue.body||'').slice(0,2000)+'\nFP results: '+JSON.stringify(fpResults)+'\nClassification: '+JSON.stringify(classification)+'\nVariants from Z2M/ZHA/Blakadder: '+JSON.stringify(variants||[])+'\nAssociated bugs: '+JSON.stringify(bugs||[]);
   if(imageCtx)text+='\nImage analysis: '+imageCtx;
   if(bodyLinks&&bodyLinks.length)text+='\nExternal refs: '+bodyLinks.join(', ');
-  const ai=await callAI(text,prompt,{maxTokens:1024});
+  const ai=await callAI(text,prompt,{maxTokens:1024,complexity:'medium'});
   return ai?TAG+'\n'+ai.text:null;
 }
 
@@ -306,7 +306,7 @@ async function updateProjectDocs(report){
   if(report.responded>0||report.closed>0||report.newFingerprints.length>0){
     const prompt='Generate a concise project evolution summary (max 200 words) based on GitHub issue/PR management results. Focus on: new devices discovered, issues resolved, action items.';
     const ai=await callAI(JSON.stringify({responded:report.responded,closed:report.closed,newFPs:report.newFingerprints.length,
-      topFPs:report.newFingerprints.slice(0,10),issuesProcessed:report.issuesProcessed,prsProcessed:report.prsProcessed},null,2),prompt,{maxTokens:512});
+      topFPs:report.newFingerprints.slice(0,10),issuesProcessed:report.issuesProcessed,prsProcessed:report.prsProcessed},null,2),prompt,{maxTokens:512,complexity:'low'});
     if(ai)report.evolutionSummary=ai.text;
   }
 }
