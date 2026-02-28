@@ -34,6 +34,7 @@ jobs:
       # Tier 1: Browser automation (Puppeteer) — the ONLY reliable method
       # Athom has no public API for draft→test, only the web UI works.
       - name: "Install Puppeteer"
+        continue-on-error: true
         run: npm install puppeteer --no-save
       - name: "Tier 1: Promote via Browser (Puppeteer)"
         id: puppeteer
