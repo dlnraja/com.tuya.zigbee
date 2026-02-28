@@ -430,3 +430,7 @@ All 12 fingerprints from 20 open issues **already supported** in v5.11.19:
 
 ## Nightly Forum Scan (2026-02-27 v5.11.25)
 - **Topic 140352 #1520** @Hartmut_Dunker: `_TZ3002_pzao9ls1` (gh-Mistral-small-2503)
+
+
+## Nightly Forum Scan (2026-02-28 v5.11.26)
+- **Topic 140352 #1551** @OH2TH: `dlnraja` (template)

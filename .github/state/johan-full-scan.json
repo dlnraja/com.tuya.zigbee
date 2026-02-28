@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-28T03:32:51.708Z",
+  "timestamp": "2026-02-28T08:55:31.082Z",
   "issues": {
     "total": 1162,
     "withFPs": 925,
@@ -79,8 +79,8 @@
     ],
     "categories": {
       "device_request": 870,
-      "other": 189,
       "bug": 82,
+      "other": 189,
       "feature": 21
     }
   },
@@ -616,6 +616,30 @@
       "isNew": false
     },
     {
+      "fp": "_TZE204_clrdrnya",
+      "source": "issue#1142",
+      "state": "open",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_9ern5sfh",
+      "source": "issue#1328",
+      "state": "open",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_8ygsuhe1",
+      "source": "issue#1229",
+      "state": "open",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_fdxihpp7",
+      "source": "issue#963",
+      "state": "open",
+      "isNew": false
+    },
+    {
       "fp": "_TZ3290_ot6ewjvmejq5ekhl",
       "source": "issue#1331",
       "state": "open",
@@ -718,24 +742,6 @@
       "isNew": false
     },
     {
-      "fp": "_TZE284_9ern5sfh",
-      "source": "issue#1328",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE204_clrdrnya",
-      "source": "issue#1142",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_fdxihpp7",
-      "source": "issue#963",
-      "state": "open",
-      "isNew": false
-    },
-    {
       "fp": "_TZE204_81yrt3lo",
       "source": "issue#456",
       "state": "open",
@@ -762,12 +768,6 @@
     {
       "fp": "_TYZB01_4lwqwyqn",
       "source": "issue#1330",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_8ygsuhe1",
-      "source": "issue#1229",
       "state": "open",
       "isNew": false
     },
@@ -7201,6 +7201,66 @@
       "isNew": false
     },
     {
+      "fp": "_TZE204_clrdrnya",
+      "source": "comment#1142",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_9ern5sfh",
+      "source": "comment#1328",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_9ern5sfh",
+      "source": "comment#1328",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_9ern5sfh",
+      "source": "comment#1328",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_9ern5sfh",
+      "source": "comment#1328",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_9ern5sfh",
+      "source": "comment#1328",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_8ygsuhe1",
+      "source": "comment#1229",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_8ygsuhe1",
+      "source": "comment#1229",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_8ygsuhe1",
+      "source": "comment#1229",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_skueekg3",
+      "source": "comment#963",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_skueekg3",
+      "source": "comment#963",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_skueekg3",
+      "source": "comment#963",
+      "isNew": false
+    },
+    {
       "fp": "_TZ3290_ot6ewjvmejq5ekhl",
       "source": "comment#1331",
       "isNew": false
@@ -7656,41 +7716,6 @@
       "isNew": false
     },
     {
-      "fp": "_TZE284_9ern5sfh",
-      "source": "comment#1328",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_9ern5sfh",
-      "source": "comment#1328",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_9ern5sfh",
-      "source": "comment#1328",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_9ern5sfh",
-      "source": "comment#1328",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_9ern5sfh",
-      "source": "comment#1328",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_skueekg3",
-      "source": "comment#963",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_skueekg3",
-      "source": "comment#963",
-      "isNew": false
-    },
-    {
       "fp": "_TZE200_dq8bu0pt",
       "source": "comment#1297",
       "isNew": false
@@ -7756,16 +7781,6 @@
       "isNew": false
     },
     {
-      "fp": "_TZE200_8ygsuhe1",
-      "source": "comment#1229",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_8ygsuhe1",
-      "source": "comment#1229",
-      "isNew": false
-    },
-    {
       "fp": "_TZE204_8fffc3kb",
       "source": "comment#1302",
       "isNew": false
@@ -7822,8 +7837,8 @@
     "totalContributors": 94,
     "categories": {
       "device_request": 870,
-      "other": 189,
       "bug": 82,
+      "other": 189,
       "feature": 21
     }
   }

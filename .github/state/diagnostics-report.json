@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-02-28T04:05:20.614Z",
-  "count": 0,
+  "timestamp": "2026-02-28T08:46:23.720Z",
+  "count": 9,
   "byType": {
     "forum_message": 0,
     "homey_system": 0,
@@ -9,9 +9,172 @@
     "bug_report": 0,
     "github": 0,
     "changelog": 0,
-    "device_issue": 0,
-    "general": 0
+    "device_issue": 1,
+    "general": 8
   },
   "newFingerprints": [],
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "id": "19ca33afe20138a8",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Sat, 28 Feb 2026 07:51:18 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19ca33ad2ac8452b",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #1974 has been created",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Sat, 28 Feb 2026 07:51:06 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19ca3024784324fb",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Sat, 28 Feb 2026 06:49:21 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19ca3021a841b11c",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #1973 has been created",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Sat, 28 Feb 2026 06:49:09 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19ca2de05d6cd69b",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Sat, 28 Feb 2026 06:09:44 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19ca2ddd33e5e8fd",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #1972 has been created",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Sat, 28 Feb 2026 06:09:32 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19ca2ceefd6807b4",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Sat, 28 Feb 2026 05:53:16 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19ca2cebe85d0659",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #1971 has been created",
+      "from": "Homey <noreply@homey.app>",
+      "date": "Sat, 28 Feb 2026 05:53:03 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "19ca3502634f79b9",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "Tapio Heiskanen <notifications@athom.discoursemail.com>",
+      "date": "Sat, 28 Feb 2026 08:14:24 +0000",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    }
+  ]
 }
