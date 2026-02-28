@@ -9,7 +9,7 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
 class TuyaSirenDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('TuyaSirenDriver v5.5.569 initialized');
+    this.log('TuyaSirenDriver v5.11.28 initialized');
     this._registerFlowCards();
   }
 
@@ -111,9 +111,12 @@ class TuyaSirenDriver extends ZigBeeDriver {
         const volume = args.volume || 'medium';
         this.log(`[FLOW] Action: Set volume to ${volume}`);
         try {
-          if (device._tuyaEF00Manager) {
-            const volumeMap = { low: 0, medium: 1, high: 2 };
-            await device._tuyaEF00Manager.sendDatapoint(5, volumeMap[volume] || 1, 'enum');
+          const volumeMap = { low: 0, medium: 1, high: 2 };
+          const val = volumeMap[volume] ?? 1;
+          // Send to standard DP5 + NEO DP116
+          if (device._sendTuyaDP) {
+            try { await device._sendTuyaDP(5, val, 'enum'); } catch (e) {}
+            try { await device._sendTuyaDP(116, val, 'enum'); } catch (e) {}
           }
           return true;
         } catch (err) {
@@ -140,8 +143,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
         const duration = args.duration || 30;
         this.log(`[FLOW] Action: Set duration to ${duration}s`);
         try {
-          if (device._tuyaEF00Manager) {
-            await device._tuyaEF00Manager.sendDatapoint(7, duration, 'value');
+          // Send to standard DP7 + NEO DP103
+          if (device._sendTuyaDP) {
+            try { await device._sendTuyaDP(7, duration, 'value'); } catch (e) {}
+            try { await device._sendTuyaDP(103, duration, 'value'); } catch (e) {}
           }
           return true;
         } catch (err) {
@@ -152,6 +157,33 @@ class TuyaSirenDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ Registered: siren_set_duration');
     } catch (err) {
       this.log(`[FLOW] ⚠️ Could not register siren_set_duration: ${err.message}`);
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // ACTION: Set melody
+    // ═══════════════════════════════════════════════════════════════════════
+    try {
+      const setMelodyAction = this.homey.flow.getActionCard('siren_set_melody');
+      setMelodyAction.registerRunListener(async (args) => {
+        const device = args.device;
+        if (!device) return false;
+        const melody = parseInt(args.melody, 10) || 0;
+        this.log(`[FLOW] Action: Set melody to ${melody}`);
+        try {
+          // Send to standard DP21 + NEO DP102
+          if (device._sendTuyaDP) {
+            try { await device._sendTuyaDP(21, melody, 'enum'); } catch (e) {}
+            try { await device._sendTuyaDP(102, melody, 'enum'); } catch (e) {}
+          }
+          return true;
+        } catch (err) {
+          this.log(`[FLOW] ⚠️ Set melody failed: ${err.message}`);
+          return true;
+        }
+      });
+      this.log('[FLOW] ✅ Registered: siren_set_melody');
+    } catch (err) {
+      this.log(`[FLOW] ⚠️ Could not register siren_set_melody: ${err.message}`);
     }
 
     this.log('[FLOW] 🎉 All siren flow cards registered');

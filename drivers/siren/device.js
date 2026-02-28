@@ -48,6 +48,8 @@ class SirenDevice extends HybridPlugBase {
       // ENVIRONMENTAL (some sirens have T/H sensors)
       // ═══════════════════════════════════════════════════════════════════
       104: { capability: 'onoff', transform: (v) => !!v },
+      116: { capability: 'volume_set', transform: (v) => ({ 0: 0.33, 1: 0.66, 2: 1.0 }[v] ?? (v / 100)) },
+      103: { capability: null, setting: 'duration', writable: true },
       101: { capability: 'measure_temperature', divisor: 10 },
       102: { capability: 'measure_humidity', divisor: 1 },
 
@@ -68,17 +70,16 @@ class SirenDevice extends HybridPlugBase {
     // Setup IAS WD cluster (parent doesn't have this)
     await this._setupIasWD(zclNode);
 
-    // Register volume listener ONLY (parent handles onoff)
+    // Register volume listener (send to BOTH standard DP5 + NEO DP116)
     if (this.hasCapability('volume_set')) {
       this.registerCapabilityListener('volume_set', async (v) => {
         const volume = v < 0.4 ? 0 : (v < 0.7 ? 1 : 2);
-        await this._sendTuyaDP(5, volume, 'enum');
+        try { await this._sendTuyaDP(5, volume, 'enum'); } catch (e) {}
+        try { await this._sendTuyaDP(116, volume, 'enum'); } catch (e) {}
       });
     }
 
-    // v5.5.740: Register flow card listeners from upstream PR patterns
-    await this._registerFlowCards();
-
+    // Flow cards registered in driver.js (NOT here to avoid double-registration)
     this.log('[SIREN] ✅ Ready');
   }
 
@@ -129,63 +130,6 @@ class SirenDevice extends HybridPlugBase {
     }
   }
 
-  /**
-   * v5.5.740: Flow card registration from upstream PR patterns
-   * Source: JohanBendz siren.js + sirentemphumidsensor.js
-   */
-  async _registerFlowCards() {
-    // Volume mapping from upstream
-    const volumeMap = { low: 0, medium: 1, high: 2 };
-
-    // Siren turn on
-    this.homey.flow.getActionCard('siren_turn_on')
-      .registerRunListener(async () => {
-        await this._setOnOff(true);
-        return true;
-      });
-
-    // Siren turn off
-    this.homey.flow.getActionCard('siren_turn_off')
-      .registerRunListener(async () => {
-        await this._setOnOff(false);
-        return true;
-      });
-
-    // Set volume
-    this.homey.flow.getActionCard('siren_set_volume')
-      .registerRunListener(async ({ volume }) => {
-        const volumeValue = volumeMap[volume] ?? 1;
-        this.log(`[SIREN] 🔊 Set volume: ${volume} → DP5=${volumeValue}`);
-        await this._sendTuyaDP(5, volumeValue, 'enum');
-        return true;
-      });
-
-    // Set duration
-    this.homey.flow.getActionCard('siren_set_duration')
-      .registerRunListener(async ({ duration }) => {
-        const durationSec = Math.max(1, Math.min(300, duration));
-        this.log(`[SIREN] ⏱️ Set duration: ${durationSec}s → DP7`);
-        await this._sendTuyaDP(7, durationSec, 'value');
-        return true;
-      });
-
-    // v5.5.740: Set melody from upstream sirentemphumidsensor.js
-    this.homey.flow.getActionCard('siren_set_melody')
-      .registerRunListener(async ({ melody }) => {
-        const melodyId = parseInt(melody, 10);
-        this.log(`[SIREN] 🎵 Set melody: ${melodyId} → DP21`);
-        await this._sendTuyaDP(21, melodyId, 'enum');
-        return true;
-      });
-
-    // Condition: is siren sounding
-    this.homey.flow.getConditionCard('siren_is_sounding')
-      .registerRunListener(async () => {
-        return this.getCapabilityValue('onoff') === true;
-      });
-
-    this.log('[SIREN] ✅ Flow cards registered');
-  }
 }
 
 module.exports = SirenDevice;
