@@ -6,7 +6,12 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.25] - 2026-02-25
+## [5.11.26] - 2026-02-28
+
+v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts.
+---
+
+ [5.11.25] - 2026-02-25
 
 ### Bug Fixes
 - Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants.
