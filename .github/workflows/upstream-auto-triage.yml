@@ -45,7 +45,7 @@ jobs:
         run: |
           V=$(node -p "require('./app.json').version")
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
-          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json | sort -uf | wc -l)
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
           echo "version=$V" >> "$GITHUB_OUTPUT"
           echo "drivers=$D" >> "$GITHUB_OUTPUT"
           echo "fps=$F" >> "$GITHUB_OUTPUT"

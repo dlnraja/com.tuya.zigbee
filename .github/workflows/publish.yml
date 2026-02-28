@@ -143,7 +143,7 @@ jobs:
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
-          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json | sort -uf | wc -l)
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
           git diff --cached --quiet || git commit -m "v${{ steps.bump.outputs.version }}: ${D} drivers, ${F} fingerprints [skip ci]"
           git tag -f "v${{ steps.bump.outputs.version }}"
           git push origin HEAD --tags --force
@@ -173,6 +173,7 @@ jobs:
       # ===== DRAFT → TEST (Puppeteer + API fallback) =====
       - name: Install Puppeteer
         if: steps.pat.outputs.ok == 'true'
+        continue-on-error: true
         run: npm install puppeteer --no-save
 
       - name: "Tier 1: Promote via Browser (Puppeteer)"
