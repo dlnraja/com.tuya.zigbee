@@ -153,7 +153,7 @@ jobs:
       - name: GitHub Issue Manager
         if: always()
         continue-on-error: true
-        timeout-minutes: 15
+        timeout-minutes: 30
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -165,6 +165,8 @@ jobs:
           STALE_DAYS: "30"
           MAX_ITEMS: "50"
           REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
+          GEMINI_MAX_TIER: "1"
+          RATE_LIMIT_SLEEP: "5000"
         run: node .github/scripts/github-issue-manager.js
 
       - name: Auto-Learn Fingerprints
