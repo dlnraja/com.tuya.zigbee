@@ -3,6 +3,7 @@
 const fs=require('fs'),path=require('path');
 const{callAI,analyzeImage,getAIBudget}=require('./ai-helper');
 const{loadFingerprints,findAllDrivers,extractMfrFromText}=require('./load-fingerprints');
+const{investigate:investigateBug}=require('./bug-investigator');
 const REPOS=(process.env.REPOS||'dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee').split(',').map(s=>s.trim());
 const OWN=REPOS[0];
 const DRY=process.env.DRY_RUN==='true';
@@ -82,7 +83,7 @@ async function classifyIssue(issue,fpResults){
 }
 
 // Generate personalized AI response (with variants + bugs)
-async function generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks,repo){
+async function generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks,repo,bugFindings){
   const ctx={appVersion:appVer,totalFPs:fps.size,driverCount:fs.readdirSync(path.join(__dirname,'..','..','drivers')).length,
     installUrl:'https://homey.app/a/com.dlnraja.tuya.zigbee/test/',
     forumUrl:'https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352',
@@ -92,6 +93,7 @@ async function generateResponse(issue,fpResults,classification,variants,bugs,ima
   if(isUpstream)prompt+='\nCRITICAL: This issue is on the JohanBendz/com.tuya.zigbee upstream repo. You MUST clearly redirect the user to our actively maintained fork at [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee). Explain this fork has '+ctx.driverCount+' drivers and '+fps.size+'+ fingerprints, far more than upstream. ALWAYS include the test install link: '+ctx.installUrl+' and community forum: '+ctx.forumUrl+'. Tell the user to install, then remove and re-pair their device. Report any issues on the forum thread or the dlnraja GitHub repo.';
   prompt+='\\nContext: '+JSON.stringify(ctx);
   let text='Issue: '+issue.title+'\nBy: @'+(issue.user?.login||'?')+'\nBody: '+(issue.body||'').slice(0,2000)+'\nFP results: '+JSON.stringify(fpResults)+'\nClassification: '+JSON.stringify(classification)+'\nVariants from Z2M/ZHA/Blakadder: '+JSON.stringify(variants||[])+'\nAssociated bugs: '+JSON.stringify(bugs||[]);
+  if(bugFindings&&bugFindings.length)text+='\nBug investigation findings: '+JSON.stringify(bugFindings.map(b=>({fp:b.fp,driver:b.driver,findings:b.findings,divisors:b.divisors})));
   if(imageCtx)text+='\nImage analysis: '+imageCtx;
   if(bodyLinks&&bodyLinks.length)text+='\nExternal refs: '+bodyLinks.join(', ');
   const ai=await callAI(text,prompt,{maxTokens:1024,complexity:'medium'});
@@ -143,6 +145,18 @@ async function processIssue(repo,issue,state,report,extData){
     }
   }
 
+  // v5.11.26: Bug investigation — code-level analysis (like #110 double-divisor fix)
+  let bugFindings=[];
+  if(classification.type==='bug_report'&&existingFPs.length){
+    for(const fp of existingFPs){
+      try{
+        const inv=investigateBug(fp.fp,text);
+        if(inv&&inv.findings.length){bugFindings.push(inv);console.log('    BUG-INVEST '+fp.fp+': '+inv.findings.join(', '))}
+      }catch(e){console.log('    BUG-INVEST err:',e.message)}
+    }
+    if(bugFindings.length)report.bugInvestigations=(report.bugInvestigations||0)+bugFindings.length;
+  }
+
   // Analyze images in issue body
   const bodyImgs=extractImages(issue.body||'');
   let imageCtx='';
@@ -164,7 +178,7 @@ async function processIssue(repo,issue,state,report,extData){
 
   // Respond if not already responded
   if(!hasBot){
-    const response=await generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks,repo);
+    const response=await generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks,repo,bugFindings);
     if(response){
       const posted=await ghPost('/repos/'+repo+'/issues/'+issue.number+'/comments',{body:response});
       if(posted){
@@ -411,6 +425,7 @@ async function main(){
   console.log('Responded:',report.responded);
   console.log('Closed:',report.closed);
   console.log('New FPs found:',report.newFingerprints.length);
+  console.log('Bug investigations:',(report.bugInvestigations||0));
   try{console.log('AI Budget:',getAIBudget())}catch{}
 
   if(process.env.GITHUB_STEP_SUMMARY){
@@ -420,6 +435,7 @@ async function main(){
     md+='| Responded | '+report.responded+' |\n';
     md+='| Closed (stale/resolved) | '+report.closed+' |\n';
     md+='| New fingerprints | '+report.newFingerprints.length+' |\n';
+    md+='| Bug investigations | '+(report.bugInvestigations||0)+' |\n';
     if(report.evolutionSummary)md+='\n### Evolution Summary\n'+report.evolutionSummary+'\n';
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,md);
   }
