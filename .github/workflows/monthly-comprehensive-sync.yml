@@ -52,6 +52,7 @@ jobs:
 
       # ===== DRAFT → TEST (Puppeteer + API fallback) =====
       - name: Install Puppeteer
+        continue-on-error: true
         run: npm install puppeteer --no-save
       - name: "Tier 1: Promote via Browser (Puppeteer)"
         id: promote_puppeteer
@@ -167,7 +168,7 @@ jobs:
           git add .github/state/
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
-          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l)
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
           git diff --cached --quiet || git commit -m "Monthly sync v${VER} $(date +%Y-%m): ${D} drivers, ${F} FPs deep-scanned [skip ci]"
           git pull --rebase origin master || true
           git push || true
