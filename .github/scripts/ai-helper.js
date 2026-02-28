@@ -2,8 +2,11 @@
  * AI Helper - Multi-provider with project rules injection
  * Chain: Gemini → GitHub Models → OpenAI → Groq → IBM Granite (HF) → Mistral → OpenRouter → ApiFreeLLM
  */
+const fs=require('fs'),path=require('path');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const{PROJECT_RULES,ARCHITECTURE_SUMMARY}=require('./project-rules');
+// Smart model routing: [id, model, complexity(0-3), rpm, rpd]
+const GTIERS=[['pro25','gemini-2.5-pro',3,5,100],['flash25','gemini-2.5-flash',2,10,250],['flash20','gemini-2.0-flash',1,15,1500],['lite20','gemini-2.0-flash-lite',0,30,1500]];
 
 // Circuit breaker: skip providers down recently
 const _cb={};
@@ -13,18 +16,26 @@ function cbFail(n,ms){_cb[n]={t:Date.now(),c:ms||300000};}
 function fetchT(url,opts,ms){ms=ms||30000;const ac=new AbortController();const tid=setTimeout(()=>ac.abort(),ms);opts=Object.assign({},opts,{signal:ac.signal});return fetch(url,opts).finally(()=>clearTimeout(tid));}
 // Backoff with jitter
 function backoff(attempt){return Math.min(2000*Math.pow(2,attempt)+Math.random()*1000,60000);}
+const _rt={m:{},d:{},mt:0,dd:''};const _rtF=path.join(__dirname,'..','state','ai-rate-state.json');
+function _rtLoad(){try{const j=JSON.parse(fs.readFileSync(_rtF,'utf8'));const td=new Date().toISOString().slice(0,10);if(j.dd===td){_rt.d=j.d||{};_rt.dd=td}}catch{}}
+function _rtSave(){try{_rt.dd=new Date().toISOString().slice(0,10);fs.mkdirSync(path.dirname(_rtF),{recursive:true});fs.writeFileSync(_rtF,JSON.stringify(_rt))}catch{}}
+function _rtTrack(id){const n=Date.now(),td=new Date().toISOString().slice(0,10);if(n-_rt.mt>60000){_rt.m={};_rt.mt=n}if(_rt.dd!==td){_rt.d={};_rt.dd=td}_rt.m[id]=(_rt.m[id]||0)+1;_rt.d[id]=(_rt.d[id]||0)+1;_rtSave()}
+function _rtOk(t){const n=Date.now(),td=new Date().toISOString().slice(0,10);if(n-_rt.mt>60000)_rt.m={};if(_rt.dd!==td)_rt.d={};return(_rt.m[t[0]]||0)<t[3]-1&&(_rt.d[t[0]]||0)<Math.floor(t[4]*0.8)}
+function _estCx(text,sys,o){if(o.complexity!==undefined){const m={trivial:0,low:1,medium:2,high:3};return typeof o.complexity==='string'?(m[o.complexity]??1):o.complexity}const len=(text||'').length+(sys||'').length;const mt=o.maxTokens||2048;const lc=((text||'')+' '+(sys||'')).toLowerCase();if(mt>1500||len>6000)return 3;if(mt>768||len>3000||lc.includes('write a github comment'))return 2;if(mt>256||len>1000)return 1;return 0}
+function _pickModels(cx){const cap=parseInt(process.env.GEMINI_MAX_TIER)||3;return GTIERS.filter(t=>t[2]<=cap&&_rtOk(t)&&cbOk('gemini-'+t[1])).sort((a,b)=>{const da=Math.abs(a[2]-cx),db=Math.abs(b[2]-cx);return da!==db?da-db:a[2]-b[2]})}
 
 async function callAI(text,sysPrompt,opts={}){
   const maxTokens=opts.maxTokens||2048;
   // Inject project rules + architecture into system prompt
   const archContext=ARCHITECTURE_SUMMARY?'\n\n---\n'+ARCHITECTURE_SUMMARY:'';
   const fullSysPrompt=PROJECT_RULES+archContext+'\n\n'+sysPrompt;
-  // Try Gemini first (free)
+  // Smart Gemini routing by complexity
   const gemKey=process.env.GOOGLE_API_KEY;
   if(gemKey){
-    const models=['gemini-2.0-flash','gemini-2.0-flash-lite'];
-    for(const model of models){
-      if(!cbOk('gemini-'+model))continue;
+    _rtLoad();const cx=_estCx(text,sysPrompt,opts);const tiers=_pickModels(cx);
+    if(tiers.length)console.log('  [AI] cx='+cx+' try=['+tiers.map(t=>t[0]).join(',')+']');
+    for(const tier of tiers){
+      const model=tier[1];
       for(let retry=0;retry<3;retry++){
         if(retry>0)await sleep(backoff(retry));
         try{
@@ -32,7 +43,7 @@ async function callAI(text,sysPrompt,opts={}){
             method:'POST',headers:{'Content-Type':'application/json'},
             body:JSON.stringify({systemInstruction:{parts:[{text:fullSysPrompt}]},contents:[{parts:[{text}]}],
               generationConfig:{temperature:0.2,maxOutputTokens:maxTokens}})});
-          if(r.ok){const d=await r.json();const t=d.candidates?.[0]?.content?.parts?.[0]?.text;if(t)return{text:t.trim(),model}}
+          if(r.ok){const d=await r.json();const t=d.candidates?.[0]?.content?.parts?.[0]?.text;if(t){_rtTrack(tier[0]);return{text:t.trim(),model}}}
           if(r.status===429){console.log('  Gemini '+model+' 429, backoff...');if(retry>=2)cbFail('gemini-'+model,120000);continue}
           if(r.status>=500){cbFail('gemini-'+model,60000);break}
           break;
@@ -176,14 +187,17 @@ async function analyzeImage(imageUrl,prompt){
   let b64;try{b64=await fetchImageBase64(imageUrl)}catch(e){console.log('  Img fetch fail:',e.message);return null}
   // Gemini Vision
   const gemKey=process.env.GOOGLE_API_KEY;
-  if(gemKey&&cbOk('gemini-vision')){
+  if(gemKey){
+    const vModels=['gemini-2.5-flash','gemini-2.0-flash'];
+    for(const vm of vModels){if(!cbOk('gemini-v-'+vm))continue;
     for(let i=0;i<2;i++){if(i)await sleep(backoff(i));try{
-      const r=await fetchT('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+gemKey,{
+      const r=await fetchT('https://generativelanguage.googleapis.com/v1beta/models/'+vm+':generateContent?key='+gemKey,{
         method:'POST',headers:{'Content-Type':'application/json'},
         body:JSON.stringify({contents:[{parts:[{text:prompt},{inlineData:{mimeType:'image/jpeg',data:b64}}]}],
           generationConfig:{temperature:0.2,maxOutputTokens:1024}})});
       if(r.ok){const d=await r.json();return d.candidates?.[0]?.content?.parts?.[0]?.text?.trim()||null}
-    }catch{}}
+    }catch{cbFail('gemini-v-'+vm,60000)}}
+    }
   }
   // OpenAI Vision fallback
   const oaiKey=process.env.OPENAI_API_KEY;

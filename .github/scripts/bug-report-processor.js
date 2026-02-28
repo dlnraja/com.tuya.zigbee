@@ -82,7 +82,7 @@ async function main(){
       const ai=await callAI(
         'Bug report for driver '+driver+':\n'+text.substring(0,2000)+'\n\nDevice code (partial):\n'+devCode,
         'Analyze this Zigbee device bug. If it is a fingerprint issue, provide the fix. If it is a DP mapping issue, suggest the fix. Return JSON: {"canFix":true/false,"fixType":"fingerprint|dp_mapping|config|unknown","summary":"one line","details":"explanation"}',
-        {maxTokens:512}
+        {maxTokens:512,complexity:'high'}
       );
       if(ai){
         try{
