@@ -95,6 +95,9 @@ jobs:
           RATE_LIMIT_SLEEP: "4000"
         run: node .github/scripts/github-issue-manager.js
 
+      - name: "Sleep 30s between repos"
+        run: sleep 30
+
       - name: "Process JohanBendz issues & PRs"
         id: upstream_repo
         continue-on-error: true
