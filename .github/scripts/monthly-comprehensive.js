@@ -210,7 +210,7 @@ async function respondToIssue(repo,issue,idx,pidx,state,appVersion){
   for(const pid of pids){const d=pidx.get(pid)||[];results[pid]={found:d.length>0,drivers:d,type:'productId'}}
 
   const sysPrompt='You are the maintainer of Universal Tuya Zigbee (v'+appVersion+'). Respond to this GitHub issue with technical details. If fingerprint is supported, tell which driver. If not, ask for device interview from tools.developer.homey.app. Be concise, use GitHub markdown. Max 300 words. NEVER mention bot/automated. No signature or footer.';
-  const ai=await callAI('Issue #'+issue.number+' by @'+issue.user?.login+':\n'+text+'\n\nFingerprint results:\n'+JSON.stringify(results,null,2),sysPrompt);
+  const ai=await callAI('Issue #'+issue.number+' by @'+issue.user?.login+':\n'+text+'\n\nFingerprint results:\n'+JSON.stringify(results,null,2),sysPrompt,{complexity:'medium'});
   if(!ai)return null;
   if(ai.text.toUpperCase()==='NULL')return null;
 
@@ -324,7 +324,7 @@ async function main(){
   const summaryData={report,newFingerprints:allNewFPs.slice(0,30),topIssues:issuesWithFP.slice(0,10).map(i=>({repo:i._repo,number:i.number,title:i.title,user:i.user?.login}))};
 
   const sysPrompt='You are posting a monthly status update on the Homey Community forum #140352 for Universal Tuya Zigbee app (v'+appVersion+'). Write a comprehensive, professional post covering: 1) GitHub activity summary 2) New fingerprints found from forks/Z2M/ZHA/deCONZ/Blakadder 3) Issues responded to 4) Devices needing community help. Use Discourse markdown. Max 600 words. End with bot signature.';
-  const aiSummary=await callAI(JSON.stringify(summaryData,null,2),sysPrompt);
+  const aiSummary=await callAI(JSON.stringify(summaryData,null,2),sysPrompt,{complexity:'high'});
 
   if(aiSummary){
     console.log('AI Summary (',aiSummary.model,'):',aiSummary.text.length,'chars');
